@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 开发态稳定性检测
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测
 category: best-practices
-scraped_at: 2026-04-28T08:22:48+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:55:11+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:0413baaaf9bffd31be69ab9f9a2d8c8d10044ee33efc25582d57dae6260ac0d0
 ---
 

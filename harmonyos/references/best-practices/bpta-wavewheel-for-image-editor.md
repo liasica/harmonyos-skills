@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-wavewheel-
 title: 实现修图软件的波轮菜单功能
 breadcrumb: 最佳实践 > 场景创新 > 实现修图软件的波轮菜单功能
 category: best-practices
-scraped_at: 2026-09-09T06:35:54+08:00
-doc_updated_at: 2026-09-08
+scraped_at: 2026-09-16T06:54:55+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:95cc7ba6a96c862a5c93734b2f024fe06c9483ae29c569972eed79ea4b99af53
 ---
 

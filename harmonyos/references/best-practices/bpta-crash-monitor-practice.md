@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-crash-moni
 title: 崩溃监测实践
 breadcrumb: 最佳实践 > 稳定性 > 稳定性运维 > 崩溃监测实践
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:0642a258abe981355602686a8efb7d6056db9ecc0e7cd04176d0bb354857f8b5
+scraped_at: 2026-09-16T06:55:16+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:b628048b30c03ce910b3e6d5aed71a3baa1243bf63118b7f3d7cc19bbb76f0e3
 ---
 
 ## 概述
@@ -58,7 +58,7 @@ HiAppEvent的接口设计由系统决定回调时机。在回调执行时，开�
 4. ADDRESS\_SANITIZER 应用踩内存事件
 5. MAIN\_THREAD\_JANK 应用主线程超时事件
 
-目前HiAppEvent在这些问题上都具备相应的事件记录能力，更多事件选型参考[hiAppEvent.event()](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventevent)。通过订阅相关事件，可以获取相应日志，进行问题定位分析。
+目前HiAppEvent在这些问题上都具备相应的事件记录能力，更多事件选型参考hiAppEvent.[event](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#event)。通过订阅相关事件，可以获取相应日志，进行问题定位分析。
 
 本文重点介绍崩溃故障场景，具体是指在应用发生APP\_CRASH或APP\_FREEZE后，监听并处理相应的崩溃信息。
 

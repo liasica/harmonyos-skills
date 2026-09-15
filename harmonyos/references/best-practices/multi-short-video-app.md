@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-short-vid
 title: 多设备短视频界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备短视频界面
 category: best-practices
-scraped_at: 2026-09-10T06:30:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab61cf0b
+scraped_at: 2026-09-16T06:55:02+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:f37ffd8086d79bf520bc663481562cedf1588ffa2259e7de59688072c2db0e18
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 
 下文将从UX设计、工程管理和页面开发三个角度，详细介绍短视频应用在实际开发中的最佳实践，为开发者提供可参考落地的思路。
 
-* [UX设计](multi-short-video-app.md#section17797105112306)：介绍短视频应用的交互逻辑和通用设计要点，供同类短视频应用开发者直接参考
+* [UX设计](multi-short-video-app.md#section17797105112306)：介绍短视频应用的交互逻辑和通用设计要点，供同类短视频应用开发者直接参考。
 * [工程管理](multi-short-video-app.md#section189781175313)：推荐“一多”应用采用分层架构，通过清晰的目录结构组织工程，明确各层逻辑。同时，介绍短视频应用适用的架构配置。
 * [移动端页面](multi-short-video-app.md#section7318163817529)、[电脑端页面](multi-short-video-app.md#section1415242321718)、[智慧屏页面](multi-short-video-app.md#section67231377369)和[智能穿戴页面](multi-short-video-app.md#section259716292206)：遵循实际应用开发流程，以页面为基本单元，详细讲解各页面在窗口适配、页面开发、交互开发及功能开发方面的设计思路与实现方法。
 
@@ -30,7 +30,7 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 
 短视频应用的UX设计可参考影音娱乐类多设备响应式设计指南的[短视频](../design-guides/responsive-design-examples1-0000001957369849.md#section286164710457)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/U13BJ0jTQA-AL2LZrbzE1g/zh-cn_image_0000002622296745.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/3xbnEFDfRv64nT1ZwUGX4Q/zh-cn_image_0000002622296745.png "点击放大")
 
 ## 工程管理
 
@@ -46,12 +46,11 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 
 * products层：短视频应用需要适配的设备包括直板机、双折叠（Mate X系列）、三折叠、阔折叠、平板、电脑、智慧屏和手表。由于手表、电脑及智慧屏设备的界面布局与其他设备差异较大，因此在products层单独创建名称为“wearable”、“pc”及“tv”的HAP包，分别作为手表、电脑及智慧屏设备的应用入口；而直板机、双折叠（Mate X系列）、三折叠、阔折叠和平板设备上的界面布局整体相似，部分差异可通过“一多”[自适应布局](bpta-multi-device-adaptive-layout.md)和[响应式布局](bpta-multi-device-responsive-layout.md)进行适配，因此在products层创建一个名称为“default”的HAP包作为这些设备的应用入口。
 * features层：短视频应用包含三个核心业务模块，分别为视频播放页（adaptive\_video）、评论区（comment）和个人主页（individual）。在features层中，为各业务模块分别创建对应的HAR包，供products层按需引用。各业务模块相互独立，无依赖关系，便于后续维护与迭代。
-* common层：为实现代码复用、减少冗余，在common层创建了一个基础（base）能力HAR包。该包集中存放了公共常量、断点工具、空白页组件、全局封装的导航组件、图文组件及窗口管理工具等需被多个模块共用的基础能力，供其他模块统一调用。
+* common层：为实现代码复用、减少冗余，在common层创建了一个基础（multishortvideobase）能力HAR包。该包集中存放了公共常量、断点工具、空白页组件、全局封装的导航组件、图文组件及窗口管理工具等需被多个模块共用的基础能力，供其他模块统一调用。
 
 工程结构如下：
 
 ```screen
-├
 ├── common                                                 // 公共能力层
 │   └── multishortvideobase
 │       └── src
@@ -112,7 +111,7 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 │               │   │   ├── IndividualByRouter.ets         // 个人作品页路由
 │               │   │   └── Works.ets                      // 个人作品页作品
 │               │   └── viewmodel
-│               │       ├── IndividualTabsViewModel.ets。  // 个人作品页数据
+│               │       ├── IndividualTabsViewModel.ets  // 个人作品页数据
 │               │       └── WorksViewModel.ets             // 作品数据
 │               └── resources                              // 个人作品页资源文件
 └── products                                               // 产品定制层
@@ -196,7 +195,7 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
   在HAP包的module.json5文件中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下配置orientation属性为follow\_desktop，详细信息参考窗口旋转中[其他方向类型](../harmonyos-guides/window-rotation.md#其他方向类型)的跟随桌面旋转模式。
 * 窗口沉浸式
 
-  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)方案。全屏、分屏和悬浮窗模式的沉浸式通过[window.setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现。同时需进行动态安全区避以保证显示效果。自由窗口模式下使用[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使应用页面延展至标题栏区域实现沉浸式效果。
+  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)方案。全屏、分屏和悬浮窗模式的沉浸式通过窗口的[setWindowLayoutFullscreen](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)方法实现。同时需进行动态安全区避以保证显示效果。自由窗口模式下使用窗口的[setWindowDecorVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)方法传入参数false隐藏标题栏，仅保留右上角三键，使应用页面延展至标题栏区域实现沉浸式效果。
 
 ### 首页
 
@@ -238,8 +237,6 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 
 ### 个人作品页
 
-* 个人作品页
-
 个人作品页主要用于展示作者的获赞、关注、作品量、朋友、个人简介及发布过的作品等信息。根据功能设计，个人作品页相关内容划分为2-3个区域，效果图如下：
 
 | 横向（/纵向）断点 | sm/md | sm/lg | md | lg |
@@ -250,8 +247,6 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 **界面开发**
 
 用户可通过点击头像或页签“我的”进入个人作品页。点击页签时，通过切换tabContent实现；点击头像时，在不同设备上的展示方式存在差异：类直板机采用路由跳转至新页面全窗口展示，折叠屏展开态及平板则使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)侧边面板分栏展示。页面布局通过在不同断点及入口条件下控制组件显示/隐藏，实现多设备适配。具体实现方案如下表所示：
-
-**个人作品页**
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
@@ -271,25 +266,25 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 
 短视频应用首页主要为推荐精品短视频。根据功能设计，将应用首页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/wzA_4JPTTNCld65Hw1zlWA/zh-cn_image_0000002591977212.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/u_vK53mKRS-Fr1JYMCdk7w/zh-cn_image_0000002591977212.png "点击放大")
 
 **界面开发**
 
-电脑端首页的页签采用侧边栏布局，其他区域组件均引用features目录下的核心模块har包。
+电脑端首页的页签采用侧边栏布局，其他区域组件均引用features目录下的核心模块HAR包。
 
 具体介绍及实现方案如下表所示：
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 短视频播放区 | 复用移动端界面，可参考移动端[首页](multi-short-video-app.md#section11727449133819)界面开发章节。 |
+| 1 | 短视频播放区 | 复用移动端界面，可参考移动端[首页](multi-short-video-app.md#section109591922155720)界面开发章节。 |
 | 2 | 搜索框 | 使用[Search](../harmonyos-references/ts-basic-components-search.md)组件固定在右侧实现搜索框。 |
 | 3 | 信息区及交互区 | 使用基础容器组件[Row](../harmonyos-references/ts-container-row.md)及[Column](../harmonyos-references/ts-container-column.md)嵌套组合，配合基础组件实现左侧作者及视频简介，右侧头像、点赞、评论及分享交互区。 |
-| 4 | 音乐区 | 使用基础容器组件[Column](../harmonyos-references/ts-container-column.md)及[Progress](../harmonyos-references/ts-basic-components-progress.md)组件实现，宽度设置百分百，自动横向撑满全屏。 |
+| 4 | 音乐区 | 使用基础容器组件[Column](../harmonyos-references/ts-container-column.md)及[Progress](../harmonyos-references/ts-basic-components-progress.md)组件实现，宽度设置100%，自动横向撑满全屏。 |
 | 5 | 侧边页签 | 使用[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)组件实现电脑端的侧边页签。 |
 
 **说明** 
 
-电脑端页面因导航采用侧边页签设计，需进行单独适配。评论页及个人作品页均引用features目录下的核心模块har包，实现多端共用相同的核心模块代码。
+电脑端页面因导航采用侧边页签设计，需进行单独适配。评论页及个人作品页均引用features目录下的核心模块HAR包，实现多端共用相同的核心模块代码。
 
 ## 智慧屏页面
 
@@ -299,7 +294,7 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 
 短视频应用首页主要推荐精选视频，满足用户观看需求。根据功能设计，将应用首页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/dzVzQc3ORc67vjNzVI53jA/zh-cn_image_0000002622296757.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/yal-8UcKRN2ZuXOcIk24XQ/zh-cn_image_0000002622296757.png "点击放大")
 
 **界面开发**
 
@@ -307,24 +302,24 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 短视频播放区 | 复用移动端界面，可参考移动端[首页](multi-short-video-app.md#section11727449133819)界面开发章节。 |
+| 1 | 短视频播放区 | 复用移动端界面，可参考移动端[首页](multi-short-video-app.md#section109591922155720)界面开发章节。 |
 | 2 | 顶部页签及搜索框 | 使用repeat循环渲染及[Image](../harmonyos-references/ts-basic-components-image.md#image-1)组件实现，搜索框固定在左侧，导航栏固定居中显示。 |
 | 3 | 信息区及交互区 | 使用基础容器组件[Row](../harmonyos-references/ts-container-row.md)及[Column](../harmonyos-references/ts-container-column.md)嵌套组合，配合基础组件实现左侧作者及视频简介，右侧头像、点赞、评论及分享交互区。 |
 | 4 | 音乐区 | 使用基础容器组件[Column](../harmonyos-references/ts-container-column.md)及[Progress](../harmonyos-references/ts-basic-components-progress.md)组件实现，宽度设置100%，自动横向撑满全屏。 |
 
 **说明** 
 
-智慧屏页面仅需一级页签并悬浮于屏幕上方，因此需进行单独适配。评论页及个人作品页均引用features目录下的核心模块har包，以实现多端共用相同的核心模块代码。
+智慧屏页面仅需一级页签并悬浮于屏幕上方，因此需进行单独适配。评论页及个人作品页均引用features目录下的核心模块HAR包，以实现多端共用相同的核心模块代码。
 
 ## 智能穿戴页面
 
-本章介绍如何高效完成智能穿戴设备上短视频应用的界面开发。同时，详细阐述各页面交互开发的实现方案。
+本章介绍如何高效完成智能穿戴设备上短视频应用的界面开发。同时，详细阐述首页交互开发的实现方案。
 
 ### 首页
 
 短视频应用首页主要推荐精选视频，满足用户观看需求。根据功能设计，将应用首页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/NCVKpZHjRoaYeMAFvjmBRQ/zh-cn_image_0000002622336875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/pGvI3uzKRP2duVFt1GYoMw/zh-cn_image_0000002622336875.png "点击放大")
 
 **界面开发**
 
@@ -332,11 +327,11 @@ content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab6
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 短视频播放区 | 复用移动端界面，可参考移动端[首页](multi-short-video-app.md#section11727449133819)界面开发章节。 |
+| 1 | 短视频播放区 | 复用移动端界面，可参考移动端[首页](multi-short-video-app.md#section109591922155720)界面开发章节。 |
 | 2 | 顶部页签 | 使用[Tabs](../harmonyos-references/ts-container-tabs.md)组件，导航栏固定居中显示。 |
 | 3 | 信息区及交互区 | 使用基础容器组件[Row](../harmonyos-references/ts-container-row.md)及[Column](../harmonyos-references/ts-container-column.md)嵌套组合，配合基础组件实现左侧作者及视频简介，右侧点赞及评论交互区。 |
 | 4 | 底部页签 | 使用[Tabs](../harmonyos-references/ts-container-tabs.md)组件，导航栏固定居中显示。 |
 
 ## 示例代码
 
-* [多设备短视频界面](https://gitcode.com/HarmonyOS_Samples/multi-short-video)
+* [多设备短视频](https://gitcode.com/HarmonyOS_Samples/multi-short-video)

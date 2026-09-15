@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多端协同
 breadcrumb: 最佳实践 > 自由流转 > 多端协同
 category: best-practices
-scraped_at: 2026-04-28T08:21:37+08:00
-doc_updated_at: 2026-04-01
+scraped_at: 2026-09-16T06:55:03+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:d8e92ebd1a571685c6669b9f3d47147a474aaef62bcd25b688de267bc4d8e210
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-developing
 title: 界面渲染性能优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化
 category: best-practices
-scraped_at: 2026-04-28T08:22:27+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:55:07+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:b3c6099f3699e33ad83d525ef9c30cc33f70316ebb52a157226774352ee80c40
 ---
 

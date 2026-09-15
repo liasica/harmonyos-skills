@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 地址越界故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明
 category: best-practices
-scraped_at: 2026-09-04T06:33:23+08:00
-doc_updated_at: 2026-09-03
+scraped_at: 2026-09-16T06:55:11+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:a3a9029c1502aaed3ff5adf40e77105d09a094eef73122f6f3c94f211417b03e
 ---
 

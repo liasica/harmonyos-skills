@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16816 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16817 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1249 篇
 
@@ -11743,7 +11743,7 @@
 - [XEngine](harmonyos-references/xengine-kit-xengine.md)
 - [zlib](harmonyos-references/zlib.md)
 
-## 最佳实践（`best-practices`）— 476 篇
+## 最佳实践（`best-practices`）— 477 篇
 
 - [PC/2in1异形窗口](best-practices/bpta-2in1-window-shape.md)
 - [基于AbcKitTS实现字节码插桩](best-practices/bpta-abckitts-implements-instrumentation.md)
@@ -11813,7 +11813,7 @@
 - [基于AVPlayer基础播控实践](best-practices/bpta-avplayer-basic-control.md)
 - [基于AVPlayer播放视频系列开发实践](best-practices/bpta-avplayer-video-practices.md)
 - [应用后台运行](best-practices/bpta-back-task-implement.md)
-- [应用退后台禁止使用传感器问题分析](best-practices/bpta-background-sensors-baned-analysis.md)
+- [应用退后台禁止使用传感器问题分析](best-practices/bpta-background-sensors-banned-analysis.md)
 - [长列表加载丢帧优化](best-practices/bpta-best-practices-long-list.md)
 - [最佳实践概览](best-practices/bpta-best-practices-overview.md)
 - [低功耗蓝牙基础使用](best-practices/bpta-bluetooth-low-energy.md)
@@ -11932,7 +11932,7 @@
 - [特殊界面布局场景](best-practices/bpta-multi-device-hardware.md)
 - [多设备工程部署与发布](best-practices/bpta-multi-device-ide.md)
 - [多设备交互](best-practices/bpta-multi-device-interaction.md)
-- [布局概述](best-practices/bpta-multi-device-layout-overview.md)
+- [多设备功能开发](best-practices/bpta-multi-device-layout-overview.md)
 - [一次开发，多端部署概览](best-practices/bpta-multi-device-overview.md)
 - [页面布局场景](best-practices/bpta-multi-device-page-layout.md)
 - [多设备界面开发](best-practices/bpta-multi-device-page.md)
@@ -12116,6 +12116,7 @@
 - [使用DevEco Studio静态检测编码规范](best-practices/bpta-stability-ide-static-detection.md)
 - [JS Crash类问题优化建议](best-practices/bpta-stability-js-crash-opt.md)
 - [JS内存泄漏问题检测方法](best-practices/bpta-stability-js-memleak-detection.md)
+- [JS Crash故障模式说明](best-practices/bpta-stability-jscrash-fault-mode.md)
 - [资源泄漏类问题检测](best-practices/bpta-stability-leak-detection.md)
 - [资源泄漏类问题优化建议](best-practices/bpta-stability-leak-opt.md)
 - [其他资源泄漏问题分析方法](best-practices/bpta-stability-leak-way.md)

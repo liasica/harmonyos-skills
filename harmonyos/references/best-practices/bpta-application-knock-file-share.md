@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 碰一碰文件分享
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 碰一碰文件分享
 category: best-practices
-scraped_at: 2026-09-10T06:30:08+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:f9749b4908fd2fffe9e5c625810a68c6eecbcf74567a1d6aa5538bbed962e2f5
+scraped_at: 2026-09-16T06:55:04+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:c35783f65a1f16d8932b7eeafeec3dccadd4fae23ac3e7421dcb32e9909b125c
 ---
 
 ## 概述
@@ -28,11 +28,11 @@ content_hash: sha256:f9749b4908fd2fffe9e5c625810a68c6eecbcf74567a1d6aa5538bbed96
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/hXoLfcCGR8C02JWmN1u1Fw/zh-cn_image_0000002447912893.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/M8ZfjI3RQAqnnlmopoMiEw/zh-cn_image_0000002447912893.png "点击放大")
 
-碰一碰文件分享基于华为分享服务，通过手机与手机碰一碰或手机与PC/2in1屏幕碰一碰实现文件的跨端传输。应用需实现监听方法[on('knockShare')](../harmonyos-references/share-harmony-share.md#onknockshare)，用户触发碰一碰后即可分享文件至对方设备。文件接收则由分享服务按照[规则](../harmonyos-guides/share-access-one-step.md)处理，存储于图库或文件管理中。
+碰一碰文件分享基于华为分享服务，通过手机与手机碰一碰或手机与PC/2in1屏幕碰一碰实现文件的跨端传输。应用需实现监听方法[on('knockShare')](../harmonyos-references/share-harmony-share.md#onknockshare)，用户触发碰一碰后即可分享文件至对方设备。文件接收则由分享服务按照[目标设备接收分享数据一步直达体验](../harmonyos-guides/share-access-one-step.md)处理，存储于图库或文件管理中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/dXiqzb46QM-gmXkWn5nHEw/zh-cn_image_0000002414273862.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/b7Pl_e3rQK-y7LBRzoNAjQ/zh-cn_image_0000002414273862.png "点击放大")
 
 PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应用还可以注册监听文件接收接口[on('dataReceive')](../harmonyos-references/share-harmony-share.md#ondatareceive)方法，手机分享的文件将存储于应用沙箱目录下。详情可参考[手机与手机碰一碰分享](../harmonyos-guides/knock-share-between-phones.md)、[手机与PC/2in1碰一碰分享](../harmonyos-guides/knock-share-pc-phones.md)。
 
@@ -47,9 +47,9 @@ PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应�
    **说明** 
 
    * uri是指要分享的文件URI，而非文件路径，例如沙箱路径content.fileDir，应通过[fileUri.getUriFromPath()](../harmonyos-references/js-apis-file-fileuri.md#fileurigeturifrompath)获取其URI。
-   * utd则是当前文件的[标准化数据类型](../harmonyos-guides/uniform-data-type-list.md)，需要传入准确的值，以便系统匹配精确的目标应用，推荐使用[uniformTypeDescriptor.getUniformDataTypeByFilenameExtension()](../harmonyos-references/js-apis-data-uniformtypedescriptor.md#uniformtypedescriptorgetuniformdatatypebyfilenameextension11)方法，通过给定的文件后缀名查询标准化数据类型的ID，详情可见[不同类型分享数据构建](bpta-application-knock-file-share.md#section131364139197)。
+   * utd则是当前文件的[UTD预置列表](../harmonyos-guides/uniform-data-type-list.md)，需要传入准确的值，以便系统匹配精确的目标应用，推荐使用[uniformTypeDescriptor.getUniformDataTypeByFilenameExtension()](../harmonyos-references/js-apis-data-uniformtypedescriptor.md#uniformtypedescriptorgetuniformdatatypebyfilenameextension11)方法，通过给定的文件后缀名查询标准化数据类型的ID，详情可见[不同类型分享数据构建](bpta-application-knock-file-share.md#section131364139197)。
 
-   ```typescript
+   ```screen
    /**
     * Knock listening callback.
     *
@@ -57,17 +57,69 @@ PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应�
     * you can call back the parameters and share them across devices.
     */
    public immersiveCallback(target: harmonyShare.SharableTarget) {
-     let fileShare = AppStorage.get('KnockFileShare_fileShare') as number[];
-     let videoDataList = AppStorage.get('KnockFileShare_videoDataList') as FileData[];
+     if (deviceInfo.deviceType === '2in1' && deviceInfo.apiAvailable('26.0.0')) {
+       this.immersiveCallbackPcFileList(target);
+       return;
+     }
+     this.immersiveCallbackDefault(target);
+   }
+
+   private immersiveCallbackDefault(target: harmonyShare.SharableTarget) {
+     let fileShare = AppStorage.get(AppConstants.FILE_SHARE) as number[];
+     let videoDataList = AppStorage.get(AppConstants.VIDEO_DATA_LIST) as FileData[];
      if (!fileShare || fileShare.length === 0) {
        return;
      }
-     let shareData: systemShare.SharedData = new systemShare.SharedData(this.getShareRecord(videoDataList[fileShare[0]]));
-     for (let i = 1; i < fileShare.length; i++) {
+     this.shareFiles(target, videoDataList, fileShare);
+   }
+
+   private immersiveCallbackPcFileList(target: harmonyShare.SharableTarget) {
+     let fileShare = AppStorage.get(AppConstants.FILE_SHARE) as number[];
+     let videoDataList = AppStorage.get(AppConstants.VIDEO_DATA_LIST) as FileData[];
+     let indicesToShare: number[] = [];
+     let hitIndex: number = -1;
+     if (fileShare && fileShare.length > 0) {
+       indicesToShare = [...fileShare];
+     } else {
+       if (deviceInfo.apiAvailable('26.0.0')) {
+         let info = target.getInfo().coordinate;
+         if (!info) {
+           return;
+         }
+         const knockX = info.screenX;
+         const knockY = info.screenY;
+         hitIndex = this.hitTestFileItems(knockX, knockY, videoDataList.length, HitTypes.TYPE_SEND);
+       }
+
+       if (hitIndex >= 0) {
+         indicesToShare = [hitIndex];
+       }
+     }
+
+     if (indicesToShare.length === 0) {
+       return;
+     }
+     this.shareFiles(target, videoDataList, indicesToShare);
+   }
+
+   private hitTestFileItems(x: number, y: number, fileCount: number, hitType: HitTypes): number {
+     let uiContext = this.uiContextProvider?.();
+     if (!uiContext) {
+       return -1;
+     }
+     let componentIds = this.fileItemIdProvider?.() ??
+       KnockRectUtil.buildFileItemIds(fileCount, AppConstants.FILE_ITEM_ID_PREFIX);
+     return KnockRectUtil.hitTestComponentIds(uiContext, x, y, componentIds, hitType);
+   }
+
+   private shareFiles(target: harmonyShare.SharableTarget, videoDataList: FileData[], indices: number[]) {
+     let shareData: systemShare.SharedData =
+       new systemShare.SharedData(this.getShareRecord(videoDataList[indices[0]]));
+     for (let i = 1; i < indices.length; i++) {
        try {
-         shareData.addRecord(this.getShareRecord(videoDataList[fileShare[i]]));
+         shareData.addRecord(this.getShareRecord(videoDataList[indices[i]]));
        } catch (e) {
-         hilog.error(0x0000, 'KnockFileShare', `addRecord failed ${JSON.stringify(e)}`);
+         Logger.error(TAG, `addRecord failed ${JSON.stringify(e)}`);
        }
      }
      target.share(shareData);
@@ -83,7 +135,7 @@ PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应�
      let suffix = '.' + data.url.split('.').pop();
      // Obtain the UTD through the file extension.
      let utd = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension(suffix);
-     hilog.info(0x0000, 'KnockFileShare', `getShareRecord utd ${utd}`)
+     Logger.info(TAG, `getShareRecord utd ${utd}`)
      return {
        utd: utd,
        uri: data.url,
@@ -95,13 +147,13 @@ PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应�
    ```
 2. 分享注册
 
-   [华为分享](../harmonyos-references/share-harmony-share.md)模块提供了碰一碰分享事件的监听方法on('knockShare')。在回调中调用this.immersiveCallback()方法，实现分享数据的构建，并通过sharableTarget.share()方法传输文件数据，完成碰一碰文件分享流程。
+   [harmonyShare（华为分享）](../harmonyos-references/share-harmony-share.md)模块提供了碰一碰分享事件的监听方法on('knockShare')。在回调中调用this.immersiveCallback()方法，实现分享数据的构建，并通过sharableTarget.share()方法传输文件数据，完成碰一碰文件分享流程。
 
    分享模块也同样提供了取消监听的方法[off('knockShare')](../harmonyos-references/share-harmony-share.md#offknockshare-1)，当应用不需要碰一碰分享文件或离开页面（包括应用退至后台等情况）时，应及时调用取消监听的方法，以避免资源浪费和异常触发。
 
    需要注意的是，PC端的碰一碰事件监听和取消监听需要传入窗口的ID，如immersiveListeningPC()和immersiveDisableListeningPC()方法所示。
 
-   ```typescript
+   ```screen
    /**
     *  Add knock listening.
     */
@@ -124,11 +176,10 @@ PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应�
            this.immersiveCallback(target);
          });
        }).catch((error: BusinessError) => {
-         hilog.error(0x0000, 'KnockFileShare', `getLastWindow failed ${JSON.stringify(error)}`);
+         Logger.error(TAG, `getLastWindow failed ${JSON.stringify(error)}`);
        });
      }
    }
-
    /**
     *  remove knock listening.
     */
@@ -147,7 +198,7 @@ PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应�
          let mainWindowID: number = data.getWindowProperties().id;
          harmonyShare.off('knockShare', { windowId: mainWindowID });
        }).catch((error: BusinessError) => {
-         hilog.error(0x0000, 'KnockFileShare', `getLastWindow failed ${JSON.stringify(error)}`);
+         Logger.error(TAG, `getLastWindow failed ${JSON.stringify(error)}`);
        });
      }
    }
@@ -155,18 +206,22 @@ PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应�
 
 ### 接收文件
 
-[华为分享](../harmonyos-references/share-harmony-share.md)模块提供了harmonyShare.on('dataReceive')方法，用于实现应用沙箱接收文件的事件监听。请注意当前接口仅在2in1设备类型可以正常调用，其他设备类型会返回801错误码。
+[harmonyShare（华为分享）](../harmonyos-references/share-harmony-share.md)模块提供了harmonyShare.on('dataReceive')方法，用于实现应用沙箱接收文件的事件监听。请注意当前接口仅在2in1设备类型可以正常调用，其他设备类型会返回801错误码。
 
 PC/2in1应用可以通过监听harmonyShare.on('dataReceive')方法来实现应用沙箱接收文件。该方法需要传入当前应用的窗口ID，并且需要传入capabilities属性，以表示当前应用支持接收的文件标准化数据类型及其最大接收数量，该属性不能传入空数组。
 
 在dataReceive回调方法中，通过receiveTarget.receive()传入应用接收文件的沙箱路径。当应用接收到碰一碰分享的文件后，会触发onDataReceived回调，开发者可以通过回调参数shareData.getRecords()获取分享的数据，当碰一碰接收事件结束后，将响应onResult回调，通过参数resultCode判断分享接收事件是否成功。
 
-```typescript
+```screen
 /**
  * Add dataReceive listening in 2in1 device type.
  */
 public dataReceiveListeningPC() {
   if (!canIUse('SystemCapability.Collaboration.HarmonyShare')) {
+    return;
+  }
+  let uiContext = this.uiContextProvider?.();
+  if (!uiContext) {
     return;
   }
   window.getLastWindow(this.context).then(((data) => {
@@ -185,11 +240,23 @@ public dataReceiveListeningPC() {
         if (!this.context) {
           return;
         }
+        let knockX: number = 0;
+        let knockY: number = 0;
+        let hitIndex: number = -1;
+        if (deviceInfo.apiAvailable('26.0.0')) {
+          let info = receiveTarget.getInfo();
+          if (info.coordinate) {
+            knockX = info.coordinate.screenX;
+            knockY = info.coordinate.screenY;
+            const videoDataListTemp = AppStorage.get(AppConstants.VIDEO_DATA_LIST) as FileData[];
+            hitIndex = this.hitTestFileItems(knockX, knockY, videoDataListTemp.length, HitTypes.TYPE_RECEIVE);
+          }
+        }
         // Process the received file data.
         receiveTarget.receive(fileUri.getUriFromPath(this.context.filesDir), {
           onDataReceived: (shareData: systemShare.SharedData) => {
             let shareRecords = shareData.getRecords();
-            let videoDataList = AppStorage.get('KnockFileShare_videoDataList') as FileData[];
+            let videoDataList = AppStorage.get(AppConstants.VIDEO_DATA_LIST) as FileData[];
             shareRecords.forEach(async (record: systemShare.SharedRecord) => {
               if (!record.uri) {
                 return;
@@ -208,27 +275,31 @@ public dataReceiveListeningPC() {
               } else {
                 thumbPath = videoDataList[0].thumbnail;
               }
-
-              videoDataList.push({
+              const insertFileData: FileData = {
                 url: record.uri,
                 name: fileName,
                 description: record.description,
                 thumbnail: thumbPath,
                 index: videoDataList.length
-              });
+              };
+              if (hitIndex < 0) {
+                videoDataList.push(insertFileData);
+              } else {
+                videoDataList.splice(hitIndex, 0, insertFileData);
+              }
             });
           },
           onResult(resultCode: harmonyShare.ShareResultCode) {
             if (resultCode === harmonyShare.ShareResultCode.SHARE_SUCCESS) {
-              hilog.info(0x0000, 'KnockFileShare', 'receive file success');
+              Logger.info(TAG, 'receive file success');
             } else {
-              hilog.error(0x0000, 'KnockFileShare', 'receive failed ' + resultCode);
+              Logger.error(TAG, 'receive failed ' + resultCode);
             }
           }
         });
       });
   })).catch((error: BusinessError) => {
-    hilog.error(0x0000, 'KnockFileShare', `failed to obtain the window. cause ${error.code} ${error.message}`);
+    Logger.error(TAG, `failed to obtain the window. cause ${error.code} ${error.message}`);
   });
 }
 ```
@@ -241,7 +312,7 @@ public dataReceiveListeningPC() {
 
    开发时需优先增加双重校验：判断设备是否为电脑，同时校验系统API版本≥26.0.0，不满足条件时禁用精准碰一碰逻辑，降级为普通碰一碰分享。
 
-   ```typescript
+   ```screen
    public immersiveCallback(target: harmonyShare.SharableTarget) {
      if (deviceInfo.deviceType === '2in1' && deviceInfo.apiAvailable('26.0.0')) {
        this.immersiveCallbackPcFileList(target);
@@ -254,10 +325,10 @@ public dataReceiveListeningPC() {
 
    基于电脑窗口ID监听碰一碰事件，获取碰一碰触发点屏幕坐标，关联页面图片元素位置，实现位置匹配与文件插入/分享逻辑。
 
-   * 复用原有[harmonyShare.on('knockShare')](../harmonyos-references/share-harmony-share.md#onknockshare-1)、[harmonyShare.on('dataReceive')](../harmonyos-references/share-harmony-share.md#ondatareceive)监听接口；
-   * 电脑端仍需传入[windowId](../harmonyos-references/share-harmony-share.md#basecapabilityregistry)及[capabilities](../harmonyos-references/share-harmony-share.md#recvcapabilityregistry)配置，接口调用规则与普通碰一碰保持一致。
+   * 复用原有[on('knockShare')](../harmonyos-references/share-harmony-share.md#onknockshare-1)、[on('dataReceive')](../harmonyos-references/share-harmony-share.md#ondatareceive)监听接口；
+   * 电脑端仍需传入[BaseCapabilityRegistry](../harmonyos-references/share-harmony-share.md#basecapabilityregistry)及[RecvCapabilityRegistry](../harmonyos-references/share-harmony-share.md#recvcapabilityregistry)配置，接口调用规则与普通碰一碰保持一致。
 
-     ```typescript
+     ```screen
      public immersiveListeningPC() {
        if (canIUse('SystemCapability.Collaboration.HarmonyShare')) {
          window.getLastWindow(this.context).then((data) => {
@@ -272,7 +343,7 @@ public dataReceiveListeningPC() {
      }
      ```
 
-     ```typescript
+     ```screen
      window.getLastWindow(this.context).then(((data) => {
        let mainWindowID: number = data.getWindowProperties().id;
        harmonyShare.on('dataReceive', { windowId: mainWindowID, capabilities: [
@@ -293,9 +364,9 @@ public dataReceiveListeningPC() {
      });
      ```
 3. 业务逻辑分支处理
-   * 接收端：在onDataReceived回调中，使用[ReceivableTarget.getInfo()](../harmonyos-references/share-harmony-share.md#getinfo-1)接口获取触碰点位置，根据触发点位置执行指定位置插入或列表末尾追加逻辑；
+   * 接收端：在onDataReceived回调中，使用[getInfo](../harmonyos-references/share-harmony-share.md#getinfo-1)接口获取触碰点位置，根据触发点位置执行指定位置插入或列表末尾追加逻辑；
 
-     ```typescript
+     ```screen
      let knockX: number = 0;
      let knockY: number = 0;
      let hitIndex: number = -1;
@@ -309,9 +380,9 @@ public dataReceiveListeningPC() {
        }
      }
      ```
-   * 发送端：未手动选择文件时，使用[SharableTarget.getInfo()](../harmonyos-references/share-harmony-share.md#getinfo)接口获取触碰点位置，通过触发点位置匹配图片，无匹配图片则直接终止分享流程。
+   * 发送端：未手动选择文件时，使用[getInfo](../harmonyos-references/share-harmony-share.md#getinfo)接口获取触碰点位置，通过触发点位置匹配图片，无匹配图片则直接终止分享流程。
 
-     ```typescript
+     ```screen
      private immersiveCallbackPcFileList(target: harmonyShare.SharableTarget) {
        let fileShare = AppStorage.get(AppConstants.FILE_SHARE) as number[];
        let videoDataList = AppStorage.get(AppConstants.VIDEO_DATA_LIST) as FileData[];

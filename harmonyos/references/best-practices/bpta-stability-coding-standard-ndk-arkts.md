@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: NDK开发ArkTS侧编码规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 > NDK开发ArkTS侧编码规范
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
-doc_updated_at: 2026-05-22
+scraped_at: 2026-09-16T06:55:15+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:b8f71e94001fa4c3dad288bcc6640fb4a6a43134e0b8f6b3ef69989c9e939be7
 ---
 

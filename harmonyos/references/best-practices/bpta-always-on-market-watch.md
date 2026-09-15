@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-always-on-
 title: 全链路盯盘开发实践
 breadcrumb: 最佳实践 > 场景创新 > 全链路盯盘开发实践
 category: best-practices
-scraped_at: 2026-09-10T06:30:00+08:00
-doc_updated_at: 2026-09-08
-content_hash: sha256:f2429ad2b69e4d7db783d050b93b25e0e56d60da128dcc64716717e74d271e77
+scraped_at: 2026-09-16T06:54:55+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:ac68694f5a957307c19d92841f32b3671873f150ebd57cac6668fdd29b3ac8c8
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ content_hash: sha256:f2429ad2b69e4d7db783d050b93b25e0e56d60da128dcc64716717e74d2
 
 全链路盯盘涉及多项系统能力的综合运用，各能力之间的协作关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/IxqznAXwR7aOCAh9Q7mCTw/zh-cn_image_0000002748611785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/_f-aezTjRvea82hU_iZJLg/zh-cn_image_0000002748611785.png "点击放大")
 
 本文主要内容如下：
 
@@ -49,7 +49,7 @@ content_hash: sha256:f2429ad2b69e4d7db783d050b93b25e0e56d60da128dcc64716717e74d2
 
 **闪控球**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ytwx309BST2FN8dTbUYSbg/zh-cn_image_0000002718931886.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ptLcL13GQtOnejXGxgSWcg/zh-cn_image_0000002718931886.png "点击放大")
 
 |  |  |  |
 | --- | --- | --- |
@@ -79,7 +79,7 @@ content_hash: sha256:f2429ad2b69e4d7db783d050b93b25e0e56d60da128dcc64716717e74d2
 
 桌面盯盘的初始化流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Kn6KvyjITcmbaZiLprL63A/zh-cn_image_0000002748611789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/t0SRfih-SJC8hwXW94Xh4g/zh-cn_image_0000002748611789.png "点击放大")
 
 ### 开发步骤
 
@@ -350,7 +350,7 @@ async startFloatPanel() {
 
 **防窥保护**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/nkSgOTa-TXmm1S_7yFRCUA/zh-cn_image_0000002718931890.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/9GDE2bKTTEmxMhOqVESyWA/zh-cn_image_0000002718931890.png "点击放大")
 
 ### 实现原理
 
@@ -368,13 +368,13 @@ async startFloatPanel() {
 
 防窥保护的监听流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/b_3cCwFnT2aXqYVcBL2gSA/zh-cn_image_0000002719091808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/CqL0bAa6R0CVATI4vw-KYg/zh-cn_image_0000002719091808.png "点击放大")
 
 ### 开发步骤
 
 1. 封装防窥保护工具类：将防窥保护的核心操作封装为独立工具方法，包括canUseAntiPeep()检测当前设备是否支持防窥保护能力、isAntiPeepOn()查询防窥保护开关是否开启、getAntiPeepInfo()获取当前窥视状态的枚举。
 
-```typescript
+```screen
 /**
  * can use screen privacy capability
  * */
@@ -413,7 +413,7 @@ export function getAntiPeepInfo(): dlpAntiPeep.DlpAntiPeepStatus {
 
 2. 注册防窥保护状态监听：调用dlpAntiPeep.on()注册状态回调，根据返回的DlpAntiPeepStatus枚举值更新窥视状态，枚举值为0表示无人窥视，为1则表示有除机主以外的人在窥视。
 
-```typescript
+```screen
 /**
  * listen on screen privacy
  * */
@@ -439,7 +439,7 @@ export function listenOnAntiPeepStatus(antiPeepCB: AntiPeepCallback): boolean {
 
 3. 在应用页面中初始化防窥保护：在onPageShow()生命周期中依次检查设备支持、开关状态和当前窥视状态，完成初始化后注册监听。
 
-```typescript
+```screen
 private initAntiPeepStatus() {
   if (canUseAntiPeep()) { //Check if the device canUseAntiPeep
     isAntiPeepOn().then((opened) => {
@@ -476,7 +476,7 @@ private initAntiPeepStatus() {
 
 4. 处理窥视状态变化：根据回调返回的DlpAntiPeepStatus值执行对应策略。当状态为HIDE时，若距上次触发已超过冷却时间，则调用setAntiPeepMaskLayer()拉起系统蒙层进行隐私保护。
 
-```typescript
+```screen
 private async handleAntiPeepStatus(status: dlpAntiPeep.DlpAntiPeepStatus) {
   Logger.info(`[handleAntiPeepStatus] ${status}`);
   switch (status) {
@@ -508,7 +508,7 @@ private async handleAntiPeepStatus(status: dlpAntiPeep.DlpAntiPeepStatus) {
 
 **锁屏卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/KHAfCUvJQQurSe5Em_sbmg/zh-cn_image_0000002748531717.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/wTe23pbmSx2sLgkUUnvoiw/zh-cn_image_0000002748531717.png "点击放大")
 
 ### 实现原理
 
@@ -547,7 +547,7 @@ private async handleAntiPeepStatus(status: dlpAntiPeep.DlpAntiPeepStatus) {
 
 3. 实现锁屏卡片UI：使用LocalStorageProp接收盯盘股票数据，通过ForEach遍历展示股票信息，包括名称、涨跌幅。
 
-```typescript
+```screen
 let storageUpdateByMsg = new LocalStorage();
 
 @Entry(storageUpdateByMsg)
@@ -623,7 +623,7 @@ struct LockScreenCard {
 
 当设备插入充电器或开启“不充电可显示”开关，设备横屏锁屏并与桌面夹角45°至90°稳定摆放（折叠机需切换为外屏；同时折叠机支持帐篷模式显示），即可进入待机屏保界面。用户可在待机屏保编辑界面添加全链路盯盘卡片，在充电待机状态下持续查看股票行情。待机屏保盯盘功能效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/7C88Erq2RDiuqmd5XeM5vg/zh-cn_image_0000002748611791.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/szPj3hexR9qOr5kUXmdGRQ/zh-cn_image_0000002748611791.png "点击放大")
 
 ### 实现原理
 
@@ -664,7 +664,7 @@ struct LockScreenCard {
 
 3. 实现待机屏保卡片UI：通过LocalStorageProp接收盯盘股票数据，展示股票名称和涨跌幅信息。
 
-```typescript
+```screen
 let storageUpdateByMsg = new LocalStorage();
 
 @Entry(storageUpdateByMsg)

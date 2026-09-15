@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-com
 title: ArkWeb组件安全开发
 breadcrumb: 最佳实践 > 应用安全 > ArkWeb组件安全开发
 category: best-practices
-scraped_at: 2026-09-10T06:30:10+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-16T06:55:07+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:1e112d918bc0738a4358402cc3376fea629ff30441f61d69bb7077b7a894b23a
 ---
 

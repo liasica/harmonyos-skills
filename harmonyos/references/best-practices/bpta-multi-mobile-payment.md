@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-mobi
 title: 多设备移动支付界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备移动支付界面
 category: best-practices
-scraped_at: 2026-09-10T06:30:07+08:00
-doc_updated_at: 2026-08-10
-content_hash: sha256:365a76808e49bf5b378b462b96ae66b42f08a44583d54162d25c384fb742342d
+scraped_at: 2026-09-16T06:55:02+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:ad3512b07eadd5977bd8868e962c8b34b559ef1917064bbac1bd2a22bec67bcc
 ---
 
 ## 概述
 
 本文从当前常见的多设备应用场景中，选择移动支付应用作为典型案例，详细介绍“一多”在实际开发中的应用。
 
-移动支付应用的核心是为用户提供便捷的金融支付服务，主要功能涵盖扫码支付、出示收付款二维码、投资理财等。本文围绕上述核心功能，选取推荐页、扫一扫页、收付款页作为典型页面进行开发实践。开发过程遵循多设备开发的“差异性”、“一致性”、“灵活性”和“兼容性”原则，助力开发者快速掌握 “一多” 开发能力，高效实现移动支付应用相关功能。
+移动支付应用的核心是为用户提供便捷的金融支付服务，主要功能涵盖扫码支付、出示收付款二维码、投资理财等。本文围绕上述核心功能，选取推荐页、扫一扫页、收付款页作为典型页面进行开发实践。开发过程遵循多设备开发的“差异性”、“一致性”、“灵活性”和“兼容性”原则，助力开发者快速掌握“一多”开发能力，高效实现移动支付应用相关功能。
 
 目前该应用已适配设备包括：直板机、双折叠（Mate X系列）、三折叠、阔折叠、平板、电脑和智能穿戴。
 
@@ -23,14 +23,14 @@ content_hash: sha256:365a76808e49bf5b378b462b96ae66b42f08a44583d54162d25c384fb74
 下文将从UX设计、工程管理、页面开发三个方面，系统介绍移动支付应用在实际开发中的最佳实践，为开发者提供可借鉴的实现思路。
 
 * [UX设计](bpta-multi-mobile-payment.md#section329281918912)：介绍移动支付应用的交互逻辑和通用设计要点，可供同类移动支付应用开发者直接参考复用。
-* [工程管理](bpta-multi-mobile-payment.md#section197441250917)：基于分层架构搭建 “一多” 应用代码工程，以清晰的目录结构明确各层逻辑，同时针对移动支付业务场景提供适配的工程配置方案。
+* [工程管理](bpta-multi-mobile-payment.md#section197441250917)：基于分层架构搭建“一多”应用代码工程，以清晰的目录结构明确各层逻辑，同时针对移动支付业务场景提供适配的工程配置方案。
 * [移动端页面](bpta-multi-mobile-payment.md#section189941330999)、[电脑端页面](bpta-multi-mobile-payment.md#section188167341083)和[智能穿戴端页面](bpta-multi-mobile-payment.md#section188882391398)：按照实际应用开发流程，以页面为基本单元，分别讲解移动端、电脑端、智能穿戴端页面在窗口适配、页面开发、功能开发等环节的设计思路与具体实现方法。
 
 ## UX设计
 
 移动支付应用的UX设计可参考[移动支付类](../design-guides/mobile-payment-0000001957421613.md)多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/AmOwgB3bSYO9uSViLkrLSQ/zh-cn_image_0000002583509660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/L1Y1Huw4QuedJrF-UqeSWA/zh-cn_image_0000002583509660.png "点击放大")
 
 ## 工程管理
 
@@ -117,7 +117,7 @@ content_hash: sha256:365a76808e49bf5b378b462b96ae66b42f08a44583d54162d25c384fb74
   适配设备支持全屏、分屏和悬浮窗模式，具体参见[窗口模式](bpta-multi-device-window-mode.md)。其中，分屏模式与悬浮窗通常无特殊设计，可通过系统方式进入。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏、分屏、悬浮窗模式下的布局。
 * 窗口方向
 
-  窗口显示方向通过在HAP包的module.json5文件中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下配置orientation属性为follow\_desktop实现，[跟随桌面的旋转模式](../harmonyos-guides/window-rotation.md#其他方向类型)。
+  窗口显示方向通过在HAP包的module.json5文件中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下配置orientation属性为[其他方向类型](../harmonyos-guides/window-rotation.md#其他方向类型)的FOLLOW\_DESKTOP来实现。
 
 * 窗口沉浸式
 
@@ -147,7 +147,7 @@ content_hash: sha256:365a76808e49bf5b378b462b96ae66b42f08a44583d54162d25c384fb74
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 底部页签 | 使用[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)组件实现，通过[HdsTabsFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#hdstabsfloatingstyle)属性设置页签栏的悬浮样式。 |
+| 1 | 底部页签 | 使用[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)组件实现，通过[HdsTabsFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#hdstabsfloatingstyle)属性设置页签栏的悬浮样式。 |
 | 2 | 城市及搜索框 | 通过[Blank](../harmonyos-references/ts-basic-components-blank.md)组件填充中间空白区域，实现[拉伸能力](../harmonyos-guides-V5/adaptive-layout-V5.md#拉伸能力)。 |
 | 3 | 金刚区 | 通过监听[断点](bpta-multi-device-responsive-layout.md#section1532120147301)变化改变快捷功能的形态，在横向断点为sm时呈现上下布局，大于sm时呈现左右布局。同时结合[占比能力](../harmonyos-guides-V5/adaptive-layout-V5.md#占比能力)，使其在左右布局时随着窗口的宽度变化而变化。 |
 | 4 | 功能入口合集 | 采用[重复布局](bpta-multi-device-page-layout.md#section381193213517)结合断点监听，在横向断点为sm，功能呈现为2行4列；横向断点为md时，呈现为2行6列；横向断点为lg或xl时，呈现为2行8列。 |
@@ -156,7 +156,7 @@ content_hash: sha256:365a76808e49bf5b378b462b96ae66b42f08a44583d54162d25c384fb74
 
 在实际开发中，区域1为外层页签，区域2-6为并列的推荐页内容，所以对应的开发顺序为区域1和区域2-6。
 
-在本示例中，点击扫一扫/收付款，在不同断点下呈现效果不同：在横向断点为sm时，拉起一个独立页面；横向断点大于sm时，拉起一个弹窗。此处采用[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)实现，sm断点时设置半模态样式[sheetType](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheettype11枚举说明)为CONTENT\_COVER，即全屏弹窗；大于sm断点时设置样式为CENTER，即居中弹窗。具体实现可查看[示例代码](bpta-multi-mobile-payment.md#section22034418521)。
+在本示例中，点击扫一扫/收付款，在不同断点下呈现效果不同：在横向断点为sm时，拉起一个独立页面；横向断点大于sm时，拉起一个弹窗。此处采用[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)实现，sm断点时设置半模态样式[sheetType（SheetType枚举说明）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheettype11枚举说明)为CONTENT\_COVER，即全屏弹窗；大于sm断点时设置样式为CENTER，即居中弹窗。具体实现可查看[示例代码](bpta-multi-mobile-payment.md#section22034418521)。
 
 ### 扫一扫页
 
@@ -231,7 +231,7 @@ content_hash: sha256:365a76808e49bf5b378b462b96ae66b42f08a44583d54162d25c384fb74
 
 电脑端推荐页与移动端推荐页内容基本一致，差异点在于，移动端使用底部页签进行内容视图切换，电脑端使用侧边栏进行切换。按照模块，将推荐页相关内容划分为2个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/VyTIicLLS0OChqqqczM1Ow/zh-cn_image_0000002614029343.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Uqw-2XbfRxi3Q4JCv8CymQ/zh-cn_image_0000002614029343.png "点击放大")
 
 **界面开发**
 
@@ -244,7 +244,7 @@ content_hash: sha256:365a76808e49bf5b378b462b96ae66b42f08a44583d54162d25c384fb74
 | 1 | 侧边栏 | 通过[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)组件，单独定义侧边栏内容。 |
 | 2 | 内容区 | 复用[移动端页面](bpta-multi-mobile-payment.md#section189941330999)内容。 |
 
-在实际开发中， 区域1为外层容器，所以对应的开发顺序为先区域1后区域2。
+在实际开发中，区域1为外层容器，所以对应的开发顺序为先区域1后区域2。
 
 ## 智能穿戴端页面
 

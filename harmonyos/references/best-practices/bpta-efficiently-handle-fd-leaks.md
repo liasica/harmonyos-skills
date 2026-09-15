@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-efficientl
 title: 运维态高效处理FD资源泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 资源泄漏类问题分析 > 运维态高效处理FD资源泄漏
 category: best-practices
-scraped_at: 2026-09-10T06:30:20+08:00
-doc_updated_at: 2026-08-10
-content_hash: sha256:b826759dcee187cdf8c478e792483107d2162033eabc72c60c309ac131f8895d
+scraped_at: 2026-09-16T06:55:15+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:a8232b786d45c2d9af5f77437870a0177d5c392e37e72068b44905765b1714f3
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 **整体流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Tei0s1NiSKaxMEesN5MEqA/zh-cn_image_0000002671650762.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/WRi1LJBXTHan0ZpV0jlwvA/zh-cn_image_0000002671650762.png "点击放大")
 
 **排查步骤**
 
@@ -36,7 +36,7 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 如下图所示，页面入口：故障分析->资源泄漏->资源泄漏信息详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/hwmVVDPNRnCQ7qL1nQ1lzg/zh-cn_image_0000002701370585.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/7QGB5hDpQZafAj6wMF1jig/zh-cn_image_0000002701370585.png "点击放大")
 
 **关键指标说明**
 
@@ -51,7 +51,7 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 通过点击查看按钮，进入到故障详情页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/0dETly0bRFm8gic46aftgg/zh-cn_image_0000002701250493.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/-ZsEMtb6RyyzhNBmQgNwlw/zh-cn_image_0000002701250493.png "点击放大")
 
 故障详情页面可以通过证据链、现场数据、句柄栈信息进一步深入分析泄漏的原因。
 
@@ -59,19 +59,19 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 证据链列表根据泄漏数量的大小排序，优先查看泄漏数量最大的句柄名称。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/VLfHABMLTouUlniUdjun0g/zh-cn_image_0000002671490912.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/63kJ_qd_Smiy0zwLN3bkCQ/zh-cn_image_0000002671490912.png "点击放大")
 
 **现场数据**
 
 现场数据展示了当前FD泄漏的Top10的句柄名称，可结合代码、日志分析对应的FD泄漏对象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/AzQ6xOP4QnqFHdp0byjicw/zh-cn_image_0000002671650764.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/mBv-Ct6kTRKkI0EDKby5Hw/zh-cn_image_0000002671650764.png "点击放大")
 
 **句柄栈信息**
 
 句柄栈信息中可查看对应的堆栈信息，以及疑似泄漏点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/UrHrLQD9RSeXfa3ULNnHmQ/zh-cn_image_0000002701370587.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/oS2NfMWWQNGDgs-oXPRv6Q/zh-cn_image_0000002701370587.png "点击放大")
 
 ## APMS平台FD泄漏分析案例
 
@@ -83,11 +83,11 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 在故障预警平台的告警规则页面新建FD泄漏告警。根据实际的业务情况，选择合适监控时段、监控频率、告警触发条件以及其他告警指标，其中FD泄漏对应的指标类型为FD\_LEAK。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wikB5YP9Te2_cokQOroUaA/zh-cn_image_0000002701250495.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/PDzRKvNSS2GvLS90R2hzJQ/zh-cn_image_0000002701250495.png "点击放大")
 
 创建告警之后，后台会开始收集数据。当达到设置的告警阈值后，会触发故障预警。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Un4adDMUQkqvBLwVKCr41w/zh-cn_image_0000002671490914.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/PtmAAZVjRGStY0uNYN-vSQ/zh-cn_image_0000002671490914.png "点击放大")
 
 ### 问题查看与聚类
 
@@ -101,7 +101,7 @@ FD资源泄漏聚类规则请参考[句柄泄漏聚类规则](../harmonyos-guide
 
 通过故障告警的指引，在故障分析页面筛选出FD\_LEAK的泄漏类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/QMTK6u9iT-2Wjg6FO8Fb6w/zh-cn_image_0000002671650774.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/R882NK4sTKObQ76rXZeucQ/zh-cn_image_0000002671650774.png "点击放大")
 
 点击查看按钮，即可跳转到Top问题查看页签下的FD资源泄漏问题列表。
 
@@ -109,41 +109,41 @@ FD资源泄漏聚类规则请参考[句柄泄漏聚类规则](../harmonyos-guide
 
 在左侧页面APMS菜单下的故障分析菜单中，在资源泄漏页签下选择泄漏类型为FD\_LEAK，点击查询按钮，过滤出此应用的FD资源泄漏问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/_7iR5e_VQtye2rn4jyPs4g/zh-cn_image_0000002701370625.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/mxBUULL5QM-zKlxM_0fTYw/zh-cn_image_0000002701370625.png "点击放大")
 
 在资源泄漏信息详情中，可查看当前应用的FD资源泄漏情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/aQeXkWB9Ry-wTZqd6WBQag/zh-cn_image_0000002701250559.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/YdxPljiZSCmZPwoRrBqxyw/zh-cn_image_0000002701250559.png "点击放大")
 
 ### 根因定位与分析
 
 过滤出FD资源泄漏故障列表后，点击查看按钮，进入到问题个例分析详情页，可查看当前故障的分析报告，包含故障发生时间、泄漏句柄、故障模块、版本信息以及修复建议等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/KZDc2WIyRQezk2eMvA8bIg/zh-cn_image_0000002671490976.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/l97m0K7HQ5y26HYHJ6Dzkw/zh-cn_image_0000002671490976.png "点击放大")
 
 **证据链分析**
 
 证据链列表中按照泄漏数量倒序排序，将FD泄漏的句柄名称展示出来，开发者可根据泄漏数量较大的句柄名称，结合代码分析FD泄漏根因。同时提供了日志下载功能，便于进一步分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/5f6SaQnORUu10pZkbILY7A/zh-cn_image_0000002671650846.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/AEeDvErQRmmYn1W-NKGgHg/zh-cn_image_0000002671650846.png "点击放大")
 
 **现场数据分析**
 
 现场数据页中，将展示Top10的泄漏句柄名称，开发者根据泄漏数量较大的句柄名称，并结合代码分析FD泄漏根因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/EN2DP6eaRuSmuJ5-TMn42g/zh-cn_image_0000002701370681.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/2yMperucSRCnyrkzx9EIKA/zh-cn_image_0000002701370681.png "点击放大")
 
 **句柄栈信息****分析**
 
 句柄栈信息是发生FD泄漏故障并达到一定条件后，系统从堆栈中抓取的堆栈信息，存在一定的滞后性。开发者可参考堆栈中的疑似泄漏点，进行堆栈还原后，结合代码分析具体的FD泄漏根因，并进行修复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/KKjegiK2RfWZ_Dvv6Evk0w/zh-cn_image_0000002701250593.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/AwbahJ7ESNGrnwcD0qBMdw/zh-cn_image_0000002701250593.png "点击放大")
 
 **下钻分析**
 
 下钻分析的核心逻辑是从一个汇总的指标或表象问题出发，将其拆分成多个组成部分，然后挑出最关键的线索继续向下拆分，不断重复这个过程，直到定位到具体的根因。平台会根据故障特征ID进行聚类并筛选Top应用版本，系统版本以及设备型号。开发者可根据此重点关注问题高发的版本及设备，更精确的定位问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Uawwz-OrS8CXDNyvnGLmMA/zh-cn_image_0000002671491006.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/neDLGBn6Sj2Uobn_xsYpJw/zh-cn_image_0000002671491006.png "点击放大")
 
 ### 修复建议验证与闭环
 
@@ -153,7 +153,7 @@ FD资源泄漏聚类规则请参考[句柄泄漏聚类规则](../harmonyos-guide
 
 一般来说，开发者需要根据引用链尝试定位并断开应用侧的引用链路，释放对应的可疑泄漏对象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/uzPboar2Temf40Y-QJIpmw/zh-cn_image_0000002671650858.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ByhZjBPzSMOzw7m59ZTUBg/zh-cn_image_0000002671650858.png "点击放大")
 
 **问题修复与闭环**
 
@@ -177,7 +177,7 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件，通过�
 
 打开DevEco Studio后，在Tool Windows栏的Operation Analyzer进入平台，点击后根据包名选择应用，再点击资源泄漏（Resource Leak）即可查看该类故障相关数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/uJNFOmZ0QTOlbsOod5AzZA/zh-cn_image_0000002701370683.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/bqEeyAX9QhKvP_0XkIi5eA/zh-cn_image_0000002701370683.png "点击放大")
 
 ### 问题分析
 
@@ -185,16 +185,16 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件，通过�
 
 证据链列表中按照泄漏数量排序，将FD泄漏的句柄名称展示出来，开发者可根据泄漏数量较大的句柄名称，结合代码分析FD泄漏根因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/NsEzCZxwTN68RIR7Qyfc_A/zh-cn_image_0000002701250595.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/vv8M3DEuSOek4W9ZzxXy8w/zh-cn_image_0000002701250595.png "点击放大")
 
 **现场数据****分析**
 
 现场数据页面将展示Top10的泄漏句柄名称，开发者根据泄漏数量较大的句柄名称，并结合代码分析FD泄漏根因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/cNZwa3SmRUepoTD6bhcqGg/zh-cn_image_0000002671491008.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/LTNkwsxoSoGOkJySI2BHbA/zh-cn_image_0000002671491008.png "点击放大")
 
 **句柄栈****信息****分析**
 
 句柄栈信息中将抓取的堆栈信息中疑似泄漏点进行展示，开发者进行堆栈还原后，结合代码分析具体的FD泄漏根因，并进行修复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/9hUB16yKSUGQSfiy6ht9EQ/zh-cn_image_0000002671650860.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/bLp7Wv_VTxKSoTQOY1CsfA/zh-cn_image_0000002671650860.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-jsvm-oom-f
 title: JSVM OOM故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > JSVM OOM故障模式说明
 category: best-practices
-scraped_at: 2026-09-02T14:53:47+08:00
-doc_updated_at: 2026-08-17
+scraped_at: 2026-09-16T06:55:14+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:b78e901b15f17c8f5131ce6217aeb7ae05e2adcd582c45624114eeeb73226632
 ---
 

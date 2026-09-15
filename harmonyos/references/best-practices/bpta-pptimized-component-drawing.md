@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pptimized-
 title: 组件绘制优化
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 组件绘制优化
 category: best-practices
-scraped_at: 2026-09-10T06:30:12+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:189b2fd2d0a3720309ac67b215dcc46b0bfd0239fd69eadfaa8c99867dccd1ff
+scraped_at: 2026-09-16T06:55:07+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:4bab443de3ee43d755ccad8660c85a6305dba0f96079a37cf310941bd491d37f
 ---
 
 应用启动性能与FrameNode树的节点数量及属性相关，建议采取以下UI组件优化方案：
@@ -14,7 +14,7 @@ content_hash: sha256:189b2fd2d0a3720309ac67b215dcc46b0bfd0239fd69eadfaa8c99867dc
 
 **图1** 自定义组件生命周期流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/VYmi544TTzyIikZDwgFTIA/zh-cn_image_0000002375296885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/63DypoX8SsuEajeMLpS6Dw/zh-cn_image_0000002375296885.png "点击放大")
 
 自定义组件生命周期如上图所示。创建完成后，在执行build函数前，将先调用aboutToAppear()生命周期回调函数。此时若执行耗时操作，将阻塞UI渲染，增加UI主线程负担。因此，应避免在自定义组件的生命周期内执行高耗时操作。具体原理可参考[自定义组件生命周期](../harmonyos-guides/arkts-page-custom-components-lifecycle.md)。具体优化案例请参阅[避免在自定义组件的生命周期内执行高耗时操作](bpta-ui-component-performance-optimization.md#section18755173594714)。
 

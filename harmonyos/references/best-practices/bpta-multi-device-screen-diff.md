@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备适配屏幕差异
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发 > 多设备适配屏幕差异
 category: best-practices
-scraped_at: 2026-09-10T06:30:08+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:64363c8fcbf9223bb8f7031b5bb9a8839bf6c795adacc796ad642f81e83d413b
+scraped_at: 2026-09-16T06:55:02+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:1eebacb7fdc2349e8ea2d731cfa8745b0645e92e1adc9dafcbe7f1a114cb06e1
 ---
 
 ## 概述
@@ -23,9 +23,9 @@ content_hash: sha256:64363c8fcbf9223bb8f7031b5bb9a8839bf6c795adacc796ad642f81e83
 
 ### 页面适配不同尺寸屏幕
 
-页面适配不同尺寸屏幕的本质，是适配不同尺寸的窗口——无论是手机、折叠屏、平板还是电脑，其屏幕差异最终都体现为应用显示窗口宽高、比例的差异。因此，适配的核心应基于窗口属性抽象出响应式能力，通过“[断点](bpta-multi-device-responsive-layout.md#section1532120147301)适配”实现界面随窗口尺寸动态调整，确保在任意窗口规格下均能稳定显示，详情可参考[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)。通过一次性基于断点的布局适配，即可支持分屏、悬浮窗、自由窗口等多种窗口模式，确保界面在不同形态间平滑、连续地响应变化。效果图如下：
+页面适配不同尺寸屏幕的本质，是适配不同尺寸的窗口——无论是手机、折叠屏、平板还是电脑，其屏幕差异最终都体现为应用显示窗口宽高、比例的差异。因此，适配的核心应基于窗口属性抽象出响应式能力，通过“[断点](bpta-multi-device-responsive-layout.md#section1532120147301)适配”实现界面随窗口尺寸动态调整，实现页面的同步刷新，详情可参考[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)。通过一次性基于断点的布局适配，即可支持分屏、悬浮窗、自由窗口等多种窗口模式，确保界面在不同形态间平滑、连续地响应变化。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/urSbdnHCST2-cF_wWYCxnQ/zh-cn_image_0000002506596732.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/BlG6AZFnQom3ZH8ZLcB9Jg/zh-cn_image_0000002506596732.gif "点击放大")
 
 开发多设备界面时，不同屏幕类型常用的响应式布局可参考[屏幕类型布局场景](bpta-multi-device-screen-layout.md)，包含[直板机竖屏](bpta-multi-device-screen-layout.md#section1919517165814)、[大屏横屏](bpta-multi-device-screen-layout.md#section6493354468)等常见窗口形态和[小方形屏](bpta-multi-device-screen-layout.md#section1395830175918)等特殊窗口形态的适配。
 
@@ -33,7 +33,7 @@ content_hash: sha256:64363c8fcbf9223bb8f7031b5bb9a8839bf6c795adacc796ad642f81e83
 
 视频适配不同尺寸屏幕，旨在确保各类宽高比的视频在多种设备屏幕上均能呈现良好效果，避免拉伸变形或关键内容被过度裁切。为提升视频观看体验，可通过全屏展示、弱化界面干扰，使用户更加专注于视频内容。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/xE2LVdsqSE-q2hQHs-jyuw/zh-cn_image_0000002506436906.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/LtIBpJuwQQO7hfma5J376A/zh-cn_image_0000002506436906.gif "点击放大")
 
 为了实现这一效果，需考虑不同尺寸视频在不同尺寸窗口上的适配规则。从视频的宽高比出发，可分为9:16和非9:16两种类型。
 
@@ -45,17 +45,17 @@ content_hash: sha256:64363c8fcbf9223bb8f7031b5bb9a8839bf6c795adacc796ad642f81e83
 
 宽高比非9:16的视频包括竖向视频（高>宽）或横向视频（宽>高），红色区域为推荐的视频显示区域，适配建议如下图所示，其中横向坐标为窗口宽高比。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/MiCz-OrBToKE3y3dptPnbg/zh-cn_image_0000002538396643.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/kC-Spq5fRT2eQkjewQiVGA/zh-cn_image_0000002538396643.png "点击放大")
 
 **适配宽高比为9:16的视频**
 
 当视频宽高比为9:16时，其在断点区间的适配效果图如下图所示，红色区域为推荐的视频显示区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/C9BxwyqzTM2spdTXHpy9_Q/zh-cn_image_0000002538316627.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Vp-gFz0BQqaYPB-KfPxYlQ/zh-cn_image_0000002538316627.png "点击放大")
 
 当横向断点为sm、纵向断点为lg时，由于设备尺寸的差异，存在不同的适配建议。具体如下图所示，其中横坐标为窗口宽高比。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/W__P2LZSSrOQyJFbUjUa4w/zh-cn_image_0000002506596740.png "点击放大")对于不满足横向断点为sm、纵向断点为lg的其他窗口尺寸，建议顶部状态栏和底部Tab栏均采用沉浸式设计，内容区高度=窗口高度，内容区宽度=内容区高度×视频宽高比。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/qGZlPDKSRuCYVXf87-TNHA/zh-cn_image_0000002506596740.png "点击放大")对于不满足横向断点为sm、纵向断点为lg的其他窗口尺寸，建议顶部状态栏和底部Tab栏均采用沉浸式设计，内容区高度=窗口高度，内容区宽度=内容区高度×视频宽高比。
 
 **获取窗口信息**
 
@@ -82,8 +82,8 @@ display提供了折叠状态监听的接口，这些接口建议使用在某些�
 
 * **不推荐使用折叠状态监听接口实现页面布局的响应式布局和接续，避免在窗口变化但折叠状态未改变的场景下布局未能及时调整，出现页面异常。**
 * 在双折叠开合过程中，各种监听回调的触发时序如下。
-  + 展开态->折叠态：foldStatusChange(悬停态) -> foldStatusChange(折叠态) -> foldDisplayModeChange -> windowSizeChange
-  + 折叠态->展开态：foldStatusChange(悬停态) -> foldDisplayModeChange -> windowSizeChange -> foldStatusChange(展开态)
+  + 展开态 -> 折叠态：foldStatusChange（悬停态） -> foldStatusChange（折叠态） -> foldDisplayModeChange -> windowSizeChange
+  + 折叠态 -> 展开态：foldStatusChange（悬停态） -> foldDisplayModeChange -> windowSizeChange -> foldStatusChange（展开态）
 
 常见的接口汇总如下。
 
@@ -117,9 +117,9 @@ private onWindowSizeChange: (windowSize: window.Size) => void = (windowSize: win
 
 **可滑动组件的阅读焦点不偏移**
 
-对于双折叠开合连续使用场景，应用在完成折叠状态切换操作后，需确保[List](../harmonyos-references/ts-container-list.md)组件、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)组件以及 [Scroll](../harmonyos-references/ts-container-scroll.md)组件等可滑动组件的阅读焦点不发生偏移。目前，这些组件依据折叠状态改变前的滑动偏移量来维持阅读焦点位置，然而，由于折叠状态切换前后，组件内部高度可能发生变化，即便滑动相同的偏移量，也难以达成阅读焦点不偏移的目标。因此，有必要针对上述可滑动组件采取特殊处理措施。
+对于双折叠开合连续使用场景，应用在完成折叠状态切换操作后，需确保[List](../harmonyos-references/ts-container-list.md)组件、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)组件以及[Scroll](../harmonyos-references/ts-container-scroll.md)组件等可滑动组件的阅读焦点不发生偏移。目前，这些组件依据折叠状态改变前的滑动偏移量来维持阅读焦点位置，然而，由于折叠状态切换前后，组件内部高度可能发生变化，即便滑动相同的偏移量，也难以达成阅读焦点不偏移的目标。因此，有必要针对上述可滑动组件采取特殊处理措施。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/xZkoCShmRH2-jhSF2XLLqA/zh-cn_image_0000002585654510.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/IILWo-5URVCh7oeg4KpOTg/zh-cn_image_0000002585654510.png "点击放大")
 
 * List组件
 
@@ -194,4 +194,4 @@ private onWindowSizeChange: (windowSize: window.Size) => void = (windowSize: win
 
 折叠屏在悬停态下可平稳放置于桌面，实现免手持体验，适用于视频通话、播放视频、拍照及听歌等无需频繁交互的场景。设计规范可参照[悬停态](../design-guides/foldable-0000002352875141.md#section183378919119)。设备在悬停态时，应用需避开中间折痕区域，并对上下两个界面进行悬停适配，重新布局。悬停状态的实现方案可参考[折叠屏悬停态](bpta-folded-hover.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/FaKXotEHTuKLix9SlKrozw/zh-cn_image_0000002506436912.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Jda_Nv_TSYqWVDWrwkaVCg/zh-cn_image_0000002506436912.png "点击放大")

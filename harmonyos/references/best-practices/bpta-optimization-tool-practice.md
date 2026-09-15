@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-optimizati
 title: 性能分析
 breadcrumb: 最佳实践 > 性能 > 性能分析
 category: best-practices
-scraped_at: 2026-09-02T14:53:44+08:00
-doc_updated_at: 2026-05-09
+scraped_at: 2026-09-16T06:55:06+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:bf6a0b36510c91a2330537e8cd3f9a30202bb67472546afffcafd6d7f2fac03e
 ---
 

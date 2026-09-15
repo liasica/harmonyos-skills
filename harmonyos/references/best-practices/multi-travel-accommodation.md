@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-travel-ac
 title: 多设备旅行订票界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备旅行订票界面
 category: best-practices
-scraped_at: 2026-09-02T15:03:18+08:00
-doc_updated_at: 2026-05-18
+scraped_at: 2026-09-16T06:55:01+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:fee94898bba044e5794c1ab170115f7ef13026cd682de6179a08f4550cc151e1
 ---
 

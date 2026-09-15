@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-sh
 title: 基于SoundPool播放短音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于SoundPool播放短音频
 category: best-practices
-scraped_at: 2026-09-10T06:30:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1e7d8af0e7b1d1f358e7056cdab9b706d43fdaddb9f74878e87406bd9d34e150
+scraped_at: 2026-09-16T06:54:58+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:f841ec4736790cd298f89b412ac866e6de26e56b357ee04efdeff99669a03064
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ SoundPool提供短音频的播放能力，当需要播放一些急促简短的�
 
 本文是音频播放系列文章的第5篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/zPiS9TS3SxmeA1La5eHLhQ/zh-cn_image_0000002555337527.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/0nOiiL3iReWrF-kK04tgMQ/zh-cn_image_0000002555337527.png "点击放大")
 
 ## 规格与限制
 
@@ -134,7 +134,7 @@ async playSoundPool() {
 }
 ```
 
-7. 开发者可以通过配置播放参数PlayParameters实现不同的播放效果，也可以通过单独调用[setLoop](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setloop)、[setPriority](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setpriority)、[setVolume](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setvolume)、[setRate](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setrate-1)等函数来实现不同的播放效果。下面以设置短音频的循环模式为例，其他设置方法的调用方式相同。
+7. 开发者可以通过配置播放参数PlayParameters实现不同的播放效果，也可以通过单独调用[setLoop](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setloop)、[setPriority](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setpriority)、[setVolume](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setvolume)、[setRate](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setrate-1)等函数来实现不同的播放效果。下面以设置短音频的循环模式、播放速率为例，其他设置方法的调用方式相同。
 
 ```typescript
 if (!this.soundPool) {
@@ -143,6 +143,15 @@ if (!this.soundPool) {
 }
 // ...
 await this.soundPool.setLoop(this.streamId, 2);
+```
+
+```screen
+if (!this.soundPool) {
+  hilog.error(0x0000, 'SoundPool', `soundPool is undefined`);
+  return;
+}
+await this.playSoundPool();
+await this.soundPool.setRate(this.streamId, audio.AudioRendererRate.RENDER_RATE_DOUBLE)
 ```
 
 8. 停止播放，取消监听，释放SoundPool实例。

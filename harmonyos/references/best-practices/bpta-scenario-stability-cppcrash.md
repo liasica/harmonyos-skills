@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: CppCrash类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用异常退出类问题案例 > CppCrash类问题案例
 category: best-practices
-scraped_at: 2026-09-10T06:30:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3588d1886655c821a1a7eabb507b944d1a65fb39ef5c58c496df5983b48ea835
+scraped_at: 2026-09-16T06:55:17+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:134c58bdb77513d648bbb1c2f723376f9939b2deac00e1b10af668f01d88f810
 ---
 
 本文以列举常见案例方式介绍如何分析并修复CppCrash问题。阅读本文之前，建议开发者先阅读[应用崩溃问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测CppCrash问题的原理和机制，然后阅读[CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md)了解分析CppCrash问题的一般步骤。
@@ -35,7 +35,7 @@ Timestamp:1970-12-07 10:27:48.228
 Pid:26984
 Uid:20010045
 Process name:xxx
-Reason:Signal:SIGSEGV(SEGV_MAPERR)@0000000000000004  probably caused by NULL pointer dereference 额
+Reason:Signal:SIGSEGV(SEGV_MAPERR)@0000000000000004  probably caused by NULL pointer dereference
 Fault thread Info:
 Tid:27270, Name:xxx
 #00 pc 0000000000022770 /system/lib64/libapp context.z.so(OHOS::AbilityRuntime::ApplicationContext::DispatchWindowStageFocus (std::__l::shared ptr<NativeReference> consts, std::__l::shared_ptr<NativeReference> consts)+152)
@@ -70,7 +70,7 @@ napi\_env释放后仍被使用。
 
 核心崩溃栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/N_9PvYuyQ_u8RMS_wc6XjQ/zh-cn_image_0000002404125269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/1pSiaAufQiW3oe3EUm-mEA/zh-cn_image_0000002404125269.png)
 
 ### 分析步骤
 
@@ -114,7 +114,7 @@ ipc在线程2中使用先前保存的env,出现崩溃
 
 崩溃调用栈如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/_mg7qJa3RiqtTjoJOAQ_yQ/zh-cn_image_0000002370405724.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/q5IJg52NT4SdIIQCqoQ0Eg/zh-cn_image_0000002370405724.png)
 
 ### 分析步骤
 
@@ -173,15 +173,15 @@ previously allocated by thread T0 (thread name) here: <- 内存申请的现场
 
 根据调用栈继续分析，JsiWeak析构或重置的时候会触发其成员（类型为JsiObject/JsiValue/JsiFunction）父类JsiType中CopyableGlobal被释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/KM1DhtKcQPuANlrhFXPp9w/zh-cn_image_0000002404045461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/eVa0rV-7RJWtgGdGgUPwDA/zh-cn_image_0000002404045461.png)
 
 运行时在GC过程中IterateWeakEcmaGlobalStorage，会对无callback的WeakNode调用DisposeGlobalHandle操作，也对其进行释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/g5sE9slOQn-xKaR8I562ig/zh-cn_image_0000002370565636.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/sUL1nN_5S6KZ6kwsVu4Ryw/zh-cn_image_0000002370565636.png)
 
 对于同一个WeakNode，可能会存在两个入口释放。如果是GC过程中IterateWeakEcmaGlobalStorage先释放，因为无callback回调通知到JsiWeak进行清理，JsiWeak那边仍保存一个对已释放的WeakNode引用，即CopyableGlobal；当前面讲的WeakNode所在的NodeList被整体释放，JsiWeak处保留的CopyableGlobal再释放，就会存在重复释放内存问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/lmifwhMeS3SQmglc6jRuXw/zh-cn_image_0000002404125273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/JZoZ-1mIR8qTcD_IDKNcxg/zh-cn_image_0000002404125273.png)
 
 ### 修复方法
 
@@ -264,7 +264,7 @@ static napi_value TriggerCrash(napi_env env, napi_callback_info info)
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/A9C0g5ufSHGlaaaSAJF9Vg/zh-cn_image_0000002370405728.png)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Gre7AAsNS12J_H4M70Id0w/zh-cn_image_0000002370405728.png)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
 
 除了调用abort函数外，C++中的另一个异常处理机制还包括assert函数，assert用于校验当前函数执行流程中的一些数据，校验失败进程会主动终止，分析问题的方法都是一样的。
 
@@ -281,7 +281,7 @@ static napi_value TriggerCrash(napi_env env, napi_callback_info info)
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/_PT7j7IBQ8-uFJ_gqlqObQ/zh-cn_image_0000002404045465.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/yoGU9pDeSEGlNj8aCcOybA/zh-cn_image_0000002404045465.png)
 
 ## 案例6：通过反汇编分析CppCrash问题
 
@@ -427,16 +427,16 @@ Timestamp:2025-06-12 14:19:29.750
 Pid:540
 Uid:0
 Process name:./fpacl0
-Process life time:ls
-ReaSon:Signal:SIGILL(ILL_ILLPACCFI) @0x0000005615e449a8 <- Reason字段是ILL_ILLPACCFI
+Process life time:1s
+Reason:Signal:SIGILL(ILL_ILLPACCFI) @0x0000005615e449a8 <- Reason字段是ILL_ILLPACCFI
 Fault thread info:
 Tid:540, Name:fpac10.
 #00 pc 00000000000019a8 /data/kernel test/fpac10(main+84) <- 异常发生位置
-#01 pc 00000000000a1574 /system/lib/ld-musl-aarch64.so.1(libc_start _main_stage2+80) (aca211c0cbb78f65c624199913847e19)
+#01 pc 00000000000a1574 /system/lib/ld-musl-aarch64.so.1(libc_start_main_stage2+80) (aca211c0cbb78f65c624199913847e19)
 Registers: <- 寄存器信息
 x0:0000007fc581cad0 x1:0000007fc581cad0 x2:000000000000000c x3:0000000000006000
 x4:0000005615e46cfc x5:0000007fc581cadc x6:0000216f6c6c6568 x7:000000000000216f
-x8:0 0000005a00000000x9：000000000000a51f xl0:00000000ffffffe0 xll:ffffffffffffffd8
+x8:00000005a00000000 x9:000000000000a51f x10:00000000ffffffe0 x11:ffffffffffffffd8
 x12:0000007fc581c940 x13:0000005a193527ec x14:0000000000000001 x15:0000000000000000
 x16:0000005615e45cd8 x17:0000005a193cba80 x18:0000000000000000 x19:0000007fc581cb68
 x20:0000000000000001 x21:0000005615e44954 x22:0000007fc581cb78 x23:00000000000000e8

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用冻屏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 应用冻屏故障模式说明
 category: best-practices
-scraped_at: 2026-09-02T14:53:46+08:00
-doc_updated_at: 2026-08-17
+scraped_at: 2026-09-16T06:55:12+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:dd1de4358d40199e29b44e087e8d6636bb01e071d811a62c016ca41d8a6b7c63
 ---
 

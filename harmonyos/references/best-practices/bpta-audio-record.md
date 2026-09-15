@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 音频录制系列开发实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践
 category: best-practices
-scraped_at: 2026-04-28T08:20:34+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:54:58+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:425accd7049ee416a064d8e7dbbfc1313439e5372efe2c5e80865b27c261a650
 ---
 

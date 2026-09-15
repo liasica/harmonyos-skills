@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 稳定性编码规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范
 category: best-practices
-scraped_at: 2026-04-28T08:22:59+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:55:15+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:37be61dcc4145e4fc3d3b5b46c5a2685f463d108d39c2e26d72ebb8e7d98aa0c
 ---
 

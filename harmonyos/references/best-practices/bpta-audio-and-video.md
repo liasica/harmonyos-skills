@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-and-
 title: 音频和视频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频
 category: best-practices
-scraped_at: 2026-09-10T06:30:02+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-16T06:54:58+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:fbc49242775d066659a9f69669884063151f116b5dee4fe14f88b7fcd28a625b
 ---
 

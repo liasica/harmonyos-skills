@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备界面开发
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发
 category: best-practices
-scraped_at: 2026-09-02T14:53:41+08:00
-doc_updated_at: 2026-05-22
-content_hash: sha256:57078e17b5d117b0c6a1818a614581034bf449d9647eb191043ad33d97d537fc
+scraped_at: 2026-09-16T06:54:59+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:86b36b613d221d90c36abf13a08684b1382a23d22ec8bd6ab44fcdf10714deaa
 ---
 
 * **[多设备窗口形态](bpta-multi-device-window.md)**
-* **[布局概述](bpta-multi-device-layout-overview.md)**
+* **[多设备功能开发](bpta-multi-device-layout-overview.md)**
 * **[界面布局响应式变化](bpta-multi-device-responsive.md)**
 * **[界面元素自适应变化](bpta-multi-device-adaptive.md)**
 * **[特殊界面布局场景](bpta-multi-device-hardware.md)**

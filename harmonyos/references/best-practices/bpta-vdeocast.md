@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-vdeocast
 title: 视频投播
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 视频投播
 category: best-practices
-scraped_at: 2026-09-10T06:30:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:68f69da80542e8fac4dfd896cdfc8032d0b8c3e3c7dd6324a20fb04952585688
+scraped_at: 2026-09-16T06:55:04+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:2a0ff012fbb49e9bce90e02491516887494d932038dfe101d3a3e2d4e0fcec84
 ---
 
 ## 概述
 
-系统投播功能让用户能够轻松将手机上的音视频投放到其他设备（如PC/2in1设备、华为智慧屏）上继续播放，实现跨设备切换，带来流畅的观影体验。为简化开发流程，系统提供了标准化的音视频投播解决方案，开发者仅需配置资源信息、监听投播状态并实现播放控制（如播放、暂停），即可快速集成该功能。
+系统投播功能让用户能够轻松将手机上的音视频投放到其他设备（如电脑、华为智慧屏）上继续播放，实现跨设备切换，带来流畅的观影体验。为简化开发流程，系统提供了标准化的音视频投播解决方案，开发者仅需配置资源信息、监听投播状态并实现播放控制（如播放、暂停），即可快速集成该功能。
 
 本文将结合实际案例，详细介绍如何高效利用系统投播组件和接口实现视频投播，帮助开发者提升开发效率，包含如下关键步骤：
 
-* [接入播控中心](bpta-vdeocast.md#section198061041155312)：播控中心系统提供的播放管理模块，可以后台管理应用播放任务，是投播接入的必备条件。
+* [接入播控中心](bpta-vdeocast.md#section198061041155312)：播控中心是系统提供的播放管理模块，可以后台管理应用播放任务，是投播接入的必备条件。
 * [本端控制远端设备状态](bpta-vdeocast.md#section1850441982916)：手机端实现遥控器功能，直接控制远端设备的播放状态、进度、音量等。
 * [远端视频状态回传本端](bpta-vdeocast.md#section13876193232918)：能够实时同步播放进度至手机端显示。
 * [视频资源切换](bpta-vdeocast.md#section1133113013013)和[设备切换](bpta-vdeocast.md#section6237193134112)：支持投播过程中集数的切换及投播设备的切换。
@@ -29,7 +29,7 @@ content_hash: sha256:68f69da80542e8fac4dfd896cdfc8032d0b8c3e3c7dd6324a20fb049525
 
 **体验视频**
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ee/v3/gONGvDh7QNO1VSV-yBhcXQ/zh-cn_media_0000002311894292.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c0/v3/7Tz6O8wWSfSVL2y5rKXb4w/zh-cn_media_0000002311894292.mp4)
 
 **用户体验路径**
 
@@ -37,7 +37,7 @@ content_hash: sha256:68f69da80542e8fac4dfd896cdfc8032d0b8c3e3c7dd6324a20fb049525
 
 | 用户操作阶段 | 1、本端视频播放与控制 | 2、播控中心控制本端视频 | 3、接入投播 | 4、应用遥控远端设备 |
 | --- | --- | --- | --- | --- |
-| 预期行为 | 1、本端视频的正常播放。  2、本端视频的控制（切集、倍速、音量、进度等）。 | 1、播控中心状态与本端视频一致。  2、播放中心控制本端视频播放（切集、倍速、音量、进度等）。 | 1、初次链接认证。  2、选择设备。 | 1、本端状态与远端状态一致。  2、本端播控中心遥控远端设备播放（切集、倍速、音量、进度等）。  3、应用遥控远端设备播放（切集、倍速、音量、进度等）。 |
+| 预期行为 | 1、本端视频的正常播放。  2、本端视频的控制（切集、倍速、音量、进度等）。 | 1、播控中心状态与本端视频一致。  2、播控中心控制本端视频播放（切集、倍速、音量、进度等）。 | 1、初次链接认证。  2、选择设备。 | 1、本端状态与远端状态一致。  2、本端播控中心遥控远端设备播放（切集、倍速、音量、进度等）。  3、应用遥控远端设备播放（切集、倍速、音量、进度等）。 |
 |  |  |  |  |  |
 
 ## 实现原理
@@ -46,13 +46,13 @@ content_hash: sha256:68f69da80542e8fac4dfd896cdfc8032d0b8c3e3c7dd6324a20fb049525
 
 | 概念 | 解释 |
 | --- | --- |
-| **媒体会话（[AVSession](../harmonyos-references/arkts-apis-avsession-avsession.md)）** | 音视频管控服务，用于对系统中所有音视频行为进行统一的管理。 |
-| **投播组件（[AVCastPicker](../harmonyos-references/ohos-multimedia-avcastpicker.md)****）** | 系统级的投播组件，可嵌入应用界面的UI组件。当用户点击该组件后，系统将进行设备发现、连接、认证等流程，应用仅需要通过接口获取投播中相关的回调信息。 |
-| **投播控制器（[AVCastController](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md)****）** | 在投播后，由应用发起的用于控制远端播放的接口，包括播放、暂停、调节音量、设置播放模式、设置播放速度等能力。 |
+| **媒体会话（AVSession）** | 音视频管控服务，用于对系统中所有音视频行为进行统一的管理（参考[Interface(AVSession)](../harmonyos-references/arkts-apis-avsession-avsession.md)）。 |
+| **投播组件（AVCastPicker****）** | 系统级的投播组件，可嵌入应用界面的UI组件。当用户点击该组件后，系统将进行设备发现、连接、认证等流程，应用仅需要通过接口获取投播中相关的回调信息（参考[@ohos.multimedia.avCastPicker (投播组件)](../harmonyos-references/ohos-multimedia-avcastpicker.md)）。 |
+| **投播控制器（AVCastController****）** | 在投播后，由应用发起的用于控制远端播放的接口，包括播放、暂停、调节音量、设置播放模式、设置播放速度等能力（参考[Interface(AVCastController)](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md)）。 |
 
 投播功能通过AVSession建立设备连接，由AVCastController控制远端播放。详见[运作机制](../harmonyos-guides/distributed-playback-overview.md#运作机制)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/kp2-SrXRR-q2oPams9aOzw/zh-cn_image_0000002345973089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qlK_a2LPR_60MR9Ba0uAwA/zh-cn_image_0000002345973089.png "点击放大")
 
 ## 模块设计
 
@@ -62,15 +62,15 @@ content_hash: sha256:68f69da80542e8fac4dfd896cdfc8032d0b8c3e3c7dd6324a20fb049525
 * VideoSessionController：应用封装的媒体会话控制器，本端视频播放时用于本应用与播控中心的同步、切换设备发起投播、结束投播。
 * VideoCastController：应用封装的投播视频控制器，控制远端设备视频资源的暂停、播放、进度、音量、倍速。
 
-完成投播功能，建议参考如下流程接入，其中本端视频显示和控制可参考[视频播放组件](../harmonyos-guides/arkts-common-components-video-player.md)、[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)、[使用AVPlayer播放视频(C/C++)](../harmonyos-guides/using-ndk-avplayer-for-video-playback.md)等视频实现方案根据功能诉求自行实现，本文从接入播控中心进行介绍。
+完成投播功能，建议参考如下流程接入，其中本端视频显示和控制可参考[视频播放（Video）](../doccenter-capabilities/arkts-common-components-video-player.md)组件、[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)、[使用AVPlayer播放视频(C/C++)](../harmonyos-guides/using-ndk-avplayer-for-video-playback.md)等视频实现方案根据功能诉求自行实现，本文从接入播控中心进行介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/lb0o6GYEQSiHZvkOAWUAug/zh-cn_image_0000002345853277.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/1BFGtz97TSOBgPtW3lRAWQ/zh-cn_image_0000002345853277.png "点击放大")
 
 ## 接入播控中心
 
 投播功能依赖于播控中心，因此必须接入播控中心才能实现投播功能。播控中心不仅能够控制本端设备的播放，还能控制远端设备的播放。本章节将简要介绍应用接入播控中心的开发流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/AONBu-TKROKhuY_8SgIeHw/zh-cn_image_0000002346524017.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/58-aB33GSSmmf8d69tD7SA/zh-cn_image_0000002346524017.gif "点击放大")
 
 ### 媒体会话初始化
 
@@ -143,19 +143,19 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
 
 ## 投播基础功能
 
-为确保投播功能正常使用，应用在发起投播前需要完成播控中心[媒体会话初始化](bpta-vdeocast.md#section15774202314195)。如未完成此关键步骤，则导致投播功能不可用。
+为确保投播功能正常使用，应用在发起投播前需要完成播控中心[媒体会话初始化](bpta-vdeocast.md#section15774202314195)。如未完成此关键步骤，投播功能将不可用。
 
 ### 创建投播
 
 在完成创建投播后，远端设备即可正常播放视频，本端会停止播放并页面跳转。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/92/v3/nJsJ8_ZISZuRkQyFPpAtHg/zh-cn_media_0000002311894304.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/02/v3/S9HK0kMzTWGCRZ55L47nfQ/zh-cn_media_0000002311894304.mp4)
 
 创建投播时需要setExtras()告知系统可投播、绘制AVCastPicker、videosession监听设备改变事件，用户点击AVCastPicker组件后会弹出设备选择半模态，在选择设备后，应用需要设置投播媒体信息，调用prepare、start启动播放。时序图如下，具体实现见开发步骤：
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/xZbQ5O3sRhO95I-LxhAZ5A/zh-cn_image_0000002345973101.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/fXNRE4pDQ6u6XGxq1TDUIg/zh-cn_image_0000002345973101.png "点击放大")
 
 **开发步骤**
 
@@ -168,7 +168,7 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
    ```
 2. 绘制AVCastPicker，AVCastPicker是投播组件，点击后系统会弹出设备选择半模态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/4zMKQkluQaWnpnO9fThq9Q/zh-cn_image_0000002473018785.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/NdgXhuNEQ3WIa8Cxg5jQjw/zh-cn_image_0000002473018785.jpg "点击放大")
 
    ```typescript
    AVCastPicker({
@@ -224,7 +224,7 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
    } catch (error) {
      let err = error as BusinessError
      if (err.code) {
-       hilog.error(0x0000, TAG, 'testTag', 'init AVCast picker failed, cause: %{public}s', JSON.stringify(err));
+       hilog.error(0x0000, TAG, 'init AVCast picker failed, code: %{public}d, message: %{public}s.', err.code, err.message);
      }
    }
    ```
@@ -289,13 +289,13 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
 
 ### 设备切换
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/f6/v3/T24nqYiVTTKkFD-1Xn27UA/zh-cn_media_0000002312054100.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/11/v3/ORdQfn_oQcuGVQuD8YPERw/zh-cn_media_0000002312054100.mp4)
 
 设备切换依赖于videosession监听设备改变事件，可以通过stopCasting终止投播切换设备，也可以通过[avCastPicker.select()](../harmonyos-references/arkts-apis-avsession-avcastpickerhelper.md#select14)进行切换。均会触发[videoSession.on('outputDeviceChange')](../harmonyos-references/arkts-apis-avsession-avsession.md#onoutputdevicechange10)事件，当切换到远端设备播放，本端应该跳转到遥控器界面，当切换回本端设备播放，应当停止投播并跳转到视频播放页面。应用时序图如下，具体实现见开发步骤。
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/FPb6ybRZS12MHbAll7HTEw/zh-cn_image_0000002311894312.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/kmpi3vQaQUG8BdNcFI1dxg/zh-cn_image_0000002311894312.png "点击放大")
 
 **开发步骤**
 
@@ -347,20 +347,20 @@ try {
 } catch (error) {
   let err = error as BusinessError
   if (err.code) {
-    hilog.error(0x0000, TAG, 'testTag', 'init AVCast picker failed, cause: %{public}s', JSON.stringify(err));
+    hilog.error(0x0000, TAG, 'init AVCast picker failed, code: %{public}d, message: %{public}s.', err.code, err.message);
   }
 }
 ```
 
 ### 远端视频状态回传本端
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/81/v3/2ZYlVTiKSRKLIw2DrWSj-w/zh-cn_media_0000002345973105.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/26/v3/HbRK6Ix2SAKeqlpwr8xJmQ/zh-cn_media_0000002345973105.mp4)
 
-当视频在远端设备播放时，为了控制远端视频的播放应用需要监听远端视频播放状态并同步显示本端，通过远端设备或本端播控中心控制，都会直接改变远端设备的播放状态，并触发[avCastController.on('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#onplaybackstatechange10)。应用时序图如下，具体实现见开发步骤。
+当视频在远端设备播放时，为了控制远端视频的播放，应用需要监听远端视频播放状态并同步显示本端，通过远端设备或本端播控中心控制，都会直接改变远端设备的播放状态，并触发[avCastController.on('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#onplaybackstatechange10)。应用时序图如下，具体实现见开发步骤。
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/pwhhRtU1Rd2AM0iPiMbxlA/zh-cn_image_0000002345853289.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/KG2_bOD-QtCfstoiLK_QRA/zh-cn_image_0000002345853289.png "点击放大")
 
 **开发步骤**
 
@@ -392,11 +392,11 @@ export class VideoCastController {
 
 ### 本端控制远端设备状态
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b5/v3/KLGbmRlYTcKQdRuHXNRAkw/zh-cn_media_0000002312054104.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/3b/v3/qX7q4-AgSpa-cCDIc0EzLw/zh-cn_media_0000002312054104.mp4)
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/hSIwdGVSS-iKYTFfgNfO1g/zh-cn_image_0000002311894316.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/hKCswgNXS9ykpZ7JJF1atw/zh-cn_image_0000002311894316.png "点击放大")
 
 **开发步骤**
 
@@ -460,7 +460,7 @@ public async setAVCastSpeed(speed: media.PlaybackSpeed) {
 
 建议应用集成悬浮球快捷控制功能，便于用户快速返回投播页面进行操作控制，实现效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/-ew0yisaTQe7mndrdV_ciA/zh-cn_image_0000002346644421.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/yqq3sQVERXqkkNrWTDzdtw/zh-cn_image_0000002346644421.gif "点击放大")
 
 可以通过为页面设置浮层实现。
 
@@ -483,33 +483,46 @@ OverlayNode() {
 
 音量同步需要通过遥控器页面的焦点管理和按键监听实现，具体流程为：当遥控器页面获焦时，监听音量加减按键事件，在事件回调中调用音量调节函数并同步更新播控中心状态。典型实现示例如下：
 
-```typescript
+```screen
 let upOptions: inputConsumer.KeyPressedConfig = {
   key: KeyCode.KEYCODE_VOLUME_UP,
   action: 1,
   isRepeat: true,
 }
-inputConsumer.on('keyPressed', upOptions, async () => {
-  if (this.avCastPlayerController) {
-    console.log('currentVolume' + JSON.stringify(this.currentVolume));
-    let volume = this.currentVolume + 10;
-    await this.avCastPlayerController.setAVCastVolume(volume);
+try {
+  inputConsumer.on('keyPressed', upOptions, async () => {
+    if (this.avCastPlayerController) {
+      let volume = this.currentVolume + 10;
+      await this.avCastPlayerController.setAVCastVolume(volume);
+    }
+  })
+} catch (error) {
+  let err = error as BusinessError
+  if (err.code) {
+    hilog.error(0x0000, TAG, 'testTag', 'set AVCast volume failed, cause: %{public}s', JSON.stringify(err));
   }
-})
+}
 let downOptions: inputConsumer.KeyPressedConfig = {
   key: KeyCode.KEYCODE_VOLUME_DOWN,
   action: 1,
   isRepeat: true,
 }
-inputConsumer.on('keyPressed', downOptions, async () => {
-  if (this.avCastPlayerController) {
-    let volume = this.currentVolume - 10;
-    if (volume < 0) {
-      await this.avCastPlayerController.setAVCastVolume(0);
+try {
+  inputConsumer.on('keyPressed', downOptions, async () => {
+    if (this.avCastPlayerController) {
+      let volume = this.currentVolume - 10;
+      if (volume < 0) {
+        await this.avCastPlayerController.setAVCastVolume(0);
+      }
+      await this.avCastPlayerController.setAVCastVolume(volume);
     }
-    await this.avCastPlayerController.setAVCastVolume(volume);
+  })
+} catch (error) {
+  let err = error as BusinessError
+  if (err.code) {
+    hilog.error(0x0000, TAG, 'testTag', 'set AVCast volume failed, cause: %{public}s', JSON.stringify(err));
   }
-})
+}
 ```
 
 ### 投屏转投播
@@ -534,7 +547,7 @@ inputConsumer.on('keyPressed', downOptions, async () => {
 
 [远端视频状态回传本端](bpta-vdeocast.md#section13876193232918)
 
-### 投播时AVcastPicker无法搜索到设备
+### 投播时AVCastPicker无法搜索到设备
 
 **问题现象**
 

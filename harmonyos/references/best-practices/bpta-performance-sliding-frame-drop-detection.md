@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-performanc
 title: 滑动丢帧类问题检测方法
 breadcrumb: 最佳实践 > 性能 > 性能检测 > 运行态性能检测 > 滑动丢帧类问题检测方法
 category: best-practices
-scraped_at: 2026-09-02T14:53:44+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:dd0f1957d88069a33720946e51ccfd9b6b6986fd5a93866fe0540d4dee956702
+scraped_at: 2026-09-16T06:55:06+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:f7f0d57c6577fd4803702bc602f374b3bdcd6cba9f06f1453b484f8c34fb7414
 ---
 
 在滑动操作期间，丢帧问题尤为明显：本应流畅的动画会出现间断。这是因为渲染内容所需的时间超过了系统显示相应帧的时间，导致画面在移动时会在一帧或多帧中暂停，从而产生卡顿。
@@ -16,4 +16,4 @@ content_hash: sha256:dd0f1957d88069a33720946e51ccfd9b6b6986fd5a93866fe0540d4dee9
 
 ## 滑动丢帧检测
 
-滑动丢帧事件用于检测列表滑动过程中出现的卡顿现象，具体详情请参阅[滑动丢帧事件介绍](../harmonyos-guides/hiappevent-watcher-scroll-jank-event.md)。开发者可以通过HiAppEvent接口[订阅滑动丢帧事件](../harmonyos-guides/hiappevent-watcher-scroll-jank-arkts.md)，当列表滑动中出现卡顿时，系统将上报故障事件。利用事件中的维测信息，可以有效定位滑动卡顿问题。
+滑动丢帧事件用于检测列表滑动过程中出现的卡顿现象，具体详情请参阅[滑动丢帧事件介绍](../harmonyos-guides/hiappevent-watcher-scroll-jank-event.md)。开发者可以通过HiAppEvent接口[订阅滑动丢帧事件（ArkTS）](../harmonyos-guides/hiappevent-watcher-scroll-jank-arkts.md)，当列表滑动中出现卡顿时，系统将上报故障事件。利用事件中的维测信息，可以有效定位滑动卡顿问题。

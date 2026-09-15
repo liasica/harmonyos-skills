@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 申请超大对象导致OOM故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkTS内存泄漏故障模式说明 > 申请超大对象导致OOM故障模式说明
 category: best-practices
-scraped_at: 2026-09-10T06:30:18+08:00
+scraped_at: 2026-09-16T06:55:13+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:4e1b888df7d222c5ffbd00d0cf078d2bc7f1fd6d0ee0648f8279d1302e3a264a
+content_hash: sha256:2252de6fef72bf78bb72c28ed4bcf33779ca405d0b66ce79a1c6281e31b29bee
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ OOM故障根因是否为单次申请对象内存过大，无固定判定阈值�
 2. 查看jscrash日志中的Error message，若申请内存较大，则可能为一次性申请超大内存导致OOM。
 3. 查看崩溃日志中Stacktrace的ArkTS崩溃堆栈，定位到具体申请内存的代码位置。崩溃日志示例如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/DVov4d1vQemrOyv5_Xisag/zh-cn_image_0000002729584407.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/hyaPu_z4QFCecBOaB9Wm6A/zh-cn_image_0000002729584407.png)
 4. 开发者对申请内存的代码进行优化，避免一次性申请超大内存。
 
 ### 关键字
@@ -47,13 +47,13 @@ Error message：崩溃日志中Error message部分显示错误信息。若Error 
 
 在Index.ets文件中，前端按钮调用HugeObj()函数，在函数中一次性申请500MB内存触发应用进程OOM故障。问题代码如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/6KZ_k7GRSvKzTiXmqzZHbQ/zh-cn_image_0000002699705188.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/OZBJPp_nQlmJ4yEbhFH4Sg/zh-cn_image_0000002699705188.png "点击放大")
 
 **问题分析思路**
 
 1. 应用崩溃后，通过[OOM故障事件订阅方式](bpta-overview-of-arkts-memory-leaks-overview.md#section844818101813)获取崩溃日志，崩溃日志如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/yRsMAz4xQCGf-IGRf6R7OA/zh-cn_image_0000002729464451.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ev_w9deURtW9aUEl95dIpA/zh-cn_image_0000002729464451.png)
 
 2. 查看崩溃日志中的Reason字段为OutOfMemory，明确应用进程崩溃原因是OOM故障。
 

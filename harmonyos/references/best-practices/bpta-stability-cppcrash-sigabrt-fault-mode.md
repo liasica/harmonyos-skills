@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGABRT进程主动终止故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGABRT进程主动终止故障模式说明
 category: best-practices
-scraped_at: 2026-09-10T06:30:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b51ed9e5094e8937343eef11db36f0bf0602940c523450aba8d07abf0290ae7e
+scraped_at: 2026-09-16T06:55:12+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:75b0183950c9cb0199a682d7604a42a41a6862eb6bc5587ddf94f15214553c54
 ---
 
 ## 根因描述
@@ -101,7 +101,11 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
 
 **问题结论与总结**
 
-应用代码，通过使用assert判空，主动调用abort()函数，触发故障。
+应用代码通过使用assert判空，主动调用abort()函数，触发故障。
+
+**修复建议**
+
+assert仅用于开发期排查内部逻辑错误。对可预期的失败（如资源分配失败）使用显式错误处理（返回错误码/抛出异常）进行降级，确需终止进程前先通过hilog.fatal()/OH\_LOG\_FATAL写入fatal信息。
 
 ### 案例二：因资源不足导致线程创建失败进而崩溃
 
@@ -166,7 +170,7 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
 
 **修复建议**
 
-线程资源使用完成后，要及时回收，释放相关资源。
+线程资源使用完成后，要及时回收，释放相关资源。或用线程池复用，控制并发线程数量；
 
 ### 案例三：库函数校验失败触发崩溃
 
@@ -299,7 +303,7 @@ libc中select()体系接口限制监控的FD不超过1024，FD\_SET()宏的forti
 
 **修复建议**
 
-根据使用场景选择合适的系统API，使用poll()函数替换select()函数。poll()使用pollfd结构体管理监听对象，没有FD\_SETSIZE（1024）的数量限制。若必须使用select()，需在执行FD\_SET()宏前校验fd小于FD\_SETSIZE，超出限制的fd不写入fd\_set。
+根据使用场景选择合适的系统API，使用poll()函数替换select()函数。poll()使用pollfd结构体管理监听对象，没有FD\_SETSIZE（1024）的数量限制。若必须使用select()，需在执行FD\_SET()宏前校验fd小于FD\_SETSIZE，超出限制的fd不写入fd\_set。资源类接口成对使用（open/close），防止fd泄漏持续增长触碰上限。
 
 ### 案例四：符号冲突导致异常捕获失败
 
@@ -437,7 +441,7 @@ libc中select()体系接口限制监控的FD不超过1024，FD\_SET()宏的forti
 
 **修复建议**
 
-采用声明和定义分离的方式。
+采用声明和定义分离的方式：异常类型在头文件中只做声明，成员函数在单一编译单元（.cpp）中定义，避免多个so各自生成typeinfo弱符号副本；也可将公共异常类型收敛到公共库统一定义导出，保证全进程只有一份type\_info。
 
 ### 案例五：类型转换异常触发崩溃
 
@@ -498,7 +502,7 @@ libc中select()体系接口限制监控的FD不超过1024，FD\_SET()宏的forti
 
 **修复建议**
 
-慎用或者不用类型转换。
+慎用或者不用类型转换。如必须进行向下转型，优先使用指针形式dynamic\_cast并判空（失败返回nullptr，不抛异常）；使用引用形式时，需try-catch捕获std::bad\_cast。
 
 ### 案例六：数组越界触发崩溃
 
@@ -676,7 +680,7 @@ NAPI接口调用失败时，框架会主动调用abort终止进程。
 
 **修复建议**
 
-使用异常安全的字符串转换方法，或在转换前进行参数校验。
+使用异常安全的字符串转换方法，或在转换前进行参数校验。如改用std::strtol、std::from\_chars等可显式检测转换失败的接口
 
 ## 常见易错代码预防建议
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGTRAP断点或陷阱异常故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGTRAP断点或陷阱异常故障模式说明
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
-doc_updated_at: 2026-09-02
+scraped_at: 2026-09-16T06:55:12+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:72ec20bb3bba86cd2c4e6dbce73c84766c9a403a37e132a0b1c6eeab6a630411
 ---
 

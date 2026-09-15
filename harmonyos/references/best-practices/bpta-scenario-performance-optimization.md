@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-p
 title: 性能场景优化案例
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例
 category: best-practices
-scraped_at: 2026-04-28T08:22:26+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:55:07+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:481bf3d864e4f47c13844e5e74f80870a68c6f20c070df9af8f7ffcddb0893c2
 ---
 

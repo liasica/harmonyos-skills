@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-news-readi
 title: 新闻阅读
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读
 category: best-practices
-scraped_at: 2026-09-02T14:53:43+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-16T06:55:05+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:587ebe65fd42a9efcc764a6068d765d3f12e53634ec9d33d235fc58ca1eeb5cf
 ---
 

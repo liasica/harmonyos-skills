@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-ticket-cl
 title: 多设备股票类界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备股票类界面
 category: best-practices
-scraped_at: 2026-09-10T06:30:07+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:ded29d039f2aa7c081f8d6fb53ff648ac968bc1d4a4a6e2184513ab272f43928
+scraped_at: 2026-09-16T06:55:01+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:008ac52aa3e4a9762745a5d8ead6910113d67ee69b44f42852d0f69b3e44534e
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ content_hash: sha256:ded29d039f2aa7c081f8d6fb53ff648ac968bc1d4a4a6e2184513ab272f
 
 股票类应用的UX设计可参考金融理财类多设备响应式设计指南的[自选股](../design-guides/responsive-design-examples6-0000001793536905.md#section0732192812391)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/-5kw3HjVTuGKyl7NdalUhg/zh-cn_image_0000002579631774.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/WT70paaaSSSU6FXiEEb84w/zh-cn_image_0000002579631774.png "点击放大")
 
 ## 工程管理
 
@@ -193,7 +193,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
    ```
 2. 使用MultiWindowEntryInAPP组件，并且设置组件参数。
 
-   ```typescript
+   ```screen
    @Component
    export struct MultiWindowEntryComponent {
      @Link textModifier: TextModifier;
@@ -226,7 +226,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
    ```
 3. 导入封装好的MultiWindowEntryComponent组件，并且设置组件参数。
 
-   ```typescript
+   ```screen
    import { MultiWindowEntryComponent } from './MultiWindowEntryComponent';
 
    @Component
@@ -276,7 +276,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 1. 在分屏程序的入口SplitScreenAbility.ets中的onCreate()和onNewWant()生命周期中进行事件触发。
 
-   ```typescript
+   ```screen
    let eventData: emitter.EventData = {
      data: {
        'isStart': 1,
@@ -306,7 +306,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
    ```
 2. 在原窗口进行事件监听并做退栈处理。
 
-   ```typescript
+   ```screen
    @Component
    export struct TopTitleBar {
      // ...
@@ -340,7 +340,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 1. 监听窗口尺寸变化。
 
-   ```typescript
+   ```screen
    public onWindowSizeChange: (windowSize: window.Size) => void = (windowSize: window.Size) => {
      this.mainWindowInfo.windowSize = windowSize;
      if (this.uiContext) {
@@ -364,7 +364,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
    ```
 2. 尺寸变化时获取按钮节点，查询其enabled属性。
 
-   ```typescript
+   ```screen
    private timerId: number = -1;
 
    aboutToAppear(): void {
@@ -391,7 +391,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
    ```
 3. 根据enabled属性通过visibility控制组件的显隐。
 
-   ```typescript
+   ```screen
    Row() {
      MultiWindowEntryInAPP({
        want: this.want,
@@ -424,7 +424,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 * 将电脑端自选股页划分为四个部分，效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/WxI3Tl7iR0a8aVDhB8Ce-A/zh-cn_image_0000002610071557.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/r0XmdiVRRFK8xqoxLIzg6Q/zh-cn_image_0000002610071557.png "点击放大")
 
 * 对各个区域使用的多种能力进行分析，实现方案如下表：
 
@@ -441,7 +441,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 * 将电脑端股票详情页划分为五个部分，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/UO7KxUspSIidvX9BI7yWRQ/zh-cn_image_0000002579631780.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/NWGW-9fiQFWzwJHx7EDWvg/zh-cn_image_0000002579631780.png "点击放大")
 
 * 对各区域使用的能力进行分析，实现方案如表所示：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smartwatch
 title: 智能穿戴导航协同
 breadcrumb: 最佳实践 > 自由流转 > 典型全场景协同开发案例 > 智能穿戴导航协同
 category: best-practices
-scraped_at: 2026-09-10T06:30:09+08:00
-doc_updated_at: 2026-06-02
-content_hash: sha256:05bdf54eb9fbdabd1f0596ec8764681c8a6d963d6e73abb47d77be37218d82a0
+scraped_at: 2026-09-16T06:55:03+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:761c7bd5a25907b1de8a819eadd4db3663b3cd2594290e087816a9f7aa9ae7b4
 ---
 
 ## 概述
@@ -47,7 +47,7 @@ content_hash: sha256:05bdf54eb9fbdabd1f0596ec8764681c8a6d963d6e73abb47d77be37218
 
 ### 实现方案
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/QNLkXMMWQ2KBZWrdkz4GEg/zh-cn_image_0000002353086117.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/nThnx-yHSt-JkB6Jeh3zpQ/zh-cn_image_0000002353086117.jpg "点击放大")
 
 ## 界面开发
 
@@ -90,7 +90,7 @@ content_hash: sha256:05bdf54eb9fbdabd1f0596ec8764681c8a6d963d6e73abb47d77be37218
 **地图点击（目的地标记）：**
 
 **图1** 地图点击操作时序图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/1chE1nq_TICNA8Y6zyHUBA/zh-cn_image_0000002318967344.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/O9IllNNUQXqoYZ4A1OR8eQ/zh-cn_image_0000002318967344.jpg "点击放大")
 
 开发步骤如下：
 

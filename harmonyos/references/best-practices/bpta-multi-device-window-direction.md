@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口方向
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口方向
 category: best-practices
-scraped_at: 2026-09-10T06:30:05+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b6a332a3028b0602549b132d33dcd753fc27c08845b7d5d5c71a38a4d0c1ef88
+scraped_at: 2026-09-16T06:55:01+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:5eb0b83341395595733176bed93d0c833b48ffe24e278694f807bbbcca8c0620
 ---
 
 ## 概述
@@ -27,7 +27,7 @@ content_hash: sha256:b6a332a3028b0602549b132d33dcd753fc27c08845b7d5d5c71a38a4d0c
 
 ## 前置约束与限制
 
-在阅读本文前，建议开发者先了解[窗口管理](../harmonyos-guides/window-manager.md)、[窗口旋转](../harmonyos-guides/window-rotation.md)、[屏幕管理](../harmonyos-guides/display-manager.md)、[一次开发，多端部署](bpta-multi-device-overview.md)、[组件导航（Navigation）](../harmonyos-guides/arkts-navigation-navigation.md)等相关知识。
+在阅读本文前，建议开发者先了解[窗口管理](../harmonyos-guides/window-manager.md)、[窗口旋转](../harmonyos-guides/window-rotation.md)、[屏幕管理](../harmonyos-guides/display-manager.md)、[一次开发，多端部署](bpta-multi-device-overview.md)、[组件导航(Navigation) (推荐)](../harmonyos-guides/arkts-navigation-navigation.md)等相关知识。
 
 横竖屏切换功能可实现应用内既支持竖屏显示也支持横屏显示的效果。对于应用内不同页面显示方向不同的情况，需在应用逻辑中动态修改窗口方向以实现该效果。例如，在直板机上具备视频播放功能的应用中，首页内容是采用竖屏方式，而全屏播放页则采用横屏方式展示。
 
@@ -35,7 +35,7 @@ content_hash: sha256:b6a332a3028b0602549b132d33dcd753fc27c08845b7d5d5c71a38a4d0c
 
 目前HarmonyOS系统中设备的显示方向有以下四种，对应真机实际状态如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/H7pOC1-wQOKpIR0bvjUOKw/zh-cn_image_0000002566756945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/dnf6dhTcRRqn25O3f1Gulg/zh-cn_image_0000002566756945.png)
 
 **基本定义：**
 
@@ -53,9 +53,9 @@ content_hash: sha256:b6a332a3028b0602549b132d33dcd753fc27c08845b7d5d5c71a38a4d0c
 | 屏幕旋转角度返回值 (rotation) | 对应度数 | 屏幕方向 (Orientation) |
 | --- | --- | --- |
 | 0 | 0° | 竖屏 (PORTRAIT) |
-| 1 | 90° | 反向横屏 (LANDSCAPE\_INVERTED) |
+| 1 | 90° | 横屏 (LANDSCAPE) |
 | 2 | 180° | 反向竖屏 (PORTRAIT\_INVERTED) |
-| 3 | 270° | 横屏 (LANDSCAPE) |
+| 3 | 270° | 反向横屏（LANDSCAPE\_INVERTED） |
 
 ## 了解窗口旋转策略
 
@@ -170,7 +170,7 @@ content_hash: sha256:b6a332a3028b0602549b132d33dcd753fc27c08845b7d5d5c71a38a4d0c
 
 应用在不同业务界面需设置合适的窗口旋转策略，以提供最佳用户体验。
 
-为正确选择旋转策略枚举，开发者可通过通过是否支持自动旋转、支持旋转的方向及预设初始方向三个维度进行匹配，具体参考如下表：
+为正确选择旋转策略枚举，开发者可通过是否支持自动旋转、支持旋转的方向及预设初始方向三个维度进行匹配，具体参考如下表：
 
 | 是否支持自动旋转 | 支持旋转的方向 | 预设初始方向 | 窗口旋转策略 |
 | --- | --- | --- | --- |
@@ -189,7 +189,7 @@ content_hash: sha256:b6a332a3028b0602549b132d33dcd753fc27c08845b7d5d5c71a38a4d0c
 
 上述表格也可以抽象为如下的决策逻辑，如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/X_r-xJ4pTQ2o3E5e_bmPNQ/zh-cn_image_0000002572763022.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/XpNgSqZPTBG1D0j6XC9DNQ/zh-cn_image_0000002572763022.png "点击放大")
 
 **说明** 
 
@@ -466,44 +466,35 @@ content_hash: sha256:b6a332a3028b0602549b132d33dcd753fc27c08845b7d5d5c71a38a4d0c
 
 以备忘录应用为例，当系统关闭旋转锁定后，应用页面会随手机旋转自动切换横竖屏；打开旋转锁定时，则不会发生旋转行为，此时需配置为AUTO\_ROTATION\_RESTRICTED。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/YxcLjGJDQGCQ1iHNRM007Q/zh-cn_image_0000002693704626.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/iw_hy9kfRj2cQ6PjSg4qaA/zh-cn_image_0000002693704626.png "点击放大")
 
 ### 窗口级配置
 
 它作用于整个应用窗口（window），定义该窗口的横竖屏旋转策略，并对基于Navigation组件和Router模块实现的路由跳转均生效。一旦配置，除非显式修改，否则对窗口内所有页面生效。
 
-1. 在onWindowStageCreate()中调用window.setPreferredOrientation()方法即可设置整个应用窗口默认方向。
-
-```typescript
-setWindowOrientation(orientation: window.Orientation): void {
-  this.mainWindow.setPreferredOrientation(orientation)
-    .then(() => {
-      hilog.info(0x0000, 'testLog', `Succeeded in setting window orientation.`);
-      // Update window orientation.
-      this.mainWindowInfo.orientation = orientation;
-    })
-    .catch((err: BusinessError) => {
-      hilog.error(0x0000, 'testLog', `Failed to set window orientation. Code: ${err.code}, message: ${err.message}`);
-    });
-}
-```
+1. 在onWindowStageCreate()中调用窗口提供的[setPreferredOrientation](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)方法即可设置整个应用窗口默认方向。
 
 2. 如果应用内页面的窗口旋转策略不一致，则需要执行本步骤。在页面进入时（aboutToAppear），调用window.setPreferredOrientation()定义当前页面对应的窗口旋转策略；在页面退出时（aboutToDisappear），调用window.setPreferredOrientation()恢复即将展示页面对应的窗口旋转策略。
 
-```typescript
-@StorageLink('mainWindow') mainWindow?: window.Window = undefined;
-public lastOrientation?: window.Orientation;
-
+```screen
 aboutToAppear(): void {
-  if (this.mainWindow === undefined) {
-    return;
+  try {
+    this.windowObj = (this.getUIContext().getHostContext() as common.UIAbilityContext).windowStage.getMainWindowSync()
+  } catch (err) {
+    Logger.error(`Invoke set preferred orientation failed, code is ${err.code}, message is ${err.message}`)
   }
-  this.lastOrientation = this.mainWindow!.getPreferredOrientation();
-  this.mainWindow!.setPreferredOrientation(window.Orientation.LANDSCAPE);
+
+  this.windowObj?.setPreferredOrientation(WindowOrientationHelper.autoRotate("LANDSCAPE_ONLY"))
+    .catch((err: BusinessError) => {
+      Logger.error(`Invoke set preferred orientation failed, code is ${err.code}, message is ${err.message}`)
+    });
 }
 
 aboutToDisappear(): void {
-  this.mainWindow!.setPreferredOrientation(this.lastOrientation)
+  this.windowObj?.setPreferredOrientation(WindowOrientationHelper.followDesktop())
+    .catch((err: BusinessError) => {
+      Logger.error(`Invoke set preferred orientation failed, code is ${err.code}, message is ${err.message}`)
+    });
 }
 ```
 
@@ -511,7 +502,7 @@ aboutToDisappear(): void {
 
 视频播窗横竖屏切换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Z-QclX2oSC-O5gNczq1g6g/zh-cn_image_0000002566916979.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/4eK0OizTTl2eMVfA80Hsag/zh-cn_image_0000002566916979.png "点击放大")
 
 ### 页面级配置
 
@@ -547,7 +538,7 @@ NavDestination组件提供[preferredOrientation](../harmonyos-references/ts-basi
 
 需要指出的是，开发者可以使用[setFollowParentWindowLayoutEnabled()](../harmonyos-references/arkts-apis-window-window.md#setfollowparentwindowlayoutenabled17)接口设置子窗或模态窗口的布局信息是否跟随主窗，如果设置为跟随主窗，那么子窗的旋转便不再需要额外适配。
 
-```typescript
+```screen
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -585,7 +576,7 @@ struct Index {
     try {
       subwindowRect = this.subWindow.getWindowProperties().windowRect;
     } catch (error) {
-      hilog.warn(0x000, 'testTag', `getWindowProperties failed, code: ${error.code}, message: ${error.message}`);
+      hilog.warn(DOMAIN, 'testTag', `getWindowProperties failed, code: ${error.code}, message: ${error.message}`);
     }
     let newWidth: number = subwindowRect!.height;
     let newHeight: number = subwindowRect!.width;
@@ -656,11 +647,11 @@ aboutToDisappear(): void {
 
 例如：视频或者游戏类应用在横屏模式下开启悬浮窗后，页面没有适配横屏，导致内容显示不全或者观看体验不好。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/6W1TX4O_ROG_CQtuA2jagg/zh-cn_image_0000002566757003.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/r21GTaTrQEiYpGlYhSV8Cw/zh-cn_image_0000002566757003.gif "点击放大")
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/h7uBeF35QDaKrftYt6sh3w/zh-cn_image_0000002535837220.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/n5QMrx8ZRgqBPmAM12RyuA/zh-cn_image_0000002535837220.gif "点击放大")
 
 ## 为多设备配置旋转策略
 
@@ -678,7 +669,7 @@ aboutToDisappear(): void {
    | 效果图 |  |  |  |  |
 2. 不同交互场景对旋转策略的使用约束不同
 
-   例如下述场景中，自由多窗不支持竖屏模式，悬浮窗默认是竖向的，但是但是对于横向游戏和视频应用，横向的悬浮窗体验会更好。
+   例如下述场景中，自由多窗不支持竖屏模式，悬浮窗默认是竖向的，但是对于横向游戏和视频应用，横向的悬浮窗体验会更好。
 
    | 使用场景 | 分屏 | 全景多窗 | 自由多窗 | 全局批注 | 任务列表视图 |
    | --- | --- | --- | --- | --- | --- |
@@ -703,7 +694,7 @@ aboutToDisappear(): void {
 
 1.在应用EntryAbility的onWindowStageCreate生命周期中，通过on('windowSizeChange')方法监听窗口尺寸变化，在其回调中通过getWindowWidthBreakpoint()及getWindowHeightBreakpoint()实时获取并存储横竖断点变化信息，配合各个页面实现响应式旋转策略。
 
-```typescript
+```screen
 export default class EntryAbility extends UIAbility {
   uiContext?: UIContext;
   onWindowSizeChange: (windowSize: window.Size) => void = () => {
@@ -772,7 +763,7 @@ export struct VideoDetail {
 
 并在aboutToDisappear中取消监听：
 
-```typescript
+```screen
 async aboutToDisappear() {
   // ...
   this.windowObj?.off('windowSizeChange')
@@ -924,7 +915,7 @@ function ImageItem(imageSrc: ResourceStr) {
 
 下图展示了应用层、多设备工具模块与系统层之间的整体协作流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/yA0Bo4UEQ_CCC5IYlK52Yw/zh-cn_image_0000002693534420.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/xYqGKFb3QReT49S0tAjZ2w/zh-cn_image_0000002723850036.png)
 
 **响应式规则引擎**（responsiverule目录模块）
 
@@ -1369,7 +1360,7 @@ export class ResponsiveContext {
 
 初始化流程的核心目标是将ResponsiveContext存入 AppStorage，使所有业务页面能够通过统一的 Key 获取上下文实例并调用ResponsiveValueResolver.getValue()。具体在 EntryAbility.onWindowStageCreate() 中完成以下三步：
 
-```typescript
+```screen
 export default class EntryAbility extends UIAbility {
   // ...
   private responsiveContext?: ResponsiveContext;
@@ -1401,7 +1392,7 @@ export default class EntryAbility extends UIAbility {
 
         // ...
       }).catch((err: BusinessError) => {
-        Logger.error(`Error occured, error code: ${err.code}, error message: ${err.message}`);
+        Logger.error(`Error occurred, error code: ${err.code}, error message: ${err.message}`);
       });
     });
   }
@@ -1414,7 +1405,7 @@ export default class EntryAbility extends UIAbility {
 
 设备状态（屏幕尺寸、折叠态、分辨率）可能在运行时发生变化。为保证规则引擎始终基于最新的设备上下文求值，需要在 EntryAbility 中注册两个关键监听，并在回调中刷新 ResponsiveContext。为了保证拿到的设备状态和屏幕属性是变化后的最终值，建议在屏幕属性变化后也更新一下相关的属性值。
 
-```typescript
+```screen
 export default class EntryAbility extends UIAbility {
   // ...
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -1432,7 +1423,7 @@ export default class EntryAbility extends UIAbility {
         data.on('windowSizeChange', this.onWindowSizeChange);
         this.registerDisplayListener();
       }).catch((err: BusinessError) => {
-        Logger.error(`Error occured, error code: ${err.code}, error message: ${err.message}`);
+        Logger.error(`Error occurred, error code: ${err.code}, error message: ${err.message}`);
       });
     });
   }
@@ -1846,7 +1837,7 @@ export struct VideoDetail {
 
 rotation的取值有4种，分别对应下图所示的4个方向（以直板机为例）。如果需要更精准的角度信息，则需要配合设备sensor获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/VabuHYtwTbG9puNzyL6WUA/zh-cn_image_0000002535837336.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/H7AJhhIVRM61rLk4MEsrlg/zh-cn_image_0000002535837336.png "点击放大")
 
 | 值 | 含义 |
 | --- | --- |
@@ -1866,30 +1857,32 @@ rotation的取值有4种，分别对应下图所示的4个方向（以直板机�
 
 display.Orientation 为屏幕当前的朝向状态，display.rotation 为屏幕相对自然方向的物理旋转角度。display.Orientation 为和 display.rotation 均为只读属性，且用于描述屏幕当前旋转状态，但二者定义逻辑不同，在各类设备形态下不存在固定对应关系，开发过程中不可相互替代。若混用接口，在折叠屏等多形态设备适配场景中极易引发兼容性问题。以三折叠设备为例：当 display.rotation 取值为 0° 时，display.Orientation 既可能为竖屏状态，也可能为反向横屏状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/d4of0GDRRI66JGLyKZcYoA/zh-cn_image_0000002622960129.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/tvZ3nzYiRS-B7YPRNNfCNg/zh-cn_image_0000002622960129.jpg "点击放大")
 
 ### window.getLastWindow的方式获取窗口出现延迟
 
 1. 由于getLastWindow底层原因，需要经过查找获取实例，一定程度上会有性能损耗，可能会出现已经发生横屏或者竖屏切换的情况下，状态栏还没切换的情况。
 2. 使用windowStage.getMainWindowSync的同步方法获取窗口实例。
 
-```typescript
-onWindowStageCreate(windowStage: window.WindowStage): void {
-  // ...
+```screen
+aboutToAppear(): void {
   try {
-    this.windowUtil = new WindowUtil(windowStage.getMainWindowSync());
-  } catch (error) {
-    let err = error as BusinessError;
-    hilog.error(0x0000, 'TestLog', `Failed to get main window. Code: ${err.code}, message: ${err.message}`);
+    this.windowObj = (this.getUIContext().getHostContext() as common.UIAbilityContext).windowStage.getMainWindowSync()
+  } catch (err) {
+    Logger.error(`Invoke set preferred orientation failed, code is ${err.code}, message is ${err.message}`)
   }
-  AppStorage.setOrCreate('windowUtil', this.windowUtil);
 
-  windowStage.loadContent('pages/Index', (err) => {
-    // ...
-    this.windowUtil!.setUIContext();
-    this.windowUtil!.setImmersiveType(ImmersiveType.IMMERSIVE);
-    this.windowUtil!.updateWindowInfo();
-  });
+  this.windowObj?.setPreferredOrientation(WindowOrientationHelper.autoRotate("LANDSCAPE_ONLY"))
+    .catch((err: BusinessError) => {
+      Logger.error(`Invoke set preferred orientation failed, code is ${err.code}, message is ${err.message}`)
+    });
+}
+
+aboutToDisappear(): void {
+  this.windowObj?.setPreferredOrientation(WindowOrientationHelper.followDesktop())
+    .catch((err: BusinessError) => {
+      Logger.error(`Invoke set preferred orientation failed, code is ${err.code}, message is ${err.message}`)
+    });
 }
 ```
 
@@ -1909,7 +1902,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 2. 打开Log页面，依次在筛选框中选择“当前的连接设备”、“No filters”、“当前的调试应用”、“Debug”或“Info”，最后在关键字栏填写“SetRequestedOrientation”。
 3. 操作问题页面后，在日志中查看系统日志，找到应用包名一行的日志，lastReqOrientation表示应用最后的窗口旋转策略，target表示目标窗口旋转策略，后面的数字可参考下方对照表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/VQO6GvwdQsiLHRPnRoJxow/zh-cn_image_0000002593796295.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/bXe_grJSQYaSkkbC-oLLFw/zh-cn_image_0000002593796295.png)
 
 日志中查看窗口方向对照表
 

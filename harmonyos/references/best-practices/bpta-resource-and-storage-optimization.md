@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-resource-a
 title: 资源与存储优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化
 category: best-practices
-scraped_at: 2026-04-28T08:22:32+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:55:08+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:f649e0eb73bfc230ff40a95d09b4e0a71e6fb0a988bc966528ce36b1f5a3b85a
 ---
 

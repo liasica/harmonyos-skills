@@ -1,6 +1,6 @@
 # 最佳实践（best-practices）
 
-共 476 篇文档。
+共 477 篇文档。
 
 - [PC/2in1异形窗口](bpta-2in1-window-shape.md)
 - [基于AbcKitTS实现字节码插桩](bpta-abckitts-implements-instrumentation.md)
@@ -70,7 +70,7 @@
 - [基于AVPlayer基础播控实践](bpta-avplayer-basic-control.md)
 - [基于AVPlayer播放视频系列开发实践](bpta-avplayer-video-practices.md)
 - [应用后台运行](bpta-back-task-implement.md)
-- [应用退后台禁止使用传感器问题分析](bpta-background-sensors-baned-analysis.md)
+- [应用退后台禁止使用传感器问题分析](bpta-background-sensors-banned-analysis.md)
 - [长列表加载丢帧优化](bpta-best-practices-long-list.md)
 - [最佳实践概览](bpta-best-practices-overview.md)
 - [低功耗蓝牙基础使用](bpta-bluetooth-low-energy.md)
@@ -189,7 +189,7 @@
 - [特殊界面布局场景](bpta-multi-device-hardware.md)
 - [多设备工程部署与发布](bpta-multi-device-ide.md)
 - [多设备交互](bpta-multi-device-interaction.md)
-- [布局概述](bpta-multi-device-layout-overview.md)
+- [多设备功能开发](bpta-multi-device-layout-overview.md)
 - [一次开发，多端部署概览](bpta-multi-device-overview.md)
 - [页面布局场景](bpta-multi-device-page-layout.md)
 - [多设备界面开发](bpta-multi-device-page.md)
@@ -373,6 +373,7 @@
 - [使用DevEco Studio静态检测编码规范](bpta-stability-ide-static-detection.md)
 - [JS Crash类问题优化建议](bpta-stability-js-crash-opt.md)
 - [JS内存泄漏问题检测方法](bpta-stability-js-memleak-detection.md)
+- [JS Crash故障模式说明](bpta-stability-jscrash-fault-mode.md)
 - [资源泄漏类问题检测](bpta-stability-leak-detection.md)
 - [资源泄漏类问题优化建议](bpta-stability-leak-opt.md)
 - [其他资源泄漏问题分析方法](bpta-stability-leak-way.md)

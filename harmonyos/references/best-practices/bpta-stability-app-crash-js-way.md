@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: JS Crash类问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > JS Crash类问题分析方法
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:f0c5c216ba81df30c595fe44f1e372a7090521f67a624bd035e26dd30c42ab23
+scraped_at: 2026-09-16T06:55:14+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:590dcb10a2d730526f4300b9a94393bb40baaf42735a961f2be25aa21894d509
 ---
 
-当未处理的JS异常导致应用意外退出时，应用会在抛出未处理的异常时崩溃并且会生成对应的JS Crash崩溃日志文件。开发者可通过错误日志查看引起崩溃的代码位置及分析应用崩溃的原因，可参看[JS Crash日志规格](../harmonyos-guides/jscrash-guidelines.md#日志规格)。
+当未处理的JS异常导致应用意外退出时，应用会在抛出未处理的异常时崩溃并且会生成对应的JS Crash崩溃日志文件。开发者可通过错误日志查看引起崩溃的代码位置及分析应用崩溃的原因，可参看[日志规格](../harmonyos-guides/jscrash-guidelines.md#日志规格)。
 
 ## 问题定位思路
 
@@ -18,9 +18,9 @@ content_hash: sha256:f0c5c216ba81df30c595fe44f1e372a7090521f67a624bd035e26dd30c4
 
 ### 根因分析
 
-分析JS Crash问题通过异常场景，结合错误信息和调用栈定位源码，从而得出基本的分析结论。调用栈的分析有以下几种情况：
+分析JS Crash问题通过异常场景，结合错误信息和调用栈定位源码，从而得出基本的分析结论。
 
-**StackTrace 场景分类**
+**StackTrace场景分类**
 
 JS Crash故障日志中的StackTrace字段存放了JS Crash异常的调用栈信息，StackTrace的显示分为以下几种场景。
 

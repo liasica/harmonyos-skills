@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGBUS非法内存访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGBUS非法内存访问故障模式说明
 category: best-practices
-scraped_at: 2026-09-04T06:33:24+08:00
-doc_updated_at: 2026-09-03
-content_hash: sha256:2f8dcee4f2b59823353db5183d82c5d835ebb23e40c7b0d9af88c0fd2d013a68
+scraped_at: 2026-09-16T06:55:12+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:f8d04595319ef0d8f46499b4b66937f5998fba3dff04cd371ff826bf0c4f5646
 ---
 
 ## BUS\_ADRALN内存地址对齐错误
@@ -37,7 +37,7 @@ SIGBUS中BUS\_ADRALN表示内存地址对齐错误，该错误发生在尝试访
 
 ### 案例分析
 
-**案例一：主动构造BUS\_ADRALN故障**
+**案例一：栈指针未对齐触发BUS\_ADRALN故障**
 
 **问题现象**
 
@@ -166,7 +166,7 @@ SIGBUS中BUS\_ADRALN表示内存地址对齐错误，该错误发生在尝试访
        0000005ac3b0a978 7341726567676972   "riggerAs"
    ```
 
-   说明3：由于0x0000005ac3b0a96e上是普通字符，无法被当时可执行代码，GetName调用方式异常，触发了异常。
+   说明3：由于0x0000005ac3b0a96e地址上是普通字符，无法被当成可执行代码，导致GetName调用异常，触发了崩溃。
 
 ### 常见易错代码预防建议
 

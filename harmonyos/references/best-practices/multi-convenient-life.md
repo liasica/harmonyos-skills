@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-convenien
 title: 多设备便捷生活界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备便捷生活界面
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-16T06:55:03+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:5b39c9d1e805c6c62356a1f35a7f15a0efa7eac58ed1214ca5edc1769d7a70a1
 ---
 

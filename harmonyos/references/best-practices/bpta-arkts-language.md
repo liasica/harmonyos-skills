@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkts-lang
 title: ArkTS语言
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言
 category: best-practices
-scraped_at: 2026-09-10T06:30:02+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-16T06:54:57+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:dd24f35312b5d9fc4d14c927f1cd8f6a0b07aedc31fc06c275e9c50816f5b4f3
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smartwatch
 title: 智能穿戴应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 穿戴 > 智能穿戴应用开发
 category: best-practices
-scraped_at: 2026-09-10T06:30:09+08:00
-doc_updated_at: 2026-06-23
-content_hash: sha256:4e995953056caeb9c30d7964f8f47935dbec4222284f4986bad9ab30bedec5c8
+scraped_at: 2026-09-16T06:55:05+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:46afc57e483965c3b8a9e710e467eb4403984a3a90d86c6ef2fae5324156b4ee
 ---
 
 智能穿戴是一种腕部可穿戴设备，提供沟通功能和与移动设备的数据交互功能，包括成人智能表和儿童智能表。智能穿戴设备具有以下显著特点：
@@ -21,7 +21,7 @@ content_hash: sha256:4e995953056caeb9c30d7964f8f47935dbec4222284f4986bad9ab30bed
 | --- | --- |
 | WATCH 5 |  |
 | WATCH Ultimate 2 |  |
-| 超新星 X系列 |  |
+| 超新星 X系列（图示为超新星 X1Pro） |  |
 
 **说明** 
 
@@ -43,7 +43,7 @@ content_hash: sha256:4e995953056caeb9c30d7964f8f47935dbec4222284f4986bad9ab30bed
 
 **说明** 
 
-其他智能穿戴设备产品可通过[display](../harmonyos-references/js-apis-display.md)的[getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)方法获取设备屏幕分辨率(px)，通过[px2vp()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#px2vp12)方法得到分辨率的vp值。
+其他智能穿戴设备产品可通过[display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)方法获取设备屏幕分辨率(px)，通过[px2vp()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#px2vp12)方法得到分辨率的vp值。
 
 ### 相机硬件信息
 
@@ -99,11 +99,11 @@ content_hash: sha256:4e995953056caeb9c30d7964f8f47935dbec4222284f4986bad9ab30bed
 
 ### 智慧手势
 
-智慧手势是智能穿戴设备除屏幕交互、表冠交互和按键交互外的独特感知交互方式。在情景障碍，需要单手处理的场景，用户可以使用敲击手指和滑动指关节实现控制和切换选择诉求。
+智慧手势是智能穿戴设备除屏幕交互、表冠交互和按键交互外的独特感知交互方式。在存在情景障碍或需要单手处理的场景中，用户可通过敲击手指与滑动指关节来实现控制和切换选择。
 
 **说明** 
 
-* 请确认当前设备是否支持智慧手势，可通过查看【设置】-【手势】是否有智慧手势识别选项。设备不支持智慧手势，交互事件不会响应。
+* 请确认当前设备是否支持智慧手势，可通过查看【设置】-【手势】是否有智慧手势识别选项。若设备不支持智慧手势，交互事件不会响应。
 * 使用智慧手势功能要确保设备上的智慧手势识别开关已打开。
 
 **交互场景**
@@ -130,7 +130,7 @@ content_hash: sha256:4e995953056caeb9c30d7964f8f47935dbec4222284f4986bad9ab30bed
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/0lEz7lfQTAmhgfywDtrY2A/zh-cn_image_0000002585606726.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Ix5tI9-VRwCafJ4KO4nY0g/zh-cn_image_0000002585606726.png "点击放大")
 
 * 滑动切焦：切换当前焦点，以确认下一步操作，通过将拇指沿食指第二关节向指尖快速滑动两下切换焦点，后续再进行确认操作，可以用于切换到取消按钮，或切换到播放下一首按钮上，用于取消消息、切换歌曲等操作场景。
 
@@ -150,9 +150,9 @@ content_hash: sha256:4e995953056caeb9c30d7964f8f47935dbec4222284f4986bad9ab30bed
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Q2fhyTxQSCe2qK5Yzzvg_A/zh-cn_image_0000002615966431.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/LVIuQzQsREqfiSKMBqNj4w/zh-cn_image_0000002615966431.png "点击放大")
 
-智慧手势交互的前提是组件获焦。首先使用[activate](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#activate14)激活当前界面的焦点激活态。
+智慧手势交互的前提是组件获焦。首先使用[activate()](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#activate14)激活当前界面的焦点激活态。
 
 ```typescript
 this.getUIContext().getFocusController().activate(true, false);
@@ -180,7 +180,7 @@ aboutToDisappear(): void {
 * 显示优化配置
   1. 默认启用深色主题模式降低显示能耗。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/3oGE00BlROijNzn5lCFCSg/zh-cn_image_0000002585446792.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4sSAYs5YRw-RGAxa5BZXZA/zh-cn_image_0000002585446792.png "点击放大")
   2. 仅允许视频、游戏、导航等必要场景保持屏幕常亮。
 * 后台应用管理
   1. 关键服务类应用（闹钟、日程提醒、邮件、IM类应用）可依据实际需求启动。
@@ -191,7 +191,7 @@ aboutToDisappear(): void {
 
 若应用涉及导航、视频等需要保持应用常亮的场景，可以根据如下步骤实现：
 
-1. 设定应用屏幕常亮首先需要在EntryAbility通过[window.getLastWindow](../harmonyos-references/arkts-apis-window-f.md#windowgetlastwindow9)接口获取window实例。
+1. 设定应用屏幕常亮首先需要在EntryAbility通过[window.getLastWindow()](../harmonyos-references/arkts-apis-window-f.md#windowgetlastwindow9)接口获取window实例。
 
    ```typescript
    onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -235,9 +235,9 @@ aboutToDisappear(): void {
 
 ### 跨设备互通
 
-手机与智能穿戴设备的互联通信是智能穿戴设备的核心开发场景，开发者可通过[WearEngine](../harmonyos-references/wearengine_api.md)提供的标准化接口实现跨设备交互，具体开发流程如下：
+手机与智能穿戴设备的互联通信是智能穿戴设备的核心开发场景，开发者可通过[wearEngine](../harmonyos-references/wearengine_api.md)提供的标准化接口实现跨设备交互，具体开发流程如下：
 
-1. 通过wearEngine.getDeviceClient()获取Device模块的客户端用于获取连接设备。
+1. 通过[wearEngine.getDeviceClient()](../harmonyos-references/wearengine_api.md#wearenginegetdeviceclient)获取Device模块的客户端用于获取连接设备。
 
    ```typescript
    export class ConnectUtil {
@@ -353,7 +353,7 @@ aboutToDisappear(): void {
 
 **说明** 
 
-* 鉴于部分智能穿戴设备可能不支持WearEngine能力，开发时务必充分考量设备差异。在调用相关接口前，请使用[canIUse](../harmonyos-references/js-apis-syscap.md#caniuse)接口进行能力检测，以确保应用的稳定性，避免因兼容性问题引发崩溃。可参考[多设备应用开发](bpta-multi-device-function.md#多设备应用开发)。
+* 鉴于部分智能穿戴设备可能不支持WearEngine能力，开发时务必充分考量设备差异。在调用相关接口前，请使用[canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)接口进行能力检测，以确保应用的稳定性，避免因兼容性问题引发崩溃。可参考[多设备应用开发](bpta-multi-device-function.md#多设备应用开发)。
 * 使用WearEngine实现互联通信功能需要获取WearEngine权限，具体可以参考[申请接入Wear Engine服务](../harmonyos-guides/wearengine_apply.md)。
 * 手机端与智能穿戴端应用实现与对端互连通信的原理一致，详细开发方案可参考[实现手机手表互联通信与手表心率监听](https://gitcode.com/harmonyos_samples/Phone_Connection)。
 
@@ -371,7 +371,7 @@ aboutToDisappear(): void {
 
 **手机主动推送**
 
-手机应用可以通过[WearEngine](../harmonyos-references/wearengine_api.md)的[notify()](../harmonyos-references/wearengine_api.md#notify)实现手机向智能穿戴设备主动推送消息通知，开发步骤如下：
+手机应用可以通过[wearEngine](../harmonyos-references/wearengine_api.md)的[notify()](../harmonyos-references/wearengine_api.md#notify)实现手机向智能穿戴设备主动推送消息通知，开发步骤如下：
 
 1. 通过[wearEngine.getNotifyClient()](../harmonyos-references/wearengine_api.md#wearenginegetnotifyclient)获取Notify客户端类。
 
@@ -487,7 +487,7 @@ aboutToDisappear(): void {
 
 **说明** 
 
-由于不同设备的能力支持度不同，在调用相关接口前，请使用[canIUse](../harmonyos-references/js-apis-syscap.md#caniuse)接口进行能力检测，以确保应用的稳定性，避免因兼容性问题引发崩溃。可参考[多设备应用开发](bpta-multi-device-function.md#多设备应用开发)。
+由于不同设备的能力支持度不同，在调用相关接口前，请使用[canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)接口进行能力检测，以确保应用的稳定性，避免因兼容性问题引发崩溃。可参考[多设备应用开发](bpta-multi-device-function.md#多设备应用开发)。
 
 ### 未成年人模式适配
 
@@ -515,7 +515,7 @@ aboutToDisappear(): void {
 
 问题描述：不知道智能穿戴设备需要完成哪些工程配置，成人智能表和儿童智能表的工程配置有哪些不同。
 
-解决方案：开发在智能穿戴设备上的应用，需要在module.json5配置文件的module字段中，为deviceTypes字段设置wearable类型。更多详情可参考[deviceTypes标签](../lite-wearable-guides/module-structure.md#devicetype标签)。若当前已有适配轻量级智能表的工程，需要迁移适配成人智能表设备，可以参考[FA工程迁移](bpta-smartwatch.md#section14111733132515)。
+解决方案：开发在智能穿戴设备上的应用，需要在module.json5配置文件的module字段中，为deviceTypes字段设置wearable类型。更多详情可参考[deviceType标签](../lite-wearable-guides/module-structure.md#devicetype标签)。若当前已有适配轻量级智能表的工程，需要迁移适配成人智能表设备，可以参考[FA工程迁移](bpta-smartwatch.md#section14111733132515)。
 
 成人智能表应用完成以上配置即可，儿童智能表应用需要额外添加儿童智能表分发策略配置，DevEco Studio需更新至6.1.0 Release及以上，具体步骤如下：
 
@@ -573,7 +573,7 @@ aboutToDisappear(): void {
 
 ### 包管理策略
 
-**采用“一次开发，多端部署”分层架构开发的应用工程，如何管理智能穿戴设备与其他设备上的应用HAP包**
+**采用“一次开发，多端部署”分层架构开发的应用工程，如何管理智能穿戴设备与其他设备上的应用[HAP](../harmonyos-guides/application-package-glossary.md#hap-harmony-ability-package)包**
 
 问题描述：应用采用“一次开发，多端部署”将手机端、智能穿戴端的应用在一个工程中管理，不知该如何管理HAP包。
 
@@ -592,14 +592,14 @@ aboutToDisappear(): void {
 
 1. 手表应用在发布时，仅可选择“手表”设备，无法对智能穿戴与轻量级智能穿戴做区分。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/aLRlPyvdSpWDTv0YQ4yCIw/zh-cn_image_0000002615886535.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/18TRkJ2sTXaDfGKx8zKHVQ/zh-cn_image_0000002615886535.png "点击放大")
 2. 应用涉及两种穿戴设备时，应用发布是否需要上传两个对应的发布包。
 
 解决方案：
 
 1. 点击确认后跳转至发布页，可在发布页具体选择设备类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/mUASgEbVSMmZOZBWYDhbwQ/zh-cn_image_0000002585606732.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/acvav0uYRNyjTX4FcytUgQ/zh-cn_image_0000002585606732.png "点击放大")
 2. 智能穿戴支持ArkTS与JS，轻量级智能穿戴仅支持JS，若应用发布包支持在智能穿戴与轻量级智能穿戴上运行，则无需对应用发布包做区分，若应用发布包仅支持某一种穿戴设备，则需要分别为智能穿戴设备与轻量级智能穿戴设备创建AppID，并上传其对应的发布包。
 3. APP创建流程可参考[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 
@@ -615,7 +615,7 @@ aboutToDisappear(): void {
 
 解决方案：
 
-1. 接口调用前进行能力检测：在调用相关接口前，请使用[canIUse](../harmonyos-references/js-apis-syscap.md#caniuse)接口进行能力检测，以确保应用的稳定性，可参考[多设备应用开发](bpta-multi-device-function.md#多设备应用开发)。
+1. 接口调用前进行能力检测：在调用相关接口前，请使用[canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)接口进行能力检测，以确保应用的稳定性，可参考[多设备应用开发](bpta-multi-device-function.md#多设备应用开发)。
 2. 硬件功能适配排查：若功能无响应，请排查该设备是否支持该功能（排查示例：若旋转表冠交互事件未响应，请先确认当前智能穿戴设备是否具备旋转表冠这一物理硬件条件）。
 
 **迁移FA项目后，同步/异步接口无法正常调用或功能异常**
@@ -632,8 +632,9 @@ huks.generateKeyItem(alias, options, callback);
 
 ```typescript
 try {
-  const data = await huks.generateKeyItem(alias, options);
   // Result of successful processing.
+  const data = await huks.generateKeyItem(alias, options);
+
 } catch (error) {
   // Capture and handle exceptions.
 }
@@ -683,60 +684,60 @@ try {
 
    儿童智能表应用开发完成后，提交应用时选择智能手表选项，儿童智能表应用在智能手表选项下。发布应用的通用配置和流程可参考[发布HarmonyOS应用](../app/agc-help-release-app-0000002271695230.md)。在提交时，忽略以下弹窗，点击确认或关闭按钮以继续下一步操作：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/Lj_J_urYSXibIYRD9auL8g/zh-cn_image_0000002615966439.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ZOHMlb4vSt--BeQPlSWWiA/zh-cn_image_0000002615966439.png)
 4. 选择应用分类标签。
 
    **应用分类**：根据应用特性选择相关分类（如音乐、休闲娱乐、儿童等），“应用/儿童”为非必选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/GHMYBSyNQ1eDhzVmm9ODZw/zh-cn_image_0000002585446802.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Fl0g0VDLQpSeZFoltQA26Q/zh-cn_image_0000002585446802.png)
 
    **应用标签**：至少选择一个标签作为应用主标签，同时可以再选择一个或多个其它标签作为补充（非必须）。根据应用特性选择标签，“儿童”为非必选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/l9w5m9ImRhaICpldVapZ8w/zh-cn_image_0000002615886547.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/lM5y1R9dSQKWsrzLRzProw/zh-cn_image_0000002615886547.png "点击放大")
 
 ## FA工程迁移
 
-智能穿戴设备兼容FA模型，本章节提供了如何将使用JS构建的[轻量级智能穿戴](bpta-lite-wearable-guide.md)项目迁移到智能穿戴设备上继续使用，实现功能的延续与适配。
+智能穿戴设备兼容FA模型，本章节提供了如何将使用JS构建的[轻量级智能穿戴应用开发](bpta-lite-wearable-guide.md)项目迁移到智能穿戴设备上继续使用，实现功能的延续与适配。
 
 以[轻量级智能穿戴应用开发](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/tree/master/LiteWearable)为例，按照如下步骤，可以将使用JS构建的项目迁移到智能穿戴设备上：
 
 1. 使用DevEco Studio创建项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/wHE67yaFSP6KyMQd4jR4sA/zh-cn_image_0000002585606740.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/OPRg5wS7QUiPLMq77OXheA/zh-cn_image_0000002585606740.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/nWwxIjuTTvSOxl3hhm_iYg/zh-cn_image_0000002615966443.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/p1Zcz0MWR4yOPpheWvrbbA/zh-cn_image_0000002615966443.png "点击放大")
 
    工程名目录右键选择“New”->“Module”创建模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/yTEGoiUBRwq4deeCFIkg-g/zh-cn_image_0000002585446806.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/8beB8vY_QCKlGhiAlxAJkQ/zh-cn_image_0000002585446806.png "点击放大")
 
    选择“Empty Ability”，点击“Next”进入下一步。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/yqEJhvNTSlq0RUnKuAh6IA/zh-cn_image_0000002615886549.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Eg2LhmqUSM2fZyb1pUXwRw/zh-cn_image_0000002615886549.png "点击放大")
 
    默认配置无需修改，点击“Next”进入下一步。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/tChxd4znToCPPAfkOizK7A/zh-cn_image_0000002585606742.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/87xOMjXmSoWaDxAHnxgkNQ/zh-cn_image_0000002585606742.png "点击放大")
 
    为了兼容智能穿戴，需要修改Ability name为“HiWearMainAbility”。点击“Finish”完成智能穿戴兼容模块创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/yCSvXuvWSyCo53VNWVNF3Q/zh-cn_image_0000002615966445.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/vS-4_lcxT-y3vsrrBfKkDQ/zh-cn_image_0000002615966445.png "点击放大")
 
    删除工程默认创建的entry模块，此时实现轻量级智能穿戴项目迁移的基础框架创建完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/cDEFowfdRWOp-g1UOSPNKg/zh-cn_image_0000002585446808.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/uOlhaQ28T-2Z6PhFc3VaOQ/zh-cn_image_0000002585446808.png "点击放大")
 2. 将原轻量级智能穿戴项目/entry/src/main/js目录下的代码文件及资源文件按对应位置迁移至新工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/wfOEKerhQVyBxfLpzBextQ/zh-cn_image_0000002615886553.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/MBYDpkRvT2qNDpa8NvtIag/zh-cn_image_0000002615886553.png "点击放大")
 3. 修改适配智能穿戴所需的配置文件。
 
    迁移的文件后需要修改config.json。修改资源文件的引用；pages目录下如果有新页面文件需添加至config.json；修改页面设计基线宽度为466。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/4x9EWPn6Ql2dnnXBQy3PCA/zh-cn_image_0000002585606744.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/14gAAzPBQIOdFksdRN3O6A/zh-cn_image_0000002585606744.png "点击放大")
 
    config.json文件中补充所需的权限。如果原项目中使用了震动功能，需添加震动权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Kqb3RxieTd-2iS2n3NQX9w/zh-cn_image_0000002615966447.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/guq9WIZeSPO0IcZ87FYwjA/zh-cn_image_0000002615966447.png "点击放大")
 4. 代码适配。由于轻量级智能穿戴和智能穿戴的同步/异步机制不同，因此在迁移时，需要对相关接口进行修改。以Huks接口为例，说明如何进行这些修改。
 
    ```typescript

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pre-connec
 title: 冷启网络预建链最佳实践
 breadcrumb: 最佳实践 > 技术创新 > 冷启网络预建链最佳实践
 category: best-practices
-scraped_at: 2026-09-10T06:29:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d0ddc51626b46f9bfc30face750f640dcf60646732cdee8f4b6e567f47eb273d
+scraped_at: 2026-09-16T06:54:54+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:f2d86aa47d552ed96f2a2c5fb39e45232e92c8baee51c56b7c836f4026685bd5
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:d0ddc51626b46f9bfc30face750f640dcf60646732cdee8f4b6e567f47e
 
 以图片列表加载场景为例，应用启动后需要加载多张网络图片。传统方式下，每张图片请求都需要经历完整的建链过程；而使用预建链技术后，可在应用启动阶段提前建立与图片服务器的连接，当用户滑动列表时，图片数据即可通过已建立的连接快速下载。
 
-预建链技术的核心价值体现在三个方面：提升性能、优化用户体验和提高资源利用率。通过将建链过程与业务逻辑并行执行，预建链通常可节省400-700ms的网络延迟，使首屏内容加载更快，减少用户等待时间，提升应用流畅度和响应速度。在网络条件稳定的情况下，提前建立连接还可充分利用网络带宽，避免后续请求的建链等待。
+预建链技术的核心价值体现在三个方面：提升性能、优化用户体验和提高资源利用率。通过将建链过程与业务逻辑并行执行，预建链通常可节省400-700ms的网络耗时，使首屏内容加载更快，减少用户等待时间，提升应用流畅度和响应速度。在网络条件稳定的情况下，提前建立连接还可充分利用网络带宽，避免后续请求的建链等待。
 
 ## 实现原理
 
@@ -24,7 +24,7 @@ content_hash: sha256:d0ddc51626b46f9bfc30face750f640dcf60646732cdee8f4b6e567f47e
 
 使用预建链请求与未使用预建链请求时序对比图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/NCM-mxOoT2KAkNzeZgYHaA/zh-cn_image_0000002594079346.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/NanIMBbPTS6ThXSDMn9okQ/zh-cn_image_0000002624518875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/P-ZidKtDRi-ItSIM1PhS2w/zh-cn_image_0000002594079346.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/3JcRKA12SHedFPqf75-nGg/zh-cn_image_0000002624518875.png "点击放大")
 
 ## 冷启动网络预热
 
@@ -66,7 +66,7 @@ try {
 
 在应用启动时，使用预建链请求与非预建链正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/M5C4sPHEQpuGcXXEv3hudA/zh-cn_image_0000002594239264.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/jj-zYH-dST665104TIG6Tw/zh-cn_image_0000002594239264.png)
 
 2.连接复用获取数据：当实际数据请求发起时，直接复用预建链阶段已建立的连接，跳过连接建立过程，实现向目标服务器动态预取数据，以优化资源加载。
 
@@ -95,7 +95,7 @@ try {
 
 从应用启动到发起请求获取数据内容，使用预建链技术与正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/nP1bQIQUTEWEu4hQrTH2yg/zh-cn_image_0000002624638731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/E9g58YayTz23S7DZX0_Bvw/zh-cn_image_0000002624638731.gif)
 
 ## 常见问题
 

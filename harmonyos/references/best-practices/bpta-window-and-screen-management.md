@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-window-and
 title: 窗口与屏幕管理
 breadcrumb: 最佳实践 > 应用框架 > 窗口与屏幕管理
 category: best-practices
-scraped_at: 2026-04-28T08:20:11+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:54:57+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:b3742576389d602a8b96fc12cefbdb0935d68fb2c215cf5be971deb5f1882998
 ---
 

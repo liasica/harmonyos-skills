@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-analysis-o
 title: 应用崩溃类问题分析
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析
 category: best-practices
-scraped_at: 2026-09-02T14:53:47+08:00
-doc_updated_at: 2026-08-10
+scraped_at: 2026-09-16T06:55:14+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:0b3d53bf945466caca7d1a1dd3b6073c0328a70890f73cd93005fda8997dcb9e
 ---
 

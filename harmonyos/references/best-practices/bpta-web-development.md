@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-develo
 title: ArkWeb
 breadcrumb: 最佳实践 > 应用框架 > ArkWeb
 category: best-practices
-scraped_at: 2026-09-10T06:30:02+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-16T06:54:58+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:d4c49f35fbf0ca5f340c617195c0a361c0d5b31629b9f6d763d5fa20125cc099
 ---
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备功能开发
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发 > 多设备功能开发
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
-doc_updated_at: 2026-08-17
-content_hash: sha256:39b2862f0f0cbd17c8c181d2bcbab86b3ab90dc8e3f8b1dd237d088a56d2d1e2
+scraped_at: 2026-09-16T06:55:02+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:9347984399b6f4140e96850d6b0ebebb6c2d03e3b89cea0dd06e7fb86f2e4a16
 ---
 
 应用开发至少包含两部分工作： UI页面开发和底层功能开发（部分需要联网的应用还会涉及服务端开发）。前面章节介绍了如何解决页面适配的问题，本章节主要介绍应用如何解决设备系统能力差异的兼容问题。
 
 ## 系统能力
 
-[系统能力SystemCapability使用指南](../harmonyos-references/syscap.md)（即SystemCapability，缩写为SysCap）指操作系统中每一个相对独立的特性，如蓝牙，WIFI，NFC，摄像头等，都是系统能力之一。每个系统能力对应多个API，随着目标设备是否支持该系统能力共同存在或消失。
+[系统能力SystemCapability使用指南](../harmonyos-references/syscap.md)（即SystemCapability，缩写为SysCap）指操作系统中每一个相对独立的特性，如蓝牙、WiFi、NFC、摄像头等，都是系统能力之一。每个系统能力对应多个API，随着目标设备是否支持该系统能力共同存在或消失。
 
 与系统能力相关的，有支持能力集、联想能力集和要求能力集三个核心概念。
 
@@ -36,7 +36,7 @@ content_hash: sha256:39b2862f0f0cbd17c8c181d2bcbab86b3ab90dc8e3f8b1dd237d088a56d
 
 如果某个系统能力没有写入应用的要求能力集中，那么在使用前需要判断设备是否支持该系统能力。
 
-* [canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)接口帮助开发者来判断该设备是否支持某个特定的syscap。
+* [canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)接口帮助开发者来判断该设备是否支持某个特定的SysCap。
 
   ```typescript
   if (canIUse('SystemCapability.Communication.NFC.Core')) {
@@ -48,8 +48,8 @@ content_hash: sha256:39b2862f0f0cbd17c8c181d2bcbab86b3ab90dc8e3f8b1dd237d088a56d
 
 **说明** 
 
-* 如果某系统能力是应用运行必须的，则要将其写入到应用的要求能力集中，以确保应用不会分发和安装到不符合要求的设备上。
-* 如果某系统能力不是应用运行必须的，则可以在运行时做动态判断，这样可以最大程度扩大应用的适用范围。
+* 如果某系统能力是应用运行必需的，则要将其写入到应用的要求能力集中，以确保应用不会分发和安装到不符合要求的设备上。
+* 如果某系统能力不是应用运行必需的，则可以在运行时做动态判断，这样可以最大程度扩大应用的适用范围。
 
 **配置联想能力集和要求能力集**
 

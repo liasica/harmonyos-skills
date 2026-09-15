@@ -3,24 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-automated-
 title: 自动化测试框架开发实践
 breadcrumb: 最佳实践 > 测试框架 > 自动化测试框架开发实践
 category: best-practices
-scraped_at: 2026-09-10T06:30:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:74bdea19eaf588228814162f5fad3a5bec145639aebc2f469a9855985f3a5c92
+scraped_at: 2026-09-16T06:55:17+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:f3b2f705582a46dcbaa244bd607cdae4dfa37051c0325673da99d21a8be4a12f
 ---
 
 ## 概述
 
-[自动化测试框架](../harmonyos-guides/arkxtest-guidelines.md)是一套面向多设备、全场景的端侧测试体系，基于DevEco Studio开发环境和hvigor构建系统，整合了UI测试（[@ohos.UiTest](../harmonyos-references/js-apis-uitest.md)）、单元测试（[@ohos/hypium](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fhypium)）等能力，通过标准化的工程结构、编码规范与执行流程，支撑开发者实现高效高质量验证。
+自动化测试框架（[自动化测试框架使用指导](../harmonyos-guides/arkxtest-guidelines.md)）是一套面向多设备、全场景的端侧测试体系。基于DevEco Studio开发环境和Hvigor（请参考Hvigor[概述](../harmonyos-guides/ide-hvigor.md)）构建系统，整合了UI测试（[@ohos.UiTest](../harmonyos-references/js-apis-uitest.md)）、单元测试（[@ohos/hypium](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fhypium)）等能力。通过标准化的工程结构、编码规范与执行流程，支撑开发者实现高效高质量验证。
 
-该框架涵盖[单元测试框架](../harmonyos-guides/unittest-guidelines.md)、[UI测试框架](../harmonyos-guides/uitest-guidelines.md)和[白盒性能测试框架](../harmonyos-guides/perftest-guideline.md)。
+该框架涵盖单元测试框架（[单元测试框架使用指导](../harmonyos-guides/unittest-guidelines.md)）、UI测试框架（[UI测试框架使用指导](../harmonyos-guides/uitest-guidelines.md)）和白盒性能测试框架（[白盒性能测试框架使用指导](../harmonyos-guides/perftest-guideline.md)）。
 
-* 单元测试框架：是自动化测试框架基础底座，UI测试脚本和性能测试脚本需基于单元测试框架进行开发，用于定义测试用例及验证执行结果。
-* UI测试框架：调用[UiTest](../harmonyos-references/js-apis-uitest.md)接口进行UI界面查找和模拟操作。
-* 白盒性能测试框架：调用[PerfTest](../harmonyos-references/js-apis-perftest.md)接口采集和度量测试应用内指定逻辑执行时的基础性能数据。
+* 单元测试框架：是自动化测试框架的基础底座，UI测试脚本和性能测试脚本需基于单元测试框架进行开发，用于定义测试用例及验证执行结果。
+* UI测试框架：调用[@ohos.UiTest](../harmonyos-references/js-apis-uitest.md)接口进行UI界面查找和模拟操作。
+* 白盒性能测试框架：调用[@ohos.test.PerfTest](../harmonyos-references/js-apis-perftest.md)接口采集和度量测试应用内指定逻辑执行时的基础性能数据。
 
-本文介绍了单元测试框架和UI测试框架的实现，旨在帮助开发者了解和掌握自动化测试框架的开发流程与实现细节。关键步骤如下：
+本文介绍了单元测试框架和UI测试框架的实现。旨在帮助开发者了解和掌握自动化测试框架的开发流程与实现细节。关键步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/wHEGOJmcTAmaKgEV8mi1pg/zh-cn_image_0000002515546966.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Rdq6ITEPSDaMRJg_zJ37RA/zh-cn_image_0000002515546966.png "点击放大")
 
 ## 场景案例
 
@@ -32,18 +32,18 @@ content_hash: sha256:74bdea19eaf588228814162f5fad3a5bec145639aebc2f469a9855985f3
 
 * **单元测试**
 
-  使用单元测试框架通过Mock隔离被测代码与外部依赖，在无需启动完整应用的前提下，对应用逻辑（如工具函数、业务服务等）进行快速、隔离、可重复的验证。本文采用该框架的以下特性来实现单元测试：
+  使用单元测试框架通过Mock隔离被测代码与外部依赖。在无需启动完整应用的前提下，对应用逻辑（如工具函数、业务服务等）进行快速、隔离、可重复的验证。本文采用该框架的以下特性来实现单元测试：
 
   | 特性 | 使用说明 | 使用场景 |
   | --- | --- | --- |
-  | [基础流程能力](../harmonyos-guides/unittest-guidelines.md#基础流程能力) | 通过基础流程能力如describe、it等接口定义测试套和测试用例。并对测试套和测试用例设置预置条件和清理条件。 | 定义测试套和测试用例，以及测试用例执行前需要预置条件和执行后需要清理条件的场景，如：设置定时器和清理定时器。 |
+  | [基础流程能力](../harmonyos-guides/unittest-guidelines.md#基础流程能力) | 通过describe、it等基础流程接口定义测试套和测试用例，并为测试套和测试用例设置预置条件和清理条件。 | 定义测试套和测试用例，以及测试用例执行前需要预置条件和执行后需要清理条件的场景，如：设置定时器和清理定时器。 |
   | [断言能力](../harmonyos-guides/unittest-guidelines.md#断言能力) | 使用如assertEqual等断言接口判断检验实际值是否等于预期值。 | 检验函数功能是否正常。 |
   | [Mock能力](../harmonyos-guides/unittest-guidelines.md#mock能力) | 使用Mock能力，Mock自定义对象的函数。 | 函数依赖外部资源或复杂逻辑，如：依赖网络请求返回值。 |
   | [数据驱动](../harmonyos-guides/unittest-guidelines.md#数据驱动) | 使用数据驱动能力，对测试套或者测试用例执行若干次。 | 多个测试用例或测试套有相同类型参数，如：进行压力测试。 |
 
 * **UI测试**
 
-  通过[DevEco Testing](../harmonyos-guides/deveco-testing.md)的UIViewer获取屏幕坐标点信息，并使用UI测试框架接口对指定坐标点或指定控件注入模拟的输入事件（如点击、滑动等），实现界面交互和验证的自动化。本文针对不同UI测试场景提供如下实现方案：
+  通过[DevEco Testing](../harmonyos-guides/deveco-testing.md)的UIViewer获取屏幕坐标点信息。并使用UI测试框架接口对指定坐标点或指定控件注入模拟的输入事件（如点击、滑动等），实现界面交互和验证的自动化。本文针对不同UI测试场景提供如下实现方案：
 
   | 场景 | 实现方案 |
   | --- | --- |
@@ -55,13 +55,13 @@ content_hash: sha256:74bdea19eaf588228814162f5fad3a5bec145639aebc2f469a9855985f3
 
   UI测试流程图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/3C6aM45yS3277ZDsW4ApEQ/zh-cn_image_0000002515387058.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/xl57MUt4Thi1IkTH6uwiIQ/zh-cn_image_0000002515387058.png "点击放大")
 
 ### 开发步骤
 
 1. 搭建DevEco Studio环境
 
-   测试脚本基于DevEco Studio编写，开发者需先下载[DevEco Studio](https://developer.huawei.com/consumer/cn/download/)并完成[环境准备](../harmonyos-guides/hdc.md#环境准备)。
+   测试脚本基于DevEco Studio编写，开发者需先[下载与安装DevEco Studio](../harmonyos-guides/ide-software-install.md)并完成[环境准备](../harmonyos-guides/hdc.md#环境准备)。
 2. 下载安装Hypium
 
    Hypium是OpenHarmony上的测试框架，提供测试用例的编写、执行及结果显示功能，用于OpenHarmony系统应用接口和应用界面的测试。使用DevEco Studio打开测试项目，并按以下方案进行配置。
@@ -77,14 +77,14 @@ content_hash: sha256:74bdea19eaf588228814162f5fad3a5bec145639aebc2f469a9855985f3
      ```
    * 方案二：在应用工程的[oh-package.json5](../harmonyos-guides/ide-oh-package-json5.md)文件的devDependencies中配置版本号，然后点击编辑器窗口上方的“Sync Now”同步工程，即可使用对应版本的框架功能。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/8Glx0u-SSuWBt0IBlWirJw/zh-cn_image_0000002554811799.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/bcLjX4vcS4aalTydVkgiCg/zh-cn_image_0000002554811799.png)
 3. 新建测试脚本
 
-   参考[创建ArkTS测试用例](../harmonyos-guides/ide-instrument-test.md#section36049271219)，导入所需的[单元测试框架能力](../harmonyos-guides/unittest-guidelines.md#单元测试框架能力使用说明)及其他测试脚本中依赖的接口，[编写单元测试脚本](../harmonyos-guides/unittest-guidelines.md#编写单元测试脚本)。
+   参考[创建ArkTS测试用例](../harmonyos-guides/ide-instrument-test.md#section36049271219)，导入所需的单元测试框架能力（[单元测试框架能力使用说明](../harmonyos-guides/unittest-guidelines.md#单元测试框架能力使用说明)）及其他测试脚本中依赖的接口，[编写单元测试脚本](../harmonyos-guides/unittest-guidelines.md#编写单元测试脚本)。
 
    启动被测试页面，检查设备显示的页面是否为预期页面。流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/vyy8axU6QQe1lSiAhLr5YQ/zh-cn_image_0000002547066887.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Bw3a7GSlQrapdo5WZi8M4Q/zh-cn_image_0000002547066887.png "点击放大")
 
    在自动化测试中，常用[基础流程能力](../harmonyos-guides/unittest-guidelines.md#基础流程能力)的it定义测试用例，其参数如下：
 
@@ -94,7 +94,7 @@ content_hash: sha256:74bdea19eaf588228814162f5fad3a5bec145639aebc2f469a9855985f3
    | attribute | TestType | Size | Level | 是 | 测试类型，用于标记测试用例的类型。 |
    | func | Function | 是 | 异步函数（async），包含测试用例的具体逻辑。 |
 
-   使用it创建测试用例后，通过[AbilityDelegatorRegistry](../harmonyos-references/js-apis-app-ability-abilitydelegatorregistry.md)获取应用包名，构造want启动对象、调用[startAbility()](../harmonyos-references/js-apis-inner-application-abilitydelegator.md#startability9)启动应用。在应用加载完成后，调用[getCurrentTopAbility()](../harmonyos-references/js-apis-inner-application-abilitydelegator.md#getcurrenttopability9)获取设备上前台显示页面，并使用[expect()](../harmonyos-guides/unittest-guidelines.md#基础流程能力)和[assertEqual()](../harmonyos-guides/unittest-guidelines.md#断言能力)断言当前页面是否为预期启动页面。
+   使用it创建测试用例后，通过[@ohos.app.ability.abilityDelegatorRegistry(AbilityDelegatorRegistry)](../harmonyos-references/js-apis-app-ability-abilitydelegatorregistry.md)获取应用包名，构造want启动对象、调用[startAbility()](../harmonyos-references/js-apis-inner-application-abilitydelegator.md#startability-1)启动应用。在应用加载完成后，调用[getCurrentTopAbility()](../harmonyos-references/js-apis-inner-application-abilitydelegator.md#getcurrenttopability-1)获取设备上前台显示页面，并使用expect()（[基础流程能力](../harmonyos-guides/unittest-guidelines.md#基础流程能力)）和assertEqual()（[断言能力](../harmonyos-guides/unittest-guidelines.md#断言能力)）断言当前页面是否为预期启动页面。
 
    ```screen
    const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -213,7 +213,7 @@ content_hash: sha256:74bdea19eaf588228814162f5fad3a5bec145639aebc2f469a9855985f3
 
      数据驱动需要使用Ability能力，可参考[自定义Ability和Resources](../harmonyos-guides/ide-instrument-test.md#section760061533)。文件内容示例可在[运行测试用例](../harmonyos-guides/ide-instrument-test.md#section14415226122419)后，在对应模块的build/{productName}/intermediates/src/ohosTest下查看。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/e5C-5EbeTpGFEi9v_b3-IQ/zh-cn_image_0000002504491476.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/zejCAoDoTE6h0g-O5NZBGA/zh-cn_image_0000002504491476.png)
 
      定义Ability后需要在module.json5文件中补充配置字段mainElement、pages和abilities。关于字段的具体说明，请参考[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)。
 
@@ -337,7 +337,7 @@ content_hash: sha256:74bdea19eaf588228814162f5fad3a5bec145639aebc2f469a9855985f3
      ```
 5. 编写UI测试用例
 
-   在UI测试中，开发者可以利用[UiTest](../harmonyos-references/js-apis-uitest.md)接口模拟点击、双击、长按、滑动等操作，以验证应用程序中的UI行为。
+   在UI测试中，开发者可以利用[@ohos.UiTest](../harmonyos-references/js-apis-uitest.md)接口模拟点击、双击、长按、滑动等操作，以验证应用程序中的UI行为。
 
    * 模拟文本输入
 
@@ -414,7 +414,7 @@ content_hash: sha256:74bdea19eaf588228814162f5fad3a5bec145639aebc2f469a9855985f3
 
 自动化测试实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/H6b4gxd4TtyOlZSglH7DnA/zh-cn_image_0000002536291283.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/v1FUIZvtQUmWElzdQhup-w/zh-cn_image_0000002536291283.gif "点击放大")
 
 ## 常见问题
 
@@ -422,9 +422,9 @@ content_hash: sha256:74bdea19eaf588228814162f5fad3a5bec145639aebc2f469a9855985f3
 
 **问题现象**
 
-使用[assertInstanceOf()](../harmonyos-guides/unittest-guidelines.md#断言能力)检验自定义数据类型，脚本运行时报错“Error in getFirstGridData, [object Object] is [object Object]not  ItemData”。
+使用[assertInstanceOf()](../harmonyos-guides/unittest-guidelines.md#断言能力)检验自定义数据类型，脚本运行时报错“Error in getFirstGridData, [object Object] is [object Object]not ItemData”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/q1dstCnLT3mYXhHqMO16vw/zh-cn_image_0000002536411247.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Mc8GzkwlREW3eoG1J2BdTA/zh-cn_image_0000002536411247.png)
 
 **可能原因**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: VMRoot类型内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkTS内存泄漏故障模式说明 > VMRoot类型内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-10T06:30:18+08:00
+scraped_at: 2026-09-16T06:55:13+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:7c881d96661f808725ba532bdee2fdb42fdaca64728d8fa1d8f9b654d381216c
+content_hash: sha256:432dbabbc8589b30e7b30027ab603abdfc3a43fd8d99a61bef953098b03c1d90
 ---
 
 ## 概述
@@ -43,7 +43,7 @@ content_hash: sha256:7c881d96661f808725ba532bdee2fdb42fdaca64728d8fa1d8f9b654d38
 
 SourceTextModule在内存快照中的属性如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/f5ArVQBFQbqwbOM1NW0TEw/zh-cn_image_0000002699865074.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/J_rgUsSuTnmr0ZfOiFh1Cw/zh-cn_image_0000002699865074.png)
 
 export导致泄漏的常见场景如下：
 
@@ -83,7 +83,7 @@ GlobalEnv或GlobalObject导致泄漏的常见场景：
 
 代码中ModuleHoldMain()函数申请300MB对象存放进数组baseArray，其中baseArray为export对象。前端按钮在单击后调用问题ModuleHoldMain()函数申请内存，然后申请300MB超大内存确保触发OOM崩溃。代码如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/gserBZBzRRqVs4S_pvYmow/zh-cn_image_0000002729584405.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/xp53dp_xQTisB41y3520Sw/zh-cn_image_0000002729584405.png "点击放大")
 
 **问题分析思路**
 
@@ -91,7 +91,7 @@ GlobalEnv或GlobalObject导致泄漏的常见场景：
 
 2. 参考[运维态内存快照获取方法](bpta-overview-of-arkts-memory-leaks-overview.md#section16548548153614)，获取OOM生成的rawheap快照文件，将快照导入到DevEco Studio查看。从快照文件发现NodeId为154217的JSArray对象存放在NodeId为49439的JSArray中，而该JSArray对象的根节点是SourceTextModule，SourceTextModule无法释放。内存快照如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/hJlDbzgjQ769l5uWJQaAeg/zh-cn_image_0000002699705186.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/wEcgAQVdTS6CslkCWLXnOw/zh-cn_image_0000002699705186.png "点击放大")
 
 3. 分析引用链，发现模块级对象NodeId为49439的JSArray没有重复创建，但是JSArray中存放的其他JSArray对象在重复创建，需要主动断开两者间的引用关系。
 
@@ -121,7 +121,7 @@ SourceTextModule持有export的baseArray数组无法自动释放，而该数组�
 
 代码中GlobalHoldMain()函数申请300MB对象存放进数组globalArray，其中globalArray挂载在globalThis上。前端按钮在单击后调用问题GlobalHoldMain()函数申请内存，然后申请300MB超大内存确保触发OOM崩溃。代码如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/YEFWYm-TRkC5-ZHuL3Rm_Q/zh-cn_image_0000002729464447.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/IfRf5c1ARGmxbh16rpkIcw/zh-cn_image_0000002729464447.png "点击放大")
 
 **问题分析思路**
 
@@ -129,7 +129,7 @@ SourceTextModule持有export的baseArray数组无法自动释放，而该数组�
 
 2. 参考[运维态内存快照获取方法](bpta-overview-of-arkts-memory-leaks-overview.md#section16548548153614)，获取OOM生成的rawheap快照文件，将快照导入到DevEco Studio查看。在快照文件中发现有内存占用大的JSArray对象。该JSArray对象的根节点是GlobalObject，GlobalObject无法释放。从持有关系为globalArray可以看出该JSArray对象名称为globalArray。内存快照如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/d9nPqOR2RziD1AcYo1xuSQ/zh-cn_image_0000002699865076.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/mTSdPe6GSfSyV4fuKoa3SA/zh-cn_image_0000002699865076.png)
 
 3. 查看引用链，发现全局对象NodeId为1969的JSArray没有重复创建，但是JSArray中存放的其他JSArray对象在重复创建，需要主动断开两者间的引用关系。
 

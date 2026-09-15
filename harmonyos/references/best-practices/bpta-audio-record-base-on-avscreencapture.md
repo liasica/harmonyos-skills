@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVScreenCapture录制音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVScreenCapture录制音频
 category: best-practices
-scraped_at: 2026-09-10T06:30:03+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:c8cfe373fa09d141ebaefd42a653e7f30185fd5a3d216838825b1a84a4e4140e
+scraped_at: 2026-09-16T06:54:58+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:f15ed050ccd065cdd00bb2d143d04c37f42bb1f4bcfb971e934ba299a30d192e
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVScreenCapture具备采集设备内部音频和麦克风音频的能力，可�
 
 基于AVScreenCapture录制音频实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/eENA4CTATUCcxNj8gzl57Q/zh-cn_image_0000002524061076.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/A64q_6-gS7OkV_w-D8VWPQ/zh-cn_image_0000002524061076.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -24,11 +24,11 @@ AVScreenCapture具备采集设备内部音频和麦克风音频的能力，可�
 
 ### 实现原理
 
-开发者可以调用C/C++侧屏幕录制[AVScreenCapture](../harmonyos-guides/media-kit-intro.md#avscreencapture)模块的接口，完成屏幕录制，采集设备内部和麦克风等音视频源数据。通过AVScreenCapture可以实现单独录制音频文件的功能，在录制音频文件时，支持录制m4a的音频格式，关键流程包括开始录制、停止录制、释放资源等。
+开发者可以调用C/C++侧屏幕录制[AVScreenCapture](../harmonyos-guides/media-kit-intro.md#avscreencapture)模块的接口，完成屏幕录制，采集设备内部和麦克风等音视频源数据。通过AVScreenCapture可以实现单独录制音频文件的功能，在录制时，支持录制m4a的音频格式，关键流程包括开始录制、停止录制、释放资源等。
 
 ### 开发步骤
 
-1.在CMake脚本中链接动态库libnative\_avscreen\_capture.so、libnative\_media\_core.so等。
+1.在CMake()脚本中链接动态库libnative\_avscreen\_capture.so、libnative\_media\_core.so等。
 
 ```screen
 target_link_libraries(entry PUBLIC libace_napi.z.so libace_ndk.z.so libjsvm.so libhilog_ndk.z.so libnative_avscreen_capture.so libuv.so libnative_media_core.so)
@@ -78,7 +78,7 @@ void AVScreenCapture::SetConfig(OH_AVScreenCaptureConfig &config) {
 3.启动音频录制。
 
 * 在调用[OH\_AVScreenCapture\_Create()](../harmonyos-references/capi-native-avscreen-capture-h.md#oh_avscreencapture_create)创建录制对象后，通过环境配置OH\_AVScreenCaptureConfig初始化该对象。
-* 然后，调用OH\_AVScreenCapture\_StartScreenRecording()启动音频录制。
+* 然后，调用[OH\_AVScreenCapture\_StartScreenRecording()](../harmonyos-references/capi-native-avscreen-capture-h.md#oh_avscreencapture_startscreenrecording)启动音频录制。
 
 ```cpp
 OH_AVSCREEN_CAPTURE_ErrCode AVScreenCapture::StartScreenCaptureToFile(int32_t outputFd) {

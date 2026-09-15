@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-use-of-bac
 title: 后台硬件资源合理使用
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台硬件资源合理使用
 category: best-practices
-scraped_at: 2026-04-28T08:22:44+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:55:10+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:ecf26314d4f7b94034ee7190a57d4a00ae9c62190e5ac06bf755c5ca44076242
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-screen-fli
 title: 应用闪屏解决方案
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 专项问题解决方案 > 应用闪屏解决方案
 category: best-practices
-scraped_at: 2026-09-10T06:30:13+08:00
+scraped_at: 2026-09-16T06:55:09+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:7ca8360d810bcf013ee95c3ab644239a16b709afe19f839ce029edc1eb33ddae
+content_hash: sha256:92656b88f19a6328cd65b4a32181e5146ecf5ac532b4fbd40f4cf37a1e057311
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:7ca8360d810bcf013ee95c3ab644239a16b709afe19f839ce029edc1eb3
 
 连续点击后，图标大小会异常变化，导致闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/Uc-kD9YKQRSH0hY3dCkxrA/zh-cn_image_0000002229337129.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/P4SH55-fSgGUMVI2SguFPw/zh-cn_image_0000002229337129.gif "点击放大")
 
 ```screen
 @Entry
@@ -151,7 +151,7 @@ struct ClickError {
 
 运行效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/oRcHJhqHSEeynNYpTwiRsA/zh-cn_image_0000002229337141.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/VkfXbnOdSyOa0t9HwcW1sw/zh-cn_image_0000002229337141.gif "点击放大")
 
 ### 动画过程中，Tabs页签切换场景下的闪屏问题
 
@@ -159,7 +159,7 @@ struct ClickError {
 
 滑动Tabs组件时，上方标签不能同步更新。下方内容完全切换后，标签闪动跳转，产生闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/yOnq0q__Qw2fsI5MJqhhBw/zh-cn_image_0000002229451637.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/44JTknAIT3ObmTXhv4DvQA/zh-cn_image_0000002229451637.gif "点击放大")
 
 ```screen
 @Entry
@@ -370,7 +370,7 @@ private startAnimateTo(duration: number, leftMargin: number, width: number) {
 
 运行效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/wGX7d4zgSte8eG8eqBSaaw/zh-cn_image_0000002229337133.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/itiZv3jOQ5a1Ln5GNazL7Q/zh-cn_image_0000002229337133.gif "点击放大")
 
 ### 刷新过程中，ForEach键值生成函数未设置导致的闪屏问题
 
@@ -378,7 +378,7 @@ private startAnimateTo(duration: number, leftMargin: number, width: number) {
 
 下拉刷新时，应用卡顿，出现闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Cinx9dO3SrC7V7fAdeaCRw/zh-cn_image_0000002229337137.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/F0Oreq25TR2wkuSxX1k8YQ/zh-cn_image_0000002229337137.gif "点击放大")
 
 ```screen
 @Builder
@@ -448,7 +448,7 @@ private getListView() {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/KU7hD7GURSCklbmGbmJGdg/zh-cn_image_0000002194011344.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/v5CzjGQoT_2WUWj1_Hmxzw/zh-cn_image_0000002194011344.gif "点击放大")
 
 ## 总结
 

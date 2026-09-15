@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-sound-qual
 title: 音质切换开发实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音质切换开发实践
 category: best-practices
-scraped_at: 2026-09-10T06:30:04+08:00
-doc_updated_at: 2026-04-01
-content_hash: sha256:a3b10e2d6ce0e04bbf3edb54892a4843af0f68a8bfb695936643c2f31f740865
+scraped_at: 2026-09-16T06:54:59+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:f1c6a2a0c8bac5bd9bed8601e2c883f42d60d9273e2f8e0be7ea0a1de5708fa1
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:a3b10e2d6ce0e04bbf3edb54892a4843af0f68a8bfb695936643c2f31f7
 
 本场景以同一音频文件的PCM格式与MP3格式之间进行切换播放为例，切换后保持音频播放进度一致，即无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/aarmBacfSYWtMeGxwl5DGw/zh-cn_image_0000002490682592.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ls0-1wfzSqySw0dMRfHp_A/zh-cn_image_0000002490682592.gif "点击放大")
 
 ### 实现原理
 
@@ -327,7 +327,7 @@ content_hash: sha256:a3b10e2d6ce0e04bbf3edb54892a4843af0f68a8bfb695936643c2f31f7
 
 本场景以同一音频文件的FLAC格式与MP3格式之间进行切换播放为例，切换后保持音频播放进度一致，即无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/584jJZ6_Rv6qZ2KcOOmnKw/zh-cn_image_0000002522762335.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Hakv3zjJRFSQP1Pmgai5EA/zh-cn_image_0000002522762335.gif "点击放大")
 
 ### 实现原理
 

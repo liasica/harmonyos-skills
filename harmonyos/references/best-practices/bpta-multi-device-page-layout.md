@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 页面布局场景
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面布局响应式变化 > 页面布局场景
 category: best-practices
-scraped_at: 2026-09-10T06:30:06+08:00
-doc_updated_at: 2026-08-10
-content_hash: sha256:1c7ca2513c655e7c24641fd400057ae3900cbc9058bbd63bd3b88df8bbad64dc
+scraped_at: 2026-09-16T06:55:00+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:141c2e3058f5ffb18a02c2f5701d418fdb1a31e41f4e7714cf7081488e8adafe
 ---
 
 HarmonyOS基于“一次开发，多端部署”的理念设计了响应式布局，旨在帮助开发者高效构建适应不同设备的应用界面。系统通过统一的UI框架、响应式布局能力——[断点](bpta-multi-device-responsive-layout.md#section1532120147301)和[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)，让应用页面能够根据代码的差异化实现自动适应从手机、折叠屏、平板到电脑等各种终端形态。
@@ -301,7 +301,7 @@ SideBarContainer(this.mainWindowInfo.widthBp === WidthBreakpoint.WIDTH_SM ? Side
 
 对于聊天页面的双栏路由模式切换，开发者可以抽象为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/N01rnfT4RfupQrh_dy4OXw/zh-cn_image_0000002509292755.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/BBunA3t_SYi8T2zqYfoNBg/zh-cn_image_0000002509292755.png "点击放大")
 
 **示例代码**
 
@@ -338,7 +338,7 @@ build() {
 
 ### 二分栏典型场景——边看边评
 
-部分视频应用在双栏布局中，支持用户同时观看视频和阅读评论。当设备宽度≥840vp，高宽比≥0.5且＜1.2时，使用双栏显示，左侧区域为视频界面，右侧内容区显示评论区；用户单击评论区按钮时，进入单栏模式，全屏显示视频，实现沉浸式观影体验，再次单击可打开评论区。当设备宽度<40vp或高宽比<0.5或≥1.2时，使用单栏显示，界面上方为视频区域，界面下方为评论区。
+部分视频应用在双栏布局中，支持用户同时观看视频和阅读评论。当设备宽度≥840vp，高宽比≥0.5且＜1.2时，使用双栏显示，左侧区域为视频界面，右侧内容区显示评论区；用户单击评论区按钮时，进入单栏模式，全屏显示视频，实现沉浸式观影体验，再次单击可打开评论区。当设备宽度<840vp或高宽比<0.5或≥1.2时，使用单栏显示，界面上方为视频区域，界面下方为评论区。
 
 **布局效果**
 
@@ -353,7 +353,7 @@ build() {
 
 对于边看边评的多分栏模式变化，开发者可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/wPq7c6sxS5ylyCAN-Sot4w/zh-cn_image_0000002669546586.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/_qDmqwWgQ_a7uT9YKyS2wA/zh-cn_image_0000002669546586.png "点击放大")
 
 **示例代码**
 
@@ -442,7 +442,7 @@ SideBarContainer(new WidthBreakpointType(SideBarContainerType.Overlay, SideBarCo
 
 对于邮箱页面的一多分栏变化，开发者可以抽象为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ZS9YLRo_STevJZvvT-BfvQ/zh-cn_image_0000002509132789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/mIiu6GGcQ_CnHoJ1473Lyg/zh-cn_image_0000002509132789.png "点击放大")
 
 **示例代码**
 
@@ -504,7 +504,7 @@ SideBarContainer(new WidthBreakpointType(SideBarContainerType.Overlay, SideBarCo
 
 在三分栏的单栏布局中，通常展示的重点是Navigation的内容区。但在某些场景下，内容区的优先级低于导航区，例如日历日程功能。在这种情况下，单栏布局会优先展示日历（即Navigation的导航区）。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/S-tDgq2jSRGqL5YIUIN7dA/zh-cn_image_0000002509292759.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/QdnlQjShT9mge-MpYCAjPA/zh-cn_image_0000002509292759.png "点击放大")
 
 日历日程分为三个层级，账户信息->日历->日程，开发者通常在单栏显示日历，双栏显示日历、日程，三栏显示账户信息、日历、日程。日历日程页面与邮箱页面的主要区别在于，日历日程页面的单栏页面重点显示Navigation导航栏，邮箱页面的单栏重点显示Navigation内容区。
 

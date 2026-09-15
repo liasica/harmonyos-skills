@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-short-vide
 title: 全屏短视频自适应缩放和沉浸
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 全屏短视频自适应缩放和沉浸
 category: best-practices
-scraped_at: 2026-09-10T06:30:10+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:4dcab897cbcfd2293dc1d320359535c65e6b0e58428b4b163d745de9c5ebbab4
+scraped_at: 2026-09-16T06:55:05+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:ec201a2184c693d7739dd79981f0448538027041247e7aa96d815b48a78665cb
 ---
 
 ## 概述
 
 短视频是一种时长较短、内容直观的视频内容形式，单条视频通常为数秒至数分钟。为提升用户的观感体验，短视频页面常采用沉浸式模式展示视频内容。由于设备类型和屏幕尺寸的差异，不同设备短视频页面的沉浸效果、旋转策略可能会有所不同，开发者需额外适配。
 
-对此，[多设备场景库（multidevicelibrary）](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)提供了完整的适配方案，能够使短视频页面在遵循当前主流沉浸和旋转规则的同时，达到多端一致的观感体验，简化短视频页面开发。下文将介绍多设备场景库（multidevicelibrary）支持的短视频页面开发适配场景，主要内容如下：
+对此，[多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)提供了完整的适配方案，能够使短视频页面在遵循当前主流沉浸和旋转规则的同时，达到多端一致的观感体验，简化短视频页面开发。下文将介绍多设备场景库支持的短视频页面开发适配场景，主要内容如下：
 
 1. [短视频自适应沉浸](bpta-short-video-base-adaptivevideo.md#section2355143519245)：介绍短视频布局场景层、视频自适应层的规则逻辑。
 2. [短视频自适应旋转](bpta-short-video-base-adaptivevideo.md#section1689619568351)：介绍用户改变设备的持握方向时，短视频常规播放及横屏视频全屏播放两种场景的旋转策略。
@@ -74,7 +74,7 @@ content_hash: sha256:4dcab897cbcfd2293dc1d320359535c65e6b0e58428b4b163d745de9c5e
 
 按照上述沉浸规则进行适配后，视频的沉浸效果图如下（红色部分为视频可用区域）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/GXuzfI1MQQ-dgAwr4oKlnw/zh-cn_image_0000002724382497.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/1GlDM1uhQiOAsZ-V0dBJEQ/zh-cn_image_0000002724382497.png "点击放大")
 
 ### 视频自适应层
 
@@ -98,7 +98,7 @@ OVERSCAN模式中采用了固定的宽度放大系数，使得视频在水平方
 | 9:18 <= x < 9:14.4 | COVER（铺满裁切） |
 | x < 9:18 | OVERSCAN（微溢裁切） |
 | w >= 600 | - | CONTAIN（等比留黑） |
-| r > 9:15.9 或 r < 9:16.1  (非9:16区间的视频) | - | - | CONTAIN（等比留黑） |
+| r > 9:15.9或r < 9:16.1  (非9:16区间的视频) | - | - | CONTAIN（等比留黑） |
 
 **说明** 
 
@@ -106,7 +106,7 @@ OVERSCAN模式中采用了固定的宽度放大系数，使得视频在水平方
 
 视频宽高比处于9:16区间的短视频在不同可用宽高比区域的显示效果图如下（红色部分为视频显示区域，但超出可用区域即灰色区域时，会发生裁剪）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/DPQOrlN3QaqrKrvX0BvLxQ/zh-cn_image_0000002724502423.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/cOMHIPTmTJ-1IeoIOTY-4Q/zh-cn_image_0000002724502423.png "点击放大")
 
 ## 短视频自适应旋转
 
@@ -123,7 +123,7 @@ OVERSCAN模式中采用了固定的宽度放大系数，使得视频在水平方
 
 ### 规则描述
 
-一般情况下，短视频页应保持与桌面方向一致，进入横屏播放场景时切换到新的旋转策略。[多设备场景库（multidevicelibrary）](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)为上述两种场景预设了相应的旋转策略。
+一般情况下，短视频页应保持与桌面方向一致，进入横屏播放场景时切换到新的旋转策略。[多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)为上述两种场景预设了相应的旋转策略。
 
 * 短视频常规播放（SHORT\_VIDEO）：使用follow\_desktop，即[跟随桌面的旋转策略](bpta-multi-device-window-direction.md#section3434202623320)。
 * 横屏视频全屏播放（LANDSCAPE\_VIDEO\_FULLSCREEN）：根据屏幕长边尺寸（displayLongEdgeVp）、长短边比例（displayLongShortRatio）区分旋转策略。
@@ -144,7 +144,7 @@ displayLongShortRatio：屏幕长边/屏幕短边。
 
 ### 场景描述
 
-[多设备场景库（multidevicelibrary）](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)封装上述两层的实现细节，提供高阶组件AdaptiveShortVideoScene及AdaptiveVideoSurface，帮助开发者高效构建视频播放场景。
+[多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)封装上述两层的实现细节，提供高阶组件AdaptiveShortVideoScene及AdaptiveVideoSurface，帮助开发者高效构建视频播放场景。
 
 ### 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 一次开发，多端部署概览
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 一次开发，多端部署概览
 category: best-practices
-scraped_at: 2026-09-10T06:30:05+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:048d9b781c2e28aa134ac573fd9c20ff3fbb8631f4d59395662a911e1b584fb4
+scraped_at: 2026-09-16T06:54:59+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:5d53c5d8708a769c3af81321014cd9345576b38338fed66fd9dee8a0eed04cb3
 ---
 
 本文介绍了“一次开发，多端部署”（后文中简称为“一多”）的定义、目标等，同时从体验设计、页面开发、功能开发等角度，端到端的给出了指导，帮助开发者快速开发出适配多种类型设备的应用。在应用开发前，开发者应尽可能全面考虑应用支持多设备的情况，避免在后期加入新的类型设备时对应用架构进行大幅调整。
@@ -20,7 +20,7 @@ content_hash: sha256:048d9b781c2e28aa134ac573fd9c20ff3fbb8631f4d59395662a911e1b5
 
 而作为应用开发者，广泛的设备类型也能为应用带来广大的潜在用户群体。但是如果一个应用需要在多个设备上提供同样的内容，则需要适配不同的屏幕尺寸和硬件，开发成本较高。HarmonyOS系统面向多终端提供了“一次开发，多端部署”（后文中简称为“一多”）的能力，让开发者可以基于一套设计，高效构建多端可运行的应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DVQjklvbTOy7ajhFaI8U0Q/zh-cn_image_0000002355420997.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Wm7hnFavSye_46T9qPOTag/zh-cn_image_0000002355420997.jpg "点击放大")
 
 ## 章节概要
 
@@ -30,7 +30,7 @@ content_hash: sha256:048d9b781c2e28aa134ac573fd9c20ff3fbb8631f4d59395662a911e1b5
 * [从一个例子开始](bpta-multi-device-start.md)：通过示例介绍“一多”应用的开发过程，让开发者对“一多”有个直观认识。
 * [多设备体验设计](bpta-multi-device-design-principles.md)：介绍了应用UX设计理念，重点阐述了设计初期的原则与要点，思考多设备设计中的差异性、一致性、灵活性与兼容性。
 * [多设备界面开发](bpta-multi-device-page.md)和[多设备功能开发](bpta-multi-device-function.md)：介绍了“一多”能力，其中每个能力都提供了代码示例和UX效果，让开发者可以快速学习“一多”能力。
-* [多设备工程部署](bpta-multi-device-ide.md)：介绍了从工程角度如何开始开发应用，让开发者可以直接上手创建多设备应用的工程，是后面学习“一多”能力的上手基础。
+* [多设备工程部署与发布](bpta-multi-device-ide.md)：介绍了从工程角度如何开始开发应用，让开发者可以直接上手创建多设备应用的工程，是后面学习“一多”能力的上手基础。
 * [多设备界面开发案例](bpta-multi-device-ui-development.md)：提供了各种业务场景下的一多案例，帮助开发者从实际业务角度学习一多应用开发。
 
 ## 关键技术
@@ -43,7 +43,7 @@ content_hash: sha256:048d9b781c2e28aa134ac573fd9c20ff3fbb8631f4d59395662a911e1b5
 
 针对上述三个问题，HarmonyOS从页面适配、功能兼容和代码部署三个方面提供了相应的解决方案：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/b5AryUKBSjOQwniSkM-y1w/zh-cn_image_0000002447471905.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/DqmqyBhBQpunUEpIMcca6w/zh-cn_image_0000002447471905.png "点击放大")
 
 * 工程级一多：应用采用三层架构设计，结合工程管理与包管理能力，实现工程代码的统一管理与多设备按需部署。
 * 功能级一多：在工程级一多的基础上，通过API Capability绑定机制，提升功能模块的灵活性与代码复用率。
@@ -51,15 +51,15 @@ content_hash: sha256:048d9b781c2e28aa134ac573fd9c20ff3fbb8631f4d59395662a911e1b5
 
 **说明**
 
-* 小屏幕场景，如手表，以及屏幕比例特殊的场景，如PuraX外屏，由于应用设计布局差异显著，无法通过一套布局调整实现适配。
+* 小屏幕场景，如手表，以及屏幕比例特殊的场景，如Pura X外屏，由于应用设计布局差异显著，无法通过一套布局调整实现适配。
 
 * 多数场景下，页面复杂度过高，通过界面级一多能力使用一套代码直接实现页面的成本较高，且代码可读性较差。因此，需要单独设计UX，并使用if-else断点单独实现一套布局或创建设备的hap包（工程级多层架构）。如下图所示，以手表为例，单独创建HAP包以实现手表布局。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/-WFsAX1FQ_2nO8g2758KWw/zh-cn_image_0000002556894193.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/hys6ZLCnSSWiFvWXiIQIqQ/zh-cn_image_0000002556894193.png "点击放大")
 
-* 少数场景下，使用自适应与响应式能力，通过UX设计图进行说明。以puraX外屏为例，整体采用栅格布局实现，具体组件内的细节差异通过响应式能力的断点进行判断。
+* 少数场景下，使用自适应与响应式能力，通过UX设计图进行说明。以Pura X外屏为例，整体采用栅格布局实现，具体组件内的细节差异通过响应式能力的断点进行判断。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/xb-x7_K_S16SATTEzNuPjA/zh-cn_image_0000002525774306.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/h5_E8--ORYCVDnQ_gtwKaQ/zh-cn_image_0000002525774306.png "点击放大")
 
 ## 开发路径
 
@@ -77,7 +77,7 @@ UX设计原则应该考虑多设备的“差异性”、“一致性”、“灵
 
 为了实现“一次开发，多端部署”的开发理念，HarmonyOS应用需要基于一套代码工程，一次编译构建支持华为手机、PC/2in1等1+8全场景设备，所以良好的应用架构设计至关重要。为了解决这些问题，开发者应关注分层和模块化的架构设计，通过分层和模块化，理清业务逻辑，减少代码耦合，实现灵活部署和模块级复用，满足手机、折叠屏、平板和PC等多设备部署。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/xawutIXgQVy-Ss897keTcg/zh-cn_image_0000002355540837.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-4XipFA6ROi_W8n0HCseeQ/zh-cn_image_0000002355540837.png "点击放大")
 
 * 产品定制层
 
@@ -102,14 +102,14 @@ UX设计原则应该考虑多设备的“差异性”、“一致性”、“灵
   + 窗口沉浸式页面的适配方式：针对沉浸式体验需求，合理配置状态栏、导航栏的隐藏与交互逻辑，提升视觉完整性。
   + PC/2in1设备中的自由窗口适配：包括窗口化布局、标题栏显示控制、全屏沉浸式体验的实现，以保障桌面级交互的流畅性和一致性。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/cuTcJQaGSWqmbc8YNoOohQ/zh-cn_image_0000002321622134.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/PaRzGa0SQQqD-IUhZE6mBQ/zh-cn_image_0000002321622134.png "点击放大")
 
   在本文的[多设备窗口形态](bpta-multi-device-window.md)章节，有详细的开发实践原理和步骤。
 * 断点和响应式布局
 
   响应式布局是指页面内的元素能够根据窗口尺寸自动调整。响应式布局中最常使用的特征是窗口宽度，因此系统侧将窗口宽度划分为不同的范围（称为断点）。当窗口宽度从一个断点变化到另一个断点时，改变页面布局（如将页面内容从单列排布调整为双列排布甚至三列排布等）以获得更好的显示效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VZZlgFy-TDyUqjZZq_Axug/zh-cn_image_0000002355421009.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/XtCakxIFQ9SUdm7r8EtRZQ/zh-cn_image_0000002355421009.png "点击放大")
 
   在本文的[响应式布局](bpta-multi-device-responsive-layout.md)章节，详细介绍了如何实现界面响应式布局变化。
 * 交互归一
@@ -118,7 +118,7 @@ UX设计原则应该考虑多设备的“差异性”、“一致性”、“灵
 
   交互归一是一种适配多设备输入的交互响应框架，将各类输入行为统一为标准化事件，确保界面在不同设备上保持一致的交互体验。开发者只需调用统一接口，无需为每种设备单独适配，从而简化开发流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/xFZDg4EMQoSJZK8RHpHRng/zh-cn_image_0000002321462290.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/StYtaQA4Quy98PCnhi6U6w/zh-cn_image_0000002321462290.png "点击放大")
 
   在本文的[多设备交互](bpta-multi-interaction.md)章节，将详细介绍交互事件的开发实践。
 
@@ -142,51 +142,51 @@ UX设计原则应该考虑多设备的“差异性”、“一致性”、“灵
 
   长视频、短视频、直播、音乐等类型的应用或业务场景很常见。这类场景的核心都是沉浸式的视频播放和互动，围绕此核心场景，此类应用有如下特点：海量视频内容资源（一目十行）；沉浸式视频播放状态（持续粘性）；简单的信息架构，层级扁平（适合做特殊设计优化）；快捷的手势交互，易学，沉浸感强（操作流）；注重作者与观赏者的互动（社交因素）；探索延展相关业务：多方同台直播、视频内商品推广（商业机会）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/RWllohPLRV2VA0KJvSLIew/zh-cn_image_0000002355540841.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jwHdMWWXRmuRiKtykpGi1w/zh-cn_image_0000002355540841.png "点击放大")
 
   场景案例最佳实践：[多设备长视频界面](multi-video-app.md)。
 * 社交通讯类
 
   社交通讯类场景主要包括社交动态、IM 对话、通话、会议等类型的应用和场景。此类场景旨在让用户享受高效的浏览和互动交互。需要避免因为部分元素显示过大，导致大屏幕上交互效率降低。建议重点关注首页、详情页、对话页、通话页等，有针对性地适配以提高用户体验。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/OxH45zFDSdKkBxrM_gV_WA/zh-cn_image_0000002321622138.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/gwC0uGRrQTmF-x3kdHHz-w/zh-cn_image_0000002321622138.png "点击放大")
 
   场景案例最佳实践：[多设备即时通讯界面](multi-communication-app.md)。
 * 新闻阅读类
 
   新闻阅读类应用，本质是信息的聚合。首页和详情页是此类应用的典型核心场景。在宽屏设备中，首页需要进行延伸布局、重复布局等适配，以确保浏览效率更高；详情页使用左右布局往往能获得更舒适的阅读方式，达到边看边评的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/EVDT1l18Ttev2pQhd5lKXQ/zh-cn_image_0000002355421013.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/8P9LSkpSQP28PoxT9aaegA/zh-cn_image_0000002355421013.png "点击放大")
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/5il1qlBcSYe96f5mPslmcg/zh-cn_image_0000002551447449.jpg "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/SAx27wasRXWzbe8L3AwnKQ/zh-cn_image_0000002551447449.jpg "点击放大")
 
   场景案例最佳实践：[多设备新闻阅读界面](multi-news-read.md)。
 * 电商购物类
 
   购物、买菜等服务类型的应用或业务场景，旨在让用户享受高效的浏览和互动。这类场景的核心是浏览商品、商品比价、直播购，因此，在大屏设备上可以向用户展示更多的商品选择，提供更轻便高效的交互体验。此类应用有如下特点：界面布局舒适美观、展示更多的商品信息、高效的详情对比、快捷流畅的界面交互、关键信息无干扰。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/U6A9TYhKQ06qJboYCU09Yw/zh-cn_image_0000002321462294.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/GAD-WxVgSBWGk2v3bYvQhA/zh-cn_image_0000002321462294.png "点击放大")
 
   场景案例最佳实践：[多设备购物比价界面](multi-shopping-price-comparison.md)。
 * 便捷生活类
 
   便捷生活类场景主要包括点餐、观影、看攻略等。此类场景在宽屏上可以让用户拥有更高效和流畅的使用体验。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/bJ0xEsSdQuCSy3ET6XF4tA/zh-cn_image_0000002355540845.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/A1Ey4sSdSCasrRzRtgnh8w/zh-cn_image_0000002355540845.png "点击放大")
 
   场景案例最佳实践：[多设备便捷生活界面](multi-convenient-life.md)。
 * 旅游住宿类
 
   旅游住宿、订票类场景通常包含火车/飞机订票、订酒店、查询票务信息等核心功能，围绕此核心功能，此类场景旨在让用户拥有流畅沉浸的用户体验，提供更轻便高效的交互体验。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/UmggW70URGePviq3fHa_cw/zh-cn_image_0000002321622146.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Tjzn57YgTKOklPWuQMedAA/zh-cn_image_0000002321622146.png "点击放大")
 
   场景案例最佳实践：[多设备旅行订票界面](multi-travel-accommodation.md)。
 * 出行导航类
 
   出行导航类场景通常包含查询地点信息、路线建议、导航、打车等核心功能，用户可以通过悬浮面板体验到面板与底层地图间的交互，围绕此核心场景，此类应用有如下特点：手机使用底部半模态面板，其他设备上使用侧边半模态面板；面板支持多档位高度滑动调节；面板默认高度，需要依据屏幕尺寸的不同而有所区分，充分发挥屏幕尺寸优势；折叠屏&平板上侧边的半模态面板支持用户自行拖拽至左侧或右侧位置；建议折叠屏和平板等宽屏设备上，Tab放置在半模态面板内。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/wzdU-6rwQdmLpfaNG8-dGQ/zh-cn_image_0000002355421017.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/8Xt3CWk4TxKU6Vp9rPKjPQ/zh-cn_image_0000002355421017.png "点击放大")
 
   场景案例最佳实践：[多设备地图导航界面](multi-travel-navigation.md)。
 
@@ -198,11 +198,11 @@ UX设计原则应该考虑多设备的“差异性”、“一致性”、“灵
 
   折叠屏产品具有独特的悬停态，即用户可以将产品半折后立在桌面上，实现免手持的体验。悬停态场景非常适合不需要频繁进行交互的任务，例如视频通话、播放视频、拍照、听歌等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/he722nofS8GVSZQoK_wqfw/zh-cn_image_0000002321462298.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/SEsls2OuTtK1ShjQdzeCuw/zh-cn_image_0000002355540849.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ID1yFr-QSfG35yXE_l4pIQ/zh-cn_image_0000002321462298.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/G45U6ZanRFWCohdz2rX5IQ/zh-cn_image_0000002355540849.png "点击放大")
 
   展开态不应出现页面跳转、操作步骤增加、操作更复杂等体验下降的情况；不应破坏应用内原有的沉浸式体验，避免仅仅为了扩充内容，或强制应用分屏而过度改变用户体验和用户习惯；在折叠态和展开态之间切换时，需要保证当前任务的连续性。切换之前的任务和相关状态能保存、延续，或能够快速恢复，给用户提供连续的体验。不发生闪退、重启等异常。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/VLUPYTIYRbeNGgz_1MX10g/zh-cn_image_0000002321622150.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/OTREqkdvRIOUcgx7DtIwWA/zh-cn_image_0000002321622150.png "点击放大")
 
   折叠屏适配的详细开发步骤，请参见[折叠屏悬停态](bpta-folded-hover.md)和设备场景[双折叠应用开发](bpta-foldable-guide.md)。
 * 多端设备支持
@@ -213,7 +213,7 @@ UX设计原则应该考虑多设备的“差异性”、“一致性”、“灵
 
   + 大屏高分辨率：相比手机，屏幕更大、分辨率更高，可承载更丰富的内容展示与信息布局。
   + 横竖屏支持：可根据用户习惯自由切换横向或纵向显示。
-  + 多窗口模式：支持全屏显示或自由窗口布局，提升多任务处理效率
+  + 多窗口模式：支持全屏显示或自由窗口布局，提升多任务处理效率。
   + 键鼠输入：兼容键盘与鼠标操作，满足桌面级交互需求。
 
   设备维度的特性适配，具体的开发步骤可参见多端设备支持相关内容：[手机](bpta-cell-phone.md)、[平板](bpta-tablet-pc.md)、[电脑](bpta-pc.md)和[穿戴](bpta-wear.md)。
@@ -224,7 +224,7 @@ UX设计原则应该考虑多设备的“差异性”、“一致性”、“灵
 
 ### 方舟开发框架
 
-[方舟开发框架](../harmonyos-guides/arkui-overview.md)（简称：ArkUI）提供开发者进行应用UI开发时所必须的能力。
+[ArkUI（方舟UI框架）](../harmonyos-guides/arkui.md)（简称：ArkUI）提供开发者进行应用UI开发时所必须的能力。
 
 方舟开发框架提供了两种开发范式，分别是基于JS扩展的类Web开发范式（后文中简称为“类Web开发范式”）和基于ArkTS的声明式开发范式（后文中简称为“声明式开发范式”）。
 
@@ -246,7 +246,7 @@ UX设计原则应该考虑多设备的“差异性”、“一致性”、“灵
 
 HarmonyOS应用的分层架构设计基于一套代码工程，支持华为手机、PC/2in1等1+8全场景设备，实现了“一次开发，多端部署”的开发理念，包括产品定制层、基础特性层和公共能力层，构建了清晰、高效、可扩展的设计架构。“一多”推荐在应用开发过程中使用如下的“三层工程结构”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/YxysgqLxTNCiEsK618CRjQ/zh-cn_image_0000002347089486.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/TQkRTBidTn2ztpxd3YDgEg/zh-cn_image_0000002347089486.png "点击放大")
 
 * common（公共能力层）
 
@@ -298,8 +298,8 @@ HarmonyOS应用的分层架构设计基于一套代码工程，支持华为手�
 
 Module分为“Ability”和“Library”两种类型：
 
-* “Ability”类型的Module编译后生成[HAP包](../harmonyos-guides/hap-package.md)。
-* “Library”类型的Module编译后生成[HAR包](../harmonyos-guides/har-package.md)或[HSP包](../harmonyos-guides/in-app-hsp.md)。
+* “Ability”类型的Module编译后生成[HAP](../harmonyos-guides/hap-package.md)。
+* “Library”类型的Module编译后生成[HAR](../harmonyos-guides/har-package.md)或[HSP](../harmonyos-guides/in-app-hsp.md)。
 
 应用以APP Pack形式发布，其包含一个或多个HAP包。HAP是应用安装的基本单位，HAP可以分为Entry和Feature两种类型：
 
@@ -308,7 +308,7 @@ Module分为“Ability”和“Library”两种类型：
 
 **说明** 
 
-关于Entry类型的HAP包、Feature类型的HAP包、HAR包、HSP包以及APP Pack的详细介绍请参考[Stage模型应用程序包结构](../harmonyos-guides/application-package-structure-stage.md)。
+关于Entry类型的HAP包、Feature类型的HAP包、HAR包、HSP包以及APP Pack的详细介绍请参考[应用程序包结构](../harmonyos-guides/application-package-structure-stage.md)。
 
 ### 部署模型
 

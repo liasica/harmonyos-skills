@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 相机硬件差异
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发 > 相机硬件差异
 category: best-practices
-scraped_at: 2026-09-10T06:30:08+08:00
-doc_updated_at: 2026-05-30
-content_hash: sha256:54957b93a2f679be88fffa43f4d36928add6d08c0d9b36e63149979bbcfc90f0
+scraped_at: 2026-09-16T06:55:02+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:a4ac5d48e445f1e8fc11e18d731c8574eb3698ae7360a699eef1db8eb232576c
 ---
 
 ## 概述
 
-在移动端应用开发中，相机页面的多设备适配一直是开发者面临的一大难题。由于不同设备的屏幕尺寸、相机镜头、折叠形态以及系统特性等方面存在较大差异，相机界面的开发往往会遇到一系列[兼容性问题](bpta-multi-device-camera.md#section1684283074912)，影响用户体验。
+在移动端应用开发中，相机页面的多设备适配一直是开发者面临的一大难题。由于不同设备的屏幕尺寸、相机镜头、折叠形态以及系统特性等方面存在较大差异，相机界面的开发往往会遇到一系列[常见问题](bpta-multi-device-camera.md#section1684283074912)，影响用户体验。
 
-本文介绍如何将手机相机页面（含预览、拍摄和查看照片功能）适配至双折叠、Pura X、三折叠和平板等多种设备形态。在基础相机功能（预览、拍照、查看照片）之上，适配折叠屏和平板设备时，需要重点关注以下核心问题：
+本文介绍如何将手机相机页面（含预览、拍摄和查看照片功能）适配至双折叠、Pura X、三折叠和平板等多种设备形态。在基础相机功能（预览、拍摄、查看照片）之上，适配折叠屏和平板设备时，需要重点关注以下核心问题：
 
 * [通过断点实现多套页面布局](bpta-multi-device-camera.md#section181143569262)，并设置横竖屏旋转策略。
 * [选择相机设备](bpta-multi-device-camera.md#section13854163154917)。
@@ -22,7 +22,7 @@ content_hash: sha256:54957b93a2f679be88fffa43f4d36928add6d08c0d9b36e63149979bbcf
 
 ## 通过断点实现多套页面布局
 
-“两个宽度相近的窗口，页面布局应相同”。首先，根据这条原则，确认要适配窗口的宽度范围，手机、双折叠、Pura X、三折叠、平板设备共涉及到3种横向断点：sm、md和lg，因此应用首次开发时需要单独设计3种页面布局。
+“两个宽度相近的窗口，页面布局应相同”。首先，根据这条原则，确认要适配窗口的宽度范围，直板机、双折叠、Pura X、三折叠、平板设备共涉及到3种横向断点：sm、md和lg，因此应用首次开发时需要单独设计3种页面布局。
 
 “对于高度相对宽度较小的窗口，呈现横向窗口或类方形窗口时，页面布局需进行差异化设计”。其次根据这条规则，因为Pura X外屏独特的小方形窗口形态，布局会与手机略有差异。UX设计图如下：
 
@@ -190,10 +190,10 @@ content_hash: sha256:54957b93a2f679be88fffa43f4d36928add6d08c0d9b36e63149979bbcf
 
    * 在折叠态时CameraPosition为CAMERA\_POSITION\_FRONT，效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DRXhb3o5RUamaiq32IPyLA/zh-cn_image_0000002355147089.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Bbw0zvomRbCpJBjKcj0lSg/zh-cn_image_0000002355147089.png "点击放大")
    * 在展开态时CameraPosition为CAMERA\_POSITION\_BACK，效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/CILpkQI-StW_DGutDopgCg/zh-cn_image_0000002321148366.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/ipmS7LsJSjqtcTswqdjifw/zh-cn_image_0000002321148366.png "点击放大")
 2. 其他需要重置预览流的场景需要开发者单独处理。折叠状态切换（例如双折叠的折叠态切换至半折叠态），会导致显示屏幕变化，需要重新选择相机设备。所以在[display.on('foldStatusChange')](../harmonyos-references/js-apis-display.md#displayonfoldstatuschange10)中判断变化前后的折叠状态，并根据变化前使用的相机位置，选择变化后使用前置相机或后置相机。
 
    ```screen
@@ -249,7 +249,7 @@ content_hash: sha256:54957b93a2f679be88fffa43f4d36928add6d08c0d9b36e63149979bbcf
    }
    ```
 
-   需要注意，PuraX外屏只存在前置相机。如果在内屏使用的是后置相机，切换外屏后，后置相机将不再可用，则返回可用相机列表中默认的相机。
+   需要注意，Pura X外屏只存在前置相机。如果在内屏使用的是后置相机，切换外屏后，后置相机将不再可用，则返回可用相机列表中默认的相机。
 
    ```screen
    getCamera(cameras: Array<camera.CameraDevice>, cameraPosition: camera.CameraPosition): number {
@@ -278,7 +278,7 @@ content_hash: sha256:54957b93a2f679be88fffa43f4d36928add6d08c0d9b36e63149979bbcf
 
 ## 设置多设备上相机预览画面比例
 
-选择相机之后，需要通过[createPreviewOutput()](../harmonyos-references/arkts-apis-camera-cameramanager.md#createpreviewoutput12)创建预览输出对象，绑定至XComponent组件展示预览画面，实现流程可参考[拍照实践](../harmonyos-guides/camera-shooting-case.md)。在开发多设备上相机预览画面时，需要通过以下步骤避免压缩、拉伸、异常旋转的问题。
+选择相机之后，需要通过[createPreviewOutput()](../harmonyos-references/arkts-apis-camera-cameramanager.md#createpreviewoutput12)创建预览输出对象，绑定至XComponent组件展示预览画面，实现流程可参考[拍照实践](../harmonyos-guides/camera-shooting-case.md)。在开发多设备上相机预览画面时，需要通过参考[开发步骤](bpta-multi-device-camera.md#section14071032123213)避免压缩、拉伸、异常旋转的问题。
 
 XComponent组件对应Surface区域的宽高比，取决于用户预览时设备的屏幕顺时针旋转角度。如果display.rotation为0°或180°，则Surface与相机预览流宽高比互为倒数；如果display.rotation为90°或270°，则Surface与相机预览流宽高比一致。
 
@@ -456,7 +456,7 @@ capture(): void {
 
 悬停态对应折叠状态为FOLD\_STATUS\_HALF\_FOLDED。在进入悬停态时，可以设计特殊的用户体验，UX效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/IEx61r46TQaqlaqatGbJdg/zh-cn_image_0000002355266965.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/iFZISMYYQC6gDZUQczVZ3A/zh-cn_image_0000002355266965.png "点击放大")
 
 ### 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-drawing-ca
 title: Drawing自绘制性能提升
 breadcrumb: 最佳实践 > 图形 > 图形绘制 > Drawing自绘制性能提升
 category: best-practices
-scraped_at: 2026-09-10T06:30:04+08:00
-doc_updated_at: 2026-08-10
-content_hash: sha256:297371471bde3bd90c507f9c28cea66a8685a3c46bace03428c60cd1e0962d0f
+scraped_at: 2026-09-16T06:54:59+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:644479ef60647ff7b8b63de476e8998fb62af0eb7fe0ed660ee3926ec4f0877d
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:297371471bde3bd90c507f9c28cea66a8685a3c46bace03428c60cd1e09
 
 下图是一个绘制1000个透明空心圆与背景图融合的绘制场景，下面分别使用Canvas CanvasRenderingContext2D和Native侧的Drawing来实现该场景，并分析两者的性能差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/IXv-brZDSry9fRVDq6_QoA/zh-cn_image_0000002229450853.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/jMclSlufT32CL07r5htM6g/zh-cn_image_0000002229450853.gif "点击放大")
 
 ### 使用Canvas CanvasRenderingContext2D绘制
 
@@ -165,7 +165,7 @@ Canvas CanvasRenderingContext2D使用[globalCompositeOperation](../harmonyos-ref
 
    使用Canvas CanvasRenderingContext2D绘制的trace图，可以看到绘制1000个圆圈耗时14.9毫秒。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/lF4xi261SCCVceZlr1Sx8g/zh-cn_image_0000002283607973.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/msbYUb61SICcKH80J3Tzhw/zh-cn_image_0000002283607973.png)
 
 ### 使用Native侧Drawing绘制
 
@@ -419,7 +419,7 @@ Native Drawing主要使用分层接口[OH\_Drawing\_CanvasSaveLayer()](../harmon
 
    使用Native侧Drawing绘制trace图，可以看到绘制1000个圆圈耗时2.4毫秒，相较于Canvas CanvasRenderingContext2D绘制有较大的性能提升。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/VRNZMDb-SRW1DglpIMCQ6w/zh-cn_image_0000002283528493.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/mMDlWBcFSNG65SFLMuyjFg/zh-cn_image_0000002283528493.png)
 
 ## 效果对比
 

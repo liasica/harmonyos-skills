@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGILL非法指令故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGILL非法指令故障模式说明
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
-doc_updated_at: 2026-08-26
+scraped_at: 2026-09-16T06:55:12+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:6c9ac92e1fa6101d34b249f96ab3524638f245245e14b640130139443a211f5e
 ---
 

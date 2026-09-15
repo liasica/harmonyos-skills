@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-low-power-
 title: 前台任务低功耗
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗
 category: best-practices
-scraped_at: 2026-04-28T08:22:39+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:55:09+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:203c0df5e552846ffd5847f664e42cc579edbdff3314de8f5bea9664c634441f
 ---
 

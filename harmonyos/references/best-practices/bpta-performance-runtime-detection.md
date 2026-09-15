@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-performanc
 title: 运行态性能检测
 breadcrumb: 最佳实践 > 性能 > 性能检测 > 运行态性能检测
 category: best-practices
-scraped_at: 2026-04-28T08:22:18+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-16T06:55:06+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:76a0cebdbafa322ced8a0dab50067182f4ef06a2f0fbc557c67ae30cdd067d0b
 ---
 

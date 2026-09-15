@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用冻屏问题排查方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用冻屏类问题分析 > 应用冻屏问题排查方法
 category: best-practices
-scraped_at: 2026-09-10T06:30:19+08:00
+scraped_at: 2026-09-16T06:55:15+08:00
 doc_updated_at: 2026-07-22
-content_hash: sha256:734896a0e4b845bea8d8c0c876d407dc0e998a8320676dfe7042a286cb88817e
+content_hash: sha256:a5151910ab6d17f6eb8425ddc592f70ad0f2c0e0395b442504868d6eb0970342
 ---
 
 **须知** 
@@ -380,11 +380,11 @@ DFX 相关打印：
 
    应用主线程日志完全无打应输出：卡死在最后日志打印的接口调用处
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/otz1oCvASAKB26G2Aya0qw/zh-cn_image_0000002404125181.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/pyw7nOnRQACQdVtDOZkEAg/zh-cn_image_0000002370405640.png)例如示例：APP\_INPUT\_BLOCK 类型在07:24:08.167上报，应用主线程在07:24:01.581后就没有打印了，可排查是否为FormManagerService: [form\_mgr\_proxy.cpp(GetFormsInfoByApp:1128)]中的逻辑超时。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/x1bVRDf-ROKdmwK1LlFNmw/zh-cn_image_0000002404125181.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/7agzomRMRP-NEn6Y2Eu-bA/zh-cn_image_0000002370405640.png)例如示例：APP\_INPUT\_BLOCK 类型在07:24:08.167上报，应用主线程在07:24:01.581后就没有打印了，可排查是否为FormManagerService: [form\_mgr\_proxy.cpp(GetFormsInfoByApp:1128)]中的逻辑超时。
 
    应用高频打印输出同类日志：分析对应输出表示的场景及其合理性
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/quPNx0U_S2e_px_P1QpK1w/zh-cn_image_0000002404045345.png)例如示例：进程在被杀死前在大量输出，对应的ImageEffect领域需排查此日志是否正常，是否陷入死循环或频繁调用场景。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/cqnOIbKlQrGuQWdI4C-GSQ/zh-cn_image_0000002404045345.png)例如示例：进程在被杀死前在大量输出，对应的ImageEffect领域需排查此日志是否正常，是否陷入死循环或频繁调用场景。
 
 ### 结合trace信息
 
@@ -392,7 +392,7 @@ DFX 相关打印：
 
 1. 进程频繁执行密集任务超时
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Ex5yZiXZS76euLfsHYljNQ/zh-cn_image_0000002370565524.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/lGl3fL0iRn6hjVcOoVZr3g/zh-cn_image_0000002404125185.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/yFrR3pg4RLmuZxOUcffrwg/zh-cn_image_0000002370565524.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/XMG_0UsoRIK6ymBdL5LsFQ/zh-cn_image_0000002404125185.png)
 
    示例为：PreviewArea::updateShotComponent（更新组件） -> ohos.animator （执行动画）-> 密集的动画执行过程达9.2s；
 
@@ -402,9 +402,9 @@ DFX 相关打印：
    2. 符合业务场景，分析每一小段业务是否耗时超过预期，性能为何不满足设计规格；
 2. 进程执行某一任务超时
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/swYZXlEfS_ipArGHVWRhjA/zh-cn_image_0000002370405644.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/X_kfemR9RxCZUW-q2IHfxA/zh-cn_image_0000002370405644.png "点击放大")
 
    示例为：OHOS::AppExecFwk::FormMgrAdapter::GetFormsInfoByApp接口执行时长达到8s。
 3. 进程多段任务累积超时
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/uevg5rFDQXSGfXYKqtQVnw/zh-cn_image_0000002404045349.png "点击放大")示例中：三段任务累积到达6s超时，判断场景为屏幕旋转后页面动画超时。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/nopb-pUqR1WzNOCTMfUMVA/zh-cn_image_0000002404045349.png "点击放大")示例中：三段任务累积到达6s超时，判断场景为屏幕旋转后页面动画超时。

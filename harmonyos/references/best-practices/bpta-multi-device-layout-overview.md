@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-device-layout-overview
-title: 布局概述
-breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 布局概述
+title: 多设备功能开发
+breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备功能开发
 category: best-practices
-scraped_at: 2026-09-02T15:03:18+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:413eebd8f4feb989b67a73c722ba0a2f0b13bc278753de097d9023325b07d0bc
+scraped_at: 2026-09-16T06:55:00+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:211870d85e4b95f0341586b5507f8f988daf3b980ba84759112912ffde018bf4
 ---
 
 布局可以分为自适应布局和响应式布局，二者的介绍如下表所示。
@@ -19,7 +19,7 @@ content_hash: sha256:413eebd8f4feb989b67a73c722ba0a2f0b13bc278753de097d9023325b0
 
 自适应布局多用于解决页面各区域内的布局差异，响应式布局多用于解决页面各区域间的布局差异。
 
-* 自适应布局常常需要借助[Row组件](../harmonyos-references/ts-container-row.md)、[Column组件](../harmonyos-references/ts-container-column.md)或[Flex组件](../harmonyos-references/ts-container-flex.md)实现。
+* 自适应布局常常需要借助[Row](../harmonyos-references/ts-container-row.md)、[Column](../harmonyos-references/ts-container-column.md)或[Flex](../harmonyos-references/ts-container-flex.md)实现。
 
   | 容器组件 | 组件说明 | 拉伸能力 | 均分能力 | 占比能力 |
   | --- | --- | --- | --- | --- |
@@ -32,7 +32,7 @@ content_hash: sha256:413eebd8f4feb989b67a73c722ba0a2f0b13bc278753de097d9023325b0
   | Row | 沿水平方向布局子组件的容器 | 配置组件aspectRatio属性 | 增加Scroll父组件 | 配置子组件displayPriority属性 | — |
   | Column | 沿垂直方向布局子组件的容器 | 配置组件aspectRatio属性 | 增加Scroll父组件 | 配置子组件displayPriority属性 | — |
   | Flex | 使用弹性方式布局子组件的容器 | 配置组件aspectRatio属性 | — | 配置子组件displayPriority属性 | 将组件wrap属性  设置为FlexWrap.Wrap |
-* 响应式布局常常与[GridRow组件](../harmonyos-references/ts-container-gridrow.md)、[Grid组件](../harmonyos-references/ts-container-grid.md)、[List组件](../harmonyos-references/ts-container-list.md)、[Swiper组件](../harmonyos-references/ts-container-swiper.md)或[Tabs组件](../harmonyos-references/ts-container-tabs.md)搭配使用。
+* 响应式布局常常与[GridRow](../harmonyos-references/ts-container-gridrow.md)、[Grid](../harmonyos-references/ts-container-grid.md)、[List](../harmonyos-references/ts-container-list.md)、[Swiper](../harmonyos-references/ts-container-swiper.md)或[Tabs](../harmonyos-references/ts-container-tabs.md)搭配使用。
 
   | 容器组件 | 组件说明 | 响应式布局 |
   | --- | --- | --- |

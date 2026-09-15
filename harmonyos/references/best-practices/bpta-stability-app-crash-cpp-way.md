@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: CppCrash类问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > CppCrash类问题分析方法
 category: best-practices
-scraped_at: 2026-09-10T06:30:19+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:0a89392ee2f8caa9b173d051d12d3f803056d7fbcf454322cbb541bb2ba613ad
+scraped_at: 2026-09-16T06:55:14+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:8414bb3762e4f94b66c020959f29892a8c6bdc3e13c8a4e5305a0618549d04ce
 ---
 
 本文分为[获取日志](bpta-stability-app-crash-cpp-way.md#section7724104184817)、[分析步骤](bpta-stability-app-crash-cpp-way.md#section33392833014)、[CppCrash常见问题分类与原因](bpta-stability-app-crash-cpp-way.md#section253684811495)三个小节，重点介绍如何获取CppCrash日志、如何查看日志以及如何分析问题。开发者可阅读[应用崩溃类问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测CppCrash问题的原理和机制。开发者还可以参考[CppCrash类问题案例](bpta-scenario-stability-cppcrash.md)，结合实际案例分析CppCrash类问题。
@@ -16,11 +16,11 @@ content_hash: sha256:0a89392ee2f8caa9b173d051d12d3f803056d7fbcf454322cbb541bb2ba
 
 * **方式一：通过DevEco Studio获取日志**
 
-  DevEco Studio会收集设备/data/log/faultlog/faultlogger/路径下的进程崩溃故障日志到FaultLog下，根据进程名和故障和时间分类显示。获取日志的方法参见[DevEco Studio FaultLog使用指南](../harmonyos-guides/ide-fault-log.md)。
+  DevEco Studio会收集设备/data/log/faultlog/faultlogger/路径下的进程崩溃故障日志到FaultLog下，根据进程名和故障和时间分类显示。获取日志的方法参见[FaultLog](../harmonyos-guides/ide-fault-log.md)。
 
 * **方式二：通过hiAppEvent接口订阅**
 
-  HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](../harmonyos-guides/hiappevent-intro.md)。参考[订阅崩溃事件（ArkTS）](../harmonyos-guides/hiappevent-watcher-crash-events-arkts.md)或[订阅崩溃事件（C/C++）](../harmonyos-guides/hiappevent-watcher-crash-events-ndk.md)完成崩溃事件订阅，并通过事件的[external\_log](../harmonyos-guides/hiappevent-watcher-crash-events.md#事件字段说明)字段获取崩溃日志。
+  HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](../harmonyos-guides/hiappevent-intro.md)。参考[订阅崩溃事件（ArkTS）](../harmonyos-guides/hiappevent-watcher-crash-events-arkts.md)或[订阅崩溃事件（C/C++）](../harmonyos-guides/hiappevent-watcher-crash-events-ndk.md)完成崩溃事件订阅，并通过[事件字段说明](../harmonyos-guides/hiappevent-watcher-crash-events.md#事件字段说明)的external\_log字段获取崩溃日志。
 
 * **方式三：通过hdc获取日志，需打开开发者选项**
 
@@ -40,8 +40,8 @@ Reason:Signal:信号值(tkill()函数信号)@崩溃地址 from:发送信号的Pi
 
 常见的崩溃：
 
-* SIGSEGV、SIGILL以及SIGBUS，需要结合Register寄存器进行分析，案例分析参考[内存访问类崩溃问题](bpta-scenario-stability-cppcrash.md#section3692438732)。
-* SIGABRT进程主动中止，查看调用栈中调用abort的代码，案例分析参考[SIGABRT类崩溃问题](bpta-scenario-stability-cppcrash.md#section134911495417)。
+* SIGSEGV、SIGILL以及SIGBUS，需要结合Register寄存器进行分析，案例分析参考[案例3：内存访问类崩溃问题](bpta-scenario-stability-cppcrash.md#section3692438732)。
+* SIGABRT进程主动中止，查看调用栈中调用abort的代码，案例分析参考[案例5：SIGABRT类崩溃问题](bpta-scenario-stability-cppcrash.md#section134911495417)。
 
 ### 步骤二：查看崩溃日志
 
@@ -68,10 +68,10 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
 
 1. DevEco Studio开发调试环境下，支持调用栈直接跳转到对应行号。
 
-   在应用开发场景，对于应用自身的动态库，生成的cppcrash调用栈可直接跳转到代码行处，支持Native栈帧和JS栈帧，无需开发者自行进行解行号操作。对于部分未能解析跳转到对应行号的栈帧，可参考方式二解析。
+   在应用开发场景，对于应用自身的动态库，生成的CppCrash调用栈可直接跳转到代码行处，支持Native栈帧和JS栈帧，无需开发者自行进行解行号操作。对于部分未能解析跳转到对应行号的栈帧，可参考方式二解析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/nVH5Sa9VR6OsMnMCFHX5Yg/zh-cn_image_0000002404125229.png)
-2. 通过SDK llvm-addr2line 工具定位行号。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Bi2xPPhGRhq26eShOI7d6A/zh-cn_image_0000002404125229.png)
+2. 通过SDK llvm-addr2line工具定位行号。
    1. 获取符号表。
 
       获取崩溃栈中so文件对应的带符号版本，保证与应用/系统内运行时的so文件版本一致。
@@ -83,7 +83,7 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
       libbabel.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=fdb1b5432b9ea4e2a3d29780c3abf30e2a22da9d, with debug_info, not stripped
       ```
 
-      上述fdb1b5432b9ea4e2a3d29780c3abf30e2a22da9d即为libbabel.so的BuildID，对比cppcrash日志中打印的二进制BuildID是否相同。
+      上述fdb1b5432b9ea4e2a3d29780c3abf30e2a22da9d即为libbabel.so的BuildID，对比CppCrash日志中打印的二进制BuildID是否相同。
 
       ```text
       #00     pc 000072e6       /system/lib/libbabel.so(xxxxxxx(void*)+30)(fdb1b5432b9ea4e2a3d29780c3abf30e2a22da9d)
@@ -93,7 +93,7 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
       **pc（Program Counter）**：程序计数器表示程序执行指令的地址。
 
       对比可知，有符号的libbabel.so是与版本相匹配的so，必须匹配才能继续下面的分析流程，否则会误导开发者。
-   2. 通过 llvm-addr2line 工具定位行号。
+   2. 通过llvm-addr2line工具定位行号。
 
       llvm-addr2line工具归档在DevEco Studio安装目录/DevEco Studio/sdk/default/openharmony/native/llvm/bin下。
 
@@ -118,7 +118,7 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
       D:/code/apprecovery-demo/entry/src/main/cpp/hello.cpp:48
       ```
 
-      llvm-addr2line 逐行解析的命令为：llvm-addr2line.exe -fCpie libutils.z.so pc在段内的偏移，可以多个偏移一起解析：llvm-addr2line.exe -fCpie libxxx.so 0x1bc868 0x1be28c。使用llvm-addr2line后，如果得出的行号结合源码分析不正确，可以考虑对地址进行微调（如减1），或者考虑关闭一些编译优化。
+      llvm-addr2line逐行解析的命令为：llvm-addr2line.exe -fCpie libutils.z.so pc在段内的偏移，可以多个偏移一起解析：llvm-addr2line.exe -fCpie libxxx.so 0x1bc868 0x1be28c。使用llvm-addr2line后，如果得出的行号结合源码分析不正确，可以考虑对地址进行微调（如减1），或者考虑关闭一些编译优化。
 3. 通过DevEco Studio hstack工具解析调用栈信息。
 
    hstack是DevEco Studio为开发人员提供的用于将release应用混淆后的crash调用栈还原为源码对应调用栈的工具，支持Windows、Mac、Linux三个平台。使用说明请参考[堆栈解析工具（hstack）](../harmonyos-guides/ide-command-line-hstack.md)。
@@ -127,13 +127,13 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
 
 在分析CppCrash日志内容和定位行号后，回到代码中检视上下文，分析具体是什么业务逻辑导致崩溃。借助hilog提供的崩溃现场日志分析业务场景，找出代码中的可疑点。如下图所示，hello.cpp中的48行是一个空指针解引用的代码问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/T9676aMdRsavtmF0kl7ciA/zh-cn_image_0000002370405684.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/IotiTX3AS1Cdg9KE73gIAA/zh-cn_image_0000002370405684.png)
 
 本场景是一个故障构造的应用，实际场景需要结合具体业务进行分析。
 
 ### 步骤六：反汇编（可选）
 
-如果开发人员对自己的业务流程非常熟悉并且要解决的是一个crash在出错代码附近的简单问题，结合业务代码分析能够定位清楚问题。但在一些较为复杂的场景，如定位到某一行里面调用的方法有多个参数等，只看代码无法直接得出分析结论，则需要借助反编译来进一步分析，问题分析请参见案例[通过反汇编分析CppCrash问题](bpta-scenario-stability-cppcrash.md#section10107179911)。
+如果开发人员对自己的业务流程非常熟悉并且要解决的是一个crash在出错代码附近的简单问题，结合业务代码分析能够定位清楚问题。但在一些较为复杂的场景，如定位到某一行里面调用的方法有多个参数等，只看代码无法直接得出分析结论，则需要借助反编译来进一步分析，问题分析请参见案例[案例6：通过反汇编分析CppCrash问题](bpta-scenario-stability-cppcrash.md#section10107179911)。
 
 ### 步骤七：分析地址越界问题（可选）
 
@@ -145,12 +145,12 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
 
 ## CppCrash常见问题分类与原因
 
-* 空指针解引用 NULL pointer dereference
-  + 形如 SIGSEGV(SEGV\_MAPERR)@0x00000000 或 cppcrash日志的Register中打印的r0，r1 等传参寄存器的值为0时，应首先考虑调用时是否传入了空指针。
-  + 形如 SIGSEGV(SEGV\_MAPERR)@0x0000000c 或 cppcrash日志Register中打印的r1 等传参寄存器的值为一个很小的值时应考虑调用入参的结构体成员是否包含空指针。
-* 程序主动终止SIGABRT 一般为用户/框架/C库主动触发，大部分场景下跳过C库/abort发起的框架库的第一帧即为崩溃原因，这里主要检测的是资源使用类的问题，如线程创建，文件描述符使用，接口调用时序等。
+* 空指针解引用NULL pointer dereference
+  + 形如SIGSEGV(SEGV\_MAPERR)@0x00000000或CppCrash日志的Register中打印的r0，r1等传参寄存器的值为0时，应首先考虑调用时是否传入了空指针。
+  + 形如SIGSEGV(SEGV\_MAPERR)@0x0000000c或CppCrash日志Register中打印的r1等传参寄存器的值为一个很小的值时应考虑调用入参的结构体成员是否包含空指针。
+* 程序主动终止SIGABRT一般为用户/框架/C库主动触发，大部分场景下跳过C库/abort发起的框架库的第一帧即为崩溃原因，这里主要检测的是资源使用类的问题，如线程创建、文件描述符使用、接口调用时序等。
 * SIGSEGV无效内存访问
-  + 多线程操作集合，std库的集合为非线程安全，如果多线程添加删除，容易出现SIGSEGV类崩溃，如果使用 llvm-addr2line 后的代码行与集合相关，可以考虑这个原因。
+  + 多线程操作集合，std库的集合为非线程安全，如果多线程添加删除，容易出现SIGSEGV类崩溃，如果使用llvm-addr2line后的代码行与集合相关，可以考虑这个原因。
   + 不匹配的对象生命周期，比如使用裸指针（不含有封装、自动内存管理等特性的指针）保存sptr类型以及shared\_ptr类型，会导致内存泄漏和悬空指针问题。它只是一个指向内存地址的简单指针，没有对指针指向的内存进行保护或管理。裸指针可以直接访问指向的内存，但也容易出现内存泄漏、空指针引用等问题。因此，在使用裸指针时需要特别小心，避免出现潜在的安全问题；推荐使用智能指针来管理内存。
 * use after free：指使用已经被释放的内存，比如函数返回局部变量的引用、指针释放后未置空并继续使用等。
 
@@ -197,4 +197,4 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
   创建一个RecursiveClass对象时，它的构造函数被调用。销毁这个对象时，它的析构函数被调用。在析构函数中，创建了一个新的RecursiveClass对象，这会导致递归调用，直到栈溢出。递归调用导致了无限的函数调用，最终导致栈空间耗尽，程序崩溃。
 * 二进制不匹配：通常由ABI（应用程序二进制接口）不匹配引起，如编译的二进制与实际运行的二进制接口存在差异，数据结构定义存在差异，这种一般会产生随机的崩溃栈。
 * 地址越界：使用有效的野指针，并修改了其中的内存为非法值，访问越界，覆盖了正常的数据这种一般会产生随机的崩溃栈。
-* [SIGBUS (BUS\_ADRALN)](../harmonyos-guides/cppcrash-guidelines.md#sigbus崩溃类型)：考虑对指针进行强转之后地址是否已经处于非对齐状态。
+* [SIGBUS崩溃类型](../harmonyos-guides/cppcrash-guidelines.md#sigbus崩溃类型)：考虑对指针进行强转之后地址是否已经处于非对齐状态。

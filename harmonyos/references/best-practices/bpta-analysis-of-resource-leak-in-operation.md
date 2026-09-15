@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-analysis-o
 title: 资源泄漏类问题分析
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 资源泄漏类问题分析
 category: best-practices
-scraped_at: 2026-09-02T14:53:47+08:00
-doc_updated_at: 2026-09-02
+scraped_at: 2026-09-16T06:55:15+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:184f8bc41fd990ae851d05570501033fa1df96029ca1efa453ca946068bfb038
 ---
 

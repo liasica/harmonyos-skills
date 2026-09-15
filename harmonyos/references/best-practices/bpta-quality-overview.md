@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-quality-ov
 title: 应用质量概览
 breadcrumb: 最佳实践 > 应用质量概览 > 应用质量概览
 category: best-practices
-scraped_at: 2026-09-10T06:30:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b16175f3082e4737ff0eee8754c7f7c246cf4300660b5a2230b7c33b55d8898b
+scraped_at: 2026-09-16T06:55:06+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:637c8cef677b3e87ed6e7b732f8390ed777913d00e09e492339f81073b224f0c
 ---
 
 DFX（Design For eXcellence）是指产品的非功能性设计的总称，其中X代表产品的某个特性或产品生命周期的某个阶段。HarmonyOS DFX子系统提供了一系列DFX功能，帮助开发者创建高质量的应用和游戏。这些功能包括：
@@ -27,21 +27,21 @@ DFX（Design For eXcellence）是指产品的非功能性设计的总称，其�
 | [任务超时检测](../harmonyos-guides/apptask-timeout-guidelines.md) |
 | 性能检测 | [性能检测](../harmonyos-guides/perf-detection.md) |
 | 功耗检测 | [功耗检测](../harmonyos-guides/power-detection.md) |
-| 错误管理 | [errorManager（错误管理组件）](../harmonyos-guides/errormanager-guidelines.md) |
-| 故障恢复 | [appRecovery（应用恢复组件）](../harmonyos-guides/apprecovery-guidelines.md) |
-| 问题上报 | 事件订阅 | [HiAppEvent（事件打点组件）](../harmonyos-guides/hiappevent.md) |
-| 问题分析 | 日志 | [HiLog（日志打印组件）](../harmonyos-guides/hilog-dev.md) |
-| 跟踪 | [HiTraceMeter（进程轨迹跟踪组件）](../harmonyos-guides/hitracemeter.md) |
-| [HiTraceChain（分布式调用链跟踪组件）](../harmonyos-guides/hitracechain.md) |
-| 调试信息 | [HiDebug（调试信息获取组件）](../harmonyos-guides/hidebug.md) |
-| 命令行工具 | [hdc（调试连接器命令行工具）](../harmonyos-guides/hdc.md) |
-| [hilog（HiLog命令行工具）](../harmonyos-guides/hilog.md) |
-| [hilogtool（HiLog日志解析工具）](../harmonyos-guides/hilog-tool.md) |
-| [hidumper（系统信息导出工具）](../harmonyos-guides/hidumper.md) |
-| [hitrace（HiTraceMeter命令行工具）](../harmonyos-guides/hitrace.md) |
-| [hiperf（性能数据抓取工具）](../harmonyos-guides/hiperf.md) |
-| [更多](../harmonyos-guides/debugging-commands.md) |
-| 界面化工具 | [SmartPerf(性能功耗调优工具)](https://gitcode.com/openharmony-sig/smartperf)，[DevEco Studio(HarmonyOS应用集成开发环境)](https://developer.huawei.com/consumer/cn/deveco-studio/) |
+| 错误管理 | [错误管理开发指导](../harmonyos-guides/errormanager-guidelines.md) |
+| 故障恢复 | [应用恢复开发指导](../harmonyos-guides/apprecovery-guidelines.md) |
+| 问题上报 | 事件订阅 | [事件订阅](../harmonyos-guides/hiappevent.md) |
+| 问题分析 | 日志 | [日志打印](../harmonyos-guides/hilog-dev.md) |
+| 跟踪 | [性能跟踪](../harmonyos-guides/hitracemeter.md) |
+| [分布式调用链跟踪](../harmonyos-guides/hitracechain.md) |
+| 调试信息 | [系统调试信息获取](../harmonyos-guides/hidebug.md) |
+| 命令行工具 | [hdc](../harmonyos-guides/hdc.md) |
+| [hilog](../harmonyos-guides/hilog.md) |
+| [hilogtool](../harmonyos-guides/hilog-tool.md) |
+| [hidumper](../harmonyos-guides/hidumper.md) |
+| [hitrace](../harmonyos-guides/hitrace.md) |
+| [hiperf](../harmonyos-guides/hiperf.md) |
+| [调试命令](../harmonyos-guides/debugging-commands.md) |
+| 界面化工具 | [Smartperf-Host](https://gitcode.com/openharmony-sig/smartperf)，[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/) |
 
 ## 场景化知识地图
 
@@ -50,12 +50,12 @@ DFX（Design For eXcellence）是指产品的非功能性设计的总称，其�
 | **场景** | **二级场景** | **开发态检测** | **运行态检测** | **分析**方法 | 案例 |
 | --- | --- | --- | --- | --- | --- |
 | 稳定性 | 地址越界 | * [地址越界检测工具原理](bpta-stability-address-sanitizer-principle.md) * [使用ASan检测内存错误](bpta-stability-asan-detection.md) * [使用HWASan检测内存错误](bpta-stability-hwasan-detection.md) * [使用GWP-ASan检测内存错误](bpta-stability-gwpasan-detection.md) | * [地址越界类问题检测方法](bpta-stability-runtime-address-sanitizer-detection.md) | * [地址越界类问题分析方法](bpta-stability-address-illegal-way.md) * [地址越界问题类型](bpta-stability-address-sanitizer-category.md) | * [地址越界类问题案例](bpta-scenario-stability-address-sanitizer.md) |
-| 资源泄漏 | * [开发态资源泄漏类问题检测](bpta-stability-leak-detection.md) | * [运行态资源泄漏类问题检测方法](bpta-stability-runtime-leak-detection.md) | * [内存泄漏分析方法](bpta-stability-leak-way.md#section728319329442) * [句柄泄漏分析方法](bpta-stability-leak-way.md#section9594173320417) * [线程泄漏分析方法](bpta-stability-leak-way.md#section282262074411) | * [native内存泄漏类问题案例](bpta-scenario-stability-leak.md#section10929163884819) * [PixelMap泄漏导致ashmem内存泄漏案例](bpta-scenario-stability-leak.md#section189600384502) * [句柄泄漏类问题案例](bpta-scenario-stability-leak.md#section5313162915382) * [线程泄漏类问题案例](bpta-scenario-stability-leak.md#section107128486383) * [更多…](bpta-scenario-stability-leak.md) |
-| 应用冻屏 | - | * [THREAD\_BLOCK\_6S 应用主线程卡死超时检测](../harmonyos-guides/appfreeze-guidelines.md#thread_block_6s-应用主线程卡死超时) * [APP\_INPUT\_BLOCK 用户输入响应超时检测](../harmonyos-guides/appfreeze-guidelines.md#app_input_block-用户输入响应超时) | * [应用冻屏类问题分析](bpta-analysis-of-app-freeze-in-develop.md) | * [应用冻屏类问题案例](bpta-scenario-stability-app-freeze.md) |
+| 资源泄漏 | * [开发态资源泄漏类问题检测](bpta-stability-leak-detection.md) | * [运行态资源泄漏类问题检测方法](bpta-stability-runtime-leak-detection.md) | * [内存泄漏分析方法](bpta-stability-leak-way.md#section728319329442) * [句柄泄漏分析方法](bpta-stability-leak-way.md#section9594173320417) * [线程泄漏分析方法](bpta-stability-leak-way.md#section282262074411) | * [内存泄漏-JS内存泄漏类案例](bpta-scenario-stability-leak.md#section433214716396) * [内存泄漏-native jemalloc泄漏类案例](bpta-scenario-stability-leak.md#section10929163884819) * [内存泄漏-内核内存泄漏类案例](bpta-scenario-stability-leak.md#section189600384502) * [句柄泄漏-文件句柄泄漏案例](bpta-scenario-stability-leak.md#section5313162915382) * [线程泄漏案例](bpta-scenario-stability-leak.md#section107128486383) |
+| 应用冻屏 | - | * [THREAD\_BLOCK\_6S应用主线程卡死超时](../harmonyos-guides/appfreeze-guidelines.md#thread_block_6s应用主线程卡死超时) * [APP\_INPUT\_BLOCK用户输入响应超时](../harmonyos-guides/appfreeze-guidelines.md#app_input_block用户输入响应超时) | * [应用冻屏类问题分析](bpta-analysis-of-app-freeze-in-develop.md) | * [应用冻屏类问题案例](bpta-scenario-stability-app-freeze.md) |
 | 应用异常退出 | * [使用TSan检测线程问题](bpta-stability-tsan-detection.md) * [使用UBSan检测未定义行为](bpta-stability-ubsan-detection.md) | * [JS Crash（进程崩溃）检测](../harmonyos-guides/jscrash-guidelines.md) * [Cpp Crash（进程崩溃）检测](../harmonyos-guides/cppcrash-guidelines.md) * [应用被查杀问题检测](bpta-stability-runtime-appkilled-detection.md) | * [JS Crash类问题分析方法](bpta-stability-app-crash-js-way.md) * [CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md) * [应用被查杀类问题分析方法](bpta-stability-app-killed-way.md) | * [应用异常退出类问题案例](bpta-scenario-stability-exception-exit.md) |
-| 性能 | 应用启动慢 | * [CodeLinter静态扫描工具](bpta-performance-detection.md#section145453441571) * [AppAnalyzer动态检测应用性能问题](bpta-performance-detection.md#section135451444171) | * [启动耗时类问题检测方法](bpta-performance-startup-time-detection.md) * [主线程超时类问题检测方法](bpta-performance-mainthread-consumption-detection.md) | - | - |
-| 应用卡顿、丢帧 | * [滑动丢帧类问题检测方法](bpta-performance-sliding-frame-drop-detection.md) | * [点击响应时延分析](bpta-click-to-click-response-optimization.md) * [点击完成时延分析](bpta-click-to-complete-delay-analysis.md) * [Web页面内点击响应时延分析](bpta-web-click-response-delay-analysis.md) * [Web加载流程及完成时延分析](bpta-web-completion-delay-analysis.md) * [跨线程序列化耗时问题分析](bpta-threads-serialization-timeout-analysis.md) * [丢帧问题分析](bpta-zhenlv.md) * [内存基础知识及优化思路](bpta-memory-basic-knowledge.md) | * [优化Web场景下的加载性能问题](bpta-web-develop-optimization.md) * [优化应用冷启动时延问题](bpta-application-cold-start-optimization.md) * [优化长列表加载慢丢帧问题](bpta-best-practices-long-list.md) * [优化瀑布流加载慢丢帧问题](bpta-waterflow-performance-optimization.md) * [更多...](bpta-scenario-performance-optimization.md) |
-| 功耗 | 应用异常耗电 | * [HiSmartPerf功耗检测](bpta-application-power-test.md#section1701321935) * [Profiler功耗检测](bpta-application-power-test.md#section2779154791312) | [运行态功耗检测](bpta-power-consumption-runtime-analysis.md) | * [CPU 高负载问题分析思路](bpta-high-cpu-load-analysis.md) * [前台不可见动效问题分析思路](bpta-frontend-invisible-animation-analysis.md) | * [Vsync低功耗优化](bpta-vsync-power-optimization.md) * [Buffer低功耗优化](bpta-buffer-power-optimization.md) |
+| 性能 | 应用启动慢 | * [Code Linter](bpta-performance-detection.md#section145453441571) * [AppAnalyzer](bpta-performance-detection.md#section135451444171) | * [启动耗时类问题检测方法](bpta-performance-startup-time-detection.md) * [主线程超时类问题检测方法](bpta-performance-mainthread-consumption-detection.md) | - | - |
+| 应用卡顿、丢帧 | * [滑动丢帧类问题检测方法](bpta-performance-sliding-frame-drop-detection.md) | * [点击响应时延分析](bpta-click-to-click-response-optimization.md) * [点击完成时延分析](bpta-click-to-complete-delay-analysis.md) * [Web点击响应时延分析](bpta-web-click-response-delay-analysis.md) * [Web加载完成时延分析](bpta-web-completion-delay-analysis.md) * [跨线程序列化耗时问题分析](bpta-threads-serialization-timeout-analysis.md) * [帧率问题分析](bpta-zhenlv.md) * [内存基础知识](bpta-memory-basic-knowledge.md) | * [Web加载性能优化](bpta-web-develop-optimization.md) * [应用冷启动时延优化](bpta-application-cold-start-optimization.md) * [长列表加载丢帧优化](bpta-best-practices-long-list.md) * [瀑布流加载丢帧优化](bpta-waterflow-performance-optimization.md) * [性能场景优化案例](bpta-scenario-performance-optimization.md) |
+| 功耗 | 应用异常耗电 | * [HiSmartPerf功耗检测](bpta-application-power-test.md#section1701321935) * [Profiler功耗检测](bpta-application-power-test.md#section2779154791312) | [运行态功耗检测](bpta-power-consumption-runtime-analysis.md) | * [CPU 高负载分析](bpta-high-cpu-load-analysis.md) * [前台不可见动效问题分析](bpta-frontend-invisible-animation-analysis.md) | * [Vsync低功耗优化](bpta-vsync-power-optimization.md) * [Buffer低功耗优化](bpta-buffer-power-optimization.md) |
 
 对于开发态检测，除上表提到的检测方法外，还可以使用专业的测试工具[DevEco Testing](https://developer.huawei.com/consumer/cn/next/deveco-testing/)对应用进行质量测试。
 
@@ -73,7 +73,7 @@ DFX（Design For eXcellence）是指产品的非功能性设计的总称，其�
 
 ## 相关主题
 
-* [Performance Analysis Kit（性能分析服务）指南](../harmonyos-guides/performance-analysis-kit.md)
-* [Performance Analysis Kit（性能分析服务）API参考](../harmonyos-references/performance-analysis-api.md)
-* [应用质量FAQ](../harmonyos-faqs/faqs-performance-analysis-kit.md)
-* [HarmonyOS应用DFX能力介绍（视频）](https://developer.huawei.com/consumer/cn/training/course/slightMooc/C101705113085386097?pathId=101667550095504391)
+* [Performance Analysis Kit（性能分析服务）](../harmonyos-guides/performance-analysis-kit.md)指南
+* [Performance Analysis Kit（性能分析服务）](../harmonyos-references/performance-analysis-api.md)API参考
+* [运维](../harmonyos-faqs/faqs-performance-analysis-kit.md)
+* [HarmonyOS应用DFX能力介绍](https://developer.huawei.com/consumer/cn/training/course/slightMooc/C101705113085386097?pathId=101667550095504391)

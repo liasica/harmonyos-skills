@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-folded-hov
 title: 折叠屏悬停态
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 特殊界面布局场景 > 折叠屏悬停态
 category: best-practices
-scraped_at: 2026-09-10T06:30:05+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:fed378cf2c615b755bf5c5dc91c680526b0d03726fb2b446d3f845943c5c53d5
+scraped_at: 2026-09-16T06:55:00+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:c1001508680edd3125e9933ab6b5c8ec2ef68c5ed218aa6b89481d6d95e3975a
 ---
 
 ## 概述
 
 折叠屏提供独特的手持操作体验“悬停态”，用户可以将设备半折后立在桌面上，实现免手持体验。悬停态适用于不需要频繁交互的任务，如视频通话、视频播放、拍照和听歌。进入悬停态时，中间弯折区域难以操作且显示内容会变形，建议页面内容进行折痕区避让适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/mtfSjRtOSmSzRuuNXBUrQw/zh-cn_image_0000002194010932.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/GvLuvwrORWmo4axIi7XxkQ/zh-cn_image_0000002194010932.png "点击放大")
 
 本文提供折叠屏悬停态的三种实现方式，并根据其特点给出各自的适用场景。
 
@@ -32,7 +32,7 @@ content_hash: sha256:fed378cf2c615b755bf5c5dc91c680526b0d03726fb2b446d3f845943c5
 
 本文以视频播放类应用的全屏播放页面为例，介绍FolderStack的自定义悬停态实现。同时，以游戏界面为例，介绍FoldSplitContainer的悬停态实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/ZjTA0oE4Ti-VtHWVY_t1ig/zh-cn_image_0000002193851340.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/NOhHRRYXR3CcQizjGuUwAA/zh-cn_image_0000002193851340.png)
 
 ## 使用FolderStack组件实现悬停态
 
@@ -63,7 +63,7 @@ FolderStack({ upperItems: ['upper'] }) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/woQvmMsZSK6XfgF5KJseOw/zh-cn_image_0000002229451233.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/dZTrNzhVQHe83hTC11Y16Q/zh-cn_image_0000002229451233.png "点击放大")
 
 ## 使用FoldSplitContainer组件实现悬停态
 
@@ -73,7 +73,7 @@ FolderStack({ upperItems: ['upper'] }) {
 
 FoldSplitContainer的primary和secondary参数分别设置二分栏的上下区域的布局，extra参数设置三分栏中侧栏区域的布局；通过LayoutOptions参数设置各区域分栏的比例。当设备进入悬停态时，FoldSplitContainer会自动避让折叠屏折痕区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/9CGvyAYVTMmfG-QPOUmapA/zh-cn_image_0000002229451229.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/tvB8dNpYT9qwxvZP8p4mCw/zh-cn_image_0000002229451229.png "点击放大")
 
 ### 开发步骤
 
@@ -90,7 +90,7 @@ FoldSplitContainer({
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/1I5K87WGQ1i1ULtPaR1hNw/zh-cn_image_0000002194010928.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/m1m-hwqsQ8e6uo49hUpYWg/zh-cn_image_0000002194010928.png "点击放大")
 
 ## 自定义实现悬停态
 
@@ -212,7 +212,7 @@ FoldSplitContainer({
    ```
 
 **图1** 视频播放页悬停态效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/BsxuGQHqSnaJyvu1sFKGxg/zh-cn_image_0000002728334749.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/wfxZE4JpRfCovz3SZ4NJow/zh-cn_image_0000002728334749.png "点击放大")
 
 ## 示例代码
 

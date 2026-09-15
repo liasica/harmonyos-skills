@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-harmony-ap
 title: 应用安全编码实践
 breadcrumb: 最佳实践 > 应用安全 > 应用安全编码实践
 category: best-practices
-scraped_at: 2026-09-02T15:03:21+08:00
-doc_updated_at: 2026-06-02
+scraped_at: 2026-09-16T06:55:06+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:9e14b4940a88a9388caa383bd4589233b5d03e2665c513709af98de13d540e47
 ---
 

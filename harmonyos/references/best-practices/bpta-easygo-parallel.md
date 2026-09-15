@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-easygo-par
 title: 平行视界
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 兼容方案 > 平行视界
 category: best-practices
-scraped_at: 2026-09-10T06:30:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9ee209d832c71bfa0bae1ca3a1becea5f3cf7b082ac0e754f9307acfabe7d0b6
+scraped_at: 2026-09-16T06:55:00+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:645a3a927c9d59db71e2f64beed20528419b165daf4b6c7ed3a15f27b763876e
 ---
 
 ## 概述
 
 平行视界是针对应用在未适配[分栏布局](bpta-multi-device-page-layout.md#section11897247142110)的场景下，通过标准化配置实现宽屏、大屏设备分栏显示的系统级兼容方案。开启平行视界并分栏显示时，应用会在一个窗口中同时显示两个页面，默认情况下，两页按1:1平分窗口，如下图所示。从API版本23开始，支持开发者自配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/e4pbRuftRDqXRrR8eWydOg/zh-cn_image_0000002693538162.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/f5KvRfw2T-yOwMkvGyXTaA/zh-cn_image_0000002693538162.jpg "点击放大")
 
 平行视界适用于办公、邮箱、IM即时通讯、电商等需要频繁切换页面的应用。当前平行视界支持两种路由模式：导航模式和购物模式。以购物类应用在双折叠上运行为例：
 
@@ -42,7 +42,7 @@ content_hash: sha256:9ee209d832c71bfa0bae1ca3a1becea5f3cf7b082ac0e754f9307acfabe
 
    在profile目录下创建兼容方案的配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中添加easyGo字段，并指向引用的easy\_go.json配置文件。当前仅支持在entry模块下配置，配置后应用级生效。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/vMr3C_0KSb64EWyfuYQTcg/zh-cn_image_0000002693698030.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/IBN8JLoESVKvZFYIquIbUA/zh-cn_image_0000002693698030.png "点击放大")
 2. 在easy\_go.json配置文件中，配置平行视界的相关属性，详情可参考[配置内容说明](bpta-easygo-parallel.md#section9181949173215)。
 
 ## 配置内容说明
@@ -276,7 +276,7 @@ splitDividerColor内部字段说明：
 
 购物类应用中，用户浏览路径通常层层深入，即从商品分类进入商品列表进行筛选比较，最终进入商品详情页完成商品挑选。相比左侧主页保持不变的导航模式，在购物模式下，页面路由跳转时右侧页面始终向左推入，屏幕右侧展示路由栈栈顶页面，左侧展示路由栈次栈顶页面，更贴合“层层深入、随时回退”的浏览体验。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/jZd9f3q_S2G1zuMYrOzi5w/zh-cn_image_0000002723337523.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/h23p1Fe_T-mh_lVAuIZapA/zh-cn_image_0000002723337523.gif "点击放大")
 
 **实现原理**
 
@@ -308,7 +308,7 @@ splitDividerColor内部字段说明：
 
 购物模式下，页面路由跳转时右侧页面始终向左推入，屏幕右侧展示路由栈栈顶页面，左侧展示路由栈次栈顶页面。但是由于某些页面（如地址编辑页）属于临时编辑操作，将此类页面固定在右侧显示，左侧分栏内容保持不变，交互体验更连贯。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/JBNPTGPlSJK-eZji2q_xDA/zh-cn_image_0000002693698032.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/LgNmdlIzQ4mqsjLb0CeDHA/zh-cn_image_0000002693698032.gif "点击放大")
 
 **实现原理**
 
@@ -342,7 +342,7 @@ splitDividerColor内部字段说明：
 
 在商品详情页，为清晰呈现商品细节，点击商品图片后，需将图片全屏展示。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/h8oaEElnQoKE3g8jyNLP5Q/zh-cn_image_0000002693538166.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/_vHBbnK5R3SVBNcWNsxhLg/zh-cn_image_0000002693538166.gif "点击放大")
 
 **实现原理**
 
@@ -373,7 +373,7 @@ splitDividerColor内部字段说明：
 
 在商品详情页中，“参数对比”、“配置表”类图片往往需要横屏展示，以解决竖屏模式下文字过小等问题。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/s6v2rAkHSWGaYKVhWmFtlQ/zh-cn_image_0000002723217603.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/8AjN-5QQTO-D-uVFtwWaYw/zh-cn_image_0000002723217603.gif "点击放大")
 
 **实现原理**
 
@@ -425,7 +425,7 @@ splitDividerColor内部字段说明：
 
 在平板或三折叠三屏态（G态）等大屏设备上，当应用已进入平行视界分栏显示（左侧主页、右侧商品详情页）时，若用户希望在浏览商品详情的同时，打开其他页面进行比价、查询物流等操作，可以在商品详情页顶部提供分屏入口。用户点击后以主窗口形式进入系统窗口分屏，并在分屏窗口中继续保持平行视界效果，实现应用内的多任务体验。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/ejkzfrSOTaGQy7aJo9H4VA/zh-cn_image_0000002723337525.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/SU1I5LotQXyGy2EyldG3xg/zh-cn_image_0000002723337525.gif "点击放大")
 
 **实现原理**
 
@@ -494,7 +494,7 @@ splitDividerColor内部字段说明：
 
 开启平行视界并分栏显示时，页面内的元素超出页面范围，导致被截断，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/wQYqpTA5QzKpRlaecgcSGQ/zh-cn_image_0000002693698036.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/cgnyIuRsRWK7wXqT9exn1g/zh-cn_image_0000002693698036.png "点击放大")
 
 **原因分析**
 
@@ -522,7 +522,7 @@ splitDividerColor内部字段说明：
 
 左右两个分栏页面中，同一资源只在一页面中显示，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/lqR0Fcb2TXWnj0CDmgSATQ/zh-cn_image_0000002693538168.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/T2IaLtsBQtqU3IukUflrcA/zh-cn_image_0000002693538168.gif "点击放大")
 
 **原因分析**
 

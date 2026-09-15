@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 隔空传送快速分享
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 隔空传送快速分享
 category: best-practices
-scraped_at: 2026-09-10T06:30:08+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:657f28319844f2a52d4c9aeb9ffc5c52e2a09dacacfb7be52976440b5688c07e
+scraped_at: 2026-09-16T06:55:03+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:fc4d7b4fff9a89aa8f823fb96357687ea80fc3795cd79c37e2666e5c7845ee92
 ---
 
 ## 概述
@@ -14,16 +14,16 @@ content_hash: sha256:657f28319844f2a52d4c9aeb9ffc5c52e2a09dacacfb7be52976440b568
 
 |  |  |
 | --- | --- |
-| 隔空传送分享文件 | 通过隔空传送手势触发文件分享，接收端为phone、tablet设备会将媒体文件存储至图库，非媒体文件存储至文件管理器，接收端为PC/2in1设备则会将媒体以及非媒体文件存储至文件管理器。 |
+| 隔空传送分享文件 | 通过隔空传送手势触发文件分享，接收端为手机、平板设备会将媒体文件存储至图库，非媒体文件存储至文件管理器，接收端为电脑设备则会将媒体以及非媒体文件存储至文件管理器。 |
 | 隔空传送分享链接 | 通过隔空传送手势触发分享App Linking链接，接收端已安装应用可直接打开应用查看内容。 |
 
 ## 实现原理
 
 ### 关键技术
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/CI4O3pWUSeyexPCg34LpIQ/zh-cn_image_0000002464125198.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/RwsRbf0RTqislEU32ZxAig/zh-cn_image_0000002464125198.jpg "点击放大")
 
-隔空传送基于分享服务，允许用户通过简单的“一抓一放”手势实现跨设备分享，当前支持手机、平板、PC，使用体验无差异，应用接入只需监听harmonyShare.on('gesturesShare')方法。
+隔空传送基于分享服务，允许用户通过简单的“一抓一放”手势实现跨设备分享，当前支持手机、平板、电脑，使用体验一致，应用接入只需监听harmonyShare.on('gesturesShare')方法。
 
 当用户做出手势进行隔空传送分享时，系统触发回调，应用可以在回调中实现数据分享。
 
@@ -35,13 +35,13 @@ content_hash: sha256:657f28319844f2a52d4c9aeb9ffc5c52e2a09dacacfb7be52976440b568
 
 ### 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ExhIyQiCTQiqool3w75Org/zh-cn_image_0000002497324205.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/2K5CMslSTKmTaeFEOUhuhA/zh-cn_image_0000002497324205.jpg "点击放大")
 
 1. **分享注册监听与取消监听**：在分享页面的生命周期函数（如aboutToAppear或onPageShow）中，注册 harmonyShare.on('gesturesShare') 事件监听，以监听隔空传送事件。当页面即将隐藏或应用退至后台时，通过harmonyShare.off('gesturesShare')取消该监听。
 2. **构建分享数据**：定义需要分享的数据[SharedData](../harmonyos-references/share-system-share.md#shareddata)。
 3. **分享数据**：在监听回调中调用[share()](../harmonyos-references/share-harmony-share.md#share)方法来分享数据。
-4. **文件接收策略与对端跳转处理**：
-   1. **文件分享**：隔空传送文件分享的接收由对端系统自行接收，见[文件接收策略](bpta-application-gesture-share.md#section177815256291)。
+4. **文件接收策略及对端跳转处理**：
+   1. **文件分享**：隔空传送文件分享的接收由对端系统处理，见[文件接收策略](bpta-application-gesture-share.md#section177815256291)。
    2. **链接分享**：隔空传送链接分享需[配置App Linking](bpta-application-gesture-share.md#section1685558173015)并在接收端进行数据处理参考[对端跳转处理](bpta-application-gesture-share.md#section20788652163113)。
 
 **说明** 
@@ -60,7 +60,9 @@ content_hash: sha256:657f28319844f2a52d4c9aeb9ffc5c52e2a09dacacfb7be52976440b568
 
 隔空传送监听方法：
 
+```screen
 on(event: 'gesturesShare', capability: SendCapabilityRegistry, callback: Callback<SharableTarget>): void
+```
 
 该方法需传入capability参数，类型为[SendCapabilityRegistry](../harmonyos-references/share-harmony-share.md#sendcapabilityregistry)，继承自[BaseCapabilityRegistry](../harmonyos-references/share-harmony-share.md#basecapabilityregistry)。其包含windowId属性，需要传入当前应用的窗口ID。在PC/2in1或平板自由窗口模式中，系统会根据窗口ID判断当前应用是否获取了窗口焦点。只有在获取焦点后，当用户触发隔空传送事件时，才会触发应用注册的隔空传送方法。
 
@@ -181,12 +183,12 @@ export struct FileSharePageComponent {
 
 ### 构建分享数据
 
-在分享数据时，分享发起方需要构建[SharedRecord](../harmonyos-references/share-system-share.md#sharedrecord)对象。在文件分享场景中，发起方在构造此参数时，必须传入uri和utd这两个属性。
+在分享数据时，分享发起方需要构建SharedData对象，此对象封装一组数据记录[SharedRecord](../harmonyos-references/share-system-share.md#sharedrecord)对象。在文件分享场景中，发起方在构造SharedRecord对象时，必须传入uri和utd这两个属性。
 
 **说明** 
 
 * uri是指要分享的文件URI，而非文件路径，例如沙箱路径content.fileDir，应通过[fileUri.getUriFromPath](../harmonyos-references/js-apis-file-fileuri.md#fileurigeturifrompath)获取其URI。
-* utd则是当前文件的[标准化数据类型](../harmonyos-guides/uniform-data-type-list.md)，需要传入与分享的数据匹配的类型，以便系统匹配精确的目标应用，推荐使用[uniformTypeDescriptor.getUniformDataTypeByFilenameExtension](../harmonyos-references/js-apis-data-uniformtypedescriptor.md#uniformtypedescriptorgetuniformdatatypebyfilenameextension11)方法，通过给定的文件后缀名查询标准化数据类型的ID。
+* utd则是当前文件的标准化数据类型（[UTD预置列表](../doccenter-capabilities/uniform-data-type-list.md)），需要传入与分享的数据匹配的类型，以便系统匹配精确的目标应用，推荐使用[uniformTypeDescriptor.getUniformDataTypeByFilenameExtension](../harmonyos-references/js-apis-data-uniformtypedescriptor.md#uniformtypedescriptorgetuniformdatatypebyfilenameextension11)方法，通过给定的文件后缀名查询标准化数据类型的ID。
 
 在ShareModel模块中定义getShareRecord()方法，用于根据当前的文件类型构建分享数据。定义getFileShareData()方法，当需要分享多个文件时，该方法会通过循环处理来获取分享数据。
 
@@ -264,7 +266,7 @@ public immersiveCallback(target: harmonyShare.SharableTarget, shareType: ShareTy
 
 ### 分享注册监听及取消监听
 
-分享链接再注册监听以及取消监听与分享文件章节下的[分享注册监听与取消监听](bpta-application-gesture-share.md#section18279162912273)处理过程一致，开发者可参考分享文件这一章节的内容，在调用immersiveListening()方法需传入ShareType.LINK\_SHARE来注册链接分享事件监听，调用this.shareModel.immersiveDisableListening()来取消监听。
+分享链接的注册监听及取消监听与分享文件章节下的[分享注册监听与取消监听](bpta-application-gesture-share.md#section18279162912273)处理过程一致，开发者可参考分享文件这一章节的内容，在调用immersiveListening()方法需传入ShareType.LINK\_SHARE来注册链接分享事件监听，调用this.shareModel.immersiveDisableListening()来取消监听。
 
 在分享链接页面，当用户点击不同的视频集数时，会触发onClick()方法。在该方法中，调用setVideoIndex()方法将当前集数存储到shareModel实例中，以便在生成分享链接时使用。
 
@@ -327,7 +329,7 @@ export struct LinkSharePageComponent {
 
 **说明** 
 
-* utd需设置为utd.UniformDataType.HYPERLINK，表示分享内容为链接；content设置为[配置App Linking](bpta-application-gesture-share.md#section1685558173015)章节中配置的链接，链接中拼接视频唯一标识符videoIndex。
+* utd需设置为uniformTypeDescriptor.UniformDataType.HYPERLINK，表示分享内容为链接；content设置为[配置App Linking](bpta-application-gesture-share.md#section1685558173015)章节中配置的链接，链接中拼接视频唯一标识符videoIndex。
 * 为提升分享预览模板缩略图的清晰度和整体用户体验，建议开发者优先使用thumbnailUri参数设置缩略图。尽管thumbnailUri和thumbnail两个参数均可实现缩略图效果，但thumbnail参数因大小限制为32KB，实际应用中可能导致图片模糊，影响用户体验。因此，采用thumbnailUri指定高质量缩略图更为推荐。
 
 ```typescript
@@ -400,7 +402,7 @@ getLinkShareData(): systemShare.SharedData {
 
 当对端设备已安装应用并收到分享的 App Linking 链接后，系统会拉起应用。根据应用是否已在运行，有以下两种情况需处理：
 
-应用未运行：此时跳转应用，应在onCreate()方法中获取链接中的视频唯一标识符videoIndex并存储到AppStorage中，同时存储GesturesShare\_isShareLink为true，表示当前应用通过分享系统启动，以便于跳转到隔空传送链接分享页面播放视频。
+应用未运行：此时跳转应用，应在onCreate()方法中获取链接中的视频唯一标识符videoIndex并存储到AppStorage中。同时存储GesturesShare\_isShareLink为true，表示当前应用通过分享系统启动，以便于跳转到隔空传送链接分享页面播放视频。
 
 ```typescript
 onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {

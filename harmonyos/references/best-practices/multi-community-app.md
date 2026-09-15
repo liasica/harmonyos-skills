@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-community
 title: 多设备社区评论界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备社区评论界面
 category: best-practices
-scraped_at: 2026-09-10T06:30:07+08:00
-doc_updated_at: 2026-08-17
-content_hash: sha256:c447d033f317ffa58a47f2495679f96420b108324999736fa27766459cf94667
+scraped_at: 2026-09-16T06:55:02+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:956421c75468ee9fd3c31e3d79c5830cf2b6bed73a521269ea73af173b44b993
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:c447d033f317ffa58a47f2495679f96420b108324999736fa27766459cf
 
 应用的UX设计可参考[社交通讯类](../design-guides/responsive-design-examples2-0000001793536901.md)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/mNJ1QIbWRDCK8mRmcVD2VA/zh-cn_image_0000002591828652.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/x-Ohur_WQ8u7sMQTbhgflg/zh-cn_image_0000002591828652.png "点击放大")
 
 ## 工程管理
 
@@ -191,7 +191,7 @@ content_hash: sha256:c447d033f317ffa58a47f2495679f96420b108324999736fa27766459cf
 
 社区评论应用首页作为业务入口，关注页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/pqEqd2aATBaN62OeqtEdvw/zh-cn_image_0000002622348223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/z5yInc3nQOCzxdtuUKJfkQ/zh-cn_image_0000002622348223.png "点击放大")
 
 **界面开发**
 
@@ -208,7 +208,7 @@ content_hash: sha256:c447d033f317ffa58a47f2495679f96420b108324999736fa27766459cf
 
 热点页用于展示当前实时热点内容。根据功能设计，热点页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/dknVb_m8Qhueh56-ghOwgA/zh-cn_image_0000002591988552.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/WCM8kfZSTf6UF05Lg8GnGQ/zh-cn_image_0000002591988552.png "点击放大")
 
 **界面开发**
 
@@ -224,7 +224,7 @@ content_hash: sha256:c447d033f317ffa58a47f2495679f96420b108324999736fa27766459cf
 
 根据功能设计，社交详情页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/b6mdox3DSE6gzrPSLjs0sQ/zh-cn_image_0000002622308087.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/FXTCtRyHSMCzDAZCbsTg6Q/zh-cn_image_0000002622308087.png "点击放大")
 
 **界面开发**
 
@@ -242,7 +242,7 @@ content_hash: sha256:c447d033f317ffa58a47f2495679f96420b108324999736fa27766459cf
 
 图片详情页相关内容划分为1个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/fVRzwZsyQNK1D9phpkS01g/zh-cn_image_0000002591828660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/vo5RjljnTHSoC-RMbSZChg/zh-cn_image_0000002591828660.png "点击放大")
 
 **界面开发**
 

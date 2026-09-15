@@ -3,32 +3,32 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（C++）
 category: best-practices
-scraped_at: 2026-09-10T06:30:03+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:07030e09ab5ba60953403f98e89685e62f8ff8ac08c70ef271a9db260b27df8f
+scraped_at: 2026-09-16T06:54:58+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:a5df25646f72e6760cfbb28fe7e720b3bcd6fbeacfde76c037f6029c58a51ed7
 ---
 
 ## 概述
 
-AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3等格式。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了在C/C++侧基于AVRecorder如何录制格式化音频，指导开发者实现基础录制。
+[AVRecorder](../harmonyos-references/capi-avrecorder.md)提供了Native API，可以快速实现音频录制，支持m4a、mp3等格式。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了在C/C++侧基于[AVRecorder](../harmonyos-references/capi-avrecorder.md)如何录制格式化音频，指导开发者实现基础录制。
 
-基于AVRecorder录制格式化音频（C++）实现的功能效果如下：
+基于[AVRecorder](../harmonyos-references/capi-avrecorder.md)录制格式化音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/FZ5Dr3ZWQnyXBfT3Qze2GQ/zh-cn_image_0000002524221070.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/sjjlPxnOQcen0xNE4Rz8Vw/zh-cn_image_0000002524221070.gif "点击放大")
 
 本文的主要内容如下：
 
-[基础录制](bpta-audio-record-base-on-avrecorder.md#section20569101215108)：介绍了在C/C++侧基于AVRecorder录制格式化音频，包括开始录制、暂停录制和结束录制。
+[基础录制](bpta-audio-record-base-on-avrecorder.md#section20569101215108)：介绍了在C/C++侧基于[AVRecorder](../harmonyos-references/capi-avrecorder.md)录制格式化音频，包括开始录制、暂停录制和结束录制。
 
 ## 基础录制
 
 ### 实现原理
 
-除了ArkTS语言版本外，HarmonyOS还提供了C/C++语言版本的AVRecorder录制器，用于在C/C++侧进行音频数据采集、音频编码以及音频文件封装等端到端一体化音频录制。C/C++侧AVRecorder的功能和开发流程与ArkTS侧基本一致。
+除了ArkTS语言版本外，HarmonyOS还提供了C/C++语言版本的[AVRecorder](../harmonyos-references/capi-avrecorder.md)录制器，用于在C/C++侧进行音频数据采集、音频编码以及音频文件封装等端到端一体化音频录制。C/C++侧[AVRecorder](../harmonyos-references/capi-avrecorder.md)的功能和开发流程与ArkTS侧基本一致。
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/M20PEKOfRDC4cVndRRReOQ/zh-cn_image_0000002555340939.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Y2p1s9zCTo68SpQDipNsTg/zh-cn_image_0000002555340939.jpg "点击放大")
 
 ### 开发步骤
 
@@ -38,11 +38,11 @@ AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3
 target_link_libraries(entry PUBLIC libace_napi.z.so libavrecorder.so libnative_media_core.so libhilog_ndk.z.so)
 ```
 
-2.在Native侧，配置AVRecorder。
+2.在Native侧，配置[AVRecorder](../harmonyos-references/capi-avrecorder.md)。
 
 * 创建OH\_AVRecorder\_Config对象，并设置音频录制的相关配置，包括音频采样率、音频格式、采样通道等。
-* 根据实际需要，设置音频录制的回调函数，如错误回调函数OH\_AVRecorder\_SetErrorCallback()等。
-* 调用OH\_AVRecorder\_Prepare()接口，让AVRecorder进入prepare状态。
+* 根据实际需要，设置音频录制的回调函数，如错误回调函数[OH\_AVRecorder\_SetErrorCallback()](../harmonyos-references/capi-avrecorder-h.md#oh_avrecorder_seterrorcallback)等。
+* 调用[OH\_AVRecorder\_Prepare()](../harmonyos-references/capi-avrecorder-h.md#oh_avrecorder_prepare)接口，让[AVRecorder](../harmonyos-references/capi-avrecorder.md)进入prepared状态。
 
 ```cpp
 // Set AVRecorder Config

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-picture-a
 title: 多设备图片美化界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备图片美化界面
 category: best-practices
-scraped_at: 2026-09-10T06:30:07+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:86fcd67fde1e02b2036f5a5f8b07402eb511d4ee8121085638853024ec65946e
+scraped_at: 2026-09-16T06:55:02+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:5d885a9e81e1192b2eb353863577f3b95eae7f6079b2291f0d9ae2ade7ed0afb
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:86fcd67fde1e02b2036f5a5f8b07402eb511d4ee8121085638853024ec6
 
 图片美化应用的UX设计可参考社交通讯类多设备响应式设计指南的[拍摄美化类](../design-guides/responsive-design-examples3-0000001746498074.md)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/XKvwlo7yRpaQ8b5YrVRT_Q/zh-cn_image_0000002610145561.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/4PXvf8NrTvuwK4lTQQJfKQ/zh-cn_image_0000002610145561.png "点击放大")
 
 ## 工程管理
 
@@ -130,10 +130,10 @@ content_hash: sha256:86fcd67fde1e02b2036f5a5f8b07402eb511d4ee8121085638853024ec6
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 侧边导航栏 | 使用[HdsNavigation](../harmonyos-references/ui-design-hdsnavigation.md)组件实现，通过窗口宽度与高宽比，控制窗口变化时，修改mode单双栏显示。 |
-| 2 | 顶部标题栏 | 使用[HdsNavDestination](../harmonyos-references/ui-design-hdsnavdestination.md)组件设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)属性实现。在不同的设备宽度下组件自适应占满一屏。 |
-| 3 | 底部导航栏 | 使用[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)组件实现，通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
-| 4 | 图片内容区 | 使用[Grid](../harmonyos-references/ts-container-grid.md)组件实现，通过[@Env环境变量](../harmonyos-references/ts-env-system-property.md)修改不同断点下columnsTemplate，显示不同的列数，并设置图片的[aspectioRatio](../harmonyos-references/ts-universal-attributes-layout-constraints.md#aspectratio)属性固定宽高比。 |
+| 1 | 侧边导航栏 | 使用[HdsNavigation (导航根视图容器)](../harmonyos-references/ui-design-hdsnavigation.md)实现，通过窗口宽度与高宽比，控制窗口变化时，修改mode单双栏显示。 |
+| 2 | 顶部标题栏 | 使用[HdsNavDestination (导航子页面容器)](../harmonyos-references/ui-design-hdsnavdestination.md)设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)属性实现。在不同的设备宽度下组件自适应占满一屏。 |
+| 3 | 底部导航栏 | 使用[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)实现，通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
+| 4 | 图片内容区 | 使用[Grid](../harmonyos-references/ts-container-grid.md)组件实现，通过[@Env：环境变量](../harmonyos-references/ts-env-system-property.md)修改不同断点下columnsTemplate，显示不同的列数，并设置图片的[aspectRatio](../harmonyos-references/ts-universal-attributes-layout-constraints.md#aspectratio)属性固定宽高比。 |
 
 ### 照片编辑页
 
@@ -151,16 +151,16 @@ content_hash: sha256:86fcd67fde1e02b2036f5a5f8b07402eb511d4ee8121085638853024ec6
 | --- | --- | --- |
 | 1 | 顶部标题栏 | 使用[Row](../harmonyos-references/ts-container-row.md)组件自定义TitleView实现。在不同的设备宽度下组件自适应占满一屏。 |
 | 2 | 底部/侧边工具栏 | 使用[Flex](../harmonyos-references/ts-container-flex.md)组件实现，通过窗口宽度与高宽比，控制窗口变化时，子组件排列方向为Row或Column。 |
-| 3 | 图片内容区 | 使用堆叠容器[Stack](../harmonyos-references/ts-container-stack.md)组件嵌套[Image](../harmonyos-references/ts-basic-components-image.md)组件实现，设置图片的[aspectioRatio](../harmonyos-references/ts-universal-attributes-layout-constraints.md#aspectratio)属性固定宽高比。并通过监听断点变化，动态调整两侧边距。 |
-| 4 | 警告弹窗 | 使用[警告弹窗AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md)实现，仅在PuraX外屏等小屏场景弹出。 |
+| 3 | 图片内容区 | 使用堆叠容器[Stack](../harmonyos-references/ts-container-stack.md)组件嵌套[Image](../harmonyos-references/ts-basic-components-image.md)组件实现，设置图片的[aspectRatio](../harmonyos-references/ts-universal-attributes-layout-constraints.md#aspectratio)属性固定宽高比。并通过监听断点变化，动态调整两侧边距。 |
+| 4 | 警告弹窗 | 使用[警告弹窗 (AlertDialog)](../harmonyos-references/ts-methods-alert-dialog-box.md)实现，仅在PuraX外屏等小屏场景弹出。 |
 
 ### 交互开发
 
 在照片浏览页面，用户可通过双指缩放手势动态调整图片宫格布局的显示大小。双指向外张开时，宫格放大，每行图片数量减少；双指向内捏合时，宫格缩小，每行图片数量增多。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/YuBXH9hqR7mkLzgFY_4MDg/zh-cn_image_0000002579625672.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/k0gruibOQ8uUEMBKdB-ifA/zh-cn_image_0000002579625672.gif "点击放大")
 
-使用[PinchGesture](../harmonyos-references/ts-basic-gestures-pinchgesture.md)实现双指捏合手势触发时，动态修改Grid组件的显示列数。开发详情请参考[多设备交互](bpta-multi-interaction.md#section182814229423)或[示例代码](multi-picture-app.md#section23671643329)。
+使用[PinchGesture](../harmonyos-references/ts-basic-gestures-pinchgesture.md)实现双指捏合手势触发时，动态修改Grid组件的显示列数。开发详情请参考[手势事件](bpta-multi-interaction.md#section182814229423)或[示例代码](multi-picture-app.md#section23671643329)。
 
 ## 电脑端页面
 
@@ -176,13 +176,13 @@ content_hash: sha256:86fcd67fde1e02b2036f5a5f8b07402eb511d4ee8121085638853024ec6
   电脑设备上应用的窗口方向跟随屏幕方向显示，不支持开发者自定义，相关内容请参考[窗口方向](bpta-multi-device-window-direction.md)。
 * 窗口沉浸式
 
-  根据UX设计要求，需在自由窗口模式下实现沉浸式效果。推荐开发者使用window.setWindowDecorVisible(false)隐藏标题栏，仅保留右上角三键，并设置三键大小及右侧进行。此时应用页面拓展至标题栏区域，实现沉浸式显示效果，详情可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。
+  根据UX设计要求，需在自由窗口模式下实现沉浸式效果。推荐开发者使用window.setWindowDecorVisible(false)隐藏标题栏，仅保留右上角三键，并设置三键大小及右侧显示。此时应用页面拓展至标题栏区域，实现沉浸式显示效果，详情可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。
 
 ### 照片浏览页
 
 图片美化应用的照片浏览页主要用于展示照片及分类导航，以满足用户查看不同相册照片的需求。根据功能设计，将照片浏览页相关内容划分为3个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/DW1V1cTiSoKACEP5iVaiuQ/zh-cn_image_0000002579785584.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/UoEX5Z4zSjCMeQOIXZUpcA/zh-cn_image_0000002754317059.png "点击放大")
 
 **界面开发**
 
@@ -198,7 +198,7 @@ content_hash: sha256:86fcd67fde1e02b2036f5a5f8b07402eb511d4ee8121085638853024ec6
 
 图片美化应用的照片编辑页主要用于一键套用预设滤镜，以满足用户的个性化表达需求。根据功能设计，将照片编辑页的相关内容划分为3个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/hRhuYtFyTBqdv2Akkxpfkw/zh-cn_image_0000002610065459.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/S6fgt51tTPKAC5lJcAjQyg/zh-cn_image_0000002610065459.png "点击放大")
 
 **界面开发**
 

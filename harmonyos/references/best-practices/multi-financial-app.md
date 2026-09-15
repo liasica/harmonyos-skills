@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-financial
 title: 多设备银行理财界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备银行理财界面
 category: best-practices
-scraped_at: 2026-09-10T06:30:06+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b67d50f
+scraped_at: 2026-09-16T06:55:03+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:229cd97842cc0afe55608af5f0e1c39bf9fcc9b4933dae4f42695fbea6b54145
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
 
 应用的UX设计可参考[金融理财类](../design-guides/responsive-design-examples6-0000001793536905.md)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/UKOHDtHkReKPmRz19URzCw/zh-cn_image_0000002619248557.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ez_gDkX_SfuYDKe3nLfxmg/zh-cn_image_0000002619248557.png "点击放大")
 
 ## 工程管理
 
@@ -116,10 +116,10 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
   适配设备支持全屏、分屏、悬浮窗和自由窗口模式，具体参见[窗口模式](bpta-multi-device-window-mode.md)。其中，分屏模式与悬浮窗无需特殊设计，可通过系统方式进入。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏、分屏、悬浮窗和自由窗口模式下的布局。
 * 窗口方向
 
-  在[model.json5配置文件](../harmonyos-guides/module-configuration-file.md)中将orientation字段设置为follow\_desktop（跟随桌面的旋转模式），详情可参考[为应用配置旋转策略](bpta-multi-device-window-direction.md#section714419371037)。
+  在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中将orientation字段设置为follow\_desktop（跟随桌面的旋转模式），详情可参考[为应用配置旋转策略](bpta-multi-device-window-direction.md#section714419371037)。
 * 窗口沉浸式
 
-  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者使用[实现沉浸式效果](bpta-multi-device-window-immersive.md#section180431120426)中的组件级沉浸方案（组件设置页面沉浸），同时进行动态安全区避让，确保沉浸式显示效果。自由窗口模式下，使用[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使应用页面延伸至标题栏区域，实现沉浸式显示效果。
+  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者使用[实现沉浸式效果](bpta-multi-device-window-immersive.md#section180431120426)中的组件级沉浸方案（组件设置页面沉浸），同时进行动态安全区避让，确保沉浸式显示效果。自由窗口模式下，使用window.[setWindowDecorVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)(false)隐藏标题栏，仅保留右上角三键，使应用页面延伸至标题栏区域，实现沉浸式显示效果。
 
 ### 首页
 
@@ -135,7 +135,7 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 底部Tabs | 使用[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)实现，通过[barfloatingstyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性为页签设置悬浮样式，确保移动端底部触达优先。 |
+| 1 | 底部Tabs | 使用[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)实现，通过[barfloatingstyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性为页签设置悬浮样式，确保移动端底部触达优先。 |
 | 2 | 顶部栏 | 展示城市、搜索和常用操作。结合组件的[layoutWeight](../harmonyos-references/ts-universal-attributes-size.md#layoutweight)属性，实现左侧城市在不同断点下的自适应拉伸效果。小屏下搜索功能收敛为搜索图标，中大屏展开为搜索框；左右内边距随断点变化。 |
 | 3 | 主业务快捷区 | 使用[Row](../harmonyos-references/ts-container-row.md)横向布局，通过监听不同断点的变化，动态调整左右内边距。sm、md断点下，图标和文字纵向排布，lg、xl断点下切换为横向排布。 |
 | 4 | 业务宫格区 | 使用网格容器[Grid](../harmonyos-references/ts-container-grid.md)实现。通过[columnsTemplate](../harmonyos-references/ts-container-grid.md#columnstemplate)属性，动态调整不同断点下的显示列数。 |
@@ -165,7 +165,7 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
 
 ### 理财详情页
 
-理财详情页用于展示理财产品的关键信息、交易时间线及产品亮点，并提供“关注/买入”的底部操作入口。根据功能设计，将应用首页相关内容划分为5个区域，效果图如下：
+理财详情页用于展示理财产品的关键信息、交易时间线及产品亮点，并提供“关注/买入”的底部操作入口。根据功能设计，将理财详情页相关内容划分为5个区域，效果图如下：
 
 | 横向断点 | sm | md | lg、xl |
 | --- | --- | --- | --- |
@@ -185,7 +185,7 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
 
 ### 购买页
 
-购买页用于完成理财产品的申购确认，用户在此确认金额、选择付款方式并核对产品信息。根据功能设计，将应用首页相关内容划分为6个区域，效果图如下：
+购买页用于完成理财产品的申购确认，用户在此确认金额、选择付款方式并核对产品信息。根据功能设计，将购买页相关内容划分为6个区域，效果图如下：
 
 | 横向断点 | sm | md | lg、xl |
 | --- | --- | --- | --- |
@@ -193,11 +193,11 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
 
 **界面开发**
 
-在sm断点下，使用[bindsheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)为组件绑定半模态页面，md及以上断点，使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)实现双栏。具体实现方案如下表所示：
+在sm断点下，使用[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)为组件绑定半模态页面，md及以上断点，使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)实现双栏。具体实现方案如下表所示：
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 标题栏 | 在父组件[Row](../harmonyos-references/ts-container-row.md)中分别实现标题文字和关闭按钮，通过[justifycontent](../harmonyos-references/ts-container-row.md#justifycontent8)属性设置在水平方向均匀分配弹性元素。通过[Stack](../harmonyos-references/ts-container-stack.md)组件控制购买页组件的层级，确保标题栏始终显示在购买页的最上层。 |
+| 1 | 标题栏 | 在父组件[Row](../harmonyos-references/ts-container-row.md)中分别实现标题文字和关闭按钮，通过[justifyContent](../harmonyos-references/ts-container-row.md#justifycontent8)属性设置在水平方向均匀分配弹性元素。通过[Stack](../harmonyos-references/ts-container-stack.md)组件控制购买页组件的层级，确保标题栏始终显示在购买页的最上层。 |
 | 2 | 产品名称 | 使用[Text](../harmonyos-references/ts-basic-components-text.md)组件实现。 |
 | 3 | 购买金额卡片 | 使用[Row](../harmonyos-references/ts-container-row.md)布局，左侧显示"购买金额"，右侧显示"交易规则"。  输入区域：使用[TextInput](../harmonyos-references/ts-basic-components-textinput.md)组件实现，通过[type](../harmonyos-references/ts-basic-components-textinput.md#type)属性限制输入类型。  快捷金额按钮：使用[Row](../harmonyos-references/ts-container-row.md)组件水平排列。 |
 | 4 | 支付方式卡片 | 使用[Row](../harmonyos-references/ts-container-row.md)水平布局，左侧显示"支付方式"，右侧显示银行卡信息和下拉箭头。 |
@@ -212,7 +212,7 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
 
 银行理财应用首页主要承担业务入口、消息公告、卡片内容和财富推荐的聚合展示。根据功能设计，应用首页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Al9FMK7MT3qYtjUPGjfasA/zh-cn_image_0000002610026103.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/TlW74ijyQT2-nIYCbe6tCw/zh-cn_image_0000002610026103.png "点击放大")
 
 **界面开发**
 
@@ -231,7 +231,7 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
 
 账户总览页用于展示用户总资产、昨日收益概览，及活期、投资、负债等资产模块的分区信息。根据功能设计，应用账户总览页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/irVOfKghSvuRYmWEMyIaIg/zh-cn_image_0000002579426308.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/3PAS6i-ET9eke79N0MnjoA/zh-cn_image_0000002579426308.png "点击放大")
 
 **界面开发**
 
@@ -246,11 +246,11 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
 | 5 | 投资（理财卡片、基金卡片） |
 | 6 | 负债信息 |
 
-### 理财详情页页
+### 理财详情页
 
-理财详情页用于展示单个理财产品的关键信息、交易时间线及产品亮点，并提供“关注/买入”的底部操作入口。根据功能设计，将应用首页相关内容划分为5个区域，效果图如下：
+理财详情页用于展示单个理财产品的关键信息、交易时间线及产品亮点，并提供“关注/买入”的底部操作入口。根据功能设计，将理财详情页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Y66GgUCuTTWXURf9bwpbqw/zh-cn_image_0000002609946203.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/VnSt3yL9SD63GA15Xq_M7g/zh-cn_image_0000002609946203.png "点击放大")
 
 **界面开发**
 
@@ -262,13 +262,13 @@ content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b6
 | 2 | 产品信息卡片 | 复用移动端设备布局方案，同移动端[理财详情页](multi-financial-app.md#section5658124155610)对应区域的布局实现方案。 |
 | 3 | 时间轴卡片 |
 | 4 | 产品亮点 |
-| 5 | 底部操作栏 | 在父组件[Row](../harmonyos-references/ts-container-row.md)中分别实现关注按钮及购买按钮。购买按钮使用固定宽度，通过[justifycontent](../harmonyos-references/ts-container-row.md#justifycontent8)属性设置在水平方向尾部对齐。 |
+| 5 | 底部操作栏 | 在父组件[Row](../harmonyos-references/ts-container-row.md)中分别实现关注按钮及购买按钮。购买按钮使用固定宽度，通过[justifyContent](../harmonyos-references/ts-container-row.md#justifycontent8)属性设置在水平方向尾部对齐。 |
 
 ### 购买页
 
-购买页用于完成理财产品的申购确认，用户在此确认金额、选择付款方式并核对产品信息。根据功能设计，将应用首页相关内容划分为6个区域，效果图如下：
+购买页用于完成理财产品的申购确认，用户在此确认金额、选择付款方式并核对产品信息。根据功能设计，将购买页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/0S0NTCwST3CgbK4NikN_4A/zh-cn_image_0000002579586218.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/P2XnT9Q5SxGHtUx9WUAHvw/zh-cn_image_0000002579586218.png "点击放大")
 
 **界面开发**
 

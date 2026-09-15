@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-package-st
 title: 程序包结构
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构
 category: best-practices
-scraped_at: 2026-09-10T06:30:02+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-16T06:54:57+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:73feca7e0ca51359dddfb8fabfac25309b5de04ae5cbc7cd7320abaef3dc3ca5
 ---
 

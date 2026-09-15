@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: OS新增和增强特性
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-10T06:20:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0950063eba7f63933a01dc1d626934a6c8cfde075ad7977d01bb8e99360dfc38
+scraped_at: 2026-09-16T06:45:10+08:00
+doc_updated_at: 2026-09-15
+content_hash: sha256:810c4f4ac0f5366d068a3ea9384b131192e0af5bb3f7118df275369ebb230ef7
 ---
 
 ## 26.0.0 Release新增和增强特性
@@ -272,7 +272,7 @@ HiDebug新增支持注册内存导出监听器，用于在内存占用较高或�
 
 * 新增颜色选择与收藏管理功能，支持网格、光谱和滑块三种颜色选择模式，支持用户将常用颜色添加到收藏列表。（[指南](../harmonyos-guides/ui-design-color-picker-favorites.md)、[API参考](../harmonyos-references/ui-design-hdscolorpicker.md)）
 
-* HdsSnackBar组件新增新增支持左侧图标（[API参考](../harmonyos-references/ui-design-hdssnackbar.md#snackbariconoptions)）、中间文本的标题和内容（[API参考](../harmonyos-references/ui-design-hdssnackbar.md#snackbarmessageoptions)）、右侧操作区关闭按钮的图标（[API参考](../harmonyos-references/ui-design-hdssnackbar.md#snackbaroperationoptions)）的样式修改。
+* HdsSnackBar组件新增支持左侧图标（[API参考](../harmonyos-references/ui-design-hdssnackbar.md#snackbariconoptions)）、中间文本的标题和内容（[API参考](../harmonyos-references/ui-design-hdssnackbar.md#snackbarmessageoptions)）、右侧操作区关闭按钮的图标（[API参考](../harmonyos-references/ui-design-hdssnackbar.md#snackbaroperationoptions)）的样式修改。
 * HdsListItem组件新增多态样式的设置功能。（[API参考](../harmonyos-references/ui-design-hdslistitem.md#hdslistitemstatestylesoptions)）
 * HdsListItemCard组件单选框支持样式选择。（[API参考](../harmonyos-references/ui-design-hdslistitemcard.md#hdsradiostyle)）
 

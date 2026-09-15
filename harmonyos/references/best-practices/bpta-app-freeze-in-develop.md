@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-freeze
 title: 开发态快速定位AppFreeze冻屏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用冻屏类问题分析 > 开发态快速定位AppFreeze冻屏
 category: best-practices
-scraped_at: 2026-09-10T06:30:20+08:00
+scraped_at: 2026-09-16T06:55:15+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7c692df3fa709efdc25705dc6c8994c5cb249e12953bdc1d4caad72b3f5fd245
+content_hash: sha256:1f35e026d5920af4fb4c5c12778f25f81004bf25d8fe3f1c46d75a951e359295
 ---
 
 ## 概述
@@ -48,13 +48,13 @@ content_hash: sha256:7c692df3fa709efdc25705dc6c8994c5cb249e12953bdc1d4caad72b3f5
 
 通过DevEco Studio的底部FaultLog模块或触发冻屏现象时DevEco Studio右下提示框直接跳转至FaultLog。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/mFdm4tlJRUmM4LUXRH76eA/zh-cn_image_0000002644940872.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Lnd_4GJpRRKRvATfuPVnxg/zh-cn_image_0000002644940872.png "点击放大")
 
 2. **查看信息分析故障类型**
 
 进入Fault Analysis页签查看Freeze type。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/uAMW28rxR2uEneEdye7Kng/zh-cn_image_0000002675100579.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/yj1rr7EXTIukHO6bZVY0mA/zh-cn_image_0000002675100579.png "点击放大")
 
 * THREAD\_BLOCK\_6S：应用主线程冻屏超时（前台6秒，后台21秒）。
 * APP\_INPUT\_BLOCK：用户输入响应超时。
@@ -73,7 +73,7 @@ content_hash: sha256:7c692df3fa709efdc25705dc6c8994c5cb249e12953bdc1d4caad72b3f5
 
 冻屏问题的标准化排查流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/2Wx1o_DdTWKZTOj6hqFXsQ/zh-cn_image_0000002675020727.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/m3rwNzOqRseBIvf4d6PKAg/zh-cn_image_0000002675020727.jpg "点击放大")
 
 ## 冻屏分析案例
 
@@ -101,7 +101,7 @@ content_hash: sha256:7c692df3fa709efdc25705dc6c8994c5cb249e12953bdc1d4caad72b3f5
 
    如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/2tN7ICozTfm2pdj52T-3vA/zh-cn_image_0000002645100776.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/IiWj8eKNRf-CCpYaWwBLwA/zh-cn_image_0000002645100776.png "点击放大")
 3. **查看****Fault Analysis**
 
    Fault Info右侧会出现Fault Analysis页签，点击Fault Analysis页签，会展示结构化的日志信息。
@@ -110,22 +110,22 @@ content_hash: sha256:7c692df3fa709efdc25705dc6c8994c5cb249e12953bdc1d4caad72b3f5
 
    如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/rC0Cxi2rQUWQ3icNKfKWXQ/zh-cn_image_0000002644940874.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/BS0GPT93SgW0TOqbp88G1g/zh-cn_image_0000002644940874.png "点击放大")
 
    **对比3秒（Warning）和6秒（Error）的堆栈**
 
    * 3秒和6秒的栈不一致：说明线程仍在执行业务代码，可能是任务过重导致主线程繁忙，需结合采样栈进一步确认。如下图所示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/d2a9ucS-SQW1bQghOVOapQ/zh-cn_image_0000002675100581.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/0RMWCxi_RKaW9xt4O1nFzA/zh-cn_image_0000002675100581.png "点击放大")
 4. **分析Sampling Stack**
 
    Sampling Stack页签展示应用堆栈（绿色标识）和系统堆栈（蓝色标识）。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/SMcfqVqWSwOlTx6NzkKGpw/zh-cn_image_0000002675020729.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/7H_7zRcOSWiUV5GNtjLFDg/zh-cn_image_0000002675020729.png "点击放大")
 
    点击切换图表类型按钮，可切换到堆栈火焰图，并通过不同颜色标识堆栈类型。其中红色代表异常堆栈，图中异常堆栈指向业务Page，结合前面步骤3s/6s堆栈不一致的场景，此时需要定位Page中导致主线程繁忙的业务逻辑。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/c-EI0bAmSKCmDiX_ucYNEg/zh-cn_image_0000002744118231.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/YezMENqtR3OLZwWZW_KR1Q/zh-cn_image_0000002744118231.png "点击放大")
 
    开发者检查对应业务代码后，可发现两处导致主线程繁忙的严重问题。
 
@@ -135,9 +135,9 @@ content_hash: sha256:7c692df3fa709efdc25705dc6c8994c5cb249e12953bdc1d4caad72b3f5
 
    如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/-N6VlysYTpiFGPx7sG93BA/zh-cn_image_0000002644940876.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/BFE8_63rQN2NfcNrSyCxCw/zh-cn_image_0000002644940876.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/JRIp370XQaC2vCkNP0tVCQ/zh-cn_image_0000002675100583.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DzXaiwB7R-epO45yi4GwUg/zh-cn_image_0000002675100583.png)
 
 ### 优化修复
 
@@ -149,7 +149,7 @@ content_hash: sha256:7c692df3fa709efdc25705dc6c8994c5cb249e12953bdc1d4caad72b3f5
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/AN3nDu-hR0iVeePFcK9-aA/zh-cn_image_0000002675020731.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/QzDf8IyZQa-K2czz5HQTiw/zh-cn_image_0000002675020731.png)
 
 ## 常见修复建议
 

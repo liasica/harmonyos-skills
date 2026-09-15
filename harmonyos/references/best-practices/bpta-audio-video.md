@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-vide
 title: 影音娱乐
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐
 category: best-practices
-scraped_at: 2026-09-02T14:53:43+08:00
-doc_updated_at: 2026-09-02
+scraped_at: 2026-09-16T06:55:05+08:00
+doc_updated_at: 2026-09-15
 content_hash: sha256:0ab1ff96a8e816a9fb45998924e5ef7bdbd4960f6ff77504c471679a95cd4eb3
 ---
 
