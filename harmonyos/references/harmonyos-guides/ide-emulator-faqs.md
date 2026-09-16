@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 模拟器错误码
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 模拟器错误码
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:45+08:00
+scraped_at: 2026-09-17T06:47:05+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:f5fc3d616924dbdd730e06b7f5d038c54673914c8e3f1bd999e36c202ff68359
+content_hash: sha256:e3d9ac151f9a117e5b1ddf890b230f43b24ec452dadc22cd954a49ec477f6245
 ---
 
 当模拟器运行出现错误时，您可以向我们提交错误信息。在扩展菜单栏打开**Bug报告**界面：
@@ -15,7 +15,7 @@ content_hash: sha256:f5fc3d616924dbdd730e06b7f5d038c54673914c8e3f1bd999e36c202ff
 * 在日志文件内容中，可以查看收集的日志内容。
 * 在界面右下方勾选同意用户协议后，点击**保存并发送**按钮，即可将问题和Bug日志传递给我们。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/T4xGemscSCeSAWnAUpGMSQ/zh-cn_image_0000002731541125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/h3-XR-I7SO-ciL-IQQGY5g/zh-cn_image_0000002731541125.png)
 
 ## 00801001 未开启Hyper-V
 
@@ -39,7 +39,7 @@ Hyper-V Not Enabled.
    * 如果不存在，说明系统未预装Hyper-V，请根据系统版本先安装Hyper-V。
    * 如果存在，勾选这三个功能，点击确定并重启电脑。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/R59TwC9XRjqygU6gtlUYqw/zh-cn_image_0000002701661924.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/0BaDB3GxQb-FCpKex9y9PA/zh-cn_image_0000002701661924.png)
 3. 若勾选后启动模拟器仍然提示该错误，需要以管理员权限打开命令行窗口执行以下命令，并重启电脑。
 
    ```bash
@@ -47,7 +47,7 @@ Hyper-V Not Enabled.
    ```
 4. 如果按照上述步骤无法解决，打开**任务管理器->性能**，若显示虚拟化已禁用或未开启，则是BIOS中虚拟化没有开启，请根据计算机的主板型号，进入BIOS设置界面，并开启虚拟化功能。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/8yBcjX0DRIaIAUR3zpdpRg/zh-cn_image_0000002731541147.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/PY4Q3iw1QbiQko7ISfkPzQ/zh-cn_image_0000002731541147.png)
 
 更多关于Hyper-V安装请参考[在 Windows 上安装 Hyper-V](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/get-started/Install-Hyper-V?f=255&MSPPError=-2147217396)和[Hyper-V 系统要求](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/host-hardware-requirements)。
 
@@ -124,10 +124,10 @@ Emulator failed to start due to insufficient memory.
 
 1. 首先打开**任务管理器>详细信息**，在列表表头右键**>选择列**，找到并勾选“**提交大小**”，点击“**提交大小**”列进行排序，关闭部分提交大小占用高的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/N6ZIruJ8RwiIRm0iWgdyDA/zh-cn_image_0000002731381161.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/OKmeWPmeQmC8NbC-E3Mrkg/zh-cn_image_0000002731381161.png)
 2. 打开**任务管理器>性能>内存**页面，确保已提交内存的剩余量大于模拟器设置的RAM大小。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/1Oe6fsyQQRarQFKSrIoGJw/zh-cn_image_0000002731541121.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/fCluXbpHQhmbXdSyYBdqTA/zh-cn_image_0000002731541121.png)
 
 ## 00801006 Windows系统版本过低
 

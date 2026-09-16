@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-publi
 title: 发布共享包
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 发布共享包
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:31+08:00
+scraped_at: 2026-09-17T06:46:52+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6ff8302396122b1040d87c6f10e30ccb656eeb4a7ec44c04342a5a7ae32f5df2
+content_hash: sha256:a3a41657d5e549293617cb021cba26a16b9a96be93ebf21ae50fa53cdb014a0d
 ---
 
 发布打包的HAR，可供其他开发者安装和引用。接下来将介绍如何发布HAR共享包。
@@ -36,7 +36,7 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
    3. ohpm包管理器只支持加密密钥认证，请在生成公私钥时输入密码。
 4. 登录[OpenHarmony三方库中心仓](https://ohpm.openharmony.cn/#/cn/home)官网，单击主页右上角的**个人中心**，新增OHPM公钥，将公钥文件（mykey.pub）的内容粘贴到公钥输入框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/QIhaFdPvQpqKLn3_cvFD3g/zh-cn_image_0000002731541839.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/fvA83Yo5QHOSYy8CLEhS0Q/zh-cn_image_0000002731541839.png)
 5. 打开命令行工具，将对应私钥文件路径配置到 .ohpmrc 文件中 key\_path 字段上，可执行以下命令进行配置：
 
    ```screen

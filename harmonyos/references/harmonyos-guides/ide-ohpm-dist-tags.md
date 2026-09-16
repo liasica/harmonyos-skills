@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dist
 title: ohpm dist-tags
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm dist-tags
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9fb0465bc12d527062c8d55531eec92a8424d4c314ef0bceeb128c02a0b0a0df
+scraped_at: 2026-09-17T06:47:16+08:00
+doc_updated_at: 2026-09-16
+content_hash: sha256:2a9fadb7011b9261aaab5eee24f139dfdcade8a35a8344ce374876aa84d8da5a
 ---
 
 tag可标记一个三方库的某个版本，在install时可用tag代替版本号安装包。
@@ -150,7 +150,5 @@ alias: rm
        // 标签引入，引入标签为"beta"对应的版本号1.0.0
        "@ohos/axios": "tag:beta"
      }
-     ...
-     ...
    }
    ```

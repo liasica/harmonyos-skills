@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-release-c
 title: 导入上架检测报告进行诊断
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 导入上架检测报告进行诊断
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:47+08:00
+scraped_at: 2026-09-17T06:47:08+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a63941fbd63cf2c7b1269f4940543526018a5f742723a2733610b9cfbc7bc234
+content_hash: sha256:c7d599d92cf23c8c3a885bb5f78920c92ab5fac5909a59db64a31fdd721f6585
 ---
 
 应用在AppGallery申请上架会对UX、稳定性、功耗、性能和兼容性等专项进行审核。从26.0.0版本开始，AppAnalyzer支持导入上架审核不通过的报告并进行诊断分析，帮助定位可能的故障原因并生成体检报告。
@@ -19,20 +19,20 @@ content_hash: sha256:a63941fbd63cf2c7b1269f4940543526018a5f742723a2733610b9cfbc7
 
 1. 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面，点击底部**History**打开历史报告页面，点击右上角的**Import** **> Release Check Report**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/BFPgXfXRRhuM-X_3I0bseg/zh-cn_image_0000002701662950.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/qzfe_x1mSnS4N0OtgSk-uA/zh-cn_image_0000002701662950.png "点击放大")
 2. 确认需要导入的上架检测报告，点击**Import**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/i2Qs2ThkSci37EL3QwOR8g/zh-cn_image_0000002731382181.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/YmHmp9RNTk6UgXnmveCM9w/zh-cn_image_0000002731382181.png)
 3. 根据界面提示，确保即将导入的上架报告满足相关要求。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/SKrUo81IQOGBuLRedOF3ng/zh-cn_image_0000002731542149.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/3SBBl5QnQiqy3BFZpLIj4A/zh-cn_image_0000002731542149.png)
 
    选择是否授权AppAnalyzer获取应用上架驳回问题关联的hiperf数据，用于诊断问题的可能故障原因。在**AppAnalyzer**页面，点击底部**Settings**也支持进行堆栈授权**。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/k5MgW37TTYyoAgArQxvxpQ/zh-cn_image_0000002701662958.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/UQPSafnaRoehjbJ31ph_OQ/zh-cn_image_0000002701662958.png)
 4. 诊断完成后，会提示生成的体检报告的数量，请在当前的历史报告页面中查看对应的报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/GD1ImLIxTIqWrUe7luP8LA/zh-cn_image_0000002731382183.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/SkddnGH5R8SRxT0rKwCCTw/zh-cn_image_0000002731382183.png)
 5. 查看体检报告。
    * **源文件、调优文件（包含trace文件和调用栈文件）或snapshot文件、时间戳等**：点击源文件可跳转到问题源码，点击调优文件或snapshot文件支持直接拉起性能分析工具Profiler并导入性能检测的问题数据进行调优分析，点击时间戳可以打开Profiler并定位到问题发生的时间范围。
    * **分析文档**：点击链接可跳转至官网文档，参考文档对检测出来的问题进行分析。
@@ -40,4 +40,4 @@ content_hash: sha256:a63941fbd63cf2c7b1269f4940543526018a5f742723a2733610b9cfbc7
 
    如果在体检中遇到问题，可点击报告右上角的**User Feedback**向我们反馈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/X3Xc1UyiROWGZoz-iaSG8Q/zh-cn_image_0000002701662962.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/xukU0fTdRaSS8GG4JYH7sA/zh-cn_image_0000002701662962.png)

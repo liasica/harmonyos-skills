@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codegenie
 title: 万能卡片生成
 breadcrumb: 指南 > 使用AI智能辅助编程（不推荐） > 万能卡片生成
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:57+08:00
+scraped_at: 2026-09-17T06:47:17+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:8d3c455f8d3e498680712b5ef87d685182dd132e99a83936d5844d78685218c9
+content_hash: sha256:3dccaadf6e0ba112037be7b42c03eade232871e4915d38932828edbf3ba5921e
 ---
 
 基于AI大模型理解开发者的卡片需求信息，通过对话式的交互智能生成HarmonyOS万能卡片工程。
@@ -29,14 +29,14 @@ content_hash: sha256:8d3c455f8d3e498680712b5ef87d685182dd132e99a83936d5844d78685
    * 在对话区域输入"/"调出命令，选择**Service Widget**。从DevEco Studio 6.1.0 Beta2版本开始不支持。
    * 在输入框左下角的下拉框选择**Service Widget**。DevEco Studio 6.0.1 Beta1版本新增。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/p3Ajud-XRbup9HHiwK5F_w/zh-cn_image_0000002701662936.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/qyHtXJa0TTO_iQTeJAqfjw/zh-cn_image_0000002701662936.png)
 2. 需求描述完成后，可以根据提示信息进一步细化卡片尺寸、用途、展示元素等，以及预览卡片效果图。生成效果示例**：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/HoFaQrqCTPCKutyr37soXA/zh-cn_image_0000002731542119.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/cucYWBp_T8-k17tAFM3UsQ/zh-cn_image_0000002731542119.gif "点击放大")
 
 ## 万能卡片保存
 
-1. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/wdy64xHxR8yqQpxdSMqghQ/zh-cn_image_0000002701822856.png)，可查看生成卡片的UI代码、配置信息和下载静态资源文件。
+1. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/KEO8D_49QxWG6jMZ58b3ww/zh-cn_image_0000002701822856.png)，可查看生成卡片的UI代码、配置信息和下载静态资源文件。
 2. 保存卡片工程有两种方式：
 
    方式一：使用代码/配置查看窗口的“复制”、“插入”或“创建文件”等按钮，手动保存卡片代码和配置信息。
@@ -45,11 +45,11 @@ content_hash: sha256:8d3c455f8d3e498680712b5ef87d685182dd132e99a83936d5844d78685
 
    **流程示例：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/zdDVJN0BSNiuDPsXConL1g/zh-cn_image_0000002731542125.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/H_LpeQpzRRWy_KbN1FQa1Q/zh-cn_image_0000002731542125.gif "点击放大")
 
    工程保存完成后，工程中会新增如下卡片相关文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/yTzyrRByRfCt3G7HB7hb1g/zh-cn_image_0000002731382149.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Y8WFWcCRSCKImQ445809bA/zh-cn_image_0000002731382149.png "点击放大")
 
 ## 自定义配置逻辑代码
 
@@ -62,7 +62,7 @@ content_hash: sha256:8d3c455f8d3e498680712b5ef87d685182dd132e99a83936d5844d78685
 
 在module > src > main > ets 路径下， formcommon目录用于存放生成卡片的逻辑代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/WnlEfEDhQ7ywsrSxqgiFmg/zh-cn_image_0000002701822842.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/6rTUqOZARlWvhDxNgDxTjA/zh-cn_image_0000002701822842.png "点击放大")
 
 * formsetting：存放用户可配置的文件。
   + formsetting > formdbsetting：自定义配置以数据库方式进行卡片刷新的相关参数。
@@ -80,12 +80,12 @@ content_hash: sha256:8d3c455f8d3e498680712b5ef87d685182dd132e99a83936d5844d78685
 
 ### 自定义配置卡片事件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/YAhfVNCaQny03L5Rrl-AtA/zh-cn_image_0000002701662920.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/GZfXHqwkRJi3jj7oBGiFAg/zh-cn_image_0000002701662920.png)
 
 1. 在FormAction.ets文件中，配置触发卡片router事件时具体的页面分发规则。
 
 2. 在EntryAbility.ets文件的onWindowStageCreate方法中，会插入页面分发接口的调用，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VhGDT9TdRZugqeF_aUzOMg/zh-cn_image_0000002731542129.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/DM1xtDChTzOzM6yS-UMmsA/zh-cn_image_0000002731542129.png)
 
 此接口默认插入到方法开头，开发者可根据当前工程onWindowStageCreate逻辑来将此接口移动至合适的位置，保证页面能正常跳转。

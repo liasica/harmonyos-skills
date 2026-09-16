@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-bu
 title: 构建HAR
 breadcrumb: 指南 > 构建应用 > 配置构建流程 > 构建HAR
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:50+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:3664f60a6dc089fe2c6304e26903190820efa640dada2fb2cc41cba4158cccaa
+scraped_at: 2026-09-17T06:47:10+08:00
+doc_updated_at: 2026-09-16
+content_hash: sha256:c5682b1788d16d03e0cd507267aa203b9e4f6803c6e19a7db25e26752cd79a1f
 ---
 
 构建模式：DevEco Studio默认提供debug和release两种构建模式，同时支持开发者自定义构建模式。
@@ -22,7 +22,7 @@ HAR自身的构建不建议引用本地模块，可能导致其他模块依赖�
 
 1. 新建工程时选择API 10及以上的Stage模型，工程创建完成后，新建“Static Library”模块。模块创建方法可参考[在工程中添加Module](ide-add-new-module.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/6tCUpssNRie0KpB5BLrtDw/zh-cn_image_0000002701823236.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/r5hGfa3SRlGLzgtqCGrUbg/zh-cn_image_0000002701823236.png)
 2. 编写代码。
 
    ```txt
@@ -51,9 +51,7 @@ HAR自身的构建不建议引用本地模块，可能导致其他模块依赖�
 
    ```ts
    {
-     ...
      "main": "./src/main/ets/components/MainPage.ets",
-     ...
    }
    ```
 
@@ -128,9 +126,9 @@ HAR自身的构建不建议引用本地模块，可能导致其他模块依赖�
      }
    }
    ```
-3. 点击DevEco Studio右上角图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/RpHrnNggRMKXSU1Vjm8KQw/zh-cn_image_0000002731382523.png)，选择**Build Mode，**默认为**<Default>**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
+3. 点击DevEco Studio右上角图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/_x7ik8HrQ6yjrfYoP-gGtQ/zh-cn_image_0000002731382523.png)，选择**Build Mode，**默认为**<Default>**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/8jNLazkgSN-6Si-TcfoaYA/zh-cn_image_0000002701663318.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/g1oGltySTXK7amtgD7pmfA/zh-cn_image_0000002701663318.png)
 4. （可选）在编译模式为release时，为保护代码资产，建议开启混淆，在模块级build-profile.json5文件的release的buildOptionSet配置中，将obfuscation/ruleOptions下的enable字段设置为true。混淆相关能力和具体规则请参考[代码混淆](ide-build-obfuscation.md)。
 
    ```json5
@@ -190,15 +188,15 @@ HAR自身的构建不建议引用本地模块，可能导致其他模块依赖�
 
    若修改了HAR模块级oh-package.json5文件的version字段，请先执行**Build > Clean Project**操作，再重新进行Build全量构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Yt1YhUdxQHmMr4r3RllsYw/zh-cn_image_0000002731542499.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/jk33T-RlSp2YXBWT6b3klw/zh-cn_image_0000002731542499.png)
 
    构建完成后，build目录下生成HAR包产物。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/ZBaf09FMRiGUCiHajR5p3Q/zh-cn_image_0000002701663296.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/9M0JCDJERZeLx3Oeao7poQ/zh-cn_image_0000002701663296.png)
 
    HAR包产物解压后，结构如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Pvcw3WW0SpWG_o7eMy-jtw/zh-cn_image_0000002731382529.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/NBdEUoMYQEK_4kIrG71jAg/zh-cn_image_0000002731382529.png)
 
 ## 源码HAR
 
@@ -228,12 +226,12 @@ HAR自身的构建不建议引用本地模块，可能导致其他模块依赖�
    **说明** 
 
    使用DevEco Studio NEXT Beta1（5.0.3.800）之前的版本，模块级build-profile.json5的byteCodeHar字段的缺省默认值为false，无需执行本步骤。
-2. 点击DevEco Studio右上角图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/WXWUBUO1TaGLfSHNU9xOVQ/zh-cn_image_0000002731542495.png)，**Build Mode**选择**debug。**默认为**<Default>**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
+2. 点击DevEco Studio右上角图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/atto0Z0SQhiJ5u5Jn_jlnA/zh-cn_image_0000002731542495.png)，**Build Mode**选择**debug。**默认为**<Default>**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/oH2foX-BQSKJ3Lyrk-nAoA/zh-cn_image_0000002731542511.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/-qtQKGuMRpeRyFr_sr0kHw/zh-cn_image_0000002731542511.png)
 3. （可选）若部分工程源文件无需构建到HAR包中，可在模块目录下新建.ohpmignore文件，或者在模块目录下的.gitignore文件中，配置打包时要忽略的文件，.ohpmignore文件中支持正则表达式写法，.gitignore文件中支持glob语法。DevEco Studio构建时将过滤掉.ohpmignore或.gitignore文件中所包含的文件/文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/__ibOT1cRLGwC45ahnNKJg/zh-cn_image_0000002731542513.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/-klQL2C2Qmmha-A9N5ctGg/zh-cn_image_0000002731542513.png)
 4. （可选）如果开发者希望自定义打包到HAR产物中的文件，可在HAR模块的build-profile.json5文件中，配置include或exclude字段，支持glob语法。配置include或exclude字段后，.gitignore和.ohpmignore文件将不再生效。
 
    ```json5
@@ -257,15 +255,15 @@ HAR自身的构建不建议引用本地模块，可能导致其他模块依赖�
 
    若修改了HAR模块级oh-package.json5文件的version字段，请先执行**Build > Clean Project**操作，再重新进行Build全量构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/B13_29MyS5ubgWM2mlvP7g/zh-cn_image_0000002701663312.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/utEhcInCSIanoHBsjXKmJg/zh-cn_image_0000002701663312.png)
 
    构建完成后，build目录下生成HAR包产物。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/lRLJehv6Qh2PLx9WHCmkdg/zh-cn_image_0000002731382521.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/8_Xh-XlZS0SSGH8BicgVJA/zh-cn_image_0000002731382521.png)
 
    HAR包产物解压后，结构如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/UbJjiy5URka6JoNqlTBp7Q/zh-cn_image_0000002731542505.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/G4rN0q6xSnGoSftTikzk5g/zh-cn_image_0000002731542505.png)
 
 ### 以release模式构建
 
@@ -288,9 +286,9 @@ HAR自身的构建不建议引用本地模块，可能导致其他模块依赖�
    **说明** 
 
    使用DevEco Studio NEXT Beta1（5.0.3.800）之前的版本，模块级build-profile.json5的byteCodeHar字段的缺省默认值为false，无需执行本步骤。
-2. 点击DevEco Studio右上角图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/-DkYHy_ZTv6bG_7ZhiFWHQ/zh-cn_image_0000002701823240.png)，**Build Mode**中选择**release。**默认为**<Default>**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
+2. 点击DevEco Studio右上角图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/qRr4N6XcQIKj8xxiuYGlMg/zh-cn_image_0000002701823240.png)，**Build Mode**中选择**release。**默认为**<Default>**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/HqDipURWRfKAeLaAzruMXw/zh-cn_image_0000002701663322.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ZLOURHEqQGCZT3LxkV65ag/zh-cn_image_0000002701663322.png)
 3. 在[编译模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)为release时，为保护代码资产，建议开启混淆，在模块级build-profile.json5文件的release的buildOptionSet配置中，将obfuscation/ruleOptions下的enable字段设置为true。混淆相关能力和具体规则请参考[代码混淆](ide-build-obfuscation.md)。
 
    ```json5
@@ -350,19 +348,19 @@ HAR自身的构建不建议引用本地模块，可能导致其他模块依赖�
 
    若修改了HAR模块级oh-package.json5文件的version字段，请先执行**Build > Clean Project**操作，再重新进行Build全量构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/hLyosCg7QPm29otJ_fyx6w/zh-cn_image_0000002701823220.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/unKtGw83QtqJm1HWJlgXsw/zh-cn_image_0000002701823220.png)
 
    构建完成后，build目录下生成HAR包产物。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/YH1dMKN-QE-78k8VNdS80w/zh-cn_image_0000002701663314.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/wNU4q_qxTIGmrJEyVmvRYw/zh-cn_image_0000002701663314.png)
 
    HAR包产物解压后，结构如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/xHPQP7f7TJ-CRPQb_2t3Nw/zh-cn_image_0000002731542515.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/84JfvalBSx-pPGeZlEM91Q/zh-cn_image_0000002731542515.png)
 
 ## 对HAR进行签名
 
-DevEco Studio在构建HAR流程的基础上，支持对HAR进行签名。签名后的HAR包后续可用于接入生态市场，接入流程请参考[SDK类商品接入说明](../start/dev-mall-marketplace-sp-sdkservice-access-explain-0000001866499490.md)。
+DevEco Studio在构建HAR流程的基础上，支持对HAR进行签名。签名后的HAR包后续可用于接入生态市场，接入流程请参考[上架SDK说明与指南](../start/dev-mall-marketplace-sdk-entry-explain-and-guide-0000002411013129.md)。
 
 **说明** 
 
@@ -382,11 +380,11 @@ DevEco Studio在构建HAR流程的基础上，支持对HAR进行签名。签名�
 2. 配置工程签名信息，配置流程请参考[配置签名信息](ide-publish-app.md#section793484619307)。
 3. 选中HAR模块的根目录，点击**Build > Make Module '<module-name>'**启动构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/OCa6xOi9Rj6A_oybNoT8Sg/zh-cn_image_0000002701823226.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/CSpTTV40SbiA2C4xRry_Hg/zh-cn_image_0000002701823226.png)
 
    构建完成后，build目录下生成签名HAR包产物。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Rw5ZfKWJQ7C4dsOLV6CWWA/zh-cn_image_0000002701823222.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/y1gI34a7TW-LtxHVDJaN5w/zh-cn_image_0000002701823222.png)
 
 ## 多HAR合并打包
 
@@ -473,8 +471,8 @@ export { shop } from 'shop';
 
 将bundledAllDependencies配置为true（此时bundledDeclare也必须配置为true）编译，除了Index.d.ets会被bundle合并外，依赖的shop源代码文件也会被合并到live的modules.abc中，资源文件/so文件也会合并打包到live包中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/qAOaLL9GRNeyBWawhDwL9A/zh-cn_image_0000002701823232.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/jKvoLvPXR3aAuTWb4_xFaA/zh-cn_image_0000002701823232.png)
 
 配置bundledAllDependencies为true后，HAR包的oh-package.json5中的dependencies也会被消除：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/0LV5dZ7rQ5G7Bb-gYUOeFA/zh-cn_image_0000002731542497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/nI4QcI22SkayEC6vGOzhPQ/zh-cn_image_0000002731542497.png)

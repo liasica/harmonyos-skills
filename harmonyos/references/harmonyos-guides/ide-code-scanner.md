@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-scan
 title: Code Scanner代码检查
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Scanner代码检查
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:43+08:00
+scraped_at: 2026-09-17T06:47:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:35d8a156dfbf82eef425143be728d0c3df1ca39915f03b7a17aa4e369261780c
+content_hash: sha256:4cdfd4cab27e95d1dd29e26f762e5e91c611d1503cd00397e570c00e8299a563
 ---
 
 从26.0.0版本开始，DevEco Studio新增Code Scanner功能，用于检查整个项目的资源泄漏问题。开发者可根据扫描结果中的告警提示，手动修复代码缺陷，在代码开发阶段，确保代码质量。
@@ -22,10 +22,10 @@ content_hash: sha256:35d8a156dfbf82eef425143be728d0c3df1ca39915f03b7a17aa4e36926
 
    * 对于ArkTS工程，需勾选ARKTS下的扫描规则；对于C++工程，需勾选CPP下的扫描规则。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ShEQUZnGSbGLcIjFmB7UUQ/zh-cn_image_0000002731541919.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/ya_-r9wmRYK1kDOE7F3W-g/zh-cn_image_0000002731541919.png)
 2. 在菜单栏点击**Code > Code Scanner >** **Scan**，开始全量代码扫描。
 3. 扫描完成后，在底部工具面板查看检查结果。
 
    Severity统计了所有告警数量，点击**All**、**Fatal**、**Error**、**Warn**可分别查看对应告警级别的具体信息。点击**Filter by scene**下拉菜单，可以筛选不同规则的检查结果。单击告警文件可以查看告警信息和对应配置的规则。双击某条告警结果，可以跳转到对应代码缺陷位置；选中告警结果时，可以在右侧Execution Trace窗口查看告警原因和问题的来源到问题的发生点的可能的执行流。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/yg5cJKofTj-0TASWcP7lOw/zh-cn_image_0000002701822650.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/n_4WQfjpSzmP_JJmaE6X9w/zh-cn_image_0000002701822650.png)

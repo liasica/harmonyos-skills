@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-oh-packag
 title: oh-package.json5
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > oh-package.json5
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:55+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:7a0f7783b76e770eee4098f4557dd94e50cd7df33fd3277e77eb403ee9b91cb9
+scraped_at: 2026-09-17T06:47:16+08:00
+doc_updated_at: 2026-09-16
+content_hash: sha256:4ea56a6baece9b8cf9c636c37cf848570e413d4af051661e61ec8440c78369f6
 ---
 
 从OHPM 5.0.0版本开始，支持区分工程级与模块级oh-package.json5配置。其中：
@@ -391,7 +391,6 @@ OHPM客户端在1.6.0版本开始支持参数化配置。可以在项目级别�
 {
   "modelVersion": "6.1.1",
   "description": "Please describe the project information.",
-   ...
   "parameterFile": './parameterFile/parameterFile.json5', // 开启参数化并指定参数化配置文件路径
   "overrides": {
     "libtest1": "@param:dependencies.libtest1", // 所有依赖名称为：libtest1的版本会被替换为：1.0.1
@@ -510,7 +509,6 @@ AppTest
 {
   "modelVersion": "6.1.1",
   "description": "Please describe the project information.",
-   ...
   "parameterFile": '${ohpm_environment}', 
   "properties": {
     "ohpm_environment":"./parameterFile/debug.json5",
@@ -521,7 +519,6 @@ AppTest
 {
   "modelVersion": "6.1.1",
   "description": "Please describe the project information.",
-   ...
   "parameterFile": '${versions.release}',
   "properties": {
     "ohpm_environment":"./parameterFile/debug.json5",
@@ -535,7 +532,6 @@ AppTest
 {
   "modelVersion": "6.1.1",
   "description": "Please describe the project information.",
-   ...
   "parameterFile": './parameterFile/${versions.debug}.json5',
   "properties": {
     "ohpm_environment":"",

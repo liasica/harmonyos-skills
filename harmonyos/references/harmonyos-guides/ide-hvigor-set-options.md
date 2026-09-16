@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-se
 title: hvigor-config.json5文件
 breadcrumb: 指南 > 构建应用 > 配置文件 > hvigor-config.json5文件
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:32+08:00
-doc_updated_at: 2026-09-08
-content_hash: sha256:aa90e6d424faf00c01295317a084ff00d339f12a4628ed578666a12f383830db
+scraped_at: 2026-09-17T06:47:09+08:00
+doc_updated_at: 2026-09-16
+content_hash: sha256:6223057b2227a4258b24ae639ee4ab74bda7c1fc1015d7f2be5fb9d096ab0d4e
 ---
 
 ## 配置文件结构
@@ -307,7 +307,7 @@ hvigor-config.json5的parameterFile字段示例：
 ```screen
 {
   "nodeOptions": {
-    ...
+    // ...
   },
   "parameterFile": "./parameterFile.json5"
 }

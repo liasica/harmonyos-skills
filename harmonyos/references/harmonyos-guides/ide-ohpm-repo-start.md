@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo start
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo start
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:31+08:00
+scraped_at: 2026-09-17T06:46:52+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:0e9eb53a7c3e18889eb577fd5398cc6119d34a664de9bff07fc8d743f44b507c
+content_hash: sha256:23ad011ef87b8d15f2b7f374e457971896a59a1e5dbe4cf690786c9180c9aca9
 ---
 
 启动ohpm-repo服务。
@@ -38,4 +38,4 @@ ohpm-repo start
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/6zMyzTOmT5OOKwI43H9oeQ/zh-cn_image_0000002731541445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/VU0gJLtLSNmeZ-BKFX184w/zh-cn_image_0000002731541445.png "点击放大")

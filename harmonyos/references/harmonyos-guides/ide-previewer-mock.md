@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: 预览数据模拟
 breadcrumb: 指南 > 编写与调试应用 > 界面预览 > 预览数据模拟
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e3ec20b4328e305fae9ab6bf734dca921f9489aa3358b5f2b08f28c7b2b9f9b7
+scraped_at: 2026-09-17T06:47:05+08:00
+doc_updated_at: 2026-09-16
+content_hash: sha256:7fbe9e24721c8fb94e7993b5d19d7aaa5ef2996099275a2f32ef0dd3da08b908
 ---
 
 **说明** 
@@ -47,7 +47,7 @@ Hamock提供了@MockSetup用于修饰Mock方法，仅支持声明式范式的组
    @Entry
    @Component
    struct Index {
-    ...
+    // ...
     @MockSetup
     randomName() {
      let mocker: MockKit = new MockKit();
@@ -55,7 +55,7 @@ Hamock提供了@MockSetup用于修饰Mock方法，仅支持声明式范式的组
      // mock 指定的方法在指定入参的返回值
      when(mockfunc)('test').afterReturn(1);
     }
-    ...
+    // ...
     // 业务场景调用方法
     const result = this.method1('test'); // in previewer, result = 1
    }
@@ -81,7 +81,7 @@ Hamock提供了@MockSetup用于修饰Mock方法，仅支持声明式范式的组
     randomName() {
      this.species = 'primates'
     }
-    ...
+    // ...
     // 业务场景调用属性（如果从初始化到调用期间，该属性无变化）
     const result = this.species // in previewer, result = primates
    }
@@ -126,7 +126,6 @@ Hamock提供了@MockSetup用于修饰Mock方法，仅支持声明式范式的组
      "@ohos.measure": { // 待替换的moduleName
        "source": "src/mock/MeasureText.mock.ets" // Mock代码的路径，相对于模块根目录
      },
-    ...
    }
    ```
 3. 在原调用处中添加Hilog日志，方便在预览时，在Log中打印获取返回值，从而验证Mock是否生效。
@@ -194,7 +193,6 @@ Hamock提供了@MockSetup用于修饰Mock方法，仅支持声明式范式的组
     "utils/CommonUtils.ets": { // 本地模块只支持ets/xxx的相对路径，并需明确文件后缀
      "source": "src/mock/module/utils/CommonUtils.mock.ets"
     },
-    ...
    }
    ```
 3. 在原调用处中添加Hilog日志，方便在预览时，在Log中打印获取返回值，从而验证Mock是否生效。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-cont
 title: 代码续写
 breadcrumb: 指南 > 使用AI智能辅助编程（不推荐） > 编辑区代码生成 > 代码续写
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:57+08:00
+scraped_at: 2026-09-17T06:47:17+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:53ebf57c8df5f73a1057e076a06679ffcb9166d19ceb40d686a8893851fe5c69
+content_hash: sha256:91671df83135cc2fa42be213b9cfd59cfd62eb3463282668a2393be4610536d0
 ---
 
 利用AI大模型分析并理解开发者在代码编辑区的上下文信息或自然语言描述信息，智能续写符合上下文的ArkTS代码片段，减少重复编码工作。
@@ -21,7 +21,7 @@ content_hash: sha256:53ebf57c8df5f73a1057e076a06679ffcb9166d19ceb40d686a8893851f
 
 进入**File > Settings...**（macOS为**DevEco Studio > Preferences/Settings） > CodeGenie > Code Suggestion**，勾选**Enable Flow Editor**，点击**OK**或**Apply**，开启续写设置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/FP6-781_RjG3w8-46noreA/zh-cn_image_0000002731543211.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/x6xJ8NGoQAePqCO5VWOD7A/zh-cn_image_0000002731543211.png)
 
 ### DevEco Studio 6.1.0 Release及以上版本
 
@@ -46,7 +46,7 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 * **Model**：选择代码续写的模型，模型内容请参考：[模型（Model）配置](ide-agent-model.md)。
 * **Prompt format**：提示词格式，此处列出了主流的FIM提示词格式，并自动与模型选项联动。设置时需要选择与模型匹配的提示词格式，续写才能正常工作，开发者可在模型官网或者模型技术报告获取提示词格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/hrHNLWcISgCtDIUu3PDo2A/zh-cn_image_0000002701823936.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/XAA1O7imTIqsxh5VLwaZww/zh-cn_image_0000002701823936.png)
 
 ### DevEco Studio 6.1.0 Beta2
 
@@ -71,7 +71,7 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 * **Model**：选择代码续写的模型，模型内容请参考：[模型（Model）配置](ide-agent-model.md)。
 * **Prompt format**：提示词格式，此处列出了主流的FIM提示词格式，并自动与模型选项联动。设置时需要选择与模型匹配的提示词格式，续写才能正常工作，开发者可在模型官网或者模型技术报告获取提示词格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/io5-ehWMRA-HZ9kDEoJeLA/zh-cn_image_0000002731383235.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/5lDy4cTvSAiT8Xt1BLr3CA/zh-cn_image_0000002731383235.png)
 
 ### DevEco Studio 6.1.0 Beta2以下版本
 
@@ -79,7 +79,7 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 
 同时，根据编码习惯，选择**Enable snippet generation**（片段续写）和**Enable inline generation**（行内续写），以及设置续写时延。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/56iRW-O6RiiYHgwqdXAjCQ/zh-cn_image_0000002701823934.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/U0eUtjb6QAGIGIaHlIAzIA/zh-cn_image_0000002701823934.png)
 
 ## 续写触发和采纳
 
@@ -95,13 +95,13 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 
 Enable inline generation（行内续写）与Enable snippet generation（片段续写）合并为**Auto Suggestion**，取消了**Delay**设置项，通过设置**Frequency**调整自动续写的触发频次。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/IA0OugYCTOqbnzR8x1TvzA/zh-cn_image_0000002701664014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/srt9W2iwTyO6Z-FRirdCow/zh-cn_image_0000002701664014.png)
 
 **DevEco Studio 6.1.0 Beta2**
 
 Enable inline generation（行内续写）与Enable snippet generation（片段续写）合并为**Enable code auto completion**，取消了**Delay**设置项，通过设置**Frequency**调整自动续写的触发频次。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/jx9zYuLzTHqNetWVRVn9aw/zh-cn_image_0000002731543207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Owg_N4HhTHq1lXIQdyOapQ/zh-cn_image_0000002731543207.png)
 
 **DevEco Studio 6.1.0 Beta2以下版本**
 
@@ -109,7 +109,7 @@ Enable inline generation（行内续写）与Enable snippet generation（片段�
 * **Enable snippet generation**（片段续写）：输入回车，CodeGenie将根据上下文生成代码片段。
 * 在编辑区输入**Alt+C**快捷键（macOS上为**Option+C**）触发代码续写。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/NwmSKod_SrW5mo3ulRzSYw/zh-cn_image_0000002731383233.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/nBnOJWm-TrKQyj3L72iomg/zh-cn_image_0000002731383233.png)
 
 ### 续写触发和采纳快捷键
 

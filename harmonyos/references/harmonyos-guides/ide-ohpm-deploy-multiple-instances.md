@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-depl
 title: 多实例部署
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 部署指导 > 多实例部署
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:32+08:00
+scraped_at: 2026-09-17T06:46:53+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:f42f8b3745f0244b24815aba6cab29ccaa0200e0d6cdfcbb62b62a2f6b9cf43c
+content_hash: sha256:17f3d4c1d8089c0a56159dfce10c0a256321dc57203c7c0d8cb88945533bf0e3
 ---
 
 **说明** 
@@ -31,7 +31,7 @@ content_hash: sha256:f42f8b3745f0244b24815aba6cab29ccaa0200e0d6cdfcbb62b62a2f6b9
 
 1. 解压ohpm-repo工具包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/1kbliYpORqedq2N1nSjUCw/zh-cn_image_0000002701822470.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/TVKDxdfWQROSViNpG7Vx8A/zh-cn_image_0000002701822470.png)
 2. 请将ohpm-repo工具包解压目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section24117279211)path中，执行如下查询命令:
 
    ```screen
@@ -108,7 +108,7 @@ content_hash: sha256:f42f8b3745f0244b24815aba6cab29ccaa0200e0d6cdfcbb62b62a2f6b9
 
    安装成功日志信息如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/E6P9PXRBQ8yAZmji7zZP1g/zh-cn_image_0000002731541747.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/AbrSs_kiR_KgEmXaozX5ZQ/zh-cn_image_0000002731541747.png "点击放大")
 5. 安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
 
    **说明** 
@@ -126,7 +126,7 @@ ohpm-repo start
 
 启动成功日志信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ynL4eaUWT3WKB8rfEm79AQ/zh-cn_image_0000002701662556.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/V_32TinPTtmzfBNuotRqdw/zh-cn_image_0000002701662556.png "点击放大")
 
 ## 打包和部署
 
@@ -146,7 +146,7 @@ ohpm-repo pack D:\ohpm-repo
 
 打包成功日志信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/r28U31RqQyGLKPXnu97b8Q/zh-cn_image_0000002731381771.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/bu7Ags0aS2SxMcUl1NdeJg/zh-cn_image_0000002731381771.png "点击放大")
 
 ### 部署
 
@@ -163,11 +163,11 @@ ohpm-repo deploy D:\ohpm-repo\bin\pack_1695805599689.zip --deploy_root D:\new-oh
 
 部署成功日志信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ZDzRMvlkQzC-G-_Wwi7nLg/zh-cn_image_0000002701662548.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/bKHq11rxR321HFVJJ5tVlg/zh-cn_image_0000002701662548.png "点击放大")
 
 部署成功后可执行ohpm-repo start启动ohpm-repo。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/OrSYQT1cQLmsNV8MZTZVew/zh-cn_image_0000002731381781.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/6VjgZ9q-QFuKhrwnVJuzDQ/zh-cn_image_0000002731381781.png "点击放大")
 
 ## 配置自动重启（可选）
 
@@ -229,6 +229,6 @@ ohpm-repo deploy D:\ohpm-repo\bin\pack_1695805599689.zip --deploy_root D:\new-oh
    ```
 2. 按下win+R，输入shell:startup，回车：弹出启动文件框；将run-repo.bat文件剪切到启动文件夹下即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/QTQwjZCPRMm8gyvySr4VWw/zh-cn_image_0000002701822480.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/mDNHBNvwTAK2sdt2dz2dFg/zh-cn_image_0000002701822480.png "点击放大")
 
 现在，每次系统启动时，都会自动执行run-repo.bat脚本中的命令。

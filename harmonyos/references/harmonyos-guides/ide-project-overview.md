@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-project-o
 title: 工程介绍
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 工程介绍
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:31+08:00
+scraped_at: 2026-09-17T06:46:51+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:50541b89a76dd2d5a6efc8668098f4e08ca30c98d32a974690c65c4625d67bd1
+content_hash: sha256:d4b576b2623233995579a7d6866993553feec196e862e7d1a631cefd4292d70b
 ---
 
 ## 应用程序包基础知识
@@ -18,4 +18,4 @@ DevEco Studio工程目录结构提供工程视图和Ohos视图。工程视图（
 
 工程创建或打开后，默认显示工程视图，如果要切换到Ohos视图，在左上角单击**Project** > **Ohos**进行切换**。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/L3EeJqFFScOc3IOpembRXg/zh-cn_image_0000002701823370.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/H2P2_WNASLehbFIwS_oE1A/zh-cn_image_0000002701823370.png)

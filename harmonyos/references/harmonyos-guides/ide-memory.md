@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-memory
 title: 记忆（Memory）配置
 breadcrumb: 指南 > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 记忆（Memory）配置
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:57+08:00
+scraped_at: 2026-09-17T06:47:17+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:4682f0290a7ec2f1beb429c1e2063bb3304f4dafccae4a0e5427f886a7baa202
+content_hash: sha256:447f165760fea0d671e1ff60030d3db23e35cb9461156ddd02b89376e9a0d801
 ---
 
 ## 功能介绍
@@ -27,12 +27,12 @@ content_hash: sha256:4682f0290a7ec2f1beb429c1e2063bb3304f4dafccae4a0e5427f886a7b
 
 ## 操作步骤
 
-1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/AckMPrJxQh2ly9ptP5v2ew/zh-cn_image_0000002701662968.png)按钮，选择**Memory**，进入配置页面。
+1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/0vddc3_OTLOi_2uFPS5WLg/zh-cn_image_0000002701662968.png)按钮，选择**Memory**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/UA6Bc4MIRIyE7oirjLcdUQ/zh-cn_image_0000002731542161.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/7MFa7RjtRpu5HKkbulMhVg/zh-cn_image_0000002731542161.png)
 2. 点击Memory后开关，开启和关闭记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/9VbaFKY5TuiexaIPeNyQwQ/zh-cn_image_0000002731542165.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/S4nj4r5RSHWWyz7UnUC28A/zh-cn_image_0000002731542165.png "点击放大")
 3. 在**Memory List**（记忆列表）下展示所有记忆，包括**Global**（记录用户相关信息）、**Project**（记录项目相关信息）。将鼠标悬浮在记忆上会显示具体信息，以及出现编辑、删除按钮，方便开发者管理记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Ue6z58S8QISGkdOz_evXjg/zh-cn_image_0000002731542167.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/dGphp7EZQQ-LXKVDA1lgPw/zh-cn_image_0000002731542167.png "点击放大")

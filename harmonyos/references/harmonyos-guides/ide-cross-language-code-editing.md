@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-cross-lan
 title: 跨语言代码编辑
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 跨语言代码编辑
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:44+08:00
+scraped_at: 2026-09-17T06:47:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b0b31212804a3e08f22eb904687e5e07a6b58f53cc7923c3a3855001c5950998
+content_hash: sha256:9d2a2746aa3a7c343e2f0e82380460f654a27b11358ac520f98fadb9b17fac5f
 ---
 
 ## 生成胶水代码函数框架
@@ -14,13 +14,13 @@ DevEco Studio提供跨语言代码编辑功能。当开发者需要使用NAPI封
 
 1. 检查当前C++的entry > src > main > cpp路径下，是否已包含napi\_init.cpp文件。如不存在该文件，请在头文件（头文件支持类型：.hpp，.hxx，.hh，.h）中，将光标放置在任意函数名/类名处（当前支持bool，int，string，void，float，double，std::array，std::vector等参数类型），单击右键选择Generate > NAPI，生成胶水代码框架文件napi\_init.cpp。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/-z-B7tnfTxeq2QBXT_haKQ/zh-cn_image_0000002731542361.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/i6g9AD_QT-qpl_9m0tlNhA/zh-cn_image_0000002731542361.png "点击放大")
 2. 若工程中已存在或创建完成napi\_init.cpp文件，请在头文件中需要被调用的函数/类名处，单击右键选择Generate > NAPI，将在napi\_init.cpp文件napi\_property\_descriptor字段中分别注册对应的函数/类的信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/FUUyjATOR8qLQzAT6joFZA/zh-cn_image_0000002701663166.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/omAZk_5PSSalpvsupC-X8Q/zh-cn_image_0000002701663166.png)
 3. 在napi\_init.cpp文件中TODO位置，补充相应的功能实现代码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/82Nd6gkaSE2v_JqIr2MfAw/zh-cn_image_0000002701823090.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/jA_WpPONQMWCgEwCXB6J-Q/zh-cn_image_0000002701823090.png)
 
 ## 跨语言快速生成函数定义
 
@@ -28,4 +28,4 @@ DevEco Studio提供跨语言代码编辑功能。当开发者需要使用NAPI封
 
 将光标悬浮在未定义的函数名处，在悬浮窗中点击**Generate native implementation**，或点击页面上出现的红色灯泡图标，选择**Generate native implementation**，生成函数定义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/roi0Z9DcQ_KJucvS_thQUg/zh-cn_image_0000002731382389.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/vz7WVz9gSeqflXFaw1kbFQ/zh-cn_image_0000002731382389.gif)

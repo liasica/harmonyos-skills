@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-new-m
 title: 添加和删除模块
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 添加和删除模块
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:31+08:00
+scraped_at: 2026-09-17T06:46:52+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:de5c1933643719c900739a6c45622eb2af2e52561fa25400e03c4dd52b827b20
+content_hash: sha256:ca7c4bf1787eff202b659472f7aa15156ed428045116db60714f71f7f8ad7cd7
 ---
 
 模块（Module）是应用/元服务的基本功能单元，包含了源代码、资源文件、第三方库及应用/元服务配置文件。一个应用/元服务通常会包含一个或多个模块，因此，可以在工程中创建多个模块。模块支持entry、feature（仅应用工程支持创建）、har、shared四种类型，具体请参考[module.json5配置文件](module-configuration-file.md#配置文件标签)。
@@ -24,7 +24,7 @@ content_hash: sha256:de5c1933643719c900739a6c45622eb2af2e52561fa25400e03c4dd52b8
      当前暂不支持在AppScope、hvigor、oh\_modules、build、以点开头的目录（如：.hvigor、.idea）下通过单击鼠标右键创建模块。
 2. 在**New Project Module**界面中，选择需要创建的模板，单击**Next**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/JF2A9J2oRX2nBFgL5Lp0gg/zh-cn_image_0000002701662998.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/1lKgcV_1ROuNcM9Ij23jjQ/zh-cn_image_0000002701662998.png)
 3. 在模块配置页面，设置新增模块的基本信息，然后单击**Next**。
    * **Module name**：新增模块的名称，**Module name**不可与工程名称/工程中其他模块名称相同。
    * **Module type**：仅在Ability模板存在该字段，可以选择Feature和Entry类型。
@@ -37,7 +37,7 @@ content_hash: sha256:de5c1933643719c900739a6c45622eb2af2e52561fa25400e03c4dd52b8
    * **Enable native**：仅Library模板存在，将创建一个可以调用C/C++的共享包。
    * **C++ Standard：**C++标准库，取值包括：Toolchain Default、C++11、C++14。从DevEco Studio 6.0.1 Beta1开始支持。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/0vL4TJh2R564iTHEi0D5YA/zh-cn_image_0000002731542193.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/fRzBDR0_R0m8qSVgKFDSrA/zh-cn_image_0000002731542193.png)
 4. 若该模块的模板类型为Ability，还需要设置新增Ability的**Ability name**和****E****xported****参数，**E****xported**参数表示该Ability是否可以被其它应用/元服务所调用（FA模型下为Visible参数)。
    * 勾选（true）：可以被其它应用/元服务调用。
    * 不勾选（false）：不能被其它应用/元服务调用。

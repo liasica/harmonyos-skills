@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 在端侧调用云对象
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发端侧工程 > 在端侧调用云侧代码 > 在端侧调用云对象
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:34+08:00
+scraped_at: 2026-09-17T06:46:55+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:520116a9684c2d7633e7b9873a0f3df35d3ebaf42eb78c41f98ea4b46de4cf7c
+content_hash: sha256:6f796f5047b61cb68d5b2bfb30a00bd0f82c507033876eb8a48e6eac06c173cb
 ---
 
 云对象开发完成后，您可以为其生成端侧调用接口类，供后续端侧工程调用云对象使用。
@@ -18,16 +18,16 @@ content_hash: sha256:520116a9684c2d7633e7b9873a0f3df35d3ebaf42eb78c41f98ea4b46de
 
 1. 右击云对象（以“my-cloud-object”为例），选择“Generate Invoke Interface”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/zYZlN3CPS1S4eRkWrK-A2g/zh-cn_image_0000002179498324.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/lQlfnM3bSW2i1dUvXFtv5A/zh-cn_image_0000002179498324.png)
 2. 在弹出的“Generate Invoke Interface”窗口，可以看到生成的端侧调用接口类将默认存储在“Application/cloud\_objects”模块目录下，点击“OK”确认。您也可以点击“...”按钮自定义存储目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/CNf53L37QCGPURZ4tQFpxQ/zh-cn_image_0000002214704581.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/7iPbBXCVSzWbKEbgcAjNtg/zh-cn_image_0000002214704581.png)
 3. DevEco Studio自动打开指定的端侧调用接口类存储目录，该目录包含“ImportObject.ts”文件和“my-cloud-object”文件夹。
    * “ImportObject.ts”文件：定义了importObject方法，可以通过该方法来实例化一个云对象的代理。
    * “my-cloud-object”文件夹：包含了该云对象在端侧可能用到的所有模型。示例中只有一个“MyCloudObject.ts”文件，如果有其它的模型也将生成在该文件夹下。
    * “MyCloudObject.ts”文件：定义了MyCloudObject class，并且定义了add和subtract两个方法。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/xV2KRX1eSkyCqrW_LN2nVg/zh-cn_image_0000002214704573.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/fCVV8My_QRCx1d-wZiYhLg/zh-cn_image_0000002214704573.png)
 4. 在代码文件中引入云对象。
 
    ```screen
@@ -47,4 +47,4 @@ content_hash: sha256:520116a9684c2d7633e7b9873a0f3df35d3ebaf42eb78c41f98ea4b46de
 
    由于“Generate Invoke Interface”时已经生成所需要的模型以及importObject方法，因此在编码时可以很方便地使用联想、自动引入等DevEco Studio提供的高阶能力，如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/WVfu2ke-R1-XqnId9Ad9Qw/zh-cn_image_0000002179498328.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/lJEd5qtbTySWwRJRfDJcaA/zh-cn_image_0000002179498328.png)

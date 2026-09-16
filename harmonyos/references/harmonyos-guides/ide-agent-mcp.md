@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-mcp
 title: 模型上下文协议（MCP）配置
 breadcrumb: 指南 > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 模型上下文协议（MCP）配置
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:57+08:00
+scraped_at: 2026-09-17T06:47:17+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:dafa803733243d84533e71d96d5621106ab2274a72195d1bba38a6866260c236
+content_hash: sha256:532115a045dfa3cec6439895b3f82fed3a62a7d29b1502edd9f47d8f0a0b5741
 ---
 
 ## 功能介绍
@@ -23,12 +23,12 @@ content_hash: sha256:dafa803733243d84533e71d96d5621106ab2274a72195d1bba38a686626
 
 ## 操作步骤
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/zerrxFZHTVm8KNx6Rle0tA/zh-cn_image_0000002731542273.png "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/yFpBEbldQk2LJ6WO7x-buw/zh-cn_image_0000002701663072.png)按钮，选择**MCP**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/JHuv6TJtS223hJ3865tMeA/zh-cn_image_0000002731542273.png "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/BiJ3ZUEiRSyTuRrQdZj-7g/zh-cn_image_0000002701663072.png)按钮，选择**MCP**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/kH7iNQsbQTyCq55dwdetjg/zh-cn_image_0000002731382299.png "点击放大")
-2. 添加MCP工具。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/BC-6WzXSSO-2L6nP5rniJg/zh-cn_image_0000002731542269.png "点击放大")按钮或**Add Manually**手动添加，点击**MCP Market**或**Add from MCP Market**从MCP Market添加。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/DbCpyDXVTnGl5Y3zvvoJEw/zh-cn_image_0000002731382299.png "点击放大")
+2. 添加MCP工具。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/Pv7Yr9Q7TFKgz4JpT5ZeUQ/zh-cn_image_0000002731542269.png "点击放大")按钮或**Add Manually**手动添加，点击**MCP Market**或**Add from MCP Market**从MCP Market添加。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/HuSLn_fNQJ-Hq3q8C34WnA/zh-cn_image_0000002731382309.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wkwLxVbdSU6uHhdPd2HiMw/zh-cn_image_0000002731382309.png "点击放大")
 
    * **手动添加**：在编辑框中填写MCP工具的配置信息，填写完成后点击**Add**。
 
@@ -38,13 +38,13 @@ content_hash: sha256:dafa803733243d84533e71d96d5621106ab2274a72195d1bba38a686626
 
      Stdio方式支持配置cmd、args和env字段，SSE和Streamable HTTP方式支持配置url字段。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ctM3bXcuS3WmI9thGdSwJw/zh-cn_image_0000002731382305.png "点击放大")
-   * **从MCP Market添加**：在搜索框中搜索目标MCP工具，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/9on0WJbsTmCwWvEgTSdTCg/zh-cn_image_0000002731382297.png "点击放大")按钮添加。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/bFqQGPqsTX6HnF8nOjfRkQ/zh-cn_image_0000002731382305.png "点击放大")
+   * **从MCP Market添加**：在搜索框中搜索目标MCP工具，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/BsH1aY5-SSiuVruX6DXX7w/zh-cn_image_0000002731382297.png "点击放大")按钮添加。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/3U_My3HaQ2mOBAiBAytqTA/zh-cn_image_0000002731542281.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/hzZ6086NS-2ZmEzLRlziLw/zh-cn_image_0000002731542281.png "点击放大")
 3. 在**MCP Tools**列表中，展示所有MCP工具信息，包括名称、连接状态、启用状态。同时，将鼠标悬浮在工具上会显示三个操作按钮：刷新、编辑和删除，方便开发者管理工具。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/cwLD8dqKR8OFbfCAmWtPvg/zh-cn_image_0000002731542277.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/dDfzTspIRV66jGIQ8b1ZVQ/zh-cn_image_0000002731542277.png "点击放大")
    * 名称：MCP工具名称，如time。
    * 连接状态：工具连接状态，包括“成功”、“失败”和“连接中”三种状态。
    * 启用状态：工具是否已启用。

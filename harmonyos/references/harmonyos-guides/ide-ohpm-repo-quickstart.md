@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 快速开始
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 快速开始
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:31+08:00
+scraped_at: 2026-09-17T06:46:52+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:65ddaf168468edd89fb29190fbaa56b842eeb0022fb5be82c2de1d9058549135
+content_hash: sha256:10708488e72efaa71c326d0c79f5222251c950d051555d6fab430d9092433c7c
 ---
 
 **说明** 
@@ -25,7 +25,7 @@ ohpm-repo私仓不允许在Linux或macOS系统中使用root用户启动，请使
 2. 下载ohpm-repo私仓工具包。请在[下载中心](https://developer.huawei.com/consumer/cn/download/ohpm-repo)获取最新的ohpm-repo，并根据下载中心页面**工具完整性**指导进行完整性校验。
 3. 解压ohpm-repo私仓工具包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/uwQOkmloTVqQ_mTRZ9qTgw/zh-cn_image_0000002731381205.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/3BVaTO0wRRiC9tMjd5UgAg/zh-cn_image_0000002731381205.png)
 4. 请将ohpm-repo工具包解压目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section24117279211)path中，执行如下查询命令:
 
    ```screen
@@ -74,7 +74,7 @@ ohpm-repo私仓不允许在Linux或macOS系统中使用root用户启动，请使
 
     结果实例：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/QWBZgcRBS2GPbiho2lv7lg/zh-cn_image_0000002731541131.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/k19gpTseTT-he7q4eT-o7A/zh-cn_image_0000002731541131.png "点击放大")
 11. 安装成功后，**必须**根据给出的提示信息刷新部署目录的环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
     * Windows系统：关闭当前窗口，重新开启一个窗口。
     * Linux/Mac系统：在命令行中执行刷新命令：当shell为bash时执行*source ~/.bashrc*或者.*~/.bashrc*；当shell为zsh时执行*source ~/.zshrc*或者. *~/.zshrc*。
@@ -89,7 +89,7 @@ ohpm-repo start
 
 启动成功，将会出现以下日志信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/dgS5w20jQeKkNkHjKLoF2g/zh-cn_image_0000002701821908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/opdpjOh3Sp2NTJcW1ipnEA/zh-cn_image_0000002701821908.png "点击放大")
 
 **说明** 
 
@@ -147,7 +147,7 @@ ohpm install @ohos/lottie --registry <配置的ohpm-repo私仓服务地址>/repo
 
 2. 登录ohpm-repo私仓管理地址，单击主页右上角的个人中心 > 认证管理，新增公钥，将公钥文件（<your\_key\_path>.pub）的内容粘贴到公钥输入框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/SovzLXmYRzCOWGpmDfB5iw/zh-cn_image_0000002731381181.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/l_Ss_6_zT7y1RF7yYMtJzw/zh-cn_image_0000002731381181.png "点击放大")
 
 3. 打开命令行工具，执行如下命令设置私钥路径。
 
@@ -157,7 +157,7 @@ ohpm install @ohos/lottie --registry <配置的ohpm-repo私仓服务地址>/repo
 
 4. 登录ohpm-repo私仓管理地址，单击主页右上角的个人中心，复制发布码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/xVDwNkMcQtyM5d0ezBHmdQ/zh-cn_image_0000002701821882.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/zZTPUW1-S7KGoxXFcOR8vA/zh-cn_image_0000002701821882.png "点击放大")
 
 5. 将发布码配置到.ohpmrc文件中，可执行如下命令：
 
@@ -208,6 +208,6 @@ ohpm install @ohos/lottie --registry <配置的ohpm-repo私仓服务地址>/repo
 
 在Web页面用管理员账号登录ohpm-repo私仓管理地址，在个人中心 > 仓库管理中，点击管理三方包 > 上传三方包，包的后缀名必须为.har或者.tgz。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/4gcn9pZMQwC3MDvxOVs9Ew/zh-cn_image_0000002731381169.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/6Ssi0VDvTm-MR90zDfen9g/zh-cn_image_0000002731381169.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/IYkeaf_8TtqnBA8FMhOA2w/zh-cn_image_0000002731541145.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/d1ymXiSZT6GF7ML8OaN1HA/zh-cn_image_0000002731541145.png "点击放大")

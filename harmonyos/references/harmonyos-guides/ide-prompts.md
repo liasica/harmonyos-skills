@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-prompts
 title: 自定义提示词库（Prompts）配置
 breadcrumb: 指南 > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 自定义提示词库（Prompts）配置
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:57+08:00
+scraped_at: 2026-09-17T06:47:17+08:00
 doc_updated_at: 2026-05-14
-content_hash: sha256:16e5d1db723f4824fcdda5fd90dc572748ba5512db4e47e3f172e63fbb2cd889
+content_hash: sha256:a8f4e488756722829cda7e987e2d618085a9d67e1f788ae4a74e0fc5800aad26
 ---
 
 ## 功能介绍
@@ -15,26 +15,26 @@ content_hash: sha256:16e5d1db723f4824fcdda5fd90dc572748ba5512db4e47e3f172e63fbb2
 ## 操作步骤
 
 1. 点击页面右侧菜单栏CodeGenie图标完成登录后，可以通过如下两种方式打开Prompts配置界面：
-   * 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5E_bV22LT02E1BgwN5j6_A/zh-cn_image_0000002701663234.png)按钮，选择**Prompts**。
+   * 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/gUrm_lhFTDG53AKIMU3y8g/zh-cn_image_0000002701663234.png)按钮，选择**Prompts**。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Lq7oV9pNRc6XCOBCCWkzOg/zh-cn_image_0000002731382461.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/BQ0nD0FpQnynJmHGMaHN7Q/zh-cn_image_0000002731382461.png)
    * 在代码编辑区右键唤醒菜单栏，点击**CodeGenie > Add New Prompts**。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/BjXR0dI6QyO3p1yHBTC0dQ/zh-cn_image_0000002701663242.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/R_DCg_v_TlCW-JaNVSyxag/zh-cn_image_0000002701663242.png)
 2. 点击**Add Now**进入Prompts配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/KlBf-8CQTYyZBgwmhybJ7w/zh-cn_image_0000002731542433.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/q3GxdPhcQ5uz4U42e0CI_Q/zh-cn_image_0000002731542433.png)
 3. 填写提示词名称、提示词内容等，点击**Save**进行保存。
    * **Title**：提示词名称，长度不超过20个字符。
    * **Prompt**：提示词的具体内容，长度不超过5000个字符。
    * **Auto-reference selected code for context**：是否自动引用所选代码作为上下文，勾选该选项后，会将选中代码和提示词一并发送给CodeGenie。
-   * **Auto send prompts to AI**：是否自动发送给CodeGenie，不勾选该选项时需手动点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/499AyjKpSRSgvREyZJijnQ/zh-cn_image_0000002731382457.png)发送。
+   * **Auto send prompts to AI**：是否自动发送给CodeGenie，不勾选该选项时需手动点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/QCPiXQVkR5u0ZvVeJJWVgQ/zh-cn_image_0000002731382457.png)发送。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/6qpdJsf0Ti6WrT8_zfG2nA/zh-cn_image_0000002731542425.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ruC_eAqqSquJq9TlzE-EIA/zh-cn_image_0000002731542425.png)
 
    将鼠标悬浮在自定义Prompts上，可出现编辑和删除按钮，方便开发者编辑或删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Ed3dx8KLTf6qxd1EanPGyg/zh-cn_image_0000002701823150.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/oRY4dBMdSyiyOyeLzZlpEQ/zh-cn_image_0000002701823150.png)
 4. 选中代码片或在编辑区空白位置右键，点击CodeGenie下的提示词（如安全检查），发送提示词后等待AI解析回复。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/mSFprm8FSj2oNueNB6ctAQ/zh-cn_image_0000002731382451.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/nZ0JEM7OR9aTjp0IJSgAuw/zh-cn_image_0000002731382451.png)

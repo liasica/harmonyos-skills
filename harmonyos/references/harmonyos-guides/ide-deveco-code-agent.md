@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: Agent模式
 breadcrumb: 指南 > AI Coding > DevEco Code > Agent模式
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:56+08:00
+scraped_at: 2026-09-17T06:47:17+08:00
 doc_updated_at: 2026-09-08
-content_hash: sha256:9e98a7e3949aaa33a83c5f8598ba519959c5cf80503fdec7b8122a5efd7ed05a
+content_hash: sha256:aff782b69af12c5bb3fe17e131855e144d1af218e405df09c1f16c87746c8f70
 ---
 
 ## 功能概述
@@ -24,11 +24,11 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/UwwnzyoqRB6k23YBpKFlQQ/zh-cn_image_0000002731383159.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/9VcN-sOrTeuOULrvGcgasw/zh-cn_image_0000002731383159.png "点击放大")
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6f/v3/qGZFl90-QhqrPTYeTvKkxQ/zh-cn_media_0000002701663942.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2a/v3/A0QFGD7UQ0Sm0VdGfck71Q/zh-cn_media_0000002701663942.mp4)
 
 ## Plan + Build模式
 
@@ -42,7 +42,7 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/T_iefM2bRmSYIZikGazk8g/zh-cn_image_0000002701823856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/qsUXEWY6QbOfK5SmgdZ3Nw/zh-cn_image_0000002701823856.png "点击放大")
 
 Plan + Build模式实现流程分为三大阶段：
 
@@ -52,7 +52,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/3e/v3/aWB33SJ8QSmO6tZNGZFIzw/zh-cn_media_0000002701823862.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0c/v3/ZSfvFlFBRbWHOC5gHcsmlQ/zh-cn_media_0000002701823862.mp4)
 
 ## Goal模式
 
@@ -66,7 +66,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/neaIi7eDSCOxTaY_KeWooQ/zh-cn_image_0000002701663938.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/a7KpLrx4QbCR2nO-mluYxA/zh-cn_image_0000002701663938.png "点击放大")
 
 Goal Agent实现流程分为两大阶段：
 
@@ -75,4 +75,4 @@ Goal Agent实现流程分为两大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b1/v3/x3XXvAliS6Kd4yYYy8PlOA/zh-cn_media_0000002731543137.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ad/v3/FaCQi8X9Tf2yeMaL32Pq_g/zh-cn_media_0000002731543137.mp4)

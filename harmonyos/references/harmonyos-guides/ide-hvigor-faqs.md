@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-fa
 title: 编译构建常见问题
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:52+08:00
+scraped_at: 2026-09-17T06:47:13+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb6ad2c
+content_hash: sha256:9457007f99b4dd49edc0fdb9563166e55aedf461bcecf5424ba2ac3845dfbaeb
 ---
 
 ## 如何解决编译过程内存过高
@@ -40,7 +40,7 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 * 如果以上修改没有取得明显的效果，可以使用非并行的模式来执行编译。
   + 在菜单栏点击“File > Settings（macOS为DevEco Studio > Preferences/Settings） > Build, Execution, Deployment > Build Tools > Hvigor”，取消勾选“Execute tasks in parallel mode (may require larger heap size)”。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/0riwpOZVT0SApRCf1P4s5Q/zh-cn_image_0000002731382759.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ZX9cpJ4TTLCyTCgt6LLJsg/zh-cn_image_0000002731382759.png)
   + 流水线场景中，在命令行最后增加 --no-parallel，示例：
 
     ```bash
@@ -82,7 +82,7 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 
      假设是entry模块的hvigorfile.ts中的代码导致的问题 ，XXX的有效值就是下图中的“default@SignHap”、“default@CollectDebugSymbol”、“assembleHap”等值。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/2kvgyIRHS4S8tA2X_rfo6Q/zh-cn_image_0000002701663584.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/d20rUiObSLC6bRvRkdkT9w/zh-cn_image_0000002701663584.png)
   2. 确保getTaskByName的使用位置是在[Hvigor的配置阶段](ide-hvigor-life-cycle.md#section746253616316)及之后的生命周期里，包括beforeNodeEvaluate、afterNodeEvaluate、nodesEvaluated、taskGraphResolved、buildFinished。
 * **场景二：**
 
@@ -191,7 +191,7 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 
   确认堆栈内容是否如下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Bzaoy2cqROaKWTfN7e-pfg/zh-cn_image_0000002731542741.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/BVohMA8RSlSpPdmSLHyMfw/zh-cn_image_0000002731542741.png)
 
   **处理措施**
 
@@ -220,7 +220,7 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 
 问题原因是构建时存在不同版本的同名so文件。比如将har模块产物里的so文件拷贝到entry模块的libs目录下，这时har模块里有一个libhar.so，entry模块里也有一个libhar.so，再配置entry依赖har，构建entry就会出现报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/IxCFvvyrQaKhoYwFDv8RVA/zh-cn_image_0000002731382805.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/-JKBJmfFS5SUHg89v80a-g/zh-cn_image_0000002731382805.png)
 
 **解决措施**
 
@@ -230,7 +230,7 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 
 基于上面的例子，可以在entry的build-profile.json5中添加配置select选中har模块中的so文件，package选中包名为“har”的模块, include选中“libhar.so”文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/QfwNcPzEThqkKenNEkTKIw/zh-cn_image_0000002701823460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/1cwJ2cWERBKz-XSSNcOBeA/zh-cn_image_0000002701823460.png)
 
 ## 构建报错“input module releaseType is different”
 
@@ -238,7 +238,7 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 
 打包APP时，提示“input module releaseType is different”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/8YA7tm4ERX27WNUi0ADH7Q/zh-cn_image_0000002701663578.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/4iuE3qb7RPWlY3BIjNFb_w/zh-cn_image_0000002701663578.png)
 
 **解决措施**
 
@@ -246,7 +246,7 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 
 该apiReleaseType字段由编译构建工具自动生成，保存在HAP/HSP包的module.json文件中。如下图所示，首先确认各模块间该字段是否一致，如果存在不一致的情况，需要将应用的各个模块，使用相同版本的SDK重新打包，然后打包APP。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/3wjR4CzNQf201EMLOTBeHQ/zh-cn_image_0000002701663518.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/jQ1roderQ1uQ2VX7b91kvg/zh-cn_image_0000002701663518.png)
 
 ## 构建报错“debug is different”
 
@@ -254,7 +254,7 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 
 打包APP时，提示“debug is different”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/PoSBIZCyQqWF_IO3G8yVzw/zh-cn_image_0000002701823428.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/JNZMb5LpRrGpz8oknDt_Qw/zh-cn_image_0000002701823428.png)
 
 **解决措施**
 
@@ -262,11 +262,11 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 
 1.该debug字段由编译构建工具自动生成，保存在HAP/HSP包的module.json文件中，如下图所示，首先确认各模块间该字段是否一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Q8rAyp5cQw-51hdxGX39TQ/zh-cn_image_0000002701663524.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/xFAdakYSS5-OV7AH3yrPbQ/zh-cn_image_0000002701663524.png)
 
 2.编译工具根据设置的Build Mode选项生成debug标识，如图所示，可以通过此处进行设置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/OSuds65nSJqhw6Yy09LGKA/zh-cn_image_0000002731542709.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/xv3_pgqaTwCVynIeKAeBWw/zh-cn_image_0000002731542709.png)
 
 ## 构建报错“proxy data is duplicated”
 
@@ -274,13 +274,13 @@ content_hash: sha256:802b8bec4dc2dcc5e99bdb8151d59210005d799af2a14befb6cf29e3eeb
 
 打包APP时，提示“uri datashareproxy://bundleName/\*\* in proxy data is duplicated”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/oZOdsTEjSvS-nSmFxQ2cig/zh-cn_image_0000002731382753.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/TEwsrZiNQLKmtiNXBJlxCA/zh-cn_image_0000002731382753.png)
 
 **解决措施**
 
 proxyData标识模块提供的数据代理列表，只允许entry和feature配置，不同的proxyData中配置的URI不可重复。遇到此问题，检查模块间是否配置了相同uri的proxyData。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/3G1lLNMHSSeLLFGomwIfKA/zh-cn_image_0000002731542713.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/iBvvPHrdSbWi2e7_-cnByw/zh-cn_image_0000002731542713.png)
 
 ## 编译报错“Init keystore failed: parseAlgParameters failed: ObjectIdentifier()”
 
@@ -357,7 +357,7 @@ hap-sign-tool: error: ACCESS_ERROR, code: 109. Details: java.io.IOException: Der
 
 编译构建时，出现报错“JS heap out of memory“。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/NYLmOiFKR2-pUID2-HjABA/zh-cn_image_0000002731542745.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/l2Saa31oRyKT8_AYw88XvQ/zh-cn_image_0000002731542745.png)
 
 **解决措施**
 
@@ -365,7 +365,7 @@ hap-sign-tool: error: ACCESS_ERROR, code: 109. Details: java.io.IOException: Der
 
 勾选Enable the Daemon for tasks：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/xtHk9oqrQb-UBMmu1RqQog/zh-cn_image_0000002701663544.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/bv0JFtWURyqnqDaNXrHvvA/zh-cn_image_0000002701663544.png)
 
 在hvigor-config.json5中修改maxOldSpaceSize字段，根据工程的大小，适当将其增大（如设置为8192）：
 
@@ -445,12 +445,12 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   1. 在对应cpp目录下新建types/libxxx目录，并在该目录下新增index.d.ts用于声明native的类型符号；新增oh-package.json5配置文件用于校验工具的模块查询。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/qj1eVmeuTkOom-w6YgZ0QQ/zh-cn_image_0000002701663522.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/9b4qK2ZeS62EVYWMfSWFYA/zh-cn_image_0000002701663522.png)
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/cD20uEwjREupQX78F-ppmg/zh-cn_image_0000002701823466.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/tM9v6io3SFeT0WJiKRSrLg/zh-cn_image_0000002701823466.png)
   2. 在native引用的模块内的oh-package.json5中添加native模块的本地依赖，并根据提示点击**Sync Now**同步工程，下图以entry模块引用native模块为例。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/21PGQcGBSaKt9WZZAmUdPA/zh-cn_image_0000002731542723.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/bXGpECd0Qz-CKSGwDh_DeA/zh-cn_image_0000002731542723.png)
 
 * 场景二：
 
@@ -458,7 +458,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   引用三方包，构建失败，提示“Cannot find module 'xxx' or its corresponding type declarations”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/6hPK7iJgQgaO7ig5o5xesw/zh-cn_image_0000002701823476.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/yUQRR_skR9GoY8bnj1CV2Q/zh-cn_image_0000002701823476.png)
 
   **处理措施**
 
@@ -471,30 +471,30 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   例如：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/9JsOFCg9SLKfiQqpFupcDQ/zh-cn_image_0000002701663506.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/62cU1p9tSqy89KMQoz9dYQ/zh-cn_image_0000002701663506.png)
 
   代码中这样引用
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/RbTopJPlSgWHLvi_bbfHnA/zh-cn_image_0000002701823482.png)这样引用会找不到模块，导致报错。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/08VDPJaETZaDN2ym2bXUeA/zh-cn_image_0000002701823482.png)这样引用会找不到模块，导致报错。
 
   **处理措施**
 
   修改引用方式，改为推荐的引用方式
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/1M9kbhNgTIe7bE8jQjaP1w/zh-cn_image_0000002701823490.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/-Hj1mNZdQYmJlCsJD0NvHw/zh-cn_image_0000002701823490.png)
 * 场景四：
 
   **问题现象**
 
   被引用模块oh\_package.json5配置有误，执行了ohpm install 并且成功地安装了依赖，但是还报错模块找不到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/Pr2wsvv1RdWKPGOtcya35Q/zh-cn_image_0000002701663594.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/-VgB4xpdQfq5M8iLdauYTA/zh-cn_image_0000002701663594.png)
 
   被引用模块的 oh\_package.json5 中配置了错误的types字段。
 
   该字段优先于main字段。 如果 types 字段配置的不存在，就会报错模块找不到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/iQCZX3BURlWTwVCQzpWfKw/zh-cn_image_0000002731542743.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/71fv0IQwQwyou7IDk3oa_g/zh-cn_image_0000002731542743.png)
 
   **处理措施**
 
@@ -531,7 +531,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   Stage模板工程编译构建失败，提示 "Cannot find module '@bundle:rollup\_plugin\_ignore\_empty\_module\_placeholder' or its corresponding type declarations"。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/vS5cpDLFSqSCAi1NWZH4TA/zh-cn_image_0000002701663592.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/7cIjkBOnQ2yI05dRNfpO5g/zh-cn_image_0000002701663592.png)
 
   **解决措施**
 
@@ -539,21 +539,21 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   1. 通过在build目录中搜索'rollup\_plugin\_ignore\_empty\_module\_placeholder'，找到报错的中间文件，并根据中间文件找到对应工程文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/JZy5rdlaR-qOu9mbyRzFSg/zh-cn_image_0000002701823480.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Ew7qk6kOSXyKqpQsb9YN-g/zh-cn_image_0000002701823480.png)
 
      在输入栏中输入rollup\_plugin\_ignore\_empty\_module\_placeholder，找到问题模块的中间文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/HX5ajD7jQrekFpMd1RpsAg/zh-cn_image_0000002701823440.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/83xeaJ5yTSOT40sEbW5PfQ/zh-cn_image_0000002701823440.png)
   2. 在引用类型文件中通过添加type显式声明符号类型引用：
 
      ```ts
      export type {T} from './type';
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/e1oiluhHT1Oa8b2VUMjKyw/zh-cn_image_0000002731542781.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/j74TqsO5R1W2ATfp1yCL7w/zh-cn_image_0000002731542781.png)
   3. 同时排查是否从d.ts/d.ets中引用值类型符号，禁止在声明文件中声明值变量。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/_-3Yr45VTDW1MICdVAWXZw/zh-cn_image_0000002701663530.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/yEYjRoDYRw6H3AlVOeNcKA/zh-cn_image_0000002701663530.png)
 
 ## 编译报错“Module 'xxx' has no exported member 'yyy'”
 
@@ -575,7 +575,7 @@ Stage模板工程编译构建失败，提示 "Module 'xxx' has no exported membe
 
 * 方法2：新增x.js对应的声明文件(.d.ts)，并在引用时不指定后缀。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/6rc3AiXqSrSR23IF5wEsNQ/zh-cn_image_0000002701663590.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/zBjYgo33SlmszVtjgiKW2Q/zh-cn_image_0000002701663590.png)
 
 ## 编译报错“Could not load ${file1} (imported by ${file2}): Maximum call stack size exceeded”
 
@@ -583,13 +583,13 @@ Stage模板工程编译构建失败，提示 "Module 'xxx' has no exported membe
 
 Stage模板工程编译构建失败，提示 "ERROR: Could not load ${file1} (imported by ${file2}): Maximum call stack size exceeded"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ZBKOr2paR_iM-u55YsNmkA/zh-cn_image_0000002701823514.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/COyF0fidTHO2lpMaI_p7Eg/zh-cn_image_0000002701823514.png)
 
 **处理措施**
 
 该问题是由于file1为当前工程外的代码：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/BK7KYYveTCS4f0sAEUdRsg/zh-cn_image_0000002701823506.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/nnfkj-IGQFyJBzoRnMgKAQ/zh-cn_image_0000002701823506.png)
 
 请新建Static Library模块，并将工程外的代码迁移至Static Library模块内，并使用HAP引用HAR方式进行模块间引用。
 
@@ -601,15 +601,15 @@ Stage模板工程编译构建失败，提示 "ERROR: Could not load ${file1} (im
 
   三方包在配置依赖时，配置到devDependencies，源码中又有引用依赖中的API时，编译失败。如以下示例：三方包@hms-security/ucs-appauth将依赖@network/gr配置在devDependencies中，源码中使用了@network/grs的API时，编译失败，提示“ERROR: ArkTS:ERROR Failed to get a resolved OhmUrl by filepath xxx”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/bPKiuxGTTQKJh-oxLGH2hg/zh-cn_image_0000002701823516.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/EA4by2-4SQCjP0dnhG_UWA/zh-cn_image_0000002701823516.png)
 
   **问题确认**
   1. 进入上面报黄色的源码文件中，可以看到依赖有红色告警信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/0onEnDuyTMuTE5t-XIcNjg/zh-cn_image_0000002731382757.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/bL8aCl5LSyCX2XEVuKD2QQ/zh-cn_image_0000002731382757.png "点击放大")
   2. 进入包下的oh-package.json5文件，查看依赖配置为devDependencies。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/UvZw3zZATXC_FuXdM_kQog/zh-cn_image_0000002731382795.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/W-Yr2C4MTDiBB400vvcVjQ/zh-cn_image_0000002731382795.png)
 
   **处理措施**
   + 向此包开发团队提改进建议：运行时的依赖，不能配置在devDependencies中。
@@ -621,7 +621,7 @@ Stage模板工程编译构建失败，提示 "ERROR: Could not load ${file1} (im
 
   DevEco Studio编译失败，提示“ERROR: ArkTS:ERROR Failed to get a resolved OhmUrl by filepath xxx”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/WSMMSRuYQJ2mccfef0jpiw/zh-cn_image_0000002731382743.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/joJyQvDRR_m27Ea6ELZDaQ/zh-cn_image_0000002731382743.png)
 
   **问题确认**
 
@@ -636,9 +636,9 @@ Stage模板工程编译构建失败，提示 "ERROR: Could not load ${file1} (im
 
   工程A以相对路径引用了工程B的模块，这种引用会导致报错。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/FebkCreMT3m7TMgeIqlEEg/zh-cn_image_0000002731382779.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/NBpPi__rRYiqDcT4Bzr06A/zh-cn_image_0000002731382779.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/7uOjmnOZSo-7yM7iPP_n0g/zh-cn_image_0000002701663560.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/mrDzJRCxSCC4PZZ7wbsIqA/zh-cn_image_0000002731542751.png)**处理措施**
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/L0QYaWT1RmOJayws5fQqBQ/zh-cn_image_0000002701663560.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/8-a7zpOtT9yy2qcjUN2rEg/zh-cn_image_0000002731542751.png)**处理措施**
 
   + 把工程B这种的har转至工程A里，作为A的一个模块引用。
   + 把工程B的har提前打包，在A中 以.har的方式引用。
@@ -658,7 +658,7 @@ Stage模板工程编译构建失败，提示 "ERROR: Could not load ${file1} (im
 
   DevEco Studio编译失败，提示“Failed to get a resolved OhmUrl for 'xxx' imported by 'yyy'”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/UIHlow-tT5mWvXtCTmfvNw/zh-cn_image_0000002731542727.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/7Bh5OYkpSdihSO24BlizgA/zh-cn_image_0000002731542727.png "点击放大")
 
   **问题确认**
 
@@ -669,7 +669,7 @@ Stage模板工程编译构建失败，提示 "ERROR: Could not load ${file1} (im
 
   + 将xxx依赖配置到yyy模块oh\_package.json5的dependencies中。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/gVtMZzXuRpeb5aG_jiw5Xg/zh-cn_image_0000002701823452.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/XDRPu9ygSJe4eaXi0L4Ukw/zh-cn_image_0000002701823452.png "点击放大")
   + 将yyy模块改为非字节码har，在模块级build-profile.json5文件中添加byteCodeHar字段并设置为false。
 
     ```json5
@@ -683,20 +683,20 @@ Stage模板工程编译构建失败，提示 "ERROR: Could not load ${file1} (im
 
   请确认当前使用的DevEco Studio和SDK版本是配套的，点击菜单栏**Help > About DevEco Studio**，**Help > About HarmonyOS SDK**分别查看配套的DevEco Studio和SDK版本。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Q78yo4IzQkS1OMpojt0gWQ/zh-cn_image_0000002731382823.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/UszPkw1BRlKSaoljstOkuw/zh-cn_image_0000002731382823.png)
 * **场景七：**
 
   **问题现象：**
 
   DevEco Studio编译失败，提示 "ERROR: ArkTS:ERROR failed to execute es2abc ERROR: ArkTS:ERROR Failed to get a resolved OhmUrl by filepath xxx"。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Vcy0G3brTha3JgHcCI0Qqw/zh-cn_image_0000002731542735.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Tt5-7sMlRwu1Q__utSiCMw/zh-cn_image_0000002731542735.png)
 
   **处理措施**
 
   该问题是由于在工程中引用了非工程标准模块目录（即目录内无模块描述文件module.json5），如下图utils目录所示：请新建Static Library模块，并将utils/common里面的代码迁移至Static Library模块内，并使用HAP引用HAR方式进行模块间引用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/iOJlB5F0T8GMEnTsxhVzWw/zh-cn_image_0000002701823442.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/bBGAPeBgR-OHU_8MxJ7mVg/zh-cn_image_0000002701823442.png)
 
 ## 编译报错“Property xxx does not exist on type 'typeof BuildProfile'.”
 
@@ -704,7 +704,7 @@ Stage模板工程编译构建失败，提示 "ERROR: Could not load ${file1} (im
 
 使用了自定义参数BuildProfile，编译态无异常但编译构建失败，提示“Property xxx does not exist on type 'typeof BuildProfile'.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/BpTBDN84SreJXjDnXjhyhg/zh-cn_image_0000002731542765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/X-1h78HHRkezr8KoSVxsrA/zh-cn_image_0000002731542765.png)
 
 **处理措施**
 
@@ -776,7 +776,7 @@ Stage模板工程编译构建失败，提示 "ERROR: Could not load ${file1} (im
 
 使用了自定义参数BuildProfile并且编译器标红且构建失败，提示“Property xxx does not exist on type 'typeof BuildProfile'.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/FW_OCeDQSCSvn4MjImJBeg/zh-cn_image_0000002731542701.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/xwsQLR0gRU-7eijn6BwLeQ/zh-cn_image_0000002731542701.png)
 
 **处理措施**
 
@@ -1014,7 +1014,7 @@ nm /path/to/external/library | grep myFunction
 
 在工程同步、编译构建过程中，提示**LABEL\_VALUE\_ERROR**错误信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/DKtd6waPSHaqUDqpuUwn_A/zh-cn_image_0000002731382821.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/dTQ6tMa_TbybKO8wxpxMPg/zh-cn_image_0000002731382821.png)
 
 **解决措施**
 
@@ -1023,7 +1023,7 @@ nm /path/to/external/library | grep myFunction
 1. 在**resources > base > element**中的string.json中添加对应的字符串信息。
 2. 然后在config.json中重新引用该字符串资源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/EiyIH4luTz2aMJlz1SCsBA/zh-cn_image_0000002731382813.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/hQcA37yfRnu2vw4KchyUIw/zh-cn_image_0000002731382813.png)
 
 ## 应用/元服务的启动界面信息缺失，提示"Schema validate failed"报错
 
@@ -1031,7 +1031,7 @@ nm /path/to/external/library | grep myFunction
 
 在工程同步或者编译构建时出现错误，提示“Schema validate failed”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/-3R2ReMkQIOsOU_gICT7OQ/zh-cn_image_0000002701823432.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/tkZcKWxtRMyHSb0-j9BA8A/zh-cn_image_0000002701823432.png)
 
 **解决措施**
 
@@ -1041,20 +1041,20 @@ nm /path/to/external/library | grep myFunction
 
 1. 在模块下的**resources > base > element**下，点击右键选择**New > Element Resource File**创建资源文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/FPTDgJMqTEyerpO-VWTcvQ/zh-cn_image_0000002731542697.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/21Jq3X6GS3G_HpU9xDo-Xg/zh-cn_image_0000002731542697.png)
 2. 在弹出的对话框中，“File name”开发者可自定义，如color；“Root element”请选择**color。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/l-yWwJ5RQ66zo8VVjdLIOA/zh-cn_image_0000002701823464.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/4wKzclLPRfK1jEB17Nw2tw/zh-cn_image_0000002701823464.png)
 
    创建完成后，color.json文件如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/KBT_DgXcQQy6pJd0q9smow/zh-cn_image_0000002731382737.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/xQz7xQsGRH6-uhT_OFQzJA/zh-cn_image_0000002731382737.png)
 3. 将[2](ide-hvigor-faqs.md#li124901748185712)创建的color.json文件拷贝至模块的**ohosTest > resources > base > element**目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/QNLVxjQfTSe7HtBxFApzwg/zh-cn_image_0000002731542731.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/SBXbjMX1TiSip6ecLRX8KA/zh-cn_image_0000002731542731.png)
 4. 在模块的**src > main > module.json5**文件的abilities数组中，添加startWindowIcon和startWindowBackground字段（若缺少任一字段，将出现ERROR: Schema validate failed报错）。其中，startWindowIcon字段索引模块下**resources > base > media**中的图标资源，startWindowBackground字段索引**resources > base > element** **> color.json**中的color。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/1t7Mopg4TFSMzZuu6MFacg/zh-cn_image_0000002701823512.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/MLJG15qaQ5iPI4fiI17Tzw/zh-cn_image_0000002701823512.png)
 5. 在**src > ohosTest > module.json5**文件的abilities数组中，加startWindowIcon和startWindowBackground字段。其中，startWindowIcon字段索引模块ohosTest下**resources > base > media**中的图标资源， startWindowBackground字段索引**resources > base > element** **> color.json**中的color。
 
 ## 编译报错“Schema validate failed”
@@ -1152,7 +1152,7 @@ DevEco Studio编译时出现错误，提示“Schema validate failed”错误信
   + required：表示该字段为必选配置项。由于缺失或拼写错误导致该属性未配置。
   + oneOf：表示当前配置不符合oneOf要求。通过instancePath已经确认报错出现在abilities标签，在DevEco Studio中，按住Ctrl点击"abilities"跳转到对应的module.json文件，可以查看到必须配置以下两组中的一组。根据对比排查，可识别到因拼写错误导致"name"属性未配置。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/LRqSjNwGSMSCnB6otfUtmA/zh-cn_image_0000002701663574.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/phTBqNptS4iMtYSBjLVFYg/zh-cn_image_0000002701663574.png)
   + enum：该标签内所有可配置的属性。开发者可根据枚举值确认属性的正确写法。
   + propertyNames：如果字段拼写错误将出现propertyNames，propertyName: 'nam'指明“nam”为错误属性。
 * params：不同keyword对应不同的详细说明，如keyword为'required'时，params的missingProperty: 'name' 表示缺失的属性为“name”。
@@ -1178,7 +1178,7 @@ feature模块中需要配置依赖的entry模块，DevEco Studio在编译时会�
 
 DevEco Studio编译时出现错误，提示“keystore password was incorrect”错误信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/67wpKrGIToCDSYtoSgZkxw/zh-cn_image_0000002701823426.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/kFJpZ2L3SfuAREce-zYTZA/zh-cn_image_0000002701823426.png)
 
 **报错原因**
 
@@ -1198,7 +1198,7 @@ DevEco Studio编译时出现错误，提示“keystore password was incorrect”
 
 出现该问题的原因是签名文件中签名密码错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Zu5r0zXxQUeEHVsrw6IV1w/zh-cn_image_0000002701823448.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/5pzo6a48Quq9ONk7UVBlAA/zh-cn_image_0000002701823448.png)
 
 开发者可通过重新自动签名解决该问题：
 
@@ -1206,7 +1206,7 @@ DevEco Studio编译时出现错误，提示“keystore password was incorrect”
 
 2. 勾选“Automatically generate signature”，等待重新签名，然后点击**OK**即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/qqkIc7ZhReOYubBHafJrUQ/zh-cn_image_0000002731382781.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/VfVfSj3mTu-YFvhA1fawrA/zh-cn_image_0000002731382781.png)
 
 ## 编译报错“please check deviceType or distroFilter of the module”
 
@@ -1216,16 +1216,16 @@ DevEco Studio编译时出现错误，出现如下提示之一：
 
 * Module: (xxx) and Module: (xxx) are entry, please check deviceType or distroFilter of the module.
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/JSPN_P4YRfOba_My-AQpTw/zh-cn_image_0000002731382807.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/29ayNOisT8ufdEmJ2PQ8Mw/zh-cn_image_0000002731382807.png)
 * Module: (xxx) and Module: (xxx) have the same moduleName, please check deviceType or distroFilter of the module.
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/qdKMfwFJQVqrd7BBXEsybA/zh-cn_image_0000002701663564.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/neJNnQngTtu--8x_0SZ-fQ/zh-cn_image_0000002701663564.png)
 * Module: (xxx) and Module: (xxx) have the same packageName, please check deviceType or distroFilter of the module.
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/9xYh8vQnQse0Sz0-QcZ4Cg/zh-cn_image_0000002731382797.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/GU8q9dv9QhSYhN3MK9M8AA/zh-cn_image_0000002731382797.png)
 * Module: (xxx) and Module: (xxx) have the same ability name.
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/7kk9zKsQQy6CcRBOYcrX7w/zh-cn_image_0000002701823438.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/MYuwQY5jSCCUMV4nO_CAVw/zh-cn_image_0000002701823438.png)
 
 **解决措施**
 
@@ -1237,13 +1237,13 @@ DevEco Studio编译时出现错误，出现如下提示之一：
 
 执行多模块native模块构建时，提示“Failed to generate test project build system.”错误信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/KvSg4V0KQbKSe3rd9h9ZXA/zh-cn_image_0000002701823496.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/tB7MApNFQ4eIcA4-lJTEEw/zh-cn_image_0000002701823496.png)
 
 **解决措施**
 
 请删除报错模块下的.cxx文件夹，然后选中需要构建的模块，执行**Make Module** **${moduleName}**完成单独构建，避免同时构建多个模块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/D55HPLodSYGK7ltyP2dAeg/zh-cn_image_0000002701663528.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/hjZ7UUOWTiCgiSGZFjs5SQ/zh-cn_image_0000002701663528.png)
 
 ## C/C++项目三方依赖库未打包入HAP
 
@@ -1260,7 +1260,7 @@ C/C++项目依赖三方so时，在打包生成HAP后，发现三方so未打包�
 3. 使用IMPORTED\_LOCATION定义引入so的具体位置。
 4. 将定义的三方so声明给目标。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/DnT4N0QCQzyUs2iLSb-JRA/zh-cn_image_0000002701823462.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/xRKZcv5jSAi_y-og7kpRTQ/zh-cn_image_0000002701823462.png)
 5. 再次打包生成HAP，确认三方so是否打包到HAP中。
 
 ## Static Library模块中src/main/cpp目录下的文件未打包进HAR
@@ -1269,7 +1269,7 @@ C/C++项目依赖三方so时，在打包生成HAP后，发现三方so未打包�
 
 点击**Build > Make Module ${libraryName}**编译构建生成HAR后，发现构建产物中未出现cpp目录下的文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/fTJBVo1dRQO0p3ktz5_0FQ/zh-cn_image_0000002701823500.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/-OTbTVvWT1yJRdnfSxnRVg/zh-cn_image_0000002701823500.png)
 
 **解决措施**
 
@@ -1277,7 +1277,7 @@ C/C++项目依赖三方so时，在打包生成HAP后，发现三方so未打包�
 
 请将相应的本地依赖移至dependencies中后重新编译。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/wJy3aXXrTCGvC8MVQNF-Xg/zh-cn_image_0000002701663536.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/acdXe-sRQOeqnUBJcKrHqg/zh-cn_image_0000002701663536.png)
 
 ## 工程编译告警提示“ArkTS:WARN: For details about ArkTS syntax errors”
 
@@ -1285,7 +1285,7 @@ C/C++项目依赖三方so时，在打包生成HAP后，发现三方so未打包�
 
 工程构建时，提示“ArkTS:WARN: For details about ArkTS syntax errors, see FAQs”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/aE7SNzADRma4dY33ZFuzCQ/zh-cn_image_0000002701663562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/LcFTSECFSpu6ma8JKQP7yw/zh-cn_image_0000002701663562.png)
 
 **解决措施**
 
@@ -1299,11 +1299,11 @@ Native工程编译报错，同时出现以下告警和报错信息。
 
 出现工程目录长度超过250字符的告警，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/nr3t8spvQ6KShoZpBUXEUA/zh-cn_image_0000002731542769.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/THOjt885RAWDxJFpuarBmw/zh-cn_image_0000002731542769.png "点击放大")
 
 出现编译报错“ninja: error: mkdir(xxx): No such file or directory”，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/e8V9jnAsQfGyTK_ege0IVg/zh-cn_image_0000002731542759.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/mOhCox8LSR2BJvf1gu-MDg/zh-cn_image_0000002731542759.png "点击放大")
 
 **解决措施**
 
@@ -1320,7 +1320,7 @@ CMAKE\_OBJECT\_PATH\_MAX默认大小为250，如果工程中object file实际路
 
   + 总路径长度 = object file directory长度 + object file长度，object file directory、object file如下图所示，两个长度之和为297字符，以实际为准
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/QTxFGvZoRd26f8gwEL14HQ/zh-cn_image_0000002731542725.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/OO-O8fJ6TCOi0euc3FbIDw/zh-cn_image_0000002731542725.png "点击放大")
   + object file中目录部分长度：示例中“\_\_/\_\_/\_\_/\_\_/\_\_/third-party/rn/ReactCommon/react/renderer/textlayoutmanager”长度为74字符，以实际为准
   + cmake哈希值字符数：cmake将长路径转换为哈希值时哈希值的长度，固定为32
 
@@ -1334,11 +1334,11 @@ Native工程编译报错，同时出现以下告警和报错信息。
 
 出现工程目录长度超过250字符的告警，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/hrJj8t0nRY2kESZPCIvCBg/zh-cn_image_0000002701823484.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/quyA3jjYSpu3twIXO8Ftfg/zh-cn_image_0000002701823484.png "点击放大")
 
 出现编译报错“(is the command line too long?)”，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/q5cgMRKrSUOrtZPoVgQaaQ/zh-cn_image_0000002731382801.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/MVMLYi3oSM25kZF2rraeFQ/zh-cn_image_0000002731382801.png)
 
 **解决措施**
 
@@ -1355,7 +1355,7 @@ CMAKE\_OBJECT\_PATH\_MAX默认大小为250，如果工程中object file实际路
 
   + 总路径长度 = object file directory长度 + object file长度，object file directory、object file如下图所示，两个长度之和为297字符，以实际为准
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/1Oyspm8lQCqdieQrlhYIww/zh-cn_image_0000002701823488.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/U0USJDlSRdaXHAAfMyLRZA/zh-cn_image_0000002701823488.png "点击放大")
   + object file中目录部分长度：示例中“\_\_/\_\_/\_\_/\_\_/\_\_/third-party/rn/ReactCommon/react/renderer/textlayoutmanager”长度为74字符，以实际为准
   + cmake哈希值字符数：cmake将长路径转换为哈希值时哈希值的长度，固定为32
 
@@ -1370,7 +1370,7 @@ CMAKE\_OBJECT\_PATH\_MAX默认大小为250，如果工程中object file实际路
 
 Native工程中使用find\_path时出现以下报错信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/RchsvCM0RPuu1x_35RyaCw/zh-cn_image_0000002701663510.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/FYmWMvHKRCqnz2geTPMsDA/zh-cn_image_0000002701663510.png "点击放大")
 
 **解决措施**
 
@@ -1392,7 +1392,7 @@ list(APPEND CMAKE_FIND_ROOT_PATH_MODE_INCLUDE "D:demo")
 
 工程中模块A引用了模块B，编译模块A时出现错误，提示 "Unknown resource name 'xxxx'"，找不到模块B的资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/tvpUeEeNTlyidnc4R9oXHA/zh-cn_image_0000002731542791.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/WunEfE2KTdWw-yhaFHGvyw/zh-cn_image_0000002731542791.png "点击放大")
 
 **解决措施**
 
@@ -1408,7 +1408,7 @@ list(APPEND CMAKE_FIND_ROOT_PATH_MODE_INCLUDE "D:demo")
 
 引用模块的方式不对，如果引用的是一个其他模块的代码，也会报资源找不到。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/jy-k-2qaQC6DdEusHUdrEg/zh-cn_image_0000002701663552.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/TVeeSkXWQZKhysHVY09Q3Q/zh-cn_image_0000002701823446.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/2xqe7unLSnG7jKeuharnZA/zh-cn_image_0000002701663552.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/LQbbu6iQRHO5xxONXnUs5Q/zh-cn_image_0000002701823446.png)
 
 **解决措施**
 
@@ -1416,7 +1416,7 @@ list(APPEND CMAKE_FIND_ROOT_PATH_MODE_INCLUDE "D:demo")
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/SWuVEIubQeC_38_32ExyqA/zh-cn_image_0000002731382739.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/y_XCzNe5RkSQ8VYCLon4bQ/zh-cn_image_0000002731382739.png)
 
 * 场景三
 
@@ -1434,7 +1434,7 @@ HSP A 申请了某个权限，这个权限进行了资源的引用，在所有�
 
 命令行手动执行构建命令时，构建失败，提示“Task xxx was not found in the project xxx”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Cv6BQ8j9SdOUviT6hTEuVg/zh-cn_image_0000002701663546.png)**问题确认**
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/qLv8keb2R5iJKp1VJ662jw/zh-cn_image_0000002701663546.png)**问题确认**
 
 1. 执行hvigorw tasks命令，查看对应命令是否存在。
 2. 查看对应工程中module.json5文件中“type”字段是否为命令执行模块。比如图中执行assembleHar命令，是对工程中的har模块进行打包，若module.json5文件中的“type”字段不是"har"类型，则会出现上述错误提示。
@@ -1450,7 +1450,7 @@ HSP A 申请了某个权限，这个权限进行了资源的引用，在所有�
 
 DevEco Studio编译失败，提示“The reason and usedScene attributes are mandatory for user\_grant permissions”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/YaD2-xeuQxSsEnWpGXvbHQ/zh-cn_image_0000002701663586.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/badI-NpuSTuvm9a2fptOVw/zh-cn_image_0000002701663586.png "点击放大")
 
 **问题原因**
 
@@ -1481,7 +1481,7 @@ DevEco Studio编译失败，提示“The reason and usedScene attributes are man
 
 DevEco Studio编译失败，提示“Only one default card can be configured in the form\_config.json file”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/GiJjLp0TRT2NlN6GPQVekA/zh-cn_image_0000002701823474.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/3lgdfUiqTN-xg5dqPSihRw/zh-cn_image_0000002701823474.png "点击放大")
 
 **问题原因**
 
@@ -1497,7 +1497,7 @@ DevEco Studio编译失败，提示“Only one default card can be configured in 
 
 DevEco Studio编译失败，提示“In the form\_config.json file, if the value of the updateEnabled field is true, the updateDuration and scheduleUpdateTime fields cannot be both empty.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/Iuyc87kJSq6G15wHkP_wQw/zh-cn_image_0000002731382755.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/GG0lUN_mSbyfzBbX3Ss0Sg/zh-cn_image_0000002731382755.png "点击放大")
 
 **问题原因**
 
@@ -1513,7 +1513,7 @@ DevEco Studio编译失败，提示“In the form\_config.json file, if the value
 
 在mac上，通过直接打开dmg中的DevEco Studio，构建报错 The path XX is not writable. please choose a new location.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/P-FnhIZrQz-mPTbrJOCG-Q/zh-cn_image_0000002731542775.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/3U27WR5wQ--a7P3wxFMGsQ/zh-cn_image_0000002731542775.png)
 
 **问题原因**
 
@@ -1529,7 +1529,7 @@ DevEco Studio编译失败，提示“In the form\_config.json file, if the value
 
 本地HSP模块对外提供的接口中使用了HAP未定义的自定义参数BuildProfileFileds，且HAP引用了HSP中的该接口，导致编译失败，提示“Property 'XX' does not exist on type 'typeof BuildProfile'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/GkambmPpQ6SuKC-YPoueEg/zh-cn_image_0000002731542767.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/4IIUKGkoSGeG4oVL6ZSLkg/zh-cn_image_0000002731542767.png)
 
 **解决措施**
 
@@ -1647,7 +1647,7 @@ Detail: Please check the message from tools.
 
 编译报错“Error: cJSON\_Parse failed, please check the JSON file”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/QzdHf0wQQdycDaZDjir2Aw/zh-cn_image_0000002731382775.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/MkBqhXiaTtehcJyQ2_zC3g/zh-cn_image_0000002731382775.png "点击放大")
 
 **报错原因**
 
@@ -1669,7 +1669,7 @@ module.json文件格式不正确。
 
 编译报错“Error: the name 'XXX' can only contain [a-zA-Z0-9\_]”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/SXxPBsX0SbCkZ9C8Ux3Dpw/zh-cn_image_0000002731542719.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/49uBaE88Q8yQgtwA9YJkmg/zh-cn_image_0000002731542719.png)
 
 **解决措施**
 
@@ -1695,7 +1695,7 @@ module.json文件格式不正确。
 
 编译卡死，提示“The modules directory at "xxx/workspace/node\_modules" will be removed and reinstalled from scratch. Proceed? (Y/n) > true”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/O7i9QS6JQD2HeCtuArbbtA/zh-cn_image_0000002747298915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/GR660HCxRS6gkd10UMXMHA/zh-cn_image_0000002747298915.png)
 
 **问题原因**
 

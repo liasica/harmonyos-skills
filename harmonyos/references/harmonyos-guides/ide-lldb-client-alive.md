@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-lldb-clie
 title: Native调试启动加速
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > Native调试启动加速
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:46+08:00
+scraped_at: 2026-09-17T06:47:06+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ad28cdc20ed743322800ba88147b9f1ef42dcd8dca2d491d698f59a7d3b866db
+content_hash: sha256:6d288de877363117bfa89c5dd6026cc19d0bcb025efc29ccd27b97c5d516879b
 ---
 
 在大型工程中，Native调试的启动耗时较长。为提升开发调试效率，从26.0.0版本开始，新增Native调试启动加速功能。开启该功能后，首次调试完成时，调试服务器会保持活跃状态，后续再次启动调试时，可以大幅减少调试连接的耗时。
@@ -19,19 +19,19 @@ content_hash: sha256:ad28cdc20ed743322800ba88147b9f1ef42dcd8dca2d491d698f59a7d3b
 
 在**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Debugger > C++ Debugger**中，勾选**Keep LLDB client alive**开启Native调试启动加速功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jYVSFTzgRd6ef7PjOaRgQw/zh-cn_image_0000002731382321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/bYaTzJDMTwiQdRqZTR0bOw/zh-cn_image_0000002731382321.png)
 
 也可以通过调试窗口控制台的超链接跳转到设置中开启。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/dwqdS7yhRqqttZBbuDbocw/zh-cn_image_0000002731542293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/x-jHpiIQSfakVyYk8r-YPA/zh-cn_image_0000002731542293.png)
 
 开启开关并启动调试后，DevEco Studio底部会有调试服务器图标，调试过程中不能关闭服务器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/1af3InMDTTCyv9J9MhXarQ/zh-cn_image_0000002701663098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/NTc6o6JBQxSXZ8R1LNT5sA/zh-cn_image_0000002701663098.png)
 
 同时，开启开关后会占用内存和磁盘空间，在不调试时，可手动释放资源。
 
 * 释放内存：点击DevEco Studio底部的调试服务器图标，关闭调试服务器释放内存。
 * 释放磁盘空间：点击**File >** **Invalidate Caches**，勾选**Clear LLDB caches**，点击**Invalidate and Restart**重启DevEco Studio以清理缓存数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/SZrwRLUmRAKyuwOAj9O-FQ/zh-cn_image_0000002701823020.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/duzk6M-CRu-wr_yVOppqVg/zh-cn_image_0000002701823020.png)

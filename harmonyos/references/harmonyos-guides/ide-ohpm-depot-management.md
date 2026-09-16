@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-depo
 title: 仓库管理
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 仓库管理
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:32+08:00
+scraped_at: 2026-09-17T06:46:53+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:5016bcbd6bae94ef8a9a5745c7e28d26662ba62f536a733950b379e4d88cadd7
+content_hash: sha256:57b9a60908f04e8bfe53d4618b9624c1b4557e8d47faa34eec57eda79bf94f67
 ---
 
 仓库管理主要负责管理仓库信息，包括仓库中所有包权限管理，包的上传与下架和uplinks管理。
@@ -28,7 +28,7 @@ ohpm-repo从5.3.0开始支持多仓配置，并且支持对每个仓库进行权
 3. 删除仓库。
 4. 新增仓库。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/sG0zbPxQTo-fjQwEwqZT2A/zh-cn_image_0000002701662372.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/_XV3EjcnQvGNFb4v3XNk6Q/zh-cn_image_0000002701662372.png "点击放大")
 
 ### 管理三方包
 
@@ -38,19 +38,19 @@ ohpm-repo从5.3.0开始支持多仓配置，并且支持对每个仓库进行权
 
 ohpm-repo从5.3.0版本开始支持配置包级别的访问权限。系统管理员能够对仓库中所有的包进行权限管理，支持配置包的可见性、白名单和管理所有者。支持通过包名模糊检索到需要管理权限的包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/eqP5EG6SQDC3oJSscxErOg/zh-cn_image_0000002731381617.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/Wa7IlkQ1QPuO3SGlZJeBdA/zh-cn_image_0000002731381617.png "点击放大")
 
 * 区域1：可见性配置，能够配置一个包的可见性，默认为公开可读。当配置为授权可读时，支持在区域2中添加可读白名单。当包设置为公开可读时，所有用户对包具有下载和查看权限；当包设置为授权可读时，仅添加在可读白名单中的用户具有包的下载权限。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/ZKDvbvwpTAuMpFYKQirMCQ/zh-cn_image_0000002701662334.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/4D1-oBBIRga-atnddvdYyA/zh-cn_image_0000002701662334.png "点击放大")
 
 * 区域2：白名单配置，在白名单中的用户将具有包的下载和查看权限，包的所有者和维护者会自动添加到包的白名单中。点击“新增用户”或“删除”按钮，可以在白名单配置中添加或者删除查看者用户，所有者和维护者用户禁止被删除。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/fMIFiy5aRhmczDFEC1Sjrg/zh-cn_image_0000002701822240.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/VLUq0NWHQFWe8Os-5mOuVw/zh-cn_image_0000002701822240.png "点击放大")
 
 * 区域3：管理所有者，包的所有者具有包的下载，上传，下架和编辑包tag权限。支持对包所有者进行新增和删除，当包仅剩唯一一个所有者用户时，禁止被删除。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/lp_XUJswSemsyTZw692jHg/zh-cn_image_0000002701822276.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/dM3WUSEHSVaqu869y1anzg/zh-cn_image_0000002701822276.png "点击放大")
 
 ### **上下架**
 
@@ -58,20 +58,20 @@ ohpm-repo从5.3.0版本开始支持配置包级别的访问权限。系统管理
 
 ohpm-repo从6.0.1版本开始，支持批量上传三方包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/fLwxHsA6TMKb36gfh5Zxuw/zh-cn_image_0000002701662350.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Ij2tBhzRRsqyhImj422rcw/zh-cn_image_0000002701662350.png "点击放大")
 
 * 区域1：上传三方包，点击“上传三方包”按钮，选择本地的三方包文件，将其上传至仓库中，页面效果如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/g-rtX68hQiKxn96Qpq_79Q/zh-cn_image_0000002701822302.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/NmpQUYf4QiyjavQ94JLd_Q/zh-cn_image_0000002701822302.png "点击放大")
 * 区域2：批量上传三方包，点击“批量上传三方包”按钮，选择本地的.zip文件，将其上传至仓库中，页面效果如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/CUklxBsPQ2OqiKpKs190Ow/zh-cn_image_0000002731381575.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/cFNm-CqzQKqKJQhB0Q9mkw/zh-cn_image_0000002731381575.png "点击放大")
 * 区域3：下架，点击指定包右边的“下架”按钮，进行单个包下架操作，输入下架原因即可完成包的下架，页面效果如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/CwDqGy-xQWCfji8v_uDbWA/zh-cn_image_0000002701662408.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/RPplS8YuTtWpHcJOKgdAYg/zh-cn_image_0000002701662408.png "点击放大")
 * 区域4：批量下架，勾选包左边的待选框，点击“批量下架”按钮，能够批量下架已勾选的包，可以通过改变页面底部每页包含的数据值，批量下架更多的包。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nx4yFtoxRkyLDzD-KWh8Vg/zh-cn_image_0000002701662412.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/4fzwYP4mSkCA0hPmwIfDYg/zh-cn_image_0000002701662412.png "点击放大")
 * 区域5：筛选，点击列表标题旁的漏斗图标，可以进行包数据的筛选。支持通过Name、Version、Publisher、Author和PublishTime字段筛选包数据。例如筛选出Name带有数字3，版本号大于等于2.0.0，发布人为accessToken1的包，数据筛选效果如下图所示：
 
   - Name：支持对包名进行模糊搜索。
@@ -84,7 +84,7 @@ ohpm-repo从6.0.1版本开始，支持批量上传三方包。
 
   - PublishTime：支持对包发布时间进行区间搜索。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/2Mj11pkbQ92_0XzKapMqmw/zh-cn_image_0000002701822250.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/xpT7l1tyQnKnZvBE2vSdyg/zh-cn_image_0000002701822250.png "点击放大")
 
 ### 编辑仓库
 
@@ -94,7 +94,7 @@ ohpm-repo从6.0.1版本开始，支持批量上传三方包。
 
 点击指定仓库的“编辑”图标按钮，进入仓库信息编辑界面，可以修改仓库的Name 、Uplink、可读策略、授权可读白名单、可写策略，授权可写白名单、标准版本发布策略、先行版本发布策略和描述信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/vxGa9NpAQdO-VFre6uSVbg/zh-cn_image_0000002731541577.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/VJSZ_CELS9q5vl5z8Ve7Ng/zh-cn_image_0000002731541577.png "点击放大")
 
 * Name：仓库的名称。当仓库发过包或者已添加授权可读白名单或可写白名单时，禁止修改仓库名。
 * Uplink：配置代理仓库地址。其中Uplink为下拉框选择，选项为仓库管理页面的[uplinks](ide-ohpm-depot-management.md#zh-cn_topic_0000001792256181_uplinks)面板配置的Uplink仓库。
@@ -109,7 +109,7 @@ ohpm-repo从6.0.1版本开始，支持批量上传三方包。
 
 点击指定仓库的“编辑”图标按钮，进入仓库信息编辑界面，可以修改仓库的Name 、Uplink、可读策略、授权可读白名单、可写策略，授权可写白名单、发布策略和描述信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/R0aFfI9xTaqhjpdCXYhCwA/zh-cn_image_0000002731381625.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Us8av_XJTPCoR2mGzR5EjA/zh-cn_image_0000002731381625.png "点击放大")
 
 * Name：仓库的名称。当仓库发过包或者已添加授权可读白名单或可写白名单时，禁止修改仓库名。
 * Uplink：配置代理仓库地址。其中Uplink为下拉框选择，选项为仓库管理页面的[uplinks](ide-ohpm-depot-management.md#zh-cn_topic_0000001792256181_uplinks)面板配置的Uplink仓库。
@@ -123,7 +123,7 @@ ohpm-repo从6.0.1版本开始，支持批量上传三方包。
 
 点击“删除”图标按钮将删除当前选中的仓库。当仓库下存在上架包时禁止删除仓库，当仅剩最后一个仓库时禁止删除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/0lDJRMjISJGV6z5TI7ZAtw/zh-cn_image_0000002701822258.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/DPtQMP0SR5G1QCzEeAMCOQ/zh-cn_image_0000002701822258.png "点击放大")
 
 ### 新增仓库
 
@@ -131,19 +131,19 @@ ohpm-repo从6.0.1版本开始，支持批量上传三方包。
 
 点击“+”图标按钮将新增一个仓库，可以对仓库的Name、Uplink、可读策略、可写策略、发布策略和描述信息进行编辑。可读策略默认为公开可读，可写策略默认为公开可写，标准版本（如1.0.0）发布策略默认为禁止同版本覆盖，先行版本（如1.0.0-snapshot快照）发布策略默认为禁止同版本覆盖。最多支持创建20个仓库。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/UqUxXrzYRAmIkxkJZD68XA/zh-cn_image_0000002701822310.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Zby0TD_ZRbiXVe6xnisQtA/zh-cn_image_0000002701822310.png "点击放大")
 
 **ohpm-repo 6.0.0以下版本**
 
 点击“+”图标按钮将新增一个仓库，可以对仓库的Name、Uplink、可读策略、可写策略、发布策略和描述信息进行编辑。可读策略默认为公开可读，可写策略默认为公开可写，发布策略默认为禁止同版本覆盖。最多支持创建20个仓库。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/AXAWYEktRNKFqZzQVrXtmg/zh-cn_image_0000002701822234.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/CtC_YCEcSk29zeJmgYAakQ/zh-cn_image_0000002701822234.png "点击放大")
 
 ## uplinks
 
 uplinks功能可以让当前仓库获取配置的uplink仓库的所有包，若从某个已配置uplink的仓库下载当前仓库中不存在的三方包时，则会通过uplink仓库下载该包，如果访问uplink仓库需要代理，请配置好所需代理信息，uplink页面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/nPF-MnMXSEOXniQcZ21Urw/zh-cn_image_0000002701822332.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/mExKAPIzRt6trJaKVgoBNw/zh-cn_image_0000002701822332.png "点击放大")
 
 1. 点击新增按钮，可以创建新的uplink仓库。一旦完成新增uplink仓库的设置，必须前往仓库管理 > 管理仓库 > 编辑页面进行应用，这样该功能才会生效，且ohpm-repo只允许同时配置一个uplink仓库。uplink仓库地址不建议配置为其他ohpm-repo的地址，避免出现仓库A配置uplink为仓库B，仓库B配置uplink为仓库A，导致循环查找问题。
 
@@ -151,17 +151,17 @@ uplinks功能可以让当前仓库获取配置的uplink仓库的所有包，若�
 
    页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/nKkPNWUXTgiZqfQOlGuxSw/zh-cn_image_0000002731541567.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/JhBNtKlkRHmHZChI82rWlA/zh-cn_image_0000002731541567.png "点击放大")
 2. 点击编辑，可以修改已配置的uplink仓库信息，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/3NSWpsscQ7OkDy4fGxv9NA/zh-cn_image_0000002701822288.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/lmEJ-uwDTI-e-W25T1kmSw/zh-cn_image_0000002701822288.png "点击放大")
 3. 点击删除，可以删除配置的uplink仓库，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/3DCEsAY9RVqPKfHDaDVAAw/zh-cn_image_0000002701662316.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/6jMfcOvOQciMLhJtSsvoSg/zh-cn_image_0000002701662316.png "点击放大")
 4. 由于搭建的ohpm-repo私仓可能需要通过代理来访问已配置的uplink仓库，因此ohpm-repo提供了代理功能。点击配置代理，可以添加代理信息，页面效果如下图所示：
 
    **说明** 
 
    HttpProxy、HttpsProxy和uplinks仓库地址有关，与搭建的代理服务器协议无关。若uplinks仓库地址是http协议，则选择HttpProxy配置代理；若uplinks仓库地址是https协议，则选择HttpsProxy配置代理。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/u3sVzckWQkmGS5abvzt-AA/zh-cn_image_0000002701662324.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/OLcTG2XZRCWz3lBXl4Vj_w/zh-cn_image_0000002701662324.png "点击放大")

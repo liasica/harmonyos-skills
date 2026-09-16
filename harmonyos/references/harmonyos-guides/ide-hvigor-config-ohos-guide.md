@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-co
 title: 能力说明
 breadcrumb: 指南 > 构建应用 > 定制构建 > 动态修改编译配置 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7738386e6b40a5b132a6079d6168bf5295d89a2fd87c7cc3dc780b849314aa22
+scraped_at: 2026-09-17T06:47:10+08:00
+doc_updated_at: 2026-09-16
+content_hash: sha256:4e2cc1c7e695da8cad30ff9e322e20cac8b7c41ff7fc53843b38527518676647
 ---
 
 Hvigor支持在hvigorfile.ts中接收部分编译配置，以实现动态修改编译配置，并将其应用到构建过程与结果中。
@@ -39,7 +39,7 @@ export default {
     system: hapTasks,  
     config: {  
         ohos: {
-            ...
+            // ...
         }    
     }
 }

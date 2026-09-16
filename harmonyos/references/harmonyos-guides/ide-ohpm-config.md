@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conf
 title: ohpm config
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm config
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
-doc_updated_at: 2026-08-05
-content_hash: sha256:19ef7a6155c20b1e13a294a883bd28755878cf5f753089afeb2b343121635fff
+scraped_at: 2026-09-17T06:47:15+08:00
+doc_updated_at: 2026-09-16
+content_hash: sha256:b7a5da032a39c74350ee007a64477afa23fa654ee9a90d399a0053d3421b8a76
 ---
 
 设置ohpm用户级配置项。
@@ -251,7 +251,6 @@ ohpm config list -j 或 ohpm config list --json
   "registry": "http://localhost:8088/repos/ohpm", 
   "strict_ssl": false,
   "log_level": "info",
-  ......
 }
 ```
 
