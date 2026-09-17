@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstor
 title: AppStorage：应用全局的UI状态存储
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理应用拥有的状态 > AppStorage：应用全局的UI状态存储
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:20+08:00
+scraped_at: 2026-09-18T06:45:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c3d94458b4d80d17ec6b7a6271927c0cc53dc2ed3459ca1e2ea3b9db3583548c
+content_hash: sha256:8949cc6b0bd9470b2b1985db0a64a577b52a78c977708432901a411bdc919526
 ---
 
 在阅读本文档前，建议提前阅读：[状态管理概述](arkts-state-management-overview.md)，从而对状态管理框架中AppStorage的定位有一个宏观了解。
@@ -58,7 +58,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 **图1** @StorageProp初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/JGTA9VWMSxGOhLpvANoWCw/zh-cn_image_0000002723694382.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/DCrg0-dXQda0zWSE-I54iw/zh-cn_image_0000002727749898.png)
 
 ### 观察变化和行为表现
 
@@ -104,7 +104,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 **图2** @StorageLink初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/csZ5Ap5BQ6OPlCE77AyWqg/zh-cn_image_0000002753294149.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/h8cbpPBTTcS-oJmNtxFx3A/zh-cn_image_0000002757309613.png)
 
 ### 观察变化和行为表现
 
@@ -267,7 +267,7 @@ struct TestStorageProp {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/VYmHsSgjQpaTCAUhGBAgxA/zh-cn_image_0000002753454067.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/iSirzFKVR5-HPNPh9JTn7A/zh-cn_image_0000002757229733.gif)
 
 ### AppStorage支持联合类型
 
@@ -347,7 +347,7 @@ struct TestPageStorageLink {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/DAPz4WeGQWmdZ9m3ueoURw/zh-cn_image_0000002723854302.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/wP1fCKOaSiG2nQkmiP_b4Q/zh-cn_image_0000002727590042.gif)
 
 ### 装饰Array类型变量
 
@@ -400,7 +400,7 @@ struct ArraySample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/SWsVFq4zT566VL5VY_klsg/zh-cn_image_0000002723694384.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/xcfc5z6hR7a15nfvBMbrXA/zh-cn_image_0000002727749900.gif)
 
 ### 装饰Date类型变量
 
@@ -453,7 +453,7 @@ struct DateSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/cSQvHDDdRryz6ANfFIADXQ/zh-cn_image_0000002753294151.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/npWaKJafRluRiOm2IcTX5w/zh-cn_image_0000002757309615.gif)
 
 ### 装饰Map类型变量
 
@@ -520,7 +520,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/fU4iXr6GShuAWlhkWllk9g/zh-cn_image_0000002753454069.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/_mUjwpgzQmiCWrSWwV0QkQ/zh-cn_image_0000002757229735.gif)
 
 ### 装饰Set类型变量
 
@@ -578,7 +578,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/mpWf47MHRD-mv4ULRNZ3dw/zh-cn_image_0000002723854304.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ICM7g0T4TMGQmJYD0k75wQ/zh-cn_image_0000002727590044.gif)
 
 ### AppStorage在多页面中共享使用
 
@@ -709,7 +709,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/E5DOm3pNT7y9aruMUPioxg/zh-cn_image_0000002723694386.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/CMgOJ6U-ReqFykfFPs_7QQ/zh-cn_image_0000002727749902.gif)
 
 ## AppStorage使用建议
 
@@ -1039,7 +1039,7 @@ struct PageStorageProp {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/C1t_b0teTD6klDSqYLMiKA/zh-cn_image_0000002753294153.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/e2El83pgQHG0HeWgEpjBDw/zh-cn_image_0000002757309617.gif)
 
 上述示例，在点击事件之前，propA的值已经在本地被更改为true，而AppStorage中存的值仍为false。当点击事件通过setOrCreate接口尝试更新propA的值为false时，由于AppStorage中的值为false，两者相等，不会触发更新同步，因此@StorageProp的值仍为true。
 

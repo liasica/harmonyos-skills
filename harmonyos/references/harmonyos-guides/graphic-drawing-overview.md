@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphic-drawi
 title: 图形绘制与显示开发概述
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图形绘制与显示开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:30+08:00
+scraped_at: 2026-09-18T06:46:04+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:74d46e3ba5f8299996029c22655dab5614aadf8fbec78f66cd55fc4f9511e888
+content_hash: sha256:5a24e29b4e88933ad8b74d5df129490cc844d4541520591bd91d4e31da241a42
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:74d46e3ba5f8299996029c22655dab5614aadf8fbec78f66cd55fc4f951
 
 **图1** 图形绘制主要能力
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/FL7PM4yCTC2_Kv5X9-xdVA/zh-cn_image_0000002753295539.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/0UHmWx9HQCW0md4aLf2MRw/zh-cn_image_0000002757311003.jpg)
 
 ArkGraphics 2D基于2D图像渲染引擎为开发者提供了一系列灵活多样的图形绘制接口。主要分为画布操作、绘制效果、图元绘制几方面，各部分支持能力关键列举如上图所示，后续可能支持更多相关能力，此处不再一一呈现，具体可关注对应API参考文档。
 
@@ -24,7 +24,7 @@ ArkGraphics 2D基于2D图像渲染引擎为开发者提供了一系列灵活多�
 
 **图2** 图形绘制的实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/rXABURIfR42F3CJs01uvyQ/zh-cn_image_0000002753455457.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/JVR6vlLuSlyEmh6m6-bUgQ/zh-cn_image_0000002757231123.jpg)
 
 2D图形绘制过程和实际作画的过程是相似的，上图即以绘制经过旋转的红色填充矩形为例，提供了图形绘制的流程。主要实现流程和步骤如下：
 

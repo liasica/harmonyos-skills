@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: Media Library Kit 简介
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > Media Library Kit 简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:bdd888389b9c10adfa39dc750cd46e377ef13c511e6c4bdb2dcd3a3da1d65e4a
+scraped_at: 2026-09-18T06:46:00+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:72ca533ac29e8f6be6dc1531f8c92ec0e76923628311dd95b53e41e9f7bc7e02
 ---
 
 Media Library Kit（媒体文件管理服务）提供了管理相册和媒体文件的能力，包括图片和视频，帮助应用快速构建图片和视频的展示与播放功能。
@@ -60,7 +60,7 @@ Media Library Kit（媒体文件管理服务）提供了管理相册和媒体文
 * 对象化API设计，简洁高效，接入便捷。
 * 端云一体化访问管理。
 * 安全精准强管控，picker和保存控件自动授权。
-* 智能格式转化，框架层统一完成转化。
+* 智能格式转换，框架层统一完成转换。
 
 ## 框架原理
 

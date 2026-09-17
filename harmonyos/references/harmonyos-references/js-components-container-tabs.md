@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: tabs
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > tabs
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:19+08:00
+scraped_at: 2026-09-18T06:48:37+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c39040aae045e42d509ea339ded32ec418d4d4c337bb3db3d1a4ee3d2c397931
+content_hash: sha256:58e7421aff794a17c7418bf14e5232d9db557b6ce4e71d0b3ef61fe81fcec0b8
 ---
 
 **说明** 
@@ -112,4 +112,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Dd8r0fCwS2uOfH3OMizBiA/zh-cn_image_0000002723857446.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/cZVf4dn6RWeN7ba9CU1dZQ/zh-cn_image_0000002727753044.gif)

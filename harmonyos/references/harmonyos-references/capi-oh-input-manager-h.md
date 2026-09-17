@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-i
 title: oh_input_manager.h
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 头文件 > oh_input_manager.h
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:17+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:fa7439e75669f04f9bf13e44c43fa911283f32734340887bf8ae16a656817d7d
+scraped_at: 2026-09-18T06:50:22+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:4c806cfed4812352cbad39253175f1f461a81e923fd7686b8c1dd0a21992c682
 ---
 
 ## 概述
@@ -3321,7 +3321,7 @@ Input_Result OH_Input_RemoveHotkeyMonitor(const Input_Hotkey* hotkey, Input_Hotk
 
 | 类型 | 说明 |
 | --- | --- |
-| [Input\_Result](capi-oh-input-manager-h.md#input_result) | OH\_Input\_RemoveHotkeyMonitor 函数返回值。  [INPUT\_SUCCESS](capi-oh-input-manager-h.md#input_result) 取消订阅组合按键成功， [INPUT\_PARAMETER\_ERROR](capi-oh-input-manager-h.md#input_result) 参数检查失败。 |
+| [Input\_Result](capi-oh-input-manager-h.md#input_result) | OH\_Input\_RemoveHotkeyMonitor 函数返回值。  [INPUT\_SUCCESS](capi-oh-input-manager-h.md#input_result) 表示取消订阅组合按键成功。  [INPUT\_PARAMETER\_ERROR](capi-oh-input-manager-h.md#input_result) 参数检查失败。 |
 
 ### OH\_Input\_RegisterDeviceListener()
 
@@ -3441,14 +3441,14 @@ Input_Result OH_Input_GetDevice(int32_t deviceId, Input_DeviceInfo **deviceInfo)
 
 | 参数项 | 描述 |
 | --- | --- |
-| int32\_t deviceId | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
+| int32\_t deviceId | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。可以通过 [OH\_Input\_GetDeviceIds](capi-oh-input-manager-h.md#oh_input_getdeviceids) 接口查询系统支持的设备ID。 |
 | [Input\_DeviceInfo](capi-input-input-deviceinfo.md) \*\*deviceInfo | deviceInfo 指向输入设备信息[Input\_DeviceInfo](capi-input-input-deviceinfo.md)的指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Input\_Result](capi-oh-input-manager-h.md#input_result) | [INPUT\_SUCCESS](capi-oh-input-manager-h.md#input_result) 表示操作成功。  [INPUT\_PARAMETER\_ERROR](capi-oh-input-manager-h.md#input_result) 表示deviceInfo为空指针或deviceId无效。  可以通过 [OH\_Input\_GetDeviceIds](capi-oh-input-manager-h.md#oh_input_getdeviceids) 接口查询系统支持的设备ID。 |
+| [Input\_Result](capi-oh-input-manager-h.md#input_result) | [INPUT\_SUCCESS](capi-oh-input-manager-h.md#input_result) 表示操作成功。  [INPUT\_PARAMETER\_ERROR](capi-oh-input-manager-h.md#input_result) 表示deviceInfo为空指针或deviceId无效。 |
 
 ### OH\_Input\_CreateDeviceInfo()
 

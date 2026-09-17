@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Popup控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 弹窗控制 > Popup控制
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:50+08:00
+scraped_at: 2026-09-18T06:48:10+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:1cee3a65d8d4531a93f71f7dd53e0f0770ff74f6f440254b4e62c0d061d9c40a
+content_hash: sha256:cf22c652ebf726c370655245340f22bc02fbddeffc2e230bee26ec730b89ad14
 ---
 
 为组件绑定Popup气泡，并设置气泡内容、交互逻辑和显示状态。
@@ -406,7 +406,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/na7V0YlvTjq6lKG1I0PuXA/zh-cn_image_0000002753456515.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/uC8a3qrARGmLjP8Z6RXJEg/zh-cn_image_0000002757232181.gif)
 
 ### 示例2（设置气泡的文本样式）
 
@@ -453,7 +453,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/GKXjBUyyTYqpZczRREAEhg/zh-cn_image_0000002723856750.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/KF5hktluRc-LfnOjBhVxRQ/zh-cn_image_0000002727592490.gif)
 
 ### 示例3（设置气泡的样式）
 
@@ -501,7 +501,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/d7bpHVizRrOT5T6Qu6r5ng/zh-cn_image_0000002723696832.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/5AMywYgcR4KSW4kNGZ251w/zh-cn_image_0000002727752348.gif)
 
 ### 示例4（设置气泡的动效）
 
@@ -571,7 +571,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/nY2ZcNPDReywsM5A-BoVjA/zh-cn_image_0000002753296599.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/0yQY6Y3LT7Kn6L2OF-3nlg/zh-cn_image_0000002757312063.gif)
 
 ### 示例5（为气泡添加事件）
 
@@ -626,7 +626,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/V_QbQtXtQzSUUknkWpFs3A/zh-cn_image_0000002753456517.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/YciYPcG9Roaq0zRVrbPNKw/zh-cn_image_0000002757232183.gif)
 
 ### 示例6（为气泡拦截退出事件）
 
@@ -684,7 +684,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/5JCuPNqRTKqH_Msv7EOlxw/zh-cn_image_0000002723856752.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/hl08YFtKT92WrfrGn3_5mQ/zh-cn_image_0000002727592492.gif)
 
 ### 示例7（为气泡内外描边设置线性渐变）
 
@@ -735,7 +735,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/p4Jd6wmKShmv-Ie9QqkJ9w/zh-cn_image_0000002723696834.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/JUZRycVeR2mdVI7DuivUbA/zh-cn_image_0000002727752350.gif)
 
 ### 示例8（设置气泡避让绑定的组件模式）
 
@@ -768,7 +768,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/-P8UFmsJSvCLeqXOKrPRzA/zh-cn_image_0000002753296601.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/HeD4y7TgRyOLotZYHSLkRg/zh-cn_image_0000002757312065.gif)
 
 ### 示例9（设置Popup的沉浸光感视觉效果）
 
@@ -819,11 +819,11 @@ struct PopupExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/gFWiOUqBQ2i9VBFpsWJkFQ/zh-cn_image_0000002753456519.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Rc8-rc0_Tiq5DepI-XkIow/zh-cn_image_0000002757232185.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/W1rDJTOuQQiPWp3jgLS4-Q/zh-cn_image_0000002723856754.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/oSi442P5TyuFEC0lHD-CbQ/zh-cn_image_0000002727592494.gif)
 
 ### 示例10（自定义气泡背景效果参数）
 
@@ -895,7 +895,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/N-_m339YSRKSij0onNr_1A/zh-cn_image_0000002723696836.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/LuM1WscaTyyWpql0nFFm3Q/zh-cn_image_0000002727752352.gif)
 
 ### 示例11（设置气泡的显示层级模式）
 
@@ -957,4 +957,4 @@ struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/XrUJakMVT8q2O7IDw1zr_g/zh-cn_image_0000002753296603.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/dOvUOdT8SVK9Ikss5iuJBg/zh-cn_image_0000002757312067.gif)

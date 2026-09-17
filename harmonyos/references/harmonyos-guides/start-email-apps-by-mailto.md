@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-email-a
 title: 拉起邮件类应用（mailto方式）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起邮件类应用（mailto方式）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:09+08:00
+scraped_at: 2026-09-18T06:44:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:21ec7bce5b6bd733d22185e3fcc0c0f114b55c6ba4656eedc7f4fa4974d6b433
+content_hash: sha256:002707d951f7cec55e251d419ce5afeeae038c070cb9a6e84923608663980133
 ---
 
 ## 使用场景
@@ -70,7 +70,7 @@ mailto:someone@example.com?key1=value1&key2=value2
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/8Pn5j-JXRrKN_ZKgOdCJpw/zh-cn_image_0000002723694194.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/wFA-WpAISDeneHquidfE9g/zh-cn_image_0000002727749710.gif)
 
 ### 从应用拉起
 
@@ -99,7 +99,7 @@ struct Index {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/7xYyQmiGSMG9iiP_vuqbjg/zh-cn_image_0000002753293961.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/D5rJAyf8QlKIzFoE5kSzJA/zh-cn_image_0000002757309425.gif)
 
 ## 目标方开发步骤
 

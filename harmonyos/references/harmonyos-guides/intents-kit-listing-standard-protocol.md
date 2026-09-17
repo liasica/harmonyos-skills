@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-kit-l
 title: 意图标准协议上架指导
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 意图框架上架配置指导 > 意图标准协议上架指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:24+08:00
+scraped_at: 2026-09-18T06:46:52+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:77d5c82698d6d4fa8866680a2f1fff028c1d6edd992ab17362a088a02b733634
+content_hash: sha256:a5dd75ade84944c42834c6b6354cf89e3bf3a45b05114f8ce8986b2cd9a78c57
 ---
 
 该配置需开发者完成自测后，先将携有对应意图信息的App在AppGallery Connect（以下简称AGC）完成应用上架，具体操作步骤参见[应用开发准备](application-dev-overview.md)。
@@ -16,41 +16,41 @@ content_hash: sha256:77d5c82698d6d4fa8866680a2f1fff028c1d6edd992ab17362a088a02b7
 
    1. 登录[华为开发者联盟](https://developer.huawei.com/consumer/cn/) ，选择“管理中心 > 生态服务 > 智慧服务 > 小艺开放平台”，在管理中心找到小艺开放平台。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/5KgESTNgTgSwnDaRfbGv5w/zh-cn_image_0000002753456233.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/oLHKyXUHSv6WWJ0nutb5iQ/zh-cn_image_0000002757231899.png)
    2. 点击“立即体验”按钮，进入项目管理页面。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/HsvLEm_LS8eVmdLhITTPHQ/zh-cn_image_0000002723856468.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/PLjC0sMSRw6TyFZCMFAKlA/zh-cn_image_0000002727592208.png)
    3. 在资源库中点击“意图框架”页签，即可到达意图注册配置操作入口。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/cDX-MvYPTmavZ9NhNQ7LTg/zh-cn_image_0000002723696550.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/GWKQ5qiHQmWfxP9vlfN9Ng/zh-cn_image_0000002727752066.png)
 2. 选择意图集：携有意图声明文件的应用在AGC**正式上架**后可**自动生成**一条草稿态的记录，记录中包含开发者在意图配置文件中声明的所有**端侧意图**。如果本次接入意图框架也涉及到使用**云侧意图**，则需要在意图集内手动进行云侧意图的配置（配置方式参考下文意图配置部分）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/EmIc7bFOQf2RFlQVlmxtSw/zh-cn_image_0000002753296317.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/DML9h-6BS7mEa-rINTGRxw/zh-cn_image_0000002757311781.png)
 3. 基本信息编辑：点击对应的意图集记录的“编辑”按钮，进入基本信息编辑页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/5JDWXceiR8qJWOHZKfligg/zh-cn_image_0000002753456235.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/7uSvFinDSXGg50As6KjhGQ/zh-cn_image_0000002757231901.png)
 
    此处的版本号和版本描述为智慧分发配置的版本信息，用于开发者记录和识别智慧分发配置版本变更，与APP软件包版本无关，意图注册名称与APP名称保持一致。开发者补充完基本信息后点击“保存”即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/JjHy4U3FRGC_IiB0PjOM-A/zh-cn_image_0000002723856470.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/-ETKZCYaQ2i_o12Gi2ZG8Q/zh-cn_image_0000002727592210.png)
 4. 意图配置：切换至“意图”页签，点击“保存”会触发刷新，需检查接入特性所依赖的全量意图是否在此页面都已列出。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5_bWSNX2TzO0n0laGACGvA/zh-cn_image_0000002723696552.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/A73fAtHlRBuvKQZSOLRYkQ/zh-cn_image_0000002727752068.png)
 
    * 端侧意图：“端云类型”为端侧的意图，在APP软件包中定义，此处会自动呈现。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/XLJ0lP9bSJyjMYhJ5A7Wtw/zh-cn_image_0000002753296319.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/jsZBkx3JQBC7asTc-lwpLg/zh-cn_image_0000002757311783.png)
    * 云侧意图：“端云类型”为云侧的意图，需在此页面手动添加。可参照如下步骤配置：
 
      1. 点击“添加”，进行意图新增。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/H4_1z1aDSWSxmOd7EyT5JQ/zh-cn_image_0000002753456237.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/8iIWT-vJSXm8m9Y5SbFXww/zh-cn_image_0000002757231903.png)
      2. 选择云侧意图分类，搜索意图名称，勾选所需意图进行添加。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/1mmH9snwQCOB4p4bprd16A/zh-cn_image_0000002723856472.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/brTxE1JjSfKR5EAmDyYhLA/zh-cn_image_0000002727592212.png)
      3. 添加完成后，需录入接口信息配置，具体信息如下：
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/2XS1K8aCQeGfYNAMlLk2WA/zh-cn_image_0000002723696554.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Ht2CAC2SSPGqmUHwc-II2w/zh-cn_image_0000002727752070.png)
 
         + API：即开发者的URL地址信息，供华为侧服务器进行云侧意图调用。
         + 认证方式：如果涉及接口鉴权，则选择认证方式（例如AK/SK认证）并配置密钥信息；如果不涉及则选择不认证。
@@ -63,8 +63,8 @@ content_hash: sha256:77d5c82698d6d4fa8866680a2f1fff028c1d6edd992ab17362a088a02b7
    * 如果正确会同时生成特性以及abilityId，若开发者接入特性的方案涉及此参数（例如事件推荐场景），则意图共享中请求字段的abilityId参数需要填写当前界面的abilityId值。特性检查无误后，点击“提交审核”。
    * 若提示特性undefined，则说明华为意图框架后台未配置该特性。如需使该特性生效，请按照[Intents Kit接入流程](intents-access-flow.md)中的能力申请步骤，表述意图使用的场景提交审核。审核成功后，根据审核成功的反馈提示，重新操作该特性的配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/NH2-X36pSsuFx6uTgMf68g/zh-cn_image_0000002753296321.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/fKr61b65SmigrM1DwYJ2rg/zh-cn_image_0000002757311785.png)
 7. 审核：提交审核后，该条记录状态变为“上架审核中”，一般审核周期为3-5个工作日，审核通过后状态变为“已上架”，至此意图标准协议上架配置已完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/KGTROR_jSfqLPz_NRChxJQ/zh-cn_image_0000002753456239.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/g-O6YnCtQdKv2Fdw5T5X2A/zh-cn_image_0000002757231905.png)
 8. 若开发者后续有新意图上架，可在同一条意图记录上进行编辑后提交，操作流程同上述步骤，未提交审核不影响已经注册的意图。

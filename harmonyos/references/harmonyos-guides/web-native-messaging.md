@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-native-me
 title: 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4814b4ab5fae632e17e29642614400600bb2f4421166a611607985f942305ddc
+scraped_at: 2026-09-18T06:45:17+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:665cc31f70edc80904a3c36fbb65d634d8c2b741c28ca5b466d67020df1882fb
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:4814b4ab5fae632e17e29642614400600bb2f4421166a611607985f9423
 
 浏览器扩展通过[WebExtensions runtime API](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/API/runtime)连接WebNativeMessagingExtensionAbility，双方通信是通过共享pipe文件描述符后调用IO接口实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/F2mKT3KJTa6GH8ThaOHZxg/zh-cn_image_0000002723695246.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/lBLLX_pWRkC5a3jW2pi7ug/zh-cn_image_0000002727750762.png)
 
 **说明** 
 
@@ -44,7 +44,7 @@ NativeMessaging面向两类开发者：应用开发者和浏览器应用开发�
 
 ### 整体流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xm3hr5CYQni9AKUHOzbssw/zh-cn_image_0000002753295013.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/XWGYGyLLSUyGIRn4voUBfQ/zh-cn_image_0000002757310477.png)
 
 * **流程：**
 
@@ -302,26 +302,25 @@ function sendMessageToNative() {
      }
    }
    ```
+6. 在shared\_config.json添加[extension配置](web-native-messaging.md#datashare存放应用extension配置信息)。
 
-6.在shared\_config.json添加[extension配置](web-native-messaging.md#datashare存放应用extension配置信息)。
-
-```json5
-{
-  "crossAppSharedConfig": [
-    // ...
-    {
-      // uri固定格式，datashareproxy://[包名]/browserNativeMessagingHosts，浏览器应用通过该uri获取的value，即extension配置。
-      "uri": "datashareproxy://com.example.app/browserNativeMessagingHosts",
-      // extension配置，格式参考extension配置章节的格式，注意转义字符
-      "value": "{\"name\": \"com.example.myapplication\",\"description\": \"Send message to native app.\",\"abilityName\": \"MyWebNativeMessageExtAbility\", \"allowed_origins\":[\"chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/\"]}",
-      "allowList": [
-        // 允许访问的应用appIdentifier, 这里加入具体浏览器的appIdentifier
-        "1234567890123456789"
-      ]
-    }
-  ]
-}
-```
+   ```json5
+   {
+     "crossAppSharedConfig": [
+       // ...
+       {
+         // uri固定格式，datashareproxy://[包名]/browserNativeMessagingHosts，浏览器应用通过该uri获取的value，即extension配置。
+         "uri": "datashareproxy://com.example.app/browserNativeMessagingHosts",
+         // extension配置，格式参考extension配置章节的格式，注意转义字符
+         "value": "{\"name\": \"com.example.myapplication\",\"description\": \"Send message to native app.\",\"abilityName\": \"MyWebNativeMessageExtAbility\", \"allowed_origins\":[\"chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/\"]}",
+         "allowList": [
+           // 允许访问的应用appIdentifier, 这里加入具体浏览器的appIdentifier
+           "1234567890123456789"
+         ]
+       }
+     ]
+   }
+   ```
 
 ### 实现拉起WebNativeMessagingExtensionAbility（浏览器开发者）
 

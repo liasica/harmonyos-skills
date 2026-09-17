@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcapability.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcapability.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9e0ad0a12c4dea84ab4b5d62f0e3b0be8d757eaf9d115696970516e0cf6b1c09
+scraped_at: 2026-09-18T06:50:47+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:7371c4b0fd68ae32d9e0b37d4f709ec86040ab074c51b6bdd46d28719871ad9d
 ---
 
 ## 概述
 
-声明用于编解码能力查询到的Native API。
+声明用于编解码能力查询的Native API。
 
 **引用文件：** <multimedia/player\_framework/native\_avcapability.h>
 
@@ -251,7 +251,7 @@ bool OH_AVCapability_IsHardware(OH_AVCapability *capability)
 
 | 类型 | 说明 |
 | --- | --- |
-| bool | 如果能力实例描述的是硬件编解码器，则返回true，如果功能实例描述的是软件编解码器，则为false。 |
+| bool | 表示该能力实例描述的是否是硬件编解码器，返回true表示该能力实例描述的是硬件编解码器，返回false表示该能力实例描述的是软件编解码器。 |
 
 ### OH\_AVCapability\_IsSecure()
 

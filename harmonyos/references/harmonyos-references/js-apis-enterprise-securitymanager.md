@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-securitymanager
-title: "@ohos.enterprise.securityManager（安全管理）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.securityManager（安全管理）
+title: "@ohos.enterprise.securityManager (安全管理)"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.securityManager (安全管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f71a0ecd11951f01883a7adf14835f722613381d359ac662298d60c3ffebf477
+scraped_at: 2026-09-18T06:50:26+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:e39e44e49b69f4b5187f1bc1365b51b9e3aa590548697608fa4160861544d208
 ---
 
 本模块提供企业设备安全管理能力，支持证书管理、设备安全策略管理、口令策略管理、剪贴板策略管理、水印策略管理、权限管理等功能。企业可使用本模块实现设备安全状态的实时监控、企业证书的生命周期管理、设备口令策略的统一配置、应用剪贴板使用行为的管控、屏幕和应用水印的设置以防止信息泄露、以及应用权限的精细化管理等场景，帮助企业提升设备安全防护能力，降低数据泄露风险。
@@ -333,13 +333,15 @@ setPasswordPolicy(admin: Want, policy: PasswordPolicy): void
 
 设置设备锁屏口令策略。策略设置后，当用户设置锁屏口令时，如果设置的锁屏口令不符合要求，会有安全提示重新设置锁屏口令。适用于企业安全合规场景，如强制要求员工使用强密码、定期更换密码等，降低企业数据泄露风险。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 
@@ -510,6 +512,8 @@ setScreenLockDisabledForAccount(admin: Want, disable: boolean): void
 
 4.下发禁用滑动解锁的策略后，用户输入了设备密码，此时密码会生效，设备需要验证密码后才能进入桌面，之前下发的策略失效。
 
+5.在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **起始版本：** 26.0.0
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
@@ -519,8 +523,6 @@ setScreenLockDisabledForAccount(admin: Want, disable: boolean): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **设备行为差异：** 该接口在Phone和Tablet中可正常调用，在其他设备中调用返回801错误码。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 
@@ -624,13 +626,15 @@ setAppClipboardPolicy(admin: Want, tokenId: number, policy: ClipboardPolicy): vo
 
 设置设备剪贴板策略。策略设置后，应用将按照设置的策略限制剪贴板的使用范围。适用于企业数据防泄露场景，如限制敏感应用（如企业邮箱、财务系统）的剪贴板使用范围，防止敏感数据被复制到非授权应用，降低数据泄露风险。企业可通过此接口控制应用的剪贴板使用权限，防止敏感数据通过剪贴板泄露到未授权应用，增强企业数据安全防护能力。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)。
 
 **参数：**
 
@@ -791,13 +795,15 @@ setAppClipboardPolicy(admin: Want, bundleName: string, accountId: number, policy
 
 设置指定用户下指定应用的设备剪贴板策略。策略设置后，指定应用的剪贴板将按照策略限制使用范围。企业可为不同用户的不同应用配置差异化的剪贴板使用权限，实现精细化的数据访问控制，满足多用户多应用场景下的安全管控需求。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)。
 
 **参数：**
 
@@ -967,13 +973,13 @@ setWatermarkImage(admin: Want, bundleName: string, source: string | image.PixelM
 
 2.水印图片会以平铺方式重复覆盖整个应用界面。
 
+3.在多个MDM应用场景下，同一个用户下的同一个应用的水印遵循[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)规则。不同用户、不同应用的水印遵循[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占), 同一个用户下的同一个应用的水印独占。不同用户、不同应用的水印[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 
@@ -1077,13 +1083,15 @@ setPermissionManagedState(admin: Want, applicationInstance: ApplicationInstance,
 
 设置指定应用的[user\_grant权限](../harmonyos-guides/permissions-for-all-user.md)的管理策略。适用于企业应用批量部署场景，如静默授权减少权限弹窗干扰、统一企业应用权限管理策略，提升员工使用体验和管理效率。
 
+**说明** 
+
+在多个MDM应用场景下，同一个应用实例的同一个权限[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)，不同应用实例不同权限[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_USER\_GRANT\_PERMISSION
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** 同一个应用实例的同一个权限[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)，不同应用实例不同权限[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 
@@ -1213,6 +1221,10 @@ setExternalSourceExtensionsPolicy(admin: Want, policy: common.ManagedPolicy): vo
 
   强制开启。设置此策略后，允许运行外部来源的扩展程序，用户无法关闭“设置-隐私和安全-高级”中的“运行外部来源的扩展程序”开关。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -1220,8 +1232,6 @@ setExternalSourceExtensionsPolicy(admin: Want, policy: common.ManagedPolicy): vo
 **设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)。
 
 **参数：**
 
@@ -1406,13 +1416,15 @@ installEnterpriseReSignatureCertificate(admin: Want, certificateAlias: string, f
 
 3.企业场景下，特别是在涉及信息安全的场景中，企业需要确保员工使用的移动设备中仅安装并运行特定的内部软件和工具。企业应用重签名证书通过统一的应用身份标识，与系统的应用管理与权限控制机制配合使用，可支持企业应用的静默安装、受控的系统能力调用及运行范围限制，从而实现企业软件在受控终端上的准入控制与安全管理。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 
@@ -1545,6 +1557,8 @@ setScreenWatermarkImage(admin: Want, pixelMap: image.PixelMap): void
 
 2.当水印图片尺寸小于屏幕时，图片会被拉伸；当水印图片尺寸大于屏幕时，图片会被压缩。该实现方式与应用级别水印的重复平铺方式不同。
 
+3.在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **起始版本：** 26.0.0
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
@@ -1552,8 +1566,6 @@ setScreenWatermarkImage(admin: Want, pixelMap: image.PixelMap): void
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 
@@ -1667,6 +1679,8 @@ setDisallowedPermission(admin: Want, permission: string, disallow: boolean, acco
 
 3.权限禁用后，仅影响应用（系统应用和普通应用）使用对应的权限，不影响系统SA使用对应的权限。
 
+4.在多个MDM应用场景下，针对同一个权限设置[从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)，不同权限设置[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
+
 **起始版本：** 26.0.0
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
@@ -1674,8 +1688,6 @@ setDisallowedPermission(admin: Want, permission: string, disallow: boolean, acco
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** 针对同一个权限设置[从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)，不同权限设置[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 
@@ -1798,6 +1810,8 @@ addAllowedPermissionBundle(admin: Want, permission: string, applicationInstance:
 
 5.系统应用和普通应用都可以添加。
 
+6.在多个MDM应用场景下，遵循[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)规则。
+
 **起始版本：** 26.0.0
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
@@ -1805,8 +1819,6 @@ addAllowedPermissionBundle(admin: Want, permission: string, applicationInstance:
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 
@@ -1871,6 +1883,8 @@ removeAllowedPermissionBundle(admin: Want, permission: string, applicationInstan
 
 必须先通过[setDisallowedPermission](js-apis-enterprise-securitymanager.md#securitymanagersetdisallowedpermission)接口禁用权限后，才能从权限使用例外名单移除应用，否则返回错误码9201044。
 
+在多个MDM应用场景下，遵循[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)规则。
+
 **起始版本：** 26.0.0
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
@@ -1878,8 +1892,6 @@ removeAllowedPermissionBundle(admin: Want, permission: string, applicationInstan
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 
@@ -2003,6 +2015,8 @@ setWatermarkImage(admin: Want, bundleName: string, source: string | image.PixelM
 
 当水印属性行数和列数都为1时，居中显示单个水印图片。当水印属性行数为m，列数为n时，按m行n列的网格布局排列显示m\*n个水印图片。当水印属性行列参数过大，导致网格布局无法适应窗口大小时，水印会以窗口左上角为原点，以平铺方式重复覆盖整个应用窗口界面，水印图片超出界面右侧、下侧的部分会被裁剪（例如屏幕宽高是1260\*2720，水印图片宽高是100\*100，若设置的行数超过27，或设置的列数超过12，水印会以平铺方式重复覆盖整个应用窗口界面）。
 
+在多个MDM应用场景下，同一个用户下的同一个应用的水印遵循[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)规则。不同用户、不同应用的水印遵循[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)规则。
+
 **起始版本：** 26.0.0
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
@@ -2010,8 +2024,6 @@ setWatermarkImage(admin: Want, bundleName: string, source: string | image.PixelM
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)，同一个用户下的同一个应用的水印独占。不同用户、不同应用的水印[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 

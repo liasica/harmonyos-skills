@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ui-i
 title: ui_input_event.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > ui_input_event.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:318e042e3dbac2c3430a1b4820efdbefb6e3667cd1683cc3c8fa13fbd345ca63
+scraped_at: 2026-09-18T06:48:56+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:e7c119cd0f7fd223809c3391daa82c025c2ca2fd2012d03fcaf4df98ab453700
 ---
 
 ## 概述
@@ -384,7 +384,7 @@ enum anonymous6
 
 **描述：**
 
-定义[焦点轴事件](ts-universal-events-focus_axis.md)的轴类型。
+定义[焦点轴事件](ts-universal-events-focus-axis.md)的轴类型。
 
 **起始版本：** 15
 

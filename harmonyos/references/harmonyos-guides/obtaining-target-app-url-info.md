@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtaining-tar
 title: 获取目标应用的URL信息
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定应用 > 获取目标应用的URL信息
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:09+08:00
+scraped_at: 2026-09-18T06:44:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6b83fe04a9af8e621ab2fef50dcaeb8f5aea0b0247f6d44d51a8580eb43cf57d
+content_hash: sha256:5d5d080c97b60e961e2ced3777a03a891e1f16b1e0e836bf920f60fb366c6b3e
 ---
 
 ## 场景介绍
@@ -188,4 +188,4 @@ content_hash: sha256:6b83fe04a9af8e621ab2fef50dcaeb8f5aea0b0247f6d44d51a8580eb43
 
    **图1** 拉起目标应用演示
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/GxmDw7zzSg20ufSZQ-LVVQ/zh-cn_image_0000002753293957.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Sm5I56pvTjG0RDq6g4F_bQ/zh-cn_image_0000002757309421.gif)

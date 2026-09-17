@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-suite
 title: 接入手写套件
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入手写套件
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9e3c8fdd0b051d3970cd992eeadcfed8078d5fb508693f9fe870653b3650708c
+scraped_at: 2026-09-18T06:45:42+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:a15987b3edde256183c9ba94d8cfd4ea49fd8e68abbedf50521740e99479c20e
 ---
 
 接入手写套件后，可以在应用中创建手写功能界面。界面包括画布和工具栏两部分，画布部分支持手写笔和手指的书写效果绘制，工具栏部分提供多种笔刷和编辑工具，并支持对手写功能进行设置。接入手写套件后将自动开启一笔成形和报点预测功能，无需再单独接入。
@@ -22,7 +22,7 @@ content_hash: sha256:9e3c8fdd0b051d3970cd992eeadcfed8078d5fb508693f9fe870653b365
 
 在应用中创建手写功能界面，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/43bDLNMgQn6_tv3YgLTzcQ/zh-cn_image_0000002753455239.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/UuMspczfTrS1s4GPlugZUA/zh-cn_image_0000002757230905.png)
 
 1. 可以加载和显示手写文件。
 2. 可以编辑和保存手写文件。
@@ -30,7 +30,7 @@ content_hash: sha256:9e3c8fdd0b051d3970cd992eeadcfed8078d5fb508693f9fe870653b365
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/mIVj7kL4SwmOPkIpkwE9wA/zh-cn_image_0000002723855474.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/kC3kAUGzQ3Wxj5mSBPdn_w/zh-cn_image_0000002727591214.png)
 
 ## 接口说明
 
@@ -84,7 +84,8 @@ content_hash: sha256:9e3c8fdd0b051d3970cd992eeadcfed8078d5fb508693f9fe870653b365
 3. 构造包含手写组件的控件/页面，下面以控件为例。
 
    ```typescript
-   import { HandwriteController, HandwriteComponent, PenType, PenHspInfo } from '@kit.Penkit';
+   import { HandwriteController, HandwriteComponent, PenType, PenHspInfo, HiddenToolType,
+     HiddenConfig } from '@kit.Penkit';
 
    @Entry
    @Component
@@ -97,7 +98,7 @@ content_hash: sha256:9e3c8fdd0b051d3970cd992eeadcfed8078d5fb508693f9fe870653b365
      @State yOffset: number = 0;
 
      aboutToAppear() {
-       // 加载时设置保存动作完成后的回调。
+       // 加载时设置加载完成后的回调。
        this.controller.onLoad(this.callback);
      }
 
@@ -118,6 +119,10 @@ content_hash: sha256:9e3c8fdd0b051d3970cd992eeadcfed8078d5fb508693f9fe870653b365
              heightRatio: 1, // 可选属性，自定义画布大小，高度占比（0-1）。
              maxCanvasHeight: 5000, // 可选属性，自定义画布最大高度
              scaleDisabled: false, // 可选属性，是否禁止缩放
+             hiddenTools: {
+               hiddenOptionalTools: [HiddenToolType.PENCIL, HiddenToolType.HIGHLIGHTER_BRUSH, HiddenToolType.MOSAIC], // 可选属性，设置需要隐藏的工具类集合。
+               hiddenArcBox: false  // 可选属性，设置是否隐藏波轮菜单。
+             } as HiddenConfig, // 可选属性，隐藏不需要的手写工具。
              onInit: () => {
                // 画布初始化完成时的回调。此时可以调用接口加载和显示笔记内容
                this.controller?.load(this.initPath);
@@ -135,8 +140,8 @@ content_hash: sha256:9e3c8fdd0b051d3970cd992eeadcfed8078d5fb508693f9fe870653b365
              .onClick(async () => {
                // 需根据应用存储规则，获取到手写文件保存的路径，此处仅为实例参考
                const path = this.getUIContext().getHostContext()?.filesDir + '/aa';
-               await this.controller?.save(path).then().catch((error: Error) => {
-                 console.error('save err: ' + error.message);
+               await this.controller?.save(path).then().catch((error: BusinessError) => {
+                 console.error(`Failed to save. Code: ${error.code}, message: ${error.message}`);
                });
                // 获取缩略图
                this.controller.getThumbnail(this.controller?.getContentRange())?.then((pixelMap: PixelMap) => {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-compu
 title: 计算单元
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 硬件架构 > 计算单元
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:02+08:00
+scraped_at: 2026-09-18T06:46:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:61853153eb29cfd5c3ca1f44b48f4fdca91008d90469ae8322898a24b9cc7b27
+content_hash: sha256:7a1a1078ffe817dd0674c8733241a44e38b1fdb38a3882287fbb1ed4ef39f78a
 ---
 
 计算单元是AI Core中提供强大算力的核心单元，包括三种基础**计算单元**：Cube（矩阵）计算单元、Vector（向量）计算单元和Scalar（标量）计算单元，完成AI Core中不同类型的数据计算。
@@ -18,7 +18,7 @@ Scalar负责各类型的标量数据运算和程序的流程控制。功能上�
 
 **图1** Scalar对指令和数据的访问
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/DkrsWhi6RDyg3WQnJW7aAQ/zh-cn_image_0000002753296197.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/tAoF4p03T-uvQqKnextsVg/zh-cn_image_0000002757311661.png)
 
 ALU需要的代码段和数据段（栈空间）都来自于GM。ICache用于缓存代码段，缓存大小与硬件规格相关，比如为16K或32K，以2K为单位加载；DCache用于缓存数据段，大小也与硬件规格相关，比如为16K，以cacheline(64Byte)为单位加载。
 
@@ -30,7 +30,7 @@ Vector负责执行向量运算。向量计算单元执行向量指令，类似�
 
 **图2** 向量运算
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Kn2Ki2MrRRCNn40I3QF6_A/zh-cn_image_0000002753456115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/TAtZIHMeTCOJF1it-9QEug/zh-cn_image_0000002757231781.png)
 
 Vector所有计算的源数据以及目标数据都要求存储在Unified Buffer中，**并要求首地址和操作长度都满足32Byte**对齐。
 
@@ -40,4 +40,4 @@ Cube计算单元负责执行矩阵运算。Cube一次执行可以完成A矩阵(M
 
 **图3** 矩阵运算
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/LPtkHnyDQ6CrR78-xRFQJQ/zh-cn_image_0000002723856350.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/DjqipVYiTKS0aMi-_gKqlw/zh-cn_image_0000002727592090.png)

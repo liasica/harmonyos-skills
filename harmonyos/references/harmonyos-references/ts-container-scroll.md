@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Scroll
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > Scroll
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:53+08:00
+scraped_at: 2026-09-18T06:48:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b5c1cffaaaf581e1752fc43e001e023954cefa1addf13bcb9afbad03d9174c36
+content_hash: sha256:c7673c8a904acc4d74e48ee519be6b8407dc056de51dbad9ef7c85711f9ce8a5
 ---
 
 可滚动的容器组件，当子组件的布局尺寸超过父组件的尺寸时，内容可以滚动。支持设置滚动方向、滚动条、边缘效果、嵌套滚动以及自由滚动缩放等能力，适用于内容超出显示区域或需要复杂滚动交互的场景。
@@ -1480,7 +1480,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/tyRIlgZLTheBS2BqdHH-Fg/zh-cn_image_0000002723856848.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/NEdpsiAvQUu9JWTL1n3WFg/zh-cn_image_0000002727592588.gif)
 
 ### 示例2（嵌套滚动实现方式一）
 
@@ -1557,7 +1557,7 @@ struct NestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/wCpfZ9RLRdCzXBbI5m2ZYg/zh-cn_image_0000002723696930.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Tc4Fz8KcRueCrs73FyBZ8Q/zh-cn_image_0000002727752446.gif)
 
 ### 示例3（嵌套滚动实现方式二）
 
@@ -1625,7 +1625,7 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/IUs1tEJERUuChWmRhxcNdw/zh-cn_image_0000002753296697.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/RREY1JCbTX6wjalsKAzvyg/zh-cn_image_0000002757312161.gif)
 
 ### 示例4（嵌套滚动父组件向子组件传递滚动）
 
@@ -1720,7 +1720,7 @@ struct NestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/zcg3gWO6SRiG5JPcCktZ4g/zh-cn_image_0000002753456615.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/n2V72FFVSom0p_98YpSxcw/zh-cn_image_0000002757232281.gif)
 
 ### 示例5（设置限位滚动）
 
@@ -1756,7 +1756,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/qRcv2l9xRpunNrOdPqcpag/zh-cn_image_0000002723856850.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/mzmOA0bvRBCiEhzU0Z908Q/zh-cn_image_0000002727592590.gif)
 
 ### 示例6（获取子组件索引）
 
@@ -1841,7 +1841,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/72G25pTkQ5myZxZUUIMGMg/zh-cn_image_0000002723696932.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/AW_R2GoyRxGkMqF7WP9TJQ/zh-cn_image_0000002727752448.gif)
 
 ### 示例7（设置边缘渐隐）
 
@@ -1879,7 +1879,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/_F1bsrVUQxCttB0mBhXWeg/zh-cn_image_0000002753296699.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/gZKeRcclT4Ot7pIyZA3YCg/zh-cn_image_0000002757312163.gif)
 
 ### 示例8（单边边缘效果）
 
@@ -1915,7 +1915,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/-DPuBJIHT_-v3aemgELnkw/zh-cn_image_0000002753456617.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/854AkudXTdiApKjSWMdYWA/zh-cn_image_0000002757232283.gif)
 
 ### 示例9（滑动翻页效果）
 
@@ -1949,7 +1949,7 @@ struct EnablePagingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/w_6dcL--QUSScRtUvVIutQ/zh-cn_image_0000002723856852.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/iVl7Hbc7RKC-OpwTRIjorw/zh-cn_image_0000002727592592.gif)
 
 ### 示例10（设置过界停留）
 
@@ -2012,7 +2012,7 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Llwlm2haSCigKpxBZFkang/zh-cn_image_0000002723696934.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/zMucciZFStOLjImrFpPeyQ/zh-cn_image_0000002727752450.gif)
 
 ### 示例11（自由滚动和缩放）
 
@@ -2048,7 +2048,7 @@ struct ScrollZoomExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/1F_GrWh0RICzxEyNs3bNBA/zh-cn_image_0000002753296701.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/sojP3XyBQxeoJopHFRPmGQ/zh-cn_image_0000002757312165.gif)
 
 ### 示例12（获取内容总大小）
 
@@ -2123,7 +2123,7 @@ struct ScrollExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/sLVA_ZRFT0ayz_XNOuRBnw/zh-cn_image_0000002753456619.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/2QFv9HhDTKOi8mFoRues1w/zh-cn_image_0000002757232285.gif)
 
 ### 示例13（设置滚动事件）
 

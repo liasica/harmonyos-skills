@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvas
 title: CanvasRenderingContext2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasRenderingContext2D
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d8fad6ad443da074ea3d5edd7e4338372a62d8c16936812be4d8797d48b6dec2
+scraped_at: 2026-09-18T06:48:25+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:3ee02aa05710c53f80806a013443d347020fde7c894ae8913856c8c5b2276489
 ---
 
 CanvasRenderingContext2D是Canvas组件的2D绘图上下文对象，用于在Canvas组件上进行自定义绘图。支持绘制形状（矩形、圆形、椭圆、路径等）、文本、图片、渐变、阴影等多种绘制类型，适用于数据可视化、游戏开发、图像编辑、自定义UI绘制等场景。通过该对象，开发者可以灵活控制绘制过程，实现复杂的2D图形效果。
@@ -109,7 +109,7 @@ struct LengthMetricsUnitDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/nWvWGCUdQ8-_2QjUf0EK4w/zh-cn_image_0000002723697258.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/KdnejEqiRDSE5v2tFq4wLg/zh-cn_image_0000002727752774.png)
 
 ## 属性
 
@@ -177,7 +177,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/JsQ9OCi2SyiQhw5uoToReQ/zh-cn_image_0000002753297025.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/z3c0RulfRiiGDnkmvigqSQ/zh-cn_image_0000002757312489.png)
 
 ## on('onAttach')13+
 
@@ -216,9 +216,8 @@ CanvasRenderingContext2D对象在同一时间只能与一个Canvas组件绑定�
 
 触发'onAttach'回调的一般场景：
 
-1、Canvas组件创建时绑定CanvasRenderingContext2D对象；
-
-2、CanvasRenderingContext2D对象新绑定一个Canvas组件时。
+1. Canvas组件创建时绑定CanvasRenderingContext2D对象；
+2. CanvasRenderingContext2D对象新绑定一个Canvas组件时。
 
 ## on('onDetach')13+
 
@@ -253,9 +252,8 @@ on(type: 'onDetach', callback: Callback<void>): void
 
 触发'onDetach'回调的一般场景：
 
-1、Canvas组件销毁时解除绑定CanvasRenderingContext2D对象；
-
-2、CanvasRenderingContext2D对象新绑定一个Canvas组件，会先解除已有的绑定。
+1. Canvas组件销毁时解除绑定CanvasRenderingContext2D对象；
+2. CanvasRenderingContext2D对象新绑定一个Canvas组件，会先解除已有的绑定。
 
 ## off('onAttach')13+
 
@@ -404,7 +402,7 @@ struct AttachDetachExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/1zIy5VonQ0KNdokwgB8Aqw/zh-cn_image_0000002753456943.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/CFmUse-zReuuGKFfHAX5Mw/zh-cn_image_0000002757232609.gif)
 
 ## startImageAnalyzer12+
 
@@ -536,7 +534,7 @@ struct ImageAnalyzerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/rRwqack_QIm-IcPg9l01RA/zh-cn_image_0000002723857178.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/l-_LDuCARGGAg21eSGLysg/zh-cn_image_0000002727592918.png)
 
 ## getContext2DFromDrawingContext23+
 
@@ -604,7 +602,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/MG0IU2AIQCaOP7FNAt8KGQ/zh-cn_image_0000002723697260.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/OuHZGKFrS82RwQJyu4I_Bw/zh-cn_image_0000002727752776.png)
 
 ## RenderingContextOptions23+
 
@@ -683,7 +681,7 @@ struct WidthExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/9KXi1kxeQCamZV14fWAi7g/zh-cn_image_0000002753297027.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/urmV2yjFQMC2KxvWRqbiRA/zh-cn_image_0000002757312491.png)
 
 ### 示例2（height属性用法）
 
@@ -712,7 +710,7 @@ struct HeightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/F5x-jXYISN-E3qUmLwsG2Q/zh-cn_image_0000002753456945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/zeHjoHk2QFSEicBvDSIa2Q/zh-cn_image_0000002757232611.png)
 
 ### 示例3（canvas属性用法）
 
@@ -756,4 +754,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/tWlOnJr1RTuB3_zg6pCPug/zh-cn_image_0000002723857180.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/mP0EfroxTuiL3YAzxwlOZA/zh-cn_image_0000002727592920.png)

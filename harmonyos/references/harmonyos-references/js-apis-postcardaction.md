@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: postCardAction
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > postCardAction
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9ed861877a04a7b28163f7df8e6c3a26c7b654401598a1496e6b3defa91f9b0f
+scraped_at: 2026-09-18T06:48:00+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:9640e5e38b2a0662308ceb5d85ee1ce356bb8fa89fa2012c3e81d808d0187b58
 ---
 
 用于卡片内部和提供方应用间的交互，当前支持router、message和call三种类型的事件，仅在卡片中可以调用。
@@ -37,7 +37,7 @@ postCardAction(component: Object, action: Object): void
 
 action参数说明：
 
-| **参数名** | **类型** | **必填** | **取值说明** |
+| **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | action | string | 是 | action的类型，支持三种预定义的类型：  - router：跳转到提供方应用的指定UIAbility，只允许在点击事件中触发。  - message：自定义消息，触发后会调用提供方FormExtensionAbility的[onFormEvent()](js-apis-app-form-formextensionability.md#formextensionabilityonformevent)生命周期回调。  - call：后台启动提供方应用。触发后会拉起提供方应用的指定UIAbility（仅支持launchType为singleton的[UIAbility](../harmonyos-guides/uiability-launch-type.md)，即启动模式为单实例的UIAbility），但不会调度到前台。提供方应用需要具备后台运行权限([ohos.permission.KEEP\_BACKGROUND\_RUNNING](../harmonyos-guides/permissions-for-all.md#ohospermissionkeep_background_running))。 |
 | bundleName | string | 否 | action为router / call 类型时跳转的包名。 |

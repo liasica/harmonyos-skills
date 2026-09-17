@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-adminmanager
-title: "@ohos.enterprise.adminManager（admin权限管理）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.adminManager（admin权限管理）
+title: "@ohos.enterprise.adminManager (admin权限管理)"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.adminManager (admin权限管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:41+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-18T06:50:23+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:3ca961e1d70c931bf33ce8b1d541bc2cf46323d273e1fb11006c6c44118784db
 ---
 

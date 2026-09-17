@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:27+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:7b910a1cf9a2461828e060db086942d88780be62d35195b7581c5d4f6928ee8d
+scraped_at: 2026-09-18T06:45:06+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:8511a1d86dede6d411647fb9b4c8f0cff569b513d29ea0bab5ecb79fd33c7a70
 ---
 
 本文提供沉浸光感开发过程中的常见问题及解决措施。沉浸光感的完整能力介绍及开发指导，请参见[沉浸光感简介](arkts-immersive-light-sense-overview.md)。
@@ -41,7 +41,7 @@ content_hash: sha256:7b910a1cf9a2461828e060db086942d88780be62d35195b7581c5d4f692
 * 指定弹窗类组件（[AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md)、[ActionSheet](../harmonyos-references/ts-methods-action-sheet.md)、[CustomDialog](../harmonyos-references/ts-methods-custom-dialog-box.md)、[CalendarPickerDialog](../harmonyos-references/ts-methods-calendarpicker-dialog.md)、[DatePickerDialog](../harmonyos-references/ts-methods-datepicker-dialog.md)、[TimePickerDialog](../harmonyos-references/ts-methods-timepicker-dialog.md)、[TextPickerDialog](../harmonyos-references/ts-methods-textpicker-dialog.md)、[SelectionMenu](../harmonyos-references/ohos-arkui-advanced-selectionmenu.md)、[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)弹窗、[Text](../harmonyos-references/ts-basic-components-text.md)设置[copyOption](../harmonyos-references/ts-basic-components-text.md#copyoption9)后长按或双击触发的文本菜单）的沉浸光感效果可在全页面生效。
 * 指定弹窗类接口（[PromptAction](../harmonyos-references/arkts-apis-uicontext-promptaction.md)、[ArkUI\_NativeDialog](../harmonyos-references/capi-arkui-nativemodule-arkui-nativedialog.md)、[@ohos.promptAction (弹窗)](../harmonyos-references/js-apis-promptaction.md)、[Popup控制](../harmonyos-references/ts-universal-attributes-popup.md)、[Tips控制](../harmonyos-references/ts-universal-attributes-tips.md)、[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)、[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)）的沉浸光感效果可在全页面生效。
 * [Slider](../harmonyos-references/ts-basic-components-slider.md)、[Toggle](../harmonyos-references/ts-basic-components-toggle.md)、[Select](../harmonyos-references/ts-basic-components-select.md)的沉浸光感效果可在全页面生效。
-* 其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
+* 其他组件仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 
 **解决措施**
 
@@ -143,7 +143,7 @@ struct MaterialScopeAdaptExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/JRfouEeFQFGLd3wMLj-gAA/zh-cn_image_0000002723854782.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/4P4Tmc5tT1qsl0oLFpwGGg/zh-cn_image_0000002727590522.jpg)
 
 ### 背景色或背景模糊遮挡材质效果
 
@@ -350,10 +350,13 @@ Column() {
 
 * Checkbox可视区域为40\*40的圆形，材质渲染区域为40\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/g4J-aeW1TKyh8r0JScdW9Q/zh-cn_image_0000002723694864.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/TS28RZEZQpyKG7zo1wgGYA/zh-cn_image_0000002727750380.jpg)
 * Text组件可视区域为文本内容，材质渲染区域为100\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/DnM9_1x1TDS_MB2ka3B2RQ/zh-cn_image_0000002753294631.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/XRx1lpZ5RNK2oJ2UNzLX7Q/zh-cn_image_0000002757310095.jpg)
+* Progress组件可视区域为胶囊形，材质渲染区域为100\*40的矩形。
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Of4g8lYZTGWYOmsWrQ_yPQ/zh-cn_image_0000002757230215.jpg)
 
 **可能原因**
 
@@ -395,6 +398,32 @@ Row() {
       interactive: true
     }))
 }
+
+Row() {
+  Text('Progress组件：')
+    .fontColor(Color.Black)
+  Progress({value: 40, type: ProgressType.Capsule})
+    .width(100)
+    .height(40)
+    .systemMaterial(new uiMaterial.ImmersiveMaterial({
+      style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+      interactive: true
+    }))
+}
+
+// 材质渲染区域与组件可视区域一致示例
+Row() {
+  Text('Progress组件：')
+    .fontColor(Color.Black)
+  Progress({value: 40, type: ProgressType.Capsule})
+    .width(100)
+    .height(40)
+    .borderRadius(20) // 设置borderRadius属性使材质渲染区域与组件可视区域一致
+    .systemMaterial(new uiMaterial.ImmersiveMaterial({
+      style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+      interactive: true
+    }))
+}
 ```
 
 ## 材质效果的显示层级问题
@@ -403,7 +432,7 @@ Row() {
 
 同时给组件设置沉浸式系统材质和背景色，材质效果被遮盖。例如TextArea组件设置背景色后，会遮盖材质效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/1rrKvLyCRsm01J_G-OJmlQ/zh-cn_image_0000002753454549.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/eBFbcXF0ST2NQOtiUhHJDw/zh-cn_image_0000002727590524.jpg)
 
 **可能原因**
 

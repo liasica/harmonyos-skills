@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/explicit-impl
 title: 显式Want与隐式Want匹配规则
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 信息传递载体Want > 显式Want与隐式Want匹配规则
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:07+08:00
+scraped_at: 2026-09-18T06:44:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:024180ae521657331e0374e9f57bffb097a98996d53b02a06a3d5f3d6cdd3bd6
+content_hash: sha256:01e857c930f732293d0a8f401290df8ebada86b6c0609c478b4a36ab755f27c6
 ---
 
 在启动目标应用组件时，会通过显式[Want](../harmonyos-references/js-apis-app-ability-want.md)或者隐式[Want](../harmonyos-references/js-apis-app-ability-want.md)进行目标应用组件的匹配，这里说的匹配规则就是调用方传入的[want](../harmonyos-references/js-apis-app-ability-want.md)参数中设置的参数如何与目标应用组件声明的配置文件进行匹配。
@@ -68,7 +68,7 @@ content_hash: sha256:024180ae521657331e0374e9f57bffb097a98996d53b02a06a3d5f3d6cd
 
 **图1** want参数的action匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/xBpeu0JzRC68n0JvFb9gBA/zh-cn_image_0000002723694174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/gZCRmKolSMKnyANO8q5XIA/zh-cn_image_0000002727749690.png)
 
 ### want参数的entities匹配规则
 
@@ -82,7 +82,7 @@ content_hash: sha256:024180ae521657331e0374e9f57bffb097a98996d53b02a06a3d5f3d6cd
 
 **图2** want参数的entities匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/hpM1So2lQjGInuCj1d3IIw/zh-cn_image_0000002753293941.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/0SrETxXfRRaUJl03DZIl_g/zh-cn_image_0000002757309405.png)
 
 ### want参数的uri和type匹配规则
 
@@ -113,7 +113,7 @@ content_hash: sha256:024180ae521657331e0374e9f57bffb097a98996d53b02a06a3d5f3d6cd
 
 **图3** want参数中uri和type皆不为空时的匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/63TxVp3fQcm3d-KIh5K54A/zh-cn_image_0000002753453859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/klnaY2HRShG8DYE4TPqurg/zh-cn_image_0000002757229525.png)
 
 为了简化描述：
 
@@ -122,7 +122,7 @@ content_hash: sha256:024180ae521657331e0374e9f57bffb097a98996d53b02a06a3d5f3d6cd
 
 **图4** want参数中uri和type的具体匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/84x7uT-3TzesaeIjsZE5xQ/zh-cn_image_0000002723854094.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/OZw07oJXQoCWRs0LGW992A/zh-cn_image_0000002727589834.png)
 
 ### uri匹配规则
 
@@ -154,7 +154,7 @@ content_hash: sha256:024180ae521657331e0374e9f57bffb097a98996d53b02a06a3d5f3d6cd
 
 **图5** want参数中uri的匹配规则示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/0oHgjW5QQ5uKHL99b1uPzQ/zh-cn_image_0000002723694176.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/FIrcVsSCQw2fz_fsTUSjRQ/zh-cn_image_0000002727749692.png)
 
 ### type匹配规则
 
@@ -182,6 +182,6 @@ content_hash: sha256:024180ae521657331e0374e9f57bffb097a98996d53b02a06a3d5f3d6cd
 
 **图6** want参数中linkFeature具体匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Xc--l8UATh6W_Cg05NXFZQ/zh-cn_image_0000002753293943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Xc21gVS_QvGFButRDzvAbg/zh-cn_image_0000002757309407.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/6JJsd8fHQHq8iS5P8tW1qg/zh-cn_image_0000002753453861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/SSCUZv16QOGSZ0Yucg8sPw/zh-cn_image_0000002757229527.png)

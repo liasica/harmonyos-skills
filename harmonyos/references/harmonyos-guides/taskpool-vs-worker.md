@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-vs-w
 title: TaskPool和Worker的对比
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > TaskPool和Worker的对比
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:15+08:00
+scraped_at: 2026-09-18T06:44:56+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:69d101b7b2bcb60f04ee240699bc09bd47e73b8652e28a8773636c55c3f7cc2d
+content_hash: sha256:3759bf27d6f5a10e8c3a5a195b7ea92c79ea9b65b6efdb12100c828cca8cca3e
 ---
 
 TaskPool和Worker的作用是为应用程序提供多线程运行环境，用于处理耗时计算任务或其他密集型任务，避免任务阻塞宿主线程，提高系统性能和资源利用率。这两种多线程并发能力均是基于Actor并发模型实现的。TaskPool在Worker之上做了更多场景化的功能封装，内置调度器和Worker线程池，支持任务优先级设置、任务组管理、自动扩缩容等能力，开发者无需关注线程生命周期；Worker则拥有独立的运行环境，适合需要长时间占据线程或依赖线程上下文的场景。
@@ -50,13 +50,13 @@ Worker拥有独立的运行环境，每个Worker线程和主线程一样拥有�
 
 **图 1** Worker工作原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/1GIbPBtfQZaVst9OzwV4mw/zh-cn_image_0000002723694230.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/LhK057SORRG-n_y_b7VG2A/zh-cn_image_0000002727749746.png)
 
 在多核的情况下（下图中的CPU 1和CPU 2能同时工作），多个Worker线程（下图中的Worker thread1和Worker thread2）可以同时执行，因此Worker线程做到了真正的并发，如下图所示：
 
 **图 2** 多核CPU下Worker并发原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/3QlYUVgATq2CLzFUY9oSoA/zh-cn_image_0000002753293997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/FmppuAZeT8GOal8Cr9AqUQ/zh-cn_image_0000002757309461.png)
 
 ### TaskPool工作原理
 
@@ -64,7 +64,7 @@ TaskPool在Worker之上实现了调度器和Worker线程池，无需管理生命
 
 **图 3** TaskPool工作原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/GfFLMXpqS9G-Tk4m5U4X3Q/zh-cn_image_0000002753453915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/-usSunWwTquJX6ghcuSZqA/zh-cn_image_0000002757229581.png)
 
 ## 适用场景对比
 
@@ -118,7 +118,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
 
 **图 4** ArkTS图片编辑效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/NOhUGwjuTMyGiC3Q9Osxiw/zh-cn_image_0000002723854150.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/MikuVaOUStOCUHvcFXv_wA/zh-cn_image_0000002727589890.gif)
 
 **说明** 
 
@@ -387,11 +387,11 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
 
 **图 5** 中载模型下Worker与TaskPool耗时对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/78-1atZMTkG_yn0tLMe4Bg/zh-cn_image_0000002723694232.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/q8MvROmjT1mReJGuVxhcFA/zh-cn_image_0000002727749748.png)
 
 **图 6** 重载模型下TaskPool与Worker耗时对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Dee7RuOtQGmXEuhP1Ba4_A/zh-cn_image_0000002753293999.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VuML4OhbSdq4SUern4L7Ig/zh-cn_image_0000002757309463.png)
 
 从模型实验数据可以看出：
 
@@ -415,11 +415,11 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
 
 **图 7** 中载模型下TaskPool与Worker运行时内存占用对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/3ABOoNw0RqyWKd5TLU__qQ/zh-cn_image_0000002753453917.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/KjBWBkyYT-KTtAzP-Tj3SA/zh-cn_image_0000002757229583.png)
 
 **图 8** 重载模型下TaskPool与Worker运行时内存占用对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/1M3a7D4hRNGbHroyTRb2lg/zh-cn_image_0000002723854152.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/W07bS9orRfaqGx3lhzhkTg/zh-cn_image_0000002727589892.png)
 
 从以上实验数据可以看出：
 

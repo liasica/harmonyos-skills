@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-faq-abou
 title: 稳定性相关问题汇总
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API常见问题汇总 > 稳定性相关问题汇总
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:28+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:dad9cc93fc3f1962040f80207de3b486405867bd73db549bd83cfa64aff91923
+scraped_at: 2026-09-18T06:46:56+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:9a182b169a7e0a006e225ec52ebc3fd3f1d5876c9adeb8e436d3869da8e36858
 ---
 
 ## 应用运行过程中出现高概率闪退怎么进行定位解决
@@ -17,7 +17,7 @@ content_hash: sha256:dad9cc93fc3f1962040f80207de3b486405867bd73db549bd83cfa64aff
 * 崩溃信息如下：
 
 ```sh
-Reason:Signal:SIGSEGV(SEGV_MAPERR)@0x00000136 probably caus
+Reason:Signal:SIGSEGV(SEGV_MAPERR)@0x00000136 probably caused by NULL pointer dereference
 Fault thread info:
 Tid:15894, Name:e.myapplication
 #00 pc 002b8dd4 /system/lib/platformsdk/libark_jsruntime.so
@@ -41,7 +41,7 @@ Tid:15894, Name:e.myapplication
 
    DevEco Studio开关：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/dz14hrafQrCFKtVkPixi9w/zh-cn_image_0000002723696596.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/4ZZbhQdyR8afEBK7yKpgGg/zh-cn_image_0000002727752112.png)
 2. 使用Node-API接口时入参非法导致。
 
 * 这种情况一般是崩溃栈上的so会很浅，so调用了某个具体的Node-API接口，比如调用了napi\_call\_function之类的接口，然后Node-API又调到了libark\_jsruntime的so，然后直接崩溃在libark\_jsruntime里面。

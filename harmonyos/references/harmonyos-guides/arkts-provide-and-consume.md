@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide
 title: "@Provide装饰器和@Consume装饰器：与后代组件双向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Provide装饰器和@Consume装饰器：与后代组件双向同步
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:20+08:00
+scraped_at: 2026-09-18T06:45:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cd784f8090c3b776b08c62e105790ae9647785e4e1f11096de7e2c9c9817af52
+content_hash: sha256:2b5db725f7b621371e7d017b27c5f5201a5e494c41258dd99b75202a98333a80
 ---
 
 [@Provide](../harmonyos-references/ts-state-management-provide.md#provide)和[@Consume](../harmonyos-references/ts-state-management-consume.md#consume)，应用于与后代组件的双向数据同步、状态数据在多个层级之间传递的场景。不同于上文提到的父子组件之间通过命名参数机制传递，@Provide和@Consume摆脱参数传递机制的束缚，实现跨层级传递。
@@ -66,7 +66,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
 
 **图1** @Provide初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/cjimIxw-QLiVFyU85Leoyg/zh-cn_image_0000002753294117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/6XAT367IQui7U1ox9TsNog/zh-cn_image_0000002757309581.png)
 
 | @Consume变量装饰器 | 说明 |
 | --- | --- |
@@ -78,7 +78,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
 
 **图2** @Consume初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/wdO_Uly7Q52h6Q_3XQdggQ/zh-cn_image_0000002753454035.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Fok7_WvgTVGdkNT1ouX0Jw/zh-cn_image_0000002757229701.png)
 
 ## 观察变化和行为表现
 
@@ -107,7 +107,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
 
    通过初始渲染的步骤可知，子组件@Consume持有@Provide的实例。在@Consume更新后调用@Provide的更新方法，将更新的数值同步回@Provide，以此实现@Consume向@Provide的同步更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/pg8SSsdCQlScAWpSDkY0zg/zh-cn_image_0000002723854270.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/xBP4nE6oTMuoA91rCog5Dg/zh-cn_image_0000002727590010.png)
 
 ## 限制条件
 
@@ -181,7 +181,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/5yzS0DsJRGiP5Lbdp7t5JQ/zh-cn_image_0000002723694352.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/h9MaG32sTBWUZQ4Npje5FQ/zh-cn_image_0000002727749868.png)
 3. @Provide的key重复定义时，框架会抛出运行时错误，从API version 23开始，将返回错误码[140114](../harmonyos-references/errorcode-statemanagement.md#section140114-声明重复key的provide)，提醒开发者重复定义key。如果开发者需要重复key，可以使用[allowOverride](arkts-provide-and-consume.md#provide支持allowoverride参数)。
 
    ```ts
@@ -256,7 +256,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/LM4HkuHkTsSY287YtWlnDw/zh-cn_image_0000002753294119.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/LIq8O9r0Tbuvoby_s-svXQ/zh-cn_image_0000002757309583.png)
 5. @Provide与@Consume不支持装饰Function类型的变量，API version 23之前，应用在运行时会出现错误。
 
    从API version 23开始，在应用编译时添加了相关校验，@Provide与@Consume装饰Function类型变量会提示ERROR，应在代码中删除Function类型变量的@Provide或@Consume装饰器。
@@ -336,7 +336,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/25mz-r3aQcalenkA8UctQQ/zh-cn_image_0000002753454037.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Ct8x2R1oRbm931zuBEXYAQ/zh-cn_image_0000002757229703.png)
 7. 父组件传入undefined时，@Provide装饰的变量仍使用本地默认值进行初始化。
 
    ```typescript
@@ -370,7 +370,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/aiOwdNzSSzOzhhoeNT9N9A/zh-cn_image_0000002723854272.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Zs2tWfGYQWaN9mCUocR7aQ/zh-cn_image_0000002727590012.png)
 
 ## 使用场景
 
@@ -434,7 +434,7 @@ struct ToDo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/zakPbq-rQUypD1D2Gq0GvA/zh-cn_image_0000002723694354.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/vZuWnOUbQTSq4OyuiL7axg/zh-cn_image_0000002727749870.gif)
 
 ### 装饰Array类型变量
 
@@ -506,7 +506,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/JqNmGuhQTTGjcmM71YMeyA/zh-cn_image_0000002753294121.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/DveUltQWSYCIQbvKw0HSDQ/zh-cn_image_0000002757309585.gif)
 
 ### 装饰Map类型变量
 
@@ -591,7 +591,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/_uuMSQdRQEm98K8pG905Mw/zh-cn_image_0000002753454039.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/J_gOcED_TDaes5z49fFflA/zh-cn_image_0000002757229705.gif)
 
 ### 装饰Set类型变量
 
@@ -667,7 +667,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/lRZohbxfT9ydECwMHAZqRQ/zh-cn_image_0000002723854274.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/eWp0LQNiSFCY4TRWSeBwnQ/zh-cn_image_0000002727590014.gif)
 
 ### 装饰Date类型变量
 
@@ -735,7 +735,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/FRiFkMx2QuOmg3olPRBn3g/zh-cn_image_0000002723694356.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/E73uSaxIRdGol6i0tPvZDw/zh-cn_image_0000002727749872.gif)
 
 ### @Provide和@Consume支持联合类型实例
 
@@ -789,7 +789,7 @@ struct Ancestors {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rmnrhhQpT4q85tmMHSzgTA/zh-cn_image_0000002753294123.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/MzNKFTbrQeKkYXSPhSIF9w/zh-cn_image_0000002757309587.gif)
 
 ### @Provide支持allowOverride参数
 
@@ -875,7 +875,7 @@ struct GrandParent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/CpD4IHoKQ2m4jII6ZsL9Ow/zh-cn_image_0000002753454041.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/UkKCmq_xTvKSo--BwqL34w/zh-cn_image_0000002757229707.gif)
 
 在上面的示例中：
 
@@ -995,7 +995,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/mvhb0N5PQS2HHnrdxxlaNw/zh-cn_image_0000002723854276.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/EhcqzX6NR_WXuFZUsBAA1w/zh-cn_image_0000002727590016.gif)
 
 在上面的示例中：
 
@@ -1172,7 +1172,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/DwlyZqzFTr2AjbEUvY9V0A/zh-cn_image_0000002723694358.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/_vPv5-PYTOOv6Tk9HURBqQ/zh-cn_image_0000002727749874.gif)
 
 ## 常见问题
 
@@ -1311,4 +1311,4 @@ struct CustomWidgetChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/8EjFvl2uQGuDGHJ4bSTGqQ/zh-cn_image_0000002753294125.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/sg3qi0UmT4ypasBg8cnqXg/zh-cn_image_0000002757309589.gif)

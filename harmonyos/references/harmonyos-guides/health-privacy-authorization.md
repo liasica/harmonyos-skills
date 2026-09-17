@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-privac
 title: 拉起运动健康App隐私授权
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 拉起运动健康App隐私授权
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:44+08:00
+scraped_at: 2026-09-18T06:46:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5bd935b60b9b573cf46dc1b25791aa72967549b60462e76b80b3d235fb60f55d
+content_hash: sha256:3cdf7d23875e18771d1a9e8140c041bb42ca68eb05649168847f301e3310d228
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:5bd935b60b9b573cf46dc1b25791aa72967549b60462e76b80b3d235fb6
 
 1. 在module.json5文件中增加querySchemes字段，并在列表中配置"huaweischeme"。"huaweischeme"为需要跳转到的运动健康App首页的scheme，页面参考如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/Q3Odp7B5SH2nRNfJlDLEtw/zh-cn_image_0000002753295839.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/QdVG-HmYSFCawNI6FkLyVQ/zh-cn_image_0000002757311303.png)
 2. 导入相关功能模块。
 
    ```typescript

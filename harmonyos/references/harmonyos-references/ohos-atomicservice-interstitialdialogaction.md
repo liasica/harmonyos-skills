@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: InterstitialDialogAction
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > InterstitialDialogAction
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9b24538ae21e1706c4ae6281fa1aaebb66e4740ad8a1776cf97cd0bf2fe8d0e2
+scraped_at: 2026-09-18T06:48:29+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:742a22fcb5d829801e5e89efbc166a6d1159e1ca644bd5d54a732ae33ec779f9
 ---
 
 InterstitialDialogAction弹框在元服务中用于在保持当前的上下文环境时，临时展示用户需关注的信息或待处理的操作，用户点击弹框的不同区域可以触发对应的回调动作。
@@ -166,7 +166,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+    // 主窗口创建，为此能力设置主页面
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
@@ -203,17 +203,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+    // 主窗口销毁，释放与UI相关资源
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+    // Ability 回到前台
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+    // Ability 回到后台
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }
@@ -260,7 +260,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/yO7yS7-6Q4eP9BntvLIgNg/zh-cn_image_0000002753297169.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Kwwajix-QBul4qg5L-31Nw/zh-cn_image_0000002757312633.png)
 
 ### 示例2
 
@@ -292,7 +292,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+    // 主窗口创建，为此能力设置主页面
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
@@ -329,17 +329,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+    // 主窗口销毁，释放与UI相关资源
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+    // Ability 回到前台
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+    // Ability 回到后台
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }
@@ -386,4 +386,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/UeFJtFFMQveKxWJZ95E8yw/zh-cn_image_0000002753457087.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/XAirDOChSRy2v8PqxiRYuw/zh-cn_image_0000002757232753.png)

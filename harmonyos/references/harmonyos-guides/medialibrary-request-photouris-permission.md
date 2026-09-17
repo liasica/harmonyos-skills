@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: 设备升级继承媒体文件访问权限
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 设备升级继承媒体文件访问权限
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:27+08:00
+scraped_at: 2026-09-18T06:46:01+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:b37331c130cf18842a599652542b68ccf4c7a3700f84ca8c5e43484bf3b5725c
+content_hash: sha256:40b0a47084bf67996c206621c6a5177de6005c1c0830220b206258e5df96ded1
 ---
 
 应用在HarmonyOS 3.1 Release API 9及更低版本运行时，有图片/视频访问权限，并在应用内记录对应的图片/视频文件路径或uri，在进入应用特定界面时，可实时访问图片/视频显示内容。
@@ -14,13 +14,13 @@ content_hash: sha256:b37331c130cf18842a599652542b68ccf4c7a3700f84ca8c5e43484bf3b
 
 本指南将帮助开发者了解如何在升级后，继承媒体文件的访问权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/cJC9LcEFRmWz1W42stZa7A/zh-cn_image_0000002753295515.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/2w5BX5NJT3yjANBSjMsEXQ/zh-cn_image_0000002757310979.png)
 
 应用在启动或是进入对应的业务界面之后，从应用数据中获取在HarmonyOS 3.1/4.0版本的应用上已有权限且需要继承权限的媒体文件uri，调用Scenario Fusion Kit的接口[convertFileUris](../harmonyos-references/scenario-fusion-fileuriresult.md#convertfileuris)，获取转换后的HarmonyOS 5.0可访问的uri。再调用Media Library Kit的接口[requestPhotoUrisReadPermission()](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#requestphotourisreadpermission14)，输入需要继承访问权限的媒体文件uri，拉起授权界面。在授权界面，根据应用输入的uri，将显示对应图片/视频缩略图。用户可以勾选对应的图片/视频，并同意授权，此时应用将获取该图片/视频的访问权限。
 
 在用户界面的效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/sM2j-fMFRlups5V7rijHvw/zh-cn_image_0000002753455433.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/b7JnT2tgQoiNcPo9OB_R7g/zh-cn_image_0000002757231099.png)
 
 ## 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-faq-
 title: 某些特殊场景下（如附近存在磁场干扰、手机发烫或扫描到重复纹理等），出现平面漂移或者位姿数据跳变现象
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > AR Engine常见问题 > 某些特殊场景下（如附近存在磁场干扰、手机发烫或扫描到重复纹理等），出现平面漂移或者位姿数据跳变现象
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:30+08:00
+scraped_at: 2026-09-18T06:46:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b4789d869183257e0a647fe01c96718f6ebf3e9ee93d3a2020f799d8468507f0
+content_hash: sha256:793f27939946791ff935d91967a8a2b9a28f6386582e9eb3b34a4349d8f2057b
 ---
 
 ## 现象描述
@@ -14,7 +14,7 @@ content_hash: sha256:b4789d869183257e0a647fe01c96718f6ebf3e9ee93d3a2020f799d8468
 
 **图1** 重复纹理的地板
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/X1kiRTktTZ-fwCd-DamtsQ/zh-cn_image_0000002753455453.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/K438OEf9QzKAkmEQrKcYQA/zh-cn_image_0000002757231119.jpg)
 
 ## 可能原因
 
@@ -28,4 +28,4 @@ AR Engine通过获取到的加速度计传感器和磁力计传感器的信息�
 
 **计算运动速度**：x,y,z为在t时刻的位姿数据的位移量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/xX_nM2jiQDut_Nq9_hmMVA/zh-cn_image_0000002723855688.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/KRmxCu7DTOqItbJdEqelPw/zh-cn_image_0000002727591428.png)

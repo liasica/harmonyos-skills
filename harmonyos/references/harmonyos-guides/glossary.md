@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/glossary
 title: HarmonyOS术语
 breadcrumb: 指南 > 基础入门 > HarmonyOS术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-18T06:44:49+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:e6fba1d44a35bb63f875b8e6be421c2e103c2b76ecbc4e404092f6d7208642d7
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: WithTheme
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 主题 > WithTheme
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:28868f2a9ac87fca337e5daae711e7900a1d6e8c1b9d1b157e7b84b968bce8db
+scraped_at: 2026-09-18T06:48:29+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:390314f9abdcc9f9d83210d8b210cfdd34b1dbc9275cd56a0131db1795092a9d
 ---
 
 WithTheme组件用于设置应用局部页面自定义主题风格，可设置子组件深浅色模式和自定义配色。
@@ -15,7 +15,7 @@ WithTheme组件用于设置应用局部页面自定义主题风格，可设置�
 * 该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本模块接口仅可在Stage模型下使用。
 * WithTheme支持的系统组件如下：[TextInput](ts-basic-components-textinput.md)、[Search](ts-basic-components-search.md)、[Button](ts-basic-components-button.md)、[Badge](ts-container-badge.md)、[Swiper](ts-container-swiper.md)、[Text](ts-basic-components-text.md)、[Select](ts-basic-components-select.md)、[Menu](ts-basic-components-menu.md)、[TimePicker](ts-basic-components-timepicker.md)、[DatePicker](ts-basic-components-datepicker.md)、[TextPicker](ts-basic-components-textpicker.md)、[Checkbox](ts-basic-components-checkbox.md)、[CheckboxGroup](ts-basic-components-checkboxgroup.md)、[Radio](ts-basic-components-radio.md)、[Slider](ts-basic-components-slider.md)、[Progress](ts-basic-components-progress.md)、[QRCode](ts-basic-components-qrcode.md)、[Toggle](ts-basic-components-toggle.md)、[TextClock](ts-basic-components-textclock.md)、[PatternLock](ts-basic-components-patternlock.md)、[Divider](ts-basic-components-divider.md)。从API版本26.0.0开始，新增[CalendarPicker](ts-basic-components-calendarpicker.md)、[UIPickerComponent](ts-container-ui-picker-component.md)、[TextArea](ts-basic-components-textarea.md)、[属性字符串](ts-universal-styled-string.md)、[Gauge](ts-basic-components-gauge.md)、[DataPanel](ts-basic-components-datapanel.md)、[RichEditor](ts-basic-components-richeditor.md)、[MenuItem](ts-basic-components-menuitem.md)、[MenuItemGroup](ts-basic-components-menuitemgroup.md)、[Image](ts-basic-components-image.md)、[ImageAnimator](ts-basic-components-imageanimator.md)、[Counter](ts-container-counter.md)、[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)、[LoadingProgress](ts-basic-components-loadingprogress.md)。
-* WithTheme相关使用指导请参考[设置应用内主题换肤](../harmonyos-guides/theme_skinning.md)。
+* WithTheme相关使用指导请参考[设置应用内主题换肤](../harmonyos-guides/theme-skinning.md)。
 
 ## 子组件
 
@@ -55,7 +55,7 @@ WithTheme(options: WithThemeOptions)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| theme | [CustomTheme](ts-container-with-theme.md#customtheme) | 否 | 是 | 用于自定义WithTheme作用域内组件缺省配色。  默认值：undefined，缺省样式跟随系统[token默认样式](../harmonyos-guides/theme_skinning.md#系统缺省token色值)。 |
+| theme | [CustomTheme](ts-container-with-theme.md#customtheme) | 否 | 是 | 用于自定义WithTheme作用域内组件缺省配色。  默认值：undefined，缺省样式跟随系统[token默认样式](../harmonyos-guides/theme-skinning.md#系统缺省token色值)。 |
 | colorMode | [ThemeColorMode](ts-universal-attributes-foreground-blur-style.md#themecolormode枚举说明) | 否 | 是 | 用于指定WithTheme作用域内组件配色深浅色模式。  默认值：ThemeColorMode.SYSTEM |
 
 ## CustomTheme
@@ -76,7 +76,7 @@ type CustomTheme = import('../api/@ohos.arkui.theme').CustomTheme
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/M-9v0iR4Q-eAPwCwz6w2yw/zh-cn_image_0000002723697392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/gtEQHzCfSPq2klZumxcazQ/zh-cn_image_0000002727752908.png)
 
 dark.json数据示例：
 
@@ -147,7 +147,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/-yQzJA0MSWuJU9pz7eQmPA/zh-cn_image_0000002753297159.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/LYwJ0SvtQa6h_bklal6T_g/zh-cn_image_0000002757312623.png)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
@@ -233,4 +233,4 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/75H_EhNQT-u0bygBEq-apg/zh-cn_image_0000002753457077.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/QmOnLjU6QaaPWSxeWw3ndw/zh-cn_image_0000002757232743.gif)

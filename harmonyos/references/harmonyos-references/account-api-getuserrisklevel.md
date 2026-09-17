@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取用户风险等级
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 获取用户信息 > 获取用户风险等级
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:44+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:34b86147f06605afd38c81f4af76df4605d9207ca97268df2761f22961ee51fa
+scraped_at: 2026-09-18T06:51:41+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:38d08a34c57e180fd3d532750fb9983c1452fca5c289970836be26e713994d26
 ---
 
 **注意** 
@@ -90,8 +90,8 @@ Content-Type: application/json;charset=utf-8
 | --- | --- | --- | --- |
 | errCode | 是 | Int | 错误码，调用成功时返回0，调用失败时返回对应错误码。 |
 | errMsg | 是 | String | 错误描述，调用成功时返回空字符串，调用失败时返回对应描述。 |
-| riskLevel | 否 | Int | 请求成功时才会返回风险等级（详见后文附表①）。  0：未发现显著风险  1：低风险  2：中风险  3：高风险  4：风险未知 |
-| riskTag | 否 | String[] | 风险标签（详见后文附表②）。 |
+| riskLevel | 否 | Int | 请求成功时才会返回风险等级（详见下文附表①）。  0：未发现显著风险  1：低风险  2：中风险  3：高风险  4：风险未知 |
+| riskTag | 否 | String[] | 请求成功时才会返回风险标签（详见下文附表②）。 |
 
 附表①: 风险等级含义与建议处置方案
 

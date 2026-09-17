@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelop
 title: Driver Development Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > Driver Development Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e5a0ee821b5703c1cd6b53443b912207eba45460e3f3d64879155d836e80c93b
+scraped_at: 2026-09-18T06:45:42+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:236528e88143765194abe74c004b65aba1dfd0973763b057a127834b79290f3d
 ---
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
@@ -46,7 +46,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图1** 扩展外设驱动原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Cw2F4OpgSOeiKKYOWXC1Cw/zh-cn_image_0000002723695550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/yAHjZE4dQFy30uLV6cD0_w/zh-cn_image_0000002727751066.png)
 
 ### 运作流程
 
@@ -54,13 +54,13 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图2** 非标外设与对应扩展外设驱动应用匹配的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Fu_EPf4jTImq_PC9_SFzFQ/zh-cn_image_0000002753295317.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/hNkS6-jxRWWezPGem0oXlQ/zh-cn_image_0000002757310781.png)
 
 用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
 
 **图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/gAB_SymFQMGZ50oOXQrb4A/zh-cn_image_0000002753455235.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/O9uXz8TPR8W1DatLCe-z7Q/zh-cn_image_0000002757230901.png)
 
 ## 约束与限制
 
@@ -97,32 +97,29 @@ Driver Development Kit提供的C-API仅支持在DriverExtension进程中使用�
 
 ## 驱动应用规格说明
 
-1.驱动应用定义
+1. 驱动应用定义
 
-* 驱动应用是基于Driver Development Kit开发的、面向非标外设的用户态驱动。
-* 驱动应用基于DriverExtensionAbility，开发者需要重写该Ability的生命周期回调接口。
+   * 驱动应用是基于Driver Development Kit开发的、面向非标外设的用户态驱动。
+   * 驱动应用基于DriverExtensionAbility，开发者需要重写该Ability的生命周期回调接口。
+2. 驱动应用安装卸载规格
 
-2.驱动应用安装卸载规格
+   * 安装策略
+     + 当用户安装某一驱动应用时，系统会将应用安装到当前已有的所有用户环境下。
+     + 当创建新用户时，系统会将已安装的驱动应用在该用户环境下进行安装。
+   * 卸载策略：当用户在任意用户环境下发起卸载某一驱动应用，系统会将所有用户环境下的该驱动应用卸载。
+3. 基于DriverExtensionAbility生命周期管理说明
 
-* 安装策略
-  + 当用户安装某一驱动应用时，系统会将应用安装到当前已有的所有用户环境下。
-  + 当创建新用户时，系统会将已安装的驱动应用在该用户环境下进行安装。
-* 卸载策略：当用户在任意用户环境下发起卸载某一驱动应用，系统会将所有用户环境下的该驱动应用卸载。
+   * ExtensionAbility是基于场景服务的扩展能力的统称，简称为扩展能力（例如用户态扩展驱动、卡片、输入法等）以便满足不同的使用场景。
+   * 各类Extension的生命周期由各个SA管理，通过connectAbility启动Extension，并驱动定义的业务接口；业务结束，SA调用disconnectAbility接口断开Extension连接，AMS会根据该Extension是否有SA连接来决定是否销毁该Extension及进程。在用户态扩展驱动开发场景下，管理DriverExtensionAbility生命周期的系统SA为外设扩展服务SA。
+   * DriverExtensionAbility的生命周期取决于外设的接入时间，具体来说表现为：
+     + 当DriverExtensionAbility配置的“VID + PID”设备列表中的某个外设接入时，其生命周期区间跟该外设接入的时间段一致。
+     + 当DriverExtensionAbility配置的“VID + PID”设备列表中的多个外设依次接入时，其生命周期区间从第一个外设的接入持续到最后一个外设的拔出。
+     + 接入的外设同时出现在多个DriverExtensionAbility配置的“VID + PID”列表中时，该外设只会影响最先安装的驱动Ability的生命周期，详见[多个驱动Ability配置了同一型号外设的情况下，插入该外设只会拉起一个驱动Ability](externaldevice-faqs.md#多个驱动ability配置了同一型号外设的情况下插入该外设只会拉起一个驱动ability)。
+4. 在DriverExtensionAbility中API访问安全管控说明
 
-3.基于DriverExtensionAbility生命周期管理说明
-
-* ExtensionAbility是基于场景服务的扩展能力的统称，简称为扩展能力（例如用户态扩展驱动、卡片、输入法等）以便满足不同的使用场景。
-* 各类Extension的生命周期由各个SA管理，通过connectAbility启动Extension，并驱动定义的业务接口；业务结束，SA调用disconnectAbility接口断开Extension连接，AMS会根据该Extension是否有SA连接来决定是否销毁该Extension及进程。在用户态扩展驱动开发场景下，管理DriverExtensionAbility生命周期的系统SA为外设扩展服务SA。
-* DriverExtensionAbility的生命周期取决于外设的接入时间，具体来说表现为：
-  + 当DriverExtensionAbility配置的“VID + PID”设备列表中的某个外设接入时，其生命周期区间跟该外设接入的时间段一致。
-  + 当DriverExtensionAbility配置的“VID + PID”设备列表中的多个外设依次接入时，其生命周期区间从第一个外设的接入持续到最后一个外设的拔出。
-  + 接入的外设同时出现在多个DriverExtensionAbility配置的“VID + PID”列表中时，该外设只会影响最先安装的驱动Ability的生命周期，详见[多个驱动Ability配置了同一型号外设的情况下，插入该外设只会拉起一个驱动Ability](externaldevice-faqs.md#多个驱动ability配置了同一型号外设的情况下插入该外设只会拉起一个驱动ability)。
-
-4.在DriverExtensionAbility中API访问安全管控说明
-
-* 系统支持基于ExtensionAbility构建场景化扩展Ability，DriverExtensionAbility为支持开发用户态扩展驱动的一类Ability。
-* 在DriverExtensionAbility中仅支持访问DDK（Driver Development Kit）API，实现对非标外设进行访问控制和数据通信。
-* 基于驱动开发安全约束及驱动开发业务场景，在DriverExtensionAbility中不支持访问其它ArkTS API，以防止恶意行为和数据泄露。
-* DriverExtensionAbility受限访问ArkTS API方案说明：
-  + ArkTS API受限原理：在初始化和创建Extension进程时，会根据Extension配置的受限访问ArkTS API名单加载系统模块。在运行时，如果在DriverExtensionAbility中调用受限ArkTS API，由于初始化和创建阶段未加载相应系统模块，API会调用失败。
-* DriverExtensionAbility具体受限ArkTS API名单，请参考[frameworks/native/ability/native/etc/extension\_blocklist\_config.json · HarmonyOS/ability\_ability\_runtime - AtomGit | GitCode](https://gitcode.com/openharmony/ability_ability_runtime/blob/master/frameworks/native/ability/native/etc/extension_blocklist_config.json)中DriverExtension配置。
+   * 系统支持基于ExtensionAbility构建场景化扩展Ability，DriverExtensionAbility为支持开发用户态扩展驱动的一类Ability。
+   * 在DriverExtensionAbility中仅支持访问DDK（Driver Development Kit）API，实现对非标外设进行访问控制和数据通信。
+   * 基于驱动开发安全约束及驱动开发业务场景，在DriverExtensionAbility中不支持访问其它ArkTS API，以防止恶意行为和数据泄露。
+   * DriverExtensionAbility受限访问ArkTS API方案说明：
+     + ArkTS API受限原理：在初始化和创建Extension进程时，会根据Extension配置的受限访问ArkTS API名单加载系统模块。在运行时，如果在DriverExtensionAbility中调用受限ArkTS API，由于初始化和创建阶段未加载相应系统模块，API会调用失败。
+   * DriverExtensionAbility具体受限ArkTS API名单，请参考[frameworks/native/ability/native/etc/extension\_blocklist\_config.json · HarmonyOS/ability\_ability\_runtime - AtomGit | GitCode](https://gitcode.com/openharmony/ability_ability_runtime/blob/master/frameworks/native/ability/native/etc/extension_blocklist_config.json)中DriverExtension配置。

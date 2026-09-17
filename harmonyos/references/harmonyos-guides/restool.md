@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restool
 title: restool工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > restool工具
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:14+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:53751b91447f3812bd5e84790c1c79b93dd05de16917f02392373f27da9a0f56
+scraped_at: 2026-09-18T06:45:49+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:201ed86858c62e86fa5c16f1320bf57fac6f5d61074ea3631bf870e8e4bd4a8d
 ---
 
 ## 简介
@@ -25,8 +25,8 @@ restool工具存放在SDK安装目录下的toolchains文件夹中。
 | -o/--outputPath | 不可缺省 | 带参数 | 指定已编译资源的输出路径。 |
 | -p/--packageName | 不可缺省 | 带参数 | 指定编译资源的bundle名称。 |
 | -r/--resHeader | 不可缺省 | 带参数 | 指定资源的头文件生成路径，文件内容为资源名称与资源ID的映射表，支持4种格式：“.txt”、“.js”、“.h”、“.ts”。  **说明：**  - “.txt”、“.js”、“.h”格式的文件包含-i指定的所有资源目录下的资源映射表。  - 从API version 23开始，支持“.ts”格式，文件内容仅包含-i指定的HAR编译产物的资源目录下的资源映射表。 |
-| -e/--startId | 可缺省 | 带参数 | 指定生成资源的起始ID值，例如：0x01000000,范围[0x01000000, 0x06FFFFFF),[0x08000000, 0xFFFFFFFF)。 |
-| -f/--forceWrite | 可缺省 | 不带参数 | 如果输出路径已经存在。强制删除，重新生成。 |
+| -e/--startId | 可缺省 | 带参数 | 指定生成资源的起始ID值，例如：0x01000000，范围[0x01000000, 0x06FFFFFF) 或 [0x08000000, 0xFFFFFFFF)。 |
+| -f/--forceWrite | 可缺省 | 不带参数 | 如果输出路径已经存在，强制删除，重新生成。 |
 | -h/--help | 可缺省 | 不带参数 | 查看工具帮助信息。 |
 | -m/--modules | 可缺省 | 带参数 | 多模块联合编译时，指定多个模块名。用“,”连接。 |
 | -x/--append | 可缺省 | 带参数 | 指定生成中间文件的资源目录或单个资源路径。同一个命令可以多次指定。 |
@@ -1029,7 +1029,7 @@ The output path exists. Specify option -f/--forceWrite to overwrite.
 
 **可能原因**
 
-通过-o/--output指定的输出路径下已存在文件，无法直接覆盖。
+通过-o/--outputPath指定的输出路径下已存在文件，无法直接覆盖。
 
 **处理步骤**
 

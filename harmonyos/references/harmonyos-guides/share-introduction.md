@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-introdu
 title: Share Kit简介
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:58+08:00
+scraped_at: 2026-09-18T06:46:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e477d4295d698f5dba911151b5050cb7fcb892cf46dc5a008f82405fd0970d3b
+content_hash: sha256:8fc6521ee38b2fd1bb39f22f3b2d74fb5bd1d68eb608ae93300344031091edac
 ---
 
 Share Kit（分享服务）为应用提供文本、图片、视频等内容跨应用、跨端分享能力。
@@ -21,15 +21,15 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 **图1** 手机分享面板效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/UmUM8gzYQgGWxS5ICZLGyg/zh-cn_image_0000002723696344.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/CJrSr309QsGRCXzALqV-dw/zh-cn_image_0000002727751860.png)
 
 **图2** 手机碰一碰跨端发起华为分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/f4yXpYUlQPO13zMjIYDHug/zh-cn_image_0000002753296111.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/vQ-ouuCITpyySkfi7khOFA/zh-cn_image_0000002757311575.gif)
 
 **图3** 手机与PC/2in1设备碰一碰分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/vlulXcupS5e-AGqYGtCunw/zh-cn_image_0000002753456029.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/6EI2eU4yQXyaki4ZrEUJBA/zh-cn_image_0000002757231695.gif)
 
 ## 基本概念
 
@@ -62,7 +62,7 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 **图4** 分享运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-G5jQn4GSqezYgutNx5VSg/zh-cn_image_0000002723856264.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/IyjiFKvIRFqSBRtTmFiiXg/zh-cn_image_0000002727592004.png)
 
 | 应用类型 | 相关逻辑 |
 | --- | --- |

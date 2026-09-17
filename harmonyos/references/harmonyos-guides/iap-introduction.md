@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-introduct
 title: IAP Kit简介
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > IAP Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:46+08:00
+scraped_at: 2026-09-18T06:46:18+08:00
 doc_updated_at: 2026-08-04
-content_hash: sha256:75931de56209b8abd73d90c70edeb51e29fedc7cb2134303e59203a9f5bd2f1a
+content_hash: sha256:2b631a6be45f255fdee3a09d5060defad8b7253e2960d3008290a62e08f2f17e
 ---
 
 IAP Kit（应用内支付服务）为开发者提供便捷的应用内支付体验和简便的接入流程，让开发者聚焦应用本身的业务能力，助力开发者商业变现。开发者应用可通过使用IAP Kit提供的系统级支付API快速启动IAP收银台，即可实现应用内支付。
@@ -44,7 +44,7 @@ IAP Kit（应用内支付服务）为开发者提供便捷的应用内支付体�
 
 在TV设备拉起支付收银台页面为扫码支付页，参考示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/jmnE8WvAQ-qTnwIo6uBQAA/zh-cn_image_0000002723855998.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/HHv7p1FTQKmoXJhQMjGOmw/zh-cn_image_0000002727591738.png)
 
 ### 支持的国家/地区
 

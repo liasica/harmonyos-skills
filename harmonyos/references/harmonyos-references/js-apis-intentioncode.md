@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.intentionCode (意图事件)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.intentionCode (意图事件)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2658e3fe627ce96c7fe729c7815e023f03b86a2ad65baf2fa6e713b5099a14f1
+scraped_at: 2026-09-18T06:50:20+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:2dec29bb33e412e8fdc788e32bf45efa86b1ee531a184934a3c4dfef15588e69
 ---
 
 将键盘输入设备的原始事件映射为归一化交互的意图事件，如键盘上空格键映射后的事件为INTENTION\_SELECT，意图为选中。
@@ -24,9 +24,9 @@ import { IntentionCode } from '@kit.InputKit';
 
 意图事件枚举值。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

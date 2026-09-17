@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed
 title: 客户端应用开发
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > 客户端应用开发
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5a62dc4f038c2517a8e7d2fe9ccca122d1329bce33554d86d5f60444ecb529ce
+scraped_at: 2026-09-18T06:45:17+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:ab88904abe38710d220b6c09f442e1f05de28467d11be682fc9ffe51bb17c9f2
 ---
 
 ## 场景介绍
@@ -55,17 +55,15 @@ OE客户端应用指嵌入其他文档的应用，通过调用OE框架层[conten
 
 ### 添加动态链接库
 
-CMakeLists.txt中添加以下lib。
+在Native工程的src/main/cpp/CMakeLists.txt，添加如下链接库：
 
-```text
-# content embed
-libcontent_embed_ndk.so
-# hilog
-libhilog_ndk.z.so
-# ace
-libace_napi.z.so
-# piexlmap
-libpixelmap.so
+```txt
+target_link_libraries(entry PUBLIC
+    libcontent_embed_ndk.so
+    libhilog_ndk.z.so
+    libace_napi.z.so
+    libpixelmap.so
+)
 ```
 
 ### 引用头文件

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-member
 title: 查看会员卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 会员卡 > 开发场景 > 查看会员卡
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:59+08:00
+scraped_at: 2026-09-18T06:46:30+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:9a21f7a49dfb08cf6de7a352af1694e82ca374e9ff89eb138d77ee9f23b4263d
+content_hash: sha256:59e53a970f06d38350ff062854d100ea3097ee1d717ddd1c8df4f6e8b93335cb
 ---
 
 查询已开通会员卡的状态并展示，用户可以点击跳转钱包会员卡详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/oaRW_UsNRCSr3whzEZwZBw/zh-cn_image_0000002723856310.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/XdF_9QAxQVKlTEJOkh1cRQ/zh-cn_image_0000002727592050.png)
 
 ## 客户端开发
 

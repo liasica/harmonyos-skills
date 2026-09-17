@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-renderi
 title: ForEach：循环渲染
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > ForEach：循环渲染
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:22+08:00
+scraped_at: 2026-09-18T06:45:03+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:ef7db57191a682afce673b2ee83127d7dfe1d496404fd67738de642a346496e9
+content_hash: sha256:64164291b9029815fdee82c0e65ec021efd68789b748f9300a3e13cae9533f81
 ---
 
 ForEach接口基于数组循环渲染，需要与容器组件配合使用，且接口返回的组件应当是允许包含在ForEach父容器组件中的子组件。例如，[ListItem](../harmonyos-references/ts-container-listitem.md)组件要求ForEach的父容器组件必须为[List组件](../harmonyos-references/ts-container-list.md)。
@@ -26,7 +26,7 @@ ArkUI框架对于ForEach的键值生成有一套特定的判断规则，这主�
 
 **图1** ForEach键值生成规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/DHeCD5N8Q9GEmiO4tG4iWg/zh-cn_image_0000002723694488.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/7-Pw6PyNRAmHTpfzcdXNuw/zh-cn_image_0000002727750004.png)
 
 **说明** 
 
@@ -126,7 +126,7 @@ struct ForEachChildItem {
 
 **图2** ForEach数据项不存在相同键值案例首次渲染运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/y3bW74JSRMKL4pxAt5TQuA/zh-cn_image_0000002753294255.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/9Gqf0Xu0RMuZv8IiGxw2Ww/zh-cn_image_0000002757309719.png)
 
 在上述代码中，keyGenerator函数的返回值是item。在ForEach渲染循环时，为数组项依次生成键值one、two和three，并创建对应的ForEachChildItem组件渲染到界面上。
 
@@ -168,7 +168,7 @@ struct SameKeyChildItem {
 
 **图3** ForEach数据源存在相同值案例首次渲染运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/fIgbvHR1Rh-QNdO_UvcfNQ/zh-cn_image_0000002753454173.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/zVMQRUtGQNuEa34tl6hciw/zh-cn_image_0000002757229839.png)
 
 在该示例中，最终键值生成规则为item。当ForEach遍历数据源simpleList，遍历到索引为1的two时，创建键值为two的组件并记录。当遍历到索引为2的two时，当前项的键值也为two，此时不再创建新的组件。
 
@@ -221,7 +221,7 @@ struct NotFirstRenderChildItem {
 
 **图4** ForEach非首次渲染案例运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/hVf_gZQpSUKlhz_JTyTy-A/zh-cn_image_0000002723854408.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/itcrWCOZRveLex1ioS8e8A/zh-cn_image_0000002727590148.gif)
 
 从本例可以看出[@State](arkts-state.md)能够监听到简单数据类型数组simpleList数组项的变化。
 
@@ -295,7 +295,7 @@ struct ArticleSkeletonView {
 
 **图5** 骨架屏运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/XgKrD26bTWW0lEa1f9aUVQ/zh-cn_image_0000002723694490.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/X4xDthYGQ_m3TEFYGOOwOw/zh-cn_image_0000002727750006.png)
 
 在本示例中，采用数据项item作为键值生成规则，由于数据源simpleList的数组项各不相同，因此能够保证键值的唯一性。
 
@@ -403,7 +403,7 @@ struct ArticleCardChangeSource {
 
 **图6** 数据源数组项变化案例运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/dxr7iQWfRqiahZwGrO246g/zh-cn_image_0000002753294257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/XwFZfI5dQii8UeKMqdAWaA/zh-cn_image_0000002757309721.png)
 
 在本示例中，ArticleCardChangeSource组件作为ArticleListViewChangeSource组件的子组件，通过[@Prop](arkts-prop.md)装饰器接收一个ArticleChangeSource对象，用于渲染文章卡片。
 
@@ -517,7 +517,7 @@ struct ArticleCardChangeChild {
 
 **图7** 数据源数组项子属性变化案例运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/kiifbQKBRh2iP8dIKb7XKQ/zh-cn_image_0000002753454175.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/vr1YC9tIRImITPuBRmJ6sg/zh-cn_image_0000002757229841.png)
 
 在本示例中，ArticleChangeChild类被@Observed装饰器修饰。父组件ArticleListChangeView传入ArticleChangeChild对象实例给子组件ArticleCardChangeChild，子组件使用@ObjectLink装饰器接收该实例。
 
@@ -578,13 +578,13 @@ struct ForEachSort {
 
 **图8** ForEach拖拽排序效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/qCvm4C0qRFaCJG-YXetwWw/zh-cn_image_0000002723854410.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/sR0ACJiST7eG9mqj8tXXog/zh-cn_image_0000002727590150.gif)
 
 注释掉onMove事件调用中的两行代码，点击Add one item触发渲染后的效果如下图所示。
 
 **图9** ForEach拖拽排序效果在重新渲染后没有保留
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/79bxWlvwRWKVuwv03iaEQw/zh-cn_image_0000002723694492.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/VO3-Gc3HTe-8rAc6qVBw9Q/zh-cn_image_0000002727750008.png)
 
 ## 使用建议
 
@@ -645,7 +645,7 @@ struct ForEachAbnormalChildItem {
 
 **图10** 渲染结果非预期运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/JdiSxl4ZQIy0WTHrv9orSw/zh-cn_image_0000002753294259.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/lw0lRncTQ2qGxj9ZgnqKhw/zh-cn_image_0000002757309723.gif)
 
 ForEach在首次渲染时，创建的键值依次为"0"、"1"、"2"。
 
@@ -709,13 +709,13 @@ struct ReducedChildItem {
 
 **图11** 渲染性能降低案例运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/M_ZVW6G1QE-fzpsHQ32i-A/zh-cn_image_0000002753454177.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/NKd-fRkvTXa5hAIAd2EKeQ/zh-cn_image_0000002757229843.gif)
 
 点击“Insert Item After First Item”文本组件后，DevEco Studio的日志打印结果如下所示。
 
 **图12** 渲染性能降低案例日志打印图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/LxMMUNZ0TuqmVZRNROOJsg/zh-cn_image_0000002723854412.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/q6sQDyzlR-q_-hdIXQdufA/zh-cn_image_0000002727590152.png)
 
 插入新项后，ForEach为new item、 two、 three三个数组项创建了对应的ReducedChildItem组件，并执行了组件的[aboutToAppear()](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)生命周期函数。这是因为：
 
@@ -858,7 +858,7 @@ struct ArticleCardChangeData {
 
 **图13** 数据变化不渲染
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/UnxzjVwpTVSgR_sCNmYo3w/zh-cn_image_0000002723694494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/N0h8KStHTV64tHsZyjXQ1w/zh-cn_image_0000002727750010.png)
 
 ### 非必要内存消耗
 
@@ -913,11 +913,11 @@ struct NonNecessaryMemory {
 
 **图14** 使用默认键值生成函数下的内存占用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/d4SEM1OFSKqN9aPvzcHHrg/zh-cn_image_0000002753294261.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/0VgCr6eLRg-cGXrlxv8jSw/zh-cn_image_0000002757309725.png)
 
 **图15** 自定义键值生成函数下的内存占用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/TlBpEeKWT_-LYU-uShsHkA/zh-cn_image_0000002753454179.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/lb_gNyuZStmk_tjUySjVMA/zh-cn_image_0000002757229845.png)
 
 ### 键值生成失败
 
@@ -971,7 +971,7 @@ struct GenerationKeyChildItem {
 
 **图16** 键值生成失败
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/_dZ6jy37RIyGXkgMP_Zulw/zh-cn_image_0000002723854414.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/0HygTbVsS2ih1Kj8MWa4lQ/zh-cn_image_0000002727590154.png)
 
 使用默认的键值生成函数，应用发生jscrash：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 悬浮事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 悬浮事件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:45+08:00
+scraped_at: 2026-09-18T06:48:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2e59b5e9848cd5054be8ec299c5af2d25578b8b4e5e4fbdfa43f50161a9fce1a
+content_hash: sha256:c4039f12ec8832b49b8cabcfb81d65425925a19003ff0e18bdb20accbdf2dc81
 ---
 
 光标滑动或手写笔在屏幕上悬浮移动扫过组件时触发，用于监听鼠标或手写笔进入、退出组件以及在组件上方悬浮移动等交互状态，适用于根据悬浮状态更新组件样式、展示位置信息等交互反馈场景。
@@ -125,11 +125,11 @@ struct HoverEventExample {
 
 未悬浮时的文本内容与背景颜色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/yl4-tsrpS2qA6NHFTvc4lA/zh-cn_image_0000002753296515.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/3l_95dMcSPCvF6CdbAly8w/zh-cn_image_0000002757311979.png)
 
 手写笔悬浮时改变文本内容与背景颜色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/XrdMkn2ET_GKNg3ZqxfUag/zh-cn_image_0000002753456433.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/PjnltWRVS1SKqGiRH1tTAA/zh-cn_image_0000002757232099.png)
 
 ### 示例2（使用onHoverMove）
 
@@ -162,4 +162,4 @@ struct OnHoverMoveEventExample {
 
 手写笔悬浮在Button组件上时，UI不断刷新笔尖的位置信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/nV9DlrPyQtaLWTLK2fIypw/zh-cn_image_0000002723856668.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Hclaf93WT32PFdf5U-dPyA/zh-cn_image_0000002727592408.png)

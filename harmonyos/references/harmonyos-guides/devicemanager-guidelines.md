@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicemanager
 title: 分布式设备管理开发指南
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 分布式设备管理开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:32329f36602e597f4915c8367cc3ed10ba5a25d86b11b8a9531c5e95778d7db1
+scraped_at: 2026-09-18T06:45:35+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:d286a72692bdc35e0f428c77d86f70e43e22760b36f25609e7362df44b8f63c2
 ---
 
 ## 分布式设备管理简介
@@ -288,7 +288,7 @@ getAvailableDeviceListSync(): Array<DeviceBasicInfo>;
        this.trustedDeviceList = this.deviceManager.getAvailableDeviceListSync();
        // ...
      } catch (error) {
-       logger.error('[DeviceManager.RemoteDeviceModel] getTrustedDeviceList error: ${error}' + error.toString());
+       logger.error(`[DeviceManager.RemoteDeviceModel] getTrustedDeviceList error: ${error}`);
        this.showErrMsg('getTrustedDeviceList failed');
      }
    }

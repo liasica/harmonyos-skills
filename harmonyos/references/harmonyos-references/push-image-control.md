@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-imag
 title: 图片风控
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 图片风控
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6e0ef7bfb783c8853fd767b5b33057aaf481a25c0693999de501287ba85540f7
+scraped_at: 2026-09-18T06:52:11+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:c0b0a38482d00212754bc66d286694672de0f3f2384ae43ead1c7db0ba004b00
 ---
 
 ## 功能介绍
@@ -156,16 +156,16 @@ Authentication Error.
 
 **可能原因**
 
-1. 发送消息时未添加Authorization参数或Authorization的值为空。
-2. 用于申请JWT Token的Project Id和推送消息的Project Id不一致。
+1. 发送请求时未添加Authorization参数或Authorization的值为空。
+2. 用于申请JWT Token的Project Id和发送请求的Project Id不一致。
 3. Authorization参数中的JWT Token与实际应用不匹配。
 
 **处理步骤**
 
 请根据响应消息中的提示，排查请求头中Authorization参数鉴权失败是否存在以下情况：
 
-1. 请检查发送消息时是否添加Authorization参数或Authorization的值为空。
-2. 请参考[鉴权令牌生成步骤](../harmonyos-guides/push-jwt-token.md#开发步骤)中的步骤二，检查推送请求URL（https://push-api.cloud.huawei.com/**v2**/[projectId]/images:verify）中的projectId，确保与您当前应用所属的项目保持一致。
+1. 请检查发送请求时是否添加Authorization参数或Authorization的值为空。
+2. 请参考[鉴权令牌生成步骤](../harmonyos-guides/push-jwt-token.md#开发步骤)中的步骤二，检查发送请求URL（https://push-api.cloud.huawei.com/**v2**/[projectId]/images:verify）中的projectId，确保与您当前应用所属的项目保持一致。
 3. 请检查Authorization参数中的JWT Token与实际应用是否匹配，详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
 
 重新生成JWT Token后再发送请求。
@@ -186,7 +186,7 @@ Access Token过期。
 
 **处理步骤**
 
-请根据响应消息中的提示，重新生成JWT Token后再推送消息，请参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
+请根据响应消息中的提示，重新生成JWT Token后再发送请求，请参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
 
 ### 80200005 JWT Token过期
 
@@ -204,7 +204,7 @@ JWT Token过期。
 
 **处理步骤**
 
-请根据响应消息中的提示，重新生成JWT Token后再推送消息，请参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
+请根据响应消息中的提示，重新生成JWT Token后再发送请求，请参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
 
 ### 80300002 没有权益
 
@@ -278,7 +278,7 @@ The number of sent messages exceeds the limit.
 
 请根据响应消息中的提示，降低请求频率后重试。
 
-### 83010003 消息体为空
+### 83010003 请求体为空
 
 **错误信息**
 
@@ -286,15 +286,15 @@ Request body is empty.
 
 **错误描述**
 
-消息体为空。
+请求体为空。
 
 **可能原因**
 
-消息体为空。
+请求体为空。
 
 **处理步骤**
 
-请根据响应消息中的提示，检查并修改[消息体](push-image-control.md#请求参数)内容。
+请根据响应消息中的提示，检查并修改[请求体](push-image-control.md#请求参数)内容。
 
 ### 83010004 不支持风控
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: .shader资源文件格式要求
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用 > .shader资源文件格式要求
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:50+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:aa37f43cb0e4d28a9e78595c993afd489c30a63b594499f722fbf9aa2eb536ca
+scraped_at: 2026-09-18T06:46:06+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:f0b2de583ad6ef5661bfb200d962b900523a0c63bfcfaf40c7cb3aec98457374
 ---
 
 ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时需符合JSON语法要求。文件包含以下部分：
@@ -134,7 +134,7 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
   | "g\_bit" | 绿色通道允许写入或参与混合。 |
   | "b\_bit" | 蓝色通道允许写入或参与混合。 |
   | "a\_bit" | 透明通道允许写入或参与混合。 |
-* srcColorBlendFactor: 指定渲染源颜色通道的混合因子，可取值及含义见下表。
+* srcColorBlendFactor：指定渲染源颜色通道的混合因子，可取值及含义见下表。
 
   | 可取值 | 因子 | 结果 | 应用场景 |
   | --- | --- | --- | --- |

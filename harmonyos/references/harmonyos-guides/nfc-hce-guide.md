@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-hce-guide
 title: HCE卡模拟开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > NFC > HCE卡模拟开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1b043cde3aacbae29d4aa5a1a4f7db602d95d03eb083162f6c97c5aa436eeca6
+scraped_at: 2026-09-18T06:45:35+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:cb22080ff28f58633fcdb58dbe6c3ac20a6f7dc09c3867a41c588d7111d06a1b
 ---
 
 ## 简介
@@ -382,3 +382,13 @@ export default class HceUIAbility extends UIAbility {
       }
     ]
 ```
+
+## 常见问题
+
+### HCE卡模拟对模拟卡的类型有什么约束
+
+无约束，HCE可模拟任意类型的卡。
+
+### 默认付款应用为什么会切换
+
+使用HCE刷卡时，需进入系统设置将默认付款应用设置为该HCE应用。部分应用（如华为钱包）切换到前台时会检测当前默认付款应用是否为本应用，若检测不一致，将弹窗提示用户是否将默认付款应用切换至本应用，用户点击确认后，应用会调用系统接口完成默认付款应用的切换。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 交互响应概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 交互响应概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:18+08:00
-doc_updated_at: 2026-05-14
-content_hash: sha256:8ed901ecb8a6f6ec434ee203fd6683dd62c36da9e89aad09b4cadc7168059390
+scraped_at: 2026-09-18T06:45:06+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:cc444e08fc012e1f0523e28f11f89ee8194cc9a4550d66d045b718acd7cbc563
 ---
 
 ArkUI框架提供了丰富的交互功能，支持直接处理基础输入事件，以及由这些事件驱动的手势系统，同时支持拖拽、焦点切换等复杂交互。
@@ -26,7 +26,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理基础输入事件
 
 非指向性事件是指没有具体位置信息的事件，即事件的发生不依赖于特定的操作位置信息。此类事件以当前焦点组件为派发目标。
 
-包括：[按键事件](../harmonyos-references/ts-universal-events-key.md)，[表冠事件](../harmonyos-references/ts-universal-events-crown.md)，[焦点轴事件](../harmonyos-references/ts-universal-events-focus_axis.md)。
+包括：[按键事件](../harmonyos-references/ts-universal-events-key.md)，[表冠事件](../harmonyos-references/ts-universal-events-crown.md)，[焦点轴事件](../harmonyos-references/ts-universal-events-focus-axis.md)。
 
 ### 其他说明
 

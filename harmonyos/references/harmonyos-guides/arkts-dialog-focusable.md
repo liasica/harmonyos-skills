@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-
 title: 弹出框焦点策略
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 弹出框焦点策略
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:25+08:00
+scraped_at: 2026-09-18T06:45:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e70b3104b0c7038021a8e4e8843dfeadc14adc81f7027dfd1fc794f2e6502e85
+content_hash: sha256:6dbf4a741520ca1f983a1add4415b7768c270e8d68273efcafe1bce437176ffe
 ---
 
 ArkUI的弹出框焦点策略可以设定是否中断用户当前操作，并聚焦到新弹出的弹出框。若设定弹出框不获取焦点，则新弹出时不会中断用户当前操作，例如，当用户正在文本框中输入内容时，新弹出的弹出框不会关闭软键盘，焦点仍保留在文本框中。
@@ -183,4 +183,4 @@ export struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/DsilkZgvTDuSnSN_vVzhWg/zh-cn_image_0000002753294603.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/cErQMCRbRRiV0vcH7uNJpA/zh-cn_image_0000002757310067.gif)

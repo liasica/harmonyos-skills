@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 为通知添加行为意图
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 发布通知 > 为通知添加行为意图
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:51+08:00
+scraped_at: 2026-09-18T06:46:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:00a2571055f2b371d35331c2787312281fbc06fcafb5eb4032d16874958daefd
+content_hash: sha256:c8fc5455247546b3ed54a3c4c760c189d2d282d8325756d5ffc490f9acf77b9f
 ---
 
 应用向Ability Kit申请[WantAgent](../harmonyos-references/js-apis-app-ability-wantagent.md)，并将WantAgent封装至通知中。当发布通知时，用户便可以通过点击通知栏中的消息或按钮，拉起目标应用组件或发布公共事件。
 
 携带了actionButtons的通知示意图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/RXxQgdewSlezA-i0nstiiw/zh-cn_image_0000002723696228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nCPPtcO1TpGnR2v1aWEQDA/zh-cn_image_0000002727751744.png)
 
 ## 运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/DWBVWkB7R8aZyViYGmpGZA/zh-cn_image_0000002753295995.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/1chAHOHOTqOPuMaexyLO8w/zh-cn_image_0000002757311459.png)
 
 ## 接口说明
 

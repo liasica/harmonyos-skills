@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/priority-noti
 title: 申请优先通知权益
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 申请优先通知权益
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:51+08:00
+scraped_at: 2026-09-18T06:46:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9a0fd3bceb7c7c6e6e410162f81928f07bf9289fa95082439538b059cecb729a
+content_hash: sha256:44a07f724a42f6244018f11e152ce42275323e719333f183ccf62f8d33942b0b
 ---
 
 当用户终端收到携带[priorityNotificationType](../harmonyos-references/js-apis-inner-notification-notificationrequest.md)字段的通知消息时，系统会将其识别为优先通知并优先显示。
@@ -24,25 +24,25 @@ content_hash: sha256:9a0fd3bceb7c7c6e6e410162f81928f07bf9289fa95082439538b059cec
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/iFlAkLhpTWSVlowecT1RJg/zh-cn_image_0000002753295997.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/U9KAbotsTeGDLKxWEQ4QPg/zh-cn_image_0000002757311461.png)
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要申请优先通知权益的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/ESWT2uIcRhemQ7tvfATPAw/zh-cn_image_0000002753455915.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/YPlrqliuTa-RkZsmmED7xQ/zh-cn_image_0000002757231581.png)
 3. 进入“项目设置 > 开放能力管理”页面，点击“优先通知”的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/npFPqAcYQfaXEwx6OtvZnA/zh-cn_image_0000002723856150.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/BXf8K6d1Qi672VfDjtr1iA/zh-cn_image_0000002727591890.png)
 4. 开发者可参考“申请原因”中的模板，提供申请必须的相关信息，包括应用介绍、使用场景、申请用途、附件、承诺信息，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/VT3Bw7isRAecdGa-aQCvCw/zh-cn_image_0000002723696232.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/4YRJ4wNLSNeFT4zY1GVLqA/zh-cn_image_0000002727751748.png)
 5. 开发者可通过互动中心的“服务开通申请”消息获取优先通知权益申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/FhXd9sHxTdu6ICJq8KpgQQ/zh-cn_image_0000002753295999.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rDxSUuySSNWbOCcqSZz_9g/zh-cn_image_0000002757311463.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/pgk1y6rXQ0alnbAKYWo9tQ/zh-cn_image_0000002753455917.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/pvbZHtphQ5KxQavqTc4Ewg/zh-cn_image_0000002757231583.png)
 6. 优先通知权益申请通过后，须在“证书、APP ID和Profile”页面下左侧树形菜单的“Profile”页签，点击“添加”重新生成Profile文件，并下载Profile文件到本地，然后在“[发布应用](ide-publish-app.md)”时，须将该Profile打包到应用包中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/LjQ6GUuJSfOd6h5izwbKdw/zh-cn_image_0000002723856152.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/wcM2vhzeR8qX42aFbuHRFQ/zh-cn_image_0000002727591892.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/zmDP8irqSg6vcHzOCxdjZQ/zh-cn_image_0000002723696234.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/YMdBQYtrS7eultLUbW52mg/zh-cn_image_0000002727751750.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Ca2HGeqORiKrSfwklQzUNg/zh-cn_image_0000002753296001.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/1n5Q-8jgQWq1X417xvxoNA/zh-cn_image_0000002757311465.png)

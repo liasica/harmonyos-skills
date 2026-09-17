@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.resourceManager (资源管理)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.resourceManager (资源管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b23209cd235da66e8a3c377f2f455e1dc101d022d8e4760cde2f345cb54b681d
+scraped_at: 2026-09-18T06:49:25+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:f60240443a0852f1a671e4668b481c422c95f1a87528b77e769ebf2e0fc16c69
 ---
 
 本模块提供应用资源和系统资源的访问能力，允许应用根据当前的[Configuration](js-apis-resource-manager.md#configuration)配置，获取最匹配的应用资源或系统资源，支持国际化资源匹配和多设备适配。具体匹配规则参考[资源匹配](../harmonyos-guides/resource-categories-and-access.md#资源匹配)。
@@ -3984,7 +3984,7 @@ getRawFdSync(path: string): RawFileDescriptor
 
 **说明** 
 
-文件描述符（fd）使用完毕后需调用[closeRawFdSync](js-apis-resource-manager.md#closerawfdsync10)或[closeRawFd](js-apis-resource-manager.md#closerawfd9)关闭fd，避免资源泄露。
+文件描述符（fd）使用完毕后需调用[closeRawFdSync](js-apis-resource-manager.md#closerawfdsync10)或[closeRawFd](js-apis-resource-manager.md#closerawfd9)关闭fd，避免资源泄漏。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -4039,7 +4039,7 @@ getRawFd(path: string, callback: \_AsyncCallback<RawFileDescriptor>): void
 
 **说明** 
 
-文件描述符（fd）使用完毕后需调用[closeRawFdSync](js-apis-resource-manager.md#closerawfdsync10)或[closeRawFd](js-apis-resource-manager.md#closerawfd9)关闭fd，避免资源泄露。
+文件描述符（fd）使用完毕后需调用[closeRawFdSync](js-apis-resource-manager.md#closerawfdsync10)或[closeRawFd](js-apis-resource-manager.md#closerawfd9)关闭fd，避免资源泄漏。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -4098,7 +4098,7 @@ getRawFd(path: string): Promise<RawFileDescriptor>
 
 **说明** 
 
-文件描述符（fd）使用完毕后需调用[closeRawFdSync](js-apis-resource-manager.md#closerawfdsync10)或[closeRawFd](js-apis-resource-manager.md#closerawfd9)关闭fd，避免资源泄露。
+文件描述符（fd）使用完毕后需调用[closeRawFdSync](js-apis-resource-manager.md#closerawfdsync10)或[closeRawFd](js-apis-resource-manager.md#closerawfd9)关闭fd，避免资源泄漏。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

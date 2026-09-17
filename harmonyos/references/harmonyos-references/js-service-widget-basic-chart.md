@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:25+08:00
+scraped_at: 2026-09-18T06:48:42+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:ad186a53ecca16ea789eb76b33632fbae7a4ab75a62bb2a6e4e59cd73b7efd74
+content_hash: sha256:34d29561916140576fe91c97a808e9e07dc9b066373a32bd957ea23407520490
 ---
 
 图表组件，用于呈现线形图、柱状图、量规图、进度类圆形图表、加载类圆形图表、占比类圆形图表界面。
@@ -253,7 +253,7 @@ content_hash: sha256:ad186a53ecca16ea789eb76b33632fbae7a4ab75a62bb2a6e4e59cd73b7
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/VyUD-Q_jTbqGgLe_HIohew/zh-cn_image_0000002753457453.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/_OGea1i4R4KKnsUzyFdJtg/zh-cn_image_0000002727593428.png)
 2. 柱状图
 
    ```html
@@ -320,7 +320,7 @@ content_hash: sha256:ad186a53ecca16ea789eb76b33632fbae7a4ab75a62bb2a6e4e59cd73b7
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Uh5iNNDvTVGx2TkbZqeZXQ/zh-cn_image_0000002723857688.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/-zYmczZYS3i9lJLe8xLvxg/zh-cn_image_0000002727753286.png)
 3. 量规图
 
    ```html
@@ -349,4 +349,4 @@ content_hash: sha256:ad186a53ecca16ea789eb76b33632fbae7a4ab75a62bb2a6e4e59cd73b7
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/tYkKHe5nRUCNfABQ2IvqLw/zh-cn_image_0000002723697770.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/MHvQR2qhTGyfyA9_Lsmbpg/zh-cn_image_0000002757313001.png)

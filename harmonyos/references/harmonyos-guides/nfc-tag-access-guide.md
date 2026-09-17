@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-tag-acces
 title: NFC标签读写开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > NFC > NFC标签读写开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:21332efe8f411accf116e230da9f6a40a23f99cf2d5b8f0eb8db075c87372e53
+scraped_at: 2026-09-18T06:45:35+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:ea1f15c7f97ea1efd8d64eb2540a0e419c57d2a39922429087466de7024f6eef
 ---
 
 ## 简介
@@ -464,3 +464,13 @@ want = {
         "entities": ["entity.system.home"]
     }
 ```
+
+## 常见问题
+
+### 常用的读写NFC标签应用有哪些
+
+NFC标签助手、NFC标签工具。
+
+### 如何通过NFC碰一碰实现应用跳转
+
+向NFC标签写入包含目标应用跳转信息的NDEF记录，设备触碰标签后系统解析NDEF并跳转至对应应用。标签格式及写卡方式参见[NDEF格式Tag定制](nfc-tag-access-guide.md#ndef格式tag定制)。

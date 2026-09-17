@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-line-tool-13
-title: 如何使用ohpm引入三四方库
-breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何使用ohpm引入三四方库
+title: 如何使用ohpm引入三方库
+breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何使用ohpm引入三方库
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-09-18T06:55:19+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:ac4125174b12c457c422d9c5e34646cda77dd1a136ad7abf4db5e17fd8f4d8d7
 ---
 

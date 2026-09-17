@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.graphics.uiEffect (效果级联)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.uiEffect (效果级联)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:26+08:00
+scraped_at: 2026-09-18T06:51:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6428cf300802c6664e18547946b3fe66e4e7dfd53d410c2fb666a7322d035e28
+content_hash: sha256:bac2f3b1ff8ab5ffc95b32bf6df955ee8bbc4812a3e804ddf938576f9d00c166
 ---
 
 本模块提供组件效果的一些基础能力，包括模糊、边缘像素扩展、提亮等。效果被分为Filter和VisualEffect大类，同类效果可以级联在一个效果大类的实例下。在实际开发中，模糊可用于背景虚化，提亮可用于亮屏显示等。
@@ -118,7 +118,7 @@ struct UIEffectFilterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/xHv4g8riRDOkVVGg_1lJKw/zh-cn_image_0000002723858160.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/1l1LbDiLSai6JOOXoAhJmw/zh-cn_image_0000002727753758.png)
 
 ### hdrBrightnessRatio24+
 

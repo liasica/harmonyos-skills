@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UserAgentMetadata)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (UserAgentMetadata)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4b103384d1e383edf678e156880c33f05dbe395c89f59067c7f8077b041d73d9
+scraped_at: 2026-09-18T06:49:05+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:fc8b58c23ea8a81c70578c5c100a4bc974f1ffd71ba4f605d58a5d77e740b32e
 ---
 
 UserAgentMetadata是ArkWeb框架中用于配置User-Agent Client Hints（UA客户端提示）完整元数据的类。User-Agent Client Hints是一种现代化的HTTP请求标头机制，通过一组Sec-CH-UA系列标头向服务器报告客户端信息，替代传统User-Agent字符串实现更安全、更细粒度的浏览器身份标识。通过UserAgentMetadata，应用可以自定义Web组件向服务器报告的所有客户端信息字段。
@@ -320,7 +320,7 @@ setPlatform(platform: string): void
 
 getPlatform(): string
 
-获取操作系统名称。不调用对应的[setPlatform](arkts-apis-webview-useragentmetadata.md#setplatform)设置时，名称默认值："HarmonyOS" 。
+获取操作系统名称。不调用对应的[setPlatform](arkts-apis-webview-useragentmetadata.md#setplatform)设置时，名称默认值："OpenHarmony" 。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -360,7 +360,7 @@ setPlatformVersion(platformVersion: string): void
 
 getPlatformVersion(): string
 
-获取操作系统版本号。不调用对应的[setPlatformVersion](arkts-apis-webview-useragentmetadata.md#setplatformversion)设置时，版本号默认值：按HarmonyOS平台版本号规则，同const.product.os.dist.version。
+获取操作系统版本号。不调用对应的[setPlatformVersion](arkts-apis-webview-useragentmetadata.md#setplatformversion)设置时，版本号默认值：按OpenHarmony平台版本号规则，同const.product.os.dist.version。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

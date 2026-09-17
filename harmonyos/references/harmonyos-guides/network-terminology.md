@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-termi
 title: Network Kit术语
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > Network Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
-doc_updated_at: 2026-06-13
+scraped_at: 2026-09-18T06:45:36+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:6fd9d008a3c15b36d62eaa80b52a579a21e5256bc2c052e31d2f140d964e102d
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: button开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > button开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:32+08:00
+scraped_at: 2026-09-18T06:45:11+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:e468e59a6648518ce7023884538a22211641bf243effab46e212d619fd9bc984
+content_hash: sha256:4af81a9041e26f681248e8922a69c71e4399582c782c031ba9bde097664d895b
 ---
 
 button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按钮、弧形按钮、下载按钮。具体用法请参考[button API](../harmonyos-references/js-components-basic-button.md)。
@@ -33,7 +33,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/s-XLInXwSma-HtxiECcvKQ/zh-cn_image_0000002753454767.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/esdaPSGmRYuurzqgILb-CA/zh-cn_image_0000002727590742.png)
 
 ## 设置button类型
 
@@ -73,7 +73,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/rSBCpnZrSracWXyhpWvNVQ/zh-cn_image_0000002723694802.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ACgrw_grTmyXh_-KvzjDdg/zh-cn_image_0000002727750318.png)
 
 **说明** 
 
@@ -166,7 +166,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/wI3BTpvzS_6_rVqo1MMR-Q/zh-cn_image_0000002723855002.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/vgz1_CWMR1-5qpzR5xhFtQ/zh-cn_image_0000002727750600.gif)
 
 **说明** 
 
@@ -273,4 +273,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/EHgpmAIBQKySxQyDJ8YNNA/zh-cn_image_0000002723695084.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ZebVJ3OPThqZjg_Hc6QOng/zh-cn_image_0000002757310315.gif)

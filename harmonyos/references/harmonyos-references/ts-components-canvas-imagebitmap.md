@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: ImageBitmap
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > ImageBitmap
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b40520fd2dc024e827915dafca50a50101d25fabc4e86db59153e0a767bbdc27
+scraped_at: 2026-09-18T06:48:25+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:9a16994c28bf82e5b68a2c33d62baa0c7d4a22340e40e44d8ad95af7959afd88
 ---
 
 ImageBitmap对象可以存储canvas渲染的像素数据。从API version 11开始，当应用创建[Worker线程](../harmonyos-guides/worker-introduction.md)，支持使用postMessage将ImageBitmap实例传到Worker中进行绘制，并使用onmessage接收Worker线程发送的绘制结果进行显示。
@@ -197,7 +197,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/LrlNdKtITCqNbkoCB0oO2w/zh-cn_image_0000002723857182.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/vtN9H1QhSNee8aH0cpb9dQ/zh-cn_image_0000002727592922.png)
 
 ### 示例2（创建ImageBitmap）
 
@@ -236,7 +236,7 @@ struct Demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/y2RrfiPwQke75LU5L_nUFQ/zh-cn_image_0000002723697264.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/e51giqlZSiuXkluUFbL_Lg/zh-cn_image_0000002727752780.png)
 
 ### 示例3（支持并发线程绘制）
 
@@ -251,7 +251,7 @@ import { worker } from '@kit.ArkTS';
 
 @Entry
 @Component
-struct imageBitmapExamplePage {
+struct ImageBitmapExamplePage {
   private settings: RenderingContextSettings = new RenderingContextSettings(true);
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
   private myWorker = new worker.ThreadWorker('entry/ets/workers/Worker.ets');
@@ -298,7 +298,7 @@ workerPort.onmessage = (e: MessageEvents) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ghwDxbb1TeORMGC1-xqt9A/zh-cn_image_0000002723857182.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/62kOBoCdRLivn9Vraek8vQ/zh-cn_image_0000002727592922.png)
 
 ### 示例4（加载Resource图片）
 
@@ -333,4 +333,4 @@ struct ImageBitmapResourceExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/PlBLNps0RO60QB83L6EDqg/zh-cn_image_0000002753297031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/V6WKAuWISAarpWixfzp4vA/zh-cn_image_0000002757312495.png)

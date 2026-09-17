@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_cencinfo.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_cencinfo.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:de0a064b765f17ffcc7bbd293bc919002bfb6270f50b0786c23e3504cfca4b05
+scraped_at: 2026-09-18T06:50:48+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:6d31a6a54b384b0470ee194d4b95160e4ee0c83174c4159e20910226b7d2010c
 ---
 
 ## 概述
@@ -204,7 +204,7 @@ OH_AVErrCode OH_AVCencInfo_SetKeyIdAndIv(OH_AVCencInfo *cencInfo, uint8_t *keyId
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：cencInfo为空、keyId为空、keyIdLen != DRM\_KEY\_ID\_SIZE、iv是空、ivLen != DRM\_KEY\_IV\_SIZE、keyId拷贝失败，或者iv拷贝失败。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：cencInfo为空、keyId为空、keyIdLen != DRM\_KEY\_ID\_SIZE、iv为空、ivLen != DRM\_KEY\_IV\_SIZE、keyId拷贝失败，或者iv拷贝失败。 |
 
 ### OH\_AVCencInfo\_SetSubsampleInfo()
 

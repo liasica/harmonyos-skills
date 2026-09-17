@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-walk-navi
 title: 下车步行导航流转
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 实现车机导航流转 > 下车步行导航流转
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:06+08:00
+scraped_at: 2026-09-18T06:45:42+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:78aac7689c4bf40f06a066a6600382bfe294509fde81905c3a702bea73deb418
+content_hash: sha256:e00c8f82b1805a6c168eafc7768b0326ef7e53c7514de2cb57d06c43d4022189
 ---
 
 支持将车机指定的地图应用的步行导航数据流转至手机。
@@ -14,7 +14,7 @@ content_hash: sha256:78aac7689c4bf40f06a066a6600382bfe294509fde81905c3a702bea73d
 
 下车步行导航流转：用户下车前，车机地图应用导航还未结束，下车后可将车机上的导航数据流转至手机，发起步行导航。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Mqho79S2Qby7ZEuunLYIVQ/zh-cn_image_0000002723855466.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/A4-o5BbmRwKY8utuU9jySg/zh-cn_image_0000002727591206.png)
 
 ## 接口说明
 
@@ -25,7 +25,7 @@ content_hash: sha256:78aac7689c4bf40f06a066a6600382bfe294509fde81905c3a702bea73d
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/EVczWVd3QYChFR1LS0C0TQ/zh-cn_image_0000002723695548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/5wFZcYERSJ-hMctC7xOqzA/zh-cn_image_0000002727751064.png)
 
 ## 开发步骤
 

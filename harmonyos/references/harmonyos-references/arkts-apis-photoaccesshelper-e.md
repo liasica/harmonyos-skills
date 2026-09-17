@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2d88dfe63c352d4e8bebcbd212fbff808ac7e90e540e2be2a760670d83e93867
+scraped_at: 2026-09-18T06:51:18+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:dba6ffab847a7adcb9f27f8ffafea205304056a1201ab314dd52c88f595b3cdd
 ---
 
 **说明** 
@@ -441,7 +441,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **模型约束**： 此接口仅可在Stage模型下使用。
 
-**系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -457,11 +457,11 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **模型约束**： 此接口仅可在Stage模型下使用。
 
-**系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| FULL\_FUNCTION\_GRID | 0 | 宫格支持捏合，捏合后支持选中、点击进大图操纵。 |
+| FULL\_FUNCTION\_GRID | 0 | 宫格支持捏合，捏合后支持选中、点击进大图操作。 |
 
 ## AvailabilityStatus
 

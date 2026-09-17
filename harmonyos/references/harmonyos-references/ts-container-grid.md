@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Grid
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > Grid
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:54+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:390d7d3cf4cd0def40709f27ec287eedf14f2a112d0c3518caf855b075e5508b
+scraped_at: 2026-09-18T06:48:15+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:19fb57c7333e25ad37280cf7bc0eadb52c2769ab4111fe01e3fcfc81827c6449
 ---
 
 网格容器，由“行”和“列”分割的单元格所组成，通过指定“项目”所在的单元格做出各种各样的布局。
@@ -88,7 +88,7 @@ Grid组件使用通用属性[clip12+](ts-universal-attributes-sharp-clipping.md#
 
 设置Grid的padding后，如果子组件部分位于Grid内容区且部分位于padding区域内，则会显示；如果子组件完全位于padding区域内，则不会显示。如下图所示，GridItem1显示，而GridItem2不显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/eS-sBuoMQBehfYcg1mArTg/zh-cn_image_0000002753456599.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/rARTuM_OR_m_0yAtpU2uBg/zh-cn_image_0000002757232265.png)
 
 ### columnsTemplate
 
@@ -180,32 +180,30 @@ auto-fit模式和auto-stretch模式只支持track-size为一个有效行高值�
 
 Grid组件根据rowsTemplate、columnsTemplate属性的设置情况，可分为以下三种布局模式：
 
-1、rowsTemplate、columnsTemplate同时设置：
+1. rowsTemplate、columnsTemplate同时设置：
 
-* Grid只展示固定行列数的元素，其余元素不展示，且Grid不可滚动。
-* 此模式下以下属性不生效：layoutDirection、maxCount、minCount、cellLength。
-* Grid的宽高没有设置时，默认适应父组件尺寸。
-* Grid网格列大小按照Grid自身内容区域大小减去所有行列Gap后按各个行列所占比重分配。
-* GridItem默认填满网格大小。
+   * Grid只展示固定行列数的元素，其余元素不展示，且Grid不可滚动。
+   * 此模式下以下属性不生效：layoutDirection、maxCount、minCount、cellLength。
+   * Grid的宽高没有设置时，默认适应父组件尺寸。
+   * Grid网格列大小按照Grid自身内容区域大小减去所有行列Gap后按各个行列所占比重分配。
+   * GridItem默认填满网格大小。
+2. rowsTemplate、columnsTemplate仅设置其中的一个：
 
-2、rowsTemplate、columnsTemplate仅设置其中的一个：
+   * 元素按照设置的方向进行排布，超出Grid显示区域后，Grid可通过滚动的方式展示。
+   * 如果设置了columnsTemplate，Grid滚动方向为垂直方向，主轴方向为垂直方向，交叉轴方向为水平方向。
+   * 如果设置了rowsTemplate，Grid滚动方向为水平方向，主轴方向为水平方向，交叉轴方向为垂直方向。
+   * 此模式下以下属性不生效：layoutDirection、maxCount、minCount、cellLength。
+   * 网格交叉轴方向尺寸根据Grid自身内容区域交叉轴尺寸减去交叉轴方向所有Gap后按所占比重分配。
+   * 网格主轴方向尺寸取当前网格交叉轴方向所有GridItem主轴方向尺寸最大值。
+   * 此模式下GridItem交叉轴方向尺寸与网格一致，可以通过设置[constraintSize](ts-universal-attributes-size.md#constraintsize)中的maxWidth或maxHeight限制GridItem交叉轴方向尺寸小于网格。
+3. rowsTemplate、columnsTemplate都不设置：
 
-* 元素按照设置的方向进行排布，超出Grid显示区域后，Grid可通过滚动的方式展示。
-* 如果设置了columnsTemplate，Grid滚动方向为垂直方向，主轴方向为垂直方向，交叉轴方向为水平方向。
-* 如果设置了rowsTemplate，Grid滚动方向为水平方向，主轴方向为水平方向，交叉轴方向为垂直方向。
-* 此模式下以下属性不生效：layoutDirection、maxCount、minCount、cellLength。
-* 网格交叉轴方向尺寸根据Grid自身内容区域交叉轴尺寸减去交叉轴方向所有Gap后按所占比重分配。
-* 网格主轴方向尺寸取当前网格交叉轴方向所有GridItem主轴方向尺寸最大值。
-* 此模式下GridItem交叉轴方向尺寸与网格一致，可以通过设置[constraintSize](ts-universal-attributes-size.md#constraintsize)中的maxWidth或maxHeight限制GridItem交叉轴方向尺寸小于网格。
-
-3、rowsTemplate、columnsTemplate都不设置：
-
-* 元素在layoutDirection方向上排布，列数由Grid的宽度、首个元素的宽度、minCount、maxCount、columnsGap共同决定。
-* 行数由Grid高度、首个元素高度、cellLength、rowsGap共同决定。超出行列容纳范围的元素不显示，也不能通过滚动进行展示。
-* 此模式下仅生效以下属性：layoutDirection、maxCount、minCount、cellLength、editMode、columnsGap、rowsGap。
-* 当前layoutDirection设置为Row时，先从左到右排列，排满一行再排下一行。剩余高度不足时不再布局，整体内容顶部居中。
-* 当前layoutDirection设置为Column时，先从上到下排列，排满一列再排下一列，剩余宽度不足时不再布局。整体内容顶部居中。
-* 当前Grid下面没有GridItem时，Grid的宽高为0。
+   * 元素在layoutDirection方向上排布，列数由Grid的宽度、首个元素的宽度、minCount、maxCount、columnsGap共同决定。
+   * 行数由Grid高度、首个元素高度、cellLength、rowsGap共同决定。超出行列容纳范围的元素不显示，也不能通过滚动进行展示。
+   * 此模式下仅生效以下属性：layoutDirection、maxCount、minCount、cellLength、editMode、columnsGap、rowsGap。
+   * 当前layoutDirection设置为Row时，先从左到右排列，排满一行再排下一行。剩余高度不足时不再布局，整体内容顶部居中。
+   * 当前layoutDirection设置为Column时，先从上到下排列，排满一列再排下一列，剩余宽度不足时不再布局。整体内容顶部居中。
+   * 当前Grid下面没有GridItem时，Grid的宽高为0。
 
 ### columnsGap
 
@@ -724,13 +722,10 @@ GridItem的对齐方式枚举。
 
 **说明** 
 
-1、只有可滚动的Grid中，设置STRETCH参数会生效，其他场景不生效。
-
-2、在Grid的一行中，如果每个GridItem都是大小规律的（只占一行一列），设置STRETCH参数会生效，存在跨行或跨列的GridItem的场景不生效。
-
-3、设置STRETCH后，只有不设置高度的GridItem才会以当前行中最高的GridItem作为自己的高度，设置过高度的GridItem高度不会变化。
-
-4、设置STRETCH后，Grid布局时会有额外的布局流程，可能会带来额外的性能开销。
+1. 只有可滚动的Grid中，设置STRETCH参数会生效，其他场景不生效。
+2. 在Grid的一行中，如果每个GridItem都是大小规律的（只占一行一列），设置STRETCH参数会生效，存在跨行或跨列的GridItem的场景不生效。
+3. 设置STRETCH后，只有不设置高度的GridItem才会以当前行中最高的GridItem作为自己的高度，设置过高度的GridItem高度不会变化。
+4. 设置STRETCH后，Grid布局时会有额外的布局流程，可能会带来额外的性能开销。
 
 ## GridDirection8+枚举说明
 
@@ -1224,7 +1219,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/NKLX_bh_Qs6Jz2kFiiDxSw/zh-cn_image_0000002723856834.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Guj4_tmzSYek8j-tqvmJXQ/zh-cn_image_0000002727592574.gif)
 
 ### 示例2（可滚动Grid和滚动事件）
 
@@ -1373,7 +1368,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/p2efe_oKQ42j2kVD8dmkRw/zh-cn_image_0000002723696916.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/JHTTkitnSguqFd7pBIvaNQ/zh-cn_image_0000002727752432.gif)
 
 ### 示例3（可滚动Grid设置跨行跨列节点）
 
@@ -1466,7 +1461,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/I-7g0-U7RE-w54E9Dcp5Dw/zh-cn_image_0000002753296683.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Ot2znjkDTdi_Gmda9TWu_g/zh-cn_image_0000002757312147.gif)
 
 ### 示例4（Grid嵌套滚动）
 
@@ -1648,7 +1643,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/m3uUqEZlTLmy_zaIA2YqRQ/zh-cn_image_0000002753456601.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/0wKuSBTWS4eaGhOaAUNuPA/zh-cn_image_0000002757232267.gif)
 
 ### 示例5（Grid拖拽场景）
 
@@ -1739,19 +1734,19 @@ struct GridExample {
 
 网格子组件开始拖拽：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/nB4-65zlSgy4MCW2f_jY6Q/zh-cn_image_0000002723856836.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/W6SIL12VRuKHVx3xkCf5tQ/zh-cn_image_0000002727592576.png)
 
 网格子组件拖拽过程中：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Fysp2BunRd6KYLh1gFNFbg/zh-cn_image_0000002723696918.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/avE39SSmRIC9fOTm63ZUdQ/zh-cn_image_0000002727752434.png)
 
 网格子组件1与子组件6拖拽交换位置后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/LNqh2yMPREqufUOKMluLlA/zh-cn_image_0000002753296685.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/K4CG5BAITR2QDYW8KEI9dw/zh-cn_image_0000002757312149.png)
 
 拖拽动画：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/4cCE0ysMStS9b3oG0CbhzQ/zh-cn_image_0000002753456603.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/IdQtq749T5W7yy9iTyzicA/zh-cn_image_0000002757232269.gif)
 
 ### 示例6（自适应Grid）
 
@@ -1804,7 +1799,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/6E47lrQeSCaAvHag9DPfXQ/zh-cn_image_0000002723856838.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/4SQBGLQaQ4eNhjLsdv3zqg/zh-cn_image_0000002727592578.gif)
 
 ### 示例7（双指缩放修改Grid列数）
 
@@ -1890,7 +1885,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/49YeA_3DTNifNtwpkGNPaw/zh-cn_image_0000002723696920.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/vxqOiJcVTOWxe7XsmZ9BnA/zh-cn_image_0000002727752436.gif)
 
 ### 示例8（设置自适应列数）
 
@@ -1960,7 +1955,7 @@ struct GridColumnsTemplate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/pDi6bPs1QkuCTKsYKbIUHQ/zh-cn_image_0000002753296687.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/3za-OH5QTCOUDjqHExonew/zh-cn_image_0000002757312151.png)
 
 ### 示例9（以当前行最高的GridItem的高度为其他GridItem的高度）
 
@@ -2029,7 +2024,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/7nME40DRR0O_DDqnCkLYsA/zh-cn_image_0000002753456605.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/jGRnDoQmSfOSUUeC-U64xQ/zh-cn_image_0000002757232271.png)
 
 ### 示例10（设置边缘渐隐）
 
@@ -2085,7 +2080,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/x1CGtrxJQJqJlowvCn6Hhg/zh-cn_image_0000002723856840.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/RO7qxPsxRj-0x3-pskFz-Q/zh-cn_image_0000002727592580.gif)
 
 ### 示例11（单边边缘效果）
 
@@ -2140,7 +2135,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/o8fCm4KtReWn7xJakttNXg/zh-cn_image_0000002723696922.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/M9MuFK2aS4iQIOSXAiwiVA/zh-cn_image_0000002727752438.gif)
 
 ### 示例12（方向键走焦换行模式）
 
@@ -2226,7 +2221,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/5OS1ky6mQXW6Yfz9L85blA/zh-cn_image_0000002753296689.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/mYGxt4MxT4O91e66KSF2wg/zh-cn_image_0000002757312153.gif)
 
 ### 示例13（设置滚动事件）
 
@@ -2382,7 +2377,7 @@ struct GridScrollToIndexSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/BTMhi-QDSRyY_roai811Fw/zh-cn_image_0000002753456607.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/5ctAkLC2SY2UsLEcvG8zpw/zh-cn_image_0000002757232273.gif)
 
 ### 示例15（实现Grid滑动选择）
 
@@ -2685,7 +2680,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/Jw-epWdwRWaMdjw4nk6dFw/zh-cn_image_0000002723856842.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/XAzONEofReig9hPfu1EDBQ/zh-cn_image_0000002727592582.gif)
 
 ### 示例16（实现GridItem自定义拖拽）
 
@@ -2955,7 +2950,7 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/3RyQZOOyRzWX1G52YMJRvg/zh-cn_image_0000002723696924.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/if8NZEJ0RHCTtSl2JaAWIg/zh-cn_image_0000002727752440.gif)
 
 ### 示例17（通过拖拽事件实现GridItem拖拽）
 
@@ -3027,7 +3022,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/v5lI2qhYQ1u6a3ZNnVqRrA/zh-cn_image_0000002753296691.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/9AmMmM0OSQmrV-2nsbes5Q/zh-cn_image_0000002757312155.gif)
 
 ### 示例18（Grid组件基于断点配置列数）
 
@@ -3081,15 +3076,15 @@ struct GridExample {
 
 Grid宽度属于sm及更小的断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/uRHFNofkTyicy3IaNuE0hA/zh-cn_image_0000002753456609.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/CJvaP07pQjW3wmELko7z_g/zh-cn_image_0000002757232275.png)
 
 Grid宽度属于md断点区间时显示3列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/q77p5Qj5T6-omC6KtO_UCQ/zh-cn_image_0000002723856844.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/FUBBmUpHREaGYBZjKgzDwg/zh-cn_image_0000002727592584.png)
 
 Grid宽度属于lg及更大的断点区间时显示5列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/zLnWOpHoR2ahjXahrabvAA/zh-cn_image_0000002723696926.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Btn1DrObSwa6U_fPdFxFCA/zh-cn_image_0000002727752442.png)
 
 ### 示例19（获取内容总大小）
 
@@ -3175,7 +3170,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/h_Y6451rQWSHt6oEDyLdMw/zh-cn_image_0000002753296693.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/kLEHDyJeTr-ASJA3dReOnw/zh-cn_image_0000002757312157.gif)
 
 ### 示例20（设置多选聚拢动画）
 
@@ -3279,7 +3274,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/aJoLREc_TM6RLseiQ64uQw/zh-cn_image_0000002753456611.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/myNQwRttRmm7Ijx_tWxdxg/zh-cn_image_0000002757232277.gif)
 
 ### 示例21（设置滑动多选）
 
@@ -3376,7 +3371,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/PL4XwKENQZeyOVGU809X4A/zh-cn_image_0000002723856846.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/UGn5KfPLRZCOhm6fBblmKA/zh-cn_image_0000002727592586.gif)
 
 ### 示例22（使用OnMove进行拖拽）
 
@@ -3589,4 +3584,4 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/0H566Uh9RAmhxPLgClyhDA/zh-cn_image_0000002723696928.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/22grmHsST4SeGjo2wekEkg/zh-cn_image_0000002727752444.gif)

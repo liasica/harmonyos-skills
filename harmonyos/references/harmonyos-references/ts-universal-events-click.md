@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 点击事件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:46+08:00
+scraped_at: 2026-09-18T06:48:07+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:fb29315c5d4ee655d7db49a8c97473b546ea8e5717eee6a80af01682f5b6de31
+content_hash: sha256:bb2c25614e3ac2c941a13792b9258d660840a268013635df6c6173e4774931f4
 ---
 
 点击事件用于监听组件被点击时触发的交互行为，开发者可通过该事件获取点击位置、触发来源等点击事件信息，并可在支持的接口中设置点击手势移动阈值，适用于处理组件点击响应、区分触发来源和控制点击识别范围的场景。
@@ -257,7 +257,7 @@ struct ClickExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Xm0FAubvRSS66VGsu6JAng/zh-cn_image_0000002723696744.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/O1ygJUK_TAmKEGf7iL075Q/zh-cn_image_0000002727752260.gif)
 
 ### 示例2（获取组件实时位置）
 
@@ -293,4 +293,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3KKgQXkLQvCZje1QjlTQUQ/zh-cn_image_0000002753456425.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/xzLLdNtERa2-tIiWim-RwA/zh-cn_image_0000002757232091.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-univers
 title: 无障碍开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 无障碍与适老化 > 无障碍开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b58537f57551e22b77f7a3147ab2b5888bf0576a3f50122538a2ba5d7a432f4c
+scraped_at: 2026-09-18T06:45:09+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:82bdbfbb9e7779ea8d0d54a47fe9d4c1c868e64af42c477444c8eea972ed681f
 ---
 
 ## 概述
@@ -660,7 +660,7 @@ export struct AccessibilityFocusDrawLevelCase02 {
 
 ### 设置无障碍自定义操作
 
-[accessibilityCustomActions](https://developerlf.hwcloudtest.cn/consumer/cn/doc/harmonyos-references/ts-universal-attributes-accessibility#accessibilitycustomactions)用于设置组件的自定义无障碍操作，支持开发者设置一个自定义actions的数组，用于给组件按操作名进行自定义操作的回调绑定。
+[accessibilityCustomActions](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitycustomactions)用于设置组件的自定义无障碍操作，支持开发者设置一个自定义actions的数组，用于给组件按操作名进行自定义操作的回调绑定。
 
 当组件包含的操作名包含“IncreaseValue”或“DecreaseValue”时，忽略组件的其他自定义操作，改为支持单指上下扫动，触发业务回调完成调整值，其中“IncreaseValue”代表调大，“DecreaseValue”代表调小。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputDevice (输入设备)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputDevice (输入设备)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:15+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:2d1f54af4059c4132a391c16a83fc5ce67f74b6e66eb29ec60c8322a8c2d4204
+scraped_at: 2026-09-18T06:50:21+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:fcbd34bd47c94fe8fadbb24ba9eff271a9fa108b04c90d5d856053ccbdfa3acb
 ---
 
 本模块提供输入设备管理能力，包括监听输入设备的连接和断开状态，查询设备名称等输入设备信息。
@@ -1192,7 +1192,7 @@ type AxisType = 'touchmajor' | 'touchminor' | 'orientation' | 'x' | 'y' | 'press
 
 输入设备的轴信息。
 
-**系统能力**： SystemCapability.MultimodalInput.Input.InputDevice
+**系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Contacts错误码
 breadcrumb: API参考 > 应用服务 > Contacts Kit（联系人服务） > 错误码 > Contacts错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d1ac1a258cbcc5e57b209fb66bde9865219486f501e6805f72c11c66bbbdac7f
+scraped_at: 2026-09-18T06:51:44+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:d73473c2197ebc5e9a05c269c72cb4e68447750c1c0e089de30891f80fa8d554
 ---
 
 **说明** 
@@ -140,25 +140,7 @@ User cancel.
 
 当前用户主动取消操作，请稍后重试。
 
-## 401 打开联系人头像文件失败
-
-**错误信息**
-
-Failed to open contact portrait file.
-
-**错误描述**
-
-无法打开联系人头像文件。
-
-**可能原因**
-
-头像文件路径错误、文件不存在、磁盘损坏。
-
-**处理步骤**
-
-检查文件是否存在。
-
-## 401 系统内部错误
+## Contacts调用失败返回401
 
 ### 内部关联联系人ID无效
 
@@ -249,3 +231,21 @@ Internal error. Invalid contact rawId.
 **处理步骤**
 
 系统异常，请稍后重试。
+
+### 打开联系人头像文件失败
+
+**错误信息**
+
+Failed to open contact portrait file.
+
+**错误描述**
+
+无法打开联系人头像文件。
+
+**可能原因**
+
+头像文件路径错误、文件不存在、磁盘损坏。
+
+**处理步骤**
+
+检查文件是否存在。

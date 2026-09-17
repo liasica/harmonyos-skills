@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: AVScreenCapture录屏基础流程
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVScreenCapture录屏取码流(C/C++) > AVScreenCapture录屏基础流程
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8532df2028eab594ec1f41e112db3c3d95e308ea27415d434445d430fe494346
+scraped_at: 2026-09-18T06:46:00+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:0c86fa94920b8200208719f4e23766a7615dd3c8281b2b56d6fc565437101276
 ---
 
 屏幕录制功能支持开发者获取屏幕数据，适用于屏幕录制、会议共享、直播等场景。开发者可通过调用[AVScreenCapture](media-kit-intro.md#avscreencapture)模块的C API，采集设备内外的音视频数据源。该模块需与窗口管理（Window）、图形处理（Graphic）等模块协同工作，以完成完整的视频采集流程。
@@ -23,7 +23,7 @@ content_hash: sha256:8532df2028eab594ec1f41e112db3c3d95e308ea27415d434445d430fe4
 
 基础流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/IyYxEv9dQd2OBD8KjKg1-g/zh-cn_image_0000002723855656.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/NchjwKPaRHqnBqR3vgs52g/zh-cn_image_0000002727591396.png)
 
 录屏采集的内容输出方式如下。
 
@@ -37,7 +37,7 @@ content_hash: sha256:8532df2028eab594ec1f41e112db3c3d95e308ea27415d434445d430fe4
 
   隐私保护弹框：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/ueePrdTFQaGtUWbCcSP7kQ/zh-cn_image_0000002723695738.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/0DdbBjHGSsmND2idD4GU6g/zh-cn_image_0000002727751254.png)
 
 ## 通用开发步骤
 
@@ -108,7 +108,7 @@ OH_AVScreenCapture_SetMicrophoneEnabled(g_avCapture, isMic);
 
 ### 配置视频采集参数
 
-录屏的视频采集信息[OH\_VideoInfo](../harmonyos-references/capi-avscreencapture-oh-videoinfo.md)包含录屏输入规格配置[OH\_VideoCaptureInfo](../harmonyos-references/capi-avscreencapture-oh-videocaptureinfo.md)和录屏输出规格配置[OH\_VideoEncInfo](../harmonyos-references/capi-avscreencapture-oh-videoencinfo.md)。
+录屏的视频采集信息[OH\_VideoInfo](../harmonyos-references/capi-avscreencapture-oh-videoinfo.md)包含录屏输入规格配置[OH\_VideoCaptureInfo](../harmonyos-references/capi-avscreencapture-oh-videocaptureinfo.md)和录屏输出规格配置[OH\_VideoEncInfo](../harmonyos-references/capi-avscreencapture-oh-videoencinfo.md)。配置录屏宽高时，需要[设置正确的视频宽高](obtain-supported-codecs.md#设置正确的视频宽高)。
 
 ```
 // 获取屏幕信息。
@@ -415,7 +415,7 @@ config.videoInfo.videoCapInfo.displayId = 0;
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/YWrTZpyfReO5dfWl2ZIqIg/zh-cn_image_0000002753295505.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/scXytqihTYSeLPrk05qm3w/zh-cn_image_0000002757310969.png)
 
 ### 录制主屏幕
 
@@ -475,7 +475,7 @@ config.videoInfo.videoCapInfo.missionIDsLen = static_cast<int32_t>(g_missionIds.
 // 在配置参数结束后执行"g_missionIds.clear()"。
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/c_ofQ8ZBRdCCQKVfJkX4Ug/zh-cn_image_0000002753455423.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/hv1duYk2Tzu2iha8vRbQ9Q/zh-cn_image_0000002757231089.png)
 
 若期望同时录制多个窗口，需要传入期望录制的窗口ID列表。
 

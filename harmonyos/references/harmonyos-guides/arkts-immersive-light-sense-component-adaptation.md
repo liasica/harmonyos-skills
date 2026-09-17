@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 组件适配沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 组件适配沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:26+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:d33c10bee5ff9e9adf52d136b2c0430483cb635f6e06c64f91c9394b0edb7ccd
+scraped_at: 2026-09-18T06:45:06+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:5715d98903c8dd8657cbd3064783a475cdd8ffd1732ac7d645203bf70a7ba56e
 ---
 
 本文按导航类、弹窗类、按钮与选择类、其余组件四大场景分类，系统介绍各组件如何通过应用级开关与组件级配置开启沉浸光感，涵盖沉浸光感的视觉效果、设置方法及适配要点，帮助开发者快速完成沉浸光感的组件适配。
 
 ## 导航类组件
 
-导航类组件包括Navigation标题栏、底部页签、索引条，是页面导航与内容定位的辅助元素，通常固定在页面顶部或底部。沉浸光感为导航类组件赋予了通透的悬浮质感，让导航栏在滚动内容之上呈现轻盈的分层效果，内容透过材质层自然渗透，建立导航区域与内容之间的视觉层次。导航类组件通常使用较薄的材质样式（ULTRA\_THIN或THIN），在保持背景通透的同时避免过度遮挡内容。
+导航类组件包括Navigation标题栏、底部页签、索引条，是页面导航与内容定位的辅助元素，通常固定在页面顶部或底部。沉浸光感为导航类组件赋予了通透的悬浮质感，让导航栏在滚动内容之上呈现轻盈的分层效果，底层内容透过材质层自然透出，建立导航区域与内容之间的视觉层次。导航类组件通常使用较薄的材质样式（ULTRA\_THIN或THIN），在保持背景通透的同时避免过度遮挡内容。
 
 ### Navigation标题栏
 
@@ -58,7 +58,7 @@ Navigation标题栏支持通过应用级开启、组件级开启方式开启沉�
 
 ## 弹窗类组件
 
-弹窗类组件包括Toast、Popup、Tips、Menu和Dialog（包含AlertDialog、CustomDialog、bindSheet及各类PickerDialog），是浮层元素，在内容之上建立视觉层次。沉浸光感为弹窗类组件赋予了核心价值：沉浸式系统材质让弹窗背景呈现轻盈通透的质感，底层内容透过材质层自然渗透，配合折射、高光、阴影等多层效果，使弹窗在内容之上建立清晰的视觉层次；沉浸式空间动效为弹窗和菜单的弹出过程增添形变、流光等动态表现，使弹出过程灵动自然。弹窗类组件通常使用较厚的材质样式（THICK或ULTRA\_THICK），以获得更强的背景模糊效果，确保弹窗内容与背景内容之间有清晰的视觉分离。沉浸光感开启后，主动设置的背景色、背景模糊等自定义样式属性不生效。
+弹窗类组件包括Toast、Popup、Tips、Menu和Dialog（包含AlertDialog、CustomDialog、bindSheet及各类PickerDialog），是浮层元素，在内容之上建立视觉层次。沉浸光感为弹窗类组件赋予了核心价值：沉浸式系统材质让弹窗背景呈现轻盈通透的质感，底层内容透过材质层自然透出，配合折射、高光、阴影等多层效果，使弹窗在内容之上建立清晰的视觉层次；沉浸式空间动效为弹窗和菜单的弹出过程增添形变、流光等动态表现，使弹出过程灵动自然。弹窗类组件通常使用较厚的材质样式（THICK或ULTRA\_THICK），以获得更强的背景模糊效果，确保弹窗内容与背景内容之间有清晰的视觉分离。沉浸光感开启后，主动设置的背景色、背景模糊等自定义样式属性不生效。
 
 ### 即时反馈（Toast）
 
@@ -106,7 +106,7 @@ Popup和Tips支持通过应用级开启、组件级开启方式开启沉浸光�
 
 ## 按钮与选择类组件
 
-按钮与选择类组件包括Button、Select、Toggle、Slider、ChipGroup/ChipGroupV2和SegmentButton/SegmentButtonV2，是内嵌于内容流中的交互元素，用户通过它们进行选择和操作。沉浸光感为选择类组件提供了细腻的交互反馈与通透的视觉质感：沉浸式系统材质通常使用较薄的材质样式（ULTRA\_THIN或THIN），在保持组件背景通透的同时，通过[ImmersiveOptions](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)中的交互形变（interactive）和点光源（lightEffect）为按压、触摸等操作提供灵动的视觉反馈，替代组件默认的按压态和悬浮态效果。
+按钮与选择类组件包括Button、Select、Toggle、Slider、ChipGroup和SegmentButton，是内嵌于内容流中的交互元素，用户通过它们进行选择和操作。沉浸光感为选择类组件提供了细腻的交互反馈与通透的视觉质感：沉浸式系统材质通常使用较薄的材质样式（ULTRA\_THIN或THIN），在保持组件背景通透的同时，通过[ImmersiveOptions](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)中的交互形变（interactive）和点光源（lightEffect）为按压、触摸等操作提供灵动的视觉反馈，替代组件默认的按压态和悬浮态效果。
 
 ### 按钮（Button）
 

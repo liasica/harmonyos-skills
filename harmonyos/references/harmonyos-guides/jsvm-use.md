@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-use
 title: JSVM-API使用指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:28+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:8fe676a4b5d1ad86feb1193b71395487face8b1c8a004de0696ff6ed3daaf49d
+scraped_at: 2026-09-18T06:46:56+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:3c7656015788a27f928eb62c2dbf6deed496a601551819d5535e296363d57f75
 ---
 
-* **[使用JSVM-API接口进行任务队列相关开发](use-jsvm-execute_tasks.md)**
+* **[使用JSVM-API接口进行任务队列相关开发](use-jsvm-execute-tasks.md)**
 * **[使用JSVM-API接口进行虚拟机快照相关开发](use-jsvm-create-snapshot.md)**
 * **[使用JSVM-API接口进行WebAssembly模块相关开发](use-jsvm-about-wasm.md)**
 * **[使用JSVM-API接口进行函数创建和调用](use-jsvm-function-call.md)**

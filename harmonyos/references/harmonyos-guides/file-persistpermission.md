@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-persistp
 title: 授权持久化
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 选择与保存用户文件 > 授权持久化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f718f7e6e8df217d821b10bb84f648523ca804a49e7c2ecbca73be70887fae7a
+scraped_at: 2026-09-18T06:45:18+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:56e8a0deab462a01ca07ce59b324bf854e26f280f333b617849e9976ddfaaf9e
 ---
 
 ## 场景介绍
@@ -16,122 +16,120 @@ content_hash: sha256:f718f7e6e8df217d821b10bb84f648523ca804a49e7c2ecbca73be70887
 
 通过Picker选择文件或文件夹进行临时授权，该方式获取到的URI只具有**临时读写权限**。应用后续可按需通过文件分享接口（[ohos.fileshare](../harmonyos-references/js-apis-fileshare.md)）进行持久化授权。
 
-1.应用仅临时需要访问公共目录的数据，例如：通讯类应用需要发送用户的文件或者图片。应用调用Picker的([select](../harmonyos-references/js-apis-file-picker.md#select-3))接口选择需要发送的文件或者图片，此时应用获取到的是该文件的临时访问权限，应用重启或者设备重启后，再次访问该文件则仍需使用Picker进行文件选择。
+1. 应用仅临时需要访问公共目录的数据，例如：通讯类应用需要发送用户的文件或者图片。应用调用Picker的([select](../harmonyos-references/js-apis-file-picker.md#select-3))接口选择需要发送的文件或者图片，此时应用获取到的是该文件的临时访问权限，应用重启或者设备重启后，再次访问该文件则仍需使用Picker进行文件选择。
+2. 应用如果需要长期访问某个文件或目录时，可以通过Picker选择文件或文件夹进行临时授权，然后利用persistPermission接口（[ohos.fileshare.persistPermission](../harmonyos-references/js-apis-fileshare.md#filesharepersistpermission11)）对授权进行持久化（在授权方同意被持久化的情况下，例如使用Picker选择文件场景，Picker会将权限授予当前应用，即可进行授权持久化），例如：文档编辑类应用本次编辑完一个用户文件，期望在历史记录中可以直接选中打开，无需再拉起Picker进行选择授权。
 
-2.应用如果需要长期访问某个文件或目录时，可以通过Picker选择文件或文件夹进行临时授权，然后利用persistPermission接口（[ohos.fileshare.persistPermission](../harmonyos-references/js-apis-fileshare.md#filesharepersistpermission11)）对授权进行持久化（在授权方同意被持久化的情况下，例如使用Picker选择文件场景，Picker会将权限授予当前应用，即可进行授权持久化），例如：文档编辑类应用本次编辑完一个用户文件，期望在历史记录中可以直接选中打开，无需再拉起Picker进行选择授权。
+   可使用canIUse接口，确认设备是否具有以下系统能力：SystemCapability.FileManagement.AppFileService.FolderAuthorization。
 
-可使用canIUse接口，确认设备是否具有以下系统能力：SystemCapability.FileManagement.AppFileService.FolderAuthorization。
+   ```ts
+   if (!canIUse('SystemCapability.FileManagement.AppFileService.FolderAuthorization')) {
+       console.error('this api is not supported on this device');
+       return;
+   }
+   ```
 
-```ts
-if (!canIUse('SystemCapability.FileManagement.AppFileService.FolderAuthorization')) {
-    console.error('this api is not supported on this device');
-    return;
-}
-```
+   **需要权限**
 
-**需要权限**
+   ohos.permission.FILE\_ACCESS\_PERSIST，具体参考[访问控制-申请应用权限](determine-application-mode.md)。
 
-ohos.permission.FILE\_ACCESS\_PERSIST，具体参考[访问控制-申请应用权限](determine-application-mode.md)。
+   **示例：**
 
-**示例：**
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { picker } from '@kit.CoreFileKit';
+   import { fileShare } from '@kit.CoreFileKit';
 
-```typescript
-import { BusinessError } from '@kit.BasicServicesKit';
-import { picker } from '@kit.CoreFileKit';
-import { fileShare } from '@kit.CoreFileKit';
+   export async function persistPermissionExample() {
+     try {
+       // ...
+       let documentSelectOptions = new picker.DocumentSelectOptions();
+       let documentPicker = new picker.DocumentViewPicker();
+       let uris = await documentPicker.select(documentSelectOptions);
+       // 可以组合授予多个权限，例如读写权限可使用 fileShare.OperationMode.READ_MODE | fileShare.OperationMode.WRITE_MODE。
+       // 注意：只能对已获取到的临时权限进行持久化授权操作，否则会报错。
+       let policyInfo: fileShare.PolicyInfo = {
+         uri: uris[0],
+         operationMode: fileShare.OperationMode.READ_MODE,
+       };
+       let policies: fileShare.PolicyInfo[] = [policyInfo];
+       fileShare.persistPermission(policies).then(() => {
+         console.info('persistPermission successfully');
+       }).catch((err: BusinessError<Array<fileShare.PolicyErrorResult>>) => {
+         console.error('persistPermission failed with error message: ' + err.message + ', error code: ' + err.code);
+         if (err.code == 13900001 && err.data) {
+           for (let i = 0; i < err.data.length; i++) {
+             console.error('error code : ' + JSON.stringify(err.data[i].code));
+             console.error('error uri : ' + JSON.stringify(err.data[i].uri));
+             console.error('error reason : ' + JSON.stringify(err.data[i].message));
+           }
+         }
+       });
+     } catch (error) {
+       let err: BusinessError = error as BusinessError;
+       console.error(`persistPermission failed with err, Error code: ${err.code}, message: ${err.message}`);
+     }
+   }
+   ```
 
-export async function persistPermissionExample() {
-  try {
-    // ...
-    let documentSelectOptions = new picker.DocumentSelectOptions();
-    let documentPicker = new picker.DocumentViewPicker();
-    let uris = await documentPicker.select(documentSelectOptions);
-    // 可以组合授予多个权限，例如读写权限可使用 fileShare.OperationMode.READ_MODE | fileShare.OperationMode.WRITE_MODE。
-    // 注意：只能对已获取到的临时权限进行持久化授权操作，否则会报错。
-    let policyInfo: fileShare.PolicyInfo = {
-      uri: uris[0],
-      operationMode: fileShare.OperationMode.READ_MODE,
-    };
-    let policies: fileShare.PolicyInfo[] = [policyInfo];
-    fileShare.persistPermission(policies).then(() => {
-      console.info('persistPermission successfully');
-    }).catch((err: BusinessError<Array<fileShare.PolicyErrorResult>>) => {
-      console.error('persistPermission failed with error message: ' + err.message + ', error code: ' + err.code);
-      if (err.code == 13900001 && err.data) {
-        for (let i = 0; i < err.data.length; i++) {
-          console.error('error code : ' + JSON.stringify(err.data[i].code));
-          console.error('error uri : ' + JSON.stringify(err.data[i].uri));
-          console.error('error reason : ' + JSON.stringify(err.data[i].message));
-        }
-      }
-    });
-  } catch (error) {
-    let err: BusinessError = error as BusinessError;
-    console.error(`persistPermission failed with err, Error code: ${err.code}, message: ${err.message}`);
-  }
-}
-```
+   **注意** 
 
-**注意** 
+   1. 持久化授权文件信息建议应用在本地存储数据，供后续按需激活持久化文件。
+   2. 持久化授权的数据存储在系统的数据库中，应用或者设备重启后需要激活已持久化的授权才可以正常使用[激活持久化授权](file-persistpermission.md#激活已经持久化的权限访问文件或目录)。
+   3. 持久化权限接口(可以使用canIUse接口进行校验能力是否可用)，且需要申请对应的权限。
+   4. 应用在卸载时会将之前的授权数据全部清除，重新安装后需要重新授权。
+   5. 只能对已获取到的临时权限进行持久化授权操作，否则会报错。
 
-1. 持久化授权文件信息建议应用在本地存储数据，供后续按需激活持久化文件。
-2. 持久化授权的数据存储在系统的数据库中，应用或者设备重启后需要激活已持久化的授权才可以正常使用[激活持久化授权](file-persistpermission.md#激活已经持久化的权限访问文件或目录)。
-3. 持久化权限接口(可以使用canIUse接口进行校验能力是否可用)，且需要申请对应的权限。
-4. 应用在卸载时会将之前的授权数据全部清除，重新安装后需要重新授权。
-5. 只能对已获取到的临时权限进行持久化授权操作，否则会报错。
+   **备注**：C/C++持久化授权接口说明及开发指南具体参考：[OH\_FileShare\_PersistPermission持久化授权接口](native-fileshare-guidelines.md)。
+3. 可以通过revokePermission接口（[ohos.fileshare.revokePermission](../harmonyos-references/js-apis-fileshare.md#filesharerevokepermission11)）对已持久化的文件取消授权，同时更新应用存储的数据以删除最近访问数据。
 
-**备注**：C/C++持久化授权接口说明及开发指南具体参考：[OH\_FileShare\_PersistPermission持久化授权接口](native-fileshare-guidelines.md)。
+   **需要权限**
 
-3.可以通过revokePermission接口（[ohos.fileshare.revokePermission](../harmonyos-references/js-apis-fileshare.md#filesharerevokepermission11)）对已持久化的文件取消授权，同时更新应用存储的数据以删除最近访问数据。
+   ohos.permission.FILE\_ACCESS\_PERSIST，具体参考[访问控制-申请应用权限](determine-application-mode.md)。
 
-**需要权限**
+   **示例：**
 
-ohos.permission.FILE\_ACCESS\_PERSIST，具体参考[访问控制-申请应用权限](determine-application-mode.md)。
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { picker } from '@kit.CoreFileKit';
+   import { fileShare } from '@kit.CoreFileKit';
 
-**示例：**
+   // ...
+   export async function revokePermissionExample() {
+     try {
+       let uri = 'file://docs/storage/Users/username/tmp.txt';
+       // 可以组合取消多个权限，例如读写权限可使用 fileShare.OperationMode.READ_MODE | fileShare.OperationMode.WRITE_MODE。
+       // 注意：只能对已获取到的持久化权限进行取消持久化授权操作，否则会报错。
+       let policyInfo: fileShare.PolicyInfo = {
+         uri: uri,
+         operationMode: fileShare.OperationMode.READ_MODE,
+       };
+       let policies: fileShare.PolicyInfo[] = [policyInfo];
+       fileShare.revokePermission(policies).then(() => {
+         console.info('revokePermission successfully');
+       }).catch((err: BusinessError<Array<fileShare.PolicyErrorResult>>) => {
+         console.error('revokePermission failed with error message: ' + err.message + ', error code: ' + err.code);
+         if (err.code == 13900001 && err.data) {
+           for (let i = 0; i < err.data.length; i++) {
+             console.error('error code : ' + JSON.stringify(err.data[i].code));
+             console.error('error uri : ' + JSON.stringify(err.data[i].uri));
+             console.error('error reason : ' + JSON.stringify(err.data[i].message));
+           }
+         }
+       });
+     } catch (error) {
+       let err: BusinessError = error as BusinessError;
+       console.error(`revokePermission failed with err, Error code: ${err.code}, message: ${err.message}`);
+     }
+   }
+   ```
 
-```typescript
-import { BusinessError } from '@kit.BasicServicesKit';
-import { picker } from '@kit.CoreFileKit';
-import { fileShare } from '@kit.CoreFileKit';
+   **注意** 
 
-// ...
-export async function revokePermissionExample() {
-  try {
-    let uri = 'file://docs/storage/Users/username/tmp.txt';
-    // 可以组合取消多个权限，例如读写权限可使用 fileShare.OperationMode.READ_MODE | fileShare.OperationMode.WRITE_MODE。
-    // 注意：只能对已获取到的持久化权限进行取消持久化授权操作，否则会报错。
-    let policyInfo: fileShare.PolicyInfo = {
-      uri: uri,
-      operationMode: fileShare.OperationMode.READ_MODE,
-    };
-    let policies: fileShare.PolicyInfo[] = [policyInfo];
-    fileShare.revokePermission(policies).then(() => {
-      console.info('revokePermission successfully');
-    }).catch((err: BusinessError<Array<fileShare.PolicyErrorResult>>) => {
-      console.error('revokePermission failed with error message: ' + err.message + ', error code: ' + err.code);
-      if (err.code == 13900001 && err.data) {
-        for (let i = 0; i < err.data.length; i++) {
-          console.error('error code : ' + JSON.stringify(err.data[i].code));
-          console.error('error uri : ' + JSON.stringify(err.data[i].uri));
-          console.error('error reason : ' + JSON.stringify(err.data[i].message));
-        }
-      }
-    });
-  } catch (error) {
-    let err: BusinessError = error as BusinessError;
-    console.error(`revokePermission failed with err, Error code: ${err.code}, message: ${err.message}`);
-  }
-}
-```
+   1. 示例中的URI来源自应用存储的持久化数据中。
+   2. 只能对已获取到的持久化权限进行取消持久化授权操作，建议按照使用需求去取消对应的持久化权限。
+   3. 持久化权限接口(可以使用canIUse接口进行校验能力是否可用)，且需要申请对应的权限。
 
-**注意** 
-
-1. 示例中的URI来源自应用存储的持久化数据中。
-2. 只能对已获取到的持久化权限进行取消持久化授权操作，建议按照使用需求去取消对应的持久化权限。
-3. 持久化权限接口(可以使用canIUse接口进行校验能力是否可用)，且需要申请对应的权限。
-
-**备注**：C/C++去持久化授权接口说明及开发指南具体参考：[OH\_FileShare\_RevokePermission去持久化授权接口](native-fileshare-guidelines.md)。
+   **备注**：C/C++去持久化授权接口说明及开发指南具体参考：[OH\_FileShare\_RevokePermission去持久化授权接口](native-fileshare-guidelines.md)。
 
 ## 激活已经持久化的权限访问文件或目录
 

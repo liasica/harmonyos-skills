@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceNavigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceNavigation
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:10+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:37bcbb9aa62a663f8af5065c0d13fde50f36739067926d6df8d979df83697641
+scraped_at: 2026-09-18T06:48:29+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:d308e86f5d3cefb7b4de9cb00c8020b18e0c834e8a3433b5bb7797c56f2baf76
 ---
 
 作为Page页面的根容器使用，其内部默认包含了标题栏、内容区。其中，内容区在首页默认显示导航内容，在非首页显示[NavDestination](ts-basic-components-navdestination.md)的子组件，首页和非首页通过路由进行切换。
@@ -199,8 +199,8 @@ type NavDestinationBuilder = (name: string, param?: Object) => void
 展示AtomicServiceNavigation的基础样式与渐变色背景。
 
 ```ts
-import { AtomicServiceNavigation, MixMode, GradientAlpha, BackgroundTheme } from '@kit.ArkUI';
-import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+import { AtomicServiceNavigation, MixMode, GradientAlpha, BackgroundTheme, AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Index {
@@ -329,15 +329,14 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/pux9qFidQYGkbwxKa_6j_Q/zh-cn_image_0000002723857312.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/C08t684QQNagEEjpjL8sFg/zh-cn_image_0000002727593052.jpg)
 
 ### 示例2（抽屉样式，宽屏场景下插入自定义布局）
 
 设备宽屏场景（宽度大于600vp）下设置抽屉模式，在标题栏插入自定义布局。
 
 ```ts
-import { AtomicServiceNavigation, TitleBarType } from '@kit.ArkUI';
-import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+import { AtomicServiceNavigation, TitleBarType, AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -469,15 +468,14 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/av7yTga3QniaCZJ-i035VA/zh-cn_image_0000002723697394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/nIXoAWf-RjOb-7mjV84HSw/zh-cn_image_0000002727752910.png)
 
 ### 示例3（侧边栏使用场景）
 
 设置侧边栏：背景色与内容样式。
 
 ```ts
-import { AtomicServiceNavigation, TitleBarType } from '@kit.ArkUI';
-import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+import { AtomicServiceNavigation, TitleBarType, AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -610,4 +608,4 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/Nl4bSMMMQTqo8IaP0cd7eg/zh-cn_image_0000002753297161.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/g0t_uAtBSFCpk2xE4qh2eQ/zh-cn_image_0000002757312625.png)

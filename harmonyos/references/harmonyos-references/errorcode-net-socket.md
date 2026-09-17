@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Socket错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > Socket错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ac6e566d48f9d3a8c38b2594445c3e20d304ce9509e86b158080b8b4b4bf2c56
+scraped_at: 2026-09-18T06:49:59+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:656b9e701ef2d43ef4b0247e88ba77057b89fabe4a9f91d69d4190cb9b221e94
 ---
 
 **说明** 
@@ -15,6 +15,13 @@ content_hash: sha256:ac6e566d48f9d3a8c38b2594445c3e20d304ce9509e86b158080b8b4b4b
 Socket错误码映射关系：2301000 + [内核错误码](errorcode-kernel.md)。
 
 Socket server错误码映射关系：2303100 + [内核错误码](errorcode-kernel.md)。
+
+**连接断开场景错误码说明：**
+
+* 服务端主动断开：对端正常关闭时TCPSocket/TLSSocket均触发close事件，无错误码；对端异常断开（连接重置）时，TCPSocket的send()或message/error事件返回2301104，TLSSocket返回2303505（TLS系统调用错误）。
+* 客户端主动断开：本地close()后，TCPSocket继续调用send()、getState()等接口返回2301009，继续send()返回2301032或2301108。
+* 蜂窝原因断开：TCPSocket.connect()/send()时底层蜂窝网络断开，返回2301100、2301101或2301113，弱网超时返回2301110。
+* 应用内部原因断开：TCPSocket本地close()后误操作返回2301009、2301032或2301108；对未建立连接的socket调用TCPSocketServer.send()等接口返回2303207。
 
 ## 2301001 操作不允许
 
@@ -337,6 +344,286 @@ Insufficient permissions.
 1. 检查module.json5中是否配置了必要的网络权限（如ohos.permission.INTERNET）。
 2. 确认操作是否符合权限要求。可通过日志关键词"Permission denied"定位该错误。
 
+## 2301032 连接已断开仍发送数据
+
+**错误信息**
+
+Broken pipe.
+
+**错误描述**
+
+向已断开连接发送数据，连接的另一端（服务端或本地）已关闭。
+
+**可能原因**
+
+1. 服务端主动关闭连接后，本地仍调用send发送数据（errno为32，EPIPE）。
+2. 本地主动关闭连接后，仍调用send发送数据。
+
+**处理步骤**
+
+1. 结合断开时机判断：服务端先关闭则为服务端主动断开；本地先关闭则为客户端主动断开。
+2. 停止发送，重新建立连接后再发送数据。
+
+## 2301100 网络已关闭
+
+**错误信息**
+
+Network is down.
+
+**错误描述**
+
+网络已关闭，连接断开。
+
+**可能原因**
+
+1. 蜂窝网络断开、无网络信号或开启飞行模式（errno为100，ENETDOWN）。
+2. 网络服务未启动或已停止。
+
+**处理步骤**
+
+1. 判断为蜂窝/网络原因导致的断开，非应用内部原因。
+2. 检查网络连接状态，恢复网络后重新建立连接。
+
+## 2301101 网络不可达
+
+**错误信息**
+
+Network is unreachable.
+
+**错误描述**
+
+网络不可达，连接断开。
+
+**可能原因**
+
+1. 蜂窝数据网络不可用或未开启（errno为101，ENETUNREACH）。
+2. 网络路由异常或网关不可达。
+
+**处理步骤**
+
+1. 判断为蜂窝/网络原因导致的断开。
+2. 检查网络连接状态，恢复网络后重新建立连接。
+
+## 2301104 连接被对端重置
+
+**错误信息**
+
+Connection reset by peer.
+
+**错误描述**
+
+连接被对端重置，通常表示服务端主动断开连接。
+
+**可能原因**
+
+1. 服务端主动断开连接并发送RST（errno为104，ECONNRESET）。
+2. 服务端进程异常退出，或连接被服务端超时回收。
+
+**处理步骤**
+
+1. 判断为服务端主动断开。
+2. 确认服务端运行状态，重新建立连接。
+
+## 2301108 连接已关闭仍发送数据
+
+**错误信息**
+
+Cannot send after transport endpoint shutdown.
+
+**错误描述**
+
+本地已关闭连接后仍发送数据。
+
+**可能原因**
+
+本地主动调用close或shutdown后继续调用send（errno为108，ESHUTDOWN）。
+
+**处理步骤**
+
+1. 判断为客户端主动断开后的误操作。
+2. 检查代码流程，确认关闭连接后不再发送数据。
+
+## 2301110 连接超时
+
+**错误信息**
+
+Connection timed out.
+
+**错误描述**
+
+连接超时，通常由弱网或蜂窝网络问题导致。
+
+**可能原因**
+
+1. 弱网或蜂窝网络信号差，数据无法在超时时间内送达（errno为110，ETIMEDOUT）。
+2. 长时间无数据交互，连接被网络设备回收。
+
+**处理步骤**
+
+1. 判断为网络原因（蜂窝/弱网）导致的断开。
+2. 检查网络质量，恢复网络后重新建立连接。
+
+## 2301113 主机不可达
+
+**错误信息**
+
+No route to host.
+
+**错误描述**
+
+目标主机不可达。
+
+**可能原因**
+
+1. 蜂窝网络无法路由到目标主机（errno为113，EHOSTUNREACH）。
+2. 目标服务器已下线或IP地址变更。
+
+**处理步骤**
+
+1. 判断为网络原因（蜂窝/路由）导致的断开。
+2. 检查目标主机可达性与网络状态。
+
+## 2301115 连接正在进行或连接失败
+
+**错误信息**
+
+Operation now in progress.
+
+**错误描述**
+
+TCP异步连接正在进行，或连接超时/失败时框架返回的兼容错误码。
+
+**可能原因**
+
+1. TCP异步连接正在进行中（errno为115，EINPROGRESS），尚未返回最终连接结果。
+2. 调用TCPSocket.connect时连接超时或失败，框架统一返回EINPROGRESS（兼容处理）。
+3. 调用LocalSocket.connect连接超时或失败时，也可能返回该错误码。
+
+**处理步骤**
+
+1. 若连接仍在进行，等待connect回调或'connect'事件后再执行后续操作。
+2. 若已超时，检查网络连接状态及对端服务状态，重新发起连接。
+
+## 2301011 操作将阻塞
+
+**错误信息**
+
+Operation would block.
+
+**错误描述**
+
+操作可能会阻塞。
+
+**可能原因**
+
+1. 在非阻塞Socket上执行了会阻塞的操作（errno为11，EAGAIN）。
+2. Socket发送缓冲区已满，或当前资源暂时不可用。
+
+**处理步骤**
+
+1. 等待Socket可写后重试。
+2. 检查Socket状态和资源占用情况。
+
+## 2301022 参数无效
+
+**错误信息**
+
+Invalid argument.
+
+**错误描述**
+
+参数无效。
+
+**可能原因**
+
+1. 传入的参数不合法（errno为22，EINVAL）。
+2. 传入的IP地址、端口或Socket选项取值不正确。
+
+**处理步骤**
+
+1. 检查传入参数的取值和格式是否正确。
+2. 参考接口参数说明重新设置参数。
+
+## 2301088 非套接字的套接字操作
+
+**错误信息**
+
+Not a socket.
+
+**错误描述**
+
+对非Socket文件描述符执行了Socket操作。
+
+**可能原因**
+
+1. Socket未正确创建或已被销毁（errno为88，ENOTSOCK）。
+2. 在已关闭的Socket上执行了操作。
+
+**处理步骤**
+
+1. 检查Socket是否正确创建且未被关闭。
+2. 重新创建Socket后再执行操作。
+
+## 2301098 网络地址已被使用
+
+**错误信息**
+
+Address already in use.
+
+**错误描述**
+
+网络地址已被使用。
+
+**可能原因**
+
+1. 绑定的本地地址已被其他Socket占用（errno为98，EADDRINUSE）。
+2. 端口未释放，仍处于TIME\_WAIT状态。
+
+**处理步骤**
+
+1. 更换绑定的地址或端口。
+2. 等待端口释放或关闭占用端口的连接。
+
+## 2301099 不能分配请求的地址
+
+**错误信息**
+
+Cannot assign requested address.
+
+**错误描述**
+
+不能分配请求的地址。
+
+**可能原因**
+
+1. 绑定的IP地址不属于本机（errno为99，EADDRNOTAVAIL）。
+2. 指定的本地地址无效或不可用。
+
+**处理步骤**
+
+1. 检查绑定的IP地址是否为本机地址。
+2. 更换为可用的本地地址。
+
+## 2301111 连接被拒绝
+
+**错误信息**
+
+Connection refused.
+
+**错误描述**
+
+连接被拒绝。
+
+**可能原因**
+
+1. 目标地址没有进程在监听（errno为111，ECONNREFUSED）。
+2. 目标服务端未启动，或防火墙拒绝了连接请求。
+
+**处理步骤**
+
+1. 确认目标服务端已启动并监听对应端口。
+2. 检查网络防火墙或安全策略配置。
+
 ## 2303111 资源暂时不可用，请重试
 
 **错误信息**
@@ -359,7 +646,7 @@ Resource temporarily unavailable. Try again.
 
 **错误信息**
 
-Not a socket.
+Socket operation on non-socket.
 
 **错误描述**
 
@@ -413,7 +700,7 @@ Address already in use.
 
 **错误信息**
 
-Address not available.
+Cannot assign requested address.
 
 **错误描述**
 
@@ -444,6 +731,26 @@ Network is down.
 **处理步骤**
 
 检查网络连接。
+
+## 2303207 套接字未连接
+
+**错误信息**
+
+Socket is not connected.
+
+**错误描述**
+
+对未建立连接的套接字执行了需要连接的操作。
+
+**可能原因**
+
+1. 在连接建立成功前执行了发送等操作（errno为107，ENOTCONN）。
+2. 连接已断开，但仍在套接字上执行操作。
+
+**处理步骤**
+
+1. 先建立连接，再执行相关操作。
+2. 检查连接状态，必要时重新发起连接。
 
 ## 2303210 连接超时
 
@@ -516,7 +823,7 @@ An error occurred when writing data on the TLS socket.
 
 **可能原因**
 
-发送端缓冲区已满时，底层套接字发送将给出EWOUDLBLOCK错误，这意味着服务器没有读取从客户端发送的消息。
+发送端缓冲区已满时，底层套接字发送将给出EWOULDBLOCK错误，这意味着服务器没有读取从客户端发送的消息。
 
 **处理步骤**
 
@@ -526,7 +833,7 @@ An error occurred when writing data on the TLS socket.
 
 **错误信息**
 
-An error occurred when verifying the x509 certificate.
+An error occurred when verifying the X.509 certificate.
 
 **错误描述**
 
@@ -580,3 +887,43 @@ Failed to close the TLS connection.
 **处理步骤**
 
 尝试重新发起连接。
+
+## 2303601 Socket文件描述符无效
+
+**错误信息**
+
+Invalid socket FD.
+
+**错误描述**
+
+Socket文件描述符无效。
+
+**可能原因**
+
+1. Socket未正确创建或已被关闭。
+2. 在已销毁的Socket上执行了操作。
+
+**处理步骤**
+
+1. 检查Socket是否有效。
+2. 重新创建Socket后再执行操作。
+
+## 2303602 套接字未连接
+
+**错误信息**
+
+Socket is not connected.
+
+**错误描述**
+
+套接字未连接。
+
+**可能原因**
+
+1. 在连接建立前执行了需要连接的操作。
+2. 连接已被关闭后继续操作。
+
+**处理步骤**
+
+1. 先建立连接再执行操作。
+2. 检查连接状态，重新发起连接。

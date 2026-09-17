@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: 属性
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > 属性
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9297046cbfbb46c7b3d57c91adf1ac0e30a0fd7a4accf88b8c11d6950336bff5
+scraped_at: 2026-09-18T06:49:07+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:42e5f61df432ab81b1b12421559ae4d1ee15f7d7e16b306c0d3507fb396a6292
 ---
 
 通用属性仅支持[aspectRatio](ts-universal-attributes-layout-constraints.md#aspectratio)、[backdropBlur](ts-universal-attributes-background.md#backdropblur)、[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[bindContentCover](ts-universal-attributes-modal-transition.md#bindcontentcover)、[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)、[bindMenu](ts-universal-attributes-menu.md#bindmenu)、[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)、[borderColor](ts-universal-attributes-border.md#bordercolor)、[borderRadius](ts-universal-attributes-border.md#borderradius)、[borderStyle](ts-universal-attributes-border.md#borderstyle)、[borderWidth](ts-universal-attributes-border.md#borderwidth)、[clip](ts-universal-attributes-sharp-clipping.md#clip12)、[constraintSize](ts-universal-attributes-size.md#constraintsize)、[defaultFocus](ts-universal-attributes-focus.md#defaultfocus9)、[focusable](ts-universal-attributes-focus.md#focusable)、[tabIndex](ts-universal-attributes-focus.md#tabindex9)、[groupDefaultFocus](ts-universal-attributes-focus.md#groupdefaultfocus9)、[displayPriority](ts-universal-attributes-layout-constraints.md#displaypriority)、[enabled](ts-universal-attributes-enable.md#enabled)、[flexBasis](ts-universal-attributes-flex-layout.md#flexbasis)、[flexShrink](ts-universal-attributes-flex-layout.md#flexshrink)、[layoutWeight](ts-universal-attributes-size.md#layoutweight)、[id](ts-universal-attributes-component-id.md#id)、[gridOffset](ts-universal-attributes-grid.md#属性)、[gridSpan](ts-universal-attributes-grid.md#属性)、[useSizeType](ts-universal-attributes-grid.md#属性)、[height](ts-universal-attributes-size.md#height)、[touchable](ts-universal-attributes-click.md#touchabledeprecated)、[margin](ts-universal-attributes-size.md#margin)、[markAnchor](ts-universal-attributes-location.md#markanchor)、[offset](ts-universal-attributes-location.md#offset)、[width](ts-universal-attributes-size.md#width)、[zIndex](ts-universal-attributes-z-order.md#zindex)、[visibility](ts-universal-attributes-visibility.md#visibility)、[scale](ts-universal-attributes-transformation.md#scale)、[translate](ts-universal-attributes-transformation.md#translate)、[responseRegion](ts-universal-attributes-touch-target.md#responseregion)、[size](ts-universal-attributes-size.md#size)、[opacity](ts-universal-attributes-opacity.md#opacity)、[shadow](ts-universal-attributes-image-effect.md#shadow)、[sharedTransition](ts-transition-animation-shared-elements.md)、[transition](ts-transition-animation-component.md)、[position](ts-universal-attributes-location.md#position)、[direction](ts-universal-attributes-location.md#direction)。
@@ -1922,49 +1922,48 @@ Web组件高度基于前端页面自适应布局有如下限制：
 
 **示例：**
 
-1、指明layoutMode为WebLayoutMode.FIT\_CONTENT模式，为避免默认渲染模式下(RenderMode.ASYNC\_RENDER)视口高度超过7680px导致页面渲染出错，需要显式指明渲染模式(RenderMode.SYNC\_RENDER)。
+1. 指明layoutMode为WebLayoutMode.FIT\_CONTENT模式，为避免默认渲染模式下(RenderMode.ASYNC\_RENDER)视口高度超过7680px导致页面渲染出错，需要显式指明渲染模式(RenderMode.SYNC\_RENDER)。
 
-```ts
-// xxx.ets
-import { webview } from '@kit.ArkWeb';
+   ```ts
+   // xxx.ets
+   import { webview } from '@kit.ArkWeb';
 
-@Entry
-@Component
-struct WebComponent {
-  controller: webview.WebviewController = new webview.WebviewController();
-  mode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
+   @Entry
+   @Component
+   struct WebComponent {
+     controller: webview.WebviewController = new webview.WebviewController();
+     mode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
 
-  build() {
-    Column() {
-      Web({ src: 'www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
-        .layoutMode(this.mode)
-    }
-  }
-}
-```
+     build() {
+       Column() {
+         Web({ src: 'www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
+           .layoutMode(this.mode)
+       }
+     }
+   }
+   ```
+2. 指明layoutMode为WebLayoutMode.FIT\_CONTENT模式，为避免嵌套滚动场景下，Web滚动到边缘时会优先触发过滚动的过界回弹效果影响用户体验，建议指定[overScrollMode](arkts-basic-components-web-attributes.md#overscrollmode11)为OverScrollMode.NEVER。
 
-2、指明layoutMode为WebLayoutMode.FIT\_CONTENT模式，为避免嵌套滚动场景下，Web滚动到边缘时会优先触发过滚动的过界回弹效果影响用户体验，建议指定[overScrollMode](arkts-basic-components-web-attributes.md#overscrollmode11)为OverScrollMode.NEVER。
+   ```ts
+   // xxx.ets
+   import { webview } from '@kit.ArkWeb';
 
-```ts
-// xxx.ets
-import { webview } from '@kit.ArkWeb';
+   @Entry
+   @Component
+   struct WebComponent {
+     controller: webview.WebviewController = new webview.WebviewController();
+     layoutMode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
+     @State overScrollMode: OverScrollMode = OverScrollMode.NEVER;
 
-@Entry
-@Component
-struct WebComponent {
-  controller: webview.WebviewController = new webview.WebviewController();
-  layoutMode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
-  @State overScrollMode: OverScrollMode = OverScrollMode.NEVER;
-
-  build() {
-    Column() {
-      Web({ src: 'www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
-        .layoutMode(this.layoutMode)
-        .overScrollMode(this.overScrollMode)
-    }
-  }
-}
-```
+     build() {
+       Column() {
+         Web({ src: 'www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
+           .layoutMode(this.layoutMode)
+           .overScrollMode(this.overScrollMode)
+       }
+     }
+   }
+   ```
 
 ## nestedScroll11+
 

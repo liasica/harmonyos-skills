@@ -189,7 +189,7 @@
 - [特殊界面布局场景](bpta-multi-device-hardware.md)
 - [多设备工程部署与发布](bpta-multi-device-ide.md)
 - [多设备交互](bpta-multi-device-interaction.md)
-- [多设备功能开发](bpta-multi-device-layout-overview.md)
+- [布局概述](bpta-multi-device-layout-overview.md)
 - [一次开发，多端部署概览](bpta-multi-device-overview.md)
 - [页面布局场景](bpta-multi-device-page-layout.md)
 - [多设备界面开发](bpta-multi-device-page.md)

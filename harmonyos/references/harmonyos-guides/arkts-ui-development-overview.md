@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-deve
 title: UI开发（ArkTS声明式开发范式）概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI开发（ArkTS声明式开发范式）概述
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b4622bd46ebc71e9d0462d313a0ad41f562b26e3f7c4c2d6d727e4d773e34b25
+scraped_at: 2026-09-18T06:44:59+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:6211f03a75e425ec7407ee62d478eb5d6072c15d3eca522fe117f31e161a33a1
 ---
 
 基于ArkTS的声明式开发范式的方舟开发框架是一套开发极简、高性能、支持跨设备的UI开发框架，提供了构建应用UI所必需的能力，主要包括：
@@ -54,7 +54,7 @@ content_hash: sha256:b4622bd46ebc71e9d0462d313a0ad41f562b26e3f7c4c2d6d727e4d773e
 
 **图1** 整体架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/W6fFL1hrRuGNHKzBlcXe4Q/zh-cn_image_0000002753294029.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/pxkxe57PTVmGAs-qXgsLQw/zh-cn_image_0000002757309493.png)
 
 * **声明式UI前端**
 
@@ -93,7 +93,7 @@ content_hash: sha256:b4622bd46ebc71e9d0462d313a0ad41f562b26e3f7c4c2d6d727e4d773e
 | 使用自定义能力 | 介绍了自定义能力的基本概念和如何使用自定义能力。 | - [自定义组合](arkts-user-defined-composition.md)  - [自定义节点](arkts-user-defined-node.md)  - [自定义扩展](arkts-user-defined-modifier.md) |
 | UI国际化 | 介绍如何实现应用程序UI界面的国际化，包含资源配置和镜像布局。 | - [UI国际化](arkts-internationalization.md) |
 | 无障碍与适老化 | 介绍了无障碍和适老化的使用场景和使用方法。 | - [支持无障碍](arkts-universal-attributes-accessibility.md)  [支持适老化](arkui-support-for-aging-adaptation.md) |
-| 主题设置 | 介绍了应用级和页面级的主题设置能力。 | - [应用深浅色适配](ui-dark-light-color-adaptation.md)  - [设置应用内主题换肤](theme_skinning.md) |
+| 主题设置 | 介绍了应用级和页面级的主题设置能力。 | - [应用深浅色适配](ui-dark-light-color-adaptation.md)  - [设置应用内主题换肤](theme-skinning.md) |
 | UI系统场景化能力 | 介绍了如何使用UIContext中对应的接口获取与实例绑定的对象，以及全屏方式拉起元服务的方法。 | - [使用UI上下文接口操作界面](arkts-global-interface.md)  - [全屏启动元服务组件](arkts-fullscreencomponent.md) |
 
 ## 通用规则

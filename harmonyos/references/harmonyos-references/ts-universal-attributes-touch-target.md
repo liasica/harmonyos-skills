@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 触摸热区设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 触摸交互控制 > 触摸热区设置
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:48+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:160095d5cd61dbf22319f2dcf8d790566e08a202f0c99df0eda3a6af5d67d4f9
+scraped_at: 2026-09-18T06:48:10+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:2a63b983ef86242e908280fdc1048583072a2dda6846ea511589ffc2f6d4198a
 ---
 
 设置组件的触摸热区。在ArkUI开发框架中，处理触屏事件和鼠标事件时，会在事件触发前进行按压点与组件响应热区的[触摸测试](../harmonyos-guides/arkts-interaction-basic-principles.md#触摸测试)，以收集需响应事件的组件。基于测试结果，框架会分发相应的事件。影响[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)和[手势事件](ts-gesture-settings.md)的分发。
@@ -31,7 +31,7 @@ responseRegion(value: Array<Rectangle> | Rectangle): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Array<[Rectangle](ts-universal-attributes-touch-target.md#rectangle对象说明)> | [Rectangle](ts-universal-attributes-touch-target.md#rectangle对象说明) | 是 | 触摸热区，包括位置和大小。  默认触摸热区为整个组件，默认值：  {  x：0,  y：0,  width：'100%',  height：'100%'  } |
+| value | Array<[Rectangle](ts-universal-attributes-touch-target.md#rectangle对象说明)> | [Rectangle](ts-universal-attributes-touch-target.md#rectangle对象说明) | 是 | 触摸热区，包括位置和大小。  默认触摸热区为整个组件，默认值：  {  x：0,  y：0,  width：'100%',  height：'100%'  }  异常值：参数为undefined或null时，按默认值处理。 |
 
 **返回值：**
 
@@ -79,7 +79,7 @@ responseRegionList(regions: Array<ResponseRegion>): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| regions | Array<[ResponseRegion](ts-universal-attributes-touch-target.md#responseregion22对象说明)> | 是 | 组件的触摸热区数组。  每个触摸热区均包括输入工具类型、位置和大小。  默认值：  [{  tool：ResponseRegionSupportedTool.ALL,  x：LengthMetrics.vp(0),  y：LengthMetrics.vp(0),  width：LengthMetrics.percent(1),  height：LengthMetrics.percent(1)  }] |
+| regions | Array<[ResponseRegion](ts-universal-attributes-touch-target.md#responseregion22对象说明)> | 是 | 组件的触摸热区数组。  每个触摸热区均包括输入工具类型、位置和大小。  默认值：  [{  tool：ResponseRegionSupportedTool.ALL,  x：LengthMetrics.vp(0),  y：LengthMetrics.vp(0),  width：LengthMetrics.percent(1),  height：LengthMetrics.percent(1)  }]  异常值：参数为undefined或null时，按默认值处理。 |
 
 **返回值：**
 
@@ -203,7 +203,7 @@ struct TouchTargetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/cXVOUBSiRSmYgS8C5lq8Rw/zh-cn_image_0000002753296593.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/ulCIU-CsRFmE4yzhMdHUvQ/zh-cn_image_0000002757312057.gif)
 
 ### 示例2（通过responseRegionList接口设置触摸热区）
 
@@ -261,7 +261,7 @@ struct TouchTargetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/_gKnuEoGS1ScT2JUt-I1ww/zh-cn_image_0000002753456511.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/_m_EW4PxQqCh5sx6SxRSSQ/zh-cn_image_0000002757232177.gif)
 
 ### 示例3（设置鼠标的触摸热区以响应点击事件）
 
@@ -353,4 +353,4 @@ struct MouseResponseRegionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/CyD5F5jXQD20doHxxJ3s5Q/zh-cn_image_0000002723856746.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/B7RdFn-oQ8yhtch5wWNDqA/zh-cn_image_0000002727592486.gif)

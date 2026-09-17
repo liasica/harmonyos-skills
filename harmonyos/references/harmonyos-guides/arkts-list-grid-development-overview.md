@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-list-gr
 title: 列表与网格概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 列表与网格概述
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:23+08:00
+scraped_at: 2026-09-18T06:45:04+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:7e724038c343988de10c73d59d7d7b5c5980d73d2f542aab8d66957361734449
+content_hash: sha256:e7e7dc1416602d2c43b45d4ff5c6d1a0e87e3ea96629be9cee4858883a8bdd75
 ---
 
 许多应用存在滚动展示同类项目集合的需求，例如显示图片、视频、音乐、新闻、商品等。此类场景可以根据项目排列方式分别选择[List](arkts-layout-development-create-list.md)、[Grid](arkts-layout-development-create-grid.md)、[WaterFlow](arkts-layout-development-create-waterflow.md)实现，在圆形屏幕推荐使用[ArcList](arkts-layout-development-create-arclist.md)。
@@ -18,7 +18,7 @@ List适合单列和多列宽度相同的场景，如通讯录、音乐列表、�
 
 直播评论、即时聊天等应用场景需要在列表底部插入数据时，内容应自动向上滚动，以展示新插入的节点，此功能可通过配置[stackFromEnd](../harmonyos-references/ts-container-list.md#stackfromend19)实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/0_bjNFcGQBOmcvc4CmGjeA/zh-cn_image_0000002753454323.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/SU8gsmLfRXmTT1xkryUXmg/zh-cn_image_0000002757229989.png)
 
 ## 网格
 
@@ -26,7 +26,7 @@ List适合单列和多列宽度相同的场景，如通讯录、音乐列表、�
 
 对于部分项目占用多行或多列的场景，可以通过在创建Grid时传入合适的[GridLayoutOptions](../harmonyos-references/ts-container-grid.md#gridlayoutoptions10对象说明)来实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/mugBmVydRHK-gOGh3NC_xQ/zh-cn_image_0000002723854558.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/5EsK6cy5Sl6Rbb8zNdkK3Q/zh-cn_image_0000002727590298.png)
 
 ## 瀑布流
 
@@ -34,19 +34,19 @@ List适合单列和多列宽度相同的场景，如通讯录、音乐列表、�
 
 同一个页面内有不同列数分段混合布局的场景，可以通过设置[WaterFlowOptions对象说明](../harmonyos-references/ts-container-waterflow.md#waterflowoptions对象说明)的sections实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/voAHi8pQR-q9QSpCxHfTog/zh-cn_image_0000002723694640.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/un60Fv6zQied63C8ziMYXQ/zh-cn_image_0000002727750156.png)
 
 ## 弧形列表
 
 弧形列表是一种专为圆形屏幕设备设计的特殊列表，支持列表项在接近屏幕上下两端自动缩放的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/ODbagW1jQCqZKmP8jT5yTw/zh-cn_image_0000002753294407.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/ykwxd2iwSAaUbw1t6MQTqA/zh-cn_image_0000002757309871.png)
 
 ## 懒加载布局
 
 懒加载布局容器是一类嵌套在可滚动父组件（Scroll、List、WaterFlow）内部，负责按需加载子组件的布局容器。这类容器本身不提供滚动能力，由父组件统一处理滚动。它仅创建和布局处于可滚动父组件可视区域内的子组件，并在帧间空闲时隙预加载可视区域上方和下方各半屏的内容，从而减少首帧渲染时间和内存开销。ArkUI提供了三种支持懒加载的布局容器组件：垂直线性布局[LazyColumnLayout](../harmonyos-references/ts-container-lazycolumnlayout.md)、垂直网格布局[LazyVGridLayout](../harmonyos-references/ts-container-lazyvgridlayout.md)、垂直瀑布流布局[LazyVWaterFlowLayout](../harmonyos-references/ts-container-lazyvwaterflowlayout.md)。不同的懒加载布局容器提供不同的布局模式，开发者可以将多种类型的懒加载布局容器组合在同一个父组件中使用，灵活实现混合布局。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/lUmw-S31S7CysR4fUKb16A/zh-cn_image_0000002753454325.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/D-m7chNOSB6lr-8TZxzhdQ/zh-cn_image_0000002757229991.gif)
 
 ## 能力对比
 

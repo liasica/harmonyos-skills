@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi
 title: Node-API
 breadcrumb: API参考 > 标准库 > Node-API
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:41ca6907ee7174256aebf45ef3eb958d5a244162a89239185b6e1a5d627e037d
+scraped_at: 2026-09-18T06:52:26+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:b1a64965066c0c5b9a2713b9df1ed9aea2ca13d0b66b43627f1f4054a8b91366
 ---
 
 ## 简介
@@ -342,6 +342,10 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 * 当参数object不是Object或Function对象时，该导出接口返回napi\_object\_expected。
 
+**说明：**
+
+* 该接口与napi\_has\_property行为一致，用于检查对象中是否存在指定的属性，避免访问不存在属性导致的异常。
+
 ### napi\_set\_named\_property
 
 **返回：**
@@ -411,11 +415,19 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 * 该导出接口不会去校验参数recv是否为nullptr。
 * 当参数func不是Function对象时，该导出接口返回napi\_function\_expected。
 
+**说明：**
+
+* 该函数执行后会触发微任务执行。
+
 ### napi\_new\_instance
 
 **返回：**
 
 * 当参数constructor不是Function对象时，该导出接口返回napi\_function\_expected。
+
+**说明：**
+
+* 该函数执行后会触发微任务执行。
 
 ### napi\_define\_class
 
@@ -505,12 +517,14 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **说明：**
 
 * promise的then方法的resolve或者reject回调中出现异常时，如果promise没有catch块，代码会继续执行不会崩溃；如果promise有catch块，则异常会被该catch块捕获。
+* 该函数执行后会触发微任务执行。
 
 ### napi\_reject\_deferred
 
 **说明：**
 
 * promise的then方法的resolve或者reject回调中出现异常时，如果promise没有catch块，代码会继续执行不会崩溃；如果promise有catch块，则异常会被该catch块捕获。
+* 该函数执行后会触发微任务执行。
 
 ### napi\_create\_threadsafe\_function
 

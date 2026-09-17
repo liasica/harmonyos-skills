@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-browser
-title: "@ohos.enterprise.browser（浏览器管理）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.browser（浏览器管理）
+title: "@ohos.enterprise.browser (浏览器管理)"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.browser (浏览器管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bfe11d9f316066f617fae2476b48d9f642161e2c21c3cde33c9cbfe9f141855c
+scraped_at: 2026-09-18T06:50:23+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:0f0284503e60e3f388e8716eb82e35d59eb3724f454776b5f59ee38c1689fdf7
 ---
 
 本模块提供浏览器管理能力，包括设置/取消浏览器策略、获取浏览器策略等。适用于企业设备管理、员工上网行为管控、安全合规审计等场景。
@@ -32,13 +32,15 @@ setPolicySync(admin: Want, appId: string, policyName: string, policyValue: strin
 
 为指定的浏览器设置浏览器子策略，适用于企业统一管理员工浏览器行为的场景。此策略仅对使用了华为webview的浏览器生效。
 
+**说明** 
+
+在多个MDM应用场景下，同一个浏览器应用的同一个策略[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)；不同浏览器、同一浏览器的不同策略[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
+
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_BROWSER\_POLICY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** 同一个浏览器应用的同一个策略[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)；不同浏览器、同一浏览器的不同策略[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 
@@ -205,13 +207,13 @@ setManagedBrowserPolicy(admin: Want, bundleName: string, policyName: string, pol
 
 在多MDM应用场景下，针对同一浏览器的同一策略，一旦被首个Admin配置并生效，其他Admin将无法配置。
 
+在多个MDM应用场景下，同一个浏览器应用的同一个策略[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)；不同浏览器、同一浏览器的不同策略[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
+
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_BROWSER\_POLICY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** 同一个浏览器应用的同一个策略[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)；不同浏览器、同一浏览器的不同策略[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 

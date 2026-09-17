@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API进行class相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API进行class相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:35636312dccd91a73473c00e57490da49d227d9a3c0847eb7ad2bf6a1cde1b0b
+scraped_at: 2026-09-18T06:46:54+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:4f4fc548381af593a2d8ffe9ba849c9cc7c4ee14bb85bd065cce5483be3cb474
 ---
 
 ## 简介
@@ -43,7 +43,8 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 
 **说明** 
 
-参数constructor不是function类型则返回napi\_function\_expected。
+* 参数constructor不是function类型则返回napi\_function\_expected。
+* napi\_new\_instance执行后会触发微任务执行。
 
 cpp部分代码
 

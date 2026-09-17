@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/customize-byt
 title: 编译期自定义修改方舟字节码
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > 方舟字节码 > 编译期自定义修改方舟字节码
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:17+08:00
+scraped_at: 2026-09-18T06:44:57+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:c6116efce3ab23bac3b1342c05520f800c50e8fab9e85071dbf88e0e677b240f
+content_hash: sha256:475425eeb4a7cfd8f93439e411d01c34a34e51cd5e08c74e62a27da9a5a2c8f2
 ---
 
 如果开发者希望自定义修改方舟字节码文件的内容，可以使用ArkTS编译工具链提供的方法自定义修改方舟字节码文件。
@@ -63,5 +63,5 @@ content_hash: sha256:c6116efce3ab23bac3b1342c05520f800c50e8fab9e85071dbf88e0e677
 
    选项中配置的路径为步骤2生成的链接库文件在项目中的路径（这里是dll目录下）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/mhcSHV4eSHKCzR8n5NGPkw/zh-cn_image_0000002723854172.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/bBakTCelRo6jBEjKhci43Q/zh-cn_image_0000002727589912.png)
 4. 重新编译项目，即可完成自定义修改方舟字节码。

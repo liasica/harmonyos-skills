@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 关系型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 关系型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:12+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:d0455607b260d9751ec4a40de2b7c0b7e286ee0a7aa161c361e7c87786fe6200
+scraped_at: 2026-09-18T06:44:54+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:c089b605150cd8add34ee9db34e4a9e30349e7f31be581078247d2f29a5f634a
 ---
 
 ## 场景介绍
@@ -26,7 +26,7 @@ content_hash: sha256:d0455607b260d9751ec4a40de2b7c0b7e286ee0a7aa161c361e7c87786f
 
 ### 数据跨设备同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/h5ca8PtfTLGtkLhhvKdShA/zh-cn_image_0000002753293989.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/4LvUojmtSdewfYOrhh8oOg/zh-cn_image_0000002757309453.jpg)
 
 业务将数据写入关系型数据库后，向数据管理服务发起同步请求。
 
@@ -51,7 +51,7 @@ content_hash: sha256:d0455607b260d9751ec4a40de2b7c0b7e286ee0a7aa161c361e7c87786f
 
 需要注意的是，该模式下不支持对其他设备同步过来的数据进行修改。这一限制旨在保障数据一致性与同步逻辑的稳定性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/cFF2K5OKQj6WJ-6LhWODcA/zh-cn_image_0000002753453907.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/U2XpZv-kT2mee3QzuNpMEQ/zh-cn_image_0000002757229573.jpg)
 
 **单版本表模式**
 
@@ -59,7 +59,7 @@ content_hash: sha256:d0455607b260d9751ec4a40de2b7c0b7e286ee0a7aa161c361e7c87786f
 
 使用单版本表模式跨设备同步，需要配置schema文件，指定所需同步列以及解冲突列；单版本表模式同步数据支持修改对端设备同步过来的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/v5EKk3mLQ-CiIo5CzKFdsA/zh-cn_image_0000002723854142.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/YScI0j-rRwiPEfpKwKcqwA/zh-cn_image_0000002727589882.jpg)
 
 ## 约束限制
 
@@ -734,7 +734,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
     ```
 * 单版本表模式下，表中所有UNIQUE列必须同步。
 
-  错误示例："AGE"为UNIQUE列，但是未指定该字段同步
+  错误示例："AGE"为UNIQUE列，但是未指定该字段同步。
 
   + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER UNIQUE, SALARY REAL, CODES BLOB)'。
   + schema：

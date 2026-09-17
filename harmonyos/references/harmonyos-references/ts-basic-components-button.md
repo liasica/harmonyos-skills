@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Button
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:56+08:00
+scraped_at: 2026-09-18T06:48:18+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:1ba0560410ea2efb80b28d71a1a8ec52234aa96b72b86399ce9718de1d11e83b
+content_hash: sha256:70dc28b1c3670407e89faf38273c1007b867b7d5fb3db08833b501da796ad077
 ---
 
 按钮组件，可快速创建不同样式的按钮。
@@ -553,7 +553,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ADn10CfpQ2OCY_lvTd18Zw/zh-cn_image_0000002753296761.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/OlNx_r_eTy2_vxiebAfuKA/zh-cn_image_0000002757312225.gif)
 
 ### 示例2 （为按钮添加渲染控制）
 
@@ -585,7 +585,7 @@ struct ButtonRenderControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ljmBQtIOTTCh8gZCW-ckPA/zh-cn_image_0000002753456679.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/6tc9mp2VRxWU78TSHP50sA/zh-cn_image_0000002757232345.gif)
 
 ### 示例3 （设置按钮文本样式）
 
@@ -627,7 +627,7 @@ struct ButtonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/YBkeaBTcTJu5aJwADpjVIg/zh-cn_image_0000002723856914.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/PV4j6YGLQPGr7_e_GL7F3A/zh-cn_image_0000002727592654.png)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
@@ -666,7 +666,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/iMEY3vgIThStOJEAMl_Usw/zh-cn_image_0000002723696996.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/TXQGyigUTzit-KbAr8trDQ/zh-cn_image_0000002727752512.jpeg)
 
 ### 示例5（设置按钮的角色）
 
@@ -696,7 +696,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/3-XTOa53SkCgkfUEiOhiVw/zh-cn_image_0000002753296763.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/Y634F1NBSCS9xpeigSZg0w/zh-cn_image_0000002757312227.jpeg)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -765,7 +765,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/PD_RXCKlTNKukwv7oQ5RLg/zh-cn_image_0000002753456681.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/yQnU65ggRwmOIfnGtCceXg/zh-cn_image_0000002757232347.gif)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -807,7 +807,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/AcNQ9mPdRNOEq_cBz92Lkw/zh-cn_image_0000002723856916.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ueHULkEwSwOpQI_mPj1Ipw/zh-cn_image_0000002727592656.jpeg)
 
 ### 示例8（设置label文本水平对齐方式）
 
@@ -833,7 +833,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/4UJDhItAQbCUbPxTJclywA/zh-cn_image_0000002723696998.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ObNE8TD5RtaZQO2qMmSXjg/zh-cn_image_0000002727752514.jpeg)
 
 ### 示例9（设置按钮的沉浸光感效果）
 
@@ -909,8 +909,8 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/6kBJCIfGS-KnRKOQjW8kjw/zh-cn_image_0000002753296765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/owArQa2qSd--fTlQstx_tQ/zh-cn_image_0000002757312229.png)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/U3cU-ta-Ra2O-cy_ALIXGA/zh-cn_image_0000002753456683.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ohwCmTzJQy6fVme2eAYq4g/zh-cn_image_0000002757232349.png)

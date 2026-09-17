@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/adaptation-pr
 title: 适配流程
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 适配流程
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:38+08:00
+scraped_at: 2026-09-18T06:45:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b3db15d45521c92f489d093dcb287fdd6a8ac9304912890ba138bfd9a95af330
+content_hash: sha256:8cbcce77b35bf8bf79d10a1221086e80db7b699253e31b24605f996194deac13
 ---
 
 适配流程包括：适配准备、应用适配、开发者自验证、应用上架和端到端验证。
 
 **图1** 适配流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/MdY6x352QfiMxGgudPBNAg/zh-cn_image_0000002753295033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/JQt5Im14SWSYlk3m7nu29w/zh-cn_image_0000002757310497.png)
 
 ## 适配准备阶段
 
@@ -30,7 +30,7 @@ content_hash: sha256:b3db15d45521c92f489d093dcb287fdd6a8ac9304912890ba138bfd9a95
 
 后续HarmonyOS应用通过访问HarmonyOS应用沙箱获取应用的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vCkOew8ZSAa3MSaeak751w/zh-cn_image_0000002753454951.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/XXYcd3-NQeOB4ldRvVrMUg/zh-cn_image_0000002757230617.png)
 
 备份恢复目录如下表中所示：
 

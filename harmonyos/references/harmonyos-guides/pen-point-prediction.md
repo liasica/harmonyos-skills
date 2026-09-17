@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-point-pre
 title: 接入报点预测
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入报点预测
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ec1800669abbdc77233acbf0f0ebcfb1e67c32104d2d2ec25d013de6f5a7c12b
+scraped_at: 2026-09-18T06:45:42+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:0f9a497e6eba930c467562c3c508ed8bec29669874ec20e48f9828cd055980f1
 ---
 
 接入报点预测功能，可以优化应用中手写效果的绘制跟手性，提升应用中手写笔书写场景的跟手体验。
@@ -14,7 +14,7 @@ content_hash: sha256:ec1800669abbdc77233acbf0f0ebcfb1e67c32104d2d2ec25d013de6f5a
 
 在应用的自定义界面中，获取到界面的触摸事件，通过调用报点预测的接口，可以得到预测的下一个报点的位置信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/FMvPxRmBRrqkM7HOCXWlTw/zh-cn_image_0000002723695556.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/vqdMc-QzQUe0VeFkICjePA/zh-cn_image_0000002727751072.png)
 
 ## 接口说明
 
@@ -27,6 +27,8 @@ content_hash: sha256:ec1800669abbdc77233acbf0f0ebcfb1e67c32104d2d2ec25d013de6f5a
 1. 导入相关模块。获取当前界面的触摸事件信息，调用接口计算预测点信息。
 
    ```typescript
+   import { PointPredictor } from '@kit.Penkit';
+
    @Entry
    @Component
    struct PointPredictorDemo {

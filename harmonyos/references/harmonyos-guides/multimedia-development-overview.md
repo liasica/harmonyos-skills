@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multimedia-de
 title: 媒体开发概览
 breadcrumb: 指南 > 媒体 > 媒体开发概览
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:16+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:ca6863baf56c99b000d858861996b853dbed6c674fa73587c67f7f1874538833
+scraped_at: 2026-09-18T06:45:51+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:53074dc3ef5819e8cb2ca5bc6f4448913cb9a23ea987459e4f54e5d0312dcad5
 ---
 
 HarmonyOS提供丰富的一站式媒体业务开放能力，开发者能够在系统上快速开发主流的媒体业务，满足常规高频使用场景，并提供优秀的性能表现。
 
 ## 媒体系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/0IYPAwNkTnyEynbxyAnaXg/zh-cn_image_0000002753455299.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/QJ17_SKkQ3yHjNFSp8Qh6g/zh-cn_image_0000002757230965.png)
 
 媒体系统架构提供用户视觉、听觉信息的处理能力，例如音视频信息的采集、编码存储、解码播放等。操作系统实现中，根据不同的媒体信息处理内容，将媒体划分为不同的模块，包括音频、视频、图片等。
 
@@ -115,7 +115,7 @@ AVPlayer提供功能齐全的一体化播放能力，支持多种音视频格式
 
 * [在线视频播放卡顿优化实践](online-video-playback-lags-optimize.md)
 * [音画同步最佳实践](audio-video-synchronization.md)
-* [基于系统能力获取视频缩略图](../best-practices/bpta-video-thumbnail.md)
+* [基于系统能力获取视频缩略图](video-thumbnail-system.md)
 
 **示例代码**
 
@@ -220,7 +220,7 @@ AVRecorder提供音视频录制的能力，AVScreenCapture提供屏幕录制的�
 **最佳实践**
 
 * [音频焦点管理解决方案](../best-practices/bpta-audio-focus-management.md)
-* [音乐服务卡片](../best-practices/bpta-music-card.md)
+* [音乐服务卡片](arkts-ui-music-service-form.md)
 
 **示例代码**
 
@@ -357,7 +357,7 @@ AVRecorder提供音频录制的能力，帮助开发者录制纯音频文件。
 | --- | --- |
 | 视频转码 | - ArkTS API参考：[AVTranscoder](../harmonyos-references/arkts-apis-media-avtranscoder.md)  - 开发指南：[使用AVTranscoder实现视频转码(ArkTS)](using-avtranscoder-for-transcodering.md)  - 开发指南：[创建异步线程执行AVTranscoder视频转码(ArkTS)](avtranscoder-practice.md) |
 | 元数据 | - ArkTS API参考：[AVMetadataExtractor](../harmonyos-references/arkts-apis-media-avmetadataextractor.md)  - C API参考：[AVMetadataExtractor](../harmonyos-references/capi-avmetadataextractor.md)  - 开发指南：[使用AVMetadataExtractor提取音视频元数据信息(ArkTS)](avmetadataextractor.md)  - 开发指南：[使用AVMetadataExtractor获取元数据(C/C++)](using-ndk-avmetadataextractor-for-media.md) |
-| 缩略图 | - ArkTS API参考：[AVImageGenerator](../harmonyos-references/arkts-apis-media-avimagegenerator.md)  - C API参考：[AVImageGenerator](../harmonyos-references/capi-avimagegenerator.md)  - 开发指南：[使用AVImageGenerator提取视频指定时间图像(ArkTS)](avimagegenerator.md)  - 开发指南：[使用AVImageGenerator获取视频帧(C/C++)](using-ndk-avimagegenerator-for-video.md)  - 最佳实践：[基于系统能力获取视频缩略图](../best-practices/bpta-video-thumbnail.md) |
+| 缩略图 | - ArkTS API参考：[AVImageGenerator](../harmonyos-references/arkts-apis-media-avimagegenerator.md)  - C API参考：[AVImageGenerator](../harmonyos-references/capi-avimagegenerator.md)  - 开发指南：[使用AVImageGenerator提取视频指定时间图像(ArkTS)](avimagegenerator.md)  - 开发指南：[使用AVImageGenerator获取视频帧(C/C++)](using-ndk-avimagegenerator-for-video.md)  - 最佳实践：[基于系统能力获取视频缩略图](video-thumbnail-system.md) |
 | 更多 | [Media Kit开发指南](media-kit.md)  [Media Kit API参考](../harmonyos-references/media-api.md) |
 
 **Media Library Kit**

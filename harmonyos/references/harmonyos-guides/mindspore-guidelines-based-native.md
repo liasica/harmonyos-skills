@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-gui
 title: 使用MindSpore Lite实现图像分类 (C/C++)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite实现图像分类 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:24+08:00
-doc_updated_at: 2026-09-07
-content_hash: sha256:7bd95626ab1e9a9ae4495b38291415a8508197607e2dcd42eb079d8add40c728
+scraped_at: 2026-09-18T06:46:53+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:fb809c66e5b7a0eb7f81ff5e489668d1ed0d2d64521b872a108c32c355971f09
 ---
 
 ## 场景说明
@@ -446,9 +446,9 @@ struct Index {
                         let index = 0;
                         for (let i = 0; i < imageArr.length; i++) {
                           if ((i + 1) % 4 === 0) {
-                            float32View[index] = (imageArr[i - 3] / 255.0 - means[0]) / stds[0]; // B
+                            float32View[index] = (imageArr[i - 3] / 255.0 - means[0]) / stds[0]; // R
                             float32View[index+1] = (imageArr[i - 2] / 255.0 - means[1]) / stds[1]; // G
-                            float32View[index+2] = (imageArr[i - 1] / 255.0 - means[2]) / stds[2]; // R
+                            float32View[index+2] = (imageArr[i - 1] / 255.0 - means[2]) / stds[2]; // B
                             index += 3;
                           }
                         }
@@ -558,9 +558,9 @@ struct Index {
 
 在设备上，点击photo按钮，选择相册中的一张图片，点击确定。在图片下方显示此图片占比前4的分类信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/rCrvR3jVSGaHzi7aWxKS4g/zh-cn_image_0000002723696566.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/TZXCDPqbRSGzvyjzy7GACg/zh-cn_image_0000002753296331.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/VaVwhpNeR-KzJdmN0wUZQg/zh-cn_image_0000002727752082.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/8ne_tsZ1TG-OaK57gY0AJA/zh-cn_image_0000002757311795.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/OP3RZ9a8S8C3NKgT8N9pCQ/zh-cn_image_0000002753456249.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/y1lnYJ01QqqSAFQOQawppw/zh-cn_image_0000002753296333.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/W01fLraXSWS5AzqpMJs2yw/zh-cn_image_0000002757231915.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DQopoVB-T-K-fjtwhQljHw/zh-cn_image_0000002757311797.png)
 
 ## 示例代码
 

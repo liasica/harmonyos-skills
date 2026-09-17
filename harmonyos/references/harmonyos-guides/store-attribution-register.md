@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 管理归因角色
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发准备 > 管理归因角色
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:38+08:00
+scraped_at: 2026-09-18T06:46:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:96742391e8c03a92ccb1ff200100b2bb65c7d95a041e15a64e0f03f8d2089b2a
+content_hash: sha256:5bc3ffc47fe0785dff9e26ec016164bd8819d0c002d358080d14627d28798627
 ---
 
 应用生态伙伴通过应用归因服务云端管理台注册归因角色及配置信息，包括：角色、名称、回传地址（用于接收归因结果回传的URL）、公钥。注册成功后平台生成归因角色ID。
@@ -51,7 +51,7 @@ content_hash: sha256:96742391e8c03a92ccb1ff200100b2bb65c7d95a041e15a64e0f03f8d20
 3. 点击“生态服务 > 应用服务 > 开发服务”下的“应用市场服务”卡片，进入应用归因云端管理台。
 4. 点击右上角“去注册”，进入“归因注册”信息填写页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/ozCGrDccQu6mg0b8-qqgFw/zh-cn_image_0000002753295707.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/q-yulI46QFisv-PZdIs7DQ/zh-cn_image_0000002757311171.png)
 
    参数填写说明如下：
 
@@ -63,7 +63,7 @@ content_hash: sha256:96742391e8c03a92ccb1ff200100b2bb65c7d95a041e15a64e0f03f8d20
    | 回传地址 | 填写用于接收华为应用归因回传归因结果的URL，推荐使用HTTPS协议。 |
 5. 注册信息填写完毕后，点击“提交”，生成一条状态是“新建待审核”的注册信息，后台运营人员进行审核，审核生效后，完成注册。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Q092QE0kSMWnYIdH3C3PpA/zh-cn_image_0000002753455625.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/7QaI0iA0TwC5DQKjmsJ6Aw/zh-cn_image_0000002757231291.png)
 
    **说明** 
 
@@ -74,4 +74,4 @@ content_hash: sha256:96742391e8c03a92ccb1ff200100b2bb65c7d95a041e15a64e0f03f8d20
    状态为驳回，表示未完成注册。编辑该条注册信息，需要重新提交运营人员审核；删除该条注册信息，无需审核。
 6. 注册成功后，平台生成合作伙伴唯一标识（归因角色ID，用于归因过程中，标识相应的归因角色），在注册列表页展示已注册的信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/7-jTJxAWTWeaihIrt1C86A/zh-cn_image_0000002723855860.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/E9dDowpwRs-DrserakdvjA/zh-cn_image_0000002727591600.png)

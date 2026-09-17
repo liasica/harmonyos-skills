@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-petalmaps
 title: 通过地图应用实现导航等能力
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 通过地图应用实现导航等能力
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:50+08:00
+scraped_at: 2026-09-18T06:46:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d319a17982833e170c99d53a0f3862d4fe81b9b42f1621d1e5f35126df6f1df2
+content_hash: sha256:fd8397927fbf1f91be2b9e6dbd38452cdf85e70c64d02e47d456318d670d0684
 ---
 
 ## 场景介绍
@@ -71,7 +71,7 @@ try {
 
 **图1** 打开地图应用首页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/bpTengBbRxGmmfYZklBBeQ/zh-cn_image_0000002753295983.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/_MynPcL9QS-rfWU9jK75QQ/zh-cn_image_0000002757311447.jpg "点击放大")
 
 ### 打开地图应用进行地点搜索
 
@@ -90,7 +90,7 @@ try {
 
 **图2** 打开地图应用进行地点搜索
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/e37CcU3rRN60rjyyszv-Ow/zh-cn_image_0000002753455901.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/bCrtekPBR8agFgGBqG1log/zh-cn_image_0000002757231567.jpg "点击放大")
 
 ### 打开地图应用查看地点详情
 
@@ -116,7 +116,7 @@ try {
 
 **图3** 打开地图应用查看地点详情
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_8KkzbwcRZO6qC1S6Broog/zh-cn_image_0000002723856136.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ai-eNg5lS9-yN_D7NNSaYQ/zh-cn_image_0000002727591876.jpg "点击放大")
 
 ### 打开地图应用规划路线
 
@@ -138,7 +138,7 @@ try {
 
 **图4** 打开地图应用规划路线
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/UEtfYw50RUKs22E78muSwA/zh-cn_image_0000002723696218.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/d1oPjoAxTbKKdYx0uVMAlQ/zh-cn_image_0000002727751734.jpg "点击放大")
 
 ### 打开地图应用进行导航
 
@@ -160,7 +160,7 @@ try {
 
 **图5** 打开地图应用进行导航
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Jt5OuXLLS5WCN2fXuqxGRQ/zh-cn_image_0000002753295985.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/GFuEHLhWT9OB2NljlpVZug/zh-cn_image_0000002757311449.jpg "点击放大")
 
 ### 打开地图应用打车页面
 
@@ -182,7 +182,7 @@ try {
 
 **图6** 打开地图应用进行打车
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Oa82uiEkTUaKiTVzGAP62g/zh-cn_image_0000002753455903.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/lbXvF9n0RoqyoNLbKlZZqg/zh-cn_image_0000002757231569.jpg "点击放大")
 
 ### 打开地图应用离线地图管理页面
 
@@ -226,12 +226,12 @@ try {
 
 **图7** 打开地图应用手表离线地图管理页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/r5He1CwFTYyHBJMP1XBboQ/zh-cn_image_0000002723856138.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/w4Ymw6YdSpy71ky79POJZg/zh-cn_image_0000002727591878.jpg "点击放大")
 
 **图8** 打开地图应用地图资源（手机离线地图）管理页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/JDdUy8C-TjuP9oJnOZg2kQ/zh-cn_image_0000002723696220.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/dt3Y6cOTSImF4PNRsRrHSw/zh-cn_image_0000002727751736.jpg "点击放大")
 
 **图9** 打开地图应用导航语音管理页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/tuRGGklOSnSWgH7jIo-i3g/zh-cn_image_0000002753295987.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/M36ylSeGTgaRteLugh508A/zh-cn_image_0000002757311451.jpg "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-router-
 title: Router切换Navigation
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > Router切换Navigation
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:23+08:00
+scraped_at: 2026-09-18T06:45:03+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:d3c9bf9ad61a1716d361d2a2b6a78d8b4c9e975464a8e28952646fd04201fc59
+content_hash: sha256:6f9c9f2f519aea1a8bd6b319bf8bcbed33b82d17975f7089fe8356e6e9540cbe
 ---
 
 鉴于组件导航（[Navigation](../harmonyos-references/ts-basic-components-navigation.md)）支持更丰富的动效、一次开发多端部署能力和更灵活的栈操作。本文主要从页面跳转、动效和生命周期等方面介绍如何从Router切换到Navigation。
@@ -411,7 +411,7 @@ onPageHide(): void {
 
 其生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/JSBqs0oPT2OWerskJDoP6g/zh-cn_image_0000002753294313.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/9e0V5erjQd2SkohtTbxl3Q/zh-cn_image_0000002757309777.png)
 
 Navigation作为路由容器，其生命周期承载在NavDestination组件上，以组件事件的形式开放。
 

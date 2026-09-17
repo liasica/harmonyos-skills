@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Classes (其他)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Classes (其他)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fe3f42793001365b88a0e4c88e00b09e99620657f15092a9c0d656372703a9e0
+scraped_at: 2026-09-18T06:51:17+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:114f48315b037b05f36f01c566ab263f5e0f0d06f4e21591c6da10f68b75e774
 ---
 
 **说明** 
@@ -44,7 +44,7 @@ content_hash: sha256:fe3f42793001365b88a0e4c88e00b09e99620657f15092a9c0d65637270
 | videoDurationFilter19+ | [VideoDurationFilter](arkts-apis-photoaccesshelper-class.md#videodurationfilter19) | 否 | 是 | 可选择媒体文件视频时长的过滤配置。  配置该参数时，仅显示配置视频时长范围的媒体文件，建议提示用户仅支持选择指定时长视频。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 | combinedMediaTypeFilter20+ | Array<string> | 否 | 是 | 将过滤条件配置为字符串数组，支持多种类型组合。  字符串格式如下：photoType | photoSubType1,photoSubType2, … | mimeType1,mimeType2, …。  - 第1段指定1个photoType，固定为image（图片）或video（视频）。  - 第2段指定1~N个photoSubType，多个photoSubType之间使用逗号隔开，之间为“或（OR）”的逻辑取并集；N目前支持最大为1；可选的PhotoSubType包括movingPhoto或“\*”（忽略）。  - 第3段指定1~N个mimeType，多个mimeType之间使用逗号隔开，之间为“或（OR）”的逻辑取并集；N最大为10，格式类似于[MimeTypeFilter](arkts-apis-photoaccesshelper-class.md#mimetypefilter19)。  三段过滤的组合取交集处理。  支持“非”的逻辑。对于需要排除的类型，进行加括号的方式进行标识；一个string最多可使用1个括号。  当应用配置的过滤条件string不满足上述规格时，过滤结果为空。  配置该参数时，仅取数组前三个参数进行处理，MIMEType、mimeTypeFilter参数自动失效。  **元服务API：** 从API version 20开始支持在元服务中使用。 |
 | photoViewMimeTypeFileSizeFilters20+ | Array<[PhotoViewMimeTypeFileSizeFilter](arkts-apis-photoaccesshelper-class.md#photoviewmimetypefilesizefilter20)> | 否 | 是 | 指定媒体文件类型和文件大小进行过滤。  配置该参数时，仅取数组前三个参数进行处理，MIMETypes和fileSizeFilter自动失效。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
-| isMovingPhotoBadgeShown22+ | boolean | 否 | 是 | 是否在大图浏览模式下展示动态照片图标，true表示展示，false表示不展示，默认为false。  若设置为true，[Photoselectresult](arkts-apis-photoaccesshelper-class.md#photoselectresult)返回movingPhotoBadgeStates数组，动态照片默认返回状态为[MOVING\_PHOTO\_ENABLED](arkts-apis-photoaccesshelper-e.md#movingphotobadgestatetype22)。  **注意：** 必须同时使用isMovingPhotoBadgeShown和MovingPhotoBadgeStateType判断照片是否是动态照片。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| isMovingPhotoBadgeShown22+ | boolean | 否 | 是 | 是否在大图浏览模式下展示动态照片图标，true表示展示，false表示不展示，默认为false。  若设置为true，[PhotoSelectResult](arkts-apis-photoaccesshelper-class.md#photoselectresult)返回movingPhotoBadgeStates数组，动态照片默认返回状态为[MOVING\_PHOTO\_ENABLED](arkts-apis-photoaccesshelper-e.md#movingphotobadgestatetype22)。  **注意：** 必须同时使用isMovingPhotoBadgeShown和MovingPhotoBadgeStateType判断照片是否是动态照片。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 | assetFilter22+ | Array<[OperationItem](arkts-apis-photoaccesshelper-class.md#operationitem22)> | 否 | 是 | 媒体资产过滤器，长度限制为50个，超出取前50个。  **注意：**  1. 当使用该过滤器时，其他过滤器会失效。  2. 当配置多个条件时，过滤条件前后需要配置英文括号，否则可能和内部过滤项冲突。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 | autoPlayScenes23+ | Array<[AutoPlayScene](arkts-apis-photoaccesshelper-class.md#autoplayscene23)> | 否 | 是 | 设置动态照片播放模式。长度限制为2个，超出取前2个，多余的会自动忽略。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | globalMovingPhotoState23+ | [MovingPhotoBadgeStateType](arkts-apis-photoaccesshelper-e.md#movingphotobadgestatetype22) | 否 | 是 | 设置全局动态照片的效果，当前仅支持MOVING\_PHOTO\_ENABLED和MOVING\_PHOTO\_DISABLED。默认为MOVING\_PHOTO\_ENABLED。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |

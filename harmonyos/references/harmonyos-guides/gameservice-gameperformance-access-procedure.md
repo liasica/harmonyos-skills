@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 开发指导(ArkTS)
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:43+08:00
+scraped_at: 2026-09-18T06:46:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3ef034b6ba161a1c6a0cd6986ec039c02ac7026656c5199ace1bc1517a73ece6
+content_hash: sha256:2055853deda47bbb50b12fe469a9116dc5dc27994a6bcfbd2bed44099dcc00ce
 ---
 
 游戏场景感知包括：
@@ -15,7 +15,7 @@ content_hash: sha256:3ef034b6ba161a1c6a0cd6986ec039c02ac7026656c5199ace1bc1517a7
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/jsg7rYmiRbyI8LruV_kSeQ/zh-cn_image_0000002723855980.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/gzQ4GDEjRRqYg3vSyZ3Z1A/zh-cn_image_0000002727591720.png)
 
 1. 游戏启动后调用[gamePerformance.init](../harmonyos-references/gameservice-gameperformance.md#gameperformanceinit)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[gamePerformance.on](../harmonyos-references/gameservice-gameperformance.md#gameperformanceondevicestatechanged)接口注册设备状态变化事件监听，订阅设备状态变化通知。

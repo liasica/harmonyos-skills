@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-data-typ
 title: Node-API支持的数据类型和接口
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API支持的数据类型和接口
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:456ae52e6ad42647296527d257879e381688b436791886084fb048728b6f8654
+scraped_at: 2026-09-18T06:46:54+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:0ab77b041173ed7deb54b195a1e14c6e884fe9f117c74ad95da619f064e88d4f
 ---
 
 ## Node-API的数据类型
@@ -472,7 +472,7 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 | napi\_get\_property | 获取给定Object的给定属性。 |
 | napi\_has\_property | 判断给定对象中是否存在给定属性。 |
 | napi\_delete\_property | 尝试从给定Object中删除给定key属性。 |
-| napi\_has\_own\_property | 判断给定Object中是否有名为key的own property。 |
+| napi\_has\_own\_property | 与napi\_has\_property行为一致，判断给定Object中是否存在给定属性。 |
 | napi\_set\_named\_property | 对给定Object设置一个给定名称的属性。 |
 | napi\_get\_named\_property | 获取给定Object中指定名称的属性。 |
 | napi\_has\_named\_property | 判断给定Object中是否有给定名称的属性。 |

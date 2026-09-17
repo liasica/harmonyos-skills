@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8c2a7ba183167d7ddef6bc68d5baacb98521f07d0683342bdd959f91cc7001c2
+scraped_at: 2026-09-18T06:47:38+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:79fcbaaaeee987f20723fb0498d78b7cd55dca0953dbfc43c8f15926f7d975a8
 ---
 
 **说明** 
@@ -216,7 +216,7 @@ content_hash: sha256:8c2a7ba183167d7ddef6bc68d5baacb98521f07d0683342bdd959f91cc7
 
 1. 开发者需要实现一个FTS5可加载分词器扩展，并将其编译成so，编译可参考[使用命令行CMake构建NDK工程](../harmonyos-guides/build-with-ndk-cmake.md)。
 
-2. 将生成的so文件拷贝到工程目录"entry/libs/"文件夹下的相应子目录中(没有相应目录时用户可自行创建)，子目录根据系统架构确定。例如，系统架构为arm64-v8a时，放置在"entry/libs/arm64-v8a"目录下；系统架构为armeabi-v7a时，放置在"entry/libs/armeabi-v7a"目录下。
+2. 将生成的so文件拷贝到工程目录"entry/libs/"文件夹下的相应子目录中（没有相应目录时用户可自行创建），子目录根据系统架构确定。例如，系统架构为arm64-v8a时，放置在"entry/libs/arm64-v8a"目录下；系统架构为armeabi-v7a时，放置在"entry/libs/armeabi-v7a"目录下。
 
 3. 加载自定义分词器。
 

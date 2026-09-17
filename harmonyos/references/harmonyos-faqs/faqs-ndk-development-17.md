@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-develo
 title: 元服务/智能表应用能否使用NDK开发
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 元服务/智能表应用能否使用NDK开发
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:54dc997f141bde12d4dfc96ed4f41a2a47c0a178114ed1be7e708aac109b0c98
+scraped_at: 2026-09-18T06:53:10+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:b99f89dd14a5400a357c2b25d306c565baf6763124cf0a10b3abb10c1cce87d7
 ---
 
 ## 问题现象
@@ -23,3 +23,9 @@ HarmonyOS是否支持在元服务/智能穿戴应用中使用NDK进行开发？
 * 元服务不支持Native开发方式，因此无法使用NDK开发元服务。
 * 轻量级智能穿戴应用仅支持JS开发语言，不支持使用C/C++以及ArkTS语言，因此无法使用NDK开发轻量级穿戴应用。
 * 智能穿戴应用与普通手机应用的开发过程一致，支持C/C++、JS、ArkTS多语言开发，可以使用NDK进行智能穿戴应用开发。
+
+## 常见FAQ
+
+Q：轻量级智能穿戴应用是否支持动态链接库集成？
+
+A：轻量级智能穿戴应用不支持动态链接库集成，智能穿戴应用支持动态链接库集成。穿戴开发指南可参考[智能穿戴应用开发](../best-practices/bpta-smartwatch.md)。

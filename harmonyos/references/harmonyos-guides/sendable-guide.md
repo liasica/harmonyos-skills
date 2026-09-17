@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-guid
 title: Sendable使用场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable使用场景
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:15+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:1a7805c8afd5d33e8b788608d9e2613329e6bd35975ef2832ffe334fa8ac2563
+scraped_at: 2026-09-18T06:44:56+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:94dbc6d400dbe2a7f472dad408f52b7cc2ce2c1c6dbee2244a9ece0a0ffbc284
 ---
 
 Sendable对象在不同并发实例间默认采用引用传递，这种方式比序列化更高效，且不会丢失类成员方法。因此，Sendable能够解决两个关键场景的问题：
@@ -67,8 +67,8 @@ struct Index {
           }).catch((e: BusinessError) => {
             // Process error
             this.listenerTask = 'failed';
-          })
-        })
+          });
+        });
       Text(this.dataProcessingTask)
         .id('Data processing task')
         .fontSize(50)
@@ -79,8 +79,8 @@ struct Index {
           }).catch((e: BusinessError) => {
             this.dataProcessingTask = 'failed';
             console.error('taskpool execute failed. Code: ' + e.code + ', message: ' + e.message);
-          })
-        })
+          });
+        });
     }
     .height('100%')
     .width('100%')
@@ -172,7 +172,7 @@ struct Index {
         .onClick(async () => {
           await test();
           this.message = 'success';
-        })
+        });
     }
     .height('100%')
     .width('100%')
@@ -182,7 +182,7 @@ struct Index {
 
 ```typescript
 // 定义模拟类Test，模仿开发过程中需传递带方法的class
-import { lang, collections } from '@kit.ArkTS'
+import { lang, collections } from '@kit.ArkTS';
 
 export type ISendable = lang.ISendable;
 

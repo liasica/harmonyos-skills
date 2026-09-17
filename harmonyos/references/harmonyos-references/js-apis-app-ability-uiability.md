@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.UIAbility (带界面的应用组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.UIAbility (带界面的应用组件)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:01+08:00
+scraped_at: 2026-09-18T06:47:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7b325c78c2d9878e815072abe7cbbc4b98d63050de83d08657381d9459c5e8e1
+content_hash: sha256:8dfb4df13354a77aef861ecef86be8a6ccc7f0bf88bc286cbf03c543b6cbd465
 ---
 
 UIAbility是包含UI界面的应用组件，继承自[Ability](js-apis-app-ability-ability.md)，提供UIAbility组件创建、销毁、前后台切换等[生命周期](js-apis-app-ability-uiability.md#uiability生命周期状态)回调，同时也具备[后台通信能力](js-apis-app-ability-uiability.md#后台通信能力)。
@@ -22,7 +22,7 @@ UIAbility是包含UI界面的应用组件，继承自[Ability](js-apis-app-abili
 
 **图1** UIAbility生命周期状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/KsHvCMqVSVu_EngUQCT_dA/zh-cn_image_0000002723696646.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/lrp9-KhpT4-oQRXK0UQKSQ/zh-cn_image_0000002727752162.png)
 
 * Create：表示UIAbility实例已创建。系统会在该状态下触发其[onCreate](js-apis-app-ability-uiability.md#oncreate)回调函数，开发者可以在[onCreate](js-apis-app-ability-uiability.md#oncreate)中执行初始化操作。
 * Foreground：表示UIAbility被拉到前台。系统会在该状态下触发其[onForeground](js-apis-app-ability-uiability.md#onforeground)回调函数，开发者可以在[onForeground](js-apis-app-ability-uiability.md#onforeground)中申请应用所需的资源。
@@ -35,7 +35,7 @@ UIAbility是包含UI界面的应用组件，继承自[Ability](js-apis-app-abili
 
 **图2** Call调用示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/vidb30S9SbWKUDli31OrZw/zh-cn_image_0000002753453855.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/beeG-ZleRLW9MA7P_SFu2g/zh-cn_image_0000002757229521.png)
 
 * Caller UIAbility调用[startAbilityByCall()](js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口获取[Caller](js-apis-app-ability-uiability.md#caller)对象，并使用Caller对象的[call](js-apis-app-ability-uiability.md#call)方法向Callee UIAbility发送数据。
 * Callee UIAbility持有一个[Callee](js-apis-app-ability-uiability.md#callee)对象，通过Callee的[on](js-apis-app-ability-uiability.md#on)方法注册回调函数，用于接收Caller对象发送的数据。

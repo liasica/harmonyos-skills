@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: SideBarContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > SideBarContainer
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:52+08:00
+scraped_at: 2026-09-18T06:48:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a4cbf900cee4524e5af4977f35a7855eca12cf592d8b62e7fdfceae23d2cfc7d
+content_hash: sha256:80c33a4cf018d4d3419f523def237df60eb6d5015f4d2c54e02f78af1485f774
 ---
 
 提供侧边栏可以显示和隐藏的容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区。支持侧边栏导航布局场景，通过控制按钮或手势切换侧边栏显隐，可提升应用导航效率。
@@ -500,4 +500,4 @@ struct SideBarContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/9MpodebERjqtZtPDXu-3Vg/zh-cn_image_0000002753296665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/4xEvM7dmQM6v0qkrTdnMgA/zh-cn_image_0000002757312129.png)

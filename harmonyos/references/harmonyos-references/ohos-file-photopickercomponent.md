@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file
 title: "@ohos.file.PhotoPickerComponent (PhotoPicker组件)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.file.PhotoPickerComponent (PhotoPicker组件)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:43+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:282fd0a216b94122a1cf8598a1fb4ca9752eff7c0b04af38b3d8cde4b37d0b2f
+scraped_at: 2026-09-18T06:51:19+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:0970c76ea187ac059fdea1f61250bc263a0a01cfcb6aa2b8b36d5fa7867e913c
 ---
 
 应用可以在布局中嵌入PhotoPicker组件，通过此组件，应用无需申请权限，即可实现媒体文件选择功能。在用户选择媒体文件后，应用即可访问用户选中的图片或视频文件。仅包含读权限。
@@ -538,7 +538,7 @@ setMaxSelected(maxSelected: MaxSelected): void
 
 setPhotoBrowserItem(uri: string, photoBrowserRange?: PhotoBrowserRange): void
 
-应用可通过该接口,切换picker组件至大图浏览模式浏览图片；当已处于大图浏览模式时，切换浏览的图片。
+应用可通过该接口，切换picker组件至大图浏览模式浏览图片；当已处于大图浏览模式时，切换浏览的图片。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -1006,7 +1006,7 @@ Picker的颜色模式。
 | --- | --- | --- |
 | NONE | 0 | 不提示。 |
 | TOAST | 1 | 弹toast提示。 |
-| MASK | 2 | 蒙灰提示。 |
+| MASK | 2 | 蒙层提示。 |
 
 ## MaxCountType
 

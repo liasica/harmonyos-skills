@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-scheme-ha
 title: 拦截Web组件发起的网络请求
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 拦截Web组件发起的网络请求
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5aedbc18b8ce1d3f97fc3ea5c750b03c9ebde0f170b8211ea3703979cfb5e772
+scraped_at: 2026-09-18T06:45:16+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:65cfe478aa299b90387a838478908e0d2b06cbdfb22401b6c89c1bc348264442
 ---
 
 应用可以通过[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)拦截Web组件发起的网络请求，也可以通过SchemeHandler来拦截Web组件发起的网络请求。SchemeHandler提供了ArkTS与NDK两套接口。
@@ -290,6 +290,8 @@ this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest, res
  return true;
 })
 ```
+
+网络拦截支持流式请求，可以通过多次调用[didReceiveResponseBody](../harmonyos-references/arkts-apis-webview-webresourcehandler.md#didreceiveresponsebody12)或者[OH\_ArkWebResourceHandler\_DidReceiveData](../harmonyos-references/capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceivedata)，分块构造返回响应体。最后一次返回响应体时，再调用[didFinish](../harmonyos-references/arkts-apis-webview-webresourcehandler.md#didfinish12)或者[OH\_ArkWebResourceHandler\_DidFinish](../harmonyos-references/capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfinish)通知Web组件被拦截的请求已经完成。
 
 当希望通过[OH\_ArkWebResourceHandler\_DidFailWithError](../harmonyos-references/capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherror)或者[didFail(code: WebNetErrorList)](../harmonyos-references/arkts-apis-webview-webresourcehandler.md#didfail12)结束当前请求时，需要在调用该接口之前通过[OH\_ArkWebResourceHandler\_DidReceiveResponse](../harmonyos-references/capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)或者[didReceiveResponse](../harmonyos-references/arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)返回给Web内核一个响应头，否则无法结束请求。
 

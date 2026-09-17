@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 系统 > 安全 > Confidential Space Kit（机密空间服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:19+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:1532943816b166bbfa04e99d3c1e8115219b0bf539552acd2057d3fa90bca8c9
+scraped_at: 2026-09-18T06:49:29+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:766bfb4ff8cb97ae7b9d89d71fbe2ae9971a7fb82b9b2378147ed62fbfcd2493
 ---
 
 **说明** 
@@ -42,7 +42,7 @@ Invalid argument.
 1. 若runApp抛出此错误，请确认数据应用程序文件已打包进HAP中，并且runApp传入路径是以/data/storage/el1/bundle/开头的应用沙箱内部绝对路径（如/data/storage/el1/bundle/libs/arm64/libda\_demo.so）。
 2. 若sendData方法抛出此错误，请避免复用已经调用过stop的数据应用句柄。
 
-## 1028700002 数据应用签名不合法
+## 1028700002 数据应用签名文件不存在
 
 **错误信息**
 

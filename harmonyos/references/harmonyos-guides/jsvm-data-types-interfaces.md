@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-data-typ
 title: JSVM-API支持的数据类型和接口
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API支持的数据类型和接口
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:fdebd1f807416ec77d774bfdf370e9c94dc68d28f3a4c6d546149d58299526e8
+scraped_at: 2026-09-18T06:46:56+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:4d199dd866a793e67647c35685f06e0c281016daf8379975526ede04cd40dbdf
 ---
 
 ## JSVM-API 的数据类型
@@ -2573,7 +2573,7 @@ static napi_value GetInstanceData(napi_env env1, napi_callback_info info)
 
 场景示例：
 
-[使用JSVM-API接口进行任务队列相关开发](use-jsvm-execute_tasks.md)
+[使用JSVM-API接口进行任务队列相关开发](use-jsvm-execute-tasks.md)
 
 ### 后台反序列化
 

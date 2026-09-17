@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-telephonymanager
-title: "@ohos.enterprise.telephonyManager（通话管理）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.telephonyManager（通话管理）
+title: "@ohos.enterprise.telephonyManager (通话管理)"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.telephonyManager (通话管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:43+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c5c3f960fb49e71fbd8c656e594ba3be334f7a3c2bb84aef71f877c4ec0b510d
+scraped_at: 2026-09-18T06:50:25+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:17a23c000fc78ee9f9ddcf28e79d28423f2f81c5965f5924baa1b4148f5de712
 ---
 
 本模块提供通话管理能力。
@@ -18,7 +18,7 @@ content_hash: sha256:c5c3f960fb49e71fbd8c656e594ba3be334f7a3c2bb84aef71f877c4ec0
 
 本模块接口仅对设备管理应用开放，调用接口前需激活该应用，详情请参考[MDM Kit开发指南](../harmonyos-guides/mdm-kit-guide.md)。
 
-全局通用限制类策略由restrictions提供，若要全局禁用通话，请参考[@ohos.enterprise.restrictions（限制类策略）](js-apis-enterprise-restrictions.md)。
+全局通用限制类策略由restrictions提供，若要全局禁用通话，请参考[@ohos.enterprise.restrictions (限制类策略)](js-apis-enterprise-restrictions.md)。
 
 ## 导入模块
 
@@ -32,6 +32,10 @@ setSimDisabled(admin: Want, slotId: number): void
 
 禁用指定卡槽的SIM卡。禁用后，无法使用该卡槽的SIM卡接打电话、收发短信、上网。例如，企业设备管理员可在员工离职或设备丢失时，禁用SIM卡防止未授权使用。适用于企业需要限制员工设备通话能力的场景，例如员工离职或设备遗失时防止SIM卡被滥用，保障企业通信安全和成本控制。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -39,8 +43,6 @@ setSimDisabled(admin: Want, slotId: number): void
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)。
 
 **参数：**
 
@@ -88,6 +90,10 @@ setSimEnabled(admin: Want, slotId: number): void
 
 解除指定卡槽的SIM卡禁用。使用setSimDisabled禁用SIM卡后，再用setSimEnabled启用SIM卡，需要到设置-移动网络-SIM卡管理界面手动打开SIM卡开关。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -95,8 +101,6 @@ setSimEnabled(admin: Want, slotId: number): void
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)。
 
 **参数：**
 
@@ -210,6 +214,10 @@ addOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 2. 已经通过本接口设置了通话呼出的禁用名单，再通过本接口添加通话呼出允许名单，返回9200010错误码。通过[removeOutgoingCallPolicyNumbers](js-apis-enterprise-telephonymanager.md#telephonymanagerremoveoutgoingcallpolicynumbers)接口将之前设置的通话呼出禁用名单移除后，可解除冲突。
 3. 已经通过本接口设置了通话呼出的允许名单，再通过本接口添加通话呼出禁用名单，返回9200010错误码。通过[removeOutgoingCallPolicyNumbers](js-apis-enterprise-telephonymanager.md#telephonymanagerremoveoutgoingcallpolicynumbers)接口将之前设置的通话呼出允许名单移除后，可解除冲突。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -217,8 +225,6 @@ addOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 
@@ -280,6 +286,10 @@ removeOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 
 已经通过[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)接口禁用了设备通话能力，再通过本接口移除通话呼出的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)接口解除禁用设备通话能力后，可解除冲突。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -287,8 +297,6 @@ removeOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 
@@ -472,6 +480,10 @@ addIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 2. 已经通过本接口设置了通话呼入的禁用名单，再通过本接口添加通话呼入允许名单，返回9200010错误码。通过[removeIncomingCallPolicyNumbers](js-apis-enterprise-telephonymanager.md#telephonymanagerremoveincomingcallpolicynumbers)接口将之前设置的通话呼入禁用名单移除后，可解除冲突。
 3. 已经通过本接口设置了通话呼入的允许名单，再通过本接口添加通话呼入禁用名单，返回9200010错误码。通过[removeIncomingCallPolicyNumbers](js-apis-enterprise-telephonymanager.md#telephonymanagerremoveincomingcallpolicynumbers)接口将之前设置的通话呼入允许名单移除后，可解除冲突。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -479,8 +491,6 @@ addIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 
@@ -542,6 +552,10 @@ removeIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 
 1. 已经通过[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)接口禁用了设备通话能力，再通过本接口移除通话呼入的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)接口解除禁用设备通话能力后，可解除冲突。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -549,8 +563,6 @@ removeIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](../harmonyos-guides/mdm-kit-multi-mdm.md#规则4合并)。
 
 **参数：**
 

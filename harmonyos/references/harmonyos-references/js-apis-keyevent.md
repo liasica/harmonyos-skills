@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-k
 title: "@ohos.multimodalInput.keyEvent (按键输入事件)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.keyEvent (按键输入事件)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d0692085e55b907cb9578716f44122de405dfc5c58fb75658986c0e168bd9378
+scraped_at: 2026-09-18T06:50:20+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:a6e611a77c574f61487066770541dc380d7b8f093756fd1893d7a72dd7722949
 ---
 
 设备上报的按键事件，继承自[InputEvent](js-apis-inputevent.md)。
@@ -24,9 +24,9 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
 
 按键事件类型。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -38,9 +38,9 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
 
 按键。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -52,9 +52,9 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
 
 按键事件。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

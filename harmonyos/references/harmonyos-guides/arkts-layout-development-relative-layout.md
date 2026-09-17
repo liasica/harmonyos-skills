@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 相对布局 (RelativeContainer)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 相对布局 (RelativeContainer)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6cd88217e6794ff4af7671db3a57dee477468d61046fb72635800a821b1d6a34
+scraped_at: 2026-09-18T06:45:03+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:e8ccea929dd6ed07154579ccf1be3132e69d3682cb8a89766d80b6c5eb251128
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 **图1** 相对布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/gpYCx2ofStKN8KxUdwxz7w/zh-cn_image_0000002723854504.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/-Q2J-YQOTgy_txn5RARxQg/zh-cn_image_0000002727590244.png)
 
 子元素并不完全是上图中的依赖关系。比如，Item4可以以Item2为依赖锚点，也可以以RelativeContainer父容器为依赖锚点。
 
@@ -37,10 +37,10 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 * 在水平方向上，可以按照起始（left）、居中（middle）或尾端（right）的组件边界与锚点对齐。当设置三个边界时，仅起始（left）和居中（middle）的边界设置生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/DdvSGD2jQ529GbLulOpjwg/zh-cn_image_0000002723694586.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/kDEXgfJLRxms3fblQyH6yw/zh-cn_image_0000002727750102.png)
 * 在垂直方向上，可以设置组件边界与锚点对齐，具体包括顶部（top）、居中（center）和底部（bottom）。当设置三个边界时，仅顶部（top）和居中（center）生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/bYGKfHdIT-mZxqo-Jvl6cw/zh-cn_image_0000002753294353.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/iD-1AEZBQNeDmIQjDBuH9w/zh-cn_image_0000002757309817.png)
 
 ### 设置锚点
 
@@ -98,7 +98,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/NkQAweYaR5i3LvBgSV6AEA/zh-cn_image_0000002753454271.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/SAiAyi5TTO6l4ZwP1qneMA/zh-cn_image_0000002757229937.png)
 * 以兄弟元素为锚点。
 
   ```typescript
@@ -144,7 +144,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/n42J2radRsiauG2wAS3Weg/zh-cn_image_0000002723854506.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/CzTiTUR5T16PtWQH9WQxcA/zh-cn_image_0000002727590246.png)
 * 子组件锚点可以任意选择，但需注意不要相互依赖。
 
   ```typescript
@@ -214,7 +214,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/0xnvoH43QoaLJMryLSvzFg/zh-cn_image_0000002723694588.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/kjoBV9MkTg6TWWWrF7ovtQ/zh-cn_image_0000002727750104.png)
 
 ### 设置相对于锚点的对齐位置
 
@@ -222,15 +222,15 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 在水平方向上，对齐位置可以设置为HorizontalAlign.Start、HorizontalAlign.Center、HorizontalAlign.End。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/PgoHOyywR-OjLLou2XdEUQ/zh-cn_image_0000002753294355.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/cFtqW-icRIa5Ex0VrXoYkA/zh-cn_image_0000002757309819.png)
 
 在垂直方向上，对齐位置可以设置为VerticalAlign.Top、VerticalAlign.Center、VerticalAlign.Bottom。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/5X4hEsA_TuSooGtlcovpYQ/zh-cn_image_0000002753454273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Aojsb_KmRIK06i1UOzzvyQ/zh-cn_image_0000002757229939.png)
 
 ### 子组件位置偏移
 
-子组件经过相对位置对齐后，可能尚未达到目标位置。开发者可根据需要设置额外偏移（offset）。当使用offset调整位置的组件作为锚点时，对齐位置为设置offset之前的位置。从API Version 11开始，新增了[Bias](../harmonyos-references/ts-types.md#bias11对象说明)对象，建议API Version 11及以后的版本使用bias来设置额外偏移。使用bias的示例可以参考[示例4（设置偏移）](../harmonyos-references/ts-container-relativecontainer.md#示例4设置偏移)。
+子组件经过相对位置对齐后，可能尚未达到目标位置。开发者可根据需要设置额外偏移（offset）。当使用offset调整位置的组件作为锚点时，对齐位置为设置offset之前的位置。从API version 11开始，新增了[Bias](../harmonyos-references/ts-types.md#bias11对象说明)对象，建议API version 11及以后的版本使用bias来设置额外偏移。使用bias的示例可以参考[示例4（设置偏移）](../harmonyos-references/ts-container-relativecontainer.md#示例4设置偏移)。
 
 ```typescript
 @Entry
@@ -348,7 +348,7 @@ struct ChildComponentOffsetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Q4dnox1uQQKK9-_z0U52iQ/zh-cn_image_0000002723854508.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/929Ypu2gS4-HA2Quqdpp6Q/zh-cn_image_0000002727590248.png)
 
 ## 多种组件的对齐布局
 
@@ -425,11 +425,11 @@ struct RelativeContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/NjIahMxxSbqcgXCcZ2CrMg/zh-cn_image_0000002723694590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/mGyInJT1SkOybkFbIN7pHA/zh-cn_image_0000002727750106.png)
 
 ## 组件尺寸
 
-当同时存在前端页面设置的子组件尺寸和相对布局规则时，子组件的绘制尺寸依据约束规则确定。从API Version 11开始，此规则有所变化，子组件自身设置的尺寸优先级高于相对布局规则中的对齐锚点尺寸。因此，若要使子组件与锚点严格对齐，应仅使用alignRules，避免使用[尺寸设置](../harmonyos-references/ts-universal-attributes-size.md)。
+当同时存在前端页面设置的子组件尺寸和相对布局规则时，子组件的绘制尺寸依据约束规则确定。从API version 11开始，此规则有所变化，子组件自身设置的尺寸优先级高于相对布局规则中的对齐锚点尺寸。因此，若要使子组件与锚点严格对齐，应仅使用alignRules，避免使用[尺寸设置](../harmonyos-references/ts-universal-attributes-size.md)。
 
 **说明** 
 
@@ -530,7 +530,7 @@ struct RelativeAlignRulesExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/8UuIVn0WRwOcZi5yw-vu-Q/zh-cn_image_0000002753294357.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/-0fR6pqnT4iXBqt2NC92zQ/zh-cn_image_0000002757309821.png)
 
 ## 多个组件形成链
 
@@ -686,7 +686,7 @@ struct RelativeChainModeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/eAOnWWeNQWyHCssa3e_3lw/zh-cn_image_0000002753454275.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/x1CYtbXqT36mTUugfVJmwg/zh-cn_image_0000002757229941.png)
 
 ## 使用辅助线辅助定位子组件
 
@@ -728,7 +728,7 @@ struct RelativeGuideLineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/zDO8i8eKQEGGftNGr-fglA/zh-cn_image_0000002723854510.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/TaKBHI7YSM2X8mhgPbVeag/zh-cn_image_0000002727590250.png)
 
 ## 多个组件的屏障
 
@@ -856,4 +856,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/kG2lzSCpRQmIjaCBPqL6EQ/zh-cn_image_0000002723694592.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/DisnX1NnSRiE4gi4tZx7xw/zh-cn_image_0000002727750108.png)

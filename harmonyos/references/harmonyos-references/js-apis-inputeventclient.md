@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputEventClient (输入事件注入)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputEventClient (输入事件注入)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:15+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:b771f3b0b4b9569a7d9629898ab7c0969249229bc1b679971b1a8d99116cd681
+scraped_at: 2026-09-18T06:50:21+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:356de2c86a22219aabed44ff14d8777260f873089c6667488f67bd967dd95249
 ---
 
 输入事件注入模块，提供输入按键、鼠标/触控板、触屏输入事件注入能力。
@@ -26,11 +26,11 @@ createKeyboardController(): Promise<KeyboardController>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上返回801错误码。
 
@@ -84,11 +84,11 @@ createMouseController(): Promise<MouseController>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上返回801错误码。
 
@@ -142,11 +142,11 @@ createTouchController(): Promise<TouchController>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上返回801错误码。
 
@@ -208,11 +208,11 @@ pressKey(keyCode: KeyCode): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -279,11 +279,11 @@ releaseKey(keyCode: KeyCode): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -330,11 +330,11 @@ moveTo(displayId: number, displayX: number, displayY: number): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -399,11 +399,11 @@ pressButton(button: Button): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -470,11 +470,11 @@ releaseButton(button: Button): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -512,11 +512,11 @@ beginAxis(axis: Axis, value: number): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -588,11 +588,11 @@ updateAxis(axis: Axis, value: number): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -631,11 +631,11 @@ endAxis(axis: Axis): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -671,9 +671,9 @@ endAxis(axis: Axis): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -697,11 +697,11 @@ touchDown(touch: TouchPoint): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -789,11 +789,11 @@ touchMove(touch: TouchPoint): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 
@@ -831,11 +831,11 @@ touchUp(touch: TouchPoint): Promise<void>
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**模型约束**：此接口仅可在Stage模型下使用。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputSimulator
+**系统能力**：SystemCapability.MultimodalInput.Input.InputSimulator
 
-**需要权限：** ohos.permission.CONTROL\_DEVICE
+**需要权限**：ohos.permission.CONTROL\_DEVICE
 
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备上调用不生效。
 

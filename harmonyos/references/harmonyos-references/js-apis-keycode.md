@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-k
 title: "@ohos.multimodalInput.keyCode (键值)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.keyCode (键值)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:16+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:936171df7e0e84b8690f4d8eb333d095b8e4f95430e14c482d6e4a2fca0c4958
+scraped_at: 2026-09-18T06:50:21+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:4f2bce6e845112b7d3d668fc6b85c0ccae4a7ffc768a50845466b11f746ef645
 ---
 
 按键设备的键值，按键设备包括键盘、光盘、游戏手柄等。
@@ -24,7 +24,7 @@ import { KeyCode } from '@kit.InputKit';
 
 键值。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -110,7 +110,7 @@ import { KeyCode } from '@kit.InputKit';
 | KEYCODE\_RIGHT\_BRACKET | 2060 | 按键']'。 |
 | KEYCODE\_BACKSLASH | 2061 | 按键'\'。 |
 | KEYCODE\_SEMICOLON | 2062 | 按键';'。 |
-| KEYCODE\_APOSTROPHE | 2063 | 按键''' (单引号)。 |
+| KEYCODE\_APOSTROPHE | 2063 | 按键'''（单引号）。 |
 | KEYCODE\_SLASH | 2064 | 按键'/'。 |
 | KEYCODE\_AT | 2065 | 按键'@'。 |
 | KEYCODE\_PLUS | 2066 | 按键'+'。 |
@@ -269,10 +269,10 @@ import { KeyCode } from '@kit.InputKit';
 | KEYCODE\_VIDEO | 2683 | 视频键。 |
 | KEYCODE\_MEMO | 2684 | 备忘录键。 |
 | KEYCODE\_CALENDAR | 2685 | 日历键。 |
-| KEYCODE\_RED | 2686 | 红色指示器。 |
-| KEYCODE\_GREEN | 2687 | 绿色指示器。 |
-| KEYCODE\_YELLOW | 2688 | 黄色指示器。 |
-| KEYCODE\_BLUE | 2689 | 蓝色指示器。 |
+| KEYCODE\_RED | 2686 | 红色指示器键。 |
+| KEYCODE\_GREEN | 2687 | 绿色指示器键。 |
+| KEYCODE\_YELLOW | 2688 | 黄色指示器键。 |
+| KEYCODE\_BLUE | 2689 | 蓝色指示器键。 |
 | KEYCODE\_CHANNELUP | 2690 | 频道向上键。 |
 | KEYCODE\_CHANNELDOWN | 2691 | 频道向下键。 |
 | KEYCODE\_LAST | 2692 | 末尾键。 |
@@ -291,16 +291,16 @@ import { KeyCode } from '@kit.InputKit';
 | KEYCODE\_PRESENTATION | 2705 | 演示文稿键。 |
 | KEYCODE\_DATABASE | 2706 | 数据库键。 |
 | KEYCODE\_NEWS | 2707 | 新闻键。 |
-| KEYCODE\_VOICEMAIL | 2708 | 语音信箱。 |
-| KEYCODE\_ADDRESSBOOK | 2709 | 通讯簿。 |
+| KEYCODE\_VOICEMAIL | 2708 | 语音信箱键。 |
+| KEYCODE\_ADDRESSBOOK | 2709 | 通讯簿键。 |
 | KEYCODE\_MESSENGER | 2710 | 通信键。 |
 | KEYCODE\_BRIGHTNESS\_TOGGLE | 2711 | 亮度切换键。 |
 | KEYCODE\_SPELLCHECK | 2712 | 拼写检查键。 |
-| KEYCODE\_COFFEE | 2713 | 终端锁/屏幕保护程序。 |
+| KEYCODE\_COFFEE | 2713 | 终端锁/屏幕保护程序键。 |
 | KEYCODE\_MEDIA\_REPEAT | 2714 | 媒体循环键。 |
 | KEYCODE\_IMAGES | 2715 | 图像键。 |
 | KEYCODE\_BUTTONCONFIG | 2716 | 按键配置键。 |
-| KEYCODE\_TASKMANAGER | 2717 | 任务管理器。 |
+| KEYCODE\_TASKMANAGER | 2717 | 任务管理器键。 |
 | KEYCODE\_JOURNAL | 2718 | 日志按键。 |
 | KEYCODE\_CONTROLPANEL | 2719 | 控制面板键。 |
 | KEYCODE\_APPSELECT | 2720 | 应用程序选择键。 |
@@ -318,7 +318,7 @@ import { KeyCode } from '@kit.InputKit';
 | KEYCODE\_MOUSE\_ASSISTANT | 2732 | 鼠标AI助手键。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | KEYCODE\_MOUSE\_INTELLIGENCE\_SELECTION | 2733 | 鼠标智慧框选键。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | KEYCODE\_AOD\_SINGLE\_CLICK | 2740 | 手机触摸屏单击事件，在熄屏显示状态下使用。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
-| KEYCODE\_FRONT | 2800 | 挡风玻璃除雾器开关。 |
+| KEYCODE\_FRONT | 2800 | 挡风玻璃除雾器开关键。 |
 | KEYCODE\_SETUP | 2801 | 设置键。 |
 | KEYCODE\_WAKEUP | 2802 | 唤醒键。 |
 | KEYCODE\_SENDFILE | 2803 | 发送文件按键。 |
@@ -348,7 +348,7 @@ import { KeyCode } from '@kit.InputKit';
 | KEYCODE\_F24 | 2827 | 按键'F24'。 |
 | KEYCODE\_PROG3 | 2828 | 程序键3。 |
 | KEYCODE\_PROG4 | 2829 | 程序键4。 |
-| KEYCODE\_DASHBOARD | 2830 | 仪表板。 |
+| KEYCODE\_DASHBOARD | 2830 | 仪表板键。 |
 | KEYCODE\_SUSPEND | 2831 | 挂起键。 |
 | KEYCODE\_HP | 2832 | 高阶路径键。 |
 | KEYCODE\_SOUND | 2833 | 音量键。 |
@@ -360,21 +360,21 @@ import { KeyCode } from '@kit.InputKit';
 | KEYCODE\_SWITCHVIDEOMODE | 2841 | 在可用视频之间循环输出（监视器/LCD/TV输出/等）。 |
 | KEYCODE\_BATTERY | 2842 | 电池按键。 |
 | KEYCODE\_BLUETOOTH | 2843 | 蓝牙按键。 |
-| KEYCODE\_WLAN | 2844 | 无线局域网。 |
+| KEYCODE\_WLAN | 2844 | 无线局域网键。 |
 | KEYCODE\_UWB | 2845 | 超宽带控制键。 |
 | KEYCODE\_WWAN\_WIMAX | 2846 | 移动网络控制键。 |
 | KEYCODE\_RFKILL | 2847 | 控制所有无线设备的键。 |
 | KEYCODE\_CHANNEL | 3001 | 向上频道键。 |
-| KEYCODE\_BTN\_0 | 3100 | 按键0。 |
-| KEYCODE\_BTN\_1 | 3101 | 按键1。 |
-| KEYCODE\_BTN\_2 | 3102 | 按键2。 |
-| KEYCODE\_BTN\_3 | 3103 | 按键3。 |
-| KEYCODE\_BTN\_4 | 3104 | 按键4。 |
-| KEYCODE\_BTN\_5 | 3105 | 按键5。 |
-| KEYCODE\_BTN\_6 | 3106 | 按键6。 |
-| KEYCODE\_BTN\_7 | 3107 | 按键7。 |
-| KEYCODE\_BTN\_8 | 3108 | 按键8。 |
-| KEYCODE\_BTN\_9 | 3109 | 按键9。 |
+| KEYCODE\_BTN\_0 | 3100 | 按钮'0'。 |
+| KEYCODE\_BTN\_1 | 3101 | 按钮'1'。 |
+| KEYCODE\_BTN\_2 | 3102 | 按钮'2'。 |
+| KEYCODE\_BTN\_3 | 3103 | 按钮'3'。 |
+| KEYCODE\_BTN\_4 | 3104 | 按钮'4'。 |
+| KEYCODE\_BTN\_5 | 3105 | 按钮'5'。 |
+| KEYCODE\_BTN\_6 | 3106 | 按钮'6'。 |
+| KEYCODE\_BTN\_7 | 3107 | 按钮'7'。 |
+| KEYCODE\_BTN\_8 | 3108 | 按钮'8'。 |
+| KEYCODE\_BTN\_9 | 3109 | 按钮'9'。 |
 | KEYCODE\_DAGGER\_CLICK18+ | 3211 | 智能手表智感窗按键单击。 |
 | KEYCODE\_DAGGER\_DOUBLE\_CLICK18+ | 3212 | 智能手表智感窗按键双击。 |
 | KEYCODE\_DAGGER\_LONG\_PRESS18+ | 3213 | 智能手表智感窗按键长按。 |

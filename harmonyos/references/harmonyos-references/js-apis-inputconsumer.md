@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputConsumer (全局快捷键)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputConsumer (全局快捷键)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:83d7545170fee6c451fee4bee3145c3191aec11aaf3755ea1a3f229092c968b7
+scraped_at: 2026-09-18T06:50:20+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:3c7a102ba115e1d7faa3a369a0a76d7cfb30663f139cbacd41eab7bf6aa89e0f
 ---
 
 全局快捷键订阅模块，用于处理组合按键的订阅，本模块也支持音量键拦截监听能力。
@@ -25,7 +25,7 @@ import { inputConsumer, KeyEvent } from '@kit.InputKit';
 
 快捷键选项。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
+**系统能力**：SystemCapability.MultimodalInput.Input.InputConsumer
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -37,7 +37,7 @@ import { inputConsumer, KeyEvent } from '@kit.InputKit';
 
 按键事件消费设置。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
+**系统能力**：SystemCapability.MultimodalInput.Input.InputConsumer
 
 **设备行为差异**：API version 19之前，该接口在Phone、Tablet和PC/2in1设备中可正常调用，在其他设备上返回801错误码。从API version 19开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
 
@@ -53,7 +53,7 @@ getAllSystemHotkeys(): Promise<Array<HotkeyOptions>>
 
 获取所有系统快捷键，使用Promise异步回调。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
+**系统能力**：SystemCapability.MultimodalInput.Input.InputConsumer
 
 **设备行为差异**：该接口在Wearable设备上返回801错误码，在其他设备上可正常调用。
 
@@ -102,7 +102,7 @@ on(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback: Callback<Hotkey
 
 订阅应用快捷键。获取满足条件的组合按键输入事件，使用callback异步回调。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
+**系统能力**：SystemCapability.MultimodalInput.Input.InputConsumer
 
 **设备行为差异**：该接口在Wearable设备上返回801错误码，在其他设备上可正常调用。
 
@@ -166,7 +166,7 @@ off(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback?: Callback<Hotk
 
 取消订阅应用快捷键。使用callback异步回调。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
+**系统能力**：SystemCapability.MultimodalInput.Input.InputConsumer
 
 **参数：**
 
@@ -261,7 +261,7 @@ on(type: 'keyPressed', options: KeyPressedConfig, callback: Callback<KeyEvent>):
 
 订阅成功后，该按键事件的系统默认行为将被屏蔽，即不会再触发系统级的响应，如音量调节。要恢复系统响应，请使用[off](js-apis-inputconsumer.md#inputconsumeroffkeypressed16)方法取消订阅。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
+**系统能力**：SystemCapability.MultimodalInput.Input.InputConsumer
 
 **设备行为差异**：API version 19之前，该接口在Phone、Tablet和PC/2in1设备中可正常调用，在其他设备上返回801错误码。从API version 19开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
 
@@ -320,7 +320,7 @@ off(type: 'keyPressed', callback?: Callback<KeyEvent>): void
 
 取消对'keyPressed'事件的订阅，使用callback异步回调。调用该方法后，被屏蔽的系统按键默认行为将恢复，即系统对音量调节等默认响应将恢复。
 
-**系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
+**系统能力**：SystemCapability.MultimodalInput.Input.InputConsumer
 
 **设备行为差异**：API version 19之前，该接口在Phone、Tablet和PC/2in1设备中可正常调用，在其他设备上返回801错误码。从API version 19开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
 

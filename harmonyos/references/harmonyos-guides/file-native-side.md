@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-native-s
 title: Native侧实现文件访问
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 文件基础服务开发实践 > Native侧实现文件访问
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:40+08:00
+scraped_at: 2026-09-18T06:45:18+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:1018b34898428b29fac6bf532cbeff1a4327ac4002652808beef4b1baa528193
+content_hash: sha256:ebff24166833474badb0de44c0ad73bc0e8b25699313d6ace9f52820288cf5be
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:1018b34898428b29fac6bf532cbeff1a4327ac4002652808beef4b1baa5
 
 **图 1** ArkTS侧获取沙箱路径传递给Native侧访问文件示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/HuGpogP5R_OkYyzmtwDWKA/zh-cn_image_0000002723695282.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pN0Pzm9URc-YYdQ5e80y8g/zh-cn_image_0000002727750798.png)
 
 **实现方案**
 
@@ -112,15 +112,15 @@ content_hash: sha256:1018b34898428b29fac6bf532cbeff1a4327ac4002652808beef4b1baa5
 
 **图 2** ArkTS侧传递沙箱路径到Native侧方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/a0HRXwDYTdCEcQ2QjsVHpg/zh-cn_image_0000002753295049.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/AQyMhVyXSC67dUYQvZ-KFg/zh-cn_image_0000002757310513.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/G06ov_2BSM6xN-blU-Tnpw/zh-cn_image_0000002753454967.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/bz65YC50TTCaaaQ2V6uTvA/zh-cn_image_0000002757230633.png)
 
 ### 方案二：Native侧直接拼接沙箱路径访问文件
 
 **图 3** Native侧直接拼接沙箱路径访问文件示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/NUBI7E7rRleK46uOF9mJQQ/zh-cn_image_0000002723855202.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/RL2Cma0NQzShf9Eqqdlu6g/zh-cn_image_0000002727590942.png)
 
 **实现方案**
 
@@ -205,9 +205,9 @@ content_hash: sha256:1018b34898428b29fac6bf532cbeff1a4327ac4002652808beef4b1baa5
 
 **图 4** Native侧拼接沙箱路径方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ECWPTaBXSqGgdkO4_i_0mA/zh-cn_image_0000002723695284.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/16eP20IjTaCqG7sc-GoK-w/zh-cn_image_0000002727750800.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/GjVgO3DzR1yibOs27gsrhA/zh-cn_image_0000002753295051.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/qyxVeSFEQseahgIyi2227Q/zh-cn_image_0000002757310515.png)
 
 ## 访问公共目录文件
 
@@ -224,7 +224,7 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
 
 **图 7** Native侧写入公共目录文件场景示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/cLCp7tbFR7ucrxVMY9pEsA/zh-cn_image_0000002753454969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/8ZvV2fHtQOWNDYVeUxGyYw/zh-cn_image_0000002757230635.png)
 
 **实现方案**
 
@@ -340,9 +340,9 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
 
 **图 8** Native侧写公共目录文件场景方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/8_4-GuJ1T1q3sdcINSeqAA/zh-cn_image_0000002723855204.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/20jTkad7QrqBGkOcgEECAQ/zh-cn_image_0000002727590944.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/wLm75jewRxaYOgUFaU-2qg/zh-cn_image_0000002723695286.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Y-k1AleWRNqgibU_LvOsMw/zh-cn_image_0000002727750802.png)
 
 ### 场景二：从公共目录文件中读取数据
 
@@ -352,7 +352,7 @@ ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，
 
 **图 9** Native侧读取公共目录文件场景示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ae9NyohxSUCtOOU0107QUQ/zh-cn_image_0000002753295053.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/CE0SlPJ9Rs-wTyxNgmEPLA/zh-cn_image_0000002757310517.png)
 
 **实现方案**
 
@@ -459,9 +459,9 @@ ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，
 
 **图 10** Native侧读公共目录文件场景方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/kJQ7Y-GjQ6qUdYjjSXoLjA/zh-cn_image_0000002753454971.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nx6TseRBTyawuYuwz7mymg/zh-cn_image_0000002757230637.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/-xlFIvAATXe6lCPJAf0ZKQ/zh-cn_image_0000002723855206.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/_jdpfH-sRU24lxZSwCmW3Q/zh-cn_image_0000002727590946.png)
 
 ## 示例代码
 

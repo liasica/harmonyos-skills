@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-ticket
 title: 更新活动/景点门票
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 活动/景点门票 > 开发场景 > 更新活动/景点门票
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:00+08:00
+scraped_at: 2026-09-18T06:46:31+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:fecd8f83cb1d4a7c8d03f2a8c915383d734c87a3a6b99c758a8e3e5d89bf251a
+content_hash: sha256:2dd50ba8277c96d69bfaeae48fa856b9feb396fe248ec1956db1d7936e5646c2
 ---
 
 当门票信息发生变更时，如座位变更、入场提醒等，更新钱包中的凭证数据。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/V39QM5GeR66IPynWAcqvvg/zh-cn_image_0000002723696392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_VLwPoTDT7qrMqBZRnhy0w/zh-cn_image_0000002727751908.png)
 
 ## 服务端开发
 

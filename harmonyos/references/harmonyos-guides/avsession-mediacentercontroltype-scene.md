@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-med
 title: 自定义播控中心控制按钮显示布局
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 自定义播控中心控制按钮显示布局
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:21+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:e650d22a81649a8849d4cec3dcf4ca86327f120e8cbe32c446e4eb84bcccd760
+scraped_at: 2026-09-18T06:45:55+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:a3bc127fd45e3342f44123743e9d416fca1d3d59679fd4db0fe665c2a07ba2e3
 ---
 
 从API版本26.0.0开始，系统支持自定义播控中心控制按钮的显示布局。本文档介绍播控中心控制按钮的默认显示规则，以及应用如何自定义控制按钮的显示。
@@ -16,11 +16,11 @@ content_hash: sha256:e650d22a81649a8849d4cec3dcf4ca86327f120e8cbe32c446e4eb84bcc
 
 * **五元组**：显示五个控制按钮，如播控中心二级界面会使用五元组进行显示。如下图所示，五元组从左到右显示的位置分别称为4号位、2号位、1号位、3号位、5号位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/r0fnkypRSceZ2CbWcrp4TA/zh-cn_image_0000002753455359.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/esfXCd3rRa-8bB2_VGxteA/zh-cn_image_0000002757231025.png)
 
 * **三元组**：显示三个控制按钮，如播控中心一级界面会使用三元组进行显示。如下图所示，三元组从左到右显示的位置分别称为2号位、1号位、3号位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/LmnWpb7DSFSHAIW4Ri4IUA/zh-cn_image_0000002723855594.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/yJHBxjsASWK0Snmq7l1btw/zh-cn_image_0000002727591334.png)
 
 播控中心根据应用设置的[AVSessionType](../harmonyos-references/arkts-apis-avsession-t.md#avsessiontype10)会话类型（本文提到的会话类型均指应用设置的AVSessionType）决定三元组/五元组控制按钮的显示：
 
@@ -127,21 +127,25 @@ struct Index {
             session.on('playNext', () => {
               console.info(`onPlayNext`);
             });
-            // 注册'setTargetLoopMode'监听并设置支持的循环模式范围，以支持播控中心显示循环模式按钮
+            // 播控中心显示循环模式按钮：注册监听 + 设置范围。
+            // 注册'setTargetLoopMode'监听。
             session.on('setTargetLoopMode', (loopMode: AVSessionManager.LoopMode) => {
               console.info(`targetLoopMode change: ${loopMode}`);
             });
+            // 设置支持的循环模式范围。
             session.setSupportedLoopModes(
               [AVSessionManager.LoopMode.LOOP_MODE_SINGLE, AVSessionManager.LoopMode.LOOP_MODE_LIST,
                 AVSessionManager.LoopMode.LOOP_MODE_SHUFFLE]);
-            // 注册'setSpeed'监听并设置支持的倍速范围，以支持播控中心显示倍速按钮
+            // 播控中心显示倍速按钮：注册监听 + 设置范围。
+            // 注册'setSpeed'监听。
             session.on('setSpeed', (speed: number) => {
               console.info(`speed change: ${speed}`);
             });
+            // 设置支持的倍速范围。
             session.setSupportedPlaySpeeds([0.5, 1.0, 2]);
-            // 调用接口设置支持的控制命令类型列表
+            // 调用接口设置支持的控制命令类型列表。
             session.setMediaCenterControlType(['playNext', 'setLoopMode', 'setSpeed']);
-            // 设置完成后，播控中心三元组会显示上一首、播放/暂停、下一首；五元组会显示循环模式、上一首、播放/暂停、下一首、倍速
+            // 设置完成后，播控中心三元组会显示上一首、播放/暂停、下一首；五元组会显示循环模式、上一首、播放/暂停、下一首、倍速。
             // ...
           } catch (err) {
             console.error(`Failed to setMediaCenterControlType. Code: ${err.code}, message: ${err.message}`);

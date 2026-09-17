@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButton
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:15+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:f17e92202227797d29195192f0d52da2a79f17b517eaf940dbb87e58c425fd00
+scraped_at: 2026-09-18T06:48:33+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:064204457c7ed59634319f6c21bb92fcec353e676795c6992dc332f82a9e40cb
 ---
 
 分段按钮组件包含页签类分段按钮和胶囊类分段按钮。页签类分段按钮适用于页面或内容区域的切换场景；胶囊类分段按钮适用于单选或多选的选择场景，包含胶囊类单选分段按钮和胶囊类多选分段按钮。该组件支持自定义文本颜色、字体大小、字体粗细、背景色、图片尺寸、内边距、背景模糊材质等外观属性，支持仅文本、仅图标和图标+文本三种按钮样式，并提供无障碍朗读、布局方向镜像、自定义圆角、属性动画等能力，适用于需要快速构建符合设计规范的分段选择界面的场景。
@@ -53,8 +53,8 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 | options | [SegmentButtonOptions](ohos-arkui-advanced-segmentbutton.md#segmentbuttonoptions) | 是 | @ObjectLink | 分段按钮的配置选项，用于设置按钮的类型（页签类或胶囊类）、外观样式（颜色、字体、尺寸等）、按钮内容和选中状态等属性。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | selectedIndexes | number[] | 是 | @Link | 分段按钮的选中项编号，第一项的编号为0，之后顺序增加。  **说明：**  selectedIndexes使用[@Link装饰器：父子双向同步](../harmonyos-guides/arkts-link.md)，仅支持有效的按钮编号（第一个按钮编号为0，之后按顺序累加，最大编号为按钮数量减1），传入无效编号时该编号不生效。如没有选中项可传入空数组[]。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | onItemClicked13+ | Callback<number> | 否 | - | 当分段按钮选项被点击时，触发的回调函数接收被点击的选项下标作为参数。若不传入此参数，则点击时不触发回调。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
-| maxFontScale14+ | number | [Resource](ts-types.md#resource) | 否 | @Prop | 分段按钮选项文字的最大字体放大倍数，用于限制字体缩放上限。当需要控制字体放大倍数以适应特定UI布局或避免文字过大时传入此参数。  取值范围：[1, 2]  当设置的值小于1时，按值为1处理，设置的值大于2时，按值为2处理。  默认值：1  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| enableStateAnimation24+ | boolean | 否 | @Prop | 设置当通过变量修改selectedIndexes值时，是否开启分段按钮的属性动画。  true表示开启分段按钮的属性动画；false表示不开启分段按钮的属性动画。  默认值：false  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| maxFontScale14+ | number | [Resource](ts-types.md#resource) | 是 | @Prop | 分段按钮选项文字的最大字体放大倍数，用于限制字体缩放上限。当需要控制字体放大倍数以适应特定UI布局或避免文字过大时传入此参数。  取值范围：[1, 2]  当设置的值小于1时，按值为1处理，设置的值大于2时，按值为2处理。  默认值：1  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| enableStateAnimation24+ | boolean | 是 | @Prop | 设置当通过变量修改selectedIndexes值时，是否开启分段按钮的属性动画。  true表示开启分段按钮的属性动画；false表示不开启分段按钮的属性动画。  默认值：false  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## SegmentButtonOptions
 
@@ -760,7 +760,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/GoOV-ZUhTAqNkHm9AzL4Iw/zh-cn_image_0000002753457139.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/tqGWvmqfQtqnGDv2ekaDbA/zh-cn_image_0000002757232805.png)
 
 ### 示例2（设置分段按钮样式）
 
@@ -868,7 +868,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/-jNBcOHsTY6Gf2NoskRtJQ/zh-cn_image_0000002723857374.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/PzIjuWgKRLiwqJ7mOxKpUw/zh-cn_image_0000002727593114.png)
 
 ### 示例3（分段按钮数组处理）
 
@@ -945,7 +945,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/7Lcwm0bjSYeerDNstNfpYg/zh-cn_image_0000002723697456.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/VdalHh_lSoyRyCZ8-dJwTA/zh-cn_image_0000002727752972.gif)
 
 ### 示例4（设置镜像效果）
 
@@ -1055,7 +1055,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/FM0coy3FT62p1hVZCEPeLA/zh-cn_image_0000002753297223.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/IJ3hR4T7T4W-OjtSEw-jgA/zh-cn_image_0000002757312687.png)
 
 ### 示例5（设置无障碍朗读）
 
@@ -1202,7 +1202,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/vGf2Dl41SNalMcVe0vEnnA/zh-cn_image_0000002753457141.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/X4VhEh2rQW-BAz_gC5PXsQ/zh-cn_image_0000002757232807.png)
 
 ### 示例6（设置自定义圆角）
 
@@ -1247,7 +1247,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Mzh7tq6fTXagiL5YI1AdfA/zh-cn_image_0000002723857376.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/NL-OlWBYSvWI8m8aExIO7A/zh-cn_image_0000002727593116.png)
 
 ### 示例7（开启SegmentButton的属性动画）
 
@@ -1323,7 +1323,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/nkuwC10qTxWr4xc5sedcyA/zh-cn_image_0000002723697458.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/fhDO9BNRTbO02JqwpdTnIQ/zh-cn_image_0000002727752974.gif)
 
 ### 示例8（设置背景板材质）
 
@@ -1394,7 +1394,7 @@ struct Index {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/a83tfHKURSmNB6gwzY-mLg/zh-cn_image_0000002753297225.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/lg-XAKYyR4eMQhAFNF9YWg/zh-cn_image_0000002757312689.gif)
 
 ### 示例9（监听SegmentButtonOptions内属性的变化）
 
@@ -1458,4 +1458,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/jQ4mao3pQZ6aw17S7SrXSw/zh-cn_image_0000002753457143.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/y950jQzGTIG1kW7qhxdNmw/zh-cn_image_0000002757232809.gif)

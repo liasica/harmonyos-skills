@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog
 title: hilog
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hilog
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ea6ae8f3f3af30f0d9581e3f084ef0e7871bc492edcb3c89b6560a11f3a6083b
+scraped_at: 2026-09-18T06:45:49+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:a31272f2992bf25cc02de48116a62af34b0796c5f3a9ddfbdbec5b5012b774e0
 ---
 
 HiLog日志系统，提供给系统框架、服务、以及应用，用于打印日志，记录用户操作、系统运行状态等。开发者可以通过hilog命令行查询相关日志信息。
@@ -428,7 +428,7 @@ I
 [nolog版本](hilog.md#查看log版本信息)：
 
 * 默认不打印日志。
-* 开启开发者模式后，API versoin 15及之后版本，全局日志级别为WARN，API version 14及之前版本，全局日志级别为INFO；关闭开发者模式后，默认不打印日志。
+* 开启开发者模式后，API version 15及之后版本，全局日志级别为WARN，API version 14及之前版本，全局日志级别为INFO；关闭开发者模式后，默认不打印日志。
 * 连接DevEco Studio 5.0.4 Release（5.0.11.100）及之后版本时，全局日志级别为INFO；断开DevEco Studio状态下重启设备，全局日志级别恢复为WARN。
 
 **设置日志级别**

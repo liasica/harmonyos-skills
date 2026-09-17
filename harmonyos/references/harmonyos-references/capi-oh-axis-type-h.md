@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-a
 title: oh_axis_type.h
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 头文件 > oh_axis_type.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:dbe4756756c2edc1e78c974eae944233d1dbec13bb38fd8ce1710e07c9a70a0f
+scraped_at: 2026-09-18T06:50:21+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:c499611a76ba896c1e7779b679adbded1b59ddc63ae02019248ff754b24abb34
 ---
 
 ## 概述
 
-输入设备的轴事件结构和枚举，轴类型定义了输入设备在不同交互场景下的物理行为特征，系统通过轴类型来区分和传递不同的手势交互信息。
+输入设备的轴事件枚举，轴类型定义了输入设备在不同交互场景下的物理行为特征，系统通过轴类型来区分和传递不同的手势交互信息。
 
 **引用文件：** <multimodalinput/oh\_axis\_type.h>
 

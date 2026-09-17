@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoeditorex
 title: 拉起图片编辑类应用（startAbilityByType）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起图片编辑类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:09+08:00
+scraped_at: 2026-09-18T06:44:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:75b6a9da7e1dc8cbb81ec406e97789e36a287d86fa4e19fc9744066d3a45e35a
+content_hash: sha256:58143264c2abf80bd1e64cdf2a301558de51dc100d63b2f0b174071b34c73d61
 ---
 
 ## 使用场景
@@ -14,7 +14,7 @@ content_hash: sha256:75b6a9da7e1dc8cbb81ec406e97789e36a287d86fa4e19fc9744066d3a4
 
 流程示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/TRykJSRZTpq-F8xQkjp0yw/zh-cn_image_0000002753293963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/5FSPb-3xSh2mBWqPT96Ixw/zh-cn_image_0000002757309427.png)
 
 例如：用户在图库App中选择编辑图片时，图库App可以通过startAbilityByType拉起图片编辑类应用扩展面板。用户可以从已实现PhotoEditorExtensionAbility应用中选择一款，并进行图片编辑。
 

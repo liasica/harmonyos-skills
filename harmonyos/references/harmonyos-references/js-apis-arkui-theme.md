@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.theme(主题换肤)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.theme(主题换肤)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2172ddc1f2fe2019d9c6ed56f4fec81487a8b661e241a1ecd1496950e2e04ab1
+scraped_at: 2026-09-18T06:47:55+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:361b292590cb66a31299efa88f0420aeb732d5aa56f6c45f5f5f47ec0c29d442
 ---
 
 支持自定义主题风格，实现App组件风格跟随Theme切换。
@@ -151,7 +151,7 @@ ThemeControl将自定义Theme应用于App组件内，实现App组件风格跟随
 
 setDefaultTheme(theme: CustomTheme): void
 
-将用户自定义Theme设置应用级默认主题，以实现应用风格跟随Theme切换。若在页面中使用此接口设置应用级默认主题，需确保该接口在页面build前执行。若在UIAbility中使用此接口设置应用级默认主题，需确保该接口在onWindowStageCreate阶段里windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)接口调用完成的回调函数中执行。详细代码可参考[设置应用内组件自定义主题色](../harmonyos-guides/theme_skinning.md#设置应用内组件自定义主题色)。
+将用户自定义Theme设置应用级默认主题，以实现应用风格跟随Theme切换。若在页面中使用此接口设置应用级默认主题，需确保该接口在页面build前执行。若在UIAbility中使用此接口设置应用级默认主题，需确保该接口在onWindowStageCreate阶段里windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)接口调用完成的回调函数中执行。详细代码可参考[设置应用内组件自定义主题色](../harmonyos-guides/theme-skinning.md#设置应用内组件自定义主题色)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -219,9 +219,9 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/f-vaKLNrTJGeTaTaDvipTw/zh-cn_image_0000002753296425.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/kzXT9vMCRsyunCzD-gs58A/zh-cn_image_0000002757311889.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Hmdf0aOcSwueX01FB49gvQ/zh-cn_image_0000002753456343.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/PaM69t_1TnKwtxIj4_TxQw/zh-cn_image_0000002757232009.png)
 
 ### 示例2（设置组件主题色）
 
@@ -283,4 +283,4 @@ struct TextPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/WJgYnek2QdOv_o4oLvGSfg/zh-cn_image_0000002723856578.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/ZwATwdPcTZevtNsd8Z6TYA/zh-cn_image_0000002727592318.png)

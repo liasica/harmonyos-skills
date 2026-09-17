@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm
 title: MVVM模式（V1）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > MVVM模式（V1）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:19+08:00
+scraped_at: 2026-09-18T06:45:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:afd3a30a86e679037addae6a41098046748804853905084af96462f3429cb76f
+content_hash: sha256:fdf074710e989b9759fe1a8127f9d35496ff871cda1a504cc07e15bc7556e9dd
 ---
 
 当开发者掌握了状态管理的基本概念后，通常会尝试开发自己的应用，在应用开发初期，如果未能精心规划项目结构，随着项目扩展和复杂化，状态变量的增多将导致组件间关系变得错综复杂。此时，开发新功能可能引起连锁反应，维护成本也会增加。为此，本文旨在介绍MVVM模式以及ArkUI的UI开发模式与MVVM的关系，指导开发者如何设计项目结构，以便在产品迭代和升级时能更轻松地开发和维护。
@@ -31,7 +31,7 @@ ArkUI的UI开发模式就属于MVVM模式，通过对MVVM概念的基本介绍�
 
 ArkUI的UI开发模式即是MVVM模式，而状态变量在MVVM模式中扮演着ViewModel的角色，向上刷新UI，向下更新数据，整体框架如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/a-5v42KiRWmLpNw5EltfPQ/zh-cn_image_0000002753294103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/CZlg9QvfQWaoOy3gTfu_Kg/zh-cn_image_0000002757309567.png)
 
 ### 分层说明
 
@@ -142,7 +142,7 @@ struct StateIndex {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/VuK-H8GuQ22DB1FIVLVkLQ/zh-cn_image_0000002753454021.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/2-E4J1HGT9WSUCyX4x1kEA/zh-cn_image_0000002757229687.gif)
 
 ### @Prop、@Link的作用
 
@@ -282,7 +282,7 @@ struct PropLinkIndex {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/NGFjlpwLRQuJ1lO6tfc0QA/zh-cn_image_0000002723854256.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/t-vKzfX1Q5yl_dXcLhToRg/zh-cn_image_0000002727589996.gif)
 
 ### 循环渲染组件
 
@@ -416,7 +416,7 @@ struct ForEachIndex {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/pCKF4Z_JTQ6VmoM8PmvlEA/zh-cn_image_0000002723694338.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/-hT90UoSSTSbjlX7gwT6iA/zh-cn_image_0000002727749854.gif)
 
 ### @Builder方法
 
@@ -562,7 +562,7 @@ struct BuilderIndex {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/vfk6VnhDSt6hZdAKr_vrqA/zh-cn_image_0000002753294105.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/yrdkBFrMRQ-jsw3bXPH7AA/zh-cn_image_0000002757309569.gif)
 
 ### 总结
 
@@ -931,4 +931,4 @@ MVVM模式拆分后的代码结构更加清晰，模块职责更明确。新页�
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/1KiLxRw0T-2N2feDFGU99g/zh-cn_image_0000002753454023.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/FO_PSGe7RJmjRkq2OMM7vA/zh-cn_image_0000002757229689.gif)

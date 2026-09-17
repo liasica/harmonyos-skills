@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation跨包路由
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation跨包路由
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:23+08:00
+scraped_at: 2026-09-18T06:45:03+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:37a36e9ff749d74915abd86174c324c22a15695984ac39f36913d863ee97b306
+content_hash: sha256:26e6080dcb68d5de3669470f465c6c594db85df3c89239e7705abbd5c82d4454
 ---
 
 Navigation提供[系统路由表](arkts-navigation-cross-package.md#系统路由表)和[自定义路由表](arkts-navigation-cross-package.md#自定义路由表)两种实现方式，通过路由表的配置可以完成本包和跨包的页面跳转。
@@ -348,7 +348,7 @@ export struct pageOneTmp {
 
    **图1** HSP、HAR编译产物示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/0oxMpmyaQIuoMoxZJnPrtw/zh-cn_image_0000002723854456.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/u8nZZM-YS2CdthQoQlahMg/zh-cn_image_0000002727590196.png)
 
    在HAP的oh-package.json5配置文件中配置对HAR与HSP的依赖。
 
@@ -371,4 +371,4 @@ export struct pageOneTmp {
 
    **图2** Navigation跨包跳转示例
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/qr3idD4pRWKyPEqh1eoFJQ/zh-cn_image_0000002723694538.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Mv_NAflVSWOxbs7IpuV2eQ/zh-cn_image_0000002727750054.gif)

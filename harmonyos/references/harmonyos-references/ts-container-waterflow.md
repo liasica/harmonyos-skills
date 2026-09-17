@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: WaterFlow
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > WaterFlow
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:53+08:00
+scraped_at: 2026-09-18T06:48:15+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4a3b5a190a126ca210c2364ac7aa76141356fc1831657cdb3e3d355bebd263d6
+content_hash: sha256:ab64445bed7bb2d1808b2a197df0607686e9e5ae7de2b69c226ba53c0ee19379
 ---
 
 瀑布流容器，由“行”和“列”分割的单元格所组成，通过容器自身的排列规则，将不同大小的“项目”自上而下，如瀑布般紧密布局。支持多列布局、分组混合布局、懒加载、自动计算列数和边缘渐隐等功能，适用于图片画廊、商品展示、内容信息流等需要展示不同尺寸内容的场景。
@@ -1050,7 +1050,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Grj2PXPISFifsnjaG7MN6A/zh-cn_image_0000002753296709.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/WUmDHdeLTlK1HZV2hJRQ3Q/zh-cn_image_0000002757312173.gif)
 
 ### 示例2（自动计算列数）
 
@@ -1122,7 +1122,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/j34Ez_DqRzCbFmuWd6gzDw/zh-cn_image_0000002753456627.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/0ADWsdHjQZa3jeWCkB5DFA/zh-cn_image_0000002757232293.png)
 
 ### 示例3（使用分组）
 
@@ -1379,7 +1379,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/ClwxarJtRmC7fsaFJE_chQ/zh-cn_image_0000002723856862.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/W_QJwZslQ3CPDfX7rHdwmg/zh-cn_image_0000002727592602.png)
 
 ### 示例4（双指缩放改变列数）
 
@@ -1581,7 +1581,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/iFzt2ZUAQNKpEuhXIw1FQA/zh-cn_image_0000002723696944.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/S8JB6GuFRASt-frW140XAQ/zh-cn_image_0000002727752460.gif)
 
 ### 示例5（设置边缘渐隐效果）
 
@@ -1654,7 +1654,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/M9kvamGMRS20L34zC1l-Fg/zh-cn_image_0000002753296711.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/0uFdW_tPQ2OIsDiU9h2hNg/zh-cn_image_0000002757312175.gif)
 
 ### 示例6（单边边缘效果）
 
@@ -1727,7 +1727,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/dfembq0nRXS7eut1yTkllA/zh-cn_image_0000002753456629.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/97MIHyjhTk6wOQh1F0dEYw/zh-cn_image_0000002757232295.gif)
 
 ### 示例7（WaterFlow组件设置和改变尾部组件）
 
@@ -1838,7 +1838,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/VYXvBJdrTS63cKiom7DpQw/zh-cn_image_0000002723856864.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/wv5fR-5US9uHJh3WXpmF7Q/zh-cn_image_0000002727592604.gif)
 
 ### 示例8（WaterFlow组件实现下拉刷新）
 
@@ -1929,7 +1929,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/pgFaSY7wQ7-8zGwfhqzbDA/zh-cn_image_0000002723696946.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/oEBRYe_iQOy2_Ug1q50w5Q/zh-cn_image_0000002727752462.gif)
 
 ### 示例9（WaterFlow组件基于断点配置列数）
 
@@ -2001,15 +2001,15 @@ struct WaterFlowDemo {
 
 WaterFlow宽度属于sm及更小的断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/3tMYpunXTxOYfay973R9sg/zh-cn_image_0000002753296713.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/aUVOY_msTReh8uZ4ZJoh4g/zh-cn_image_0000002757312177.png)
 
 WaterFlow宽度属于md断点区间时显示3列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0XH7s8OMRvCBQX-jfXyDLQ/zh-cn_image_0000002753456631.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ULRI_14rTbu8VYP07ZFfWQ/zh-cn_image_0000002757232297.png)
 
 WaterFlow宽度属于lg及更大的断点区间时显示5列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/_9geeszJRESY3J_rph7nUQ/zh-cn_image_0000002723856866.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/_eNhVOx2RYyrY9qv5qwoAQ/zh-cn_image_0000002727592606.png)
 
 ### 示例10（WaterFlow组件实现获取内容高度）
 
@@ -2114,7 +2114,7 @@ struct WaterFlowContentSizeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/HT9Jtf9OTg-pSR2Vy0r7aQ/zh-cn_image_0000002723696948.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tvLwGa-bS66itoUgmisAAg/zh-cn_image_0000002727752464.gif)
 
 ### 示例11（设置滚动事件）
 

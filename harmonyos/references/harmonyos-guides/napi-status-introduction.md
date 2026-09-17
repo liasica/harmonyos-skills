@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-status-i
 title: Node-API接口返回状态码介绍
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API接口返回状态码介绍
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:27+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0c08c6
+scraped_at: 2026-09-18T06:46:55+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:955a9c0a2f5759452290da6043da270d5997e8d899e7b6a9dd4bc5414a14c8d3
 ---
 
 ## 概述
@@ -189,13 +189,13 @@ content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0
 | napi\_get\_value\_uint32 | 获取给定ArkTS Number对应的C uint32值。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_get\_value\_uint32 | 获取给定ArkTS Number对应的C uint32值。 | napi\_number\_expected | 入参value不为ArkTS Number类型 | 确保入参正确 |
 | napi\_get\_boolean | 根据给定的C boolean值，获取ArkTS bool对象。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_get\_boolean | 根据给定的C boolean值，获取ArkTS bool对象。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
+| napi\_get\_boolean | 根据给定的C boolean值，获取ArkTS bool对象。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_get\_global | 获取global对象。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_get\_global | 获取global对象。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
+| napi\_get\_global | 获取global对象。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_get\_null | 获取null对象。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_get\_null | 获取null对象。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
+| napi\_get\_null | 获取null对象。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_get\_undefined | 获取undefined对象。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_get\_undefined | 获取undefined对象。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
+| napi\_get\_undefined | 获取undefined对象。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_coerce\_to\_bool | 将给定的ArkTS value强转成ArkTS Boolean。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_coerce\_to\_bool | 将给定的ArkTS value强转成ArkTS Boolean。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
 | napi\_coerce\_to\_bool | 将给定的ArkTS value强转成ArkTS Boolean。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
@@ -233,7 +233,7 @@ content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0
 | napi\_is\_dataview | 判断给定ArkTS value是否表示一个DataView。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_is\_date | 判断给定ArkTS value是否为ArkTS Date对象。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_is\_date | 判断给定ArkTS value是否为ArkTS Date对象。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
-| napi\_is\_date | 判断给定ArkTS value是否为ArkTS Date对象。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
+| napi\_is\_date | 判断给定ArkTS value是否为ArkTS Date对象。 | napi\_invalid\_arg | 入参is\_date为nullptr | 确保入参正确 |
 | napi\_strict\_equals | 判断给定的两个ArkTS value是否严格相等。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_strict\_equals | 判断给定的两个ArkTS value是否严格相等。 | napi\_invalid\_arg | 入参lhs为nullptr | 确保入参正确 |
 | napi\_strict\_equals | 判断给定的两个ArkTS value是否严格相等。 | napi\_invalid\_arg | 入参rhs为nullptr | 确保入参正确 |
@@ -245,7 +245,7 @@ content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0
 | napi\_set\_property | 对给定Object设置属性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_set\_property | 对给定Object设置属性。 | napi\_invalid\_arg | 入参object为nullptr | 确保入参正确 |
 | napi\_set\_property | 对给定Object设置属性。 | napi\_invalid\_arg | 入参key为nullptr | 确保入参正确 |
-| napi\_set\_property | 对给定Object设置属性。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
+| napi\_set\_property | 对给定Object设置属性。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
 | napi\_set\_property | 对给定Object设置属性。 | napi\_object\_expected | 入参object不为ArkTS Object类型 | 确保入参正确 |
 | napi\_set\_property | 对给定Object设置属性。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
 | napi\_get\_property | 获取给定Object的给定属性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
@@ -265,16 +265,16 @@ content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0
 | napi\_delete\_property | 尝试从给定Object中删除给定key属性。 | napi\_invalid\_arg | 入参key为nullptr | 确保入参正确 |
 | napi\_delete\_property | 尝试从给定Object中删除给定key属性。 | napi\_object\_expected | 入参object不为ArkTS Object类型 | 确保入参正确 |
 | napi\_delete\_property | 尝试从给定Object中删除给定key属性。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
-| napi\_has\_own\_property | 判断给定Object中是否有名为key的own property。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_has\_own\_property | 判断给定Object中是否有名为key的own property。 | napi\_invalid\_arg | 入参object为nullptr | 确保入参正确 |
-| napi\_has\_own\_property | 判断给定Object中是否有名为key的own property。 | napi\_invalid\_arg | 入参key为nullptr | 确保入参正确 |
-| napi\_has\_own\_property | 判断给定Object中是否有名为key的own property。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
-| napi\_has\_own\_property | 判断给定Object中是否有名为key的own property。 | napi\_object\_expected | 入参object不为ArkTS Object类型 | 确保入参正确 |
-| napi\_has\_own\_property | 判断给定Object中是否有名为key的own property。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
+| napi\_has\_own\_property | 与napi\_has\_property行为一致，判断给定Object中是否存在给定属性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
+| napi\_has\_own\_property | 与napi\_has\_property行为一致，判断给定Object中是否存在给定属性。 | napi\_invalid\_arg | 入参object为nullptr | 确保入参正确 |
+| napi\_has\_own\_property | 与napi\_has\_property行为一致，判断给定Object中是否存在给定属性。 | napi\_invalid\_arg | 入参key为nullptr | 确保入参正确 |
+| napi\_has\_own\_property | 与napi\_has\_property行为一致，判断给定Object中是否存在给定属性。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
+| napi\_has\_own\_property | 与napi\_has\_property行为一致，判断给定Object中是否存在给定属性。 | napi\_object\_expected | 入参object不为ArkTS Object类型 | 确保入参正确 |
+| napi\_has\_own\_property | 与napi\_has\_property行为一致，判断给定Object中是否存在给定属性。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
 | napi\_set\_named\_property | 对给定Object设置一个给定名称的属性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_set\_named\_property | 对给定Object设置一个给定名称的属性。 | napi\_invalid\_arg | 入参object为nullptr | 确保入参正确 |
 | napi\_set\_named\_property | 对给定Object设置一个给定名称的属性。 | napi\_invalid\_arg | 入参utf8name为nullptr | 确保入参正确 |
-| napi\_set\_named\_property | 对给定Object设置一个给定名称的属性。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
+| napi\_set\_named\_property | 对给定Object设置一个给定名称的属性。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
 | napi\_set\_named\_property | 对给定Object设置一个给定名称的属性。 | napi\_object\_expected | 入参object不为ArkTS Object类型 | 确保入参正确 |
 | napi\_set\_named\_property | 对给定Object设置一个给定名称的属性。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
 | napi\_get\_named\_property | 获取给定Object中指定名称的属性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
@@ -436,16 +436,16 @@ content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0
 | napi\_call\_threadsafe\_function | 调用线程安全函数。 | napi\_invalid\_arg | threadsafe\_function已关闭 | 请勿在napi\_release\_threadsafe\_function关闭了func后再调用本接口 |
 | napi\_call\_threadsafe\_function | 调用线程安全函数。 | napi\_queue\_full | 入参is\_blocking为napi\_tsfn\_nonblocking且queue已满 | 增大max\_queue\_size大小。或is\_blocking改为napi\_tsfn\_blocking |
 | napi\_call\_threadsafe\_function | 调用线程安全函数。 | napi\_closing | threadsafe\_function正在关闭 | 请勿在napi\_release\_threadsafe\_function关闭了func后再调用本接口 |
-| napi\_call\_threadsafe\_function | 调用线程安全函数。 | napi\_closing | 入参env已销毁，且env地址又被新env复用 | 请勿在env销毁后再使用本接口 |
+| napi\_call\_threadsafe\_function | 调用线程安全函数。 | napi\_closing | 创建func时使用的env已销毁，且env地址又被新env复用 | 请勿在env销毁后再使用本接口 |
 | napi\_call\_threadsafe\_function | 调用线程安全函数。 | napi\_generic\_failure | uv\_async\_send失败 | NA |
-| napi\_call\_threadsafe\_function | 调用线程安全函数。 | napi\_generic\_failure | 入参env已销毁 | 请勿在env销毁后再使用本接口 |
+| napi\_call\_threadsafe\_function | 调用线程安全函数。 | napi\_generic\_failure | 创建func时使用的env已销毁 | 请勿在env销毁后再使用本接口 |
 | napi\_acquire\_threadsafe\_function | 指示线程安全函数可以开始使用。 | napi\_invalid\_arg | 入参func为nullptr | 确保入参正确 |
 | napi\_acquire\_threadsafe\_function | 指示线程安全函数可以开始使用。 | napi\_generic\_failure | threadsafe\_function正在关闭/已关闭 | 请勿在napi\_release\_threadsafe\_function关闭了func后再调用本接口 |
 | napi\_release\_threadsafe\_function | 指示线程安全函数将停止使用。 | napi\_invalid\_arg | 入参func为nullptr | 确保入参正确 |
 | napi\_release\_threadsafe\_function | 指示线程安全函数将停止使用。 | napi\_generic\_failure | threadsafe\_function正在关闭/已关闭 | 请勿在napi\_release\_threadsafe\_function关闭了func后再调用本接口 |
 | napi\_release\_threadsafe\_function | 指示线程安全函数将停止使用。 | napi\_generic\_failure | 调用本接口时，占用threadsafe\_function的线程数是0 | release次数需要与initial\_thread\_count和acquire匹配 |
 | napi\_release\_threadsafe\_function | 指示线程安全函数将停止使用。 | napi\_generic\_failure | uv\_async\_send失败 | NA |
-| napi\_release\_threadsafe\_function | 指示线程安全函数将停止使用。 | napi\_generic\_failure | 入参env已销毁 | 确保入参正确 |
+| napi\_release\_threadsafe\_function | 指示线程安全函数将停止使用。 | napi\_generic\_failure | 创建func时使用的env已销毁 | 确保入参正确 |
 | napi\_ref\_threadsafe\_function | 指示在主线程上运行的事件循环在线程安全函数被销毁之前不应退出。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_ref\_threadsafe\_function | 指示在主线程上运行的事件循环在线程安全函数被销毁之前不应退出。 | napi\_invalid\_arg | 入参func为nullptr | 确保入参正确 |
 | napi\_ref\_threadsafe\_function | 指示在主线程上运行的事件循环在线程安全函数被销毁之前不应退出。 | napi\_generic\_failure | 当前线程不是env所在线程 | 该接口只能从env所在线程调用 |
@@ -501,7 +501,7 @@ content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0
 | napi\_create\_external\_buffer | 创建并获取一个指定大小的ArkTS Buffer，并以给定数据进行初始化，该接口可为Buffer附带额外数据。 | napi\_invalid\_arg | 入参size为0或超过2MiB(2097152) | 确保入参正确 |
 | napi\_create\_external\_buffer | 创建并获取一个指定大小的ArkTS Buffer，并以给定数据进行初始化，该接口可为Buffer附带额外数据。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
 | napi\_get\_buffer\_info | 获取ArkTS Buffer底层data及其长度。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_get\_buffer\_info | 获取ArkTS Buffer底层data及其长度。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
+| napi\_get\_buffer\_info | 获取ArkTS Buffer底层data及其长度。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
 | napi\_get\_buffer\_info | 获取ArkTS Buffer底层data及其长度。 | napi\_arraybuffer\_expected | 入参value不为ArkTS ArrayBuffer类型 | 确保入参正确 |
 | napi\_is\_buffer | 判断给定ArkTS value是否为Buffer对象。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_is\_buffer | 判断给定ArkTS value是否为Buffer对象。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
@@ -527,9 +527,9 @@ content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0
 | napi\_detach\_arraybuffer | 分离给定ArrayBuffer的底层数据。 | napi\_invalid\_arg | 入参arraybuffer已被detach过 | 需arraybuffer未被detach过 |
 | napi\_detach\_arraybuffer | 分离给定ArrayBuffer的底层数据。 | napi\_object\_expected | 入参arraybuffer不为ArkTS Object类型 | 确保入参正确 |
 | napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | napi\_invalid\_arg | 入参arraybuffer为nullptr | 确保入参正确 |
+| napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
 | napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
-| napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | napi\_invalid\_arg | 入参arraybuffer不为ArkTS ArrayBuffer类型 | 确保入参正确 |
+| napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | napi\_invalid\_arg | 入参value不为ArkTS ArrayBuffer类型 | 确保入参正确 |
 | napi\_run\_script | 将给定对象作为ArkTS代码运行。当前接口实际为空实现，可使用系统扩展接口napi\_run\_script\_path接口，提升安全性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_run\_script | 将给定对象作为ArkTS代码运行。当前接口实际为空实现，可使用系统扩展接口napi\_run\_script\_path接口，提升安全性。 | napi\_invalid\_arg | 入参script为nullptr | 确保入参正确 |
 | napi\_run\_script | 将给定对象作为ArkTS代码运行。当前接口实际为空实现，可使用系统扩展接口napi\_run\_script\_path接口，提升安全性。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
@@ -537,9 +537,9 @@ content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0
 | napi\_get\_instance\_data | 检索与当前运行的环境相关联的数据项。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_get\_instance\_data | 检索与当前运行的环境相关联的数据项。 | napi\_invalid\_arg | 入参data为nullptr | 确保入参正确 |
 | napi\_add\_env\_cleanup\_hook | 注册环境清理钩子函数。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_add\_env\_cleanup\_hook | 注册环境清理钩子函数。 | napi\_invalid\_arg | 入参func为nullptr | 确保入参正确 |
+| napi\_add\_env\_cleanup\_hook | 注册环境清理钩子函数。 | napi\_invalid\_arg | 入参fun为nullptr | 确保入参正确 |
 | napi\_remove\_env\_cleanup\_hook | 取消环境清理钩子函数。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_remove\_env\_cleanup\_hook | 取消环境清理钩子函数。 | napi\_invalid\_arg | 入参func为nullptr | 确保入参正确 |
+| napi\_remove\_env\_cleanup\_hook | 取消环境清理钩子函数。 | napi\_invalid\_arg | 入参fun为nullptr | 确保入参正确 |
 | napi\_add\_async\_cleanup\_hook | 注册清理异步钩子函数。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_add\_async\_cleanup\_hook | 注册清理异步钩子函数。 | napi\_invalid\_arg | 入参hook为nullptr | 确保入参正确 |
 | napi\_remove\_async\_cleanup\_hook | 取消清理异步钩子函数。 | napi\_invalid\_arg | 入参remove\_handle为nullptr | 确保入参正确 |
@@ -551,7 +551,7 @@ content_hash: sha256:2ace17244cf925fb1e518502f737a6b09b7126d55e8b6dfee71613227f0
 | napi\_add\_finalizer | 当ArkTS Object中的对象被垃圾回收时调用注册的napi\_finalize回调。 | napi\_object\_expected | 入参js\_object不是ArkTS Object类型 | 确保入参正确 |
 | napi\_fatal\_exception | 向ArkTS抛出 UncaughtException。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_fatal\_exception | 向ArkTS抛出 UncaughtException。 | napi\_invalid\_arg | 入参err为nullptr | 确保入参正确 |
-| napi\_fatal\_exception | 向ArkTS抛出 UncaughtException。 | napi\_invalid\_arg | 入参error不为ArkTS Error类型 | 确保入参正确 |
+| napi\_fatal\_exception | 向ArkTS抛出 UncaughtException。 | napi\_invalid\_arg | 入参err不为ArkTS Error类型 | 确保入参正确 |
 | napi\_fatal\_exception | 向ArkTS抛出 UncaughtException。 | napi\_pending\_exception | 调用接口前有未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
 | napi\_queue\_async\_work\_with\_qos | 将异步工作对象加到队列，由底层根据传入的qos优先级去调度执行。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_queue\_async\_work\_with\_qos | 将异步工作对象加到队列，由底层根据传入的qos优先级去调度执行。 | napi\_invalid\_arg | 入参work为nullptr | 确保入参正确 |

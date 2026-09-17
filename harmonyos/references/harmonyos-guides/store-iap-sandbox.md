@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-iap-san
 title: 测试数字商品服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数字商品服务 > 测试数字商品服务
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:38+08:00
+scraped_at: 2026-09-18T06:46:11+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2566493378f0b7e2bdbad1906b6e3bbb2173949e929f0a4916e1e6e0e9485db8
+content_hash: sha256:5a4f2a6b467d3eb5d16c11f7a5fc83d05e4172dfbcc70b8c15a8aee3c6057dd5
 ---
 
 沙盒测试允许开发者在接入数字商品服务的调测过程中无需真实付款即可完成数字商品的购买等相关测试。
@@ -23,10 +23,10 @@ content_hash: sha256:2566493378f0b7e2bdbad1906b6e3bbb2173949e929f0a4916e1e6e0e94
   1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“用户与访问”。
   2. 左侧导航栏选择“沙盒测试 > 测试账号”，点击“新增”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/lOORiY3kQD20-5tY3Oq1Dw/zh-cn_image_0000002753455613.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/_C2bDp1dRwKcdDGPMAaJcA/zh-cn_image_0000002757231279.png)
   3. 填写测试账号信息后，点击“确认”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/c7bI2cn_QMyChjO9vSprfw/zh-cn_image_0000002723855848.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/2wwM0qB4SF--9reeMLklsQ/zh-cn_image_0000002727591588.png)
 
   **说明** 
 
@@ -64,7 +64,7 @@ content_hash: sha256:2566493378f0b7e2bdbad1906b6e3bbb2173949e929f0a4916e1e6e0e94
 
 如果未显示截图的提示页面，表示本次交易未进入沙盒测试环境，继续测试会实际扣费，请检查当前是否满足沙盒测试的两个条件。开发者也可在应用中使用[isSandboxActivated](../harmonyos-references/iap-iap.md#iapissandboxactivated)接口来检查当前沙盒环境不可用的原因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/4FyZuXy4RLOVtfNE_1z8IQ/zh-cn_image_0000002723695930.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/l1HBV06-Rx2pJCttk_GY_g/zh-cn_image_0000002727751446.png)
 
 ## 测试自动续期订阅商品
 
@@ -76,7 +76,7 @@ content_hash: sha256:2566493378f0b7e2bdbad1906b6e3bbb2173949e929f0a4916e1e6e0e94
 * 在沙盒测试环境下，订阅首期由用户发起后会自动续期五次（累计共六期），后续需用户手动操作以恢复订阅；若同时涉及[促销场景](iap-subscription-functions.md#提供优惠)，系统将优先完成优惠周期内的自动续期，再继续进行六次续期，此场景下总续期次数为优惠周期数与六次续期之和。
 * 沙盒测试拉起收银台时，会在收银台展示沙盒测试提示，结果页也有沙盒环境的标志，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ZW4f4dYCQXaH7-z-rI6m9Q/zh-cn_image_0000002753295697.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/bi-BggwATr6dD_qkPlr_Ng/zh-cn_image_0000002757311161.png)
 
 ## 测试非续期订阅商品购买
 
@@ -86,7 +86,7 @@ content_hash: sha256:2566493378f0b7e2bdbad1906b6e3bbb2173949e929f0a4916e1e6e0e94
 * IAP购买成功后的收据信息[PurchaseOrderPayload](../harmonyos-references/iap-data-model.md#purchaseorderpayload)中，会携带值为"SANDBOX"的environment字段，标识此次购买为沙盒测试的记录。
 * 沙盒测试拉起收银台时，会在收银台展示沙盒测试提示，结果页也有沙盒环境的标志，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/PbCjEJmoQNiWzh-kiQMoig/zh-cn_image_0000002753455615.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/7mA-Lgf0Qa6RlRekowhQnw/zh-cn_image_0000002757231281.png)
 
 ## 清除沙盒账号的购买历史记录
 
@@ -96,10 +96,10 @@ content_hash: sha256:2566493378f0b7e2bdbad1906b6e3bbb2173949e929f0a4916e1e6e0e94
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“用户与访问”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/uoiJmdQ-QdO2TMkLZ86zeA/zh-cn_image_0000002723855850.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/7AbkU8-wQn-tU5x-bp7Dsw/zh-cn_image_0000002727591590.png)
 2. 左侧导航栏选择“沙盒测试 > 测试账号”，勾选对应的测试账号，点击右上角的“清除购买历史记录”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/g1dcPj9zSGq2wrrzbv-4eg/zh-cn_image_0000002723695932.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/-iQLb_aHQh-gNnl3tFxEww/zh-cn_image_0000002727751448.png)
 3. 在出现的提示弹窗中，点击“确认”按钮，随后该账号在沙盒环境中产生的购买历史记录将被清除，此操作无法被撤销。如果该沙盒账号的购买次数较多，则清除其购买历史记录可能需要更长时间。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/_4IPGlVTQRqyl1RNtqNo_A/zh-cn_image_0000002753295699.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/1RdJ1BJ3QHq2gYbzBzwM0Q/zh-cn_image_0000002757311163.png)

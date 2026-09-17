@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-wrapbuilder
-title: wrapBuilder
-breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > wrapBuilder
+title: "wrapBuilder: 封装全局@Builder"
+breadcrumb: "API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > wrapBuilder: 封装全局@Builder"
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:41+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-18T06:48:30+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:a698c6d1da05b98ee4fa806978837a88c3299e91bbb35fde71c06987f980930c
 ---
 

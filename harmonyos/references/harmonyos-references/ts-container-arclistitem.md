@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcListItem
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ArcListItem
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:52+08:00
+scraped_at: 2026-09-18T06:48:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0632b403835bb9b02fef2ba4c17eed73b1186dcfa57a11db90b685dd96ffd7c6
+content_hash: sha256:69398aee3d6af4001942cc65c9a2a4d597883a1eb2d3ed909b7a3415db52c2f9
 ---
 
 用于展示弧形列表的子组件，必须配合[ArcList](ts-container-arclist.md)使用。
@@ -144,4 +144,4 @@ struct ArcListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/_j8dzPJdQMmzxTd9EF4j4w/zh-cn_image_0000002753296681.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/W0EqZ3vdRTWFDzLAyubWSA/zh-cn_image_0000002757312145.png)

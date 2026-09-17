@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.rdb (关系型数据库)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > 已停止维护的接口 > @ohos.data.rdb (关系型数据库)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1cc90a7e8aa2c8c27d6fa4b53a7687fc73a70e415d379d856475556b8dd8cf37
+scraped_at: 2026-09-18T06:47:43+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:f49290cdc69188202ece03a7f5ecde112d7be49481881c9a30b3266cec492ab9
 ---
 
 关系型数据库（Relational Database，RDB）是一种基于关系模型来管理数据的数据库。关系型数据库基于SQLite组件提供了一套完整的对本地数据库进行管理的机制，对外提供了一系列的增、删、改、查等接口，也可以直接运行用户输入的SQL语句来满足复杂的场景需要。不支持Worker线程。
@@ -742,7 +742,7 @@ predicates.like("NAME", "%os%")
 
 glob(field: string, value: string): RdbPredicates
 
-配置RdbPredicates匹配数据字段为string且值符合指定通配符模式的字段，其中\*匹配任意多个字符，?匹配单个字符。该方法等同于SQL语句中的"GLOB"
+配置RdbPredicates匹配数据字段为string且值符合指定通配符模式的字段，其中\*匹配任意多个字符，?匹配单个字符。该方法等同于SQL语句中的"GLOB"。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -751,7 +751,7 @@ glob(field: string, value: string): RdbPredicates
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
-| value | string | 是 | 指示要与谓词匹配的值，长度不超过1024字节  支持通配符，\*表示0个、1个或多个数字或字符，?表示1个数字或字符。 |
+| value | string | 是 | 指示要与谓词匹配的值，长度不超过1024字节。  支持通配符，\*表示0个、1个或多个数字或字符，?表示1个数字或字符。 |
 
 **返回值**：
 
@@ -1585,7 +1585,7 @@ query(predicates: RdbPredicates, columns: Array<string>, callback: AsyncCallback
 | --- | --- | --- | --- |
 | predicates | [RdbPredicates](js-apis-data-rdb.md#rdbpredicates) | 是 | RdbPredicates的实例对象指定的查询条件。 |
 | columns | Array<string> | 是 | 表示要查询的列。如果值为空，则查询应用于所有列。 |
-| callback | AsyncCallback<[ResultSet](js-apis-data-resultset.md#resultset)> | 是 | 指定callback回调函数。如果操作成功，则返回ResultSet对象。 |
+| callback | AsyncCallback<[ResultSet](js-apis-data-resultset.md#resultset)> | 是 | 回调函数。当查询成功，err为undefined，data为获取到的ResultSet对象；否则为错误对象。 |
 | callback | AsyncCallback<[ResultSet](js-apis-data-resultset.md#resultset)> | 是 | 回调函数。当操作成功，err为undefined，data为ResultSet对象；否则为错误对象。 |
 
 **示例：**
@@ -1652,7 +1652,7 @@ querySql(sql: string, bindArgs: Array<ValueType>, callback: AsyncCallback<Result
 | --- | --- | --- | --- |
 | sql | string | 是 | 指定要执行的SQL语句，不能为空字符串。 |
 | bindArgs | Array<[ValueType](js-apis-data-rdb.md#valuetype)> | 是 | SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数需为空数组。 |
-| callback | AsyncCallback<[ResultSet](js-apis-data-resultset.md#resultset)> | 是 | 指定callback回调函数。如果操作成功，则返回ResultSet对象。 |
+| callback | AsyncCallback<[ResultSet](js-apis-data-resultset.md#resultset)> | 是 | 回调函数。当查询成功，err为undefined，data为获取到的ResultSet对象；否则为错误对象。 |
 | callback | AsyncCallback<[ResultSet](js-apis-data-resultset.md#resultset)> | 是 | 回调函数。当操作成功，err为undefined，data为ResultSet对象；否则为错误对象。 |
 
 **示例：**

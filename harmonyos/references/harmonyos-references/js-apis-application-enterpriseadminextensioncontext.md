@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-enterpriseadminextensioncontext
-title: EnterpriseAdminExtensionContext（企业设备管理扩展能力上下文环境）
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > application > EnterpriseAdminExtensionContext（企业设备管理扩展能力上下文环境）
+title: EnterpriseAdminExtensionContext (企业设备管理扩展能力上下文环境)
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > application > EnterpriseAdminExtensionContext (企业设备管理扩展能力上下文环境)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-18T06:50:24+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:46f007b9dc6621a0ccf04cffd5b7f2640bd63a06b95e7c180c264c945f7b6cd3
 ---
 

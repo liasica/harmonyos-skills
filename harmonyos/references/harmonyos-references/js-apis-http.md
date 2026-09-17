@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.net.http (数据请求)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.http (数据请求)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a88b844c20bb53c95c513e1b4bddaddb0684f1c035709e2179759d6cd4edfa55
+scraped_at: 2026-09-18T06:49:53+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:4c2d1d0c880884d2d011cfb23965ae201d2642f44c54b3b08fc483b0eb8d3a54
 ---
 
 本模块提供HTTP数据请求能力。应用可以通过HTTP发起一个数据请求，支持常见的GET、POST、OPTIONS、HEAD、PUT、DELETE、PATCH、TRACE、CONNECT方法。
@@ -1492,16 +1492,16 @@ request方法回调函数的返回值类型。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| dnsTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到DNS解析完成耗时。 |
-| tcpTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到TCP连接完成耗时。 |
-| tlsTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到TLS连接完成耗时。 |
-| firstSendTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到开始发送第一个字节的耗时。 |
-| firstReceiveTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到接收第一个字节的耗时。 |
-| totalFinishTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到完成请求的耗时。 |
-| redirectTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到完成所有重定向步骤的耗时。 |
-| responseHeaderTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到header解析完成的耗时。 |
-| responseBodyTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到body解析完成的耗时。 |
-| totalTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求回调到应用程序的耗时。 |
+| dnsTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到DNS解析完成耗时。单位为毫秒(ms)。 |
+| tcpTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到TCP连接完成耗时。单位为毫秒(ms)。 |
+| tlsTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到TLS连接完成耗时。单位为毫秒(ms)。 |
+| firstSendTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到开始发送第一个字节的耗时。单位为毫秒(ms)。 |
+| firstReceiveTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到接收第一个字节的耗时。单位为毫秒(ms)。 |
+| totalFinishTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到完成请求的耗时。单位为毫秒(ms)。 |
+| redirectTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到完成所有重定向步骤的耗时。单位为毫秒(ms)。 |
+| responseHeaderTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到header解析完成的耗时。单位为毫秒(ms)。 |
+| responseBodyTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求到body解析完成的耗时。单位为毫秒(ms)。 |
+| totalTiming | number | 否 | 否 | 从[request](js-apis-http.md#request)请求回调到应用程序的耗时。单位为毫秒(ms)。 |
 
 ## ConnectionExtraInfo24+
 
@@ -1694,7 +1694,7 @@ let promise = httpRequest.request("EXAMPLE_URL");
 
 promise.then((data: http.HttpResponse) => {
   httpResponseCache.flush().then(() => {
-    console.error('flush success');
+    console.info('flush success');
   }).catch((err: BusinessError) => {
     console.error('flush fail');
   });
@@ -2219,7 +2219,7 @@ type SslType = 'TLS' | 'TLCP'
 | 类型 | 说明 |
 | --- | --- |
 | 'TLS' | 表示使用TLS安全通信协议，值固定为'TLS'字符串。 |
-| 'TLCP' | 表示使用TLCP安全通信协议，值固定为'TLCP'字符串。  **说明**：  （1）证书支持字符串的规格：  - UTF8String（英文字符集）  - PrintableString  - IA5String  从API Version 22开始支持：  - TeletexString  （2）证书支持扩展的规格：  - BasicConstraints（OID 2.5.29.19）  - KeyUsage（OID2.5.29.15）  - SubjectKeyIdentifier（OID2.5.29.14）  - AuthorityKeyIdentifier（OID2.5.29.35）  从API Version 22开始支持：  - SubjectAltName（OID 2.5.29.17）  - ExtendedKeyUsage（OID 2.5.29.37） |
+| 'TLCP' | 表示使用TLCP安全通信协议，值固定为'TLCP'字符串。  **说明**：  （1）证书支持字符串的规格：  - UTF8String（英文字符集）  - PrintableString  - IA5String  从API version 22开始支持：  - TeletexString  （2）证书支持扩展的规格：  - BasicConstraints（OID 2.5.29.19）  - KeyUsage（OID2.5.29.15）  - SubjectKeyIdentifier（OID2.5.29.14）  - AuthorityKeyIdentifier（OID2.5.29.35）  从API version 22开始支持：  - SubjectAltName（OID 2.5.29.17）  - ExtendedKeyUsage（OID 2.5.29.37） |
 
 ## InterceptorType22+
 

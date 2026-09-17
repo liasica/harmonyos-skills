@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SelectionContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SelectionContainer
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:00+08:00
+scraped_at: 2026-09-18T06:48:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e73b213642190e4735c1f5e9d38d5fba23da3d89a1f90612e0e5c6561460e4e9
+content_hash: sha256:e14a5c83dbc5f147c7806c8ea04130c8a1d9e9e7a8b3c56f7134614a025b866e
 ---
 
 SelectionContainer组件用于为多个文本节点提供跨节点文本选中、复制及菜单扩展能力，支持统一配置选中文本的手柄颜色和高亮颜色，支持灵活的文本拼接策略，支持自定义选择菜单和扩展菜单选项。适用于需要跨多个Text组件实现文本连续选中、统一复制、样式自定义及菜单扩展的场景，解决了多Text组件场景下文本选择体验割裂的问题，提升了用户在复杂文本布局中的交互体验。
@@ -492,7 +492,7 @@ struct SelectionContainerExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/NqQyvOZLQ6u7vRpY6BV4ZA/zh-cn_image_0000002723697136.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/AHFt-V1bQLiBE__V4dGOwA/zh-cn_image_0000002727752652.png)
 
 ### 示例2（绑定自定义选择菜单）
 
@@ -591,7 +591,7 @@ struct SelectionContainerExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/RI3rIQt-Q2SzTzo9vHCGUQ/zh-cn_image_0000002753296903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/hbh5clFZTaiZ6l1BbmOSsw/zh-cn_image_0000002757312367.png)
 
 ### 示例3（扩展菜单选项）
 
@@ -734,7 +734,7 @@ struct SelectionContainerExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/jqCtna2-Rbi8KGAtamVDHQ/zh-cn_image_0000002753456821.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/_aFAwENZR9iqJM4Y_dT8Bw/zh-cn_image_0000002757232487.png)
 
 ### 示例4（通过控制器关闭选择菜单与清除文本选中）
 
@@ -791,4 +791,4 @@ struct SelectionContainerControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/odxED3VnTou8BrLPdJUiLQ/zh-cn_image_0000002723857056.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/M5H7uq91TNKDLQMYBPwtTg/zh-cn_image_0000002727592796.gif)

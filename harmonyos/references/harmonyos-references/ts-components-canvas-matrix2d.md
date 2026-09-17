@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Matrix2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Matrix2D
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:09a99d14fe835cd8e38e97183b309dfc64661f2b9ca051fbe5770ecc7d9e4c49
+scraped_at: 2026-09-18T06:48:25+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:589053524c91ac8a094eb7254284c215819ecd32158fb0be038a5db6db46c5fb
 ---
 
 用于[CanvasRenderingContext2D](ts-canvasrenderingcontext2d.md)、[OffscreenCanvasRenderingContext2D](ts-offscreencanvasrenderingcontext2d.md)、[CanvasPattern](ts-components-canvas-canvaspattern.md)和[Path2D](ts-components-canvas-path2d.md)图形变换的矩阵对象，可以对矩阵进行缩放、旋转和平移等变换。
@@ -110,7 +110,7 @@ struct Parameter {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/PxW2CGqrS9W1u6ue0KXnPA/zh-cn_image_0000002723857184.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/HTA25nRyT4CfHOBV6C0sJw/zh-cn_image_0000002727592924.png)
 
 ## identity
 
@@ -160,7 +160,7 @@ struct Identity {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/9bk3FDhQTSuT103VVJiAOw/zh-cn_image_0000002723697266.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/tOHklMF9SxOeBdpUIq7-uw/zh-cn_image_0000002727752782.png)
 
 ## invert
 
@@ -216,7 +216,7 @@ struct Invert {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/gowXMAJkSwK9y1YwAKG_KQ/zh-cn_image_0000002753297033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/7m_lRljjQ-2aG95ILyJEFw/zh-cn_image_0000002757312497.png)
 
 ## multiply(deprecated)
 
@@ -301,7 +301,7 @@ struct Rotate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/-aJPysrPS2WOlLywA7wvSw/zh-cn_image_0000002753456951.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/mE9Z_NFhRDCeumtS7iEuWw/zh-cn_image_0000002757232617.png)
 
 ## rotate10+
 
@@ -309,9 +309,13 @@ rotate(degree: number, rx?: number, ry?: number): Matrix2D
 
 以旋转点为中心，对当前矩阵进行左乘旋转运算。常用于图形旋转动画或图片旋转处理等场景。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -365,7 +369,7 @@ struct Rotate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/6zLlMeb4S0WkkEK8itOmfA/zh-cn_image_0000002723857186.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/GlImElCKT9Ozz6fGvk_YoA/zh-cn_image_0000002727592926.png)
 
 ## translate
 
@@ -428,7 +432,7 @@ struct Translate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Fpkj12heSuimwX6mr-1scA/zh-cn_image_0000002723697268.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/-JlWI5MyRgOOu-IgpRLPKQ/zh-cn_image_0000002727752784.png)
 
 ## scale
 
@@ -491,4 +495,4 @@ struct Scale {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/VmpiADrlQfyUugU-uN7YQg/zh-cn_image_0000002753297035.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/E2q7JwmQR-acxZt0nRm5GQ/zh-cn_image_0000002757312499.png)

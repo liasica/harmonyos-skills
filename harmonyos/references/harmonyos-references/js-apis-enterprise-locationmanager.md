@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-locationmanager
-title: "@ohos.enterprise.locationManager（位置服务管理）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.locationManager（位置服务管理）
+title: "@ohos.enterprise.locationManager (位置服务管理)"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.locationManager (位置服务管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d9b7b1528f8de3a3d5f1b807c93e42c4e06c94aad9b97f3e2db0d75ec43806fc
+scraped_at: 2026-09-18T06:50:24+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:f5238c80172e87adaff0a64560963c4ca0eabb81f142734856962b4f024a8478
 ---
 
 本模块提供设备位置服务策略管理的能力，包括设置和查询位置服务开关策略等。
@@ -39,14 +39,13 @@ setLocationPolicy(admin: Want, policy: LocationPolicy): void
 * 禁用：在需要保护隐私或节省电量的场景下设置。
 * 强制开启：在设备安全追踪、资产管理等场景下设置。
 * 默认：取消策略限制，由用户自主控制。
+* 在多个MDM应用场景下，遵循[独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)规则。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_LOCATION
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)。
 
 **参数：**
 

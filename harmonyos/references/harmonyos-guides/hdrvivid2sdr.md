@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdrvivid2sdr
 title: 视频解码支持HDRVivid2SDR
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > HDR Vivid能力 > 视频解码支持HDRVivid2SDR
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:19+08:00
+scraped_at: 2026-09-18T06:45:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c32838ec76d8bd0f1c8bdfbd5f5e3ea26745e0b65424d106fb9819cc77cfdc79
+content_hash: sha256:a76c94188960dc2c1d723deb671708be362a40e7895b406396a6c02573b2808c
 ---
 
 在视频分享或者编辑场景时，开发者有时需要将HDR Vivid视频转换为SDR视频，可以调用AVCodec能力实现该功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/IJc3kUk4S0uYYZV6-6TtkQ/zh-cn_image_0000002723695646.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Wx0wv1bVTVWO38VKwOCWTw/zh-cn_image_0000002727751162.png)
 
 ## 限制约束
 

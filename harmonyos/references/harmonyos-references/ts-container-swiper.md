@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > Swiper
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fb6cd4aba1145d3b93a62dbe374a413fe9709be461144583fb84a740e849504d
+scraped_at: 2026-09-18T06:48:16+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:25821be5bd818cbb3a22a31f3e868a3358b33eda03a21cbe403407eb303abe2a
 ---
 
 滑块视图容器，提供子组件滑动轮播显示的能力。
@@ -1827,13 +1827,10 @@ customContentTransition(transition: SwiperContentAnimatedTransition)
 
 使用说明：
 
-1、循环场景下，设置prevMargin和nextMargin属性，使得Swiper前后端显示同一页面时，该接口不生效。
-
-2、在页面跟手滑动和离手后执行切换动画的过程中，会对视窗内所有页面逐帧触发[SwiperContentTransitionProxy](ts-container-swiper.md#swipercontenttransitionproxy12)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
-
-3、设置displayCount属性的swipeByGroup参数为true时，若同组中至少有一个页面在视窗内时，则会对同组中所有页面触发回调，若同组所有页面均不在视窗内时，则会一起下渲染树。
-
-4、在页面跟手滑动和离手后执行切换动画的过程中，默认动画（页面滑动）依然会发生，若希望页面不滑动，可以设置主轴方向上负的位移（translate属性）来抵消页面滑动。例如：当displayCount属性值为2，视窗内有下标为0、1的两个页面时，页面水平滑动过程中，可以逐帧设置第0页的translate属性在x轴上的值为-position \* mainAxisLength来抵消第0页的位移，设置第1页的translate属性在x轴上的值为-(position - 1) \* mainAxisLength来抵消第1页的位移。
+1. 循环场景下，设置prevMargin和nextMargin属性，使得Swiper前后端显示同一页面时，该接口不生效。
+2. 在页面跟手滑动和离手后执行切换动画的过程中，会对视窗内所有页面逐帧触发[SwiperContentTransitionProxy](ts-container-swiper.md#swipercontenttransitionproxy12)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
+3. 设置displayCount属性的swipeByGroup参数为true时，若同组中至少有一个页面在视窗内时，则会对同组中所有页面触发回调，若同组所有页面均不在视窗内时，则会一起下渲染树。
+4. 在页面跟手滑动和离手后执行切换动画的过程中，默认动画（页面滑动）依然会发生，若希望页面不滑动，可以设置主轴方向上负的位移（translate属性）来抵消页面滑动。例如：当displayCount属性值为2，视窗内有下标为0、1的两个页面时，页面水平滑动过程中，可以逐帧设置第0页的translate属性在x轴上的值为-position \* mainAxisLength来抵消第0页的位移，设置第1页的translate属性在x轴上的值为-(position - 1) \* mainAxisLength来抵消第1页的位移。
 
 **卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
 
@@ -1857,11 +1854,9 @@ onContentDidScroll(handler: ContentDidScrollCallback)
 
 使用说明：
 
-1、循环场景下，设置prevMargin和nextMargin属性，使得Swiper前后端显示同一页面时，该接口不生效。
-
-2、在页面滑动过程中，会对视窗内所有页面逐帧触发[ContentDidScrollCallback](ts-container-swiper.md#contentdidscrollcallback12)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
-
-3、设置displayCount属性的swipeByGroup参数为true时，若同组中至少有一个页面在视窗内时，则会对同组中所有页面触发回调。
+1. 循环场景下，设置prevMargin和nextMargin属性，使得Swiper前后端显示同一页面时，该接口不生效。
+2. 在页面滑动过程中，会对视窗内所有页面逐帧触发[ContentDidScrollCallback](ts-container-swiper.md#contentdidscrollcallback12)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
+3. 设置displayCount属性的swipeByGroup参数为true时，若同组中至少有一个页面在视窗内时，则会对同组中所有页面触发回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2336,7 +2331,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/FHklrgHvTqSEICZiVN4HtQ/zh-cn_image_0000002723856854.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/bGAAJ7twTcyb9YT7YKliIg/zh-cn_image_0000002727592594.gif)
 
 ### 示例2（设置数字指示器）
 
@@ -2423,7 +2418,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/74Jf_-tATPGwaUxFzAVGvA/zh-cn_image_0000002723696936.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/LT9GPsscTQiodYgqXQ7jmQ/zh-cn_image_0000002727752452.gif)
 
 ### 示例3（设置按组翻页）
 
@@ -2513,7 +2508,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/PQmVEHddT1eXZBo2foNDKA/zh-cn_image_0000002753296703.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/4fJfZwctRfODTVKUNHw2Ww/zh-cn_image_0000002757312167.gif)
 
 ### 示例4（设置自定义页面切换动画）
 
@@ -2649,7 +2644,7 @@ struct SwiperCustomAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/m0_aovLCT_qw4O6IsrjUCg/zh-cn_image_0000002753456621.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/JDBH6utORQKW26KH2bO1Jw/zh-cn_image_0000002757232287.gif)
 
 ### 示例5（设置圆点导航点超长显示）
 
@@ -2745,7 +2740,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/coQ19jRZTGeLv8j6RRaA5w/zh-cn_image_0000002723856856.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/y_zDv4P-S5G0jBQADnrCug/zh-cn_image_0000002727592596.gif)
 
 ### 示例6（预加载子节点）
 
@@ -2925,7 +2920,7 @@ struct TabsSwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/7vqX2jEBSLqG4RC1I_6ddQ/zh-cn_image_0000002723696938.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/cRAeZcviQ_69tzoehtCOLQ/zh-cn_image_0000002727752454.gif)
 
 ### 示例8（滑动行为拦截事件）
 
@@ -3014,7 +3009,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Y8fiVULXSS-KNkNR0GPcIA/zh-cn_image_0000002753296705.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/YtDFGSOOQ0y7U6UGXw6Mdg/zh-cn_image_0000002757312169.gif)
 
 ### 示例9（演示导航点space与bottom）
 
@@ -3118,7 +3113,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/dGhUoc6WTSuTriishhhgxA/zh-cn_image_0000002753456623.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/rMoVUv14TdK7sFvAlSI3Qw/zh-cn_image_0000002757232289.gif)
 
 ### 示例10（Swiper组件基于断点配置显示个数）
 
@@ -3182,11 +3177,11 @@ struct SwiperExample {
 
 Swiper宽度属于[sm](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)及更小的断点区间时显示1列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/yDUed8QASUa2D6KXIDul_Q/zh-cn_image_0000002723856858.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/b4UwhLMJQlOMSjVuYzmoBA/zh-cn_image_0000002727592598.jpg)
 
 Swiper宽度属于[md](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/h474ERubS-SHvyugW7dKbQ/zh-cn_image_0000002723696940.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/RxWJoZk1RKq8vcIjqaZbgg/zh-cn_image_0000002727752456.jpg)
 
 ### 示例11（Swiper组件模拟拖拽）
 
@@ -3250,7 +3245,7 @@ struct SwiperFakeDragExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/RBr1puB2RSq1WWdywKb5Vg/zh-cn_image_0000002753296707.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/A0i8WvFTQJmBkISOi1i4ig/zh-cn_image_0000002757312171.gif)
 
 ### 示例12（配置Swiper组件导航点图标）
 
@@ -3297,4 +3292,4 @@ struct SwiperIndicatorIconExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/CMlx8cY5Rv-smsHnEaXOXQ/zh-cn_image_0000002753456625.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/9mAj3ZAFT-qlfvJ6siTkPg/zh-cn_image_0000002757232291.jpg)

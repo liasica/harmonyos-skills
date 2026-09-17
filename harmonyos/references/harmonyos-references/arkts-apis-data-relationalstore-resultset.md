@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ResultSet)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Interface (ResultSet)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:edf9f5d3588979e856251bac56cb253cc96f2c90a4d3d2e7b14a6f496836bfff
+scraped_at: 2026-09-18T06:47:39+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:9a6ec45400c4624b90f7764099a4ec5aa7a7e235858a49f01ac81b77153b513a
 ---
 
 提供通过查询数据库生成的数据库结果集的访问方法。结果集是指用户调用关系型数据库查询接口之后返回的结果集合，提供了多种灵活的数据访问方式，以便用户获取各项数据。
@@ -1335,11 +1335,9 @@ getSendableRow(): sendableRelationalStore.ValuesBucket
 ```ts
 // EntryAbility.ets
 import { window } from '@kit.ArkUI';
-import { UIAbility } from '@kit.AbilityKit';
-import { relationalStore } from '@kit.ArkData';
+import { UIAbility, common } from '@kit.AbilityKit';
+import { relationalStore, sendableRelationalStore } from '@kit.ArkData';
 import { taskpool } from '@kit.ArkTS';
-import { common } from '@kit.AbilityKit';
-import { sendableRelationalStore } from '@kit.ArkData';
 
 @Concurrent
 async function getDataByName(name: string, context: common.UIAbilityContext) {

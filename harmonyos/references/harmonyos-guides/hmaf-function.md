@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hmaf-function
 title: 通过Function组件拉起智能体
 breadcrumb: 指南 > AI > Agent Framework Kit（智能体框架服务） > 通过Function组件拉起智能体
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:01+08:00
+scraped_at: 2026-09-18T06:46:31+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:d6f0b78ede655152fb845021269fcbc2704fc4df094a15630ca373199fe68321
+content_hash: sha256:d4dc4b274b4003f8d7c80af7941949dd7550919278277a9b25a993b7d09d5128
 ---
 
 ## 场景介绍
 
 * Function组件分为图标组件和按钮组件，无标题时默认显示图标组件，有标题时默认显示按钮组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/IcsAoKhTQ2OxOx9EA08z4A/zh-cn_image_0000002753296179.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/lM3JudGIQwu037KQwgE1aQ/zh-cn_image_0000002757311643.png)
 * Function图标组件效果：综合型入口。不带用户意图，可作为应用内智能体主入口。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/zTF36FGTTIm99KL4JJV_AQ/zh-cn_image_0000002753456097.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/WNe35gPuTVKXhIJ8-tEnvA/zh-cn_image_0000002757231763.png)
 * Function按钮组件：允许应用自定义功能描述的组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/zHDHpv6vT_WaND5ZzD-dfA/zh-cn_image_0000002723856332.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/y_QW4YD_TdSwTnxbkd-q-Q/zh-cn_image_0000002727592072.png)
 
 ## 开发前准备
 

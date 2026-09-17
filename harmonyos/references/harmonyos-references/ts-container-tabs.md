@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Tabs
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > Tabs
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:58+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:58fd8c11c585f1f708600fe9558a2302d2a68fc7ae7e97bfe5bbf690624eb350
+scraped_at: 2026-09-18T06:48:17+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:901a4679248b998b26a5507d10956f79910b7462d9892e43fcf50a4cda9d6b31
 ---
 
 通过页签进行内容视图切换的容器组件，每个页签对应一个内容视图。
@@ -766,13 +766,10 @@ Tab页签切换后触发的事件。
 
 满足以下任一条件，即可触发该事件：
 
-1、滑动页面进行页面切换时，组件滑动动画结束后触发。
-
-2、通过[控制器](ts-container-tabs.md#tabscontroller)调用[changeIndex](ts-container-tabs.md#changeindex)接口，Tab页签切换后触发。
-
-3、动态修改[状态变量](../harmonyos-guides/arkts-state.md)构造的index属性值，Tab页签切换后触发。
-
-4、点击TabBar页签，Tab页签切换后触发。
+1. 滑动页面进行页面切换时，组件滑动动画结束后触发。
+2. 通过[控制器](ts-container-tabs.md#tabscontroller)调用[changeIndex](ts-container-tabs.md#changeindex)接口，Tab页签切换后触发。
+3. 动态修改[状态变量](../harmonyos-guides/arkts-state.md)构造的index属性值，Tab页签切换后触发。
+4. 点击TabBar页签，Tab页签切换后触发。
 
 **说明** 
 
@@ -901,15 +898,11 @@ onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
 满足以下任一条件，即可触发该事件：
 
-1、滑动TabContent切换新页面时触发。
-
-2、通过TabsController.[changeIndex](ts-container-tabs.md#changeindex)接口切换新页面时触发。
-
-3、通过动态修改index属性值切换新页面时触发。
-
-4、通过点击TabBar页签切换新页面时触发。
-
-5、TabBar页签获焦后，通过键盘左右方向键等切换新页面时触发。
+1. 滑动TabContent切换新页面时触发。
+2. 通过TabsController.[changeIndex](ts-container-tabs.md#changeindex)接口切换新页面时触发。
+3. 通过动态修改index属性值切换新页面时触发。
+4. 通过点击TabBar页签切换新页面时触发。
+5. TabBar页签获焦后，通过键盘左右方向键等切换新页面时触发。
 
 **说明** 
 
@@ -1397,7 +1390,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/qS_0ZkiGTxyDuYgWgqb7zg/zh-cn_image_0000002723696978.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/0c0jlZJdQyevmm7TQM5gRw/zh-cn_image_0000002727752494.gif)
 
 ### 示例2（设置Scrollable模式下的TabBar的布局样式）
 
@@ -1515,7 +1508,7 @@ struct TabsExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/8gbHcD_dQQuoOfLYe-WMyw/zh-cn_image_0000002753296745.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/0YMg-XlxQAewf7r3F4WCkQ/zh-cn_image_0000002757312209.gif)
 
 ### 示例3（自定义页签切换联动）
 
@@ -1592,7 +1585,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Mz50dWbdSiy3b8UbvKvvcg/zh-cn_image_0000002753456663.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/B4gRDPD4THuw4XtyCgdc_g/zh-cn_image_0000002757232329.gif)
 
 ### 示例4（分割线基本属性）
 
@@ -1702,7 +1695,7 @@ struct TabsDivider1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/UJfSiBa1S7CxvTNt0jFehw/zh-cn_image_0000002723856898.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/_lNdKQgnSWGYbOiEQiE-Zw/zh-cn_image_0000002727592638.gif)
 
 ### 示例5（设置TabBar渐隐）
 
@@ -1815,7 +1808,7 @@ struct TabsOpaque {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/DRo-0BZSSDKDeo8XzCfI1Q/zh-cn_image_0000002723696980.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/E8aKVhxqSa-ibij2sTKcqQ/zh-cn_image_0000002727752496.gif)
 
 ### 示例6（设置TabBar叠加在TabContent内容上）
 
@@ -1867,7 +1860,7 @@ struct barHeightTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/Y7Y7cH_bTcSD-DzdxT2rRg/zh-cn_image_0000002753296747.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/YTjNPk_BQsy-tvZTuxKwdw/zh-cn_image_0000002757312211.gif)
 
 ### 示例7（设置TabBar栅格化可见区域）
 
@@ -1971,7 +1964,7 @@ struct TabsExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/S1Gx8MKGTYajyuWun3KrwA/zh-cn_image_0000002753456665.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/paSBOabzTauOi-NodEa0UA/zh-cn_image_0000002757232331.gif)
 
 ### 示例8（自定义Tabs页面切换动画）
 
@@ -2061,7 +2054,7 @@ struct TabsCustomAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VvXukVhpSVaaoOyfcRiYag/zh-cn_image_0000002723856900.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/KVFyOBXOTdeS90xuK9R2bg/zh-cn_image_0000002727592640.gif)
 
 ### 示例9（页面切换拦截）
 
@@ -2153,7 +2146,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/HJj4BK10SjW-wYgLJD9Hxw/zh-cn_image_0000002723696982.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/jsMTeP-oRuaj6auHO3aLbg/zh-cn_image_0000002727752498.gif)
 
 ### 示例10（自定义TabBar切换动画）
 
@@ -2324,7 +2317,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/uB-OV-nJQh-5x-92YAC_RA/zh-cn_image_0000002753296749.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/0TfeUXQ8T7SqcqZdnBletw/zh-cn_image_0000002757312213.gif)
 
 ### 示例11（预加载子节点）
 
@@ -2453,7 +2446,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/xrOVQjkYQOCfYkGelK0ZYA/zh-cn_image_0000002753456667.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/b1Vp6UYPS86BpOge7w3b8g/zh-cn_image_0000002757232333.gif)
 
 ### 示例13（页面懒加载和释放）
 
@@ -2561,7 +2554,7 @@ struct TabsSwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/D8N9JZ4LSWqJfx33ZNiJWw/zh-cn_image_0000002723856902.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/TG51yF0GTM6CD7Je1u7wvw/zh-cn_image_0000002727592642.gif)
 
 ### 示例14（设置翻页动效）
 
@@ -2635,7 +2628,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/St1uFMqXSWSVMiPr9VCPEQ/zh-cn_image_0000002723696984.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/-rRKz2SZQVqh3lZ8xBHtJg/zh-cn_image_0000002727752500.gif)
 
 ### 示例15（页签超出TabBar区域显示）
 
@@ -2727,7 +2720,7 @@ struct TabsBarModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/y9TVAurhTOC3EJIeNuu6lA/zh-cn_image_0000002753296751.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/yD5NY_-hSQGfpyqBdnKF9g/zh-cn_image_0000002757312215.gif)
 
 ### 示例16（页签对齐布局）
 
@@ -2832,7 +2825,7 @@ struct TabsBarModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/YEZuSMGkT1mmDIIGgAXgMA/zh-cn_image_0000002753456669.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/u5WuCWeBRh2ZosEUStLdKg/zh-cn_image_0000002757232335.gif)
 
 ### 示例17（Tabs与TabBar同步切换）
 
@@ -2910,7 +2903,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/nsG--pVKRjaXpsiqK0ZFYQ/zh-cn_image_0000002723856904.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/glvqg1ADTk2e82KBUWHIJA/zh-cn_image_0000002727592644.gif)
 
 ### 示例18（释放Tabs子组件）
 
@@ -3038,7 +3031,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/96UdjY3hReWZWkpRWx7ZXA/zh-cn_image_0000002723696986.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/s_y248k-SbSUmgYHksRG0w/zh-cn_image_0000002727752502.png)
 
 ### 示例20（设置边缘滑动效果）
 
@@ -3095,7 +3088,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/X9mec53uQlqycfnx6-9yCw/zh-cn_image_0000002753296753.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/MY5hnzytS3qN744RmSf66g/zh-cn_image_0000002757312217.gif)
 
 ### 示例21（Tabs设置翻页动画曲线）
 
@@ -3187,7 +3180,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1FOL2W7oSPKYGXVNQdVfZQ/zh-cn_image_0000002753456671.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/vcK5vh4mQOaofntWNuFaPA/zh-cn_image_0000002757232337.gif)
 
 ### 示例22（监听Tabs页面滑动事件）
 
@@ -3288,7 +3281,7 @@ struct TabsDidScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ORBGBJLfSSe30M10p6G6sA/zh-cn_image_0000002723856906.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/CHqiHXrJR-60XVBKDSgOlQ/zh-cn_image_0000002727592646.gif)
 
 ### 示例23（Tabs嵌套滚动）
 
@@ -3355,7 +3348,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/tFHZKSZgTeOy1L0-ZdKgWQ/zh-cn_image_0000002723696988.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/qniNMaNSSAyP7BYsq_MsAw/zh-cn_image_0000002727752504.gif)
 
 ### 示例24（TabBar悬浮样式）
 
@@ -3409,4 +3402,4 @@ struct TabsFloatingStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/d5yM_ZbDRwGc_VqHdcieXw/zh-cn_image_0000002753296755.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/B0yEHQHETuGu8nbYX7FBRg/zh-cn_image_0000002757312219.gif)

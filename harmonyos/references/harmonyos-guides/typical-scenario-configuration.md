@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typical-scena
 title: 创建应用静态快捷方式
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 创建应用静态快捷方式
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:05+08:00
+scraped_at: 2026-09-18T06:44:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:62473dd2a9e032e84eb10122907a6e22c1eb2a9ebe892c9f411a5e0824b1d294
+content_hash: sha256:127aba530fdefb8fc00a2a3f849f46b9a23b43531c7703aee72292abf3637dc8
 ---
 
 随着应用的功能越来越复杂，用户在使用应用时，找到某个功能的操作步骤也变得更加繁琐。为提升用户体验，可以对应用中常用的功能创建对应的桌面快捷方式，以达到快速启动应用、一键直达特定功能等目的。例如相机应用的 “快速拍照”、便签应用的 “新建便签” 和地图应用的常用地点导航等功能的快捷方式，用户通过快捷方式可以快速进入特定功能页面，既能大大提高操作效率，同时也增加了用户对应用的依赖性。使用快捷方式，还可以实现个性化定制的需求，创建多个快捷方式，以满足个性化的工作流程和操作偏好。快捷方式的配置请参考[配置方法](typical-scenario-configuration.md#配置方法)，快捷方式的管理能力请参考[shortcutManager模块](../harmonyos-references/js-apis-shortcutmanager.md)。
@@ -104,7 +104,7 @@ content_hash: sha256:62473dd2a9e032e84eb10122907a6e22c1eb2a9ebe892c9f411a5e0824b
 
 安装应用后，长按桌面上的应用图标，图标上方会显示开发者配置的快捷方式：“添加收藏”和“分享好友”。点击相应标签，可启动对应的组件。应用配置的静态快捷方式在桌面上的展示效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/x_0WMqxyS3y8P1dno5-FzQ/zh-cn_image_0000002723694152.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/7wc36w4tQSOG4ynbfb4CpQ/zh-cn_image_0000002727749668.jpg)
 
 ## 隐藏快捷方式
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: 事件
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > 事件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:53+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:5da22c4cc34926fb2e1e57b092b3343d6986cfdcae60bf48d6cf5ebb8f75b294
+scraped_at: 2026-09-18T06:49:08+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:83615eb15b9df678dbd2912f32739ec7d0c2799e209c1a38fd0b1e5124d43404
 ---
 
 Web组件事件模块是ArkWeb框架中Web组件的事件回调接口集合，为开发者提供监听和响应Web组件各类运行时事件的机制。这些事件覆盖了Web页面加载的完整生命周期（从加载开始到完成）、JavaScript对话框交互、资源请求拦截与错误处理、安全认证（HTTP Auth、SSL错误、客户端证书）、权限管理、渲染进程状态、UI交互（上下文菜单、滚动、缩放、全屏）、窗口管理、同层渲染、性能度量以及多媒体设备状态等场景。开发者通过注册对应的事件回调，可以在Web组件运行过程中获取关键信息、拦截或自定义处理逻辑，实现应用对Web内容的精细管控和用户体验优化。
@@ -1236,7 +1236,12 @@ struct WebComponent {
 
 onInterceptRequest(callback: Callback<OnInterceptRequestEvent, WebResourceResponse>)
 
-当Web组件加载URL之前触发该回调，用于拦截URL并返回响应数据。onInterceptRequest可拦截所有跳转请求并返回响应数据，但无法访问POST请求体（Body）内容，且不支持分片缓冲（buffer）类型数据获取。此类场景需改用[WebSchemeHandler](arkts-apis-webview-webschemehandler.md)实现，依据具体业务需求进行判断。
+当Web组件加载URL之前触发该回调，用于拦截URL并返回响应数据。
+
+**说明** 
+
+* 使用onInterceptRequest返回自定义响应时，必须通过[setResponseMimeType](arkts-basic-components-web-webresourceresponse.md#setresponsemimetype9)设置MIME类型。如果不希望设置MIME类型，可使用[WebSchemeHandler](arkts-apis-webview-webschemehandler.md)代替。
+* onInterceptRequest可拦截所有跳转请求并返回响应数据，但无法访问POST请求体（Body）内容，且不支持分片缓冲（buffer）类型数据获取。此类场景需改用[WebSchemeHandler](arkts-apis-webview-webschemehandler.md)实现，依据具体业务需求进行判断。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

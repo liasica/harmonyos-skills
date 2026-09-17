@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-shared-
 title: 共享元素转场 (一镜到底)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 共享元素转场 (一镜到底)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:28+08:00
+scraped_at: 2026-09-18T06:45:08+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:c6674a76cae8fabc17ed957f28ae8320f38f2e180ab53375890be51d50fb014e
+content_hash: sha256:a4e4ddac5b3ecb79c1c6370a298cfc58b646e04ee760acc65b6ca51ee21d85f0
 ---
 
 共享元素转场是一种界面切换时对相同或者相似的两个元素做的一种位置和大小匹配的过渡动画效果，也称一镜到底动效。
@@ -192,7 +192,7 @@ export default struct Post {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/rMOHU0cSRjWl2CnZxjoE_A/zh-cn_image_0000002753454615.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/OJR_e3hsRpW6a8PxnWiNyg/zh-cn_image_0000002727590590.gif)
 
 ## 新建容器并跨容器迁移组件
 
@@ -573,7 +573,7 @@ export const deleteNode = (id: string) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ZM51rjWTQMO9ApMp1MEB1g/zh-cn_image_0000002723854850.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/6hNt21tyRPa0F-9Cvd_wSg/zh-cn_image_0000002727750448.gif)
 
 ### 结合Navigation使用
 
@@ -1342,7 +1342,7 @@ export const getMyNode = (): MyNodeController | undefined => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/GFbKQn29SsmXq0DEjfSfaw/zh-cn_image_0000002723694932.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/goKMC-bWSkmCgsWmaGOtmg/zh-cn_image_0000002757310163.gif)
 
 ### 结合BindSheet使用
 
@@ -1884,7 +1884,7 @@ export default class EntryAbility extends UIAbility {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/acGeCKM6R0CvVOVHnjmJ4Q/zh-cn_image_0000002753294699.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ZywSnVVbRc2T4SFslRQzaA/zh-cn_image_0000002757230283.gif)
 
 ## 使用geometryTransition共享元素转场
 
@@ -1958,7 +1958,7 @@ struct IfElseGeometryTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/rtny4cy2QACeC-IopmXXoA/zh-cn_image_0000002753454617.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/IDzISQtsTDGIH2az2kJlAg/zh-cn_image_0000002727590592.gif)
 
 ### geometryTransition结合模态转场使用
 
@@ -2144,7 +2144,7 @@ export default struct Post {
 
 效果为点击主页的头像后，弹出模态页面显示个人信息，并且两个页面之间的头像做一镜到底动效：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/D4qGzC2aTwiTUtq5vdy3mg/zh-cn_image_0000002723854852.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/WTHZNYwJQU6KU86BB5lauA/zh-cn_image_0000002727750450.gif)
 
 ## 元素转场案例
 
@@ -2154,7 +2154,7 @@ export default struct Post {
 
   图片使用双指放大转场显示图片详情页。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/ktuTbe02QiO2rp71ORMpDQ/zh-cn_image_0000002723694934.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/0z-MBdqYRJG76PuHNnfmug/zh-cn_image_0000002757310165.gif)
 
   通过NodeContainer组件实现跨节点迁移，通过手势捏合来控制节点的上下树，达成一镜到底动效。
 
@@ -2254,7 +2254,7 @@ export default struct Post {
 
   比如图片在九宫格中显示，点击查看大图，同时还支持手势下拉返回到九宫格。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/wZyQTY9FTBez-45Yzuj7Jg/zh-cn_image_0000002753294701.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/-5G3jTCtRN2R7JLUg0mlsA/zh-cn_image_0000002757230285.gif)
 
   设置geometryTransition属性将图片首页和大图页面的图片绑定同一id值，结合属性动画效果实现一镜到底效果。核心代码如下：
 
@@ -2329,7 +2329,7 @@ export default struct Post {
 
   图片从页面向半模态弹窗中转场显示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/4gu3pMJ9SD-OJBL2vxEang/zh-cn_image_0000002753454619.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/ysmEj3JvTQKOHXYyxd25wA/zh-cn_image_0000002727590594.gif)
 
   利用NodeContainer组件实现跨节点迁移，将半模态SheetOptions()中的mode设置为SheetMode.EMBEDDED，该模式下新起的页面可以覆盖在半模态弹窗上，页面返回后该半模态依旧存在，半模态面板内容不丢失。通过属性动画，展示组件从初始界面至半模态页面的一镜到底动效，并在动画结束时关闭页面，并将该组件迁移至半模态页面。
 
@@ -2430,7 +2430,7 @@ export default struct Post {
 
 搜索框点击后，转场到搜索结果页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/7WOQ4-FjQka_Cxjq8EXUKQ/zh-cn_image_0000002723854854.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/aFqim7JpRfS-tCQZxy4iWA/zh-cn_image_0000002727750452.gif)
 
 将搜索框首页与搜索框页面的Search组件同时设置geometryTransition属性，并绑定同一id值。设置显式动画和transition属性的转场效果，实现搜索框的一镜到底效果。
 
@@ -2466,7 +2466,7 @@ export default struct Post {
 
 在瀑布流或列表流布局中，当用户点击其中一个卡片或列表项时，应用将执行平滑的转场动画，引导用户从概览页面切换到详情页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/37YWvndQTs6b_OxC5mkzrQ/zh-cn_image_0000002723694936.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/thhjHAxTRxqReIYt2-VOQg/zh-cn_image_0000002757310167.gif)
 
 使用WaterFlow()和LazyForEach()实现卡片列表瀑布流。利用Navigation的自定义导航转场动画能力，通过customNavContentTransition()配置列表页与详情页的自定义导航转场动画，结合componentSnapshot()将卡片进行截图避免跳转页面白屏。
 
@@ -2596,7 +2596,7 @@ export default struct Post {
 
 列表一镜到底效果图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/nKpXqFiYSPOw8XmPWG4vfg/zh-cn_image_0000002753294703.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/-2DdbafMSR69Fd2K2LFgZw/zh-cn_image_0000002757230287.gif)
 
 将列表项与详情页面同时设置geometryTransition属性，并绑定同一id值。每个列表项设置显式动画和transition属性的转场效果，实现列表展开的一镜到底效果。
 
@@ -2722,7 +2722,7 @@ export default struct Post {
 
 阅读类应用中，点击一本“图书”的图标后，模拟图书翻页展开的效果，转场到书本内容页面，同时支持手势返回。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/fGbJujoyQ2iYWl3YSES2VA/zh-cn_image_0000002753454621.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/BLUjJoKqSx6NI1tfyFVE7Q/zh-cn_image_0000002727590596.gif)
 
 利用Navigation的自定义导航转场动画能力，通过customNavContentTransition()配置书籍页与详情页的自定义导航转场动画实现图书翻页一镜到底效果。使用rotate属性实现书籍翻页的旋转效果。
 
@@ -2903,7 +2903,7 @@ export default struct Post {
 
 视频组件从一个页面向目标页面的转场，在一镜到底的过程中，视频需要持续播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/4BYzSDmfSjqi6La-UOBxfw/zh-cn_image_0000002723854856.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/-fHh6w5eQquQTJsABPPvwg/zh-cn_image_0000002727750454.gif)
 
 使用WaterFlow()和LazyForEach()实现卡片列表瀑布流。利用NodeController实现组件的跨节点迁移，通过customNavContentTransition配置概览页与视频详情的自定义导航转场动画，给节点的迁移过程赋予一镜到底效果。
 

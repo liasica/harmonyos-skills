@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 外描边设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 外描边设置
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:48+08:00
+scraped_at: 2026-09-18T06:48:09+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:8842f37cf2d7d19b917961fe96ab74905bdc51f32b2b09b3c61645d86980a54e
+content_hash: sha256:da44a8d0f7e392ca616ce6e8d1872ec2cb9593a432e67892a1e7a64fc4e00980
 ---
 
 设置组件外描边（outline）样式。外描边绘制在组件的外侧，不影响布局，不会占用组件本身大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/wt_C4eB5QwyyPBdNdLiqfA/zh-cn_image_0000002753296569.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/CEuBvbtlTN2gUPuIMb6lUg/zh-cn_image_0000002757312033.png)
 
 **说明** 
 
@@ -320,7 +320,7 @@ struct OutlineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nWnNb6L_RXaIiKbkRtjvKw/zh-cn_image_0000002753456487.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/kjJ_CQq8QXugxn-EYQEd-A/zh-cn_image_0000002757232153.png)
 
 ### 示例2（使用LocalizedEdgeColors类型）
 
@@ -371,8 +371,8 @@ struct OutlineExample {
 
 从左至右显示语言示例图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/z3UUqxHOTf6YMgKaor5QjQ/zh-cn_image_0000002723856722.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/c1Sqt8dPQYuK66hU0I9YJw/zh-cn_image_0000002727592462.png)
 
 从右至左显示语言示例图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/gnPpcjgjTmeh5mqS0dEWWw/zh-cn_image_0000002723696804.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/M4vO2qUwSF2NFeH3lRAEjQ/zh-cn_image_0000002727752320.png)

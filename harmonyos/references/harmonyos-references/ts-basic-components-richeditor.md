@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: RichEditor
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > RichEditor
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:03+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:84d81e1e7f20eb8849588477e51184b7baa50bc0ca55db2912b4b99ff4d28872
+scraped_at: 2026-09-18T06:48:21+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:f2c3a82dd54cf0bc26ee873cf14fd0f1050a83d752867252a85ee6b0ae756bc5
 ---
 
 支持图文混排和文本交互式编辑的组件。
@@ -191,7 +191,6 @@ dataDetectorConfig(config: TextDataDetectorConfig)
 当有两个实体A、B重叠时，按以下规则保留实体：
 
 1. 若A ⊂ B，则保留B，反之则保留A。
-
 2. 当A ⊄ B且B ⊄ A时，若A.start < B.start，则保留A，反之则保留B。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -1026,7 +1025,7 @@ onWillAttachIME(callback: Callback<IMEClient> | undefined)
 | --- | --- | --- | --- | --- |
 | offset | number | 否 | 否 | 删除内容的偏移位置。 |
 | direction | [RichEditorDeleteDirection](ts-basic-components-richeditor.md#richeditordeletedirection) | 否 | 否 | 删除操作的方向。 |
-| length | number | 否 | 否 | 删除内容长度。 |
+| length | number | 否 | 否 | 删除内容长度，删除范围为[offset, offset + length)，结束位置对应的内容不包含在内。 |
 | richEditorDeleteSpans | Array<[RichEditorTextSpanResult](ts-basic-components-richeditor.md#richeditortextspanresult) | [RichEditorImageSpanResult](ts-basic-components-richeditor.md#richeditorimagespanresult)> | 否 | 否 | 删除的文本或图片Span的信息。 |
 
 ## RichEditorDeleteDirection
@@ -1053,7 +1052,7 @@ onWillAttachIME(callback: Callback<IMEClient> | undefined)
 | spanPosition | [RichEditorSpanPosition](ts-basic-components-richeditor.md#richeditorspanposition) | 否 | 否 | Span位置。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | value | string | 否 | 否 | 文本Span内容或Symbol的id。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | textStyle | [RichEditorTextStyleResult](ts-basic-components-richeditor.md#richeditortextstyleresult) | 否 | 否 | 文本Span样式信息。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| offsetInSpan | [number, number] | 否 | 否 | 文本Span内容里有效内容的起始和结束位置。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| offsetInSpan | [number, number] | 否 | 否 | 文本Span内容里有效内容的起始和结束位置，取值范围为[起始位置, 结束位置)，结束位置对应的内容不包含在内。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | valueResource11+ | [Resource](ts-types.md#resource) | 否 | 是 | SymbolSpan资源内容。  默认值：undefined。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | symbolSpanStyle11+ | [RichEditorSymbolSpanStyle](ts-basic-components-richeditor.md#richeditorsymbolspanstyle11) | 否 | 是 | 组件SymbolSpan样式信息。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | paragraphStyle12+ | [RichEditorParagraphStyle](ts-basic-components-richeditor.md#richeditorparagraphstyle11) | 否 | 是 | 段落样式。  省略时，使用系统默认段落样式。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
@@ -1071,7 +1070,7 @@ Span位置信息。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | spanIndex | number | 否 | 否 | Span索引值。 |
-| spanRange | [number, number] | 否 | 否 | Span内容在RichEditor内的起始和结束位置。 |
+| spanRange | [number, number] | 否 | 否 | Span内容在RichEditor内的起始和结束位置，取值范围为[起始位置, 结束位置)，结束位置对应的Span不包含在内。 |
 
 ## RichEditorSpanType
 
@@ -1193,7 +1192,7 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 | valuePixelMap | [PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 图片内容。 |
 | valueResourceStr | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 图片资源id。 |
 | imageStyle | [RichEditorImageSpanStyleResult](ts-basic-components-richeditor.md#richeditorimagespanstyleresult) | 否 | 否 | 图片样式。 |
-| offsetInSpan | [number, number] | 否 | 否 | Span里图片的起始和结束位置。 |
+| offsetInSpan | [number, number] | 否 | 否 | Span里图片的起始和结束位置，取值范围为[起始位置, 结束位置)，结束位置对应的内容不包含在内。 |
 
 ## RichEditorImageSpanStyleResult
 
@@ -1393,7 +1392,7 @@ selectionStart和selectionEnd均为-1时表示全选，均为0时可以清空选
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectionStart | number | 是 | 选中开始位置。 |
-| selectionEnd | number | 是 | 选中结束位置。 |
+| selectionEnd | number | 是 | 选中结束位置，选中范围为[selectionStart, selectionEnd)，结束位置对应的内容不包含在内。 |
 | options12+ | [SelectionOptions](ts-universal-attributes-text-style.md#selectionoptions12对象说明) | 否 | 选择项配置，用于控制选中操作时的菜单弹出策略。  当需要自定义菜单弹出行为（如强制显示或隐藏菜单）时传入此参数；  省略时默认使用MenuPolicy.DEFAULT，遵循系统默认菜单弹出策略。  各MenuPolicy取值的适用场景请参考SelectionOptions对象说明。 |
 
 ### isEditing12+
@@ -1911,7 +1910,7 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| selection | [number, number] | 否 | 否 | 选中范围。 |
+| selection | [number, number] | 否 | 否 | 选中范围，取值范围为[起始位置, 结束位置)，结束位置对应的内容不包含在内。 |
 | spans | Array<[RichEditorTextSpanResult](ts-basic-components-richeditor.md#richeditortextspanresult) | [RichEditorImageSpanResult](ts-basic-components-richeditor.md#richeditorimagespanresult)> | 否 | 否 | span信息。 |
 
 ## RichEditorRange
@@ -1925,7 +1924,7 @@ onContentChanged(listener: StyledStringChangedListener): void
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | number | 否 | 是 | 文本的起始位置，省略或者设置负值时表示从0开始。 |
-| end | number | 否 | 是 | 文本的结束位置，省略或者超出文本范围时表示无穷大。 |
+| end | number | 否 | 是 | 文本的结束位置，与start共同表示选中文本的范围[start, end)，结束位置对应的内容不包含在内，省略或者超出文本范围时表示无穷大。 |
 
 ## RichEditorSpanStyleOptions
 
@@ -2035,7 +2034,7 @@ SymbolSpan样式选项。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | style | [RichEditorParagraphStyle](ts-basic-components-richeditor.md#richeditorparagraphstyle11) | 否 | 否 | 段落样式。 |
-| range | [number, number] | 否 | 否 | 段落起始和结束位置。 |
+| range | [number, number] | 否 | 否 | 段落起始和结束位置，取值范围为[起始位置, 结束位置)，结束位置对应的内容不包含在内。 |
 
 ## RichEditorTextSpanOptions
 
@@ -2068,7 +2067,7 @@ SymbolSpan样式选项。
 | textShadow11+ | [ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | Array<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明)> | 否 | 是 | 设置文字阴影效果。  默认值：undefined，不设置文字阴影效果。  该接口支持以数组形式入参，实现多重文字阴影。  **说明：**  仅支持设置阴影模糊半径、颜色和偏移量，不支持智能取色。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | lineHeight12+ | number | string | [Resource](ts-types.md#resource) | 否 | 是 | 设置文本的文本行高。  默认值：不设置时自适应字体大小。  number类型取值范围：(0, +∞)，设置值不大于0时，不限制文本行高，自适应字体大小。number类型时单位为fp，不支持设置百分比字符串。当lineHeight设置值小于当前字号下文本渲染出的实际高度时，[fallbackLineSpacing](ts-basic-components-richeditor.md#fallbacklinespacing23)属性将生效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | letterSpacing12+ | number | string | 否 | 是 | 设置文本字符间距，默认单位为fp。默认值：0。当取值为负值时，文字会发生压缩。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| fontFeature12+ | string | 否 | 是 | 设置文字特性效果，比如数字等宽的特性。如果未设置，默认为变宽数字。设置无效字符保持默认。  格式为：normal | <feature-tag-value>  <feature-tag-value>的格式为：<string> [ <integer> | on | off ]  <feature-tag-value>的个数可以有多个，中间用','隔开。  例如，使用等宽时钟数字的输入格式为："ss01" on。  Font Feature当前支持的属性见[fontFeature](ts-basic-components-text.md#fontfeature12)属性列表。  设置 Font Feature 属性，Font Feature 是 OpenType 字体的高级排版能力，如支持连字、数字等宽等特性，一般用在自定义字体中，其能力需要字体本身支持。  更多 Font Feature 能力介绍可参考 <https://www.w3.org/TR/css-fonts-3/#font-feature-settings-prop> 和 <https://sparanoid.com/lab/opentype-features/>  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| fontFeature12+ | string | 否 | 是 | 设置文字特性效果，比如数字等宽的特性。如果未设置，默认为变宽数字。设置无效字符保持默认。  格式为：normal | <feature-tag-value>  <feature-tag-value>的格式为：<string> [ <integer> | on | off ]  <feature-tag-value>的个数可以有多个，中间用','隔开。  例如，使用等宽时钟数字的输入格式为："ss01" on。  Font Feature当前支持的属性见[fontFeature](ts-basic-components-text.md#fontfeature12)属性列表。  设置Font Feature属性，Font Feature是OpenType字体的高级排版能力，如支持连字、数字等宽等特性，一般用在自定义字体中，其能力需要字体本身支持。  更多Font Feature能力介绍可参考[font-feature-settings property](https://www.w3.org/TR/css-fonts-3/#font-feature-settings-prop)和[OpenType Features](https://sparanoid.com/lab/opentype-features/)。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | halfLeading18+ | boolean | 否 | 是 | 文本是否将行间距平分至行的顶部与底部。  true表示将行间距平分至行的顶部与底部，false则不平分。  默认值：false。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | textBackgroundStyle18+ | [TextBackgroundStyle](ts-basic-components-span.md#textbackgroundstyle11对象说明) | 否 | 是 | 文本背景样式。  默认值：  {  color: Color.Transparent,  radius: 0  }  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | strokeWidth23+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | number | 否 | 是 | 文本描边宽度。如果LengthMetrics的unit值是[PERCENT](js-apis-arkui-graphics.md#lengthunit12)，当前设置不生效，作为0处理。  值小于0时为实体字，大于0时为轮廓字，等于0时无描边效果。  默认值：0。  单位：LengthMetrics类型时跟随LengthMetrics，number类型时是vp。  取值范围：(-∞, +∞)  与[shaderStyle](ts-basic-components-richeditor.md#richeditorparagraphstyle11)同时设置时，shaderStyle不生效。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
@@ -2289,7 +2288,7 @@ type MenuOnAppearCallback = (start: number, end: number) => void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 选中内容的起始位置。 |
-| end | number | 是 | 选中内容的终止位置。 |
+| end | number | 是 | 选中内容的终止位置，选中范围为[start, end)，结束位置对应的内容不包含在内。 |
 
 ## MenuCallback15+
 
@@ -2306,7 +2305,7 @@ type MenuCallback = (start: number, end: number) => void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 选中内容的起始位置。 |
-| end | number | 是 | 选中内容的终止位置。 |
+| end | number | 是 | 选中内容的终止位置，选中范围为[start, end)，结束位置对应的内容不包含在内。 |
 
 ## PasteEventCallback12+
 
@@ -2562,7 +2561,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/1rRpUivrSvmQFxwpy94bNg/zh-cn_image_0000002753296859.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/JQTA42kgS_a6ucWiaKI1lw/zh-cn_image_0000002757312323.gif)
 
 ### 示例2（绑定自定义键盘）
 
@@ -2613,7 +2612,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/OtkaU7hJSWqehBaW68Jlrw/zh-cn_image_0000002753456777.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/VA4dDQoKRS6l1A1jwaN0fw/zh-cn_image_0000002757232443.gif)
 
 ### 示例3（绑定自定义菜单）
 
@@ -3148,7 +3147,7 @@ struct SelectionMenu {
 
 系统暂未预置加粗、斜体等图标，示例代码使用系统默认图标，开发者使用时需自行替换icons中的资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/UajYcY_2RmCJ6rlv5e5X-w/zh-cn_image_0000002723857012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/fz0KNXu-R-K0cARRPubI3g/zh-cn_image_0000002727592752.png)
 
 ### 示例4（更新图片样式）
 
@@ -3390,7 +3389,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/xr9rdTzwT4KoobOl1oQ7dg/zh-cn_image_0000002723697094.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/g2Q0coa2RCizVxMwFaTxpg/zh-cn_image_0000002727752610.gif)
 
 ### 示例5（Span绑定手势事件）
 
@@ -3491,7 +3490,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/zbbosJUFS3KO08qOw3XNig/zh-cn_image_0000002753296861.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/DRCR4qt6RGK_5Z-A_vljYg/zh-cn_image_0000002757312325.gif)
 
 ### 示例6（更新和获取段落样式）
 
@@ -3589,7 +3588,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/C3yOl4zmTiyS-xojYukb7Q/zh-cn_image_0000002753456779.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/T_-Q37ivSZi-yLGs1j_7-A/zh-cn_image_0000002757232445.gif)
 
 ### 示例7（更新预设样式与缩进）
 
@@ -3859,7 +3858,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/GYbx9QowRPKBbXYeKdgV3Q/zh-cn_image_0000002723857014.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/guwRz9oKR927S3KHcYp76g/zh-cn_image_0000002727592754.gif)
 
 ### 示例8（设置文本字重与阴影）
 
@@ -3943,7 +3942,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/nT9iPqSFTumKYWcwPE_KOw/zh-cn_image_0000002723697096.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/os3U6S0dShSF46jCNfBCVw/zh-cn_image_0000002727752612.gif)
 
 ### 示例9（添加用户自定义布局Span）
 
@@ -4240,7 +4239,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/tFw71unFQoe8Cqi3Xbnwkg/zh-cn_image_0000002753296863.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/xlQ7oPp0RXKBNE2paeRtAg/zh-cn_image_0000002757312327.gif)
 
 ### 示例10（使用和管理组件内的BuilderSpan）
 
@@ -4586,7 +4585,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/SXTCqDyOTrCDMNGCkS30LQ/zh-cn_image_0000002753456781.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/zesgg6FlTIiUkyHWU9__Xg/zh-cn_image_0000002757232447.gif)
 
 ### 示例11（设置文本识别配置）
 
@@ -4689,7 +4688,7 @@ struct RichEditorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/h_bWh2oRSomhM4V6oQf3EQ/zh-cn_image_0000002723857016.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/cQ2ndxzYS-qdEjQe8n9EOA/zh-cn_image_0000002727592756.gif)
 
 ### 示例13（设置行高和字符间距）
 
@@ -4813,7 +4812,7 @@ struct RichEditorDemo03 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/PrRGCUOTQ0iqVTpzOWMamw/zh-cn_image_0000002723697098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ey5oUUIdQtO-hNQxQaUBAA/zh-cn_image_0000002727752614.png)
 
 ### 示例14（自定义粘贴事件）
 
@@ -4848,7 +4847,7 @@ struct RichEditorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/Cqga1rbpRomc4GAXs6rbEA/zh-cn_image_0000002753296865.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/ruWS2CWCTIi9U4MBN3eppA/zh-cn_image_0000002757312329.gif)
 
 ### 示例15（配置文字特性效果）
 
@@ -4900,7 +4899,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/gr1priOJTUykCVWulAJ7pw/zh-cn_image_0000002753456783.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/pHs_dr9OTxK0Z8OAo9MXqQ/zh-cn_image_0000002757232449.png)
 
 ### 示例16（自定义键盘避让）
 
@@ -4984,7 +4983,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/ex8fCTC2QqmLr8rlvUEcqA/zh-cn_image_0000002723857018.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/oL4_hxu2TgisXEErWDwr6Q/zh-cn_image_0000002727592758.gif)
 
 ### 示例17（查看编辑状态）
 
@@ -5024,7 +5023,7 @@ struct RichEditorOnEditingChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/-urrY6C5TFyyWfvoY_RkZg/zh-cn_image_0000002723697100.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/NBtZ0HBmQxG957KQ08eW6g/zh-cn_image_0000002727752616.gif)
 
 ### 示例18（配置文本变化回调）
 
@@ -5130,7 +5129,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/GqZchydcS7aYa8yk-HX3WA/zh-cn_image_0000002753296867.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/6paAw66eR_CHv3tnPbcQzw/zh-cn_image_0000002757312331.gif)
 
 ### 示例19（配置输入法回车键功能）
 
@@ -5165,7 +5164,7 @@ struct SoftKeyboardEnterTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/NYxhpnr0RTupNC9GywK0kA/zh-cn_image_0000002753456785.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/aQTFc53fSFOOzbX0SGdgCg/zh-cn_image_0000002757232451.gif)
 
 ### 示例20（设置段落折行规则）
 
@@ -5244,7 +5243,7 @@ struct LineBreakStrategyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/oz5U7SggSMWieaiKCJKAew/zh-cn_image_0000002723857020.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/kD0SESssTQ6DJhiVXRgRsg/zh-cn_image_0000002727592760.gif)
 
 ### 示例21（属性字符串基本功能）
 
@@ -5443,7 +5442,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/oPI27Jy0Sn6mRop5TK_sJw/zh-cn_image_0000002723697102.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/iOZM4N0QQe6727gvuGGBUQ/zh-cn_image_0000002727752618.gif)
 
 ### 示例22（获取布局信息）
 
@@ -5514,7 +5513,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/IOx81KO0QueDVBpiCDiqbw/zh-cn_image_0000002753296869.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/5oXTZgjkRd-rqP2CKX4qfg/zh-cn_image_0000002757312333.gif)
 
 ### 示例23（设置系统默认菜单扩展项）
 
@@ -5610,7 +5609,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/byQoCVzKTYiJ0_q0sDnIHQ/zh-cn_image_0000002753456787.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/GSQ0rVP1RQKIsCs05wFnqQ/zh-cn_image_0000002757232453.gif)
 
 ### 示例24（组件部分常用属性）
 
@@ -5703,7 +5702,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/oT7YssguTxOmknw4ArbQ0A/zh-cn_image_0000002723857022.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/l_8QvklRRQqCyC1j5L0xBw/zh-cn_image_0000002727592762.gif)
 
 ### 示例25（获取光标相对组件位置的矩形）
 
@@ -5757,7 +5756,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LlRdVO5KTC6fTQTUSBSvuA/zh-cn_image_0000002723697104.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/53sXyWtDTFyX5BVjvfjWrg/zh-cn_image_0000002727752620.gif)
 
 ### 示例26（设置最大行数和最大字符数）
 
@@ -5854,7 +5853,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/AqBtUGoLSwK-3MVx-yhVpQ/zh-cn_image_0000002753296871.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/1gg6zg5AQJOHgOSGLqDdkQ/zh-cn_image_0000002757312335.gif)
 
 ### 示例27（文本设置Url样式）
 
@@ -5896,7 +5895,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/T13wo2GsQUSM1K3vmN6CcQ/zh-cn_image_0000002753456789.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/EwOfEq5qRWGEDahjAnXPag/zh-cn_image_0000002757232455.gif)
 
 ### 示例28（开启带样式的撤销还原能力）
 
@@ -6036,7 +6035,7 @@ struct StyledUndo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/KUvTeN1uSpm6GvAvamZt7Q/zh-cn_image_0000002723857024.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/kHaxp3EwSeu1Sa3FUfn79g/zh-cn_image_0000002727592764.gif)
 
 ### 示例29（文本设置预设段落样式）
 
@@ -6132,7 +6131,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/6fmpj8gOSKWesbX7-cF1Zg/zh-cn_image_0000002723697106.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/8WTrgPewT_qb_-qZXWDRMg/zh-cn_image_0000002727752622.gif)
 
 ### 示例30（设置装饰线粗细和多装饰线）
 
@@ -6262,7 +6261,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/z3Nq1I91QYGPbCNYWok0Sw/zh-cn_image_0000002753296873.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/8_X8YhOgRNS4FKwmcnQtKQ/zh-cn_image_0000002757312337.gif)
 
 ### 示例31（设置开启中西文自动间距）
 
@@ -6369,7 +6368,7 @@ struct AutoSpacing {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/RON9MKziQE6Qj_qgjogxIw/zh-cn_image_0000002753456791.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/aW1UpW18RO6LUk2Jcr-mCA/zh-cn_image_0000002757232457.gif)
 
 ### 示例32（设置文本选择的AI菜单）
 
@@ -6401,7 +6400,7 @@ struct SelectedDataDetectorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/d9dGA3dbQHqMMCroI7_g0w/zh-cn_image_0000002723857026.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/FYQXgdFiQaKrLhWnT3C4Sg/zh-cn_image_0000002727592766.gif)
 
 ### 示例33（设置监听输入法绑定事件）
 
@@ -6455,7 +6454,7 @@ struct SetOnWillAttachIME {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/J6gylh1XQeeCn37xGohCJg/zh-cn_image_0000002723697108.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/uDcXAZr0QKSkCjNaKrcqfg/zh-cn_image_0000002727752624.gif)
 
 ### 示例34（删除输入框文本尾部字符）
 
@@ -6512,7 +6511,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/1_9YaLBHQVmJJQmEcyLwew/zh-cn_image_0000002753296875.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/-dUfpM0bR9uV71EuIz8b0w/zh-cn_image_0000002757312339.gif)
 
 ### 示例35（优化小语种文字显示）
 
@@ -6600,7 +6599,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/7WqjgCVwTkybDcfsTRrXcQ/zh-cn_image_0000002753456793.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/_GAivLvDS1WoRI0P1Xw1kg/zh-cn_image_0000002757232459.gif)
 
 ### 示例36（设置行首标点符号压缩和行尾标点符号悬挂）
 
@@ -6654,7 +6653,7 @@ struct PunctuationDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/P0JgP-iyRvuGEm_2CqIvlA/zh-cn_image_0000002723857028.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/cPDyX5eYT2qvnVF69mGDfw/zh-cn_image_0000002727592768.gif)
 
 ### 示例37（设置拖动预览样式）
 
@@ -6686,7 +6685,7 @@ struct RichEditorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/7APUEM4QQ2Gy6lM8BX0o4w/zh-cn_image_0000002723697110.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/X0aa_FieSOi-rNpEB7KnrA/zh-cn_image_0000002727752626.gif)
 
 ### 示例38（设置单行模式）
 
@@ -6727,7 +6726,7 @@ struct SingleLineDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/3F9IulJ7ScqTxMnw2zTxtw/zh-cn_image_0000002753296877.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/A9lTpjQ4T8ywPYwWw3_jjg/zh-cn_image_0000002757312341.gif)
 
 ### 示例39（设置属性字符串样式的提示文本）
 
@@ -6807,7 +6806,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ehSSj9BaQgCZTyJIG_t01g/zh-cn_image_0000002753456795.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/gqSyEfwqTB68qKG-FbjwoA/zh-cn_image_0000002757232461.png)
 
 ### 示例40（设置孤立字符不成行）
 
@@ -6856,7 +6855,7 @@ struct RichEditorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/GnDsQbPNTyuMTvmkJoafaA/zh-cn_image_0000002723857030.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/DIWhFSJWTgOBptJJMFNfvA/zh-cn_image_0000002727592770.jpg)
 
 ### 示例41（设置水平滚动）
 
@@ -6900,7 +6899,7 @@ struct HorizontalScrollDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/MHWgOfUdRZm8a6UEGJCrUA/zh-cn_image_0000002723697112.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/cqfFA1pVRuCkSLAtvdKKPQ/zh-cn_image_0000002727752628.gif)
 
 ### 示例42（设置文本着色器效果）
 
@@ -7003,7 +7002,7 @@ struct ShaderColorStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/Xf3xKBE9QLy8J9z87r3z2A/zh-cn_image_0000002753296879.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/6nhvNF5dTZ2lwGEuEjI-7w/zh-cn_image_0000002757312343.png)
 
 ### 示例43（将指定范围的文字滚动到可视区内）
 
@@ -7041,4 +7040,4 @@ struct ScrollToVisibleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/05hLcpfURxOdZl1qRfqnDg/zh-cn_image_0000002753456797.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/jTYewsy8Sw25ugE6ujnEXA/zh-cn_image_0000002757232463.gif)

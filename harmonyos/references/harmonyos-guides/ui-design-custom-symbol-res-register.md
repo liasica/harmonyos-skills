@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-cus
 title: 应用加载自定义Symbol
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 应用加载自定义Symbol
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:43+08:00
+scraped_at: 2026-09-18T06:45:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:60240cc32f338ad8dad11b85d533eed56869ef88fd7011d68a0cf5c76f142f21
+content_hash: sha256:a3e09cfcae97ed4d9b06d0fe674fd15f89a69fc3de18ba2ef30a87e91557af32
 ---
 
 ## 场景介绍
@@ -22,10 +22,10 @@ content_hash: sha256:60240cc32f338ad8dad11b85d533eed56869ef88fd7011d68a0cf5c76f1
 
 1. 将Symbol图标资源（TTF文件，设计规范参见[图标设计文档](../design-guides/system-icons-0000001929854962.md#section26702397263)）与动效参数资源（JSON文件）放入entry/src/main/resources/rawfile目录下，可在此目录下新建子目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/iHzZk0orSOqQIQVEwkDI3Q/zh-cn_image_0000002753295159.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/fnM7b0feTEaADxq3UAtrrg/zh-cn_image_0000002757310623.png)
 2. 多语言场景，在entry/src/main/resources目录中对应语言目录下的string.json文件中配置对应的Symbol图标Unicode值。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/VcugRh-STw2-eCSaz-ERAg/zh-cn_image_0000002753455077.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/wvQmxsamTrqspKZ5qjNEWw/zh-cn_image_0000002757230743.png)
 
    ```json
    {
@@ -68,4 +68,4 @@ content_hash: sha256:60240cc32f338ad8dad11b85d533eed56869ef88fd7011d68a0cf5c76f1
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/9q3o-6AxSd668nZqr0Nerg/zh-cn_image_0000002723855312.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/OJq5kq_sRyaSE-d1G_tqgQ/zh-cn_image_0000002727591052.png)

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-accountmanager
-title: "@ohos.enterprise.accountManager（账号管理）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.accountManager（账号管理）
+title: "@ohos.enterprise.accountManager (账号管理)"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.accountManager (账号管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2c25bb1cfc60b278d69570c59e6465c2ad2f044ff76b6342185d42e44d573985
+scraped_at: 2026-09-18T06:50:23+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:a4e9d9149b54708d0d7d31ed088e799b00af90e2ca90fc5483fc1d33b894f439
 ---
 
 本模块提供设备账号管理能力，包括禁止创建本地账号等。
@@ -30,13 +30,15 @@ disallowOsAccountAddition(admin: Want, disallow: boolean, accountId?: number): v
 
 禁止用户添加账号。调用成功后，系统将禁止指定用户或所有用户添加新账号。适用于企业设备管理场景，如防止员工随意创建本地账号、加强设备安全管理等。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_ACCOUNT\_POLICY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)。
 
 **参数：**
 
@@ -199,13 +201,13 @@ addOsAccountAsync(admin: Want, name: string, type: osAccount.OsAccountType): Pro
 
 创建账号的流程比较耗时，当调用此接口后，后续如果在应用主线程调用其他同步接口时需要等待该接口异步返回。
 
+在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_ACCOUNT\_POLICY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 
@@ -260,6 +262,10 @@ setDomainAccountPolicy(admin: Want, domainAccountInfo: osAccount.DomainAccountIn
 
 设置域账号策略。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_ACCOUNT\_POLICY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -267,8 +273,6 @@ setDomainAccountPolicy(admin: Want, domainAccountInfo: osAccount.DomainAccountIn
 **设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 

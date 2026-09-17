@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Canvas
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Canvas
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:05+08:00
+scraped_at: 2026-09-18T06:48:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:acf2237c2298ec64681ff85930aacd3fec4c8f5ee4628c2fcc9a4c24348a77d3
+content_hash: sha256:81bc46f22eece099fe4c2ba709f71b1c934bbfa386c630ec8e9dbb5032696ca7
 ---
 
 提供画布组件，用于自定义绘制图形。
@@ -206,7 +206,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/kgF9TTWpQrmI2Xkd83UHNQ/zh-cn_image_0000002723697254.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/gc336Re0SESCZymH4pH-Ww/zh-cn_image_0000002727752770.png)
 
 ### 示例2（使用DrawingRenderingContext中的方法）
 
@@ -236,7 +236,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/wQJknQsnTgqeEpZQ6V8trw/zh-cn_image_0000002753297021.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/UDwHMul7RbGGQOqC_uPvYA/zh-cn_image_0000002757312485.png)
 
 ### 示例3（使用attributeModifier动态设置Canvas组件的属性及方法）
 
@@ -324,7 +324,7 @@ struct attributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/-6e-NqvSRbGWC1Sxd6FXQQ/zh-cn_image_0000002753456939.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/cn0gXe8HSAC-I-THOCntMQ/zh-cn_image_0000002757232605.png)
 
 ### 示例4（创建不缓存指令Canvas并进行绘制）
 
@@ -372,4 +372,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/g0Ai20xcSCaNtLsSbxb2ag/zh-cn_image_0000002723857174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/1sMUVTtySHGN27Mx0ZurCA/zh-cn_image_0000002727592914.png)

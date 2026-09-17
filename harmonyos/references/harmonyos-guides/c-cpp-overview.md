@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/c-cpp-overvie
 title: C/C++标准库机制概述
 breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库 > C/C++标准库机制概述
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:26+08:00
+scraped_at: 2026-09-18T06:46:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3b95b0ca2ead04f9c27831ba6daa1e9e7e96bbc907c1d7d1a5a6157d10ad53ef
+content_hash: sha256:fa923ad050d540a1773bf2c5875e5f8cd95c3870ef780284986416b1511ed65d
 ---
 
 HarmonyOS NDK提供业界标准库[libc标准库](../harmonyos-references/musl.md)、[c++标准库](../harmonyos-references/cpp.md)，本文用于介绍C/C++标准库在HarmonyOS中的机制，开发者了解这些机制有助于在NDK开发过程中避免相关问题。
@@ -46,7 +46,7 @@ HarmonyOS中动态库加载namespace配置的情况
 1. default ns和ndk ns可以互相访问全部so，不能访问app ns的so。
 2. app ns能访问ndk ns的全部so，不能访问default ns的so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/fR_cRqg4TQGFDcE_8pTSlA/zh-cn_image_0000002723856508.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ycelXI0hRqyYZifZ0jvk8A/zh-cn_image_0000002727592248.png)
 
 ### rpath机制
 
@@ -61,7 +61,7 @@ SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 SET(CMAKE_INSTALL_RPATH "\${ORIGIN}/module")
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/fIuLBCReTN2FTt4DTak8cw/zh-cn_image_0000002723696590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/fvnWQ032SBOmlfM6omCb_A/zh-cn_image_0000002727752106.png)
 
 ### 支持dlclose
 

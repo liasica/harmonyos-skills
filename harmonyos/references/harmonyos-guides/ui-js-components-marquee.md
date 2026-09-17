@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: marquee开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > marquee开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:32+08:00
+scraped_at: 2026-09-18T06:45:12+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:b89ca075f227dca8694d59cae92a474d36f284a23bd158f297dd1f5cd0f4571a
+content_hash: sha256:087ae58dafe49385e6d3923e90751b86d50576f2c5f6224832aac7ec304c8b23
 ---
 
 marquee为跑马灯组件，用于展示一段单行滚动的文字。具体用法请参考[marquee](../harmonyos-references/js-components-basic-marquee.md)。
@@ -33,7 +33,7 @@ marquee为跑马灯组件，用于展示一段单行滚动的文字。具体用�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/XhI0TtEsQbeL5AX23VN9yg/zh-cn_image_0000002753454787.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/FdjWmnb6R4yxpyKpyyMIUw/zh-cn_image_0000002727590762.png)
 
 ## 设置属性和样式
 
@@ -70,7 +70,7 @@ marquee通过color和font-weight属性设置跑马灯中文本的颜色和字体
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/RM6-8-P_TLGReqtEolA1eA/zh-cn_image_0000002723855022.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/jkte4qIWT8W08N5d5O8GhA/zh-cn_image_0000002727750620.png)
 
 通过scrollamount、loop和direction属性实现跑马灯滚动时的移动距离、滚动次数和文字滚动方向。
 
@@ -148,7 +148,7 @@ export default {
 
 当loop的值小于等于零时，跑马灯marquee将连续滚动。如果loop未指定，则默认为-1。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/LXiZEOvbSOC45BfRtR3qzg/zh-cn_image_0000002723695104.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/8yqLOW6AQp-DC_sUQb7FLA/zh-cn_image_0000002757310335.gif)
 
 ## 场景示例
 
@@ -229,4 +229,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/6cLOAzJtR6a0vIpODqJzBA/zh-cn_image_0000002753294871.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/FnXK2HkeSuey_kzKDA-zvg/zh-cn_image_0000002757230455.gif)

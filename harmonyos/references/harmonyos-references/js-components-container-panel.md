@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: panel
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > panel
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:19+08:00
+scraped_at: 2026-09-18T06:48:37+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9910be47703fda8ea98102aa1f2e101b6ef708ede00e1a856214b228bff8978b
+content_hash: sha256:bdd545a800f78235406e3f627231e13794f1892c9f81d96990f54fc25c3769dd
 ---
 
 **说明** 
@@ -166,4 +166,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/LUrJ3iqrQha0Ggw1qr-WPg/zh-cn_image_0000002753297291.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/hofj0z5qRpqKl6O5jJHoPA/zh-cn_image_0000002757232875.gif)

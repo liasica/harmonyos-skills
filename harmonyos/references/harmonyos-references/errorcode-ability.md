@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 元能力子系统错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > 元能力子系统错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ad6341279e14d850ba78d52425c5855a4726b42e33d78b95d45da864422dcab5
+scraped_at: 2026-09-18T06:47:36+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:c97028394d170b8d620f46bfc80ac4c654a02c193632be51f622b569852c6478
 ---
 
 **说明** 
@@ -348,15 +348,17 @@ Internal error.
 
 1. 启动Ability时传入的[Want](js-apis-app-ability-want.md#约束限制)数据过大。
 2. 设备解锁前拉起非系统应用。
-3. 隐式拉起时未安装应用市场App。
+3. 调用openAtomicService拉起元服务时，安装未完成前用户点击取消，应用市场返回user\_cancel错误码，导致安装失败。
 4. 开发者无法处理的系统内部错误。包括但不限于：内部对象为空指针、处理超时、IPC跨进程通信失败、包管理获取应用信息失败、系统服务获取失败、启动的Ability实例已达到上限等。
+5. 隐式拉起时未安装应用市场App。
 
 **处理步骤**
 
 1. 对于启动Ability失败时，可以检查传入的[Want](js-apis-app-ability-want.md#约束限制)数据是否过大。
 2. 确保在设备解锁前只拉起系统应用，或者延迟拉起非系统应用直到设备解锁。
-3. 确保设备上已安装应用市场App，或者在拉起应用前检查应用市场App是否已安装。
+3. 若因用户取消元服务安装导致报错，属于正常用户行为，可引导用户重新调用openAtomicService完成安装。
 4. 对于开发者无法处理的系统内部错误，请尝试重新调用该接口，或者重启设备。
+5. 确保设备上已安装应用市场App，或者在拉起应用前检查应用市场App是否已安装。
 
 ## 16000053 非顶层Ability
 

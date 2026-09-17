@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 账号密码保存
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动保存 > 账号密码保存
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:45+08:00
+scraped_at: 2026-09-18T06:45:23+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:e995c6403324e27f04cb2aac0658423084c9790d859c682d2591daf2910992d1
+content_hash: sha256:6d0f2fdb74d658f18f8f7b6528fc42de657b8034729734d340e8eac5852d811a
 ---
 
 密码保险箱在应用的登录、注册、修改密码等场景中具备自动保存用户名和密码的能力。
@@ -14,7 +14,7 @@ content_hash: sha256:e995c6403324e27f04cb2aac0658423084c9790d859c682d2591daf2910
 
 当应用界面触发账号密码自动保存时，若密码保险箱中不存在同应用下的相同账号，系统将弹出账号密码保存提示框，用户点击“保存密码”按钮后，本次使用的账号和密码将被保存至密码保险箱。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/9XMH48H0RDeYnWfipl7-_g/zh-cn_image_0000002723855322.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/SxrN3vqgQnuCnOVcdJHlVQ/zh-cn_image_0000002727591062.png)
 
 当应用触发账号登录或注册时，均可触发保存功能，以下分别介绍两种布局的标准适配场景。
 
@@ -37,7 +37,7 @@ content_hash: sha256:e995c6403324e27f04cb2aac0658423084c9790d859c682d2591daf2910
 
 ## 账号密码登录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/izl2CxXgT36QWLKRGj5WGQ/zh-cn_image_0000002723695404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/zLHwyka3RUW2Pn85rdPoBw/zh-cn_image_0000002727750920.png)
 
 示例代码如下：
 
@@ -135,7 +135,7 @@ function commonButtonStyles() {
 
 ## 账号密码注册
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/u48VP6vtSaGbPJXl4F15Bw/zh-cn_image_0000002753295171.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/lxlmurJXRPuardPp6gvdBg/zh-cn_image_0000002757310635.png)
 
 示例代码如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drm-
 title: DRM_Statistics
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > C API > 结构体 > DRM_Statistics
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6c44603fa0eedfe5b1d9de173b6325ea39c9056c91d49b43bfb39b3dac418e3d
+scraped_at: 2026-09-18T06:51:00+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:4d115e88fa9f5ffa5055df3bd1c7a6b5aa82faa8908ad6aa37684a8cca208353
 ---
 
 ```c
@@ -14,7 +14,7 @@ typedef struct DRM_Statistics {...} DRM_Statistics
 
 ## 概述
 
-MediaKeySystem的统计信息。
+MediaKeySystem的度量信息。
 
 **起始版本：** 11
 

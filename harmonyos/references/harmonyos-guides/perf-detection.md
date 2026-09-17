@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perf-detectio
 title: 性能检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 性能检测
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:09+08:00
+scraped_at: 2026-09-18T06:45:44+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:eca79210807a169c5f28ead45fcaa205a937764f3387ee347543a5ae21390b54
+content_hash: sha256:a35464569d45ee4216cb52587f9a61fc45239c4bfdde05bc68b56c74c2ff04fd
 ---
 
 ## 启动耗时事件检测
@@ -18,7 +18,7 @@ content_hash: sha256:eca79210807a169c5f28ead45fcaa205a937764f3387ee347543a5ae213
 
 启动耗时事件统计时间起点为用户点击屏幕，默认结束点为启动动效完成，使用者可调用[reportDrawCompleted](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#reportdrawncompleted10)接口根据实际情况传入定制结束时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/QTegqUcAQLy45qXgodBZ0g/zh-cn_image_0000002723695584.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/83sxR6ZLSzCP6JCuS76RNg/zh-cn_image_0000002727751100.png)
 
 icon\_input\_time：用户点击屏幕时间点。
 
@@ -52,7 +52,7 @@ extend\_time：开发者定制的启动耗时，该时间为手指离开屏幕�
 
    最大单帧耗时超过50ms则为滑动丢帧，具体规则为max\_render\_frametime或max\_app\_frametime超过50ms时会触发该事件上报。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/OvxufiTpSpKAm4wBRe99Ng/zh-cn_image_0000002753295351.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/f4Lq19B8Q0i0nz34tHOZpw/zh-cn_image_0000002757310815.png)
 
 ### 约束与限制
 
@@ -85,7 +85,7 @@ extend\_time：开发者定制的启动耗时，该时间为手指离开屏幕�
 
 抓栈结果部分示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/BiEODYHPSYSUwzw_5bQTIQ/zh-cn_image_0000002753455269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/YMzUDcClR5-bZENYuFvKog/zh-cn_image_0000002757230935.png)
 
 此采样栈包含在滑动出现超过50ms卡顿时应用主线程调用信息，由于一般滑动卡顿过程较短，因此在出现问题时采集了一次调用栈。可根据同一场景卡顿上报的采样栈数据进行聚类，以判断该场景下滑动卡顿的具体根因。采样栈具体解析方法详见[主线程超时调用栈日志规格](apptask-timeout-guidelines.md#日志规格)。
 

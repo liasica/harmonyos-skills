@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/io-intensive-
 title: I/O密集型任务开发指导 (TaskPool)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 耗时任务并发场景 > I/O密集型任务开发指导 (TaskPool)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:15+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:ba94a3792b9f8ca0650fc608a67a488ec8d3397a7f0664211e9bf6f2fca35901
+scraped_at: 2026-09-18T06:44:56+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:d4369c9930a0edb50582b50b835b16eba83f811f907c81d98b0b37525e2b6d2a
 ---
 
 使用异步并发可以解决单次I/O任务阻塞的问题。对于I/O密集型任务，若线程中的其他任务仍可能被阻塞，建议采用多线程并发来处理。
@@ -27,7 +27,7 @@ I/O密集型任务的性能关键在于I/O操作的速度和效率，而非CPU�
    ```
 
    ```typescript
-   import { write } from './write'
+   import { write } from './write';
    import { BusinessError } from '@kit.BasicServicesKit';
    import { taskpool } from '@kit.ArkTS';
    import { common } from '@kit.AbilityKit';
@@ -45,7 +45,7 @@ I/O密集型任务的性能关键在于I/O操作的速度和效率，而非CPU�
        const writePromise = write('Hello World!', fileList[i]).then(() => {
          console.info(`Succeeded in writing the file. FileList: ${fileList[i]}`);
        }).catch((err: BusinessError) => {
-         console.error(`Failed to write the file. Code is ${err.code}, message is ${err.message}`)
+         console.error(`Failed to write the file. Code is ${err.code}, message is ${err.message}`);
          return false;
        });
        writePromises.push(writePromise);
@@ -84,7 +84,7 @@ I/O密集型任务的性能关键在于I/O操作的速度和效率，而非CPU�
                }).catch((e: BusinessError) => {
                  this.message = 'failed';
                  console.error('concurrentTest is failed.');
-               })
+               });
              })
          }
          .width('100%')

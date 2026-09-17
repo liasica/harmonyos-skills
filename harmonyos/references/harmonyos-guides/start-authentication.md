@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-authent
 title: 发起认证
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 发起认证
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:57+08:00
+scraped_at: 2026-09-18T06:45:34+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2a01cda2f6c7e2b5a505c9b661ef34ae63b39f936aa03c239ba9e02b4b6babe2
+content_hash: sha256:391186d89e8865da01ca81c99b22d1a0b84c89cbf2883cf0a3c91a999e066240
 ---
 
 应用发起身份认证请求，获取身份认证结果，以访问受保护的系统、服务或应用的功能和数据，包括用户个人数据。
@@ -30,7 +30,7 @@ content_hash: sha256:2a01cda2f6c7e2b5a505c9b661ef34ae63b39f936aa03c239ba9e02b4b6
 
 认证控件的样式如图所示，通过[WidgetParam](../harmonyos-references/js-apis-useriam-userauth.md#widgetparam10)配置对应参数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/3mUQVuGnQFizuLvcnPlpWw/zh-cn_image_0000002723695472.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/iXruad1nT4OOueVTd5U4cg/zh-cn_image_0000002727750988.png)
 
 * 标注1：用户认证界面的标题（WidgetParam.title），不支持传空字串，最大长度为500字符。应用可在此配置符合场景的字符串，建议传入认证目的，例如用于支付、登录应用等。
 * 标注2：当生物认证失败后，将显示一个按钮。点击该按钮，可以从生物认证切换到其他口令认证类型（AuthParam.authType）。

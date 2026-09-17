@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Webview错误码
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > 错误码 > Webview错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cf4fdab149ccee9a50b5a87fb92eacdcce54b030367e479643e493497812bb1b
+scraped_at: 2026-09-18T06:49:09+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:874b587e3093029594381f46e4defc5d3e54d0e61e7625ad437db8b3bf0b46aa
 ---
 
 **说明** 
@@ -324,11 +324,9 @@ WebResourceHandler已经失效。
 
 **可能原因**
 
-1.对应的请求在WebSchemeHandler中没有拦截；
-
-2.该请求拦截在构造返回体之前，因为某些原因已经请求结束；
-
-3.该WebResourceHandler已经调用过didFinish和didFail。
+1. 对应的请求在WebSchemeHandler中没有拦截。
+2. 该请求拦截在构造返回体之前，因为某些原因已经请求结束。
+3. 该WebResourceHandler已经调用过didFinish和didFail。
 
 **处理步骤**
 

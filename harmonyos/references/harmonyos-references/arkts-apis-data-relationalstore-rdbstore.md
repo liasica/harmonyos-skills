@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (RdbStore)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Interface (RdbStore)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0032e95bdf5b70167f5abe402ead793c9a40c05b2dff63f7f688ff86027b1323
+scraped_at: 2026-09-18T06:47:40+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:55aad77579828c7ccd723208dbd9656333ea39f1ec3b010372f73a6a59faad23
 ---
 
 提供管理关系数据库（RDB）方法的接口。
@@ -3784,7 +3784,7 @@ executeSync(sql: string, args?: Array<ValueType>): ValueType
 
 | 类型 | 说明 |
 | --- | --- |
-| [ValueType](arkts-apis-data-relationalstore-t.md#valuetype) | 返回SQL执行后的结果 |
+| [ValueType](arkts-apis-data-relationalstore-t.md#valuetype) | 返回SQL执行后的结果。 |
 
 **错误码：**
 
@@ -5059,7 +5059,7 @@ sync(mode: SyncMode, predicates: RdbPredicates, callback: AsyncCallback<Array<[s
 | --- | --- | --- | --- |
 | mode | [SyncMode](arkts-apis-data-relationalstore-e.md#syncmode) | 是 | 指定同步模式。该值可以是relationalStore.SyncMode.SYNC\_MODE\_PUSH、relationalStore.SyncMode.SYNC\_MODE\_PULL。 |
 | predicates | [RdbPredicates](arkts-apis-data-relationalstore-rdbpredicates.md) | 是 | 约束同步数据和设备。 |
-| callback | AsyncCallback<Array<[string, number]>> | 是 | 回调函数，用于向调用者发送同步结果。string：设备ID；number：每个设备同步状态，0表示成功，1表示失败。 |
+| callback | AsyncCallback<Array<[string, number]>> | 是 | 回调函数。当同步成功，err为undefined，data为设备同步结果数组（string：设备ID；number：每个设备同步状态，0表示成功，1表示失败）；否则为错误对象。 |
 
 **错误码：**
 
@@ -6260,6 +6260,8 @@ off(event: 'statistics', observer?: Callback<SqlExecutionInfo>): void
 | 14800000 | Inner error. |
 | 14800014 | The target instance is already closed. |
 
+**示例：**
+
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -6337,6 +6339,8 @@ off(event: 'perfStat', observer?: Callback<SqlExecutionInfo>): void
 | --- | --- |
 | 801 | Capability not supported. |
 | 14800014 | The target instance is already closed. |
+
+**示例：**
 
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';

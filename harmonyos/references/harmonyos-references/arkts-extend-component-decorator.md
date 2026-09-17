@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-ext
 title: 组件扩展装饰器
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:11+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:3a33e06879060d85aee5c7207c8dd79f1da579503384629e08163bef2e283fdb
+scraped_at: 2026-09-18T06:48:29+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:6e021ed6b6fe8fc4baad18eb226cbe52f039d70a438ee4cf5a493a0612d2d194
 ---
 
 * **[@AnimatableExtend：定义可动画属性](ts-animatable-extend.md)**
@@ -17,5 +17,5 @@ content_hash: sha256:3a33e06879060d85aee5c7207c8dd79f1da579503384629e08163bef2e2
 * **[@Reusable：组件复用](ts-custom-component-decorator-reusable.md)**
 * **[@ReusableV2：组件复用V2](ts-custom-component-decorator-reusablev2.md)**
 * **[@Styles：组件重用样式](ts-custom-component-decorator-styles.md)**
-* **[wrapBuilder](ts-universal-wrapbuilder.md)**
+* **[wrapBuilder: 封装全局@Builder](ts-universal-wrapbuilder.md)**
 * **[mutableBuilder: 实现全局@Builder动态更新](ts-universal-mutablebuilder.md)**

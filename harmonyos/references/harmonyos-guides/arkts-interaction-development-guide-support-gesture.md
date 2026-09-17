@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 添加手势响应
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:26+08:00
+scraped_at: 2026-09-18T06:45:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8735573d608f7d6a95544ed1c1ad295dd6d6bb3a1f8f1b7f03d559bf3bceb204
+content_hash: sha256:9af2aff519fe91be4f8a256ac267cd3b51a99ab011047b6f1f4147cd7697dd99
 ---
 
 当用户的操作符合某个手势的特征时，系统会将其识别为该手势，这一过程称为手势识别。为了响应某一个手势，需在组件上添加对应的手势对象，以便系统可以收集并进行处理。
@@ -36,19 +36,19 @@ content_hash: sha256:8735573d608f7d6a95544ed1c1ad295dd6d6bb3a1f8f1b7f03d559bf3bc
 
 **场景1:**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/eI0nGGSqRcumU7fn4QrNYw/zh-cn_image_0000002753294665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/aEbsxJVYQrSJ737_lkNz7g/zh-cn_image_0000002757230249.png)
 
 Pan A与Pan B为相同阈值条件的滑动手势，Pan B为子组件上的，因此优先级高于父组件上的Pan A，Pan B优先响应成功；
 
 **场景2:**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/JqD_opoFQmaX_fvY5gvV3w/zh-cn_image_0000002753454583.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/GEIAPkdfRb-Pz5p5NJE6MQ/zh-cn_image_0000002727590558.png)
 
 Pan A与 Pan B为不同阈值条件的滑动手势，Pan B为子组件上的，优先级高于父组件上的Pan A，但由于Pan A的阈值小，因此在相同的报点序列情况下，Pan A会优先判定成功；但要注意的是，如果移动速度特别快，那么同一个报点的间距可能都可以使Pan A和Pan B成功，那么这时候就会是Pan B竞争成功，因为是B先处理报点。
 
 **场景3:**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/zCQS8Y1iT2Oxm7Y6BmC8vA/zh-cn_image_0000002723854818.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/aFpeyNioTd-Dm53OEru9_g/zh-cn_image_0000002727750416.png)
 
 以实际操作能够响应的手势为准；
 

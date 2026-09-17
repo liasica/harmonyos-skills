@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-
 title: Rdb_KeyData
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > Rdb_KeyData
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:715b660ffcb799c4b03460a8b16af465b4e3cc41905c45c1461ec15eb7222e87
+scraped_at: 2026-09-18T06:47:46+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:07693297b77c72fe779e2f5476f3d17ecb8a075ece17b7f48c4583bc773dc611
 ---
 
 ```c
-union Rdb_KeyData { ... }
+union Rdb_KeyData { ... } *data
 ```
 
 ## 概述

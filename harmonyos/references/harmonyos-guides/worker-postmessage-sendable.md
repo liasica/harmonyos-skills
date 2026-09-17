@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-postme
 title: 多级Worker间高性能消息通信
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信场景 > 多级Worker间高性能消息通信
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9c5fa40998fa0f8132da38a6c3441e22b5d7e19904a2b09d038af7d486c63d01
+scraped_at: 2026-09-18T06:44:56+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:22c04512aec6468502c783c5bb72d4ebb51f870b7f048e750202938a18f348e2
 ---
 
 多级[Worker](worker-introduction.md)（即通过父Worker创建子Worker的机制形成层级线程关系）间通信是一种常见的需求，由于Worker线程生命周期由用户自行管理，因此需要注意多级Worker生命周期的正确管理，建议开发者确保销毁父Worker前先销毁所有子Worker。
@@ -32,8 +32,8 @@ content_hash: sha256:9c5fa40998fa0f8132da38a6c3441e22b5d7e19904a2b09d038af7d486c
 
    ```typescript
    // ParentWorker.ets
-   import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker, collections, ArkTSUtils } from '@kit.ArkTS'
-   import { CopyEntry } from '../Sendable/CopyEntry'
+   import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker, collections, ArkTSUtils } from '@kit.ArkTS';
+   import { CopyEntry } from '../Sendable/CopyEntry';
 
    const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
@@ -64,7 +64,7 @@ content_hash: sha256:9c5fa40998fa0f8132da38a6c3441e22b5d7e19904a2b09d038af7d486c
          copyWorker2.postMessageWithSharedSendable(entry);
        }
      }
-   }
+   };
 
    copyWorker1.onmessage = async (e: MessageEvents) => {
      console.info('copyWorker1 onmessage:' + e.data);
@@ -80,7 +80,7 @@ content_hash: sha256:9c5fa40998fa0f8132da38a6c3441e22b5d7e19904a2b09d038af7d486c
          // 如果所有任务全部完成，则关闭父Worker
          workerPort.close();
        }
-     })
+     });
    }
 
    copyWorker2.onmessage = async (e: MessageEvents) => {
@@ -97,7 +97,7 @@ content_hash: sha256:9c5fa40998fa0f8132da38a6c3441e22b5d7e19904a2b09d038af7d486c
          // 如果所有任务全部完成，则关闭父Worker
          workerPort.close();
        }
-     })
+     });
    }
 
    workerPort.onmessageerror = (e: MessageEvents) => {
@@ -111,8 +111,8 @@ content_hash: sha256:9c5fa40998fa0f8132da38a6c3441e22b5d7e19904a2b09d038af7d486c
 
    ```typescript
    // ChildWorker.ets
-   import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS'
-   import { CopyEntry } from '../Sendable/CopyEntry'
+   import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
+   import { CopyEntry } from '../Sendable/CopyEntry';
 
    const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
@@ -121,22 +121,22 @@ content_hash: sha256:9c5fa40998fa0f8132da38a6c3441e22b5d7e19904a2b09d038af7d486c
      // 中间copy操作省略
      console.info(data.filePath);
      workerPort.postMessageWithSharedSendable('done');
-   }
+   };
 
    workerPort.onmessageerror = (e: MessageEvents) => {
      console.error('onmessageerror:' + e.data);
-   }
+   };
 
    workerPort.onerror = (e: ErrorEvent) => {
      console.error('onerror:' + e.message);
-   }
+   };
    ```
 3. 在UI主线程页面，创建父Worker并准备克隆任务所需的数据，准备完成后将数据发送给父Worker。
 
    ```typescript
    // Index.ets
    import { worker, collections } from '@kit.ArkTS';
-   import { CopyEntry } from '../Sendable/CopyEntry'
+   import { CopyEntry } from '../Sendable/CopyEntry';
 
    function promiseCase() {
      let p: Promise<void> = new Promise<void>((resolve: Function, reject: Function) => {
@@ -152,7 +152,7 @@ content_hash: sha256:9c5fa40998fa0f8132da38a6c3441e22b5d7e19904a2b09d038af7d486c
      let isTerminate = false;
      ss.onexit = () => {
        isTerminate = true;
-     }
+     };
      let array = new collections.Array<CopyEntry>();
      // 准备数据
      for (let i = 0; i < 4; i++) {
@@ -174,6 +174,7 @@ content_hash: sha256:9c5fa40998fa0f8132da38a6c3441e22b5d7e19904a2b09d038af7d486c
    @Component
    struct Index {
      @State message: string = 'Hello World';
+
      build() {
        Row() {
          Column() {

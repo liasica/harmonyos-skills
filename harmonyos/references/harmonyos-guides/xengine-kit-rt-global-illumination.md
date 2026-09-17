@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-r
 title: 光线追踪全局光照
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 光线追踪全局光照
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e3d33b84bf87b480628bdc9ead1c4beae6cacb4eb9cca0514257fa003c72a33d
+scraped_at: 2026-09-18T06:46:08+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:86df5acda8b685b803bd153ac07205407fc1d26aa2f3c7c5ca4315f1a260eaf0
 ---
 
 从6.0.0(20) 版本开始，新增光线追踪全局光照特性。
@@ -33,7 +33,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 | --- | --- |
 | VKAPI\_ATTR VkResult VKAPI\_CALL HMS\_XEG\_EnumerateDeviceExtensionProperties (VkPhysicalDevice physicalDevice, uint32\_t \*pPropertyCount, XEG\_ExtensionProperties \*pProperties) | XEngine Vulkan扩展特性查询接口。 |
 | VKAPI\_ATTR VkResult VKAPI\_CALL HMS\_XEG\_CreateRTGI (VkDevice device, const void \*pCreateInfo, XEG\_RTGI \*pRtGI) | 创建XEG\_RTGI对象。 |
-| VKAPI\_ATTR VkResult VKAPI\_CALL HMS\_XEG\_CmdRenderRTGI (VkCommandBuffer commandBuffer, XEG\_RTGI rtGI, const void \*pDescription) | 执行渲染命令。 |
+| VKAPI\_ATTR VkResult VKAPI\_CALL HMS\_XEG\_CmdRenderRTGI (VkCommandBuffer commandBuffer, XEG\_RTGI rtGI, const void \*pDescription) | 录制渲染命令。 |
 | VKAPI\_ATTR VkResult VKAPI\_CALL HMS\_XEG\_CmdSetSynchronization (VkCommandBuffer commandBuffer, const void \*xegHandle) | 设置同步信号，等待渲染结果写入指定图像。使用RTGI特性时，为等待GI渲染结果写入指定图像。 |
 | VKAPI\_ATTR void VKAPI\_CALL HMS\_XEG\_DestroyRTGI (XEG\_RTGI rtGI) | 销毁XEG\_RTGI对象。 |
 
@@ -78,7 +78,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 
 * 下面是基于Vulkan图形API平台集成动态漫反射全局光照的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/1VwYnakZRCm_UVqhvd2RmA/zh-cn_image_0000002753295661.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/xGPZecOvTr-i2f4gS_z3Bw/zh-cn_image_0000002757311125.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_RTGI\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_rtgi_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 创建动态漫反射全局光照使用的创建信息，调用[HMS\_XEG\_CreateRTGI](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_creatertgi)接口创建动态漫反射全局光照实例。
@@ -301,7 +301,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 
 下面是基于Vulkan图形API平台集成神经网络全局光照的主要业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/jp5YXed6S_CfK1rjXZ3AHA/zh-cn_image_0000002753455579.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/2HfYxQ5-RC2mOurTW09U_w/zh-cn_image_0000002757231245.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_RTGI\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_rtgi_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 创建神经网络全局光照使用的创建信息，调用[HMS\_XEG\_CreateRTGI](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_creatertgi)接口创建神经网络全局光照实例。

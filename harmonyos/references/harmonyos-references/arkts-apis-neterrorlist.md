@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: "@ohos.web.netErrorList (ArkWeb网络协议栈错误列表)"
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.netErrorList (ArkWeb网络协议栈错误列表)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:78ed1b7fad8e8fde0866f7a674da70647501559fda546880eb26ca6e820a5373
+scraped_at: 2026-09-18T06:49:05+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:fee4aac36f85fde9c2d3d347a1f784efe3e38c0f13a273bcc400558da0daacb0
 ---
 
 ArkWeb的网络协议栈错误列表，错误码直接映射Chromium错误码[net\_error\_list.h](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/net/base/net_error_list.h)，可在网络请求异常时基于标准化错误码快速定位问题、统一错误处理，提升排查效率。
@@ -94,7 +94,7 @@ ArkWeb的网络协议栈错误列表
 | ERR\_PROXY\_CERTIFICATE\_INVALID | -136 | HTTPS 代理提供的证书无效。 |
 | ERR\_NAME\_RESOLUTION\_FAILED | -137 | 域名解析时出错（DNS）。 |
 | ERR\_NETWORK\_ACCESS\_DENIED | -138 | 网络被禁用。 |
-| ERR\_TEMPORARILY\_THROTTLED | -139 | 因节流而取消了此请求以避免DDOS。 |
+| ERR\_TEMPORARILY\_THROTTLED | -139 | 因节流而取消了此请求以避免DDoS。 |
 | ERR\_HTTPS\_PROXY\_TUNNEL\_RESPONSE\_REDIRECT | -140 | 通过HTTPS代理创建SSL隧道连接的请求收到302（响应正文可能包括请求失败原因的描述）。 |
 | ERR\_SSL\_CLIENT\_AUTH\_SIGNATURE\_FAILED | -141 | 无法使用客户端证书的私钥对SSL客户端身份验证握手的CertificateVerify数据进行签名。 |
 | ERR\_MSG\_TOO\_BIG | -142 | 消息太大，无法传输。（例如，超过大小阈值的UDP消息）。 |

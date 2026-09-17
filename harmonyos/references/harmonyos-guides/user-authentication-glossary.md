@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-authenti
 title: User Authentication Kit术语
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > User Authentication Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:57+08:00
+scraped_at: 2026-09-18T06:45:34+08:00
 doc_updated_at: 2026-08-14
-content_hash: sha256:20939be7a5f9ca34b16fdff7df4a15de660133e2814b0e973ea1e011091b1ea9
+content_hash: sha256:0f8a33d616d342fe131f592ff5769692f2c05f4fde0a5d3bb079c2d36fea6f6f
 ---
 
 ## M
@@ -16,7 +16,7 @@ content_hash: sha256:20939be7a5f9ca34b16fdff7df4a15de660133e2814b0e973ea1e011091
 
 示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/3XA5rmgkS_qNlWIFgXB3Cw/zh-cn_image_0000002723855392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/89Nwtu9yRU-96CPBBfquZg/zh-cn_image_0000002727591132.png)
 
 ### 模应用弹窗
 
@@ -24,4 +24,4 @@ content_hash: sha256:20939be7a5f9ca34b16fdff7df4a15de660133e2814b0e973ea1e011091
 
 示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Wje52RACRlWZVW9dhKIYxQ/zh-cn_image_0000002723695474.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/BwxhBgxSQdCTl6LuvMFcyw/zh-cn_image_0000002727750990.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/batch-databas
 title: 批量数据写数据库场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 批量数据写数据库场景
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:16+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:fbdc1169592e3167d3fa11673f34fe22815dcccc45bf3b41cc393fe173f26a9b
+scraped_at: 2026-09-18T06:44:57+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:b01e98417393eaae8b59cf2d9fa449dc2c811877e904d04d731a83c0c5f17445
 ---
 
 ## 使用TaskPool进行频繁数据库操作
@@ -74,8 +74,8 @@ async function query(context: Context): Promise<Array<relationalStore.ValuesBuck
   let resultSet = await store.query(predicates); // 查询所有数据
   console.info(`Query data successfully! row count:${resultSet.rowCount}`);
   let index = 0;
-  let result = new Array<relationalStore.ValuesBucket>(resultSet.rowCount)
-  resultSet.goToFirstRow()
+  let result = new Array<relationalStore.ValuesBucket>(resultSet.rowCount);
+  resultSet.goToFirstRow();
   do {
     result[index++] = resultSet.getRow();
   } while (resultSet.goToNextRow());
@@ -114,7 +114,7 @@ struct Index {
           let context: Context = this.getUIContext().getHostContext() as Context;
 
           // 数据准备
-          const count = 5
+          const count = 5;
           let valueBucketArray = new Array<relationalStore.ValuesBucket>(count);
           for (let i = 0; i < count; i++) {
             let v: relationalStore.ValuesBucket = {
@@ -275,7 +275,7 @@ struct Index {
              let context: Context = this.getUIContext().getHostContext() as Context;
 
              // 数据准备
-             const count = 5
+             const count = 5;
              let valueBucketArray = collections.Array.create<SharedValuesBucket | undefined>(count, undefined);
              for (let i = 0; i < count; i++) {
                let v: IValueBucket = {

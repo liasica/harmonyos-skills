@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-nd
 title: 在NDK工程中使用预构建库
 breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 在NDK工程中使用预构建库
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:25+08:00
+scraped_at: 2026-09-18T06:46:53+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:9ccaf86a1a6b901f77e7860b8b37a4817c83cc8bd10e343ae80d138e39f195b4
+content_hash: sha256:a322ed21aa58d64a1bf01d0a8978d05af142c03d838bb9afd27c928c90ba4466
 ---
 
 在NDK工程中，可以通过CMake语法规则引入并使用预构建库。在引用预构建库时，模块libs目录中的预构建库，以及在CMakeLists.txt编译脚本中声明的预构建库都会被打包。
@@ -19,7 +19,7 @@ content_hash: sha256:9ccaf86a1a6b901f77e7860b8b37a4817c83cc8bd10e343ae80d138e39f
 
 可以通过直接将预构建的库文件复制到项目文件中，来使用预构建库。例如在项目中需要使用预构建库libavcodec\_ffmpeg.so，其开发态存放路径如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/sPul4ue5Q1G_7BwXpRIkgg/zh-cn_image_0000002723696578.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/kdwrjHsgQ1qzzNpNrnmfag/zh-cn_image_0000002727752094.png)
 
 在模块的CMakeLists.txt编译脚本中通过add\_library添加所需的预构建库，并声明预构建库路径等信息后，可以在target\_link\_libraries中声明链接该预构建库，脚本示例如下所示：
 
@@ -45,7 +45,7 @@ include_directories(
 
 当在HAR中使用预构建库时，当前编译的库和链接所需预构建库会打包到HAR中的libs目录下，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/KLisVk-SR_-UuMD5qFM5_A/zh-cn_image_0000002753296345.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/-3tc9TUxTvSseElPEwuLXA/zh-cn_image_0000002757311809.png)
 
 ### 预构建库的SONAME问题
 

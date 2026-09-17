@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 开启沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 开启沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:26+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:2ec7f84b5caa6853b1ed995aeb6f49972a8a908441b26ad116b0467881ca9b1e
+scraped_at: 2026-09-18T06:45:06+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:d0db643a318bcdaeac147f7bf31ebdb1fa8006e6747c4f7cb43eb3dd70fa6ce0
 ---
 
 沉浸光感提供应用级开启和组件级开启两种方式，可按需选择。沉浸光感开启后，需要大量GPU资源，具体的适配指导请参考[沉浸光感功耗优化](arkts-immersive-light-sense-constraints.md)，其余开启后的常见问题请参考[沉浸光感常见问题](arkts-immersive-light-sense-faq.md)。
@@ -17,7 +17,7 @@ content_hash: sha256:2ec7f84b5caa6853b1ed995aeb6f49972a8a908441b26ad116b0467881c
   + 指定弹窗类组件（[AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md)、[ActionSheet](../harmonyos-references/ts-methods-action-sheet.md)、[CustomDialog](../harmonyos-references/ts-methods-custom-dialog-box.md)、[CalendarPickerDialog](../harmonyos-references/ts-methods-calendarpicker-dialog.md)、[DatePickerDialog](../harmonyos-references/ts-methods-datepicker-dialog.md)、[TimePickerDialog](../harmonyos-references/ts-methods-timepicker-dialog.md)、[TextPickerDialog](../harmonyos-references/ts-methods-textpicker-dialog.md)、[SelectionMenu](../harmonyos-references/ohos-arkui-advanced-selectionmenu.md)、[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)弹窗、[Text](../harmonyos-references/ts-basic-components-text.md)设置[copyOption](../harmonyos-references/ts-basic-components-text.md#copyoption9)后长按或双击触发的文本菜单）的沉浸光感效果可在全页面生效。
   + 指定弹窗类接口（[PromptAction](../harmonyos-references/arkts-apis-uicontext-promptaction.md)、[ArkUI\_NativeDialog](../harmonyos-references/capi-arkui-nativemodule-arkui-nativedialog.md)、[@ohos.promptAction (弹窗)](../harmonyos-references/js-apis-promptaction.md)、[Popup控制](../harmonyos-references/ts-universal-attributes-popup.md)、[Tips控制](../harmonyos-references/ts-universal-attributes-tips.md)、[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)、[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)）的沉浸光感效果可在全页面生效。
   + [Slider](../harmonyos-references/ts-basic-components-slider.md)、[Toggle](../harmonyos-references/ts-basic-components-toggle.md)、[Select](../harmonyos-references/ts-basic-components-select.md)的沉浸光感效果可在全页面生效。
-  + 其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
+  + 其他组件仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 * 沉浸式系统材质反色、材质赋色、交互形变与点光源、阴影开关等个性化配置，具体请参见[沉浸式系统材质视效](arkts-immersive-light-sense-common-capability.md)。
 
 ## 沉浸光感开启方式对比

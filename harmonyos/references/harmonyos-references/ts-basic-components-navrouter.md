@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: NavRouter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > NavRouter
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:18+08:00
+scraped_at: 2026-09-18T06:48:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:425a7f69869f617cfb98da1352b234c2c90944e1b4205d6eb6d87fba2e90d0be
+content_hash: sha256:24bd8cdad29483dc189f20c4e89cc0b6a919392f7ddee4a7f6c6a24b9222e441
 ---
 
 导航组件，默认提供点击响应处理，不需要开发者自定义点击事件逻辑。
@@ -230,4 +230,4 @@ struct NavRouterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/tH9PFSZlR8Ouq0-8vf4Cug/zh-cn_image_0000002753297273.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rwSlPatnRQmzalYMvaL61g/zh-cn_image_0000002757232857.gif)

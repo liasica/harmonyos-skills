@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-devicesettings
-title: "@ohos.enterprise.deviceSettings（设备设置管理）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.deviceSettings（设备设置管理）
+title: "@ohos.enterprise.deviceSettings (设备设置管理)"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.deviceSettings (设备设置管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:43+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:858102bdb114e061512a6ea8a0e57c787e6262498eef16721ff08a7f7a21f5e2
+scraped_at: 2026-09-18T06:50:24+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:4a0bbbeb7df8a2740132ab7c77b98530db89e8ce5f769fc1d3d76c58205ee9d9
 ---
 
 本模块提供企业设备设置能力，支持设置和获取设备息屏时间、系统时间、电源策略、护眼模式、默认输入法、壁纸、隐藏设置项等。
@@ -30,13 +30,15 @@ setValue(admin: Want, item: string, value: string): void
 
 设置设备策略。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SETTINGS
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 
@@ -207,13 +209,15 @@ setHomeWallpaper(admin: Want, fd: number): Promise<void>
 
 设置桌面壁纸，使用Promise异步回调。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_WALLPAPER
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 
@@ -274,13 +278,15 @@ setUnlockWallpaper(admin: Want, fd: number): Promise<void>
 
 设置锁屏壁纸，使用Promise异步回调。企业设备管理应用可通过此接口统一设置企业设备的锁屏壁纸，用于企业形象展示或安全管控等场景。
 
+**说明** 
+
+在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_WALLPAPER
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 
@@ -643,13 +649,15 @@ setSwitchStatus(admin: Want, key: SwitchKey, status: SwitchStatus): void
 
 **起始版本：** 26.0.0
 
+**说明** 
+
+在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SETTINGS 或 ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 

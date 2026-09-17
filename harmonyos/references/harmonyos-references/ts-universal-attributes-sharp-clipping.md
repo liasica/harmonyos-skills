@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 形状裁剪
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 形状裁剪
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:48+08:00
+scraped_at: 2026-09-18T06:48:09+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b3b4cae723a8f06faf4653dc9df830a88fcbcc835e9479a8fb107f37fc6dfc3f
+content_hash: sha256:2574dd4eb935760f395c20498bc81dea2e41047839f9f92eee71872a1bf120da
 ---
 
 用于对组件进行裁剪、遮罩处理。
@@ -518,7 +518,7 @@ struct ClipAndMaskExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/EavBuWYVQT-K6-AuLCeCZQ/zh-cn_image_0000002723696798.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/hpncfnl5R7qJZ-85PygaCQ/zh-cn_image_0000002727752314.png)
 
 ### 示例2（实现组件遮罩）
 
@@ -587,4 +587,4 @@ struct ProgressMaskExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/xPvbiNhXQEuvt6Tg1IennA/zh-cn_image_0000002753296565.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/D-CZRt7WSs61OKtasuSW0g/zh-cn_image_0000002757312029.gif)

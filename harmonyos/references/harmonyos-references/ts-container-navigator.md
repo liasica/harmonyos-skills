@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Navigator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > Navigator
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:18+08:00
+scraped_at: 2026-09-18T06:48:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:788decfd994741a8150fd9fbf4bfea584e0d26a6eaf2a3195064cdb23bd54d56
+content_hash: sha256:caebfb1e2d769a99a6ba054cf49ecba5ea1b695de5774fa4f62a42c4b718b8f2
 ---
 
 路由容器组件，提供路由跳转能力。
@@ -232,4 +232,4 @@ struct BackExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/atnrWojyQfete3-4GBzX0g/zh-cn_image_0000002753457191.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ZZs7Jmu2Rq6KiLGFU_p7nw/zh-cn_image_0000002727593166.gif)

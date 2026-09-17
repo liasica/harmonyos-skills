@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-str
 title: 结构体
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:40+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:b9c191d539157ee232c17c515ac6fabc75fce592b44bac5fd584b5ddea4d88a2
+scraped_at: 2026-09-18T06:48:54+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:7f9e9515a840ae1b7aab59fb1b4788f8f0b3e469976337e6abb8ee616b4d43ae
 ---
 
 * **[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)**
@@ -212,7 +212,7 @@ content_hash: sha256:b9c191d539157ee232c17c515ac6fabc75fce592b44bac5fd584b5ddea4
 * **[ArkUI\_TouchTestInfo](capi-arkui-nativemodule-arkui-touchtestinfo.md)**
 * **[ArkUI\_TouchTestInfoItem](capi-arkui-nativemodule-arkui-touchtestinfoitem.md)**
 * **[ArkUI\_TouchTestInfoItem\*](capi-arkui-nativemodule-arkui-touchtestinfoitemhandle.md)**
-* **[ArkUI\_TouchTestInfoItemArray](capi-arkui-nativemodule-arkui-touchtestinfoitemhandlearray.md)**
+* **[ArkUI\_TouchTestInfoItemHandle\*](capi-arkui-nativemodule-arkui-touchtestinfoitemhandlearray.md)**
 * **[ArkUI\_TextMenuItem](capi-arkui-nativemodule-arkui-textmenuitem.md)**
 * **[ArkUI\_TextMenuItemArray](capi-arkui-nativemodule-arkui-textmenuitemarray.md)**
 * **[ArkUI\_TextEditMenuOptions](capi-arkui-nativemodule-arkui-texteditmenuoptions.md)**

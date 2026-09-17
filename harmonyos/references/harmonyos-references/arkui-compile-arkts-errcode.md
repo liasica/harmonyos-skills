@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-com
 title: UI编译
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI编译
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:49+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:4cdb34ac1a53081f2d078fb127bef644c58a6833462f151e2f9dffc213e8ed50
+scraped_at: 2026-09-18T06:49:02+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:86569ac7e67646549eba470e2b2e358aee8b527b1b5b44b8f8fc140933dbec88
 ---
 
-* **[编译错误码](_ark_ui_compile.md)**
+* **[编译错误码](errorcode-arkui-compile.md)**

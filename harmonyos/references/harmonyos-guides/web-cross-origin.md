@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-cross-ori
 title: 解决Web组件本地资源跨域问题
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理Web组件的网络安全与隐私 > 解决Web组件本地资源跨域问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:56343a918b89db1292fbc98f7584e62941e975a73b8b9ace49747ed0f22f0d39
+scraped_at: 2026-09-18T06:45:15+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:fb1e7249b2270212d6339a279c357acf22b6b6f02d2df2b06b092519a5eaacd1
 ---
 
 ## 拦截本地资源跨域
@@ -111,26 +111,23 @@ Access to script at 'xxx' from origin 'xxx' has been blocked by CORS policy: Cro
 
   setPathAllowingUniversalAccess放开目录的跨域访问限制是一个高风险操作。基于最小权限原则，当前el1，el2放开的路径是固定的，路径列表中的路径应符合以下任一路径格式：
 
-  1.应用文件目录通过[Context.filesDir](../harmonyos-references/js-apis-inner-application-context.md#属性)获取，其子目录示例如下：
+  1. 应用文件目录通过[Context.filesDir](../harmonyos-references/js-apis-inner-application-context.md#属性)获取，其子目录示例如下：
 
-  + /data/storage/el2/base/files/example
-  + /data/storage/el2/base/haps/entry/files/example
+     + /data/storage/el2/base/files/example
+     + /data/storage/el2/base/haps/entry/files/example
+  2. 应用资源目录通过[Context.resourceDir](../harmonyos-references/js-apis-inner-application-context.md#属性)获取，其子目录示例如下：
 
-  2.应用资源目录通过[Context.resourceDir](../harmonyos-references/js-apis-inner-application-context.md#属性)获取，其子目录示例如下：
+     + /data/storage/el1/bundle/entry/resources/resfile
+     + /data/storage/el1/bundle/entry/resources/resfile/example
+  3. 从API version 21开始，还包括了应用缓存目录通过[Context.cacheDir](../harmonyos-references/js-apis-inner-application-context.md#属性)获取，其子目录示例如下：
 
-  + /data/storage/el1/bundle/entry/resources/resfile
-  + /data/storage/el1/bundle/entry/resources/resfile/example
+     + /data/storage/el2/base/cache
+     + /data/storage/el2/base/haps/entry/cache/example
+     + 设置的目录路径中，不允许包含cache/web，否则会抛出异常码401。如果设置目录路径是cache，cache/web也不允许访问。
+  4. 从API version 21开始，还包括了应用临时目录通过[Context.tempDir](../harmonyos-references/js-apis-inner-application-context.md#属性)获取，其子目录示例如下：
 
-  3.从API version 21开始，还包括了应用缓存目录通过[Context.cacheDir](../harmonyos-references/js-apis-inner-application-context.md#属性)获取，其子目录示例如下：
-
-  + /data/storage/el2/base/cache
-  + /data/storage/el2/base/haps/entry/cache/example
-  + 设置的目录路径中，不允许包含cache/web，否则会抛出异常码401。如果设置目录路径是cache，cache/web也不允许访问。
-
-  4.从API version 21开始，还包括了应用临时目录通过[Context.tempDir](../harmonyos-references/js-apis-inner-application-context.md#属性)获取，其子目录示例如下：
-
-  + /data/storage/el2/base/temp
-  + /data/storage/el2/base/haps/entry/temp/example
+     + /data/storage/el2/base/temp
+     + /data/storage/el2/base/haps/entry/temp/example
 
   当路径列表中的任一路径不满足上述条件时，系统将抛出异常码401，并判定路径列表设置失败。如果路径列表设置为空，file协议的可访问范围将遵循[fileAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#fileaccess)规则，具体示例如下。
 

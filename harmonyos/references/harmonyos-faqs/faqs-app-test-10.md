@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-1
 title: DevEco Studio AppAnalyzer-安装Python依赖错误
 breadcrumb: FAQ > DevEco Studio > 应用测试 > DevEco Studio AppAnalyzer-安装Python依赖错误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:36+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:f6a8c82bd28245281b927da71d7717ea00f025c3529f77a13dcef71238358de2
+scraped_at: 2026-09-18T06:55:17+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:81446d8d7c67928e6d08b24a41642706843ec0729627cb4a2c81aa99af544dec
 ---
 
 ## 问题现象
@@ -14,13 +14,29 @@ content_hash: sha256:f6a8c82bd28245281b927da71d7717ea00f025c3529f77a13dcef712383
 
 ## DevEco Studio 6.0.2及以上版本
 
-### 可能原因
+### 可能原因一
 
 DevEco Studio 代理配置不正确。
 
 ### 解决措施
 
 请点击 DevEco Studio 文件 > 设置 > 外观和行为 > 系统设置 > Http 代理，检查代理配置。
+
+### 可能原因二
+
+环境变量导致Python运行异常。
+
+### 解决措施
+
+移除以下环境变量。
+
+```screen
+SSLKEYLOGFILE
+PYTHONHOME
+OPENSSL_CONF、OPENSSL_MODULES
+SSL_CERT_FILE、SSL_CERT_DIR
+OPENSSL_ROOT_DIR、OPENSSL_INCLUDE_DIR、OPENSSL_LIB_DIR
+```
 
 ## DevEco Studio 6.0.2以下版本
 

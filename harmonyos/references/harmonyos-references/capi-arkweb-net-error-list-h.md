@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkw
 title: arkweb_net_error_list.h
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 头文件 > arkweb_net_error_list.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b3a817b74398645e1a364e0de7a7b26805f490373ad0197bdbe14881f882ca2f
+scraped_at: 2026-09-18T06:49:08+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:1a3894153882e563bc12bb806e96ba3ed9c07fe2b9ee6d097883617cd65c9653
 ---
 
 ## 概述
@@ -114,7 +114,7 @@ enum ArkWeb_NetError
 | ARKWEB\_ERR\_PROXY\_CERTIFICATE\_INVALID = -136 | HTTPS代理提供的证书无效。 |
 | ARKWEB\_ERR\_NAME\_RESOLUTION\_FAILED = -137 | 在尝试进行域名解析（DNS）时发生错误。 |
 | ARKWEB\_ERR\_NETWORK\_ACCESS\_DENIED = -138 | 访问网络的权限被拒绝。这用于区分很可能是由防火墙导致的错误和其他访问被拒绝的错误。另请参阅ARKWEB\_ERR\_ACCESS\_DENIED。 |
-| ARKWEB\_ERR\_TEMPORARILY\_THROTTLED = -139 | 请求节流模块取消了此请求，以避免DDOS攻击。 |
+| ARKWEB\_ERR\_TEMPORARILY\_THROTTLED = -139 | 请求节流模块取消了此请求，以避免DDoS攻击。 |
 | ARKWEB\_ERR\_HTTPS\_PROXY\_TUNNEL\_RESPONSE\_REDIRECT = -140 | 通过HTTPS代理创建SSL隧道连接的请求收到了302（临时重定向）响应。响应体可能包含请求失败原因的说明。 |
 | ARKWEB\_ERR\_SSL\_CLIENT\_AUTH\_SIGNATURE\_FAILED = -141 | 我们无法使用客户端证书的私钥签署SSL客户端身份验证握手的CertificateVerify数据。 |
 | ARKWEB\_ERR\_MSG\_TOO\_BIG = -142 | 消息对于传输来说太大了。（例如，UDP消息超过了大小阈值）。 |

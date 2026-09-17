@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_pointer_style.h
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 头文件 > oh_pointer_style.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:073b620764fd421c4b0f13216b9dd0e74ae49aac53ae8817e9066fcee6be1ecf
+scraped_at: 2026-09-18T06:50:21+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:2e2b397b59b82c633fecbe7eb6ffb0c863917472a143c2abdd5d558996780aed
 ---
 
 ## 概述
@@ -91,8 +91,8 @@ enum Input_PointerStyle
 | LOADING = 42 | 正在载入动画光标 |  |
 | RUNNING = 43 | 后台运行中动画光标 |  |
 | MIDDLE\_BTN\_EAST\_WEST = 44 | 向东西滚动 |  |
-| RUNNING\_LEFT = 45 | 后台运行中动画光标(拓展1) |  |
-| RUNNING\_RIGHT = 46 | 后台运行中动画光标(拓展2) |  |
+| RUNNING\_LEFT = 45 | 后台运行中动画光标（拓展1） |  |
+| RUNNING\_RIGHT = 46 | 后台运行中动画光标（拓展2） |  |
 | AECH\_DEVELOPER\_DEFINED\_ICON = 47 | 圆形自定义光标 |  |
 | SCREENRECORDER\_CURSOR = 48 | 录屏光标 |  |
 | LASER\_CURSOR = 49 | 悬浮光标。手写笔进入空鼠模式时使用该光标，无法直接设置。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |

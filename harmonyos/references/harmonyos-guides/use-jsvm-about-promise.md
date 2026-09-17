@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口处理异步操作
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口处理异步操作
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:29e2c35854c12db1223b0e89c97d01f085dab1b68fd7751143a06bfe9a0bb78f
+scraped_at: 2026-09-18T06:46:57+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:626739b7529dcf209f1b1e233ee9d3691b3735d1f63da916d7604473723d3635
 ---
 
 ## 简介
@@ -183,7 +183,7 @@ OH_JSVM_RejectDeferred reject
 
 用于设置 Promise 解析或拒绝后的回调，等效于调用原生的 Promise.then() 或 Promise.catch()。
 
-以下仅对 cpp 部分代码进行展示，其余框架代码如 TestJSVM 函数参考 [使用JSVM-API接口进行任务队列相关开发](use-jsvm-execute_tasks.md) OH\_JSVM\_SetMicrotaskPolicy 段落中的实现。
+以下仅对 cpp 部分代码进行展示，其余框架代码如 TestJSVM 函数参考 [使用JSVM-API接口进行任务队列相关开发](use-jsvm-execute-tasks.md) OH\_JSVM\_SetMicrotaskPolicy 段落中的实现。
 
 ```
 static int PromiseRegisterHandler(JSVM_VM vm, JSVM_Env env) {

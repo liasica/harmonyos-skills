@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感功耗优化
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感功耗优化
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:26+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:88454e756a6ad4224c9bcae79b715c75b0cdb6e768ebdf75b8c02a308ed91635
+scraped_at: 2026-09-18T06:45:06+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:262a1350a07e58b52ad3026b1703ff5c9394a8ece85559ea270749db954ba58c
 ---
 
 沉浸光感效果由材质滤镜、折射、高光、阴影等多层效果叠加而成，渲染时需要消耗GPU资源，不合理使用会显著增加功耗。
@@ -23,7 +23,7 @@ content_hash: sha256:88454e756a6ad4224c9bcae79b715c75b0cdb6e768ebdf75b8c02a308ed
 * 指定弹窗类组件（[AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md)、[ActionSheet](../harmonyos-references/ts-methods-action-sheet.md)、[CustomDialog](../harmonyos-references/ts-methods-custom-dialog-box.md)、[CalendarPickerDialog](../harmonyos-references/ts-methods-calendarpicker-dialog.md)、[DatePickerDialog](../harmonyos-references/ts-methods-datepicker-dialog.md)、[TimePickerDialog](../harmonyos-references/ts-methods-timepicker-dialog.md)、[TextPickerDialog](../harmonyos-references/ts-methods-textpicker-dialog.md)、[SelectionMenu](../harmonyos-references/ohos-arkui-advanced-selectionmenu.md)、[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)弹窗、[Text](../harmonyos-references/ts-basic-components-text.md)设置[copyOption](../harmonyos-references/ts-basic-components-text.md#copyoption9)后长按或双击触发的文本菜单）的沉浸光感效果可在全页面生效。
 * 指定弹窗类接口（[PromptAction](../harmonyos-references/arkts-apis-uicontext-promptaction.md)、[ArkUI\_NativeDialog](../harmonyos-references/capi-arkui-nativemodule-arkui-nativedialog.md)、[@ohos.promptAction (弹窗)](../harmonyos-references/js-apis-promptaction.md)、[Popup控制](../harmonyos-references/ts-universal-attributes-popup.md)、[Tips控制](../harmonyos-references/ts-universal-attributes-tips.md)、[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)、[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)）的沉浸光感效果可在全页面生效。
 * [Slider](../harmonyos-references/ts-basic-components-slider.md)、[Toggle](../harmonyos-references/ts-basic-components-toggle.md)、[Select](../harmonyos-references/ts-basic-components-select.md)的沉浸光感效果可在全页面生效。
-* 其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
+* 其他组件仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 
 ```ts
 import { uiMaterial } from '@kit.ArkUI';
@@ -221,7 +221,7 @@ setInterval(() => {
 
 ## 避免重复叠加阴影
 
-沉浸式系统材质默认已通过[applyShadow](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)提供阴影，再额外设置通用[shadow](../harmonyos-references/ts-universal-attributes-image-effect.md#shadow)属性既与材质效果冲突，又造成重复绘制开销。如需自定义阴影，应将applyShadow置为false后再使用shadow，避免两套效果同时生效。
+沉浸式系统材质默认已通过[applyShadow](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)提供阴影，再额外设置通用[shadow](../harmonyos-references/ts-universal-attributes-image-effect.md#shadow)属性既与材质效果冲突，又造成重复绘制开销。如需自定义阴影，应将applyShadow置为false后再使用shadow，避免重复叠加阴影造成额外开销。
 
 ```ts
 // 正例：如需自定义阴影，先关闭沉浸式系统材质自带阴影（applyShadow:false）

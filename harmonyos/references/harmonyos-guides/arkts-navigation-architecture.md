@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation基础架构介绍
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation基础架构介绍
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:22+08:00
+scraped_at: 2026-09-18T06:45:03+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c51283182bbffeccffa9ad1a9566004302630ac03fd61912a1b31ffe257bf141
+content_hash: sha256:131434a4a8b3f67c9a4d8c13b511070c97db4b5a4b14cb5f9e04ceeebed5aaeb
 ---
 
 导航组件（[Navigation](../harmonyos-references/ts-basic-components-navigation.md)）主要用于实现[NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)页面间的跳转，支持在不同NavDestination间传递参数，提供灵活的跳转栈操作，从而更便捷地实现对不同页面的访问和复用。
@@ -29,7 +29,7 @@ Navigation组件结构较为复杂，包含几个关键概念：
 
 **图1** Navigation总体架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/uXZZGg-URRu1njjRzvm5ag/zh-cn_image_0000002753454215.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/7nWWx9JtQL2Z8WyluX0Lbg/zh-cn_image_0000002757229881.png)
 
 此外Navigation提供两种布局模式：单栏模式、分栏模式，不同模式下的结构如下。
 
@@ -39,18 +39,18 @@ Navigation组件结构较为复杂，包含几个关键概念：
 
   **图2** 单栏布局示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/XUcAXq0OTYGbsnF3FcucZA/zh-cn_image_0000002723854450.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/sDGkxqYlS9-ioaS-apRk7Q/zh-cn_image_0000002727590190.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/hv99unpFQMiUQr00Lhy13Q/zh-cn_image_0000002723694532.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/s4uhcjb-Tiax5-9qts3V7g/zh-cn_image_0000002727750048.jpg)
 * 分栏模式：
 
   当Navigation容器宽度大于等于600vp时，建议使用分栏模式。此模式下Navigation分为左右两部分，左侧为导航栏（NavBar），右侧为子页面（NavDestination）。发生路由跳转时，只有右边子页会被替换。
 
   **图3** 分栏布局示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/lz0XGaAgQB64h_b0C8uahg/zh-cn_image_0000002753294299.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/kxodqpZMQheaPQk19hpHxA/zh-cn_image_0000002757309763.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/KSM6vZcER6CW9Ea8r9FFCw/zh-cn_image_0000002753454217.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/n0BE8VhBSjqaYBpve7bmVg/zh-cn_image_0000002757229883.jpg)
 
 ## Navigation（导航容器）
 
@@ -186,7 +186,7 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
   **图4** Mini模式标题栏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/EUEMxdzQS_edHtLUUrdLew/zh-cn_image_0000002723854452.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ufv78chBSkiGuvkrxxMcQQ/zh-cn_image_0000002727590192.jpg)
 
   ```typescript
   Navigation() {
@@ -200,7 +200,7 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
   **图5** Full模式标题栏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/We08fd8yThOp9rpjFN2ShQ/zh-cn_image_0000002723694534.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/zJQ9bZYCSpqhTt-cVd7HEw/zh-cn_image_0000002727750050.jpg)
 
   ```typescript
   Navigation() {
@@ -215,7 +215,7 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
 **图6** 设置了3个图标的菜单栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/uRiIoT3KRH-r9Ndp-zbMxQ/zh-cn_image_0000002753294301.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/0GV2llgoTdOk7irf-m9aFQ/zh-cn_image_0000002757309765.jpg)
 
 ```typescript
 let menuItem: NavigationMenuItem  = {
@@ -247,7 +247,7 @@ let menuItem: NavigationMenuItem  = {
 
 **图7** 设置了4个图标的菜单栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/ZAULGCiCTXakG9leWzBWJg/zh-cn_image_0000002753454219.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/E3Lx8rarRhOuHp22DZ9x2A/zh-cn_image_0000002757229885.jpg)
 
 竖屏状态下菜单栏，最多支持显示3个按钮，当按钮超过3个时，多余的按钮会被折叠。
 
@@ -271,7 +271,7 @@ let menuItem: NavigationMenuItem  = {
 
 **图8** 工具栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Vhdu4l3sT4-VDjWiqzybXg/zh-cn_image_0000002723854454.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/iL9UsVzVRpaytG6yDNhDIw/zh-cn_image_0000002727590194.jpg)
 
 ```typescript
 let toolTmp: ToolbarItem = {

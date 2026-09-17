@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-7
 title: HarmonyOS APK应用和HarmonyOS应用在一键登录场景下的用户数据如何互通
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > HarmonyOS APK应用和HarmonyOS应用在一键登录场景下的用户数据如何互通
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:36+08:00
+scraped_at: 2026-09-18T06:46:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6a2ae381fe839cb80ac53952812223d1b86dca085ace407a0ea35e8dbc570fc2
+content_hash: sha256:73c0323aa854a28e83f5086c3ab466b7820f38c5fb096fa6b6ac69a8831443ab
 ---
 
 终端设备从HarmonyOS 3.x/4.x（简称HarmonyOS）升级到HarmonyOS NEXT/5.0.x及之后版本（简称HarmonyOS NEXT）。
@@ -13,4 +13,4 @@ content_hash: sha256:6a2ae381fe839cb80ac53952812223d1b86dca085ace407a0ea35e8dbc5
 1. HarmonyOS APK应用使用OpenID关联用户数据时，将用户数据关系切换成UnionID，具体切换指导可以参考：[通过OpenID获取UnionID](../harmonyos-references/account-api-get-unionid.md)。
 2. HarmonyOS APK应用使用UnionID关联用户数据时，在HarmonyOS NEXT/5.0.x上接入华为账号一键登录获取手机号后，应用需要同时将UnionID和手机号与用户信息进行关联，最终实现应用使用华为账号一键登录和手机号登录数据互通。详细流程可以参考：[用户场景设计](account-phone-unionid-login.md#用户场景设计)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/4k_O6aTsTPanpGs3uKFYbg/zh-cn_image_0000002723855840.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Y0Z6Fj3cTZOwNRrwZNzk3w/zh-cn_image_0000002727591580.png)

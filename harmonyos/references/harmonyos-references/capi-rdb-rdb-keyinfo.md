@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-
 title: Rdb_KeyInfo
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > Rdb_KeyInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:abb4594fa8a093f8e2d735ef30d3ed5e21cbc7151ad36d6da4558e695ecaa9e9
+scraped_at: 2026-09-18T06:47:46+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:055a9f5f4670c7b286574da1d39e9e2bdbdaee98a172a53702859d298176b72b
 ---
 
 ```c
-typedef struct {...} Rdb_KeyInfo
+typedef struct Rdb_KeyInfo {...} Rdb_KeyInfo
 ```
 
 ## 概述

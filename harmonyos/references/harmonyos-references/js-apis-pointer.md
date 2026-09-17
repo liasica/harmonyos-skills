@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.multimodalInput.pointer (鼠标光标)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.pointer (鼠标光标)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f6a8418fc852b0d0cb6ac1adb5dfbeff916b492345b22cc81fbcfbc82af4066a
+scraped_at: 2026-09-18T06:50:21+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:13e72e9b98a6dee10676a47f4a77941ec7fe06e1f8231ecf5680ffdbfaed96ef
 ---
 
 鼠标光标管理模块，用于查询和设置鼠标光标相关属性。
@@ -783,13 +783,13 @@ struct Index {
 | LOADING10+ | 42 | 正在载入动画光标  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |  |
 | RUNNING10+ | 43 | 后台运行中动画光标  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |  |
 | MIDDLE\_BTN\_EAST\_WEST18+ | 44 | 向东西滚动 |  |
-| RUNNING\_LEFT22+ | 45 | 后台运行中动画光标(拓展1) |  |
-| RUNNING\_RIGHT22+ | 46 | 后台运行中动画光标(拓展2) |  |
+| RUNNING\_LEFT22+ | 45 | 后台运行中动画光标（拓展1） |  |
+| RUNNING\_RIGHT22+ | 46 | 后台运行中动画光标（拓展2） |  |
 | AECH\_DEVELOPER\_DEFINED\_ICON22+ | 47 | 圆形自定义光标 |  |
 | SCREENRECORDER\_CURSOR20+ | 48 | 录屏光标 |  |
-| LASER\_CURSOR22+ | 49 | 悬浮光标。手写笔进入空鼠模式时使用该光标，无法直接设置 。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
-| LASER\_CURSOR\_DOT22+ | 50 | 点击光标。手写笔进入空鼠模式时使用该光标，无法直接设置 。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
-| LASER\_CURSOR\_DOT\_RED22+ | 51 | 激光笔光标。手写笔进入空鼠模式时使用该光标，无法直接设置 。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
+| LASER\_CURSOR22+ | 49 | 悬浮光标。手写笔进入空鼠模式时使用该光标，无法直接设置。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
+| LASER\_CURSOR\_DOT22+ | 50 | 点击光标。手写笔进入空鼠模式时使用该光标，无法直接设置。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
+| LASER\_CURSOR\_DOT\_RED22+ | 51 | 激光笔光标。手写笔进入空鼠模式时使用该光标，无法直接设置。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
 | DEVELOPER\_DEFINED\_ICON22+ | -100 | 自定义光标，开发者可使用[setCustomCursor](js-apis-pointer.md#pointersetcustomcursor15)设置自定义光标，不支持使用[setPointerStyle](js-apis-pointer.md#pointersetpointerstyle-1)直接设置。 | 自定义光标样式，通过接口设置。该参数用于getPointerStyle在特定场景（在设置自定义光标样式的窗口上获取样式）下返回数据，不能作为setCustomCursor、setPointerStyle接口入参使用。 |
 
 ## pointer.setCustomCursor11+

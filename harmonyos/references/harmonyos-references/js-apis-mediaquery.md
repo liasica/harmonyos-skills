@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-m
 title: "@ohos.mediaquery (媒体查询)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.mediaquery (媒体查询)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9555f7344d59b736bcd660cd215fa3f7b1f99dae6cf173a38232b4c8272e17af
+scraped_at: 2026-09-18T06:47:58+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:7402d9b1e46eed6ad9d5774f4833112c968cd989b99651a64252b9ebdee21b9d
 ---
 
 提供根据不同媒体类型定义不同的样式。
@@ -122,7 +122,7 @@ off(type: 'change', callback?: Callback<MediaQueryResult>): void
 ```ts
 import { mediaquery } from '@kit.ArkUI';
 
-let listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orientation: landscape)'); // 监听横屏事件
+let listener: mediaquery.MediaQueryListener = this.getUIContext().getMediaQuery().matchMediaSync('(orientation: landscape)'); // 监听横屏事件
 function onPortrait(mediaQueryResult:mediaquery.MediaQueryResult) {
   if (mediaQueryResult.matches) {
     // do something here
@@ -197,4 +197,4 @@ struct MediaQueryExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ARClw0R5QkCS8OHfBvX9JA/zh-cn_image_0000002753296463.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/SRhD_vSHTea5k9BzACB1qA/zh-cn_image_0000002757311927.png)

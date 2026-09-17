@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-device-layout-overview
-title: 多设备功能开发
-breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备功能开发
+title: 布局概述
+breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 布局概述
 category: best-practices
-scraped_at: 2026-09-16T06:55:00+08:00
-doc_updated_at: 2026-09-15
+scraped_at: 2026-09-18T06:52:33+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:211870d85e4b95f0341586b5507f8f988daf3b980ba84759112912ffde018bf4
 ---
 

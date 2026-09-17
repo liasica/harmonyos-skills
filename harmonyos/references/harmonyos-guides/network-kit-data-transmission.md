@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-kit-d
 title: 访问网络
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:58+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-09-18T06:45:36+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:51bf194280519a257c6c4e1e68b0760a3cddc159df61c860ba63056f8ceea620
 ---
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device_notifi
 title: 穿戴设备模板化通知
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 穿戴设备模板化通知
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:08+08:00
+scraped_at: 2026-09-18T06:45:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a1658c16e8b1bd77bad44216be97c5c19be685d3331a489863d7e7a1bb62a16e
+content_hash: sha256:6b55b952e07f53f0f802e2944f5f74c21550e142b2fc6db12d830ea2edf07818
 ---
 
 手机侧应用向穿戴设备发送通知，并在穿戴设备上按模板显示，支持穿戴设备收到通知后同步振动或响铃（跟随穿戴设备系统设置）。执行成功后，穿戴设备上会显示下图所示通知界面。
 
 该接口无需用户授权，仅需要确保应用已申请消息通知权限（参见[申请接入Wear Engine服务](wearengine_apply.md)），否则接口将调用失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/K2Wh149ySzmB7-ohuVIQPA/zh-cn_image_0000002723855486.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/C5rxpOyHT-qwJPqdagWCyQ/zh-cn_image_0000002727591226.png)
 
 **说明** 
 

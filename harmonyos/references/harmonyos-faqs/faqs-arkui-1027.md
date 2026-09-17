@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1027
 title: 如何实现想法标记功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现想法标记功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:5a8ecb8c7a497b166000eb5330a138a15d029da169dbb0946714de371c439541
+scraped_at: 2026-09-18T06:54:07+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:89420dfc99f6ac64059187876d272655d73ef463e5dc15ee84181425eb4f3c11
 ---
 
 ## 问题现象
@@ -19,7 +19,7 @@ content_hash: sha256:5a8ecb8c7a497b166000eb5330a138a15d029da169dbb0946714de371c4
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ZUnIjI1OQ3eUGRKfINioDg/zh-cn_image_0000002658804085.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/5ripiEbKQW2Qj1XPz6y5Qg/zh-cn_image_0000002658804085.png "点击放大")
 
 ## 背景知识
 
@@ -32,7 +32,7 @@ content_hash: sha256:5a8ecb8c7a497b166000eb5330a138a15d029da169dbb0946714de371c4
 1. 选择菜单内添加自定义按钮：通过设置Text组件的[editMenuOptions](../harmonyos-references/ts-basic-components-text.md#editmenuoptions12)属性实现。
 2. 点击想法按钮弹出想法输入框：[绑定半模态页面](../harmonyos-guides/arkts-sheet-page.md)，将输入框放在半模态页面内，点击按钮时打开。
 3. 输入框为空时不能添加想法：通过[TextInput](../harmonyos-references/ts-basic-components-textinput.md)组件的[onChange()](../harmonyos-references/ts-basic-components-textinput.md#onchange)事件读取输入框的内容并记录，在添加想法时判断输入框内容是否为空，若为空则不做任何反应。
-4. 将选择的文本标记高亮：参考[文本标记高亮显示](../architecture-guides/text_marker_ability-0000002283796046.md)。
+4. 将选择的文本标记高亮：参考[文本标记高亮显示](../architecture-guides/regular_highlight-0000002328562941.md)。
 5. 点击高亮部分显示对应想法：创建一个Map用来存储想法，以高亮的结束坐标为键，想法内容为值，点击高亮时读取Map值用于显示。
 
 完整示例代码如下：

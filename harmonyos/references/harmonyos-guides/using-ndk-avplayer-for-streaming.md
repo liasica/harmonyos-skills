@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avp
 title: 使用AVPlayer播放流媒体(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用AVPlayer播放流媒体(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:26+08:00
+scraped_at: 2026-09-18T06:46:00+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:deeb82cc89cb0d953fecbb3458b2713fba222dfd64c03ddc0346b35f48226ca7
+content_hash: sha256:d342eca47d842bad61a057b922afeecd4d8d54e9f822f25e2a215b7ea8bbd887
 ---
 
 从API version 11开始，支持使用[AVPlayer](../harmonyos-references/capi-avplayer.md)实现端到端播放流媒体资源。本开发指导将以完整地播放一个流媒体作为示例，向开发者讲解AVPlayer流媒体播放相关功能。
@@ -18,7 +18,7 @@ content_hash: sha256:deeb82cc89cb0d953fecbb3458b2713fba222dfd64c03ddc0346b35f482
 
 **播放状态变化示意图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/1NB8lsyUSZu7qqYQ_86xUw/zh-cn_image_0000002753295503.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/wRbJ9qq7RJCdZs9paCo8Jw/zh-cn_image_0000002757310967.png)
 
 ## 开发建议
 

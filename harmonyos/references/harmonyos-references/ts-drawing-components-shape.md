@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Shape
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Shape
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8af5bf1ba71a9bb68c4634091bd88149bb635629c15982e534ffa3b0e7f5fff7
+scraped_at: 2026-09-18T06:48:26+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:a67a4ca96e83ec55b6bf889c0eeab663cdd2a53612b8dfcc4e58cc7785e8866d
 ---
 
 绘制组件的父组件，描述所有绘制组件均支持的通用属性。
@@ -14,9 +14,8 @@ Shape组件通过定义视口、填充、边框等属性，支持矢量图形的
 
 Shape组件的两种使用方式：
 
-1、绘制组件使用Shape作为父组件，实现类似SVG的矢量图形的组合绘制。
-
-2、绘制组件单独使用，用于在页面上绘制指定的图形。
+1. 绘制组件使用Shape作为父组件，实现类似SVG的矢量图形的组合绘制。
+2. 绘制组件单独使用，用于在页面上绘制指定的图形。
 
 **说明** 
 
@@ -306,7 +305,7 @@ struct ShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/zywQx3duSZWTIHAFmVpUuQ/zh-cn_image_0000002723857242.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/UQYBV1GAQni8MDgxHRx3FA/zh-cn_image_0000002727592982.png)
 
 ### 示例2（使用不同参数类型绘制图形）
 
@@ -349,7 +348,7 @@ struct ShapeTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/YgDPO7EgT6SwpHK2XrI5iA/zh-cn_image_0000002723697324.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/YSz8vab8ScKJed7rYYJ7oA/zh-cn_image_0000002727752840.png)
 
 ### 示例3（使用attributeModifier动态设置Shape组件的属性）
 
@@ -393,7 +392,7 @@ struct ShapeModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/5zGi0u9WQBaDKG84DchuDA/zh-cn_image_0000002753297091.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/dkjNwgJhTxqUOqchRCYB_Q/zh-cn_image_0000002757312555.png)
 
 ### 示例4（使用mesh实现图像局部扭曲）
 
@@ -437,4 +436,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/bS_J-3IkR3CmFkpyqydd0g/zh-cn_image_0000002753457009.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/x4kR20tfRfuKX-2qbZK1Tg/zh-cn_image_0000002757232675.png)

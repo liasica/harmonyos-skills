@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-resource-
 title: 自定义页面请求响应
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 自定义页面请求响应
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8ccfb5585bc3ac55e05d7a2a3d91259e0235311f7f02c996a7e0a9115a9d2478
+scraped_at: 2026-09-18T06:45:16+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:b8771fb4543d5e4cfe93f4e4799b909f2794388192ab806ab81c0097284dcc99
 ---
 
 Web组件支持在应用拦截到页面请求后自定义响应请求能力。开发者通过[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)接口来实现自定义资源请求响应。自定义请求能力可以用于开发者自定义Web页面响应、自定义文件资源响应等场景。
 
 Web网页上发起资源加载请求，应用层收到资源请求信息。应用层构造本地资源响应信息发送给Web内核。Web内核解析应用层响应信息，根据此响应信息进行页面资源加载。
 
-在下面的示例中，Web组件通过拦截页面请求“https://www.example.com/test.html”，在应用侧代码构建响应资源，实现自定义页面响应场景。
+在下面的示例中，Web组件通过拦截页面请求https://www.example.com/test.html，在应用侧代码构建响应资源，实现自定义页面响应场景。
 
 * 前端页面index1.html代码。
 
@@ -74,11 +74,11 @@ Web网页上发起资源加载请求，应用层收到资源请求信息。应�
   ```
 * 被拦截后的页面
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/QQ5ZtTqKRrST-XLMQKWrSA/zh-cn_image_0000002753454905.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/JCEgM03HR7eKKD_qN-pYbg/zh-cn_image_0000002757230571.png)
 
 为自定义的JavaScript请求响应生成CodeCache：自定义请求响应的资源类型如果是JavaScript脚本，可以在响应头中添加“ResponseDataID”字段，Web内核读取到该字段后会为该JS资源生成CodeCache，加速JS执行，并且ResponseData如果有更新时必须更新该字段。不添加“ResponseDataID”字段的情况下默认不生成CodeCache。
 
-在下面的示例中，Web组件通过拦截页面请求“https://www.example.com/test.js”，应用侧代码构建响应资源，在响应头中添加“ResponseDataID”字段，开启生成CodeCache的功能。
+在下面的示例中，Web组件通过拦截页面请求https://www.example.com/test.js，应用侧代码构建响应资源，在响应头中添加“ResponseDataID”字段，开启生成CodeCache的功能。
 
 * 前端页面index2.html代码。
 
@@ -168,4 +168,4 @@ Web网页上发起资源加载请求，应用层收到资源请求信息。应�
   ```
 * 被拦截后的页面
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/bUjrjVspQ4uHIEUiiZXKrA/zh-cn_image_0000002723855140.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/5TALFVQtQAWkZTWpOQPDcA/zh-cn_image_0000002727590880.png)

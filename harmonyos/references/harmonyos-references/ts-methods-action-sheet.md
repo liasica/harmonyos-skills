@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 列表选择弹窗 (ActionSheet)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 列表选择弹窗 (ActionSheet)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:09+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:d74ffe5e8665f79189f8f2f1ef8c4e1eeaf2104467ee0f8cf75b8a8bcfef50bf
+scraped_at: 2026-09-18T06:48:28+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:02d83300a948dcc0a6298f7813bbefb8db2a4c8d1fbf8e19172c67eea028ac61
 ---
 
 用于显示列表选择项的弹窗组件。
@@ -37,7 +37,7 @@ content_hash: sha256:d74ffe5e8665f79189f8f2f1ef8c4e1eeaf2104467ee0f8cf75b8a8bcfe
 | showInSubWindow11+ | boolean | 否 | 是 | 当弹窗需要显示在主窗口之外时，是否在子窗口显示此弹窗。值为true表示在子窗口显示弹窗。  默认值：false，弹窗显示在应用内，而非独立子窗口。  **说明：**  showInSubWindow为true的弹窗无法触发显示另一个showInSubWindow为true的弹窗。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | isModal11+ | boolean | 否 | 是 | 弹窗是否为模态窗口，模态窗口有蒙层，非模态窗口无蒙层。值为false时，弹窗为非模态窗口，无蒙层。  默认值：true，此时弹窗有蒙层。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | backgroundColor11+ | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 弹窗背板颜色。  默认值：Color.Transparent  **说明：**  backgroundColor会与模糊属性backgroundBlurStyle叠加产生效果，如果不符合预期，可将backgroundBlurStyle设置为BlurStyle.NONE，即可取消模糊。当设置了backgroundBlurStyle为非NONE值时，不要设置backgroundColor，否则颜色显示将不符合预期效果。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
-| backgroundBlurStyle11+ | [BlurStyle](ts-universal-attributes-background.md#blurstyle9) | 否 | 是 | 弹窗背板模糊材质。  默认值：从API版本26.0.0开始，为BlurStyle.NONE；API版本26.0.0之前，为BlurStyle.COMPONENT\_ULTRA\_THICK。  **说明：**  设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| backgroundBlurStyle11+ | [BlurStyle](ts-universal-attributes-background.md#blurstyle9) | 否 | 是 | 弹窗背板模糊材质。  默认值：BlurStyle.COMPONENT\_ULTRA\_THICK。  **说明：**  设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | backgroundBlurStyleOptions19+ | [BackgroundBlurStyleOptions](ts-universal-attributes-background.md#backgroundblurstyleoptions10对象说明) | 否 | 是 | 背景模糊效果。默认值请参考BackgroundBlurStyleOptions类型说明。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | backgroundEffect19+ | [BackgroundEffectOptions](ts-universal-attributes-background.md#backgroundeffectoptions11) | 否 | 是 | 背景效果参数。默认值请参考BackgroundEffectOptions类型说明。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | onWillDismiss12+ | Callback<[DismissDialogAction](ts-methods-action-sheet.md#dismissdialogaction12)> | 否 | 是 | 交互式关闭回调函数。  **说明：**  1.当用户执行点击遮障层关闭、侧滑（左滑/右滑）、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。如需关闭弹窗，在回调中调用[DismissDialogAction](ts-methods-action-sheet.md#dismissdialogaction12)的dismiss方法即可。当前组件返回的reason中，暂不支持CLOSE\_BUTTON的枚举值。  2.在onWillDismiss回调中，不能再做onWillDismiss拦截。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
@@ -259,7 +259,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/5PP9gynYSZqZ-mvV_ju81A/zh-cn_image_0000002753297115.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/rVLxmfpuSlm7JphAo7x6VQ/zh-cn_image_0000002757312579.gif)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
@@ -331,7 +331,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/mBVAt5TPQxOUE0eNx4uCzg/zh-cn_image_0000002753457033.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/7mL3c9uKRzqpgjSnGFAAFw/zh-cn_image_0000002757232699.jpg)
 
 ### 示例3（设置弹窗的动画）
 
@@ -393,7 +393,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/C5z7ZESmSTqylF95m92Mqg/zh-cn_image_0000002723857268.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/B7Hf84IYQVKw8Snab4erPg/zh-cn_image_0000002727593008.gif)
 
 ### 示例4（设置弹窗的样式）
 
@@ -475,7 +475,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/STFgCKo_TLuJmG07LYvPeQ/zh-cn_image_0000002723697350.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/BabFGUrSRm65UH5SAR-LuA/zh-cn_image_0000002727752866.gif)
 
 ### 示例5（悬停态弹窗）
 
@@ -547,7 +547,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/wFibDHKkSuqhS1fh_qGIPA/zh-cn_image_0000002753297117.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ZZOtEeJZQRqQ_3feEcDhqA/zh-cn_image_0000002757312581.gif)
 
 ### 示例6（弹窗生命周期）
 
@@ -625,7 +625,7 @@ struct Example1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/zVIYhwWSRm6qaV9gUqrtTg/zh-cn_image_0000002753457035.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/0QUfCWVjQGSzge-uqlumMw/zh-cn_image_0000002757232701.gif)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -685,7 +685,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/YsNyBjCITIiWCnWdwh5d6Q/zh-cn_image_0000002723857270.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Bw0yA4ptTei336iHdCNENQ/zh-cn_image_0000002727593010.png)
 
 ### 示例8（自定义背景效果参数）
 
@@ -746,7 +746,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/hyHH9VaVQdmQBr-nxNmyVQ/zh-cn_image_0000002723697352.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/DycjPzqRSquS70UnfV848g/zh-cn_image_0000002727752868.png)
 
 ### 示例9（设置弹窗的沉浸光感效果）
 
@@ -809,8 +809,8 @@ struct ActionSheetExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/d98Tr5CDQWS2IscBp0u6BA/zh-cn_image_0000002753297119.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/3kmQr9cgQ_-zmp3grW8uhQ/zh-cn_image_0000002757312583.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/x_oKiEr7SYmgfHO1VmCb_w/zh-cn_image_0000002753457037.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/pAs2vK3SSRyoGYlFTwv7FA/zh-cn_image_0000002757232703.gif)

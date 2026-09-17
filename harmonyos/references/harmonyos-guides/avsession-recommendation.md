@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-rec
 title: 播控推荐服务
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 播控推荐服务
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:20+08:00
+scraped_at: 2026-09-18T06:45:55+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c08a90956fd1d6df28f5e10edd3a4c75c9d02166247adb527319526a6a753bd8
+content_hash: sha256:06d8c741b336ff44ef983b1cc8547c17f509446da1be026f0adcc7ae86dcc7e7
 ---
 
 ## 播控特性简介
@@ -16,7 +16,7 @@ content_hash: sha256:c08a90956fd1d6df28f5e10edd3a4c75c9d02166247adb527319526a6a7
 
 同时，将基于用户的听歌偏好进行内容精准推荐，推荐的内容源需要三方应用通过云侧接口捐赠给播控中心。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/svXBimhJSRqqIf_ZLli-WA/zh-cn_image_0000002753295441.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/vBcStq0QTTOkM2Pn2CrTLQ/zh-cn_image_0000002757310905.png)
 
 ## 推荐资源位分配原则
 

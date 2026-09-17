@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 组件内状态管理常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 组件内状态管理常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:23+08:00
+scraped_at: 2026-09-18T06:45:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e7a8101f1cf942e2b755898bc8b3c9bb21587a946a3381e157f751e070f897f7
+content_hash: sha256:ec79764b77742dfe6ce1bfaf2e17a61e626cab28246ccf13cb016fa178cb7d41
 ---
 
 在ArkUI应用开发中，组件内状态管理的合理使用直接影响应用的性能和开发效率。然而，开发者在实践中常因更新机制理解不足，导致组件行为异常或渲染效率下降。本文将介绍组件内状态管理的常见问题与解决方案。
@@ -806,7 +806,7 @@ struct Index {
 
 直接操作状态变量，三次触发计算函数，运行[耗时](ui-inspector-profiler.md#trace调试能力)结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/AkrJhUqPRRGlLW0REaMIww/zh-cn_image_0000002753454161.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/62DI7k5hS6OxGdhbckUZfw/zh-cn_image_0000002757229827.png)
 
 【正例】
 
@@ -853,7 +853,7 @@ struct Index {
 
 使用临时变量取代状态变量的计算，三次触发计算函数，运行耗时结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/85PttQEeRRq55N0222hIVw/zh-cn_image_0000002723854396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/rGWS6fRSRNSDQmjocLkG8A/zh-cn_image_0000002727590136.png)
 
 【总结】
 
@@ -1007,7 +1007,7 @@ struct MyComponent {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/sQOZ1R9ySo-pd7YOqXNWEg/zh-cn_image_0000002723694478.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/aCFKYHmHSfq0Z_uuwabJHw/zh-cn_image_0000002727749994.gif)
 
 可以观察到在点击更改message之后，图片“闪烁”了一下，同时输出了组件的onAppear日志，这说明组件进行了重建。这是因为在更改message之后，导致LazyForEach中这一项的key值发生了变化，使得LazyForEach在reloadData的时候将这一项ListItem进行了重建。Text组件仅仅更改显示的内容却发生了重建，而不是更新。而尽管Image组件没有需要重新绘制的内容，但是因为触发LazyForEach的重建，会使得同样位于ListItem下的Image组件重新创建。
 
@@ -1156,7 +1156,7 @@ struct ChildComponent {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/CaZYKrxcQXGrML-3MdnaXA/zh-cn_image_0000002753294245.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/N_KA9smdTRW52_i_jkfICA/zh-cn_image_0000002757309709.gif)
 
 可以观察到UI能够正常刷新，图片没有“闪烁”，且没有输出日志信息，说明没有对Text组件和Image组件进行重建。
 
@@ -1222,7 +1222,7 @@ struct Page {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/EnSLASo1Ql26vk6G012Sng/zh-cn_image_0000002753454163.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/VxJT-FAGTJe2P7AUW_ut3Q/zh-cn_image_0000002757229829.gif)
 
 由于ForEach中生成的item是一个常量，因此当点击改变item中的内容时，没有办法观测到UI刷新，尽管日志表明item的值已改变（这体现在打印了“change font size”的日志）。因此，需要使用自定义组件，配合@ObjectLink来实现观测的能力。
 
@@ -1291,7 +1291,7 @@ struct Page {
 
 上述代码的运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/4_Sfp0j-RxWPN183n5O5tg/zh-cn_image_0000002723854398.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/UtXN_fDYTXKq4z6wSarxhw/zh-cn_image_0000002727590138.gif)
 
 使用@ObjectLink接受传入的item后，使得TextComponent组件内的textStyle变量具有了被观测的能力。在父组件更改styleList中的值时，由于@ObjectLink是引用传递，所以会观测到styleList每一个数据项的地址指向的对应item的fontSize的值被改变，因此触发UI的刷新。
 

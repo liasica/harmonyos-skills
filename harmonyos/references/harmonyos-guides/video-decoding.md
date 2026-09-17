@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-decodin
 title: 视频解码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频解码
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:19+08:00
+scraped_at: 2026-09-18T06:45:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:58b5a6294fdb582ab5369ba987495bd974bde31f5f7b4a75074d52984ad7b7c0
+content_hash: sha256:38a9cf02632f8fadcd41fade63ffac8a5df41975ee392ff2f479f272af78264a
 ---
 
 视频解码是多媒体处理的核心环节，功能是将压缩的视频码流解码为原始像素数据。视频解码支持同步模式与异步模式两种运行机制，两者主要区别为buffer获取方式的同异步之分，开发者可根据自身业务选择适合的接口调用模式。
@@ -53,7 +53,7 @@ AVCodec支持的视频解码格式请参考[视频解码](avcodec-support-format
 
 **图1** 状态机调用关系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/d6ZWVoNzSPKBq5usJGtPVA/zh-cn_image_0000002723695636.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/NHkJaSRFSFW6SWcdp0AIYw/zh-cn_image_0000002727751152.png)
 
 ## 开发指导
 
@@ -66,7 +66,7 @@ AVCodec支持的视频解码格式请参考[视频解码](avcodec-support-format
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/LKVFcKOxT7SKXsavd0XREA/zh-cn_image_0000002723695644.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/ram7vuOoRSSkMjyF8VsFUQ/zh-cn_image_0000002727751160.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -1147,7 +1147,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
     * OH\_MD\_KEY\_VIDEO\_STRIDE表示wStride；
     * OH\_MD\_KEY\_VIDEO\_SLICE\_HEIGHT表示hStride。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/LygcDRU-TrWNx9mSdcHppg/zh-cn_image_0000002753295411.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/OPoLOaOPSjCfcCTr2XiBcg/zh-cn_image_0000002757310875.png)
 
     添加头文件。
 

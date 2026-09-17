@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用扩展的Node-API接口创建和销毁临界区作用域及访问字符串内容
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口创建和销毁临界区作用域及访问字符串内容
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:28+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:08663abb6c11cbab487366317aae3b345f4997be8f79b9f8969cf3acfbdae43a
+scraped_at: 2026-09-18T06:46:56+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:68f4fc3903b686f9a53c86688f9c37f2646bd9ead42a5c0a04f64613666a777e
 ---
 
 Node-API扩展接口napi\_open\_critical\_scope用于打开临界区作用域，napi\_close\_critical\_scope用于关闭临界区作用域。
 
 **注意** 
 
-非临界接口不能在临界区作用域使用，且同一执行环境中只能打开一个临界区作用域。建议仅在需要临界接口时打开临界区作用域，使用后应及时关闭。
+非临界接口不能在临界区作用域使用，且同一执行环境中只能打开一个临界区作用域。打开临界区会阻塞gc，长时间保持临界区打开状态可能会造成内存不足、卡顿等现象，建议仅在需要临界接口时打开临界区作用域，使用后应及时关闭。
 
 ## 场景介绍
 

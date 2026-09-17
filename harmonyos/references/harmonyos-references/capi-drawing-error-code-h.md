@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_error_code.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_error_code.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5f3733813e98803b61c933defe50782103d3691d49b50c937af36bda1f860fdc
+scraped_at: 2026-09-18T06:51:26+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:8831ec74829639a52fbff6297f71994d2e22780fde21d5bd336601ca3c0cd984
 ---
 
 ## 概述
@@ -56,7 +56,7 @@ enum OH_Drawing_ErrorCode
 | 枚举项 | 描述 |
 | --- | --- |
 | OH\_DRAWING\_SUCCESS = 0 | 操作成功完成。 |
-| OH\_DRAWING\_ERROR\_NO\_PERMISSION = 201 | 权限校验失败。请检查是否已申请所需权限。 |
+| OH\_DRAWING\_ERROR\_NO\_PERMISSION = 201 | 权限校验失败，应用无权限使用该API，需要申请权限。 |
 | OH\_DRAWING\_ERROR\_INVALID\_PARAMETER = 401 | 无效的输入参数，如参数中传入了NULL。请检查参数类型、取值范围或参数是否为空。 |
 | OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RANGE = 26200001 | 输入参数不在有效的范围内。请检查参数值是否在接口文档规定的有效范围内。 |
 | OH\_DRAWING\_ERROR\_ALLOCATION\_FAILED = 26200002 | 内存分配失败。  **起始版本：** 13 |

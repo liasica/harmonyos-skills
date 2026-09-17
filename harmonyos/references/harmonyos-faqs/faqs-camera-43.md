@@ -3,23 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-43
 title: 自定义相机在用户未授权的情况下，预览画面黑屏，用户点击拍照，应用闪退
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 自定义相机在用户未授权的情况下，预览画面黑屏，用户点击拍照，应用闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:cf8de9e1b819a038b948597e5999158557ff1f2fc873f94b4a4fe719e40a72c3
+scraped_at: 2026-09-18T06:54:40+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:1968fe6ba26401179ad79dd192114f30585313fa07ac934237f1f9daf5efdbd5
 ---
 
 ## 问题现象
 
 * 自定义相机在用户未授权的情况下，预览画面黑屏，用户点击拍照，应用闪退。jscrash报错如下：
 
-  ```screen
+  ```ts
   Reason:TypeError
   Error name:TypeError
   Error message:Cannot read property capture of undefined
   ```
 * 申请相机相关资源代码：
 
-  ```screen
+  ```ts
   export async function cameraShooting(cameraPosition: number, surfaceId: string, context: Context, ratio: boolean):
     Promise<number[]> {
     currentContext = context;
@@ -53,7 +53,7 @@ content_hash: sha256:cf8de9e1b819a038b948597e5999158557ff1f2fc873f94b4a4fe719e40
   ```
 * 相机拍照相关代码参考如下：
 
-  ```screen
+  ```ts
   export function capture(isFront: boolean): void {
     let settings: camera.PhotoCaptureSetting = {
       quality: camera.QualityLevel.QUALITY_LEVEL_HIGH,
@@ -81,8 +81,8 @@ content_hash: sha256:cf8de9e1b819a038b948597e5999158557ff1f2fc873f94b4a4fe719e40
 
 ## 修改建议
 
-1. 在初始化相机时检查相机权限是否已授予，已授予才可以申请相机权限，并且申请相机资源时如果遇到异常抛出异常，详细代码可参考官网示例代码[自定义相机定时拍摄](../architecture-guides/capture_timer-0000002352218316.md)中index.ets文件的aboutToAppear和onPageShow函数中检查相机权限处理过程。
-2. 在拍照时应进行判空保护防止异常发生，详细代码可以参考官网示例代码[自定义相机定时拍摄](../architecture-guides/capture_timer-0000002352218316.md)中CameraUtils.ets文件中的capture函数对变量photoOutPut进行判空。
+1. 在初始化相机时检查相机权限是否已授予，已授予才可以申请相机权限，并且申请相机资源时如果遇到异常抛出异常，详细代码可参考官网示例代码[自定义相机定时拍摄](../architecture-guides/avrecorder_timer-0000002529561491.md)中index.ets文件的aboutToAppear和onPageShow函数中检查相机权限处理过程。
+2. 在拍照时应进行判空保护防止异常发生，详细代码可以参考官网示例代码[自定义相机定时拍摄](../architecture-guides/avrecorder_timer-0000002529561491.md)中CameraUtils.ets文件中的capture函数对变量photoOutPut进行判空。
 
 ## 总结
 

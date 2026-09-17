@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 通话类应用自动和手动切换音频输出设备问题
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 通话类应用自动和手动切换音频输出设备问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:22+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:848f47706721377960a8fa0e56d905c53c3373408914707e1e1391436a0ac639
+scraped_at: 2026-09-18T06:54:50+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:f877e28535299a37b8b927906b50d1bc9fa8b009d36eebd35fe1755d27f3eea6
 ---
 
 ## 问题现象
@@ -676,7 +676,7 @@ A：**建议接入AVSession**，通话类应用参考[通话设备切换组件](
 
 若使用Class (AVCastPickerHelper)的[select](../harmonyos-references/arkts-apis-avsession-avcastpickerhelper.md#select14)接口拉起AVCastPicker设备选择界面进行手动选择，也需创建对应类型的AVSession，且在[options](../harmonyos-references/arkts-apis-avsession-i.md#avcastpickeroptions14)参数内的sessionType与创建AVSession对应的AVSessionType相同。
 
-若**不接入AVSession**，直接使用AVCastPicker进行设备切换，也可切换音频输出设备，但仅能切换本机音频（不区分扬声器和听筒）和非投播外设，参考[不接入AVSession使用AVCastPicker组件切换音频输出设备](../architecture-guides/avplayer_audio-0000002293630521.md)。注意，此时AVCastPicker组件需使用customPicker，否则不显示默认组件。
+若**不接入AVSession**，直接使用AVCastPicker进行设备切换，也可切换音频输出设备，但仅能切换本机音频（不区分扬声器和听筒）和非投播外设，参考[不接入AVSession使用AVCastPicker组件切换音频输出设备](../harmonyos-guides/audio-output-device-switcher.md#实现媒体流输出设备路由切换)。注意，此时AVCastPicker组件需使用customPicker，否则不显示默认组件。
 
 Q：创建'audio'或'video'类型的AVSession并接入AVCastPicker组件能不能选择听筒扬声器设备切换？
 

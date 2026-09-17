@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-touchtestinfoitemhandlearray
-title: ArkUI_TouchTestInfoItemArray
-breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_TouchTestInfoItemArray
+title: ArkUI_TouchTestInfoItemHandle*
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_TouchTestInfoItemHandle*
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-18T06:49:01+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:5f2c034bc5f12a636b4b4fef3d4671cdc3973d7d2b6dd41179172c77382bc8ed
 ---
 

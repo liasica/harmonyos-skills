@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 概述
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网并发） > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:59+08:00
+scraped_at: 2026-09-18T06:45:37+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:d535cde7e6b9feee006f8a537b6d9c04ea7da2dde9158084947afb83b08d30a9
+content_hash: sha256:4de4b495c3400a13c93ce1bba4d1afc4ad10ec23c71c2067637ee6458f33ce6a
 ---
 
 从6.0.0(20)版本开始，支持连接迁移（多网并发）功能。
 
 多网并发是系统提供接口可以建立多个网络通路，应用发起多网请求后，系统依据业务场景决定并发组合和实施相应的并发管控，并对并发做收益度量。使用多网并发功能的原则是应用申请（受限权限）、系统管控、最小化使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/5sgZa6g-T7mojPgeDe91SA/zh-cn_image_0000002753295269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/GQb3omdnTNKdTE2_L3uJmA/zh-cn_image_0000002757310733.png)
 
 其中各步骤功能如下：
 

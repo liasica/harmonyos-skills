@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-clipboard
 title: 使用Web组件与系统剪贴板交互处理网页内容
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件与系统剪贴板交互处理网页内容
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:37+08:00
+scraped_at: 2026-09-18T06:45:16+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e992e000d9c8d10e4d0a879a5e86698271a61aa991688f4fc19efe35794e3a7b
+content_hash: sha256:e38dee50d8585daa850b3b1119f77d5d707c8af00aa1ba527f06418a1c8dab24
 ---
 
 开发者能够通过Web组件和系统剪贴板进行交互，实现各种类型数据的复制和粘贴。支持通过[菜单](web-menu.md)、键盘快捷键以及[W3C剪贴板接口](https://www.w3.org/TR/clipboard-apis/)对网页内容执行剪切、复制和粘贴操作。
@@ -196,7 +196,7 @@ module.json5权限配置：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/hXBzBAq2SqSapYlUXCxwMg/zh-cn_image_0000002723695234.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/RrsIWlJiQKG7vmAcRvD1Kg/zh-cn_image_0000002727750750.gif)
 
 ## 通过W3C剪贴板事件接口与系统剪贴板交互
 
@@ -279,7 +279,7 @@ struct WebComponent {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/rnmh-dGIRr6KC3wnZKknpQ/zh-cn_image_0000002753295001.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/heyAA5zASnepPxajIJwk6w/zh-cn_image_0000002757310465.gif)
 
 ## 设置剪贴板复制范围选项
 

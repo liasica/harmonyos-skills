@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/toolchain-gn-
 title: GN构建工程配置HarmonyOS编译工具链
 breadcrumb: 指南 > NDK开发 > 编译工具链 > GN构建工程配置HarmonyOS编译工具链
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:30+08:00
+scraped_at: 2026-09-18T06:46:58+08:00
 doc_updated_at: 2026-05-07
-content_hash: sha256:b57172322a0483a4d50fd844138083d85a7d66da91a0b248bd7cb41e6853c22b
+content_hash: sha256:3f74447aea749148407a46cfca785bdd0e6c685a3aa2ef5828576c64fb095fcd
 ---
 
 ## 概述
@@ -56,7 +56,7 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    在.bashrc文件的最后添加下面一行代码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/IGYP5XYwTPC40ERLhxJYcA/zh-cn_image_0000002753296377.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/GdZYmWxZRcarAM6AiP5gtw/zh-cn_image_0000002757311841.png)
 
    ```bash
    export PATH="$PATH:/xxx/depot_tools"
@@ -78,17 +78,17 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    直接输入指令sudo apt install python可能会安装失败，需要先输入sudo apt update更新一下可用包的最新列表。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/mAz4Z-O2SVSuRC5paXJW4w/zh-cn_image_0000002753456295.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/qyt8cX79QT-ypB6-sZzJag/zh-cn_image_0000002757231961.png)
 
    判断python是否安装成功：
 
    输入python显示python版本即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/j8o5a1IARGKKLjjFVyhMXw/zh-cn_image_0000002723856530.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/wZ2uLQLqTziUX_IeFWUEdA/zh-cn_image_0000002727592270.png)
 
 ## GN构建工程适配流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/sEuPpOVNQw-NbnpvkRyF2g/zh-cn_image_0000002723696612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/zlXq3OZwQvit1vj_2nJuEw/zh-cn_image_0000002727752128.png)
 
 1. 新增HarmonyOS平台的宏定义。
 2. 配置HarmonyOS平台的工具链核心信息，涵盖clang工具链路径，sysroot系统根目录以及clang版本等关键参数。
@@ -109,24 +109,24 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    这里主要在build/config/BUILDCONFIG.gn文件中适配HarmonyOS的default\_compiler\_configs和\_default\_toolchain。在GN工程里面，BUILDCONFIG.gn是第一位被解析的，里面定义的变量相当于全局变量，可以被后续所有的.gn文件使用。编译过程中可能会配置一些编译选项以及一些头文件搜索路径。default\_compiler\_configs指向的文件里面会包括一些默认的编译选项以及头文件搜索路径等等。\_default\_toolchain指向了一个工具链相关的函数。具体修改点如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/64gjYT71R4GiPPC6DLdV1g/zh-cn_image_0000002753296379.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/bMmbyZw7TMu_H0y1goIpHA/zh-cn_image_0000002757311843.png)
 2. **设置HarmonyOS平台clang工具链相关路径**
 
    不同平台的工具链会有一些差别，所以需要使用HarmonyOS的工具链。这里主要修改config/clang/clang.gni文件。.gni文件类似于GN的头文件，会被import到各个.gn文件中使用其定义的一些变量。该文件中的核心修改点在于配置指向HarmonyOS SDK的工具链路径。另外还需修改clang\_use\_chrome\_plugins的值为false，HarmonyOS中默认clang\_use\_chrome\_plugins值为false，不设置可能会报错find-bad-constructs文件找不到。
 
    此处ohos\_sdk\_native\_root的值需要对应修改为自己本地HarmonyOS SDK中的native的路径。具体修改点如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/GsB6CkUXSgKa2GHtc4ECLQ/zh-cn_image_0000002753456297.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/GsTPR8qiS4iUEKsCK1gxcw/zh-cn_image_0000002757231963.png)
 3. **设置HarmonyOS平台sysroot路径**
 
    这里主要修改build/config/sysroot.gni文件，sysroot里面包含了许多头文件搜索路径，配置了sysroot之后，编译过程中会去该目录下搜索需要的头文件。SDK里面会提供大量的头文件，这些头文件都会放在sysroot目录下，所以需要引入HarmonyOS对应的sysroot。具体修改点如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/bOX3CFGbT_GR99Em03egSQ/zh-cn_image_0000002723856532.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/JuAfLkndSIC_IiuqgayHYw/zh-cn_image_0000002727592272.png)
 4. **修改HarmonyOS平台clang版本**
 
    这里主要修改build/toolchain/toolchain.gni文件，在该文件中配置HarmonyOS对应的clang版本号。具体修改点如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ev4x9hHHQ92P8juWdFPQ8w/zh-cn_image_0000002723696614.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/FXdE64eWS7O3fnJ6r89Owg/zh-cn_image_0000002727752130.png)
 5. **设置各个架构的ohos\_clang\_toolchain**
 
    这里主要是在build/toolchain路径下新建一个ohos/BUILD.gn文件，用于配置ohos\_clang\_toolchain，里面主要配置了HarmonyOS用于启动引导程序的.o文件。同时设置HarmonyOS不同架构(主要包括ohos\_clang\_arm、ohos\_clang\_arm64、ohos\_clang\_x86\_64)的ohos\_clang\_toolchain配置信息。具体添加内容如下：
@@ -239,17 +239,17 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    主要修改/build/toolchain/gcc\_toolchain.gni文件。GN工程里面默认会配置gcc\_toolchain，里面会包括一些tool，例如tool("cc")、tool("cxx")、tool("tolink")等等，编译不同的内容时调用其对应的配置项。这里主要是需要修改tool("solink")、tool("solink\_module")中的rspfile\_content配置以及tool("link")中的link\_comand配置。需要在gcc\_toolchain.gni中template("gcc\_toolchain")下添加几个参数（libs\_section\_prefix、libs\_section\_postfix 、solink\_libs\_section\_prefix、solink\_libs\_section\_postfix ）的识别。这几个参数是指向了上一步骤中配置的用于启动引导程序的.o文件。这些参数会在需要修改的rspfile\_content、link\_comand参数中用到。具体修改如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/OXZmXTtiT1CZK-K9wjZ8jQ/zh-cn_image_0000002753296381.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/KwNHh2eFRr6wQb6j3Zi7tQ/zh-cn_image_0000002757311845.png)
 
    修改tool("solink")和tool("solink\_module")中的rspfile\_content为rspfile\_content = "-Wl,--whole-archive {{inputs}} {{solibs}} -Wl,--no-whole-archive $solink\_libs\_section\_prefix {{libs}} $solink\_libs\_section\_postfix"，这里需要用到刚刚定义的参数信息。具体修改如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/yA-8ixamTIC4pD0Bi9XeTw/zh-cn_image_0000002753456299.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_9qETSJ0T4W17hx7TBiEew/zh-cn_image_0000002757231965.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/blghdXjoQQSKSnBKBVCunw/zh-cn_image_0000002723856534.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/PZUy4vFdSGi7XUzwk4FJnw/zh-cn_image_0000002727592274.png)
 
    修改tool("link")中link\_command为link\_command = "$ld {{ldflags}}${extra\_ldflags} -o \"$unstripped\_outfile\" $libs\_section\_prefix $start\_group\_flag @\"$rspfile\" {{solibs}} {{libs}} $end\_group\_flag $libs\_section\_postfix"，这里需要用到刚刚定义的参数信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/EsjiB1KvS1mN6l0oKN--LQ/zh-cn_image_0000002723696616.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/bdgDlnwHSA6rNPYiEzZ4WA/zh-cn_image_0000002727752132.png)
 7. **设置HarmonyOS的一些编译参数，将其加入到BUILDCONFIG.gn中**
 
    这里需要在build/config路径下新建一个ohos/BUILD.gn文件，该文件主要是定义了一个config("compiler")，该config会被注册到所有的编译目标，该config里面主要设置了基础的编译选项、宏定义等。
@@ -339,22 +339,22 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    保证可以正确走HarmonyOS支持的编译分支。这里主要是为了防止clang版本号校验失败导致异常。具体修改如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/UN3M5XYjRlyoDz_F2TMRbg/zh-cn_image_0000002753296383.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/ar_w1LclQ_WKdcNvpe5IRA/zh-cn_image_0000002757311847.png)
 9. **未适配HarmonyOS的三方库走linux编译配置**
 
    当前部分三方库还未适配HarmonyOS，涉及到时可以先走linux的编译配置，例如：需要获取config.h文件时。
 
    修改modules/video\_capture的BUILD.gn。具体修改如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0lgtRgHuRdi40908jM8VGQ/zh-cn_image_0000002753456301.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/IqoCA4HvTQW_GDRzt1nnUw/zh-cn_image_0000002757231967.png)
 
    修改third\_party/zlib的BUILD.gn。具体修改如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/KeASGmfjQtmW2XlCGCsGiQ/zh-cn_image_0000002723856536.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/tvcOp8XFS0-2w6mmIeus2w/zh-cn_image_0000002727592276.png)
 
    修改third\_party/libevent中的BUILD.gn。HarmonyOS SDK中没有queue.h头文件，需要使用compat dir目录下的queue.h头文件。具体修改如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/CcolLYDTQPmXGUiiz4w9YQ/zh-cn_image_0000002723696618.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/pEh8qVC8SGGhlEFE4Lywtg/zh-cn_image_0000002727752134.png)
 10. **编译**
 
     先通过GN命令生成对应的ninja文件，然后使用ninja编译命令进行编译。
@@ -382,7 +382,7 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    **问题详情：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/L29xdi6AQpel9k7dNBLCmQ/zh-cn_image_0000002753296385.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/9Usl2v25QR6UOo_6EUwEtA/zh-cn_image_0000002757311849.png)
 
    **问题原因/解决措施：**
 
@@ -392,12 +392,12 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    修改third\_party/zlib的BUILD.gn文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/4rGyX61pSTOQhNkOimxmnA/zh-cn_image_0000002753456303.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/EC37t2sHRAuW3mU1yDMKsg/zh-cn_image_0000002757231969.png)
 2. **python找不到pkg-config文件：No such file or directory: 'pkg-config'**
 
    **问题详情：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/kYmEUEjUTSiAPPFsonDHpw/zh-cn_image_0000002723856538.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/948gGYLQTzW3RYb3EJZPqQ/zh-cn_image_0000002727592278.png)
 
    **问题原因/解决措施：**
 
@@ -412,7 +412,7 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    **问题详情：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Iy_NU0DiR3enkjpu5sv3XQ/zh-cn_image_0000002723696620.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/KvDSRiYIT5K4qtaLl5SgqA/zh-cn_image_0000002727752136.png)
 
    **问题原因/解决措施：**
 
@@ -422,32 +422,32 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    在build/config/compiler/BUILD.gn中删除以下配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/fRWlmvQMQTqKhPKkVH5VvQ/zh-cn_image_0000002753296387.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/Ua-_6ussREC8MUJNA1I2Xw/zh-cn_image_0000002757311851.png)
 4. **WARN类型导致的ERROR**
 
    **问题详情：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/hY-SgmtzSvKwwXsCWxSxiQ/zh-cn_image_0000002753456305.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/0fPGaa6USAa9VC0Cm5ak4Q/zh-cn_image_0000002757231971.png)
 
    **问题原因/解决措施：**
 
    编译器驱动程序有时（很少）会在调用之前发出警告。实际的链接器需要确保这些警告是否也被视为致命错误。为了避免编译中出现因警告而造成出错，可以添加编译参数treat\_warnings\_as\_errors = false，或者去除config(treat\_warnings\_as\_errors)中配置的“-Werror”，详情如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ODWRJvwlRBympSkgnyopVg/zh-cn_image_0000002723856540.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/d_8n9hWXRVKpvJw7MBcmqg/zh-cn_image_0000002727592280.png)
 
    **具体修改：**
 
    * 添加编译指令配置项treat\_warnings\_as\_errors （建议使用）
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/uHERZZpcRbSvK1g_UQ7YGg/zh-cn_image_0000002723696622.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/ArJsDvRlQSWGy1ASvZk87Q/zh-cn_image_0000002727752138.png)
    * 修改源代码，在build/config/compiler/BUILD.gn中删除以下配置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/yoRgn4cPT6SIJOv8-vey6w/zh-cn_image_0000002753296389.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Qws24GQhRH-k8UtmoWmzIQ/zh-cn_image_0000002757311853.png)
 5. **error: reinterpret\_cast from 'pthread\_t' (aka 'unsigned long') to 'rtc::PlatformThreadId' (aka 'int') is not allowed**
 
    **问题详情：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Uhkdlal2R4ia1VS8F8VAnw/zh-cn_image_0000002753456307.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/GepeAQm0TFqVRWyoKkmwBg/zh-cn_image_0000002757231973.png)
 
    **问题原因/解决措施：**
 
@@ -457,17 +457,17 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    * 首先需要在根目录的BUILD.gn中配置识别HarmonyOS系统的变量is\_ohos：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/K1X_Wyo3TIqdoYTOtEBxlg/zh-cn_image_0000002723856542.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/RUM26H93QdSY3d0mZU1NHA/zh-cn_image_0000002727592282.png)
    * 修改rtc\_base/platform\_thread\_types.cc业务代码：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/f027pkPRQtqIOidJoOX-xA/zh-cn_image_0000002723696624.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/J3RnP2ewQO2D-xZWLdNnhw/zh-cn_image_0000002727752140.png)
 6. **fatal error: 'config.h' file not found**
 
    **fatal error: 'sys/queue.h' file not found**
 
    **问题详情：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/xitZuuQaTyGkZUnQ-rsG4g/zh-cn_image_0000002753296391.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/NTk793FaTyW7rejlQxOpxA/zh-cn_image_0000002753456309.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/cbPl_SXEQfWDmK0473_h-Q/zh-cn_image_0000002757311855.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/4W9MQac3REqil9HmLO-izQ/zh-cn_image_0000002757231975.png)
 
    **问题原因/解决措施：**
 
@@ -479,4 +479,4 @@ HarmonyOS编译子系统是以GN和Ninja构建为基座，对构建和配置粒�
 
    修改third\_party/libevent中的BUILD.gn。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/r8a4OKU2SGWEEiQwHZa5PA/zh-cn_image_0000002723856544.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/27yOgLO8RquZeGzarD4TNA/zh-cn_image_0000002727592284.png)

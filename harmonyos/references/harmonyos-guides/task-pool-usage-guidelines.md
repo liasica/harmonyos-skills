@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/task-pool-usa
 title: TaskPool使用规范
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > TaskPool使用规范
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:15+08:00
+scraped_at: 2026-09-18T06:44:55+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:fa89bcc19b20eb0ea9ceaa763e6b43966b38a02d65a5d6e4460b746799501188
+content_hash: sha256:22a7df17f52a1b2b5e3b4c293e8b14e63372e3f18fc77ff390cc21710dc4aa20
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ content_hash: sha256:fa89bcc19b20eb0ea9ceaa763e6b43966b38a02d65a5d6e4460b7467995
 
 在工程中导入文件和HAR时，某些文件使用了如@Observed、AppStorage等UI装饰器或状态变量，这些UI装饰器或状态变量即使没有被显式调用也可能会被解析执行。然而目前子线程并不支持UI属性，当解析到这些UI装饰器或状态变量时，会抛出异常并返回，导致本模块的解析会被中断。访问这些包含UI的文件中的某些变量时可能会抛出错误：xxx is not initialized ，导致功能失效甚至crash。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/6WxoUGHKQQWGGVJJmttMjw/zh-cn_image_0000002723854146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/gtQA-hK7TraPu1d6WfssFA/zh-cn_image_0000002727589886.png)
 
 另外在一些复杂项目中，即使本模块未发生改动，也可能由于SDK或其他依赖模块发生变更而导致该问题。此类问题排查起来较为困难，因此推荐在开发和迭代阶段就做好相应的约束和验证。
 
@@ -145,7 +145,7 @@ taskpool.execute(correctConcurrentFunc)
 
 因此，当开发者有监听需求时，推荐使用长时任务，主动管理任务所在线程的生命周期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/POqKRB_uR1uCdBZdn9l8_A/zh-cn_image_0000002723694228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/qryTHdTYRZe5saEFdRjrdg/zh-cn_image_0000002727749744.png)
 
 **反例**
 
@@ -237,7 +237,7 @@ TaskPool提供了支持TaskPool子线程和宿主线程通信的接口[sendData(
 
 如果有需要，推荐使用emitter，emitter能够方便地实现宿主线程和子线程之间的双向通信。另外emitter的on()接口具有监听性质，在没有取消注册的情况下，能在任意时间被触发，因此需要在LongTask中注册。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/aLBDS4CaRa--xe6tnF4qFg/zh-cn_image_0000002753293995.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Vr7HQok_THKzi9LQE-jsKQ/zh-cn_image_0000002757309459.png)
 
 **反例**
 
@@ -326,7 +326,7 @@ taskpool.execute(task)
 
 在合适的场景下也可以使用[SequenceRunner](../harmonyos-references/js-apis-taskpool.md#sequencerunner11)()等API，以避免短时间内大量任务连续进入任务池，使线程数瞬间提升到最大。主线程连续处理大量任务密集返回时的回调和微任务会阻塞UI，影响用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/kS9c2qmiQluZmHbxH21RwQ/zh-cn_image_0000002753453913.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/UCtLcyfMScWgq1XfkvH_dw/zh-cn_image_0000002757229579.png)
 
 ```ts
 // Sample5.ets

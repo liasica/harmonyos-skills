@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-
 title: HiTraceChain介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 分布式调用链跟踪 > HiTraceChain介绍
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:12+08:00
+scraped_at: 2026-09-18T06:45:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6e5f037788d46000ecb9039a4b17fa122fa3af692144519ba403dbbf44a28802
+content_hash: sha256:36ff3bab19a2b1d07661eb06ffdec62b0458a88abd490c35bc343d5589a78b7a
 ---
 
 ## 简介
@@ -29,7 +29,7 @@ HiTraceChain是基于分布式跟踪调用链思想，在端侧业务流程（�
 3. **传递HiTraceId**：随着业务流程的推进，开发者可取出当前线程TLS中的HiTraceId，在不同的线程（如thread1, thread2）、进程（如APP1, APP2）以及设备（如Device1, Device2）之间传递，并将HiTraceId设置到其他线程的TLS中，确保在同一个业务流程中，所有相关线程都能访问到这个唯一的跟踪标识。
 4. **信息记录**：对于启用HiTraceChain的业务流程，其输出的各类信息中（包括HiTraceMeter打点、应用事件、hilog日志等）都会记录该跟踪标识，开发者可以通过HiTraceId将这些信息关联起来，从而实现端到端的调用链跟踪。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Vltl7BrkTmGnHAfA38Sq4w/zh-cn_image_0000002753455271.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/F_peehyCQOOhinKA-3ZRTQ/zh-cn_image_0000002757230937.png)
 
 ## 约束与限制
 

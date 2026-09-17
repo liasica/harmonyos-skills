@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-add-txt-i
 title: PDF页面文本、图片和批注
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > PDF页面文本、图片和批注
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:53+08:00
+scraped_at: 2026-09-18T06:46:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:801d474b4a3dfbfd096d6aaa2e6d3068464966392be966128b260cd0c7c70471
+content_hash: sha256:e5a458b21b60cb5f84af7200a51fe90173949ccc0979a903afdceae523d6631e
 ---
 
 支持编辑PDF页面内容，包括：
@@ -16,7 +16,7 @@ content_hash: sha256:801d474b4a3dfbfd096d6aaa2e6d3068464966392be966128b260cd0c7c
 
   通过索引指定PDF页面添加批注，并对批注在页面中的位置，字体、批注边框等设置，批注提供了多种风格样式，包括：文本批注[TextAnnotationInfo](../harmonyos-references/pdf-arkts-pdfservice.md#textannotationinfo)、下划线批注[LineAnnotationInfo](../harmonyos-references/pdf-arkts-pdfservice.md#lineannotationinfo)、高亮批注[HighlightAnnotationInfo](../harmonyos-references/pdf-arkts-pdfservice.md#highlightannotationinfo)、删除线批注[StrikethroughAnnotationInfo](../harmonyos-references/pdf-arkts-pdfservice.md#strikethroughannotationinfo)等共13种。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/9_FFnnxGRcqastA4BQ0flA/zh-cn_image_0000002723696268.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/INhm1IeEQEGqWq9Sr7xiIQ/zh-cn_image_0000002727751784.png)
 
 ## 接口说明
 

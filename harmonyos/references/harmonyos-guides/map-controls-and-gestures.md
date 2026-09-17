@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-controls-
 title: 手势交互
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 手势交互
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:49+08:00
+scraped_at: 2026-09-18T06:46:21+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3b2e7b89d5c8bedfa8767b4bb0bc7af57ab004b52063b65e0fad36687322c4fd
+content_hash: sha256:126eaccee3c651431f761a96f7719a76f82602b828b78bed6cb3a061e3b4dd17
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:3b2e7b89d5c8bedfa8767b4bb0bc7af57ab004b52063b65e0fad3668732
 
 Map Kit提供了多种手势供用户与地图之间进行交互。如缩放：双指捏合操作以放大或缩小地图；滚动：单指拖动以平移地图视图；旋转：双指旋转操作以改变地图方向；倾斜：双指上下滑动以调整地图视角。这些手势默认开启，如果想要关闭某些手势，可以通过[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)类提供的接口来控制手势的开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/rdoWJ-UvQvm1n-axbUg-mA/zh-cn_image_0000002723856104.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/clr2m0P1QfefoJAGXfMZbA/zh-cn_image_0000002727591844.jpg "点击放大")
 
 ## 接口说明
 

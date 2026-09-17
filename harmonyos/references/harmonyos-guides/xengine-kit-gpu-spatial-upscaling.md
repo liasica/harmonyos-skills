@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-g
 title: 空域GPU超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域GPU超分
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6475d10ffb8f14fa19739ad7a7e2ce149d474b3fd201ab58f658023ad542f79e
+scraped_at: 2026-09-18T06:46:08+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:7c7829efa23326e76fde9b0b3c4d261e732380da047514d9e2678d1b98e40483
 ---
 
 XEngine Kit提供空域GPU超分特性，其基于单帧输入图像，使用空间邻域信息实现超采样，开销较小同时收益可观，建议使用超分倍率为[1.2, 1.5]。
@@ -24,21 +24,28 @@ XEngine Kit提供空域GPU超分特性，其基于单帧输入图像，使用空
 
 以下接口为OpenGL ES和Vulkan空域GPU超分设置接口，如需使用更丰富的设置和查询接口，具体API说明详见[接口文档](../harmonyos-references/xengine-kit-xengine.md)。
 
+**OpenGL ES接口：**
+
 | 接口名 | 描述 |
 | --- | --- |
 | const GLubyte \* HMS\_XEG\_GetString (GLenum name) | XEngine OpenGL ES扩展特性查询接口。 |
 | GL\_APICALL void GL\_APIENTRY HMS\_XEG\_SpatialUpscaleParameter (GLenum pname, GLvoid \*param) | 设置空域GPU超分输入参数。 |
 | GL\_APICALL void GL\_APIENTRY HMS\_XEG\_RenderSpatialUpscale (GLuint inputTexture) | 执行空域GPU超分渲染命令。 |
+
+**Vulkan接口：**
+
+| 接口名 | 描述 |
+| --- | --- |
 | VKAPI\_ATTR VkResult VKAPI\_CALL HMS\_XEG\_EnumerateDeviceExtensionProperties (VkPhysicalDevice physicalDevice, uint32\_t \*pPropertyCount, XEG\_ExtensionProperties \*pProperties) | XEngine Vulkan扩展特性查询接口。 |
 | VKAPI\_ATTR VkResult VKAPI\_CALL HMS\_XEG\_CreateSpatialUpscale (VkDevice device, const XEG\_SpatialUpscaleCreateInfo \*pXegSpatialUpscaleCreateInfo, XEG\_SpatialUpscale \*pXegSpatialUpscale) | 创建XEG\_SpatialUpscale对象。 |
-| VKAPI\_ATTR void VKAPI\_CALL HMS\_XEG\_CmdRenderSpatialUpscale (VkCommandBuffer commandBuffer, XEG\_SpatialUpscale xegSpatialUpscale, XEG\_SpatialUpscaleDescription \*pXegSpatialUpscaleDescription) | 执行空域GPU超分渲染命令。 |
+| VKAPI\_ATTR void VKAPI\_CALL HMS\_XEG\_CmdRenderSpatialUpscale (VkCommandBuffer commandBuffer, XEG\_SpatialUpscale xegSpatialUpscale, XEG\_SpatialUpscaleDescription \*pXegSpatialUpscaleDescription) | 录制空域GPU超分渲染命令。 |
 | VKAPI\_ATTR void VKAPI\_CALL HMS\_XEG\_DestroySpatialUpscale (XEG\_SpatialUpscale xegSpatialUpscale) | 销毁XEG\_SpatialUpscale对象。 |
 
 ## 业务流程
 
 * 下面是基于OpenGL ES图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/R-HySkiHQB6JV-dxnMUARw/zh-cn_image_0000002753295655.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/IBjVmZMdSSWPwI3jwKa8Ig/zh-cn_image_0000002757311119.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_SpatialUpscaleParameter](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_spatialupscaleparameter)接口配置超分参数。
@@ -49,7 +56,7 @@ XEngine Kit提供空域GPU超分特性，其基于单帧输入图像，使用空
 
 * 下面是基于Vulkan图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/dN-Ov_UOR9G0uUcPJWTgfQ/zh-cn_image_0000002753455573.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/SLtS2IhcRt2e8205Q-sodg/zh-cn_image_0000002757231239.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_CreateSpatialUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_createspatialupscale)接口创建超分实例。

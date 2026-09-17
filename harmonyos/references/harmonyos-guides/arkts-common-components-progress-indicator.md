@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 进度条 (Progress)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加组件 > 进度条 (Progress)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:25+08:00
+scraped_at: 2026-09-18T06:45:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:eab497ae64abbb252437936dccfaa995b4035091bec9d25cbb7a3f72c01c62e7
+content_hash: sha256:41f2ecc9efcef9aa9c798f55b5e6ade016339d76717589c9309f7f8a0bd914d3
 ---
 
 Progress是进度条显示组件，显示内容通常为目标操作的当前进度。具体用法请参考[Progress](../harmonyos-references/ts-basic-components-progress.md)。
@@ -24,7 +24,7 @@ Progress(options: {value: number, total?: number, type?: ProgressType})
 Progress({ value: 24, total: 100, type: ProgressType.Linear }) // 创建一个进度总长为100，当前进度值为24的线性进度条
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/cGI2Vnu5Rwq2m99dwiX1eQ/zh-cn_image_0000002723694818.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/MiCd5egeQRWivLseR5Tw8Q/zh-cn_image_0000002727750334.png)
 
 ## 设置进度条样式
 
@@ -41,7 +41,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
   Progress({ value: 20, total: 100, type: ProgressType.Linear }).width(50).height(200)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/CjYKWhMAQ8SsZ1NLfCsMew/zh-cn_image_0000002753294585.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/esuf_rLiS3G8etshqX--Lw/zh-cn_image_0000002757310049.png)
 * 环形无刻度样式进度条
 
   ```typescript
@@ -53,7 +53,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
     .style({ strokeWidth: 15})    // 设置strokeWidth进度条宽度为15vp
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/o7vBLimsS8uVWDivcOph_Q/zh-cn_image_0000002753454503.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/jVAEYTADQ_mCXFcOiScJjQ/zh-cn_image_0000002757230169.png)
 * 环形有刻度样式进度条
 
   ```typescript
@@ -68,7 +68,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
     .style({ strokeWidth: 15, scaleCount: 20, scaleWidth: 3 })    // 设置环形有刻度进度条宽度15vp，总刻度数为20，刻度宽度为3vp
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/OoWwCp6bSOinUqDBXqvgSg/zh-cn_image_0000002723854738.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/J6VSYpCMRQyLiAP9xWbdAQ/zh-cn_image_0000002727590478.png)
 * 圆形样式进度条
 
   ```typescript
@@ -78,7 +78,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
   Progress({ value: 20, total: 150, type: ProgressType.Eclipse }).color(Color.Grey).width(100).height(100)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/mZ-I2qCJRgOp4pDkCbdHqw/zh-cn_image_0000002723694820.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/xI5tyiLYRfKB-zOqlcKRSg/zh-cn_image_0000002727750336.png)
 * 胶囊样式进度条
 
   **说明** 
@@ -93,7 +93,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
   Progress({ value: 50, total: 150, type: ProgressType.Capsule }).width(50).height(100).color(Color.Blue).backgroundColor(Color.Black)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/9JO-L-VrS9eUKQ-Ric6e-g/zh-cn_image_0000002753294587.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ZOMdqH5LTlmMUqKjLMP6AQ/zh-cn_image_0000002757310051.png)
 
 ## 场景示例
 
@@ -123,4 +123,4 @@ struct ProgressCase1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/TebRae2nQaKwLk-sj-aNEQ/zh-cn_image_0000002753454505.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/M1XI3654QpiYU5e-3Cw8SA/zh-cn_image_0000002757230171.gif)

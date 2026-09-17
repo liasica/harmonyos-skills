@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DataPanel
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > DataPanel
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:05+08:00
+scraped_at: 2026-09-18T06:48:24+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e1d64fd8914b82c2d70c8af5f37d83e3249b0a8f76fa9e9909ca7a627d021961
+content_hash: sha256:0e8c84619a352428553ab45455813cc1e7b89dae1f24c6e414013804cc0f8afd
 ---
 
 数据面板组件，用于将多个数据占比情况使用占比图进行展示，支持环形和线性两种展示类型，可自定义颜色、阴影、底板等视觉效果，适用于存储容量、任务进度、资源占比等数据可视化场景，帮助用户直观了解数据分布情况。
@@ -300,7 +300,7 @@ struct DataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/yimZymBBStKXnhbQENcFZQ/zh-cn_image_0000002753296997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/-YuUI3bHSQ2EeiQaq8ToLA/zh-cn_image_0000002757312461.png)
 
 ### 示例2（设置渐变色和阴影）
 
@@ -359,7 +359,7 @@ struct LinearGradientDataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/6jqM854_ToiSHPle0kWsNg/zh-cn_image_0000002753456915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/nJHP3F4lQC6Gor8GFlOPEw/zh-cn_image_0000002757232581.png)
 
 ### 示例3（设置关闭动画和阴影）
 
@@ -400,7 +400,7 @@ struct LinearGradientDataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_Xj4SoW7Tq-fFongHyntMw/zh-cn_image_0000002723857150.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/u8L_2lCbRziHiZQqOp4C0Q/zh-cn_image_0000002727592890.png)
 
 ### 示例4（设置定制内容区）
 
@@ -486,4 +486,4 @@ struct ChildItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/gITAcYQBScSZ2DzN4EGYpw/zh-cn_image_0000002723697232.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/gLYI4pghTsi0mz66cDZPWQ/zh-cn_image_0000002727752748.jpg)

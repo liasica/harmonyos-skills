@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-partic
 title: 粒子动画 (Particle)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 粒子动画 (Particle)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:09+08:00
+scraped_at: 2026-09-18T06:48:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:152469624bae9edb60574ff33113b7aa055921b5d82053419117b4fa61a88494
+content_hash: sha256:c402b1068b08c342951a0cf35b2dd16ebaae538aa3f7897231ae06cb9fa30ceb
 ---
 
 粒子动画是在一定范围内随机生成的大量粒子产生运动而组成的动画。动画元素是一个个粒子，这些粒子可以是圆点、图片。通过对粒子在颜色、透明度、大小、速度、加速度、自旋角度等维度变化做动画，来营造一种氛围感，比如下雪的动效，雪花飘舞就相当于一个个雪花粒子在做动画。
@@ -640,7 +640,7 @@ interface ParticleColorUpdaterOptions<UPDATER extends ParticleUpdater> {
 * 当outerRadius小于innerRadius时（即外圆半径小于内圆半径时），会将当前较小的值作为新的内圆半径，将较大的值作为新的外圆半径。
 * 当endAngle小于startAngle时（即结束角度小于起始角度时），会将当前较小的值作为新的起始角度，将较大的值作为新的结束角度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Z4SEF0MyTAurOUBJzO0OOw/zh-cn_image_0000002753457023.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/aO4q8T5bQ3WBuP25792CKQ/zh-cn_image_0000002757232689.png)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -864,7 +864,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/ebTXzevqTcy7NgGESjNQWA/zh-cn_image_0000002723857258.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/gu-C2iTpTRunK69Cmc9jvg/zh-cn_image_0000002727592998.gif)
 
 ### 示例2（图片初始化粒子）
 
@@ -971,7 +971,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/GK7g1eMqT9aPXLLq7y25Xw/zh-cn_image_0000002723697340.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/yRZjU2sSRkCRZSSEKKhkhA/zh-cn_image_0000002727752856.gif)
 
 ### 示例3（粒子扰动场的干扰下运动轨迹发生变化）
 
@@ -1099,7 +1099,7 @@ struct ParticleExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/RiMsDL6rSk6kk16zSjZy7A/zh-cn_image_0000002753297107.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/HnkY-X1iS66RVDDgFVs4qw/zh-cn_image_0000002757312571.gif)
 
 ### 示例4（调整粒子发射器位置）
 
@@ -1178,7 +1178,7 @@ struct ParticleExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/rvZYw8IMS56PpbtFygLHAg/zh-cn_image_0000002753457025.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/-xmcXfYnRtWalfrMjYHaJA/zh-cn_image_0000002757232691.gif)
 
 ### 示例5（环形发射器创建）
 
@@ -1265,7 +1265,7 @@ struct ParticleExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/bH9JZcI8QxuOq3QSCdPxCQ/zh-cn_image_0000002723857260.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/DdhfmACmSkCACGXKQFazjQ/zh-cn_image_0000002727593000.gif)
 
 ### 示例6（环形发射器更新）
 
@@ -1381,7 +1381,7 @@ struct ParticleExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/CsjkXn-eTXKsEnqfBQZXEw/zh-cn_image_0000002723697342.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/6VbW89v5QT6LtF7dfMOupQ/zh-cn_image_0000002727752858.gif)
 
 ### 示例7（设置波动场和速度场）
 
@@ -1510,4 +1510,4 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/pxMiyjVGTw2d1Ke9p3_mLg/zh-cn_image_0000002753297109.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ou8uZymRR8mwGVM-7BW2hg/zh-cn_image_0000002757312573.gif)

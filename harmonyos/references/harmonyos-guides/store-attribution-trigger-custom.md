@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 自定义转化事件
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发准备 > 管理转化事件 > 自定义转化事件
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:38+08:00
+scraped_at: 2026-09-18T06:46:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:34ff7e575c4a3504756b94d21855c0b6cd50af6142d173860390a4983cfa6399
+content_hash: sha256:18cdbb9216c3bb37d93dc455cd42c800ca75121ffbeb79c9e38efe068ae3153f
 ---
 
 **开发者角色的合作伙伴在转化事件管理页面可以做如下操作**：
@@ -18,13 +18,13 @@ content_hash: sha256:34ff7e575c4a3504756b94d21855c0b6cd50af6142d173860390a4983cf
 
 1. 在左侧点击转化事件管理菜单栏，进入自定义转化事件页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/lPOtNQjjQhqLR6Yys6nLgg/zh-cn_image_0000002753455627.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/F-cJI0PeTKyvraXQNY1adQ/zh-cn_image_0000002757231293.png)
 2. 点击右上角“新增”按钮，进入新增自定义转化事件页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ZjAOUrbMQ9SWYlcfU2tm5g/zh-cn_image_0000002723855862.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/amhkOHQuSDCMzD2dF9Jv1A/zh-cn_image_0000002727591602.png)
 3. 填写“转化事件名称”、“转化事件编码”、“含义说明”信息，点击“确认”按钮后会生成一条状态是“新建待审核”的自定义转化事件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/it8PcSz_Tu6oiQaieVKGCA/zh-cn_image_0000002723695944.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/G2pe4tW5Ruq0St09gsnACQ/zh-cn_image_0000002727751460.png)
 
 **说明** 
 
@@ -35,13 +35,13 @@ content_hash: sha256:34ff7e575c4a3504756b94d21855c0b6cd50af6142d173860390a4983cf
 
 1. 点击处于已生效或者驳回状态的自定义转化事件列表右侧“编辑”按钮：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/l4U00y9NR8KT0Fi4IIxUHg/zh-cn_image_0000002753295711.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/QQF7s4QwTFSrBUnejTvCEQ/zh-cn_image_0000002757311175.png)
 2. 进入编辑页面，修改“转化事件名称”、“转化事件编码”、“含义说明”信息后点击“确认”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/fhkHa5qFRn6MjllczOqtHQ/zh-cn_image_0000002753455629.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ZKLfARL1Tm28pAQsHZznPg/zh-cn_image_0000002757231295.png)
 3. 修改后的数据状态为“修改待审核”或者“新建待审核”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/44C0XH8FR6qSTp1OeFSn2Q/zh-cn_image_0000002723855864.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/7UkZTdBVTWqQUH5JG_BGiQ/zh-cn_image_0000002727591604.png)
 
 “修改待审核”状态的自定义转化事件被审核通过后才能生效，如果被驳回，则维持修改之前的转化事件名称和转化事件编码值。
 
@@ -60,10 +60,10 @@ content_hash: sha256:34ff7e575c4a3504756b94d21855c0b6cd50af6142d173860390a4983cf
 
 删除待审核的自定义转化事件需要审核人员审核通过后，才会被删除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/YejiC6YoTVyDE162sb4NyQ/zh-cn_image_0000002723695946.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/JEHfrNTISayJJGnh8lXaVQ/zh-cn_image_0000002727751462.png)
 
 ## 查看
 
 点击左侧转化事件管理菜单栏，进入自定义转化事件页面查看自定义转化事件信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/T-vr1u7fTD2TzGKcf56mkg/zh-cn_image_0000002753295713.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/9qR1xGCSSpqoSs4LJyqKzA/zh-cn_image_0000002757311177.png)

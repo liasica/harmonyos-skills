@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 时域可分层视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 时域可分层视频编码
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:18+08:00
+scraped_at: 2026-09-18T06:45:53+08:00
 doc_updated_at: 2026-08-21
-content_hash: sha256:15634c47b32eb8e0e41bf9194bcb13bcfd6fe5c623a9e0949f74ee607fe7bf07
+content_hash: sha256:b18a73446a9999c6ea24cf5b0cb1f0512521271d93f7a05b5f060edd0ac2187f
 ---
 
 ## 基础概念
@@ -18,13 +18,13 @@ content_hash: sha256:15634c47b32eb8e0e41bf9194bcb13bcfd6fe5c623a9e0949f74ee607fe
 
 **时域可分层视频编码**，是指能编码出时域分层码流的视频编码，下图展示了通过参考关系构建的4层时域分层码流结构。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/4lmKL4EVReiXrGptrKhkZQ/zh-cn_image_0000002753455323.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/jEFeMXYGReGhoosCoEWPyA/zh-cn_image_0000002757230989.png)
 
 从高到低逐层丢弃部分层级的码流（丢弃顺序L3->L2->L1），能实现不同程度的帧率伸缩，以满足传输和解码能力的变化需求。
 
 如下图所示，这是上述4层时域分层码流结构丢弃L3后组成的新的码流结构，能在解码正常的情况下实现帧率减半的效果。其他层的丢弃同理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/_fbs7ncSRiaHGZ7rO2tpDA/zh-cn_image_0000002723855558.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/7vq81OudTzCJYPxJcSXAsA/zh-cn_image_0000002727591298.png)
 
 ### 时域分层码流结构介绍
 
@@ -93,15 +93,15 @@ content_hash: sha256:15634c47b32eb8e0e41bf9194bcb13bcfd6fe5c623a9e0949f74ee607fe
 
 使用举例1：TGOP=4时的相邻参考模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/-_ATjzBDTQCc_7lrJ5-PWA/zh-cn_image_0000002723695640.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/XlUEeVtoS3u6RLO2u-FqoA/zh-cn_image_0000002727751156.png)
 
 使用举例2：TGOP=4时的跨帧参考模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ZqXVCCcNR4OtgACbPz519g/zh-cn_image_0000002753295407.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/C_XhZTxZTa-fF7GmKi6XvA/zh-cn_image_0000002757310871.png)
 
 使用举例3：TGOP=4时的均匀分层模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/YAn00brWT5eFJ2h5e1UuEw/zh-cn_image_0000002753455325.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/d4x9u80NTSe8Eu66aZ1KcQ/zh-cn_image_0000002757230991.png)
 
 ### 开发指导
 

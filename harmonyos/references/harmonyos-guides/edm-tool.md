@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/edm-tool
 title: edm工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > edm工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:71cacee2f4187e23e82cb45479e571bd383be5690e492203edac47e1d4a8fa76
+scraped_at: 2026-09-18T06:45:49+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:4424f379f5cf3d01ff33e541c279e3c2f4e7141b06926b5ca23c5302023f95f5
 ---
 
 Enterprise Device Manager（企业设备管理工具，简称为edm），为设备管理应用提供调试和测试能力，例如激活企业设备管理拓展能力、解除激活企业设备管理拓展能力。
@@ -95,9 +95,8 @@ disable-admin success.
 
 **处理步骤**
 
-1、如果当前使用的命令是enable-admin，请补充-n <bundle-name>和-a <ability-name>参数。
-
-2、如果当前使用的命令是disable-admin，请补充-n <bundle-name>参数。
+1. 如果当前使用的命令是enable-admin，请补充-n <bundle-name>和-a <ability-name>参数。
+2. 如果当前使用的命令是disable-admin，请补充-n <bundle-name>参数。
 
 ### error: -n, --bundle-name option requires an argument
 
@@ -177,11 +176,9 @@ disable-admin success.
 
 **可能原因**
 
-1、传入的bundleName不正确。
-
-2、传入的abilityName不正确。
-
-3、传入的不是enterpriseAdmin类型的ExtensionAbility。
+1. 传入的bundleName不正确。
+2. 传入的abilityName不正确。
+3. 传入的不是enterpriseAdmin类型的ExtensionAbility。
 
 **处理步骤**
 
@@ -195,17 +192,14 @@ disable-admin success.
 
 **可能原因**
 
-1、传入的bundleName不正确。
-
-2、传入的不是enterpriseAdmin类型的ExtensionAbility。
-
-3、存在已激活的正式的enterpriseAdmin类型的ExtensionAbility。
+1. 传入的bundleName不正确。
+2. 传入的不是enterpriseAdmin类型的ExtensionAbility。
+3. 存在已激活的正式的enterpriseAdmin类型的ExtensionAbility。
 
 **处理步骤**
 
-1、查询应用的bundleName和enterpriseAdmin类型的ExtensionAbility的abilityName，并将其传入到参数中。
-
-2、请使用未被管控的设备进行调试。
+1. 查询应用的bundleName和enterpriseAdmin类型的ExtensionAbility的abilityName，并将其传入到参数中。
+2. 请使用未被管控的设备进行调试。
 
 ### 9200005 error: failed to disable the administrator application of the device
 
@@ -215,11 +209,9 @@ disable-admin success.
 
 **可能原因**
 
-1、此组件未被激活。
-
-2、此组件不是通过hdc命令被激活的。
-
-3、解除激活失败。
+1. 此组件未被激活。
+2. 此组件不是通过hdc命令被激活的。
+3. 解除激活失败。
 
 **处理步骤**
 

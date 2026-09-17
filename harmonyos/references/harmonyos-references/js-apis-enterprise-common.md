@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-common
-title: "@ohos.enterprise.common（Enterprise公共模块）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.common（Enterprise公共模块）
+title: "@ohos.enterprise.common (Enterprise公共模块)"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.common (Enterprise公共模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:42+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-18T06:50:23+08:00
+doc_updated_at: 2026-09-17
 content_hash: sha256:217674c82c52d82b36e1991d9dbe8af0a8d755b8ce7ea15c1e24a3912e449fd7
 ---
 

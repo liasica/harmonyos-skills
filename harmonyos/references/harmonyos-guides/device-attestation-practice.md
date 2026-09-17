@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attest
 title: 验证应用请求真实性集成设计实践
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 验证应用请求真实性集成设计实践
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:55+08:00
+scraped_at: 2026-09-18T06:45:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:38ab9eb9bbf30e481a771bc6bf6b69cf2c1f1a53528cf665ccfe4eb3f1223679
+content_hash: sha256:7f5a7c307cb4963ca9da499e9da5b1860080978bfe62aa4122e261b60a75173e
 ---
 
 本文档提供了验证应用请求真实性的集成设计方案实践。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/zR_i9-ZbS5qqEUZbPowE3g/zh-cn_image_0000002753455153.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/OJQxYj6sT7imOIkipWmsxQ/zh-cn_image_0000002757230819.png)
 
 ## 创建密钥确立可信凭证流程
 

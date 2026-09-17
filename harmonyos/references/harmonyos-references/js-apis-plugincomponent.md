@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.pluginComponent (PluginComponentManager)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.pluginComponent (PluginComponentManager)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e8afb3a71920539dbcabdfe6d72eff9543e3d7fc43c6471c70d488f41a3b031f
+scraped_at: 2026-09-18T06:47:58+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:cd634b1052caec36a6d13ec6279e72130c964d9dcea2ea4b0f2058326d747a5f
 ---
 
 本模块供插件组件的使用方请求组件与数据，供提供方发送组件模板和数据。
@@ -121,7 +121,7 @@ pluginComponentManager.request方法接收到的回调结果。
 | --- | --- | --- | --- | --- |
 | componentTemplate | [PluginComponentTemplate](js-apis-plugincomponent.md#plugincomponenttemplate) | 否 | 否 | 组件模板。 |
 | data | [KVObject](js-apis-plugincomponent.md#kvobject) | 否 | 否 | 组件数据，以键值对形式存储，键和值类型由业务定义。 |
-| extraData | [KVObject](js-apis-plugincomponent.md#kvobject) | 否 | 否 | 附加数据。该字段为可选字段，不提供时默认不包含在返回结果中。 |
+| extraData | [KVObject](js-apis-plugincomponent.md#kvobject) | 否 | 否 | 附加数据。 |
 
 ### RequestEventResult
 

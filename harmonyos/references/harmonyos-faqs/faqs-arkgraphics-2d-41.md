@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何为图片、视频添加水印
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何为图片、视频添加水印
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:7e98661f160d1de3e321e720851f3fe16175844a768bd301f9e94b7308642f0c
+scraped_at: 2026-09-18T06:54:52+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:4052f62d5b2e910b592c2345bd224a83f22346a2e61a0d91cb333092faad4e7b
 ---
 
 ## 问题现象
@@ -36,7 +36,7 @@ content_hash: sha256:7e98661f160d1de3e321e720851f3fe16175844a768bd301f9e94b73086
   | 方案一 | 在UI层进行布局操作，使用简单，性能较好。 | 不会修改图像源数据。如果用户保存图片，水印不会被保存。 | 1. 图像原始数据不能被修改的场景；  2. 图片不需要保存的场景，如数据预览等。 |
   | 方案二 | 需要对图片进行编解码和像素数据处理，尤其是在处理大图片或多张图片时，性能开销较大。 | 水印会嵌入到图片的像素数据中，会修改图像原始数据，生成新的图片文件，水印会永久保存在图片中。 | 适用于需要将水印永久保存在图片中的场景，如版权保护、标记等。 |
 * 视频添加水印。
-  + 方案一：通过[Stack](../harmonyos-references/ts-container-stack.md)组件或[overlay](../harmonyos-references/ts-universal-attributes-overlay.md#overlay)属性实现图片水印效果（支持emoji表情），使用第三方库[mp4parser](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fmp4parser)调用FFmpeg命令合成加水印的视频。完整示例可以参考[视频静态水印添加](../architecture-guides/video_water_mark-0000002408013854.md)。
+  + 方案一：通过[Stack](../harmonyos-references/ts-container-stack.md)组件或[overlay](../harmonyos-references/ts-universal-attributes-overlay.md#overlay)属性实现图片水印效果（支持emoji表情），使用第三方库[mp4parser](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fmp4parser)调用FFmpeg命令合成加水印的视频。完整示例可以参考[视频静态水印添加](https://gitcode.com/HarmonyOS_Samples/video-water-mark)。
   + 方案二：通过Drawing模块绘制水印，使用glTexImage2D方法将水印纹理（支持emoji表情）与视频纹理绑定完成水印添加，最终通过XComponent进行显示。完整示例可参考[视频添加水印](https://gitee.com/harmonyos_samples/video-water-mark/blob/master/README.md)。**注**：[OH\_Drawing\_TypographyHandlerAddText](../harmonyos-references/capi-drawing-text-typography-h.md#oh_drawing_typographyhandleraddtext)接口中入参为char\*，只能输入单字节编码表示的emoji表情，不可以传入u16\_string表示的emoji表情。
 
   两种方案对比：

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 转场样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 转场样式
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:19+08:00
+scraped_at: 2026-09-18T06:48:36+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9995128d50d6a64fac8d386be4de4a1141608ee66c0dfafeb0fce0b7fbe84a40
+content_hash: sha256:e61dbea797e2bf27e595650f3eba81aa70014be1ff80807ad0ae22037d5b4d11
 ---
 
 **说明** 
@@ -35,7 +35,7 @@ content_hash: sha256:9995128d50d6a64fac8d386be4de4a1141608ee66c0dfafeb0fce0b7fbe
 
    **图1** 共享元素转场默认效果
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/nLk-FZFpTSWQgVpqHT74jQ/zh-cn_image_0000002753297283.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/vvtQ0R3XSHK8pTGVEEnnMA/zh-cn_image_0000002757232867.png)
 3. 共享元素动画对元素的边框、背景色不生效。
 4. 共享元素转场时，由于页面元素会被隐藏，故页面元素配置的动画样式/动画方法失效。
 5. 动态修改shareid5+：若组件A的shareid被组件B的shareid覆盖，组件A的共享元素效果将失效。即使后续修改组件B的shareid，组件A的共享元素效果也不会恢复。
@@ -213,7 +213,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/0CPee0ufSaWaJMWbcrVrIA/zh-cn_image_0000002753457201.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/rmCgjGmmT0m08CuuX9tzwQ/zh-cn_image_0000002727593176.gif)
 
 ## 页面转场样式
 
@@ -234,11 +234,11 @@ export default {
 
    a. push场景下：进入页面栈的Page2.js应用transition-enter描述的动画配置；进入页面栈第二位置的Page1.js应用transition-exit描述的动画配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/xVQDHXGZT_6DuG9lKXxp7Q/zh-cn_image_0000002723857436.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Dj2b5ZUdQ3eW7oPohtfACg/zh-cn_image_0000002727753034.png)
 
    b. back场景下：退出页面栈的Page2.js应用transition-enter描述的动画配置，并进行倒播；从页面栈第二位置进入栈顶位置的Page1.js应用transition-exit描述的动画配置，并进行倒播。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/AM4gHMDWRDOlliB7mrt8YA/zh-cn_image_0000002723697518.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/QPRl4QR9TiaenMYHfix9KQ/zh-cn_image_0000002757312749.png)
 
 ### 示例
 
@@ -377,4 +377,4 @@ Page1有一个不透明盒子，点击盒子会跳转到Page2，当点击Page2�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/yA5DnOjtRUu8FI5KYWqwig/zh-cn_image_0000002753297285.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/qPiKIbG7TfWZ4GLSdjpaow/zh-cn_image_0000002757232869.gif)

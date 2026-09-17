@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed
 title: 服务端应用开发
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > 服务端应用开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:f79ea823f182627e1ae50404a8c4f5514a87fb7d04c527c795109128938ec85c
+scraped_at: 2026-09-18T06:45:17+08:00
+doc_updated_at: 2026-09-17
+content_hash: sha256:ffc7c8e7e893f9d9ed2054d130d1f4fe0c041d3e87593a6abf85e94b0c5f9a8e
 ---
 
 ## 场景介绍
@@ -107,25 +107,19 @@ OE服务端应用使用OE Extension框架[content\_embed\_extension.h](../harmon
 
 ### 添加动态链接库
 
-CMakeLists.txt中添加以下lib。
+在Native工程的src/main/cpp/CMakeLists.txt，添加如下链接库：
 
-```text
-# content embed
-libcontent_embed_ndk.so
-# hilog
-libhilog_ndk.z.so
-# ace
-libace_napi.z.so
-# piexlmap
-libpixelmap.so
-# ability
-libability_runtime.so
-# want
-libability_base_want.so
-# fileuri
-libohfileuri.so
-# libimage_source
-libimage_source.so
+```txt
+target_link_libraries(entry PUBLIC
+    libcontent_embed_ndk.so
+    libhilog_ndk.z.so
+    libace_napi.z.so
+    libpixelmap.so
+    libability_runtime.so
+    libability_base_want.so
+    libohfileuri.so
+    libimage_source.so
+)
 ```
 
 ### 导入头文件
