@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.router (页面路由)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > @system.router (页面路由)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:07+08:00
+scraped_at: 2026-09-21T06:20:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:45700e9f11d7a22b36d11db82ac97c1e448722c0f4b2988a56036c698870109e
+content_hash: sha256:ec236b5712c1e666b1f69f06858442e6761f57a248facd700416e798bed3e029
 ---
 
 通过不同的uri访问不同的页面。
@@ -598,4 +598,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/-iqD8sv2TBGL1B_dOXu_UA/zh-cn_image_0000002757311969.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0cJ97XOcRQGENsuf8EpZtw/zh-cn_image_0000002733435880.gif)

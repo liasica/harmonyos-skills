@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-ripp
 title: 基于AudioRenderer和AudioCapturer实现音频波形动画
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AudioRenderer和AudioCapturer实现音频波形动画
 category: best-practices
-scraped_at: 2026-09-16T06:54:59+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:424ca9eb12a4514bcd29f741d58232f6a3f68586917739dbd7b157c7afb484c4
+scraped_at: 2026-09-21T06:25:37+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:572e0edb3095a28f064a860f6564df03e356151c0554c227d4a05f61a97bb126
 ---
 
 ## 概述
 
 音频波形动画是音频数据的线性波形显示，其中，水平X轴用于衡量时间，垂直Y轴用于衡量振幅，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/nwCs_0MOQROqC-hb6GAIGg/zh-cn_image_0000002507968404.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/TCntuO0pTxOTqpoIecHczg/zh-cn_image_0000002507968404.png "点击放大")
 
 由于音频波形可以清晰地显示振幅变化，因此非常适合于直观显示声音、音乐等的音量大小变化，常用于用户在录音或播放录音过程中实时展示音量大小的场景。
 
@@ -25,7 +25,7 @@ content_hash: sha256:424ca9eb12a4514bcd29f741d58232f6a3f68586917739dbd7b157c7afb
 
 dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示中，通常使用dBFS衡量数字音频中的信号强度。其计算公式如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/bj3lxJDiRcqr8BJMori5DQ/zh-cn_formulaimage_0000002539808087.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5iKAeJwyR7SJprbmTPY-OQ/zh-cn_formulaimage_0000002539808087.png "点击放大")
 
 其中，A表示当前采样点的振幅值（即该时刻音频数据的瞬时数值）。Amax表示在当前位深下，系统所能表示的最大振幅值。
 
@@ -37,7 +37,7 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发录音播放等场景时，为了体现当前播放音量的大小，需要实现音频播放波形，下面将介绍如何基于AudioRenderer实现音频播放波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Thq4c29uSx6ZWXe6v2sTUQ/zh-cn_image_0000002539688123.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/eFRprYfPQG-4ks-C-l5Hog/zh-cn_image_0000002539688123.gif "点击放大")
 
 ### 实现原理
 
@@ -125,7 +125,7 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发通讯软件的语音录制发送、音乐录制等场景时，为了体现当前录制音量的大小，需要实现音频录制波形。下面将介绍如何基于AudioCapturer实现音频录制波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/YT6vfKTbRY6jIrJS5I3Afw/zh-cn_image_0000002507968406.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/YGNGAcpPQQKJysZ4zLtyZA/zh-cn_image_0000002507968406.gif "点击放大")
 
 ### 实现原理
 
@@ -135,12 +135,12 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 1. 初始化AudioCapturer，在回调函数readData()中需要计算位深的总数，便于后续计算其平均值。
 
-   ```typescript
+   ```screen
    this.capturer.on('readData', (buffer: ArrayBuffer) => {
      let options: WriteOptions = { offset: this.writeOffset, length: buffer.byteLength };
      fileIo.writeSync(this.recordFile?.fd, buffer, options);
      this.writeOffset += buffer.byteLength;
-     AppStorage.setOrCreate('RWOffset', this.writeOffset)
+     AppStorage.setOrCreate('RWOffset', this.writeOffset);
      // sum samples
      let samples = new Int16Array(buffer);
      for (let i = 0; i < samples.length; i++) {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-travel-na
 title: 多设备地图导航界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备地图导航界面
 category: best-practices
-scraped_at: 2026-09-16T06:55:02+08:00
+scraped_at: 2026-09-21T06:25:40+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:a8292a3449d7849f034609445bfee9156c6e47a2ce64a8c37c99da1d3376c7ad
+content_hash: sha256:b33d8d6b63ce6115fcefa8c0badc511fd48b187361ae53267e1dff7562f3b5bb
 ---
 
 ## 概述
@@ -44,7 +44,7 @@ content_hash: sha256:a8292a3449d7849f034609445bfee9156c6e47a2ce64a8c37c99da1d337
 
 地图导航应用的UX设计可参考[出行导航类](../design-guides/travel-and-navigation-0000001957391017.md)多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/GUr0kAukS1CCV1iwQLFNzA/zh-cn_image_0000002584589316.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/nqPQVJr4TxGhrn1WhIcuNA/zh-cn_image_0000002584589316.png "点击放大")
 
 ## 工程管理
 
@@ -192,7 +192,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 地图容器页功能开发流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/X5IYrN7yQNu0mQtaxxJjbQ/zh-cn_image_0000002614909169.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/d--TsQsEQeiuMqEjubAyRw/zh-cn_image_0000002614909169.png "点击放大")
 
 地图容器页主要包含以下功能：
 
@@ -232,7 +232,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 * 搜索入口交互：用户点击搜索框时，通过点击事件触发回调自动将面板提升到高档位；以直板机为例，点击搜索框面板自动升高示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/RqpnVolNQYuXx-fDt1kuwg/zh-cn_image_0000002584429394.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/bxBuQZ2NQtuYxF7oMBMYVg/zh-cn_image_0000002584429394.gif "点击放大")
 
 ### 地点搜索页
 
@@ -312,7 +312,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
   以直板机为例，返回清除路线并恢复地点标记的示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/0AhxNMy9Qy2FWUD8V71lpQ/zh-cn_image_0000002584589344.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/m7QE5_pRSO-nEf_dc2EYqg/zh-cn_image_0000002584589344.gif "点击放大")
 
 **功能开发**
 
@@ -364,7 +364,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端地图容器页移动端功能定位一致，信息面板固定在侧边栏，面板右侧承载地图画布和电脑端装饰工具栏。效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/DRFCrr5NR4-2ghwuVZUbJw/zh-cn_image_0000002584429408.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/vy_EigFSRDm77E33ErPPEQ/zh-cn_image_0000002584429408.png "点击放大")
 
 **界面开发**
 
@@ -377,7 +377,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 | 2 | 地图画布 | 同[地图容器页](multi-travel-navigation.md#section1728173982316)地图画布区域的布局实现方案一致。 |
 | 3 | 地图操作区 | 使用[Stack](../harmonyos-references/ts-container-stack.md)组件，在地图主区域叠加工具栏区域。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Ty0GbNlSQn2ZqKRGn6EwVA/zh-cn_image_0000002584589348.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/FIF_xKDuQPe6HX-PGuyo9w/zh-cn_image_0000002584589348.png "点击放大")
 
 ### 首页
 
@@ -398,7 +398,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端地点搜索页在侧栏中展示搜索结果列表，在地图主区域同步展示搜索结果标记。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/RsMiXxmASdagldIDHVFnog/zh-cn_image_0000002614789083.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kFfVbt2AS5mJNJcMzWuTLg/zh-cn_image_0000002614789083.png "点击放大")
 
 **界面开发**
 
@@ -413,7 +413,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端地点详情页固定在侧栏中，用户可以在确认地点信息的同时查看地图中的目的地位置。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/wAY3kGlfQqenfLlpzdvDPQ/zh-cn_image_0000002614909193.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/l-PiMsndQJyg7poGE8FcJA/zh-cn_image_0000002614909193.png "点击放大")
 
 **界面开发**
 
@@ -430,7 +430,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端路线规划页在侧栏中展示起终点和路线方案，在地图主区域展示完整路线走向。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/aCzgaHT5TwSqfioE_7CmSg/zh-cn_image_0000002584429410.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/T57XyN87Qx2xmoU_uIOzAg/zh-cn_image_0000002584429410.png "点击放大")
 
 **界面开发**
 

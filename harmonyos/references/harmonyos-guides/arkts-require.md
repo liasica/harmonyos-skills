@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-require
 title: "@Require装饰器：校验构造传参"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > @Require装饰器：校验构造传参
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:00+08:00
+scraped_at: 2026-09-21T06:17:15+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:3b7975b55bc5cc9ea86204c11298463d90f71c5210dcd2515b3b0718ed9bc50d
+content_hash: sha256:62241af99418ac7f97ee5e07f6dcfd3e253039e2971514212a3af9f9d47b63e0
 ---
 
 [@Require](../harmonyos-references/ts-universal-require-dynamic.md#require)是校验@Prop、@State、@Provide、@BuilderParam、@Param和普通变量（无状态装饰器修饰的变量）是否需要构造传参的一个装饰器。
@@ -152,7 +152,7 @@ struct ParentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/DpSJuAQjSSOG4Z9HuJPoMg/zh-cn_image_0000002727749848.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/af2UEKqjQdOWjdisuxS-qg/zh-cn_image_0000002733273562.gif)
 
 从API version 18开始，使用@Require装饰@State、@Prop、@Provide装饰的状态变量，可以在无本地初始值的情况下直接在组件内使用，不会编译报错。
 

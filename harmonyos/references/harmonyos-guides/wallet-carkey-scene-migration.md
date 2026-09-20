@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 迁移车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 迁移车钥匙
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:30+08:00
+scraped_at: 2026-09-21T06:18:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:97ad48d0cf868389de61aaca2c441e599fdd802ca3aea9fe00f698c6ced03cae
+content_hash: sha256:e2b5910e14de77518daf8e0ccd861d362fef1a566de321fae1c86940bf11859a
 ---
 
 用户更换移动设备后，车钥匙自动迁移至新设备，无须重新线下配对，保障用户持续使用数字车钥匙的便捷体验。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/8rNB0uajRyuGLWHUhzTP1A/zh-cn_image_0000002727751890.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/6FaU4Mr1QtOQrGUBQUNYoQ/zh-cn_image_0000002733275636.png)
 
 ## 服务端开发
 

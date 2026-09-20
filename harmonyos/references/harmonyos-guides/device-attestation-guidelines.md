@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attest
 title: 创建密钥确立可信凭证
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 创建密钥确立可信凭证
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:366e272e58fd825bbb758bafcfe5b0dd7ed272a4a7dde898df5147f751ae0717
+scraped_at: 2026-09-21T06:17:49+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:40dc3291074dff0847869daf358bcf99d195c71a5237f06743b5512015b018f9
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:366e272e58fd825bbb758bafcfe5b0dd7ed272a4a7dde898df5147f751a
 
 **图1** 创建密钥确立可信凭证流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/IcTzWVqKRuG9efjkMrNdcA/zh-cn_image_0000002757230817.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/YSzHD-HeR7uVanIkFG52Pw/zh-cn_image_0000002762994113.png)
 
 ### 创建密钥确立可信凭证流程
 
@@ -29,11 +29,8 @@ content_hash: sha256:366e272e58fd825bbb758bafcfe5b0dd7ed272a4a7dde898df5147f751a
 * 为避免您的应用在调用在线密钥证明接口时被限流导致请求异常，请确保应用在全网设备中，每秒调用这些接口不超过35次。当在线密钥证明接口由于流量过载或其他原因不可用时，应用需要考虑异常处理方案，避免出现应用基本功能不可用的情况。
 * 应用服务器需要持久化保存应用公钥，且与应用的登录用户进行一一对应。
 
-  [/topic/body/section/note/ul/li/blockquote {""}) 
-
   一个应用的登录一个用户只需要执行一次创建密钥确立可信凭证流程，请勿在每次业务请求时都对应用公钥和应用ID进行证明。
-
-  + 当在线密钥证明接口由于流量过载或其他原因不可用时，应用需要考虑异常处理方案，避免出现应用基本功能不可用。 (blockquote]
+* 当在线密钥证明接口由于流量过载或其他原因不可用时，应用需要考虑异常处理方案，避免出现应用基本功能不可用。
 
 具体的步骤如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-news-read
 title: 多设备新闻阅读界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备新闻阅读界面
 category: best-practices
-scraped_at: 2026-09-16T06:55:02+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:0c477efbabac8938ab4c5a537681c8e5aa1f228b5692378e2f777f3f32f063a4
+scraped_at: 2026-09-21T06:25:40+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:95d26054c1bc1a664e14c511dcca74b577324278b57c08e45f4062ac646eb1d4
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:0c477efbabac8938ab4c5a537681c8e5aa1f228b5692378e2f777f3f32f
 
 新闻阅读应用的UX设计可参考[新闻阅读类](../design-guides/responsive-design-examples4-0000001746657290.md)设计指南。应用在直板机上采用单列纵向布局，在折叠屏和平板上以双列栅格展示，在电脑上采用侧边栏加内容区的分栏布局。多设备新闻阅读界面在不同设备形态下的效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/XluODtTWTLexDPzWG86u8w/zh-cn_image_0000002693047956.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ROqnqYv5SlmD0qH2Pw-Ncg/zh-cn_image_0000002693047956.png "点击放大")
 
 ## 工程管理
 
@@ -165,7 +165,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端首页推荐页的页签栏展示在左侧，右侧承载内容区。效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/8fthir6-Q0yRl3QxCQrXRA/zh-cn_image_0000002722887399.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/5m9Q6f_kTY67y3aY9H9UmQ/zh-cn_image_0000002722887399.png "点击放大")
 
 **界面开发**
 
@@ -181,7 +181,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端新闻详情页左侧为新闻内容、右侧展示评论区，底部嵌入工具栏。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/I4BGhqNOTxeTmPnE2xP0-w/zh-cn_image_0000002693207824.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/3isyTEQyRSOAXmScbG9-TQ/zh-cn_image_0000002693207824.png "点击放大")
 
 **界面开发**
 
@@ -195,4 +195,4 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 ## 示例代码
 
-[多设备新闻阅读界面](https://gitcode.com/HarmonyOS_Samples/multi-news-read)
+* [多设备新闻阅读界面](https://gitcode.com/HarmonyOS_Samples/multi-news-read)

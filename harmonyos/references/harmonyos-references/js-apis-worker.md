@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.worker (启动一个Worker)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.worker (启动一个Worker)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:02+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:582275e4b08b9b615aee527d37fec38e0999a24d8ad54117ab430e9ee415f04e
+scraped_at: 2026-09-21T06:20:24+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:28dea0f54aa041701bf14319872236ddf9d38445eb4d3a4871a8110b66196299
 ---
 
 Worker是与宿主线程并行的独立线程。创建Worker的线程称为宿主线程，Worker自身的线程称为Worker线程。创建Worker时传入的URL文件在Worker线程中执行，可以处理耗时操作，但不能直接操作UI。
@@ -2200,7 +2200,9 @@ const workerInstance = new worker.ThreadWorker("workers/worker.ets");
 workerInstance.postMessage("message from main thread to worker");
 workerInstance.onmessage = (d: MessageEvents): void => {
   // 当Worker线程传递myModel时，data即为myModel。data没有init的方法
-  let data: string  = d.data;
+  let data: Record<string, Object> = d.data as Record<string, Object>;
+  console.info('name:', data.name);// name: default name
+  console.info('init:', data.init === undefined);// init: true
 }
 ```
 
@@ -2210,7 +2212,7 @@ import { worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
 
 const workerPort = worker.workerPort;
 class MyModel {
-    name = "undefined";
+    name = "default name";
     init() {
         this.name = "MyModel";
     }

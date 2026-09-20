@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TapGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > TapGesture
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:12+08:00
+scraped_at: 2026-09-21T06:20:41+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:665fe912651147226c72e8ad29a16f4eab3eb043cabbadb0c243c3f919c876fe
+content_hash: sha256:55ef573d7da271fdae8770e951badf858178c48dea4a62f28e5a383d5336f48c
 ---
 
 支持单击、双击和多次点击事件的识别，适用于为组件绑定点击交互、区分不同点击次数并触发对应业务逻辑的场景。
@@ -153,7 +153,7 @@ struct TapGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/gg8iEHbETLeL6FElham1aQ/zh-cn_image_0000002727592530.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Tiss8yG5Q8q5sndbLEZIzg/zh-cn_image_0000002762835651.gif)
 
 ### 示例2（获取单击手势坐标）
 
@@ -194,7 +194,7 @@ struct TapGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/6C8lXVrpQeKNMNzDTxlJEw/zh-cn_image_0000002727752388.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vEYIlXY5Ty-sOFjNct4RYA/zh-cn_image_0000002733276140.png)
 
 ### 示例3（获取组件实时位置）
 
@@ -233,4 +233,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/QyvmWGCOQiCJysfPYBSKCw/zh-cn_image_0000002727752256.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/WjRC6NeERGGs_3qOuQbP2g/zh-cn_image_0000002733276008.gif)

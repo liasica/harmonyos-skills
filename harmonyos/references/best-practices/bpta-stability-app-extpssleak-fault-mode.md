@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用泛PSS内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > 泛PSS内存泄漏故障模式说明 > 应用泛PSS内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-16T06:55:14+08:00
+scraped_at: 2026-09-21T06:25:52+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:79fd83a7da9562ccee7e1c0aad5e52e6c5d9b6dd6aa09606bd0f0c666e2e61ac
+content_hash: sha256:6f10efede8d9ab05c3f83f6aeaf1601ec6b90ae4079dae24a81a631c9cf90a63
 ---
 
 ## 概述
@@ -131,10 +131,10 @@ content_hash: sha256:79fd83a7da9562ccee7e1c0aad5e52e6c5d9b6dd6aa09606bd0f0c666e2
       ```
    2. 将内存栈日志导入DevEco Studio中Profiler工具，并按照[运维态问题分析思路](bpta-stability-nativeheap-fault-mode.md#section151162273105)找到异常申请的内存及其调用栈如下图所示。从筛选出的内存调用栈可以看出这份内存共申请了12次，总共申请了4.5GB内存，单次申请内存约402653184字节，恰好与分析NMD维测日志得到的结果一致，进一步证实此调用栈为泄漏的内存栈。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/z0lGgKD_TlW5yoG2K6_9tw/zh-cn_image_0000002699731884.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/-27x2uYFSGW07PdLpjb-LA/zh-cn_image_0000002699731884.png "点击放大")
 4. 分析内存调用栈指向的代码段，发现应用循环申请超大内存未释放，最终导致了泛PSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/MRdesAdJQ_ubJEgcBqI9Bw/zh-cn_image_0000002729491139.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/C56j9K_FRWiyINSRKbDQmQ/zh-cn_image_0000002729491139.png "点击放大")
 
 **开发态分析思路**
 
@@ -143,13 +143,13 @@ content_hash: sha256:79fd83a7da9562ccee7e1c0aad5e52e6c5d9b6dd6aa09606bd0f0c666e2
 1. 启动抓取后，遍历可疑的泄漏场景复现泛PSS内存泄漏问题。
 2. 录制完成后，单击All Heap中的Native Heap泳道，发现NativeHeap内存异常增长：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/QAIa39muTL2KYfxhI7x6AQ/zh-cn_image_0000002729611099.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/3Yd3cisaSBWmBa-USBJJUg/zh-cn_image_0000002729611099.png)
 3. 参考[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)点击Native Heap泳道，找到可疑的内存调用栈如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/iMxWeI9hThSH3exvF26YbQ/zh-cn_image_0000002699891772.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/QTTgwSxsTwe7lyvKcLApyg/zh-cn_image_0000002699891772.png "点击放大")
 4. 分析内存调用栈指向的代码段，发现应用正在循环申请超大内存未释放，最终导致了泛PSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/HhJgCGEUQGSwXqy5wdfzgg/zh-cn_image_0000002699731886.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/xq_f0zeUSWSKx_76n6eGUw/zh-cn_image_0000002699731886.png "点击放大")
 
 **修复建议**
 

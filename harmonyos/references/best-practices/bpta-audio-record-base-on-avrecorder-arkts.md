@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-09-16T06:54:58+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:2245045121ff2ccd890ee1344ce4b18b49b6382eaef45f37c5a59799809d326e
+scraped_at: 2026-09-21T06:25:37+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:fa950b64249e4e9ee37f4cdd3df0489b20041cb1abf44f847c608d8d5ca51fc6
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:2245045121ff2ccd890ee1344ce4b18b49b6382eaef45f37c5a59799809
 
 基于[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)录制格式化音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ad_os3ObSGGujLbrfhp3Ng/zh-cn_image_0000002524061074.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/lLPMpC5FTb2wU-BIqIW6SQ/zh-cn_image_0000002524061074.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -30,13 +30,13 @@ content_hash: sha256:2245045121ff2ccd890ee1344ce4b18b49b6382eaef45f37c5a59799809
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/3yvNSgyPRpm21ivh9hX9vg/zh-cn_image_0000002555220983.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/CAaARiDOR0qlk-o9h53Ohg/zh-cn_image_0000002555220983.png "点击放大")
 
 ### 开发步骤
 
 1.创建[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)对象。
 
-```typescript
+```screen
 private avRecorder: media.AVRecorder | undefined = undefined;
 
 // Create an avRecorder instance
@@ -66,7 +66,7 @@ public prepareAVRecorder(uiContext: Context | undefined) {
   if (!uiContext) {
     return;
   }
-  // Audio recording configuration file
+  // Configure the AVRecorderProfile object
   let avProfile: media.AVRecorderProfile = {
     audioBitrate: 112000, // Audio Bit Rate
     audioChannels: 2, // Number of audio channels
@@ -81,7 +81,7 @@ public prepareAVRecorder(uiContext: Context | undefined) {
     let fileFd: number = audioFile?.fd as number;
     // Parameter settings for audio recording
     let avConfig: media.AVRecorderConfig = {
-      audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_VOICE_COMMUNICATION, // Audio input source, set as microphone here
+      audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_VOICE_COMMUNICATION, // Audio input source, set audioSourceType
       profile: avProfile,
       url: 'fd://' + fileFd.toString(),
     };

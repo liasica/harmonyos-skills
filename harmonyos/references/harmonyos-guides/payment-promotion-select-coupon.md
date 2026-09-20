@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-promo
 title: 选券场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 运营工具 > 平台券 > 选券场景
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:24+08:00
+scraped_at: 2026-09-21T06:18:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:33af3d0562cb0af397acd8005336e5256480cd07e92319b0b51a01941b29adb9
+content_hash: sha256:0219b40fa591164dd86eb603bd40d1eb1ad9e098e54df8a3ed75de547978aab5
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:33af3d0562cb0af397acd8005336e5256480cd07e92319b0b51a01941b2
 
 选券场景效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ra2S4eSBQD6aV9bPztyt5Q/zh-cn_image_0000002727591924.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/T8ghkXQoTAeWGKsHPsHnQA/zh-cn_image_0000002762835041.png)
 
 ## 接入流程
 
@@ -33,7 +33,7 @@ content_hash: sha256:33af3d0562cb0af397acd8005336e5256480cd07e92319b0b51a01941b2
 
 关于选券场景的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/msOg960MQcGOtB44l8VOiw/zh-cn_image_0000002727751782.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/qAODtGBcTVWb_viy5O7ZnQ/zh-cn_image_0000002733275526.png)
 
 1. 用户选好商品后进入商家服务结算页。
 2. 商户客户端请求Payment Kit客户端查询用户可用券。

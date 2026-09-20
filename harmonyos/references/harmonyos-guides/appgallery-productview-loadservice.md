@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 添加元服务卡片至桌面
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 添加元服务卡片至桌面
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:11+08:00
+scraped_at: 2026-09-21T06:18:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4caaf6e9a9c5855b31d5f045614b71780ef78e250e419dca3f3aaa7949549c43
+content_hash: sha256:2970ad2355c66a66fdd4fbd909e3294806960d62fc8039d4f90f8988f7c6a0ac
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:4caaf6e9a9c5855b31d5f045614b71780ef78e250e419dca3f3aaa79495
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/PDyAMsDPS7mNSZdPAaH7Xg/zh-cn_image_0000002757231283.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/AOJvgQzTQwmqAxzSzQapCQ/zh-cn_image_0000002762994593.png)
 
 1. 用户使用元服务卡片加桌功能。
 2. 应用调用AppGallery Kit的[loadService](../harmonyos-references/store-productviewmanager.md#productviewmanagerloadservice)接口。

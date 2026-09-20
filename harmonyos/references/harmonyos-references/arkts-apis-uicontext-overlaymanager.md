@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (OverlayManager)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (OverlayManager)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:47:57+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7673f1bfbe6049e85dbc68f407e468fc2c420efdf50871277dec44add7b2a32d
+scraped_at: 2026-09-21T06:20:26+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:a83f2af8bc7aa9c87eeb84406f87b483972c73ac6cc078a064324d9be627df94
 ---
 
 提供绘制浮层的能力。OverlayManager支持通过配置浮层层级、显示顺序、显示模式等方式管理浮层节点，适用于需要在Page页面之上但Dialog、Popup、Menu等之下的长时间显示的浮层场景，为开发者提供灵活的浮层管理能力。
@@ -85,18 +85,27 @@ struct OverlayExample {
   @State message: string = 'ComponentContent';
   private uiContext: UIContext = this.getUIContext();
   private overlayNode: OverlayManager = this.uiContext.getOverlayManager();
+  @StorageLink('contentArray') contentArray: ComponentContent<Params>[] = [];
 
   build() {
     Column({ space: 5 }) {
-      Button('打开浮层').onClick(() => {
+      Button('openOrderOverlay').onClick(() => {
         let componentContent = new ComponentContent(
           this.uiContext, wrapBuilder<[Params]>(builderText),
           new Params(this.message, { x: 0, y: 110 })
         );
+        this.contentArray.push(componentContent);
         this.overlayNode.openOrderOverlay(componentContent, {
           levelOrder: LevelOrder.clamp(100),
           levelMode: LevelMode.OVERLAY
         });
+      })
+      Button('close overlay').onClick(() => {
+        if (this.contentArray.length > 0) {
+          this.overlayNode.removeComponentContent(this.contentArray.pop());
+        } else {
+          console.info('arrayIndex有误');
+        }
       })
     }
     .width('100%')
@@ -236,7 +245,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/BO-ao9BsR-C_Pc7Cx5US4A/zh-cn_image_0000002757311897.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/AkAfLEKgRieblwPYDnrGrQ/zh-cn_image_0000002733435808.gif)
 
 ## addComponentContentWithOrder18+
 
@@ -338,7 +347,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/7xJGvnJgQDiBax2UFG4iSQ/zh-cn_image_0000002757232017.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Hxm7c16FT66GpiYEYN1naw/zh-cn_image_0000002762995331.gif)
 
 ## removeComponentContent12+
 

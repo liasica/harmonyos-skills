@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: input
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > input
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:37+08:00
+scraped_at: 2026-09-21T06:21:12+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:c1739b1bc6009403fb0db8c1e8f76e2493efe922d8e70e66607909ba5b2e5f54
+content_hash: sha256:f0b9d22df602eae61a0d0eaf6b4cba5b665dbb6fe010e07260462389b1fd47ca
 ---
 
 **说明** 
@@ -152,7 +152,7 @@ content_hash: sha256:c1739b1bc6009403fb0db8c1e8f76e2493efe922d8e70e66607909ba5b2
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/93PUVkIRR9CTQQe6_cVISQ/zh-cn_image_0000002757312763.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/R38m2hP4SfaHknAntBfw_Q/zh-cn_image_0000002733436682.png)
 2. type为button
 
    ```html
@@ -174,7 +174,7 @@ content_hash: sha256:c1739b1bc6009403fb0db8c1e8f76e2493efe922d8e70e66607909ba5b2
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/l2D0wn1mTayS3Rd9zMMbIw/zh-cn_image_0000002757232883.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/BdJGXudKQVKqBG1J08gNlQ/zh-cn_image_0000002762996207.png)
 3. type为checkbox
 
    ```html
@@ -207,7 +207,7 @@ content_hash: sha256:c1739b1bc6009403fb0db8c1e8f76e2493efe922d8e70e66607909ba5b2
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/gZTPvocKRV2oJKC3VdnJPQ/zh-cn_image_0000002727593192.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/aPY6A5MNRZGvQ2yKwtQNFw/zh-cn_image_0000002762836321.png)
 4. type为radio
 
    ```html
@@ -244,4 +244,4 @@ content_hash: sha256:c1739b1bc6009403fb0db8c1e8f76e2493efe922d8e70e66607909ba5b2
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/qIpjI8uqQU6TG-x4BmBnuQ/zh-cn_image_0000002727753050.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/PiQ7guiZSL2uQ8QCZFxQBQ/zh-cn_image_0000002733276810.png)

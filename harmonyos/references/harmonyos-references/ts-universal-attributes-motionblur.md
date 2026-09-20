@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 运动模糊
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 运动模糊
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:09+08:00
+scraped_at: 2026-09-21T06:20:40+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0bd9eacbe4d668494fd1ff29cbf253d30352025fdc46716e6cb1f9f85647eecd
+content_hash: sha256:56e7a36530de320ac73d955e2b2bcfca1491d54c7417fcacd291517211c9cfd2
 ---
 
 设置组件由缩放大小或位移变化引起的运动过程中的运动模糊效果。需要与动画的[AnimateParam](ts-explicit-animation.md#animateparam对象说明)的onFinish参数配合使用。
@@ -155,4 +155,4 @@ struct MotionBlurTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/82xBtO6TTQ2wgUrkG5fosA/zh-cn_image_0000002727592464.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/HlFBwLQ2TOijjzxNsuXCdw/zh-cn_image_0000002762835583.gif)

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/toybox
-title: toybox
-breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具 > toybox
+title: toybox工具
+breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具 > toybox工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-05-26
-content_hash: sha256:6f8b8d3e386225fd606e80c1d5cd747e828fbf8bab41726fba3dee5ca969f044
+scraped_at: 2026-09-21T06:18:08+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:8ba08e85d1c6ce902f5e69f894619d1c75cb3fd493d3cd5e2528ba2dd25bde74
 ---
 
 toybox 是一个轻量级的Linux命令行工具集合，它将常用的Linux命令行工具合并到一个单独的可执行文件中。
@@ -248,7 +248,7 @@ toybox的执行方式有两种：
 | seq | 从头到尾按递增计数。省略参数默认值为1。使用两个参数作为第一个和最后一个。参数可以是负数或浮点数。  usage: seq [-w | -f fmt\_str] [-s sep\_str] [first] [increment] last |
 | setfattr | 写入POSIX扩展属性。  usage: setfattr [-h] [-x | -n NAME] [-v VALUE] FILE... |
 | sha1sum/sha256sum | 计算sha系列哈希值。  usage: ???sum [-bcs] [FILE]... |
-| shred | 安全的删除文件（用随机数据覆盖文件内容）。  usage: shred [-fuxz] [-n COUNT] [-o OFFSET] [-s SIZE] FILE... |
+| shred | 安全地删除文件（用随机数据覆盖文件内容）。  usage: shred [-fuxz] [-n COUNT] [-o OFFSET] [-s SIZE] FILE... |
 | sort | 对从输入文件（或标准输入设备）到标准输出设备的所有文本行进行排序。  usage: sort [-Mbcdfginrsuz] [FILE...] [-k#[,#[x]] [-t X]] [-o FILE] |
 | split | 将输入（或标准输入设备）数据复制到一系列输出（或“x”）文件，使用按字母顺序递增的后缀（aa,ab,ac...az,ba,bb...）。  usage: split [-a SUFFIX\_LEN] [-b BYTES] [-l LINES] [-n PARTS] [INPUT [OUTPUT]] |
 | stat | 显示文件或文件系统的状态。  usage: stat [-tfL] [-c FORMAT] FILE... |

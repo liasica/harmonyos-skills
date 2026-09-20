@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Int8Array)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Int8Array)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:92bc1af0ec08707f32510245a284f9b0a91fbc2df7ef13a9630d3858023fa133
+scraped_at: 2026-09-21T06:20:15+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:12d47c195557161f6f1a58304370b46dc574ebcc26078d5fdaef2804bb7ebc18
 ---
 
 一种线性数据结构，底层基于[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)实现。
@@ -205,7 +205,7 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 ```ts
 let int8Array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5, 6]);
 console.info("byteLength: " + int8Array.buffer.byteLength); // byteLength: 6
-// 从int8Array对应buffer第1个字节开始，长度为5
+// 从int8Array对应buffer第2个字节开始，长度为5
 let int8Array1: collections.Int8Array = new collections.Int8Array(int8Array.buffer, 1, 5);
 console.info("[" + int8Array1 + "]"); // [2, 3, 4, 5, 6]
 ```

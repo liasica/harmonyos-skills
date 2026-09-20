@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to
 title: 从TypeScript到ArkTS的适配规则
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 从TypeScript到ArkTS的适配指导 > 从TypeScript到ArkTS的适配规则
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:07+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:7f5e3546ba264e694598489dbb8a04c1cb693a566384b530f1cb50f787cb29b4
+scraped_at: 2026-09-21T06:17:04+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:311abdadbe54de19b7145f0ab147676562e94f7c66149fa0b4368a473ec59f9a
 ---
 
 ArkTS规范约束了TypeScript（简称TS）中影响开发正确性或增加运行时开销的特性。本文罗列了ArkTS中限制的TS特性，并提供重构代码的建议。ArkTS保留了TS大部分语法特性，未在本文中约束的TS特性，ArkTS完全支持。例如，ArkTS支持自定义装饰器，语法与TS一致。按本文约束进行代码重构后，代码仍为合法有效的TS代码。
@@ -850,7 +850,7 @@ let f = (s: string) => {
 
 **错误码：10605090**
 
-ArkTS在部分场景中支持对函数返回类型进行推断。当return语句中的表达式是对某个函数或方法进行调用，且该函数或方法的返回类型没有被显著标注时，会出现编译时错误。在这种情况下，请标注函数返回类型。
+ArkTS在部分场景中支持对函数返回类型进行推断。当return语句中的表达式是对某个函数或方法进行调用，且该函数或方法的返回类型没有被显式标注时，会出现编译时错误。在这种情况下，请标注函数返回类型。
 
 **TypeScript**
 

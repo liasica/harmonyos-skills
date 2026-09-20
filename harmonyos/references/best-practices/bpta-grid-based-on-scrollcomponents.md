@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-grid-based
 title: 基于ScrollComponents实现网格
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于ScrollComponents实现网格
 category: best-practices
-scraped_at: 2026-09-16T06:54:57+08:00
+scraped_at: 2026-09-21T06:25:35+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:9c8d8a96ec0ccd368eff9a3bd90d8c77f40ba986480ed8d6e58f7f3ac7a56dd7
+content_hash: sha256:3a0e133a07626d64124858b6493b70bf53f9d0ef417af8388159d6c972ff3bc8
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 如图1是RecyclerView整体流程图，当节点从可视区移除时，NodeAdapter会通知视图管理器将组件回收，经NodeFactory回收处理之后，组件最终被存入到组件复用池。当节点需要创建时，NodeAdapter通知视图管理器开始创建，NodeFactory会向复用池请求复用节点，获取到节点之后经过一系列更新组件、组件拼接之后返回，最后由NodeAdapter将节点添加到可视区。
 
 **图1** RecyclerView整体流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/lQ8CrmDxQtS6X5Lekf5RRg/zh-cn_image_0000002390335989.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/AFjAoYf-Tv-BM9YgA6PdLg/zh-cn_image_0000002390335989.jpg "点击放大")
 
 ### 开发流程
 
@@ -189,12 +189,12 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
       如果复用的单元格组件结构基本相同，存在部分差异，差异的部分会复用失效。ScrollComponents提供了PartReuse来保证命中组件复用。
 
       **图2** 可拆分组件复用创建流程图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/5X3fgjmGRzCVA9mlxsVUYQ/zh-cn_image_0000002356815874.jpg "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/QmQgkLHXSAeCYs68_Rft9g/zh-cn_image_0000002356815874.jpg "点击放大")
 
       开发者可参考图3日志打印"generateItem reuse "表示复用，检验是否复用成功。
 
       **图3** 日志效果图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/VQM3cheJRRyRyp-Zq46X2w/zh-cn_image_0000002390415913.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/oz34LFa2SneiVFAIGVJ4EQ/zh-cn_image_0000002390415913.png "点击放大")
 
       子组件1：
 
@@ -469,12 +469,12 @@ aboutToAppear(): void {
 @Reusable：网络请求期间主线程大段空闲，请求结束后首屏组件绘帧耗时较长
 
 **图4** @Reusable测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/t4A3njbUTgKH_04zSNCGug/zh-cn_image_0000002356655986.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ec5ArsgpQ8OQDRjLspb0zA/zh-cn_image_0000002356655986.png "点击放大")
 
 ScrollComponents：网络请求期间主线程空闲较少，请求结束后首屏组件绘帧耗时较短
 
 **图5** ScrollComponents测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/27FNJ7oDRwO_OD3rdwE8dQ/zh-cn_image_0000002390336069.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/AMZg6btvRpiXU1odLQ8LZg/zh-cn_image_0000002390336069.png "点击放大")
 
 **表1**
 

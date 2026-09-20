@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件可见区域变化事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 组件可见区域变化事件
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:08+08:00
+scraped_at: 2026-09-21T06:20:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ada392417f296d5820d37ea55e54ec4ec3056564a75518919a7d4262e94cba4a
+content_hash: sha256:f512159707145d55d93c254e8cd5c0da5ef300439d7e28879c224e2e654a5759
 ---
 
 组件可见区域变化事件是组件在屏幕中的显示区域面积变化时触发的事件，提供了判断组件是否完全或部分显示在屏幕中的能力，适用于广告曝光埋点之类的场景。
@@ -357,7 +357,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/h-QBq_UeTNeH2Bpg-QWh6w/zh-cn_image_0000002757232105.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/0ZwBiYwzQXOf_qwJIXZnGw/zh-cn_image_0000002762995421.gif)
 
 ### 示例3 (设置measureFromViewport子组件超出父组件显示)
 
@@ -470,4 +470,4 @@ struct OnVisibleAreaChangeSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Sq69DjiMTxmRTmRAU4a4Uw/zh-cn_image_0000002727592414.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/JXqy5LGWRH2b8WJm75KxvA/zh-cn_image_0000002762835533.jpg)

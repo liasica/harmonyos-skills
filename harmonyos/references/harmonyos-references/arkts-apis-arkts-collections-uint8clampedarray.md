@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Uint8ClampedArray)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Uint8ClampedArray)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4172522cf7fd8bbfe698a64cb3cede77a3d9c7587169bfa921f2ed2c027493a4
+scraped_at: 2026-09-21T06:20:16+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:6ab73cecfb07062a726a49691ddba1375c227d3b6ed5becf56f37e32e30c76ea
 ---
 
 一种线性数据结构，底层基于[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)实现。且对元素数值有钳制，小于0的会被钳制为0，大于255的会被钳制为255，不同于Uint8Array的截断处理。
@@ -888,7 +888,7 @@ map(callbackFn: TypedArrayMapCallback<number, Uint8ClampedArray>): Uint8ClampedA
 
 ```ts
 let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([25, 36, 49]);
-const mapped: collections.Uint8ClampedArray = array.map(Math.sqrt); // Uint8ClampedArray [5, 6 ,7]
+const mapped: collections.Uint8ClampedArray = array.map(Math.sqrt); // Uint8ClampedArray [5, 6, 7]
 ```
 
 ## reduce

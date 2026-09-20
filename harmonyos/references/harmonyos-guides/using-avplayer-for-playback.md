@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avplaye
 title: 使用AVPlayer播放音频(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 播放 > 使用AVPlayer播放音频(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:59+08:00
+scraped_at: 2026-09-21T06:18:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ec4b79af1aecfa18fbe616c20d9a9d68e7f2dfd536c185f4a35e6beb75bda9cf
+content_hash: sha256:10e3984308fbf4b2fbb08067f21c7397dbfc481a50d7738586a301cbd3c79ec7
 ---
 
 使用[AVPlayer](media-kit-intro.md#avplayer)可以实现端到端播放原始媒体资源，本开发指导将以完整播放一首音乐作为示例，向开发者讲解AVPlayer音频播放相关功能。如需播放PCM音频数据，请使用[AudioRenderer](using-audiorenderer-for-playback.md)。
@@ -16,7 +16,7 @@ content_hash: sha256:ec4b79af1aecfa18fbe616c20d9a9d68e7f2dfd536c185f4a35e6beb75b
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/IWvTUZYsTnGnxOo48RH02w/zh-cn_image_0000002757231067.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/OST0CTerTV6Qi6V6375WUA/zh-cn_image_0000002762994369.png)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/arkts-apis-media-t.md#avplayerstate9)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统大量的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 

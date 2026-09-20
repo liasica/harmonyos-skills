@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-pair-devic
 title: 配对与连接设备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 传统蓝牙 > 配对与连接设备
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:35+08:00
+scraped_at: 2026-09-21T06:17:51+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:52235cff10f9f9cf150aac72938b1562a2be0439c1f01bb58f8c80b491cb7d7b
+content_hash: sha256:946267938d21c70b04599b0b1144d714bfbb894e6ff557f8867726f85f3ecf5f
 ---
 
 ## 简介
@@ -55,7 +55,7 @@ try {
 
 配对过程中，系统会弹出对话框。不同配对类型，对话框样式可能不一样，其中“确认配对密钥（Confirm Passkey）”模式如下图1。若用户同意授权，才能配对成功。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/F4NMmoe3QrSiz-HMNQE2Qw/zh-cn_image_0000002757310707.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/BGGkXWjiRRmTlbEgk-BsWg/zh-cn_image_0000002733434600.png)
 
 **图1** 蓝牙配对请求对话框
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distribute
 title: 跨设备剪贴板常见场景
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 跨设备剪贴板常见场景
 category: best-practices
-scraped_at: 2026-09-16T06:55:03+08:00
+scraped_at: 2026-09-21T06:25:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2b4f22739cfba34c230365cf9fd8f4114fa6ab60054dd9af04c7add4e332aa5a
+content_hash: sha256:097d926f5884561bc783c243cb931f67527c31deb9360eb9b9526c54aec66e99
 ---
 
 ## 概述
@@ -43,7 +43,7 @@ content_hash: sha256:2b4f22739cfba34c230365cf9fd8f4114fa6ab60054dd9af04c7add4e33
 
 用户在任意应用（如短信、浏览器等）中复制包含特定标识的文本（如活动口令、订单号或链接等），随后打开目标应用（如商城应用、服务应用），应用能自动识别复制文本中预设的关键字或编码。应用在校验关键字格式、时效性或用户权限通过后，弹窗或直接跳转至关联的活动页面、订单详情页或其他特定功能模块。例如用户复制短信中的活动链接，打开商城应用后自动跳转至促销活动页，无需手动搜索或点击多级菜单。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c7/v3/UaIFcFQTRF-GIKmKAVK9pw/zh-cn_media_0000002429043485.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/de/v3/w4l1ELU9R9ydqfqi2EsQVw/zh-cn_media_0000002429043485.mp4)
 
 **构建****数据存入剪贴板**
 
@@ -119,7 +119,7 @@ checkPermissionGrant(): void {
 
 随着富文本数据接入不同设备，为了使复制的数据能够被更多的设备B识别，设备A需要将同一份数据的多种样式存入剪贴板中。如设备A图文混排的富文本数据可以按[纯文本类型（'text/plain'）](../harmonyos-references/js-apis-pasteboard.md#常量)、包含文字样式及图片的[HTML类型（'text/html'）](../harmonyos-references/js-apis-pasteboard.md#常量)、[纯图片类型（'pixelMap'）](../harmonyos-references/js-apis-pasteboard.md#常量)等多种类型存入剪贴板。设备B选择需要的类型读取对应类型的数据，然后实现粘贴操作。剪贴板支持的数据类型请参考[@ohos.pasteboard (剪贴板)](../harmonyos-references/js-apis-pasteboard.md#常量)。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/46/v3/6Cd2RxIQTjWmM7XZiFA20g/zh-cn_media_0000002429163385.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a6/v3/tCsB4E9NSXGbOrCjV-_NEw/zh-cn_media_0000002429163385.mp4)
 
 **构建数据存入剪贴板**
 
@@ -248,7 +248,7 @@ await systemPasteBoard.setData(pasteData).catch((err: BusinessError) => {
 
 允许文件粘贴时，通常需要使用进度条将抽象进程转化为可视化的动态变化，帮助用户快速了解当前进展。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b3/v3/Xs3bi3q7SqyLgaCjFWcbZQ/zh-cn_media_0000002395443772.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/65/v3/Y1a_EnRaQgarKY8aZl-pmQ/zh-cn_media_0000002395443772.mp4)
 
 **构建****数据存入剪贴板**
 

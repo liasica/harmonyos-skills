@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-risk-contr
 title: 星盾机密风控引擎
 breadcrumb: 最佳实践 > 技术创新 > 星盾机密风控引擎
 category: best-practices
-scraped_at: 2026-09-16T06:54:54+08:00
+scraped_at: 2026-09-21T06:25:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:127f74c1f093ebd663176bd91f528b4e93701421679bba054b6dea87b92eb093
+content_hash: sha256:7ee80bb6f35e59c30846588f4c01cd12b1684b05702d4a739175057a29a8a689
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:127f74c1f093ebd663176bd91f528b4e93701421679bba054b6dea87b92
 * 云侧管理：应用在云侧管理台注册应用风险因子并配置风控策略规则，启用后可将策略配置加密下发至端侧设备；
 * 端侧执行：端侧在机密计算空间中接收风险因子和风控策略配置，应用通过Device Security Kit的[riskControlEngine.importRiskFactors()](../harmonyos-references/devicesecurity-riskcontrolengine-api.md#riskcontrolengineimportriskfactors)接口写入业务风险因子数据，调用Device Security Kit的[riskControlEngine.getRiskControlResult()](../harmonyos-references/devicesecurity-riskcontrolengine-api.md#riskcontrolenginegetriskcontrolresult)接口执行策略规则，输出风险评估结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/KtcLahIdR2OAYxE7HGh35A/zh-cn_image_0000002624974657.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/hD9VB0-US7ung7M4hMacyA/zh-cn_image_0000002624974657.png "点击放大")
 
 基于星盾机密风控引擎的架构设计，具备以下三个特点：
 
@@ -37,7 +37,7 @@ content_hash: sha256:127f74c1f093ebd663176bd91f528b4e93701421679bba054b6dea87b92
 
 本场景示例展示金融类应用基于星盾机密风控引擎，融合三方风险因子、系统风险因子进行联合风险决策。通过这种多方协作机制，各类应用均可接入星盾机密风控引擎，基于自有风险因子、系统风险因子及其他应用授权的风险因子，实现跨应用、跨平台的策略检测，构建全方位的反诈防护。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/6sN1UiDKTGidwcPB856GRA/zh-cn_image_0000002624976475.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/3oJkIsv3Q8Gv7xD1FE0KbQ/zh-cn_image_0000002624976475.png "点击放大")
 
 ### 实现原理
 
@@ -45,7 +45,7 @@ content_hash: sha256:127f74c1f093ebd663176bd91f528b4e93701421679bba054b6dea87b92
 
 端侧执行：①两类应用在风险发生时通过调用接口将风险因子写入端侧机密空间；②金融类应用在关键节点（例如：转账）主动调用接口获取策略执行结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/wMPqzcN_ThSS0-_0vYPUgg/zh-cn_image_0000002594457686.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/WijL2tqJTkmRE5v2BwbKIQ/zh-cn_image_0000002594457686.png)
 
 ### 开发步骤
 
@@ -57,17 +57,17 @@ content_hash: sha256:127f74c1f093ebd663176bd91f528b4e93701421679bba054b6dea87b92
 
    1、通联类APP和金融类APP注册风险因子，通联类APP将其风险因子授权给金融类APP，本场景主要涉及的风险因子： ①通联类风险因子：由通联类应用检测发现当前用户存在被诈骗风险；②系统风险因子：由系统检测出安装未知应用；③金融类风险因子：由金融类应用检测当前用户正在首次向陌生账户转账等异常行为特征。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/xXhgOaU8QtSwnIL8k1YK1Q/zh-cn_image_0000002594229184.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/999OSd7eTrupk4EhIT40_w/zh-cn_image_0000002595064112.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/oF6aCtAuR8auFUy_lLrY3g/zh-cn_image_0000002594229184.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/oWgZN69WR-erDvJH928cDA/zh-cn_image_0000002595064112.png "点击放大")
 
    2、金融类APP通过融合以上三个维度的风险因子，可在端侧机密计算环境中执行多因子联动策略，综合评估用户当前面临的诈骗风险等级。本场景的风控策略配置采用"一策略三规则"的设计，在实际场景中开发者可基于自有业务场景灵活定义：①策略配置：当前策略采用权重累加模式，即将三条规则的执行结果分值相加作为策略结果，同时通过策略结果映射将累加结果映射为0~3的风险等级输出，便于应用根据不同等级采取差异化应对措施；②规则配置：通过规则表达式描述风险因子的命中条件，当风险因子满足表达式定义的条件时，则返回预设的分值，该分值将参与策略结果的累加计算。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/7FSRELewQ06EpjLy56N-Xw/zh-cn_image_0000002624508809.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/yl_INfmxSzyHIq2e0x3ykQ/zh-cn_image_0000002624508809.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/6y7XvacDSHCucBFXPlT8nw/zh-cn_image_0000002594069274.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/DqlMZeYySM6Ape8kTLeMJQ/zh-cn_image_0000002594069274.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/I0YONyAARsKyo4QL2GRg7g/zh-cn_image_0000002594229190.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/OscYwKLzQx6dMjvFCYz63g/zh-cn_image_0000002594229190.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/XS7f5TcgRcOcQZg5h3vQMw/zh-cn_image_0000002624628653.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/d53dtkZKS4CGCbBmFA6y8g/zh-cn_image_0000002624628653.png "点击放大")
 
 3. 通过调用接口的方式，应用写入风险因子值和执行策略返回结果。
 

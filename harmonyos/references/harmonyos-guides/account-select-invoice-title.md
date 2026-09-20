@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-selec
 title: 获取发票抬头
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取发票抬头
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:09+08:00
+scraped_at: 2026-09-21T06:18:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:692260b1c3d1c245dc964f1363eae739dca760b533680bb64651ceeba88a7937
+content_hash: sha256:b07c7e382f88c24bbd493837a784c32acb37c975621a7596bb60cde5f6025a17
 ---
 
 ## 场景介绍
 
 当应用需要获取用户发票抬头时，可使用Account Kit提供的发票助手能力，打开发票抬头选择页面，帮助用户快速选择或管理发票抬头。以下对Account Kit提供的发票助手能力进行介绍，获取发票抬头功能还可使用场景化控件[选择发票抬头Button](scenario-fusion-button-invoice-title.md)进行实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/guwZxNkSSGCuURyLFYTvDA/zh-cn_image_0000002757231263.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/abLryFT5Q8mkLHbJR9ioUQ/zh-cn_image_0000002762994571.png "点击放大")
 
 ## 约束与限制
 
@@ -20,7 +20,7 @@ Wearable、TV设备暂不支持使用获取发票抬头功能。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Uswr9kkgR567qlHU1M4-Lw/zh-cn_image_0000002727591572.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/SEQv7hvSQ8m-4ystZPdLoA/zh-cn_image_0000002762834687.png)
 
 流程说明：
 

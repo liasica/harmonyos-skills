@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-font-c
 title: 系统字体的信息获取和使用（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 系统字体的信息获取和使用（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:05+08:00
+scraped_at: 2026-09-21T06:18:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ed7a183d15ffc66debe7c469b84683bd76b6cbe900a65e1c704dad5c05e46b51
+content_hash: sha256:d74109cc1a6570fb2a490dea4d1cb03a8e63529015d5f0a3c8cb0e553ced7e44
 ---
 
 ## 场景介绍
@@ -95,7 +95,7 @@ content_hash: sha256:ed7a183d15ffc66debe7c469b84683bd76b6cbe900a65e1c704dad5c05e
 
    以下打印的示例为应用设备系统对应的部分系统字体配置信息情况，不同设备系统配置信息可能不同，此处仅示意。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/OtxyrbjXSyWzci-KxowZ9w/zh-cn_image_0000002757231165.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/LsYmek59T0ewd3faNUcM2g/zh-cn_image_0000002762994469.png)
 5. 如若后续不再需要系统字体的系统配置信息时，则释放其占用的内存。
 
    ```

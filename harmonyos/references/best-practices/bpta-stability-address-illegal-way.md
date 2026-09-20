@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 地址越界类问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > 地址越界类问题分析方法
 category: best-practices
-scraped_at: 2026-09-16T06:55:15+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:a0c1cc50b142d7c1a672305d5c76a96bf004ca5190a0f09f0e856ab06d345a9d
+scraped_at: 2026-09-21T06:25:53+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:9fcdc9e1dc1b4cb6e8b027099c29f23bec30b1a37540ade5610579c93894a40f
 ---
 
 ## 概述
 
-地址越界问题是指访问了不合法的地址，导致程序运行出现异常，通常表现为应用崩溃（crash），其故障原因为释放后使用（use after free）、重复释放（double-free）、栈溢出（stack-overflow）、堆溢出（heap-overflow）等。由于应用崩溃（crash）日志信息有限且非崩溃第一现场，地址越界问题定位较为困难，一般依赖ASan、HWASan、GWP-ASan等检测工具以获取更多内存操作信息。从API13开始推荐使用HWASan检测工具进行地址越界问题的分析，具体参考[使用HWASan检测内存错误](bpta-stability-hwasan-detection.md)。
+地址越界问题是指访问了不合法的地址，导致程序运行出现异常，通常表现为应用崩溃（Crash），其故障原因为释放后使用（use after free）、重复释放（double-free）、栈溢出（stack-overflow）、堆溢出（heap-overflow）等。由于应用崩溃（Crash）日志信息有限且非崩溃第一现场，地址越界问题定位较为困难，一般依赖ASan、HWASan、GWP-ASan等检测工具以获取更多内存操作信息。从API13开始推荐使用HWASan检测工具进行地址越界问题的分析，具体参考[使用HWASan检测内存错误](bpta-stability-hwasan-detection.md)。
 
 本文主要介绍地址越界问题检测能力、地址越界问题定位分析思路。
 
@@ -24,15 +24,15 @@ content_hash: sha256:a0c1cc50b142d7c1a672305d5c76a96bf004ca5190a0f09f0e856ab06d3
 
 如下，由于地址越界问题在应用的故障现象通常为崩溃闪退（Crash），且Crash的栈可能不是第一现场，而是受害者的栈，因此这类问题分析难度较高，且经常依赖于天网版本复现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/jhBXI4geSjirZf3tn1FXhw/zh-cn_image_0000002404045321.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/tlsl1QV7TQKg9zYsoU0_0w/zh-cn_image_0000002404045321.png "点击放大")
 
 以下为踩内存问题的通用分析流程，力求提升踩内存问题检测和定位效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/rlzeMivWREeFZrT0YxJVBg/zh-cn_image_0000002375398170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/9mecH9iDTbO3YW3ncTn8-w/zh-cn_image_0000002375398170.png)
 
 **第一步：****问题类型分析**
 
-识别cppcrash问题的类型，是否为地址越界导致，一般需要提供汇编（C++隐藏太多细节，建议查看汇编）、内存的分析，代码中此内存的生命周期。具体详细案例可参看[地址越界类问题案例](bpta-scenario-stability-address-sanitizer.md)。
+识别CppCrash问题的类型，是否为地址越界导致，一般需要提供汇编（C++隐藏太多细节，建议查看汇编）、内存的分析，代码中此内存的生命周期。具体详细案例可参看[地址越界类问题案例](bpta-scenario-stability-address-sanitizer.md)。
 
 **第二步：****场景分析**
 
@@ -64,7 +64,7 @@ content_hash: sha256:a0c1cc50b142d7c1a672305d5c76a96bf004ca5190a0f09f0e856ab06d3
 
    如下图所示，IDA（反汇编工具）展示了一个典型的函数指针数组操作，w8是数组下标，从1开始，x9是reference解引用出来的，如果blr x8这条挂了，说明x9[x8]上面的值是坏的，而如果是ldr x8, [x9,x8,LSL#3]这条挂了，说明x9[x8]这个地址是无效的。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/l74OYMw8SYae9OlPE3CX2A/zh-cn_image_0000002404125165.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/g29eV-wgR6-Pgx1l-hvX0g/zh-cn_image_0000002404125165.png)
 
 **找出现问题的内存大小：**
 
@@ -72,7 +72,7 @@ content_hash: sha256:a0c1cc50b142d7c1a672305d5c76a96bf004ca5190a0f09f0e856ab06d3
 
 以native内存分配器jemalloc为例，内存统计布局如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/2LYSLIYpSVC5S8zn3TfKjw/zh-cn_image_0000002370405612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/b4jomOHsQ1uXy9sFUxkcSg/zh-cn_image_0000002370405612.png)
 
 假设踩内存大小为32，查看上图右边红框标记出来的地方表示128个32字节的内存会挤在1个page上，刚好是32\*128=4096字节。同样，下面80字节的内存块，每256个都挤在5个page上，80\*256==20480=4096\*5。17-32字节的内存分配，都会从这个32档位sizeclass的内存页上去分配，也就是说，如果发生overflow，凶手前后多半也是32字节的，因此受害者是32字节的，如果发生uaf（use-after-free），那么free的内存会被另一个17-32字节的申请者拿走，这个申请者就成为了受害者。
 
@@ -88,13 +88,13 @@ content_hash: sha256:a0c1cc50b142d7c1a672305d5c76a96bf004ca5190a0f09f0e856ab06d3
 2. **用例**：由于越界问题和特定代码相关，因此需要对应用例让故障代码执行到。
 
    最常规的用例就是UI随机测试，但是随机测试效率较低，需要根据场景和内存特征定制用例。同时应用的问题往往和内存的析构相关，因此要重点关注页面退出、资源关闭等场景。
-3. **规模：**开发应当了解crash的发生频率，以此预估所需要的测试资源。
+3. **规模：**开发应当了解Crash的发生频率，以此预估所需要的测试资源。
 
-   例如某个Crash问题的APR为10（发生10次/千小时），也就是说此问题100小时复现1次，那么也就是在实验室和Beta测试这类综合场景中，大约4台手机测24小时能复现一次。如果在针对性的复现测试中，4台手机测试了24-48小时还不能出现一次同类的crash，那么说明测试的场景不对。需要根据现场的hilog等日志，再分析出高效的场景。
+   例如某个Crash问题的APR为10（发生10次/千小时），也就是说此问题100小时复现1次，那么也就是在实验室和Beta测试这类综合场景中，大约4台手机测24小时能复现一次。如果在针对性的复现测试中，4台手机测试了24-48小时还不能出现一次同类的Crash，那么说明测试的场景不对。需要根据现场的hilog等日志，再分析出高效的场景。
 
 **第五步：****应用天网部署**
 
-明确应用进程中已经有哪些so插桩，有条件插桩的应用侧so都应该部署插桩。由于踩内存产生的crash调用栈存在很多随机性，而且反复复现编译很浪费时间，因此建议插桩越全越好，进程加载的so可基于crash文件的maps数据段确定，尽量都用HWASan编译。并且so链接时如果有静态库，静态库本身最好也用HWASan编译。插桩方法可见[配置HWASan](bpta-stability-hwasan-detection.md#section10791454125320)，继而基于上文部署的用例进行压测。
+明确应用进程中已经有哪些so插桩，有条件插桩的应用侧so都应该部署插桩。由于踩内存产生的Crash调用栈存在很多随机性，而且反复复现编译很浪费时间，因此建议插桩越全越好，进程加载的so可基于Crash文件的maps数据段确定，尽量都用HWASan编译。并且so链接时如果有静态库，静态库本身最好也用HWASan编译。插桩方法可见[配置HWASan](bpta-stability-hwasan-detection.md#section10791454125320)，继而基于上文部署的用例进行压测。
 
 **说明** 
 
@@ -102,7 +102,7 @@ content_hash: sha256:a0c1cc50b142d7c1a672305d5c76a96bf004ca5190a0f09f0e856ab06d3
 
 **第六步：日志分析**
 
-对于稳定性测试出来的地址越界问题，基于问题日志，分析问题根因并解决。同样，也可基于地址越界日志，基于内存特征、场景等信息逆向分析，确认是否与之前疑似踩内存的crash问题类似。
+对于稳定性测试出来的地址越界问题，基于问题日志，分析问题根因并解决。同样，也可基于地址越界日志，基于内存特征、场景等信息逆向分析，确认是否与之前疑似踩内存的Crash问题类似。
 
 ### 地址越界问题类型
 
@@ -110,7 +110,7 @@ content_hash: sha256:a0c1cc50b142d7c1a672305d5c76a96bf004ca5190a0f09f0e856ab06d3
 
 ### 地址越界问题的日志分析
 
-对于地址越界问题的日志分析，由于日志落盘与cppcrash日志相似，具体参考[CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md)，详细的步骤为：
+对于地址越界问题的日志分析，由于日志落盘与CppCrash日志相似，具体参考[CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md)，详细的步骤为：
 
 1. 获取HWASan检测工具，检测并获取地址越界问题日志。
 2. 获取符号表，定位行号（use栈、free栈）。
@@ -187,4 +187,4 @@ SUMMARY: HWAddressSanitizer: tag-mismatch (/data/local/tmp/test.out+0x1ad0)
 
 对应的日志结构如下，以#0栈为例，可使用反编译工具[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#section14952241528)，输入地址的偏移0x1ad0，即可解析出对应的源代码行号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/5dCwfxCSSQObesHA86Xw0A/zh-cn_image_0000002412946788.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/JX45vtofS9qyXR2ah5VW1w/zh-cn_image_0000002412946788.png)

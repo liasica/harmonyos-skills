@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.inputMethodList (输入法切换列表控件)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethodList (输入法切换列表控件)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:18+08:00
+scraped_at: 2026-09-21T06:22:00+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1028d413ee9d6d9b12ab024e6b88d66e87e048e2112e62afab7b01be6350c7b3
+content_hash: sha256:d3175426de47ae632d14f0b333aee62d44c84bfca63241d86e72396295fcaa43
 ---
 
 @ohos.inputMethodList模块是面向系统应用和输入法应用的UI控件模块，提供了输入法切换列表弹窗组件。
@@ -187,4 +187,4 @@ struct SettingsItem {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/AzabPq7NRCCKJcd3SQ8uxg/zh-cn_image_0000002757313089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/qJc7lct5QTqXbuHEueuBuw/zh-cn_image_0000002733437014.png)

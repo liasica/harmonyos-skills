@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guide
 title: HiDebug接口使用示例（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 系统调试信息获取 > HiDebug接口使用示例（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:12+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:10783bce95a0d69af75a13824b1288b7d66f927eaa8dee437bc6649daa6af6a4
+scraped_at: 2026-09-21T06:18:05+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:5f78ea4d58d93ac74393b942a25b2dfc6befcda9ff9a10caac7877101a4af813
 ---
 
 HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具体调用示例请参考下文。
@@ -325,3 +325,255 @@ HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具�
    10-22 15:46:13.354   19261-19261   A0FF00/com.sam...gtool/testTag  com.sampl...ebugtool  I     js stack frame info for pc: ************ is relativePc: ****** line: 25 column: 16 mapName: /data/storage/el1/bundle/entry.hap functionName: testBackTraceJsFrame url: entry|entry|1.0.0|src/main/ets/pages/Index.ts packageName: ....
    ...
    ```
+
+## 管理异步上下文示例
+
+从API版本26.0.0开始提供管理异步上下文功能。下文展示如何在应用内使用HiDebug C/C++异步上下文管理接口，构造A->B单层异步调用链，在异步任务提交和完成时分别压入和弹出异步上下文，建立和解除异步调用链关系。
+
+**注意** 
+
+该功能仅支持ARM64架构，且仅可在debug版本应用中使用，需配合[hiprofiler](hiprofiler.md#async_type参数介绍)调优组件追踪完整的异步调用栈。
+
+### 步骤一：新增异步上下文管理接口示例代码
+
+1. 编辑“test\_async\_context.h”文件，声明异步上下文调用链入口函数：
+
+   ```c
+   #ifndef MYAPPLICATION_TESTASYNCCONTEXT_H
+   #define MYAPPLICATION_TESTASYNCCONTEXT_H
+
+   // 测试异步上下文管理接口，构造A->B最小三方异步调用。
+   void TestAsyncContextChain();
+
+   #endif // MYAPPLICATION_TESTASYNCCONTEXT_H
+   ```
+2. 编辑“test\_async\_context.cpp”文件，构造A->B单层异步调用链，演示四个接口的调用时序（A：Acquire/Release；B：Push/Pop）：
+
+   ```
+   #include "test_async_context.h"
+   #include "hidebug/hidebug.h"
+   #include "hilog/log.h"
+   #include <cstdlib>
+   #include <thread>
+   #include <chrono>
+
+   #undef LOG_TAG
+   #define LOG_TAG "testTag"
+
+   // IsDebuggableHap()与DfxInvokeHiDebugCallback均检查。
+   // 环境变量 HAP_DEBUGGABLE；setenv 须早于注入，故用 constructor 在 libentry.so 加载时设置。
+   __attribute__((constructor)) static void SetHapDebuggableEnv()
+   {
+       setenv("HAP_DEBUGGABLE", "true", 1);
+   }
+
+   // 模拟异步任务耗时(ms)。
+   static constexpr int ASYNC_TASK_DURATION_MS = 500;
+
+   // 三方异步任务上下文，用于在线程间透传异步上下文句柄
+   struct AsyncTaskCtx {
+       uint64_t asyncCtx;
+   };
+
+   // B：三方异步任务，使用std::thread模拟三方异步框架。
+   static void ThirdPartyAsyncTask(AsyncTaskCtx *ctx)
+   {
+       if (ctx == nullptr) {
+           return;
+       }
+       // 异步任务执行时，将异步上下文压入当前线程运行上下文，建立异步调用链。
+       OH_HiDebug_PushAsyncContext(ctx->asyncCtx);
+       OH_LOG_INFO(LogType::LOG_APP, "[Async-B] Third-party async task start, push context %{public}llu",
+           (unsigned long long)ctx->asyncCtx);
+       std::this_thread::sleep_for(std::chrono::milliseconds(ASYNC_TASK_DURATION_MS)); // 模拟三方异步耗时。
+       OH_LOG_INFO(LogType::LOG_APP, "[Async-B] Third-party async task done");
+       // 异步任务完成时，将异步上下文弹出，解除异步调用链。
+       OH_HiDebug_PopAsyncContext(ctx->asyncCtx);
+       delete ctx;
+   }
+
+   // A：提交方，在独立线程执行以避免阻塞napi调用线程。
+   static void OuterTaskFunc()
+   {
+       // 异步任务提交前，获取一个异步上下文。
+       uint64_t asyncCtx = OH_HiDebug_AcquireAsyncContext();
+       OH_LOG_INFO(LogType::LOG_APP, "[Async-A] Acquired context: %{public}llu", (unsigned long long)asyncCtx);
+
+       // 提交三方异步任务B，透传异步上下文句柄。
+       OH_LOG_INFO(LogType::LOG_APP, "[Async-A] Submit third-party async task B");
+       auto *ctx = new (std::nothrow) AsyncTaskCtx{asyncCtx};
+       if (ctx == nullptr) {
+           OH_HiDebug_ReleaseAsyncContext(asyncCtx);
+           return;
+       }
+       std::thread worker(ThirdPartyAsyncTask, ctx);
+       worker.join(); // 等待B完成，保证Release在Push/Pop之后
+
+       // 异步任务结束后，释放异步上下文资源，防止资源泄漏。
+       OH_HiDebug_ReleaseAsyncContext(asyncCtx);
+       OH_LOG_INFO(LogType::LOG_APP, "[Async-A] Released context");
+   }
+
+   // 构造A->B最小三方异步调用，演示管理异步上下文的四个接口。
+   void TestAsyncContextChain()
+   {
+       // 在独立线程执行A，避免阻塞napi调用线程。
+       std::thread(OuterTaskFunc).detach();
+   }
+   ```
+3. 编辑“CMakeLists.txt”文件，将新增源文件test\_async\_context.cpp加入add\_library编译目标。
+4. 编辑“napi\_init.cpp”文件，导入“test\_async\_context.h”并新增napi包装方法TestAsyncContext：
+
+   ```
+   #include <thread>
+   #include "hidebug/hidebug.h"
+   #include "hilog/log.h"
+   #include "test_backtrace.h"
+   #include "test_async_context.h"
+
+   #undef LOG_TAG
+   #define LOG_TAG "testTag"
+
+   __attribute((noinline)) __attribute((optnone)) void TestNativeFrames(int i)
+   {
+       if (i > 0) {
+           TestNativeFrames(i - 1);
+           return;
+       }
+       BacktraceCurrentThread();
+   }
+
+   __attribute((noinline)) __attribute((optnone)) napi_value TestBackTrace(napi_env env, napi_callback_info info)
+   {
+       TestNativeFrames(1);
+       return nullptr;
+   }
+
+   napi_value TestGetThreadCpuUsage(napi_env env, napi_callback_info info)
+   {
+       HiDebug_ThreadCpuUsagePtr cpuUsage = OH_HiDebug_GetAppThreadCpuUsage();
+       while (cpuUsage != nullptr) {
+           OH_LOG_INFO(LogType::LOG_APP,
+               "GetAppThreadCpuUsage: threadId %{public}d, cpuUsage: %{public}f", cpuUsage->threadId, cpuUsage->cpuUsage);
+           cpuUsage = cpuUsage->next; // 获取下一个线程的cpu使用率对象指针。
+       }
+       OH_HiDebug_FreeThreadCpuUsage(&cpuUsage); // 释放内存，防止内存泄漏。
+       return nullptr;
+   }
+
+   napi_value TestAsyncContext(napi_env env, napi_callback_info info)
+   {
+       TestAsyncContextChain();
+       return nullptr;
+   }
+   ```
+5. 注册“testAsyncContext”为ArkTS接口：
+
+   ```
+   napi_property_descriptor desc[] = {
+       { "testGetThreadCpuUsage", nullptr, TestGetThreadCpuUsage, nullptr, nullptr, nullptr, napi_default, nullptr },
+       { "testBackTrace", nullptr, TestBackTrace, nullptr, nullptr, nullptr, napi_default, nullptr },
+       { "testAsyncContext", nullptr, TestAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr },
+   };
+   ```
+6. 编辑“index.d.ts”文件，声明ArkTS接口testAsyncContext：
+
+   ```typescript
+   export const testGetThreadCpuUsage: () => void;
+   export const testBackTrace: () => void;
+   export const testAsyncContext: () => void;
+   ```
+7. 编辑“Index.ets”文件，定义测试方法：
+
+   ```typescript
+   function testBackTraceJsFrame(i : number) : void {
+     if (i > 0) {
+       return testBackTraceJsFrame(i-1);
+     }
+     return testNapi.testBackTrace();
+   }
+
+   function testBackTrace() : void {
+     testBackTraceJsFrame(3);
+   }
+
+   function testGetThreadCpuUsage() : void {
+     testNapi.testGetThreadCpuUsage();
+   }
+
+   function testAsyncContext() : void {
+     testNapi.testAsyncContext();
+   }
+   ```
+8. 编辑“Index.ets”文件，添加按钮以触发接口调用：
+
+   ```typescript
+   Button('testGetThreadCpuUsage')
+     .type(ButtonType.Capsule)
+     .margin({
+       top: 20
+     })
+     .backgroundColor('#0D9FFB')
+     .width('60%')
+     .height('5%')
+     // 添加点击事件
+     .onClick(testGetThreadCpuUsage);
+
+   Button('testHiDebugBackTrace')
+     .type(ButtonType.Capsule)
+     .margin({
+       top: 20
+     })
+     .backgroundColor('#0D9FFB')
+     .width('60%')
+     .height('5%')
+     // 添加点击事件
+     .onClick(testBackTrace);
+
+   Button('testAsyncContext')
+     .type(ButtonType.Capsule)
+     .margin({
+       top: 20
+     })
+     .backgroundColor('#0D9FFB')
+     .width('60%')
+     .height('5%')
+     // 添加点击事件
+     .onClick(testAsyncContext);
+   ```
+
+### 步骤二：运行工程
+
+1. 启动hiprofiler采集任务，使能异步上下文追踪。
+
+   ```shell
+   hdc shell
+   hiprofiler_cmd -c - -o /data/local/tmp/hiprofiler_data.htrace -t 60 -s -k <<CONFIG
+   request_id: 1
+   session_config {
+     buffers {
+       pages: 16384
+     }
+   }
+   plugin_configs {
+     plugin_name: "nativehook"
+     sample_interval: 5000
+     config_data {
+       save_file: false
+       smb_pages: 16384
+       max_stack_depth: 20
+       process_name: "com.samples.hidebugtool"
+       fp_unwind: true
+       blocked: true
+       callframe_compress: true
+       record_accurately: true
+       offline_symbolization: true
+       startup_mode: false
+       async_stack_enable: true
+       async_type: CUSTOMIZE
+     }
+   }
+   CONFIG
+   ```
+2. 点击DevEco Studio界面中的运行按钮，然后单击应用界面上的“testAsyncContext”按钮。
+3. 在DevEco Studio底部切换到“Log”窗口，设置日志过滤条件为“testTag”，即可查看异步调用链日志。

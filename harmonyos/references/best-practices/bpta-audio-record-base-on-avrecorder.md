@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（C++）
 category: best-practices
-scraped_at: 2026-09-16T06:54:58+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:a5df25646f72e6760cfbb28fe7e720b3bcd6fbeacfde76c037f6029c58a51ed7
+scraped_at: 2026-09-21T06:25:37+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:f7ae58db567d269ae6f9c3b4d63b98d386c97376ed0a00a2d4bf3515e060a9c6
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:a5df25646f72e6760cfbb28fe7e720b3bcd6fbeacfde76c037f6029c58a
 
 基于[AVRecorder](../harmonyos-references/capi-avrecorder.md)录制格式化音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/sjjlPxnOQcen0xNE4Rz8Vw/zh-cn_image_0000002524221070.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/vQEu0EeNRnGWTtoZV3pckQ/zh-cn_image_0000002524221070.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ content_hash: sha256:a5df25646f72e6760cfbb28fe7e720b3bcd6fbeacfde76c037f6029c58a
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Y2p1s9zCTo68SpQDipNsTg/zh-cn_image_0000002555340939.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/HDhujbqWRlWXpv1LV1Flgw/zh-cn_image_0000002555340939.jpg "点击放大")
 
 ### 开发步骤
 
@@ -44,7 +44,7 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libavrecorder.so libnative_m
 * 根据实际需要，设置音频录制的回调函数，如错误回调函数[OH\_AVRecorder\_SetErrorCallback()](../harmonyos-references/capi-avrecorder-h.md#oh_avrecorder_seterrorcallback)等。
 * 调用[OH\_AVRecorder\_Prepare()](../harmonyos-references/capi-avrecorder-h.md#oh_avrecorder_prepare)接口，让[AVRecorder](../harmonyos-references/capi-avrecorder.md)进入prepared状态。
 
-```cpp
+```screen
 // Set AVRecorder Config
 void SetConfig(OH_AVRecorder_Config &config) {
     config.audioSourceType = AVRECORDER_MIC;
@@ -93,7 +93,7 @@ napi_value AVRecorder::PrepareAVRecorder(napi_env env, napi_callback_info info) 
     // Prepare
     int result = OH_AVRecorder_Prepare(g_avRecorder, config);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Prepare failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Prepare failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);
@@ -103,14 +103,14 @@ napi_value AVRecorder::PrepareAVRecorder(napi_env env, napi_callback_info info) 
 
 3.启动音频录制。
 
-```cpp
+```screen
 // Start AVRecorder
 napi_value AVRecorder::StartAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
-    OH_LOG_INFO(LOG_APP, " g_avRecorder start: %{public}p", g_avRecorder);
+    OH_LOG_INFO(LOG_APP, "g_avRecorder start: %{public}p", g_avRecorder);
     int result = OH_AVRecorder_Start(g_avRecorder);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Start failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Start failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);
@@ -120,13 +120,13 @@ napi_value AVRecorder::StartAVRecorder(napi_env env, napi_callback_info info) {
 
 4.暂停音频录制。
 
-```cpp
+```screen
 // Pause AVRecorder
 napi_value AVRecorder::PauseAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
     int result = OH_AVRecorder_Pause(g_avRecorder);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Pause failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Pause failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);
@@ -136,13 +136,13 @@ napi_value AVRecorder::PauseAVRecorder(napi_env env, napi_callback_info info) {
 
 5.继续音频录制。
 
-```cpp
+```screen
 // Resume AVRecorder
 napi_value AVRecorder::ResumeAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
     int result = OH_AVRecorder_Resume(g_avRecorder);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Resume failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Resume failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);
@@ -152,13 +152,13 @@ napi_value AVRecorder::ResumeAVRecorder(napi_env env, napi_callback_info info) {
 
 6.停止音频录制。
 
-```cpp
+```screen
 // Stop AVRecorder
 napi_value AVRecorder::StopAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
     int result = OH_AVRecorder_Stop(g_avRecorder);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Stop failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Stop failed %{public}d", result);
     }
     close(g_outputFd);
     napi_value res;
@@ -169,12 +169,12 @@ napi_value AVRecorder::StopAVRecorder(napi_env env, napi_callback_info info) {
 
 7.释放音频录制资源。
 
-```cpp
+```screen
 // Release AVRecorder
 napi_value AVRecorder::ReleaseAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
     if (g_avRecorder == nullptr) {
-        OH_LOG_ERROR(LOG_APP, " g_avRecorder is nullptr!");
+        OH_LOG_ERROR(LOG_APP, "g_avRecorder is nullptr!");
         napi_value res;
         napi_create_int32(env, AV_ERR_INVALID_VAL, &res);
         return res;
@@ -184,7 +184,7 @@ napi_value AVRecorder::ReleaseAVRecorder(napi_env env, napi_callback_info info) 
     g_avRecorder = nullptr;
 
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Release failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Release failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);

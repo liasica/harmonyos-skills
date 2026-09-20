@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.curves (插值计算)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.curves (插值计算)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:47:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e6b0aecda7e2a1b393805dc6c9f3572deb6cebda0d8638c8ba2749844697707d
+scraped_at: 2026-09-21T06:20:27+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:8bded0a29f6f9d5eebd049f858f394c1edf522639499c97656ebd0e48721f140
 ---
 
 本模块提供设置动画插值曲线功能，用于构造阶梯曲线对象、三阶贝塞尔曲线对象、弹簧曲线对象、弹性动画曲线对象、弹性跟手动画曲线对象、插值器弹簧曲线对象和自定义曲线对象。
@@ -181,9 +181,9 @@ springMotion(response?: number, dampingFraction?: number, overlapDuration?: numb
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| response | number | 否 | 弹簧自然振动周期，决定弹簧复位的速度。  默认值：0.55  单位：秒  取值范围：(0, +∞)  **说明：**  设置小于等于0的值时，按默认值0.55处理。 |
+| response | number | 否 | 弹簧自然振动周期，决定弹簧复位的速度。  默认值：0.55  单位：s  取值范围：(0, +∞)  **说明：**  设置小于等于0的值时，按默认值0.55处理。 |
 | dampingFraction | number | 否 | 阻尼系数。  0表示无阻尼，一直处于震荡状态；  大于0小于1的值为欠阻尼，运动过程中会超出目标值；  等于1为临界阻尼；  大于1为过阻尼，运动过程中逐渐趋于目标值。  默认值：0.825  取值范围：[0, +∞)  **说明：**  设置小于0的值时，按默认值0.825处理。 |
-| overlapDuration | number | 否 | 弹性动画衔接时长。发生动画继承时，如果前后两个弹性动画response不一致，response参数会在overlapDuration时间内平滑过渡；当overlapDuration为0时，response参数不会进行平滑过渡，而是立即切换到新的response值。  默认值：0  单位：秒  取值范围：[0, +∞)  **说明：**  设置小于0的值时，按默认值0处理。  弹性动画曲线为物理曲线，[animation](ts-animatorproperty.md)、[animateTo](ts-explicit-animation.md)、[pageTransition](ts-page-transition-animation.md)中的duration参数不生效，动画持续时间取决于springMotion动画曲线参数和之前的速度。时间不能归一，故不能通过该曲线的interpolate函数获得插值。 |
+| overlapDuration | number | 否 | 弹性动画衔接时长。发生动画继承时，如果前后两个弹性动画response不一致，response参数会在overlapDuration时间内平滑过渡；当overlapDuration为0时，response参数不会进行平滑过渡，而是立即切换到新的response值。  默认值：0  单位：s  取值范围：[0, +∞)  **说明：**  设置小于0的值时，按默认值0处理。  弹性动画曲线为物理曲线，[animation](ts-animatorproperty.md)、[animateTo](ts-explicit-animation.md)、[pageTransition](ts-page-transition-animation.md)中的duration参数不生效，动画持续时间取决于springMotion动画曲线参数和之前的速度。时间不能归一，故不能通过该曲线的interpolate函数获得插值。 |
 
 **返回值：**
 
@@ -215,9 +215,9 @@ responsiveSpringMotion(response?: number, dampingFraction?: number, overlapDurat
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| response | number | 否 | 解释同springMotion中的response。  默认值：0.15  单位：秒  取值范围：(0, +∞)  **说明：**  设置小于等于0的值时，按默认值0.15处理。 |
+| response | number | 否 | 解释同springMotion中的response。  默认值：0.15  单位：s  取值范围：(0, +∞)  **说明：**  设置小于等于0的值时，按默认值0.15处理。 |
 | dampingFraction | number | 否 | 解释同springMotion中的dampingFraction。  默认值：0.86  取值范围：[0, +∞)  **说明：**  设置小于0的值时，按默认值0.86处理。 |
-| overlapDuration | number | 否 | 解释同springMotion中的overlapDuration。当overlapDuration为0时，response参数不会进行平滑过渡，而是立即切换到新的response值。  默认值：0.25  单位：秒  取值范围：[0, +∞)  **说明：**  设置小于0的值时，按默认值0.25处理。  弹性跟手动画曲线为springMotion的一种特例，仅默认值不同。如果使用自定义参数的弹性曲线，推荐使用springMotion构造曲线。如果使用跟手动画，推荐使用默认参数的弹性跟手动画曲线。  [animation](ts-animatorproperty.md)、[animateTo](ts-explicit-animation.md)、[pageTransition](ts-page-transition-animation.md)中的duration参数不生效，动画持续时间取决于responsiveSpringMotion动画曲线参数和之前的速度，也不能通过该曲线的interpolate函数获得插值。 |
+| overlapDuration | number | 否 | 解释同springMotion中的overlapDuration。当overlapDuration为0时，response参数不会进行平滑过渡，而是立即切换到新的response值。  默认值：0.25  单位：s  取值范围：[0, +∞)  **说明：**  设置小于0的值时，按默认值0.25处理。  弹性跟手动画曲线为springMotion的一种特例，仅默认值不同。如果使用自定义参数的弹性曲线，推荐使用springMotion构造曲线。如果使用跟手动画，推荐使用默认参数的弹性跟手动画曲线。  [animation](ts-animatorproperty.md)、[animateTo](ts-explicit-animation.md)、[pageTransition](ts-page-transition-animation.md)中的duration参数不生效，动画持续时间取决于responsiveSpringMotion动画曲线参数和之前的速度，也不能通过该曲线的interpolate函数获得插值。 |
 
 **返回值：**
 
@@ -468,4 +468,4 @@ struct ImageComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/CE3MnfnCSqe4oTZ7biCrMA/zh-cn_image_0000002727592350.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/gxgRVpnkQCC3j23vhsuI1A/zh-cn_image_0000002762835469.gif)

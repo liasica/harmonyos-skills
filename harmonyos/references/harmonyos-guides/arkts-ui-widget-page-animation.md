@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片为组件添加动效
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片UI界面开发 > ArkTS卡片为组件添加动效
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:19+08:00
+scraped_at: 2026-09-21T06:17:35+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f4eb8bfbfc23ae985e0bdeaf95f1242687b8c1da0b138f8142c92da3c8fcbaa0
+content_hash: sha256:675b49ac1bf749e755fd4720bbbdea3190fa22b9646ed3126c1d8d85b8ade816
 ---
 
 ArkTS卡片开放了使用动画效果的能力，支持[显式动画](../harmonyos-references/ts-explicit-animation.md)、[属性动画](../harmonyos-references/ts-animatorproperty.md)、[组件内转场](../harmonyos-references/ts-transition-animation-component.md)能力。ArkTS卡片使用动画效果时具有以下限制：
@@ -27,7 +27,7 @@ ArkTS卡片开放了使用动画效果的能力，支持[显式动画](../harmon
 
 以下示例代码使用[animation](../harmonyos-references/ts-animatorproperty.md)接口实现了按钮旋转的动画效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/YvmWQXVWRaO8dIrLLWRuaA/zh-cn_image_0000002757310529.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/-wcT4FdCSOG3cGEzIKGiIw/zh-cn_image_0000002733434418.gif)
 
 ```typescript
 @Entry
@@ -59,7 +59,7 @@ struct AnimationCard {
 
 以下示例代码使用[transition](../harmonyos-references/ts-transition-animation-component.md)接口实现了在卡片内图片出现与消失的动画效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Hyewx7H7TV6_XjFwwkdBHw/zh-cn_image_0000002757230649.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/k2iFmURVRnK31Vhww1ZhnA/zh-cn_image_0000002762993943.gif)
 
 ```typescript
 // entry/src/main/ets/widget/pages/TransitionEffectExample1.ets

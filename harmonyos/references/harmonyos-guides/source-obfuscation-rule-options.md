@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆配置选项
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆配置选项
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6d104b885d0d886ed671066e716396815d7b32d09dd4c6269e4d8a2d59525e66
+scraped_at: 2026-09-21T06:17:14+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:da645558350f2c67138292e47151f05f07a4806c3c0b88634fe17f6d110fe759
 ---
 
 从API version 10开始，ArkGuard提供混淆配置选项来控制混淆效果。开发者可在[obfuscation-rules.txt](source-obfuscation-guide.md#混淆配置文件)文件中自定义这些选项。若开启混淆但未配置任何选项，则仅应用默认混淆效果，即混淆局部变量和参数名。
@@ -333,7 +333,7 @@ function add(a: number, b: number) {
 1. 文件顶层的调用。
 
    ```typescript
-   console.info("in tolevel");
+   console.info("in toplevel");
    ```
 2. 代码块中的调用。
 

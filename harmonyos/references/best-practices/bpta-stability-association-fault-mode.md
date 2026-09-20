@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 组合使用过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 组合使用过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-16T06:55:13+08:00
+scraped_at: 2026-09-21T06:25:51+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:cfbcc82dc152f3c29364ae01b16381e2cb2c95fcc685a2ac63ffedf602f60e4d
+content_hash: sha256:dec6c5a3adf6ab8b8a222754e85d40335458aa13fd98fa5dbf43311e1228c162
 ---
 
 ## 概述
@@ -111,17 +111,17 @@ NativeHeap过大、匿名映射过大、文件映射过大等单类问题各自�
     ```
   + 参考[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)选中Native Heap泳道并找到内存申请异常的内存及其调用栈如下图所示。从图中可以看出这份内存栈共申请了12次402653184字节大小的内存块，总共申请了4.5GB内存，恰好与分析NMD维测日志得到的结果一致，进一步证实此调用栈为泄漏的内存栈。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/4er3YaDrSEqH55O1zg-Qrg/zh-cn_image_0000002729611093.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/MZCWnilrTqaQqPeli4bmuw/zh-cn_image_0000002729611093.png "点击放大")
   + 分析内存调用栈指向的代码段，发现应用正在循环申请超大内存但是未释放，最终导致NativeHeap内存占用过大。内存调用栈指向的代码段如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/jPeX2VrqT5uvmdEqh1Ym-g/zh-cn_image_0000002699891766.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/tcBLEUzvQkC7hxUn_TpSpg/zh-cn_image_0000002699891766.png)
 * 再分析占用第二大的匿名页内存，并找到匿名映射过大的原因，具体步骤如下：
   + 参考[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)选中VM:others泳道并按Bytes列从大到小排序，找到内存申请异常的内存及其调用栈如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/wiF7HyXmQzeVAxHeCLVwCA/zh-cn_image_0000002699731880.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/QEa2l6LOSoaZna-dlfVdcQ/zh-cn_image_0000002699731880.png "点击放大")
   + 分析内存调用栈指向的代码段，发现应用通过Native层MmapMemoryLeak()函数申请一次超大匿名页内存且未释放。累计申请过多导致匿名页内存过大。内存调用栈指向的代码段如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/3lShhO37SqeVFPTNW7p8Aw/zh-cn_image_0000002729491135.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/UoyiZFi7RxyIVqNmIeeh7w/zh-cn_image_0000002729491135.png "点击放大")
 
 **开发态分析思路**
 
@@ -129,23 +129,23 @@ NativeHeap过大、匿名映射过大、文件映射过大等单类问题各自�
 
 * 完成录制后，单击下图1处Memory的options按钮展开观察内存类型，并在下图2处选择除了GL、Graph外的所有内存复选框。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Ri29MKA9QgCcx7XfxrfTFw/zh-cn_image_0000002729611095.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/4g4Jw3CRTbqPPTuFQU8GNQ/zh-cn_image_0000002729611095.png)
 * 展开Memory泳道，观察每个时刻各子类型内存占比与增长趋势如下图：Native Heap和AnonPage Other两个泳道存在明显增长趋势，应该优先排查这两处内存是否存在泄漏。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/YEKfuBBuSGC7OJPBYeR6NA/zh-cn_image_0000002699891768.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/lOnX1lVOTlG8bv3CiQr6Cw/zh-cn_image_0000002699891768.png)
 
 * 选中Native Heap泳道并找到内存申请异常的内存及其调用栈如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/35ZuAHqKTqK3tbs7GTF0fg/zh-cn_image_0000002699731882.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/mP3FDGZrRcuVqsTsIRLoGQ/zh-cn_image_0000002699731882.png "点击放大")
 * 分析内存调用栈指向的代码段，发现应用正在循环申请超大内存但是未释放，最终导致NativeHeap内存占用过大。内存调用栈指向的代码段如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/On4k3KpzQ9uWWLyf1nuMZA/zh-cn_image_0000002729491137.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ktW83_twR5WmOtuDIRHcZA/zh-cn_image_0000002729491137.png)
 * 选中VM:others泳道并按Sizes列从大到小排序，找到内存申请异常的内存及其调用栈如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/hkl74IIPRlWexzZEhQLP1A/zh-cn_image_0000002729611097.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/9L6xgi73TjyeYabOAFHaXw/zh-cn_image_0000002729611097.png "点击放大")
 * 分析内存调用栈指向的代码段，发现应用通过Native层MmapMemoryLeak()函数申请一次超大匿名页内存且未释放。累计申请过多导致匿名页内存过大。内存调用栈指向的代码段如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/JKI97HYkQ5Ozr4JW5X6rVw/zh-cn_image_0000002699891770.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/hvhT1nffQR-ckYFNCI204g/zh-cn_image_0000002699891770.png "点击放大")
 
 **修复建议**
 

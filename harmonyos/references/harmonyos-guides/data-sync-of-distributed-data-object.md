@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 分布式数据对象跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 分布式数据对象跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:44:54+08:00
+scraped_at: 2026-09-21T06:17:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:099d242f31d410212c2c206fec1d2a37fd2c4e7b01e8c1a506ba347d32b5d90d
+content_hash: sha256:59cf45ac76b627c429ec75df4c8460ea7401281189b4c92f797e2ddde7a7011c
 ---
 
 ## 场景介绍
@@ -33,7 +33,7 @@ content_hash: sha256:099d242f31d410212c2c206fec1d2a37fd2c4e7b01e8c1a506ba347d32b
 
 **图1** 分布式数据对象运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Z_rmy6H6Quy48OknUbiQTw/zh-cn_image_0000002727749740.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/RMToXg8_Tp-PogrpTisINw/zh-cn_image_0000002733273450.jpg)
 
 分布式数据对象生长在分布式内存数据库之上，在分布式内存数据库上进行了JS对象型的封装，能像操作本地变量一样操作分布式数据对象，数据的跨设备同步由系统自动完成。
 
@@ -51,7 +51,7 @@ content_hash: sha256:099d242f31d410212c2c206fec1d2a37fd2c4e7b01e8c1a506ba347d32b
 
 **图2** 对象的同步关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/JsNPqFBgQN6Cinusd95FFw/zh-cn_image_0000002757309455.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/LY2Ylta4TeSTeTFh48HJUQ/zh-cn_image_0000002733433328.jpg)
 
 一个同步关系中，一个设备只能有一个对象加入。比如上图中，设备A的“分布式数据对象1”已经加入了session1的同步关系，所以设备A的“分布式数据对象2”就加入失败了。
 
@@ -78,7 +78,7 @@ dataObject['parents']['mom'] = "amy"; // 不支持的修改
 
 **图3** 数据同步视图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/HyM6jmRWTwqbjdOFzhTsOQ/zh-cn_image_0000002757229575.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/1Lr0tUYgSLStAlmZpWVgBw/zh-cn_image_0000002762992853.jpg)
 
 ### 对象持久化缓存机制
 

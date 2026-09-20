@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-time-zon
 title: 时区
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 时区与夏令时国际化 > 时区
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c0822ce018615337709f3bd34502349056454cf47cc1c089c6a3f5fc135537a1
+scraped_at: 2026-09-21T06:17:37+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:0f1ed266df8b58341977389c1d63e154c0004dd45aa1ac9939969972e1c458cb
 ---
 
 ## 使用场景
@@ -75,30 +75,6 @@ content_hash: sha256:c0822ce018615337709f3bd34502349056454cf47cc1c089c6a3f5fc135
 
   // 系统支持的时区城市ID列表
   let cityIDs = i18n.TimeZone.getAvailableZoneCityIDs(); // cityIDs = ['Auckland', 'Magadan', ...]
-
-  // 遍历时区城市ID列表
-  let timezoneList: object[] = []; // 呈现给用户的时区列表
-
-  class Item {
-    public cityDisplayName = '';
-    public timezoneId = '';
-    public offset = '';
-    public cityId = '';
-  };
-
-  for (let i = 0; i < cityIDs.length; i++) {
-    let cityId = cityIDs[i];
-    let timezone: i18n.TimeZone = i18n.TimeZone.getTimezoneFromCity(cityId); // 城市ID对应的时区对象
-    let cityDisplayName = i18n.TimeZone.getCityDisplayName(cityId, 'zh-CN'); // 本地化城市名称
-    let timestamp = (new Date()).getTime();
-    let item: Item = {
-      cityDisplayName: cityDisplayName,
-      timezoneId: timezone.getID(),
-      offset: 'GMT' + (timezone.getOffset(timestamp) / 3600 * 1000),
-      cityId: cityId
-    };
-    timezoneList.push(item);
-  }
 
   // 指定地理坐标所在的时区对象数组
   let timezoneArray: i18n.TimeZone[] = i18n.TimeZone.getTimezonesByLocation(-43.1, -22.5);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-diagnos
 title: 组件复用问题诊断分析
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > 组件复用问题诊断分析
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:44:59+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b868fbe6
+scraped_at: 2026-09-21T06:17:15+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:b0594f42a87588aea93d3417f08c0006820da825d8b255e92d3d6073f1b5cd13
 ---
 
 ## 概述
@@ -27,13 +27,13 @@ content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b86
 1. 在DevEco Studio中启动AppAnalyzer工具，详细请参见[AppAnalyzer](../best-practices/bpta-performance-detection.md#section135451444171)。
 2. 本文展示的[正反例代码](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/tree/master/ComponentReuse)分别位于positive和negative模块中，检测时需选择相应模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rpozim_rRYibDb8DU4-2Fg/zh-cn_image_0000002757309519.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/9pBG1l12RX6N7yWps3qGMA/zh-cn_image_0000002733433394.png)
 3. 点击工具“手动性能页面滑动体检”，按照提示进行检测操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/JQThTomASjSWQf728T_Uvg/zh-cn_image_0000002757229639.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/QYfx8GXMRRSnJ_wv4xGBbQ/zh-cn_image_0000002762992919.png)
 4. 通过分析检测结果，结合滑动过程中列表卡片的创建次数，可以分析出当前列表的组件未使用复用或者复用未生效。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/jPkQeiYhSTiQ_HdAjZ-Kig/zh-cn_image_0000002727589948.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/YSySACFhTeudC42d2v-svw/zh-cn_image_0000002762833035.png)
 
 以下将介绍几种复用场景问题，通过代码分析和优化建议对组件复用问题进行修复。
 
@@ -43,7 +43,7 @@ content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b86
 
   ListItem的根组件只有一个，且根组件整体结构组成不变。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/x479p2NkTcO4otQITnRwPg/zh-cn_image_0000002727749806.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/kjmtHIxGQrSGgzNVWWXibQ/zh-cn_image_0000002733273520.png)
 
   例如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部的文本，中部的图片以及底部的发布时间。
 
@@ -100,7 +100,7 @@ content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b86
 
   **①"总-分式"子组件可变结构**：ListItem的根组件只有一个，且根组件整体结构组成不变，局部子组件进行替换。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/1PVT8PVEQfqd_uB5hfxSHg/zh-cn_image_0000002757309521.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/X7nxXeTLTDa-8MnScVvs3w/zh-cn_image_0000002733433396.png)
 
   如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部文本、底部发布时间，根据展示类型不同，中部可展示单张图片、三张图片或视频。
 
@@ -166,7 +166,7 @@ content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b86
 
   **②分类组合式结构**：ListItem的根组件有多种类型，不同类型的根组件布局组成不同。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/dGnD9vkoS5umlRWYnZwc7Q/zh-cn_image_0000002757229641.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/xrfttzPYQJ-rvtr9-PjC3A/zh-cn_image_0000002762992921.png)
 
   例如以下示例中，新闻列表的内容列表页，根据展示类型的不同，可分别展示包含单张图片、三张图片、视频的内容NewsContent。
 
@@ -236,7 +236,7 @@ content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b86
 
   ListItem没有根组件，通过不同子组件相互组合，形成多种布局形态。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/YYZ8Ha1PR-mmAh85nRSMZA/zh-cn_image_0000002727589950.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Olgnd1R8QxyfiETWcCU-Pw/zh-cn_image_0000002762833037.png)
 
   例如以下示例中，ListItem列表项根据type的不同，其子组件包含了顶部文本元素、底部的文本元素，根据展示类型的不同，中间可分别展示单张图片、三张图片、视频。
 
@@ -326,7 +326,7 @@ content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b86
 
 * **场景一：父组件未使用复用，子组件使用复用**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/jmADi4ypSbi4E1QY1wNJNA/zh-cn_image_0000002727749808.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/r3qx2BwnRda475nA94XfdA/zh-cn_image_0000002733273522.png)
 
   例如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部的文本，中部的图片以及底部的发布时间。
 
@@ -378,7 +378,7 @@ content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b86
   ```
 * **场景二：复用嵌套**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/MNgi_5KLRziM2AeRbNp5-w/zh-cn_image_0000002757309523.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/0H1o-E02QPimM4fMkS20bw/zh-cn_image_0000002733433398.png)
 
   例如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部的文本，中部的图片以及底部的发布时间。
 
@@ -442,7 +442,7 @@ content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b86
   ```
 * **场景三：reuseId分类过粗**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/FnjmnQiKQzCl0dRsCt17Bg/zh-cn_image_0000002757229643.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Z1O5EjHTRdqMBT_nIyBKUA/zh-cn_image_0000002762992923.png)
 
   如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部文本、底部发布时间，根据展示类型不同，中部可展示单张图片、三张图片或视频。
 
@@ -503,7 +503,7 @@ content_hash: sha256:49ef0c4646a85592b22e89afffa9be6f34e9b6e5bc77676534ab0e04b86
 
 下图中简单示意了常见的列表效果，显示区域中有三种不同类型的列表项，真实场景中还会有更多类型的列表项，复杂场景可能会多达几十种，此时如果严格按照列表项类型分类，会造成分类过细，滑动时不断有新的类型元素进入可视区，创建新的类型列表项，此时就容易发生滑动卡顿。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/3UWamW18Qd6pd_Ng07QnUw/zh-cn_image_0000002727589952.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/LY6EsQ6cSPaEfm9SvuFj2w/zh-cn_image_0000002762833039.png)
 
 例如以下示例中，NewsContent是新闻列表的内容组件，其内部包含多种子组件：顶部文本、底部发布时间，根据展示类型不同，中部可展示文本、单张图片、三张图片、视频等。
 
@@ -609,11 +609,11 @@ struct MiddleTextView {
 
 **典型Trace分析**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/zA0aWt1YT6ehu0PVUgsTug/zh-cn_image_0000002727749810.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/nl6rtMfjTPmTFi-F45UR5A/zh-cn_image_0000002733273524.png)
 
 上述案例中，BuildRecycle是典型的复用成功回调，此处执行耗时过长造成了应用丢帧，虽然当前操作在帧间，但是长耗时仍然会影响下一帧的执行。通过耗时函数检测，可以定位到具体的耗时方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/gYiIvMScTGeGuB166BsEdg/zh-cn_image_0000002757309525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/D7vGgog5Q4WqFGN9iOIoYw/zh-cn_image_0000002733433400.png)
 
 这个场景下识别到Index文件中有stringify耗时长，此时可迅速定位到问题点，通过逻辑优化或者异步方案进行优化。
 

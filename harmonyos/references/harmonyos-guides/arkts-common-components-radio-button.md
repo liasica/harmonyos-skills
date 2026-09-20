@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 单选框 (Radio)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 按钮与选择 > 单选框 (Radio)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:05+08:00
+scraped_at: 2026-09-21T06:17:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:03f54e013b700edd303efe924c7d36019286efddeaa3a86b643285411ad34866
+content_hash: sha256:0f382f14cb531380c8db7467f94b9b111c578bd638333995fe5cd0f43b86f75d
 ---
 
 Radio是单选框组件，通常用于提供相应的用户交互选择项，同一组的Radio中只有一个可以被选中。具体用法请参考[Radio](../harmonyos-references/ts-basic-components-radio.md)。
@@ -29,7 +29,7 @@ Radio({ value: 'Radio2', group: 'radioGroup' })
   .checked(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/DBY0hhnvSr6SUrX-eVRLLg/zh-cn_image_0000002727750326.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ASJdRizvQ1iPSLW5uIT4yQ/zh-cn_image_0000002733274042.png)
 
 ## 添加事件
 
@@ -126,7 +126,7 @@ export struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/rG8MUVFVQKiFLpgraIvgHg/zh-cn_image_0000002757310041.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Za2hGh4ORemCxCYY2Hi8jQ/zh-cn_image_0000002733433924.gif)
 
 为不同Swiper页中的Radio设置独立的group值，实现各季节活动选项的隔离与独立选择。
 
@@ -202,4 +202,4 @@ export struct RadioSwiperSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/301-zksZTgaE9sXTEThzUQ/zh-cn_image_0000002757230161.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/RLqNiky3TROSEn2nXyTRLg/zh-cn_image_0000002762993447.gif)

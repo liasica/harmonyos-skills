@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义属性动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 属性动画 > 自定义属性动画
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:07+08:00
+scraped_at: 2026-09-21T06:17:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0686cb07aecb3b3f51873bd28966b1674b5ba248c89586633bd27aba774d5537
+content_hash: sha256:6510ef14fc7f414922cf884589a8095bd45dabc82aa4e8952c2b595532dd4c76
 ---
 
 [属性动画](arkts-attribute-animation-overview.md)是指当可动画属性的参数值发生变化时，在UI上产生的连续视觉效果。当参数值连续变化，且设置到可以引起UI发生变化的属性接口上时，即可实现属性动画。除了组件本身支持动画的属性，ArkUI还提供了[@AnimatableExtend装饰器](arkts-animatable-extend.md)用于自定义可动画属性。
@@ -44,7 +44,7 @@ struct AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/qJ-dg9d1R8WOga9du_e0qg/zh-cn_image_0000002727590584.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/yrQV9i41QfiNzuVZnilScQ/zh-cn_image_0000002762833673.gif)
 
 ## 使用自定义数据类型改变图形形状
 
@@ -188,4 +188,4 @@ struct AnimatedShape {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/PgAuVLp1TQ6LNWxXC00fjw/zh-cn_image_0000002727750442.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/HvoQKt_MRgWXkCFobTkThQ/zh-cn_image_0000002733274158.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 查询应用内快捷方式
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 应用内快捷方式 > 查询应用内快捷方式
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:11+08:00
+scraped_at: 2026-09-21T06:18:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e6e0c14eadbb305ef2d83b4a7ccc7e2ea4b25d2642fa59d66f342acc6f2b6660
+content_hash: sha256:c36c740313ad9ee6179d28f140290f466ffe3d40d8378e52fb6bef2e03103bcc
 ---
 
 **说明** 
@@ -18,7 +18,7 @@ content_hash: sha256:e6e0c14eadbb305ef2d83b4a7ccc7e2ea4b25d2642fa59d66f342acc6f2
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/PHwi0VeaSDK9g6-gwN0tSA/zh-cn_image_0000002727751450.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Ku2uxPv0S8KFkE9mfIC3vQ/zh-cn_image_0000002733275192.png)
 
 1. 用户需要查询当前应用的快捷方式。
 2. 应用调用[getPinShortcutInfos](../harmonyos-references/store-productviewmanager.md#productviewmanagergetpinshortcutinfos)接口获取快捷方式信息。

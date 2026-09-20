@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-auth-l
 title: 查询指定认证类型的认证冻结状态
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 查询指定认证类型的认证冻结状态
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:facb6627cddd1dfd29212b372fb29fd6df3b6d26fbf2d70e367d971c631c45ea
+scraped_at: 2026-09-21T06:17:51+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:a433d5116ee5a809cb4b0b4b0474760d04a1a2dd60df3b6bb8c88a67cd75e354
 ---
 
 从API version 22开始，开发者可以参考下述开发指导，查询指定认证类型的认证冻结状态，以及剩余可认证次数或还需等待的认证冻结时间。
@@ -30,7 +30,7 @@ async obtainingAuthLockState() : Promise<string> {
   try {
     Logger.info(`get auth lock state start`);
     const authLockState : userAuth.AuthLockState = await userAuth.getAuthLockState(userAuth.UserAuthType.PIN);
-    if (authLockState.lockoutDuration === userAuth.PERMANENT_LOCKOUT_DURATION) {
+    if (authLockState.isLocked && authLockState.lockoutDuration === userAuth.PERMANENT_LOCKOUT_DURATION) {
       Logger.info('the authentication of given authType is permanent locked.');
     }
     const authLockStateContent : string = JSON.stringify(authLockState);

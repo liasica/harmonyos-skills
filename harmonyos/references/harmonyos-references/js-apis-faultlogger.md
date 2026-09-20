@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.faultLogger (故障日志获取)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > 已停止维护的接口 > @ohos.faultLogger (故障日志获取)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:54+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bddf49af0e6824874de9db7d988ee0695ca288b962c6a191fc3526e62dc3bcb8
+scraped_at: 2026-09-21T06:23:27+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:4c4a1d719dd0fc46b3fc03cee7b39b4c659cf7ea96d4599b40c38362ef9defe0
 ---
 
 应用可以使用faultLogger接口查询系统侧缓存的当前应用的故障日志。接口以应用包名和系统分配的UID作为唯一键值。
@@ -80,7 +80,7 @@ query(faultType: FaultType, callback: AsyncCallback<Array<FaultLogInfo>>) : void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed, Parameter type error. |
-| 801 | The specified SystemCapability name was not found. |
+| 801 | Capability not supported. Possible causes: The specified SystemCapability name was not found. |
 | 10600001 | The service is not started or is faulty. |
 
 **示例：**
@@ -142,7 +142,7 @@ query(faultType: FaultType) : Promise<Array<FaultLogInfo>>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed, Parameter type error. |
-| 801 | The specified SystemCapability name was not found. |
+| 801 | Capability not supported. Possible causes: The specified SystemCapability name was not found. |
 | 10600001 | The service is not started or is faulty. |
 
 **示例：**

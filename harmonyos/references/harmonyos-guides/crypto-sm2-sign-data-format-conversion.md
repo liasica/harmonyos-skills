@@ -3,19 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-si
 title: SM2签名数据格式转换(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > SM2签名数据格式转换(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:50c10a39799385f0b62ecf649aaa10e91c9a9c06d5693274ffc4ba517b057933
+scraped_at: 2026-09-21T06:17:43+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:150b1ecdcc9de895d978da3e4624f4ffcc638057776df1b6db9e8aaf692c40c0
 ---
 
 当前支持DER格式与（r、s）格式互转的能力。
 
-开发者可指定SM2签名数据，将其转换成DER格式密文。反之，也可以从DER格式密文中取出具体的SM2签名数据。
+开发者可指定SM2签名数据，将其转换成DER格式签名数据。反之，也可以从DER格式签名数据中取出具体的SM2签名数据。
 
-**指定密文参数，转换为DER格式**
+**指定签名参数，转换为DER格式**
 
-1. 构造[EccSignatureSpec](../harmonyos-references/js-apis-cryptoframework.md#eccsignaturespec20)对象，用于指定SM2密文参数。
-2. 调用[genEccSignature](../harmonyos-references/js-apis-cryptoframework.md#geneccsignature20)，将EccSignatureSpec对象传入，转换为DER格式的SM2密文。
+1. 构造[EccSignatureSpec](../harmonyos-references/js-apis-cryptoframework.md#eccsignaturespec20)对象，用于指定SM2签名参数。
+2. 调用[genEccSignature](../harmonyos-references/js-apis-cryptoframework.md#geneccsignature20)，将EccSignatureSpec对象传入，转换为DER格式的SM2签名数据。
 
 ```typescript
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -40,8 +40,8 @@ function testSm2SignDataRsToDer() {
 
 **指定DER格式，转换为（r、s）格式**
 
-1. 指定DER格式的SM2密文参数。
-2. 调用[genEccSignatureSpec](../harmonyos-references/js-apis-cryptoframework.md#geneccsignaturespec20)，将DER格式数据传入，转换为（r、s）格式的SM2密文。
+1. 指定DER格式的SM2签名参数。
+2. 调用[genEccSignatureSpec](../harmonyos-references/js-apis-cryptoframework.md#geneccsignaturespec20)，将DER格式数据传入，转换为（r、s）格式的SM2签名数据。
 
 ```typescript
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';

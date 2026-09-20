@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputDevice (输入设备)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputDevice (输入设备)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:21+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:fcbd34bd47c94fe8fadbb24ba9eff271a9fa108b04c90d5d856053ccbdfa3acb
+scraped_at: 2026-09-21T06:23:10+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:e3ad98f6b9190599e8beaf53da88e7fc0a8e63f6c612bdd845adc4c97a38f591
 ---
 
 本模块提供输入设备管理能力，包括监听输入设备的连接和断开状态，查询设备名称等输入设备信息。
@@ -288,7 +288,7 @@ struct Index {
 
 on(type: 'change', listener: Callback<DeviceListener>): void
 
-注册监听输入设备的热插拔事件，使用时需连接鼠标、键盘、触摸屏等外部设备。使用callback异步回调。
+注册监听输入设备的热插拔事件，使用时需连接鼠标、键盘、触摸屏等外部设备。使用callback异步回调。建议在应用主线程执行此操作，且需要在此线程退出前取消监听。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
@@ -388,7 +388,7 @@ struct Index {
 
 off(type: 'change', listener?: Callback<DeviceListener>): void
 
-取消监听输入设备的热插拔事件。在应用退出前调用，取消监听。使用callback异步回调。
+取消监听输入设备的热插拔事件。使用callback异步回调。取消监听需要与注册监听在同一线程执行。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 

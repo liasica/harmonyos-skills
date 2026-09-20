@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-file-uploa
 title: 文件上传下载优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 文件上传下载优化
 category: best-practices
-scraped_at: 2026-09-16T06:55:08+08:00
+scraped_at: 2026-09-21T06:25:46+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:8d3f568c7404bb8d62ee9fdc57811a3ae294d26b10ee2bc57b1996d2737417e8
+content_hash: sha256:100df913307244cf340b1f5021fb689585d842f9b8682576cd88025f0ff4d8c3
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ content_hash: sha256:8d3f568c7404bb8d62ee9fdc57811a3ae294d26b10ee2bc57b1996d2737
 使用request模块执行下载的任务，具有四种运行状态：初始任务、就绪任务、挂起任务、待网任务。可以通过create()创建任务，start()开始任务，pause()挂起任务，resume()恢复任务，remove()移除任务，stop()停止任务，任务结果有final-failed任务失败，final-completed下载完成，recoverable-failed重试失败，并支持查询任务状态，具体流程如下图所示：
 
 **图1** 模块流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Dlp2QgACRSynOJuauG_SkA/zh-cn_image_0000002229451197.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/9pypsdqaT8myYtEeHIKSxg/zh-cn_image_0000002229451197.png "点击放大")
 
 ## 常见场景和解决方案
 
@@ -70,7 +70,7 @@ content_hash: sha256:8d3f568c7404bb8d62ee9fdc57811a3ae294d26b10ee2bc57b1996d2737
 | 100 | 5276 | 3906 |
 
 **图2** 上传数量和耗时对比图表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/J6zN0579QOWF_B1FFD4UBg/zh-cn_image_0000002193851324.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/rPoadkATSsWfmCp6R-cgNA/zh-cn_image_0000002193851324.png "点击放大")
 
 由于上传耗时受网络状态影响较大，结果取多次测量的最小值。尽管如此，数据仍显示优化前的耗时呈线性增长，而压缩优化后的耗时在上传文件数量较少时变化不明显，甚至因额外的压缩处理而增加耗时。然而，随着上传照片数量的增加，优化后的耗时与优化前的差距逐渐增大，优化效果更加显著。
 
@@ -153,7 +153,7 @@ content_hash: sha256:8d3f568c7404bb8d62ee9fdc57811a3ae294d26b10ee2bc57b1996d2737
 本文使用request模块中的**request.agent****()**任务托管接口，自动实现暂停、继续、重试等操作，无需手动分片和记录分片信息。流程图如下：
 
 **图3** 断点续传上传流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/-M35h1UkTMig46KZx2yTOw/zh-cn_image_0000002193851312.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/CDsWkgH4TnWOr93oGc0PpQ/zh-cn_image_0000002193851312.png "点击放大")
 
 1. 导入相关模块:
 
@@ -346,7 +346,7 @@ Range: bytes=1024-
 
 以具体场景为例，下图是常见的多文件下载列表：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/O44ItI_6Tp2JHnI_LdvaUw/zh-cn_image_0000002229451201.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/2PPX3nMbSOOivnM5byCHYQ/zh-cn_image_0000002229451201.png "点击放大")
 
 进入页面后，点击“全部开始”按钮，启动所有文件的下载任务。点击“全部暂停”按钮，暂停所有文件的下载任务。再次点击“全部开始”按钮，可重新启动未完成的下载任务。下载完成的文件将保存在应用的缓存路径下。如果下载失败，通常是因为网络不稳定，点击“全部开始”按钮可重新下载。
 

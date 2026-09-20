@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > button
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:42+08:00
+scraped_at: 2026-09-21T06:21:17+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:593a063411d5089a012e86de6316605e01080c834d9cbce97d063d3ac45b2334
+content_hash: sha256:77a6c9c5eee5ef725f11596e21c718338734a5634e37e66e0d2fbbfe1d291321
 ---
 
 按钮组件，包括胶囊按钮、圆形按钮和文本按钮。
@@ -92,4 +92,4 @@ content_hash: sha256:593a063411d5089a012e86de6316605e01080c834d9cbce97d063d3ac45
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/A-V1zOYbRaegD7jxP8tcoQ/zh-cn_image_0000002757312999.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/ORoFqt6EQNuXndEFx2jjKg/zh-cn_image_0000002733436922.jpg)

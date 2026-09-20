@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 模块描述
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.utils (ArkTS工具库) > 模块描述
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:879d4fd8b85a203287223fb9846cfd188adcf0602943c54e5b16d52f31d6e6b5
+scraped_at: 2026-09-21T06:20:17+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:cb532dc2b7c050bdf438ffa031eacb42f8fcf2452883e52040b1711bd0d4bbab
 ---
 
 本模块提供了以下ArkTS实用工具：
 
 * [ArkTSUtils.locks](arkts-apis-arkts-utils-locks.md)：异步锁。
 * [ArkTSUtils.ASON](arkts-apis-arkts-utils-ason.md)：ASON工具。
-* [ArkTSUtils.SendableLruCache](arkts-apis-arkts-utils-sendablelrucache.md)：SendableLruCache缓冲区。
+* [ArkTSUtils.SendableLruCache](arkts-apis-arkts-utils-sendablelrucache.md)：SendableLruCache缓存。
 
 **说明** 
 

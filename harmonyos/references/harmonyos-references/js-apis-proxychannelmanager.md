@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.distributedsched.proxyChannelManager (代理通道管理)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.distributedsched.proxyChannelManager (代理通道管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:eb21862b07baedfd84ac693e15044c16c46d9a608ceb249683cb5a425abcb9d4
+scraped_at: 2026-09-21T06:22:35+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:18b8612c4183bb477432a5621e9cd0be6456dc52eb109bb856dc19ddccaa7946
 ---
 
 软总线具备常驻运行能力，可为跨设备通信提供稳定可靠的底层通道。本模块基于软总线进程开发，支持手机与穿戴设备间的数据互通，可为用户提供无缝的设备互联体验，同时降低开发者跨设备通信的实现复杂度，无需自行处理底层通信协议和进程唤醒逻辑。使用场景：手机侧应用与穿戴设备侧应用协同时，当手机侧应用不在前台时，手机侧应用的下行消息经由通知服务器，通过代理模块发送给穿戴设备侧；当穿戴设备向手机发送数据时，代理模块可动态唤醒手机侧对应应用进程以接收和处理数据。模块核心功能包括：代理通道管理、数据路由管理、应用状态感知和唤醒、全链路状态监控。
@@ -19,7 +19,7 @@ content_hash: sha256:eb21862b07baedfd84ac693e15044c16c46d9a608ceb249683cb5a425ab
 
 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-**模型约束**：此接口仅可在Stage模型下使用。
+**模型约束**：本模块接口仅可在Stage模型下使用。
 
 ## 导入模块
 

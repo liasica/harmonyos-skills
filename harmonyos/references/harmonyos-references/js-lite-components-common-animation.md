@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:40+08:00
+scraped_at: 2026-09-21T06:21:15+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b9ce6e7dc6a651ab2eeb9a4097c9232cdda4fe6c55b547f32751fb4717559a68
+content_hash: sha256:c5ff3c3dd7011fab983f24ce75ef94c7a70e5ac29be2e395f2e5369aa1523091
 ---
 
 组件支持通过style或css设置动态的旋转及平移效果。
@@ -57,7 +57,7 @@ rotate仅支持在@keyframes中使用，不支持在普通样式中设置或动�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/T9jMigOyRMymklF0GiKUiQ/zh-cn_image_0000002727593404.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/zGeDk5SlRV2w_zohvEeXUg/zh-cn_image_0000002762836537.gif)
 
 **说明** 
 

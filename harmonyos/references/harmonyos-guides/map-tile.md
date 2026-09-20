@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-tile
 title: 瓦片图层
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 瓦片图层
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:21+08:00
+scraped_at: 2026-09-21T06:18:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a737ebc2ba3663092970f489048d831fdb34b331130f9f8533322d1ed96666af
+content_hash: sha256:8e949d135c2e99d63786d8f7576483eda7f793f1f6f15b8e989660f732351c57
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:a737ebc2ba3663092970f489048d831fdb34b331130f9f8533322d1ed96
 
 从6.1.1(24)开始，支持高层级复用低层级瓦片的规则。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/aYK5dDIERF6ZKqhabLeqcw/zh-cn_image_0000002727591868.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/P8cw9AK_TMelrTtAE7MUsw/zh-cn_image_0000002762834985.jpg "点击放大")
 
 ## 接口说明
 

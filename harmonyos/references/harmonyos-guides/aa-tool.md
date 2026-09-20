@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aa-tool
 title: aa工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > aa工具
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:49+08:00
+scraped_at: 2026-09-21T06:18:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1765c170c2be0a118508b86916387619d5944ad9ab700c4e143385a1ef901ccb
+content_hash: sha256:60b3755ff34ce2fc3433bed6e37e30318df3aa2de66627d06db6f6a95818ff3d
 ---
 
 Ability assistant（Ability助手，简称为aa），是用于启动应用和启动测试用例的工具，为开发者提供基本的应用调试和测试能力，例如启动应用组件、强制停止进程、打印应用组件相关信息等。
@@ -267,21 +267,21 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 aa dump -a
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/BSB-nxXaSaqqMm7fW514yA/zh-cn_image_0000002727751108.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/kaLwQ4NPSZWdeHNSWO2qiQ/zh-cn_image_0000002733274838.png)
 
 ```bash
 # 打印所有任务链
 aa dump -l
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/JHyV1PjHTH2c6AbuIbxlHA/zh-cn_image_0000002757310823.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/iehsiIsBRtuSBdhcVn8h5w/zh-cn_image_0000002733434720.png)
 
 ```bash
 # 打印指定应用组件详细信息
 aa dump -i 105
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/HVpWUFqfQ6CIB6N5fN7XSw/zh-cn_image_0000002757230943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/xrZnKNmcR36Ew75gwgAcuA/zh-cn_image_0000002762994241.png)
 
 ## 强制停止进程命令（force-stop）
 

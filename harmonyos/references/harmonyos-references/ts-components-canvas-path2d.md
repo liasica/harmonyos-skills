@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Path2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Path2D
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:25+08:00
+scraped_at: 2026-09-21T06:20:57+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9b37ce6048346cbb3dfe4707bc353a56ad4e5670d0e967c19e3b566144ade046
+content_hash: sha256:874c6a492032080e6238e303ac58fab1d57466d1ea9efb303c469efedb7efa7f
 ---
 
 路径对象，支持通过对象的接口进行路径的描述和组合，并通过Canvas的stroke接口或者fill接口进行绘制。Path2D支持复用路径、组合多个路径、基于SVG路径字符串创建路径等功能，适用于需要多次绘制相同路径、动态组合复杂图形或基于SVG路径数据绘制图形的场景。
@@ -178,7 +178,7 @@ struct AddPath {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/T-b3_YmDQ5-CagE9ubTt9A/zh-cn_image_0000002757312503.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/bDNkJTH0QuK7LqRNw-EEcA/zh-cn_image_0000002733436420.png)
 
 ### closePath
 
@@ -223,7 +223,7 @@ struct ClosePath {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/uR0v2JMtQCiiNhn1ZGvoTw/zh-cn_image_0000002757232623.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/KShfTiarQ86ag5M7m7gWrA/zh-cn_image_0000002762995943.png)
 
 ### moveTo
 
@@ -280,7 +280,7 @@ struct MoveTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/CLhptWC6SdyddYbEeNdtwA/zh-cn_image_0000002727592932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/f3_9W8dcQjuOFCzYagqxoA/zh-cn_image_0000002762836059.png)
 
 ### lineTo
 
@@ -333,7 +333,7 @@ struct LineTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/UysHZ1UpSHijcanRNhKYsg/zh-cn_image_0000002727752790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/BUtXZNWZQ5qUtviH3TUgww/zh-cn_image_0000002733276548.png)
 
 ### bezierCurveTo
 
@@ -387,7 +387,7 @@ struct BezierCurveTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/btTyh-kYRxmUV2WJPQ8EYQ/zh-cn_image_0000002757312505.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/2R_3jW3dREivMmrs7u7tLQ/zh-cn_image_0000002733436422.png)
 
 ### quadraticCurveTo
 
@@ -439,7 +439,7 @@ struct QuadraticCurveTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/lvQtU_H9SeKRGbrPV-mUBg/zh-cn_image_0000002757232625.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/sVvXvY30QZe8IuzXy4n7WA/zh-cn_image_0000002762995945.png)
 
 ### arc
 
@@ -492,7 +492,7 @@ struct Arc {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/qoAbbzwqQ5ONb1W-Zt3VNQ/zh-cn_image_0000002727592934.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/uRBCiA6hRfe7Z77X4_feig/zh-cn_image_0000002762836061.png)
 
 ### arcTo
 
@@ -545,7 +545,7 @@ struct ArcTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/nNzvBnQ9RjalkIkzuoHg8w/zh-cn_image_0000002727752792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/BuzKGcalTWO0inQA3l67VQ/zh-cn_image_0000002733276550.png)
 
 ### ellipse
 
@@ -600,7 +600,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/JBzOY3hmQ5aKu0L6VOvQ8A/zh-cn_image_0000002757312507.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/2JfZGJOqQoW2DFLRjkcH0Q/zh-cn_image_0000002733436424.png)
 
 ### rect
 
@@ -655,7 +655,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/IJLmR-oZSAej4RczFim9kA/zh-cn_image_0000002757232627.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/JpEcS7HjQsixdwaPqEHeLw/zh-cn_image_0000002762995947.png)
 
 ### roundRect20+
 
@@ -747,4 +747,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ByX2M14FT8qNK5f0RtbYnw/zh-cn_image_0000002727592936.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/HiEDQHPpS-azZ8e8ZtOn0Q/zh-cn_image_0000002762836063.jpeg)

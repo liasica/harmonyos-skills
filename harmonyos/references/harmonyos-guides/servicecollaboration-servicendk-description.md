@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/servicecollab
 title: 跨设备互通NDK特性概述
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > 跨设备互通NDK（C） > 跨设备互通NDK特性概述
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:38+08:00
+scraped_at: 2026-09-21T06:17:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c2a13be154dcfeead7eeecb39332a0ed62faa02ba8b0a5f72399d71525189dc1
+content_hash: sha256:4de911dbbaf94c7bea301f1fcab944b54310c397bbee3b38393d4480b403a4dd
 ---
 
 跨设备互通提供相机、扫描以及图库（图片和视频）的跨设备调用能力，TV、Tablet或PC/2in1设备可以调用Phone的相机、扫描、图库等功能。
@@ -18,7 +18,7 @@ content_hash: sha256:c2a13be154dcfeead7eeecb39332a0ed62faa02ba8b0a5f72399d715251
 
 如果同一组网下有多台Phone或Tablet设备，用户可以选择不同的设备进行拍摄。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/CWDRhTaRSjW_d73RjpKDXA/zh-cn_image_0000002757230855.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/WJkn7cVcRFmekR7JvLeLzQ/zh-cn_image_0000002762994151.gif)
 
 ## 运作机制
 
@@ -28,7 +28,7 @@ content_hash: sha256:c2a13be154dcfeead7eeecb39332a0ed62faa02ba8b0a5f72399d715251
 
    a. 通过系统的分布式协同框架，同账号下的本端设备（PC/2in1设备/Tablet）与远端设备（Phone/Tablet）自动建立连接。系统将自动完成设备的发现、连接、认证等流程，通过[HMS\_ServiceCollaboration\_GetCollaborationDeviceInfos](../harmonyos-references/servicecollaboration-capi-module.md#hms_servicecollaboration_getcollaborationdeviceinfos)接口提供可用的具有相机、扫描和图库能力的远端设备信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/riZDsDRERhWPVgd6InySvw/zh-cn_image_0000002727591168.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/uSF8c26lRxuNN2iGtpIvcw/zh-cn_image_0000002762834269.png)
 
    b. 通过[HMS\_ServiceCollaboration\_StartCollaboration](../harmonyos-references/servicecollaboration-capi-module.md#hms_servicecollaboration_startcollaboration)或者[HMS\_ServiceCollaboration\_StartCollaborationV2](../harmonyos-references/servicecollaboration-capi-module.md#hms_servicecollaboration_startcollaborationv2)拉起对应跨设备互通能力，通过[HMS\_ServiceCollaboration\_StopCollaboration](../harmonyos-references/servicecollaboration-capi-module.md#hms_servicecollaboration_stopcollaboration)终止跨设备互通能力。分布式协同框架会将远端拍摄状态信息实时回传到应用侧，应用侧会根据错误码做相关提示。
 

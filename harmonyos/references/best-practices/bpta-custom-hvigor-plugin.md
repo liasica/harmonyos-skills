@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-custom-hvi
 title: 定制hvigor插件
 breadcrumb: 最佳实践 > 编译构建 > 定制hvigor插件
 category: best-practices
-scraped_at: 2026-09-16T06:55:17+08:00
+scraped_at: 2026-09-21T06:25:54+08:00
 doc_updated_at: 2026-06-02
-content_hash: sha256:96bb9eb72470e8d1cf98abd046677540e6bd67c112a1f517349be651a5c5e53c
+content_hash: sha256:6e74d80b3727e83049e2e822605000b4128f5ab71de4ea7349397729c3759924
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ content_hash: sha256:96bb9eb72470e8d1cf98abd046677540e6bd67c112a1f517349be651a5c
 
 定制hvigor插件，就是在编译构建的过程中插入开发者需要的自定义任务，将这些自定义任务抽象后封装成可复用的部分，通过输出plugin插件的目标形式，实现编译构建个性化逻辑的复用和共享分发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/cMb1nrQ9TKqlAcpbLRLUlg/zh-cn_image_0000002229335981.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/dZCJAYNgSee8F_iG8pIE9w/zh-cn_image_0000002229335981.png "点击放大")
 
 如上图所示，hvigor插件的工作原理：
 
@@ -156,4 +156,4 @@ hvigor主要提供了两种方式以实现插件的开发：
    ```
 5. 执行Build -> Make Module编译，编译产物的文件名被修改为“name-version-author.har”的组成形式，同时生成路径从default目录改到了target目录下。结果如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/watybaljT2ihSLvF3-RYDA/zh-cn_image_0000002229335985.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/agsJzXOiSUyBv9oFzKik6g/zh-cn_image_0000002229335985.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui
 title: UI界面
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:32+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:2c1187a8aa5eb59b13994f4d3820d307fc01cb29353636aacdd9e6433d9b3718
+scraped_at: 2026-09-21T06:20:23+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:87986169c637ee216bd90afe184756858d263f751c6039d4c97b247fa8f6019d
 ---
 
 * **[@ohos.animator (动画)](js-apis-animator.md)**
@@ -16,7 +16,7 @@ content_hash: sha256:2c1187a8aa5eb59b13994f4d3820d307fc01cb29353636aacdd9e6433d9
 * **[@ohos.arkui.inspector (布局回调)](js-apis-arkui-inspector.md)**
 * **[@ohos.arkui.node (自定义节点)](js-apis-arkui-node.md)**
 * **[@ohos.arkui.observer (无感监听)](js-apis-arkui-observer.md)**
-* **[@ohos.arkui.Prefetcher (Prefetching)](js-apis-arkui-prefetcher.md)**
+* **[@ohos.arkui.Prefetcher (内容预取)](js-apis-arkui-prefetcher.md)**
 * **[@ohos.arkui.shape (形状)](js-apis-arkui-shape.md)**
 * **[@ohos.arkui.theme(主题换肤)](js-apis-arkui-theme.md)**
 * **[@ohos.arkui.UIContext (UIContext)](js-apis-arkui-uicontext.md)**

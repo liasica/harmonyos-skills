@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-redundancy
 title: 组件冗余刷新解决方案
 breadcrumb: 最佳实践 > 声明式语法 > 组件冗余刷新解决方案
 category: best-practices
-scraped_at: 2026-09-16T06:54:56+08:00
+scraped_at: 2026-09-21T06:25:35+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:004ab9150b31deb096a2d87a16fdee9b55c4affb53bf091af06261e156c2f7c9
+content_hash: sha256:0e7457193fe7809fdc1da3089a728ea5f51510569ce512265f217fb87cb8bdd9
 ---
 
 ## 简介
@@ -154,7 +154,7 @@ struct DFXStateBeforeOptimization {
 
 **图1** 修改代码前点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Fq_hTowDSEmpmQI0DS1raQ/zh-cn_image_0000002229451917.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/TU-okkuFTmqF0SAwyAg80Q/zh-cn_image_0000002229451917.gif "点击放大")
 
 点击Move按钮的时候SpecialImage组件却发生了旋转动画，这就造成了冗余刷新。
 
@@ -172,7 +172,7 @@ hdc shell "hidumper -s WindowManagerService -a '-a'"
 
 **图2** 命令行获取应用窗口Id运行界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Ntyqw1bBTQO78kEpoRHMYQ/zh-cn_image_0000002194011628.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/tZ832YiHSf6MvskFyxAgtw/zh-cn_image_0000002194011628.png "点击放大")
 
 3. 基于上一步获取的窗口Id 11，使用-viewHierarchy命令携带-r 参数递归打印应用的自定义组件树。
 
@@ -385,7 +385,7 @@ struct DFXStateAfterOptimization {
 
 **图3** 修改代码后点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/eF5yykjOQ4CB0eAJsh0sxA/zh-cn_image_0000002193852044.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/yilPxRSVQpSzpWhMYuTmxQ/zh-cn_image_0000002193852044.gif "点击放大")
 
 可以使用上文步骤再次获取ComponentA组件的状态变量信息如下，可以看到ComponentA中状态变量scaleStyle影响组件SpecialImage[8]和Image[18]，状态变量translateStyle影响组件Column[9]，translateStyle的变化不会再导致SpecialImage的刷新。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-skill
 title: Account Kit Skill能力开放
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit Skill能力开放
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:51+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:14591469cc957b4aab9d48e6dd706ff09752becb66bc5c9352d273d088cab089
+scraped_at: 2026-09-21T06:18:28+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:6283e87ab4875f5979eb41d75ad36b937f9b00f48bd98d4b95889126dd79b3dd
 ---
 
 ## 概述
@@ -55,12 +55,12 @@ Account Kit接入Skills，旨在帮助开发者快速集成Account Kit开放能�
 
 **关键词触发**：帮我接入华为账号一键登录
 
-**Skill名称强制触发**：使用"huawei-account-kit-quicklogin-client" Skill，帮我接入华为账号一键登录
+**Skill名称强制触发**：使用"hmos-account-kit-quicklogin-client" Skill，帮我接入华为账号一键登录
 
 | 技能 | Skill名称 | 关键词 |
 | --- | --- | --- |
 | 华为账号一键登录客户端Skill | hmos-account-kit-quicklogin-client | 帮我接入华为账号一键登录 |
-| 华为账号一键登录服务端Skill | hmos-account-kit-quicklogin-server | 帮我生成华为账号一键登录服务端java代码 |
+| 华为账号一键登录服务端Skill | huawei-account-kit-quicklogin-server | 帮我生成华为账号一键登录服务端java代码 |
 
 ## 注意事项
 

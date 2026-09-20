@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avscreen_capture.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > native_avscreen_capture.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1e8de50272168ad918147203f9cf7b67d491697147575d39bb5cb27824c4fc0f
+scraped_at: 2026-09-21T06:24:11+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:62f38e072fd1816d693d7823e672c73b952dc4feaf11829fadc2ec2442a12fdb
 ---
 
 ## 概述
@@ -217,7 +217,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StartScreenRecording(struct OH_AV
 
 启动录屏，调用此接口，可保存录屏文件。与OH\_AVScreenCapture\_StopScreenRecording配合使用。
 
-录屏存文件场景需要再初始化时配置合法的视频编码参数、音频编码参数等，详见[OH\_AVScreenCapture\_Init](capi-native-avscreen-capture-h.md#oh_avscreencapture_init)。
+录屏存文件场景需要在初始化时配置合法的视频编码参数、音频编码参数等，详见[OH\_AVScreenCapture\_Init](capi-native-avscreen-capture-h.md#oh_avscreencapture_init)。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 

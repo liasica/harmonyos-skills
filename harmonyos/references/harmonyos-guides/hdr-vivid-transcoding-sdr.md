@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-vivid-tra
 title: HDR Vivid视频转码SDR视频开发实践
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > HDR Vivid视频转码SDR视频开发实践
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:54+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:42995d9fe4011919900b02413443205f28b7a6795aeff122541571fe37668246
+scraped_at: 2026-09-21T06:18:13+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:ec49b03e72cf8b8911fb019fc4628b013c82354c0e8a8922458ee068cd34dcfd
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:42995d9fe4011919900b02413443205f28b7a6795aeff122541571fe376
 
 使用[AVTranscoder](media-kit-intro.md#avtranscoder)可以实现视频转码功能，从API version 20开始支持视频转码的C/C++开发，转码功能可在手机、平板、PC/2in1等设备上作为系统提供的基础能力使用。可以通过调用[canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)接口来判断当前设备是否支持AVTranscoder，当canIUse("SystemCapability.Multimedia.Media.AVTranscoder")的返回值为true时，表示可以使用转码能力。转码步骤如下：初始化与准备阶段，调用[OH\_AVTranscoder\_Create()](../harmonyos-references/capi-avtranscoder-h.md#oh_avtranscoder_create)创建`OH\_AVTranscoder` 对象；启动与运行阶段，调用OH\_AVTranscoder\_Start()启动转码任务，此时可调用[OH\_AVTranscoder\_Pause()](../harmonyos-references/capi-avtranscoder-h.md#oh_avtranscoder_pause)暂停任务。在暂停状态下，可调用[OH\_AVTranscoder\_Resume()](../harmonyos-references/capi-avtranscoder-h.md#oh_avtranscoder_resume)恢复任务；任务进行时，若想取消该任务，可调用[OH\_AVTranscoder\_Cancel()](../harmonyos-references/capi-avtranscoder-h.md#oh_avtranscoder_cancel)终止转码任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ffnTV5FkQT2tiPgePdNq2A/zh-cn_image_0000002727751174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/nfMC7FcHSl6P7gwDpOBK0A/zh-cn_image_0000002733274908.png)
 
 ### 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-parse
 title: ParseOpToGraphFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > ParseOpToGraphFn
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:47+08:00
+scraped_at: 2026-09-21T06:19:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:babfff3ed6a9e769884ecad7ed9929d6f1ef0668a7f12b32f9132f46c1a59be4
+content_hash: sha256:7e0ead53034b4142b1c980d9322c99fbc952948d609c8d982a9eacc9c37ae87f
 ---
 
 ## 函数功能
@@ -100,4 +100,4 @@ REGISTER_CUSTOM_OP("PartitionedCall")
 
 **图1** 一对多转换示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/9ZUMXrpBSwyMk8cccxaXHw/zh-cn_image_0000002727752012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/kE2k4zZJQ2KF2mkmkAAvZw/zh-cn_image_0000002733275758.png)

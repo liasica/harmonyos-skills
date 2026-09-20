@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-managing-a
 title: 管理音频输入设备开发实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 管理音频输入设备开发实践
 category: best-practices
-scraped_at: 2026-09-16T06:54:59+08:00
+scraped_at: 2026-09-21T06:25:38+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:da4f2e545ff32db496bfe64682583790882b583857b2a79f3648611e160ef0fd
+content_hash: sha256:66c1e30582f71368cff00072a049103dcf73fed7ae32c23a54f01dbf9f6992ea
 ---
 
 ## 概述
@@ -27,7 +27,7 @@ content_hash: sha256:da4f2e545ff32db496bfe64682583790882b583857b2a79f3648611e160
 
 在开始录制音频之前，获取系统的输入设备信息并展示；当设备发生变化时，同步更新设备列表。例如，当蓝牙耳机上线时，将蓝牙耳机添加到设备列表中；当蓝牙耳机下线时，将蓝牙耳机从设备列表中移除。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/0boJCZe6QHOrU5koXVJjgg/zh-cn_image_0000002513603472.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/wvOw3g3iQBy4CgQab4kikg/zh-cn_image_0000002513603472.gif "点击放大")
 
 ### 实现原理
 
@@ -178,7 +178,7 @@ content_hash: sha256:da4f2e545ff32db496bfe64682583790882b583857b2a79f3648611e160
 
 音频流类型对输入设备的选择具有决定性影响，对于不同类型的音频流，系统会自动选择相应的输入设备。例如音频流类型是SOURCE\_TYPE\_MIC时，系统使用内置麦克风作为音频输入设备。如果默认的输入设备不符合使用需求，应用可以调用相关接口进行修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/8PDGZyIbTwac-u7r5BVaJQ/zh-cn_image_0000002545043447.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/EPO7DSrtQgu5IFaRBnCahg/zh-cn_image_0000002545043447.gif "点击放大")
 
 ### 实现原理
 
@@ -186,7 +186,7 @@ content_hash: sha256:da4f2e545ff32db496bfe64682583790882b583857b2a79f3648611e160
 
 整体流程如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/F-6XzB9nQ1W7G3WLWAVy3Q/zh-cn_image_0000002545123443.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/rl45RnlfSHmE2_uKeIMEKw/zh-cn_image_0000002545123443.png)
 
 **说明** 
 
@@ -275,7 +275,7 @@ content_hash: sha256:da4f2e545ff32db496bfe64682583790882b583857b2a79f3648611e160
 
 在PC设备上，通过系统提供的录音设备选择组件[AVInputCastPicker](../harmonyos-references/ohos-multimedia-avinputcastpicker.md#avinputcastpicker)切换音频输入设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/TbGJWAS9QE-4oaLUaathlQ/zh-cn_image_0000002513443564.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/lFxYIlK7S0GIPYNZ914cUQ/zh-cn_image_0000002513443564.gif "点击放大")
 
 ### 实现原理
 
@@ -308,7 +308,7 @@ content_hash: sha256:da4f2e545ff32db496bfe64682583790882b583857b2a79f3648611e160
 
 当系统因音频输入设备上下线、用户主动切换设备、设备抢占或设备选择策略变更等导致音频流输入设备变更时，应用可以根据需要做出对应的处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/xpC3uI9wS2mzaz-8bEGuHA/zh-cn_image_0000002513603474.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/BgQhmtHpRLmTxESV7EKAsg/zh-cn_image_0000002513603474.gif "点击放大")
 
 ### 实现原理
 

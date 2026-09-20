@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备体验设计
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备体验设计
 category: best-practices
-scraped_at: 2026-09-16T06:54:59+08:00
+scraped_at: 2026-09-21T06:25:38+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:9d4fe003fcf63fa36a811b678382190af08f57c72f4c3670a7d9bc134191958e
+content_hash: sha256:f67db3d5b3e869a6086e312b8f916b0463a353cd0e8183d8c285288ff4d67170
 ---
 
 支持一多的应用开发，建议在产品设计的早期阶段就纳入多设备适配的考量，通过统一规划实现跨终端的功能布局与用户体验一致性。
 
 随着终端设备形态日益多样化，应用设计需要考虑界面能适配不同的屏幕尺寸、屏幕方向和设备类型。同时还需要保持多设备体验的连续性，改善多端独立的设计，尽可能降低开发者的工作量和维护成本。基于此 HarmonyOS 为设计师提供了面向多设备的设计指南，让设计师在进行多端设计时有一套科学的方法，最大程度减少设计的工作量，保障多端设计在一定程度的一致性。同时 HarmonyOS 也提供了对应的技术能力，帮助开发者快速地进行多端应用设计。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/rdchoAWaRRmvTtG2SkYH3A/zh-cn_image_0000002322482140.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/ZaPpbcS8SiWq0IR7kp4m_g/zh-cn_image_0000002322482140.png "点击放大")
 
 结合用户在多端设备上的历史交互习惯、各场景下的使用诉求等，进行了一些设计方法的总结，主要包括如下几个部分：
 

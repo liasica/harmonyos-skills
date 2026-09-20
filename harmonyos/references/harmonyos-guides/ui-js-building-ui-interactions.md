@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 添加交互
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 添加交互
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:11+08:00
+scraped_at: 2026-09-21T06:17:27+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:c572b6a13bb65679e3fda2726b9cb1dcd71d76e214c72f96486afb3b2bca56d0
+content_hash: sha256:7fb1359f1d8a0577ef72268f1f887879f7ad22f7caac4fad8c09ed85560cfff6
 ---
 
 添加交互可以通过在组件上关联事件实现。本节将介绍如何用div、text、image组件关联click事件，构建一个如下图所示的点赞按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/iDMkBliOSnazi4Wq1j1WCg/zh-cn_image_0000002757310293.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/JjUtub4aQNKKEZb6NEiMag/zh-cn_image_0000002733434180.gif)
 
 点赞按钮通过一个div组件关联click事件实现。div组件包含一个image组件和一个text组件：
 

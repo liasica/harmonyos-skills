@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-rom
 title: 视频场景ROM低功耗建议
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 视频场景ROM低功耗建议
 category: best-practices
-scraped_at: 2026-09-16T06:55:10+08:00
+scraped_at: 2026-09-21T06:25:47+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:68a088ea23c37a326f1729fad976f0b3a85a3dbdd15edd155d0df412b6ec15d5
+content_hash: sha256:b6f3fdb8be25ce1b6c9f1d74d26230cd89cd8e8817a0308c908e5c865ba59ef7
 ---
 
 ## 建议
@@ -34,4 +34,4 @@ fileIo.write(file.fd, str).then((writeLen: number) => {
 
 通过查看storage\_info节点的信息，如下所示：Total Host Write Data表示整机下载文件的总大小（单位为100MB）。建议文件下载的总速率不超过20MB/min。以视频播放10分钟为例，测试前后的Total Host Write Data节点差值应小于或等于2，符合要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/sJVDcPHmTQ2OP6sldPr20g/zh-cn_image_0000002229337325.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/YltfWTzrTQauBqnjqN0vLQ/zh-cn_image_0000002229337325.png "点击放大")

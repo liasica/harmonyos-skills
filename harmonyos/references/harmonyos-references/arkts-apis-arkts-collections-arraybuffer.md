@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ArrayBuffer)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (ArrayBuffer)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:44+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0ce1bc8b56dbb433c0d6445c3c502ee4db244e24f90bf89e3a7ec78717e62386
+scraped_at: 2026-09-21T06:20:14+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:15027323e2a0e31540a902746740392b37f4f8aad4d8d0677b47f38c154c8de8
 ---
 
 ArkTS TypedArray（[Int8Array](arkts-apis-arkts-collections-int8array.md)、[Uint8Array](arkts-apis-arkts-collections-uint8array.md)、[Int16Array](arkts-apis-arkts-collections-int16array.md)、[Uint16Array](arkts-apis-arkts-collections-uint16array.md)、[Int32Array](arkts-apis-arkts-collections-int32array.md)、[Uint32Array](arkts-apis-arkts-collections-uint32array.md)、[Uint8ClampedArray](arkts-apis-arkts-collections-uint8clampedarray.md)、[Float32Array](arkts-apis-arkts-collections-float32array.md)）的底层数据结构。
@@ -86,7 +86,7 @@ slice(begin: number, end?: number): ArrayBuffer
 
 | 类型 | 说明 |
 | --- | --- |
-| ArrayBuffer | collections.ArrayBuffer |
+| ArrayBuffer | collections.ArrayBuffer，包含原ArkTS ArrayBuffer指定范围的内容的新的ArkTS ArrayBuffer对象 |
 
 **错误码：**
 

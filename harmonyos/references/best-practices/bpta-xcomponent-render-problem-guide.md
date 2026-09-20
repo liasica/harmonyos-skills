@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-xcomponent
 title: XComponent图形渲染常见问题定位指导
 breadcrumb: 最佳实践 > 行业场景解决方案 > 拍摄美化 > XComponent图形渲染常见问题定位指导
 category: best-practices
-scraped_at: 2026-09-16T06:55:06+08:00
+scraped_at: 2026-09-21T06:25:44+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:f9a8d6df17c7e75400a9f346d2c2ad30170aa1209ba33d2a71870face0f6b5f4
+content_hash: sha256:dab85b1a14edc5d1d6b34e654ce36cbdf99b3247fbecbfdeb2a54fcd877f1b90
 ---
 
 ## 概述
@@ -16,15 +16,15 @@ content_hash: sha256:f9a8d6df17c7e75400a9f346d2c2ad30170aa1209ba33d2a71870face0f
 
 XComponent组件负责创建Surface，并通过回调将Surface的相关信息告知应用。应用可以通过一系列接口设定Surface的属性。该组件本身不对所绘制的内容进行感知，亦不提供渲染绘制的接口。XComponent渲染的架构图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/0l6EU4YrQUaqdIjQU7_Xgw/zh-cn_image_0000002717582231.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/4NnMWOWCTrifpYa3JOtYwA/zh-cn_image_0000002717582231.jpg "点击放大")
 
 XComponent持有一个Surface，开发者能通过调用[NativeWindow](../harmonyos-references/capi-nativewindow.md)模块的接口，申请并提交Buffer至图形队列，以此方式将自绘制内容传送至该Surface，其主体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/HhSIIitxQLac8cmnvyEj0Q/zh-cn_image_0000002687982486.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/tGoKGgOkSqWmP6pXCnh0dQ/zh-cn_image_0000002687982486.jpg "点击放大")
 
 数据流向图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/JTGSVY6XRBiAQk-PgOJDrQ/zh-cn_image_0000002717742103.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Vp30gw2tTDyvltGDX7mUww/zh-cn_image_0000002717742103.jpg "点击放大")
 
 经过上述流程，应用自绘制的内容就可以显示在XComponent持有的Surface区域，而XComponent则负责将此Surface整合进UI界面，其中展示的内容正是开发者发送的自绘制内容。Surface的默认位置与大小与XComponent组件一致，开发者可利用[setXComponentSurfaceRect()](../harmonyos-references/ts-basic-components-xcomponent.md#setxcomponentsurfacerect12)接口自定义调整Surface的位置和大小。
 
@@ -36,13 +36,13 @@ XComponent持有一个Surface，开发者能通过调用[NativeWindow](../harmon
 
   在日志里面搜索XComponent，可以获取组件id信息、[onSurfaceCreated()](../harmonyos-references/ts-basic-components-xcomponent.md#onsurfacecreated12)和[onLoad()](../harmonyos-references/ts-basic-components-xcomponent.md#onload)的触发信息、通过[getXComponentSurfaceId()](../harmonyos-references/ts-basic-components-xcomponent.md#getxcomponentsurfaceid9)获取的Surface id信息，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/qfeuCSaYT_mVFFhEdHhB8A/zh-cn_image_0000002687822624.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/66tY6jSqRHSyu4lg_7TRGg/zh-cn_image_0000002687822624.png "点击放大")
 
 * 图形渲染异常信息及错误码
 
   在日志中搜索C01401或Bufferqueue，可以获取图形渲染异常信息和对应的错误码。错误码可参考[OHNativeErrorCode](../harmonyos-references/capi-graphic-error-code-h.md#ohnativeerrorcode)，异常信息如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VGeUop3aQhqMfcYlA7Wfaw/zh-cn_image_0000002717582233.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/GnW3LAIESYu3kunDzITZMw/zh-cn_image_0000002717582233.png "点击放大")
 
 ### Hidumper查询图形渲染信息
 
@@ -50,13 +50,13 @@ XComponent持有一个Surface，开发者能通过调用[NativeWindow](../harmon
 
   参考[获取期望应用组件树](../harmonyos-guides/hidumper.md#获取期望应用组件树)获取组件树信息，然后搜索XComponent，可获取XComponent组件信息，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/AzpE3yEfSLGtgv1p2QGArQ/zh-cn_image_0000002687982488.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/01WR_aRlTf2jureQmKa61w/zh-cn_image_0000002687982488.png "点击放大")
 
 * 查询Render Service服务能力
 
   参考[获取系统服务详细信息](../harmonyos-guides/hidumper.md#获取系统服务详细信息)获取Render Service信息，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/wIxdmr7eQkmyKgc6lge2_g/zh-cn_image_0000002717742105.jpg "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/UsBTOeMlRzGNxJLeVHQj1g/zh-cn_image_0000002717742105.jpg "点击放大")
 
 * 查询Render Service常见信息
 
@@ -66,13 +66,13 @@ XComponent持有一个Surface，开发者能通过调用[NativeWindow](../harmon
 
   RS树是Render Service根据UI组件树转换成的渲染树信息。使用hdc shell "hidumper -s RenderService -a RSTree" > RSTree.dump命令获取RS树信息，然后搜索SURFACE\_NODE，可获取XComponent组件对应的节点信息，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/ITyU7ocxR4Ko3KxmM5PUnw/zh-cn_image_0000002687822626.jpg "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/82OQozc4SO6sj3jUOgB8-Q/zh-cn_image_0000002687822626.jpg "点击放大")
 
   2. 获取surface信息
 
   使用hdc shell "hidumper -s RenderService -a surface" > surface.dump命令获取surface信息，然后根据XComponent id或者XComponent的Surface id搜索，可获取XComponent组件对应的surface信息和图形队列信息，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/vHQ2BJu4THK4TODn6ZLykQ/zh-cn_image_0000002717582235.jpg "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/vDbbM9fESseWSaTUNhCeIg/zh-cn_image_0000002717582235.jpg "点击放大")
 
 ### Frame分析图形渲染帧异常信息
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:18+08:00
+scraped_at: 2026-09-21T06:20:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0c62a5c482d2117a5214201b87e2f8d07f7e2a889bc511cc8d3f6c749de8e4c3
+content_hash: sha256:06ee41fbc4ac17dc76dd015f18ed63180dfb5770fa63a80b191891e92da2f0e1
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/0t-OHNBGQ7OWjkn6UWZJTg/zh-cn_image_0000002727592672.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/UVQD_p5DTcGstqf0HVV7qA/zh-cn_image_0000002762835795.gif)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/mzGyYmAsTFm5_ohJ_ZblNQ/zh-cn_image_0000002727752530.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/baGfnCtcRimVg8kj0n2JRg/zh-cn_image_0000002733276286.png)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/6s5tefPaTdWwNyh6ivbScg/zh-cn_image_0000002757312245.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/bNUMV_VyQiO_uML7XOEJjg/zh-cn_image_0000002733436160.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/XIv72_wxQ3WHVfwNRnH0sg/zh-cn_image_0000002757232365.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ZlOgxH_rQ5yXQM1oUfuyHg/zh-cn_image_0000002762995683.gif)

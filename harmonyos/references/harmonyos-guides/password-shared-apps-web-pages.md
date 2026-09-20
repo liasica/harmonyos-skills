@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/password-shar
 title: 应用与网页共用账号密码
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用与网页共用账号密码
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:24+08:00
+scraped_at: 2026-09-21T06:17:40+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f3570a02e40b530226c1a645f35ba1df2bfb9cc516d0b618d2ddebbe92340b86
+content_hash: sha256:0a4dfac839425ec7a01da6cf0d5b409fd07ef736a6d3e83939c81b102f46fc61
 ---
 
 ## 简介
@@ -16,7 +16,7 @@ content_hash: sha256:f3570a02e40b530226c1a645f35ba1df2bfb9cc516d0b618d2ddebbe923
 
 同时，选择密码时也会将关联网站/应用的密码展示为推荐密码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/lPQYucTBQyKE_cYK2nlmlg/zh-cn_image_0000002727750932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/FC87XQXOQnG8PnWdeTg3sQ/zh-cn_image_0000002733274658.png)
 
 ## 适用场景
 
@@ -24,7 +24,7 @@ content_hash: sha256:f3570a02e40b530226c1a645f35ba1df2bfb9cc516d0b618d2ddebbe923
 
 ## 接入方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/EbXBGyjtRsiYxMrNnOlJvw/zh-cn_image_0000002757310647.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/PLYgQZhBTTGtHctNuE9yVg/zh-cn_image_0000002733434538.png)
 
 应用及网页接入App Linking后绑定关联关系，密码保险箱将基于这个关系完成识别。
 

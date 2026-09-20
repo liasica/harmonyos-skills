@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rotatio
 title: 旋转屏动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 旋转屏动画
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:787fce9ceb13e74e63252c6712a726b1bb8838b561b942406f065299b82d53d5
+scraped_at: 2026-09-21T06:17:22+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:1eee59917b0184dc1ec8f8dac2d4e47fc651d25e942ae3ed1ca175176a2e65e9
 ---
 
 旋转屏动画主要分为两类：[布局切换的旋转屏动画](arkts-rotation-transition-animation.md#布局切换的旋转屏动画)和[透明度变化的旋转屏动画](arkts-rotation-transition-animation.md#透明度变化的旋转屏动画)，旨在实现屏幕显示方向变化时的自然过渡。布局切换的旋转屏动画实现较为简便，例如在module.json5中配置自动旋转（或设置窗口显示方向）即可实现。而透明度变化的旋转屏动画则需在module.json5配置的基础上，预备两套视图，在屏幕旋转时，通过视图切换，使消失的视图呈现渐隐效果，新出现的视图则渐显，从而营造流畅的视觉体验。
@@ -19,7 +19,7 @@ content_hash: sha256:787fce9ceb13e74e63252c6712a726b1bb8838b561b942406f065299b82
 ```typescript
 @Entry
 @Component
-struct rotation {
+struct RotationTest {
   build() {
     Stack() {
       // 请将$r('app.media.tree')替换为实际资源文件
@@ -44,7 +44,7 @@ struct rotation {
 
 布局切换的旋转屏动画，会对同步旋转的窗口与应用视图做大小和位置的过渡。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/zSYNutMVShumAHFLcfqIFg/zh-cn_image_0000002757310169.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rSlKMWZ5TeaNnZAHKRABfw/zh-cn_image_0000002733434054.gif)
 
 ## 透明度变化的旋转屏动画
 
@@ -55,7 +55,7 @@ import { display } from '@kit.ArkUI';
 
 @Entry
 @Component
-struct rotation {
+struct RotationTest {
 
   // 获取通过监听窗口的windowSizeChange事件得到的屏幕显示方向
   @StorageLink('orientation') myOrientation: display.Orientation = display.Orientation.PORTRAIT;
@@ -147,4 +147,4 @@ const TAG: string = 'EntryAbility';
 
 透明度变化的旋转屏动画，会对窗口做大小和位置的过渡，并同时对应用视图做切换过渡，且为消失隐藏的应用视图做渐隐效果，对新出现的视图做渐显的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/dvXAP4VFQQesDa8Goa91aw/zh-cn_image_0000002757230289.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/zTNUau3nT7GjPt_FSELmHQ/zh-cn_image_0000002762993575.gif)

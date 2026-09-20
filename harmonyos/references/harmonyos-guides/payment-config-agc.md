@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-confi
 title: 开通支付服务
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > 开通支付服务
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:23+08:00
+scraped_at: 2026-09-21T06:18:43+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:de116499f4dfa2c33b5e35fb1712258e851fff862342f0e5b334920a1114fb31
+content_hash: sha256:c60e33fe83a9c4ed14102df2115e9f00b42ac64efe68ea1796240eaf36c5a894
 ---
 
 请先参考“[应用开发准备](application-dev-overview.md)”完成基本准备工作及指纹配置，再继续进行以下开发活动。
@@ -20,16 +20,16 @@ content_hash: sha256:de116499f4dfa2c33b5e35fb1712258e851fff862342f0e5b334920a111
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/bVBpTdfbRv-nCO4vFmerQw/zh-cn_image_0000002727591900.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/BPda7uGKTleWdNuzLsTMJw/zh-cn_image_0000002762835017.png)
 2. 在项目列表中找到项目（如未创建项目可点击添加项目先完成项目创建），在项目下的应用列表中选择需要开通Payment Kit的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/RWRZF5tVSP6iYhwPDI44hQ/zh-cn_image_0000002727751758.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/8R3cCyhoQyKahGe-W9xyOw/zh-cn_image_0000002733275502.png)
 3. 开通服务，操作路径如下：
 
    * **元服务**：“支付与交易 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 立即开通”。
    * **HarmonyOS应用**：“盈利 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 立即开通”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/KNn4Mtp_RjChv50WlBgViQ/zh-cn_image_0000002757311473.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/8cx23VWqRJa-r8ESvta_Fg/zh-cn_image_0000002733435384.png)
 4. 如涉及商户入网，在服务开通后需要为商户号申请绑定AppID，详细参见[商户号绑定AppID](payment-binding-appid-to-merc.md)（如未完成商户入网，可点击“申请支付商户号”先进行商户入网，详细介绍参考[商户入网](payment-merc-regist-apply.md)章节）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/qnAIMLiyT5uE1le4DfQIzA/zh-cn_image_0000002757231593.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ZFARDbBARlKnY1it-4Vc0g/zh-cn_image_0000002762994907.png)

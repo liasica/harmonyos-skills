@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: AttributeUpdater
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > AttributeUpdater
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:00+08:00
+scraped_at: 2026-09-21T06:20:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:725973612ac38e167c5dd26f9acc7133dd20c3e7d9065c27e756f14dd3dfc3d1
+content_hash: sha256:cbdae0602978d8531e2bcffe1a011bab3ff21012b1dd62d53fc0374ecf1dd65e
 ---
 
 将属性直接设置给组件，无需标记为状态变量即可直接触发UI更新。适用于需要在不定义状态变量的情况下动态更新组件属性的场景，如动态修改组件构造参数、避免为一次性属性更新定义状态变量等。
@@ -148,7 +148,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/oTXKrGDmTGifyVxjqSycyg/zh-cn_image_0000002757311965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/De0fPxSgR8uAP2HF5ct4Qg/zh-cn_image_0000002733435876.gif)
 
 ### attribute
 
@@ -203,7 +203,7 @@ struct UpdaterDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/KNvp7RwGRuGKvXZTJ_0nag/zh-cn_image_0000002757232085.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/p0fOXSxATnKOrHFLxSyUqw/zh-cn_image_0000002762995401.gif)
 
 ### 属性
 
@@ -252,7 +252,7 @@ struct AttributeDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/8yJkTJfyT_q7uxS53_oPog/zh-cn_image_0000002727592394.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/5Pg2A2TZTiKa2V2ZNOAJ5A/zh-cn_image_0000002762835513.gif)
 
 ### onComponentChanged
 
@@ -319,4 +319,4 @@ struct UpdaterDemo4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/zR8fZYdDTqqhbEWdUR0GvQ/zh-cn_image_0000002727752252.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/y3moysNTSf2IdPDKsvThoA/zh-cn_image_0000002733276004.gif)

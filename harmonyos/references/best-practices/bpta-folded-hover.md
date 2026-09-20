@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-folded-hov
 title: 折叠屏悬停态
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 特殊界面布局场景 > 折叠屏悬停态
 category: best-practices
-scraped_at: 2026-09-16T06:55:00+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:c1001508680edd3125e9933ab6b5c8ec2ef68c5ed218aa6b89481d6d95e3975a
+scraped_at: 2026-09-21T06:25:39+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:48abe9aafd4478c981fa65649ab7b739757179a25246c3bd569e2bdc39a84618
 ---
 
 ## 概述
 
 折叠屏提供独特的手持操作体验“悬停态”，用户可以将设备半折后立在桌面上，实现免手持体验。悬停态适用于不需要频繁交互的任务，如视频通话、视频播放、拍照和听歌。进入悬停态时，中间弯折区域难以操作且显示内容会变形，建议页面内容进行折痕区避让适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/GvLuvwrORWmo4axIi7XxkQ/zh-cn_image_0000002194010932.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/vQgQwMrcRuGUnSFqJZux0g/zh-cn_image_0000002194010932.png "点击放大")
 
 本文提供折叠屏悬停态的三种实现方式，并根据其特点给出各自的适用场景。
 
@@ -32,7 +32,7 @@ content_hash: sha256:c1001508680edd3125e9933ab6b5c8ec2ef68c5ed218aa6b89481d6d95e
 
 本文以视频播放类应用的全屏播放页面为例，介绍FolderStack的自定义悬停态实现。同时，以游戏界面为例，介绍FoldSplitContainer的悬停态实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/NOhHRRYXR3CcQizjGuUwAA/zh-cn_image_0000002193851340.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/TGww7zbiTH2fGz8vI_yxeA/zh-cn_image_0000002193851340.png)
 
 ## 使用FolderStack组件实现悬停态
 
@@ -63,7 +63,7 @@ FolderStack({ upperItems: ['upper'] }) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/dZTrNzhVQHe83hTC11Y16Q/zh-cn_image_0000002229451233.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/P80MFuU9TxKkM-iV2iwGZA/zh-cn_image_0000002229451233.png "点击放大")
 
 ## 使用FoldSplitContainer组件实现悬停态
 
@@ -73,7 +73,7 @@ FolderStack({ upperItems: ['upper'] }) {
 
 FoldSplitContainer的primary和secondary参数分别设置二分栏的上下区域的布局，extra参数设置三分栏中侧栏区域的布局；通过LayoutOptions参数设置各区域分栏的比例。当设备进入悬停态时，FoldSplitContainer会自动避让折叠屏折痕区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/tvB8dNpYT9qwxvZP8p4mCw/zh-cn_image_0000002229451229.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/1xohUlTCSDy0f9oWl1zSkQ/zh-cn_image_0000002229451229.png "点击放大")
 
 ### 开发步骤
 
@@ -90,7 +90,7 @@ FoldSplitContainer({
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/m1m-hwqsQ8e6uo49hUpYWg/zh-cn_image_0000002194010928.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/01OEqIGET2WOy4xdL-lTUw/zh-cn_image_0000002194010928.png "点击放大")
 
 ## 自定义实现悬停态
 
@@ -111,7 +111,7 @@ FoldSplitContainer({
 
 1. 悬停态通过状态变量isHover进行监听。当折叠屏的折叠状态变化时，判断当前是否为悬停态并更新isHover的值。
 
-   [多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary/tree/dev_hover)封装了悬停态的判断条件，并提供了isHover状态变量，开发者无需关心折叠屏设备的差异，即可高效配悬停态场景。
+   [多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)封装了悬停态的判断条件，并提供了isHover状态变量，开发者无需关心折叠屏设备的差异，即可高效配悬停态场景。
 
    在EntryAbility中引入多设备场景库并初始化。
 
@@ -212,8 +212,8 @@ FoldSplitContainer({
    ```
 
 **图1** 视频播放页悬停态效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/wfxZE4JpRfCovz3SZ4NJow/zh-cn_image_0000002728334749.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/YgaYfDMLSkmycJfG5DusVw/zh-cn_image_0000002728334749.png "点击放大")
 
 ## 示例代码
 
-* [多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary/tree/dev_hover)
+* [多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)

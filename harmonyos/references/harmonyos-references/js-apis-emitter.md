@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.events.emitter (Emitter)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > @ohos.events.emitter (Emitter)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:165c5b13cac17c3c6e12c7a944ef52d72046ffc5856292ebfc09fba99b59fcbd
+scraped_at: 2026-09-21T06:23:02+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:794a220ed24a0c60c007ca52fffaeaa32543278cf4c02d36974f2684d8ea8c52
 ---
 
 本模块提供进程内线程间或线程内事件的发送与处理能力。开发者可以使用本模块的 API，订阅事件（持续订阅或单次订阅）、取消订阅事件，发送事件到事件队列中，以及查询事件的订阅数量，从而实现同一进程内不同线程之间、以及同一线程内的事件通信。适用于跨线程通信、模块解耦、事件驱动等场景，能够帮助开发者实现轻量级的发布-订阅模式，降低组件间的耦合度，提升代码的可维护性和可扩展性。
@@ -1158,7 +1158,7 @@ getListenerCount(eventId: string): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| eventId | string | 是 | 事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。。 |
+| eventId | string | 是 | 事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
 
 **返回值：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 跨设备协同通知概述
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 跨设备协同通知 > 跨设备协同通知概述
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:22+08:00
+scraped_at: 2026-09-21T06:18:42+08:00
 doc_updated_at: 2026-08-21
-content_hash: sha256:52ec07725066177231aa553f4763c75b21e056de4fb776c66c78ae4fcfa8b84b
+content_hash: sha256:9833b2cf423651116ed5dabb5e7d9e2294e609f21c28caf70117e064a414abcd
 ---
 
 [跨设备协同](notification-glossary.md#cross-device-collaboration跨设备协同)通知旨在以手机为中心，实现与手表等其他设备的通知消息协同交互。典型场景如下：
@@ -22,4 +22,4 @@ content_hash: sha256:52ec07725066177231aa553f4763c75b21e056de4fb776c66c78ae4fcfa
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/_gannugtQEiSEhD5-iy6Xw/zh-cn_image_0000002757231579.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/dV_HZXM0Q0C8w_TU8EJdxA/zh-cn_image_0000002762994893.png)

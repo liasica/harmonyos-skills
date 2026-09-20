@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: AlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > AlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:24+08:00
+scraped_at: 2026-09-21T06:20:55+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:b4940c1d713dd90d7b6ef880c67db39f0ca1d6fa8025ab008dc02ae85bb7851b
+content_hash: sha256:c5673cae3cea736f3a0f93ee56f8f595469cb54f047ab03cafa269e82e3c392f
 ---
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -729,7 +729,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-CxgII_ZQ2mhXHEG9rPihA/zh-cn_image_0000002757232575.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/BrtGuQIsTD2fzMgzx8m2rg/zh-cn_image_0000002762995893.gif)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -871,7 +871,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/vqIU1R6XSJ6TiOGbqNBh6g/zh-cn_image_0000002727592884.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/gI5_P-LmROyvTCokNM-aiw/zh-cn_image_0000002762836011.gif)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -1002,7 +1002,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/oEVIDzf1Q36Uf5EbnvX2Jg/zh-cn_image_0000002727752742.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/pOACZOnTQcGRLzJ7n-MZdg/zh-cn_image_0000002733276500.gif)
 
 ### 示例4（设置提示弹窗的沉浸光感效果）
 
@@ -1118,8 +1118,8 @@ struct AlphabetIndexerSample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/10Am77HyT5mGRbm0x1AvBQ/zh-cn_image_0000002757312457.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/nJjQbIL8Q7iIphIyNHp4JA/zh-cn_image_0000002733436374.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/uGuIUHFwSBaYK_iIdSQtgg/zh-cn_image_0000002757232577.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/8EzXzBpXQTq2PEvSu5FytA/zh-cn_image_0000002762995895.gif)

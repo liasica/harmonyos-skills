@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 常见接续最佳实践
 breadcrumb: 最佳实践 > 自由流转 > 跨端迁移 > 常见接续最佳实践
 category: best-practices
-scraped_at: 2026-09-16T06:55:03+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:3507e65bc707e010891eebf8e9ffd971f4ae0a7125f127187ed7b56540b35abc
+scraped_at: 2026-09-21T06:25:41+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:54df73d16ee79c4c9e76b282e23b7f41cd1ab67b87f5e4659231cefe77063b3a
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:3507e65bc707e010891eebf8e9ffd971f4ae0a7125f127187ed7b56540b
 
 接续过程底层依赖分布式框架和软总线，开发者只需要启用接续、保存数据和恢复数据，具体运作机制可参考：[运作机制](bpta-continue-cast.md#section1218874218264)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Klj9-o1yTIuoYrjHAX8CBQ/zh-cn_image_0000002622048193.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Dgw70JRESFeMToX0WfxP6A/zh-cn_image_0000002622048193.png "点击放大")
 
 ## 开发流程
 
@@ -48,7 +48,7 @@ content_hash: sha256:3507e65bc707e010891eebf8e9ffd971f4ae0a7125f127187ed7b56540b
 
    当对端点击接续图标时，源端将触发UIAbility中的[onContinue()](../harmonyos-references/js-apis-app-ability-uiability.md#oncontinue)接口。在此接口中，开发者可将需要迁移的数据以键值对形式保存至wantParam中，并返回AbilityConstant.OnContinueResult.AGREE，标识应用同意迁移，从而将数据迁移至对端。
 
-   ```typescript
+   ```screen
    async onContinue(wantParam: Record<string, Object>): Promise<AbilityConstant.OnContinueResult> {
      // 1.1 Retrieve the data to be connected and transmit it via wantParam.
      let continueIndex = AppStorage.get('continueIndex') as number;
@@ -85,7 +85,7 @@ content_hash: sha256:3507e65bc707e010891eebf8e9ffd971f4ae0a7125f127187ed7b56540b
 
    在源端保存数据并同意迁移后，对端可启动应用，开发者可在UIAbility中的[onCreate()](../harmonyos-guides/uiability-lifecycle.md#oncreate)或[onNewWant()](../harmonyos-guides/uiability-lifecycle.md#onnewwant)生命周期回调中恢复数据。如果Ability的启动原因为LaunchReason.CONTINUATION，可从want.parameters中获取保存的键值对数据。
 
-   ```typescript
+   ```screen
    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
      GlobalContext.getContext().setObject('abilityWant', want);
      GlobalContext.getContext().setObject('context', this.context);
@@ -97,7 +97,7 @@ content_hash: sha256:3507e65bc707e010891eebf8e9ffd971f4ae0a7125f127187ed7b56540b
      try {
        this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
      } catch (e) {
-       hilog.error(0x000, 'progress', `setColorMode error ${JSON.stringify(e)}`);
+       hilog.error(0x0000, 'progress', `setColorMode error, code is ${e.code}, message is ${e.message}`);
      }
      if (launchParam.launchReason === AbilityConstant.LaunchReason.CONTINUATION) {
        if (want.parameters) {
@@ -110,7 +110,7 @@ content_hash: sha256:3507e65bc707e010891eebf8e9ffd971f4ae0a7125f127187ed7b56540b
 
    可将恢复数据的方法提取为公共方法，以便在UIAbility的onCreate()或onNewWant()中调用。
 
-   ```typescript
+   ```screen
    continueRestore(want: Want) {
      if (!want.parameters) {
        hilog.error(0x0000, 'EntryAbility', 'missing sessionId');
@@ -136,7 +136,7 @@ content_hash: sha256:3507e65bc707e010891eebf8e9ffd971f4ae0a7125f127187ed7b56540b
      try {
        this.context.restoreWindowStage(new LocalStorage());
      } catch (e) {
-       hilog.error(0x000, 'progress', `restoreWindowStage error ${JSON.stringify(e)}`);
+       hilog.error(0x0000, 'progress', `restoreWindowStage error, code is ${e.code}, message is ${e.message}`);
      }
    }
    ```
@@ -147,7 +147,7 @@ content_hash: sha256:3507e65bc707e010891eebf8e9ffd971f4ae0a7125f127187ed7b56540b
 
 在社交媒体、新闻资讯等应用中，用户经常需要浏览长列表内容。当用户滚动到列表的某个位置后，可能会切换设备，且切换后希望自动恢复到之前的滚动位置，避免重复操作。开发者可以利用接续能力提升此类场景的用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/ho8gsejeTgiVuxjgfF09Rw/zh-cn_image_0000002591568722.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/9w5m_hHdSP6-22xjLpo1vw/zh-cn_image_0000002591568722.gif "点击放大")
 
 ### 实现原理
 
@@ -162,14 +162,14 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 
 然而，该方法存在局限性，具体支持的场景和版本详见[分布式迁移标识](../harmonyos-references/ts-universal-attributes-restoreid.md)的说明。若需在开发中进行更多自定义设置以提升用户体验，可参考以下步骤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/jHWF_rtjRv2NW9T2kTIHNg/zh-cn_image_0000002622128325.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/3j27eNG6SRy43AOTCnMhlQ/zh-cn_image_0000002622128325.jpg "点击放大")
 
 ### 开发步骤
 
 1. [启用接续](bpta-application-continue-progess.md#li6149192715494)。
 2. 在Scroll组件的[onDidScroll()](../harmonyos-references/ts-container-scroll.md#ondidscroll12)接口中监听长列表的浏览进度变化。
 
-   ```typescript
+   ```screen
    Scroll(this.scroller) {
      // ...
    .onDidScroll((xOffset: number, yOffset: number, scrollState: ScrollState) => {
@@ -182,9 +182,9 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 4. 在UIAbility的onNewWant()和onCreate()回调中，从want.parameters中恢复数据，参考[对端恢复数据](bpta-application-continue-progess.md#li631218439498)。
 5. 在[onDidBuild()](../harmonyos-references/ts-custom-component-new-lifecycle.md#ondidbuild)事件中恢复浏览状态。
 
-   ```typescript
+   ```screen
    onDidBuild(): void {
-     hilog.info(0x000, 'progress', `onDidBuild ${this.setCurrentOffset} ${this.continueOffset}`);
+     hilog.info(0x0000, 'progress', `onDidBuild ${this.setCurrentOffset} ${this.continueOffset}`);
      if (this.setCurrentOffset) {
        this.scroller.scrollTo({ xOffset: 0, yOffset: this.continueOffset });
        this.setCurrentOffset = false;
@@ -198,13 +198,13 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 
 在视频播放场景中，用户可能会在观看视频的过程中切换至其他设备，例如从手机切换到平板/PC等大屏设备。用户切换设备后期望能从之前的播放位置继续观看而非重新开始播放。针对此类场景，开发者可以通过接续功能提升用户观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/4FKhIgjuSjuhdSZk3YCcRQ/zh-cn_image_0000002591728656.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/sjf4McmZSBuJDzAs6Owq0Q/zh-cn_image_0000002591728656.gif "点击放大")
 
 ### 实现原理
 
 媒体播放接续的内容主要包括播放列表中的集数、播放状态和进度。此外，还可以接续其他播放设置，以进一步提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/5iHTEL8XQlOtFdzoO1Qf2Q/zh-cn_image_0000002622048215.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/gj0-Mj5iRO6wFS75owHGcQ/zh-cn_image_0000002622048215.jpg "点击放大")
 
 ### 开发步骤
 
@@ -224,7 +224,7 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 4. 在UIAbility中的onNewWant()和onCreate()回调中，从want.parameters中恢复数据，参考[对端恢复数据](bpta-application-continue-progess.md#li631218439498)。
 5. 在avPlayer初始化完成后，判断当前为接续状态，调用封装的调整视频进度方法videoSeek()，恢复至接续前的播放状态。
 
-   ```typescript
+   ```screen
    if (this.continue) {
      this.videoSeek(continueTime);
      this.continue = false;
@@ -238,13 +238,13 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 
 在Web网页浏览场景中，用户可能会在浏览网页的过程中切换至其他设备。用户切换后期望能恢复到之前的网页URL和滚动位置，以保持浏览上下文的连续性。针对此类场景，开发者可以利用接续功能，进一步提升用户的浏览体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/TfscHNEKSXGv_78WIow8Rg/zh-cn_image_0000002591568746.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/9V_h1mhNQXi5j9owbOIVzQ/zh-cn_image_0000002591568746.gif "点击放大")
 
 ### 实现原理
 
 系统提供的Web组件用于在应用程序中展示Web页面内容。当Web组件加载大量信息时，保持浏览进度的连续性尤为重要。为了实现内容的连续展示，需要像处理长列表一样，通过传递当前的滚动位置来维持这一连续性。这可以通过使用[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)接口来获取和恢复滚动位置来实现。具体步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/7r3iU95-Q2qWciJndrtOdQ/zh-cn_image_0000002622128349.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/K_bXVjkgTeaYATl__CkObg/zh-cn_image_0000002622128349.jpg "点击放大")
 
 ### 开发步骤
 

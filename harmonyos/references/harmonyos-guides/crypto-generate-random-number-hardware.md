@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 使用硬件熵源生成安全随机数(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 随机数 > 使用硬件熵源生成安全随机数(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:46b343123548d70d8ff7d6bb26f849608afe854bea4c2ba4246fe518a79fd774
+scraped_at: 2026-09-21T06:17:43+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:e76f55c363a26a420f2e151f445426802283984fdb53c691bf11679e8e098485
 ---
 
 从API版本21开始，可以选择使用硬件熵源生成安全随机数。
@@ -74,7 +74,7 @@ content_hash: sha256:46b343123548d70d8ff7d6bb26f849608afe854bea4c2ba4246fe518a79
   function doRandBySync() {
     let rand = cryptoFramework.createRandom();
     rand.enableHardwareEntropy();
-    let len = 24; // Generate a 24-byte random number.
+    let len = 24; // 生成一个24字节的随机数。
     try {
       let randData = rand.generateRandomSync(len);
       if (randData.data.length !== 0) {

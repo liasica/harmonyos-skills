@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 方舟运行时检测
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 方舟类问题检测 > 方舟运行时检测
 category: best-practices
-scraped_at: 2026-09-16T06:55:11+08:00
+scraped_at: 2026-09-21T06:25:49+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:9433d6295f940f9968f27679d69de0dc0f479036b99b2dfd60ae7b0279b533f3
+content_hash: sha256:a6a7706805d584530a379ea49caa5f38024e05c8ef8ecd567cfbc8904714cd8a
 ---
 
 ## 方舟多线程检测
@@ -112,7 +112,7 @@ Fatal: ecma_vm cannot run in multi-thread! thread:3096 currentThread:3550
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Multi Thread Check**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/qu3f_omPSbObLBiNPZ3FkQ/zh-cn_image_0000002404045317.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/b800k6D5RNimAocOq8T6Ew/zh-cn_image_0000002404045317.png)
 
 * **方式二**
 
@@ -131,4 +131,4 @@ Fatal: ecma_vm cannot run in multi-thread! thread:3096 currentThread:3550
 
 若fatal信息为Fatal: ecma\_vm cannot run in multi-thread! thread:20296 currentThread:19953，则发生了多线程安全问题，意为：当前线程号为19953，而使用的js thread是20296创建出来的，跨线程使用VM。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/7bxtXsUlSQmMiCDE4CqXfA/zh-cn_image_0000002504986012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/3Q33EVfNQQGG74EVNS0vZQ/zh-cn_image_0000002504986012.png)

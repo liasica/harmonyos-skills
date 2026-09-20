@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (NoneActionProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (NoneActionProposal)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:47:57+08:00
+scraped_at: 2026-09-21T06:20:26+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:22b9c4d0c8a788016d59f1b6e6c5f8a55832fef455b397c661c0afabfc7808df
+content_hash: sha256:ab2de248102706e53345899bd411ba6bc3e8a5403d48044a80742ffc49205fc0
 ---
 
 智慧手势空动作处理。当通过[registerMonitor](arkts-apis-uicontext-smartgesturecontroller.md#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](arkts-apis-uicontext-gesturehandlingresolution.md)的selectedProposal为该类型对象，不会触发任何动作。
@@ -93,4 +93,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/YAomCxjASiePvCrJJQuC5Q/zh-cn_image_0000002757311901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Bmgl0P40RCGOEKZDDQ7PwA/zh-cn_image_0000002733435812.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pc
 title: 基于OHAudio播放PCM音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于OHAudio播放PCM音频
 category: best-practices
-scraped_at: 2026-09-16T06:54:58+08:00
+scraped_at: 2026-09-21T06:25:36+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:fae047c88c66b7b7bda7e82ed5e0ee358281ac03d5cc9cf3f044ca8244833a37
+content_hash: sha256:097e9ecf567463e3899acb6f0e0dac7aad05185fe845b78954887e4af96f1e65
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ OHAudio是用于音频播放的Native API，仅支持PCM格式的音频。指导
 
 本文是音频播放系列文章的第2篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/JEXCn0VaQ4m3aN9_4RPPuw/zh-cn_image_0000002524057588.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/E5R8eo1TTESDHpyjKzZGDA/zh-cn_image_0000002555217487.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/0xFMz1hsQ3eRxDnmNFo-OA/zh-cn_image_0000002524217594.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/8Ikhn9uBTeiSxH9jHsLdlw/zh-cn_image_0000002524057588.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/nfpMuUD9Q8C4PNH2fG2vjQ/zh-cn_image_0000002555217487.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/aQAikvAzQbSKE_AaFnFPBA/zh-cn_image_0000002524217594.gif "点击放大")
 
 ## 场景分析
 
@@ -37,7 +37,7 @@ OHAudio是用于音频播放的Native API，仅支持PCM格式的音频。指导
 
 通过[OHAudio](../harmonyos-references/capi-ohaudio.md)接口实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/b0oY5hGcSv68jByqq__zsA/zh-cn_image_0000002555337465.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/CW2zeJ6jSMieq2EXrmvdGw/zh-cn_image_0000002555337465.gif "点击放大")
 
 ### 实现原理
 
@@ -251,7 +251,7 @@ void OHAudioPlayer::ReleasePlayer() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Q0nHAUaORv2_f5EM7uaIMA/zh-cn_image_0000002524057598.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/2ErRwJaxTgGAdqPGcWAwvg/zh-cn_image_0000002524057598.gif "点击放大")
 
 ### 实现原理
 
@@ -367,7 +367,7 @@ static OH_AudioData_Callback_Result OnAudioRendererWriteDataEvent([[maybe_unused
 
 通过界面按钮切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/nL37BW4yQdyIFkcJVpRwDA/zh-cn_image_0000002555217499.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/izxHKsg5TH26wmVDf2AAuw/zh-cn_image_0000002555217499.gif "点击放大")
 
 ### 实现原理
 
@@ -400,7 +400,7 @@ void OHAudioPlayer::SetSilentMode(bool isSilentMode) {
 
 点击上一首、下一首或歌单列表中的其他歌曲来进行切换歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/_4vdoygKSTCScbrPbf4wMQ/zh-cn_image_0000002524217620.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0cssd8ZHS9qfpShTWAgeuA/zh-cn_image_0000002524217620.gif "点击放大")
 
 ### 实现原理
 
@@ -497,7 +497,7 @@ static OH_AudioData_Callback_Result OnAudioRendererWriteDataEvent([[maybe_unused
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/ekXma2XkR4WPcJUEmoaJ8g/zh-cn_image_0000002555337493.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/KdsC2btsRFqVzLVqZBIYDw/zh-cn_image_0000002555337493.gif "点击放大")
 
 ### 实现原理
 
@@ -549,7 +549,7 @@ void OHAudioPlayer::SetPlayingSpeed(float speed) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/3kj6t7CbTeiXZZBT_MQZww/zh-cn_image_0000002524057630.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/x9Ecp3zcQLeXNzAiL4oDVg/zh-cn_image_0000002524057630.gif "点击放大")
 
 ### 实现原理
 

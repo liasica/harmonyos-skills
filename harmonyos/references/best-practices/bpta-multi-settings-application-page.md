@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-sett
 title: 多设备设置界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备设置界面
 category: best-practices
-scraped_at: 2026-09-16T06:55:02+08:00
+scraped_at: 2026-09-21T06:25:40+08:00
 doc_updated_at: 2026-05-22
-content_hash: sha256:c10442eeaee488118eb2df7caa913f124d1d7e8ccd22b872bc488a29e4e51746
+content_hash: sha256:a7849e7a645457b819f04ea9470eea61fa37708013c3a564324bf12628420bbf
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:c10442eeaee488118eb2df7caa913f124d1d7e8ccd22b872bc488a29e4e
 
 设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/_0y50FSQRti_hcQkAiIJ5w/zh-cn_image_0000002579408634.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/a416B107RxSB8TtnVxVlwg/zh-cn_image_0000002579408634.png "点击放大")
 
 ## 工程管理
 
@@ -139,7 +139,7 @@ content_hash: sha256:c10442eeaee488118eb2df7caa913f124d1d7e8ccd22b872bc488a29e4e
 
 设置应用导航与详情页主要展示列表按钮及对应详情页，点击导航按钮实现详情页跳转。根据功能设计，应用首页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/JTMv0cBeT76sGqyI8A6goA/zh-cn_image_0000002579408636.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Y432z-unQ62foWnCc7T3dA/zh-cn_image_0000002579408636.png "点击放大")
 
 **界面开发**
 

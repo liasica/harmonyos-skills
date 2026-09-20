@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 运行应用时提示“appid **** is not in white list, to skip”
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit常见问题 > 预加载 > 运行应用时提示“appid **** is not in white list, to skip”
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:14+08:00
+scraped_at: 2026-09-21T06:18:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e5bba77f307de16607cd10b519b24b237b240510411f3d6f6538a257c413c7b2
+content_hash: sha256:7a17c6ff57aaa61bdc4c73dc479ebfbaf2c98e93308764958255c5bbf2e1d78d
 ---
 
 **问题现象**
 
 运行应用时提示“appid \*\*\*\* is not in white list, to skip”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/WeVs4tePTPqxFBdO5OOe5A/zh-cn_image_0000002727591700.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/yhQqidQjS8CFq1tKzBF_AQ/zh-cn_image_0000002762834817.png)
 
 **解决措施**
 

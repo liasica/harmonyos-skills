@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ComposeListItemV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ComposeListItemV2
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fff06013020b8beebabde47b4f7d599eb5902748050d5859f16916be87ebeb4c
+scraped_at: 2026-09-21T06:21:05+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:043718b3c967a68df822eb6882f6dec58475e4850ba2b0558c94f4a84fabd2a7
 ---
 
 该组件用于展示一系列宽度相同的列表项，适用于展示连续、多行的同类数据组合（如图片与文本）。
@@ -55,6 +55,8 @@ ComposeListItemV2({ contentItemV2?: ContentItemV2, operateItemV2?: OperateItemV2
 ## ContentItemV2
 
 列表左侧显示的图标、图标大小以及中间元素文字内容。
+
+### 属性
 
 **起始版本：** 26.0.0
 
@@ -151,6 +153,8 @@ ContentItemV2构造函数的参数选项。
 
 列表项右侧显示的元素类型。
 
+### 属性
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -229,6 +233,8 @@ OperateItemV2构造函数的参数选项。
 
 列表项右侧图标元素的类型。
 
+### 属性
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -299,6 +305,8 @@ OperateIconV2构造函数的参数选项。
 
 列表项右侧按钮元素的类型。
 
+### 属性
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -364,6 +372,8 @@ OperateButtonV2构造函数的参数选项。
 ## OperateCheckV2
 
 列表项右侧元素为Switch、CheckBox、Radio的类型。当列表项右侧元素需要使用Switch、CheckBox、Radio时，可通过该类型配置对应属性。
+
+### 属性
 
 **起始版本：** 26.0.0
 
@@ -515,7 +525,7 @@ struct ComposeListItemV2Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ULjkdxx3SyifV3tdB_iBnA/zh-cn_image_0000002727752940.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/IVtycCsiTC6EZ0bWUiAguw/zh-cn_image_0000002733276698.jpg)
 
 ### 示例2(设置列表项右侧不同元素自定义播报)
 
@@ -607,7 +617,7 @@ struct ComposeListItemV2Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/a8ddGE4HSsmHedquwbq8QA/zh-cn_image_0000002757312655.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/JgfK3wLVQZWxFVe0rlC_jg/zh-cn_image_0000002733436574.png)
 
 ### 示例3(设置Symbol类型图标)
 
@@ -690,4 +700,4 @@ struct ComposeListItemV2Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/sTtCyk9cSyaBs32Droukbg/zh-cn_image_0000002757232775.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/u9Lv7JVFRoa8aKFLvpMAQA/zh-cn_image_0000002762996095.png)

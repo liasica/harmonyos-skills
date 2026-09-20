@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-color-e
 title: 色彩
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 色彩
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ef7b7f3348f5ccb81e194afcec2895abc7d6997064d78a8d969e5cd3e33dce23
+scraped_at: 2026-09-21T06:17:23+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:8ccf6cdf2a20c1047aa19ed5a61baaee442be57a6b5d1781668be2eba4d19536
 ---
 
 通过颜色渐变接口，可以设置组件的背景颜色渐变效果，实现在两个或多个指定的颜色之间进行平稳的过渡。
@@ -105,7 +105,7 @@ struct LinearGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/sUF8hclURRu-QhuaoFeKqw/zh-cn_image_0000002757230297.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/RJ2E5btDQT2-Sg8UOzLmAQ/zh-cn_image_0000002762993583.png)
 
 ## 为组件添加角度渐变效果
 
@@ -128,7 +128,7 @@ struct SweepGradientDemo {
           center: [50, 50], // 角度渐变中心点
           start: 0, // 角度渐变的起点
           end: 360, // 角度渐变的终点。
-          repeating: true, // 渐变效果在重复
+          repeating: true, // 渐变效果会重复
           colors: [
             // 当前组件中，按照中心点和渐变的起点和终点值,
             // 角度区域为0-0.125的范围，从颜色断点1的颜色渐变到颜色断点2的颜色,
@@ -218,7 +218,7 @@ struct SweepGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/tbHdpYIQR1i3z_6QekpXzg/zh-cn_image_0000002727590606.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/qhrBzkI5R_m0AAitQqftOA/zh-cn_image_0000002762833695.png)
 
 ## 为组件添加径向渐变效果
 
@@ -325,4 +325,4 @@ struct RadialGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/IoTfIeLfQXWbM6glxhJlCA/zh-cn_image_0000002727750464.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/tmJnxMq7QCep7RexDoheQg/zh-cn_image_0000002733274182.png)

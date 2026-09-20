@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 安全随机数生成(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 随机数 > 安全随机数生成(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:28392e66c908f66d5a9d0378a65e02c67ab407c65b83a1fa73db8ecec19b5a9d
+scraped_at: 2026-09-21T06:17:43+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:061673bebbaf104351cf1f2574fe7f838e040fad1c53ef6f1160d0a70bc44ffc
 ---
 
 **说明** 
@@ -68,7 +68,7 @@ content_hash: sha256:28392e66c908f66d5a9d0378a65e02c67ab407c65b83a1fa73db8ecec19
 
   function doRandBySync() {
     let rand = cryptoFramework.createRandom();
-    let len = 24; // Generate a 24-byte random number.
+    let len = 24; // 生成一个24字节的随机数。
     try {
       let randData = rand.generateRandomSync(len);
       if (randData.data.length !== 0) {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-variabl
 title: 视频可变帧率
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频可变帧率
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:53+08:00
+scraped_at: 2026-09-21T06:18:12+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1e298b3a35ad60d77bb16376bf69f7de38e0f874eb9065f32a6d6643d8d17836
+content_hash: sha256:cae30236770080cc87903b611b0f025ec7eb6b644fe0880008ac38181955e5f8
 ---
 
 从API version 15开始，支持视频可变帧率。
@@ -16,7 +16,7 @@ content_hash: sha256:1e298b3a35ad60d77bb16376bf69f7de38e0f874eb9065f32a6d6643d8d
 
 具有高帧率（>30fps）视频源的播放场景；视频帧率小于或等于30的场景建议以30Hz的刷新率运行。下图以播放一段60fps的视频为例，算法根据视频内容实时调整屏幕刷新率，调节过程中，当刷新率小于视频帧率时，显示前会丢弃部分视频帧以节省功耗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/DmixvxACQWuQNVfPcQdyeg/zh-cn_image_0000002727591304.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/60R2YaktQjSIa_1GVc7vcA/zh-cn_image_0000002762834409.png)
 
 ## 约束与限制
 

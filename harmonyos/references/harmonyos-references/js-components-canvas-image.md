@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: Image对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > Image对象
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:38+08:00
+scraped_at: 2026-09-21T06:21:13+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:710f1e19cca226f0bbe6bce7ecce44f0921f958b68ccd33eb0a53ec79d16a3b8
+content_hash: sha256:220ba85d8d3321828f4601c12980136348f55fdc85daf25e6734e9025abe21ec
 ---
 
 **说明** 
@@ -53,4 +53,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/d2UkbSmwTkSoQPJtfEYtCQ/zh-cn_image_0000002757312803.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/gUhaxcTVR8yTQ1qEb1xgTA/zh-cn_image_0000002733436722.png)

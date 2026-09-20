@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 剪贴板粘贴框遮挡智能填充选择框
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > Scenario Fusion Kit常见问题 > 剪贴板粘贴框遮挡智能填充选择框
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:28+08:00
+scraped_at: 2026-09-21T06:18:48+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:c65e42cc8dc2b6e67d66a18eb7457673fb77672233981d11a41a0a5d40f8c2a5
+content_hash: sha256:f53db892a20b13cb16c847e82ed9b07eb10a53f7bb6a1141325d9619e0f4dff9
 ---
 
 **现象描述**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/MixyF1hqT9Gem2mVe24juw/zh-cn_image_0000002727751846.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/wZzMWV3xRAaKu3Af2FXsMw/zh-cn_image_0000002733275590.jpg)
 
 **解决措施**
 

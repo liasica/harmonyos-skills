@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.infraredEmitter (红外管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.infraredEmitter (红外管理)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:15+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:a6b81406e7d18d5d646df0177f90d475e702d9bb77e424071cce4a1118165f36
+scraped_at: 2026-09-21T06:23:10+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:9bf4791b95a487d7548a365c5d6d97986895d9dc8cbd76acaf5e3c54093aca4a
 ---
 
 红外管理模块提供产生特定频率和大小的红外信号，以及查询设备支持的频率范围等功能。
@@ -24,7 +24,7 @@ import { infraredEmitter } from '@kit.InputKit';
 
 transmitInfrared(infraredFrequency: number, pattern: Array<number>): void
 
-产生特定频率和特定电平大小的红外信号。
+产生特定频率和特定电平大小的红外信号。调用此接口前，需要先调用[hasIrEmitter](js-apis-infraredemitter.md#infraredemitterhasiremitter23)接口确认设备是否具备红外发射器。如果设备不具备红外发射器，调用本接口不生效。
 
 **需要权限**：ohos.permission.MANAGE\_INPUT\_INFRARED\_EMITTER
 
@@ -59,12 +59,21 @@ struct Index {
     RelativeContainer() {
       Text()
         .onClick(() => {
-          try {
-            // 设置红外频率及红外电平信号模式
-            infraredEmitter.transmitInfrared(38000, [100, 200, 300, 400]);
-          } catch (error) {
-            console.error(`Failed to transmit infrared signal, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
-          }
+          // 查询是否有红外发射器
+          infraredEmitter.hasIrEmitter().then((result: boolean) => {
+            if (result) {
+              try {
+                // 设置红外频率及红外电平信号模式
+                infraredEmitter.transmitInfrared(38000, [100, 200, 300, 400]);
+              } catch (error) {
+                console.error(`Failed to transmit infrared signal, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+              }
+            } else {
+              console.info('The current device does not support IR emitter.');
+            }
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to query infrared emitter, Code: ${error.code}, message: ${error.message}.`);
+          });
         })
     }
   }
@@ -75,13 +84,13 @@ struct Index {
 
 getInfraredFrequencies(): Array<InfraredFrequency>
 
-查询设备支持的红外信号的频率范围。建议先使用[hasIrEmitter](js-apis-infraredemitter.md#infraredemitterhasiremitter23)接口查询设备是否支持红外发射器。
+查询设备支持的红外信号的频率范围。调用此接口前，需要先调用[hasIrEmitter](js-apis-infraredemitter.md#infraredemitterhasiremitter23)接口确认设备是否具备红外发射器。
 
 **需要权限**：ohos.permission.MANAGE\_INPUT\_INFRARED\_EMITTER
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InfraredEmitter
 
-**设备行为差异**：该接口在支持红外发射器的Phone和TV设备上返回红外信号的频率范围，在其他不支持红外发射器的设备上返回一组最大和最小频率，且均为0Hz。建议使用[hasIrEmitter](js-apis-infraredemitter.md#infraredemitterhasiremitter23)接口查询设备是否支持红外发射器。
+**设备行为差异**：该接口在支持红外发射器的Phone、Tablet和TV设备上返回红外信号的频率范围，在其他不支持红外发射器的设备上返回一组最大和最小频率，且均为0Hz。
 
 **返回值**：
 

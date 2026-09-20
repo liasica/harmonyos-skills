@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-conver
 title: 指定二进制数据转换非对称密钥对(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定二进制数据转换非对称密钥对(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a3c7d812af044011714fa82c9476ae1cf20ca6e5fa87f9f825155e9bc842aff0
+scraped_at: 2026-09-21T06:17:41+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:d3a875ec67e76362ad44c53a89fe5c401189bef295b5d971298ad1834f836421
 ---
 
 以RSA、ECC、SM2为例，根据指定的非对称密钥二进制数据，生成非对称密钥对（OH\_CryptoKeyPair），即将外部或存储的二进制数据转换为算法库的密钥对象，该对象可用于后续的加解密等操作。
@@ -32,7 +32,7 @@ target_link_libraries(entry PUBLIC libohcrypto.so)
    公钥和私钥可单独传入，此处示例传入公钥。
 2. 调用[OH\_CryptoAsymKeyGenerator\_Create](../harmonyos-references/capi-crypto-asym-key-h.md#oh_cryptoasymkeygenerator_create)，指定字符串参数'RSA1024'，创建密钥算法为RSA1024、素数个数为2的非对称密钥生成器（OH\_CryptoAsymKeyGenerator）。
 
-   生成RSA非对称密钥时，默认素数为2，此处省略了参数PRIMES\_2。
+   生成RSA非对称密钥时，默认素数为2。
 3. 调用[OH\_CryptoAsymKeyGenerator\_Convert](../harmonyos-references/capi-crypto-asym-key-h.md#oh_cryptoasymkeygenerator_convert)，传入二进制密钥数据，生成非对称密钥对象（OH\_CryptoKeyPair）。
 
 * 以下以生成RSA密钥对为例：

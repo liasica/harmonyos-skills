@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 形状裁剪
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 形状裁剪
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2574dd4eb935760f395c20498bc81dea2e41047839f9f92eee71872a1bf120da
+scraped_at: 2026-09-21T06:20:39+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:a23dee545ba4c0435f17b1e67d03a876e88ec355f96bb082436ab418238f40c5
 ---
 
 用于对组件进行裁剪、遮罩处理。
@@ -154,7 +154,7 @@ clipShape(shape: Optional<CircleShape | EllipseShape | PathShape | RectShape>): 
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| shape | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[CircleShape](ts-universal-attributes-sharp-clipping.md#circleshape12) | [EllipseShape](ts-universal-attributes-sharp-clipping.md#ellipseshape12) | [PathShape](ts-universal-attributes-sharp-clipping.md#pathshape12) | [RectShape](ts-universal-attributes-sharp-clipping.md#rectshape12)> | 是 | 参数为相应类型的组件，按指定的形状（形状中可包含位置信息）对当前组件进行裁剪。  **说明：** 裁剪不会导致被裁剪区域无法响应绑定的手势事件。  当shape的值为undefined时，恢复为不添加指定形状的遮罩。 |
+| shape | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[CircleShape](ts-universal-attributes-sharp-clipping.md#circleshape12) | [EllipseShape](ts-universal-attributes-sharp-clipping.md#ellipseshape12) | [PathShape](ts-universal-attributes-sharp-clipping.md#pathshape12) | [RectShape](ts-universal-attributes-sharp-clipping.md#rectshape12)> | 是 | 参数为相应类型的组件，按指定的形状（形状中可包含位置信息）对当前组件进行裁剪。  **说明：** 裁剪不会导致被裁剪区域无法响应绑定的手势事件。  当shape的值为undefined时，恢复为不添加指定形状的裁剪。 |
 
 **返回值：**
 
@@ -518,7 +518,7 @@ struct ClipAndMaskExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/hpncfnl5R7qJZ-85PygaCQ/zh-cn_image_0000002727752314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Za9NTES5R36LuZY9_1w5Dw/zh-cn_image_0000002733276066.png)
 
 ### 示例2（实现组件遮罩）
 
@@ -587,4 +587,4 @@ struct ProgressMaskExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/D-CZRt7WSs61OKtasuSW0g/zh-cn_image_0000002757312029.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/-7uTpl7ES26gT-6r2_l3RQ/zh-cn_image_0000002733435944.gif)

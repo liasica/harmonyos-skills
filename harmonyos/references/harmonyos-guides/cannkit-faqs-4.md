@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-faqs-
 title: 如何处理OMG离线模型输出算子类型错误？
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > CANN Kit常见问题 > 如何处理OMG离线模型输出算子类型错误？
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:50+08:00
+scraped_at: 2026-09-21T06:19:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:64061955fba9a896152f916c17389515598f3aeff3c4f5641898579cd13d8986
+content_hash: sha256:5458c30e21d7e9ab532e1be9f79ceff7cf10ee98745f254d23a1bfb4c2f564e6
 ---
 
 Caffe网络中具有相同类型名但计算功能不同的层。比如DetectionOutput层，需要使用算子映射指明为FSRDetectionOutput、SSDDetectionOutput等检测算子类型，否则OMG生成离线模型会执行失败。为了避免出现错误，以下两种方案二选一即可。
@@ -15,4 +15,4 @@ Caffe网络中具有相同类型名但计算功能不同的层。比如Detection
 
   **图1** 输出算子类型修改前（左）和修改后（右）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Ky8tDff_T2K8tzviN7lENw/zh-cn_image_0000002757311729.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/3lp25iUaQ-m-Kq3A-IgWJw/zh-cn_image_0000002733435640.png)

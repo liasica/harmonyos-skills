@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/kernel-enhanc
 title: Kernel Enhance Kit 简介
 breadcrumb: 指南 > 系统 > 基础功能 > Kernel Enhance Kit（内核增强能力） > Kernel Enhance Kit 简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:6db576b6c91d7515a534a0ada3e651d4defe5939fe5e555901cc43980e71bfb8
+scraped_at: 2026-09-21T06:17:59+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:8bfc0caab36bff05b2e20531242a0d69fb2a14e2afcd5ddfaab77221ea646b3d
 ---
 
 ## 功能介绍
@@ -87,3 +87,7 @@ Purgeable Memory 在系统压力较大时优先回收，可以有效缓解内存
 * [QoS 开发指导](qos-guidelines.md)
 * [Purgeable Memory 开发指导](purgeable-memory-guidelines.md)
 * [格物服务开发指导](gewu-ndk-api-guidelines.md)
+
+## 模拟器支持情况
+
+本Kit暂不支持模拟器。

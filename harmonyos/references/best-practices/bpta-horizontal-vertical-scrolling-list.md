@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-horizontal
 title: 基于List和Scroller实现双向滚动列表
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 基于List和Scroller实现双向滚动列表
 category: best-practices
-scraped_at: 2026-09-16T06:55:05+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:e32f9af856f60f3532f42e05d3b0806c3fba91125e38aba221cb4622ffaab7fe
+scraped_at: 2026-09-21T06:25:43+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:28df3f69f781de850536effa0aaf6a958e868fd88f4d08ae3af16290592cd2b0
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:e32f9af856f60f3532f42e05d3b0806c3fba91125e38aba221cb4622ffa
 
 然而，当表格需要同时支持纵向和横向滚动（下文简称为双向滚动）时，单一列表组件无法满足需求。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/gV1aAoXgQeKt9pXF0SKvQg/zh-cn_image_0000002683157325.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Aanoz5XpRSyZ10avum_uFw/zh-cn_image_0000002683157325.gif "点击放大")
 
 本文基于List组件和Scroller控制器，封装核心组件[DualScrollTable](https://gitcode.com/HarmonyOS_Samples/DualScrollList/blob/master/tableview/src/main/ets/components/DualScrollTable.ets)（双向滚动列表组件）。提供满足基础功能的双向滚动列表解决方案，助力开发者快速实现表格双向滚动功能。
 
@@ -38,7 +38,7 @@ content_hash: sha256:e32f9af856f60f3532f42e05d3b0806c3fba91125e38aba221cb4622ffa
 
 列表整体布局结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/gA1D1CQSQOGSWPky3DhjvA/zh-cn_image_0000002652957852.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/0sZI0KaYSrG0aypDyTzU1g/zh-cn_image_0000002652957852.png "点击放大")
 
 ### 关键API和模块介绍
 
@@ -52,7 +52,7 @@ content_hash: sha256:e32f9af856f60f3532f42e05d3b0806c3fba91125e38aba221cb4622ffa
 
 同步滚动时序图，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/al6ahy0YQFO5me08DFDZiw/zh-cn_image_0000002653117762.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/1plabqanT_ieZu46YIwgmw/zh-cn_image_0000002653117762.png "点击放大")
 
 * 横向滚动TopList时，通过[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法拦截滚动偏移量，调用RightList的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法同步横向滚动。
 * 横向滚动RightList时，通过[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法拦截滚动偏移量，调用TopList的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法同步横向滚动。
@@ -501,7 +501,7 @@ export class BaseTableViewModel {
 
 在股票行情场景中，多只股票的最新价、涨跌额、涨跌幅等指标需要横向排列展示。该场景不启用分组标题和列分割线，表格布局尺寸更紧凑。股票信息表如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/SsZO7WGYRZa26CSZQSbUTg/zh-cn_image_0000002682997519.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ePaj92qORi6imVk-65QNqA/zh-cn_image_0000002682997519.gif "点击放大")
 
 ### 开发步骤
 
@@ -509,7 +509,7 @@ export class BaseTableViewModel {
 
    继承BaseTableViewModel，在loadTableData()方法中调用loadData()方法加载stock.json数据。
 
-   ```typescript
+   ```screen
    /**
     * Stock info table column data
     */
@@ -536,7 +536,8 @@ export class BaseTableViewModel {
       * @param context Application context
       */
      public loadTableData(context: Context): void {
-       this.loadData(context, 'stock.json');
+       const isChinese: boolean = i18n.System.getSystemLanguage().startsWith('zh');
+       this.loadData(context, isChinese ? 'stock.json' : 'stock_en.json');
        this.resolveCellFontColors();
        this.topListData = STOCK_TOP_LIST_DATA;
        this.leftTitle = $r('app.string.stock_name_title');
@@ -637,7 +638,7 @@ export class BaseTableViewModel {
 
 左侧参数名称与右侧数据行纵向同步滚动，顶部车型名称与底部数据列横向同步滚动。汽车参数表如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/2t9_w1JJRkSSACUCu-qnvQ/zh-cn_image_0000002683157331.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/lIgrL5QyRmaCdtOFGDGyAw/zh-cn_image_0000002683157331.gif "点击放大")
 
 ### 开发步骤
 
@@ -645,7 +646,7 @@ export class BaseTableViewModel {
 
    继承BaseTableViewModel，在loadTableData()方法中调用loadData()方法加载car.json数据。
 
-   ```typescript
+   ```screen
    export default class CarSpecTableViewModel extends BaseTableViewModel {
      /**
       * Load table data
@@ -653,7 +654,8 @@ export class BaseTableViewModel {
       * @param context Application context
       */
      public loadTableData(context: Context): void {
-       this.loadData(context, 'car.json');
+       const isChinese: boolean = i18n.System.getSystemLanguage().startsWith('zh');
+       this.loadData(context, isChinese ? 'car.json' : 'car_en.json');
        this.topListData = [];
        if (this.groupDataArray[0]?.sub[0]?.info?.length > 0) {
          const count: number = this.groupDataArray[0].sub[0].info.length;
@@ -672,7 +674,7 @@ export class BaseTableViewModel {
 
    通过layoutConfig配置列表的布局尺寸（如表格条目宽度listItemWidth为155vp）。
 
-   ```typescript
+   ```screen
    @ComponentV2
    struct CarSpecTable {
      /**
@@ -741,7 +743,7 @@ export class BaseTableViewModel {
 
 本示例通过Frame分析结果显示，卡顿帧数为0，滚动过程流畅，无卡顿或掉帧现象。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/2ZCOgGE0SJaFGEg1h-4MSg/zh-cn_image_0000002652957856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/2AVaP8OTRzeNoDWyB_mTQA/zh-cn_image_0000002652957856.png "点击放大")
 
 ## 示例代码
 

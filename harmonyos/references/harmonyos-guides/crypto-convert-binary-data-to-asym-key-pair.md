@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-conver
 title: 指定二进制数据转换非对称密钥对(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定二进制数据转换非对称密钥对(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ce8abc26c20bd765e4b79c27a5732e1970d9dc22edf0763305a3fb26d2cea3c1
+scraped_at: 2026-09-21T06:17:41+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:fcd4554d3fc2917606a09c2c7253a4de06b9d2a3bb42cdb5cdabd4ffb5432236
 ---
 
 以RSA、ECC、SM2为例，根据指定的非对称密钥二进制数据，生成非对称密钥对（KeyPair），即将外部或存储的二进制数据转换为算法库的密钥对象，该对象可用于后续的加解密等操作。
@@ -122,7 +122,7 @@ content_hash: sha256:ce8abc26c20bd765e4b79c27a5732e1970d9dc22edf0763305a3fb26d2c
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-  function convertECCAsyKeySync() {
+  function convertEccAsyKeySync() {
     let pubKeyArray =
       new Uint8Array([48, 89, 48, 19, 6, 7, 42, 134, 72, 206, 61, 2, 1, 6, 8, 42, 134, 72, 206, 61, 3, 1, 7, 3, 66, 0, 4,
         83, 96, 142, 9, 86, 214, 126, 106, 247, 233, 92, 125, 4, 128, 138, 105, 246, 162, 215, 71, 81, 58, 202, 121, 26,

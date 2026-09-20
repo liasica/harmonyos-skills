@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-ren
 title: ArkWeb Render进程卡死故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 应用冻屏故障模式说明 > ArkWeb Render进程卡死故障模式说明
 category: best-practices
-scraped_at: 2026-09-16T06:55:13+08:00
+scraped_at: 2026-09-21T06:25:50+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:4b6d8e359292197e052e6650a4e46cf91c2ab645cec4734064e5cece5dbc28dc
+content_hash: sha256:46a84a09553f22ee7845ea13e9441d94d44ce578108e2ab00d8685266c485b44
 ---
 
 ## 概述
@@ -54,7 +54,7 @@ Main handler dump end time: 2026-02-04 11:29:31.124
 
 trace分析如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/1utt74H1SDizur-swLQh7w/zh-cn_image_0000002666120049.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/DwWXqjk5Q6m61Oro8PIFNg/zh-cn_image_0000002666120049.png "点击放大")
 
 在业务代码中搜索任务名称，可确定抛出任务过多的位置，从而减少抛出此类任务的数量。
 
@@ -76,7 +76,7 @@ trace分析如下图所示：
 
 本案例通过构造一个可以触发耗时JS操作的应用来进行问题说明。案例如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/mKLGmho8RAmYpqVsQxNkFQ/zh-cn_image_0000002635680956.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/t9nBy3vxTKaofH_oPkDzlg/zh-cn_image_0000002635680956.png "点击放大")
 
 **问题现象**
 
@@ -94,7 +94,7 @@ trace分析如下图所示：
 
 查看对应的JS代码可知耗时代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/i9CSnbIrQNaqNj6rRjX_OQ/zh-cn_image_0000002635840876.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/A0pPfzcoRYi51PxLQrMeXA/zh-cn_image_0000002635840876.png)
 
 **排查建议**
 

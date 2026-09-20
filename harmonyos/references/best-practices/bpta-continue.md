@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue
 title: 社交通讯全场景协同最佳实践
 breadcrumb: 最佳实践 > 自由流转 > 典型全场景协同开发案例 > 社交通讯全场景协同最佳实践
 category: best-practices
-scraped_at: 2026-09-16T06:55:04+08:00
+scraped_at: 2026-09-21T06:25:42+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:5be9a948665310f299004469d02a70f0dab9ffcce24801705e0ca1376a4427c3
+content_hash: sha256:0e12da8dcf9cb046f819b7cedfe6d0e429aa3fde11b2f9fe79e7b844c7f4a376
 ---
 
 ## 概述
@@ -29,13 +29,13 @@ content_hash: sha256:5be9a948665310f299004469d02a70f0dab9ffcce24801705e0ca1376a4
 |  |  |
 | --- | --- |
 | 特性 | 体验视频 |
-| 跨设备互通 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/be/v3/HzkUe6_GSbiO5jBzWJ1dFg/zh-cn_media_0000002623705755.mp4) |
-| 跨设备拖拽 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b3/v3/tMYbdwrhRxiukyKQfj4chw/zh-cn_media_0000002623545867.mp4) |
-| 跨设备剪贴 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c0/v3/r6voIV4oSMi6mTHzZ09CvQ/zh-cn_media_0000002593106340.mp4) |
-| 跨设备应用接续 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/8e/v3/bAuPfGaKSf6cDxsDq99fBQ/zh-cn_media_0000002593266262.mp4) |
-| 碰一碰插入图片 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/96/v3/Eylu2zHRQXGeLD688OVDNQ/zh-cn_media_0000002623705769.mp4) |
-| 碰一碰分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b2/v3/aC2UUXjnTre8JF6CD8xgNw/zh-cn_media_0000002623545883.mp4) |
-| 隔空传送分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/d6/v3/guO7JMNZTUC1jPoVHst69A/zh-cn_media_0000002593106342.mp4) |
+| 跨设备互通 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c9/v3/pxZD8TLXQ6mjpEOGbm3ixw/zh-cn_media_0000002623705755.mp4) |
+| 跨设备拖拽 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/43/v3/SdbA5Q4JTlCF7AUaqpETEg/zh-cn_media_0000002623545867.mp4) |
+| 跨设备剪贴 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/21/v3/EA7769w7RSuvxuNf2PvEig/zh-cn_media_0000002593106340.mp4) |
+| 跨设备应用接续 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/8b/v3/Lardr9b3TM-uK8ETSsDGeQ/zh-cn_media_0000002593266262.mp4) |
+| 碰一碰插入图片 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ec/v3/NxWXs2ZnRi2TsgMFv7VKug/zh-cn_media_0000002623705769.mp4) |
+| 碰一碰分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/8c/v3/o0iHSdKyS8i7c9GplVBxvQ/zh-cn_media_0000002623545883.mp4) |
+| 隔空传送分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6c/v3/LLvP-HCqT5CDyaByA6x9oA/zh-cn_media_0000002593106342.mp4) |
 
 ### 使用限制
 
@@ -67,7 +67,7 @@ content_hash: sha256:5be9a948665310f299004469d02a70f0dab9ffcce24801705e0ca1376a4
 2. 系统将自动唤醒远端设备上的相机、图库或扫描，进入相应的界面。
 3. 使用远端设备完成拍照或选择图片/视频并确认，远端拍摄状态信息实时回传到本端，并将数据插入到本端设备的应用中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/KDnoG-GnQyGNF6eHhLTuAQ/zh-cn_image_0000002593266264.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ms2I7e3TS9Wme3JfLWxGMQ/zh-cn_image_0000002593266264.jpg "点击放大")
 
 **关键技术**
 
@@ -180,7 +180,7 @@ content_hash: sha256:5be9a948665310f299004469d02a70f0dab9ffcce24801705e0ca1376a4
 2. 在此过程中，系统自动处理跨设备的数据传输，开发者无需介入。
 3. 当用户释放鼠标时，触发拖拽松手事件，远端应用处理接收到的拖拽数据，并将其写入远端编辑页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/uEeirBpzTYqm5Ppba-oraA/zh-cn_image_0000002623705771.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ZsXlMjSZQEy9emWrccn4yQ/zh-cn_image_0000002623705771.jpg "点击放大")
 
 **关键技术**
 
@@ -304,7 +304,7 @@ content_hash: sha256:5be9a948665310f299004469d02a70f0dab9ffcce24801705e0ca1376a4
 
 3. 用户在远端读取系统剪贴板内容，粘贴来自本端的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/KSUKXIyiSeO36qCI7d4sdQ/zh-cn_image_0000002623545885.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/2fagsys9QN-IvjFSELIi4Q/zh-cn_image_0000002623545885.jpg "点击放大")
 
 **关键技术**
 
@@ -395,7 +395,7 @@ content_hash: sha256:5be9a948665310f299004469d02a70f0dab9ffcce24801705e0ca1376a4
 2. 用户点击远端设备Dock栏图标后，本端设备发起接续，数据进行传输。
 3. 远端设备接收接续数据并显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/MbUOIgxhTp2hhytGpYJVUg/zh-cn_image_0000002593106346.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ESp9Kvm0TYi1iyKz2m_vhQ/zh-cn_image_0000002593106346.jpg "点击放大")
 
 场景核心在于应用接续的过程中如何传递数据。对于文字信息可使用分布式数据对象保存，对于图片/视频可以拷贝到分布式文件目录下，使用分布式数据资产作为分布式数据对象的根属性保存。
 
@@ -684,7 +684,7 @@ content_hash: sha256:5be9a948665310f299004469d02a70f0dab9ffcce24801705e0ca1376a4
 2. 基于图库的碰一碰分享功能，手机顶端轻触电脑屏幕拉起碰一碰分享界面后分享图片。
 3. 电脑端接收到分享的图片后，插入到应用页面中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ruMOohmnRSqp1Oe56wxo8A/zh-cn_image_0000002593266266.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/oKfD5woASGiiS7qFC4-Fmg/zh-cn_image_0000002593266266.jpg "点击放大")
 
 具体流程可参考：手机与电脑碰一碰分享概述中[业务流程](../harmonyos-guides/knock-share-pc-phones-overview.md#业务流程)章节的“电脑设备作为数据接收端”部分。
 
@@ -868,7 +868,7 @@ content_hash: sha256:5be9a948665310f299004469d02a70f0dab9ffcce24801705e0ca1376a4
 
 3.远端设备弹出接收面板，点击接收可以直达应用分享页面。若点击拒绝，则本端设备上会显示分享被拒绝的提示弹框。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/QSub228MRAOC6NdR1wNhig/zh-cn_image_0000002623705773.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/eWZdfxllSFKZ7BJXlRQ9uw/zh-cn_image_0000002623705773.jpg "点击放大")
 
 **关键技术**
 
@@ -1115,7 +1115,7 @@ export function getValueFromWant(want: Want, key: string): string {
 
 3. 远端设备识别成功后，可以直达应用分享页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/TAvmGBS0RmCx5EsqQu2NXw/zh-cn_image_0000002623545887.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/4ymr9an2QoCVsOv7_rf-9A/zh-cn_image_0000002623545887.jpg "点击放大")
 
 **关键技术**
 

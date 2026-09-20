@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Component3D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > Component3D
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ee8f9af25d4ee2a940ac08d4a1c0b8c78b56c1496ddd9083e195fd1fbf2ebf4e
+scraped_at: 2026-09-21T06:20:59+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:f2a44b452a90f0b1249c9b2c828ad86eb0e5fadad88a046364ecb61c05a3106d
 ---
 
 3D渲染组件，用于将ArkGraphics 3D场景或glTF（.gltf文件和.glb文件）模型渲染到ArkUI界面中，支持自定义场景模式与自动场景模式，并提供自定义渲染管线能力。
@@ -242,7 +242,7 @@ class EngineTime {
 let engineTime = new EngineTime();
 let frameCount: number = 0;
 
-function TickFrame() {
+function tickFrame() {
   if (frameCount == 10) {
     engineTime.totalTimeUs += 1.0;
     engineTime.deltaTimeUs += 1.0;
@@ -273,7 +273,7 @@ struct Index {
       console.info('backAnimator onfinish');
     }
     this.backAnimator.onFrame = (value: number) => {
-      TickFrame();
+      tickFrame();
       this.timeDelta[0] = engineTime.deltaTimeUs;
     }
 

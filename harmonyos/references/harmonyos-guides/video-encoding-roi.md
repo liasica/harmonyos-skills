@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: ROI视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > ROI视频编码
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:54+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3e626bb4100910f3424ff0eb67e8e090f473322e53a646ee4fbfc7280dfebcb6
+scraped_at: 2026-09-21T06:18:12+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:0228cae100ae1bbf9f74db07d99c0f77b30b39b5c81004b5c732eb443399161d
 ---
 
 ## 基础概念
 
-从API version 20开始支持ROI视频编码（Region Of Interest Video Coding），该功能是基于硬件H.264/H.265编码能力扩展的高级优化技术。其核心逻辑为对画面中指定的重点区域分配更多编码资源实现高画质编码。在有限带宽条件下保障ROI区域内容清晰呈现，显著提升整体视觉体验。
+从API version 20开始支持ROI视频编码（Region Of Interest Video Coding），该功能是基于硬件H.264/H.265编码能力扩展的高级优化技术。其核心逻辑为对画面中指定的重点区域分配更多编码资源以实现高画质编码，从而在有限带宽条件下保障ROI区域内容清晰呈现，显著提升整体视觉体验。
 
 开发者可自主定义视频画面中的ROI区域（如直播中的人脸、监控中的车牌等），并通过设定质量偏移参数，调节ROI区域与非ROI区域的编码质量差异，实现编码资源的差异化分配。
 
@@ -22,11 +22,11 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 
 * 秀场直播：将主播面部区域设为ROI，优化人脸细节（如肤色、五官轮廓），提升观众沉浸式观看体验。
 * 户外直播：将主播主体/核心拍摄景物（如自然风光、赛事画面核心区域）设为ROI，在移动网络带宽波动时保障核心内容清晰。
-* 电商直播：将商品展示区域（如美妆试色、电子产品细节）设为ROI，清晰呈现商品外观、材质与功能细节，助力商品转化。
+* 电商直播：将商品展示区域（如美妆试色、电子产品细节）设为ROI，清晰呈现商品外观、材质与功能细节，带动商品销售。
 * 网课视频：将课件文字、讲义图表、板书内容区域设为ROI，保证知识点清晰可读，降低视觉疲劳，提升教学效果。
 * 安全监控：将摄像头画面中的人脸、车牌、出入口等关键区域设为ROI，提升抓拍清晰度，便于后续识别分析。
 
-根据编码模式和ROI配置方式的不同，提供了三种ROI编码开发示例，开发者可根据实际业务和技术架构选择。
+根据编码模式和ROI配置方式的不同，ROI编码开发示例分为两种：[方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)和[方式二：通过编码输入回调配置](video-encoding-roi.md#方式二通过编码输入回调配置)，开发者可根据实际业务和技术架构选择。
 
 | 不同场景对照点 | 直播/视频通话场景 | 录像场景 | 编辑导出/内容发布场景 |
 | --- | --- | --- | --- |
@@ -35,11 +35,11 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 | **编码视频帧直接生产者** | 图形 | 图形 | 应用 |
 | **编码模式** | Surface模式 | Surface模式 | Buffer模式 |
 | **ROI参数配置方式** | NativeBuffer元数据配置（推荐） | 编码输入参数回调配置 | 编码输入Buffer回调配置 |
-| **开发示例** | [Surface模式 - 方式一](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐) | [Surface模式 - 方式二](video-encoding-roi.md#方式二通过编码输入参数回调配置) | [Buffer模式](video-encoding-roi.md#方式三buffer模式下配置roi) |
+| **开发示例** | [方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐) | [Surface模式：编码输入参数回调](video-encoding-roi.md#surface模式编码输入参数回调) | [Buffer模式：编码输入Buffer回调](video-encoding-roi.md#buffer模式编码输入buffer回调) |
 
 **说明** 
 
-* 直播和录像场景均使用Surface模式编码，区别仅在于ROI配置方式。推荐使用NativeBuffer元数据配置方式，实现简单且与编码帧天然对齐。
+* 直播和录像场景均使用Surface模式编码，区别仅在于ROI配置方式。使用[方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)，实现简单且与编码帧天然对齐。
 * 如果帧处理流程中无法修改编码器输入Buffer的元数据（如相机帧直接送入编码器Surface的场景），可选择编码输入参数回调配置方式。
 
 ## 约束和限制
@@ -48,7 +48,7 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 
 **支持的码控模式：** VBR(Variable Bit Rate)、CBR(Constant Bit Rate)、SQR(Stable Quality Rate Control)。
 
-**依赖ROI检测识别能力：** 编码器不具备ROI的检测识别能力，所以ROI编码技术生效依赖于开发者输入的ROI信息。开发者可根据业务场景自行设计并实现ROI识别能力，或通过调用系统相机模块原生提供的人脸区域信息，降低开发成本，具体参考[元数据(C/C++)](native-camera-metadata.md)。
+**依赖ROI检测识别能力：** 编码器不具备ROI的检测识别能力，所以ROI编码技术生效依赖于开发者输入的ROI信息。开发者可根据业务场景自行设计并实现ROI识别能力，或通过系统相机模块原生提供的人脸区域信息（元数据）获取ROI区域，降低开发成本。元数据的配置与获取参考[元数据（ArkTS）](camera-metadata.md)和[元数据(C/C++)](native-camera-metadata.md)；从视频帧NativeBuffer元数据提取ROI信息的开发步骤，参考[方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)。
 
 ## 参数要求说明
 
@@ -70,7 +70,7 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 | 参数 | 含义 | 取值范围 | 是否必填 | 默认行为 |
 | --- | --- | --- | --- | --- |
 | dqp | 量化参数偏移值（DeltaQP） | [-51, 51] | 否 | 未设置时编码器使用默认QP策略（=-3）。 |
-| slb | 语义标签（Semantic Label） | 0（其他）或1（人脸） | 否 | 该参数仅供开发者区分ROI区域类型，不影响编码行为。 |
+| slb | 语义标签（Semantic Label） | 0（未指定）或1（人脸） | 否 | 该参数仅供开发者区分ROI区域类型，不影响编码行为。 |
 
 * dqp为负表示ROI区域编码画质优于非ROI区域，绝对值越大质量差异越大。
 * slb取值对应[OH\_VideoMetadataRoiSemanticLabel](../harmonyos-references/capi-native-avcodec-videobase-h.md#oh_videometadataroisemanticlabel)枚举：OH\_VIDEO\_METADATA\_ROI\_SEM\_LABEL\_OTHER（0）表示未指定区域类型，OH\_VIDEO\_METADATA\_ROI\_SEM\_LABEL\_FACE（1）表示人脸区域。
@@ -83,14 +83,14 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 
 **图1：ROI坐标和最大允许面积占比示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/8B5SGWTISp2wbaOSvFEIpw/zh-cn_image_0000002727591300.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/3UqTcI7uQ_urPKXi26Z-2g/zh-cn_image_0000002762834405.png)
 
 ## 生效机制说明
 
-配置ROI支持两种方式：**NativeBuffer元数据配置方式**和**编码输入回调配置方式**。编码输入回调配置方式包含编码输入参数回调（Surface模式）和编码输入buffer回调（Buffer模式）。
+配置ROI支持以下两种方式：
 
-* NativeBuffer元数据配置方式（推荐）：从API version 22开始支持使用OH\_NativeBuffer\_MetaDataKey的ROI枚举OH\_REGION\_OF\_INTEREST\_METADATA，在NativeBuffer的元数据中配置ROI参数。
-* 编码输入回调配置方式：使用视频编码参数OH\_MD\_KEY\_VIDEO\_ENCODER\_ROI\_PARAMS在编码输入回调中配置。
+* [方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)：从API version 22开始支持使用OH\_NativeBuffer\_MetaDataKey的ROI枚举OH\_REGION\_OF\_INTEREST\_METADATA，在NativeBuffer的元数据中配置ROI参数。
+* [方式二：通过编码输入回调配置](video-encoding-roi.md#方式二通过编码输入回调配置)：使用视频编码参数OH\_MD\_KEY\_VIDEO\_ENCODER\_ROI\_PARAMS在编码输入回调中配置，包含编码输入参数回调（Surface模式）和编码输入buffer回调（Buffer模式）。
 
 **通用生效机制：**
 
@@ -101,32 +101,30 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 5. 当某一帧配置的ROI参数无法解析出任何有效ROI信息时，进行普通编码。
 6. 如果多个ROI区域产生交叠，按照配置顺序，仅最先配置的ROI区域会在交叠处生效。
 
-**NativeBuffer元数据配置方式独有机制：** 最大支持256Byte长度字符，超出部分会被截断。
+**方式一独有机制：** 最大支持256Byte长度字符，超出部分会被截断。
 
 **空字符串处理差异：**
 
-* NativeBuffer元数据配置方式：不允许配置空字符串，视作未配置ROI参数，当前帧会继承历史帧信息进行ROI编码。
-* 编码输入回调配置方式：允许配置空字符串，但因无法解析出有效ROI信息，编码时按照普通编码方式进行编码。
+* 方式一：不允许配置空字符串，视作未配置ROI参数，当前帧会继承历史帧信息进行ROI编码。
+* 方式二：允许配置空字符串，但因无法解析出有效ROI信息，编码时按照普通编码方式进行编码。
 
 **说明** 
 
 因空字符串处理存在差异，应避免配置空字符串。如需关闭某一帧的ROI编码，可配置无位置信息的字符串，如"Clear"或";"等。
 
-**同时配置时的生效优先级：** 当某一帧的两种方式均有配置ROI参数，仅生效以编码输入回调配置方式下发的ROI参数，无论其能否解析出有效ROI信息。
+**同时配置时的生效优先级：** 当某一帧的两种方式均有配置ROI参数，仅生效方式二下发的ROI参数，无论其能否解析出有效ROI信息。
 
-## 开发示例
+## 方式一：通过NativeBuffer元数据配置（推荐）
 
-以下开发示例按照编码模式组织。Surface模式和Buffer模式共用相同的ROI信息获取与组装流程，区别在于如何将ROI配置到编码器。
+Surface模式和Buffer模式共用相同的ROI信息获取与组装流程，区别在于如何将ROI配置到编码器。
 
 当相机输出视频帧时，如果检测到ROI区域（如人脸），会将ROI信息写入帧的NativeBuffer元数据。开发者可直接从每帧中提取，无需额外的回调接口和时间戳匹配，具体参考[OH\_NativeBuffer\_MetadataKey](../harmonyos-references/capi-buffer-common-h.md#oh_nativebuffer_metadatakey)。
-
-### 方式一：通过NativeBuffer元数据配置（推荐）
 
 Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开发者在帧处理线程中从每帧的NativeBuffer元数据提取ROI信息并组装成配置字符串，随后将ROI字符串写入编码器输入帧的NativeBuffer元数据，实现ROI随帧下发到编码器（如图2所示）。
 
 **图2：NativeBuffer元数据接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/D9sxYTnrRWKoelTlh-89Aw/zh-cn_image_0000002727751158.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/MI-5sLJbRLOJflFu3MOs7g/zh-cn_image_0000002733274890.png)
 
 详细开发步骤如下：
 
@@ -244,7 +242,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
    **说明** 
 
-   当相机帧未检测到ROI区域时，assembledRoiStr为空字符串。NativeBuffer元数据配置方式不支持空字符串，需写入无位置信息的字符串（如"Clear"或";"）。具体参考[生效机制说明](video-encoding-roi.md#生效机制说明)。
+   当相机帧未检测到ROI区域时，assembledRoiStr为空字符串。方式一不支持空字符串，需写入无位置信息的字符串（如"Clear"或";"）。具体参考[生效机制说明](video-encoding-roi.md#生效机制说明)。
 5. 将Buffer提交给编码器并释放资源。
 
    ROI配置完成后，通过OH\_NativeWindow\_NativeWindowFlushBuffer将预览Buffer和编码器Buffer提交，并释放相机帧资源。
@@ -265,27 +263,34 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
    }
    ```
 
-### 方式二：通过编码输入参数回调配置
+## 方式二：通过编码输入回调配置
 
-此方式同样适用于Surface模式。从帧的NativeBuffer元数据中提取ROI信息，配置方式通过OH\_VideoEncoder\_RegisterParameterCallback注册的编码输入参数回调完成（如图3所示）。
+方式二使用视频编码参数OH\_MD\_KEY\_VIDEO\_ENCODER\_ROI\_PARAMS在编码输入回调中配置ROI参数。根据编码模式的不同，分为以下两种模式：
+
+* Surface模式：通过OH\_VideoEncoder\_RegisterParameterCallback注册的编码输入参数回调配置。
+* Buffer模式：在OnNeedInputBuffer回调中通过OH\_AVBuffer\_GetParameter获取格式后设置ROI字符串。
+
+### Surface模式：编码输入参数回调
+
+此方式同样适用于Surface模式。从帧的NativeBuffer元数据中提取ROI信息，通过OH\_VideoEncoder\_RegisterParameterCallback注册的编码输入参数回调完成配置（如图3所示）。
 
 编码器在接收到视频帧时触发参数回调，由于参数回调不包含帧时间戳信息，开发者需要使用以PTS（时间戳）为键的同步队列（RoiQueue）将帧处理线程中的ROI数据按时间顺序传递到编码回调。回调中从队列弹出PTS最小的ROI条目，通过OH\_AVFormat\_SetStringValue配置到参数格式中。
 
 **图3：编码输入参数回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/youPfTU7T_iIEZyKuk_Kww/zh-cn_image_0000002757310873.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/y2S2MX5jRqK5BJkthhdXtw/zh-cn_image_0000002733434770.png)
 
 详细开发步骤如下：
 
 1. 在CMakeLists.txt中链接动态库。
 
-   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤1。
+   同[方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤1。
 2. 从视频帧NativeBuffer元数据提取ROI信息。
 
-   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤2。
+   同[方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤2。
 3. 使用OH\_VideoMetadata API组装ROI配置字符串。
 
-   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤3。
+   同[方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤3。
 4. 实现PTS同步队列与回调用户数据结构。
 
    由于参数回调不包含帧时间戳信息，无法直接将ROI数据与编码帧对齐。建议实现一个以PTS为键的同步队列，将帧处理线程中的ROI数据按PTS顺序传递到编码回调。编码回调通过用户数据结构中的队列指针访问队列，弹出PTS最小的条目获取ROI配置字符串。
@@ -301,7 +306,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
    ```
 5. 注册编码输入参数回调。
 
-   在创建编码器后、Configure之前，注册编码输入参数回调。必须在Configure之前注册，否则回调不会生效。
+   回调必须在创建编码器后、Configure之前完成注册，否则无法生效。
 
    ```
    // 参数回调配置：在Configure之前注册参数回调。
@@ -348,7 +353,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
    ```
    int64_t pts = OH_NativeImage_GetTimestamp(nativeImage_);
-   if (roiPathType_ == ROI_PATH_METADATA_CALLBACK && onRoiStrAssembled_) {
+   if ((roiPathType_ == ROI_PATH_METADATA_CALLBACK || roiPathType_ == ROI_PATH_BUFFER_MODE) && onRoiStrAssembled_) {
        onRoiStrAssembled_(pts, assembledRoiStr);
    }
    ```
@@ -373,88 +378,31 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 RoiQueue以PTS为键排序存储ROI条目。编码回调取出PTS最小的条目，保证帧与ROI的顺序一致性。如果队列为空，最多等待3ms再返回空字符串。队列会自动清理超过2秒的陈旧条目，防止无限增长。每帧均应把ROI字符串入队（包括空ROI字符串），空ROI字符串用于明确标识该帧未配置ROI区域；关闭ROI时调用ClearRoiQueue清空队列。
 
-### 方式三：Buffer模式下配置ROI
+### Buffer模式：编码输入Buffer回调
 
-Buffer模式下，视频帧通过OH\_VideoEncoder\_PushInputBuffer送入编码器，开发者需要在OnNeedInputBuffer回调中填充帧像素数据的同时配置ROI信息。由于Buffer模式没有编码器Surface，帧像素数据需要从相机帧Buffer中拷贝出来，连同ROI字符串一起推入帧队列供编码回调消费（如图4所示）。
+Buffer模式下，视频帧通过OH\_VideoEncoder\_PushInputBuffer送入编码器。由于Buffer模式没有编码器Surface，ROI字符串无法通过NativeBuffer元数据下发，需要通过编码输入回调配置：在帧处理线程中将ROI字符串连同帧PTS推入RoiQueue（同[Surface模式：编码输入参数回调](video-encoding-roi.md#surface模式编码输入参数回调)的PTS同步队列），编码器请求输入Buffer时触发OnNeedInputBuffer回调，在回调中从RoiQueue取出ROI字符串并设置到输入Buffer参数中（如图4所示）。
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/hhFhoAUwTmyLhYDL0-Oh7g/zh-cn_image_0000002757230993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/bBlNX7m7Qg21O2VPm_ewVg/zh-cn_image_0000002762994291.png)
 
 详细开发步骤如下：
 
 1. 在CMakeLists.txt中链接动态库。
 
-   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤1。
+   同[方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤1。
 2. 从视频帧NativeBuffer元数据提取ROI信息。
 
-   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤2。
+   同[方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤2。
 3. 使用OH\_VideoMetadata API组装ROI配置字符串。
 
-   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤3。
-4. 定义帧数据结构和帧队列。
+   同[方式一：通过NativeBuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤3。
+4. 将ROI字符串连同帧PTS传递到RoiQueue。
 
-   Buffer模式下，编码器通过回调请求输入Buffer。开发者需要将相机帧的像素数据和ROI字符串封装为帧数据项，推入线程安全的帧队列供编码回调消费。
+   在帧处理线程中提取并组装ROI字符串后，需要将ROI字符串以PTS为索引推入RoiQueue，供编码回调按帧顺序取用。其传递方式同[Surface模式：编码输入参数回调](video-encoding-roi.md#surface模式编码输入参数回调)步骤7。
+5. 在编码输入Buffer回调中配置ROI信息。
 
-   ```c
-   // Buffer模式编码的帧数据项。
-   constexpr uint32_t FRAME_QUEUE_POP_TIMEOUT_MS = 4;
-   constexpr size_t FRAME_QUEUE_MAX_SIZE = 3;
-
-   struct FrameItem {
-       std::vector<uint8_t> pixels;
-       int32_t width = 0;
-       int32_t height = 0;
-       std::string roiStr;
-   };
-   ```
-5. 将帧像素数据和ROI字符串推入帧队列。
-
-   在帧处理线程中，从相机帧Buffer读取像素数据，连同组装好的ROI字符串一起推入帧队列。
-
-   ```
-   // Buffer模式：从相机帧读取像素数据并推入帧队列。
-   BufferHandle *bufferHandle = OH_NativeWindow_GetBufferHandleFromNative(InBuffer);
-   if (bufferHandle == nullptr) {
-       return;
-   }
-   OH_NativeBuffer *cameraNativeBuffer = nullptr;
-   int32_t ret = OH_NativeBuffer_FromNativeWindowBuffer(InBuffer, &cameraNativeBuffer);
-   if (ret != 0 || cameraNativeBuffer == nullptr) {
-       return;
-   }
-   void *virAddr = nullptr;
-   ret = OH_NativeBuffer_Map(cameraNativeBuffer, &virAddr);
-   if (ret != 0 || virAddr == nullptr) {
-       return;
-   }
-   int32_t frameWidth = bufferHandle->width;
-   int32_t frameHeight = bufferHandle->height;
-   int32_t stride = bufferHandle->stride;
-   int32_t frameSize = stride * frameHeight;
-   FrameItem frameItem;
-   frameItem.width = frameWidth;
-   frameItem.height = frameHeight;
-   frameItem.roiStr = assembledRoiStr;
-   frameItem.pixels.resize(frameSize);
-   std::copy(static_cast<uint8_t *>(virAddr),
-             static_cast<uint8_t *>(virAddr) + frameSize,
-             frameItem.pixels.data());
-   frameQueue_->Push(frameItem);
-   OH_NativeBuffer_Unmap(cameraNativeBuffer);
-   OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "RenderThread",
-                "Buffer模式: pushed frame to queue, size: %{public}d, ROI: %{public}s",
-                frameSize, assembledRoiStr.c_str());
-   ```
-
-   **说明** 
-
-   Buffer模式需要从相机帧Buffer拷贝像素数据到应用内存，存在额外的数据拷贝开销，相比Surface模式的零拷贝机制会有更高的延迟。开发者应根据实际场景选择合适的编码模式。
-6. 在编码输入Buffer回调中配置ROI信息。
-
-   当编码器请求输入Buffer时，触发OnNeedInputBuffer回调，回调中将Buffer入队供消费线程处理。Buffer模式的消费线程从队列取出Buffer，调用FillBufferModeInput从帧队列弹出帧数据项，将像素数据拷贝到编码器Buffer中，并通过OH\_AVBuffer\_GetParameter获取格式后设置ROI字符串。
-
-   OnNeedInputBuffer回调将Buffer入队，供消费线程处理过程如下：
+   当编码器请求输入Buffer时，触发OnNeedInputBuffer回调。在回调中从RoiQueue取出PTS最小的ROI字符串，通过OH\_AVBuffer\_GetParameter获取输入Buffer的参数格式，使用OH\_AVFormat\_SetStringValue设置ROI字符串后，调用OH\_AVBuffer\_SetParameter写回Buffer使配置生效，最后将Buffer入队交由消费线程填充帧像素数据。
 
    ```
    void CodecCallback::OnNeedInputBuffer(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *buffer, void *userData)
@@ -463,63 +411,24 @@ Buffer模式下，视频帧通过OH\_VideoEncoder\_PushInputBuffer送入编码�
            return;
        }
        CodecUserData *codecUserData = static_cast<CodecUserData *>(userData);
+       // Buffer模式：从RoiQueue取ROI字符串，设置到输入Buffer参数。
+       if (codecUserData->roiPathType == ROI_PATH_BUFFER_MODE && codecUserData->roiQueue != nullptr) {
+           std::string roiStr = codecUserData->roiQueue->Pop();
+           OH_AVFormat *format = OH_AVBuffer_GetParameter(buffer);
+           if (format != nullptr) {
+               OH_AVFormat_SetStringValue(format, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, roiStr.c_str());
+               OH_AVBuffer_SetParameter(buffer, format);
+               OH_AVFormat_Destroy(format);
+           }
+       }
        std::unique_lock<std::mutex> lock(codecUserData->inputMutex);
        codecUserData->inputBufferInfoQueue.emplace(index, buffer);
        codecUserData->inputCond.notify_all();
    }
    ```
 
-   Buffer模式消费线程从队列取出Buffer并调用FillBufferModeInput填充帧数据和ROI示例如下：
+   **说明** 
 
-   ```
-   void Recorder::VideoEncBufferInputThread()
-   {
-       while (isStarted_) {
-           CHECK_AND_BREAK_LOG(isStarted_, "Work done, thread out");
-           std::unique_lock<std::mutex> lock(encContext_->inputMutex);
-           bool condRet = encContext_->inputCond.wait_for(
-               lock, std::chrono::seconds(THREAD_WAIT_TIMEOUT_SEC),
-               [this]() { return !isStarted_ || !encContext_->inputBufferInfoQueue.empty(); });
-           CHECK_AND_BREAK_LOG(isStarted_, "Work done, thread out");
-           CHECK_AND_CONTINUE_LOG(!encContext_->inputBufferInfoQueue.empty(),
-               "Buffer queue is empty, continue, cond ret: %{public}d", condRet);
-
-           CodecBufferInfo bufferInfo = encContext_->inputBufferInfoQueue.front();
-           encContext_->inputBufferInfoQueue.pop();
-           lock.unlock();
-
-           OH_AVBuffer *buffer = reinterpret_cast<OH_AVBuffer *>(bufferInfo.buffer);
-           FillBufferModeInput(bufferInfo.bufferIndex, buffer);
-       }
-   }
-   ```
-
-   FillBufferModeInput的实现如下：
-
-   ```
-   void Recorder::FillBufferModeInput(uint32_t index, OH_AVBuffer *buffer)
-   {
-       FrameItem frameItem;
-       if (!encContext_->frameQueue->Pop(frameItem, std::chrono::milliseconds(FRAME_QUEUE_POP_TIMEOUT_MS))) {
-           OH_VideoEncoder_PushInputBuffer(videoEncoder_->GetCodec(), index);
-           return;
-       }
-       uint8_t *bufferAddr = OH_AVBuffer_GetAddr(buffer);
-       int32_t bufferCapacity = OH_AVBuffer_GetCapacity(buffer);
-       if (bufferAddr != nullptr && bufferCapacity >= static_cast<int32_t>(frameItem.pixels.size())) {
-           std::copy(frameItem.pixels.data(), frameItem.pixels.data() + frameItem.pixels.size(), bufferAddr);
-           OH_AVCodecBufferAttr attr;
-           attr.size = static_cast<int32_t>(frameItem.pixels.size());
-           attr.offset = 0;
-           attr.flags = AVCODEC_BUFFER_FLAGS_NONE;
-           OH_AVBuffer_SetBufferAttr(buffer, &attr);
-       }
-       if (!frameItem.roiStr.empty()) {
-           OH_AVFormat *format = OH_AVBuffer_GetParameter(buffer);
-           if (format != nullptr) {
-               OH_AVFormat_SetStringValue(format, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, frameItem.roiStr.c_str());
-           }
-       }
-       OH_VideoEncoder_PushInputBuffer(videoEncoder_->GetCodec(), index);
-   }
-   ```
+   * ROI配置完成后，还需向输入Buffer填充帧像素数据并通过OH\_VideoEncoder\_PushInputBuffer送入编码器，此处不展开，具体参考异步模式视频编码中[Buffer模式](video-encoding.md#buffer模式)相关说明。
+   * OH\_AVBuffer\_GetParameter返回的是参数副本，必须调用OH\_AVBuffer\_SetParameter写回才能使ROI配置生效，使用后需调用OH\_AVFormat\_Destroy释放。
+   * RoiQueue的PTS同步机制与关闭ROI时的清空处理同[Surface模式：编码输入参数回调](video-encoding-roi.md#surface模式编码输入参数回调)的相关说明。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 指定密钥参数生成非对称密钥对(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定密钥参数生成非对称密钥对(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:620293f5752079b30887dcee3f6e83a31d4c14ea73426db9c83e68408550babf
+scraped_at: 2026-09-21T06:17:41+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:21eff855e32191cb7890765550f7133546743504ed1cd5b4647bb0cca33e7c37
 ---
 
 以RSA、ECC、SM2为例，根据指定的密钥参数，生成非对称密钥对（KeyPair），并获取密钥参数属性。
@@ -278,7 +278,7 @@ content_hash: sha256:620293f5752079b30887dcee3f6e83a31d4c14ea73426db9c83e6840855
     try {
       let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象
       let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器
-      let keyPairPromise = generatorBySpec.generateKeyPair(); // Generate an ECC key pair.
+      let keyPairPromise = generatorBySpec.generateKeyPair(); // 生成ECC密钥对。
       keyPairPromise.then(keyPair => { // 使用生成器创建ECC密钥对
         showEccSpecDetailInfo(keyPair.priKey, 'priKey'); // 对私钥获取相关密钥参数属性
         showEccSpecDetailInfo(keyPair.pubKey, 'pubKey'); // 对公钥获取相关密钥参数属性
@@ -379,7 +379,7 @@ content_hash: sha256:620293f5752079b30887dcee3f6e83a31d4c14ea73426db9c83e6840855
     try {
       let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象
       let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器
-      let keyPair = generatorBySpec.generateKeyPairSync(); // Generate an ECC key pair.
+      let keyPair = generatorBySpec.generateKeyPairSync(); // 生成ECC密钥对。
       if (keyPair != null) {
         showEccSpecDetailInfo(keyPair.priKey, 'priKey'); // 对私钥获取相关密钥参数属性
         showEccSpecDetailInfo(keyPair.pubKey, 'pubKey'); // 对公钥获取相关密钥参数属性

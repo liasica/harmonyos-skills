@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Hyperlink
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Hyperlink
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:21+08:00
+scraped_at: 2026-09-21T06:20:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4dbef89ddff83c065eaed0bde3aea209c226041121f29106f14dfe1476ad90e1
+content_hash: sha256:687ccf1bf0a1fdb1cb6f2d649721648d3d0958c02caf34f68ed2a377d936f534
 ---
 
 超链接组件，支持文本和图片两种展示形式，在组件宽高范围内点击可实现跳转到指定网页。适用于应用内打开外部网页链接的场景，该组件仅支持与系统浏览器配合使用。
@@ -86,4 +86,4 @@ struct HyperlinkExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/xw8jn2FXRRuQlJAumnB2pg/zh-cn_image_0000002757312373.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/EqxYgBh4RLWpJZSmZsLyNA/zh-cn_image_0000002733436290.png)

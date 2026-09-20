@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 查询策略运行数据
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 查询策略运行数据
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:28+08:00
+scraped_at: 2026-09-21T06:18:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8c80f1e8a024f23fafd63e9f42d722b931796f4e836f6e720d1586a6712b2f36
+content_hash: sha256:0c9d38c8d27bb9959ed8d606ea791854b2186a676477bc5581c06977d1064045
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:8c80f1e8a024f23fafd63e9f42d722b931796f4e836f6e720d1586a6712
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/M1bGD2E2Rw6f7RClbXMyyQ/zh-cn_image_0000002757231691.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/HLei8Af6RrK-5guzeT9qIg/zh-cn_image_0000002762995005.png)
 
 流程说明：
 

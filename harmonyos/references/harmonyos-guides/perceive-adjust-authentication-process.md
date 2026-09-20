@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perceive-adju
 title: 感知和调整认证过程
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 感知和调整认证过程
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2ae963b20f2d466bcc7a55516eacc7014b710f95da2a9350e5b1eb330898db55
+scraped_at: 2026-09-21T06:17:50+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:ad0f56359c033a8e627ca910c5cd3250d94b644665408f29f19d3f8c27fd81c3
 ---
 
 从API version 20开始，在应用发起身份认证时，可通过接口调整认证过程，以及感知认证过程。
@@ -60,11 +60,9 @@ perceiveAndAdjustAuthentication() {
       try {
         Logger.info('userAuthInstance callback.');
         this.result[ResultIndex.PERCEIVE_ADJUST] = (`${authTipInfo.tipType}`);
-        // 认证完成后取消订阅
-        userAuthInstance.off('result');
       } catch (error) {
         const err: BusinessError = error as BusinessError;
-        Logger.error(`onResult failed, code: ${err?.code}, Message: ${err?.message}`);
+        Logger.error(`onAuthTip failed, code: ${err?.code}, Message: ${err?.message}`);
       }
     });
     // 开始认证

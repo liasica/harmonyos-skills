@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoeditorex
 title: 拉起图片编辑类应用（startAbilityByType）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起图片编辑类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:44:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:58143264c2abf80bd1e64cdf2a301558de51dc100d63b2f0b174071b34c73d61
+scraped_at: 2026-09-21T06:17:05+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:e6ee7587a72d903a0cda2267b67a31f33aa7bfa9efc6e9f98cb37ac02ceb3cdb
 ---
 
 ## 使用场景
@@ -14,7 +14,7 @@ content_hash: sha256:58143264c2abf80bd1e64cdf2a301558de51dc100d63b2f0b174071b34c
 
 流程示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/5FSPb-3xSh2mBWqPT96Ixw/zh-cn_image_0000002757309427.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/mouxNPecSzi9wThs1Dh_gw/zh-cn_image_0000002733433300.png)
 
 例如：用户在图库App中选择编辑图片时，图库App可以通过startAbilityByType拉起图片编辑类应用扩展面板。用户可以从已实现PhotoEditorExtensionAbility应用中选择一款，并进行图片编辑。
 
@@ -190,7 +190,7 @@ content_hash: sha256:58143264c2abf80bd1e64cdf2a301558de51dc100d63b2f0b174071b34c
 
    type标签需要配置为"photoEditor"，srcEntry需要配置为PhotoEditorExtensionAbility组件所对应的代码路径。
 
-   ```json
+   ```json5
    {
      "module": {
        "extensionAbilities": [
@@ -255,7 +255,9 @@ content_hash: sha256:58143264c2abf80bd1e64cdf2a301558de51dc100d63b2f0b174071b34c
     } catch (e) {
       hilog.error(0x0000, TAG, `readImage failed:${e}`);
     } finally {
-      fileIo.close(file);
+      if (file) {
+        fileIo.close(file);
+      }
     }
    ```
 4. 在startAbilityByType回调函数中，通过want.uri获取编辑后的图片uri，并做对应的处理。
@@ -341,7 +343,9 @@ struct Index {
     } catch(e) {
       hilog.error(0x0000, TAG, `readImage failed:${e}`);
     } finally {
-      fileIo.close(file);
+      if (file) {
+        fileIo.close(file);
+      }
     }
     return null;
   }
@@ -349,23 +353,23 @@ struct Index {
   // 图库中选取图片
   async photoPickerGetUri(): Promise<string> {
     try {
-        let textInfo: photoAccessHelper.TextContextInfo = {
-            text: 'photo'
-        }
-        let recommendOptions: photoAccessHelper.RecommendationOptions = {
-            textContextInfo: textInfo
-        }
-        let options: photoAccessHelper.PhotoSelectOptions = {
-            MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
-            maxSelectNumber: 1,
-            recommendationOptions: recommendOptions
-        }
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        let photoSelectResult: photoAccessHelper.PhotoSelectResult = await photoPicker.select(options);
-        return photoSelectResult.photoUris[0];
+      let textInfo: photoAccessHelper.TextContextInfo = {
+        text: 'photo'
+      }
+      let recommendOptions: photoAccessHelper.RecommendationOptions = {
+        textContextInfo: textInfo
+      }
+      let options: photoAccessHelper.PhotoSelectOptions = {
+        MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
+        maxSelectNumber: 1,
+        recommendationOptions: recommendOptions
+      }
+      let photoPicker = new photoAccessHelper.PhotoViewPicker();
+      let photoSelectResult: photoAccessHelper.PhotoSelectResult = await photoPicker.select(options);
+      return photoSelectResult.photoUris[0];
     } catch (error) {
-        let err: BusinessError = error as BusinessError;
-        hilog.error(0x0000, TAG, 'PhotoViewPicker failed with err: ' + JSON.stringify(err));
+      let err: BusinessError = error as BusinessError;
+      hilog.error(0x0000, TAG, 'PhotoViewPicker failed with err: ' + JSON.stringify(err));
     }
     return "";
   }
@@ -397,7 +401,9 @@ struct Index {
             } catch (e) {
               hilog.info(0x0000, TAG, `readImage failed:${e}`);
             } finally {
-              fileIo.close(file);
+              if (file) {
+                fileIo.close(file);
+              }
             }
           })
 

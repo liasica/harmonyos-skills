@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.util.stream (数据流基类stream)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.stream (数据流基类stream)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:19c61bca5934a15bcf53c4220239b10888182511291062bed8b57003ca586f10
+scraped_at: 2026-09-21T06:20:22+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:049860371482c255834ba4ad65aa264d1820b5d0aa153ef7d1556836e639fb37
 ---
 
 本模块提供基本流类型的处理能力，支持数据分块读取或写入，避免一次性加载整个数据到内存。
@@ -857,7 +857,7 @@ on(event: string, callback: Callback<emitter.EventData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | string | 是 | 事件回调类型，支持的事件包括：'close' | 'data' | 'end' | 'error' | 'readable' | 'pause' | 'resume' 。  - 'close'：完成[push()](js-apis-stream.md#push)调用，传入null值，触发该事件。  - 'data'：当流传递给消费者一个数据块时触发该事件。  - 'end'：完成[push()](js-apis-stream.md#push)调用，传入null值，触发该事件。  - 'error'：流发生异常时触发。  - 'readable'：当有可从流中读取的数据时触发该事件。  - 'pause'：完成[pause()](js-apis-stream.md#pause)调用，触发该事件。  - 'resume'：完成[resume()](js-apis-stream.md#resume)调用，触发该事件。 |
+| event | string | 是 | 事件回调类型，支持的事件包括：'close' | 'data' | 'end' | 'error' | 'readable' | 'pause' | 'resume' 。  - 'close'：可读流关闭，发生error事件或end事件后触发该事件。  - 'data'：当流传递给消费者一个数据块时触发该事件。  - 'end'：完成[push()](js-apis-stream.md#push)调用，传入null值，触发该事件。  - 'error'：流发生异常时触发。  - 'readable'：当有可从流中读取的数据时触发该事件。  - 'pause'：完成[pause()](js-apis-stream.md#pause)调用，触发该事件。  - 'resume'：完成[resume()](js-apis-stream.md#resume)调用，触发该事件。 |
 | callback | Callback<[emitter.EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回事件数据。 |
 
 **示例：**
@@ -894,7 +894,7 @@ off(event: string, callback?: Callback<emitter.EventData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | string | 是 | 事件回调类型，支持的事件包括：'close' | 'data' |'end' | 'error'|'readable'|'pause'|'resume' 。  - 'close'：完成[push()](js-apis-stream.md#push)调用，传入null值，触发该事件。  - 'data'：当流传递给消费者一个数据块时触发该事件。  - 'end'：完成[push()](js-apis-stream.md#push)调用，传入null值，触发该事件。  - 'error'：流发生异常时触发。  - 'readable'：当有可从流中读取的数据时触发该事件。  - 'pause'：完成[pause()](js-apis-stream.md#pause)调用，触发该事件。  - 'resume'：完成[resume()](js-apis-stream.md#resume)调用，触发该事件。 |
+| event | string | 是 | 事件回调类型，支持的事件包括：'close' | 'data' |'end' | 'error'|'readable'|'pause'|'resume' 。  - 'close'：可读流关闭，发生error事件或end事件后触发该事件。  - 'data'：当流传递给消费者一个数据块时触发该事件。  - 'end'：完成[push()](js-apis-stream.md#push)调用，传入null值，触发该事件。  - 'error'：流发生异常时触发。  - 'readable'：当有可从流中读取的数据时触发该事件。  - 'pause'：完成[pause()](js-apis-stream.md#pause)调用，触发该事件。  - 'resume'：完成[resume()](js-apis-stream.md#resume)调用，触发该事件。 |
 | callback | Callback<[emitter.EventData](js-apis-emitter.md#eventdata)> | 否 | 指定事件的要注销的回调函数。不传入时注销指定事件的所有回调函数。 |
 
 **示例：**

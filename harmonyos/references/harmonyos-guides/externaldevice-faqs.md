@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevic
 title: 常见问题
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:729c900189b6a0222904f384f2cce7f96d0a9d8b38168bea0aef451802ac9b9c
+scraped_at: 2026-09-21T06:18:00+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:64ddd257351e1e47526b292c9114903ac1d30b4eec52065003b00d157f5a0855
 ---
 
 ## 编译或运行时无法找到头文件
@@ -46,6 +46,16 @@ content_hash: sha256:729c900189b6a0222904f384f2cce7f96d0a9d8b38168bea0aef451802a
 ### 解决措施
 
 根据应用调试中[安装HAP时提示“code:9568347 error: install parse native so failed”错误，或者运行时候提示“TypeError：Cannot read property xxx of undefined”错误](../harmonyos-faqs-V5/faqs-app-debugging-14-V5.md)提供的解决方法，在build-profile.json5中的buildOption/externalNativeOptions内手动配置abiFilters的值。
+
+## 已申请ohos.permission.ACCESS\_DDK\_DRIVERS权限，安装HAP时报错9568289
+
+### 问题现象
+
+已经申请到了ACL权限ohos.permission.ACCESS\_DDK\_DRIVERS并随工程打包到HAP应用包中，但安装HAP的时候报错“9568289 grant request permissions failed”。
+
+### 解决措施
+
+目前，ohos.permission.ACCESS\_DDK\_DRIVERS权限在应用市场的申请和运营流程正在维护中，涉及工程中使用了[bindDriverWithDeviceId](../harmonyos-references/js-apis-driver-devicemanager.md#devicemanagerbinddriverwithdeviceid19)、[unbindDriverWithDeviceId](../harmonyos-references/js-apis-driver-devicemanager.md#devicemanagerunbinddriverwithdeviceid19)接口的，可以替换为[bindDeviceDriver](../harmonyos-references/js-apis-driver-devicemanager.md#devicemanagerbinddevicedriverdeprecated-1)、[unbindDevice](../harmonyos-references/js-apis-driver-devicemanager.md#devicemanagerunbinddevicedeprecated-1)接口，接口的业务功能完全一致。
 
 ## 使用基于缓冲区发送数据的DDK接口时，未按照指定的offset和bufferLength发送
 

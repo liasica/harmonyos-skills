@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/commonlibrary
 title: 基础库常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > 基础库常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:45+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:6ea1d9c17672c446e7025e08f45dd6da46dfb3250382d0572cd28adab8d6dad8
+scraped_at: 2026-09-21T06:17:11+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:0c0fec7f86181a434ae829157c0e1eedebc7a4c955810b02bb8d59195b1ac9b2
 ---
 
 ## 解析大文件xml发生内存溢出（Out of Memory）
@@ -208,3 +208,45 @@ Base64编码表如下：
 | 编码转换（不足6位补0） | 010000 | 010100 | 001000 | － |
 | base64索引值 | 16 | 20 | 8 | － |
 | base64字符 | Q | U | I | = |
+
+## 为什么HashSet和TreeSet的add方法添加已存在元素时返回true
+
+[HashSet](../harmonyos-references/js-apis-hashset.md)和[TreeSet](../harmonyos-references/js-apis-treeset.md)的add方法在API参考中的返回值描述为：成功添加新元素至容器返回true，当元素已存在时返回false。当前代码实现中，添加已存在的元素时返回值同样为true，与API参考中的返回值描述存在差异。
+
+**说明** 
+
+该差异仅体现在返回值上，不影响集合功能。已存在的元素不会重复添加，容器的length保持不变，集合元素的唯一性不受影响。
+
+规避方案：不要通过add方法的返回值判断元素是否已存在，可在调用add方法前先使用has方法判断，或对比调用add方法前后容器的length是否发生变化。
+
+**示例代码**
+
+```ts
+import { HashSet, TreeSet } from '@kit.ArkTS';
+
+// 创建HashSet实例并添加元素
+let hashSet = new HashSet<string>();
+hashSet.add('squirrel');
+// 添加已存在的元素
+let result = hashSet.add('squirrel');
+console.info('result:', result);
+// 期望输出: result: false
+// 实际输出: result: true
+console.info('length:', hashSet.length); // length: 1，元素未重复添加
+
+// 创建TreeSet实例并添加元素
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+// 添加已存在的元素
+let treeResult = treeSet.add('squirrel');
+console.info('treeResult:', treeResult);
+// 期望输出: treeResult: false
+// 实际输出: treeResult: true
+console.info('length:', treeSet.length); // length: 1，元素未重复添加
+
+// 推荐做法：先通过has方法判断，避免依赖add方法的返回值
+let value = 'sparrow';
+if (!hashSet.has(value)) {
+  hashSet.add(value);
+}
+```

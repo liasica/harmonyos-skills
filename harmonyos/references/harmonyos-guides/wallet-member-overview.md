@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-member
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 会员卡 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:30+08:00
+scraped_at: 2026-09-21T06:18:51+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:ccb4628d620108e872b380683c2939f8ec6077d88b1d924dbd708d12b7d28a1b
+content_hash: sha256:e3aa0a90c1c4a20c5faad5d4683cbcfb476ea6389554c2c506778143f1129ed8
 ---
 
 各类实体会员卡添加至华为钱包后，不仅可随时查看积分、权益和品牌活动，还能第一时间接收商家推送的会员专属信息。这种便捷的触达方式，帮助商家持续与用户保持连接，有效提升会员活跃度与忠诚度。
@@ -14,7 +14,7 @@ content_hash: sha256:ccb4628d620108e872b380683c2939f8ec6077d88b1d924dbd708d12b7d
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/7GGwFOk_RRGmANThziaFuQ/zh-cn_image_0000002757311617.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/t1eObgLCQW2UX-zQFdW9sw/zh-cn_image_0000002733435528.png)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -29,11 +29,11 @@ content_hash: sha256:ccb4628d620108e872b380683c2939f8ec6077d88b1d924dbd708d12b7d
 
 ### 会员卡开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/KSZb9uyuRSO23A1oypUSfQ/zh-cn_image_0000002757231737.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/n-JvZJxwTTaypCakN_Wp2Q/zh-cn_image_0000002762995051.png)
 
 ### 会员卡展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/81nGk0i1QvOrlDrtIXdtrg/zh-cn_image_0000002727592046.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/V7oJJphmRgCNeV8rXfHH5Q/zh-cn_image_0000002762835163.png)
 
 ## 接入流程
 

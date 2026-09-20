@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-conne
 title: 网络连接安全配置
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 连接网络开发实践 > 网络连接安全配置
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:36+08:00
+scraped_at: 2026-09-21T06:17:53+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:aad061bfd339a1709e553c671717755be9ac2b521d2cebbd3ec73ec0dfde8e29
+content_hash: sha256:7290beeb5aee28c68dbce56044504e98fd429ac7dd6560e5fb8bfde7aeebc63d
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:aad061bfd339a1709e553c671717755be9ac2b521d2cebbd3ec73ec0dfd
 
 本文介绍如何配置CA证书以进行合法性校验，避免应用或云侧服务器的安全风险。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/MphHy08HTLCWx_SqGuOEQQ/zh-cn_image_0000002727751016.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/0Wxb0sgHQVajbikNUV9NVg/zh-cn_image_0000002733274744.png)
 
 ## 配置CA证书对服务器进行合法性校验
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-csc
 title: 图片色彩空间转换
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用ImageProcessing处理图片 > 图片色彩空间转换
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:59+08:00
+scraped_at: 2026-09-21T06:18:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3f99b4d90330a7b6c538eeb82777fb75992e5f0a187880f6e0d978e6d93d8ed2
+content_hash: sha256:0e53a18b2cb23cd3a228fb93557c93313578e7701e5236e62f5706934b80e6b1
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-imageprocessing.md)，实现HDR2SDR、SDR2HDR、SDR2SDR的图片色彩空间转换。
 
 该能力常用于图片编辑中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/N29DXu8tTFWaObKQiC2V5g/zh-cn_image_0000002757310943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/e4dF1U6OQYOJpa818IwsRg/zh-cn_image_0000002733434842.png)
 
 ## 规格说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-default-u
 title: User-Agent开发指导
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > User-Agent开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:23+08:00
-doc_updated_at: 2026-04-30
-content_hash: sha256:09247e47e8c0ec9c86438a69debf2e740b47c984874fecca890cafae6df10e2b
+scraped_at: 2026-09-21T06:17:31+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:f037b53a31b302f3696079cd17206fc8e6447ca0bc45fdd0af6d76beda02d4d1
 ---
 
 User-Agent（简称UA）是一个特殊的字符串，包含设备类型、操作系统及版本等关键信息。在Web开发中，这个字符串使服务器能够识别请求的来源设备及其特性，从而根据这些信息提供定制化的内容和服务。如果页面无法正确识别UA，可能会导致多种异常情况。例如，为移动设备优化的页面布局可能会在桌面设备上显示错乱，反之亦然。此外，某些特定的浏览器功能或CSS样式可能仅在特定的浏览器版本中受支持，如果页面无法根据UA字符串做出正确的判断，就可能导致渲染问题或逻辑错误。
@@ -238,13 +238,17 @@ HarmonyOS提供[setCustomUserAgent](../harmonyos-references/arkts-apis-webview-w
 
 ### 如何解决H5页面的UA兼容性问题
 
+**Q：如何在UA中判断网页由自带的浏览器中打开还是在应用webview中打开**
+
+A：手机自带浏览器有"HuaweiBrowser"字段，可以通过该字段进行区分。
+
 **Q：移动设备上网页呈现电脑版样式或电脑设备上网页呈现移动样式展示**
 
 A：网站会针对不同UA展示不同样式页面。需要移动设备UA设置DeviceCompat为"Mobile"，DeviceType为"Phone"，PC设备UA设置DeviceCompat为""，DeviceType为"PC"，平板设备UA设置DeviceCompat为""，DeviceType则为"Tablet"。
 
 **Q：部分网页打不开或显示“不支持的浏览器”**
 
-A：网页未适配OpenHarmony UA，需要网页对"OpenHarmony"标识作兼容处理。
+A：网页未适配OpenHarmony UA，需要网页对"OpenHarmony"标识作兼容处理。在网页适配前，可通过[setCustomUserAgent()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setcustomuseragent10)在默认UA中追加其他兼容性字段进行临时过渡适配。
 
 **Q：页面循环跳转**
 

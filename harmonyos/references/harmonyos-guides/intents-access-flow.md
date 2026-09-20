@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-acces
 title: Intents Kit接入流程
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > Intents Kit接入流程
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:51+08:00
+scraped_at: 2026-09-21T06:19:13+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:68e794a80d8615d49f55ea58c3a00a021019be48e0e5a0cbafe4f3f5a687c20c
+content_hash: sha256:601981228ed4457b9e699a7a61cb1080d616a461e0c5d318db13fc7a3b115506
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/9YU0O8JERxW1iRmvVv1W3Q/zh-cn_image_0000002757311747.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/XSqdX35HT4ubGWeIVc0SHA/zh-cn_image_0000002733435658.png)
 
 **阶段一：意向**
 
@@ -21,17 +21,17 @@ content_hash: sha256:68e794a80d8615d49f55ea58c3a00a021019be48e0e5a0cbafe4f3f5a68
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择“开发与服务”，在项目列表选择项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/H2QitLQmT7GkydIOK3ZFBQ/zh-cn_image_0000002757231867.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/qbnWr6FYSRiY2mmEj58ojQ/zh-cn_image_0000002762995181.png)
 2. 选择项目后，选择需要申请开通能力的应用。
 3. 进入“项目设置 > 开放能力管理”页面，点击“意图框架”对应能力的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/UnGTj-7RSHG-OGONdf8s5Q/zh-cn_image_0000002727592176.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/YZ5ytdjcTfiSBogqnbUEgg/zh-cn_image_0000002762835293.png)
 4. 参考“申请原因”中的模版，提供必要的申请信息，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/GO_VUpUrQViDmq4AtkEqig/zh-cn_image_0000002727752034.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/8gu8eA6jQZyln3Jw57IpTA/zh-cn_image_0000002733275780.png)
 5. 返回“开放能力管理”页面，原“申请”变为“申请中”，1~3个工作日内反馈申请结果。申请结果请留意互动中心的“服务开通申请”信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/AYGt3FcKRi6-f3CQPF-CrQ/zh-cn_image_0000002757311749.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/jImRwLWzQfWH7ng8Lw6tXw/zh-cn_image_0000002733435660.png)
 
 **阶段二：开发**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animata
 title: "@AnimatableExtend装饰器：定义可动画属性"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @AnimatableExtend装饰器：定义可动画属性
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:00+08:00
+scraped_at: 2026-09-21T06:17:15+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3860be88d22821bf2a422926db6b826f724b20f5e34dd968d28d0deb3ca5af30
+content_hash: sha256:bd22bc7462f3c0a2d89c4070008e124c60436dead4c13cd961ba7c6053559912
 ---
 
 @AnimatableExtend装饰器用于自定义可动画的属性方法，在这个属性方法中修改组件不可动画的属性。在动画执行过程中，通过逐帧回调函数修改不可动画属性值，让不可动画属性也能实现动画效果。也可通过逐帧回调函数修改可动画属性的值，实现逐帧布局的效果。
@@ -76,7 +76,7 @@ struct AnimatablePropertyText {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/zfh7_24cTzuuaEMVNizfow/zh-cn_image_0000002757229681.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/bTWGTb05TLOnVrYKN3J6LQ/zh-cn_image_0000002762992963.gif)
 
 以下示例实现折线的动画效果。
 
@@ -201,4 +201,4 @@ struct  AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/v7tNHYS8STSvcLik4Z0H-w/zh-cn_image_0000002727589990.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/KJ5vAm1pQPSPLKdwbwRnOw/zh-cn_image_0000002762833077.gif)

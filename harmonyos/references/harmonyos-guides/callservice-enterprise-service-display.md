@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/callservice-e
 title: 企业服务信息来去电页面显示
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 企业服务信息来去电页面显示
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:13+08:00
+scraped_at: 2026-09-21T06:18:32+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:54f22fe559e089313f9d4f1bd413e2e50b08cea41e44af08af54015c2b66b9d1
+content_hash: sha256:8431135d40ad1b5eaad27c10e65f13c6b7ebfb3c13e2bfdafc9bf46d4aee21f7
 ---
 
 从6.1.1(24)版本开始，新增支持企业服务信息来去电页面显示。
@@ -37,11 +37,11 @@ content_hash: sha256:54f22fe559e089313f9d4f1bd413e2e50b08cea41e44af08af54015c2b6
 
 3.进入“项目设置 > 开放能力管理”页面，点击“企业服务信息展示”对应的“申请”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/4S5BclsFRe6EtDIWYHynxg/zh-cn_image_0000002727751512.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/SWwj8UpCQkeCLEs3Bea23Q/zh-cn_image_0000002733275254.png)
 
 4.请根据实际业务需求在弹框中填写对应信息，完成后，点击右上角“提交”，提交后将在3个工作日内完成审核，审核结果请在[互动中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)查看。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/B1hbbt9ERWyQ89Ak27JWdw/zh-cn_image_0000002757311227.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/UQq-To9yTTO372Od_GVOJw/zh-cn_image_0000002733435134.png)
 
 ## 替换调试Profile
 

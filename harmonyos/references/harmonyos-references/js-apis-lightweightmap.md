@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-l
 title: "@ohos.util.LightWeightMap (非线性容器LightWeightMap)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.LightWeightMap (非线性容器LightWeightMap)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:47+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7418aad866ab9519d97b965135d54815475da4fcd83392421b641e388b505404
+scraped_at: 2026-09-21T06:20:20+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:bb7aed89b96c59af1170412a2737a246958d8c8bc6905ba6d5407ce2e2aa54e2
 ---
 
 LightWeightMap可用于存储具有关联关系的key-value键值对，其中key值唯一，每个key对应一个value。
@@ -35,7 +35,7 @@ LightWeightMap和[HashMap](js-apis-hashmap.md)都是用来存储键值对的容�
 
 这是因为，当key为number类型且值大于INT32\_MAX或小于INT32\_MIN时，存储结构会发生改变。
 
-例如在以下示例针对key的计算中，1758783600000大于INT32\_MAX，此时会通过TaggedDouble存储；1758783600小于INT32\_MIN，此时会通过TaggedInt存储。由于以上存储方式的差异，当对其进行hash算法即会计算出不同的hash值，从而导致映射结果不同，产生与预期不一致的现象。
+例如在以下示例针对key的计算中，1758783600000大于INT32\_MAX，此时会通过TaggedDouble存储；1758783600小于INT32\_MAX，大于INT32\_MIN，此时会通过TaggedInt存储。由于以上存储方式的差异，当对其进行hash算法即会计算出不同的hash值，从而导致映射结果不同，产生与预期不一致的现象。
 
 ```ts
 let lightWeightMap = new LightWeightMap<number, number>();

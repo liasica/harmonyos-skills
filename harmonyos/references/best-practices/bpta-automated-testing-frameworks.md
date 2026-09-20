@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-automated-
 title: 自动化测试框架开发实践
 breadcrumb: 最佳实践 > 测试框架 > 自动化测试框架开发实践
 category: best-practices
-scraped_at: 2026-09-16T06:55:17+08:00
+scraped_at: 2026-09-21T06:25:55+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:f3b2f705582a46dcbaa244bd607cdae4dfa37051c0325673da99d21a8be4a12f
+content_hash: sha256:6204f4c06e7317ae613f6d7cb9dafd87fba39ffbb8b3d5f36c23f5aa8c60c17d
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:f3b2f705582a46dcbaa244bd607cdae4dfa37051c0325673da99d21a8be
 
 本文介绍了单元测试框架和UI测试框架的实现。旨在帮助开发者了解和掌握自动化测试框架的开发流程与实现细节。关键步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Rdq6ITEPSDaMRJg_zJ37RA/zh-cn_image_0000002515546966.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/WX_R1DNqQuG0OeFUK_KROQ/zh-cn_image_0000002515546966.png "点击放大")
 
 ## 场景案例
 
@@ -55,7 +55,7 @@ content_hash: sha256:f3b2f705582a46dcbaa244bd607cdae4dfa37051c0325673da99d21a8be
 
   UI测试流程图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/xl57MUt4Thi1IkTH6uwiIQ/zh-cn_image_0000002515387058.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/zXcWTQWCT0qpN-jCxzKMfw/zh-cn_image_0000002515387058.png "点击放大")
 
 ### 开发步骤
 
@@ -77,14 +77,14 @@ content_hash: sha256:f3b2f705582a46dcbaa244bd607cdae4dfa37051c0325673da99d21a8be
      ```
    * 方案二：在应用工程的[oh-package.json5](../harmonyos-guides/ide-oh-package-json5.md)文件的devDependencies中配置版本号，然后点击编辑器窗口上方的“Sync Now”同步工程，即可使用对应版本的框架功能。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/bcLjX4vcS4aalTydVkgiCg/zh-cn_image_0000002554811799.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/6Ow36_hsR9GNPhDGU6GSSA/zh-cn_image_0000002554811799.png)
 3. 新建测试脚本
 
    参考[创建ArkTS测试用例](../harmonyos-guides/ide-instrument-test.md#section36049271219)，导入所需的单元测试框架能力（[单元测试框架能力使用说明](../harmonyos-guides/unittest-guidelines.md#单元测试框架能力使用说明)）及其他测试脚本中依赖的接口，[编写单元测试脚本](../harmonyos-guides/unittest-guidelines.md#编写单元测试脚本)。
 
    启动被测试页面，检查设备显示的页面是否为预期页面。流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Bw3a7GSlQrapdo5WZi8M4Q/zh-cn_image_0000002547066887.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/KKG5FSFwS2eEdBVRuv4Brw/zh-cn_image_0000002547066887.png "点击放大")
 
    在自动化测试中，常用[基础流程能力](../harmonyos-guides/unittest-guidelines.md#基础流程能力)的it定义测试用例，其参数如下：
 
@@ -213,7 +213,7 @@ content_hash: sha256:f3b2f705582a46dcbaa244bd607cdae4dfa37051c0325673da99d21a8be
 
      数据驱动需要使用Ability能力，可参考[自定义Ability和Resources](../harmonyos-guides/ide-instrument-test.md#section760061533)。文件内容示例可在[运行测试用例](../harmonyos-guides/ide-instrument-test.md#section14415226122419)后，在对应模块的build/{productName}/intermediates/src/ohosTest下查看。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/zejCAoDoTE6h0g-O5NZBGA/zh-cn_image_0000002504491476.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/gsx6GkGIQQaiPaxq6MoSQg/zh-cn_image_0000002504491476.png)
 
      定义Ability后需要在module.json5文件中补充配置字段mainElement、pages和abilities。关于字段的具体说明，请参考[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)。
 
@@ -414,7 +414,7 @@ content_hash: sha256:f3b2f705582a46dcbaa244bd607cdae4dfa37051c0325673da99d21a8be
 
 自动化测试实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/v1FUIZvtQUmWElzdQhup-w/zh-cn_image_0000002536291283.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/j6nL3x3bT-y6763hJ5b7xg/zh-cn_image_0000002536291283.gif "点击放大")
 
 ## 常见问题
 
@@ -424,7 +424,7 @@ content_hash: sha256:f3b2f705582a46dcbaa244bd607cdae4dfa37051c0325673da99d21a8be
 
 使用[assertInstanceOf()](../harmonyos-guides/unittest-guidelines.md#断言能力)检验自定义数据类型，脚本运行时报错“Error in getFirstGridData, [object Object] is [object Object]not ItemData”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Mc8GzkwlREW3eoG1J2BdTA/zh-cn_image_0000002536411247.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/WYViakISQzq9kWGTfr_BBQ/zh-cn_image_0000002536411247.png)
 
 **可能原因**
 

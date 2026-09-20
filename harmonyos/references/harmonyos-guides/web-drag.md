@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-drag
 title: 使用Web组件的拖拽功能与网页交互
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件的拖拽功能与网页交互
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:15+08:00
+scraped_at: 2026-09-21T06:17:31+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7642c96270184e15b1a6e9319b9baa96fe71eb587408e7efab7fbb1778747e0a
+content_hash: sha256:1964f133408cf8acfdabbcf1444f7282c1d9ee2a027ab6f933decc187988c3fe
 ---
 
 ArkWeb的拖拽功能使应用能够在网页中实现元素的拖放，用户可以长按可拖拽的元素，将其拖至可放置的元素上，然后松手完成放置。ArkWeb在网页内容中的拖拽功能满足H5标准。
@@ -207,11 +207,11 @@ H5示例:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/bI0cuSnERXK4dnxkifeRZg/zh-cn_image_0000002757230563.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/k628NXNkQyuvJrMQTxbJ5g/zh-cn_image_0000002762993855.gif)
 
 日志打印：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/GUfEdfkzRaW7ruc8WSGE1g/zh-cn_image_0000002727590872.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/5u3XT-VjR6af7Tn_TVSJBw/zh-cn_image_0000002762833969.png)
 
 ## 常见问题
 
@@ -314,7 +314,7 @@ H5示例1:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Z0dZ07hoRRi-aYH8tZ3R6A/zh-cn_image_0000002727750730.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/AWBOMH_sSbq_kVxLs09y6A/zh-cn_image_0000002733274452.gif)
 
 html示例2:
 
@@ -351,7 +351,7 @@ html示例2:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/1Oy78zohSEyUIMR7CCJg4Q/zh-cn_image_0000002757310445.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/gkvYD0W1S5Gho5b7ZiX27Q/zh-cn_image_0000002733434334.gif)
 
 ArkTS示例:
 

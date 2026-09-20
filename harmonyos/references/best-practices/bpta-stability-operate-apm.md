@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: APM能力建设
 breadcrumb: 最佳实践 > 稳定性 > 稳定性运维 > APM能力建设
 category: best-practices
-scraped_at: 2026-09-16T06:55:16+08:00
+scraped_at: 2026-09-21T06:25:54+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:da0623a17378b0b498c6240c4e6185c48c3b4fd7f4e00bed71906b2c048b84b2
+content_hash: sha256:9d24306e5e7cea7566100ce23e0055ccde002e830302c9935c4c3dca391a0bf1
 ---
 
 APM作为应用性能管理平台，可线上监控应用质量。系统提供采集质量数据的能力，开发者可以收集这类数据构建APM平台。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ZwORWFH3RxWvK1LrLTy8Zw/zh-cn_image_0000002404125277.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ks7jSadUS26R4OdJGyrmdQ/zh-cn_image_0000002404125277.png "点击放大")
 
 本文主要介绍如何通过HiAppEvent订阅接口采集系统事件。其中，系统事件是指应用运行期间，应用进程发生的性能、功耗、稳定性等故障，HiAppEvent会将这些故障通过事件返回给开发者。
 
@@ -52,7 +52,7 @@ external\_log返回的路径是沙箱目录，非真实物理路径，应用有�
 
 原理如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/s8FaFghwSYioeIXJhhNz_Q/zh-cn_image_0000002382129722.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/kT6zEGx3QPKGO82SSpqUNw/zh-cn_image_0000002382129722.png "点击放大")
 
 **说明** 
 
@@ -103,7 +103,7 @@ hiAppEvent.setEventParam(params, hiAppEvent.domain.OS, hiAppEvent.event.APP_CRAS
 
 以崩溃采集为例，可参考如下设计：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/iWvfASJ2Tu6zCE2UgpixNg/zh-cn_image_0000002404045473.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/7zLqoRm4TUe5WpEOroYhWA/zh-cn_image_0000002404045473.png)
 
 1. APM代码早于业务代码。
 2. 应用启动阶段注册ErrorManager，可以捕获JS异常，发生JsError崩溃时进程不会退出。参考[如何使用ErrorManager捕获异常](../harmonyos-faqs-V5/faqs-arkts-81-V5.md)。

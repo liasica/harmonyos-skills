@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-spatiality
 title: 沉浸光感
 breadcrumb: 最佳实践 > 技术创新 > 沉浸光感
 category: best-practices
-scraped_at: 2026-09-16T06:54:55+08:00
+scraped_at: 2026-09-21T06:25:33+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:ea6b0d12a5f0d0742164370087be202d68ab4a823fc035c45bd9229e6d4ac830
+content_hash: sha256:f6298647dffd6d02016ed2cc00fd1ae4d7b9ed2c31d3205ec51ec49b8744a4d7
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:ea6b0d12a5f0d0742164370087be202d68ab4a823fc035c45bd9229e6d4
 
 [沉浸光感](../harmonyos-guides/arkts-immersive-light-sense.md)是空间化视觉的基石，为组件（标题栏、导航栏、工具栏等）提供三种视觉效果：内容相关的毛玻璃模糊、按压状态的弹性光效反馈、以及滑动过程的透明度渐变。悬浮组件则是空间化的交互载体，底部导航栏从传统的贴底色块变为悬浮圆角胶囊，配合MiniBar折叠展开、智感握姿左右跟随等能力，让交互更加自然流畅。空间化的效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/b8YIEFVASKmnGOnOetwbuw/zh-cn_image_0000002594475428.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/m36M_ZFTQUmMH7RTdmvwNA/zh-cn_image_0000002594475428.png "点击放大")
 
 本文将从沉浸光感的基础概念切入，重点围绕首眼沉浸光感、自适应悬浮导航与智感握姿智能交互三大应用场景，系统介绍如何在HarmonyOS应用中快速接入沉浸光感能力。
 
@@ -35,7 +35,7 @@ content_hash: sha256:ea6b0d12a5f0d0742164370087be202d68ab4a823fc035c45bd9229e6d4
 
 沉浸光感视觉示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/2SQsVVu7SAGlZmwwcLGI2Q/zh-cn_image_0000002594053198.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Ey70Ga70RzGiMWySt6ZtLQ/zh-cn_image_0000002594053198.png "点击放大")
 
 ### 沉浸光感的档位
 
@@ -106,7 +106,7 @@ content_hash: sha256:ea6b0d12a5f0d0742164370087be202d68ab4a823fc035c45bd9229e6d4
 
 标题栏是沉浸光感最直观的体现。沉浸光感标题栏示意图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/M7imyNwuTNu-2_QkOTrmUA/zh-cn_image_0000002624492723.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/7i0rBw3TRxa8233OXyUSsg/zh-cn_image_0000002624492723.gif "点击放大")
 
 * 标题栏使用材质
 
@@ -144,14 +144,14 @@ content_hash: sha256:ea6b0d12a5f0d0742164370087be202d68ab4a823fc035c45bd9229e6d4
 
   悬浮导航示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/qWALC4FZQTaRfhPx8L6ewQ/zh-cn_image_0000002594213114.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/m8pipZiyRAGhKxCI-XQwnA/zh-cn_image_0000002594213114.png "点击放大")
 * 设置沉浸光感效果
 
   悬浮导航栏的沉浸光感效果可通过barFloatingStyle中的systemMaterialEffect属性进行配置，其中materialType用于定义材质风格，materialLevel则控制材质强度。
 
   沉浸光感示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/e_qOEFSuQqOxNjH2Vm_Hsg/zh-cn_image_0000002624612573.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/k14b9_37S8ybTT8qk1CHiA/zh-cn_image_0000002624612573.png "点击放大")
 * 沉浸式MiniBar
 
   针对悬浮导航的多功能场景，例如音乐播放等需同时展示底部导航和播放控制的场景，HdsTabs提供了MiniBar能力，即在底部导航栏中嵌入一个可折叠展开的[迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)。
@@ -161,7 +161,7 @@ content_hash: sha256:ea6b0d12a5f0d0742164370087be202d68ab4a823fc035c45bd9229e6d4
 
   MiniBar示意图如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/6kZQ-WCIRz6CX9fbB6MQgQ/zh-cn_image_0000002594053200.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/JpXv-a49QY6WhFskBrvjwQ/zh-cn_image_0000002594053200.gif)
 
 ### 内容区域组件适配
 
@@ -177,7 +177,7 @@ content_hash: sha256:ea6b0d12a5f0d0742164370087be202d68ab4a823fc035c45bd9229e6d4
 
 效果示意图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/h90J5bZzSJOhN3MpDgIqFw/zh-cn_image_0000002624492725.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/fwRZIseFQnCd2sDCx7jXtQ/zh-cn_image_0000002624492725.gif)
 
 ## 场景一：应用首眼沉浸光感
 
@@ -311,7 +311,7 @@ content_hash: sha256:ea6b0d12a5f0d0742164370087be202d68ab4a823fc035c45bd9229e6d4
 
 菜单栏沉浸光感适配的核心是通过封装版本兼容的材质工具类，实现API级别的平滑过渡。菜单栏沉浸光感效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/A5BW4lg1R0OjncorxHG5WA/zh-cn_image_0000002624951609.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/4IAWm3g8TJKI7uK8NKyLZA/zh-cn_image_0000002624951609.gif "点击放大")
 
 * 材质工具类封装
 

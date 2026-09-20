@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-backgr
 title: 相机启动恢复实践(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机启动恢复实践(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:56+08:00
+scraped_at: 2026-09-21T06:18:14+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:6495b39e677897894d75e0de16929668617b9bd56e270d4076fbc69610df48c5
+content_hash: sha256:cc9306b4fa2f054b6fd2c6aaf7eb4460d472f5f198569d53a28583a5720d5055
 ---
 
 当前示例提供完整的相机应用从后台切换至前台启动恢复的流程介绍，方便开发者了解完整的接口调用顺序。
@@ -22,7 +22,7 @@ content_hash: sha256:6495b39e677897894d75e0de16929668617b9bd56e270d4076fbc69610d
 
 相机应用从后台切换至前台启动恢复的调用流程建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/tjrlimroRfG44-91tsNCjA/zh-cn_image_0000002727751206.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/iToIZujXQziX7H6UzrkZ5g/zh-cn_image_0000002733274942.png)
 
 ## 完整示例
 

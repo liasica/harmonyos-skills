@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-performanc
 title: 开发态性能检测
 breadcrumb: 最佳实践 > 性能 > 性能检测 > 开发态性能检测
 category: best-practices
-scraped_at: 2026-09-16T06:55:06+08:00
+scraped_at: 2026-09-21T06:25:44+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:1fee318f68eefe9d3152b43cd518e955bc15c2deb152f2795a1de0f3cf251861
+content_hash: sha256:209ee386a4781c30d4c5f8f5e06cfa65856d865b1bfb443a4e3f94abd30dd7ee
 ---
 
 ## 简介
@@ -18,7 +18,7 @@ content_hash: sha256:1fee318f68eefe9d3152b43cd518e955bc15c2deb152f2795a1de0f3cf2
 
 本文将介绍调优的方法和常用工具，帮助开发者更好地分析和解决应用程序中的性能问题，提升用户体验，实现应用程序的高效稳定运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/KrORi7T0Sxe5v5Gy9d6kuQ/zh-cn_image_0000002416519594.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/4HkYcpLKTD6MDq22At_jug/zh-cn_image_0000002416519594.png "点击放大")
 
 性能调优贯穿于HarmonyOS应用开发的整个生命周期中，开发前有性能最佳实践和指南等赋能套件让开发者快速上手学习，开发过程中有性能工具开发套件覆盖应用开发各阶段，应用开发完成上架后有专业的性能测试工具检查测试应用性能指标。目前DevEco Studio主要集成了四种性能工具，在不同的开发阶段各有侧重，主要分为性能问题检测类工具和性能问题分析类工具。本文重点介绍使用**性能问题检测类工具**来检测应用性能问题。
 
@@ -34,7 +34,7 @@ content_hash: sha256:1fee318f68eefe9d3152b43cd518e955bc15c2deb152f2795a1de0f3cf2
 
 在已打开的代码编辑器窗口单击右键点击Code Linter，或在工程管理窗口中鼠标选中单个或多个工程文件/目录，右键选择Code Linter > Full Linter执行代码全量检查。如图所示输入@performance，过滤性能检查结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/kxGuxmpNTeeoKRegTwCQzg/zh-cn_image_0000002404124977.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Z-LckUoERQGTd0ZJ0YiOpw/zh-cn_image_0000002404124977.png "点击放大")
 
 详细使用指导见：
 
@@ -73,29 +73,29 @@ content_hash: sha256:1fee318f68eefe9d3152b43cd518e955bc15c2deb152f2795a1de0f3cf2
 
 4、将编译模式Build Mode设置为release。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Hr-TdZ6nRsaNSnEuBxk94g/zh-cn_image_0000002474188572.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/dBqwXIfLSDWfz5hfRXrNMA/zh-cn_image_0000002474188572.png)
 
 1. 点击菜单栏Tools，选择AppAnalyzer进入AppAnalyzer页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/r_6RYf_-QSKxY2FirMdAxw/zh-cn_image_0000002510905945.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/YUIUKTdSQB6UmeRA4KbPAg/zh-cn_image_0000002510905945.png "点击放大")
 2. 在AppAnalyzer页面，默认选择场景化体检。以页面间转场场景为例，点击“手动性能页面间转场体检”即可进入体检界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/YLXvJ-10SIyXuX3Llm6uCg/zh-cn_image_0000002510868387.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/G-mzshaXS9SROpkt1a0OUA/zh-cn_image_0000002510868387.png "点击放大")
 3. 在准备体检时，开发者需要保持手机解锁状态，待被检测应用自动安装并运行后，即表示准备完成。然后操作手机至检测页面，点击开始按钮开始体检。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/99_f_tEqR3C-iLlBlKJsHA/zh-cn_image_0000002478830250.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/jkgkDR2TRWS5fkTp4kCncQ/zh-cn_image_0000002478830250.png "点击放大")
 4. 等待界面出现“体检中，请操作手机”时，开始操作手机，等待体检工具录制和分析。操作完成后，可以点击结束按钮结束体检。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/KfvsZjFkQkWiI3P3znGD3g/zh-cn_image_0000002510870683.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/RcT3bnYvQ3a4s3b5aoxFbA/zh-cn_image_0000002510870683.png "点击放大")
 5. 等待体检工具生成报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/57OFz_kVRf6alPK1HJNcCg/zh-cn_image_0000002478830890.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/BnClOfpSSoWoJAbZ14TBIw/zh-cn_image_0000002478830890.png "点击放大")
 6. 查看检测结果报告，点击展开检测报告中的“页面间转场”，如果体检不为满分100，点击展开体检检测结果，若显示诊断异常（如下图中出现黄色、红色警告），则表示存在页面间转场的性能问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/BJaYHb9MQw2mtTr55YsroQ/zh-cn_image_0000002478831568.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/8iWWfdI5R8KB_deZh2I4UA/zh-cn_image_0000002478831568.png "点击放大")
 7. 检测存在故障时，开发者可通过点击“可能故障原因”，查看详细测试结果及优化建议。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/RL9qQzAuRSmHcfOPY7sQ4w/zh-cn_image_0000002510871505.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/4_piTomAQWKfnHosfZysPw/zh-cn_image_0000002510871505.png "点击放大")
 
 详细使用指导见：
 
@@ -111,7 +111,7 @@ content_hash: sha256:1fee318f68eefe9d3152b43cd518e955bc15c2deb152f2795a1de0f3cf2
 
 **图1** Testing测试报告导入体检工具分析流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/urPg21jwRTqPAkQarsljLw/zh-cn_image_0000002416522370.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/457Q6xpcSc2Ip7rS8vCDig/zh-cn_image_0000002416522370.png "点击放大")
 
 Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 
@@ -119,32 +119,32 @@ Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 
    使用DevEco Testing进行场景化性能测试，支持编写测试脚本和自定义测试场景对应用性能进行评估。具体使用方法和指导请见：[场景化性能测试](../harmonyos-guides-V13/perf-testing-V13.md#section12324184817324)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/CMbECu_RRDm7A22ojyUWkg/zh-cn_image_0000002416681522.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/LtnD3ZsRTPqQuS-zAeI-pg/zh-cn_image_0000002416681522.png "点击放大")
 
    **查看测试结果**
 
    根据DevEco Testing检测结果，查看是否存在页面间转场等场景不达标的问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ogmNI89sSKajHe8FgvDRgQ/zh-cn_image_0000002450160661.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/2M9Z-vfMSkW9NIiTvvE7aA/zh-cn_image_0000002450160661.png "点击放大")
 
    **获取测试报告**
 
    点击导出IDE体检文件按钮，跳转至报告文件本地路径，获取DevEco Testing体检测试报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/eS6mX58CRIa1z3TJIH_XeA/zh-cn_image_0000002416521718.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/1kDp80PKQriAfSPcMhGzZQ/zh-cn_image_0000002416521718.png "点击放大")
 2. **体检报告导入AppAnalyzer**
 
    通过DevEcoTesting发现问题后，为深入分析问题，可将获取的体检报告导入体检工具AppAnalyzer进行具体定位和优化。打开DevEcoStudio，点击AppAnalyzer图标进入AppAnalyzer页面，随后点击“体检历史”按钮，跳转至历史记录页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ntLOMn1SRm--nKLgFUZA6w/zh-cn_image_0000002478836312.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/xlF6IHJWRBaXbuQk_qrneA/zh-cn_image_0000002478836312.png "点击放大")
 
    点击“导入报告”，即可将Testing测试诊断出的体检文件导入体检工具进行解析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/bMgo9WnATY6yxPbAtxX5cQ/zh-cn_image_0000002478833510.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/EcNG9hlbQM-Jxv9Zwpte0w/zh-cn_image_0000002478833510.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/ngkXH0v7Qty5Y6I4T-2PxA/zh-cn_image_0000002478838010.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/_7XeFUatTdKGCJ8ZFv-pZw/zh-cn_image_0000002478838010.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/OK_2I--zQlCJebldMP4cww/zh-cn_image_0000002510917261.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/4Snx8XsBQVCLwoc4vlHzow/zh-cn_image_0000002510917261.png "点击放大")
 
    **说明** 
 

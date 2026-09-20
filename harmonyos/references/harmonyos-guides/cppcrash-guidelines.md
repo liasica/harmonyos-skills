@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guid
 title: Cpp Crash（进程崩溃）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 崩溃检测 > Cpp Crash（进程崩溃）检测
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:45+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:9c8437253001d4a2354ff574f31d34e82d78d20883464ce95e435b77208b349d
+scraped_at: 2026-09-21T06:18:03+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:fe812e240fce7da448a3b4afa3172847047cd304dfff9cfb5a48c78bf331afbe
 ---
 
 ## 简介
@@ -569,7 +569,7 @@ pstate:0000000060001000 esr:0000000000000000
 
 原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/TAdlZ0-6QkmKHBcz6l6-YA/zh-cn_image_0000002757310807.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/dPTheskbR623pblwaQRDIw/zh-cn_image_0000002733434702.png)
 
 1. 提交线程搜集自身的调用栈信息，保存至进程特定区域内存的异步栈表中。
 2. 记录保存后，异步栈表返回唯一标识stackId。
@@ -960,7 +960,7 @@ at onPageShow (sample|sample|1.0.0|src/main/ets/pages/Index.ts:381:36)
 
 **编译选项开启方法**
 
-以Cmake为例，在CMakeList.txt中添加set(CMAKE\_CXX\_FLAGS "${CMAKE\_CXX\_FLAGS} -fno-omit-frame-pointer -funwind-tables")。
+以CMake为例，在CMakeLists.txt中添加set(CMAKE\_CXX\_FLAGS "${CMAKE\_CXX\_FLAGS} -fno-omit-frame-pointer -funwind-tables")。
 
 ### 应用发生SIGPIPE异常退出
 

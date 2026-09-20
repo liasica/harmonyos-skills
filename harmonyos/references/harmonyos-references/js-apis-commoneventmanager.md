@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.commonEventManager (公共事件模块)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > @ohos.commonEventManager (公共事件模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fec2f75bcf66a1fb1e0eacbd01c471b9de2eff9d9e5858baad3f031aa928363e
+scraped_at: 2026-09-21T06:23:01+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:a7f4efb2c93ea4f8e5eee70ab1ef70b457bc5e02809f848c3a730057c49f90ff
 ---
 
 本模块提供公共事件的发布、订阅、取消订阅等能力。公共事件是一种系统级的事件通知机制，允许应用在系统状态变化（如开机完成、电量变化、屏幕亮灭等）或业务自定义事件发生时，向订阅了该事件的应用发送通知，实现跨组件、跨应用的信息传递。
@@ -458,7 +458,7 @@ setTimeout(() => {
         console.error(`Failed to unsubscribe. Code is ${err.code}, message is ${err.message}`);
         return;
       }
-      // subscriber不再使用时需要将其置为null，避免内存泄露
+      // subscriber不再使用时需要将其置为null，避免内存泄漏
       subscriber = null;
       console.info(`Succeeded in unsubscribing.`);
     });

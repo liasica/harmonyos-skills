@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-musi
 title: 多设备音乐界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备音乐界面
 category: best-practices
-scraped_at: 2026-09-16T06:55:01+08:00
+scraped_at: 2026-09-21T06:25:40+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:439778470fec4fdb6fe1495a571a5c426ff27388be4ca56f16a07b95f11c6647
+content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd498e4
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:439778470fec4fdb6fe1495a571a5c426ff27388be4ca56f16a07b95f11
 
 应用的UX设计可参考[音乐听书](../design-guides/responsive-design-examples1-0000001957369849.md#section12973333171715)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/PwtZuDOUR6WBHHxS-YkwJQ/zh-cn_image_0000002622170035.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/tkJ-Q_zPSUaGOdxQMcqkFw/zh-cn_image_0000002622170035.png "点击放大")
 
 ## 工程管理
 
@@ -219,7 +219,7 @@ content_hash: sha256:439778470fec4fdb6fe1495a571a5c426ff27388be4ca56f16a07b95f11
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/UbV6ehjAStOfd7-jj1im0w/zh-cn_image_0000002622249901.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ABUaeIYyRsuC2fyp4G742g/zh-cn_image_0000002622249901.png "点击放大")
 
 **界面开发**
 
@@ -241,7 +241,7 @@ content_hash: sha256:439778470fec4fdb6fe1495a571a5c426ff27388be4ca56f16a07b95f11
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/ztLwmptWQ1iUBfrK9Dr66g/zh-cn_image_0000002622170043.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/sbG97KmZSl2kpqvEyxdIdQ/zh-cn_image_0000002622170043.png "点击放大")
 
 **界面开发**
 
@@ -270,7 +270,7 @@ content_hash: sha256:439778470fec4fdb6fe1495a571a5c426ff27388be4ca56f16a07b95f11
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/dFhLFLjKQ7qcPAlemfi27g/zh-cn_image_0000002591610438.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VHNWYqSGRn2xwuIRr6lzgA/zh-cn_image_0000002591610438.png "点击放大")
 
 **界面开发**
 
@@ -289,7 +289,7 @@ content_hash: sha256:439778470fec4fdb6fe1495a571a5c426ff27388be4ca56f16a07b95f11
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/qSdUUCVjQYGMSJ5MqQMy0A/zh-cn_image_0000002591770364.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/rsvoUM_ySR-kOxcFv-sdJA/zh-cn_image_0000002591770364.png "点击放大")
 
 **界面开发**
 
@@ -313,7 +313,7 @@ content_hash: sha256:439778470fec4fdb6fe1495a571a5c426ff27388be4ca56f16a07b95f11
 
 穿戴首页通过[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)实现首页与歌单列表的横向切换，并在首页显示当前播放的音乐以方便用户操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/q9ffsxf6TMW1oMZQqL9EyA/zh-cn_image_0000002622249905.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/z7FDBB71SlGuv_HVk8srvg/zh-cn_image_0000002622249905.png "点击放大")
 
 实现方案如下表：
 
@@ -328,7 +328,7 @@ content_hash: sha256:439778470fec4fdb6fe1495a571a5c426ff27388be4ca56f16a07b95f11
 
 穿戴列表页主要展示歌曲列表内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/AzNPDyNUQwm0dNoj9tTGUw/zh-cn_image_0000002622170045.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/DkuDy4HNRDOGuDEI1iCRyQ/zh-cn_image_0000002622170045.png "点击放大")
 
 实现方案如下表：
 
@@ -341,7 +341,7 @@ content_hash: sha256:439778470fec4fdb6fe1495a571a5c426ff27388be4ca56f16a07b95f11
 
 穿戴播放页划分为三个区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/aH96AOosSluvTVW_aE_-EA/zh-cn_image_0000002591610440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/eSMnSkJuTZG95mx9961bcA/zh-cn_image_0000002591610440.png "点击放大")
 
 实现方案如下表：
 

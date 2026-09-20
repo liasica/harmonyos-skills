@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 关系型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 关系型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:44:54+08:00
+scraped_at: 2026-09-21T06:17:09+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:c089b605150cd8add34ee9db34e4a9e30349e7f31be581078247d2f29a5f634a
+content_hash: sha256:9d024d4b596ab9f8f4899ef602d83b368718a4d9b1163b4c882b5fa312cc2817
 ---
 
 ## 场景介绍
@@ -26,7 +26,7 @@ content_hash: sha256:c089b605150cd8add34ee9db34e4a9e30349e7f31be581078247d2f29a5
 
 ### 数据跨设备同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/4LvUojmtSdewfYOrhh8oOg/zh-cn_image_0000002757309453.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/yMooxvHdQXyUWlQWPjaXJQ/zh-cn_image_0000002733433326.jpg)
 
 业务将数据写入关系型数据库后，向数据管理服务发起同步请求。
 
@@ -51,7 +51,7 @@ content_hash: sha256:c089b605150cd8add34ee9db34e4a9e30349e7f31be581078247d2f29a5
 
 需要注意的是，该模式下不支持对其他设备同步过来的数据进行修改。这一限制旨在保障数据一致性与同步逻辑的稳定性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/U2XpZv-kT2mee3QzuNpMEQ/zh-cn_image_0000002757229573.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/WhURYirWQPCLmfQ50T4ykA/zh-cn_image_0000002762992851.jpg)
 
 **单版本表模式**
 
@@ -59,7 +59,7 @@ content_hash: sha256:c089b605150cd8add34ee9db34e4a9e30349e7f31be581078247d2f29a5
 
 使用单版本表模式跨设备同步，需要配置schema文件，指定所需同步列以及解冲突列；单版本表模式同步数据支持修改对端设备同步过来的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/YScI0j-rRwiPEfpKwKcqwA/zh-cn_image_0000002727589882.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Hm_RJUuVScel7zUpNaCIZQ/zh-cn_image_0000002762832965.jpg)
 
 ## 约束限制
 

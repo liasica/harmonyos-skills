@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口方向
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口方向
 category: best-practices
-scraped_at: 2026-09-16T06:55:01+08:00
+scraped_at: 2026-09-21T06:25:38+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:5eb0b83341395595733176bed93d0c833b48ffe24e278694f807bbbcca8c0620
+content_hash: sha256:c85c88fabc843101ccb1b97851b99b0d0b6faf9628a231ff896206ce503f3011
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ content_hash: sha256:5eb0b83341395595733176bed93d0c833b48ffe24e278694f807bbbcca8
 
 目前HarmonyOS系统中设备的显示方向有以下四种，对应真机实际状态如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/dnf6dhTcRRqn25O3f1Gulg/zh-cn_image_0000002566756945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/8_RLD-V3QICIuAnO154VrQ/zh-cn_image_0000002566756945.png)
 
 **基本定义：**
 
@@ -189,7 +189,7 @@ content_hash: sha256:5eb0b83341395595733176bed93d0c833b48ffe24e278694f807bbbcca8
 
 上述表格也可以抽象为如下的决策逻辑，如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/XpNgSqZPTBG1D0j6XC9DNQ/zh-cn_image_0000002572763022.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/hZ9-P7y1ShSFmRs8x1WZqQ/zh-cn_image_0000002572763022.png "点击放大")
 
 **说明** 
 
@@ -466,7 +466,7 @@ content_hash: sha256:5eb0b83341395595733176bed93d0c833b48ffe24e278694f807bbbcca8
 
 以备忘录应用为例，当系统关闭旋转锁定后，应用页面会随手机旋转自动切换横竖屏；打开旋转锁定时，则不会发生旋转行为，此时需配置为AUTO\_ROTATION\_RESTRICTED。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/iw_hy9kfRj2cQ6PjSg4qaA/zh-cn_image_0000002693704626.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/fjgrN9dvQYCfLfOsC6GLLw/zh-cn_image_0000002693704626.png "点击放大")
 
 ### 窗口级配置
 
@@ -502,7 +502,7 @@ aboutToDisappear(): void {
 
 视频播窗横竖屏切换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/4eK0OizTTl2eMVfA80Hsag/zh-cn_image_0000002566916979.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/fvTpwNWiRTKK4w6u6_mWSA/zh-cn_image_0000002566916979.png "点击放大")
 
 ### 页面级配置
 
@@ -647,11 +647,11 @@ aboutToDisappear(): void {
 
 例如：视频或者游戏类应用在横屏模式下开启悬浮窗后，页面没有适配横屏，导致内容显示不全或者观看体验不好。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/r21GTaTrQEiYpGlYhSV8Cw/zh-cn_image_0000002566757003.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/7-85NSXGQTCvlz9M8xmLyQ/zh-cn_image_0000002566757003.gif "点击放大")
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/n5QMrx8ZRgqBPmAM12RyuA/zh-cn_image_0000002535837220.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/PNFWCZd7TBSU_TtiJt4kKQ/zh-cn_image_0000002535837220.gif "点击放大")
 
 ## 为多设备配置旋转策略
 
@@ -915,7 +915,7 @@ function ImageItem(imageSrc: ResourceStr) {
 
 下图展示了应用层、多设备工具模块与系统层之间的整体协作流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/xYqGKFb3QReT49S0tAjZ2w/zh-cn_image_0000002723850036.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/7umvwWr7RDmHQemDa_Y8dA/zh-cn_image_0000002723850036.png)
 
 **响应式规则引擎**（responsiverule目录模块）
 
@@ -1837,7 +1837,7 @@ export struct VideoDetail {
 
 rotation的取值有4种，分别对应下图所示的4个方向（以直板机为例）。如果需要更精准的角度信息，则需要配合设备sensor获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/H7AJhhIVRM61rLk4MEsrlg/zh-cn_image_0000002535837336.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/WoOg9ErVRfah5FbbULUsmQ/zh-cn_image_0000002535837336.png "点击放大")
 
 | 值 | 含义 |
 | --- | --- |
@@ -1857,7 +1857,7 @@ rotation的取值有4种，分别对应下图所示的4个方向（以直板机�
 
 display.Orientation 为屏幕当前的朝向状态，display.rotation 为屏幕相对自然方向的物理旋转角度。display.Orientation 为和 display.rotation 均为只读属性，且用于描述屏幕当前旋转状态，但二者定义逻辑不同，在各类设备形态下不存在固定对应关系，开发过程中不可相互替代。若混用接口，在折叠屏等多形态设备适配场景中极易引发兼容性问题。以三折叠设备为例：当 display.rotation 取值为 0° 时，display.Orientation 既可能为竖屏状态，也可能为反向横屏状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/tvZ3nzYiRS-B7YPRNNfCNg/zh-cn_image_0000002622960129.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/LD8lxGz_Qnu_9gJ2Nbeq9w/zh-cn_image_0000002622960129.jpg "点击放大")
 
 ### window.getLastWindow的方式获取窗口出现延迟
 
@@ -1902,7 +1902,7 @@ aboutToDisappear(): void {
 2. 打开Log页面，依次在筛选框中选择“当前的连接设备”、“No filters”、“当前的调试应用”、“Debug”或“Info”，最后在关键字栏填写“SetRequestedOrientation”。
 3. 操作问题页面后，在日志中查看系统日志，找到应用包名一行的日志，lastReqOrientation表示应用最后的窗口旋转策略，target表示目标窗口旋转策略，后面的数字可参考下方对照表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/bXe_grJSQYaSkkbC-oLLFw/zh-cn_image_0000002593796295.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/RhYUTJO1TFWPoIB8GmjLFQ/zh-cn_image_0000002593796295.png)
 
 日志中查看窗口方向对照表
 

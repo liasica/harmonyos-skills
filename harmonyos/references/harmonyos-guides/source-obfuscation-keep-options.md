@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆保留选项
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆保留选项
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:44:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5bec62e622df69c808091b3af12490a4212689aed4617809059f5cc0e9f51804
+scraped_at: 2026-09-21T06:17:13+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:d0413aecdd4399c153ecb3be3f7769666588582b6959eb223ef64961c549e008
 ---
 
 从API version 10开始，开启混淆后代码中的方法、属性或路径将被混淆。但在运行时，通过混淆前的原始名称访问已被混淆的方法、属性或路径，可能会导致功能失效。因此需要根据不同的场景配置相应的保留选项。
@@ -410,7 +410,7 @@ filepath仅支持相对路径，./和../为相对于混淆配置文件所在目�
 
 模块级oh\_modules和工程级oh\_modules在DevEco Studio中的目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/B3o9yNmyRV2K2H0LvTDuUQ/zh-cn_image_0000002757309485.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/YBKdn3SzTJCz_pC3S2bTAQ/zh-cn_image_0000002733433360.png)
 
 **使用该选项时，需要注意以下事项：**
 
@@ -426,7 +426,7 @@ filepath仅支持相对路径，./和../为相对于混淆配置文件所在目�
 
 1. 该选项在开启[-compact](source-obfuscation-rule-options.md#section-compact)功能后才会生效；未开启-compact时，配置不生效。
 2. 配置的路径仅支持相对路径，./和../均为相对于混淆配置文件所在的目录。若配置路径为文件夹，则该文件夹下的文件及子文件夹中的文件都不被压缩。
-3. 当配置路径指向远程三方包（即oh\_modules目录）时，需指定其在**工程级**oh\_modules中的真实路径（与[-keep](source-obfuscation-keep-options.md#section-keep)中保留远程HAP包的方式二一致），以确保路径解析正确。
+3. 当配置路径指向远程三方包（即oh\_modules目录）时，需指定其在**工程级**oh\_modules中的真实路径（与[-keep](source-obfuscation-keep-options.md#section-keep)中保留远程HAR包的方式二一致），以确保路径解析正确。
 
 ```text
 -compact

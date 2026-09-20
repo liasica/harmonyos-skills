@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelop
 title: Driver Development Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > Driver Development Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:42+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:236528e88143765194abe74c004b65aba1dfd0973763b057a127834b79290f3d
+scraped_at: 2026-09-21T06:17:59+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:7a8f216b59e04b9281c1f28c309f013ffa525763f29634c71ea178ab123bb4fa
 ---
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
@@ -46,7 +46,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图1** 扩展外设驱动原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/yAHjZE4dQFy30uLV6cD0_w/zh-cn_image_0000002727751066.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/99a402isQ9WUtsX1IASxzg/zh-cn_image_0000002733274796.png)
 
 ### 运作流程
 
@@ -54,13 +54,13 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图2** 非标外设与对应扩展外设驱动应用匹配的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/hNkS6-jxRWWezPGem0oXlQ/zh-cn_image_0000002757310781.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/4JmMkbuyShKvSYzRMJfKOw/zh-cn_image_0000002733434676.png)
 
 用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
 
 **图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/O9uXz8TPR8W1DatLCe-z7Q/zh-cn_image_0000002757230901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/AlCdLSxaTC-6VgynbhfHpw/zh-cn_image_0000002762994197.png)
 
 ## 约束与限制
 
@@ -76,7 +76,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 | C-API | USBSerialDDK | ohos.permission.ACCESS\_DDK\_USB\_SERIAL |
 | C-API | ScsiPeripheralDDK | ohos.permission.ACCESS\_DDK\_SCSI\_PERIPHERAL |
 
-Driver Development Kit提供的C-API仅支持在DriverExtension进程中使用。在其他进程（包括子进程）中使用可能会出现功能异常，具体可参考[在子进程或非驱动ability中调用ddk的c-api失败](externaldevice-faqs.md#在子进程或非驱动ability中调用ddk的c-api失败)。
+Driver Development Kit提供的C-API仅支持在DriverExtension进程中使用。在其他进程（包括子进程）中使用可能会出现功能异常，具体可参考[在子进程或非驱动Ability中调用DDK的C-API失败](externaldevice-faqs.md#在子进程或非驱动ability中调用ddk的c-api失败)。
 
 ## 模拟器支持情况
 

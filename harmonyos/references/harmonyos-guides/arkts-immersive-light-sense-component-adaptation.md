@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 组件适配沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 组件适配沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:06+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:5715d98903c8dd8657cbd3064783a475cdd8ffd1732ac7d645203bf70a7ba56e
+scraped_at: 2026-09-21T06:17:22+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:f1583d1c3dac10c7fb95715ee46b4b71da794f2169bbfb18adcf8c7b544fc6cf
 ---
 
 本文按导航类、弹窗类、按钮与选择类、其余组件四大场景分类，系统介绍各组件如何通过应用级开关与组件级配置开启沉浸光感，涵盖沉浸光感的视觉效果、设置方法及适配要点，帮助开发者快速完成沉浸光感的组件适配。
@@ -191,4 +191,4 @@ Popup和Tips支持通过应用级开启、组件级开启方式开启沉浸光�
 
 ## 其余组件
 
-其余组件均支持通用属性[systemMaterial](../harmonyos-references/ts-universal-attributes-image-effect.md#systemmaterial)设置沉浸式系统材质，跟随通用属性的生效规则呈现效果，例如[布局容器](arkts-layout-development-overview.md)、[滚动容器](arkts-list-grid-development-overview.md)。生效区域为Navigation/NavDestination标题栏，或横向Tab中barPosition为BarPosition.End的底部TabBar。开启后的常见问题请参考[沉浸光感常见问题](arkts-immersive-light-sense-faq.md)。
+其余组件均支持通用属性[systemMaterial](../harmonyos-references/ts-universal-attributes-image-effect.md#systemmaterial)设置沉浸式系统材质，跟随通用属性的生效规则呈现效果，例如[布局容器](arkts-layout-development-overview.md)、[滚动容器](arkts-list-grid-development-overview.md)。生效区域为Navigation/NavDestination标题栏，或横向Tabs中barPosition为BarPosition.End的底部TabBar。开启后的常见问题请参考[沉浸光感常见问题](arkts-immersive-light-sense-faq.md)。

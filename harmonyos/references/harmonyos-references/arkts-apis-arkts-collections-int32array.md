@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Int32Array)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Int32Array)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f07bda5355e490d84d8fa126622b2416e8d29fdf9cb7211449ece26395741620
+scraped_at: 2026-09-21T06:20:16+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:001beeb6d6c29ebe34c51aef5108456e93cb44bb509df2cda782585626e99c1e
 ---
 
 一种线性数据结构，底层基于[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)实现。
@@ -205,7 +205,7 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 ```ts
 let int32Array: collections.Int32Array = collections.Int32Array.from([1, 2, 3, 4, 5, 6]);
 console.info("byteLength: " + int32Array.buffer.byteLength); // byteLength: 24
-// 从int32Array对应buffer第4个字节开始，长度为5
+// 从int32Array对应buffer第5个字节开始，长度为5
 let int32Array1: collections.Int32Array = new collections.Int32Array(int32Array.buffer, 4, 5);
 console.info("[" + int32Array1 + "]"); // [2, 3, 4, 5, 6]
 ```

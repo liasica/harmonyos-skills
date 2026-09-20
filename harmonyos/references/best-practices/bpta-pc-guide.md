@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pc-guide
 title: 电脑应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 电脑 > 电脑应用开发
 category: best-practices
-scraped_at: 2026-09-16T06:55:05+08:00
+scraped_at: 2026-09-21T06:25:43+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:2649bfad7cfec9fc96a30f8f54ca6fdbcca0e0a0b0401f0c69cd3f205a76314b
+content_hash: sha256:886e79cfc7503638a9c487606082d8d0f47517a8aa446c5c6e9efd15bbe77021
 ---
 
 ## 概述
@@ -203,10 +203,10 @@ content_hash: sha256:2649bfad7cfec9fc96a30f8f54ca6fdbcca0e0a0b0401f0c69cd3f205a7
 
 * 若应用支持横屏，将以固定大小的横屏窗口展示（窗口高度为屏幕高度的2/3，宽度比为1:1）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/P9W-tmDlQZi5UWkGDkgljw/zh-cn_image_0000002585466864.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Rqn8L70OSaCPtY2nC34Paw/zh-cn_image_0000002585466864.png "点击放大")
 * 若应用仅支持竖屏，则以固定大小的竖屏窗口展示（窗口高度为屏幕高度的2/3，宽度比为9:18）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/kMFIXZZKSKuot-B2Xwxkmw/zh-cn_image_0000002585626808.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/c8UQr4MyTOeCp6hswmrg0w/zh-cn_image_0000002585626808.png "点击放大")
 
 **说明** 
 
@@ -238,13 +238,13 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
 
 应用安装后，可进入设置->显示和亮度->应用显示布局，将应用显示比例调整为原始比例，即可退出兼容模式，方便开发者调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/HdKMJ9W5Tv-SWJzf_YcMMw/zh-cn_image_0000002615986525.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/0XbtHko-TF2dh6Tn3Gs5sA/zh-cn_image_0000002615986525.png "点击放大")
 
 ### 兼容运行上架配置
 
 应用上架时，在基本信息中勾选“兼容分发到PC/2in1的AppGallery”选项，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/HIXYJrqBRSaDz-RQoMX9eQ/zh-cn_image_0000002695944623.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/je5ppLW_St-vDYPmbfU0FA/zh-cn_image_0000002695944623.png "点击放大")
 
 **说明** 
 
@@ -276,7 +276,7 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
 
   由于手机与电脑操作方式存在差异，部分页面未提供返回按钮：手机端可通过屏幕边缘向内滑动返回上一页，电脑端无该手势操作。为此电脑系统在应用窗口界面增设返回键，模拟边缘侧滑返回的交互效果，效果如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/M4b6WGQXQPq4ynHk_Qw2TA/zh-cn_image_0000002585466874.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/6bBZDduPSTirROK5LAdNmw/zh-cn_image_0000002585466874.png "点击放大")
 * 安全键盘的差异
 
   电脑设备自带物理键盘，在安全登录场景中，若应用基于私有安全键盘SDK开发，用户通过物理键盘输入密码时，可能出现密码明文显示、无法输入、输入后无法提交等问题。对于上述情况，建议采用如下方案进行优化。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-retrieve-p
 title: 获取进程内存信息
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > 获取进程内存信息
 category: best-practices
-scraped_at: 2026-09-16T06:55:06+08:00
+scraped_at: 2026-09-21T06:25:45+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:4bb1605761a1758480d595aa6358604c926802a80fc2325b74002d0809e99c2e
+content_hash: sha256:79ce00baaf9cce4ecadd15f165fe04f44b1444510a85504ef527401627f82747
 ---
 
 ## 通过HiDumper查看内存信息
@@ -14,12 +14,12 @@ content_hash: sha256:4bb1605761a1758480d595aa6358604c926802a80fc2325b74002d0809e
 
 1. 打开示例应用，运行 hdc shell "hidumper -s WindowManagerService -a '-a'"获取到当前应用的pid。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/aZuPMCKETTClspqC1Zn48g/zh-cn_image_0000002404045153.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/7-1mfbwPTxGo1qwTSDatow/zh-cn_image_0000002404045153.png "点击放大")
 2. 输入 hdc shell "hidumper --mem [Pid]" ，并将命令中的 [Pid] 换成当前应用的Pid，就可以获取到示例应用的内存信息了
 
 一般情况下，开发者只需要关注PSS （Proportional Set Size，实际使用物理内存）Total一列的数据，即示例应用实际使用的物理内存。如下图所示，应用总共占用了26279KB的内存，主要包括ArkTS Heap（ArkTS堆内存）的4712KB以及Native Heap的13164KB。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Bh-GONhUQ7SncPuSaAaisQ/zh-cn_image_0000002370565324.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/0kAdlZYiSXWPQMQKzp6R4A/zh-cn_image_0000002370565324.png "点击放大")
 
 ## 通过代码获取应用内存信息
 

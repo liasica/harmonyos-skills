@@ -3047,7 +3047,7 @@
 - [NodeContent](js-apis-arkui-nodecontent.md)
 - [NodeController](js-apis-arkui-nodecontroller.md)
 - [@ohos.arkui.observer (无感监听)](js-apis-arkui-observer.md)
-- [@ohos.arkui.Prefetcher (Prefetching)](js-apis-arkui-prefetcher.md)
+- [@ohos.arkui.Prefetcher (内容预取)](js-apis-arkui-prefetcher.md)
 - [RenderNode](js-apis-arkui-rendernode.md)
 - [Resource](js-apis-arkui-resource.md)
 - [@ohos.arkui.shape (形状)](js-apis-arkui-shape.md)

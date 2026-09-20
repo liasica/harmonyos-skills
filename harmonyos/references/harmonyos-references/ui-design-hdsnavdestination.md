@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsNavDestination (导航子页面容器)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsNavDestination (导航子页面容器)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:26+08:00
+scraped_at: 2026-09-21T06:22:10+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6ad2a044ee7c57a4fa4f466caec1d1c1665a06c0e9d7a7f0120be215fc1c1fd2
+content_hash: sha256:794497cad4a7b56cc1f13d7a9f201cb5bef436291e7cee784969cf0739c3df95
 ---
 
 作为子页面的根容器，用于显示[HdsNavigation (导航根视图容器)](ui-design-hdsnavigation.md)的内容区，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)版本以后，推荐使用[bindToScrollable](ui-design-hdsnavdestination.md#bindtoscrollable)、[bindToNestedScrollable](ui-design-hdsnavdestination.md#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
@@ -732,6 +732,6 @@ struct PageOne {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/zQOywj-pTmqnqYe3axU0zg/zh-cn_image_0000002727593526.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/MCAVPVp6Qx6Xm4E5qZ6FbQ/zh-cn_image_0000002762836659.gif)
 
 HdsNavDestination更多示例可以参考HdsNavigation[示例](ui-design-hdsnavigation.md#示例)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneve
 title: 系统公共事件定义
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > 系统公共事件定义
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:04+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:54f80f443199820c57bf63ec063c5eccec564fd35f778e40d68e9a5696e3ffc6
+scraped_at: 2026-09-21T06:23:02+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:6a95b56eb862599dcc1821d3c6c5dc8f93006a2996ed405f917ad99a6f3199ba
 ---
 
 本文档提供系统所定义的公共事件类型的索引。
@@ -178,7 +178,7 @@ content_hash: sha256:54f80f443199820c57bf63ec063c5eccec564fd35f778e40d68e9a5696e
 
   + 值：usual.event.MY\_PACKAGE\_REPLACED
   + 订阅者所需权限：无
-* COMMON\_EVENT\_PACKAGE\_REMOVED(deprecated) 提示已安装的应用程序已从设备卸载，但应用程序数据得到保留的。
+* COMMON\_EVENT\_PACKAGE\_REMOVED(deprecated) 提示已安装的应用程序已从设备卸载，但应用程序数据得到保留。
 
   **说明** 
 
@@ -242,7 +242,7 @@ content_hash: sha256:54f80f443199820c57bf63ec063c5eccec564fd35f778e40d68e9a5696e
 
   + 值：usual.event.PACKAGES\_UNSUSPENDED
   + 订阅者所需权限：无
-* COMMON\_EVENT\_MY\_PACKAGE\_SUSPENDED(deprecated) 提示应用HAP包被挂起的。
+* COMMON\_EVENT\_MY\_PACKAGE\_SUSPENDED(deprecated) 提示应用HAP包被挂起。
 
   **说明** 
 

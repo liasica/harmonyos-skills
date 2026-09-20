@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/security-comp
 title: 安全控件概述
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 安全控件概述
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:23+08:00
+scraped_at: 2026-09-21T06:17:39+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:854361d36dacd810800f266aba771ad9f91b9ff764e6d31ba26b9b78b50df06e
+content_hash: sha256:1b59fec02ea4059598df587bd68f41b4df31a44d4f41273a80393e6e311fee42
 ---
 
 安全控件是系统提供的一组ArkUI基础组件，包括保存控件和粘贴控件。它们可以作为一种“特殊的按钮”融入应用页面，实现用户“点击即许可”的设计思路。
@@ -43,7 +43,7 @@ content_hash: sha256:854361d36dacd810800f266aba771ad9f91b9ff764e6d31ba26b9b78b50
 
 开发者调用接口时，运作流程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/4r78jpN8TzKYDdR1R1qxXA/zh-cn_image_0000002727591060.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/RWvWggs3Qb-spvWhT6dZBQ/zh-cn_image_0000002762834161.png)
 
 1. 应用开发者在ETS文件中集成安全控件，通过JS引擎解析后，在ArkUI框架中生成具体的控件。
 2. 安全控件注册控件信息到安全控件管理服务，安全控件管理服务检查控件信息的合法性。

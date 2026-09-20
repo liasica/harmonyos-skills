@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-comput
 title: 消息认证码计算CMAC(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息认证码计算 > 消息认证码计算CMAC(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:340bcc72cc9d95c54fe1cc07aeb97f89f6ce2c8ff1b48e46b70f7f14a780d61f
+scraped_at: 2026-09-21T06:17:43+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:4d1b62e12a7f2bf12a276b8e4931544bb7a922f5adaab3fb8234c5ada1337d72
 ---
 
 CMAC通过使用分组密码（如AES）和一个密钥生成认证码，确保消息在传输过程中未被篡改。
@@ -41,7 +41,7 @@ CMAC通过使用分组密码（如AES）和一个密钥生成认证码，确保�
     return symKey;
   }
   async function doCmac() {
-    // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节。
+    // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节。
     let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
     let key = await genSymKeyByData(keyData);
     let spec: cryptoFramework.CmacSpec = {
@@ -73,7 +73,7 @@ CMAC通过使用分组密码（如AES）和一个密钥生成认证码，确保�
     return symKey;
   }
   function doCmacBySync() {
-    // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节。
+    // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节。
     let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
     let key = genSymKeyByData(keyData);
     let spec: cryptoFramework.CmacSpec = {
@@ -117,7 +117,7 @@ CMAC通过使用分组密码（如AES）和一个密钥生成认证码，确保�
     return symKey;
   }
   async function doLoopCmac() {
-    // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节。
+    // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节。
     let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
     let key = await genSymKeyByData(keyData);
     let spec: cryptoFramework.CmacSpec = {
@@ -155,7 +155,7 @@ CMAC通过使用分组密码（如AES）和一个密钥生成认证码，确保�
     return symKey;
   }
   function doLoopCmacBySync() {
-    // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节。
+    // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节。
     let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
     let key = genSymKeyByData(keyData);
     let spec: cryptoFramework.CmacSpec = {

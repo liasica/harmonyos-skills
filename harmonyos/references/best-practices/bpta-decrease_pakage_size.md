@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-decrease_p
 title: 应用包体积优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 应用包体积优化
 category: best-practices
-scraped_at: 2026-09-16T06:55:08+08:00
+scraped_at: 2026-09-21T06:25:46+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:bd052e516363a04c1848eb2ded7b82863929743f667f94ee44563febac6b4d1e
+content_hash: sha256:f15af7000fdeb65898a7bfb017b6c55cf95889ec197e6d5c640d0de15287570a
 ---
 
 ## 概述
@@ -67,7 +67,7 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 对于ohpm 1.5.0之前的版本，如果hap依赖了不同版本的har（例如下图中的V1版本的harC和V2版本的harC），默认情况下，V1和V2两个版本的harC都会被打包到hap中。开发者可以使用ohpm的[override](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)机制，指定只打包一个版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/lqW1n07rQ2aP7rJPS8zqkw/zh-cn_image_0000002194011048.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/N0Tq0e_VSOSkHViIvgY7yQ/zh-cn_image_0000002194011048.png "点击放大")
 
 如果使用的是ohpm 1.4.0 版本，可以使用override机制，开发者可以在项目级别的 oh-package.json5 （即项目根目录下的 oh-package.json5）文件中添加 overrides 配置，将依赖树中的依赖替换为另一个版本。替换的版本既可以是一个具体的版本号，也可以是本地存在的HAR包或源码目录。
 
@@ -119,8 +119,8 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 在多包场景下，如果应用的多个HAP或HSP包使用HAR包实现代码和资源的共享，打包后的每个HAP或HSP包中都会包含共享HAR包的拷贝，导致App包中存在冗余代码和资源。如下图示例，应用模块HAP1和HAP2/HSP1都引用了HAR2和HAR3，打包后，App包中HAR2和HAR3有多份重复拷贝，体积较大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/-_rVwC5BRIqvgRCLe8yF_w/zh-cn_image_0000002229451341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Q3cm7sLfRRK1wTpAbmFHqA/zh-cn_image_0000002229451341.png "点击放大")
 
 推荐使用HSP代替HAR实现代码和资源共享。如下图示例，使用HSP2对原应用进行升级改造，打包后，APP包中HAR2和HAR3仅保留一份拷贝。当HAR2和HAR3的总大小超过HSP时，可以减小应用包大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/WepuDPHRRRycE4ecmXfHEA/zh-cn_image_0000002229336845.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/7WVltjl1S_GWCZHNekY1IA/zh-cn_image_0000002229336845.png "点击放大")

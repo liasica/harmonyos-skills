@@ -1,6 +1,6 @@
 # FAQ（harmonyos-faqs）
 
-共 4595 篇文档。
+共 4594 篇文档。
 
 - [常见问题](app-framework-tablet-faqs.md)
 - [常见问题](computer-faqs.md)
@@ -4091,7 +4091,6 @@
 - [PDF添加SquareAnnotationInfo标注，设置fillColor无效如何解决](faqs-pdf-16.md)
 - [PDF Kit水印相关问题汇总](faqs-pdf-17.md)
 - [如何通过Canvas绘制图形并添加到PDF上](faqs-pdf-18.md)
-- [PDF添加水印是替换还是叠加](faqs-pdf-19.md)
 - [如何实现PDF的预览缩略图](faqs-pdf-2.md)
 - [PDF添加水印是替换还是叠加](faqs-pdf-20.md)
 - [在预览模式下，如何一键删除所有PDF标注](faqs-pdf-3.md)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.resourceManager (资源管理)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.resourceManager (资源管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:25+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:f60240443a0852f1a671e4668b481c422c95f1a87528b77e769ebf2e0fc16c69
+scraped_at: 2026-09-21T06:22:07+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:72a3ae7923757bf55cf9b53377a49c30b58c260d1100d8ef341788c44e3bfe67
 ---
 
 本模块提供应用资源和系统资源的访问能力，允许应用根据当前的[Configuration](js-apis-resource-manager.md#configuration)配置，获取最匹配的应用资源或系统资源，支持国际化资源匹配和多设备适配。具体匹配规则参考[资源匹配](../harmonyos-guides/resource-categories-and-access.md#资源匹配)。
@@ -6758,7 +6758,7 @@ try {
   // 在资源文件中用quantity字段表示单复数类别，因此会获取quantity为other的字符串
   let pluralStr = this.context.resourceManager.getDoublePluralStringValueSync(resource, 2.1, 2, "basket", 0.6);
   console.info(`getDoublePluralStringValueSync, result: ${pluralStr}`);
-  // 打印输出结果: getIntPluralStringValueSync, result: There are 2 apples in the basket, the total amount is 0.6 kg.
+  // 打印输出结果: getDoublePluralStringValueSync, result: There are 2 apples in the basket, the total amount is 0.6 kg.
 } catch (error) {
   let code = (error as BusinessError).code;
   let message = (error as BusinessError).message;

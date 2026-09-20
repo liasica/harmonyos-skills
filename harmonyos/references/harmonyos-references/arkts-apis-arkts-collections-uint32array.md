@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Uint32Array)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Uint32Array)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d8ca7302dbc93071d414c90e45bfc971c4a61e66e89bc4a8cc85f6bf5a11db90
+scraped_at: 2026-09-21T06:20:17+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:8b73e9e1fe1b742bce95199946c0a3edb623673c624ded5e13abb21fac5b39b4
 ---
 
 一种线性数据结构，底层基于[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)实现。
@@ -417,7 +417,7 @@ toLocaleString(): string
 // 当前应用所在系统为法国地区
 let array = new collections.Uint32Array([1000, 2000, 3000]);
 let stringArray = array.toLocaleString();
-console.info(stringArray); // 预期输出：1,000, 2,000, 3,000
+console.info(stringArray); // 预期输出：1,000,2,000,3,000
 ```
 
 ## copyWithin

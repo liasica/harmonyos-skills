@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-concur
 title: 应用并发设计
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用并发设计
 category: best-practices
-scraped_at: 2026-09-16T06:54:58+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:dfe00877ac3ca3dd03ccaed76f031ebe334cd0c46be8987eb41ab09b82c99432
+scraped_at: 2026-09-21T06:25:36+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:946634faddc4c9f726f742058f5bc9d68b6a28e24917143d01ed5f02c483fa9c
 ---
 
 ## 概述
@@ -42,7 +42,7 @@ ArkTS是HarmonyOS APP的开发语言，它在保持TypeScript（简称TS）基�
 
 并发能力框架如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/nTBawuYwRGOFkKYOv9k7rg/zh-cn_image_0000002194011076.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/1_xfuckuSL6B8kwQpRTjcw/zh-cn_image_0000002194011076.png "点击放大")
 
 * **主线程：**执行UI业务、不耗时操作、单次I/O任务，与其他ArkTS线程共享系统I/O线程池，不阻塞ArkTS线程。
 * **TaskPool****高并发任务池：**执行耗时任务，封装任务入口，统计模块负载，开发者无需管理线程生命周期。
@@ -56,21 +56,21 @@ ArkTS是HarmonyOS APP的开发语言，它在保持TypeScript（简称TS）基�
 
 ### 共享内存并发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/VzB60kedShWPmHVCFCZ8Yg/zh-cn_image_0000002194011072.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/7_6riZIdQ-y8usjHlUYhnQ/zh-cn_image_0000002194011072.jpg "点击放大")
 
 共享内存模型采用线程和锁的并发机制，不同线程共享内存并通过锁保护临界区。对于包含I/O操作或锁的业务，为防止阻塞，需开启多个线程执行不同业务。线程情况如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/flT2q-aLQMOs0thdCkbGlQ/zh-cn_image_0000002194011068.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/6-VG2nq_RJeqmEZ_ftSDlw/zh-cn_image_0000002194011068.jpg "点击放大")
 
 因此，应用经常存在几百个线程，增加调度开销和内存占用。
 
 ### ArkTS并发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/4zEoH8lARCSdDF3XLZT-og/zh-cn_image_0000002194011084.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/51elMctrTNCaMrYp1e815g/zh-cn_image_0000002194011084.jpg "点击放大")
 
 ArkTS采用内存隔离的线程模型，不同线程间通过消息通信，线程内无锁化运行。业务内部的I/O操作由系统分发到后台的I/O任务池，不阻塞ArkTS上层逻辑，线程情况如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/IY8h-wCLQQOk9wQt65QS5g/zh-cn_image_0000002229336865.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/H3ZvJB7qR-WQbQLNSKbSNQ/zh-cn_image_0000002229336865.jpg "点击放大")
 
 异步I/O不阻塞ArkTS线程，TaskPool及I/O线程池由系统管理，提升能效。
 
@@ -519,7 +519,7 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
   2. 任务组的结果在所有任务执行结束后统一返回，因此需要先执行完的任务优先处理的场景不要使用任务组。
 * **案例参考**
 
-  ```typescript
+  ```screen
   import { BusinessError } from '@kit.BasicServicesKit';
   import { hilog } from '@kit.PerformanceAnalysisKit';
   import { taskpool } from '@kit.ArkTS';
@@ -554,10 +554,10 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
         // Result data processing
         hilog.info(DOMAIN, TAG, FORMAT, `res:${res}`);
       }).catch((error: BusinessError) => {
-        hilog.error(DOMAIN, TAG, FORMAT, `taskpool excute error: ${error}`);
+        hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error: ${error}`);
       });
     } catch (error) {
-      hilog.error(DOMAIN, TAG, FORMAT, `taskpool excute error: ${error}`);
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error: ${error}`);
     }
   }
   ```
@@ -592,7 +592,7 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
   2. 依赖多个任务的执行时需要考虑优先级的分配。避免高优先级任务依赖低优先级任务的执行，以防止优先级倒置。
 * **案例参考**
 
-  ```typescript
+  ```screen
   import { BusinessError } from '@kit.BasicServicesKit';
   import { hilog } from '@kit.PerformanceAnalysisKit';
   import { taskpool } from '@kit.ArkTS';
@@ -600,7 +600,7 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
   // ...
   function executeTaskPool(bufferArray: ArrayBuffer): void {
     taskpool.execute(execColorInfo, bufferArray, taskpool.Priority.HIGH).catch((error: BusinessError) => {
-      hilog.error(DOMAIN, TAG, FORMAT, `taskpool excute error: ${error}`);
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error: ${error}`);
     });
   }
 
@@ -860,7 +860,7 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
 
   步骤二：初始化完成后通知主线程，主线程导入并使用该单例对象。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Ymrkv_lHShq7EYOz8frUyw/zh-cn_image_0000002194011080.jpg "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Ipa4anofSAGH6jcaas6OMQ/zh-cn_image_0000002194011080.jpg "点击放大")
 * **业务实现中的关键点**
   1. JS模块对象
 

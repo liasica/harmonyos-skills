@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于OHAudio录制PCM音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于OHAudio录制PCM音频（C++）
 category: best-practices
-scraped_at: 2026-09-16T06:54:58+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:32d32e87cfd475b2df7bdffeed099b21dd356fb677fe8be062ef28feffad3cec
+scraped_at: 2026-09-21T06:25:37+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:b9ebb8a35c960d78a2d99a51e2fe18f7eb4364f9891e33f18ba142265db71d8c
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:32d32e87cfd475b2df7bdffeed099b21dd356fb677fe8be062ef28feffa
 
 基于OHAudio录制PCM音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/v3RGakTcRIindKKWPmARGg/zh-cn_image_0000002524221068.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/DjFlGok9QuSSfqw2KAe0xg/zh-cn_image_0000002524221068.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ OH\_AudioCapturer仅支持PCM格式，同时支持设置低时延通路、静音
 
 **图1** OHAudio音频录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/0nJToAcuT4uSX1l4IHgSGA/zh-cn_image_0000002555340937.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/q8HPvag-R0q6s0ae3WrVww/zh-cn_image_0000002555340937.jpg "点击放大")
 
 ### 开发步骤
 
@@ -46,21 +46,17 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libohaudio.so libhilog_ndk.z
 * 通过OH\_AudioStreamBuilder设置环境配置，包括采样率、采样通道数、回调函数等。其中，回调函数OH\_AudioCapturer\_OnReadData是向PCM文件中写入采集到的音频数据。
 * 通过OH\_AudioStreamBuilder\_GenerateCapturer创建音频采集器。
 
-```cpp
-static int32_t AudioRendererOnWriteData(OH_AudioRenderer *renderer, void *userData, void *buffer, int32_t bufferLen) {
-    if (g_file == nullptr) {
-        return 0;
-    }
-    size_t readCount = fread(buffer, bufferLen, 1, g_file);
-    if (!readCount) {
-        // End of the file
-        if (feof(g_file)) {
-            // Seek start point
-            fseek(g_file, 0, SEEK_SET);
-        }
+```screen
+static int32_t AudioCapturerOnReadData(OH_AudioCapturer *capturer, void *userData, void *buffer, int32_t bufferLen) {
+    size_t count = 1;
+    // Write data to buffer
+    if (fwrite(buffer, bufferLen, count, g_file) != count) {
+        printf("buffer fwrite err");
     }
     return 0;
 }
+
+// ...
 
 static napi_value AudioCapturerLowLatencyInit(napi_env env, napi_callback_info info) {
     if (audioCapturer != nullptr) {

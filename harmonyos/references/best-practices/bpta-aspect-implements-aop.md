@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-aspect-imp
 title: 基于Aspect插件库实现切面编程
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 基于Aspect插件库实现切面编程
 category: best-practices
-scraped_at: 2026-09-16T06:54:57+08:00
+scraped_at: 2026-09-21T06:25:35+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:4be1e8d94981afd40b168c8c74aeed1b315b1c4f6f4cebdac8aacc2d7fa99286
+content_hash: sha256:c5eba034158280c132122c3039c34b826e3ba2e71285c4b6946aed556a75310b
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ Aspect插件库底层对[AbcKit](https://gitcode.com/openharmony/arkcompiler_run
 
 开发者要使用Aspect插件对HarmonyOS工程进行插桩，需要进行编写切面类和注册切面类两个步骤。其中切面类的编写会因场景不同而略有差异，本文将在[不同应用场景的切面类开发](bpta-aspect-implements-aop.md#section7558828115214)中详细介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/E0-RI1-mQiWIkyLC0FR42g/zh-cn_image_0000002583560435.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/sYp0DYofRC-erJnJqhdTUw/zh-cn_image_0000002583560435.png "点击放大")
 
 ### 编写切面类
 
@@ -158,7 +158,7 @@ struct CompA {
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/u1qgQ4WhTI2B4UPdLfSg8A/zh-cn_image_0000002553040468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/rRuDkpgHRu2lP8thPzvlWw/zh-cn_image_0000002553040468.png "点击放大")
 
 1. 定义类MyDefinitionAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyDefinitionAspect中定义方法addBefore()，使用@Before将其标记为前置插桩切面方法。
@@ -225,7 +225,7 @@ getLocation(): void {
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/e2Yi-PdsRsS5GQreO20WxQ/zh-cn_image_0000002583640531.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/UcLaaj-XSU2qk3QvsTQ1YQ/zh-cn_image_0000002583640531.png "点击放大")
 
 1. 定义类MyCallAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyCallAspect中定义方法addBefore()，使用@Before将其标记为前置插桩切面方法。
@@ -295,7 +295,7 @@ getLocationAddress(): void {
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/1SNkS6lmQ8SouUp-FM-b4Q/zh-cn_image_0000002552880850.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/XIwoSO4FSdGHDJxa3eNyqQ/zh-cn_image_0000002552880850.png "点击放大")
 
 1. 定义类MyCallAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyCallAspect中定义方法replaceGetLocation()，使用@Replace将其标记为替换插桩切面方法。
@@ -369,7 +369,7 @@ getLocation(): void {
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/oGCwKFW-RQ2wf6pSWOOwjA/zh-cn_image_0000002583560605.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/TtoDwUq1Tma9D5JAgfb2CA/zh-cn_image_0000002583560605.png "点击放大")
 
 1. 定义类MyCallbackAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyCallbackAspect中定义方法getAddress()，使用@Replace将其标记为替换插桩切面方法。
@@ -448,7 +448,7 @@ Button($r('app.string.event_onclick'))
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/kh8gg13gS3-w7P5k1j44nw/zh-cn_image_0000002552881028.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/6qZUXiCdQ-yXJsi1H6z33g/zh-cn_image_0000002552881028.png "点击放大")
 
 1. 定义类MyEventCallbackAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyEventCallbackAspect中定义方法addBefore()，使用@Before将其标记为前置插桩切面方法，其中切面方法就是实际监听的业务代码。

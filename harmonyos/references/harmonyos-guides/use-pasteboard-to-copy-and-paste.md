@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-pasteboar
 title: 使用剪贴板进行复制粘贴
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 使用剪贴板进行复制粘贴
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:40+08:00
+scraped_at: 2026-09-21T06:17:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f0d96984f4ba2a1557661ef3db3187f1e6a223d38d6e25087a1e70d1e91b9591
+content_hash: sha256:0df46a07fa478531df6dee2009fb50f6776a2c54a71c6b909458e219933233cd
 ---
 
 ## 场景介绍
@@ -23,7 +23,7 @@ content_hash: sha256:f0d96984f4ba2a1557661ef3db3187f1e6a223d38d6e25087a1e70d1e91
 * 剪贴板为应用提供应用数据的复制粘贴能力，支持在应用内或应用间共享复制或剪切的应用数据。剪贴板默认支持文本、HTML富文本、文件URI、PixelMap通用数据格式类型数据，同时也支持应用自定义扩展类型数据处理。
 * 剪贴板数据定义对应PasteData，复制应用通过向剪贴板服务写入PasteData实现数据复制，粘贴应用通过读取剪贴板服务的PasteData实现数据粘贴，PasteData整体结构示意如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/aJ_Mm8YiQKi42Q0T3ZftEw/zh-cn_image_0000002727751038.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/9ri3msTkSIeeO7wl5cFRCg/zh-cn_image_0000002733274766.png)
 
 * Record对应复制数据的不同内容片段；
 * Entry对应同一份数据的不同格式；

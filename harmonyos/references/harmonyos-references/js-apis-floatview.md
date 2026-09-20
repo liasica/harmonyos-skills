@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.window.floatView (闪控窗)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window.floatView (闪控窗)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:40+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:6736fd5b5e9f7426bd3f46b397572d97957874912c0c23d49a090fbe06b48635
+scraped_at: 2026-09-21T06:20:32+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:6b8966c028737f31a8f3c884a8a08fe0f2db79b0f8ed09fd4d1b22d857d5cd27
 ---
 
 闪控窗是悬浮在桌面/应用界面上的小型窗口，提供灵活的窗口管理能力。
@@ -105,7 +105,8 @@ import { floatView } from '@kit.ArkUI';
 @Component
 struct Index {
   private floatViewController: floatView.FloatViewController | undefined = undefined;
-  aboutToAppear(): void {
+
+  createFloatView(): void {
     // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果为UIAbilityContext
     let ctx = this.getUIContext().getHostContext() as common.UIAbilityContext;
     // 创建闪控窗配置对象
@@ -123,6 +124,14 @@ struct Index {
       });
     } catch (e) {
       console.error(`Failed to create float view controller. Cause:${e.code}, message:${e.message}`);
+    }
+  }
+
+  build() {
+    RelativeContainer() {
+      Button('create fv').onClick(() => {
+        this.createFloatView();
+      })
     }
   }
 }

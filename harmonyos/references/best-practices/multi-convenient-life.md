@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-convenien
 title: 多设备便捷生活界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备便捷生活界面
 category: best-practices
-scraped_at: 2026-09-16T06:55:03+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:5b39c9d1e805c6c62356a1f35a7f15a0efa7eac58ed1214ca5edc1769d7a70a1
+scraped_at: 2026-09-21T06:25:41+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:8cafc109aa2c829d52ad9069b5201b27bc0ddd3ef23a4c9d8aaa3c1bcbe302ff
 ---
 
 ## 概述
@@ -141,7 +141,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
   }
   ```
 
-  ```typescript
+  ```screen
   Row() {
     Column() {
       // ...
@@ -160,7 +160,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
   在sm和md时使用bindSheet（半模态转场）组件实现。在lg规格屏幕使用PopUp实现跟手弹窗。
 
-  ```typescript
+  ```screen
   Text($r('app.string.select_specification'))
   // ...
     .onClick(() => {

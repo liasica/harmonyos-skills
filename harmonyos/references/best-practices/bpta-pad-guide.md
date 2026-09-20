@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pad-guide
 title: 平板应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 平板 > 平板应用开发
 category: best-practices
-scraped_at: 2026-09-16T06:55:04+08:00
+scraped_at: 2026-09-21T06:25:42+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:0ae1aa3bf72ddff84cc54c2f09bfc228f53a98882a0ab3f21c8c8a4bd08cca07
+content_hash: sha256:9b5cc39397d59051a0e773e766a02416c87f5a710d25942f2a6b24d4cf933773
 ---
 
 ## 概述
@@ -21,7 +21,7 @@ content_hash: sha256:0ae1aa3bf72ddff84cc54c2f09bfc228f53a98882a0ab3f21c8c8a4bd08
 
 当前平板产品主要包括：MatePad Edge 系列、MatePad Pro系列、MatePad Mini 系列、MatePad Air系列、MatePad系列和MatePad SE 系列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/nVa68ndGRgWlLppnCLRkOQ/zh-cn_image_0000002640420444.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/OyJQiOQDTYKs6WtVU18ndA/zh-cn_image_0000002640420444.png "点击放大")
 
 **说明** 
 
@@ -85,12 +85,12 @@ MatePad Pro 13.2英寸 2025、MatePad Pro 12.2英寸 2025、MatePad Air 12英寸
 
 1. **跟手弹框**：为了减少用户操作路径过长的情况，在平板上可通过跟手弹窗进行展示，弹出框的弹出位置离手更近，以便用户能够快速操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/QOsaTmN-Q4mNL_jpBilHoQ/zh-cn_image_0000002585626766.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/v8qIkEMPQmSvO2Y6g5XuFA/zh-cn_image_0000002585626766.png "点击放大")
 
    通过订阅握持手状态变化感知事件[motion.on('holdingHandChanged')](../harmonyos-references/js-apis-awareness-motion.md#motiononholdinghandchanged-20)，获取到握持手信息后，更改组件的显示位置。
 2. **跟手半模态**：在平板上，可以考虑跟手半模态窗口或者居中半模态窗口显示，具体根据业务需要选择。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/Sprpr2chTESdi-iE1E-IDw/zh-cn_image_0000002615986481.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/zgYPZnuXQXWnWD5Ohi0_Bw/zh-cn_image_0000002615986481.png "点击放大")
 
    使用[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)绑定半模态转场时，设置半模态属性preferType为[SheetType](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheettype11枚举说明).POPUP。设置该属性后，窗口宽度小于600vp的设备将默认显示底部弹窗，其他设备则自动适配为跟手弹窗。
 
@@ -98,13 +98,13 @@ MatePad Pro 13.2英寸 2025、MatePad Pro 12.2英寸 2025、MatePad Air 12英寸
 
 在平板设备上，可借助[HdsTab](../harmonyos-references/ui-design-hdstabs.md)组件的[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性实现悬浮导航栏，进一步释放屏幕可视区域；通过悬浮材质参数[SystemMaterialParams](../harmonyos-references/ui-design-hdstabs.md#systemmaterialparams)配置透明磨砂材质效果，提升界面通透感，适配沉浸式浏览体验。搭配[HdsTabsMiniBar](../harmonyos-references/ui-design-hdstabs.md#hdstabsminibar)可扩展迷你标签栏，拓展多维度快捷入口，可适配大屏的分区操作，有效提升操作效率与使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/dg9mLipqR8mrNG-N2fMofw/zh-cn_image_0000002616066579.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/5c4pKSAfRGOrkl4uEHra4Q/zh-cn_image_0000002616066579.png "点击放大")
 
 ### 视频自适应沉浸
 
 平板设备可依托大屏带来的开阔视野提升视频观看体验，同时为避免画面出现拉伸、裁剪、比例异常等问题，建议采用自适应沉浸全屏播放方案，精简界面元素、减少视觉干扰，引导用户聚焦视频内容，提升整体观看体验。具体实现方案，可参考[视频适配不同尺寸屏幕](bpta-multi-device-screen-diff.md#section1452572513130)章节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/80VuOL4oRC-hLnQEia1deA/zh-cn_image_0000002585466834.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/98akQJJmS0GWARZ6cMOosg/zh-cn_image_0000002585466834.gif "点击放大")
 
 ### 手写笔适配
 
@@ -147,10 +147,10 @@ MatePad Pro 13.2英寸 2025、MatePad Pro 12.2英寸 2025、MatePad Air 12英寸
 
 1. 设置为屏幕高度，且窗口宽度与高度的比例为9:18。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Gf7-2EvkQwGoHeirgLkfNQ/zh-cn_image_0000002585626788.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/dSgIbWpkTyWVjQcDR_OSDQ/zh-cn_image_0000002585626788.png "点击放大")
 2. 设置为屏幕高度，且窗口宽度与高度的比例为1:1。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/oYfOIAPuS-KDys10dcAzxQ/zh-cn_image_0000002615986503.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/aUUBBPklS4C14s2pYtC8Cg/zh-cn_image_0000002615986503.png "点击放大")
 
 ### 兼容运行工程配置
 
@@ -178,13 +178,13 @@ MatePad Pro 13.2英寸 2025、MatePad Pro 12.2英寸 2025、MatePad Air 12英寸
 
 应用安装完成后，进入设置->显示和亮度->强制横屏，将显示比例调整为原始比例，即可退出兼容模式，用于调试适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/igndXIHuRr-LsuhcIfIzsg/zh-cn_image_0000002616066601.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Z7MDVCJARtirUsvzLPDonw/zh-cn_image_0000002616066601.png "点击放大")
 
 ### 兼容运行上架配置
 
 应用上架过程中，默认将以兼容模式上架平板设备，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/hdlv-zRMTMetru-Vn1RL4g/zh-cn_image_0000002585466856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/1UGrAjW_SaqQ7a8GA9x8vw/zh-cn_image_0000002585466856.png "点击放大")
 
 ### 需要排查或简单适配的内容
 
@@ -230,14 +230,14 @@ MatePad Pro 13.2英寸 2025、MatePad Pro 12.2英寸 2025、MatePad Air 12英寸
 
   PlaceHolder显示效果如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/E-uGbcqSQKS4hR2RVYhNQg/zh-cn_image_0000002585626794.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/XK_H76HuTIWZAobiz2XY6g/zh-cn_image_0000002585626794.png "点击放大")
 
   Page分栏显示效果如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/S5b-enm0Rm-LcIM4s99PwQ/zh-cn_image_0000002615986507.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/LVEFvGUWSxOIAcbkgwjXcg/zh-cn_image_0000002615986507.png "点击放大")
 * 强制分栏下的页面跳转规则
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/tivJpJ2JS0WmRn1nTmuPQQ/zh-cn_image_0000002616066605.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/NFsiycgqT5C9-lPU9zg6Gw/zh-cn_image_0000002616066605.png "点击放大")
 * 分栏显示模式下的应用优化建议
   + 应用需根据Page页面父容器尺寸实现自适应布局，避免固定窗口或屏幕尺寸。
   + 明确应用在分栏视图间的流转逻辑，区分主视图与分栏视图的主次或平行关系。

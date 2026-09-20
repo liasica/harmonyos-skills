@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-unified-dr
 title: 统一拖拽
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 统一拖拽
 category: best-practices
-scraped_at: 2026-09-16T06:55:03+08:00
+scraped_at: 2026-09-21T06:25:42+08:00
 doc_updated_at: 2026-06-23
-content_hash: sha256:8bc17dee04aaa8d136cff9d1bfd89265b036cd4f4694aa446828431dc0f39945
+content_hash: sha256:2352b2fcabe81c903053df58c7239bd96e382efa009d1cb9121f252d2b23baa9
 ---
 
 ## 概述
@@ -157,7 +157,7 @@ Column() {
 **运行效果**
 
 **图1** 拖拽图片增加水印  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/h1iW1eLaQvaqyMtTh2mrag/zh-cn_image_0000002315615638.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/CZ9HhL1ZS6OPbrIaXHHEZQ/zh-cn_image_0000002315615638.gif "点击放大")
 
 **实现原理**
 
@@ -275,7 +275,7 @@ Column() {
 **运行效果**
 
 **图2** 自定义拖拽背板  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/9E4RTS8uQ0yt-WXg4FfCiQ/zh-cn_image_0000002349574333.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/a5aLizshRlSwcybAzwz6Mw/zh-cn_image_0000002349574333.gif "点击放大")
 
 **实现原理**
 
@@ -363,7 +363,7 @@ Column() {
 **运行效果**
 
 **图3** AI识别拖拽内容  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/4k7krlBLRDm4JhSAhVakUQ/zh-cn_image_0000002349614541.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/TOFEMwWARTS7D5rNtAfl3w/zh-cn_image_0000002349614541.gif "点击放大")
 
 **实现原理**
 
@@ -509,7 +509,7 @@ Column() {
 **运行效果**
 
 **图4** 在线图片拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/I5dz3sCAS9-SbQ_I1CXeZQ/zh-cn_image_0000002315775454.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jEP-bcW3TdmfDThkQquNGg/zh-cn_image_0000002315775454.gif "点击放大")
 
 **使用说明**
 
@@ -622,7 +622,7 @@ Column() {
 **运行效果**
 
 **图5** 本地视频拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/C4xm8ziAS3208Ec6aZ50-w/zh-cn_image_0000002315615654.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/PEudN0axRrW534WiC-i9xA/zh-cn_image_0000002315615654.gif "点击放大")
 
 **实现原理**
 
@@ -732,7 +732,7 @@ Column() {
 **运行效果如下所示**
 
 **图6** Text组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/hcgaVCp1RZ-FZ6tFOMzNpg/zh-cn_image_0000002349574337.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/wbOZRXPlSgGP20bL_vpesw/zh-cn_image_0000002349574337.gif "点击放大")
 
 **实现原理**
 
@@ -791,7 +791,7 @@ Column() {
 **运行效果展示**
 
 **图7** RichEditor组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/OjIDwHR5T6SNTudhP2LZ2g/zh-cn_image_0000002349614553.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/VIeUsW5zQIKF8eOtSekZYw/zh-cn_image_0000002349614553.gif "点击放大")
 
 **实现原理**
 
@@ -875,7 +875,7 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下所示**
 
 **图8** 多Entry图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/TjWv5ceCSemb8nT-WaewnQ/zh-cn_image_0000002315775466.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/DzZlCH1HRPWTOzZ7_92aPg/zh-cn_image_0000002315775466.gif "点击放大")
 
 **实现原理**
 
@@ -1119,7 +1119,7 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下图所示**
 
 **图9** 分屏拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/MBFWNSVDRMKUXbbe1-JBuA/zh-cn_image_0000002315615670.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Y1R0pvJ_QbKvMJi7s1MPWA/zh-cn_image_0000002315615670.gif "点击放大")
 
 ## 跨设备拖拽
 
@@ -1132,7 +1132,7 @@ async receiveDragData(event: DragEvent) {
 **结果展示**
 
 **图10** 跨设备拖拽效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/m1QFNzb6RICSQ2NcsPRGhA/zh-cn_image_0000002349574349.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/GkBdF_8RSaOH8DiWTkfvRA/zh-cn_image_0000002349574349.gif "点击放大")
 
 ## 拖入小艺和中转站
 
@@ -1145,10 +1145,10 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下图所示**
 
 **图11** 将数据拖入小艺  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/nLDoP6jfQBCumW8StUWuRg/zh-cn_image_0000002349614565.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Zez7E1Y6SIiTvIJggdN0jg/zh-cn_image_0000002349614565.gif "点击放大")
 
 **图12** 将数据拖入中转站  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/3IOrF7t-R4OiVgpApso8Nw/zh-cn_image_0000002315775482.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/xDS0hK6IS1uASLUZzCLYJg/zh-cn_image_0000002315775482.gif "点击放大")
 
 ## 常见问题
 

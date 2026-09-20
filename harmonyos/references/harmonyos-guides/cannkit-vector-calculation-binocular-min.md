@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: Min
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 双目指令 > Min
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:35+08:00
+scraped_at: 2026-09-21T06:18:56+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:83982e101062cb41db66cb6d874f8f7cf997569dea1b8b8c0b8aeff4f73f421d
+content_hash: sha256:9c4547ca0657fa71f8171b95505f0af77c6ecd04d8df745fe665d3b0923a6ee0
 ---
 
 ## 功能说明
 
 按元素求最小值，公式表达如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/r4wQqoLRSI-VDN4DVe4EsQ/zh-cn_image_0000002757231819.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/PdF3LApSTom4XkED1Tn01w/zh-cn_image_0000002762995133.png)
 
 ## 函数原型
 

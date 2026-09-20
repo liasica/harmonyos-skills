@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 前景属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 前景属性设置
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:09+08:00
+scraped_at: 2026-09-21T06:20:39+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1a105211acb5f58b97aca8fb7625b3fe4958fb512ff691ef61b1bd30d9caa1ab
+content_hash: sha256:e9ea577cbdec8b3751e4a4d3c743c89d8b3f0e927104b96dc744ddd8479dc725
 ---
 
 设置组件的前景属性，通过模糊半径参数对组件前景内容应用模糊效果。
@@ -78,4 +78,4 @@ struct Index {
 
 radius表示模糊半径，数值越大，效果越模糊。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/y_1tn4XYTwKWrBTSgJs2IQ/zh-cn_image_0000002727752318.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/d2OLGE7USn22roNeeKrUeQ/zh-cn_image_0000002733276070.jpg)

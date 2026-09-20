@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-sna
 title: 设置定时通知弹窗
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 即时操作 > 设置定时通知弹窗
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:22+08:00
+scraped_at: 2026-09-21T06:17:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1c936c43ba84d2dfe7cb9cea0c9d6aa2ea4cbab31098f323a2cc00dac88c90fd
+content_hash: sha256:a574be773deae8450d5409613d7ee3c8bc857ed995d7bdfa51e7182a8741cbde
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:1c936c43ba84d2dfe7cb9cea0c9d6aa2ea4cbab31098f323a2cc00dac88
 
 [HdsSnackBar (即时操作)](../harmonyos-references/ui-design-hdssnackbar.md)支持定时通知弹窗。当应用开发者需要定时通知提醒弹窗时，可以通过HdsSnackBar的show方法显示HdsSnackBar弹窗，设置duration是大于0的时间表示弹窗是定时消失的，默认定时时间是5000ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ud4CG6Y9Rtu05BCPL-5LMQ/zh-cn_image_0000002727750906.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/loiAqSwbQJOsOSglcUp_nw/zh-cn_image_0000002733274632.gif)
 
 ## 开发步骤
 

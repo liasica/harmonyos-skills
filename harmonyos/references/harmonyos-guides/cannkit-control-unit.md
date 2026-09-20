@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-contr
 title: 控制单元
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 硬件架构 > 控制单元
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:33+08:00
+scraped_at: 2026-09-21T06:18:54+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:045515c32661a9a90aa1dedf7478c597b0c57feb0f73f13d6a8fe578cd53e755
+content_hash: sha256:6198f4dd08c9739cc11160a8bbbb45b90f148aaa2f8021f6b31a21003688005d
 ---
 
 控制单元为整个计算过程提供了指令控制，负责整个AI Core的运行。AI Core包含的控制单元如图1所示，每个模块的具体介绍请参考表1。
 
 **图1** 控制单元
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/mmbS0KveQSi3sEDaIN8SyA/zh-cn_image_0000002727751948.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/av_6c4QYRPi2Z_cuLScUvw/zh-cn_image_0000002733275694.png)
 
 **表1** 控制单元及相关的指令队列介绍
 

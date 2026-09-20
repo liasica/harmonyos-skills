@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 开启沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 开启沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:06+08:00
-doc_updated_at: 2026-09-17
+scraped_at: 2026-09-21T06:17:21+08:00
+doc_updated_at: 2026-09-20
 content_hash: sha256:d0db643a318bcdaeac147f7bf31ebdb1fa8006e6747c4f7cb43eb3dd70fa6ce0
 ---
 

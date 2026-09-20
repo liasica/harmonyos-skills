@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/embeddeduiext
 title: EmbeddedUIExtensionAbility
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > ExtensionAbility组件 > EmbeddedUIExtensionAbility
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:44:50+08:00
+scraped_at: 2026-09-21T06:17:04+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ef7965dd704f21caf994a895794bc507556d448dabff9a823809ed7dddd5ba1d
+content_hash: sha256:a2f92d83681a49e8aedd11d87cef2cadb7ac67f0f72a3816535378751b3e541a
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ EmbeddedUIExtensionAbility需要和[EmbeddedComponent](../harmonyos-references/t
 
 **图1** EmbeddedUIExtensionAbility示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/aOlzYhJOR8W_IqBPUhM2UQ/zh-cn_image_0000002757309403.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/WD3cCdmISJ2T6czGur6Trw/zh-cn_image_0000002733433270.png)
 
 ## 约束限制
 

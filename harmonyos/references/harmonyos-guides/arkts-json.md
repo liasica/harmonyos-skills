@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-json
 title: JSON扩展库
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > JSON扩展库
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:165fe023a8d70b2c426b0e38aa526092d6e24a2f5a5ba5c8b3b17834b1a07634
+scraped_at: 2026-09-21T06:17:10+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:c1e85741f76fda459cdee1ee806f81c78f8258a30921a3a8977a6cd41da82e7a
 ---
 
 ## 场景介绍
@@ -40,7 +40,7 @@ parse(text: string, reviver?: Transformer, options?: ParseOptions): Object | nul
 
 ### stringify
 
-stringify(value: Object, replacer?: (number | string)[] | null, space?: string | number): string
+stringify(value: Object, replacer?: Transformer, space?: string | number): string
 
 将对象转换为JSON字符串，支持BigInt模式。
 

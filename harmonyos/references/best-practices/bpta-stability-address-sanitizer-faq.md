@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 适配常见问题
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 适配常见问题
 category: best-practices
-scraped_at: 2026-09-02T14:53:45+08:00
-doc_updated_at: 2026-05-30
+scraped_at: 2026-09-21T06:25:48+08:00
+doc_updated_at: 2026-09-20
 content_hash: sha256:19ce429c19dca3a7e38f9ecda49203a23274d1597cf6a9ae821309808f8bf414
 ---
 

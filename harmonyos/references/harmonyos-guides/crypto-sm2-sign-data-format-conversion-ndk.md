@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-si
 title: SM2签名数据格式转换(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > SM2签名数据格式转换(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:85dade6fc9b785f52c02e3dc4026b4b43e6eddb330ac8f4c14cb0116b5a4aaeb
+scraped_at: 2026-09-21T06:17:43+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:ec90c24544b4ba862470e256046112d01e174ca9b90141737196ce61942e6eba
 ---
 
 当前支持DER格式与r、s格式互转的能力。
 
-开发者可指定SM2密文的参数，将其转换成DER格式密文。反之，也可以从DER格式密文中提取出SM2的具体密文参数。
+开发者可指定SM2签名参数，将其转换成DER格式签名数据。反之，也可以从DER格式签名数据中提取出SM2的具体签名参数。
 
-**指定密文参数，转换为DER格式**
+**指定签名参数，转换为DER格式**
 
-1. 调用[OH\_CryptoEccSignatureSpec\_Create](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptoeccsignaturespec_create)，创建[OH\_CryptoEccSignatureSpec](../harmonyos-references/capi-cryptosignatureapi-oh-cryptoeccsignaturespec.md)对象，用于设置SM2密文参数。
+1. 调用[OH\_CryptoEccSignatureSpec\_Create](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptoeccsignaturespec_create)，创建[OH\_CryptoEccSignatureSpec](../harmonyos-references/capi-cryptosignatureapi-oh-cryptoeccsignaturespec.md)对象，用于设置SM2签名参数。
 2. 调用[OH\_CryptoEccSignatureSpec\_SetRAndS](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptoeccsignaturespec_setrands)，将R、S设置到OH\_CryptoEccSignatureSpec对象中。
-3. 调用[OH\_CryptoEccSignatureSpec\_Encode](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptoeccsignaturespec_encode)得到转换后的DER格式的密文。
+3. 调用[OH\_CryptoEccSignatureSpec\_Encode](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptoeccsignaturespec_encode)得到转换后的DER格式的签名数据。
 4. 调用[OH\_CryptoEccSignatureSpec\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptoeccsignaturespec_destroy)释放对象。
 
 ```

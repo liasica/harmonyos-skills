@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-prikey
 title: 使用私钥对象获取公钥对象(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 使用私钥对象获取公钥对象(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c2afaa0f6679741dee4a38de10b898c260950bcb2450e7c680e059099e31c0fb
+scraped_at: 2026-09-21T06:17:41+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:edbfba257567830f2e203ecb7beffb90a3ba87dd59246644d258f843dc58552d
 ---
 
 从API版本23开始，算法库支持从私钥对象中获取公钥对象的操作。
@@ -86,8 +86,8 @@ content_hash: sha256:c2afaa0f6679741dee4a38de10b898c260950bcb2450e7c680e059099e3
     try {
       let keyPair = rsaGenerator.convertKeySync(null, skDataBlob);
       let priKey = keyPair.priKey;
-      let pubkey = await priKey.getPubKey();
-      let pkBlob = pubkey.getEncoded();
+      let pubKey = await priKey.getPubKey();
+      let pkBlob = pubKey.getEncoded();
       console.info('pk1 bin data: ' + pkBlob.data);
       let ret: boolean = compareUint8Array(pkBlob.data, expectPkdata);
       console.info('result: ' + ret);
@@ -155,8 +155,8 @@ content_hash: sha256:c2afaa0f6679741dee4a38de10b898c260950bcb2450e7c680e059099e3
     try {
       let keyPair = rsaGenerator.convertKeySync(null, skDataBlob);
       let priKey = keyPair.priKey;
-      let pubkey = priKey.getPubKeySync();
-      let pkBlob = pubkey.getEncoded();
+      let pubKey = priKey.getPubKeySync();
+      let pkBlob = pubKey.getEncoded();
       console.info('pk1 bin data: ' + pkBlob.data);
       let ret: boolean = compareUint8Array(pkBlob.data, expectPkdata);
       console.info('result: ' + ret);

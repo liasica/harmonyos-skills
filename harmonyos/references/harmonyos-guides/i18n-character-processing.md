@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-characte
 title: 字符处理
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 字符处理
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:199427891b2d4075aaed8cdf30cef0a88d573fa36f1d5c1a45826d7fb14c7b9b
+scraped_at: 2026-09-21T06:17:37+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:4d0769be232aba485b5960998585fc4b4b2f4f0038e7c727eadff8224f6bef27
 ---
 
 ## 功能介绍
@@ -101,12 +101,12 @@ content_hash: sha256:199427891b2d4075aaed8cdf30cef0a88d573fa36f1d5c1a45826d7fb14
   try {
     let delimiter = '/';
     let locale: Intl.Locale = new Intl.Locale('ar');
-    // mirrorPath = 'tmp/out/data/'
+    // mirrorPath = 'tmp/out/data'
     mirrorPath = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
     
     // 传入非镜像语言，不处理路径
     let localeZh: Intl.Locale = new Intl.Locale('zh');
-    // unMirrorPath = '/data/out/tmp'
+    // unMirrorPath = 'data/out/tmp'
     unMirrorPath = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, localeZh);
   } catch (error) {
     console.error(`call I18NUtil.getUnicodeWrappedFilePath failed, error code: ${error.code}, message: ${error.message}.`);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感典型场景
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感典型场景
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:06+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:2e1d5612a6d601d6ccd2e2af457acf9975ad62cb5993e26fbbc006809f39d8a3
+scraped_at: 2026-09-21T06:17:21+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:9e16cac3c2cc736e0dd4da005f0f314624d8881a11052d834f89498290895aac
 ---
 
 本文档提供沉浸光感两个典型场景的开发指导，包括搜索框标题栏效果和内容区标题栏开启沉浸光感。
@@ -179,7 +179,7 @@ content_hash: sha256:2e1d5612a6d601d6ccd2e2af457acf9975ad62cb5993e26fbbc006809f3
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/4uhEamkDT3-cF2Y_dqLhuw/zh-cn_image_0000002727750382.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/k4NflRMRTd-llyEex1c7bA/zh-cn_image_0000002733274098.gif)
 
 ## 内容区标题栏开启沉浸光感
 
@@ -334,4 +334,4 @@ content_hash: sha256:2e1d5612a6d601d6ccd2e2af457acf9975ad62cb5993e26fbbc006809f3
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/__7b7IBrQWG7MB8ohQwDKQ/zh-cn_image_0000002757310097.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/mJut0t2KT-WQ4TRQilGCPA/zh-cn_image_0000002733433982.gif)

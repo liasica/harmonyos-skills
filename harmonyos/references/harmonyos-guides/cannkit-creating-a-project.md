@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-creat
 title: 创建项目
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > App集成 > 创建项目
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:32+08:00
+scraped_at: 2026-09-21T06:18:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b2e1fdbf258ef72ded700cdda8d9d0b7cb1aebdcff7ddab14a9833a32b881d89
+content_hash: sha256:e735fb1d4e6ce389153cab68a246c92e29d01d5815fb51677aaaa964105d44c3
 ---
 
 本章以[Caffe SqueezeNet](https://github.com/forresti/SqueezeNet)模型集成为例，说明App集成操作过程。
 
 1. 创建DevEco Studio项目，选择“Native C++”模板，点击“Next”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/fIbCHUZoTESrpky3YbN-LQ/zh-cn_image_0000002727751942.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/xIJiON1hRqSPz4vw_NiE6w/zh-cn_image_0000002733275688.png)
 2. 按需填写“Project name”、“Save location”和“Module name”，选择“Compile SDK”为“5.1.0(18)”及以上版本，点击“Finish”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/5yJcPWkIQ6GUt393YVi5cA/zh-cn_image_0000002757311657.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/xSnsK_VTQw-3mDSXnIBJzg/zh-cn_image_0000002733435568.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-privac
 title: 应用隐私保护
 breadcrumb: 最佳实践 > 安全设计 > 应用隐私保护
 category: best-practices
-scraped_at: 2026-09-16T06:55:17+08:00
+scraped_at: 2026-09-21T06:25:54+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:e9065ddcd538e79257fcfaeaf1c01a60da31137cf8bb09a058d3c937072603c5
+content_hash: sha256:07c6d12f8b420c2552b5f14cd9cd6ab054b0c0b88305b2328853ccfab42cc4b9
 ---
 
 ## 概述
@@ -83,7 +83,7 @@ content_hash: sha256:e9065ddcd538e79257fcfaeaf1c01a60da31137cf8bb09a058d3c937072
 
 例如在[“HMOS世界”](https://gitcode.com/harmonyos_samples/hmosworld)中使用了隐私声明的弹窗，具体实现可以参考代码[SafePage.ets](https://gitcode.com/harmonyos_samples/hmosworld/blob/master/HMOSWorld/Application/products/phone/src/main/ets/pages/SafePage.ets)。应用首次启动后，会弹出该弹窗，当应用获得用户授权同意后，应用才能开始正常使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/LgoQky0vTVKRwCXIDqRCOQ/zh-cn_image_0000002194010840.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/hbBeIM60Q2WfSWKkhFu_CQ/zh-cn_image_0000002194010840.png "点击放大")
 
 ### 减少应用的位置信息访问权限
 
@@ -110,7 +110,7 @@ content_hash: sha256:e9065ddcd538e79257fcfaeaf1c01a60da31137cf8bb09a058d3c937072
 
 **图1** 权限申请弹窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/A9IV0nZbRfCPmExSnHjOJw/zh-cn_image_0000002681797507.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/S0xyC8ZwRp2ip61aDY-HOg/zh-cn_image_0000002681797507.png "点击放大")
 
 接下来介绍模糊位置申请的实现方法：
 
@@ -187,7 +187,7 @@ content_hash: sha256:e9065ddcd538e79257fcfaeaf1c01a60da31137cf8bb09a058d3c937072
 
 用户往往不愿意授予应用对其所有照片和视频的访问权限。因此，HarmonyOS在API9版本之后引入了Picker选择器，以满足用户正常的数据访问需求，同时最小化应用的数据泄露风险。通过减少授权范围，降低授权的颗粒度，例如用户在发送图片时，仅允许应用访问用户选择的图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/16xONRWcRuWYYHf7jvW0dg/zh-cn_image_0000002193851256.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/w-yDVIDwSdCaNCk8qj4rbA/zh-cn_image_0000002193851256.png "点击放大")
 
 示例代码如下：
 

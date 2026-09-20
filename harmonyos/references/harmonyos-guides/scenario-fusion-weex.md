@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: Weex框架+H5接入智能填充
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 三方框架+H5接入智能填充 > Weex框架+H5接入智能填充
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:27+08:00
+scraped_at: 2026-09-21T06:18:48+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:b0297304dfcb5b903e56c801906741396fdaba51f02029cf9a55f05c4ad900cd
+content_hash: sha256:05d368b82659d942a1bcb34d307061c899bb15f3065bfc0520595ec3cea2a20a
 ---
 
 **说明** 
@@ -24,7 +24,7 @@ content_hash: sha256:b0297304dfcb5b903e56c801906741396fdaba51f02029cf9a55f05c4ad
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/TmZndvx9TOSpsKoj95rqhQ/zh-cn_image_0000002727591988.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/uyHMXEYxTKuCgsGvf83pwQ/zh-cn_image_0000002762835105.png)
 
 ## 示例代码
 

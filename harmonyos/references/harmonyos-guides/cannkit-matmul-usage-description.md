@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-matmu
 title: 使用说明
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 矩阵相乘 > Matmul > 使用说明
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:38+08:00
+scraped_at: 2026-09-21T06:18:59+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:8d80a328c5274219be0d4a82a8ca8c03ba26708433c4fe7d3c8dac40432634e8
+content_hash: sha256:481d02dd32bec6c771be3e1afaba016fa5d81df48482ed4dc9b31d9083a4eeed
 ---
 
 AscendC提供一组Matmul高阶API，方便开发者快速实现Matmul矩阵乘法的运算操作。
@@ -17,7 +17,7 @@ Matmul的计算公式为：C = A \* B，其示意图如下。
 
 **图1** Matmul矩阵乘示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/pNwpMD-GSyyQ863Wo7EEfA/zh-cn_image_0000002757311721.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Yc3OClW4Sx6eUFZdz5XUsA/zh-cn_image_0000002733435632.png)
 
 **说明** 
 

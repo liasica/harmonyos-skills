@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/online-video-
 title: 在线视频播放卡顿优化
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 在线视频播放卡顿优化
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:00+08:00
+scraped_at: 2026-09-21T06:18:19+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:399d4312ade0cc604ef31adda50b9ca46e7ff4d0b6c7f2c57823309367c22bb7
+content_hash: sha256:272f1a7b26bd551afe15d825856974bc1b597c4197147365f346c4a5f9e43c12
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:399d4312ade0cc604ef31adda50b9ca46e7ff4d0b6c7f2c57823309367c
 
 **图 1** 缓冲区原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/sXkuGREuTmqdKJthc6mUEA/zh-cn_image_0000002757310963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/3iWJhbf7SLaS8TJK8Ijvbg/zh-cn_image_0000002733434862.png)
 
 如上图所示：
 
@@ -59,7 +59,7 @@ AVPlayer的缓冲区工作原理如下：
 
 **图 2** 多码率流切换示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Y1Lf9IRNRXSNssYC4bfnlg/zh-cn_image_0000002757231083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/mW9xxYeSTdSSlGvKZxuQkg/zh-cn_image_0000002762994385.png)
 
 如上图所示：
 
@@ -144,7 +144,7 @@ public async initAVPlayer(id: string, source: media.MediaSource, strategy: media
 
 **图 3** 视频卡顿率折线图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/g-QIonUxTh-UjiYFqiHo-A/zh-cn_image_0000002727591392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/MBwllF9DTMW98Y0DN6kxZA/zh-cn_image_0000002762834497.png)
 
 从实验数据可以看出，当媒体文件大小超过可设置的缓冲区最大值时，缓冲区越大，视频卡顿率越低，将缓冲区设置为最大值20MB，可最大程度减少视频卡顿。
 
@@ -166,7 +166,7 @@ AVPlayer当前默认支持HLS/DASH视频流的码率自适应调节，但此功�
 
 **图 4** 码率调整策略示例流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/UMCKjuYgSHuni5NBISMU9Q/zh-cn_image_0000002727751250.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/xsU8jZObQvij6xemKRvTUg/zh-cn_image_0000002733274986.png)
 
 1. 注册码率信息相关回调，包括on('availableBitrates')、on('bitrateDone')、on('videoSizeChange')。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-code
 title: 视频场景编解码低功耗规则
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 视频场景编解码低功耗规则
 category: best-practices
-scraped_at: 2026-09-16T06:55:10+08:00
+scraped_at: 2026-09-21T06:25:47+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:29209174e95e63a2d875882911810ae9515970db60741ec54a420f201d5e2cbc
+content_hash: sha256:926123d31b999e1fcd74c6f5c86cb4b62a1aaa14aaf2851c92952db85c83728a
 ---
 
 ## 规则
@@ -33,10 +33,10 @@ OH_AVCodec *videoDecH = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_H
 
 * 方法一：在命令提示符窗口中，输入hdc shell top命令，查看当前系统的top进程的CPU占用率。如果av\_codec\_service进程的CPU负载率超过 5%，则说明视频硬解码已启用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ovEbNFapTmSwIi8M7_Xo4w/zh-cn_image_0000002229337309.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/l3xTlw-MTY-8g5mWNSez5Q/zh-cn_image_0000002229337309.png "点击放大")
 
 * 方法二：[通过DevEco Studio Profiler抓取systrace](../harmonyos-guides/ide-insight-session-time.md)
 
   通过systrace确认av\_codec\_service进程的负载，如下图所示。业务频繁唤醒且有实际函数运行，说明视频处于硬解码状态。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/XpmIxDMKTSea8mrmkxrhjw/zh-cn_image_0000002193851924.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/7gkwq0qSTXiccDhHtLpXUQ/zh-cn_image_0000002193851924.png "点击放大")

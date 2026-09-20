@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.settings (设置数据项名称)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.settings (设置数据项名称)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:72d63ffd244a27dc8722f73178deea14848fbd5d6994f05057acf259498dadca
+scraped_at: 2026-09-21T06:23:03+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:6c81cf3c6c71e713d35d3d486b879a8ae06eac11cdde5c163e4f0bb9dc177469
 ---
 
 本模块提供访问设置数据项的能力。
@@ -335,7 +335,7 @@ settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100', set
 
 getValue(context: Context, name: string, callback: AsyncCallback<string>): void
 
-获取数据库中DEVICE\_SHARD域指定数据项的值。使用callback异步回调。
+获取数据库中DEVICE\_SHARED域指定数据项的值。使用callback异步回调。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -370,7 +370,7 @@ settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, (err, valu
 
 getValue(context: Context, name: string): Promise<string>
 
-获取数据库中DEVICE\_SHARD域指定数据项的值。使用Promise异步回调。
+获取数据库中DEVICE\_SHARED域指定数据项的值。使用Promise异步回调。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -953,7 +953,7 @@ settings.getURI(settings.display.SCREEN_BRIGHTNESS_STATUS).then((uri:string) => 
 
 getValue(dataAbilityHelper: DataAbilityHelper, name: string, callback: AsyncCallback<object>): void
 
-获取数据库中DEVICE\_SHARD域指定数据项的值。使用callback异步回调。
+获取数据库中DEVICE\_SHARED域指定数据项的值。使用callback异步回调。
 
 **说明** 
 
@@ -991,7 +991,7 @@ settings.getValue(helper, settings.display.SCREEN_BRIGHTNESS_STATUS, (err:Error,
 
 getValue(dataAbilityHelper: DataAbilityHelper, name: string): Promise<object>
 
-获取数据库中DEVICE\_SHARD域指定数据项的值。使用Promise异步回调。
+获取数据库中DEVICE\_SHARED域指定数据项的值。使用Promise异步回调。
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-more-ca
 title: 适配指导案例
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 从TypeScript到ArkTS的适配指导 > 适配指导案例
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8f48dd923e21c5600fad2efa92166b809c332882c76ab3a488e589a61dc43316
+scraped_at: 2026-09-21T06:17:03+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:be530e617e7826fbcf490ae583ce5d28cacbe8a5aa88a1bfe26615f2edb2f88d
 ---
 
 本文通过具体应用场景中的案例，提供在ArkTS语法规则下将TS代码适配成ArkTS代码的建议。各章以ArkTS语法规则的英文名称命名，每个案例展示适配前的TS代码和适配后的ArkTS代码。
@@ -1656,33 +1656,32 @@ a?.bar();
 
 **建议改法**
 
-1.一般情况下，**建议按照业务逻辑**在声明时初始化属性，或者在构造函数中为属性赋值。如：
+1. 一般情况下，**建议按照业务逻辑**在声明时初始化属性，或者在构造函数中为属性赋值。如：
 
-```typescript
-// code with error
-class Test {
-  value: number
-  flag: boolean
-}
+   ```typescript
+   // code with error
+   class Test {
+     value: number
+     flag: boolean
+   }
 
-// 方式一，在声明时初始化
-class Test {
-  value: number = 0
-  flag: boolean = false
-}
+   // 方式一，在声明时初始化
+   class Test {
+     value: number = 0
+     flag: boolean = false
+   }
 
-// 方式二，在构造函数中赋值
-class Test {
-  value: number
-  flag: boolean
-  constructor(value: number, flag: boolean) {
-    this.value = value;
-    this.flag = flag;
-  }
-}
-```
-
-2.对于对象类型（包括函数类型）A，如果不确定如何初始化，建议按照以下方式之一进行初始化：
+   // 方式二，在构造函数中赋值
+   class Test {
+     value: number
+     flag: boolean
+     constructor(value: number, flag: boolean) {
+       this.value = value;
+       this.flag = flag;
+     }
+   }
+   ```
+2. 对于对象类型（包括函数类型）A，如果不确定如何初始化，建议按照以下方式之一进行初始化：
 
 ​ 方式(i) prop: A | null = null
 

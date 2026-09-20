@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/servicecollab
 title: 跨设备互通（RichEditor控件）
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > 跨设备互通（RichEditor控件）
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:38+08:00
+scraped_at: 2026-09-21T06:17:55+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:5ba6378028f55c90e6897f6dca5546ba0a71efd21d62e391a3e0b76d1eb07aed
+content_hash: sha256:8af0fba6b3794a0d0a9d50ddb1fd8f618ddac25d124724ee464b8dcbe03922fa
 ---
 
 富文本控件[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)已集成跨设备互通能力。在Tablet或PC/2in1设备上，用户可通过其右键菜单调用Phone的相机、扫描及图库（访问图片）功能。
@@ -77,19 +77,19 @@ struct Index {
 
 1.在富文本区域右键。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/MbE8Z4xtRYO-mfv6w-9bUg/zh-cn_image_0000002727751026.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/0-VERnrHQjqlM1n9viqeUw/zh-cn_image_0000002733274754.png)
 
 2.选择想要使用的能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/kkOHtozIQSSKQQmEnKixFA/zh-cn_image_0000002757310741.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/OKovqb1rTfWkULZ9cDWJrw/zh-cn_image_0000002733434636.png)
 
 3.等待对端设备拍照回传。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/NKDS2FySTwamh7DbGvEv8Q/zh-cn_image_0000002757230861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/UTo-xrSQRLSswCi_3VxESA/zh-cn_image_0000002762994157.png)
 
 4.图片回传后，在光标后面已嵌入一张图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/YQ8GeRRwT2qViCRkjFXWPA/zh-cn_image_0000002727591170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/xROJMhhkRmSpYsm9e_0I-w/zh-cn_image_0000002762834271.png)
 
 ## 关闭富文本跨设备互通能力
 

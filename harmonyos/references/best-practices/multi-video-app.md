@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-video-app
 title: 多设备长视频界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备长视频界面
 category: best-practices
-scraped_at: 2026-09-16T06:55:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080cc9262
+scraped_at: 2026-09-21T06:25:40+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:50e28fb25eb708b8753eb16a8202ac800ffd15ff5208f2570a0e08078cc5ad67
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 
 长视频应用的UX设计可参考影音娱乐类多设备响应式设计指南的[长视频](../design-guides/responsive-design-examples1-0000001957369849.md#section10309114311327)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/FN0Yu9YSSdW3NtloZk3EJQ/zh-cn_image_0000002579786808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/XKEv67TlSu22TTH5cfw_Qg/zh-cn_image_0000002579786808.png "点击放大")
 
 ## 工程管理
 
@@ -51,12 +51,12 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 工程结构如下：
 
 ```screen
-├──common                                         // 基础特性层
-│  ├──multivideobase/src/main/ets                 // 基础公共能力ArkTS源码
+├──common                                         // 公共能力层
+│  ├──multivideobase/src/main/ets                 // 公共能力ArkTS源码
 │  │  ├──constants
 │  │  └──utils
-│  └──base/Index.ets                              // 基础公共能力对外导出接口
-├──features                                       // 公共能力层
+│  └──base/Index.ets                              // 公共能力对外导出接口
+├──features                                       // 基础特性层
 │  ├──multivideorecommended/src/main/ets          // 推荐模块ArkTS源码
 │  │  ├──constants
 │  │  ├──model
@@ -78,7 +78,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 │  │  ├──utils
 │  │  ├──view
 │  │  └──viewmodel
-│  ├──multivideovideodetail/src/main/resources    // 视频详情模块资源文件
+│  ├──multivideodetail/src/main/resources         // 视频详情模块资源文件
 │  └──multivideodetail/Index.ets                  // 视频详情模块对外导出接口
 └──products                                       // 产品定制层
    ├──default/src/main/ets                        // 直板机、双折叠（Mate X系列）、三折叠、阔折叠产品ArkTS源码
@@ -116,7 +116,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
   长视频应用在移动端设备上支持全屏、分屏、悬浮窗和自由窗口四种模式，具体实现可参考[窗口模式](bpta-multi-device-window-mode.md)。其中，分屏与悬浮窗模式无需特殊设计，可直接通过系统能力进入。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配各类窗口模式下的布局。
 * 窗口方向
 
-  应用内可通过[window.setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)设置窗口显示方向，具体说明可参考[窗口方向](bpta-multi-device-window-direction.md)。在长视频应用中，仅在视频详情页进行全屏播放切换时，执行特定的窗口方向设置，相关实现逻辑可参考[视频详情页 & 全屏播放页案例](bpta-multi-device-window-direction.md#section0224819173914)。除该场景外，应用统一采用[跟随桌面的旋转模式](../harmonyos-guides/window-rotation.md#其他方向类型)，建议在HAP包的module.json5文件中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下配置orientation属性为follow\_desktop。
+  应用内可通过[window.setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)设置窗口显示方向，具体说明可参考[窗口方向](bpta-multi-device-window-direction.md)。在长视频应用中，仅在视频详情页进行全屏播放切换时，执行特定的窗口方向设置，相关实现逻辑可参考[视频详情页 & 全屏播放页案例](bpta-multi-device-window-direction.md#section0224819173914)。除该场景外，应用统一采用跟随桌面的旋转模式（参考[其他方向类型](../harmonyos-guides/window-rotation.md#其他方向类型)中的FOLLOW\_DESKTOP），建议在HAP包的module.json5文件中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下配置orientation属性为follow\_desktop。
 * 窗口沉浸式
 
   根据UX设计规范，需要在多种窗口模式（全屏、分屏、悬浮窗）下实现沉浸式效果，具体实现可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。在全屏、分屏和悬浮窗模式下，均可通过[window.setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现沉浸式，并配合动态安全区避让，确保显示效果完整。
@@ -161,7 +161,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 
 * 热播视频区域长按预览
 
-  视频应用移动端实现了手机和平板设备的适配，支持的输入设备包括触控屏、手写笔和鼠标。
+  长视频应用移动端实现了手机和平板设备的适配，支持的输入设备包括触控屏、手写笔、鼠标和键盘。
 
   上述输入设备的长按预览操作，统一在热播视频区域首张图片的[LongPressGesture()](../harmonyos-references/ts-basic-gestures-longpressgesture.md)回调中实现，通过弹出[自定义弹窗 (CustomDialog)](../harmonyos-references/ts-methods-custom-dialog-box.md)播放视频完成交互。效果图如下所示。
 
@@ -170,7 +170,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
   | 推荐页-热播视频长按预览 |  |  |  |
 * 热播视频区域缩放控制
 
-  长视频应用移动端实现了手机和平板设备的适配，支持的输入设备包括触控屏、鼠标和键盘。缩放控制可以通过触摸屏上的双指操作触发，也可以通过键盘Ctrl键+鼠标滚轮的组合方式触发。
+  长视频应用移动端实现了手机和平板设备的适配，支持的输入设备包括触控屏、手写笔、鼠标和键盘。缩放控制可以通过触摸屏上的双指操作触发，也可以通过键盘Ctrl键+鼠标滚轮的组合方式触发。
 
   上述输入设备的缩放操作，统一在热播视频区域的[PinchGesture()](../harmonyos-references/ts-basic-gestures-pinchgesture.md)回调中实现，通过修改网格布局的[columnsTemplate](../harmonyos-references/ts-container-grid.md#columnstemplate)属性动态调整布局效果。效果图如下所示。
 
@@ -255,7 +255,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 
   2. 悬停态页面布局：视频画面移至屏幕上半部分显示；屏幕中间设置为折叠屏折痕避让区；进度条及其他可操作组件统一排布在屏幕下半部分。效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/aXnOo7kTRaCDayAc_OvEdA/zh-cn_image_0000002610146917.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/7_CUIuk3RK2rlt1mMX8oCQ/zh-cn_image_0000002610146917.png "点击放大")
 
 **说明** 
 
@@ -288,7 +288,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 
 电脑端推荐页与移动端功能定位一致，按照功能设计划分为6个区域，效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/4dyP57AvSZ-x559mTcjQUA/zh-cn_image_0000002579627030.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Yh9okME2TUGGsPh7NgwDzg/zh-cn_image_0000002579627030.png "点击放大")
 
 **界面开发**
 
@@ -307,10 +307,10 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 
 * 社区页签沉浸式设计
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/MgVtF4wrTCKrRztT7ocv-g/zh-cn_image_0000002579786936.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/nlMUSzHLQCC0yajXk1RQvA/zh-cn_image_0000002579786936.png "点击放大")
 * Banner图创新排版
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/RbXXXopORyihuHnedNRU8A/zh-cn_image_0000002610066823.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/EhInmNVBQBadtFxDtkIQ9g/zh-cn_image_0000002610066823.png "点击放大")
 
 **交互开发**
 
@@ -357,7 +357,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 
 边看边评页按照功能设计划分为5个区域，效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/qr8LggXnTJ6kG1EQPddBsw/zh-cn_image_0000002579627036.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/rokj9XX_QxybIel6wdu_xg/zh-cn_image_0000002579627036.png "点击放大")
 
 **界面开发**
 
@@ -412,7 +412,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 
 智慧屏端推荐页与移动端功能定位一致，按照功能设计划分为6个区域，效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/s_Q2RHCFQ86vM3yyhXs1bw/zh-cn_image_0000002610146927.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/V-ypp9rQRb2G8Kb6P1gXYw/zh-cn_image_0000002610146927.png "点击放大")
 
 **界面开发**
 
@@ -485,7 +485,7 @@ content_hash: sha256:13a368c75727c5dbcc62bc0175d2323299dd2954ff1c4b16a040c22080c
 
   长视频应用适配了智慧屏设备，需支持的输入设备包括灵犀指向遥控、灵犀悬浮触控、键盘和鼠标。需根据不同输入设备的交互方式，适配相应事件处理机制。
 
-  以实现播放/暂停控制为例，对于灵犀指向遥控、灵犀悬浮触控和鼠标，统一在视频播放区域监听[onClick()](../harmonyos-references/ts-universal-events-click.md#onclick12)点击事件来进行播放和暂停控制。对于灵犀指向遥控，监听确定键的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent)事件来进行播放和暂停控制。对于键盘，则监听空格键的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent)事件来进行播放和暂停控制。视频播放控制的具体交互逻辑，可查看[示例代码](multi-video-app.md#section18854194463114)。
+  以实现播放/暂停控制为例，对于灵犀悬浮触控和鼠标，统一在视频播放区域监听[onClick()](../harmonyos-references/ts-universal-events-click.md#onclick12)点击事件来进行播放和暂停控制。对于灵犀指向遥控，监听确定键的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent)事件来进行播放和暂停控制。对于键盘，则监听空格键的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent)事件来进行播放和暂停控制。视频播放控制的具体交互逻辑，可查看[示例代码](multi-video-app.md#section18854194463114)。
 
 ## 示例代码
 

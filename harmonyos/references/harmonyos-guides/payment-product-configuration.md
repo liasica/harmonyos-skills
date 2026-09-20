@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-produ
 title: （可选）特定场景配置操作
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > （可选）特定场景配置操作
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:23+08:00
+scraped_at: 2026-09-21T06:18:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c9206490832d4a87d2ad8b1c1f78bc7cd13b02020caac0245eef27a89e0d4d68
+content_hash: sha256:7cdaf598842385a40419428af1c84e0f5872868813c8aa9e1e4a63d4b75731ed
 ---
 
 如涉及以下场景，需提前完成相关产品的开通或配置操作。如不涉及，请直接跳转[下一章节](payment-config-agc.md)。
@@ -29,7 +29,7 @@ content_hash: sha256:c9206490832d4a87d2ad8b1c1f78bc7cd13b02020caac0245eef27a89e0
 
 如需要生成及下载账单，需商户在[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)入网时设置的管理员先在“[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/) > 商户中心 > 产品功能 > 功能设置”中开启“账单接口获取开关”，开启后**次日开始生成**前一日的账单。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/sJDRoA99Rwi9Rt3k--L4NA/zh-cn_image_0000002757231591.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Y46L6utzS0G2dLWsnPrINw/zh-cn_image_0000002762994905.png)
 
 涉及商户：直连商户、服务商、平台类商户
 

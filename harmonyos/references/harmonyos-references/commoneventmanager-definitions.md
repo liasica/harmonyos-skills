@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneve
 title: 系统定义的公共事件
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > 系统定义的公共事件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:08+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:d04358480d3196efd9c89d0fd498c0a815f8ab15f3099eef6b6532af572c24ce
+scraped_at: 2026-09-21T06:23:02+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:2b455572e544d413eba283dcd65b0fdfa2cc7b0f03a9b4b48d0240eaeb781d49
 ---
 
 本文档提供了系统定义的公共事件清单。
@@ -404,7 +404,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 分布式账号信息变更、系统账号头像信息变更、系统账号名称变更将会触发事件通知服务发布该系统公共事件，事件携带系统账号ID。
 
-与这个公共事件相关的接口：setOsAccountName、setOsAccountProfilePhoto, 这些为系统API，setOsAccountDistributedInfo为公共API，具体参看[系统账号接口文档](js-apis-osaccount.md)、[分布式账号接口文档](js-apis-distributed-account.md)。
+与这个公共事件相关的接口：setOsAccountName、setOsAccountProfilePhoto，这些为系统API，setOsAccountDistributedInfo为公共API，具体参看[系统账号接口文档](js-apis-osaccount.md)、[分布式账号接口文档](js-apis-distributed-account.md)。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 

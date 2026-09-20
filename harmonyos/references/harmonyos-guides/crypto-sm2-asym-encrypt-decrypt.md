@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-as
 title: 使用SM2非对称密钥加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用SM2非对称密钥加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bb725f7aeec8100fba3f872ab2c7ff7a4a131a5bec1afb8a067dfd15fc70e0d0
+scraped_at: 2026-09-21T06:17:42+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:a460788ed0799665f32726440c4c323a6a62e47dd9a7401ff955c78fa4685952
 ---
 
 对应的算法规格请查看[非对称密钥加解密算法规格：SM2](crypto-encryption-decryption.md#sm2)。
@@ -75,13 +75,13 @@ content_hash: sha256:bb725f7aeec8100fba3f872ab2c7ff7a4a131a5bec1afb8a067dfd15fc7
     let pubKey = keyPair.pubKey;
     let priKey = keyPair.priKey;
     let message = 'This is a test';
-    // 把字符串按utf-8解码为Uint8Array
+    // 把字符串按utf-8编码为Uint8Array
     let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
     let encryptText = await encryptMessagePromise(pubKey, plainText);
     let decryptText = await decryptMessagePromise(priKey, encryptText);
     if (plainText.data.toString() === decryptText.data.toString()) {
       console.info('decrypt ok.');
-      // 把Uint8Array按utf-8编码为字符串
+      // 把Uint8Array按utf-8解码为字符串
       let messageDecrypted = buffer.from(decryptText.data).toString('utf-8');
       console.info('decrypted result string:' + messageDecrypted);
     } else {
@@ -137,13 +137,13 @@ content_hash: sha256:bb725f7aeec8100fba3f872ab2c7ff7a4a131a5bec1afb8a067dfd15fc7
       let pubKey = keyPair.pubKey;
       let priKey = keyPair.priKey;
       let message = 'This is a test';
-      // 把字符串按utf-8解码为Uint8Array
+      // 把字符串按utf-8编码为Uint8Array
       let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
       let encryptText = encryptMessage(pubKey, plainText);
       let decryptText = decryptMessage(priKey, encryptText);
       if (plainText.data.toString() === decryptText.data.toString()) {
         console.info('decrypt ok.');
-        // 把Uint8Array按utf-8编码为字符串
+        // 把Uint8Array按utf-8解码为字符串
         let messageDecrypted = buffer.from(decryptText.data).toString('utf-8');
         console.info('decrypted result string:' + messageDecrypted);
       } else {

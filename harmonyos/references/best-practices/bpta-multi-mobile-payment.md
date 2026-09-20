@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-mobi
 title: 多设备移动支付界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备移动支付界面
 category: best-practices
-scraped_at: 2026-09-16T06:55:02+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:ad3512b07eadd5977bd8868e962c8b34b559ef1917064bbac1bd2a22bec67bcc
+scraped_at: 2026-09-21T06:25:40+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:9d50490c046b90f6175bc11ea37a2882a2b0c09213f150599f67b2d2b8267af7
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:ad3512b07eadd5977bd8868e962c8b34b559ef1917064bbac1bd2a22bec
 
 移动支付应用的UX设计可参考[移动支付类](../design-guides/mobile-payment-0000001957421613.md)多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/L1Y1Huw4QuedJrF-UqeSWA/zh-cn_image_0000002583509660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Aa4e01R0QoGY2TgBW8SSQQ/zh-cn_image_0000002583509660.png "点击放大")
 
 ## 工程管理
 
@@ -156,7 +156,7 @@ content_hash: sha256:ad3512b07eadd5977bd8868e962c8b34b559ef1917064bbac1bd2a22bec
 
 在实际开发中，区域1为外层页签，区域2-6为并列的推荐页内容，所以对应的开发顺序为区域1和区域2-6。
 
-在本示例中，点击扫一扫/收付款，在不同断点下呈现效果不同：在横向断点为sm时，拉起一个独立页面；横向断点大于sm时，拉起一个弹窗。此处采用[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)实现，sm断点时设置半模态样式[sheetType（SheetType枚举说明）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheettype11枚举说明)为CONTENT\_COVER，即全屏弹窗；大于sm断点时设置样式为CENTER，即居中弹窗。具体实现可查看[示例代码](bpta-multi-mobile-payment.md#section22034418521)。
+在本示例中，点击扫一扫/收付款，在不同断点下呈现效果不同：在横向断点为sm时，拉起一个独立页面；横向断点大于sm时，拉起一个弹窗。此处采用[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)实现，sm断点时设置半模态样式sheetType（[SheetType枚举说明](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheettype11枚举说明)）为CONTENT\_COVER，即全屏弹窗；大于sm断点时设置样式为CENTER，即居中弹窗。具体实现可查看[示例代码](bpta-multi-mobile-payment.md#section22034418521)。
 
 ### 扫一扫页
 
@@ -231,7 +231,7 @@ content_hash: sha256:ad3512b07eadd5977bd8868e962c8b34b559ef1917064bbac1bd2a22bec
 
 电脑端推荐页与移动端推荐页内容基本一致，差异点在于，移动端使用底部页签进行内容视图切换，电脑端使用侧边栏进行切换。按照模块，将推荐页相关内容划分为2个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Uqw-2XbfRxi3Q4JCv8CymQ/zh-cn_image_0000002614029343.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/h04IQUymS8e8TtQ7QjACTg/zh-cn_image_0000002614029343.png "点击放大")
 
 **界面开发**
 

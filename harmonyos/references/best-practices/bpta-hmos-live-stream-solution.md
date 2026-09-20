@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmos-live-
 title: 基于媒体能力实现直播单播功能
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于媒体能力实现直播单播功能
 category: best-practices
-scraped_at: 2026-09-16T06:55:05+08:00
+scraped_at: 2026-09-21T06:25:43+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:2f1032a4f308a982bd7c07605ace55597a8265841b4d01a2a49729eada6d8082
+content_hash: sha256:1520102367031e09e053636b5faecda8966050d67e9d30ccb208b0d8fbab4a09
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:2f1032a4f308a982bd7c07605ace55597a8265841b4d01a2a49729eada6
 
 本文基于系统的媒体底座能力，为开发者提供媒体直播系统的解决方案。系统在音视频采集、编解码、播放等方面能够高效处理多种格式的音视频数据，有效提升了音视频的质量和流畅度，助力开发者构建高清采集、高效编码及流畅播放等能力。本文主要涉及开播端的音视频采集与编码、看播端的流媒体播放与音画同步等技术方案。关于直播推拉流协议、云上服务器转码与分发等内容，本文暂不涉及。直播系统的完整链路可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/hErhLxYlQkGbDUMnXbINhw/zh-cn_image_0000002455689320.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/wbOYdlKDSHSAgpYXerowpg/zh-cn_image_0000002455689320.png "点击放大")
 
 ## 开播端解决方案
 
@@ -22,7 +22,7 @@ content_hash: sha256:2f1032a4f308a982bd7c07605ace55597a8265841b4d01a2a49729eada6
 
 ### 开播端架构设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/_6VG6eJPQAW4dGstRGeBQg/zh-cn_image_0000002488808969.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/8nH9LWKySVqWDSjHwGNwfg/zh-cn_image_0000002488808969.png "点击放大")
 
 开播端架构设计如上图所示。图中将直播系统划分为云端、应用、系统与硬件四个逻辑层次。本文重点介绍应用SDK层如何通过调用底层媒体能力完成直播音视频基础能力的构建。应用SDK层主要为应用业务层提供平台技术的基础能力，通常可分为音频SDK和视频SDK两部分：
 
@@ -64,7 +64,7 @@ content_hash: sha256:2f1032a4f308a982bd7c07605ace55597a8265841b4d01a2a49729eada6
 
 音频采集开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/DTrmO0uOS7-Qy00fBQifjQ/zh-cn_image_0000002455529676.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Jsh1yh5wSc6QrQ1fjSapRA/zh-cn_image_0000002455529676.png "点击放大")
 
 音频采集开发详细步骤，可参考[《使用OHAudio开发音频录制功能》](../harmonyos-guides/using-ohaudio-for-recording.md)。其中，开发者使用直播录音（AUDIOSTREAM\_SOURCE\_TYPE\_LIVE）类型的回声消除能力的关键代码如下：
 
@@ -119,11 +119,11 @@ if (sampleInfo.audioInfo.isOpenEchoCancel) {
 
 **（1）音频文件 -> 解封装 -> 音频解码**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/jFXwXjFcRK6O99xIqpIDpA/zh-cn_image_0000002488689009.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/7uv7YI4nTROQDkFanIh8jw/zh-cn_image_0000002488689009.png "点击放大")
 
 **（2）音频解码 -> 播放**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/E5Q-TUA1Soykw7Fq_i2s-w/zh-cn_image_0000002455689324.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/4AZbDr6RQcy1DdpgPTH2Uw/zh-cn_image_0000002455689324.png "点击放大")
 
 开播端主播可能会使用本机扬声器或耳机进行音频文件收听。若主播播放的音频文件由应用提供，则应用需同时将该音频文件编码后推流发送，以方便看播端的观众同步收听。
 
@@ -170,7 +170,7 @@ static int32_t OnRenderInterruptEvent(OH_AudioRenderer *renderer, [[maybe_unused
 
 在直播的视频采集场景中，建议应用仅采集一路预览流，以降低直播功耗和时延。同时，在SDR直播场景下，颜色空间可配置为BT709\_LIMIT，以获得更广泛的设备支持。相机视频采集流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/zXHfj8RTTfWl9DpoY_5fOg/zh-cn_image_0000002488808973.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/VNkuK36uSraq-qlrnYagmA/zh-cn_image_0000002488808973.png "点击放大")
 
 关于相机视频采集的具体开发步骤，开发者可参考[《相机录像实践》](../harmonyos-guides/camera-recording-case.md)。其中，配置颜色空间的关键代码如下所示：
 
@@ -208,7 +208,7 @@ setColorSpaceBeforeCommitConfig(session: camera.VideoSession, isHdr: number): vo
 
 在视频处理过程中，开发者需要完成NativeImage的创建、SurfaceId的获取及帧可用性监听设置，为后续相机数据的处理（如美颜、滤镜等）提供基础图像载体，确保相机生产的数据能被正确接收与处理。本文建议开发者通过NativeImage绑定外部OpenGL纹理并关联相机采集数据，由系统完成视频数据的流转，开发者可重点关注shader算法的实现。具体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/acwwogvxSaqHpu4lnrNbmg/zh-cn_image_0000002455529680.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/V5ld5rlUT36tQizk-UY6Pg/zh-cn_image_0000002455529680.png "点击放大")
 
 该环节的关键代码如下所示：
 
@@ -387,7 +387,7 @@ registerSystemPressureLevelChangeCallback(videoSession: camera.VideoSession): vo
 
 该场景下，建议应用可在直播推后台时发送一张如“主播暂时离开”的画面垫片以告知看播端观众此时主播离开，音视频采集暂停。同时为满足后台存活需求，业务需向系统申请一个数据传输的[长时任务](../harmonyos-guides/continuous-task.md)，且持续发送直播画面垫片以满足数据传输长时任务的流量监控需求，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/O1JHIFIxQwSbNmLxK-X2LQ/zh-cn_image_0000002488689013.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/kBmpNd-HTW6ssUamTz1voA/zh-cn_image_0000002488689013.png "点击放大")
 
 **（5）同一页面内的相机切换生命周期如何管理？**
 

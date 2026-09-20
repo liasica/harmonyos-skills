@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/changelog
 title: 最佳实践文档变更说明
 breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
-scraped_at: 2026-09-16T06:55:17+08:00
+scraped_at: 2026-09-21T06:25:55+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:473525780f3f370306f00197227608f6320eed28fd86152fb8032da86de9d6d5
+content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1e7836
 ---
 
 ## 2026年9月
@@ -910,7 +910,7 @@ content_hash: sha256:473525780f3f370306f00197227608f6320eed28fd86152fb8032da86de
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/f4nk09sZQTuliuDfId5K8w/zh-cn_image_0000002307192376.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/HO2izIFaTGCz2MYBkIF6uA/zh-cn_image_0000002307192376.png "点击放大")
 
 ### 新增文档
 
@@ -1107,7 +1107,7 @@ content_hash: sha256:473525780f3f370306f00197227608f6320eed28fd86152fb8032da86de
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/1Ioy-fLTQvCUcFVcXzfdJw/zh-cn_image_0000002318291885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ZAAvaQsSR-G1UNxwWHtGTg/zh-cn_image_0000002318291885.png "点击放大")
 
 ### 新增文档
 
@@ -1259,7 +1259,7 @@ content_hash: sha256:473525780f3f370306f00197227608f6320eed28fd86152fb8032da86de
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ghCnFSNSS-ycukVu8dhmww/zh-cn_image_0000002283692304.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/jMsXatkHSpG8C69AvvKWCQ/zh-cn_image_0000002283692304.png "点击放大")
 
 ### 新增文档
 

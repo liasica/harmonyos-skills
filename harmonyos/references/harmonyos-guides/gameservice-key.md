@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-k
 title: 获取游戏密钥
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 附录 > 获取游戏密钥
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:16+08:00
+scraped_at: 2026-09-21T06:18:36+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:da9fb6396b2b2787ee22defa47a578387a8aa324ffd8d2f1a5bebc287b0446e4
+content_hash: sha256:d4fa661b6d182b35c610e3e2e1ba713309aa11900bc7bc8603674fe7d99211aa
 ---
 
 在开发者服务器加签或验签时，请开发者前往AppGallery Connect获取加签私钥或验签公钥。
@@ -13,4 +13,4 @@ content_hash: sha256:da9fb6396b2b2787ee22defa47a578387a8aa324ffd8d2f1a5bebc287b0
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的游戏。
 2. 选择“构建 > 游戏服务”，记录下游戏密钥信息。若需要刷新密钥信息，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)方式联系华为工作人员。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/uijVfvLASfq3CizOEVAbTQ/zh-cn_image_0000002727591724.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/WjobpIiQSc2BIjkxSNqUdQ/zh-cn_image_0000002762834841.png)

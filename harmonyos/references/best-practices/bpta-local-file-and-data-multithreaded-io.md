@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-local-file
 title: 多线程操作密集型关系型数据库和文件读写
 breadcrumb: 最佳实践 > 应用框架 > 数据和文件 > 多线程操作密集型关系型数据库和文件读写
 category: best-practices
-scraped_at: 2026-09-16T06:54:57+08:00
+scraped_at: 2026-09-21T06:25:36+08:00
 doc_updated_at: 2026-05-18
-content_hash: sha256:1574b2a48435f68008362aadf961265978f369283938b08e8cbdb34ff329706b
+content_hash: sha256:4ca74a4c5673c2ac15a787b417da81853de23032439960ba55b472a9d4774225
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:1574b2a48435f68008362aadf961265978f369283938b08e8cbdb34ff32
 
 任务池（TaskPool）作用是为应用程序提供一个多线程的运行环境，降低整体资源的消耗、提高系统的整体性能，且开发者无需关心线程实例的生命周期。更多原理请详见[TaskPool简介](../harmonyos-guides/taskpool-introduction.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Nvo02z4ITj6OiSxu8BqICg/zh-cn_image_0000002229337461.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/29PLsBN8Sl28u3dCS12gOg/zh-cn_image_0000002229337461.png "点击放大")
 
 TaskPool在执行密集型I/O读写方面具有以下优势：
 
@@ -181,7 +181,7 @@ TaskPool在执行密集型I/O读写方面具有以下优势：
 
 共享堆（SharedHeap）是进程级别的堆空间，与虚拟机本地堆（LocalHeap）不同的是，LocalHeap只能被单个并发实例访问，而SharedHeap可以被所有线程访问。一个Sendable共享对象的跨线程行为是引用传递。因此，Sendable可能被多个并发实例引用，判断Sendable共享对象是否存活，取决于所有并发实例的对象是否存在对此Sendable共享对象的引用，更多原理请见[Sendable的实现原理](../harmonyos-guides/arkts-sendable.md#sendable的实现原理)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/XT146pHoSCCYf6_0-URTWQ/zh-cn_image_0000002229451953.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/QF5MoXVWQqqDp7XekCChVw/zh-cn_image_0000002229451953.png)
 
 在密集型I/O处理场景中，文件读写会涉及大量数据的传输，而数据库读写则通常被封装成class进行传递，Sendable用引用代替拷贝，可以有效地降低序列化时间，从而提升性能，Sendable主要可以解决两个场景的问题：
 

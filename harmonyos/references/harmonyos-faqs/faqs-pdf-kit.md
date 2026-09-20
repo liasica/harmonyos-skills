@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-pdf-kit
 title: PDF文档解析服务（PDF Kit）
 breadcrumb: FAQ > 应用服务开发 > PDF文档解析服务（PDF Kit）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d3de6d99d71fb7556db0937bbbca461835682da6c711f9b645081f54bbb8e1f7
+scraped_at: 2026-09-21T06:28:05+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:e9450dd48299e56ca504dac7c708e03979d8f68a590387a60f4195af5c66cde3
 ---
 
-* **[应用内PDF文件预览失败](faqs-pdf-1.md)**
+* **[HarmonyOS应用内使用PdfView或Web组件预览PDF文件失败的排查方案](faqs-pdf-1.md)**
 * **[如何实现PDF的预览缩略图](faqs-pdf-2.md)**
 * **[在预览模式下，如何一键删除所有PDF标注](faqs-pdf-3.md)**
 * **[如何为PDF添加指定的字符串生成新的PDF文件](faqs-pdf-4.md)**
@@ -26,5 +26,4 @@ content_hash: sha256:d3de6d99d71fb7556db0937bbbca461835682da6c711f9b645081f54bbb
 * **[PDF添加SquareAnnotationInfo标注，设置fillColor无效如何解决](faqs-pdf-16.md)**
 * **[PDF Kit水印相关问题汇总](faqs-pdf-17.md)**
 * **[如何通过Canvas绘制图形并添加到PDF上](faqs-pdf-18.md)**
-* **[PDF添加水印是替换还是叠加](faqs-pdf-19.md)**
 * **[PDF添加水印是替换还是叠加](faqs-pdf-20.md)**

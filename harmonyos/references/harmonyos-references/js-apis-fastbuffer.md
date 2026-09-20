@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.fastbuffer (FastBuffer)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.fastbuffer (FastBuffer)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2f84b2c953853a221ad4cbb24a74f53d4a7b3595f0d99609a629c704729b2bb6
+scraped_at: 2026-09-21T06:20:21+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:572ccf338e55e6b714f242ec72f7baf0773c80fd4bdce5d6d46900c71feda849
 ---
 
 FastBuffer对象是比Buffer性能更优的Buffer容器，用于表示固定长度的字节序列，是专门存放二进制数据的缓冲区。
@@ -82,7 +82,7 @@ import { fastbuffer } from '@kit.ArkTS';
 // 创建长度为5的FastBuffer对象，默认填充0
 let buf1 = fastbuffer.alloc(5);
 console.info(buf1.toString());
-// 输出结果：00000
+// 输出结果为空
 // 创建长度为5的FastBuffer对象，填充字符'a'
 let buf2 = fastbuffer.alloc(5, 'a');
 // 创建长度为11的FastBuffer对象，使用base64编码填充

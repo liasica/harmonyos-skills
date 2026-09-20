@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-abckitts-i
 title: 基于AbcKitTS实现字节码插桩
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 基于AbcKitTS实现字节码插桩
 category: best-practices
-scraped_at: 2026-09-16T06:54:58+08:00
+scraped_at: 2026-09-21T06:25:36+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:8649bc8787248ccaab0a3f0b33e4626286b5be298f99ea7bf77902d2604aa23f
+content_hash: sha256:41258faa44de1930cf898975e141bee6f53c692f171874dac6a7be44e7b88038
 ---
 
 ## 概述
@@ -71,7 +71,7 @@ IsaKit是AbcKitTS提供的核心指令操作工具，用于操作方法的Block�
 
 开发者要使用AbcKitTS对HarmonyOS工程进行插桩，需要完成两个步骤：**编写插桩代码**和**注册插件**。其中，插桩代码的编写会根据具体业务逻辑而有所不同，本文将在[场景示例](bpta-abckitts-implements-instrumentation.md#section21172491410)中根据不同业务场景详细介绍实现方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/TfjPOeNeRZGkHaBa1sIZ_A/zh-cn_image_0000002568136792.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/lc_lMtNVQPW1EBhIvcURQg/zh-cn_image_0000002568136792.png "点击放大")
 
 ### 编写插桩代码
 

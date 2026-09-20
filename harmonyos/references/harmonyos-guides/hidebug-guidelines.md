@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guide
 title: HiDebug能力概述
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 系统调试信息获取 > HiDebug能力概述
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:48+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:160db41522e19a3d267f4d0e3ef09a1b2a1b3a49ed25a73a29a41a32d97877e0
+scraped_at: 2026-09-21T06:18:06+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:6e5761eca5fe5e9ea92315ee4c535675b0331db884337f12f9287fed51adbe2f
 ---
 
 HiDebug可用于获取系统或应用进程的内存、CPU和GPU等数据，以及开启进程Trace采集。
@@ -217,7 +217,7 @@ ARM64架构函数栈帧的结构如下图所示：
 
 **图1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/UGt1ygUeQ7u_-t0bc69gDA/zh-cn_image_0000002727591246.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/mhAY76NdSHytFLrcsqJ4bg/zh-cn_image_0000002762834349.png)
 
 FP：栈顶指针，指向一个栈帧的顶部，当函数发生跳转时，会记录当时的栈的起始位置。
 
@@ -374,7 +374,7 @@ HiDebug提供修改转储堆快照级别的接口。
 
 ## 管理异步上下文
 
-从API版本26.0.0开始，HiDebug提供异步上下文管理接口，用于在自定义异步任务场景中建立和解除异步调用链关系。通过这些接口，开发者可以在异步任务提交和完成时分别压入和弹出异步上下文，使[hiperf命令行工具](hiperf.md)、[OH\_HiDebug\_RequestThreadLiteSampling接口](../harmonyos-references/capi-hidebug-h.md#oh_hidebug_requestthreadlitesampling)等性能分析工具能够追踪到完整的异步调用栈。
+从API版本26.0.0开始，HiDebug提供异步上下文管理接口，用于在自定义异步任务场景中建立和解除异步调用链关系。通过这些接口，开发者可以在异步任务提交和完成时分别压入和弹出异步上下文，仅支持[hiprofiler](hiprofiler.md#async_type参数介绍)调优组件追踪完整的异步调用栈。
 
 **注意** 
 

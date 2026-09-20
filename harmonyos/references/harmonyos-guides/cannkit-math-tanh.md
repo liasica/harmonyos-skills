@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-math-
 title: Tanh
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 数学库 > Tanh
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:38+08:00
+scraped_at: 2026-09-21T06:18:59+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:b00d2c9764e4bd40b2d7f737c46adc8cbe04c949e714679b803085598828040c
+content_hash: sha256:16d694b1d5212fa1b3c1b2c81e9f33a4901b1dd5702b98d4dc90dc02350b53ab
 ---
 
 ## 功能说明
 
 按元素做逻辑回归Tanh，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数 ：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Rf-GvSE3SIKBl_Hc0odspQ/zh-cn_image_0000002757311723.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/WouE9NmPRumsOp9BBI8csg/zh-cn_image_0000002733435634.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/IzJ0CG5pR-Wot9wVEdo6qQ/zh-cn_image_0000002757231843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Wsd215_lTfWKObVDSUUiDw/zh-cn_image_0000002762995157.png)
 
 ## 函数原型
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-hypium-au
 title: 使用Hypium实现ArkWeb自动化测试
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 使用Hypium实现ArkWeb自动化测试
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:16+08:00
+scraped_at: 2026-09-21T06:17:32+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:becc3b81b6ae75e40f0ba6cfa26131ce551bc027c4d6789558b8d6c3c4858814
+content_hash: sha256:84f11c8d36e19258c804efa9e98324539de639e14865f4457488d65b4d1e02c7
 ---
 
 ## 概述
@@ -48,7 +48,7 @@ self.web_tools.set_chromedriver_exe_search_path(r"D:\WebAutoTest\resource\web_de
 
 * 使用set\_chromedriver\_exe\_search\_path方法指定chromedriver所在文件夹的路径时，下层文件夹命名规则为chromedriver\_版本号，参考下图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/bf_mJHWdSXCFTveDjpJ0-Q/zh-cn_image_0000002757310485.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/RA5JphpRSs-Jnwgr7pCYEA/zh-cn_image_0000002733434374.png)
 
 ## 示例代码
 

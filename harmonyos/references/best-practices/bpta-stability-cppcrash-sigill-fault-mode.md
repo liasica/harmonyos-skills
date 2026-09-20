@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGILL非法指令故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGILL非法指令故障模式说明
 category: best-practices
-scraped_at: 2026-09-16T06:55:12+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:6c9ac92e1fa6101d34b249f96ab3524638f245245e14b640130139443a211f5e
+scraped_at: 2026-09-21T06:25:49+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:fd2d936adec554e0cc5ffe7700ea05dd8022b0824089cec2913bf371cf39fb4c
 ---
 
 ## ILL\_ILLOPC非法操作码异常
@@ -42,7 +42,6 @@ napi_value TriggerUD2Instruction(napi_env env, napi_callback_info info)
 | SIGTRAP | TRAP\_BRKPT | 软件CFI校验失败 | ARM64(LLVM -fsanitize=cfi配置) | brk #0 | 编译器插入，内核按照断点信号处理 |
 | SIGILL | ILL\_ILLOPC | 软件CFI校验失败 | x86\_64/ARM64(udf配置) | ud2/udf #0 | CPU视为非法操作码 |
 | SIGILL | ILL\_ILLPACCFI | 硬件CFI后向校验失败 | ARM64 v8.3+ | RETAA/RETAB | 高版本内核专门扩展的si\_code |
-| SIGSEGV | SEGV\_CPERR | 硬件前向保护违规 | ARM64(BTI)/x86(CET) | BLR/BR目标无标记/show stack不匹配 | 触发#CP异常 |
 
 **2. 内联汇编嵌入未分配编码或不支持指令**
 

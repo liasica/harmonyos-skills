@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-comput
 title: 消息认证码计算HMAC(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息认证码计算 > 消息认证码计算HMAC(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:52a59a232296b4ae2bb4b6fb8a58d3aca5719a8c8b0e66269b9fc897ea661ead
+scraped_at: 2026-09-21T06:17:43+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:03d5e280bcfec4f06bc1700101d36e40bfef85fe8d9abb7cad983251e0e26811
 ---
 
 HMAC使用指定的摘要算法，以共享密钥和消息作为输入，生成固定长度的消息认证码，用于检验报文的完整性。HMAC在消息摘要算法基础上增加密钥输入，确保信息正确性。
@@ -42,7 +42,7 @@ HMAC使用指定的摘要算法，以共享密钥和消息作为输入，生成�
   }
 
   async function doHmac() {
-    // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
+    // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节
     let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
     let key = await genSymKeyByData(keyData);
     let macAlgName = 'SHA256'; // 摘要算法名
@@ -72,7 +72,7 @@ HMAC使用指定的摘要算法，以共享密钥和消息作为输入，生成�
   }
 
   function doHmacBySync() {
-    // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
+    // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节
     let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
     let key = genSymKeyByData(keyData);
     let macAlgName = 'SHA256'; // 摘要算法名
@@ -114,7 +114,7 @@ HMAC使用指定的摘要算法，以共享密钥和消息作为输入，生成�
   }
 
   async function doLoopHmac() {
-    // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
+    // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节
     let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
     let key = await genSymKeyByData(keyData);
     let macAlgName = 'SHA256'; // 摘要算法名
@@ -150,7 +150,7 @@ HMAC使用指定的摘要算法，以共享密钥和消息作为输入，生成�
   }
 
   function doLoopHmacBySync() {
-    // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
+    // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节
     let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
     let key = genSymKeyByData(keyData);
     let macAlgName = 'SHA256'; // 摘要算法名
@@ -197,7 +197,7 @@ HMAC使用指定的摘要算法，以共享密钥和消息作为输入，生成�
     return symKey;
   }
   async function doHmac() {
-    // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节。
+    // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节。
     let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
     let key = await genSymKeyByData(keyData);
     let spec: cryptoFramework.HmacSpec = {

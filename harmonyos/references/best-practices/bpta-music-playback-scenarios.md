@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-music-play
 title: 音乐播放场景低功耗规则
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 音乐播放场景低功耗规则
 category: best-practices
-scraped_at: 2026-09-16T06:55:09+08:00
+scraped_at: 2026-09-21T06:25:47+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:26987d09ee42257afb53922a07c227835f359b511ae7aff11421b4479f8d1ce9
+content_hash: sha256:f045df27773568fe618e506b5b90d07affcee9403b60e5ec9ce1673e4b1a5e44
 ---
 
 ## 规则
@@ -117,4 +117,4 @@ hilog | grep usage
 
 执行效果示意如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/er8FAnNsS9mqWw14nuQfMA/zh-cn_image_0000002193850672.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/0tOnhylCQZqiSyj9nD_DJg/zh-cn_image_0000002193850672.png "点击放大")

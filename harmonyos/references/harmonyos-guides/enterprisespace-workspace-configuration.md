@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 工作空间配置
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 空间管理 > 工作空间配置
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:15+08:00
+scraped_at: 2026-09-21T06:18:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3f4f1fb79ec90ffe99d79d763d9a14f78a065ea379f790e41e953efe55ebfd50
+content_hash: sha256:4ca772c2102f59be2c8290258f28c7050cf064d29cbbcac956dfa4a783c6e3a5
 ---
 
 从API版本6.0.0(20)开始，支持设置工作空间信息、资料照片的能力。
@@ -16,7 +16,7 @@ content_hash: sha256:3f4f1fb79ec90ffe99d79d763d9a14f78a065ea379f790e41e953efe55e
 
 ## 场景介绍
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/TrJzFgm9QTKH7t2Qh9rzoQ/zh-cn_image_0000002727751560.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/95Lg8gReS6OmUE4H4HNAeg/zh-cn_image_0000002733275304.jpg)
 
 Enterprise Space Kit为应用提供自定义工作空间显示属性的能力。企业可以设置工作空间的域信息、资料照片、本地名称和状态栏图标，以满足企业个性化定制需求。
 

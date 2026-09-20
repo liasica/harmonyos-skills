@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-live-form-
 title: 互动卡片开发实践
 breadcrumb: 最佳实践 > 技术创新 > 互动卡片开发实践
 category: best-practices
-scraped_at: 2026-09-16T06:54:55+08:00
+scraped_at: 2026-09-21T06:25:34+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:8d70be8e4f3c4f4e228e43d9a899389ed3c259f03703c75656de178f7b615bb2
+content_hash: sha256:f2b33d88190c200e8ec639e5cc6d3c24981b7058a8032f44d924ccc9b55af3b0
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ content_hash: sha256:8d70be8e4f3c4f4e228e43d9a899389ed3c259f03703c75656de178f7b6
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/jZCetb4QQHiUf5v4ad7leA/zh-cn_image_0000002623694219.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/H-5DLduEQXClyO_gn8Slig/zh-cn_image_0000002623694219.gif "点击放大")
 
 ### 快递卡片
 
@@ -55,7 +55,7 @@ content_hash: sha256:8d70be8e4f3c4f4e228e43d9a899389ed3c259f03703c75656de178f7b6
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/l0NCaZa7SSuNPF80owmnfw/zh-cn_image_0000002623534345.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/6a36qsw3QmKMM17zBOvYPA/zh-cn_image_0000002623534345.gif "点击放大")
 
 ### 运动卡片
 
@@ -72,10 +72,10 @@ content_hash: sha256:8d70be8e4f3c4f4e228e43d9a899389ed3c259f03703c75656de178f7b6
 
 * 开始运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/pOSjCWz_SUK0B7XVQIC64Q/zh-cn_image_0000002593094810.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/gfFMXsosS9mEZnbWlZ78CA/zh-cn_image_0000002593094810.gif "点击放大")
 * 结束运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/fO833AwuSomXItilwc5bDw/zh-cn_image_0000002593254736.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/7jpPTHLGTTGczkl8-meJMA/zh-cn_image_0000002593254736.gif "点击放大")
 
 ### 音乐卡片
 
@@ -92,10 +92,10 @@ content_hash: sha256:8d70be8e4f3c4f4e228e43d9a899389ed3c259f03703c75656de178f7b6
 
 * 播放：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/zfH6taAzSnSXoXIV0WX4eQ/zh-cn_image_0000002623694221.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/edpqGtNmRRG6cnpNOZ5Hgw/zh-cn_image_0000002623694221.gif "点击放大")
 * 切歌：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/ezCvOi-eSN-697nTYNPWZg/zh-cn_image_0000002623534347.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/BbU-3EHiSZagSyWqbHzxZA/zh-cn_image_0000002623534347.gif "点击放大")
 
 ## 整体方案
 
@@ -175,7 +175,7 @@ content_hash: sha256:8d70be8e4f3c4f4e228e43d9a899389ed3c259f03703c75656de178f7b6
 
 以快递卡片为例，演示完整的互动卡片开发流程。快递卡片需要实现点击触发出框动画、陀螺仪交互驱动憨憨移动、摇一摇激活等功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/LchiUiO2QrCWFyeXsZv3PA/zh-cn_image_0000002593094812.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/wkwVwL_SRH-cGGBnOuv_Bg/zh-cn_image_0000002593094812.gif "点击放大")
 
 ### 实现原理
 

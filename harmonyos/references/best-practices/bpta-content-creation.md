@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-content-cr
 title: AI辅助图文内容编创
 breadcrumb: 最佳实践 > 行业场景解决方案 > 社交通讯 > AI辅助图文内容编创
 category: best-practices
-scraped_at: 2026-09-16T06:55:06+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:1bdaed4f95bd5001839ed877e26be0faf7541c6533d4ae55f240cd777789f7a4
+scraped_at: 2026-09-21T06:25:43+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:30a7d8b87371dd477b4acba4c21a66e0fe75594d9f836f331bc4b15f6933a667
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:1bdaed4f95bd5001839ed877e26be0faf7541c6533d4ae55f240cd77778
 
 图文编创操作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/2YE-woJDT9a2wEGJgiaz2Q/zh-cn_image_0000002229451385.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/jXGEGWeKR-m-gnkXTYUJCw/zh-cn_image_0000002229451385.gif)
 
 ## 场景适用说明
 
@@ -81,13 +81,14 @@ photoSelectOptions.maxSelectNumber = CommonConstants.LIMIT_PICKER_NUM - selected
 
 发起调用，获取图片。
 
-```typescript
+```screen
 photoViewPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
   let uriArr = photoSelectResult.photoUris;
   callback(uriArr);
 }).catch((err: BusinessError) => {
   Logger.error(UIUtils.tag,
     `Invoke photoViewPicker.select failed, code is ${err.code}, message is ${err.message}`);
+  // ...
 });
 ```
 
@@ -101,7 +102,7 @@ photoViewPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessH
 
 长按图片可识别文字并实现物体抠图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/CcC_qcVCSKOGoaWYFiRlVQ/zh-cn_image_0000002229336901.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/qV912Dc2Trypa2Vqh9nO6g/zh-cn_image_0000002229336901.gif)
 
 ### 关键点说明
 
@@ -115,7 +116,7 @@ photoViewPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessH
 
 开启图片智能分析属性并设置图像的动态模式。
 
-```typescript
+```screen
 Image(item)
   .objectFit(ImageFit.Contain)
   .enableAnalyzer(true)
@@ -124,7 +125,7 @@ Image(item)
 
 设置图片解码选项，配合动态模式。
 
-```typescript
+```screen
 public static options: image.DecodingOptions = {
   index: 0,
   editable: false,
@@ -209,7 +210,7 @@ private permissions: Permissions[] = [
 
 相机设置Moving Photo属性。
 
-```typescript
+```screen
 setEnableLivePhoto(isMovingPhoto: boolean): void {
   try {
     if (this.photoOutput?.isMovingPhotoSupported()) {
@@ -223,7 +224,7 @@ setEnableLivePhoto(isMovingPhoto: boolean): void {
 
 获取媒体库中最新图片地址与缩略图。
 
-```typescript
+```screen
 async getThumbnail(): Promise<void> {
   let requestId = ++this.thumbnailRequestId;
   try {
@@ -250,7 +251,7 @@ async getThumbnail(): Promise<void> {
 
 引入Moving Photo相关库。
 
-```typescript
+```screen
 import { MovingPhotoView, MovingPhotoViewController } from '@ohos.multimedia.movingphotoview';
 ```
 
@@ -352,7 +353,7 @@ build() {
 
 跨端相册获取新的图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/VGtogdukS4-Hy0tMk0ozEg/zh-cn_image_0000002229336897.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/PgizJbNgR8OiWeqIGP0xog/zh-cn_image_0000002229336897.gif "点击放大")
 
 ### 子场景描述
 
@@ -397,7 +398,7 @@ import {
 
 onState方法的回调函数包含两个参数：stateCode表示业务完成状态，buffer表示成功返回的数据。
 
-```typescript
+```screen
 @Builder
 setCollaborationDialog() {
   CollaborationServiceStateDialog({
@@ -446,7 +447,7 @@ private doInsertPicture(stateCode: number, bufferType: string, buffer: ArrayBuff
 
 自由流转，接续编辑图文内容的功能已启用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/nD0QCqQHSgyICBgH5oWQyg/zh-cn_image_0000002229336905.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/MvETFK9gQKilDHq5uQSlbA/zh-cn_image_0000002229336905.gif "点击放大")
 
 ### 关键点说明
 
@@ -462,7 +463,7 @@ private doInsertPicture(stateCode: number, bufferType: string, buffer: ArrayBuff
 
 打开应用接续开关，在module.json5文件里的module对象的abilities字段内设置"continuable"的值为true。
 
-```typescript
+```screen
 "abilities": [
   {
     // ...
@@ -476,7 +477,7 @@ private doInsertPicture(stateCode: number, bufferType: string, buffer: ArrayBuff
 
 应用接续可以按需迁移路由栈，也可选择动态配置，仅对特定页面开启接续，此处仅设置最后的图文编辑页面GraphicCreationPage开启接续能力。按需迁移路由栈的方法具体可参考[按需迁移页面栈](bpta-continue-cast.md#section1924112387418)。
 
-```typescript
+```screen
 onPageShow(): void {
   DataUtils.context.setMissionContinueState(AbilityConstant.ContinueState.ACTIVE, (result) => {
     Logger.info('setMissionContinueState ACTIVE result: ', `${result.code}`);
@@ -505,7 +506,7 @@ onWindowStageRestore(windowStage: window.WindowStage) {
 
 迁移端实现onContinue接口，多图片自由流转，使用资产卡片数组的方式传递，与其他文本数据分装成一个数据对象。
 
-```typescript
+```screen
 async onContinue(wantParam: Record<string, Object | undefined>): Promise<AbilityConstant.OnContinueResult> {
   try {
     // get distribute id
@@ -574,7 +575,7 @@ private getAssetInfo(append: ImageInfo): commonType.Asset | undefined {
 
 接收端实现onCreate接口和onNewWant接口，onCreate接口用于冷启动或多实例热启动，onNewWant接口用于单实例热启动。仅在应用接续状态下，注册数据监听，恢复页面流转的数据。
 
-```typescript
+```screen
 onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
   DataUtils.context = this.context;
   // set circulation status INACTIVE
@@ -654,7 +655,7 @@ private restoreDistributedObject(want: Want, launchParam: AbilityConstant.Launch
 
 图片的流转需要借助分布式文件系统，发送侧需将文件拷贝到分布式目录下，接受侧再从分布式目录拷贝到本地沙箱使用。
 
-```typescript
+```screen
 static copyFileToDestination(sourceUri: string, destination: string): void {
   let file: fileIo.File | undefined = undefined;
   let destinationDistribute: fileIo.File | undefined = undefined;

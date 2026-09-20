@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-back
 title: 应用数据备份恢复验证指导
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 应用数据备份恢复验证指导
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:17+08:00
+scraped_at: 2026-09-21T06:17:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5742f371b3182d9423e2ccd72003e0c109533bd8e10513fb7e6fc872a376445e
+content_hash: sha256:2b7e9a2a6c19dce6059452a8d24e1b7562e20c95098561458c33b3c1386ab757
 ---
 
 为方便开发者验证[应用接入数据备份恢复](app-file-backup-extension.md)结果，此篇指南介绍了在鸿蒙设备上通过数据克隆应用触发数据备份恢复，以及常见问题说明。
@@ -19,10 +19,10 @@ content_hash: sha256:5742f371b3182d9423e2ccd72003e0c109533bd8e10513fb7e6fc872a37
 
 1. 打开数据克隆应用，一部设备选择“这是新设备”，作为数据恢复侧，另一部设备选择“这是旧设备”，作为数据备份侧，按照提示连接两部设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Vz4dfxvtRC66GLgZSWfOKg/zh-cn_image_0000002757310493.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/_5Adi8uWTdyME5NoGGomyg/zh-cn_image_0000002733434382.png)
 2. 在选择数据页面，点击应用及数据，勾选待测试应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/5vUUlKOoToK6PCMi9Uxr5A/zh-cn_image_0000002757230613.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/dQ-D0nP3QXCHzeHTWPmS8g/zh-cn_image_0000002762993905.png)
 3. 等待备份恢复完成，根据备份恢复结果，并结合日志分析备份和恢复流程是否正常。
 
 ## 常见问题说明
@@ -47,7 +47,7 @@ content_hash: sha256:5742f371b3182d9423e2ccd72003e0c109533bd8e10513fb7e6fc872a37
 
 克隆结束后，迁移结果显示“仅克隆应用，不迁移数据”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/WcJssDmjT0uywJ1UTnvSkA/zh-cn_image_0000002727590922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/f56BgGXdQ7-USGxSSbX7lw/zh-cn_image_0000002762834021.png)
 
 **可能原因**
 
@@ -63,7 +63,7 @@ onBackup/onBackupEx未按照规范实现。
 
 克隆结束后，迁移结果显示“应用数据恢复失败”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/LPb_zRzQSRqhtp9gq7j3Pg/zh-cn_image_0000002727750780.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/qSg26J2-Sj67SVXm4PB7KQ/zh-cn_image_0000002733274504.png)
 
 **可能原因**
 

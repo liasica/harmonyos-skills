@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 插屏广告
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 插屏广告
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:10+08:00
+scraped_at: 2026-09-21T06:18:29+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:0b11fa16e3bd38c8a2a5bb35e60f562e473179b770d65b6c8b83f463e17d168e
+content_hash: sha256:45bc963f0e5d1b7fba7474e2899dfb9c6797b3086538d404a7ce80a46b5156ea
 ---
 
 ## 场景介绍
 
 插屏广告是一种在应用开启、暂停或退出时以全屏或半屏的形式弹出的广告形式，展示时机巧妙避开用户对应用的正常体验，尺寸大，曝光效果好。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/vxD5kGh1R-mBpSwtAxhsFg/zh-cn_image_0000002727591584.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/dJYAiPqtTMytRZ7_T_SjjA/zh-cn_image_0000002762834699.png)
 
 ## 约束与限制
 

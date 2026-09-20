@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16817 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16816 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1249 篇
 
@@ -2090,7 +2090,7 @@
 - [AVCodec支持的格式](harmonyos-guides/avcodec-support-formats.md)
 - [使用AVImageGenerator提取视频指定时间图像(ArkTS)](harmonyos-guides/avimagegenerator.md)
 - [使用AVMetadataExtractor提取音视频元数据信息(ArkTS)](harmonyos-guides/avmetadataextractor.md)
-- [基于AVPlayer播放嵌入式短视频实践](harmonyos-guides/avplayer-embeded-short-video.md)
+- [基于AVPlayer播放嵌入式短视频实践](harmonyos-guides/avplayer-embedded-short-video.md)
 - [基于AVPlayer播放长视频实践](harmonyos-guides/avplayer-long-video.md)
 - [基于AVPlayer播放网络视频实践](harmonyos-guides/avplayer-network-video.md)
 - [基于AVPlayer播放短视频实践](harmonyos-guides/avplayer-short-video.md)
@@ -4133,7 +4133,7 @@
 - [打开资源/关闭资源(C/C++)](harmonyos-guides/huks-open-close-resource-ndk.md)
 - [其他操作](harmonyos-guides/huks-other-operations.md)
 - [Universal Keystore Kit简介](harmonyos-guides/huks-overview.md)
-- [个人数据处理说明](harmonyos-guides/huks-personal-data-processing-notic.md)
+- [个人数据处理说明](harmonyos-guides/huks-personal-data-processing-notice.md)
 - [Provider管理介绍及规格](harmonyos-guides/huks-provider-management-overview.md)
 - [Provider管理](harmonyos-guides/huks-provider-management.md)
 - [查询认证状态(ArkTS)](harmonyos-guides/huks-query-authentication-status-arkts.md)
@@ -6406,7 +6406,7 @@
 - [GN构建工程配置HarmonyOS编译工具链](harmonyos-guides/toolchain-gn-build-project.md)
 - [使用lycium交叉编译框架快速编译三方库](harmonyos-guides/toolchain-lycium-build-project.md)
 - [Make构建工程配置HarmonyOS编译工具链](harmonyos-guides/toolchain-make-build-project.md)
-- [toybox](harmonyos-guides/toybox.md)
+- [toybox工具](harmonyos-guides/toybox.md)
 - [Transferable对象 (NativeBinding对象)](harmonyos-guides/transferabled-object.md)
 - [短时任务(ArkTS)](harmonyos-guides/transient-task.md)
 - [状态变量改变不触发组件刷新问题常用定位方法](harmonyos-guides/troubleshooting-state-manage.md)
@@ -10025,7 +10025,7 @@
 - [NodeContent](harmonyos-references/js-apis-arkui-nodecontent.md)
 - [NodeController](harmonyos-references/js-apis-arkui-nodecontroller.md)
 - [@ohos.arkui.observer (无感监听)](harmonyos-references/js-apis-arkui-observer.md)
-- [@ohos.arkui.Prefetcher (Prefetching)](harmonyos-references/js-apis-arkui-prefetcher.md)
+- [@ohos.arkui.Prefetcher (内容预取)](harmonyos-references/js-apis-arkui-prefetcher.md)
 - [RenderNode](harmonyos-references/js-apis-arkui-rendernode.md)
 - [Resource](harmonyos-references/js-apis-arkui-resource.md)
 - [@ohos.arkui.shape (形状)](harmonyos-references/js-apis-arkui-shape.md)
@@ -12223,7 +12223,7 @@
 - [多设备地图导航界面](best-practices/multi-travel-navigation.md)
 - [多设备长视频界面](best-practices/multi-video-app.md)
 
-## FAQ（`harmonyos-faqs`）— 4595 篇
+## FAQ（`harmonyos-faqs`）— 4594 篇
 
 - [常见问题](harmonyos-faqs/app-framework-tablet-faqs.md)
 - [常见问题](harmonyos-faqs/computer-faqs.md)
@@ -16314,7 +16314,6 @@
 - [PDF添加SquareAnnotationInfo标注，设置fillColor无效如何解决](harmonyos-faqs/faqs-pdf-16.md)
 - [PDF Kit水印相关问题汇总](harmonyos-faqs/faqs-pdf-17.md)
 - [如何通过Canvas绘制图形并添加到PDF上](harmonyos-faqs/faqs-pdf-18.md)
-- [PDF添加水印是替换还是叠加](harmonyos-faqs/faqs-pdf-19.md)
 - [如何实现PDF的预览缩略图](harmonyos-faqs/faqs-pdf-2.md)
 - [PDF添加水印是替换还是叠加](harmonyos-faqs/faqs-pdf-20.md)
 - [在预览模式下，如何一键删除所有PDF标注](harmonyos-faqs/faqs-pdf-3.md)

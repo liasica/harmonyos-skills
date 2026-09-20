@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: stepper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > stepper
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:37+08:00
+scraped_at: 2026-09-21T06:21:12+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f3e3c5a281eb9135b8114dc59dec4dd0568538d7e7959b22bf392e83f0d94383
+content_hash: sha256:c39b9ee1a42bca87d365858013cdd2dd26a7015b231878b82a1bebffc69d6a6c
 ---
 
 **说明** 
@@ -192,4 +192,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/mUqY7uUDSiy_dOBZ8pzLxw/zh-cn_image_0000002757232877.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/GpXvvnoqTfSDsM44pa77Vg/zh-cn_image_0000002762996201.gif)

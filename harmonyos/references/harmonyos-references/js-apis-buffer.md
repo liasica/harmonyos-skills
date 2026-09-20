@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.buffer (Buffer)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.buffer (Buffer)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7e7d21394c4ec91e04ec51e9e9e38f5475d538c2667af7ef781329ad746e4488
+scraped_at: 2026-09-21T06:20:20+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:5567a79c8e6a998a04815b9441e1ff865bf181b56ef9e7739b8ad9c805337c69
 ---
 
 Buffer对象用于表示固定长度的字节序列，是专门存放二进制数据的缓冲区。
@@ -629,7 +629,7 @@ compare(target: Buffer | Uint8Array, targetStart?: number, targetEnd?: number, s
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回比较结果。-1：当前排列在目标前，0：当前与目标相同，1：当前排列在目标后。 |
+| -1 | 0 | 1 | 返回比较结果。-1：当前排列在目标前，0：当前与目标相同，1：当前排列在目标后。 |
 
 **错误码：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: GPU内存泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > GPU内存泄漏故障模式说明 > GPU内存泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-09-16T06:55:14+08:00
+scraped_at: 2026-09-21T06:25:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:223d10b6909489435c9bbfb61fdb850ce241d4839d5ce8e01455bde81326fa3b
+content_hash: sha256:7276b1e1775091fbd98162924e38445cce3bfaa844e0aea6402d4d3296142bac
 ---
 
 系统会对应用GPU内存进行监控。当应用GPU内存使用超过阈值且整机处于低内存状态时，系统会抓取维测数据并对应用进行管控。本文旨在为开发者介绍系统的GPU内存泄漏检测机制，并提供开发态与运维态的问题分析思路。针对GPU内存泄漏的二级根因，下文以单应用自渲染场景为例提供了相关故障模式说明：
@@ -202,7 +202,7 @@ GPU内存泄漏的运维态维测日志仅包含GPU内存基础维测日志，�
 * 单击④处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
 * 找到内存申请异常的内存及其调用栈，如下图⑤、⑥处框选的内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/3YZSF5veQISXLNCLs5M5Dw/zh-cn_image_0000002710303851.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/7vOJAzeNRviGp-Hx9zwpfA/zh-cn_image_0000002710303851.png)
 * 结合调用栈对代码进行分析，找到泄漏根因。
 
 ## 开发态问题分析方法
@@ -305,15 +305,15 @@ GPU内存泄漏的运维态维测日志仅包含GPU内存基础维测日志，�
 
 * 开发者在调试过程中，如果遇到应用闪退或者冷起问题，可以在DevEco Studio中找到日志组件如下图①处，再选择应用终止如下图②处，单击③选择应用进程名，筛选出调试应用的历史退出原因，如果原因为“GpuKiller”或者“ResourceLeak:Gpu Leak”如下图④所示，说明应用在调试过程中发生了GPU内存泄漏故障。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Bsby3YtEQmeOYVcfw8oPGQ/zh-cn_image_0000002680464202.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/tAYauyyFTPOT-ZyZJlKjDQ/zh-cn_image_0000002680464202.png "点击放大")
 
 * 确认问题为GPU内存泄漏后，开发者可以使用DevEco Studio的Profiler工具中的Allocation功能进行分析，使用方法可参考[基础内存：Allocation分析](../harmonyos-guides/ide-insight-session-allocations.md)。
 * 启动录制前可以先在Allocation的配置页中执行如下准备工作：
   + 单击①处过滤泳道按钮，单击②处增加勾选Graphic Memory泳道。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/c_SM6DluRjGso57TYVdLTA/zh-cn_image_0000002710144015.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/dJ0HiPsvTRqTVCzcVg0wHA/zh-cn_image_0000002710144015.png "点击放大")
   + 单击①处录制设置按钮，单击②处打开JS栈记录开关，单击③处打开异步回栈开关。由于NativeHeap的Malloc频率非常高，因此可以单击取消勾选④处Malloc复选框，不抓取应用Malloc内存分配栈，减少对GPU内存分析的影响。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/t8yNT8mEQFO6oUqQxJZWtA/zh-cn_image_0000002680624100.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/I5PzpqOtTT-9cFNTXx-Ygg/zh-cn_image_0000002680624100.png "点击放大")
 * 启动抓取后，可做正常的用户操作，遍历可疑的泄漏场景。
 * 抓取完成后，结合[内存栈日志分析方法](bpta-stability-gpuleak-fault-mode-overreview.md#section94641340515)定位内存泄漏点。

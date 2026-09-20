@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: CanvasRenderingContext2D对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > CanvasRenderingContext2D对象
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:12+08:00
+scraped_at: 2026-09-21T06:17:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8ea86ef5f64352ce82f0f64ff6d0a6207cfd47708796bf11e433c7d619aa2d68
+content_hash: sha256:711f54129bb0911cf968fd3b4b0264a60daec908109db0fd9a182dd064e00f6f
 ---
 
 使用CanvasRenderingContext2D在Canvas画布组件上进行绘制，绘制对象可以是图形、文本、线段、图片等。具体请参考[CanvasRenderingContext2D对象](../harmonyos-references/js-components-canvas-canvasrenderingcontext2d.md)。
@@ -206,7 +206,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/atVDWg0xTVCngnkcDpr5eQ/zh-cn_image_0000002727590770.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/5r2NqYTCQlaaWjhlMXmzdg/zh-cn_image_0000002762833867.gif)
 
 ## 画边框
 
@@ -301,7 +301,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-VikvHOwTNqHZdc29CPM0g/zh-cn_image_0000002727750628.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/EXKcwNJoQFyD1lBtU_x_WA/zh-cn_image_0000002733274348.gif)
 
 ## 填充渐变色
 
@@ -426,7 +426,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/mEaQlry0Q1qoyqgP-GwDHg/zh-cn_image_0000002757310343.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/N6aROT54SCyvh7zgPI7xTQ/zh-cn_image_0000002733434230.gif)
 
 ## 填充文字
 
@@ -556,7 +556,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/VLMoH3YfTryz6QcLAsMBww/zh-cn_image_0000002757230463.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/5-x-wsJYTqmZQs-02Od_aA/zh-cn_image_0000002762993751.gif)
 
 **说明** 
 
@@ -732,7 +732,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/fMwTDcuHQo6uulxjFo92sA/zh-cn_image_0000002727590772.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/KaZOnzVdT8iEQ8oHE8ZRQQ/zh-cn_image_0000002762833869.gif)
 
 **说明** 
 
@@ -831,4 +831,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/x5vQsGxzSrKrIrZ4VnpzgA/zh-cn_image_0000002727750630.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/8qHp0ICGRACaEIeIGs-k9g/zh-cn_image_0000002733274350.gif)

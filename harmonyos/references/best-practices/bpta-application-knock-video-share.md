@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 碰一碰链接分享
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 碰一碰链接分享
 category: best-practices
-scraped_at: 2026-09-16T06:55:03+08:00
+scraped_at: 2026-09-21T06:25:41+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:1002ac73f75a0d9d202d424ee468b5418c8e13b76f37c17d24f7967937e76904
+content_hash: sha256:23c8df8890790616994db56911a5b25e9441b33b0fd6169d94582f15e7194067
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:1002ac73f75a0d9d202d424ee468b5418c8e13b76f37c17d24f7967937e
 
 本文以视频分享场景为例，详细介绍碰一碰快速分享视频的原理与开发步骤。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/3e/v3/xMDxDOEVRTaLARpM2_Ru9g/zh-cn_media_0000002306538056.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/fd/v3/yfyhe__TTGCpA2xYCY81fw/zh-cn_media_0000002306538056.mp4)
 
 ## 典型场景
 
@@ -24,19 +24,19 @@ content_hash: sha256:1002ac73f75a0d9d202d424ee468b5418c8e13b76f37c17d24f7967937e
 
 系统直接拉起目标应用视频播放页面播放视频，无需经过浏览器中转，实现一键直达，极大提高便捷度和转化率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/72stnKKSQNe3mPR5Nc6ySQ/zh-cn_image_0000002307668620.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/du59Oiu3R7qz8kxtx3xGow/zh-cn_image_0000002307668620.gif "点击放大")
 
 ### 场景二：目标应用未安装，已配置直达应用市场
 
 当对端未安装目标应用且开发者配置了直达应用市场功能时，将直接跳转到应用市场的应用详情页。安装完成后，首次打开应用将通过[延迟链接](../harmonyos-guides/applinking-deferredlink.md)功能自动跳转到视频播放页面，无需用户重新搜索或操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Sq967U4HSmuwgAOVjrjWLA/zh-cn_image_0000002340377337.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/IqU-jwyYRU6MU5VAffbtyA/zh-cn_image_0000002340377337.gif "点击放大")
 
 ### 场景三：目标应用未安装，未配置直达应用市场（有Web页面）
 
 对端收到分享的视频链接之后，系统通过浏览器打开Web页面，用户可直接查看内容。在Web页面可提供“下载”按钮，引导用户安装应用获取更佳体验，安装后仍可通过[延迟链接](../harmonyos-guides/applinking-deferredlink.md)直达原内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/cTxHWhyqTMWeYUrNhsRC-w/zh-cn_image_0000002341667937.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/m0Kh625pSnOI3sJ6o3E35w/zh-cn_image_0000002341667937.gif "点击放大")
 
 **说明** 
 
@@ -48,11 +48,11 @@ content_hash: sha256:1002ac73f75a0d9d202d424ee468b5418c8e13b76f37c17d24f7967937e
 
 碰一碰视频分享后对端跳转目标应用的流程图如下，对端无论是否安装视频应用，用户都能获得连贯流畅的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/zLPceJbcSKeueqVh7XJF5g/zh-cn_image_0000002306538072.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/JF3BopsSSNO0wNIpggp-sw/zh-cn_image_0000002306538072.png "点击放大")
 
 碰一碰视频分享时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ba0LnNhjSuqAkK8y-TUUAQ/zh-cn_image_0000002306378348.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/VBEmJgfvTtmpX3rvTeIPDg/zh-cn_image_0000002306378348.png "点击放大")
 
 **说明** 
 
@@ -362,7 +362,7 @@ export class ImageUtil {
 
 卡片效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/EJ_oRtP2SZGS6sH2ECxmPQ/zh-cn_image_0000002340377341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/wNTOrBxYQmitaqhRdwX8aA/zh-cn_image_0000002340377341.png "点击放大")
 
 ### 对端跳转处理
 
@@ -496,11 +496,11 @@ export class ImageUtil {
 
    为提升用户未安装应用时的体验，可配置直达应用市场功能，引导用户下载安装应用，具体可参考：[通过直达应用市场能力跳转至应用市场下载详情页](../harmonyos-guides/applinking-direct-to-ag.md)。配置完成后，当对端收到源端分享的App Linking链接时，若设备未安装目标应用，系统将直接跳转至应用市场的应用详情页，支持一键下载安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/8z03-wlvT5unQM3SCclOaQ/zh-cn_image_0000002340497529.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/1LoIDJQRQKaKUe4H-_NYnA/zh-cn_image_0000002340497529.gif "点击放大")
 
    同时，需要实现[延迟链接](../harmonyos-guides/applinking-deferredlink.md)功能，确保安装后首次启动可直达内容。安装完应用之后，开发者可以在用户首次打开应用时，使用延迟链接，直接跳转到视频播放页面，这一流程不仅优化了用户体验，还有助于提升链接的转化率。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/dr4sjbwERfGb11-e-Olm0g/zh-cn_image_0000002306538076.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/XaHTYtFORWW2Pbp5LgWh0g/zh-cn_image_0000002306538076.gif "点击放大")
 
    通过[deferredLink.popDeferredLink()](../harmonyos-references/applinking-deferredlink-api.md#popdeferredlink)接口获取原始App Linking链接，并根据解析该链接直接跳转至视频播放页面。
 
@@ -533,7 +533,7 @@ export class ImageUtil {
 
    当应用未安装且未配置直达应用市场时，系统会打开浏览器加载视频播放Web页面来播放视频，保证应用在未安装的情况下也能体验播放视频功能，特别是与[延迟链接](../harmonyos-guides/applinking-deferredlink.md)结合使用，详细请参见[Web页面开发与部署（可选）](../harmonyos-guides/social-sharing-redirection.md#web页面开发与部署可选)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/M8Kes0KHSWGepsiwfel4bg/zh-cn_image_0000002306378360.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/uhIukQc-Rn6knTg1BQalrg/zh-cn_image_0000002306378360.png "点击放大")
 
 ## 常见问题
 

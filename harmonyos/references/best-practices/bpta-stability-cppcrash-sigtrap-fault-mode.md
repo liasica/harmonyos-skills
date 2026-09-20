@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGTRAP断点或陷阱异常故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGTRAP断点或陷阱异常故障模式说明
 category: best-practices
-scraped_at: 2026-09-16T06:55:12+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:72ec20bb3bba86cd2c4e6dbce73c84766c9a403a37e132a0b1c6eeab6a630411
+scraped_at: 2026-09-21T06:25:50+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:56c82d4f9e6600b4c6ffbbb2ddd7fbc273d799649afe6e844b9092bc6aaa6f41
 ---
 
 ## TRAP\_BRKPT软件断点
@@ -30,7 +30,6 @@ TRAP\_BRKPT是SIGTRAP信号的一种类型，通常由软件断点指令触发�
 | SIGTRAP | TRAP\_BRKPT | 软件CFI校验失败 | ARM64(LLVM -fsanitize=cfi配置) | brk #0 | 编译器插入，内核按照断点信号处理 |
 | SIGILL | ILL\_ILLOPC | 软件CFI校验失败 | x86\_64/ARM64(udf配置) | ud2/udf #0 | CPU视为非法操作码 |
 | SIGILL | ILL\_ILLPACCFI | 硬件CFI后向校验失败 | ARM64 v8.3+ | RETAA/RETAB | 高版本内核专门扩展的si\_code |
-| SIGSEGV | SEGV\_CPERR | 硬件前向保护违规 | ARM64(BTI)/x86(CET) | BLR/BR 目标无标记/show stack不匹配 | 触发#CP异常 |
 
 问题分析的步骤如下：
 

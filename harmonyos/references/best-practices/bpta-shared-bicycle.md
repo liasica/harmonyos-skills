@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-shared-bic
 title: 快捷骑行体验
 breadcrumb: 最佳实践 > 行业场景解决方案 > 出行导航 > 快捷骑行体验
 category: best-practices
-scraped_at: 2026-09-16T06:55:06+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:7c46e3254fc16bce1d306e232cccb1607d75c54f36bc6832e05c0a54baee7c15
+scraped_at: 2026-09-21T06:25:44+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:9fa60af43c683a01007359720b8c9cc667920fcdcf6af13e2c4f7c6fb9b1c5e1
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:7c46e3254fc16bce1d306e232cccb1607d75c54f36bc6832e05c0a54bae
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/3KQsCZ7_SzuUwyf3mX3uDA/zh-cn_image_0000002229450033.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Es4-jiwNQZWJCAupQRNQTg/zh-cn_image_0000002229450033.gif)
 
 ## 场景说明
 
@@ -55,15 +55,15 @@ content_hash: sha256:7c46e3254fc16bce1d306e232cccb1607d75c54f36bc6832e05c0a54bae
 
 左图展示了当前骑行场景的流程，右图展示了优化后的流程。优化后，省去了在应用间切换和寻找功能入口的步骤，简化了用户操作，提升了用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/mKmJQAV1SNeO7dgh21FSsw/zh-cn_image_0000002193850172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/q9vTsA7_QOSTUkP7i2vsQg/zh-cn_image_0000002193850172.png)
 
 ### 骑行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/iDZr9PGeRZazHUop80QLQw/zh-cn_image_0000002194009740.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/xdkGug1rQh-_d3VVOZR0bw/zh-cn_image_0000002194009740.png)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Xf-FB4mTTUiPLvDbxr81jw/zh-cn_image_0000002193850156.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/50H4-l0cTtuHqjpTZ5MBsQ/zh-cn_image_0000002193850156.png "点击放大")
 
 ## 扫码解锁
 
@@ -71,13 +71,13 @@ content_hash: sha256:7c46e3254fc16bce1d306e232cccb1607d75c54f36bc6832e05c0a54bae
 
 在首页或者共享单车页面，点击扫码进入扫码界面，可以使用后置摄像头进行扫码，也可以点击图库选择二维码图片进行扫码。“扫码直达”相关的使用请参见“[接入扫码直达服务](../harmonyos-guides/scan-directservice.md)”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/K4hAMsM6TVSisFdx2m9MUw/zh-cn_image_0000002229335549.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/5U9uc5QkR8Gb8R9tv9TUrQ/zh-cn_image_0000002229335549.gif)
 
 ### 时序图
 
 主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/3UQ9ZN1tRJ-TI-TRT5_lbA/zh-cn_image_0000002193850148.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/OYwCBEEKQNqxpdAsRleFPA/zh-cn_image_0000002193850148.png "点击放大")
 
 ### 关键点说明
 
@@ -142,11 +142,11 @@ export class ScanUtil {
 
 进入找车页面后，可以点击任意位置模拟自行车的所在地，地图将进行步行路线规划并增加标记点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/0GUp1JocQMmfG0i364zYwA/zh-cn_image_0000002193850168.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/EqBpg2yXTwGGOGE3rvL_-g/zh-cn_image_0000002193850168.gif)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/1h9_-WZ1SjmlMnXfZ8RHIg/zh-cn_image_0000002194009744.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/SgOxCbVVQ0yzv1-kw9UxEA/zh-cn_image_0000002194009744.png "点击放大")
 
 ### 关键点说明
 
@@ -285,8 +285,9 @@ this.mapController.on('mapClick', async (position) => {
 
 5、启动步行路径规划
 
-```typescript
-public static async walkingRoutes(position: mapCommon.LatLng, myPosition?: mapCommon.LatLng) {
+```screen
+public static async walkingRoutes(position: mapCommon.LatLng,
+  myPosition?: mapCommon.LatLng): Promise<navi.RouteResult | undefined> {
   let params: navi.RouteParams = {
     origins: [myPosition!],
     destination: position,
@@ -305,12 +306,12 @@ public static async walkingRoutes(position: mapCommon.LatLng, myPosition?: mapCo
 
 6、绘制路线
 
-```typescript
+```screen
 public static async paintRoute(routeResult: navi.RouteResult, mapPolyline?: map.MapPolyline,
-  mapController?: map.MapComponentController) {
+  mapController?: map.MapComponentController): Promise<void> {
   mapPolyline?.remove();
   let polylineOption: mapCommon.MapPolylineOptions = {
-    points: routeResult.routes[0].overviewPolyline!,
+    points: routeResult.routes[NUM_ZERO].overviewPolyline!,
     clickable: true,
     startCap: mapCommon.CapStyle.BUTT,
     endCap: mapCommon.CapStyle.BUTT,
@@ -321,7 +322,7 @@ public static async paintRoute(routeResult: navi.RouteResult, mapPolyline?: map.
     zIndex: 10,
     gradient: false,
     color: 0xFF2970FF
-  }
+  };
   try {
     mapPolyline = await mapController?.addPolyline(polylineOption);
   } catch (error) {
@@ -336,11 +337,11 @@ public static async paintRoute(routeResult: navi.RouteResult, mapPolyline?: map.
 
 点击解锁后，实况窗显示骑行状态。完成还车、支付等操作后，实况窗的状态实时更新。支持在锁屏、通知中心显示卡片，状态栏显示胶囊形态。点击状态栏的胶囊后，展开悬浮卡片，方便用户查看骑行状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/uy2tKTUoTcuqBR4vJtQhgw/zh-cn_image_0000002229335553.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/sgQymlj7TjGyfAHdtAM7cA/zh-cn_image_0000002229335553.gif)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/SrFAz5xHRrOsAVQcZePWfw/zh-cn_image_0000002194009760.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/iuUL7ZB1RSKkMU6AwSDmdw/zh-cn_image_0000002194009760.png "点击放大")
 
 ### 关键点说明
 
@@ -354,8 +355,8 @@ public static async paintRoute(routeResult: navi.RouteResult, mapPolyline?: map.
 
 1、导入Live View Kit
 
-```typescript
-import { liveViewManager } from '@kit.LiveViewKit';
+```screen
+import type { liveViewManager } from '@kit.LiveViewKit';
 ```
 
 2、创建实况窗

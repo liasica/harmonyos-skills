@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-recov
 title: UIAbility备份恢复
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility备份恢复
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:75436116b2d9cee02e92dd6c06a725a7bca63daf9b65827284395a8d35eb3c55
+scraped_at: 2026-09-21T06:17:03+08:00
+doc_updated_at: 2026-09-20
+content_hash: sha256:a461fb6c79fa8f587dbd6ad58c4595902fcfa0ae6916419750fddf69d422f48e
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:75436116b2d9cee02e92dd6c06a725a7bca63daf9b65827284395a8d35e
 ## 约束限制
 
 * [UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)备份恢复支持多实例，备份数据保存7天，以文件的形式存储在应用的沙箱路径中。
-* 备份数据存储在[Want](../harmonyos-references/js-apis-app-ability-want.md#want)中的parameter字段中，由于序列化大小限制，支持的最大数据量为200KB。
+* 备份数据存储在[Want](../harmonyos-references/js-apis-app-ability-want.md#want)中的parameters字段中，由于序列化大小限制，支持的最大数据量为200KB。
 * 重启设备不支持还原备份。
 * 备份恢复机制依赖任务保留机制，如果应用设置[removeMissionAfterTerminate](module-configuration-file.md#abilities标签)为true，或者设备不支持任务保留（比如PC/2in1设备），则备份恢复机制不生效。
 * [UIExtensionAbility](../harmonyos-references/js-apis-app-ability-uiextensionability.md)不支持备份恢复。

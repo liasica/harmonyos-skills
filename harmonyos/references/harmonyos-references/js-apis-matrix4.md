@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-m
 title: "@ohos.matrix4 (矩阵变换)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.matrix4 (矩阵变换)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:47:59+08:00
+scraped_at: 2026-09-21T06:20:29+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0a5508ce916bedb828769f440501c433b267125d79fdc716e65ae5e4bb61d82b
+content_hash: sha256:e657bcff8e3ed52215b9bc69b8602748c7acda0b72ad23baccdcb207594fe6d9
 ---
 
 用于对组件进行[图形变换](ts-universal-attributes-transformation.md)的各种操作，为组件提供矩阵变换能力，支持对图形进行平移、旋转和缩放等。
@@ -211,7 +211,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/1YM6aGUrT2GxtDsMrOjSyw/zh-cn_image_0000002727752208.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/-n_JsdN1QwOL7bo-2Dxe9g/zh-cn_image_0000002733275958.png)
 
 ### combine
 
@@ -267,7 +267,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/ppuP2FwRRQqfWZX3Wpym3A/zh-cn_image_0000002757311923.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/IC6FU3sgSx6Ya1bKd6gFnA/zh-cn_image_0000002733435834.png)
 
 ### invert
 
@@ -360,7 +360,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ljq7Lou1TZCMGo3fKdbFfw/zh-cn_image_0000002757232043.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ca2cCcYDTgiKhZWLZkjzGA/zh-cn_image_0000002762995357.png)
 
 ### scale
 
@@ -413,7 +413,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/vd-FCN41Rm2t1kctNuxroQ/zh-cn_image_0000002727592352.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/XiqlIN-YR2C_GZRr2-tERQ/zh-cn_image_0000002762835471.png)
 
 ### skew12+
 
@@ -466,7 +466,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/2wvGQXQgSJSxp_OqQ62XXw/zh-cn_image_0000002727752210.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/4MpdfSYbQ4K1VJ4i6zlXOA/zh-cn_image_0000002733275960.jpeg)
 
 ### rotate
 
@@ -518,7 +518,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/XI-ZhLJaSIOkPvBWTIUj-w/zh-cn_image_0000002757311925.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/bZeJ2D6BRki6BMFuadNp3A/zh-cn_image_0000002733435836.png)
 
 ### transformPoint
 
@@ -579,7 +579,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Cz-awHEuT4mEBf-0wU6PsQ/zh-cn_image_0000002757232045.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ynEw_HsrRAGuSJ6iNlhmag/zh-cn_image_0000002762995359.png)
 
 ### setPolyToPoly12+
 
@@ -638,7 +638,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/f84ObYhYQ5uqiFqWWrcOdw/zh-cn_image_0000002727592354.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/qOyUyvVZTFmGNcaxxAL-Ow/zh-cn_image_0000002762835473.png)
 
 ## TranslateOption
 
@@ -770,7 +770,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/pZ1SbYAZR4WfuQU1COrANA/zh-cn_image_0000002727752212.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/mTSl8ifJTFuu4aJm0unO1A/zh-cn_image_0000002733275962.png)
 
 ## matrix4.invert(deprecated)
 
