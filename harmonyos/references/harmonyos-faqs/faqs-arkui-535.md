@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-535
 title: 页面中的图片无法被放大
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面中的图片无法被放大
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:9108531ebd4f5975dd99ca3868550545dcc2992eb8aa9135e4bf3de0eb4416fc
+scraped_at: 2026-09-22T07:14:50+08:00
+doc_updated_at: 2026-09-21
+content_hash: sha256:cedc7b55028230ef4be58dac331d0f25fc859b4e77d6de7ebc1cc9d9095f912c
 ---
 
 ## 问题现象
@@ -31,7 +31,7 @@ content_hash: sha256:9108531ebd4f5975dd99ca3868550545dcc2992eb8aa9135e4bf3de0eb4
 
 ## 修改建议
 
-建议通过transform和matrix控制图片的放大。完整的图片预览缩放功能（包含手势捏合缩放等能力）可以参考[图片预览](https://gitee.com/harmonyos-cases/cases/tree/master/CommonAppDevelopment/feature/imageviewer)、[好友动态-图片预览](../architecture-guides/image_preview-0000002266277321.md)。
+建议通过transform和matrix控制图片的放大。完整的图片预览缩放功能（包含手势捏合缩放等能力）可以参考[图片预览](https://gitee.com/harmonyos-cases/cases/tree/master/CommonAppDevelopment/feature/imageviewer)。
 
 以下是简单的缩放功能的代码示例：
 

@@ -1,6 +1,6 @@
 # FAQ（harmonyos-faqs）
 
-共 4594 篇文档。
+共 4593 篇文档。
 
 - [常见问题](app-framework-tablet-faqs.md)
 - [常见问题](computer-faqs.md)
@@ -3912,7 +3912,6 @@
 - [如何指定使用蜂窝网络或wifi网络发送http请求](faqs-network-143.md)
 - [如何实现仅wifi网络时加载图片](faqs-network-144.md)
 - [全局订阅网络状态变化，如何在具体页面控制业务](faqs-network-145.md)
-- [RCP远场通信是否支持流式返回请求数据](faqs-network-146.md)
 - [Stage模型如何配置支持http明文传输](faqs-network-16.md)
 - [Image组件加载网络图片，PixelMap与直接访问url有什么区别](faqs-network-17.md)
 - [http请求中能否不设置Content-Type参数](faqs-network-18.md)

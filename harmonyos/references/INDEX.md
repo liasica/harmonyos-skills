@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16816 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16815 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1249 篇
 
@@ -12223,7 +12223,7 @@
 - [多设备地图导航界面](best-practices/multi-travel-navigation.md)
 - [多设备长视频界面](best-practices/multi-video-app.md)
 
-## FAQ（`harmonyos-faqs`）— 4594 篇
+## FAQ（`harmonyos-faqs`）— 4593 篇
 
 - [常见问题](harmonyos-faqs/app-framework-tablet-faqs.md)
 - [常见问题](harmonyos-faqs/computer-faqs.md)
@@ -16135,7 +16135,6 @@
 - [如何指定使用蜂窝网络或wifi网络发送http请求](harmonyos-faqs/faqs-network-143.md)
 - [如何实现仅wifi网络时加载图片](harmonyos-faqs/faqs-network-144.md)
 - [全局订阅网络状态变化，如何在具体页面控制业务](harmonyos-faqs/faqs-network-145.md)
-- [RCP远场通信是否支持流式返回请求数据](harmonyos-faqs/faqs-network-146.md)
 - [Stage模型如何配置支持http明文传输](harmonyos-faqs/faqs-network-16.md)
 - [Image组件加载网络图片，PixelMap与直接访问url有什么区别](harmonyos-faqs/faqs-network-17.md)
 - [http请求中能否不设置Content-Type参数](harmonyos-faqs/faqs-network-18.md)

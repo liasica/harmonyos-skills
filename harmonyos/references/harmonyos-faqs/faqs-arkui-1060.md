@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1060
 title: 如何在Canvas上实现涂抹效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在Canvas上实现涂抹效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:1024d61fdd088b9c9cfe51d6978b07f159068d4998bc7c8f1a10e030cd03cb78
+scraped_at: 2026-09-22T07:15:15+08:00
+doc_updated_at: 2026-09-21
+content_hash: sha256:a6d06b256254a0b25798933da06964de2da5c65122ae94aacfb4ec893ecaa7bf
 ---
 
 ## 问题现象
@@ -121,7 +121,7 @@ content_hash: sha256:1024d61fdd088b9c9cfe51d6978b07f159068d4998bc7c8f1a10e030cd0
 
     实现效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/EX83OEmCTaWG2d3nCrWFXQ/zh-cn_image_0000002658926415.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/RIDvvajxTkaWSy3uXeHjNA/zh-cn_image_0000002658926415.png "点击放大")
 * 场景二：撤销绘制的路径。
 
   在一些签名场景，如果用户绘制错误需要重新绘制，直接使用clearRect方法清空画布体验不够友好，需要仅撤销最新的绘制路径，这时可以使用数组来存储绘制过程中的路径，然后点击撤销时移除最新路径，最后重绘剩余路径，这样即可实现撤销绘制功能。示例代码参考如下：
@@ -215,7 +215,7 @@ content_hash: sha256:1024d61fdd088b9c9cfe51d6978b07f159068d4998bc7c8f1a10e030cd0
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/mcrzocgTRe-gw4W48So7og/zh-cn_image_0000002628407212.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/tnKNFTDCThSnbExFlOcjLQ/zh-cn_image_0000002628407212.png "点击放大")
 * 场景三：擦除部分绘制内容。
 
   在一些绘图场景，可能需要在原有的线条基础上进行擦除而不是撤销，这时就需要globalCompositeOperation实现。Canvas是增量绘制，在原有的基础上进行擦除，可以通过设置globalCompositeOperation属性为destination-out来实现，示例代码参考如下：
@@ -280,7 +280,7 @@ content_hash: sha256:1024d61fdd088b9c9cfe51d6978b07f159068d4998bc7c8f1a10e030cd0
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/T0AHrIKFTnye5O1twy_TlQ/zh-cn_image_0000002658806469.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/hsFvNRVNTA2V-3EeIVrXgA/zh-cn_image_0000002658806469.png "点击放大")
 
 ## 常见FAQ
 
@@ -293,6 +293,5 @@ Q：在Canvas上实现涂抹效果是否有相关参考案例？
 A：可以参考官网示例：
 
 * [公文审批-画板签名、文件预览下载](../architecture-guides/document_approval-0000002280673593.md)。
-* [图片绘制马赛克并保存](../architecture-guides/image_draw_mosaic-0000002413444896.md)。
 * [实现Canvas的橡皮擦效果](faqs-arkui-1542.md)。
 * [刮刮乐抽奖效果](../architecture-guides/scratch_effect-0000002320935777.md)。

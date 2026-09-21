@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1041
 title: TabBar如何实现常见背景样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TabBar如何实现常见背景样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f5aae5e46909d8147a9dbe83445517cb17e54b182af3bc14bccf05795973cad6
+scraped_at: 2026-09-22T07:15:14+08:00
+doc_updated_at: 2026-09-21
+content_hash: sha256:a7dfd4744f4539db57026dbef0e5aceba5ade5dfc8b331d5dff859f0414ed8ba
 ---
 
 ## 问题现象
@@ -84,7 +84,7 @@ TabBar可以帮助用户快速切换核心功能页面，比如“首页、购�
 
   设置效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/tPs4sMsgQlOyomHQpjIyAw/zh-cn_image_0000002628405536.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/x9OMYpEkTx-V9VDR-fA02w/zh-cn_image_0000002628405536.png "点击放大")
 * **场景二：TabBar设置背景色透明样式。**
   1. TabBar透明背景：在上述代码的基础上，利用barBackgroundColor设置透明度，并使用[barOverlap](../harmonyos-references/ts-container-tabs.md#baroverlap10)设置TabBar背景变模糊并叠加在TabContent之上，展示出透明效果。
 
@@ -131,7 +131,7 @@ TabBar可以帮助用户快速切换核心功能页面，比如“首页、购�
 
      设置效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/XYdjgU4pR7Cl9GJ6sgvLqQ/zh-cn_image_0000002658804809.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/hVhXUw-qS36wDRRSWpJI3g/zh-cn_image_0000002658804809.png "点击放大")
   2. TabBar所有内容全透明：可以使用[setTabBarOpacity](../harmonyos-references/ts-container-tabs.md#settabbaropacity13)设置TabBar的不透明度，包括背景、图标、文字。为了使透明样式更明显，此处依旧使用barOverlap设置叠加效果。与方案一不同点在于该方式不仅修改了背景的透明度，还修改了TabBar的文字透明度。
 
      使用代码如下：
@@ -178,7 +178,7 @@ TabBar可以帮助用户快速切换核心功能页面，比如“首页、购�
 
      设置效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/UJtyg6pESdq3L8H0DHfnQA/zh-cn_image_0000002628565444.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/TAjQrnR-ROWRbaEYFihPAg/zh-cn_image_0000002628565444.png "点击放大")
 * **场景三：TabBar设置背景色渐变。**
 
   可以通过[linearGradient](../harmonyos-references/ts-universal-attributes-gradient-color.md#lineargradient)方法实现Tabs组件整体的背景色渐变，当然，因为是对整个Tabs组件做了背景渐变色，导致该方式的弊端是只有在固定的角度才能呈现出渐变效果。所以推荐利用Stack堆叠容器，其子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件的特性，叠加Column或其他容器组件于TabBar下方，对其他容器组件进行渐变背景色的设置。
@@ -234,7 +234,7 @@ TabBar可以帮助用户快速切换核心功能页面，比如“首页、购�
 
   设置效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ahQSbCwtR4OqqK198no66g/zh-cn_image_0000002658924751.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/HufYxLp_Sf6XRTzbVJ_84w/zh-cn_image_0000002658924751.png "点击放大")
 * **场景四：TabBar设置背景图片。**
 
   设置背景图效果与上文中提到的设置渐变背景色原理相同，需要利用Stack组件，在TabBar下方设置Image组件，达到设置背景图效果。
@@ -317,8 +317,8 @@ TabBar可以帮助用户快速切换核心功能页面，比如“首页、购�
 
   设置效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/NaiP9WEVS6awyKK0LKGF5A/zh-cn_image_0000002628405544.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/AAPBCGMnSy-pGbTqGgiixA/zh-cn_image_0000002628405544.png "点击放大")
 
 * **场景五：TabBar设置背景模糊效果。**
 
-  可以通过[barBackgroundBlurStyle](../harmonyos-references/ts-container-tabs.md#barbackgroundblurstyle18)和[barBackgroundEffect](../harmonyos-references/ts-container-tabs.md#barbackgroundeffect18)设置TabBar页签栏的背景模糊样式和效果。详情请参考：[设置TabBar背景模糊效果](../harmonyos-references/ts-container-tabs.md#示例19设置tabbar背景模糊效果)和[TabBar背景模糊效果示例](../architecture-guides/tab_bar_blur-0000002257193008.md)。
+  可以通过[barBackgroundBlurStyle](../harmonyos-references/ts-container-tabs.md#barbackgroundblurstyle18)和[barBackgroundEffect](../harmonyos-references/ts-container-tabs.md#barbackgroundeffect18)设置TabBar页签栏的背景模糊样式和效果。详情请参考：[设置TabBar背景模糊效果](../harmonyos-references/ts-container-tabs.md#示例19设置tabbar背景模糊效果)。

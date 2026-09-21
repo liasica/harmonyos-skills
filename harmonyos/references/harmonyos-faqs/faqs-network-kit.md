@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-ki
 title: 网络（Network）
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:1ae7ff9f944e727738ed7657811d269d92c0226c7c255a34f0922e67f8737c0b
+scraped_at: 2026-09-22T07:15:36+08:00
+doc_updated_at: 2026-09-21
+content_hash: sha256:03891efebc24f1360a4ec805a4c109c48fa0cfdcf5377f9cc24762c73d7634df
 ---
 
 * **[http网络请求中extraData支持的数据格式有哪些](faqs-network-1.md)**
@@ -130,7 +130,6 @@ content_hash: sha256:1ae7ff9f944e727738ed7657811d269d92c0226c7c255a34f0922e67f87
 * **[如何指定使用蜂窝网络或wifi网络发送http请求](faqs-network-143.md)**
 * **[如何实现仅wifi网络时加载图片](faqs-network-144.md)**
 * **[全局订阅网络状态变化，如何在具体页面控制业务](faqs-network-145.md)**
-* **[RCP远场通信是否支持流式返回请求数据](faqs-network-146.md)**
 * **[VPN流程问题排查指南](faqs-network-kit-new-00001.md)**
 * **[IKEv2 IPSec MSCHAPv2类型VPN无法连接如何解决](faqs-network-kit-new-00002.md)**
 * **[Socket并发连接阻塞图片加载如何解决](faqs-network-kit-new-00003.md)**
