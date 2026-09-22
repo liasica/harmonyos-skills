@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-2
 title: 截屏操作耗时较长，多次截屏操作后出现无响应的现象
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 截屏操作耗时较长，多次截屏操作后出现无响应的现象
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:365ee923271e06392a63b397b38a55fd1f91275e6a7e54df8d273211274d33a7
+scraped_at: 2026-09-23T06:57:55+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:f2b90310295446e742b0124794c3df6160fdcf65efb9196749fc09ec454c878d
 ---
 
 ## 问题现象
@@ -16,7 +16,6 @@ content_hash: sha256:365ee923271e06392a63b397b38a55fd1f91275e6a7e54df8d273211274
 
 * 用户在使用应用时，如果出现点击无反应或应用无响应等情况，并且持续时间超过一定限制，就会被定义为应用无响应，详情参考[AppFreeze（应用冻屏）检测](../harmonyos-guides/appfreeze-guidelines.md)。
 * AppFreeze日志规格说明可以参考[日志规格](../harmonyos-guides/appfreeze-guidelines.md#日志规格)。
-* 应用在检测到用户截屏操作，会弹出分享框提示。实现方式可见[截屏事件监听及分享](../architecture-guides/screenshot_listen-0000002261676460.md)。
 * [HiSmartPerf](../AppGallery-connect-Guides/smartperf-tool-0000001873208929.md)：无需ROOT设备，即可准确、高效地采集到应用运行时的CPU、GPU等性能数据，了解应用的性能状况。
 
 ## 问题定位
@@ -67,7 +66,7 @@ content_hash: sha256:365ee923271e06392a63b397b38a55fd1f91275e6a7e54df8d273211274
    ```
 4. 使用HiSmartPerf工具抓取该过程的Trace信息，在连续截屏的情况下，单个业务执行时间平均0.85s（见顶部时间轴），累计就导致了主线程阻塞。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/l_mDwIRiTV2yno4Pz6Ji3w/zh-cn_image_0000002628394982.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/51u1gEBKQfK0t_zsf7nm-A/zh-cn_image_0000002628394982.png "点击放大")
 
 ## 分析结论
 

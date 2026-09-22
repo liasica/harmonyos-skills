@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何实现多张图片的拼接
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何实现多张图片的拼接
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:23+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:3b9c0bb2cfe82c722c7f56035e51eb15e8d99d4ebf3ffe3f12c80a73de1158d2
+scraped_at: 2026-09-23T06:59:59+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:efe290b5b195664e2e16b7541c94ca23c6d1cfff61b3de5acb439fdd18e4a47d
 ---
 
 ## 问题现象
@@ -35,7 +35,7 @@ content_hash: sha256:3b9c0bb2cfe82c722c7f56035e51eb15e8d99d4ebf3ffe3f12c80a73de1
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/T-eZUH4uT5umevc9C70jZw/zh-cn_image_0000002628393350.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/i6pxC_AGRmCXNnv1e1bIyQ/zh-cn_image_0000002628393350.png "点击放大")
 
 绘制图片会根据drawImage设置的图片绘制区域进行等比例缩放，常用的图片像素处理格式有ImageBitmap和PixelMap，两者的使用优劣对比如下表所示：
 
@@ -101,7 +101,7 @@ struct CanvasDrawing {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/8RbLVIAMRAW5AkBtXWHWMg/zh-cn_image_0000002628553232.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/hmj8ZFcAT42tNik8oA6ehQ/zh-cn_image_0000002628553232.png "点击放大")
 
 离屏绘制的相关代码如下：
 
@@ -157,7 +157,7 @@ struct OffScreenDrawing {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/bB9WPtIVS3aKZBkKGnPB9w/zh-cn_image_0000002658912551.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/UTJJTTcqQNuZ4eIliWp-0g/zh-cn_image_0000002658912551.png "点击放大")
 
 对于相册图片或沙箱图片，可以在获取图片的ArrayBuffer数据后，创建PixelMap实例绘制长图。参考代码如下：
 
@@ -240,7 +240,7 @@ struct AlbumImageData {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/xKFuoNhERPCi4a4qy6_eag/zh-cn_image_0000002658792609.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/AJr4_HsfRDK-auzmWdrLyw/zh-cn_image_0000002658792609.png "点击放大")
 
 **方案二**：使用writePixels实现长图绘制。
 
@@ -249,8 +249,6 @@ struct AlbumImageData {
 1. 通过获取图片的像素数据ArrayBuffer，创建ImageSource实例并获取图片的宽高信息，通过[InitializationOptions](../harmonyos-references/arkts-apis-image-i.md#initializationoptions8)设置合成后长图图片的透明度、宽高信息（通过比较用于拼接图片的宽高信息决定输出图片的宽高）等。
 2. 设置合成图片解码设置[DecodingOptions](../harmonyos-references/arkts-apis-image-i.md#decodingoptions7)，在进行图片拼接之前读取图片的数据，并创建新的PixelMap实例便于对像素数据进行操作。
 3. 使用[writePixels](../harmonyos-references/js-apis-sendableimage.md#writepixels)读取指定区域内[PositionArea](../harmonyos-references/arkts-apis-image-i.md#positionarea7)处理后的图像像素数据。
-
-完整示例可参考[官网示例代码](../architecture-guides/image_stitch-0000002287473193.md)。
 
 ## 常见FAQ
 

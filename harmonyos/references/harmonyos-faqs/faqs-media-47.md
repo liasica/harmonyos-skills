@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-47
 title: 媒体服务报错5400102问题定位
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > 媒体服务报错5400102问题定位
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:dd9decbd0a3418c80e1437de564a1b8a47a5b14f4eb592e7e74fe2b88e5aba84
+scraped_at: 2026-09-23T06:59:57+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:dcb26e476122f8c06d39c4de646d58a9f11b1d1ac0edb12f4677918925131284
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ content_hash: sha256:dd9decbd0a3418c80e1437de564a1b8a47a5b14f4eb592e7e74fe2b88e5
 
 使用AVPlayer、SoundPool开发音视频播放功能时，必须按照一定的顺序调用接口，执行对应操作。如果没有在对应的状态下执行操作，系统将会抛出异常（5400102，Operate Not Permit）或产生其他未定义的行为。
 
-可以通过AVPlayer、SoundPool的API参考获取每个接口调用时的状态限制。AVPlayer可以通过的state[属性](../harmonyos-references/arkts-apis-media-avplayer.md#属性)主动获取当前状态，或使用[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)方法监听状态变化。SoundPool可以通过[on('loadComplete')](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#onloadcomplete)等监听方法检查当前播放状态。
+可以通过[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)、[SoundPool](../harmonyos-references/js-apis-inner-multimedia-soundpool.md)的API参考获取每个接口调用时的状态限制。AVPlayer可以通过的state[属性](../harmonyos-references/arkts-apis-media-avplayer.md#属性)主动获取当前状态，或使用[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)方法监听状态变化。SoundPool可以通过[on('loadComplete')](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#onloadcomplete)等监听方法检查当前播放状态。
 
 常见的报错5400102的问题场景和原因如下：
 
@@ -68,7 +68,7 @@ content_hash: sha256:dd9decbd0a3418c80e1437de564a1b8a47a5b14f4eb592e7e74fe2b88e5
    }
    ```
 
-   AVPlayer的prepare接口需要在[stateChange](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)事件成功触发至initialized状态后，才能调用，否则会抛出异常5400102。需要注意的是，AVPlayer在设置播放资源后，不会立刻进入initialized状态，必须stateChange事件，确认AVPlayer成功进入initialized状态后才可以调用prepare接口准备播放。
+   AVPlayer的prepare接口需要在[stateChange](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)事件成功触发至initialized状态后，才能调用，否则会抛出异常5400102。需要注意的是，AVPlayer在设置播放资源后，不会立刻进入initialized状态，必须[stateChange](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)事件，确认AVPlayer成功进入initialized状态后才可以调用prepare接口准备播放。
 3. SoundPool调用[load](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#load)加载音频资源后，调用[play](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#play)开始播放报错5400102。
 
    ```txt
@@ -86,7 +86,7 @@ content_hash: sha256:dd9decbd0a3418c80e1437de564a1b8a47a5b14f4eb592e7e74fe2b88e5
    }
    ```
 
-   SoundPool的play接口需要在[loadComplete](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#onloadcomplete)事件触发，音视频资源加载完成后，才能正常调用。调用load接口完成后，不代表音频资源加载完成，如果此时调用play接口开始播放会报错5400102。
+   SoundPool的[play](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#play)接口需要在[loadComplete](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#onloadcomplete)事件触发，音视频资源加载完成后，才能正常调用。调用[load](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#load)接口完成后，不代表音频资源加载完成，如果此时调用[play](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#play)接口开始播放会报错5400102。
 
 ## 分析结论
 

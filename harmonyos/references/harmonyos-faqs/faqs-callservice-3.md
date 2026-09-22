@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-callservice-3
-title: 当应用主进程被杀死，企业联系人信息来去电页面显示的内容如何获取
-breadcrumb: FAQ > 应用服务开发 > VoIP通话服务（Call Service Kit） > 当应用主进程被杀死，企业联系人信息来去电页面显示的内容如何获取
+title: 当应用主进程被终止，企业联系人信息来去电页面显示的内容如何获取
+breadcrumb: FAQ > 应用服务开发 > VoIP通话服务（Call Service Kit） > 当应用主进程被终止，企业联系人信息来去电页面显示的内容如何获取
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
-content_hash: sha256:ed8303e5ff10a40c8a5880f4576527534bde90290f80c7989efce9f8559afbaf
+scraped_at: 2026-09-23T07:00:02+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:bcf871b1cc926ccc95e25ab4f5ab293eb4d2238af928e1473176ce0605c3b20d
 ---
 
 ## 问题现象
@@ -14,8 +14,9 @@ content_hash: sha256:ed8303e5ff10a40c8a5880f4576527534bde90290f80c7989efce9f8559
 
 ## 背景知识
 
-* [企业联系人信息来去电页面显示能力](../harmonyos-guides/callservice-enterprise-contact-display.md)可以方便用户识别来去电人信息，快速回应，增强企业内部沟通效率。
-* 通过自定义组件继承[CallerInfoQueryExtensionAbility](../harmonyos-references/callservicekit-callerinfoquery-extension-ability.md#callerinfoqueryextensionability)，重写[onQueryCallerInfo](../harmonyos-references/callservicekit-callerinfoquery-extension-ability.md#onquerycallerinfo)(phoneNumber: string)：Promise<CallerInfo>方法，在此方法实现根据号码查询企业联系人的业务逻辑，成功获取企业联系人信息后，可通过resolve返回企业联系人信息，获取失败后，可通过reject返回自定义的错误信息。
+[企业联系人信息来去电页面显示能力](../harmonyos-guides/callservice-enterprise-contact-display.md)可以方便用户识别来去电人信息，快速回应，增强企业内部沟通效率。
+
+通过自定义组件继承[CallerInfoQueryExtensionAbility](../harmonyos-references/callservicekit-callerinfoquery-extension-ability.md#callerinfoqueryextensionability)，重写[onQueryCallerInfo](../harmonyos-references/callservicekit-callerinfoquery-extension-ability.md#onquerycallerinfo)(phoneNumber: string)：Promise方法，在此方法实现根据号码查询企业联系人的业务逻辑，成功获取企业联系人信息后，可通过resolve返回企业联系人信息，获取失败后，可通过reject返回自定义的错误信息。
 
 ## 解决方案
 
@@ -141,7 +142,6 @@ content_hash: sha256:ed8303e5ff10a40c8a5880f4576527534bde90290f80c7989efce9f8559
      }
    }
    ```
-
 3. Call kit扩展组件继承CallerInfoQueryExtensionAbility，并复写onQueryCallerInfo方法，在此方法中根据电话号码查询对应的关系型数据库，必须使用await等待查询结果后，再进行数据返回，参考示例代码如下所示：
 
    ```ts
@@ -222,7 +222,7 @@ content_hash: sha256:ed8303e5ff10a40c8a5880f4576527534bde90290f80c7989efce9f8559
    ```
 4. 在应用配置文件module.json5中注册extensionAbilities。
 
-   ```json
+   ```json5
    "extensionAbilities": [
      {
        "name": "EntryCallerInfoQueryExtAbility",
@@ -244,7 +244,7 @@ content_hash: sha256:ed8303e5ff10a40c8a5880f4576527534bde90290f80c7989efce9f8559
      }
    ]
    ```
-5. 在调试设备上，前往“电话”，点击右上角的“更多”图标，前往“设置”-“陌生号码和信息识别”，打开对应企业应用的号码识别功能开关，进行调试。
+5. 在调试设备上，前往"电话"，点击右上角的"更多"图标，前往"设置"-"陌生号码和信息识别"，打开对应企业应用的号码识别功能开关，进行调试。
 
 ## 常见FAQ
 
@@ -264,9 +264,9 @@ Q：使用该功能，用户必须手动在手机设置-陌生号码和信息识
 
 A：是的，因为涉及到信息采集和一些协议，具体协议内容可以在手机设置-陌生号码和信息识别界面点击查看。
 
-Q：Call Service Kit应用通话过程中切换到后台无法杀死，为什么？
+Q：Call Service Kit应用通话过程中切换到后台无法终止，为什么？
 
-A：目前规格通话过程中应用在后台不能杀死，通话挂断后才能杀死后台，原因是确保通话过程中应用不会被意外关闭导致通话突然中断，规格和运营商通话保持一致。
+A：按目前规格，通话过程中应用在后台不能终止，通话挂断后才能终止。该规格与运营商通话行为保持一致，以确保通话过程中应用不会被意外关闭导致通话突然中断。
 
 Q：在CallerInfoQueryExtensionAbility中使用getContext()方法获取上下文失败导致无法获取首选项数据。
 

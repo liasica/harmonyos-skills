@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16815 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16814 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1249 篇
 
@@ -12223,7 +12223,7 @@
 - [多设备地图导航界面](best-practices/multi-travel-navigation.md)
 - [多设备长视频界面](best-practices/multi-video-app.md)
 
-## FAQ（`harmonyos-faqs`）— 4593 篇
+## FAQ（`harmonyos-faqs`）— 4592 篇
 
 - [常见问题](harmonyos-faqs/app-framework-tablet-faqs.md)
 - [常见问题](harmonyos-faqs/computer-faqs.md)
@@ -14895,7 +14895,7 @@
 - [基础服务（Basics Service）](harmonyos-faqs/faqs-basic-services-kit.md)
 - [应用内发起通话，已经接通后通话状态显示错误](harmonyos-faqs/faqs-callservice-1.md)
 - [为什么企业来电显示中的"陌生号码与信息识别"页面设计两个按钮](harmonyos-faqs/faqs-callservice-2.md)
-- [当应用主进程被杀死，企业联系人信息来去电页面显示的内容如何获取](harmonyos-faqs/faqs-callservice-3.md)
+- [当应用主进程被终止，企业联系人信息来去电页面显示的内容如何获取](harmonyos-faqs/faqs-callservice-3.md)
 - [企业联系人来去电信息手机号国家码匹配](harmonyos-faqs/faqs-callservice-4.md)
 - [通话服务中callId是否可以自定义，需要保持一致吗](harmonyos-faqs/faqs-callservice-5.md)
 - [voip通话低延时模式场景下系统是否支持回声消除](harmonyos-faqs/faqs-callservice-6.md)
@@ -14932,7 +14932,6 @@
 - [使用折叠屏手机进行相机预览，在展开态时黑屏](harmonyos-faqs/faqs-camera-40.md)
 - [应用频繁开关摄像头偶现AppFreeze](harmonyos-faqs/faqs-camera-41.md)
 - [相机连续两次调用拍照方法报错](harmonyos-faqs/faqs-camera-42.md)
-- [自定义相机在用户未授权的情况下，预览画面黑屏，用户点击拍照，应用闪退](harmonyos-faqs/faqs-camera-43.md)
 - [拉起相机时，预览界面花屏](harmonyos-faqs/faqs-camera-44.md)
 - [打开相机进行拍照时，拍照预览区域尺寸异常](harmonyos-faqs/faqs-camera-45.md)
 - [如何选用业务需要的摄像头](harmonyos-faqs/faqs-camera-46.md)

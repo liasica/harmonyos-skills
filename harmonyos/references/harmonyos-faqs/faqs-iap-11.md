@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-11
 title: 应用内支付常见错误码和解决方案
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 应用内支付常见错误码和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-09-18T06:55:01+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:b22ca8d31f9db36897e136ea0eeb36c2a93c08e084f2d745a7b8752138d6c39a
+scraped_at: 2026-09-23T07:00:10+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:80cf2c6cc2b020d9f829fa48010be1c471b372173999dabffabd0c564b24b175
 ---
 
 ## 问题现象
@@ -117,7 +117,7 @@ Q：根据交易号查询订单状态信息中的orderNo对应的是什么，如
 
 A：该接口的交易号不是指purchaseOrderId，交易号可在用户设备的设置--华为账号--付款与账单--购买记录"中对应订单详情中获取。
 
-Q：应用内支付给商品设置促销优惠价时，优惠设置完成后，用户侧仍显示的时原价，如何解决？
+Q：应用内支付给商品设置促销优惠价时，优惠设置完成后，用户侧仍显示的是原价，如何解决？
 
 A：建议看下是否设置的是自定义人群促销，该促销是需要下单指定传参的，即带上promotionalOfferId、applicationUserName和jwsRepresentation参数。具体可看参考：[PurchaseParameter参数说明。](../harmonyos-references/iap-iap.md#purchaseparameter)
 
@@ -153,7 +153,7 @@ Q：应用内支付出现报错提示，jwt Failed to verify the digest，如何
 
 A：签名内body请求的hash值与签名内digest的不一致。建议获取jwt后，解码其中payload的digest，检查是否一致。具体可看参考：[生成服务端请求的token。](../harmonyos-references/iap-jwt-description.md)
 
-Q：应用开通应用内支付服务是，应用中的开放能力管理中没有应用内支付服务，如何处理？
+Q：应用开通应用内支付服务时，应用中的开放能力管理中没有应用内支付服务，如何处理？
 
 A：建议排查下如下两种情形，是否使用企业normal账号和应用只选了2in1设备。
 

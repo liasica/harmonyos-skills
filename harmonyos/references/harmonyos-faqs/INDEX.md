@@ -1,6 +1,6 @@
 # FAQ（harmonyos-faqs）
 
-共 4593 篇文档。
+共 4592 篇文档。
 
 - [常见问题](app-framework-tablet-faqs.md)
 - [常见问题](computer-faqs.md)
@@ -2672,7 +2672,7 @@
 - [基础服务（Basics Service）](faqs-basic-services-kit.md)
 - [应用内发起通话，已经接通后通话状态显示错误](faqs-callservice-1.md)
 - [为什么企业来电显示中的"陌生号码与信息识别"页面设计两个按钮](faqs-callservice-2.md)
-- [当应用主进程被杀死，企业联系人信息来去电页面显示的内容如何获取](faqs-callservice-3.md)
+- [当应用主进程被终止，企业联系人信息来去电页面显示的内容如何获取](faqs-callservice-3.md)
 - [企业联系人来去电信息手机号国家码匹配](faqs-callservice-4.md)
 - [通话服务中callId是否可以自定义，需要保持一致吗](faqs-callservice-5.md)
 - [voip通话低延时模式场景下系统是否支持回声消除](faqs-callservice-6.md)
@@ -2709,7 +2709,6 @@
 - [使用折叠屏手机进行相机预览，在展开态时黑屏](faqs-camera-40.md)
 - [应用频繁开关摄像头偶现AppFreeze](faqs-camera-41.md)
 - [相机连续两次调用拍照方法报错](faqs-camera-42.md)
-- [自定义相机在用户未授权的情况下，预览画面黑屏，用户点击拍照，应用闪退](faqs-camera-43.md)
 - [拉起相机时，预览界面花屏](faqs-camera-44.md)
 - [打开相机进行拍照时，拍照预览区域尺寸异常](faqs-camera-45.md)
 - [如何选用业务需要的摄像头](faqs-camera-46.md)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-kit
 title: 相机开发（Camera）
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:eaf8c7806a882b8472a1a315fa169f3aa1f897e4334f07a9dfb336aa569d1e93
+scraped_at: 2026-09-23T06:59:47+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:de18feab96186b1a50b12f412753f9bdf053c2475681fa6415f1adf197ed506d
 ---
 
 * **[使用XComponent组件显示相机的预览输出流时，如何获取相机的帧数据](faqs-camera-1.md)**
@@ -44,7 +44,6 @@ content_hash: sha256:eaf8c7806a882b8472a1a315fa169f3aa1f897e4334f07a9dfb336aa569
 * **[使用折叠屏手机进行相机预览，在展开态时黑屏](faqs-camera-40.md)**
 * **[应用频繁开关摄像头偶现AppFreeze](faqs-camera-41.md)**
 * **[相机连续两次调用拍照方法报错](faqs-camera-42.md)**
-* **[自定义相机在用户未授权的情况下，预览画面黑屏，用户点击拍照，应用闪退](faqs-camera-43.md)**
 * **[拉起相机时，预览界面花屏](faqs-camera-44.md)**
 * **[打开相机进行拍照时，拍照预览区域尺寸异常](faqs-camera-45.md)**
 * **[如何选用业务需要的摄像头](faqs-camera-46.md)**

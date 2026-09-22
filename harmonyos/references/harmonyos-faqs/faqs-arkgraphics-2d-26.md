@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 运动轨迹如何分享为图片
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 运动轨迹如何分享为图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:95943d88e3956ecbbf4f084059b0de224854553c87c7f5b5aa45c69bfa252d91
+scraped_at: 2026-09-23T06:59:59+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:fc1847a2c11433eb021a40bb2562f4dafac1f96a81ca39c6ec86968570fb70d6
 ---
 
 ## 问题现象
@@ -25,7 +25,7 @@ content_hash: sha256:95943d88e3956ecbbf4f084059b0de224854553c87c7f5b5aa45c69bfa2
 获取运动轨迹路线，可以使用Map Kit或Canvas绘制轨迹路线后将图片保存，两种方案的实现参考如下。
 
 * 基于Map Kit实现轨迹绘制：
-  1. 基于Map Kit使用[addTraceOverlay](../harmonyos-references/map-map-mapcomponentcontroller.md#addtraceoverlay)将一系列经纬度轨迹点绘制成动态轨迹路线，可参考[移动轨迹追踪](../architecture-guides/map_location-0000002385607421.md)。
+  1. 基于Map Kit使用[addTraceOverlay](../harmonyos-references/map-map-mapcomponentcontroller.md#addtraceoverlay)将一系列经纬度轨迹点绘制成动态轨迹路线。
   2. 通过[组件截图](../harmonyos-references/js-apis-arkui-componentsnapshot.md)将绘制完成的图片保存，关于组件截图可参考下述代码。
 
      ```ts

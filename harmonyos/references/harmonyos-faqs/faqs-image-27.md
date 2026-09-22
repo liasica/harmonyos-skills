@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-27
 title: 上传原图却显示模糊图片
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 上传原图却显示模糊图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0f4ef8a02ed52c8b895767d04835d9a088956dabeb9848b4f3e1f874bab12b5d
+scraped_at: 2026-09-23T06:59:50+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:a1f6a53c927ea099e943bde99556c503fd978b31ba157fc1d3a07656d420a715
 ---
 
 ## 问题现象
@@ -29,5 +29,3 @@ content_hash: sha256:0f4ef8a02ed52c8b895767d04835d9a088956dabeb9848b4f3e1f874bab
 ## 修改建议
 
 如果原图上传，则应跳过所有缩放、格式转换及压缩操作，直接上传原始图片，确保画质与分辨率不变。在处理非原图上传的情况下，可对图片进行合理缩放与格式转换，但需确保支持多种图片格式（如PNG、JPEG、WebP等），并根据不同格式采取合适的处理策略，避免因格式转换导致的失真问题。
-
-具体实现可参考[示例](../architecture-guides/image_converter-0000002368877552.md)。

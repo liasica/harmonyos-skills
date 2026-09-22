@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-1
 title: 如何自定义公式计算两点位置坐标的距离
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 如何自定义公式计算两点位置坐标的距离
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6b8a2883ef123de7db3d62facbc155dc8e42339a22d0091afb618f642506d00e
+scraped_at: 2026-09-23T07:00:07+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:f35b1e328642d90f89c04113e07ae01ff73dae9d7d007f53c0f7a3ca4016984b
 ---
 
 ## 问题现象
@@ -82,5 +82,3 @@ content_hash: sha256:6b8a2883ef123de7db3d62facbc155dc8e42339a22d0091afb618f64250
      }
    }
    ```
-
-   上述示例给出的距离计算方法的关键应用场景示例可参考[根据实时定位获取经纬度计算距离](../architecture-guides/near_people-0000002237251858.md)。

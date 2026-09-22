@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-26
 title: 应用导入图片后提示图片文件过大
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 应用导入图片后提示图片文件过大
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:e07d3cf9bc5c2e36f369ce8fa9a48d37d4f30f73f4a36b97993a12fbb34b673b
+scraped_at: 2026-09-23T06:59:51+08:00
+doc_updated_at: 2026-09-22
+content_hash: sha256:414007a63c62fff350c78376c8e0ccff0d9a8d97732183424fe93a1bcf9101f2
 ---
 
 ## 问题现象
@@ -38,4 +38,4 @@ content_hash: sha256:e07d3cf9bc5c2e36f369ce8fa9a48d37d4f30f73f4a36b97993a12fbb34
 在应用里面声明像素大小限制：
 
 * 使用[sourceSize](../harmonyos-references/ts-basic-components-image.md#sourcesize)限制解码尺寸。
-* 在图片导入的时候将图片压缩到支持的像素大小：[图片压缩](../architecture-guides/compress_images-0000002322173825.md)。
+* 在图片导入的时候将图片压缩到支持的像素大小。
