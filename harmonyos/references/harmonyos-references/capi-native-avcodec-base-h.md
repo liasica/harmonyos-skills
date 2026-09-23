@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcodec_base.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcodec_base.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:04a2285444222e0c28a684bf3e8e4ca54dee2a513d61c3f50316f13930ebed00
+scraped_at: 2026-09-24T06:54:29+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:458875355ada7f3eacc7a571ec63a04a48cb4c0ff6e2334ed6c645892749463b
 ---
 
 ## 概述
@@ -1150,7 +1150,7 @@ typedef void (*OH_AVCodecOnError)(OH_AVCodec *codec, int32_t errorCode, void *us
 | 音频编解码 | AV\_ERR\_DRM\_DECRYPT\_FAILED：DRM解密失败。 |
 | 视频编解码 | AV\_ERR\_NO\_MEMORY：系统资源不足。  AV\_ERR\_UNKNOWN：未知错误，请通过具体日志分析。  AV\_ERR\_SERVICE\_DIED：服务状态已消亡。 |
 | 视频解码 | AV\_ERR\_VIDEO\_UNSUPPORTED\_COLOR\_SPACE\_CONVERSION：当前输入不支持色彩空间转换功能。 |
-| 视频编码 | AV\_ERROR\_INPUT\_DATA\_ERROR：  1. 运行过程中surfacebuffer宽、高超出OH\_VideoEncoder\_Configure接口配置的宽、高。  2. 配置信息与输入数据比特不一致，如：编码输入数据为8bit而配置为10bit，或编码输入数据为10bit而配置为8bit。  3. 配置了不支持的pixelformat。 |
+| 视频编码 | AV\_ERR\_INPUT\_DATA\_ERROR：  1. 运行过程中surfacebuffer宽、高超出OH\_VideoEncoder\_Configure接口配置的宽、高。  2. 配置信息与输入数据比特不一致，如：编码输入数据为8bit而配置为10bit，或编码输入数据为10bit而配置为8bit。  3. 配置了不支持的pixelformat。 |
 
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 

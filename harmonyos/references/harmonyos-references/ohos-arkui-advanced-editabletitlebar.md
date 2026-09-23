@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: EditableTitleBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > EditableTitleBar
 category: harmonyos-references
-scraped_at: 2026-09-21T06:21:04+08:00
+scraped_at: 2026-09-24T06:52:37+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:408af74ebfda69f9acc16346b9c756387f79aa7b76076ec6981c7a325fc4a675
+content_hash: sha256:0ae7c0b51eed4590a86223e52e14b70ad7bf017fc0bf07507d9544e47dea3afa
 ---
 
 编辑型标题栏，适用于多选界面或者内容的编辑界面，一般采取左叉右勾的形式。
@@ -174,7 +174,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/24GCkfZFTCeZET6hHclSKQ/zh-cn_image_0000002762996101.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/bav-4HvTRDKgq5F4-qLe9w/zh-cn_image_0000002769332721.png)
 
 ### 示例2（头像与背景模糊标题栏）
 
@@ -279,7 +279,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/c3G-RwExRtSK6AJb2bFOyQ/zh-cn_image_0000002762836219.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/XdinxCEcQeiCEcMrzb-WjQ/zh-cn_image_0000002769452583.png)
 
 ### 示例3（右侧自定义按钮播报）
 
@@ -342,7 +342,7 @@ struct Index1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/4XTbK93BTlujWK8YBEK2xw/zh-cn_image_0000002733276706.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/wZukEOKASbSIvqpmMtlHjw/zh-cn_image_0000002739893252.png)
 
 ### 示例4（左侧图标设置为默认焦点）
 
@@ -374,7 +374,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/ZmExLtTITuqsAXafOlKWwQ/zh-cn_image_0000002733436582.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/P6gxleNESNqrF691_uZ27g/zh-cn_image_0000002739733374.png)
 
 ### 示例5（右侧自定义图标设置为默认焦点）
 
@@ -423,7 +423,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/IP883NWuQgmRezIcZrJFHA/zh-cn_image_0000002762996103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/77HE6g1ATb-ixZEdv1v5zA/zh-cn_image_0000002769332723.png)
 
 ### 示例6（设置Symbol类型图标）
 
@@ -492,4 +492,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/uki0tNACQtioZE-sHDC6qQ/zh-cn_image_0000002762836221.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Pf7W6WQQRoCq4PAGDbv6zA/zh-cn_image_0000002769452585.png)

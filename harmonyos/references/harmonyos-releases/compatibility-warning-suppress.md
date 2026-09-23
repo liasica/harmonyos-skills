@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/compatibili
 title: 兼容性告警屏蔽
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > API兼容性保护和告警屏蔽 > 兼容性告警屏蔽
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:40+08:00
-doc_updated_at: 2026-07-06
+scraped_at: 2026-09-24T06:49:20+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:068bc32155c3c94506af29b75ad506c70a2026278599cea78fa09a923a947077
 ---
 

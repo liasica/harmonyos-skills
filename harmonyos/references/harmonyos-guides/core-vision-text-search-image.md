@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-t
 title: 通过文本搜索图片
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 通过文本搜索图片
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:19:12+08:00
+scraped_at: 2026-09-24T06:51:11+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:8f624d539dee6252ee7d12bfbe0584cedbd904674976661208b9bdeae176aede
+content_hash: sha256:877699a98a279cebe1e8e255250e60e37b89c5c2c79da56f6fc600287c3bb7ac
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:8f624d539dee6252ee7d12bfbe0584cedbd904674976661208b9bdeae17
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/XEafI7DCTAOf6FSYaaHg1w/zh-cn_image_0000002762995179.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/eqJSvC-jTy-0goyrzjAplg/zh-cn_image_0000002769331805.png "点击放大")
 
 ## 开发步骤
 

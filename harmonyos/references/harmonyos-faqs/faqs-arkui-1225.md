@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1225
 title: 权限申请弹窗与自定义弹窗冲突问题及解决方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 权限申请弹窗与自定义弹窗冲突问题及解决方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:42d54a7d7e64366a5e79dab1049a4dbc9bdd3cbadc8c8cfa49ad4811699c70f0
+scraped_at: 2026-09-24T06:56:47+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:ac46cbf68f70e11c6375aa3ab1a4a8920f60357d806405fbaeecc4efcdea7cbb
 ---
 
 ## 问题现象
@@ -80,7 +80,7 @@ struct Index {
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/2fhCOoUzTQ29jz_AmreSZw/zh-cn_image_0000002628594026.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Aik574WTSFS3qZ3FcQ3Jog/zh-cn_image_0000002735481510.png "点击放大")
 
 ## 背景知识
 
@@ -171,10 +171,10 @@ struct Index {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/8HZRfdYUSRyOKV7JsQL52w/zh-cn_image_0000002628753922.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/nx_KRxmLSdOhF35oa_sQlw/zh-cn_image_0000002765001797.png "点击放大")
 
 ## 常见FAQ
 
-Q：点击Web内组件同时弹出alert弹窗和系统弹窗，拉起alert弹窗时，Web进程会阻塞等待应用回复如何规避？
+Q：点击Web内组件同时弹出alert弹窗和系统弹窗，拉起alert弹窗时，Web进程会阻塞等待应用恢复如何规避？
 
-A：可以给[AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md#alertdialogparam对象说明)设置LevelMode属性（弹窗显示层级模式），设置[LevelMode](../harmonyos-references/js-apis-promptaction.md#levelmode15)：LevelMode.EMBEDDED，会将分享弹窗和alert弹窗都显示出来，也不会卡死。
+A：可以给[AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md#alertdialogparam对象说明)设置LevelMode属性（弹窗显示层级模式），设置[LevelMode](../harmonyos-references/js-apis-promptaction.md#levelmode15枚举说明)：LevelMode.EMBEDDED，会将分享弹窗和alert弹窗都显示出来，也不会卡死。

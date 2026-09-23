@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-agent-agentuiextensionability
-title: "@ohos.app.ability.AgentUIExtensionAbility (带界面的智能体扩展组件)"
-breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.AgentUIExtensionAbility (带界面的智能体扩展组件)
+title: "@ohos.app.agent.AgentUIExtensionAbility (带界面的智能体扩展组件)"
+breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.agent.AgentUIExtensionAbility (带界面的智能体扩展组件)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e40504190b71e5f646d52df44e1e816b4e30612a653e939aff9ff43d2dc6c631
+scraped_at: 2026-09-24T06:51:42+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:2ae050e24757afe41bed2aec57f0863cf12ef1e94b1fcbac3529497dcdae05fd
 ---
 
-AgentUIExtensionAbility继承自[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)，为开发者提供接入端侧Agent UI界面显示能力。
+AgentUIExtensionAbility继承自[ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件)](js-apis-app-ability-uiextensionability.md)，为开发者提供接入端侧Agent UI界面显示能力。
 
-[AgentExtensionAbility](js-apis-app-agent-agentextensionability.md)提供智能体扩展能力，AgentUIExtensionAbility必须与AgentExtensionAbility共进程运行，不支持独立运行。
+[ohos.app.agent.AgentExtensionAbility (智能体扩展组件)](js-apis-app-agent-agentextensionability.md)提供智能体扩展能力，AgentUIExtensionAbility必须与AgentExtensionAbility共进程运行，不支持独立运行。
 
-各类Ability的继承关系详见[继承关系说明](js-apis-app-ability-ability.md#ability的继承关系说明)。
+各类Ability的继承关系详见[Ability的继承关系说明](js-apis-app-ability-ability.md#ability的继承关系说明)。
 
 **说明** 
 
@@ -35,8 +35,8 @@ import { AgentUIExtensionAbility } from '@kit.AbilityKit';
 
 ## AgentUIExtensionAbility
 
-AgentUIExtensionAbility继承自[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)，为开发者提供接入端侧Agent UI界面显示能力。例如，当Agent开发者希望在其他应用中显示Agent返回的结果时，可以通过接入AgentUIExtensionAbility提供展示嵌入式弹窗的能力。
+AgentUIExtensionAbility继承自[ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件)](js-apis-app-ability-uiextensionability.md)，为开发者提供接入端侧Agent UI界面显示能力。例如，当Agent开发者希望在其他应用中显示Agent返回的结果时，可以通过接入AgentUIExtensionAbility提供展示嵌入式弹窗的能力。
 
 **系统能力**：SystemCapability.Ability.AgentRuntime.Core
 
-**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+**元服务API**：从API版本24开始，该接口支持在元服务中使用。

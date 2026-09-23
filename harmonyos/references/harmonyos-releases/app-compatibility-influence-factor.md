@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 影响应用兼容性的关键信息
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 影响应用兼容性的关键信息
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:59:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8fc2090d6fd70096ea4eb1eb2b893a06887a2cb72216d965d8ad773016953aeb
+scraped_at: 2026-09-24T06:49:20+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:779eaea48d3adf888e322895fb280aba643e65c6b147dc5f17be063bf6924364
 ---
 
 **说明** 
@@ -58,7 +58,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
   关于本机的进入方式如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/vWc72Fo4SZyoBfCvJUGEfw/zh-cn_image_0000002379286636.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/1yMSsYpcQWSRi5jw_JDzwg/zh-cn_image_0000002412806157.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/hXEZrp6nSWWwN-Q47LW0dw/zh-cn_image_0000002379126760.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/D7cf52gqTcmpx99M4ysuvA/zh-cn_image_0000002379286636.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ycb9PuYxQrqaWB7XkZbDpw/zh-cn_image_0000002412806157.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/cxUv7ONCQ9yAaZoVtxFOQg/zh-cn_image_0000002379126760.png "点击放大")
 
   注意：上述界面的API版本的取值是从deviceInfo的distributionOSApiName和sdkApiVersion属性组合而成。
 * **【方式二】**可通过以下hdc命令来查询设备ROM的API版本号。
@@ -103,7 +103,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
 当用户设备的API版本低于应用包中的minAPIVersion时，该应用仍可在该设备的应用市场推荐页被展示，或通过搜索被查看到。但当用户点击安装此应用时，会提示此应用“无法安装”并给出所需要的系统版本要求（如下图所示）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/x_nNCUOYTIGI8G1a59hUkA/zh-cn_image_0000002515801291.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/guoRGzOOSdqu-D-FgnNakg/zh-cn_image_0000002515801291.png)
 
 ### 对API的行为变更进行API版本隔离
 

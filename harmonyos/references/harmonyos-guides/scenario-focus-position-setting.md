@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-focu
 title: 重新设置新焦点位置
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 重新设置新焦点位置
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:97260811ad9412e443189bf078e0d588fd959bbdae7bcdfb14aac85ee18e7386
+scraped_at: 2026-09-24T06:49:25+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:5489a36e5eca5014a91354089b4e362d7da7146c8850dcf408c84c318b7385dc
 ---
 
 ## 设计场景
@@ -20,8 +20,8 @@ content_hash: sha256:97260811ad9412e443189bf078e0d588fd959bbdae7bcdfb14aac85ee18
 | --- | --- | --- | --- |
 | type | EventType | 主动聚焦事件类型 | requestFocusForAccessibility |
 | bundleName | string | 目标应用名 | 当前应用包名 |
-| triggerAction | Action | 触发事件的Action | click或其他都不会有任何影响 |
-| customId | string | 组件id | abc345 |
+| triggerAction | Action | 触发事件的Action | common |
+| customId | string | 组件id | button1 |
 
 ## 开发流程
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-web-
 title: ArkWeb_ControllerAPI
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 结构体 > ArkWeb_ControllerAPI
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:09+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:51d864e9ed8bb11a483aed8818e0b48acdee128aab96fab31b1e211746a456ae
+scraped_at: 2026-09-24T06:53:09+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:e27dcb343dcf563e5fa1f22734f4d539652a6f42b846828885de59fe93b70652
 ---
 
 ```c
@@ -163,7 +163,7 @@ ArkWeb_WebMessagePortPtr* (*createWebMessagePorts)(const char* webTag, size_t* s
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkWeb\_WebMessagePortPtr](capi-web-arkweb-webmessageport8h.md) | Post Message端口结构体指针。 |
+| [ArkWeb\_WebMessagePortPtr](capi-web-arkweb-webmessageport8h.md)\* | Post Message端口结构体指针。 |
 
 ### destroyWebMessagePorts()
 

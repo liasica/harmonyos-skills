@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (LiteResultSet)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Class (LiteResultSet)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:356991e18c84e67588e64af0370321912cfb7df5b1cfd904d11dde99fbd1c511
+scraped_at: 2026-09-24T06:51:52+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:be18f23b07b6979aea0a347db36867788bd14c4c0b88de73dcb536dcade19889
 ---
 
 提供通过查询数据库生成的数据库结果集的访问方法。结果集是指用户调用关系型数据库查询接口之后返回的结果集合，提供了多种灵活的数据访问方式，以便用户获取各项数据。
@@ -915,7 +915,7 @@ async function getRowsExample(store : relationalStore.RdbStore) {
       let rows: Array<relationalStore.ValuesBucket>;
       let maxCount: number = 50;
       // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
-      // getRows会自动移动结果集当前行到上次getRows获取结束位置的下一行，goToNextRow等接口移动
+      // getRows会自动移动结果集当前行到上次getRows获取结束位置的下一行，无需使用goToFirstRow、goToNextRow等接口移动
       while ((rows = await resultSet.getRows(maxCount)).length != 0) {
         console.info(JSON.stringify(rows[0]));
       }

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rela
 title: relational_store.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > relational_store.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:43+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:01d3f92ebcc623386095f6ede40ba8948d1d0d5eeebc4274fcf90e7a819d0536
+scraped_at: 2026-09-24T06:51:59+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:da50344fd5471fa75fc857fa4491f992eebb53c3ee01e84509d43bae107c0ebd
 ---
 
 ## 概述
@@ -120,7 +120,7 @@ content_hash: sha256:01d3f92ebcc623386095f6ede40ba8948d1d0d5eeebc4274fcf90e7a819
 | [typedef void (\*Rdb\_SyncCallback)(Rdb\_ProgressDetails \*progressDetails)](capi-relational-store-h.md#rdb_synccallback) | Rdb\_SyncCallback | 数据库端云同步的回调函数。 |
 | [int OH\_Rdb\_CloudSync(OH\_Rdb\_Store \*store, Rdb\_SyncMode mode, const char \*tables[], uint32\_t count,const Rdb\_ProgressObserver \*observer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-relational-store-h#oh_rdb_cloudsync) | - | 进行端云同步。 |
 | [int OH\_Rdb\_SubscribeAutoSyncProgress(OH\_Rdb\_Store \*store, const Rdb\_ProgressObserver \*observer)](capi-relational-store-h.md#oh_rdb_subscribeautosyncprogress) | - | 订阅RDB存储的自动同步进度。  当收到自动同步进度的通知时，将调用回调。 |
-| [int OH\_Rdb\_UnsubscribeAutoSyncProgress(OH\_Rdb\_Store \*store, const Rdb\_ProgressObserver \*observer)](capi-relational-store-h.md#oh_rdb_unsubscribeautosyncprogress) | - | 取消订阅RDB存储的自动同步进程。 |
+| [int OH\_Rdb\_UnsubscribeAutoSyncProgress(OH\_Rdb\_Store \*store, const Rdb\_ProgressObserver \*observer)](capi-relational-store-h.md#oh_rdb_unsubscribeautosyncprogress) | - | 取消订阅RDB存储的自动同步进度。 |
 | [int OH\_Rdb\_LockRow(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates)](capi-relational-store-h.md#oh_rdb_lockrow) | - | 根据指定的条件锁定数据库中的数据，锁定数据不执行端云同步。 |
 | [int OH\_Rdb\_UnlockRow(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates)](capi-relational-store-h.md#oh_rdb_unlockrow) | - | 根据指定的条件解锁数据库中的数据。 |
 | [OH\_Cursor \*OH\_Rdb\_QueryLockedRow(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates, const char \*const \*columnNames, int length)](capi-relational-store-h.md#oh_rdb_querylockedrow) | - | 根据指定条件查询数据库中锁定的数据。 |
@@ -1786,7 +1786,7 @@ Rdb_TableDetails *OH_Rdb_GetTableDetails(Rdb_ProgressDetails *progress, int32_t 
 
 | 类型 | 说明 |
 | --- | --- |
-| [Rdb\_TableDetails](capi-rdb-rdb-tabledetails.md) | 如果操作成功，会返回一个[Rdb\_TableDetails](capi-rdb-rdb-tabledetails.md)结构体的指针，否则返回NULL。 |
+| [Rdb\_TableDetails](capi-rdb-rdb-tabledetails.md) \* | 如果操作成功，会返回一个[Rdb\_TableDetails](capi-rdb-rdb-tabledetails.md)结构体的指针，否则返回NULL。 |
 
 **参考：**
 
@@ -1892,7 +1892,7 @@ int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressOb
 
 **描述**
 
-取消订阅RDB存储的自动同步进程。
+取消订阅RDB存储的自动同步进度。
 
 **起始版本：** 11
 
@@ -1901,7 +1901,7 @@ int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressOb
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \*store | 指向目标[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)实例的指针。 |
-| const [Rdb\_ProgressObserver](capi-rdb-rdb-progressobserver.md) \*observer | 表示自动同步进度的观察者[Rdb\_ProgressObserver](capi-rdb-rdb-progressobserver.md)。如果是空指针，则自动同步进程的所有回调都将被取消注册。 |
+| const [Rdb\_ProgressObserver](capi-rdb-rdb-progressobserver.md) \*observer | 表示自动同步进度的观察者[Rdb\_ProgressObserver](capi-rdb-rdb-progressobserver.md)。如果是空指针，则自动同步进度的所有回调都将被取消注册。 |
 
 **返回：**
 

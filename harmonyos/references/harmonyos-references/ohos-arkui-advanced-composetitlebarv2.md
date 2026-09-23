@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ComposeTitleBarV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ComposeTitleBarV2
 category: harmonyos-references
-scraped_at: 2026-09-21T06:21:05+08:00
+scraped_at: 2026-09-24T06:52:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:62b7be95c15c924601fa780261770932e45c59349cba5360775cbb0252b148f0
+content_hash: sha256:b7f1fbcb3737456cb253160c13fa006190add73cffbceb1195e0b0dd0197cf29
 ---
 
 ComposeTitleBarV2组件是一种标题栏，支持设置标题、头像（可选）和副标题（可选），可用于一级页面、二级及其以上界面配置返回键。
@@ -239,7 +239,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/wwf2qTL1SSGAZuh8Fx_haQ/zh-cn_image_0000002762996097.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/QUMB38sySVqOXuB5rtrpSQ/zh-cn_image_0000002769332717.png)
 
 ### 示例2（右侧自定义按钮播报）
 
@@ -340,7 +340,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/0C_eBR6fTv-EGlpMDRRMiQ/zh-cn_image_0000002762836215.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/T1IM4QSJSsuR4DVf1ZjfZg/zh-cn_image_0000002769452579.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -428,4 +428,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/EGx7geSpTkextZY4GVD1BA/zh-cn_image_0000002733276702.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-Qgv3U-8Rieh46nBYNn9DA/zh-cn_image_0000002739893248.png)

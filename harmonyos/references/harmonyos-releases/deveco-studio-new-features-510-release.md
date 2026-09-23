@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6949174f285e86694526090242414d67217b44f8f4906956f1065f77659c1f04
+scraped_at: 2026-09-24T06:48:53+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:3ae9bf4178a87af5492ca5383b452276c44797117df0e8e4439052761147630a
 ---
 
 ## DevEco Studio 5.1.0 Release（5.1.0.849）兼容性配套关系
@@ -150,7 +150,7 @@ DevEco Studio 5.1.0.828配套使用的命令行工具列表、支持的API范围
 * DevEco Studio支持TV、Wearable设备开发。
 * 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 * Code Linter支持配置自定义检查规则。具体请参考[配置代码检查规则](../harmonyos-guides/ide-code-linter.md#section19310459444)。
-* 支持查询工程中所用到的API的变更情况。具体请参考[API变更查询](../harmonyos-guides/ide-editer-overview.md#section234174215231)。
+* 支持查询工程中所用到的API的变更情况。具体请参考[API变更查询](../harmonyos-guides/ide-editor-overview.md#section234174215231)。
 * CodeGenie支持对选中的ArkTS方法名称生成对应单元测试用例，提升测试覆盖率。具体请参考[单元测试用例生成](../harmonyos-guides/ide-ut-generation.md)。
 * CodeGenie提供智能AI能力对框选的代码片段进行逐条解释，总结代码段含义，提升阅读代码的速度和效率。具体请参考[代码智能解读](../harmonyos-guides/ide-explain-code.md)。
 * Code Linter新增性能及正确性代码检查规则，部分规则所属规则集变更。具体请参考[规则变更说明](../harmonyos-guides/ide-codelinter-rules-change.md)。

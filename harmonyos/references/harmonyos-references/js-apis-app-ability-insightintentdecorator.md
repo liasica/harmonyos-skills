@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.InsightIntentDecorator (意图装饰器定义)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.InsightIntentDecorator (意图装饰器定义)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:29+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-24T06:51:42+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:0be00e8acbf00538693ad3dee19b4bded93714a5adac8e0718c27002d308bd03
 ---
 

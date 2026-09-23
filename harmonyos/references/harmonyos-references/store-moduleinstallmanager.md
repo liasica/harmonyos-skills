@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-mod
 title: moduleInstallManager (产品特性按需分发)
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > moduleInstallManager (产品特性按需分发)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:60cc15ca6bdf17aca3397be8448045f9243e5e177dc6fb1fee32e79d3aa9d7e4
+scraped_at: 2026-09-24T06:55:14+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:94a0efa1934751a5f3901272164d57def391bdf1e79f9dea00f7ec6045169225
 ---
 
 借助该模块，您可以从应用的基本模块中分离特定功能和资源，并将其包含在子模块的包中。用户在使用应用过程中，可以动态下载子模块包。该模块包含判断模块是否安装、请求按需加载任务、监听模块下载进度、流量提醒弹窗、取消按需加载任务等功能。
@@ -52,7 +52,7 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
 | --- | --- | --- | --- | --- |
 | code | [RequestErrorCode](store-moduleinstallmanager.md#requesterrorcode) | 是 | 否 | 接口调用结果码。 |
 | taskStatus | [TaskStatus](store-moduleinstallmanager.md#taskstatus) | 是 | 否 | 按需下载任务状态码。 |
-| taskId | string | 是 | 是 | 按需下载任务taskId，默认值为0。 |
+| taskId | string | 是 | 是 | 按需下载任务taskId，默认值为'0'。 |
 | desc | string | 是 | 否 | 接口调用结果描述，默认值为“”。 |
 | modules | string[] | 是 | 是 | 下载任务中的模块名列表，默认值为[]。 |
 | totalSize | number | 是 | 是 | 下载的总模块大小（字节），默认值为0。 |

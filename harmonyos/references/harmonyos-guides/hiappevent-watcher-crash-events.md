@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 崩溃事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 崩溃事件 > 崩溃事件介绍
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ee3863e455492737ef08eca0bc5348cfd4295c130247bc24a8f160c547a034ae
+scraped_at: 2026-09-24T06:50:13+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:be4256747d1a126cfefc7888d9939205dd1d10902fe61e3f19479b2c145706ec
 ---
 
 ## 简介
@@ -92,7 +92,7 @@ Timestamp:2025-05-17 19:17:07.000
 
 从**API version 24**开始支持崩溃日志规格自定义设置，如打印PC和LR寄存器扩展字节范围的内存内容、截断崩溃日志、打印崩溃日志中出现的地址所属的VMA、拼接应用日志。当应用发生崩溃故障时，系统可以按设置的崩溃日志规格收集并上报崩溃日志，帮助开发者定位问题。
 
-从**API version 26.0.0**开始支持使能[minidump](performance-analysis-kit-terminology.md#minidump)。
+从**API版本26.0.0**开始支持使能[minidump](performance-analysis-kit-terminology.md#minidump)。
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -111,7 +111,7 @@ Timestamp:2025-05-17 19:17:07.000
 | 宏：OH\_APP\_CRASH\_PARAM\_LOG\_FILE\_CUTOFF\_SZ\_BYTES  字符串：log\_file\_cutoff\_sz\_bytes | const char\* | 否 | 是否截断崩溃日志（CPP\_CRASH日志、minidump），单位为Byte，取值范围为[0, 5242880]。  如果设置，按设置的参数值截断崩溃日志大小。  如果不设置，默认值取0表示不截断崩溃日志。  **说明**：从API version 24开始支持该参数。 |
 | 宏：OH\_APP\_CRASH\_PARAM\_SIMPLIFY\_VMA\_PRINTING  字符串：simplify\_vma\_printing | const char\* | 否 | 是否打印崩溃日志中出现的地址所属的VMA（Virtual Memory Area，虚拟内存空间）映射信息。  "true"：只打印崩溃日志中出现的地址所属的VMA映射信息，即崩溃日志中Maps，以减小日志大小。  "false"：打印所有VMA映射信息。  缺省时默认为"false"。  **说明**：从API version 24开始支持该参数。 |
 | 宏：OH\_APP\_CRASH\_PARAM\_MERGE\_CPPCRASH\_APP\_LOG  字符串：merge\_cppcrash\_app\_log | const char\* | 否 | 是否拼接应用沙箱的日志。  "true"：在 Native Crash 场景拼接应用日志。  "false"：不拼接应用生成日志。  框架读取的应用日志路径为：沙箱路径 + 应用包名 + \_CppCrash\_AppMerge.log，例如：/data/storage/el2/log/com.samples.eventsub\_CppCrash\_AppMerge.log  如果开发者选择在信号处理函数中生成拼接日志，最长生成时间不超过5s，超过5s无法拼接应用生成的日志。  **注意**：沙箱路径下必须有应用生成的拼接日志。  **说明**：从API version 24开始支持该参数。 |
-| 宏：OH\_APP\_CRASH\_PARAM\_COLLECT\_MINIDUMP  字符串：collect\_minidump | const char\* | 否 | 是否使能minidump，默认值为"false"。  "true"：在Native Crash场景同时生成minidump。  "false"：在Native Crash场景不生成minidump。  生成minidump日志文件以.dmp结尾，跟随APP\_CRASH事件一起返回，保存在external\_log字段中。  **说明**：该配置项为持久化配置，应用未重新设置前，值不变。  从API version 26.0.0开始支持该参数。 |
+| 宏：OH\_APP\_CRASH\_PARAM\_COLLECT\_MINIDUMP  字符串：collect\_minidump | const char\* | 否 | 是否使能minidump，默认值为"false"。  "true"：在Native Crash场景同时生成minidump。  "false"：在Native Crash场景不生成minidump。  生成minidump日志文件以.dmp结尾，跟随APP\_CRASH事件一起返回，保存在external\_log字段中。  **说明**：该配置项为持久化配置，应用未重新设置前，值不变。  从API版本26.0.0开始支持该参数。 |
 
 参数设置示例如下：
 
@@ -121,7 +121,7 @@ OH\_HiAppEvent\_SetEventConfig配置参考[订阅崩溃事件（C/C++）开发�
 
 从**API version 24**开始支持页面切换日志配置。当应用发生崩溃时，系统可以收集并上报页面切换日志，帮助开发者定位问题。
 
-从**API version 26.0.0**开始支持崩溃日志规格自定义设置。系统提供通用的NativeCrash崩溃日志生成功能，同时给应用提供设置崩溃日志配置参数功能，以满足其对日志内容的个性化需求。
+从**API版本26.0.0**开始支持崩溃日志规格自定义设置。系统提供通用的NativeCrash崩溃日志生成功能，同时给应用提供设置崩溃日志配置参数功能，以满足其对日志内容的个性化需求。
 
 | 接口名 | 描述 |
 | --- | --- |

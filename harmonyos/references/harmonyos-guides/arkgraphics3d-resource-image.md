@@ -1,16 +1,22 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-resource-image
 title: 创建并使用图片资源
-breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用 > 创建并使用图片资源
+breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用 > 创建并使用图片资源
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:58+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:b3be4084e19e3ac24b15242d0ca3a6316312a56fb4eefd0966d6207534d4d449
+scraped_at: 2026-09-24T06:50:30+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:ad32c87327e0e512a727c4dfec1b1d19a5bc761398d8a889e4270110e60f3084
 ---
 
-图片（Image）：图片本质上是一个储存信息的二维内存块(buffer)，用于储存3D渲染计算过程需要的相关信息，比如基础颜色、法线等等。
+图片（Image）：3D渲染中的二维纹理资源，本质为存储像素数据的内存缓冲区（buffer）。它提供物体表面渲染所需的数据，包括基础颜色、法线、金属度、粗糙度和环境遮蔽等贴图，也可作为材质或自定义着色器的纹理输入，最终决定物体表面的外观。
 
-ArkGraphics 3D提供基于png、jpg、ktx格式创建Image资源的能力，支持用户自定义需要的Image资源。
+ArkGraphics 3D提供基于JPEG、PNG和KTX格式创建Image资源的能力，支持用户自定义需要的Image资源。各个格式的支持情况如下表所示：
+
+| 格式 | 支持情况 |
+| --- | --- |
+| JPEG（.jpg/.jpeg） | 支持识别头部携带JFIF、Exif或ICC Profile标记的JPEG文件；  搭载HarmonyOS 7.0.0及以上版本的设备，新增支持识别头部包含DQT、XMP、MPF或Adobe标记的JPEG文件。 |
+| PNG（.png） | 支持标准的PNG文件。 |
+| KTX（.ktx） | 支持KTX格式的文件。KTX（Khronos Texture）是由Khronos Group定义的纹理容器格式，用于存储GPU可直接读取的纹理数据。 |
 
 ## 开发步骤
 

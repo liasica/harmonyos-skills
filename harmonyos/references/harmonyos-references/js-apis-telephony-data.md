@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.telephony.data (蜂窝数据)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.data (蜂窝数据)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:985831dbd93feb57dd85e0529e02784d06e53d2479045b09a48a9cc67e3ec72d
+scraped_at: 2026-09-24T06:53:55+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:4c4219846753be8d3acb75593d3c35c4b03ca48c751a78062ac5aff78a91114b
 ---
 
 蜂窝数据提供了移动数据管理能力，包括获取默认移动数据的SIM卡、获取蜂窝数据业务的上下行数据流状态、蜂窝数据业务链路连接状态，以及检查蜂窝数据业务和漫游是否启用等。
@@ -104,7 +104,10 @@ getCellularDataFlowType(callback: AsyncCallback<DataFlowType>): void
 
 获取蜂窝网络的数据流类型（对应信号栏旁边的上下行箭头），使用callback方式作为异步方法。
 
-**需要权限**：ohos.permission.GET\_NETWORK\_INFO
+**需要权限**：
+
+* API版本22之前：N/A
+* API版本22+：ohos.permission.GET\_NETWORK\_INFO
 
 **系统能力**：SystemCapability.Telephony.CellularData
 
@@ -586,7 +589,7 @@ queryApnIds(apnInfo: ApnInfo): Promise<Array<number>>
 
 异步获取传入的ApnInfo对应的ApnId信息。
 
-**需要权限**：ohos.permission.MANAGE\_APN\_SETTING（该权限是受限开放权限，仅需要连接移动数据专网进行办公室可以申请该权限，权限介绍参见[权限定义](../harmonyos-guides/restricted-permissions.md#ohospermissionmanage_apn_setting)）
+**需要权限**：ohos.permission.MANAGE\_APN\_SETTING（该权限是受限开放权限，仅需要连接移动数据专网进行办公时可以申请该权限，权限介绍参见[权限定义](../harmonyos-guides/restricted-permissions.md#ohospermissionmanage_apn_setting)）
 
 **系统能力**：SystemCapability.Telephony.CellularData
 
@@ -641,7 +644,7 @@ setPreferredApn(apnId: number): Promise<boolean>
 
 如果传入的apnId为无效的apnId，切回运营商默认配置的优选Apn。
 
-**需要权限**：ohos.permission.MANAGE\_APN\_SETTING（该权限是受限开放权限，仅需要连接移动数据专网进行办公室可以申请该权限，权限介绍参见[权限定义](../harmonyos-guides/restricted-permissions.md#ohospermissionmanage_apn_setting)）
+**需要权限**：ohos.permission.MANAGE\_APN\_SETTING（该权限是受限开放权限，仅需要连接移动数据专网进行办公时可以申请该权限，权限介绍参见[权限定义](../harmonyos-guides/restricted-permissions.md#ohospermissionmanage_apn_setting)）
 
 **系统能力**：SystemCapability.Telephony.CellularData
 

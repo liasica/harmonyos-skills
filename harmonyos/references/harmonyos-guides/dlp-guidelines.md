@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp-guideline
 title: 数据防泄漏服务开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 数据防泄漏服务 > 数据防泄漏服务开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f89e5f05b065b1993b27a8aa8e6b602a5619690ed01b724480158662129510dd
+scraped_at: 2026-09-24T06:49:56+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:01463dbcc7bc3c9172d01ba45c900e8101d406042ac6ed5466efa20b786bf13e
 ---
 
 DLP是系统提供的系统级的数据防泄漏解决方案，提供一种称为DLP的文件格式。后缀格式为“原始文件名（包含原始文件后缀）.dlp”，例如“test.docx.dlp”，文件由授权凭证和原始文件密文组成。
@@ -442,7 +442,7 @@ function openDlpFile(dlpUri: string, fileName: string) {
   ```ts
   import { common, Want } from '@kit.AbilityKit';
   import { BusinessError } from '@kit.BasicServicesKit';
-  import { dlpPermission } from '@kit.DataLossPreventionKit';
+  import { dlpPermission } from '@kit.DataProtectionKit';
   import { UIContext } from '@kit.ArkUI';
   import { hilog } from '@kit.PerformanceAnalysisKit';
 
@@ -473,7 +473,7 @@ function openDlpFile(dlpUri: string, fileName: string) {
     ```ts
     import { common, Want } from '@kit.AbilityKit';
     import { BusinessError } from '@kit.BasicServicesKit';
-    import { dlpPermission } from '@kit.DataLossPreventionKit';
+    import { dlpPermission } from '@kit.DataProtectionKit';
     import { UIContext } from '@kit.ArkUI';
     import { hilog } from '@kit.PerformanceAnalysisKit';
 
@@ -527,15 +527,17 @@ function openDlpFile(dlpUri: string, fileName: string) {
 
   const TAG: string = 'dlp';
 
-  let uri = "file://docs/storage/Users/currentUser/Desktop/test.txt.dlp";
-  let file = fileIo.openSync(uri);
-  try {
-    let res: boolean = await dlpPermission.isDLPFile(file.fd); // 是否加密DLP文件
-    hilog.info(0x0000, TAG, 'res' + JSON.stringify(res));
-  } catch (err) {
-    hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
+  async function setRetentionSandboxList() {
+    let uri = "file://docs/storage/Users/currentUser/Desktop/test.txt.dlp";
+    let file = fileIo.openSync(uri);
+    try {
+      let res: boolean = await dlpPermission.isDLPFile(file.fd); // 是否加密DLP文件
+      hilog.info(0x0000, TAG, 'res' + JSON.stringify(res));
+    } catch (err) {
+      hilog.error(0x0000, TAG, 'isDLPFile error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
+    }
+    fileIo.closeSync(file);
   }
-  fileIo.closeSync(file);
   ```
 * **判断当前所在应用是否是DLP沙箱分身**
 
@@ -572,7 +574,7 @@ function openDlpFile(dlpUri: string, fileName: string) {
       try {
         await dlpPermission.setRetentionState(docUris); // 设置沙箱保留
       } catch (err) {
-        hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
+        hilog.error(0x0000, TAG, 'setRetentionState error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
       }
     }
     ```
@@ -585,12 +587,12 @@ function openDlpFile(dlpUri: string, fileName: string) {
 
     const TAG: string = 'dlp';
 
-    async function setRetentionSandboxList() {
+    async function cancelRetentionState() {
       let docUris: Array<string>=["file://docs/storage/Users/currentUser/Desktop/test.txt.dlp"]
       try {
         await dlpPermission.cancelRetentionState(docUris); // 取消保留沙箱
       } catch (err) {
-        hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
+        hilog.error(0x0000, TAG, 'cancelRetentionState error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
       }
     }
     ```
@@ -608,7 +610,7 @@ function openDlpFile(dlpUri: string, fileName: string) {
         let res:Array<dlpPermission.RetentionSandboxInfo> = await dlpPermission.getRetentionSandboxList(); // 获取保留沙箱记录
         hilog.info(0x0000, TAG, 'res' + JSON.stringify(res))
       } catch (err) {
-        hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message);// 失败报错
+        hilog.error(0x0000, TAG, 'getRetentionSandboxList error:' + (err as BusinessError).code + (err as BusinessError).message);// 失败报错
       }
     }
     ```

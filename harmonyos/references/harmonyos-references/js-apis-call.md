@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.telephony.call (拨打电话)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.call (拨打电话)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:53916742817ce7a6ec181f4a1ce509244f8297e5fe86e75326db976c340962ca
+scraped_at: 2026-09-24T06:53:55+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:40575b7dd152bd487d827cffcc0df11d09c0a35e30781732f28435ea730af765
 ---
 
 该模块提供呼叫管理功能，包括拨打电话、跳转到拨号界面、获取通话状态、格式化电话号码等。
@@ -318,7 +318,7 @@ let context = this.getUIContext().getHostContext() as Context;
 call.makeCall(context, "138xxxxxxxx").then(() => {
     console.info(`makeCall success`);
 }).catch((err: BusinessError) => {
-    console.error(`makeCall fail, promise: err->${err.code)},message:${err.message}`);
+    console.error(`makeCall fail, promise: err->${err.code},message:${err.message}`);
 });
 ```
 

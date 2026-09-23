@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (RdbStore)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Interface (RdbStore)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:47:40+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:55aad77579828c7ccd723208dbd9656333ea39f1ec3b010372f73a6a59faad23
+scraped_at: 2026-09-24T06:51:54+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:41756d7df8719dce32e3d1d014404ec7b8d3c8eab7bb1b3d4b48d07a3b79d0ea
 ---
 
 提供管理关系数据库（RDB）方法的接口。
@@ -7624,7 +7624,49 @@ export default class EntryAbility extends UIAbility {
 }
 ```
 
-**示例6：原数据库为非加密数据库，更换为自定义参数加密数据库**
+**示例6：原数据库为默认参数加密数据库，更换为非加密数据库**
+
+```ts
+// EntryAbility.ets
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export default class EntryAbility extends UIAbility {
+  async onCreate() {
+    let store: relationalStore.RdbStore | undefined = undefined;
+    const configV1: relationalStore.StoreConfig = {
+      name: 'rdbStore1.db',
+      securityLevel: relationalStore.SecurityLevel.S3,
+      encrypt: true
+    };
+
+    try {
+      const rdbStore = await relationalStore.getRdbStore(this.context, configV1);
+      store = rdbStore;
+      console.info('Get RdbStore successfully.');
+
+      let cryptoParam1: relationalStore.CryptoParam = {
+        encryptionKey: new Uint8Array(),
+        encryptionAlgo: relationalStore.EncryptionAlgo.PLAIN_TEXT
+      };
+
+      if (store != undefined) {
+        try {
+          await (store as relationalStore.RdbStore).rekeyEx(cryptoParam1);
+          console.info('rekeyEx is successful');
+        } catch (err) {
+          console.error(`rekeyEx is failed, code is ${err.code},message is ${err.message}`);
+        }
+      }
+      // 在完成rekeyEx操作后，如果后续需要重新getRdbStore时必须使用新的参数来打开数据库
+    } catch (err) {
+      console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
+    };
+  }
+}
+```
+
+**示例7：原数据库为非加密数据库，更换为自定义参数加密数据库**
 
 ```ts
 // EntryAbility.ets

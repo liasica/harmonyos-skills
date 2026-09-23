@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered
 title: 代理提醒(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 代理提醒(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cffa258119cba8751d2120b449ea7a64d75edf3bda93f62fc9e061414959e48e
+scraped_at: 2026-09-24T06:49:47+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:aecaa540736de5901501501b2db0f8f0ce036719eaeed9a201c42755f8a875b6
 ---
 
 ## 功能介绍
@@ -57,7 +57,7 @@ content_hash: sha256:cffa258119cba8751d2120b449ea7a64d75edf3bda93f62fc9e06141495
 
 ## 模拟器支持情况
 
-从API version 20开始，本能力支持模拟器开发。
+从API版本20开始，本能力支持模拟器开发。
 
 ## 接口说明
 
@@ -82,17 +82,17 @@ content_hash: sha256:cffa258119cba8751d2120b449ea7a64d75edf3bda93f62fc9e06141495
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要申请代理提醒的应用。如果无对应应用，请先[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 3. 进入“项目设置”->“开放能力管理”页面，点击“代理提醒”卡片对应的“申请”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Z736h0ZaTaS7E5Q5VCnHYQ/zh-cn_image_0000002733434376.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Vt-iuMeRQY6m-4PJikkYiQ/zh-cn_image_0000002739731198.png)
 4. 在“新建业务申请”窗口填写申请原因，上传代理提醒功能场景截图和应用分类信息截图，然后点击“提交”。应用分类信息可登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，在“APP”页签中选择“应用上架”->“应用信息”查询。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/O-GF9YtDS92o2s8fSQyM6w/zh-cn_image_0000002762993899.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/QRot6_w0QUmCHt1uKtWD-g/zh-cn_image_0000002769330547.png)
 5. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”，8个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/LdEZlko3SQCSDU54QfNKRw/zh-cn_image_0000002762834015.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/vmCgtnZ_SRusMIxW-ezOkA/zh-cn_image_0000002769450409.png)
 6. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 7. 能力申请通过后，勾选代理提醒的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。此时，调试和发布应用必须重新生成Profile文件并使用[手动签名](ide-signing-manual.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/m6vGCMeTQGCf8w5IWvEwKw/zh-cn_image_0000002733274496.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/XJvbPqHFQhaxEur86IBxnw/zh-cn_image_0000002739891078.png)
 
 ### 申请权限
 

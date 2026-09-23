@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全图像压缩、裁剪场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全图像压缩、裁剪场景
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2563c3f2b7fc559c9182ed575d632e0f5fecbd688798558e74266e43212d116b
+scraped_at: 2026-09-24T06:49:57+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:c3c2bdc9c5b3ee3b3c24ebf0e9f89f671a827679340e8b35077ca9c9f0f54b21
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:2563c3f2b7fc559c9182ed575d632e0f5fecbd688798558e74266e43212
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/81mc19P3Sw-uwktFxRZ9TQ/zh-cn_image_0000002762994081.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/py4sld9nQr6iN2xJXygcOw/zh-cn_image_0000002769330727.jpg)
 
 ## 接口说明
 
@@ -220,7 +220,7 @@ content_hash: sha256:2563c3f2b7fc559c9182ed575d632e0f5fecbd688798558e74266e43212
      } catch (err) {
        const error = err as BusinessError;
        hilog.error(0x0000, 'TrustedAppService',
-         'Failed to finalize attest context, code:${error.code}, message:${error.message}');
+         `Failed to finalize attest context, code:${error.code}, message:${error.message}`);
      }
    }
    ```

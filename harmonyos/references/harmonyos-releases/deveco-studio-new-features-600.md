@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e771691ad7abdf7389cd3a1cb2cb8b6cbee877d461803e823c591e867cb83a99
+scraped_at: 2026-09-24T06:48:47+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:cf8787de8477ec924278b2d1d9301f8438be0d2929cc1eb948c49b291e18da7e
 ---
 
 ## DevEco Studio 6.0.0 Release（6.0.0.878）兼容性配套关系
@@ -120,7 +120,7 @@ DevEco Studio 6.0.0.858配套使用的命令行工具列表、支持的API范围
 
 ## DevEco Studio 6.0.0 Release（6.0.0.858）新增和增强特性
 
-* API变更查询支持通过API版本、变更接口、变更接口ID对扫描结果进行筛选，以及支持标记变更修复情况和通过修复情况对扫描结果筛选。具体请参考[API变更查询](../harmonyos-guides/ide-editer-overview.md#section234174215231)。
+* API变更查询支持通过API版本、变更接口、变更接口ID对扫描结果进行筛选，以及支持标记变更修复情况和通过修复情况对扫描结果筛选。具体请参考[API变更查询](../harmonyos-guides/ide-editor-overview.md#section234174215231)。
 
 ## DevEco Studio 6.0.0 Beta5（6.0.0.848）兼容性配套关系
 
@@ -290,8 +290,8 @@ DevEco Studio 6.0.0.456配套使用的命令行工具列表、支持的API范围
 
 **编写与调试应用**
 
-* 支持在编辑时启用Inlay Hints嵌入提示功能，提供有关参数名称、类型等代码说明信息。具体请参考[添加嵌入提示](../harmonyos-guides/ide-editer-overview.md#section66531322218)。
-* 提供Copy Reference能力，便于拷贝代码行或类、方法、参数、变量等名称定义处的地址。具体请参考[Copy Reference](../harmonyos-guides/ide-editer-overview.md#section169943542212)。
+* 支持在编辑时启用Inlay Hints嵌入提示功能，提供有关参数名称、类型等代码说明信息。具体请参考[添加嵌入提示](../harmonyos-guides/ide-editor-overview.md#section66531322218)。
+* 提供Copy Reference能力，便于拷贝代码行或类、方法、参数、变量等名称定义处的地址。具体请参考[Copy Reference](../harmonyos-guides/ide-editor-overview.md#section169943542212)。
 * 预览调试能力增强。具体请参考[使用预览器调试应用](../harmonyos-guides/ide-previewer-debug.md)。
 * 模拟器新增支持折叠屏PC/2in1设备。
 * AppFreeze类型的FaultLog支持结构化展示和日志过滤。具体请参考[查看AppFreeze（应用冻屏）日志](../harmonyos-guides/ide-faultlog-appfreeze.md)。
@@ -395,7 +395,7 @@ DevEco Studio 6.0.0.418配套使用的命令行工具列表、支持的API范围
 * 针对编译构建场景的语法错误问题，提供问题修复能力。具体请参考[编译报错智能分析](../harmonyos-guides/ide-compilation-error-analysis.md)。
 * 智能问答支持指定上下文进行交流，支持对单个或多个代码文件进行分析。具体请参考指定[代码分析](../harmonyos-guides/ide-code-analyse.md)。
 * 新增支持通过自然语言交互，分析并解释当前实例或项目中存在的性能问题，帮助开发者快速定位影响性能的具体原因。具体请参考[智慧调优](../harmonyos-guides/ide-ai-profiler.md)。
-* 支持对C API的变更情况进行查询，提供跨版本查询能力。具体请参考[API变更查询](../harmonyos-guides/ide-editer-overview.md#section234174215231)。
+* 支持对C API的变更情况进行查询，提供跨版本查询能力。具体请参考[API变更查询](../harmonyos-guides/ide-editor-overview.md#section234174215231)。
 * Code Linter新增3条检查规则，@typescript-eslint/explicit-function-return-type规则新增支持对.ets文件进行检查的配置选项。具体请参考[规则变更说明](../harmonyos-guides/ide-codelinter-rules-change.md)。
 * 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 * Profiler调优工具能力增强：
@@ -404,7 +404,6 @@ DevEco Studio 6.0.0.418配套使用的命令行工具列表、支持的API范围
   + Launch模板支持展示应用冷启动过程ETS文件加载情况。具体请参考[Launch模板基本操作](../harmonyos-guides/ide-insight-session-launch.md)。
   + Profiler工具Energy模版支持能耗异常数据展示并定位到异常能耗组件。具体请参考[能耗诊断：Energy分析](../harmonyos-guides/ide-profiler-energy.md)。
 * 提供Graphics Profiler工具捕获GPU帧信息。具体请参考[GPU帧捕获工具：Graphics Profiler](../harmonyos-guides/ide-graphics-profiler.md)。
-* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 * ohpm支持使用@module通过模块名指向模块目录的方式引入依赖。具体请参考[依赖配置说明](../harmonyos-guides/ide-oh-package-json5.md#section2016910347161)。
 * ohpm命令行工具支持list --recursive选项展示所有模块的依赖树。具体请参考[recursive](../harmonyos-guides/ide-ohpm-list.md#section1585593414216)。
 * hvigor-config.json5文件的execution下新增optimizationStrategy字段，用于指定构建模式。同时命令行参数支持--optimization-strategy=performance/memory。具体请参考[hvigor-config.json5文件](../harmonyos-guides/ide-hvigor-set-options.md)和[hvigorw](../harmonyos-guides/ide-hvigor-commandline.md)。

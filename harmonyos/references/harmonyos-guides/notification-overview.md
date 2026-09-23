@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: Notification Kit简介
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > Notification Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:42+08:00
+scraped_at: 2026-09-24T06:50:46+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:e2ced9cffb136c900e8ae955d8dae8a76238ac92d723f7153179a4772c93ddfe
+content_hash: sha256:b77ab5a09697d7f76aa7e09b616a0ad76d3c81e7cb914ac9351a723e53d7ff49
 ---
 
 Notification Kit（[用户通知服务](notification-glossary.md#notification-kit用户通知服务)）为开发者提供[本地通知](notification-glossary.md#local-notification本地通知)发布通道，开发者可借助Notification Kit将应用产生的通知直接在客户端本地推送给用户，本地通知根据通知类型及发布场景会产生对应的铃声、振动、横幅、锁屏、自动亮屏、状态栏图标和[通知中心](notification-glossary.md#notification-center通知中心)的显示。
@@ -27,11 +27,11 @@ Notification Kit支持的能力主要包括：
 * 查询应用自身通知开关状态。
 * 应用通知用户的能力默认关闭，开发者可拉起授权框，请求用户授权发布通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/aKkQqfAOSVOx_zzMdCqBoA/zh-cn_image_0000002762994889.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/q-msV82UQ26QdceP7RsG1w/zh-cn_image_0000002769331515.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/7dC5EI1bTC2oz6ajYuhQ-Q/zh-cn_image_0000002762835001.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/RjLfVUz8SISz5ALxMnlCSQ/zh-cn_image_0000002769451377.png)
 
 使用Notification Kit的主要业务流程如下：
 

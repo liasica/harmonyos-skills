@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/speechrecogni
 title: 语音识别
 breadcrumb: 指南 > AI > Core Speech Kit（基础语音服务） > 语音识别
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:35+08:00
-doc_updated_at: 2026-09-07
-content_hash: sha256:ff8365566781d886870a618d72f1135eb260d3d4b90ca41747351b8dba2eb0da
+scraped_at: 2026-09-24T06:51:11+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:95de07ade9f9589112b611e4c7e7b4e59f8f1adddaf6d3ecf8165dd2661196ee
 ---
 
-将一段中文音频信息（中文、中文语境下的英文；短语音模式不超过60s，长语音模式不超过8h）转换为文本，音频信息可以为PCM音频文件或者实时语音。
+将一段中文音频信息（短语音模式不超过60s，长语音模式不超过8h）转换为文本，音频信息可以为PCM音频文件或者实时语音。
 
 ## 场景介绍
 
@@ -436,8 +436,8 @@ struct Index {
         console.info(TAG, `succeeded in listing languages, result: ${JSON.stringify(languages)}`);
         this.generatedText = `languages result: ${JSON.stringify(languages)}`;
       } else {
-        console.error(TAG, `Failed to create engine. Message: ${err.message}.`);
-        this.generatedText = `Failed to create engine. Message: ${err.message}.`;
+        console.error(TAG, `Failed to query language. Message: ${err.message}.`);
+        this.generatedText = `Failed to query language. Message: ${err.message}.`;
       }
     });
   }
@@ -492,7 +492,7 @@ struct Index {
         asrEngine?.writeAudio(this.sessionId2, uint8Array);
       });
       await this.mFileCapturer.start();
-      asrEngine?.finish(this.sessionId);
+      asrEngine?.finish(this.sessionId2);
       this.mFileCapturer.release();
     } catch (err) {
       this.generatedText = `Message: ${err.message}.`;

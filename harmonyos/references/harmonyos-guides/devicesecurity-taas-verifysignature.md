@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 验证签名
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 签名验证 > 验证签名
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bf548a41040f442b05588f6868644c015c506d29af6b3f5f7c0ede33e71a8058
+scraped_at: 2026-09-24T06:49:57+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:0fa9f560053416301747332b7639e5c2dd1522833ea022bad0d17a00069141ab
 ---
 
 如果需要在端侧校验安全图像数据或安全地理位置数据签名的有效性，可以使用[Crypto Architecture Kit](crypto-architecture-kit-intro.md)，使用方法请参考“[使用ECDSA密钥对签名验签](crypto-ecdsa-sign-sig-verify.md)”章节。
@@ -30,7 +30,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 安全图像数据的结构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/wWiNw9NXQ72015ihGHGD6g/zh-cn_image_0000002762834197.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/iNhBnyuYQJ29Ty51Tc6YFA/zh-cn_image_0000002769450589.png)
 
 其中，用户数据和图像数据为被签名的原始数据，图像数据长度固定为460800字节，签名数据是Base64编码的签名结果，开发者需要解析出这些数据用来验证安全图像数据签名。参考代码如下：
 
@@ -53,7 +53,7 @@ const signature = base64Helper.decodeSync(signatureString);
 
 压缩、裁剪处理后返回的安全图像数据的结构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/B04DsXaXQ-SvuWyZbYzzrg/zh-cn_image_0000002733274680.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/YV4rTo5bQrK4M_bv8ajtGQ/zh-cn_image_0000002739891258.jpg)
 
 返回的处理后安全图像数据具体包含：
 
@@ -155,7 +155,7 @@ const signature = base64Helper.decodeSync(secureLocation.signature.toString());
      try {
        // 解析匿名证书链数据，获取三级证书
        const certChain: Array<string> = returnResult.certChains;
-       // certArray[0]: 空字符串；certArray[1]：叶子证书实体；certArray[2]：中间证书主体；certArray[3]：根证书主体
+       // certList[0]: 空字符串；certList[1]：叶子证书实体；certList[2]：中间证书主体；certList[3]：根证书主体
        const certList: Array<string> = certChain[0].split('-----BEGIN CERTIFICATE-----');
        const thirdCert = '-----BEGIN CERTIFICATE-----' + certList[1];
        // 获取公钥

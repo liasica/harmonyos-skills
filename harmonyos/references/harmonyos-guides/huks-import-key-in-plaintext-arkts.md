@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-import-k
 title: 明文导入密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 明文导入密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:47d7bb957b4fac9edd5350b93858cee621e3625d667b01796e9087b7ae2b832b
+scraped_at: 2026-09-24T06:50:00+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:3c0a8a596a4a3fc52b72a7a75708a35afe942cb295dcb534688480a965b8b7a7
 ---
 
 分别以导入AES256、RSA2048和X25519密钥为例。具体的场景介绍及支持的算法规格，请参考[密钥导入支持的算法](huks-key-import-overview.md#支持的算法)。
@@ -279,7 +279,7 @@ async function isKeyItemExist(keyAlias: string, options: huks.HuksOptions): Prom
         console.info(`promise: isKeyItemExist success, data = ${data}`);
         ret = true;
       }).catch((error: BusinessError) => {
-        console.error(`promise: isKeyItemExist success, errCode : ${error.code}, errMsg : ${error.message}`);
+        console.error(`promise: isKeyItemExist failed, errCode : ${error.code}, errMsg : ${error.message}`);
       })
   } catch (error) {
     console.error(`promise: isKeyItemExist input arg invalid`);

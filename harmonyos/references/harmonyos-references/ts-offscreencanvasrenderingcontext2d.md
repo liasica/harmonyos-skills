@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-offscr
 title: OffscreenCanvasRenderingContext2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > OffscreenCanvasRenderingContext2D
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:57+08:00
+scraped_at: 2026-09-24T06:52:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b2ddd9aae2d3418557a8eb10e468e7fe63e0c52ed0583a8a0b92685f91005f3d
+content_hash: sha256:0997b0706a3b2decc2e8bc7cd3aad86aa00f9ac2ce4a2f82f685172f11e144d4
 ---
 
 使用OffscreenCanvasRenderingContext2D在Canvas上进行离屏绘制，绘制对象可以是形状、文本、图片等。离屏绘制是指将需要绘制的内容先绘制在缓冲区，然后将其转换成图片，一次性绘制到Canvas上。离屏绘制使用CPU进行绘制，绘制速度较慢，对绘制速度有要求的场景应避免使用离屏绘制。
@@ -116,7 +116,7 @@ struct ToDataURL {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/FmaUZ1fsQmqChqunufD5Cg/zh-cn_image_0000002762836057.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/rEMDDXthTz2qeBdkDs30oQ/zh-cn_image_0000002769452423.png)
 
 ## transferToImageBitmap
 
@@ -173,4 +173,4 @@ struct PutImageData {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/r5Jp6zavQ8WbtnQlquy_3g/zh-cn_image_0000002733276546.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/MGSdbOt3RZONohvHgaVwZA/zh-cn_image_0000002739893092.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.securityManager (安全管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.securityManager (安全管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:26+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:e39e44e49b69f4b5187f1bc1365b51b9e3aa590548697608fa4160861544d208
+scraped_at: 2026-09-24T06:54:10+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:c27d38b84e5c4d2bf07fe75910b9487eede869349e9caef72b727c3562819d86
 ---
 
 本模块提供企业设备安全管理能力，支持证书管理、设备安全策略管理、口令策略管理、剪贴板策略管理、水印策略管理、权限管理等功能。企业可使用本模块实现设备安全状态的实时监控、企业证书的生命周期管理、设备口令策略的统一配置、应用剪贴板使用行为的管控、屏幕和应用水印的设置以防止信息泄露、以及应用权限的精细化管理等场景，帮助企业提升设备安全防护能力，降低数据泄露风险。
@@ -335,7 +335,7 @@ setPasswordPolicy(admin: Want, policy: PasswordPolicy): void
 
 **说明** 
 
-在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则。
+在多个MDM应用场景下，遵循[配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)规则，任意MDM应用取消激活时，该应用设置的设备锁屏口令策略会被清除。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SECURITY
 

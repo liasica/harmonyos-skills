@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: image
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > image
 category: harmonyos-references
-scraped_at: 2026-09-21T06:21:15+08:00
+scraped_at: 2026-09-24T06:52:44+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:df64f91162a19ed381faa4a074d225117fdd5174a2aeff9596ddc373fe6fa1c1
+content_hash: sha256:3e240adf3165b52e14c531f871ddb8ba10010d747d693934d605e4c9a79c5b64
 ---
 
 图片组件，用来渲染展示图片。
@@ -75,4 +75,4 @@ content_hash: sha256:df64f91162a19ed381faa4a074d225117fdd5174a2aeff9596ddc373fe6
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/dCq8F2d_RvSQghbeNMzvUQ/zh-cn_image_0000002762836541.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/C3PJ3fcvSOCeB7fLKhHakQ/zh-cn_image_0000002769452901.png)

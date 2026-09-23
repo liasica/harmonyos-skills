@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 卡片跳转到应用页面（router事件）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面交互 > 卡片跳转到应用页面（router事件）
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:35+08:00
+scraped_at: 2026-09-24T06:49:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:54e2c45b38372200d03a2e1e54111674a0b2b3043a4517fb15c22acc38c015e5
+content_hash: sha256:2907809fa58f9c216842b6c716a3f79e79a53e5e7db5bb9ddcef99d878158417
 ---
 
 在动态卡片中使用[postCardAction](../harmonyos-references/js-apis-postcardaction.md#postcardaction-1)接口的router能力，能够快速拉起动态卡片提供方应用的指定UIAbility(页面)，因此UIAbility较多的应用往往会通过卡片提供不同的跳转按钮，实现一键直达的效果。例如相机卡片，卡片上提供拍照、录像等按钮，点击不同按钮将拉起相机应用的不同UIAbility，从而提升用户的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/fwOVFtC0QJm8Kbm0QHXz-Q/zh-cn_image_0000002762993947.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/TAHiD__vQB2qbWgoHdXSHw/zh-cn_image_0000002769330593.png)
 
 **说明** 
 
@@ -293,4 +293,4 @@ content_hash: sha256:54e2c45b38372200d03a2e1e54111674a0b2b3043a4517fb15c22acc38c
 
 ## 运行效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/mHRyzpNuREWmT4MavFOiqQ/zh-cn_image_0000002762834061.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/zxzUME1iTWq-61PIymP6rA/zh-cn_image_0000002769450455.gif)

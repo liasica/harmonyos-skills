@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-shader-resource
 title: .shader资源文件格式要求
-breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用 > .shader资源文件格式要求
+breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用 > .shader资源文件格式要求
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:06+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:f0b2de583ad6ef5661bfb200d962b900523a0c63bfcfaf40c7cb3aec98457374
+scraped_at: 2026-09-24T06:50:31+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:9c3b5cd953bdd30b195e666d2e3dd5d2c38f8aa272d763610bd6b339189a5f61
 ---
 
 ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时需符合JSON语法要求。文件包含以下部分：
@@ -13,7 +13,7 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 ## compatibility\_info
 
 * 类型：object
-* 说明：用于向引擎声明shader版本兼容性信息。统一使用如下字段：
+* 说明：用于向引擎声明Shader版本兼容性信息。统一使用如下字段：
 
   ```json
   "compatibility_info": { "version": "22.00", "type": "shader" }
@@ -24,7 +24,7 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 ## vert
 
 * 类型：string
-* 说明：指定使用该shader的DrawCall中使用的vertex shader文件。
+* 说明：指定使用该Shader的DrawCall中使用的vertex shader文件。
 * 默认值：
 
   ```json
@@ -41,7 +41,7 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 ## frag
 
 * 类型：string
-* 说明：指定使用该shader的DrawCall中使用的fragment shader文件。
+* 说明：指定使用该Shader的DrawCall中使用的fragment shader文件。
 * 默认值：
 
   ```json
@@ -123,7 +123,7 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 
 ### colorBlendState
 
-用于指定本次渲染中渲染源与渲染目标的混合状态属性。包括colorAttachments，用于指定本次渲染中颜色附件的混合状态属性。colorAttachments具体包括如下几项：
+用于指定本次渲染中渲染源与渲染目标的混合状态属性，通过colorAttachments指定颜色附件的混合方式，colorAttachments具体包括如下几项：
 
 * enableBlend：渲染源与渲染目标的混合是否开启，true表示开启混合，false表示关闭混合。若开启则渲染源与渲染目标以指定方式混合，若不开启则不进行混合。
 * colorWriteMask：指定渲染颜色附件中通道掩码，若指定了通道掩码则该通道将被计算混合，若不指定则不计算混合，可取值有r\_bit、g\_bit、b\_bit、a\_bit，各个通道可以用|符号取并集，可取值及含义见下表。
@@ -258,7 +258,7 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 
 用于指定渲染中传入的自定义属性。包括data数组，用于指定渲染中传入的自定义数据。data数组中的对象包含以下属性：
 
-* name：用于指定渲染中传入的自定义数据名称与自定义渲染中的数据名对应。
+* name：用于指定自定义数据的名称，该名称需与自定义着色器中引用的数据名保持一致。
 * displayName：用于指定3D编辑器中显示的名称。
 * type：用于指定数据类型，可取值及含义见下表。
 

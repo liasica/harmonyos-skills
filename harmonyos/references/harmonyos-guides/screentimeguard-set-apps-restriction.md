@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 设置应用访问限制
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用访问限制 > 设置应用访问限制
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e4660ebc5e58a68cb1d7c6447334aad4d58d3f0025bfe9ddeffc8db1d8f22d46
+scraped_at: 2026-09-24T06:50:51+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:64b44c00af9325b4392431b6bc62a901ec90bd8bb3d205bab0be5aca33588ccc
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:e4660ebc5e58a68cb1d7c6447334aad4d58d3f0025bfe9ddeffc8db1d8f
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/EpPCCJ2gRhS81MmyCpyCwQ/zh-cn_image_0000002733435484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/aBi4gSEeSTehanOtmLeVZQ/zh-cn_image_0000002739732284.png)
 
 流程说明：
 
@@ -39,7 +39,7 @@ content_hash: sha256:e4660ebc5e58a68cb1d7c6447334aad4d58d3f0025bfe9ddeffc8db1d8f
 **边界场景：**
 
 * 如果传入的应用数组为空，限制类型为禁用清单，则不对任何应用做限制。该场景相当于没有开启有效管控。
-* 如果传入的应用数组为空，限制类型为许可清单，则对系统内置许可清单应用（电话、联系人、设置、未成年人模式）、管控发起应用本身、已授权的管控应用之外的所有应用做限制。
+* 如果传入的应用数组为空，限制类型为许可清单，则对系统内置许可清单应用（电话、时钟、联系人、设置、未成年人模式等）、管控发起应用本身、已授权的管控应用之外的所有应用做限制。
 * 对同一个管控应用，如果反复调用该接口做限制（不管是许可清单还是禁用清单），均以最新的一次的限制来生效。
 * 传入的应用数组中如果包含无效token，则为参数错误。
 

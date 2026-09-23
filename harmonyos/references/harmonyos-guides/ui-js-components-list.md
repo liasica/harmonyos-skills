@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: list开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > list开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:27+08:00
+scraped_at: 2026-09-24T06:49:42+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:255fb07b9e8fbfbc2af9e0020fa7294ca75d97295e57da2eeaf503f7562d2eff
+content_hash: sha256:30f5b62ad30027f6cd1c728722859ca909ed28e12e8b3efabf2053e570813c9f
 ---
 
 list是用来显示列表的组件，包含一系列相同宽度的列表项，适合连续、多行地呈现同类数据。具体用法请参考[list API](../harmonyos-references/js-components-container-list.md)。
@@ -42,7 +42,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/mcMEKK82RUWXaiBKTE09ng/zh-cn_image_0000002762993703.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/QNak4XOgS9W3NKzpNrnWpA/zh-cn_image_0000002769330355.png)
 
 **说明** 
 
@@ -85,7 +85,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/U43wuqyjTo6FZ1zIxtesfg/zh-cn_image_0000002762833819.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/0vxf7DwcQ4aRvGod5Jh4og/zh-cn_image_0000002769450217.gif)
 
 ## 添加侧边索引栏
 
@@ -113,7 +113,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/-zGxDK_MRcioGZCylTudCg/zh-cn_image_0000002733274300.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/0pCG_fM9RGurlDYY9-A2mw/zh-cn_image_0000002739890886.png)
 
 **说明** 
 
@@ -195,7 +195,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/lI0Md1QbRJ6J5FKl5hPmbA/zh-cn_image_0000002733434184.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/xre5Zv0sRvGf02bc6CJcnw/zh-cn_image_0000002739731008.gif)
 
 **说明** 
 
@@ -306,4 +306,4 @@ export default {
  }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/PjlG49g-S6yPx2Fkn0y28A/zh-cn_image_0000002762993705.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/oBiB0SeGQpSVBH-Iveg9Yg/zh-cn_image_0000002769330357.gif)

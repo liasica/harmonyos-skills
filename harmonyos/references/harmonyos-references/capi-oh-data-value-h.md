@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-d
 title: oh_data_value.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_data_value.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:532f4c4a97cab60b4f4cda93e98c36b875e6e4816a4196aa203ae0099e6e493b
+scraped_at: 2026-09-24T06:51:58+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:be87560b7d0eebd128d776249deb7b4d0b302857e73157a4161384f0e6edd911
 ---
 
 ## 概述
@@ -483,7 +483,7 @@ int OH_Value_GetText(OH_Data_Value *value, const char **val)
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Data\_Value](capi-rdb-oh-data-value.md) \*value | 表示指向[OH\_Data\_Value](capi-rdb-oh-data-value.md)实例的指针。 |
-| const char \*\*val | 一个输出参数，表示指向字符串类型数据的指针。  无需申请内存和释放内存。  val的生命周期遵循value中index的值。 |
+| const char \*\*val | 一个输出参数，表示指向字符串类型数据的指针。  无需申请内存和释放内存。  val的生命周期遵循value的生命周期。 |
 
 **返回：**
 

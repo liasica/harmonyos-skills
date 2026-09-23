@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.faultLogger (故障日志获取)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > 已停止维护的接口 > @ohos.faultLogger (故障日志获取)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:23:27+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:4c4a1d719dd0fc46b3fc03cee7b39b4c659cf7ea96d4599b40c38362ef9defe0
+scraped_at: 2026-09-24T06:54:19+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:5bc2331015ef3a6964ecaa899b335e6c9f9a79380fbd3c48941d94b4f25ccfa7
 ---
 
 应用可以使用faultLogger接口查询系统侧缓存的当前应用的故障日志。接口以应用包名和系统分配的UID作为唯一键值。
 
-系统侧保存的应用故障日志数量受系统日志的压力限制，推荐使用[@ohos.hiviewdfx.hiAppEvent](js-apis-hiviewdfx-hiappevent.md)订阅APP\_CRASH及APP\_FREEZE等故障事件。
+系统侧保存的故障信息与应用故障日志受系统压力限制，会被老化删除。故障信息被老化后会查询不到结果。故障信息存在但故障日志文件被老化后查询的故障信息数据结构中fullLog会打印错误信息Fail to get log, fd is -1。推荐使用[@ohos.hiviewdfx.hiAppEvent](js-apis-hiviewdfx-hiappevent.md)订阅APP\_CRASH及APP\_FREEZE等故障事件。
 
 **说明** 
 

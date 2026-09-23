@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: WaterFlow
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > WaterFlow
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ca9b5ccdde3308c37ba986970afa70e647b780d16418c69e505f63a53b73ccfc
+scraped_at: 2026-09-24T06:52:23+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:a157dea740cc87b9af6e29d9c3c89e6341d7005f5ec2d3de162c6800ec9aa672
 ---
 
 瀑布流容器，由“行”和“列”分割的单元格所组成，通过容器自身的排列规则，将不同大小的“项目”自上而下，如瀑布般紧密布局。支持多列布局、分组混合布局、懒加载、自动计算列数和边缘渐隐等功能，适用于图片画廊、商品展示、内容信息流等需要展示不同尺寸内容的场景。
@@ -292,6 +292,10 @@ columnsTemplate(value: string)
 
 可使用columnsTemplate('repeat(auto-fill,track-size)')根据给定的列宽track-size自动计算列数，其中repeat、auto-fill为关键字，track-size为可设置的宽度，支持的单位包括px、vp、%或有效数字，默认单位为vp，使用方法参见[示例2](ts-container-waterflow.md#示例2自动计算列数)。
 
+非repeat形式的模板串中每项仅支持'数字+fr'、'数字+px'、'数字+%'三种格式，不支持vp（如columnsTemplate('100vp 100vp')）。需要按固定vp尺寸自动计算列数时，应使用repeat(auto-fill, track-size)。
+
+设置为'0fr'时，该列的列宽为0，该列FlowItem不显示。设置为其他非法值时，按固定1列处理。
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -335,6 +339,10 @@ rowsTemplate(value: string)
 例如，'1fr 1fr 2fr'是将父组件分3行，将父组件允许的高分为4等份，第1行占1份，第2行占1份，第3行占2份。
 
 可使用rowsTemplate('repeat(auto-fill,track-size)')根据给定的行高track-size自动计算行数，其中repeat、auto-fill为关键字，track-size为可设置的高度，支持的单位包括px、vp、%或有效数字，默认单位为vp。
+
+非repeat形式的模板串中每项仅支持'数字+fr'、'数字+px'、'数字+%'三种格式，不支持vp（如rowsTemplate('100vp 100vp')）。需要按固定vp尺寸自动计算行数时，应使用repeat(auto-fill, track-size)。
+
+设置为'0fr'时，该行的行高为0，该行FlowItem不显示。设置为其他非法值时，按固定1行处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1050,7 +1058,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/s-Zg7xRvSxS6jdczw0vM-g/zh-cn_image_0000002733436088.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/DqKopx1nQPm2ixsTdLdKMg/zh-cn_image_0000002739732884.gif)
 
 ### 示例2（自动计算列数）
 
@@ -1122,7 +1130,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/8qNME6WpRTG9B2uRf1Ienw/zh-cn_image_0000002762995609.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/4WT8wSZ_RGKvVBbeBqWm3A/zh-cn_image_0000002769332233.png)
 
 ### 示例3（使用分组）
 
@@ -1379,7 +1387,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/12bJbRoPRZ6_khRVOQazDA/zh-cn_image_0000002762835725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/99wLSGVTSuS1MQWhQWENbw/zh-cn_image_0000002769452095.png)
 
 ### 示例4（双指缩放改变列数）
 
@@ -1581,7 +1589,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/FkHmMR09SuubUzG7rukJuQ/zh-cn_image_0000002733276214.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/W5zH5pcESLmicctnqKV-Mg/zh-cn_image_0000002739892764.gif)
 
 ### 示例5（设置边缘渐隐效果）
 
@@ -1654,7 +1662,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/I7gzsrWBS5GGFqRAMrxwWw/zh-cn_image_0000002733436090.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/0oy9DdA5R86sDkWFkZ692A/zh-cn_image_0000002739732886.gif)
 
 ### 示例6（单边边缘效果）
 
@@ -1727,7 +1735,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/KmtwmOKOQla7RHJAZsVMGA/zh-cn_image_0000002762995611.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tjb2dziOSjyuu6zw2a0A3w/zh-cn_image_0000002769332235.gif)
 
 ### 示例7（WaterFlow组件设置和改变尾部组件）
 
@@ -1838,7 +1846,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/PU2miTHTT7CMC2eWiSKo7g/zh-cn_image_0000002762835727.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/nMAnmR7qRJG75SgDvA45LA/zh-cn_image_0000002769452097.gif)
 
 ### 示例8（WaterFlow组件实现下拉刷新）
 
@@ -1929,7 +1937,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/JeelTbWzTWm-J6EHpK1R-g/zh-cn_image_0000002733276216.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Mi0of6kOTG-0a5qeRkkN7w/zh-cn_image_0000002739892766.gif)
 
 ### 示例9（WaterFlow组件基于断点配置列数）
 
@@ -2001,15 +2009,15 @@ struct WaterFlowDemo {
 
 WaterFlow宽度属于sm及更小的断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/ftJCNhmbTgmFgsFeGd5VBg/zh-cn_image_0000002733436092.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/FdJC1CjuQnGinNxiDQFTSA/zh-cn_image_0000002739732888.png)
 
 WaterFlow宽度属于md断点区间时显示3列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/DHWy-ptxQRKt-MQe03qrUA/zh-cn_image_0000002762995613.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/tuCXCycxT0SEAWZg5iVpyw/zh-cn_image_0000002769332237.png)
 
 WaterFlow宽度属于lg及更大的断点区间时显示5列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/MGjnBfFtRD6M4CCwQxGX9A/zh-cn_image_0000002762835729.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Et3CurHtTquW7xWha_VISw/zh-cn_image_0000002769452099.png)
 
 ### 示例10（WaterFlow组件实现获取内容高度）
 
@@ -2114,7 +2122,7 @@ struct WaterFlowContentSizeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/PM1JGCy3StK45XN9XzbinQ/zh-cn_image_0000002733276218.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/-kLt_PJXQJOyh24LGqlNZw/zh-cn_image_0000002739892768.gif)
 
 ### 示例11（设置滚动事件）
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.accountManager (账号管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.accountManager (账号管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:23+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:a4e9d9149b54708d0d7d31ed088e799b00af90e2ca90fc5483fc1d33b894f439
+scraped_at: 2026-09-24T06:54:10+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:9d7455dd8be0f4b0e55109120d91c6598cd26d61ed1f3afdd9ebb4668a49c1d6
 ---
 
 本模块提供设备账号管理能力，包括禁止创建本地账号等。
@@ -502,8 +502,7 @@ createNormalOsAccount(admin: Want, name: string): Promise<osAccount.OsAccountInf
 
 ```ts
 import { accountManager } from '@kit.MDMKit';
-import { BusinessError } from '@kit.BasicServicesKit';
-import { osAccount } from '@kit.BasicServicesKit';
+import { BusinessError, osAccount } from '@kit.BasicServicesKit';
 import { Want } from '@kit.AbilityKit';
 
 let wantTemp: Want = {
@@ -566,8 +565,7 @@ removeOsAccount(admin: Want, accountId: number): Promise<void>
 
 ```ts
 import { accountManager } from '@kit.MDMKit';
-import { BusinessError } from '@kit.BasicServicesKit';
-import { osAccount } from '@kit.BasicServicesKit';
+import { BusinessError, osAccount } from '@kit.BasicServicesKit';
 import { Want } from '@kit.AbilityKit';
 
 let wantTemp: Want = {
@@ -635,8 +633,7 @@ activateOsAccount(admin: Want, accountId: number): Promise<void>
 
 ```ts
 import { accountManager } from '@kit.MDMKit';
-import { BusinessError } from '@kit.BasicServicesKit';
-import { osAccount } from '@kit.BasicServicesKit';
+import { BusinessError, osAccount } from '@kit.BasicServicesKit';
 import { Want } from '@kit.AbilityKit';
 
 let wantTemp: Want = {

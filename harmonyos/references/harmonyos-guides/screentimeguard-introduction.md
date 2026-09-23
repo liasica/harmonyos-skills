@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: Screen Time Guard Kit简介
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > Screen Time Guard Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:32+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:bbf51301c07238a4a8b311bca42d52ad426e2d72834c79b3c654bd85edc7d932
+scraped_at: 2026-09-24T06:50:51+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:2dd3565943363b1e9f6c9bf7cda77d6c99025f15479874d3381e2f45061a442e
 ---
 
 在应用安全隐私保护前提下，为开发者提供屏幕使用时间管控、应用使用限制等开放能力，满足不同用户对时间管理多样化诉求，更好的服务终端用户。
@@ -32,7 +32,7 @@ guard strategy：守护策略，分为起止时间策略、总时长策略和共
 
 共享时长策略：通过设定一个时间长度，可限定全部或部分应用总共能使用该时间长度。
 
-管控范围：所有应用都可被管控，除了系统内置允许清单应用（如时钟、电话等）、管控发起应用本身、已授权的管控应用和健康使用设备。
+管控范围：所有应用都可被管控，除了系统内置许可清单应用（电话、时钟、联系人、设置、未成年人模式等）、管控发起应用本身和已授权的管控应用。
 
 ## 约束与限制
 

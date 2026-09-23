@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-ap
 title: 实现应用图标动态切换
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 图标管理服务 > 实现应用图标动态切换
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9bc1e881c6abd2409760ddbebd2e7685df89788765654feba369913e1a426255
+scraped_at: 2026-09-24T06:50:36+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:e2e3f8f2a2e8eec75a4fa41614d41cc906f42bc306656168014247e0ec291c19
 ---
 
 AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信息、切换动态图标、恢复默认图标功能。
@@ -28,7 +28,7 @@ AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/_musi9FpQPmbU-GaMbNCDw/zh-cn_image_0000002733435088.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/dWyQsIvEQRyaMNbLFovxiA/zh-cn_image_0000002739731894.png)
 
 ### 查询动态图标信息
 
@@ -54,7 +54,7 @@ AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信
 ## 约束与限制
 
 * 图标管理服务不支持模拟器，请使用真机调试。
-* 图标管理服务支持Phone、Tablet、PC/2in1设备。并且从5.1.1(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+* 图标管理服务支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 服务通知
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 服务通知
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:19+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:750a43567e885832fc365febecaf31a52be260de92e6bd22fc16c4f3092feeda
+scraped_at: 2026-09-24T06:55:39+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:c2b8295f1f9216dc0c9f8f37f96999872a93832e26ccf9b2537d2c2ce99a1942
 ---
 
 ## 功能介绍
@@ -74,9 +74,9 @@ content_hash: sha256:750a43567e885832fc365febecaf31a52be260de92e6bd22fc16c4f3092
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| actionType | 是 | Integer | 消息点击后的行为。  0：打开元服务首页。  1：打开元服务指定页面。 |
-| action | 否 | String | 应用内置页面ability对应的action。当actionType为1时，字段action和uri至少填写一个，若都填写优先寻找与action匹配的应用页面。 |
-| uri | 否 | String | 应用内置页面ability对应的uri。当actionType为1时，字段action和uri至少填写一个，若都填写优先寻找与action匹配的应用页面。 |
+| actionType | 是 | Integer | 消息点击后的行为。  0：打开元服务首页。  1：打开元服务指定页面。  **说明**：  当actionType为1时，字段action和uri至少填写一个，若都填写优先寻找与action匹配的应用页面。 |
+| action | 否 | String | 应用内置页面ability对应的action。 |
+| uri | 否 | String | 应用内置页面ability对应的uri。 |
 | data | 否 | Object | 当actionType为0或1时，该字段用于在点击按钮后将数据传递给元服务。格式必须为key-value形式，最大长度1024字节。示例：  {"key1": "value1", "key2": "value2"} |
 
 ## 请求示例

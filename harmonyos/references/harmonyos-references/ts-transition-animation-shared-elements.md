@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 共享元素转场 (sharedTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 共享元素转场 (sharedTransition)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:21:00+08:00
+scraped_at: 2026-09-24T06:52:33+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:8a1c3ee25bf013144fa7b62c8944d26af6b2c63b039404d497e5b1d0eb1f13e4
+content_hash: sha256:527cd75f5cc463e7da8f1678d5081dfc1848e7fdf7022a6cc3fa550b93b7160b
 ---
 
 共享元素转场（sharedTransition）用于在页面跳转时实现共享元素位置、大小等的平滑过渡动画，使同一元素在不同页面间保持视觉连续性，提升用户体验和转场流畅度。可以通过设置组件的sharedTransition属性将该元素标记为共享元素并设置对应的共享元素转场动效。sharedTransition仅发生在[@ohos.router (页面路由)](js-apis-router.md)跳转时。
@@ -114,4 +114,4 @@ struct PageBExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/LTq2bLhxS4SAm6Y2gowlmQ/zh-cn_image_0000002762996007.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/bLgd7PnARE22yPwwVJArSw/zh-cn_image_0000002769332627.gif)

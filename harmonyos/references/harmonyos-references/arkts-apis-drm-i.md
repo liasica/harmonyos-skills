@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > ArkTS API > @ohos.multimedia.drm (数字版权保护) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:22+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-24T06:54:39+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:17ed3c62b1c4e38d6f125d03f902f9f203e903638065ea6fd327d55874f64bcc
 ---
 

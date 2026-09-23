@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.annotation (注解)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.annotation (注解)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:04+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-24T06:54:00+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:6e436e7524a1c9fcea3c09f50c29b31c785e6ccc12623bc6bbf1d59efefe0118
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:36+08:00
-doc_updated_at: 2026-08-06
-content_hash: sha256:1113192d3c758de6a220eca4bb14eaf0bc55b214e25f7e7d131fc35a7a50c747
+scraped_at: 2026-09-24T06:48:35+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:68999c300d7d3463f903ad07b6cf8c1a533babeb00876004fd2d2595c96645d4
 ---
 
 ## DevEco Studio 6.1.0 Release（6.1.0.860）
@@ -225,7 +225,7 @@ DevEco Studio 6.1.0.816配套使用的命令行工具列表、支持的API范围
 
 **编写与调试应用**
 
-* API变更查询接入CodeGenie快速问答功能，CodeGenie提供根据代码文件和变更文档输出非兼容API的修改建议，以及新增筛选API变更类型功能。具体请参考[代码阅读](../harmonyos-guides/ide-editer-overview.md#section234174215231)。
+* API变更查询接入CodeGenie快速问答功能，CodeGenie提供根据代码文件和变更文档输出非兼容API的修改建议，以及新增筛选API变更类型功能。具体请参考[代码阅读](../harmonyos-guides/ide-editor-overview.md#section234174215231)。
 * 如果本地没有模拟器，DevEco Studio会预置模拟器，开发者无需创建即可快速使用。同时模拟器会展示在设备列表中，选择模拟器并点击运行按钮，即可一键完成启动模拟器、编译构建、推包运行操作。具体请参考[创建模拟器](../harmonyos-guides/ide-emulator-create.md)。
 * 三折叠模拟器的工具栏新增6个按键，用于对屏幕折叠状态进行模拟。具体请参考[使用工具栏](../harmonyos-guides/ide-emulator-toolbar.md)。
 * 模拟器支持配置DNS。具体请参考[网络](../harmonyos-guides/ide-emulator-more-features.md#section206461549731)。

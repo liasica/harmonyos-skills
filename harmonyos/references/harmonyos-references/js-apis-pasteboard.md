@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.pasteboard (剪贴板)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.pasteboard (剪贴板)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ec03c7d30937061feec42f095129855e95c189f4ba19ef90b2b73fe31f785578
+scraped_at: 2026-09-24T06:53:58+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:61c0c77eff6189915a9d088235cd5bd1eb590aa56fa82a196a2c56dc2dcce6c0
 ---
 
 本模块提供管理系统剪贴板的能力，支持系统复制、粘贴功能。系统剪贴板支持对文本、HTML、URI、Want、PixelMap等内容的操作。
@@ -60,11 +60,7 @@ type ValueType = string | image.PixelMap | Want | ArrayBuffer
 
 createData(mimeType: string, value: ValueType): PasteData
 
-构建一个指定类型的剪贴板内容对象，根据传入的MIME类型和数据内容创建PasteData实例。 调用此方法后，系统将验证MIME类型有效性，封装数据内容，并返回可用于后续剪贴板操作的PasteData对象。参数mimeType长度不能超过1024字节，value类型需与mimeType匹配。
-
-**使用场景：** 当需要将单一类型的数据（如纯文本、HTML、图片等）放入剪贴板时使用此方法。
-
-**参数选取建议：** mimeType优先使用已定义的常量类型（如MIMETYPE\_TEXT\_PLAIN），若需要传递自定义格式数据，可使用自定义MIME类型。
+构建一个指定类型的剪贴板内容对象，根据传入的MIME类型和数据内容创建PasteData实例。 调用此方法后，系统将验证MIME类型有效性，封装数据内容，并返回可用于后续剪贴板操作的PasteData对象。参数mimeType长度不能超过1024字节，value类型需与mimeType匹配。当需要将单一类型的数据（如纯文本、HTML、图片等）放入剪贴板时使用此方法。mimeType优先使用已定义的常量类型（如MIMETYPE\_TEXT\_PLAIN），若需要传递自定义格式数据，可使用自定义MIME类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -113,9 +109,7 @@ let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_
 
 createData(data: Record<string, ValueType>): PasteData
 
-构建一个包含多个类型数据的剪贴板内容对象，支持一次创建多个MIME类型的数据条目。调用此方法后，系统将解析Record中的多个key-value对，创建多个PasteDataRecord条目，首个MIME类型作为默认类型。非默认类型数据需通过[getData](js-apis-pasteboard.md#getdata14)接口读取。
-
-**使用场景：** 应用需要将多种不同类型的数据(如文本、URI、HTML等)同时复制到剪贴板时，可使用此接口一次性构建包含多个MIME类型数据的剪贴板内容对象。
+构建一个包含多个类型数据的剪贴板内容对象，支持一次创建多个MIME类型的数据条目。调用此方法后，系统将解析Record中的多个key-value对，创建多个PasteDataRecord条目，首个MIME类型作为默认类型。非默认类型数据需通过[getData](js-apis-pasteboard.md#getdata14)接口读取。应用需要将多种不同类型的数据(如文本、URI、HTML等)同时复制到剪贴板时，可使用此接口一次性构建包含多个MIME类型数据的剪贴板内容对象。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
@@ -167,8 +161,6 @@ let pasteData: pasteboard.PasteData = pasteboard.createData(record);
 createRecord(mimeType: string, value: ValueType): PasteDataRecord
 
 创建一条指定类型的数据内容条目，将数据内容封装为PasteDataRecord对象。 调用此方法后，系统将根据MIME类型封装数据内容，返回可添加到PasteData中的条目对象。参数mimeType长度不能超过1024字节，value类型需与mimeType对应（如mimeType为MIMETYPE\_TEXT\_PLAIN，则value类型必须是string），参数不能为空。
-
-**配合使用：**
 
 * 创建的条目通常需要通过[addRecord](js-apis-pasteboard.md#addrecord7)方法添加到[PasteData](js-apis-pasteboard.md#pastedata)对象中才能生效。
 * 典型使用流程：先通过[createData](js-apis-pasteboard.md#pasteboardcreatedata9)创建PasteData对象，再使用createRecord创建条目，最后通过addRecord添加条目。
@@ -222,9 +214,7 @@ pasteData.replaceRecord(0, record);
 
 getSystemPasteboard(): SystemPasteboard
 
-获取系统剪贴板对象，返回剪贴板服务的单例实例。调用此方法后，返回的系统剪贴板对象可用于访问剪贴板的读写、监听等功能。每次调用返回同一实例，调用前剪贴板系统服务需要正常运行。
-
-**使用场景：** 在进行任何剪贴板读写操作前，都需要先调用此方法获取系统剪贴板对象。
+获取系统剪贴板对象，返回剪贴板服务的单例实例。调用此方法后，返回的系统剪贴板对象可用于访问剪贴板的读写、监听等功能。每次调用返回同一实例，调用前剪贴板系统服务需要正常运行。在进行任何剪贴板读写操作前，都需要先调用此方法获取系统剪贴板对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -632,7 +622,7 @@ struct PasteboardTest {
               systemPasteboard.getDataWithProgress(params).then((pasteData: pasteboard.PasteData) => {
                 console.info('getDataWithProgress success');
               }).catch((err: BusinessError) => {
-                console.error('Failed to get PasteData. Cause: ' + err.message);
+                console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
               })
           })
         }
@@ -652,7 +642,7 @@ struct PasteboardTest {
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| destUri | string | 否 | 是 | 贝文件的目标路径对应的URI。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件复制处理，默认为空。 |
+| destUri | string | 否 | 是 | 拷贝文件的目标路径对应的URI。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件复制处理，默认为空。 |
 | fileConflictOptions | [FileConflictOptions](js-apis-pasteboard.md#fileconflictoptions15) | 否 | 是 | 定义文件拷贝冲突时的选项。OVERWRITE（覆盖）适合需要确保目标路径使用最新文件内容的场景；SKIP（跳过）适合需要保留目标路径原有文件、避免意外覆盖的场景。默认为OVERWRITE。 |
 | progressIndicator | [ProgressIndicator](js-apis-pasteboard.md#progressindicator15) | 否 | 否 | 定义进度条指示选项，可选择是否采用系统默认进度显示。设置为DEFAULT时采用系统默认进度显示；设置为NONE时需应用自行处理进度，此时progressListener和progressSignal参数才有效。 |
 | progressListener | [ProgressListener](js-apis-pasteboard.md#progresslistener15) | 否 | 是 | 定义进度数据变化的订阅函数，用于获取粘贴过程的进度。仅当progressIndicator设置为NONE时此参数才生效，可设置该项自行处理进度显示；当progressIndicator设置为DEFAULT时此参数无效。默认为空（不监听进度）。 |
@@ -742,9 +732,7 @@ record.addEntry(pasteboard.MIMETYPE_TEXT_HTML, html);
 
 getValidTypes(types: Array<string>): Array<string>
 
-根据传入的MIME类型，返回传入的MIME类型和剪贴板中数据的MIME类型的交集。
-
-**使用场景：** 在粘贴前，检查剪贴板数据是否包含应用支持的格式。例如，若应用仅支持纯文本和HTML格式，可调用此接口检查剪贴板数据是否包含这些格式，并根据返回结果决定是否执行粘贴操作。
+根据传入的MIME类型，返回传入的MIME类型和剪贴板中数据的MIME类型的交集。在粘贴前，检查剪贴板数据是否包含应用支持的格式。例如，若应用仅支持纯文本和HTML格式，可调用此接口检查剪贴板数据是否包含这些格式，并根据返回结果决定是否执行粘贴操作。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
@@ -825,13 +813,13 @@ record.getData(pasteboard.MIMETYPE_TEXT_PLAIN).then((value: pasteboard.ValueType
     let textPlainContent = value as string;
     console.info('Success to get text/plain value. value is: ' + textPlainContent);
 }).catch((err: BusinessError) => {
-    console.error('Failed to get text/plain value. Cause: ' + err.message);
+    console.error(`Failed to get text/plain value. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 record.getData(pasteboard.MIMETYPE_TEXT_URI).then((value: pasteboard.ValueType) => {
     let uri = value as string;
     console.info('Success to get text/uri value. value is: ' + uri);
 }).catch((err: BusinessError) => {
-    console.error('Failed to get text/uri value. Cause: ' + err.message);
+    console.error(`Failed to get text/uri value. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -869,7 +857,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability:///com.example.myapplication1/user.txt');
 record.convertToText((err: BusinessError, data: string) => {
     if (err) {
-        console.error(`Failed to convert to text. Cause: ${err.message}`);
+        console.error(`Failed to convert to text. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     console.info(`Succeeded in converting to text. Data: ${data}`);
@@ -903,7 +891,7 @@ let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability
 record.convertToText().then((data: string) => {
     console.info(`Succeeded in converting to text. Data: ${data}`);
 }).catch((err: BusinessError) => {
-    console.error(`Failed to convert to text. Cause: ${err.message}`);
+    console.error(`Failed to convert to text. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -944,7 +932,7 @@ systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
     let text: string = pasteData.getPrimaryText();
 }).catch((err: BusinessError) => {
     // 处理获取失败的情况
-    console.error('Failed to get PasteData. Cause: ' + err.message);
+    console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -973,7 +961,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
     let htmlText: string = pasteData.getPrimaryHtml();
 }).catch((err: BusinessError) => {
-    console.error('Failed to get PasteData. Cause: ' + err.message);
+    console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -1003,7 +991,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
     let want: Want = pasteData.getPrimaryWant();
 }).catch((err: BusinessError) => {
-    console.error('Failed to get PasteData. Cause: ' + err.message);
+    console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -1032,7 +1020,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
     let uri: string = pasteData.getPrimaryUri();
 }).catch((err: BusinessError) => {
-    console.error('Failed to get PasteData. Cause: ' + err.message);
+    console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -1107,9 +1095,7 @@ pasteData.addRecord(htmlRecord);
 
 addRecord(mimeType: string, value: ValueType): void
 
-向当前剪贴板内容中添加一条数据内容条目，同时也会将数据类型添加到[PasteDataProperty](js-apis-pasteboard.md#pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
-
-**使用场景：** 当剪贴板内容需要包含多种类型的数据（如同时包含纯文本和HTML）时，使用此方法向已有的PasteData对象添加额外的数据条目。
+向当前剪贴板内容中添加一条数据内容条目，同时也会将数据类型添加到[PasteDataProperty](js-apis-pasteboard.md#pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。当剪贴板内容需要包含多种类型的数据（如同时包含纯文本和HTML）时，使用此方法向已有的PasteData对象添加额外的数据条目。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1311,7 +1297,7 @@ getRecord(index: number): PasteDataRecord
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 12900001 | The index is out of the record. |
+| 12900001 | The index is out of range. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
@@ -1381,7 +1367,7 @@ hasType(mimeType: string): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mimeType | string | 是 | 待查询的数据类型。可以是[常量](js-apis-pasteboard.md#常量)中已定义的类型，包括： - HTML类型 - Want类型 - 纯文本类型 - URI类型 - PixelMap类型 也可以是自定义的MIME类型，长度不能超过1024字节。 |
+| mimeType | string | 是 | 待查询的数据类型。可以是[常量](js-apis-pasteboard.md#常量)中已定义的类型，包括：HTML类型、Want类型、纯文本类型、URI类型、PixelMap类型；也可以是自定义的MIME类型，数据类型的字符串长度不能超过1024字节。 |
 
 **返回值：**
 
@@ -1426,7 +1412,7 @@ removeRecord(index: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 12900001 | The index is out of the record. |
+| 12900001 | The index is out of range. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
@@ -1459,7 +1445,7 @@ replaceRecord(index: number, record: PasteDataRecord): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 12900001 | The index is out of the record. |
+| 12900001 | The index is out of range. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
@@ -1474,11 +1460,7 @@ pasteData.replaceRecord(0, record);
 
 pasteStart(): void
 
-读取剪贴板数据前，通知剪贴板服务保留跨设备通道。访问剪贴板数据中的跨端文件数据前，通知剪贴板服务保留跨设备链路。跨设备链路用于连接远端设备并提供传输远端设备文件到本端设备的能力，如未调用此方法则跨设备链路将在30秒后自动断开。适用于跨设备粘贴场景。
-
-**使用场景：** 当需要确保跨设备剪贴板数据通道保持连接，以便后续读取远端设备剪贴板数据时使用。
-
-**配对调用：**
+读取剪贴板数据前，通知剪贴板服务保留跨设备通道。访问剪贴板数据中的跨端文件数据前，通知剪贴板服务保留跨设备链路。跨设备链路用于连接远端设备并提供传输远端设备文件到本端设备的能力，如未调用此方法则跨设备链路将在30秒后自动断开。适用于跨设备粘贴场景。当需要确保跨设备剪贴板数据通道保持连接，以便后续读取远端设备剪贴板数据时使用。
 
 * 必须与[pasteComplete](js-apis-pasteboard.md#pastecomplete12)方法配对使用。
 * 调用顺序：先调用pasteStart()通知保留通道，数据处理完成后必须调用pasteComplete()通知完成。
@@ -1494,7 +1476,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
 systemPasteboard.getData((err: BusinessError, pasteData: pasteboard.PasteData) => {
     if (err) {
-        console.error('Failed to get PasteData. Cause: ' + err.message);
+        console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     pasteData.pasteStart();
@@ -1526,7 +1508,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
 systemPasteboard.getData((err: BusinessError, pasteData: pasteboard.PasteData) => {
     if (err) {
-        console.error('Failed to get PasteData. Cause: ' + err.message);
+        console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     pasteData.pasteStart();
@@ -1697,7 +1679,7 @@ hasMimeType(mimeType: string): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mimeType | string | 是 | 待查询的数据类型。可以是[常量](js-apis-pasteboard.md#常量)中已定义的类型，包括： - HTML类型 - Want类型 - 纯文本类型 - URI类型 - PixelMap类型 也可以是自定义的MIME类型，长度不能超过1024字节。 |
+| mimeType | string | 是 | 待查询的数据类型。可以是[常量](js-apis-pasteboard.md#常量)中已定义的类型，包括：HTML类型、Want类型、纯文本类型、URI类型、PixelMap类型，也可以是自定义的MIME类型，长度不能超过1024字节。 |
 
 **返回值：**
 
@@ -1806,11 +1788,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 
 on(type: 'update', callback: () =>void): void
 
-订阅系统剪贴板内容变化事件，当系统剪贴板中内容变化时触发用户程序的回调。调用此方法后，系统将在剪贴板服务中注册监听器，剪贴板内容被写入、清空或修改时触发回调。可注册多个监听器，需在适当时机调用off取消监听以释放资源。
-
-**使用场景：** 当应用需要实时响应剪贴板内容变化时使用，如自动检测剪贴板中的特定格式数据、实现智能粘贴建议等场景。
-
-**配对调用：**
+订阅系统剪贴板内容变化事件，当系统剪贴板中内容变化时触发用户程序的回调。调用此方法后，系统将在剪贴板服务中注册监听器，剪贴板内容被写入、清空或修改时触发回调。可注册多个监听器，需在适当时机调用off取消监听以释放资源。当应用需要实时响应剪贴板内容变化时使用，如自动检测剪贴板中的特定格式数据、实现智能粘贴建议等场景。
 
 * 订阅后必须在不再需要监听时调用[off('update')](js-apis-pasteboard.md#offupdate7)取消订阅。
 * 未取消订阅会导致回调函数持续监听剪贴板变化，可能造成内存泄漏或多次回调触发。
@@ -1852,8 +1830,6 @@ off(type: 'update', callback?: () =>void): void
 
 取消订阅系统剪贴板内容变化事件。
 
-**配对调用：**
-
 * 与on('update')方法配合使用，取消订阅的是通过on('update')订阅的事件监听
 * 必须在已订阅的情况下才能调用
 * 如果callback参数未填，清除本应用的所有监听回调；否则清除指定监听回调
@@ -1884,7 +1860,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 let listener = () => {
     console.info('The system pasteboard has changed.');
 };
-// 订阅剪贴板内容变化事件
+// 取消订阅剪贴板内容变化事件
 systemPasteboard.off('update', listener);
 ```
 
@@ -1892,9 +1868,7 @@ systemPasteboard.off('update', listener);
 
 clearData(callback: AsyncCallback<void>): void
 
-清空系统剪贴板内容，使用callback异步回调。调用此方法后，系统将删除剪贴板中的所有数据，触发已注册的'update'监听回调。清空成功后，剪贴板中将没有任何数据，hasData方法将返回false。
-
-**使用场景：** 适用于需要异步清空剪贴板且不阻塞主线程的场景，如UI响应优先的交互流程。与同步接口[clearDataSync](js-apis-pasteboard.md#cleardatasync11)不同，此接口不会阻塞UI线程，更适合在UI交互中使用。
+清空系统剪贴板内容，使用callback异步回调。调用此方法后，系统将删除剪贴板中的所有数据，触发已注册的'update'监听回调。清空成功后，剪贴板中将没有任何数据，hasData方法将返回false。适用于需要异步清空剪贴板且不阻塞主线程的场景，如UI响应优先的交互流程。与同步接口[clearDataSync](js-apis-pasteboard.md#cleardatasync11)不同，此接口不会阻塞UI线程，更适合在UI交互中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1922,7 +1896,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 // 清空系统剪贴板内容
 systemPasteboard.clearData((err, data) => {
     if (err) {
-        console.error(`Failed to clear the pasteboard. Cause: ${err.message}`);
+        console.error(`Failed to clear the pasteboard. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     console.info('Succeeded in clearing the pasteboard.');
@@ -1954,7 +1928,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.clearData().then((data: void) => {
     console.info('Succeeded in clearing the pasteboard.');
 }).catch((err: BusinessError) => {
-    console.error(`Failed to clear the pasteboard. Cause: ${err.message}`);
+    console.error(`Failed to clear the pasteboard. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -1962,15 +1936,7 @@ systemPasteboard.clearData().then((data: void) => {
 
 setData(data: PasteData, callback: AsyncCallback<void>): void
 
-将数据写入系统剪贴板，使用callback异步回调。 调用此方法后，系统会将PasteData对象写入到系统剪贴板中。写入成功后，其他应用可以读取该剪贴板数据。写入的数据会替换剪贴板中已有的内容。
-
-**约束说明：**
-
-* 如果有其他拷贝或粘贴操作正在进行，会返回错误27787277。
-* 如果复制被禁止，会返回错误27787278。
-* PasteData对象不能为空。
-
-**使用场景：** 适用于需要异步写入剪贴板内容的场景，如UI响应优先、避免阻塞主线程。与[setDataSync](js-apis-pasteboard.md#setdatasync11)相比，setData不会阻塞UI线程。
+将数据写入系统剪贴板，使用callback异步回调。 调用此方法后，系统会将PasteData对象写入到系统剪贴板中。写入成功后，其他应用可以读取该剪贴板数据。写入的数据会替换剪贴板中已有的内容。适用于需要异步写入剪贴板内容的场景，如UI响应优先、避免阻塞主线程。与[setDataSync](js-apis-pasteboard.md#setdatasync11)相比，setData不会阻塞UI线程。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2003,7 +1969,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 // 将数据写入系统剪贴板
 systemPasteboard.setData(pasteData, (err, data) => {
     if (err) {
-        console.error('Failed to set PasteData. Cause: ' + err.message);
+        console.error(`Failed to set PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     console.info('Succeeded in setting PasteData.');
@@ -2014,9 +1980,7 @@ systemPasteboard.setData(pasteData, (err, data) => {
 
 setData(data: PasteData): Promise<void>
 
-将数据写入系统剪贴板，使用Promise异步回调。
-
-**使用场景：** 适用于需要异步写入剪贴板且不阻塞主线程的场景，如UI响应优先的交互流程。与同步接口[setDataSync](js-apis-pasteboard.md#setdatasync11)不同，此接口不会阻塞UI线程，更适合在UI交互中调用。
+将数据写入系统剪贴板，使用Promise异步回调。适用于需要异步写入剪贴板且不阻塞主线程的场景，如UI响应优先的交互流程。与同步接口[setDataSync](js-apis-pasteboard.md#setdatasync11)不同，此接口不会阻塞UI线程，更适合在UI交互中调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2057,7 +2021,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.setData(pasteData).then((data: void) => {
     console.info('Succeeded in setting PasteData.');
 }).catch((err: BusinessError) => {
-    console.error('Failed to set PasteData. Cause: ' + err.message);
+    console.error(`Failed to set PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -2101,7 +2065,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 // 读取系统剪贴板内容
 systemPasteboard.getData((err: BusinessError, pasteData: pasteboard.PasteData) => {
     if (err) {
-        console.error('Failed to get PasteData. Cause: ' + err.message);
+        console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     // 获取剪贴板中的纯文本内容
@@ -2113,9 +2077,7 @@ systemPasteboard.getData((err: BusinessError, pasteData: pasteboard.PasteData) =
 
 getData(): Promise<PasteData>
 
-读取系统剪贴板内容，将剪贴板数据封装为PasteData对象返回，使用Promise异步回调。适用于需要异步读取剪贴板内容的场景，如UI响应优先、避免阻塞主线程。
-
-**使用场景：** 适用于应用需要使用标准化数据结构[UnifiedData](js-apis-data-unifieddatachannel.md#unifieddata)读取剪贴板数据的场景。
+读取系统剪贴板内容，将剪贴板数据封装为PasteData对象返回，使用Promise异步回调。适用于需要异步读取剪贴板内容的场景，如UI响应优先、避免阻塞主线程。适用于应用需要使用标准化数据结构[UnifiedData](js-apis-data-unifieddatachannel.md#unifieddata)读取剪贴板数据的场景。
 
 应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](../harmonyos-guides/get-pastedata-permission-guidelines.md)。应用[使用粘贴控件](../harmonyos-guides/pastebutton.md)访问剪贴板内容，无需申请权限。
 
@@ -2152,7 +2114,7 @@ systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
     // 获取剪贴板中的纯文本内容
     let text: string = pasteData.getPrimaryText();
 }).catch((err: BusinessError) => {
-    console.error('Failed to get PasteData. Cause: ' + err.message);
+    console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -2185,9 +2147,7 @@ console.info(`Succeeded in checking the remote data. Result: ${result}`);
 
 hasData(callback: AsyncCallback<boolean>): void
 
-判断系统剪贴板中是否有内容，使用callback异步回调。
-
-**使用场景：** 适用于需要异步判断剪贴板是否有内容且不阻塞主线程的场景，如UI响应优先的交互流程。与同步接口[hasDataSync](js-apis-pasteboard.md#hasdatasync11)不同，此接口不会阻塞UI线程，更适合在UI交互中调用。
+判断系统剪贴板中是否有内容，使用callback异步回调。适用于需要异步判断剪贴板是否有内容且不阻塞主线程的场景，如UI响应优先的交互流程。与同步接口[hasDataSync](js-apis-pasteboard.md#hasdatasync11)不同，此接口不会阻塞UI线程，更适合在UI交互中调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2215,7 +2175,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
 systemPasteboard.hasData((err: BusinessError, data: boolean) => {
     if (err) {
-        console.error(`Failed to check the PasteData. Cause: ${err.message}`);
+        console.error(`Failed to check the PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     console.info(`Succeeded in checking the PasteData. Data: ${data}`);
@@ -2247,7 +2207,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.hasData().then((data: boolean) => {
     console.info(`Succeeded in checking the PasteData. Data: ${data}`);
 }).catch((err: BusinessError) => {
-    console.error(`Failed to check the PasteData. Cause: ${err.message}`);
+    console.error(`Failed to check the PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -2283,7 +2243,7 @@ clear(callback: AsyncCallback<void>): void
 const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
 systemPasteboard.clear((err, data) => {
     if (err) {
-        console.error(`Failed to clear the PasteData. Cause: ${err.message}`);
+        console.error(`Failed to clear the PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     console.info('Succeeded in clearing the PasteData.');
@@ -2317,7 +2277,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.clear().then((data) => {
     console.info('Succeeded in clearing the PasteData.');
 }).catch((err: BusinessError) => {
-    console.error(`Failed to clear the PasteData. Cause: ${err.message}`);
+    console.error(`Failed to clear the PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -2357,7 +2317,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 // 读取系统剪贴板内容
 systemPasteboard.getPasteData((err: BusinessError, pasteData: pasteboard.PasteData) => {
     if (err) {
-        console.error('Failed to get PasteData. Cause: ' + err.message);
+        console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     // 获取剪贴板中的纯文本内容
@@ -2395,7 +2355,7 @@ systemPasteboard.getPasteData().then((pasteData: pasteboard.PasteData) => {
     // 获取剪贴板中的纯文本内容
     let text: string = pasteData.getPrimaryText();
 }).catch((err: BusinessError) => {
-    console.error('Failed to get PasteData. Cause: ' + err.message);
+    console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -2433,7 +2393,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
 systemPasteboard.hasPasteData((err: BusinessError, data: boolean) => {
     if (err) {
-        console.error(`Failed to check the PasteData. Cause: ${err.message}`);
+        console.error(`Failed to check the PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     console.info(`Succeeded in checking the PasteData. Data: ${data}`);
@@ -2467,7 +2427,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.hasPasteData().then((data: boolean) => {
     console.info(`Succeeded in checking the PasteData. Data: ${data}`);
 }).catch((err: BusinessError) => {
-    console.error(`Failed to check the PasteData. Cause: ${err.message}`);
+    console.error(`Failed to check the PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -2505,7 +2465,7 @@ let pasteData: pasteboard.PasteData = pasteboard.createPlainTextData('content');
 const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
 systemPasteboard.setPasteData(pasteData, (err, data) => {
     if (err) {
-        console.error('Failed to set PasteData. Cause: ' + err.message);
+        console.error(`Failed to set PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
         return;
     }
     console.info('Succeeded in setting PasteData.');
@@ -2546,7 +2506,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.setPasteData(pasteData).then((data: void) => {
     console.info('Succeeded in setting PasteData.');
 }).catch((err: BusinessError) => {
-    console.error('Failed to set PasteData. Cause: ' + err.message);
+    console.error(`Failed to set PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -2582,7 +2542,7 @@ try {
     let result: boolean = systemPasteboard.isRemoteData();
     console.info(`Succeeded in checking the RemoteData. Result: ${result}`);
 } catch (err) {
-    console.error('Failed to check the RemoteData. Cause: ' + err.message);
+    console.error(`Failed to check the RemoteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -2590,9 +2550,7 @@ try {
 
 getDataSource(): string
 
-获取数据来源的应用名称。
-
-**使用场景：** 当需要识别剪贴板数据的来源应用，用于识别剪贴板数据的来源应用，适用于安全审计、数据追踪或向用户提示数据来源等场景。
+获取剪贴板数据的来源应用名称。适用于安全审计、数据追踪或向用户提示数据来源等场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2620,7 +2578,7 @@ try {
     let result: string = systemPasteboard.getDataSource();
     console.info(`Succeeded in getting DataSource. Result: ${result}`);
 } catch (err) {
-    console.error('Failed to get DataSource. Cause: ' + err.message);
+    console.error(`Failed to get DataSource. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -2663,7 +2621,7 @@ try {
     let result: boolean = systemPasteboard.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
     console.info(`Succeeded in checking the DataType. Result: ${result}`);
 } catch (err) {
-    console.error('Failed to check the DataType. Cause: ' + err.message);
+    console.error(`Failed to check the DataType. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -2671,9 +2629,7 @@ try {
 
 clearDataSync(): void
 
-清空系统剪贴板内容，此接口为同步接口。
-
-**使用场景：** 当需要在关键业务流程中同步清空剪贴板数据，或需要立即确认清空结果的场景。
+清空系统剪贴板内容，此接口为同步接口。适用于需要在关键业务流程中同步清空剪贴板数据，或需要立即确认清空结果的场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2695,7 +2651,7 @@ try {
     systemPasteboard.clearDataSync();
     console.info('Succeeded in clearing the pasteboard.');
 } catch (err) {
-    console.error('Failed to clear the pasteboard. Cause: ' + err.message);
+    console.error(`Failed to clear the pasteboard. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -2736,7 +2692,7 @@ try {
     let result: pasteboard.PasteData = systemPasteboard.getDataSync();
     console.info('Succeeded in getting PasteData.');
 } catch (err) {
-    console.error('Failed to get PasteData. Cause:' + err.message);
+    console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -2744,9 +2700,7 @@ try {
 
 setDataSync(data: PasteData): void
 
-将数据写入系统剪贴板，此接口为同步接口。
-
-**使用场景：** 适用于应用需要在关键业务流程中同步完成剪贴板数据写入，或需要立即确认写入结果的场景。
+将数据写入系统剪贴板，此接口为同步接口。适用于应用需要在关键业务流程中同步完成剪贴板数据写入，或需要立即确认写入结果的场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2776,7 +2730,7 @@ try {
     systemPasteboard.setDataSync(pasteData);
     console.info('Succeeded in setting PasteData.');
 } catch (err) {
-    console.error('Failed to set PasteData. Cause:' + err.message);
+    console.error(`Failed to set PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -2812,7 +2766,7 @@ try {
     let result: boolean = systemPasteboard.hasDataSync();
     console.info(`Succeeded in checking the PasteData. Result: ${result}`);
 } catch (err) {
-    console.error('Failed to check the PasteData. Cause: ' + err.message);
+    console.error(`Failed to check the PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -2820,9 +2774,7 @@ try {
 
 getUnifiedData(): Promise<unifiedDataChannel.UnifiedData>
 
-读取系统剪贴板内容，使用Promise异步回调。
-
-**使用场景：** 适用于需要使用标准化数据结构[UnifiedData](js-apis-data-unifieddatachannel.md#unifieddata)进行跨应用数据交换的场景。当应用需要与其他支持UnifiedData的应用进行数据共享，或需要处理复杂的多类型数据时，使用本接口。与[getData](js-apis-pasteboard.md#getdata14)相比，getUnifiedData提供了更标准化的数据格式。
+读取系统剪贴板内容，使用Promise异步回调。适用于需要使用标准化数据结构[UnifiedData](js-apis-data-unifieddatachannel.md#unifieddata)进行跨应用数据交换的场景。当应用需要与其他支持UnifiedData的应用进行数据共享，或需要处理复杂的多类型数据时，使用本接口。与[getData](js-apis-pasteboard.md#getdata9)相比，getUnifiedData提供了更标准化的数据格式。
 
 应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](../harmonyos-guides/get-pastedata-permission-guidelines.md)。应用[使用粘贴控件](../harmonyos-guides/pastebutton.md)访问剪贴板内容，无需申请权限。
 
@@ -2863,7 +2815,7 @@ systemPasteboard.getUnifiedData().then((data) => {
         }
     }
 }).catch((err: BusinessError) => {
-    console.error('Failed to get UnifiedData. Cause: ' + err.message);
+    console.error(`Failed to get UnifiedData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -2871,9 +2823,7 @@ systemPasteboard.getUnifiedData().then((data) => {
 
 getUnifiedDataSync(): unifiedDataChannel.UnifiedData
 
-读取系统剪贴板内容，此接口为同步接口。
-
-**使用场景：** 适用于需要同步使用标准化数据结构UnifiedData进行跨应用数据交换的场景。当应用需要在关键业务流程中立即获取剪贴板数据，且需要与其他支持UnifiedData的应用进行数据共享时使用。由于获取剪贴板中数据的时延受数据量大小与网络环境的影响，调用此接口可能耗时较长，建议开发者在非UI线程调用。
+读取系统剪贴板内容，此接口为同步接口。适用于需要同步使用标准化数据结构UnifiedData进行跨应用数据交换的场景。当应用需要在关键业务流程中立即获取剪贴板数据，且需要与其他支持UnifiedData的应用进行数据共享时使用。由于获取剪贴板中数据的时延受数据量大小与网络环境的影响，调用此接口可能耗时较长，建议开发者在非UI线程调用。
 
 应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](../harmonyos-guides/get-pastedata-permission-guidelines.md)。应用[使用粘贴控件](../harmonyos-guides/pastebutton.md)访问剪贴板内容，无需申请权限。
 
@@ -2908,7 +2858,7 @@ try {
     let result: unifiedDataChannel.UnifiedData = systemPasteboard.getUnifiedDataSync();
     console.info('Succeeded in getting UnifiedData.');
 } catch (err) {
-    console.error('Failed to get UnifiedData. Cause:' + err.message);
+    console.error(`Failed to get UnifiedData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -2916,9 +2866,7 @@ try {
 
 setUnifiedData(data: unifiedDataChannel.UnifiedData): Promise<void>
 
-将数据写入系统剪贴板，使用Promise异步回调。
-
-**使用场景：** 适用于需要异步写入剪贴板且不阻塞主线程的场景，如UI响应优先的交互流程。与同步接口 [setUnifiedDataSync](js-apis-pasteboard.md#setunifieddatasync12)不同，此接口不会阻塞UI线程，更适合在UI交互中调用。
+将数据写入系统剪贴板，使用Promise异步回调。适用于需要异步写入剪贴板且不阻塞主线程的场景，如UI响应优先的交互流程。与同步接口 [setUnifiedDataSync](js-apis-pasteboard.md#setunifieddatasync12)不同，此接口不会阻塞UI线程，更适合在UI交互中调用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
@@ -2969,7 +2917,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.setUnifiedData(data).then((data: void) => {
     console.info('Succeeded in setting UnifiedData.');
 }).catch((err: BusinessError) => {
-    console.error('Failed to setUnifiedData. Cause: ' + err.message);
+    console.error(`Failed to setUnifiedData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -2977,9 +2925,7 @@ systemPasteboard.setUnifiedData(data).then((data: void) => {
 
 setUnifiedDataSync(data: unifiedDataChannel.UnifiedData): void
 
-将数据写入系统剪贴板，此接口为同步接口。
-
-**使用场景：** 适用于需要同步使用标准化数据结构UnifiedData进行跨应用数据交换的场景。当应用需要在关键业务流程中立即写入剪贴板数据，且需要与其他支持[UnifiedData](js-apis-data-unifieddatachannel.md#unifieddata)的应用进行数据共享时使用。
+将数据写入系统剪贴板，此接口为同步接口。适用于需要同步使用标准化数据结构UnifiedData进行跨应用数据交换的场景。当应用需要在关键业务流程中立即写入剪贴板数据，且需要与其他支持[UnifiedData](js-apis-data-unifieddatachannel.md#unifieddata)的应用进行数据共享时使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
@@ -3026,7 +2972,7 @@ try {
     systemPasteboard.setUnifiedDataSync(plainTextData);
     console.info('Succeeded in setting UnifiedData.');
 } catch (err) {
-    console.error('Failed to set UnifiedData. Cause:' + err.message);
+    console.error(`Failed to set UnifiedData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -3034,11 +2980,7 @@ try {
 
 setAppShareOptions(shareOptions: ShareOption): void
 
-应用设置本应用剪贴板数据的可粘贴范围。
-
-**使用场景：** 适用于应用需要全局限制本应用产生的剪贴板数据的粘贴范围，如金融类应用需要保护用户敏感信息的场景。
-
-**配对调用：**
+应用设置本应用剪贴板数据的可粘贴范围。适用于应用需要全局限制本应用产生的剪贴板数据的粘贴范围，如金融类应用需要保护用户敏感信息的场景。
 
 * 与removeAppShareOptions()方法（删除应用全局的可粘贴的范围）配合使用。
 * 需要删除已设置的分享范围时，调用removeAppShareOptions()。
@@ -3080,11 +3022,7 @@ try {
 
 removeAppShareOptions(): void
 
-删除应用全局的可粘贴的范围。
-
-**使用场景：** 适用于应用需要取消之前设置的粘贴范围限制，恢复剪贴板数据默认粘贴范围的场景。
-
-**配对调用：**
+删除应用全局的可粘贴的范围。适用于应用需要取消之前设置的粘贴范围限制，恢复剪贴板数据默认粘贴范围的场景。
 
 * 与setAppShareOptions()方法（应用设置本应用剪贴板数据的可粘贴范围）配合使用。
 * 删除的是通过setAppShareOptions()设置的分享范围。
@@ -3132,9 +3070,7 @@ try {
 
 detectPatterns(patterns: Array<Pattern>): Promise<Array<Pattern>>
 
-检测**本地**剪贴板中存在的[Pattern](js-apis-pasteboard.md#pattern13)模式，使用Promise异步回调。本地剪贴板指当前设备上的剪贴板数据，不包括跨设备传输的远端剪贴板数据。
-
-**使用场景：** 适用于应用在粘贴数据前需要检测剪贴板内容是否包含特定类型的数据(如URL、邮箱、电话号码等)，以便进行相应处理或提供智能提示的场景。
+检测**本地**剪贴板中存在的[Pattern](js-apis-pasteboard.md#pattern13)模式，使用Promise异步回调。本地剪贴板指当前设备上的剪贴板数据，不包括跨设备传输的远端剪贴板数据。适用于应用在粘贴数据前需要检测剪贴板内容是否包含特定类型的数据(如URL、邮箱、电话号码等)，以便进行相应处理或提供智能提示的场景。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
@@ -3167,13 +3103,13 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.URL, pasteboard.Pattern.EMAIL_ADDRESS];
 
 systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
-    if (patterns.sort().join('')==data.sort().join('')) {
+    if (patterns.sort().join('') == data.sort().join('')) {
       console.info('All needed patterns detected, next get data');
       try {
         let result: pasteboard.PasteData = systemPasteboard.getDataSync();
         console.info('Succeeded in getting PasteData.');
       } catch (err) {
-        console.error('Failed to get PasteData. Cause:' + err.message);
+        console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
       };
     } else {
       console.info("Not all needed patterns detected, no need to get data.");
@@ -3206,7 +3142,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 systemPasteboard.getMimeTypes().then((data: Array<string>) => {
     console.info('Succeeded in getting mimeTypes. mimeTypes: ' + data.sort().join(','));
 }).catch((err: BusinessError) => {
-    console.error('Failed to get mimeTypes. Cause: ' + err.message);
+    console.error(`Failed to get mimeTypes. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 });
 ```
 
@@ -3214,9 +3150,7 @@ systemPasteboard.getMimeTypes().then((data: Array<string>) => {
 
 getDataWithProgress(params: GetDataParams): Promise<PasteData>
 
-获取剪贴板的内容和进度，使用Promise异步回调，不支持对文件夹的拷贝。对于大文件拷贝操作，建议设置进度监听以跟踪拷贝进度，避免在UI线程长时间等待；建议合理设置目标路径以确保有足够的存储空间。
-
-**使用场景：** 适用于应用需要粘贴大文件时，需要显示拷贝进度或需要监听拷贝过程以便在必要时取消操作的场景。
+获取剪贴板的内容和进度，使用Promise异步回调，不支持对文件夹的拷贝。对于大文件拷贝操作，建议设置进度监听以跟踪拷贝进度，避免在UI线程长时间等待；建议合理设置目标路径以确保有足够的存储空间。适用于大文件粘贴场景。在此场景下，可通过此回调显示拷贝进度，或监听拷贝过程以便在必要时取消操作。
 
 应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](../harmonyos-guides/get-pastedata-permission-guidelines.md)。应用[使用粘贴控件](../harmonyos-guides/pastebutton.md)访问剪贴板内容，无需申请权限。
 
@@ -3271,7 +3205,7 @@ struct PasteboardTest {
               let systemPasteboard = pasteboard.getSystemPasteboard();
               await systemPasteboard.setData(pasteData);
               let progressListenerInfo = (progress: pasteboard.ProgressInfo) => {
-                console.info('progressListener success, progress:' + progress.progress);
+                console.info(`progressListener success, progress: ${progress.progress}`);
               };
               let destPath: string = '/data/storage/el2/base/files/';
               let destUri : string = fileUri.getUriFromPath(destPath);
@@ -3284,7 +3218,7 @@ struct PasteboardTest {
               systemPasteboard.getDataWithProgress(params).then((pasteData: pasteboard.PasteData) => {
                 console.info('getDataWithProgress success');
               }).catch((err: BusinessError) => {
-                console.error('Failed to get PasteData. Cause: ' + err.message);
+                console.error(`Failed to get PasteData. errorCode: ${err.code}, errorMessage: ${err.message}.`);
               })
           })
         }
@@ -3326,7 +3260,7 @@ try {
     let result : number = systemPasteboard.getChangeCount();
     console.info(`Succeeded in getting the ChangeCount. Result: ${result}`);
 } catch (err) {
-    console.error(`Failed to get the ChangeCount. Cause: ${err.message}`);
+    console.error(`Failed to get the ChangeCount. errorCode: ${err.code}, errorMessage: ${err.message}.`);
 };
 ```
 
@@ -3343,8 +3277,6 @@ type UpdateCallback = () => void
 onRemoteUpdate(callback: UpdateCallback): void
 
 订阅跨设备剪贴板内容变化事件，当远端设备系统剪贴板中内容变化时触发用户程序的回调。
-
-**配对调用：**
 
 * 订阅后必须在不再需要监听时调用[offRemoteUpdate](js-apis-pasteboard.md#offremoteupdatecallback-updatecallback22)取消订阅。
 * 未取消订阅会导致回调函数持续监听远端变化，造成内存泄漏。
@@ -3373,8 +3305,6 @@ systemPasteboard.onRemoteUpdate(listener);
 offRemoteUpdate(callback?: UpdateCallback): void
 
 取消订阅跨设备剪贴板内容变化事件。
-
-**配对调用：**
 
 * 与onRemoteUpdate()方法配合使用，取消订阅的是通过onRemoteUpdate()订阅的事件监听
 * 必须在已订阅的情况下才能调用

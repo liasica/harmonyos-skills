@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-pasteboar
 title: 使用剪贴板进行复制粘贴
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 使用剪贴板进行复制粘贴
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0df46a07fa478531df6dee2009fb50f6776a2c54a71c6b909458e219933233cd
+scraped_at: 2026-09-24T06:50:07+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:9968fdc71568d6e8bc1978c5595c2e1fdbb6f8a186498348eff82f4c3a7b2376
 ---
 
 ## 场景介绍
@@ -23,7 +23,7 @@ content_hash: sha256:0df46a07fa478531df6dee2009fb50f6776a2c54a71c6b909458e219933
 * 剪贴板为应用提供应用数据的复制粘贴能力，支持在应用内或应用间共享复制或剪切的应用数据。剪贴板默认支持文本、HTML富文本、文件URI、PixelMap通用数据格式类型数据，同时也支持应用自定义扩展类型数据处理。
 * 剪贴板数据定义对应PasteData，复制应用通过向剪贴板服务写入PasteData实现数据复制，粘贴应用通过读取剪贴板服务的PasteData实现数据粘贴，PasteData整体结构示意如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/9ri3msTkSIeeO7wl5cFRCg/zh-cn_image_0000002733274766.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/WlnaN9coRsGl48LBuUsamw/zh-cn_image_0000002739891342.png)
 
 * Record对应复制数据的不同内容片段；
 * Entry对应同一份数据的不同格式；
@@ -87,16 +87,14 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
       await systemPasteboard.setData(pasteData);
       hilog.info(0xFF00, '[Sample_pasteboard]', 'Set data to pasteboard successfully');
     } catch (error) {
-      hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to set data to pasteboard, error: ${error.message}`);
+      hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to set data to pasteboard, error: ${error}`);
     }
   }
-  export async function getPlainData(): Promise<string> {
+  export async function getPlainData(type: string): Promise<string> {
+    // 从系统剪贴板中读取数据
     try {
-      // 从系统剪贴板中读取数据
       let data = await systemPasteboard.getData();
-      // 从剪贴板数据中获取条目数量
       let recordCount = data.getRecordCount();
-      // 从剪贴板数据中获取对应条目信息
       let result = '';
       for (let i = 0; i < recordCount; i++) {
         let record = data.getRecord(i).toPlainText();
@@ -105,7 +103,7 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
       }
       return result;
     } catch (error) {
-      hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to get data from pasteboard, error: ${error.message}`);
+      hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to get data from pasteboard, error: ${error}`);
       return '';
     }
   }
@@ -146,25 +144,27 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
     let data = new unifiedDataChannel.UnifiedData();
     data.addRecord(record);
     // 2.向系统剪贴板中存入一条PlainText数据
-    systemPasteboard.setUnifiedData(data).then((data: void) => {
+    try {
+      await systemPasteboard.setUnifiedData(data);
       hilog.info(0xFF00, '[Sample_pasteboard]', 'Succeeded in setting UnifiedData.');
       // 存入成功，处理正常场景
-    }).catch((err: BusinessError) => {
+    } catch (err) {
       hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to set UnifiedData. Cause: ${err.message}`);
       // 处理异常场景
-    });
+    };
     // 3.从系统剪贴板中读取这条text数据
-    systemPasteboard.getUnifiedData().then((data) => {
-      let records: unifiedDataChannel.UnifiedRecord[] = data.getRecords();
+    try {
+      let pasteData = await systemPasteboard.getUnifiedData();
+      let records: unifiedDataChannel.UnifiedRecord[] = pasteData.getRecords();
       for (let j = 0; j < records.length; j++) {
         if (records[j].getType() === uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) {
           let text = records[j].getValue() as uniformDataStruct.PlainText;
           hilog.info(0xFF00, '[Sample_pasteboard]', `${j + 1}.${text.textContent}`);
         }
       }
-    }).catch((err: BusinessError) => {
+    } catch (err) {
       hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to get UnifiedData. Cause: ${err.message}`);
       // 处理异常场景
-    });
+    };
   }
 ```

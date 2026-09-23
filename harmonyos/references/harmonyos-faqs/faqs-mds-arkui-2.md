@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-mds-arkui-
 title: 画中画如何获取当前视频播放状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 画中画如何获取当前视频播放状态
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:e0584f441715021d1cc27795692def6664e8730c01cfa1813bc828d90b130b79
+scraped_at: 2026-09-24T06:56:59+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:98c069c28b07bfaf01636db9519a6ebfdd056ae06a3356aa31aa7971647de448
 ---
 
 ## 问题现象
 
-画中画播放视频时，会出现画中画中视频在播放，播放控件还是暂停的情况，画中画如何获取当前视频播放状态来手动修改播放控件？
+画中画播放视频时，会出现画中画视频在播放，播放控件还是暂停的情况，画中画如何获取当前视频播放状态来手动修改播放控件？
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/YiVDCZglRKKEgB65EbXqhg/zh-cn_image_0000002655968546.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ajj-VhxARTKPCmPGxehkqg/zh-cn_image_0000002735472486.png "点击放大")
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/BrgWrj9HQBiepa7XfR_4KQ/zh-cn_image_0000002655808762.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/dgtzuPVnTjKC_oHrdq7vpg/zh-cn_image_0000002764991939.png "点击放大")
 
 ## 背景知识
 
@@ -29,60 +29,58 @@ content_hash: sha256:e0584f441715021d1cc27795692def6664e8730c01cfa1813bc828d90b1
 ## 解决方案
 
 * 拉起画中画前，可以调用updatePiPControlStatus接口，更新播放控件状态，来保持视频状态和播放控件状态一致。
-* 使用on('stateChange')监听画中画生命周期，在画中画启动状态STARTED生命周期中使用AVPlayerState获取当前视频的播放状态，根据当前视频的播放状态使用updatePiPControlStatus方法通过[PiPControlType](../harmonyos-references/js-apis-pipwindow.md#pipcontroltype12)和[PiPControlStatus](../harmonyos-references/js-apis-pipwindow.md#pipcontrolstatus12)两个参数，分别设置当前画中画的控制面板控件类型和控制面板控件状态。
-
-  示例代码如下：
+* 使用on('stateChange')监听画中画生命周期，在画中画启动状态STARTED生命周期中使用AVPlayerState获取当前视频的播放状态，根据当前视频的播放状态使用updatePiPControlStatus方法通过[PiPControlType](../harmonyos-references/js-apis-pipwindow.md#pipcontroltype12)和[PiPControlStatus](../harmonyos-references/js-apis-pipwindow.md#pipcontrolstatus12)两个参数，分别设置当前画中画的控制面板控件类型和控制面板控件状态。示例代码如下：
 
   ```ts
   this.pipController.on('stateChange', (state: PiPWindow.PiPState, reason: string) => {
-          switch (state) {
-            case PiPWindow.PiPState.ABOUT_TO_START:
-              this.curState = 'ABOUT_TO_START';
-              this.curError = $r('app.string.current_error_hint');
-              break;
-            case PiPWindow.PiPState.STARTED:
-              this.curState = 'STARTED';
-              this.curError = $r('app.string.current_error_hint');
-              if (this.player?.State == "playing") { // 如果视频正在播放，设置视频播放控制面板中播放/暂停控件为播放状态
-                let controlType: PiPWindow.PiPControlType = PiPWindow.PiPControlType.VIDEO_PLAY_PAUSE;
-                let status: PiPWindow.PiPControlStatus = PiPWindow.PiPControlStatus.PLAY;
-                if (this.pipController != undefined) {
-                  this.pipController.updatePiPControlStatus(controlType, status);
-                }
-              } else if (this.player?.State == "paused") { // 如果视频正在暂停，设置视频播放控制面板中播放/暂停控件为暂停状态
-                let controlType: PiPWindow.PiPControlType = PiPWindow.PiPControlType.VIDEO_PLAY_PAUSE;
-                let status: PiPWindow.PiPControlStatus = PiPWindow.PiPControlStatus.PAUSE;
-                if (this.pipController != undefined) {
-                  this.pipController.updatePiPControlStatus(controlType, status);
-                }
-              }
-              break;
-            case PiPWindow.PiPState.ABOUT_TO_STOP:
-              this.curState = 'ABOUT_TO_STOP';
-              this.curError = $r('app.string.current_error_hint');
-              break;
-            case PiPWindow.PiPState.STOPPED:
-              this.player?.updatePlayStatus(true);
-              this.player?.play();
-              this.curState = 'STOPPED';
-              this.curError = $r('app.string.current_error_hint');
-              break;
-            case PiPWindow.PiPState.ABOUT_TO_RESTORE:
-              this.curState = 'ABOUT_TO_RESTORE';
-              this.curError = $r('app.string.current_error_hint');
-              break;
-            case PiPWindow.PiPState.ERROR:
-              this.curState = 'ERROR';
-              this.curError = reason;
-              break;
-            default:
-              break;
-          }
-          Logger.info(`[${TAG}] onStateChange: ${this.curState}, reason: ${reason}`);
-        });
+  switch (state) {
+  case PiPWindow.PiPState.ABOUT_TO_START:
+  this.curState = 'ABOUT_TO_START';
+  this.curError = $r('app.string.current_error_hint');
+  break;
+  case PiPWindow.PiPState.STARTED:
+  this.curState = 'STARTED';
+  this.curError = $r('app.string.current_error_hint');
+  if (this.player?.State == "playing") { // 如果视频正在播放，设置视频播放控制面板中播放/暂停控件为播放状态
+  let controlType: PiPWindow.PiPControlType = PiPWindow.PiPControlType.VIDEO_PLAY_PAUSE;
+  let status: PiPWindow.PiPControlStatus = PiPWindow.PiPControlStatus.PLAY;
+  if (this.pipController != undefined) {
+  this.pipController.updatePiPControlStatus(controlType, status);
+  }
+  } else if (this.player?.State == "paused") { // 如果视频正在暂停，设置视频播放控制面板中播放/暂停控件为暂停状态
+  let controlType: PiPWindow.PiPControlType = PiPWindow.PiPControlType.VIDEO_PLAY_PAUSE;
+  let status: PiPWindow.PiPControlStatus = PiPWindow.PiPControlStatus.PAUSE;
+  if (this.pipController != undefined) {
+  this.pipController.updatePiPControlStatus(controlType, status);
+  }
+  }
+  break;
+  case PiPWindow.PiPState.ABOUT_TO_STOP:
+  this.curState = 'ABOUT_TO_STOP';
+  this.curError = $r('app.string.current_error_hint');
+  break;
+  case PiPWindow.PiPState.STOPPED:
+  this.player?.updatePlayStatus(true);
+  this.player?.play();
+  this.curState = 'STOPPED';
+  this.curError = $r('app.string.current_error_hint');
+  break;
+  case PiPWindow.PiPState.ABOUT_TO_RESTORE:
+  this.curState = 'ABOUT_TO_RESTORE';
+  this.curError = $r('app.string.current_error_hint');
+  break;
+  case PiPWindow.PiPState.ERROR:
+  this.curState = 'ERROR';
+  this.curError = reason;
+  break;
+  default:
+  break;
+  }
+  Logger.info(`[${TAG}] onStateChange: ${this.curState}, reason: ${reason}`);
+  });
   ```
 
-  详细代码，参考：[实现画中画效果。](https://gitee.com/harmonyos_samples/window-pip/repository/archive/master.zip)
+  详细代码，参考：[实现画中画效果。](https://gitee.com/harmonyos_samples/window-pip)
 
 ## 常见FAQ
 

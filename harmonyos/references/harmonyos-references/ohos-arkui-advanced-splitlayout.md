@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SplitLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SplitLayout
 category: harmonyos-references
-scraped_at: 2026-09-21T06:21:06+08:00
+scraped_at: 2026-09-24T06:52:37+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:bf547a96fa1a126107f5a95b584e3e1cad16cae638039e68d6324bebc19c4bf8
+content_hash: sha256:600c3eea5c09862e5aedd973169a481781689dea46d1229fd61a4d1e7db9c03e
 ---
 
 SplitLayout组件提供了常用的页面布局样式，主要用于展示图片、标题和内容容器的组合布局，适用于需要自适应不同屏幕尺寸的分栏展示场景（如详情页、设置页等）。支持自适应不同屏幕宽度（小于等于600vp、大于600vp且小于等于840vp、大于840vp三种布局），解决了在不同尺寸设备上需要展示不同布局样式的需求，提升页面适配性和用户体验。
@@ -81,12 +81,12 @@ struct Index {
 
 小于等于600vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/avkTyjXqSi2UiH4L3W7vkg/zh-cn_image_0000002733436616.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/V4G8RTc2RhiOiUk0unaNrg/zh-cn_image_0000002739733410.png)
 
 大于600vp且小于等于840vp的布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/8SeuWifqS5iNfc-APFvOxQ/zh-cn_image_0000002762996137.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/aLUpoCJdTy-3RxihoBvtUA/zh-cn_image_0000002769332757.png)
 
 大于840vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/earcDNEzRTSZH8zKAd4UYA/zh-cn_image_0000002762836255.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/iG1tY_LLS9uF9Exv0kRIgg/zh-cn_image_0000002769452619.png)

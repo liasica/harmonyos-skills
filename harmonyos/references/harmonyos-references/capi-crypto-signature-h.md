@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: crypto_signature.h
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 头文件 > crypto_signature.h
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:21+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:b99fee7a84ade3c39b2943e322c7bdd96b8d5bbd9dbf6982c142b229ec02c98b
+scraped_at: 2026-09-24T06:53:27+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:9ef31a517868df1f9a2ffddbaf6924c06db8c1161b300267088969e389eec92f
 ---
 
 ## 概述
@@ -573,7 +573,7 @@ OH_Crypto_ErrCode OH_CryptoEccSignatureSpec_Create(Crypto_DataBlob *eccSignature
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Crypto\_ErrCode](capi-crypto-common-h.md#oh_crypto_errcode) | CRYPTO\_SUCCESS：操作成功。  CRYPTO\_PARAMETER\_CHECK\_FAILED：spec为NULL或spec不为NULL。  CRYPTO\_NOT\_SUPPORTED：不支持的操作或算法。  CRYPTO\_MEMORY\_ERROR：内存操作失败。  CRYPTO\_OPERTION\_ERROR：解析eccSignature失败，或eccSignature包含无效的DER编码ECDSA-Sig-Value。 |
+| [OH\_Crypto\_ErrCode](capi-crypto-common-h.md#oh_crypto_errcode) | CRYPTO\_SUCCESS：操作成功。  CRYPTO\_PARAMETER\_CHECK\_FAILED：spec为NULL或\*spec不为NULL。  CRYPTO\_NOT\_SUPPORTED：不支持的操作或算法。  CRYPTO\_MEMORY\_ERROR：内存操作失败。  CRYPTO\_OPERTION\_ERROR：解析eccSignature失败，或eccSignature包含无效的DER编码ECDSA-Sig-Value。 |
 
 **参考：**
 

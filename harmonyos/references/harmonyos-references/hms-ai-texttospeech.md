@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hms-ai-te
 title: textToSpeech（文本转语音）
 breadcrumb: API参考 > AI > Core Speech Kit（基础语音服务） > ArkTS API > textToSpeech（文本转语音）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f8ec2bd51b5774584eee59648c9cedb2c0bcd2f44cf03ad15887ecd7c2e9a5a1
+scraped_at: 2026-09-24T06:55:43+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:f7e6144734f2972f30a8cd1e19e570eebbc8de57e3ab92e80ffe5b14a8d4f335
 ---
 
 文本转语音服务提供将文本信息转换为语音并进行播报的能力，便于用户与设备进行互动，实现实时语音交互，文本播报。
@@ -967,10 +967,6 @@ onComplete(requestId: string, response: CompleteResponse): void
 | requestId | string | 是 | 请求ID。唯一标识一条请求。  支持英文字符，数字和中文，长度不限制。 |
 | response | [CompleteResponse](hms-ai-texttospeech.md#completeresponse) | 是 | 完成播报相关信息。 |
 
-**说明** 
-
-onData 可能存在数据过大的情况，无法一次性返回全部数据，请继续接收 onData 回调。
-
 **示例：**
 
 ```typescript
@@ -1024,6 +1020,8 @@ onData?: OnDataCallback
 **说明** 
 
 调用方在播放音频前需要按照[sequence](hms-ai-texttospeech.md#synthesisresponse)对音频流进行排序, 避免播放时音频流顺序错乱。
+
+onData可能存在数据过大的情况，无法一次性返回全部数据，请继续接收onData回调。
 
 **元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
 

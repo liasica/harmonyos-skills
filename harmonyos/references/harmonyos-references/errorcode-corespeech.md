@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > AI > Core Speech Kit（基础语音服务） > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:48+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:240fff11b58813ee89d1dc58fddbea4e72ab167e63d84822a7a5e7c1b70d32a0
+scraped_at: 2026-09-24T06:55:42+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:3b4ef51f08cc09d565f34a1ec0cb0950e98a3c25021a7d1457af72656d2b84f8
 ---
 
 **说明** 
@@ -174,13 +174,15 @@ Internal Service Error.
 
 **可能原因**
 
-内部服务错误原因导致无法调用引擎功能。
+1.内部服务错误原因导致无法调用引擎功能。
+
+2.系统异常，导致服务进程被中止。
 
 **处理步骤**
 
-根据具体错误信息情况处理。
+可以重新调用接口重试，根据具体错误信息情况处理。
 
-如果无法解决，建议在线提单，详细步骤请见[在线提单指导](https://developer.huawei.com/consumer/cn/support/feedback/#/)。
+若您的问题仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
 
 ## 1002200010 语音识别未启动
 

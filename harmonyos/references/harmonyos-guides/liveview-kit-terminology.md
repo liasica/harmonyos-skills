@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-kit-
 title: Live View Kit术语
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > Live View Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:40+08:00
+scraped_at: 2026-09-24T06:50:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:213b5b8c99eb4705cf175c0604f653f1ab5a4f4c46d8316c48efcf1609d214e6
+content_hash: sha256:4a31814b2e34904e4351c3f7b27d7ceadfaa92579efb1e998792008d32c78a88
 ---
 
 ## Location-based Live View Alert；基于地理位置的实况窗提醒
@@ -16,7 +16,7 @@ content_hash: sha256:213b5b8c99eb4705cf175c0604f653f1ab5a4f4c46d8316c48efcf1609d
 
 卡片模板设计通过固定区、辅助区、扩展区的三分区布局，实现实时活动信息的高效展示和交互逻辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/GyY2XRzqRXiGIZmltJx7pg/zh-cn_image_0000002733435290.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/np77_jD5Qd-hq_UrUOu1Gw/zh-cn_image_0000002739732090.png)
 
 ### Fixed area；固定区
 

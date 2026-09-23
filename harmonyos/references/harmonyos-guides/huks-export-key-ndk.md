@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-export-k
 title: 密钥导出(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 密钥导出 > 密钥导出(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d0027e7dddc5d0b830c4635f2cb09e41aaae351ec748b0f57ea5288ef207aca5
+scraped_at: 2026-09-24T06:50:01+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:802bd37b7e304007e56c1e525b46c413a898649ab6686f28389010f216d129a3
 ---
 
 业务需要获取持久化存储的非对称密钥的公钥时使用，当前支持ECC/RSA/ED25519/X25519/SM2的公钥导出。
@@ -29,7 +29,7 @@ target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
    * keyAlias：密钥别名，封装成[OH\_Huks\_Blob](../harmonyos-references/capi-hukstypeapi-oh-huks-blob.md)结构，密钥别名最大长度为128字节。
    * paramSetIn：预留参数，暂不需要处理，传空即可。
    * key：用于放置导出的公钥，为[OH\_Huks\_Blob](../harmonyos-references/capi-hukstypeapi-oh-huks-blob.md)类型对象，需要业务提前申请好内存，需申请足够容纳获取到的密钥属性集的内存大小。
-2. 调用接口[OH\_Huks\_GetKeyItemParamSet](../harmonyos-references/capi-native-huks-api-h.md#oh_huks_getkeyitemparamset)，传入上述参数。
+2. 调用接口[OH\_Huks\_ExportPublicKeyItem](../harmonyos-references/capi-native-huks-api-h.md#oh_huks_exportpublickeyitem)，传入上述参数。
 3. 返回值为成功码/错误码，导出公钥以标准的X.509规范的DER格式封装在参数key中，具体请参考[公钥材料格式](huks-concepts.md#公钥材料格式)。
 
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.util.TreeSet (非线性容器TreeSet)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.TreeSet (非线性容器TreeSet)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8ddad87692bd0d78991187446cb6222f5eed5612016ecc74edf5e016191d6e72
+scraped_at: 2026-09-24T06:52:06+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:177069aa4bd6495bafe4c793e748ca02fd6e7a8a3a7dc96099ae99f5c696d549
 ---
 
 TreeSet基于[TreeMap](js-apis-treemap.md)实现，在TreeSet中，仅处理元素的值（value），不单独处理键（key）。TreeSet的每个元素在底层TreeMap中同时作为key和value存储，因此元素中value唯一且有序。关于TreeMap的详细实现机制，请参见[TreeMap](js-apis-treemap.md)。
@@ -567,7 +567,11 @@ forEach(callbackFn: (value?: T, key?: T, set?: TreeSet<T>) => void, thisArg?: Ob
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 遍历实例对象中每个元素时调用的回调函数，开发者可在回调中对元素及其下标进行自定义处理。 |
-| thisArg | Object | 否 | callbackFn被调用时用作this值。当需要在回调函数中使用特定的this上下文（如访问外部对象属性）时传入此参数。不传入时默认值为当前实例对象，回调函数中的this指向TreeSet实例本身。 |
+| thisArg | Object | 否 | callbackFn被调用时用作this值。不传入时默认值为undefined。 |
+
+**说明** 
+
+不建议使用thisArg参数。ArkTS中，箭头函数的this由外层上下文决定，thisArg无法改变回调函数中的this；普通函数中则不允许使用this。因此该参数实际不生效。如需在回调函数中访问外部对象，建议直接在箭头函数中引用。
 
 callbackFn的参数说明：
 

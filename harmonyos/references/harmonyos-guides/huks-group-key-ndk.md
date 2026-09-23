@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-group-ke
 title: 群组密钥(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 群组密钥 > 群组密钥(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9bd2a31afd2189050c32eb33edc81f21d9bf7028ea6664761f93b385a4631bbc
+scraped_at: 2026-09-24T06:50:02+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:83beec738baab81fee77b1a0fff6327702981335c4e3fb19a61388f00cdd3679
 ---
 
 从API 23开始，HUKS支持群组密钥功能。群组密钥支持的HUKS密钥操作及详细介绍参考[群组密钥介绍](huks-group-key-overview.md)，本文档以[AES/CBC/PKCS7加解密](huks-group-key-ndk.md#aescbcpkcs7加解密)、[X25519非对称密钥协商](huks-group-key-ndk.md#x25519非对称密钥协商)、[PBKDF2派生密钥](huks-group-key-ndk.md#pbkdf2派生密钥)为例展示群组密钥使用方法。
@@ -103,7 +103,6 @@ OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet, const struct OH_
     }
     return ret;
 }
-uint32_t OH_HUKS_TAG_KEY_ACCESS_GROUP = 5 << 28 | 523;
 static const uint32_t IV_SIZE = 16;
 static uint8_t IV[IV_SIZE] = { 0 };
 static OH_Crypto_ErrCode ret = genRandomNumber(IV_SIZE, IV);
@@ -268,7 +267,7 @@ static napi_value EncDecKey(napi_env env, napi_callback_info info)
         if (ohResult.errorCode != OH_HUKS_SUCCESS) {
             break;
         }
-        char tmpInData[] = "AES_ECB_INDATA_1";
+        char tmpInData[] = "AES_CBC_INDATA_1";
         struct OH_Huks_Blob inData = { (uint32_t)strlen(tmpInData), (uint8_t *)tmpInData };
         uint8_t cipher[AES_COMMON_SIZE] = {0};
         struct OH_Huks_Blob cipherText = {AES_COMMON_SIZE, cipher};

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: 人脸核身实人验证场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 用户身份验证服务 > 人脸核身实人验证场景
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:44+08:00
+scraped_at: 2026-09-24T06:50:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:57f4893153d82cf978fdc19008ebfb03eecadb8cdc39358aa9969913e205cfaa
+content_hash: sha256:8e18f7a25218fb64626147ed813b0b5cddf905e45fd903b10b32e4b7636c7e53
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:57f4893153d82cf978fdc19008ebfb03eecadb8cdc39358aa9969913e20
 
 人脸核身实人验证页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/J_Enw9LRTHuwYev8sAgc4Q/zh-cn_image_0000002762994925.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/5M8bmdxpRB2BLV6WdjiTHA/zh-cn_image_0000002769331551.png)
 
 ## 约束与限制
 
@@ -39,7 +39,7 @@ content_hash: sha256:57f4893153d82cf978fdc19008ebfb03eecadb8cdc39358aa9969913e20
 
 开发者通过接入人脸核身实人验证能力，可以简便快捷的实现用户信息验证及本人操作的验证。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/N7xReTS5QDuTaTCqWZA77g/zh-cn_image_0000002762835037.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/SVXIe6GpQRyWgT1LcOSWsg/zh-cn_image_0000002769451413.png)
 
 1. 开发者客户端收集用户实名信息加密后请求开发者服务端发起人脸核身实人预验证。
 2. 开发者服务端请求Payment Kit服务端[人脸核身实人预验证](../harmonyos-references/payment-api-common-face-verifactaion-preverify.md)接口获取预验证ID（preVerifyId）。

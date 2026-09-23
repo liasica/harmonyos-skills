@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: Web组件拦截能力的使用
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > Web组件拦截能力的使用
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:31+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:5c72ad1bacf3cb28603e7049a92cb4290b23ee769f261ada7a5f05e18d0f2ca3
+scraped_at: 2026-09-24T06:49:46+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:f6733f18e18b9a2a44ecdb42734781e6ad28d8c06bddcdcbf3d8d8b496997bc7
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ ArkWeb提供了多种拦截能力，使开发者能够监控、修改和记录�
 | 使用场景 | 页面跳转控制 | 网络请求拦截 | 网络请求拦截 |
 | --- | --- | --- | --- |
 | 方案 | onLoadIntercept | onInterceptRequest | WebSchemeHandler |
-| 典型应用场景 | • [应用的跳转与拉起](../best-practices/bpta-web-app-jump-and-pull-up.md)  • [请求重定向](web-component-intercept-capab-usage.md#请求重定向)  • [页面白名单配置](web-component-intercept-capab-usage.md#页面白名单配置) | • [本地资源替换](web-component-intercept-capab-usage.md#本地资源替换)  • [自定义资源加载策略](web-component-intercept-capab-usage.md#自定义资源加载策略)  • 提示恶意请求 | 除支持 onInterceptRequest 的应用场景外，还支持：  • [配置公共请求头](web-component-intercept-capab-usage.md#配置公共请求头)  • 跨域请求  • POST请求拦截 |
+| 典型应用场景 | • [Web和应用的跳转与拉起](navigating-between-web-and-apps.md)  • [请求重定向](web-component-intercept-capab-usage.md#请求重定向)  • [页面白名单配置](web-component-intercept-capab-usage.md#页面白名单配置) | • [本地资源替换](web-component-intercept-capab-usage.md#本地资源替换)  • [自定义资源加载策略](web-component-intercept-capab-usage.md#自定义资源加载策略)  • 提示恶意请求 | 除支持 onInterceptRequest 的应用场景外，还支持：  • [配置公共请求头](web-component-intercept-capab-usage.md#配置公共请求头)  • 跨域请求  • POST请求拦截 |
 | 拦截时机 | Web组件加载url之前 | 请求发起前 | 请求发起前 |
 | 拦截范围 | 页面主URL的请求（包括页面中iframe的导航行为，不包括子资源的请求） | 页面主URL的请求和子资源的请求 | 页面主URL的请求和子资源的请求 |
 | 数据访问能力 | 支持获取请求的 URL、是否为主 frame 等相关信息  参考：[WebResourceRequest](../harmonyos-references/arkts-basic-components-web-webresourcerequest.md) | 支持获取请求的 URL、是否为主 frame 等相关信息  参考：[WebResourceRequest](../harmonyos-references/arkts-basic-components-web-webresourcerequest.md) | 除支持获取请求的 URL、是否为主 frame 等相关信息外，还支持获取 POST 请求体和 buffer 类型数据  参考：[WebSchemeHandlerRequest](../harmonyos-references/arkts-apis-webview-webschemehandlerrequest.md) |
@@ -39,7 +39,7 @@ ArkWeb提供了多种拦截能力，使开发者能够监控、修改和记录�
 
 **核心用法**：
 
-* **[应用的跳转与拉起](../best-practices/bpta-web-app-jump-and-pull-up.md)**：拦截特定地址的请求，拉起指定应用或跳转其他页面处理，用于实现拦截支付类标签链接跳转到支付应用进行支付，或拦截地址类标签链接跳转到地图类应用进行导航等。
+* **[Web和应用的跳转与拉起](navigating-between-web-and-apps.md)**：拦截特定地址的请求，拉起指定应用或跳转其他页面处理，用于实现拦截支付类标签链接跳转到支付应用进行支付，或拦截地址类标签链接跳转到地图类应用进行导航等。
 * **[请求重定向](web-component-intercept-capab-usage.md#请求重定向)**：拦截特定地址的请求，并将访问重定向到新的目标地址，用于在域名更换或登录引导时，将用户访问跳转到正确的页面。
 * **[页面白名单配置](web-component-intercept-capab-usage.md#页面白名单配置)**：配置链接黑名单/白名单，拦截/放行指定URL请求，确保Web组件的请求在信任范围内，用于实现阻止用户访问危险网页等功能。
 
@@ -77,7 +77,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 
 **图 1** 基于onLoadIntercept()的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/tExa1AAqTpyUlMZrEtaVqg/zh-cn_image_0000002733274454.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/HDDOW7MvTlq-F18x-YXmYw/zh-cn_image_0000002739891036.png)
 
 ### 请求重定向
 
@@ -87,7 +87,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 
 **图 2** 请求重定向
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/cx94bFESRd26qO5Xpn55dA/zh-cn_image_0000002733434336.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/vA1se0L0T66ElHro5FxQnA/zh-cn_image_0000002739731158.png)
 
 **实现原理**
 
@@ -128,7 +128,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
       */
      private normalizeUrl(url: string): string {
        return url
-         .replace(/^(?:[a-zA-Z]+:)?\/\//, '')
+         .replace(/^(?:[a-zA-Z]+:)?[/]{2}/, '')
          .replace(/\/+$/, '')
          .trim();
      }
@@ -175,7 +175,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 
 **图 3** 页面白名单配置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/uE19yc-XRSuGAPpbYRi9GQ/zh-cn_image_0000002762993859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Gsrny1VvQ0y4znEs9B7RCQ/zh-cn_image_0000002769330507.png)
 
 **实现原理**
 
@@ -211,7 +211,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
        let normalized = url.trim().toLowerCase();
        // ...
        normalized = normalized
-         .replace(/^(?:[a-z0-9+.-]+:)?\/\//, '') // strip protocol-like prefixes
+         .replace(/^(?:[a-z0-9+.-]+:)?[/]{2}/, '') // strip protocol-like prefixes
          .split(/[/?#]/)[0]; // drop everything after domain
        return normalized.replace(/:+$/, '').replace(/\/+$/, '');
      }
@@ -300,7 +300,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 4** 基于onInterceptRequest()的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ntQxl5m2T4O3AkibOHk7Yw/zh-cn_image_0000002762833973.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/NHfRJxIZS8Okqj6OfZNx-A/zh-cn_image_0000002769450369.png)
 
 ### 本地资源替换
 
@@ -310,7 +310,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 5** 本地资源替换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ITeicG31Sdmppx1uMom4Qg/zh-cn_image_0000002733274456.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/v3rFZMT-SWqT5PBPM9AyfA/zh-cn_image_0000002739891038.png)
 
 **实现原理**
 
@@ -458,11 +458,11 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 6** Wi-Fi网络环境下加载图片资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/YBwf6hxgRza-qqpngHtWNQ/zh-cn_image_0000002733434338.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/VSw2a_TeRZusrzZuwy7LMA/zh-cn_image_0000002739731160.png)
 
 **图 7** 非Wi-Fi网络环境下加载本地占位图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/1_z6vNG5QXK7QlUSYiqngg/zh-cn_image_0000002762993861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/lutWWkfMSY6TsrdcR02BRQ/zh-cn_image_0000002769330509.png)
 
 **实现原理**
 
@@ -577,7 +577,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 8** 基于WebSchemeHandler的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/HvHiPIFOR8CsmZo3UchvJA/zh-cn_image_0000002762833975.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/v64EpcDiSHiOa1l5Svvkdg/zh-cn_image_0000002769450371.png)
 
 ### 配置公共请求头
 
@@ -587,7 +587,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 9** 配置公共请求头
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/rCVeQB3lTaSbFaHAKHDV3g/zh-cn_image_0000002733274458.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Os97EV0pQHmmgGWJ241CCg/zh-cn_image_0000002739891040.png)
 
 **实现原理**
 

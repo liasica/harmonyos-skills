@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_huks_type.h
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > C API > 头文件 > native_huks_type.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4273be410e3bef6b3572e816fea7fdce3518bc2392cdedc2b4770405c4384538
+scraped_at: 2026-09-24T06:53:34+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:4229593d6b63d33ad0ff845c9664d1407b527818b9b00f9740287dc141289a8d
 ---
 
 ## 概述
@@ -298,7 +298,7 @@ OH\_HUKS\_UNWRAP\_SUITE\_SM2\_SM4\_ECB\_NOPADDING对应的密钥材料格式：
 | --- | --- |
 | OH\_HUKS\_UNWRAP\_SUITE\_X25519\_AES\_256\_GCM\_NOPADDING = 1 | 密文导入密钥材料格式（Length-Value格式）采用X25519密钥协商同时采用AES-256-GCM加解密。具体材料格式见上方枚举描述。 |
 | OH\_HUKS\_UNWRAP\_SUITE\_ECDH\_AES\_256\_GCM\_NOPADDING = 2 | 密文导入密钥材料格式（Length-Value格式）采用ECDH-p256密钥协商同时采用AES-256-GCM加解密。具体材料格式见上方枚举描述。 |
-| OH\_HUKS\_UNWRAP\_SUITE\_SM2\_SM4\_ECB\_NOPADDING = 5 | 密文导入密钥材料格式（Length-Value格式）使用临时SM4密钥加密导入密钥，使用已导入HUKS的SM2密钥加密SM4密钥。具体材料格式见上方枚举描述。  \*\*起始版本：\*\*23 |
+| OH\_HUKS\_UNWRAP\_SUITE\_SM2\_SM4\_ECB\_NOPADDING = 5 | 密文导入密钥材料格式（Length-Value格式）使用临时SM4密钥加密导入密钥，使用已导入HUKS的SM2密钥加密SM4密钥。具体材料格式见上方枚举描述。  **起始版本：** 23 |
 
 ### OH\_Huks\_KeyGenerateType
 

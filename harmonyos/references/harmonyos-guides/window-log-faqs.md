@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-log-fa
 title: 窗口开发常见日志问题与定位
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发常见日志问题与定位
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:94455dd221f498b13d43a7ddd46ed6e557652d7e47de0b500c9b4fedb800e731
+scraped_at: 2026-09-24T06:49:45+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:3aa1565e86774127d1a6e2b5e4c346d85a7cc2c6a753620b4b3777b2b5a2709b
 ---
 
 ## 使用窗口hidumper命令查看窗口信息定位问题
@@ -159,8 +159,8 @@ ParentWindowId: 0
 | DecoStatus | 装饰状态 | true：表示窗口装饰已启用（有标题栏等）；false：表示窗口无装饰。 |
 | IsPrivacyMode | 是否隐私模式 | 窗口隐私模式。true：表示为隐私窗口；false：表示为正常窗口。 |
 | WindowRect | 窗口矩形区域 | 窗口位置和尺寸，格式为[x, y, width, height]，坐标以屏幕左顶点为原点。如[0, 0, 720, 1280]：表示为位置(0,0)，尺寸720x1280。 |
-| ScaleX | X轴缩放比例 | 窗口在X轴的缩放比例，如1：表示无缩放。 |
-| ScaleY | Y轴缩放比例 | 窗口在Y轴的缩放比例，如1：表示无缩放。 |
+| scaleX | X轴缩放比例 | 窗口在X轴的缩放比例，如1：表示无缩放。 |
+| scaleY | Y轴缩放比例 | 窗口在Y轴的缩放比例，如1：表示无缩放。 |
 | Offset | 偏移量 | 窗口的偏移量，格式为[x, y]，如[0, 0]：表示为无缩放。 |
 | Scale | 缩放参数 | 窗口的缩放参数，格式为[ScaleX, ScaleY, pivotX, pivotY]，pivotX 和 pivotY 并非绝对坐标，而是相对于窗口自身左上角在X轴和Y轴上的比例值，例如：[1, 1, 0.5, 0.5] 表示以窗口中心点不进行缩放。 |
 | ParentWindowId | 父窗口ID | 父窗口的唯一标识符。0：表示为无父窗口；其他值：表示为父窗口的WinId。 |

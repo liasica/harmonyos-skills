@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: backgroundProcessManager错误码
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 错误码 > backgroundProcessManager错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:30+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2b35d5c0e35bcddb403cde4cd63f633020c8cca7462a2d9741f155c5bc65914d
+scraped_at: 2026-09-24T06:53:11+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:4024e227db2bf6a3052e0acaf5193c0ae6ef2e6fcd72a703657a0cb322e5a9bc
 ---
 
 **说明** 
@@ -36,7 +36,7 @@ Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 
 
 **错误信息**
 
-Setup error, This setting is overridden by setting in Task Manager.
+Setup error, This setting is overridden by settings in Task Manager.
 
 **错误描述**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.drawableDescriptor (DrawableDescriptor)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.drawableDescriptor (DrawableDescriptor)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:02+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a31ea6de405b14b711418da79cbbe9442b1ed3b27e8a3ded38f585c950e56052
+scraped_at: 2026-09-24T06:52:08+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:f6a5f2e63229f3424c569d8327628be7c12503c21c0114e4a5298f285fb82031
 ---
 
 本模块提供分层图标合成（包括前景，背景，蒙版），动图播放与控制，基础图像处理的能力。
@@ -769,9 +769,9 @@ struct Index {
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| duration | number | 否 | 是 | 设置图片数组播放总时间。  PixelMap数组的默认值是每张图片播放1秒。本地图片或者应用资源的默认值是图片资源中携带的播放时延。  单位：毫秒  取值范围：[0, +∞)  设置负数取默认值。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| duration | number | 否 | 是 | 设置图片数组播放总时间。  PixelMap数组的默认值是每张图片播放1秒。本地图片或者应用资源的默认值是图片资源中携带的播放时延。  单位：ms  取值范围：[0, +∞)  设置负数取默认值。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | iterations | number | 否 | 是 | 设置图片数组播放次数。  值为-1时表示无限播放，值为0时表示不播放，值大于0时表示有限的播放次数。  默认值为1。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| frameDurations21+ | Array<number> | 否 | 是 | 设置动图中的单帧播放时间。不设置则按照总时间播放。  设置的优先级高于duration，即同时设置了duration和frameDurations时，duration不生效。  当设置的frameDurations长度与图片的数量不一致时，按照总时间播放。  单位：毫秒  **元服务API：** 从API version 21开始，该接口支持在元服务中使用。 |
+| frameDurations21+ | Array<number> | 否 | 是 | 设置动图中的单帧播放时间。不设置则按照总时间播放。  设置的优先级高于duration，即同时设置了duration和frameDurations时，duration不生效。  当设置的frameDurations长度与图片的数量不一致时，按照总时间播放。  单位：ms  **元服务API：** 从API version 21开始，该接口支持在元服务中使用。 |
 | autoPlay21+ | boolean | 否 | 是 | 设置动图是否自动播放。  true表示自动播放，false表示不自动播放。  默认值为true。  **元服务API：** 从API version 21开始，该接口支持在元服务中使用。 |
 | stopMode24+ | [AnimationStopMode](js-apis-arkui-drawabledescriptor.md#animationstopmode24) | 否 | 是 | 设置动图的停止模式。  默认值：AnimationStopMode.FIRST\_FRAME，表示动图停止时回到首帧。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 

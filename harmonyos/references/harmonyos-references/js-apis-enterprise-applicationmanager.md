@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.applicationManager (应用管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.applicationManager (应用管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:24+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:f7d889019e7a829abec34552cc0d4eb51084ad70a67726de05b5fc893730447e
+scraped_at: 2026-09-24T06:54:10+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:c17c027df9757b7d98e4a8587f71d67a72055807167737721e6763ea1ee93481
 ---
 
 本模块提供应用管理能力，包括管理应用运行禁止名单、应用运行允许名单、开机自启动应用名单、保活应用名单、不可关停应用名单、后台防冻结应用名单、允许发送通知应用名单、允许跨设备应用名单等。适用于企业设备管理场景，可实现应用运行权限管控、开机自启动管理、保活应用管理等，提升企业设备安全性和合规性。
@@ -2313,7 +2313,7 @@ setAbilityDisabled(admin: Want, bundleName: string, accountId: number, abilityNa
 **示例：**
 
 ```ts
-import { applicationManager, common } from '@kit.MDMKit';
+import { applicationManager } from '@kit.MDMKit';
 import { Want } from '@kit.AbilityKit';
 
 let wantTemp: Want = {
@@ -2377,7 +2377,7 @@ isAbilityDisabled(admin: Want, bundleName: string, accountId: number, abilityNam
 **示例：**
 
 ```ts
-import { applicationManager, common } from '@kit.MDMKit';
+import { applicationManager } from '@kit.MDMKit';
 import { Want } from '@kit.AbilityKit';
 
 let wantTemp: Want = {
@@ -2441,7 +2441,7 @@ isAbilityDisabled(admin: Want | null, bundleName: string, accountId: number, abi
 **示例：**
 
 ```ts
-import { applicationManager, common } from '@kit.MDMKit';
+import { applicationManager } from '@kit.MDMKit';
 
 try {
   // 需根据实际情况进行替换

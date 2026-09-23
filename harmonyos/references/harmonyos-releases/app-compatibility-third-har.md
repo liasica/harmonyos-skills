@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 应用集成三方库（har包）的兼容性指导
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > 应用集成三方库（har包）的兼容性指导
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:59:08+08:00
-doc_updated_at: 2026-07-06
-content_hash: sha256:07fab71a038a1da50727e699f04017b31a0ee717010a5925d4a3426b78ae28d2
+scraped_at: 2026-09-24T06:49:21+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:c1bfda99c0f72d41890554b6fe59fcc5c3ce964309419dc7aeb194e1e4250349
 ---
 
 **说明** 
@@ -36,7 +36,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
 （3）因为在应用集成三方库的时候，最终打包到应用中的targetSdkVersion字段值会填写为应用的值，则为了让三方库被应用集成后的行为一致，需要进行一些适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/cjCHej7UTfqAak148D-vkQ/zh-cn_image_0000002409845612.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/dluGG80kSCmyJ5RBqLnPDA/zh-cn_image_0000002409845612.png "点击放大")
 
 ```screen
 import bundleManager from '@ohos.bundle.bundleManager';

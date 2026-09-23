@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-cookie-an
 title: 管理Cookie及数据存储
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > 管理Cookie及数据存储
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:824347112120ee0d2516c580bbe33c21aa530712161cf7c52b27e9a37bb42a85
+scraped_at: 2026-09-24T06:49:44+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:0996c8f4859fb61ad4300384e7be58ef5c128c0a66d9f803a7759123459c0ed3
 ---
 
 Cookie是服务端生成并发送到客户端的数据。客户端持有Cookie，便于服务端快速识别身份和状态。
@@ -44,7 +44,7 @@ struct WebComponent {
 }
 ```
 
-从API version 22开始，开发者可以通过[setLazyInitializeWebEngine()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#setlazyinitializewebengine22)，为“www.example.com”设置单个Cookie的值“value=test”时跳过初始化ArkWeb内核，以节省[configCookieSync()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#configcookiesync11)接口耗时。其他Cookie的相关功能及使用，请参考[WebCookieManager()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)接口文档。
+从API version 22开始，开发者可以通过[setLazyInitializeWebEngine()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#setlazyinitializewebengine22)延后初始化ArkWeb内核，在调用configCookieSync()为“www.example.com”设置单个Cookie的值“value=test”时跳过初始化ArkWeb内核，以节省[configCookieSync()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#configcookiesync11)接口耗时。其他Cookie的相关功能及使用，请参考[WebCookieManager()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)接口文档。
 
 ```typescript
 import { webview } from '@kit.ArkWeb';

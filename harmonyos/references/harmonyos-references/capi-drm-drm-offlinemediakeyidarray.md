@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drm-drm-offlinemediakeyidarray
-title: DRM_OfflineMediaKeyIdArray
-breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > C API > 结构体 > DRM_OfflineMediaKeyIdArray
+title: DRM_OfflineMediakeyIdArray
+breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > C API > 结构体 > DRM_OfflineMediakeyIdArray
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-24T06:54:40+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:3eeafeee4208e45f8961080a377b223851aded0443bb9967c3efb08d9e4276cd
 ---
 

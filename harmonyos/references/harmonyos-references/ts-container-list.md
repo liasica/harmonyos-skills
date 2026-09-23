@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: List
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > List
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:44+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:1d4a857e5e6755d72072507efe1db70cafd1a28dc57be658a15d65dc40a8f063
+scraped_at: 2026-09-24T06:52:22+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:209253c5403761b83c92a3b07caf66c1921ca55defed4f6296bd3d33b6daf70b
 ---
 
 List是ArkUI中的列表容器组件，用于呈现连续、多行或多列的同类数据，例如图片和文本，支持垂直或水平滚动。配合LazyForEach或Repeat可实现懒加载，提升长列表场景下的启动速度并减少内存消耗；支持预加载以减少滚动丢帧、提升流畅性；支持单列/多列布局、分组列表、吸顶吸底等能力，适用于消息列表、商品列表、设置页面等场景。
 
 List的懒加载是指组件按需加载显示区域内的子组件。相比全量加载，使用懒加载可以提升应用启动速度，减少内存消耗。List和[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)、[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)、[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)结合，懒加载能力存在差异：
 
-* 当List和ForEach结合，会一次性创建所有的子组件，在需要的时候布局和渲染屏幕范围内的节点。当用户滑动时，划出屏幕范围的节点不会下树销毁，划入屏幕范围的节点会布局和渲染。
-* 当List和LazyForEach结合，会一次性创建、布局、渲染屏幕范围的节点。当用户滑动时，划出屏幕范围的节点会下树销毁，划入屏幕范围的节点会创建、布局、渲染。
+* 当List和ForEach结合，会一次性创建所有的子组件，在需要的时候布局和渲染屏幕范围内的节点。当用户滑动时，滑出屏幕范围的节点不会下树销毁，滑入屏幕范围的节点会布局和渲染。
+* 当List和LazyForEach结合，会一次性创建、布局、渲染屏幕范围的节点。当用户滑动时，滑出屏幕范围的节点会下树销毁，滑入屏幕范围的节点会创建、布局、渲染。
 * 当List和带[virtualScroll](ts-rendering-control-repeat.md#virtualscroll)的Repeat结合，它的懒加载行为和LazyForEach一致。当List和不带virtualScroll的Repeat结合，它的懒加载行为和ForEach一致。
 
 如果可滚动组件嵌套List组件，并且滚动方向相同，List组件又没有设置主轴尺寸时，List组件会全量加载子组件，导致懒加载失效。该场景推荐使用List嵌套[ListItemGroup](ts-container-listitemgroup.md)组件以优化性能。
@@ -87,7 +87,7 @@ List(options?: [ListOptions](ts-container-list.md#listoptions18对象说明))
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| initialIndex7+ | number | 否 | 是 | 设置当前List初次加载时显示区域起始位置的item索引值。  默认值：0。当stackFromEnd为true时，默认值为总item个数-1。  **说明：**  设置为负数或超过了当前List最后一个item的索引值时视为无效取值，无效取值按默认值显示。  从API version 14开始，如果在List组件创建完成后首次布局前（如List的[onAttach](ts-universal-events-show-hide.md#onattach12)事件中），调用Scroller滚动控制器中不带动画的scrollToIndex或scrollEdge方法，会覆盖initialIndex设置的值。  设置了initialIndex后，List从initialIndex对应的子组件开始布局，在这之前的子组件未参与布局，无法计算准确大小，因此通过[currentOffset](ts-container-scroll.md#currentoffset)接口获取到的List的滚动总偏移量通过估算得出，可能会有误差。可通过设置[childrenMainSize](ts-container-list.md#childrenmainsize12)确保List的滚动总偏移量的准确性。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| initialIndex7+ | number | 否 | 是 | 设置当前List初次加载时显示区域起始位置的item索引值。  默认值：0。当stackFromEnd为true时，默认值为总item个数-1。  **说明：**  设置为负数或超过了当前List最后一个item的索引值时视为无效取值，无效取值按默认值显示。  从API version 14开始，如果在List组件创建完成后首次布局前（如List的[onAttach](ts-universal-events-show-hide.md#onattach12)事件中），调用Scroller滚动控制器中不带动画的scrollToIndex或scrollEdge方法，会覆盖initialIndex设置的值。  设置了initialIndex后，List从initialIndex对应的子组件开始布局。在这之前的子组件未参与布局，无法计算准确大小，因此通过[currentOffset](ts-container-scroll.md#currentoffset)接口获取到的List的滚动总偏移量通过估算得出，可能会有误差。可通过设置[childrenMainSize](ts-container-list.md#childrenmainsize12)确保List的滚动总偏移量的准确性。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | space7+ | number | string | 否 | 是 | 子组件主轴方向的间隔。  默认值：0  参数类型为number时单位为vp。  **说明：**  设置为负数或者大于等于List内容区长度时，按默认值显示。  space参数值小于List分割线宽度时，子组件主轴方向的间隔取分割线宽度。  List子组件的visibility属性设置为None时不显示，但该子组件上下的space还是会生效。  如果同时设置了spaceWidth和space，则spaceWidth优先生效。当spaceWidth为undefined或null时，space生效。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | spaceWidth | [Dimension](ts-types.md#dimension10) | 否 | 是 | 子组件主轴方向的间隔。  默认值：0  参数类型为number时单位为vp。  **说明：**  设置为负数或者大于等于List内容区长度时，按默认值显示。  spaceWidth参数值小于List分割线宽度时，子组件主轴方向的间隔取分割线宽度。  List子组件的visibility属性设置为None时不显示，但该子组件上下的spaceWidth间隔还是会生效。如果同时设置了spaceWidth和space，则spaceWidth优先生效。当spaceWidth为undefined或null时，space生效。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 | scroller7+ | [Scroller](ts-container-scroll.md#scroller) | 否 | 是 | 可滚动组件的控制器。与List绑定后，可以通过它控制List的滚动。默认不绑定滚动控制器。  **说明：**  不允许和其他滚动类组件，如：[ArcList](ts-container-arclist.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)绑定同一个滚动控制对象。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -225,7 +225,7 @@ cachedCount(count: number | CacheCountInfo, show: boolean)
 
 **说明** 
 
-通常建议设置cachedCount=n/2（n代表一屏显示的列表项数量），同时需考虑其他因素以实现体验和内存使用的平衡。从API version 22开始，支持设置最大最小缓存数，可以将最大缓存数设置稍大，如设置为最小缓存数的两倍，利用UI线程空闲时间创建节点，减少滚动过程中预加载创建节点，提升滚动流畅性。最佳实践请参考[优化长列表加载慢丢帧问题-缓存列表项](../best-practices/bpta-best-practices-long-list.md#section11667144010222)。
+通常建议设置cachedCount=n/2（n代表一屏显示的列表项数量），同时需考虑其他因素以实现体验和内存使用的平衡。从API version 22开始，支持设置最大最小缓存数，可以将最大缓存数设置稍大，如设置为最小缓存数的两倍，利用UI线程空闲时间提前创建节点，减少滚动过程中预加载创建节点的开销，提升滚动流畅性。最佳实践请参考[优化长列表加载慢丢帧问题-缓存列表项](../best-practices/bpta-best-practices-long-list.md#section11667144010222)。
 
 **卡片能力：** 从API version 22开始，该接口支持在ArkTS卡片中使用。
 
@@ -240,7 +240,7 @@ cachedCount(count: number | CacheCountInfo, show: boolean)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | number | [CacheCountInfo](ts-types.md#cachecountinfo22对象说明) | 是 | 当参数类型为number时，表示列表的预加载行数。  取值范围：[0, +∞)，设置为小于0的值时，按1处理。  当参数类型为CacheCountInfo时，表示预加载的最大最小范围。 |
-| show | boolean | 是 | 被预加载的ListItem/ListItemGroup是否需要显示。  true：显示预加载的ListItem/ListItemGroup。  false：不显示预加载的ListItem/ListItemGroup。 |
+| show | boolean | 是 | 被预加载的ListItem/ListItemGroup是否需要显示。  true：显示预加载的ListItem/ListItemGroup。  false：不显示预加载的ListItem/ListItemGroup。  默认值：false |
 
 ### edgeEffect
 
@@ -273,7 +273,7 @@ chainAnimation(value: boolean)
 
 **说明** 
 
-* 链式联动效果是指在手指划动过程中，手指拖动的ListItem是主动对象，相邻的ListItem为从动对象，主动对象驱动从动对象联动，驱动效果遵循弹簧物理动效。
+* 链式联动效果是指在手指滑动过程中，手指拖动的ListItem是主动对象，相邻的ListItem为从动对象，主动对象驱动从动对象联动，驱动效果遵循弹簧物理动效。
 * 链式动效的驱动效果体现在ListItem之间的间距上。静止状态下的间距可以通过List组件space参数设置，如果不设置space参数并且启用了链式动效，该间距默认为20vp。
 * 链式动效启用后，List的分割线不显示。
 * 链式动效生效的前提是List处于单列模式并且边缘效果为EdgeEffect.Spring类型。
@@ -317,7 +317,7 @@ lanes(value: number | LengthConstrain, gutter?: Dimension)
 以列数作为示例，介绍设置规则如下：
 
 * value为number类型时，根据number类型数值指定列数。
-* value为LengthConstrain类型时，LengthConstrain中的minLength表示最小列宽，List组件会根据自身宽度在满足最小列宽情况下计算最大列数。同时，LengthConstrain会作为最大最小布局宽度约束传递给List的子组件，子组件没有设置宽度时会生效该最大最小布局约束。
+* value为LengthConstrain类型时，LengthConstrain中的minLength表示最小列宽，List组件会根据自身宽度在满足最小列宽的情况下计算最大列数。同时，LengthConstrain会作为最大最小布局宽度约束传递给List的子组件，子组件没有设置宽度时会生效该最大最小布局约束。
 * ListItemGroup在多列模式下也是独占一行，ListItemGroup中的ListItem按照List组件的lanes属性设置值来布局。
 * value为LengthConstrain类型时，计算ListItemGroup中的列数时会按照ListItemGroup的自身宽度计算。因此ListItemGroup宽度与List宽度不一致时，ListItemGroup中的列数与List中的列数可能不一样。
 
@@ -401,7 +401,7 @@ scrollSnapAlign(value: ScrollSnapAlign)
 
 设置列表项滚动结束对齐效果。
 
-只支持item等高场景限位，不等高场景可能存在不准确的情况。对齐动画期间[onWillScroll](ts-container-scrollable-common.md#onwillscroll12)事件上报的滚动操作来源类型为ScrollSource.FLING。
+只支持item等高场景限位，不等高场景下限位对齐可能不准确。对齐动画期间[onWillScroll](ts-container-scrollable-common.md#onwillscroll12)事件上报的滚动操作来源类型为ScrollSource.FLING。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -477,7 +477,7 @@ nestedScroll(value: NestedScrollOptions)
 
 friction(value: number | Resource)
 
-设置摩擦系数，手动划动滚动区域时生效，仅影响惯性滚动过程。设置为小于等于0的值时，按默认值处理。
+设置摩擦系数，手动滑动滚动区域时生效，仅影响惯性滚动过程。设置为小于等于0的值时，按默认值处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -529,7 +529,7 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | [Resource](ts-types.md#resource) | 是 | 内容区域起始偏移量。  默认值：0  参数类型为number时单位为vp。  设置异常值如负数、非数字Resource时，按默认值处理。  参数类型为number时取值范围：[0, +∞) |
+| offset | number | [Resource](ts-types.md#resource) | 是 | 内容区域起始偏移量。  默认值：0  参数类型为number时单位为vp。  设置为异常值如负数、非数字的Resource时，按默认值处理。  参数类型为number时取值范围：[0, +∞) |
 
 ### contentEndOffset11+
 
@@ -569,7 +569,7 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | [Resource](ts-types.md#resource) | 是 | 内容区末尾偏移量。  默认值：0  参数类型为number时单位为vp。  设置异常值如负数、非数字Resource时，按默认值处理。  参数类型为number时取值范围：[0, +∞) |
+| offset | number | [Resource](ts-types.md#resource) | 是 | 内容区末尾偏移量。  默认值：0  参数类型为number时单位为vp。  设置为异常值如负数、非数字的Resource时，按默认值处理。  参数类型为number时取值范围：[0, +∞) |
 
 ### childrenMainSize12+
 
@@ -619,7 +619,7 @@ maintainVisibleContentPosition(enabled: boolean)
 * 只有使用LazyForEach在显示区域外插入或删除数据时，属性设置为true才能保持可见内容位置不变。使用ForEach插入或删除数据、使用LazyForEach重新加载数据时，即使maintainVisibleContentPosition属性设置为true，可见区内容位置也会跟随变化。
 * 从API version 20开始，使用[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)在懒加载场景下，显示区域外插入或删除数据时，属性设置为true也能保持可见内容位置不变。
 * maintainVisibleContentPosition属性设置为true后，在显示区域上方插入或删除数据，会触发[onDidScroll](ts-container-scrollable-common.md#ondidscroll12)、onScrollIndex事件。
-* maintainVisibleContentPosition属性设置为true后，在多列场景下，一次插入或删除整行数据，可以保持可见内容位置不变，如果不是插入或删除整行数据，可见内容位置还是会发生变化。
+* maintainVisibleContentPosition属性设置为true后，在多列场景下，一次插入或删除整行数据，可以保持可见内容位置不变，如果不是插入或删除整行数据，可见内容位置会发生变化。
 
 ### stackFromEnd19+
 
@@ -642,7 +642,7 @@ stackFromEnd(enabled: boolean)
 **说明** 
 
 * stackFromEnd属性设置为true后，当List内容小于List组件高度时，内容底部对齐。
-* stackFromEnd属性设置为true后，显示区域内有ListItem变高，或有插入ListItem，内容上方的ListItem往上移动。
+* stackFromEnd属性设置为true后，显示区域内有ListItem变高，或有ListItem插入时，内容上方的ListItem往上移动。
 * stackFromEnd属性设置为true后，[ListOptions](ts-container-list.md#listoptions18对象说明)中initialIndex参数默认值为总item个数-1。
 
 ### focusWrapMode20+
@@ -661,7 +661,7 @@ focusWrapMode(mode: Optional<FocusWrapMode>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mode | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[FocusWrapMode](ts-appendix-enums.md#focuswrapmode20)> | 是 | 交叉轴方向键走焦模式。  默认值：FocusWrapMode.DEFAULT  **说明：**  异常值按默认值处理，即交叉轴方向键不能换行。 |
+| mode | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[FocusWrapMode](ts-appendix-enums.md#focuswrapmode20)> | 是 | 交叉轴方向键走焦（即通过方向键移动焦点）模式。  默认值：FocusWrapMode.DEFAULT  **说明：**  异常值按默认值处理，即交叉轴方向键不能换行。 |
 
 ### syncLoad20+
 
@@ -679,7 +679,7 @@ syncLoad(enable: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | 是 | 是否同步加载List区域内所有子组件。  true表示同步加载，false表示异步加载。默认值：true。  **说明：**  设置为false时，在首次显示、不带动画scrollToIndex跳转场景，若当帧布局耗时超过50ms，会将List区域内尚未布局的子组件延后到下一帧进行布局。 |
+| enable | boolean | 是 | 是否同步加载List区域内所有子组件。  true表示同步加载，false表示异步加载。默认值：true。  **说明：**  设置为false时，在首次显示、不带动画的scrollToIndex跳转场景下，当帧布局耗时超过50ms时，会将List区域内尚未布局的子组件延后到下一帧进行布局。 |
 
 ### editModeOptions23+
 
@@ -707,7 +707,7 @@ editMode(value: boolean)
 
 **说明** 
 
-从API version 7开始支持，从API version 9开始废弃。此接口已完全移除，无替代接口。如需实现编辑状态切换和删除列表项，可通过自定义状态变量控制删除按钮的显示与隐藏，并在删除按钮的点击事件中更新数据源，具体实现方式请参考[示例3](ts-container-list.md#示例3自定义编辑和删除模式)。
+从API version 7开始支持，从API version 9开始废弃。此接口已完全移除，无替代接口。如需实现编辑状态切换和删除列表项，可通过自定义状态变量控制删除按钮的显示与隐藏，并在删除按钮的单击事件中更新数据源，具体实现方式请参考[示例3](ts-container-list.md#示例3自定义编辑和删除模式)。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -721,7 +721,7 @@ editMode(value: boolean)
 
 supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
-设置当前List组件是否支持在LazyForEach或Repeat中使用if/else渲染控制语法生成不包含任何子组件的空分支节点。未设置时不支持空分支节点。此属性初次赋值后不支持更新，所以赋值后无法在支持空分支、不支持空分支行为之间切换。
+设置当前List组件是否支持在LazyForEach或Repeat中使用if/else渲染控制语法生成不包含任何子组件的空分支节点。未设置时不支持空分支节点。此属性初次赋值后不支持更新，所以赋值后无法在支持空分支和不支持空分支两种行为之间切换。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -753,7 +753,7 @@ backPressBehavior(behavior: ListBackPressBehavior | undefined)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| behavior | [ListBackPressBehavior](ts-container-list.md#listbackpressbehavior) | undefined | 是 | List组件的系统返回键行为选项。当前支持通过[ListBackPressBehavior](ts-container-list.md#listbackpressbehavior)参数，配置系统返回键生效时，是否收起已展开的ListItem的划出组件。  设置为undefined时，恢复默认行为，即系统返回键生效时，收起已展开的ListItem的划出组件。 |
+| behavior | [ListBackPressBehavior](ts-container-list.md#listbackpressbehavior) | undefined | 是 | List组件的系统返回键行为选项。当前支持通过[ListBackPressBehavior](ts-container-list.md#listbackpressbehavior)参数，配置系统返回键生效时，是否收起已展开的ListItem的滑出组件。  设置为undefined时，恢复默认行为，即系统返回键生效时，收起已展开的ListItem的滑出组件。 |
 
 ### enableEditMode
 
@@ -833,8 +833,8 @@ ListItemGroup吸顶或吸底效果枚举。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NORMAL | 0 | 默认列表限位动画速度，适用于列表项主轴方向尺寸较大（如接近列表视口主轴尺寸），每次划动仅滚动一个列表项的场景。 |
-| SLOW | 1 | 列表限位动画速度低于NORMAL，适用于列表项主轴方向尺寸较小（如远小于列表视口主轴尺寸），每次划动需滚动多个列表项的场景。 |
+| NORMAL | 0 | 默认列表限位动画速度，适用于列表项主轴方向尺寸较大（如接近列表视口（即列表可视区域）主轴尺寸），每次滑动仅滚动一个列表项的场景。 |
+| SLOW | 1 | 列表限位动画速度低于NORMAL，适用于列表项主轴方向尺寸较小（如远小于列表视口（即列表可视区域）主轴尺寸），每次滑动需滚动多个列表项的场景。 |
 
 ## ListBackPressBehavior
 
@@ -850,7 +850,7 @@ ListItemGroup吸顶或吸底效果枚举。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| closeSwipeAction | boolean | 否 | 是 | 系统返回键生效时是否收起ListItem的划出组件。  true表示收起ListItem的划出组件；false表示不收起ListItem的划出组件。  默认值：true |
+| closeSwipeAction | boolean | 否 | 是 | 系统返回键生效时是否收起ListItem的滑出组件。  true表示收起ListItem的滑出组件；false表示不收起ListItem的滑出组件。  默认值：true |
 
 ## CloseSwipeActionOptions11+对象说明
 
@@ -897,13 +897,13 @@ ListItemGroup吸顶或吸底效果枚举。
 
 onScrollIndex(event: (start: number, end: number, center: number) => void)
 
-有子组件划入或划出List显示区域时触发。计算索引值时，ListItemGroup作为一个整体占一个索引值，不计算ListItemGroup内部ListItem的索引值。
+有子组件滑入或滑出List显示区域时触发。计算索引值时，ListItemGroup作为一个整体占一个索引值，不计算ListItemGroup内部ListItem的索引值。
 
 **说明** 
 
 与[onScrollVisibleContentChange](ts-container-list.md#onscrollvisiblecontentchange12)相比，onScrollIndex将ListItemGroup整体计为一个索引值，且回调仅返回首尾及中间索引值。如需获取ListItemGroup内部header、footer或ListItem的详细索引信息，请使用onScrollVisibleContentChange。
 
-List的边缘效果为弹簧效果时，在List划动到边缘继续划动和松手回弹过程不会触发onScrollIndex事件。
+List的边缘效果为弹簧效果时，在List滑动到边缘继续滑动和松手回弹过程中不会触发onScrollIndex事件。
 
 触发该事件的条件：列表初始化时会触发一次，List显示区域内第一个子组件的索引值或最后一个子组件的索引值有变化时会触发。
 
@@ -929,7 +929,7 @@ onReachStart(event: () => void)
 
 列表到达起始位置时触发。
 
-List初始化时如果initialIndex为0会触发一次，List滚动到起始位置时触发一次。List边缘效果为弹簧效果时，划动经过起始位置时触发一次，回弹回起始位置时再触发一次。
+List初始化时如果initialIndex为0会触发一次，List滚动到起始位置时触发一次。List边缘效果为弹簧效果时，滑动经过起始位置时触发一次，回弹至起始位置时再触发一次。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -947,11 +947,11 @@ List初始化时如果initialIndex为0会触发一次，List滚动到起始位�
 
 onReachEnd(event: () => void)
 
-列表到达末尾位置时触发事件。当最后一个子组件因滚动或内容/布局变化出现在列表视窗中时，触发此回调。
+列表到达末尾位置时触发事件。当最后一个子组件因滚动或内容/布局变化出现在列表视窗（即可视区域）中时，触发此回调。
 
 当子组件未撑满列表，无须滚动即可直接在列表内完整展示时，首次加载也会触发此事件。
 
-List边缘效果为弹簧效果时，划动经过末尾位置时触发一次，回弹回末尾位置时再触发一次。
+List边缘效果为弹簧效果时，滑动经过末尾位置时触发一次，回弹至末尾位置时再触发一次。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -1001,7 +1001,7 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 onScrollStart(event: () => void)
 
-列表滑动开始时触发。手指拖动列表或列表的滚动条触发的滑动开始时，会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滑动控制器触发的带动画的滑动，动画开始时会触发该事件。
+列表滑动开始时触发。手指拖动列表或拖动列表滚动条触发的滑动开始时，会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滑动控制器触发的带动画的滑动，动画开始时会触发该事件。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -1019,7 +1019,7 @@ onScrollStart(event: () => void)
 
 onScrollStop(event: () => void)
 
-列表滑动停止时触发。手指拖动列表或列表的滚动条触发的滑动，手离开屏幕后滑动停止时会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滑动控制器触发的带动画的滑动，动画停止会触发该事件。
+列表滑动停止时触发。手指拖动列表或列表的滚动条触发的滑动，手离开屏幕后滑动停止时会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滑动控制器触发的带动画的滑动，动画停止时会触发该事件。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -1154,9 +1154,9 @@ onItemDrop(event: (event: ItemDragInfo, itemIndex: number, insertIndex: number, 
 
 onScrollVisibleContentChange(handler: OnScrollVisibleContentChangeCallback)
 
-有子组件划入或划出List显示区域时触发。计算触发条件时，每一个ListItem、ListItemGroup中的header或footer都算一个子组件。
+有子组件滑入或滑出List显示区域时触发。计算触发条件时，每一个ListItem、ListItemGroup中的header或footer都算一个子组件。
 
-List的边缘效果为弹簧效果时，在List划动到边缘继续划动和松手回弹过程不会触发onScrollVisibleContentChange事件。
+List的边缘效果为弹簧效果时，在List滑动到边缘继续滑动和松手回弹过程中不会触发onScrollVisibleContentChange事件。
 
 触发该事件的条件：列表初始化时会触发一次，List显示区域内第一个子组件的索引值或最后一个子组件的索引值有变化时会触发。
 
@@ -1180,11 +1180,11 @@ List的边缘效果为弹簧效果时，在List划动到边缘继续划动和松
 
 onItemDelete(event: (index: number) => boolean)
 
-当List组件在编辑模式时，点击ListItem右边出现的删除按钮时触发。
+当List组件在编辑模式时，单击ListItem右边出现的删除按钮时触发。
 
 **说明** 
 
-从API version 7开始支持，从API version 9开始废弃。此接口已完全移除，无替代接口。如需实现删除列表项，可在自定义删除按钮的点击事件中更新数据源，具体实现方式请参考[示例3](ts-container-list.md#示例3自定义编辑和删除模式)。
+从API version 7开始支持，从API version 9开始废弃。此接口已完全移除，无替代接口。如需实现删除列表项，可在自定义删除按钮的单击事件中更新数据源，具体实现方式请参考[示例3](ts-container-list.md#示例3自定义编辑和删除模式)。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1257,7 +1257,7 @@ onEditModeChange(callback: Callback<boolean> | undefined)
 | --- | --- | --- |
 | Idle | 0 | 空闲状态。滚动状态回归空闲时触发，控制器提供的无动画方法控制滚动时触发。 |
 | Scroll | 1 | 滚动状态。手指拖动List，拖动滚动条和滚动鼠标滚轮时触发。 |
-| Fling | 2 | 惯性滚动状态。动画控制的滚动都会触发。包括快速划动松手后的惯性滚动，  划动到边缘回弹的滚动，快速拖动内置滚动条松手后的惯性滚动，  使用滚动控制器提供的带动画的方法控制的滚动。 |
+| Fling | 2 | 惯性滚动状态。动画控制的滚动都会触发。包括快速滑动松手后的惯性滚动，  滑动到边缘回弹的滚动，快速拖动内置滚动条松手后的惯性滚动，  使用滚动控制器提供的带动画的方法控制的滚动。 |
 
 ## ListScroller11+
 
@@ -1348,8 +1348,8 @@ getVisibleListContentInfo(x: number, y: number): VisibleListContentInfo
 **说明** 
 
 * 入参坐标(x, y)的基准点是List组件的位置。
-* 如果该坐标位置处于ListItem范围内，且该ListItem父组件是List，则返回值对象成员index为该ListItem在List中的索引值，itemGroupArea返回undefined，itemIndexInGroup返回undefined。
-* 如果该坐标位置处于ListItem范围内，且该ListItem父组件是ListItemGroup，则返回值对象成员index为该ListItemGroup在List中的索引值，itemGroupArea返回ListItemGroupArea.IN\_LIST\_ITEM\_AREA，itemIndexInGroup返回该ListItem在ListItemGroup中的索引值。
+* 如果该坐标位置处于ListItem范围内，且该ListItem的父组件是List，则返回值对象成员index为该ListItem在List中的索引值，itemGroupArea返回undefined，itemIndexInGroup返回undefined。
+* 如果该坐标位置处于ListItem范围内，且该ListItem的父组件是ListItemGroup，则返回值对象成员index为该ListItemGroup在List中的索引值，itemGroupArea返回ListItemGroupArea.IN\_LIST\_ITEM\_AREA，itemIndexInGroup返回该ListItem在ListItemGroup中的索引值。
 * 如果该坐标位置不处于ListItem范围内，但是处于ListItemGroup的header或者footer范围内，则返回值对象成员index为该ListItemGroup在List中的索引值，itemIndexInGroup返回undefined。如果坐标位置处于header范围，itemGroupArea返回ListItemGroupArea.IN\_HEADER\_AREA。如果坐标位置处于footer范围，itemGroupArea返回ListItemGroupArea.IN\_FOOTER\_AREA。
 * 如果该坐标位置既不处于ListItem范围内，也不处于ListItemGroup的header或者footer范围内，但是处于ListItemGroup的范围内，则返回值对象成员index为该ListItemGroup在List中的索引值，itemIndexInGroup返回undefined，itemGroupArea返回ListItemGroupArea.NONE。
 * 如果该坐标位置既不处于ListItem范围内，也不处于ListItemGroup的范围内，则返回值对象成员index为-1，itemIndexInGroup返回undefined，itemGroupArea返回undefined。
@@ -1381,7 +1381,7 @@ scrollToItemInGroup(index: number, indexInGroup: number, smooth?: boolean, align
 | --- | --- | --- | --- |
 | index | number | 是 | 要滑动到的目标元素所在的ListItemGroup在当前容器中的索引值。  **说明：**  index值设置成负值或者大于当前容器子组件的最大索引值，视为异常值，本次跳转不生效。 |
 | indexInGroup | number | 是 | 要滑动到的目标元素在index指定的ListItemGroup中的索引值。  **说明：**  indexInGroup值设置成负值或者大于index指定的ListItemGroup容器子组件的最大索引值，视为异常值，本次跳转不生效。 |
-| smooth | boolean | 否 | 设置该次滑动是否有动效，true表示有动效，false表示没有动效。  默认值：false  **说明：**  开启动效时，会对经过的所有item进行加载和布局计算，当大量加载item时会导致性能问题。 |
+| smooth | boolean | 否 | 设置本次滑动是否有动效，true表示有动效，false表示没有动效。  默认值：false  **说明：**  开启动效时，会对经过的所有item进行加载和布局计算，当大量加载item时会导致性能问题。 |
 | align | [ScrollAlign](ts-container-scroll.md#scrollalign10枚举说明) | 否 | 指定滑动到的元素与当前容器的对齐方式。  默认值：ScrollAlign.START。 |
 
 **错误码**：
@@ -1428,7 +1428,7 @@ closeAllSwipeActions(options?: CloseSwipeActionOptions): void
 
 type OnScrollVisibleContentChangeCallback = (start: VisibleListContentInfo, end: VisibleListContentInfo) => void
 
-有子组件划入或划出List显示区域时触发。
+有子组件滑入或滑出List显示区域时触发。
 
 API版本26.0.0开始，List从有子组件变成空的List时，上报的start和end参数的index成员为-1，itemGroupArea和itemIndexInGroup成员为undefined。API版本26.0.0以前，List从有子组件变成空的List时，上报的start和end参数会保留上次有子组件时的值。
 
@@ -1693,7 +1693,7 @@ struct ListExample {
       .listDirection(Axis.Vertical) // 排列方向
       .scrollBar(BarState.Off)
       .friction(0.6)
-      .divider({ strokeWidth: 2, color: 0xFFFFFF, startMargin: 20, endMargin: 20 }) // 每行之间的分界线
+      .divider({ strokeWidth: 2, color: 0xFFFFFF, startMargin: 20, endMargin: 20 }) // 每行之间的分割线
       .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
         console.info('first' + firstIndex);
@@ -1709,7 +1709,7 @@ struct ListExample {
                     ' end index in group: ' + end.itemIndexInGroup);
       })
       .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
-        console.info(`onScroll scrollState = ScrollState` + scrollState + `, scrollOffset = ` + scrollOffset);
+         console.info(`onDidScroll scrollState = ` + scrollState + `, scrollOffset = ` + scrollOffset);
       })
       .width('90%')
     }
@@ -1721,7 +1721,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Xdcig2zvSkak2kpd4TN7wA/zh-cn_image_0000002762995565.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Z87DJHIXRX2E7QOOlZiH0g/zh-cn_image_0000002769332189.gif)
 
 ### 示例2（设置子元素对齐）
 
@@ -1777,7 +1777,7 @@ struct ListLanesExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/UYc0dq2GT--rak18_KY4Qw/zh-cn_image_0000002762835679.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/censu2ITSa6UJXwLgHHCDg/zh-cn_image_0000002769452051.gif)
 
 ### 示例3（自定义编辑和删除模式）
 
@@ -1841,7 +1841,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/fMTobedyTpu9h5faSeC2tg/zh-cn_image_0000002733276168.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/CGpM45OQSRugzf0s9vdFlQ/zh-cn_image_0000002739892720.gif)
 
 ### 示例4（设置限位对齐）
 
@@ -1900,7 +1900,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/VBhbUSZ-R0SP3jGMT0F9GQ/zh-cn_image_0000002733436046.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/tDbqCj_2The0A4iA7g4J0A/zh-cn_image_0000002739732842.gif)
 
 ### 示例5（跳转准确）
 
@@ -1979,7 +1979,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/PY58HLQqQ_a7HzlBJt-B-A/zh-cn_image_0000002762995567.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/_A1CX4VBS56XSGktARCNig/zh-cn_image_0000002769332191.gif)
 
 ### 示例6（获得子组件索引信息）
 
@@ -2088,11 +2088,11 @@ struct ListItemGroupExample {
                   .height(100)
                   .fontSize(20)
                   .textAlign(TextAlign.Center)
-                  .backgroundColor(this.itemBackgroundColorArr[index * 3 +subIndex] ? 0x68B4FF: 0xFFFFFF)
+                  .backgroundColor(this.itemBackgroundColorArr[index * 3 + subIndex] ? 0x68B4FF : 0xFFFFFF)
               }
             }, (item: string) => item)
           }
-          .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
+          .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分割线
         }, (item: TimeTable) => item.title)
       }
       .width('90%')
@@ -2141,7 +2141,7 @@ interface TimeTable {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/xxXcBJEQSFGlBhXo1UIY4Q/zh-cn_image_0000002762835681.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/d5E4ValRTLS9npl9oGJ8Kg/zh-cn_image_0000002769452053.gif)
 
 ### 示例7（设置边缘渐隐）
 
@@ -2150,7 +2150,7 @@ interface TimeTable {
 ListDataSource说明及完整代码参考[示例1（添加滚动事件）](ts-container-list.md#示例1添加滚动事件)。
 
 ```ts
-import { LengthMetrics } from '@kit.ArkUI'
+import { LengthMetrics } from '@kit.ArkUI';
 import { ListDataSource } from './ListDataSource';
 @Entry
 @Component
@@ -2180,7 +2180,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/VfkOwvOnTPmkBUzKg-6whQ/zh-cn_image_0000002733276170.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/TYRbFyHARAGx91YYRhkwtQ/zh-cn_image_0000002739892722.gif)
 
 ### 示例8（单边边缘效果）
 
@@ -2219,7 +2219,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/eY8ZNLeySXCvPGcv7FYFDw/zh-cn_image_0000002733436048.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/vDXFIvzcShaulBL7zlthaQ/zh-cn_image_0000002739732844.gif)
 
 ### 示例9（设置折行走焦）
 
@@ -2266,7 +2266,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/dN233i-QSmWYftpBFCz7hw/zh-cn_image_0000002762995569.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/StfzPNrvSheqil8NsKfihQ/zh-cn_image_0000002769332193.gif)
 
 ### 示例10（设置显示区域外插入数据时，保持显示内容不变）
 
@@ -2312,7 +2312,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/43u_gugsTEGSAicuWqpyKA/zh-cn_image_0000002762835683.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/2yzGQq6GRpKZRUMzRnt4ZQ/zh-cn_image_0000002769452055.gif)
 
 ### 示例11（设置滚动条的边距）
 
@@ -2356,7 +2356,7 @@ struct ListScrollBarMarginExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/S7-hetznQbWa1t3cG2PU1A/zh-cn_image_0000002733276172.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/676Y3htER7WBr6O0LAcXcA/zh-cn_image_0000002739892724.gif)
 
 ### 示例12（使用onMove进行拖拽）
 
@@ -2400,7 +2400,7 @@ struct ForEachSort {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/cPT2S8QGQsOoPviHLwe92g/zh-cn_image_0000002733436050.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/99Obqk3lQ0uxa2XXMozb1g/zh-cn_image_0000002739732846.gif)
 
 ### 示例13（基于断点配置lanes）
 
@@ -2442,15 +2442,15 @@ struct ListExample {
 
 List宽度属于sm及更小的断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/JoAsr8SMTLuWWl4qd5AO_Q/zh-cn_image_0000002762995571.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/xA_IZ9EiST2QbwZ_zvWhvA/zh-cn_image_0000002769332195.png)
 
 List宽度属于md断点区间时显示3列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/LePlohX_S0SRjbPoL1ctzQ/zh-cn_image_0000002762835685.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/mKGAleAST2K6Hsn2Ae1hdw/zh-cn_image_0000002769452057.png)
 
 List宽度属于lg及更大的断点区间时显示5列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/0ApAdJVUTg-rtVcVPsOJZg/zh-cn_image_0000002733276174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/-eGBQVnXSFWcnBvU2lxr5w/zh-cn_image_0000002739892726.png)
 
 ### 示例14（获取内容总大小）
 
@@ -2512,7 +2512,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Orb6ABDSQg67Cgl7IVQaNw/zh-cn_image_0000002733436052.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/986gW_rYT7aOO69g9p62Kw/zh-cn_image_0000002739732848.gif)
 
 ### 示例15（在两个列表之间实现拖拽功能）
 
@@ -2632,15 +2632,15 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/7ZcirKIaQ5OlnMCSpW_5ug/zh-cn_image_0000002762995573.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/oT4jLf_CSUS3xEIm7N1FEw/zh-cn_image_0000002769332197.gif)
 
 ### 示例16（实现ListItemGroup中点击项的居中效果）
 
-该示例使用[scrollToItemInGroup](ts-container-list.md#scrolltoitemingroup11)接口，实现了点击[ListItemGroup](ts-container-listitemgroup.md)中的[ListItem](ts-container-listitem.md)时将其居中的效果。
+该示例使用[scrollToItemInGroup](ts-container-list.md#scrolltoitemingroup11)接口，实现了单击[ListItemGroup](ts-container-listitemgroup.md)中的[ListItem](ts-container-listitem.md)时将其居中的效果。
 
 ```ts
 import { util } from '@kit.ArkTS';
-
+import { BusinessError } from '@kit.BasicServicesKit';
 class Contact {
   key: string = util.generateRandomUUID(true);
   name: string;
@@ -2715,10 +2715,15 @@ struct ContactsList {
               TapGesture({ count: 1 })
                 .onAction((event: GestureEvent) => {
                   if (event) {
-                    const itemRect = this.scroller.getItemRectInGroup(index, subIndex);
-                    console.info('第', index + 1, '个ListItemGroup的第', subIndex + 1, '个ListItem的 x:', itemRect.x,
-                      ' y:', itemRect.y, ' width:', itemRect.width, ' height:', itemRect.height)
-                    this.scroller.scrollToItemInGroup(index, subIndex, true, ScrollAlign.CENTER);
+                    try {
+                      const itemRect = this.scroller.getItemRectInGroup(index, subIndex);
+                      console.info('第', index + 1, '个ListItemGroup的第', subIndex + 1, '个ListItem的 x:', itemRect.x,
+                        ' y:', itemRect.y, ' width:', itemRect.width, ' height:', itemRect.height)
+                      this.scroller.scrollToItemInGroup(index, subIndex, true, ScrollAlign.CENTER);
+                    } catch (err) {
+                      let error: BusinessError = err as BusinessError;
+                      console.error(`getItemRectInGroup or scrollToItemInGroup failed, error code: ${error.code}, message: ${error.message}`);
+                    }
                   }
                 })
             )
@@ -2736,7 +2741,7 @@ struct ContactsList {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/DWDEfvIaSPORRv1_pDOmlw/zh-cn_image_0000002762835687.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Pdu7mQKMQICzjVpuSUlemg/zh-cn_image_0000002769452059.gif)
 
 ### 示例17（设置多选聚拢动画）
 
@@ -2835,7 +2840,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/3zDHMCzBTNK6vWD3CRXcDg/zh-cn_image_0000002733276176.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/1BS2xtyuR9C2ClhB6WqCmg/zh-cn_image_0000002739892728.gif)
 
 ### 示例18（设置滑动多选）
 
@@ -2911,4 +2916,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/8ifxnPz-QpmFlwGPSS5LNA/zh-cn_image_0000002733436054.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/nfyMNNj0QJCasa4xzDMIUQ/zh-cn_image_0000002739732850.gif)

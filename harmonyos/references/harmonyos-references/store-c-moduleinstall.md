@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-c-m
 title: ModuleInstall
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > C API > 模块 > ModuleInstall
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5e71700e449fd02290e49c011adaf4d28f18748b4a4bf670ea398b713b858a10
+scraped_at: 2026-09-24T06:55:15+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:fab3a08066689f7c16a1ab3cc04d98b8a6fbec47715a14dadbe98edfba468bb2
 ---
 
 ## 概述
@@ -237,8 +237,8 @@ ModuleInstall_ErrCode HMS_ModuleInstall_GetInstalledModule(const char *moduleNam
 
 | 名称 | 描述 |
 | --- | --- |
-| char \*moduleName | 模块名。 |
-| int length | 模块名长度，最大长度512。 |
+| const char \*moduleName | 模块名。 |
+| unsigned int length | 模块名长度，最大长度512。 |
 | [ModuleInstall\_InstalledModule](store-c-moduleinstall.md#moduleinstall_installedmodule) \*\*installedModule | 模块信息。 |
 
 **返回：**
@@ -335,10 +335,10 @@ ModuleInstall_ErrCode HMS_ModuleInstall_FetchModules(const char *bundleName, uns
 
 | 名称 | 描述 |
 | --- | --- |
-| char \*bundleName | 包名。 |
-| int length | 包名长度，最大长度512。 |
+| const char \*bundleName | 包名。 |
+| unsigned int length | 包名长度，最大长度512。 |
 | char \*\*moduleNames | 模块名数组。 |
-| int moduleNamesLength | 模块名数组长度，最大长度512。 |
+| unsigned int moduleNamesLength | 模块名数组长度，最大长度512。 |
 | [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*\*fetchModulesResult | 模块安装结果。 |
 
 **返回：**
@@ -387,7 +387,7 @@ ModuleInstall_TaskStatus HMS_ModuleInstall_GetFetchModulesTaskStatus(const Modul
 
 | 名称 | 描述 |
 | --- | --- |
-| [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
+| const [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
 
 **返回：**
 
@@ -411,7 +411,7 @@ char *HMS_ModuleInstall_GetFetchModulesTaskId(const ModuleInstall_FetchModulesRe
 
 | 名称 | 描述 |
 | --- | --- |
-| [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
+| const [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
 
 **返回：**
 
@@ -435,7 +435,7 @@ char *HMS_ModuleInstall_GetFetchModulesDesc(const ModuleInstall_FetchModulesResu
 
 | 名称 | 描述 |
 | --- | --- |
-| [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
+| const [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
 
 **返回：**
 
@@ -459,7 +459,7 @@ char* HMS_ModuleInstall_GetFetchModules(const ModuleInstall_FetchModulesResult *
 
 | 名称 | 描述 |
 | --- | --- |
-| [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
+| const [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
 
 **返回：**
 
@@ -483,7 +483,7 @@ int HMS_ModuleInstall_GetFetchModulesTotalSize(const ModuleInstall_FetchModulesR
 
 | 名称 | 描述 |
 | --- | --- |
-| [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
+| const [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
 
 **返回：**
 
@@ -507,7 +507,7 @@ int HMS_ModuleInstall_GetFetchModulesDownloadedSize(const ModuleInstall_FetchMod
 
 | 名称 | 描述 |
 | --- | --- |
-| [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
+| const [ModuleInstall\_FetchModulesResult](store-c-moduleinstall.md#moduleinstall_fetchmodulesresult) \*fetchModulesResult | 模块安装结果。 |
 
 **返回：**
 
@@ -531,9 +531,9 @@ ModuleInstall_ErrCode HMS_ModuleInstall_CancelTask(const char *taskId, unsigned 
 
 | 名称 | 描述 |
 | --- | --- |
-| char \*taskId | 任务id。 |
-| int length | 任务id长度，最大长度512。 |
-| int cancelResult | 取消下载结果。  0：成功。  1：失败。 |
+| const char \*taskId | 任务id。 |
+| unsigned int length | 任务id长度，最大长度512。 |
+| unsigned int cancelResult | 取消下载结果。  0：成功。  1：失败。 |
 
 **返回：**
 
@@ -557,7 +557,7 @@ ModuleInstall_ErrCode HMS_ModuleInstall_PauseTask(const char *taskId)
 
 | 名称 | 描述 |
 | --- | --- |
-| char \*taskId | 任务id。 |
+| const char \*taskId | 任务id。 |
 
 **返回：**
 
@@ -581,9 +581,9 @@ ModuleInstall_ErrCode HMS_ModuleInstall_ShowCellularDataConfirmation(const char 
 
 | 名称 | 描述 |
 | --- | --- |
-| char \*taskId | 任务id。 |
-| int length | 任务id长度，最大长度512。 |
-| int showResult | 展示流量弹窗结果。  0：成功。  1：失败。 |
+| const char \*taskId | 任务id。 |
+| unsigned int length | 任务id长度，最大长度512。 |
+| unsigned int showResult | 展示流量弹窗结果。  0：成功。  1：失败。 |
 
 **返回：**
 
@@ -631,10 +631,10 @@ ModuleInstall_ErrCode HMS_ModuleInstall_On(const char *bundleName, unsigned int 
 
 | 名称 | 描述 |
 | --- | --- |
-| char \*bundleName | 包名。 |
-| int length | 包名长度，最大长度512。 |
-| int appIndex | 应用分身索引。 |
-| int period | 监听周期。 |
+| const char \*bundleName | 包名。 |
+| unsigned int length | 包名长度，最大长度512。 |
+| unsigned int appIndex | 应用分身索引。 |
+| unsigned int period | 监听周期。 |
 | [ModuleInstall\_StatusCallback](store-c-moduleinstall.md#moduleinstall_statuscallback) \*\*callback | 下载进度监听回调。 |
 
 **返回：**
@@ -679,9 +679,9 @@ ModuleInstall_ErrCode HMS_ModuleInstall_Off(const char *bundleName, unsigned int
 
 | 名称 | 描述 |
 | --- | --- |
-| char \*bundleName | 包名。 |
-| int length | 包名长度，最大长度512。 |
-| int appIndex | 应用分身索引。 |
+| const char \*bundleName | 包名。 |
+| unsigned int length | 包名长度，最大长度512。 |
+| unsigned int appIndex | 应用分身索引。 |
 
 **返回：**
 

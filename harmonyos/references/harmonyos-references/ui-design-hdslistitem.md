@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsListItem (列表项)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsListItem (列表项)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:22:10+08:00
+scraped_at: 2026-09-24T06:53:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5bf9f726229dfc51dfc3a41aa66a05fe1a7a2e06b6ad76feb1c1d24da123b7d2
+content_hash: sha256:9b6cdf4724f4ac22b34a9939c553eaf68d3a8947dd1be08e9516647546d8000b
 ---
 
 该组件可设置ListItem的横滑动效，可以承载HdsListItemCard组件。
@@ -409,4 +409,4 @@ export class LazyDataSource<T> implements IDataSource {
 
 执行上述示例中的代码效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/oQD0jtpRSpqfv1ShExuxCg/zh-cn_image_0000002762836665.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/0aRCBjeiSNurQmFJAGcbNQ/zh-cn_image_0000002769453025.gif)

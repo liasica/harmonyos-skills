@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-faq
 title: ArkData常见问题
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > ArkData常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3fa5c532f60fef6822339ff71dfe3eabcf87500b7f49d106761c2ca96de402c6
+scraped_at: 2026-09-24T06:49:27+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:b34f66bdfe16573bc28b5fa8abebd0e671c64fe97b11d26c26009a86b8322d59
 ---
 
 ## 如何查看关系型数据库详细的SQL执行异常信息
@@ -43,7 +43,7 @@ content_hash: sha256:3fa5c532f60fef6822339ff71dfe3eabcf87500b7f49d106761c2ca96de
 ```ts
 import { relationalStore } from '@kit.ArkData'
 
-let password: string = "x'3605d7de19311edba4d3c88143c61cdd79dd5a58bc829c8b1234567891234567'"; // 需替换为实际的数据库口令密码
+let password: string = "x'3605d7de19311edba4d3c88143c61cdd79dd5a58bc829c8b1234567891234567'"; // 需替换为实际的数据库原始密钥（64位十六进制字符串，对应32字节原始密钥）
 let key = new Uint8Array(buffer.from(password, 'utf8').buffer); // 返回的是Uint8Array
 // 配置加密参数
 const cryptoParam: relationalStore.CryptoParam = {

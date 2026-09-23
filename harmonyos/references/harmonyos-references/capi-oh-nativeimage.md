@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-n
 title: OH_NativeImage
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 模块 > OH_NativeImage
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-24T06:55:00+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:4cf3a987763277a441cb87d3522f9757e2b61b7d7e7d96475b47a82a6e15ea83
 ---
 

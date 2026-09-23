@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hms-ai-sp
 title: speechRecognizer（语音识别）
 breadcrumb: API参考 > AI > Core Speech Kit（基础语音服务） > ArkTS API > speechRecognizer（语音识别）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:48+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:683ad15c29b1541d2d46567b22478b6578f6366bdafc0d1f2378ad668d2e0e7b
+scraped_at: 2026-09-24T06:55:43+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:2f7456106217cc336e59298cab9ae9b1c4b5e8f09c5af13528ff234fa11c05c4
 ---
 
 语音识别服务提供将音频信息转换为文本的能力，便于用户与设备进行互动，实现实时语音交互、语音识别。
@@ -334,7 +334,7 @@ let setListener: speechRecognizer.RecognitionListener = {
   },
   // 识别结果回调，包括中间结果和最终结果
   onResult(sessionId: string, result: speechRecognizer.SpeechRecognitionResult) {
-    console.info(`onResult, sessionId: ${sessionId} sessionId: ${JSON.stringify(result)}`);
+    console.info(`onResult, sessionId: ${sessionId} result: ${JSON.stringify(result)}`);
   },
   // 识别完成回调
   onComplete(sessionId: string, eventMessage: string) {
@@ -659,7 +659,7 @@ struct Page {
         })
 
       Button() {
-        Text('cancel')
+        Text('isBusy')
           .fontColor(Color.White)
           .fontSize(20)
       }
@@ -714,7 +714,7 @@ struct Page {
         })
 
       Button() {
-        Text('cancel')
+        Text('shutdown')
           .fontColor(Color.White)
           .fontSize(20)
       }
@@ -779,7 +779,7 @@ let setListener: speechRecognizer.RecognitionListener = {
   },
   // 识别结果回调，包括中间结果和最终结果
   onResult(sessionId: string, result: speechRecognizer.SpeechRecognitionResult) {
-    console.info(`onResult, sessionId: ${sessionId} sessionId: ${JSON.stringify(result)}`);
+    console.info(`onResult, sessionId: ${sessionId} result: ${JSON.stringify(result)}`);
   },
   // 识别完成回调
   onComplete(sessionId: string, eventMessage: string) {
@@ -843,7 +843,7 @@ let setListener: speechRecognizer.RecognitionListener = {
   },
   // 识别结果回调，包括中间结果和最终结果
   onResult(sessionId: string, result: speechRecognizer.SpeechRecognitionResult) {
-    console.info(`onResult, sessionId: ${sessionId} sessionId: ${JSON.stringify(result)}`);
+    console.info(`onResult, sessionId: ${sessionId} result: ${JSON.stringify(result)}`);
   },
   // 识别完成回调
   onComplete(sessionId: string, eventMessage: string) {
@@ -906,7 +906,7 @@ let setListener: speechRecognizer.RecognitionListener = {
   },
   // 识别结果回调，包括中间结果和最终结果
   onResult(sessionId: string, result: speechRecognizer.SpeechRecognitionResult) {
-    console.info(`onResult, sessionId: ${sessionId} sessionId: ${JSON.stringify(result)}`);
+    console.info(`onResult, sessionId: ${sessionId} result: ${JSON.stringify(result)}`);
   },
   // 识别完成回调
   onComplete(sessionId: string, eventMessage: string) {
@@ -969,7 +969,7 @@ let setListener: speechRecognizer.RecognitionListener = {
   },
   // 识别结果回调，包括中间结果和最终结果
   onResult(sessionId: string, result: speechRecognizer.SpeechRecognitionResult) {
-    console.info(`onResult, sessionId: ${sessionId} sessionId: ${JSON.stringify(result)}`);
+    console.info(`onResult, sessionId: ${sessionId} result: ${JSON.stringify(result)}`);
   },
   // 识别完成回调
   onComplete(sessionId: string, eventMessage: string) {
@@ -1033,7 +1033,7 @@ let setListener: speechRecognizer.RecognitionListener = {
   },
   // 识别结果回调，包括中间结果和最终结果
   onResult(sessionId: string, result: speechRecognizer.SpeechRecognitionResult) {
-    console.info(`onResult, sessionId: ${sessionId} sessionId: ${JSON.stringify(result)}`);
+    console.info(`onResult, sessionId: ${sessionId} result: ${JSON.stringify(result)}`);
   },
   // 识别完成回调
   onComplete(sessionId: string, eventMessage: string) {
@@ -1121,7 +1121,6 @@ let extraParam: Record<string, Object> = {
   'vadBegin': 2000,
   'vadEnd': 3000,
   'maxAudioDuration': 20000,
-  'srcType': 1,
   'recognizerOption': recognizerOption
 };
 // 设置开始识别相关参数

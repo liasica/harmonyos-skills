@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: Context (Stage模型的上下文基类)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > Context (Stage模型的上下文基类)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:19:54+08:00
+scraped_at: 2026-09-24T06:51:45+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cf49c12b1f97d04ef177a1f7fbcedd70fbcc8fbeb7da953ea1f95c3babfe4b1c
+content_hash: sha256:898770b3c140b96cdf63f9c0cb6e6968fa95815a9dfec1fdd9f19c0afbe904e5
 ---
 
 Context是Stage模型的上下文基类，主要用于访问特定应用程序的资源，以及执行应用级操作的回调。
@@ -19,10 +19,10 @@ Context是Stage模型的上下文基类，主要用于访问特定应用程序�
 
 * 不同类型Context的继承关系如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/-R3HGLz4TmOWcjf52rM9UA/zh-cn_image_0000002762835427.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/BqKI2dnVSriPkAsUTy2BjQ/zh-cn_image_0000002769451801.png)
 * 不同类型Context的持有关系如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/KS9sHl5-RhmAB9pXhecr4g/zh-cn_image_0000002733275916.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/1eecodGpS0avzVXElOeCZw/zh-cn_image_0000002739892470.png)
 
 **说明** 
 

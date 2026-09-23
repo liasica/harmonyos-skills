@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-import-e
 title: 数字信封导入密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 数字信封导入密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d6f5eec43b8f97d10576f17d8c34f765e476ce8610b16a95f90a60114efb63a8
+scraped_at: 2026-09-24T06:50:00+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:7fc9e2cb9cf9130f38879415b08cea4f289bd9f3b733193a6ae20cf5d0bdddbb
 ---
 
 从API 23开始支持[数字信封](huks-key-import-overview.md#数字信封导入)特性。
@@ -127,7 +127,7 @@ async function EnvelopRsaTest()
     .then((data) => {
       handle = data.handle;
     }).catch((error: BusinessError) => {
-      console.error('decrypt init fail, errorCode: ${error.code}')
+      console.error(`decrypt init fail, errorCode: ${error.code}`)
     })
   await huks.finishSession(handle, enOption)
     .then((data) => {
@@ -323,7 +323,7 @@ async function EnvelopAesTest()
     .then((data) => {
       handle = data.handle;
     }).catch((error: BusinessError) => {
-      console.error('decrypt init fail')
+      console.error(`encrypt init fail`)
     });
   await huks.finishSession(handle, enOption)
     .then((data) => {

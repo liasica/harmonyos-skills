@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVPlayer)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVPlayer)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1b27ce27133393bc7cd02e10c92c645e07f7b570b9b9e203a9b499bd49ac25b6
+scraped_at: 2026-09-24T06:54:49+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:bb6f74f973005a8fdb80f53509b22386ebfa2423f49eda77f3375ec4d1694c95
 ---
 
 播放管理接口，用于管理和播放媒体资源。支持音视频播放、播放控制（播放、暂停、停止、跳转、倍速等）、状态管理和事件监听。适用于本地音视频播放、网络流媒体播放、直播等多种场景。使用AVPlayer可以快速实现播放功能，简化开发流程，提升应用性能和用户体验。在调用AVPlayer的方法前，需要先通过[createAVPlayer()](arkts-apis-media-f.md#mediacreateavplayer9)构建一个AVPlayer实例。
@@ -2546,7 +2546,7 @@ async function test(){
 
 setVolume(volume: number): void
 
-设置媒体播放音量，只能在prepared/playing/paused/completed状态调用，可以通过[on('volumeChange')](arkts-apis-media-avplayer.md#onvolumechange9)事件确认是否生效。
+调节当前播放的视频/音频的媒体播放音量，只能在prepared/playing/paused/completed状态调用，可以通过[on('volumeChange')](arkts-apis-media-avplayer.md#onvolumechange9)事件确认是否生效。此接口功能不对系统其他音量生效，如需调节其他音量（如系统音量、应用音量等）请参考[播放音量管理](../harmonyos-guides/volume-management.md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

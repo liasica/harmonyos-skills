@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-per
 title: "PersistenceV2: 持久化存储UI状态"
 breadcrumb: "指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理应用拥有的状态 > PersistenceV2: 持久化存储UI状态"
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:17+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:f7d9732426408c3196785d7cef6e59f97e2c12bb2845b47b0a847139fb626734
+scraped_at: 2026-09-24T06:49:33+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:d300f9636693b7436569fd31f89ab1a8a915e253ea946f26eff6141704fdc9bf
 ---
 
 为了增强状态管理框架对持久化存储UI的能力，开发者可以使用PersistenceV2存储持久化的数据。
@@ -22,7 +22,7 @@ PersistenceV2从API version 12开始支持。
 
 globalConnect从API version 18开始支持，行为和connect保持一致，唯一的区别为connect的底层存储路径为module级别的路径，而globalConnect的底层存储路径为应用级别，详细区别见使用场景[在不同的module中使用connect和globalConnect](arkts-new-persistencev2.md#在不同的module中使用connect和globalconnect)。
 
-globalConnect从API version 23开始支持[集合类型](arkts-new-persistencev2.md#globalconnect支持集合的类型)（Array、Map、Set、Date、collections.Array、collections.Map、collections.Set）的持久化，支持在UI线程持久化@Sendable类型的数据持久化，支持持久化循环引用的对象，支持持久化单个key超过8k的数据。目前建议开发者使用API version 23的新增的globalConnect接口。
+globalConnect从API version 23开始支持[集合类型](arkts-new-persistencev2.md#globalconnect支持的集合类型)（Array、Map、Set、Date、collections.Array、collections.Map、collections.Set）的持久化，支持在UI线程持久化@Sendable类型的数据持久化，支持持久化循环引用的对象，支持持久化单个key超过8k的数据。目前建议开发者使用API version 23的新增的globalConnect接口。
 
 ## 概述
 
@@ -158,8 +158,8 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/imCS1oGXTSW_XfrgwvxDig/zh-cn_image_0000002762833183.gif)
-* globalConnect在持久化多个相同[集合类型](arkts-new-persistencev2.md#globalconnect支持集合的类型)时，需要提供不同的key来区分持久化数据。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/BhdETysqTbyOlEqMa_sOYA/zh-cn_image_0000002769449587.gif)
+* globalConnect在持久化多个相同[集合类型](arkts-new-persistencev2.md#globalconnect支持的集合类型)时，需要提供不同的key来区分持久化数据。
 
   如下展示开发者持久化相同的Array<number>类型的部分示例代码片段：
 
@@ -251,7 +251,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/MODGNQ7-TRGLAU7P2tM9BA/zh-cn_image_0000002733273668.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/U4ldNEHyTDiUd___EzhpUw/zh-cn_image_0000002739890256.gif)
 
   如下为globalConnect支持Date类型的持久化示例：
 
@@ -285,7 +285,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/teSHfx2oT7OIH0ErCCW2Ew/zh-cn_image_0000002733433546.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/NKIdAGbHTNam_Vd32hF5iw/zh-cn_image_0000002739730378.gif)
 
   如下为globalConnect支持Number类型作为class子属性的持久化示例：
 
@@ -326,7 +326,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/08mt7f6EQQmMmoKSp7WUNw/zh-cn_image_0000002762993071.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/EfqDsLXUR5COzVaurwMHwA/zh-cn_image_0000002769329727.png)
 
 6、在API version 23以前，不支持循环引用对象的持久化。
 
@@ -396,7 +396,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/LCpOSmjkSca2QMp3Le88hg/zh-cn_image_0000002762833185.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/AgDd42zcQsO6jf5cnPmuAA/zh-cn_image_0000002769449589.png)
 
 7、只有[@Trace](arkts-new-observedv2-and-trace.md)的数据改变会触发自动持久化，如V1状态变量、[@Observed](arkts-observed-and-objectlink.md)对象、普通数据的改变不会触发持久化。
 
@@ -437,6 +437,26 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 * 从API版本26.0.0开始，[PersistenceErrorCallback](../harmonyos-references/js-apis-statemanagement.md#persistenceerrorcallback)支持传入oldValue参数，开发者可通过该参数获取存于磁盘的旧的序列化数据，具体用例可见[通过notifyonerror获取旧的序列化数据](arkts-new-persistencev2.md#通过notifyonerror获取旧的序列化数据)。
 
 14、不支持在使用connect或globalConnect的类中使用[@Computed](arkts-new-computed.md)。@Computed为只读属性，不支持赋值操作，因此会导致反序列化失败。
+
+15、在使用globalConnect持久化[集合类型](arkts-new-persistencev2.md#globalconnect支持的集合类型)（如Array、Map、Set、collections.Array、collections.Map、collections.Set）时，若容器内部元素类型为基础类型（如number、string、boolean），则不应声明defaultSubCreator，否则会导致编辑、编译报错。
+
+* defaultSubCreator的类型为StorageDefaultCreator<S>，其泛型参数S受S extends object约束，而number、string、boolean等基础类型在ArkTS中不继承自object，无法满足该约束，因此当容器内部元素类型为基础类型时，声明defaultSubCreator将导致编辑、编译报错。
+* 当容器内部元素类型为自定义class类型（即继承自object的引用类型）时，才需要声明defaultSubCreator，用于通知状态管理框架如何创建容器内的对象项。如下示例以Array<number>为例展示正反用法：
+
+  ```typescript
+  // 反例：容器内元素类型为基础类型number，声明defaultSubCreator会导致编辑、编译报错
+  @Local arr1: Array<number> = PersistenceV2.globalConnect({
+    type: Array<number>,
+    defaultCreator: () => UIUtils.makeObserved(new Array<number>()),
+    defaultSubCreator: () => 10
+  })!;
+
+  // 正例：容器内元素类型为基础类型number，不声明defaultSubCreator
+  @Local arr2: Array<number> = PersistenceV2.globalConnect({
+    type: Array<number>,
+    defaultCreator: () => UIUtils.makeObserved(new Array<number>())
+  })!;
+  ```
 
 ## globalConnect支持的类型
 
@@ -510,7 +530,7 @@ class PersistClass {
 }
 ```
 
-### globalConnect支持集合的类型
+### globalConnect支持的集合类型
 
 集合类型是指Array<V>、Map<K, V>、Set<V>、collections.Array<V>、collections.Map<K, V>、collections.Set<V>。
 
@@ -634,7 +654,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/hTJrG4aRQuaxvJUTsUACSw/zh-cn_image_0000002733273670.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/aEcTwIZVRh2PGZwGjGf4pQ/zh-cn_image_0000002739890258.gif)
 
 ## 使用场景
 
@@ -822,7 +842,7 @@ struct Page2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/fU4XhwF7SOqBfebKY_Oh-A/zh-cn_image_0000002733433548.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/0bO0MFG1QAGQXxcOFHMY9A/zh-cn_image_0000002739730380.gif)
 
 ### 使用globalConnect存储数据
 
@@ -985,7 +1005,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/8x-psa7mSh6GYoTBBdo1HA/zh-cn_image_0000002762993073.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/CqL55kaDSGOp-8ofZITqDg/zh-cn_image_0000002769329729.gif)
 
 ### 在不同的module中使用connect和globalConnect
 
@@ -1091,7 +1111,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/CdV6I9l-SAyvgOu4Cjjd4A/zh-cn_image_0000002762833187.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/8GpZwq2HRoygKbqcMh76PA/zh-cn_image_0000002769449591.png)
 
 ```typescript
 // 模块2
@@ -1151,7 +1171,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/UfawZqVhQA65rh9u-XSvzA/zh-cn_image_0000002733273672.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/mBRwFdalSYKSIObxPrw3UA/zh-cn_image_0000002739890260.png)
 
 当开发者对newModule使用不同启动方式会有以下现象：
 
@@ -1235,7 +1255,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/84ur1z6hT7qc_vN0q-s0iw/zh-cn_image_0000002733433550.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/7ZJPfFyWSEe_O05W86tlpg/zh-cn_image_0000002739730382.gif)
 
 起始时，SampleChild中的childInfo变量类型为SampleInfo，正常存储后，将childInfo变量的类型切换为number，并赋值为1，之后再次启动程序，此时会由于存储数据的结构与当前数据的结构不一致，导致数据反序列化失败。此时会通过notifyOnError中写入的回调，将磁盘中存储的旧的序列化数据打印出来。即在Error日志中显示：
 
@@ -1309,7 +1329,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-gbjDwJqTeGItHQljR4TeQ/zh-cn_image_0000002762993075.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/8-y4BNIiT9WyBWJUdTTAQA/zh-cn_image_0000002769329731.gif)
 
 ```typescript
 // 迁移到globalConnect
@@ -1393,7 +1413,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/1o1D3pVYTLyloMjFjnRa4w/zh-cn_image_0000002762833189.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Pgd4OppMSLKY1Qa7uqPRtQ/zh-cn_image_0000002769449593.gif)
 
 connect向globalConnect迁移，需要将key绑定的value赋值给globalConnect进行存储，之后当自定义组件使用globalConnect连接时，globalConnect绑定的数据即为之前使用connect保存的数据，开发者可以自定义move函数，并将其放在合适位置迁移即可。
 
@@ -1451,7 +1471,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/cSrUf7ONQY-OgUX2taKZJA/zh-cn_image_0000002733273674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/yOWq0XYKRBa9s5sAgdgHxA/zh-cn_image_0000002739890262.png)
 
 下表将结合样例，说明在变更数据结构时会触发notifyOnError的情形。
 

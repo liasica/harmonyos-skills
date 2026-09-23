@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 时域可分层视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 时域可分层视频编码
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:12+08:00
-doc_updated_at: 2026-08-21
-content_hash: sha256:b4a20b7eb32f24a746347f42db50cd9f2a1a1f2db80cb5b8ebc27fc9b522ba7a
+scraped_at: 2026-09-24T06:50:20+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:4cb6f209dd73c5ab6a7c5f7405d2854e0cd7482172a283a38dd2d3b6595bb068
 ---
 
 ## 基础概念
@@ -18,13 +18,13 @@ content_hash: sha256:b4a20b7eb32f24a746347f42db50cd9f2a1a1f2db80cb5b8ebc27fc9b52
 
 **时域可分层视频编码**，是指能编码出时域分层码流的视频编码，下图展示了通过参考关系构建的4层时域分层码流结构。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/hfniVDYcRQKhEaAG2BKfYA/zh-cn_image_0000002762994287.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/FCjSlx1YToSdVmozg1N1rw/zh-cn_image_0000002769330929.png)
 
 从高到低逐层丢弃部分层级的码流（丢弃顺序L3->L2->L1），能实现不同程度的帧率伸缩，以满足传输和解码能力的变化需求。
 
 如下图所示，这是上述4层时域分层码流结构丢弃L3后组成的新的码流结构，能在解码正常的情况下实现帧率减半的效果。其他层的丢弃同理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/njIspuQyRICd5EUhOP293A/zh-cn_image_0000002762834403.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/GKX8leVgTS2siQN_oGqK4A/zh-cn_image_0000002769450791.png)
 
 ### 时域分层码流结构介绍
 
@@ -93,15 +93,15 @@ content_hash: sha256:b4a20b7eb32f24a746347f42db50cd9f2a1a1f2db80cb5b8ebc27fc9b52
 
 使用举例1：TGOP=4时的相邻参考模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/n4EeFjDKQA2JQHmEjQ9eZw/zh-cn_image_0000002733274888.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/afApWaKBR1OgSIzCPVSqoQ/zh-cn_image_0000002739891460.png)
 
 使用举例2：TGOP=4时的跨帧参考模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/nTKNSTn1SOmpWhtaqBFd4Q/zh-cn_image_0000002733434768.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/UW2scEG5RuGIL4up1JXFQg/zh-cn_image_0000002739731582.png)
 
 使用举例3：TGOP=4时的均匀分层模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/sWH9vVHlSD20z9oLv7vq5w/zh-cn_image_0000002762994289.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/hxUJoZgVRjOM1loJ7j4Tow/zh-cn_image_0000002769330931.png)
 
 ### 开发指导
 
@@ -333,13 +333,14 @@ content_hash: sha256:b4a20b7eb32f24a746347f42db50cd9f2a1a1f2db80cb5b8ebc27fc9b52
        // - 写入编码码流。
        // - 通知编码器码流结束。
        // - 随帧参数写入。
-       auto format = std::shared_ptr<OH_AVFormat>(OH_AVBuffer_GetParameter(buffer), OH_AVFormat_Destroy);
+       OH_AVFormat *format = OH_AVBuffer_GetParameter(buffer);
        if (format == nullptr) {
            // 异常处理。
        }
-       OH_AVFormat_SetIntValue(format.get(), OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_MARK_LTR, 1);
-       OH_AVFormat_SetIntValue(format.get(), OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, 4);
-       OH_AVBuffer_SetParameter(buffer, format.get());
+       OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_MARK_LTR, 1);
+       OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, 4);
+       OH_AVBuffer_SetParameter(buffer, format);
+       OH_AVFormat_Destroy(format);
        // 通知编码器buffer输入完成。
        OH_VideoEncoder_PushInputBuffer(codec, index);
    }
@@ -367,6 +368,9 @@ content_hash: sha256:b4a20b7eb32f24a746347f42db50cd9f2a1a1f2db80cb5b8ebc27fc9b52
    // 2.1 编码输入参数回调OH_VideoEncoder_OnNeedInputParameter实现。
    static void OnNeedInputParameter(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
    {
+       if (parameter == nullptr) {
+           // 异常处理。
+       }
        // 输入帧buffer对应的index，送入InIndexQueue队列。
        // 输入帧的数据avformat送入InFormatQueue队列。
        // 数据处理，请参考：

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:98fed077000ef7fd382a6aadc77091c4e40553b01b0ecb0cb97ed8035a4c51ea
+scraped_at: 2026-09-24T06:53:06+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:f4f4c56e9dfeece14f44fb3788b1aaafeeb729cf7bd63b744507118e12128f46
 ---
 
 ArkWeb Enums模块是ArkWeb（Web子系统）的枚举类型定义集合，为WebView组件及其关联的API类提供统一的类型约束和状态描述能力。本模块定义了覆盖Web 页面交互、安全状态、DNS配置、下载任务、媒体播控、内核版本、进程模式、内存管理、离线资源、无白屏加载、站点隔离、软键盘行为、Cookie策略、滚动控制、设备形态等多领域的枚举类型，是整个WebView API体系的基础类型支撑层。
@@ -371,7 +371,7 @@ Web页面场景下，全局滚动条模式。
 | SUCCESS | 0 | 成功。 |
 | ERR\_UNKNOWN | -1 | 未知错误，内部状态错误等。 |
 | ERR\_INVALID\_PARAM | -2 | 参数不合法。 |
-| ERR\_CONTROLLER\_NOT\_INITED | -3 | WebViewController未绑定组件。 |
+| ERR\_CONTROLLER\_NOT\_INITED | -3 | WebviewController未绑定组件。 |
 | ERR\_KEY\_NOT\_MATCH | -4 | 未匹配到key值，对于[setBlanklessLoadingWithKey](arkts-apis-webview-webviewcontroller.md#setblanklessloadingwithkey20)需与[getBlanklessInfoWithKey](arkts-apis-webview-webviewcontroller.md#getblanklessinfowithkey20)配套使用并且key值一致，否则返回该错误码。 |
 | ERR\_SIGNIFICANT\_CHANGE | -5 | 当相似度较低时，系统会判定为跳变太大，[setBlanklessLoadingWithKey](arkts-apis-webview-webviewcontroller.md#setblanklessloadingwithkey20)接口不会成功启用插帧。 |
 | ERR\_DURATION\_OUT\_OF\_RANGE23+ | -6 | 在[BlanklessLoadingParam](arkts-apis-webview-i.md#blanklessloadingparam23)设置的插帧持续时间超出范围。  **模型约束：** 此接口仅可在Stage模型下使用。 |

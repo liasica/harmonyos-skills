@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone
 title: 华为账号一键登录（获取手机号和UnionID/OpenID）
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号一键登录（获取手机号和UnionID/OpenID）
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:699f485889b1af35a0effc89f0ad12d9ca4c75beea91c86d832504c19265f305
+scraped_at: 2026-09-24T06:50:34+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:85549677e4a755a2d712ba13951651f1ba67d788e2f3d224b53a9d761264b75d
 ---
 
 ## 概述
@@ -42,13 +42,13 @@ content_hash: sha256:699f485889b1af35a0effc89f0ad12d9ca4c75beea91c86d832504c1926
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/CzeffxjdT8qmk02_Y_X5mA/zh-cn_image_0000002762994559.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/4ZNRTUWfSOGn8j2Vjyl6WA/zh-cn_image_0000002769331191.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/vWP-QfJOTYq2T1-JmZEWCA/zh-cn_image_0000002762834673.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/q3Wieej9SrKWvPGJc4gxZw/zh-cn_image_0000002769451053.png)
 
 ## 登录页面UX设计规范
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/yk_ABNoVTSmA1V6HKOsjrg/zh-cn_image_0000002733275160.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/clgWW7SRS8-_Qlkwz0FRDQ/zh-cn_image_0000002739891722.png)
 
 一键登录按钮的用户体验和UX设计需符合[【华为账号一键登录】按钮](../design-guides/id-0000001880001344.md#section41792374210)规范，用户体验设计图2中的华为标志按钮可参考[华为账号登录视觉规范](../design-guides/id-0000001880001344.md#section61791745172816)中的样式三。不符合规范的UX设计可能会对应用上架和用户体验带来影响。一键登录按钮的样式设计具体可以参考[华为账号登录按钮类型](../harmonyos-references/account-api-component-manager.md#style)。
 
@@ -56,7 +56,7 @@ content_hash: sha256:699f485889b1af35a0effc89f0ad12d9ca4c75beea91c86d832504c1926
 
 用户使用华为账号一键登录能力，注册/登录应用时，可能存在多种场景，应用可参照以下流程，根据自身业务场景进行设计。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/YXQ3tHppQEutSBe7_VLOng/zh-cn_image_0000002733435038.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/xXjwdnBNSuSTlwGoo-22bQ/zh-cn_image_0000002739731844.png)
 
 **说明** 
 
@@ -70,7 +70,7 @@ content_hash: sha256:699f485889b1af35a0effc89f0ad12d9ca4c75beea91c86d832504c1926
 
 **图1** 华为账号一键登录（用户首次登录应用）流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/a61jQ4T4Q3Kmg2juxJ-cvw/zh-cn_image_0000002762994561.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Ovgb0rQSTQuIZF5k4LXncQ/zh-cn_image_0000002769331193.png)
 
 流程说明：
 
@@ -97,7 +97,7 @@ content_hash: sha256:699f485889b1af35a0effc89f0ad12d9ca4c75beea91c86d832504c1926
 
 **图2** 华为账号一键登录（用户非首次登录应用）流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/KkuylCKER0Ge4VIl9DgD-A/zh-cn_image_0000002762834677.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/acebGZYCRbaD1PUSZbKPOQ/zh-cn_image_0000002769451055.png)
 
 流程说明：
 
@@ -508,7 +508,6 @@ content_hash: sha256:699f485889b1af35a0effc89f0ad12d9ca4c75beea91c86d832504c1926
 
                Text($r('app.string.app_name'))
                  .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-                 .fontWeight(FontWeight.Medium)
                  .fontWeight(FontWeight.Bold)
                  .maxFontSize($r('sys.float.ohos_id_text_size_headline8'))
                  .minFontSize($r('sys.float.ohos_id_text_size_body1'))
@@ -949,7 +948,7 @@ content_hash: sha256:699f485889b1af35a0effc89f0ad12d9ca4c75beea91c86d832504c1926
 2. 在DevEco Studio菜单栏点击View > Tool Windows > Kit Assistant，或使用快捷键Alt + K，进入Kit Assistant页面。
 3. 在左侧目录中点击选中AccountKit > QuickLoginButton，并拖拽至新创建的容器中。即可在当前位置插入相应的代码片段。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/QmzIi8DSRRC7VIgdtvdAMA/zh-cn_image_0000002733275162.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/MyNSDqFxTz24-1IEeg_0Pw/zh-cn_image_0000002739891724.png)
 
    若代码片段插入失败，可查询[快速插入场景化代码片段](ide-kit-assistant.md)的说明排查原因。
 4. 在自动生成的代码段的getQuickLoginAnonymousPhone函数中，执行executeRequest函数可获取响应结果。
@@ -983,7 +982,7 @@ content_hash: sha256:699f485889b1af35a0effc89f0ad12d9ca4c75beea91c86d832504c1926
 
 业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/so2DOGGqROaicZ4gZvE9Sg/zh-cn_image_0000002733435040.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/kL6IaUG_QrSy_kiSFd_y9g/zh-cn_image_0000002739731846.png)
 
 * 准备：
 
@@ -1057,11 +1056,11 @@ content_hash: sha256:699f485889b1af35a0effc89f0ad12d9ca4c75beea91c86d832504c1926
 
 1. 在客户端获取到Authorization Code之后，传送给服务端接口；在服务端使用Authorization Code获取华为账号绑定的手机号、UnionID、OpenID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/MCVQ0owvRceLeDHsNo56Zw/zh-cn_image_0000002762994563.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/ZagZuWjSTeCzCGlY0tCotg/zh-cn_image_0000002769331195.png)
 2. 根据应用登录方案使用华为账号绑定的手机号、UnionID、OpenID登录成功后，应用服务端返回用户信息给应用客户端，应用客户端可根据需要进行本地持久化存储，例如：登录状态、用户账号名、手机号、用户身份标识等。
 3. 在应用客户端首页或个人信息页等位置，对当前登录用户信息进行展示，举例如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/AUmgrZMLQhaFSqgB4UnQ1g/zh-cn_image_0000002762834679.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/tKffsYgGSjen2vLHhyJbMg/zh-cn_image_0000002769451057.png "点击放大")
 
 ## 开发后验证
 

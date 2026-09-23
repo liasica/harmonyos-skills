@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 动画
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:27+08:00
+scraped_at: 2026-09-24T06:49:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6620fdde34addea72a59170135cd16540be63ef02028f3b71a3f05e5834087ac
+content_hash: sha256:1c5ddbb9e7bccf9a898b59edb05c75ffe8a68a5f38ad882216a7a25d4b1f7041
 ---
 
 动画分为[静态动画](ui-js-building-ui-animation.md#静态动画)和[连续动画](ui-js-building-ui-animation.md#连续动画)。
@@ -65,7 +65,7 @@ content_hash: sha256:6620fdde34addea72a59170135cd16540be63ef02028f3b71a3f05e5834
 
 **图1** 静态动画效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/JuS9Kn5GTv6g9uUQgF7ggg/zh-cn_image_0000002762993701.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Kl0j9GahStCHMX1xNrXhxA/zh-cn_image_0000002769330353.png)
 
 ## 连续动画
 
@@ -159,4 +159,4 @@ export default {
 
 **图2** 连续动画效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/lwGaf6kwTgmQzmGz2Ht6yg/zh-cn_image_0000002762833817.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/P1EllI7fRpuS4q7EWD1EuA/zh-cn_image_0000002769450215.gif)

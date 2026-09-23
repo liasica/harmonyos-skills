@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 资源泄漏事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 资源泄漏事件 > 资源泄漏事件介绍
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:975e44c497f668782568a20456ad56c663c880eb78e257c83c8dce77c5c1ac5a
+scraped_at: 2026-09-24T06:50:13+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:6ead78b973b2527eb4d8d7a98a31514133c606dfaf45867bad032d6a65df5dc8
 ---
 
 ## 简介
 
 资源泄漏是指句柄、线程或内存等资源在应用运行过程中未被正确释放，导致资源长期占用且无法被其他应用使用。如果某一类资源耗尽，系统可能出现卡死或重启等异常情况。
 
-本文面向开发者介绍资源泄漏事件各字段的含义和规格。如需了解如何使用HiAppEvent接口订阅系统资源泄漏事件，请参考以下文档。目前提供ArkTs和C/C++两种接口。
+本文面向开发者介绍资源泄漏事件各字段的含义和规格。如需了解如何使用HiAppEvent接口订阅系统资源泄漏事件，请参考以下文档。目前提供ArkTS和C/C++两种接口。
 
 * [订阅资源泄漏事件（ArkTS）](hiappevent-watcher-resourceleak-events-arkts.md)
 * [订阅资源泄漏事件（C/C++）](hiappevent-watcher-resourceleak-events-ndk.md)
@@ -68,7 +68,7 @@ hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT, configParams);
 
 从**API version 24**开始支持页面切换日志配置。当应用发生资源泄漏故障时，系统可以收集并上报页面切换日志，帮助开发者定位问题。
 
-从**API version 26.0.0**开始支持设置资源泄漏事件的日志和回调事件规格。
+从**API版本26.0.0**开始支持设置资源泄漏事件的日志和回调事件规格。
 
 | 接口名 | 描述 |
 | --- | --- |

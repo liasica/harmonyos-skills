@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bgtask-design
 title: Background Tasks Kit接入规范
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > Background Tasks Kit接入规范
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:21654de929674fb671d98dc55f06eede2739fa957bb98694463acd0205e01ce3
+scraped_at: 2026-09-24T06:49:47+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:2f88ced34679ea161d83280d710850d5097f9ab6c426fb4af4f9ece9f3c11194
 ---
 
 ## 接入规范
@@ -49,7 +49,7 @@ content_hash: sha256:21654de929674fb671d98dc55f06eede2739fa957bb98694463acd0205e
 
 ### 违规分类、违规行为及违规处罚标准
 
-当您的应用存在违规行为时，Background Task Kit会向应用的开发者账号发送违规通知邮件或短信，请您按照邮件或者短信中提供的步骤查看违规处罚详情。
+当您的应用存在违规行为时，Background Tasks Kit会向应用的开发者账号发送违规通知邮件或短信，请您按照邮件或者短信中提供的步骤查看违规处罚详情。
 
 | **违规分类及违规行为** | **违规处罚标准** |
 | --- | --- |

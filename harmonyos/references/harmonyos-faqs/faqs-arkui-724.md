@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-724
 title: 如何监听手机音量键动作
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何监听手机音量键动作
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:51d98c9c2ab9ae14a241a70f57a0c4b8959eac8f8351eae41b3addef1c249696
+scraped_at: 2026-09-24T06:56:39+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:f39d2b9a26bf964a28e410cc95a4545534d1956090a76b7140f07cff12798ab9
 ---
 
 ## 问题现象
@@ -18,7 +18,7 @@ content_hash: sha256:51d98c9c2ab9ae14a241a70f57a0c4b8959eac8f8351eae41b3addef1c2
 
 ## 解决方案
 
-参考[KeyCode](../harmonyos-references/js-apis-keycode.md#keycode)枚举表可知，音量键增减的键码值分别为KEYCODE\_VOLUME\_UP以及KEYCODE\_VOLUME\_DOWN。获取需要监听的键码值后，使用[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent15)或[onKeyPreIme](../harmonyos-references/ts-universal-events-key.md#onkeypreime12)触发回调事件，关于音量键实现翻页效果可参考[音量键翻页](../architecture-guides/volume_key_turn_page-0000002293620017.md)。
+参考[KeyCode](../harmonyos-references/js-apis-keycode.md#keycode)枚举表可知，音量键增减的键码值分别为KEYCODE\_VOLUME\_UP以及KEYCODE\_VOLUME\_DOWN。获取需要监听的键码值后，使用[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent15)或[onKeyPreIme](../harmonyos-references/ts-universal-events-key.md#onkeypreime12)触发回调事件。
 
 监听音量键变化的完整代码参考如下：
 

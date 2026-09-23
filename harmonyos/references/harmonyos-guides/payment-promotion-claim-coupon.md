@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-promo
 title: 领券场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 运营工具 > 平台券 > 领券场景
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:44+08:00
+scraped_at: 2026-09-24T06:50:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8af602298462688813d116d5051a00498e63dc7e7a90446b3f73a16f6620080a
+content_hash: sha256:d2242e62dca034d55e68982bfaf93ae44304be500e0a4596672a5326f8ff483b
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:8af602298462688813d116d5051a00498e63dc7e7a90446b3f73a16f662
 
 领券场景展示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/zQAq3qPXSSmRsPXNAY8PGg/zh-cn_image_0000002733435406.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/KKH27kiyRHyWp9LplRYXuw/zh-cn_image_0000002739732206.png)
 
 ## 接入流程
 
@@ -35,7 +35,7 @@ content_hash: sha256:8af602298462688813d116d5051a00498e63dc7e7a90446b3f73a16f662
 
 关于领券场景的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/6ZaNPbQlSeCXYjXGo4KiUw/zh-cn_image_0000002762994929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/sZLPOKn_TZWWRS9BloJJTA/zh-cn_image_0000002769331555.png)
 
 1. 用户进入商户服务。
 2. 商户客户端调用Payment Kit客户端的[startPromotionEntryDialog](../harmonyos-references/payment-promotionservice.md#startpromotionentrydialog)拉起活动入口组件。

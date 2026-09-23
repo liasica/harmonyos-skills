@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > ArkTS API > @ohos.multimedia.drm (数字版权保护) > Functions
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-24T06:54:39+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:cb50370a1632757b06ac0dd7da95af6cf2b1dc49e346d5fc66a4599b324e6db5
 ---
 

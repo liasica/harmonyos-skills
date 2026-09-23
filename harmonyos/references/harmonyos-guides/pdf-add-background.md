@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-add-backg
 title: 添加、删除背景
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 添加、删除背景
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:45+08:00
+scraped_at: 2026-09-24T06:50:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7a2a9a21d56d7eb7e621b6cba05c8a083258939d64daa82e5460b354564b2f27
+content_hash: sha256:d0cba4e10442c113c4839ec264f6daf7f43ae70bb9b1a3897e5d2c397ec6f433
 ---
 
 对指定页面添加背景图片或背景颜色，并设置大小、旋转、透明度和位置等属性，支持图片格式：PNG、BMP、JPEG。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/DqbfHFTeSAahB2FyrzH0kw/zh-cn_image_0000002733275530.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/8yPqibjkS66V48JMD3rS3w/zh-cn_image_0000002739892090.png)
 
 ## 接口说明
 

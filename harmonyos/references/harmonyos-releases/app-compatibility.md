@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 应用兼容性说明
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:54+08:00
-doc_updated_at: 2026-07-06
+scraped_at: 2026-09-24T06:49:20+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:c6b6b4513f62752e4b24506814180cc0e796a6b76034b69e07b48ab71f58b689
 ---
 

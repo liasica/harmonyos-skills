@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.geoLocationManager (位置服务)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > @ohos.geoLocationManager (位置服务)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3d0285b607b355ae9145b8415daa14a5282ffacb6e608a56d7635f5dde9ffef3
+scraped_at: 2026-09-24T06:55:24+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:e3f10895f601bd5ed0541a20553ce1757e79383e72263f2612cb628dc03f5d19
 ---
 
 位置服务提供GNSS定位、网络定位（蜂窝基站、WLAN、蓝牙定位技术）、地理编码、逆地理编码、国家码和地理围栏等基本功能。
@@ -3678,12 +3678,12 @@ startBluetoothSearch(request: BluetoothSearchRequestParams, callback: Callback<B
 ```ts
 import { geoLocationManager } from '@kit.LocationKit';
 
-private callback = (bluetoothScanResult: geoLocationManager.BluetoothScanResult) => {
+let callback = (bluetoothScanResult: geoLocationManager.BluetoothScanResult) => {
   if (bluetoothScanResult) {
     console.info('bluetoothScanResult: deviceId=' + bluetoothScanResult.deviceId);
       try {
          // 开发者需要考虑在合适的时机调用stopBluetoothSearch停止蓝牙扫描以节省功耗，本代码仅作为参考
-         geoLocationManager.stopBluetoothSearch(this.callback);
+         geoLocationManager.stopBluetoothSearch(callback);
       } catch (err) {
          console.error("errCode:" + err.code + ", message:" + err.message);
       }
@@ -3695,7 +3695,7 @@ let request: geoLocationManager.BluetoothSearchRequestParams = {
 };
  
 try {
-  geoLocationManager.startBluetoothSearch(request, this.callback);
+  geoLocationManager.startBluetoothSearch(request, callback);
 } catch (err) {
   console.error("errCode:" + err.code + ", message:" + err.message);
 }

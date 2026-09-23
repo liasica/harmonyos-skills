@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/input-overvie
 title: Input Kit简介
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > Input Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:58+08:00
+scraped_at: 2026-09-24T06:50:08+08:00
 doc_updated_at: 2026-05-14
-content_hash: sha256:ebd3e269a29f8c511bc94aefee7e7818b0a8d094144e0b9f6890de412c26172e
+content_hash: sha256:4e826248abde14b752a86591b0ce55b58d0455d26d3026e1252edd7f555030a4
 ---
 
 ## 功能介绍
@@ -18,7 +18,7 @@ Input Kit除了提供基础的输入事件服务之外，还提供了获取输�
 
 多模输入能力作为系统为应用提供的一种基础服务，通过处理上报的输入设备驱动事件，完成输入事件管理、接收、预处理、分发，通过inner SDK与JSkit上报应用，具体运行机制如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Cc7ZXT4DSpiCjGKZGGF1Lw/zh-cn_image_0000002762994181.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/IzYmJIjfSPueFfwSjGXwxA/zh-cn_image_0000002769330825.png)
 
 ## 模拟器支持情况
 

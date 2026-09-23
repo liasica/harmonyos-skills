@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-o
 title: "@ohos.account.osAccount (系统账号管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 账号管理 > @ohos.account.osAccount (系统账号管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:49a0c4cc9004a349bd9ba2c6eee6718de5ec100cf2c5fceb142a1fa0ecf02d97
+scraped_at: 2026-09-24T06:53:57+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:01b1899b0251c208bbf2fa106fa5c138656415e2c24f0b8e31ce17e65ae930a7
 ---
 
 本模块提供管理系统账号的基础能力，包括系统账号的添加、删除、查询、设置、订阅、启动等功能。
@@ -1497,7 +1497,6 @@ getCurrentOsAccount(callback: AsyncCallback<OsAccountInfo>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 12300001 | The system service works abnormally. |
 
 **示例：**

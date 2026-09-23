@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/aodnaviga
 title: aodNaviManager (熄屏导航服务)
 breadcrumb: API参考 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > ArkTS API > aodNaviManager (熄屏导航服务)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7dbb94e2c01abbc5dce83d880e14cf5f96769df7e6b586ce82cb3fb4679dae57
+scraped_at: 2026-09-24T06:54:18+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:b1ba3af8dc7caa49d5d44b330f1ae12a20fac511ea9e1ee59cd4882385d2d720
 ---
 
 本模块提供AOD Navigation Kit的基础能力，包括检查设备是否支持熄屏导航服务、检查熄屏导航开关状态、获取熄屏导航扩展能力集、熄屏导航初始化配置、规划路线设置、更新熄屏导航视图数据及数据同步等核心功能。
@@ -100,7 +100,7 @@ aodNaviManager.isAodNaviSwitchEnabled().then((enabled: boolean) => {
 
 getAodNaviExtendCapabilities(): AodNaviExtendDataType[]
 
-获取熄屏导航服务的扩展能力集，使用Promise异步回调。不同设备可能支持不同的扩展能力，用户可以使用此接口检查支持的能力。
+获取熄屏导航服务的扩展能力集。不同设备可能支持不同的扩展能力，用户可以使用此接口检查支持的能力。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -142,7 +142,7 @@ setupAodNaviConfig(config: AodNaviConfig): Promise<void>
 
 **系统能力：** SystemCapability.PhoneService.AodNaviService
 
-**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口调用当前设备是否支持。
+**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口判断当前设备是否支持。
 
 **起始版本：** 26.0.0
 
@@ -170,7 +170,7 @@ setupAodNaviConfig(config: AodNaviConfig): Promise<void>
 | 1028300003 | Service dependency error. |
 | 1028300004 | The AOD navigation permission is not enabled. |
 | 1028300005 | The AOD navigation switch is not enabled. |
-| 1028300009 | Invalid AOD view data count. Possible causes: 1.Data count must be within the range of 1 to 6. 2.Data count does not match the number of configured entries. 3.Configuration includes items unsupported by the current device. |
+| 1028300009 | Invalid AOD view data configuration. Possible causes: 1.Data count must be within the range of 1 to 6. 2.Data count does not match the number of configured entries. 3.Configuration includes items unsupported by the current device. |
 
 **示例：**
 
@@ -316,7 +316,7 @@ setPlanRouteToAod(planRoutes: PlanRoute[], markPoints?: MarkPoint[]): Promise<vo
 
 **系统能力：** SystemCapability.PhoneService.AodNaviService
 
-**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口调用当前设备是否支持。
+**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口判断当前设备是否支持。
 
 **起始版本：** 26.0.0
 
@@ -381,7 +381,7 @@ setNaviDataToAod(eventId: string, aodNaviInteractData: AodNaviInteractData): Pro
 
 **系统能力：** SystemCapability.PhoneService.AodNaviService
 
-**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口调用当前设备是否支持。
+**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口判断当前设备是否支持。
 
 **起始版本：** 26.0.0
 
@@ -454,7 +454,7 @@ updateAodViewData(aodViewData: AodViewData): Promise<void>
 
 **系统能力：** SystemCapability.PhoneService.AodNaviService
 
-**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口调用当前设备是否支持。
+**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口判断当前设备是否支持。
 
 **起始版本：** 26.0.0
 
@@ -512,7 +512,7 @@ updateAppRecordStatus(recordStatus: AppRecordStatus): Promise<void>
 
 **系统能力：** SystemCapability.PhoneService.AodNaviService
 
-**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口调用当前设备是否支持。
+**设备行为差异：** 在支持熄屏导航功能的Phone设备上可正常调用，在不支持熄屏导航功能的Phone设备上返回801错误码，可调用[isAodNaviSupported](aodnavigation-aodnavimanager.md#aodnavimanagerisaodnavisupported)接口判断当前设备是否支持。
 
 **起始版本：** 26.0.0
 

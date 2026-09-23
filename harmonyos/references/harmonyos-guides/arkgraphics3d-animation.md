@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-animation
-title: ArkGraphics 3D场景动画控制以及管理
-breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D场景动画控制以及管理
+title: 场景动画控制与管理
+breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 场景动画控制与管理
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:58+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:b580fc1e642af2a2f491ce3e3c0583957e1f60042598efbf40a0af28f67196d4
+scraped_at: 2026-09-24T06:50:30+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:04918f721c5f179ca8a2fa78eac1dac428f62528e4dc318e8868e8567eda30a6
 ---
 
-动画（animation）：动画是3D场景中重要的资源类型，用于控制场景中各种元素的运动。比如想要场景中的人物进行走路这个动作，每帧计算人物每一个关节的旋转角并进行设置是难以实现的。所以在完成类似的要求时，3D场景资源的制作者会将动画制作好，在模型文件中保存动画的关键帧数据以及关键帧间的插值器类型。
+动画（animation）：3D场景中重要的资源类型，用于控制场景中各种元素的运动。例如，要让场景中的人物完成走路动作，逐帧计算并设置人物每个关节的旋转角是难以实现的。因此，针对这类复杂的动画需求，3D场景资源的制作者会预先制作好动画，在模型文件中保存动画的关键帧数据以及关键帧之间的插值器类型。
 
 ArkGraphics 3D提供播放并控制场景动画的能力，支持开发者灵活地控制动画的状态，达到预期的渲染效果。
 

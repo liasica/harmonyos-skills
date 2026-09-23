@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAppService（可信应用服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > TrustedAppService（可信应用服务）
 category: harmonyos-references
-scraped_at: 2026-09-21T06:22:18+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e2ca0ffd634348a33979c31d08232a0ede4427a1bd93667b0eef52b62b95c605
+scraped_at: 2026-09-24T06:53:29+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:f13513dbb67e2baee4824e39de8083f72df705a372ccb1bbac31ba9d97783db9
 ---
 
 本模块提供应用数据的安全证明服务，支持创建证明密钥、销毁证明密钥、初始化证明会话、结束证明会话和获取安全地理位置，能够为安全摄像头和安全地理位置功能提供安全证明能力，确保图像或位置数据未被篡改。
@@ -620,7 +620,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 try {
   const secureLocation = await trustedAppService.getCurrentSecureLocation(3000, trustedAppService.LocatingPriority.PRIORITY_LOCATING_SPEED);
-  hilog.info(0x0000, 'testTag', 'Succeeded in getting secure location, result = ${JSON.stringify(secureLocation)}');
+  hilog.info(0x0000, 'testTag', `Succeeded in getting secure location, result = ${JSON.stringify(secureLocation)}`);
 } catch (error) {
   let err = error as BusinessError;
   hilog.error(0x0000, 'testTag', `Failed to get secure location, code:${err.code}, message:${err.message}`);
@@ -825,7 +825,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).the
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | tag | [SecImageProcTag](devicesecurity-taas-api.md#secimageproctag) | 否 | 否 | 应用传入的标签，用于安全图像压缩、裁剪处理的配置信息。 |
-| value | number | [CropRegion](devicesecurity-taas-api.md#cropregion) | 否 | 否 | 应用传入的标签对应的值，用于安全图像压缩、裁剪处理的配置信息。  **number：**  1）tag为SECIMAGE\_TAG\_SRC\_IMAGE\_FORMAT或者  SECIMAGE\_TAG\_DEST\_IMAGE\_FORMAT  ，其值为[SecImageProcParamsArray](devicesecurity-taas-api.md#secimageprocparamsarray)类型；  2）tag为SECIMAGE\_TAG\_PROC\_OPERATION，其值为[SecImageProcOperation](devicesecurity-taas-api.md#secimageprocoperation)类型；  3）tag为SECIMAGE\_TAG\_COMPRESSION\_QUALITY，其值为1到100之间；  **CropRegion：**  tag为SECIMAGE\_TAG\_CROP\_REGION，其值为[CropRegion](devicesecurity-taas-api.md#cropregion)类型。 |
+| value | number | [CropRegion](devicesecurity-taas-api.md#cropregion) | 否 | 否 | 应用传入的标签对应的值，用于安全图像压缩、裁剪处理的配置信息。  **number：**  1）tag为SECIMAGE\_TAG\_SRC\_IMAGE\_FORMAT或者  SECIMAGE\_TAG\_DEST\_IMAGE\_FORMAT  ，其值为[SecImageProcFormat](devicesecurity-taas-api.md#secimageprocformat)类型；  2）tag为SECIMAGE\_TAG\_PROC\_OPERATION，其值为[SecImageProcOperation](devicesecurity-taas-api.md#secimageprocoperation)类型；  3）tag为SECIMAGE\_TAG\_COMPRESSION\_QUALITY，其值为1到100之间；  **CropRegion：**  tag为SECIMAGE\_TAG\_CROP\_REGION，其值为[CropRegion](devicesecurity-taas-api.md#cropregion)类型。 |
 
 ## SecImageProcTag
 
@@ -895,7 +895,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).the
 | width | number | 否 | 否 | 裁剪区域的宽度，即横向的长度，取值范围在 0 到 640 之间的偶数，且需满足 x 与 width 的和不大于 640。单位：像素（pixel）。 |
 | height | number | 否 | 否 | 裁剪区域的高度，即纵向的长度，取值范围在 0 到 480 之间的偶数，且需满足 y 与 height 的和不大于 480。单位：像素（pixel）。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/aLr3TcAlTOW7eU95QwVP8g/zh-cn_image_0000002733437032.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/3Sx0ozO-QWuPZneUoZJf0A/zh-cn_image_0000002739733820.jpg)
 
 ## SecImageBuffer
 

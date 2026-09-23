@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-
 title: FAST
 breadcrumb: API参考 > 系统 > 基础功能 > FAST Kit（算法加速服务） > C API > 模块 > FAST
 category: harmonyos-references
-scraped_at: 2026-09-21T06:23:08+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:73a40d35d05b2d62a0391358490ea3a4110005f3972b4571c3a8642a189e47ef
+scraped_at: 2026-09-24T06:54:06+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:7fd47882e243596a84742b5339cd720d839ade1935eee166174f34b9a37ae281
 ---
 
 ## 概述
@@ -297,7 +297,7 @@ typedef struct FAST_Poly FAST_Poly
 
 **描述**
 
-定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/lT3hjghfSYaHE2Iop57k2Q/zh-cn_image_0000002762996565.png)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
+定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/s-Tqdw9IRFCpNPeS_QOfBA/zh-cn_image_0000002769333179.png)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
 
 **起始版本：** 26.0.0
 
@@ -755,7 +755,7 @@ const uint32_t FAST_MAX_FFT_LOG2N = 16;
 
 **描述**
 
-FFT支持的最大点数N对应的以2为底的对数值。即FAST\_MAX\_FFT\_LOG2N=![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/jrjjOxrQTfeKHQYCqA5U8w/zh-cn_image_0000002762836681.png)，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
+FFT支持的最大点数N对应的以2为底的对数值。即FAST\_MAX\_FFT\_LOG2N=![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/DGh-c75SRB2r3dG89Vtqag/zh-cn_image_0000002769453041.png)，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
 
 **起始版本**：26.0.0
 
@@ -1552,9 +1552,9 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFilters (FAST_Biquadm * filter, const u
 
 当成功时，返回[FAST\_ERROR\_CODE\_SUCCESS](fast-kit-fast.md#fast_errorcode-1)。
 
-当filter或activeMask为NULL，或filter的activeFilters为NULL时，返回[FAST\_ERROR\_CODE\_INVALID\_PTR](fast-kit-fast.md#fast_errorcode-1)。
+当filter或activeMask为NULL时，返回[FAST\_ERROR\_CODE\_INVALID\_PTR](fast-kit-fast.md#fast_errorcode-1)。
 
-当filter未初始化时，返回[FAST\_ERROR\_CODE\_ILLEGAL\_INPUT](fast-kit-fast.md#fast_errorcode-1)。
+当filter未初始化，或filter的activeFilters为NULL时，返回[FAST\_ERROR\_CODE\_ILLEGAL\_INPUT](fast-kit-fast.md#fast_errorcode-1)。
 
 ### HMS\_FAST\_Biquadm\_SetActiveFiltersD()
 
@@ -1579,9 +1579,9 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFiltersD (FAST_BiquadmD * filter, const
 
 当成功时，返回[FAST\_ERROR\_CODE\_SUCCESS](fast-kit-fast.md#fast_errorcode-1)。
 
-当filter或activeMask为NULL，或filter的activeFilters为NULL时，返回[FAST\_ERROR\_CODE\_INVALID\_PTR](fast-kit-fast.md#fast_errorcode-1)。
+当filter或activeMask为NULL时，返回[FAST\_ERROR\_CODE\_INVALID\_PTR](fast-kit-fast.md#fast_errorcode-1)。
 
-当filter未初始化时，返回[FAST\_ERROR\_CODE\_ILLEGAL\_INPUT](fast-kit-fast.md#fast_errorcode-1)。
+当filter未初始化，或filter的activeFilters为NULL时，返回[FAST\_ERROR\_CODE\_ILLEGAL\_INPUT](fast-kit-fast.md#fast_errorcode-1)。
 
 ### HMS\_FAST\_Biquadm()
 
@@ -1610,7 +1610,7 @@ FAST_ErrorCode HMS_FAST_Biquadm (FAST_Biquadm * filter, const float ** input, co
 
 当成功时，返回[FAST\_ERROR\_CODE\_SUCCESS](fast-kit-fast.md#fast_errorcode-1)。
 
-当filter、coeff或output为NULL时，返回[FAST\_ERROR\_CODE\_INVALID\_PTR](fast-kit-fast.md#fast_errorcode-1)。
+当filter、input或output为NULL时，返回[FAST\_ERROR\_CODE\_INVALID\_PTR](fast-kit-fast.md#fast_errorcode-1)。
 
 当filter未初始化或length超出范围时，返回[FAST\_ERROR\_CODE\_ILLEGAL\_INPUT](fast-kit-fast.md#fast_errorcode-1)。
 
@@ -1641,7 +1641,7 @@ FAST_ErrorCode HMS_FAST_BiquadmD (FAST_BiquadmD * filter, const double ** input,
 
 当成功时，返回[FAST\_ERROR\_CODE\_SUCCESS](fast-kit-fast.md#fast_errorcode-1)。
 
-当filter、coeff或output为NULL时，返回[FAST\_ERROR\_CODE\_INVALID\_PTR](fast-kit-fast.md#fast_errorcode-1)。
+当filter、input或output为NULL时，返回[FAST\_ERROR\_CODE\_INVALID\_PTR](fast-kit-fast.md#fast_errorcode-1)。
 
 当filter未初始化或length超出范围时，返回[FAST\_ERROR\_CODE\_ILLEGAL\_INPUT](fast-kit-fast.md#fast_errorcode-1)。
 

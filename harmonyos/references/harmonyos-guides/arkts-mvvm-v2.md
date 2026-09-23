@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm-v2
 title: MVVM模式（V2）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > MVVM模式（V2）
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:15+08:00
+scraped_at: 2026-09-24T06:49:32+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:02789ee9d49ff3a26514ed6cd39b185c9d662414b2016ef28884c05e499f747e
+content_hash: sha256:de8c0f5d377a6c0a8f50f96a6b64118963fe40299c6d49b0e22a709375d42302
 ---
 
 ## 概述
@@ -998,7 +998,7 @@ struct TodoList {
 
 ### 效果图展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/KDuUjHU-SaKbOjqzNEHRlw/zh-cn_image_0000002762833085.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/rIYSzmItRdeC_WwHeho5Wg/zh-cn_image_0000002769449491.gif)
 
 ## 重构代码以符合MVVM架构
 

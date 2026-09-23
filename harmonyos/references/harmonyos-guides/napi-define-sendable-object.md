@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-define-s
 title: 自定义Native Sendable对象的多线程操作场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 自定义Native Sendable对象的多线程操作场景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f13a1ceb8475517e51aaca36becae7d70712c39ff265f96bc2ff3cae9f9840c3
+scraped_at: 2026-09-24T06:49:29+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:66adc2396e5993cd866e51d389bf0cf2fa25a15f2591d7112aae3eb3574be5cd
 ---
 
 ArkTS支持开发者自定义Native Sendable对象，Sendable对象提供了并发实例间高效的通信能力，即引用传递，适用于开发者自定义大对象需要线程间通信的场景，例如子线程读取数据库数据并返回给宿主线程。
@@ -94,7 +94,10 @@ ArkTS支持开发者自定义Native Sendable对象，Sendable对象提供了并�
    void MyObject::Destructor(napi_env env, void *nativeObject, [[maybe_unused]] void *finalizeHint)
    {
        OH_LOG_INFO(LOG_APP, "MyObject::Destructor called");
-       reinterpret_cast<MyObject *>(nativeObject)->~MyObject();
+       MyObject *obj = reinterpret_cast<MyObject *>(nativeObject);
+       if (obj != nullptr) {
+           delete obj;
+       }
    }
 
    // 在构造函数中绑定ArkTS Sendable对象与C++对象

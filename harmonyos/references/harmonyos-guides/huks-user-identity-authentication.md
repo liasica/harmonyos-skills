@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-user-ide
 title: 用户身份认证访问控制开发指导
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 访问控制 > 用户身份认证访问控制开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8575ea01bc99f5e3e95405053d299a4d9b80fd9a2292e02116c483ea8ba3545c
+scraped_at: 2026-09-24T06:50:00+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:bcc595ba003ba67c097dab169a0d333d4c30fcde5286e62865774edb059eb92f
 ---
 
 场景介绍及相关概念说明请参考[用户身份认证访问控制简介](huks-identity-authentication-overview.md)。
@@ -14,9 +14,7 @@ content_hash: sha256:8575ea01bc99f5e3e95405053d299a4d9b80fd9a2292e02116c483ea8ba
 
 ### 生成密钥
 
-指定指纹访问控制类型及相关属性。
-
-生成或导入密钥时，在密钥属性集中需指定三个参数：用户认证类型[HuksUserAuthType](../harmonyos-references/js-apis-huks.md#huksuserauthtype9)、授权访问类型[HuksAuthAccessType](../harmonyos-references/js-apis-huks.md#huksauthaccesstype9)、挑战值类型[HuksChallengeType](../harmonyos-references/js-apis-huks.md#hukschallengetype9)。
+指定用户身份认证访问控制类型及相关属性。具体而言，生成或导入密钥时，在密钥属性集中需指定三个参数：用户认证类型[HuksUserAuthType](../harmonyos-references/js-apis-huks.md#huksuserauthtype9)、授权访问类型[HuksAuthAccessType](../harmonyos-references/js-apis-huks.md#huksauthaccesstype9)、挑战值类型[HuksChallengeType](../harmonyos-references/js-apis-huks.md#hukschallengetype9)。
 
 ## 开发案例
 

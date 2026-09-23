@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: form
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > form
 category: harmonyos-references
-scraped_at: 2026-09-21T06:21:11+08:00
+scraped_at: 2026-09-24T06:52:41+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1ff052558f149ba01e2a6786b056a5073494ced9dfbf9b38795974bf8f456e96
+content_hash: sha256:faa7efb841e7127b56b13d5a7aacf307bf646d2fffa1f2454d2f2acda9833546
 ---
 
 **说明** 
@@ -82,4 +82,4 @@ export default{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/G-BxF8SuQsyX8nSKyk1ETA/zh-cn_image_0000002762836311.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/cwtYIde1QbSLWgLWbXTUGQ/zh-cn_image_0000002769452675.gif)

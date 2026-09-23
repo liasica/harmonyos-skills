@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 关系型数据库错误码
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > 错误码 > 关系型数据库错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:44+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:74080adbfc883f0ae6fdec5528dacbf7e511cee30a3bd38c4aea02e6e50bf7a1
+scraped_at: 2026-09-24T06:52:00+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:4d0b98da4b5ef8afca1c974b23c24b2d54c3fb65e95e2046f5b7e8edaea66414
 ---
 
 **说明** 
@@ -587,12 +587,32 @@ SQLite：由于违反约束而中止。
 
 **可能原因**
 
-1. 尝试写入SQLite数据库时违反了数据库的完整性约束条件。
-2. 参见SQLITE\_CONSTRAINT的相关错误场景。
+调用[insert](arkts-apis-data-relationalstore-rdbstore.md#insert)、[update](arkts-apis-data-relationalstore-rdbstore.md#update)、[batchInsert](arkts-apis-data-relationalstore-rdbstore.md#batchinsert)或[executeSql](arkts-apis-data-relationalstore-rdbstore.md#executesql)等接口写入或更新数据时，数据违反了数据库的完整性约束。常见场景包括：
+
+1. 非空约束（NOT NULL）冲突：向声明了NOT NULL的列插入NULL值或更新为NULL值。
+2. 唯一约束（UNIQUE）冲突：向声明了UNIQUE的列插入或更新为与已有数据重复的值。
+3. 主键约束（PRIMARY KEY）冲突：向主键列插入与已有数据重复的值。对于使用INTEGER PRIMARY KEY AUTOINCREMENT的自增主键列，若显式指定一个已存在的值进行插入，同样会触发此冲突。
+4. 检查约束（CHECK）冲突：插入或更新的值不满足列上定义的CHECK条件。例如，列上定义了CHECK(age > 0)，插入age为负数时会报此错误。
+5. 外键约束（FOREIGN KEY）冲突：插入或更新的数据引用了父表中不存在的外键值，或者删除、更新父表数据时存在子表的外键引用。
+6. 参见SQLITE\_CONSTRAINT的相关错误场景。
 
 **处理步骤**
 
-检查试图插入或更新的数据是否违反了上述约束。
+1. 确认问题时间点附近，是否存在以constraint failed结尾的日志打印，该日志通常会指明具体的约束类型和涉及的表名、列名。
+   * 是：根据日志中提示的约束类型，转对应步骤。
+   * 否：转步骤2。
+2. 排查非空约束冲突：检查业务代码中[insert](arkts-apis-data-relationalstore-rdbstore.md#insert)或[update](arkts-apis-data-relationalstore-rdbstore.md#update)传入的数据，确认声明了NOT NULL的列是否被遗漏或赋值为NULL。
+   * 是：确保NOT NULL列有有效的非NULL值后再执行写入。
+   * 否：转下一步。
+3. 排查唯一约束和主键约束冲突：检查写入的数据中，UNIQUE列或主键列的值是否与表中已有数据重复。对于INTEGER PRIMARY KEY AUTOINCREMENT的自增主键列，确认是否显式指定了已存在的值。
+   * 是：使用不同的值，或先删除冲突的已有数据再写入。对于自增主键列，建议插入时不显式指定主键值，由数据库自动分配。
+   * 否：转下一步。
+4. 排查检查约束冲突：检查写入的值是否满足表定义中CHECK条件表达式。
+   * 是：调整为满足CHECK条件的值。
+   * 否：转下一步。
+5. 排查外键约束冲突：确认插入的外键值在父表中存在；删除或更新父表数据时，确认是否仍有子表数据引用该行。
+   * 是：先在父表中插入对应数据，或先处理子表中的引用数据（删除或更新子表引用），再操作父表。
+   * 否：检查SQL语句中触发器（Trigger）是否存在约束冲突，调整触发器逻辑或数据。
 
 ## 14800033 SQLite：数据类型不匹配
 

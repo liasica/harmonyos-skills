@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 鼠标事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 鼠标事件
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:37+08:00
+scraped_at: 2026-09-24T06:52:16+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:ae100937621f47e1b3c90a520e471a8f74638c6c204904c6197954219faea543
+content_hash: sha256:46dce9a2e3ea1d8eb699df487b02ee0821294a4a54952bc54fd99ac88bc17378
 ---
 
 鼠标事件用于监听组件上的鼠标点击、移动等交互，可获取鼠标按键、动作、坐标、历史点等事件信息，适用于需要处理鼠标交互、绘制轨迹、手势识别或优化输入响应体验的场景。在鼠标的单个动作触发多个事件时，事件的顺序是固定的，鼠标事件默认冒泡。
@@ -240,7 +240,7 @@ struct MouseEventExample {
 
 鼠标点击时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/YMOpr0p3Teq6NDoW74OrKg/zh-cn_image_0000002733435882.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/T3sa4s_jQ5mu1_ExhUVKDg/zh-cn_image_0000002739732682.gif)
 
 ### 示例2（获取当前帧历史点）
 
@@ -321,4 +321,4 @@ struct GetCurrentLocalPositionExample {
 
 鼠标触发事件时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/2VVw2yLqR2-dmUoQtOV3DQ/zh-cn_image_0000002762995407.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/5tdpwPanSuatB7mGfEcbbg/zh-cn_image_0000002769332031.gif)

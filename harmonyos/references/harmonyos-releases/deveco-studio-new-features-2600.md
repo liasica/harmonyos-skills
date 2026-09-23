@@ -3,12 +3,55 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: 新增和增强特性
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-15T06:59:56+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:8bb9400eb703cd41c2cafdf50b6c3c4a826aaeba21cd3c67664f23b5f8fccc56
+scraped_at: 2026-09-24T06:48:30+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:d29f8f6b52895f1470a84a82e9b2422a2e129ad89f7b6d55b3db845d37a91123
 ---
 
 当前为DevEco Studio最新版本说明文档，如需查看DevEco Studio其它历史版本的功能新增、变更情况，请在左侧文档目录中选择相应版本。
+
+## DevEco Studio 26.0.0 Release（26.0.0.851）
+
+### 兼容性配套关系
+
+DevEco Studio 26.0.0.851携带的工具列表、支持的API范围及开发态版本号信息如下：
+
+**表1** DevEco Studio
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| HarmonyOS SDK | HarmonyOS 26.0.0 Release SDK | - |
+| HarmonyOS Emulator | 26.0.0.402 | 模拟器。 |
+| Hvigor | 6.26.8 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 26.0.0.630 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 24.14.1 | Hvigor、ohpm等工具的运行时环境。 |
+| modelVersion | 26.0.0 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 26.0.0 | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~26.0.0 | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+DevEco Studio 26.0.0.851配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
+
+**表2** 命令行工具
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| Command Line | 26.0.0.851 | 命令行工具集版本。 |
+| codelinter | 6.0.240 | 执行代码检查与修复的工具。 |
+| hstack | 6.1.0 | 将release应用混淆后的crash堆栈还原为源码对应堆栈的工具。 |
+| hvigorw | 6.26.8 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 26.0.0.630 | OpenHarmony三方库的包管理工具。 |
+| HarmonyOS Emulator | 26.0.0.402 | 模拟器。 |
+| Node.js | 24.14.1 | codelinter、hvigorw、hstack、ohpm等工具的运行时环境。 |
+| sdk | HarmonyOS 26.0.0 Release SDK | - |
+| modelVersion | 26.0.0 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 26.0.0 | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~26.0.0 | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+### 新增和增强特性
+
+无新增和增强特性。
 
 ## DevEco Studio 26.0.0 Release（26.0.0.821）
 
@@ -16,7 +59,7 @@ content_hash: sha256:8bb9400eb703cd41c2cafdf50b6c3c4a826aaeba21cd3c67664f23b5f8f
 
 DevEco Studio 26.0.0.821携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表1** DevEco Studio
+**表3** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -32,7 +75,7 @@ DevEco Studio 26.0.0.821携带的工具列表、支持的API范围及开发态�
 
 DevEco Studio 26.0.0.821配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表2** 命令行工具
+**表4** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -57,7 +100,7 @@ DevEco Studio 26.0.0.821配套使用的命令行工具列表、支持的API范�
 
 **编写与调试应用**
 
-* 支持查看更多的ArkUI组件状态变量绑定关系。具体请参考[代码阅读](../harmonyos-guides/ide-editer-overview.md#section2541105019101)。
+* 支持查看更多的ArkUI组件状态变量绑定关系。具体请参考[代码阅读](../harmonyos-guides/ide-editor-overview.md#section2541105019101)。
 * 针对跨模块移动文件场景优化了移动符号的导入方式，移入、移出模块时lndex会适配改动。具体请参考[代码重构](../harmonyos-guides/ide-code-refactoring.md#section634374493316)。
 * 模拟器支持外接USB摄像头。对于缺少摄像头的场景，模拟器提供虚拟相机功能，用于模拟拍照流程。具体请参考[摄像头](../harmonyos-guides/ide-emulator-more-features.md#section11725194916439)。
 * 模拟器支持断网模拟。具体请参考[断网模拟](../harmonyos-guides/ide-emulator-access-network.md#section115741355151910)。
@@ -97,6 +140,7 @@ DevEco Studio 26.0.0.821配套使用的命令行工具列表、支持的API范�
 
 **命令行工具**
 
+* Command Line Tools支持在Linux (ARM64)平台上使用。
 * hstack工具支持指定文件进行堆栈解析。具体请参考[堆栈解析工具（hstack）](../harmonyos-guides/ide-command-line-hstack.md)。
 * ohpmrc配置文件新增symlink\_for\_local\_dep配置项。执行ohpm install过程中，可以对本地HAR依赖解压后的路径创建软链接。具体请参考[ohpmrc](../harmonyos-guides/ide-ohpmrc.md)。
 * 在ohpm命令中，参数类型为Boolean且默认值为true的命令，支持配置--no参数，包括--no-strict\_ssl、--no-resolve\_conflict、--no-install\_all、--no-experimental-concurrently-safe。具体请参考[常用命令](../harmonyos-guides/ide-ohpm-common-commands.md)。
@@ -108,7 +152,7 @@ DevEco Studio 26.0.0.821配套使用的命令行工具列表、支持的API范�
 
 DevEco Studio 26.0.0.621携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表3** DevEco Studio
+**表5** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -124,7 +168,7 @@ DevEco Studio 26.0.0.621携带的工具列表、支持的API范围及开发态�
 
 DevEco Studio 26.0.0.621配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表4** 命令行工具
+**表6** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -172,7 +216,7 @@ DevEco Studio 26.0.0.621配套使用的命令行工具列表、支持的API范�
 
 DevEco Studio 26.0.0.461携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表5** DevEco Studio
+**表7** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -188,7 +232,7 @@ DevEco Studio 26.0.0.461携带的工具列表、支持的API范围及开发态�
 
 DevEco Studio 26.0.0.461配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表6** 命令行工具
+**表8** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -220,7 +264,7 @@ DevEco Studio 26.0.0.461配套使用的命令行工具列表、支持的API范�
 
 * 支持开发API 26.0.0工程。
 * DevEco Studio提供加载/卸载模块（Load/Unload Modules）的功能，开发者可以按照需求加载模块，从而降低对内存资源占用和提升代码索引效率。具体请参考[卸载和加载模块](../harmonyos-guides/ide-load-unload-modules.md)。
-* 编辑器支持状态变量关系查看。具体请参考[查看ArkUI组件状态变量关系](../harmonyos-guides/ide-editer-overview.md#section2541105019101)。
+* 编辑器支持状态变量关系查看。具体请参考[查看ArkUI组件状态变量关系](../harmonyos-guides/ide-editor-overview.md#section2541105019101)。
 * Codelinter新增正确性规则。具体请参考[规则变更说明](../harmonyos-guides/ide-codelinter-rules-change.md)。
 * 新增Code Scanner工具，支持检查整个项目的资源泄漏问题。具体请参考[Code Scanner代码检查](../harmonyos-guides/ide-code-scanner.md)。
 * 支持通过自定义的Clang-Tidy对C/C++代码进行静态检查。具体请参考[Clang-Tidy代码检查](../harmonyos-guides/ide-clang-tidy.md)。

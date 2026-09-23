@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentim
 title: "@hms.utilityApplication.screenTimeGuard.guardService（屏幕时间守护服务）"
 breadcrumb: API参考 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > ArkTS API > @hms.utilityApplication.screenTimeGuard.guardService（屏幕时间守护服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d6f39cdc8120c6532c1f87dd3f3ac4df38b0e4e05c947a7466ac27cdc0a9990c
+scraped_at: 2026-09-24T06:55:40+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:cf553a6ddb2412c237c93dfdfea914d871eb555abd3af21811159bb574906a0a
 ---
 
 ## 模块概述
@@ -536,7 +536,7 @@ updateGuardStrategy(strategyName: string, guardStrategy: GuardStrategy): Promise
 import { guardService } from '@kit.ScreenTimeGuardKit';
 
 function testUpdateGuardService() {
-   // 定义起止时间策略，应用于周一至周三的08:00至19:00时间段
+   // 定义起止时间策略，应用于周一至周五的08:00至19:00时间段
    const time: guardService.TimeStrategy = {
       type: guardService.TimeStrategyType.START_END_TIME_TYPE,
       startTime: '08:00',

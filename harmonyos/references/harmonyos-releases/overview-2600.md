@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-26
 title: 版本概览
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-09-15T06:59:47+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:110b1bdafb054a13f284933c5387206242d68b61cef943652133aaf8e242920b
+scraped_at: 2026-09-24T06:48:22+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:79869b59e73b8e75c1e5fb1f45952a09cefb8b77d5d1b5dd9fe3e086f734f43b
 ---
 
 HarmonyOS开发套件26.0.0版本在HDC.2026正式面向开发者发布首个Beta版本，并于8月29日正式Release发布。该版本对HarmonyOS开发套件的版本号格式进行了调整，详情见[版本号格式调整说明](version-number-26.md)。
@@ -27,14 +27,15 @@ DevEco Studio能力进一步增强：支持开发API 26.0.0工程；支持按需
 | **软件包** | **发布类型** | **版本号** | **发布时间** |
 | --- | --- | --- | --- |
 | API版本 | Release | 26.0.0  *\***注意**：设备系统支持的API能力范围请以**API版本****为准。* | 2026/08/29 |
-| DevEco Studio | Release | DevEco Studio 26.0.0 Release (26.0.0.821) | 2026/08/29 |
+| DevEco Studio | Release | DevEco Studio 26.0.0 Release (26.0.0.851)  （Patch版本） | 2026/09/23 |
+| DevEco Studio 26.0.0 Release (26.0.0.821) | 2026/08/29 |
 | SDK | Release | HarmonyOS SDK 26.0.0 Release  基于OpenHarmony SDK Ohos\_sdk\_public 26.0.0.105 (API Version 26.0.0 Release) | 2026/08/29 |
 
 **说明** 
 
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。
 
-* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。请[点击此处](https://developer.huawei.com/consumer/cn/deveco-studio/)获取最新的DevEco Studio软件版本。
+* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。最新的DevEco Studio软件版本请[点击此处](https://developer.huawei.com/consumer/cn/deveco-studio/)获取。
 * SDK内置在DevEco Studio，安装DevEco Studio时自动安装配套版本SDK。具体版本请从DevEco Studio界面菜单选择“Help > About HarmonyOS SDK”进行查询。
 
 ## 历史Beta版本

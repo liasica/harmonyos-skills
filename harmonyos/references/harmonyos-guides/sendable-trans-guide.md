@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-tran
 title: Sendable对象改造实践
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > Sendable对象改造实践
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5c5af3d1099ed120b667aebbb60f5d42781d73364e5806f40150ee8038a5975a
+scraped_at: 2026-09-24T06:49:29+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:1dbe50cffd43d97db542395ffc27300fe7b5b3a30dfdebf56067bf86c5053896
 ---
 
 ## 简介
@@ -373,7 +373,7 @@ import { UIUtils } from '@kit.ArkUI';
 struct Index {
   @Local message: string = 'Hello World';
   // 替换成 pb: test_pb = test_pb.create(); 则用于observeProtobuf返回Sendable对象的场景
-  // @Local test_pb = test_pb.create();
+  // @Local pb: test_pb = test_pb.create();
   @Local layout: LayoutS = new LayoutS();
 
   build() {

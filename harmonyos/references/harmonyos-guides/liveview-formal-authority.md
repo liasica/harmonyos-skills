@@ -3,33 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-form
 title: 申请实况窗正式权限
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发准备 > 申请实况窗正式权限
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:39+08:00
+scraped_at: 2026-09-24T06:50:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4be8eca4d4bc1e0c0682f945157e1de591f54ac4e720fbc5b326fc35cfd7d78e
+content_hash: sha256:218626e122877a6150a0c6ea2144b781fc81cd5bde7d9ec095adc1876f184d18
 ---
 
 当开发者已对调测设备的实况窗业务进行了充分的[联调测试](liveview-joint-commission-test.md)，确认设计方案和功能体验均符合[《实况窗设计规范》](liveview-design-formula.md)，可提交申请正式权限。提交后实况窗将对开发者的方案设计、功能体验进行评审与验收。开发者将会在7个工作日内收到评审结果。
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/durhSKiKQsCFnMPYqXQ1mA/zh-cn_image_0000002762834905.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/9AnfZ00xTzi7KHcEXTmmGQ/zh-cn_image_0000002769451281.png)
 2. 在项目列表中找到需要开通实况窗的项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/sEX5FHBkQ1GSXwb0ttB85Q/zh-cn_image_0000002733275390.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9qZeIiP2RZeuAWJnp7_1cA/zh-cn_image_0000002739891950.png)
 3. 通过“增长 > 推送服务 > 配置”导航到“配置”页签，选择需要开通实况窗的应用，并点击“实况窗”的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/RmJNanjSRxK63SpWxc_CUA/zh-cn_image_0000002762994799.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/QhRFHXalTu263mSEkXmVSg/zh-cn_image_0000002769331425.png)
 4. 开发者可点击开通实况窗权限，进入实况窗介绍页面，点击“立即申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/zZi1hxrtQCON_MJDVv8oDQ/zh-cn_image_0000002762834911.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/p7L1iEPgRK6bRLVwpDetcA/zh-cn_image_0000002769451287.png)
 5. 点击“立即申请”后进入实况窗页面。若开发者的应用月活数大于等于1000且为已上架应用，可点击“应用场景”列表中各场景的“申请”按钮，按需申请开通实况窗权益。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/B0lu4iJmT5i3bGK9MluT4w/zh-cn_image_0000002733275396.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/AnghelE-RDmBNmRVH6CmWA/zh-cn_image_0000002739891956.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/rdGT4FwGRSGc7RlIUC2hvQ/zh-cn_image_0000002733435278.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Yonh8p4VQ5ycM6qIT18ijg/zh-cn_image_0000002739732078.png)
 6. 按要求填写场景的描述信息、场景接入方案和备注信息后提交申请，等待审批结果即可。可参见[实况窗权益申请填写要求](liveview-formal-authority.md#实况窗权益申请填写要求)进行申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/nMh-cCj0QTeElLqyZ4Fkaw/zh-cn_image_0000002762994801.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/YoRB8oCmR96TD72juJDFfg/zh-cn_image_0000002769331427.png)
 
 ## 实况窗权益申请填写要求
 
@@ -61,7 +61,7 @@ content_hash: sha256:4be8eca4d4bc1e0c0682f945157e1de591f54ac4e720fbc5b326fc35cfd
 
 示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/flvUnJXMRHSjhWv8gbmgoA/zh-cn_image_0000002762834913.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/vv4Tf2F5SCCJObrjAcH6cA/zh-cn_image_0000002769451289.png)
 
 实况窗接入方案请需满足《实况窗设计规范》中的要求，开发者可按照模板进行设计。
 

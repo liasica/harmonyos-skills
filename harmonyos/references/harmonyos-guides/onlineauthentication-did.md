@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: DID数字身份
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > DID数字身份
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:48+08:00
+scraped_at: 2026-09-24T06:49:59+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:28e1438bb6dffcda202f42d158e7f7558a68b2fb5ae33b40f07f73cda3654c69
+content_hash: sha256:15f5aba6a9199ee86cc0da2b518aa16bf164f126815bfd3759cf19542d5cd8ff
 ---
 
 从API版本26.0.0开始，Online Authentication Kit（在线认证服务）新增数字身份特性，提供了基于DID（Decentralized Identifier，去中心化身份）协议的数字身份在移动端的能力。应用部署符合DID协议的服务器之后，结合移动端的数字身份能力，可实现跨平台互通互认的数字身份业务场景。数字身份服务主要提供了以下能力：
@@ -47,7 +47,7 @@ content_hash: sha256:28e1438bb6dffcda202f42d158e7f7558a68b2fb5ae33b40f07f73cda36
 
 应用需要为用户创建数字身份时，可以使用数字身份服务创建及使用与用户DID关联的密钥、导入用户DID文档等信息至设备。创建数字身份后，应用可基于用户DID标识为用户颁发凭证，并使用用户DID密钥对数据签名授权。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/CABrI8QcQpG0CitASBr1Cg/zh-cn_image_0000002733274706.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/2tWzhq6-R5mkii7kcKSVhw/zh-cn_image_0000002739891282.png)
 
 流程说明：
 
@@ -61,7 +61,7 @@ content_hash: sha256:28e1438bb6dffcda202f42d158e7f7558a68b2fb5ae33b40f07f73cda36
 
 应用为用户颁发数字身份凭证（例如教师凭证等），可以使用数字身份服务将数字身份凭证导入至设备安全存储，用于后续便携出示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/9FqmAy_RQuyJReM3NB88mw/zh-cn_image_0000002733434584.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ayOBOIllTPSbqC9jT3irZg/zh-cn_image_0000002739731404.png)
 
 流程说明：
 
@@ -73,7 +73,7 @@ content_hash: sha256:28e1438bb6dffcda202f42d158e7f7558a68b2fb5ae33b40f07f73cda36
 
 应用作为验证方，需要请求用户的数字身份凭证用于验证用户身份或者发放相应权益时，可以使用数字身份服务请求获取用户凭证，用户确认出示的凭证及披露的属性字段后，数字身份服务会将凭证出示到验证方应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/0EaJLQ-oRkmaPv0SDO0BQA/zh-cn_image_0000002762994109.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/fq_z8pj7T9uPFozdS0ynzA/zh-cn_image_0000002769330753.png)
 
 流程说明：
 

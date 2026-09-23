@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-nested-sc
 title: Web组件嵌套滚动
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件嵌套滚动
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:111e184dd510068ed10531ff3bc9a00e9067e2389d196c874ef60222b1b76e2d
+scraped_at: 2026-09-24T06:49:45+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:eaecc6b0468d9595cc360ce8faa643c8cf417f48eb14168c3d88c89b4ea55955
 ---
 
 Web组件嵌套滚动的典型应用场景为，在页面中，多个独立区域需进行滚动，当用户滚动Web区域内容时，可联动其他滚动区域，实现上下左右全方位滑动页面的嵌套滚动体验。内嵌于可滚动容器（[Grid](../harmonyos-references/ts-container-grid.md)、[List](../harmonyos-references/ts-container-list.md)、[Scroll](../harmonyos-references/ts-container-scroll.md)、[Swiper](../harmonyos-references/ts-container-swiper.md)、[Tabs](../harmonyos-references/ts-container-tabs.md)、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)、[Refresh](../harmonyos-references/ts-container-refresh.md)、[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)）中的Web组件，接收到滑动手势事件后，需要设置ArkUI的[NestedScrollMode](../harmonyos-references/ts-appendix-enums.md#nestedscrollmode10)枚举属性，实现Web组件与ArkUI可滚动容器的嵌套滚动。
@@ -104,7 +104,7 @@ struct NestedScroll {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/okVamWNETeuKbh8I6AVSTw/zh-cn_image_0000002733434324.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/7miPuXBJRgi9zwOYwLAjrQ/zh-cn_image_0000002739731146.gif)
 
 ## 使用nestedScroll常见问题
 
@@ -169,9 +169,9 @@ struct NestedScroll {
 
    (3) 判断Web组件是否滚动到底部：webController.getPageOffset().y + this.webHeight >= webController.getPageHeight();
 
-   (4) 获取Web组件自身高度：webController.[getPageHeight()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#getpageheight);
+   (4) 获取Web组件页面内容高度：webController.[getPageHeight()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#getpageheight);
 
-   (5) 获取Web组件窗口高度：webController?.[runJavaScriptExt](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascriptext10)('window.innerHeight');
+   (5) 获取Web组件自身（窗口）高度：webController?.[runJavaScriptExt](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascriptext10)('window.innerHeight');
 
    (6) 获取Web组件的滚动偏移量：webController.[getPageOffset()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#getpageoffset20);
 5. 如何让Scroll组件不滚动。
@@ -337,7 +337,7 @@ struct Index {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/q2MyHWLyS0OD0mqSgD0ODw/zh-cn_image_0000002762993847.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/LhugopJaQ32KtUYLveVwOQ/zh-cn_image_0000002769330495.gif)
 
 ## 示例代码
 

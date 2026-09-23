@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.reminderAgent (后台代理提醒)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > 已停止维护的接口 > @ohos.reminderAgent (后台代理提醒)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ab732c7fba034c462041d7bd544f96dc9f1c712d76433d88b6aa31a93cba734c
+scraped_at: 2026-09-24T06:53:11+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:b89497ded7497ec21c5be306d9218d58f23cdc84a137966da93337c04ae378a2
 ---
 
 本模块提供后台代理提醒的能力。
@@ -592,7 +592,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 | --- | --- | --- | --- | --- |
 | hour | number | 否 | 否 | 指明提醒的目标时刻。 |
 | minute | number | 否 | 否 | 指明提醒的目标分钟。 |
-| daysOfWeek | Array<number> | 否 | 是 | 指明每周哪几天需要重复提醒。范围为周一到周末，对应数字为1到7。 |
+| daysOfWeek | Array<number> | 否 | 是 | 指明每周哪几天需要重复提醒。范围为周一到周日，对应数字为1到7。 |
 
 ## ReminderRequestTimer(deprecated)
 

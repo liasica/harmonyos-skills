@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:48+08:00
+scraped_at: 2026-09-24T06:52:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:06ee41fbc4ac17dc76dd015f18ed63180dfb5770fa63a80b191891e92da2f0e1
+content_hash: sha256:9f11251a0fc371448ad7f8a190f3b1371a074ba318eeb7c38540a1d42c86e007
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/UVQD_p5DTcGstqf0HVV7qA/zh-cn_image_0000002762835795.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/8VYDE7HaQPGNOEw_rIUxKQ/zh-cn_image_0000002769452165.gif)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/baGfnCtcRimVg8kj0n2JRg/zh-cn_image_0000002733276286.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ME5s8InaRf62Sm139UepKw/zh-cn_image_0000002739892834.png)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/bNUMV_VyQiO_uML7XOEJjg/zh-cn_image_0000002733436160.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/pa1CbrSyRxutPRnJs99NaQ/zh-cn_image_0000002739732956.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ZlOgxH_rQ5yXQM1oUfuyHg/zh-cn_image_0000002762995683.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Zv3MQeXQTlGdISXPtdsrzQ/zh-cn_image_0000002769332305.gif)

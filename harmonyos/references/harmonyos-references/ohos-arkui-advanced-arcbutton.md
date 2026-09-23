@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ArcButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > ArcButton
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:50+08:00
+scraped_at: 2026-09-24T06:52:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:461d010c0c158fcb31564aa03cf000a1b70791708b266e558b7ca9f724cc0625
+content_hash: sha256:c26bd1f2436d7670013336aa325ddcc193f6e609f3ecf8405c30463723c52b7e
 ---
 
 弧形按钮组件提供强调、常规、自定义等样式按钮，推荐用于圆形屏幕的设备。
@@ -272,7 +272,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/gyP50L4ATleW6j7GTv5zjQ/zh-cn_image_0000002762995707.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/p_YOBreDQNSzolOdSL_RQg/zh-cn_image_0000002769332329.jpg)
 
 ### 示例2 (设置设备进度条按钮)
 
@@ -363,4 +363,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Sp6joGFDT0eMZP5ycnxyng/zh-cn_image_0000002762835821.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/oj60_AsBRAOEhQrveWmjDQ/zh-cn_image_0000002769452191.jpg)

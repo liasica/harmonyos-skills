@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-arc
 title: 弧线
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 弧线
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:41+08:00
+scraped_at: 2026-09-24T06:50:45+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d23bef29f4307946072743f9d96eee5cd841bd1f13f9e009d32aa4b3f9decd12
+content_hash: sha256:2328c10fd18c75cbf8fc8e43547f93ede9a373ef3b4d6793ce5d519fcd7af71a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:d23bef29f4307946072743f9d96eee5cd841bd1f13f9e009d32aa4b3f9d
 
 弧线主要用于展示飞机、轮船等出行路线，直观呈现弧形轨迹，同时可在交叉路口等位置指示转向方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/UZYLXdXvSRu73pL892Iiqw/zh-cn_image_0000002762994865.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/0PFqFc4KQHSZLEU4inJvuA/zh-cn_image_0000002769331491.jpg "点击放大")
 
 ## 接口说明
 
@@ -115,4 +115,4 @@ content_hash: sha256:d23bef29f4307946072743f9d96eee5cd841bd1f13f9e009d32aa4b3f9d
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/9zbmIHbrTmS-NPvbS0cgdw/zh-cn_image_0000002762834977.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/PNrOdkjQTNGA5xuK4raqCQ/zh-cn_image_0000002769451353.jpg "点击放大")

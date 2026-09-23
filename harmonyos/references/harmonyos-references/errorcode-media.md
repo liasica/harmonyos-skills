@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Media错误码
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > 错误码 > Media错误码
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:17+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:d3b3e4e5f6d198638c7265f0e63a9c0192da82a09119cde929ba177ef5d210e2
+scraped_at: 2026-09-24T06:54:54+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:29be5775052455019ae3b7cc618c703150dd499ecace04150357cae2debffdb1
 ---
 
 **说明** 
@@ -702,11 +702,11 @@ Unsupported request.
 
 **错误描述**
 
-客户端请求参数错误或超出处理能力。
+网络协议的原因导致请求不受支持。
 
 **可能原因**
 
-客户端请求参数错误或超出处理能力。
+网络协议的原因导致请求不受支持。
 
 **处理步骤**
 

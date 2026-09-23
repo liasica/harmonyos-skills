@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebviewController)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebviewController)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:05+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:f2d1aa11c6ba4feef3bcafaa11baf94be06a630aeaaad8e125297f3986bf1692
+scraped_at: 2026-09-24T06:53:06+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:7f1c45de92322345b2d7100421f1769474cb2f7a177f421897833c85d9ecee41
 ---
 
 WebviewController是Web组件各种行为的核心控制器，提供网页加载与导航控制、JavaScript交互、生命周期、滚动控制、页面缩放与内容查找、消息端口通信、缓存与证书管理等广泛功能。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。
@@ -10011,9 +10011,9 @@ struct WebComponent {
               let info = this.controller.getBlanklessInfoWithKey('https://www.example.com/page1');
               if (info.errCode == webview.WebBlanklessErrorCode.SUCCESS) {
                 if (info.similarity >= 0.5 && info.loadingTime < 1000) {
-                  this.controller.setBlanklessLoadingWithKey('http://www.example.com/page1', true);
+                  this.controller.setBlanklessLoadingWithKey('https://www.example.com/page1', true);
                 } else {
-                  this.controller.setBlanklessLoadingWithKey('http://www.example.com/page1', false);
+                  this.controller.setBlanklessLoadingWithKey('https://www.example.com/page1', false);
                 }
               } else {
                 console.info('getBlankless info err');
@@ -10084,9 +10084,9 @@ struct WebComponent {
               let info = this.controller.getBlanklessInfoWithKey('https://www.example.com/page1');
               if (info.errCode == webview.WebBlanklessErrorCode.SUCCESS) {
                 if (info.similarity >= 0.5 && info.loadingTime < 1000) {
-                  this.controller.setBlanklessLoadingWithKey('http://www.example.com/page1', true);
+                  this.controller.setBlanklessLoadingWithKey('https://www.example.com/page1', true);
                 } else {
-                  this.controller.setBlanklessLoadingWithKey('http://www.example.com/page1', false);
+                  this.controller.setBlanklessLoadingWithKey('https://www.example.com/page1', false);
                 }
               } else {
                 console.info('getBlankless info err');
@@ -10166,7 +10166,7 @@ struct WebComponent {
                     // 数据监控
                   },
                 };
-                this.controller.setBlanklessLoadingWithParams('http://www.example.com/page1', param);
+                this.controller.setBlanklessLoadingWithParams('https://www.example.com/page1', param);
               } else {
                 console.info('getBlankless info err');
               }

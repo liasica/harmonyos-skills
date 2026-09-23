@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/troubleshooti
 title: 状态变量改变不触发组件刷新问题常用定位方法
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 状态变量改变不触发组件刷新问题常用定位方法
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:18+08:00
+scraped_at: 2026-09-24T06:49:34+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d7b906a614af7c61e744687ec364e7bdc78ec378fb5557fc0fa6ab1e65ee1501
+content_hash: sha256:00a34d9e08340fa4ce4726c83a87c042043ed8e29f307bac0769eb9c782f16ad
 ---
 
 在声明式UI编程框架中，状态管理的主要职责是：当状态变量改变时，触发其关联组件的刷新。所以在使用状态变量的过程中，最常见的问题就是组件不刷新。本文主要针对开发者在使用状态变量时遇到的不刷新问题，阐述以下两个方面。
@@ -141,7 +141,7 @@ struct Child {
 * 日志提示inner is not observed object。
 * ArkUI State泳道没有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/km7s0f8HSfuX175msset6w/zh-cn_image_0000002733273716.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/GvfJw7M6Q8WrJDhLOPZqFQ/zh-cn_image_0000002739890304.png)
 
 需要注意，并非所有的类对象都需要被@Observed装饰。[@State](arkts-state.md)装饰器会默认对复杂对象包装第一层代理，而对嵌套对象，则需要在内层对象的类声明上增加@Observed装饰。
 
@@ -208,7 +208,7 @@ struct InnerDisplay {
 * 日志提示inner is observed object。
 * ArkUI State泳道有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/hLF8sPheRdCVldQ9WqA49A/zh-cn_image_0000002733433596.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/s_9uTILVRpKINLRDqwg1Lg/zh-cn_image_0000002739730426.png)
 
 **状态管理V2**
 
@@ -276,7 +276,7 @@ struct ObservabilityV2Page {
 
 基于上面的示例，观察ArkUI State泳道，有两次状态变量的变化上报，即this.info.value和this.info.numberArr。count不是@Trace装饰的，所以不会被观察到变化，也不会在Profiler上报状态变量的变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/OjYRPpLKQ1e6lwbmaQWyPA/zh-cn_image_0000002762993121.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/P_-T7V8DT02ghNoyx8QxDA/zh-cn_image_0000002769329775.png)
 
 ### 第四步：数据源和被同步的对象是否有关联关系
 

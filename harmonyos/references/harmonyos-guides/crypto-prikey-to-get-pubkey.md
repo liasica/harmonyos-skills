@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-prikey
 title: 使用私钥对象获取公钥对象(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 使用私钥对象获取公钥对象(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:41+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:edbfba257567830f2e203ecb7beffb90a3ba87dd59246644d258f843dc58552d
+scraped_at: 2026-09-24T06:49:54+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:f06b5838d005bb3d5bb4906345dc824034850fe627497406567de7b1f6427568
 ---
 
 从API版本23开始，算法库支持从私钥对象中获取公钥对象的操作。
@@ -19,7 +19,7 @@ content_hash: sha256:edbfba257567830f2e203ecb7beffb90a3ba87dd59246644d258f843dc5
 1. 调用[cryptoFramework.createAsyKeyGenerator](../harmonyos-references/js-apis-cryptoframework.md#cryptoframeworkcreateasykeygenerator)，指定字符串参数'RSA1024'，创建RSA密钥类型为RSA1024、素数个数为2的非对称密钥生成器（AsyKeyGenerator）。
 
    生成RSA非对称密钥时，默认素数为2，此处省略了参数PRIMES\_2。
-2. 调用[AsyKeyGenerator.generateKeyPair](../harmonyos-references/js-apis-cryptoframework.md#generatekeypair-1)，随机生成非对称密钥对象（KeyPair）。
+2. 调用[AsyKeyGenerator.convertKeySync](../harmonyos-references/js-apis-cryptoframework.md#convertkeysync12-1)，传入私钥的二进制数据，生成非对称密钥对象（KeyPair）。
 
    KeyPair对象中包括公钥PubKey、私钥PriKey。
 3. 调用[PubKey.getEncoded](../harmonyos-references/js-apis-cryptoframework.md#getencoded)获取KeyPair中公钥对象的二进制数据。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-61
 title: 版本概览
 breadcrumb: 版本说明 > 更多版本 > 6.1.1(24) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cf1408574c981170719285e06f00fa9ce05d2e484128ff28aa3b0e413df57a34
+scraped_at: 2026-09-24T06:48:29+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:a8f1c416e0af777d20fd91930e7a144bf9217e214464ebab20225941d8cd0a71
 ---
 
 6.1.1(24)在6.1.0(23)的基础上，开发能力得到进一步增强：Ability Kit增强了AbilityStage上下文能力以支持动态加载资源；ArkUI增强了平行视界状态获取、自定义组件跨Ability迁移、动态布局容器等能力，新增多个组件的C API；ArkTS增强了虚拟机维测能力，支持taskpool任务超时设置；ArkWeb增强了下载任务回调能力，新增URL白名单和安全控制接口；Camera Kit新增延迟预览输出、影随人动能力，同时开放相机基础参数的获取和设置；Audio Kit新增MIDI C API支持外接设备；FAST Kit新增并发哈希表、向量运算和滤波器功能；Performance Analysis Kit增强了资源采集和崩溃日志分析能力；新增Content Embed Kit（内容嵌入服务）和Enterprise Threat Protection Kit（企业威胁防护服务），等等。更多详情可参见[OS平台新增和增强特性](os-new-feature-611.md)。
@@ -25,7 +25,8 @@ DevEco Studio能力进一步增强：支持开发API 24工程；Hot Reload能力
 | **软件包** | **发布类型** | **版本号** | **发布时间** |
 | --- | --- | --- | --- |
 | API版本 | Release | 6.1.1(24)  *\***注意**：设备系统支持的API能力范围请以**API版本****为准。* | 2026/05/26 |
-| DevEco Studio | Release | DevEco Studio 6.1.1 Release（6.1.1.300）  （Patch版本） | 2026/07/29 |
+| DevEco Studio | Release | DevEco Studio 6.1.1 Release（6.1.1.418）  （Patch版本） | 2026/09/23 |
+| DevEco Studio 6.1.1 Release（6.1.1.300）  （Patch版本） | 2026/07/29 |
 | DevEco Studio 6.1.1 Release（6.1.1.290）  （Patch版本） | 2026/06/30 |
 | DevEco Studio 6.1.1 Release（6.1.1.280） | 2026/05/26 |
 | SDK | Release | HarmonyOS SDK 6.1.1 Release  基于OpenHarmony SDK Ohos\_sdk\_public 6.1.1.125 (API 24 Release) | 2026/05/26 |

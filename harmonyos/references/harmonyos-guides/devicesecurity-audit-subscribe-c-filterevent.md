@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅通知类事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 多客户端订阅场景（C/C++） > 订阅通知类事件
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:45+08:00
+scraped_at: 2026-09-24T06:49:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f05206ff75d1a85c1d4e81d311c3e5656f8a91d9c56179af9faf97c52d116c25
+content_hash: sha256:6e0a2be633a61d673914d01c402c5246c79c016725888c7f9e902837537b69fc
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:f05206ff75d1a85c1d4e81d311c3e5656f8a91d9c56179af9faf97c52d1
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/NOouKCjAS_OA5YeAbIK0mQ/zh-cn_image_0000002733434570.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/YkP5DHWQTK2JWai5DzsaXA/zh-cn_image_0000002739731390.png)
 
 **流程说明：**
 

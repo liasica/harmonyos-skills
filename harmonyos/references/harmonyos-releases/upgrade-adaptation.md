@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/upgrade-ada
 title: 应用升级适配指导——向26.0.0升级
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用升级适配指导——向26.0.0升级
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:59:07+08:00
+scraped_at: 2026-09-24T06:49:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ab459fb38e1f0cb51a8f71ccc98b77ef0ca0bda74642b5463be01bafac60fe08
+content_hash: sha256:401521452ead8932cfd2fa5300817d5aa59ba091de9a116bd033af949bea5a06
 ---
 
 ## 应用升级适配简介
@@ -16,7 +16,7 @@ HarmonyOS版本在快速迭代更新的过程中，新增了大量的API，少�
 
 迁移阶段包含以下几个阶段：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/5mjdp3y1TCKnka6OK2Losg/zh-cn_image_0000002699792890.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/gcPEAFZDReefI6034c7eYA/zh-cn_image_0000002699792890.png "点击放大")
 
 **说明** 
 
@@ -57,13 +57,13 @@ DevEco Studio升级版本后，如果应用工程中未显式配置[targetSdkVer
 
 1. 在DevEco Studio菜单栏点击“**Tools > API Change Assistant**”打开API变更助手，此时编辑区下方的API Change Assistant页签中，支持按模块查看API变更情况。选择需要对比的SDK版本号范围，点击**Start Scan**开始扫描。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/B6512WfXRXKdo-SuaV7S-Q/zh-cn_image_0000002732068043.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/FrV10amERD6ODTwKSHYjuQ/zh-cn_image_0000002732068043.png)
 2. 扫描完成将展示当前工程中使用的API是否在选择比较的SDK版本之间发生行为变更。点击Code Location中的代码地址，跳转到相应的代码编写位置；如需更多指导，可点击Guidance link中的链接，跳转至版本说明文档中查看详情。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/ZXtEHNxUSNeEMniPpnvfWg/zh-cn_image_0000002733344967.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/ivb37JnCQ1KP7FIAjGlBiQ/zh-cn_image_0000002733344967.png "点击放大")
 3. 点击**Export**，选择API变更的存放位置后导出变更数据；点击**Scan Again**可重新进行扫描。通过右侧Setting按钮，可以设置在扫描API时，可使用的最大堆内存的大小，默认值为3072MB，当工程代码量较大导致扫描缓慢时，可以适当调大该参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/5V-MsAQTQ6mbuzGFWRDW4g/zh-cn_image_0000002729392225.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/34XTgHy-SBabmLVbTMtNQQ/zh-cn_image_0000002729392225.png "点击放大")
 
 ### 查看官网发布的全量变更
 

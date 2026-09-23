@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: WantAgentInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > wantAgent > WantAgentInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:fe489f80bea6847d6b9c71a8570a11dbad730eae731da4fa8bd09ef0a3055396
+scraped_at: 2026-09-24T06:51:47+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:655a99ccb747583be1111ed016d71365635cda87278219d7c5252cbb16af60d3
 ---
 
 WantAgentInfo用于定义触发WantAgent所需要的信息，可作为[getWantAgent](js-apis-app-ability-wantagent.md#wantagentgetwantagent)的入参创建指定的WantAgent对象。适用于需要延迟执行Ability启动、发送公共事件等场景，支持自定义请求码和动作执行属性，帮助开发者灵活控制WantAgent的行为。
@@ -17,7 +17,7 @@ WantAgentInfo用于定义触发WantAgent所需要的信息，可作为[getWantAg
 ## 导入模块
 
 ```ts
-import { wantAgent as abilityWantAgent } from '@kit.AbilityKit';
+import { wantAgent } from '@kit.AbilityKit';
 ```
 
 ## WantAgentInfo

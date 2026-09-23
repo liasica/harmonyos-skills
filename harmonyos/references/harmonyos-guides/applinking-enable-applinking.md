@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-en
 title: 开通App Linking服务
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 开发准备 > 开通App Linking服务
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:31+08:00
+scraped_at: 2026-09-24T06:50:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4b798ca39f8227aacb486227e78e533eed375305215a3b27fd76094e97dcff9d
+content_hash: sha256:6af892b2704c73293fe9ac31deb0baced1b7cd35e6608bfaf04cc0087472578d
 ---
 
 首次使用App Linking服务前，需要先开通此服务。如果已经开通，可跳过本章节。
@@ -14,7 +14,7 @@ content_hash: sha256:4b798ca39f8227aacb486227e78e533eed375305215a3b27fd76094e97d
 2. 在项目列表中点击HarmonyOS应用所在的项目。
 3. 在左侧导航栏中选择“增长 > App Linking > 应用链接”或者“增长 > App Linking > 聚合链接”，进入App Linking页面，点击“立即开通”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/dIlj1VmdTcSFtHJue-7aGA/zh-cn_image_0000002733435096.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/WmNRVn-SS62fIawIreoG1w/zh-cn_image_0000002739731900.png)
 4. 如果项目此时未设置数据处理位置，请在提示框内启用数据处理位置和设置默认数据处理位置，点击“确定”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/44hLOUGAQkeykQgfK51rjw/zh-cn_image_0000002762994619.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/cvNhBJzYTpeNqIP2VUMjVQ/zh-cn_image_0000002769331249.png)

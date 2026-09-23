@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 关系型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 关系型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:09+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:9d024d4b596ab9f8f4899ef602d83b368718a4d9b1163b4c882b5fa312cc2817
+scraped_at: 2026-09-24T06:49:27+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:1bb59e35f6b16d09f5993b7e31b759ff2d427324055e0594ac72e128f78c0e7a
 ---
 
 ## 场景介绍
@@ -26,7 +26,7 @@ content_hash: sha256:9d024d4b596ab9f8f4899ef602d83b368718a4d9b1163b4c882b5fa312c
 
 ### 数据跨设备同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/yMooxvHdQXyUWlQWPjaXJQ/zh-cn_image_0000002733433326.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/AFp74Xx0S9qhdNxcMHNxCg/zh-cn_image_0000002739730164.jpg)
 
 业务将数据写入关系型数据库后，向数据管理服务发起同步请求。
 
@@ -51,7 +51,7 @@ content_hash: sha256:9d024d4b596ab9f8f4899ef602d83b368718a4d9b1163b4c882b5fa312c
 
 需要注意的是，该模式下不支持对其他设备同步过来的数据进行修改。这一限制旨在保障数据一致性与同步逻辑的稳定性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/WhURYirWQPCLmfQ50T4ykA/zh-cn_image_0000002762992851.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Xnj7zePrR8yGF5xwGC9IVQ/zh-cn_image_0000002769329513.jpg)
 
 **单版本表模式**
 
@@ -59,7 +59,7 @@ content_hash: sha256:9d024d4b596ab9f8f4899ef602d83b368718a4d9b1163b4c882b5fa312c
 
 使用单版本表模式跨设备同步，需要配置schema文件，指定所需同步列以及解冲突列；单版本表模式同步数据支持修改对端设备同步过来的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Hm_RJUuVScel7zUpNaCIZQ/zh-cn_image_0000002762832965.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/3HnJDD78SfuNgpqonhXboA/zh-cn_image_0000002769449375.jpg)
 
 ## 约束限制
 
@@ -356,7 +356,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
     - deviceSyncFields：指定端端同步对应的列，array[string]，必填字段。其中字段必须在fields中，且必须在数据库表中，否则不会同步；未填写该字段时设置分布式表失败。
     - cloudType: 表类型，为enum类型，取值范围为[ "Local", "Cloud DB", "Device DB" ]。
 
-      "Local"表示本端表。"Cloud\_DB"表示端云表。"Device DB"表示设备表。
+      "Local"表示本端表。"Cloud DB"表示端云表。"Device DB"表示设备表。
 
       从API版本12开始，新增支持此字段，且此字段必填。从API版本26.0.0开始，此字段变为可选字段，不填时默认为"Local"。
     - fields：数据库表字段详细信息，array[field]。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sy
 title: 使用AES对称密钥加解密(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用AES对称密钥加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7b603596a41820764592ec2b6435ce76c25cc95b34eccaefa556f7c2e38d7043
+scraped_at: 2026-09-24T06:49:54+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:7e4af77b5d26bbe87daee53ba99cc133af3a6c21bdd281f685bea1e05b7b49d7
 ---
 
 对应的算法规格请查看[对称密钥加解密算法规格：AES](crypto-encryption-decryption.md#aes)。
@@ -49,6 +49,10 @@ target_link_libraries(entry PUBLIC libohcrypto.so)
 2. 使用[OH\_CryptoSymCipherParams\_SetParam](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipherparams_setparam)设置authTag，作为解密的认证信息。
 3. 调用[OH\_CryptoSymCipher\_Init](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_init)，设置模式为解密（CRYPTO\_DECRYPT\_MODE），指定解密密钥（OH\_CryptoSymKey）和GCM模式对应的解密参数（OH\_CryptoSymCipherParams），初始化解密Cipher实例。
 4. 调用[OH\_CryptoSymCipher\_Update](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_update)，更新数据（密文）。
+
+   * 当数据量较小时，可以在init完成后直接调用final。
+   * 当数据量较大时，可以多次调用update，即分段解密。
+   * 用户可以根据数据量大小自行决定操作方式。例如，当数据量超过1KB时，使用update。
 5. 调用[OH\_CryptoSymCipher\_Final](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_final)，获取解密数据。
 
 **销毁对象**
@@ -205,10 +209,15 @@ end:
    **说明** 
 
    CCM模式不支持分段加解密。
+
+   当数据量较小时，可以在init完成后直接调用final。
 5. 调用[OH\_CryptoSymCipher\_Final](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_final)，获取解密后的数据。
 
-   * 已使用update传入数据，此处data传入null。
-   * 在访问final输出结果的具体数据前，需要先判断结果是否为null，以避免异常。
+   **说明** 
+
+   若使用update传入数据，此处data传入null。
+
+   在访问final输出结果的具体数据前，需要先判断结果是否为null，以避免异常。
 
 **销毁对象**
 
@@ -561,8 +570,7 @@ end:
 
    在GCM模式下，从加密后的数据中取出末尾16字节，作为解密时初始化的认证信息。示例中authTag恰好为16字节。
 3. 调用[OH\_CryptoSymCipher\_Init](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_init)，设置模式为解密（CRYPTO\_DECRYPT\_MODE），指定解密密钥（OH\_CryptoSymKey）和GCM模式对应的解密参数（OH\_CryptoSymCipherParams），初始化解密Cipher实例。
-4. 将一次传入数据量设置为20字节，多次调用[OH\_CryptoSymCipher\_Update](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_update)，更新数据（密文）。
-5. 调用[OH\_CryptoSymCipher\_Final](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_final)获取解密数据。
+4. 调用[OH\_CryptoSymCipher\_Final](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_final)获取解密数据。
 
 **销毁对象**
 

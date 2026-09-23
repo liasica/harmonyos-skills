@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: Relu
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 单目指令 > Relu
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:56+08:00
+scraped_at: 2026-09-24T06:50:57+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:fe08c2b1a24426ed518684a742e895c26f628d66a1f70c9381cf8094393d27dc
+content_hash: sha256:0697d2f7c3b7ec07e52e100d014bfdaf54d72ce1a9fb95879ee456b11a9ffa8b
 ---
 
 ## 函数功能
 
 按元素做线性整流Relu，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数 ：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/wCXty20iROe3cvA2tWbsGw/zh-cn_image_0000002733275728.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/v6bUh9DjQp6pDKakv9xKzQ/zh-cn_image_0000002739892286.png)
 
 ## 函数原型
 

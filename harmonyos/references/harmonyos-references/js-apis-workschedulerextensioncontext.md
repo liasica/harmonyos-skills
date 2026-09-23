@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-workschedulerextensioncontext
-title: WorkSchedulerExtensionContext
-breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > application > WorkSchedulerExtensionContext
+title: WorkSchedulerExtensionContext (延迟任务调度回调上下文)
+breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > application > WorkSchedulerExtensionContext (延迟任务调度回调上下文)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-24T06:53:10+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:f0ba9737c0850c6735ae5398edc24eb0dedbe68f363edbc970cc00a56da706a2
 ---
 

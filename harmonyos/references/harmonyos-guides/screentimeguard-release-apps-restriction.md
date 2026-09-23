@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 解除应用访问限制
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用访问限制 > 解除应用访问限制
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d34c9e0189190cda069aa7cfb04c2a9703596e7c45ffc16a7c9d8b03f6012092
+scraped_at: 2026-09-24T06:50:51+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:5210442515e62b3547d1d8ae5a365457b60e68dfa4fbecadad1aba471e7d9df4
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:d34c9e0189190cda069aa7cfb04c2a9703596e7c45ffc16a7c9d8b03f60
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/UgY-oYnVTYmp3DWNWt24BQ/zh-cn_image_0000002762995007.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/oN8KsDM8QbGoANxnfwTxrQ/zh-cn_image_0000002769331633.png)
 
 流程说明：
 
@@ -41,7 +41,7 @@ content_hash: sha256:d34c9e0189190cda069aa7cfb04c2a9703596e7c45ffc16a7c9d8b03f60
 **边界场景：**
 
 * 如果传入的应用数组为空，限制类型为禁用清单，则不对任何应用做解除限制。
-* 如果传入的应用数组为空，限制类型为许可清单，则对除了系统内置许可清单应用（电话、联系人、设置、未成年人模式）、管控发起应用本身、已授权的管控应用之外的所有应用做解除限制。
+* 如果传入的应用数组为空，限制类型为许可清单，则对除了系统内置许可清单应用（电话、时钟、联系人、设置、未成年人模式等）、管控发起应用本身、已授权的管控应用之外的所有应用做解除限制。
 * 同一个管控应用的限制和解除限制需对称使用，即解除限制必须和其限制的类型匹配上，如不匹配，则为参数错误；如果之前没有做过setAppsRestriction管控，也为参数错误。
 * 如果要对之前用禁用清单方式做限制的应用做解除限制，则传入的应用数组需包含所有的禁用清单应用，才可全部解除。
 * 传入的应用数组中如果包含了限制时传入的应用数组以外的应用（或包含无效token），则为参数错误。

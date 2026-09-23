@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: TrustedAppService（可信应用服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > ArkTS API错误码 > TrustedAppService（可信应用服务）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:24+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:17f5daa670cdd30b5eac0f9e6b673b6c04a6ca888275a780a12a77fd31728af8
+scraped_at: 2026-09-24T06:53:29+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:1ade020894a2054a809c1a640e0cd5646160d759b606f165639f5e97c339f720
 ---
 
 **说明** 
@@ -427,7 +427,7 @@ Image signature calculation failed.
 
 重新发起请求。如果您尝试重试仍未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)申请帮助。
 
-## 1027200006 证真处理存储不足失败
+## 1027200006 证真签名验证失败
 
 **错误信息**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: ArkGraphics 3D简介
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D简介
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:24+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:7111d58ea0dd111dec840bbe68c6563fc28bf14ef3568a235bcfb8002784b518
+scraped_at: 2026-09-24T06:50:30+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:8a690e85a1e0bb5c6f10c92fbaf2f74557c7f18bd1cb92dc32a0342bac4f6b31
 ---
 
 ArkGraphics 3D（方舟3D图形）基于轻量级的3D引擎以及渲染管线为开发者提供基础3D场景绘制能力，供开发者便捷、高效地构建3D场景并完成渲染。
@@ -15,10 +15,10 @@ ArkGraphics 3D以自定义场景模式为核心能力，支持开发者自行构
 ## 功能介绍
 
 * 提供加载并解析标准[glTF](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html)（GL Transmission Format）模型（.gltf文件和.glb文件）的能力，同时支持使用[MeshOpt](https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Vendor/EXT_meshopt_compression/README.md)压缩，输入带有EXT\_meshopt\_compression扩展描述的glTF模型。支持开发者将glTF模型文件置于应用文件沙盒中，并通过ArkGraphics 3D提供的异步接口完成模型的加载以及渲染。具体可见[Scene](../harmonyos-references/js-apis-inner-scene.md)。
-* 提供自定义灯光（Light）、相机（Camera）节点以及通用节点（Node）的能力，可支撑开发者自定义场景灯光、渲染视角等信息，同时支撑用户动态地调整场景树结构以及节点属性进而调整3D场景。具体可见[Scene](../harmonyos-references/js-apis-inner-scene.md)以及[SceneNode (节点管理)](../harmonyos-references/js-apis-inner-scene-nodes.md)。
-* 提供创建图片（Image）、材质（Material）、环境（Environment）以及自定义着色器（Shader）的能力，支撑开发者通过调用ArkGraphics 3D提供的能力来创建3D场景中使用的各种资源，支撑开发者自定义着色器，完成自定义3D材质渲染。具体可以参见[Scene](../harmonyos-references/js-apis-inner-scene.md)以及[SceneResources](../harmonyos-references/js-apis-inner-scene-resources.md)。
-* 提供控制3D场景动画状态的能力，支撑开发者控制动画的开始、暂停、结束、播放到指定位置等操作，同时提供动画开始、结束时的回调函数支持开发者进行逻辑控制。具体可见[SceneResources](../harmonyos-references/js-apis-inner-scene-resources.md)。
-* 提供基础的3D渲染后处理能力，提供接口支撑开发者进行ToneMapping后处理相关控制。具体可见[ScenePostProcessSettings (后处理管理)](../harmonyos-references/js-apis-inner-scene-post-process-settings.md)。
+* 提供自定义光源（Light）、相机（Camera）节点以及通用节点（Node）的能力，可支持开发者自定义场景光源、渲染视角等信息，同时支持用户动态地调整场景树结构以及节点属性进而调整3D场景。具体可见[Scene](../harmonyos-references/js-apis-inner-scene.md)以及[SceneNode (节点管理)](../harmonyos-references/js-apis-inner-scene-nodes.md)。
+* 提供创建图片（Image）、材质（Material）、环境（Environment）以及自定义着色器（Shader）的能力，支持开发者通过调用ArkGraphics 3D提供的能力来创建3D场景中使用的各种资源，并自定义着色器，完成自定义3D材质渲染。具体可以参见[Scene](../harmonyos-references/js-apis-inner-scene.md)以及[SceneResources](../harmonyos-references/js-apis-inner-scene-resources.md)。
+* 提供控制3D场景动画状态的能力，支持开发者控制动画的开始、暂停、结束、播放到指定位置等操作，同时提供动画开始、结束时的回调函数支持开发者进行逻辑控制。具体可见[SceneResources](../harmonyos-references/js-apis-inner-scene-resources.md)。
+* 提供基础的3D渲染后处理能力，提供接口支持开发者进行ToneMapping后处理相关控制。具体可见[ScenePostProcessSettings (后处理管理)](../harmonyos-references/js-apis-inner-scene-post-process-settings.md)。
 
 综上，ArkGraphics 3D提供以自定义Scene为核心的3D场景渲染能力，同时通过自动场景模式为模型的快速展示提供便捷入口，满足从简单预览到复杂渲染控制的不同开发需求。
 
@@ -26,7 +26,7 @@ ArkGraphics 3D以自定义场景模式为核心能力，支持开发者自行构
 
 ## 框架原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Df5eSSzzT66rt6fHYBC89Q/zh-cn_image_0000002733275110.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/pH0GdPgJQ7-qoNi4AcxP2g/zh-cn_image_0000002739891674.png)
 
 如上图 ArkGraphics 3D接口能力由图形后端、引擎层以及接口层三个关键部分共同组成。
 

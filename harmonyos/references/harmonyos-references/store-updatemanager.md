@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-upd
 title: updateManager（更新功能）
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > updateManager（更新功能）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:170d10c740124342d544fbf27ed222b61f5c9a1c92b638e4173e00e4d80057c6
+scraped_at: 2026-09-24T06:55:14+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:125b9ed264429cdda5491152122f3ce90c7dddc89e2b903e248ed9490c829ac9
 ---
 
 提供检测新版本及升级功能。
@@ -396,10 +396,33 @@ off(type: 'updateChange', callback?: Callback<UpdateSessionState>): void
 ```typescript
 import { updateManager } from '@kit.AppGalleryKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-try {
-  // 取消监听
-  updateManager.off('updateChange');
-} catch (error) {
-  hilog.error(0, 'TAG', `moduleInstallManager.off onError.code is ${error.code}, message is ${error.message}`);
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'off'
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => this.Off)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+
+  private Off() {
+
+    try {
+      // 取消监听
+      updateManager.off('updateChange');
+    } catch (error) {
+      hilog.error(0, 'TAG', `off onError.code is ${error.code}, message is ${error.message}`);
+    }
+  }
 }
 ```

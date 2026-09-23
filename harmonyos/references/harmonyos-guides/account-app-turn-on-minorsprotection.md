@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-app-t
 title: 应用内开启未成年人模式
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 应用与系统实现未成年人模式联动 > 应用内开启未成年人模式
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:28+08:00
+scraped_at: 2026-09-24T06:50:34+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:621305b5e2e1b25c9595f6c6ca2d501146f9821ba8c6b5ade70ae144479df8ee
+content_hash: sha256:fcb0a5b4210a74df71e416b009a94958ffd27b0ddbede7e29aa2871acb0f52c9
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:621305b5e2e1b25c9595f6c6ca2d501146f9821ba8c6b5ade70ae144479
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/C-8NZ7BRSs6eQjFHdFziug/zh-cn_image_0000002762994575.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/G7GxtWjtTFyd_D7Tkk2jQA/zh-cn_image_0000002769331207.png)
 
 流程说明：
 

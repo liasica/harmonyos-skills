@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic
 title: 基础知识
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 矩阵编程（高阶API） > 基础知识
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:54+08:00
+scraped_at: 2026-09-24T06:50:55+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:288bdac188748ae8899f931770b28fe5478fccb1a57d9999de8dc98462a2eec2
+content_hash: sha256:275bbd1a45bdba02215a4dd483de5c6bfc3b2eb934644f11961d0517e055be0b
 ---
 
 **说明** 
@@ -20,7 +20,7 @@ Matmul的计算公式为：C = A \* B + bias，其示意图如下。
 * C为目的操作数，存放矩阵乘结果的矩阵，形状为[M, N]。
 * bias为矩阵乘偏置，形状为[1, N]。对A\*B结果矩阵的每一行都采用该bias进行偏置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FEzbOBMURkCF3ENkE26TMQ/zh-cn_image_0000002733275708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/1GkS7_fsSnmJmijHinTFSw/zh-cn_image_0000002739892266.png)
 
 ## 矩阵乘法数据流
 
@@ -42,7 +42,7 @@ Matmul的计算公式为：C = A \* B + bias，其示意图如下。
 * CO1数据汇聚到CO2：CO1->CO2。
 * 从CO2到输出位置（输出位置可以是GM或者VECIN）：CO2->GM/CO2->VECIN。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_Gmyo8h0TyaiK6A4e6kskw/zh-cn_image_0000002733435588.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/n0DCkMhUR7G2KZQeuBQvDg/zh-cn_image_0000002739732388.png)
 
 ## 数据格式
 
@@ -57,7 +57,7 @@ Matmul的计算公式为：C = A \* B + bias，其示意图如下。
 
   如下图所示 （W，H）大小的矩阵被分为（H1\*W1）个分形，按照column major排布，形状如N字形；每个分形内部有（H0\*W0）个元素，按照row major排布，形状如z字形。所以这种数据格式称为NZ（大N小Z）格式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/LzREnHE0Qh2EOuRNR1NqBA/zh-cn_image_0000002762995111.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ee7jsHSgTlKuRcjHwMKqNw/zh-cn_image_0000002769331737.png)
 
   下面我们再通过一个具体的例子来深入理解ND和NZ格式的数据排布区别。假设分形格式为2\*2，如下图所示4\*4的矩阵，ND和NZ格式存储两种情况下，数据在内存中的排布格式分别为：
 
@@ -65,7 +65,7 @@ Matmul的计算公式为：C = A \* B + bias，其示意图如下。
 
   NZ：0, 1, 4, 5, 8, 9, 12, 13, 2, 3, 6, 7, 10, 11, 14, 15
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/qBm2ud9DQCSsmIgRJKekZA/zh-cn_image_0000002762835223.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/zqGytMJMRKyvMZfVuvcNZg/zh-cn_image_0000002769451599.png)
 
 ## 数据分块(Tiling)
 
@@ -79,7 +79,7 @@ Matmul的计算公式为：C = A \* B + bias，其示意图如下。
 
 比如，下图中共有8个核参与计算，将A矩阵沿着M轴划分为4块，将B矩阵沿着N轴切分为两块，单核上仅处理某一分块（比如图中绿色部分为core3上参与计算的数据）：SingleCoreM \* K大小的A矩阵分块和SingleCoreN\* K大小的B矩阵分块相乘得到SingleCoreM \* SingleCoreN大小的C矩阵分块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/LqUh6sJCRIOa9EJIRDk28w/zh-cn_image_0000002733275710.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/svt0x1jtTr2wz5FCAyz1xA/zh-cn_image_0000002739892268.png)
 
 ### 核内切分
 
@@ -89,7 +89,7 @@ Matmul的计算公式为：C = A \* B + bias，其示意图如下。
 * 对于B矩阵，沿N轴进行切分，切分成多份的baseN，沿K轴进行切分，切分成多份的baseK。
 * 对于C矩阵，A矩阵中baseM\*baseK大小的分块和B矩阵中baseK\*baseN大小的分块相乘并累加，得到C矩阵中对应位置baseM\*baseN大小的分块。比如，图中结果矩阵中的蓝色矩阵块5是通过如下的累加过程得到的：a\*a+b\*b+c\*c+d\*d+e\*e+f\*f。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/8liYbpnzTUa7XR4d4ShbOw/zh-cn_image_0000002733435590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/zuCEfrkWRv-op9jKZakcxg/zh-cn_image_0000002739732390.png)
 
 除了baseM, baseN, baseK外，还有一些常用的tiling参数，其含义如下。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/global-config
 title: 全局配置项功能场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 全局配置项功能场景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c8284e1135478afbdda3fd751763556e690e7c1b6562b9c6868fa973cb6d0709
+scraped_at: 2026-09-24T06:49:29+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:66cd817fe9199a3cc8b273f5cf77ede6cea76d31a0050d047a40aff40b7e553a
 ---
 
 对于需要使用进程单例的场景，例如不同并发实例间需要数据保持一致的全局配置项功能，可以采用[共享模块](arkts-sendable-module.md)来实现。
@@ -33,7 +33,7 @@ content_hash: sha256:c8284e1135478afbdda3fd751763556e690e7c1b6562b9c6868fa973cb6
        }, ArkTSUtils.locks.AsyncLockMode.EXCLUSIVE)
      }
 
-     async logout(user?: string) {
+     async logout() {
        return this.lock.lockAsync(() => {
          this.isLogin = false;
          this.loginUser = '';

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-data-migr
 title: 应用数据迁移功能介绍
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 应用数据迁移功能介绍
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:33+08:00
+scraped_at: 2026-09-24T06:49:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:03dd93c869937fc0f646f6aad546416a4008003e7ee863ef8093f99a5a0b1628
+content_hash: sha256:ea3714b171c21ec13ed24969c3ef4e18281a5efc54324db58f4f570eeff3f57f
 ---
 
 ## 使用场景
@@ -14,7 +14,7 @@ content_hash: sha256:03dd93c869937fc0f646f6aad546416a4008003e7ee863ef8093f99a5a0
 
 如下图所示，应用需要的数据，包含云端服务器中的数据，本地应用沙箱中的数据和本地公共媒体库中的数据。为了应用的数据可以继承，开发者需要保证云端数据定义兼容APK应用和HarmonyOS应用，确保系统升级后同一账号下的数据可识别。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/iyuecaUITlKQ8D6u7OEU1Q/zh-cn_image_0000002762993907.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/F4rATYZ8StGipBeudVNBLQ/zh-cn_image_0000002769330555.png)
 
 ## 数据迁移机制
 
@@ -40,10 +40,10 @@ content_hash: sha256:03dd93c869937fc0f646f6aad546416a4008003e7ee863ef8093f99a5a0
 
 后续HarmonyOS应用通过访问HarmonyOS应用沙箱获取应用的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/wNNgUDTdTEa19jWu3IuRDA/zh-cn_image_0000002762834023.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/H4_XB0h1THqeQn56IJbT3w/zh-cn_image_0000002769450417.png)
 
 ### 公共媒体库中数据迁移机制
 
 公共媒体库中的数据，在终端设备从HarmonyOS升级到HarmonyOS NEXT后，会整体搬迁直接继承。应用可以使用HarmonyOS NEXT提供的API，访问公共媒体库中的数据。媒体库的使用指导可以参考：[媒体文件管理服务](photoaccesshelper-overview.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/vM9kAta5SxacTGioU6ewhA/zh-cn_image_0000002733274506.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/7zmxkyacTyKuYpBOnAhZvw/zh-cn_image_0000002739891086.png)

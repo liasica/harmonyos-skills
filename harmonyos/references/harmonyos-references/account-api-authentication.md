@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: "@hms.core.authentication (华为账号应用统一认证服务)"
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > @hms.core.authentication (华为账号应用统一认证服务)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:71d68f81a3166d50010de5ee737be3b7099c8777d9b269632eec31da94f4015b
+scraped_at: 2026-09-24T06:55:12+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:cb83f1cba431b7f990d122ff252b721357d307e77784e001aa603331014102cd
 ---
 
 ## 模块概述
@@ -999,7 +999,7 @@ export enum ErrorCode {
 
 executeRequest(request: AuthenticationRequest): Promise<AuthenticationResponse>
 
-执行请求方法，AuthenticationController类成员函数，使用callback异步回调。该方法用于接收并执行华为账号登录（[LoginWithHuaweiIDRequest](account-api-authentication.md#loginwithhuaweiidrequest)）、授权（[AuthorizationWithHuaweiIDRequest](account-api-authentication.md#authorizationwithhuaweiidrequest)）、取消授权（[CancelAuthorizationRequest](account-api-authentication.md#cancelauthorizationrequest)）请求，并返回华为账号登录（[LoginWithHuaweiIDResponse](account-api-authentication.md#loginwithhuaweiidresponse)）、授权（[AuthorizationWithHuaweiIDResponse](account-api-authentication.md#authorizationwithhuaweiidresponse)）、取消授权（[CancelAuthorizationResponse](account-api-authentication.md#cancelauthorizationresponse)）响应结果。 使用Promise异步回调。
+执行请求方法，AuthenticationController类成员函数，该方法用于接收并执行华为账号登录（[LoginWithHuaweiIDRequest](account-api-authentication.md#loginwithhuaweiidrequest)）、授权（[AuthorizationWithHuaweiIDRequest](account-api-authentication.md#authorizationwithhuaweiidrequest)）、取消授权（[CancelAuthorizationRequest](account-api-authentication.md#cancelauthorizationrequest)）请求，并返回华为账号登录（[LoginWithHuaweiIDResponse](account-api-authentication.md#loginwithhuaweiidresponse)）、授权（[AuthorizationWithHuaweiIDResponse](account-api-authentication.md#authorizationwithhuaweiidresponse)）、取消授权（[CancelAuthorizationResponse](account-api-authentication.md#cancelauthorizationresponse)）响应结果。 使用Promise异步回调。
 
 通过[createLoginWithHuaweiIDRequest](account-api-authentication.md#createloginwithhuaweiidrequest)、[createAuthorizationWithHuaweiIDRequest](account-api-authentication.md#createauthorizationwithhuaweiidrequest)、[createCancelAuthorizationRequest](account-api-authentication.md#createcancelauthorizationrequest)构造请求对象后，使用该方法执行请求。
 

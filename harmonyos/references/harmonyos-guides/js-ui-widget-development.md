@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-
 title: JS卡片开发指导（Stage模型）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片开发 > JS卡片开发指导（Stage模型）
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:36+08:00
+scraped_at: 2026-09-24T06:49:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3e1ae254d0074f39b08d78620b3caa4d6b5aa0439d251e54e0d639ebd4404da7
+content_hash: sha256:a7aa7607731358933cae7ec6cd16ae25ea8f1db654f8220dbf7fa6445021b89d
 ---
 
 Stage模型是从API version 9开始支持，目前主推且会长期演进的模型。该模型采用面向对象的方式，将应用组件以类接口的形式开放给开发者，可以进行派生，利于扩展能力。
@@ -371,7 +371,7 @@ export default class JsCardFormAbility extends FormExtensionAbility {
 
 开发者可以使用类Web范式（HML+CSS+JSON）开发JS卡片页面。生成如下卡片页面，可以这样配置卡片页面文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/bYzENh3SRmKslSmzBTd6uA/zh-cn_image_0000002733434476.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/vuM65GwIRDKpvB2vpxkqQg/zh-cn_image_0000002739731296.png)
 
 * HML：使用类Web范式的组件描述卡片的页面信息。
 

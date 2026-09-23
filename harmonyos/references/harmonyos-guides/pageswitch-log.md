@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pageswitch-lo
 title: 页面切换日志
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 通用日志 > 页面切换日志
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:02+08:00
+scraped_at: 2026-09-24T06:50:12+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:22bf23d07d9b408b53116c68ae524322ed3e629c161eda86b457db8fea5e70b4
+content_hash: sha256:48ef321af0a2aa16760920e09d973ca9a074675d7e9d15c410dd608074bc7a98
 ---
 
 ## 简介
@@ -16,7 +16,7 @@ content_hash: sha256:22bf23d07d9b408b53116c68ae524322ed3e629c161eda86b457db8fea5
 
 三方应用通过订阅故障事件和使能记录页面切换日志来获取故障发生时的页面切换日志信息，其实现原理如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/VzYC8mvaTOSCAwDt_ABBXQ/zh-cn_image_0000002762834345.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/OdL2rtLvSWSkXzcv0x061A/zh-cn_image_0000002769450735.png)
 
 详细步骤如下：
 

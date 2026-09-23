@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ImageSource)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (ImageSource)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d2dbc55f0a70f654acbc7ee7f4c3ad1541e3023f5bdbe87d662beb9dafe27295
+scraped_at: 2026-09-24T06:54:42+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:0b11c7c96fa25daf18d9f1b1ab0adc83c7e4d629a3a6827704f837ec1b7d07de
 ---
 
 ImageSource类，用于获取图片相关信息。
@@ -817,11 +817,14 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 async function UpdateDatay(imageSourceObj : image.ImageSource) {
   const array: ArrayBuffer = new ArrayBuffer(100);
-  imageSourceObj.updateData(array, false, 0, 10).then(() => {
+  try {
+    // 该接口为异步接口，调用时需保证执行时序。
+    await imageSourceObj.updateData(array, false, 0, 10);
     console.info('Succeeded in updating data.');
-  }).catch((err: BusinessError) => {
-    console.error(`Failed to update data.code is ${err.code},message is ${err.message}`);
-  })
+  } catch (err) {
+    const e: BusinessError = err as BusinessError;
+    console.error(`Failed to update data.code is ${e.code},message is ${e.message}`);
+  }
 }
 ```
 
@@ -970,7 +973,7 @@ createPixelMap(options?: DecodingOptions): Promise<PixelMap>
 
 通过图片解码参数创建PixelMap对象。使用Promise异步回调。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocator](arkts-apis-image-imagesource.md#createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](arkts-apis-image-e.md#allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](../harmonyos-guides/image-allocator-type.md)。
+系统自动选择共享内存或DMA内存。从API version 15开始，需要指定内存类型时，应调用[createPixelMapUsingAllocator](arkts-apis-image-imagesource.md#createpixelmapusingallocator15)，将allocatorType设置为image.AllocatorType.DMA或image.AllocatorType.SHARE\_MEMORY。相关说明请参见[系统默认的内存分配方式](../harmonyos-guides/image-allocator-type.md#系统默认的内存分配方式)。
 
 **说明** 
 
@@ -1016,7 +1019,7 @@ createPixelMap(callback: AsyncCallback<PixelMap>): void
 
 通过默认参数创建PixelMap对象。使用callback异步回调。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocator](arkts-apis-image-imagesource.md#createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](arkts-apis-image-e.md#allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](../harmonyos-guides/image-allocator-type.md)。
+系统自动选择共享内存或DMA内存。从API version 15开始，需要指定内存类型时，应调用[createPixelMapUsingAllocator](arkts-apis-image-imagesource.md#createpixelmapusingallocator15)，将allocatorType设置为image.AllocatorType.DMA或image.AllocatorType.SHARE\_MEMORY。相关说明请参见[系统默认的内存分配方式](../harmonyos-guides/image-allocator-type.md#系统默认的内存分配方式)。
 
 **说明** 
 
@@ -1058,7 +1061,7 @@ createPixelMap(options: DecodingOptions, callback: AsyncCallback<PixelMap>): voi
 
 通过图片解码参数创建PixelMap对象。使用callback异步回调。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocator](arkts-apis-image-imagesource.md#createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](arkts-apis-image-e.md#allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](../harmonyos-guides/image-allocator-type.md)。
+系统自动选择共享内存或DMA内存。从API version 15开始，需要指定内存类型时，应调用[createPixelMapUsingAllocator](arkts-apis-image-imagesource.md#createpixelmapusingallocator15)，将allocatorType设置为image.AllocatorType.DMA或image.AllocatorType.SHARE\_MEMORY。相关说明请参见[系统默认的内存分配方式](../harmonyos-guides/image-allocator-type.md#系统默认的内存分配方式)。
 
 **说明** 
 
@@ -1116,7 +1119,7 @@ createPixelMapSync(options?: DecodingOptions): PixelMap
 
 释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocatorSync](arkts-apis-image-imagesource.md#createpixelmapusingallocatorsync15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](arkts-apis-image-e.md#allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](../harmonyos-guides/image-allocator-type.md)。
+系统自动选择共享内存或DMA内存。从API version 15开始，需要指定内存类型时，应调用[createPixelMapUsingAllocatorSync](arkts-apis-image-imagesource.md#createpixelmapusingallocatorsync15)，将allocatorType设置为image.AllocatorType.DMA或image.AllocatorType.SHARE\_MEMORY。相关说明请参见[系统默认的内存分配方式](../harmonyos-guides/image-allocator-type.md#系统默认的内存分配方式)。
 
 **说明** 
 
@@ -1381,7 +1384,7 @@ createPixelMapUsingAllocator(options?: DecodingOptions, allocatorType?: Allocato
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [DecodingOptions](arkts-apis-image-i.md#decodingoptions7) | 否 | 解码参数。 |
-| allocatorType | [AllocatorType](arkts-apis-image-e.md#allocatortype15) | 否 | 用于图像解码的内存类型。默认值为AllocatorType.AUTO。 |
+| allocatorType | [AllocatorType](arkts-apis-image-e.md#allocatortype15) | 否 | PixelMap的内存类型。默认值为AllocatorType.AUTO，由系统自动选择共享内存或DMA内存。需要指定内存类型时，设置为AllocatorType.DMA或AllocatorType.SHARE\_MEMORY。 |
 
 **返回值：**
 
@@ -1452,7 +1455,7 @@ createPixelMapUsingAllocatorSync(options?: DecodingOptions, allocatorType?: Allo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [DecodingOptions](arkts-apis-image-i.md#decodingoptions7) | 否 | 解码参数。 |
-| allocatorType | [AllocatorType](arkts-apis-image-e.md#allocatortype15) | 否 | 用于图像解码的内存类型。默认值为AllocatorType.AUTO。 |
+| allocatorType | [AllocatorType](arkts-apis-image-e.md#allocatortype15) | 否 | PixelMap的内存类型。默认值为AllocatorType.AUTO，由系统自动选择共享内存或DMA内存。需要指定内存类型时，设置为AllocatorType.DMA或AllocatorType.SHARE\_MEMORY。 |
 
 **返回值：**
 

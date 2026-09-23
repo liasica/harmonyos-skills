@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 测试函数
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > 开发云函数 > 测试函数
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:33+08:00
+scraped_at: 2026-09-24T06:50:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b93caf1694630d9eb9218319be2bca4c411104becff475ceb473be4326740451
+content_hash: sha256:1c4caf23f2ac5bf4288c0864c352184f4cbdc508c51bbaa879c7f5e97bf25919
 ---
 
 **说明** 
@@ -16,20 +16,20 @@ content_hash: sha256:b93caf1694630d9eb9218319be2bca4c411104becff475ceb473be43267
 
 * 方式一：函数列表中点击函数名称右侧“操作”列的“测试”，在右侧弹出的“测试函数”界面进行测试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/F6yfDKhSRFiKguxILhc21g/zh-cn_image_0000002762994673.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wdlthrRkRn2NPQJmp5l_4w/zh-cn_image_0000002769331303.png)
 * 方式二：
 
   1. 在函数列表中点击已创建的函数名称，进入函数详情页面。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/VCs248H2T2CmdnGS-5U1ng/zh-cn_image_0000002762834789.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/DVbIk_SuTiq6QZnBPMCfAA/zh-cn_image_0000002769451165.png)
   2. 选择“函数代码”页签，点击“测试函数”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/fEn6JzZ7RKaeo-BUOYqUPQ/zh-cn_image_0000002733275272.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/C5riJ1FHSqKqegWA4xZ14A/zh-cn_image_0000002739891834.png)
   3. 在右侧弹出的“测试函数”界面，使用默认测试事件、创建新测试事件或者使用已保存测试事件进行测试。
 
      + 使用默认测试事件：直接点击“测试”对函数进行测试。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/MoVlyq-tQxaEocn7kb5bzw/zh-cn_image_0000002733435152.png)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/_HveciZ8RMeWhFxp9_lbSA/zh-cn_image_0000002739731956.png)
      + 创建新测试事件：如果需要设置调用函数的请求消息体，可按照如下步骤配置测试参数，并可保存为测试事件方便后续继续使用。
 
        1. 在“事件”文本框中输入JSON格式的事件参数，点击“保存”。然后在“提示”弹出框中输入事件名称，配置完成后点击弹出框右下角的“确认”。
@@ -38,40 +38,40 @@ content_hash: sha256:b93caf1694630d9eb9218319be2bca4c411104becff475ceb473be43267
 
           “事件”文本框内输入的JSON对象，对应的是触发器的event事件格式，会透传给函数。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/-e8DqSxPTSWGQnvweAu4cQ/zh-cn_image_0000002762994675.png)
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/1GjMJiQkQuW_J1E91ILJgg/zh-cn_image_0000002769331305.png)
        2. 点击“测试”，函数处理事件并返回测试结果。
      + 使用已保存测试事件
 
-       1. 在“测试函数”界面，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/wgfU7NMmS5aS9ijYYVgPNQ/zh-cn_image_0000002762834791.png)展开已保存的测试事件列表，选择已配置的事件名称右侧的“加载”，然后点击“测试”，函数处理事件并返回测试结果。
+       1. 在“测试函数”界面，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/LTQSCy79RkWFYdb9hEKvLQ/zh-cn_image_0000002769451167.png)展开已保存的测试事件列表，选择已配置的事件名称右侧的“加载”，然后点击“测试”，函数处理事件并返回测试结果。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/KlIGJJUbQfa-zb_P6Jx-vQ/zh-cn_image_0000002733275274.png)
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/_Y_YomsPTUio3PzUjiTJGw/zh-cn_image_0000002739891836.png)
        2. （可选）如果需要删除已添加的测试事件，可在测试事件列表中点击事件名称右侧的“删除”即可删除测试事件。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/A8_o-BnrTXS56nBmOJ9jYg/zh-cn_image_0000002733435154.png)
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/JOkHXfVsTieB_h827qqHfQ/zh-cn_image_0000002739731958.png)
   4. 查看测试结果。
 
      + 执行结果：展示测试后获得的响应结果。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/7WE9QFliT22KLYFmZJFchg/zh-cn_image_0000002762994677.png)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/DzgC0RYWRNejwMd-2BDraA/zh-cn_image_0000002769331307.png)
      + 运行日志：展示函数运行过程中，通过logger API打印的日志，支持输出debug级别及以上日志（以下仅为日志输出示例）。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/RR8AOMd8QM6Vm0fMxUMBDg/zh-cn_image_0000002762834793.png)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Dm9LNhYARJ2_24RbYKB30A/zh-cn_image_0000002769451169.png)
      + 执行摘要：展示该次测试请求相关信息。
 
        - 请求ID：该条测试请求的RequestID，在后台日志中体现为X-Trace-ID。
        - 持续时间：函数执行的端到端时间。
        - 执行版本：该次调用测试的具体函数版本。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/7j5SkAy4RMaWQI526eyOMQ/zh-cn_image_0000002733275276.png)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/oftz6CG-SGm8w3lH6Q7EKg/zh-cn_image_0000002739891838.png)
   5. “代码输入类型”为“在线编辑”的函数，测试过程中，如果需要修改函数入口文件代码，可直接在“函数代码”页签的代码编辑器中修改，然后点击页面底部的“提交”。当界面提示更新函数成功时，则可以点击“测试函数”对更改后的代码进行测试。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/hSNGK0LMQOm-q3qOf_oKkw/zh-cn_image_0000002733435156.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/h6Rkpd6uQiS8d1N875xCCQ/zh-cn_image_0000002739731960.png)
 
-     “代码输入类型”为“.zip文件”的函数，测试过程中，如果需要修改函数代码文件，可在本地修改且打包完成后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/4ovTaRWpRrWUspvkDXR7xA/zh-cn_image_0000002762994679.png)重新上传函数部署包，然后点击页面底部的“提交”。当界面提示更新函数成功时，则可以点击“测试函数”对更改后的代码进行测试。
+     “代码输入类型”为“.zip文件”的函数，测试过程中，如果需要修改函数代码文件，可在本地修改且打包完成后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/AQiGmiKFRq-HIRnfItqVqQ/zh-cn_image_0000002769331309.png)重新上传函数部署包，然后点击页面底部的“提交”。当界面提示更新函数成功时，则可以点击“测试函数”对更改后的代码进行测试。
 
      **说明** 
 
      如果代码更新量比较大，需要调整函数内存配置，可点击“内存配置”下拉框进行调整，然后再上传函数部署包。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/8a3GH0ZDSB25ihS5Vgg04w/zh-cn_image_0000002762834795.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ESKl9DKGSX-zAWCbs9jJKg/zh-cn_image_0000002769451171.png)
   6. 函数测试无误后，可在“函数代码”页签点击“导出函数”导出函数部署包。导出包以“函数名称+函数版本.zip”格式命名，可查看函数结构和文件内容。

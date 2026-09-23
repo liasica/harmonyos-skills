@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-atte
 title: 密钥证明介绍及算法规格
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥证明 > 密钥证明介绍及算法规格
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4ab1c697a5e6ba55f35c0902c6eeb5fe3dcb1943a63ba06823276f54b907ad9f
+scraped_at: 2026-09-24T06:50:01+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:6f20a36136c610081ca00e1f4269c3dccaf5545a3c83e44c9622d4d4a9e71185
 ---
 
 HUKS为密钥提供合法性证明能力，主要应用于非对称密钥的公钥的证明。
 
-基于PKI证书链技术，HUKS可以为存储在HUKS中的非对称密钥对的公钥签发证书，证明其公钥的合法性。业务可以通过系统提供的根CA证书，逐级验证HUKS签发的密钥证明证书，来确保证书中的公钥以及对应的私钥，确实来自合法的硬件设备，且存储管理在HUKS中。
+基于PKI证书链技术，HUKS可以为存储在HUKS中的非对称密钥对的公钥签发证书，证明其公钥的合法性。业务方可以通过系统提供的根CA证书，逐级验证HUKS签发的密钥证明证书，来确保证书中的公钥以及对应的私钥，确实来自合法的硬件设备，且存储管理在HUKS中。
 
 **说明** 
 

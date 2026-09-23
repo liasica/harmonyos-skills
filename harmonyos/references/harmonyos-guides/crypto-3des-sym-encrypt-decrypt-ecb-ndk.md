@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-3des-s
 title: 使用3DES对称密钥加解密(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用3DES对称密钥加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:138f2f50c417d81cfac5fb9a0a3bb3d4749238445dab766481d3fc81340074ff
+scraped_at: 2026-09-24T06:49:54+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:12ebb7e28856a729774402a61258c93d8a15723052876b5ee95ced89ab3f7ed2
 ---
 
 对应的算法规格请查看[对称密钥加解密算法规格：3DES](crypto-encryption-decryption.md#section3des)。
@@ -47,7 +47,7 @@ target_link_libraries(entry PUBLIC libohcrypto.so)
 
    * 当数据量较小时，可以在init完成后直接调用final。
    * 当数据量较大时，可以多次调用update，即分段解密。
-   * 用户可以根据数据量大小自行决定操作方式。例如，当数据量超过1KB时，使用 update。
+   * 用户可以根据数据量大小自行决定操作方式。例如，当数据量超过1KB时，使用update。
 4. 调用[OH\_CryptoSymCipher\_Final](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_final)，获取解密数据。
 
    * 如果使用update接口传入数据，此处data传入null。如果使用final接口传入数据，此处data传入密文数据。

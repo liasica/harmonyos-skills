@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: OffscreenCanvas
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > OffscreenCanvas
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:57+08:00
+scraped_at: 2026-09-24T06:52:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ef5e101749c522eed8edc7597aa2cc5dbe9f03af780cb967ede1879a9c6bc275
+content_hash: sha256:8445c7e0a61767345b96eb87776a61d9756c5d5c5f87cd40c3f8f1170e788d70
 ---
 
 OffscreenCanvas组件用于绘制自定义图形。
@@ -114,7 +114,7 @@ struct OffscreenCanvasPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Cg8Xfz32QtGuxBYfiWE0Pw/zh-cn_image_0000002762995937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/DMeqQ3eJQdO24JY1oIZeZg/zh-cn_image_0000002769332559.png)
 
 ### height
 
@@ -152,7 +152,7 @@ struct OffscreenCanvasPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/uZe6EyEBSXazaj4Q4OhTKg/zh-cn_image_0000002762836055.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/WAEc-vNOQpKXViAfRJ4CNw/zh-cn_image_0000002769452421.png)
 
 ## 方法
 
@@ -214,7 +214,7 @@ struct OffscreenCanvasPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/GAV5nPfzRAiAUkJj3mgdMw/zh-cn_image_0000002733276544.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/xkhLjknrSueIEcN7z8JRxw/zh-cn_image_0000002739893090.png)
 
 ### getContext10+
 
@@ -295,7 +295,7 @@ struct OffscreenCanvasExamplePage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/34KbyP-BTo6QrR-nQah7sQ/zh-cn_image_0000002733436418.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/X7d9Jy4KRCWbmTaLlynhOg/zh-cn_image_0000002739733212.png)
 
 ## OffscreenCanvas支持并发线程绘制
 
@@ -408,4 +408,4 @@ workerPort.onmessage = (e: MessageEvents) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/vqKHJ2XnTJmZpBICOuDEiQ/zh-cn_image_0000002762995941.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/XTSdYBOuRlqjXAXuY09lNw/zh-cn_image_0000002769332561.png)

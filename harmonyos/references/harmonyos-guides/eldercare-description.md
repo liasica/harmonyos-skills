@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/eldercare-des
 title: 获取关怀模式状态
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 应用长辈关怀功能体验 > 获取关怀模式状态
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:23f73a11f972a9c4140cc0ad818a7db121980609e8907f5e2fb516993c771edf
+scraped_at: 2026-09-24T06:49:26+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:1545d4e8f9967d23e95e65aebd49ec35db822885c9bc58176ee57ad2aa2972b9
 ---
 
 ## 场景介绍
@@ -43,7 +43,7 @@ content_hash: sha256:23f73a11f972a9c4140cc0ad818a7db121980609e8907f5e2fb516993c7
    struct SeniorModeDemo1 {
 
     // 关怀模式状态变化的回调，回调值为true时，代表系统关怀模式已打开，否则代表系统关怀模式已关闭。
-    callBack = (data: boolean) => {
+    callback = (data: boolean) => {
       console.info(`subscribe senior mode state change, result: ${JSON.stringify(data)}`);
     }
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Toggle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Toggle
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:48+08:00
+scraped_at: 2026-09-24T06:52:24+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:e9f6ad70eb053c0ad8b365fdcba45b83c3e3aade4a663ce8916000664cabb8ef
+content_hash: sha256:13858a86cc7dd65fd8bcc88f0e5ca42bc5d22aa99db9f07983c561f767303d9f
 ---
 
 组件提供勾选框样式、状态按钮样式和开关样式，适用于需要快速切换状态或进行单选确认的场景，能够有效提升交互体验与界面的直观性。
@@ -293,7 +293,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/IcUga8BNR6WMKs75lzORYQ/zh-cn_image_0000002762835781.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/rIL_EHB1Tze-6efaEooYBA/zh-cn_image_0000002769452151.gif)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -335,7 +335,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/XAbhdZHNTWSI8AkrwkzgNw/zh-cn_image_0000002733276272.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/D0Gh9IWmTpCsJi0UvvPZvg/zh-cn_image_0000002739892820.gif)
 
 ### 示例3（自定义Toggle样式）
 
@@ -395,7 +395,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/k-OZ_nGuSTurxYMLSqhElg/zh-cn_image_0000002733436146.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/KVXeLLNSTiSaFkIL783R_A/zh-cn_image_0000002739732942.gif)
 
 ### 示例4（Toggle沉浸光感效果）
 
@@ -430,8 +430,8 @@ struct ToggleMaterialTest {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/culzO03cQiSfZZKP2XYXhg/zh-cn_image_0000002762995669.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/fWjMexqQTiaa2ha5O9GYYg/zh-cn_image_0000002769332291.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/BS6TGCT3QQyR-Rgm1Aqjdw/zh-cn_image_0000002762835783.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/4MBF3OR5Rsy2gytn6SoM1g/zh-cn_image_0000002769452153.gif)

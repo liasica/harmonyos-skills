@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: EnterpriseAdminExtensionContext (企业设备管理扩展能力上下文环境)
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > application > EnterpriseAdminExtensionContext (企业设备管理扩展能力上下文环境)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:24+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:46f007b9dc6621a0ccf04cffd5b7f2640bd63a06b95e7c180c264c945f7b6cd3
+scraped_at: 2026-09-24T06:54:11+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:68a1f91c78eacc4f8c8722e26a418df324783e006439e4ae9f1607b7106470d8
 ---
 
 EnterpriseAdminExtensionContext在@ohos.enterprise.common模块中作为类型导出，具体接口定义见本文档。
@@ -94,9 +94,10 @@ startAbilityByAdmin(admin: Want, want: Want): Promise<void>
     "startWindowIcon": "$media:icon",
     "startWindowBackground": "$color:white",
     "exported": true,
-    "permissions": [
-      "ohos.permission.START_UI_ABILITY"
-    ]
+    // 标识当前Ability组件的权限信息。其他应用访问该Ability时，需要申请相应的权限。
+    // "permissions": [
+    //   "ohos.permission.EXAMPLE_PERMISSION"
+    // ]
   }
 ]
 ```
@@ -105,9 +106,10 @@ startAbilityByAdmin(admin: Want, want: Want): Promise<void>
 
 ```json5
 "requestPermissions": [
-  {
-    "name": "ohos.permission.START_UI_ABILITY"
-  },
+  // 启动其他应用的组件时，需申请该组件所标识的权限。
+  // {
+  //   "name": "ohos.permission.EXAMPLE_PERMISSION"
+  // },
   {
     "name": "ohos.permission.ENTERPRISE_START_ABILITIES"
   }

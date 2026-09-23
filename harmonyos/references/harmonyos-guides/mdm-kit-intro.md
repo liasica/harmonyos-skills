@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-intro
 title: MDM Kit简介
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > MDM Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:58+08:00
+scraped_at: 2026-09-24T06:50:09+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:efb9fc71279e22052850bf7f4ea76def0fe5c6be197da07fa61b4da58dc6f79e
+content_hash: sha256:7dd08daeb0f06c99fe4a51ff0aaf7bc60008cbcac32b487e63464d7c301d5277
 ---
 
 ## 业务介绍
@@ -21,7 +21,7 @@ MDM Kit（企业设备管理服务）为企业MDM（Mobile Device Management）�
 
 框架层和服务层提供了enterprise\_device\_management部件和enterprise\_device\_management\_ext部件，enterprise\_device\_management部件提供了设备管理应用程序框架和基本设备管理能力，enterprise\_device\_management\_ext部件为HarmonyOS NEXT设备提供扩展的企业设备管理能力。设备管理应用通过[EnterpriseAdminExtensionAbility](mdm-kit-admin.md)来调用MDM Kit中的接口，实现管理设备的意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Y40RUC8JR8GUwCj3OUIgDA/zh-cn_image_0000002762834297.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/m9hsNhA7Tc-_TvTU676GKw/zh-cn_image_0000002769450687.png)
 
 ## 约束与限制
 

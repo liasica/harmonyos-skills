@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-exte
 title: external_window.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > external_window.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:20a225950adc1f6d8c903b9a2385ffc2ad102829fbd7e572f9fdeb0f47341c6e
+scraped_at: 2026-09-24T06:55:06+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:549abfa109a0fb10b979eca9bbaf12511df0127053d8d3bfefbe13322451f2fd
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:20a225950adc1f6d8c903b9a2385ffc2ad102829fbd7e572f9fdeb0f473
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [Region](capi-nativewindow-region.md) | Region | 表示本地窗口OHNativeWindow需要更新内容的矩形区域（脏区）。 |
-| [Rect](capi-nativewindow-rect.md) | - | 如果rects是空指针nullptr，默认Buffer大小为脏区。 |
+| [Rect](capi-nativewindow-rect.md) | - | 定义矩形区域的结构体，包含矩形框的起始坐标和宽高信息。 |
 | [OHHDRMetaData](capi-nativewindow-ohhdrmetadata.md) | OHHDRMetaData | HDR元数据结构体定义。 |
 | [OHExtDataHandle](capi-nativewindow-ohextdatahandle.md) | OHExtDataHandle | 扩展数据句柄结构体定义。 |
 | [OHIPCParcel](capi-nativewindow-ohipcparcel.md) | OHIPCParcel | 提供对IPC序列化对象的访问功能。 |

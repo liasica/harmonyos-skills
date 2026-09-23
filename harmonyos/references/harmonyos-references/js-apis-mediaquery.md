@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-m
 title: "@ohos.mediaquery (媒体查询)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.mediaquery (媒体查询)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:28+08:00
+scraped_at: 2026-09-24T06:52:10+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:a7d5357135e10b04fe85433bc4b2b77135bc0e94d84513c39d664649bf700364
+content_hash: sha256:9f27b72e9730ed230dc1ed7ef28d33f9957697d8cd07902d285920e542b1d324
 ---
 
 提供根据不同媒体类型定义不同的样式。
@@ -197,4 +197,4 @@ struct MediaQueryExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/d0XVOAj8Ra6qWlMN3v_XoA/zh-cn_image_0000002733435838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/mU-ImLwGSPKagWTcyPjIEg/zh-cn_image_0000002739732638.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-erro
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:455948830414e06f9268d53e37c89c6244b7251192eb7a07054a2282324d3e29
+scraped_at: 2026-09-24T06:55:38+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:2ab10a5f753934d6761f99015a6ee99a506a7d621f3278980ed5dcb1c6514ffb
 ---
 
 **说明** 
@@ -111,11 +111,11 @@ Failed to connect to the AAID service.
 
 **错误描述**
 
-当连接PushService发生错误时，将返回该错误码。
+当连接AAID服务发生错误时，将返回该错误码。
 
 **可能原因**
 
-PushService运行异常。
+AAID服务运行异常。
 
 **处理步骤**
 
@@ -129,11 +129,11 @@ Internal error of the AAID service.
 
 **错误描述**
 
-PushService内部处理任务时发生异常，将返回该错误码。
+AAID服务内部处理任务时发生异常，将返回该错误码。
 
 **可能原因**
 
-PushService内部处理超时或异常。
+AAID服务内部处理超时或异常。
 
 **处理步骤**
 
@@ -449,7 +449,7 @@ Failed to display subscription UI.
 
 **错误描述**
 
-当展示订阅通知授权弹框失败，将返回该错误码。
+当展示订阅通知授权弹窗失败，将返回该错误码。
 
 **可能原因**
 

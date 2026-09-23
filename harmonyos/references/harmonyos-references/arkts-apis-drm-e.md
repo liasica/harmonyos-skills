@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > ArkTS API > @ohos.multimedia.drm (数字版权保护) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:22+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-24T06:54:39+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:04e973d884c61c0c38f9f7c50003e8dcfe316ac635058d9d53cfb67f57b225b2
 ---
 

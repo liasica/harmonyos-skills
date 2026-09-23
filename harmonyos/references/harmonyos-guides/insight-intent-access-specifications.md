@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-inten
 title: 附录：标准意图接入规范
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 意图框架开发指导 > 开发意图 > 附录：标准意图接入规范
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:51b5b1f98e6b608cd49a23cdb2ecdce63daa9279bdb27781ac0e60cbb6dd647c
+scraped_at: 2026-09-24T06:49:26+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:ee9dc177417b7788a65be9e30ba36e75a98f197b5b9f5e4198c00e8d857dfe5a
 ---
 
 ## 影音垂域（MediaDomain）
@@ -120,7 +120,7 @@ content_hash: sha256:51b5b1f98e6b608cd49a23cdb2ecdce63daa9279bdb27781ac0e60cbb6d
 | entityId | string | 否 | 意图实体ID，长度不超过64字符。 | "12949589" |
 | srcLocation | object | 否 | 出发地信息，包含字段：  - locationSystem：指定坐标系（默认使用GCJ-02坐标系）。  - poiId：poi的唯一标识。  - locationName：地点名称。  - longitude：经度。  - latitude：纬度。  - address：详细地址信息。 | {  "locationSystem": "GCJ02",  "poiId": "1236",  "locationName": "北京站",  "latitude": "39.902895",  "longitude": "116.427915",  "address": "北京市东城区北京站"  } |
 | dstLocation | object | 否 | 目的地的信息，包含字段：  - locationSystem：指定坐标系（默认使用GCJ-02坐标系）。  - poiId：poi的唯一标识。  - locationName：地点名称。  - longitude：经度。  - latitude：纬度。  - address：详细地址信息。 | {  "locationSystem": "GCJ02",  "poiId": "1248",  "locationName": "北京西站",  "latitude": "39.89534",  "longitude": "116.32128",  "address": "北京市丰台区北京西站"  } |
-| wayPoints | array | 否 | 途经点Array：语音入口调用时必填Array<PoiLocation>，途径点包含字段与srcLocation中的字段一致。 | [{  "locationSystem": "GCJ02",  "poiId": "1445",  "locationName": "前门东大街社区",  "latitude": "39.89995",  "longitude": "116.35628",  "address": "北京市东城区前门街道"  }] |
+| wayPoints | array | 否 | 途经点Array：语音入口调用时必填Array<PoiLocation>，途经点包含字段与srcLocation中的字段一致。 | [{  "locationSystem": "GCJ02",  "poiId": "1445",  "locationName": "前门东大街社区",  "latitude": "39.89995",  "longitude": "116.35628",  "address": "北京市东城区前门街道"  }] |
 | dstLocationType | string | 否 | 目的地类型，比如"家"、"公司"等。 | "家" |
 | trafficType | string | 否 | 交通方式。  - Drive：驾车（默认值）。  - Walk：步行。  - Cycle：骑行。  - Bus：公交。  - Subway：地铁。 | "Cycle" |
 

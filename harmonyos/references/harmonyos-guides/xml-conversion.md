@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xml-conversio
 title: XML转换
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > XML生成、解析与转换 > XML转换
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:80fc1f6224ae5165b93aacdcb8e61cb1f28904ac70952e235d141bdbe811928e
+scraped_at: 2026-09-24T06:49:28+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:b262de1795e4ed816273d477325ebd97b2e4ce17a7a068ffba44223dd68bddfc
 ---
 
 将XML文本转换为JavaScript对象，便于处理和操作数据，适用于JavaScript应用程序。
@@ -46,7 +46,7 @@ XML解析及转换需要确保传入的XML数据符合XML标准格式。
      // attributesKey: "_attributes" 转换后属性使用_attributes标识
      // textKey: "_text" 转换后标签值使用_text标识
      // cdataKey: "_cdata" 转换后未解析数据使用_cdata标识
-     // docTypeKey: "_doctype" 转换后文档类型使用_doctype标识
+     // doctypeKey: "_doctype" 转换后文档类型使用_doctype标识
      // commentKey: "_comment" 转换后注释使用_comment标识
      // parentKey: "_parent" 转换后父类使用_parent标识
      // typeKey: "_type" 转换后元素类型使用_type标识
@@ -78,7 +78,6 @@ XML解析及转换需要确保传入的XML数据符合XML标准格式。
    输出结果如下所示：
 
    ```json
-   strRes:
    {"_declaration":{"_attributes":{"version":"1.0","encoding":"utf-8"}},"_elements":[{"_type":"element","_name":"note",
     "_attributes":{"importance":"high","logged":"true"},"_elements":[{"_type":"element","_name":"title","_parent":"note",
     "_elements":[{"_type":"text","_text":"Happy"}]},{"_type":"element","_name":"todo","_parent":"note","_elements":

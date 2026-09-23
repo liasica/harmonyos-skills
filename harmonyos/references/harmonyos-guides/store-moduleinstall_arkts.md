@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-modulei
 title: 产品特性按需分发(ArkTS)
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 产品特性按需分发 > 产品特性按需分发(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bce0bf76387a8880060f1aa8b71ff1dcdec53e2e4d38719c56840b9dcb91467c
+scraped_at: 2026-09-24T06:50:36+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:7e75930d5173b1c5d9c7ea67d14cc456df06f4b03d382446664128baff7b9297
 ---
 
 **说明** 
@@ -22,7 +22,7 @@ content_hash: sha256:bce0bf76387a8880060f1aa8b71ff1dcdec53e2e4d38719c56840b9dcb9
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/b-pEtR1bSyGF9orQENKGTw/zh-cn_image_0000002762994597.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/i7TWlceLQgO5fQaOoptQog/zh-cn_image_0000002769331227.png)
 
 1. 用户下载A应用的基础包。
 2. 用户使用增强功能。
@@ -135,7 +135,7 @@ content_hash: sha256:bce0bf76387a8880060f1aa8b71ff1dcdec53e2e4d38719c56840b9dcb9
      hilog.error(0, 'InstantDownload', `onError.code is ${error.code}, message is ${error.message}`);
    }
    ```
-4. 调用[fetchModules](../harmonyos-references/store-moduleinstallmanager.md#moduleinstallmanagerfetchmodules)方法，将步骤3中的myModuleInstallRequest传入模块中的fetchModules方法。
+4. 调用[fetchModules](../harmonyos-references/store-moduleinstallmanager.md#moduleinstallmanagerfetchmodules)方法请求按需加载模块。
 
    ```typescript
    try {
@@ -480,7 +480,7 @@ entry中主要实现如下：
 
 运行结果效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/At5C4ZD7SvmsmyUVsbWD6w/zh-cn_image_0000002762834711.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/5t9FSchvQR-KilEB37W_cw/zh-cn_image_0000002769451089.gif)
 
 ### 接入调试功能
 
@@ -494,5 +494,5 @@ entry中主要实现如下：
 2. 打开[开发者调试模式](ide-developer-mode.md#section530763213432)：进入设置 -> 机型 -> 关于手机，连续点击软件版本7次，弹出“开启“开发者模式””，点击“确认开启”。
 3. [访问设备沙箱路径](ide-device-file-explorer.md#section48216711204)，在[应用el2级别加密数据目录](app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)下，创建cache/moduleinstall/<ModuleName>目录（这里<ModuleName>是AModulelib），将模块调试包AModulelib.hsp上传至对应模块目录下（请确保模块调试包文件应有读写权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/jiXlKgXkQVm9MyFHBPf_WQ/zh-cn_image_0000002733275196.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ThgCLuxMRDaPZl8sBi9g-Q/zh-cn_image_0000002739891758.png)
 4. 按照[创建按需加载的请求实例](store-moduleinstall_arkts.md#创建按需加载的请求实例)、[请求按需加载的接口](store-moduleinstall_arkts.md#请求按需加载模块)、[取消下载任务](store-moduleinstall_arkts.md#取消下载任务)、[恢复下载任务](store-moduleinstall_arkts.md#恢复下载任务)和[使用动态模块](store-moduleinstall_arkts.md#使用动态模块)，无需改动参数即可安装好模块调试包，实现取消及恢复下载任务。监听到安装成功后，对应模块目录下的文件会被自动删除。

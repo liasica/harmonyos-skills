@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-e
 title: 音频效果(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 音频效果(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0de80ac73863660abf7a7e297e24f1df998a98c0c9077880503aabb80c3919e5
+scraped_at: 2026-09-24T06:50:19+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:49027b2c67e6274644672ae0c67e1c0ab0b570feb833129e4d9c86028d1c7a81
 ---
 
 从API版本22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)提供多种音频效果节点，开发者可根据业务需求选择合适的效果节点对音频进行处理。
@@ -195,7 +195,7 @@ OH_AudioSuiteEngine_SetEnvironmentType(*node, static_cast<OH_EnvironmentType>(pa
 
 ## 空间渲染
 
-空间渲染效果节点[EFFECT\_NODE\_TYPE\_SPACE\_RENDER](../harmonyos-references/capi-native-audio-suite-base-h.md#oh_audionode_type)用于实现3D空间音频的定位与渲染，采用左手坐标系（拇指指向x轴正方向、食指指向y轴正方向、其余手指指向z轴正方向），详细说明请参考[空间渲染(C/C++)](audio-suite-space-render.md)。
+空间渲染效果节点[EFFECT\_NODE\_TYPE\_SPACE\_RENDER](../harmonyos-references/capi-native-audio-suite-base-h.md#oh_audionode_type)用于实现3D空间音频的定位与渲染，采用左手坐标系（拇指指向x轴正方向、食指指向y轴正方向、其余手指指向z轴正方向），详细说明请参考[空间音频渲染(C/C++)](audio-suite-space-render.md)。
 
 ### 渲染模式
 

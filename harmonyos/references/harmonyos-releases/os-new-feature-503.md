@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-10T06:21:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:54dd389d82a90988c80fde0f84210e67dbc6545bd1cccb77a0b650a1ef704696
+scraped_at: 2026-09-24T06:48:54+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:6e240529a9f5ca30ef3032349ce53d0bedcd78c143881b8688a68cf015306545
 ---
 
 ## Ability Kit
@@ -50,7 +50,7 @@ NativeBuffer支持的格式新增BLOB格式（NATIVEBUFFER\_PIXEL\_FMT\_BLOB）�
 ## ArkUI
 
 * 基础组件新增支持在已编辑文本的指定位置插入文本和删除指定区域内容的能力。（[API参考](../harmonyos-references/ts-universal-attributes-text-style.md#addtext15)）
-* 通用事件新增焦点轴事件，支持对游戏手柄轴事件的响应（[API参考-C API](../harmonyos-references/capi-ui-input-event-h.md#oh_arkui_axisevent_getaxisaction)、[API参考-ArkTS API](../harmonyos-references/ts-universal-events-focus_axis.md)）；C API额外支持获取当前轴事件的操作类型的值（[API参考-C API](../harmonyos-references/capi-ui-input-event-h.md#oh_arkui_focusaxisevent_getaxisvalue)）。
+* 通用事件新增焦点轴事件，支持对游戏手柄轴事件的响应（[API参考-C API](../harmonyos-references/capi-ui-input-event-h.md#oh_arkui_axisevent_getaxisaction)、[API参考-ArkTS API](../doccenter-references/api/ts-universal-events-focus-axis.md)）；C API额外支持获取当前轴事件的操作类型的值（[API参考-C API](../harmonyos-references/capi-ui-input-event-h.md#oh_arkui_focusaxisevent_getaxisvalue)）。
 * 图案密码锁组件新增支持设置未选中的宫格圆点在密码路径经过时是否自动选中。（[API参考](../harmonyos-references/ts-basic-components-patternlock.md#skipunselectedpoint15)）
 * 窗口管理新增定义窗口管理的C API，主要用于设置和获取指定窗口的属性，以及设置指定窗口的状态栏样式、导航栏样式。（[API参考](../harmonyos-references/capi-oh-window-h.md)）
 * Image组件新增支持可覆盖原有颜色的颜色填充能力，仅针对SVG格式的图源生效。（[API参考](../harmonyos-references/ts-basic-components-image.md#fillcolor15)）

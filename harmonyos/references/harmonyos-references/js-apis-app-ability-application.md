@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.application (应用工具类)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.application (应用工具类)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-24T06:51:41+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:8a5cf375ef8a2d1296237d92ad6810afcab2266eb8e566206f864fbd0bb0904c
 ---
 

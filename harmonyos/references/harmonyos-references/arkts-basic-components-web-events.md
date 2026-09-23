@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: 事件
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > 事件
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:08+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:83615eb15b9df678dbd2912f32739ec7d0c2799e209c1a38fd0b1e5124d43404
+scraped_at: 2026-09-24T06:53:08+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:33ad41504aa309c732582f63cd02973b73d50285e368dd21875e817da86e689f
 ---
 
 Web组件事件模块是ArkWeb框架中Web组件的事件回调接口集合，为开发者提供监听和响应Web组件各类运行时事件的机制。这些事件覆盖了Web页面加载的完整生命周期（从加载开始到完成）、JavaScript对话框交互、资源请求拦截与错误处理、安全认证（HTTP Auth、SSL错误、客户端证书）、权限管理、渲染进程状态、UI交互（上下文菜单、滚动、缩放、全屏）、窗口管理、同层渲染、性能度量以及多媒体设备状态等场景。开发者通过注册对应的事件回调，可以在Web组件运行过程中获取关键信息、拦截或自定义处理逻辑，实现应用对Web内容的精细管控和用户体验优化。
@@ -3379,7 +3379,7 @@ onLoadIntercept(callback: Callback<OnLoadInterceptEvent, boolean>)
 **说明** 
 
 * onLoadIntercept是在页面导航前同步触发的回调，回调返回前当前导航处于挂起状态。
-* 禁止在回调中直接调用会触发新导航的接口（如[refresh()](arkts-apis-webview-webviewcontroller.md#refresh)、[loadurl()](arkts-apis-webview-webviewcontroller.md#loadurl)、[setCustomUserAgent()](arkts-apis-webview-webviewcontroller.md#setcustomuseragent10)等），否则会导致回调重入或导航状态混乱。
+* 禁止在回调中直接调用会触发新导航的接口（如[refresh()](arkts-apis-webview-webviewcontroller.md#refresh)、[loadUrl()](arkts-apis-webview-webviewcontroller.md#loadurl)、[setCustomUserAgent()](arkts-apis-webview-webviewcontroller.md#setcustomuseragent10)等），否则会导致回调重入或导航状态混乱。
 * 如需在拦截后重新加载页面，应在回调返回后通过[setTimeout()](js-apis-timer.md#settimeout)等异步方法延迟调用。
 * onLoadIntercept无法获取到完整的headers，如需获取完整headers建议在[onInterceptRequest](arkts-basic-components-web-events.md#oninterceptrequest9)或者通过WebSchemeHandler的[onRequestStart](arkts-apis-webview-webschemehandler.md#onrequeststart12)中获取。
 

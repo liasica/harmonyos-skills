@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/stage-mod
 title: Stage模型能力的接口
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口
 category: harmonyos-references
-scraped_at: 2026-09-15T07:03:59+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:b96632a799bed1d30cc585003e90b7d71e7d8be86028eb576f5500aece687bec
+scraped_at: 2026-09-24T06:51:41+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:50239843fffd08b267df79b953df75322155d4c3771dc9162f887f111deef38a
 ---
 
 * **[@ohos.app.ability.Ability (Ability基类)](js-apis-app-ability-ability.md)**
@@ -13,7 +13,6 @@ content_hash: sha256:b96632a799bed1d30cc585003e90b7d71e7d8be86028eb576f5500aece6
 * **[@ohos.app.ability.abilityLifecycleCallback (UIAbility生命周期回调监听器)](js-apis-app-ability-abilitylifecyclecallback.md)**
 * **[@ohos.app.ability.AbilityStage (AbilityStage组件管理器)](js-apis-app-ability-abilitystage.md)**
 * **[@ohos.app.ability.ActionExtensionAbility (支持业务操作自定义的ExtensionAbility组件)](js-apis-app-ability-actionextensionability.md)**
-* **[@ohos.app.ability.AgentUIExtensionAbility (带界面的智能体扩展组件)](js-apis-agent-agentuiextensionability.md)**
 * **[@ohos.app.ability.application (应用工具类)](js-apis-app-ability-application.md)**
 * **[@ohos.app.ability.ApplicationStateChangeCallback (应用进程状态变化监听器)](js-apis-app-ability-applicationstatechangecallback.md)**
 * **[@ohos.app.ability.appMemoryOptimizer (应用内存优化器)](js-apis-app-ability-appmemoryoptimizer.md)**
@@ -57,5 +56,6 @@ content_hash: sha256:b96632a799bed1d30cc585003e90b7d71e7d8be86028eb576f5500aece6
 * **[@ohos.app.ability.autoStartupManager (开机自启管理能力)](js-apis-app-ability-autostartupmanager.md)**
 * **[@ohos.app.agent.agentConstant (Agent常量)](js-apis-app-agent-agentconstant.md)**
 * **[@ohos.app.agent.AgentExtensionAbility (智能体扩展组件)](js-apis-app-agent-agentextensionability.md)**
+* **[@ohos.app.agent.AgentUIExtensionAbility (带界面的智能体扩展组件)](js-apis-agent-agentuiextensionability.md)**
 * **[@ohos.continuation.continuationManager (流转/协同管理)](js-apis-continuation-continuationmanager.md)**
 * **[continuation](stage-model-continuation.md)**

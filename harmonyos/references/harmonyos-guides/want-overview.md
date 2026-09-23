@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/want-overview
 title: Want概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 信息传递载体Want > Want概述
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:04+08:00
+scraped_at: 2026-09-24T06:49:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5975628ffbff646e6014d5555cf45958de63627f1195166e15b27d5a16b2112a
+content_hash: sha256:42072bb44a6e6ba89da2aea5c09ef85b3e3713b3c09b186c5161cd8de1b1266b
 ---
 
 ## Want的定义与用途
@@ -16,7 +16,7 @@ content_hash: sha256:5975628ffbff646e6014d5555cf45958de63627f1195166e15b27d5a16b
 
 **图1** Want用法示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/D3ZnNq8SRpuFQcuz4rSqiw/zh-cn_image_0000002762832913.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WfyRBfNYRZuuZL5SMiY8PQ/zh-cn_image_0000002769449325.png)
 
 ## Want的类型
 

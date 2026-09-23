@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelop
 title: Driver Development Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > Driver Development Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:59+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:7a8f216b59e04b9281c1f28c309f013ffa525763f29634c71ea178ab123bb4fa
+scraped_at: 2026-09-24T06:50:10+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:e167fa61a5373d8bd86c28e7d0a2c42a625f176d5b53388db94e11e5a667390d
 ---
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
@@ -46,7 +46,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图1** 扩展外设驱动原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/99a402isQ9WUtsX1IASxzg/zh-cn_image_0000002733274796.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/YsMQ0cqpTcqDUYi9RimvVw/zh-cn_image_0000002739891370.png)
 
 ### 运作流程
 
@@ -54,13 +54,13 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图2** 非标外设与对应扩展外设驱动应用匹配的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/4JmMkbuyShKvSYzRMJfKOw/zh-cn_image_0000002733434676.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/x2ZUAR9CSTu9zZPXVcFJzw/zh-cn_image_0000002739731492.png)
 
 用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
 
 **图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/AlCdLSxaTC-6VgynbhfHpw/zh-cn_image_0000002762994197.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Cmd9HUSdRQS9JN-HAedplw/zh-cn_image_0000002769330841.png)
 
 ## 约束与限制
 
@@ -114,7 +114,7 @@ Driver Development Kit提供的C-API仅支持在DriverExtension进程中使用�
    * DriverExtensionAbility的生命周期取决于外设的接入时间，具体来说表现为：
      + 当DriverExtensionAbility配置的“VID + PID”设备列表中的某个外设接入时，其生命周期区间跟该外设接入的时间段一致。
      + 当DriverExtensionAbility配置的“VID + PID”设备列表中的多个外设依次接入时，其生命周期区间从第一个外设的接入持续到最后一个外设的拔出。
-     + 接入的外设同时出现在多个DriverExtensionAbility配置的“VID + PID”列表中时，该外设只会影响最先安装的驱动Ability的生命周期，详见[多个驱动Ability配置了同一型号外设的情况下，插入该外设只会拉起一个驱动Ability](externaldevice-faqs.md#多个驱动ability配置了同一型号外设的情况下插入该外设只会拉起一个驱动ability)。
+     + 接入的外设同时出现在多个DriverExtensionAbility配置的“VID + PID”列表中时，该外设只会影响最先安装的驱动Ability的生命周期，详见[多个驱动Ability配置了同一型号外设的情况下，插入该外设只支持拉起一个驱动Ability](externaldevice-faqs.md#多个驱动ability配置了同一型号外设的情况下插入该外设只支持拉起一个驱动ability)。
 4. 在DriverExtensionAbility中API访问安全管控说明
 
    * 系统支持基于ExtensionAbility构建场景化扩展Ability，DriverExtensionAbility为支持开发用户态扩展驱动的一类Ability。

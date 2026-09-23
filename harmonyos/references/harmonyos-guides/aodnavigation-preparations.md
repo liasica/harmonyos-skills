@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aodnavigation
 title: 开发准备
 breadcrumb: 指南 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:01+08:00
+scraped_at: 2026-09-24T06:50:12+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:a4ae46162e6faaeeed59f2e126e597dd7fb26dd4444d5d7714ef82f6cff2b875
+content_hash: sha256:5d96e9344997c75a2c9b5573f39265bf6bc3f790fa76e848d2e221e84924c40b
 ---
 
 ## 基本准备工作
@@ -18,19 +18,19 @@ content_hash: sha256:a4ae46162e6faaeeed59f2e126e597dd7fb26dd4444d5d7714ef82f6cff
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/_BMtaGBxQoyPz6h-0GZFgA/zh-cn_image_0000002733434698.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/QIkPhFGxR6etD6_QxrHwcw/zh-cn_image_0000002739731514.png)
 2. 在项目列表中找到需要开通服务的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/eVeeHXlXSTiNMprUSNroeg/zh-cn_image_0000002762994221.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/dUBm4yGwTtuiTh09apdesQ/zh-cn_image_0000002769330863.png)
 3. 进入“开放能力管理”页签，找到“熄屏导航服务”，点击“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/2kxPR117TdW9Vm5m97HcvA/zh-cn_image_0000002762834335.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/vOAEcQGTSMmgi4yC6RQPOw/zh-cn_image_0000002769450725.png)
 4. 确认您已满足开通熄屏导航服务的所有条件后，点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/HKstsKZHR1Gfe8HUg-Ymew/zh-cn_image_0000002733274820.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/hQI45pMMTJ678lyRnZY0fw/zh-cn_image_0000002739891394.png)
 5. 填写熄屏导航服务申请相关参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Mx8mKQ3QSAenxx8sDFVKhA/zh-cn_image_0000002733434700.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/-fgJgAE5TciaXd7VCOp7Wg/zh-cn_image_0000002739731516.png)
 
    **说明** 
 
@@ -42,4 +42,4 @@ content_hash: sha256:a4ae46162e6faaeeed59f2e126e597dd7fb26dd4444d5d7714ef82f6cff
    * **场景使用承诺：** 需补充填写以下承诺内容“承诺仅在获批场景内使用该能力，如超范围使用，华为有权收回该能力。"。
 6. 系统将推送消息到互动中心，请等待审核。3个工作日内审核结果会通过站内消息的形式发送到[互动中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)，审核通过后，熄屏导航服务默认勾选生效。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/q5i5qJTsSrOEb4WQE6aJCQ/zh-cn_image_0000002762994223.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/sl3SisiGRQCYdZ75YbHxEQ/zh-cn_image_0000002769330865.png)

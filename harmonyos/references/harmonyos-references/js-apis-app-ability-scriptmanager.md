@@ -3,12 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.scriptManager (脚本管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.scriptManager (脚本管理)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:19:50+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:ed586e130ded3cd674775419e1c94cbc4462f2314a8c761db78a0ca4db83117a
+scraped_at: 2026-09-24T06:51:42+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:683a265142ec0055748605d622902146135eeb31639dbcad857abcbc10717aa6
 ---
 
 本模块提供管理和组织脚本信息的能力，支持应用的ArkTS脚本执行结果上报。
+
+**起始版本：** 26.0.0
 
 **说明** 
 
@@ -21,8 +23,6 @@ content_hash: sha256:ed586e130ded3cd674775419e1c94cbc4462f2314a8c761db78a0ca4db8
 ```ts
 import { scriptManager } from '@kit.AbilityKit';
 ```
-
-**起始版本：** 26.0.0
 
 ## ExecuteResult
 

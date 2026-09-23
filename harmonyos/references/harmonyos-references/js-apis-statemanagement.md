@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.arkui.StateManagement (状态管理)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.StateManagement (状态管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:05+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2e21487737a5fabace09efa82118ffc01f4ed537cdb994502b463635060c1a9c
+scraped_at: 2026-09-24T06:52:11+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:f71dddec1015a1a4952b785d45a5d07e7c4b2ed1e37f1ea5ed875fd7e1f800ad
 ---
 
 状态管理模块具备应用数据存储、持久化管理以及UIAbility（包含用户界面的应用组件）数据存储能力，同时覆盖环境状态、工具和UI状态同步等场景，从而帮助开发者简化状态管理逻辑，提升应用的响应能力和数据一致性。
@@ -254,7 +254,7 @@ type: ConnectOptionsCollections<T, S> | ConnectOptions<T>
 
 ): T | undefined
 
-将键值对数据存储在应用磁盘中。支持集合类型[Array，Map，Set，collections.Array，collections.Map，collections.Set类型的持久化](../harmonyos-guides/arkts-new-persistencev2.md#globalconnect支持集合的类型)。注意在持久化Array<ClassA>类型的数据时，需要调用[makeObserved](js-apis-statemanagement.md#makeobserved)使返回的对象被观察到。不支持多个嵌套集合，例如不支持Array<Array<ClassA>>的持久化。
+将键值对数据存储在应用磁盘中。支持集合类型[Array，Map，Set，collections.Array，collections.Map，collections.Set类型的持久化](../harmonyos-guides/arkts-new-persistencev2.md#globalconnect支持的集合类型)。注意在持久化Array<ClassA>类型的数据时，需要调用[makeObserved](js-apis-statemanagement.md#makeobserved)使返回的对象被观察到。不支持多个嵌套集合，例如不支持Array<Array<ClassA>>的持久化。
 
 **说明** 
 

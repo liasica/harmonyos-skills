@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-8
 title: NDK调用Native方法异常闪退
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > NDK调用Native方法异常闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-08-27
-content_hash: sha256:61a848292a6f1a8eadd134bdbcd105f761f50d079c7a2281dc09f6150f0078b9
+scraped_at: 2026-09-24T06:56:30+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:dad1c12a98f3374d13c2a057d12c0578d9f3f3f3b354243905a4ef9d9dbd30a5
 ---
 
 ## 问题现象
@@ -74,7 +74,7 @@ Q：Native引用libusb\_ndk.z.so或者libusb\_serial\_ndk.z.so，运行后闪退
 
 A：libusb\_ndk.z.so或者libusb\_serial\_ndk.z.so只能用于PC端开发用户态驱动，手机形态暂不支持使用。
 
-Q：Native项目中引用的两个har包同时依赖libc++\_shared.so，导致符号冲突闪退怎么解决？
+Q：Native项目中引用的两个HAR包同时依赖libc++\_shared.so，导致符号冲突闪退怎么解决？
 
 A：在项目的CMakeLists.txt文件中添加"arguments": "-DOHOS\_STL=c++\_static"选项，使得项目静态依赖libc++\_shared.a，可以避免冲突。
 
@@ -82,13 +82,13 @@ Q：在C++侧对结构体属性进行赋值操作时发生崩溃，但在运行�
 
 A：代码中存在结构体重名导致，可以通过修改结构体名称解决。
 
-Q：使用dlopen动态加载加载沙箱路径下的SO文件报错是什么原因？
+Q：使用dlopen动态加载沙箱路径下的SO文件报错是什么原因？
 
 A：HarmonyOS的安全机制（基于MUSL-LDSO的命名空间隔离）限制了动态库的加载路径。默认的命名空间(moduleNs\_default)仅允许加载安装包内（HAP包内）的库或系统库，禁止直接加载应用沙箱数据目录（如/files、/cache）下的二进制文件，以防止代码注入等安全风险。
 
 建议将.so文件直接打包在HAP包中。将SO文件放置在工程的libs/或src/main/cpp/libs目录下（取决于构建配置），随应用一起安装。此时系统会自动将其路径加入允许列表，使用dlopen("libname.so")即可加载。
 
-Q：多模块工中通过配置[nativeLib](../harmonyos-guides/ide-hvigor-cpp.md#section15889929155720)的[filter](../harmonyos-guides/ide-hvigor-cpp.md#section17675528161517)属性设置加载SO文件的优先级，实际运行没有生效时什么原因？
+Q：多模块工程中通过配置[nativeLib](../harmonyos-guides/ide-hvigor-cpp.md#section15889929155720)的[filter](../harmonyos-guides/ide-hvigor-cpp.md#section17675528161517)属性设置加载SO文件的优先级，实际运行没有生效是什么原因？
 
 A：实际使用时需要指明依赖的模块名，参考[Native侧跨HAR/HSP模块调用Native方法](../harmonyos-guides/native-cross-har-hsp-interface-call.md#native侧跨harhsp模块调用native方法)。
 

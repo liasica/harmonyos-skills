@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Image错误码
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > 错误码 > Image错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4e4fa7c50be9fd5246820a425f6701f54c714882f6a3b55bb1869f57d1a52055
+scraped_at: 2026-09-24T06:54:47+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:ebbaab4b1ef8fb88271c43dfe8d12ce7e81e5de4690c5ca6f1ba390b41a8107d
 ---
 
 **说明** 
@@ -1093,11 +1093,16 @@ DMA内存不存在。
 
 **可能原因**
 
-没有使用DMA内存解码HDR图片。
+当前操作要求PixelMap使用DMA内存，但传入的PixelMap未使用DMA内存。例如，对共享内存的PixelMap读写HDR元数据，或获取其底层NativeBuffer。
 
 **处理步骤**
 
-使用正确的内存分配类型。
+重新创建使用DMA内存的PixelMap，并使用新对象调用原接口。根据输入数据选择创建方式：
+
+* 解码图片：从API版本15开始，可调用[createPixelMapUsingAllocator](arkts-apis-image-imagesource.md#createpixelmapusingallocator15)，将allocatorType设置为image.AllocatorType.DMA；C接口调用[OH\_ImageSourceNative\_CreatePixelmapUsingAllocator()](capi-image-source-native-h.md#oh_imagesourcenative_createpixelmapusingallocator)，将allocator设置为IMAGE\_ALLOCATOR\_TYPE\_DMA。
+* 从像素数据创建：从API版本20开始，可调用[image.createPixelMapUsingAllocator](arkts-apis-image-f.md#imagecreatepixelmapusingallocator20)，将allocatorType设置为image.AllocatorType.DMA；C接口调用[OH\_PixelmapNative\_CreatePixelmapUsingAllocator()](capi-pixelmap-native-h.md#oh_pixelmapnative_createpixelmapusingallocator)，将allocator设置为IMAGE\_ALLOCATOR\_MODE\_DMA。
+
+关于DMA内存的更多说明，请参见[图片解码内存优化(ArkTS)](../harmonyos-guides/image-allocator-type.md)和[图片解码内存优化(C/C++)](../harmonyos-guides/image-allocator-type-c.md)。
 
 ## 7600174 DMA操作失败
 

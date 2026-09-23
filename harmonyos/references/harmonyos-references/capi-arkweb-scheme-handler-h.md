@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkw
 title: arkweb_scheme_handler.h
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 头文件 > arkweb_scheme_handler.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9489ec95ae80ea645049a3d098a227bbaadfdd73f6d97fc11d88dba9f13eaff5
+scraped_at: 2026-09-24T06:53:10+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:14d4093709c47bdbbc7cceb49ff4cd26b5a9d6c3b9b98fa2ddd3bb3e6dcfdd35
 ---
 
 ## 概述
@@ -720,7 +720,7 @@ void OH_ArkWebHttpBodyStream_AsyncRead(const ArkWeb_HttpBodyStream* httpBodyStre
 
 **描述：**
 
-将请求的上传数据读取至buffer，buffer的大小必须超过bufLen。数据将由工作线程读取至buffer，因此在回调函数返回前，不应在其他线程中使用缓冲区，以避免并发问题。
+将请求的上传数据读取至buffer，buffer的大小必须大于或等于bufLen。数据将由工作线程读取至buffer，因此在回调函数返回前，不应在其他线程中使用缓冲区，以避免并发问题。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -731,7 +731,7 @@ void OH_ArkWebHttpBodyStream_AsyncRead(const ArkWeb_HttpBodyStream* httpBodyStre
 | 参数项 | 描述 |
 | --- | --- |
 | const [ArkWeb\_HttpBodyStream](capi-web-arkweb-httpbodystream.md)\* httpBodyStream | ArkWeb\_HttpBodyStream。 |
-| uint8\_t\* buffer | 接收数据的缓冲区。 |
+| uint8\_t\* buffer | 接收数据的缓冲区。buffer的大小必须大于或等于bufLen。 |
 | int bufLen | 要读取的字节数。 |
 
 ### OH\_ArkWebHttpBodyStream\_GetSize()

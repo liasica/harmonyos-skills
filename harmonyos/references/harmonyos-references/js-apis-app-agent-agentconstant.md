@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.agent.agentConstant (Agent常量)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.agent.agentConstant (Agent常量)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:02+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-24T06:51:42+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:f32ebee2e6d81b2653e16090de1c72d6fd95b6cadffee8b1ca6c73a92e21df43
 ---
 

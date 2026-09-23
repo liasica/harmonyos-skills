@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 按键事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 按键事件
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cea512e9d4a25e6ddb1ec8a0f0c399932975341848c1fe2be29966217e4d5a9a
+scraped_at: 2026-09-24T06:52:16+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:a406e077281a3a47df05136c5df188f5672a924aed605d8a0119ad24c1de8ac3
 ---
 
 按键事件是指组件与物理键盘、遥控器等按键设备交互时触发的事件，适用于所有可获焦组件，例如Button。对于默认不可获焦的组件，如Text、Image等，可以将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true后使用按键事件。
@@ -220,7 +220,7 @@ struct KeyEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/5CoIpaNVSBGVSLM5Hf-2ig/zh-cn_image_0000002733276010.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/wcX8qFaTSqGa0DGSh5rhSw/zh-cn_image_0000002739892562.gif)
 
 ### 示例2（获取Unicode码值）
 
@@ -238,6 +238,7 @@ struct KeyEventExample {
   build() {
     Column({ space: 10 }) {
       Button('KeyEvent')
+        .defaultFocus(true)
         .onKeyEvent((event?: KeyEvent) => {
           if (event) {
             if (event.type === KeyType.Down) {
@@ -264,7 +265,7 @@ struct KeyEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/uWvEr8VlRe-In2ZEQU8D7w/zh-cn_image_0000002733435886.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/UkrulA2DTJyhRq7l_unx-g/zh-cn_image_0000002739732684.gif)
 
 ### 示例3（触发onKeyPreIme回调）
 
@@ -282,6 +283,7 @@ struct PreImeEventExample {
       Search({
         placeholder: 'Search...'
       })
+        .defaultFocus(true)
         .width('80%')
         .height('40vp')
         .border({ radius: '20vp' })
@@ -362,4 +364,4 @@ struct KeyEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ROs5GFGBSq6xHkRd67SgXw/zh-cn_image_0000002762995409.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/fVV6ljk8QVy9spn3GWdCwg/zh-cn_image_0000002769332033.gif)

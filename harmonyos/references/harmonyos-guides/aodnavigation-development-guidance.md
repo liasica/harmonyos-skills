@@ -3,24 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aodnavigation
 title: 接入熄屏导航
 breadcrumb: 指南 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > 接入熄屏导航
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:02+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a309263242d11de44960af76f767da7006f297554606e0f33e615900743c3a2a
+scraped_at: 2026-09-24T06:50:12+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:63b15c152f12727a18c40f511d685bacf0c5317965e06f00aefc747d737cf035
 ---
 
 ## 概述
 
-AOD Navigation Kit提供应用接入熄屏导航的能力，支持低功耗导航业务代理能力。该服务专为户外徒步、骑行、跑步等场景打造，用户无需频繁解锁亮屏即可掌握导航关键信息，在确保导航实时性的同时有效降低设备功耗，助力户外探索类应用快速集成熄屏导航能力。
+从API版本26.0.0开始，AOD Navigation Kit提供应用接入熄屏导航的能力，支持低功耗导航业务代理能力。该服务专为户外徒步、骑行、跑步等场景打造，用户无需频繁解锁亮屏即可掌握导航关键信息，在确保导航实时性的同时有效降低设备功耗，助力户外探索类应用快速集成熄屏导航能力。
 
 ### 场景介绍
 
 接入熄屏导航能力的应用可在设备熄屏后，在设备熄屏界面实时展示行进路线、运动轨迹、里程及耗时等核心信息。应用可自定义显示的数据项，当前支持12种数据选项供灵活配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/9ddU1uLoSAS1dB0mzBlTeA/zh-cn_image_0000002762834337.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/k18GW0b1RVK3iw4GqcgisQ/zh-cn_image_0000002769450727.png)
 
 ### 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/pYK7IkWzQtWYdj1_K4ETLA/zh-cn_image_0000002733274822.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/gD_N7_8MTtiTUW2J7-JAHw/zh-cn_image_0000002739891396.png)
 
 流程说明：
 
@@ -173,9 +173,9 @@ AOD Navigation Kit提供应用接入熄屏导航的能力，支持低功耗导�
 
      try {
        await aodNaviManager.setNaviDataToAod(eventInfo.eventId, aodNaviInteractData);
-       hilog.info(0x0000, 'aodnavigationSample', 'Succeeded in setting navigation data to AOD.');
+       hilog.info(0x0000, 'aodNavigationSample', 'Succeeded in setting navigation data to AOD.');
      } catch (error) {
-       hilog.error(0x0000, 'aodnavigationSample', 'Failed to set navigation data to AOD: %{public}d %{public}s', error.code, error.message);
+       hilog.error(0x0000, 'aodNavigationSample', 'Failed to set navigation data to AOD: %{public}d %{public}s', error.code, error.message);
      }
      // 如果应用休眠策略选择保活，则需要定时刷新熄屏导航视图数据，否则不需要以下代码
      const aodViewData: aodNaviManager.AodViewData = {
@@ -235,9 +235,9 @@ AOD Navigation Kit提供应用接入熄屏导航的能力，支持低功耗导�
    ```typescript
    try {
      await aodNaviManager.setNaviDataToAod(eventInfo.eventId, aodNaviInteractData);
-     hilog.info(0x0000, 'aodnavigationSample', 'Succeeded in setting navigation data to AOD.');
+     hilog.info(0x0000, 'aodNavigationSample', 'Succeeded in setting navigation data to AOD.');
    } catch (error) {
-     hilog.error(0x0000, 'aodnavigationSample', 'Failed to set navigation data to AOD: %{public}d %{public}s', error.code, error.message);
+     hilog.error(0x0000, 'aodNavigationSample', 'Failed to set navigation data to AOD: %{public}d %{public}s', error.code, error.message);
    }
    ```
 8. 调用[updateAodViewData](../harmonyos-references/aodnavigation-aodnavimanager.md#aodnavimanagerupdateaodviewdata)更新熄屏导航界面视图数据。
@@ -276,7 +276,7 @@ AOD Navigation Kit提供应用接入熄屏导航的能力，支持低功耗导�
     ```typescript
     try {
       aodNaviManager.offAodNaviEvent();
-      hilog.info(0x0000, 'aodnavigationSample', 'Succeeded in stopping AOD navigation event listener.');
+      hilog.info(0x0000, 'aodNavigationSample', 'Succeeded in stopping AOD navigation event listener.');
     } catch (error) {
       hilog.error(0x0000, 'aodNavigationSample', 'Failed to stop AOD navigation event listener:  %{public}d %{public}s', error.code, error.message);
     }

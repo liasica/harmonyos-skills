@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-embed-ark
 title: 嵌入ArkTS组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > NDK对接ArkTS > 嵌入ArkTS组件
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:25+08:00
+scraped_at: 2026-09-24T06:49:40+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:5c00e1b38761d415940678ee4b09614773b15369e87d1c1be55c89cc13058e4d
+content_hash: sha256:98112881d0c66290a82761c0886536e8b09daa67d67969c25e4fb738eef2c47a
 ---
 
 ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Native侧提供，如声明式UI语法，自定义struct组件，UI高级组件。
@@ -22,7 +22,7 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
 
 **图1** Refresh组件挂载文本列表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/5ciBRgRPTwGJM8ZloH-Z1Q/zh-cn_image_0000002762993675.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/4U5RmVSPQ4-wQ8iJxfStng/zh-cn_image_0000002769330327.gif)
 
 1. 注册ArkTS组件创建函数给Native侧，以便Native侧调用，创建函数使用ComponentContent能力进行封装。
 

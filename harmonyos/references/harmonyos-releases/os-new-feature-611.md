@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: OS新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 6.1.1(24) > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ac98f989d22b8fa16030d0af6d7f4b251fd4779890d5a3da8fa99496ce89a6ee
+scraped_at: 2026-09-24T06:48:30+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:733ce436c0bd0aedc7e80f3cdfea7acc688aa181796fc86ae6c0419120d22125
 ---
 
 ## 6.1.1(24) Release新增和增强特性
@@ -25,7 +25,7 @@ AbilityStage组件管理器新增AbilityStage即将创建第一个Ability的回�
 
 ### Call Service Kit
 
-在企业员工来电或去电时，开发者可通过来电、去电手机号查询获取对应的企业服务信息，帮助员工快速了解通话号码相关的企业服务数据，目前支持快递类型的企业服务。（[指南](../harmonyos-guides/callservice-enterprise-sersvice-display.md)、[API参考](../harmonyos-references/callservicekit-callerinfoquery-extension-ability.md#onquerybusinessservicedata)）
+在企业员工来电或去电时，开发者可通过来电、去电手机号查询获取对应的企业服务信息，帮助员工快速了解通话号码相关的企业服务数据，目前支持快递类型的企业服务。（[指南](../harmonyos-guides/callservice-enterprise-service-display.md)、[API参考](../harmonyos-references/callservicekit-callerinfoquery-extension-ability.md#onquerybusinessservicedata)）
 
 ### Camera Kit
 

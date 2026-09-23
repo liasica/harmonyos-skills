@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-controls-
 title: 控件交互
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 控件交互
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:41+08:00
+scraped_at: 2026-09-24T06:50:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bf64a6a8ba5f82ea354ef45e49ae71f2291692872fedab9009bef7e6d47f92cd
+content_hash: sha256:a89940d6b7134902bc73caeb952b380d025c0a42fadcd79683db29283e0cdc93
 ---
 
 ## 场景介绍
@@ -14,9 +14,9 @@ content_hash: sha256:bf64a6a8ba5f82ea354ef45e49ae71f2291692872fedab9009bef7e6d47
 
 本章节将向您介绍如何使用地图的控件。
 
-控件是指浮在地图组件上的一系列用于操作地图的组件，例如缩放按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Kei4WfgGSuScJ2LbJEvUeg/zh-cn_image_0000002733275440.png)、定位按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/nhBMl0pRRL2qO5fP6c3TGQ/zh-cn_image_0000002733435322.png)、比例尺![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/c5WEg40-S4mYePki9-keSg/zh-cn_image_0000002762994845.png)等。
+控件是指浮在地图组件上的一系列用于操作地图的组件，例如缩放按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/-8LS5LRzRgSb4-lnXfwP4Q/zh-cn_image_0000002739892000.png)、定位按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/SlHyVawDR8eSJ3IyDJy9_w/zh-cn_image_0000002739732122.png)、比例尺![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/xyH9sjgZRKahqWv8LniTRg/zh-cn_image_0000002769331471.png)等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/xxp7hH28SlyiDk0Y4kSK7Q/zh-cn_image_0000002762834957.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/CRZCZuMSRAitA0aTau5exg/zh-cn_image_0000002769451333.jpg "点击放大")
 
 ## 接口说明
 
@@ -50,7 +50,7 @@ Map Kit提供了内置的缩放控件，默认情况下是开启的。
 this.mapController.setZoomControlsEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/exJS3Z-qRcObkw0rtwcwhQ/zh-cn_image_0000002733275442.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/x_72qkD1Q4ebolBSA0J17Q/zh-cn_image_0000002739892002.jpg "点击放大")
 
 ### 比例尺
 
@@ -61,7 +61,7 @@ Map Kit提供了内置的比例尺控件，默认情况下是关闭的。
 this.mapController.setScaleControlsEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/GQdBSWCgQrqwPDSifzJ2kg/zh-cn_image_0000002733435324.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/GHoTmVqvSi-6SLrfmSrE6A/zh-cn_image_0000002739732124.jpg "点击放大")
 
 **调整比例尺位置：**
 
@@ -77,7 +77,7 @@ let point: mapCommon.MapPoint = {
 this.mapController.setScalePosition(point);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/OupVb7eHRNiM70bT5NeIBg/zh-cn_image_0000002762994847.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/dOouTd5KRIi7LYTrJPvA3g/zh-cn_image_0000002769331473.jpg "点击放大")
 
 **获取当前层级的比例尺大小：**
 
@@ -118,7 +118,7 @@ Map Kit提供了内置的指南针控件，默认情况下是开启的，控件�
 this.mapController.setCompassControlsEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/6xqOfUVkSk2v26tvXBFSMw/zh-cn_image_0000002762834959.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/IkgsrPbcT222DXKkUBtAHA/zh-cn_image_0000002769451335.jpg "点击放大")
 
 **调整指南针位置：**
 
@@ -134,7 +134,7 @@ let point: mapCommon.MapPoint = {
 this.mapController.setCompassPosition(point);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/dzK65Pk2Qqq3pounjtv61g/zh-cn_image_0000002733275444.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ylmqVxsrSk6cmjEucwGJTg/zh-cn_image_0000002739892004.jpg "点击放大")
 
 ### 地图Logo
 
@@ -151,7 +151,7 @@ let padding: mapCommon.Padding = {
 this.mapController.setLogoPadding(padding);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/VVyJNI58TrOMZkETMT6pmg/zh-cn_image_0000002733435326.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/5QOmwv5bTxm_DVOJpZ3R7g/zh-cn_image_0000002739732126.jpg "点击放大")
 
 ### 审图号
 
@@ -164,4 +164,4 @@ Map Kit通过方法[setApproveNumberEnabled](../harmonyos-references/map-map-map
 this.mapController?.setApproveNumberEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/0DnsfNaNRhisqjQQsU3lng/zh-cn_image_0000002762994849.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/lvxuHn7qQ8W8_iURvqfmew/zh-cn_image_0000002769331475.jpg "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 展示应用详情页面
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 展示应用详情页面
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:30+08:00
+scraped_at: 2026-09-24T06:50:35+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9790e163174b55fdc8ffc3a87924ee32450466596a79eb01b235bcb571ada573
+content_hash: sha256:d94178b3b62e2e68dee29230c0325084954a7c8896459490bf398705827a24c2
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:9790e163174b55fdc8ffc3a87924ee32450466596a79eb01b235bcb571a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/SQlNafRrQ_KtwO3D_tT1Ow/zh-cn_image_0000002762994593.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/el6eIdHDS_y1w_xB-X7lKQ/zh-cn_image_0000002769331223.png)
 
 1. 用户使用打开应用详情页功能。
 2. 应用调用AppGallery Kit的[loadProduct](../harmonyos-references/store-productviewmanager.md#productviewmanagerloadproduct)接口。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.bundleManager (包管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.bundleManager (包管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:23+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:c42aecdd077540b0857e4f31dc726038cf174e7822c145c93c016d0ae7e043fd
+scraped_at: 2026-09-24T06:54:11+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:4232453f36964d6647b93e2b4902ee6b3f43e943347a274d26531a384d1a1bb1
 ---
 
 本模块提供包管理能力，包括安装和卸载应用包，管理包安装允许名单、包安装禁止名单、包卸载禁止名单、可安装应用的分发类型等。在企业设备管理场景中，通过这些能力可以实现应用安装卸载的精细化管控，防止未授权应用的安装和卸载，保障企业设备安全，降低安全风险。
@@ -1478,7 +1478,7 @@ bundleManager.getInstalledBundleStorageStats(wantTemp, bundleNames, accountId).t
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | userId | number | 否 | 是 | 指示用户ID，默认值：调用方所在用户，取值范围：大于等于0。 |
-| installFlag | number | 否 | 是 | 安装标志。枚举值：0：应用初次安装，1：应用覆盖安装，2：应用免安装，默认值为0(应用初次安装)。 |
+| installFlag | number | 否 | 是 | 安装标志。枚举值：0：应用初次安装，1：应用覆盖安装，2：应用免安装。默认值为0，设备首次安装应用时installFlag为0，在不同userId下安装设备上已存在的应用时installFlag为1。 |
 | parameters19+ | Record<string, string> | 否 | 是 | 扩展参数，默认值为空。key取值支持"ohos.bms.param.enterpriseForAllUser"，若对应的value值为"true"，表示为所有用户安装应用。 |
 
 ## AppDistributionType20+

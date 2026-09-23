@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certmanager-o
 title: 证书管理服务概述
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书管理服务 > 证书管理服务概述
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:44+08:00
+scraped_at: 2026-09-24T06:49:56+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:41f1d3e4095b32d412206d9954b28f76ebe58f8c5da78f86b6754444ab67b62b
+content_hash: sha256:66aa06b64e92b219f64a2ad1af4f3820a0685f93834b7dfb48825a09d3faebae
 ---
 
 设备用户有一些需要安全存储的证书凭据，用于其他实体（设备、服务器、个人）对用户的身份进行认证和校验，例如企业内部网站为企业员工颁发证书凭据，用于企业员工登录内部网站时的身份认证。
@@ -14,11 +14,11 @@ content_hash: sha256:41f1d3e4095b32d412206d9954b28f76ebe58f8c5da78f86b6754444ab6
 
 证书管理服务不仅限于存储证书凭据，还可以存储CA证书，用于对其他实体（设备、服务器、个人）的证书凭据进行校验。例如您的应用使用预置的CA证书对应用服务器的HTTPS证书链进行可信校验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/fBVGUwCxTrWrVAzH_m51rw/zh-cn_image_0000002762834183.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/iQZSLDKYSyOSs3AR4-Ts7g/zh-cn_image_0000002769450575.png)
 
 ## 功能架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/sUfTVXsGTyG4Hu_fp9z6HA/zh-cn_image_0000002733274666.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/znksRcgzQuC95TyiXnse3A/zh-cn_image_0000002739891244.png)
 
 证书管理服务提供了如下类型证书的管理功能：
 

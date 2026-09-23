@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-effe
 title: effectKit
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 模块 > effectKit
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-24T06:55:00+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:c41c3e0049dfd372ef3a2f992f278792cc5e16714fbda9409f2ac845bb810d82
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:33+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:f2047bf598262b957e3bdfc43ae623ea557ecb3786a8bb612af3f9ecc315abbb
+scraped_at: 2026-09-24T06:48:49+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:c51d565348f3b2a1804a7e625963f64049dba83cc928c945a0ff5cc51b62ee7a
 ---
 
 ## DevEco Studio 5.1.1 Release（5.1.1.850）兼容性配套关系
@@ -176,7 +176,7 @@ DevEco Studio 5.1.1.820配套使用的命令行工具列表、支持的API范围
 
 ## DevEco Studio 5.1.1 Release（5.1.1.820）新增和增强特性
 
-* 支持对C API的变更情况进行查询，提供跨版本查询能力。具体请参考[API变更查询](../harmonyos-guides/ide-editer-overview.md#section234174215231)。
+* 支持对C API的变更情况进行查询，提供跨版本查询能力。具体请参考[API变更查询](../harmonyos-guides/ide-editor-overview.md#section234174215231)。
 * hvigor-config.json5文件的execution下新增optimizationStrategy字段，用于指定构建模式。同时命令行参数支持--optimization-strategy=performance/memory。具体请参考[hvigor-config.json5文件](../harmonyos-guides/ide-hvigor-set-options.md)和[hvigorw](../harmonyos-guides/ide-hvigor-commandline.md)。
 * 新建Native C++工程默认使用毕昇编译器，打开历史工程会弹窗提示，点击**立即体验**可以切换使用毕昇编译器。
 

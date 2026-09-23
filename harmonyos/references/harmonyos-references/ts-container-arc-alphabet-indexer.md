@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcAlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > ArcAlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:55+08:00
+scraped_at: 2026-09-24T06:52:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f7bd6189dd261fa3dcb4fb9cd4c6d01ca54f6dcd4c46df96e99e0973b69c4a31
+content_hash: sha256:f7b2e8b6057671d968049cd937b902f6b461be8f6e28c0abefee087e55d00c50
 ---
 
 弧形索引条是一种弧形的、可按字母顺序排序进行快速定位的组件，可以与容器组件联动，按逻辑结构快速定位至容器显示区域。
@@ -426,7 +426,7 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/LINa8rzOQW26vaGKBXY2aw/zh-cn_image_0000002762836013.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/eW1gaX0JRV-BuFCR84Vp6Q/zh-cn_image_0000002769452379.gif "点击放大")
 
 ### 示例2（设置弹窗显示）
 
@@ -524,4 +524,4 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/9yB77qk5SYuP252kPZH3Xw/zh-cn_image_0000002733276502.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/z39-qJYoR0yfBevsznb2kw/zh-cn_image_0000002739893048.gif "点击放大")

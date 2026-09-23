@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-developmen
 title: 蓝牙设置
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙设置
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:51+08:00
+scraped_at: 2026-09-24T06:50:03+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d692fc665e45a5a306bf4857e2c8a72b4c0b4c31d9791c41dd497fc9825abe9f
+content_hash: sha256:6686982d611c673d500b44b10ad02dac57186ddd5d87b536bcdddd2d58cc30a1
 ---
 
 ## 简介
@@ -80,7 +80,7 @@ try {
 
 系统弹出对话框并提示应用“想要开启蓝牙”，如下图1。若用户同意授权，将开启蓝牙。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/VuJE-LH8TtmKqMx4hV5sXg/zh-cn_image_0000002762834235.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/T8Tiw1qBQqCxQV4kQMT8sw/zh-cn_image_0000002769450627.png)
 
 **图1** 开启蓝牙对话框
 
@@ -103,7 +103,7 @@ try {
 
 系统弹出对话框并提示应用“想要关闭蓝牙”，如下图2。若用户同意授权，将关闭蓝牙。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/jeDeCZJOSCKCkqhwPy4X7A/zh-cn_image_0000002733274720.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/AYsW7pdiQuGkWvt6dLiLPQ/zh-cn_image_0000002739891296.png)
 
 **图2** 关闭蓝牙对话框
 

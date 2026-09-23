@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-hypium-au
 title: 使用Hypium实现ArkWeb自动化测试
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 使用Hypium实现ArkWeb自动化测试
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:32+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:84f11c8d36e19258c804efa9e98324539de639e14865f4457488d65b4d1e02c7
+scraped_at: 2026-09-24T06:49:46+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:5d5a7dad1bd372e4c4658e641ea3be82f04aa1a5c8a66ac598f286511da7655a
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ pip install selenium
 
 ChromeDriver充当了Selenium WebDriver和Web页面之间的中介。通过Selenium发送命令时，ChromeDriver会将这些命令转换为Web内核能够理解的协议，并将响应返回给Selenium。ArkWeb基于谷歌Chromium内核开发，系统版本与Chromium版本的对应关系参考：ArkWeb简介[约束与限制](web-component-overview.md#约束与限制)。访问ChromeDriver官方网站[ChromeDriver下载|Chrome for Developers](https://developer.chrome.google.cn/docs/chromedriver/downloads?hl=zh-cn)，获取与Chromium版本对应的ChromeDriver。
 
-首先将ChromeDriver集成到测试工程的resource文件夹下，然后调用WebDriverSetupTool类中的set\_chromedriver\_exe\_path方法指定chromedriver文件的存放路径或者调用set\_chromedriver\_exe\_search\_path方法指定chromedriver所在文件夹的路径。
+首先将ChromeDriver集成到测试工程的resource文件夹下，然后调用WebDriverSetupTool类中的set\_chromedriver\_exe\_path方法指定chromedriver可执行文件的完整路径（需指定到对应版本的可执行chromedriver文件），或者调用set\_chromedriver\_exe\_search\_path方法指定chromedriver所在文件夹的路径，Hypium将在该文件夹下按chromedriver\_版本号的命名规则查找对应版本的chromedriver文件。
 
 ```python
 self.web_tools = WebDriverSetupTool(self.driver)
@@ -48,7 +48,7 @@ self.web_tools.set_chromedriver_exe_search_path(r"D:\WebAutoTest\resource\web_de
 
 * 使用set\_chromedriver\_exe\_search\_path方法指定chromedriver所在文件夹的路径时，下层文件夹命名规则为chromedriver\_版本号，参考下图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/RA5JphpRSs-Jnwgr7pCYEA/zh-cn_image_0000002733434374.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/BaSLAihZTUq9kS_Oi91s_w/zh-cn_image_0000002739731196.png)
 
 ## 示例代码
 

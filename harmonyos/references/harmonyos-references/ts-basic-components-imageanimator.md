@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ImageAnimator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > ImageAnimator
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a74ef8d9eb85b3dbd85aed8e6cd28181e605839224fdbacc10299c16c1c563d7
+scraped_at: 2026-09-24T06:52:28+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:acdabeb197eddda5c36d3836aa3756d87fe9db98c56affe5bcebbd5fb9bdddec
 ---
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
@@ -85,7 +85,7 @@ duration(value: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 播放时长。  value为0时，不播放图片。  value平均分配给单张图片的播放时长小于一帧时间，将导致播放异常。  设置为负数时，取默认值1000毫秒。  value的改变只会在下一次循环开始时生效。  单位：毫秒  默认值：1000 |
+| value | number | 是 | 播放时长。  value为0时，不播放图片。  value平均分配给单张图片的播放时长小于一帧时间，将导致播放异常。  设置为负数时，取默认值1000ms。  value的改变只会在下一次循环开始时生效。  单位：ms  默认值：1000 |
 
 ### reverse
 
@@ -208,7 +208,7 @@ monitorInvisibleArea(monitorInvisibleArea: boolean)
 | height | number | string | 否 | 是 | 图片高度。string类型支持number类型取值的字符串形式，可以附带单位，例如"2"、"2px"。  默认值：0  单位：vp  **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用 |
 | top | number | string | 否 | 是 | 图片相对于组件左上角的纵向坐标。string类型支持number类型取值的字符串形式，可以附带单位，例如"2"、"2px"。  默认值：0  单位：vp  **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用 |
 | left | number | string | 否 | 是 | 图片相对于组件左上角的横向坐标。string类型支持number类型取值的字符串形式，可以附带单位，例如"2"、"2px"。  默认值：0  单位：vp  **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用 |
-| duration | number | 否 | 是 | 每帧图片的播放时长，单位毫秒。  默认值：0  不支持负数。设置为负数将导致图片在当前帧长时间停留，影响正常播放。 |
+| duration | number | 否 | 是 | 每帧图片的播放时长，单位：ms。  默认值：0  不支持负数。设置为负数将导致图片在当前帧长时间停留，影响正常播放。 |
 
 ## 事件
 
@@ -390,7 +390,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/1cbMCwUIT-2FTmuJXNNjWQ/zh-cn_image_0000002733436318.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/yf5xQy-yQWq-MoqcJRvSRA/zh-cn_image_0000002739733112.gif)
 
 ### 示例2（播放PixelMap动画）
 
@@ -490,7 +490,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/pEq9SJYsSQKHuV7kohxLzg/zh-cn_image_0000002762995839.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/WQRb2-UVRV6WBC37Zyiivw/zh-cn_image_0000002769332461.gif)
 
 ### 示例3（设置不可见自动停播）
 
@@ -593,4 +593,4 @@ struct ImageAnimatorAutoPauseTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/-f40mh_3TLG-MIjgaVtenA/zh-cn_image_0000002762835955.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/2R5xX_M4Qm-oRiCQUfrnVQ/zh-cn_image_0000002769452323.gif)

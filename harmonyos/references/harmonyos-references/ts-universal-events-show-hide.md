@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 挂载卸载事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 挂载卸载事件
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:37+08:00
+scraped_at: 2026-09-24T06:52:17+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3417306677e34efaf84143dd458d3e4f13877a545b60d87364cf2be4ae4b8fb0
+content_hash: sha256:b9ca6b8bd60d3df9a10dff23917c4ca82e7beb95f24535ca7eaa3acca43154fa
 ---
 
 挂载卸载事件指组件从组件树上挂载、卸载时触发的事件，可用于监听组件挂载与卸载过程中的生命周期变化，并在相应时机执行相关业务处理。
@@ -160,4 +160,4 @@ struct AppearExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/ymRIyOqAS7qMXA5p5OR3Kg/zh-cn_image_0000002762995419.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/WCxEuV2yQ8G7HvBidIsU2Q/zh-cn_image_0000002769332043.gif)

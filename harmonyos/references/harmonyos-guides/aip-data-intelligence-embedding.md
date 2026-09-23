@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aip-data-inte
 title: 应用数据向量化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据向量化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d4e4d15624de5477f8d8fa962ef71e44ca88900866e906e4fa243f31d2f86d54
+scraped_at: 2026-09-24T06:49:27+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:177e177163a88536b5d33e9ce7f97bac772df9d950b8037bee5ac0e1f31dd08f
 ---
 
 ## 场景介绍
@@ -42,10 +42,15 @@ content_hash: sha256:d4e4d15624de5477f8d8fa962ef71e44ca88900866e906e4fa243f31d2f
 
 ## 约束限制
 
-* 考虑到数据向量化处理的计算量和资源占用较大，当前仅支持在2in1设备上使用。
+* 文本向量化模型：
+  + API版本26.0.0之前，支持在PC/2in1设备上使用文本向量化模型。
+  + 从API版本26.0.0开始，支持在PC/2in1、Phone和Tablet设备上使用文本向量化模型。
+  + 其中，针对Phone和Tablet设备，仅支持在Kirin 9010s及以上版本的设备上使用文本向量化模型。
+* 图像向量化模型：仅支持在PC/2in1设备上使用。
 * 嵌入模型的推理过程可使用NPU加速。与NPU计算相比，纯CPU的计算在时延和功耗上都有较大差距，建议采用NPU加速。
 * 模型推理单次可处理的文本长度上限为512个字符，支持中英文。
 * 模型推理单次可处理的图像大小小于20MB。
+* 生成的向量仅在本设备有效，不可用于跨设备检索。
 
 ## 接口说明
 
@@ -54,6 +59,7 @@ content_hash: sha256:d4e4d15624de5477f8d8fa962ef71e44ca88900866e906e4fa243f31d2f
 | 接口名称 | 描述 |
 | --- | --- |
 | getTextEmbeddingModel(config: ModelConfig): Promise<TextEmbedding> | 获取文本嵌入模型。 |
+| getSupportedCloudModel(): Promise<Array<CloudModelInfo>> | 获取当前设备支持的云侧嵌入模型。 |
 | loadModel(): Promise<void> | 加载文本嵌入模型。 |
 | splitText(text: string, config: SplitConfig): Promise<Array<string>> | 获取文本的分块。 |
 | getEmbedding(text: string): Promise<Array<number>> | 获取给定文本的嵌入向量。 |
@@ -74,30 +80,58 @@ content_hash: sha256:d4e4d15624de5477f8d8fa962ef71e44ca88900866e906e4fa243f31d2f
    ```
 2. 获取文本嵌入模型。
 
-   调用getTextEmbeddingModel方法，获取文本嵌入模型。示例代码如下所示：
+   * 针对PC/2in1设备：使用端侧嵌入模型，需配置模型版本、是否使用NPU加速及模型缓存路径。示例代码如下所示：
 
-   ```typescript
-   let textConfig: intelligence.ModelConfig = {
-     version: intelligence.ModelVersion.BASIC_MODEL,
-     isNpuAvailable: false,
-     cachePath: "/data"
-   }
-   let textEmbedding: intelligence.TextEmbedding;
-   let modelInfo:  intelligence.CloudModelInfo;
-   ```
+     ```typescript
+     let textConfig: intelligence.ModelConfig = {
+       version: intelligence.ModelVersion.BASIC_MODEL,
+       isNpuAvailable: false,
+       cachePath: "/data"
+     }
+     let textEmbedding: intelligence.TextEmbedding;
+     let modelInfo:  intelligence.CloudModelInfo;
+     ```
 
-   ```typescript
-   intelligence.getTextEmbeddingModel(textConfig)
-     .then((data: intelligence.TextEmbedding) => {
-       console.info('Succeeded in getting TextModel');
-       textEmbedding = data;
-       // ...
-     })
-     .catch((err: BusinessError) => {
-       console.error('Failed to get TextModel and code is ' + err.code);
-       // ...
-     })
-   ```
+     ```typescript
+     intelligence.getTextEmbeddingModel(textConfig)
+       .then((data: intelligence.TextEmbedding) => {
+         console.info('Succeeded in getting TextModel');
+         textEmbedding = data;
+         // ...
+       })
+       .catch((err: BusinessError) => {
+         console.error('Failed to get TextModel and code is ' + err.code);
+         // ...
+       })
+     ```
+   * 针对Phone/Tablet设备：使用云侧嵌入模型，需调用getSupportedCloudModel方法获取云侧模型信息并配置下载模型使用的网络策略。示例代码如下所示：
+
+     ```typescript
+     intelligence.getSupportedCloudModel()
+       .then((info: Array<intelligence.CloudModelInfo>) => {
+         console.info('Succeeded in getting supported model');
+         if (info.length > 0) {
+           modelInfo = info[0];
+         }
+       })
+     ```
+
+     ```typescript
+     if (modelInfo !== undefined) {
+       textConfig.modelInfo = modelInfo;
+       textConfig.networkPolicy = intelligence.NetworkPolicy.WIFI_ONLY;
+     }
+     intelligence.getTextEmbeddingModel(textConfig)
+       .then((data: intelligence.TextEmbedding) => {
+         console.info('Succeeded in getting TextModel');
+         textEmbedding = data;
+         // ...
+       })
+       .catch((err: BusinessError) => {
+         console.error('Failed to get TextModel and code is ' + err.code);
+         // ...
+       })
+     ```
 3. 加载文本嵌入模型。
 
    调用loadModel方法，加载文本嵌入模型。示例代码如下所示：

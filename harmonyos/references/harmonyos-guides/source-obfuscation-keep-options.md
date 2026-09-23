@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆保留选项
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆保留选项
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:13+08:00
+scraped_at: 2026-09-24T06:49:30+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:d0413aecdd4399c153ecb3be3f7769666588582b6959eb223ef64961c549e008
+content_hash: sha256:36c9f10a1ae8c1c6929b4ba3a31c0ef7b5fa53ec82cbc7d0494a82ea41121b19
 ---
 
 从API version 10开始，开启混淆后代码中的方法、属性或路径将被混淆。但在运行时，通过混淆前的原始名称访问已被混淆的方法、属性或路径，可能会导致功能失效。因此需要根据不同的场景配置相应的保留选项。
@@ -410,7 +410,7 @@ filepath仅支持相对路径，./和../为相对于混淆配置文件所在目�
 
 模块级oh\_modules和工程级oh\_modules在DevEco Studio中的目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/YBKdn3SzTJCz_pC3S2bTAQ/zh-cn_image_0000002733433360.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/RfIkGM7eQWieL733xu36ow/zh-cn_image_0000002739730196.png)
 
 **使用该选项时，需要注意以下事项：**
 

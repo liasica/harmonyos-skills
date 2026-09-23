@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocat
 title: 图片解码内存优化(ArkTS)
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 图片解码内存优化(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ec45d815c4e0b5009e0a87d7b8bcc3c501fafba6609f77b67b5903e9c3b6f6af
+scraped_at: 2026-09-24T06:50:24+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:1c7c019fd3c35189ff5d7f0ac5d8f65802b837390eafb306964559865527884e
 ---
 
 应用在进行图片解码操作时，需要申请对应内存。内存占用的大小与内存分配类型和像素格式密切相关。当前指导将介绍不同的内存类型、像素格式，以及如何组合使用以达到最优的解码性能。
@@ -171,16 +171,9 @@ async CreatePixelMapWithYUV(context: Context): Promise<image.PixelMap | undefine
 
 ## 系统默认的内存分配方式
 
-在使用[createPixelMap](../harmonyos-references/arkts-apis-image-imagesource.md#createpixelmap7)接口进行解码时，不同场景下会采取不同的内存分配类型。
+使用[createPixelMap](../harmonyos-references/arkts-apis-image-imagesource.md#createpixelmap7)或[createPixelMapSync](../harmonyos-references/arkts-apis-image-imagesource.md#createpixelmapsync12)解码时，系统自动选择共享内存或DMA内存。
 
-以下场景将使用DMA\_ALLOC。
-
-* 解码HDR图片。
-* 解码HEIF格式图片。
-* 解码JPEG格式图片，当原图的宽和高均在1024像素至8192像素之间，[desiredPixelFormat](../harmonyos-references/arkts-apis-image-i.md#decodingoptions7)为RGBA\_8888或NV21，同时硬件不繁忙（并发数为3）。
-* 解码其他格式图片。要求[desiredSize](../harmonyos-references/arkts-apis-image-i.md#decodingoptions7)大于等于512像素 \* 512像素（未设置desiredSize时按原图尺寸考虑），并且宽度为64的倍数。
-
-除上述场景外，其余情况均使用SHARE\_MEMORY。
+需要指定内存类型时，应调用[createPixelMapUsingAllocator](../harmonyos-references/arkts-apis-image-imagesource.md#createpixelmapusingallocator15)或[createPixelMapUsingAllocatorSync](../harmonyos-references/arkts-apis-image-imagesource.md#createpixelmapusingallocatorsync15)，将allocatorType设置为image.AllocatorType.DMA或image.AllocatorType.SHARE\_MEMORY。
 
 ## 解码单张图片的内存限制
 

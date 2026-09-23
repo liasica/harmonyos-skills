@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Webview错误码
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > 错误码 > Webview错误码
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:09+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:874b587e3093029594381f46e4defc5d3e54d0e61e7625ad437db8b3bf0b46aa
+scraped_at: 2026-09-24T06:53:10+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:18fd9b0c742a0861c84d34e24f9d3ab55fb344dcaedc597f94dadcf33f2e430e
 ---
 
 **说明** 
@@ -93,7 +93,7 @@ Function not enabled.
 
 请检查相关功能开关是否已配置打开，如该功能对应的XXXAccess是否配置为true，或检测当前接口是否支持并发。
 
-## 17100005 cookie value格式错误
+## 17100005 Cookie value格式错误
 
 **错误信息**
 
@@ -101,15 +101,15 @@ The provided cookie value is invalid. It must follow the format specified in RFC
 
 **错误描述**
 
-cookie value格式错误。
+Cookie value格式错误。
 
 **可能原因**
 
-不支持的cookie value类型。
+不支持的Cookie value类型。
 
 **处理步骤**
 
-请检查输入的cookie value是否符合RFC 6265规范，确保不包含控制字符、分隔符等非法内容。
+请检查输入的Cookie value是否符合RFC 6265规范，确保不包含控制字符、分隔符等非法内容。
 
 ## 17100006 无法注册message port回调
 

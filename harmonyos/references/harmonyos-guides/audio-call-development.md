@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-call-de
 title: 开发音频通话功能
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频通话 > 开发音频通话功能
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:45+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-24T06:50:18+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:8a0765f99722251f6167d30f6eb73a31c9618f67eab38ac28976534233b0f278
 ---
 

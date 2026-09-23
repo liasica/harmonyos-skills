@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 动态手势设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 动态手势设置
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:41+08:00
+scraped_at: 2026-09-24T06:52:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:adb43914bfe40e9f0b6a1d3ffb7a5897c386ca7c730d6453b94ad1bd21ec32fd
+content_hash: sha256:7bf11a540d91a2b0aa8e7b059c1692547394af78877fdf8756b6c0d7c8279331
 ---
 
 动态设置组件绑定的手势，支持在属性设置时使用if/else语法，适用于需要根据组件状态或用户操作切换手势绑定的场景，可提升手势配置的灵活性。
@@ -129,7 +129,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/EvHPwmzHTfu-7WZdjvGL_A/zh-cn_image_0000002733276134.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/JWr_WpWySU6Kd9Wi-cxbGg/zh-cn_image_0000002739892686.png)
 
 ### 示例2（动态绑定手势组）
 
@@ -207,4 +207,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/rHbCiOyURZKm_8Im7otYjQ/zh-cn_image_0000002733436012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/HqfTwv2eSKSfnvcha-Eozw/zh-cn_image_0000002739732808.png)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: RiskControlEngine（星盾机密风控引擎）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > RiskControlEngine（星盾机密风控引擎）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:35+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-24T06:53:29+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:355afc09b9b848ecfc35c4af68b1bbef20c5a0af4e97b934a181304d128a686b
 ---
 

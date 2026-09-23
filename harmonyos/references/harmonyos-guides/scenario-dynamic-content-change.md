@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-dyna
 title: 内容动态变化
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 内容动态变化
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a4eb15954a267fb72e59bb281e852c985a3ef06b3c78c8651bbf2631905f6fa3
+scraped_at: 2026-09-24T06:49:25+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:977e47d3e3f85fd2d877f280dece598901a21b23cee819dc9c144845305056a8
 ---
 
 ## 设计场景
 
 界面上重要内容在动态变化后，需要实时发送变化后的朗读内容。具体地，当界面上内容发生动态变化且其内容对用户具有必要的提示/告知/指导作用，则其发生变化后需对其变化内容进行播报，可调用无障碍提供的主动播报接口进行播报。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/wL7J_D4URbOrv4uU2SjIRw/zh-cn_image_0000002733433320.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/TosyH0qSRzGwFSFvtODbIQ/zh-cn_image_0000002739730158.png)
 
 主动播报接口相关参数说明：
 
@@ -22,7 +22,7 @@ content_hash: sha256:a4eb15954a267fb72e59bb281e852c985a3ef06b3c78c8651bbf2631905
 | --- | --- | --- | --- |
 | type | EventType | 主动播报事件类型 | announceForAccessibility |
 | bundleName | string | 目标应用名 | 当前应用包名 |
-| triggerAction | Action | 触发事件的Action | click或其他都不会有任何影响 |
+| triggerAction | Action | 触发事件的Action | common |
 | textAnnouncedForAccessibility | string | 主动播报的内容 | test123 text |
 
 ## 开发流程

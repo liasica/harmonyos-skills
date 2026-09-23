@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:14+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:2dec2b6e5d8c4c4e1bf0186a0bf0d562562eb455cab1a1c68c37a0e96e8a1a98
+scraped_at: 2026-09-24T06:49:30+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:734747122e5141e9d06878f5fe04ea2632653ceb9ddacd94447ee78c2df4a945
 ---
 
 **注意** 
@@ -61,7 +61,7 @@ content_hash: sha256:2dec2b6e5d8c4c4e1bf0186a0bf0d562562eb455cab1a1c68c37a0e96e8
   -enable-export-obfuscation
   ```
 
-  开发者还可以使用#在混淆规则文件中进行注释，每行以#开头的文本会被当做是注释。使用方法如下，#后为注释内容：
+  开发者还可以使用#在混淆规则文件中进行注释，每行以#开头的文本会被当作是注释。使用方法如下，#后为注释内容：
 
   ```txt
   # options:
@@ -181,7 +181,7 @@ content_hash: sha256:2dec2b6e5d8c4c4e1bf0186a0bf0d562562eb455cab1a1c68c37a0e96e8
 * origin目录：混淆前的modules.abc文件。
 * 配置信息文件：config.json，该文件记录了混淆的配置项和白名单列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/PP_knQ80Q3aMll7sH8ZPOw/zh-cn_image_0000002762992889.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/jabZW_VWT4W3u7zDu_-ecQ/zh-cn_image_0000002769329549.png)
 
 ## 报错栈还原
 
@@ -189,4 +189,4 @@ content_hash: sha256:2dec2b6e5d8c4c4e1bf0186a0bf0d562562eb455cab1a1c68c37a0e96e8
 
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/uNWcQu7ZQyqTgrTXwlFOfQ/zh-cn_image_0000002762833001.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/-jIOfl6DRAiLFqG-iheUjQ/zh-cn_image_0000002769449411.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: NavPushPathHelper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > NavPushPathHelper
 category: harmonyos-references
-scraped_at: 2026-09-21T06:21:02+08:00
+scraped_at: 2026-09-24T06:52:35+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cbadd80d73c280782ce9f221073ec0191fbe1e6643b165252b58dcc0d30c5f1b
+content_hash: sha256:f9302c87b0e3d29f50176857a34adb4e79f9717c8497d6ca67e35feedf924d57
 ---
 
 当跳转的目标[NavDestination](ts-basic-components-navdestination.md)在不同的hsp分包且未被主包依赖时，首次运行元服务只会下载安装主包。此时需要使用NavPushPathHelper先下载安装相应hsp分包，再将指定的[NavDestination](ts-basic-components-navdestination.md)页面信息入栈或替换当前栈顶页面，从而使[Navigation](ts-basic-components-navigation.md)支持动态加载hsp分包后再跳转。
@@ -745,4 +745,4 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/mxfepN1yQE2l5MdA55qpUg/zh-cn_image_0000002762836191.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/IRjDcl4KSpmglciaJ6EnXg/zh-cn_image_0000002769452555.gif)

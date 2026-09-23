@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-wr
 title: 使用AES-WRAP算法对对称密钥加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用AES-WRAP算法对对称密钥加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:eb9d68dfcbcb34097c270501c6e65e625ecb3bd11133469d53c9f8ae686944b0
+scraped_at: 2026-09-24T06:49:54+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:0fb0f3adae7e8ac7270fcbe9d291d0909bd205c68ef01c9ba9c1d4d92f274d5c
 ---
 
 从API版本22开始，算法库支持使用该算法进行加密和解密操作。
@@ -14,7 +14,7 @@ content_hash: sha256:eb9d68dfcbcb34097c270501c6e65e625ecb3bd11133469d53c9f8ae686
 
 **加密**
 
-1. 调用[cryptoFramework.createSymKeyGenerator](../harmonyos-references/js-apis-cryptoframework.md#cryptoframeworkcreatesymkeygenerator)、[SymKeyGenerator.generateSymKey](../harmonyos-references/js-apis-cryptoframework.md#generatesymkey-1)，生成密钥算法为AES、密钥长度为128位的对称密钥（SymKey）。
+1. 调用[cryptoFramework.createSymKeyGenerator](../harmonyos-references/js-apis-cryptoframework.md#cryptoframeworkcreatesymkeygenerator)、[SymKeyGenerator.convertKey](../harmonyos-references/js-apis-cryptoframework.md#convertkey-1)，生成密钥算法为AES、密钥长度为128位的对称密钥（SymKey）。
 
    如何生成AES对称密钥，开发者可参考下文示例，并结合[对称密钥生成和转换规格：AES](crypto-key-generation-conversion.md#aes)和[随机生成对称密钥](crypto-generate-sym-key-randomly.md)理解，参考文档与当前示例可能存在入参差异，请在阅读时注意区分。
 2. 调用[cryptoFramework.createCipher](../harmonyos-references/js-apis-cryptoframework.md#cryptoframeworkcreatecipher)，指定字符串参数'AES128-WRAP'，创建类型为AES128-WRAP的Cipher实例，用于完成加密操作。

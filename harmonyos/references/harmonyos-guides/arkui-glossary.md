@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-glossar
 title: ArkUI术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > ArkUI术语
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:30+08:00
+scraped_at: 2026-09-24T06:49:44+08:00
 doc_updated_at: 2026-07-09
-content_hash: sha256:0016b9b89d4ea687a5d492aea2a3b98fb0930b176ea24626c242094370a33aa5
+content_hash: sha256:8523c91d19fa025cb6cd9f3288fc24210e293d16dc32a2a0fbc1adcab08fe196
 ---
 
 ## A
@@ -196,4 +196,4 @@ UI实例的抽象运行环境，UI操作在该上下文中执行并最终反映�
 
 以组件左上角为坐标原点的坐标系，其中向右为x正轴，向下为y正轴。如果为三维坐标系，则由屏幕向外为z正轴。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/zw3QDExFSUqAigeMvKk3yA/zh-cn_image_0000002762833951.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/sU7pKotXRriLn1ArreChYw/zh-cn_image_0000002769450347.png)

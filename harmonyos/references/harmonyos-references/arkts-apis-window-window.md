@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Window)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (Window)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:36+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:7358bf4bdb34917931456b5f3bed7aa300715ccdd3386b1adabaa2559013d98d
+scraped_at: 2026-09-24T06:52:15+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:c97a1b46192cdd999180a56bd84ef074681613b5ad02f522f7a61de22df758f2
 ---
 
 当前窗口实例，窗口管理器管理的基本单元。
@@ -7038,6 +7038,7 @@ setAspectRatio(ratio: number): Promise<void>
 
 **说明** 
 
+* 本接口根据窗口标题栏的显隐状态，结合预设的标题栏高度和窗口边框厚度计算窗口内容区域：标题栏显示时，标题栏高度按48vp计算，左、右、下边框厚度各按5vp计算；标题栏隐藏时，标题栏高度和窗口边框厚度均按0计算。上述计算未使用标题栏和窗口边框的实际尺寸，因此，实际窗口内容区域的宽高比可能与设置值存在偏差。当需要根据标题栏和窗口边框的实际尺寸及可见性设置窗口内容区域的宽高比时，推荐使用[setContentAspectRatio](arkts-apis-window-window.md#setcontentaspectratio21)接口。
 * 通过其他接口如[resize](arkts-apis-window-window.md#resize9)、[resizeAsync](arkts-apis-window-window.md#resizeasync12)设置窗口大小时，不受ratio约束。
 * 仅主窗可设置，且仅在自由悬浮窗口模式（即窗口模式为window.WindowStatusType.FLOATING）下生效。此比例参数将持久化保存，关闭应用或重启设备后，切换到自由悬浮窗口模式时，设置的比例仍然生效。
 * 当同一应用的某个主窗口调用此接口设置宽高比生效后，后续打开的主窗口均会沿用该宽高比。若需为单个主窗口单独设置宽高比，请使用[setContentAspectRatio](arkts-apis-window-window.md#setcontentaspectratio21)。
@@ -7108,6 +7109,7 @@ setAspectRatio(ratio: number, callback: AsyncCallback<void>): void
 
 **说明** 
 
+* 本接口根据窗口标题栏的显隐状态，结合预设的标题栏高度和窗口边框厚度计算窗口内容区域：标题栏显示时，标题栏高度按48vp计算，左、右、下边框厚度各按5vp计算；标题栏隐藏时，标题栏高度和窗口边框厚度均按0计算。上述计算未使用标题栏和窗口边框的实际尺寸，因此，实际窗口内容区域的宽高比可能与设置值存在偏差。当需要根据标题栏和窗口边框的实际尺寸及可见性设置窗口内容区域的宽高比时，推荐使用[setContentAspectRatio](arkts-apis-window-window.md#setcontentaspectratio21)接口。
 * 通过其他接口如[resize](arkts-apis-window-window.md#resize9)、[resizeAsync](arkts-apis-window-window.md#resizeasync12)设置窗口大小时，不受ratio约束。
 * 仅主窗可设置，且仅在自由悬浮窗口模式（即窗口模式为window.WindowStatusType.FLOATING）下生效。此比例参数将持久化保存，关闭应用或重启设备后，切换到自由悬浮窗口模式时，设置的比例仍然生效。
 * 当同一应用的某个主窗口调用此接口设置宽高比生效后，后续打开的主窗口均会沿用该宽高比。若需为单个主窗口单独设置宽高比，请使用[setContentAspectRatio](arkts-apis-window-window.md#setcontentaspectratio21)。
@@ -11659,7 +11661,7 @@ convertOrientationAndRotation(from: RotationInfoType, to: RotationInfoType, valu
 
 示意图和表格展示了直板机窗口方向、屏幕方向和屏幕角度的关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/CssQ8fkGSoadNUPl2vtAbA/zh-cn_image_0000002733435878.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Iuf1bxWmQq6X-sTrOdGW9A/zh-cn_image_0000002739732678.png)
 
 | 屏幕角度 | 屏幕方向 | 窗口方向 |
 | --- | --- | --- |

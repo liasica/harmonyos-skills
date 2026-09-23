@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap
 title: 系统能力SystemCapability使用指南
 breadcrumb: API参考 > API参考概述 > 系统能力SystemCapability使用指南
 category: harmonyos-references
-scraped_at: 2026-09-21T06:19:48+08:00
+scraped_at: 2026-09-24T06:51:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0d6488808acc0e8e9f12f6d6a6af0a5752a55f7884b93385afb0241eb05a540d
+content_hash: sha256:9a3661e32702d0a98b1ca6b8150515dbf057813e0fbc9002d048ac856a733ed8
 ---
 
 本文将系统阐述SystemCapability（SysCap）的定义、用途，以及在单设备与多设备应用开发场景下的适配开发策略。
@@ -14,7 +14,7 @@ content_hash: sha256:0d6488808acc0e8e9f12f6d6a6af0a5752a55f7884b93385afb0241eb05
 
 SystemCapability，下文统一简称为SysCap，用于标识一组实现特定开放能力的API集合，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/UgMyes_RSg6AXkS3rX2GsQ/zh-cn_image_0000002733435782.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/_Wb4LgIPTPWWLTPeiyPODg/zh-cn_image_0000002739732582.png)
 
 以名为SystemCapability.Communication.Bluetooth.Core的蓝牙SysCap为例，它代表了一组蓝牙能力相关的API，包括：
 
@@ -44,7 +44,7 @@ SysCap的用途：
 
 SysCap与SDK、Kit形成结构化、层级化结构，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Id-snvfMTIGBhRHgkj9h3w/zh-cn_image_0000002762995305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/aFPbY_SGQO2i3Sru3Aw-4A/zh-cn_image_0000002769331931.png)
 
 1. SDK由多个功能独立的Kit组成；
 2. 每个Kit包含一个或多个SysCap，且每个SysCap仅属于一个 Kit；
@@ -54,7 +54,7 @@ SysCap与SDK、Kit形成结构化、层级化结构，如下图所示：
 
 以Tablet设备为例，如果开发者在.ets文件上导入以“a”开头的某个模块的具体内容（例如：接口、类、函数、变量、对象等），DevEco Studio会联想出所有支持在Tablet上可用的某个模块的具体内容，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/l1MW6ctfTruhSLDVUPvoHg/zh-cn_image_0000002762835419.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/d3P5U9nKRZu7nnrr4L0N0w/zh-cn_image_0000002769451793.png)
 
 ## SysCap与Device type的关系
 
@@ -64,15 +64,15 @@ SDK的“device-define”文件夹可在DevEco Studio左侧项目栏的“外部
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/WX53YIH5T56SF1eVDTa9zw/zh-cn_image_0000002733275906.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/X0DthQW8RBmCD8fgldiG3w/zh-cn_image_0000002739892462.png)
 
 开发者在DevEco Studio创建工程时，需要选择应用的设备类型Device type：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/WIOIEkIQSQuu5ks65eoKJw/zh-cn_image_0000002733435784.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/yVZXYlSTRNKzGIGgRxkESg/zh-cn_image_0000002739732584.png)
 
 也可在新建工程后，通过修改module.json5文件中的[deviceTypes](../harmonyos-guides/module-configuration-file.md#devicetypes标签)指定应用支持的设备类型：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Cl1R9l27Rl6t7bLoSOQqUw/zh-cn_image_0000002762995307.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/G3XIMMwdTPGS0IVG73GJkQ/zh-cn_image_0000002769331933.png)
 
 DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”下对应的SysCap集合，进而提取该设备支持的API，用于智能提示与自动联想，助力开发者精准、高效地调用所需接口。
 
@@ -226,7 +226,7 @@ registerCameraStatus(cameraManager: camera.CameraManager): void {
 
 单设备应用开发时，DevEco Studio只识别到一种设备类型，适配开发过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/CpnqRT10RLOi81KR90AO4g/zh-cn_image_0000002762835421.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/zNqp0iYlS4iWKA9YIG22sQ/zh-cn_image_0000002769451795.png)
 
 1. 如果存在API在同一设备类型下的不同设备型号存在能力不一致的情况，需使用能力查询接口判断接口能力可用性（注意：此处的能力查询机制并非canIUse，请参见[使用能力查询接口判断API是否可用](syscap.md#使用能力查询接口判断api是否可用)）；
 2. 为了避免调用接口出现的异常情况，需要开发者进行错误码异常处理。
@@ -235,7 +235,7 @@ registerCameraStatus(cameraManager: camera.CameraManager): void {
 
 多设备应用开发时，DevEco Studio需同时识别多种设备类型，适配开发过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/JRlKvTstQpGrphM3xL3Eng/zh-cn_image_0000002733275908.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/vJxYOV7hSTuMk8im-kRJow/zh-cn_image_0000002739892464.png)
 
 1. 使用canIUse判断并集内交集外的SysCap集合是否可用；
 

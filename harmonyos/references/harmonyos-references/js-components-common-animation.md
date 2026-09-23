@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-09-21T06:21:11+08:00
+scraped_at: 2026-09-24T06:52:40+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:714a2546d98238ea88578c5eabf325836d51dec37f03a125bb592cf8cd7b7585
+content_hash: sha256:4cf364f1b0d7ee50a430a90a492268a564d3e05e055219adf725bf4ca41fce55
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:714a2546d98238ea88578c5eabf325836d51dec37f03a125bb592cf8cd7
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/2J5FEZxTQjew6NX-lAqZLA/zh-cn_image_0000002762996185.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/e-3kocWUQxufK7eIpAKEQQ/zh-cn_image_0000002769332803.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/m_IepjuMRXCrBSM-hN_xeQ/zh-cn_image_0000002762836301.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/vWYnN9awRuqDc1LdQWmmww/zh-cn_image_0000002769452665.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/h7PDWbBsQC6OmqA820VN2g/zh-cn_image_0000002733276790.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/yut8WGFdRbO2vuOp5NgVcA/zh-cn_image_0000002739893334.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Jf4_4ftcS5edrncjknPZrg/zh-cn_image_0000002733436664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/8d85FW1IRp2S_UM31zcFww/zh-cn_image_0000002739733458.png)

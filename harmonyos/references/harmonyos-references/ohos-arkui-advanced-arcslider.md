@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ArcSlider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > ArcSlider
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:49+08:00
+scraped_at: 2026-09-24T06:52:27+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f9f8cd98a5aa7f4a37a5861e3b52d7be503990d5d63ee7a00b5a74c5c6935e0a
+content_hash: sha256:d458017877223be583fbd4708e79c0eb572d24975cd5a2922022de6bd5dd5388
 ---
 
 弧形滑动条组件，通常用于在圆形屏幕的穿戴设备中快速调节设置值，如音量调节、亮度调节等应用场景。
@@ -395,4 +395,4 @@ struct ArcSliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nOvP8LbdRIiHMSsISHJPbg/zh-cn_image_0000002733276312.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/EHmtkgbkTECWS6zAfkkyfQ/zh-cn_image_0000002739892860.gif)

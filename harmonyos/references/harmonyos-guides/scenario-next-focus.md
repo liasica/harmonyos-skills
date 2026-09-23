@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-next
 title: 自定义控件走焦顺序
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 自定义控件走焦顺序
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9ec5a82ecfdba49d4cc0b64644396f0a420a4f2f07bf126164a15396f53a9dec
+scraped_at: 2026-09-24T06:49:26+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:328cb9ced0b26101f39f7ce63d2920157e01c68b6e4287311c631db6cc4cfa0c
 ---
 
 ## 设计场景
@@ -22,7 +22,7 @@ content_hash: sha256:9ec5a82ecfdba49d4cc0b64644396f0a420a4f2f07bf126164a15396f53
 
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
-| nextId | string | 指定下个接口id |
+| nextId | string | 指定下个组件的id |
 | nextFocusParams | AccessibilityNextFocusParams | 详细参数 |
 
 **表2** [AccessibilityNextFocusParams](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitynextfocusid18)说明

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 关于应用兼容性的介绍
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 关于应用兼容性的介绍
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:59:07+08:00
+scraped_at: 2026-09-24T06:49:20+08:00
 doc_updated_at: 2026-07-06
-content_hash: sha256:0cd4db2aa4acf4283f2dcaef7c754ed6f9073940db75c3584c0a205031138b64
+content_hash: sha256:e34528b6f4ce2e45ceb0f676da86aa83ffda9bb17d1ea3412694cd9eaaf6cbf0
 ---
 
 HarmonyOS应用和元服务（为方便描述，下文简称为应用）的开发者通过开发套件所提供的HarmonyOS SDK进行功能开发，调用HarmonyOS SDK中的API来实现业务功能逻辑。终端用户从华为应用市场获取应用，并安装到终端设备的系统（即ROM）上，系统运行应用后将功能呈现给消费者。
@@ -30,7 +30,7 @@ HarmonyOS应用和元服务（为方便描述，下文简称为应用）的开�
 
 应用兼容性主要是通过API版本信息进行兼容性处理，下图简要说明API版本在各个环节的关键作用：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/BcLwcenPSZGT8RRq5xnWEA/zh-cn_image_0000002592596724.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/UypFvUrITLGjkQkBnwpk0w/zh-cn_image_0000002592596724.png "点击放大")
 
 **说明** 
 
@@ -59,6 +59,6 @@ App2是基于SDK版本5.0.3(15）开发的应用，并且使用了新API D， �
 
 App3是基于SDK版本5.0.4(16）开发的应用，并且使用了API D和E ， 默认可以在API版本为5.0.4(16)的HarmonyOS现网设备正常运行；如果要在API版本为5.0.2(14)的HarmonyOS现网老设备正常运行，则开发者需对D和E进行条件判断保护；如果要在API版本为5.0.3(15)的HarmonyOS现网老设备正常运行，则开发者需对E进行条件判断保护。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/PrLw1mo3RCq9zPfnugMXjQ/zh-cn_image_0000002441209013.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/12POb3u9QF-KDt_J5fjGeQ/zh-cn_image_0000002441209013.png "点击放大")
 
 本文旨在阐述应用兼容性的原理以及影响兼容性的因素，希望开发者在了解这些内容后能正确配置应用兼容性的参数，或者提前识别兼容性风险，保障终端用户的使用体验。

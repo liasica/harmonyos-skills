@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-lpp
 title: 使用LPP播放器播放视频 (C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用LPP播放器播放视频 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:19+08:00
+scraped_at: 2026-09-24T06:50:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5cf85ec4f19c309057d4253742c18488e181842cc95619269052a25f8e3d34dd
+content_hash: sha256:c556b0ceb942f9cf15c7ed56ab87867adf47412e62a6960e0e6be5dc84dc76dc
 ---
 
 从API version 20开始，使用LPP（low power player）播放器可以通过低功耗实现从媒体源到渲染的视频通路能力。本指南通过播放本地视频的示例，讲解如何使用LowPowerPlayer播放视频。
@@ -18,7 +18,7 @@ LowPowerPlayer播放器不支持纯视频和纯音频播放。纯音频低功耗
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/RR17fcLhSW2xhGi6CdY3Eg/zh-cn_image_0000002762994389.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/5DZAcv4kQG2OxyGBm-jFaA/zh-cn_image_0000002769331027.png)
 
 播放流程包含：创建（created）、初始化（initialized）、就绪（ready）、解码（decoding）和渲染（rendering）五个阶段。
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: Max
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 双目指令 > Max
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:56+08:00
+scraped_at: 2026-09-24T06:50:57+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:935b90ab14ba1203991bc31c7264c0539c06172151608535faf1620e7500baef
+content_hash: sha256:6d68dcfff89a9796afb97567bcb47ef0e1c32e265ad86fdccb07d3b1d512e1a0
 ---
 
 ## 功能说明
 
 按元素求最大值，公式表达如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/3cyh7lDfSEamESEV5XCdig/zh-cn_image_0000002733435610.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/JzPNdCK2QFek9x6eYDuFaw/zh-cn_image_0000002739732410.png)
 
 ## 函数原型
 

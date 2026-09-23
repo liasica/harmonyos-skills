@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 服务动态推送接口
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 服务动态 > 服务动态推送接口
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f965abe6ba9872dc6d75b865ba66540d2a6b15a062614a7d5a0c872b08aefc11
+scraped_at: 2026-09-24T06:55:38+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:b51c670bb54494de381b6077cf53042e95bada7bf108533759d59945466d09b8
 ---
 
 ## 功能介绍
@@ -462,7 +462,7 @@ user close service.
 
 **处理步骤**
 
-请按照响应消息中的提示，在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站上开通服务动态推送权益，请参考[申请权益](../atomic-guides/push-as-timeline.md#section20387153745216)。
+请检查服务动态开关是否关闭，如关闭，需打开开关后再调用接口进行测试。服务动态开关设置路径：桌面左滑进入负一屏，点击头像进入“我的”，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/7FkDCWzrS8GAkuFr_VAYlg/zh-cn_image_0000002769333555.png "点击放大")，再点击“动态管理”，在“服务动态”列表找到对应的场景开关进行操作。
 
 ### 82600014 非法的图片资源ID
 

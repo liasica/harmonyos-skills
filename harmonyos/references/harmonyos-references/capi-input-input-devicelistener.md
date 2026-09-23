@@ -3,15 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inpu
 title: Input_DeviceListener
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体 > Input_DeviceListener
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f1b765143d67c0529f0e736eed92e158d6c6fbccc6ac9a3a73c8923bd5bf7783
+scraped_at: 2026-09-24T06:54:07+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:1552dab3a685bd4c87bc33e741e49aac9d84e7d2029f9c2657f48968eaf5b66a
 ---
 
 ```c
-typedef struct Input_DeviceListener {
-    // ...
-} Input_DeviceListener
+typedef struct Input_DeviceListener {...} Input_DeviceListener
 ```
 
 ## 概述

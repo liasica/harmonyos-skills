@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-use-pa
 title: 使用剪贴板进行复制粘贴（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 使用剪贴板进行复制粘贴（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f101cd1285b1be8b1d2f39af4766789b01570d9831aea2d5644073a35bc5301e
+scraped_at: 2026-09-24T06:50:07+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:ffaf7a32d6a74b085e066b3af739e24b4f891eea4dfcee1141c12c2f33fa8e33
 ---
 
 ## 场景介绍
@@ -114,6 +114,9 @@ content_hash: sha256:f101cd1285b1be8b1d2f39af4766789b01570d9831aea2d5644073a35bc
        OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
        if (pasteboard == nullptr) {
            OH_LOG_INFO(LOG_APP, "Failed to create pasteboard instance.");
+           napi_value result;
+           napi_get_undefined(env, &result);
+           return result;
        };
        // 2. 创建OH_UdmfRecord对象，并向OH_UdmfRecord中添加文本类型数据
        OH_UdsPlainText* udsPlainText = OH_UdsPlainText_Create();
@@ -140,46 +143,77 @@ content_hash: sha256:f101cd1285b1be8b1d2f39af4766789b01570d9831aea2d5644073a35bc
 6. 从剪贴板读取数据。
 
    ```
+   static napi_value GetPlainTextFromPasteboard(napi_env env, OH_Pasteboard* pasteboard)
+   {
+       // 3. 从剪贴板中获取统一类型数据OH_UdmfData
+       int ret = 0;
+       OH_UdmfData* udmfData = OH_Pasteboard_GetData(pasteboard, &ret);
+       if (udmfData == nullptr) {
+           OH_LOG_INFO(LOG_APP, "Failed to get data from pasteboard.");
+           OH_Pasteboard_Destroy(pasteboard);
+           napi_value result;
+           napi_get_undefined(env, &result);
+           return result;
+       }
+       // 4. 从OH_UdmfData中获取第一个数据记录
+       OH_UdmfRecord* record = OH_UdmfData_GetRecord(udmfData, 0);
+       if (record == nullptr) {
+           OH_LOG_INFO(LOG_APP, "Failed to get record from udmfData.");
+           OH_UdmfData_Destroy(udmfData);
+           OH_Pasteboard_Destroy(pasteboard);
+           napi_value result;
+           napi_get_undefined(env, &result);
+           return result;
+       }
+       // 5. 从数据记录中获取文本数据内容
+       OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
+       if (plainText == nullptr) {
+           OH_LOG_INFO(LOG_APP, "Failed to create plain text object.");
+           OH_UdmfData_Destroy(udmfData);
+           OH_Pasteboard_Destroy(pasteboard);
+           napi_value result;
+           napi_get_undefined(env, &result);
+           return result;
+       }
+       OH_UdmfRecord_GetPlainText(record, plainText);
+       const char* content = OH_UdsPlainText_GetContent(plainText);
+       if (content == nullptr) {
+           OH_LOG_INFO(LOG_APP, "Failed to get content from plain text.");
+           OH_UdsPlainText_Destroy(plainText);
+           OH_UdmfData_Destroy(udmfData);
+           OH_Pasteboard_Destroy(pasteboard);
+           napi_value result;
+           napi_get_undefined(env, &result);
+           return result;
+       }
+       napi_value result;
+       napi_create_string_utf8(env, content, strlen(content), &result);
+       // 6. 使用完销毁指针
+       OH_UdsPlainText_Destroy(plainText);
+       OH_UdmfData_Destroy(udmfData);
+       OH_Pasteboard_Destroy(pasteboard);
+       return result;
+   }
+
    static napi_value NAPI_Pasteboard_get(napi_env env, napi_callback_info info)
    {
        // 1. 创建一个剪贴板实例
        OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
        if (pasteboard == nullptr) {
            OH_LOG_INFO(LOG_APP, "Failed to create pasteboard instance.");
-       };
+           napi_value result;
+           napi_get_undefined(env, &result);
+           return result;
+       }
        // 2. 判断剪贴板中是否有文本类型数据
        bool hasPlainTextData = OH_Pasteboard_HasType(pasteboard, "text/plain");
        if (hasPlainTextData) {
-           // 3. 从剪贴板中获取统一类型数据OH_UdmfData
-           int ret = 0;
-           OH_UdmfData* udmfData = OH_Pasteboard_GetData(pasteboard, &ret);
-           if (udmfData == nullptr) {
-               OH_LOG_INFO(LOG_APP, "Failed to get data from pasteboard.");
-           };
-           // 4. 从OH_UdmfData中获取第一个数据记录
-           OH_UdmfRecord* record = OH_UdmfData_GetRecord(udmfData, 0);
-           if (record == nullptr) {
-               OH_LOG_INFO(LOG_APP, "Failed to get record from udmfData.");
-           };
-           // 5. 从数据记录中获取文本数据内容
-           OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
-           if (plainText == nullptr) {
-               OH_LOG_INFO(LOG_APP, "Failed to create plain text object.");
-           };
-           OH_UdmfRecord_GetPlainText(record, plainText);
-           const char* content = OH_UdsPlainText_GetContent(plainText);
-           if (content == nullptr) {
-               OH_LOG_INFO(LOG_APP, "Failed to get content from plain text.");
-           }
-           napi_value result;
-           napi_create_string_utf8(env, content, strlen(content), &result);
-           // 6. 使用完销毁指针
-           OH_UdsPlainText_Destroy(plainText);
-           OH_UdmfRecord_Destroy(record);
-           return result;
-       } else {
-           OH_LOG_INFO(LOG_APP, "No plain text data in pasteboard.");
+           return GetPlainTextFromPasteboard(env, pasteboard);
        }
+       OH_LOG_INFO(LOG_APP, "No plain text data in pasteboard.");
        OH_Pasteboard_Destroy(pasteboard);
+       napi_value result;
+       napi_get_undefined(env, &result);
+       return result;
    }
    ```

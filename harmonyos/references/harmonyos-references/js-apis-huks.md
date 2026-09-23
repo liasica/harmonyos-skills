@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.security.huks (通用密钥库系统)"
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > ArkTS API > @ohos.security.huks (通用密钥库系统)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dbacdc6c6fe08945f026eb664d6d5a00cec733e9a2c4beb740aa609266ce42fa
+scraped_at: 2026-09-24T06:53:36+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:9ad8c22d4d942f2fefd4e79c67cb609ef6006eaaf35b99d1baa1b5b205eefd9a
 ---
 
 向应用提供密钥库能力，包括密钥管理及密钥的密码学操作等功能。
@@ -2655,7 +2655,7 @@ huks.hasKeyItem(keyAlias, emptyOptions).then((data) => {
   if (data) {
     console.info(`keyAlias:${keyAlias} is existed!`);
   } else {
-    console.info(`find key failed!`);
+    console.error(`find key failed!`);
   }
 });
 ```

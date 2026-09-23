@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyVGridLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyVGridLayout
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bb17268d1051856f71c747db0f6a87c6983cf448aeb8aad9f1253990760b5209
+scraped_at: 2026-09-24T06:52:22+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:871dc7ff816930fd12785cbcf2e71ca7030f8bc78503d82c5c18b89d7dd2ec5a
 ---
 
 该组件用于实现支持懒加载的网格布局，适用于在滚动容器中按需渲染大量网格项的场景，可减少首帧渲染时间和内存开销。
@@ -63,6 +63,8 @@ columnsTemplate('repeat(auto-stretch, track-size)')是设置固定列宽值为tr
 其中repeat、auto-fit、auto-fill、auto-stretch为关键字。track-size为列宽，支持的单位包括px、vp、%或有效数字，默认单位为vp，track-size至少包括一个有效列宽。
 
 auto-fit模式和auto-stretch模式只支持track-size为一个有效列宽值，并且auto-stretch模式中的track-size只支持px、vp和有效数字，不支持%。auto-fill模式支持一个或多个有效列宽，如columnsTemplate('repeat(auto-fill, 20)')、columnsTemplate('repeat(auto-fill, 20 80px)')。
+
+非repeat形式的模板串中每项仅支持'数字+fr'、'数字+px'、'数字+%'三种格式，不支持vp（如columnsTemplate('100vp 100vp')）。需要按固定vp尺寸自动计算列数时，应使用repeat(auto-fill, track-size)。
 
 使用效果可以参考[示例3](ts-container-lazyvgridlayout.md#示例3设置自适应列数)。
 
@@ -428,7 +430,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/b_oiFzisSv6WxRF4IFoZKg/zh-cn_image_0000002733436094.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/xo0kt7EqREW61VSoflT9yA/zh-cn_image_0000002739732890.gif)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -508,7 +510,7 @@ struct LazyVGridLayoutStickyDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Y5As_1wyRyeBszHl63gcQg/zh-cn_image_0000002762995615.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/CedxIk-1Rk6pnOyVnaOmhA/zh-cn_image_0000002769332239.gif)
 
 ### 示例3（设置自适应列数）
 
@@ -642,4 +644,4 @@ struct LazyVGridLayoutColumnsTemplateDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/iPKIuIr9TQyADspO6Mb6VQ/zh-cn_image_0000002762835731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/_N53IIseTHyH9FUJ1jeVSw/zh-cn_image_0000002769452101.gif)

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-resource
-title: ArkGraphics 3D资源创建以及使用
-breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用
+title: 资源创建与使用
+breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:32+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-09-24T06:50:30+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:a99366f024cab075b928b5ed4a5efe665c9f02cc7902d33691936001bb547a70
 ---
 

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点轴事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 焦点轴事件
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:36+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:402a2be060a1da4e5916b9975eeebcf5f6f9e5eac5304e40ab775ec096b745b5
+scraped_at: 2026-09-24T06:52:16+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:bbe876ff02a7da1bd0e3a283fbc134a85478cab032632450326b6b70fcd35916
 ---
 
-焦点轴事件是指在与游戏手柄交互时，通过十字按键或者操作杆上报的轴事件，此轴事件通过获得焦点的组件分发并回调给应用。若组件默认可获焦，如Button，则不需要额外设置属性。若组件在默认情况下不可获焦，如Text和Image，可以通过将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true来启用焦点轴事件。
+焦点轴事件是指在与游戏手柄交互时，通过十字按键或者操纵杆上报的轴事件，此轴事件通过获得焦点的组件分发并回调给应用。若组件默认可获焦，如Button，则不需要额外设置属性。若组件在默认情况下不可获焦，如Text和Image，可以通过将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true来启用焦点轴事件。
 
 **说明** 
 
@@ -19,7 +19,7 @@ content_hash: sha256:402a2be060a1da4e5916b9975eeebcf5f6f9e5eac5304e40ab775ec096b
 
 onFocusAxisEvent(event: Callback<FocusAxisEvent>): T
 
-给组件绑定焦点轴事件回调。绑定该方法的组件获焦后，游戏手柄上的摇杆、十字键等的操作会触发该回调。若组件默认不可获焦，需要先将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true来启用焦点轴事件。
+给组件绑定焦点轴事件回调。绑定该方法的组件获焦后，游戏手柄上的操纵杆、十字键等的操作会触发该回调。若组件默认不可获焦，需要先将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true来启用焦点轴事件。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -52,7 +52,7 @@ onFocusAxisEvent(event: Callback<FocusAxisEvent>): T
 
 ## 示例
 
-该示例通过按钮设置了焦点轴事件，当按钮获得焦点时，操控游戏手柄的十字按键或者操作杆将触发onFocusAxisEvent回调。
+该示例通过按钮设置了焦点轴事件，当按钮获得焦点时，操控游戏手柄的十字按键或者操纵杆将触发onFocusAxisEvent回调。
 
 ```ts
 // xxx.ets
@@ -96,6 +96,6 @@ struct FocusAxisEventExample {
 }
 ```
 
-游戏手柄操作杆移动时：
+游戏手柄操纵杆移动时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/pjgXiWadRXyxTfyzCusOQg/zh-cn_image_0000002762835521.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ejrZQfGjS2GJ-ZjKalqfpw/zh-cn_image_0000002769451895.png)

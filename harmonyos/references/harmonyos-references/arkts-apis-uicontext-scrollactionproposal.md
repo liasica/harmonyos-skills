@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ScrollActionProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (ScrollActionProposal)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:26+08:00
+scraped_at: 2026-09-24T06:52:09+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e40dc909e013b9b6a423e9a60ce00980b96310bd96c74c1c4acd2d560dff8304
+content_hash: sha256:644c65033f6076f4ca2e49a28fbb5d12f2e9ab191ad2211d14b78ba229881a72
 ---
 
 智慧手势滚动动作处理，默认方向为向前滚动，包括向右和向下。当通过[registerMonitor](arkts-apis-uicontext-smartgesturecontroller.md#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](arkts-apis-uicontext-gesturehandlingresolution.md)的selectedProposal为该类型对象，会触发目标组件的滚动操作。
@@ -121,4 +121,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/71B2rNYtRCGWxw1MsDkIZw/zh-cn_image_0000002762835449.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/VZ59VTx-SXC5F_E-xbpkCA/zh-cn_image_0000002769451823.png)

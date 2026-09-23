@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 应用开发中的兼容性场景开发指导
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:59:07+08:00
-doc_updated_at: 2026-07-06
+scraped_at: 2026-09-24T06:49:20+08:00
+doc_updated_at: 2026-09-23
 content_hash: sha256:779a6e1eb1488e05eca8f07a31df6a89a11bc2b5626b5973fe42165ef59ffac1
 ---
 

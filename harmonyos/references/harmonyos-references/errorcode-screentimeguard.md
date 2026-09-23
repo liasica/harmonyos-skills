@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:08+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:3248024cb85eba3f610d2c640d17271338435ab7a02acb2c8e28bba6168b05c0
+scraped_at: 2026-09-24T06:55:39+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:e69ce7b09aa541a70e339bdab4bc9a1f864e80192946a8cc44a71680c0387162
 ---
 
 **说明** 
@@ -234,8 +234,8 @@ The strategy type is not supported.
 
 **可能原因**
 
-在调用查询策略运行数据接口[queryGuardStrategyData](screentimeguard-guardservice.md#queryguardstrategydata)接口时，传入了非[INCLUSIVE\_DURATION\_TYPE](screentimeguard-guardservice.md#timestrategytype)类型的策略。
+在调用查询策略运行数据接口[queryGuardStrategyData](screentimeguard-guardservice.md#queryguardstrategydata)时，传入了非[INCLUSIVE\_DURATION\_TYPE](screentimeguard-guardservice.md#timestrategytype)类型的策略。
 
 **处理步骤**
 
-请检查调用查询策略运行数据接口[queryGuardStrategyData](screentimeguard-guardservice.md#queryguardstrategydata)接口时，传入的策略类型是否为[INCLUSIVE\_DURATION\_TYPE](screentimeguard-guardservice.md#timestrategytype)。
+请检查调用查询策略运行数据接口[queryGuardStrategyData](screentimeguard-guardservice.md#queryguardstrategydata)时，传入的策略类型是否为[INCLUSIVE\_DURATION\_TYPE](screentimeguard-guardservice.md#timestrategytype)。

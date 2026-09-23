@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 基于函数的装饰器方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（装饰器接入方式） > 基于函数的装饰器方案
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:19:13+08:00
+scraped_at: 2026-09-24T06:51:12+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:0d5d9dcebfb4c7a354b4f3003708596b54a92b95b074b1b6ef21a56036a31186
+content_hash: sha256:7b6f0b9a5ae4dcd4298763d7a8529417405939ac685a5e99a3130eaeba44b866
 ---
 
 ## 概述
@@ -86,25 +86,25 @@ content_hash: sha256:0d5d9dcebfb4c7a354b4f3003708596b54a92b95b074b1b6ef21a56036a
 
    1. 打开CodeGenie插件：在DevEco Studio右侧边栏点击CodeGenie或输入快捷键Alt/Option+U，可以进入DevEco CodeGenie。若使用非最新版本的DevEco Studio，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/FnAk9ITfTI2KXBbSKz83eA/zh-cn_image_0000002762835311.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Wbsr64ZeR4KT2B3yA72Zhw/zh-cn_image_0000002769451687.png)
    2. 框选想要接入意图框架功能的代码。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/0Hm0L96bTaeRplddDk0Jzg/zh-cn_image_0000002733275798.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/6jjXaNJwT3OCu9goAT5OGQ/zh-cn_image_0000002739892356.png)
    3. 在选中的代码块上右键CodeGenie > Insight Intent，选择适合的装饰器。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/IJPRIjoAQ0621v2321Bw2Q/zh-cn_image_0000002733435678.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/3_j3W1YUQL2Kydf5VJVEQA/zh-cn_image_0000002739732478.png)
    4. 在DevEco CodeGenie对话框中对意图定义，功能，参数等进行描述。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/94svtUmcQueETBi3XXVuOg/zh-cn_image_0000002762995201.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/acaN4nQ9TyO7aqhZWRNm0A/zh-cn_image_0000002769331827.png)
    5. 回车或者点击发送按钮，即可生成对应的装饰器内容。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/vpgm0F2MRZerNxazdOcM_w/zh-cn_image_0000002762835313.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/Uxwo7j6OT3aY4KJXxbppSg/zh-cn_image_0000002769451689.png)
    6. 将光标放置于要插入装饰器的位置，点击插入图标，即可在对应位置插入装饰器。
 
    插入前：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/K90CnbKfRNSpSsc49CcL2w/zh-cn_image_0000002733275800.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/LTWdDcKkQMGXGCcySgdMbw/zh-cn_image_0000002739892358.png)
 
    插入后：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/qy8LCKqCSEKffFaaZIAkHA/zh-cn_image_0000002733435680.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/W989dy5WSryuxA0pZaoy2w/zh-cn_image_0000002739732480.png)

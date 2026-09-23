@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: polyline
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > polyline
 category: harmonyos-references
-scraped_at: 2026-09-21T06:21:14+08:00
+scraped_at: 2026-09-24T06:52:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:91ced8f8f3e06cf6e99ab52c8b41cfeb4586fd1035d51aecc9a2769b63c5e1b0
+content_hash: sha256:d1c146e37491cf4f15624915ff66e469029c6d9882d230d0dc91c8e45614c322
 ---
 
 **说明** 
@@ -43,4 +43,4 @@ content_hash: sha256:91ced8f8f3e06cf6e99ab52c8b41cfeb4586fd1035d51aecc9a2769b63c
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/_hxPdEvwS-WkBMRkMuHGuw/zh-cn_image_0000002762996259.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/qZwqLFXsSQ6_0RQEPEtVCQ/zh-cn_image_0000002769332875.png)

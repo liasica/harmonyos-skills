@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 全屏模态转场
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 模态转场设置 > 全屏模态转场
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:41+08:00
+scraped_at: 2026-09-24T06:52:19+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6769664d6f3741fbfa1eb9eb5b9df77f9bda327302ea577bff11f3268a333ad1
+content_hash: sha256:b355c23c6621994b41e2657ecdefc30adcf38023b27784179f1bf0900229476d
 ---
 
 通过bindContentCover属性为组件绑定全屏模态页面，在模态页面显示和隐藏时可通过设置转场参数（ModalTransition或TransitionEffect）显示过渡动效。
@@ -197,7 +197,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/TrKYpgKBTU63isw8urSufw/zh-cn_image_0000002733435998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/eazABDKoT_CyHqEhFYqwOQ/zh-cn_image_0000002739732794.gif)
 
 ### 示例2（自定义转场动画）
 
@@ -311,7 +311,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/499Mmz96Q0-h7ouUWag8Mw/zh-cn_image_0000002762995519.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/d6mV6JjDTvet2Tq-OWPblg/zh-cn_image_0000002769332143.gif)
 
 ### 示例3（上下切换转场）
 
@@ -409,7 +409,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/ovl1Y3VQSwuKfWkQv3zexA/zh-cn_image_0000002762835631.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ndtgeilLQcuNe8DnwiJ1Ww/zh-cn_image_0000002769452005.gif)
 
 ### 示例4（透明度渐变转场）
 
@@ -508,7 +508,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/nRBrJFtwSyC4vyP-AjUzWQ/zh-cn_image_0000002733276122.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/DgUJeTUGT92tuC0kyR-o7w/zh-cn_image_0000002739892674.gif)
 
 ### 示例5（设置不同效果的自定义转场）
 
@@ -626,7 +626,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/cl4PS_LZS8GWXFlKEGw8DQ/zh-cn_image_0000002733436000.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/corFVjkbSv2EOHo7HikPZw/zh-cn_image_0000002739732796.gif)
 
 ### 示例6（设置全屏模态适配安全区）
 
@@ -689,4 +689,4 @@ struct SafeAreaController {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/3okz0-6VS9mdBd6YXkCCWw/zh-cn_image_0000002762995521.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/3xcIMDvkRT2l32jHDEJ_KA/zh-cn_image_0000002769332145.png)

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-scene
-title: ArkGraphics 3D场景搭建以及管理
-breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D场景搭建以及管理
+title: 场景搭建与管理
+breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 场景搭建与管理
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c65e8d7f2f004400cdfa2bd31e71d61f67c2117029669e62e9c2fb605b140b6e
+scraped_at: 2026-09-24T06:50:31+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:2323d61431311ea2e5bad9b4319e119c55f9e10f445a4b99cbe622ff5fbae7a9
 ---
 
 一个3D场景通常由光源、相机、模型三个关键部分组成。
@@ -16,7 +16,7 @@ content_hash: sha256:c65e8d7f2f004400cdfa2bd31e71d61f67c2117029669e62e9c2fb605b1
 
 模型加载后，可以通过ArkUI的[Component3D](../harmonyos-references/ts-basic-components-component3d.md)渲染组件呈现给用户，Component3D负责将ArkGraphics 3D场景渲染到界面中。在自定义场景模式下，开发者可以使用ArkTS API创建并管理相机和光源节点，从而设置合适的观察角度和光照效果；在自动场景模式下，框架会根据模型自动创建基础相机和光照。ArkTS API可通过napi调用AGP中由C++实现的相应能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/8yuy0OYgSuu0_7tsbgzMXQ/zh-cn_image_0000002733434988.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/_LtqIU-aQeuWxdIpNxHHbQ/zh-cn_image_0000002739731796.png)
 
 ## 模型的加载及呈现
 
@@ -187,14 +187,14 @@ ArkGraphics 3D提供创建光源及修改光源参数的功能，支持开发者
 
 1. 导入相关模块。
 
-   在页面脚本中导入ArkGraphics 3D提供的核心类型，用于加载场景、创建相机与灯光。
+   在页面脚本中导入ArkGraphics 3D提供的核心类型，用于加载场景、创建相机与光源。
 
    ```typescript
    import { Camera, Light, LightType, Scene, SceneNodeParameters, SceneResourceFactory } from '@kit.ArkGraphics3D';
    ```
 2. 加载场景资源。
 
-   使用Scene.load()从应用的resources/rawfile/目录加载.glb模型文件，.glb为glTF的二进制封装格式，与.gltf内容等价但更便于加载与使用。模型加载成功后返回Scene对象，可通过它获取SceneResourceFactory用于后续创建灯光。
+   使用Scene.load()从应用的resources/rawfile/目录加载.glb模型文件，.glb为glTF的二进制封装格式，与.gltf内容等价但更便于加载与使用。模型加载成功后返回Scene对象，可通过它获取SceneResourceFactory用于后续创建光源。
 
    ```typescript
    let scene: Promise<Scene> = Scene.load($rawfile('gltf/CubeWithFloor/glTF/AnimatedCube.glb'));
@@ -208,9 +208,9 @@ ArkGraphics 3D提供创建光源及修改光源参数的功能，支持开发者
      // ...
    });
    ```
-3. 创建灯光并配置灯光参数。
+3. 创建光源并配置光源参数。
 
-   调用SceneResourceFactory.createLight()创建灯光，并配置灯光的类型、位置、颜色等参数。
+   调用SceneResourceFactory.createLight()创建光源，并配置光源的类型、位置、颜色等参数。
 
    ```typescript
    let light: Promise<Light> = sceneFactory.createLight(lightParameter, LightType.DIRECTIONAL);
@@ -228,7 +228,7 @@ ArkGraphics 3D提供创建光源及修改光源参数的功能，支持开发者
    ```
 4. 初始化与渲染绑定。
 
-   完成灯光初始化后，将加载好的场景与灯光进行绑定，并设置场景渲染参数。通过构建SceneOptions对象，即可将场景交由Component3D渲染显示。同时创建相机并设置观察位置，用于控制场景显示效果。
+   完成光源初始化后，将加载好的场景与光源进行绑定，并设置场景渲染参数。通过构建SceneOptions对象，即可将场景交由Component3D渲染显示。同时创建相机并设置观察位置，用于控制场景显示效果。
 
    ```typescript
    this.light = await createLightPromise();
@@ -245,9 +245,9 @@ ArkGraphics 3D提供创建光源及修改光源参数的功能，支持开发者
      this.blue = this.light.color.b;
    }
    ```
-5. 灯光交互。
+5. 光源交互。
 
-   开发者可通过调整灯光的颜色、位置或方向等参数，实现交互式光照控制。以下示例展示了基于颜色分量（R/G/B）的交互逻辑，其余参数的控制方式与此类似。
+   开发者可通过调整光源的颜色、位置或方向等参数，实现交互式光照控制。以下示例展示了基于颜色分量（R/G/B）的交互逻辑，其余参数的控制方式与此类似。
 
    ```typescript
    Slider({

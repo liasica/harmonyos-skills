@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/shared-arrayb
 title: SharedArrayBuffer对象
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > SharedArrayBuffer对象
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6eb61f3fe469a058cd49f6e22ff738bed066cde3633c2a35de542954191eafee
+scraped_at: 2026-09-24T06:49:28+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:6522bd5a30ce997574ab55989ddf7c4880b5fde50993b71436556b98030a009b
 ---
 
 SharedArrayBuffer内部包含一块Native内存，其JS对象壳被分配在虚拟机本地堆（LocalHeap）。支持跨并发实例间共享Native内存，但是对共享Native内存的访问及修改需要采用Atomics类，防止数据竞争。SharedArrayBuffer可用于多个并发实例间的状态或数据共享。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/_M-NsXlOSiq9Bz4RZUex7w/zh-cn_image_0000002733273462.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/T9fPXw3ARUW_XoC0YE3fnA/zh-cn_image_0000002739890056.png)
 
 ## 使用示例
 
@@ -18,6 +18,7 @@ SharedArrayBuffer内部包含一块Native内存，其JS对象壳被分配在虚�
 
 ```typescript
 import { taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Concurrent
 function transferAtomics(arg1: Int32Array) {

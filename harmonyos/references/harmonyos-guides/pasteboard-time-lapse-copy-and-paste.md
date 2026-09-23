@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pasteboard-ti
 title: 使用剪贴板进行延迟复制粘贴
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 使用剪贴板进行延迟复制粘贴
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ebae42d1a8342f9f83ef706a61065d9ae99a7853c2a8fe18115c2349390e1763
+scraped_at: 2026-09-24T06:50:07+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:703ee702e46f4f1e8ea85080034e87efef77bf74f3e712c89237087f462f5f07
 ---
 
 ## 场景介绍
@@ -145,15 +145,15 @@ content_hash: sha256:ebae42d1a8342f9f83ef706a61065d9ae99a7853c2a8fe18115c2349390
                OH_UdmfRecord_GetPlainText(record, udsText);
                // 从Uds对象中获取内容
                const char* content = OH_UdsPlainText_GetContent(udsText);
-           } else if (strcmp(recordType, UDMF_META_HTML) == 0) {
-               // 创建HTML类型的Uds对象
-               udsHtml = OH_UdsHtml_Create();
-               if (udsHtml != nullptr) {
-                   // 从record中获取HTML类型的Uds对象
-                   OH_UdmfRecord_GetHtml(record, udsHtml);
-                   // 从Uds对象中获取内容
-                   const char* content = OH_UdsHtml_GetContent(udsHtml);
-               }
+           }
+       } else if (strcmp(recordType, UDMF_META_HTML) == 0) {
+           // 创建HTML类型的Uds对象
+           udsHtml = OH_UdsHtml_Create();
+           if (udsHtml != nullptr) {
+               // 从record中获取HTML类型的Uds对象
+               OH_UdmfRecord_GetHtml(record, udsHtml);
+               // 从Uds对象中获取内容
+               const char* content = OH_UdsHtml_GetContent(udsHtml);
            }
        }
    }

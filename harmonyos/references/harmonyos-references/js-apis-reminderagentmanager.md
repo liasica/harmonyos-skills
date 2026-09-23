@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.reminderAgentManager (后台代理提醒)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.reminderAgentManager (后台代理提醒)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6e07d2547efb49fca77182f5d95bb0b05ac2cf5220888ed15bc974736053bfa5
+scraped_at: 2026-09-24T06:53:10+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:1b2cabb24de059494000b7855ebecdab6e2443a9ec26b1f80cf4e0eb642ebeba
 ---
 
 本模块提供后台代理提醒的能力，即当应用被冻结或应用退出时，定时提醒功能将被系统服务代理。开发者可以调用本模块接口创建定时提醒，提醒类型支持倒计时、日历、闹钟三种。开发指导请参考[代理提醒开发指南](../harmonyos-guides/agent-powered-reminder.md)。
@@ -1083,10 +1083,10 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 | snoozeContentResourceId18+ | number | 否 | 是 | 指明延时提醒内容的资源ID，通过$r(资源名称).id方法获取。 |
 | notificationId | number | 否 | 是 | 指明提醒使用的通知的id号，需开发者传入，相同id号的提醒会覆盖，默认值为0。 |
 | groupId11+ | string | 否 | 是 | 指明提醒使用相同的组id。相同组id中，一个提醒被点击不再提醒后，组内其他提醒也会被取消。 |
-| slotType | [notification.SlotType](js-apis-notificationmanager.md#slottype) | 否 | 是 | 指明提醒的通道渠道类型。 |
+| slotType | [notification.SlotType](js-apis-notificationmanager.md#slottype) | 否 | 是 | 指明提醒的通知渠道类型。 |
 | tapDismissed10+ | boolean | 否 | 是 | 通知是否自动清除，默认值为true，具体请参考[NotificationRequest.tapDismissed](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)。  - true：点击通知消息或通知按钮后，自动删除当前通知。  - false：点击通知消息或通知按钮后，保留当前通知。 |
 | autoDeletedTime10+ | number | 否 | 是 | 自动清除的时间。  数据格式：时间戳，单位：ms，具体请参考[NotificationRequest.autoDeletedTime](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)。 |
-| snoozeSlotType11+ | [notification.SlotType](js-apis-notificationmanager.md#slottype) | 否 | 是 | 指明延时提醒的通道渠道类型（不适用于倒计时提醒类型）。 |
+| snoozeSlotType11+ | [notification.SlotType](js-apis-notificationmanager.md#slottype) | 否 | 是 | 指明延时提醒的通知渠道类型（不适用于倒计时提醒类型）。 |
 | customRingUri11+ | string | 否 | 是 | 指明自定义提示音的uri，提示音文件必须放在resources/rawfile目录下，支持m4a、aac、mp3、ogg、wav、flac、amr等格式。 |
 | ringChannel20+ | [RingChannel](js-apis-reminderagentmanager.md#ringchannel20) | 否 | 是 | 指明自定义提示音的音频播放通道，默认为闹钟通道。 |
 | fixedTimeZone | [TimeZoneType](js-apis-reminderagentmanager.md#timezonetype) | 否 | 是 | 时区类型，默认为TimeZoneType.DEFAULT。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |

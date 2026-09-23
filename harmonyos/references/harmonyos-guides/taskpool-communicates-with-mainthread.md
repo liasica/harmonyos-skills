@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-comm
 title: TaskPool任务与宿主线程通信
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信场景 > TaskPool任务与宿主线程通信
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f5c40ac23e609c23171d398c079f13d223bc81236bb569da9158f13b7d4f5882
+scraped_at: 2026-09-24T06:49:28+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:d70c8b05d162c77d70bdfb4346b6ef23877cfb0029f87f26b560cbb32883f2fc
 ---
 
 如果Task不仅需要返回最终执行结果，还需定时通知宿主线程状态和数据变化，或分段返回大量数据（如从数据库读取大量数据），可按以下方式实现。
@@ -29,6 +29,7 @@ export class IconItemSource {
 ```typescript
 import { taskpool } from '@kit.ArkTS';
 import { IconItemSource } from './IconItemSource';
+import { BusinessError } from '@kit.BasicServicesKit';
 // 实现接收Task消息的方法
 function notice(data: number): void {
   console.info('子线程已加载数据，共加载图片: ', data);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.net.socket (Socket连接)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.socket (Socket连接)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:56+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:5e72432c9409cad391aad595ae8c2f210b8a3f8870e7a61761a4b92d6e668e1f
+scraped_at: 2026-09-24T06:53:47+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:ca173966fc1dde5e38844852de87a7f9a5511a5070cf74e685804c8b2d037d6c
 ---
 
 本模块提供利用Socket进行数据传输的能力，支持TCPSocket、UDPSocket、WebSocket和TLSSocket。
@@ -4171,7 +4171,7 @@ getRemoteAddress(): Promise<NetAddress>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[NetAddress](js-apis-socket.md#netaddress)> | Promise对象，返回获取本地socket地址的结果。 |
+| Promise<[NetAddress](js-apis-socket.md#netaddress)> | Promise对象，返回获取对端socket地址的结果。 |
 
 **错误码：**
 
@@ -7681,7 +7681,7 @@ getRemoteAddress(): Promise<NetAddress>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[NetAddress](js-apis-socket.md#netaddress)> | Promise对象，返回获取本地socket地址的结果。失败返回错误码，错误信息。 |
+| Promise<[NetAddress](js-apis-socket.md#netaddress)> | Promise对象，返回获取对端socket地址的结果。失败返回错误码，错误信息。 |
 
 **错误码：**
 
@@ -9916,7 +9916,7 @@ getRemoteAddress(): Promise<NetAddress>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[NetAddress](js-apis-socket.md#netaddress)> | Promise对象，返回获取本地socket地址的结果。失败返回错误码，错误信息。 |
+| Promise<[NetAddress](js-apis-socket.md#netaddress)> | Promise对象，返回获取对端socket地址的结果。失败返回错误码，错误信息。 |
 
 **错误码：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: Rect
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > Rect
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3826df69f2aeffa1bafc0949c06500c664339b76cfb050c5a7689ac248627cfd
+scraped_at: 2026-09-24T06:55:06+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:e298aa3fbc7b8146bf06207dc4d0967e843b8a17011011f75a0131e18e8011d1
 ---
 
 ```c
@@ -14,7 +14,7 @@ struct Rect { ... }
 
 ## 概述
 
-如果rects是空指针nullptr，默认Buffer大小为脏区。
+定义矩形区域的结构体，包含矩形框的起始坐标和宽高信息。
 
 **相关模块：** [NativeWindow](capi-nativewindow.md)
 

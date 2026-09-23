@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata
 title: 申请访问剪贴板权限
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 申请访问剪贴板权限
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a41a62306ff32d441d476922489301894a97f5b96155172664d8d813ad186cb9
+scraped_at: 2026-09-24T06:50:07+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:34a3f6f9a3755437578415055648d54048821661fa95a3ca8fcbd4d77a22ed33
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ API version 12及之后，系统为提升用户隐私安全保护能力，剪贴
 | --- | --- |
 | [getData(callback: AsyncCallback<PasteData>): void](../harmonyos-references/js-apis-pasteboard.md#getdata9) | 读取系统剪贴板内容，使用callback异步回调。 |
 | [getData(): Promise<PasteData>](../harmonyos-references/js-apis-pasteboard.md#getdata9-1) | 读取系统剪贴板内容，使用Promise异步回调。 |
-| [getDataSync(): PasteData](../harmonyos-references/js-apis-pasteboard.md#getdatasync11) | 读取系统剪贴板内容, 此接口为同步接口。 |
+| [getDataSync(): PasteData](../harmonyos-references/js-apis-pasteboard.md#getdatasync11) | 读取系统剪贴板内容，此接口为同步接口。 |
 | [getUnifiedData(): Promise<unifiedDataChannel.UnifiedData>](../harmonyos-references/js-apis-pasteboard.md#getunifieddata12) | 从系统剪贴板中读取统一数据对象的数据。 |
 | [getUnifiedDataSync(): unifiedDataChannel.UnifiedData](../harmonyos-references/js-apis-pasteboard.md#getunifieddatasync12) | 从系统剪贴板中读取统一数据对象的数据，此接口为同步接口。 |
 | [OH\_UdmfData\* OH\_Pasteboard\_GetData (OH\_Pasteboard \*pasteboard, int \*status)](../harmonyos-references/capi-oh-pasteboard-h.md#oh_pasteboard_getdata) | 获取剪贴板中的数据。 |
@@ -103,7 +103,7 @@ async function isNeedGetPermissionFromUser(): Promise<boolean> {
     }
     // (可选)涉及口令等应用自身特殊复制内容的，使用detectPatterns过滤口令格式
     let data: pasteboard.Pattern[] = await systemPasteboard.detectPatterns(patterns);
-    if (patterns.sort().join('') != data.sort().join('')) {
+    if (!patterns.every(p => data.includes(p))) {
       hilog.info(0xFF00, '[Sample_pasteboard]', 'Not all needed patterns detected, no need to get data.');
       return false;
     }
@@ -127,7 +127,13 @@ struct Index {
           // ...
           .onClick(async () => {
             const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-            if (!(await isNeedGetPermissionFromUser())) {
+            let needPermission: boolean = false;
+            try {
+              needPermission = await isNeedGetPermissionFromUser();
+            } catch (err) {
+              hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to check permission. Cause: ${err.message}`);
+            }
+            if (!needPermission) {
               hilog.info(0xFF00, '[Sample_pasteboard]', 'No need to bring up the permission pop-up window');
               return;
             }
@@ -136,34 +142,39 @@ struct Index {
             try {
               let data = await atManager.requestPermissionsFromUser(context, permissions);
               let grantStatus: number[] = data.authResults;
-              for (const status of grantStatus) {
-                if (status === 0) {
-                  // 用户授权，使用get操作读取剪贴板内容。
-                  // ...
-                  // 执行判断口令逻辑，如果是本应用口令，建议获取完数据后使用cleardata清除剪贴板口令内容
-                  try {
-                    await systemPasteboard.clearData();
-                    hilog.info(0xFF00, '[Sample_pasteboard]', 'Succeeded in clearing the pasteboard.');
-                  } catch (err) {
-                    hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to clear the pasteboard. Cause: ${err.message}`);
-                  }
-                  // 获取当前 ChangeCount
-                  let currentChangeCount: number = systemPasteboard.getChangeCount();
-                  hilog.info(0xFF00, '[Sample_pasteboard]', `Current ChangeCount: ${currentChangeCount}`);
-                  // 更新 Preferences 中的 ChangeCount
-                  if (dataPreferences) {
-                    dataPreferences.putSync('pasteboardChangeCount', currentChangeCount);
-                    dataPreferences.flushSync(); // 确保数据写入持久化存储
-                    hilog.info(0xFF00, '[Sample_pasteboard]', `ChangeCount has been updated to: ${currentChangeCount}`);
-                  }
-                } else {
-                  // 用户拒绝授权，提示用户必须授权才能访问当前页面的功能，并引导用户到系统设置中打开相应的权限。
-                  return;
-                }
+
+              let allGranted: boolean = grantStatus.some(status => status === 0);
+              if (!allGranted) {
+                // 用户拒绝授权，提示用户必须授权才能访问当前页面的功能，并引导用户到系统设置中打开相应的权限。
+                hilog.error(0xFF00, '[Sample_pasteboard]', 'All permissions denied');
+                return;
               }
               // 授权成功。
             } catch (err) {
               hilog.error(0xFF00, '[Sample_pasteboard]', 'Failed to request permissions from user.');
+              return;
+            }
+            // 用户授权，使用get操作读取剪贴板内容。
+            // ...
+            // 执行判断口令逻辑，如果是本应用口令，建议获取完数据后使用cleardata清除剪贴板口令内容
+            try {
+              await systemPasteboard.clearData();
+              hilog.info(0xFF00, '[Sample_pasteboard]', 'Succeeded in clearing the pasteboard.');
+            } catch (err) {
+              hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to clear the pasteboard. Cause: ${err.message}`);
+            }
+            try {
+              // 获取当前 ChangeCount
+              let currentChangeCount: number = systemPasteboard.getChangeCount();
+              hilog.info(0xFF00, '[Sample_pasteboard]', `Current ChangeCount: ${currentChangeCount}`);
+              // 更新 Preferences 中的 ChangeCount
+              if (dataPreferences) {
+                dataPreferences.putSync('pasteboardChangeCount', currentChangeCount);
+                dataPreferences.flushSync(); // 确保数据写入持久化存储
+                hilog.info(0xFF00, '[Sample_pasteboard]', `ChangeCount has been updated to: ${currentChangeCount}`);
+              }
+            } catch (err) {
+              hilog.error(0xFF00, '[Sample_pasteboard]', `Failed to update ChangeCount. Cause: ${err.message}`);
             }
           })
         // ...

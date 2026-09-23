@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilityconnec
 title: 跨设备连接UIAbility开发指南
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 应用跨设备连接管理 > 跨设备连接UIAbility开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:58cfa6b6703f6a0af5c708881c684098674f8c2c49620380ac6c727d1cc16bfe
+scraped_at: 2026-09-24T06:50:04+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:f2c182796512e936aa15d52cf8c6b3fe889b378361e89e385cb2371deb89c1bd
 ---
 
 ## 简介
@@ -37,7 +37,7 @@ content_hash: sha256:58cfa6b6703f6a0af5c708881c684098674f8c2c49620380ac6c727d1cc
 
 **图1** 应用跨设备连接运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/aCi13ohBRiKSJ21WdnwqbQ/zh-cn_image_0000002733274726.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/07W_cSCwTbKjuREClBfhxw/zh-cn_image_0000002739891302.png)
 
 ### 约束与限制
 
@@ -261,12 +261,13 @@ abilityConnectionManager.on("receiveMessage", this.sessionId,(callbackInfo) => {
 ```ts
 import { abilityConnectionManager } from '@kit.DistributedServiceKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-abilityConnectionManager.sendMessage(this.sessionId, "message send success").then(() => {
-  hilog.info(0x0000, 'testTag', "sendMessage success");
-}).catch(() => {
-  hilog.error(0x0000, 'testTag', "connect failed");
-})
+abilityConnectionManager.sendMessage(this.sessionId, 'message send success').then(() => {
+  hilog.info(0x0000, 'testTag', 'sendMessage success');
+}).catch((error: BusinessError) => {
+  hilog.error(0x0000, 'testTag', 'sendMessage failed');
+});
 ```
 
 **2.发送字节流数据**
@@ -282,10 +283,10 @@ let textEncoder = util.TextEncoder.create("utf-8");
 const arrayBuffer  = textEncoder.encodeInto("data send success");
 
 abilityConnectionManager.sendData(this.sessionId, arrayBuffer.buffer).then(() => {
-  hilog.info(0x0000, 'testTag', "sendMessage success");
+  hilog.info(0x0000, 'testTag', 'sendData success');
 }).catch(() => {
-  hilog.info(0x0000, 'testTag', "sendMessage failed");
-})
+  hilog.error(0x0000, 'testTag', 'sendData failed');
+});
 ```
 
 **结束协同**

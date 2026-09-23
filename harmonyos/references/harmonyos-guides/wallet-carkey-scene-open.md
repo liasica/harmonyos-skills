@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 开通车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 开通车钥匙
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:50+08:00
+scraped_at: 2026-09-24T06:50:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:600f3c3408ae43458ddacb0bd6f5dc110d0d13464d3bbc80ffe3b0b34238065f
+content_hash: sha256:cf2bf7ac9cba1678a78257f201bc2c5baa3b678205e531d123016acce5e18996
 ---
 
 用户可将车钥匙添加至钱包，实现刷卡开车门、无感解闭锁、远程车控等便捷能力。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/CqyaFMxkRBGfkvgr3m_XPw/zh-cn_image_0000002733275634.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/OkwuPJOcQ9-beFoTixodHw/zh-cn_image_0000002739892192.png)
 
 ## 开发流程
 

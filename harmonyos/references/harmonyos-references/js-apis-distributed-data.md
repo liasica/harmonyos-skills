@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.distributedData (分布式数据管理)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > 已停止维护的接口 > @ohos.data.distributedData (分布式数据管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:42+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:daab10c4273434b1284561f6ec19d07694e2d5d2b62f5499074a5b1625246145
+scraped_at: 2026-09-24T06:51:57+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:945835c299d618a1b144e17836c97af007cd7fa2c98bd38d704b81bddd106e24
 ---
 
 分布式数据管理为应用程序提供不同设备间数据库的分布式协同能力。通过调用分布式数据各个接口，应用程序可将数据保存到分布式数据库中，并可对分布式数据库中的数据进行增加、删除、修改、查询、同步等操作。
@@ -83,7 +83,7 @@ createKVManager(config: KVManagerConfig): Promise<KVManager>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | [KVManagerConfig](js-apis-distributed-data.md#kvmanager) | 是 | 提供KVManager实例的配置信息，包括调用方的包名和用户信息。 |
+| config | [KVManagerConfig](js-apis-distributed-data.md#kvmanagerconfig) | 是 | 提供KVManager实例的配置信息，包括调用方的包名和用户信息。 |
 
 **返回值：**
 
@@ -3096,7 +3096,7 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| query | [Query](js-apis-distributed-data.md#query8) | 是 | 表示要匹配的键前缀。 |
+| query | [Query](js-apis-distributed-data.md#query8) | 是 | 表示查询对象。 |
 | callback | AsyncCallback<[Entry](js-apis-distributed-data.md#entry)[]> | 是 | 回调函数。返回与指定Query对象匹配的键值对列表。 |
 
 **示例：**

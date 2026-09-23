@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-
 title: assetDownloadManager（资源包下载管理）
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API > assetDownloadManager（资源包下载管理）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:02+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:43fd6f5cc7e2dbd69dbd13bb0498251696e3c4a719ac93c2d9b080b488c1a734
+scraped_at: 2026-09-24T06:55:09+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:7baffa04892c6124f12b50b4964387536d41c15b7509979f00ef125d1452c301
 ---
 
 本模块提供资源包下载管理能力。
@@ -505,7 +505,7 @@ fetchManifestUrl(): Promise<string>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 1016600094 | Task service ability error. |
 
 **示例**：
@@ -558,7 +558,7 @@ addAssetDownloadTask(context: common.BaseContext, downloadConfig: AssetDownloadC
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600001 | The domain name of the download task is not in the domain name trustlist. |
@@ -623,7 +623,7 @@ pauseAssetDownloadTask(taskId: string): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600002 | The task ID or group ID entered during operations such as pause, resume, and fetch does not exist. |
@@ -698,7 +698,7 @@ resumeAssetDownloadTask(taskId: string): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600002 | The task ID or group ID entered during operations such as pause, resume, and fetch does not exist. |
@@ -908,7 +908,7 @@ pauseAllAssetDownloadTasks(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600094 | Task service ability error. |
 
@@ -974,7 +974,7 @@ resumeAllAssetDownloadTasks(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600094 | Task service ability error. |
 
@@ -1188,7 +1188,7 @@ pauseGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600002 | The task ID or group ID entered during operations such as pause, resume, and fetch does not exist. |
@@ -1263,7 +1263,7 @@ resumeGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600002 | The task ID or group ID entered during operations such as pause, resume, and fetch does not exist. |
@@ -1434,7 +1434,7 @@ limitDownloadTaskSpeed(taskIds: string[], speedLimit: NetSpeedLevel): Promise<vo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600094 | Task service ability error. |
 

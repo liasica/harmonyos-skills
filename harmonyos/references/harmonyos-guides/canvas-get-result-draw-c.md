@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-re
 title: 画布的获取与绘制结果的显示（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 画布的获取与绘制结果的显示 > 画布的获取与绘制结果的显示（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:53b8ed9d4b18270727d2adeac9affc8f723a3bb3a3fd62d043996a15720ed3d1
+scraped_at: 2026-09-24T06:50:29+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:23b7b58979fbadbee88aadc6ac127726c005c0d81a52a5e9039ba4b8de1efa84
 ---
 
 ## 场景介绍
@@ -160,7 +160,7 @@ Canvas是图形绘制的核心，本章中提到的所有绘制操作（包括�
    ```
    #include <native_drawing/drawing_pixel_map.h>
    ```
-3. 需要通过OH\_Drawing\_PixelMapGetFromOhPixelMapNative()接口创建一个像素图对象（具体可参考[图片绘制](pixelmap-drawing-c.md)），并通过OH\_Drawing\_CanvasCreateWithPixelMap()接口借助像素图对象创建Canvas。
+3. 需要通过OH\_Drawing\_PixelMapGetFromOhPixelMapNative()接口创建一个像素图对象（具体可参考[图片绘制](pixelmap-drawing-c.md)），并通过OH\_Drawing\_CanvasDrawPixelMapRect()接口将像素图对象绘制到Canvas上。
 
    ```
    // 图片宽高分别为 600 * 400

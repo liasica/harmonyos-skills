@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-resource-material
 title: 创建并使用材质资源
-breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用 > 创建并使用材质资源
+breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用 > 创建并使用材质资源
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d2aebc8b2fab0a540690bbf582f9833e2d18ae3f75ea4f1a9eec0a91ef9dcab3
+scraped_at: 2026-09-24T06:50:31+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:d03c65aa272f9fb54bff141ab1855078e0a367ba8b86e51e8d3c14b1719bbf58
 ---
 
 材质（Material）：材质是用于定义物体表面视觉效果的重要资源。材质决定了物体如何与光线交互，从而影响其最终的渲染效果，如颜色、金属感、粗糙度等外观属性。
@@ -79,7 +79,7 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
   适用场景：增强模型细节阴影效果，适合复杂结构或细节丰富的物体，如建筑物裂缝、机械零件缝隙。
 * emissive：自发光颜色及纹理，表达材质自发光的效果。
 
-  适用场景：灯光、屏幕、发光标志、荧光材料等需要表现光源或自发光效果的材质。
+  适用场景：屏幕、发光标志、荧光材料等需要表现光源或自发光效果的材质。
 * clearCoat：清漆层强度，模拟车漆等具有透明反光层的材质。
 
   适用场景：汽车车身、家具表面等有光泽涂层的材质，表现透明光泽和反射。
@@ -174,7 +174,7 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
    ```
 6. 创建Shader资源。
 
-   通过SceneResourceFactory.createShader()创建自定义着色器资源，创建的shader资源可在后续步骤中绑定到Shader材质上，实现自定义渲染逻辑。
+   通过SceneResourceFactory.createShader()创建自定义着色器资源，创建的Shader资源可在后续步骤中绑定到Shader材质上，实现自定义渲染逻辑。
 
    ```typescript
    function createShaderPromise(): Promise<Shader> {

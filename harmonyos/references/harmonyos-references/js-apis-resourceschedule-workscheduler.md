@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.resourceschedule.workScheduler (延迟任务调度)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.resourceschedule.workScheduler (延迟任务调度)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7e529f91d2e49bff1e4c2e9cc54f5a5cac80f7c94fd9375abdb537d2a5360c01
+scraped_at: 2026-09-24T06:53:10+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:8b953addd8ccfa7f8331b22fab9f4775699846b9b68b420920ef90f2ce9e3ae5
 ---
 
 本模块提供延迟任务注册、取消、查询的能力。在开发过程中，对于实时性要求不高的任务，可以调用本模块接口注册延迟任务，在系统空闲时根据性能、功耗、热等情况进行调度执行。开发指导请参考[延迟任务开发指南](../harmonyos-guides/work-scheduler.md)。
@@ -549,7 +549,7 @@ WorkInfo参数设置时需遵循以下规则：
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CHARGING\_PLUGGED\_ANY | 0 | 表示这个触发条件是任何类型的充电器连接。 |
-| CHARGING\_PLUGGED\_AC | 1 | 表示这个触发条件是直流充电器连接。 |
+| CHARGING\_PLUGGED\_AC | 1 | 表示这个触发条件是交流充电器连接。 |
 | CHARGING\_PLUGGED\_USB | 2 | 表示这个触发条件是USB充电连接。 |
 | CHARGING\_PLUGGED\_WIRELESS | 3 | 表示这个触发条件是无线充电器连接。 |
 

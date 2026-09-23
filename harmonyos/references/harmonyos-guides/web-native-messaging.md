@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-native-me
 title: 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:32+08:00
+scraped_at: 2026-09-24T06:49:46+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:813a26be0e0c6dc9aaf61e12ba669248b02a30cc05da64120bf56fe36829c438
+content_hash: sha256:2bede5fd1aefd92357f5a3d6d92bac01b7e44de92a8b95b4fa27e0b8da292346
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:813a26be0e0c6dc9aaf61e12ba669248b02a30cc05da64120bf56fe3682
 
 浏览器扩展通过[WebExtensions runtime API](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/API/runtime)连接WebNativeMessagingExtensionAbility，双方通信是通过共享pipe文件描述符后调用IO接口实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/IUezuQjvQk-Sxpi5Jljt-w/zh-cn_image_0000002733274484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/OUdYa2aYRSadggl57pYL5w/zh-cn_image_0000002739891066.png)
 
 **说明** 
 
@@ -44,7 +44,7 @@ NativeMessaging面向两类开发者：应用开发者和浏览器应用开发�
 
 ### 整体流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/SnZkQvzbTjaALx-T1vgE8w/zh-cn_image_0000002733434366.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/nEd-otSmTH6PxyE7yurciw/zh-cn_image_0000002739731188.png)
 
 * **流程：**
 

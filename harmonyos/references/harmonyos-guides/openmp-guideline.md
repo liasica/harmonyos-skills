@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/openmp-guidel
 title: OpenMP应用构建和运行指南
 breadcrumb: 指南 > NDK开发 > 代码开发 > OpenMP支持 > OpenMP应用构建和运行指南
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:19:19+08:00
+scraped_at: 2026-09-24T06:51:17+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:832e7953b82737b5642de24b287fab1ba081490d087ace198883fdc3008180d9
+content_hash: sha256:2ba6f77cdf4c3309b72cf79f9861e72608fbb030ccce17a8a5e15fa8842329d8
 ---
 
 HarmonyOS NDK中提供了OpenMP的动态库和静态库文件，支持开发者在Native应用中使用OpenMP。本文用于指导开发者在[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)中调用库文件使用OpenMP的并行化能力，更详细的使用示例和API标准请查看官方文档[clang-OpenMPSupport](https://clang.llvm.org/docs/OpenMPSupport.html)。
@@ -155,10 +155,10 @@ struct Index {
 
 运行前请检查设备连接并配置好[Signature](../harmonyos-guides-V5/ide-signing-V5.md)信息。直接点击右上角运行按钮，应用启动后设备进入“Hello OpenMP”界面，点击“Hello OpenMP”标签，打开DevEco Studio下方“Log”查看页面，即可看到并行打印的“Hello OpenMP！”消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/c-fKSW86Rpy90eKQtNTjjw/zh-cn_image_0000002762995273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/alK4ZB4PRv6mxKGPqlHu1w/zh-cn_image_0000002769331899.png)
 
 **注意** 
 
 OpenMP程序运行时，HiLog中会输出“dlopen\_impl load library header failed for libarcher.so”的报错信息（如下图）。该报错信息中提到的libarcher.so，在OpenMP程序开启Tsan检测时才需要使用。目前HarmonyOS未支持OpenMP程序的Tsan检测能力，因此该错误信息可忽略，不影响程序正常运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/H-g13MR7RBKDS1oWYWC_BQ/zh-cn_image_0000002762835387.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/_bmLLlsJRXu48R18kducpQ/zh-cn_image_0000002769451761.png)

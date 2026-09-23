@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/c-api-compa
 title: CAPI兼容性保护高阶用法
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > CAPI兼容性保护高阶用法
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:59:08+08:00
-doc_updated_at: 2026-08-21
-content_hash: sha256:8d83518d5be4092bb5bc5e992b364df1dc2559643c92beaa6c6d436e0e513930
+scraped_at: 2026-09-24T06:49:20+08:00
+doc_updated_at: 2026-09-23
+content_hash: sha256:5166c816ad8f9ba3aa02b24cba9a3184281000b79373daf3fd0af7e1d9619d09
 ---
 
 ## 背景知识
@@ -55,11 +55,11 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
   + 针对OpenHarmony工程，"compatibleSdkVersion"：N，"-DOHOS\_COMPATIBLE\_SDK\_VERSION=N.0.0"。
   + 示例：工程级build-profile.json5文件中的compatibleSdkVersion配置的版本号为6.0.2(22)，
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/qFIr9yYzTdmCIY1behhzvA/zh-cn_image_0000002618778533.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/vyfDrr1IRZ6LfnfIshiAqg/zh-cn_image_0000002618778533.png)
 
 模块级build-profile.json5配置文件中增加编译参数 "arguments": "-DOHOS\_COMPATIBLE\_SDK\_VERSION=22.0.0"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/rr9R_l7IR2uAgKN93jS3CA/zh-cn_image_0000002588498776.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/2dTzV9mtQdGSPGsUX3TIoA/zh-cn_image_0000002588498776.png)
 
 * **当DevEco Studio版本是 6.1.0.830(API 23 Release) 时，默认自动开启弱引用（必须按照步骤完成步骤1-步骤5，特别是增加使用的API的依赖库步骤，否则存在风险）：**
 
@@ -79,7 +79,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
 在代码中使用了OH\_PictureInPicture\_SetPipInitialSurfaceRect()函数，需要把此函数依赖的库文件 libnative\_window\_manager.so 加到链接库中，需要在模块级CMakelists.txt配置文件中增加 **libnative\_window\_manager.so** 链接库依赖，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/szS9VgHHSYqhoun9Q2sU9Q/zh-cn_image_0000002618898433.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/9tXgSg3mSeW3auTKn1HwIg/zh-cn_image_0000002618898433.png "点击放大")
 
 **步骤3** 配置弱库依赖库（**依赖库在低版本设备上不存在，且设备版本低于API 22不支持此功能**）
 
@@ -93,7 +93,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
 在代码中使用了OH\_i18n\_GetFirstStartFromTimeArrayTimeZoneRule()函数，此函数是在全新新增的动态库 libohi18n.so 中，需要在模块级CMakelists.txt配置文件中增加链接选项 "-Wl,--ohos-weak-library=libohi18n.so", 同时在target\_link\_libraries中也需要增加libohi18n.so依赖，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/2ed1fhEWRJqKiUta7YtHPg/zh-cn_image_0000002588338896.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/XI8qMOhkQ4CVC056rt-9dw/zh-cn_image_0000002588338896.png "点击放大")
 
 **步骤4** 兼容性保护
 
@@ -188,7 +188,7 @@ APIAVAILABLE宏是对编译器内置函数 \_\_builtin\_available 的简单封�
 
   编译报错场景1：代码中使用了高版本API，没有使用 APIAVAILABLE进行保护，报错如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ydJo8KhWRt-_dGwptb5V0Q/zh-cn_image_0000002618778573.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Rd1UTI34RVGZv-zXcwHc3A/zh-cn_image_0000002618778573.png "点击放大")
 
   需要调整代码如下：
 
@@ -204,7 +204,7 @@ APIAVAILABLE宏是对编译器内置函数 \_\_builtin\_available 的简单封�
 
   编译报错场景2：代码中使用了高版本API，没有正确使用 APIAVAILABLE进行保护，报错如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/3AK5MvuURaudhR8KdBeJCw/zh-cn_image_0000002588498818.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/zkZCom5-QnuAgvEn1O25_Q/zh-cn_image_0000002588498818.png "点击放大")
 
   需要调整代码如下（OH\_PictureInPicture\_SetPipInitialSurfaceRect 是 API 20新增的函数）：
 
@@ -251,7 +251,7 @@ APIAVAILABLE宏是对编译器内置函数 \_\_builtin\_available 的简单封�
 
 具体传递过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/qbNnikY9RlKtNM5Mcvdoew/zh-cn_image_0000002618898475.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/OWQbHbT0TLSIiOON20RWSw/zh-cn_image_0000002618898475.png)
 
 **步骤2** 配置弱引用依赖库（依赖库在低版本设备上存在）
 
