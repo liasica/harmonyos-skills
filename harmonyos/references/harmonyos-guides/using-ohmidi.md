@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohmidi
 title: 使用OH_MIDI进行MIDI开发(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > MIDI设备通信 > 使用OH_MIDI进行MIDI开发(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:19+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:74ed0e4c7f5536f91c50ea76406ae67c381c32477488137045000ea6121b9bc7
+scraped_at: 2026-09-25T07:07:20+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:2d1bfbd1fa79da183c7e00e631389b255d20bb6559cdb9f04fb2c19a4241dbef
 ---
 
 ## 场景介绍
@@ -28,7 +28,7 @@ OH\_MIDI是系统提供的Native MIDI API，从API version 24开始用于在C/C+
 
 ## 系统能力检查
 
-使用MIDI进行开发前，先调用接口[canIUse](../harmonyos-references/syscap__ndk_8h.md#caniuse)判断当前设备是否支持MIDI能力。当canIUse("SystemCapability.Multimedia.Audio.MIDI")返回值为true时，表示可以使用MIDI能力。
+使用MIDI进行开发前，先调用接口[canIUse](../harmonyos-references/syscap-ndk-8h.md#caniuse)判断当前设备是否支持MIDI能力。当canIUse("SystemCapability.Multimedia.Audio.MIDI")返回值为true时，表示可以使用MIDI能力。
 
 ## 接口说明
 

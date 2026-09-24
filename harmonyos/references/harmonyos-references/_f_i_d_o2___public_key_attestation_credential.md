@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2
 title: FIDO2_PublicKeyAttestationCredential
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > C API > 结构体 > FIDO2_PublicKeyAttestationCredential
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:432e5210679fbcc8055dd0c41d936ae40c7323fa09462a9d818824794a1b9eff
+scraped_at: 2026-09-25T07:11:32+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:5871e917d4448848ca0f8eba2ae087336308074a38a32fc57d8321aab4434c66
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:432e5210679fbcc8055dd0c41d936ae40c7323fa09462a9d818824794a1
 | [FIDO2\_AuthenticatorAttestationResponse](_f_i_d_o2___authenticator_attestation_response.md) [response](_f_i_d_o2___public_key_attestation_credential.md#response) | 认证器证明响应。 |
 | [FIDO2\_AuthenticatorAttachment](passkey.md#fido2_authenticatorattachment-1) [authenticatorAttachment](_f_i_d_o2___public_key_attestation_credential.md#authenticatorattachment) | 认证器信息（FIDO2\_PLATFORM表示平台，FIDO2\_CROSS\_PLATFORM表示漫游）。默认值为FIDO2\_PLATFORM。可选。 |
 | const char \* [id](_f_i_d_o2___public_key_attestation_credential.md#id) | 凭据的标识符。对于每种类型的凭据，标识符的要求都是不同的。 |
-| const char \* [type](_f_i_d_o2___public_key_attestation_credential.md#type) | 此属性返回接口对象中指定凭据类型的插槽，它指定此对象所代表的凭据类型。 |
+| const char \* [type](_f_i_d_o2___public_key_attestation_credential.md#type) | 该属性以JSON字符串形式返回接口对象中用于指定凭据类型的插槽，该插槽用于指定此对象所表示的凭据类型。 |
 | [AuthenticationExtensionsClientOutputs](_authentication_extensions_client_outputs.md) [clientExtensionResults](_f_i_d_o2___public_key_attestation_credential.md#clientextensionresults) | 客户端扩展结果。当前版本不支持扩展，因此占位符始终为NULL，必须将clientExtensionResults键对应的值解析为{}。 |
 
 ## 结构体成员变量说明
@@ -91,4 +91,4 @@ const char* FIDO2_PublicKeyAttestationCredential::type
 
 **描述**
 
-此属性返回接口对象中指定凭据类型的插槽，它指定此对象所代表的凭据类型。
+该属性以JSON字符串形式返回接口对象中用于指定凭据类型的插槽，该插槽用于指定此对象所表示的凭据类型。

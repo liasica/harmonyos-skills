@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attest
 title: 创建密钥确立可信凭证
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 创建密钥确立可信凭证
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:01+08:00
+scraped_at: 2026-09-25T07:06:57+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:6bb45d4627ba0bda8648c80fa60e0ed5a7ae53998763ebfaf3082124bf5b893e
+content_hash: sha256:02e1ef4da9fb44331fe4cdbd57a76eeaa699fe3ed5249fc8adefec237785a727
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:6bb45d4627ba0bda8648c80fa60e0ed5a7ae53998763ebfaf3082124bf5
 
 **图1** 创建密钥确立可信凭证流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/U9EbwhuZRY2ROAgf9VbEFw/zh-cn_image_0000002769330757.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Ajtv3D26Sc-0AwDNmUdWPQ/zh-cn_image_0000002743219316.png)
 
 ### 创建密钥确立可信凭证流程
 

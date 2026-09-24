@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usb-serial-dd
 title: 开发适用串口协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用串口协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:10+08:00
+scraped_at: 2026-09-25T07:07:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2c46d9d8b36cd93ce0f3eabaed7b96adcdd7cf2e20ce8c53d99e904af4bb750f
+content_hash: sha256:3111ceb375020ecd250aa9288ce8323c23f4ca58356e64702b594d22b2b50c18
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ content_hash: sha256:2c46d9d8b36cd93ce0f3eabaed7b96adcdd7cf2e20ce8c53d99e904af4b
 
 **图1** USBSerialDDK调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/LCHrTaJgTPCy76oEOqa9PQ/zh-cn_image_0000002739891372.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/sLHappwaRJixWudWCSO26g/zh-cn_image_0000002772898537.png)
 
 ### 约束与限制
 

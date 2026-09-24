@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/interceptor-g
 title: 事件拦截开发指导（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 事件拦截开发指导（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:04+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:1d99228c589bba943aee0dd94a34a446e8862a169fc6dc6a4972857d2ba2d3dc
+scraped_at: 2026-09-25T07:07:06+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:84fd4f49bd0c05b6180a3578af096ef656972ed9879daa33de37b56500b3d454
 ---
 
 ## 功能介绍
@@ -14,14 +14,14 @@ content_hash: sha256:1d99228c589bba943aee0dd94a34a446e8862a169fc6dc6a4972857d2ba
 
 ## 接口说明
 
-创建和删除事件拦截相关接口如下表所示，接口详细介绍请参考[input](../harmonyos-references/capi-input.md)。
+创建和删除事件拦截相关接口如下表所示，接口详细介绍请参考[oh\_input\_manager.h](../harmonyos-references/capi-oh-input-manager-h.md)。
 
 | 接口名称 | 描述 |
 | --- | --- |
-| Input\_Result OH\_Input\_AddKeyEventInterceptor(Input\_KeyEventCallback callback, Input\_InterceptorOptions \*option) | 创建按键事件拦截。 |
-| Input\_Result OH\_Input\_AddInputEventInterceptor(Input\_InterceptorEventCallback \*callback, Input\_InterceptorOptions \*option) | 创建输入事件拦截，包含鼠标、触摸和轴事件。 |
-| Input\_Result OH\_Input\_RemoveKeyEventInterceptor() | 删除按键事件拦截。 |
-| Input\_Result OH\_Input\_RemoveInputEventInterceptor() | 删除输入事件拦截，包含鼠标、触摸和轴事件。 |
+| Input\_Result OH\_Input\_AddKeyEventInterceptor(Input\_KeyEventCallback callback, Input\_InterceptorOptions \*option) | 添加按键事件的拦截。 |
+| Input\_Result OH\_Input\_AddInputEventInterceptor(Input\_InterceptorEventCallback \*callback, Input\_InterceptorOptions \*option) | 添加输入事件拦截，包括鼠标、触屏和轴事件。 |
+| Input\_Result OH\_Input\_RemoveKeyEventInterceptor(void) | 移除按键事件拦截。 |
+| Input\_Result OH\_Input\_RemoveInputEventInterceptor(void) | 移除输入事件拦截，包括鼠标、触屏和轴事件。 |
 
 ## 开发步骤
 

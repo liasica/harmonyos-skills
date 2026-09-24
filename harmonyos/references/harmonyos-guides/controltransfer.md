@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/controltransf
 title: USB控制传输
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB控制传输
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9258f039367b99c6ad6f45a9a79b089366b12e423d64d442fd517e735a5d0c64
+scraped_at: 2026-09-25T07:07:05+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:688e15ae0869a7d415ad58015ab411bb28a0629990a73591f5255777c9581808
 ---
 
 ## 场景介绍
@@ -167,6 +167,11 @@ content_hash: sha256:9258f039367b99c6ad6f45a9a79b089366b12e423d64d442fd517e735a5
      }
      // 打开设备，获取数据传输通道。
      let pipe: usbManager.USBDevicePipe = usbManager.connectDevice(deviceList[0]);
+     if (!pipe) {
+       console.error('connectDevice failed, pipe is undefined');
+       this.logInfo_ += '\n[ERROR] connectDevice failed, pipe is undefined';
+       return;
+     }
      if (!deviceList?.[0]?.configs?.[0]?.interfaces?.[0]) {
        console.error('invalid interface');
        this.logInfo_ += '\n[ERROR] invalid interface';

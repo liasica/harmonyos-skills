@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_Rect
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_Rect
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3caaa747b47b4b6b78800f0aa4af00ea1816564c5cd7a434f99641be9dbaf72c
+scraped_at: 2026-09-25T07:10:48+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:40cafee843b9a28b72ac7b7ef79771aea7e5644ee0f364ffaa134fffee3268e4
 ---
 
 ```c
@@ -20,7 +20,7 @@ typedef struct {...} ArkUI_Rect
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [native\_type.h](capi-native-type-h.md)
+**所在头文件：** [common\_type.h](capi-common-type-h.md)
 
 ## 汇总
 

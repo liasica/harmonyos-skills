@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 焦点事件
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8ec4e794044bfa71fdaa44670ed274e9b78adaea738e42e7f8d95a2fb3e37a0e
+scraped_at: 2026-09-25T07:09:47+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:aaf74521c644a3d5f7d4e58d30131d7f1c40397b5fc0b0985d11be67326d7d69
 ---
 
 焦点事件指页面焦点在可获焦组件间移动时触发的事件，组件可使用焦点事件来处理相关逻辑。
@@ -83,6 +83,7 @@ struct FocusEventExample {
         .width(260)
         .height(70)
         .fontColor(Color.Black)
+        .focusOnTouch(true)
         .onFocus(() => {
           this.oneButtonColor = '#FFFFFF';
         })
@@ -94,6 +95,7 @@ struct FocusEventExample {
         .width(260)
         .height(70)
         .fontColor(Color.Black)
+        .focusOnTouch(true)
         .onFocus(() => {
           this.twoButtonColor = '#FFFFFF';
         })
@@ -105,6 +107,7 @@ struct FocusEventExample {
         .width(260)
         .height(70)
         .fontColor(Color.Black)
+        .focusOnTouch(true)
         .onFocus(() => {
           this.threeButtonColor = '#FFFFFF';
         })
@@ -116,4 +119,4 @@ struct FocusEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/9LOnoouUSGSAvsOBZTSIIA/zh-cn_image_0000002739892568.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/TNX97qDiSo2bxqCyO1ksgA/zh-cn_image_0000002772899733.png)

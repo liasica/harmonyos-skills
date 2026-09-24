@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:51e66f091d837789a08bc2ae2d64eb83491d5ae23cdfdf15542805d7e945b36b
+scraped_at: 2026-09-25T07:13:10+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:18a8fdb7929a2fe049b915dc1888b9d97f3722ba3b05e495147c2847f3b72258
 ---
 
 Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式、透明度类型、图片元数据、图片属性信息（Exif及各格式图片属性）、辅助图类型、缩放模式、裁剪与缩放策略、动态范围、HDR元数据、内存分配、插值算法、图片方向、焦点模式、颜色模式、XMP标签类型等，用于在图片编解码、处理和显示场景中指定各类配置参数。
@@ -602,9 +602,9 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | YUV\_Y | 1 | 亮度信息。 |
-| YUV\_U | 2 | 色度信息。 |
-| YUV\_V | 3 | 色度信息。 |
-| JPEG | 4 | JPEG 类型。 |
+| YUV\_U | 2 | 蓝色色度分量信息。 |
+| YUV\_V | 3 | 红色色度分量信息。 |
+| JPEG | 4 | JPEG类型。 |
 
 ## DecodingDynamicRange12+
 

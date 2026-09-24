@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.wifiManager (WLAN)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.wifiManager (WLAN)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:38+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:c75b0721e4f70252a8e30ebe66e3d86aba8cda45e3e4d4934b428345f12a73e6
+scraped_at: 2026-09-25T07:11:42+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:105c04c28529fb4327c3645a8d426a2e0413a4f73f2db805820c74b92275c6da
 ---
 
 该模块主要提供Wi-Fi基础功能（无线接入、无线加密、无线漫游等）、P2P（peer-to-peer）服务的基础功能和Wi-Fi消息通知的相应服务，让应用可以通过Wi-Fi和其他设备互联互通。
@@ -608,7 +608,7 @@ WAPI(Wireless LAN Authentication and Privacy Infrastructure) 身份验证协议�
 
 ## WifiCapability
 
-Wi-Fi功能。
+Wi-Fi支持的能力。
 
 **起始版本：** 26.0.0
 
@@ -2510,7 +2510,7 @@ p2pConnect(config: WifiP2PConfig): void
 
 执行P2P连接。调用此方法后，如需取消连接可调用[p2pCancelConnect](js-apis-wifimanager.md#wifimanagerp2pcancelconnect)。
 
-当WifiP2PConfig中deviceAddressType为0（真实MAC地址）时，若设备MAC地址通过[wifiManager.on('p2pPeerDeviceChange')](js-apis-wifimanager.md#wifimanageronp2ppeerdevicechange)获取，需具备ohos.permission.GET\_WIFI\_PEERS\_MAC权限。
+当WifiP2PConfig中deviceAddressType为1（真实MAC地址）时，若设备MAC地址通过[wifiManager.on('p2pPeerDeviceChange')](js-apis-wifimanager.md#wifimanageronp2ppeerdevicechange)获取，需具备ohos.permission.GET\_WIFI\_PEERS\_MAC权限。
 
 从API版本26.0.0开始，支持通过WifiP2PConfig传入passphrase和groupName进行密钥连接，此时需将deviceAddress参数设置为"00:00:00:00:00:00"。
 

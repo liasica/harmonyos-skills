@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-re
 title: 活动/景点门票接口
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > REST API > 活动/景点门票接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1af7d420e94a82d718cc22b301e5f4a28de7a6d2a85653dd96cc201191bc5ffb
+scraped_at: 2026-09-25T07:14:34+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:2cdf92d56eec9226b757cf1cb44d781bbbd6149e65376adf6c26656b4f173353
 ---
 
 ## 预置模板
@@ -117,7 +117,7 @@ Accept: application/json;charset=UTF-8
 ```java
 public HwWalletObject invokeHwCreateKeyTicketClass(){
     HwWalletObject request=new HwWalletObject();
-    request.setPassVersion("1.0");
+    request.setPassVersion("10.0");
     request.setPassTypeIdentifier("hwpass.keyticket.test");
     request.setPassStyleIdentifier("keyTicketModelTest");
     request.setOrganizationName("XXXX");

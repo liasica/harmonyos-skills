@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建轮播 (Swiper)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 创建轮播 (Swiper)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:36+08:00
+scraped_at: 2026-09-25T07:06:28+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:736c20ea98f7d17700fd732b3d8849b129b530375934562f08ca4507f8cfa660
+content_hash: sha256:a94f5b014553831c1625fdd875edd6e6fb707ee0a40c310bd3062506ef6c72b0
 ---
 
 [Swiper](../harmonyos-references/ts-container-swiper.md)组件提供滑动轮播显示的能力。Swiper本身是一个容器组件，当设置了多个子组件后，可以对这些子组件进行轮播显示。通常，在一些应用首页显示推荐的内容时，需要用到轮播显示的能力。
@@ -51,7 +51,7 @@ Swiper() {
 .loop(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/s38ZjkcpTpCRPQznvm34qg/zh-cn_image_0000002769449925.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/vxBDkWlUQ0ayclHj9hbZ9w/zh-cn_image_0000002772737875.gif)
 
 * loop为false
 
@@ -63,7 +63,7 @@ Swiper() {
   .loop(false)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/15lFjPAqQs-qNz_XIPFNiw/zh-cn_image_0000002739890594.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/tvLT6lqvTbGwxr6UYncidQ/zh-cn_image_0000002772897759.gif)
 
 ## 自动轮播
 
@@ -81,7 +81,7 @@ autoPlay为true时，会自动切换播放子组件，子组件与子组件之�
   .interval(1000)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/iT0zJPZRRzCMseuGYz1DVw/zh-cn_image_0000002739730716.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/pO3Qt884R8mEmcWmpvYqgw/zh-cn_image_0000002743378510.gif)
 
 ## 导航点样式
 
@@ -116,7 +116,7 @@ Swiper() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/k1Q7rlVNQECMdEmXDLJ_LA/zh-cn_image_0000002769330065.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/OXhK5YAQStSaGOjVI2YdMA/zh-cn_image_0000002743218624.png)
 
 * 自定义导航点样式
 
@@ -139,7 +139,7 @@ Swiper() {
   )
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/XCnxbZnqRWCtwRDr7WsHcQ/zh-cn_image_0000002769449927.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/K8eoEmx_SH-2ycYMjfaAwQ/zh-cn_image_0000002772737877.png)
 
 Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#displayarrow10)属性，可以控制导航点箭头的大小、位置、颜色，底板的大小及颜色，以及鼠标悬停时是否显示箭头。
 
@@ -153,7 +153,7 @@ Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#
   .displayArrow(true, false)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/BF4zf6ZnTA6Ts21hYNlUPg/zh-cn_image_0000002739890596.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/aeqFwu6ZTp-Pc9UCxV6n6g/zh-cn_image_0000002772897761.gif)
 
 * 自定义箭头样式
 
@@ -174,7 +174,7 @@ Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#
   }, false)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/5zHd-aC7Sk-JRZXkCieqMw/zh-cn_image_0000002739730718.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/IzbBgUYGQXmSiiAf9b1wgg/zh-cn_image_0000002743378512.gif)
 
 ## 页面切换方式
 
@@ -267,7 +267,7 @@ export struct SwiperPageSwitchMethod {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/VfNRWqB3Qx6hONhPeYLmrQ/zh-cn_image_0000002769330067.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/V66j5NZ5StqaY3n_naAimQ/zh-cn_image_0000002743218626.gif)
 
 ## 轮播方向
 
@@ -288,7 +288,7 @@ Swiper(
 .vertical(false)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/z3jbCZBqTSi3WiCCkGftqQ/zh-cn_image_0000002769449929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/KbR5_dtDRNmyx8vpRi7d_g/zh-cn_image_0000002772737879.png)
 
 * 设置垂直方向轮播。
 
@@ -303,7 +303,7 @@ Swiper(
 .vertical(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/iTuqxNclRTaQSWkbPksQQQ/zh-cn_image_0000002739890598.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/bVLdwB38TP21nl7MUec2Dw/zh-cn_image_0000002772897763.png)
 
 ## 每页显示多个子页面
 
@@ -341,7 +341,7 @@ Swiper() {
 .displayCount(2)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/QCoffCkCQ5iXvYE15ALUZw/zh-cn_image_0000002739730720.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/fpab-tTaR3q52gGta1caoQ/zh-cn_image_0000002743378514.png)
 
 ## 自定义切换动画
 
@@ -427,7 +427,7 @@ export struct SwiperCustomAnimation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/RpT3E2ObSKeWMbf77uy9jQ/zh-cn_image_0000002769330069.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/lL1xM0YATLKz7HnXX8p8mA/zh-cn_image_0000002743218628.gif)
 
 ## Swiper与Tabs联动
 
@@ -539,7 +539,7 @@ export struct SwiperAndTabsLinkage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/O0pqJEtoTzW5-dZGE67dmQ/zh-cn_image_0000002769449931.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/2FRs32SGRkKYmKD0PzNsUQ/zh-cn_image_0000002772737881.gif)
 
 ## 设置圆点导航点间距
 
@@ -694,7 +694,7 @@ export struct SwiperIgnoreComponentSize {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/8iwvnxscRiKrgireRrEPDA/zh-cn_image_0000002739890600.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/stOUNfR4S_aR9CmPgUwTRg/zh-cn_image_0000002772897765.gif)
 
 ## 保持可见内容位置不变
 
@@ -797,7 +797,7 @@ export struct SwiperVisibleContentPosition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/5uLWK-gPR9afmWopwE1FQw/zh-cn_image_0000002739730722.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/hHLQDTyrQKKhCVdree7lKg/zh-cn_image_0000002743378516.gif)
 
 ## 示例代码
 

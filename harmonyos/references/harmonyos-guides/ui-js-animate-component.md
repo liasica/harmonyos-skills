@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 组件动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > JS动画 > 组件动画
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:42+08:00
+scraped_at: 2026-09-25T07:06:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:73c99af732140914de9c92ceec4c76240de51aae1a4d16059ec563b8536a0a28
+content_hash: sha256:a2b5d30ba6144bf22f02b79eaa663c6f9321b66fdbc09a4b27350a48475ef0d6
 ---
 
 在组件上创建和运行动画的快捷方式。具体用法请参考[通用方法](../harmonyos-references/js-components-common-methods.md)。
@@ -65,7 +65,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ojkYfBQyRBmQR6cpYImyHA/zh-cn_image_0000002769330417.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/87t7476LQymY-AvEK3WF3g/zh-cn_image_0000002743218976.gif)
 
 **说明** 
 
@@ -144,7 +144,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/geOT9laTQvq09hVuWj7WJg/zh-cn_image_0000002769450279.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/ZTIfTrDCTpy6kkZTdzVKHA/zh-cn_image_0000002772738229.gif)
 
 **说明** 
 
@@ -212,7 +212,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/8c6DVV42SS-d5r0sSpDPKw/zh-cn_image_0000002739890948.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/kRMBHFf5TXOtyWvzwhr6Mg/zh-cn_image_0000002772898113.gif)
 
 **说明** 
 

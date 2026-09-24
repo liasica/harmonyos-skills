@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avsc
 title: OH_VideoCaptureInfo
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_VideoCaptureInfo
 category: harmonyos-references
-scraped_at: 2026-09-05T06:20:25+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:4d220d2e1f1d264196a06969c848c752c749eae0d0d3c2eff94b386c263507cc
+scraped_at: 2026-09-25T07:13:24+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:c7dd1868973829f46cc11c3a885c20081f0da3ee7e1b6411d7266a1b16a5bfd7
 ---
 
 ```c
@@ -14,7 +14,7 @@ typedef struct OH_VideoCaptureInfo {...} OH_VideoCaptureInfo
 
 ## 概述
 
-视频采集配置信息。用于配置屏幕录制时的视频参数。该结构体需要配合captureMode使用：在CAPTURE\_SPECIFIED\_SCREEN模式下需设置displayId指定物理屏；在CAPTURE\_SPECIFIED\_WINDOW模式下需设置missionIDs指定窗口。适用于屏幕录制应用、视频会议录制、直播推流、游戏录制等场景。当videoFrameWidth和videoFrameHeight同时为0时，系统将忽略视频采集相关配置参数，不录制屏幕视频数据。通过该结构体可以灵活控制录屏的视频采集行为。
+视频采集配置信息。用于配置屏幕录制时的视频参数。该结构体需要配合captureMode使用：在OH\_CAPTURE\_SPECIFIED\_SCREEN模式下需设置displayId指定物理屏；在OH\_CAPTURE\_SPECIFIED\_WINDOW模式下需设置missionIDs指定窗口。适用于屏幕录制应用、视频会议录制、直播推流、游戏录制等场景。当videoFrameWidth和videoFrameHeight同时为0时，系统将忽略视频采集相关配置参数，不录制屏幕视频数据。通过该结构体可以灵活控制录屏的视频采集行为。
 
 **起始版本：** 10
 
@@ -28,9 +28,9 @@ typedef struct OH_VideoCaptureInfo {...} OH_VideoCaptureInfo
 
 | 名称 | 描述 |
 | --- | --- |
-| uint64\_t displayId | 采集物理屏ID，设置后录制指定物理屏幕的内容。使用该参数需要在captureMode为CAPTURE\_SPECIFIED\_SCREEN模式下使用，其他模式下此参数不生效。可通过系统显示管理接口获取有效的displayId值。取值范围大于等于0。传入无效ID时录制失败。 |
-| int32\_t \*missionIDs | 指定窗口ID数组，设置后录制指定窗口内容。适用于仅录制特定应用窗口内容的场景，如录制单个应用操作演示、避免录制桌面背景和隐私信息等。使用该参数需要在captureMode为CAPTURE\_SPECIFIED\_WINDOW模式下使用，其他模式下此参数不生效。可通过窗口接口[getWindowProperties](arkts-apis-window-window.md#getwindowproperties9)获取有效的missionID值。列表长度需与missionIDsLen匹配，ID取值为整数。传入无效ID时录制失败。 |
-| int32\_t missionIDsLen | 指定窗口ID数组的长度，使用该参数需要在captureMode为CAPTURE\_SPECIFIED\_WINDOW模式下使用，其他模式下此参数不生效。取值需大于0，且与missionIDs列表实际长度一致。 |
+| uint64\_t displayId | 采集物理屏ID，设置后录制指定物理屏幕的内容。使用该参数需要在captureMode为OH\_CAPTURE\_SPECIFIED\_SCREEN模式下使用，其他模式下此参数不生效。可通过系统显示管理接口获取有效的displayId值。取值范围大于等于0。传入无效ID时录制失败。 |
+| int32\_t \*missionIDs | 指定窗口ID数组，设置后录制指定窗口内容。适用于仅录制特定应用窗口内容的场景，如录制单个应用操作演示、避免录制桌面背景和隐私信息等。使用该参数需要在captureMode为OH\_CAPTURE\_SPECIFIED\_WINDOW模式下使用，其他模式下此参数不生效。可通过窗口接口[getWindowProperties](arkts-apis-window-window.md#getwindowproperties9)获取有效的missionID值。列表长度需与missionIDsLen匹配，ID取值为整数。传入无效ID时录制失败。 |
+| int32\_t missionIDsLen | 指定窗口ID数组的长度，使用该参数需要在captureMode为OH\_CAPTURE\_SPECIFIED\_WINDOW模式下使用，其他模式下此参数不生效。取值需大于0，且与missionIDs列表实际长度一致。 |
 | int32\_t videoFrameWidth | 采集视频的宽度设置，单位为像素（px）。取值范围需大于等于0。传入负数或超出设备支持分辨率时，屏幕录制将失败。当videoFrameWidth与videoFrameHeight同时为0时，系统将忽略视频采集相关配置参数，不录制屏幕视频数据。 |
 | int32\_t videoFrameHeight | 采集视频的高度设置，单位为像素（px）。取值范围需大于等于0。传入负数或超出设备支持分辨率时，屏幕录制将失败。当videoFrameWidth与videoFrameHeight同时为0时，系统将忽略视频采集相关配置参数，不录制屏幕视频数据。 |
 | [OH\_VideoSourceType](capi-native-avscreen-capture-base-h.md#oh_videosourcetype) videoSource | 视频采集格式设置，目前仅支持RGBA格式。不设置时默认使用RGBA格式。RGBA格式适用于需要获取原始像素数据进一步处理的场景，详情请参考[OH\_VideoSourceType](capi-native-avscreen-capture-base-h.md#oh_videosourcetype)。设置其他格式时不支持该采集行为。当videoFrameWidth和videoFrameHeight同时为0时，此参数不生效。 |

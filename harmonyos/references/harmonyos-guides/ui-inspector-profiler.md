@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-inspector-
 title: UI调优
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI调优
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:43+08:00
+scraped_at: 2026-09-25T07:06:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:613ee3256a0ca666f329875df871a578481891bf8e2a63dde25ff2b87bdf5867
+content_hash: sha256:ef7cb0eef58a5fa90cc0ed4f57037d217d956b41d9a3892d164a803b2ff46ab4
 ---
 
 本章节主要介绍UI的dump和调优能力，用于提高开发效率和优化开发者体验。
@@ -226,13 +226,13 @@ DevEco Studio的Profiler工具可抓取状态变量的变化打点。在Profiler
 
 **图1** 录制ArkUI State泳道流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/p_mhEIRjTTy53kO_Udn-bw/zh-cn_image_0000002739731082.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/bkqSXi6kTPuJu3LywallGw/zh-cn_image_0000002743378876.gif)
 
 步骤3：选中状态变量变化的打点，将显示当前状态变量更新触发了哪些组件的刷新，以及对应组件的创建、测量和布局的耗时。
 
 **图2** ArkUI State泳道图示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/DpoZTCs6Q_Cdp39I5RMVPA/zh-cn_image_0000002769330431.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/SnIHB_CpRvW1ojbI89vDgg/zh-cn_image_0000002743218990.png)
 
 **说明** 
 
@@ -255,7 +255,7 @@ DevEco Studio的ArkUI Inspector可以显示当前页面自定义组件内的状�
 
 **图3** ArkUI Inspector显示状态变量相关信息
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/kOPpeoCdS1qkUStul3K3Rg/zh-cn_image_0000002769450293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/P27IdBNeRSmewqbrZUWeRg/zh-cn_image_0000002772738243.png)
 
 **说明** 
 

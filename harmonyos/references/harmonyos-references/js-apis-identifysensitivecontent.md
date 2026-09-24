@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.security.identifySensitiveContent (识别敏感内容)"
 breadcrumb: API参考 > 系统 > 安全 > Data Protection Kit（数据保护服务） > ArkTS API > @ohos.security.identifySensitiveContent (识别敏感内容)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7fa4637176e0ccc5ae34d060aa5035b336f34b09f9b35fcb381e0eab442ae395
+scraped_at: 2026-09-25T07:11:26+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:d258dd1ac5ce98d3f654845cca4a769adbb2631b1d429bfeabe8e75b54696bb2
 ---
 
 识别敏感内容通过输入的[Policy](js-apis-identifysensitivecontent.md#policy)来检测指定文件中的敏感信息。系统根据提供的[Policy](js-apis-identifysensitivecontent.md#policy)策略（包括敏感标签、关键字集合和正则表达式），对文件内容进行关键字匹配和正则表达式匹配，返回匹配到的敏感内容结果。
@@ -45,12 +45,12 @@ scanFile(filePath: string, identifyPolicies:Array<Policy>): Promise<Array<MatchR
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[数据泄露防护DLP服务错误码](errorcode-dlp.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[DLP服务错误码](errorcode-dlp.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permission denied. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: The device type does not support the capability. |
 | 19110001 | Parameter error. Possible causes: 1. Incorrect policy format. 2. Invalid parameter range. |
 | 19110002 | Sensitive file content identification timed out. |
 | 19110003 | The file is not supported. Possible causes: 1. The file path does not exist. 2. The file type is not supported. 3. The file permission is not supported. |

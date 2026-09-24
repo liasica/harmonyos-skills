@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/interrupttran
 title: USB中断传输
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB中断传输
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:771014600d217a5cbe92dd15b0c0c8fdefb918a37e711a4ee2a141dc0a3e6ff7
+scraped_at: 2026-09-25T07:07:05+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:825e3e0a7d80e67e0985cf3d6b222ce93fcfd10841bc1e44d09588bac51938d6
 ---
 
 ## 场景介绍
@@ -175,6 +175,11 @@ content_hash: sha256:771014600d217a5cbe92dd15b0c0c8fdefb918a37e711a4ee2a141dc0a3
    let devicePipe: usbManager.USBDevicePipe;
    try {
      devicePipe = usbManager.connectDevice(usbDevice);
+     if (!devicePipe) {
+       console.error('connectDevice failed, pipe is undefined');
+       this.logInfo_ += '\n[ERROR] connectDevice failed, pipe is undefined';
+       return;
+     }
    } catch (error) {
      console.error(`USB connectDevice failed: ${error}`);
      this.logInfo_ += '\n[ERROR] USB connectDevice failed: ' + JSON.stringify(error);
@@ -235,19 +240,21 @@ content_hash: sha256:771014600d217a5cbe92dd15b0c0c8fdefb918a37e711a4ee2a141dc0a3
        type: usbManager.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT,
        timeout: 2000,
        length: 10,
-       callback: () => {
+       callback: (err: BusinessError , callBackData: usbManager.SubmitTransferCallback) => {
+         if (err) {
+           console.error(`transfer error: ${err}`);
+           this.logInfo_ += '\n[ERROR] transfer error: ' + JSON.stringify(err);
+           return;
+         }
+         console.info(`callBackData = ${callBackData}`);
+         this.logInfo_ += '\n[INFO] callBackData = ' + JSON.stringify(callBackData);
+         console.info(`transfer success,result = ${transferParams?.buffer}`);
+         this.logInfo_ += '\n[INFO] transfer success,result = ' + JSON.stringify(transferParams?.buffer);
        },
        userData: new Uint8Array(10),
        buffer: new Uint8Array(10),
        isoPacketCount: 2,
      };
-
-     transferParams.callback = (err: Error, callBackData: usbManager.SubmitTransferCallback) => {
-       console.info(`callBackData = ${callBackData}`);
-       this.logInfo_ += '\n[INFO] callBackData = ' + JSON.stringify(callBackData);
-       console.info(`transfer success,result = ${transferParams?.buffer}`);
-       this.logInfo_ += '\n[INFO] transfer success,result = ' + JSON.stringify(transferParams?.buffer);
-     }
      usbManager.usbSubmitTransfer(transferParams);
      console.info('USB transfer request submitted.');
      this.logInfo_ += '\n[INFO] USB transfer request submitted.';
@@ -261,11 +268,21 @@ content_hash: sha256:771014600d217a5cbe92dd15b0c0c8fdefb918a37e711a4ee2a141dc0a3
    ```typescript
    try {
      usbManager.usbCancelTransfer(transferParams);
+   } catch (error) {
+     console.error(`usbCancelTransfer failed: ${error}`);
+     this.logInfo_ += '\n[ERROR] usbCancelTransfer failed: ' + JSON.stringify(error);
+   }
+   try {
      usbManager.releaseInterface(devicePipe, usbInterface);
+   } catch (error) {
+     console.error(`releaseInterface failed: ${error}`);
+     this.logInfo_ += '\n[ERROR] releaseInterface failed: ' + JSON.stringify(error);
+   }
+   try {
      usbManager.closePipe(devicePipe);
    } catch (error) {
-     console.error(`release failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] release failed: ' + JSON.stringify(error);
+     console.error(`closePipe failed: ${error}`);
+     this.logInfo_ += '\n[ERROR] closePipe failed: ' + JSON.stringify(error);
    }
    ```
 

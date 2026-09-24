@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-axpy
 title: Axpy
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 标量三目指令 > Axpy
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:58+08:00
+scraped_at: 2026-09-25T07:08:06+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:1ea3eba516bfa0984724f675136cf1fe094a19a4656fef8c2d1fefd891abe117
+content_hash: sha256:8e34c689a4b1ae88d7ee8b4e36c07a5f98ba1cbf936e9a90805f0b606911c127
 ---
 
 ## 函数功能
 
 源操作数(srcLocal)中每个元素与标量求积后和目的操作数(dstLocal)中的对应元素相加，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/jMsFhRpiSumVv2hFVcYvOQ/zh-cn_image_0000002739732416.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/CWZ19FQjRUy8DNxnw53mrw/zh-cn_image_0000002743380210.png)
 
 ## 函数原型
 

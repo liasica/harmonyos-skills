@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-proble
 title: 应用程序包常见问题
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:22+08:00
+scraped_at: 2026-09-25T07:06:11+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:713713f0f80225e9145ba2d38e94ec2392be4631e5c44cec9ce9a70677c633bf
+content_hash: sha256:0cd1a0bd6edb43eac474ae0228cd8ecb307eacb6ca53d547a387db36f38b0a65
 ---
 
 ## 如何获取签名信息中的指纹信息
@@ -40,7 +40,7 @@ hdc shell
 bm dump -n com.example.myapplication | grep fingerprint
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/bpQCjBC0SkeCjRqyTb7MHg/zh-cn_image_0000002739730102.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Ux72KdcFQXavXSaPpC4YrQ/zh-cn_image_0000002743377894.png)
 
 * 通过.cer证书文件获取，可以参考[APP备案FAQ](../app/50130.md)中HarmonyOS应用/元服务如何获取公钥和签名信息，指纹信息使用哈希算法SHA-1生成。
 * 通过keytool工具获取，详情参考[生成签名证书指纹](../AppGallery-connect-Guides/appgallerykit-preparation-game-0000001055356911.md#section147011294331)，使用哈希算法SHA-256生成。
@@ -84,7 +84,7 @@ hdc shell
 bm dump -n com.example.myapplication | grep appIdentifier
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/2g52bIfQSMGWUrMxmpHQdA/zh-cn_image_0000002769329451.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/cErjeUw7SBeNnaXc_qs1nw/zh-cn_image_0000002743218010.png)
 
 ## 什么是appId
 
@@ -120,7 +120,7 @@ hdc shell
 bm dump -n ohos.app.hap.myapplication |grep '"appId":'
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/lf4sqWORRj6Ty5RtznObkA/zh-cn_image_0000002769449313.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/LVsmWKQESIaWWsELy2RfJA/zh-cn_image_0000002772737263.png)
 
 ## 应用的uid
 
@@ -138,7 +138,7 @@ hdc shell
 bm dump -n ohos.app.hap.myapplication |grep uid
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/viADdBc1TQS39qAh1EAg-A/zh-cn_image_0000002739889982.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/hW9wKs7aTDSWvUp91YNR9Q/zh-cn_image_0000002772897145.png)
 
 * 可以调用[bundleManager.getBundleInfoForSelf](../harmonyos-references/js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)获取自身的BundleInfo应用包信息，示例代码可以参考[如何获取应用信息中的appId](common-problem-of-application.md#如何获取应用信息中的appid)，取值方式为bundleInfo.appInfo.uid。
 
@@ -150,7 +150,7 @@ HSP模块和HAR模块被调用时，主要的区别在Module2（HSP/HAR）模块
 
    如图所示，编译构建后，HAR模块被打包到各个模块之中，所以其入口模块仍然是HAP模块，napi\_load\_module\_with\_info中第2个参数的模块名称要填HAP模块中oh-package.json5中定义的依赖HAR的名称，而不是HAR模块的实际名称。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/RtRKUln6RV2xDk9nOMOlPA/zh-cn_image_0000002739730104.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/vxKLvzy5Qpad5kwPcpATSQ/zh-cn_image_0000002743377896.png)
 2. 被调用模块Module2是HSP
 
    当被调用模块Module2是HSP，HSP是独立的模块，其入口模块就是HSP本模块，所以napi\_load\_module\_with\_info第2个参数的模块名就是它自己的模块名。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-statest
 title: stateStyles：多态样式
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > stateStyles：多态样式
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:32+08:00
+scraped_at: 2026-09-25T07:06:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:28232c7e79fca7c23e830374f28b86821c1275c0f548fc474558e97ebbd2122b
+content_hash: sha256:3f8d0d06197047c501fe07882ae113f055f36f71cc07f6b3fce4ffc5d7cde03a
 ---
 
 @Styles仅应用于静态页面的样式复用，stateStyles可以依据组件的内部状态的不同，快速设置不同样式。这就是我们本章要介绍的内容stateStyles（又称为：多态样式）。
@@ -74,7 +74,7 @@ struct StateStylesSample {
 
 **图1** 获焦态和按压态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/RIR56Dn5S3umxu7ZxW8Y6Q/zh-cn_image_0000002769449481.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/FemX6hnPTZaSwhSBcZSo7w/zh-cn_image_0000002772737431.gif)
 
 ### @Styles和stateStyles联合使用
 
@@ -107,7 +107,7 @@ struct MyComponent {
 
 **图2** 正常态和按压态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/dgnMhAAtThmOKtVEb4cbSw/zh-cn_image_0000002739890150.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/iiDDdvwvThqKbLFQ0LFNyw/zh-cn_image_0000002772897313.gif)
 
 ### 在stateStyles里使用常规变量和状态变量
 
@@ -146,4 +146,4 @@ Button默认normal态显示蓝色，第一次按下Tab键让Button获焦显示�
 
 **图3** 点击改变获焦态样式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/5gVf2jPCRZGTT5B2e3WSrQ/zh-cn_image_0000002739730272.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/LbSPqUVbRn6-pAjSIxYDEg/zh-cn_image_0000002743378064.gif)

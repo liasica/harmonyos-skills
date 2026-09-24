@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: qrcode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > qrcode
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:42+08:00
+scraped_at: 2026-09-25T07:10:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f21817d17b3f914fee184c0e5cb9d3e6acc7b3b63f92f9bdacb53bd63e0facdb
+content_hash: sha256:244fff6ca2e6a2dbf4444db79736f6c461300e2c9254c41480e55c69c60eeaa7
 ---
 
 **说明** 
@@ -120,4 +120,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/_xLZFMUXQ5WTjG9n2CyctQ/zh-cn_image_0000002739893360.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/-niYDO0qRdScWxKOgsaAbA/zh-cn_image_0000002743221388.gif)

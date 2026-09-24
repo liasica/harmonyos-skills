@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: qrcode开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > qrcode开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:42+08:00
+scraped_at: 2026-09-25T07:06:35+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:efc9eb761e560e447c228f0c80a4b086d8756856c649492cced5faa3018a8aa4
+content_hash: sha256:28423da1b4bf32d7c4e427dce853070eb510e08045915d5c1e6f0b4a155d561a
 ---
 
 生成并显示二维码，具体用法请参考[qrcode](../harmonyos-references/js-components-basic-qrcode.md)。
@@ -33,7 +33,7 @@ content_hash: sha256:efc9eb761e560e447c228f0c80a4b086d8756856c649492cced5faa3018
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/fDE_czIvT462lYUsdVdIiA/zh-cn_image_0000002769450257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/PT3_Lh1KT5WTAYoGL0XgsQ/zh-cn_image_0000002772738207.png)
 
 **说明** 
 
@@ -82,7 +82,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/cJmbBoxxTF6j8U-S48ieqw/zh-cn_image_0000002739890926.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/7OwH8tEgRL2jMjLeLnwXHQ/zh-cn_image_0000002772898091.gif)
 
 ## 设置样式
 
@@ -112,7 +112,7 @@ qrcode{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/RPHWpEKHSVWnc-wYEejr4Q/zh-cn_image_0000002739731048.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/mbmfz2PWQt-JbR2xS1PhWg/zh-cn_image_0000002743378842.png)
 
 **说明** 
 
@@ -159,4 +159,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/OMZPtKz7Qqi7kgchory03A/zh-cn_image_0000002769330397.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/VEc7hz91TU6LOweJNWUaUQ/zh-cn_image_0000002743218956.gif)

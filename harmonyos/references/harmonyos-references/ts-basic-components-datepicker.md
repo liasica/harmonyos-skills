@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:25+08:00
+scraped_at: 2026-09-25T07:10:00+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9f11251a0fc371448ad7f8a190f3b1371a074ba318eeb7c38540a1d42c86e007
+content_hash: sha256:53f5bc03b9d19282602fdc916869946c1e75690dae7f39de64ca87a5ea6f19e3
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/8VYDE7HaQPGNOEw_rIUxKQ/zh-cn_image_0000002769452165.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/FFsjagYYRRGmhulQ78T9Sg/zh-cn_image_0000002772740115.gif)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ME5s8InaRf62Sm139UepKw/zh-cn_image_0000002739892834.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/dgZbzv_mR7-BCx6hfGPniQ/zh-cn_image_0000002772900001.png)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/pa1CbrSyRxutPRnJs99NaQ/zh-cn_image_0000002739732956.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/urDpbtQzRzqSR7FVFxRurA/zh-cn_image_0000002743380750.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Zv3MQeXQTlGdISXPtdsrzQ/zh-cn_image_0000002769332305.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/hNsM37IYSZap58vtqXfEKg/zh-cn_image_0000002743220864.gif)

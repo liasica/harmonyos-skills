@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-dynamic-vs
 title: 对比动态模糊与静态模糊
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 模糊 > 对比动态模糊与静态模糊
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:38+08:00
+scraped_at: 2026-09-25T07:06:31+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:9a8f99412201c194aa77b16d34935777b8a7e9ebaa19a9824b13308262425a62
+content_hash: sha256:21cbcb76ffdba1bf19fa47ce0321d355334dde6de219a4cb2776b783245483e8
 ---
 
 ## 概述
 
 模糊效果是一种常见的图像处理技术，它通过弱化图像细节来突出主体，使焦点更加鲜明。如下图所示，模糊效果不仅能增强界面空间感，还能清晰区分元素层级。当这一效果融入动态变化，便催生了模糊动效。模糊动效被广泛应用于页面转场、图像元素缩放等需要突出内容或改变用户关注点的场景中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/GCq9atzeRWmRjSVMy2PUDQ/zh-cn_image_0000002769330241.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/QeS4ghhCQHyFaxldyEq7qQ/zh-cn_image_0000002743218800.png)
 
 由于模糊算法需要进行精细的像素级处理，因而在组件需要实时渲染时，这要求在极短的周期内完成模糊化处理。尤其是在组件同时执行动画渲染任务时，则会进一步加剧计算资源的消耗，容易导致模糊效果处理时间不足，无法按时完成模糊动效，最终引发卡顿、丢帧等不良现象。
 
@@ -109,7 +109,7 @@ export struct MotionBlur {
 
 **图 1** 动态模糊
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/pidftzuEQ4eJxr8Z6xdUwQ/zh-cn_image_0000002769450103.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/6jajmE0kQwuRjQcCs0eh3w/zh-cn_image_0000002772738053.gif)
 
 下面是使用静态模糊对图片进行模糊处理的场景示例。主要步骤如下：
 
@@ -236,17 +236,17 @@ export struct MotionBlur {
 
 **图 2** 静态模糊
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/XkB7ceBkS7y_EuZn4E973A/zh-cn_image_0000002739890772.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/237gVRRjQMyY6Z0sPvx1Xw/zh-cn_image_0000002772897937.gif)
 
 ## 效果对比
 
 下面使用DevEco Studio内置的Profiler中的帧率分析工具Frame抓取点击按钮触发转场过程的trace来分析静态模糊和动态模糊场景下的性能差异。需要说明，由于场景示例通过点击按钮触发转场，所以可以通过User Events（用户输入事件）的Click标签定位到转场过程的起点为Click标签结束位置。转场过程的终点为连续的RenderFrame（执行GPU绘制）标签不再连续的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/QASz_YN9QDWsh7TkYc1hGg/zh-cn_image_0000002739730894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/qy1iYC2KRBK7fFhubBhE8A/zh-cn_image_0000002743378688.png)
 
 如上图所示，通过RenderFrame（执行GPU绘制）标签可以看出，动态模糊转场平均渲染耗时为6.113ms。同时从Present Fence（图形上屏信号）标签可以看出动态模糊转场平均帧率为108.0fps。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/3b26TXl_TsmQI8zIVdog6Q/zh-cn_image_0000002769330243.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/le-DM6OGQqCunJVHrB8RUA/zh-cn_image_0000002743218802.png)
 
 如上图所示，通过RenderFrame标签可以看出，静态模糊转场平均渲染耗时为3.357ms。同时从Present Fence标签可以看出静态模糊转场平均帧率为119.9fps。和动态模糊转场相比平均渲染耗时减少了约45%（性能耗时数据因应用场景、设备型号版本而异，以实测为准）。
 

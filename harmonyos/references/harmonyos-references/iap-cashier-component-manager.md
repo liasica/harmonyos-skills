@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-cashi
 title: cashierComponentManager (iap嵌入式收银台组件管理)
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS组件 > cashierComponentManager (iap嵌入式收银台组件管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d3a0d3bfd0d5b1641948a98418c8dd3a1f49f90edf6da22c13d96d658aa456df
+scraped_at: 2026-09-25T07:14:04+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:6ccdb8fb6f8bda799184cc6686d1badae0a8f9dad698e19d5ead318524cb7175
 ---
 
 本模块提供iap嵌入式收银台组件的逻辑管理，辅助应用通过集成iap嵌入式收银台组件完成应用内支付功能。
@@ -70,7 +70,7 @@ iap嵌入式收银台的支付失败回调。在用户使用iap嵌入式收银�
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | productId | string | 是 | 支付失败的商品ID。 |
-| error | [BusinessError<void>](js-apis-base.md#businesserror) | 是 | 支付失败回调获取到的[iap.CreatePurchaseResult](iap-iap.md#createpurchaseresult)对象。 |
+| error | [BusinessError<void>](js-apis-base.md#businesserror) | 是 | 支付失败回调获取到的错误信息，可通过该参数获取具体错误原因。 |
 
 ## CashierDisplayOptions
 

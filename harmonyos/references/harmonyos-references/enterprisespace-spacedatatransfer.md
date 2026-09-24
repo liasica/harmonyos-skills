@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/enterpris
 title: "@hms.enterpriseSpaceService.fileTransfer(空间数据传输)"
 breadcrumb: API参考 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > ArkTS API > @hms.enterpriseSpaceService.fileTransfer(空间数据传输)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e6fd2b464d7263471d4cee8789e1d23a0448ecb909c8b17a1da4a4f567b4aa8c
+scraped_at: 2026-09-25T07:13:57+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:e404fe1d48da2e7a6669b80fa348beac90c8dcc503a5f721622ef505667a9a8d
 ---
 
 空间数据传输为企业安全管控类[MDM](../harmonyos-guides/mdm-kit.md)应用提供下发空间互传策略能力，提供设置审批信息、获取审批信息的能力。
@@ -215,7 +215,7 @@ policyPush(policyContext: string): void
 | **参数名** | **说明** | **示例** |
 | --- | --- | --- |
 | allow | 放通动作配置，通过表达式配置。 | "VirusCheck.Result == 0" |
-| approval | 审批动作配置，个人空间向企业空间发送文件时的审批不生效，不需要配置。 | "VirusCheck.Result == 10" |
+| approval | 审批动作配置，个人空间向企业空间发送文件时的审批不生效，不需要配置。 | "" |
 | check\_point | 检测点类型。  SecurityCheck：安全检查  VirusCheck：病毒检查 | "SecurityCheck" |
 | check\_point\_name | 检测点名称。由用户自定义，无长度限制。 | "VirusCheck\_in" |
 | is\_enable | 配置个人空间向企业空间发送文件时检测的规则是否生效。可选参数。  true：生效  false：不生效  默认值：true | "true" |

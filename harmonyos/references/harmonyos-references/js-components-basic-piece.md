@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: piece
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > piece
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:42+08:00
+scraped_at: 2026-09-25T07:10:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b731d6234f4412aa9ce7edc14a0421400d77353d6d74502ababa0412779e2f9b
+content_hash: sha256:d11af01f68ea0de94ee63eab4851f1808008abd5ca04d691579c92d07808da97
 ---
 
 一种块状的入口，可包含图片和文本，常用于展示收件人。例如，邮件收件人或信息收件人。
@@ -81,4 +81,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5QIj28KNSkmE_i6d3CyInQ/zh-cn_image_0000002769332829.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/P7EIuG2nRT6X97e4GwXnVw/zh-cn_image_0000002772900527.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OH_ImageBufferData
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OH_ImageBufferData
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a8e2d5eb59b340526447bb402ed6db84dbb624e022acbcb2e825509c7e8011af
+scraped_at: 2026-09-25T07:13:15+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:7559c1d0c24a8383d76684efb1fd27ac34a649816808123c24c52a334b380d56
 ---
 
 ```c
@@ -14,7 +14,7 @@ typedef struct {...} OH_ImageBufferData
 
 ## 概述
 
-OH\_ImageBufferData是native层封装的图像数据结构体。获取OH\_ImageNative\_GetBufferData对象使用[OH\_ImageNative\_GetBufferData](capi-image-native-h.md#oh_imagenative_getbufferdata)函数。
+OH\_ImageBufferData是native层封装的图像数据结构体。获取OH\_ImageBufferData对象使用[OH\_ImageNative\_GetBufferData](capi-image-native-h.md#oh_imagenative_getbufferdata)函数。
 
 结构体中保存的是对原图像数据的浅拷贝，当原数据被释放后，不应再对该结构体中的指针进行任何读写操作，否则会出现未定义行为。
 

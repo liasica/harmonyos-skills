@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputmethod-a
 title: 实现一个输入法应用
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 实现一个输入法应用
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:50+08:00
+scraped_at: 2026-09-25T07:06:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:be0abc0f6433a3ecb4fdf43aeb07e4a58f7246570cb12eeda320f58d73835965
+content_hash: sha256:e3300469591688ec6e7d76e5f67b488c7ec9b9aada9e7a167440e30c2b2d2340
 ---
 
 [InputMethodExtensionAbility](../harmonyos-references/js-apis-inputmethod-extension-ability.md)提供了onCreate()和onDestroy()生命周期回调，根据需要重写对应的回调方法。InputMethodExtensionAbility的生命周期如下：
@@ -71,7 +71,7 @@ content_hash: sha256:be0abc0f6433a3ecb4fdf43aeb07e4a58f7246570cb12eeda320f58d738
    ```
 2. KeyboardController.ets文件。KeyboardController中除创建输入法窗口，设置输入法事件监听，实现文本插入、删除之外，还可以使用Panel对象的[getSystemPanelCurrentInsets](../harmonyos-references/js-apis-inputmethodengine.md#getsystempanelcurrentinsets21)获取输入法键盘与系统面板的偏移区域，输入法系统面板在不同设备上存在差异，当设备有系统面板时，输入法软键盘相对系统面板的偏移区域如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/rJJPuKRqQ427Ur0MBCz10w/zh-cn_image_0000002739891176.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Uc2LQzPPT065raeLk-9lwQ/zh-cn_image_0000002772898341.png)
 
    ```typescript
    // 定义输入法的两个子类型
@@ -952,4 +952,4 @@ content_hash: sha256:be0abc0f6433a3ecb4fdf43aeb07e4a58f7246570cb12eeda320f58d738
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7MQ_YiGaTy2mmHwe6Y0xUg/zh-cn_image_0000002739731298.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/FPdgRj9pQR2M652ol6njDA/zh-cn_image_0000002743379092.png)

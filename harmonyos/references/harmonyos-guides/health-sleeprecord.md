@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-sleepr
 title: 睡眠
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 健康记录数据 > 睡眠
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ef46e24e35a631dfc276633b162a24b195625ee5c5bf56c7458d80761bf02460
+scraped_at: 2026-09-25T07:07:47+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:fa45f462575f83c4555424cd04400274fc960eef456fec858ba9b95744674aab
 ---
 
 ## 夜间睡眠
@@ -31,8 +31,8 @@ content_hash: sha256:ef46e24e35a631dfc276633b162a24b195625ee5c5bf56c7458d80761bf
 | fallAsleepTime | 分期睡眠最早入睡时间点 | number | M | 毫秒 | [0，∞） |
 | wakeupTime | 分期睡眠最晚醒来时间点 | number | M | 毫秒 | [0，∞） |
 | duration | 夜间/普通睡眠时长（不含零星小睡时长） | number | M | 秒 | [0，∞） |
-| bedTime | 最早上床时间点 | number | O | - | [0，∞） |
-| risingTime | 最晚起床时间点 | number | O | - | [0，∞） |
+| bedTime | 最早上床时间点 | number | O | 毫秒 | [0，∞） |
+| risingTime | 最晚起床时间点 | number | O | 毫秒 | [0，∞） |
 | prepareSleepTime | 准备入睡时间点 | number | O | 毫秒 | [0，∞） |
 | shallowDuration | 浅睡时长 | number | O | 秒 | [0，∞） |
 | deepDuration | 深睡时长 | number | O | 秒 | [0，∞） |

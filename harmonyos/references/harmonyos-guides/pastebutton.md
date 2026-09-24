@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton
 title: 使用粘贴控件
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 使用粘贴控件
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:52+08:00
+scraped_at: 2026-09-25T07:06:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d3bad476d0bb5d52b19d9ecf6803f4f971a3f7728ac0bbb9b970d1b0b295e59b
+content_hash: sha256:376d6b9d28d809dc74861ec2894d2825ee895470efb91e8659448bb20e43b82c
 ---
 
 粘贴控件是一种特殊的系统安全控件，它允许应用在用户的授权下静默读取剪贴板数据。
@@ -16,7 +16,7 @@ content_hash: sha256:d3bad476d0bb5d52b19d9ecf6803f4f971a3f7728ac0bbb9b970d1b0b29
 
 粘贴控件效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Y6ti7x1KRqOld6jhSHS3JQ/zh-cn_image_0000002739891222.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/gvTmxzFNQzyPsvbWkr73mA/zh-cn_image_0000002772898387.gif)
 
 ## 约束与限制
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-packer-
 title: 使用Image_NativeModule完成图片编码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编码 > 使用Image_NativeModule完成图片编码
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:eb2c23a84c8818dfcc77637a230617abd516b6b33ba0f7a356164d652169a684
+scraped_at: 2026-09-25T07:07:26+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:f037c85df0d1f4735823a99d0ca1aff622505f50f4dc027b56c49a8ea9a2f2da
 ---
 
 图像编码类，用于创建以及释放ImagePacker实例。
@@ -24,7 +24,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so libimage
 
 具体接口说明请参考[Image\_NativeModule](../harmonyos-references/capi-image-nativemodule.md)。
 
-在Deveco Studio新建Native C++应用，默认生成的项目中包含index.ets文件，在entry\src\main\cpp目录下会自动生成一个cpp文件（hello.cpp或napi\_init.cpp，本示例以hello.cpp文件名为例）。在hello.cpp中实现C API接口调用逻辑，示例代码如下：
+在DevEco Studio新建Native C++应用，默认生成的项目中包含index.ets文件，在entry\src\main\cpp目录下会自动生成一个cpp文件（hello.cpp或napi\_init.cpp，本示例以hello.cpp文件名为例）。在hello.cpp中实现C API接口调用逻辑，示例代码如下：
 
 **编码接口使用示例**
 

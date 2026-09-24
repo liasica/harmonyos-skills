@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-region-
 title: 图片区域解码与下采样(C/C++)
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片解码 > 图片区域解码与下采样(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:43600e83d715e7415193efc52bd7bb54a92b98b9d25f85af1232fc93af4ee595
+scraped_at: 2026-09-25T07:07:26+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:0a371ab8f3b160991955d03624dd6059e177c53ea2b59675773c72c9331bca87
 ---
 
 应用在处理大尺寸图片时，直接解码整张图片可能导致内存占用过高和解码耗时较长。通过区域解码和下采样解码功能，可以有效优化这一场景：
@@ -130,7 +130,7 @@ Native C版本区域解码需使用OH\_DecodingOptions\_SetCropRegion接口，�
 | IMAGE\_CROP\_AND\_SCALE\_STRATEGY\_SCALE\_FIRST | 1 | 先缩放，再裁剪。 | - |
 | IMAGE\_CROP\_AND\_SCALE\_STRATEGY\_CROP\_FIRST | 2 | 先裁剪，再缩放。 | 推荐使用，可减少解码峰值内存。 |
 
-**推荐使用CROP\_FIRST**：先裁剪再缩放可精确控制裁剪区域，保证不同格式解码效果一致。
+**推荐使用IMAGE\_CROP\_AND\_SCALE\_STRATEGY\_CROP\_FIRST**：先裁剪再缩放可精确控制裁剪区域，保证不同格式解码效果一致。
 
 参数详情请参考[Image\_CropAndScaleStrategy](../harmonyos-references/capi-image-source-native-h.md#image_cropandscalestrategy)。
 

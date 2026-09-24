@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-transi
 title: 充值交通卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 交通卡 > 开发场景 > 充值交通卡
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:30d6ddf05f0a24e30805c90e71624cacc4fc09ad55524d6b4642a7a590214500
+scraped_at: 2026-09-25T07:08:00+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:e11acef8c6eab1babce6a4eaf64e582c138cc24ad9fffd360f4ce08b2ae0e146
 ---
 
 用户为钱包中的交通卡充值，恢复或增加卡内余额，无需排队购票，方便公交、地铁出行。
@@ -14,7 +14,7 @@ content_hash: sha256:30d6ddf05f0a24e30805c90e71624cacc4fc09ad55524d6b4642a7a5902
 
 交通卡的充值过程分为：卡片展示、生成并支付充值订单和发起充值三个步骤，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/DP-GHf6LTEyYt99KVVo8EQ/zh-cn_image_0000002739732318.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/76IuaBn9TLyp-LSN6G3_2A/zh-cn_image_0000002743380112.png)
 
 ## 开发步骤
 
@@ -38,7 +38,7 @@ content_hash: sha256:30d6ddf05f0a24e30805c90e71624cacc4fc09ad55524d6b4642a7a5902
 2. 用户选择了给指定的交通卡充值时，开发者App需向开发者的后台服务器发起充值订单的生成请求，并引导用户完成支付。
 3. 开发者App在查询到订单已支付完成后，调用[rechargeTransitCard](../harmonyos-references/wallet-wallettransitcard.md#rechargetransitcard)接口，发起将订单金额充值到卡内的处理过程。
 
-   如果充值正常结束，开发者App会收到充值成功的返回值并携带新的余额；如果充值过程出现失败，在钱包App自行发起重试后仍然失败的情况下，钱包会发起订单退款的请求。若SP TSM或开发者服务器器确认订单可退款，需调用支付渠道的订单撤销接口，将订单金额原路退回。
+   如果充值正常结束，开发者App会收到充值成功的返回值并携带新的余额；如果充值过程出现失败，在钱包App自行发起重试后仍然失败的情况下，钱包会发起订单退款的请求。若SP TSM或开发者服务器确认订单可退款，需调用支付渠道的订单撤销接口，将订单金额原路退回。
 
    ```typescript
    async rechargeTransitCard(cardMetadataInDevice: walletTransitCard.CardMetadataInDevice) {

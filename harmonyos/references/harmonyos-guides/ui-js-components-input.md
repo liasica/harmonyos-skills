@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: input开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > input开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:42+08:00
+scraped_at: 2026-09-25T07:06:35+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:be393b1df2c50a2fd9cb3039c45a8a339661cbe8d8084a8881632ed55300f0e6
+content_hash: sha256:040bc8082e5d5bc448969a3bfae3d948ebd96ed7fb4dc8e1597e53311ac8e9fd
 ---
 
 input是交互式组件，用于接收用户数据。其类型可设置为日期、多选框和按钮等。具体用法请参考[input API](../harmonyos-references/js-components-basic-input.md)。
@@ -35,7 +35,7 @@ input是交互式组件，用于接收用户数据。其类型可设置为日期
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/g4Iqaf48SiG39tVlPfSS5Q/zh-cn_image_0000002769330371.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/JdaOAnOXTEqFUcfP_36ARQ/zh-cn_image_0000002743218930.png)
 
 ## 设置input类型
 
@@ -104,7 +104,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/laU7jUHRQAeBCs_k0xM68A/zh-cn_image_0000002769450233.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/5ITwFxtFQd6Kx57DxnySUw/zh-cn_image_0000002772738183.gif)
 
 **说明** 
 
@@ -160,7 +160,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/HfRBTRsvQYSlO7BLV8KRLw/zh-cn_image_0000002739890902.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/i9A3T5QKSY-pmAtNy7F-4A/zh-cn_image_0000002772898067.gif)
 
 ## 设置输入提示
 
@@ -227,7 +227,7 @@ import promptAction from '@ohos.promptAction'
  }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/WtZ_cWgnT-W5LyafXQCJ2Q/zh-cn_image_0000002739731024.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/e25JB5BDQ7eHHSbKxbwWmw/zh-cn_image_0000002743378818.gif)
 
 **说明** 
 
@@ -309,4 +309,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/OsNRxEtwQwGqqqoW9RAdoQ/zh-cn_image_0000002769330373.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/VuUyoq7QRaecSTVLpJF_dQ/zh-cn_image_0000002743218932.gif)

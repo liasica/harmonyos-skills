@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 切换按钮 (Toggle)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 按钮与选择 > 切换按钮 (Toggle)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:36+08:00
+scraped_at: 2026-09-25T07:06:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:77e7c56227f13bde1cc50affa7fe4009bf9f0102ec6dc0d4e0e5eef1196ef89e
+content_hash: sha256:8c745b3e456827f7ca1ca097ad2ae0e392d77a8c3296b03be271bf0b46ccd877
 ---
 
 Toggle组件提供状态按钮样式、勾选框样式和开关样式，一般用于两种状态之间的切换。具体用法请参考[Toggle](../harmonyos-references/ts-basic-components-toggle.md)。
@@ -33,14 +33,14 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
   Toggle({ type: ToggleType.Checkbox, isOn: true }).id('toggle2') // 请开发者替换为实际的id
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/exR4APiaQSyWoDGkNlpU9g/zh-cn_image_0000002769449963.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/mPsNo6cjSuGIlADVXKmqZQ/zh-cn_image_0000002772737913.png)
 
   ```typescript
   Toggle({ type: ToggleType.Switch, isOn: false }).id('toggle3') // 请开发者替换为实际的id
   Toggle({ type: ToggleType.Switch, isOn: true }).id('toggle4') // 请开发者替换为实际的id
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/03pyORl3SeqnQ6ZVxbqIwA/zh-cn_image_0000002739890632.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/a0C58KAKR1KxIAfLCQqS_w/zh-cn_image_0000002772897797.png)
 * 创建包含子组件的Toggle。
 
   当ToggleType为Button时，只能包含一个子组件，如果子组件有文本设置，则相应的文本内容会显示在按钮上。
@@ -59,7 +59,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
   }.width(100).id('toggle6') // 请开发者替换为实际的id
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Cpz4HbSFTtu3fKlijmXvzg/zh-cn_image_0000002739730754.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/dFiIzj6IShu9AH70zI_1XA/zh-cn_image_0000002743378548.png)
 
 ## 自定义样式
 
@@ -82,7 +82,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
       // ···
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/VQyZr5XYSXiTYkSUO8u8Bg/zh-cn_image_0000002769330103.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/eWWwNY7_RXGdy1k3D8scSQ/zh-cn_image_0000002743218662.png)
 * 通过switchPointColor属性设置Switch类型的圆形滑块颜色，仅对type为ToggleType.Switch生效。
 
   ```typescript
@@ -94,7 +94,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
     // ···
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Czy6--KnRbq0-_0qxsx_tg/zh-cn_image_0000002769449965.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/cTJa6VIdSaiS8GcO029VwQ/zh-cn_image_0000002772737915.png)
 
 ## 添加事件
 
@@ -163,4 +163,4 @@ export struct ToggleSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/yIHaiA3mTym9RXhE2guNCg/zh-cn_image_0000002739890634.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/AlNc5UerRfiz6jA6Nrnceg/zh-cn_image_0000002772897799.gif)

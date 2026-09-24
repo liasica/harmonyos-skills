@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-transfo
 title: 使用PixelMap完成图像变换
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片编辑和处理 > 使用PixelMap完成图像变换
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:24+08:00
+scraped_at: 2026-09-25T07:07:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a2c0fb855755c8bc3bebfc460f96179becee2dbe6425e455a5ac3076913ece69
+content_hash: sha256:91bfbffc9f41e93044b25d9d87895b018906161d84ee31f5738124e9e0626d38
 ---
 
 图片处理指对PixelMap进行相关的操作，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据等。图片处理主要包括图像变换、[位图操作](image-pixelmap-operation.md)，本文介绍图像变换。
@@ -31,7 +31,7 @@ content_hash: sha256:a2c0fb855755c8bc3bebfc460f96179becee2dbe6425e455a5ac3076913
 
    原图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/nUL4HQdETSa12Ll5OAKkvQ/zh-cn_image_0000002769450859.jpeg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ElJXxNIfT6-2Z5YrQiN3RQ/zh-cn_image_0000002772738809.jpeg)
 
    * 裁剪
 
@@ -48,7 +48,7 @@ content_hash: sha256:a2c0fb855755c8bc3bebfc460f96179becee2dbe6425e455a5ac3076913
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/PSWW6asUSnOnQ6Ahs-6XSg/zh-cn_image_0000002739891528.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/xj4gogafTAGOyhVY5tcxTg/zh-cn_image_0000002772898693.jpeg)
    * 缩放
 
      ```typescript
@@ -59,7 +59,7 @@ content_hash: sha256:a2c0fb855755c8bc3bebfc460f96179becee2dbe6425e455a5ac3076913
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/SY31lJXlSSilULxDyUsUew/zh-cn_image_0000002739731650.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/hwzf3ID8Q1WA9gKWWh_dnw/zh-cn_image_0000002743379444.jpeg)
    * 平移
 
      ```typescript
@@ -70,7 +70,7 @@ content_hash: sha256:a2c0fb855755c8bc3bebfc460f96179becee2dbe6425e455a5ac3076913
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/K9gishoDSPGyJymHkAbkvw/zh-cn_image_0000002769330999.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/YvZzqVTERCu5i57kRCgqBQ/zh-cn_image_0000002743219558.jpeg)
    * 旋转
 
      ```typescript
@@ -80,7 +80,7 @@ content_hash: sha256:a2c0fb855755c8bc3bebfc460f96179becee2dbe6425e455a5ac3076913
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/rNZhoekwR32aFvhtkwjRww/zh-cn_image_0000002769450861.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ZLJRqZobTZ6v3o7yZZMDkg/zh-cn_image_0000002772738811.jpeg)
    * 翻转
 
      ```typescript
@@ -90,7 +90,7 @@ content_hash: sha256:a2c0fb855755c8bc3bebfc460f96179becee2dbe6425e455a5ac3076913
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/DNPdXFdRSDCtB6Dy194sSw/zh-cn_image_0000002739891530.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/3Pmzi-SxRIWIoIawjWhXyQ/zh-cn_image_0000002772898695.jpeg)
 
      ```typescript
      // 水平翻转。
@@ -99,7 +99,7 @@ content_hash: sha256:a2c0fb855755c8bc3bebfc460f96179becee2dbe6425e455a5ac3076913
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/bnEKv3ZURairiPYsWLYblg/zh-cn_image_0000002739731652.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/3kMLl6E3QLKMhgc3t_cmlg/zh-cn_image_0000002743379446.jpeg)
    * 透明度
 
      ```typescript
@@ -109,7 +109,7 @@ content_hash: sha256:a2c0fb855755c8bc3bebfc460f96179becee2dbe6425e455a5ac3076913
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/k-iBjnZWRS-u7d6JWDfWxw/zh-cn_image_0000002769331001.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/fSHYFcw4TtGhMWj7idhd7Q/zh-cn_image_0000002743219560.png)
 
 ## 示例代码
 

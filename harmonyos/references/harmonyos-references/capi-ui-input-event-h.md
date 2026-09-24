@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ui-i
 title: ui_input_event.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > ui_input_event.h
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:56+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:e7c119cd0f7fd223809c3391daa82c025c2ca2fd2012d03fcaf4df98ab453700
+scraped_at: 2026-09-25T07:10:45+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:76eb5aeb63cca9de22c075519535160005457a1a1e6df2f32387d2a44791e300
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ content_hash: sha256:e7c119cd0f7fd223809c3391daa82c025c2ca2fd2012d03fcaf4df98ab4
 | [ArkUI\_TouchTestInfo](capi-arkui-nativemodule-arkui-touchtestinfo.md) | ArkUI\_TouchTestInfo | 定义触摸测试信息，用于在命中测试过程中获取触摸测试策略、参与命中测试的子组件ID及触摸测试信息项列表，适用于需要在子组件触摸事件中获取命中测试详细信息以自定义命中测试逻辑、优化触摸事件分发与响应的场景。 当用户通过[registerNodeEvent](capi-arkui-nativemodule-arkui-nativenodeapi-1.md#registernodeevent)注册了[NODE\_ON\_CHILD\_TOUCH\_TEST](capi-native-node-h.md#arkui_nodeeventtype)事件时，才能接收到此事件。触摸测试信息包含触摸测试策略、命中测试过程中需要参与命中测试的子组件ID和触摸测试信息项的列表。 |
 | [ArkUI\_TouchTestInfoItem](capi-arkui-nativemodule-arkui-touchtestinfoitem.md) | ArkUI\_TouchTestInfoItem | 定义触摸测试信息项。触摸测试信息项包含触摸测试中子组件的信息，适用于触摸测试过程中获取和识别子组件相关信息的场景，可以通过[OH\_ArkUI\_TouchTestInfoItem\_GetX](capi-ui-input-event-h.md#oh_arkui_touchtestinfoitem_getx)、[OH\_ArkUI\_TouchTestInfoItem\_GetY](capi-ui-input-event-h.md#oh_arkui_touchtestinfoitem_gety)等接口获取子组件信息，帮助开发者处理触摸测试结果。 |
 | [ArkUI\_TouchTestInfoItem\*](capi-arkui-nativemodule-arkui-touchtestinfoitemhandle.md) | ArkUI\_TouchTestInfoItemHandle | 定义触摸测试信息项句柄，用于表示触摸测试流程中的触摸测试信息项；触摸测试接口请参见[ui\_input\_event.h](capi-ui-input-event-h.md)。 |
-| [ArkUI\_TouchTestInfoItemHandle\*](capi-arkui-nativemodule-arkui-touchtestinfoitemhandlearray.md) | ArkUI\_TouchTestInfoItemArray | 定义触摸测试信息项句柄数组，用于表示多个触摸测试信息项句柄。在触摸事件分发与测试过程中，可通过此数组类型统一管理和访问多个触摸测试结果，适用于需要同时处理多个触点测试信息的场景。 |
+| [ArkUI\_TouchTestInfoItemHandle\*](capi-arkui-eventmodule-arkui-touchtestinfoitemhandle8h.md) | ArkUI\_TouchTestInfoItemArray | 定义触摸测试信息项句柄数组，用于表示多个触摸测试信息项句柄。在触摸事件分发与测试过程中，可通过此数组类型统一管理和访问多个触摸测试结果，适用于需要同时处理多个触点测试信息的场景。 |
 
 ### 枚举
 
@@ -3914,7 +3914,7 @@ ArkUI_ErrorCode OH_ArkUI_TouchTestInfo_GetTouchTestInfoList(ArkUI_TouchTestInfo*
 | 参数项 | 描述 |
 | --- | --- |
 | [ArkUI\_TouchTestInfo](capi-arkui-nativemodule-arkui-touchtestinfo.md)\* info | 指向触摸测试信息的指针。 |
-| [ArkUI\_TouchTestInfoItemArray](capi-arkui-nativemodule-arkui-touchtestinfoitemhandlearray.md)\* array | 输出参数，指向用于接收触摸测试信息项数组的指针，数组元素为触摸测试信息项，数组大小通过size参数返回。 |
+| [ArkUI\_TouchTestInfoItemArray](capi-arkui-eventmodule-arkui-touchtestinfoitemhandle8h.md)\* array | 输出参数，指向用于接收触摸测试信息项数组的指针，数组元素为触摸测试信息项，数组大小通过size参数返回。 |
 | int32\_t\* size | 输出参数，表示array中返回的触摸测试信息项数量。 |
 
 **返回：**

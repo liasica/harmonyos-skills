@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/keypressed-gu
 title: 优先响应系统功能键开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 优先响应系统功能键开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4db0e726910fa405e319608b5468a03d955b5499cb74893056a0ff1292b4075e
+scraped_at: 2026-09-25T07:07:06+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:daff975e986828bada6bdf6293e3a1f7131e9cdbae89e5f7b60155c3c18f4953
 ---
 
 ## 场景介绍
@@ -27,8 +27,8 @@ content_hash: sha256:4db0e726910fa405e319608b5468a03d955b5499cb74893056a0ff1292b
 
 | 接口名称 | 描述 |
 | --- | --- |
-| on(type: "keyPressed", options: KeyPressedConfig, callback: Callback<KeyEvent>): void | 订阅指定按键按下事件，拦截系统默认响应。 |
-| off(type: "keyPressed", callback?: Callback<KeyEvent>): void | 取消按键事件订阅，恢复系统默认响应。 |
+| on(type: 'keyPressed', options: KeyPressedConfig, callback: Callback<KeyEvent>): void | 订阅按键按下事件。 |
+| off(type: 'keyPressed', callback?: Callback<KeyEvent>): void | 取消对'keyPressed'事件的订阅。 |
 
 ## 开发步骤
 
@@ -153,7 +153,7 @@ struct TestDemo14 {
                 .showToast({ message: 'Successfully added monitoring for Volume Up key!' })
               this.text = "Monitoring for Volume Up key has been added."
             } catch (error) {
-              hilog.error(DOMAIN, 'InputConsumer', `Unsubscribe execute failed, error: %{public}s`,
+              hilog.error(DOMAIN, 'InputConsumer', `Subscribe execute failed, error: %{public}s`,
                 JSON.stringify(error, ["code", "message"]));
               this.getUIContext()
                 .getPromptAction()
@@ -199,7 +199,7 @@ struct TestDemo14 {
                 .showToast({ message: 'Successfully added monitoring for Volume Down key!' })
               this.text = "Monitoring for Volume Down key has been added."
             } catch (error) {
-              hilog.error(DOMAIN, 'InputConsumer', `Unsubscribe execute failed, error: %{public}s`,
+              hilog.error(DOMAIN, 'InputConsumer', `Subscribe execute failed, error: %{public}s`,
                 JSON.stringify(error, ["code", "message"]));
               this.getUIContext()
                 .getPromptAction()
@@ -249,7 +249,7 @@ struct TestDemo14 {
                   .showToast({ message: 'Successfully added monitoring for Slide Up key!' })
                 this.text = "Monitoring for Slide Up key has been added."
               } catch (error) {
-                hilog.error(DOMAIN, 'InputConsumer', `Unsubscribe execute failed, error: %{public}s`,
+                hilog.error(DOMAIN, 'InputConsumer', `Subscribe execute failed, error: %{public}s`,
                   JSON.stringify(error, ["code", "message"]));
                 this.getUIContext()
                   .getPromptAction()
@@ -296,7 +296,7 @@ struct TestDemo14 {
                   .showToast({ message: 'Successfully added monitoring for Slide Down key!' })
                 this.text = "Monitoring for Slide Down key has been added."
               } catch (error) {
-                hilog.error(DOMAIN, 'InputConsumer', `Unsubscribe execute failed, error: %{public}s`,
+                hilog.error(DOMAIN, 'InputConsumer', `Subscribe execute failed, error: %{public}s`,
                   JSON.stringify(error, ["code", "message"]));
                 this.getUIContext()
                   .getPromptAction()

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-union
 title: 使用“华为账号登录”按钮登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号登录（获取UnionID/OpenID） > 使用“华为账号登录”按钮登录
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:33+08:00
+scraped_at: 2026-09-25T07:07:37+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:382aad213ba98450f70021f324da6f29a70b0f829d302368f9bea8010a777ab2
+content_hash: sha256:c8fa5ac1d7a3a0d84ad79177828eb645cac554b9ad123aed9970bae3a4f7956e
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:382aad213ba98450f70021f324da6f29a70b0f829d302368f9bea8010a7
 
 华为账号登录按钮包含文本、标志和文本、标志三种样式，以满足应用对界面风格一致性和灵活性的要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/lsZXNRHASyqX3SXAPm5dkA/zh-cn_image_0000002739891726.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/fmehDeF6TVKgvYNs4w5Rjw/zh-cn_image_0000002772898891.png)
 
 ## 约束与限制
 
@@ -22,13 +22,13 @@ content_hash: sha256:382aad213ba98450f70021f324da6f29a70b0f829d302368f9bea8010a7
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/wR-IqRUeRxupBtNX_5bqVA/zh-cn_image_0000002739731848.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/0zppXfMER1OSsVmjHzzHFQ/zh-cn_image_0000002743379642.png)
 
 账号登录按钮的用户体验和UX设计需符合[【华为账号登录】按钮](../design-guides/id-0000001880001344.md#section2624430102713)规范，不符合规范的UX设计可能会对应用上架和用户体验带来影响。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/5yFjpCyuRqaMYAimr58pQw/zh-cn_image_0000002769331197.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/rUZsUSLFRMKNNEz2__kL0w/zh-cn_image_0000002743219756.png)
 
 流程说明：
 

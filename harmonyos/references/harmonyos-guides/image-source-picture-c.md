@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-source-
 title: 使用Image_NativeModule完成多图对象解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片解码 > 使用Image_NativeModule完成多图对象解码
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8ffacc47d738bc3ee40d54911f90b7b7adcfee7c34bbb8bd4b44baae46329235
+scraped_at: 2026-09-25T07:07:26+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:f8190950dd33760eacbef3b647052904f1ed95a4a003a11dc20010629b7e478c
 ---
 
 创建ImageSource实例，将所支持格式的图片文件解码成Picture多图对象，以便在应用或系统中进行HDR图片显示、辅助图处理等操作。当前支持的图片文件格式包括JPEG、HEIF。
@@ -40,7 +40,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so)
 
 具体接口说明请参考[Image\_NativeModule](../harmonyos-references/capi-image-nativemodule.md)。
 
-在Deveco Studio新建Native C++应用，默认生成的项目中包含index.ets文件，在entry\src\main\cpp目录下会自动生成一个cpp文件（hello.cpp或napi\_init.cpp，本示例以hello.cpp文件名为例）。在hello.cpp中实现C API接口调用逻辑，示例代码如下：
+在DevEco Studio新建Native C++应用，默认生成的项目中包含index.ets文件，在entry\src\main\cpp目录下会自动生成一个cpp文件（hello.cpp或napi\_init.cpp，本示例以hello.cpp文件名为例）。在hello.cpp中实现C API接口调用逻辑，示例代码如下：
 
 **解码接口使用示例**
 

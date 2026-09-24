@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawi
 title: 复杂绘制效果（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 复杂绘制效果（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:29+08:00
+scraped_at: 2026-09-25T07:07:32+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:3e03efe85e2c3ca99a0f474dcb4de35a553b0f2cf80e2049a8470c76e82024bc
+content_hash: sha256:f211e393ecb8633869f3a0585a845c47f05e35995fd7702b3d443cc8e6117807
 ---
 
 除了基础填充颜色、描边颜色和一些样式设置的绘制效果外，还支持通过画刷和画笔实现更多复杂的绘制效果。比如：
@@ -52,7 +52,7 @@ OH_Drawing_BrushDestroy(brush);
 OH_Drawing_PointDestroy(point);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/VgGdvpZhTQ-5B_2RS1T6fw/zh-cn_image_0000002739891610.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/cNy2B5UIQqmocVZSE3q25g/zh-cn_image_0000002772898775.png)
 
 ## 路径效果
 
@@ -151,7 +151,7 @@ OH_Drawing_PointDestroy(endPt);
 
 此例绘制的具有线性渐变着色器效果的矩形如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/n59PIGOsSDaMBAlYNKu8XQ/zh-cn_image_0000002769450943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/85P1ZCr6S9WdKIL-Z0Cg_w/zh-cn_image_0000002772738893.png)
 
 ### 径向渐变着色器效果
 
@@ -193,7 +193,7 @@ OH_Drawing_PointDestroy(centerPt);
 
 此例绘制的具有径向渐变着色器效果的矩形如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/uathak9sTgKgZMC2j-MrLQ/zh-cn_image_0000002739891612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/usU25mDhTU-ittNjHmOZxA/zh-cn_image_0000002772898777.png)
 
 ### 扇形渐变着色器效果
 
@@ -233,7 +233,7 @@ OH_Drawing_PointDestroy(centerPt);
 
 此例绘制的具有扇形渐变着色器效果的矩形如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/9r6ZofAFQTSFgvkR5cKswQ/zh-cn_image_0000002739731734.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/b0FjQxQPQpyoW4rPMgegTQ/zh-cn_image_0000002743379528.png)
 
 ## 滤波器效果
 

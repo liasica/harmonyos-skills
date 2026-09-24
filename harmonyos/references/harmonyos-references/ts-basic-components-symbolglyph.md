@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SymbolGlyph
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SymbolGlyph
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:29+08:00
+scraped_at: 2026-09-25T07:10:06+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e271262ea45a93157a26dca4c2940794ab7a71e52f6de84cb194b6ffdd99eb9b
+content_hash: sha256:2363f95342a0a906cb70aeac08b52b7111cd1ec68ec2dd7d9732be13991452c9
 ---
 
 SymbolGlyph组件用于显示系统预置的图标小符号，支持设置颜色、大小、粗细、渲染策略、动效策略等样式属性，适用于需要在应用中展示系统图标的场景，如导航栏图标、按钮图标、状态指示图标等。相比使用图片资源，SymbolGlyph具有体积小、可动态着色、支持动效等优势。相关资源可参考[系统图标](../design-guides/system-icons-0000001929854962.md)。
@@ -182,7 +182,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/eqW61eC4SCSr5Sc4_Op3Sw/zh-cn_image_0000002739892958.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-Rdz3yE4RAyEVPSXBQQLvg/zh-cn_image_0000002772900125.png)
 
 ### effectStrategy
 
@@ -750,7 +750,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/d2u04WuNQE-Qssdm9rkDTA/zh-cn_image_0000002739892960.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Tk5RsVc_T1GvEkRZ47g8DA/zh-cn_image_0000002772900127.gif)
 
 ### 示例2（设置动效和阴影）
 
@@ -854,7 +854,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ePRvGm1ZSySOqgkIPazqQA/zh-cn_image_0000002739733082.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/y-9fHTDAQKu5UqWaRSAaFw/zh-cn_image_0000002743380876.gif)
 
 ### 示例3（设置颜色渐变）
 
@@ -994,7 +994,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/bb2Wa80dTdqlWOU0V5fCBw/zh-cn_image_0000002769332431.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/blq8_EnpR_GZZyZHuWh8ZQ/zh-cn_image_0000002743220990.jpeg)
 
 ### 示例4（设置SymbolGlyph颜色）
 
@@ -1045,7 +1045,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/WhkCYvwZRDSW7-1C58P1_w/zh-cn_image_0000002769452293.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/dokWku5cSyqA7w5kUQMhIA/zh-cn_image_0000002772740243.jpeg)
 
 ### 示例5（设置字体粗细）
 
@@ -1109,4 +1109,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/OCl6Gzb7Q-evbmM9KHCfZw/zh-cn_image_0000002739892962.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/HYBfnrglQ_OpGNcGCTBlZw/zh-cn_image_0000002772900129.png)

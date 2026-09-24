@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 地点详情展示
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 地点详情展示
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:45+08:00
+scraped_at: 2026-09-25T07:07:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:267a9a891f540aec5f0f0694d93396706bb78187222ae49e736ee4c83d85e94e
+content_hash: sha256:35b9155b532cc1c86ed9dceb2508a3fdaafbb40c4b0ce41465dc62feacfe9e5a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:267a9a891f540aec5f0f0694d93396706bb78187222ae49e736ee4c83d8
 
 **图1** 地点详情
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/AvAUco9mTii5BfJrodJyrg/zh-cn_image_0000002769331503.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/IjXilltcT6edyUFzASgr3Q/zh-cn_image_0000002743220062.jpg "点击放大")
 
 ## 约束与限制
 

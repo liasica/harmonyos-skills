@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-common-at
 title: 设置通用布局属性
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 构建布局 > 设置通用布局属性
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:40+08:00
+scraped_at: 2026-09-25T07:06:33+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:265be0a149ca1a393db328fce1d56b519e60b0dff36ebe19a25668e2b5002f58
+content_hash: sha256:e29d634616632a38677b97eff3ba40bed2531fad2245fa08f5f71051a071a86e
 ---
 
 从API version 12开始，ArkUI在NDK中提供了一组通用布局属性，可以控制组件的尺寸、位置、边框等布局行为。
@@ -91,7 +91,7 @@ inline std::shared_ptr<ArkUITextNode> CreatePercentWidthItem()
 
 SetSize()同时写入宽和高，适合固定尺寸组件；SetPercentWidth()通过入参常量PERCENT\_WIDTH\_VALUE配置组件宽度为父容器宽度的30%；SetAspectRatio()通过配置固定宽高比，从显式设置的组件高度自动推导对应的宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/47OUKCW7SsSiUEkff3s8qA/zh-cn_image_0000002739890860.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1uF_DyDPSK2SipDoRK0K3Q/zh-cn_image_0000002772898025.jpg)
 
 通常，还需要通过padding和margin控制内外边距、调节组件尺寸，以实现良好的间距效果。
 
@@ -177,7 +177,7 @@ inline std::shared_ptr<ArkUITextNode> CreateMarginItem(const std::string &text, 
 
 内边距padding用于控制组件内容区与边缘之间的留白，外边距margin用于控制组件与父容器边缘的留白间距。如果需要按父容器比例设置间距，则可使用[ArkUI\_NodeType](../harmonyos-references/capi-native-node-h.md#arkui_nodetype)中NODE\_PADDING\_PERCENT和NODE\_MARGIN\_PERCENT对应的方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/paeHEvzOTtCE23jOW1yGYw/zh-cn_image_0000002739730982.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/aBSFKFDJS06nQlz4NVB0AQ/zh-cn_image_0000002743378776.jpg)
 
 ## 使用位置属性
 
@@ -222,7 +222,7 @@ inline std::shared_ptr<ArkUITextNode> CreateOffsetItem()
 
 可以看到两种效果：position直接给出目标位置，offset则保留原有占位关系，再向目标方向偏移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/d4h_1VIDS56hueYUfIY_tQ/zh-cn_image_0000002769330331.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/HVCmsjN0S8q0pAXiFpx95w/zh-cn_image_0000002743218890.jpg)
 
 ## 使用边框属性
 
@@ -282,4 +282,4 @@ void SetBorderStyle(
 
 当组件已经具备尺寸和间距后，可以继续叠加这些边框属性，构建轮廓和视觉分隔的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/8N2Q0IWqRiCtxoXoolQCHQ/zh-cn_image_0000002769450193.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/WHF8r-R8TFKw0YJumjBBBw/zh-cn_image_0000002772738143.jpg)

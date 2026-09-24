@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-shadow-
 title: 阴影
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 阴影
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:38+08:00
+scraped_at: 2026-09-25T07:06:31+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:463959ce5112737e582b4910e297384eb25258a5f8584dd36ff1c50d1e72a99f
+content_hash: sha256:fc0f6926eaaf57341564f49d4858490f45be16a5d0901596fa7d3b3242ec5410
 ---
 
 阴影接口[shadow](../harmonyos-references/ts-universal-attributes-image-effect.md#shadow)可以为当前组件添加阴影效果，该接口支持两种类型参数，开发者可配置[ShadowOptions](../harmonyos-references/ts-universal-attributes-image-effect.md#shadowoptions对象说明)自定义阴影效果。ShadowOptions模式下，当color的透明度为0时，无阴影效果。
@@ -57,4 +57,4 @@ struct ShadowOptionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DQqWv0MZTkqEU6amxE3cxg/zh-cn_image_0000002739730888.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/2vf6aptHSc6VSQKNIdUVNw/zh-cn_image_0000002743378682.png)

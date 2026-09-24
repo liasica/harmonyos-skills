@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: CanvasGradient
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasGradient
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:31+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1359d267d4095b6e5f4800dc25cab23cc807efc0d62e1ebfb92a917114b1fe93
+scraped_at: 2026-09-25T07:10:08+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:262fe0fa7bb0a73f962ddbb7f3e73e8e6499a850aba3e33f54a29487c078fddf
 ---
 
 渐变对象，可通过addColorStop方法设置多个颜色断点，实现平滑的颜色过渡，适用于Canvas填充和描边等场景。
@@ -66,13 +66,13 @@ struct AddColorStop {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/lU2wEs9ERc-FrUgjtoSPLw/zh-cn_image_0000002739893076.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/DKkWxUgSTaeZdCTdoL5O4g/zh-cn_image_0000002772900243.png)
 
 ## addColorStop20+
 
 addColorStop(offset: number, color: string | ColorMetrics): void
 
-设置渐变断点值，包括偏移和颜色。支持设置rgb或argb格式颜色。支持通过传入[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)类型设置P3广色域颜色值，从API版本26.0.0开始，新增支持BT2020广色域和HDR提亮。
+设置渐变断点值，包括偏移和颜色。支持设置rgb或argb格式颜色。支持通过传入[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)类型设置P3广色域颜色值。
 
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
@@ -157,78 +157,4 @@ struct AddColorStop {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/xgw5lAi4T3eE8kWB7wrY0g/zh-cn_image_0000002739733198.png)
-
-以下示例演示SDR与HDR渐变的亮度差异。通过[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)可以构造BT2020色域的HDR颜色，颜色分量值可以超过1.0，超过1.0的部分用于表现超出普通屏幕亮度范围的高亮效果。左侧使用sRGB色域的红->白->绿渐变，右侧使用BT2020色域的HDR颜色且高光白色亮度倍数达到1.5，在支持HDR的屏幕上右侧高光区域明显比左侧更亮。
-
-**说明** 
-
-使用HDR颜色时，需要将Canvas组件所在窗口的色域模式通过[setWindowColorSpace](arkts-apis-window-window.md#setwindowcolorspace9)方法设置为广色域模式（WIDE\_GAMUT），否则HDR提亮效果不会生效。
-
-从API版本26.0.0开始，[addColorStop](ts-components-canvas-canvasgradient.md#addcolorstop20)接口新增支持通过[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)类型入参进行HDR提亮。
-
-```ts
-// xxx.ets
-import { ColorMetrics } from '@kit.ArkUI';
-import { BusinessError } from '@kit.BasicServicesKit';
-
-@Entry
-@Component
-struct CanvasGradientDemo {
-  private settings: RenderingContextSettings = new RenderingContextSettings(true);
-  private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
-
-  build() {
-    Column({ space: 30 }) {
-      Canvas(this.context)
-        .width(340)
-        .height(240)
-        .onReady(() => {
-          // HDR渐变支持超出1.0的亮度值，在支持HDR的设备上，右侧高光区域会比左侧更亮
-          this.drawCanvas();
-        })
-    }
-    .width('100%')
-    .height('100%')
-    .justifyContent(FlexAlign.Center)
-  }
-
-  private drawCanvas() {
-    // 左侧：SDR渐变，红 -> 白 -> 绿
-    let gradSDR = this.context.createLinearGradient(20, 20, 160, 160)
-    try {
-      gradSDR.addColorStop(0.0, ColorMetrics.colorWithSpace(ColorSpace.SRGB, 1.0, 0.0, 0.0, 1.0)) // 红色
-      gradSDR.addColorStop(0.5, ColorMetrics.colorWithSpace(ColorSpace.SRGB, 1.0, 1.0, 1.0, 1.0)) // 白色
-      gradSDR.addColorStop(1.0, ColorMetrics.colorWithSpace(ColorSpace.SRGB, 0.0, 1.0, 0.0, 1.0)) // 绿色
-    } catch (error) {
-      let e: BusinessError = error as BusinessError;
-      console.error(`SDR Failed to addColorStop. Code: ${e.code}, message: ${e.message}`);
-    }
-    this.context.fillStyle = gradSDR
-    this.context.fillRect(10, 10, 150, 150)
-
-    this.context.fillStyle = '#FFFFFF'
-    this.context.font = '16px sans-serif'
-    this.context.textAlign = 'center'
-    this.context.fillText("SDR", 85, 190)
-
-    // 右侧：HDR渐变，红 -> 高亮白(亮度1.5) -> 绿
-    let gradHDR = this.context.createLinearGradient(190, 20, 330, 160)
-    try {
-      gradHDR.addColorStop(0.0, ColorMetrics.createHDRColor(ColorSpace.BT2020, 1.0, 0.0, 0.0, 1.0)) // 红色
-      gradHDR.addColorStop(0.5, ColorMetrics.createHDRColor(ColorSpace.BT2020, 1.5, 1.5, 1.5, 1.0)) // 高亮白色
-      gradHDR.addColorStop(1.0, ColorMetrics.createHDRColor(ColorSpace.BT2020, 0.0, 1.0, 0.0, 1.0)) // 绿色
-    } catch (error) {
-      let e: BusinessError = error as BusinessError;
-      console.error(`HDR Failed to addColorStop. Code: ${e.code}, message: ${e.message}`);
-    }
-    this.context.fillStyle = gradHDR
-    this.context.fillRect(180, 10, 150, 150)
-
-    this.context.fillStyle = '#FFFFFF'
-    this.context.fillText("HDR", 255, 190)
-  }
-}
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/nap-kBlgS5mFBYVp8YUwJQ/zh-cn_image_0000002769332547.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/Ch_UC12xSHSPFtudShxKPw/zh-cn_image_0000002743380992.png)

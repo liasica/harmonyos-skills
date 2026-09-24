@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: LongPressGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > LongPressGesture
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:84e7a47e8bbb572be99d78b80d6f999e40df53778294f95af92111622b4fc669
+scraped_at: 2026-09-25T07:09:53+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:7fa875836eace93e78d1f9e480f4f9ce0b96b99f37693c7747877005d336635c
 ---
 
 用于触发长按手势事件，触发长按手势的最少手指数为1，默认最短长按时间为500毫秒。可配置duration参数控制最短长按时长，适用于需要通过用户长按操作触发组件交互的场景。
@@ -28,6 +28,10 @@ LongPressGesture(value?: { fingers?: number; repeat?: boolean; duration?: number
 当长按触发时间小于500毫秒时，系统优先响应长按事件而非拖拽事件。
 
 当长按触发时间达到或超过500毫秒时，系统优先响应拖拽事件而非长按事件。
+
+**说明** 
+
+当长按过程中触发应用窗口退后台/销毁，手指/手写笔输入源切换（手写笔输入源切换包括手写笔悬浮状态场景），屏幕旋转时，长按手势会被取消。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -175,4 +179,4 @@ struct LongPressGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/bUo4PmnuSPaIYi-TA0FKgA/zh-cn_image_0000002739732814.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/rSKV84zkQ-azDOKYQb8PaQ/zh-cn_image_0000002743380608.gif)

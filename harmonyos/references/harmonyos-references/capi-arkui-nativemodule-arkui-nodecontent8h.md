@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NodeContent*
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NodeContent*
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b2ed11d7d3f8adf091dc318b00fc03339715e7b3977170a4c2404a425e5b507a
+scraped_at: 2026-09-25T07:10:48+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:c09d2785d5930537c596991bc4508484971bf102605f4b2edb4f6536dc699af7
 ---
 
 ```c
@@ -20,4 +20,4 @@ typedef struct ArkUI_NodeContent* ArkUI_NodeContentHandle
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [native\_type.h](capi-native-type-h.md)
+**所在头文件：** [common\_type.h](capi-common-type-h.md)

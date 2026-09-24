@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tque-
 title: DeQue
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 内存管理与同步控制 > TQue > DeQue
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:59+08:00
+scraped_at: 2026-09-25T07:08:07+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:49d49aac3f133889c1263353e66083cfe1f1f4dcaa4c5ebd7067fdb7613d3970
+content_hash: sha256:7f6d4532ea97866c33dba1d12a143c2a760bcdc25b20105075f0db5b8784ab09
 ---
 
 ## 功能说明
@@ -31,7 +31,7 @@ content_hash: sha256:49d49aac3f133889c1263353e66083cfe1f1f4dcaa4c5ebd7067fdb7613
 
 **图1** 将LocalTensor通过EnQue放入A1/B1的Queue中后再通过DeQue搬出
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/qVPXG4phRYCXqg-0eMTdaQ/zh-cn_image_0000002739732428.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/CWzcE4y2R7GYe2RpukRqGg/zh-cn_image_0000002743380222.png)
 
 ## 参数说明
 

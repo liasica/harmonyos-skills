@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-packe
 title: 使用网络报文分析功能实现tcpdump抓包
 breadcrumb: 指南 > 系统 > 网络 > 网络调试调优 > 使用网络报文分析功能实现tcpdump抓包
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:06+08:00
+scraped_at: 2026-09-25T07:07:04+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:8ccd299cdf360490c4cce1c4e7ef9ed332d62e89ba78117747dfc9c7a7582729
+content_hash: sha256:18a1b647ec79b4a071690c610e8b34a969ff62a75a3872bf90e9c8a2915abcf4
 ---
 
 ## 网络报文分析简介
@@ -79,7 +79,7 @@ USB连接后系统自动识别设备并创建以太网卡，无需手动安装�
 2. 点击开关弹窗确认允许后将其开启。
 3. 开启后胶囊实况窗会提示"报文分析运行中"，设备网络报文会被抓取到Windows PC Wireshark。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/x9CosSlPTTyN09mk26Htxg/zh-cn_image_0000002769330807.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/E3NUd2oCR3Kd8C1xQg3Fcw/zh-cn_image_0000002743219366.png)
 
 **说明** 
 
@@ -97,7 +97,7 @@ USB连接后系统自动识别设备并创建以太网卡，无需手动安装�
 2. 在网卡列表中查找功能开启后新增的以太网卡，通常显示为"以太网 x"（如"以太网 2"）。
 3. 记录该以太网卡的名称。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ni9tqPKvQKOWD2HVTlwiyQ/zh-cn_image_0000002769450669.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/EuXHGouEQPSEwY8z8Pz2aQ/zh-cn_image_0000002772738619.png)
 
 **说明** 
 
@@ -112,7 +112,7 @@ USB连接后系统自动识别设备并创建以太网卡，无需手动安装�
 1. 在Wireshark网卡列表中，双击选中的以太网卡，开始抓包。
 2. 报文数据会显示在抓包窗口中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/hOKCuKszTq2NQulvWo2Sdw/zh-cn_image_0000002739891338.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/bpLxAtW1QIC6AAKXPQKvGg/zh-cn_image_0000002772898503.png)
 
 步骤三：解读抓包结果
 
@@ -166,7 +166,7 @@ Wireshark通过颜色区分不同类型的报文：
 2. 使用Ctrl+Shift+S保存抓包文件。
 3. 选择保存路径和文件名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/SiUCCxpyQY2sxbHNt8cYOA/zh-cn_image_0000002739731460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/vGIVLv_eSvadfWtuFSh_0g/zh-cn_image_0000002743379254.png)
 
 ### 关闭网络报文分析步骤
 
@@ -212,7 +212,7 @@ Phone或Tablet设备的网络报文分析功能已开启，但Wireshark网卡列
 * 重新开启Phone或Tablet的网络报文分析功能。
 * 重启Wireshark并在Wireshark中点击刷新网卡列表按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/sWpNQdVYROCKqNJ4SeCO0A/zh-cn_image_0000002769330809.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/k8lGb3cuSeef6PNPjOpBBA/zh-cn_image_0000002743219368.png)
 
 ### 抓包数据为空或很少
 
@@ -232,7 +232,7 @@ Wireshark过滤器设置过于严格，例如限制特定IP、端口等。
 * 检查Wireshark过滤器是否设置正确，尝试清除所有过滤器。
 * 确认以太网卡是否在接收数据（查看Wireshark底部状态栏的包统计）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ofZWjCCjROWAvU9hn6pY4w/zh-cn_image_0000002769450671.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/q0lbZHPGSr-WIQKqIbPSDg/zh-cn_image_0000002772738621.png)
 
 ### 功能使用期间出现中断
 

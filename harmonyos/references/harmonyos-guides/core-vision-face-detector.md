@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-f
 title: 人脸检测
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸检测
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:51:11+08:00
+scraped_at: 2026-09-25T07:08:22+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:9523622fafc02047eac8a9aa8d7c2fcdf1bfd68bd823222bc629b49287d08478
+content_hash: sha256:939c4c397b3be2583e7ead45d2d5373cfee755bb672ba9e9c3bcc68372cbc541
 ---
 
 ## 适用场景
@@ -14,13 +14,13 @@ content_hash: sha256:9523622fafc02047eac8a9aa8d7c2fcdf1bfd68bd823222bc629b49287d
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/-4TeB6LHQwm7hk86lDW4Pw/zh-cn_image_0000002769451663.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/JBcMBFPASVGrsiz3gvcJ7Q/zh-cn_image_0000002772739613.png)
 
 ## 世界坐标系
 
 以下方图片指示坐标系辅助表示人脸朝向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/b62Ge32vSFCZrharihKkkQ/zh-cn_image_0000002739892332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/QyLD46n4REG96b05vxNUig/zh-cn_image_0000002772899497.png)
 
 ## 开发步骤
 

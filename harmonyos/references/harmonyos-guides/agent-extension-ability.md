@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-extensi
 title: 使用AgentExtensionAbility组件实现智能体服务
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 端侧A2A框架开发指导 > 开发端侧智能体 > 使用AgentExtensionAbility组件实现智能体服务
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:53dd44743abdc670a1e96b3fd947e0420a2fcf2c5dd11e42e1673bcf32c279d3
+scraped_at: 2026-09-25T07:06:14+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:4bde932892ba8b2f8c2e48d6476f05259ccd8035980bd6aa031fdcc39559353f
 ---
 
 ## 概述
@@ -85,7 +85,7 @@ content_hash: sha256:53dd44743abdc670a1e96b3fd947e0420a2fcf2c5dd11e42e1673bcf32c
    ```
 4. 在工程Module对应的[module.json5配置文件](module-configuration-file.md)中注册AgentExtensionAbility，type标签需要设置为"agent"，srcEntry标签表示当前ExtensionAbility组件所对应的代码路径。
 
-   ```json
+   ```json5
    {
      "module": {
        "extensionAbilities": [
@@ -99,7 +99,7 @@ content_hash: sha256:53dd44743abdc670a1e96b3fd947e0420a2fcf2c5dd11e42e1673bcf32c
            "metadata": [
              {
                "name": "ohos.extension.agent",
-               "resource": "$profile:agent_config",
+               "resource": "$profile:agent_config"
              }
            ]
          }
@@ -155,7 +155,7 @@ export default class AgentExtAbility extends AgentExtensionAbility {
     } catch (err) {
       let code = (err as BusinessError).code;
       let msg = (err as BusinessError).message;
-      console.error(`sendData failed, err code: ${code}, err msg: ${msg}.`);
+      console.error(`authorize failed, err code: ${code}, err msg: ${msg}.`);
     }
   }
   // ...

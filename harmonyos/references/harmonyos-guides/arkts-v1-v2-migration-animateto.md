@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: AnimateTo使用迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > AnimateTo使用迁移
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:33+08:00
+scraped_at: 2026-09-25T07:06:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:bd4cce7d4a757fe283bf046e5d775ac8e267c347d1f1dcd9e8812d21dcdd13d2
+content_hash: sha256:6784d9086fc652981fd7a03a8da11bc3ca4807c8bae4905599a36deb5de367d1
 ---
 
 在状态管理从V1迁移至V2的过程中，[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)执行动画前如需修改状态变量，可参考本文档的适配方案。
@@ -52,7 +52,7 @@ struct Index {
 
 预期动画效果：绿色矩形从长宽100变为200，字符串从Hello World变为Hello ArkUI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/jo4DdDM3TsSyDpFC-vgElw/zh-cn_image_0000002739890214.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/bBJjdV58SiOM1OCFnBa5XA/zh-cn_image_0000002772897377.gif)
 
 **V1迁移V2**
 
@@ -94,7 +94,7 @@ struct Index {
 
 由于当前animateTo与V2的刷新机制不兼容，执行动画前的额外修改未生效，实际显示的动画效果如下图所示：绿色矩形从长宽50变为200，字符串从Hello变为Hello ArkUI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/wz1n-dD9RoaF-aWgDmVu-w/zh-cn_image_0000002769449545.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/F7yZ81SiRKaJaa19gw2ORA/zh-cn_image_0000002772737495.gif)
 
 ## 迁移方案
 

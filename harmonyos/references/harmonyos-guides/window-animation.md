@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-animat
 title: 设置窗口动效 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 其他开发场景 > 设置窗口动效 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:44+08:00
+scraped_at: 2026-09-25T07:06:37+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:712d185204f728a81083be7c222f53b598b9bd48a8f9511afc5166c8e9bfae54
+content_hash: sha256:fb75f07b767d01a290379115e4e278cbbff2f1ecea102fcf0a23b4cbaf19ae03
 ---
 
 ## 场景介绍
@@ -80,7 +80,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/GAsN3T-GT4edi_ZdEMUgOg/zh-cn_image_0000002769450341.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/JJN_v7U_RT2UGGDLZyTqjw/zh-cn_image_0000002772738291.gif)
 
 ## 设置主窗口销毁时的转场动画
 
@@ -156,4 +156,4 @@ export default class EntryAbility extends UIAbility {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/cnaJeVFWQRi2kMww7JbRlg/zh-cn_image_0000002739891010.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/DtL6Yr1kR42uf35N0Cit2Q/zh-cn_image_0000002772898175.gif)

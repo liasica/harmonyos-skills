@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_node.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0dab1f4ca15ba4ec8a4b13fc1f518634c8f896109c5af038b0089dd0309e7fe4
+scraped_at: 2026-09-25T07:10:34+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:991aa9502eb24fa7d138e20b72c8d7ceea8c3df553599809f88ad9e02975764d
 ---
 
 ## 概述
@@ -30,13 +30,11 @@ content_hash: sha256:0dab1f4ca15ba4ec8a4b13fc1f518634c8f896109c5af038b0089dd0309
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md) | ArkUI\_AttributeItem | 定义[setAttribute](capi-arkui-nativemodule-arkui-nativenodeapi-1.md#setattribute)函数的通用入参结构。 |
 | [ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md) | ArkUI\_NodeComponentEvent | 定义组件回调事件的参数类型。 |
 | [ArkUI\_StringAsyncEvent](capi-arkui-nativemodule-arkui-stringasyncevent.md) | ArkUI\_StringAsyncEvent | 定义组件回调事件使用字符串参数的类型，用于在组件异步事件回调中传递字符串数据，适用于组件回调事件需要携带文本信息的场景。 |
 | [ArkUI\_TextChangeEvent](capi-arkui-nativemodule-arkui-textchangeevent.md) | ArkUI\_TextChangeEvent | 定义文本变化事件的数据结构，用于在文本输入场景中监听和处理文本变更事件。该结构体包含文本内容、扩展信息和数值参数，支持开发者实时获取文本变更数据，适用于输入框内容监听、实时搜索、字数统计等场景。 |
 | [ArkUI\_NativeNodeAPI\_1](capi-arkui-nativemodule-arkui-nativenodeapi-1.md) | ArkUI\_NativeNodeAPI\_1 | ArkUI提供的Native侧Node类型接口集合。Node模块相关接口需要在主线程上调用。 |
 | [OH\_ArkUI\_TextEditorChangeEvent](capi-arkui-nativemodule-oh-arkui-texteditorchangeevent.md) | OH\_ArkUI\_TextEditorChangeEvent | 定义TextEditor组件文本内容变化事件的结构体。 |
-| [ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md) | ArkUI\_NodeEvent | 定义组件事件的通用结构类型。 |
 | [ArkUI\_NodeCustomEvent](capi-arkui-nativemodule-arkui-nodecustomevent.md) | ArkUI\_NodeCustomEvent | 定义自定义组件事件的通用结构类型，用于在自定义组件的测量、布局和绘制事件回调中传递事件信息。 |
 | [ArkUI\_NodeAdapter\*](capi-arkui-nativemodule-arkui-nodeadapter8h.md) | ArkUI\_NodeAdapterHandle | 定义组件适配器对象，用于滚动类组件的元素懒加载，适用于需要按需加载大量滚动内容的场景，可避免一次性创建全部元素，降低内存占用并提升滑动性能。 |
 | [ArkUI\_NodeAdapterEvent](capi-arkui-nativemodule-arkui-nodeadapterevent.md) | ArkUI\_NodeAdapterEvent | 定义组件适配器事件对象，用于在节点适配器的事件回调中传递事件类型、宿主节点和数据项索引等信息。 |
@@ -3191,7 +3189,7 @@ int32_t OH_ArkUI_NativeModule_ConvertPositionToWindow(ArkUI_NodeHandle currentNo
 
 将点的坐标从指定节点的坐标系转换至当前窗口的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/t9utPsziRh2kT3RU5DcHVg/zh-cn_image_0000002769452999.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qM6tHXGRTqOfpGtlcfSNmg/zh-cn_image_0000002743381584.png)
 
 如上图所示，将指定节点坐标系中的坐标(x0, y0)转换成窗口坐标系的坐标，结果为(x1, y1)。
 
@@ -3221,7 +3219,7 @@ int32_t OH_ArkUI_NativeModule_ConvertPositionFromWindow(ArkUI_NodeHandle targetN
 
 将点的坐标从当前窗口的坐标系转换至目标节点的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/CTfDJlsHRXaDYsmaZJ9QQw/zh-cn_image_0000002739893670.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/YEQzccvoS3ayOHGDPIzhAw/zh-cn_image_0000002743221696.png)
 
 如上图所示，将窗口坐标系中的坐标(x1, y1)转换成目标节点坐标系的坐标，结果为(x0, y0)。
 

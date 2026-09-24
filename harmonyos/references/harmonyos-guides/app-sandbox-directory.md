@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-d
 title: 应用沙箱目录
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用沙箱目录
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:47+08:00
+scraped_at: 2026-09-25T07:06:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:dc0447705feb1a74f68d8601ee4bb39cf1410bfe181fd764f1986c6212eac2ed
+content_hash: sha256:112b3502fade765bc7324a9d5d237f1ec752427ee523e20b9e503288b6b60cb1
 ---
 
 应用沙箱是一种以安全防护为目的的隔离机制，避免数据受到恶意路径穿越访问。在这种沙箱的保护机制下，应用可见的目录范围即为“应用沙箱目录”。
@@ -18,7 +18,7 @@ content_hash: sha256:dc0447705feb1a74f68d8601ee4bb39cf1410bfe181fd764f1986c6212e
 
 **图1** 应用沙箱文件访问关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/s-uWn8YaTc63JscB_YtXBw/zh-cn_image_0000002769330551.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/P9HHYfTjR7-hPAZNBnSp8g/zh-cn_image_0000002743219110.png)
 
 ## 应用沙箱目录与应用沙箱路径
 
@@ -30,7 +30,7 @@ content_hash: sha256:dc0447705feb1a74f68d8601ee4bb39cf1410bfe181fd764f1986c6212e
 
 **图2** 应用沙箱路径（不同权限与角色的进程下可见的文件路径不同）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/GrLfyuzGT3GQsJ0geo8ATA/zh-cn_image_0000002769450413.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/znRPoi7pSde4Es_0Ln94rQ/zh-cn_image_0000002772738363.png)
 
 ## 应用文件目录与应用文件路径
 
@@ -42,7 +42,7 @@ content_hash: sha256:dc0447705feb1a74f68d8601ee4bb39cf1410bfe181fd764f1986c6212e
 
 **图3** 应用文件目录结构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/0CMDHS_ZTC2J9koXcsfdsg/zh-cn_image_0000002739891082.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/AXBcbK2RRhG_sDiH4XYxxw/zh-cn_image_0000002772898247.png)
 
 **说明** 
 

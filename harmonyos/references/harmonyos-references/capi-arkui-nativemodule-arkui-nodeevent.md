@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NodeEvent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NodeEvent
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:49+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:632f5951375960aecd417fc618a98cc98802dfab42468a5fcb71124974fe79e3
+scraped_at: 2026-09-25T07:10:45+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:70e9d25cd43ac08b6e9e83846f42d04eca71817c1a00b321856c67dff2ff175f
 ---
 
 ```c
@@ -20,4 +20,4 @@ typedef struct ArkUI_NodeEvent ArkUI_NodeEvent
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [drag\_and\_drop.h](capi-drag-and-drop-h.md)
+**所在头文件：** [common\_type.h](capi-common-type-h.md)

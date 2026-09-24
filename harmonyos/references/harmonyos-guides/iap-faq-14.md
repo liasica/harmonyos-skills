@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-faq-14
 title: 如何解决证书链不完整？
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > IAP Kit常见问题 > 如何解决证书链不完整？
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:43+08:00
+scraped_at: 2026-09-25T07:07:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fb3dda2d19146e4a0fdc454847d6cd6818a6a428b2edfe8b5d46a8739c6bb2b2
+content_hash: sha256:72083ce6dadb7903300f11f830fd25cae2fa8dfa26d184c939a33e1680e6606e
 ---
 
 如果开发者提供的证书在IAP服务内置信任库中查询不到，则该证书不被IAP信任，需要构造完整的信任链以被IAP信任。
@@ -20,12 +20,12 @@ content_hash: sha256:fb3dda2d19146e4a0fdc454847d6cd6818a6a428b2edfe8b5d46a8739c6
 
    访问[华为开发者网站](https://developer.huawei.com/consumer/cn/)，依次点击“查看网站信息 > 显示连接详情 > 显示证书 > 详细信息”，可查看证书状况，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/z2k3Jud7S22H2OWWZ-fgOw/zh-cn_image_0000002769451257.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ENIpbnk5RC6clM1L88U__g/zh-cn_image_0000002772739207.png)
 2. 导出服务器证书链至文件中。
 
    依次点击“服务器证书 > 导出 > Base64 编码 ASCII，证书链（\*.pem;\*.crt） > 保存”，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/mY_p6XJjRtK-yjOtrDku0Q/zh-cn_image_0000002739891926.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/iqfR75i9QJSSJx8vlCOtNg/zh-cn_image_0000002772899091.png)
 3. 导出的证书链文件，使用文本编辑器打开.crt文件，可以看到与下图格式相似的PEM格式的证书内容，从上到下依次为“服务器证书 > 中间证书 > 根证书”，将已经拼接好的证书链返回给IAP服务器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/1hfx4crBScWxL9Mk94L7Ow/zh-cn_image_0000002739732048.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/8vbAgIJZQz6qHhvUc5ue8g/zh-cn_image_0000002743379842.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-cro
 title: 通过Call调用实现多端协同
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > 通过Call调用实现多端协同
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fa9598ceaec83201469dade2f1534fa16d68ceed6510aa567301a75c38fd826a
+scraped_at: 2026-09-25T07:06:12+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:71b7b65dc7a4ca464cab0d4cd5011ad31ea085f1f0697227d7f76ce3b40ba21a
 ---
 
 Call调用是[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)能力的扩展，它为UIAbility提供一种能够被外部调用并与外部进行通信的能力。Call调用支持前台与后台两种启动方式，使UIAbility既能被拉起到前台展示UI，也可以在后台被创建并运行。通过建立跨进程通信（IPC）链路，它在调用方与被调用方间构建起数据通道。当在分布式场景下使用时，Call调用可以跨设备发起，使得一个设备上的应用能够将任务迁移至另一个设备上的UIAbility继续执行，从而完成跨端迁移。
@@ -37,7 +37,7 @@ Call调用示意图如下所示。
 
 **图1** Call调用示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/sM7O2w2RRgacoBn9jBEGOg/zh-cn_image_0000002769329461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/z0mj71l6RWGRCXHaUFq9Mg/zh-cn_image_0000002743218020.png)
 
 * CallerAbility调用[startAbilityByCall()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口获取[Caller](../harmonyos-references/js-apis-app-ability-uiability.md#caller)，并使用Caller对象的[call()](../harmonyos-references/js-apis-app-ability-uiability.md#call)方法向CalleeAbility发送数据。
 * CalleeAbility持有一个[Callee](../harmonyos-references/js-apis-app-ability-uiability.md#callee)对象，通过Callee的[on()](../harmonyos-references/js-apis-app-ability-uiability.md#on)方法注册回调函数，当接收到Caller发送的数据时将会调用对应的回调函数。
@@ -144,7 +144,7 @@ Call功能主要接口如下表所示。具体的API详见[Caller](../harmonyos-
    }
 
    function sendMsgCallback(data: rpc.MessageSequence): rpc.Parcelable {
-     hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'CalleeSortFunc called');
+     hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'sendMsgCallback called');
 
      // 获取Caller发送的序列化数据
      let receivedData: MyParcelable = new MyParcelable(0, '');

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: select
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > select
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:42+08:00
+scraped_at: 2026-09-25T07:10:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d60b488639950f606fb5de6c0afddc9efa3564116209ea3a75383ba893efe434
+content_hash: sha256:a14ed27723748f018995b17bbc43a78cff5d06a02da8198ba707e4dae8812a2f
 ---
 
 下拉选择按钮，可使用下拉菜单展示并选择内容。
@@ -92,4 +92,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/5lPLFOxpQd-jkd-TIccJ3g/zh-cn_image_0000002769452693.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/H7rMp9-bQOmTwvbj0M-kjg/zh-cn_image_0000002743381278.png)

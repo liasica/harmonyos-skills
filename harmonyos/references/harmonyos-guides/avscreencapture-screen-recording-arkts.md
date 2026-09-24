@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: 基于AVScreenCapture实现屏幕录制（ArkTS）
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVScreenCapture实现屏幕录制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:26+08:00
+scraped_at: 2026-09-25T07:07:28+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:c8c56c6979d96e9e84126c12cd7f34e13b65102bb91b548d4fedbd4d2eacb6a3
+content_hash: sha256:861b54b62598ea95caf1736dade500a8e18ee5c43534178127d5eb2def576f93
 ---
 
 ## 概述
@@ -30,13 +30,13 @@ HarmonyOS 提供了用于实现录屏功能的ArkTS接口，能够支持屏幕�
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/EjjEAZS4QKe4dB9q21rSfA/zh-cn_image_0000002769450887.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/920WENYSST-rpv8jISelXw/zh-cn_image_0000002772738837.gif)
 
 ## 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/SGKQD3wRQK-rtMTpvmZRaw/zh-cn_image_0000002739891556.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/y8Yc-nPORCqFom3oF-W19Q/zh-cn_image_0000002772898721.png)
 
 当点击录制按钮时，会调用异步方法进行屏幕录制。关键过程如下：
 

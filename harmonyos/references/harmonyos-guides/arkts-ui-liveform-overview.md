@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 互动卡片概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 互动卡片概述
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:49+08:00
+scraped_at: 2026-09-25T07:06:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:18c918e8ab54fdc49c54d7dd8f83713b546d4ee780715018ba722a54dac419f3
+content_hash: sha256:3bc6dc13b13541ae63c52b68bd2cecd63495ef80621748371089eecf1e466ce2
 ---
 
 从API version 20开始，支持互动卡片。互动卡片提供卡片动效能力，例如卡片破框动效，丰富信息提醒、浅层交互功能，显著提升用户体验。
@@ -20,7 +20,7 @@ content_hash: sha256:18c918e8ab54fdc49c54d7dd8f83713b546d4ee780715018ba722a54dac
 
 **图1** 趣味交互类型互动卡片样例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/EYnuqZQqRMuMRw1tPHzYvg/zh-cn_image_0000002769450471.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/LM6DCW8ES4ud2_c9XKxSTw/zh-cn_image_0000002772738421.gif)
 
 ### 场景动效类型
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 响应参数
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 响应参数
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:38+08:00
+scraped_at: 2026-09-25T07:14:30+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:01a5d1f47d60b32a69b288b157c8477d4468bf23492395ecd5eb17c7725ef925
+content_hash: sha256:58afaf88a3eb6ea125857fb1dd33db24ce086906f41425f79879adeb8c2bd73e
 ---
 
 ## Response Body
@@ -107,7 +107,7 @@ Check Parameter Partial Success.
 1. noPushTypeRight：请开通请求头中push-type对应场景的权益，语音播报消息（push-type为2）权益申请可参考[申请推送语音播报消息权益](../harmonyos-guides/push-apply-right.md#申请推送语音播报消息权益)，应用内通话消息（push-type为10）权益申请可参考[申请推送应用内通话消息权益](../harmonyos-guides/push-apply-right.md#申请推送应用内通话消息权益)。
 2. noRight：请检查生成Push Token的应用是否属于请求url中projectId对应的项目，即确保请求URL（https://push-api.cloud.huawei.com/v3/**[projectId]**/messages:send）中的**projectId**与[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站中该应用所属的“项目ID”一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/HBF8QeUITVKSC2JwtTDRYA/zh-cn_image_0000002769453415.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/NrrNpsEsRbqA2hV2OVExYg/zh-cn_image_0000002743382000.png)
 3. atomicUnableSendUnsubscribedMsg：元服务**仅支持**发送授权订阅消息、卡片刷新消息，请排查消息体内容。
 4. tokenFormatError：请检查Push Token格式是否错误，并重新[申请Push Token](../harmonyos-guides/push-get-token.md)。
 5. countryNotSupport：请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
@@ -298,7 +298,7 @@ All the tokens are invalid.
 1. noPushTypeRight：请开通请求头中对应push-type场景的权益，语音播报消息（push-type为2）权益申请可参考[申请推送语音播报消息权益](../harmonyos-guides/push-apply-right.md#申请推送语音播报消息权益)，应用内通话消息（push-type为10）权益申请可参考[申请推送应用内通话消息权益](../harmonyos-guides/push-apply-right.md#申请推送应用内通话消息权益)。
 2. noRight：请检查生成Push Token的应用是否属于请求url中projectId对应的项目，即确保请求URL（https://push-api.cloud.huawei.com/v3/**[projectId]**/messages:send）中的**projectId**与[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站中该应用所属的“项目ID”一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/t6kHgR81TrCVoWG8xDkYBQ/zh-cn_image_0000002739894086.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/xRaywhZ6QCOQHrGheckopA/zh-cn_image_0000002743222112.png)
 
    若终端设备升级至HarmonyOS NEXT版本后，需重新生成对应的Push Token（建议您在应用启动时调用getToken接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token）。并使用[请求体参数说明](push-scenariozed-api-request-param.md)、V3版本的请求URL（https://push-api.cloud.huawei.com**/v3**/[projectId]/messages:send）发送REST API请求。
 3. atomicUnableSendUnsubscribedMsg：元服务**仅支持**发送授权订阅消息、卡片刷新消息，请排查消息体内容。

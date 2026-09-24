@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.deviceInfo (设备信息)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.deviceInfo (设备信息)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:57+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:d0871be6d0fa4196d9bd6b42216109c5663ed7278274c7465f24a184a83945f3
+scraped_at: 2026-09-25T07:12:06+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:fc1c8501ae9007745dce38e105306eb36b81e188e3cc0baff8cd82c3f9a78959
 ---
 
 本模块提供终端设备信息查询能力，支持获取设备类型、品牌、型号、系统版本、安全补丁级别、设备唯一标识等多种设备信息，适用于设备适配、版本兼容性检查、设备识别、统计分析等场景，帮助开发者快速获取设备信息进行应用适配和优化。开发者不可配置这些信息。
@@ -235,7 +235,7 @@ let distributionOSApiVersion: number = deviceInfo.distributionOSApiVersion;
 console.info('the value of the deviceInfo distributionOSApiVersion is :' + distributionOSApiVersion);
 
 let distributionOSApiName: string = deviceInfo.distributionOSApiName;
-// 输出结果：the value of the deviceInfo distributionOSApiName is :HarmonyOS-API
+// 输出结果：the value of the deviceInfo distributionOSApiName is :5.0.1
 console.info('the value of the deviceInfo distributionOSApiName is :' + distributionOSApiName);
 
 let distributionOSReleaseType: string = deviceInfo.distributionOSReleaseType;

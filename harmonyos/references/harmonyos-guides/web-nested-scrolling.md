@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-nested-sc
 title: Web组件嵌套滚动
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件嵌套滚动
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:45+08:00
+scraped_at: 2026-09-25T07:06:39+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:eaecc6b0468d9595cc360ce8faa643c8cf417f48eb14168c3d88c89b4ea55955
+content_hash: sha256:82691c2ba0e48075785674bf1a732f3e568b48d24f9a072dfc2146860019b250
 ---
 
 Web组件嵌套滚动的典型应用场景为，在页面中，多个独立区域需进行滚动，当用户滚动Web区域内容时，可联动其他滚动区域，实现上下左右全方位滑动页面的嵌套滚动体验。内嵌于可滚动容器（[Grid](../harmonyos-references/ts-container-grid.md)、[List](../harmonyos-references/ts-container-list.md)、[Scroll](../harmonyos-references/ts-container-scroll.md)、[Swiper](../harmonyos-references/ts-container-swiper.md)、[Tabs](../harmonyos-references/ts-container-tabs.md)、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)、[Refresh](../harmonyos-references/ts-container-refresh.md)、[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)）中的Web组件，接收到滑动手势事件后，需要设置ArkUI的[NestedScrollMode](../harmonyos-references/ts-appendix-enums.md#nestedscrollmode10)枚举属性，实现Web组件与ArkUI可滚动容器的嵌套滚动。
@@ -104,7 +104,7 @@ struct NestedScroll {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/7miPuXBJRgi9zwOYwLAjrQ/zh-cn_image_0000002739731146.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/6F-3fs9CRT-XasB_7kcgjw/zh-cn_image_0000002743378940.gif)
 
 ## 使用nestedScroll常见问题
 
@@ -337,7 +337,7 @@ struct Index {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/LhugopJaQ32KtUYLveVwOQ/zh-cn_image_0000002769330495.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/vO62jA3LQWOYTDiTPWul0Q/zh-cn_image_0000002743219054.gif)
 
 ## 示例代码
 

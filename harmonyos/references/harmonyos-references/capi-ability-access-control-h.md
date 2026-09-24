@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-abil
 title: ability_access_control.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > ability_access_control.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:69b73db6e4a39ccd724e0f05590071107150f1caf35596a7f8f6cda2e8caa8bd
+scraped_at: 2026-09-25T07:09:08+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:b8d1d632b235cdb20a29260eeeae5127a63bd87eab5cbebe1181a0d167496bc2
 ---
 
 ## 概述
 
 声明管理进程访问控制的接口。
 
-**库：** ability\_access\_control.so
+**库：** libability\_access\_control.so
 
 **引用文件：** <accesstoken/ability\_access\_control.h>
 

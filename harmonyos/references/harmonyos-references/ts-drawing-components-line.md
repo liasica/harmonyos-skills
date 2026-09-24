@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Line
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Line
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:31+08:00
+scraped_at: 2026-09-25T07:10:08+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:88174f7ab0a65eda330b2419a0ed1708dc5ca292c7e598be6394631a35328c27
+content_hash: sha256:99397c8af535153c317b5cbc1fe80a8664ff15d6ee4ab7f114330ec2d9bb6b89
 ---
 
 Line组件用于在应用界面中绘制直线，支持自定义直线的起点、终点、颜色、宽度、透明度、虚线样式、端点样式等属性。适用于绘制分隔线、装饰性线条、图表中的坐标轴或连接线、自定义图形边框等场景。
@@ -179,7 +179,7 @@ struct LineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/sSiDUZP7QjuL0qWgpuhMQw/zh-cn_image_0000002769452467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/74eLPRofTq6sjp2ZJ5TC0Q/zh-cn_image_0000002743381050.png)
 
 ### 示例2（线条端点绘制）
 
@@ -228,7 +228,7 @@ struct LineExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/VkSByQE2RPiXHVxsqA9NlA/zh-cn_image_0000002739893136.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/pE_Bn7UnTE-N8GTNNCANDw/zh-cn_image_0000002743221164.png)
 
 ### 示例3（线条间隙绘制）
 
@@ -289,7 +289,7 @@ struct LineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/M55s4tN1T6qFB8R-OIfScw/zh-cn_image_0000002739733258.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/oZsWrwsfSrGpzK9sS-0i8g/zh-cn_image_0000002772740419.png)
 
 ### 示例4（宽和高使用不同参数类型绘制直线）
 
@@ -331,7 +331,7 @@ struct LineTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/1cYKJcwbSrmdEDzi6gl6Xg/zh-cn_image_0000002769332607.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/fIw7sos9RBmZgc3l8k-rHg/zh-cn_image_0000002772900303.png)
 
 ### 示例5（使用attributeModifier动态设置Line组件的属性）
 
@@ -369,4 +369,4 @@ struct LineModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/6Kxf2EViQZqmHMt_BBypRQ/zh-cn_image_0000002769452469.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/v6dVNs0KRMieb9Fv4NRmsQ/zh-cn_image_0000002743381052.png)

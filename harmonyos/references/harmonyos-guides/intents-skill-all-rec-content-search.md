@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 内容搜索方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 本地搜索方案 > 接入方案 > 内容搜索方案
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:51:12+08:00
+scraped_at: 2026-09-25T07:08:24+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:0f798cedbd3a4eb2b6be4d6d2e64c1c35f01f4f83acfd24dbf8f1441cec1b204
+content_hash: sha256:e3b190e7b1d86b298854b5089cf5a87d50dd5d3d95ddabb292a24ad43f1e9aab
 ---
 
 ## 方案概述
 
 当用户使用应用/元服务时，开发者可以按照标准意图Schema（具体意图详见[各垂域意图Schema](../service/intents-schema-0000001901962713.md)）向系统共享数据（数据包含用户行为和内容实体），并实现意图调用（空调用与传参调用）。已实现用户点击卡片后，可后台执行功能（例如播放指定歌曲）或跳转至指定内容页面（例如指定的歌曲播放页面）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/PHR2mi8vSUiKqHSC3eOn-Q/zh-cn_image_0000002739732490.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/31uvlvzDQSOvM8qkzoYz8g/zh-cn_image_0000002743380284.png)
 
 ## 意图声明
 

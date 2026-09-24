@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-deliverin
 title: 权益发放
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 自动续期订阅商品购买 > 权益发放
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cca146ebe5c181a227e7cdd93036afd613b999be664e2b13db518a8235da9ac7
+scraped_at: 2026-09-25T07:07:48+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:d5fce9aa475d90c15f177bd7fb9eb40b95a0f3c399f50ada20b8a4dc9006248b
 ---
 
 ## 对生效中的订阅发放权益
@@ -20,7 +20,7 @@ content_hash: sha256:cca146ebe5c181a227e7cdd93036afd613b999be664e2b13db518a8235d
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/I146ApT_TC-MLJA0SbhvtA/zh-cn_image_0000002739891908.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/R2vaPdZoR7iShAkbrLcQvw/zh-cn_image_0000002772899073.png)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户生效中的订阅列表。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订阅信息。
@@ -115,13 +115,13 @@ import {
 
   dealPurchaseData(purchaseData: string) {
     try {
-      // 建议您将 purchaseData 发送到应用服务器进行签名验证。
+      // 建议您将purchaseData发送到应用服务器进行签名验证。
       const jwsSubscriptionStatus = (JSON.parse(purchaseData) as PurchaseData).jwsSubscriptionStatus;
       if (!jwsSubscriptionStatus) {
         Logger.error(TAG, 'dealPurchaseData, jwsSubscriptionStatus invalid');
         return;
       }
-      // 解码 jwsPurchaseOrder 并执行签名验证。
+      // 解码jwsSubscriptionStatus并执行签名验证。
       const subscriptionStatus = JWSUtil.decodeJwsObj(jwsSubscriptionStatus);
       if (!subscriptionStatus) {
         Logger.error(TAG, 'dealPurchaseData, subscriptionStatus invalid');
@@ -178,7 +178,7 @@ import {
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/wGNKJ8bpTRGPBfbj3jmqBA/zh-cn_image_0000002739732030.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/F5keKALxRCqJjLj9OqLfXw/zh-cn_image_0000002743379824.png)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户已购买但未确认发货的订阅列表。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订阅信息。
@@ -265,13 +265,13 @@ import {
 
   dealPurchaseData(purchaseData: string) {
     try {
-      // 建议您将 purchaseData 发送到应用服务器进行签名验证。
+      // 建议您将purchaseData发送到应用服务器进行签名验证。
       const jwsSubscriptionStatus = (JSON.parse(purchaseData) as PurchaseData).jwsSubscriptionStatus;
       if (!jwsSubscriptionStatus) {
         Logger.error(TAG, 'dealPurchaseData, jwsSubscriptionStatus invalid');
         return;
       }
-      // 解码 jwsPurchaseOrder 并执行签名验证。
+      // 解码jwsSubscriptionStatus并执行签名验证。
       const subscriptionStatus = JWSUtil.decodeJwsObj(jwsSubscriptionStatus);
       if (!subscriptionStatus) {
         Logger.error(TAG, 'dealPurchaseData, subscriptionStatus invalid');

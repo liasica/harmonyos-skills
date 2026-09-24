@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pointerstyle-
 title: 鼠标光标开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 鼠标光标开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0e22faf12009c2318c590f981a8d0405a60c62ba682ded3bc955f7ea9eca41f9
+scraped_at: 2026-09-25T07:07:06+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:67dd57c073832ed4bd77e9798663532dd2adbc3f409caf96b953543914b65ed1
 ---
 
 ## 场景介绍
@@ -24,10 +24,10 @@ import { pointer } from '@kit.InputKit';
 
 | 接口名称 | 描述 |
 | --- | --- |
-| isPointerVisible(callback: AsyncCallback<boolean>): void | 获取鼠标光标显示或隐藏状态。 |
-| setPointerVisible(visible: boolean, callback: AsyncCallback<void>): void | 设置鼠标光标显示或隐藏状态，该接口会影响全局鼠标光标的显示状态。 |
-| setPointerStyle(windowId: number, pointerStyle: PointerStyle, callback: AsyncCallback<void>): void | 设置鼠标光标样式，该接口会影响指定窗口鼠标光标样式。 |
-| getPointerStyle(windowId: number, callback: AsyncCallback<PointerStyle>): void | 查询鼠标光标样式。 |
+| isPointerVisible(callback: AsyncCallback<boolean>): void | 获取当前窗口的显示/隐藏状态。 |
+| setPointerVisible(visible: boolean, callback: AsyncCallback<void>): void | 设置光标显示/隐藏状态，此状态作用于当前进程的所有窗口。 |
+| setPointerStyle(windowId: number, pointerStyle: PointerStyle, callback: AsyncCallback<void>): void | 设置指定窗口的鼠标样式类型，此接口仅支持设置本应用进程内窗口的鼠标样式类型。 |
+| getPointerStyle(windowId: number, callback: AsyncCallback<PointerStyle>): void | 获取指定窗口的鼠标样式类型，此接口仅支持获取本应用进程内窗口的鼠标样式类型。 |
 
 ## 设置鼠标光标隐藏
 

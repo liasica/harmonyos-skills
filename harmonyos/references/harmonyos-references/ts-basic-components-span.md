@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Span
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Span
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:27+08:00
+scraped_at: 2026-09-25T07:10:03+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9a535b96a3c7a97d1d07fc431e094adcd59bd6e5a91b14b4e45342cf413296fb
+content_hash: sha256:3897550c462dc79ce5e5b221eaa201bebe26f3684b7cbcccefbe4b65e6d7aa0d
 ---
 
 作为[Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于显示行内文本，支持对文本的字体、颜色、大小等样式进行细粒度设置。适用于在同一行文本中混合显示不同样式的场景，如不同字体颜色的文本、添加装饰线或阴影效果等。
@@ -572,7 +572,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/67tHA8RZT1qnQ0DFFPEr0w/zh-cn_image_0000002769452281.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/g1mXRc4hR3KzS9zSAo_h5Q/zh-cn_image_0000002772740231.png)
 
 ### 示例2（设置文本阴影）
 
@@ -626,7 +626,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/xAmTKKjOS9mG7TwvK0ADqQ/zh-cn_image_0000002739892950.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/Iv5WMGfaQpWSdxJMizP8qg/zh-cn_image_0000002772900117.png)
 
 ### 示例3（设置背景样式）
 
@@ -650,7 +650,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/mo0c_Z9FSauDK_I_Hf5ClA/zh-cn_image_0000002739733072.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ug6QYOedTYqeMQuPs_tVlw/zh-cn_image_0000002743380866.png)
 
 ### 示例4（设置文本基线偏移量）
 
@@ -687,7 +687,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/eewldEkpTIenWQ-WvonYuA/zh-cn_image_0000002769332421.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/-Wh2890kTLy9pMFlkHHGpA/zh-cn_image_0000002743220980.png)
 
 ### 示例5（设置文本可变字体的属性）
 
@@ -720,4 +720,4 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/1-ZQBETERQeYKgjLrPp-Lg/zh-cn_image_0000002769332345.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/piq6Ar0jSYq1V2P1MkfQWg/zh-cn_image_0000002743220904.gif)

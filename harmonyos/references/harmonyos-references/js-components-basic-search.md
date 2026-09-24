@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: search
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > search
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:42+08:00
+scraped_at: 2026-09-25T07:10:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:168a1f393b21a47f32d03d16424fe0cf3ae165353be990a29f02d426d56873b9
+content_hash: sha256:28b876840ba11c0d71201fab306d7e6bea908392ee067e498da5d093c622037a
 ---
 
 **说明** 
@@ -87,4 +87,4 @@ content_hash: sha256:168a1f393b21a47f32d03d16424fe0cf3ae165353be990a29f02d426d56
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/kLoLgjcgR1eirJnG5LnJHA/zh-cn_image_0000002769332831.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/yLOmC6OtRrenj7bmyblJTQ/zh-cn_image_0000002772900529.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输安装包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输安装包
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ca285139db9beeb435d70878baced992abfac11d1f915fc50cb83d3a48ea6a45
+scraped_at: 2026-09-25T07:07:45+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:683d1457853fb871a9b2d65d5cd332c9450d5866a1b49f25068dbbd0b6b6bfa7
 ---
 
 游戏近场快传支持已安装游戏的玩家通过碰一碰或隔空传送将游戏安装包传输给未安装游戏的玩家，实现游戏传播效率的提升。
@@ -25,10 +25,10 @@ content_hash: sha256:ca285139db9beeb435d70878baced992abfac11d1f915fc50cb83d3a48e
 
 1. 发送端设备打开游戏后在任意游戏界面与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)触发安装包传输。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/OsLIsxSeSf6rpYeEYBh1dQ/zh-cn_image_0000002769451215.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/i7OpBMaAT5eUMaJsLIT0nQ/zh-cn_image_0000002772739165.png)
 2. 若当前接收端已安装该游戏，则会打开该游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/gTUuzARrRKOTIdxzfN4OZA/zh-cn_image_0000002739891884.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/RASXWjzATreFi9qjYoIHzQ/zh-cn_image_0000002772899049.png)
 
 ## 集成Game Service Kit实现安装包传输
 
@@ -36,7 +36,7 @@ content_hash: sha256:ca285139db9beeb435d70878baced992abfac11d1f915fc50cb83d3a48e
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/xpxhIn0-RvOXqBR5J4fdkg/zh-cn_image_0000002739732006.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/kLzd4sPBRmO6OyRnlDtEwQ/zh-cn_image_0000002743379800.png)
 
 1. 发送端设备打开游戏后与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)或[隔空传送](gestures-share-overview.md)触发安装包传输。
 2. 发送端调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建安装包传输任务。
@@ -147,7 +147,7 @@ content_hash: sha256:ca285139db9beeb435d70878baced992abfac11d1f915fc50cb83d3a48e
        } catch (error) {
          let err = error as BusinessError;
          hilog.error(0x0000, 'nearby',
-           `Failed to subscribe offRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
+           `Failed to subscribe onRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
        }
        hilog.info(0x0000, '[nearby]', `create success linking: ${createResult.linkingForInstallation}`);
        return createResult.linkingForInstallation;

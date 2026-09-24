@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:51+08:00
+scraped_at: 2026-09-25T07:07:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:edd1570da0ba3659c714bbcb07f6f6894c9ff434c938636f5161d906c65d3b35
+content_hash: sha256:8bb5bca5f0a74b845489ca221057a5d7290b47ef82efd27079d954ce1c075de3
 ---
 
 ## 场景介绍
@@ -14,15 +14,15 @@ content_hash: sha256:edd1570da0ba3659c714bbcb07f6f6894c9ff434c938636f5161d906c65
 
 **说明** 
 
-1. 健康使用设备授权列表页（访问入口为：设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/8cl4VJmbQN-z1rR45ZKrrQ/zh-cn_image_0000002739892154.png)-可访问健康使用设备的应用），用于统一管理所有管控应用的用户授权。
+1. 健康使用设备授权列表页（访问入口为：设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/IMIbxYeUThODQ56_AyveiA/zh-cn_image_0000002772899319.png)-可访问健康使用设备的应用），用于统一管理所有管控应用的用户授权。
 2. 若用户已设置健康使用设备的密码，则在此页面取消应用授权时需要输入相应的密码。
 3. 管控应用调用Screen Time Guard Kit接口获取授权或者取消授权时，不会触发onUserAuthSwitchOn/onUserAuthSwitchOff回调方法。只有在健康使用设备授权列表页操作授权开关时才会触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/6cxFD66ARSG2NsktBnsPRw/zh-cn_image_0000002739732276.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/YKMjVRyIS9SmT2j-7xyhNw/zh-cn_image_0000002743380070.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/ss0XJw1fTeKETcwRNgwvag/zh-cn_image_0000002769331625.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/eg_dGi7xSTGXmL7JXb8GYw/zh-cn_image_0000002743220184.png)
 
 流程说明（以关闭授权开关为例）：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 网页场景接入数字盾（FIDO2）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 网页场景接入数字盾（FIDO2）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bda8826db0055b8047c0865ceed67038fc1874d3b48220282cbe42b7ec009806
+scraped_at: 2026-09-25T07:06:53+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:1c164dd2db7fa6f027caad750746a304bb1ba99732dfe5b8439b1d0d946372d2
 ---
 
 从API版本26.0.0开始，新增支持网页场景下的数字盾认证。
@@ -22,11 +22,11 @@ content_hash: sha256:bda8826db0055b8047c0865ceed67038fc1874d3b48220282cbe42b7ec0
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/2kAb9qvPTkSDt2aTJoAQhw/zh-cn_image_0000002769450599.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/X1hClMRFTqeZOrxxdhvguA/zh-cn_image_0000002772738549.jpg)
 
 网页通过FIDO2实现数字盾认证时，需由调用方网页、浏览器、Online Authentication Kit（FIDO2）、配套的认证应用以及Device Security Kit共同协作完成。流程如下：
 
-1. 调用方通过浏览器Webauthn接口发起通行密钥（FIDO2）认证请求，在并在请求中携带数字盾数据。
+1. 调用方通过浏览器Webauthn接口发起通行密钥（FIDO2）认证请求，并在请求中携带数字盾数据。
 2. 浏览器将请求转发至FIDO2，FIDO2解析入参数据并检测到"scene"的值为"digitalShield"后进入数字盾分支流程。
 3. FIDO2校验身份（[App Linking应用链接](applinking-introduction.md)域名、appId签名、rpId一致性）。
 4. 校验通过后弹窗确认拉起数字盾应用并传递解析后的largeBlob数据。
@@ -53,10 +53,10 @@ content_hash: sha256:bda8826db0055b8047c0865ceed67038fc1874d3b48220282cbe42b7ec0
    // 网页通过navigator.credentials.create注册通行密钥（FIDO2）
    const publicKeyCredentialCreationOptions = {
      publicKey: {
-       challenge: new Uint8Array([...]),     // 服务器生成的challenge
-       rp: { name: "Example xxx", id: "xxx.example.com" },     // 此处rp和user仅为示例代码，非真实数据
+       challenge: new Uint8Array([0x01, 0x02, 0x03, 0x04]),    // 服务器生成的challenge（示例字节，非真实数据）
+       rp: { name: "Example xxx", id: "example.com" },     // 此处rp和user仅为示例代码，非真实数据
        user: {
-         id: new Uint8Array([...]),
+         id: new Uint8Array([0x01, 0x02, 0x03, 0x04]),
          name: "user@example.xxx.com",
          displayName: "Example User xxx"
        },
@@ -91,7 +91,7 @@ content_hash: sha256:bda8826db0055b8047c0865ceed67038fc1874d3b48220282cbe42b7ec0
    // 通过navigator.credentials.get发起认证
    const publicKeyCredentialRequestOptions = {
      publicKey: {
-       challenge: new Uint8Array([...]),     // 服务器生成的challenge
+       challenge: new Uint8Array([0x01, 0x02, 0x03, 0x04]),     // 服务器生成的challenge（示例字节，非真实数据）
        rpId: "example.com",
        allowCredentials: [{
          type: "public-key",

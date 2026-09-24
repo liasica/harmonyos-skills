@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: AVScreenCapture录屏基础流程
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVScreenCapture录屏取码流(C/C++) > AVScreenCapture录屏基础流程
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:26+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:55b48fcc21906613c0088b706c35d74c972b2c78cd6e664e6ffb42e32bad406f
+scraped_at: 2026-09-25T07:07:28+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:d27190f9ece32fe961fdc28dbb3f39ef4433ca57cd2d6bca2dd3a2f1e55b1bfa
 ---
 
 屏幕录制功能支持开发者获取屏幕数据，适用于屏幕录制、会议共享、直播等场景。开发者可通过调用[AVScreenCapture](media-kit-intro.md#avscreencapture)模块的C API，采集设备内外的音视频数据源。该模块需与窗口管理（Window）、图形处理（Graphic）等模块协同工作，以完成完整的视频采集流程。
@@ -23,7 +23,7 @@ content_hash: sha256:55b48fcc21906613c0088b706c35d74c972b2c78cd6e664e6ffb42e32ba
 
 基础流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/k5OcDd-QRbuDJlTrk0K67Q/zh-cn_image_0000002769450889.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/nVmsGIq9Q4qcncCVNFjRBw/zh-cn_image_0000002772738839.png)
 
 录屏采集的内容输出方式如下。
 
@@ -37,7 +37,7 @@ content_hash: sha256:55b48fcc21906613c0088b706c35d74c972b2c78cd6e664e6ffb42e32ba
 
   隐私保护弹框：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/smeacguBQYSO2AdOgE84DA/zh-cn_image_0000002739891558.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/YpE6QiVaSiKwTIUpWXOviA/zh-cn_image_0000002772898723.png)
 
 ## 通用开发步骤
 
@@ -174,7 +174,7 @@ config = {
 void OnError(OH_AVScreenCapture *capture, int32_t errorCode, void *userData)
 {
     (void)capture;
-    OH_LOG_INFO(LOG_APP, "==ScreenCaptureSample== ScreenCapture OnError errorCode is %{public}d", errorCode);
+    OH_LOG_ERROR(LOG_APP, "==ScreenCaptureSample== ScreenCapture OnError errorCode is %{public}d", errorCode);
     (void)userData;
 }
 
@@ -226,7 +226,7 @@ void HandleVideoBuffer(OH_AVBuffer *buffer)
     }
     OH_NativeBuffer_Unreference(nativebuffer);
     buffer = nullptr;
-    OH_LOG_INFO(LOG_APP, "==ScreenCaptureSample== ScreenCapture OnBufferAvailable inner audio");
+    OH_LOG_INFO(LOG_APP, "==ScreenCaptureSample== ScreenCapture OnBufferAvailable Video");
 }
 
 void HandleAudioBuffer(OH_AVBuffer *buffer, FILE *file, const char *logMsg)
@@ -267,7 +267,7 @@ void OnBufferAvailable(OH_AVScreenCapture *capture, OH_AVBuffer *buffer, OH_AVSc
 void OnDisplaySelected(struct OH_AVScreenCapture *capture, uint64_t displayId, void *userData)
 {
     (void)capture;
-    OH_LOG_INFO(LOG_APP, "==ScreenCaptureSample== ScreenCapture OnError errorCode is %{public}uld", displayId);
+    OH_LOG_INFO(LOG_APP, "==ScreenCaptureSample== OnDisplaySelected displayId is %{public}uld", displayId);
     (void)userData;
 }
 
@@ -322,7 +322,7 @@ void HandleVideoBuffer(OH_AVBuffer *buffer)
     }
     OH_NativeBuffer_Unreference(nativebuffer);
     buffer = nullptr;
-    OH_LOG_INFO(LOG_APP, "==ScreenCaptureSample== ScreenCapture OnBufferAvailable inner audio");
+    OH_LOG_INFO(LOG_APP, "==ScreenCaptureSample== ScreenCapture OnBufferAvailable Video");
 }
 
 void HandleAudioBuffer(OH_AVBuffer *buffer, FILE *file, const char *logMsg)
@@ -415,7 +415,7 @@ config.videoInfo.videoCapInfo.displayId = 0;
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/lCGhe6YJQr6hnVu2AUAybA/zh-cn_image_0000002739731680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/QPc11yHXSYiEcndVpdImdg/zh-cn_image_0000002743379474.png)
 
 ### 录制主屏幕
 
@@ -475,7 +475,7 @@ config.videoInfo.videoCapInfo.missionIDsLen = static_cast<int32_t>(g_missionIds.
 // 在配置参数结束后执行"g_missionIds.clear()"。
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/dhiclhXKS9WBnHXtICtjkg/zh-cn_image_0000002769331029.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/hSnTB5flRbO8MH7evGay0A/zh-cn_image_0000002743219588.png)
 
 若期望同时录制多个窗口，需要传入期望录制的窗口ID列表。
 

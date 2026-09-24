@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 查询结算账单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 账单 > 查询结算账单
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:35+08:00
+scraped_at: 2026-09-25T07:14:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0683179dc7c4e4622cd6627a2a669f449ada13d016785111c274c0cd14ebf620
+content_hash: sha256:410fb60e9807d0d1f51d0cda18c4c21ea2ba4bad54fae00211ff76278e1f7187
 ---
 
 ## 功能介绍
@@ -16,7 +16,7 @@ content_hash: sha256:0683179dc7c4e4622cd6627a2a669f449ada13d016785111c274c0cd14e
 
 1. 获取结算账单API接口能力需要管理员先在“[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)”的“功能设置”中开启“结算单接口获取开关”，开启后**次日开始生成**前一日的账单。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/tVKEDtlVT6GTRgWo3wDu5Q/zh-cn_image_0000002739734200.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/IVkJ6VItQFWMCmj_jUfLqA/zh-cn_image_0000002772741359.png)
 2. 无论是否产生交易，每日自动生成账单。如果查询日期超限或未生成，则不返回文件下载信息。其他情况会返回。
 3. 账单下载后，建议遍历附件目录以获取csv后缀的文件进行解析。
 4. 解析表单内容时，需考虑表单更新，如新增列等场景。

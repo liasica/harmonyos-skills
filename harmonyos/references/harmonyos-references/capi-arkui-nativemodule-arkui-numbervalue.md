@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NumberValue
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NumberValue
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f790ed5c8f1f372d65fc59ef6084a2ee929e7d8371825bc985c280d9ae36041a
+scraped_at: 2026-09-25T07:10:48+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:9c9e788256d2a8bad5468042651afe3cc807ce34eeb8c5d5cdb7b52889821268
 ---
 
 ```c
@@ -14,13 +14,13 @@ typedef union {...} ArkUI_NumberValue
 
 ## 概述
 
-ArkUI 在 Native 侧使用的数字类型，用于通过统一类型承载浮点、有符号整型和无符号整型数值。
+ArkUI在Native侧使用的数字类型，用于通过统一类型承载浮点、有符号整型和无符号整型数值。
 
 **起始版本：** 12
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [native\_type.h](capi-native-type-h.md)
+**所在头文件：** [common\_type.h](capi-common-type-h.md)
 
 ## 汇总
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawable_descriptor.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > drawable_descriptor.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:08b0529c7e62b1934827a4ed88f39ec9b3b3b15577f071759b6bc3899783f841
+scraped_at: 2026-09-25T07:10:29+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:712cdab5ca5edd8c2e7669d1038639f146c4f278eea72ad8436cd82d946395da
 ---
 
 ## 概述
@@ -33,8 +33,6 @@ content_hash: sha256:08b0529c7e62b1934827a4ed88f39ec9b3b3b15577f071759b6bc389978
 | [ArkUI\_DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md) | ArkUI\_DrawableDescriptor | 定义DrawableDescriptor对象。 |
 | [OH\_PixelmapNative](capi-image-nativemodule-oh-pixelmapnative.md) | - | 使用Image Kit定义的Native侧的OH\_PixelmapNative对象。 |
 | [OH\_PixelmapNative\*](capi-arkui-nativemodule-oh-pixelmapnative8h.md) | OH\_PixelmapNativeHandle | 定义OH\_PixelmapNative对象指针类型。 |
-| [ArkUI\_Node](capi-arkui-nativemodule-arkui-node-descriptor.md) | - | 定义ArkUI Native组件实例对象，供ArkUI\_NodeHandle指针在Native接口中标识和传递组件实例。  **起始版本：** 22 |
-| [ArkUI\_Node\*](capi-arkui-nativemodule-arkui-node8h.md) | ArkUI\_NodeHandle | 定义 ArkUI Native 组件实例对象指针，用于在 ArkUI Native 接口中标识和传递组件实例，例如创建、挂载、移除或销毁组件节点。  **起始版本：** 22 |
 | [ArkUI\_DrawableDescriptor\_AnimationController](capi-arkui-nativemodule-arkui-drawabledescriptoranimationcontroller.md) | ArkUI\_DrawableDescriptor\_AnimationController | 定义DrawableDescriptor动图控制器对象。  **起始版本：** 22 |
 
 ### 枚举

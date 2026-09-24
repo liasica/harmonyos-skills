@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 停止策略
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 停止策略
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2536b1ca98cbd1d2f56774ec5a510d46c7d126144886e3b673d49fd836cf76bc
+scraped_at: 2026-09-25T07:07:58+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:53924c98d486c9310799d2bd355da5e41871accb0feba3dc6f65ab55338084ec
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:2536b1ca98cbd1d2f56774ec5a510d46c7d126144886e3b673d49fd836c
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/yY29yD6RTmGbHbRXipq3SQ/zh-cn_image_0000002739892160.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/poCxFrVgSmeTl4GdhWr0Sg/zh-cn_image_0000002772899325.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/uUFpCPJ_TRKKm2Uh9AIfog/zh-cn_image_0000002739732282.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XOACKIdNTkaVt8el36Dqdg/zh-cn_image_0000002743380076.png)
 
 流程说明：
 
@@ -68,9 +68,9 @@ content_hash: sha256:2536b1ca98cbd1d2f56774ec5a510d46c7d126144886e3b673d49fd836c
    }
    ```
 
-## 接收管控策略结束回调（可选）
+## 接收管控策略失效回调（可选）
 
-开发者若需要在策略结束时执行特定逻辑（如发送通知提醒用户），可以通过接收策略结束时的回调来实现。
+开发者若需要在策略失效时执行特定逻辑（如发送通知提醒用户），可以通过接收策略失效时的回调来实现。
 
 1. 导入相关模块。
 

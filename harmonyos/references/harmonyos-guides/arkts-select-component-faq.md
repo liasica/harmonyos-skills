@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-select-
 title: 按钮与选择组件常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 按钮与选择组件常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:43+08:00
+scraped_at: 2026-09-25T07:06:36+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b1eafe108727703c99acf39c74fdf54521f3b51cf81571daca78d333d9c25131
+content_hash: sha256:62e5cf7d4ad48a72676a008dd270cab86bf335e9574289603dea17f75cc0b318
 ---
 
 本文档介绍按钮与选择组件的常见问题并提供参考。
@@ -16,11 +16,11 @@ Slider的滑块与滑轨显示样式[SliderStyle](../harmonyos-references/ts-bas
 
 SliderStyle.OutSet模式下，滑块的中心与滑轨的端点对齐，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/buD_jTPMSzSYqsq81A38bw/zh-cn_image_0000002769450295.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/8PaBLms7TB-mM6KyGMdUsg/zh-cn_image_0000002772738245.jpg)
 
 SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑轨高度的一半的位置，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/tSXrUUkWT0SAVqtv5HhhOg/zh-cn_image_0000002739890964.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/OU1oBPs5R0OBfiWGNtq0_A/zh-cn_image_0000002772898129.jpg)
 
 **示例**
 
@@ -117,7 +117,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/ppTBtfaBTwC3pAxv2VBmjg/zh-cn_image_0000002739731086.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/LV_W9VAdQoONs_ECEyOd4Q/zh-cn_image_0000002743378880.png)
 
 ## Button组件设置type时，ButtonType枚举值与数字值不一致
 
@@ -186,4 +186,4 @@ struct ButtonTypeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/gohp1CxmSRqXOjJV50ketw/zh-cn_image_0000002769330435.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/1T4z8oWESx22ctSksDV8MQ/zh-cn_image_0000002743218994.png)

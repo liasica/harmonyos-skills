@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/textblock-dra
 title: 字块绘制（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 字块绘制（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:30+08:00
+scraped_at: 2026-09-25T07:07:32+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:8d4c6a9186d943c6fcb86df94011845053240231d031a379e7d9b1f5fca0de93
+content_hash: sha256:38c40f8886671f00a9bb6d732a109ecaaef8913b679bdded05cca3137fb009ee
 ---
 
 ## 场景介绍
@@ -50,7 +50,7 @@ OH_Drawing_TextBlobDestroy(textBlob);
 OH_Drawing_FontDestroy(font);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/uyaUtgOXR-OtpkqlltUtnQ/zh-cn_image_0000002769450959.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/pl7msZ6FST2V-VnCl7TfQg/zh-cn_image_0000002772738909.jpg)
 
 ## 文字描边
 
@@ -91,7 +91,7 @@ OH_Drawing_FontDestroy(font);
 OH_Drawing_PenDestroy(pen);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/IVm1xPrlQBaTVzWsY5hXmA/zh-cn_image_0000002739891628.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/4lKXF-p_RCuHx-Htc91vKQ/zh-cn_image_0000002772898793.jpg)
 
 ### 中文文字描边
 
@@ -141,7 +141,7 @@ OH_Drawing_PenDestroy(pen);
 OH_Drawing_BrushDestroy(brush);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/nX6eJu6WT0S8Ne9gXBnjIA/zh-cn_image_0000002739731750.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/CVVpb_w2QR2101Ct-mjOmg/zh-cn_image_0000002743379544.png)
 
 ## 文字渐变
 
@@ -188,7 +188,7 @@ OH_Drawing_PointDestroy(startPt);
 OH_Drawing_PointDestroy(endPt);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/NHNCAJ4CTuOZ-_ToTYXrUg/zh-cn_image_0000002769331099.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/lfN7hQ90RPO-DUFJrtE1MQ/zh-cn_image_0000002743219658.jpg)
 
 ## 主题字体
 
@@ -253,7 +253,7 @@ for (int i = 0; i < strLen; ++i) {
 OH_Drawing_FontDestroy(font);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/9pQ6IU6zSB68DVaghkev2w/zh-cn_image_0000002769331093.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/6lL5by4NT1-DXWVXVU4hFA/zh-cn_image_0000002743219652.jpg)
 
 进阶场景：绘制带字体特征的字符。
 
@@ -285,7 +285,7 @@ OH_Drawing_FontFeaturesDestroy(features);
 OH_Drawing_FontDestroy(font);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/A01nS8TLSQe7aPYTS2GB1w/zh-cn_image_0000002769450955.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/FjY5SNpNQ7CEkMfhsgxrTA/zh-cn_image_0000002772738905.png)
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: UIAbilityContext
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > UIAbilityContext
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ad817057e6c1bf13dd6d6e1ea3bce37e7de87f6379c99ad1fdc2be190cd87bf3
+scraped_at: 2026-09-25T07:09:07+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:c22d660350dd9eec2d441847a407cef5ad5cb7b7264b45cfcd65597e3a866966
 ---
 
 UIAbilityContext是[UIAbility](js-apis-app-ability-uiability.md)组件的上下文，继承自[Context](js-apis-inner-application-context.md)。各类Context之间的关联与差异详见[应用上下文Context](../harmonyos-guides/application-context-stage.md)。
@@ -3614,7 +3614,7 @@ restartApp(want: Want): Promise<void>
 | 801 | Capability not supported. |
 | 16000011 | The context does not exist. |
 | 16000050 | Connect to system server error. |
-| 16000063 | The target to restart does not belong to the caller or is not a UIAbility. |
+| 16000063 | The target to restart does not belong to the current application or is not a UIAbility. |
 | 16000064 | Restart too frequently. |
 | 16000065 | The API can be called only when the ability is focused. |
 

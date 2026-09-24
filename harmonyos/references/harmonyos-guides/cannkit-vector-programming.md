@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: 矢量编程
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 矢量编程
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:55+08:00
+scraped_at: 2026-09-25T07:08:04+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:989762e38f085ac88551b3f57fe3cb0d87408ff8b5a018b3a847c91a998a7b1c
+content_hash: sha256:272b8e7332d95db211b66934cd783537bc1b85e5f5c908245d140330a2f09a35
 ---
 
 ## 算子实现流程概述
@@ -14,7 +14,7 @@ content_hash: sha256:989762e38f085ac88551b3f57fe3cb0d87408ff8b5a018b3a847c91a998
 
 **图1** 矢量算子实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/wUVCTJJpT9W-0IYI8TdnbQ/zh-cn_image_0000002769451595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/1D5844hQSR-v7no01FpRDQ/zh-cn_image_0000002772739545.png)
 
 * 算子分析：分析算子的数学表达式、输入、输出以及计算逻辑的实现，明确需要调用的AscendC接口。
 * 核函数定义：定义AscendC算子入口函数。
@@ -38,7 +38,7 @@ content_hash: sha256:989762e38f085ac88551b3f57fe3cb0d87408ff8b5a018b3a847c91a998
 
    **图2** 算子计算逻辑
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/YWWO54SxQde5cqFf9uQB7A/zh-cn_image_0000002739892264.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/7UdKHCEeRBqI0iajjaSzhw/zh-cn_image_0000002772899429.png)
 2. 明确输入和输出。
 
    * Add算子有两个输入：x与y，输出为z。
@@ -105,7 +105,7 @@ content_hash: sha256:989762e38f085ac88551b3f57fe3cb0d87408ff8b5a018b3a847c91a998
 
 **图3** Add算子实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/gdk_Fr4BRR6u4o0k1vufYw/zh-cn_image_0000002739732386.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/X8XCh7egRU6TtLIl6PqzcA/zh-cn_image_0000002743380180.png)
 
 算子类中主要实现上述流程，包含对外开放的初始化Init函数和核心处理函数Process，Process函数中会对上图中的三个基本任务进行调用；同时包括一些算子实现中会用到的私有成员，比如上图中的Global Tensor和VECIN、VECOUT队列等。KernelAdd算子类具体成员如下。
 
@@ -152,7 +152,7 @@ private:
 
   **图4** 多核并行处理示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/6j7NeS8ORnWmogDSPA0Luw/zh-cn_image_0000002769331735.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/LMnV2d0BQHq9SS_CMeNgkg/zh-cn_image_0000002743220294.png)
 * 通过Pipe内存管理对象为输入输出Queue分配内存。
 
   比如，为输入x的Queue分配内存，可以通过如下代码段实现：
@@ -167,7 +167,7 @@ private:
 
   **图5** 单核数据切分示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/pZS9v6uKTVCMpyHTcPQjJQ/zh-cn_image_0000002769451597.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/XuibEnS0ThWWpmICqDAGcA/zh-cn_image_0000002772739547.png)
 
 Kirin9020/Kirin9030/KirinX90系列处理器支持的核数为1，具体的初始化函数代码如下。
 

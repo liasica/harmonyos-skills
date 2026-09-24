@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-
 title: 多线程并发概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > 多线程并发概述
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:28+08:00
+scraped_at: 2026-09-25T07:06:18+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:e44e9e940e460f50f35dcbc88249a7fb29569ca63201f5e405d313150a0ae918
+content_hash: sha256:b1635672afa7ef86f47695edb18afb8de7787b6f6cfbadc17a54fd89b17bf8d5
 ---
 
 多线程并发是指在单个程序中同时运行多个线程，通过并行或交替执行任务来提升性能和资源利用率的编程模型。在ArkTS应用开发中，多线程并发适用于多种业务场景，常见的业务场景主要分为以下三类，更详细的使用请参考[应用多线程开发概述](multithread-develop-overview.md)。
@@ -38,7 +38,7 @@ Actor并发模型中，不同Actor之间不共享内存，需通过消息传递�
 
 以下示例伪代码和示意图展示了如何使用内存共享模型解决生产者消费者问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/yarp1MYrRF-VK29JEGFlng/zh-cn_image_0000002739890046.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/jbumJFUDT_enqpeR1lMyEw/zh-cn_image_0000002772897209.png)
 
 为了避免不同生产者或消费者同时访问同一块共享内存容器时产生脏读、脏写现象，同一时间只能有一个生产者或消费者访问该容器。即不同生产者和消费者需争夺使用容器的锁。当一个角色获取锁后，其他角色需等待该角色释放锁，才能重新尝试获取锁以访问该容器。
 
@@ -150,7 +150,7 @@ export function main(): void {
 
 以下示例简单展示了如何使用基于Actor模型的TaskPool并发能力来解决生产者消费者问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/YTOizmWWRBCOkFDWxqMEYg/zh-cn_image_0000002739730168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/dvTEPqqqRkaFc5Qs17uzuA/zh-cn_image_0000002743377960.png)
 
 Actor模型中，不同角色之间并不共享内存，生产者线程和UI线程都有自己的虚拟机实例，两个虚拟机实例之间拥有独占的内存，相互隔离。生产者生产出结果后，通过序列化通信将结果发送给UI线程。UI线程消费结果后，再发送新的生产任务给生产者线程。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-gui
 title: AppFreeze（应用冻屏）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > AppFreeze（应用冻屏）检测
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:13+08:00
+scraped_at: 2026-09-25T07:07:12+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d6d0f2158af0f7107c57d0e429871b44a872fa77f8e6c1a071f39729bdf461fe
+content_hash: sha256:d10d744b87183c39f378fe404f17f82b8ad03898bcb4c5ee924e649683816b16
 ---
 
 ## 简介
@@ -46,7 +46,7 @@ content_hash: sha256:d6d0f2158af0f7107c57d0e429871b44a872fa77f8e6c1a071f39729bdf
 
 **图1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/8iWdB1fMRYKiaHHGuiDjrg/zh-cn_image_0000002769330867.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/WnmklThXRguyceMiFwl-Xg/zh-cn_image_0000002743219426.png)
 
 ### APP\_INPUT\_BLOCK用户输入响应超时
 
@@ -62,7 +62,7 @@ content_hash: sha256:d6d0f2158af0f7107c57d0e429871b44a872fa77f8e6c1a071f39729bdf
 
 **图2**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/kbOhyy1XTUex80dYl4BAxw/zh-cn_image_0000002769450729.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/_CjukQ8TRbWjSaTwQE5Ymg/zh-cn_image_0000002772738679.png)
 
 ### LIFECYCLE\_TIMEOUT生命周期切换超时
 
@@ -98,7 +98,7 @@ content_hash: sha256:d6d0f2158af0f7107c57d0e429871b44a872fa77f8e6c1a071f39729bdf
 
 **图3**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/hErA90Q4SsmOjDyU1Tb3Ew/zh-cn_image_0000002739891398.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/QTSaMmnHRBqC41KKRFPKMw/zh-cn_image_0000002772898563.png)
 
 ## 日志获取
 

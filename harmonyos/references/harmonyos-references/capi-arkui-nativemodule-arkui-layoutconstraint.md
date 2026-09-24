@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_LayoutConstraint
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_LayoutConstraint
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c448a2868eeba55fedefbf9affdff60c537830c19219b71fa56c62718f5bc6ea
+scraped_at: 2026-09-25T07:10:48+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:2aea174aeea060c74c59b6961da3d0a8911c70ce5af7c176bf017a087bc9dab8
 ---
 
 ```c
@@ -20,4 +20,4 @@ typedef struct ArkUI_LayoutConstraint ArkUI_LayoutConstraint
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [native\_type.h](capi-native-type-h.md)
+**所在头文件：** [common\_type.h](capi-common-type-h.md)

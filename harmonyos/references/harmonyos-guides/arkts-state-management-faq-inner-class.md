@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 数据对象状态管理常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 数据对象状态管理常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:34+08:00
+scraped_at: 2026-09-25T07:06:26+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:958d204adf6187589eb8109f53ec3b4fbce6b2acc19f7010d3457a82f6739146
+content_hash: sha256:71f75567512066111ed99a95b072a79ca84bebbaad4de595673672a372ad15ae
 ---
 
 大型应用中需要封装大量的数据对象，数据对象内部状态变量的使用极大地影响开发者的开发效率，本文将介绍数据对象状态管理的常见问题及解决方案。
@@ -312,7 +312,7 @@ struct Index {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/EbdZOS8tQIuvZAQ4go0NWQ/zh-cn_image_0000002739890300.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/ARVdW4C-R5OjOUNB7O8Q9Q/zh-cn_image_0000002772897463.gif)
 
 页面内通过ForEach显示了20条信息，当点击某一条信息中age的Text组件时，可以通过日志发现其他的19条信息中age的Text组件也进行了刷新(这体现在日志上，所有的age的Text组件都打出了日志)，但实际上其他19条信息的age的数值并没有改变，也就是说其他19个Text组件并不需要刷新。
 
@@ -433,7 +433,7 @@ struct Page {
 
 上述代码的运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/U2TCQH5nQkG7C9OHQZy-7g/zh-cn_image_0000002739730422.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/xAJwlDifRiut6YfuvFrunQ/zh-cn_image_0000002743378214.gif)
 
 修改后的代码使用对象数组代替了原有的多个属性数组，能够避免数组的“冗余刷新”的情况。这是因为对于数组来说，对象内的变化是无法感知的，数组只能观测数组项层级的变化，例如新增数据项，修改数据项（普通数组是直接修改数据项的值，在对象数组的场景下是整个对象被重新赋值，改变某个数据项对象中的属性不会被观测到）、删除数据项等。这意味着当改变对象内的某个属性时，对于数组来说，对象是没有变化的，也就不会去刷新。在当前状态管理的观测能力中，除了数组嵌套对象的场景外，对象嵌套对象的场景也是无法观测到变化的，这一部分内容将在[使用多属性类对象导致冗余刷新](arkts-state-management-faq-inner-class.md#使用多属性类对象导致冗余刷新)中讲到。同时修改代码时使用了自定义组件与ForEach的结合，这一部分内容将在[ForEach和对象数组结合使用导致UI不刷新](arkts-state-management-faq-inner-component.md#foreach和对象数组结合使用导致ui不刷新)讲到。
 
@@ -620,11 +620,11 @@ struct Page {
 
 上述代码的运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/5jnHaxdwSgeQDBycR-bKPA/zh-cn_image_0000002769329771.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/cLilWWiCRhGLP-SMz-abnw/zh-cn_image_0000002743218330.gif)
 
 优化前点击move按钮的脏节点更新[耗时](ui-inspector-profiler.md#trace调试能力)如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/6JURUMXPTdyqR-abVd3trA/zh-cn_image_0000002769449633.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/usAhmgh2RMuGrpoNXguFHQ/zh-cn_image_0000002772737583.png)
 
 在上面的示例中，UiStyle定义了多个属性，并且这些属性分别被多个组件关联。当点击任意一个按钮更改其中的某些属性时，会导致所有这些关联uiStyle的组件进行刷新，虽然它们其实并不需要进行刷新（因为组件的属性都没有改变）。通过定义的一系列isRender函数，可以观察到这些组件的刷新。当点击“move”按钮进行平移动画时，由于translateY的值的多次改变，会导致每一次都存在“冗余刷新”的问题，这对应用的性能有着很大的负面影响。
 
@@ -870,11 +870,11 @@ struct Page {
 }
 ```
 
-上述代码的运行效果如下。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/xypxzB89Q5WLVEFxW-KCJg/zh-cn_image_0000002739890302.gif)
+上述代码的运行效果如下。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/9V0Rt-2LRtKH4jXIXtUPTA/zh-cn_image_0000002772897465.gif)
 
 优化后点击move按钮的脏节点更新耗时如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/60Iu4puOTuCT61IVwxlxWQ/zh-cn_image_0000002739730424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/6Jd3ELwqSMuchrl_p1-FnA/zh-cn_image_0000002743378216.png)
 
 修改后的代码将原来的大类中的十五个属性拆成了八个小类，并且在绑定的组件上也做了相应的适配。属性拆分遵循以下几点原则：
 
@@ -1214,7 +1214,7 @@ struct Page {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/hT8MnBI0RmKvIAVs9TEV-A/zh-cn_image_0000002769329773.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/TdSYKEntSlm9oZ7iy-AKCA/zh-cn_image_0000002743218332.gif)
 
 上述代码维护了一个ChildList类型的数据源，点击"X"按钮删除一些数据后再点击Recover进行恢复ChildList，发现再次点击"X"按钮进行删除时，UI并没有刷新，同时也没有打印出“CompList ChildList change”的日志。
 
@@ -1395,7 +1395,7 @@ struct Page {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/c-sp91DIQa-QoilvM5V_DQ/zh-cn_image_0000002769449635.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/_YDyaX1NTXapj__gwkt_yg/zh-cn_image_0000002772737585.gif)
 
 核心的修改点是将原本Child[]类型的tempList修改为具有被观测能力的ChildList类。
 

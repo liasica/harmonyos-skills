@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-re
 title: 出行凭证接口
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > REST API > 出行凭证接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1bb21aef06a04af291fff8001793282e017da874cc31eda4e4a67e28b413bf36
+scraped_at: 2026-09-25T07:14:35+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:c065daeff34347800d1d5ec8bc57e964462c3210cfe95c6b1c71f8ee1b699090
 ---
 
 ## 预置模板
@@ -117,7 +117,7 @@ Accept: application/json;charset=UTF-8
 ```java
 public HwWalletObject invokeHwCreateKeyTravelClass(){
     HwWalletObject request=new HwWalletObject();
-    request.setPassVersion("1.0");
+    request.setPassVersion("10.0");
     request.setPassTypeIdentifier("hwpass.keytravel.test");
     request.setPassStyleIdentifier("keyTravelModelTest");
     request.setOrganizationName("XXXX");

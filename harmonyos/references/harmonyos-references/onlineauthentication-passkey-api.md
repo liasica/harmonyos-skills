@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineaut
 title: 通行密钥
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > ArkTS API > 通行密钥
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4f42a17f6071d4a478585595d518d634a9406528c33580dc56a3e791bc89c310
+scraped_at: 2026-09-25T07:11:31+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:ea2ef09e776df63391b595c8862934223b80db4f0423fbb01f009bab3b19a55f
 ---
 
 本模块主要提供了以下能力：
@@ -168,7 +168,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 | response | [AuthenticatorAttestationResponseJson](onlineauthentication-passkey-api.md#authenticatorattestationresponsejson) | 否 | 否 | 认证器证明响应。 |
 | authenticatorAttachment | string | 否 | 是 | 认证器信息（平台、漫游），默认值为platform。长度限制0到512。 |
 | clientExtensionResults | [AuthenticationExtensionsClientOutputsJson](onlineauthentication-passkey-api.md#authenticationextensionsclientoutputsjson) | 否 | 否 | 客户端扩展结果。当前版本不支持扩展，因此占位符始终为NULL，必须将clientExtensionResults键对应的值解析为{}。 |
-| type | string | 否 | 否 | 该属性返回对象的接口对象的插槽的值，它指定此对象所表示的凭据类型。长度限制0到512。 |
+| type | string | 否 | 否 | 该属性指定此对象所表示的凭据类型。长度限制0到512。 |
 
 ## PublicKeyCredentialRequestOptions
 
@@ -184,7 +184,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| challenge | Uint8Array | 否 | 否 | 获取挑战值。 |
+| challenge | Uint8Array | 否 | 否 | 挑战值。 |
 | timeout | number | 否 | 是 | 超时时间。单位为ms。默认为300000（5分钟），限制为0到600000（10分钟）。 |
 | rpId | string | 否 | 是 | 依赖方标识。默认值为空。长度限制0到512。 |
 | allowCredentials | Array<[PublicKeyCredentialDescriptor](onlineauthentication-passkey-api.md#publickeycredentialdescriptor)> | 否 | 是 | 认证凭据的附加参数列表。默认值为空。 |
@@ -233,7 +233,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 | response | [AuthenticatorAssertionResponseJson](onlineauthentication-passkey-api.md#authenticatorassertionresponsejson) | 否 | 否 | 认证器断言响应，JSON字符串的结构。 |
 | authenticatorAttachment | string | 否 | 是 | 认证器信息（平台、漫游），默认值为platform。长度限制0到512。 |
 | clientExtensionResults | [AuthenticationExtensionsClientOutputsJson](onlineauthentication-passkey-api.md#authenticationextensionsclientoutputsjson) | 否 | 否 | 客户端扩展结果。当前版本不支持扩展，因此占位符始终为NULL，必须将clientExtensionResults键对应的值解析为{}。 |
-| type | string | 否 | 否 | 该属性以JSON字符串形式返回对象的接口对象的插槽的值，该插槽指定此对象所表示的凭据类型。长度限制0到512。 |
+| type | string | 否 | 否 | 该属性指定此对象所表示的凭据类型。长度限制0到512。 |
 
 ## CredentialMediationRequirement
 
@@ -584,7 +584,7 @@ Token binding协议，用于客户端与依赖方通信。
 | excludeCredentials | Array<[PublicKeyCredentialDescriptor](onlineauthentication-passkey-api.md#publickeycredentialdescriptor)> | 否 | 是 | FIDO服务器已注册的凭据列表，默认值为空数组。 |
 | authenticatorSelection | [AuthenticatorSelectionCriteria](onlineauthentication-passkey-api.md#authenticatorselectioncriteria) | 否 | 是 | 身份认证器相关配置项。默认值为空。 |
 | hints | Array<[PublicKeyCredentialHint](onlineauthentication-passkey-api.md#publickeycredentialhint)> | 否 | 是 | 提示。默认值为空数组。 |
-| attestation | [AttestationConveyancePreference](onlineauthentication-passkey-api.md#attestationconveyancepreference) | 否 | 是 | 凭证首选项，默认值为“FIDO2\_NONE”。 |
+| attestation | [AttestationConveyancePreference](onlineauthentication-passkey-api.md#attestationconveyancepreference) | 否 | 是 | 凭证首选项，默认值为“NONE”。 |
 | attestationFormats | Array<string> | 否 | 是 | 依赖方可以使用此可选成员来指定对认证器使用的验证声明格式的偏好，默认值为空数组。 |
 | extensions | Map<string, Object> | 否 | 是 | 扩展参数。默认值为空。 |
 
@@ -852,7 +852,7 @@ struct Index {
             user: { id: new Uint8Array([1, 2, 3, 4]), name: 'user', displayName: 'User Name' },
             pubKeyCredParams: [
             ],
-            challenge: new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8])
+            challenge: new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
           };
           let credentialCreationOp: fido2.CredentialCreationOptions = {
             publicKey: pkOptions

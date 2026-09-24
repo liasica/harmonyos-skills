@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_ContextCallback
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_ContextCallback
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:eaf8c59380c4dd268cbe2616cf06f8f3df8b4da871879cba9436380b6a1109c6
+scraped_at: 2026-09-25T07:10:48+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:1e5336caf32c3e5bddfcc57c9888b5e3f9b39aa5a2439c655c0e847998e0ce38
 ---
 
 ```c
@@ -20,7 +20,7 @@ typedef struct {...} ArkUI_ContextCallback
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [native\_type.h](capi-native-type-h.md)
+**所在头文件：** [common\_type.h](capi-common-type-h.md)
 
 ## 汇总
 

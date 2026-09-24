@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 组件内转场 (transition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 组件内转场 (transition)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:34+08:00
+scraped_at: 2026-09-25T07:10:11+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0f498df224011a3beacd1fa5408df6aa445144899cc3426944afb7abd3579e23
+content_hash: sha256:921696175f81c9f43e6f1f15d8849254c8e64821a7704d7159b918c9e909d328
 ---
 
 组件内转场主要通过transition属性配置转场参数，在容器组件的子组件插入和删除时显示过渡动效，以提升用户体验。组件内转场详细的使用方法请参考[转场动画开发指导](../harmonyos-guides/arkts-enter-exit-transition.md)。
@@ -445,7 +445,7 @@ struct TransitionEffectExample1 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/sNzxjSSFQUqvDx6-C2d1TQ/zh-cn_image_0000002769332625.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/dMlqaf0XRTKKb76cOTrfNg/zh-cn_image_0000002772900321.gif)
 
 ### 示例2（使用不同接口实现图片出现消失）
 
@@ -508,7 +508,7 @@ struct TransitionEffectExample2 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/lwtU1BVMSPaAUatcSHo5VA/zh-cn_image_0000002769452487.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/9Xyt3-zVT_KWBSVzLZ6FtA/zh-cn_image_0000002743381070.gif)
 
 ### 示例3（设置父子组件为transition）
 
@@ -569,7 +569,7 @@ struct TransitionEffectExample3 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/s9BW0AmjQk6QGKGGHHEbvA/zh-cn_image_0000002739893156.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9cc6YzRTQ4-aikMFXXXoRw/zh-cn_image_0000002743221184.gif)
 
 ### 示例4（visibility切换时的双动画复合效果）
 
@@ -608,4 +608,4 @@ struct TransitionVisibilityExample {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Kmh6ImQLROuNsh-4FMcaFQ/zh-cn_image_0000002739733278.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/KuDpC31MTzm9rasRpwkrvA/zh-cn_image_0000002772740439.gif)

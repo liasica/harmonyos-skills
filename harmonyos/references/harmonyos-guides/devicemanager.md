@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicemanager
 title: USB设备管理
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB设备管理
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0259311c69409c7a8f1ebad33d31fa516dbc812af5260dc6821fbc9a8bcfebb8
+scraped_at: 2026-09-25T07:07:05+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:f4eb30ee37ee0a0c6324fa92e204bddaa4671b01cc302b6fde911cf91e0d9d05
 ---
 
 ## 场景介绍
@@ -178,6 +178,11 @@ USB设备可作为Host连接Device进行设备管理，开发示例如下：
      }
      // 打开设备，获取数据传输通道。
      let pipe: usbManager.USBDevicePipe = usbManager.connectDevice(deviceList[0]);
+     if (!pipe) {
+       console.error('connectDevice failed, pipe is undefined');
+       this.logInfo_ += '\n[ERROR] connectDevice failed, pipe is undefined';
+       return;
+     }
      if (!deviceList?.[0]?.configs?.[0]?.interfaces?.[0]) {
        console.error('invalid interface');
        this.logInfo_ += '\n[ERROR] invalid interface';

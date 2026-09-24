@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-styled-
 title: 属性字符串 (StyledString/MutableStyledString)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 属性字符串 (StyledString/MutableStyledString)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:36+08:00
+scraped_at: 2026-09-25T07:06:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bb1f7ab92e66ff9baa89c94fa46ba535330bca6c175e5ebd457462cd2646c879
+content_hash: sha256:0a644f84a880b6b099e8ce8f4b54731062f57f164a2772b859d66a796375733b
 ---
 
 属性字符串StyledString/MutableStyledString（其中MutableStyledString继承自StyledString，下文统称为StyledString），可用于在字符或段落级别上设置文本样式。将StyledString应用到文本组件上，可以采用多种方式修改文本，包括调整字号、添加字体颜色、使文本具备可点击性，以及通过自定义方式绘制文本等。具体使用方法请参考[属性字符串](../harmonyos-references/ts-universal-styled-string.md)的API文档。
@@ -55,7 +55,7 @@ struct styled_string_demo1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/OzkUqILPR2Geg4MsPEtG_A/zh-cn_image_0000002739730682.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/TiJ-8MckTwWRh-CpUExRQQ/zh-cn_image_0000002743378476.png)
 
 ## 设置文本样式
 
@@ -113,7 +113,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/EsPxC7QHRnuXDlm39KoIlA/zh-cn_image_0000002769330031.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/OeIfVn5uSPC3rm2h9iTnFA/zh-cn_image_0000002743218590.png)
 * 创建及应用文本阴影对象（TextShadowStyle）
 
   ```typescript
@@ -153,7 +153,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/zKA6zvzbSIy3f74J1AvPaA/zh-cn_image_0000002769449893.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/eW3fIdhJRxW62ZvczgHmuQ/zh-cn_image_0000002772737843.png)
 * 创建及应用文本装饰线对象（DecorationStyle）
 
   ```typescript
@@ -216,7 +216,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/A03VBfScSTiVxzehKV2c8Q/zh-cn_image_0000002739890562.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/hc7wZpm9SvGxzne5eFxWug/zh-cn_image_0000002772897727.jpg)
 * 创建及应用文本基线偏移量对象（BaselineOffsetStyle）
 
   ```typescript
@@ -253,7 +253,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/s1WQ8_mBQK-kDaRwglQJaA/zh-cn_image_0000002739730684.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ooKXFFAGT46rdsiM3XM0JQ/zh-cn_image_0000002743378478.png)
 * 创建及应用文本行高对象（LineHeightStyle）
 
   ```typescript
@@ -291,7 +291,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Y80m06u5S66toCJdEGsmCQ/zh-cn_image_0000002769330033.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/uhHgC55dSxKgpn7SV3MlWA/zh-cn_image_0000002743218592.png)
 * 创建及应用文本字符间距对象（LetterSpacingStyle）
 
   ```typescript
@@ -327,13 +327,13 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/cF3tmKWEQhayxl0ZilG_pA/zh-cn_image_0000002769449895.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/nqERa9lgQ02VilmnO-5J3g/zh-cn_image_0000002772737845.png)
 
 ## 设置段落样式
 
 可通过[ParagraphStyle](../harmonyos-references/ts-universal-styled-string.md#paragraphstyle)设置段落样式布局。下图显示了如何分割文本中的段落，段落之间以换行符\n分隔。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Ta0ocAF1RRCnvKX8G3avqQ/zh-cn_image_0000002739890564.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/1sSCPhcyRiOeBSN1GzBBDQ/zh-cn_image_0000002772897729.png)
 
 以下代码示例展示了如何创建ParagraphStyle并应用。如果将ParagraphStyle附加到段落开头、末尾或之间的任何位置，均会应用样式，非段落区间内则不会应用样式。
 
@@ -401,7 +401,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/yLTHKFVRQGyD1WJN9DZw0Q/zh-cn_image_0000002739730686.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/5Szz_j1MQAWVVZYn_t3X7g/zh-cn_image_0000002743378480.png)
 
 除了可以在创建属性字符串时就预设样式，也可以后续通过[replaceStyle](../harmonyos-references/ts-universal-styled-string.md#replacestyle)清空原样式替换新样式，同时需要在附加的文本组件controller上主动触发更新绑定的属性字符串。
 
@@ -489,7 +489,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/S0qh4tXxTlCpz97U-maxzg/zh-cn_image_0000002769330035.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/nbCjX5h4T4CNqWAoRlIjuw/zh-cn_image_0000002743218594.gif)
 
 ## 支持将属性字符串转换成Paragraph
 
@@ -705,7 +705,7 @@ struct Index {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/jpUh6zlBRLumLoRiVpFDyw/zh-cn_image_0000002769449897.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/lE4U76VxQl2FNt0IrcG-eA/zh-cn_image_0000002772737847.png)
 
 ## 使用图片
 
@@ -891,7 +891,7 @@ struct StyledStringImageAttachment {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/4bbM41IRQtGcZQcmJSoASw/zh-cn_image_0000002739890566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/sVqRk_7gQ5mBE10qo5A8fA/zh-cn_image_0000002772897731.png)
 
 ## 设置事件
 
@@ -1050,7 +1050,7 @@ struct StyledStringGestureStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/TqvmafXGSM2kR1BVVdvGwQ/zh-cn_image_0000002739730688.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/6Mqr1oJ7SYGkfGqidQ64Uw/zh-cn_image_0000002743378482.gif)
 
 ## 格式转换
 
@@ -1146,7 +1146,7 @@ struct StyledStringHtml {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/lfzsSOb4Sm-artAMaY1b3g/zh-cn_image_0000002769330037.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/vApBvSz7SzuwpxqRHmVQmw/zh-cn_image_0000002743218596.gif)
 
 * 将HTML中<strong>、<b>、<a>、<i>、<em>、<s>、<u>、<del>、<sup>、<sub>标签及其style属性中的background-color转换为属性字符串并转回HTML。
 
@@ -1219,7 +1219,7 @@ struct StyledStringHtml {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/mkVR-55HTBqnj1jLdXTe5Q/zh-cn_image_0000002769449899.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/vgGTuBuNRAulVr7YltbYGQ/zh-cn_image_0000002772737849.gif)
 
 ## 场景示例
 
@@ -1388,4 +1388,4 @@ struct StyledStringSceneExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Lk4Qzc-wTh2wjjUCgf8ymQ/zh-cn_image_0000002739890568.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/3XGgNAvuRLyALFZycx_2eA/zh-cn_image_0000002772897733.png)

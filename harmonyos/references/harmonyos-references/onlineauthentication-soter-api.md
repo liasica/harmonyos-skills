@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineaut
 title: SOTER
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > ArkTS API > SOTER
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:31a098109751ca544f98fea3b4bb6d3730cb2d9f22eeca639970620006b24f69
+scraped_at: 2026-09-25T07:11:30+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:0cb30569c4021477044f40a9b604ab73a319d99eb6e1adaeb9a8f3ac0b67ad11
 ---
 
 SOTER提供移动端免密认证能力，支持使用SOTER协议的应用实现免密登录，免密支付等业务场景。
@@ -679,7 +679,7 @@ let keyAlias: string = 'keyAlias';
 
 // 使用同步接口获取authKey
 let signedResult: soter.SignedResult = soter.getAuthKeySync(keyAlias, keyType);
-let authKey: Uint8Array = signedResult.message; // 开发者使用结果authKey
+let authKey: Uint8Array = signedResult.signature; // 开发者使用结果authKey
 console.info('Succeeded in doing getAuthKeySync. authKey:', authKey);
 ```
 

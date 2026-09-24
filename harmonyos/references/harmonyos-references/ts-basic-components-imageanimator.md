@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ImageAnimator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > ImageAnimator
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:28+08:00
+scraped_at: 2026-09-25T07:10:05+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:acdabeb197eddda5c36d3836aa3756d87fe9db98c56affe5bcebbd5fb9bdddec
+content_hash: sha256:8b21290dde9a70a43b7302fe6cccdf06acf6a7b14cf23be9c567871ace79cfb9
 ---
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
@@ -390,7 +390,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/yf5xQy-yQWq-MoqcJRvSRA/zh-cn_image_0000002739733112.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/-LEN-j_VQLyFl8LwrJG7lA/zh-cn_image_0000002743380906.gif)
 
 ### 示例2（播放PixelMap动画）
 
@@ -490,7 +490,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/WQRb2-UVRV6WBC37Zyiivw/zh-cn_image_0000002769332461.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/CAhc9hcJSoKrQqdXyDDh9A/zh-cn_image_0000002743221020.gif)
 
 ### 示例3（设置不可见自动停播）
 
@@ -593,4 +593,4 @@ struct ImageAnimatorAutoPauseTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/2R5xX_M4Qm-oRiCQUfrnVQ/zh-cn_image_0000002769452323.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/ZwNRzeMzQjmp3mOkk9duPQ/zh-cn_image_0000002772740273.gif)

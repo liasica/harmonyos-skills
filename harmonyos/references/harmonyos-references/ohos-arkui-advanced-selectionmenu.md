@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectionMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectionMenu
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:37+08:00
+scraped_at: 2026-09-25T07:10:17+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:e977ff40d5fcbf3f4d1d51eb7fba664bd2d3a125c185796f13d9e348b6aa2781
+content_hash: sha256:8593db2add2f9bdb87f7e8ee7a0895903e890c911a251741686790c1099ba5f3
 ---
 
 文本选择菜单，适用于[RichEditor](ts-basic-components-richeditor.md)组件通过[bindSelectionMenu](ts-basic-components-richeditor.md#bindselectionmenu)或[Text](ts-basic-components-text.md)组件通过[bindSelectionMenu](ts-basic-components-text.md#bindselectionmenu11)绑定自定义文本选择菜单，支持编辑菜单和扩展下拉菜单两种类型，可通过配置实现复制、粘贴、剪切、全选等内置功能，也可通过自定义菜单项和事件回调实现扩展功能。建议绑定鼠标右键或鼠标选中方式弹出，不支持作为普通组件单独使用。适用于富文本编辑场景，可为用户提供便捷的文本操作入口，提升文本编辑效率。
@@ -456,7 +456,7 @@ struct Index {
 
 示例图为鼠标操作触发的自定义菜单弹出效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/8a-jVOzUS82GtCaBRpwS8Q/zh-cn_image_0000002739733408.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/95YynuEnSeuKqUPgaO5m5Q/zh-cn_image_0000002772740567.gif)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -793,7 +793,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/4lcWy2HzTaOQT1Li0RTfGw/zh-cn_image_0000002769332755.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/bVx5UjbDTYWD6JoyaWhDjg/zh-cn_image_0000002772900453.jpg)
 
 ### 示例3（设置背景板材质）
 
@@ -911,8 +911,8 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/VRXSIBDBTYC_rvffvAr8Qw/zh-cn_image_0000002769452617.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/aTWcDx7WSOSTEDepnhDHfw/zh-cn_image_0000002743381202.jpg)
 
 设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/L-IcgmK0Rlu98WYVcmO8EA/zh-cn_image_0000002739893286.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/jkQ0cop2TdaRblHs-254Bw/zh-cn_image_0000002743221314.jpg)

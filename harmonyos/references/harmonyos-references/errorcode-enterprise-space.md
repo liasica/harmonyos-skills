@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:53+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:807cee005bff05a294e11551d2e24a67383da8d97ea6ff9ddc6906a43cf7e46c
+scraped_at: 2026-09-25T07:13:58+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:5274a1989d1c0f102d949108531e56ec3c227df269d268131bf8409bb8959637
 ---
 
 **说明** 
@@ -20,7 +20,7 @@ System service exception.
 
 **错误描述**
 
-系统服务异常。
+空间互传系统服务异常。
 
 **可能原因**
 
@@ -38,7 +38,7 @@ Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 
 
 **错误描述**
 
-请求参数无效。
+空间互传请求参数无效。
 
 **可能原因**
 
@@ -56,7 +56,7 @@ System service exception.
 
 **错误描述**
 
-系统服务异常。
+空间管理系统服务异常。
 
 **可能原因**
 
@@ -74,7 +74,7 @@ Parameter error.
 
 **错误描述**
 
-请求参数无效。
+空间管理请求参数无效。
 
 **可能原因**
 

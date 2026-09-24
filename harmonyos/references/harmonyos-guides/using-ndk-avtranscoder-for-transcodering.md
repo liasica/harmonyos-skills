@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avt
 title: 使用AVTranscoder实现视频转码(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 视频转码 > 使用AVTranscoder实现视频转码(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9d9f3147ee344030413fcc2c14aee1f17043dbe5eeaf790e58539d3140fcbf9e
+scraped_at: 2026-09-25T07:07:28+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:39ee14bbc523a49bf92c15035d3ef67915d2bbbf931b7a44ce9605abffd5a159
 ---
 
 从API version 20开始支持使用NDK接口（C/C++）实现视频转码。
 
-使用[AVTranscoder](media-kit-intro.md#avtranscoder)可以实现视频转码功能，从API 12开始，转码功能可在手机、平板、2in1设备上作为系统提供的基础能力使用。可以通过调用[canIUse](../harmonyos-references/syscap__ndk_8h.md#caniuse)接口来判断当前设备是否支持AVTranscoder。当canIUse("SystemCapability.Multimedia.Media.AVTranscoder")返回值为true时，表示可以使用转码能力。
+使用[AVTranscoder](media-kit-intro.md#avtranscoder)可以实现视频转码功能，从API 12开始，转码功能可在手机、平板、2in1设备上作为系统提供的基础能力使用。可以通过调用[canIUse](../harmonyos-references/syscap-ndk-8h.md#caniuse)接口来判断当前设备是否支持AVTranscoder。当canIUse("SystemCapability.Multimedia.Media.AVTranscoder")返回值为true时，表示可以使用转码能力。
 
 本开发指导将以“开始转码-暂停转码-恢复转码-完成转码”的一次完整流程为示例，向开发者讲解AVTranscoder视频转码相关功能。
 
 **图1** 转码状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/p_GWQDjlQj2jFrXoJOnAIA/zh-cn_image_0000002769450893.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/a8x5VFerS5ee9_afVAhKVg/zh-cn_image_0000002772738843.png)
 
 状态的详细说明请参考[OH\_AVTranscoder\_State](../harmonyos-references/capi-avtranscoder-base-h.md#oh_avtranscoder_state)。
 

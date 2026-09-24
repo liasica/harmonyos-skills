@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-module-
 title: 模块加载副作用及优化
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 模块加载副作用及优化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:13+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8a61f2523901417eca7a513c601c734db0ac38c33d494f13f5eb2b415311138b
+scraped_at: 2026-09-25T07:06:20+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:45aacbe3af95ec9db2ab12e154614a1080259ce23a96a68714b2005f4f1304d1
 ---
 
 ## 概述
 
-当使用[ArkTS模块化](module-principle.md)时，模块的加载和执行可能会引发**副作用**。副作用是指在模块导入时除了导出功能或对象之外，额外的行为或状态变化，**这些行为可能影响程序的其他部分，并导致产生非预期的顶层代码执行、全局状态变化、原型链修改、导入内容未定义等问题**。
+当使用[ArkTS模块化](module-principle.md)时，模块的加载和执行可能会引发**副作用**。副作用是指在模块导入时除了导出功能或对象之外，额外的行为或状态变化，**这些行为可能影响程序的其他部分，并导致非预期的顶层代码执行、全局状态变化、原型链修改、导入内容未定义等问题**。
 
 ## ArkTS模块化导致副作用的场景及优化方式
 

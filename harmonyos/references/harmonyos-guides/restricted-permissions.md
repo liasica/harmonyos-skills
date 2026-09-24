@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-pe
 title: 受限开放权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 受限开放权限
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:53+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:5ce44fa98fc67f755f1b472c05629b58f74c8c77b98db1c9f570565797974f7e
+scraped_at: 2026-09-25T07:06:48+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:46fefee2cf705625dd78118486f29cbddff89af9106ea522c9b72f34da244cd4
 ---
 
 ## 申请方式
@@ -1760,9 +1760,11 @@ USB串口DDK API可用于开发以下类型的外设扩展驱动：
 
 **授权方式**：系统授权（system\_grant）
 
-**支持设备**：Phone
+**支持设备**：Phone | PC/2in1 | Tablet | TV
 
 **起始版本**：26.0.0
+
+**变更信息：** 从API版本26.0.0开始，增加支持在平板、PC/2in1、TV上申请。
 
 ## ohos.permission.KNOCK\_COLLABORATION
 

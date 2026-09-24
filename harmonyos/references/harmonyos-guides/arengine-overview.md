@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-over
 title: AR Engine简介
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > AR Engine简介
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:28+08:00
+scraped_at: 2026-09-25T07:07:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:65b3133755152eff3cd549b74eb67c98fb3b123bf6dc0c8679ac46ac06c3f542
+content_hash: sha256:ec13d390511cc07f39e0f51828c52cdb80b16a9fd32683de007b1652bc33b544
 ---
 
 AR Engine（AR引擎服务）是一个用于在HarmonyOS上构建增强现实应用的引擎，提供了运动跟踪、环境跟踪等空间计算能力。
@@ -50,7 +50,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 **图1** 重力对齐世界坐标系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/6QLp51vYTUap-39jqCp3ww/zh-cn_image_0000002739891576.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/68hOAExXSHGQ3k3qtJr2dA/zh-cn_image_0000002772898741.png)
 
 ### AR Engine重力对齐北向坐标系
 
@@ -62,7 +62,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 **图2** 重力对齐北向坐标系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/GkhG6Ta9SOarlk6zdWRkJw/zh-cn_image_0000002739731698.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/XBon7bz5T9GjNZIIOh4fOA/zh-cn_image_0000002743379492.png)
 
 ### AGP世界坐标系
 
@@ -73,7 +73,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 **图3** AGP世界坐标系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/IWVBvOeyRWGtOyhT4gcAzw/zh-cn_image_0000002769331047.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/qtcE7l32TpiusomL6puW4A/zh-cn_image_0000002743219606.png)
 
 ## 约束与限制
 

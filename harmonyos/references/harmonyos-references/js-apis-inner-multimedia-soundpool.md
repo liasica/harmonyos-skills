@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: SoundPool (音频池)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > multimedia > SoundPool (音频池)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7c5d1bac9bf6d1c22640fcffd9870b0e7a389b25d505a7131f0494c6778c7d21
+scraped_at: 2026-09-25T07:13:20+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:6abacfcf7d77489e2389591811ff7c51694aa188b27caec465559b6231a7322b
 ---
 
 音频池提供了短音频的加载、播放、音量设置、循环设置、停止播放、资源卸载等功能。SoundPool适用于游戏音效、UI交互音效、通知音等需要快速响应和低延迟播放的场景。
@@ -1277,7 +1277,7 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 setInterruptMode(interruptMode: media.SoundInterruptMode): void
 
-设置同一soundId对应的音频资源在播放时的打断模式。创建soundPool之后，该接口仅在首次调用soundPool的play函数之前设置有效。若未设置，将默认使用[SAME\_SOUND\_INTERRUPT](arkts-apis-media-e.md#soundinterruptmode23)，即对同一个soundId对应的音频资源，如果前一播放实例尚未播放完成，后一播放实例在播放前会先打断前一播放实例的播放。
+设置同一ID音频在播放时的打断模式。创建soundPool之后，该接口仅在首次调用soundPool的Play函数之前设置有效，期间可多次设置，否则将默认使用[SAME\_SOUND\_INTERRUPT](arkts-apis-media-e.md#soundinterruptmode23)，即对同一ID的音频，如果前者尚未播放完成，后者在播放前会先打断前者的播放。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

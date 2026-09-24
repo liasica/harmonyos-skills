@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 边框设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 边框设置
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:17+08:00
+scraped_at: 2026-09-25T07:09:49+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a406c36452b814276d15331a5ba3c6ce64a8cb54bd9e962ea8385977fc890dd2
+content_hash: sha256:be7822305679973839fd614da728a38d20566e46bdb9f072d3961fccfbee84ca
 ---
 
 设置组件边框样式。
@@ -252,7 +252,7 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/0mZgGqSSQQCOVYVX79AJrw/zh-cn_image_0000002769332073.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/XmiYP6qDRdSrQXQ4zKsmaQ/zh-cn_image_0000002743220632.gif)
 
 ### 示例2（边框宽度、圆角半径和颜色类型）
 
@@ -331,11 +331,11 @@ struct BorderExample {
 
 从左至右（LTR）显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/RpxLtmemScGjjpEKve2iEg/zh-cn_image_0000002769451935.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/6p85cOIRRfSgMH1acrmV4Q/zh-cn_image_0000002772739885.png)
 
 从右至左（RTL）显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/umOSOLSoTWeKSh1N9e_pLQ/zh-cn_image_0000002739892604.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/9z6raaGXRDOQhQAu-q9_Cw/zh-cn_image_0000002772899769.png)
 
 ### 示例3（设置离屏圆角）
 
@@ -416,7 +416,7 @@ struct RenderStrategyExample {
 
 快速绘制模式（RenderStrategy.FAST）通过GPU硬件加速进行实时绘制，适用于普通圆角场景；离屏绘制模式（RenderStrategy.OFFSCREEN）将组件先绘制到离屏缓冲区再合成，适用于包含模糊、滚动等复杂内容的圆角场景，可避免圆角裁剪异常。设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/OXc3ltOgS2-L6oBOxHy6mA/zh-cn_image_0000002739732726.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/CEV2qQehRzGnTwcoWHIlxQ/zh-cn_image_0000002743380520.jpg)
 
 ### 示例4（设置异形圆角）
 
@@ -450,4 +450,4 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/Q3fi5i1NRgm2--L9tYf0uQ/zh-cn_image_0000002769332075.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/YejMHmJVSzCTkAUpsDcuyQ/zh-cn_image_0000002743220634.png)

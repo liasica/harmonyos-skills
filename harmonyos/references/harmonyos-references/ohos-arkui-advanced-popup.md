@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Popup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Popup
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:38+08:00
+scraped_at: 2026-09-25T07:10:16+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b942b3af2b60a08fa3d79b86da5d21f78b98647db35b0ad0a4a9c2be29946543
+content_hash: sha256:9b9df53e9d3d5c8f521cc95892d4b934dc01370c75e2b7782f748369c16e2181
 ---
 
 Popup是用于显示特定样式气泡的组件，支持图标、文本和按钮的灵活组合，适用于通知提示、信息确认、警告提示等场景。通过可定制的样式选项，能够快速实现一致的气泡交互体验。
@@ -175,7 +175,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/TOXyQ2ncShONad9zllVn9A/zh-cn_image_0000002739733394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/SBjh4GV2SmGGhr7IkRn1mA/zh-cn_image_0000002772740553.png)
 
 ### 示例2（设置镜像效果）
 
@@ -250,7 +250,7 @@ struct PopupPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/tJW2WHdKSye_fJi5PKsvGg/zh-cn_image_0000002769332741.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/s9xW20WpQsig1ZXvXbP9vw/zh-cn_image_0000002772900439.png)
 
 ### 示例3（设置自定义宽度）
 
@@ -316,4 +316,4 @@ struct PopupPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/-jbvgJg0SG2_aLvZTRubgg/zh-cn_image_0000002769452603.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/2TbuxtKaTZeXXA6BEyqBsA/zh-cn_image_0000002743381188.png)

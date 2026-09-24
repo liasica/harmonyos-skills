@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-clien
 title: 配置Client ID
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发准备 > 配置Client ID
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:33+08:00
+scraped_at: 2026-09-25T07:07:37+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:c62132490a719218dde20b01d8a2f910483310d66e25bd68c471e3560525f141
+content_hash: sha256:676e77504aa9091809fb3fc4fb4ede4d0ede66fd117c3f8cfcf12bbda1507201
 ---
 
 ## 获取Client ID和APP ID
 
 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择对应的项目和对应的应用，在“常规 > 应用 ”下，找到**应用**的Client ID和APP ID。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/8TvT9f9TT1q8tKTcVcmu-A/zh-cn_image_0000002739731842.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/liJKk5vrQ7CR3Vke96S5sQ/zh-cn_image_0000002743379636.png)
 
 ## 确认是否需要配置Client ID
 

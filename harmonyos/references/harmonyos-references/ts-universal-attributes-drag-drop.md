@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 拖拽控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 拖拽控制
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:19+08:00
+scraped_at: 2026-09-25T07:09:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:25f5ccc78a4eff301e3ebb6559221647e824109a07c168b82e829ccc4f58031c
+content_hash: sha256:19922755b82643d9a4d2bd5d7b14e865ee015ca0b1f13b337629a4cd99e605b9
 ---
 
 组件提供了一些属性和接口，可用于配置组件对拖拽事件的响应行为，或影响系统对拖拽事件的处理方式，包括配置组件拖拽和落入行为、数据类型、预览图样式及交互效果。
@@ -355,7 +355,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/LIIOJ1zAQF2qZpYwuZ24mQ/zh-cn_image_0000002769451969.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/4CTAb-RTQXiHdZTsrwKOQA/zh-cn_image_0000002772739919.gif)
 
 ### 示例2（设置预览图）
 
@@ -423,7 +423,7 @@ struct DragPreviewDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/zyOWB7kKSfyr93tGQQ1yfQ/zh-cn_image_0000002739892638.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/jZnkoUNdTaa-ls_B7u2dsA/zh-cn_image_0000002772899803.gif)
 
 ### 示例3（设置背板图样式）
 
@@ -471,7 +471,7 @@ struct DragPreviewOptionsDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/cBZcat7sR5WWk1L85pMyaQ/zh-cn_image_0000002739732760.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/wnHm2RjpRM6pe-BQLGg1yQ/zh-cn_image_0000002743380554.gif)
 
 ### 示例4（设置多选拖拽）
 
@@ -512,7 +512,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/WObVU9zJQaOFTqVDoaK6Tg/zh-cn_image_0000002769332109.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/XUdISM1iR0STPg72t8sKaQ/zh-cn_image_0000002743220668.gif)
 
 ### 示例5（设置默认点按效果）
 
@@ -553,7 +553,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/35Et21AsQX-BFgBd_H3hhA/zh-cn_image_0000002769451971.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/dp-ImyWvSg-t0-XlCi3YJA/zh-cn_image_0000002772739921.gif)
 
 ### 示例6（自定义背板图样式）
 
@@ -599,7 +599,7 @@ struct DragPreviewOptionsDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/KCv3KravSsWuPaw04D_sKQ/zh-cn_image_0000002739892640.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/IcfFKjiiQXaIoucinXFylA/zh-cn_image_0000002772899805.gif)
 
 ### 示例7（图片拖拽设置）
 
@@ -829,7 +829,7 @@ struct ImageDrag {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/skzky50GS_myp7ynQWYcfw/zh-cn_image_0000002739732762.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/XeCl_fgdTy2l7VdFJA-8-Q/zh-cn_image_0000002743380556.gif)
 
 ### 示例8（设置图片拖拽震动）
 
@@ -983,11 +983,11 @@ struct LiftingExampleDemo {
 
 自定义预览图用于浮起效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/1qL7XZFCTNeKmCc3fzbhuQ/zh-cn_image_0000002769332111.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/aaIdulACQWSmf5YLP9zDKQ/zh-cn_image_0000002743220670.gif)
 
 自定义预览图禁用浮起效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/d3FUntj7QnebmAUQyHJS7g/zh-cn_image_0000002769451973.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/g1iYgjo9R8O87PdcF4C7rA/zh-cn_image_0000002772739923.gif)
 
 ### 示例10（以拖拽预览图初始尺寸计算跟手点位置）
 
@@ -1074,7 +1074,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/VyqM6HIrRmy89hp1xDfQow/zh-cn_image_0000002739892642.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/9WZpnqVlRROYEHTunOdFYg/zh-cn_image_0000002772899807.gif)
 
 ### 示例11（长按浮起预览图与拖拽预览图过渡动效）
 
@@ -1161,7 +1161,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/NfbQP7ktTLmnl3iH9mvKAA/zh-cn_image_0000002739732764.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/B9H0NRULTyuv-OTf6bPqwg/zh-cn_image_0000002743380558.gif)
 
 ### 示例12（设置自定义组件落入）
 
@@ -1292,7 +1292,7 @@ struct CustomCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/6ljHn3S2SPSEeazMcJIAzA/zh-cn_image_0000002769332113.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/72kiHhKiRZGekyHjQtQFfg/zh-cn_image_0000002743220672.gif)
 
 ### 示例13（设置背板图材质效果）
 
@@ -1380,4 +1380,4 @@ struct DragPreviewMaterialDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/9IanCFYsS3ylliRFhTivug/zh-cn_image_0000002769451975.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/5btLPyBETdiKxuMVOyUz_Q/zh-cn_image_0000002772739925.gif)

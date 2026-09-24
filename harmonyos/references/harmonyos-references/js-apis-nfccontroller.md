@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nfc.controller (标准NFC)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.controller (标准NFC)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:49+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b9b03b3108681d29cb61a88caf4769e3b5ead82250f2759c6599ab66f5c7d6a5
+scraped_at: 2026-09-25T07:11:40+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:dee8016cc8094a56856f6c4b34d14ecc1d7400acb9386f815c4d5230d3c3a345
 ---
 
 本模块主要用于管理NFC状态，包括打开和关闭NFC，读取NFC的状态等。
@@ -43,7 +43,7 @@ isNfcAvailable(): boolean
 
 **说明** 
 
-从API version 7开始支持，从API version 9开始废弃，API version 26前建议使用[canIUse("SystemCapability.Communication.NFC.Core")](syscap__ndk_8h.md#caniuse) && nfcController.isNfcAvailable共同判断设备是否支持NFC，从API version 26开始，建议使用[canIUse("SystemCapability.Communication.NFC.Core")](syscap__ndk_8h.md#caniuse) && [nfcController.isNfcSupported](js-apis-nfccontroller.md#nfccontrollerisnfcsupported) 替代。
+从API version 7开始支持，从API version 9开始废弃，API version 26前建议使用[canIUse("SystemCapability.Communication.NFC.Core")](syscap-ndk-8h.md#caniuse) && nfcController.isNfcAvailable共同判断设备是否支持NFC，从API version 26开始，建议使用[canIUse("SystemCapability.Communication.NFC.Core")](syscap-ndk-8h.md#caniuse) && [nfcController.isNfcSupported](js-apis-nfccontroller.md#nfccontrollerisnfcsupported) 替代。
 
 **系统能力：** SystemCapability.Communication.NFC.Core
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 开发概述
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:35+08:00
+scraped_at: 2026-09-25T07:07:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:218bd2a20904bb427e89bfcc4e541dd2f562bdab9384a472bc6477fad77ab92b
+content_hash: sha256:5917c73c4ab51704d7519b3cdc0003ebcaa208d3980f6cc48abb1ecd1fff0f71
 ---
 
 应用归因服务是华为提供的不依赖用户标识符的端侧归因能力。
@@ -14,7 +14,7 @@ content_hash: sha256:218bd2a20904bb427e89bfcc4e541dd2f562bdab9384a472bc6477fad77
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/AcnJuanLQtWRL8tiv74dOA/zh-cn_image_0000002739891760.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/UPy8cY7BRQuw8u4g54lTbg/zh-cn_image_0000002772898925.jpg)
 
 业务流程中各任务描述如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_source_mdk.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_source_mdk.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:219168023de3e89aebc282de39a8b3be278ec85911335ea798d277884e60d759
+scraped_at: 2026-09-25T07:13:14+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:64fd20c373bd955daa96a6afd21c70fc67ade077c2a6455d2cc791dfe9c730cb
 ---
 
 ## 概述
@@ -455,7 +455,7 @@ int32_t OH_ImageSource_GetImageInfo(const ImageSourceNative* native, int32_t ind
 | 参数项 | 描述 |
 | --- | --- |
 | const [ImageSourceNative](capi-image-imagesourcenative-.md)\* native | 表明native层ImageSourceNative值的指针。 |
-| int32\_t index | 表明帧计数的指针。 |
+| int32\_t index | 表明图片的帧序号。 |
 | struct [OhosImageSourceInfo](capi-image-ohosimagesourceinfo.md)\* info | 表明图像源信息OhosImageSourceInfo的指针。 |
 
 **返回：**

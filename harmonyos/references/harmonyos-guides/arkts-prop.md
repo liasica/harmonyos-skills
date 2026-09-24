@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-prop
 title: "@Prop装饰器：父子单向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Prop装饰器：父子单向同步
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:32+08:00
+scraped_at: 2026-09-25T07:06:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:196f16adc263d89d6526e2306732d728c526a01d01a3b44050865ecd2eaad18f
+content_hash: sha256:66447f8dbaa65861c62cd1c04db3d32eef484450e01171c8b06a176ff48ce042
 ---
 
 [@Prop](../harmonyos-references/ts-state-management-prop.md#prop)装饰的变量可以和父组件建立单向同步关系。
@@ -46,7 +46,7 @@ content_hash: sha256:196f16adc263d89d6526e2306732d728c526a01d01a3b44050865ecd2ea
 
 初始化规则图示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Pv73EVpWTfKu_sa3hUizRw/zh-cn_image_0000002739890164.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/D8YoBB1oSDmSh_xt8_GViQ/zh-cn_image_0000002772897327.png)
 
 ## 观察变化和行为表现
 
@@ -540,7 +540,7 @@ class Book {
 
 @Observed装饰的类的实例会被不透明的代理对象包装，此代理可以检测到包装对象内的所有属性更改。如果发生这种情况，此时，代理通知@Prop，@Prop对象值被更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/WUX0VjvcQDG1lpVOy56-lA/zh-cn_image_0000002739730286.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/P_JRphFETBWR3GaBUhBKtQ/zh-cn_image_0000002743378078.gif)
 
 ### @Prop本地初始化不和父组件同步
 
@@ -614,7 +614,7 @@ struct MainProgram {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/YNeDf7scTySiJfuzm3yWMA/zh-cn_image_0000002769329635.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ltvPfKPhQlSOZnpyRUNc6w/zh-cn_image_0000002743218194.gif)
 
 ### @Prop嵌套场景
 
@@ -723,7 +723,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/DuYwQnQQSzCIt4NVdmdk7g/zh-cn_image_0000002769449497.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/XS1gWFR5TlCEFfTDaQIJaw/zh-cn_image_0000002772737447.gif)
 
 ### 装饰Array类型变量
 

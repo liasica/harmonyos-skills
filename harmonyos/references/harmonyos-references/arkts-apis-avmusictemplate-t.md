@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板) > Types
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:24+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:26f38bbd93980a1dc300a4549f3faa93fe9fb67d95d005345c3d89db5f30ab34
+scraped_at: 2026-09-25T07:12:56+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:75783bc18aa8a070bddd31dd0df22d5c1547cd81cbe50dbaa211bee90c0a6175
 ---
 
 **说明** 
@@ -388,7 +388,7 @@ type QueryMemberPurchaseEvent = (memberPurchaseType: MemberPurchaseType) => Prom
 
 type QueryCustomContentEvent = (queryType: CustomType[]) => Promise<CustomElement>
 
-自定义内容查询事件。用于查询用户基本信息、界面选项卡配置、代码编译选项和系统设置项等自定义内容。使用Promise异步回调。
+自定义内容查询事件。用于查询用户基本信息、界面选项卡配置、合集信息和设置项等自定义内容。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -398,7 +398,7 @@ type QueryCustomContentEvent = (queryType: CustomType[]) => Promise<CustomElemen
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| queryType | [CustomType](arkts-apis-avmusictemplate-t.md#customtype)[] | 是 | 自定义类型：包含用户基本信息、界面选项卡配置、代码编译选项和系统设置项。 |
+| queryType | [CustomType](arkts-apis-avmusictemplate-t.md#customtype)[] | 是 | 自定义类型：包含用户基本信息、界面选项卡配置、合集信息和设置项。 |
 
 **返回值：**
 

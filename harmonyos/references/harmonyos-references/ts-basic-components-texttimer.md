@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TextTimer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > TextTimer
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:31+08:00
+scraped_at: 2026-09-25T07:10:07+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:9e47d1c2477237bcc2f05034fed13950a7470807e1e012a5ab245ebcc977f280
+content_hash: sha256:349cf66ee67e243dec186c9eb8d6cf8d19e1e5da2572badaa864daa348af4f23
 ---
 
 TextTimer是通过文本显示计时信息并控制其计时器状态的组件，支持正向计时与倒计时两种模式，可自定义显示格式，适用于秒表、活动倒计时等需要展示时间流逝的场景。常用于倒计时场景，如考试倒计时、限时活动、运动计时等。
@@ -345,7 +345,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/Lu8gf4UqQjqYfxr0QUgoyg/zh-cn_image_0000002739733190.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/h4U6yHd5QWKhlgOIPLZU_w/zh-cn_image_0000002743380984.gif)
 
 ### 示例2（设定文本阴影样式）
 
@@ -391,7 +391,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/bQualyPpShWw8mZB21Ze9Q/zh-cn_image_0000002769332539.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/O8aXkeShQ46CXdOpfWuDDQ/zh-cn_image_0000002743221098.png)
 
 ### 示例3（设定自定义内容区）
 
@@ -470,7 +470,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/EWvmcg9zQuqzMeF1mHGzWg/zh-cn_image_0000002769452401.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/-K9bJLhDTYuEdbZpe7g-TQ/zh-cn_image_0000002772740353.gif)
 
 ### 示例4（创建之后立即执行计时）
 
@@ -504,7 +504,7 @@ struct TextTimerStart {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/xoIo5APZRQ-l_DmNpiGUZw/zh-cn_image_0000002739893070.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/sXbZReTuQlCqv8o8gT6d5w/zh-cn_image_0000002772900237.gif)
 
 ### 示例5（设置文本样式）
 
@@ -558,7 +558,7 @@ struct TextTimerDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/6i5Q-cU4QnKM1eYpVNJtZQ/zh-cn_image_0000002739733192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/ilKx4MWMTsij79VLPemm8w/zh-cn_image_0000002743380986.png)
 
 ### 示例6（设置初始计时时间）
 
@@ -599,4 +599,4 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/tn3lY_IYQt6o0uKEp5AaUw/zh-cn_image_0000002769332541.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/vmS5cUtvRUKXyneygtXaIA/zh-cn_image_0000002743221100.gif)

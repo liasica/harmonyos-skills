@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全图像压缩、裁剪场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全图像压缩、裁剪场景
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:57+08:00
+scraped_at: 2026-09-25T07:06:53+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:c3c2bdc9c5b3ee3b3c24ebf0e9f89f671a827679340e8b35077ca9c9f0f54b21
+content_hash: sha256:e6ca30668a814040487c494cd428b2b967652c85c92c93384d466d8222e6e121
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:c3c2bdc9c5b3ee3b3c24ebf0e9f89f671a827679340e8b35077ca9c9f0f
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/py4sld9nQr6iN2xJXygcOw/zh-cn_image_0000002769330727.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/GRMBoPMlSkivdHGXvKDrjQ/zh-cn_image_0000002743219286.jpg)
 
 ## 接口说明
 

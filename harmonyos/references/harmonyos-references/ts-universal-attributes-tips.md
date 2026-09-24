@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Tips控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 弹窗控制 > Tips控制
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:19+08:00
+scraped_at: 2026-09-25T07:09:51+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:efda4276ed9725f4d1bcf8d82573cd439a1f5c367f38822e0b4dc0b63b46c84e
+content_hash: sha256:28d1e49b822165b1f5dd168800c59d3138484778dae68d86c834077a8e1eb14c
 ---
 
 为组件绑定Tips悬浮气泡，当鼠标悬浮在组件上时，自动显示提示信息；鼠标离开组件时，悬浮气泡自动隐藏。
@@ -106,7 +106,7 @@ struct TipsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/u2dcblyHTBSHKPnmorFrMQ/zh-cn_image_0000002769332127.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/l_KEQAH2T1m2up3RAFf-pg/zh-cn_image_0000002743220686.gif)
 
 ### 示例2（多个悬浮气泡的显示和消失）
 
@@ -145,7 +145,7 @@ struct TipsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/RB0c9aGTQ0KJZA8QiHLKOA/zh-cn_image_0000002769451989.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/CIcEatH7RFm6g1yHX-I9-w/zh-cn_image_0000002772739939.gif)
 
 ### 示例3（设置悬浮气泡的沉浸光感视效）
 
@@ -182,8 +182,8 @@ struct TipsExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/VgqLaeT4R9CMu-pWk73UOw/zh-cn_image_0000002739892658.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/khjkSZcDQPKqR5trvCU12Q/zh-cn_image_0000002772899823.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/GlhXDx-3Qu2AjFquVNs_hA/zh-cn_image_0000002739732780.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/zRRPOfFoSICufbk_691FXA/zh-cn_image_0000002743380574.gif)

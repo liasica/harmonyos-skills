@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-a
 title: 菜单控制（Menu）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 菜单 > 菜单控制（Menu）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:37+08:00
+scraped_at: 2026-09-25T07:06:29+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7f5ff00699237b24750252b9ab66f80db7162c97bc3d8f4d6395cebef7170ba6
+content_hash: sha256:85d56315af21670a6ce0e9225ab29766a84489f4c4d963d8cd3186861df4b728
 ---
 
 Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体用法请参考[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)。
@@ -30,7 +30,7 @@ Button('click for Menu')
   ])
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/B8BHVXADTUOIY45_L7lUxQ/zh-cn_image_0000002769330131.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/H_Wq_Jc4Ti6X_kEWKPEpJQ/zh-cn_image_0000002743218690.png)
 
 ## 创建自定义样式的菜单
 
@@ -129,7 +129,7 @@ Button('click for Menu')
   .bindMenu(this.MyMenu)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/UAMC8vyHR1iIAKpf5nEXaA/zh-cn_image_0000002769449993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/xLf1cwSiTX2rjcEHGCMFeg/zh-cn_image_0000002772737943.png)
 
 ## 创建支持右键或长按的菜单
 
@@ -245,7 +245,7 @@ export struct SupportAvoidCentralAxisMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/uO8wYrNsRMSf2HEX8tSWKg/zh-cn_image_0000002739890662.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/flEGPUZcRMSUS79Stp0yIw/zh-cn_image_0000002772897827.gif)
 
 ## 控制子窗菜单的事件透传
 
@@ -285,7 +285,7 @@ export struct EventTransSubWindowMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/NyOHzgLcQVONY4MxwSek0g/zh-cn_image_0000002739730784.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/xMNuCc0ATWyfs1bAgErMiw/zh-cn_image_0000002743378578.gif)
 
 ## 基于绑定组件指定位置弹出菜单
 
@@ -342,4 +342,4 @@ export struct BindComponentMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/NERFbevQSzW8Dym1LzNang/zh-cn_image_0000002769330133.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Zodg02d4QmyBX6NTqeTS3w/zh-cn_image_0000002743218692.gif)

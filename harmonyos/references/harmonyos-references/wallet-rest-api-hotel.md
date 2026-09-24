@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-re
 title: 酒店房卡接口
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > REST API > 酒店房卡接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:21e623110c51de464a4e9cc89b6cef873d34283be6313170cabe5eb8593159d1
+scraped_at: 2026-09-25T07:14:34+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:1f3894978bd246fe02f1c444a6b3aa3385d1434f67b6ca66fbea863cc9334445
 ---
 
 ## 预置模板
@@ -117,7 +117,7 @@ Accept: application/json;charset=UTF-8
 ```java
 public HwWalletObject invokeHwCreateKeyHotelClass(){
     HwWalletObject request=new HwWalletObject();
-    request.setPassVersion("1.0");
+    request.setPassVersion("10.0");
     request.setPassTypeIdentifier("hwpass.keyhotel.test");
     request.setPassStyleIdentifier("keyHotelModelTest");
     request.setOrganizationName("XXXX");

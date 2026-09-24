@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_IntOffset
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_IntOffset
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e89c4fcb4a56b1284cc83028b1f0a5c2b7c6d3b612546a2d964aab66d21dd2d7
+scraped_at: 2026-09-25T07:10:48+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:cc6903ebe6fee473782122d2e1d858912b17f43b4e8522f9494a84583b739237
 ---
 
 ```c
@@ -20,7 +20,7 @@ typedef struct {...} ArkUI_IntOffset
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [native\_type.h](capi-native-type-h.md)
+**所在头文件：** [common\_type.h](capi-common-type-h.md)
 
 ## 汇总
 

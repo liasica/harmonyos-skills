@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVCastController)
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avsession (媒体会话管理) > Interface (AVCastController)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8dc444361f17eb1fddbed2ca5cc38a499fcdc42ecce350526e893b8917cb3809
+scraped_at: 2026-09-25T07:12:57+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:451205e7e2c38c82b1a14587f2ed0bb8f733f792dd34ecdf1a72f488fffae22b
 ---
 
 在投播建立后，调用[avSession.getAVCastController](arkts-apis-avsession-avsession.md#getavcastcontroller10)后，返回会话控制器实例。控制器可查看会话ID，并可完成对会话发送命令及事件，获取会话元数据，播放状态信息等操作。
@@ -971,7 +971,7 @@ avCastController.on('mediaItemChange', (item: avSession.AVQueueItem) => {
 
 off(type: 'mediaItemChange'): void
 
-取消设置投播当前播放媒体内容事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消设置投播当前播放媒体内容事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1038,7 +1038,7 @@ avCastController.on('playNext', () => {
 
 off(type: 'playNext'): void
 
-取消设置播放下一首资源事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消设置播放下一首资源事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1105,7 +1105,7 @@ avCastController.on('playPrevious', () => {
 
 off(type: 'playPrevious'): void
 
-取消设置播放上一首资源事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消设置播放上一首资源事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1300,7 +1300,7 @@ avCastController.on('seekDone', (pos: number) => {
 
 off(type: 'seekDone'): void
 
-取消设置seek结束事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消设置seek结束事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1432,7 +1432,7 @@ avCastController.on('videoSizeChange', (width: number, height: number) => {
 
 off(type: 'videoSizeChange'): void
 
-取消视频尺寸事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消视频尺寸事件监听。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
 
@@ -1505,7 +1505,7 @@ avCastController.on('error', (error: BusinessError) => {
 
 off(type: 'error'): void
 
-取消播放的错误事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消播放的错误事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

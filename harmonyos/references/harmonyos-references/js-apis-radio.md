@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.telephony.radio (网络搜索)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.radio (网络搜索)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c3f7ec85d7551216a7cb8e72d38f28964725d431628ac2c355563d69cbd4cb58
+scraped_at: 2026-09-25T07:12:04+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:b2695140aaa1794349f61bbcd511dda59111a5af69958ec99e0a527434490a15
 ---
 
 网络搜索模块提供管理网络搜索的一些基础功能，包括获取当前接入的CS域和PS域无线接入技术、获取网络状态、获取当前选网模式、获取注册网络所在国家的ISO国家码、获取主卡所在卡槽的索引号、获取指定SIM卡槽对应的注册网络信号强度信息列表、获取运营商名称，判断当前设备是否支持NR(New Radio)、判断主卡的Radio是否打开等。其中，CS(Circuit Switched)域为电路交换域，PS(Packet Switched)为分组交换域。
@@ -147,8 +147,8 @@ getRadioTechSync(slotId: number): [NetworkRadioTech](js-apis-radio.md#networkrad
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 8300001 | Invalid parameter value. |
 | 8300002 | Service connection failed. |
-| 8300003 | System internal error. |
-| 8300999 | Unknown error. |
+| 8300003 | Operation failed. Cannot connect service. |
+| 8300999 | Unknown error code. |
 
 **示例：**
 

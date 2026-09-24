@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-styled-st
 title: 使用属性字符串
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用文本 > 使用属性字符串
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:40+08:00
+scraped_at: 2026-09-25T07:06:33+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b9c40cff2535687d047727c3d4119bb7d5a5d16fac2ba816178e11e89ad63803
+content_hash: sha256:20bdf9797d8e6578fc7dd0dfe31cdfa03c21117f47cbc2460c771f5da1d92148
 ---
 
 部分框架或应用具备自研的文字排版能力，在移植时，其文字排版能力会被对接到[方舟2D图形服务的文本引擎](complex-text-c.md)。为了避免开发者重复开发文本组件，Text组件可以通过[ArkUI\_NodeAttributeType](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)中的NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING属性，使用格式化字符串对象设置文本内容属性，直接渲染方舟文本引擎生成的文本。
@@ -18,7 +18,7 @@ content_hash: sha256:b9c40cff2535687d047727c3d4119bb7d5a5d16fac2ba816178e11e89ad
 
 下图展示了 NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING 接口的主要使用流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/OlZ4BdL8QDWrsAO3BFSy7Q/zh-cn_image_0000002739890864.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/o6ET_gVMSQiELRYI112eDA/zh-cn_image_0000002772898029.png)
 
 ## 创建StyledString对象
 
@@ -98,7 +98,7 @@ OH_ArkUI_StyledString_AddText(styledString, "World!");
 OH_ArkUI_StyledString_PopTextStyle(styledString);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/ZSnTnFVwSOKO8WrcdSgO3g/zh-cn_image_0000002739730986.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/dLKFyiN9TgKkj1kH0ICBLQ/zh-cn_image_0000002743378780.png)
 
 ## 添加占位符
 

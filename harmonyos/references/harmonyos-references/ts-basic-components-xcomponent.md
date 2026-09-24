@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: XComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > XComponent
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:32+08:00
+scraped_at: 2026-09-25T07:10:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:055cb4ac06ef871cc0beedd582fcdb5c52d25b1f3e64c40212ef5357d9f3d56c
+content_hash: sha256:e471566556c9fb32fe01e54a119fc06821de0786ed8b78cb94b2a30bbf80c289
 ---
 
 提供用于图形绘制和媒体数据写入的Surface，XComponent负责将其嵌入到视图中，支持应用自定义Surface位置和大小。同时支持AI图像分析、HDR视频亮度调节、防截屏录屏隐私保护、画布自绘制等能力，适用于视频播放、相机预览、游戏渲染、图像AI识别等需要高性能自绘制和媒体内容展示的场景。具体指南请参考[自定义渲染（XComponent）文档](../harmonyos-guides/napi-xcomponent-guidelines.md)。
@@ -915,7 +915,7 @@ struct XComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Emt4By95RcKkCGFxPOhTLA/zh-cn_image_0000002769452477.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/h5i0v_IQS6CdgVLtD9DYuA/zh-cn_image_0000002743381060.gif)
 
 ### 示例2（在Surface旋转过程中锁定）
 
@@ -1027,7 +1027,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/g_2kS0WBRtyGRYWyxe0o2A/zh-cn_image_0000002739893146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Jzg6iusKSg6kPPSdcsnZ7Q/zh-cn_image_0000002743221174.png)
 
 ### 示例4（XComponent实现沉浸式效果）
 
@@ -1075,7 +1075,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/KvAWXrSNQ-CypLkOuYKlWA/zh-cn_image_0000002739733268.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/3_ZUPxlESAeuBZisnSiEuw/zh-cn_image_0000002772740429.jpeg)
 
 ### 示例5（设置XComponent持有Surface在渲染时是否需要被视为不透明）
 
@@ -1179,4 +1179,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/-JSOiR2XTwa7XX1-Uw637g/zh-cn_image_0000002769332617.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/8dA5swxvQIq3MSiHOoTTLQ/zh-cn_image_0000002772900313.jpeg)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-session
 title: 音频会话管理(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 音频会话管理(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4144420eff64728de1bd48667184c5248271c12fdddfedf610a5ccf923bca756
+scraped_at: 2026-09-25T07:07:18+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:00618ea09976032b2fd304cdf2439742142928cddd71350a69dc50b751b732db
 ---
 
 对于涉及多个音频流并发的场景，系统已预设了默认的[音频焦点策略](audio-playback-concurrency.md#音频焦点策略)，该策略将对所有音频流（包括播放和录制）实施统一的焦点管理。
@@ -257,11 +257,15 @@ let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionMana
 
 音频会话统一持有焦点时，系统提供了三种音频会话场景。激活AudioSession前需要先通过[setAudioSessionScene](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#setaudiosessionscene20)设置对应的音频会话场景，后续激活时系统会根据应用选择的音频会话场景申请对应的音频焦点。
 
-| 名称 | 值 | 说明 |
-| --- | --- | --- |
-| AUDIO\_SESSION\_SCENE\_MEDIA | 0 | 媒体音频会话场景。 |
-| AUDIO\_SESSION\_SCENE\_GAME | 1 | 游戏音频会话场景。 |
-| AUDIO\_SESSION\_SCENE\_VOICE\_COMMUNICATION | 2 | VoIP语音通话音频会话场景。 |
+| 名称 | 值 | 匹配的StreamUsage | 说明 | 适用的场景 |
+| --- | --- | --- | --- | --- |
+| AUDIO\_SESSION\_SCENE\_MEDIA | 0 | STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK | 媒体音频会话场景。 | 频繁申请和释放焦点的场景（如多个小视频滑动播放），不持有AudioRenderer对象但需监听焦点变化等媒体播放场景。 |
+| AUDIO\_SESSION\_SCENE\_GAME | 1 | STREAM\_USAGE\_GAME | 游戏音频会话场景。 | 游戏内配乐、配音等游戏音频场景。 |
+| AUDIO\_SESSION\_SCENE\_VOICE\_COMMUNICATION | 2 | STREAM\_USAGE\_RINGTONE、STREAM\_USAGE\_VOICE\_COMMUNICATION、STREAM\_USAGE\_VIDEO\_COMMUNICATION | VoIP语音通话音频会话场景。 | VoIP通话场景下需同时启动铃声流等通话场景。 |
+
+**注意** 
+
+如果没有使用与音频流类型（StreamUsage）匹配的音频会话场景（AudioSessionScene），音频流的行为可能与预期不一致，导致焦点策略失效或播放异常。
 
 ### 监听AudioSession焦点和状态变化事件
 

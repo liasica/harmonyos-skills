@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅24h功耗器件分解统计事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 24h功耗器件分解统计事件 > 订阅24h功耗器件分解统计事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:071250381e27e2d910fe95b1ac6c6e9e0db9c90efa321d6eb358f53375120d4d
+scraped_at: 2026-09-25T07:07:13+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:7f3c44d606c85a94c7d9994f2955a99d9914d4a7c778182be6fd5e2050872254
 ---
 
 ## 接口说明
@@ -131,6 +131,10 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    4）安装运行测试应用到测试机上，断开USB（2in1设备还需要断开充电线）；
 
    5）打开测试应用，然后在应用界面中点击“CPU加压”按钮，持续十分钟，测试过程保持屏幕常亮。
+
+   **注意** 
+
+   加压结束后必须完成一次整点结算。例：上午10:15开始加压、10:26结束加压，数据11点才会完成一次整点结算，可将设备时间修改到10:58，待设备时间走到11:02后，再执行步骤3；
 3. 测试完成后连接USB，0点后在Log窗口看到对系统事件数据的处理日志（快速触发上报方式：执行命令hdc shell hidumper -s 1213 -a '--test 1'，进入测试模式不进行时间跳变的校验，然后修改设备时间为下午的11点58分）：
 
    ```text

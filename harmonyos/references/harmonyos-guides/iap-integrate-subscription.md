@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-integrate
 title: 接入自动续期订阅
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 自动续期订阅商品购买 > 接入自动续期订阅
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c6435a7c542bc01c8bc05948f4f8794beb2ced03a2c56ae9e606d0433c550ed3
+scraped_at: 2026-09-25T07:07:48+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:d43c35af1308874eb744197616565b361f447f7ebaf2ba79aa320f5bb270e998
 ---
 
 ## 约束与限制
@@ -18,7 +18,7 @@ content_hash: sha256:c6435a7c542bc01c8bc05948f4f8794beb2ced03a2c56ae9e606d0433c5
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/F_ZkG9EcRPGdmA1Qjk0Kmw/zh-cn_image_0000002769451239.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Zsx1-wT0Qw-cf5MOQWzl2g/zh-cn_image_0000002772739189.png)
 
 **展示商品**
 
@@ -98,8 +98,9 @@ import Logger from '../common/Logger';
     const queryEnvCode = await this.queryEnv();
     if (queryEnvCode !== 0) {
       let queryEnvFailedText = 'This app does not support iap';
-      if (queryEnvCode === iap.IAPErrorCode.ACCOUNT_NOT_LOGGED_IN) {
-        queryEnvFailedText = 'Go to Settings and log in to your Huawei ID and try again.';
+      if (queryEnvCode === iap.IAPErrorCode.ACCOUNT_TERRITORY_NOT_SUPPORTED) {
+        // 如果接口返回错误码“1001860054 用户账号所在服务地不在IAP Kit支持结算的国家/地区中”，应用需隐藏相关IAP功能入口
+        queryEnvFailedText = 'The country or region of the signed-in HUAWEI ID does not support IAP.';
       }
       this.showFailedPage(queryEnvFailedText);
       return;
@@ -245,13 +246,13 @@ import {
 // ...
   dealPurchaseData(purchaseData: string) {
     try {
-      // 建议您将 purchaseData 发送到应用服务器进行签名验证。
+      // 建议您将purchaseData发送到应用服务器进行签名验证。
       const jwsSubscriptionStatus = (JSON.parse(purchaseData) as PurchaseData).jwsSubscriptionStatus;
       if (!jwsSubscriptionStatus) {
         Logger.error(TAG, 'dealPurchaseData, jwsSubscriptionStatus invalid');
         return;
       }
-      // 解码 jwsPurchaseOrder 并执行签名验证。
+      // 解码jwsSubscriptionStatus并执行签名验证。
       const subscriptionStatus = JWSUtil.decodeJwsObj(jwsSubscriptionStatus);
       if (!subscriptionStatus) {
         Logger.error(TAG, 'dealPurchaseData, subscriptionStatus invalid');

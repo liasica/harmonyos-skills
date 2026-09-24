@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-c
 title: 使用主题字体（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 使用主题字体（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:30+08:00
+scraped_at: 2026-09-25T07:07:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:17eca465de705466a0250457e4cfa0ac5bcb598dc40ccf2aa8631329a33ef40a
+content_hash: sha256:159b2f9f2dc1d1d8e1d2b8ecd0d679f058608a2d750196bcf79ef9e649c1b7eb
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:17eca465de705466a0250457e4cfa0ac5bcb598dc40ccf2aa8631329a33
 
 **图1** 主题字体的切换和使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/YyDEp6w0SKyqbaYGKAtCFA/zh-cn_image_0000002739731752.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/GGKIF3zxSSGSHwPYPf1Qpg/zh-cn_image_0000002743379546.jpg)
 
 针对主题字的切换使用，应用方应确保订阅主题字变更事件，当接收字体变更事件后，由应用方主动调用页面刷新才能实现主题字的切换，否则主题字只能在重启应用后才生效；主题字的绘制需要使用OH\_Drawing\_GetFontCollectionGlobalInstance来获取全局字体集对象，仅该接口返回的对象拥有主题字体信息。
 
@@ -97,8 +97,8 @@ content_hash: sha256:17eca465de705466a0250457e4cfa0ac5bcb598dc40ccf2aa8631329a33
 
 **图2** 主题字体1的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/nHWDTqexRvOBH_0aQGoZtQ/zh-cn_image_0000002739891634.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/2RfpYoFnS1uWybk4U1EVwA/zh-cn_image_0000002772898799.png)
 
 **图3** 主题字体2的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/hIRHXiJOS5qUGSxL3LaP6w/zh-cn_image_0000002739731756.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Ppgm2w06Q066vW6x5_0S_Q/zh-cn_image_0000002743379550.png)

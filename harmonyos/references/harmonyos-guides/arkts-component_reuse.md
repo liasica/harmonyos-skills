@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-compone
 title: 自定义组件复用开发实践
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > 自定义组件复用开发实践
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:31+08:00
+scraped_at: 2026-09-25T07:06:23+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:38567c940fb31d30542a1042b4957329c01d7fd0162e66a4b5b59fdecd17675b
+content_hash: sha256:0786774ef0a3395d100f0b4d7966a557e934e57dbfe4db6881fdd9291dedf077
 ---
 
 ## 概述
@@ -40,13 +40,13 @@ content_hash: sha256:38567c940fb31d30542a1042b4957329c01d7fd0162e66a4b5b59fdecd1
 * [列表项结构类型不同](arkts-component_reuse.md#列表项结构类型不同)
 * [列表项内子组件可拆分组合](arkts-component_reuse.md#列表项内子组件可拆分组合)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/55Zl8Sz5S1O9fRitLqaV7Q/zh-cn_image_0000002739890104.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Acufip4DS6CXboxcT_3kXQ/zh-cn_image_0000002772897267.png)
 
 ### 实现原理
 
 ArkUI提供了[@Reusable装饰器](arkts-reusable.md)以实现自定义组件的复用，其原理如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/iJWfNcz7SgSTTGkTH9Y5bw/zh-cn_image_0000002739730226.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/nAzTJYg_QJebzTgnK8zo9A/zh-cn_image_0000002743378018.png)
 
 1. 标记了@Reusable的自定义组件listItem列表项，在滑动出屏幕一定范围后，从组件树上被移除，组件的对象实例被放入CustomNode虚拟结点（与自定义组件一一对应的自定义结点）。
 2. 在不断滑动过程中，列表的RecycleManager将这些CustomNode虚拟结点回收，根据[复用标识](../harmonyos-references/ts-universal-attributes-reuse-id.md)分组，形成CachedRecycleNodes的集合，即视图对象的复用缓存池。
@@ -104,7 +104,7 @@ ArkUI提供了[@Reusable装饰器](arkts-reusable.md)以实现自定义组件的
 
 这种场景下，列表中的每一项都是由相同类型的元素和布局构成，列表项组件可以作为复用逻辑的基本单位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/TByREGbbTdi4o90xL6-HQA/zh-cn_image_0000002769329575.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/59CL4ov9SX2UfyKIyz9eaQ/zh-cn_image_0000002743218134.png)
 
 实现步骤：
 
@@ -160,7 +160,7 @@ struct ItemView {
 
 这种场景下，列表中会有多种类型的列表项，如下图包含了文本、单图、多图等三种列表项，其布局、组成元素存在一定差异，可以将每种类型的列表项分别作为复用单位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/MkRBGgZ0Q1eKJ4_3j7AEiw/zh-cn_image_0000002769449437.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/bG0GKBmAQfuOdK5vLKSAJg/zh-cn_image_0000002772737387.png)
 
 在滑动的过程中，不同类型的列表项将分别回收进入各自的缓存池，当需要复用时，根据类型找到对应视图缓存进行显示。
 
@@ -223,11 +223,11 @@ struct ThreeImageTypeItemView {
 
 这种情况下，列表项也具有多种结构类型。通过观察可知，列表项内部子组件都是纵向分布排列，相同之处是顶部的文本标题、底部的发布时间，而不同之处是中间的区域部分：有单图、多图、视频三种情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/bPsV7NJ1QqGzG1Gzxm18zw/zh-cn_image_0000002739890106.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/4F9g6ETjQVugI-sIOgHXyw/zh-cn_image_0000002772897269.png)
 
 因此，可以创建五种复用子组件，通过子组件的选择组合，实现不同类型的列表项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/6i6ao_k6TD2wOTT9UK7kJw/zh-cn_image_0000002739730228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/PBAs6cCARAunEknUjPfsOw/zh-cn_image_0000002743378020.png)
 
 实现步骤：
 
@@ -438,7 +438,7 @@ struct MiddleVideoView {
 
 应用开发有这种场景：在不同的标题页面中展示数据，每一页面下实现了一个列表，这样在页面切换时，列表与列表之间如果存在结构相同的列表项，就有组件复用的优化可能。例如下图，News、Hot等页签下，绘制了类型相同的列表项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/6-cIam9VRwWY1cDQaAYuDQ/zh-cn_image_0000002769329577.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/ueaXQryyQmS9Gl5EqAtVqg/zh-cn_image_0000002743218136.png)
 
 ### 实现原理
 
@@ -452,7 +452,7 @@ struct MiddleVideoView {
 
 当前Tabs内容页不支持使用LazyForEach()，只能使用ForEach+TabContent。如果使用ForEach()，Tabs页面显示时会一次性将所有的TabContent创建，TabContent子页面切换时也不会执行aboutToDisappear()，无法回收组件，进而不存在复用优化的可能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/3msjosy1SKqMqhy76wJudQ/zh-cn_image_0000002769449439.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/5o3RdSVfQi6c8dVh6pHMQw/zh-cn_image_0000002772737389.png)
 
 在需要布局自定义组件的位置，使用[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)占位，然后继承[NodeController](../harmonyos-references/js-apis-arkui-nodecontroller.md)实现NodeItem结点类，其内部需要持有[BuilderNode](arkts-user-defined-arktsnode-buildernode.md)实例以实现结点的创建和复用，同时需要持有视图相应的数据对象以更新界面显示。
 
@@ -665,7 +665,7 @@ struct MiddleVideoView {
 
 当组件数量较多，集中预创建本身也耗时较长，容易导致主线程阻塞。ArkUI中提供了[onIdle()接口](../harmonyos-references/arkts-apis-uicontext-framecallback.md#onidle12)，会返回每一帧帧尾的空闲时间，可以将组件预创建分布到每一帧帧尾的空闲时间中执行，这样预创建过程就被平摊在多个周期里执行，避免集中运行的耗时影响，进而优化应用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5hJKiZZ6SASXmWG2i7bEjA/zh-cn_image_0000002739890108.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/D5EezpQLQiaTKpd7E3qYqQ/zh-cn_image_0000002772897271.png)
 
 **注意** 
 

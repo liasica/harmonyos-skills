@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义声明式节点 (BuilderNode)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义声明式节点 (BuilderNode)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:39+08:00
+scraped_at: 2026-09-25T07:06:32+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:9fb3b827c91d7c09c8d2595a93da7c26fc0b19e110f7c61e84905a39252cdb98
+content_hash: sha256:be73cf2647ebeec004bbf8742d683b35660db8f56fcc92cee55be83aeaf682b2
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:9fb3b827c91d7c09c8d2595a93da7c26fc0b19e110f7c61e84905a39252
 
 此外，BuilderNode还提供了组件预创建的能力，能够自定义系统组件的创建开始的时间，在后续业务中实现动态挂载与显示。此功能尤其适用于初始化耗时较长的声明式组件，如[Web](../harmonyos-references/arkts-basic-components-web.md)、[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)等，通过预创建，可以有效减少初始化时间，优化组件加载效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/uDRCRcrIReC1uN5MMUi0Aw/zh-cn_image_0000002739890800.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/vyuopzwaTUKtj4GkXRUWdA/zh-cn_image_0000002772897965.png)
 
 ## 基本概念
 
@@ -298,7 +298,7 @@ struct WrappedBuilderPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/p_bgZKBVSUmmG01VkLVPkg/zh-cn_image_0000002739730922.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/NjnRHlhtROK9O8M9HuBI6A/zh-cn_image_0000002743378716.gif)
 
 ## 解除实体节点引用关系
 
@@ -401,7 +401,7 @@ struct postTouchEventPage {
 
 在以下示例中，Column和Row绑定了触摸事件，同时Column设置了[hitTestBehavior](../harmonyos-references/ts-universal-attributes-hit-test-behavior.md#hittestbehavior)属性为[HitTestMode.Transparent](../harmonyos-references/ts-appendix-enums.md#hittestmode9)。然而，由于生成了BuilderProxyNode，且BuilderProxyNode无法设置属性，因此在触摸Column时，Column的触摸测试无法传递到Row上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/IQqmZ3_bRM6YTKhPO0-09A/zh-cn_image_0000002769330271.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/vXWqEVy6SlixBfZ32t__jg/zh-cn_image_0000002743218830.png)
 
 ```typescript
 import { BuilderNode, typeNode, NodeController, UIContext } from '@kit.ArkUI';
@@ -483,7 +483,7 @@ struct BuilderProxyNode01 {
 
 在上述场景中，若要实现触摸测试的传递，可以使用一个容器组件包裹语法节点或自定义组件，以避免生成BuilderProxyNode，并将容器组件的hitTestBehavior设置为HitTestMode.Transparent，从而向兄弟节点传递触摸测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/YXTnQ6CWSYqKBGdbeOtOYw/zh-cn_image_0000002769450133.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/btfkjP-9TRWLgsmRYNK6sg/zh-cn_image_0000002772738083.png)
 
 ```typescript
 import { BuilderNode, typeNode, NodeController, UIContext } from '@kit.ArkUI';
@@ -568,7 +568,7 @@ struct Index {
 
 此外，对于自定义组件，可以直接设置属性，此时将额外生成节点\_\_Common\_\_，自定义组件的属性将挂载于\_\_Common\_\_上，同样能够实现上述效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/s9TMxF9vRvyt07JIymazjA/zh-cn_image_0000002739890802.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/HhwtPjy_RYOz4_mtSsvpvA/zh-cn_image_0000002772897967.png)
 
 ```typescript
 import { BuilderNode, typeNode, NodeController, UIContext } from '@kit.ArkUI';
@@ -654,7 +654,7 @@ struct Index {
 
 以下面的Demo为例，被复用的自定义组件ReusableChildComponent可以传递复用和回收事件到其下的自定义组件ChildComponent3，但无法传递给自定义组件ChildComponent2，因为被BuilderNode所隔断。因此需要主动调用BuilderNode的reuse和recycle接口，将复用和回收事件传递给自定义组件ChildComponent2，以实现复用效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/d0wTxVJVRmePno7yUvN8gQ/zh-cn_image_0000002739730924.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/kH9tXBuVQgO0UfCSmWQueg/zh-cn_image_0000002743378718.png)
 
 ```typescript
 import { FrameNode, NodeController, BuilderNode, UIContext } from '@kit.ArkUI';
@@ -841,7 +841,7 @@ BuilderNode节点的复用机制与使用[@Reusable](arkts-reusable.md)装饰器
 
 在下面的示例中，ReusableChildComponent作为BuilderNode的子自定义组件，无法标记为@Reusable。通过ChildComponent2对其包裹，ReusableChildComponent可以使用@Reusable装饰器标记。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/kwgXOOjFSs23uL9IO_ex2A/zh-cn_image_0000002769330273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ZIWZBMFJTbWVQ1FI7clluQ/zh-cn_image_0000002743218832.png)
 
 ```typescript
 import { FrameNode, NodeController, BuilderNode, UIContext } from '@kit.ArkUI';
@@ -1196,7 +1196,7 @@ struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/UofImJrfS-a6tbNfbmVh7g/zh-cn_image_0000002769450135.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/xeId_dldTKK1Og8zAAjf8w/zh-cn_image_0000002772738085.gif)
 
 在API version 16之前，解决该问题的方法是在页面销毁时，将页面上的BuilderNode从缓存中移除。以上述例子为例，可以在页面跳转前，通过点击事件将BuilderNode从[AppStorage](arkts-appstorage.md)中移除，以此达到预期效果。
 
@@ -1670,7 +1670,7 @@ struct TextBuilder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/mpPpNS63QeW4nmmyhSBF5A/zh-cn_image_0000002739890804.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/DLnpCR3QQt6CxepklX23KA/zh-cn_image_0000002772897969.gif)
 
 ### BuilderNode常用冻结场景（状态管理V2）
 
@@ -1680,7 +1680,7 @@ struct TextBuilder {
 
 当BuilderNode节点开启冻结（即[inheritFreezeOptions](../harmonyos-references/js-apis-arkui-buildernode.md#inheritfreezeoptions20)设置为true）并且继承父自定义组件的冻结策略设置为开启组件冻结（即freezeWhenInactive选项设为true）时，页面1调用router.pushUrl接口跳转到页面2时，页面1为隐藏不可见状态，此时如果更新页面1中的状态变量，不会触发页面1刷新。图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/l-HYi6iDSnuH1Gel1mu2jw/zh-cn_image_0000002769329585.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/iM85sJGURGWOn9e8AcGUBw/zh-cn_image_0000002743218144.png)
 
 页面1示例代码如下：
 
@@ -1782,7 +1782,7 @@ struct Page2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/BBwbs3xpT4yd0dg31I4BWA/zh-cn_image_0000002739730926.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Z0xbfIyMQmuyrSAMSzf96Q/zh-cn_image_0000002743378720.gif)
 
 在上面的示例中：
 
@@ -1798,7 +1798,7 @@ struct Page2 {
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/aebf90UMS_2gXN8ostSZRg/zh-cn_image_0000002769449447.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/G5Tdzrg6QKyg5Ng3y2OoWQ/zh-cn_image_0000002772737397.png)
 
 ```typescript
 import { BuilderNode, FrameNode, NodeController } from '@kit.ArkUI';
@@ -1915,7 +1915,7 @@ struct buildNodeChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/PtGEYWdOSU-HDjFaIoQe3g/zh-cn_image_0000002769330275.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/AAtOloULRv2slgZVGDDGjw/zh-cn_image_0000002743218834.gif)
 
 在上面的示例中：
 
@@ -2119,7 +2119,7 @@ struct TextBuilder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/X6snCSMUR5iPOsnD69ebyQ/zh-cn_image_0000002769450137.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/mwTNXuN8QxaV22x060qOgg/zh-cn_image_0000002772738087.gif)
 
 在上面的示例中：
 
@@ -2266,7 +2266,7 @@ struct BuildNodeChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/fd6-pC7iTbKc3JyrP9txUA/zh-cn_image_0000002739890806.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/PqjFLRALRPKTbcfQ3iMoYg/zh-cn_image_0000002772897971.gif)
 
 在上面的示例中：
 
@@ -2405,7 +2405,7 @@ struct FreezeBuildNode {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/F3yJjbXVTsSZRYXrJpfjTA/zh-cn_image_0000002739730928.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/xXzB1BmdS0CSaoNzb98n9Q/zh-cn_image_0000002743378722.gif)
 
 在上面的示例中：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 使用车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 使用车钥匙
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a1e7b7d3bfc747767510397ebaa6fade719d38337ba5ddc51e087d1feef4c1e9
+scraped_at: 2026-09-25T07:08:00+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:75dfd368791e25fd7aa88e50db9287ecf46d5b231113fb59fefee488c6fb61b1
 ---
 
 用户可在车主App中查看钥匙连接状态，执行开锁、闭锁、开启后备箱等远程车控操作。车控操作的超时时间由车主App自行控制。
@@ -21,7 +21,7 @@ content_hash: sha256:a1e7b7d3bfc747767510397ebaa6fade719d38337ba5ddc51e087d1feef
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/3Js7TtiNQzCKaS-UsPZ2pg/zh-cn_image_0000002769451525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/WlRGX0h6T6SmzB7xouY4Bg/zh-cn_image_0000002772739475.png)
 
 ## 开发流程
 
@@ -50,7 +50,7 @@ content_hash: sha256:a1e7b7d3bfc747767510397ebaa6fade719d38337ba5ddc51e087d1feef
 | 连接状态 | 移动端和车端是否已完成BLE/SLE协议层的连接。 |
 | 认证状态 | 移动端和车端是否已完成车钥匙认证过程，该过程由车端在连接完成后主动发起。 |
 
-一般情况情况下，移动端和车端已建立连接，则视为：**已完成车钥匙认证过程**。
+一般情况下，移动端和车端已建立连接，则视为：**已完成车钥匙认证过程**。
 
 查询连接状态有同步和异步两种查询方式：
 

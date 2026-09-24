@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-tool-c
 title: 使用Image_NativeModule读取和编辑图片Exif信息
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用Image_NativeModule读取和编辑图片Exif信息
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2ec8ce125ee5733a5de7779fdb2c8aca70fa36b28e98d93275866cc38b42ee70
+scraped_at: 2026-09-25T07:07:27+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:03b322aa4cca61e57a22f7575acaab8ac2ebcfeaeac6746fae971952c9402fd9
 ---
 
 Image Kit提供图片Exif信息的读取与编辑能力。
@@ -30,7 +30,7 @@ Exif信息的读取与编辑相关C API如下，详细介绍请参考[image\_sou
 
 | 接口 | 说明 |
 | --- | --- |
-| [OH\_ImageSourceNative\_GetImageProperty()](../harmonyos-references/capi-image-source-native-h.md#oh_imagesourcenative_getimageproperty) | 获取指定属性键的Exif信息。 |
+| [OH\_ImageSourceNative\_GetImagePropertyWithNull()](../harmonyos-references/capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertywithnull) | 获取指定属性键的Exif信息。 |
 | [OH\_ImageSourceNative\_ModifyImageProperty()](../harmonyos-references/capi-image-source-native-h.md#oh_imagesourcenative_modifyimageproperty) | 修改指定属性键的Exif信息。 |
 
 ## 注意事项

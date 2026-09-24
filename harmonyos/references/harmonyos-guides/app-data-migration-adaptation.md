@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-data-migr
 title: 应用数据迁移适配指导
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 应用数据迁移适配指导
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:47+08:00
+scraped_at: 2026-09-25T07:06:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bccb42b5dca509864b560018596581754e6acbc98d84d326d6152f9b14992551
+content_hash: sha256:7d991a249670dc58cbe45b09c7aa1d85b7709fb09ad703dccc482057722fbd59
 ---
 
 ## 环境准备
@@ -36,10 +36,10 @@ content_hash: sha256:bccb42b5dca509864b560018596581754e6acbc98d84d326d6152f9b149
 
 1. 在**entry/src/main/ets/**目录下，点击 **New > Directory** 创建**backupExtension**目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/6L2DUyjwQ8uWveSNWcQUpg/zh-cn_image_0000002769450419.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/RKRXM4G3QJurueuBWAWVYQ/zh-cn_image_0000002772738369.png)
 2. 点击**entry/src/main/ets/backupExtension/**目录，点击 **New > File** 创建**BackupExtension.ets**文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/HwBu8sA2TTuEvHQMQvZM0Q/zh-cn_image_0000002739891088.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/M7RHtXLEQRSVB3wsbWYubA/zh-cn_image_0000002772898253.png)
 3. 参考示例代码实现BackupExtensionAbility，应用的数据转换和迁移逻辑，请在指定位置填充实现。
 
    终端设备从HarmonyOS升级到HarmonyOS NEXT中，会将原有APK应用沙箱目录中文件放置到HarmonyOS备份恢复目录。对应关系详见[APK应用沙箱目录与备份恢复目录映射关系](app-data-migration-adaptation.md#apk应用沙箱目录与备份恢复目录映射关系)。

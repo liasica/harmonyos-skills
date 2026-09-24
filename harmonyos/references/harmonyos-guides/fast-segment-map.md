@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-segment-
 title: 使用SegmentMap查询维护区间信息
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用SegmentMap查询维护区间信息
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:08+08:00
+scraped_at: 2026-09-25T07:07:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:535c44d02681774be6d2b61f537cc65d3a7ebdc5552425593337827c5a522bd8
+content_hash: sha256:4d26c7891e00f1b031775f7731bb674e8720a9a5eb8e255eed588914145ae61f
 ---
 
 FAST Kit提供Segment Map用于查询维护区间信息，实现数据序列区间段的快速更新和快速查询。线段表（Segment Map）是一种用于高效处理区间段信息的数据结构，适用于需要频繁对数据序列的某个区间段进行统计或修改的场景。其典型操作包括单点修改、区间修改、区间查询等。
 
-线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/sNYG0-OaSHOQyiz4lsbGUg/zh-cn_image_0000002739731466.png) 优化至![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/KYWQE9ZDTQ2ViGUFHeAizQ/zh-cn_image_0000002769330815.png)，在处理大规模数据时优势显著，为构建高性能、响应迅速的应用程序提供数据结构基础。
+线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/kXSTYMu5SIWrwYB6Ou-5xA/zh-cn_image_0000002743379260.png) 优化至![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/CK2qc_mOTcWsEbuaLr7Erg/zh-cn_image_0000002743219374.png)，在处理大规模数据时优势显著，为构建高性能、响应迅速的应用程序提供数据结构基础。
 
 ## 接口说明
 

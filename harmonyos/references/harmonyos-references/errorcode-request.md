@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 上传下载错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 上传下载错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:52a0d0e5b6b1fc363a7da9708e5d9071748dd62c8312725249029ae4ebae966d
+scraped_at: 2026-09-25T07:12:16+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:c686a3c926ad285d08957c77a59c0078d7ac949ed1224845967a9300409db4e1
 ---
 
 **说明** 
@@ -78,11 +78,11 @@ Other error.
 
 **可能原因**
 
-该错误码表示服务异常，可能原因是任务创建失败。
+该错误码表示出现上述错误码之外的未定义错误，可能原因是任务执行过程中发生未知异常或其他系统问题。
 
 **处理步骤**
 
-请检查任务配置是否正确。
+请结合调用接口及返回的详细错误信息定位具体原因后重试。
 
 ## 21900004 应用任务队列已满
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 基本概念
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 栅格组件 > 基本概念
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:43+08:00
+scraped_at: 2026-09-25T07:10:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:61328cef89a9c9e7f8aa34d712a8045930b4e815d9dc35f48df98712bac40782
+content_hash: sha256:87d1996ebea1bcb29d70d60e8ab3cc278bfa4de35e3fd3de74219833660af139
 ---
 
 提供栅格布局效果，通过栅格系统进行元素布局，主要提供<grid-container>、<grid-row>、<grid-col>栅格容器组件。
@@ -30,7 +30,7 @@ content_hash: sha256:61328cef89a9c9e7f8aa34d712a8045930b4e815d9dc35f48df98712bac
 
    是用来辅助布局的主要定位工具，不同的屏幕尺寸匹配不同的Columns数量来辅助布局定位。Columns的宽度在保证Margins和Gutters符合规范的情况下，根据实际设备的宽度和Columns数量自动计算每一个Columns的宽度。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/EeN6E8RORfCG9XsU-ynsKQ/zh-cn_image_0000002769332871.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/bRmfRD3eRJeKWagQhs1YJA/zh-cn_image_0000002772900569.png)
 
    **栅格断点系统**
 

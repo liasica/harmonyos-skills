@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-vsync-
 title: NativeVSync开发指导 (C/C++)
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > NativeVSync开发指导 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:05+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ba860cb267bc3a997eb08363311f2dcc9847a6b62887d5a895ea4f43db9df4c7
+scraped_at: 2026-09-25T07:07:33+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:987a44e98a540a5f6c059f7f2f11db378b911d00fe073d1f254c3cf492321dad
 ---
 
 ## 场景介绍
@@ -16,12 +16,13 @@ NativeVSync模块用于获取系统VSync信号，提供OH\_NativeVSync实例的�
 
 | 接口名 | 描述 |
 | --- | --- |
-| OH\_NativeVSync\_Create (const char \*name, unsigned int length) | 创建一个OH\_NativeVSync实例，每次调用都会产生一个新的实例并创建一个vsync线程接收处理回调。本接口需要与OH\_NativeVSync\_Destroy接口配合使用，否则会存在内存泄漏。 |
-| OH\_NativeVSync\_Destroy (OH\_NativeVSync \*nativeVsync) | 销毁OH\_NativeVSync实例。 |
-| OH\_NativeVSync\_FrameCallback (long long timestamp, void \*data) | 回调函数的形式，timestamp表示时间戳，data为回调函数入参。回调的处理在vsync初始化时创建的线程内。 |
-| OH\_NativeVSync\_RequestFrame (OH\_NativeVSync \*nativeVsync, OH\_NativeVSync\_FrameCallback callback, void \*data) | 请求下一次VSync信号，当信号到来时，调用回调函数callback。 |
+| OH\_NativeVSync\_Create(const char\* name, unsigned int length) | 创建一个OH\_NativeVSync实例，每次调用都会产生一个新的实例并创建一个vsync线程接收处理回调。本接口需要与OH\_NativeVSync\_Destroy接口配合使用，否则会存在内存泄漏。 |
+| OH\_NativeVSync\_Destroy(OH\_NativeVSync\* nativeVsync) | 销毁OH\_NativeVSync实例。 |
+| OH\_NativeVSync\_FrameCallback(long long timestamp, void \*data) | 回调函数的形式，timestamp表示时间戳，data为回调函数入参。回调的处理在vsync初始化时创建的线程内。 |
+| OH\_NativeVSync\_RequestFrame(OH\_NativeVSync\* nativeVsync, OH\_NativeVSync\_FrameCallback callback, void\* data) | 请求下一次VSync信号，当信号到来时，调用回调函数callback。 |
+| OH\_NativeVSync\_GetPeriod(OH\_NativeVSync\* nativeVsync, long long\* period) | 获取当前Vsync信号周期。 |
 
-详细的接口说明请参考[native\_vsync](../harmonyos-references/capi-nativevsync.md)。
+详细的接口说明请参考[NativeVsync](../harmonyos-references/capi-nativevsync.md)。
 
 ## 开发步骤
 

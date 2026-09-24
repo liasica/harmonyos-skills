@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/accessory-dev
 title: 配件接入
 breadcrumb: 指南 > 系统 > 网络 > Accessory Kit（配件接入服务） > 配件接入
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:03+08:00
+scraped_at: 2026-09-25T07:07:00+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ca6fea22a0af96fb6fc560ccd69cc3fdc6ba8820f9bdfbc79c8f13501f843f3e
+content_hash: sha256:b5674ae10873d91ab71edd910dd29bad33954bff707190e9c385b978e7077453
 ---
 
 本文档旨在帮助开发者为华为生态合作设备及其生态应用提供关联唤醒、系统服务关联、按需调度和安全授信管理等能力。
@@ -416,7 +416,7 @@ let result: number = connectManager.disconnect(attachId);
 
 下图梳理了正常流程和异常流程的情况，其中绿色实线为正常流程，红色虚线为异常流程；[accessEvent](../harmonyos-references/accessory-accessoryaccessmanager.md#accessevent)参考[accessoryAccessManager (配件接入管理)](../harmonyos-references/accessory-accessoryaccessmanager.md)中相关说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/-zVjCX2rQuSbozLz0KEVVA/zh-cn_image_0000002739731416.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ojJtS5QWSa2UCzllb5CzRw/zh-cn_image_0000002743379210.png)
 
 * [showAccessPicker](../harmonyos-references/accessory-accessoryaccessmanager.md#showaccesspicker)回调的[accessEvent](../harmonyos-references/accessory-accessoryaccessmanager.md#accessevent)为0时，代表弹窗弹出，数据结构如下：
 

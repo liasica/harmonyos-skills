@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 代码签名信息查询场景（C/C++）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 代码签名信息查询场景（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:58+08:00
+scraped_at: 2026-09-25T07:06:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ea03534ebfb57c9fa060d29a7dde920a054e4e96107f3ec33c07f6e46759bfde
+content_hash: sha256:ff5e86a4250ffe16707b5b6158f8e23847fc227944ce3832eaed3253cee7f97c
 ---
 
 从6.1.1(24)开始，新增提供文件代码签名信息查询接口，可以获取设备上已签名的文件签名信息。
@@ -21,7 +21,7 @@ content_hash: sha256:ea03534ebfb57c9fa060d29a7dde920a054e4e96107f3ec33c07f6e4675
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/RCYtv72UQtO2p2Njq5WDGQ/zh-cn_image_0000002739891270.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/i3dxLx_IRreNcH0jGZBcOg/zh-cn_image_0000002772898435.png)
 
 **流程说明：**
 

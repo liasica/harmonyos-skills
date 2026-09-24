@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup
 title: 应用启动框架AppStartup
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用启动框架AppStartup
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:24+08:00
+scraped_at: 2026-09-25T07:06:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ae3085fa572d71b89faffdef80f80e542742924ec6d96bee0932a87f8f67f1ad
+content_hash: sha256:6f7de202f52cca0ee87bce0bcfd30aee4c2fa1e8716eefe5c8aed82e61f75938
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图1** 启动框架使用场景
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/IwIWu3tATOWdiz4prgGwyA/zh-cn_image_0000002769449333.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/ElyJw7mSTvOJR6hrEav_lA/zh-cn_image_0000002772737283.png)
 
 ## 运行机制
 
@@ -24,13 +24,13 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图2** 启动框架自动模式执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/TBp1fYl4TwygkZmrsQDPww/zh-cn_image_0000002739890002.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Z3K-IkRETp669GYJEKQ8Qg/zh-cn_image_0000002772897165.png)
 
 开发者也可以在AbilityStage创建完后调用[startupManager.run](../harmonyos-references/js-apis-app-appstartup-startupmanager.md#startupmanagerrun)方法，执行手动模式的启动任务。
 
 **图3** 启动框架手动模式执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/OI2eP19vQbSjkeNKkceeFg/zh-cn_image_0000002739730124.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/qoxgdh3dRQyR13re0sStiw/zh-cn_image_0000002743377916.png)
 
 ## 支持的范围
 
@@ -117,7 +117,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图4** 启动任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Ah0wt6tiSHaFMcWUzO5YPg/zh-cn_image_0000002769329473.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/QkazWEUfRlCaMhD3DFEnMA/zh-cn_image_0000002743218032.png)
 
 1. 在“ets/startup”路径下，依次创建6个启动任务文件。文件名称必须确保唯一性。本例中的6个文件名分别为StartupTask\_001.ets~StartupTask\_006.ets。
 2. 在启动框架配置文件startup\_config.json中，添加启动任务配置。
@@ -206,7 +206,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图5** so预加载任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/qZW1UfymRWC9gsL8DqgjjQ/zh-cn_image_0000002769449335.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/np-dq9ZPT-WDO3z9rQZtHw/zh-cn_image_0000002772737285.png)
 
 1. 参考[Node-API](use-napi-process.md)创建so文件。本例中的6个so文件名称分别为libentry\_001.so~libentry\_006.so。
 2. 在启动框架配置文件startup\_config.json中，添加预加载so任务配置。
@@ -372,7 +372,7 @@ export default class StartupTask_001 extends StartupTask {
 
 **图6** 启动任务与so预加载依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/fhQ4H1qiRY-Uv9hHXXPcyQ/zh-cn_image_0000002739890004.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/uOd0GRQCSDajgN2WG5pdVw/zh-cn_image_0000002772897167.png)
 
 开发步骤如下：
 
@@ -533,7 +533,7 @@ struct Index {
 
 **图7** 启动任务设置匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/YlvewWBwS-29P8-9ceSToQ/zh-cn_image_0000002739730126.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/chrzqWGkRs-HdKz8Fvqpng/zh-cn_image_0000002743377918.png)
 
 可以通过以下两种方式添加匹配规则：
 
@@ -647,7 +647,7 @@ struct Index {
 
 **图8** 设置启动任务提前调度
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/D_DjhPAaTIKTlneaJcZtnA/zh-cn_image_0000002769329475.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/NL-G6a2JReSb1xTWej_1tg/zh-cn_image_0000002743218034.png)
 
 例如，应用首页需要通过网络请求获取Feed流数据，且希望该任务能在异步线程中与AbilityStage模块加载并发执行。假设网络请求任务为[定义启动任务配置](app-startup.md#定义启动任务配置)步骤中的StartupTask\_004，开发步骤如下：
 

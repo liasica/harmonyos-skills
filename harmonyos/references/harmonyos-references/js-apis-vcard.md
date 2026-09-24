@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-v
 title: "@ohos.telephony.vcard (VCard模块)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.vcard (VCard模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-25T07:12:03+08:00
+doc_updated_at: 2026-09-24
 content_hash: sha256:b86794d748cda23e9dad2b329f936030e39818ebbfe3513bc777d43400b65e4a
 ---
 

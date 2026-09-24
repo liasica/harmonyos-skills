@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputdevice-g
 title: 输入设备开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 输入设备开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:04+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:50a5987a93c4ab99cdc8097bcc1a5fe1c7db7e1f2058990ba224e0eef908bb76
+scraped_at: 2026-09-25T07:07:06+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:784fbb9a9a0e6b70597529e45d035ec161af02434b2bf2edd3e0e923e58c92ea
 ---
 
 ## 场景介绍
@@ -24,10 +24,10 @@ import { inputDevice } from '@kit.InputKit';
 
 | 接口名称 | 描述 |
 | --- | --- |
-| getDeviceList(): Promise<Array<number>> | 获取输入设备列表。 |
+| getDeviceList(): Promise<Array<number>> | 获取所有输入设备的ID列表。 |
 | getKeyboardType(deviceId: number): Promise<KeyboardType> | 获取输入设备的键盘类型。 |
-| on(type: "change", listener: Callback<DeviceListener>): void | 监听输入设备的热插拔事件。 |
-| off(type: "change", listener?: Callback<DeviceListener>): void | 取消监听输入设备的热插拔事件。 |
+| on(type: 'change', listener: Callback<DeviceListener>): void | 注册监听输入设备的热插拔事件。 |
+| off(type: 'change', listener?: Callback<DeviceListener>): void | 取消监听输入设备的热插拔事件。 |
 
 ## 虚拟键盘弹出检测
 

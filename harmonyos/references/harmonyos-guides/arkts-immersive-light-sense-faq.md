@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:37+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:33a099ebc157d7e094255d799d9ce9739dce9503c57a84d42298df0820ae3e46
+scraped_at: 2026-09-25T07:06:30+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:88bfad9e9db4de84598eba95bca19a7ed2e14ad77659f428a12ced3796236ad8
 ---
 
 本文提供沉浸光感开发过程中的常见问题及解决措施。沉浸光感的完整能力介绍及开发指导，请参见[沉浸光感简介](arkts-immersive-light-sense-overview.md)。
@@ -53,6 +53,8 @@ content_hash: sha256:33a099ebc157d7e094255d799d9ce9739dce9503c57a84d42298df0820a
 
 以下示例展示了分别在Navigation标题栏中和Navigation内容区，开启沉浸光感的显示效果。位于Navigation标题栏中的Column开启沉浸光感正常生效；位于Navigation内容区中的Column组件，因其不处于Navigation标题栏或底部TabBar中，不生效沉浸光感效果。
 
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+
 ```typescript
 import { CircleShape, TitleBarType, uiMaterial } from '@kit.ArkUI';
 
@@ -60,6 +62,7 @@ import { CircleShape, TitleBarType, uiMaterial } from '@kit.ArkUI';
 @Component
 struct MaterialScopeAdaptExample {
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  @State titleHeight: number = 140;
 
   @Builder
   NavigationTitle() {
@@ -90,6 +93,7 @@ struct MaterialScopeAdaptExample {
     .alignItems(VerticalAlign.Center)
     .width('100%')
     .padding(16)
+    .height(this.titleHeight)
   }
 
   build() {
@@ -137,13 +141,13 @@ struct MaterialScopeAdaptExample {
         .justifyContent(FlexAlign.Center)
         .alignItems(HorizontalAlign.Center)
       }
-      .title(this.NavigationTitle, { barStyle: BarStyle.STACK })
+      .title({ builder: this.NavigationTitle, height: this.titleHeight }, { barStyle: BarStyle.STACK })
     }.width('100%').height('100%').backgroundColor('#F1F3F5')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/4LrLcyOzSa6zL1tkTXnfwA/zh-cn_image_0000002769450015.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/nm-9paKoRXONkdaRKgmHBA/zh-cn_image_0000002772737965.jpg)
 
 ### 背景色或背景模糊遮挡材质效果
 
@@ -185,6 +189,42 @@ Column() {
 .systemMaterial(new uiMaterial.ImmersiveMaterial({
   style: uiMaterial.ImmersiveStyle.THIN,
 }))
+```
+
+### 自定义弹出框CustomDialog没有生效沉浸式系统材质效果
+
+**问题现象**
+
+* 通过[openCustomDialog](../harmonyos-references/arkts-apis-uicontext-promptaction.md#opencustomdialog12)、[openCustomDialogWithController](../harmonyos-references/arkts-apis-uicontext-promptaction.md#opencustomdialogwithcontroller18)创建的自定义弹出框，传入systemMaterial属性后没有生效沉浸式系统材质效果。
+* CustomDialog设置[customStyle](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)为true时弹出框没有生效沉浸式系统材质效果。
+
+**可能原因**
+
+如果使用openCustomDialog、openCustomDialogWithController创建自定义弹出框，或设置弹出框的customStyle属性为true时，弹出框的背板由开发者自定义，当前暂不支持对此场景适配沉浸式系统材质。
+
+**解决措施**
+
+不支持在自定义弹出框背板中适配沉浸式系统材质。
+
+若开发者有诉求，建议使用其他类似接口，如[openCustomDialog](../harmonyos-references/arkts-apis-uicontext-promptaction.md#opencustomdialog12-1)。
+
+**代码示例**
+
+以下代码展示了使用[openCustomDialog](../harmonyos-references/arkts-apis-uicontext-promptaction.md#opencustomdialog12-1)接口创建自定义弹出框，并生效沉浸式系统材质效果。
+
+```ts
+Button('Click Me')
+  .fontSize(30)
+  .onClick(() => {
+    this.getUIContext()
+      .getPromptAction()
+      .openCustomDialog({
+        builder: () => {
+          this.customDialogComponent()
+        },
+        systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THICK })
+      })
+  })
 ```
 
 ## 设置沉浸式系统材质后组件边框呈现出周围背景的颜色
@@ -350,13 +390,13 @@ Column() {
 
 * Checkbox可视区域为40\*40的圆形，材质渲染区域为40\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/h71otil2SMSBzOXy7Cl2rQ/zh-cn_image_0000002739890684.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/nTARMutqQ_SCkdE9cgvoxg/zh-cn_image_0000002772897849.jpg)
 * Text组件可视区域为文本内容，材质渲染区域为100\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/Qmko2fbjQuaAtgAoNDBugg/zh-cn_image_0000002739730806.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/rEKVVZnQTj6JO6fHHl8TPQ/zh-cn_image_0000002743378600.jpg)
 * Progress组件可视区域为胶囊形，材质渲染区域为100\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/-AxQHyqoRG60n1BOlIkQeA/zh-cn_image_0000002769330155.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/o0iR_v07R8-AHMpbAs1KbQ/zh-cn_image_0000002743218714.jpg)
 
 **可能原因**
 
@@ -432,7 +472,7 @@ Row() {
 
 同时给组件设置沉浸式系统材质和背景色，材质效果被遮盖。例如TextArea组件设置背景色后，会遮盖材质效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/1p6D6WslSqaD1Via-4Tuwg/zh-cn_image_0000002769450017.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/9BSKgMYJTyyXNDQKDuPTkA/zh-cn_image_0000002772737967.jpg)
 
 **可能原因**
 

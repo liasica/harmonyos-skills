@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drag
 title: drag_and_drop.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > drag_and_drop.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fd2da2b6db549837dd349ef30d286bb6cc61bd2e596dd40342a547df1d661f29
+scraped_at: 2026-09-25T07:10:31+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:56b221493321348acf7a57a915fe23eac8a04faa2d8ef25e3ffc265133e78e44
 ---
 
 ## 概述
@@ -30,9 +30,6 @@ content_hash: sha256:fd2da2b6db549837dd349ef30d286bb6cc61bd2e596dd40342a547df1d6
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md) | ArkUI\_NodeEvent | 定义组件事件的通用结构类型。 |
-| [ArkUI\_Context](capi-arkui-nativemodule-arkui-context.md) | ArkUI\_Context | ArkUI native UI 的上下文实例对象，用于表示组件所在页面的 UIContext。其指针类型为 [ArkUI\_ContextHandle](capi-arkui-nativemodule-arkui-context8h.md)，开发者可通过 [OH\_ArkUI\_GetContextByNode](capi-native-node-h.md#oh_arkui_getcontextbynode) 获取对应上下文，并将其作为拖拽操作、动画、UI 任务调度等接口的上下文入参。 |
-| [ArkUI\_Context\*](capi-arkui-nativemodule-arkui-context8h.md) | ArkUI\_ContextHandle | ArkUI 在 Native 侧的上下文实例对象指针，用于表示组件所在页面的 UIContext。开发者可通过[OH\_ArkUI\_GetContextByNode](capi-native-node-h.md#oh_arkui_getcontextbynode)或[OH\_ArkUI\_GetContextFromNapiValue](capi-native-node-napi-h.md#oh_arkui_getcontextfromnapivalue)获取该指针，并将其作为 UI 任务调度、动画、焦点控制等接口的上下文入参。 |
 | [ArkUI\_DragEvent](capi-arkui-nativemodule-arkui-dragevent.md) | ArkUI\_DragEvent | 拖拽事件，用于表示ArkUI组件拖拽过程中的事件信息，开发者可通过相关拖拽事件接口获取拖拽状态和事件数据。 |
 | [ArkUI\_DragPreviewOption](capi-arkui-nativemodule-arkui-dragpreviewoption.md) | ArkUI\_DragPreviewOption | 设置拖拽跟手图的自定义参数（如投影、圆角效果等），用于在拖拽场景中自定义预览图显示效果，帮助应用提供更符合业务需求的拖拽交互体验。 |
 | [ArkUI\_DragAction](capi-arkui-nativemodule-arkui-dragaction.md) | ArkUI\_DragAction | 拖拽行为句柄，用于主动发起拖拽操作，即由开发者主动调用接口启动拖拽，区别于被动响应拖拽事件。开发者可结合主动拖拽流程了解ArkUI\_DragAction的创建、配置和执行机制，相关说明请参见[绑定拖拽事件](../harmonyos-guides/ndk-drag-event.md)。 |

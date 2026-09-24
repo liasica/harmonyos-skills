@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-set
 title: 设置列表卡片样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 列表 > 设置列表卡片样式
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:51+08:00
+scraped_at: 2026-09-25T07:06:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7f932c876c5a7161edc31428b0eac9ebebbf66e3906c58d7b98bdba3a79439c4
+content_hash: sha256:24b06864bcf70f0d71fc8b6967bd3e14f23f5eec82a8694e258280710020725a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:7f932c876c5a7161edc31428b0eac9ebebbf66e3906c58d7b98bdba3a79
 
 应用使用[HdsListItemCard (列表卡片)](../harmonyos-references/ui-design-hdslistitemcard.md)组件实现多设备上的系统列表样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/SldLI0WyQVy1xo81pwNJUw/zh-cn_image_0000002739891212.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/Krn1xMNTSXSfVwOnUndodw/zh-cn_image_0000002772898377.jpg)
 
 ## 开发步骤
 

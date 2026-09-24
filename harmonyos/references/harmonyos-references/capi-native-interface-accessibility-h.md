@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_interface_accessibility.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_interface_accessibility.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cbbd7a09c71a2013e9b4583580f401e07ca8e553a73a34ccaea2901aee42d8ae
+scraped_at: 2026-09-25T07:10:32+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:6e238962f5a62874903219910df00d9a10675d727330d27f079f2f6d881ed2cd
 ---
 
 ## 概述
@@ -42,7 +42,6 @@ content_hash: sha256:cbbd7a09c71a2013e9b4583580f401e07ca8e553a73a34ccaea2901aee4
 | [ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md) | [ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md) | 该结构体为无障碍第三方操作提供者，用于承载回调函数的实现。开发者可通过该结构体注册和管理无障碍操作相关的回调，实现自定义的无障碍交互逻辑，适用于需要扩展或定制ArkUI无障碍能力的场景。 |
 | [ArkUI\_AccessibilityActionArguments](capi-arkui-accessibility-arkui-accessibilityactionarguments.md) | [ArkUI\_AccessibilityActionArguments](capi-arkui-accessibility-arkui-accessibilityactionarguments.md) | 用于设置无障碍操作的具体参数。在进行无障碍操作时，通过该结构体向无障碍服务传递操作所需的附加上下文信息。适用于开发者需要向无障碍服务精确描述无障碍操作细节的场景，例如自定义控件的无障碍读屏播报、辅助功能服务中的操作参数传递、语音助手触发的无障碍交互等应用功能。 |
 | [ArkUI\_AccessibilityElementInfoList](capi-arkui-accessibility-arkui-accessibilityelementinfolist.md) | [ArkUI\_AccessibilityElementInfoList](capi-arkui-accessibility-arkui-accessibilityelementinfolist.md) | 提供封装[ArkUI\_AccessibilityElementInfo](capi-arkui-accessibility-arkui-accessibilityelementinfo.md)的List实例，用于批量存储和管理无障碍元素信息，适用于需要一次获取多个无障碍元素信息的场景。 |
-| [ArkUI\_Node\*](capi-arkui-nativemodule-arkui-node8h.md) | ArkUI\_NodeHandle | 定义 ArkUI Native 组件实例对象指针，用于在 ArkUI Native 接口中标识和传递组件实例，例如创建、挂载、移除或销毁组件节点。  **起始版本：** 23 |
 
 ### 枚举
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-introduct
 title: Car Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > Car Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:09+08:00
+scraped_at: 2026-09-25T07:07:07+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:d596e26f57abc01184d44a33397109199dc171be8decfa0c39a7ad44232aac7d
+content_hash: sha256:252e65eb1dbfd926d192a879727ba25b108705c7381c411fc34fd84568ad92a2
 ---
 
 Car Kit（车服务）为开发者提供一套便捷接入出行服务的能力，开发者通过集成Car Kit，可以轻松实现在手机与鸿蒙智行车机之间无缝传递导航信息、通过超级桌面在鸿蒙智行车机上使用手机上的应用、通过HiCar在认证车机上使用手机上的应用等功能，为用户提供更加良好的出行体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/kiPmMcK_Q5iUgmCaF8so5Q/zh-cn_image_0000002769330833.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/mqcxd-hISFSPW0L-S5e4cQ/zh-cn_image_0000002743219392.png)
 
 ## 场景介绍
 
@@ -39,7 +39,7 @@ Car Kit为华为手机用户提供驾驶鸿蒙智行车辆的出行场景和驾�
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/5tXaTOPUTPqT37SXIioG8Q/zh-cn_image_0000002769450695.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/STKNzmf1Tf-SkXWp_PUDQA/zh-cn_image_0000002772738645.png)
 
 Car Kit处于HarmonyOS的框架层，作为生态应用和系统应用之间的桥梁。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-record
 title: 录像实践(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 录像实践(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:22+08:00
+scraped_at: 2026-09-25T07:07:23+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:85b01e51993a5e1bc114d30d6eb6b97d94289044e105ecf9826d3f60c83c586b
+content_hash: sha256:64d2aab00307735cd4af36168d6f65657b55073ee0e5d5e10066281a6e4add0a
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -20,7 +20,7 @@ content_hash: sha256:85b01e51993a5e1bc114d30d6eb6b97d94289044e105ecf9826d3f60c83
 
 在获取到相机支持的输出流能力后，开始创建录像流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/pOQ28o6XToua76oVbZ_EGQ/zh-cn_image_0000002739731628.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/4CTfgyBUTEm88w1bAufaeA/zh-cn_image_0000002743379422.png)
 
 ## 完整示例
 

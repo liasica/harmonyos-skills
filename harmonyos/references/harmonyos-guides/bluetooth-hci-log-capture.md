@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-hci
 title: 如何抓取蓝牙HCI日志
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙常见问题 > 如何抓取蓝牙HCI日志
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:03+08:00
+scraped_at: 2026-09-25T07:07:00+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:b5ab8524d0ac9c5e7b51f55779162579f7b35a17ae61c3828aa616f02767e6b2
+content_hash: sha256:6c8ae9674a3b6d393fbddd36eb8cc0f9711003b0842cd9cdbecc6fcfc8b84191
 ---
 
 ## 简介
@@ -29,21 +29,21 @@ Release版本出于数据安全与隐私保护，会屏蔽HCI日志中蓝牙报�
 
 在调测手机上进入开发者模式，开启方法请参考 **[开启开发者选项](ide-developer-mode.md#section530763213432)**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Lx8pF_VrQh6bBcVtxX4reA/zh-cn_image_0000002769330767.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/_KHQrz1vSq-FuXviqWu5EQ/zh-cn_image_0000002743219326.png)
 
 ### 步骤二：连接蓝牙设备进行调试
 
 开启手机蓝牙，连接需要调试的蓝牙外设，进行设备连接调试或问题复现操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/-PxzcuKZSO-NrPQtUy59dQ/zh-cn_image_0000002769450629.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/L8TvNeL6QzimxsZExhOovQ/zh-cn_image_0000002772738579.png)
 
 ### 步骤三：一键采集HCI日志
 
 连接调试操作完毕后，下拉通知栏，点击**开发者模式**卡片，卡片下方会显示**收集**按钮，点击即可一键采集HCI日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/iI2OUUVWTxujHkAIaQmrmg/zh-cn_image_0000002739891298.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Khkut2BMTUWwYNcS0YNpgw/zh-cn_image_0000002772898463.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/hrWpzc6-Sle7S5tOCMelOg/zh-cn_image_0000002739731420.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Ascu5ur7Q-2alV-torj4mA/zh-cn_image_0000002743379214.png)
 
 **说明** 
 
@@ -55,13 +55,13 @@ Release版本出于数据安全与隐私保护，会屏蔽HCI日志中蓝牙报�
 
 采集完成后，进入手机文件管理，选择**我的手机**，点击**Documents**目录，即可找到日志压缩包
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/vep41mRqQIyNGvfk2IoSvg/zh-cn_image_0000002769330769.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ozogcwk9R7CUnotaBAxo_g/zh-cn_image_0000002743219328.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/IL2OSrl-TR2f4gQQ9GkIGA/zh-cn_image_0000002769450631.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/eZhFONjmQUKJx9d2q-uqhA/zh-cn_image_0000002772738581.png)
 
 通过**华为分享**、**三方应用**等方式，将日志压缩包分享到PC侧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/6f9msrCoS9Sn3Bt_ZWHPCw/zh-cn_image_0000002739891300.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/MamvmmVqSbqCGJfADFDhqA/zh-cn_image_0000002772898465.png)
 
 **说明** 
 

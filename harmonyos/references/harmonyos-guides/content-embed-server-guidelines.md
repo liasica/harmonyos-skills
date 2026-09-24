@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed
 title: 服务端应用开发
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > 服务端应用开发
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:17+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:ffc7c8e7e893f9d9ed2054d130d1f4fe0c041d3e87593a6abf85e94b0c5f9a8e
+scraped_at: 2026-09-25T07:06:41+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:cad8148a3b681310ae5ae13c160f995f29faa8ac12aec2967911c10f78b8a0d4
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ OE服务端应用使用OE Extension框架[content\_embed\_extension.h](../harmon
 
 ## 约束限制
 
-在使用接口前，需先确认设备具备SystemCapability.ContentEmbed.ObjectEditor系统能力，判断方式请参阅[canIUse()](../harmonyos-references/syscap__ndk_8h.md#caniuse)接口查询指定的系统能力是否被支持。并申请ohos.permission.REGISTER\_OBJECTEDITOR\_EXTENSION权限，配置方式请参阅[声明权限](declare-permissions.md)。
+在使用接口前，需先确认设备具备SystemCapability.ContentEmbed.ObjectEditor系统能力，判断方式请参阅[canIUse()](../harmonyos-references/syscap-ndk-8h.md#caniuse)接口查询指定的系统能力是否被支持。并申请ohos.permission.REGISTER\_OBJECTEDITOR\_EXTENSION权限，配置方式请参阅[声明权限](declare-permissions.md)。
 
 ## 接口说明
 

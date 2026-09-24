@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用方法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 通用方法
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:40+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e2e5c4a8a2d8c6d0243648959372a1f5c41d17591f9bcd13e88cff6579863758
+scraped_at: 2026-09-25T07:10:21+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:f5239038b3df49035d9ac5f804db184d22fc409bf885391e31a1916ec43e7669
 ---
 
 **说明** 
@@ -24,10 +24,10 @@ animate( keyframes: Keyframes, options: Options)：void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| keyframes | keyframes | 是 | 设置动画样式。 |
+| keyframes | Keyframes | 是 | 设置动画样式。 |
 | options | Options | 是 | 用于设置动画属性的对象列表。具体参数说明请参见表3 Options说明。 |
 
-**表1** keyframes
+**表1** Keyframes
 
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
@@ -189,7 +189,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ehuAmnKwS92V8IYJ6oblzA/zh-cn_image_0000002739733456.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/x4i6wrAlReuVcLB0zd6dCw/zh-cn_image_0000002772740615.gif)
 
 ## getBoundingClientRect
 

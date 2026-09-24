@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.telephony.call (拨打电话)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.call (拨打电话)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:55+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-09-25T07:12:04+08:00
+doc_updated_at: 2026-09-24
 content_hash: sha256:40575b7dd152bd487d827cffcc0df11d09c0a35e30781732f28435ea730af765
 ---
 

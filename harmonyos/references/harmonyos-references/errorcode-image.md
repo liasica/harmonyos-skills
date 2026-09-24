@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Image错误码
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > 错误码 > Image错误码
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:47+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:ebbaab4b1ef8fb88271c43dfe8d12ce7e81e5de4690c5ca6f1ba390b41a8107d
+scraped_at: 2026-09-25T07:13:17+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:447bc11177b520cc30a95f1e13b7b243fd2c1e013261b17b953042a421c5de1b
 ---
 
 **说明** 
@@ -52,7 +52,7 @@ The operation failed. Possible cause: 1.Image upload exception. 2. Decoding proc
 
 请检查图片并按指示操作重新解码。
 
-## 62980097 Pixelmap序列化传输失败
+## 62980097 PixelMap序列化传输失败
 
 **错误信息**
 
@@ -60,7 +60,7 @@ IPC error. Possible cause: 1.IPC communication failed. 2. Image upload exception
 
 **错误描述**
 
-Pixelmap序列化传输失败。
+PixelMap序列化传输失败。
 
 **可能原因**
 
@@ -194,7 +194,7 @@ The image data is not supported.
 
 **错误信息**
 
-Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty Pixelmap.
+Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty PixelMap.
 
 **错误描述**
 
@@ -493,7 +493,7 @@ Failed to encode the image.
 
 **错误信息**
 
-Add Pixelmap out of range.
+Add PixelMap out of range.
 
 **错误描述**
 
@@ -950,7 +950,7 @@ PixelMap设置内存标识符失败。
 
 **处理步骤**
 
-检查是否已释放Pixelmap实例。检查内存类型是否匹配。
+检查是否已释放PixelMap实例。检查内存类型是否匹配。
 
 ## 62980302 内存拷贝失败
 

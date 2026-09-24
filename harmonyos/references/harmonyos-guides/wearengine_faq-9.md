@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wearengine_fa
 title: 如何获取应用指纹
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > Wear Engine常见问题 > 如何获取应用指纹
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:11+08:00
+scraped_at: 2026-09-25T07:07:10+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:4f6ac626aded7f02be6741fc5ff76c8b6a9daf54559fe1223ab7a93a7a01d359
+content_hash: sha256:6e6a73cbc781fb67e525f92c44321312ec3b542324b43d5a2405c2b9a2746683
 ---
 
 ## iOS手机侧应用
@@ -43,7 +43,7 @@ Android手机侧应用开发时，应用指纹信息是SHA256指纹，操作如�
    ```
 3. 获取SHA256指纹，下图为Windows示例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/yE8NwL_sTGmSIgdGe0cmoQ/zh-cn_image_0000002739891388.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ciICBJinRsenhmDqWXoWUw/zh-cn_image_0000002772898553.png)
 
 ## HarmonyOS 5.0之前版本手机侧应用
 
@@ -55,21 +55,21 @@ HarmonyOS 5.0之前（如HarmonyOS 2.x/3.x/4.x）版本的手机侧应用开发�
 
   登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)平台，在“开发与服务”中选择目标应用，获取“项目设置 > 常规 > 应用”的APP ID。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/_vBH5IrGRWKUc0hQCxN2-Q/zh-cn_image_0000002739731510.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Q5XAg_XqTkCWQOgYDr9ETA/zh-cn_image_0000002743379304.png)
 * Lite Wearable设备的应用，应用指纹信息是应用包名\_base64Encode(公钥)，操作如下。
 
   1. 用文本格式打开[数字证书.cer文件](ide-signing.md)，将最后BEGIN CERTIFICATE、END CERTIFICATE以及中间信息复制到新的文本，创建一个新的.cer文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/EdeZcR2cQOeIaC9Hz6WX4g/zh-cn_image_0000002769330859.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/7TzZK8JSRG6hUNYLx5xViQ/zh-cn_image_0000002743219418.png)
   2. 获取公钥信息pubKey。
 
      **Windows系统** ：打开新的cer文件，点击“详细信息”，点击“公钥”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/R3jAs_axQi6Zbsbt-9opYw/zh-cn_image_0000002769450721.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/ZwCrx9paR-OrKun1CH3n6w/zh-cn_image_0000002772738671.png)
 
      **MacOS系统**：执行penssl x509 -in test.cer -text -noout命令，其中test.cer替换为新cer文件的名称。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/t82kMsu-RhGNGy6SN_fkgQ/zh-cn_image_0000002739891390.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Q9P85BGQRB-16D55zErMcQ/zh-cn_image_0000002772898555.png)
   3. 将pubKey进行base64Encode编码。
 
      删除前一步获取的证书公钥信息中空格/冒号，删除后如04d929a057d784d95dcf7a15dcdea9d88aeb0a7b86fdafdf5b83bc5435917f2a3dcaa6f97b355462bc5301e00c4ed8aa4165e2111ec77f4b03abca02b06a212b，然后进行base64编码，结果为BNkXKaBX14TZXc96FdzeqdiK6wp7hv2v31uDvFQ1kX8qPcqm+Xs1VGK8UwHgDE7YqkFl4hEex39LA6vKArBqISs=。开发者可以通过第三方网站（如[tomeko.net](https://www.tomeko.net/online_tools/hex_to_base64.php?lang=en)）进行转码。

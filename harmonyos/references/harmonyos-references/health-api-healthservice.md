@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: healthService (运动健康联动服务)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > healthService (运动健康联动服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:55+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:726dc72d75d3b77c65461791c4d3601d6c9e4542fd4c6389518560d4f7278ff7
+scraped_at: 2026-09-25T07:14:02+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:3ec6b65344002abeef7771d6a96b8200b002d841911acff8e8888daf3fa94b90
 ---
 
 本模块提供运动健康联动服务。
@@ -701,7 +701,7 @@ offData(dataType: undefined, listener: Callback<SampleReal[]>): Promise<void>
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| dataType | undefined | 是 | 监听所有联动运动数据类型。 |
+| dataType | undefined | 是 | 取消监听所有联动运动数据类型。 |
 | listener | Callback<[SampleReal](health-api-healthservice.md#samplereal)[]> | 是 | 回调函数，返回联动运动数据。 |
 
 **返回值：**

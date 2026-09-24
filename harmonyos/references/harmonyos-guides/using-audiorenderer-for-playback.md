@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audiore
 title: 使用AudioRenderer开发音频播放功能(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 使用AudioRenderer开发音频播放功能(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:18+08:00
+scraped_at: 2026-09-25T07:07:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:943c31fd992a36fd9c266e2948c58f9be8995adf2e4cf154aeac5a5e891f99f0
+content_hash: sha256:dd3d53d6c5918b85395b4c86df59f1e881f48823aa1fa17e6ec5b33c4bb80423
 ---
 
 AudioRenderer是音频渲染器，用于播放PCM（Pulse Code Modulation）音频数据，相比[AVPlayer](using-avplayer-for-playback.md)而言，可以在输入前添加数据预处理，更适合有音频开发经验的开发者，以实现更灵活的播放功能。
@@ -30,7 +30,7 @@ AudioRenderer是音频渲染器，用于播放PCM（Pulse Code Modulation）音�
 
 **图1** AudioRenderer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/kx-u7G7TR5ugvN0KtNCoQw/zh-cn_image_0000002769450769.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/eP9sOuqGTwyMzVXRSxo_7w/zh-cn_image_0000002772738719.png)
 
 ### 开发步骤及注意事项
 

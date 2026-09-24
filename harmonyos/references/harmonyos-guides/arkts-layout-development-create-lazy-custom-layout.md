@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建懒加载自定义布局 (LazyDynamicLayout)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 创建懒加载自定义布局 (LazyDynamicLayout)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4578cbd9817f29f91548f05b23b3d538d3f516b3fcf3986e3a2012c6264b23c7
+scraped_at: 2026-09-25T07:06:28+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:19bc5798edde67064cc845ba50827eb91012472a7adeadf8f7cc8ddfa298ec82
 ---
 
 ArkUI提供了[LazyColumnLayout](../harmonyos-references/ts-container-lazycolumnlayout.md)、[LazyVGridLayout](../harmonyos-references/ts-container-lazyvgridlayout.md)、[LazyVWaterFlowLayout](../harmonyos-references/ts-container-lazyvwaterflowlayout.md)三种预置懒加载布局容器，分别支持垂直线性布局、垂直网格布局和垂直瀑布流布局。当这些预置布局容器无法满足业务需求时，可以使用[LazyDynamicLayout](../harmonyos-references/ts-container-lazydynamiclayout.md)组件配合自定义布局算法实现灵活的懒加载布局。
@@ -587,7 +587,7 @@ LazyDynamicLayout(this.lazyAlgorithm) {
 
 上述示例中，点击底部按钮可以切换行间距。由于布局算法中实现了[setAdjustedOffset](../harmonyos-references/js-apis-arkui-lazylayoutalgorithm.md#setadjustedoffset)调整逻辑，切换间距后锚点子组件（正向布局时为可视区域第一个子组件，反向布局时为可视区域最后一个子组件）的位置保持不变，避免了滚动跳动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/5knFn085S32_6xPZ7QxJsA/zh-cn_image_0000002739890500.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/eqpKR5kaTuqHr0DrQx82wg/zh-cn_image_0000002772897663.gif)
 
 针对自定义懒加载布局的开发，有以下相关实例可供参考。
 

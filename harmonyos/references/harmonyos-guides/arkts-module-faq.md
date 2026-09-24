@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-module-
 title: 模块化常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 模块化常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:29+08:00
+scraped_at: 2026-09-25T07:06:20+08:00
 doc_updated_at: 2026-08-11
-content_hash: sha256:bc7cb55bcc16cd81118826988354073b72edb524222c4bfa5fbbb067f18a0ea0
+content_hash: sha256:fc2d3b5abc54e92584ea552688c11008547a503bcdb731fbf1a2f40fe3d3a724
 ---
 
 ## Object is not initialized
@@ -103,14 +103,14 @@ ModuleImportStack:
 
    若不一致，则为应用版本号降级导致更新失败，应用需要更新版本号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/-px4SimfTvKcbIOofoM1BQ/zh-cn_image_0000002739890070.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/awLXQl9LSLqPIHsZ3shu0Q/zh-cn_image_0000002772897233.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/JbyLkdeyTmyGddtc05AzPg/zh-cn_image_0000002739730192.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/MvFIaAmTR-eG2f6qa0XLZg/zh-cn_image_0000002743377984.png)
 3. 检查是否使用了normalized特性但未重启应用。
 
    查看反编译后的abc文件为normalized ohmurl格式。可以在文件内搜索@normalized：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/SY4CrPO3RLuOW50GhLb7OA/zh-cn_image_0000002769329541.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/JhBueBZtTIKDFeDr-ao0fQ/zh-cn_image_0000002743218100.png)
 4. 重新启动应用，确保normalized特性生效。
 
 **参考链接**
@@ -139,13 +139,13 @@ ModuleImportStack:
 
    情况一：搜索不到完整的文件名，但可以搜索到相似的名字。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/tdRt7gmKT0ehTqYBRmeEgw/zh-cn_image_0000002769449403.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/AVrQVNmUTwuY0N2FkYeblw/zh-cn_image_0000002772737353.png)
 
    解决办法：每行的第一个和第二个分号之间会有完整的名字，报错中的文件名和编译产物中的文件名需要修改为一致。
 
    情况二：filesInfo.txt搜索不到这个文件，在编译产物区域也找不到对应产物的文件生成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/TbehLpTSTSu1kBzHRQchaw/zh-cn_image_0000002739890072.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/FomIyGUwT62V894fDNdCHA/zh-cn_image_0000002772897235.png)
 
    解决方法：每个被打入abc的文件都会在编译产物中生成，如entry包、har包。开发者如果在对应路径没有查到该文件，则排查是否为动态加载文件。
 

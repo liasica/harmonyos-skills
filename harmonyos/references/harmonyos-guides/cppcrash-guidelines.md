@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guid
 title: Cpp Crash（进程崩溃）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 崩溃检测 > Cpp Crash（进程崩溃）检测
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:12+08:00
+scraped_at: 2026-09-25T07:07:12+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:6f1309030e16878997001d229ac25667b96c9cbe9ec80eb69464834b5466166c
+content_hash: sha256:f7035b482e154dd26a9f14876557bd864e40c6a34cab3e0a75c621537d22bf2f
 ---
 
 ## 简介
@@ -569,7 +569,7 @@ pstate:0000000060001000 esr:0000000000000000
 
 原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Jl8cfx04QReaAMK0rL4YpA/zh-cn_image_0000002739731518.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/jecpiC1hQSKE0I3nt9NOag/zh-cn_image_0000002743379312.png)
 
 1. 提交线程搜集自身的调用栈信息，保存至进程特定区域内存的异步栈表中。
 2. 记录保存后，异步栈表返回唯一标识stackId。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/monitor-guide
 title: 事件监听开发指导（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 事件监听开发指导（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:05+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:c23ae3a7f2833ec949a5735839e7bf9785ab578e8207320737aa3bc4fb95047e
+scraped_at: 2026-09-25T07:07:06+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:bc7d6ee159c0428072aebb5d54fb50a61702c04465882b77be710d9867b52bf7
 ---
 
 ## 功能介绍
@@ -14,7 +14,7 @@ content_hash: sha256:c23ae3a7f2833ec949a5735839e7bf9785ab578e8207320737aa3bc4fb9
 
 ## 接口说明
 
-创建和删除事件监听相关接口如下表所示，接口详细介绍请参考[input](../harmonyos-references/capi-input.md)。
+创建和删除事件监听相关接口如下表所示，接口详细介绍请参考[oh\_input\_manager.h](../harmonyos-references/capi-oh-input-manager-h.md)。
 
 | 接口名称 | 描述 |
 | --- | --- |

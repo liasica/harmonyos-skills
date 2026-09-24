@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bulktransfer
 title: USB批量传输
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB批量传输
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6c2889000cbfbca2259a55e2e1b4851ae3e0f537262ab74aea36b6013e58f17d
+scraped_at: 2026-09-25T07:07:05+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:e10ff1ac436860a6c3c47c21d93f28f60ac2b74abead52cc7b7dd7941d4f375e
 ---
 
 ## 场景介绍
@@ -171,6 +171,11 @@ content_hash: sha256:6c2889000cbfbca2259a55e2e1b4851ae3e0f537262ab74aea36b6013e5
      }
      // 打开设备，获取数据传输通道。
      let pipe: usbManager.USBDevicePipe = usbManager.connectDevice(deviceList[0]);
+     if (!pipe) {
+       console.error('connectDevice failed, pipe is undefined');
+       this.logInfo_ += '\n[ERROR] connectDevice failed, pipe is undefined';
+       return;
+     }
      if (!deviceList?.[0]?.configs?.[0]?.interfaces?.[0]) {
        console.error('invalid interface');
        this.logInfo_ += '\n[ERROR] invalid interface';

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbui
 title: wrapBuilder：封装全局@Builder
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > wrapBuilder：封装全局@Builder
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:31+08:00
+scraped_at: 2026-09-25T07:06:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:56043c90284b4eb12b17ee0776c285b6e6a85d6939013f7b8c5328aee7d6a5b0
+content_hash: sha256:76d8ba11dede1a8bb8cf9fd10e83be0a4286b6f2ff35efbcea585e4df52f58ef
 ---
 
 当在一个struct内使用多个全局@Builder函数实现UI的不同效果时，代码维护将变得非常困难，且页面不够整洁。此时，可以使用[wrapBuilder](../harmonyos-references/ts-universal-wrapbuilder.md)封装全局@Builder。
@@ -106,7 +106,7 @@ struct TestIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Nd1U3AfCTxqFlC2xbkedsg/zh-cn_image_0000002739890144.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/tG7lwqghTkiWbsxg25Pw6g/zh-cn_image_0000002772897307.png)
 
 ## @Builder方法赋值给变量在UI语法中使用
 
@@ -154,7 +154,7 @@ struct IndexItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/IwMJvuojRuCjIaOH7dsG_w/zh-cn_image_0000002739730266.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/2V0vXDCWQ72aZFKlGcm9Vg/zh-cn_image_0000002743378058.png)
 
 ## @Builder方法赋值给类或者接口的属性
 
@@ -199,7 +199,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/3Pm7nWWBRASPcxY3ylYLTA/zh-cn_image_0000002769329615.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/9ynJwNA5R7qa2QfJi6NK5w/zh-cn_image_0000002743218174.png)
 
 ## 引用传递
 
@@ -243,7 +243,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/KYNJZj8LT2qj4llvhs45gQ/zh-cn_image_0000002769449477.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/4NCJccd8T8m94K-fabeEHA/zh-cn_image_0000002772737427.gif)
 
 ## 常见问题
 
@@ -295,4 +295,4 @@ struct TestBuilderIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Pl0Is4RRTT6OtfDNQNKkCg/zh-cn_image_0000002739890146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/av8ANGZeRj-PKbaKbrJF8A/zh-cn_image_0000002772897309.png)

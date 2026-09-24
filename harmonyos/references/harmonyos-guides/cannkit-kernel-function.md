@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-kerne
 title: 核函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程模型 > 核函数
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:55+08:00
+scraped_at: 2026-09-25T07:08:03+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:b3f4fd81069d1f7c9e8086ef8ccb71af92a2ed12d9cc65a4a4ca505b23bdf099
+content_hash: sha256:f777be14c21ec611dae25aa88acb79e3bb1ef86202bf09109069ce2407450703
 ---
 
 从[SPMD模型](cannkit-spmd-model.md)可以得知，使用AscendC进行编程时，我们编写一份算子实现代码，算子被调用时，将启动N个运行实例，在N个核上运行。本节将介绍算子实现的入口函数。
@@ -40,7 +40,7 @@ extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t* x, __gm__ uint8
 
   **图1** 核函数（device侧执行）、host侧执行函数、device侧执行函数（除核函数之外的）调用关系
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/GIOx8v6GSSWQur0VDgRneg/zh-cn_image_0000002769451585.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Wmr7A-JwTRW3vDqXQe01gw/zh-cn_image_0000002772739535.png)
 * **使用变量类型限定符**
 
   指针入参变量需要增加变量类型限定符\_\_gm\_\_，表明该指针变量指向Global Memory上某处内存地址。

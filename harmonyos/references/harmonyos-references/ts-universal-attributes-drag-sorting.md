@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 拖拽排序
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 拖拽排序
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:18+08:00
+scraped_at: 2026-09-25T07:09:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8f3931902322b0ee72dbf751d7c7fca4f3f81050716a08a9c4c4d63abbfbb5ee
+content_hash: sha256:a8370884a748049d1c3d45e3706d760c61c983d069191292a356fa701f4dcba7
 ---
 
 拖拽排序用于实现列表条目或网格条目的手动排序，适用于待办列表排序、歌单管理等需要用户自定义条目顺序的场景。在List或Grid组件下使用ForEach/LazyForEach/Repeat，并设置onMove事件，每次迭代生成一个ListItem或GridItem时，可以使能拖拽排序。拖拽排序离手后，如果数据位置发生变化，将触发onMove事件，上报数据移动起始索引号和目标索引号。在onMove事件中，需要根据上报的起始索引号和目标索引号修改数据源。确保数据仅顺序发生变化，才能正常执行落位动画。
@@ -260,7 +260,7 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/36K95Bm5Rze2RU3lNK4AFg/zh-cn_image_0000002739892644.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/c9VYV1Y_R2C5ffs2aMPyzg/zh-cn_image_0000002772899809.gif)
 
 ### 示例4（Grid不规则布局使用ForEach的onMove进行拖拽，并设置拖拽事件回调）
 
@@ -404,7 +404,7 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BdrS72EyRrakxtXhink6xw/zh-cn_image_0000002739732766.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/dNLdi5XpTfyfmC2jfo60EA/zh-cn_image_0000002743380560.gif)
 
 ### 示例5（Grid不规则布局使用LazyForEach的onMove进行拖拽，并设置拖拽事件回调）
 
@@ -617,7 +617,7 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/Sdv9_WKkSfG-byz5UsSUFg/zh-cn_image_0000002769332115.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/pSEMbIoSSOeFWAKFoMeUjg/zh-cn_image_0000002743220674.gif)
 
 ### 示例6（Grid不规则布局使用Repeat的onMove进行拖拽，并设置拖拽事件回调）
 
@@ -778,4 +778,4 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/5P396IXOTw230l0S8iAI3A/zh-cn_image_0000002769451977.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/kw8BJYBxQByWVxVg4efUGg/zh-cn_image_0000002772739927.gif)

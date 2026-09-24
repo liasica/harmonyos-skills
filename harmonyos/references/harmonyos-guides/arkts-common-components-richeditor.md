@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 富文本编辑（RichEditor）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 富文本编辑（RichEditor）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:36+08:00
+scraped_at: 2026-09-25T07:06:27+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f7ad131c5ec27379f522238ef181010132e95ba78c1f52e868e43c3ed1ce822e
+content_hash: sha256:eaa44b63ad7c5833908392b0c47940e4639939eae468110073534f63b38a146a
 ---
 
 RichEditor是支持图文混排和文本交互式编辑的组件，通常用于响应用户对图文混排内容的输入操作，例如可以输入图文的评论区。具体用法参考[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)组件的API文档。
@@ -18,7 +18,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 
 下图展示了组件元素的构成。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/FoZ1Ngt_QsqoT3ldykBGVQ/zh-cn_image_0000002739890540.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/xOQ59GjhTriHgnOUsjxVRg/zh-cn_image_0000002772897703.jpg)
 
 组件的元素构成包括：
 
@@ -84,7 +84,7 @@ struct CreateRichEditor {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/sEnJuQjfTayYl82CGK01xg/zh-cn_image_0000002739730662.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_DyMIlh3TAyMaIh5Jg15ew/zh-cn_image_0000002743378454.gif)
 
 ### 创建基于Span进行内容管理的RichEditor组件
 
@@ -131,7 +131,7 @@ struct CreateRichEditor {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ue7VpPD9QyGLkGj4GzHrzw/zh-cn_image_0000002769330011.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vOLn-0IMR06rxeASLHfudw/zh-cn_image_0000002743218570.gif)
 
 ## 添加内容
 
@@ -185,7 +185,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/xGxXjNYhRrKOjFRp6Dhscg/zh-cn_image_0000002769449873.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/I0kUATN2QqmgOoeG1dQd2A/zh-cn_image_0000002772737823.gif)
 
 ### 添加图片内容
 
@@ -234,7 +234,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/UUwa6-4zSkqsiFAiycYN5A/zh-cn_image_0000002739890542.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/mOzIT7fETNy8pxX0UvjbPw/zh-cn_image_0000002772897705.gif)
 
 ### 添加@Builder装饰器修饰的内容
 
@@ -302,7 +302,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/VZEwpDfeR2yVN_hwHTmVUQ/zh-cn_image_0000002739730664.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/inmMNRbeTGeAjBkomt1UWQ/zh-cn_image_0000002743378456.gif)
 
 ### 添加SymbolSpan内容
 
@@ -352,7 +352,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/jjqmJVMOT2W_ATxwqYoG5Q/zh-cn_image_0000002769330013.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/jumhAhb3SD6NspPMTy0xoQ/zh-cn_image_0000002743218572.gif)
 
 ## 管理内容
 
@@ -416,7 +416,7 @@ struct GetGraphicInfoInComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/rGCac_8bTzCWT5bd-JX3bA/zh-cn_image_0000002769449875.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/xcXTq7I2SL-m3obVdbx2TA/zh-cn_image_0000002772737825.gif)
 
 ### 设置无输入时的提示文本
 
@@ -453,7 +453,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/eywRmP5qStqFJXuJhZ4PSw/zh-cn_image_0000002739890544.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/e9rimR1BSiu03qlrT9tBuQ/zh-cn_image_0000002772897707.gif)
 
 ### 设置最大长度
 
@@ -479,7 +479,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/z9CowaFXR0-qN3P9ElEtJg/zh-cn_image_0000002739730666.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/WFU2BnDvQ5CeLEurVrPtaQ/zh-cn_image_0000002743378458.gif)
 
 ## 事件回调
 
@@ -552,7 +552,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/BXAZZGywTHSs8F9P6UZLYA/zh-cn_image_0000002769330015.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/oqnU0sUyRgaVhK0CMqpZBQ/zh-cn_image_0000002743218574.gif)
 
 ### 添加输入法输入内容前和完成输入后可触发的回调
 
@@ -622,7 +622,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/oBFr2pxiQvyRHKMPSXCXZA/zh-cn_image_0000002769449877.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/jEyQagQARhKIIHkDRQf63A/zh-cn_image_0000002772737827.gif)
 
 ### 添加完成粘贴前可触发的回调
 
@@ -819,7 +819,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/XljjzLOjTLax3wLL7r8fZA/zh-cn_image_0000002739890546.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/6QfbbXkjS6acCqh1AqCquQ/zh-cn_image_0000002772897709.gif)
 
 更多事件使用请参考[RichEditor事件](../harmonyos-references/ts-basic-components-richeditor.md#事件)。
 
@@ -862,7 +862,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/9qHR_rONTsaCvPOoPYJKHQ/zh-cn_image_0000002739730668.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/IJEdiZoSRb2bcgvEvtnudw/zh-cn_image_0000002743378460.gif)
 
 ### 添加组件内容选择区域或编辑状态下光标位置改变时可触发的回调
 
@@ -912,7 +912,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/qZE7O4AIScenalvlhWfqrQ/zh-cn_image_0000002769330017.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/EJkqvdu4ToiuHP6TusCsrw/zh-cn_image_0000002743218576.gif)
 
 ### 设置内容选中区范围
 
@@ -957,7 +957,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/h0hgqt-nRTCiTv4sVBwscg/zh-cn_image_0000002769449879.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/hZyIJQsiSa6oUu7FEZJFoA/zh-cn_image_0000002772737829.gif)
 
 ## 菜单配置
 
@@ -1055,7 +1055,7 @@ struct PrepareMenu {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/c0YTgGMFTF2KVS-20_AdLA/zh-cn_image_0000002739890548.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/SS-9zHdnSJmfrkEdo5am9A/zh-cn_image_0000002772897711.gif)
 
 ### 屏蔽系统服务类菜单项
 
@@ -1111,7 +1111,7 @@ struct DisableSystemServiceMenu {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/G1lF32T2RL2NVsnPdqMcng/zh-cn_image_0000002739730670.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/6FAh5kJiQNWdAMcIJmHGrw/zh-cn_image_0000002743378462.gif)
 
 通过[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)可以屏蔽富文本选择菜单内指定的系统服务菜单项。
 
@@ -1164,7 +1164,7 @@ struct DisableMenuItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/oENn2sjWRleh_snKr1eNAg/zh-cn_image_0000002769330019.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/8BOGVO2XRxGqZZYKndrjgQ/zh-cn_image_0000002743218578.gif)
 
 ### 设置自定义选择菜单
 
@@ -1245,7 +1245,7 @@ SystemMenu() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/xcGzllp7Qiavp0rB6YUBJA/zh-cn_image_0000002769449881.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/iI8pFlJBR9mc6AWZY4OQxw/zh-cn_image_0000002772737831.gif)
 
 ## 布局配置
 
@@ -1288,7 +1288,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/T6RedPd7RKi0bn7jZjxjmQ/zh-cn_image_0000002739890550.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/rTUZ3bpNR5ueKWA4CdzBGg/zh-cn_image_0000002772897713.gif)
 
 ## 样式设置
 
@@ -1350,7 +1350,7 @@ struct SetUserPresetTextStyles {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/wEo9SLi3QSORdbByj4Me1A/zh-cn_image_0000002739730672.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Bh9eISjaT1WHXlY3w-Q7Qg/zh-cn_image_0000002743378464.gif)
 
 ### 设置装饰线
 
@@ -1389,7 +1389,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/v_NVZhxeTmeUcxvjto4FAQ/zh-cn_image_0000002769330021.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/K-14_Q7iQTOjdGQQIT5wdQ/zh-cn_image_0000002743218580.jpg)
 
 通过[DecorationOptions](../harmonyos-references/ts-universal-styled-string.md#decorationoptions20)中的enableMultiType设置多装饰线，比如同时设置下划线和中划线。
 
@@ -1441,7 +1441,7 @@ Button($r('app.string.Demo_SetStyledStringButton'))
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/UMOVreJ5TWafIo_8-atf9A/zh-cn_image_0000002769449883.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Kv2pn-ZtRtmSCVuXscn0hg/zh-cn_image_0000002772737833.jpg)
 
 ### 设置垂直居中
 
@@ -1486,7 +1486,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/zu1Ynrs2Rrq0Duzia6Ph2A/zh-cn_image_0000002739890552.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/0kNuLJhuSAm6CJm3hBA--g/zh-cn_image_0000002772897715.jpg)
 
 ### 设置中西文自动间距
 
@@ -1535,7 +1535,7 @@ struct EnableAutoSpacing {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/9JKq7_usSNeVhT0xWXD0jQ/zh-cn_image_0000002739730674.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/Y6Vef8q4TgGRol93TSTQsg/zh-cn_image_0000002743378466.gif)
 
 ## 示例代码
 

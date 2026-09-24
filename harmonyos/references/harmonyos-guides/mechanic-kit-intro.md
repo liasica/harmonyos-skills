@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mechanic-kit-
 title: Mechanic Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务） > Mechanic Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:11+08:00
+scraped_at: 2026-09-25T07:07:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1957757d3dfc1c98c9a44ba007e41d959c86fad06fdd24dc3990b1b64e74f117
+content_hash: sha256:52c17522ef4905f8e0384e5a4d1870691857b2e8ea4951a3d7dfe1c80a63adac
 ---
 
 Mechanic Kit 是机械体设备控制器提供的API集合。从API version 20起，应用可使用Mechanic Kit控制机械体设备。Mechanic Kit 提供了完整的三方机械体设备配件集成方案，满足手机与云台等设备间的交互需求。
@@ -48,7 +48,7 @@ Mechanic Kit为开发者提供全面的机械体设备操控能力，核心功�
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ds_B2FxxRXqyNkuD3aeYyA/zh-cn_image_0000002769450713.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/9fYdhAlbTou2AKS6jhhY8Q/zh-cn_image_0000002772738663.png)
 
 图注：灰色代表暂未支持。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-re
 title: 通用凭证接口
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > REST API > 通用凭证接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:98e9f2464146b051166c385e9f88dd148d10ab093daf49514e5878a1cce8e49e
+scraped_at: 2026-09-25T07:14:34+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:d24e975b2d2b0333e312640d7be2d0ac0836193ecc9b66156f5bccf88c046e69
 ---
 
 ## 预置模板
@@ -117,7 +117,7 @@ Accept: application/json;charset=UTF-8
 ```java
 public HwWalletObject invokeHwCreateKeyGeneralCardClass(){
     HwWalletObject request=new HwWalletObject();
-    request.setPassVersion("1.0");
+    request.setPassVersion("10.0");
     request.setPassTypeIdentifier("hwpass.keygeneralcard.test");
     request.setPassStyleIdentifier("keyGeneralCardModelTest");
     request.setOrganizationName("XXXX");

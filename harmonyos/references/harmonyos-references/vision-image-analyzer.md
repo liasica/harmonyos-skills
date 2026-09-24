@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-im
 title: visionImageAnalyzer（AI识图控件）
 breadcrumb: API参考 > AI > Vision Kit（场景化视觉服务） > ArkTS API > visionImageAnalyzer（AI识图控件）
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:47+08:00
+scraped_at: 2026-09-25T07:14:42+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4e0b3543a4c5c8885b48847109f290b372f2392fe9d7c70f655e6e088b21a66f
+content_hash: sha256:d1a887477466e957f0bdb40c35b0e2ffeace6b5ad73c8ca389cae9c9691f4a5c
 ---
 
 AI识图是通过聚合OCR（Optical Character Recognition，光学字符识别，指通过图像处理和模式识别技术将图像中的文字转换为机器编码的技术）、主体分割、实体识别、多目标识别等AI能力，提供场景化的文本识别、主体分割、识图搜索功能。
@@ -258,7 +258,7 @@ struct ImageDemo {
 
 示例图如下，AIButton离底部300vp
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/816RpJ3gRFG1MlanM5llUw/zh-cn_image_0000002739734214.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/J7EVfHzfT06e8v3o7LTGaA/zh-cn_image_0000002772741373.png)
 
 ### setAIButtonVisibility
 
@@ -309,7 +309,7 @@ struct ImageDemo {
 
 AIButton可见时如下图所示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/DWCXBXCEQx2qUrTioOj5-g/zh-cn_image_0000002769333561.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/_GJ9qo55TNmClHgLaCxFGA/zh-cn_image_0000002772901259.jpg)
 
 ### setCustomTextMenuItems
 
@@ -368,7 +368,7 @@ struct ImageDemo {
 
 示例如下图所示，菜单右侧增加自定义菜单项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/cI5jkAjBScONonG6NrxjvA/zh-cn_image_0000002769453423.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/9MWKw_w1QJa558WGwoIPRg/zh-cn_image_0000002743382008.jpg)
 
 ### startSubjectAnalyzer
 

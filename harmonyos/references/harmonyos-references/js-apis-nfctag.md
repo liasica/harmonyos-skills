@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nfc.tag (标准NFC-Tag)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.tag (标准NFC-Tag)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:eb6ff90ed3df99ff4de99c0a2e82ebadc32e84b64fc705f7e9d2fb0192f5c3d9
+scraped_at: 2026-09-25T07:11:42+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:bc748f3bdf67bebab22d2a5af9082285bc2abc11c0421e63714bef935b2f727d
 ---
 
 本模块主要用于操作及管理NFC Tag，提供后台读卡和前台应用优先分发两种读卡模式。
@@ -17,7 +17,7 @@ content_hash: sha256:eb6ff90ed3df99ff4de99c0a2e82ebadc32e84b64fc705f7e9d2fb0192f
 **说明** 
 
 1. 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-2. API版本26.0.0前请使用[canIUse("SystemCapability.Communication.NFC.Tag")](syscap__ndk_8h.md#caniuse) && [nfcController.isNfcAvailable](js-apis-nfccontroller.md#nfccontrollerisnfcsupported)判断设备是否支持NFC能力。从API版本26.0.0开始请使用[canIUse("SystemCapability.Communication.NFC.Tag")](syscap__ndk_8h.md#caniuse) && [nfcController.isNfcSupported](js-apis-nfccontroller.md#nfccontrollerisnfcsupported)共同判断设备是否支持NFC能力更加准确，否则可能导致应用运行稳定性问题，参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-access-guide.md)。
+2. API版本26.0.0前请使用[canIUse("SystemCapability.Communication.NFC.Tag")](syscap-ndk-8h.md#caniuse) && [nfcController.isNfcAvailable](js-apis-nfccontroller.md#nfccontrollerisnfcsupported)判断设备是否支持NFC能力。从API版本26.0.0开始请使用[canIUse("SystemCapability.Communication.NFC.Tag")](syscap-ndk-8h.md#caniuse) && [nfcController.isNfcSupported](js-apis-nfccontroller.md#nfccontrollerisnfcsupported)共同判断设备是否支持NFC能力更加准确，否则可能导致应用运行稳定性问题，参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-access-guide.md)。
 3. 导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](syscap.md)。
 
 ## **导入模块**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TextPicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > TextPicker
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:25+08:00
+scraped_at: 2026-09-25T07:10:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6fe60f96361e1313db905eaa05c8e1ef171b2fbbcdefe9c526d0a0715a521555
+content_hash: sha256:3a4c731e913d946edae8f28ee205a085fa049f96360f22b7b3cfd70c62657272
 ---
 
 滑动选择文本、图片或图文混排内容的组件，用户可以按需创建单列数据选择器、多列非联动数据选择器和多列联动数据选择器，适用于需要用户从预设选项中选择数据的场景，如日期选择、地区选择、配置项设置等。组件支持循环滚动、自定义文本样式、分割线样式、渐隐效果、选择项高度调整、触控反馈、表冠灵敏度设置等特性，提供流畅的滑动交互体验和灵活的数据展示方式。
@@ -908,7 +908,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/xH93wH2tSrOcbQI6PRUWZg/zh-cn_image_0000002769452167.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/7jt4bQl4RUSx_OHOgSzwBw/zh-cn_image_0000002772740117.png)
 
 ### 示例2（设置文本样式）
 
@@ -946,7 +946,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/d2bxBGKnTJCbSQicogpSqA/zh-cn_image_0000002739892836.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/FbZvSFr7ToCMfjTVdzdaDg/zh-cn_image_0000002772900003.gif)
 
 ### 示例3（设置无分割线样式）
 
@@ -978,7 +978,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/k7lkext9S6Osj47BVDW0lg/zh-cn_image_0000002739732958.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/OQ0gGA3nTzatqk7uYmxgbw/zh-cn_image_0000002743380752.gif)
 
 ### 示例4（设置分割线样式）
 
@@ -1015,7 +1015,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/IyIDkw_pQAaAXwqDea_V_g/zh-cn_image_0000002769332307.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/sqALJvS4SM6-Ns78xKJGIg/zh-cn_image_0000002743220866.gif)
 
 ### 示例5（设置渐隐效果）
 
@@ -1047,7 +1047,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/AW0tzd5pRlW4pqbwPI3NXQ/zh-cn_image_0000002769452169.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/2MO2hFNtSHSGVj51J2RyHw/zh-cn_image_0000002772740119.gif)
 
 ### 示例6（设置选择项高度）
 
@@ -1076,7 +1076,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Xt689vYCQ4y6Pl6BImKxjA/zh-cn_image_0000002739892838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/MeGQO5N6QmCSI2wZsPN6Gg/zh-cn_image_0000002772900005.png)
 
 ### 示例7（设置循环滚动）
 
@@ -1116,7 +1116,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/h2wx-SouSGayZR2A5W9x2A/zh-cn_image_0000002739732960.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/sTuXclNMSaOIBACpV-zsQQ/zh-cn_image_0000002743380754.gif)
 
 ### 示例8（设置选中项索引值）
 
@@ -1144,7 +1144,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/_VYiuT-STV-N1U8NpkNMBQ/zh-cn_image_0000002769332309.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/J43U4tG1Tm6LXA6sV-NotQ/zh-cn_image_0000002743220868.png)
 
 ### 示例9（设置关闭文本样式变化动效与对应文本样式）
 
@@ -1181,7 +1181,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/duKsgy0uSWaEU56Km1OhgQ/zh-cn_image_0000002769452171.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/gH0PUzCuQ32rP7myW7hu9Q/zh-cn_image_0000002772740121.jpeg)
 
 ### 示例10（设置选中项背景样式）
 
@@ -1243,7 +1243,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/yFdbn5VXSnO9mPNRocs4qw/zh-cn_image_0000002739892840.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Wad2DwabTiCWE1L0xYvaXw/zh-cn_image_0000002772900007.gif)
 
 ### 示例11（设置文本的最大字号、最小字号、超长文本截断方式）
 
@@ -1291,4 +1291,4 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/tOHiLVk4T8eq-r2c0LguDg/zh-cn_image_0000002739732962.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/IsCPS14iReGNhXbh7IlqSg/zh-cn_image_0000002743380756.gif)

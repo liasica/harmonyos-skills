@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: clock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > clock
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:46+08:00
+scraped_at: 2026-09-25T07:10:28+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4f37c74bfd485612e120475cdb1d1015a47f4f9e9f5ed446616a8d3a41a1334e
+content_hash: sha256:656fb54bc9fdb78559d4f0e152e1464895273d55cd73d6f5d6b4da04950ad4f0
 ---
 
 时钟组件，用于提供时钟表盘界面。
@@ -45,7 +45,7 @@ content_hash: sha256:4f37c74bfd485612e120475cdb1d1015a47f4f9e9f5ed446616a8d3a41a
 | digitRadiusRatio | number | 0.7 | 否 | 表盘数字中心到表盘中心距离 / 表盘资源边长的一半。  - 有效范围为(0, 1]。  - 该参数用于计算表盘数字在表盘上距离圆心的位置。  - 该参数可以保证同一套表盘资源在不同组件尺寸下都有同样的相对位置，而不需要针对每个组件尺寸都重新调整数字位置。  - 该参数设为1时数字会有部分区域超出表盘，建议结合表盘区域合理设置digitRadiusRatio。 |
 | digitSizeRatio | number | 0.08 | 否 | 表盘数字尺寸/表盘资源边长。  - 有效范围为(0, 0.142]。  - 该参数用于计算表盘数字相对表盘尺寸的大小。  - 该参数可以保证同一套表盘资源在不同组件尺寸下都有同样的相对大小，而不需要针对每个组件尺寸都重新调整字号。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/TNsg-ieyTQKYbGq9DJ85hA/zh-cn_image_0000002769333061.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/dBMksHSbT9-YLojHjGRLFA/zh-cn_image_0000002772900759.png)
 
 ## 样式
 
@@ -122,4 +122,4 @@ clock组件会保持显示区域的宽高比为1，最终正方形显示区域�
 
 **2\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/uuFuZD72TxCAFFNIJUNVeg/zh-cn_image_0000002769452923.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/zHpc14ilQnusg3VqnHby3A/zh-cn_image_0000002743381508.png)

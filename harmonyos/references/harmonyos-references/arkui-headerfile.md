@@ -3,12 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-hea
 title: 头文件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:26+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:91eb8d04b7760defe15d4d0febe63f81825dd3f8d6c5a092b4f11e4927857c56
+scraped_at: 2026-09-25T07:10:29+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:6d55425f96540f90cd7cc0613ee7b4b2e32eab6efc5206066e17107fd8715318
 ---
 
 * **[common\_attributes.h](capi-common-attributes-h.md)**
+* **[common\_type.h](capi-common-type-h.md)**
 * **[drag\_and\_drop.h](capi-drag-and-drop-h.md)**
 * **[drawable\_descriptor.h](capi-drawable-descriptor-h.md)**
 * **[image.h](capi-image-h.md)**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Flex布局
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > Flex布局
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:17+08:00
+scraped_at: 2026-09-25T07:09:49+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:6e03ee859088c36aa525849413e75ee05b26a41008f2a586aee058e87f51d0ed
+content_hash: sha256:d6b1ae8c5503ab5c2195ae828343463c6f744626847dcfa0aaf0f38810ae3bd5
 ---
 
 Flex布局提供灵活的组件排列和对齐能力，可以动态分配容器内的子组件空间，使元素根据可用空间自动扩展或收缩。适用于响应式UI布局、动态内容布局、复杂布局实现等场景，能解决传统布局在多设备适配困难、内容变化导致布局错位、复杂对齐需求难以实现等问题。
@@ -214,4 +214,4 @@ struct FlexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/qLhSC8uLQPyYs9Ts25dnJA/zh-cn_image_0000002739732718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/MsLVYLn2RbKva5t7pBwxiQ/zh-cn_image_0000002743380512.png)

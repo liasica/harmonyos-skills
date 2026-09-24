@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2
 title: FIDO2_CredentialRequestOptions
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > C API > 结构体 > FIDO2_CredentialRequestOptions
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d81bc951cc8a78ce7dc1a8e7b2894bf3822b0dd63b5f0de23a16f8bd66ff85e2
+scraped_at: 2026-09-25T07:11:32+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:0df5b4d95305adf687ec90619ef65641513c02a2dc261422ec22b5291318bbc4
 ---
 
 ## 概述
@@ -37,7 +37,7 @@ FIDO2_CredentialMediationRequirement FIDO2_CredentialRequestOptions::mediation
 
 **描述**
 
-用户介入要求。
+操作是否需要用户参与。
 
 ### publicKey
 

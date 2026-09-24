@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 半模态转场
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 模态转场设置 > 半模态转场
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:20+08:00
+scraped_at: 2026-09-25T07:09:52+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:3195e29a6376134b09c065f209cc5935a04f110c4c2460a8fcd9799ea18dae6b
+content_hash: sha256:741328921ae62a3f306243abb13d8308b09c09bcb30ac93b2583e1b342713e13
 ---
 
 通过bindSheet属性为组件绑定半模态页面，支持底部、居中、跟手、侧边、全屏等多种弹窗样式，在组件插入时可通过设置自定义或默认的内置高度确定半模态大小（侧边弹窗和全屏弹窗不支持自定义高度）。
@@ -410,7 +410,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/NgUiOkLgQV-9YyTBqcppew/zh-cn_image_0000002769452007.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/jgmQ_ymQS62CWJriBm1GWA/zh-cn_image_0000002772739957.gif)
 
 ### 示例2（设置三个不同高度的挡位）
 
@@ -463,7 +463,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/G79e18mgRn2Pztg7LvEQOQ/zh-cn_image_0000002739892676.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/73dRs8XHS6a2VcEU46c0Eg/zh-cn_image_0000002772899841.gif)
 
 ### 示例3（使用边框宽度和颜色）
 
@@ -519,11 +519,11 @@ struct SheetTransitionExample {
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/jEd_1nXaS9y6Gc830qhxzw/zh-cn_image_0000002739732798.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/uuOC5XMwQq604avdkeblKQ/zh-cn_image_0000002743380592.png)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/Z0yALmuGRCSmXnN0pRAHWQ/zh-cn_image_0000002769332147.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/MayicVHgTR-DvLjUmCGjXQ/zh-cn_image_0000002743220706.png)
 
 ### 示例4（使用关闭回调函数）
 
@@ -577,7 +577,7 @@ struct BindSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7LKO8LQRRkukW4pxs0s8wg/zh-cn_image_0000002769452009.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/bPbRzMc9RRmMD5-28oNmYQ/zh-cn_image_0000002772739959.gif)
 
 ### 示例5（设置内容区刷新时机）
 
@@ -630,11 +630,11 @@ struct Index {
 
 跟手触发挡位切换时，松手才触发面板内容高度刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/SYIJFnlTSACZ0bRZDD0STQ/zh-cn_image_0000002739892678.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/41oLRZaHQJKV_xO4UJ7EFg/zh-cn_image_0000002772899843.gif)
 
 跟手触发挡位切换时，跟手时期就会触发面板内容高度刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WOyyiirsQp27PFHOqkBbEQ/zh-cn_image_0000002739732800.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/e_WDz_lUQR-xXUJvR_8JFA/zh-cn_image_0000002743380594.gif)
 
 ### 示例6（设置压缩模态内容）
 
@@ -750,7 +750,7 @@ struct ListenKeyboardHeightChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/E7DEF2X5QB2JfbUzWwpvYg/zh-cn_image_0000002769332149.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/EcMWqrhaRkCwl4JqMa56Wg/zh-cn_image_0000002743220708.gif)
 
 ### 示例7（镜像场景下如何设置圆角属性）
 
@@ -803,11 +803,11 @@ struct SheetTransitionExample {
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/3_405E4SSfSIDHAxECMUfg/zh-cn_image_0000002769452011.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/uO1ADqczSjusp1S3GnYqqw/zh-cn_image_0000002772739961.png)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/-mpYroLnSE-rGNg-nrTOsw/zh-cn_image_0000002739892680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/i4Q9Rz3zTBaGx1ihKwqTUw/zh-cn_image_0000002772899845.png)
 
 ### 示例8（半模态Side侧边样式）
 
@@ -909,7 +909,7 @@ struct SheetSideExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/W8mZSg8sRVuUJjZeF-05hA/zh-cn_image_0000002739732802.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/qQJI-L9LRGGMIZeWBhJ_Uw/zh-cn_image_0000002743380596.gif)
 
 ### 示例9（半模态ContentCover全屏样式）
 
@@ -971,7 +971,7 @@ struct ContentCoverExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Tf2F45JURcaFdPEAY4aj6g/zh-cn_image_0000002769332151.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/zC08ZUFqRsikKuWQgboTWA/zh-cn_image_0000002743220710.gif)
 
 ### 示例10（半模态设置系统材质）
 
@@ -1036,4 +1036,4 @@ struct SheetMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/jaaV9KH4SlGMxqP8Z-huUw/zh-cn_image_0000002769452013.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/mzLxJtfOT8CkZZroJFz-rw/zh-cn_image_0000002772739963.jpg)

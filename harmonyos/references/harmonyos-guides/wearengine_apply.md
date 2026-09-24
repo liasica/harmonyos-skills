@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wearengine_ap
 title: 申请接入Wear Engine服务
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 接入准备 > 申请接入Wear Engine服务
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:11+08:00
+scraped_at: 2026-09-25T07:07:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:dbfa2cb360d28ef611a2cfc91b5b26609f30516e1e047f10affadb9bec0f875e
+content_hash: sha256:544ef11492b95947d0859b0aa1245d3fc7043ca4d090db85212db36fd8cae8ad
 ---
 
 申请Wear Engine服务前，请先参考[应用开发准备](application-dev-overview.md)（开发者需实名认证为个人开发者或者企业开发者，认证前，请先了解二者的[权益区别](../start/dbiae-0000001336403980.md)），确认开发环境并完成创建项目、创建HarmonyOS应用等基本准备工作，再继续进行以下开发活动。
@@ -14,20 +14,20 @@ content_hash: sha256:dbfa2cb360d28ef611a2cfc91b5b26609f30516e1e047f10affadb9bec0
 2. 在项目列表选择项目，并在应用列表下选择需要申请的应用。
 3. 进入“项目设置 > 开放能力管理”页面，点击“Wear Engine”对应的“管理”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/SeI-sr5pQUmDR7pja-gqMQ/zh-cn_image_0000002739891384.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/izHudx1uR6irG_FDnL_I0g/zh-cn_image_0000002772898549.png)
 4. 进入华为开发者联盟的“管理中心”，点击“[应用服务](https://developer.huawei.com/consumer/cn/console/service/AppService)”页签下的“Wear Engine”卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/6BitvxgCQr-i_qIZP70Klg/zh-cn_image_0000002739731506.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/QhMEl1X4RNOJpCdDXFH_Eg/zh-cn_image_0000002743379300.png)
 
    **说明** 
 
    如果无“Wear Engine”卡片，请点击右上角“自定义桌面”添加卡片。
 5. 点击“申请Wear Engine服务”，同意协议后，进入权限申请页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/CN1eD9HwRt2HT5F4n1ewnw/zh-cn_image_0000002769330855.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/TAnixbQaSdmVq6AfYFhw7w/zh-cn_image_0000002743219414.png)
 6. 点击“HarmonyOS应用”并选择产品后，勾选必需申请的权限（个人开发者当前只可申请设备基础信息、消息通知两个基本的权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/oqWGlx7MR9aiCIPIPvVQhg/zh-cn_image_0000002769450717.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/rif4PmiYTrmW5V8hNh8RKQ/zh-cn_image_0000002772738667.png)
 
    **说明** 
 
@@ -100,4 +100,4 @@ content_hash: sha256:dbfa2cb360d28ef611a2cfc91b5b26609f30516e1e047f10affadb9bec0
 
    若您的业务范围发生变动，需要修改相应的数据权限，您可以点击“修改”重新提交申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Lw3qk27ySCGmwT_NgvH-JA/zh-cn_image_0000002739891386.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KtXRDHumQ1aix-jLoFv-7g/zh-cn_image_0000002772898551.png)

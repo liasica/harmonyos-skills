@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-focus
 title: Web组件焦点管理
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件焦点管理
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:45+08:00
+scraped_at: 2026-09-25T07:06:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:93054db7a2de753876167c5d9e7c4785fa471cd835bbe067e3d4a08bb91dedd2
+content_hash: sha256:7baf7b9ac03d75ca6689421438bad3dace98d94eff347ea40f03d79811dc37f9
 ---
 
 开发者可利用Web组件的焦点管理功能，有效管理Web组件的获焦与失焦，同时利用H5端的W3C标准接口，管理网页界面上唯一可交互的元素获焦与失焦。
@@ -140,7 +140,7 @@ struct WebComponent {
 
 通过requestFocus接口主动请求获焦，并监听通用接口onFocus和onBlur事件，改变Web组件边框颜色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/VxT9y98ITCWF8lWWR8NnhA/zh-cn_image_0000002769330499.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/OJT7sdZMS3K_OIRMH7ROAw/zh-cn_image_0000002743219058.gif)
 
 ## Web组件内H5元素焦点控制
 
@@ -228,4 +228,4 @@ form.addEventListener(
 
 通过监听W3C接口focus和blur事件，改变输入背景色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vTDjk8PhTTOLVTpFUCG3Cw/zh-cn_image_0000002769450361.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/2YqGiuq-TTWD0INNhMqaeg/zh-cn_image_0000002772738311.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（图类组件相关属性）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（图类组件相关属性）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:21b44f6f7b284bef7c381832d591390680ccf685853d95d3f70ff719dbca8bda
+scraped_at: 2026-09-25T07:10:36+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:060b57290af506614b80e03e6fe846e3e6f8cd03649d1dd8a315004500aef09d
 ---
 
 ```c
@@ -286,13 +286,13 @@ NODE_IMAGE_FILL_COLOR = 4010
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 填充色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 填充色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 填充色数值，0xargb格式。 |
+| .value[0].u32 | 填充色数值，0xARGB格式。 |
 
 ## NODE\_IMAGE\_RESIZABLE
 

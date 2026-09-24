@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 接入游戏官方账号登录
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 游戏登录 > 网络游戏登录 > 接入游戏官方账号登录
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:39+08:00
+scraped_at: 2026-09-25T07:07:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f29490c28902eef9bd17cda98c88e661eed3937036358447011a4b3aadeec8e4
+content_hash: sha256:ea0e5278e597b930f3b831accf6322e3b77a26b0e37c5d02f346478ae045a029
 ---
 
 为了支持用户在HarmonyOS 5.0及以上系统上继承其他系统（例如HarmonyOS 4及以下）的官包进度继续游玩，基础游戏服务支持用户使用游戏官方账号登录HarmonyOS 5.0及以上游戏。
@@ -16,7 +16,7 @@ content_hash: sha256:f29490c28902eef9bd17cda98c88e661eed3937036358447011a4b3aade
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/0YHNr5_eS-OcnX-jhZsV1Q/zh-cn_image_0000002739731996.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/9He4OkJhTY68jD5yhO-T8A/zh-cn_image_0000002743379790.png)
 
 1. 玩家启动游戏。
 2. 游戏调用[init](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。初始化后，弹出华为游戏服务与隐私的声明窗口，玩家确认同意后，则继续往下执行。
@@ -51,7 +51,7 @@ content_hash: sha256:f29490c28902eef9bd17cda98c88e661eed3937036358447011a4b3aade
 
 接入游戏官方账号登录的接口调用流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Luyzv2T_TgSKDsC3E0ln-A/zh-cn_image_0000002769331345.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/cRSWk8JLSpu2W6XHfcXTzQ/zh-cn_image_0000002743219904.png)
 
 ### 合规校验
 
@@ -68,5 +68,5 @@ content_hash: sha256:f29490c28902eef9bd17cda98c88e661eed3937036358447011a4b3aade
 
 1. 建议在游戏内为玩家提供一个“切换账号”按钮。按钮常见的位置如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/NDiB36u5Qfu1YI8uwPjC1g/zh-cn_image_0000002769451207.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/vGIDyN6mQy2nZ6PO_L87LQ/zh-cn_image_0000002772739157.png)
 2. 玩家点击切换账号按钮时，开发者重新调用[unionLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerunionlogin)接口，将showLoginDialog参数设置为true，即可强制拉起联合登录面板，允许玩家重新选择华为账号登录或游戏官方账号登录。

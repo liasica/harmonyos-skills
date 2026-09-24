@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-com
 title: USB串口通信管理
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB串口通信服务 > USB串口通信管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d903906274f52bd2b5ed4e37aecbef617f97e31a29d21653a80682952fb8480c
+scraped_at: 2026-09-25T07:07:05+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:b8e5fa0a8f4f780ec2d69c6e4f25cfaeb8c2ea16de5d7bce2a468bbd27f38dca
 ---
 
 ## 简介
@@ -45,7 +45,7 @@ USB串口通信服务中通过Host设备的USB接口连接串口设备的串口�
    ```typescript
    // 导入serialManager模块
    import { serialManager } from '@kit.BasicServicesKit';
-   import { BusinessError } from '@kit.BasicServicesKit'
+   import { BusinessError } from '@kit.BasicServicesKit';
    import { buffer } from '@kit.ArkTS';
    import { JSON } from '@kit.ArkTS';
    ```
@@ -107,8 +107,13 @@ USB串口通信服务中通过Host设备的USB接口连接串口设备的串口�
    // 异步读取
    let readBuffer: Uint8Array = new Uint8Array(64);
    serialManager.read(portId, readBuffer, 2000).then((size: number) => {
-     console.info(`readAsync usbSerial success, readAsyncBuffer: ${readBuffer}`);
-     this.logInfo_ += '\n[INFO] readAsync usbSerial success, readAsyncBuffer: ' + JSON.stringify(readBuffer);
+     if (size > 0) {
+       console.info(`readAsync usbSerial success, size: ${size}`);
+       this.logInfo_ += '\n[INFO] readAsync usbSerial success, size: ' + size;
+     } else {
+       console.warn('readAsync usbSerial failed, size is 0');
+       this.logInfo_ += '\n[WARN] readAsync usbSerial failed, size is 0';
+     }
    }).catch((error: Error) => {
      console.error(`readAsync usbSerial error: ${error}`);
      this.logInfo_ += '\n[ERROR] readAsync usbSerial error: ' + JSON.stringify(error);
@@ -130,17 +135,22 @@ USB串口通信服务中通过Host设备的USB接口连接串口设备的串口�
    ```typescript
    let portId: number = this.portId_;
    // 异步写入
-   let writeBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer)
+   let writeBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer);
    serialManager.write(portId, writeBuffer, 2000).then((size: number) => {
-     console.info(`writeAsync usbSerial success, writeAsyncBuffer: ${writeBuffer}`);
-     this.logInfo_ += '\n[INFO] writeAsync usbSerial success, writeAsyncBuffer: ' + JSON.stringify(writeBuffer);
+     if (size === writeBuffer.length) {
+       console.info(`writeAsync usbSerial success, writeAsyncBuffer: ${writeBuffer}`);
+       this.logInfo_ += '\n[INFO] writeAsync usbSerial success, writeAsyncBuffer: ' + JSON.stringify(writeBuffer);
+     } else {
+       console.warn(`writeAsync usbSerial incomplete, expected ${writeBuffer.length}, actual ${size}`);
+       this.logInfo_ += '\n[WARN] writeAsync usbSerial incomplete, expected ' + writeBuffer.length + ', actual ' + size;
+     }
    }).catch((error: Error) => {
      console.error(`writeAsync usbSerial error: ${error}`);
      this.logInfo_ += '\n[ERROR] writeAsync usbSerial error: ' + JSON.stringify(error);
    })
 
    // 同步写入
-   let writeSyncBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer)
+   let writeSyncBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer);
    try {
      serialManager.writeSync(portId, writeSyncBuffer, 2000);
      console.info(`writeSync usbSerial success, writeSyncBuffer: ${writeSyncBuffer}`);

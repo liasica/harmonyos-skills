@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-comp
 title: 组件动态创建
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 组件动态创建
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:39+08:00
+scraped_at: 2026-09-25T07:06:32+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:696890b339fd59709262f61aa24332d92daf9b3ea04c75ef653db5d39be452da
+content_hash: sha256:decf099286bc9d707817de7ec6055d2edaaf19842f802caf188ce03b16dac704
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:696890b339fd59709262f61aa24332d92daf9b3ea04c75ef653db5d39be
 
 **图 1** 组件预创建原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/vsRLIDBZTyuw7to4YnKLLQ/zh-cn_image_0000002769450139.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/g_wLMBHaShKp1lJ3hf2poQ/zh-cn_image_0000002772738089.jpg)
 
 ## FrameNode自定义节点在动态布局场景下的优势
 
@@ -36,13 +36,13 @@ content_hash: sha256:696890b339fd59709262f61aa24332d92daf9b3ea04c75ef653db5d39be
 
 在动态布局类框架的更新场景中，通常存在一个由树形数据结构ViewModelA创建的UI组件树TreeA。当需要使用新的数据结构ViewModelB来更新TreeA时，尽管声明式开发范式可以实现数据驱动的自动更新，但这一过程中却伴随着大量的diff操作，如下图所示。对于ArkTS引擎而言，在对一个复杂组件树（深度超过30层，包含100至200个组件）执行diff算法时，几乎无法在120Hz的刷新率下保持满帧运行。然而，使用ArkUI的FrameNode扩展，框架能够自主掌控更新流程，实现高效的按需剪枝。特别是针对那些仅服务于少数特定业务的动态布局框架，利用这一扩展，可以实现快速的更新操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/MuE3S4iyRt-30NBsAYfzAQ/zh-cn_image_0000002739890808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Awh3qqP_TnSIpDbOz7X2ZA/zh-cn_image_0000002772897973.png)
 
 ### 直接操作组件树
 
 使用声明式开发范式还存在组件树结构更新操作困难的痛点，比如将组件树中的一个子树从当前子节点完整移到另一个子节点，使用声明式开发范式无法直接调整组件实例的结构关系，只能通过重新渲染整棵组件树的方式实现上述操作。而使用ArkUI的FrameNode扩展，则可以通过操作FrameNode来很方便的操控该子树，将其移植到另一个节点，这样只会进行局部渲染刷新，性能更优。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/gL_kmNLKQ_2FnbLY2A-7cA/zh-cn_image_0000002739730930.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/pqTxEhQFSyWsTa6clJgJZg/zh-cn_image_0000002743378724.png)
 
 ## 组件动态添加、更新和删除：
 
@@ -299,7 +299,7 @@ App广告有一种场景是列表流广告，即在应用的列表流中穿插�
 
 这种广告的布局和内容在开发阶段不确定（可能是图文、视频等形式中的一种），其通常是在运行阶段，依赖服务器下发的数据进行逻辑映射后，再执行布局的构建、内容的加载显示。所以在实际的开发中，应用需要使用动态创建组件的能力去实现该列表流广告。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/V52dfDEpQySEt9KTr2O4hg/zh-cn_image_0000002769330279.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/GJR756XRSRiGHTGfVSELbQ/zh-cn_image_0000002743218838.png)
 
 ### 实现方案
 
@@ -586,10 +586,10 @@ App广告有一种场景是列表流广告，即在应用的列表流中穿插�
 
 1. 以上示例场景在声明式开发范式下的完成时延为13.7ms（根据设备和场景不同，数据会有差异，本数据仅供参考），如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/dtSEW-A2Q7uEEeRp37OgKQ/zh-cn_image_0000002769450141.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/KtqbsyQtTk-kSfTPOJm8ZQ/zh-cn_image_0000002772738091.png)
 2. 以上示例场景在FrameNode扩展模式下的完成时延为6.1ms（根据设备和场景不同，数据会有差异，本数据仅供参考），如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/WJ5ssHb8RtOJ-ZNclH-f0w/zh-cn_image_0000002739890810.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/6ar_77cDSpCIRXZSYYJkDA/zh-cn_image_0000002772897975.png)
 
 ## 示例代码
 

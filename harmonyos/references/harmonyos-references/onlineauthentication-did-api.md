@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineaut
 title: DID
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > ArkTS API > DID
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f3933e4246ba52c782b21659daa7023531aa4f168630e08f6ecc0414ed54eef2
+scraped_at: 2026-09-25T07:11:31+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:4b220f26c062f86dc6f9c43e0354e5ce56ed292e0b0cd6cde27ced89603d383c
 ---
 
 DID（Decentralized Identifier，去中心化身份）能力。
@@ -160,8 +160,8 @@ DID密钥生成配置。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| algorithm | [KeyAlgo](onlineauthentication-did-api.md#keyalgo) | 否 | 否 | 密钥生成算法。 |
-| purposeList | [KeyPurpose](onlineauthentication-did-api.md#keypurpose)[] | 否 | 否 | 密钥生成用途列表。表示密钥用途。一个密钥仅能用于单类用途，不能既用于加解密又用于签名验签。创建加解密密钥时，传入[1, 2]；创建签名验签密钥时，传入[3, 4] |
+| algorithm | [KeyAlgo](onlineauthentication-did-api.md#keyalgo) | 否 | 否 | 密钥生成算法。暂不支持KeyAlgo.SM4、KeyAlgo.ED25519、KeyAlgo.AES128和KeyAlgo.AES256。 |
+| purposeList | [KeyPurpose](onlineauthentication-did-api.md#keypurpose)[] | 否 | 否 | 密钥生成用途列表。表示密钥用途。一个密钥仅能用于单类用途，不能既用于加解密又用于签名验签。KeyAlgo.SM2支持加解密[1, 2]和签名验签[3, 4]；KeyAlgo.P256仅支持签名验签[3, 4]。 |
 
 ## AuthenticatorConfig
 
@@ -197,7 +197,7 @@ DID密钥生成请求。
 | --- | --- | --- | --- | --- |
 | keyAlias | string | 否 | 否 | 新DID密钥的别名。最大长度为128字节，建议不包含个人信息等敏感词汇。默认值为空。 |
 | keyConfig | [KeyConfig](onlineauthentication-did-api.md#keyconfig) | 否 | 否 | 新DID密钥的配置。 |
-| authenticatorConfig | [AuthenticatorConfig](onlineauthentication-did-api.md#authenticatorconfig) | 否 | 是 | 新DID密钥的认证器配置。如果为空，表示该密钥不需要生物认证访问控制。 |
+| authenticatorConfig | [AuthenticatorConfig](onlineauthentication-did-api.md#authenticatorconfig) | 否 | 是 | 新DID密钥的认证器配置。如果为空，表示该密钥不需要生物认证访问控制，不会拉起生物认证弹窗。 |
 | extension | string | 否 | 是 | 新DID密钥的扩展信息。最大长度为1024字节。默认值为空。目前支持以下扩展信息 - {"systemPrompt": "half\_modal"}，表示需要系统半模态提示。{"systemPrompt": "none"}，表示无需提示。 |
 
 ## GenerateKeyResponse
@@ -250,11 +250,11 @@ DID导入请求。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| isUpdate | boolean | 否 | 是 | true表示更新DID信息，false表示导入DID信息，默认false为导入。 |
+| isUpdate | boolean | 否 | 是 | true表示更新DID信息，false表示导入DID信息，默认值为false。更新DID信息前必须先导入过DID信息。更新DID信息didKeyList可以传空，导入DID信息didKeyList必须非空。更新和导入DID信息都能新增密钥和DID的关联关系。 |
 | did | string | 否 | 否 | DID标识符。最大长度为256字节。默认值为空。 |
-| didKeyList | [DidKey](onlineauthentication-did-api.md#didkey)[] | 否 | 否 | DID的密钥列表。 |
-| didDoc | string | 否 | 是 | W3C DID协议的DID文档。长度限制10000字节。默认值为空。 |
-| additionalData | string | 否 | 是 | DID的附加数据。长度限制10000字节。默认值为空。 |
+| didKeyList | [DidKey](onlineauthentication-did-api.md#didkey)[] | 否 | 否 | DID的密钥列表。只允许密钥生成的应用导入DID，绑定密钥和DID的关系。若密钥已绑定DID和keyID，不支持该密钥更改绑定关系。 |
+| didDoc | string | 否 | 是 | W3C DID协议的DID文档。最大长度为10000字节。默认值为空。 |
+| additionalData | string | 否 | 是 | DID的附加数据。最大长度为10000字节。默认值为空。 |
 
 ## SignRequest
 
@@ -270,8 +270,8 @@ DID导入请求。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| inData | Uint8Array | 否 | 否 | 待签名的输入数据。 |
-| keyId | string | 否 | 否 | DID密钥的keyId。最大长度为256字节。默认值为空。 |
+| inData | Uint8Array | 否 | 否 | 待签名的输入数据。最大长度为4500字节。 |
+| keyId | string | 否 | 否 | DID密钥的keyId。最大长度为256字节。默认值为空。该keyId对应密钥用途须为签名验签。只允许生成密钥的应用使用该keyId对应密钥签名。 |
 
 ## SignResponse
 
@@ -322,7 +322,7 @@ DID查询请求。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| did | string | 否 | 否 | DID标识符。最大长度为256字节。默认值为空。 |
+| did | string | 否 | 否 | DID标识符。最大长度为256字节。默认值为空。只允许导入DID的应用查询DID信息。 |
 | queryDidConfig | [QueryDidConfig](onlineauthentication-did-api.md#querydidconfig) | 否 | 是 | DID查询配置。 |
 
 ## QueryDidResponse
@@ -345,7 +345,7 @@ DID查询响应。
 
 ## EncryptConfig
 
-加密方案配置。
+加密方案配置。加密导入的凭据必须加密导出。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -359,12 +359,12 @@ DID查询响应。
 | --- | --- | --- | --- | --- |
 | cryptoScheme | [CryptoScheme](onlineauthentication-did-api.md#cryptoscheme) | 否 | 否 | 加密方案。 |
 | encryptKey | Uint8Array | 否 | 否 | 加密密钥。 |
-| keyId | string | 否 | 是 | DID密钥ID。最大长度为256字节。默认值为空。 |
+| keyId | string | 否 | 是 | DID密钥ID。最大长度为256字节。默认值为空。该keyId对应密钥用途须为加解密。 |
 | algorithm | [KeyAlgo](onlineauthentication-did-api.md#keyalgo) | 否 | 否 | 加密算法。 |
 
 ## ApprovalData
 
-批准数据。
+批准数据。颁发方在didDoc中设置一个公钥，用于验证请求凭据的业务方身份。若某凭据配置了ApprovalConfig并设置了该公钥，则表示该凭据需要限制请求方身份，验证方须传入ApprovalData字段并通过验证后方可展示或出示凭证。验证时，会校验CredentialFilter中的issuerDid、credentialDisclosurePropertyList与ApprovalData中是否一致，并进行签名验证。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -395,7 +395,7 @@ DID查询响应。
 | --- | --- | --- | --- | --- |
 | cryptoScheme | [CryptoScheme](onlineauthentication-did-api.md#cryptoscheme) | 否 | 否 | 解密方案。 |
 | keyId | string | 否 | 否 | DID密钥ID。最大长度为256字节。默认值为空。 |
-| data | string | 否 | 是 | 解密数据。最大长度为10000字节。默认值为空。 |
+| data | string | 否 | 是 | 扩展字段。最大长度为10000字节。默认值为空。 |
 
 ## ApprovalConfig
 
@@ -431,7 +431,7 @@ DID查询响应。
 | --- | --- | --- | --- | --- |
 | credentialDisplayName | string | 否 | 否 | 凭证显示名称。最大长度为1024字节。默认值为空。 |
 | issuerDisplayName | string | 否 | 否 | 发行方显示名称。最大长度为1024字节。默认值为空。 |
-| propertyDisplayName | string | 否 | 否 | 属性显示名称。最大长度为10000字节。默认值为空。 |
+| propertyDisplayName | string | 否 | 否 | 属性显示名称。最大长度为1024字节。默认值为空。 |
 
 ## AuthConfig
 
@@ -447,7 +447,7 @@ DID查询响应。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| requireAuth | boolean | 否 | 是 | true表示需要用户身份认证，false表示不需要，默认false不需要。 |
+| requireAuth | boolean | 否 | 是 | true表示需要用户身份认证，false表示不需要，默认值为true。若出示凭证需要用到密钥，以密钥是否需要用户身份认证为准。 |
 
 ## CredentialSecurityConfig
 
@@ -481,12 +481,12 @@ DID查询响应。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| did | string | 否 | 否 | DID标识符。长度限制为256字节。默认值为空。 |
-| credentialType | [CredentialType](onlineauthentication-did-api.md#credentialtype) | 否 | 是 | 数字凭证类型。 |
+| did | string | 否 | 否 | DID标识符。最大长度为256字节。默认值为空。 |
+| credentialType | [CredentialType](onlineauthentication-did-api.md#credentialtype) | 否 | 是 | 数字凭证类型。默认值为VC。 |
 | isUpdate | boolean | 否 | 是 | true表示更新凭证信息，false表示导入凭证信息，默认false为导入。 |
-| securityConfig | [CredentialSecurityConfig](onlineauthentication-did-api.md#credentialsecurityconfig) | 否 | 是 | 凭证的安全配置。 |
-| credentialData | string | 否 | 否 | 凭证数据，当前仅支持导入W3C协议标准中的VC格式。长度限制为10000字节。默认值为空。 |
-| displayConfig | [CredentialDisplayConfig](onlineauthentication-did-api.md#credentialdisplayconfig) | 否 | 否 | 显示配置。 |
+| securityConfig | [CredentialSecurityConfig](onlineauthentication-did-api.md#credentialsecurityconfig) | 否 | 是 | 凭证的安全配置。不传默认凭据明文导入、无需其他平台批准即可出示、需要机主认证身份才可出示。 |
+| credentialData | string | 否 | 否 | 凭证数据，当前仅支持导入W3C协议标准中的VC格式。最大长度为10000字节。默认值为空。 |
+| displayConfig | [CredentialDisplayConfig](onlineauthentication-did-api.md#credentialdisplayconfig) | 否 | 否 | 凭证显示配置。 |
 | extension | string | 否 | 是 | 扩展信息。最大长度为10000字节。默认值为空。 |
 
 ## ImportDigitalCredentialResponse
@@ -503,7 +503,7 @@ DID查询响应。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| credentialSummary | string | 否 | 否 | 数字凭证的摘要信息。最大长度为10000字节。默认值为空。 |
+| credentialSummary | string | 否 | 否 | 数字凭证的摘要信息。最大长度为10000字节。默认值为空。摘要信息包括凭据类型、颁发者、凭据id、签发日期、过期日期、凭据状态、凭据名称、凭据描述信息、凭据状态用途。若凭据没有的字段则不返回。 |
 
 ## HolderConfig
 
@@ -519,8 +519,8 @@ DID查询响应。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| holderDid | string | 否 | 否 | 持有者DID。最大长度为1024字节。默认值为空。 |
-| holderDidKeyId | string | 否 | 否 | 持有者DID密钥ID。最大长度为1024字节。默认值为空。 |
+| holderDid | string | 否 | 否 | 持有者DID。最大长度为256字节。默认值为空。 |
+| holderDidKeyId | string | 否 | 否 | 持有者DID密钥ID。最大长度为256字节。默认值为空。 |
 
 ## CredentialFilter
 
@@ -539,7 +539,7 @@ DID查询响应。
 | credentialId | string | 否 | 是 | 数字凭证ID。最大长度为256字节。默认值为空。 |
 | issuerDid | string | 否 | 是 | 发行方DID。最大长度为1024字节。默认值为空。 |
 | credentialProvider | string | 否 | 是 | 凭证提供方。最大长度为1024字节。默认值为空。 |
-| credentialDisclosurePropertyList | string[] | 否 | 是 | 凭证披露属性列表。默认值为空。 |
+| credentialDisclosurePropertyList | string[] | 否 | 是 | 凭证披露属性列表。默认值为空。默认属性全部不获取。 |
 | credentialDisplayConfig | [CredentialDisplayConfig](onlineauthentication-did-api.md#credentialdisplayconfig) | 否 | 是 | 凭证显示配置。 |
 | credentialCategory | string | 否 | 是 | 凭证类型。最大长度为1024字节。默认值为空。 |
 | extension | string | 否 | 是 | 扩展信息。最大长度为1024字节。默认值为空。 |
@@ -560,7 +560,7 @@ DID查询响应。
 | --- | --- | --- | --- | --- |
 | verifierDisplayName | string | 否 | 否 | 验证方显示名称。最大长度为1024字节。默认值为空。 |
 | purpose | string | 否 | 否 | 用途。最大长度为1024字节。默认值为空。 |
-| extension | string | 否 | 是 | 扩展信息。最大长度为10000字节。默认值为空。 |
+| extension | string | 否 | 是 | 扩展信息。最大长度为1024字节。默认值为空。 |
 
 ## GetDigitalCredentialRequest
 
@@ -576,13 +576,13 @@ DID查询响应。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| credentialType | [CredentialType](onlineauthentication-did-api.md#credentialtype) | 否 | 是 | 凭证类型。 |
-| displayConfig | [PresentDisplayConfig](onlineauthentication-did-api.md#presentdisplayconfig) | 否 | 否 | 显示配置。 |
+| credentialType | [CredentialType](onlineauthentication-did-api.md#credentialtype) | 否 | 是 | 凭证类型。默认值为SELECTIVE\_DISCLOSURE\_VP。 |
+| displayConfig | [PresentDisplayConfig](onlineauthentication-did-api.md#presentdisplayconfig) | 否 | 否 | 出示显示配置。 |
 | verifierDid | string | 否 | 是 | 验证方DID。最大长度为1024字节。默认值为空。 |
 | encryptConfig | [EncryptConfig](onlineauthentication-did-api.md#encryptconfig) | 否 | 是 | 加密配置。 |
 | approvalData | [ApprovalData](onlineauthentication-did-api.md#approvaldata) | 否 | 是 | 批准数据。 |
-| holderConfigList | [HolderConfig](onlineauthentication-did-api.md#holderconfig)[] | 否 | 否 | 持有者配置列表。 |
-| credentialFilterList | [CredentialFilter](onlineauthentication-did-api.md#credentialfilter)[] | 否 | 是 | 凭证过滤条件列表。 |
+| holderConfigList | [HolderConfig](onlineauthentication-did-api.md#holderconfig)[] | 否 | 否 | 持有者配置列表。暂仅支持传入一组。 |
+| credentialFilterList | [CredentialFilter](onlineauthentication-did-api.md#credentialfilter)[] | 否 | 是 | 凭证过滤条件列表。暂仅支持传入一组。 |
 | extension | string | 否 | 是 | 扩展信息。最大长度为1024字节。默认值为空。 |
 
 ## QueryDigitalCredentialResponse
@@ -622,7 +622,7 @@ DID查询响应。
 
 generateKey(context: common.Context, generateKeyRequest: GenerateKeyRequest): Promise<GenerateKeyResponse>
 
-生成DID密钥。使用Promise异步回调。DID密钥数量上限（500个）。
+生成DID密钥。使用Promise异步回调。单应用DID密钥数量上限（20个），端侧DID密钥数量上限（200个）。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -695,7 +695,7 @@ try {
 
 importDid(context: common.Context, importDidRequest: ImportDidRequest): Promise<void>
 
-导入DID信息。使用Promise异步回调。DID数量上限（50个）。
+导入DID信息。使用Promise异步回调。单应用DID数量上限（5个），端侧DID数量上限（50个）。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -850,7 +850,7 @@ deleteDid(context: common.Context, did: string): Promise<void>
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | context | [common.Context](js-apis-inner-application-context.md#context) | 是 | Ability的上下文。 |
-| did | string | 是 | 要删除的DID标识符。最大长度为256字节。 |
+| did | string | 是 | 要删除的DID标识符。最大长度为256字节。只允许导入DID的应用删除DID数据。 |
 
 **返回值：**
 
@@ -958,7 +958,7 @@ try {
 
 importDigitalCredential(context: common.Context, importDigitalCredentialRequest: ImportDigitalCredentialRequest): Promise<ImportDigitalCredentialResponse>
 
-导入数字凭证。使用Promise异步回调。凭证数量上限（1000个）。
+导入数字凭证。使用Promise异步回调。单应用凭证数量上限（50个），凭证数量上限（500个）。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1058,7 +1058,7 @@ queryDigitalCredential(context: common.Context, did?: string, credentialId?: str
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | context | [common.Context](js-apis-inner-application-context.md#context) | 是 | Ability的上下文。 |
-| did | string | 否 | DID标识符。最大长度为256字节。默认值为空。 |
+| did | string | 否 | DID标识符。最大长度为256字节。默认值为空。若did和credentialId都传，以credentialId为主，credentialId查询不到则返回did下的所有凭证信息。 |
 | credentialId | string | 否 | 数字凭证ID。最大长度为256字节。默认值为空。 |
 
 **返回值：**
@@ -1101,7 +1101,7 @@ try {
 
 deleteDigitalCredential(context: common.Context, did?: string, credentialId?: string): Promise<void>
 
-删除数字凭证。使用Promise异步回调。
+删除数字凭证。使用Promise异步回调。只允许导入凭证的应用删除凭证。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

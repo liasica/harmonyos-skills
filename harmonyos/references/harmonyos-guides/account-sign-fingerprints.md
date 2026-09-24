@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-sign-
 title: 配置签名和指纹
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发准备 > 配置签名和指纹
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:33+08:00
+scraped_at: 2026-09-25T07:07:37+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e96ed10c6d66ced9655491d8c8bbfbbb557d684d430773b495231a39b603264c
+content_hash: sha256:cea943a7f9204e3c297ab090453f3595b0a7aaa53a999cfc7058d15af29e1987
 ---
 
 请参考“[应用开发准备](application-dev-overview.md)”章节，完成以下操作步骤：
@@ -19,7 +19,7 @@ content_hash: sha256:e96ed10c6d66ced9655491d8c8bbfbbb557d684d430773b495231a39b60
 
      应用运行的HarmonyOS系统版本为HarmonyOS 6.0.0(20)及以上时，所有接口均支持使用自动签名方式进行配置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/TwsoWpz8QcuI_usqTwGUaA/zh-cn_image_0000002769331189.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/vlYmVEMgQD-rj_-grGt0zg/zh-cn_image_0000002743219748.png)
    * [手动签名](ide-signing-manual.md)：
 
      所有接口均支持使用手动签名方式配置签名。
@@ -31,18 +31,18 @@ content_hash: sha256:e96ed10c6d66ced9655491d8c8bbfbbb557d684d430773b495231a39b60
 
    * 检查是否需要配置公钥指纹：应用仅接入未成年人模式或compatibleSdkVersion>=20不需要配置公钥指纹，其他场景均需配置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/SJe1V7dPT9iey3BrGcIomg/zh-cn_image_0000002769451051.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/MxzJRqL4SnSlgS1iBx-Tnw/zh-cn_image_0000002772739001.png)
    * 检查公钥指纹是否配置成功：请在[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中选择对应的项目和应用，检查是否已成功配置该应用的公钥指纹。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/cGHBFp7oQ_evGOTx1UpLCw/zh-cn_image_0000002739891720.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/toOzv7JuStiqJ9pOc1S6nw/zh-cn_image_0000002772898885.png)
    * 公钥指纹最迟会在25小时后生效。
 
      **（可选）** 配置公钥指纹10分钟后，您可通过修改应用工程中app.json5配置文件的versionCode触发公钥指纹生效。
 
      **图1** 修改前
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/q8DoVRptQ7q2Qd53Mn_F9w/zh-cn_image_0000002739891718.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Z5wvpC5TR-qjOu9q_jvmfw/zh-cn_image_0000002772898883.png)
 
      **图2** 修改后
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Z8U-9OmPRaaUoqNg4FiiYw/zh-cn_image_0000002739731840.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/K5LJevSEQCyguAqwQrbPpw/zh-cn_image_0000002743379634.png)

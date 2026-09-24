@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 即时反馈（Toast）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 即时反馈（Toast）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:37+08:00
+scraped_at: 2026-09-25T07:06:29+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a484b867b8b4571c3b823ecd8b230d123719c7884ad5e2dbf811d34385774e8f
+content_hash: sha256:41acdac6f22c25df74a7353e5326423e7f9160ad44167503a9263f7d41a95e8d
 ---
 
 即时反馈（Toast）是一种临时性的消息提示框，用于向用户显示简短的操作反馈或状态信息。​它通常在屏幕的底部或顶部短暂弹出，随后在一段时间后自动消失。即时反馈的主要目的是提供简洁、不打扰的信息反馈，避免干扰用户当前的操作流程。
@@ -103,7 +103,7 @@ export struct DefaultAndTopToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/YPAuaiReSJiSrKP97BaBHw/zh-cn_image_0000002769450003.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/QHXX4KLLRSCifkpfYj_WVQ/zh-cn_image_0000002772737953.gif)
 
 ## 创建即时反馈
 
@@ -144,7 +144,7 @@ export struct CreateToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/fLJvDgjLTsqnnRBkc14NbA/zh-cn_image_0000002739890672.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/2b85h0vBT9-6Cc6lXTtoMA/zh-cn_image_0000002772897837.gif)
 
 ## 显示和关闭即时反馈
 
@@ -204,4 +204,4 @@ export struct OpenCloseToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/NfHEMw1sRgKkQRamnCKm9A/zh-cn_image_0000002739730794.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Y_KtUm7bRPm_UaaBc33Knw/zh-cn_image_0000002743378588.gif)

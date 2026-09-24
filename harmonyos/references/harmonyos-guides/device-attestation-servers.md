@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attest
 title: 服务器端开发
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 创建密钥确立可信凭证 > 服务器端开发
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:01+08:00
+scraped_at: 2026-09-25T07:06:57+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:3730500349d04e739af6607b5cf793aa5c961c7e9805f391c82374d668e394d7
+content_hash: sha256:eee82f17cd2a3f3c8cc7c30367b4dac93c7bda1e45c492663a0639d66798c159
 ---
 
 ## 校验密钥证明证书链
@@ -32,9 +32,9 @@ content_hash: sha256:3730500349d04e739af6607b5cf793aa5c961c7e9805f391c82374d668e
 
 **密钥证明证书格式说明：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/1TessLMiTpOkbCvmCO39SQ/zh-cn_image_0000002769450619.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/GQWNxYAbQfimHjyen5dNxQ/zh-cn_image_0000002772738569.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/WPPYxUu9SCehBWu9lJTm8g/zh-cn_image_0000002739891288.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/F8-fTvG_RYyzWfcfPfCGyQ/zh-cn_image_0000002772898453.png)
 
 密钥证明扩展域段为Asn.1 DER标准编码格式，数据结构定义如下：
 

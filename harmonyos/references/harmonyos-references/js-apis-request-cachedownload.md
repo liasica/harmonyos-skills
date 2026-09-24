@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.request.cacheDownload (缓存下载)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.request.cacheDownload (缓存下载)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e71dfa704b8795cfd32f295a0d711a5cc55f03e68c41c34c2474a3a885778aa3
+scraped_at: 2026-09-25T07:12:08+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:0f27c2d5ee7851aa999ee85003f28878030d96d0777f7a44a0e54c7707249e98
 ---
 
 request部件主要给应用提供上传下载文件、后台传输代理的基础能力。
@@ -427,6 +427,8 @@ getDownloadInfo(url: string): DownloadInfo | undefined
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | permission denied. |
+
+**示例：**
 
 ```ts
 import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';

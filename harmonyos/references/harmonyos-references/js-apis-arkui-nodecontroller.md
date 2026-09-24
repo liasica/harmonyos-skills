@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: NodeController
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > NodeController
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:12+08:00
+scraped_at: 2026-09-25T07:09:42+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b4581b5c884f7ebbb45de4c5a49e9d7f1587714532896624a60fccbc01bb67ce
+content_hash: sha256:419d7afeefc8723e5643a3d36a9612e1c3e143f60c935f3b3283e5206a300599
 ---
 
 NodeController用于管理自定义节点的创建、显示、更新等操作，并负责将自定义节点挂载到[NodeContainer](ts-basic-components-nodecontainer.md)上，适用于需要在页面中动态创建、更新、复用自定义节点的场景。
@@ -300,7 +300,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/QOlcSOJKTEC4EFtIMSCn7g/zh-cn_image_0000002739892550.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/lC7f25ZfSvmXK_nu_U0vfQ/zh-cn_image_0000002772899715.jpg)
 
 ### 示例2（添加节点上下树和绑定解绑前后的生命周期回调）
 
@@ -400,4 +400,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/IC2s51xqQ-SWHJ0gJ5t9pw/zh-cn_image_0000002739732672.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/BI2pBkJSQguRje3Z0zubdw/zh-cn_image_0000002743380466.jpg)

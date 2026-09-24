@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: gameNearbyTransfer（游戏近场快传）
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gameNearbyTransfer（游戏近场快传）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c3b08cf0f7b3df298e1ebedc708621c61bd717c25ecb8c9a6aee273b1dcb004e
+scraped_at: 2026-09-25T07:14:01+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:4c62e3b513fb07323c883da3d803ca0d42b1327c4b9f477eecc269a65e52482c
 ---
 
 本模块提供接入Game Service Kit的游戏近场快传能力，包括游戏资源包传输和游戏安装包传输功能。游戏可以使用该能力实现游戏资源包和安装包在设备间的高速传输与共享。
@@ -892,7 +892,7 @@ try {
   gameNearbyTransfer.onRemoteInstallationInfoNotify(remoteCallBack);
 } catch (error) {
   let err = error as BusinessError;
-  hilog.error(0x0000, 'nearby', `Failed to subscribe offRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
+  hilog.error(0x0000, 'nearby', `Failed to subscribe onRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
 }
 
 function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
@@ -917,7 +917,7 @@ offRemoteInstallationInfoNotify(callback?: Callback<RemoteInstallationInfo>): vo
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| callback | Callback<[RemoteInstallationInfo](gameservice-nearbytransfer.md#remoteinstallationinfo)> | 否 | 回调函数，返回远程安装包结果信息对象。  如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'offRemoteInstallationInfoNotify'事件的所有callback订阅。 |
+| callback | Callback<[RemoteInstallationInfo](gameservice-nearbytransfer.md#remoteinstallationinfo)> | 否 | 回调函数，返回远程安装包结果信息对象。  如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'onRemoteInstallationInfoNotify'事件的所有callback订阅。 |
 
 **错误码：**
 

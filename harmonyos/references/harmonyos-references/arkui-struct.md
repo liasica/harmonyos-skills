@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-str
 title: 结构体
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-18T06:48:54+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:7f9e9515a840ae1b7aab59fb1b4788f8f0b3e469976337e6abb8ee616b4d43ae
+scraped_at: 2026-09-25T07:10:46+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:6db09136c65306d9dc2b9d3c95efd20450d1a7454543ea1daa69b0c7f0c79a5b
 ---
 
 * **[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)**
@@ -106,7 +106,6 @@ content_hash: sha256:7f9e9515a840ae1b7aab59fb1b4788f8f0b3e469976337e6abb8ee616b4
 * **[ArkUI\_NativeDialog](capi-arkui-nativemodule-arkui-nativedialog.md)**
 * **[ArkUI\_LayoutConstraint](capi-arkui-nativemodule-arkui-layoutconstraint.md)**
 * **[ArkUI\_DrawContext](capi-arkui-nativemodule-arkui-drawcontext.md)**
-* **[ArkUI\_Node](capi-arkui-nativemodule-arkui-node-descriptor.md)**
 * **[ArkUI\_Node\*](capi-arkui-nativemodule-arkui-node8h.md)**
 * **[ArkUI\_NativeDialog\*](capi-arkui-nativemodule-arkui-nativedialog8h.md)**
 * **[ArkUI\_WaterFlowSectionOption](capi-arkui-nativemodule-arkui-waterflowsectionoption.md)**
@@ -212,7 +211,7 @@ content_hash: sha256:7f9e9515a840ae1b7aab59fb1b4788f8f0b3e469976337e6abb8ee616b4
 * **[ArkUI\_TouchTestInfo](capi-arkui-nativemodule-arkui-touchtestinfo.md)**
 * **[ArkUI\_TouchTestInfoItem](capi-arkui-nativemodule-arkui-touchtestinfoitem.md)**
 * **[ArkUI\_TouchTestInfoItem\*](capi-arkui-nativemodule-arkui-touchtestinfoitemhandle.md)**
-* **[ArkUI\_TouchTestInfoItemHandle\*](capi-arkui-nativemodule-arkui-touchtestinfoitemhandlearray.md)**
+* **[ArkUI\_TouchTestInfoItemHandle\*](capi-arkui-eventmodule-arkui-touchtestinfoitemhandle8h.md)**
 * **[ArkUI\_TextMenuItem](capi-arkui-nativemodule-arkui-textmenuitem.md)**
 * **[ArkUI\_TextMenuItemArray](capi-arkui-nativemodule-arkui-textmenuitemarray.md)**
 * **[ArkUI\_TextEditMenuOptions](capi-arkui-nativemodule-arkui-texteditmenuoptions.md)**

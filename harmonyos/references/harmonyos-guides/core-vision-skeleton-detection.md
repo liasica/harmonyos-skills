@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-s
 title: 骨骼点检测
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 骨骼点检测
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:51:11+08:00
+scraped_at: 2026-09-25T07:08:22+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:b97add419b6b1b72ac55681619a7e4f7c721ea07f6242478ac0c482bdc52f6d8
+content_hash: sha256:e7e72f234a83fa9e9c8b41c48c402d74a710d7c0e1dae54a56a08732017fe9f6
 ---
 
 ## 适用场景
@@ -16,7 +16,7 @@ content_hash: sha256:b97add419b6b1b72ac55681619a7e4f7c721ea07f6242478ac0c482bdc5
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/0s8AF0jbQHqMOeGfoTiq8g/zh-cn_image_0000002739892334.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/EuNYTFObQeixjIUm091A8w/zh-cn_image_0000002772899499.png)
 
 ## 开发步骤
 

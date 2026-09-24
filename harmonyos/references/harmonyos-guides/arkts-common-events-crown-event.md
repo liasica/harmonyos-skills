@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持表冠输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持表冠输入事件
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:37+08:00
+scraped_at: 2026-09-25T07:06:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b2ed06bab27159b6a31a32916fdf5cff84a8360d63e21cb1b8fab17c855338ce
+content_hash: sha256:7dc738d2d0ac39f605a459aec32ae50d9165525b745528bde915306c15cd7485
 ---
 
 表冠事件从API version 18开始支持，是指通过旋转表冠触发的事件，通过硬件采样频率上报旋转角度的变化。
@@ -102,4 +102,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/C3kef2OyQQOlINekDu69TQ/zh-cn_image_0000002739730838.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/pqrh_R2WT1WVu9gldwavYw/zh-cn_image_0000002743378632.gif)

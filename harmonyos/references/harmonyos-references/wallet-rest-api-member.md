@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-re
 title: 会员卡接口
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > REST API > 会员卡接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:67736c04511b71ba0902bebc34caecd2c93bdb60ebd2799acd4f5a9ef92a471c
+scraped_at: 2026-09-25T07:14:33+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:bd19cc993c5f55a6ba7383ecc7997e2315451812b03a32d0ae0b8bf87e1bacc4
 ---
 
 ## 预置模板
@@ -117,7 +117,7 @@ Accept: application/json;charset=UTF-8
 ```java
 public HwWalletObject invokeHwCreateKeyMemberClass(){
     HwWalletObject request=new HwWalletObject();
-    request.setPassVersion("1.0");
+    request.setPassVersion("10.0");
     request.setPassTypeIdentifier("hwpass.keymember.test");
     request.setPassStyleIdentifier("keyMemberModelTest");
     request.setOrganizationName("XXXX");

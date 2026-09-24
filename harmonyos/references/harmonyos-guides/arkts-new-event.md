@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-eve
 title: "@Event装饰器：规范组件输出"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Event装饰器：规范组件输出
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:32+08:00
+scraped_at: 2026-09-25T07:06:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c9170f316ff66edbb85f53fe57c66145505a04689bff082c03322759377f7b7e
+content_hash: sha256:1bc5207d59854f85c887637b47313b84f92951fe27522d0b0757b8967d02d03f
 ---
 
 为了实现子组件向父组件要求更新@Param装饰变量的能力，开发者可以使用[@Event](../harmonyos-references/ts-state-management-event.md#event)装饰器。使用@Event装饰回调方法是一种规范，表明子组件需要传入更新数据源的回调。
@@ -120,7 +120,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Alrgs5PRQXCEU0RcxF2-IQ/zh-cn_image_0000002769329691.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/mK7BkQqHQ-O8z5fwaLK1kg/zh-cn_image_0000002743218250.gif)
 
 值得注意的是，使用@Event修改父组件的值是立刻生效的，但从父组件将变化同步回子组件的过程是异步的，即在调用完@Event的方法后，子组件内的值不会立刻变化。这是因为@Event将子组件值实际的变化能力交由父组件处理，在父组件实际决定如何处理后，将最终值在渲染之前同步回子组件。
 
@@ -168,7 +168,7 @@ struct Index2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/58zbG6B0SpW-wRlwgSdoRQ/zh-cn_image_0000002769449553.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/2QOhmGNfSxGSZcz3lVUe6A/zh-cn_image_0000002772737503.gif)
 
 在上面的示例中，点击文字触发@Event函数事件改变子组件的值，打印出的日志为：
 

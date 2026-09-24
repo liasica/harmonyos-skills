@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/archive-overv
 title: 压缩解压缩概述
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 文件压缩解压缩 > 压缩解压缩概述
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:48+08:00
+scraped_at: 2026-09-25T07:06:42+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:d93a1ec15153325c51c8694d88cf7d9bf37da58e804bcba3243143b0bf29a353
+content_hash: sha256:aa1f3bcadddc477e7c481a45cfb3edc5e38cff864fcf780d180ab25b0cb09487
 ---
 
 从API版本26.0.0开始支持压缩解压缩模块，为应用提供了数据压缩和解压缩的能力，可用于文件打包分发、减少存储占用、加速网络传输等场景。根据数据来源和处理方式的不同，模块提供了以下三种压缩解压缩方式：
@@ -24,7 +24,7 @@ content_hash: sha256:d93a1ec15153325c51c8694d88cf7d9bf37da58e804bcba3243143b0bf2
 
 采用分层设计，使模块具备良好的扩展性，开发者可以根据实际需求选择合适的压缩解压缩方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/bWBZtM78SS2CzwWj3yE38A/zh-cn_image_0000002769450433.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/_a7ut7m3SRSNsHfYGr7mcg/zh-cn_image_0000002772738383.png)
 
 ## 与相关模块的关系
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.systemTime (系统时间、时区)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @ohos.systemTime (系统时间、时区)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:04+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:894e63c0e831febe2abb41cf2a0b5a305cea227ea41fffbdf78e4c4eb6665a00
+scraped_at: 2026-09-25T07:12:14+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:25af78acf0d4450f8c3dc6136e96bfdf760ad11cecfceb3964b8e4eac6820a12
 ---
 
 本模块主要由系统时间和系统时区功能组成。开发者可以设置、获取系统时间及系统时区。
@@ -922,7 +922,7 @@ try {
 
 ## 支持的系统时区
 
-支持的系统时区及各时区与0时区相比的偏移量（单位：h）可见下表。
+支持的系统时区及各时区与0时区相比的标准时间偏移量（单位：h）可见下表。
 
 | 时区 | 偏移量 |
 | --- | --- |
@@ -934,12 +934,12 @@ try {
 | Africa/Kinshasa | 1 |
 | America/Santiago | -4 |
 | Asia/Shanghai | 8 |
-| Asia/Nicosia | 3 |
+| Asia/Nicosia | 2 |
 | Europe/Berlin | 2 |
 | America/Guayaquil | -5 |
 | Europe/Madrid | 2 |
 | Pacific/Pohnpei | 11 |
-| America/Godthab | -1 |
+| America/Godthab | -2 |
 | Asia/Jakarta | 7 |
 | Pacific/Tarawa | 12 |
 | Asia/Almaty | 6 |
@@ -950,10 +950,10 @@ try {
 | Pacific/Auckland | 12 |
 | Pacific/Tahiti | -10 |
 | Pacific/Port\_Moresby | 10 |
-| Asia/Gaza | 3 |
-| Europe/Lisbon | 1 |
+| Asia/Gaza | 2 |
+| Europe/Lisbon | 0 |
 | Europe/Moscow | 3 |
-| Europe/Kiev | 3 |
+| Europe/Kiev | 2 |
 | Pacific/Wake | 12 |
-| America/New\_York | -4 |
+| America/New\_York | -5 |
 | Asia/Tashkent | 5 |

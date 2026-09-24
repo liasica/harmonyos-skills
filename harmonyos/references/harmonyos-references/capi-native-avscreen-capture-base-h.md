@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avscreen_capture_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > native_avscreen_capture_base.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:29145b5b63b769d0aa4ca18826faaa3155ae2db42a7664d78b7fbbd2d1339e2b
+scraped_at: 2026-09-25T07:13:21+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:8d8dfdaa62403a0518a23b3acc109bbe1b794579f0243157d9594efb89db91ab
 ---
 
 ## 概述
@@ -639,5 +639,5 @@ typedef void (*OH_AVScreenCapture_OnPrivacyProtect)(OH_AVScreenCapture* capture,
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVScreenCapture](capi-avscreencapture-oh-avscreencapture.md)\* capture | 指向OH\_AVScreenCapture实例的指针。 |
-| [OH\_PrivacyProtectInfo](capi-avscreencapture-oh-privacyprotectinfo.md)\* privacyProtect | 隐私保护信息指针。指向包含隐私保护事件详细信息的结构体，用于处理录屏过程中的隐私保护回调事件。 |
+| [OH\_PrivacyProtectInfo](capi-avscreencapture-oh-privacyprotectinfo.md)\* privacyProtect | 隐私保护信息指针。指向包含隐私保护事件详细信息的结构体，用于返回录屏过程中隐私保护信息。 |
 | void \*userData | 指向应用设置该回调处理方法时提供的自定义数据的指针。 |

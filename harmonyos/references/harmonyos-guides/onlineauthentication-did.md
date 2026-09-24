@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: DID数字身份
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > DID数字身份
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:15f5aba6a9199ee86cc0da2b518aa16bf164f126815bfd3759cf19542d5cd8ff
+scraped_at: 2026-09-25T07:06:56+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:0b938a5a68fc82869dc148b6104609ca549a33d23b284c63a836ae807151bfb7
 ---
 
 从API版本26.0.0开始，Online Authentication Kit（在线认证服务）新增数字身份特性，提供了基于DID（Decentralized Identifier，去中心化身份）协议的数字身份在移动端的能力。应用部署符合DID协议的服务器之后，结合移动端的数字身份能力，可实现跨平台互通互认的数字身份业务场景。数字身份服务主要提供了以下能力：
 
-* DID密钥创建及使用：应用为用户创建DID时，支持应用创建及使用与用户DID关联的密钥。
+* DID密钥生成及使用：应用为用户生成DID密钥后，支持应用使用与用户DID关联的密钥。
 * DID导入、查询及删除：应用为用户创建DID时，支持应用导入DID标识、DID文档等信息到设备中。
 * 可验证凭证VC（Verifiable Credentials，可验证凭证）导入、查询及删除：应用为用户颁发数字身份凭证（即VC）时，支持应用导入VC到设备TEE环境中安全存储，保障用户隐私，并支持查询、删除VC。
 * 可验证声明VP（Verifiable Presentation，可验证声明）出示：应用需要请求用户的数字身份凭证VP时，数字身份服务在获取用户同意后，会在TEE中将VC中需要披露的属性组装成VP返回给应用。支持用户生物认证授权出示凭证、凭证的部分披露，保障用户身份凭证的安全与隐私。
@@ -47,7 +47,7 @@ content_hash: sha256:15f5aba6a9199ee86cc0da2b518aa16bf164f126815bfd3759cf19542d5
 
 应用需要为用户创建数字身份时，可以使用数字身份服务创建及使用与用户DID关联的密钥、导入用户DID文档等信息至设备。创建数字身份后，应用可基于用户DID标识为用户颁发凭证，并使用用户DID密钥对数据签名授权。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/2tWzhq6-R5mkii7kcKSVhw/zh-cn_image_0000002739891282.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/WKNMx0g7S0-oeTD9IvLYHg/zh-cn_image_0000002772898447.png)
 
 流程说明：
 
@@ -61,7 +61,7 @@ content_hash: sha256:15f5aba6a9199ee86cc0da2b518aa16bf164f126815bfd3759cf19542d5
 
 应用为用户颁发数字身份凭证（例如教师凭证等），可以使用数字身份服务将数字身份凭证导入至设备安全存储，用于后续便携出示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ayOBOIllTPSbqC9jT3irZg/zh-cn_image_0000002739731404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Vzvf0D5ZQgi3M8DktQal7w/zh-cn_image_0000002743379198.png)
 
 流程说明：
 
@@ -73,7 +73,7 @@ content_hash: sha256:15f5aba6a9199ee86cc0da2b518aa16bf164f126815bfd3759cf19542d5
 
 应用作为验证方，需要请求用户的数字身份凭证用于验证用户身份或者发放相应权益时，可以使用数字身份服务请求获取用户凭证，用户确认出示的凭证及披露的属性字段后，数字身份服务会将凭证出示到验证方应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/fq_z8pj7T9uPFozdS0ynzA/zh-cn_image_0000002769330753.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/widbtuuDSriE3rNgsqXjnQ/zh-cn_image_0000002743219312.png)
 
 流程说明：
 
@@ -96,15 +96,6 @@ content_hash: sha256:15f5aba6a9199ee86cc0da2b518aa16bf164f126815bfd3759cf19542d5
 | [queryDigitalCredential](../harmonyos-references/onlineauthentication-did-api.md#didquerydigitalcredential)(context: common.Context, did?: string, credentialId?: string): Promise<[QueryDigitalCredentialResponse](../harmonyos-references/onlineauthentication-did-api.md#querydigitalcredentialresponse)> | 查询数字凭证。使用Promise异步回调。 |
 | [deleteDigitalCredential](../harmonyos-references/onlineauthentication-did-api.md#diddeletedigitalcredential)(context: common.Context, did?: string, credentialId?: string): Promise<void> | 删除数字凭证。使用Promise异步回调。 |
 | [getDigitalCredential](../harmonyos-references/onlineauthentication-did-api.md#didgetdigitalcredential)(context: common.Context, getDigitalCredentialRequest: [GetDigitalCredentialRequest](../harmonyos-references/onlineauthentication-did-api.md#getdigitalcredentialrequest)): Promise<[GetDigitalCredentialResponse](../harmonyos-references/onlineauthentication-did-api.md#getdigitalcredentialresponse)> | 获取数字凭证。使用Promise异步回调。 |
-
-## 开发准备
-
-* 开发者需要部署符合W3C DID协议的服务器。
-* 开发者基于数字身份服务开发时，需要申请如下通行密钥服务权限。在申请权限前，请保证符合[权限使用的基本原则](app-permission-mgmt-overview.md#权限使用的基本原则)。申请方式请参考：[申请受限权限](declare-permissions-in-acl.md)。
-
-  | 应用能力 | 需要权限 |
-  | --- | --- |
-  | 数字身份 | ohos.permission.ACCESS\_FIDO2\_ONLINEAUTH |
 
 ## 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localst
 title: LocalStorage：页面级UI状态存储
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理应用拥有的状态 > LocalStorage：页面级UI状态存储
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:33+08:00
+scraped_at: 2026-09-25T07:06:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8c354b18bad9f7885ac76703bd3fc846b051b97c19945baa102b951e0c34a9fe
+content_hash: sha256:25bcf92b687d1dfbd328400e12f5a5adfca7972f9b136625f8a80cb9bb56e9cd
 ---
 
 LocalStorage是页面级的UI状态存储，通过@Entry装饰器接收的参数可以在页面内共享同一个LocalStorage实例。LocalStorage支持[UIAbility](uiability-overview.md)实例内多个页面间状态共享。
@@ -67,7 +67,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 | 初始化子节点 | 支持，可用于初始化[@State](arkts-state.md)、[@Link](arkts-link.md)、[@Prop](arkts-prop.md)、[@Provide](arkts-provide-and-consume.md)。 |
 | 是否支持组件外访问 | 否。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/2Ymk_WR7SLGODO8BjIWxkg/zh-cn_image_0000002739730314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/A7fjB2r5REGM5kZVui0KSw/zh-cn_image_0000002743378106.png)
 
 **图1** @LocalStorageProp初始化规则图示
 
@@ -89,7 +89,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 **LocalStorage与@LocalStorageProp数据同步如下图所示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/VQoJwRUpSECrz2R0UXRvgg/zh-cn_image_0000002769329663.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/WYMcdISpRWSIIyojvVKplQ/zh-cn_image_0000002743218222.png)
 
 **图2** LocalStorage与@LocalStorageProp数据同步图示
 
@@ -123,7 +123,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 | 初始化子节点 | 支持，可用于初始化@State、@Link、@Prop、@Provide。 |
 | 是否支持组件外访问 | 否。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/OgPTzbcuSTWHvOvp4OhPbw/zh-cn_image_0000002769449525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/x9PdW3FcTTC4QQuSFcEkvg/zh-cn_image_0000002772737475.png)
 
 **图3** @LocalStorageLink初始化规则图示
 
@@ -145,7 +145,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 **LocalStorage与@LocalStorageLink数据同步如下图所示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/C_bJTuCFSvam9fE-Xe62Ag/zh-cn_image_0000002739890194.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/M4l34ltSS9W0A-fh0lQdrA/zh-cn_image_0000002772897357.png)
 
 **图4** LocalStorage与@LocalStorageLink数据同步图示
 
@@ -272,7 +272,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Aa8Ulj7bTGqX7yYurOJFMA/zh-cn_image_0000002739730316.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/KNrO16QZTZaEQtw5ITqOcg/zh-cn_image_0000002743378108.gif)
 
 ### @LocalStorageProp和LocalStorage单向同步的简单场景
 
@@ -325,7 +325,7 @@ struct ChildOne {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/uZKV2H_7Qlq4RejNO2BI0g/zh-cn_image_0000002769329665.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/dq52K8MMTfGEhVamPJA-8g/zh-cn_image_0000002743218224.gif)
 
 ### @LocalStorageLink和LocalStorage双向同步的简单场景
 
@@ -364,7 +364,7 @@ struct ParentTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/gOAg6BGfSRaRq7tu8Z9ncQ/zh-cn_image_0000002769449527.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/KsFU50r6Sv-I8CwbquF7pA/zh-cn_image_0000002772737477.gif)
 
 ### 兄弟组件之间同步状态变量
 
@@ -471,7 +471,7 @@ struct ParentFour {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/3CwYSNkRRvuzILnyg3XQ6w/zh-cn_image_0000002739890196.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/ayDYukozRrCRLtSqonbsug/zh-cn_image_0000002772897359.gif)
 
 ### 将LocalStorage实例从UIAbility共享到一个或多个页面
 
@@ -603,7 +603,7 @@ struct PageFiveShareChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/WYBehbAES0ypTfdr94c5ag/zh-cn_image_0000002739730318.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/-hczWtmmSoSPUPQ43VixSA/zh-cn_image_0000002743378110.gif)
 
 **说明** 
 
@@ -675,7 +675,7 @@ struct ChildSix {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/EbcJ8hP-Q52rLOrE3Fj9bw/zh-cn_image_0000002769329667.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/lOq88X78Te2SYZcZxqMd6g/zh-cn_image_0000002743218226.png)
 
 1. 当自定义组件没有定义属性时，可以只传入一个LocalStorage实例作为入参。
 
@@ -718,7 +718,7 @@ struct ChildSix {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/vMctARz6TGeK0zT_10IHLQ/zh-cn_image_0000002769449529.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/R6dHT6rDRWmDukkv5KrK5Q/zh-cn_image_0000002772737479.png)
 2. 当定义的属性不需要从父组件初始化变量时，第一个参数需要传{}。
 
    ```typescript
@@ -764,7 +764,7 @@ struct ChildSix {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/hw1-24VyQPCwBGTp-izS-A/zh-cn_image_0000002739890198.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/v50xfMxFTfGxvZmDDhvU3g/zh-cn_image_0000002772897361.png)
 
 ### Navigation组件和LocalStorage联合使用
 
@@ -931,7 +931,7 @@ struct NavigationContentMsgStack {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Y9bkxeKQS42q92VS26Vdkg/zh-cn_image_0000002739730320.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/MQVKhigLQB-m-WZh2h5Hfw/zh-cn_image_0000002743378112.gif)
 
 ### LocalStorage支持联合类型
 
@@ -1014,7 +1014,7 @@ struct LinkIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/yyd1ZVmtQgOmCzZ5yv3LJA/zh-cn_image_0000002769329669.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/VK3TIB1QTcCUBVZ33F1Xxg/zh-cn_image_0000002743218228.gif)
 
 ### 装饰Array类型变量
 
@@ -1067,7 +1067,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/xzLZjX63SXC4XfHGKSuY6g/zh-cn_image_0000002769449531.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/eXZRLunzTOmNAapUUI0i3g/zh-cn_image_0000002772737481.gif)
 
 ### 装饰Date类型变量
 
@@ -1120,7 +1120,7 @@ struct LocalDateSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/EL9uK0FGRbSi1PMH5Q-uVw/zh-cn_image_0000002739890200.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/w2JyB_lCTtu3cbyhszHjmQ/zh-cn_image_0000002772897363.gif)
 
 ### 装饰Map类型变量
 
@@ -1187,7 +1187,7 @@ struct LocalMapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/AxdNQo4QRsawsAQOhSHTfQ/zh-cn_image_0000002739730322.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/oCRNVJNAS8u4uiOGsQGnFA/zh-cn_image_0000002743378114.gif)
 
 ### 装饰Set类型变量
 
@@ -1245,7 +1245,7 @@ struct LocalSetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/8fo9-H28TQm3fefuWb0oqw/zh-cn_image_0000002769329671.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/cZFCpWBdQce69_il6lBv4g/zh-cn_image_0000002743218230.gif)
 
 ### 自定义组件外改变状态变量
 
@@ -1286,4 +1286,4 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/CreY3ZMkT_qAgsswSe7dpA/zh-cn_image_0000002769449533.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/VNhDtj60TzyDHMivmMfnPg/zh-cn_image_0000002772737483.gif)

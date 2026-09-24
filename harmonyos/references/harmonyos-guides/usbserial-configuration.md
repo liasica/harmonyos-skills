@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-con
 title: USB串口配置管理
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB串口通信服务 > USB串口配置管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:00a3d68f4bef3391dad7907e1d0982710c4a91ea147fc8015a7acee32a723868
+scraped_at: 2026-09-25T07:07:04+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:06b27476f0453042f042b94b887d49b40b605f7721d33cd9c4a6d432d95a3f9c
 ---
 
 ## 简介
@@ -55,7 +55,7 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
    ```typescript
    // 导入serialManager模块
    import { serialManager } from '@kit.BasicServicesKit';
-   import { BusinessError } from '@kit.BasicServicesKit'
+   import { BusinessError } from '@kit.BasicServicesKit';
    import { buffer } from '@kit.ArkTS';
    import { JSON } from '@kit.ArkTS';
    ```
@@ -117,13 +117,8 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
    // 获取串口配置
    try {
      let attribute: serialManager.SerialAttribute = serialManager.getAttribute(portId);
-     if (attribute === undefined) {
-       console.error('getAttribute usbSerial error, attribute is undefined');
-       this.logInfo_ += '\n[ERROR] getAttribute usbSerial error, attribute is undefined';
-     } else {
-       console.info(`getAttribute usbSerial success, attribute: ${attribute}`);
-       this.logInfo_ += '\n[INFO] getAttribute usbSerial success, attribute: ' + JSON.stringify(attribute);
-     }
+     console.info(`getAttribute usbSerial success, attribute: ${JSON.stringify(attribute)}`);
+     this.logInfo_ += '\n[INFO] getAttribute usbSerial success, attribute: ' + JSON.stringify(attribute);
    } catch (error) {
      console.error(`getAttribute usbSerial error: ${error}`);
      this.logInfo_ += '\n[ERROR] getAttribute usbSerial error: ' + JSON.stringify(error);
@@ -141,7 +136,7 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
        stopBits: serialManager.StopBits.STOPBIT_1
      }
      serialManager.setAttribute(portId, attribute);
-     console.info(`setAttribute usbSerial success, attribute: ${attribute}`);
+     console.info(`setAttribute usbSerial success, attribute: ${JSON.stringify(attribute)}`);
      this.logInfo_ += '\n[INFO] setAttribute usbSerial success, attribute: ' + JSON.stringify(attribute);
    } catch (error) {
      console.error(`setAttribute usbSerial error: ${error}`);

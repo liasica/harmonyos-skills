@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-address-h
 title: 地址流转至车机
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 实现车机导航流转 > 地址流转至车机
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:09+08:00
+scraped_at: 2026-09-25T07:07:07+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:030e57528ab6a8e33cab2bb4b56bf9fd4b2d81d0290c4187fbd992deb46192b9
+content_hash: sha256:3b6e5dfc83cdd0f74aec2e70336f5acf7c4084979af4c66ebaa4cf7e48de13ea
 ---
 
 将手机应用的地址文本流转至车机指定地图应用的能力。
@@ -14,7 +14,7 @@ content_hash: sha256:030e57528ab6a8e33cab2bb4b56bf9fd4b2d81d0290c4187fbd992deb46
 
 碰一碰地址流转：用户在手机地址文本页面与车机中控屏指定区域碰一碰后，将手机上的地址数据流转至车机的地图应用，发起地址搜索。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/bRmNZRsRTIGBKziaDnwOFQ/zh-cn_image_0000002769330837.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/y3eadOKcRVe_ps6FmNR1uQ/zh-cn_image_0000002743219396.png)
 
 ## 接口说明
 

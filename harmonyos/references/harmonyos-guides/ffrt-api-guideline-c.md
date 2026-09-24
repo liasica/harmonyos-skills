@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-api-guid
 title: Function Flow Runtime C API
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime C API
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:75d8ea3bcab52e3df436f80ea566300f81cc4a45ad939362194ea96bcaf6483a
+scraped_at: 2026-09-25T07:07:07+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:432b5a0b8136ded03cfa3ab879e31b6ee0cb3ccb4407529c1eb004d6f1ab69bd
 ---
 
 ## 任务管理
@@ -1867,7 +1867,7 @@ int main()
 
     ffrt::submit([&]() {
         ffrt_usleep(2);
-        if(ffrt_rwlock_trywrlock(&rwlock)){
+        if(ffrt_rwlock_trywrlock(&rwlock) == ffrt_success){
             x++;
             ffrt_rwlock_unlock(&rwlock);
         }
@@ -1875,7 +1875,7 @@ int main()
 
     ffrt::submit([&]() {
         ffrt_usleep(2);
-        if(ffrt_rwlock_tryrdlock(&rwlock)){
+        if(ffrt_rwlock_tryrdlock(&rwlock) == ffrt_success){
             ffrt_rwlock_unlock(&rwlock);
         }
     },{},{});

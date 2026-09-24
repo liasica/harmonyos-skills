@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-re
 title: 园区卡接口
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > REST API > 园区卡接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5ae561c799bf9426536a924cbbfbe18bc0e1a6f42cb4d925be1e7db8e68f10a5
+scraped_at: 2026-09-25T07:14:34+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:b92d5c8ab2c4dbb223eee9298fa55165ed7328600bbf004ba127f2d0371ada23
 ---
 
 ## 预置模板
@@ -117,7 +117,7 @@ Accept: application/json;charset=UTF-8
 ```java
 public HwWalletObject invokeHwCreateKeyParkClass(){
     HwWalletObject request=new HwWalletObject();
-    request.setPassVersion("1.0");
+    request.setPassVersion("10.0");
     request.setPassTypeIdentifier("hwpass.keypark.test");
     request.setPassStyleIdentifier("keyParkModelTest");
     request.setOrganizationName("XXXX");

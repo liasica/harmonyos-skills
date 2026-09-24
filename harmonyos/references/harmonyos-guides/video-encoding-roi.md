@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: ROI视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > ROI视频编码
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:20+08:00
+scraped_at: 2026-09-25T07:07:21+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:7cf1e553202df21c0b14018f3f11c4813d223498de86ee5767942f1d2e007254
+content_hash: sha256:ad5b5a94f67511176a7070b7542773dbbe0df6b54e1beb86bacf1564c4fc7a20
 ---
 
 ## 基础概念
@@ -83,7 +83,7 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 
 **图1：ROI坐标和最大允许面积占比示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/09J_4MMeQq6gDfQgAKsvyg/zh-cn_image_0000002769450793.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/LlMyqfdQS3qJ0U5j8WwlDw/zh-cn_image_0000002772738743.png)
 
 ## 生效机制说明
 
@@ -124,7 +124,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图2：NativeBuffer元数据接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/9Zt3T1efRbqsJ89mmsSg7Q/zh-cn_image_0000002739891462.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/IFNKpaYoS8WvN5yCx9j60A/zh-cn_image_0000002772898627.png)
 
 详细开发步骤如下：
 
@@ -278,7 +278,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图3：编码输入参数回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/T8_AZVV6QFK6Qem5croaTQ/zh-cn_image_0000002739731584.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/M8Pkl_O2QDOdUdAaypBvjw/zh-cn_image_0000002743379378.png)
 
 详细开发步骤如下：
 
@@ -384,7 +384,7 @@ Buffer模式下，视频帧通过OH\_VideoEncoder\_PushInputBuffer送入编码�
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/C4XXftQbTiiKzqrTeVszUA/zh-cn_image_0000002769330933.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/kNO0pR4QR9-ll0riujVzLQ/zh-cn_image_0000002743219492.png)
 
 详细开发步骤如下：
 

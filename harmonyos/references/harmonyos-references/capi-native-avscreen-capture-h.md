@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avscreen_capture.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > native_avscreen_capture.h
 category: harmonyos-references
-scraped_at: 2026-09-21T06:24:11+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:62f38e072fd1816d693d7823e672c73b952dc4feaf11829fadc2ec2442a12fdb
+scraped_at: 2026-09-25T07:13:23+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:c1cf9d552fa0a43199b6a7dc389dcc9a4e8371e260eb20b3fc87376a2577198f
 ---
 
 ## 概述
@@ -80,7 +80,7 @@ content_hash: sha256:62f38e072fd1816d693d7823e672c73b952dc4feaf11829fadc2ec2442a
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_ExcludePickerWindows(struct OH\_AVScreenCapture \*capture, const int32\_t \*excludedWindowIDs, uint32\_t windowCount)](capi-native-avscreen-capture-h.md#oh_avscreencapture_excludepickerwindows) | 在Picker界面中隐藏指定的窗口。在picker界面显示前调用本接口，可对指定窗口进行过滤和隐藏。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_GetMultiDisplayIdsSelected(OH\_AVScreenCapture\_UserSelectionInfo \*selection, uint64\_t\*\* displayIds, size\_t \*count)](capi-native-avscreen-capture-h.md#oh_avscreencapture_getmultidisplayidsselected) | 获取picker页面上用户选择录制的DisplayID列表。在[OH\_AVScreenCapture\_OnUserSelected](capi-native-avscreen-capture-base-h.md#oh_avscreencapture_onuserselected)回调中使用，selection指针在回调结束后销毁。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_GetMultiDisplayCaptureCapability(struct OH\_AVScreenCapture \*capture, uint64\_t \*displayIds, size\_t count, OH\_MultiDisplayCapability \*capability)](capi-native-avscreen-capture-h.md#oh_avscreencapture_getmultidisplaycapturecapability) | 获取多屏幕录制能力信息，判断用户选择的多个屏幕是否支持联合录制。 |
-| [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_SetPrivacyProtectCallback(struct OH\_AVScreenCapture \*capture, OH\_AVScreenCapture\_OnPrivacyProtect callback, void \*userData)](capi-native-avscreen-capture-h.md#oh_avscreencapture_setprivacyprotectcallback) | 设置隐私保护回调函数，用于响应屏幕捕获产生的隐私保护事件。该接口必须在调用开始录屏之前调用。当录屏过程中检测到隐私窗口或隐私内容时，将通过该回调通知应用，应用可根据回调信息进行相应的隐私保护处理。 |
+| [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_SetPrivacyProtectCallback(struct OH\_AVScreenCapture \*capture, OH\_AVScreenCapture\_OnPrivacyProtect callback, void \*userData)](capi-native-avscreen-capture-h.md#oh_avscreencapture_setprivacyprotectcallback) | 设置隐私保护回调函数，用于响应屏幕捕获产生的隐私保护事件。该接口必须在开始录屏之前调用。在录屏过程中，隐私保护信息被修改时，触发回调上报隐私保护状态给应用。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_StrategyForPause(OH\_AVScreenCapture\_CaptureStrategy \*strategy, bool value)](capi-native-avscreen-capture-h.md#oh_avscreencapture_strategyforpause) | 允许暂停屏幕捕获。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_PauseScreenCapture(struct OH\_AVScreenCapture \*capture)](capi-native-avscreen-capture-h.md#oh_avscreencapture_pausescreencapture) | 暂停屏幕捕获。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_ResumeScreenCapture(struct OH\_AVScreenCapture \*capture)](capi-native-avscreen-capture-h.md#oh_avscreencapture_resumescreencapture) | 恢复屏幕捕获。 |
@@ -1494,9 +1494,9 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPrivacyProtectCallback(struct 
 
 **描述**
 
-设置隐私保护回调函数，用于响应屏幕捕获产生的隐私保护事件。该接口必须在调用开始录屏之前调用。
+设置隐私保护回调函数，用于响应屏幕捕获产生的隐私保护事件。该接口必须在开始录屏之前调用。
 
-当录屏过程中检测到隐私窗口或隐私内容时，将通过该回调通知应用，应用可根据回调信息进行相应的隐私保护处理。
+在录屏过程中，隐私保护信息被修改时，触发回调上报隐私保护状态给应用。
 
 **起始版本：** 24
 
@@ -1505,7 +1505,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPrivacyProtectCallback(struct 
 | 参数项 | 描述 |
 | --- | --- |
 | [struct OH\_AVScreenCapture](capi-avscreencapture-oh-avscreencapture.md) \*capture | 指向OH\_AVScreenCapture实例的指针。 |
-| [OH\_AVScreenCapture\_OnPrivacyProtect](capi-native-avscreen-capture-base-h.md#oh_avscreencapture_onprivacyprotect) callback | 隐私保护回调函数。用于响应隐私保护事件（如隐私窗口出现），在事件发生时触发，需在录屏前设置。不设置则无法获知隐私保护事件。 |
+| [OH\_AVScreenCapture\_OnPrivacyProtect](capi-native-avscreen-capture-base-h.md#oh_avscreencapture_onprivacyprotect) callback | 隐私保护回调函数。不设置则无法获知隐私保护事件。 |
 | void \*userData | 指向应用提供的自定义数据的指针，在隐私保护回调方法被调用时作为入参回传。 |
 
 **返回：**

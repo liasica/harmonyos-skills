@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-presentin
 title: 显示地图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示地图
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:44+08:00
+scraped_at: 2026-09-25T07:07:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d864c58338b67846870bcce9872cd2f5d40318ffa5c4816f9aded572b7ac6bcc
+content_hash: sha256:c6711d364bb323c459dabdf0c7e13dfd24fe002e047ec32973233fbcc1ec59ea
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:d864c58338b67846870bcce9872cd2f5d40318ffa5c4816f9aded572b7a
 
 本章节将向您介绍如何使用地图组件[MapComponent](../harmonyos-references/map-mapcomponent.md#mapcomponent)和[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)呈现地图，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/jSjpc8ApReOCOsiCjveKMw/zh-cn_image_0000002769331453.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/u0RuSyLrQRuq8i4HZmdV9A/zh-cn_image_0000002743220012.jpg "点击放大")
 
 ## 接口说明
 
@@ -112,7 +112,7 @@ content_hash: sha256:d864c58338b67846870bcce9872cd2f5d40318ffa5c4816f9aded572b7a
 
    如果没有成功加载地图，请参见[地图不显示](map-faq-1.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/HRKBqfAmQZ6onjfvj-w-Hw/zh-cn_image_0000002769451315.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Kee29iiVTZ2AERiGTGXTxA/zh-cn_image_0000002772739265.jpg "点击放大")
 
 ### 设置地图属性
 
@@ -145,7 +145,7 @@ content_hash: sha256:d864c58338b67846870bcce9872cd2f5d40318ffa5c4816f9aded572b7a
 1. 设置mapType，[切换地图类型](map-type.md)章节中有详细讲解。
 2. 设置myLocationControlsEnabled，展示我的位置按钮。
 
-   在mapOptions中设置myLocationControlsEnabled属性为true，可展示我的位置按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/B5XUAGQIThexj7YqPUFW0Q/zh-cn_image_0000002739891984.png)，显示效果如下图所示。
+   在mapOptions中设置myLocationControlsEnabled属性为true，可展示我的位置按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/vJXsZRe5SMWCagliZrFFcQ/zh-cn_image_0000002772899149.png)，显示效果如下图所示。
 
    也可通过调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的方法展示我的位置按钮，详情见[显示我的位置](map-location.md)章节。
 
@@ -162,7 +162,7 @@ content_hash: sha256:d864c58338b67846870bcce9872cd2f5d40318ffa5c4816f9aded572b7a
    };
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Sk9S6jO9SVyiwaJ388EvAA/zh-cn_image_0000002739732106.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/lXARlNepRIOcR7pwK2QbJA/zh-cn_image_0000002743379900.jpg "点击放大")
 3. 展示比例尺。
 
    在mapOptions中设置scaleControlsEnabled属性为true，可展示比例尺，显示效果如下图所示。
@@ -180,7 +180,7 @@ content_hash: sha256:d864c58338b67846870bcce9872cd2f5d40318ffa5c4816f9aded572b7a
    };
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/NoO1tzOSS16xaFNVszpsdw/zh-cn_image_0000002769331455.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/YhqktWLySPu-g_zRso9XMQ/zh-cn_image_0000002743220014.jpg "点击放大")
 
 ### 开启3D建筑图层
 
@@ -192,7 +192,7 @@ this.mapController.setBuildingEnabled(true);
 
 显示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/x2ldO3FDRZ6Rm37TmD8uwA/zh-cn_image_0000002769451317.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Xr-5fah7QFuWw0XZhCERvg/zh-cn_image_0000002772739267.jpg "点击放大")
 
 ### 地图前后台切换
 
@@ -245,7 +245,7 @@ this.mapOptions = {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/f5XMt3ycTzKZ4vv0TPoJmg/zh-cn_image_0000002739891986.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/0wNcW53NT9ycr4Y_3sLncg/zh-cn_image_0000002772899151.jpg "点击放大")
 
 方式二：创建地图后
 
@@ -280,7 +280,7 @@ this.mapOptions = {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/t6h7yMuoRACe8y60Ozmcmg/zh-cn_image_0000002739732108.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/UzMpmw4OR3mGY_Hh7y6rug/zh-cn_image_0000002743379902.jpg "点击放大")
 
 方式二：创建地图后
 
@@ -395,13 +395,13 @@ let result: boolean = this.mapController.isSphereEnabled();
 
 显示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/0xCVrypzT2C_pFSKdzRjZQ/zh-cn_image_0000002769331457.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/X5yYoB4DQ9egYUzrT_qXGA/zh-cn_image_0000002743220016.jpg "点击放大")
 
 ### 开启城市灯光效果
 
 调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[setSphereEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#setsphereenabled-2)(enabled: boolean, animateDuration: number, cityLight: boolean)方法开启城市灯光效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/QIpW3qEBSEOkamr5dHdkLg/zh-cn_image_0000002769451319.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/1fYeR0b6TAWKvSrXY_wv8g/zh-cn_image_0000002772739269.jpg "点击放大")
 
 ### 3D地球背景替换
 
@@ -423,4 +423,4 @@ let mSphereOptions: mapCommon.SphereParams =
 await this.mapController.setSphereMapEnabled(true, mSphereOptions);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/uvRyXAARR4uTV4XBPLDcXA/zh-cn_image_0000002739891988.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/2xiww_l2SS-V_zgGtm_Isw/zh-cn_image_0000002772899153.jpg "点击放大")

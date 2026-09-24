@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: form开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > form开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:42+08:00
+scraped_at: 2026-09-25T07:06:35+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:8352e59d2d650473125b1aa1ff4b155a25111b676a065c9fe3ccee0b70503121
+content_hash: sha256:50a348f3c685e4e697a04d873030d81e4f23951ea8026a0096c775f17ee2aa3f
 ---
 
 form是一个表单容器，支持容器内[Input](../harmonyos-references/js-components-basic-input.md)组件内容的提交和重置。具体用法请参考[form API](../harmonyos-references/js-components-container-form.md)。
@@ -35,7 +35,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/347FLexBR7C3FAShKmth1Q/zh-cn_image_0000002769330359.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/pzTEuaBSR0icaWxAdqt-rA/zh-cn_image_0000002743218918.png)
 
 ## 实现表单缩放
 
@@ -72,7 +72,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/WWFkS7gpQ06gJ05GENO0wg/zh-cn_image_0000002769450221.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/N-lhl8WXR6uec8F3uVe4VQ/zh-cn_image_0000002772738171.gif)
 
 ## 添加响应事件
 
@@ -134,7 +134,7 @@ export default{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/BPsNdVFKTweoah4EiFkufg/zh-cn_image_0000002739890890.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/iXYTx6K8QMeS1ZjvcuvisQ/zh-cn_image_0000002772898055.gif)
 
 ## 场景示例
 
@@ -213,4 +213,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/jWK6GCPXQmGdS7mcS0aJwA/zh-cn_image_0000002739731012.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ZNiZDwevRkq18Y_Lhpac6g/zh-cn_image_0000002743378806.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-decodin
 title: Surface模式解码视频的播放控制
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > Surface模式解码视频的播放控制
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:21+08:00
+scraped_at: 2026-09-25T07:07:22+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:ee08acae65690fc22d9c628d84fc3882eb42ced2907d6bd6a124e17d9d79e473
+content_hash: sha256:942c01388b927e04532b1a8cc84e0d12bd52c16d747beb5b1fceb1b7f0a61564
 ---
 
 ## 概述
@@ -41,13 +41,13 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 3. 初始化解码器，设置NativeWindow等参数后启动解码器。
 4. 创建解码输入和输出子线程，启动解码播放流程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/j8qa-WsST9q8WcWC1yFQOA/zh-cn_image_0000002739731588.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/XS_cwqZiQpm6xNUUfyXEtw/zh-cn_image_0000002743379382.png)
 5. 输入子线程通过[OH\_AVCodecCallback](../harmonyos-references/capi-codecbase-oh-avcodeccallback.md)中的OnNeedInputBuffer异步回调函数指针获取可用的AVBuffer后，从解封装器中读取视频数据提交给解码器；实现向解码器输入待解码的视频数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/XWk1ko_RRgWXy9w6UymbCg/zh-cn_image_0000002769330937.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/D9h-XAk5QZiUroi7F60jVg/zh-cn_image_0000002743219496.png)
 6. 解码输出子线程通过OnNeedOutputBuffer拿到解码后的帧数据，进行[音画同步](audio-video-synchronization.md)处理后，通知解码器在Surface上完成渲染。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/s427steuRDK5kI4u_Lygyw/zh-cn_image_0000002769450799.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/7GmwXpcvTtCQcgxo00_yTQ/zh-cn_image_0000002772738749.png)
 
 ### 开发步骤
 
@@ -195,7 +195,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 
    在Native侧可通过[OH\_NativeWindow\_NativeWindowSetScalingModeV2()](../harmonyos-references/capi-external-window-h.md#oh_nativewindow_nativewindowsetscalingmodev2)接口设置XComponent的画面渲染缩放模式，通过设置[OHScalingModeV2](../harmonyos-references/capi-external-window-h.md#ohscalingmodev2)参数可选择按视频比例缩放画面播放或拉伸缩放以匹配视频窗口大小。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/K0RW6Oz_QqK_AO-34mw3Ug/zh-cn_image_0000002739891468.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Pvz1XcwGSyCMOWDr8FWxFQ/zh-cn_image_0000002772898633.png)
 
 ### 开发步骤
 
@@ -246,7 +246,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 
 暂停播放通过阻塞输入和输出子线程实现。阻塞后输入子线程停止提交数据到解码器，输出子线程停止向Surface提供视频帧数据，达到暂停播放的效果。继续播放则是取消输入和输出子线程的阻塞状态，从而恢复播放状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/wS6Ziuf6RVSBuB_7Z9DEjQ/zh-cn_image_0000002739731590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/T1wa42YYRjqVZfbpIdiUmw/zh-cn_image_0000002743379384.png)
 
 ### 开发步骤
 
@@ -322,7 +322,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 
 除跳转到指定时间的上一个关键帧外，也可以选择其它跳转模式（例如跳转到下一个关键帧），具体可参考[OH\_AVSeekMode](../harmonyos-references/capi-native-avcodec-base-h.md#oh_avseekmode)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Pwk3vof2RVWsUHpw5KOiZg/zh-cn_image_0000002769330939.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/cjMGMMh2SSOIq6NWJKOE5Q/zh-cn_image_0000002743219498.png)
 
 ### 开发步骤
 
@@ -395,7 +395,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 2. 使用解封装器seek到首帧，即时间点为0的位置。
 3. 从解封装器中拿到首帧数据，实现循环播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/-J5ote7PTZGlEdt8q0lnCQ/zh-cn_image_0000002769450801.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/cuLHH6zvRZ-e2-UX5NV6lA/zh-cn_image_0000002772738751.png)
 
 ### 开发步骤
 
@@ -449,7 +449,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 
 先设置音频播放速度，音频帧渲染速度变化后，视频帧根据[音画同步](audio-video-synchronization.md)功能，进行同步追帧，实现倍速播放效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/r9bEDqdMRx2zGgaE1ql6qg/zh-cn_image_0000002739891470.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/nA8Qu5lgRsaH0s2Gog10Pg/zh-cn_image_0000002772898635.png)
 
 ### 开发步骤
 
@@ -505,7 +505,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 2. 释放当前视频的解码资源，包括解码器和解封装器。
 3. 使用切换后的视频重新创建解码资源和解码子线程，具体请参考视频播放章节的[实现原理](video-decoding-play-remote.md#视频播放实现原理)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/zU33MaLNRmu4_H1kal2dSQ/zh-cn_image_0000002739731592.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/aAFHgxAqR8-ye7a324gnRA/zh-cn_image_0000002743379386.png)
 
 ### 开发步骤
 

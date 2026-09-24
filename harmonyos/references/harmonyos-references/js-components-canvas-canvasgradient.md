@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: CanvasGradient对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > CanvasGradient对象
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:43+08:00
+scraped_at: 2026-09-25T07:10:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:86ba606ed2de6a5fccef24a03e909023111877872d7411b0eddff561396e87d9
+content_hash: sha256:b405b68dd56e2fdee6bc6f2d9e7d0c8447efc984a632857a35283b52942e4635
 ---
 
 **说明** 
@@ -52,4 +52,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/NnYnxGcAQfqaptXcuPxVYg/zh-cn_image_0000002769332863.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/xk-811rFQbSZ_MmgXMN4Hg/zh-cn_image_0000002772900561.png)

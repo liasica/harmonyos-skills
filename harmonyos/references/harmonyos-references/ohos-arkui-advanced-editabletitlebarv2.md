@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: EditableTitleBarV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > EditableTitleBarV2
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:37+08:00
+scraped_at: 2026-09-25T07:10:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4292b2951503742344bd6012cdbe5f561adbe96d2ddcf20b5d2a2ac26c370ee8
+content_hash: sha256:601e7b7af4b8c25de70c20fe820ebdd8d014a753162068478e821e3a34a09f07
 ---
 
 编辑型标题栏，适用于多选界面或内容编辑界面，一般采取左叉右勾的形式。
@@ -548,7 +548,7 @@ struct EditableTitleBarV2Demo01 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/XjgenwtDTii1eKs3g4qk9w/zh-cn_image_0000002739893254.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/jjfK4YF9QeehFdXd-u7n9Q/zh-cn_image_0000002743221282.png)
 
 ### 示例2（头像与背景模糊标题栏）
 
@@ -696,7 +696,7 @@ struct EditableTitleBarV2Demo02 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/-G9zPK6ERje-bAJunUZ6HQ/zh-cn_image_0000002739733376.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/eBcvIsDkSguo5K6AQU-BCw/zh-cn_image_0000002772740537.png)
 
 ### 示例3（右侧自定义按钮播报）
 
@@ -777,7 +777,7 @@ struct EditableTitleBarV2Demo03 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/mYP5qxrZTmmXU6t5qqrtxw/zh-cn_image_0000002769332725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/DeDkHyhnQxatTN5ACPBuDg/zh-cn_image_0000002772900423.png)
 
 ### 示例4（左侧图标设置为默认焦点）
 
@@ -814,7 +814,7 @@ struct EditableTitleBarV2Demo04 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/z2O9ClOISMefhb_80JyfOg/zh-cn_image_0000002769452587.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/NbJ_m02CTv-ba5M4z55FtQ/zh-cn_image_0000002743381172.png)
 
 ### 示例5（右侧自定义图标设置为默认焦点）
 
@@ -874,7 +874,7 @@ struct EditableTitleBarV2Demo05 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/6Pbdz-n4QvioeEsGtnqPgw/zh-cn_image_0000002739893256.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/BjPZ2sFLTE-KaDpyZeM89Q/zh-cn_image_0000002743221284.png)
 
 ### 示例6（设置Symbol类型图标）
 
@@ -963,4 +963,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/qdQw1wC3TCK9_6hP49AB4w/zh-cn_image_0000002739733378.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/0M8j2M6OSVOUp075vE7TWg/zh-cn_image_0000002772740539.png)

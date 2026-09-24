@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-
 title: FAST
 breadcrumb: API参考 > 系统 > 基础功能 > FAST Kit（算法加速服务） > C API > 模块 > FAST
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:06+08:00
+scraped_at: 2026-09-25T07:12:19+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:7fd47882e243596a84742b5339cd720d839ade1935eee166174f34b9a37ae281
+content_hash: sha256:4c418434358e9d8b1572595a2a9d6393b3ad5c3bbbdb1bab03b4af0ec23a89a8
 ---
 
 ## 概述
@@ -297,7 +297,7 @@ typedef struct FAST_Poly FAST_Poly
 
 **描述**
 
-定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/s-Tqdw9IRFCpNPeS_QOfBA/zh-cn_image_0000002769333179.png)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
+定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/M4RVb6CgT1ePLZqA6IER4g/zh-cn_image_0000002772900877.png)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
 
 **起始版本：** 26.0.0
 
@@ -755,7 +755,7 @@ const uint32_t FAST_MAX_FFT_LOG2N = 16;
 
 **描述**
 
-FFT支持的最大点数N对应的以2为底的对数值。即FAST\_MAX\_FFT\_LOG2N=![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/DGh-c75SRB2r3dG89Vtqag/zh-cn_image_0000002769453041.png)，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
+FFT支持的最大点数N对应的以2为底的对数值。即FAST\_MAX\_FFT\_LOG2N=![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/AW_kQCfhSP-0Gcnzsx_QFQ/zh-cn_image_0000002743381626.png)，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
 
 **起始版本**：26.0.0
 

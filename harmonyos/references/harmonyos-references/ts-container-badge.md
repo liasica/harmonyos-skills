@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Badge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Badge
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:31+08:00
+scraped_at: 2026-09-25T07:10:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1191bd111aa5fce3746432dc021f7657e13ea52a4e8539189d1b4d9153fc7e07
+content_hash: sha256:8f4a7cb61373c0898bd90b6801d47ee7f1cb9ef0a47d24f322a73ded570c5a55
 ---
 
 信息标记容器组件，可以附加在单个组件上用于信息提醒。支持数字、字符串和圆点三种标记形式，可自定义标记样式（文本颜色、大小、标记颜色和大小）和显示位置。适用于需要提示用户有新消息或未读消息的场景，例如未读消息计数、新功能提示等，帮助用户快速识别和关注重要信息，提升用户体验。
@@ -313,7 +313,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/6jrCqh3dQpCVjz2ShF8OGg/zh-cn_image_0000002739733170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/8h2VWmc-TeigobOCH_C3UQ/zh-cn_image_0000002743380964.png)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -350,7 +350,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/ZkBishpoQiG3x6q4Svl3gQ/zh-cn_image_0000002769332519.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/_vqWEcWAS0iD3wA1Tw1QZQ/zh-cn_image_0000002743221078.gif)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -400,4 +400,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/e6IvqpICTVawYeNUgF05gg/zh-cn_image_0000002769452381.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/_0I9ZQqIQseoudMH2WeEOQ/zh-cn_image_0000002772740333.png)

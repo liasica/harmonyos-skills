@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NativeGestureAPI_1
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NativeGestureAPI_1
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:34e7fe6f746503573ce80b331d93f9201fe784b3d0c920f90b7dfc4d97c27580
+scraped_at: 2026-09-25T07:10:47+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:725024e44f0204ae515a17c8a87b666e15b341fc2dbb8cb087193d44e93b8f2f
 ---
 
 ```c
@@ -83,7 +83,7 @@ ArkUI_GestureRecognizer* (*createTapGesture)(int32_t countNum, int32_t fingersNu
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkUI\_GestureRecognizer](capi-arkui-nativemodule-arkui-gesturerecognizer.md)\* | 返回创建的长按手势指针，可用于后续绑定节点、注册回调或管理长按手势识别。 |
+| [ArkUI\_GestureRecognizer](capi-arkui-nativemodule-arkui-gesturerecognizer.md)\* | 返回创建的敲击手势指针，可用于后续绑定节点、注册回调或管理敲击手势识别。 |
 
 ### createLongPressGesture()
 
@@ -117,7 +117,7 @@ ArkUI_GestureRecognizer* (*createLongPressGesture)(int32_t fingersNum, bool repe
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkUI\_GestureRecognizer](capi-arkui-nativemodule-arkui-gesturerecognizer.md)\* | 返回创建的敲击手势指针，可用于后续绑定节点、注册回调或管理敲击手势识别。 |
+| [ArkUI\_GestureRecognizer](capi-arkui-nativemodule-arkui-gesturerecognizer.md)\* | 返回创建的长按手势指针，可用于后续绑定节点、注册回调或管理长按手势识别。 |
 
 ### createPanGesture()
 

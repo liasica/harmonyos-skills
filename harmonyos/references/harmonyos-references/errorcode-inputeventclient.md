@@ -3,24 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 输入事件注入错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > 错误码 > 输入事件注入错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e1169d579413c280c2a80cde150703afa1067f02d9f2758c27d621ed46fabcde
+scraped_at: 2026-09-25T07:12:23+08:00
+doc_updated_at: 2026-09-24
+content_hash: sha256:15ed658544bfb7bdb032d8bce9cb616bb48dbbc65cb137da5b89f5ae907c9458
 ---
 
 **说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)。
 
-## 3800001 输入服务异常
+## 3800001 多模输入服务内部错误
 
 **错误信息**
 
-Input service exception.
+Input service exception. Possible causes: 1. Memory allocation failure. 2. Thread busy. 3. Service terminated abnormally. 4. Other unexpected errors. Try again later.
 
 **错误描述**
 
-当调用输入事件注入相关接口时，如果输入服务内部发生异常，会产生此错误码。
+多模输入服务内部错误。
 
 **可能原因**
 
@@ -37,7 +37,7 @@ Input service exception.
 
 **错误信息**
 
-状态错误，根据具体接口和场景有以下不同情况。
+Status error. The specific scenario varies by interface and context.
 
 **错误描述**
 
