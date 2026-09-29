@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 保存图片时，预览图显示空白
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 保存图片时，预览图显示空白
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:614deb05176074c816f84781510ba049ae6bd14bfa3c10da3cf59be68a240c66
+scraped_at: 2026-09-30T07:43:17+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:3b918260d90d517e6673209cf4a433834a81059e1af123028a5d5f23c73f550c
 ---
 
 ## 问题现象
 
 保存图片时，显示的预览图是空白的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/AMcYMjcCQ1Gu1DxKgGMG7Q/zh-cn_image_0000002629059030.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/J8eXf81LQ_WbtDb35xAYEg/zh-cn_image_0000002746875190.png "点击放大")
 
 ## 背景知识
 
 * [showAssetsCreationDialog](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#showassetscreationdialog12)：调用接口拉起保存确认弹窗。用户同意保存后，返回已创建并授予保存权限的uri列表，该列表永久生效，应用可使用该uri写入图片/视频。如果用户拒绝保存，将返回空列表。
-* [fileUri.getUriFromPath](../harmonyos-references/js-apis-file-fileuri.md#fileurigeturifrompath)：通过传入的路径path生成应用自己的uri；将path转uri时，路径中的中文及非数字字母的特殊字符将会被编译成对应的ASCII码，拼接在uri中。
+* [fileUri.getUriFromPath](../harmonyos-references/js-apis-file-fileuri.md#fileurigeturifrompath)：通过传入的路径path生成应用自己的uri；将path转uri时，路径中的中文及非数字字母的特殊字符将会被编码成对应的ASCII码，拼接在uri中。
 * 沙箱是指用于网络编程的虚拟环境，可用于测试应用程序，其运行结果不会影响系统状态。[沙箱路径](../harmonyos-guides/app-sandbox-directory.md#应用沙箱目录与应用沙箱路径)是指应用程序在沙箱中的具体路径。
 
 ## 问题定位

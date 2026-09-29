@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/standard-pure
 title: 纯净
 breadcrumb: 指南 > 应用体验建议 > 应用安全隐私体验建议 > 纯净
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:58:09+08:00
-doc_updated_at: 2026-01-19
+scraped_at: 2026-09-30T07:35:46+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:2b39dfe536dc44e0692a9a89e2ba9b49dbb5726461d69f92f61b00e8a0aebbc0
 ---
 

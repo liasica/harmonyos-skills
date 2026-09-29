@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 历史工程转换为端云一体化开发工程
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 创建端云一体化开发工程 > 历史工程转换为端云一体化开发工程
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:46:54+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:a45e354c9b3825807795336fdcc9cd86fdc764f5368dbe6b1c8eaffddb2fb175
+scraped_at: 2026-09-30T07:35:21+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:41704003cb5396c0a23c8992cbb4f8065af54ab2c6bbf38833d0c44e8ad545d2
 ---
 
 如您此前已经创建了非端云一体化开发工程，希望直接转换为端云一体化开发工程，可执行如下操作：
@@ -13,9 +13,9 @@ content_hash: sha256:a45e354c9b3825807795336fdcc9cd86fdc764f5368dbe6b1c8eaffddb2
 1. [创建一个端云一体化开发工程](agc-harmonyos-clouddev-devproject.md)，其中工程的类型（HarmonyOS应用或元服务）必须与您历史工程类型一致，同时Bundle name必须指定为您历史工程的Bundle name。在创建端云一体化开发工程过程中，该Bundle name会关联到AGC应用、项目等云端资源。
 2. 打开创建的端云一体化开发工程，右击端开发工程“Application”，选择“Open In > Explorer”，打开工程文件所在的目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/VcTIGATUQH-r4uFxcADunA/zh-cn_image_0000002214858725.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/1OgWBQyRRt2679Ly7kRHRg/zh-cn_image_0000002214858725.png)
 3. 删除端云一体化开发工程的端侧工程目录“Application”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/0ig6eLMrThuqmZNHpe2RVw/zh-cn_image_0000002277950390.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/WRN0r61PRWueQXQuqNZ_CA/zh-cn_image_0000002277950390.png)
 4. 将历史工程目录（如“MyApplication30”）拷贝至[步骤3](agc-harmonyos-project-migration.md#li104559101267)的端云一体化开发工程目录下，并改名为“Application”。
 5. 重新打开端云一体化开发工程，可发现历史工程的端侧代码已迁移至端云一体化开发工程。

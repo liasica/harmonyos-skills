@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-e
 title: 应用性能体验建议
 breadcrumb: 指南 > 应用体验建议 > 应用性能体验建议
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:58:01+08:00
-doc_updated_at: 2026-01-19
+scraped_at: 2026-09-30T07:35:44+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:c434481e93b1190561974bed24141c1b0629250b83f113fa395d6163fa9b02d6
 ---
 

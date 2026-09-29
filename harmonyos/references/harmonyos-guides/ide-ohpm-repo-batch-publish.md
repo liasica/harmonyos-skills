@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo batch_publish
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo batch_publish
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:32+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:76ad318b403bd17e6b364e04950127d3aacbb9a7a8c277ef455464107f58b8f0
+scraped_at: 2026-09-30T07:35:20+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:82c603bb63418e379146069e5994a2882b0a22b04fc2af649c5247e257b99827
 ---
 
 批量上传包文件。
@@ -42,7 +42,7 @@ ohpm-repo batch_publish <zip_file>
 
 在batch\_publish命令后面配置--force，进行批量上传时某个包的组织在ohpm-repo中不存在，将选取一位管理员作为组织负责人自动创建组织。
 
---target-repo
+### --target-repo
 
 * 默认值：无
 * 类型：string

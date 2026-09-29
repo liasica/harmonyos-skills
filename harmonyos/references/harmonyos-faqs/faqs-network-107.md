@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-10
 title: TLSSocket中on('close')和on('error')事件的触发条件
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > TLSSocket中on('close')和on('error')事件的触发条件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6e7546c0518753669fd9e841288a4be53ef33ad88cc3f82ec14ff1c33e983daf
+scraped_at: 2026-09-30T07:43:30+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:d996a091af2a1dd490c9f15254329d81d78fa86072c46b57e7f1b51ebf0032a9
 ---
 
 ## 问题现象
@@ -41,7 +41,7 @@ Q：通过socket.TCPSocket的connect连接指定ip和port，API返回错误码[2
 
 A：设备和手机要连接在同一个网段。
 
-Q：频繁触发Socket发送数据，提示2301004错误，error回调返回error.code=4。
+Q：频繁触发Socket发送数据，提示[2301004](../harmonyos-references/errorcode-net-socket.md#section2301004-系统调用中断)错误，error回调返回error.code=4。
 
 A：发送频率比较高需要使用多线程，而TaskPool和Worker的作用就是为应用程序提供一个多线程的运行环境。也可以通过合并数据，降低发送频率。
 

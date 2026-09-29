@@ -1,6 +1,6 @@
 # FAQ（harmonyos-faqs）
 
-共 4592 篇文档。
+共 4590 篇文档。
 
 - [常见问题](app-framework-tablet-faqs.md)
 - [常见问题](computer-faqs.md)
@@ -37,7 +37,7 @@
 - [蓝牙传输网络图片](faq-basics-service-kit-37.md)
 - [如何显示图片验证码](faq-basics-service-kit-38.md)
 - [应用在后台如何接收公共事件](faq-basics-service-kit-39.md)
-- [如何实现仅允许同应用内粘贴功能](faq-basics-service-kit-40.md)
+- [如何限制剪贴板数据的复制与粘贴范围](faq-basics-service-kit-40.md)
 - [request.agent是否可以不发送结果通知](faq-basics-service-kit-41.md)
 - [zip.deflate压缩数据后，如何获取到编码后数据长度](faq-basics-service-kit-42.md)
 - [如何判断应用运行在隐私空间](faq-basics-service-kit-43.md)
@@ -226,7 +226,7 @@
 - [在设置中修改字体大小和显示缩放大小后，应用页面布局异常](faqs-ability-140.md)
 - [如何监听应用主动终止进程或用户主动清理](faqs-ability-141.md)
 - [如何判断应用程序是否安装](faqs-ability-142.md)
-- [如何判断权限状态是首次申请还是用户已拒绝](faqs-ability-143.md)
+- [申请用户授权拒绝后二次申请授权方案](faqs-ability-143.md)
 - [如何设置应用内字体是否跟随系统变化](faqs-ability-144.md)
 - [生产和调试签名的appIdentifier/fingerprint是否相同](faqs-ability-145.md)
 - [UIAbility组件各场景生命周期及监听](faqs-ability-146.md)
@@ -3889,7 +3889,6 @@
 - [目标IP是公司内网，请求失败，异常信息：Couldn't connect to server](faqs-network-123.md)
 - [解决调用mdns.removeLocalService移除mdns服务报错401问题](faqs-network-124.md)
 - [如何实现TcpSocket断开重连](faqs-network-125.md)
-- [HarmonyOS下VPN的DNS解析顺序及域名拦截失效的处理方案](faqs-network-126.md)
 - [如何通过Rcp跳过HTTPS证书验证以及传递请求体实现文件下载](faqs-network-127.md)
 - [如何在使用移动流量时进行相应提示](faqs-network-128.md)
 - [如何实现一键检测网络情况功能](faqs-network-129.md)
@@ -3898,7 +3897,6 @@
 - [DNS域名解析错误](faqs-network-131.md)
 - [如何定位WebSocket连接异常断开](faqs-network-132.md)
 - [下载文件时，下载代理提示已下载完成，并且有实际下载内容，但是保存文件时为空](faqs-network-133.md)
-- [应用切换到后台后VPN功能保活的解决方案](faqs-network-134.md)
 - [VPN接入状态下，应用访问内网资源的流量未路由至VPN链路](faqs-network-135.md)
 - [如何解决LocalSocket创建报错](faqs-network-136.md)
 - [HTTP网络请求extraData参数问题](faqs-network-137.md)

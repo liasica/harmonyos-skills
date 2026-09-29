@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-featur
 title: 系统特性与基础功能
 breadcrumb: 指南 > 应用体验建议 > 应用基础功能和兼容性体验建议 > 系统特性与基础功能
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:58+08:00
-doc_updated_at: 2026-01-19
+scraped_at: 2026-09-30T07:35:44+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:0fb69088ea0ac24842df3752ad01456e1605c11d0311002cae28fbae8b5b72c5
 ---
 

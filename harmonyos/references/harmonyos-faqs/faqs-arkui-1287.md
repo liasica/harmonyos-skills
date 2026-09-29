@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1287
 title: 自定义键盘实现密码保险箱效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义键盘实现密码保险箱效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8c2cc6699fdb31019fd049973998d5d4e31df14d3391198b9627fa13362b3c1f
+scraped_at: 2026-09-30T07:42:30+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:30ae45c1d30fe6f56cfbc2b930bb1a0c95ff741dfb9304aed320d07f011a2bc5
 ---
 
 ## 问题现象
@@ -16,48 +16,48 @@ content_hash: sha256:8c2cc6699fdb31019fd049973998d5d4e31df14d3391198b9627fa13362
 
 [密码保险箱](../harmonyos-guides/passwordvault-save-acc-password.md)功能在应用的登录、注册、修改密码等场景具备自动保存用户名和密码的能力。触发条件及注意事项：
 
-* 已设置锁屏密码，并且开启密码保险箱中“自动填充和保存”开关。
+* 已设置锁屏密码，并且开启密码保险箱中"自动填充和保存"开关。
 * 界面中TextInput输入框组件的enableAutoFill属性的值应为true（默认为true）。
-* 密码保险箱的自动保存功能只适用用户名和密码保存场景，在界面中必须同时存在用户名和密码的TextInput输入框组件。即用户名输入框应设置type属性为InputType.USER\_NAME。
+* 密码保险箱的自动保存功能只适用用户名和密码保存场景，在界面中**必须同时存在**用户名和密码的TextInput输入框组件。即用户名输入框应设置type属性为InputType.USER\_NAME。
 * 密码输入框应设置type属性为InputType.Password或InputType.NEW\_PASSWORD。具体类型请参考[InputType枚举说明](../harmonyos-references/ts-basic-components-textinput.md#inputtype枚举说明)。
 
 ## 解决方案
 
 密码保险箱只能通过系统键盘来触发，可以将自定义键盘和系统键盘绑定，再将系统键盘隐藏，以此来实现。具体步骤如下：
 
-1. 创建自定义数字键盘。
+1. 创建自定义数字键盘。示例代码如下：
 
    ```ts
    // 自定义键盘组件
-   @Builder
-   CustomKeyboardBuilder() {
-     Column() {
-       Button('X').onClick(() => {
-         // 关闭自定义键盘
-         this.controller.stopEditing();
-         this.getUIContext().getFocusController().clearFocus();
-       });
-       Grid() {
-         ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
-           GridItem() {
-             Button(item + '')
-               .width(110)
-               .backgroundColor('#ff567fd2')
-               .onClick(() => {
-                 this.reserveAccount += item;
-               });
-           };
+     @Builder
+     CustomKeyboardBuilder() {
+       Column() {
+         Button('X').onClick(() => {
+           // 关闭自定义键盘
+           this.controller.stopEditing();
+           this.getUIContext().getFocusController().clearFocus();
          });
-       }
-       .maxCount(3)
-       .columnsGap(10)
-       .rowsGap(10)
+         Grid() {
+           ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
+             GridItem() {
+               Button(item + '')
+                 .width(110)
+                 .backgroundColor('#ff567fd2')
+                 .onClick(() => {
+                   this.reserveAccount += item;
+                 });
+             };
+           });
+         }
+         .maxCount(3)
+         .columnsGap(10)
+         .rowsGap(10)
+         .padding(5);
+       }.backgroundColor(Color.Gray)
        .padding(5);
-     }.backgroundColor(Color.Gray)
-     .padding(5);
-   }
+     }
    ```
-2. 用Stack布局将自定义键盘和系统键盘叠加绑定。
+2. 用Stack布局将自定义键盘和系统键盘叠加绑定，参考完整代码示例如下：
 
    ```ts
    import { BusinessError } from '@kit.BasicServicesKit';
@@ -203,3 +203,7 @@ A：出现该问题的原因是TextInput组件需要是点击输入框获取焦�
 Q：HarmonyOS系统上使用系统浏览器登录Web网站个人账号，如何设置会提示是否保存账号密码？
 
 A：在系统浏览器->我的->设置->安全浏览->密码保险箱，设置密码之后，找到自动填充和保存，打开即可，然后在系统浏览器上重新登录Web网站个人账号后，就会出现保存账号和密码的提示。
+
+Q：密码保险箱已开启自动填充和保存，但未弹出系统保存提示框，可能是什么原因？
+
+A：页面跳转时将密码输入框置空会导致无法触发保存功能。密码保险箱在页面跳转时触发自动保存，若跳转前已清空密码输入框的内容，系统无法获取到需要保存的密码，因此不会弹出保存提示框。触发条件及注意事项请参考[账号密码保存](../harmonyos-guides/passwordvault-save-acc-password.md)。

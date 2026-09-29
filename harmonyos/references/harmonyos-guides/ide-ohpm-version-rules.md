@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-vers
 title: OHPM版本号规则
 breadcrumb: 指南 > 编写与调试应用 > 附录 > OHPM版本号规则
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:26+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-09-30T07:35:35+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:6735fe26af0b75e44fb3c95c7e8041418471bee8f3bab7e121be203592035b15
 ---
 

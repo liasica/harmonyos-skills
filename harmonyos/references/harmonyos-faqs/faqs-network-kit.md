@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-ki
 title: 网络（Network）
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network）
 category: harmonyos-faqs
-scraped_at: 2026-09-22T07:15:36+08:00
-doc_updated_at: 2026-09-21
-content_hash: sha256:03891efebc24f1360a4ec805a4c109c48fa0cfdcf5377f9cc24762c73d7634df
+scraped_at: 2026-09-30T07:43:28+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:903b3e7cfd9dec06d1cd44fba2b14ff4e343df77228221cd4b061940f556f206
 ---
 
 * **[http网络请求中extraData支持的数据格式有哪些](faqs-network-1.md)**
@@ -110,7 +110,6 @@ content_hash: sha256:03891efebc24f1360a4ec805a4c109c48fa0cfdcf5377f9cc24762c73d7
 * **[目标IP是公司内网，请求失败，异常信息：Couldn't connect to server](faqs-network-123.md)**
 * **[解决调用mdns.removeLocalService移除mdns服务报错401问题](faqs-network-124.md)**
 * **[如何实现TcpSocket断开重连](faqs-network-125.md)**
-* **[HarmonyOS下VPN的DNS解析顺序及域名拦截失效的处理方案](faqs-network-126.md)**
 * **[如何通过Rcp跳过HTTPS证书验证以及传递请求体实现文件下载](faqs-network-127.md)**
 * **[如何在使用移动流量时进行相应提示](faqs-network-128.md)**
 * **[如何实现一键检测网络情况功能](faqs-network-129.md)**
@@ -118,7 +117,6 @@ content_hash: sha256:03891efebc24f1360a4ec805a4c109c48fa0cfdcf5377f9cc24762c73d7
 * **[DNS域名解析错误](faqs-network-131.md)**
 * **[如何定位WebSocket连接异常断开](faqs-network-132.md)**
 * **[下载文件时，下载代理提示已下载完成，并且有实际下载内容，但是保存文件时为空](faqs-network-133.md)**
-* **[应用切换到后台后VPN功能保活的解决方案](faqs-network-134.md)**
 * **[VPN接入状态下，应用访问内网资源的流量未路由至VPN链路](faqs-network-135.md)**
 * **[如何解决LocalSocket创建报错](faqs-network-136.md)**
 * **[HTTP网络请求extraData参数问题](faqs-network-137.md)**

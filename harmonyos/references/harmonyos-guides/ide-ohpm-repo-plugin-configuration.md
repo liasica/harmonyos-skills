@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 自定义存储插件配置
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义存储插件 > 自定义存储插件配置
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-30T07:35:21+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:504c117b47314b5304de0a6ebac7630600af8775648a181b01a0ca5774aaf4dd
 ---
 

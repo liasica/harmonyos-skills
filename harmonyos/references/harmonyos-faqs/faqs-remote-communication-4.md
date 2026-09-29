@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: rcp请求未正常执行且catch未捕获异常
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > rcp请求未正常执行且catch未捕获异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:485e2c8a2ae187723d29f0f582851cd0e8fb6cb9331a71feed166f79d3ab1a0b
+scraped_at: 2026-09-30T07:43:31+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:1da3813877c1ec8797a8fb9037b16c6eef8c986f1dbda7535f9440db8cdbdbc5
 ---
 
 ## 问题现象
 
 通过rcp访问指定链接，未发现自定义日志打印，catch未捕获异常，程序也未能正常访问链接。
 
-问题代码示例参考如下：
+代码如下：
 
-```screen
+```ts
 import { rcp } from '@kit.RemoteCommunicationKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -54,7 +54,7 @@ session.post(getAccessTokenUrl, JSON.stringify(request))
 
 ## 背景知识
 
-[rcp](../harmonyos-references/remote-communication-rcp.md)访问网络，通过回调获取结果，并使用[Console](../harmonyos-references/js-apis-logs.md) 输出相关内容到控制台。
+[rcp](../harmonyos-references/remote-communication-rcp.md)访问网络，通过回调获取结果，并使用[Console](../harmonyos-references/js-apis-logs.md)输出相关内容到控制台。
 
 其中[Promise](../harmonyos-guides/async-concurrency-overview.md#promise)提供了then、catch、finally方法来注册回调函数，以处理异步操作的成功或失败结果，但是，若调用本身存在问题，不能执行接口，则无法执行回调。
 
@@ -70,7 +70,7 @@ session.post(getAccessTokenUrl, JSON.stringify(request))
 
 使用try-catch捕获post异常，并根据错误码处理。
 
-```screen
+```ts
 import { rcp } from '@kit.RemoteCommunicationKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -108,23 +108,13 @@ struct Transform {
 常见错误码及处理方式如下：
 
 * 场景一：
-  + 错误信息：
-
-    code：[201](../harmonyos-references/errorcode-universal.md)，data：Permission Denied。
-  + 信息分析：
-
-    信息为权限申请失败，通过post接口可知，post需要权限：ohos.permission.INTERNET(如果使用PathPreference的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO)
+  + 错误信息：code：[201](../harmonyos-references/errorcode-universal.md)，data：Permission Denied。
+  + 信息分析：信息为权限申请失败，通过post接口可知，post需要权限：ohos.permission.INTERNET(如果使用PathPreference的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO)
   + 处理方案：在module.json5中配置ohos.permission.INTERNET权限信息。
 * 场景二：
-  + 错误信息：
-
-    code：[10200002](../harmonyos-references/errorcode-utils.md#section10200002-参数解析错误)，message：Syntax Error. Invalid Url string。
-  + 信息分析：
-
-    信息为入参错误，无效的Url链接，可以检查传入的Url参数或者直接使用HarmonyOS浏览器访问，确认Url是否可用。
-  + 处理方案：
-
-    传入正确格式的链接。
+  + 错误信息：code：[10200002](../harmonyos-references/errorcode-utils.md#section10200002-参数解析错误)，message：Syntax Error. Invalid Url string。
+  + 信息分析：信息为入参错误，无效的Url链接，可以检查传入的Url参数或者直接使用HarmonyOS浏览器访问，确认Url是否可用。
+  + 处理方案：传入正确格式的链接。
 
 ## 常见FAQ
 
@@ -144,9 +134,13 @@ Q：rcp网络请求想要实现防止重复请求，除了防抖和节流，有�
 
 A：为避免网络重复请求可以考虑如下方案措施：
 
-1. 客户端及服务端设置请求超时时间，如果在规定时间内没有收到响应，则认为请求失败避免重复发送请求。
-2. 发送请求头中使用唯一标识避免重复请求。
-3. 请求中设置缓存技术，避免重复请求相同的数据。
+1. 客户端及服务端设置请求超时时间，如果在规定时间内没有收到响应，则认为请求失败避免重复发送请求；
+2. 发送请求头中使用唯一标识避免重复请求；
+3. 请求中设置缓存技术，避免重复请求相同的数据；
+
+Q：rcp是否有重试机制，是否会触发重新请求？
+
+A：当前rcp未实现重试机制，无法自动发起重新请求。
 
 ## 总结
 

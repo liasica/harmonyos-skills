@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/experience-su
 title: 体验建议概述
 breadcrumb: 指南 > 应用体验建议 > 体验建议概述
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:16:13+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:ce94e9ffc35d9071e9eac835b7aaea4356277c285a4a64fd3882233a8e27dc8b
+scraped_at: 2026-09-30T07:35:44+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:d592b5aabc6489b34efbc222ae4b7f6923764e82d84ef76469f18d22ed2b71aa
 ---
 
 本文档介绍应用系统资源管理、基础功能和兼容性、稳定性、功耗、性能、安全和UX的核心质量维度在开发阶段和测试阶段需要关注的体验建议。
@@ -25,4 +25,4 @@ content_hash: sha256:ce94e9ffc35d9071e9eac835b7aaea4356277c285a4a64fd3882233a8e2
 说明： 本指南的内容分为【规则】、【建议】两类和【应当】、【不得】、【推荐】三类：
 
 * 【规则】表示规范要求，必须遵从；【建议】表示参考建议，可选遵从。
-* 【应当】表示合规要求，必须遵从；【不得】表示禁止行为，必须遵从、【推荐】表示参考建议，可选遵从参考建议，可选遵从。
+* 【应当】表示合规要求，必须遵从；【不得】表示禁止行为，必须遵从；【推荐】表示参考建议，可选遵从。

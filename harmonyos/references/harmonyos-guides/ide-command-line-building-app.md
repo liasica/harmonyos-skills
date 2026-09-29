@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-l
 title: 搭建流水线
 breadcrumb: 指南 > 命令行工具 > 搭建流水线
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:17+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:04a9a75910ff6d62afda071ef3e0a1a91e463ac79181ad2f055c36d3b3fcdfab
+scraped_at: 2026-09-30T07:35:43+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:b247d0aef4300b14ac396fdedf3f9ac3a50674dee77df7f4997483aab1ad8077
 ---
 
 除了使用DevEco Studio一键式构建应用/元服务外，还可以使用命令行工具来调用Hvigor任务进行构建。通过命令行的方式构建应用或元服务，可用于构建CI（Continuous Integration）流水线，按照计划时间自动化地构建HAP/APP、签名、安装运行等操作。
@@ -48,7 +48,7 @@ content_hash: sha256:04a9a75910ff6d62afda071ef3e0a1a91e463ac79181ad2f055c36d3b3f
    java -version
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/_cU12zxwRPG0odPKVGL8RA/zh-cn_image_0000002701662860.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/wRedKgGlSJqMVrmo06rHig/zh-cn_image_0000002701662860.png)
 
 ### 获取命令行工具
 
@@ -59,7 +59,7 @@ content_hash: sha256:04a9a75910ff6d62afda071ef3e0a1a91e463ac79181ad2f055c36d3b3f
    unzip commandline-tools-linux-x64-5.0.3.XXX.zip
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/hm5iAUXPSa287bLp3hUFmQ/zh-cn_image_0000002731382083.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/NbOT991sSSStSX7dmbkflw/zh-cn_image_0000002731382083.png)
 3. 将解压后所在的路径定义为COMMANDLINE\_TOOL\_DIR，在后续配置Node、hdc、hvigor、ohpm工具环境变量时使用。例如解压在/opt路径下。
 
    ```bash
@@ -87,7 +87,7 @@ content_hash: sha256:04a9a75910ff6d62afda071ef3e0a1a91e463ac79181ad2f055c36d3b3f
    node -v
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/pxY9fzKmTRytcELPbk9Inw/zh-cn_image_0000002731542057.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/M4hXnADGR7OnENazI-nPXg/zh-cn_image_0000002731542057.png)
 
 **说明** 
 
@@ -452,14 +452,16 @@ main
    ```json
    {
      "dependencies": {
-       "pnpm": "8.13.1"
+       "pnpm": "10.28.2"
      }
    }
    ```
 2. 先配置[环境变量](ide-command-line-building-app.md#section159168531288)，再打开[命令行工具](ide-commandline-get.md)，在文件夹下执行npm install命令，会生成node\_modules文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/DqevImlWSLCL3eZFPwflZg/zh-cn_image_0000002731542053.png)
-3. 将node\_modules文件夹和package.json文件拷贝到无网络电脑的C:\Users\*用户名目录*\.hvigor\wrapper\tools下（若当前无该目录，请手动创建）。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Hr55NMRiSNGQz61uEz9C8Q/zh-cn_image_0000002731542053.png)
+3. 26.0.0及以上版本：将node\_modules文件夹和package.json文件拷贝到无网络电脑的C:\Users\*用户名目录*\.hvigor\wrapper\tools\x.x.x下（若当前无该目录，请手动创建），其中x.x.x是步骤一的pnpm版本号。
+
+   26.0.0以下版本：将node\_modules文件夹和package.json文件拷贝到无网络电脑的C:\Users\*用户名目录*\.hvigor\wrapper\tools\下（若当前无该目录，请手动创建）。
 4. 在无网络电脑上执行如下命令，设置npm离线模式：
 
    ```bash
@@ -479,7 +481,7 @@ main
    ```
 2. 打开[命令行工具](ide-commandline-get.md)，在文件夹下执行npm install命令，会生成node\_modules文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/QuIyEjgBQm2yPv_XyCvzww/zh-cn_image_0000002701822784.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/jC1UeKvORVKUtIuFfhgRmw/zh-cn_image_0000002701822784.png)
 3. 将node\_modules文件夹拷贝到无网络电脑的工程根目录下。
 
 ### 安装ohpm依赖插件

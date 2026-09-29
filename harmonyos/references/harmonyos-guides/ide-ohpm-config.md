@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conf
 title: ohpm config
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm config
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:15+08:00
-doc_updated_at: 2026-09-16
+scraped_at: 2026-09-30T07:35:41+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:b7a5da032a39c74350ee007a64477afa23fa654ee9a90d399a0053d3421b8a76
 ---
 

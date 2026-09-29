@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-cli-test-
 title: 命令行测试错误码
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 命令行测试错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:55+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:07f28b9ab1f364202e9e664547d4cdb8e2a2e334fa4bbc2258f1016e0fb11069
+scraped_at: 2026-09-30T07:35:34+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:f522125d3e0f2d328b97660850a424be372dfd7c1797d57c189ba3aa43f4bab5
 ---
 
 ## 00507001 路径不存在
@@ -297,7 +297,7 @@ Testing on C/C++ methods not supported.
 
 **处理步骤**
 
-使用仪器测试。
+如需测试C/C++方法，使用[仪器测试](ide-instrument-test.md)。
 
 ## 00507017 includeHar有相同路径
 

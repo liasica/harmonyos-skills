@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-2
 title: 位置服务支持范围和能力说明
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 位置服务支持范围和能力说明
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:b7b39f66a1c278f8e7be38a6bf220128ac7e16be4f442c0648a41721c194dc5e
+scraped_at: 2026-09-30T07:43:58+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:4ec1ad331e1e0f7ba79f86b71c3c2e6e8b99c4938ea69bc960b795e44b6a0b3e
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:b7b39f66a1c278f8e7be38a6bf220128ac7e16be4f442c0648a41721c19
 
    仅Wearable穿戴设备支持[海外国家/地区](../harmonyos-guides/location-kit-appendix.md#支持的国家地区)，其他设备类型仅支持中国境内（不包含中国香港、中国澳门、中国台湾），如果非穿戴设备在海外/地区使用可能会导致位置信息异常。
 2. 除基础位置信息能力外，支持哪些开放能力？
-   * 审内高精度定位：普通场景下，设备在室内时，使用网络定位，精度较低。开通室内高精度定位能力后，在国内指定的建筑室内，可实现高精度定位，并且可识别设备所在楼层。
+   * 室内高精度定位：普通场景下，设备在室内时，使用网络定位，精度较低。开通室内高精度定位能力后，在国内指定的建筑室内，可实现高精度定位，并且可识别设备所在楼层。
    * 位置语音：开通位置语音能力后，通过单次定位[getCurrentLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)、持续定位[geoLocationManager.on('locationChange')](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageronlocationchange)接口获取位置信息时，可以返回当前位置附近的POI信息。也可以通过[geoLocationManager.getPoiInfo](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetpoiinfo20)接口直接获取当前位置附近的POI信息。
    * Beacon围栏后台唤醒：Beacon围栏是指通过蓝牙Beacon设备和手机应用配合，实现"虚拟围栏"的功能。当用户靠近或离开某个特定的Beacon设备时，手机应用会收到通知。支持应用在后台或者不在线时进出围栏拉起应用。接口API见[geoLocationManager.addBeaconFence](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageraddbeaconfence20)。
    * 获取蓝牙扫描信息：开通该能力后，应用可以扫描获取设备周边的蓝牙设备信息。接口API见[geoLocationManager.on('bluetoothScanResultChange')](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageronbluetoothscanresultchange16)。

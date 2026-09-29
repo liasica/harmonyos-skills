@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/standard-secu
 title: 实现安全
 breadcrumb: 指南 > 应用体验建议 > 应用安全隐私体验建议 > 安全 > 实现安全
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:58:08+08:00
-doc_updated_at: 2026-01-28
-content_hash: sha256:153d4ae2c50f6d6695508812c0c8eb10eddfd2e3723f0a3d090cf7849e9ccba4
+scraped_at: 2026-09-30T07:35:45+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:3d809ee31c59dea7928d7219575e4bebceca2e0de63c80777ee873d23b6039f4
 ---
 
 |  |  |
 | --- | --- |
 | 描述 | 涉及外部开源代码或代码漏洞的情况，须关注代码的安全动态和版本更新情况并及时修复。 |
 | 类型 | 建议 |
-| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机 |
+| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | 无 |
 
@@ -20,7 +20,7 @@ content_hash: sha256:153d4ae2c50f6d6695508812c0c8eb10eddfd2e3723f0a3d090cf7849e9
 | --- | --- |
 | 描述 | 不得在对象实例上直接使用hasOwnPrototypeOf、isPrototypeOf、propertyIsEnumerable方法。 |
 | 类型 | 建议 |
-| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机 |
+| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | 无 |
 
@@ -28,7 +28,7 @@ content_hash: sha256:153d4ae2c50f6d6695508812c0c8eb10eddfd2e3723f0a3d090cf7849e9
 | --- | --- |
 | 描述 | 使用官方推荐版本的API接口，不建议使用系统废弃的API。 |
 | 类型 | 建议 |
-| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机 |
+| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | 无 |
 
@@ -36,7 +36,7 @@ content_hash: sha256:153d4ae2c50f6d6695508812c0c8eb10eddfd2e3723f0a3d090cf7849e9
 | --- | --- |
 | 描述 | 建议应用代码通过官方提供的工具进行混淆，防止攻击者针对性的攻击。 |
 | 类型 | 建议 |
-| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机 |
+| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [ArkGuard源码混淆工具](source-obfuscation.md)开发指南、[DevEco Studio使能代码混淆](ide-build-obfuscation.md)指南 |
 
@@ -44,7 +44,7 @@ content_hash: sha256:153d4ae2c50f6d6695508812c0c8eb10eddfd2e3723f0a3d090cf7849e9
 | --- | --- |
 | 描述 | 建议开启安全编译选项，增加应用分析逆向难度。 |
 | 类型 | 建议 |
-| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机 |
+| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | 无 |
 
@@ -52,7 +52,7 @@ content_hash: sha256:153d4ae2c50f6d6695508812c0c8eb10eddfd2e3723f0a3d090cf7849e9
 | --- | --- |
 | 描述 | 不向可执行函数传递不可信数据。 |
 | 类型 | 建议 |
-| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机 |
+| 适用设备 | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | 无 |
 

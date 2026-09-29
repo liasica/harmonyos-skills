@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-58
 title: 点击图片时如何判断点击的位置是否为透明区域
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 点击图片时如何判断点击的位置是否为透明区域
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-09-30T07:43:42+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:859a9195653dc6f9fbbd66d8a75c8716ff6bf6aaf4b751ce51d78706aeef570e
 ---
 

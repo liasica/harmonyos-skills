@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm--ver
 title: ohpm --version
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm --version
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:16+08:00
+scraped_at: 2026-09-30T07:35:41+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:e818b1a5889713c2eb815133ec9d04e0f81e3d49a0dad30b57033325d9a76a70
+content_hash: sha256:a134d67216d87809698e7e64f0fbf370a6eb556332f18e8773086c0765078828
 ---
 
 查询 ohpm cli 安装版本。
@@ -31,4 +31,4 @@ ohpm -v
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/rVnqNHJHT6KVlbLcalpH7w/zh-cn_image_0000002701663158.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/KGCCij_PTACGHaSseB9UZQ/zh-cn_image_0000002701663158.png "点击放大")

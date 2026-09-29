@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo install
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo install
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:46:52+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:05c8533f98a11e50b3ef02ddd698a533e70fb3e8195485c8f7bd8ced6f87d4a0
+scraped_at: 2026-09-30T07:35:20+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:f7e5db561501d5a8c42f38e1d60c99a1fab013bf4e7cee6c47ca4adc8b5b1397
 ---
 
 安装ohpm-repo服务。
@@ -67,7 +67,7 @@ ohpm-repo install  --config D:\config.yaml
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/UKJHWSyBQkeTMQ5X_oCTlQ/zh-cn_image_0000002731381453.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ZqfpoFuTSu2WtkXHJdX16w/zh-cn_image_0000002731381453.png "点击放大")
 
 ## 注意
 

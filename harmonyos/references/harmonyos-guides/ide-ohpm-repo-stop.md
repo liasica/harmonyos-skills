@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo stop
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo stop
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:46:52+08:00
+scraped_at: 2026-09-30T07:35:19+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:efb0fe9d96cae4abfaa5d8a0711947756d6ab4cb1aa579348da26d142ae60931
+content_hash: sha256:fd8919d9ec8d6c4e97815609b8bf54a79aa693331b0492495bef5bfc8976ea04
 ---
 
 停止ohpm-repo实例。
@@ -30,4 +30,4 @@ ohpm-repo stop
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/BzKEB2hESreuuxTbFOVc0w/zh-cn_image_0000002731381291.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/yV8o0dZdQIWeLoe0iOvt9A/zh-cn_image_0000002731381291.png)

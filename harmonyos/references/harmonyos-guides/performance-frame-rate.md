@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-f
 title: 帧率
 breadcrumb: 指南 > 应用体验建议 > 应用性能体验建议 > 帧率
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:51:00+08:00
-doc_updated_at: 2026-06-17
-content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8a845a
+scraped_at: 2026-09-30T07:35:45+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:a418ec032ae52526f864ca3db7293f512a2b8f885f291e3c57750734bad62056
 ---
 
 ## 应用或元服务启动过程不丢帧
@@ -14,7 +14,7 @@ content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8
 | --- | --- |
 | **描述** | 应用或元服务的冷启动过程中，动效环节最大连续丢帧数为0，加载环节最大连续丢帧数为6。 |
 | **类型** | 规则 |
-| **适用设备** | 手机，折叠屏，平板，2in1 |
+| **适用设备** | 手机，平板，2in1 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
 | **说明** | [本地自测试：DevEco Testing 性能测试](performance-testing.md) |
 
@@ -24,7 +24,7 @@ content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8
 | --- | --- |
 | **描述** | 应用或元服务启动过程平均卡顿率为0ms/s。 |
 | **类型** | 规则 |
-| **适用设备** | 手机，平板，PC/2in1，车机，手表 |
+| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
 | **说明** | [本地自测试：DevEco Testing 性能测试](performance-testing.md) |
 
@@ -34,7 +34,7 @@ content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8
 | --- | --- |
 | **描述** | 应用或元服务的滑动过程最大连续丢帧数为0。 |
 | **类型** | 规则 |
-| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，手表 |
+| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
 | **说明** | [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
@@ -44,7 +44,7 @@ content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8
 | --- | --- |
 | **描述** | 应用或元服务的滑动过程卡顿率应≤5ms/s。 |
 | **类型** | 规则 |
-| **适用设备** | 手机，平板，PC/2in1，车机，穿戴 |
+| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
 | **说明** | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
@@ -54,7 +54,7 @@ content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8
 | --- | --- |
 | **描述** | 应用或元服务的应用内转场过程最大连续丢帧数为0。 |
 | **类型** | 规则 |
-| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，手表 |
+| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
 | **说明** | [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
@@ -64,7 +64,7 @@ content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8
 | --- | --- |
 | **描述** | 应用或元服务的应用内转场过程卡顿率为 0 ms/s。 |
 | **类型** | 规则 |
-| **适用设备** | 手机，平板，PC/2in1，车机，手表 |
+| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
 | **说明** | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
@@ -74,7 +74,7 @@ content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8
 | --- | --- |
 | **描述** | 应用视频播放过程中弹幕滚动过程中帧率稳定，最大连续丢帧数为0。 |
 | **类型** | 规则 |
-| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机 |
+| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用 |
 | **说明** | [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
@@ -84,7 +84,7 @@ content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8
 | --- | --- |
 | **描述** | 在线视频播放过程中最大卡顿时长应≤100ms; 在线视频播放过程中卡顿次数为0。 |
 | **类型** | 规则 |
-| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机 |
+| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用 |
 | **说明** | [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
@@ -94,6 +94,6 @@ content_hash: sha256:a4e9f8343de08f1ba83965dc5cc0339ac38b1f694e6a9ee565f807380a8
 | --- | --- |
 | **描述** | 视频播放过程中声音和画面时间差异：-80ms≤时延≤ 25ms；  视频播放过程中主观观测声音和画面的同步感受无不适。 |
 | **类型** | 规则 |
-| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机 |
+| **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用 |
 | **说明** | 无 |

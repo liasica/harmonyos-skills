@@ -3,53 +3,51 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-177
 title: 如何解决ArkUI.Lite开发穿戴应用时异步任务不生效问题
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何解决ArkUI.Lite开发穿戴应用时异步任务不生效问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:791129920aaacb542295ae6df56689fbf07378c4550e24fc96de7f2fb6475538
+scraped_at: 2026-09-30T07:42:00+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:8ac2d7d50586bfb774465f69eeaf49fd91901917562344fd0ce2d3663b96e5e8
 ---
 
 ## 问题现象
 
-采用兼容JS的类Web开发范式（ArkUI.Lite）开发穿戴应用时，在app.js的onCreate()中调用异步函数向服务器请求数据，发现异步函数不生效。
+采用兼容JS的类Web开发范式（ArkUI.Lite）开发穿戴应用时，在app.js的onCreate()中调用异步函数向服务器请求数据，发现异步函数不生效，示例代码如下：
 
-问题代码示例参考如下：
-
-```java
+```javascript
 // app.js
 export default {
-  data: {
-    mockData: {},
-    isDataReady: false
-  },
-  onCreate() {
-    console.info('app.js -> AceApplication onCreate');
-    this.fetchDataAsync().then((data) => {
-      console.info('app.js -> 同步数据完成');
-      this.data.mockData = data;
-      this.data.isDataReady = true;
-    })
-  },
-  onDestroy() {
-    console.info('app.js -> AceApplication onDestroy');
-  },
-  fetchDataAsync() {
-    return new Promise((resolve, reject) => {
-      console.info('app.js -> 开始同步数据');
-      // 用setTimeout模拟网络延迟（1.5秒后完成）
-      setTimeout(() => {
-        const mockData = {
-          value: '123'
-        };
-        resolve(mockData);
-      }, 1500);
-    })
-  }
+    data: {
+        mockData: {},
+        isDataReady: false
+    },
+    onCreate() {
+        console.info('app.js -> AceApplication onCreate');
+        this.fetchDataAsync().then((data) => {
+            console.info('app.js -> 同步数据完成');
+            this.data.mockData = data;
+            this.data.isDataReady = true;
+        })
+    },
+    onDestroy() {
+        console.info('app.js -> AceApplication onDestroy');
+    },
+    fetchDataAsync() {
+        return new Promise((resolve, reject) => {
+            console.info('app.js -> 开始同步数据');
+            // 用setTimeout模拟网络延迟（1.5秒后完成）
+            setTimeout(() => {
+                const mockData = {
+                    value: '123'
+                };
+                resolve(mockData);
+            }, 1500);
+        })
+    }
 }
 ```
 
 控制台只输出了“开始同步数据”的日志，then()中的代码并没有执行：
 
-```log
+```txt
 I     app.js -> AceApplication onCreate
 I     app.js -> 开始同步数据
 ```
@@ -60,7 +58,7 @@ I     app.js -> 开始同步数据
 
 ## 问题定位
 
-查看官网文档确认是否系统能力是否支持。根据官网文档描述轻量级智能穿戴支持的ES6语法有限，而Promise/async/await不在支持范围内，因此无法使用。
+查看官网文档确认系统能力是否支持。根据官网文档描述轻量级智能穿戴支持的ES6语法有限，而Promise/async/await不在支持范围内，因此无法使用。
 
 ## 分析结论
 
@@ -68,39 +66,39 @@ I     app.js -> 开始同步数据
 
 ## 修改建议
 
-使用callback的方式实现异步操作。
+使用callback的方式实现异步操作，示例代码如下：
 
-```java
+```javascript
 // app.js
 export default {
-  data: {
-    mockData: {},
-    isDataReady: false
-  },
-  onCreate() {
-    console.info('app.js -> AceApplication onCreate');
-    this.fetchData((result, error) => {
-      if (result) {
-        console.info('app.js -> callback方式同步数据完成');
-        console.info(`index.js -> ${JSON.stringify(this.data.mockData)}`);
-        console.info(`index.js -> ${this.data.isDataReady}`);
-      }
-    })
-  },
-  onDestroy() {
-    console.info('app.js -> AceApplication onDestroy');
-  },
-  fetchData(callback) {
-    console.info('app.js -> 开始同步数据');
-    // 用setTimeout模拟网络延迟（1.5秒后完成）
-    setTimeout(() => {
-      const mockData = {
-        value: '123'
-      };
-      this.data.mockData = mockData;
-      this.data.isDataReady = true;
-      callback(mockData, null);
-    }, 1500);
-  }
+    data: {
+        mockData: {},
+        isDataReady: false
+    },
+    onCreate() {
+        console.info('app.js -> AceApplication onCreate');
+        this.fetchData((result, error) => {
+            if (result) {
+                console.info('app.js -> callback方式同步数据完成');
+                console.info(`index.js -> ${JSON.stringify(this.data.mockData)}`);
+                console.info(`index.js -> ${this.data.isDataReady}`);
+            }
+        })
+    },
+    onDestroy() {
+        console.info('app.js -> AceApplication onDestroy');
+    },
+    fetchData(callback) {
+        console.info('app.js -> 开始同步数据');
+        // 用setTimeout模拟网络延迟（1.5秒后完成）
+        setTimeout(() => {
+            const mockData = {
+                value: '123'
+            };
+            this.data.mockData = mockData;
+            this.data.isDataReady = true;
+            callback(mockData, null);
+        }, 1500);
+    }
 }
 ```

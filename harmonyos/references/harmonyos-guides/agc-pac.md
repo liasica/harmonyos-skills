@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-pac
 title: pac.json5隐私清单文件
 breadcrumb: 指南 > 编写与调试应用 > 附录 > pac.json5隐私清单文件
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:09+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:8c3662a39c568854b54e4b9af6e8daefe2480b9fdb71921701c0b3f258ce85d1
+scraped_at: 2026-09-30T07:35:35+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:bc9cc67256f842a1af71089c467b635bc0c1ea2b3450324755c2f3d69547cdb6
 ---
 
 ## 概述
@@ -22,11 +22,11 @@ content_hash: sha256:8c3662a39c568854b54e4b9af6e8daefe2480b9fdb71921701c0b3f258c
 
 * 开发App情况下，选中AppScope目录新建pac.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/zjNLdmZ0QjSsHjgCjFSNwQ/zh-cn_image_0000002701663112.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/qEXtLvVST46LDTXZ4w8OdQ/zh-cn_image_0000002701663112.png)
 
 * 开发HSP或HAR情况下，选中HSP或HAR模块目录新建pac.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/IVlDrnODSEW9Dz70SzeeBg/zh-cn_image_0000002731542307.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/IFJCsPV7Tq6JzJWMj_YUjA/zh-cn_image_0000002731542307.png)
 
 ## 配置文件结构
 

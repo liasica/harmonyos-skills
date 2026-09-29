@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/standard-fore
 title: 前台资源使用
 breadcrumb: 指南 > 应用体验建议 > 应用功耗体验建议 > 前台场景 > 前台资源使用
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:58:05+08:00
-doc_updated_at: 2026-01-19
-content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90d36e5
+scraped_at: 2026-09-30T07:35:45+08:00
+doc_updated_at: 2026-09-29
+content_hash: sha256:7e4addd6e374b340b6bfdbc1a95332b6caf883f5b1c0d073f86b2b773ace213b
 ---
 
 ## 视频场景强制建议
@@ -14,7 +14,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 1. 推荐使用平台的视频硬件编解码器（芯片平台支持的格式）。 2. 弹幕绘图使用硬件加速，不要使用CPU绘图。 |
 | 类型 | 规则 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板、PC/2in1、智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [视频场景编解码低功耗规则](../best-practices/bpta-video-codec.md)  [视频场景弹幕绘制低功耗规则](../best-practices/bpta-video-barrage.md) |
 
@@ -24,7 +24,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 1. 图层个数限制：三方应用的图层个数，无弹幕时推荐最多2个图层，有弹幕时最多3个图层。 2. 视频场景数据缓存下载方式：推荐按聚合方式下载（如每20s下载一次，每次下载3~5s），避免小流量持续下载导致Wi-Fi功耗高。 3. 视频小视频在线播放，不要将片源全部下载到ROM里。 |
 | 类型 | 建议 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板、智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [视频场景图层低功耗建议](../best-practices/bpta-video-layer.md)  [视频场景Wi-Fi加载低功耗建议](../best-practices/bpta-video-wifi.md)  [视频场景ROM低功耗建议](../best-practices/bpta-video-rom.md) |
 
@@ -34,7 +34,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 1. 音乐类应用设置正确的应用类型，采用系统低功耗方案。 2. 静音时关闭应用自己的音效处理算法。 |
 | 类型 | 规则 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板、PC/2in1、智能穿戴、轻量级智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [音乐播放场景低功耗规则](../best-practices/bpta-music-playback-scenarios.md) |
 
@@ -44,7 +44,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 导航类应用设置正确的应用类型，使用系统自带的导航类场景的音效算法。 |
 | 类型 | 规则 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板、智能穿戴、轻量级智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [导航定位场景低功耗规则](../best-practices/bpta-navigation-scenarios.md) |
 
@@ -54,7 +54,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 1. 导航界面的动画GPU绘制帧率建议低于30Hz。 2. sensor相关资源按需使用，不用sensor的时候，解注册sensor资源；模拟导航界面，获取位置信息的sensor调用频次要低于实际导航界面。 |
 | 类型 | 建议 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [导航定位场景低功耗规则](../best-practices/bpta-navigation-scenarios.md) |
 
@@ -64,7 +64,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 应用的资源预缓存策略，建议不要提前下载过多的资源。 |
 | 类型 | 建议 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [网络资源低功耗建议](../best-practices/bpta-network-resources.md) |
 
@@ -74,7 +74,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 1. 界面完全静止的场景下，三方应用停止请求Vsync，不要随着Vsync信号每帧周期性运行； 2. 界面完全静止的场景下，三方应用进程的CPU负载率应该低于10%(单核负载)。 |
 | 类型 | 规则 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [静态场景低功耗规则](../best-practices/bpta-static-scenarios.md) |
 
@@ -84,7 +84,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 界面完全静止的场景下，CPU/GPU/DDR频点应处于最低频。 |
 | 类型 | 建议 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [静态场景低功耗规则](../best-practices/bpta-static-scenarios.md) |
 
@@ -94,7 +94,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | UI界面的背景建议选择深色或者分时间段选择深色，节约屏幕硬件功耗。 |
 | 类型 | 建议 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | [省电和深色模式下低功耗设计](../best-practices/bpta-low-power-design-in-dark-mode.md) |
 
@@ -104,7 +104,7 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 基于发热体验考虑，如果本端使用小窗口显示对端图像，做到动态通知对端降低相机采样率（推荐15fps），以此降低视频通话场景发热。 |
 | 类型 | 建议 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | 无 |
 
@@ -114,6 +114,6 @@ content_hash: sha256:958c76549c21acd6e57ea8a2ee86bbfddc362b8ca5d49083c6e42113d90
 | --- | --- |
 | 描述 | 应用或元服务前台CPU运行：前台单线程负载不得持续1分钟高于70%。 |
 | 类型 | 规则 |
-| 适用设备 | 手机、折叠屏、平板 |
+| 适用设备 | 手机、平板、智能穿戴、轻量级智能穿戴 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |
 | 说明 | 无 |

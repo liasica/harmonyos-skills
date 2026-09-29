@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/standard-fore
 title: 前台场景
 breadcrumb: 指南 > 应用体验建议 > 应用功耗体验建议 > 前台场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:58:05+08:00
-doc_updated_at: 2026-01-19
+scraped_at: 2026-09-30T07:35:45+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:ffc2d904f43ce4b96e5aeb6328cb3e4c5f409ae4f1453e2f69437a0d1d26f77b
 ---
 

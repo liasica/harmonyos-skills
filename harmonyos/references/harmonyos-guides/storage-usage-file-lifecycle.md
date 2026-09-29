@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/storage-usage
 title: 存储空间使用与文件生命周期管理
 breadcrumb: 指南 > 应用体验建议 > 应用系统资源管理体验建议 > 存储空间使用与文件生命周期管理
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:16:13+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-30T07:35:44+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:d92b8a5a8602e410fce5e847bf64f0dd463cd3a043524dd4f8099e34a5e36283
 ---
 

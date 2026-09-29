@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-upda
 title: ohpm update
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm update
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-30T07:35:42+08:00
+doc_updated_at: 2026-09-29
 content_hash: sha256:bd9b05805cd402971881f6d753e01e309df0fc45f3c6feca77dd0038696944b3
 ---
 
