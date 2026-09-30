@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 设备输入(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用必选能力(C/C++) > 设备输入(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d8be43e710e6fc6fd02cd2806db1f89fd6e0eaabefacc31259ddd1c6f33ac78d
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:f6b07c3942cae70cc120353d1adeee074d327112c235b65422b66610fa148979
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -110,7 +110,7 @@ content_hash: sha256:d8be43e710e6fc6fd02cd2806db1f89fd6e0eaabefacc31259ddd1c6f33
        // 打开相机。
        ret = OH_CameraInput_Open(cameraInput);
        if (ret != CAMERA_OK) {
-           OH_LOG_ERROR(LOG_APP, "OH_CameraInput_open failed.");
+           OH_LOG_ERROR(LOG_APP, "OH_CameraInput_Open failed.");
            return;
        }
    }

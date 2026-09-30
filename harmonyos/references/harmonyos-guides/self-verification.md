@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/self-verifica
 title: 开发者自验证
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 验证应用数据迁移 > 开发者自验证
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:42+08:00
+scraped_at: 2026-10-01T07:34:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:69a7fd92b77b702fb4e69aac11a44b4f8b306069f361de3651655d96e6c2356e
+content_hash: sha256:1d486926ea49fceb7ddc93474e078fe964fbcaf78f63dca081ddc0f94353db32
 ---
 
 ## 简介
@@ -49,12 +49,12 @@ content_hash: sha256:69a7fd92b77b702fb4e69aac11a44b4f8b306069f361de3651655d96e6c
    当前终端设备支持识别NTFS格式的外部存储设备，请使用NTFS格式的外部存储设备连接终端设备。
 2. 在终端设备中，打开“文件管理”应用，长按选中外部存储设备中的“{APK包名}.zip”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/P0RNqfOqTKuXOEs6iUfprw/zh-cn_image_0000002743379004.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/-GD1UH_MQ2m_Dg8zloxmbg/zh-cn_image_0000002779091847.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/mlrXLQsmRV27W5W6zBoElA/zh-cn_image_0000002743219118.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/LbOMnEgZT3CwHCvDc69ocQ/zh-cn_image_0000002778931989.png)
 3. 单击“复制”按钮，将数据复制到文件管理器的“下载”目录下，作为后续自验证的测试数据源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ygk4GVsmTEy1apqvY2A9nA/zh-cn_image_0000002772738371.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/rHX-zc9nSCCQ47emYbDKGQ/zh-cn_image_0000002772898255.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/rT4-Uk3qRH29vtQQ-FYQyw/zh-cn_image_0000002749332906.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/7idmL8urQ9qTyoRTcd2IQA/zh-cn_image_0000002749492790.png)
 
 ## HarmonyOS NEXT上模拟验证应用数据迁移
 
@@ -71,24 +71,24 @@ content_hash: sha256:69a7fd92b77b702fb4e69aac11a44b4f8b306069f361de3651655d96e6c
    “迁移调试”工具版本查看方式：**设置**>**应用和元服务**>**MigrateTool**>**版本**
 2. 打开迁移调试工具。迁移调试工具图标如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/WiOuu3BVQWuk-7MG_rNKRA/zh-cn_image_0000002743379006.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/LfCwfcwJQ--v9LEX2vzIOA/zh-cn_image_0000002779091849.png)
 3. 在“迁移工具”应用的首页，开发者通过单击“选择”按钮进入设备文件管理界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/DksxNKOkQSqF8gY4ltwCtQ/zh-cn_image_0000002743219120.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/6KKTu8OeRiK0FyAiXs1g7w/zh-cn_image_0000002778931991.png)
 4. 在设备文件管理界面，单击“浏览”按钮，进入浏览手机内部存储界面。单击“我的手机”，根据之前导入数据的路径，进入手机存储的相应路径，选择需要导入的APK应用数据zip包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/FFKUoPHTQTyhN6rf2_IHBw/zh-cn_image_0000002772738373.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/qcP9xilYTJSHxkh9Vpflog/zh-cn_image_0000002772898257.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/sLbF_A_dQwOfZ9muG1UDuQ/zh-cn_image_0000002749332908.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/_PYvSkOHTTWxXyyx7awD_A/zh-cn_image_0000002749492792.png)
 5. 单击需要导入的APK应用数据zip包后，会返回“迁移调试”工具首页，已选择的需要导入的APK应用数据会显示在第一栏中。选择好需要导入的APK应用数据后，单击“请输入应用包名”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/N7Jzbc2GRt6GlPhXSvy9Jg/zh-cn_image_0000002743379008.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/cLQKsF_3TJyOxkyiVIj9VQ/zh-cn_image_0000002779091851.png)
 6. 输入需要验证的目标HarmonyOS应用包名，目标HarmonyOS应用会显示在“迁移调试”工具首页的第二栏中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/xJw2MVMVSbGCk737QrZdew/zh-cn_image_0000002743219122.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/I0qp6TdWQaSZ8wmzPdIIdA/zh-cn_image_0000002778931993.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/3QBwTRnFRKqgaVLNel53kw/zh-cn_image_0000002772738375.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/plJif2JzTJS4UMcoJITARQ/zh-cn_image_0000002749332910.png)
 7. 选择需要导入的APK数据和目标HarmonyOS应用后，单击“启动迁移”按钮，开始模拟数据迁移，页面切换为数据优化界面，应用数据迁移的进度在数据迁移进度条中显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/7h35FhkWRpGgATOSIWimiA/zh-cn_image_0000002743219122.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/9u33iza5Q5KBMW9gadpCLw/zh-cn_image_0000002772898259.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/rMTuOZHcTWOEl9UFeTRWxA/zh-cn_image_0000002778931993.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wzLp_roKT4SfIlqsBL2kcA/zh-cn_image_0000002749492794.png)
 8. 应用数据迁移完成之后，数据迁移进度条上方显示“已优化完成”，进度更新为100%。数据迁移成功的情况下，界面中无异常提示。单击“完成”按钮，切换回“迁移调试”工具首页，在下方的“迁移日志”版块中显示详细迁移信息。result字段表示数据迁移结果，costTime字段表示数据迁移时长（单位ms）。
 
    **注意** 
@@ -97,7 +97,7 @@ content_hash: sha256:69a7fd92b77b702fb4e69aac11a44b4f8b306069f361de3651655d96e6c
 
    **2、单个应用数据迁移执行超过十五分钟，超过设定的单个应用最长数据迁移时间，会导致任务执行失败。开发者需要优化应用BackupExtensionAbility的代码实现，在十五分钟内完成应用数据迁移。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/VAZ-sax0TgWVaCcW3Bhf3A/zh-cn_image_0000002743379010.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/bXFn3antQR-ytLJzSGSqzA/zh-cn_image_0000002743219124.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/yVHHxzfzQTucuS1-1IYshQ/zh-cn_image_0000002779091853.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/pe-l5t3zQ7yyxqbfcy8adg/zh-cn_image_0000002778931995.png)
 9. 数据迁移失败的情况下，应用图标上方的状态显示“优化失败”。单击“完成”按钮，切换回“迁移工具”应用首页，在下方的“迁移日志”版块中显示详细迁移信息。result字段表示数据迁移结果，costTime字段表示数据迁移时长（单位ms）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/DqXcf6WXSAK8aD0FzPg1Ww/zh-cn_image_0000002772738377.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/PevqXmYdQcaKMERkmcOPbA/zh-cn_image_0000002772898261.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/AB47TxHdT0CVjRyJLO2kuQ/zh-cn_image_0000002749332912.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/riA50Lc5S7uTdrBCVNYADg/zh-cn_image_0000002749492796.png)

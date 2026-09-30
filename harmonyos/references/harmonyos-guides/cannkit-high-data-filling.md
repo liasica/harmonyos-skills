@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-high-
 title: 数据填充
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 数据填充
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:08:09+08:00
+scraped_at: 2026-10-01T07:35:29+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:74c532dd73b6a0a3ac2c572b93ad4c04ac7c64475e2030b78f25e3afc3f5bbf6
+content_hash: sha256:06b4cfde1b03b6f5d8eaf3991d38bb0f094a9a615ce95f3e46593c5be17bc005
 ---
 
 ## Broadcast
@@ -27,7 +27,7 @@ content_hash: sha256:74c532dd73b6a0a3ac2c572b93ad4c04ac7c64475e2030b78f25e3afc3f
 
 **图1** Broadcast算法框图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Hvkk7jXcThWWXXWd94U_8Q/zh-cn_image_0000002772739597.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/PBOoACyESmCtllPa63qiMA/zh-cn_image_0000002749334140.png)
 
 计算过程分为如下几步，均在Vector上进行：
 

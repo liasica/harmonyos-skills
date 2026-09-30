@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 通知错误码
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > 错误码 > 通知错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d783ee0bf95955c0dba63c1c22c0a69d47b4aacf224573ed897b9c4eff926730
+scraped_at: 2026-10-01T07:40:28+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:f93a50552903b248cbc4bcdb3f18f2bef7271709b9ce637006499b350af4e493
 ---
 
 **说明** 
@@ -38,7 +38,7 @@ Marshalling or unmarshalling error.
 
 **错误描述**
 
-数据传输前，进行序列化或反序列化错误，方法将返回该错误码。
+数据传输前，进行序列化或反序列化时发生错误，方法将返回该错误码。
 
 **可能原因**
 

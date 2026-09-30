@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pixelmap-draw
 title: 图片绘制（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 图片绘制（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:32+08:00
+scraped_at: 2026-10-01T07:34:57+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:51b79998cb2e56597ef136fbef2c8822f0808c19e6d1fdcd2ff892144baae184
+content_hash: sha256:95f744d3b1ceadda2c92557e4d0586149135257d44dece820701729bf458229d
 ---
 
 位图是一种用于在内存中存储和表示图像的数据结构，它是一个未经过压缩的像素集合，而JPEG或PNG等图片是压缩格式的，两者并不相同。如果需要将JPEG或PNG绘制到屏幕上，需要先解码成位图格式，具体可参考[图片处理服务（Image Kit）](image-overview.md)图片解码相关章节。
@@ -103,7 +103,7 @@ content_hash: sha256:51b79998cb2e56597ef136fbef2c8822f0808c19e6d1fdcd2ff892144ba
 
    绘制效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/PRB99A9LRWahXJqmkdK3jw/zh-cn_image_0000002743219656.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/4qcOQ18uRnKjWJdMk8ab8g/zh-cn_image_0000002778932527.jpg)
 
 ## 示例代码
 

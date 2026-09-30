@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-r
 title: 光线追踪全局光照
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 光线追踪全局光照
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:36+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:84a61a017eb3cd6392b42f8b6c1ee329f1041d5b3d92be72d4c03f291e925421
+scraped_at: 2026-10-01T07:35:00+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:3416bb7001087ff33c0c74edd0307908e9d784cf0b786fa1d7ca35f002a92ea9
 ---
 
 从6.0.0(20) 版本开始，新增光线追踪全局光照特性。
@@ -52,10 +52,6 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
   // ...
   #include <xengine/xeg_vulkan_rtgi.h>
   ```
-
-  ```
-  #include "xengine/xeg_extension_defs.h"
-  ```
 * 编写CMakeLists.txt
 
   CMakeLists.txt部分示例代码如下。
@@ -78,7 +74,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 
 * 下面是基于Vulkan图形API平台集成动态漫反射全局光照的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/6SYNEvvtSOmNkWq29gSTOg/zh-cn_image_0000002743379630.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/obmS4M64SkOwrTBVgJUuiA/zh-cn_image_0000002779092473.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_RTGI\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_rtgi_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 创建动态漫反射全局光照使用的创建信息，调用[HMS\_XEG\_CreateRTGI](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_creatertgi)接口创建动态漫反射全局光照实例。
@@ -259,8 +255,8 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 6. 调用[HMS\_XEG\_DestroyRTGI](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_destroyrtgi)接口销毁实例。
 
    ```
-   if (xegRtgi != nullptr) {
-       HMS_XEG_DestroyRTGI(xegRtgi);
+   if (xegRTGI != nullptr) {
+       HMS_XEG_DestroyRTGI(xegRTGI);
    }
    ```
 
@@ -274,10 +270,9 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 
 * 头文件引用
 
-  ```c
-  #include <xengine/xeg_vulkan_extension.h>
-  // ...
-  #include <xengine/xeg_vulkan_rtgi.h>
+  ```
+  #include "xengine/xeg_vulkan_extension.h"
+  #include "xengine/xeg_vulkan_rtgi.h"
   ```
 * 编写CMakeLists.txt
 
@@ -301,7 +296,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 
 下面是基于Vulkan图形API平台集成神经网络全局光照的主要业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/3uvl82A7QFacp0hdOEfOUg/zh-cn_image_0000002743219744.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/opK99ZsIT4-S6W6ljIO5Kw/zh-cn_image_0000002778932615.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_RTGI\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_rtgi_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 创建神经网络全局光照使用的创建信息，调用[HMS\_XEG\_CreateRTGI](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_creatertgi)接口创建神经网络全局光照实例。
@@ -347,7 +342,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 2. 声明实例句柄。
 
    ```c
-   XEG_RTGI xegRTGI;
+   XEG_RTGI xegRtgi;
    ```
 3. 调用[HMS\_XEG\_CreateRTGI](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_creatertgi)接口，创建RT NNGI实例。
 
@@ -359,7 +354,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
    // 指定扩展为空
    xegNngiCreateInfo.pNext = nullptr;
    // 指定质量模式为质量
-   xegNngiCreateInfo.qualityMode = XEG_RTGIQualityMode::XEG_RTGI_QUALITY_MODE_QUALITY;
+   xegNngiCreateInfo.qualityMode = XEG_RTGI_QUALITY_MODE_QUALITY;
    // NNGI_RENDER_WIDTH, NNGI_RENDER_HEIGHT分别表示指定推理输入图像的分辨率宽高
    xegNngiCreateInfo.inferenceInputSize = {NNGI_RENDER_WIDTH, NNGI_RENDER_HEIGHT};
    // NNGI_IL_WIDTH, NNGI_IL_HEIGHT分别表示指定推理输出图像的分辨率宽高
@@ -407,8 +402,6 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
    // xegNNGIDescription.sceneAabb表示用户创建的渲染包围盒范围VkAabbPositionsKHR
    xegNNGIDescription.sceneAabb = {sceneAabbMin.x, sceneAabbMin.y, sceneAabbMin.z,
                                       sceneAabbMax.x, sceneAabbMax.y, sceneAabbMax.z};
-   // xegNNGIDescription.spatialScaleFactor表示场景缩放因子，对于有界场景，无需设置，XEngine根据sceneAabb计算该值
-   xegNNGIDescription.spatialScaleFactor = 1.0f / glm::length(sceneAabbMax - sceneAabbMin);
    // ...
    if (useDDKNNGI && xegRtgi != nullptr) {
        VkResult res = HMS_XEG_CmdRenderRTGI(commandBuffer, xegRtgi, &xegNNGIDescription);

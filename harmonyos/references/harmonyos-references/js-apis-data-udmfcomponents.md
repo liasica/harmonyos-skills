@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.UdmfComponents (内容卡片)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS 组件 > @ohos.data.UdmfComponents (内容卡片)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:18+08:00
+scraped_at: 2026-10-01T07:36:26+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:45f79d2d0fa9185b492f8d40e7abe143a1c3c85de09ccd76135091ae84330420
+content_hash: sha256:ca2d2a383627b77c84934aa60d75fdfff9f089eabe72a1390a03ded586044e65
 ---
 
 针对[ContentForm](js-apis-data-uniformdatastruct.md#contentform14)标准数据结构的内容卡片，支持设置标题（必选）、描述、应用图标、应用名称、跳转链接、内容图片。用户点击卡片时，执行传入的回调事件函数，若设置的跳转链接不为空，则跳转到指定的页面。
@@ -139,4 +139,4 @@ struct Index {
 
 本例效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xgi9I_SIQT6P6lD1A3D5jg/zh-cn_image_0000002743220500.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/OCqc_sJWSeeJc8SWS_ntwg/zh-cn_image_0000002778933381.jpeg)

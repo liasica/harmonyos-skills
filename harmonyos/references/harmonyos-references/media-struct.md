@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/media-str
 title: 结构体
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:13+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:0429df5d1f316520e4ad84afd7778b197242dc706d2157f2201882894dd3b83d
+scraped_at: 2026-10-01T07:39:43+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:9751c7b8094dc7203189cf2be44f03e8cb2beaadc45f508f5f8b82768759d894
 ---
 
 * **[OH\_AVImageGenerator](capi-avimagegenerator-oh-avimagegenerator.md)**
@@ -45,6 +45,7 @@ content_hash: sha256:0429df5d1f316520e4ad84afd7778b197242dc706d2157f2201882894dd
 * **[OH\_LowPowerAudioSink](capi-lowpoweraudiosink-oh-lowpoweraudiosink.md)**
 * **[OH\_LowPowerAudioSinkCallback](capi-lowpoweraudiosink-oh-lowpoweraudiosinkcallback.md)**
 * **[OH\_AVSamplesBuffer](capi-avsinkbase-oh-avsamplesbuffer.md)**
+* **[OH\_LowPowerAVSink\_Capability](capi-avsinkbase-oh-lowpoweravsinkcapability.md)**
 * **[OH\_LowPowerVideoSink](capi-lowpowervideosink-oh-lowpowervideosink.md)**
 * **[OH\_LowPowerVideoSinkCallback](capi-lowpowervideosink-oh-lowpowervideosinkcallback.md)**
 * **[VideoProcessing\_ColorSpaceInfo](capi-videoprocessing-videoprocessing-colorspaceinfo.md)**

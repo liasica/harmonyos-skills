@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅主线程超时事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 主线程超时事件 > 订阅主线程超时事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a57d217daca8d0ea36baab6c7557c31055fdca915487e03c4c7453257c247676
+scraped_at: 2026-10-01T07:34:41+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:5080652591ba30a5303918e57550fb5681a12e81190e5ab41c699e75a3acca5f
 ---
 
 ## 简介
@@ -85,7 +85,11 @@ content_hash: sha256:a57d217daca8d0ea36baab6c7557c31055fdca915487e03c4c7453257c2
             } else if (path.endsWith(".trace")) {
               targetPath= "/data/storage/el2/base/mainThreadJank.trace";
             }
-            fileIo.copyFileSync(path.toString(), targetPath.toString());
+            try {
+              fileIo.copyFileSync(path.toString(), targetPath.toString());
+            } catch (e) {
+              hilog.error(0x0000, 'testTag', `copy file failed: ${e}`);
+            }
           }
         }
       }

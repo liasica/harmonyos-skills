@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-video-d
 title: 媒体数据解封装
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 媒体数据封装与解封装 > 媒体数据解封装
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:406897492d3228ec3deb6666b545a99eb82a612777fbb36f7195ab8155686ad9
+scraped_at: 2026-10-01T07:34:48+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:4c87e45c6f67c73096c29e8b0c7a54f6a25db723adef884518dd99634e525e02
 ---
 
 开发者可以调用本模块的Native API接口，完成媒体数据的解封装相关操作，即从比特流数据中取出音频、视频、字幕等媒体sample，获得DRM相关信息。
@@ -33,7 +33,7 @@ content_hash: sha256:406897492d3228ec3deb6666b545a99eb82a612777fbb36f7195ab81556
 **说明** 
 
 * 调用解封装能力解析网络播放路径，需要[声明权限](declare-permissions.md)：ohos.permission.INTERNET。
-* 调用解封装能力解析本地文件，需要[向用户申请授权](request-user-authorization.md)：ohos.permission.READ\_MEDIA。
+* 如需获取媒体库资源的文件描述符（fd），可参考[使用Picker选择媒体库资源](photoaccesshelper-photoviewpicker.md)文档。
 * 如果使用ResourceManager.getRawFd打开HAP资源文件描述符，使用方法请参考[getRawFd](../harmonyos-references/js-apis-resource-manager.md#getrawfd9)。
 
 ### 在 CMake 脚本中链接动态库

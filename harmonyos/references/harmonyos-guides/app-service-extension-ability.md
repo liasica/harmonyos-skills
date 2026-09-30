@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-service-e
 title: 使用AppServiceExtensionAbility组件实现后台服务
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > ExtensionAbility组件 > 使用AppServiceExtensionAbility组件实现后台服务
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:12+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:a2c5b28790fe6a84849e067b52df34511f67d6c9bca5def8ac4299ed0c965100
+scraped_at: 2026-10-01T07:33:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6e794296b8efcad41ef649d67c760a96cc195b96c76a263a58da7aa84ba85435
 ---
 
 ## 概述
@@ -60,7 +60,7 @@ AppServiceExtensionAbility组件当前仅支持2in1设备。
 1. 在工程Module对应的ets目录下，右键选择“New > Directory”，新建一个目录并命名为myappserviceextability。
 2. 在myappserviceextability目录，右键选择“New > ArkTS File”，新建一个文件并命名为MyAppServiceExtAbility.ets。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/RhzYOnk3S8SF0AzQSpNvOA/zh-cn_image_0000002743218022.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nE3UUewUSP6YwE2LlX5XWg/zh-cn_image_0000002778930781.png)
 
    其目录结构如下所示：
 
@@ -308,7 +308,7 @@ AppServiceExtensionAbility组件以start方式启动，并且没有连接的时�
     onConnect(elementName, remote: rpc.IRemoteObject): void {
       hilog.info(DOMAIN_NUMBER, TAG, 'onConnect callback');
       if (remote === null) {
-        hilog.info(DOMAIN_NUMBER, TAG, `onConnect remote is null`);
+        hilog.error(DOMAIN_NUMBER, TAG, `onConnect remote is null`);
         return;
       }
       // 通过remote进行通信
@@ -317,7 +317,7 @@ AppServiceExtensionAbility组件以start方式启动，并且没有连接的时�
       hilog.info(DOMAIN_NUMBER, TAG, 'onDisconnect callback');
     },
     onFailed(code: number): void {
-      hilog.info(DOMAIN_NUMBER, TAG, 'onFailed callback', JSON.stringify(code));
+      hilog.error(DOMAIN_NUMBER, TAG, 'onFailed callback', JSON.stringify(code));
     }
   };
 
@@ -430,7 +430,7 @@ let options: common.ConnectOptions = {
   onConnect(elementName, remote): void {
     hilog.info(DOMAIN_NUMBER, TAG, 'onConnect callback');
     if (remote === null) {
-      hilog.info(DOMAIN_NUMBER, TAG, `onConnect remote is null`);
+      hilog.error(DOMAIN_NUMBER, TAG, `onConnect remote is null`);
       return;
     }
     let option = new rpc.MessageOption();
@@ -463,7 +463,7 @@ let options: common.ConnectOptions = {
     hilog.info(DOMAIN_NUMBER, TAG, 'onDisconnect callback');
   },
   onFailed(code): void {
-    hilog.info(DOMAIN_NUMBER, TAG, 'onFailed callback');
+    hilog.error(DOMAIN_NUMBER, TAG, 'onFailed callback');
   }
 };
 
@@ -554,11 +554,9 @@ export default class MyAppServiceExtAbility extends AppServiceExtensionAbility {
 通过调用[getCallingTokenId()](../harmonyos-references/js-apis-rpc.md#getcallingtokenid8)接口获取客户端的tokenID，再调用[verifyAccessTokenSync()](../harmonyos-references/js-apis-abilityaccessctrl.md#verifyaccesstokensync9)接口判断客户端是否有某个具体权限，由于当前不支持自定义权限，因此只能校验当前[系统所定义的权限](app-permissions.md)。示例代码如下：
 
 ```typescript
-import { AppServiceExtensionAbility, Want } from '@kit.AbilityKit';
-import { abilityAccessCtrl, bundleManager } from '@kit.AbilityKit';
+import { AppServiceExtensionAbility, Want, abilityAccessCtrl } from '@kit.AbilityKit';
 import { rpc } from '@kit.IPCKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG: string = '[AppServiceExtImpl]';
 const DOMAIN_NUMBER: number = 0xFF00;
@@ -573,19 +571,6 @@ class Stub extends rpc.RemoteObject {
     options: rpc.MessageOption): boolean | Promise<boolean> {
     // 开发者自行实现业务逻辑
     hilog.info(DOMAIN_NUMBER, TAG, `onRemoteMessageRequest: ${data}`);
-    let callerUid = rpc.IPCSkeleton.getCallingUid();
-    bundleManager.getBundleNameByUid(callerUid).then((callerBundleName) => {
-      hilog.info(DOMAIN_NUMBER, TAG, 'getBundleNameByUid: ' + callerBundleName);
-      // 对客户端包名进行识别
-      if (callerBundleName !== 'com.samples.stagemodelabilitydevelop') { // 识别不通过
-        hilog.info(DOMAIN_NUMBER, TAG, 'The caller bundle is not in trustlist, reject');
-        return;
-      }
-      // 识别通过，执行正常业务逻辑
-    }).catch((err: BusinessError) => {
-      hilog.error(DOMAIN_NUMBER, TAG, 'getBundleNameByUid failed: ' + err.message);
-    });
-
     let callerTokenId = rpc.IPCSkeleton.getCallingTokenId();
     let accessManager = abilityAccessCtrl.createAtManager();
     // 所校验的具体权限由开发者自行选择，此处ohos.permission.GET_BUNDLE_INFO_PRIVILEGED只作为示例

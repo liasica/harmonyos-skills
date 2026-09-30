@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-call-de
 title: 开发音频通话功能
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频通话 > 开发音频通话功能
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:18+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:8a0765f99722251f6167d30f6eb73a31c9618f67eab38ac28976534233b0f278
+scraped_at: 2026-10-01T07:34:46+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:765b2b24f9d849e4ee379f42e569a815fc1f7ebee7752cf557a41f87d6e2c620
 ---
 
 在音频通话场景下，应用需要同时进行音频输出（播放对端声音）和音频输入（录制本端声音）。应用可以使用AudioRenderer实现音频输出，使用AudioCapturer实现音频输入，并结合系统API version 8之后提供的3A算法（声学回声消除、噪声抑制、自动增益控制）提升通话质量。
@@ -97,7 +97,7 @@ async function initArguments(context: common.UIAbilityContext) {
       if (bufferLength < buffer.byteLength) {
         let view = new DataView(buffer);
         for (let i = bufferLength; i < buffer.byteLength; i++) {
-          // 空白区域填充静音数据。当使用音频采样格式为SAMPLE_FORMAT_U8时0x7F为静音数据，使用其他采样格式时0为静音数据。
+          // 空白区域填充静音数据。当使用音频采样格式为SAMPLE_FORMAT_U8时0x80为静音数据，使用其他采样格式时0为静音数据。本示例采样格式为SAMPLE_FORMAT_S16LE，因此静音数据填充0。
           view.setUint8(i, 0);
         }
       }
@@ -133,7 +133,7 @@ async function init() {
         audioRenderer.on('writeData', writeDataCallback);
       }
     } else {
-      console.info(`${TAG}: creating AudioRenderer failed, error: ${err.message}`);
+      console.error(`${TAG}: creating AudioRenderer failed, error: ${err.message}`);
       // ...
     }
   });
@@ -144,7 +144,7 @@ async function start() {
   if (audioRenderer !== undefined) {
     let stateGroup = [audio.AudioState.STATE_PREPARED, audio.AudioState.STATE_PAUSED, audio.AudioState.STATE_STOPPED];
     if (stateGroup.indexOf(audioRenderer.state.valueOf()) === -1) { // 当且仅当状态为prepared、paused和stopped之一时才能启动渲染。
-      console.error(TAG + 'start failed');
+      console.info(TAG + 'start failed');
       // ...
       return;
     }
@@ -311,7 +311,7 @@ async function start() {
     let stateGroup = [audio.AudioState.STATE_PREPARED, audio.AudioState.STATE_PAUSED, audio.AudioState.STATE_STOPPED];
     if (stateGroup.indexOf(audioCapturer.state.valueOf()) === -1) {
       // 当且仅当状态为STATE_PREPARED、STATE_PAUSED和STATE_STOPPED之一时才能启动采集。
-      console.error(`${TAG}: start failed`);
+      console.info(`${TAG}: start failed`);
       // ...
       return;
     }

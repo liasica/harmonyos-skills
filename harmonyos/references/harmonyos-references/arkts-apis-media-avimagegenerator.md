@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVImageGenerator)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVImageGenerator)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:09+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:70b689511669f8bd4e5e9016f416053065b3ce769d2cef6a47ff6a5bb39a4dbf
+scraped_at: 2026-10-01T07:39:39+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:3c52d7d3faa864a8622d7366d1d2c7e329805f2fe5ba78ac301b39959bf865bd
 ---
 
 视频缩略图获取类，用于从视频资源中获取缩略图。在调用AVImageGenerator的方法前，需要先通过[createAVImageGenerator()](arkts-apis-media-f.md#mediacreateavimagegenerator12)构建一个AVImageGenerator实例。
@@ -63,6 +63,7 @@ fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapPa
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
 import { media } from '@kit.MediaKit';
+import { common } from '@kit.AbilityKit';
 
 let avImageGenerator: media.AVImageGenerator | undefined = undefined;
 let pixel_map: image.PixelMap | undefined = undefined;
@@ -134,6 +135,7 @@ fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapPa
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
 import { media } from '@kit.MediaKit';
+import { common } from '@kit.AbilityKit';
 
 let avImageGenerator: media.AVImageGenerator | undefined = undefined;
 let pixel_map: image.PixelMap | undefined = undefined;
@@ -203,6 +205,7 @@ fetchScaledFrameByTime(timeUs: number, queryMode: AVImageQueryOptions, outputSiz
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
 import { media } from '@kit.MediaKit';
+import { common } from '@kit.AbilityKit';
 
 let avImageGenerator: media.AVImageGenerator | undefined = undefined;
 let pixel_map: image.PixelMap | undefined = undefined;

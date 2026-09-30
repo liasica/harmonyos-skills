@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_DeviceQueryInfo
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_DeviceQueryInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:72797755df671bf75be8795cf9e2e75ca88f485740a40d2234ae007d62e7938f
+scraped_at: 2026-10-01T07:39:28+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:3df5fda83c2aa8bec0491bda9fa903d92d813df9f40ab4f132b03fc4bdf20b86
 ---
 
 ```c
-typedef struct {...} Camera_DeviceQueryInfo
+typedef struct Camera_DeviceQueryInfo {...} Camera_DeviceQueryInfo
 ```
 
 ## 概述

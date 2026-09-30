@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Text
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Text
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:02+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:49b834c96c6e8132410ef4768fa923281c61c59c942bae36a89c8135e1e218fa
+scraped_at: 2026-10-01T07:37:03+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:8f9df444bc07c93d42a73df342fb661974d1b69c4b3aed063e4233e92c431ec5
 ---
 
 Text组件用于显示文本内容，支持设置字体样式、文本对齐、行高、装饰线等属性，支持图文混排、文本选择、文本识别等功能，适用于需要展示文本信息的各类应用场景。
@@ -27,7 +27,7 @@ Text组件用于显示文本内容，支持设置字体样式、文本对齐、�
 
 ## 接口
 
-Text(content?: string | Resource , value?: TextOptions)
+Text(content?: string | Resource, value?: TextOptions)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -250,7 +250,7 @@ contentTransition(transition: Optional<ContentTransition>)
 
 copyOption(value: CopyOptions)
 
-设置组件是否支持文本可复制粘贴。未通过该接口设置时，默认值为CopyOptions.None，不支持文本可复制粘贴。
+设置组件是否支持文本复制粘贴。未通过该接口设置时，默认值为CopyOptions.None，不支持文本复制粘贴。
 
 多个属性的功能依赖copyOption的设置，包括[selection](ts-basic-components-text.md#selection11)、[setTextSelection](ts-basic-components-text.md#settextselection23)、[draggable](ts-basic-components-text.md#draggable9)、[enableSelectedDataDetector](ts-basic-components-text.md#enableselecteddatadetector22)、[textSelectable](ts-basic-components-text.md#textselectable12)等，具体依赖条件请参考各属性说明。
 
@@ -265,7 +265,7 @@ copyOption(value: CopyOptions)
 * 默认情况下，长按选中文本可拖拽。若要取消此功能，可将 draggable 设置为 false。
 * 若需要支持Ctrl+C复制，需同时设置[textSelectable](ts-basic-components-text.md#textselectable12)为TextSelectableMode.SELECTABLE\_FOCUSABLE。
 
-此时Text会监听onClick事件，手势事件为非冒泡事件，若需要点击Text组件区域响应父组件的点击手势事件，建议在父组件上使用[parallelGesture](ts-gesture-settings.md#parallelgesture)绑定手势识别，也可参考[示例7（设置文本识别）](ts-basic-components-text.md#示例7设置文本识别)。
+此时Text会监听onClick事件，手势事件为非冒泡事件，若需要单击Text组件区域响应父组件的单击手势事件，建议在父组件上使用[parallelGesture](ts-gesture-settings.md#parallelgesture)绑定手势识别，也可参考[示例7（设置文本识别）](ts-basic-components-text.md#示例7设置文本识别)。
 
 由于卡片没有长按事件，此场景下长按文本，不会弹出文本选择菜单。
 
@@ -343,7 +343,7 @@ draggable(value: boolean)
 
 不能和[onDragStart](ts-universal-events-drag-drop.md#ondragstart)事件同时使用。
 
-当draggable设置为true时，需配合[CopyOptions](ts-appendix-enums.md#copyoptions9)使用，设置copyOptions为CopyOptions.InApp或者CopyOptions.LocalDevice，支持对选中文本的拖拽及复制到输入框。
+当draggable设置为true时，需配合[CopyOptions](ts-appendix-enums.md#copyoptions9)使用，设置copyOption为CopyOptions.InApp或者CopyOptions.LocalDevice，支持对选中文本的拖拽及复制到输入框。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -359,7 +359,7 @@ draggable(value: boolean)
 
 editMenuOptions(editMenu: EditMenuOptions)
 
-设置自定义菜单扩展项，允许用户设置扩展项的文本内容、图标、回调方法。
+设置自定义菜单扩展项，允许开发者设置扩展项的文本内容、图标、回调方法。
 
 调用[disableMenuItems](arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)或[disableSystemServiceMenuItems](arkts-apis-uicontext-textmenucontroller.md#disablesystemservicemenuitems20)接口屏蔽文本选择菜单内的系统服务菜单项时，editMenuOptions接口内回调方法[onCreateMenu](ts-text-common.md#oncreatemenu12)的入参列表中不包含被屏蔽的菜单选项。
 
@@ -425,7 +425,7 @@ enableAutoSpacing(enabled: Optional<boolean>)
 
 enableDataDetector(enable: boolean)
 
-设置是否进行文本特殊实体识别，可自动识别文本中的电话号码、网址、邮箱、地址、日期等实体信息，适用于聊天消息、评论内容、文章正文等需要智能识别和交互的场景。未通过该接口设置时，默认不进行文本特殊实体识别。当enableDataDetector设置为true时，识别特殊实体。
+设置是否进行文本实体识别，可自动识别文本中的电话号码、网址、邮箱、地址、日期等实体信息，适用于聊天消息、评论内容、文章正文等需要智能识别和交互的场景。未通过该接口设置时，默认不进行文本实体识别。当enableDataDetector设置为true时，识别特殊实体。
 
 所识别实体的样式如下，即字体颜色改为蓝色、并添加蓝色下划线。
 
@@ -463,7 +463,7 @@ decoration:{
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | 是 | 是否可进行文本特殊实体识别。  true表示可识别，false表示不可识别。 |
+| enable | boolean | 是 | 是否可进行文本实体识别。  true表示可识别，false表示不可识别。 |
 
 ### enableHapticFeedback13+
 
@@ -501,7 +501,7 @@ enableHapticFeedback(isEnabled: boolean)
 
 enableSelectedDataDetector(enable: boolean | undefined)
 
-设置是否对选中文本进行实体识别。该接口依赖设备底层应具有文本识别能力，否则设置不会生效。未通过该接口设置时，默认对选中文本进行实体识别。
+设置是否对选中文本进行实体识别。该接口需要设备底层具有文本识别能力，否则设置不会生效。未通过该接口设置时，默认对选中文本进行实体识别。
 
 启用后可识别选区中的邮件、电话、网址、日期、地址等，并在文本选择菜单中展示对应的AI菜单项。默认启用AI菜单功能。
 
@@ -509,7 +509,7 @@ AI菜单功能启用时，在组件中选中文本后，文本选择菜单能够
 
 AI菜单生效时，选中范围内需包括且仅包括一个完整的AI实体，才能展示对应的选项。该菜单项与[TextMenuItemId](ts-text-common.md#textmenuitemid12)中的askAI菜单项不同时出现。
 
-需要[CopyOptions](ts-appendix-enums.md#copyoptions9)为CopyOptions.LocalDevice或CopyOptions.CROSS\_DEVICE时，本功能生效。
+当[CopyOptions](ts-appendix-enums.md#copyoptions9)设置为CopyOptions.LocalDevice或CopyOptions.CROSS\_DEVICE时，本功能生效。
 
 在[SelectionContainer](ts-basic-components-selectioncontainer.md)跨节点选中场景中该属性无效，在文本选择菜单中不会展示对应的AI菜单项。
 
@@ -523,7 +523,7 @@ AI菜单生效时，选中范围内需包括且仅包括一个完整的AI实体�
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | undefined | 是 | 是否对选中文本进行实体识别。  true：开启识别，false：关闭识别。默认值为：true。  取值为undefined时，按默认值处理。 |
+| enable | boolean | undefined | 是 | 是否对选中文本进行实体识别。  true：开启识别，false：关闭识别。默认值：true。  取值为undefined时，按默认值处理。 |
 
 ### font10+
 
@@ -632,9 +632,9 @@ fontFeature(value: string)
 
 当多个Text组件在[Row](ts-container-row.md)容器内布局且没有设置具体的布局分配信息时，Text会以Row的最大尺寸进行布局。如果需要子组件主轴累加的尺寸不超过Row容器主轴的尺寸，可以设置[layoutWeight](ts-universal-attributes-size.md#layoutweight)或者是以[Flex](ts-universal-attributes-flex-layout.md)布局来约束子组件的主轴尺寸。
 
-系统默认字体支持的liga连字：Th fb ff fb ffb ffh ffi ffk ffl fh fi fk fl rf rt rv rx ry。常导致Span、属性字符串的效果不符合预期，关闭liga连字特性可以规避。
+系统默认字体支持的liga连字：Th fb ff fb ffb ffh ffi ffk ffl fh fi fk fl rf rt rv rx ry。该连字特性常导致Span、属性字符串的效果不符合预期，关闭liga连字特性可以规避此问题。
 
-文字特性效果与使用的字体文件密切相关。例如，8标点挤压功能需要字体文件中字符支持"ss08"特性，否则无法压缩，在当前系统默认字体中右侧标点符号及感叹号、顿号、问号均不生效。
+文字特性效果与使用的字体文件密切相关。例如，标点挤压功能（对应"ss08"特性）需要字体文件中字符支持"ss08"特性，否则无法压缩，在当前系统默认字体中右侧标点符号及感叹号、顿号、问号均不生效。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -652,7 +652,7 @@ fontFeature(value: string)
 
 fontFeature属性列表：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Gz49SJ6CSrS6vtVJ3UMM3Q/zh-cn_image_0000002743380776.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/cv5HZ7uzRRCdjuIZGynwDA/zh-cn_image_0000002779093763.png)
 
 设置fontFeature属性，fontFeature是OpenType字体的高级排版能力，如支持连字、数字等宽等特性，一般用在自定义字体中，其能力需要字体本身支持。
 
@@ -738,8 +738,8 @@ fontWeight(weight: number | FontWeight | ResourceStr, options?: FontSettingOptio
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| weight | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | 设置文本字重  number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。  传入超出取值范围的值时取默认值。传入不符合间隔要求的值时，若设置fontWeightConfigs的enableVariableFontWeight为true，使用传入值；若设置为false，使用默认值。  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
-| options | [FontSettingOptions](ts-text-common.md#fontsettingoptions12对象说明) | 否 | 设置字体配置项，用于启用可变字重调节功能。当需要使用可变字体的字重属性进行精细调节时传入此参数（设置enableVariableFontWeight为true）。不传入时使用默认字体配置（禁用可变字重调节，仅支持整百字重值）。  enableVariableFontWeight为false时禁用可变字重调节，weight取整百值时字重为weight，非整百值时字重为400；enableVariableFontWeight为true时启用可变字重调节，weight取任意整数时字重为weight。 |
+| weight | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | 设置文本字重  number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。  传入超出取值范围的值时取默认值。传入不符合间隔要求的值时，若设置options的enableVariableFontWeight为true，使用传入值；若设置为false，使用默认值。  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
+| options | [FontSettingOptions](ts-text-common.md#fontsettingoptions12对象说明) | 否 | 设置字体配置项，用于启用可变字重调节功能。当需要使用可变字体的字重属性进行精细调节时传入此参数（设置enableVariableFontWeight为true）。不传入时使用默认字体配置（禁用可变字重调节，仅支持整百字重值）。  enableVariableFontWeight为false时禁用可变字重调节，weight取整百值时实际字重为该参数值，非整百值时实际字重为400；enableVariableFontWeight为true时启用可变字重调节，weight取任意整数时实际字重为该参数值。 |
 
 ### fontVariations
 
@@ -765,7 +765,7 @@ fontVariations(fontVariations: Array<FontVariation>)
 
 halfLeading(halfLeading: boolean)
 
-设置文本是否垂直居中。未通过该接口设置时，默认文本不平分至行的顶部与底部。
+设置文本是否垂直居中。未通过该接口设置时，默认不将行间距平分至行的顶部与底部。
 
 **说明** 
 
@@ -899,7 +899,7 @@ lineHeight(value: number | string | Resource)
 
 当与[lineHeightMultiple](ts-basic-components-text.md#lineheightmultiple22)同时设置且lineHeightMultiple使用有效值时，lineHeight的设置不生效，以lineHeightMultiple为准。
 
-设置值不大于0时，不限制文本行高，自适应字体大小，number类型时单位为fp。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
+设置值不大于0时，不限制文本行高，由系统根据字体大小自适应计算行高。number类型时单位为fp。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
 
 **说明** 
 
@@ -927,7 +927,7 @@ lineHeightMultiple(value: number | undefined)
 
 **说明** 
 
-当lineHeightMultiple使用有效值和[lineHeight](ts-basic-components-text.md#lineheight)或[lineSpacing](ts-basic-components-text.md#linespacing12)同时设置时，仅lineHeightMultiple生效。lineHeightMultiple小于0时，lineHeightMultiple不生效，使用[lineHeight](ts-basic-components-text.md#lineheight)和[lineSpacing](ts-basic-components-text.md#linespacing12)设置行高和行间距。
+当lineHeightMultiple使用有效值，且与[lineHeight](ts-basic-components-text.md#lineheight)或[lineSpacing](ts-basic-components-text.md#linespacing12)同时设置时，仅lineHeightMultiple生效。lineHeightMultiple小于0时，lineHeightMultiple不生效，使用[lineHeight](ts-basic-components-text.md#lineheight)和[lineSpacing](ts-basic-components-text.md#linespacing12)设置行高和行间距。
 
 **卡片能力：** 从API version 22开始，该接口支持在ArkTS卡片中使用。
 
@@ -1020,7 +1020,7 @@ maxFontScale(scale: number | Resource)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scale | number | [Resource](ts-types.md#resource) | 是 | 文本最大的字体缩放倍数。  取值范围：[1, +∞)  **说明：**  设置的值小于1时，按值为1处理，其余异常值默认不生效。 |
+| scale | number | [Resource](ts-types.md#resource) | 是 | 文本最大的字体缩放倍数。  取值范围：[1, +∞)  默认值：不设置时不限制最大缩放倍数。  **说明：**  设置的值小于1时，按值为1处理，其余异常值默认不生效。 |
 
 ### maxFontSize
 
@@ -1070,7 +1070,7 @@ maxLineHeight小于minLineHeight时，maxLineHeight按照minLineHeight属性的�
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | undefined | 是 | 文本的最大行高，不支持百分比。  设置的值不大于0时按0处理，设置为0时，最大行高不受限制。  取值为undefined时，不生效。 |
+| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | undefined | 是 | 文本的最大行高，不支持百分比。  设置的值不大于0时，最大行高不受限制。  取值为undefined时，不生效。 |
 
 ### selectedDragPreviewStyle23+
 
@@ -1248,9 +1248,9 @@ optimizeTrailingSpace(optimize: Optional<boolean>)
 
 * 多行、单行、图文混排等多种情况下均会优化行尾空格（TextAlign.Center或TextAlign.End时，优化效果明显）；
 * 纯空格文本时，修饰线、阴影、背景色跟随空格文本显示；
-* 行首空格不在优化范围内，行尾文本强制换行，每行行尾空格根据组件宽度优化行尾空格。
+* 行首空格不在优化范围内。文本强制换行时，根据组件宽度优化每行行尾空格。
 
-当纯空格文本设置优化行尾空格[optimizeTrailingSpace](ts-basic-components-text.md#optimizetrailingspace20)为true时，不允许同时设置文本背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、空格装饰线[decoration](ts-basic-components-text.md#decoration)和对齐[textAlign](ts-basic-components-text.md#textalign)三个属性。
+当纯空格文本设置优化行尾空格[optimizeTrailingSpace](ts-basic-components-text.md#optimizetrailingspace20)为true时，不允许同时设置文本背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、装饰线[decoration](ts-basic-components-text.md#decoration)和对齐[textAlign](ts-basic-components-text.md#textalign)三个属性。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -1291,11 +1291,13 @@ compressLeadingPunctuation(enabled: Optional<boolean>)
 
 orphanCharOptimization(enabled: Optional<boolean>)
 
-设置文本排版时是否使能孤字优化。不通过该接口设置，默认不使能孤字优化。
+设置文本排版时是否开启孤字优化。不通过该接口设置，默认不开启孤字优化。
 
-孤字优化通过更高效地处理孤立字符（段落尾行首字符）来改善文本布局。使能后，它会调整换行点以尽可能避免孤立字符。孤字优化特性需在[wordBreak](ts-basic-components-text.md#wordbreak11)为非BREAK\_ALL并且待排版文本首个[TextStyle](js-apis-graphics-text.md#textstyle)的[locale](js-apis-graphics-text.md#textstyle)为“zh-Hans”或“zh-Hant”时生效。
+孤字优化通过更高效地处理孤立字符（即段落最后一行的首个字符）来改善文本布局。开启后，它会调整换行点以尽可能避免孤立字符。孤字优化特性需在[wordBreak](ts-basic-components-text.md#wordbreak11)为非BREAK\_ALL并且待排版文本首个[TextStyle](js-apis-graphics-text.md#textstyle)的[locale](js-apis-graphics-text.md#textstyle)为“zh-Hans”或“zh-Hant”时生效。
 
 **起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
@@ -1305,7 +1307,7 @@ orphanCharOptimization(enabled: Optional<boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 段落最后一行是否使能孤字优化。  true表示使能孤字优化，false表示不使能孤字优化。  值为undefined或null时，不使能孤字优化。 |
+| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 段落最后一行是否开启孤字优化。  true表示开启孤字优化，false表示不开启孤字优化。  值为undefined或null时，不开启孤字优化。 |
 
 ### privacySensitive12+
 
@@ -1325,7 +1327,7 @@ privacySensitive(supported: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| supported | boolean | 是 | 是否支持卡片敏感隐私信息。  true表示支持卡片敏感隐私信息，隐私模式下文字将被遮罩为横杠"-"样式；false表示不支持卡片敏感隐私信息，隐私模式下文字正常显示。  **说明：**  设置为null则表示不敏感。  进入隐私模式需要卡片框架支持。隐私遮罩的类型可以通过[obscured](ts-universal-attributes-obscured.md#obscured)配置。 |
+| supported | boolean | 是 | 是否支持卡片敏感隐私信息。  true表示支持卡片敏感隐私信息，隐私模式下文字将被遮罩为横杠"-"样式；false表示不支持卡片敏感隐私信息，隐私模式下文字正常显示。  **说明：**  设置为null则表示不支持卡片敏感隐私信息，行为与false一致。  进入隐私模式需要卡片框架支持。隐私遮罩的类型可以通过[obscured](ts-universal-attributes-obscured.md#obscured)配置。 |
 
 ### punctuationOverflow
 
@@ -1351,7 +1353,7 @@ punctuationOverflow(enabled: Optional<boolean>)
 
 selectedBackgroundColor(color: ResourceColor)
 
-设置文本选中高亮颜色。如果未设置不透明度或设置为完全不透明，默认使用20%不透明度。未通过该接口设置时，默认文本选中高亮颜色为'#007DFF'（蓝色）。
+设置文本选中高亮颜色。如果未设置不透明度或设置为完全不透明，系统默认应用20%不透明度。未通过该接口设置时，默认文本选中高亮颜色为'#007DFF'（蓝色）。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -1631,7 +1633,7 @@ textVerticalAlign(textVerticalAlign: Optional<TextVerticalAlign>)
 **说明** 
 
 * 与[halfLeading](ts-basic-components-text.md#halfleading12)同时配置时，halfLeading不生效。
-* 一个段落下使用同一字号必须同时设置行高[lineHeight](ts-basic-components-text.md#lineheight)或者同一个段落不同字号文本混排时才有效果差异，否则设置了该属性任意枚举值和未设置该属性都是一样的排版效果。属性字符串[TextStyle](ts-universal-styled-string.md#textstyle)中的SuperscriptStyle上下角标样式仅在[TextVerticalAlign](ts-text-common.md#textverticalalign20)属性值为TextVerticalAlign.BASELINE时生效，其余垂直对齐方式下上下角标文本和普通文本表现一致，无上下角标效果。
+* 同一段落中使用同一字号时，需同时设置行高[lineHeight](ts-basic-components-text.md#lineheight)才会产生垂直对齐效果差异；或同一段落中不同字号文本混排时也会产生效果差异。否则，设置该属性的任意枚举值与不设置该属性的排版效果相同。属性字符串[TextStyle](ts-universal-styled-string.md#textstyle)中的SuperscriptStyle上下角标样式仅在[TextVerticalAlign](ts-text-common.md#textverticalalign20)属性值为TextVerticalAlign.BASELINE时生效，其余垂直对齐方式下上下角标文本和普通文本表现一致，无上下角标效果。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -1743,7 +1745,7 @@ WordBreak.BREAK\_ALL与{overflow: TextOverflow.Ellipsis}、maxLines组合使用�
 
 onCopy(callback:(value: string) => void)
 
-长按文本内部区域弹出剪贴板后，点击剪贴板复制按钮，触发该回调。目前只有文本可以复制。
+长按文本内部区域弹出剪贴板后，单击剪贴板复制按钮，触发该回调。目前只有文本可以复制。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1926,7 +1928,7 @@ setTextSelection(selectionStart: number | undefined, selectionEnd: number | unde
 
 当selectionStart大于等于selectionEnd时不选中。可选范围为[0, textSize]，其中textSize为文本内容最大字符数，入参小于0时处理为0，大于textSize时处理为textSize。
 
-当selectionStart或selectionEnd位于截断的不可见区域时，文本不选中。clip设置为false时，超出父组件的文本选中区域生效。
+当selectionStart或selectionEnd位于截断的不可见区域时，文本不选中。clip设置为false时，超出父组件范围的文本也可被选中。
 
 如果设备为PC/2in1，即使options被赋值为MenuPolicy.SHOW，调用setTextSelection也不弹出菜单。
 
@@ -1957,7 +1959,7 @@ Marquee初始化参数。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | boolean | 否 | 否 | 控制跑马灯进入播放状态。  true表示播放，false表示不播放。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| step | number | 否 | 是 | 滚动动画文本滚动步长。  单位：vp  取值范围：(0, 文本宽度]。设置小于等于0的值时按默认值处理。  默认值：4.0vp  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| step | number | 否 | 是 | 跑马灯文本滚动步长。  单位：vp  取值范围：(0, 文本宽度]。设置小于等于0的值时按默认值处理。  默认值：4.0vp  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | spacing23+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 两轮跑马灯之间的间距。单位：vp。当LengthMetrics对象的unit属性为LengthUnit.PERCENT时，当前设置不生效，按默认值处理。  默认值：48.0vp  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | loop | number | 否 | 是 | 设置重复滚动的次数，小于等于零时无限循环。  默认值：-1  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | fromStart | boolean | 否 | 是 | 设置文本从头开始滚动或反向滚动。  true表示从头开始滚动，false表示反向滚动。  默认值：true  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
@@ -2094,7 +2096,7 @@ struct TextExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/jozAxJZ3ShyCc57ABxKTOQ/zh-cn_image_0000002743220890.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/kijwadZOSF6zF_aWEkw80Q/zh-cn_image_0000002778933907.gif)
 
 ### 示例2（设置文本样式）
 
@@ -2214,7 +2216,7 @@ struct TextExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/TJnK6TfSQGmnOEnljY1tLA/zh-cn_image_0000002772740143.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/jzybRmHVQ7qd_sDtjaa2sA/zh-cn_image_0000002749334824.gif)
 
 ### 示例3（设置文本超长省略）
 
@@ -2289,11 +2291,11 @@ struct TextExample3 {
         })
         .onMarqueeStateChange((state: MarqueeState) => {
           if (state == MarqueeState.START) {
-            // "收到状态: START";
+            console.info('收到状态: START');
           } else if (state == MarqueeState.BOUNCE) {
-            // "收到状态: BOUNCE";
+            console.info('收到状态: BOUNCE');
           } else if (state == MarqueeState.FINISH) {
-            // "收到状态: FINISH";
+            console.info('收到状态: FINISH');
           }
         })
 
@@ -2324,7 +2326,7 @@ struct TextExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/0r9d557iQ569Dm6lzTnjYg/zh-cn_image_0000002772900029.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/dKN-NTgMTb-eNiQswJIt6w/zh-cn_image_0000002749494708.gif)
 
 ### 示例4（设置文本断行及折行）
 
@@ -2409,7 +2411,7 @@ struct TextExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/f_jwKS-NRSyUAAFphFC9SQ/zh-cn_image_0000002743380778.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/BJx5JwaJRYiBaxrmLdaCQA/zh-cn_image_0000002779093765.gif)
 
 ### 示例5（设置文本选中和复制）
 
@@ -2463,7 +2465,7 @@ struct TextExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/lyiHQ-VuQ_OTwcgCwRvb_Q/zh-cn_image_0000002743220892.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/kKML6xDfRESJfYemNOWWig/zh-cn_image_0000002778933909.gif)
 
 ### 示例6（设置文本自适应和缩放倍数限制范围）
 
@@ -2508,7 +2510,7 @@ struct TextExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Kxoto_mDRXaN6E28LY8_qA/zh-cn_image_0000002772740145.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/KTpESFLjSImiTfXbTdMkgA/zh-cn_image_0000002749334826.png)
 
 ### 示例7（设置文本识别）
 
@@ -2551,7 +2553,7 @@ struct TextExample7 {
       }
       .width('100%')
       // 使用parallelGesture中的TapGesture替代onClick属性，达到非冒泡事件类似冒泡
-      // 的效果，点击Text组件区域Column上的点击事件正常响应
+      // 的效果，单击Text组件区域Column上的单击事件正常响应
       .parallelGesture(TapGesture().onAction((event: GestureEvent) => {
         console.info('test column onClick timestamp:' + event.timestamp);
       }), GestureMask.Normal)
@@ -2561,7 +2563,7 @@ struct TextExample7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/5j8t8MkHS2ylYpBA_sa8kQ/zh-cn_image_0000002772900031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/At3C1kgUQium5X4dhpQ8TA/zh-cn_image_0000002749494710.png)
 
 ### 示例8（文本绑定自定义菜单）
 
@@ -2683,7 +2685,7 @@ function MenuStyles() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/qiPgUxMETi6DVAqE2V7a7A/zh-cn_image_0000002743380780.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/JZdhikTGToidG88nyJB0ow/zh-cn_image_0000002779093767.gif)
 
 ### 示例9（设置文本特性与行间距）
 
@@ -2742,7 +2744,7 @@ struct TextExample9 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/5tXIEn0bQ22LBq4-7rFdNQ/zh-cn_image_0000002743220894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/y40Mkz3TSkOLCgY38THo7A/zh-cn_image_0000002778933911.png)
 
 ### 示例10（获取文本信息）
 
@@ -2842,7 +2844,7 @@ struct TextExample10 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/iDhTm0MIQgqtc99lPhr4rw/zh-cn_image_0000002772740147.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/db-BCP9DQqSe71BdiAYeow/zh-cn_image_0000002749334828.gif)
 
 ### 示例11（实现键盘框选文本）
 
@@ -2871,7 +2873,7 @@ struct TextExample11 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/tIJ_1QQ6RUS0Z9hiSVc2Aw/zh-cn_image_0000002772900033.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/geRHNkaVSJSvd4xbsw29yg/zh-cn_image_0000002749494712.gif)
 
 ### 示例12（文本扩展自定义菜单）
 
@@ -2960,7 +2962,7 @@ struct TextExample12 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/NLRynky6SAeUx8FyqNb40w/zh-cn_image_0000002743380782.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/rWxL9-9IR6iZAOHGfGpBxw/zh-cn_image_0000002779093769.gif)
 
 ### 示例13（配置隐私隐藏）
 
@@ -2983,7 +2985,7 @@ struct TextExample13 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/GCU5YL5vSZSMmuLDtEIeMw/zh-cn_image_0000002743220896.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/rx-QFQx9Sqa6miIGI_Bhag/zh-cn_image_0000002778933913.gif)
 
 ### 示例14（设置中西文自动间距）
 
@@ -3010,7 +3012,7 @@ struct TextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/KnURpCcjRMq9WrTLgKX_kw/zh-cn_image_0000002772740149.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/aCidOIC5STmEUPp2ocJM4g/zh-cn_image_0000002749334830.png)
 
 ### 示例15（文本颜色按线性或径向渐变）
 
@@ -3078,7 +3080,7 @@ struct ShaderColorStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Yw11SWtBSDm7CngxvnnZpg/zh-cn_image_0000002772900035.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/fd0nqArgTa-gX4VPo6GWAA/zh-cn_image_0000002749494714.png)
 
 ### 示例16（配置除去行尾空格）
 
@@ -3109,7 +3111,7 @@ struct TextExample16 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/_WdM7YgYTDekJzV0AX72DQ/zh-cn_image_0000002743380784.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/HB2-KbcvRhqYt1JL2UFqFw/zh-cn_image_0000002779093771.png)
 
 ### 示例17（文本垂直对齐）
 
@@ -3140,7 +3142,7 @@ struct TextExample14 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/-uNaacZsR-iCxlQF2TiHWA/zh-cn_image_0000002743220898.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/d-xue0yvRamgo9pjjImpww/zh-cn_image_0000002778933915.png)
 
 ### 示例18（文本翻牌动效）
 
@@ -3174,7 +3176,7 @@ struct TextNumberTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/AMeFg_MhRiaPqTdGmkjIeg/zh-cn_image_0000002772740151.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/uz7-4r8YSFWyUInnpu5zRQ/zh-cn_image_0000002749334832.gif)
 
 ### 示例19（文本内容区垂直对齐）
 
@@ -3200,7 +3202,7 @@ struct TextContentAlignExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/jfWRIBJBTG6SgReh9_Z4MA/zh-cn_image_0000002772900037.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/9zRqb-W8TEKanb-NdM3pcA/zh-cn_image_0000002749494716.png)
 
 ### 示例20（倍数行高和最大最小行高）
 
@@ -3244,7 +3246,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/6FgM3cT1QrSp64uhg23J_g/zh-cn_image_0000002743380786.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/08h3KNm6SiqS-ontCSPDUA/zh-cn_image_0000002779093773.png)
 
 ### 示例21（文本设置显示最小行数）
 
@@ -3276,7 +3278,7 @@ struct TextExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/utDJVbWTS-2wrWGLRdEudw/zh-cn_image_0000002743220900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/XtJeLXT_THmZMP-3x5ru3g/zh-cn_image_0000002778933917.png)
 
 ### 示例22（设置文本选择区域并高亮显示）
 
@@ -3308,7 +3310,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/niJ2LCpLSCGf1iDjNHzodg/zh-cn_image_0000002772740153.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/KMgUjb5NTm6WJUeVv_41Kw/zh-cn_image_0000002749334834.gif)
 
 ### 示例23（设置行首标点符号压缩和行尾标点符号悬挂）
 
@@ -3361,7 +3363,7 @@ struct PunctuationDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/_uOtTUZIQWS6Jh_1bY9MqQ/zh-cn_image_0000002772900039.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/uU0dolQhQP6x6tFaAPFDMA/zh-cn_image_0000002749494718.gif)
 
 ### 示例24（设置自适应间距）
 
@@ -3425,7 +3427,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Nj4LPaODQDe1EaabbGC8sA/zh-cn_image_0000002743380788.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/YNd6gBYARcqibf7Q8g2X_g/zh-cn_image_0000002779093775.gif)
 
 ### 示例25（设置文本拖拽时的背板样式）
 
@@ -3452,7 +3454,7 @@ struct TextTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/67zbVOGIQOSlWli-uCV_-A/zh-cn_image_0000002743220902.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/e5xCAj-ySCiNhWbchz1flg/zh-cn_image_0000002778933919.png)
 
 ### 示例26（设置文本排版方向）
 
@@ -3494,7 +3496,7 @@ struct TextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/wD_6ofKISJOuWWYP6UgV2A/zh-cn_image_0000002772740155.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/rpCOU1USQiWYzazWmdWn7Q/zh-cn_image_0000002749334836.png)
 
 ### 示例27（获取指定坐标和范围对应的文本信息）
 
@@ -3573,7 +3575,7 @@ struct TextExample10 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/sB1fZVjvSReeg3CVNEQAYg/zh-cn_image_0000002772900041.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/uvjauvmMTDq3n9dGN8cOvQ/zh-cn_image_0000002749494720.gif)
 
 ### 示例28（设置文本排版时是否使能孤字优化）
 
@@ -3612,7 +3614,7 @@ struct TextExample {
 
 该效果图会因设备尺寸差异有显示区别，仅供参考。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/L7MyXFvHQrKTLUfPzwvM9g/zh-cn_image_0000002743380790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/RrTEeMcCTVuNeYUcKCLrYg/zh-cn_image_0000002779093777.png)
 
 ### 示例29（设置可变字体的属性）
 
@@ -3642,7 +3644,7 @@ struct TextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/yN8MrPfpQVSNVbnd1pIh_A/zh-cn_image_0000002743220904.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/KgYPHCx9TGCcwWHWzs5jtw/zh-cn_image_0000002778933921.gif)
 
 ### 示例30（设置图片预览菜单）
 
@@ -3689,7 +3691,7 @@ struct TextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Ceg-0vVjQt2WrKRBL6wD9g/zh-cn_image_0000002772740157.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/N1UR_YLlQDeQ9zWnJcBdwg/zh-cn_image_0000002749334838.gif)
 
 ### 示例31（设置属性字符串段落缓存策略）
 
@@ -3826,7 +3828,7 @@ struct StyledStringAppend {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/bn9_fYz9TLihrXrulOCs3g/zh-cn_image_0000002772900043.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/cj7Wz7ErQNe9Fg_pKiRXwA/zh-cn_image_0000002749494722.png)
 
 ### 示例32（设置文本尾部缩进）
 
@@ -3872,7 +3874,7 @@ struct TailIndentsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/trbNRU-HTxyrRM7BLEWMkg/zh-cn_image_0000002743380792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/F6PQ6KsSQeK7Il4tKokoTA/zh-cn_image_0000002779093779.png)
 
 ### 示例33（设置文本选择的AI菜单）
 
@@ -3901,7 +3903,7 @@ struct DataDetectorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/9qhauvHST72oXW49iGSNdQ/zh-cn_image_0000002743220906.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Y7vL0YlTTsqXU6D1JN4Dcg/zh-cn_image_0000002778933923.gif)
 
 ### 示例34（长按含表情符号文本绘制渐变高亮背景）
 
@@ -4025,4 +4027,4 @@ struct Utf16GlyphHighlightPage {
 
 该效果图会因设备尺寸差异有显示区别，仅供参考。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/cAYCmyF6QUScZJ8t5RZ6mg/zh-cn_image_0000002772740159.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/9E1kR2dvRv212zwsinOk3A/zh-cn_image_0000002749334840.gif)

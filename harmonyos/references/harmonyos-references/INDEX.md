@@ -1,6 +1,6 @@
 # API 参考（harmonyos-references）
 
-共 4762 篇文档。
+共 4763 篇文档。
 
 - [ABR_CameraData](_a_b_r___camera_data.md)
 - [ABR_Vector3](_a_b_r___vector3.md)
@@ -1015,6 +1015,7 @@
 - [OH_VideoInfo](capi-avscreencapture-oh-videoinfo.md)
 - [AVScreenCapture](capi-avscreencapture.md)
 - [OH_AVSamplesBuffer](capi-avsinkbase-oh-avsamplesbuffer.md)
+- [OH_LowPowerAVSink_Capability](capi-avsinkbase-oh-lowpoweravsinkcapability.md)
 - [AVSinkBase](capi-avsinkbase.md)
 - [OH_AVSource](capi-avsource-oh-avsource.md)
 - [AVSource](capi-avsource.md)
@@ -3354,7 +3355,7 @@
 - [@ohos.nearlink.advertising (星闪广播能力)](js-apis-nearlink-advertising.md)
 - [@ohos.nearlink.cdsm (星闪合作设备集合管理能力)](js-apis-nearlink-cdsm.md)
 - [@ohos.nearlink.constant (星闪公共常量定义)](js-apis-nearlink-constant.md)
-- [@ohos.nearlink.dataTransfer (星闪数传能力)](js-apis-nearlink-data-transfer-api.md)
+- [@ohos.nearlink.dataTransfer (星闪数据传输能力)](js-apis-nearlink-data-transfer-api.md)
 - [@ohos.nearlink.manager (星闪基础管理能力)](js-apis-nearlink-manager.md)
 - [@ohos.nearlink.remoteDevice (星闪远端设备连接能力)](js-apis-nearlink-remote-device.md)
 - [@ohos.nearlink.scan (星闪扫描能力)](js-apis-nearlink-scan.md)
@@ -4182,8 +4183,8 @@
 - [请求体结构说明](push-scenariozed-api-request-struct.md)
 - [响应参数](push-scenariozed-api-response.md)
 - [serviceNotification（服务通知）](push-servicenotification.md)
-- [VoIPExtensionAbility（应用内通话消息扩展Ability）（废弃）](push-voip-ability.md)
-- [VoIPExtensionContext（应用内通话消息扩展Context）（废弃）](push-voip-context.md)
+- [VoIPExtensionAbility（应用内通话消息扩展Ability）（已废弃）](push-voip-ability.md)
+- [VoIPExtensionContext（应用内通话消息扩展Context）（已废弃）](push-voip-context.md)
 - [rcp.h](rcp_8h.md)
 - [rcp_quic.h](rcp_quic_h.md)
 - [ArkTS组件](reader-api-component.md)

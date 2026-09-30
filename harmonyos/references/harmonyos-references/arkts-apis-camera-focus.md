@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Focus)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Focus)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c6784c1354534cf5b268d177712a7f50391c87ed07f07762f740b573e56f407d
+scraped_at: 2026-10-01T07:39:25+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:b3bcd009e8941c4eef88fde7502b782b2422cd0b2a959295ccb638e5c780eb36
 ---
 
 Focus继承自[FocusQuery](arkts-apis-camera-focusquery.md)。
@@ -29,7 +29,7 @@ setFocusMode(afMode: FocusMode): void
 
 设置对焦模式。
 
-进行设置之前，需要先检查设备是否支持指定的焦距模式，可使用方法[isFocusModeSupported](arkts-apis-camera-focusquery.md#isfocusmodesupported11)。
+进行设置之前，需要先检查设备是否支持指定的对焦模式，可使用方法[isFocusModeSupported](arkts-apis-camera-focusquery.md#isfocusmodesupported11)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -39,7 +39,7 @@ setFocusMode(afMode: FocusMode): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| afMode | [FocusMode](arkts-apis-camera-e.md#focusmode) | 是 | 指定的焦距模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
+| afMode | [FocusMode](arkts-apis-camera-e.md#focusmode) | 是 | 指定的对焦模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
 
 **错误码：**
 
@@ -79,7 +79,7 @@ getFocusMode(): FocusMode
 
 | 类型 | 说明 |
 | --- | --- |
-| [FocusMode](arkts-apis-camera-e.md#focusmode) | 获取当前设备的焦距模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](arkts-apis-camera-e.md#cameraerrorcode)。 |
+| [FocusMode](arkts-apis-camera-e.md#focusmode) | 获取当前设备的对焦模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](arkts-apis-camera-e.md#cameraerrorcode)。 |
 
 **错误码：**
 
@@ -123,7 +123,7 @@ setFocusPoint(point: Point): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| point | [Point](arkts-apis-camera-i.md#point) | 是 | 焦点。x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。 |
+| point | [Point](arkts-apis-camera-i.md#point) | 是 | 焦点。x、y设置范围应在[0, 1]之内，超过范围，如果小于0设置0，大于1设置1。 |
 
 **错误码：**
 

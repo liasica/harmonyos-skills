@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohmidi
 title: 使用OH_MIDI进行MIDI开发(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > MIDI设备通信 > 使用OH_MIDI进行MIDI开发(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:20+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:2d1bfbd1fa79da183c7e00e631389b255d20bb6559cdb9f04fb2c19a4241dbef
+scraped_at: 2026-10-01T07:34:47+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:38d561081a2e8d58699a8c750fd800a065f36a0f1328180464fcc4c8d6f22dde
 ---
 
 ## 场景介绍
@@ -529,14 +529,8 @@ static napi_value SendMIDI(napi_env env, napi_callback_info info)
 
     uint32_t eventsWritten = 0;
     OH_MIDIStatusCode status = OH_MIDIDevice_Send(it->second, portIndex, events.data(), eventCount, &eventsWritten);
-    napi_create_object(env, &result);
-    napi_value statusValue;
-    napi_create_int32(env, static_cast<int32_t>(status), &statusValue);
-    napi_set_named_property(env, result, "status", statusValue);
-    napi_value writtenValue;
-    napi_create_uint32(env, eventsWritten, &writtenValue);
-    napi_set_named_property(env, result, "eventsWritten", writtenValue);
-    return result;
+    // ...
+}
 ```
 
 **UMP格式说明**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 拍照(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 拍照(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:57+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:3e01394cb0debf945336344d0ddde93d4fc922ea76a67230ae070a0e1221b741
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:eab7a46d955b4b48040aaf29a6e91caba9389b23f21d4f0d16a7da6a239c17ea
 ---
 
 ## 概述
@@ -32,7 +32,6 @@ content_hash: sha256:3e01394cb0debf945336344d0ddde93d4fc922ea76a67230ae070a0e122
    #include <cstdio>
    #include <fcntl.h>
    #include <map>
-   #include <string>
    #include <vector>
    #include <native_buffer/native_buffer.h>
    #include "iostream"
@@ -87,7 +86,7 @@ content_hash: sha256:3e01394cb0debf945336344d0ddde93d4fc922ea76a67230ae070a0e122
    ```
    Camera_ErrorCode NDKCamera::CreatePhotoOutputWithoutSurfaceId()
    {
-       OH_LOG_ERROR(LOG_APP, "CreatePhotoOutputWithoutSurfaceId enter.");
+       OH_LOG_INFO(LOG_APP, "CreatePhotoOutputWithoutSurfaceId enter.");
        profile_ = cameraOutputCapability_->photoProfiles[0];
        Camera_Profile* profile = cameraOutputCapability_->photoProfiles[0];
        profile->size.width = NUM_1920;

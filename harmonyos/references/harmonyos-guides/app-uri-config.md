@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-confi
 title: 应用链接说明
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定应用 > 应用链接说明
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:13+08:00
+scraped_at: 2026-10-01T07:33:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ea30a18e7f18a874342f3b46b1ec69d1b495063f2729de43f01505955e49a426
+content_hash: sha256:6ceacfcc016d0eb2ea6fca5c6cec630c01e6a7c71d589a51d61ca7b98b35a4ca
 ---
 
 ## uris标签说明
@@ -71,7 +71,7 @@ content_hash: sha256:ea30a18e7f18a874342f3b46b1ec69d1b495063f2729de43f01505955e4
    | PrimaryContactMgmt | 从API version 23开始，新增支持该字段。指示社交通讯类应用“重要联系人列表”的设置功能。使用场景详见[优先通知权益申请](priority-notification-permission-guidelines.md)。 |
 2. 指定类型的应用被拉起时免跳转弹框：正常情况下，拉起指定类型的应用时，都会弹出确认是否打开应用的弹窗。如果您的应用有向其他应用提供登录/分享/支付的功能，可以在应用中声明对应的LinkFeature（取值参见下表）。应用通过上架审核后，当其他应用拉起您的应用时将不再弹窗提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_okjQJv3Ry6KZS_oMiiqUw/zh-cn_image_0000002743218040.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/l8N_BgmqRiS1yu7rPCI_LQ/zh-cn_image_0000002778930799.png)
 
    | 值 | 说明 |
    | --- | --- |
@@ -120,7 +120,7 @@ content_hash: sha256:ea30a18e7f18a874342f3b46b1ec69d1b495063f2729de43f01505955e4
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/rWY2bzdSTBir4YwVR2L40Q/zh-cn_image_0000002772737293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/PJWhkg29R-imK5bRivuBng/zh-cn_image_0000002749331716.png)
 
 ### 指定类型的应用被拉起时免跳转弹框
 

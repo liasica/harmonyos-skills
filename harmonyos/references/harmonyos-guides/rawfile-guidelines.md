@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawfile-guide
 title: Rawfile开发指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 资源管理 > Rawfile开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:08:30+08:00
+scraped_at: 2026-10-01T07:35:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:50a2a5f150b89ce5d94640c95088a28f7b5f9d25b26c333f6b25b154f873b27e
+content_hash: sha256:96970ea86f26f03b7dd7c436d40e51903949d3368f0b560b5a045f0286def6a2
 ---
 
 ## 场景介绍
@@ -39,7 +39,7 @@ content_hash: sha256:50a2a5f150b89ce5d94640c95088a28f7b5f9d25b26c333f6b25b154f87
 
 **1. 创建工程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/W2LeNMNjSpeFZEcJ-h4gNA/zh-cn_image_0000002772899595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/cWGJ4hKYRBWQh285mdEmfg/zh-cn_image_0000002749494140.png)
 
 **2. 添加依赖**
 

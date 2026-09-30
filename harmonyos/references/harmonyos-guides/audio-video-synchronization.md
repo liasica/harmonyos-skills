@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-video-s
 title: 音画同步
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 音画同步
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:22+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:07c1b801a1c11160fe48cb8696554ed13948d1aed664e1dbaebab94a039533ac
+scraped_at: 2026-10-01T07:34:48+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6c4780c321b3118e73a9061a44b709f9cfd1af64092334996581acbca1175060
 ---
 
 ## 概述
@@ -38,7 +38,7 @@ content_hash: sha256:07c1b801a1c11160fe48cb8696554ed13948d1aed664e1dbaebab94a039
 | P帧(P-frame) | 前向预测编码帧（predictive-frame）。P帧是前向预测帧，编码过程依赖了前序帧进行预测，解码过程依赖前序帧才能正确解码重建 |
 | B帧(B-frame) | 双向预测编码帧（bi-directional prediction frame）。B帧也是一个压缩帧，编码过程参考了前向和后向的帧进行预测 |
 
-1. **音画同步的衡量**：以视频帧与对应音频帧的实际播放时间差为指标。差值大于0ms表示视频超前，小于0ms则音频超前。考虑到采集与采样率影响，时间戳难以完全一致，差值在合理区间内即视为同步正常。
+1. **音画同步的衡量**：以视频帧与对应音频帧的实际播放时间差为指标。差值大于0ms表示音频超前，小于0ms则视频超前。考虑到采集与采样率影响，时间戳难以完全一致，差值在合理区间内即视为同步正常。
 2. **同步副作用的量化**：为对齐声音而强制等待视频帧，可能导致画面暂时停滞。这种停滞在主观体验上即为“卡顿”。为客观衡量其严重程度，我们关注最坏情况，定义标准为：**单帧图像停滞时间超过100ms，视为一次卡顿；以连续测试5分钟为周期，统计该周期内的卡顿情况。**
 3. **流畅度的辅助指标**：卡顿定义关注单帧极限，而**平均播放帧率**（每秒平均播放帧数）反映的是整体流畅趋势，二者互为补充。需注意，平均帧率高不代表无卡顿，瞬时停滞仍需通过上一条标准判定。
 
@@ -83,7 +83,7 @@ content_hash: sha256:07c1b801a1c11160fe48cb8696554ed13948d1aed664e1dbaebab94a039
 
 **连续播放音帧方案示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/q499SJjuQguFZF7por8HiA/zh-cn_image_0000002743219500.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/aXJjZoifQ5SztV-axoVsTQ/zh-cn_image_0000002778932371.png)
 
 音频和视频的管道必须同时以相同的时间戳呈现每帧数据。将音频播放位置用作主时间参考，而视频管道只输出与最新渲染音频帧匹配的视频帧。对于所有可能的实现，精确计算最后一次呈现的音频时间戳是至关重要的。[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp) 接口用以查询音频管道各个阶段的音频时间戳和延迟信息，此信息可用于控制视频管道，使视频帧与音频帧匹配。
 
@@ -219,7 +219,7 @@ content_hash: sha256:07c1b801a1c11160fe48cb8696554ed13948d1aed664e1dbaebab94a039
 
 **说明** 
 
-* [OH\_AudioRenderer\_Start()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_start)接口调用后，到音频数据真正写入硬件存在一定延迟。因此，调用后需等待一定时间才能通过[OH\_AudioRenderer\_Start()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_start)获取到有效的时间戳值，期间音频未发声时建议画面帧先按照正常速度播放，后续再逐步追赶音频位置从而提升用户看到画面的起播时延。例如，可以在音频输出稳定前，让视频按标准帧率渲染；待音频时间戳可用后，根据音画差值执行慢速渲染或丢帧操作。
+* [OH\_AudioRenderer\_Start()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_start)接口调用后，到音频数据真正写入硬件存在一定延迟。因此，调用后需等待一定时间才能通过[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp)获取到有效的时间戳值，期间音频未发声时建议画面帧先按照正常速度播放，后续再逐步追赶音频位置从而提升用户看到画面的起播时延。例如，可以在音频输出稳定前，让视频按标准帧率渲染；待音频时间戳可用后，根据音画差值执行慢速渲染或丢帧操作。
 * 当framePosition和timestamp以稳定的速度前进后，建议调用[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp)的间隔不低于 200ms（例如 200ms~1s 一次），无需更频繁查询，避免带来功耗问题。
 * [OH\_AudioRenderer\_Flush()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_flush)接口执行后，framePosition返回值会重新（从0）开始计算。
 * [OH\_AudioRenderer\_GetFramesWritten()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_getframeswritten) 接口在Flush时候不会清空，该接口和[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp)接口不建议配合使用。

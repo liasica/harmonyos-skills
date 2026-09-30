@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: EditableTitleBarV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > EditableTitleBarV2
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:601e7b7af4b8c25de70c20fe820ebdd8d014a753162068478e821e3a34a09f07
+scraped_at: 2026-10-01T07:37:12+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6b7da2dda4997dbe9354ba1a783d9e62224f43d9fb5e456b02a38a8ee70978f5
 ---
 
 编辑型标题栏，适用于多选界面或内容编辑界面，一般采取左叉右勾的形式。
@@ -483,8 +483,8 @@ EditableTitleBarStyleV2的构造函数。
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```ts
-import { Prompt } from '@kit.ArkUI';
 import {
+  Prompt,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -548,7 +548,7 @@ struct EditableTitleBarV2Demo01 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/jjfK4YF9QeehFdXd-u7n9Q/zh-cn_image_0000002743221282.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/orPT7gKCSX2py4YiARmg8g/zh-cn_image_0000002778934299.png)
 
 ### 示例2（头像与背景模糊标题栏）
 
@@ -557,8 +557,9 @@ struct EditableTitleBarV2Demo01 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```ts
-import { LengthMetrics, Prompt } from '@kit.ArkUI';
 import {
+  LengthMetrics,
+  Prompt,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -696,7 +697,7 @@ struct EditableTitleBarV2Demo02 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/eBcvIsDkSguo5K6AQU-BCw/zh-cn_image_0000002772740537.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/T5MbgdgzRICjH1QR_vOGVA/zh-cn_image_0000002749335216.png)
 
 ### 示例3（右侧自定义按钮播报）
 
@@ -705,8 +706,8 @@ struct EditableTitleBarV2Demo02 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```ts
-import { Prompt } from '@kit.ArkUI';
 import {
+  Prompt,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -777,7 +778,7 @@ struct EditableTitleBarV2Demo03 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/DeDkHyhnQxatTN5ACPBuDg/zh-cn_image_0000002772900423.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/6l4JUDMaRm-mtmU6fm6OSA/zh-cn_image_0000002749495100.png)
 
 ### 示例4（左侧图标设置为默认焦点）
 
@@ -786,8 +787,7 @@ struct EditableTitleBarV2Demo03 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```ts
-import { Prompt } from '@kit.ArkUI';
-import { EditableLeftIconTypeV2, EditableTitleBarV2, EditableLeftIconV2, EditableSaveButtonV2 } from '@kit.ArkUI';
+import { Prompt, EditableLeftIconTypeV2, EditableTitleBarV2, EditableLeftIconV2, EditableSaveButtonV2 } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -814,7 +814,7 @@ struct EditableTitleBarV2Demo04 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/NbJ_m02CTv-ba5M4z55FtQ/zh-cn_image_0000002743381172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/bLjTLcBQQyi1dq190zX45w/zh-cn_image_0000002779094157.png)
 
 ### 示例5（右侧自定义图标设置为默认焦点）
 
@@ -823,8 +823,8 @@ struct EditableTitleBarV2Demo04 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```ts
-import { Prompt } from '@kit.ArkUI';
 import {
+  Prompt,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -874,7 +874,7 @@ struct EditableTitleBarV2Demo05 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/BjPZ2sFLTE-KaDpyZeM89Q/zh-cn_image_0000002743221284.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/nye1zL_dTJ2hqJLiQ0GFMg/zh-cn_image_0000002778934301.png)
 
 ### 示例6（设置Symbol类型图标）
 
@@ -883,8 +883,9 @@ struct EditableTitleBarV2Demo05 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```ts
-import { Prompt, SymbolGlyphModifier } from '@kit.ArkUI';
 import {
+  Prompt,
+  SymbolGlyphModifier,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -963,4 +964,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/0M8j2M6OSVOUp075vE7TWg/zh-cn_image_0000002772740539.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/9LV63Wp2T0Wq48SqUpSPbw/zh-cn_image_0000002749335218.png)

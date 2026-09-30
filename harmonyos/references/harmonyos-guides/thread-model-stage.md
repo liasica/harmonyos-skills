@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/thread-model-
 title: 线程模型
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 线程模型
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:12+08:00
+scraped_at: 2026-10-01T07:33:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cd6f3be0e07176b5dae9e82747675e6e70123b6facf841a0b0adfe5d7f59c6a8
+content_hash: sha256:856341885128b8f56801aafb8c951bc56fb54a60bb3251e46cb4673c8b45c69a
 ---
 
 线程是操作系统进行运算调度的基本单位，是[进程](process-model-overview.md)中的执行流，共享进程的资源。一个进程可以包含多个线程。
@@ -28,7 +28,7 @@ content_hash: sha256:cd6f3be0e07176b5dae9e82747675e6e70123b6facf841a0b0adfe5d7f5
 
     TaskPool与Worker的运作机制、通信手段和使用方法可以参考[TaskPool和Worker的对比](taskpool-vs-worker.md)。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ZZG22VWgRve4kqQuOiuupA/zh-cn_image_0000002772737281.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/J-pt7KgIRQ26QhW8Gmfr9w/zh-cn_image_0000002749331704.png)
 
 **说明** 
 

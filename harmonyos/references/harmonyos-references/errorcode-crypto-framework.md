@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: cryptoFramework错误码
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 错误码 > cryptoFramework错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ffde7b8784f62fcf2398213f442331b63c69f87150e8f2681e6aea2175202c94
+scraped_at: 2026-10-01T07:38:09+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:79f664b70624f2935d3f22846fe4b1970b7c284642080c119515660241d48b53
 ---
 
 **说明** 
@@ -43,11 +43,15 @@ Failed to obtain the native object or convert parameters.
 
 **可能原因**
 
-系统出现的不可预期的错误。
+1. 调用接口的实例对象不是由本模块对应的接口创建，导致获取Native对象失败。
+2. 系统内部出现空指针。
+3. 系统出现的不可预期的错误。
 
 **处理步骤**
 
-检查当前系统功能是否正常。
+1. 检查调用接口的实例对象是否由本模块对应的接口正确创建。
+2. 系统异常，请稍后重试或重启设备。
+3. 若以上检查均无法定位问题，请收集日志信息并联系华为技术支持。
 
 ## 17620003 参数检查失败
 

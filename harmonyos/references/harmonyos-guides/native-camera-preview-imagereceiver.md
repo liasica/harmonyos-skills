@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 预览流二次处理(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 预览流二次处理(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7999de3f848589dfc2c2df9223e84a1e9c28f6e6bce2ff40789e59fe255168ae
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:8158999e0234254303c4c6c5310769ce8c4dc06527a645ef6a82e6bec0ef2f6d
 ---
 
 通过ImageReceiver创建预览输出，获取预览流实时数据，以供后续进行图像二次处理，比如应用可以对其添加滤镜算法等。
@@ -132,14 +132,18 @@ content_hash: sha256:7999de3f848589dfc2c2df9223e84a1e9c28f6e6bce2ff40789e59fe255
    void ShowImage(OH_ImageNative *image)
    {
        OH_LOG_INFO(LOG_APP, "ImageReceiverNativeCTest %{public}s IN", __func__);
+       if (g_ndkCamera == nullptr) {
+           return;
+       }
        uint64_t xComponentSurfaceId = std::stoull(g_xComponentSurfaceIdSlave);
        OH_LOG_ERROR(LOG_APP, "ImageReceiverNativeCTest %{public}s XComponentId is : %{public}lu.", __func__,
            xComponentSurfaceId);
        OHNativeWindow *nativeWindow = nullptr;
        int32_t res = OH_NativeWindow_CreateNativeWindowFromSurfaceId(xComponentSurfaceId, &nativeWindow);
+       OH_LOG_INFO(LOG_APP, "ImageReceiverNativeCTest %{public}s XComponentId is : %{public}lu.",
+           __func__, xComponentSurfaceId);
        if (res != 0) {
-           OH_LOG_ERROR(LOG_APP,
-               "ShowImage CreateNativeWindowFromSurfaceId failed, errCode: %{public}d.", res);
+           OH_LOG_ERROR(LOG_APP, "CreateSurfaceId failed, errCode: %{public}d.", res);
            return;
        }
 
@@ -163,8 +167,7 @@ content_hash: sha256:7999de3f848589dfc2c2df9223e84a1e9c28f6e6bce2ff40789e59fe255
        }
        Image_Size imgSize = {};
        OH_ImageNative_GetImageSize(image, &imgSize);
-       OH_LOG_INFO(LOG_APP, "ImageReceiverNativeCTest %{public}s imgSize is : %{public}u, %{public}u.", __func__,
-           imgSize.width, imgSize.height);
+       OH_LOG_INFO(LOG_APP, "%{public}s imgSize is : %{public}u, %{public}u.", __func__, imgSize.width, imgSize.height);
        size_t bufSize = 0;
        OH_ImageNative_GetBufferSize(image, g_jpegComponent, &bufSize);
 
@@ -175,7 +178,6 @@ content_hash: sha256:7999de3f848589dfc2c2df9223e84a1e9c28f6e6bce2ff40789e59fe255
            OH_LOG_ERROR(LOG_APP, "ShowImage RequestBuffer failed, errCode: %{public}d.", res);
            return;
        }
-
        // 将image数据拷贝到nativeWindowBuffer上。
        copyBuffer(imageBuffer, bufSize, nativeWindowBuffer);
 

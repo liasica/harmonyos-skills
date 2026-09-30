@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationRequest
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationRequest
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:647bdcda25bc553e3dadc56343d0bda34c7cf77e65681e429aed48fc73c954c6
+scraped_at: 2026-10-01T07:40:28+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:bfa1cd5973197a59cedbf46f59038a097fc881bb000f649bca3f61e898f6fc81
 ---
 
 定义了[通知请求](../harmonyos-guides/notification-glossary.md#notification-request通知请求)的数据结构，用于描述一条通知的全部信息，包括[通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)、标识、展示样式、交互行为等。
@@ -44,10 +44,10 @@ content_hash: sha256:647bdcda25bc553e3dadc56343d0bda34c7cf77e65681e429aed48fc73c
 | overlayIcon23+ | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 通知重叠图标，替换通知左侧图标，默认为空。此接口只在[notificationSlotType](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)类型设置为SOCIAL\_COMMUNICATION时生效。  图标像素的总字节数不超过192KB（图标像素的总字节数通过[getPixelBytesNumber](arkts-apis-image-pixelmap.md#getpixelbytesnumber7)获取），超出后设置不生效。建议图标像素长宽为128\*128。实际显示效果依赖于设备能力和通知中心UI样式，详情请参考[通讯对话类通知](../design-guides/system-features-notification-0000001793074217.md#section158281459143810)。 |
 | groupName8+ | string | 否 | 是 | 通知所属组。当不同通知的groupName相同时，这些通知将成组展示。  大小不超过202字节，超出部分会被截断。默认为空。 |
 | template8+ | [NotificationTemplate](js-apis-inner-notification-notificationtemplate.md) | 否 | 是 | 通知模板，默认为空。 |
-| extraInfo | {[key: string]: any} | 否 | 是 | 扩展参数。为应用提供定制服务。默认为空。  以下Key由系统赋值，开发者手动修改也不会生效，系统在数据传递时会自动修改为实际值。  - 'ohos.notificationManager.wantUri'：用户点击通知时传递给应用的[Want](js-apis-app-ability-want.md#want) 中的uri字段，使用[getActiveNotifications](js-apis-notification.md#notificationgetactivenotifications)接口获取该信息。 |
+| extraInfo | {[key: string]: any} | 否 | 是 | 扩展参数。为应用提供定制服务。默认为空。  以下Key由系统赋值，开发者手动修改也不会生效，系统在数据传递时会自动修改为实际值。  - 'ohos.notificationManager.wantUri'：用户点击通知时传递给应用的[Want](js-apis-app-ability-want.md#want) 中的uri字段，使用[getActiveNotifications](js-apis-notificationmanager.md#notificationmanagergetactivenotifications-1)接口获取该信息。 |
 | slotType(deprecated) | [notification.SlotType](js-apis-notification.md#slottype) | 否 | 是 | 通知渠道类型，默认值为OTHER\_TYPES。  从API version 7开始支持，从API version 11开始废弃，建议使用notificationSlotType替代。 |
 | hashCode | string | 是 | 是 | 通知唯一标识。 |
-| creatorBundleName | string | 是 | 是 | 创建通知的应用名称。 |
+| creatorBundleName | string | 是 | 是 | 创建通知的应用包名。 |
 | creatorUid | number | 是 | 是 | 创建通知的应用UID。 |
 | creatorPid | number | 是 | 是 | 创建通知的PID。 |
 | creatorUserId8+ | number | 是 | 是 | 创建通知的用户ID。 |
@@ -84,6 +84,6 @@ content_hash: sha256:647bdcda25bc553e3dadc56343d0bda34c7cf77e65681e429aed48fc73c
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| wantAction | string | 否 | 是 | 应用在创建wantAgent时，传入的want的action字段，具体含义请参考[action](js-apis-app-ability-want.md#want)。 |
-| wantUri | string | 否 | 是 | 应用在创建wantAgent时，传入的want的uri字段，具体含义请参考[uri](js-apis-app-ability-want.md#want)。 |
-| wantParameters | Record<string, Object> | 否 | 是 | 应用在创建wantAgent时，传入的want的parameters字段，具体含义请参考[parameters](js-apis-app-ability-want.md#want)。 |
+| wantAction | string | 否 | 是 | 应用在创建wantAgent时，传入的Want的action字段，具体含义请参考[action](js-apis-app-ability-want.md#want)。 |
+| wantUri | string | 否 | 是 | 应用在创建wantAgent时，传入的Want的uri字段，具体含义请参考[uri](js-apis-app-ability-want.md#want)。 |
+| wantParameters | Record<string, Object> | 否 | 是 | 应用在创建wantAgent时，传入的Want的parameters字段，具体含义请参考[parameters](js-apis-app-ability-want.md#want)。 |

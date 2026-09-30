@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nearlink-data-transfer-api
-title: "@ohos.nearlink.dataTransfer (星闪数传能力)"
-breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.dataTransfer (星闪数传能力)
+title: "@ohos.nearlink.dataTransfer (星闪数据传输能力)"
+breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.dataTransfer (星闪数据传输能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:04+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-10-01T07:38:23+08:00
+doc_updated_at: 2026-09-30
 content_hash: sha256:fdc0364b79099a9b91cf0f2da461fa630cd39bccd4761d79f6aa20a32bfa22f4
 ---
 

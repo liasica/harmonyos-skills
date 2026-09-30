@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.application.NotificationSubscriberExtensionAbility (通知订阅扩展能力)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > @ohos.application.NotificationSubscriberExtensionAbility (通知订阅扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9a329d11276d0e4703200a336582b18a7462c9da4ef2c232d4c6ee24ee8c5040
+scraped_at: 2026-10-01T07:40:24+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:e792e21d613d3f8bd3f62f65ba70a9f94d115a692e8018cb323e2bb659aa2562
 ---
 
 NotificationSubscriberExtensionAbility是[通知订阅](../harmonyos-guides/notification-glossary.md#notification-subscription通知订阅)者扩展能力的基类，提供通知订阅的相关功能。三方穿戴类应用（如手表配套应用）通过继承此类实现回调逻辑，在本机发布通知时接收通知信息并通过蓝牙转发给穿戴设备，在本机通知被取消时接收取消通知的回调并转发给穿戴设备删除对应通知。
@@ -25,6 +25,10 @@ import { notificationExtensionSubscription, NotificationSubscriberExtensionAbili
 ```
 
 ## NotificationSubscriberExtensionAbility
+
+**系统能力**：SystemCapability.Notification.Notification
+
+### 属性
 
 **系统能力**：SystemCapability.Notification.Notification
 

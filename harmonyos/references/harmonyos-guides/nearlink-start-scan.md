@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-star
 title: 发起星闪扫描
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > 发起星闪扫描
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:52+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:1a9f6834084aa16665f4652669d5ec519df2e672fc9044acb68eb20cd3d1e8e1
+scraped_at: 2026-10-01T07:34:31+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:aa027ae5e58a3a819b5a8dd8a6e9c233073289307669a811eb0ca02ff1064d2b
 ---
 
 ## 场景介绍
@@ -172,13 +172,7 @@ content_hash: sha256:1a9f6834084aa16665f4652669d5ec519df2e672fc9044acb68eb20cd3d
        `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
    }
    ```
-4. 配置扫描参数，扫描过滤器配置期望的设备名称、地址等信息。
-
-   **注意** 
-
-   1. 扫描过滤器至少携带一个过滤条件，否则扫描过滤器无效。
-   2. 过滤器可以配置多组，组之间的条件是或的关系，如步骤5所示。
-   3. 一组过滤器内的条件是与的关系，如下示例：address和deviceName同时满足才会上报。
+4. 配置扫描过滤器，设置期望的设备名称、地址等信息。如需使用扫描过滤器，过滤器至少携带一个过滤条件。扫描过滤器可配置多个，多个过滤器之间的条件为或的关系，单个过滤器内的条件为与的关系。如果不希望使用扫描过滤器，filters传null表示不过滤。
 
    ```typescript
    @State remoteDeviceName: string = 'deviceName1';

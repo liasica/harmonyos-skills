@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-common-at
 title: 设置通用布局属性
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 构建布局 > 设置通用布局属性
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e29d634616632a38677b97eff3ba40bed2531fad2245fa08f5f71051a071a86e
+scraped_at: 2026-10-01T07:34:08+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:4748406d4fd39539438c3c1ea66d46b4f553aa2328312034ad5e36d9255757ec
 ---
 
 从API version 12开始，ArkUI在NDK中提供了一组通用布局属性，可以控制组件的尺寸、位置、边框等布局行为。
@@ -91,7 +91,7 @@ inline std::shared_ptr<ArkUITextNode> CreatePercentWidthItem()
 
 SetSize()同时写入宽和高，适合固定尺寸组件；SetPercentWidth()通过入参常量PERCENT\_WIDTH\_VALUE配置组件宽度为父容器宽度的30%；SetAspectRatio()通过配置固定宽高比，从显式设置的组件高度自动推导对应的宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1uF_DyDPSK2SipDoRK0K3Q/zh-cn_image_0000002772898025.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/rdhnZwwAS228fKEMfg5Btg/zh-cn_image_0000002749492560.jpg)
 
 通常，还需要通过padding和margin控制内外边距、调节组件尺寸，以实现良好的间距效果。
 
@@ -177,7 +177,7 @@ inline std::shared_ptr<ArkUITextNode> CreateMarginItem(const std::string &text, 
 
 内边距padding用于控制组件内容区与边缘之间的留白，外边距margin用于控制组件与父容器边缘的留白间距。如果需要按父容器比例设置间距，则可使用[ArkUI\_NodeType](../harmonyos-references/capi-native-node-h.md#arkui_nodetype)中NODE\_PADDING\_PERCENT和NODE\_MARGIN\_PERCENT对应的方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/aBSFKFDJS06nQlz4NVB0AQ/zh-cn_image_0000002743378776.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/kzLXp4pTTX-UX2qZBe19UQ/zh-cn_image_0000002779091619.jpg)
 
 ## 使用位置属性
 
@@ -212,17 +212,17 @@ inline std::shared_ptr<ArkUITextNode> CreatePositionedItem()
 
 inline std::shared_ptr<ArkUITextNode> CreateOffsetItem()
 {
-    auto offset = CreateDemoItem("offset(110, 80)", POSITION_ITEM_BLUE);
+    auto offset = CreateDemoItem("offset(110, 18)", POSITION_ITEM_BLUE);
     offset->SetWidth(LARGE_ITEM_WIDTH);
     offset->SetMargin(OFFSET_MARGIN_TOP, 0.0F, 0.0F, 0.0F);
-    offset->SetOffset(OFFSET_X, POSITION_Y);
+    offset->SetOffset(OFFSET_X, OFFSET_Y);
     return offset;
 }
 ```
 
 可以看到两种效果：position直接给出目标位置，offset则保留原有占位关系，再向目标方向偏移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/HVCmsjN0S8q0pAXiFpx95w/zh-cn_image_0000002743218890.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Cf6k0WAISMau9997Kp4MfQ/zh-cn_image_0000002778931761.jpg)
 
 ## 使用边框属性
 
@@ -282,4 +282,4 @@ void SetBorderStyle(
 
 当组件已经具备尺寸和间距后，可以继续叠加这些边框属性，构建轮廓和视觉分隔的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/WHF8r-R8TFKw0YJumjBBBw/zh-cn_image_0000002772738143.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/7HL4piRSTYqDwLMBgZv7EA/zh-cn_image_0000002749332678.jpg)

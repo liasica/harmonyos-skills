@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 企业设备管理错误码
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 错误码 > 企业设备管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:43+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0424fb62e09ef4d3bc5acca45f996080042b9bfc49a00e798ea1e58437701f33
+scraped_at: 2026-10-01T07:38:57+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:5a15dff186425ce4f35ca8fdcbfc3d1f3e89d899d6ee12e4459d516de5c50a48
 ---
 
 **说明** 
@@ -1275,3 +1275,21 @@ The number of signed-in accounts reaches the upper limit.
 **处理步骤**
 
 尝试注销多余的系统账号，并及时移除不再需要保留的系统账号。
+
+## 9201048 设备操作失败
+
+**错误信息**
+
+Failed to operate the device.
+
+**错误描述**
+
+当前设备操作失败。
+
+**可能原因**
+
+磁盘擦除失败。
+
+**处理步骤**
+
+擦除失败，请重试。

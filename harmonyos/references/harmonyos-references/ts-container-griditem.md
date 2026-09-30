@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridItem
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > GridItem
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:54+08:00
+scraped_at: 2026-10-01T07:36:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:579f78f76bda049cf9a421ce482e4590a32a5282850b09e2f0c187b7279a116c
+content_hash: sha256:faac4023521277a9b9d97fde4ada48fc754ed9857ebe223c13bce0a4d1759ad9
 ---
 
 网格容器中单项内容容器。
@@ -286,7 +286,7 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/xFxsfJlmQgqxeqbAeQipYg/zh-cn_image_0000002743380664.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/nS3wyKi8S9OVD3iJm-OunQ/zh-cn_image_0000002779093575.gif)
 
 ### 示例2（设置GridItem样式）
 
@@ -353,4 +353,4 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/1Bk_6xQARLu5A3R-XU4s6Q/zh-cn_image_0000002743220778.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/LH8pPUYcTXSh0qn0jsLH7Q/zh-cn_image_0000002778933721.png)

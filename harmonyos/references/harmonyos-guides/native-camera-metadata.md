@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 元数据(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 元数据(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:57+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:0bb15cb83cd6197fd01016dc699f006768d3aaa4c27695c41926a1fa9a730fab
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:436b801be0ec8378b88222a9cf9819ed144aaf609fec90e9df1e5946c59dbac1
 ---
 
 元数据（Metadata）是对相机返回的图像信息的描述和上下文。针对图像信息，提供更详细的数据，如照片或视频中，识别人像的取景框坐标等信息。
@@ -27,7 +27,6 @@ Metadata主要是通过一个TAG（Key），去找对应的Data（Value），用
    #include <cstdio>
    #include <fcntl.h>
    #include <map>
-   #include <string>
    #include <vector>
    #include <native_buffer/native_buffer.h>
    #include "iostream"
@@ -171,7 +170,7 @@ Metadata主要是通过一个TAG（Key），去找对应的Data（Value），用
   ```
   void OnMetadataOutputError(Camera_MetadataOutput *metadataOutput, Camera_ErrorCode errorCode)
   {
-      OH_LOG_INFO(LOG_APP, "OnMetadataOutput errorCode = %{public}d", errorCode);
+      OH_LOG_ERROR(LOG_APP, "OnMetadataOutput errorCode = %{public}d", errorCode);
   }
   ```
 

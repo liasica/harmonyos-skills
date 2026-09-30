@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-activ
 title: Sigmoid
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 激活函数 > Sigmoid
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:08:09+08:00
+scraped_at: 2026-10-01T07:35:29+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:90a53105bd2033fa08113aad2c4a7f5606c4381901eb7518ad6d892871344441
+content_hash: sha256:e2992274ca541849dd01af9d5910386169b290ba85a9a175d45909871080ce27
 ---
 
 ## 功能说明
 
 按元素做逻辑回归Sigmoid，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数 ：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/yzVEzuj6TFGehh5ZOjZJGw/zh-cn_image_0000002743380230.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/mOkwUnx7QCOCkJQKRun5xg/zh-cn_image_0000002779093081.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0VOxfO14QWayknIuAdWRzg/zh-cn_image_0000002743220344.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/uy2sh-5fTJWZO7GBbQTV_A/zh-cn_image_0000002778933225.png)
 
 ## 函数原型
 

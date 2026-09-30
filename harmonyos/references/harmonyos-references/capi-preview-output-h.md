@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-prev
 title: preview_output.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > preview_output.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3368ef3fee8f22d82b4cd11ec4c295bb0aab7db436427dab0b2f65911160280c
+scraped_at: 2026-10-01T07:39:27+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:3d855b20cfc9f5af1880da1e54abd729f6788bb1c033477966d8df4873ffb1a5
 ---
 
 ## 概述
@@ -520,7 +520,7 @@ Camera_ErrorCode OH_PreviewOutput_EnableBandwidthCompression(Camera_PreviewOutpu
 
 | 类型 | 说明 |
 | --- | --- |
-| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_OPERATION\_NOT\_ALLOWED: 操作不允许。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SESSION\_NOT\_CONFIG：相机会话未配置。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_OPERATION\_NOT\_ALLOWED：操作不允许。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SESSION\_NOT\_CONFIG：相机会话未配置。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
 
 ### OH\_PreviewOutput\_AddDeferredSurface()
 

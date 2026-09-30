@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVMetadataExtractor)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVMetadataExtractor)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:09+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:ef198b1ff78b7b1fb5f904341cf653dc9a53c9f02417ce59fe6bfe70df8a0bd3
+scraped_at: 2026-10-01T07:39:39+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:46379730884cd94216c12ea2101aa0fb2a91fb9e53ec5bf6a65ad612e1a8452a
 ---
 
 元数据获取类，用于从媒体资源中获取元数据、缩略图。在调用AVMetadataExtractor的方法前，需要先通过[media.createAVMetadataExtractor](arkts-apis-media-f.md#mediacreateavmetadataextractor11)构建一个AVMetadataExtractor实例。
@@ -263,6 +263,7 @@ async function fetchFramesByTimesDemo() {
   };
   // 获取缩略图。
   let avMetadataExtractor = await media.createAVMetadataExtractor();
+  let pixelMap: image.PixelMap | undefined = undefined;
   if (avMetadataExtractor) {
     console.info('Succeeded in creating AVMetadataExtractor');
     avMetadataExtractor.fetchFramesByTimes(timesUs, queryOption, param, (frameInfo: media.FrameInfo, err: BusinessError) => {
@@ -271,7 +272,7 @@ async function fetchFramesByTimesDemo() {
         return;
       }
       if (frameInfo != undefined && frameInfo.image != undefined) {
-        this.pixelMap = frameInfo.image;
+        pixelMap = frameInfo.image;
       }});
   }
 }
@@ -336,6 +337,7 @@ async function fetchFramesByTimesDemo() {
   };
   // 获取缩略图。
   let avMetadataExtractor = await media.createAVMetadataExtractor();
+  let pixelMap: image.PixelMap | undefined = undefined;
   if (avMetadataExtractor) {
     console.info('Succeeded in creating AVMetadataExtractor');
     avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, (frameInfo: media.FrameInfo, err: BusinessError) => {
@@ -344,7 +346,7 @@ async function fetchFramesByTimesDemo() {
         return;
       }
       if (frameInfo != undefined && frameInfo.image != undefined) {
-        this.pixelMap = frameInfo.image;
+        pixelMap = frameInfo.image;
       }});
   }
 }

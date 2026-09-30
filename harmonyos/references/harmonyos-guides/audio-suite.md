@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite
 title: 音频编创开发概述(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 音频编创开发概述(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:19+08:00
+scraped_at: 2026-10-01T07:34:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4582e737cc88bef69dc1343fba5fc7f48fd463da42de4fc841be4b20782d731b
+content_hash: sha256:a74ac79df4d8bfe5794612349605f0493a4b0af7ae4c381f643aa095039dc247
 ---
 
 从API version 22开始，支持音频编创（[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)）功能。音频编创是一款提供专业级音频效果处理的开发接口，旨在帮助开发者高效构建各种音频创作应用。该套件提供高品质、低延迟、智能化的音频处理能力，集成了降噪、均衡器、人声分离等丰富音效功能。开发者可以根据具体的应用场景，轻松地将所需音频功能集成到应用中。
@@ -14,7 +14,7 @@ content_hash: sha256:4582e737cc88bef69dc1343fba5fc7f48fd463da42de4fc841be4b20782
 
 **图1**：音频编创实现原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/7BCWfuEJTYmrG8jYSnCF0Q/zh-cn_image_0000002772898611.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/yFIQLkShSyuWU2nSEQ1GoQ/zh-cn_image_0000002749493146.png)
 
 ## 引擎
 
@@ -54,7 +54,7 @@ content_hash: sha256:4582e737cc88bef69dc1343fba5fc7f48fd463da42de4fc841be4b20782
 
 **图2**：管线运行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/GXaAduQfR22NLoWSlbduQA/zh-cn_image_0000002743379362.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/XIIU_G7KStyRMYv6_fYbNQ/zh-cn_image_0000002779092205.png)
 
 状态的功能如下表所示。
 

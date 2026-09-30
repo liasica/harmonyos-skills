@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅任务执行超时事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 任务执行超时事件 > 订阅任务执行超时事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ebbf47fd640b21382d5178345b21e1abd5c62949ef97063286323f58266916f6
+scraped_at: 2026-10-01T07:34:41+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:93278b6da532923df0fd057e3ff6a9898e22c7bd5f7b817799da38c34fc1a0d0
 ---
 
 ## 简介
@@ -84,8 +84,12 @@ content_hash: sha256:ebbf47fd640b21382d5178345b21e1abd5c62949ef97063286323f58266
            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uid=${eventInfo.params['uid']}`);
            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uuid=${eventInfo.params['uuid']}`);
            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.exception=${eventInfo.params['exception']}`);
-           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.hilog.size=${eventInfo.params['hilog'].length}`);
-           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.peer_binder.size=${JSON.stringify(eventInfo.params['peer_binder'].length)}`);
+           if (eventInfo.params['hilog'] != undefined) {
+              hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.hilog.size=${eventInfo.params['hilog'].length}`);
+           }
+           if (eventInfo.params['peer_binder'] != undefined) {
+              hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.peer_binder.size=${JSON.stringify(eventInfo.params['peer_binder'].length)}`);
+           }
            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.memory=${eventInfo.params['memory']}`);
            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.log_over_limit=${eventInfo.params['log_over_limit']}`);
@@ -122,6 +126,8 @@ content_hash: sha256:ebbf47fd640b21382d5178345b21e1abd5c62949ef97063286323f58266
            // 构造超时2s
            sleep(2);
            OH_HiCollie_CancelTimer(id);
+       } else {
+           OH_LOG_INFO(LogType::LOG_APP, "OH_HiCollie_SetTimer failed, errorCode is %{public}d", errorCode);
        }
        return nullptr;
    }

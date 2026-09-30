@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 应用冻屏事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用冻屏事件 > 应用冻屏事件介绍
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:99fbe248e02e04af8fd00ceca6b6ddd0f6800eefa31f8c5724033eaeb66b5f2d
+scraped_at: 2026-10-01T07:34:40+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:97722e3c2ffe8d02d3915ad4bebe46918791611ad5b89407944ad12c7f5d3522
 ---
 
 ## 简介
@@ -55,9 +55,9 @@ let policy: hiAppEvent.EventPolicy = {
     }
 };
 hiAppEvent.configEventPolicy(policy).then(() => {
-    hilog.info(0x0000, 'hiAppEvent', `Set crash config policy successfully.`);
+    hilog.info(0x0000, 'testTag', `Set appfreeze config policy successfully.`);
 }).catch((err: BusinessError) => {
-    hilog.error(0x0000, 'hiAppEvent', `Failed to set crash config policy. code: ${err.code}, message: ${err.message}`);
+    hilog.error(0x0000, 'testTag', `Failed to set appfreeze config policy. code: ${err.code}, message: ${err.message}`);
 });
 ```
 

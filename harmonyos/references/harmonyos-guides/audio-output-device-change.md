@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-output-
 title: 响应输出设备变更时合理暂停
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频设备路由管理 > 响应输出设备变更时合理暂停
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b10034604270fcc083a44f86d96616841d5d98d9de12415f5b8994a150906c9f
+scraped_at: 2026-10-01T07:34:46+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:af008a6edb2dac0dd6f0f3b7a1c4efac2f57f577166405db28876863f60953e2
 ---
 
 开发者可以了解音频流输出设备变更信息，并完成相应适配，比如：应用在播放音乐时发现输出设备下线，为避免打扰用户，应该立即暂停音乐。
@@ -84,7 +84,7 @@ let audioRendererOptions: audio.AudioRendererOptions = {
       audioRenderer = renderer;
       // ...
     } else {
-      console.info(`Failed to create audio renderer. Code: ${err.code}, message: ${err.message}`);
+      console.error(`Failed to create audio renderer. Code: ${err.code}, message: ${err.message}`);
       // ...
     }
   });
@@ -151,7 +151,7 @@ let audioSessionManager = audio.getAudioManager().getSessionManager();
       audioRenderer = renderer;
       // ...
     } else {
-      console.info(`Failed to create audio renderer. Code: ${err.code}, message: ${err.message}`);
+      console.error(`Failed to create audio renderer. Code: ${err.code}, message: ${err.message}`);
       // ...
     }
   });

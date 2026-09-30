@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-input-d
 title: 实现音频输入设备路由切换
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频设备路由管理 > 实现音频输入设备路由切换
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:18+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:ae41cb293b1969132c26cccd746bdd967b960ab37e397afaba3a3882f6f1af1b
+scraped_at: 2026-10-01T07:34:46+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:8c6d330a78909444d67306a2bf27c484dbc4ceb416cbd0e988daaa4d94b83c4b
 ---
 
 从API version 21开始，支持音频输入设备路由切换。
@@ -366,7 +366,7 @@ C/C++示例：
   }
 
   // ...
-  // 为指定音频播放流设置首选输入设备。
+  // 为指定音频录制流设置首选输入设备。
   napi_value SelectInputDeviceForAudioCapturer(napi_env env, napi_callback_info info)
   {
       int32_t deviceId = 0;

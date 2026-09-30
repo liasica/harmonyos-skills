@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.systemDateTime (系统时间、时区)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.systemDateTime (系统时间、时区)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:12:13+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:7706a1ebf61383202d233ae49c8d65245e3920d68527c3806169f78bf497f157
+scraped_at: 2026-10-01T07:38:46+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:c6aaa0cb3e1c5f10bccb0948fa45bc2474b03554131507fcf2d6a3d2c36c827f
 ---
 
 本模块主要由系统时间和系统时区功能组成。开发者可以获取系统时间（含Unix纪元时间和系统启动时间）、系统日期、系统时区及自动设置时间开关状态，支持同步和异步两种获取方式，适用于需要在应用中展示当前时间、进行时间计算或处理时区相关业务的场景。
@@ -511,7 +511,7 @@ getUptime(timeType: TimeType, isNanoseconds?: boolean): number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.  适用版本：12+ |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 

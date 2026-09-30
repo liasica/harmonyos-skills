@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowp
 title: lowpower_avsink_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > lowpower_avsink_base.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:61cac68918aff11881f5ecfc7b82e45966b15a17a29f9c9183b885c9d0c4ffbd
+scraped_at: 2026-10-01T07:39:42+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:7ea6de2bab5a905b42ee680bb0d7a80fcc4b77487911506aac58891628163c75
 ---
 
 ## 概述
@@ -29,6 +29,7 @@ content_hash: sha256:61cac68918aff11881f5ecfc7b82e45966b15a17a29f9c9183b885c9d0c
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_AVSamplesBuffer](capi-avsinkbase-oh-avsamplesbuffer.md) | OH\_AVSamplesBuffer | LowPowerAVSink输入数据的结构体。应用在收到DataNeeded回调后需要将数据打包装进OH\_AVSamplesBuffer实例中送给对应的LowPowerAVSink。 |
+| [OH\_LowPowerAVSink\_Capability](capi-avsinkbase-oh-lowpoweravsinkcapability.md) | OH\_LowPowerAVSink\_Capability | OH\_LowPowerAVSink\_Capability的前向声明。 |
 
 ### 函数
 
@@ -107,4 +108,4 @@ OH_LowPowerAVSink_Capability *OH_LowPowerAVSink_GetCapability()
 
 | 类型 | 说明 |
 | --- | --- |
-| OH\_LowPowerAVSink\_Capability \* | OH\_LowPowerAVSink\_Capability：支持LPP播放器。  nullptr：不支持LPP播放器或者获取失败。 |
+| [OH\_LowPowerAVSink\_Capability](capi-avsinkbase-oh-lowpoweravsinkcapability.md) \* | 返回OH\_LowPowerAVSink\_Capability表示支持LPP播放器。  返回nullptr表示不支持LPP播放器或者获取失败。 |

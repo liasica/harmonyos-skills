@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-previe
 title: 相机预览流启动问题
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit常见问题 > 相机无法启动 > 相机预览流启动问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:df504578a2e3540ebaf55aa98da56c2ea48af78fa6015c44613a0c44f74eeb15
+scraped_at: 2026-10-01T07:34:51+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6960f51e7adfd1a04b020ad78e55dcf069b7489979e2716912a2b09e396551ba
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:df504578a2e3540ebaf55aa98da56c2ea48af78fa6015c44613a0c44f74
 
 ## 可能原因
 
-预览流（previewOutput）在相机流程中，分为创建，添加以及启动三个流程。流程间存在依赖，如果上一个流程失败，则会导致后续流程失败，进而使相机黑屏。具体原因可能有如下情况：
+预览流（previewOutput）在相机流程中，分为创建、添加以及启动三个流程。流程间存在依赖，如果上一个流程失败，则会导致后续流程失败，进而使相机黑屏。具体原因可能有如下情况：
 
 1. SurfaceId没有正确传入，导致图像无法正常显示。
 2. [createPreviewOutput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createpreviewoutput)失败或者使用的profile与cameraDevice不匹配。

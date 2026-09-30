@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-yuv-sh
 title: YUV拍照(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > YUV拍照(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5a4b6dfd5f609870cf70f4457a68aeb151578dd715ecdccc47669d63ba029bcc
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:d9ff1d3aecd5f1bd714d8bf2f25e7a3a31993ca2eb9c776b091383bf3972deb0
 ---
 
 从API version 23开始，相机框架提供YUV格式图片拍照能力。与普通拍照相比，YUV拍照获取到的是未经过编码的图像数据，完整保留了传感器捕获的原始亮度和色度信息，适用于视频编码或专业处理。同时，拍摄过程会产生更高的能耗开销，保存会占用更多的存储空间。
@@ -278,7 +278,7 @@ content_hash: sha256:5a4b6dfd5f609870cf70f4457a68aeb151578dd715ecdccc47669d63ba0
      ```
 5. 触发拍照。
 
-   通过photoOutput的[capture](../harmonyos-references/arkts-apis-camera-photooutput.md#capture-2)方法，执行拍照任务。该方法有两个参数，第一个参数为拍照设置setting，setting中可以设置图片质量，图片旋转角度等信息。第二参数为异步回调函数，用于获取结果。接口调用失败会返回相应错误码。
+   通过photoOutput的[capture](../harmonyos-references/arkts-apis-camera-photooutput.md#capture-2)方法，执行拍照任务。该方法有两个参数，第一个参数为拍照设置setting，setting中可以设置图片质量，图片旋转角度等信息。第二个参数为异步回调函数，用于获取结果。接口调用失败会返回相应错误码。
 
    通过PhotoOutput中的[getPhotoRotation](../harmonyos-references/arkts-apis-camera-photooutput.md#getphotorotation12)方法，可以获取拍照旋转角度。
 

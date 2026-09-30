@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/global-config
 title: 全局配置项功能场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 全局配置项功能场景
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:29+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:66cd817fe9199a3cc8b273f5cf77ede6cea76d31a0050d047a40aff40b7e553a
+scraped_at: 2026-10-01T07:33:56+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:e0d2801954295ebd277b1ec59b4f45ab2348fac3abb3313567a4a27e3fe12ae0
 ---
 
 对于需要使用进程单例的场景，例如不同并发实例间需要数据保持一致的全局配置项功能，可以采用[共享模块](arkts-sendable-module.md)来实现。
@@ -133,7 +133,7 @@ content_hash: sha256:66cd817fe9199a3cc8b273f5cf77ede6cea76d31a0050d047a40aff40b7
                  }
                }
              })
-             .backgroundColor(0xcccccc)
+             .backgroundColor('#cccccc')
            Text('logout')
              .fontSize(50)
              .fontWeight(FontWeight.Bold)
@@ -151,7 +151,7 @@ content_hash: sha256:66cd817fe9199a3cc8b273f5cf77ede6cea76d31a0050d047a40aff40b7
                  }
                }
              })
-             .backgroundColor(0xcccccc)
+             .backgroundColor('#cccccc')
            Text(this.wifiState)
              .fontSize(50)
              .fontWeight(FontWeight.Bold)

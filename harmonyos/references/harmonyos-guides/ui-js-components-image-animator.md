@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: image-animator开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > image-animator开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:35+08:00
+scraped_at: 2026-10-01T07:34:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f952c87b2e0d38953e5affb3eba04e74dbc40955f9cbc4ced590602baf514014
+content_hash: sha256:8eba6b1c2ce05b61660c08dac534208f7a1d13b9a5f43922a118e66d51617753
 ---
 
 image-animator组件为图片帧动画播放器。具体用法请参考[image-animator](../harmonyos-references/js-components-basic-image-animator.md)。
@@ -53,7 +53,7 @@ export default {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/ANJFHLFJQlKA_QTl8ymGTw/zh-cn_image_0000002772738191.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/EjvvypAoT3-cUEtXroA8dg/zh-cn_image_0000002749332726.gif)
 
 ## 设置image-animator组件属性
 
@@ -132,7 +132,7 @@ export default {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/PItFXuewQmqk6RlKJQ1cRw/zh-cn_image_0000002772898075.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/u2ffjMtaSnCE0hqEwuhZLw/zh-cn_image_0000002749492610.gif)
 
 **说明** 
 
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/h_6GHfK5S5C7oOJGJFnADA/zh-cn_image_0000002743378826.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/uGfG31TdTnWSSiwgR7m6zw/zh-cn_image_0000002779091669.gif)
 
 ## 场景示例
 
@@ -322,4 +322,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/TlizyyR9QUSao8wFo_DK3w/zh-cn_image_0000002743218940.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/PHm-C3iMTr2j4jJuFBjY0g/zh-cn_image_0000002778931811.gif)

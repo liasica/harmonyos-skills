@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.restrictions (限制类策略)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.restrictions (限制类策略)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:25+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:106a86299d21afe5afae957d3fdb432ecc0e600f8b30b4bedf15a4363798afdd
+scraped_at: 2026-10-01T07:38:56+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:9dea86a89a1d06ddb1a0dc45e3b10c3ead72dbcf555f8c003306e91f01ec1a9c
 ---
 
 本模块提供设置通用限制类策略能力。可以全局禁用和解除禁用蓝牙、HDC、USB、Wi-Fi、蜂窝数据、相机、麦克风等特性。
@@ -98,7 +98,7 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 | camera14+ | 设备相机能力。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS 或 ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS |
 | mtpClient18+ | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。在配置此特性之前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccountdeprecated)设置了某用户禁用MTP客户端写入能力时，再通过本接口禁用MTP客户端能力，会报策略冲突。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
 | mtpServer18+ | MTP服务端能力，当前仅支持手机、平板设备使用。 | API版本26.0.0之前：ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS，API版本26.0.0开始：ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS 或 ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS |
-| sambaClient20+ | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
+| sambaClient20+ | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。管控策略在文件管理器初始化时加载，文件管理器运行时下发策略需重启文件管理器生效。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
 | sambaServer20+ | samba服务端能力，当前仅支持PC/2in1设备使用。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
 | backupAndRestore20+ | 备份和恢复能力，禁用后设备的"设置--系统--备份和恢复"、"设置--云空间"置灰，当前仅支持手机、平板使用。如果要完全禁用设备的备份和恢复能力，建议同时调用[applicationManager.addDisallowedRunningBundlesSync](js-apis-enterprise-applicationmanager.md#applicationmanageradddisallowedrunningbundlessync)接口禁止具备备份和恢复能力的应用运行，如备份和恢复、手机助手、云空间应用。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
 | maintenanceMode20+ | 设备维修模式能力。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
@@ -1368,7 +1368,7 @@ try {
 | SUPER\_HUB | 2 | 中转站。当前仅支持手机、平板设备使用，禁用后无法使用中转站功能。若中转站已开启，本次使用不受影响，但关闭后将无法再次使用。 |
 | FINGERPRINT | 3 | 设备指纹认证能力，当前仅支持PC/2in1设备使用。使用时有以下规则：  1. 禁用设备指纹认证能力（[FeatureForDevice.FINGERPRINT](js-apis-enterprise-restrictions.md#featurefordevice24)）后，再禁用某用户的设备指纹认证能力，会报策略冲突。  2. 禁用/启用指定用户的设备指纹认证能力后，再禁用设备指纹认证能力（[FeatureForDevice.FINGERPRINT](js-apis-enterprise-restrictions.md#featurefordevice24)）时，后者会覆盖前者的策略。此后再启用设备指纹认证能力（[FeatureForDevice.FINGERPRINT](js-apis-enterprise-restrictions.md#featurefordevice24)），则所有用户都允许使用设备指纹认证能力。 |
 | PRINT | 4 | 设备打印能力。如果禁用了指定用户的设备打印能力，再启用设备打印能力（[FeatureForDevice.PRINTER](js-apis-enterprise-restrictions.md#featurefordevice24)），该用户下的设备打印能力仍然被禁用。 |
-| MTP\_CLIENT | 5 | MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已禁用设备MTP客户端能力（[FeatureForDevice.MTP\_CLIENT](js-apis-enterprise-restrictions.md#featurefordevice24)）时，再禁用某用户MTP客户端写入能力，会报策略冲突。 |
+| MTP\_CLIENT | 5 | MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。以手机为例，针对文件操作，手机可以拖动到电脑，电脑无法拖动到手机。当已禁用设备MTP客户端能力（[FeatureForDevice.MTP\_CLIENT](js-apis-enterprise-restrictions.md#featurefordevice24)）时，再禁用某用户MTP客户端写入能力，会报策略冲突。 |
 | USB\_STORAGE\_DEVICE\_WRITE | 6 | USB存储设备写入能力，当前仅支持PC/2in1企业设备使用。  以下三种情况再禁用某用户USB存储设备写入能力，会报策略冲突。  1）已禁用设备USB能力（[FeatureForDevice.USB](js-apis-enterprise-restrictions.md#featurefordevice24)）。  2）通过[setUsbStorageDeviceAccessPolicy](js-apis-enterprise-usbmanager.md#usbmanagersetusbstoragedeviceaccesspolicy)接口设置了USB存储设备访问策略为只读/禁用。  3）通过[addDisallowedUsbDevices](js-apis-enterprise-usbmanager.md#usbmanageradddisallowedusbdevices14)接口添加了存储类型的USB设备禁用。 |
 | DISK\_RECOVERY\_KEY | 7 | 恢复[密钥导出](../harmonyos-guides/huks-export-key-arkts.md)能力，当前仅支持PC/2in1设备使用。 |
 | SUDO | 8 | superuser do，表示以超级用户执行，当前仅支持PC/2in1设备使用。禁用后企业空间或个人空间不能以超级用户执行。 |

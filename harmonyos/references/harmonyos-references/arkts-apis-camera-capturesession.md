@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 废弃的Interface (CaptureSession, deprecated)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > 废弃的Interface (CaptureSession, deprecated)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:19b377a9ec6862f7bf39c79478b5d519e6d901a5f2b9f8f73d4b9db1a717fd52
+scraped_at: 2026-10-01T07:39:27+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:e0736ee9591b50afefac2234c0bcea83d6928209431bef58b532648854fa790f
 ---
 
 拍照会话类，保存一次相机运行所需要的所有资源[CameraInput](arkts-apis-camera-camerainput.md)、[CameraOutput](arkts-apis-camera-cameraoutput.md)，并向相机设备申请完成相机功能(录像，拍照)。
@@ -1123,7 +1123,7 @@ isFocusModeSupported(afMode: FocusMode): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| afMode | [FocusMode](arkts-apis-camera-e.md#focusmode) | 是 | 指定的焦距模式。 |
+| afMode | [FocusMode](arkts-apis-camera-e.md#focusmode) | 是 | 指定的对焦模式。 |
 
 **返回值：**
 
@@ -1163,7 +1163,7 @@ setFocusMode(afMode: FocusMode): void
 
 设置对焦模式。
 
-进行设置之前，需要先检查设备是否支持指定的焦距模式，可使用方法[isFocusModeSupported](arkts-apis-camera-capturesession.md#isfocusmodesupporteddeprecated)。
+进行设置之前，需要先检查设备是否支持指定的对焦模式，可使用方法[isFocusModeSupported](arkts-apis-camera-capturesession.md#isfocusmodesupporteddeprecated)。
 
 **说明** 
 
@@ -1175,7 +1175,7 @@ setFocusMode(afMode: FocusMode): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| afMode | [FocusMode](arkts-apis-camera-e.md#focusmode) | 是 | 指定的焦距模式。 |
+| afMode | [FocusMode](arkts-apis-camera-e.md#focusmode) | 是 | 指定的对焦模式。 |
 
 **错误码：**
 
@@ -1217,7 +1217,7 @@ getFocusMode(): FocusMode
 
 | 类型 | 说明 |
 | --- | --- |
-| [FocusMode](arkts-apis-camera-e.md#focusmode) | 获取当前设备的焦距模式。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](arkts-apis-camera-e.md#cameraerrorcode)。 |
+| [FocusMode](arkts-apis-camera-e.md#focusmode) | 获取当前设备的对焦模式。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](arkts-apis-camera-e.md#cameraerrorcode)。 |
 
 **错误码：**
 

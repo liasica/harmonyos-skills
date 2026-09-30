@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-voip-context
-title: VoIPExtensionContext（应用内通话消息扩展Context）（废弃）
-breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > VoIPExtensionContext（应用内通话消息扩展Context）（废弃）
+title: VoIPExtensionContext（应用内通话消息扩展Context）（已废弃）
+breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > VoIPExtensionContext（应用内通话消息扩展Context）（已废弃）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-01T07:40:36+08:00
+doc_updated_at: 2026-09-30
 content_hash: sha256:4c9f6c098f7995fc5ead8ce9ec4927f77125342d63bcce060012fea9fe6ea484
 ---
 

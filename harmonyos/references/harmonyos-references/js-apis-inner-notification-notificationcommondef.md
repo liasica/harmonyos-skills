@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationCommonDef
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationCommonDef
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cec352206aa119091c6127924b06c3de94f6f4c4641297abeab6a50571a48192
+scraped_at: 2026-10-01T07:40:27+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:f63dd88bf293dd267ca58611385437aff6f0d177699e58b691d90350b9f85140
 ---
 
 NotificationCommonDef中定义了通知相关接口中使用的通用数据结构。
@@ -22,7 +22,7 @@ NotificationCommonDef中定义了通知相关接口中使用的通用数据结�
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| bundle | string | 否 | 否 | 应用的包名。 |
+| bundle | string | 否 | 否 | 应用的包名。字符串长度不超过202字节，超出部分会被截断。 |
 | uid | number | 否 | 是 | 应用的UID。从[ApplicationInfo](js-apis-bundlemanager-applicationinfo.md#applicationinfo-1)获取，默认为0。 应用分身场景下，此参数为必填项。 |
 
 ## GrantedBundleInfo22+

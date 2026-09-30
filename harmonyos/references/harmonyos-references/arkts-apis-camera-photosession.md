@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PhotoSession)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (PhotoSession)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6a50a18fbee8617a3070c27ae09fa8e8583a755be3ef5ff95fc78751c98c6d36
+scraped_at: 2026-10-01T07:39:26+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:c0d4c6d35b79829229a1b0f9363f5989ee1dfc5b8e336d7fc4152a686cb1b936
 ---
 
 PhotoSession继承自[Session](arkts-apis-camera-session.md)、[Flash](arkts-apis-camera-flash.md)、[AutoExposure](arkts-apis-camera-autoexposure.md)、[WhiteBalance](arkts-apis-camera-whitebalance.md)、[Focus](arkts-apis-camera-focus.md)、[Zoom](arkts-apis-camera-zoom.md)、[ColorManagement](arkts-apis-camera-colormanagement.md)、[AutoDeviceSwitch](arkts-apis-camera-autodeviceswitch.md)、[Macro](arkts-apis-camera-macro.md)、[ManualExposure](arkts-apis-camera-manualexposure.md)、[ManualFocus](arkts-apis-camera-manualfocus.md)、[ManualIso](arkts-apis-camera-manualiso.md)、[OIS](arkts-apis-camera-ois.md)、[Aperture](arkts-apis-camera-aperture.md)。
@@ -421,7 +421,7 @@ off(type: 'systemPressureLevelChange', callback?: AsyncCallback<SystemPressureLe
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 注销监听事件，固定为'systemPressureLevelChange'，session创建成功可触发此事件。 |
-| callback | AsyncCallback<[SystemPressureLevel](arkts-apis-camera-e.md#systempressurelevel20)> | 否 | 回调函数，如果指定参数则取消对应callback (callback对象不可是匿名函数)，否则参数默认为空，取消所有callback。 |
+| callback | AsyncCallback<[SystemPressureLevel](arkts-apis-camera-e.md#systempressurelevel20)> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则参数默认为空，取消所有callback。 |
 
 **示例：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: ApplicationContext (应用上下文)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > ApplicationContext (应用上下文)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f6c7900d83c180acae412ced188905e4461fcd1be0300d69c109bf6a1948da5f
+scraped_at: 2026-10-01T07:36:16+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:0f6f17b0f2118737f0684440e615fc0324786a6a72d55bb1d961977d6a59cd44
 ---
 
 ApplicationContext作为应用上下文，继承自[Context](js-apis-inner-application-context.md)，提供了应用生命周期监听、进程管理、应用环境设置等应用级别的管控能力。
@@ -1280,6 +1280,8 @@ setFont(font: string): void
 **说明** 
 
 调用该接口前，需要确保窗口已完成创建、且UIAbility对应的页面已完成加载，即在[onWindowStageCreate()](js-apis-app-ability-uiability.md#onwindowstagecreate)生命周期中通过[loadContent](arkts-apis-window-windowstage.md#loadcontent9)方法加载页面之后调用。
+
+setFont('null')可以恢复系统默认字体类型。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 

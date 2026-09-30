@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-tracki
 title: 目标拍摄跟踪开发指南
 breadcrumb: 指南 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务） > 目标拍摄跟踪开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:09+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:d480b3f5c9a63adb0eaddb7f51127aa4a37e7a18774ca59af79e90f893666bc1
+scraped_at: 2026-10-01T07:34:38+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:3cf935a83a4a78a87e50a8e016c62c5b48f238e6b8906153d79b43058da7de17
 ---
 
 从API version 20开始，支持使用机械体设备控制器，提供更丰富的拍摄体验，如目标跟踪和自动构图等专业功能，支持第三方应用。
@@ -31,7 +31,7 @@ content_hash: sha256:d480b3f5c9a63adb0eaddb7f51127aa4a37e7a18774ca59af79e90f8936
 
 ### 开发准备
 
-1. 支持Mechanic Kit协议的机械体设备。
+1. 支持Mechanic Kit协议的机械体设备，参考管理设备连接状态第2点。
 2. 若要验证目标跟踪功能，主设备的相机驱动必须支持人脸检测。
 3. 请将SDK更新到API 20或以上版本，具体操作参见[更新指南](ide-software-install.md)。
 4. 请确保机械体设备已通过蓝牙与主设备连接。
@@ -45,7 +45,13 @@ content_hash: sha256:d480b3f5c9a63adb0eaddb7f51127aa4a37e7a18774ca59af79e90f8936
    ```ts
    import { mechanicManager } from '@kit.MechanicKit';
    ```
-2. 获取已连接的机械体列表。
+2. 查询设备是否支持机械体设备控制能力。
+
+   ```typescript
+   let isSupported: boolean = mechanicManager.isControlSupported();
+   console.info(`'isSupported:' ${isSupported}`);
+   ```
+3. 获取已连接的机械体列表。
 
    ```ts
    let savedMechanicIds: number[] = [];
@@ -73,7 +79,7 @@ content_hash: sha256:d480b3f5c9a63adb0eaddb7f51127aa4a37e7a18774ca59af79e90f8936
    console.error('Error getting attached devices:', err);
    }
    ```
-3. 监听设备的连接状态变化，以便及时响应。
+4. 监听设备的连接状态变化，以便及时响应。
 
    ```ts
    const attachStateChangeCallback = (info: mechanicManager.AttachStateChangeInfo) => {
@@ -91,7 +97,7 @@ content_hash: sha256:d480b3f5c9a63adb0eaddb7f51127aa4a37e7a18774ca59af79e90f8936
    // 注册监听
    mechanicManager.on('attachStateChange', attachStateChangeCallback);
    ```
-4. 处理设备的连接与断开的事件。
+5. 处理设备的连接与断开的事件。
 
    ```ts
    function handleDeviceAttached(mechInfo: mechanicManager.MechInfo) {
@@ -106,7 +112,7 @@ content_hash: sha256:d480b3f5c9a63adb0eaddb7f51127aa4a37e7a18774ca59af79e90f8936
    // To do sth.
    }
    ```
-5. 取消连接状态的监听。
+6. 取消连接状态的监听。
 
    ```ts
    // 取消连接状态的监听

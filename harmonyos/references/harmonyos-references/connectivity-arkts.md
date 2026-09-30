@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/connectiv
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:34+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:0fc24efa7971dc4a4c8bef93ee13e98e7d02a96bd8db10fc14932d88fd0a0e3a
+scraped_at: 2026-10-01T07:38:18+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:0e0bb02c4f5e8bdd4ae5fc0502d2f65c3f2ab839c432724024888f47faf65840
 ---
 
 * **[@ohos.bluetooth.a2dp (蓝牙a2dp模块)](js-apis-bluetooth-a2dp.md)**
@@ -37,7 +37,7 @@ content_hash: sha256:0fc24efa7971dc4a4c8bef93ee13e98e7d02a96bd8db10fc14932d88fd0
 * **[@ohos.nearlink.advertising (星闪广播能力)](js-apis-nearlink-advertising.md)**
 * **[@ohos.nearlink.scan (星闪扫描能力)](js-apis-nearlink-scan.md)**
 * **[@ohos.nearlink.ssap (星闪SSAP连接能力)](js-apis-nearlink-ssap.md)**
-* **[@ohos.nearlink.dataTransfer (星闪数传能力)](js-apis-nearlink-data-transfer-api.md)**
+* **[@ohos.nearlink.dataTransfer (星闪数据传输能力)](js-apis-nearlink-data-transfer-api.md)**
 * **[@ohos.nearlink.cdsm (星闪合作设备集合管理能力)](js-apis-nearlink-cdsm.md)**
 * **[@ohos.nearlink.constant (星闪公共常量定义)](js-apis-nearlink-constant.md)**
 * **[tag](connectivity-nfc-tag-arkts.md)**

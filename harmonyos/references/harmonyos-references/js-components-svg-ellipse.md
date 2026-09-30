@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: ellipse
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > ellipse
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:25+08:00
+scraped_at: 2026-10-01T07:37:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d2cf6548507701ca2c218948adcd1fc8dc8e80c5d8e4a10728304dd65717c22c
+content_hash: sha256:468063a9ebac441ff2a6e7a96bb6c931be93b5f62636a592ff4937b47294795e
 ---
 
 **说明** 
@@ -46,4 +46,4 @@ content_hash: sha256:d2cf6548507701ca2c218948adcd1fc8dc8e80c5d8e4a10728304dd6571
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/jELGpPf5T8-fM3JdTZP6bg/zh-cn_image_0000002743381320.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/X3xJkpmzReqotgkPSckmPA/zh-cn_image_0000002779094305.png)

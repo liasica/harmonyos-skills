@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Polyline
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Polyline
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:08+08:00
+scraped_at: 2026-10-01T07:37:07+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:8e84118717c10369db2a8b712b36647c720e86441f87d6eb7b0636c737844c80
+content_hash: sha256:186a3fec0ede4811213a901172a3f6ba2b091966ee8caeee4392a324e76117ba
 ---
 
 折线绘制组件。
@@ -137,7 +137,7 @@ struct PolylineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/2H2L48zlQxuVAbFU10tqsg/zh-cn_image_0000002743221166.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/We6T67G5TF-gq_kr3Ph4tA/zh-cn_image_0000002778934183.png)
 
 ### 示例2（宽和高使用不同参数类型绘制折线）
 
@@ -171,7 +171,7 @@ struct PolylineTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/erdWNczQReq6__zi-WqfAQ/zh-cn_image_0000002772740421.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/gwyj4QAwQx6T8M9SYC2jdw/zh-cn_image_0000002749335100.png)
 
 ### 示例3（使用attributeModifier动态设置Polyline组件的属性）
 
@@ -214,4 +214,4 @@ struct PolylineModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/M-jEcqIZRiON_Q3gbFxe_A/zh-cn_image_0000002772900305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/ORgIIfAzQQqNadfU7ajkXg/zh-cn_image_0000002749494984.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/custom-font-a
 title: 自定义字体的注册和使用（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 自定义字体的注册和使用（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:32+08:00
+scraped_at: 2026-10-01T07:34:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9058d9b16ec58798c75fe1c253e580cd92b8ba79ef8d600976b59906c03cf080
+content_hash: sha256:dfdf15b079dae298beaf8601be4201cafd34442bb16bf4155dc1822e197cb4e2
 ---
 
 ## 场景介绍
@@ -98,6 +98,6 @@ content_hash: sha256:9058d9b16ec58798c75fe1c253e580cd92b8ba79ef8d600976b59906c03
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/uiyGXmpSR5uEy_AKIvYiGw/zh-cn_image_0000002772898797.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/-Zn3RE_RSva9RtO4_59WGQ/zh-cn_image_0000002749493332.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/KR1jKjgCTmqeaor4Zu7V6w/zh-cn_image_0000002743379548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/8V534tARTzegT5923O0Izw/zh-cn_image_0000002779092391.png)

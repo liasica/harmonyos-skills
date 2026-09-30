@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: dialog开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > dialog开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fcee5155e8b499b8ae7013e77807190c832ede04e8bd48e68e8933afca8819b1
+scraped_at: 2026-10-01T07:34:09+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:a261255480618cccf05ba7b66251d9f0dd7c47b5eb416c791bf4bb06c48cb147
 ---
 
 dialog组件用于创建自定义弹窗，通常用来展示用户当前需要或用户必须关注的信息或操作。具体用法请参考[dialog API](../harmonyos-references/js-components-container-dialog.md)。
@@ -69,7 +69,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/X3J6ENFCS0mCQpAZHKCewA/zh-cn_image_0000002772738169.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/RfhGGlGkTh2yvlLtunkIcA/zh-cn_image_0000002749332704.gif)
 
 ## 设置弹窗响应
 
@@ -145,7 +145,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Q1b39tA_Tzmxn1VF85UNgQ/zh-cn_image_0000002772898053.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/2nkDixeSTcyQ7jLBM1-G2w/zh-cn_image_0000002749492588.gif)
 
 **说明** 
 
@@ -155,7 +155,7 @@ export default {
 
 ## 场景示例
 
-在本场景中，开发者可以通过dialog组件实现一个日程表。弹窗在打开状态下，利用[textarea](../harmonyos-references/js-components-basic-textarea.md)组件输入当前日程，点击确认按钮后获取当前时间并保存输入文本。最后以列表形式将各日程进行展示。
+在本场景中，开发者可以通过dialog组件实现一个日程表。弹窗在打开状态下，利用[textarea](../harmonyos-references/js-components-basic-textarea.md)组件输入当前日程，点击确认按钮后获取当前日期并保存输入文本。最后以列表形式将各日程进行展示。
 
 ```html
 <!-- xxx.hml -->
@@ -308,4 +308,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/WuT5ChRARQuXYuP5qTMQKg/zh-cn_image_0000002743378804.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/c2fDeC8wRSipoW5q4T-fpg/zh-cn_image_0000002779091647.gif)

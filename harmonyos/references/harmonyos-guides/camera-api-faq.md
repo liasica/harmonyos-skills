@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-api-fa
 title: 相机API调用时序问题
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit常见问题 > 相机无法启动 > 相机API调用时序问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d6aee7e8677adc8e75b04385a2fed88fa4e58bc25b3e7ca4d1cc56c8f8e358a8
+scraped_at: 2026-10-01T07:34:51+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:cf3676574daec2a057bf5c3729151fd2b0d1b414bc18df0b79148edbe7fd327b
 ---
 
 ## 问题现象
@@ -32,7 +32,7 @@ content_hash: sha256:d6aee7e8677adc8e75b04385a2fed88fa4e58bc25b3e7ca4d1cc56c8f8e
 
 ## 解决措施
 
-1. 创建的输出流与输入流前，将两者的profile中的分辨率进行比较，保证分辨率一致。
+1. 创建输出流与输入流前，将两者的profile中的分辨率进行比较，保证分辨率一致。
 2. 大部分的set方法建议在commitConfig之后进行调用，比如白平衡相关的set接口。
 3. 大部分监听相关接口，需要在addInput之后调用，保证镜头打开并添加到session中后，数据可通过监听返回。
 

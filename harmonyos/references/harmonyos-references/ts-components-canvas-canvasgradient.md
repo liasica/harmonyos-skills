@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: CanvasGradient
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasGradient
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:08+08:00
+scraped_at: 2026-10-01T07:37:06+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:262fe0fa7bb0a73f962ddbb7f3e73e8e6499a850aba3e33f54a29487c078fddf
+content_hash: sha256:d84677f54b1dc492d14482cc9abc9b3acf14fdcd2854a8889c0623f70ffd9b00
 ---
 
 渐变对象，可通过addColorStop方法设置多个颜色断点，实现平滑的颜色过渡，适用于Canvas填充和描边等场景。
@@ -66,7 +66,7 @@ struct AddColorStop {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/DKkWxUgSTaeZdCTdoL5O4g/zh-cn_image_0000002772900243.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/m5_8gcrAQtCD-KqanDjVcw/zh-cn_image_0000002749494922.png)
 
 ## addColorStop20+
 
@@ -157,4 +157,4 @@ struct AddColorStop {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/Ch_UC12xSHSPFtudShxKPw/zh-cn_image_0000002743380992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/WDay3pUPTFqaBPlNZYXjgA/zh-cn_image_0000002779093979.png)

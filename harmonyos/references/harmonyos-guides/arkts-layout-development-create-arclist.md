@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 弧形列表 (ArcList)（圆形屏幕推荐使用）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 弧形列表 (ArcList)（圆形屏幕推荐使用）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:27+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:8600dac6f475c565473b79143cbfbcc65a8c8636df8eabd9c3a27b816c3a752a
+scraped_at: 2026-10-01T07:34:03+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:348613b3e9ec0fb4bbffaaf9b663f8274c333d653a6daedc2413d11491b90af8
 ---
 
 从API version 18开始支持弧形列表。弧形列表是一种专为圆形屏幕设备设计的特殊列表，它能够以结构化、可滚动的形式高效展示信息。具体用法可参考[ArcList](../harmonyos-references/ts-container-arclist.md)。
@@ -32,7 +32,7 @@ ArcList({
 
 **说明** 
 
-[ArcList](../harmonyos-references/ts-container-arclist.md)仅支持[ArcListItem](../harmonyos-references/ts-container-arclistitem.md)和自定义组件作为子组件。ArcListItem必须配合ArcList来使用。使用自定义组件时，请使用ArcListItem作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为ArcList通过ArcListItem管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
+[ArcList](../harmonyos-references/ts-container-arclist.md)仅支持[ArcListItem](../harmonyos-references/ts-container-arclistitem.md)和[自定义组件](arkts-create-custom-components.md)作为子组件。ArcListItem必须配合ArcList来使用。使用自定义组件时，请使用ArcListItem作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为ArcList通过ArcListItem管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
 
 ## 在弧形列表中显示数据
 
@@ -153,7 +153,7 @@ export struct ArcListShow {
 
 **图1** 显示弧形列表数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/VzZ-GV0aSjOZ7hIGXbswCw/zh-cn_image_0000002743378374.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/A9Hfd_tqRjScHloUtk0ibA/zh-cn_image_0000002779091137.png)
 
 ## 迭代弧形列表内容
 
@@ -231,7 +231,7 @@ export struct ArcListContents {
 
 **图2** 迭代弧形列表内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/iGjT0BgwQ-KKuTaQAV692A/zh-cn_image_0000002772897639.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/gFwRcJUyQqSgwLZIctKcOg/zh-cn_image_0000002749492096.png)
 
 ## 自定义弧形列表样式
 
@@ -275,7 +275,7 @@ export struct ArcListContents {
 
 **图3** 自定义弧形列表标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/MPRq6KKKRX-yCpPA6VKVfg/zh-cn_image_0000002743378390.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/WkP0CwAbRq6TZ2uQSWbZmA/zh-cn_image_0000002779091153.png)
 
 ### 设置弧形列表项间距
 
@@ -290,7 +290,7 @@ ArcList({ initialIndex: 2 }) {
 
 **图4** 设置弧形列表项间距
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Hm9ezHXXRt-hXBTKUUBp5Q/zh-cn_image_0000002743218506.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/MBn7RbD9SgylaaDllUDyCA/zh-cn_image_0000002778931297.png)
 
 ### 列表项关闭自动缩放
 
@@ -305,7 +305,7 @@ ArcListItem() {
 
 **图5** 列表项关闭自动缩放
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/hvlWO01qRJq4E0xWYVANTw/zh-cn_image_0000002772737759.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/FYUNFPfrSdqOCDvwip43-Q/zh-cn_image_0000002749332214.png)
 
 ### 添加内置滚动条
 
@@ -324,7 +324,7 @@ ArcList({ header: this.arcListHeader }) {
 
 **图6** 弧形列表的内置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/kz0zO5-ZTTWnKeoQQU9sFg/zh-cn_image_0000002772897641.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/RSl-3WKaQAKSBJuyg-x8QA/zh-cn_image_0000002749492098.gif)
 
 ## 添加外置滚动条ArcScrollBar
 
@@ -352,7 +352,7 @@ ArcList({ header: this.arcListHeader }) {
 
 **图7** 弧形列表的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/FFZgZ-DMQTmHH_u2ZAqYsA/zh-cn_image_0000002743378392.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/dI_WGm28RVOsdAeg1pJ3Qg/zh-cn_image_0000002779091155.gif)
 
 **说明** 
 
@@ -432,7 +432,7 @@ export struct ArcListArcIndexerBar {
 
 **图8** 弧形列表与弧形索引条联动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/c5aqx9VUQxSUnw4W96rRIg/zh-cn_image_0000002743218508.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/C88awSbBQy2QBV02fuRtCQ/zh-cn_image_0000002778931299.gif)
 
 ## 响应列表项侧滑
 
@@ -488,7 +488,7 @@ export struct ArcListArcIndexerBar {
 
 **图9** 侧滑删除列表项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/zwDdNwaiS9yGlEdojvHHHA/zh-cn_image_0000002772737761.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/KWDoF5mKR2-FgkcGMVNPPA/zh-cn_image_0000002749332216.gif)
 
 ## 处理长列表
 

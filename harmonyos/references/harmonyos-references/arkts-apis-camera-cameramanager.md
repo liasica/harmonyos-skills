@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (CameraManager)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (CameraManager)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fe4baa3fab81752b33d083e220dedec19ae509377f375018824386f0d30dcbff
+scraped_at: 2026-10-01T07:39:25+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:0ffe864522ef9fa5ea048b4c135897a412d095cfd82583b399dcac19b36e2c7c
 ---
 
 相机管理器类，使用前需要通过[getCameraManager](arkts-apis-camera-f.md#cameragetcameramanager)接口获取相机管理实例。
@@ -851,7 +851,7 @@ isTorchSupported(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 表示设备是否支持手电筒，true表示设备支持手电筒，false表示设备不支持手电。  如果返回false，则[isTorchModeSupported](arkts-apis-camera-cameramanager.md#istorchmodesupported11)、[getTorchMode](arkts-apis-camera-cameramanager.md#gettorchmode11)、[setTorchMode](arkts-apis-camera-cameramanager.md#settorchmode11)、[isTorchLevelControlSupported](arkts-apis-camera-cameramanager.md#istorchlevelcontrolsupported)和[setTorchModeOnWithLevel](arkts-apis-camera-cameramanager.md#settorchmodeonwithlevel)都不会生效。  若接口调用失败，返回undefined。 |
+| boolean | 表示设备是否支持手电筒，true表示设备支持手电筒，false表示设备不支持手电筒。  如果返回false，则[isTorchModeSupported](arkts-apis-camera-cameramanager.md#istorchmodesupported11)、[getTorchMode](arkts-apis-camera-cameramanager.md#gettorchmode11)、[setTorchMode](arkts-apis-camera-cameramanager.md#settorchmode11)、[isTorchLevelControlSupported](arkts-apis-camera-cameramanager.md#istorchlevelcontrolsupported)和[setTorchModeOnWithLevel](arkts-apis-camera-cameramanager.md#settorchmodeonwithlevel)都不会生效。  若接口调用失败，返回undefined。 |
 
 **示例：**
 

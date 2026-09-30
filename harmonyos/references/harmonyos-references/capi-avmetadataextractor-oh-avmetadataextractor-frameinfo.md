@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avme
 title: OH_AVMetadataExtractor_FrameInfo
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_AVMetadataExtractor_FrameInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:49bb2c72185c4c3009585e48ef31aeedc269da3d5ee16e45249e0d7e97b3390a
+scraped_at: 2026-10-01T07:39:45+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:68066c5b3da25edf3545d8d7046d9646d5114b8448f34b8a0c7e65471e51273f
 ---
 
 ```c
-typedef struct {...} OH_AVMetadataExtractor_FrameInfo
+typedef struct OH_AVMetadataExtractor_FrameInfo {...} OH_AVMetadataExtractor_FrameInfo
 ```
 
 ## 概述

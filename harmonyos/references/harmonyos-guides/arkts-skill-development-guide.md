@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-skill-d
 title: 基于ArkTS脚本的应用Skill开发指导
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 基于ArkTS脚本的应用Skill开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5f2153001b1206cb98245fd8c388d368817db83d681b6c83e1fd87f902be5cff
+scraped_at: 2026-10-01T07:33:52+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6960e095fa00c4e8d56e894ff5778939957c3d4026a28c0c20b89f7595a3f517
 ---
 
 ## 概述
@@ -370,4 +370,4 @@ content_hash: sha256:5f2153001b1206cb98245fd8c388d368817db83d681b6c83e1fd87f902b
      ]
    }
    ```
-5. 在完成Skill开发后，请参考[真机测试](../service/skill-real-machine-testing-0000002592771628.md)进行调试。
+5. 在完成Skill开发后，请先参考[导入Skill](../service/import-skill-0000002592931542.md)将HAP上传，再参考[真机测试](../service/skill-real-machine-testing-0000002592771628.md)进行调试。

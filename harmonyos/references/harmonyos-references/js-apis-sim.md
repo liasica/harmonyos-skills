@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.telephony.sim (SIM卡管理)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.sim (SIM卡管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a5cbc017207492cc1bdec12a5f22585cc0f70719d75e2ff31b3805faec5b2d8b
+scraped_at: 2026-10-01T07:38:40+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:892906e9fd931bfb018235e24cf80cb1f9974ccca0bd07329825e3a7f8a0c4f7
 ---
 
 SIM卡管理模块提供了SIM卡管理的基础能力，包括获取指定卡槽SIM卡的ISO国家码、归属PLMN号、服务提供商名称、SIM卡状态、卡类型、是否插卡、是否激活、SIM卡账户信息、运营商权限、OpKey/OpName、默认语音业务卡信息、卡槽数量、SIM卡标签等，适用于需要在应用中查询和管理SIM卡基础信息及状态的场景。
@@ -43,7 +43,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.isSimActive(0, (err: BusinessError, data: boolean) => {
     if (err) {
-        console.err(`isSimActive failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`isSimActive failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -134,7 +134,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getDefaultVoiceSlotId((err: BusinessError, data: number) => {
     if (err) {
-        console.err(`getDefaultVoiceSlotId failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getDefaultVoiceSlotId failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -203,7 +203,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.hasOperatorPrivileges(0, (err: BusinessError, data: boolean) => {
     if (err) {
-        console.err(`hasOperatorPrivileges failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`hasOperatorPrivileges failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -291,7 +291,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getISOCountryCodeForSim(0, (err: BusinessError, data: string) => {
     if (err) {
-        console.err(`getISOCountryCodeForSim failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getISOCountryCodeForSim failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -409,7 +409,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getSimOperatorNumeric(0, (err: BusinessError, data: string) => {
     if (err) {
-        console.err(`getSimOperatorNumeric failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getSimOperatorNumeric failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -527,7 +527,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getSimSpn(0, (err: BusinessError, data: string) => {
     if (err) {
-        console.err(`getSimSpn failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getSimSpn failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -644,7 +644,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getSimState(0, (err: BusinessError, data: sim.SimState) => {
     if (err) {
-        console.err(`getSimState failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getSimState failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -761,7 +761,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getCardType(0, (err: BusinessError, data: sim.CardType) => {
     if (err) {
-        console.err(`getCardType failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getCardType failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -878,7 +878,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
     if (err) {
-        console.err(`hasSimCard failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`hasSimCard failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -1002,7 +1002,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getSimAccountInfo(0, (err:BusinessError , data: sim.IccAccountInfo) => {
     if (err) {
-        console.err(`getSimAccountInfo failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getSimAccountInfo failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -1103,7 +1103,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getActiveSimAccountInfoList((err: BusinessError, data: Array<sim.IccAccountInfo>) => {
     if (err) {
-        console.err(`getActiveSimAccountInfoList failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getActiveSimAccountInfoList failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -1456,7 +1456,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getDefaultVoiceSimId((err: BusinessError, data: number) => {
     if (err) {
-        console.err(`getDefaultVoiceSimId failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getDefaultVoiceSimId failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);
@@ -1538,7 +1538,7 @@ import { sim } from '@kit.TelephonyKit';
 
 sim.getSimLabel(0, (err: BusinessError, data: sim.SimLabel) => {
   if (err) {
-        console.err(`getSimLabel failed. callback: err->${JSON.stringify(err)}`);
+        console.error(`getSimLabel failed. callback: err->${JSON.stringify(err)}`);
         return;
     }
     console.info(`callback: data->${JSON.stringify(data)}`);

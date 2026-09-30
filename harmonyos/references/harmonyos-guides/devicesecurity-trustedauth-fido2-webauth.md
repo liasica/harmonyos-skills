@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 网页场景接入数字盾（FIDO2）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 网页场景接入数字盾（FIDO2）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:53+08:00
+scraped_at: 2026-10-01T07:34:25+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:1c164dd2db7fa6f027caad750746a304bb1ba99732dfe5b8439b1d0d946372d2
+content_hash: sha256:650b580f0c630c5b5b5edfe3a2e2e7f977a071ff07ba2cadc6432d4507171d0a
 ---
 
 从API版本26.0.0开始，新增支持网页场景下的数字盾认证。
@@ -22,7 +22,7 @@ content_hash: sha256:1c164dd2db7fa6f027caad750746a304bb1ba99732dfe5b8439b1d0d946
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/X1hClMRFTqeZOrxxdhvguA/zh-cn_image_0000002772738549.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Q1tGK3kASB-2Te5LyJxP6Q/zh-cn_image_0000002749333084.jpg)
 
 网页通过FIDO2实现数字盾认证时，需由调用方网页、浏览器、Online Authentication Kit（FIDO2）、配套的认证应用以及Device Security Kit共同协作完成。流程如下：
 

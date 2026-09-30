@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebviewController)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebviewController)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:06+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:7f1c45de92322345b2d7100421f1769474cb2f7a177f421897833c85d9ecee41
+scraped_at: 2026-10-01T07:37:44+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:017f5f1d181a5ffcc19562c683c28c92ca0cf1a9a907de5f5200b3a81ad54cec
 ---
 
 WebviewController是Web组件各种行为的核心控制器，提供网页加载与导航控制、JavaScript交互、生命周期、滚动控制、页面缩放与内容查找、消息端口通信、缓存与证书管理等广泛功能。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。
@@ -2076,13 +2076,19 @@ zoom(factor: number): void
 
 调整当前网页的缩放比例，[zoomAccess](arkts-basic-components-web-attributes.md#zoomaccess)需为true。
 
+**说明** 
+
+入参超出取值范围时，本次调用不生效，网页缩放比例保持不变。
+
+当网页缩放比例已达到最大值或最小值时，继续同向缩放的调用同样不生效。
+
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| factor | number | 是 | 基于当前网页所需调整的相对缩放比例，入参要求大于0，当入参为1时为默认加载网页的缩放比例，入参小于1为缩小，入参大于1为放大。  取值范围：(0，100]。 |
+| factor | number | 是 | 缩放倍数，与当前网页缩放比例相乘得到新的缩放比例。入参为1时缩放比例保持不变，入参小于1为缩小，入参大于1为放大。  取值范围：(0，100]。 |
 
 **错误码：**
 

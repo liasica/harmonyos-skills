@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: stepper开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > stepper开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:35+08:00
+scraped_at: 2026-10-01T07:34:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:df3de43fe778bf6c32da1ef2ca542accb27d626ec71deff6e41011d03ab30c20
+content_hash: sha256:44891af44e191752e4f99aba9fbfb855817c78edc4d400072a20316497b3bb43
 ---
 
 当一个任务需要多个步骤时，可以使用stepper组件展示当前进展。具体用法请参考[stepper API](../harmonyos-references/js-components-container-stepper.md)。
@@ -45,7 +45,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/MvqWYfoRTGyXxfaXrVa63w/zh-cn_image_0000002743218920.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pTxV4VFNRJm4Xs9VOuX62g/zh-cn_image_0000002778931791.gif)
 
 ## 设置index和label属性
 
@@ -83,7 +83,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/j6SkE6rESKKtekLFPW9kjw/zh-cn_image_0000002772738173.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/zUauauwtTlqS33xCBZA75g/zh-cn_image_0000002749332708.gif)
 
 通过设置label属性，自定义stepper-item的提示按钮。
 
@@ -144,7 +144,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/-lt_1cblRSeT2y0KRoNKNw/zh-cn_image_0000002772898057.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/mghfwFb0Qmu3Bhzn7M1AlA/zh-cn_image_0000002749492592.gif)
 
 ## 设置样式
 
@@ -188,7 +188,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/1MRCvNOjTJux8YlWu00NFA/zh-cn_image_0000002743378808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/vdce2W6nQoOfneXvqeDV4g/zh-cn_image_0000002779091651.png)
 
 ## 添加事件
 
@@ -288,4 +288,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Qa2yKjzFRDaTiK1QEu-q0w/zh-cn_image_0000002743218922.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/GWbg1M25R9aZp2TtaUfL8w/zh-cn_image_0000002778931793.gif)

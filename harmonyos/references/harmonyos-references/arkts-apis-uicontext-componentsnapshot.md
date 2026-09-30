@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ComponentSnapshot)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (ComponentSnapshot)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:36+08:00
+scraped_at: 2026-10-01T07:36:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4e1b026fd1c63ddb9ee1a248d7917dca081a2a7cd94e0efb37fe87fdc8d31d11
+content_hash: sha256:151dd4daaf5ca9671b32dfee5e45a9ef7825b6156ba1f0484d7b12237d9157fd
 ---
 
 提供获取组件截图的能力，包括已加载组件和未加载组件的截图，适用于需要获取组件渲染结果用于展示或后续处理的场景。
@@ -93,7 +93,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/VcVhVrFdRSC1PX0hIk2knQ/zh-cn_image_0000002772899645.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/ysFpM-FHTOqOum7NkbdJkQ/zh-cn_image_0000002749494190.gif)
 
 ## get12+
 

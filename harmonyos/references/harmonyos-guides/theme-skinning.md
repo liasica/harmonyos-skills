@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-skinnin
 title: 设置应用内主题换肤
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 主题设置 > 设置应用内主题换肤
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:33+08:00
+scraped_at: 2026-10-01T07:34:08+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:47fdef0bdfb88e94af9257a67ac797a26c7753b6c37ccebd2db74d7561fac5e2
+content_hash: sha256:94ba0b831b126b98180cd6b04b4317a37e4204e1d9e4e4aa2b26924c2b1f727d
 ---
 
 ## 概述
@@ -201,7 +201,7 @@ export let gAppTheme: CustomTheme = new AppTheme();
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/n6tRKHu3Qvue3uQad0y8Kg/zh-cn_image_0000002772897995.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/8DCNsd4jSheFX7NZXsClWw/zh-cn_image_0000002749492530.png)
 
   **说明** 
 
@@ -283,7 +283,7 @@ struct DisplayPage1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/RxkQo0guQRG95ThqXFng7w/zh-cn_image_0000002743378746.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/xJNr6dgVRd-5de3QlXZKfQ/zh-cn_image_0000002779091589.gif)
 
 ## 设置应用页面局部深浅色
 
@@ -295,7 +295,7 @@ struct DisplayPage1 {
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/gzyRqucPS_245AIB1r920g/zh-cn_image_0000002743218860.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/oLGNNTm3Rv6TyBNO8Lv7Hw/zh-cn_image_0000002778931731.png)
 
 dark.json数据示例：
 
@@ -348,7 +348,7 @@ struct DisplayPage3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/CGOawPrdToKi_kcr3q4wGw/zh-cn_image_0000002772738113.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/BXTdtLKGTDS0tSf0yhzxfg/zh-cn_image_0000002749332648.png)
 
 ## 系统缺省token色值
 

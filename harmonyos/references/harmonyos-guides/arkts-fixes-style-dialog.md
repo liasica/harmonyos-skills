@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-fixes-s
 title: 固定样式弹出框
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 固定样式弹出框
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:29+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2ecd06103662647c0e3a5e1d1edc5e16127ffaa117a213c1af7da59a0d54be22
+scraped_at: 2026-10-01T07:34:04+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:edcbe656245877ae67da6ea7159ca293dd76d3678f68526196881affe6463f60
 ---
 
 固定样式弹出框采用固定的布局格式，这使得开发者无需关心具体的显示布局细节，只需输入所需显示的文本内容，从而简化了使用流程，提升了便捷性。
 
 ## 使用约束
 
-* 可以通过调用UIContext或getUIContext，在非UI页面或某些异步回调中使用本文中的接口。CalendarPickerDialog当前不支持此操作。
+* 可以通过调用getUIContext获取UIContext实例，在非UI页面或某些异步回调中使用本文中的接口。CalendarPickerDialog当前不支持此操作。
 * 操作菜单 (showActionMenu)、对话框 (showDialog)需先使用UIContext中的[getPromptAction()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getpromptaction)方法获取到PromptAction对象，再通过该对象调用对应方法。
 * 列表选择弹出框 (ActionSheet)、警告弹出框 (AlertDialog)、选择器弹出框 (PickerDialog)中除CalendarPickerDialog都需先使用ohos.window中的[getUIContext()](../harmonyos-references/arkts-apis-window-window.md#getuicontext10)方法获取UIContext实例，再通过此实例调用对应方法。或者可以通过自定义组件内置方法[getUIContext()](../harmonyos-references/ts-custom-component-api.md#getuicontext)获取。
 
 操作菜单 (showActionMenu)、对话框 (showDialog)、列表选择弹出框 (ActionSheet)、警告弹出框 (AlertDialog)可以设置isModal为false变成非模态弹窗。
 
-操作菜单 (showActionMenu)、对话框 (showDialog)、列表选择弹出框 (ActionSheet)和警告弹出框 (AlertDialog)不支持设置内容区的字体样式，如字体颜色、大小换行等操作，如需自定义样式，建议使用[不依赖UI组件的全局自定义弹出框](arkts-uicontext-custom-dialog.md)或者[基础自定义弹出框](arkts-common-components-custom-dialog.md)。
+操作菜单 (showActionMenu)、对话框 (showDialog)、列表选择弹出框 (ActionSheet)和警告弹出框 (AlertDialog)不支持设置内容区的字体样式，如字体颜色、大小、换行等操作，如需自定义样式，建议使用[不依赖UI组件的全局自定义弹出框](arkts-uicontext-custom-dialog.md)或者[基础自定义弹出框](arkts-common-components-custom-dialog.md)。
 
 ## 生命周期
 
@@ -78,6 +78,7 @@ export struct ShowActionMenuExample {
                     console.error('showActionMenu error: ' + err);
                   })
               } catch (error) {
+                console.error('showActionMenu catch error: ' + error);
               }
             })
         }.width('100%')
@@ -89,7 +90,7 @@ export struct ShowActionMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/glIppvXcTyaZgov0dnVPrQ/zh-cn_image_0000002772897815.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Tqs__FFSSWm4Whh-cbJSgw/zh-cn_image_0000002749492306.gif)
 
 ## 对话框 (showDialog)
 
@@ -153,7 +154,7 @@ export struct ShowDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/PsUluDPWRTWHLmvvUH4_yA/zh-cn_image_0000002743378566.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/MtNdqJYgQWyznbhRY0ELMg/zh-cn_image_0000002779091363.gif)
 
 ## 选择器弹窗 (PickerDialog)
 
@@ -218,7 +219,7 @@ export struct CalendarDialog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/88kQww_BQQK1FdxGmIDJEw/zh-cn_image_0000002743218680.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/q7OghTadTtSjv6cxujO8vQ/zh-cn_image_0000002778931507.gif)
 
 ### 日期滑动选择器弹窗 (DatePickerDialog)
 
@@ -266,7 +267,7 @@ export struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/o-IcuoBjRA-ECAD-WgSFSg/zh-cn_image_0000002772737933.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/KIJZe78MT4GAu0icYAo-_A/zh-cn_image_0000002749332426.gif)
 
 该示例通过配置textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
@@ -309,7 +310,7 @@ export struct DatePickerCustomDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/r14vYo3gQIuv0EzsLmFpNw/zh-cn_image_0000002772897817.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/j2UdMmWdRwCwCDBgUqVrjw/zh-cn_image_0000002749492308.gif)
 
 ### 时间滑动选择器弹窗 (TimePickerDialog)
 
@@ -362,7 +363,7 @@ export struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/8V23negGQziirNcThqsAtw/zh-cn_image_0000002743378568.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/oqPBodiRSCO2iesUkjTI7g/zh-cn_image_0000002779091367.gif)
 
 ### 文本滑动选择器弹窗 (TextPickerDialog)
 
@@ -416,7 +417,7 @@ export struct TextPickerCNDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Ah6hs2x5QTOV0O5C9_U08w/zh-cn_image_0000002743218682.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/z3xNMcJHRxaLatybhxm4yg/zh-cn_image_0000002778931511.gif)
 
 ## 列表选择弹出框 (ActionSheet)
 
@@ -500,7 +501,7 @@ export struct showActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Dr5uAypOQfClAJ98tccLDw/zh-cn_image_0000002772737935.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/EVSD2-YOT8Gun_07WU0jFA/zh-cn_image_0000002749332428.gif)
 
 ## 警告弹窗 (AlertDialog)
 
@@ -574,4 +575,4 @@ export struct showAlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/4k0EdsGbT8C9ezjIKvRN-A/zh-cn_image_0000002772897819.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/rYU1QQj_QjOVzrBVEBDq8Q/zh-cn_image_0000002749492314.gif)

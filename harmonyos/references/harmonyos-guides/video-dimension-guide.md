@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-dimensi
 title: 视频编解码宽高、跨距与裁剪信息说明
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit常见问题 > 视频编解码宽高、跨距与裁剪信息说明
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:941230a13d602e57eda623e24fcf12b33bcad28c3d6562cee1e6dd5d9646775b
+scraped_at: 2026-10-01T07:34:48+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6ac27681317765fac5759fc6f0c1535b3de5c7f68693e24639f25169595c752b
 ---
 
 ## 概述
@@ -102,7 +102,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图1** NV12格式图像的内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/eljEL8v3Qay76ed4Tn67VA/zh-cn_image_0000002743219486.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/hDG0s4e0SAaWHgsErcH8kQ/zh-cn_image_0000002778932357.png)
 
 图1中各参数含义：
 
@@ -119,7 +119,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图2** 解码器输出Buffer的内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ZUE699TERHmu8SkYrG26_A/zh-cn_image_0000002743379380.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/wU7KxBZPTvmuE78X5ZY13A/zh-cn_image_0000002779092223.png)
 
 图2中各参数含义：
 
@@ -138,7 +138,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图3** 含crop信息时解码器侧内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/bt0hhNmRQdqo4LgkbOAm3Q/zh-cn_image_0000002743219512.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/nEbRTB3GTCC_eIXzFLKsIQ/zh-cn_image_0000002778932383.png)
 
 解码器特有的4个裁剪参数定义了**有效显示区域**的矩形范围。
 
@@ -319,7 +319,7 @@ Configure 配置参数：
 
 ### Q6：OH\_AVCapability\_IsVideoSizeSupported等能力查询接口中的宽高参数是指什么
 
-**回答**：这些接口中的宽高参数通常指的是码流参数集（如SPS）中定义的**编码帧宽高**，与avcodec接口中使用的各种宽高Key（如OH\_MD\_KEY\_WIDTH、OH\_MD\_KEY\_VIDEO\_PIC\_WIDTH等）均无直接对标关系。解码时，解码器会据读入的码流参数集中的**编码帧宽高**判断是否支持解码该分辨率。若此前查询的宽高与实际码流中的参数不一致，可能会出现实际是否能解码与查询的结果不一致的情况。
+**回答**：这些接口中的宽高参数通常指的是码流参数集（如SPS）中定义的**编码帧宽高**，与avcodec接口中使用的各种宽高Key（如OH\_MD\_KEY\_WIDTH、OH\_MD\_KEY\_VIDEO\_PIC\_WIDTH等）均无直接对标关系。解码时，解码器会根据读入的码流参数集中的**编码帧宽高**判断是否支持解码该分辨率。若此前查询的宽高与实际码流中的参数不一致，可能会出现实际是否能解码与查询的结果不一致的情况。
 
 ## 参考文档
 

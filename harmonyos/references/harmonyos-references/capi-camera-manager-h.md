@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-came
 title: camera_manager.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > camera_manager.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b60147677b16a76bec74abce83191615c7638f2de6df297f3c3404678be07035
+scraped_at: 2026-10-01T07:39:28+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:a545d18e7a7040aff7b7c3cfbe6de5001d8d7d144b0acd816a4fe672e2e8d430
 ---
 
 ## 概述
@@ -1088,7 +1088,7 @@ Camera_ErrorCode OH_CameraManager_GetCameraConcurrentInfos(Camera_Manager* camer
 | --- | --- |
 | [Camera\_Manager](capi-oh-camera-camera-manager.md)\* cameraManager | 相机管理器实例。 |
 | [const Camera\_Device](capi-oh-camera-camera-device.md)\* camera | 用于查询的Camera\_Device相机设备列表，推荐设置为包含[OH\_CameraManager\_GetCameraDevice](capi-camera-manager-h.md#oh_cameramanager_getcameradevice)获取的前置与后置两个相机设备的相机设备列表。 |
-| uint32\_t deviceSize | 用于查询的相机设备列表长度, 必须设置为2（表示前置与后置两个用于并发的相机设备）。 |
+| uint32\_t deviceSize | 用于查询的相机设备列表长度，必须设置为2（表示前置与后置两个用于并发的相机设备）。 |
 | [Camera\_ConcurrentInfo](capi-oh-camera-camera-concurrentinfo.md)\*\* cameraConcurrentInfo | 查询到的相机并发能力数组Camera\_ConcurrentInfo，作为入参应当默认设置为空。  如果相机支持并发，cameraConcurrentInfo会被赋值为查询到的相机并发能力数组Camera\_ConcurrentInfo。  如果相机不支持并发，不会对cameraConcurrentInfo进行更改，并且返回错误码[Camera\_ErrorCode](capi-camera-h.md#camera_errorcode).CAMERA\_SERVICE\_FATAL\_ERROR。 |
 | uint32\_t\* infoSize | 查询到的相机并发能力数组长度，作为入参应当默认设置为0。  如果相机支持并发，infoSize会被赋值为查询到的相机并发能力数组长度。  如果相机不支持并发，不会对infoSize进行更改，并且返回错误码[Camera\_ErrorCode](capi-camera-h.md#camera_errorcode).CAMERA\_SERVICE\_FATAL\_ERROR。 |
 

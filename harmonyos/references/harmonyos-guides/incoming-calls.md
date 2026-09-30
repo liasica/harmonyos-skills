@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/incoming-call
 title: 来电场景
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 来电场景
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:41+08:00
+scraped_at: 2026-10-01T07:35:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:53a8b100fedee8098ee6011542e1ea2847553940d448681e36693532c1a3fe1d
+content_hash: sha256:979e54c0abd5e1686f8a7a44155aba7c464d6a8d5f3e19b21eaa1b06862e12b4
 ---
 
 ## 场景介绍
@@ -28,11 +28,11 @@ content_hash: sha256:53a8b100fedee8098ee6011542e1ea2847553940d448681e36693532c1a
 
 ### 来电场景：接听流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/tvh7_Yp6SF-wOYomFBVHpg/zh-cn_image_0000002772739091.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/PUwTf-07QG-ekBAUszmmFQ/zh-cn_image_0000002749333628.jpg)
 
 ### 来电场景：拒接流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/aU77qy9ySbu5UMq6IECH4g/zh-cn_image_0000002772898975.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/q1BeVRonTY2eS9QO-ZxoFg/zh-cn_image_0000002749493512.jpg)
 
 ## 接口说明
 

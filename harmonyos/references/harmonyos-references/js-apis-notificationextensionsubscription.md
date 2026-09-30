@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.notificationExtensionSubscription (notificationExtensionSubscription模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > @ohos.notificationExtensionSubscription (notificationExtensionSubscription模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2bcd54cba84ff7b88c181f85f2d0f181259e67e91252183385bd602a7e403725
+scraped_at: 2026-10-01T07:40:27+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:4e4c9ebbd9f54f2332b6a089367ebe32a3a42d5fdd63eba43404a364a8d2849d
 ---
 
 本模块提供管理通知扩展的能力，具体包括：打开通知扩展订阅设置界面、订阅和取消订阅通知扩展、获取和设置[通知授权](../harmonyos-guides/notification-glossary.md#notification-authorization通知授权)状态。
@@ -65,7 +65,7 @@ try {
   notificationExtensionSubscription.openSubscriptionSettings(context).then(() => {
     console.info(`openSubscriptionSettings success`);
   }).catch((e: Error) => {
-    let error = e as BusinessError
+    let error = e as BusinessError;
     console.error(`failed to call openSubscriptionSettings, code is ${error.code}, message is ${error.message}`)
   });
 } catch (error) {
@@ -77,7 +77,7 @@ try {
 
 openSubscriptionSettingsWithResult(context: UIAbilityContext): Promise<UserGrantSetting>
 
-打开应用的通知扩展订阅授权页面，以半模态弹窗形式显示。用户可在该页面授权“允许获取本机通知”开关与“已获取的本机通知”应用开关。使用Promise异步回调，当半模态窗口关闭时返回用户设置的授权的结果。
+打开应用的通知扩展订阅授权页面，以半模态弹窗形式显示。用户可在该页面授权“允许获取本机通知”开关与“已获取的本机通知”应用开关。使用Promise异步回调，当半模态窗口关闭时返回用户设置的授权结果。
 
 **起始版本**：26.0.0
 
@@ -97,7 +97,7 @@ openSubscriptionSettingsWithResult(context: UIAbilityContext): Promise<UserGrant
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[UserGrantSetting](js-apis-notificationextensionsubscription.md#usergrantsetting)> | Promise对象，返回用户设置的授权的结果。 |
+| Promise<[UserGrantSetting](js-apis-notificationextensionsubscription.md#usergrantsetting)> | Promise对象，返回用户设置的授权结果。 |
 
 **错误码：**
 
@@ -121,7 +121,7 @@ try {
   notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
     console.info(`openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
   }).catch((e: Error) => {
-    let error = e as BusinessError
+    let error = e as BusinessError;
     console.error(`failed to call openSubscriptionSettingsWithResult, code is ${error.code}, message is ${error.message}`)
   });
 } catch (error) {

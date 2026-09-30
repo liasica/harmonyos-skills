@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-basi
 title: 使用JSVM-API接口创建和获取数值
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口创建和获取数值
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-01T07:35:46+08:00
+doc_updated_at: 2026-09-30
 content_hash: sha256:93b1b74f413cb7889aa1ad93d4b34a4fb083cede8bc07aaa93776852d2ef71b5
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-recordi
 title: 使用AVRecorder录制视频(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 录制 > 使用AVRecorder录制视频(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:27+08:00
+scraped_at: 2026-10-01T07:34:53+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:7ef24484c2a7f1f5bcf19dd944b3fbbdfa6f2819476f62f15fbe7aece1dec2e1
+content_hash: sha256:3c0d283b9a287bee149a7174aa42e0871752ff8999ac4de275ffdf1bc5c06843
 ---
 
 当前仅支持[AVRecorder](media-kit-intro.md#avrecorder)开发视频录制，集成了音频捕获，音频编码，视频编码，音视频封装功能，适用于实现简单视频录制并直接得到视频本地文件的场景。
@@ -16,7 +16,7 @@ content_hash: sha256:7ef24484c2a7f1f5bcf19dd944b3fbbdfa6f2819476f62f15fbe7aece1d
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/UCCL3wJ1T3KEiz3JMBTzrw/zh-cn_image_0000002743379454.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/0yT_x74yQwCjle9Van6JVQ/zh-cn_image_0000002779092297.png)
 
 状态的详细说明请参考[AVRecorderState](../harmonyos-references/arkts-apis-media-t.md#avrecorderstate9)。
 

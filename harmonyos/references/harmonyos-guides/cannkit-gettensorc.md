@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-gette
 title: GetTensorC
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 矩阵相乘 > Matmul > GetTensorC
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:08:08+08:00
+scraped_at: 2026-10-01T07:35:28+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:2340326b1a1f1c686b7662d857c5de7c0070220fbe86488d155800a9dd52b270
+content_hash: sha256:0c5d7acdb2b1cd92c37738e3cd6e31a71eb90be0fc41bf5ab1c815e2f121cfdb
 ---
 
 ## 功能说明
@@ -61,11 +61,11 @@ Iterate后，获取一块C矩阵片，可以直接输出到GM tensor中。
 
 **图1** 非连续写模式示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/pbLMMBBWSV2yoFd9MMtIpQ/zh-cn_image_0000002772739593.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/MxBPKK5DSHq8CMYNebckOg/zh-cn_image_0000002749334136.png)
 
 **图2** 连续写模式示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/_-e6OaDLTYaKc2SoZETdvA/zh-cn_image_0000002772899477.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cX-SGIE9R3CPNZ-Jy3sHeA/zh-cn_image_0000002749494022.png)
 
 ## 返回值
 

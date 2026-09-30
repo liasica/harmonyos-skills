@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: QRCode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > QRCode
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:07+08:00
+scraped_at: 2026-10-01T07:37:06+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:8349be6b50a549554ab86da0d5e4948e2361f971b135a4336d01da997471bf3a
+content_hash: sha256:7aaee31a66f39a1bac7a53468dae09fe7f388d9d11a9ed5f88246e7111d09a46
 ---
 
 QRCode组件用于显示单个二维码，支持自定义二维码颜色、背景颜色及内容不透明度，适用于需要展示二维码以供扫描获取字符串信息的场景。
@@ -134,7 +134,7 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/dGak_0GbQxexwZRAUc0KLQ/zh-cn_image_0000002743221094.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/prZAwJYURrSZuCCwneIpbw/zh-cn_image_0000002778934111.png)
 
 ### 示例2（设置背景颜色为透明）
 
@@ -160,4 +160,4 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/f_2_LHbdS5C2KGCMbPfi1g/zh-cn_image_0000002772740349.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/mAG8sSHpR6KBHJ2qCxliMQ/zh-cn_image_0000002749335028.png)

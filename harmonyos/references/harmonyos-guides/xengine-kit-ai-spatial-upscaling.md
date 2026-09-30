@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 空域AI超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域AI超分
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:36+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:9c3aa1d32702bd8cfef0389ecfbb319c7db7887b837dccdc2ec5ea1d13df2a17
+scraped_at: 2026-10-01T07:35:01+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:a4e3f49369a53ef9a2e31eaa8371b7b0429852d3b889fe3780fad9ddb6de3f1a
 ---
 
 从API版本26.0.0开始，新增支持Vulkan协议。
@@ -47,7 +47,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 * 下面是基于OpenGL ES图形API平台集成空域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/k6WXj4XwSV-mVIdcS3WKcA/zh-cn_image_0000002743379626.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/rwMQqakaQFmI45OKjxTQ3A/zh-cn_image_0000002779092469.jpg)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale_extension_name)或[XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale2_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
@@ -60,7 +60,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 * 下面是基于Vulkan图形API平台集成空域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/Hv2QCERuSYyqtZNzVpWxmg/zh-cn_image_0000002743219740.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/M6mGtOXNQSa3SyM8wBUgmQ/zh-cn_image_0000002778932611.jpg)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
@@ -294,6 +294,9 @@ Native层实现使用OpenGL ES和XEngine Kit图形API搭建图像渲染管线并
        glEGLImageTargetTexture2DOES(GL_TEXTURE_2D, m_eglImage);
    } else {
        // 当支持XEG_NEURAL_UPSCALE2_EXTENSION_NAME时，输入纹理不需要关联OH_NativeBuffer
+       // internalformat为GLint类型，指定纹理中的颜色分量数量，如GL_RGBA。
+       // format为GLenum类型，指定像素数据的格式，如GL_RED。
+       // type为GLenum类型，指定像素数据的数据类型，如GL_BYTE。
        glTexImage2D(GL_TEXTURE_2D, 0, internalformat, width, height, 0, format, type, NULL);
    }
    ```
@@ -418,8 +421,8 @@ Native层实现使用OpenGL ES和XEngine Kit图形API搭建图像渲染管线并
    createInfo.sType = XEG_STRUCTURE_TYPE_NEURAL_UPSCALE_CREATE_INFO;
    createInfo.pNext = nullptr;
    createInfo.inputRegion = srcRect2D;
-   createInfo.inputSize = {lowResWidth, lowResHeight};
-   createInfo.outputSize = {highResWidth, highResHeight};
+   createInfo.inputSize = VkExtent2D{lowResWidth, lowResHeight};
+   createInfo.outputSize = VkExtent2D{highResWidth, highResHeight};
    createInfo.outputRegion = dstRect2D;
    createInfo.outputFormat = VK_FORMAT_R8G8B8A8_UNORM;
    // device逻辑设备，用户需进行初始化

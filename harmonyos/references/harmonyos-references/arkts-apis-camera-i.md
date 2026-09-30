@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:75d3597b5cb7a7ab8c660fc28fc639e3e37f29993f2ade02e618f7a68dae21f5
+scraped_at: 2026-10-01T07:39:26+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:a0f9c8b6aac9051570d780c1cb4e9ceecfb82acf98cea25f84766192d64a5d1b
 ---
 
 **说明** 
@@ -28,7 +28,7 @@ content_hash: sha256:75d3597b5cb7a7ab8c660fc28fc639e3e37f29993f2ade02e618f7a68da
 | hostDeviceName15+ | string | 是 | 否 | 远端设备名称。若当前无远端设备，返回为空。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 | hostDeviceType15+ | [HostDeviceType](arkts-apis-camera-e.md#hostdevicetype15) | 是 | 否 | 远端设备类型。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 | lensEquivalentFocalLength24+ | Array<number> | 是 | 是 | 相机镜头等效焦距。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
-| isLogicalCamera24+ | boolean | 是 | 是 | 是否为逻辑摄像头（由多个物理相机组成）, true表示是逻辑摄像头，false表示是物理摄像头。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| isLogicalCamera24+ | boolean | 是 | 是 | 是否为逻辑摄像头（由多个物理相机组成），true表示是逻辑摄像头，false表示是物理摄像头。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 | constituentCameraDevices24+ | Array<[CameraDevice](arkts-apis-camera-i.md#cameradevice)> | 是 | 是 | 组成此逻辑相机的物理相机列表。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 | lensFocalLength24+ | number | 是 | 是 | 镜头实际焦距。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 | minimumFocusDistance24+ | number | 是 | 是 | 相机最小对焦距离。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |

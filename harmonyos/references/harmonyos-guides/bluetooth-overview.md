@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-ove
 title: 蓝牙服务开发概述
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:59+08:00
+scraped_at: 2026-10-01T07:34:30+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e7157b22733307583b844c3ecd77f87c9659f75e53b58dec252d43cecca3460a
+content_hash: sha256:0c7ba824778fbdb846c667912b2bba30693ba2ea8b4964abf8f7899a20ded31d
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:e7157b22733307583b844c3ecd77f87c9659f75e53b58dec252d43cecca
 
 在蓝牙服务开发过程中，涉及两种维度的地址类型定义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/4Qj7aWVZRCyJePN9SmxdPg/zh-cn_image_0000002743219324.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/yJI1Qu1FS92RvPanPDdJPQ/zh-cn_image_0000002778932195.png)
 
 **图1** 蓝牙设备地址类型
 

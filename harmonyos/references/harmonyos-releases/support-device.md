@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/support-dev
 title: 各版本支持设备型号清单
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 各版本支持设备型号清单
 category: harmonyos-releases
-scraped_at: 2026-09-24T06:49:21+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:172318973bdc454511ed30bd4cbd35e69123f611fb4570a5a64a2863b5e3254a
+scraped_at: 2026-10-01T07:33:48+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:26d30ab5b53a6d17ff5b6f9acf061b2119aedee7b51a13f1727c4f68926a257e
 ---
 
 ## 26.0.0
@@ -354,12 +354,6 @@ content_hash: sha256:172318973bdc454511ed30bd4cbd35e69123f611fb4570a5a64a2863b5e
 | --- | --- |
 | MateBook Fold 非凡大师 | HPR-W72 |
 | MateBook Pro | HAD-W32 |
-
-### Lite Wearable
-
-| 设备系列 | 设备型号 |
-| --- | --- |
-| WATCH GT系列 | WATCH GT 5  WATCH GT 5 Pro |
 
 ## 6.0.1(21)
 

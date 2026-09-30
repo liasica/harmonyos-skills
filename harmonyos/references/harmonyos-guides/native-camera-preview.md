@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 预览(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 预览(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:57+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:ed3a5e9660b73ddb5f54ee4a3c232facb06aad9c0edc2dad9de68938032f2c40
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:2e3be081c04a7fd2e652c7dc651818f2831eacfa5f59b2f99ebd2ac7c262a280
 ---
 
 预览是启动相机后看见的画面，通常在拍照和录像前执行。
@@ -25,7 +25,6 @@ content_hash: sha256:ed3a5e9660b73ddb5f54ee4a3c232facb06aad9c0edc2dad9de68938032
    #include <cstdio>
    #include <fcntl.h>
    #include <map>
-   #include <string>
    #include <vector>
    #include <native_buffer/native_buffer.h>
    #include "iostream"
@@ -82,7 +81,7 @@ content_hash: sha256:ed3a5e9660b73ddb5f54ee4a3c232facb06aad9c0edc2dad9de68938032
            return CAMERA_INVALID_ARGUMENT;
        }
        ret_ = OH_CameraManager_CreatePreviewOutput(cameraManager_, previewProfile_, previewSurfaceId_, &previewOutput_);
-       OH_LOG_ERROR(LOG_APP, "create preview width: %{public}d, height: %{public}d, format: %{public}d",
+       OH_LOG_INFO(LOG_APP, "create preview width: %{public}d, height: %{public}d, format: %{public}d",
            previewProfile_->size.width, previewProfile_->size.height, previewProfile_->format);
        if (previewSurfaceId_ == nullptr || previewOutput_ == nullptr || ret_ != CAMERA_OK) {
            OH_LOG_ERROR(LOG_APP, "CreatePreviewOutput failed.");

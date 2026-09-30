@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 公共事件错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 公共事件错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1c826e6b973b5c3c2a139a9ece6019b8f1a4afdf19351d5d3392445376769de6
+scraped_at: 2026-10-01T07:38:49+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:34206d5924d28a0d99d639cbadd1badb7be7d2536d839fbb25856a2705c05a30
 ---
 
 **说明** 
@@ -96,7 +96,7 @@ The subscriber is not found.
 
 **可能原因**
 
-订阅者已取消订阅被系统删除。
+订阅者已取消订阅或订阅者已被系统删除。
 
 **处理步骤**
 
@@ -179,7 +179,7 @@ Failed to obtain system parameters.
 
 **错误信息**
 
-The count of subscriber exceed system specification.
+The count of subscriber exceeds system specification.
 
 **错误描述**
 

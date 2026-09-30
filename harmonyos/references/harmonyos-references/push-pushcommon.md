@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-push
 title: pushCommon（推送服务公共信息）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > pushCommon（推送服务公共信息）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6d5b8dbafde4f8c58f4b4e7c8e54386cf25cc3d45465000def11a5a699e29dcf
+scraped_at: 2026-10-01T07:40:35+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6db90a8331db4a86bbfb80e2e9b7be76870c43d7b28927c9d7e244ec4e23b874
 ---
 
 本模块定义推送服务相关公共接口与枚举，为账号绑定、消息接收、通知内容替换等核心能力提供支撑。
@@ -189,5 +189,5 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | callId | string | 否 | 否 | 当次呼叫的唯一标识。 |
-| type | string | 否 | 否 | 继承自[PushPayload](push-pushcommon.md#pushpayload)，表示传递给[VoIPExtensionAbility](push-voip-ability.md)的消息类型。 |
-| data | string | 否 | 否 | 继承自[PushPayload](push-pushcommon.md#pushpayload)，表示传递给[VoIPExtensionAbility](push-voip-ability.md)的数据。 |
+| type | string | 否 | 否 | 继承自[PushPayload](push-pushcommon.md#pushpayload)。 |
+| data | string | 否 | 否 | 继承自[PushPayload](push-pushcommon.md#pushpayload)。 |

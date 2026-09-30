@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Popup控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 弹窗控制 > Popup控制
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:51+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:31b4d0559fa8c003e358130a49914ac2d6717bbd907fea195aba82d7d3bfc97d
+scraped_at: 2026-10-01T07:36:53+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:98d458eff1d7a416c621d12c7065a7a0083f2bb2ff51f45225f9e754c20ef8f8
 ---
 
 为组件绑定Popup气泡，并设置气泡内容、交互逻辑和显示状态。
@@ -168,11 +168,11 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 | shadow11+ | [ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | [ShadowStyle](ts-universal-attributes-image-effect.md#shadowstyle10枚举说明) | 否 | 是 | 设置气泡阴影。  默认值：ShadowStyle.OUTER\_DEFAULT\_MD  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | backgroundBlurStyle11+ | [BlurStyle](ts-universal-attributes-background.md#blurstyle9) | 否 | 是 | 设置气泡模糊背景参数。  默认值：BlurStyle.COMPONENT\_ULTRA\_THICK  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | focusable11+ | boolean | 否 | 是 | 设置气泡弹出后是否获焦。  true：气泡可以获焦；false：气泡不会获焦。  默认值：false  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
-| transition12+ | [TransitionEffect](ts-transition-animation-component.md#transitioneffect10对象说明) | 否 | 是 | 自定义设置Popup气泡显示和退出的动画效果。  **说明：**  如果不设置，则使用默认的显示/退出动效。  2. 显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。  3. 退出动效中按back键，不会打断退出动效，退出动效继续执行，back键不被响应。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| transition12+ | [TransitionEffect](ts-transition-animation-component.md#transitioneffect10对象说明) | 否 | 是 | 自定义设置Popup气泡显示和退出的动画效果。  **说明：**  1. 如果不设置，则使用默认的显示/退出动效。  2. 显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。  3. 退出动效中按back键，不会打断退出动效，退出动效继续执行，back键不被响应。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | onWillDismiss12+ | boolean | Callback<[DismissPopupAction](ts-universal-attributes-popup.md#dismisspopupaction12类型说明)> | 否 | 是 | 设置Popup交互式关闭拦截开关及拦截回调函数，默认值为true，Popup响应点击、侧滑（左滑/右滑）、三键back。  1. 当为boolean类型时，如果设置为false，则不响应点击、侧滑（左滑/右滑）、三键back、路由跳转或键盘ESC退出事件，仅当设置“气泡显示状态”参数show值为false时才退出；如果设置为true，则正常响应退出事件；  2. 如果设置为函数类型，则拦截退出事件且执行回调函数。侧滑（左滑/右滑）、三键back、路由跳转或键盘ESC在回调函数中返回的reason为PRESS\_BACK，点击为TOUCH\_OUTSIDE。  **说明：**  在onWillDismiss回调中，不能再做onWillDismiss拦截。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | followTransformOfTarget13+ | boolean | 否 | 是 | 气泡绑定的宿主组件或其宿主组件的父容器添加了旋转、缩放等变换时，气泡是否跟随宿主组件变换。  true：气泡可以拿到变换后宿主的位置，显示到相应位置；false：气泡拿不到宿主变换后的位置，可能显示异常。  默认值：false  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | keyboardAvoidMode15+ | [KeyboardAvoidMode](ts-universal-attributes-popup.md#keyboardavoidmode12枚举说明) | 否 | 是 | 气泡是否避让软键盘，默认不避让。设置为避让后，气泡显示空间不足时，由原先居中覆盖父组件的方式改为平移覆盖父组件，且气泡箭头不指向宿主时，不再显示箭头。  默认值：KeyboardAvoidMode.NONE  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
-| enableHoverMode18+ | boolean | 否 | 是 | Popup组件是否响应悬停态（半折叠状态）变化，即在悬停态下是否触发避让折痕区域。  默认值：false，2in1设备默认为true。未设置或者值为非法值时，生效默认值。  **说明：**  1. 如果Popup的弹出位置在悬停态折痕区域，Popup组件不会响应悬停态。  2. 2in1设备从API version 20开始生效。  3. 2in1设备仅在窗口瀑布模式下生效。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| enableHoverMode18+ | boolean | 否 | 是 | Popup组件是否响应悬停态（半折叠状态）变化，即在悬停态下是否触发避让折痕区域。  true：响应悬停态变化；false：不响应悬停态变化。  默认值：false，2in1设备默认为true。未设置或者值为非法值时，生效默认值。  **说明：**  1. 如果Popup的弹出位置在悬停态折痕区域，Popup组件不会响应悬停态。  2. 2in1设备从API version 20开始生效。  3. 2in1设备仅在窗口瀑布模式下生效。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | outlineWidth20+ | [Dimension](ts-types.md#dimension10) | 否 | 是 | 设置Popup组件外描边的宽度。  默认值：1  单位：vp  **说明：**  1. 不支持设置百分比，设置百分比时按0处理。  2. 在没有设置Popup组件外描边的情况下，该接口需要和outlineLinearGradient配合使用。  3. 当设置双描边时，建议外描边宽度不超过10vp。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | borderWidth20+ | [Dimension](ts-types.md#dimension10) | 否 | 是 | 设置Popup组件内描边的宽度。  默认值：1  单位：vp  **说明：**  1. 不支持设置百分比，设置百分比时按0处理。  2. 在没有设置Popup组件内描边的情况下，该接口需要和borderLinearGradient配合使用。  3. 当设置双描边时，建议内描边宽度不超过10vp。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | outlineLinearGradient20+ | [PopupBorderLinearGradient](ts-universal-attributes-popup.md#popupborderlineargradient20类型说明) | 否 | 是 | 设置Popup组件外描边线性渐变的颜色。  **说明：**  1. outlineLinearGradient不设置或者设置为null、undefined时，外描边没有线性渐变效果。  2. outlineLinearGradient设置时，direction默认值是：GradientDirection.Bottom。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
@@ -215,7 +215,7 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 | transition | [TransitionEffect](ts-transition-animation-component.md#transitioneffect10对象说明) | 否 | 是 | 自定义设置Popup气泡显示和退出的动画效果。  **说明：**  1. 如果不设置，则使用默认的显示/退出动效。  2. 显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。  3. 退出动效中按back键，不会打断退出动效，退出动效继续执行，back键不被响应。  4.不支持通过[updatePopup](arkts-apis-uicontext-promptaction.md#updatepopup18)进行更新。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | onWillDismiss | boolean|Callback<[DismissPopupAction](ts-universal-attributes-popup.md#dismisspopupaction12类型说明)> | 否 | 是 | 设置Popup交互式关闭拦截开关及拦截回调函数，默认值为true，Popup响应点击、侧滑（左滑/右滑）、三键back。  1. 当为boolean类型时，如果设置为false，则不响应点击、侧滑（左滑/右滑）、三键back、路由跳转或键盘ESC退出事件，仅当设置“气泡显示状态”参数show值为false时才退出；如果设置为true，则正常响应退出事件；  2. 如果设置为函数类型，则拦截退出事件且执行回调函数。侧滑（左滑/右滑）、三键back、路由跳转或键盘ESC在回调函数中返回的reason为PRESS\_BACK，点击为TOUCH\_OUTSIDE。  **说明：**  1. 在onWillDismiss回调中，不能再做onWillDismiss拦截。  2. 不支持通过[updatePopup](arkts-apis-uicontext-promptaction.md#updatepopup18)进行更新。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | followTransformOfTarget | boolean | 否 | 是 | 气泡绑定的宿主组件或其宿主组件的父容器添加了旋转、缩放等变换时，气泡是否跟随宿主组件变换。  true：气泡可以拿到变换后宿主的位置，显示到相应位置；false：气泡拿不到宿主变换后的位置，可能显示异常。  默认值：false  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| enableHoverMode | boolean | 否 | 是 | Popup组件是否响应悬停态（半折叠状态）变化，即在悬停态下是否触发避让折痕区域。  默认值：false，2in1设备默认为true。未设置或者值为非法值时，生效默认值。  **说明：**  1. 如果Popup的弹出位置在悬停态折痕区域，Popup组件不会响应悬停态。  2. 2in1设备从API version 20开始生效。  3. 2in1设备仅在窗口瀑布模式下生效。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| enableHoverMode | boolean | 否 | 是 | Popup组件是否响应悬停态（半折叠状态）变化，即在悬停态下是否触发避让折痕区域。  true：响应悬停态变化；false：不响应悬停态变化。  默认值：false，2in1设备默认为true。未设置或者值为非法值时，生效默认值。  **说明：**  1. 如果Popup的弹出位置在悬停态折痕区域，Popup组件不会响应悬停态。  2. 2in1设备从API version 20开始生效。  3. 2in1设备仅在窗口瀑布模式下生效。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | outlineWidth20+ | [Dimension](ts-types.md#dimension10) | 否 | 是 | 设置Popup组件外描边的宽度。  默认值：1  单位：vp  **说明：**  1. 不支持设置百分比，设置百分比时按0处理。  2. 在没有设置Popup组件外描边的情况下，该接口需要和outlineLinearGradient配合使用。  3. 当设置双描边时，建议外描边宽度不超过10vp。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | borderWidth20+ | [Dimension](ts-types.md#dimension10) | 否 | 是 | 设置Popup组件内描边的宽度。  默认值：1  单位：vp  **说明：**  1. 不支持设置百分比，设置百分比时按0处理。  2. 在没有设置Popup组件内描边的情况下，该接口需要和borderLinearGradient配合使用。  3. 当设置双描边时，建议内描边宽度不超过10vp。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | outlineLinearGradient20+ | [PopupBorderLinearGradient](ts-universal-attributes-popup.md#popupborderlineargradient20类型说明) | 否 | 是 | 设置Popup组件外描边线性渐变的颜色。  **说明：**  1. outlineLinearGradient不设置或者设置为null、undefined时，外描边没有线性渐变效果。  2. outlineLinearGradient设置时，direction默认值是：GradientDirection.Bottom。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
@@ -406,7 +406,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/c7m82CytQb2vC56ZZcG7yg/zh-cn_image_0000002743220680.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/osiHp71jTAas_BqMIe9O4Q/zh-cn_image_0000002778933561.gif)
 
 ### 示例2（设置气泡的文本样式）
 
@@ -453,7 +453,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/wAEuLNyKQZeKsO-R-lmBxA/zh-cn_image_0000002772739933.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/BnTT5IYMTjebKrff73LgYg/zh-cn_image_0000002749334476.gif)
 
 ### 示例3（设置气泡的样式）
 
@@ -501,7 +501,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/poIoC5z0THGq1q3Hp_erVQ/zh-cn_image_0000002772899817.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/99yJin_SRIqmDIPtbdROjw/zh-cn_image_0000002749494362.gif)
 
 ### 示例4（设置气泡的动效）
 
@@ -571,7 +571,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Yh1Tt2DnR9SCFgtt9OfUuA/zh-cn_image_0000002743380568.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/F6ypIATxRY2v6pTV_TSEXA/zh-cn_image_0000002779093419.gif)
 
 ### 示例5（为气泡添加事件）
 
@@ -626,7 +626,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/rUV0UA0FQD2JyRSHhro1Sg/zh-cn_image_0000002743220682.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/IB5lcC3-QGSFMLXKPy_iHA/zh-cn_image_0000002778933563.gif)
 
 ### 示例6（为气泡拦截退出事件）
 
@@ -684,7 +684,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/DOjcE4liQziuFa0OJCNC1Q/zh-cn_image_0000002772739935.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/hT2X-RmMQKG7ZmFuKrFQgg/zh-cn_image_0000002749334478.gif)
 
 ### 示例7（为气泡内外描边设置线性渐变）
 
@@ -735,7 +735,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/rMM5HRlSSSa2DJxX87Py1A/zh-cn_image_0000002772899819.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/nMU-i1JQS6OdA26E8Vs6jg/zh-cn_image_0000002749494364.gif)
 
 ### 示例8（设置气泡避让绑定的组件模式）
 
@@ -768,7 +768,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/5q2b_r1fQretUxMOexg2kg/zh-cn_image_0000002743380570.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Xy00RJjVRVmnr69don059Q/zh-cn_image_0000002779093421.gif)
 
 ### 示例9（设置Popup的沉浸光感视觉效果）
 
@@ -819,11 +819,11 @@ struct PopupExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/x-hkdxmtRt-2SWa4Bb1qqg/zh-cn_image_0000002743220684.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/4EovQnb-QfSJXT6hkoE50A/zh-cn_image_0000002778933565.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Jg_8gsImRlG0V4leI59PVg/zh-cn_image_0000002772739937.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/1EwdiJyOQFmwq-Auiak6zg/zh-cn_image_0000002749334480.gif)
 
 ### 示例10（自定义气泡背景效果参数）
 
@@ -895,7 +895,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/AGeqyOSIQPucJ4MLF0q8OA/zh-cn_image_0000002772899821.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/gxhHqVyiTJmdyS1raXJsKg/zh-cn_image_0000002749494366.gif)
 
 ### 示例11（设置气泡的显示层级模式）
 
@@ -957,4 +957,4 @@ struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/oe9K0cr2SUaEigfq2U1C0w/zh-cn_image_0000002743380572.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/a2eiAPCeSbiK9bxjlgYeAw/zh-cn_image_0000002779093423.gif)

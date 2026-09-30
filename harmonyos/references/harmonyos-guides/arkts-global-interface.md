@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-
 title: 使用UI上下文接口操作界面（UIContext）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 使用UI上下文接口操作界面（UIContext）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:33+08:00
+scraped_at: 2026-10-01T07:34:08+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:d094465d60a6ddbc426bd2823d10be511204a07acdad715abb0312abdaa14a03
+content_hash: sha256:a3d1c73305ad321e458e7072bce1de01f68337dde90dd7a3861371b091d5087f
 ---
 
 本文主要介绍了多UI实例涉及的概念，以及使用[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)的方法替换全局接口的原因，并提供了相应的替换方案。
@@ -29,7 +29,7 @@ content_hash: sha256:d094465d60a6ddbc426bd2823d10be511204a07acdad715abb0312abdaa
 
 **图1** 调用作用域原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/gbjBV9IWSpO3PL5odxAv2w/zh-cn_image_0000002772738131.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Kwwwc9YITEK2PPhU4ZhZxA/zh-cn_image_0000002749332666.png)
 
 ## UI上下文不明确
 
@@ -45,7 +45,7 @@ UI上下文不明确是指调用ArkUI全局接口时，调用点无法明确识�
 
 **图2** 多实例关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ZO31hjQ0QB6sT9xHweG4HQ/zh-cn_image_0000002772898015.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/7rYZOQ2BQvi8QjwsUrdSQA/zh-cn_image_0000002749492550.png)
 
 ## UIContext接口替换全局接口的关系
 

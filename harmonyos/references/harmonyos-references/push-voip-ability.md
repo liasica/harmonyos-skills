@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-voip-ability
-title: VoIPExtensionAbility（应用内通话消息扩展Ability）（废弃）
-breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > VoIPExtensionAbility（应用内通话消息扩展Ability）（废弃）
+title: VoIPExtensionAbility（应用内通话消息扩展Ability）（已废弃）
+breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > VoIPExtensionAbility（应用内通话消息扩展Ability）（已废弃）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-01T07:40:36+08:00
+doc_updated_at: 2026-09-30
 content_hash: sha256:b0764b6f99f942202619431f6b4188a883aae71db87922c5948b62600722c034
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Chip
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Chip
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:15+08:00
+scraped_at: 2026-10-01T07:37:11+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:2cbd118e2453261c2e0cbdc28f11f6f8c21d4c869268bd88b3437a9e0a81cfb7
+content_hash: sha256:5258fa4566d0ae902d9c3538edf40175156bf3ecdd8573534bfbb283d98ab36f
 ---
 
 Chip组件用于标签展示和交互场景，支持自定义样式、图标、激活态等功能，适用于搜索框历史记录、邮件发送列表等场景，可快速实现标签的创建、删除和交互能力。
@@ -347,7 +347,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/rYrRv1NIRtSaYhUNmjCurA/zh-cn_image_0000002772900395.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/igbGj_oIRr2OoObkZBgNZA/zh-cn_image_0000002749495074.png)
 
 ### 示例2（设置默认后缀图标）
 
@@ -396,7 +396,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/TZn4zVg9QGKMI--DfaO7Xw/zh-cn_image_0000002743381144.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/_X4MU9c9TKq0DzNDPzgyyw/zh-cn_image_0000002779094131.png)
 
 ### 示例3（不显示后缀图标）
 
@@ -444,7 +444,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/29lXwlmoSDePG9klg1YMIg/zh-cn_image_0000002743221258.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/SBdjI9aCSfm2e-8NVzyRTA/zh-cn_image_0000002778934275.png)
 
 ### 示例4（激活态操作块）
 
@@ -502,7 +502,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/GsCKfM7GQR-hiXhrsSV4xg/zh-cn_image_0000002772740513.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/C4F4MLV9S2KhOrqOEKlDMg/zh-cn_image_0000002749335192.gif)
 
 ### 示例5（设置symbol类型图标）
 
@@ -557,7 +557,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/FMUqNqGrSjS-Q7Z89ADG7Q/zh-cn_image_0000002772900397.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/A3UhIpvaROiLKoKH83Er-Q/zh-cn_image_0000002749495076.gif)
 
 ### 示例6（设置镜像效果）
 
@@ -609,7 +609,7 @@ struct ChipPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/CsHrqmj2SHu3WGdrXz-_jA/zh-cn_image_0000002743381146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/OOBvBOPeQKOGVRJVd_TFeg/zh-cn_image_0000002779094133.png)
 
 ### 示例7（Image类型无障碍朗读）
 
@@ -701,7 +701,7 @@ struct ChipExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/b1bXAK8vTtWXjifm5LnJrg/zh-cn_image_0000002743221260.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/LX7c-jo1Sv2YdB2hj3kSiQ/zh-cn_image_0000002778934277.png)
 
 ### 示例8（symbol类型无障碍朗读）
 
@@ -831,7 +831,7 @@ struct ChipExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/E3pmOm9tQ2GJaNVZp40jDw/zh-cn_image_0000002772740515.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/e0xjHPTrSuuYzJDRVBDAmw/zh-cn_image_0000002749335194.png)
 
 ### 示例9（Chip组件无障碍朗读）
 
@@ -933,7 +933,7 @@ struct ChipAccessibilityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xMRGXKHVSGmwqg1gzIBZIA/zh-cn_image_0000002772900399.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/eSMV2F9LRnWhTS9s_2drPQ/zh-cn_image_0000002749495078.png)
 
 ### 示例10（设置系统材质样式）
 
@@ -1002,4 +1002,4 @@ struct ChipMaterialExample {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/0fAovCeFTgG5c-ix3uYmdg/zh-cn_image_0000002743381148.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/MmdWAhftSHOwWC1uwFTdig/zh-cn_image_0000002779094135.png)

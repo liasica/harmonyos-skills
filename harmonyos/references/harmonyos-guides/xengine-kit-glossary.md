@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-g
 title: XEngine Kit术语
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > XEngine Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:24834bb098dfada521617e41702543e4207697987d6de2b298aadd4db41b8cbd
+scraped_at: 2026-10-01T07:35:00+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:565426c26beecac3cd84f084921192e87c698654f79ddcf0c9b663b65c4c92ef
 ---
 
 ## A
 
 ### Adaptive VRS；自适应可变速率着色
 
-可变速率着色（VRS）是一项先进的图形渲染技术，允许开发者以低于传统逐像素的密度调用像素着色器。自适应可变速率着色（Adaptive VRS）在VRS的基础上，利用实时图像分析结果动态识别并区分画面内容，在高细节区域保持高着色率以保障清晰度，简单区域降低着色率以提升效能。这种基于内容的精细调控，能在人眼不易察觉画质损失的前提下，降低GPU负载，提升帧率与能效比。
+可变速率着色（VRS）是一项先进的图形渲染技术，允许开发者以低于传统逐像素的密度调用像素着色器。自适应可变速率着色（Adaptive VRS）在VRS的基础上，利用实时图像分析结果动态识别并区分画面内容，在高细节区域保持高着色率以保障清晰度，在简单区域降低着色率以提升效能。这种基于内容的精细调控，能在人眼不易察觉画质损失的前提下，降低GPU负载，提升帧率与能效比。
 
 ## C
 

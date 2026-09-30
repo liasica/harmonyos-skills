@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: CSS语法参考
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 语法 > CSS语法参考
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:34+08:00
+scraped_at: 2026-10-01T07:34:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6b4361225cd21d7cdf7cb78e867643bb02c58e3a16eaf912356cee0b4212f052
+content_hash: sha256:b820cb192a11f3bdaf8f60ccd87f500fc8b40cb781bf6a2ce3af4940de259c99
 ---
 
 CSS是描述[HML](js-framework-syntax-hml.md)页面结构的样式语言。所有组件均存在系统默认样式，也可在页面CSS样式文件中对组件、页面自定义不同的样式。请参考[通用样式](../harmonyos-references/js-components-common-styles.md)了解兼容JS的类Web开发范式支持的组件样式。
@@ -118,7 +118,7 @@ div {
 
 以上样式运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/2Grz4yk9Q8WNG1d7RfAzmA/zh-cn_image_0000002743378794.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/WmYRhW3JRoaJT-kPcmo7MA/zh-cn_image_0000002779091637.png)
 
 其中“.container text”将“标题”和“内容”设置为蓝色，而“.container > text”直接后代选择器将“标题”设置为红色。两者优先级相同，但直接后代选择器声明顺序靠后，将前者样式覆盖（优先级计算见[选择器优先级](js-framework-syntax-css.md#选择器优先级)）。
 

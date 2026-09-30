@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.prompt (弹窗)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > @ohos.prompt (弹窗)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:46+08:00
+scraped_at: 2026-10-01T07:36:47+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:33a1a6ab78d566b78b79566032d48dd179b9614b08b85d7067761e9e827e37f1
+content_hash: sha256:a8979fb9b028595710a5b7bda00cfc924e08c3d771cbaaec373f22a1a1ef0e96
 ---
 
 创建并显示文本提示框、对话框和操作菜单。
@@ -46,7 +46,7 @@ prompt.showToast({
 });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Fxiw1CaiRHC57TH6y0oeXg/zh-cn_image_0000002772899723.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/jv0PgLG_TtSD-TI-k--xlQ/zh-cn_image_0000002749494268.gif)
 
 ## ShowToastOptions
 
@@ -106,7 +106,7 @@ prompt.showDialog({
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/zWupNAWISXKHzXBc_rozGA/zh-cn_image_0000002743220548.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/f4M3TzqASI2wkta0BEPjeQ/zh-cn_image_0000002778933429.gif)
 
 ## prompt.showDialog
 
@@ -149,7 +149,7 @@ prompt.showDialog({
 });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Hxr4vXcgSTW9rch5xlWURQ/zh-cn_image_0000002772739801.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/XwZvdJwsREu-IYM0sVHzGQ/zh-cn_image_0000002749334344.gif)
 
 ## ShowDialogOptions
 
@@ -213,7 +213,7 @@ prompt.showActionMenu({
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/4WxNAaazRSCN0EP2YoOoKQ/zh-cn_image_0000002743220550.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/90cjgOp4SsazZdmYTLAWLQ/zh-cn_image_0000002778933431.gif)
 
 ## prompt.showActionMenu
 
@@ -260,7 +260,7 @@ prompt.showActionMenu({
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/nisMMSUxQY2BENy1Jc7jnw/zh-cn_image_0000002772899687.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/RRGg95KqTTiD5TjrWi1vzg/zh-cn_image_0000002749494232.gif)
 
 ## ActionMenuOptions
 

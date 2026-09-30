@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Ellipse
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Ellipse
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:09+08:00
+scraped_at: 2026-10-01T07:37:07+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:84733974c887b09abaa905cad397364f496c6a397a7c3246e17c2b84d34a3b0f
+content_hash: sha256:4448ec0b89c8ea105620d65fd7d88ca1d81f027b1f5c57964ff3f7de6e69f50f
 ---
 
 椭圆绘制组件。该组件通过设置宽度和高度属性绘制椭圆形状，在给定的矩形区域内渲染椭圆轮廓和填充区域。
@@ -108,7 +108,7 @@ struct EllipseExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/MjEYFn6kSFKd9t3kFee_sA/zh-cn_image_0000002772900263.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/lKgWsS-iQjKLstZGYPUItg/zh-cn_image_0000002749494942.png)
 
 ### 示例2（宽和高使用不同参数类型绘制椭圆）
 
@@ -132,7 +132,7 @@ struct EllipseTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/514DzxSITD6coyNFDp8cSw/zh-cn_image_0000002772740417.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/5AN_mpsNRr2b6G5gsVfAyg/zh-cn_image_0000002749335096.png)
 
 ### 示例3（使用attributeModifier动态设置Ellipse组件的属性）
 
@@ -170,4 +170,4 @@ struct EllipseModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/9NdwGxTlQX-hOPA8IKMVSA/zh-cn_image_0000002772900301.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/msZb6HAlSQODDWc9hWzBbg/zh-cn_image_0000002749494980.png)

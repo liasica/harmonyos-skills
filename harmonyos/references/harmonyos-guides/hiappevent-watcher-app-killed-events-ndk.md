@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅应用终止事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用终止事件 > 订阅应用终止事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:342d2af8ec4eec4646615ec4382f75ee21d0f2e1ab109e80ee9f3362632b57bc
+scraped_at: 2026-10-01T07:34:41+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:2fc24e8015ff77936c06d342e1a6ffa66f0275bb30ec8736011ec71616698b8e
 ---
 
 ## 应用终止事件规格说明
@@ -218,7 +218,9 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
     ```
     static napi_value DestroyWatcher(napi_env env, napi_callback_info info) {
         // 销毁创建的观察者，并置systemEventWatcher为nullptr。
-        OH_HiAppEvent_DestroyWatcher(systemEventWatcher);
+        if (systemEventWatcher != nullptr) {
+           OH_HiAppEvent_DestroyWatcher(systemEventWatcher);
+        }
         systemEventWatcher = nullptr;
         return {};
     }

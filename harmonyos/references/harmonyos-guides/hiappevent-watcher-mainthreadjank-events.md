@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 主线程超时事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 主线程超时事件 > 主线程超时事件介绍
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9161b4568d9bc390ff06403246bfb726978a9c86ebc2fd14ca5e6993a0672f73
+scraped_at: 2026-10-01T07:34:41+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:d93ff6309b91957a0fa3512c84d3ef1f16b6b8464b95370a1e1adae272dc05da
 ---
 
 ## 简介
@@ -269,11 +269,13 @@ MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"1"时，所有配置项均需设置。
 
    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
    OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "0");
-   int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK, config);
-   if (ret == HIAPPEVENT_SUCCESS) {
-       OH_LOG_INFO(LogType::LOG_APP, "Setting default value successfully.");
-   }
-   OH_HiAppEvent_DestroyConfig(config);
+    int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK, config);
+    if (ret == HIAPPEVENT_SUCCESS) {
+        OH_LOG_INFO(LogType::LOG_APP, "Setting default value successfully.");
+    }
+    if (config != nullptr) {
+       OH_HiAppEvent_DestroyConfig(config);
+    }
    ```
 
    （2）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"1"时，仅用于采集调用栈。
@@ -297,7 +299,9 @@ MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"1"时，所有配置项均需设置。
    if (ret == HIAPPEVENT_SUCCESS) {
        OH_LOG_INFO(LogType::LOG_APP, "Successfully set sampling stack parameters.");
    }
-   OH_HiAppEvent_DestroyConfig(config);
+   if (config != nullptr) {
+       OH_HiAppEvent_DestroyConfig(config);
+   }
    ```
 
    （3）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"2"时，仅用于采集trace。
@@ -317,7 +321,9 @@ MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"1"时，所有配置项均需设置。
    if (ret == HIAPPEVENT_SUCCESS) {
        OH_LOG_INFO(LogType::LOG_APP, "Set to only collect trace successfully");
    }
-   OH_HiAppEvent_DestroyConfig(config);
+   if (config != nullptr) {
+       OH_HiAppEvent_DestroyConfig(config);
+   }
    ```
 
 **name为EVENT\_MAIN\_THREAD\_JANK\_V2**
@@ -375,7 +381,9 @@ MAIN\_THREAD\_JANK\_PARAM\_AUTO\_STOP\_SAMPLING为"true"或"false"，转换为�
    if (ret == HIAPPEVENT_SUCCESS) {
        OH_LOG_INFO(LogType::LOG_APP, "Setting default value successfully.");
    }
-   OH_HiAppEvent_DestroyConfig(config);
+   if (config != nullptr) {
+       OH_HiAppEvent_DestroyConfig(config);
+   }
    ```
 
    （2）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"1"时，仅用于采集调用栈。
@@ -400,7 +408,9 @@ MAIN\_THREAD\_JANK\_PARAM\_AUTO\_STOP\_SAMPLING为"true"或"false"，转换为�
    if (ret == HIAPPEVENT_SUCCESS) {
        OH_LOG_INFO(LogType::LOG_APP, "Successfully set sampling stack parameters.");
    }
-   OH_HiAppEvent_DestroyConfig(config);
+   if (config != nullptr) {
+       OH_HiAppEvent_DestroyConfig(config);
+   }
    ```
 
    （3）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"2"时，仅用于采集trace。
@@ -420,7 +430,9 @@ MAIN\_THREAD\_JANK\_PARAM\_AUTO\_STOP\_SAMPLING为"true"或"false"，转换为�
    if (ret == HIAPPEVENT_SUCCESS) {
        OH_LOG_INFO(LogType::LOG_APP, "Set to only collect trace successfully");
    }
-   OH_HiAppEvent_DestroyConfig(config);
+   if (config != nullptr) {
+       OH_HiAppEvent_DestroyConfig(config);
+   }
    ```
 
 ## 事件字段说明

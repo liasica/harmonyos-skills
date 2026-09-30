@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.notification (Notification模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > 已停止维护的接口 > @ohos.notification (Notification模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:02+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:04f227e9d906b13e1bdb2390422d8ea1b93432c099b3a76ad04f45ad9ed2dfb6
+scraped_at: 2026-10-01T07:40:29+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:e39bddd2fb75fbe2c29a795016bf29cf947aca5c7dc4c346046458559296c585
 ---
 
 本模块提供通知管理的能力，包括发布、取消发布通知，创建、获取、移除通知通道，订阅、取消订阅通知，获取通知的使能状态、角标使能状态，获取通知的相关信息等。
@@ -286,14 +286,14 @@ addSlot(type: SlotType, callback: AsyncCallback<void>): void
 import Base from '@ohos.base';
 
 // addslot回调
-let addSlotCallBack = (err: Base.BusinessError) => {
+let addSlotCallback = (err: Base.BusinessError) => {
   if (err) {
     console.error("addSlot failed " + JSON.stringify(err));
   } else {
     console.info("addSlot success");
   }
 }
-Notification.addSlot(Notification.SlotType.SOCIAL_COMMUNICATION, addSlotCallBack);
+Notification.addSlot(Notification.SlotType.SOCIAL_COMMUNICATION, addSlotCallback);
 ```
 
 ## Notification.addSlot
@@ -533,14 +533,14 @@ removeAllSlots(callback: AsyncCallback<void>): void
 ```ts
 import Base from '@ohos.base';
 
-let removeAllCallBack = (err: Base.BusinessError) => {
+let removeAllCallback = (err: Base.BusinessError) => {
   if (err) {
     console.error("removeAllSlots failed " + JSON.stringify(err));
   } else {
     console.info("removeAllSlots success");
   }
 }
-Notification.removeAllSlots(removeAllCallBack);
+Notification.removeAllSlots(removeAllCallback);
 ```
 
 ## Notification.removeAllSlots
@@ -769,7 +769,7 @@ isSupportTemplate(templateName: string, callback: AsyncCallback<boolean>): void
 ```ts
 import Base from '@ohos.base';
 
-let templateName: string = 'process';
+let templateName: string = 'downloadTemplate';
 function isSupportTemplateCallback(err: Base.BusinessError, data: boolean) {
   if (err) {
     console.error("isSupportTemplate failed " + JSON.stringify(err));
@@ -785,7 +785,7 @@ Notification.isSupportTemplate(templateName, isSupportTemplateCallback);
 
 isSupportTemplate(templateName: string): Promise<boolean>
 
-在使用通知模板[NotificationTemplate](js-apis-inner-notification-notificationtemplate.md)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用callback异步回调。
+在使用通知模板[NotificationTemplate](js-apis-inner-notification-notificationtemplate.md)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -806,7 +806,7 @@ isSupportTemplate(templateName: string): Promise<boolean>
 ```ts
 import Base from '@ohos.base';
 
-let templateName: string = 'process';
+let templateName: string = 'downloadTemplate';
 Notification.isSupportTemplate(templateName).then((data: boolean) => {
   console.info("isSupportTemplate success, data: " + JSON.stringify(data));
 }).catch((err: Base.BusinessError) => {

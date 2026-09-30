@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-tran
 title: ArkTS背板透明卡片
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS背板透明卡片
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:44+08:00
+scraped_at: 2026-10-01T07:34:17+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0bf96cc1ef1672555c11053ead98f784cd0d5ba721ef6d1c8f578eb4ae98bec1
+content_hash: sha256:a90f4680fb5ebb1d04d417c602df85e46feabd290759e5ea7f61ccc54f1de40a
 ---
 
 从API version 22开始，Form Kit提供卡片背板元素透明显示的能力，满足更丰富的UI设计以及美观诉求。
@@ -29,25 +29,25 @@ content_hash: sha256:0bf96cc1ef1672555c11053ead98f784cd0d5ba721ef6d1c8f578eb4ae9
 
 1. 登录AppGallery Connect，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/CITItqmPTgKXkzw_V2jBIA/zh-cn_image_0000002743379046.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/RXAkyeLSSXycREb7xp_H3w/zh-cn_image_0000002779091889.png)
 2. 在项目列表中找到您的项目，并点击选择需开启开放能力的应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ipbG320uRDeJCOCscz6zOQ/zh-cn_image_0000002743219160.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/0YB_RVXFS4SNKVQXgJvmxg/zh-cn_image_0000002778932031.png)
 3. 在“开放能力管理”页面，点击背板透明卡片对应的申请按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/TGS9UPj-RgCBcFi3CxGDXw/zh-cn_image_0000002772738413.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/1H_K4mcHRp60j68w63N66A/zh-cn_image_0000002749332948.png)
 4. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。申请原因：必填，包括应用介绍、使用场景、申请用途，不超过256个字符。上传附件：必填，提供对应卡片UI设计释义材料，仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/RPTvGeUFTWSWO_Ow8L3Rdw/zh-cn_image_0000002772898297.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/kD-SkBywRZa0GEJCR6ZSuQ/zh-cn_image_0000002749492832.png)
 5. 返回“开放能力管理”页面，原“申请”按钮变为“申请中”，1-3个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/J0pW7LGxSZiIwU-SMAQvew/zh-cn_image_0000002743379048.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/gcsSNvc9Qn-7BrP7jd2MYA/zh-cn_image_0000002779091891.png)
 6. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/cpVG6zUjTnOEpZ3FtgyZFA/zh-cn_image_0000002743219162.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/F_HsBFOJSLmEj-t2cnIH3A/zh-cn_image_0000002778932033.png)
 7. 能力申请通过后，勾选背板透明卡片的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/8g_sTcdQToinducIGNcUOw/zh-cn_image_0000002772738415.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/g31KjCnWRjm8R07j6Oze9Q/zh-cn_image_0000002749332950.png)
 
 ## 开发步骤
 
@@ -212,4 +212,4 @@ content_hash: sha256:0bf96cc1ef1672555c11053ead98f784cd0d5ba721ef6d1c8f578eb4ae9
 4. 在应用调试或发布时，进行[手动签名](ide-signing-manual.md)后运行。
 5. 用户可在卡片中心-卡片管理页面，点击“添加至桌面”，此时在桌面即可看到新添加的背板透明卡片。结果示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/2fQbkjsZSnu5cGlAzXN-Dw/zh-cn_image_0000002772898299.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/G22KdW8fQg63TDu8sPITqw/zh-cn_image_0000002749492834.gif)

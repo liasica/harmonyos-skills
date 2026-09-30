@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: marquee
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > marquee
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:27+08:00
+scraped_at: 2026-10-01T07:37:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e0e72d2b56d25a655cf29fad4681ce5c47e5e60fad4c8cb207708e5ddc7b6c54
+content_hash: sha256:59d83b64b18e5a623886db84540f71b8ff56fcb49e259af2b233ebe716ef2608
 ---
 
 跑马灯组件，用于展示一段单行滚动的文字。
@@ -119,4 +119,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/h3hQNVBFTtiP7URFwOUM1w/zh-cn_image_0000002743221600.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ZCkxZxvoSwuJ7J8pXV-pzA/zh-cn_image_0000002778934617.gif)

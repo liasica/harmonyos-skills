@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-im
 title: 图文混排
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 图文混排
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:27+08:00
+scraped_at: 2026-10-01T07:34:03+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7c08c09d31e912dd47776afe71ae985fd7d3c9b286e2d77fab1800540f35b560
+content_hash: sha256:9401ef9932d271ebec60ac0055615ad85b8ea76fb489db1edeec86098b8fb6c1
 ---
 
 图文混排是指图片与文字混合排列，文字可展示于图片四周。此排列方式能够直观呈现页面信息，增强视觉冲击力，使页面展示效果更加多样化。
@@ -36,7 +36,7 @@ Text() {
 }.textVerticalAlign(TextVerticalAlign.CENTER)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Zpl9W7JmTrGlzKFBFbAXPg/zh-cn_image_0000002743378484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/bUa0nLX0RzmmqjqV7Xuszw/zh-cn_image_0000002779091245.png)
 
 ## 使用属性字符串实现图文混排
 
@@ -224,4 +224,4 @@ struct styled_string_demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/NiQ7wc37Qi23W0Iz3wVF0Q/zh-cn_image_0000002743218598.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/IbonEsfCSmK0cWz0_ucTqw/zh-cn_image_0000002778931389.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 分段式拍照(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 分段式拍照(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:57+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:be1b3652fe1e6d69976c3c98f59d50d02f87266fc7d89c2b2a893838b90a54d1
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:fea3b81078362ba94bf674bde73faa79a0ab74f91c01813fa1862a00e5ee2012
 ---
 
 分段式拍照是相机的最重要功能之一，相机输出低质量图用作快速显示，提升用户感知拍照速度，同时使用高质量图保证最后的成图质量达到系统相机的水平，既满足了后处理算法的需求，又不阻塞前台的拍照速度，构筑相机性能竞争力，提升了用户的体验。
@@ -27,7 +27,6 @@ content_hash: sha256:be1b3652fe1e6d69976c3c98f59d50d02f87266fc7d89c2b2a893838b90
    #include <cstdio>
    #include <fcntl.h>
    #include <map>
-   #include <string>
    #include <vector>
    #include <native_buffer/native_buffer.h>
    #include "iostream"

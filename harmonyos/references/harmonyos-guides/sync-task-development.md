@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sync-task-dev
 title: 同步任务开发指导 (TaskPool和Worker)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 耗时任务并发场景 > 同步任务开发指导 (TaskPool和Worker)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0a4f7c30aa614c4024df7bb78cf717d9645a4fa802b7e771c2487b217b3b790b
+scraped_at: 2026-10-01T07:33:56+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6b8b6e472925d5e575905dd8d512aaa751efe7107952d58d685060562d59c54a
 ---
 
 同步任务通过多个线程之间的协作和同步（如使用锁防止数据竞争），确保任务按特定顺序和规则进行，以保障数据的正确性和程序的正确执行。
@@ -52,6 +52,9 @@ async function mainFunc(): Promise<void> {
   console.info(`taskpool: task res1 is: ${res1}`);
   console.info(`taskpool: task res2 is: ${res2}`);
 }
+
+const MSG_SET = 0;
+const MSG_GET = 1;
 
 @Entry
 @Component
@@ -108,9 +111,9 @@ struct Index {
                  }
                }
                // 向Worker子线程发送Set消息
-               w.postMessage({'type': 0, 'data': 10});
+               w.postMessage({'type': MSG_SET, 'data': 10});
                // 向Worker子线程发送Get消息
-               w.postMessage({'type': 1});
+               w.postMessage({'type': MSG_GET});
              })
          }
          .width('100%')
@@ -141,6 +144,9 @@ struct Index {
    // 导入句柄类型
    import Handle from './handle';
 
+   const MSG_SET = 0;
+   const MSG_GET = 1;
+
    let workerPort : ThreadWorkerGlobalScope = worker.workerPort;
 
    // 无法传输的句柄，所有操作依赖此句柄
@@ -149,12 +155,12 @@ struct Index {
    // Worker线程的onmessage逻辑
    workerPort.onmessage = (e : MessageEvents): void => {
      switch (e.data.type as number) {
-       case 0:
+       case MSG_SET:
          let result: boolean = handler.syncSet(e.data.data);
          console.info('worker: result is ' + result);
          workerPort.postMessage({'message': 'the result of syncSet() is ' + result, 'isTerminate': false});
          break;
-       case 1:
+       case MSG_GET:
          let num: number = handler.syncGet();
          console.info('worker: num is ' + num);
          workerPort.postMessage({'message': 'the result of syncGet() is ' + num, 'isTerminate': true});

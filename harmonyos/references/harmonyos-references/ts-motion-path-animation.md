@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-motion
 title: 路径动画 (motionPath)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 路径动画 (motionPath)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:10+08:00
+scraped_at: 2026-10-01T07:37:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e92ee59399cbbfe4b0697993aee0c8629c470ac7ff05d9dd2fdafba5385ac614
+content_hash: sha256:e31c2bd954088afb1595a8f2ae7b07c803b795ceebdf28e87be25d64b9404703
 ---
 
 设置组件进行路径动画时的运动路径。
@@ -81,4 +81,4 @@ struct MotionPathExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/hUivId19TX-S4S60C2sVxw/zh-cn_image_0000002772740441.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/5vzdUiU3QPecjndAkvgWUA/zh-cn_image_0000002749335120.gif)

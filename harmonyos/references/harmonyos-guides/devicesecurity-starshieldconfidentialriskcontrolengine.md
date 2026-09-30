@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 星盾机密风控引擎
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 星盾机密风控引擎
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:54+08:00
+scraped_at: 2026-10-01T07:34:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f18e9c4d0a6a4b64cc5c120473a3aa78a3e89b766fa7d8b749c3f9c8f6e96fd1
+content_hash: sha256:6b34bf2c1db85ffc4120e3ea096b9837be0c94e36eb8e4c0d7d8f8cb1b803469
 ---
 
 ## 场景介绍
@@ -29,7 +29,7 @@ content_hash: sha256:f18e9c4d0a6a4b64cc5c120473a3aa78a3e89b766fa7d8b749c3f9c8f6e
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/lhGiYEbcRQ2cv3dzkl6OOA/zh-cn_image_0000002743219302.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/wNHAZoJVQ76KI_cKOqp-Eg/zh-cn_image_0000002778932173.png)
 
 **流程说明：**
 

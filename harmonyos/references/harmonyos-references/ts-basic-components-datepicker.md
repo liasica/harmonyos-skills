@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:00+08:00
+scraped_at: 2026-10-01T07:36:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:53f5bc03b9d19282602fdc916869946c1e75690dae7f39de64ca87a5ea6f19e3
+content_hash: sha256:bcbfaf71b2af1e5bc7cb094ee0fd6c9b4e49970780369e1fd0315baaec0adf68
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/FFsjagYYRRGmhulQ78T9Sg/zh-cn_image_0000002772740115.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/y0iD5t-aTQmQGYIqMgfj-Q/zh-cn_image_0000002749334796.gif)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/dgZbzv_mR7-BCx6hfGPniQ/zh-cn_image_0000002772900001.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/e2-8ivuIR1OcNJW-n7mz6Q/zh-cn_image_0000002749494680.png)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/urDpbtQzRzqSR7FVFxRurA/zh-cn_image_0000002743380750.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Rm3g31w-Rka-lEzcIJQTVg/zh-cn_image_0000002779093737.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/hNsM37IYSZap58vtqXfEKg/zh-cn_image_0000002743220864.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Cx42Vw7PRAK49jsyyNLc8w/zh-cn_image_0000002778933881.gif)

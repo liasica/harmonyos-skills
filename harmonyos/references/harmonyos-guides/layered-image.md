@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/layered-image
 title: 配置应用图标和名称
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 配置应用图标和名称
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:11+08:00
+scraped_at: 2026-10-01T07:33:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7b37b542d3820a34cbcedee87f48d9b4a3e0e9489ceb4bd493cbccde3ed8dfb0
+content_hash: sha256:2e4233ee17b7ef5e1d8b066a287d7a660313f0fff29123ad2b79926027d4c647
 ---
 
 本页面提供应用图标和名称的配置指导。应用图标分为单层图标和分层图标。单层图标包含一个图片，分层图标包含前景图和背景图。图标规范详见[图标资源规范](../design-guides/application-icon-0000001953444009.md#section634668113212)，应用上架审核时对应用信息有限制，请参考应用审核指南的[应用信息](../50104.md#section1729024510210)，确保应用信息符合相关限制规范，图标和名称配置约束详见[图标和名称配置](application-component-configuration-stage.md#应用图标和名称配置)。
@@ -18,7 +18,7 @@ content_hash: sha256:7b37b542d3820a34cbcedee87f48d9b4a3e0e9489ceb4bd493cbccde3ed
 
 效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/o8jpRoYqRRyX8_WHJDo4mQ/zh-cn_image_0000002743377888.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/GzqDN0u5S3CzOw0NO8TzXg/zh-cn_image_0000002749491562.png)
 
 ## 配置优先级和生成策略
 

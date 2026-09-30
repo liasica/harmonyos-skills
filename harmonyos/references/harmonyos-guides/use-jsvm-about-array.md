@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行array相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行array相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-01T07:35:45+08:00
+doc_updated_at: 2026-09-30
 content_hash: sha256:0af9cc4a64dd80bb5ed4592f2cac59c0156f9ca592815355d427d793656e8565
 ---
 

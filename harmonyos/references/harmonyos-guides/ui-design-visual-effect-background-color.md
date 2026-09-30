@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-vis
 title: 按压阴影
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 视效 > 按压阴影
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:46+08:00
+scraped_at: 2026-10-01T07:34:19+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2da95890b92cf487ee5fe07a8b9e395d14254a920a0838913cfbfa5b92ee9557
+content_hash: sha256:0658da11c8c4ed68a991e6451f3215c32f2ea9303960bef7e5e7ddcefac25815
 ---
 
 ## 场景介绍
@@ -68,4 +68,4 @@ content_hash: sha256:2da95890b92cf487ee5fe07a8b9e395d14254a920a0838913cfbfa5b92e
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/9GPBiOEBTaq9YLJq0HQuxw/zh-cn_image_0000002743379130.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/KkD7kH6KTuisLppuodmzbA/zh-cn_image_0000002779091973.gif)

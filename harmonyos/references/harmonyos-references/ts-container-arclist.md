@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcList
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ArcList
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:54+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:9153fc618c4fc43c52a3a839145d84b971cb31935f69340b36bfebb0dc0cced1
+scraped_at: 2026-10-01T07:36:55+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:c22caccc1b16286b91ddc82d9831dc2d024cb8f1820d72fb7157c6dc1e859a1c
 ---
 
 弧形列表由沿弧形排列的一系列列表项组成，适用于圆形屏幕设备。适合连续、多行呈现同类数据，例如图片和文本。
@@ -36,7 +36,7 @@ import { ArcList } from '@kit.ArkUI';
 
 ## 子组件
 
-仅支持[ArcListItem](ts-container-arclistitem.md)和自定义组件。自定义组件在ArcList下使用时，请使用ArcListItem作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为ArcList通过ArcListItem管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
+仅支持[ArcListItem](ts-container-arclistitem.md)和[自定义组件](../harmonyos-guides/arkts-create-custom-components.md)。自定义组件在ArcList下使用时，请使用ArcListItem作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为ArcList通过ArcListItem管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
 
 **说明** 
 
@@ -500,4 +500,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/5oOR629wTr6c7qlQfuHvAQ/zh-cn_image_0000002772899899.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/U2Bu6fGaSGyoFCO7rckQag/zh-cn_image_0000002749494492.png)

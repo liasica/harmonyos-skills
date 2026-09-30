@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/batch-databas
 title: 批量数据写数据库场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 批量数据写数据库场景
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:29+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:901ea56287e9bcdee41b8a242ca66c4eacf04acf036e3a1f3935b598aef40c07
+scraped_at: 2026-10-01T07:33:56+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:ca54fee57e6b0f63968c97d99b0c47cc7a239dfa06f512843be5fdaf03056241
 ---
 
 ## 使用TaskPool进行频繁数据库操作
@@ -245,7 +245,7 @@ struct Index {
          id: resultSet.getLong(resultSet.getColumnIndex('id')),
          name: resultSet.getString(resultSet.getColumnIndex('name')),
          age: resultSet.getLong(resultSet.getColumnIndex('age')),
-         salary: resultSet.getLong(resultSet.getColumnIndex('salary'))
+         salary: resultSet.getDouble(resultSet.getColumnIndex('salary'))
        };
        // 包装为 @Sendable 类实例，支持跨线程引用传递
        result[index++] = new SharedValuesBucket(v);

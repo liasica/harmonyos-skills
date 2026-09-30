@@ -3,19 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 自适应VRS
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 自适应VRS
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:36+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:bc17096234cb3ee38f4de9c34076de7800b1a12e5c15c3f719ca9467b147d901
+scraped_at: 2026-10-01T07:35:01+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:da6ce64fbbfdde21d82fd72a122e0d9ed721cfec5ccfa265cde91719d3a8f549
 ---
 
-XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源，视觉无损降低渲染频次，使不同的渲染图像使用不同的渲染速率，能够有效提高渲染性能。
+XEngine Kit提供自适应VRS特性，利用实时图像分析结果动态识别并区分画面内容，在高细节区域保持高着色率以保障清晰度，在简单区域降低着色率以提升效能。这种基于内容的精细调控，能在人眼不易察觉画质损失的前提下，降低GPU负载，提升帧率与能效比。
 
 ## 约束与限制
 
 * 支持的设备类型：Phone，从5.0.2(14)版本开始，新增支持Tablet、PC/2in1设备，从5.1.1(19)版本开始新增支持TV设备。
 * 可通过以下方式查询相关扩展特性是否支持：
 
-  对于OpenGL ES，使用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)扩展特性查询接口进行查询，如查询结果包含[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)，则表示支持该特性，若查询结果未包含，则表示不支持该特性。
+  + 对于OpenGL ES，使用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)扩展特性查询接口进行查询。
+  + 对于Vulkan，使用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)扩展特性查询接口进行查询。
+
+  如查询结果包含[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)，则表示支持该特性，若查询结果未包含，则表示不支持该特性。
 
 ## 接口说明
 
@@ -36,7 +39,7 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
 
 * 下面是基于OpenGL ES图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/PyTHR-Z7SWyrtY9svP81Xw/zh-cn_image_0000002772738993.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/uO3oUJvdRdiLLJPn7iYeWg/zh-cn_image_0000002749333530.jpg)
 
 1. 当用户在进入游戏初始化场景时调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_AdaptiveVRSParameter](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口配置自适应VRS参数。
@@ -48,7 +51,7 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
 
 * 下面是基于Vulkan图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/EF3mxJy6QHyfosbwb_zb-g/zh-cn_image_0000002772898877.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/G6A_LFdiSUygcCUn2VWdDg/zh-cn_image_0000002749493414.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_CreateAdaptiveVRS](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_createadaptivevrs)接口创建自适应VRS实例。
@@ -262,6 +265,10 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
    // xegCreateInfo为自适应VRS实例句柄对象的参数信息
    // xeg_adaptiveVRS为下发绘制着色率纹理命令所需参数信息
    VkResult res = HMS_XEG_CreateAdaptiveVRS(device, &xegCreateInfo, &xegAdaptiveVRS);
+   if (res != VK_SUCCESS) {
+       // 错误处理
+       // ...
+   }
    ```
 4. 调用[HMS\_XEG\_CmdDispatchAdaptiveVRS](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_cmddispatchadaptivevrs)接口，下发自适应VRS命令，生成perImage着色率纹理。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.bundleManager (包管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.bundleManager (包管理)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:11+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:4232453f36964d6647b93e2b4902ee6b3f43e943347a274d26531a384d1a1bb1
+scraped_at: 2026-10-01T07:38:56+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:eef85b201ab634d24aaca902d0ecb390fd044602804a6893bd8d5686f24495b3
 ---
 
 本模块提供包管理能力，包括安装和卸载应用包，管理包安装允许名单、包安装禁止名单、包卸载禁止名单、可安装应用的分发类型等。在企业设备管理场景中，通过这些能力可以实现应用安装卸载的精细化管控，防止未授权应用的安装和卸载，保障企业设备安全，降低安全风险。
@@ -45,7 +45,7 @@ addAllowedInstallBundlesSync(admin: Want, appIds: Array<string>, accountId?: num
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| appIds | Array<string> | 是 | 应用ID数组。  **说明：** 从API version 21版本开始，支持传入应用的[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)和[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)，推荐使用[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)。API version 20及之前版本，仅支持[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)。 |
+| appIds | Array<string> | 是 | 应用ID数组。  取值范围：单个用户下该名单总数不能超过200。例如100用户下已经设置了50个、101用户未设置，则100用户还能再设置150个，101用户还能再设置200个。不建议一次性设置个数大于50个，可能导致性能问题。  **说明：** 从API version 21版本开始，支持传入应用的[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)和[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)，推荐使用[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)。API version 20及之前版本，仅支持[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)。 |
 | accountId | number | 否 | 用户ID，取值范围：大于等于0。  accountId可以通过@ohos.account.osAccount中的[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。  - 调用接口时，若传入accountId，表示指定用户。  - 调用接口时，若未传入accountId，表示当前用户。 |
 
 **错误码**：
@@ -269,7 +269,7 @@ addDisallowedInstallBundlesSync(admin: Want, appIds: Array<string>, accountId?: 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| appIds | Array<string> | 是 | 应用ID数组。  **说明：** 从API version 21版本开始，支持传入应用的[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)和[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)，推荐使用[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)。API version 20及之前版本，仅支持[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)。 |
+| appIds | Array<string> | 是 | 应用ID数组。  取值范围：单个用户下该名单总数不能超过200。例如100用户下已经设置了50个、101用户未设置，则100用户还能再设置150个，101用户还能再设置200个。不建议一次性设置个数大于50个，可能导致性能问题。  **说明：** 从API version 21版本开始，支持传入应用的[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)和[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)，推荐使用[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)。API version 20及之前版本，仅支持[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)。 |
 | accountId | number | 否 | 用户ID，取值范围：大于等于0。  accountId可以通过@ohos.account.osAccount中的[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。  - 调用接口时，若传入accountId，表示指定用户。  - 调用接口时，若未传入accountId，表示当前用户。 |
 
 **错误码**：

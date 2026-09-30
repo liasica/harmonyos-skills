@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-sessio
 title: 会话配置问题
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit常见问题 > 相机无法启动 > 会话配置问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4e8eff19c0d4afab2d67bca5a9cc1da4d77d79d1630f1f41b0cc90f2e5e7c493
+scraped_at: 2026-10-01T07:34:51+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:b1c070641b2efe6546d29af75289621e3ee6412d54efcdd75a3df20e3d4ed6c6
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:4e8eff19c0d4afab2d67bca5a9cc1da4d77d79d1630f1f41b0cc90f2e5e
 
 ## 可能原因
 
-Session的配置流程主要包括beginConfig、addInput、addOutput和commitConfig四个流程。流程间的调用顺序不可改变，并且要保证四个流程都成功配置，相机才能正常运行。具体原因可能有如下情况：
+会话的配置流程主要包括beginConfig、addInput、addOutput和commitConfig四个流程。流程间的调用顺序不可改变，并且要保证四个流程都成功配置，相机才能正常运行。具体原因可能有如下情况：
 
 1. [beginConfig](../harmonyos-references/arkts-apis-camera-session.md#beginconfig11)失败。
 2. [addInput](../harmonyos-references/arkts-apis-camera-session.md#addinput11)失败。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avca
 title: OH_AVRange
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 结构体 > OH_AVRange
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9da22bffb3cfc899679397257e1192ae00616ef33d946c6416931dfc751fdf4f
+scraped_at: 2026-10-01T07:39:18+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:dcc4ac94147903d25b092cf7e51f70bcce6d11b01de20f1cbbee6580499ebd50
 ---
 
 ```c
@@ -15,6 +15,8 @@ typedef struct OH_AVRange {...} OH_AVRange
 ## 概述
 
 范围包含最小值和最大值。
+
+**系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 10
 

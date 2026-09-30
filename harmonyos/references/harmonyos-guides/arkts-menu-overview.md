@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-menu-ov
 title: 菜单概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 菜单 > 菜单概述
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0d6d88f3225300fad9115de175eeb4c545976d9e6c0d75da090d08b039ec4250
+scraped_at: 2026-10-01T07:34:04+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:00e584ae8928e4d67ce22aef124995496430129145fd6016c6c21a00339943a4
 ---
 
 菜单是一种用于给用户提供可执行的操作的弹窗，一般用于鼠标右键弹窗、点击弹窗等。
@@ -20,7 +20,7 @@ content_hash: sha256:0d6d88f3225300fad9115de175eeb4c545976d9e6c0d75da090d08b039e
 ## 规格约束
 
 * [bindMenu](../harmonyos-references/ts-universal-attributes-menu.md#bindmenu11)通过调用isShow参数或[bindContextMenu](../harmonyos-references/ts-universal-attributes-menu.md#bindcontextmenu12)调用isShown参数弹出时，需要等待页面全部构建完成才能展示。因此isShow或isShown不能在页面构建中设置为true，否则会导致menu弹窗显示位置及形状错误。
-* openMenu的弹出需要传入有效的[TargetInfo](../harmonyos-references/arkts-apis-uicontext-i.md#targetinfo18)，否则无法弹出气泡。
+* openMenu的弹出需要传入有效的[TargetInfo](../harmonyos-references/arkts-apis-uicontext-i.md#targetinfo18)，否则无法弹出菜单。
 * 其他规格约束，具体可参考[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)、[openMenu](../harmonyos-references/arkts-apis-uicontext-promptaction.md#openmenu18)说明。
 
 ## 生命周期

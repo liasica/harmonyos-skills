@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-leak
 title: Resource Leak（资源泄漏）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > Resource Leak（资源泄漏）检测
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:12+08:00
-doc_updated_at: 2026-08-04
-content_hash: sha256:33545b63e53c2d6f2454953f79bd531ca6498064cbfee6c48d0b70c8e8514263
+scraped_at: 2026-10-01T07:34:40+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:ac31fd8ad03fe429aef20a0852c0553f45b1ad8e0a590afcb082b969700f9255
 ---
 
 ## 简介
@@ -30,7 +30,7 @@ content_hash: sha256:33545b63e53c2d6f2454953f79bd531ca6498064cbfee6c48d0b70c8e85
 
 **说明** 
 
-1. 表格中所述阈值/基线均为系统默认，如果生态在开发过程中需要自行设定基线，可以使用[hidebug.setAppResourceLimit接口](../harmonyos-references/js-apis-hidebug.md#hidebugsetappresourcelimit12)进行设置，该接口建议在开发阶段调用，不要在正式发布阶段使用。
+1. 表格中所述阈值/基线均为系统默认，如果生态在开发过程中需要自行设定基线，可以使用[hidebug.setAppResourceLimit()接口](../harmonyos-references/js-apis-hidebug.md#hidebugsetappresourcelimit12)进行设置，该接口建议在开发阶段调用，不要在正式发布阶段使用。
 2. 虚拟机内存使用率计算公式 = heapUsed / totalHeap。
 
    heapUsed：当前虚拟机使用的堆大小，单位：KB。可通过[hidebug.getAppVMMemoryInfo()](../harmonyos-references/js-apis-hidebug.md#hidebuggetappvmmemoryinfo12)接口获取。
@@ -78,7 +78,7 @@ content_hash: sha256:33545b63e53c2d6f2454953f79bd531ca6498064cbfee6c48d0b70c8e85
 
   DevEco Studio的profiler模块提供[Allocation](ide-insight-session-allocations-memory.md)（获取native调用栈profiler）和 **[Snapshot](ide-arkts-memory-leak-analysis.md)** （获取JS层heapdump）两种采集方式：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/6w85eDLbT46NNaJ2nMfm8A/zh-cn_image_0000002743379314.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ujM9AJrwSqiWczRB_3XYGA/zh-cn_image_0000002779092157.png)
 * 方式三：通过HiAppEvent接口订阅。
 
   HiAppEvent对外提供故障订阅接口，可以订阅各类故障打点，详见[HiAppEvent介绍](hiappevent-intro.md)，其中资源泄漏的订阅方式详见[资源泄漏事件介绍](hiappevent-watcher-resourceleak-events.md)。资源泄漏故障日志存于/data/storage/el2/log/resourcelimit/路径，日志名统一为RESOURCE\_OVERLIMIT\_[TIMESTAMP]\_[PID].log，可根据日志内容区分文件类型。
@@ -595,7 +595,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
 * 检测到泄漏后抓取**15min内的进程内存trace**，可将日志如下图通过Open File加载到DevEco Studio进行解析。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/rsyK0RQmSM6e02ecLI16Ug/zh-cn_image_0000002743219428.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ZWdI_FgIQOaxS8y1TdaiwQ/zh-cn_image_0000002778932299.png)
 
   **注意** 
 
@@ -604,7 +604,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
   点击Call Trees可以查看抓取进程的调用栈，筛选“Created & Existing”，根据没有释放的内存占比排序，展开可查看详细进程调用信息，优先排查内存占用较高的堆栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/qQhHVueBSqe8PWPbr2iNJA/zh-cn_image_0000002772738681.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/tP0mXGH2SwCMNnW5N3f_mA/zh-cn_image_0000002749333216.png)
 
   **说明** 
 
@@ -613,7 +613,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
   同样选择“Created & Existing”，表示在hook抓取内存申请未释放的。长度越长代表在剩余内存中占用越多，优先排查。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/NG5pvVVZQGmnE0JeTZZdxA/zh-cn_image_0000002772898565.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/zIKJt2UfTzuOe5skxFy_pA/zh-cn_image_0000002749493100.png)
 
 ### native泄漏聚类规则
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SymbolSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SymbolSpan
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:04+08:00
+scraped_at: 2026-10-01T07:37:01+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:b67ba7a1310a2282e29ec21f0139df59bdcfe86ee3a7e01d5f7d83990f7f1f0f
+content_hash: sha256:06e746bfb67eb1fb013fad5836568c1194df2e8a411d0df33081255462f3f9af
 ---
 
 SymbolSpan作为Text组件的子组件，用于在文本中显示系统预置的图标小符号（Symbol图标）。支持设置颜色、大小、粗细、渲染策略和动效策略等属性，适用于需要在文本中嵌入图标符号的场景，如状态指示、功能标识等。SymbolSpan仅支持系统预置的symbol资源，可继承父组件Text的属性设置。
@@ -164,7 +164,7 @@ SINGLE表示单色渲染，适用于需要统一颜色的图标显示场景；MU
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/3M_NWBASR6Cm93Fam8B19w/zh-cn_image_0000002772900125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/2jJX9guRTymHlKFTapfzZg/zh-cn_image_0000002749494804.png)
 
 ### effectStrategy
 
@@ -319,7 +319,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/S8ChRLPQQVKpzfV5lPCpcA/zh-cn_image_0000002743380874.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/CyJMDkSJTxuaAUq8ecnnlg/zh-cn_image_0000002779093861.gif)
 
 ### 示例2（设置动态属性）
 
@@ -353,7 +353,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Nc62STsmRCW0dx6vXh1BEw/zh-cn_image_0000002743220988.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/OryDgzzMQ6CUzQbFYinmlw/zh-cn_image_0000002778934005.gif)
 
 ### 示例3（设置字体粗细）
 
@@ -425,4 +425,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/aQ090OJzQoSBuFgbM7xFPQ/zh-cn_image_0000002772740241.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/7YSc9JkcRYOqIizXcDp-yg/zh-cn_image_0000002749334922.png)

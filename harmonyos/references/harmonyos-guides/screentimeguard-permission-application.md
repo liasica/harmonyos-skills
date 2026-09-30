@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 受限ACL权限申请
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 开发准备 > 受限ACL权限申请
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:58+08:00
+scraped_at: 2026-10-01T07:35:19+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:37c6cde6c01c395c5ad1920155cf535ed265958c2a9a7cf9fc684576b71d77b0
+content_hash: sha256:2929c436b9eedcc396868a37d2455e43e8d1868effe408060c543fec370d4bce
 ---
 
 调用Screen Time Guard Kit相关能力之前，需要检查是否已经获取"ohos.permission.MANAGE\_SCREEN\_TIME\_GUARD"权限。该权限允许应用调用屏幕时间守护相关接口，进行屏幕使用限制、应用访问控制、管控使用时间等操作。该权限为受限ACL权限，需要特别配置和申请，具体操作步骤如下所示。
@@ -13,17 +13,17 @@ content_hash: sha256:37c6cde6c01c395c5ad1920155cf535ed265958c2a9a7cf9fc684576b71
 1. 在 [申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)和[发布Profile文件](../app/agc-help-release-profile-0000002248341090.md)之前，需要[申请相应的ACL权限](../app/agc-help-apply-acl-0000002394212138.md)。
 2. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击“开发与服务”，在项目列表中找到对应的项目，并点击选择您需要申请ACL权限的应用。在“项目设置”页面，选择“ACL权限”页签，开始为应用申请ACL权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Uoa7T_6MQPesS2rV7UlEIQ/zh-cn_image_0000002743380066.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/a-mdGE62S3qqpKOIvw-AHA/zh-cn_image_0000002779092915.png)
 3. 在核对注意事项后，在“未获取权限”区域中勾选“我已知晓”。在权限搜索框中输入"ohos.permission.MANAGE\_SCREEN\_TIME\_GUARD"，查找并勾选权限，提交申请。
 4. 根据实际业务需求填写使用场景并提交，审批时间为3个工作日。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/RJUYu3XwT8y52cHjRHzYEw/zh-cn_image_0000002743220180.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/zC7cpU7lRcW7hUIwnW9WEw/zh-cn_image_0000002778933059.png)
 5. 权限申请通过后，在申请profile文件时，在“申请权限”栏选中“受限ACL权限（HarmonyOS API9及以上）”选项，点击“查看”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/yaOhUU5ZTEuTysZtS1-zDg/zh-cn_image_0000002772739433.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/mspUa8E_Su6Safod9M-W7Q/zh-cn_image_0000002749333972.png)
 6. 在弹出的“选择受限ACL权限”窗口可以看到已申请的权限，勾选后点击确定。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qhI7aEdbSF6pNVHDvqni5w/zh-cn_image_0000002772899317.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/wXLHi393R8q2i0gDVO8vIA/zh-cn_image_0000002749493862.png)
 7. 选择权限后点击“添加”生成新的Profile文件，下载后按[手动配置签名信息](ide-signing-manual.md)替换profile文件。
 8. 在工程中entry模块的module.json5文件中添加"ohos.permission.MANAGE\_SCREEN\_TIME\_GUARD"权限，如下所示：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.effectKit (图像效果)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.effectKit (图像效果)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:13:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fd2f5bcf4fdf3282d0c9f9268bd2f0f4484058fe86aacce2fd2295de203fc616
+scraped_at: 2026-10-01T07:39:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:d255e15202d96c6bc30ceee1f9c949644a7cbbca4cd8c0a33fe53c2222602f82
 ---
 
 图像效果模块提供了处理图像的基础能力，包括亮度调节、模糊化、灰度调节和智能取色等。effectKit用于离线处理图像（如pixelmap、png、jpeg）以获得视觉效果，而uiEffect则实时接入渲染服务，针对屏幕帧缓存进行处理以获得动态视觉效果。
@@ -376,7 +376,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/2v4HlCvTS4q6gdbIJRPtmg/zh-cn_image_0000002772901189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/-LXalTdVR0mCIW8JW6fJfw/zh-cn_image_0000002749495866.png)
 
 ### getMainColorSync
 
@@ -424,7 +424,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/nNfVR9FuQCejMOu_wAzIHQ/zh-cn_image_0000002772901189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/1SdIxuubTKS5JQwqArA2sA/zh-cn_image_0000002749495866.png)
 
 ### getLargestProportionColor10+
 
@@ -472,7 +472,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Q1Sv4FkBTdysfIc1tzTU1Q/zh-cn_image_0000002743381938.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/_IDJytbYTXelKLxSVH6E8w/zh-cn_image_0000002779094923.png)
 
 ### getTopProportionColors12+
 
@@ -530,7 +530,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/5jLEv6t0SduyWlgrOUrxug/zh-cn_image_0000002743222050.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/NUceaRyVQNqOhL2fb5oJqg/zh-cn_image_0000002778935069.png)
 
 ### getHighestSaturationColor10+
 
@@ -578,7 +578,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/9SZg3VOTSN6ataug4JeEgw/zh-cn_image_0000002772741305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Sxb4t7XjTGmkXOsTYNo88A/zh-cn_image_0000002749335984.png)
 
 ### getAverageColor10+
 
@@ -626,7 +626,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WnD5L3G9SdKvVDp_G7_YIQ/zh-cn_image_0000002772901191.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Ex1f5D6mRfSF8dNbvgivhw/zh-cn_image_0000002749495868.png)
 
 ### isBlackOrWhiteOrGrayColor10+
 
@@ -718,23 +718,36 @@ blur(radius: number): Filter
 import { image } from '@kit.ImageKit';
 import { effectKit } from '@kit.ArkGraphics2D';
 import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 // 传入读取的图片数据
-function ImageBlur(Image: ArrayBuffer): Promise<image.PixelMap> {
-  return new Promise(async (resolve, reject) => {
-    let imageSource = image.createImageSource(Image);
-    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+function imageBlur(imageBuffer: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise((resolve, reject) => {
+    // 创建图像源
+    let imageSource = image.createImageSource(imageBuffer);
+    imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
+      // 图像源使用完毕后及时释放
+      imageSource.release();
+      // 设置模糊半径
       let radius = 5;
       let headFilter = effectKit.createEffect(pixelMap);
       if (headFilter != null) {
         // 对图片添加效果标识
         headFilter.blur(radius);
+        // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+        headFilter.getEffectPixelMap().then(imageData => {
+          resolve(imageData);
+        }).catch((err: BusinessError) => {
+          reject(err);
+        });
+      } else {
+        // 创建Filter实例失败，通过reject将错误传递给调用方
+        reject(new Error('Failed to create filter.'));
       }
-      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-      headFilter.getEffectPixelMap().then(imageData => {
-        resolve(imageData);
-      })
-    })
-  })
+    }).catch((err: BusinessError) => {
+      reject(err);
+    }).finally(() => {
+      imageSource.release();
+    });
 }
 
 @Entry
@@ -760,7 +773,7 @@ struct Index {
       return;
     }
     // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-    this.imagePixelMap = await ImageBlur(this.imageBuffer);
+    this.imagePixelMap = await imageBlur(this.imageBuffer);
   }
 
   build() {
@@ -775,7 +788,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/PylVqkKWQFKV5bvhiKxm3A/zh-cn_image_0000002743381940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/KlFWgtswSeO6q7al8J9i9Q/zh-cn_image_0000002779094925.png)
 
 ### blur14+
 
@@ -808,23 +821,37 @@ blur(radius: number, tileMode: TileMode): Filter
 import { image } from '@kit.ImageKit';
 import { effectKit } from '@kit.ArkGraphics2D';
 import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 // 传入读取的图片数据
-function ImageBlur(Image: ArrayBuffer): Promise<image.PixelMap> {
-  return new Promise(async (resolve, reject) => {
-    let imageSource = image.createImageSource(Image);
-    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+function imageBlur(imageBuffer: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise((resolve, reject) => {
+    // 创建图像源
+    let imageSource = image.createImageSource(imageBuffer);
+    imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
+      // 图像源使用完毕后及时释放
+      imageSource.release();
+      // 设置模糊半径
       let radius = 30;
       let headFilter = effectKit.createEffect(pixelMap);
       if (headFilter != null) {
         // 对图片添加效果标识
         headFilter.blur(radius, effectKit.TileMode.DECAL);
+        // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+        headFilter.getEffectPixelMap().then(imageData => {
+          resolve(imageData);
+        }).catch((err: BusinessError) => {
+          reject(err);
+        });
+      } else {
+        // 创建Filter实例失败，通过reject将错误传递给调用方
+        reject(new Error('Failed to create filter.'));
       }
-      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-      headFilter.getEffectPixelMap().then(imageData => {
-        resolve(imageData);
-      })
-    })
-  })
+    }).catch((err: BusinessError) => {
+      reject(err);
+    }).finally(() => {
+      imageSource.release();
+    });
+  });
 }
 
 @Entry
@@ -850,7 +877,7 @@ struct Index {
       return;
     }
     // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-    this.imagePixelMap = await ImageBlur(this.imageBuffer);
+    this.imagePixelMap = await imageBlur(this.imageBuffer);
   }
 
   build() {
@@ -865,7 +892,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/NVCHHbgSQY6z5bjQTnq4gw/zh-cn_image_0000002743222052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/fkmLI4oETo6nFGpeZ2sCZQ/zh-cn_image_0000002778935071.png)
 
 ### invert12+
 
@@ -887,22 +914,36 @@ invert(): Filter
 import { image } from '@kit.ImageKit';
 import { effectKit } from '@kit.ArkGraphics2D';
 import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 // 传入读取的图片数据
-function ImageInvert(Image: ArrayBuffer): Promise<image.PixelMap> {
-  return new Promise(async (resolve, reject) => {
-    let imageSource = image.createImageSource(Image);
-    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+function imageInvert(imageBuffer: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise((resolve, reject) => {
+    // 创建图像源
+    let imageSource = image.createImageSource(imageBuffer);
+    imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
+      // 图像源使用完毕后及时释放
+      imageSource.release();
+      // 创建Filter实例
       let headFilter = effectKit.createEffect(pixelMap);
       if (headFilter != null) {
         // 对图片添加效果标识
         headFilter.invert();
+        // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+        headFilter.getEffectPixelMap().then(imageData => {
+          resolve(imageData);
+        }).catch((err: BusinessError) => {
+          reject(err);
+        });
+      } else {
+        // 创建Filter实例失败，通过reject将错误传递给调用方
+        reject(new Error('Failed to create filter.'));
       }
-      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-      headFilter.getEffectPixelMap().then(imageData => {
-        resolve(imageData);
-      })
-    })
-  })
+    }).catch((err: BusinessError) => {
+      reject(err);
+    }).finally(() => {
+      imageSource.release();
+    });
+  });
 }
 
 @Entry
@@ -928,7 +969,7 @@ struct Index {
       return;
     }
     // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-    this.imagePixelMap = await ImageInvert(this.imageBuffer);
+    this.imagePixelMap = await imageInvert(this.imageBuffer);
   }
 
   build() {
@@ -943,7 +984,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/u31P4qIQSp6jT-qPi1raIw/zh-cn_image_0000002772741307.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/16dbQv6DR_iokaeAaaDIKA/zh-cn_image_0000002749335986.png)
 
 ### setColorMatrix12+
 
@@ -957,13 +998,13 @@ setColorMatrix(colorMatrix: Array<number>): Filter
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| colorMatrix | Array<number> | 是 | 自定义颜色矩阵。  用于创建效果滤镜的 5x4 大小的矩阵，矩阵元素取值范围为[0, 1]，0和1代表的是矩阵中对应位置的颜色通道的权重，0代表该颜色通道不参与计算，1代表该颜色通道参与计算并保持原始权重。 |
+| colorMatrix | Array<number> | 是 | 自定义颜色矩阵。  用于创建效果滤镜的4x5大小的矩阵，数组长度必须为20，前4列对应R、G、B、A通道的变换系数，第5列为常量偏移值。建议元素取值为[-1, 1]，超出此范围可能导致颜色值溢出或产生非预期效果。数组长度不为20时返回null。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Filter](js-apis-effectkit.md#filter) | 返回已添加的图像效果。 |
+| [Filter](js-apis-effectkit.md#filter) | 返回已添加效果的Filter实例，用于继续添加效果或获取处理后的图像；数组长度不为20时返回null。 |
 
 **错误码：**
 
@@ -979,28 +1020,42 @@ setColorMatrix(colorMatrix: Array<number>): Filter
 import { image } from '@kit.ImageKit';
 import { effectKit } from '@kit.ArkGraphics2D';
 import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 // 传入读取的图片数据
-function ImageColorFilter(Image: ArrayBuffer): Promise<image.PixelMap> {
-  return new Promise(async (resolve, reject) => {
-    let imageSource = image.createImageSource(Image);
-    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
-      let colorMatrix:Array<number> = [
-      0.2126,0.7152,0.0722,0,0,
-      0.2126,0.7152,0.0722,0,0,
-      0.2126,0.7152,0.0722,0,0,
-      0,0,0,1,0
+function imageColorFilter(imageBuffer: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise((resolve, reject) => {
+    // 创建图像源
+    let imageSource = image.createImageSource(imageBuffer);
+    imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
+      // 图像源使用完毕后及时释放
+      imageSource.release();
+      // 定义颜色矩阵
+      let colorMatrix: Array<number> = [
+        0.2126, 0.7152, 0.0722, 0, 0,
+        0.2126, 0.7152, 0.0722, 0, 0,
+        0.2126, 0.7152, 0.0722, 0, 0,
+        0, 0, 0, 1, 0
       ];
       let headFilter = effectKit.createEffect(pixelMap);
       if (headFilter != null) {
         // 对图片添加效果标识
         headFilter.setColorMatrix(colorMatrix);
+        // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+        headFilter.getEffectPixelMap().then(imageData => {
+          resolve(imageData);
+        }).catch((err: BusinessError) => {
+          reject(err);
+        });
+      } else {
+        // 创建Filter实例失败，通过reject将错误传递给调用方
+        reject(new Error('Failed to create filter.'));
       }
-      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-      headFilter.getEffectPixelMap().then(imageData => {
-        resolve(imageData);
-      })
-    })
-  })
+    }).catch((err: BusinessError) => {
+      reject(err);
+    }).finally(() => {
+      imageSource.release();
+    });
+  });
 }
 
 @Entry
@@ -1026,7 +1081,7 @@ struct Index {
       return;
     }
     // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-    this.imagePixelMap = await ImageColorFilter(this.imageBuffer);
+    this.imagePixelMap = await imageColorFilter(this.imageBuffer);
   }
 
   build() {
@@ -1041,7 +1096,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/EqdhGAq_RTiae4S8XStNlA/zh-cn_image_0000002772901193.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/4bS0xh6kR1uaTpq3kDg8kA/zh-cn_image_0000002749495870.png)
 
 ### brightness
 
@@ -1073,23 +1128,37 @@ brightness(bright: number): Filter
 import { image } from '@kit.ImageKit';
 import { effectKit } from '@kit.ArkGraphics2D';
 import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 // 传入读取的图片数据
-function ImageBrightness(Image: ArrayBuffer): Promise<image.PixelMap> {
-  return new Promise(async (resolve, reject) => {
-    let imageSource = image.createImageSource(Image);
-    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+function imageBrightness(imageBuffer: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise((resolve, reject) => {
+    // 创建图像源
+    let imageSource = image.createImageSource(imageBuffer);
+    imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
+      // 图像源使用完毕后及时释放
+      imageSource.release();
+      // 设置亮度值
       let bright = 0.5;
       let headFilter = effectKit.createEffect(pixelMap);
       if (headFilter != null) {
         // 对图片添加效果标识
         headFilter.brightness(bright);
+        // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+        headFilter.getEffectPixelMap().then(imageData => {
+          resolve(imageData);
+        }).catch((err: BusinessError) => {
+          reject(err);
+        });
+      } else {
+        // 创建Filter实例失败，通过reject将错误传递给调用方
+        reject(new Error('Failed to create filter.'));
       }
-      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-      headFilter.getEffectPixelMap().then(imageData => {
-        resolve(imageData);
-      })
-    })
-  })
+    }).catch((err: BusinessError) => {
+      reject(err);
+    }).finally(() => {
+      imageSource.release();
+    });
+  });
 }
 
 @Entry
@@ -1115,7 +1184,7 @@ struct Index {
       return;
     }
     // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-    this.imagePixelMap = await ImageBrightness(this.imageBuffer);
+    this.imagePixelMap = await imageBrightness(this.imageBuffer);
   }
 
   build() {
@@ -1130,7 +1199,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/S804LrheRhq_fr0VhyvXUQ/zh-cn_image_0000002743381942.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/wZarUYJ4SO-aM8PXhkyC2w/zh-cn_image_0000002779094927.png)
 
 ### grayscale
 
@@ -1156,22 +1225,36 @@ grayscale(): Filter
 import { image } from '@kit.ImageKit';
 import { effectKit } from '@kit.ArkGraphics2D';
 import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 // 传入读取的图片数据
-function ImageGrayscale(Image: ArrayBuffer): Promise<image.PixelMap> {
-  return new Promise(async (resolve, reject) => {
-    let imageSource = image.createImageSource(Image);
-    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+function imageGrayscale(imageBuffer: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise((resolve, reject) => {
+    // 创建图像源
+    let imageSource = image.createImageSource(imageBuffer);
+    imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
+      // 图像源使用完毕后及时释放
+      imageSource.release();
+      // 创建Filter实例
       let headFilter = effectKit.createEffect(pixelMap);
       if (headFilter != null) {
         // 对图片添加效果标识
         headFilter.grayscale();
+        // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+        headFilter.getEffectPixelMap().then(imageData => {
+          resolve(imageData);
+        }).catch((err: BusinessError) => {
+          reject(err);
+        });
+      } else {
+        // 创建Filter实例失败，通过reject将错误传递给调用方
+        reject(new Error('Failed to create filter.'));
       }
-      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-      headFilter.getEffectPixelMap().then(imageData => {
-        resolve(imageData);
-      })
-    })
-  })
+    }).catch((err: BusinessError) => {
+      reject(err);
+    }).finally(() => {
+      imageSource.release();
+    });
+  });
 }
 
 @Entry
@@ -1197,7 +1280,7 @@ struct Index {
       return;
     }
     // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-    this.imagePixelMap = await ImageGrayscale(this.imageBuffer);
+    this.imagePixelMap = await imageGrayscale(this.imageBuffer);
   }
 
   build() {
@@ -1212,7 +1295,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/lQRpQW9VSyeQSvyYTsX26g/zh-cn_image_0000002743222054.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/hzYza02zT8q93dbb4lwHdA/zh-cn_image_0000002778935073.png)
 
 ### getEffectPixelMap11+
 
@@ -1284,7 +1367,7 @@ getEffectPixelMap(useCpuRender : boolean): Promise<image.PixelMap>
 import { image } from "@kit.ImageKit";
 import { effectKit } from "@kit.ArkGraphics2D";
 
-const color = new ArrayBuffer(96);
+const colorBuffer = new ArrayBuffer(96);
 let opts : image.InitializationOptions = {
   editable: true,
   pixelFormat: 3,
@@ -1293,11 +1376,17 @@ let opts : image.InitializationOptions = {
     width: 6
   }
 };
-image.createPixelMap(color, opts).then((pixelMap) => {
-  effectKit.createEffect(pixelMap).grayscale().getEffectPixelMap(false).then(data => {
-    console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
-  })
-})
+// 创建PixelMap实例
+image.createPixelMap(colorBuffer, opts).then((pixelMap) => {
+  // 创建Filter实例
+  let headFilter = effectKit.createEffect(pixelMap);
+  if (headFilter != null) {
+    // 添加灰度效果并获取处理后的PixelMap
+    headFilter.grayscale().getEffectPixelMap(false).then(data => {
+      console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
+    });
+  }
+});
 ```
 
 ### getPixelMap(deprecated)
@@ -1324,7 +1413,7 @@ getPixelMap(): image.PixelMap
 import { image } from "@kit.ImageKit";
 import { effectKit } from "@kit.ArkGraphics2D";
 
-const color = new ArrayBuffer(96);
+const colorBuffer = new ArrayBuffer(96);
 let opts : image.InitializationOptions = {
   editable: true,
   pixelFormat: 3,
@@ -1333,8 +1422,13 @@ let opts : image.InitializationOptions = {
     width: 6
   }
 };
-image.createPixelMap(color, opts).then((pixelMap) => {
-  let pixel = effectKit.createEffect(pixelMap).grayscale().getPixelMap();
-  console.info('getPixelBytesNumber = ', pixel.getPixelBytesNumber());
-})
+image.createPixelMap(colorBuffer, opts).then((pixelMap) => {
+  // 创建Filter实例
+  let headFilter = effectKit.createEffect(pixelMap);
+  if (headFilter != null) {
+    // 添加灰度效果并获取处理后的PixelMap
+    let pixel = headFilter.grayscale().getPixelMap();
+    console.info('getPixelBytesNumber = ', pixel.getPixelBytesNumber());
+  }
+});
 ```

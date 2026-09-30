@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-local
 title: 接入方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 位置推荐方案 > 接入方案
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:08:23+08:00
+scraped_at: 2026-10-01T07:35:41+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e82e484e1c541713f0af51456ef7ed6b180a1c31496ae640de92655fd4374c62
+content_hash: sha256:b405bbe883f8e5b9615a876c288db9f8f4f94f4fc096cdf0f6673a166f10a677
 ---
 
 ## 方案概述
 
 位置感知推荐能力支持开发者云侧共享位置信息与关联推荐的内容，结合实时位置、设备状态与习惯标签完成系统智慧决策，在小艺建议智慧推荐更符合用户诉求的内容信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/8jznQpwnRnWVVA-wsCw5Bg/zh-cn_image_0000002743380262.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/EM4-bl6vQNCPEJ8pkt56lg/zh-cn_image_0000002779093113.png)
 
 ## 开通近场服务权限
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 应用终止事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用终止事件 > 应用终止事件介绍
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f996f62ad7f5dc9b73ce8bd4f187fae92c51726e3a89ca49701ec89d5ae3674c
+scraped_at: 2026-10-01T07:34:41+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6e6bdcf3d7b7fb5e1d470e4334605eb81e9b61b7d91fa531fef664b2789c7368
 ---
 
 ## 概述
@@ -23,13 +23,11 @@ HiAppEvent提供接口用于订阅应用终止事件。
 
 应用终止事件支持在[应用分身](app-clone.md)场景下使用 HiAppEvent 进行订阅，支持在元服务场景下使用 HiAppEvent 进行订阅，从 API version 22 开始支持在[输入法应用](inputmethod-application-guide.md)场景下使用 HiAppEvent 进行订阅。
 
-应用终止事件信息中params属性的详细描述如下：
-
 ## 事件字段说明
 
 ### params字段说明
 
-终止事件信息中params属性的详细描述如下：
+应用终止事件信息中params属性的详细描述如下：
 
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |

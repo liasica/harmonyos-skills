@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 多摄同开(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 多摄同开(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3b53097f389d5d7b1f7d041223c0f7362518d4b2ec3b7b5ea0129c294297658a
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:f5567a6fa017bffed28ed694aa546c28685c668c027720c6cf06401c0358ef40
 ---
 
 从API version 18开始支持多摄同开，即应用同时开启前置/后置相机进行预览和录像（前置/后置相机同时拍照功能待开放）。
@@ -49,7 +49,6 @@ content_hash: sha256:3b53097f389d5d7b1f7d041223c0f7362518d4b2ec3b7b5ea0129c29429
    #include "ohcamera/video_output.h"
    #include "napi/native_api.h"
    #include "ohcamera/camera_manager.h"
-   #include "common/log_common.h"
    ```
 2. 在CMake脚本中链接相关动态库。
 

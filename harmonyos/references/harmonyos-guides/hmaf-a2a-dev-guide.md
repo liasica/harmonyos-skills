@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hmaf-a2a-dev-
 title: 通过AgentAbilityExtension实现智能体间A2A协议通信
 breadcrumb: 指南 > AI > Agent Framework Kit（智能体框架服务） > 通过AgentAbilityExtension实现智能体间A2A协议通信
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:18+08:00
-doc_updated_at: 2026-09-07
-content_hash: sha256:99438097dfdc1a57ca9605ee36454e4dd1553b82ebf24ed39801f7e50078ff23
+scraped_at: 2026-10-01T07:35:23+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:5601ecaa55222002187d6e5c0f7630c925e057014d5bf757298084341a8bbdf3
 ---
 
 从API版本26.0.0开始，新增支持通过AgentAbilityExtension实现智能体间A2A协议通信。
@@ -36,7 +36,7 @@ A2A协议支持智能体之间的高效通信，其核心业务功能包括：
 * **任务管理**：支持创建和管理具有明确生命周期的任务，支持长时间运行操作的跟踪和多轮交互。
 * **消息传递**：支持客户端与智能体之间的单轮通信，传递指令、上下文、问题、答案或状态更新。
 * **产物生成**：智能体在任务处理过程中可以生成有形的交付物（如文档、图片或结构化数据）。
-* **状态更新**：支持任务状态的全程跟踪，包括已提交、工作中、需要用户输入、已完成、已取消、已失败、已拒绝、需要认证等状态。
+* **状态更新**：支持任务状态的全生命周期跟踪与变更通知，使客户端能够及时感知任务从创建到结束（如已提交、工作中、已完成以及已取消、已失败、已拒绝等状态）的进展。
 
 ## 业务流程
 

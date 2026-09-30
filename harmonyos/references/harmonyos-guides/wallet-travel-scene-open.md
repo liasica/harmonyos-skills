@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-travel
 title: 开通出行凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 出行凭证 > 开发场景 > 开通出行凭证
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:08:00+08:00
+scraped_at: 2026-10-01T07:35:21+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3098c5386c360e49d95f4f7dac873a5bde8dfc4a6fcbb8c41544ccbb37bb7296
+content_hash: sha256:e7a7a69ab7ffba2bec021a53de529e26c291212737b56ad08cbf681b095615f8
 ---
 
 用户购买机票或车票后，可以将电子乘车凭据添加至钱包，在钱包中方便查看行程信息，亮证核验快速登机/乘车，实现数字化便捷出行。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/MHeOyS5KQ_iP7qOtmmYmvg/zh-cn_image_0000002743220240.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/WvUd4YweROK5iZsukDq9XA/zh-cn_image_0000002778933121.png)
 
 ## 开发流程
 

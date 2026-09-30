@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-config
 title: module.json5配置文件
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件 > module.json5配置文件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:48+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:91769592358a5dc42825f98cd3bc70fbe6499fcba54cbec58209e37e1fd9c8f5
+scraped_at: 2026-10-01T07:33:49+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:78a88bec2e779ac4825969202d858f838cbdcd318d3e775d0fbe1006da340694
 ---
 
 模块级配置文件，包含模块的基本配置信息、UIAbility组件和ExtensionAbility组件信息，以及应用运行过程中需要的权限信息，用于向编译工具、操作系统和应用市场提供应用的基本信息。每个模块下必须包括一个module.json5配置文件，文件所在目录为工程名称/模块名称（例如entry）/src/main/module.json5。
@@ -149,7 +149,7 @@ module.json5配置文件包含以下标签。
 | compressNativeLibs | 在打包hap时，该标签标识libs库是否以压缩存储的方式打包到HAP。  - true：libs库以压缩方式存储。  - false：libs库以不压缩方式存储。 | 布尔值 | 该标签可缺省，在打包hap时缺省值为false。 |
 | extractNativeLibs | 标识应用安装时，libs库是否解压到应用安装目录。当compressNativeLibs和extractNativeLibs都配置为false时，应用以不解压libs库的方式进行安装；其他场景，应用以解压libs库的方式进行安装。  **说明：**  从API version 20开始，支持该标签。 | 布尔值 | 该标签可缺省，缺省值为true。 |
 | libIsolation | 在libs目录下是否生成模块名称目录存储so，用于区分同一应用中不同HAP的.so文件，以防止.so文件冲突。  - true：当前HAP的.so文件会储存在libs目录中以Module名命名的路径下。  - false：当前HAP的.so文件会直接储存在libs目录中。 | 布尔值 | 该标签可缺省，缺省值为false。 |
-| [fileContextMenu](module-configuration-file.md#filecontextmenu标签) | 标识当前HAP的右键菜单配置项，是一个profile文件资源。取值为长度不超过255字节的字符串。  **说明：**  仅在PC/2in1设备上生效。  仅允许在entry类型模块中配置。 | 字符串 | 该标签可缺省，缺省值为空。 |
+| [fileContextMenu](right-click-menu.md#声明右键菜单) | 标识当前HAP的右键菜单配置项，是一个profile文件资源。取值为长度不超过255字节的字符串。  **说明：**  仅在PC/2in1设备上生效。  仅允许在entry类型模块中配置。 | 字符串 | 该标签可缺省，缺省值为空。 |
 | querySchemes | 标识允许当前应用进行跳转查询的URL schemes，只允许entry类型模块配置，每个字符串取值不超过128字节。  **说明：**  从API version 21开始，最多允许配置200个URL scheme。API version 20及之前的版本，最多允许配置50个URL scheme。 | 字符串数组 | 该标签可缺省，缺省值为空。 |
 | [routerMap](module-configuration-file.md#routermap标签) | 标识当前模块配置的路由表路径。取值为长度不超过255字节的字符串。 | 字符串 | 该标签可缺省，缺省值为空。 |
 | [appEnvironments](module-configuration-file.md#appenvironments标签) | 标识当前模块配置的应用环境变量，只允许entry和feature模块配置。 | 对象数组 | 该标签可缺省，缺省值为空。 |
@@ -1158,92 +1158,6 @@ hnpPackages示例：
   },
 }
 ```
-
-## fileContextMenu标签
-
-该标签标识当前HAP的右键菜单配置项，是一个profile文件资源，用于指定描述应用注册右键菜单配置文件。仅在PC/2in1设备上生效。仅允许在entry类型模块中配置。
-
-fileContextMenu标签示例
-
-```json5
-{
-  "module": {
-    // ...
-    "fileContextMenu": "$profile:menu", // 资源配置，指向profile下面定义的配置文件menu.json
-    // ...
-  }
-}
-```
-
-在开发视图的resources/base/profile下面定义配置文件menu.json，其中文件名“menu.json”可自定义，需要和fileContextMenu标签指定的信息对应。配置文件中描述了当前应用注册的右键菜单的项目和响应行为。
-
-配置文件根节点名称为fileContextMenu，为对象数组，标识当前module注册右键菜单的数量。（单模块和单应用注册数量不能超过5个，配置超过数量当前只解析随机5个）
-
-**表25** fileContextMenu标签配置说明
-
-| 属性名称 | 含义 | 数据类型 | 是否可缺省 |
-| --- | --- | --- | --- |
-| abilityName | 表示当前右键菜单对应的需要拉起的ability名称。 | 字符串 | 不可缺省。 |
-| menuItem | 右键菜单显示的信息。命名建议：  原则一：[动作]+[应用名]，中文示例：用{App}打开、用{App} ({Plugin}插件) 打开；英文示例：Open with {App}、Open with {App} ({Plugin})。  原则二：[动作]+[目的]，示例：压缩为{文件名}、压缩至{路径}、用{App}转换为{格式}。 | 资源id | 不可缺省。 |
-| menuHandler | 一个ability可以创建多个右键菜单， 该标签与右键菜单显示项一一对应，用于区分用户拉起的不同右键菜单项。开发者可自定义该标签取值，确保该标签在整个ability中唯一。在用户点击右键菜单拉起应用时，会作为参数传递给应用。 | 字符串 | 不可缺省。 |
-| menuContext | 定义展示该菜单项需要的上下文，可以支持多种情况，类型为数组。 | 对象数组 | 不可缺省。 |
-
-**表26** menuContext标签配置说明
-
-| 属性名称 | 含义 | 数据类型 | 是否可缺省 |
-| --- | --- | --- | --- |
-| menuKind | 表示单击如下类型时会触发右键菜单。取值范围如下：  - 0：空白处  - 1：文件  - 2：文件夹  - 3：文件和文件夹 | 数值 | 不可缺省。 |
-| menuRule | 表示采用什么方式选择文件或文件夹时，会触发右键菜单。取值范围如下：  - single：单选  - multi：多选  - both：单选或多选 | 字符串 | 仅当menuKind为1或2时，才会读取该标签，此时不可缺省。 |
-| fileSupportType | 表示当选中的文件列表里包含指定的文件类型时，显示右键菜单。  当该标签取值为["\*"]时，将会读取fileNotSupportType标签。  当该标签取值为[]时，将不做任何处理。 | 字符串数组 | 仅当menuKind为1时，才会读取该标签，此时不可缺省。 |
-| fileNotSupportType | 表示当选中的文件列表里包含这些文件类型时，不显示该右键菜单。  仅当menuKind为1、且fileSupportType为["\*"]时，才会读取该标签。 | 字符串数组 | 可缺省，缺省值为空。 |
-
-resources/base/profile路径下的menu.json资源文件示例如下：
-
-```json
-{
-  "fileContextMenu": [
-    {
-      "abilityName": "EntryAbility",
-      "menuItem": "$string:module_desc",
-      "menuHandler": "openCompress",
-      "menuContext": [
-        {
-          "menuKind": 0
-        },
-        {
-          "menuKind": 1,
-          "menuRule": "both",
-          "fileSupportType": [
-            ".rar",
-            ".zip"
-          ],
-          "fileNotSupportType": [
-            ""
-          ]
-        },
-        {
-          "menuKind": 2,
-          "menuRule": "single"
-        },
-        {
-          "menuKind": 3
-        }
-      ]
-    }
-  ]
-}
-```
-
-**响应行为**
-
-应用进行右键扩展菜单注册后，在文件管理器通过右键操作拉起菜单，该菜单中会有“更多”选项。单击“更多”选项后，会出现注册后的menuItem列表，单击任意一个选项后，文件管理器默认通过startAbility的方式拉起三方应用，除了指定三方应用的包名和ability名之外，want中的parameter中，也会传入如下标签：
-
-**表27** want中parameter标签说明
-
-| 参数名 | 值 | 类型 |
-| --- | --- | --- |
-| menuHandler | 对应注册配置文件中menuHandler的值。 | 字符串 |
-| uriList | 用户在具体文件上触发右键的uri值，如果空白处响应，此值为空，单个文件响应，数组长度1，多个文件响应则传入对应所有文件的uri值。 | 字符串数组 |
 
 ## startWindow标签
 

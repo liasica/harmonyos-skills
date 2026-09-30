@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: 使用PickerController将编辑后的图片替换原图
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 使用PickerController将编辑后的图片替换原图
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:29+08:00
+scraped_at: 2026-10-01T07:34:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:13cce973fb2540980d4613e4fc609590b00bc5af91f2d67ef9067aefd4e36298
+content_hash: sha256:d9daf17668b7e1576887169a5555d2117ae594b4c2702c51df6053217b87254c
 ---
 
 ## 替换PhotoPicker中显示的图片/视频
@@ -14,7 +14,7 @@ content_hash: sha256:13cce973fb2540980d4613e4fc609590b00bc5af91f2d67ef9067aefd4e
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/kWdPzhXHRiqVRtfvQ3lwcQ/zh-cn_image_0000002772898731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Zd_r_f0YQDiGk2pOin0wpA/zh-cn_image_0000002749493266.gif)
 
 ### 开发步骤
 
@@ -45,7 +45,7 @@ content_hash: sha256:13cce973fb2540980d4613e4fc609590b00bc5af91f2d67ef9067aefd4e
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/loc5NmlgRbGZBFhXeYnmQA/zh-cn_image_0000002743379482.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ODQChWvNRaSfYIa7OozyBA/zh-cn_image_0000002779092325.gif)
 
 ### 开发步骤
 

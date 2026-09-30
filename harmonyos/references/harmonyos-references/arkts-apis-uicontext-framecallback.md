@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (FrameCallback)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (FrameCallback)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:49+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5fcd6d986f7f811a13af10ff4cf26207939e30fe6f890341e7206f1520440abd
+scraped_at: 2026-10-01T07:36:40+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:354ab95123af04e1921321577c5a0d2efedea3c8a63b862311b0b8976da6b7ba
 ---
 
 用于定义帧回调任务，可在下一帧渲染阶段或帧渲染任务结束后的空闲阶段执行。
@@ -35,7 +35,7 @@ onFrame(frameTimeInNano: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| frameTimeInNano | number | 是 | 下一帧渲染开始执行的时间，以纳秒为单位，由系统回调时传入，开发者无需手动传入。  取值范围：[0, +∞) |
+| frameTimeInNano | number | 是 | 下一帧渲染开始执行的时间，以ns为单位，由系统回调时传入，开发者无需手动传入。  取值范围：[0, +∞) |
 
 **示例：**
 

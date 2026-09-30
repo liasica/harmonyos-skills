@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hicollie-guid
 title: 使用HiCollie检测业务线程卡死卡顿问题（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 业务线程超时检测 > 使用HiCollie检测业务线程卡死卡顿问题（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:48+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:43302f8af4242acdd4ee9e2d57c76c40cbf13b06ac43952e3de0500fcc9b3e94
+scraped_at: 2026-10-01T07:34:42+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:242a40ad9826b5a974ac501342e51d35090b32803f701de996e5d1bc6ee59f3d
 ---
 
 ## 简介
@@ -337,7 +337,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    void InitStuckDetectionWithTimeout()
    {
      // 初始化线程卡死监控函数
-     int initResult = OH_HiCollie_Init_StuckDetectionWithTimeout(Timer, BLOCK_TIME);
+     int initResult = OH_HiCollie_Init_StuckDetectionWithTimeout(Timer, 5); // 5：卡死检测阈值
      // 成功结果：0
      OH_LOG_INFO(LogType::LOG_APP, "OH_HiCollie_Init_StuckDetectionWithTimeout: %{public}d", initResult);
    }

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: "@ComponentV2：自定义组件V2"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件装饰器 > @ComponentV2：自定义组件V2
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7b5071bebf533f84e7f3e043efbea3201102a970b7a8d6b0423046a9744cd3e2
+scraped_at: 2026-10-01T07:37:10+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:512846f4ae3de6063d79c03cd7d04609d66b4adde492538ca93450ecba96e80a
 ---
 
 @ComponentV2主要配合状态管理V2使用，相比[@Component](../harmonyos-guides/arkts-create-custom-components.md#component)，@ComponentV2支持对象的深度观测和深度监听，装饰器易用性高、拓展性强，适用于需要深度观测嵌套对象状态的场景。除非特别说明，@ComponentV2装饰的自定义组件将与@Component装饰的自定义组件保持相同的行为。
@@ -21,11 +21,13 @@ content_hash: sha256:7b5071bebf533f84e7f3e043efbea3201102a970b7a8d6b0423046a9744
 
 const ComponentV2: ClassDecorator & ((options: ComponentOptions) => ClassDecorator)
 
-**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
+**卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-animat
 title: 相机基础动效(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机基础动效(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6ec52f56cd4d3978313c3a01a6e83b70688edfeedbf204b99bbcb0816bfefd97
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:3753a8394561a479fad3bad58559d010a625196c52b27a723a591513ed36c85d
 ---
 
 在使用相机过程中，当遇到相机模式切换、前后置镜头切换等场景时，会不可避免地出现预览流替换。为优化用户体验，可合理使用动效过渡。本文主要介绍如何使用预览流截图，并通过ArkUI提供的[animateToImmediately](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animatetoimmediately23)接口触发显式动画功能，实现下方三种核心场景动效。
@@ -14,17 +14,17 @@ content_hash: sha256:6ec52f56cd4d3978313c3a01a6e83b70688edfeedbf204b99bbcb0816bf
 
   图片为从录像模式切换为拍照模式的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/TL_RfKdOTgyhfyTj84Y_lg/zh-cn_image_0000002772738789.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/kLKTCfeNTr-ohVhAHn5E9A/zh-cn_image_0000002749333324.gif)
 * 前后置切换动效，使用预览流截图做翻转模糊动效过渡。
 
   图片为从前置相机切换为后置相机的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/JGvkz2aKTE6qpjkMz-cDBw/zh-cn_image_0000002772898673.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/dq1YbUulTZeDvh4vduq7rw/zh-cn_image_0000002749493208.gif)
 * 拍照闪黑动效，使用闪黑组件覆盖预览流实现闪黑动效过渡。
 
   图片为点击完成拍摄的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/2ErfEMqiTvmki8LoW9MgGQ/zh-cn_image_0000002743379424.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/p24VXVtdQcuHXTuVAy3rnw/zh-cn_image_0000002779092267.gif)
 
 ## 闪黑动效
 
@@ -319,7 +319,7 @@ content_hash: sha256:6ec52f56cd4d3978313c3a01a6e83b70688edfeedbf204b99bbcb0816bf
          }
        },
        () => {
-         // 截图向翻转动效。
+         // 截图向外翻转动效。
          if (this.curPosition === 1) {
            this.shotImgRotation = { y: BlurAnimateUtil.ROTATE_AXIS, angle: BlurAnimateUtil.IMG_FLIP_ANGLE_90 };
          } else {

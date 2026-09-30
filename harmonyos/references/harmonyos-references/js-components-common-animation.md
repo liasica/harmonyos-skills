@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:21+08:00
+scraped_at: 2026-10-01T07:37:16+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9b78e2ad59038e2a320879d5f0ee3cffb35cec3d220d7c31bcc4475f62ba1586
+content_hash: sha256:5f202641f61a7ff6724b1ae76c9dcf0646db85e86c40defe937f347aae55998c
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:9b78e2ad59038e2a320879d5f0ee3cffb35cec3d220d7c31bcc4475f62b
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/-HfSXETxQNC-7UjORFXzRg/zh-cn_image_0000002772900501.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/-urtXhVrQv-rIcomIkNfPQ/zh-cn_image_0000002749495178.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/HXSBZ2rfRy-TWUDRLVpZzQ/zh-cn_image_0000002743381250.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pZAO1bAuQJiX0Pvy1X-lcQ/zh-cn_image_0000002779094235.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/kXYCX25HSE-T1LceEwno5g/zh-cn_image_0000002743221362.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/aOPsrWPRSMO8y1a5tGetGA/zh-cn_image_0000002778934379.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/UdPRY7SpR7mhh3abDWooXA/zh-cn_image_0000002772740617.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/ZDZiJ-UwSTuBlrcQ_FUitg/zh-cn_image_0000002749335296.png)

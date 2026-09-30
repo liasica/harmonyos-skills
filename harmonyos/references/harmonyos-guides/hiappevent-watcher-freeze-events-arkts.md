@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅应用冻屏事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用冻屏事件 > 订阅应用冻屏事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4ea094264df04a34882fd9cc4283946513f4c6c914e18d6498a21165565d6958
+scraped_at: 2026-10-01T07:34:40+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:2c217a14ca96a2860e085a28c5ba59e268522e1f487e5a20f56bde597c94bb5c
 ---
 
 ## 简介
@@ -205,7 +205,3 @@ content_hash: sha256:4ea094264df04a34882fd9cc4283946513f4c6c914e18d6498a21165565
 [FaultLogger.query](../harmonyos-references/js-apis-faultlogger.md#faultloggerquery9)(使用callback回调)和[FaultLogger.query](../harmonyos-references/js-apis-faultlogger.md#faultloggerquery9-1)(使用Promise回调)都可以使用[hiAppEvent.addWatcher](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)实现相同功能。
 
 查阅[开发步骤](hiappevent-watcher-freeze-events-arkts.md#开发步骤)和[验证观察者是否订阅到应用冻屏事件](hiappevent-watcher-freeze-events-arkts.md#验证观察者是否订阅到应用冻屏事件)，了解使用HiAppEvent订阅应用冻屏事件（ArkTS）的具体步骤。
-
-## 示例代码
-
-* [应用异常处理](https://gitcode.com/HarmonyOS_Samples/exception-handling)

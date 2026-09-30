@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-v
 title: 视频编码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频编码同步模式
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3410dce21f748dde5a4aca486072909ad271b3f7315a66a67a17b659d7c79f05
+scraped_at: 2026-10-01T07:34:47+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:3ce1afe3a6d9337377d5038f13dd43432059513504e489a59bf3204100e8da23
 ---
 
 从API version 20开始，支持视频编码同步模式。
@@ -26,7 +26,7 @@ content_hash: sha256:3410dce21f748dde5a4aca486072909ad271b3f7315a66a67a17b659d7c
 
 详细的API说明请参考[VideoEncoder](../harmonyos-references/capi-native-avcodec-videoencoder-h.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/bg58Ka_oQnWrdliwzoNYrw/zh-cn_image_0000002743379374.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/P3IeQ5DLR-KAsEF2RaJpCw/zh-cn_image_0000002779092217.png)
 
 ### 在CMake脚本中链接动态库
 
@@ -80,7 +80,6 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
    bool outputDone = false;
    // 编码输入。
    bool inputDone = false;
-   std::unique_ptr<std::ifstream> inFile_;
    ```
 
 ### Surface模式
@@ -496,7 +495,7 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
                    // 异常处理。
                    return false;
                }
-               if (inFile_->eof()) {
+               if (inputFile->eof()) {
                    inputDone = 1;
                }
                break;

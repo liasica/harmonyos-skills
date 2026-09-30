@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ProgressButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ProgressButton
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:16+08:00
+scraped_at: 2026-10-01T07:37:12+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:a6a5be3b5a7aa1950b0013ec64e2ad0f86e2c0169dc4cbcca4790122055446f2
+content_hash: sha256:5da772f07cfdc28630ca0db64355ee57100018aaafc284271460f71b9b9c3bc3
 ---
 
 文本下载按钮，可显示具体下载进度。
@@ -115,7 +115,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/oD4KXeVGQIOQZThdwITZZA/zh-cn_image_0000002743381190.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/2kMUTqjpQhCi_Nbk4Bm5bQ/zh-cn_image_0000002779094175.png)
 
 ### 示例2（自定义颜色按钮）
 
@@ -178,7 +178,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/2-djAamKTN2ENf-hiOY9xw/zh-cn_image_0000002743221302.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Z-RwNerzSuKW1TYrWcYo4g/zh-cn_image_0000002778934319.png)
 
 ### 示例3（自定义圆角按钮）
 
@@ -235,4 +235,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/kcBP2_EDTLSiWLoKJGWmfw/zh-cn_image_0000002772740557.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/K3YwzjU4R7KZMfM1CFOqgg/zh-cn_image_0000002749335236.png)

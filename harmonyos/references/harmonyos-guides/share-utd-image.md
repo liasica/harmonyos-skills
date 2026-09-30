@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-ima
 title: 分享图片
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享图片
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:59+08:00
+scraped_at: 2026-10-01T07:35:20+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:d4b0aa28b7188bb72f2e41ebce32e8a8117c90d4e973b2f1a41636055f29ad42
+content_hash: sha256:89a0f646a0d6cbe7d1441cc1bfced55962804c3155df261e901e50c38a7c5cd6
 ---
 
 图片类型分享支持将一张或多张图片分享到目标设备/目标应用。
@@ -13,7 +13,7 @@ content_hash: sha256:d4b0aa28b7188bb72f2e41ebce32e8a8117c90d4e973b2f1a41636055f2
 * 目标设备接收时，图片会保存到图库中。
 * 目标应用接收时，可便捷的处理图片内容。例如：将一张图片分享给畅连，发送给畅连好友。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/X5RQCx0RTDibjjejg6CrMA/zh-cn_image_0000002743220198.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/IsPzV7AoQA2JUO1ASUog8w/zh-cn_image_0000002778933077.png)
 
 ## 开发步骤
 

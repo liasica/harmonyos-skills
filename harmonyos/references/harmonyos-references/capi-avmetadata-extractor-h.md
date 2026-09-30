@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avme
 title: avmetadata_extractor.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avmetadata_extractor.h
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:12+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:4555a43cfe26f1a4468e4984e0a250d5f516ee2533c3adef0ef11d41fbcc034b
+scraped_at: 2026-10-01T07:39:42+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:e7695e9e95cbe3d729fc70a6b742d905b4bd996f52048cb5eead24fc4fa15046
 ---
 
 ## 概述
 
-定义AVMetadataExtractor接口。使用其Native API从媒体资源中获取元数据。
+定义AVMetadataExtractor接口。使用其C API从媒体资源中获取元数据。
 
 **引用文件：** <multimedia/player\_framework/avmetadata\_extractor.h>
 

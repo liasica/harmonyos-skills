@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义内容
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义内容
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e1aa8190ce5b9abc61997534dd072f1845d21cfea36a915797b9d1d5bc07c027
+scraped_at: 2026-10-01T07:36:53+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:d2204a931888daf2358e6f44c3b3366233cc948d06333ac3b06a235fce968ac1
 ---
 
 支持通过样式builder自定义特定组件的内容区。
@@ -37,11 +37,11 @@ applyContent(): WrappedBuilder<[T]>
 
 **T参数支持范围:**
 
-ButtonConfiguration、CheckBoxConfiguration、DataPanelConfiguration、TextClockConfiguration、ToggleConfiguration、GaugeConfiguration、LoadingProgressConfiguration、RadioConfiguration、ProgressConfiguration、RatingConfiguration、SliderConfiguration
+[ButtonConfiguration](ts-basic-components-button.md#buttonconfiguration12对象说明)、[CheckBoxConfiguration](ts-basic-components-checkbox.md#checkboxconfiguration12对象说明)、[DataPanelConfiguration](ts-basic-components-datapanel.md#datapanelconfiguration12对象说明)、[TextClockConfiguration](ts-basic-components-textclock.md#textclockconfiguration12对象说明)、[ToggleConfiguration](ts-basic-components-toggle.md#toggleconfiguration12对象说明)、[GaugeConfiguration](ts-basic-components-gauge.md#gaugeconfiguration12对象说明)、[LoadingProgressConfiguration](ts-basic-components-loadingprogress.md#loadingprogressconfiguration12对象说明)、[RadioConfiguration](ts-basic-components-radio.md#radioconfiguration12对象说明)、[ProgressConfiguration](ts-basic-components-progress.md#progressconfiguration12)、[RatingConfiguration](ts-basic-components-rating.md#ratingconfiguration12对象说明)、[SliderConfiguration](ts-basic-components-slider.md#sliderconfiguration12对象说明)
 
 **属性支持范围:**
 
-支持通用属性enabled，contentModifier。
+支持通用属性[enabled](ts-universal-attributes-enable.md#enabled)，[contentModifier](ts-universal-attributes-content-modifier.md#contentmodifiert)。
 
 ## CommonConfiguration<T>
 
@@ -138,4 +138,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/zmDoKIN5R-2XUeB6wuq-ZQ/zh-cn_image_0000002743380604.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ZqX5oK1MSiCZJ5po2B_nbQ/zh-cn_image_0000002779093459.gif)

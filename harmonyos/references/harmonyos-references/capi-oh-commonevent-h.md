@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: oh_commonevent.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > oh_commonevent.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0768d03289786671594880b4aa24bca79710cc29146101f14fd4db81da44626d
+scraped_at: 2026-10-01T07:38:48+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:ff3b8cd752c9d2c0413eb23a810165d98b51ede80ca607394ef3452efd41825a
 ---
 
 ## 概述
@@ -200,7 +200,7 @@ CommonEvent_SubscribeInfo* OH_CommonEvent_CreateSubscribeInfo(const char* events
 | 参数项 | 描述 |
 | --- | --- |
 | const char\* events[] | 订阅的公共事件，实际订阅的数量为eventsNum与events数组长度的最小值。 |
-| int32\_t eventsNum | 订阅的公共事件数量，非负整数，取值为events数组长度。 |
+| int32\_t eventsNum | 订阅的公共事件数量，非负整数，应与events数组的实际长度一致。 |
 
 **返回：**
 
@@ -250,7 +250,7 @@ CommonEvent_ErrCode OH_CommonEvent_SetPublisherBundleName(CommonEvent_SubscribeI
 | 参数项 | 描述 |
 | --- | --- |
 | [CommonEvent\_SubscribeInfo](capi-oh-commonevent-commonevent-subscribeinfo.md)\* info | 待设置发布方权限的订阅者信息对象。 |
-| const char\* bundleName | 包名称。用于限制订阅方只接收该bundleName的发布者发布的公共事件。不设置时，可接收所有应用发布的公共事件。 |
+| const char\* bundleName | 包名称。用于限制订阅方只接收该bundleName的发布方发布的公共事件。不设置时，可接收所有应用发布的公共事件。 |
 
 **返回：**
 
@@ -546,7 +546,7 @@ CommonEvent_ErrCode OH_CommonEvent_SetPublishInfoBundleName(CommonEvent_PublishI
 | 参数项 | 描述 |
 | --- | --- |
 | [CommonEvent\_PublishInfo](capi-oh-commonevent-commonevent-publishinfo.md)\* info | 公共事件属性对象。 |
-| const char\* bundleName | 设置的订阅者包名称。 |
+| const char\* bundleName | 设置的订阅者包名称。设置后，只有指定包名的订阅者才能收到此公共事件。当该参数为空时，所有订阅者均可收到。 |
 
 **返回：**
 
@@ -623,7 +623,7 @@ CommonEvent_ErrCode OH_CommonEvent_SetPublishInfoData(CommonEvent_PublishInfo* i
 | --- | --- |
 | [CommonEvent\_PublishInfo](capi-oh-commonevent-commonevent-publishinfo.md)\* info | 公共事件属性对象。 |
 | const char\* data | 公共事件传递的数据，字符串类型，实际有效数据长度为length与data字符串长度的最小值。 |
-| size\_t length | 结果数据的长度，取值为data数据字符串长度。 |
+| size\_t length | 结果数据的长度，应与data数据字符串的实际长度一致。 |
 
 **返回：**
 
@@ -1502,7 +1502,7 @@ bool OH_CommonEvent_SetDataToSubscriber(CommonEvent_Subscriber* subscriber, cons
 | --- | --- |
 | [CommonEvent\_Subscriber](capi-oh-commonevent-h.md#变量)\* subscriber | 公共事件的订阅者对象。 |
 | const char\* data | 有序公共事件传递的数据，字符串类型，实际有效数据长度为length与data字符串长度的最小值。 |
-| size\_t length | 传递的数据字节长度，取值为data字符串长度。 |
+| size\_t length | 传递的数据字节长度，应与data数据字符串的实际长度一致。 |
 
 **返回：**
 

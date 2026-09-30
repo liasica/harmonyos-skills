@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Checkbox
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Checkbox
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:00+08:00
+scraped_at: 2026-10-01T07:36:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c4d1e15a384a332408953abd73e7f3f41b078023eda15b3512e152968c1e2795
+content_hash: sha256:1a9a1e3fd33f846a58cff457aeffc2157afc5cca4f5e8e81313b926a553240b1
 ---
 
 提供多选框组件，用于在多个选项中进行选择。
@@ -394,7 +394,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Mp6UmlfOQNyVuG3QmadEJQ/zh-cn_image_0000002772899989.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Pa_XL1J2Qk2tnSQStpXzQw/zh-cn_image_0000002749494666.gif)
 
 ### 示例2（设置多选框颜色）
 
@@ -445,7 +445,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/o9zmXosCQBWgpn2na7SWnA/zh-cn_image_0000002743380738.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/yhxHJ00JR9SAmyXOxsppvw/zh-cn_image_0000002779093723.gif)
 
 ### 示例3（自定义多选框样式）
 
@@ -536,7 +536,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Km6SSNb8RguUHLIVPMaSCg/zh-cn_image_0000002743220852.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/bNoWBNXFRQCkseynuzKBDw/zh-cn_image_0000002778933869.gif)
 
 ### 示例4（设置文本多选框样式）
 
@@ -593,7 +593,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/3kbszu8PTbS7Mr0nNRBNEg/zh-cn_image_0000002772740105.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/HWO-gh6ORLyoiJzB02oc6Q/zh-cn_image_0000002749334784.gif)
 
 ### 示例5（获取多选框选中信息）
 
@@ -753,7 +753,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/3u2Y80T-Rb-wHPcginiSdA/zh-cn_image_0000002772899991.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/XHsrFSuWQKKAwsNnE2g48w/zh-cn_image_0000002749494670.gif)
 
 ### 示例6（设置滑动多选）
 
@@ -966,4 +966,4 @@ enum SelectedState {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Q08UxQm2Rj6Dhc1FWmSoXw/zh-cn_image_0000002743380740.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/gNRRleZJROCsCqkBosPYBw/zh-cn_image_0000002779093727.gif)

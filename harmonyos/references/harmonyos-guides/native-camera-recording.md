@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 录像(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 录像(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:57+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:39dca0fc68b4b52eabad8d585f35887bdc50c8f1f229a902bf199d95810bb216
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:be3c0897ebea14af464eba4c44e7c4b9a2543dc45d488ca4e64df87a3cfa3d97
 ---
 
 录像是循环帧的捕获，同时也是相机应用的最重要功能之一。对于录像的流畅度，开发者可以参考拍照(C/C++)中的[开发步骤](native-camera-shooting.md#开发步骤)7，设置分辨率、闪光灯、焦距、照片质量及旋转角度等信息。
@@ -25,7 +25,6 @@ content_hash: sha256:39dca0fc68b4b52eabad8d585f35887bdc50c8f1f229a902bf199d95810
    #include <cstdio>
    #include <fcntl.h>
    #include <map>
-   #include <string>
    #include <vector>
    #include <native_buffer/native_buffer.h>
    #include "iostream"
@@ -89,7 +88,7 @@ content_hash: sha256:39dca0fc68b4b52eabad8d585f35887bdc50c8f1f229a902bf199d95810
            return CAMERA_INVALID_ARGUMENT;
        }
        ret_ = OH_CameraManager_CreateVideoOutput(cameraManager_, videoProfile_, videoId, &videoOutput_);
-       OH_LOG_ERROR(LOG_APP, " create video width: %{public}d, height: %{public}d, format: %{public}d",
+       OH_LOG_INFO(LOG_APP, " create video width: %{public}d, height: %{public}d, format: %{public}d",
            videoProfile_->size.width, videoProfile_->size.height, videoProfile_->format);
        if (videoId == nullptr || videoOutput_ == nullptr || ret_ != CAMERA_OK) {
            OH_LOG_ERROR(LOG_APP, "CreateVideoOutput failed.");
@@ -123,7 +122,7 @@ content_hash: sha256:39dca0fc68b4b52eabad8d585f35887bdc50c8f1f229a902bf199d95810
    ```
    Camera_ErrorCode NDKCamera::VideoOutputStop(void)
    {
-       OH_LOG_ERROR(LOG_APP, "enter VideoOutputStop.");
+       OH_LOG_INFO(LOG_APP, "enter VideoOutputStop.");
        ret_ = OH_VideoOutput_Stop(videoOutput_);
        if (ret_ != CAMERA_OK) {
            OH_LOG_ERROR(LOG_APP, "VideoOutputStop failed.");
@@ -158,7 +157,7 @@ content_hash: sha256:39dca0fc68b4b52eabad8d585f35887bdc50c8f1f229a902bf199d95810
   ```
   void VideoOutputOnError(Camera_VideoOutput *videoOutput, Camera_ErrorCode errorCode)
   {
-      OH_LOG_INFO(LOG_APP, "VideoOutput errorCode = %{public}d", errorCode);
+      OH_LOG_ERROR(LOG_APP, "VideoOutput errorCode = %{public}d", errorCode);
   }
   ```
 

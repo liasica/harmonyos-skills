@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 即时反馈（Toast）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 即时反馈（Toast）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:29+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:41acdac6f22c25df74a7353e5326423e7f9160ad44167503a9263f7d41a95e8d
+scraped_at: 2026-10-01T07:34:04+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:166ef1572046f63541a101e18f25a183a5562206bca31e1d2beccee718c1aa2a
 ---
 
 即时反馈（Toast）是一种临时性的消息提示框，用于向用户显示简短的操作反馈或状态信息。​它通常在屏幕的底部或顶部短暂弹出，随后在一段时间后自动消失。即时反馈的主要目的是提供简洁、不打扰的信息反馈，避免干扰用户当前的操作流程。
@@ -20,7 +20,7 @@ content_hash: sha256:41acdac6f22c25df74a7353e5326423e7f9160ad44167503a9263f7d41a
 
 * 合理使用弹出场景，避免过度提醒用户。
 
-  可以针对以下常用场景使用即时反馈操作，例如，当用户执行某个操作时及时结果反馈，用来提示用户操作是否成功或失败；或是当应用程序的状态发生变化时提供状态更新等。
+  可以针对以下常用场景使用即时反馈操作，例如，当用户执行某个操作时及时给出结果反馈，用来提示用户操作是否成功或失败；或是当应用程序的状态发生变化时提供状态更新等。
 * 注意文本的信息密度，即时反馈展示时间有限，应当避免长文本的出现。
 
   Toast控件的文本应该清晰可读，字体大小和颜色应该与应用程序的主题相符。除此之外，即时反馈控件本身不应该包含任何可交互的元素，如按钮或链接。
@@ -103,7 +103,7 @@ export struct DefaultAndTopToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/QHXX4KLLRSCifkpfYj_WVQ/zh-cn_image_0000002772737953.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/q1AZ_IVDTnaQddmt-oKbpQ/zh-cn_image_0000002749332468.gif)
 
 ## 创建即时反馈
 
@@ -144,7 +144,7 @@ export struct CreateToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/2b85h0vBT9-6Cc6lXTtoMA/zh-cn_image_0000002772897837.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/mYQeE4cgQRi9IOTiJs31NQ/zh-cn_image_0000002749492352.gif)
 
 ## 显示和关闭即时反馈
 
@@ -204,4 +204,4 @@ export struct OpenCloseToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Y_KtUm7bRPm_UaaBc33Knw/zh-cn_image_0000002743378588.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/y-wnVNyOQialhkd23xQ6jg/zh-cn_image_0000002779091409.gif)

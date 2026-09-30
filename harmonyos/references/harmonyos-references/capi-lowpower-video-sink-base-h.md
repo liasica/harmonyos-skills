@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowp
 title: lowpower_video_sink_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > lowpower_video_sink_base.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8c72dca365094bf11bbc597a5d6c7f0e85fec1370c96fe0ac26a6e1e75d3a689
+scraped_at: 2026-10-01T07:39:42+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:fad1b80a4d58f6c1a3aa5d0d5a8987c3bb49d0dbeca1a242d9047c41240297fa
 ---
 
 ## 概述
@@ -28,8 +28,8 @@ content_hash: sha256:8c72dca365094bf11bbc597a5d6c7f0e85fec1370c96fe0ac26a6e1e75d
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [OH\_LowPowerVideoSink](capi-lowpowervideosink-oh-lowpowervideosink.md) | OH\_LowPowerVideoSink | LowPowerVideoSink声明。 |
-| [OH\_LowPowerVideoSinkCallback](capi-lowpowervideosink-oh-lowpowervideosinkcallback.md) | OH\_LowPowerVideoSinkCallback | 包含了LowPowerVideoSink回调函数指针的集合。  应用需注册此实例结构体到[OH\_LowPowerVideoSink](capi-lowpowervideosink-oh-lowpowervideosink.md)实例中，并对回调上报的信息进行处理，保证LowPowerVideoSink的正常运行。 |
+| [OH\_LowPowerVideoSink](capi-lowpowervideosink-oh-lowpowervideosink.md) | OH\_LowPowerVideoSink | OH\_LowPowerVideoSink是低功耗视频输出场景中使用的数据结构，开发者通过该结构体实现低功耗视频输出功能。 |
+| [OH\_LowPowerVideoSinkCallback](capi-lowpowervideosink-oh-lowpowervideosinkcallback.md) | OH\_LowPowerVideoSinkCallback | 包含了OH\_LowPowerVideoSink回调函数指针的集合。  应用需注册此实例结构体到[OH\_LowPowerVideoSink](capi-lowpowervideosink-oh-lowpowervideosink.md)实例中，并对回调上报的信息进行处理，保证LowPowerVideoSink的正常运行。 |
 
 ### 函数
 

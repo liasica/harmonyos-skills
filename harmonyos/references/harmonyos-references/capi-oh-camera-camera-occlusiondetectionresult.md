@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_OcclusionDetectionResult
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_OcclusionDetectionResult
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1ba4f5c03b54e864ec9dee5e083afa254c81ebc3ec3810d6bd2fc91f94436d77
+scraped_at: 2026-10-01T07:39:29+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:b8a4ca6cf452ca075038edf137eec0b5044bd86f1a825698f38b2123d2031699
 ---
 
 ```c
-typedef struct {...} Camera_OcclusionDetectionResult
+typedef struct Camera_OcclusionDetectionResult {...} Camera_OcclusionDetectionResult
 ```
 
 ## 概述

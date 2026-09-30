@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 纯外部支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 纯外部支付场景
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:53+08:00
+scraped_at: 2026-10-01T07:35:15+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:09eba1edd5469e9b00739aa592e9fb6c78267bb9bdbbe3c2b637992372bb8770
+content_hash: sha256:35f6491267a8327f61b95394f1faa75c94cf2ab6a4a8683a0cac2a178b543539
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:09eba1edd5469e9b00739aa592e9fb6c78267bb9bdbbe3c2b637992372b
 
 通用收银台纯外部支付页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/8u6Qj6RxRm683mbV2aodgQ/zh-cn_image_0000002772899243.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/DBV0pvYbQ7GWoJniz6PYxQ/zh-cn_image_0000002749493786.png)
 
 ## 接入流程
 
@@ -34,7 +34,7 @@ content_hash: sha256:09eba1edd5469e9b00739aa592e9fb6c78267bb9bdbbe3c2b637992372b
 
 纯外部支付模式下，收银台仅支持第三方平台支付，用户无法使用华为支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/qQGmaIIcRuGuHYplde15iQ/zh-cn_image_0000002743379994.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/1c6dVtIqQPyHfryXeMw-aQ/zh-cn_image_0000002779092841.png)
 
 1. 商户客户端根据商户已开通的支付模式构建[PaymentInfo](../harmonyos-references/payment-paymentservice.md#paymentinfo)参数调用[cashierPicker](../harmonyos-references/payment-paymentservice.md#cashierpicker)接口拉起Payment Kit通用收银台。
 2. Payment Kit通用收银台展示可用的三方支付方式，用户选择三方支付方式并确认支付。

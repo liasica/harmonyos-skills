@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.Prefetcher (内容预取)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.Prefetcher (内容预取)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:34+08:00
+scraped_at: 2026-10-01T07:36:39+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:93797a354a4ffc330ed0a817e3eb1a3b6e3bbf7aa7edcdec047ea5ca204fcc81
+content_hash: sha256:1d2cb03d50289b4fef90d7c402281bcd3cfa98f63b90840f97b0d624daf63c90
 ---
 
 配合LazyForEach，为List、Grid、WaterFlow和Swiper等容器组件滑动浏览时提供内容预取能力，提升用户浏览体验。
@@ -424,7 +424,7 @@ function create10x10Bitmap(color: number): ArrayBuffer {
 
 演示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/TWjwmC8fR5WB2tPpWGF5vQ/zh-cn_image_0000002772739759.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/6lNzE5r3QNy8VvdkIcNlFQ/zh-cn_image_0000002749334302.gif)
 
 ## 补充说明
 

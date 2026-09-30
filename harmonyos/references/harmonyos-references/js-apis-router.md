@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.router (页面路由)(不推荐)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.router (页面路由)(不推荐)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:40+08:00
+scraped_at: 2026-10-01T07:36:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cc4b2eed464c13ae09234a3a8001629033bc02f8ed440f811bc333938cebda26
+content_hash: sha256:c91e271591b385c0097c837e568e5b133e1484d89291900c4079fe952c64dd15
 ---
 
 本模块提供页面路由能力，支持通过url或命名路由进行页面跳转与替换、返回上一页面或指定页面、管理页面栈、获取页面状态与跳转参数、设置页面返回询问对话框等，适用于需要在应用内进行页面导航和流转的场景。
@@ -2007,4 +2007,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ZgRz0C3fSzOQAVWDHvOh7g/zh-cn_image_0000002772739805.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/o3DpChtBTKOkaF1NLZVYWQ/zh-cn_image_0000002749334348.gif)

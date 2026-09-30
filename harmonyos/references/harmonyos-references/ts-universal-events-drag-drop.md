@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 拖拽事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 拖拽事件
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:48+08:00
+scraped_at: 2026-10-01T07:36:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2d47fc4ac41beb776fcc3b96eb2bcc6ccc419a96fc19be13053f5c079b55c0f3
+content_hash: sha256:242bb82e6a5a2c21f34481b4a9d4d32c9a1531638f474360e9fcf9f32a462688
 ---
 
 拖拽事件是指在用户界面中，当用户拖动某个对象（如文件、控件或元素）时触发的一系列事件。这些事件允许开发者自定义拖拽行为，实现诸如拖放、调整位置等功能。
@@ -1153,7 +1153,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/44DQyU84QQCho5m676v3DA/zh-cn_image_0000002743380480.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/EMsWHNT9T_KIMcdnbgg30A/zh-cn_image_0000002779093331.png)
 
 ### 示例2（自定义落位动效）
 
@@ -1238,7 +1238,7 @@ struct DropAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/njFcH5zDTlCV-1P59JNZtA/zh-cn_image_0000002743220594.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Y1F5fIvoQJaPTq-C2s-7cA/zh-cn_image_0000002778933475.gif)
 
 ### 示例3（拖拽异步获取数据）
 
@@ -1539,7 +1539,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/zkn4Irt0RNihS0m-7fe6nQ/zh-cn_image_0000002772739847.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/vW4p34C2TM-8vGojv1a5MA/zh-cn_image_0000002749334390.png)
 
 ### 示例5（获取包名和是否是跨设备）
 
@@ -1622,7 +1622,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/D-LBRVj8SMSqE8xusLkB1A/zh-cn_image_0000002772899731.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/gck5nIG4QZqMeokjnIe5zw/zh-cn_image_0000002749494276.png)
 
 ### 示例6（拖拽支持悬停检测）
 
@@ -1706,7 +1706,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/C2GiAV7DRTWYK3zbyzqS8w/zh-cn_image_0000002743380482.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/cvVPaieaS0qKOD0h_H6dfw/zh-cn_image_0000002779093333.gif)
 
 ### 示例7（拖起方延迟提供数据）
 
@@ -1861,7 +1861,7 @@ struct VideoExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/D8VLAk7gSGmNHsqzTsd-PA/zh-cn_image_0000002743220596.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/9avp10mZSAyAvq0aQOrMCA/zh-cn_image_0000002778933477.gif)
 
 ### 示例8（拖拽自动隐藏指定组件）
 
@@ -1987,4 +1987,4 @@ struct DragEventAutoHideSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/3-F_SwCXTvSTvRpyOJfedg/zh-cn_image_0000002772739849.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/HoP_9bBmSvuxrJOplDNE6g/zh-cn_image_0000002749334392.gif)

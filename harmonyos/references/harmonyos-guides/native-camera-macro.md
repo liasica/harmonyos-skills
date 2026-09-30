@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 微距能力设置(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 微距能力设置(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:57+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:fb7676c5b9b7dde4a2d0ac75dbf0c9d5e71f9bcc2c57b4cdbce81eb2a6c2e53e
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:c2084a5df796104e035f4b44459769aa1449a85fe5a9898404e15f41604ebaae
 ---
 
 从API version 19开始，支持设置微距能力。微距能力是指通过光学设计与算法优化，实现近距离对焦并清晰捕捉微小物体细节的相机功能。
@@ -25,7 +25,6 @@ content_hash: sha256:fb7676c5b9b7dde4a2d0ac75dbf0c9d5e71f9bcc2c57b4cdbce81eb2a6c
    #include <cstdio>
    #include <fcntl.h>
    #include <map>
-   #include <string>
    #include <vector>
    #include <native_buffer/native_buffer.h>
    #include "iostream"

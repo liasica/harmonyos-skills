@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securi
 title: SaveButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 安全 > SaveButton
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:12+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c1d2bb08ede4997e35d555701db7bcf8d7db8499c3758e5f624c101c7a332afd
+scraped_at: 2026-10-01T07:37:10+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:22ff9a86233403c32b66cf02281cf53b74b508579836fb80d61f2b7eebf213ea
 ---
 
 安全控件的保存控件系统接口，适用于应用需要临时获取媒体库访问权限以保存图片或视频的场景，例如图片保存到相册、媒体内容导出等。
@@ -230,6 +230,12 @@ iconSize(size: Dimension | SizeOptions)
 
 设置保存控件的图标尺寸。
 
+**说明** 
+
+在API版本10时，开发者可通过安全控件通用属性[iconSize](ts-securitycomponent-attributes.md#iconsize)设置图标尺寸，此时size类型仅支持Dimension。
+
+从API版本20开始，开发者可以通过本接口设置图标尺寸，size类型增加支持SizeOptions。
+
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
@@ -379,7 +385,7 @@ symbolRenderingStrategy(strategy: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/LKWG-Y5pTk27LF1BMAgrtg/zh-cn_image_0000002772900125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/ZxIdhjYHTbiM3sOFppMH5A/zh-cn_image_0000002749494804.png)
 
 ## 事件
 
@@ -480,7 +486,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/NFeA9lKbQfWDCwIP7cuD-A/zh-cn_image_0000002772740493.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/NMdsdzUEQLmfYn6I5r_0Kg/zh-cn_image_0000002749335172.png)
 
 ## 示例2
 
@@ -555,7 +561,7 @@ struct SetIcon {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/hvyQ8Tw1SRmTbK4A2ixpgQ/zh-cn_image_0000002772900377.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/CuDuamopQKqL08sq-fARfw/zh-cn_image_0000002749495056.png)
 
 ## 示例3
 
@@ -619,4 +625,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/KErX5kHOTIKgyyjMSuQ4_A/zh-cn_image_0000002743381126.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/QS3gqAdpSz-lUph_GAtiqQ/zh-cn_image_0000002779094113.jpeg)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/launch-page-c
 title: 配置应用启动页
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 应用启动页的配置与使用 > 配置应用启动页
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:38+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:bdf039e9359882dd91fb2fc1e02e3c64258a720ea3f624b0ee44eae4f66f3965
+scraped_at: 2026-10-01T07:34:12+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:00b0f452c0542b5199b7875d1517a2c6cacbfa755cad68ed4b39dc060548f064
 ---
 
 ## 启动页的分类和实现方式
@@ -38,7 +38,7 @@ content_hash: sha256:bdf039e9359882dd91fb2fc1e02e3c64258a720ea3f624b0ee44eae4f66
 
 **图1** 默认启动页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/dL6uRigwTge2RWp2lsmc1A/zh-cn_image_0000002772738295.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/G3wIh7O3TCadofkPUvS33g/zh-cn_image_0000002749332830.png)
 
 开发者可以根据应用需要，配置使用自定义设计的图标资源和颜色资源。
 
@@ -77,7 +77,7 @@ startWindow字段提供了增强的启动页配置能力，可用于元素更复
 
 **图2** 增强启动页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/jIvDCCYDRayus8JgY60Pgw/zh-cn_image_0000002772898179.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/rWqR9kxgRwWUxUjQDzJJuQ/zh-cn_image_0000002749492714.png)
 
 示例如下：
 

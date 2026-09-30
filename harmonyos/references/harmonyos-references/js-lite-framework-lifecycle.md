@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-f
 title: 生命周期
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 框架说明 > 生命周期
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:26+08:00
+scraped_at: 2026-10-01T07:37:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:21862f5596777f3a630a14369a21069cd60da048bc2afabe21d68adbe3664925
+content_hash: sha256:c78034096ecd1d86c3eb1209f337ce1d0850ddf59bd2843b3e89b34a518aa1b4
 ---
 
 生命周期用于描述应用和页面从创建、显示、隐藏到销毁的状态变化过程。开发者可以通过应用生命周期和页面生命周期函数，在对应阶段处理初始化、页面显示隐藏响应、销毁清理等逻辑，适用于管理应用启动退出、页面切换和前后台状态变化的场景，有助于按阶段组织业务逻辑和资源管理。
@@ -44,4 +44,4 @@ content_hash: sha256:21862f5596777f3a630a14369a21069cd60da048bc2afabe21d68adbe36
 * 页面隐藏到后台运行：onHide()
 * 页面从后台运行恢复到前台：onShow()
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/8pNn9a5ZQjmYs7tc_aD15g/zh-cn_image_0000002743221520.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Iiqm87PrQ2apozyfmtAcEw/zh-cn_image_0000002778934537.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: DialogV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > DialogV2
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f98d5f59ff71055d32acc8f672a04519879b68c97426ac69c6a9471b724ced6c
+scraped_at: 2026-10-01T07:37:12+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:cf192161783ed50692b29b6906338590e4ddc27998cca60bdcb51443777e675e
 ---
 
 弹出框是一种模态窗口，用于在保持当前上下文环境时，临时展示用户需关注的信息或待处理的操作，用户在弹出框内完成交互。模态弹出框需要用户进行交互才能够退出模态模式。DialogV2提供了提示、选择、确认、警告、加载等多种类型的弹出框，适用于确认删除、显示加载进度、用户选择项、重要提示等场景，帮助开发者简化模态对话框的实现，提供一致的用户交互体验。
@@ -126,11 +126,11 @@ AlertDialogV2({primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, content
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| primaryTitle | [ResourceStr](ts-types.md#resourcestr) | 否 | @Param | 确认弹出框标题。  默认不显示。  **说明：** 标题超过两行会显示“...”。 |
-| secondaryTitle | [ResourceStr](ts-types.md#resourcestr) | 否 | @Param | 确认弹出框辅助文本。  默认不显示。  **说明：** 辅助文本超过两行会显示“...”。 |
-| content | [ResourceStr](ts-types.md#resourcestr) | 是 | @Param  @Require | 确认弹出框内容。 |
-| primaryButton | [AdvancedDialogV2Button](ohos-arkui-advanced-dialogv2.md#advanceddialogv2button) | 否 | @Param | 确认弹出框左侧按钮。  默认不显示。 |
-| secondaryButton | [AdvancedDialogV2Button](ohos-arkui-advanced-dialogv2.md#advanceddialogv2button) | 否 | @Param | 确认弹出框右侧按钮。  默认不显示。 |
+| primaryTitle | [ResourceStr](ts-types.md#resourcestr) | 否 | @Param | 警告弹出框标题。  默认不显示。  **说明：** 标题超过两行会显示“...”。 |
+| secondaryTitle | [ResourceStr](ts-types.md#resourcestr) | 否 | @Param | 警告弹出框辅助文本。  默认不显示。  **说明：** 辅助文本超过两行会显示“...”。 |
+| content | [ResourceStr](ts-types.md#resourcestr) | 是 | @Param  @Require | 警告弹出框内容。 |
+| primaryButton | [AdvancedDialogV2Button](ohos-arkui-advanced-dialogv2.md#advanceddialogv2button) | 否 | @Param | 警告弹出框左侧按钮。  默认不显示。 |
+| secondaryButton | [AdvancedDialogV2Button](ohos-arkui-advanced-dialogv2.md#advanceddialogv2button) | 否 | @Param | 警告弹出框右侧按钮。  默认不显示。 |
 
 ## LoadingDialogV2
 
@@ -150,7 +150,7 @@ LoadingDialogV2({content?: ResourceStr})
 
 ## CustomContentDialogV2
 
-CustomContentDialogV2({contentBuilder: () => void, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, contentAreaPadding?: LocalizedPadding, buttons?: AdvancedDialogV2Button[]})
+CustomContentDialogV2({contentBuilder: CustomBuilder, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, contentAreaPadding?: LocalizedPadding, buttons?: AdvancedDialogV2Button[]})
 
 自定义内容区弹出框，同时支持定义操作区按钮样式。适用于需要展示复杂或自定义内容的场景，如用户协议确认、表单输入等。
 
@@ -355,7 +355,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/WfnUp6utTMS-03RMw-0Rpg/zh-cn_image_0000002772900415.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/vAqNdRAlQ1qMuKFIVlv7_A/zh-cn_image_0000002749495094.png)
 
 ### 示例2（纯列表弹出框）
 
@@ -425,7 +425,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/epkUFzTfRICy8b8w3vzV5w/zh-cn_image_0000002772900369.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/dm_0Q_arRhy-7Rwxa-ZthA/zh-cn_image_0000002749495048.png)
 
 ### 示例3（文本与勾选弹出框）
 
@@ -493,7 +493,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/ksp_5EyPRjiqjAGmS2GkSg/zh-cn_image_0000002743381118.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/qimIFIndR_iz3Ft95sxsSw/zh-cn_image_0000002779094105.png)
 
 ### 示例4（纯文本弹出框）
 
@@ -553,7 +553,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/W3fDktVWSPiH0IpYOj2rFA/zh-cn_image_0000002743221232.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/hRSPnplkR1quUQiiU75uJg/zh-cn_image_0000002778934249.png)
 
 ### 示例5（进度加载类弹出框）
 
@@ -598,7 +598,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/zQS34W5PRyaTsaq_54ca3w/zh-cn_image_0000002772740487.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/JIPKEjs_Qpqj9D9Yukb_4Q/zh-cn_image_0000002749335166.gif)
 
 ### 示例6（使用WithTheme自定义主题的弹出框）
 
@@ -657,7 +657,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/pz1toG_lQQGN3uNotK6hrg/zh-cn_image_0000002743381166.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/qLZjI2f7T3ifBKZSKYDpIg/zh-cn_image_0000002779094151.png)
 
 ### 示例7（自定义内容弹出框）
 
@@ -718,7 +718,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/RwTsjMZgS6uWFBArYFW17w/zh-cn_image_0000002743221278.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/uu7mm5BkTUylgqqQ0N7Lbg/zh-cn_image_0000002778934295.png)
 
 ### 示例8（跟手弹出框）
 
@@ -776,4 +776,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/clwYnzCSQPKBJpiKO77SzQ/zh-cn_image_0000002772740533.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/q3bDdxe7QY6zOc_ypE53GQ/zh-cn_image_0000002749335212.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-
 title: 发布公共事件
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 进程线程通信 > 使用公共事件进行进程间通信 > 发布公共事件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:45c8587c274dcd0df096d7804c934b3ca399a94ce9ec942c0525e797c614ef8f
+scraped_at: 2026-10-01T07:34:34+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:10f2a435ee58cd8f758818b721d0039f1cb4818f53ec45d570c7d0a1a3012806
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:45c8587c274dcd0df096d7804c934b3ca399a94ce9ec942c0525e797c61
 
 ## 接口说明
 
-详细接口见[接口文档](../harmonyos-references/js-apis-commoneventmanager.md#commoneventmanagerpublish)。
+详细接口见[commonEventManager.publish](../harmonyos-references/js-apis-commoneventmanager.md#commoneventmanagerpublish)。
 
 | 接口名 | 接口描述 |
 | --- | --- |

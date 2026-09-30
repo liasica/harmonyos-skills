@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 场景搭建与管理
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 场景搭建与管理
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:34+08:00
+scraped_at: 2026-10-01T07:34:58+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:018de2279a7fbacb07f066cad1ac7c61ec0d92a0c6d57845cfcb844c9c9d5abd
+content_hash: sha256:4a0cab3a140f4cf77173ec2054929ce86e1853e1f4eae99005d971db08c46546
 ---
 
 一个3D场景通常由光源、相机、模型三个关键部分组成。
@@ -16,7 +16,7 @@ content_hash: sha256:018de2279a7fbacb07f066cad1ac7c61ec0d92a0c6d57845cfcb844c9c9
 
 模型加载后，可以通过ArkUI的[Component3D](../harmonyos-references/ts-basic-components-component3d.md)渲染组件呈现给用户，Component3D负责将ArkGraphics 3D场景渲染到界面中。在自定义场景模式下，开发者可以使用ArkTS API创建并管理相机和光源节点，从而设置合适的观察角度和光照效果；在自动场景模式下，框架会根据模型自动创建基础相机和光照。ArkTS API可通过napi调用AGP中由C++实现的相应能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/7chYduA5Q0q8vfOlwWs9uQ/zh-cn_image_0000002743379590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/85WWxeFNTfykTm9p4jl0JA/zh-cn_image_0000002779092433.png)
 
 ## 模型的加载及呈现
 

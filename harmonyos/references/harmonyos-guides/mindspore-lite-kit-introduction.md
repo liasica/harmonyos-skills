@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: MindSpore Lite Kit简介
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > MindSpore Lite Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:08:24+08:00
+scraped_at: 2026-10-01T07:35:42+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a2bcbec5d2767a8209e4e1d2d5b631538dcc156a36c365b655d35b5cab41a5ec
+content_hash: sha256:5af01d81ec93258f7eea9bf403cd07c6150b355d89d94f1b9e8f1149e20ee775
 ---
 
 ## 使用场景
@@ -35,7 +35,7 @@ MindSpore Lite提供面向不同硬件设备的AI模型推理能力，使用Mind
 
 **图 1** 使用MindSpore Lite进行模型推理的开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/q5P1EjjuTgGO17iHIuqkXg/zh-cn_image_0000002743380298.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/JDMYSKnBQ1OR5fg09pan9g/zh-cn_image_0000002779093149.jpg)
 
 MindSpore Lite开发流程分为两个阶段：
 

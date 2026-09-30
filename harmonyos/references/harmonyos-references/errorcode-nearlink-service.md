@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 星闪错误码
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 错误码 > 星闪错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:05+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e051fc02095e0c47fec8411c2d7949b55ebb828b4ee795014ce4a82db9d5eb9b
+scraped_at: 2026-10-01T07:38:23+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:3ee82dbb7d192d8935c525751f88af881678712bdea9c8bbb8b07a6930ba4fd2
 ---
 
 **说明** 
@@ -199,7 +199,7 @@ NearLink standard UUID not allowed.
 
 将接口参数中的标准服务UUID更换为自定义服务UUID，或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
-标准服务UUID由星闪联盟官方定义的基础标识（37BEA880-FC70-11EA-B720-000000000000）与16比特通用唯一标识组成。自定义服务UUID的前112比特需要避免和基础标识一致。
+标准服务UUID由星闪联盟官方定义的基础标识（Base UUID，37BEA880-FC70-11EA-B720-000000000000）的前112比特与16比特标准标识拼接而成。自定义服务UUID不能以基础标识的前112比特为前缀。
 
 ## 36100050 不支持合作设备集合管理功能
 

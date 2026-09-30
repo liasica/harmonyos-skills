@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-m
 title: 离线编辑(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 离线编辑(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:272c5c66b0d0a18163d1c0373a5840861f5ce364c4348c8acbb51da11e6fa74a
+scraped_at: 2026-10-01T07:34:46+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:6491a3c4a0ce4b5f806acd1f64a2b4e75ae77be0470d61d21f0a21510e9c58bb
 ---
 
 从API version 22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供音频离线编辑能力，允许在非实时预览场景下对音频数据进行处理，开发者可以组合多个音频节点实现复杂的音频处理流程。
@@ -49,7 +49,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
 
 **图1**：基础离线编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/WC2UD4T2SB2zZTMFFqLn6Q/zh-cn_image_0000002743219476.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/5dmUBln_TjipO3stmytX6A/zh-cn_image_0000002778932347.png)
 
 1. 创建引擎和管线。
 
@@ -122,7 +122,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
    void *userData = static_cast<void *>(audioInfo);
    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(nodeBuilder, InputNodeWriteDataCallBack, userData);
    // 创建输入节点。
-   OH_AudioSuiteEngine_CreateNode(audioSuiteEngine, nodeBuilder, &nodes.inputNode);
+   OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, nodeBuilder, &nodes.inputNode);
 
    // 重置构造器配置，创建效果节点。
    OH_AudioSuiteNodeBuilder_Reset(nodeBuilder);
@@ -154,7 +154,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
    audioFormatOutput.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
    OH_AudioSuiteNodeBuilder_SetFormat(nodeBuilder, audioFormatOutput);
    // 创建输出节点。
-   OH_AudioSuiteEngine_CreateNode(audioSuiteEngine, nodeBuilder, &nodes.outputNode);
+   OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, nodeBuilder, &nodes.outputNode);
 
    // 销毁节点构造器。
    OH_AudioSuiteNodeBuilder_Destroy(nodeBuilder);
@@ -219,7 +219,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
 
 **图2**：音源分离编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/0OVuxCL1Qmm6RCgN3OD-ZA/zh-cn_image_0000002772738729.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/vsQ4t590QuuOLSzCqVQ5nQ/zh-cn_image_0000002749333264.png)
 
 示例代码如下：
 
@@ -409,7 +409,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
 
 **图3**：级联编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/RbGlR4bOQNysu9MCdGfKRw/zh-cn_image_0000002772898613.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/IcF2DJugRNmbpMbrwfDQEQ/zh-cn_image_0000002749493148.png)
 
 示例代码如下：
 
@@ -499,7 +499,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
    // 重置构造器配置并设置为声场节点类型。
    OH_AudioSuiteNodeBuilder_Reset(nodeBuilder);
    OH_AudioSuiteNodeBuilder_SetNodeType(nodeBuilder, OH_AudioNode_Type::EFFECT_NODE_TYPE_SOUND_FIELD);
-   // 创建声场节点并设置声场模式为聆听。
+   // 创建声场节点并设置声场模式为前置。
    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, nodeBuilder, &nodes.fieldNode);
    OH_AudioSuiteEngine_SetSoundFieldType(nodes.fieldNode, SOUND_FIELD_FRONT_FACING);
 

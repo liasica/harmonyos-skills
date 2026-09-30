@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/io-intensive-
 title: I/O密集型任务开发指导 (TaskPool)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 耗时任务并发场景 > I/O密集型任务开发指导 (TaskPool)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:44:56+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:d4369c9930a0edb50582b50b835b16eba83f811f907c81d98b0b37525e2b6d2a
+scraped_at: 2026-10-01T07:33:56+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:049e4377b42fec8596f35447c06e55d497d85c1d57254f15f17f9282cd1dc781
 ---
 
 使用异步并发可以解决单次I/O任务阻塞的问题。对于I/O密集型任务，若线程中的其他任务仍可能被阻塞，建议采用多线程并发来处理。
@@ -51,7 +51,11 @@ I/O密集型任务的性能关键在于I/O操作的速度和效率，而非CPU�
        writePromises.push(writePromise);
      }
      try {
-       await Promise.all(writePromises);
+       const results: (boolean | void)[] = await Promise.all(writePromises);
+       // 检查是否有写入失败的结果
+       if (results.includes(false)) {
+         return false;
+       }
        return true;
      } catch (error) {
        return false;

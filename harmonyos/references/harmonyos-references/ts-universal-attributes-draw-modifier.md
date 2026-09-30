@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义绘制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义绘制
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:52+08:00
+scraped_at: 2026-10-01T07:36:53+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:951fdae517b85a9dd6e028d39bbdafa9b1a6fa47379953397ec3ce273d14c23d
+content_hash: sha256:a84b81fd8efa80665704312302cac1cabce82d26047ac92a8a10d70bfd38791d
 ---
 
 当组件本身的绘制内容不满足需求时，可使用自定义组件绘制功能，在原有组件基础上部分绘制，或者全部自行绘制，以达到预期效果。例如：独特的按钮形状、文字和图像混合的图标等。自定义组件绘制提供了自定义绘制修改器，来实现更自由的组件绘制。
@@ -55,7 +55,7 @@ DrawModifier可设置遮罩层（drawOverlay23+）、前景（drawForeground20+�
 
 自定义层级示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/mS5OGaWoSfuNc4QMtjuduA/zh-cn_image_0000002743220716.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/95zUUkFERWWkKJNnxhfi0g/zh-cn_image_0000002778933599.png)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -443,7 +443,7 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/CIM5Rz5GSwieBbF05JlfmA/zh-cn_image_0000002772739969.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/CrhqSdTXTFSm1Km7toiLkA/zh-cn_image_0000002749334516.gif)
 
 ### 示例2（通过DrawModifier对容器的前景进行自定义绘制）
 
@@ -508,4 +508,4 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/RIZpbCK4TuqeFO-mDTIWpQ/zh-cn_image_0000002772899853.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/MSSyj1vFQI6nN0uhdAZrOA/zh-cn_image_0000002749494402.png)

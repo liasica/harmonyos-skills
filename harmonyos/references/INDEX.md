@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16812 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16823 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1249 篇
 
@@ -1254,7 +1254,7 @@
 - [应用升级适配指导——向26.0.0升级](harmonyos-releases/upgrade-adaptation.md)
 - [版本号格式调整说明](harmonyos-releases/version-number-26.md)
 
-## 指南（`harmonyos-guides`）— 5721 篇
+## 指南（`harmonyos-guides`）— 5731 篇
 
 - [24h功耗器件分解统计事件](harmonyos-guides/24-hour-battery-usage-event.md)
 - [aa工具](harmonyos-guides/aa-tool.md)
@@ -5478,20 +5478,29 @@
 - [动画概述](harmonyos-guides/ndk-use-animation.md)
 - [使用Text组件](harmonyos-guides/ndk-use-text-component.md)
 - [使用瀑布流](harmonyos-guides/ndk-waterflow.md)
+- [获取星闪合作设备集合信息](harmonyos-guides/nearlink-cdsm-information-guide.md)
 - [获取星闪合作设备集合信息](harmonyos-guides/nearlink-cdsm-information.md)
+- [使用星闪传输数据](harmonyos-guides/nearlink-data-transfer-guide.md)
+- [发现星闪设备](harmonyos-guides/nearlink-device-discovery-guide.md)
+- [星闪常见问题](harmonyos-guides/nearlink-faq-guide.md)
 - [NearLink Kit常见问题](harmonyos-guides/nearlink-faq.md)
 - [查询星闪开关状态](harmonyos-guides/nearlink-getstate.md)
+- [星闪术语](harmonyos-guides/nearlink-glossary-guide.md)
 - [NearLink Kit术语](harmonyos-guides/nearlink-glossary.md)
+- [星闪简介](harmonyos-guides/nearlink-introduction-guide.md)
 - [NearLink Kit简介](harmonyos-guides/nearlink-introduction.md)
 - [查询是否支持星闪](harmonyos-guides/nearlink-issupported.md)
 - [NearLink Kit（星闪服务）](harmonyos-guides/nearlink-kit-guide.md)
+- [开发准备](harmonyos-guides/nearlink-preparations-guide.md)
 - [开发准备](harmonyos-guides/nearlink-preparations.md)
 - [发送星闪广播](harmonyos-guides/nearlink-send-advertising.md)
 - [SSAP客户端](harmonyos-guides/nearlink-ssap-client-connect.md)
 - [SSAP连接及数据传输](harmonyos-guides/nearlink-ssap-connect.md)
+- [管理SSAP连接及服务](harmonyos-guides/nearlink-ssap-connection-guide.md)
 - [SSAP服务端](harmonyos-guides/nearlink-ssap-server-connect.md)
 - [使用星闪传输数据](harmonyos-guides/nearlink-start-data-transfer.md)
 - [发起星闪扫描](harmonyos-guides/nearlink-start-scan.md)
+- [星闪](harmonyos-guides/nearlink.md)
 - [使用Neon指令扩展](harmonyos-guides/neon-guide.md)
 - [管理网络连接](harmonyos-guides/net-connection-manager.md)
 - [使用DNS解析域名](harmonyos-guides/net-dns.md)
@@ -5977,6 +5986,7 @@
 - [restool工具](harmonyos-guides/restool.md)
 - [受限开放能力](harmonyos-guides/restricted-open-capabilities.md)
 - [受限开放权限](harmonyos-guides/restricted-permissions.md)
+- [配置应用右键扩展菜单（PC/2in1）](harmonyos-guides/right-click-menu.md)
 - [Ringtone Kit简介](harmonyos-guides/ringtone-introduction.md)
 - [Ringtone Kit（铃声服务）](harmonyos-guides/ringtone-kit-guide.md)
 - [设置铃声](harmonyos-guides/ringtone-preparations.md)
@@ -6978,7 +6988,7 @@
 - [XML概述](harmonyos-guides/xml-overview.md)
 - [XML解析](harmonyos-guides/xml-parsing.md)
 
-## API 参考（`harmonyos-references`）— 4762 篇
+## API 参考（`harmonyos-references`）— 4763 篇
 
 - [ABR_CameraData](harmonyos-references/_a_b_r___camera_data.md)
 - [ABR_Vector3](harmonyos-references/_a_b_r___vector3.md)
@@ -7993,6 +8003,7 @@
 - [OH_VideoInfo](harmonyos-references/capi-avscreencapture-oh-videoinfo.md)
 - [AVScreenCapture](harmonyos-references/capi-avscreencapture.md)
 - [OH_AVSamplesBuffer](harmonyos-references/capi-avsinkbase-oh-avsamplesbuffer.md)
+- [OH_LowPowerAVSink_Capability](harmonyos-references/capi-avsinkbase-oh-lowpoweravsinkcapability.md)
 - [AVSinkBase](harmonyos-references/capi-avsinkbase.md)
 - [OH_AVSource](harmonyos-references/capi-avsource-oh-avsource.md)
 - [AVSource](harmonyos-references/capi-avsource.md)
@@ -10332,7 +10343,7 @@
 - [@ohos.nearlink.advertising (星闪广播能力)](harmonyos-references/js-apis-nearlink-advertising.md)
 - [@ohos.nearlink.cdsm (星闪合作设备集合管理能力)](harmonyos-references/js-apis-nearlink-cdsm.md)
 - [@ohos.nearlink.constant (星闪公共常量定义)](harmonyos-references/js-apis-nearlink-constant.md)
-- [@ohos.nearlink.dataTransfer (星闪数传能力)](harmonyos-references/js-apis-nearlink-data-transfer-api.md)
+- [@ohos.nearlink.dataTransfer (星闪数据传输能力)](harmonyos-references/js-apis-nearlink-data-transfer-api.md)
 - [@ohos.nearlink.manager (星闪基础管理能力)](harmonyos-references/js-apis-nearlink-manager.md)
 - [@ohos.nearlink.remoteDevice (星闪远端设备连接能力)](harmonyos-references/js-apis-nearlink-remote-device.md)
 - [@ohos.nearlink.scan (星闪扫描能力)](harmonyos-references/js-apis-nearlink-scan.md)
@@ -11160,8 +11171,8 @@
 - [请求体结构说明](harmonyos-references/push-scenariozed-api-request-struct.md)
 - [响应参数](harmonyos-references/push-scenariozed-api-response.md)
 - [serviceNotification（服务通知）](harmonyos-references/push-servicenotification.md)
-- [VoIPExtensionAbility（应用内通话消息扩展Ability）（废弃）](harmonyos-references/push-voip-ability.md)
-- [VoIPExtensionContext（应用内通话消息扩展Context）（废弃）](harmonyos-references/push-voip-context.md)
+- [VoIPExtensionAbility（应用内通话消息扩展Ability）（已废弃）](harmonyos-references/push-voip-ability.md)
+- [VoIPExtensionContext（应用内通话消息扩展Context）（已废弃）](harmonyos-references/push-voip-context.md)
 - [rcp.h](harmonyos-references/rcp_8h.md)
 - [rcp_quic.h](harmonyos-references/rcp_quic_h.md)
 - [ArkTS组件](harmonyos-references/reader-api-component.md)

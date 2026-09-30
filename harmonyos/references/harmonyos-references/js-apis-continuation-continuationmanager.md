@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.continuation.continuationManager (流转/协同管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.continuation.continuationManager (流转/协同管理)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:43+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:7018c34adfa8b2837e6219c0bac74697efd5e55ea1fa5fdc73a517b84514ff3b
+scraped_at: 2026-10-01T07:36:14+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:1de8d25d8933de171810b3f58f4ef3d792c53fa722193fa3f40757d88d12e59a
 ---
 
 continuationManager模块提供了流转/协同入口管理服务能力，包括连接/取消流转管理服务，注册/解注册设备连接变化监听，拉起设备选择模块，更新连接状态。
@@ -171,7 +171,7 @@ registerContinuation(callback: AsyncCallback<number>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600003 | The number of token registration times has reached the upper limit. |
@@ -227,7 +227,7 @@ registerContinuation(options: ContinuationExtraParams, callback: AsyncCallback<n
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600003 | The number of token registration times has reached the upper limit. |
@@ -292,7 +292,7 @@ registerContinuation(options?: ContinuationExtraParams): Promise<number>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600003 | The number of token registration times has reached the upper limit. |
@@ -479,7 +479,7 @@ on(type: 'deviceSelected', token: number, callback: Callback<Array<ContinuationR
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -537,7 +537,7 @@ on(type: 'deviceUnselected', token: number, callback: Callback<Array<Continuatio
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -595,7 +595,7 @@ off(type: 'deviceSelected', token: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -645,7 +645,7 @@ off(type: 'deviceUnselected', token: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -818,7 +818,7 @@ startContinuationDeviceManager(token: number, callback: AsyncCallback<void>): vo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -874,7 +874,7 @@ startContinuationDeviceManager(token: number, options: ContinuationExtraParams, 
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -940,7 +940,7 @@ startContinuationDeviceManager(token: number, options?: ContinuationExtraParams)
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -1084,7 +1084,7 @@ updateContinuationState(token: number, deviceId: string, status: DeviceConnectSt
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -1147,7 +1147,7 @@ updateContinuationState(token: number, deviceId: string, status: DeviceConnectSt
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -1281,7 +1281,7 @@ unregisterContinuation(token: number, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |
@@ -1341,7 +1341,7 @@ unregisterContinuation(token: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16600001 | The system ability works abnormally. |
 | 16600002 | The specified token or callback is not registered. |

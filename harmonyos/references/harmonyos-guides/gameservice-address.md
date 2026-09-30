@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-a
 title: 配置回调地址
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 附录 > 配置回调地址
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:45+08:00
+scraped_at: 2026-10-01T07:35:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f93262a90e0ec911a16bb801901a3364e0ccf5540e9867d6518405134516a7d9
+content_hash: sha256:0842e23973c95fce09b5d2c7d4f25a89d7b5e8916a824b91c35a41834c7bcebf
 ---
 
 若在关键事件发生时，华为游戏服务器向开发者服务器发送事件通知，请前往AppGallery Connect配置开发者服务器的回调地址。发送通知的接口原型等信息请参见[解绑账号通知](../harmonyos-references/gameservice-unbindplayer-notification.md)接口。涉及的关键事件及对应的处理逻辑如下：
@@ -19,4 +19,4 @@ content_hash: sha256:f93262a90e0ec911a16bb801901a3364e0ccf5540e9867d651840513451
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的游戏。
 2. 左侧菜单选择“构建 > 游戏服务”，在“账号方案接入回调地址配置”配置开发者服务器地址，回调地址要求支持HTTPS协议，且具有合法商用证书，用于华为游戏服务器在发生关键事件时向该地址发送事件通知。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/knCHoJU_TPmPSXu_gQwYHQ/zh-cn_image_0000002743219914.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/DfHcLmUxSKaQ0XmBPabw2A/zh-cn_image_0000002778932785.png)

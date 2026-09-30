@@ -3,15 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-t
 title: 典型场景的开发指导
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:05+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:31f4b946fdd9c315d1f18501a83a45ed3b8c9cdfbd8b758e2af363b34eef7701
+scraped_at: 2026-10-01T07:33:48+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:cbaeab2aab4706e0457464bc7551dee5b1bb3bc7848d4cad6ed17ae40497ecc9
 ---
 
 * **[创建应用静态快捷方式](typical-scenario-configuration.md)**
 * **[创建应用分身](app-clone.md)**
 * **[创建应用多实例](multiinstance.md)**
 * **[配置应用图标和名称](layered-image.md)**
+* **[配置应用右键扩展菜单（PC/2in1）](right-click-menu.md)**
 * **[HAR转HSP指导](har-to-hsp.md)**
 * **[HSP转HAR指导](hsp-to-har.md)**
 * **[HAP转HAR指导](hap-to-har.md)**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.errorManager (错误管理模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.errorManager (错误管理模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:37e9d15e9fafb7b2589d0df8548cf47329fc8d80410a1133b566c57a6893998b
+scraped_at: 2026-10-01T07:36:14+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:58c5180b271f2bc0bc6bbac02b00db2c66e378738a2f13d2713da10154e5db74
 ---
 
 ErrorManager模块提供对应用运行时各类异常的全局观测能力，包括注册和注销错误观测器，主要用于监测应用崩溃（JS\_CRASH）、应用冻屏（APP\_FREEZE）、未捕获的Promise异常、资源超基线等错误场景。通过设置监听器，开发者可以实时捕获异常信息、追踪问题根源、记录关键指标，从而提高应用的稳定性监控能力，加快故障排查和定位效率，提升应用质量和用户体验。
@@ -61,16 +61,17 @@ on(type: 'error', observer: ErrorObserver): number
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let observer: errorManager.ErrorObserver = {
   onUnhandledException(errorMsg) {
-    console.info('onUnhandledException, errorMsg: ', errorMsg);
+    hilog.info(0x0000, 'testTag', `onUnhandledException, errorMsg: ${errorMsg}`);
   },
   onException(errorObj) {
-    console.info('onException, name: ', errorObj.name);
-    console.info('onException, message: ', errorObj.message);
+    hilog.info(0x0000, 'testTag', `onException, name: ${errorObj.name}`);
+    hilog.info(0x0000, 'testTag', `onException, message: ${errorObj.message}`);
     if (typeof(errorObj.stack) === 'string') {
-      console.info('onException, stack: ', errorObj.stack);
+      hilog.info(0x0000, 'testTag', `onException, stack: ${errorObj.stack}`);
     }
   }
 };
@@ -81,7 +82,7 @@ try {
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
   let message = (paramError as BusinessError).message;
-  console.error(`error: ${code}, ${message}`);
+  hilog.error(0x0000, 'testTag', `error: ${code}, ${message}`);
 }
 ```
 
@@ -120,13 +121,14 @@ on(type: 'globalErrorOccurred', observer: GlobalObserver): void
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const errorFunc = (observer: errorManager.GlobalError) => {
-  console.info('result name :' + observer.name);
-  console.info('result message :' + observer.message);
-  console.info('result stack :' + observer.stack);
-  console.info('result instanceName :' + observer.instanceName);
-  console.info('result instanceType :' + observer.instanceType);
+  hilog.info(0x0000, 'testTag', `result name :${observer.name}`);
+  hilog.info(0x0000, 'testTag', `result message :${observer.message}`);
+  hilog.info(0x0000, 'testTag', `result stack :${observer.stack}`);
+  hilog.info(0x0000, 'testTag', `result instanceName :${observer.instanceName}`);
+  hilog.info(0x0000, 'testTag', `result instanceType :${observer.instanceType}`);
 };
 
 try {
@@ -134,7 +136,7 @@ try {
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
   let message = (paramError as BusinessError).message;
-  console.error(`error: ${code}, ${message}`);
+  hilog.error(0x0000, 'testTag', `error: ${code}, ${message}`);
 }
 ```
 
@@ -176,13 +178,14 @@ off(type: 'globalErrorOccurred', observer?: GlobalObserver): void
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const errorFunc = (observer: errorManager.GlobalError) => {
-  console.info('result name :' + observer.name);
-  console.info('result message :' + observer.message);
-  console.info('result stack :' + observer.stack);
-  console.info('result instanceName :' + observer.instanceName);
-  console.info('result instanceType :' + observer.instanceType);
+  hilog.info(0x0000, 'testTag', `result name :${observer.name}`);
+  hilog.info(0x0000, 'testTag', `result message :${observer.message}`);
+  hilog.info(0x0000, 'testTag', `result stack :${observer.stack}`);
+  hilog.info(0x0000, 'testTag', `result instanceName :${observer.instanceName}`);
+  hilog.info(0x0000, 'testTag', `result instanceType :${observer.instanceType}`);
 }
 
 try {
@@ -190,7 +193,7 @@ try {
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
   let message = (paramError as BusinessError).message;
-  console.error(`error: ${code}, ${message}`);
+  hilog.error(0x0000, 'testTag', `error: ${code}, ${message}`);
 }
 ```
 
@@ -230,12 +233,13 @@ off(type: 'error', observerId: number, callback: AsyncCallback<void>): void
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let observerId = 100;
 
 const unregisterErrorObserverCallback = (err: BusinessError) => {
   if (err) {
-    console.error('------------ unregisterErrorObserverCallback ------------', err);
+    hilog.error(0x0000, 'testTag', `------------ unregisterErrorObserverCallback ------------ ${err}`);
   }
 };
 
@@ -244,7 +248,7 @@ try {
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
   let message = (paramError as BusinessError).message;
-  console.error(`error: ${code}, ${message}`);
+  hilog.error(0x0000, 'testTag', `error: ${code}, ${message}`);
 }
 ```
 
@@ -289,21 +293,22 @@ off(type: 'error', observerId: number): Promise<void>
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let observerId = 100;
 
 try {
   errorManager.off('error', observerId)
     .then((data) => {
-      console.info('----------- unregisterErrorObserver success ----------', data);
+      hilog.info(0x0000, 'testTag', `----------- unregisterErrorObserver success ---------- ${data}`);
     })
     .catch((err: BusinessError) => {
-      console.error(`Failed to unregister error observer. Code: ${err.code}, message: ${err.message}`);
+      hilog.error(0x0000, 'testTag', `Failed to unregister error observer. Code: ${err.code}, message: ${err.message}`);
     });
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
   let message = (paramError as BusinessError).message;
-  console.error(`error: ${code}, ${message}`);
+  hilog.error(0x0000, 'testTag', `error: ${code}, ${message}`);
 }
 ```
 
@@ -344,10 +349,11 @@ on(type: 'loopObserver', timeout: number, observer: LoopObserver): void
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let observer: errorManager.LoopObserver = {
   onLoopTimeOut(timeout: number) {
-    console.info('Duration timeout: ' + timeout);
+    hilog.info(0x0000, 'testTag', `Duration timeout: ${timeout}`);
   }
 };
 
@@ -356,7 +362,7 @@ try {
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
   let message = (paramError as BusinessError).message;
-  console.error(`error: ${code}, ${message}`);
+  hilog.error(0x0000, 'testTag', `error: ${code}, ${message}`);
 }
 ```
 
@@ -394,13 +400,14 @@ on(type: 'globalUnhandledRejectionDetected', observer: GlobalObserver): void
 
 ```ts
 import { errorManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const promiseFunc = (observer: errorManager.GlobalError) => {
-  console.info('result name :' + observer.name);
-  console.info('result message :' + observer.message);
-  console.info('result stack :' + observer.stack);
-  console.info('result instanceName :' + observer.instanceName);
-  console.info('result instanceType :' + observer.instanceType);
+  hilog.info(0x0000, 'testTag', `result name :${observer.name}`);
+  hilog.info(0x0000, 'testTag', `result message :${observer.message}`);
+  hilog.info(0x0000, 'testTag', `result stack :${observer.stack}`);
+  hilog.info(0x0000, 'testTag', `result instanceName :${observer.instanceName}`);
+  hilog.info(0x0000, 'testTag', `result instanceType :${observer.instanceType}`);
 };
 
 errorManager.on('globalUnhandledRejectionDetected', promiseFunc);
@@ -447,15 +454,16 @@ on(type: 'unhandledRejection', observer: UnhandledRejectionObserver): void
 
 ```ts
 import { errorManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let observer: errorManager.UnhandledRejectionObserver = (reason: Error, promise: Promise<void>) => {
   if (promise === promise1) {
-    console.info('promise1 is rejected');
+    hilog.info(0x0000, 'testTag', `promise1 is rejected`);
   }
-  console.info('reason.name: ', reason.name);
-  console.info('reason.message: ', reason.message);
+  hilog.info(0x0000, 'testTag', `reason.name: ${reason.name}`);
+  hilog.info(0x0000, 'testTag', `reason.message: ${reason.message}`);
   if (reason.stack) {
-    console.info('reason.stack: ', reason.stack);
+    hilog.info(0x0000, 'testTag', `reason.stack: ${reason.stack}`);
   }
 };
 
@@ -506,16 +514,17 @@ on(type: 'freeze', observer: FreezeObserver): void
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const freezeCallback = () => {
-  console.info('freezecallback');
+  hilog.info(0x0000, 'testTag', 'freezecallback');
 };
 try {
   errorManager.on('freeze', freezeCallback);
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
   let message = (paramError as BusinessError).message;
-  console.error(`error: ${code}, ${message}`);
+  hilog.error(0x0000, 'testTag', `error: ${code}, ${message}`);
 }
 ```
 
@@ -553,13 +562,14 @@ off(type: 'loopObserver', observer?: LoopObserver): void
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 try {
   errorManager.off('loopObserver');
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
   let message = (paramError as BusinessError).message;
-  console.error(`error: ${code}, ${message}`);
+  hilog.error(0x0000, 'testTag', `error: ${code}, ${message}`);
 }
 ```
 
@@ -600,13 +610,14 @@ off(type: 'globalUnhandledRejectionDetected', observer?: GlobalObserver): void
 
 ```ts
 import { errorManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const promiseFunc = (observer: errorManager.GlobalError) => {
-  console.info('result name :' + observer.name);
-  console.info('result message :' + observer.message);
-  console.info('result stack :' + observer.stack);
-  console.info('result instanceName :' + observer.instanceName);
-  console.info('result instanceType :' + observer.instanceType);
+  hilog.info(0x0000, 'testTag', `result name :${observer.name}`);
+  hilog.info(0x0000, 'testTag', `result message :${observer.message}`);
+  hilog.info(0x0000, 'testTag', `result stack :${observer.stack}`);
+  hilog.info(0x0000, 'testTag', `result instanceName :${observer.instanceName}`);
+  hilog.info(0x0000, 'testTag', `result instanceType :${observer.instanceType}`);
 };
 
 errorManager.on('globalUnhandledRejectionDetected', promiseFunc);
@@ -656,15 +667,16 @@ off(type: 'unhandledRejection', observer?: UnhandledRejectionObserver): void
 
 ```ts
 import { errorManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let observer: errorManager.UnhandledRejectionObserver = (reason: Error, promise: Promise<void>) => {
   if (promise === promise1) {
-    console.info('promise1 is rejected');
+    hilog.info(0x0000, 'testTag', `promise1 is rejected`);
   }
-  console.info('reason.name: ', reason.name);
-  console.info('reason.message: ', reason.message);
+  hilog.info(0x0000, 'testTag', `reason.name: ${reason.name}`);
+  hilog.info(0x0000, 'testTag', `reason.message: ${reason.message}`);
   if (reason.stack) {
-    console.info('reason.stack: ', reason.stack);
+    hilog.info(0x0000, 'testTag', `reason.stack: ${reason.stack}`);
   }
 };
 
@@ -681,15 +693,16 @@ errorManager.off('unhandledRejection');
 
 ```ts
 import { errorManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let observer: errorManager.UnhandledRejectionObserver = (reason: Error, promise: Promise<void>) => {
   if (promise === promise1) {
-    console.info('promise1 is rejected');
+    hilog.info(0x0000, 'testTag', `promise1 is rejected`);
   }
-  console.info('reason.name: ', reason.name);
-  console.info('reason.message: ', reason.message);
+  hilog.info(0x0000, 'testTag', `reason.name: ${reason.name}`);
+  hilog.info(0x0000, 'testTag', `reason.message: ${reason.message}`);
   if (reason.stack) {
-    console.info('reason.stack: ', reason.stack);
+    hilog.info(0x0000, 'testTag', `reason.stack: ${reason.stack}`);
   }
 };
 
@@ -739,9 +752,10 @@ off(type: 'freeze', observer?: FreezeObserver): void
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const freezeCallback = () => {
-  console.info('freezecallback');
+  hilog.info(0x0000, 'testTag', 'freezecallback');
 };
 try {
   errorManager.on('freeze', freezeCallback);
@@ -749,7 +763,7 @@ try {
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
   let message = (paramError as BusinessError).message;
-  console.error(`error: ${code}, ${message}`);
+  hilog.error(0x0000, 'testTag', `error: ${code}, ${message}`);
 }
 ```
 
@@ -794,11 +808,12 @@ setDefaultErrorHandler(defaultHandler?: ErrorHandler): ErrorHandler
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { process } from '@kit.ArkTS';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let oldHandler: errorManager.ErrorHandler;
 const errorHandler: errorManager.ErrorHandler = (reason: Error) => {
   // 自定义的errorHandler实现逻辑
-  console.info('[Handler] Uncaught exception handler invoked.');
+  hilog.info(0x0000, 'testTag', '[Handler] Uncaught exception handler invoked.');
   if (oldHandler) {
       oldHandler(reason);
   } else {
@@ -853,11 +868,12 @@ setDefaultResourceUsageObserver(defaultObserver?: ResourceUsageObserver): Resour
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { process } from '@kit.ArkTS';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let oldObserver: errorManager.ResourceUsageObserver;
 const resourceUsageObserver: errorManager.ResourceUsageObserver = (resourceType, resourceSize, detailInfo) => {
   // 自定义的resourceUsageObserver实现逻辑
-  console.info('[Observer] Resource usage observer.');
+  hilog.info(0x0000, 'testTag', '[Observer] Resource usage observer.');
   if (oldObserver) {
     oldObserver(resourceType, resourceSize, detailInfo);
   } else {
@@ -919,16 +935,17 @@ setDefaultFreezeObserver(defaultObserver?: FreezeObserver) : FreezeObserver
 ```ts
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 // 用于保存上一次注册的处理器。如果是第一次注册，无前置处理器。
 let oldHandler: errorManager.FreezeObserver = () => {};
 const freezeHandler: errorManager.FreezeObserver = () => {
   // 自定义的FreezeHandler实现逻辑
-  console.info('[freezeHandler] freeze handler invoked.');
+  hilog.info(0x0000, 'testTag', '[freezeHandler] freeze handler invoked.');
   if (oldHandler) {
     oldHandler();
   } else {
-    console.info('[freezeHandler] freeze handler end.');
+    hilog.info(0x0000, 'testTag', '[freezeHandler] freeze handler end.');
   }
 };
 
@@ -938,9 +955,9 @@ export function setFreezeHandler() {
   } catch (paramError) {
     let code = (paramError as BusinessError).code;
     let message = (paramError as BusinessError).message;
-    console.error(`Failed to set freeze handler. Code: ${code}, message: ${message}`);
+    hilog.error(0x0000, 'testTag', `Failed to set freeze handler. Code: ${code}, message: ${message}`);
   }
-  console.info('Registered freeze Handler.');
+  hilog.info(0x0000, 'testTag', 'Registered freeze Handler.');
 }
 ```
 

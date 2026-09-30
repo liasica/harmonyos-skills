@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 证书错误码
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 错误码 > 证书错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5cdca696c9a6b285e406277d204caf0fa769444e6ff74888579ecc3d882bf960
+scraped_at: 2026-10-01T07:38:15+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:d737bb54aa3b1ffb303f2da2ff8307ed619517e628ae5f704e1544369faa7ff9
 ---
 
 **说明** 
@@ -43,11 +43,15 @@ Runtime error.
 
 **可能原因**
 
-系统出现的不可预期的错误。
+1. 系统内部发生内存拷贝失败。
+2. 系统内部出现空指针，例如证书链校验器对象为空。
+3. 获取原生对象或转换参数失败，例如调用NAPI或ANI接口失败。
 
 **处理步骤**
 
-检查当前系统功能是否正常。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 系统异常，请稍后重试或重启设备。
+3. 若以上检查均无法定位问题，请收集日志信息并联系华为技术支持。
 
 ## 19020003 参数检查失败
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: svg动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > CSS动画 > svg动画
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:36+08:00
+scraped_at: 2026-10-01T07:34:10+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8e8dd1ffbd407286aaa281ddc4fafbb15fbb08e6a55b27423b9a749ba3316c53
+content_hash: sha256:f2ebbfeb30018ad314751d0b3e2d7c37e17bb665bfacc035e7afc49f244029f9
 ---
 
 为svg组件添加动画效果。
@@ -40,7 +40,7 @@ content_hash: sha256:8e8dd1ffbd407286aaa281ddc4fafbb15fbb08e6a55b27423b9a749ba33
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/geUz43x0QfyLaaESvrNtnA/zh-cn_image_0000002772738227.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/pE_LtEuATEmC6UKNdwBo7g/zh-cn_image_0000002749332762.gif)
 
 **说明** 
 
@@ -64,7 +64,7 @@ content_hash: sha256:8e8dd1ffbd407286aaa281ddc4fafbb15fbb08e6a55b27423b9a749ba33
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ip0oteMsQ3WuJg9YYvAKxg/zh-cn_image_0000002772898111.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/z0BZpWdHQp-BN7TFW8JjBw/zh-cn_image_0000002749492646.gif)
 
 ## animateTransform动画
 
@@ -106,4 +106,4 @@ content_hash: sha256:8e8dd1ffbd407286aaa281ddc4fafbb15fbb08e6a55b27423b9a749ba33
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/cE3PDQ5ST5SZplIM_L-ecA/zh-cn_image_0000002743378862.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/j-HESFKuTQKiyqP-ewZu2Q/zh-cn_image_0000002779091705.gif)

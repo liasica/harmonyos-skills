@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audioca
 title: 使用AudioCapturer开发音频录制功能(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 使用AudioCapturer开发音频录制功能(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:03bfa2d313250ed21ac1ec1e5c60c787d121215b76bef73e2c72bca90f4f5adc
+scraped_at: 2026-10-01T07:34:46+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:e6dafaa5aaf4d93cbca3b51563bb05f24288a5573b4ca947bb23438a292e1319
 ---
 
 AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音频数据，适合有音频开发经验的开发者实现更灵活的录制功能。
@@ -22,7 +22,7 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/scRaVB6QRlWyHj5MF12aFQ/zh-cn_image_0000002743379356.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/iFgXyj0JRISt83k7K1aHQw/zh-cn_image_0000002779092199.png)
 
 ### 开发步骤及注意事项
 
@@ -71,11 +71,12 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
 
    **注意** 
 
-   * **线程管理**：不建议使用多线程来处理数据读取。若需使用多线程读取数据，需要做好线程管理。
-   * **线程耗时**：readData 方法所在的线程中，不建议执行耗时任务。否则可能会导致数据处理线程响应回调延迟，进而引发录音数据缺失、卡顿、杂音等音频效果问题。
-   * **注册回调**：开发者应避免在主线程中注册回调，以免被其他业务阻塞导致响应回调不及时造成卡顿。建议使用独立的异步线程池处理回调。
+   * **主线程阻塞风险**：录音流会持续产生音频数据，对回调响应的及时性要求较高。ArkTS应用的主线程通常负责UI刷新、用户交互和部分业务回调，如果在主线程中执行同步文件读写、复杂计算、频繁日志打印等耗时任务，会导致主线程无法及时处理录音数据回调。对于AudioCapturer，readData回调执行不及时会影响音频缓冲区流转，可能造成录音数据缺失、卡顿或杂音。因此，应该避免在主线程中注册回调，以免被其他业务阻塞导致响应回调不及时造成卡顿。录音数据回调中只做必要的轻量处理，例如复制数据、更新少量状态，然后尽快返回。文件保存、编码、网络传输等耗时处理应按业务需要投递到异步任务或Worker中执行。
    * **高负载阻塞风险**：在高负载场景下，承载回调的ArkTS执行上下文可能被其他业务的任务持续占用，导致回调调度延迟。此类场景会产生和主线程阻塞类似的录音数据缺失、卡顿或杂音问题。处理高负载时，应降低同一执行上下文中非必要任务的执行频率，避免多个定时任务同时运行，必要时暂停其他非关键业务。
    * **录音过载确认**：录音过程中，系统音频模块将音频输入数据写入与应用侧音频客户端共享的录音缓冲区，应用侧音频客户端从该缓冲区读取数据。应用侧读取数据的速率低于系统音频模块写入速率时，未处理的数据会持续积压。当共享缓冲区剩余可写空间不足以容纳一个完整音频帧时，系统音频模块判定发生过载。此时输入数据不会写入共享缓冲区，应用侧无法读取数据。过载计数用于记录检测到的过载情况，ArkTS应用可调用[getOverflowCount()](../harmonyos-references/arkts-apis-audio-audiocapturer.md#getoverflowcount12)或[getOverflowCountSync()](../harmonyos-references/arkts-apis-audio-audiocapturer.md#getoverflowcountsync12)查询过载音频帧数量。从API版本26.0.0及以上，使用[printCapturerInfo](../harmonyos-references/arkts-apis-audio-audiodebuggingmanager.md#printcapturerinfo)输出录音快照时，也可查看其中的overflowCount，用于录音结束后的问题定位。高负载或任务队列积压期间，如果过载计数持续增加，应优先降低任务竞争、限制队列长度或主动停止录音流。
+   * **线程管理**：不建议直接使用多线程处理数据读取。如果需要将数据保存、编码、网络传输等耗时任务投递到异步任务或Worker中处理，要求做好线程管理。
+   * **数据缓存**：readData回调返回的ArrayBuffer对应底层音频缓冲区，回调返回后该缓冲区可能被系统复用。如果需要在回调结束后继续处理数据，应先复制ArrayBuffer，再投递到异步任务中处理。
+   * **接口调用**：readData回调仅用于获取音频数据，不建议在回调中调用AudioCapturer的start、stop、release、off等接口。注册readData回调后，同一个AudioCapturer实例不建议再调用已废弃的read接口读取数据。
    * **业务静音处理**：当前可通过以下方式实现录音静音。
      1. 静音期间仍需保持录音流运行：应用在readData回调中复制采集数据，并将副本中的全部采样数据设置为静音值后保存或发送。有符号PCM格式的静音值为0；SAMPLE\_FORMAT\_U8格式的静音值为0x80。
      2. 业务允许静音期间不再采集数据：由应用主动停止录音流，后续需要录音时再重新启动，以停止采集替代静音处理。
@@ -92,26 +93,25 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
    }
 
    // ...
-      let writtenBytes: number = 0;
-      pendingRecordingWrite = Promise.resolve();
-      let path = context.cacheDir;
-      let filePath = path + '/S16LE_2_48000.pcm';
-      recordingFile = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-      onReadData = (buffer: ArrayBuffer) => {
-        // ...
-        let recordingBuffer = buffer.slice(0);
-        let writeOffset = writtenBytes;
-        writtenBytes += recordingBuffer.byteLength;
-        let options: Options = {
-          offset: writeOffset,
-          length: recordingBuffer.byteLength
-        }
-        pendingRecordingWrite = pendingRecordingWrite.then(async () => {
-          await fs.write(recordingFile.fd, recordingBuffer, options);
-        }).catch((error: BusinessError) => {
-          console.error(`${TAG}: Write recording data failed, code: ${error.code}, message: ${error.message}`);
-        });
-      };
+     let writtenBytes: number = 0;
+     pendingRecordingWrite = Promise.resolve();
+     let path = context.cacheDir;
+     let filePath = path + '/S16LE_2_48000.pcm';
+     recordingFile = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+     onReadData = (buffer: ArrayBuffer) => {
+       let recordingBuffer = buffer.slice(0);
+       let writeOffset = writtenBytes;
+       writtenBytes += recordingBuffer.byteLength;
+       let options: Options = {
+         offset: writeOffset,
+         length: recordingBuffer.byteLength
+       }
+       pendingRecordingWrite = pendingRecordingWrite.then(async () => {
+         await fs.write(recordingFile.fd, recordingBuffer, options);
+       }).catch((error: BusinessError) => {
+         console.error(`${TAG}: Write recording data failed, code: ${error.code}, message: ${error.message}`);
+       });
+     };
      // ...
          audioCapturer.on('readData', onReadData);
    ```
@@ -143,27 +143,27 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
          let error = err as BusinessError;
          // ...
          console.error(`${TAG}: Capturer stop failed, code: ${error.code}, message: ${error.message}`);
-      }
+       }
    ```
 5. 调用[release](../harmonyos-references/arkts-apis-audio-audiocapturer.md#release8)方法销毁实例，释放资源。
 
-   ```typescript
-   import { BusinessError } from '@kit.BasicServicesKit';
-   // ...
-       try {
-        await audioCapturer.release();
-        capturerMuteHintEnabledByApp = false;
-        console.info(`${TAG}: Capturer release success.`);
-        // ...
-       } catch (err) {
-        let error = err as BusinessError;
-        // ...
-        console.error(`${TAG}: Capturer release failed, code: ${error.code}, message: ${error.message}`);
-      } finally {
-        await pendingRecordingWrite;
-        fs.closeSync(recordingFile.fd);
-      }
-   ```
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+// ...
+    try {
+      await audioCapturer.release();
+      capturerMuteHintEnabledByApp = false;
+      console.info(`${TAG}: Capturer release success.`);
+      // ...
+    } catch (err) {
+      let error = err as BusinessError;
+      // ...
+      console.error(`${TAG}: Capturer release failed, code: ${error.code}, message: ${error.message}`);
+    } finally {
+      await pendingRecordingWrite;
+      fs.closeSync(recordingFile.fd);
+    }
+```
 
 ### 完整示例
 
@@ -257,7 +257,7 @@ async function initRender(context: common.UIAbilityContext) {
       if (bufferLength < buffer.byteLength) {
         let view = new DataView(buffer);
         for (let i = bufferLength; i < buffer.byteLength; i++) {
-          // 空白区域填充静音数据。当使用音频采样格式为SAMPLE_FORMAT_U8时0x7F为静音数据，使用其他采样格式时0为静音数据。
+          // 空白区域填充静音数据。当使用音频采样格式为SAMPLE_FORMAT_U8时0x80为静音数据，使用其他采样格式时0为静音数据。本示例采样格式为SAMPLE_FORMAT_S16LE，因此静音数据填充0。
           view.setUint8(i, 0);
         }
       }
@@ -278,7 +278,7 @@ async function initRender(context: common.UIAbilityContext) {
         audioRenderer.on('writeData', writeDataCallback);
       }
     } else {
-      console.info(`${TAG}: creating AudioRenderer failed, error: ${err.message}`);
+      console.error(`${TAG}: creating AudioRenderer failed, error: ${err.message}`);
     }
   });
 }
@@ -288,7 +288,7 @@ async function startRender(updateCallback?: (msg: string, isError: boolean) => v
   if (audioRenderer !== undefined) {
     let stateGroup = [audio.AudioState.STATE_PREPARED, audio.AudioState.STATE_PAUSED, audio.AudioState.STATE_STOPPED];
     if (stateGroup.indexOf(audioRenderer.state.valueOf()) === -1) { // 当且仅当状态为prepared、paused和stopped之一时才能启动渲染。
-      console.error(TAG + 'start failed');
+      console.info(TAG + 'start failed');
       return;
     }
     // 启动渲染。
@@ -335,8 +335,7 @@ async function releaseRender(updateCallback?: (msg: string, isError: boolean) =>
       if (err) {
         console.error('Renderer release failed.');
       } else {
-        await pendingRecordingWrite;
-        fs.closeSync(recordingFile.fd);
+        fs.closeSync(file.fd);
         console.info('Renderer release success.');
       }
     });
@@ -369,7 +368,7 @@ async function start(updateCallback?: (msg: string, isError: boolean) => void): 
       , audio.AudioState.STATE_PAUSED, audio.AudioState.STATE_STOPPED];
     // 当且仅当状态为STATE_PREPARED、STATE_PAUSED和STATE_STOPPED之一时才能启动采集。
     if (stateGroup.indexOf(audioCapturer.state.valueOf()) === -1) {
-      console.error(`${TAG}: start failed`);
+      console.info(`${TAG}: start failed`);
       // ...
       return;
     }
@@ -471,10 +470,10 @@ async function release(updateCallback?: (msg: string, isError: boolean) => void)
       let error = err as BusinessError;
       // ...
       console.error(`${TAG}: Capturer release failed, code: ${error.code}, message: ${error.message}`);
-      } finally {
-        await pendingRecordingWrite;
-        fs.closeSync(recordingFile.fd);
-      }
+    } finally {
+      await pendingRecordingWrite;
+      fs.closeSync(recordingFile.fd);
+    }
   }
 }
 
@@ -489,7 +488,7 @@ async function release(updateCallback?: (msg: string, isError: boolean) => void)
 
 ### 设置录音流静音提示
 
-从API version 24开始，当应用已在业务侧将某条录音流静音时，可以调用[setMuteHint](../harmonyos-references/arkts-apis-audio-audiocapturer.md#setmutehint24)接口将该状态上报给系统音频模块，系统音频模块会基于上报的状态调整策略以降低功耗。注意，此功能当前仅在部分PC/2in1设备上生效。该接口不会实际触发静音，也不会对录音数据做静音处理。它只是告知系统音频模块，应用已将当前录音流进行过静音。应用仍需自行处理录音数据，例如不发送采集数据或发送静音数据。
+从API版本24开始，当应用已在业务侧将某条录音流静音时，可以调用[setMuteHint](../harmonyos-references/arkts-apis-audio-audiocapturer.md#setmutehint24)接口将该状态上报给系统音频模块，并记录最近一次设置成功的值，系统音频模块会基于上报的状态调整策略以降低功耗。注意，此功能当前仅在部分PC/2in1设备上生效。该接口只是告知系统音频模块，应用已将当前录音流进行过静音，不会实际触发静音，也不会对录音数据做静音处理。应用仍需自行处理录音数据，例如不发送采集数据或发送静音数据。
 
 该接口仅允许在AudioCapturer处于running状态时调用，否则会返回错误码6800103。如果同一录音流同时设置了流级静音提示和会话级静音提示[setCapturerMuteHint](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#setcapturermutehint24)，流级静音提示优先级更高，以流级设置值为准。当前未提供系统查询接口，如需在界面展示静音提示状态，应用需要自行维护最近一次设置成功的状态。以下示例中，muteHint为true表示上报静音提示，false表示解除静音提示；capturerMuteHintEnabledByApp为应用本地维护的状态，记录当前设置的muteHint的值。
 

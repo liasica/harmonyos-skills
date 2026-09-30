@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-prepar
 title: 申请相机开发的权限
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 申请相机开发的权限
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:8dfe164238480400191b9e472fdfbb5264249fc5ce90e245a6af020f5ba546ed
+scraped_at: 2026-10-01T07:34:49+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:c992d65dca159e8bbcbd252a959c175c282f32a58304d4157ef963364b51729f
 ---
 
 相机应用开发的主要流程包含开发准备、设备输入、会话管理、预览、拍照和录像等。
 
-在开发相机应用时，需要先申请相机相关权限，确保应用拥有访问相机硬件及其他功能的权限，需要的权限如下表。在申请权限前，请保证符合[权限使用的基本原则](app-permission-mgmt-overview.md#权限使用的基本原则)。
+在开发相机应用时，需要先申请相机相关权限，确保应用拥有访问相机硬件及其他功能的权限，需要的权限如下。在申请权限前，请保证符合[权限使用的基本原则](app-permission-mgmt-overview.md#权限使用的基本原则)。
 
 * 使用相机拍摄前，需要申请**ohos.permission.CAMERA**相机权限。
 * 当需要使用麦克风同时录制音频时，需要申请**ohos.permission.MICROPHONE**麦克风权限。

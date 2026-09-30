@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.advertising (星闪广播能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.advertising (星闪广播能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:703a363481160cf682d9cc753e9d525f98d90f5576a727cb354dcb05888a9f1a
+scraped_at: 2026-10-01T07:38:23+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:9c85aed8b05fb3e341f3b185bd9270deb56156f0600147be2ddb39d8c9486058
 ---
 
 本模块提供了发送星闪广播的相关功能，包括启动广播、停止广播、订阅广播状态等。
@@ -200,21 +200,21 @@ serviceValueBuffer[3] = 8;
 console.info('manufactureValueBuffer = ' + JSON.stringify(manufactureValueBuffer));
 console.info('serviceValueBuffer = ' + JSON.stringify(serviceValueBuffer));
 let setting: advertising.AdvertisingSettings = {
-  interval:5000,
-  power:advertising.TxPowerMode.ADV_TX_POWER_LOW
+  interval: 5000,
+  power: advertising.TxPowerMode.ADV_TX_POWER_LOW
 };
 let manufactureDataUnit: advertising.ManufacturerData = {
-  manufacturerId:4567,
-  manufacturerData:manufactureValueBuffer.buffer
+  manufacturerId: 4567,
+  manufacturerData: manufactureValueBuffer.buffer
 };
 let serviceDataUnit: advertising.ServiceData = {
-  serviceUuid:'FFFFFFFF-1234-5678-ABCD-000000001234',
-  serviceData:serviceValueBuffer.buffer
+  serviceUuid: 'FFFFFFFF-1234-5678-ABCD-000000001234',
+  serviceData: serviceValueBuffer.buffer
 };
 let advData: advertising.AdvertisingData = {
-  serviceUuids:['FFFFFFFF-1234-5678-ABCD-000000001234'],
-  manufacturerData:[manufactureDataUnit],
-  serviceData:[serviceDataUnit]
+  serviceUuids: ['FFFFFFFF-1234-5678-ABCD-000000001234'],
+  manufacturerData: [manufactureDataUnit],
+  serviceData: [serviceDataUnit]
 };
 let advertisingParams: advertising.AdvertisingParams = {
   advertisingSettings: setting,

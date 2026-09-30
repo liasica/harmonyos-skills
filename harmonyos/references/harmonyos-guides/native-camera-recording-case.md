@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 录像实践(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 录像实践(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:25+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:8fb366cfa74a52fd278dbd3f3e4a2034701111ee55baac6a87c9f412ad1824e7
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:f96d8bc628c98b22883a56129007bf379f9f98241118f0a14cf42cc454fa492f
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -16,7 +16,7 @@ content_hash: sha256:8fb366cfa74a52fd278dbd3f3e4a2034701111ee55baac6a87c9f412ad1
 
 在获取到相机支持的输出流能力后，开始创建录像流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/HMcugTqAR7iiK3pjZ6YHqQ/zh-cn_image_0000002743219554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/y9N3_1CuQrepKNiwkY99YQ/zh-cn_image_0000002778932425.png)
 
 ## 完整示例
 
@@ -60,7 +60,7 @@ content_hash: sha256:8fb366cfa74a52fd278dbd3f3e4a2034701111ee55baac6a87c9f412ad1
 
    void OnCameraInputError(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
    {
-       OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
+       OH_LOG_ERROR(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
    }
 
    CameraInput_Callbacks* GetCameraInputListener(void)
@@ -78,7 +78,7 @@ content_hash: sha256:8fb366cfa74a52fd278dbd3f3e4a2034701111ee55baac6a87c9f412ad1
 
    void CaptureSessionOnError(Camera_CaptureSession* session, Camera_ErrorCode errorCode)
    {
-       OH_LOG_INFO(LOG_APP, "CaptureSessionOnError = %{public}d", errorCode);
+       OH_LOG_ERROR(LOG_APP, "CaptureSessionOnError = %{public}d", errorCode);
    }
 
    CaptureSession_Callbacks* GetCaptureSessionRegister(void)
@@ -102,7 +102,7 @@ content_hash: sha256:8fb366cfa74a52fd278dbd3f3e4a2034701111ee55baac6a87c9f412ad1
 
    void VideoOutputOnError(Camera_VideoOutput* videoOutput, Camera_ErrorCode errorCode)
    {
-       OH_LOG_INFO(LOG_APP, "VideoOutput errorCode = %{public}d", errorCode);
+       OH_LOG_ERROR(LOG_APP, "VideoOutput errorCode = %{public}d", errorCode);
    }
 
    VideoOutput_Callbacks* GetVideoOutputListener(void)
@@ -166,10 +166,10 @@ content_hash: sha256:8fb366cfa74a52fd278dbd3f3e4a2034701111ee55baac6a87c9f412ad1
        }
 
        for (int index = 0; index < size; index++) {
-           OH_LOG_ERROR(LOG_APP, "cameraId  =  %{public}s ", cameras[index].cameraId);              // 获取相机ID。
-           OH_LOG_ERROR(LOG_APP, "cameraPosition  =  %{public}d ", cameras[index].cameraPosition);  // 获取相机位置。
-           OH_LOG_ERROR(LOG_APP, "cameraType  =  %{public}d ", cameras[index].cameraType);          // 获取相机类型。
-           OH_LOG_ERROR(LOG_APP, "connectionType  =  %{public}d ", cameras[index].connectionType);  // 获取相机连接类型。
+           OH_LOG_INFO(LOG_APP, "cameraId  =  %{public}s ", cameras[index].cameraId);              // 获取相机ID。
+           OH_LOG_INFO(LOG_APP, "cameraPosition  =  %{public}d ", cameras[index].cameraPosition);  // 获取相机位置。
+           OH_LOG_INFO(LOG_APP, "cameraType  =  %{public}d ", cameras[index].cameraType);          // 获取相机类型。
+           OH_LOG_INFO(LOG_APP, "connectionType  =  %{public}d ", cameras[index].connectionType);  // 获取相机连接类型。
        }
 
        if (size < cameraDeviceIndex + 1) {
@@ -375,19 +375,19 @@ content_hash: sha256:8fb366cfa74a52fd278dbd3f3e4a2034701111ee55baac6a87c9f412ad1
        if (ret != CAMERA_OK) {
            OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
        } else {
-           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_DeleteSupportedCameras. ok");
+           OH_LOG_INFO(LOG_APP, "OH_CameraManager_DeleteSupportedCameras. ok");
        }
        ret = OH_CameraManager_DeleteSupportedCameraOutputCapability(cameraManager, cameraOutputCapability);
        if (ret != CAMERA_OK) {
            OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
        } else {
-           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_DeleteSupportedCameraOutputCapability success");
+           OH_LOG_INFO(LOG_APP, "OH_CameraManager_DeleteSupportedCameraOutputCapability success");
        }
        ret = OH_Camera_DeleteCameraManager(cameraManager);
        if (ret != CAMERA_OK) {
            OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
        } else {
-           OH_LOG_ERROR(LOG_APP, "OH_Camera_DeleteCameraManager success");
+           OH_LOG_INFO(LOG_APP, "OH_Camera_DeleteCameraManager success");
        }
    }
    ```

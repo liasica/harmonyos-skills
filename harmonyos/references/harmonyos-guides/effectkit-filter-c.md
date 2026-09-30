@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/effectkit-fil
 title: 添加图像效果 (C/C++)
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 离线图像处理 > 添加图像效果 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:05+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:159c9da142f0495e7002db4e7a0678fe0e8f8ce68a8cde8e98ab59a2b74466e6
+scraped_at: 2026-10-01T07:34:58+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:2fcea85863c52a2900f8bc4a1670398dba1926003cc61944320b52915f9cac6d
 ---
 
 ## 场景介绍
@@ -85,8 +85,12 @@ content_hash: sha256:159c9da142f0495e7002db4e7a0678fe0e8f8ce68a8cde8e98ab59a2b74
    // 创建OH_PixelmapNative对象
    OH_PixelmapNative *pixelMapNative = nullptr;
    OH_PixelmapNative_CreatePixelmap(pixels, bufferSize, createOps, &pixelMapNative);
+   // 像素数据已拷贝至像素图中，创建完成后释放像素数据缓冲区
+   delete[] pixels;
+   // 释放初始化选项对象
+   OH_PixelmapInitializationOptions_Release(createOps);
    ```
-4. 基于上文生成的OH\_PixelmapNative像素图对象，使用OH\_Filter\_CreateEffect()接口初始化OH\_Filter对象。
+4. 基于上文生成的OH\_PixelmapNative像素图对象，使用OH\_Filter\_CreateEffect()接口创建OH\_Filter对象。
 
    ```
    OH_Filter *filter = nullptr;
@@ -122,10 +126,14 @@ content_hash: sha256:159c9da142f0495e7002db4e7a0678fe0e8f8ce68a8cde8e98ab59a2b74
    OH_PixelmapNative* filterResult = nullptr;
    EffectErrorCode errCodeResult = OH_Filter_GetEffectPixelMap(filter, &filterResult);
    ```
-7. 当不再需要滤镜生成图像效果后，请及时使用OH\_Filter\_Release()销毁OH\_Filter对象。
+7. 当不再需要滤镜生成图像效果后，请及时使用OH\_Filter\_Release()释放OH\_Filter对象。同样，当不再需要原图及滤镜处理后生成的像素图时，请使用OH\_PixelmapNative\_Release()及时释放。
 
    ```
    EffectErrorCode errCodeRelease = OH_Filter_Release(filter);
+   // 释放滤镜处理后生成的像素图对象
+   OH_PixelmapNative_Release(filterResult);
+   // 释放原图像素图对象
+   OH_PixelmapNative_Release(pixelMapNative);
    ```
 
    绘制效果如下：

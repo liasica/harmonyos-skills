@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.notification (通知消息)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > 已停止维护的接口 > @system.notification (通知消息)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:61dc7b4341b485b8267600dbc4bb8214c0116077ada4af9d33f8c4dbb75dd76b
+scraped_at: 2026-10-01T07:40:28+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:7f15eaeb00d007553e6ffb44432d2def0f5c1fd79551a4210393a9ec7a5f371f
 ---
 
 **说明** 
@@ -51,7 +51,7 @@ show(options?: ShowNotificationOptions): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ShowNotificationOptions](js-apis-system-notification.md#shownotificationoptions) | 否 | 通知标题。 |
+| options | [ShowNotificationOptions](js-apis-system-notification.md#shownotificationoptions) | 否 | 通知展示的相关参数选项，可设置通知标题、通知内容以及通知被点击后触发的行为。 |
 
 **示例：**
 

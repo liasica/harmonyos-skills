@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-comm
 title: common_attributes.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > common_attributes.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0a175e84ce4ef689b0dfbfaba81ac02dbdefa39115f5096d39afbc37f715902c
+scraped_at: 2026-10-01T07:37:23+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:e24f32fdf2c981bcc253bc4326563be2f0866eb4134bfa99619ca7bb47f0c223
 ---
 
 ## 概述
@@ -161,7 +161,7 @@ enum ArkUI_UIState
 | UI\_STATE\_FOCUSED = 1 << 1 | 获焦状态。 |
 | UI\_STATE\_DISABLED = 1 << 2 | 禁用状态。 |
 | UI\_STATE\_SELECTED = 1 << 3 | 选中状态，此状态仅由某些特定类型的组件支持，分别是Checkbox、Radio、Toggle、List、Grid和MenuItem。 |
-| UI\_STATE\_HOVERED = 1 << 4 | 悬停状态。  **起始版本：** 26 |
+| UI\_STATE\_HOVERED = 1 << 4 | 悬停状态。  **起始版本：** 26.0.0 |
 
 ### ArkUI\_FocusMove
 

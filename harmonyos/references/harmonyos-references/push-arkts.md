@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-arkt
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:16+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:57fa8be1bd96584d03b002215e60d06f7ec23bae00948e5bfe4758d8cfd4eb2c
+scraped_at: 2026-10-01T07:40:34+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:5e37d3a2d312938b3cb41b2781c13806f4e54bd6e370bb43fddc1d63b109b8bd
 ---
 
 * **[AAID（应用匿名标识符）](push-aaid-api.md)**
@@ -14,8 +14,8 @@ content_hash: sha256:57fa8be1bd96584d03b002215e60d06f7ec23bae00948e5bfe4758d8cfd
 * **[RemoteNotificationExtensionAbility（通知扩展Ability）](push-remote-notification-extension-ability.md)**
 * **[RemoteNotificationExtensionContext（通知扩展Context）](push-remote-notification-extension-context.md)**
 * **[serviceNotification（服务通知）](push-servicenotification.md)**
-* **[VoIPExtensionAbility（应用内通话消息扩展Ability）（废弃）](push-voip-ability.md)**
-* **[VoIPExtensionContext（应用内通话消息扩展Context）（废弃）](push-voip-context.md)**
+* **[VoIPExtensionAbility（应用内通话消息扩展Ability）（已废弃）](push-voip-ability.md)**
+* **[VoIPExtensionContext（应用内通话消息扩展Context）（已废弃）](push-voip-context.md)**
 * **[PushExtensionAbility（推送扩展Ability）](push-extension-ability.md)**
 * **[PushExtensionContext（推送扩展Context）](push-extension-context.md)**
 * **[RemoteLocationExtensionAbility（定位扩展Ability）](remote-location-ability.md)**

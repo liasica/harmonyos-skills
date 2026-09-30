@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-jwt-toke
 title: 基于服务账号生成鉴权令牌
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > 基于服务账号生成鉴权令牌
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:56+08:00
+scraped_at: 2026-10-01T07:35:17+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:31946dd071071b71cbe97feaf11ef58dfae6918562873aebd9fd5820ce4e13fe
+content_hash: sha256:9ff2c2c3360dd1404963714b3c8e5739d938dd2c4c74f4a1efa2cfff3b5f78a8
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ BRNss*****7az5oU7-Zp5g9X2WJVXXX
 
    在华为开发者联盟的[API Console](https://developer.huawei.com/consumer/cn/console/api/myApi)上选择所在项目，创建“服务账号密钥”凭证，并下载推送服务API的服务账号密钥文件。相关创建步骤请参见[API服务操作指南-服务账号密钥](../start/api-0000001062522591.md#section3554194116341)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/6hPKhw9jToGiJFtvQ4Im3w/zh-cn_image_0000002743220144.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/K2o_czo1STqplnbze1lQNg/zh-cn_image_0000002778933021.png)
 
    您申请后的服务账号密钥样例文件形式可参考（文件内容已经经过脱敏处理）：
 
@@ -56,7 +56,7 @@ BRNss*****7az5oU7-Zp5g9X2WJVXXX
 
    您的应用所属项目ID查看方法：登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”，在该页面获取。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ATM0a_FTRL2czGlRE64NOw/zh-cn_image_0000002772739397.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/tCeTa5n0SZGxwH4u9IZUkg/zh-cn_image_0000002749333936.png)
 3. 生成JWT Header数据。
 
    根据服务账号密钥文件中的key\_id（对应示例中的kid）字段拼接以下JSON体，对JSON体进行BASE64编码。
@@ -133,7 +133,7 @@ Authorization格式：Bearer后面拼接空格，再拼接获取的鉴权信息�
 
 1. 完成上述[开发步骤](push-jwt-token.md#开发步骤)中的步骤1创建服务账号密钥文件后，从华为开发者联盟的[API Console](https://developer.huawei.com/consumer/cn/console/api/myApi)上创建并下载推送服务API的服务账号密钥文件（.json文件），格式如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/nRsuGgMPRqarf25tfnDAMg/zh-cn_image_0000002772899281.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/JeusOnRgQm-nTCk4zjPS2Q/zh-cn_image_0000002749493824.png)
 2. 以上json文件复制至工程中，参考如下代码进行解析（以private.json为例，本示例基于io.jsonwebtoken:jjwt 0.11.5版本开发，该库各版本API差异较大，请根据实际依赖版本自行适配）。
 
 Java：

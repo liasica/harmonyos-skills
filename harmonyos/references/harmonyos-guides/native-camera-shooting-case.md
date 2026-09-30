@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 拍照实践(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 拍照实践(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:25+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5464646b77a33f473f7ba0f8ddacdc8cd354f32a5fce89df956b6c4fb608cefc
+scraped_at: 2026-10-01T07:34:50+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:248f6d15b4595b543a75a7df9b78c1c33efd44ede0609dbe8fae30268749fb0f
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -16,7 +16,7 @@ content_hash: sha256:5464646b77a33f473f7ba0f8ddacdc8cd354f32a5fce89df956b6c4fb60
 
 在获取到相机支持的输出流能力后，开始创建拍照流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/oGOz2OXvSU6yfEnIW1QGKg/zh-cn_image_0000002743379440.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/fdoXnZCCRam-_kTNWPhz8w/zh-cn_image_0000002779092283.png)
 
 ## 完整示例
 
@@ -54,6 +54,7 @@ content_hash: sha256:5464646b77a33f473f7ba0f8ddacdc8cd354f32a5fce89df956b6c4fb60
 
    ```
    #include "hilog/log.h"
+   #include "ndk_camera.h"
 
    void CaptureSessionOnFocusStateChange(Camera_CaptureSession* session, Camera_FocusState focusState)
    {
@@ -271,7 +272,7 @@ content_hash: sha256:5464646b77a33f473f7ba0f8ddacdc8cd354f32a5fce89df956b6c4fb60
        // 根据所需从cameraOutputCapability->photoProfiles中选择合适的拍照分辨率
        photoProfile = cameraOutputCapability->photoProfiles[0];
 
-       // 创建预览输出流,其中参数 previewSurfaceId 参考上文 XComponent 组件，预览流为XComponent组件提供的surface。
+       // 创建预览输出流，其中参数 previewSurfaceId 参考上文 XComponent 组件，预览流为XComponent组件提供的surface。
        ret = OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, previewSurfaceId, &previewOutput);
        if (previewProfile == nullptr || previewOutput == nullptr || ret != CAMERA_OK) {
            OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed.");

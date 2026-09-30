@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (FocusQuery)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (FocusQuery)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:dde83cabc7e1ebf1c431375932c3135a8e0ef105ff1e2bddec9753cebe8a7191
+scraped_at: 2026-10-01T07:39:25+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:93a6fc087a8c069858b06f2d6c77e5eb569239b42197f0910dbc1e73768c0b46
 ---
 
 提供了查询是否支持当前对焦模式的方法。
@@ -35,7 +35,7 @@ isFocusModeSupported(afMode: FocusMode): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| afMode | [FocusMode](arkts-apis-camera-e.md#focusmode) | 是 | 指定的焦距模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
+| afMode | [FocusMode](arkts-apis-camera-e.md#focusmode) | 是 | 指定的对焦模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
 
 **返回值：**
 

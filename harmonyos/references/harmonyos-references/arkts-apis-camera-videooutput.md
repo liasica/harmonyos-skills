@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (VideoOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (VideoOutput)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:52937ffc065db31cb26769d65caaf1cf578a09094e4c24090623f3b7b58e1808
+scraped_at: 2026-10-01T07:39:26+08:00
+doc_updated_at: 2026-09-30
+content_hash: sha256:40eed6a5421d7cd901bff384c4df0dec2d1e0d90f2f17dc9d9856857ce93394c
 ---
 
 录像会话中使用的输出信息，继承[CameraOutput](arkts-apis-camera-cameraoutput.md)。
@@ -333,7 +333,7 @@ off(type: 'error', callback?: ErrorCallback): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 监听事件，固定为'error'，photoOutput创建成功后可监听。 |
+| type | string | 是 | 监听事件，固定为'error'，videoOutput创建成功后可监听。 |
 | callback | [ErrorCallback](js-apis-base.md#errorcallback) | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
