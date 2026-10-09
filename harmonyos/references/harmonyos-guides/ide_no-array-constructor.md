@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-array-constructor
 title: "@typescript-eslint/no-array-constructor"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-array-constructor
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-array-constructor
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:09+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:bf05d43342e641a2be8a5be91fbb29a3a9e2a6a490f4d2d797b42b6f12210237
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer-mock
 title: 预览数据模拟
-breadcrumb: 指南 > 编写与调试应用 > 界面预览 > 预览数据模拟
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > 预览数据模拟
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:05+08:00
-doc_updated_at: 2026-09-16
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:7fbe9e24721c8fb94e7993b5d19d7aaa5ef2996099275a2f32ef0dd3da08b908
 ---
 

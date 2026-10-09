@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_space-before-function-paren
 title: "@typescript-eslint/space-before-function-paren"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/space-before-function-paren
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/space-before-function-paren
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:22+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:11+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:eadfc118e0b115a6ef7e8959ade5cc50ac5e122fe142f2d4689ab0ee88f32a6c
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-bad-deep-clone-check
 title: "@performance/bad-deep-clone-check"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/bad-deep-clone-check
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/bad-deep-clone-check
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:22+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:11+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:1a2d79f0cd161d2b0502542cf49c679f9c9d99af8de5fb25e5610f2b00ac29c2
 ---
 

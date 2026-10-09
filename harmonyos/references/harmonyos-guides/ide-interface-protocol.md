@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-interface-protocol
 title: ohpm仓库接口协议
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > ohpm仓库接口协议
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > ohpm仓库接口协议
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:33+08:00
+scraped_at: 2026-10-09T08:15:07+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:a0ddce7877699403d6d5bfe2696dc1e44c95baa94074f6e7e1aa72d66364a008
 ---

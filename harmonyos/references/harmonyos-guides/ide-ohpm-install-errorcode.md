@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-install-errorcode
 title: ohpm install错误码
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm install错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm install错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:59+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:b6eb3c4a9550004956032e3dd10bf0b85236a131dc76628aefc682bd2ff1c9ad
 ---
 

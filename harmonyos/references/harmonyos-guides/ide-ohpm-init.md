@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-init
 title: ohpm init
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm init
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm init
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:41+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:b6d66be07afe94b6ff874efcb893dc328075f716afd890ee014b2be577463b40
 ---
 

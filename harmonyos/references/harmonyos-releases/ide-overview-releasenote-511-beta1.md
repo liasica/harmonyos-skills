@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-overvie
 title: DevEco Studio
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > DevEco Studio
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:33+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:24+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:38b7d1fcebfb388f01428ebddf50a1680fa7472d0fd302ca3e659c2b7c9ef117
 ---
 

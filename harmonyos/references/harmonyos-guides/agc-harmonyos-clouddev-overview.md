@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-overview
 title: 业务介绍
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 业务介绍
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 业务介绍
 category: harmonyos-guides
-scraped_at: 2026-09-04T06:27:06+08:00
+scraped_at: 2026-10-09T08:15:07+08:00
 doc_updated_at: 2026-09-03
 content_hash: sha256:d72696219d3e2402c34280943a319290456e37cd6e72c6af5da0783f33f1d8dc
 ---

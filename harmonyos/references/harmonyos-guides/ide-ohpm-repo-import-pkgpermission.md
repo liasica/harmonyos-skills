@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-import-pkgpermission
 title: ohpm-repo import_pkgPermission
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo import_pkgPermission
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo import_pkgPermission
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:32+08:00
+scraped_at: 2026-10-09T08:15:06+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:de5adb556394897dd968e1171ab9da67653a7d1ed3be27a10cdedcdd5a2acd4c
 ---

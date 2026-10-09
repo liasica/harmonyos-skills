@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_comma-spacing
 title: "@typescript-eslint/comma-spacing"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/comma-spacing
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/comma-spacing
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:50+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:08+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:83b05f9c5d226f474795c291f84c92c2411af3f8fac9fc50d51101cb68e9184d
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-errorcode-universal
 title: ohpm命令公共错误码
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm命令公共错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm命令公共错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:59+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:25+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:adba6041da5ec9a64a0ab4b950c076d35942149a49122046e32308f360958c13
 ---
 

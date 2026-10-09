@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddevguide
 title: 端云一体化开发
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:33+08:00
+scraped_at: 2026-10-09T08:15:07+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:8131d880b7326c1c922cd8e23c2c67895f725528738cdec2f2b54ff9e5cc7f87
 ---

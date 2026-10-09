@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-rule-verification-template-file
 title: 模板文件
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义元数据规则校验插件 > 模板文件
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义元数据规则校验插件 > 模板文件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:49+08:00
+scraped_at: 2026-10-09T08:15:07+08:00
 doc_updated_at: 2026-01-15
 content_hash: sha256:c3c3e266afc15ca469f5692936496f2c23c015fce2335bc22645c3e16052f4ce
 ---

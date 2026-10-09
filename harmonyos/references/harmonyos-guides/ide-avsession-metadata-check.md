@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-avsession-metadata-check
 title: "@correctness/avsession-metadata-check"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/avsession-metadata-check
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/avsession-metadata-check
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:53+08:00
-doc_updated_at: 2026-06-17
+scraped_at: 2026-10-09T08:15:13+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:4fd00d236466b8a7a8dca6e12b79ba8a27066183516ce9059afa90303a2349ac
 ---
 

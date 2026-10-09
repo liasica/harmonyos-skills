@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unsafe-sm2-key
 title: "@security/no-unsafe-sm2-key"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-sm2-key
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-sm2-key
 category: harmonyos-guides
-scraped_at: 2026-09-04T06:27:12+08:00
-doc_updated_at: 2026-09-03
+scraped_at: 2026-10-09T08:15:11+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:96435042751772de7d5f7604b52414a497102785b346d381bc81fd8570e43ed8
 ---
 

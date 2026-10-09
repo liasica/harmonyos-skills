@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile-app
 title: 工程级build-profile.json5文件
-breadcrumb: 指南 > 构建应用 > 配置文件 > 工程级build-profile.json5文件
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置文件 > 工程级build-profile.json5文件
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:33+08:00
-doc_updated_at: 2026-09-08
+scraped_at: 2026-10-09T08:15:19+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:82e96cfec12f1416d81181dbdf2442d606e9ccf7a295b9bd02d66716d3dd8dd5
 ---
 

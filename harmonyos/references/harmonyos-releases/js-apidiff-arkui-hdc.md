@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-
 title: ArkUI
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta1引入的API > ArkUI
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:49+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:54+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:b1a84d6706c8ad507916c0ad42f2f0d495bac8eebb986261200400087ef640e5
 ---
 

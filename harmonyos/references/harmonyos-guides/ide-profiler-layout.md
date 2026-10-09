@@ -1,14 +1,12 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-layout
 title: 界面布局
-breadcrumb: 指南 > 优化应用性能 > DevEco Profiler调优工具简介 > 界面布局
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > DevEco Profiler调优工具简介 > 界面布局
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6342650507442ae5c548d307bf118137d414ac186568bf2489397b4c2843c101
+scraped_at: 2026-10-09T08:15:22+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:832efb44a625b3c61328dcc0891610669b8ad11643266ef56072ad7b2570bd3e
 ---
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/6gY9KCfBQZ6it2OpLvTiyw/zh-cn_image_0000002701663286.png "点击放大")
 
 DevEco Profiler工具的界面分为两大区域：
 
@@ -19,3 +17,5 @@ DevEco Profiler工具的界面分为两大区域：
 同时会话区提供Frame、Launch等一系列场景化分析任务类型，帮助开发者有针对性的采集并展示更多更详细的数据，这些数据将会还原对应场景下的应用运行状况。
 
 ②[数据区](ide-profiler-data.md)：负责性能数据的可视化呈现。包含工具控制栏、时间轴、泳道区域、详情区域，通过不同泳道展示，直观展示调优详情。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/aY5pIKFqT3Cxs8YpRCiKMw/zh-cn_image_0000002770022359.png "点击放大")

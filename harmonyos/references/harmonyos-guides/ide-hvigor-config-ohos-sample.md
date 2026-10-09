@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-config-ohos-sample
 title: 实践说明
-breadcrumb: 指南 > 构建应用 > 定制构建 > 动态修改编译配置 > 实践说明
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 定制构建 > 动态修改编译配置 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:20+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:969a82ce760b257dd1bf1bb87ec4f0089a97f1be5c9bac66930f655edd548b1e
 ---
 

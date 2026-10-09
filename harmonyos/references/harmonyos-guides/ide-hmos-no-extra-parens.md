@@ -1,0 +1,60 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-no-extra-parens
+title: "@typescript-eslint/no-extra-parens"
+breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-extra-parens
+category: harmonyos-guides
+scraped_at: 2026-10-09T08:15:29+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:957bb88055023758ba1a386292006af0d967c84e22c18567ef36c192c527f0fd
+---
+
+禁止使用不必要的括号。
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-extra-parens": "error"
+  }
+}
+```
+
+## 选项
+
+详情请参考[@typescript-eslint/no-extra-parens选项](https://eslint.nodejs.cn/docs/rules/no-extra-parens#选项)。
+
+## 正例
+
+```ts
+// 默认不允许在任何表达式中使用不必要的括号
+(0).toString();
+
+const result = (() => {
+  console.info('arrow function');
+}) ? '1' : '2';
+
+(/^a$/).test(result);
+```
+
+## 反例
+
+```ts
+// 默认不允许在任何表达式中使用不必要的括号
+const b = 10;
+const c = 20;
+export const a = (b * c);
+
+export const d = (a * b) + c;
+
+export const myType = typeof (a);
+```
+
+## 规则集
+
+```screen
+plugin:@typescript-eslint/all
+```
+
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-hmos-code-linter.md)。

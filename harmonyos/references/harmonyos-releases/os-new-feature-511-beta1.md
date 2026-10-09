@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:18+08:00
-doc_updated_at: 2026-08-04
+scraped_at: 2026-10-09T08:12:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:1230be477c385c69657747ef51da6d097c7188379b560bb191e3032e909a1aa8
 ---
 

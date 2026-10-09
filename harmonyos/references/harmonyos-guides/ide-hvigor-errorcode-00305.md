@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-errorcode-00305
 title: 语法错误码
-breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 语法错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 语法错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:21+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:828e6187a1866822ba74bbfa4e40f058a2f30f615bbb2c9a86bc9de156518757
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-reduce-type-parameter
 title: "@typescript-eslint/prefer-reduce-type-parameter"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-reduce-type-parameter
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-reduce-type-parameter
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:10+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:a57112666d2f7c682ab3804448181d43b021fb7ec1980b4dc452afb5faf164c1
 ---
 

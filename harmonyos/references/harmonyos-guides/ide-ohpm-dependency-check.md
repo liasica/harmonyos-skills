@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dependency-check
 title: ohpm dependency-check
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm dependency-check
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm dependency-check
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:e30c9d3f8df80b47395909e0aba16dc4a24115aa7a1b5e67e522fda613e4fb17
 ---
 

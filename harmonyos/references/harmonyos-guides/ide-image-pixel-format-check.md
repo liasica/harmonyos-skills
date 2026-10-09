@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-image-pixel-format-check
 title: "@correctness/image-pixel-format-check"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/image-pixel-format-check
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/image-pixel-format-check
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:14+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:451f4d0dc2dadea5909f3149b56dcf60d34aae8d394b164feaeabcb1718ea4fa
 ---
 

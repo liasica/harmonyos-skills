@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-intent
 title: 创建意图框架
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 创建意图框架
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 创建意图框架
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:21+08:00
+scraped_at: 2026-10-09T08:15:07+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:6630140c57f4feaffb43c85f0a83d60985963a4db1d79de45a56770903efc971
+content_hash: sha256:9ca86f9fdd7ea017f9e01c7c2fd163cd22d99ed9158c9f5a2321db59f0b37009
 ---
 
 DevEco Studio支持创建意图框架，帮助应用理解用户意图，并提供相应的服务和体验。
@@ -28,7 +28,7 @@ DevEco Studio支持创建意图框架，帮助应用理解用户意图，并提�
 
      PlayMusic和PlayMusicList不支持同时关闭，请至少开启一个意图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/b1lSkdBfT4qlkIzIv9nT_A/zh-cn_image_0000002701663772.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/A_T1wB1iSu6MfKRTWDlQ7Q/zh-cn_image_0000002701663772.png)
 2. 点击**Finish**，完成意图框架创建。此时将在**entry > src > main > ets > insightintents**目录下生成入口代码文件；在**entry > src > main > resource > base > profile**中，生成**i****nsight\_intent.json**文件，可在该文件查看当前意图框架配置的相关信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/-UjK9DXOSkGETZqQS0pKDw/zh-cn_image_0000002731382993.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Yu9V_B8LS8C14RJj9juYQg/zh-cn_image_0000002731382993.png)

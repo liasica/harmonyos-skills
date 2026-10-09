@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-attribute-update-refresh-scope
 title: "@performance/hp-arkui-use-attributeUpdater-control-refresh-scope"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-use-attributeUpdater-control-refresh-scope
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-use-attributeUpdater-control-refresh-scope
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:12+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:bc8b8d0e6d7499822e9b65482cc66faeae7b308502c187a352d70829669ce7a1
 ---
 

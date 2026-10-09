@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-daemon
 title: 守护进程
-breadcrumb: 指南 > 构建应用 > 提升构建效率 > 默认特性 > 守护进程
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 默认特性 > 守护进程
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:51+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-09T08:15:20+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:09b1e5afba0d37655dbb72d121972a5988363e23d5ee68230c5af4435cd62f0a
 ---
 

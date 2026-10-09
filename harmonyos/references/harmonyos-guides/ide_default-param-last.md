@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_default-param-last
 title: "@typescript-eslint/default-param-last"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/default-param-last
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/default-param-last
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:09+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:674e0d0b5a2b35d1aa85b8fd69a6c1f9bbc67820b50b376684c963ebdf62fcc4
 ---
 

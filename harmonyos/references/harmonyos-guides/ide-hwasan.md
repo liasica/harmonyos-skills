@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hwasan
 title: 使用HWASan检测内存错误
-breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用HWASan检测内存错误
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用HWASan检测内存错误
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:33+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:a2a950c1e3fc40dd9968f2c36f186726a63a03de606292e408bdbe1e0af8801c
+scraped_at: 2026-10-09T08:15:17+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:c0fac24314b4dd62e58757a8f91e710be7291f0f042407b9e7f8f74fff364204
 ---
 
 HWASan（Hardware-Assisted Address Sanitizer）是一款类似于[ASan](ide-asan.md)的内存错误检测工具。与ASan相比，HWASan使用的内存减少很多，因而更适合用于整个系统的检测。关于HWASan的检测原理请参考[HWASan检测原理](../best-practices/bpta-stability-address-sanitizer-principle.md#section187526511146)。
@@ -29,7 +29,7 @@ DevEco Studio 6.1.0 Beta1之前的版本，仅支持对C++源码开启HWASan。
 
    从DevEco Studio 6.1.0 Beta1版本开始，可以同时勾选**BinXO check**，开启无源码的so文件的HWASan检测插桩。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/PHg_v-gLQQGSf1DNWOQ4AA/zh-cn_image_0000002701663452.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/ekCuMOxoTSqieo0MnuKm2g/zh-cn_image_0000002701663452.png)
 2. （可选）如果部分无源码so不需要进行HWASan检测插桩，可以在工程级或模块级build-profile.json5文件中，配置excludeSoFromBinXO字段，填写需要忽略的so列表，支持正则匹配。
 
    ```json5
@@ -48,7 +48,7 @@ DevEco Studio 6.1.0 Beta1之前的版本，仅支持对C++源码开启HWASan。
    "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/-JIS8br5T0iFfLEX7RXNgg/zh-cn_image_0000002731382677.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/76Fi-P2_QWGP3sC1hJe4rQ/zh-cn_image_0000002731382677.png)
 2. 在需要开启HWASan的模块级build-profile.json5中，添加构建参数开启HWASan检测插桩。
 
    ```json5
@@ -82,10 +82,10 @@ DevEco Studio 6.1.0 Beta1之前的版本，仅支持对C++源码开启HWASan。
 
    为确保正确解析堆栈，需保留代码中的调试信息，具体请参考[注意事项](ide-hwasan.md#section1665820539148)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/DNv-3OtORXK_cO2UpivwjQ/zh-cn_image_0000002731542647.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/7bvI8fvpQke8TTDVd24j6A/zh-cn_image_0000002731542647.png)
 3. 如果是release应用，本地无工程代码，可以使用AnalyzeStackTrace功能，提供要解析堆栈的so，解析结果为源码地址。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/MZUA0UdGTJuTNQly9T5cuw/zh-cn_image_0000002701823374.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Bj8wG76TTf2TfYfs5VWtfQ/zh-cn_image_0000002701823374.png)
 
 ## 注意事项
 

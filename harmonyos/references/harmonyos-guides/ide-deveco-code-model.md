@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-model
 title: 模型配置
-breadcrumb: 指南 > AI Coding > DevEco Code > 模型配置
+breadcrumb: 指南 > DevEco Code > 模型配置
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:30+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:239bff8c3912fda3307bc58c95071f199742fcfbc9ebd524d1eb49ac404beb64
+scraped_at: 2026-10-09T08:15:39+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:bdff91aa0438304bdb25248e54109056bf334548adedad9134db3d66e9207cca
 ---
 
-DevEco Code当前内置GLM-5.1模型，单账号默认每分钟50次请求，登录后即可使用，无需额外配置。如需使用第三方模型，可以通过如下方式配置。
+DevEco Code当前内置GLM-5.1和GLM-5.3模型，单账号默认每分钟50次请求，登录后即可使用，无需额外配置。如需使用第三方模型，可以通过如下方式配置。
 
 在DevEco Code对话框输入**/models**进入模型切换界面。
 
@@ -28,6 +28,7 @@ DevEco Code当前内置GLM-5.1模型，单账号默认每分钟50次请求，登
 
 * Windows：.deveco/deveco.jsonc（项目级） > C:/Users/用户名/.config/deveco/deveco.jsonc（用户级）
 * macOS：.deveco/deveco.jsonc（项目级） > ~/.config/deveco/deveco.jsonc（用户级）
+* 鸿蒙电脑：.deveco/deveco.jsonc（项目级）> ~/.deveco/deveco.jsonc（用户级）
 
 示例：
 

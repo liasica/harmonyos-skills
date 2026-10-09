@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-reasonable-sensor-use-check
 title: "@performance/reasonable-sensor-use-check"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/reasonable-sensor-use-check
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/reasonable-sensor-use-check
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:12+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:1248e53a94f5990561d9fadc1f7c34f1bf31c6bfe33f7ca053afc81b15b00d43
 ---
 

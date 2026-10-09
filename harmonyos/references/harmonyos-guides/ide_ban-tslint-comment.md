@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_ban-tslint-comment
 title: "@typescript-eslint/ban-tslint-comment"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/ban-tslint-comment
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/ban-tslint-comment
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:08+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:f1a15a4c5123c91ab8b153be036432897e7a4ed4502e91583cce3f947b8c8fd3
 ---
 

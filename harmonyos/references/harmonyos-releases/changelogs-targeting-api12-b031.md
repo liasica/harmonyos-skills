@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对API 12应用的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta2引入的接口行为变更 > 针对API 12应用的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:54+08:00
+scraped_at: 2026-10-09T08:12:36+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:45b6cf186374c4aa56de31f0c12f2ee39d97d9500c37897eb7c512c2bac6623b
+content_hash: sha256:f83c5eb52f84ca021e87bb43f2e8461e27b7299328295e1ac21567cff8efd55c
 ---
 
 ## Ability Kit
@@ -591,7 +591,7 @@ struct SubHeaderExample {
 
 在PC/2in1设备下，全屏状态下的状态栏显示控制由系统布局约束，无需再调用接口去控制状态栏的显示和隐藏。即设置的setWindowSystemBarEnable、setSystemBarEnable在PC/2in1设备上不生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/gVA9sJ27TayFhz9-wsIcxw/zh-cn_image_0000001993261849.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/EPZWTCwKTsuWOC95Uudxvw/zh-cn_image_0000001993261849.png)
 
 **变更影响**
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_member-ordering
 title: "@typescript-eslint/member-ordering"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/member-ordering
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/member-ordering
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:09+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:49b54159e8268426ecd5acda8e9bb99a1719f22ce05dd640d9ce759b280306fa
 ---
 

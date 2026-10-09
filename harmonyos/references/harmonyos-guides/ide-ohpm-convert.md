@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-convert
 title: ohpm convert
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:42+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:3dbdf4ad42fe807d65a0e45f9a975f6f6021854558590b04b851acc1152fac64
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:8ad596b483aead1891d11a00f77bfdd0542e91be986cf237fdefe174d9e42ac7
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -98,13 +98,13 @@ ohpm INFO: A total of 9 packets are converted successfully.
 ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712127991590" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/cO7EMJdERFC-wdGbPnzIlw/zh-cn_image_0000002701663792.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/OfaXM206RcmUJugXwFikTw/zh-cn_image_0000002701663792.png "点击放大")
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/o6TVORS5SYepG79V2na6GA/zh-cn_image_0000002731542991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/6wUyVAFPTdiHNzZ-HM__Cg/zh-cn_image_0000002731542991.png)
 
 ```screen
 ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
@@ -120,4 +120,4 @@ ohpm INFO: A total of 1 package(s) are converted successfully.
 ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712128912583" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/_NqJ7fvzR_SESNNpITSGFg/zh-cn_image_0000002701823718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/YYN5CFIHS5mwdZysZG4Zaw/zh-cn_image_0000002701823718.png)

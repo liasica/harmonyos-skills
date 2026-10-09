@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multimedia-use-stride-in-image-receiver
 title: "@correctness/multimedia-use-stride-in-image-receiver"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/multimedia-use-stride-in-image-receiver
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/multimedia-use-stride-in-image-receiver
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:14+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:15efdb1ca5bab758d47b34a8d81f304d66cd4609c01acd1b8d16410d4b9e3984
 ---
 

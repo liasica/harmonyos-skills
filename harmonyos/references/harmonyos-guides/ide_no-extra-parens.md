@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-extra-parens
 title: "@typescript-eslint/no-extra-parens"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-extra-parens
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-extra-parens
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:09+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:61937bfdeadb8a82d6f8a844a36399b9a9109ae527a775823dd3042f52475c39
 ---
 

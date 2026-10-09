@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-errorcode
 title: 错误码
-breadcrumb: 指南 > 优化应用性能 > 附录 > 错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 附录 > 错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:58+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:23+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:c17359eeec48a8ed8ddeeffe99ac822f40df32f9b77b3aa3280318b7e53bed18
 ---
 

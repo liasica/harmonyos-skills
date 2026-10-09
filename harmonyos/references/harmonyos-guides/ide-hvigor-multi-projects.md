@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-multi-projects
 title: 多工程构建
-breadcrumb: 指南 > 构建应用 > 配置构建流程 > 多工程构建
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 多工程构建
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:19+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:3f4d93e8d547ad1c5da17d2ff87054e9c9ec4be23e63e376a2a731b47be938cd
 ---
 

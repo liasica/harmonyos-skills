@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing
 title: 配置调试签名
-breadcrumb: 指南 > 编写与调试应用 > 配置调试签名
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 配置调试签名
 category: harmonyos-guides
-scraped_at: 2026-09-04T06:27:16+08:00
-doc_updated_at: 2026-09-03
+scraped_at: 2026-10-09T08:15:14+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:da21e5875d2427435598231ce03923f86103679ddab3106aa6c8d6048536b83b
 ---
 

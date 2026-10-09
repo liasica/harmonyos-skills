@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-cli
 title: 三方依赖管理工具（ohpm）
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm）
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:39+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:23+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:c13a300f363372ce3450ad02dadaa41ab2dff69cf5f43f2a5e755d660444dbc8
 ---
 

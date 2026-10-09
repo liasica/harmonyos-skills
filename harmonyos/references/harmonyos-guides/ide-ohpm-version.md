@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-version
 title: ohpm version
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm version
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm version
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:41+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:a5746e4b95220d91224b0063b4e666b44a7938ea307019b288cd9ea58c1c72d1
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:5c8b797acd668077196b28e4b6f91544b448170321dc4f8ea44f86c9efbde431
 ---
 
 管理模块版本。
@@ -96,7 +96,7 @@ ohpm version
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/tTSmp-vtRr2aoJ1Ca589Qw/zh-cn_image_0000002701822810.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/iJ3viTnqRhyI3Bu9f0D2gA/zh-cn_image_0000002701822810.png "点击放大")
 
 接着执行：
 
@@ -106,7 +106,7 @@ ohpm version 1.0.1-beta.1
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/AUX2X8fJRoSHqUM1I2Hraw/zh-cn_image_0000002701662886.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/RqztqHZxROC1gWCynlZe6w/zh-cn_image_0000002701662886.png "点击放大")
 
 接着执行：
 
@@ -116,4 +116,4 @@ ohpm version major
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/pX7zowtISDiH4f1novhuqg/zh-cn_image_0000002731382113.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/VupZxh99QKuD_N45djlGeQ/zh-cn_image_0000002731382113.png "点击放大")

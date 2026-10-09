@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-account
 title: 注册华为开发者账号并实名认证
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发准备 > 注册华为开发者账号并实名认证
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发准备 > 注册华为开发者账号并实名认证
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:58+08:00
+scraped_at: 2026-10-09T08:15:07+08:00
 doc_updated_at: 2026-01-15
 content_hash: sha256:176252a3b6e7845febe7833fe9c92036e0184aabf4f80cd7fd27066711ed4b99
 ---

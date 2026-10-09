@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-faq
 title: FAQ
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > FAQ
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > FAQ
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:22+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:bf0288a1acfbd85a66be279001081d3d129932afc48af6cc2a9615a75f379bdc
+scraped_at: 2026-10-09T08:15:08+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:2f3dd29be4be3f8525e78b5ccbafa63b3610a9bb5dc13b24d5fba4e3c298ebaa
 ---
 
 ## 使用DevEco Studio打开端云一体化项目文件夹，左侧的项目列表不显示云侧工程
@@ -18,7 +18,7 @@ content_hash: sha256:bf0288a1acfbd85a66be279001081d3d129932afc48af6cc2a9615a75f3
 
 端云一体化工程根目录下只允许有“Application”与“CloudProgram”文件夹，不能有其他文件。否则，DevEco Studio会把该工程当成纯端侧工程，不显示云侧工程“CloudProgram”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/u_ZpcY3jSNKnSSRsiWPkDg/zh-cn_image_0000002313987669.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/ycM5KuRxQ-e7DGKVBkuuCA/zh-cn_image_0000002313987669.png)
 
 ## 部署云数据库时，提示“clouddb deploy failed. Reason is the number of CloudDBZone exceeds the limit.”
 
@@ -40,7 +40,7 @@ content_hash: sha256:bf0288a1acfbd85a66be279001081d3d129932afc48af6cc2a9615a75f3
 
 部署云数据库失败，提示“clouddb deploy failed. Reason is existing fields cannot be modified.”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/LZTSdxv1SpWfPNaoFfceig/zh-cn_image_0000002179338656.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Gl6YqEftTU6NKkrHSxOrHA/zh-cn_image_0000002179338656.png)
 
 **解决措施**
 
@@ -73,7 +73,7 @@ content_hash: sha256:bf0288a1acfbd85a66be279001081d3d129932afc48af6cc2a9615a75f3
 
 请检查resources/rawfile目录下是否存在schema文件。schema文件是云数据库功能依赖的必要文件，部署云数据库成功时会自动产生。如schema文件不存在，请重新部署云数据库，或[从AGC控制台导出](../AppGallery-connect-Guides/agc-clouddb-agcconsole-objecttypes-0000001127675459.md#section1558018208151)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/RXjNrOH-RSKqE-ZakSoOfg/zh-cn_image_0000002179338664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/KvAZTo56QiS-Slhpcx5o1w/zh-cn_image_0000002179338664.png)
 
 ## 云数据库无法新建数据条目，Hilog中打印“2001015:permission denied”
 
@@ -111,7 +111,7 @@ content_hash: sha256:bf0288a1acfbd85a66be279001081d3d129932afc48af6cc2a9615a75f3
 
 云函数部署失败，错误信息中提示“The function type cannot be changed”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DGyq762UQNuBFSfxUVi7XA/zh-cn_image_0000002214858977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/7e9Yh5WKTxeMGx81mpSvMQ/zh-cn_image_0000002214858977.png)
 
 **解决措施**
 
@@ -123,7 +123,7 @@ content_hash: sha256:bf0288a1acfbd85a66be279001081d3d129932afc48af6cc2a9615a75f3
 
 部署云工程失败，错误信息中提示“Remote host terminated the handshake”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Yy0t7xcTTzu6HFRBernq6A/zh-cn_image_0000002279650126.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/tWps_R1wQTazxRew9oKCSw/zh-cn_image_0000002279650126.png)
 
 **解决措施**
 
@@ -145,7 +145,7 @@ content_hash: sha256:bf0288a1acfbd85a66be279001081d3d129932afc48af6cc2a9615a75f3
 
 端云一体化开发工程同步失败，失败步骤是npm install failed。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/IIqpLOz2SiOEOab4jpCNTw/zh-cn_image_0000002279546734.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/dHcVml4fSeSNLYipN-aXbw/zh-cn_image_0000002279546734.png)
 
 **解决措施**
 
@@ -157,7 +157,7 @@ content_hash: sha256:bf0288a1acfbd85a66be279001081d3d129932afc48af6cc2a9615a75f3
 
 使用云存储上传文件失败，HiLog提示“404:Product does not exist”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VjSazje2SJCrSk8Eb7Zt5A/zh-cn_image_0000002214704601.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/oXy_c4ikR3OECkufFJOtiA/zh-cn_image_0000002214704601.png)
 
 **解决措施**
 
@@ -171,10 +171,10 @@ content_hash: sha256:bf0288a1acfbd85a66be279001081d3d129932afc48af6cc2a9615a75f3
 
 * app日志提示“"state":65”
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/UHum2650QVe9Kr2ffKdWEA/zh-cn_image_0000002179498352.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/LjRci50EQmSUejMWR3WJ5A/zh-cn_image_0000002179498352.png)
 * upload进程的日志提示“403 Forbidden”（通过设置“No filters”模式、过滤“C01C50”关键字查找）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/BLLYeGGKS9a8TUOJH3v31Q/zh-cn_image_0000002214858989.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/P5VG-_esSaiDCSAgbANBOg/zh-cn_image_0000002214858989.png)
 
 **解决措施**
 

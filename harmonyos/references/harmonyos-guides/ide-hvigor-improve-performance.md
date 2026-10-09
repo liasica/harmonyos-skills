@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-improve-performance
 title: 并行构建
-breadcrumb: 指南 > 构建应用 > 提升构建效率 > 默认特性 > 并行构建
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 默认特性 > 并行构建
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:20+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:2be7cc8a7b5602796a501a3c28e570fdafef496a9f90d01a9838481eefa1cd3e
 ---
 

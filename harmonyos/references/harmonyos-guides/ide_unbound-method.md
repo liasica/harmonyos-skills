@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_unbound-method
 title: "@typescript-eslint/unbound-method"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/unbound-method
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/unbound-method
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:52+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:11+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:b2d630d682fb32d749b0b372a61f263e5f36bf34ccb9d5e11ac503a681855feb
 ---
 

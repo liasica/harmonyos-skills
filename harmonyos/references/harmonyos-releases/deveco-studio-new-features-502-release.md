@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: DevEco Studio
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > DevEco Studio
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:39+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:34+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:957e253de5679963509bec81e82b3994c1784ccf7c47c1a089283839083d8155
 ---
 

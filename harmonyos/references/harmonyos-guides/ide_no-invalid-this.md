@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-invalid-this
 title: "@typescript-eslint/no-invalid-this"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-invalid-this
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-invalid-this
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:09+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:b9c99adc3d43e104ac8ce30f86802f4e1b11a9b24f0dca0fb67a74f689033285
 ---
 

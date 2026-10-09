@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-errorcode-00403
 title: 调试失败错误码
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 调试错误码 > 调试失败错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 调试错误码 > 调试失败错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:55+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-10-09T08:15:17+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:56af6eed9f8b57e8301f63e41b4807b9e2a1bd2ae54cecada5877cb233603608
 ---
 

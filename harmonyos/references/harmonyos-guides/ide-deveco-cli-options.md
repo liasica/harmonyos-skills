@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cli-options
 title: 命令
-breadcrumb: 指南 > AI Coding > DevEco CLI > 命令
+breadcrumb: 指南 > DevEco CLI > 命令
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:57+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:2e24f759bf6702da64296c0ef1eb02d5e444c9856a4fe1f272b78f8d7fb5e445
+scraped_at: 2026-10-09T08:15:40+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:2c00901c262e46099da35e35b5f18ead092cd92e61f8fe15659919ca3fa5ed4b
 ---
 
 ## help
@@ -53,7 +53,9 @@ devecocli init --mcp --agent agentname  # agentname需替换为实际的智能�
 devecocli init --mcp --project D:\work\ARKTS\NewsData -f
 ```
 
-## auth login
+## auth
+
+### auth login
 
 从1.3.0版本开始，部分功能需要授权后才可正常使用，请按照指引登录华为账号。
 
@@ -63,7 +65,7 @@ devecocli init --mcp --project D:\work\ARKTS\NewsData -f
 devecocli auth login
 ```
 
-## auth status
+### auth status
 
 从1.3.0版本开始，支持查询当前登录的用户。
 
@@ -73,7 +75,7 @@ devecocli auth login
 devecocli auth status
 ```
 
-## auth team list
+### auth team list
 
 从1.3.0版本开始，支持查询当前登录用户所在的团队信息，包括团队名称和团队ID。
 
@@ -87,7 +89,7 @@ devecocli auth team list --json
 
 | 参数名 | 说明 |
 | --- | --- |
-| --json | 可选，输出格式。 |
+| --json | 可选，输出格式。  鸿蒙电脑版DevEco CLI不支持该参数。 |
 
 **示例：**
 
@@ -96,7 +98,7 @@ devecocli auth team list
 devecocli auth team list --json
 ```
 
-## auth logout
+### auth logout
 
 从1.3.0版本开始，支持退出登录。
 
@@ -106,7 +108,9 @@ devecocli auth team list --json
 devecocli auth logout
 ```
 
-## docs search
+## docs
+
+### docs search
 
 按关键词搜索[版本说明](../harmonyos-releases/overview-allversion.md)、[指南](application-dev-guide.md)、[API参考](../harmonyos-references/development-intro-api.md)、[最佳实践](../best-practices/bpta-best-practices-overview.md)、[FAQ](../harmonyos-faqs/faq-phone.md)、[变更预告](../harmonyos-roadmap/all-changelogs-610.md)中的内容。
 
@@ -133,7 +137,7 @@ devecocli docs search '@State' '@Prop' --catalog best-practices --limit 10
 devecocli docs search Row Column --format json
 ```
 
-## docs read
+### docs read
 
 按文档ID查询文档的完整内容。
 
@@ -155,7 +159,7 @@ devecocli docs read <documentId>
 devecocli docs read 开发指南/应用框架/UI_Design_Kit_UI设计套件/沉浸光感/ui-design-hds-component-material
 ```
 
-## docs catalog
+### docs catalog
 
 查询文档类别和类别名称。
 
@@ -207,6 +211,8 @@ devecocli create --app-name MyApp
 
 ## build
 
+### build
+
 编译并打包HarmonyOS工程或工程中的模块。
 
 **命令格式：**
@@ -238,7 +244,7 @@ devecocli build --product oversea --modules entry --build-mode release
 * 执行devecocli build --product <name>命令后，产物为.app。
 * 执行devecocli build --product <name> --modules <m1>命令后，产物为.hap/.hsp/.har。
 
-## build clean
+### build clean
 
 清理HarmonyOS项目的构建产物。
 
@@ -284,7 +290,7 @@ devecocli signature generate --help
 
 ## run
 
-构建应用后，将应用安装到真机设备或模拟器上，并启动执行。
+构建应用后，将应用安装到设备上，并启动执行。
 
 **命令格式：**
 
@@ -297,15 +303,15 @@ devecocli run --module <module> --device <device> --product <product> --build-mo
 | 参数名 | 说明 |
 | --- | --- |
 | --module | 可选，模块名称，多个模块用空格隔开。  如需指定[模块的target信息](ide-hvigor-build-profile-app.md#section1961794812219)，使用module@target形式。  当工程中只有一个可运行模块（entry / feature / shared）时，可缺省。 |
-| --device | 设备名称或设备序列号，单设备时可选，多设备时必选。 |
+| --device | 设备的名称/序列号，单设备时可选，多设备时必填。若名称中带有空格，则名称需要添加英文引号。   * Windows/macOS/Linux：真机或模拟器设备的名称/序列号。 * 鸿蒙电脑：真机设备的名称/序列号或多设备预览器的名称。当前支持的多设备预览器名称包括Pura 90 Pro、MatePad 11.5'S、Mate X7、Pura X、Mate XT。   说明：  在鸿蒙电脑上拉起多设备预览器的前提条件：开启DevEco Studio，以及鸿蒙电脑需要在**设置 > 系统 >** **开发者选项**中，打开**无线调试**开关。 |
 | --product | 可选，产品名称，默认为default。更多请参考[products](ide-hvigor-build-profile-app.md#section45865492619)。 |
 | --build-mode | 可选，构建模式名称，默认为debug。更多请可参考[buildModeSet](ide-hvigor-build-profile-app.md#section137297344398)。 |
 | --ability | 可选，待启动的Ability，默认是模块module.json5中的mainElement。 |
 | --uninstall | 可选，安装前先卸载已有应用。 |
 | --skip-build | 可选，跳过构建操作，直接安装应用。  说明：  使用该参数时，需确保对应模块已有构建产物。 |
 | --apply | 可选，将全量构建部署生成缓存后的修改生成增量修改文件（.hqf文件），重启应用后增量修改文件会生效。  fileName须在工程.hvigor目录下，中记录被修改源文件相对工程根目录的路径。通过读取该文件，工具可以定位发生变化的文件，并执行增量编译，提高构建效率。  说明：  * 执行该命令前，需先执行devecocli run命令完成全量构建部署，生成缓存。 * 若devecocli run --apply执行失败，工具会自动执行devecocli run命令进行全量构建。 * 需使用DevEco Studio 6.1.1以上版本。 |
-| --hotreload | 可选，使用热重载功能。  使用热重载功能时，该命令进程需持续存活，以使热重载构建可以快速响应。当不需要热重载功能时，通过执行“devecocli run --hotreload stop”命令终止该进程，释放系统资源。 |
-| --hotreload-apply | 可选，将热重载基础缓存后的修改生成增量修改文件（.hqf文件），并将.hqf文件应用到运行中的应用，使修改直接生效。  说明：  * 执行该命令前，需先执行devecocli run --hotreload命令，生成热重载基础缓存。 * 增量修改时，仅支持修改运行模块中的ArkTS文件。 |
+| --hotreload | 可选，使用热重载功能。  使用热重载功能时，该命令进程需持续存活，以使热重载构建可以快速响应。当不需要热重载功能时，通过执行“devecocli run --hotreload stop”命令终止该进程，释放系统资源。  鸿蒙电脑版DevEco CLI不支持该参数。 |
+| --hotreload-apply | 可选，将热重载基础缓存后的修改生成增量修改文件（.hqf文件），并将.hqf文件应用到运行中的应用，使修改直接生效。  鸿蒙电脑版DevEco CLI不支持该参数。  说明：  * 执行该命令前，需先执行devecocli run --hotreload命令，生成热重载基础缓存。 * 增量修改时，仅支持修改运行模块中的ArkTS文件。 |
 
 **示例：**
 
@@ -354,7 +360,9 @@ devecocli log --tail 100 --from 5m --to 2m
 devecocli log --follow --bundle-name com.example.app
 ```
 
-## check lint
+## check
+
+### check lint
 
 从1.3.0版本开始，支持按照[Code Linter代码规则](ide-codelinter-rule.md)，对ArkTS代码工程进行正确性、兼容性等检查，并自动修复问题。
 
@@ -392,9 +400,11 @@ devecocli check lint --output-path ./entry/output
 devecocli check lint --limit 20
 ```
 
-## check compat
+### check compat
 
 从1.3.0版本开始，支持检查当前工程/模块/文件对目标SDK版本的兼容性。
+
+鸿蒙电脑版DevEco CLI不支持该命令。
 
 **命令格式：**
 
@@ -407,7 +417,7 @@ devecocli check compat [files] --source-version <version> --target-version <vers
 | 参数名 | 说明 |
 | --- | --- |
 | [files...] | 可选，待检查的文件路径，支持相对路径或绝对路径，当前仅支持.ets、.c、.cpp后缀文件。 |
-| --source-version | 必选，工程使用的精确的SDK版本号，格式为HarmonyOS\_SDK版本号\_Beta/Release，如HarmonyOS\_26.0.0(26)\_Beta2，可在File > Settings > HarmonyOS SDK查询。 |
+| --source-version | 必选，工程使用的精确的SDK版本号，格式为：HarmonyOS\_SDK版本号\_Beta/Release，如HarmonyOS\_26.0.0(26)\_Beta2，可在菜单栏点击**File** > **Settings** > **HarmonyOS SDK**查询。 |
 | --target-version | 必选，需要检查兼容性的目标SDK版本，可以先通过check compat versions命令查询用于兼容性检查的SDK版本，版本大于--source-version。 |
 | --modules | 可选，模块名称，指定要检查的模块，多个模块用空格隔开。默认检查工程中的所有模块。 |
 | --format | 可选，输出格式，取值包括json、default。默认为default。  不填写时，若不指定--output-path，在控制台以文本形式输出；若指定--output-path，以csv形式输出。 |
@@ -426,9 +436,11 @@ devecocli check compat --source-version "HarmonyOS_6.1.0(23)_Beta2" --target-ver
 devecocli check compat --source-version "HarmonyOS_6.1.0(23)_Beta2" --target-version "HarmonyOS_26.0.0(26)_Beta2" --limit 20
 ```
 
-## check compat versions
+### check compat versions
 
 从1.3.0版本开始，支持查询可用于兼容性检查的SDK版本。
+
+鸿蒙电脑版DevEco CLI不支持该命令。
 
 **命令格式：**
 
@@ -449,7 +461,11 @@ devecocli check compat versions
 devecocli check compat versions --format json
 ```
 
-## emulator list
+## emulator
+
+鸿蒙电脑版DevEco CLI不支持emulator相关命令。
+
+### emulator list
 
 查看模拟器实例。
 
@@ -469,9 +485,9 @@ devecocli emulator list
 | Device Type | 模拟器产品类型。 |
 | OS Version | 模拟器镜像版本。 |
 
-## emulator start
+### emulator start
 
-启动模拟器。首次使用时，需要签署HarmonyOS软件许可与服务协议，具体请参考[emulator license accept](ide-deveco-cli-options.md#section469814010492)。
+启动模拟器。首次使用时，需要签署HarmonyOS软件许可与服务协议，具体请参考[emulator license accept](ide-deveco-cli-options.md#section159241618713)。
 
 **命令格式：**
 
@@ -496,7 +512,7 @@ devecocli emulator start Phone1 Phone2
 
 emulator start命令仅支持启动release版本的模拟器。
 
-## emulator stop
+### emulator stop
 
 关闭模拟器。
 
@@ -519,7 +535,7 @@ devecocli emulator stop Phone
 devecocli emulator stop 127.0.0.1:5555
 ```
 
-## emulator create
+### emulator create
 
 创建模拟器。
 
@@ -545,7 +561,7 @@ devecocli emulator create MyPhone --device-type phone --os-version "HarmonyOS 6.
 devecocli emulator create MyPhone --device-type phone --os-version "HarmonyOS 6.1.1(24)"
 ```
 
-## emulator delete
+### emulator delete
 
 删除模拟器。
 
@@ -567,7 +583,7 @@ devecocli emulator delete <name>
 devecocli emulator delete MyPhone
 ```
 
-## emulator image list
+### emulator image list
 
 查询模拟器镜像列表。
 
@@ -605,9 +621,9 @@ devecocli emulator image list --device-type phone
 devecocli emulator image list --format json
 ```
 
-## emulator image download
+### emulator image download
 
-下载模拟器镜像。首次使用时，需要签署HarmonyOS SDK许可协议，具体请参考[emulator license accept](ide-deveco-cli-options.md#section469814010492)。
+下载模拟器镜像。首次使用时，需要签署HarmonyOS SDK许可协议，具体请参考[emulator license accept](ide-deveco-cli-options.md#section159241618713)。
 
 **命令格式：**
 
@@ -634,7 +650,7 @@ devecocli emulator image download --device-type phone --os-version "HarmonyOS 6.
 
 emulator image download命令仅支持下载release版本的模拟器镜像。
 
-## emulator image remove
+### emulator image remove
 
 删除模拟器镜像。
 
@@ -657,7 +673,7 @@ devecocli emulator image remove --device-type <type> --os-version <version>
 devecocli emulator image remove --device-type phone --os-version "HarmonyOS 6.0.1(21)"
 ```
 
-## emulator license view
+### emulator license view
 
 查看HarmonyOS软件许可与服务协议和HarmonyOS SDK许可协议文本（只读）。
 
@@ -667,7 +683,7 @@ devecocli emulator image remove --device-type phone --os-version "HarmonyOS 6.0.
 devecocli emulator license view
 ```
 
-## emulator license accept
+### emulator license accept
 
 查看并接受协议。使用模拟器需要同意HarmonyOS软件许可与服务协议，下载镜像需要同意HarmonyOS SDK许可协议。
 
@@ -677,7 +693,7 @@ devecocli emulator license view
 devecocli emulator license accept
 ```
 
-## emulator shake
+### emulator shake
 
 从1.3.0版本开始，支持触发一次模拟器的摇一摇功能。
 
@@ -699,7 +715,7 @@ devecocli emulator shake --target <name|serial>
 devecocli emulator shake --target myPhone
 ```
 
-## emulator power
+### emulator power
 
 从1.3.0版本开始，支持设置模拟器亮/熄屏。
 
@@ -721,7 +737,7 @@ devecocli emulator power --target <name|serial>
 devecocli emulator power --target myPhone
 ```
 
-## emulator rotate
+### emulator rotate
 
 从1.3.0版本开始，支持旋转模拟器。
 
@@ -744,7 +760,7 @@ devecocli emulator rotate <direction> --target <name|serial>
 devecocli emulator rotate left --target myPhone
 ```
 
-## emulator volume
+### emulator volume
 
 从1.3.0版本开始，支持调整模拟器的音量。
 
@@ -767,7 +783,7 @@ devecocli emulator volume <direction> --target <name|serial>
 devecocli emulator volume up --target myPhone
 ```
 
-## emulator fold
+### emulator fold
 
 从1.3.0版本开始，支持设置模拟器的折叠开合状态。
 
@@ -810,7 +826,7 @@ devecocli emulator fold left-expanded-right-half-folded --target myPhone
 devecocli emulator fold left-half-folded-right-half-folded --target myPhone
 ```
 
-## emulator battery
+### emulator battery
 
 从1.3.0版本开始，支持设置模拟器电池的电量和充电状态。
 
@@ -836,7 +852,7 @@ devecocli emulator battery --target myPhone --status discharging
 devecocli emulator battery --target myPhone --status charging
 ```
 
-## emulator geolocation
+### emulator geolocation
 
 从1.3.0版本开始，支持设置模拟器的地理坐标和方向信息。
 
@@ -869,7 +885,7 @@ devecocli emulator geolocation --target myPhone --altitude 45.49
 devecocli emulator geolocation --target myPhone --direction 0
 ```
 
-## emulator scene
+### emulator scene
 
 从1.3.0版本开始，支持启动运动模拟场景。
 
@@ -894,7 +910,7 @@ devecocli emulator scene outdoorCycling --target myPhone
 devecocli emulator scene drivingNavigation --target myPhone
 ```
 
-## emulator sensor
+### emulator sensor
 
 从1.3.0版本开始，支持为模拟器设置传感器。
 
@@ -929,7 +945,9 @@ devecocli emulator sensor --target myPhone --steps 1000
 devecocli emulator sensor --target myPhone --heartrate 80
 ```
 
-## device list
+## device
+
+### device list
 
 查询所有已连接的设备，包括真机设备和运行中的模拟器。
 
@@ -948,7 +966,7 @@ devecocli device list
 | Kind | 类型，真机或模拟器。 |
 | Device Type | 设备类型。 |
 
-## device view
+### device view
 
 查询已连接设备的详细信息，包括设备序列号、设备名称、设备类型、OS版本等。
 
@@ -981,7 +999,9 @@ devecocli device view --target 127.0.0.1:5555
 devecocli device view -t "My Device Name"
 ```
 
-## skills list
+## skills
+
+### skills list
 
 查询可用的Skill。
 
@@ -1005,7 +1025,7 @@ devecocli skills list --long
 devecocli skills list -l
 ```
 
-## skills find
+### skills find
 
 按关键词搜索Skill。
 
@@ -1027,7 +1047,7 @@ devecocli skills find <keyword>
 devecocli skills find deveco
 ```
 
-## skills add
+### skills add
 
 将Skill添加到智能体中。
 
@@ -1056,7 +1076,7 @@ devecocli skills add --skill skillname --agent agentname --force  # skillname需
 devecocli skills add --skill skillname --project ./my-app  # skillname需替换为实际的Skill名称
 ```
 
-## skills remove
+### skills remove
 
 从智能体中删除已添加的Skill。
 
@@ -1082,7 +1102,9 @@ devecocli skills remove --skill skillname   # skillname需替换为实际的Skil
 devecocli skills remove --skill skillname --agent agentname  # skillname需替换为实际的Skill名称
 ```
 
-## ui layout
+## ui
+
+### ui layout
 
 从1.3.0版本开始，支持以字符树的形式查看应用的界面布局，包括控件类型、控件ID、控件坐标边界（[left,top,right,bottom]） 、控件文本和交互标志（clickable、longClickable、scrollable、checkable）。
 
@@ -1119,7 +1141,7 @@ devecocli ui layout --window 15 --format json
 
 从API version 20开始支持该命令。
 
-## ui window list
+### ui window list
 
 从1.3.0版本开始，支持查看设备上的窗口列表。
 
@@ -1156,7 +1178,7 @@ devecocli ui window list --format json
 devecocli ui window list --all
 ```
 
-## ui screenshot
+### ui screenshot
 
 从1.3.0版本开始，支持对真机或模拟器进行全屏截图。
 
@@ -1185,7 +1207,7 @@ devecocli ui screenshot --device Phone --path ./screenshots/phone.png
 devecocli ui screenshot --device Phone --display 0 --path ./screenshots/phone.png
 ```
 
-## ui click
+### ui click
 
 从1.3.0版本开始，支持单击指定坐标或单击节点ID的中心位置。
 
@@ -1213,7 +1235,7 @@ devecocli ui click --id submit_button
 devecocli ui click --id submit_button --window main_window
 ```
 
-## ui doubleclick
+### ui doubleclick
 
 从1.3.0版本开始，支持双击指定坐标或双击节点ID的中心位置。
 
@@ -1241,7 +1263,7 @@ devecocli ui doubleclick --id photo_thumb
 devecocli ui doubleclick --id photo_thumb --window main_window
 ```
 
-## ui longclick
+### ui longclick
 
 从1.3.0版本开始，支持长按指定坐标或长按节点ID的中心位置。
 
@@ -1269,7 +1291,7 @@ devecocli ui longclick --id menu_item
 devecocli ui longclick --id menu_item --window main_window
 ```
 
-## ui swipe
+### ui swipe
 
 从1.3.0版本开始，支持从起点缓慢滑到终点。内容随手指移动，手指离开即停止，适用于在特定区域滑动的场景，如拖动Slider。
 
@@ -1296,7 +1318,7 @@ devecocli ui swipe 100 500 100 200 --device Phone
 devecocli ui swipe 100 500 100 200 --speed 1000
 ```
 
-## ui fling
+### ui fling
 
 从1.3.0版本开始，支持从起点快速滑到终点。手指快速滑动后脱离屏幕，内容存在惯性滚动，适用于在特定区域快速滑动的场景。
 
@@ -1323,7 +1345,7 @@ devecocli ui fling 100 800 100 200 --device Phone
 devecocli ui fling 100 800 100 200 --speed 1000
 ```
 
-## ui dircfling
+### ui dircfling
 
 从1.3.0版本开始，支持按照指定的方向快速滑动且有惯性。适用于快速按方向浏览的场景，如页面滚动、列表快速滑动。
 
@@ -1349,7 +1371,7 @@ devecocli ui dircfling left
 devecocli ui dircfling right
 ```
 
-## ui drag
+### ui drag
 
 从1.3.0版本开始，支持拖拽操作。
 
@@ -1376,7 +1398,7 @@ devecocli ui drag 100 500 100 200 --device Phone
 devecocli ui drag 100 500 100 200 --speed 1500
 ```
 
-## ui text
+### ui text
 
 从1.3.0版本开始，支持在当前焦点、指定坐标或指定节点位置输入文本。
 
@@ -1406,7 +1428,9 @@ devecocli ui text "Hello World" --id search_box
 devecocli ui text "Hello World" --id search_box --window main_window
 ```
 
-## serve mcp
+## serve
+
+### serve mcp
 
 启动本地MCP服务。智能体配置MCP服务后，可通过MCP协议调用ArkTS/C++语法检查工具。不同智能体平台配置MCP服务的界面不一样，某智能平台的配置示例如下。
 
@@ -1453,7 +1477,7 @@ devecocli ui text "Hello World" --id search_box --window main_window
   + ArkTS：.ets
   + C/C++：.c、.cc、.cpp、.cxx、.c++、.h 、.hh、.hpp、.hxx、.h++、.ipp、.ixx、.inl、.inc、.tpp。
 
-## serve lsp
+### serve lsp
 
 从1.3.0版本开始，支持启动本地LSP语言服务。智能体配置LSP服务后，可通过LSP协议实现代码检查、代码引用查找、代码跳转、代码补全等代码编辑相关的能力。
 

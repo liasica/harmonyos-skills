@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analyzer-rules-overview
 title: 体检规则
-breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:47+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-09T08:15:18+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:278ab3f9b1dcde55f229d51032f50f7708d256ce8910dfa0bbc2845e0168119d
 ---
 

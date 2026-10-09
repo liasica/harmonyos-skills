@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-publish
 title: ohpm publish
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm publish
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm publish
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:41+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:34415a142129a68540935e1b844ffdaaf941eb7d057b82b418c972f1381c90a5
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:957f450b04d3eb041d1b387bffa1c06aac8b5e5ec05021cb21fc544bd68b023e
 ---
 
 发布一个三方库。
@@ -170,4 +170,4 @@ ohpm publish publish_test.har
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/lEFO5bH8RgaVicHxzGpmiw/zh-cn_image_0000002731541843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/FsHvETUbQwSD7NAyOlh77w/zh-cn_image_0000002731541843.png)

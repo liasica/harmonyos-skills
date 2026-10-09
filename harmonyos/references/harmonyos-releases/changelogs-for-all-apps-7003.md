@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对所有应用的变更
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Release引入的行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-09-10T06:20:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:442f4a700fcc3abb33d6b4a537f7345913c2ec1a0f3a53791a89da32b5dee2c4
+scraped_at: 2026-10-09T08:11:54+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:6afb53e023722d2d6d794609469171073f1212dd47bb77eb6d4c8771b7d63948
 ---
 
 ## Ability Kit
@@ -207,9 +207,9 @@ Image($r('app.media.large_image'))
   + 指定弹窗类组件：AlertDialog、ActionSheet、CustomDialog、CalendarPickerDialog、DatePickerDialog、TimePickerDialog、TextPickerDialog、SelectionMenu、AlphabetIndexer弹窗、Text设置copyOption后长按或双击触发的文本菜单
   + 指定弹窗类接口：PromptAction、ArkUI\_NativeDialog、@ohos.promptAction (弹窗)、Popup控制、Tips控制、菜单控制、半模态转场
   + Slider、Toggle、Select
-* 其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
+* 其他组件仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 
-以下示例展示了，其他组件（如Column）不在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中设置沉浸光感，在变更前后的效果变化：
+以下示例展示了，其他组件（如Column）不在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中设置沉浸光感，在变更前后的效果变化：
 
 ```ts
 import { uiMaterial } from '@kit.ArkUI';
@@ -252,11 +252,11 @@ struct MaterialScopeExample {
 
 变更前，Column组件通过systemMaterial设置了沉浸光感，沉浸光感效果生效。示例图片如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/xGC4vaPyTJqdm5ZRTWbzbg/zh-cn_image_0000002744123695.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/T-HS4MfZR_62io_HVW9LJQ/zh-cn_image_0000002744123695.jpg)
 
 变更后，Column组件通过systemMaterial设置了沉浸光感，由于不处于生效范围内，沉浸光感效果不生效。示例图片如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/uXu99B5ATkWeEaeoX_ZDVA/zh-cn_image_0000002714364828.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/fR_pEcSyQna0k7P3HI5u2g/zh-cn_image_0000002714364828.jpg)
 
 **起始 API Level**
 
@@ -353,11 +353,11 @@ struct MaterialScopeExample {
 
   在自定义组件中，为Column组件设置了沉浸光感，处于生效范围外，沉浸光感效果不生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/-Er9xipLT2yW32ldVX4-Dg/zh-cn_image_0000002743963725.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/rnONmpPURNqXuIv089lzrw/zh-cn_image_0000002743963725.jpg)
 
   在Navigation标题栏中，为Column组件设置了沉浸光感，处于生效范围内，沉浸光感效果生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/bXiGInhPRiKbp3yEPkcD0g/zh-cn_image_0000002714524792.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/zrKm_uGDTOay2PJv5EwFig/zh-cn_image_0000002714524792.jpg)
 * 底部TabBar适配指导
 
   以下示例展示了将Column组件放置于底部TabBar，使得通过systemMaterial设置的沉浸光感效果生效。
@@ -455,14 +455,14 @@ struct MaterialScopeExample {
 
   在自定义组件中，为Column组件设置了沉浸光感，处于生效范围外，沉浸光感效果不生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/qyeCZmUnRGab67yKoQcYSA/zh-cn_image_0000002744123697.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/I3kfvXptShCZnrBT2s0RtA/zh-cn_image_0000002744123697.jpg)
 
   在底部TabBar中，为Column组件设置了沉浸光感，处于生效范围内，沉浸光感效果生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/yGi1NXlmQHuSC5UV2zGieQ/zh-cn_image_0000002714364830.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/PWQMgQtzTdedLHSk5_qceg/zh-cn_image_0000002714364830.jpg)
 * 弹窗类组件沉浸光感使用示例
 
-  由于不处于Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar内，因此以下两个场景，设置于背板的沉浸光感效果不会生效：
+  由于不处于Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar内，因此以下两个场景，设置于背板的沉浸光感效果不会生效：
 
   + 使用Stack组件堆叠的形式配合组件可见性实现的类弹窗效果。
   + 设置于自定义弹窗外层容器组件上的沉浸光感效果。
@@ -532,7 +532,7 @@ struct MaterialScopeExample {
 
   使用CustomDialog的systemMaterial属性开启弹窗的沉浸光感效果，示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/9mRSuJHCR36KtlVNZW0y7w/zh-cn_image_0000002743963727.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yMC_m0zKSbaGECa0frprdw/zh-cn_image_0000002743963727.jpg)
 
 ## Core File Kit
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-uninstall-errorcode
 title: ohpm uninstall错误码
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm uninstall错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm uninstall错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:59+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:a7fd34fd99e4e90a05ec9977e0533ef2ea886931b8b9ef8154b0880983b62eb8
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台行为变更说明
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > OS平台行为变更说明
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:20+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:04+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:4cbb0cda49b54868a905d30844addbf64bdb02bfd9d7625e0b980fd5122a61a2
 ---
 

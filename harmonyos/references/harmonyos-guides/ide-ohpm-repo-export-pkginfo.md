@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-export-pkginfo
 title: ohpm-repo export_pkginfo
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo export_pkginfo
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo export_pkginfo
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:31+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-09T08:15:05+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:441ac65f35893057d7c1ae69cfcc0d6f2aa95a277528c755e381dc8a70864fe6
 ---
 

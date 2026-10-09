@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-overview
 title: 概述
-breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 概述
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:24+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:9931753999259eaddda88bbb700943d86872983de3dac32d2f494c786594ad44
 ---
 

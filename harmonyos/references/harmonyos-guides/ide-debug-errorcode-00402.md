@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-errorcode-00402
 title: 热重载和增量调试错误码
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 调试错误码 > 热重载和增量调试错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 调试错误码 > 热重载和增量调试错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:17+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:e17355ba58bdd51b5220db24bf4f02ecc92b5aa4ebb989b43efa279779070d1d
 ---
 

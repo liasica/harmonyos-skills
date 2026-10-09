@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-command
 title: 相关命令
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:31+08:00
+scraped_at: 2026-10-09T08:15:05+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:d4bdf6d155a267d353738005cb37b010d5411eb1b9948c6814278c452edb70a3
 ---

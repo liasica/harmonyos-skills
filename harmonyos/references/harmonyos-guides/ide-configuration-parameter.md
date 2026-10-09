@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-configuration-parameter
 title: DevEco Studio配置参数列表
-breadcrumb: 指南 > 编写与调试应用 > 附录 > DevEco Studio配置参数列表
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 附录 > DevEco Studio配置参数列表
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:26+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:18+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:85c2bf4d0333e2ff1987c6579132f50db67029c1667757cb2647088c21b14682
 ---
 

@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-createproject
 title: 在AGC创建项目和HarmonyOS应用/元服务
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发准备 > 在AGC创建项目和HarmonyOS应用/元服务
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发准备 > 在AGC创建项目和HarmonyOS应用/元服务
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:59+08:00
+scraped_at: 2026-10-09T08:15:07+08:00
 doc_updated_at: 2026-01-15
 content_hash: sha256:2702003cb18e573f98a8a20e431bbad0138a6d90972f630d0125b6d5a2eed564
 ---

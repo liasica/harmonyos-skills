@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-use-reusable-component
 title: "@performance/hp-arkui-use-reusable-component"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-use-reusable-component
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-use-reusable-component
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:12+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:595323ae921fddfc3d6b75963537926d6b4db26ce33764bf01b9a0bd9c20c136
 ---
 

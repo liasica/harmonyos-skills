@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-coderlinter-recommended-rules
 title: recommended推荐规则清单
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > recommended推荐规则清单
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > recommended推荐规则清单
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:50+08:00
-doc_updated_at: 2026-06-24
+scraped_at: 2026-10-09T08:15:08+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:b2c9b6103f57b13cfbc4c44f34d1b4da55e2a4dee2f7ea389c8b2f11079c0000
 ---
 

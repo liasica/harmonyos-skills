@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-504
 title: API变更清单
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.4(16) > OS平台能力 > API变更清单
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:36+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:29+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:49640392cc6961ca186dd0a72d56940870d0e305a80a00b483e935a840426b05
 ---
 

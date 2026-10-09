@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-arkts-attach-to-process
 title: 等待调试
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 等待调试
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 等待调试
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:88f2abe045a0648e631fbc6585d273b5d5dfab3808f03ea4cd0e6332aa605bc7
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:e4ee1cf75b2ac8dc3391e0ee8cdb85ce81a44f5a6263d08ce74d1fc444cd12e5
 ---
 
 开发者可以通过将某个应用设置为“等待调试模式”，需要调试时拉起应用，即可快速进入调试状态。
@@ -19,14 +19,14 @@ content_hash: sha256:88f2abe045a0648e631fbc6585d273b5d5dfab3808f03ea4cd0e6332aa6
 
 1. 在设备选择框中选择调试的设备，并点击**Run > Attach to Process by Name**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/8_Kh5zZnSeu3u154P3FFgQ/zh-cn_image_0000002701663814.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/p7jBsEt8Qbyj-DiYnQOdoA/zh-cn_image_0000002701663814.png)
 2. 选择需要设置为“等待调试模式”的应用（默认为当前工程），选择调试类型，点击**Attach**，即可将该应用设置为“等待调试模式”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/WAcp4DTXSk6yOV4hoE3STg/zh-cn_image_0000002701823736.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/aT6CYbIjRkirY_QnIyiP2A/zh-cn_image_0000002701823736.png)
 
    此时DevEco Studio底部会显示一个等待进度条，在应用被拉起之前，一直处于等待状态。可通过进度条右侧的取消按钮进行取消。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/01NEsE43T52KS5gIIAZ12g/zh-cn_image_0000002701663812.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/DItsOcI8QXOfjMNlYid1bA/zh-cn_image_0000002701663812.png)
 3. 拉起设备端应用，此时将会进入调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/9RaJI46-SE6lgIQT8es85g/zh-cn_image_0000002731543013.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/C0xdXkOcTtGSUYxy8ZVmsw/zh-cn_image_0000002731543013.png)

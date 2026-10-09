@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-errorcode-00404
 title: hdc命令失败错误码
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 调试错误码 > hdc命令失败错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 调试错误码 > hdc命令失败错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:16+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:cd797604f474ea7ee5dc9369da0988500cb33a08353593c0d43b92ca47a0fd7c
 ---
 

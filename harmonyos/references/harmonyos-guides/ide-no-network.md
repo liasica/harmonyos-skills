@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-no-network
 title: 离线环境配置指导
-breadcrumb: 指南 > 开发环境搭建 > 离线环境配置指导
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 离线环境配置指导
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:22+08:00
-doc_updated_at: 2026-06-10
-content_hash: sha256:3ef2bbbf831fc4529df356a9799e604821857f622982373b74ab7ee0a15b9196
+scraped_at: 2026-10-09T08:15:08+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:efe4b757fbf6e884e6cc38417d63952519a6be92233e15b81898462de46ede5b
 ---
 
 如果开发者所使用的电脑处于完全无网络的离线环境中，需要先在一台可访问网络的电脑上准备好以下文件，将这些文件拷贝到无网络电脑中。
@@ -26,7 +26,7 @@ content_hash: sha256:3ef2bbbf831fc4529df356a9799e604821857f622982373b74ab7ee0a15
 
 [配置环境变量并打开命令行工具](ide-commandline-get.md#section17776863449)，执行ohpm install命令，会生成oh\_modules文件夹和oh-package-lock.json5文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/2NFBByGOTSmBnCIp2NWN5Q/zh-cn_image_0000002701663914.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/dzq6NYxERwuiUaHHyiQYag/zh-cn_image_0000002701663914.png)
 
 将oh\_modules文件夹和oh-package-lock.json5文件拷贝到无网络电脑的工程根目录下。
 
@@ -52,7 +52,7 @@ content_hash: sha256:3ef2bbbf831fc4529df356a9799e604821857f622982373b74ab7ee0a15
 
   打开命令行工具，执行ohpm install命令，会生成oh\_modules文件夹和oh-package-lock.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/KnmA8mDtSwaBManx31e5gw/zh-cn_image_0000002701823834.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/uzBM_hBqTqCcODZSgenb0w/zh-cn_image_0000002701823834.png)
 
   将oh\_modules文件夹和oh-package-lock.json5文件拷贝到无网络电脑的工程根目录下。
 

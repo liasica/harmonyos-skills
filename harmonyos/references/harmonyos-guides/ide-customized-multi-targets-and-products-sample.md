@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-customized-multi-targets-and-products-sample
 title: 实践说明
-breadcrumb: 指南 > 构建应用 > 配置构建流程 > 配置多目标产物 > 实践说明
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 配置多目标产物 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:09+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:f7677837514afde021ec28c191a050d1b5abba9567ccab089e68f91da3d8fde5
+scraped_at: 2026-10-09T08:15:19+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:99ccf35b2807e933ad4ad158bfc5aa103c3d39790eecc3e4a7648abaa666c8af
 ---
 
 某对外发布应用共有两个版本：
@@ -16,7 +16,7 @@ content_hash: sha256:f7677837514afde021ec28c191a050d1b5abba9567ccab089e68f91da3d
 
 可以看出在Community版本与Ultimate版本之间，部分功能存在重合，同时也存在某些特定功能，所以期望通过一次开发以实现差异化，根据不同配置完成多种特定运行环境的开发、预览、打包、调试等功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Xug5WZ9EQqeVy-h-7Wry8Q/zh-cn_image_0000002731382293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/2umix62tR0Ge0A-I7CdAqg/zh-cn_image_0000002731382293.png)
 
 1. 两个不同版本的软件，可能存在差异：如不同的应用标题、应用图标、版本声明。我们可以在工程级build-profile.json5->app{}->products[]中，可以对两种不同的外发版本进行差异化定制，新增两个product：Community和Ultimate。根据已支持的字段进行定制修改。
 
@@ -172,8 +172,8 @@ content_hash: sha256:f7677837514afde021ec28c191a050d1b5abba9567ccab089e68f91da3d
 
 例：用户需要构建Ultimate版本的且具有vip特性的应用，可以选择product：Ultimate，target：vip，apply之后执行构建。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/r3Pwe2pEQ3-bnk_PK_2YRQ/zh-cn_image_0000002731542265.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/T1xdfGJ6Qx-QDZy-qGXGtw/zh-cn_image_0000002731542265.png)
 
 查看构建产物
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/TQ2MAqyrTq2psniKfOU3ew/zh-cn_image_0000002701822992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/GkrNmC1jQCuxwSmw8GJTZg/zh-cn_image_0000002701822992.png)

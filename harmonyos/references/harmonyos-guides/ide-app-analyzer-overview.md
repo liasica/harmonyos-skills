@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analyzer-overview
 title: 体检概述
-breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 体检概述
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 体检概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:26+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-10-09T08:15:17+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:9c0091df292f35dc66b35967b6e27f5ddb19a2c6c5c3abb3cda004d3a5612795
 ---
 

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-publish
 title: 发布共享包
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 发布共享包
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 发布共享包
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:19+08:00
+scraped_at: 2026-10-09T08:15:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:39546451cee62dcd7162a44c40022e19ff5ae83f94f57e1ac0128bc8b360eb89
+content_hash: sha256:1b3ddb756adda32c405115b4557b2d936b3441d5ee61fadbb1bab9227a381948
 ---
 
 发布打包的HAR，可供其他开发者安装和引用。接下来将介绍如何发布HAR共享包。
@@ -36,7 +36,7 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
    3. ohpm包管理器只支持加密密钥认证，请在生成公私钥时输入密码。
 4. 登录[OpenHarmony三方库中心仓](https://ohpm.openharmony.cn/#/cn/home)官网，单击主页右上角的**个人中心**，新增OHPM公钥，将公钥文件（mykey.pub）的内容粘贴到公钥输入框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/w6duvWOBQtqYVJbTPrEqiQ/zh-cn_image_0000002731541839.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Dx7OZ7pdTVaIlfhP9Ja2Fg/zh-cn_image_0000002731541839.png)
 5. 打开命令行工具，将对应私钥文件路径配置到 .ohpmrc 文件中 key\_path 字段上，可执行以下命令进行配置：
 
    ```screen

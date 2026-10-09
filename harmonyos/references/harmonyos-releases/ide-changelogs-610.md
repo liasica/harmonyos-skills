@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-changel
 title: 变更说明
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:37+08:00
+scraped_at: 2026-10-09T08:12:08+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:931cd567cf6f07f09d4b65a6c79b3e7a06289f6246e175c0f0bc05d3aea925d1
+content_hash: sha256:61737e3a15d9b7da8c10d693b1722a815c5b1598b6dbd7e2fb98aa6b06b7fdda
 ---
 
 ## DevEco Studio 6.1.0 Release引入的变更
@@ -33,11 +33,11 @@ void test()
 
 此时，老版本存在C API兼容性告警和使用APIAVAILABLE的Quick Fix能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/KRhNqi-vTLOl3nlWFDCVTw/zh-cn_image_0000002603735633.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/y4wPnztHTqyBKJwieVeLqQ/zh-cn_image_0000002603735633.png)
 
 新版本保留C API告警，去掉自动修改代码的Quick Fix功能，并新增指导文档跳转链接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/sswvPBi1TPWIK3A_g4xGHA/zh-cn_image_0000002603737439.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/fNe5eWHJRG2xbx2tHkqHbA/zh-cn_image_0000002603737439.png)
 
 **适配指导**
 

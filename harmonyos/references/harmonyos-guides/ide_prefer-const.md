@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-const
 title: prefer-const
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > prefer-const
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > prefer-const
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:52+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:11+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:fd5abe2cfa7afaa75edf42148ae15b2dce0695427b437f6fa0ac2b3f46d394a7
 ---
 

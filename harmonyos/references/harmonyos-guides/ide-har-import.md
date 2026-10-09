@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-import
 title: 引用及管理共享包
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 引用及管理共享包
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 引用及管理共享包
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:19+08:00
+scraped_at: 2026-10-09T08:15:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:be593048df11ae90f2c64b02b4a3046389e298edd63d096da0249320b8b01fee
+content_hash: sha256:903b3a8cd9e36e63aec0150a6634938a54fc8cc5bcaf269e98ce8d9758a47090
 ---
 
 引用三方HAR/HSP包（以下简称三方包），包括从ohpm仓库进行安装、从本地文件夹和本地压缩包中进行安装三种方式。
@@ -127,14 +127,14 @@ ohpm install
 1. 在菜单栏点击**Tools >** **OHPM Index**，进入OpenHarmony三方库中心仓。
 2. 在左侧搜索框可查询三方包名称，或点击目录树，根据分类查看不同分类下推荐的依赖包信息。选定所需要安装的三方包，点击右上角蓝色按钮**Install**进行安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/IiX57UKKQQKG_vii9KNNtQ/zh-cn_image_0000002731542135.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/nurMY69JTDWxdEJr_MneZQ/zh-cn_image_0000002731542135.png)
 3. 安装过程中，如出现下方弹窗，点击**Add**按钮，将OpenHarmony三方库中心仓地址添加到.ohpmrc文件中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/rKWj4r6sQOGwM18zmZievQ/zh-cn_image_0000002701822866.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/s12ZZUCqRQC5X17HqlKxdQ/zh-cn_image_0000002701822866.png)
 4. 三方包安装完成后，在工程级oh-package.json5文件中可以看到已安装的三方包名称及版本信息，oh\_modules中将同时添加该三方包。
-5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/e9KgCydZTkieMJxhtdLRPA/zh-cn_image_0000002701822862.png "点击放大")图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
+5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/TGkV-fgxShy5xBxG2Rw7hQ/zh-cn_image_0000002701822862.png "点击放大")图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/unLZyT9vQcaGz8C46qqgFw/zh-cn_image_0000002731542139.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/ylK_WxbJT9uVlMjJGEhn5A/zh-cn_image_0000002731542139.png)
 6. 若对于已使用的三方包依赖存在推荐的同类三方包，可点击编辑界面中黄色灯泡图标，在弹框中选择**Replace selected with recommended library**，将当前依赖替换为推荐的三方包依赖；或选择**Replace all with recommended libraries**，一键替换当前文件中所有同类推荐三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/r9VO_Q5GTTS4FB_NZ8YiBQ/zh-cn_image_0000002731542137.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/zzCcEKKoSmqOwDSjC5YT0A/zh-cn_image_0000002731542137.png)

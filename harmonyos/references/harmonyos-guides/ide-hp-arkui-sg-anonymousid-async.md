@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-sg-anonymousid-async
 title: "@performance/hp-arkui-suggest-use-get-anonymousid-async"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-suggest-use-get-anonymousid-async
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-suggest-use-get-anonymousid-async
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:28+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-09T08:15:12+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:d823b97e01d0ade84e9cb1b44b0b477271032d7c74a5116cdd525e5b4f594537
 ---
 

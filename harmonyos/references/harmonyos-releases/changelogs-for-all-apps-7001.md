@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对所有应用的变更
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Beta1引入的行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:27+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:5ed8495dfeefaa0d40fc945838a9cdc6ac772e69734c18d2357ae3981ecf5dee
+scraped_at: 2026-10-09T08:11:54+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:87b6f43c2af1208241848297858184f85b4185d54c060e8f062e193ce100f379
 ---
 
 ## Ability Kit
@@ -1666,9 +1666,9 @@ statistics.getUidTxBytes(uid: number): Promise<number>
 
 Binary（可执行二进制，以下简称bin）是操作系统中可通过execve系统调用创建为独立进程的文件，bin独立进程具备完整的程序入口点和运行时上下文，内核为其分配独立的地址空间、PID、文件描述符表等进程资源，同样它也具有独立的”进程身份”。
 
-在历史版本中，系统已向应用开放了一些在内核进行权限管控的资源的权限，如ohos.permission.kernel.ALLOW\_WRITABLE\_CODE\_MEMORY（允许应用申请可执行的匿名内存）。这类权限在权限名中带有“.kernel”字段，这类权限被称为kernelpermission。
+在历史版本中，系统已向应用开放了一些在内核进行权限管控的资源的权限，如ohos.permission.kernel.ALLOW\_WRITABLE\_CODE\_MEMORY（允许应用申请可执行的匿名内存）。这类权限在权限名中带有“.kernel”字段，这类权限被称为KernelPermission。
 
-从ROM版本7.0开始，bin进程若想要使用kernelpermission的权限，需要应用主动为bin声明权限并签名。
+从ROM版本7.0开始，bin进程若想要使用KernelPermission的权限，需要应用主动为bin声明权限并签名。
 
 **变更影响**
 
@@ -1681,7 +1681,7 @@ Binary（可执行二进制，以下简称bin）是操作系统中可通过execv
 变更后：
 
 * 开发者使用的API版本小于26.0.0：应用不受影响，建议开发者尽早适配。
-* 开发者使用的API版本大于等于26.0.0：应用进程执行bin，bin不再自动继承应用的kernelpermission，需要bin主动声明权限。
+* 开发者使用的API版本大于等于26.0.0：应用进程执行bin，bin不再自动继承应用的KernelPermission，需要bin主动声明权限。
 
 **起始 API Level**
 
@@ -1693,14 +1693,14 @@ Binary（可执行二进制，以下简称bin）是操作系统中可通过execv
 
 **适配指导**
 
-1. 确认应用是否申请了权限名中带有”.kernel”的权限（kernelpermission），如果没有则不涉及本次适配。
+1. 确认应用是否申请了权限名中带有”.kernel”的权限（KernelPermission），如果没有则不涉及本次适配。
 2. 该适配不涉及手机应用，手机应用不存在拉起bin独立进程的场景，但建议涉及kernelpermission的应用二次确认。
 3. 确认应用是否涉及拉起bin独立进程，没有则不涉及本次适配。
-4. 确认拉起的bin独立进程是否需要应用申请的kernelpermission，不需要则不涉及本次适配。
+4. 确认拉起的bin独立进程是否需要应用申请的KernelPermission，不需要则不涉及本次适配。
 
 下图流程供应用参考进行排查，如果需要适配，则根据下文中的具体步骤进行适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/aBfRgNJwTj641cT_sxCChw/zh-cn_image_0000002623074963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/HX4ZgOBARiS2QBf80JqB1A/zh-cn_image_0000002623074963.png)
 
 适配步骤：
 
@@ -1728,7 +1728,7 @@ Binary（可执行二进制，以下简称bin）是操作系统中可通过execv
 
    1）HNP配置中配置"independentSign": true （API 23生效），配置该字段后HNP包中的bin为独立授权，需要主动配置需要的权限。
 
-   配置的权限除kernelpermission外，其余需要的权限也需要放入，如不确定权限策略文件中需要配置的权限，也可以直接配置ohos.permission.INHERIT\_PARENT\_PERMISSION，系统会自动帮bin进程继承可以继承的父进程权限，示例配置如下：
+   配置的权限除KernelPermission外，其余需要的权限也需要放入，如不确定权限策略文件中需要配置的权限，也可以直接配置ohos.permission.INHERIT\_PARENT\_PERMISSION，系统会自动帮bin进程继承可以继承的父进程权限，示例配置如下：
 
    ```screen
    {

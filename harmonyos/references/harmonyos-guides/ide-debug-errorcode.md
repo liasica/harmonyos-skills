@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-errorcode
 title: 调试错误码
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 调试错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 调试错误码
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:46+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-09T08:15:16+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:23e534bb35d11afc14607c82d1b2beb4dc6f426d8f3a8e4b0239a9ebdb749464
 ---
 

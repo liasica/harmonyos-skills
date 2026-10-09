@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-fro
 title: HarmonyOS NEXT Developer Beta6引入的API
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta6引入的API
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:41+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:37+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:d616d0280fde1a7313c00457040102de1777341fb56ce34db3f07e7f84a470c2
 ---
 

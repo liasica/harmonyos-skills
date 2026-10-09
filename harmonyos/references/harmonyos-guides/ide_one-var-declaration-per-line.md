@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_one-var-declaration-per-line
 title: "@hw-stylistic/one-var-declaration-per-line"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/one-var-declaration-per-line
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/one-var-declaration-per-line
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:53+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:13+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:ab4edf96a0d9c6f9da32b56008bd46c23b20ff28ec12ae910a7d7ede14abeea4
 ---
 

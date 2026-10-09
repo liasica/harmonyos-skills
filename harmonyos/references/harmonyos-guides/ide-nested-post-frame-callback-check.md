@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-nested-post-frame-callback-check
 title: "@performance/nested-post-frame-callback-check"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/nested-post-frame-callback-check
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/nested-post-frame-callback-check
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:12+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:3c0199b52405f93d570546a0f85633eb1c2e21f1c4e4c718d747ba9a477ab56b
 ---
 

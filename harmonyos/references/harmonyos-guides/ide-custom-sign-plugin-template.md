@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-custom-sign-plugin-template
 title: 模板文件
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义登录验证插件 > 模板文件
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义登录验证插件 > 模板文件
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:32+08:00
+scraped_at: 2026-10-09T08:15:06+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:1ed7c9317ec61e254b93d88655de09967686dab93226d0714baee9507945c16b
 ---

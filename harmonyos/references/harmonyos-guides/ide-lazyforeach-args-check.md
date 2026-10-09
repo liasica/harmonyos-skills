@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-lazyforeach-args-check
 title: "@performance/lazyforeach-args-check（已下线）"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/lazyforeach-args-check（已下线）
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/lazyforeach-args-check（已下线）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:13+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:7adb0d176a30780b83d08e364221a9a577f922fb0dfdb248f987782536156e93
 ---
 

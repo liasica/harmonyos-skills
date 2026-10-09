@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-60
 title: 版本概览
 breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:39+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:14+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:c983b217c36ca501ea7788f3822f069c0f4eda4f9dde88bc3d28b01825ccaeaf
 ---
 

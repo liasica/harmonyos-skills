@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-errorcode-00303-1
 title: 配置错误码
-breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 配置错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 配置错误码
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:36+08:00
-doc_updated_at: 2026-09-08
+scraped_at: 2026-10-09T08:15:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:303e03391d5990d5a81d47696fa9affc5bb508236ce7f59b5fe891784e102303
 ---
 

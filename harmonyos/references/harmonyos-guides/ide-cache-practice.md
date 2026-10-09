@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-cache-practice
 title: 性能优化：缓存插件实践
-breadcrumb: 指南 > 构建应用 > 提升构建效率 > 实践说明 > 性能优化：缓存插件实践
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明 > 性能优化：缓存插件实践
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:20+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:04c7c163cbfdde22d0a30a347d929af568b1cf05f6d887c163741270ee2b8e1a
 ---
 

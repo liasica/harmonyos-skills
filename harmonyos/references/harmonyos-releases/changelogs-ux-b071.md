@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Release引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:53+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:4b9f62c8e7cf2d0821e69c5dbd3d59898c4f1ae0ac696afdcce7b6fcb1b00bbe
+scraped_at: 2026-10-09T08:12:35+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:0188069a0c1c900f08be81a3495de8473cefa0b4235cbcdafe99be0665e17f13
 ---
 
 ## showToast接口TOP\_MOST模式行为变更
@@ -90,13 +90,13 @@ showToast接口
 
 图中的分享框就是一个模态UIExtension，该组件弹出后，带有"Sub Window"字样的子窗不会被隐藏，并且盖在分享框的上面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/yNBCIcZjQ-ylmY6Xo5lE6w/zh-cn_image_0000002078063544.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/y6D8a3LrTgu4yoo7VKKdzw/zh-cn_image_0000002078063544.gif "点击放大")
 
 **变更后**：
 
 图中的分享框就是一个模态UIExtension，该组件弹出后，带有"Sub Window"字样的子窗被隐藏，关闭分享框后这个子窗重新展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Mid71DA3SieCpoCU5kiTPw/zh-cn_image_0000002113588317.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/YAwB0x4_SC6OowHE-sodIg/zh-cn_image_0000002113588317.gif "点击放大")
 
 **起始API Level**
 
@@ -142,7 +142,7 @@ showToast接口
 
 安全控件设置offset属性后被父组件裁剪不能完整显示时，安全控件仍可响应点击授权。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/4fuv1xmqTJWcZnCw1QYUxw/zh-cn_image_0000002087445945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/7nDfhWznQOGp47BBahLc4Q/zh-cn_image_0000002087445945.png)
 
 变更后：
 
@@ -168,4 +168,4 @@ showToast接口
 
 安全控件设置offset属性后被父组件裁剪不能完整显示时，可通过调整offset({x: value, y: value})中x或y值，使得安全控件完整显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/VHppsXhKTC2XKSmU47T7dQ/zh-cn_image_0000002051328534.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/5SwriCQ1Q1uKReUbCB58Ww/zh-cn_image_0000002051328534.png)

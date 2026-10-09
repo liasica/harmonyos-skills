@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-test
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > DevEco Testing > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:11+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:08+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:159137e0426d88c46df1bf26cf519518e30c08ca40398d6b83ee04c606675dd0
 ---
 

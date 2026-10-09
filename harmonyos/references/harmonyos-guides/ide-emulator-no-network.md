@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-no-network
 title: 离线部署模拟器
-breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 离线部署模拟器
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 离线部署模拟器
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:31+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:6d60059116300add59ef9cb73416b2c7b085b018269ff9dc00f97388ed496e1c
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:cc8b0607ba61a0aaba7b5d8e63758ae8ff2d561209bce50228656e8ae9fdb2ba
 ---
 
 如果开发者所使用的电脑处于完全无网络的离线环境中，需要先在一台可访问网络的电脑上准备好DevEco Studio并下载模拟器镜像，将DevEco Studio和模拟器镜像文件拷贝到无网络电脑中。
@@ -27,4 +27,4 @@ content_hash: sha256:6d60059116300add59ef9cb73416b2c7b085b018269ff9dc00f97388ed4
    拷贝镜像时，在无网络电脑新建存放镜像的目录，如D:\No-network\Sdk，在此目录下新建镜像子文件夹路径system-image\HarmonyOS-xxx\phone\_all\_x86，将有网络电脑phone\_all\_x86下的所有文件拷贝到该路径下。
 2. 在无网络电脑上创建模拟器，注意创建时将镜像路径更改为上一步骤的路径，如D:\No-network\Sdk，具体可参考[创建模拟器](ide-emulator-create.md)，创建成功后即可使用模拟器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/TldMrwYeTVukjoPy78bNug/zh-cn_image_0000002701821808.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/vH3jLCPLTjyY6oY_7Nyeow/zh-cn_image_0000002701821808.png)

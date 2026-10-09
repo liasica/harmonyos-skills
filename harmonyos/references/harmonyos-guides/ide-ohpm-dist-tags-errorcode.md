@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dist-tags-errorcode
 title: ohpm dist-tags错误码
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm dist-tags错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm dist-tags错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:50+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:25+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:1c69ee0fe6fe0468f25424ac6a3f7c420a11f1c57f3634a520c6b2ffe23dc0ab
 ---
 

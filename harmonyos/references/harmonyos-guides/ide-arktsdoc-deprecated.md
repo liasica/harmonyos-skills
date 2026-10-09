@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdoc-deprecated
 title: "@deprecated"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 标准标签 > @deprecated
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 标准标签 > @deprecated
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:53+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:14+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:e5a3b402e29c4e444283d5a9d289124eb646a2bdde6f226383db724754199af4
 ---
 

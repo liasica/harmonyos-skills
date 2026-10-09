@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-createfunc
 title: 创建并配置函数
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云函数 > 创建并配置函数
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云函数 > 创建并配置函数
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:22+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:2a39cd11fc67d8fcd4a0aa4f3d758301c26352e7fa4d45ad246d0162abd73bff
+scraped_at: 2026-10-09T08:15:07+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:d951fbb84c1f6a442245f49e8dfd5c0c30ca83e68c8dcb1e9e13bb9edcfed370
 ---
 
 您可直接在DevEco Studio创建函数、为函数配置调用的触发器等。
@@ -14,12 +14,12 @@ content_hash: sha256:2a39cd11fc67d8fcd4a0aa4f3d758301c26352e7fa4d45ad246d0162abd
 
 1. 右击“cloudfunctions”目录，选择“New > Cloud Function”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ycNBzKXbTKCbZnYZg9WPwg/zh-cn_image_0000002383015060.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/B9tR5ncySemul2D-TMxqBw/zh-cn_image_0000002383015060.png)
 2. 在“Select the Cloud Function Type”栏选择“Cloud Function”，输入云函数名称（如“my-cloud-function”），点击“OK”。
 
    函数名称长度2-63个字符，仅支持小写英文字母、数字、中划线（-），首字符必须为小写字母，结尾不能为中划线（-）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/LIzmbJoETr-h6Yg2QZ0tWA/zh-cn_image_0000002214858969.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/blhw5YYfSlW2P8_4eDHs3w/zh-cn_image_0000002214858969.png)
 
    “cloudfunctions”目录下生成新建的“my-cloud-function”函数目录，目录下主要包含如下文件：
 
@@ -27,13 +27,13 @@ content_hash: sha256:2a39cd11fc67d8fcd4a0aa4f3d758301c26352e7fa4d45ad246d0162abd
    * 函数入口文件“myCloudFunction.ts”
    * 依赖配置文件“package.json”
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/uA9DJVpQSiaG9VCzXDjDEA/zh-cn_image_0000002179338652.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/_rnCBH09T0O2U-bEpZpCrg/zh-cn_image_0000002179338652.png)
 
 ## 配置函数
 
 函数创建完毕后，您可在配置文件“function-config.json”的“triggers”下配置触发器，通过触发器暴露的触发条件来实现函数调用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/NpAtdKgNRb2s7rkNNcbpTA/zh-cn_image_0000002296067548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/qLkZW_wBQJiAuLJewc_MbA/zh-cn_image_0000002296067548.png)
 
 **说明** 
 

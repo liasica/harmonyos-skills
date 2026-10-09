@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-page-method-on-preview-component
 title: "@previewer/no-page-method-on-preview-component"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 预览规则@previewer > @previewer/no-page-method-on-preview-component
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 预览规则@previewer > @previewer/no-page-method-on-preview-component
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:13+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:0705dfd0dd1d8cade4771420fa2b53b439e0125e03ac3d489a23ac0e1d3f59ff
 ---
 

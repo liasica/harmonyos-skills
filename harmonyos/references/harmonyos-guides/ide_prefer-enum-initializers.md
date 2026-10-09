@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-enum-initializers
 title: "@typescript-eslint/prefer-enum-initializers"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-enum-initializers
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-enum-initializers
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:10+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:b557849181c3cecd403a3ef5b54cdf27703a053b7dca0fa4d2d408949b0b8c63
 ---
 

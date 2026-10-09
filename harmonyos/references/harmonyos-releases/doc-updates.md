@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/doc-updates
 title: 文档变更说明
 breadcrumb: 版本说明 > 文档变更与支持 > 文档变更说明
 category: harmonyos-releases
-scraped_at: 2026-09-10T06:21:48+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:04bdb04b00f2bd9fd0d73810da40b71b290c02c7531c13c270169c49b1f696b6
+scraped_at: 2026-10-09T08:13:01+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:22cf47f49e6704a7de1ce0f91bbd4b17d5e6d45447a5114d9705b3e856934255
 ---
 
 ## 2026年8月28日
@@ -16,7 +16,7 @@ content_hash: sha256:04bdb04b00f2bd9fd0d73810da40b71b290c02c7531c13c270169c49b1f
 
 标记示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/GahbqxSrS8WW4GXN281YAQ/zh-cn_image_0000002701820520.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Xw_Vt_bwSUeKcHxRi5KN_A/zh-cn_image_0000002701820520.png "点击放大")
 
 ### DevEco Studio新增文档
 
@@ -245,12 +245,12 @@ content_hash: sha256:04bdb04b00f2bd9fd0d73810da40b71b290c02c7531c13c270169c49b1f
 在文档中，选中“ExtensionAbility组件”，单击“AI提问”。
 
 **图1** AI提问   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/AUeZ7hw2Q-S1UCtJki0ATw/zh-cn_image_0000002505654451.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/UGvmaqtmTnyKRydczTm7Yw/zh-cn_image_0000002505654451.png "点击放大")
 
 在“智能客服”窗口中，可看到相关内容的生成总结。
 
 **图2** 智能客服   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/aSZ6DknzTuyscoSH0_FYcQ/zh-cn_image_0000002473335124.png)
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/3kVIx20hQLO366-phDMmvA/zh-cn_image_0000002473335124.png)
 
 ## 2025年10月20日
 
@@ -286,7 +286,7 @@ content_hash: sha256:04bdb04b00f2bd9fd0d73810da40b71b290c02c7531c13c270169c49b1f
 将[UI开发 (基于NDK构建UI）](../harmonyos-guides/arkts-use-ndk.md)调整至“开发”-“应用框架”-“ArkUI（方舟UI框架）”目录下，调整后的目录结构更符合基于NDK接口开发UI界面的学习历程。目录结构调整不影响原页面URL链接地址，原地址可正常访问。
 
 **图3** UI开发 (基于NDK构建UI）目录调整后结构   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Gk0q9uraRPmUiQSr-OjI-g/zh-cn_image_0000002505033787.png)
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/T64il9AUS4ey-ZBSCpcH7Q/zh-cn_image_0000002505033787.png)
 
 ### 自动化测试框架指南优化结构
 
@@ -365,7 +365,7 @@ Longque JS Engine 提供了一批[Longque JS API指导指南](../harmonyos-guide
 * [变更前路径](../harmonyos-guides/multi-device-overview-path-change.md)：“指南”-“开发”-“一次开发，多端部署”
 * [变更后路径](../best-practices/bpta-multi-device-overview.md)：“最佳实践”-“多设备开发”-“一次开发，多端部署”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/1B_T6te4SROnOdsxUQ9Eng/zh-cn_image_0000002327075390.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/78cwPM0EQSWUp3fLd3KxZA/zh-cn_image_0000002327075390.png "点击放大")
 
 ## 2025年6月20日
 
@@ -397,7 +397,7 @@ API参考文档架构试点优化的范围如下：
   HarmonyOS SDK API变更查询功能为Beta体验特性，不同版本路径的变更信息持续上线中。
 
   **图4** API变更查询   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/zwdLQEb6Rliw_nGbfHNF7w/zh-cn_image_0000002324639544.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/6IIBe0vrSYybqGFWWjA_Ew/zh-cn_image_0000002324639544.png "点击放大")
 
 ### 新增文档代码解读功能
 
@@ -410,14 +410,14 @@ API参考文档架构试点优化的范围如下：
 “代码解读”功能为Beta体验特性。
 
 **图5** 代码解读   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/F-IA9L4kTg2e1VW1edwFAQ/zh-cn_image_0000002358677413.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/97jeqKxFR32ZZwMgC8zReA/zh-cn_image_0000002358677413.png "点击放大")
 
 ### 新增示例代码自动换行功能
 
 官网上线文档示例代码“自动换行”功能，提升的示例代码阅读体验，避免由于示例代码或注释过长显示不全的问题。
 
 **图6** 示例代码自动换行   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ojU8OQN8QOi8IsTis2nJDg/zh-cn_image_0000002324894130.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/DUcm4iKdRRKD7vTl2M9oEA/zh-cn_image_0000002324894130.png "点击放大")
 
 ## 2025年6月11日
 
@@ -425,11 +425,11 @@ API参考文档架构试点优化的范围如下：
 
 为便于快速查看不同设备品类适用的API范围，API参考新增支持按设备品类筛选能力：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/dL8vqJSPSNCeGvtuSgyZRg/zh-cn_image_0000002316486920.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/oFqjFi2aRvWvKpemKrVHCg/zh-cn_image_0000002316486920.png)
 
 同时，每个接口下也会显示其支持的设备（默认开启，可一键隐藏）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/7wnMNjbuSqOkJvgMq73DfA/zh-cn_image_0000002350405365.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/NV9Qi1oWRP-fm4qsgRNorQ/zh-cn_image_0000002350405365.png "点击放大")
 
 ### 版本说明新增信息
 
@@ -457,7 +457,7 @@ API参考文档架构试点优化的范围如下：
 
 **图7** 学习ArkTS语言章节目录结构变更对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/PzHiFhoZQyGtHGr1HhXXeA/zh-cn_image_0000002247957730.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/L6xcPoV_Ro2LTvmtKYpulQ/zh-cn_image_0000002247957730.png "点击放大")
 
 ## 2025年3月31日
 
@@ -480,7 +480,7 @@ API参考文档架构试点优化的范围如下：
 **变更前**：全站搜索提供多个版本搜索筛选项。
 
 **图8** 官网搜索版本筛选   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ZHVyV_VVRuelvBH_-v2-pQ/zh-cn_image_0000002251337993.png)
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/zEnP_NpDQxywIeVFsCzSjg/zh-cn_image_0000002251337993.png)
 
 **变更后：**
 
@@ -498,15 +498,15 @@ API参考文档架构试点优化的范围如下：
 1. 打开API参考文档，在左侧导航栏“高级筛选”下拉选项中设置“API version”版本号。
 
    **图9** “API version”筛选   
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/-PziD1VQSQGxA6awAvM2fw/zh-cn_image_0000002238136637.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/GpgIrbpZRcm1za5TOLUxtA/zh-cn_image_0000002238136637.png)
 2. 设置目标API version后，默认显示支持的API范围，不支持的接口在导航栏中置灰。
 
    **图10** 导航栏筛选后效果   
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/tFijPwnIRbGK0GLdndqqDg/zh-cn_image_0000002238138549.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/pK98cmqSSveYRydyn6k1Fg/zh-cn_image_0000002238138549.png "点击放大")
 3. 选择“只看筛选内容”，导航中不支持接口将被隐藏。
 
    **图11** 只看筛选内容效果   
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/ls4X-B6FTD-6RKfxS8wq1g/zh-cn_image_0000002203059966.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/AHLIReuxQ_6_UkMt2rt-Kw/zh-cn_image_0000002203059966.png)
 
 **官网文档默认版本变更****为“HarmonyOS 5.0.3(15)”**
 
@@ -517,11 +517,11 @@ API参考文档架构试点优化的范围如下：
 * 入口1：官网 ->开发->开发文档
 
   **图12** 开发文档入口   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/uKidevg2S0SqRdPMqTXBpg/zh-cn_image_0000002238234973.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/U-Kl4L6WR8aZ6DDGxeVSUQ/zh-cn_image_0000002238234973.png "点击放大")
 * 入口2：官网->文档->文档中心
 
   **图13** 文档中心入口   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/v_wso3XNS5CIfYUvnR23Ig/zh-cn_image_0000002238159785.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/-Z-M6vODRwemFJjLweslzQ/zh-cn_image_0000002238159785.png "点击放大")
 
 **变更后**：以上任意入口进入文档页面，默认打开“HarmonyOS 5.0.3(15)”版本配套文档
 
@@ -854,7 +854,7 @@ HarmonyOS NEXT Release更名为HarmonyOS 5.0.0 Release。HarmonyOS 5.0.0 Release
 * 版本筛选入口优化，通过左侧版本筛选区域下拉方式进行版本切换。
 
   **图14** 文档中心版本筛选入口优化   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Y1ro2oiCSlCs_C_dJXAcIA/zh-cn_image_0000002097856469.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/vMRsguZOQpWPvwJpyzlA9w/zh-cn_image_0000002097856469.png "点击放大")
 
 ## 2024年8月28日
 
@@ -870,7 +870,7 @@ API参考ArkUI组件目录结构优化，将分散的组件按照使用场景进
 
 **图15** ArkUI组件参考目录变更对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/GZX213eySrKx1_5BaqibAA/zh-cn_image_0000002070732800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/5EOmMF0pSKOijCuEi7ckbg/zh-cn_image_0000002070732800.png "点击放大")
 
 ## 2024年8月20日
 
@@ -895,7 +895,7 @@ API参考ArkUI组件目录结构优化，将分散的组件按照使用场景进
 文档包内搜索：支持在当前阅读的文档类型内全量搜索，如支持在版本说明书、指南、API参考等不同文档类型内全量搜索。
 
 **图16** 文档包内搜索框入口优化效果   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/bdX-FQwaTeqsF5Ln4GTamg/zh-cn_image_0000002062016246.png)
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/JmG_nCJrRW6aI9KLowSXFg/zh-cn_image_0000002062016246.png)
 
 ## 2024年8月8日
 
@@ -1063,7 +1063,7 @@ API参考ArkUI组件目录结构优化，将分散的组件按照使用场景进
 
 **图17** FAQ目录结构变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/tt3k0CbASBKh82kw7okAEg/zh-cn_image_0000002062016250.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/DUbd4LtdSoCoJg_SgWuYLg/zh-cn_image_0000002062016250.png "点击放大")
 
 ## 2024年6月21日
 
@@ -1114,7 +1114,7 @@ ArkWeb开发指南目录结构优化。根据实际开发旅程，从管理网�
 
 **图18** ArkWeb开发指南目录变更对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/kCfaMFfsSLO00cVz4c9LIw/zh-cn_image_0000002061857922.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/FuekzEihS5KRFg8iXisIdA/zh-cn_image_0000002061857922.png "点击放大")
 
 ## 2024年6月16日
 
@@ -1137,7 +1137,7 @@ ArkWeb开发指南目录结构优化。根据实际开发旅程，从管理网�
 仅导航结构变更，页面URL地址无变化。
 
 **图19** 开发指南导航变更对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/P8sGvz4hSD2qnkaOgbMpMw/zh-cn_image_0000002061857918.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/y1EW4TGeQn-NaUCGZPIjcg/zh-cn_image_0000002061857918.png "点击放大")
 
 ### 获取体验增强
 
@@ -1152,7 +1152,7 @@ ArkWeb开发指南目录结构优化。根据实际开发旅程，从管理网�
 本次优化仅涉及Section标题URL地址中携带以ZH-CN\_TOPIC\_XXX开头的文档页面。
 
 **图20** 页面内Section标题URL地址变更对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/lk22u4xqR8KxUoJd8WhesA/zh-cn_image_0000002097974957.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/CXDycHMtQMCs8TCbQNfg1g/zh-cn_image_0000002097974957.png "点击放大")
 
 **说明** 
 
@@ -1370,7 +1370,7 @@ ArkWeb开发指南目录结构优化。根据实际开发旅程，从管理网�
 
 优化后：页面URL地址去掉随机数字，且支持优化前页面URL重定向至优化后页面URL地址。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/KAiQEmlESviTKep79nCkqg/zh-cn_image_0000002097856473.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/WebmIcXgRL2DF0VXinifsg/zh-cn_image_0000002097856473.png "点击放大")
 
 **说明** 
 

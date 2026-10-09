@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-verification-rule
 title: HAP唯一性校验逻辑
-breadcrumb: 指南 > 构建应用 > 配置构建流程 > HAP唯一性校验逻辑
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > HAP唯一性校验逻辑
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:56+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-09T08:15:19+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:1a6030a7f1ade3543bce482592698e52916d1586217d7bc8f3aaaecfdefa5f70
 ---
 

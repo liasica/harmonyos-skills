@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-agent
 title: Agent模式
-breadcrumb: 指南 > AI Coding > DevEco Code > Agent模式
+breadcrumb: 指南 > DevEco Code > Agent模式
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:17+08:00
-doc_updated_at: 2026-09-08
-content_hash: sha256:aff782b69af12c5bb3fe17e131855e144d1af218e405df09c1f16c87746c8f70
+scraped_at: 2026-10-09T08:15:39+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:27aa2c642d37ae762f1cdf944f88535c1d4e4e0878ba8fc625849e80417ef4d1
 ---
 
 ## 功能概述
@@ -20,15 +20,17 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 约束与限制
 
-推包验证需配置模拟器。
+Windows/macOS版DevEco Code可配置模拟器进行推包验证。
+
+鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/9VcN-sOrTeuOULrvGcgasw/zh-cn_image_0000002731383159.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/o7ggLCiGS_2Xo4V3CQZuZA/zh-cn_image_0000002731383159.png "点击放大")
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2a/v3/A0QFGD7UQ0Sm0VdGfck71Q/zh-cn_media_0000002701663942.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ab/v3/0d0QKU72RumZPo-Z9TSpzw/zh-cn_media_0000002701663942.mp4)
 
 ## Plan + Build模式
 
@@ -38,21 +40,23 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 约束与限制
 
-推包验证需配置模拟器。
+Windows/macOS版DevEco Code可配置模拟器进行推包验证。
+
+鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/qsUXEWY6QbOfK5SmgdZ3Nw/zh-cn_image_0000002701823856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/yiKJst2xTN-MiveBRBhnAg/zh-cn_image_0000002701823856.png "点击放大")
 
 Plan + Build模式实现流程分为三大阶段：
 
 1. 任务列表制定阶段，开发者输入需求描述后，Agent结合用户需求、工程目录结构、代码文件、依赖关系和技术约束等理解需求背景，主动识别需求描述的模糊点、缺失信息和潜在约束，并通过Question工具与用户交互，补全信息。
-2. 计划执行阶段，基于制定的任务列表，Agent自动进行代码生成、语法检查和代码修复，以及自动构建出包、推送至模拟器。
+2. 计划执行阶段，基于制定的任务列表，Agent自动进行代码生成、语法检查和代码修复，以及自动构建出包、推送至模拟器/预览器。
 3. 用户自测阶段，开发者对实现结果测试验证，输入指令后可继续修改。
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0c/v3/ZSfvFlFBRbWHOC5gHcsmlQ/zh-cn_media_0000002701823862.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/8c/v3/PbhlUsJWTLeBeMtZi1jZqA/zh-cn_media_0000002701823862.mp4)
 
 ## Goal模式
 
@@ -62,11 +66,13 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 约束与限制
 
-推包验证需配置模拟器。
+Windows/macOS版DevEco Code可配置模拟器进行推包验证。
+
+鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/a7KpLrx4QbCR2nO-mluYxA/zh-cn_image_0000002701663938.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/B9DhZyXkTCOIKBafPqVrKA/zh-cn_image_0000002701663938.png "点击放大")
 
 Goal Agent实现流程分为两大阶段：
 
@@ -75,4 +81,4 @@ Goal Agent实现流程分为两大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ad/v3/FaCQi8X9Tf2yeMaL32Pq_g/zh-cn_media_0000002731543137.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ca/v3/Vq5nNyLUSz2BxJIGd-hXuw/zh-cn_media_0000002731543137.mp4)

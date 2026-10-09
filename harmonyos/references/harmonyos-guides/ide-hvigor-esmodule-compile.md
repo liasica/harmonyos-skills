@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-esmodule-compile
 title: 模块化编译
-breadcrumb: 指南 > 构建应用 > 提升构建效率 > 默认特性 > 模块化编译
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 默认特性 > 模块化编译
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:20+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:fd99bb3c4110055a25ee6cee4a27e58536033bae4d797b90ad9e06279ad0d4dd
 ---
 

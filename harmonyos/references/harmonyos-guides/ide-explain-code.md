@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-explain-code
 title: 代码智能解读
-breadcrumb: 指南 > 使用AI智能辅助编程（不推荐） > 代码智能解读
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 代码智能解读
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:17+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:06453f281ed153d5f005aaebe4b68530ab47b4c47e6da38f166a44ab48dd68b3
+scraped_at: 2026-10-09T08:15:25+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:e8a20911a8c2428f0dda49d130d21bc27dafb64c5a472b468e0891c056945b30
 ---
 
 CodeGenie提供智能AI能力对框选的代码片段进行逐条解释，总结代码段含义，帮助开发者提升阅读代码的速度和效率。
@@ -19,4 +19,4 @@ CodeGenie提供智能AI能力对框选的代码片段进行逐条解释，总结
 
 选中.ets文件或者.cpp文件中需要被解释的代码行或代码片段，右键选择**CodeGenie > Explain Code**，开始解读当前代码内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/xJkAx7cnR0C0iWQOEvozUg/zh-cn_image_0000002701822570.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Jbul1ZqMTWWjDs5F-RequA/zh-cn_image_0000002701822570.png)

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-optional-chain
 title: "@typescript-eslint/prefer-optional-chain"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-optional-chain
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-optional-chain
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-06-24
+scraped_at: 2026-10-09T08:15:10+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:bd40815df48cdee47eadf924580043ed229a81923c9a5034a355bd8235d76f6f
 ---
 

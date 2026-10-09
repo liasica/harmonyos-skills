@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-51
 title: 版本概览
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:12:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:0cc851886ae9ab081ecbaeadad8da5d1d8a8f112d07b4393fb2b84e7924faa2c
 ---
 

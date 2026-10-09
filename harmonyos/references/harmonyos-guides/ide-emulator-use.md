@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-use
 title: 使用模拟器
-breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:43+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:fe5aa0fd70b27dbfde2cf38e116719877545e69a6bd928097519efb6bb0a72cb
 ---
 

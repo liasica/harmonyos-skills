@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer-arkts-js
 title: 查看ArkTS/JS预览效果
-breadcrumb: 指南 > 编写与调试应用 > 界面预览 > 查看ArkTS/JS预览效果
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > 查看ArkTS/JS预览效果
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ef72bb80347365289f79613512348d4ea7b2a294e00428b39e2bc6c13bbf9a37
+scraped_at: 2026-10-09T08:15:14+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:5143b85e40d07a72d3dffb0fb96506f5c798e27dd0dea4f0260a364cb94804bb
 ---
 
 预览器支持ArkTS/JS应用/元服务“实时预览”和“动态预览”。
@@ -23,16 +23,16 @@ content_hash: sha256:ef72bb80347365289f79613512348d4ea7b2a294e00428b39e2bc6c13bb
 * 不支持调用C++库的预览。
 * HAR在被应用/元服务使用时真机效果有区别，真机上实际效果应用不显示menubar，元服务显示menubar，但预览器都以不显示menubar为准。若开发HAR模块，请注意被元服务使用时预览器效果与真机效果的不同。
 
-* **实时预览**：在开发界面UI代码过程中，如果添加或删除了UI组件，您只需**Ctrl+S**进行保存，然后预览器就会立即刷新预览结果。如果修改了组件的属性，则预览器会实时（亚秒级）刷新预览结果，达到极速预览的效果（当前版本极速预览仅支持ArkTS组件。支持部分数据绑定场景，如@State装饰的变量）。实时预览默认开启，如果不需要实时预览，请单击预览器右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/1prmNTyEQcm6Xmbz5JtMeg/zh-cn_image_0000002731542297.png)按钮，关闭实时预览功能。
+* **实时预览**：在开发界面UI代码过程中，如果添加或删除了UI组件，您只需**Ctrl+S**进行保存，然后预览器就会立即刷新预览结果。如果修改了组件的属性，则预览器会实时（亚秒级）刷新预览结果，达到极速预览的效果（当前版本极速预览仅支持ArkTS组件。支持部分数据绑定场景，如@State装饰的变量）。实时预览默认开启，如果不需要实时预览，请单击预览器右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/G__amhiDRHy8losuma1WFQ/zh-cn_image_0000002731542297.png)按钮，关闭实时预览功能。
 
   **说明** 
 
-  开发者修改resources/base/profile目录下的配置文件（如main\_pages.json/form\_config.json），不支持触发实时预览，开发者需要点击重新加载![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ouE9Mo9mRlW0txgO-Z3kZQ/zh-cn_image_0000002731542295.png)。
+  开发者修改resources/base/profile目录下的配置文件（如main\_pages.json/form\_config.json），不支持触发实时预览，开发者需要点击重新加载![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/UNSlWSGcSieUsG8XEj0NQQ/zh-cn_image_0000002731542295.png)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/UJpmM-BRQnW1pW9rhOHz0Q/zh-cn_image_0000002701663102.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Lg39pNPHQN-TCVpZhsGYlw/zh-cn_image_0000002701663102.gif "点击放大")
 * **动态预览**：在预览器界面，可以在预览器中操作应用/元服务的界面交互动作，如单击、跳转、滑动等，与应用/元服务运行在真机设备上的界面交互体验一致。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/NPkw6_VARGqP4i1Gn8ZFJg/zh-cn_image_0000002701823026.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/TmeI87AtQF-2IGiaXo1ziA/zh-cn_image_0000002701823026.gif "点击放大")
 
 以ArkTS为例，使用预览器的方法如下：
 
@@ -42,5 +42,5 @@ content_hash: sha256:ef72bb80347365289f79613512348d4ea7b2a294e00428b39e2bc6c13bb
    * 通过菜单栏，单击**View > Tool Windows > Previewer**打开预览器。
    * 在编辑窗口右上角的侧边工具栏，单击**Previewer**，打开预览器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/nj7MI3D7Qbi88PXEGY_Wbw/zh-cn_image_0000002701823024.png "点击放大")
-4. 点击按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Xdbkkj5vS9udAmcWIzKTNw/zh-cn_image_0000002731382329.png)，停止预览。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/1tyltrL9Qyan1m3O-UiVmQ/zh-cn_image_0000002701823024.png "点击放大")
+4. 点击按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/JKdE4Og6QKuv3CCjIrSJnw/zh-cn_image_0000002731382329.png)，停止预览。

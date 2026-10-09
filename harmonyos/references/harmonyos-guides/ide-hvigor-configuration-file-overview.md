@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-configuration-file-overview
 title: 配置文件概述
-breadcrumb: 指南 > 构建应用 > 配置文件 > 配置文件概述
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置文件 > 配置文件概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:11+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:18+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:0ca8a80f56d3eb219da10cb52076e3ff85a1549739c488d4abf7a7eb14931dc0
 ---
 

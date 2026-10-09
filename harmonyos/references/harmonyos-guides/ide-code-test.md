@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-test
 title: 代码测试
-breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > 代码测试
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > 代码测试
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:34+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-09T08:15:17+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:cfe78aec32f2072fc06c0566441eb97ed68e1c59700d5dcffc6c0d7ce1b3b4b1
 ---
 

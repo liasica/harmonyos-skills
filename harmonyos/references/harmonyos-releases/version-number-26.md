@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/version-num
 title: 版本号格式调整说明
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > 版本号格式调整说明
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:11:54+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:2eea0582e570ee481dc14d7c6ec13e58789da50c3ac47f0c700425ea06e72dec
 ---
 

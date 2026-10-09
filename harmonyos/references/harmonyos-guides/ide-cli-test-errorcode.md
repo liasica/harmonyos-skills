@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-cli-test-errorcode
 title: 命令行测试错误码
-breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 命令行测试错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 命令行测试错误码
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:34+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-09T08:15:17+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:f522125d3e0f2d328b97660850a424be372dfd7c1797d57c189ba3aa43f4bab5
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: OS新增和增强特性
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-16T06:45:10+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:810c4f4ac0f5366d068a3ea9384b131192e0af5bb3f7118df275369ebb230ef7
+scraped_at: 2026-10-09T08:11:54+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:a5c83e4f83ecb71be435e15675d35f4a0e919432e076bf553ef207bf674f8f6a
 ---
 
 ## 26.0.0 Release新增和增强特性
@@ -69,10 +69,6 @@ JS Crash检测新增支持NativeModuleErrorInfo，可记录最早的20条so加�
 * 新增声明ExtensionAbility的连接选项的C API，提供包括连接成功、断开连接和连接失败的回调接口。（[API参考](../harmonyos-references/capi-connect-options-h.md)）
 * 新增自动填充请求信息的定义能力，应用可定义自动填充的信息类型。（[API参考](../harmonyos-references/js-apis-inner-application-autofillrequest.md)）
 * 包管理新增pluginBundleManager模块，提供应用对自分发插件的管理能力，包括安装、卸载本地插件。（[API参考](../harmonyos-references/js-apis-pluginbundlemanager.md)）
-
-### Account Kit
-
-新增支持华为账号亲密圈服务，实现用户添加和选择亲友的能力。（[API参考](../harmonyos-references/account-intimate.md#模块概述)）
 
 ### Agent Framework Kit
 

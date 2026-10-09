@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-custom-auth-plugin-configuration
 title: 自定义认证插件配置
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义认证插件 > 自定义认证插件配置
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义认证插件 > 自定义认证插件配置
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:20+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-09T08:15:06+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:383c89a469122199528c58d82269129ad8a26c98556c1f61d29c58ff7f1d8c23
 ---
 

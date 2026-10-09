@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-shortcut-key
 title: 快捷键
-breadcrumb: 指南 > 优化应用性能 > 附录 > 快捷键
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 附录 > 快捷键
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:18:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:23+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:8fe72585d089c7cfff837211d447c7c5c2be98a248d9b8a96260e07c05e8dd6b
 ---
 

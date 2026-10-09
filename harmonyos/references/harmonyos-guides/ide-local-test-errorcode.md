@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-local-test-errorcode
 title: 本地测试错误码
-breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 本地测试错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 本地测试错误码
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:34+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:efb8090dccc626d96ec2ac74fe6544ecb7b67262050a303022a8dea74e1c2bd8
+scraped_at: 2026-10-09T08:15:18+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:eab20a819c3e5fc3ca40ef72f0e246e97fd74ea77c8fb461793836975c40ee92
 ---
 
 ## 00521001 测试用例名称存在非法字符
@@ -155,7 +155,7 @@ The function where the method XXX is located is not registered in the 'List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/SQZpmrszS02-ZlXvbZV8KQ/zh-cn_image_0000002701663356.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/9MJObVv2TgyUWXWfrNJs4Q/zh-cn_image_0000002701663356.png)
 
 ## 00522002 函数未在List.test.ets文件中注册
 
@@ -175,7 +175,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/A628koBhRk-CAs6kP5Zw6w/zh-cn_image_0000002701663358.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/-81XqVM3QamNQde5ZmI7KA/zh-cn_image_0000002701663358.png)
 
 ## 00522005 文件中所有函数都没有在List.test.ets文件中注册
 
@@ -195,7 +195,7 @@ None of the functions in the file XXX have been registered in the 'List.test.ets
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/XNU5BB7jQHu3tjlBNorzlw/zh-cn_image_0000002701823274.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/GA_85ciJTcCx0NeV3rb2ag/zh-cn_image_0000002701823274.png)
 
 ## 00522006 测试文件中找不到测试用例
 
@@ -216,7 +216,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/vFD_5RH8TDGvb4_Q4KWs1A/zh-cn_image_0000002731542551.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/_rQi8L-uR2C3X2pq09P5hg/zh-cn_image_0000002731542551.png)
 
 ## 00522007 找不到任何测试用例
 
@@ -292,7 +292,7 @@ Failed to start local test, please check the XXX path!
 1. 点击菜单栏**Build > Clean Project**清理缓存，再重新执行测试。
 2. 检查运行配置是否取消了构建任务，如果取消就重新添加构建任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pKsQgbR-RK6Viwx8yrgTyA/zh-cn_image_0000002731382573.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/4_ydzYhlSzSRVt5y4ywqRQ/zh-cn_image_0000002731382573.png)
 
 ## 00523004 内存不足
 

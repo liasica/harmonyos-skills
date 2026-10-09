@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dependency-check-errorcode
 title: ohpm dependency-check错误码
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm dependency-check错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm dependency-check错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:59+08:00
-doc_updated_at: 2026-05-28
+scraped_at: 2026-10-09T08:15:25+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:8f0bcb07109a36fc27cd2d80db3573a828d989687d04c7bf3909b14576cb5547
 ---
 

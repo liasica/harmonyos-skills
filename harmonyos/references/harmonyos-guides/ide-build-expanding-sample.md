@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-expanding-sample
 title: API使用示例
-breadcrumb: 指南 > 构建应用 > 扩展构建能力 > 扩展构建API > API使用示例
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 扩展构建能力 > 扩展构建API > API使用示例
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:57+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-10-09T08:15:20+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:6671c4ef5681c0c41fe99155dcc6b3bed15e6b121809548b04626340f5694326
 ---
 

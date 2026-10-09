@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-list-errorcode
 title: ohpm list错误码
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm list错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm list错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:59+08:00
-doc_updated_at: 2026-06-24
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:e8a205fb19adf019905b89e56d0d99ec81541631b4b18a42f3dafa75883a9d43
 ---
 

@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-setup
 title: 搭建开发环境
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发准备 > 搭建开发环境
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发准备 > 搭建开发环境
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:19+08:00
+scraped_at: 2026-10-09T08:15:07+08:00
 doc_updated_at: 2026-03-17
 content_hash: sha256:d6a0a6ad71d625cbe8b1f05da1b0a7595262ffbe2408be1889c529991f27a3e3
 ---

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-610
 title: API变更清单
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:20+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:04+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:e01cd84d81dafd6691564c878402b0eecdbf0150ddba049dd0599864a70ed21b
 ---
 

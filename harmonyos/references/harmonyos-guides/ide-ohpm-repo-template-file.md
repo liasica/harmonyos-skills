@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-template-file
 title: 模板文件
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义存储插件 > 模板文件
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义存储插件 > 模板文件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:48+08:00
+scraped_at: 2026-10-09T08:15:06+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:3d99bbfef6add434b0b6889888b1490876f4b96a1f7dc558e690a5c41075f13b
 ---

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-emptyability
 title: 通用云开发模板
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 附录：云开发工程模板 > 通用云开发模板
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 附录：云开发工程模板 > 通用云开发模板
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:22+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:acd7d775b3ecdbab19898e2c673a5f734bde17eb769919b5ee7f70e96c7f6923
+scraped_at: 2026-10-09T08:15:08+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:1571b4759073213376a4bbd17d2c2e2fcf8f8d39c03e1b948b7e07da7aaa691d
 ---
 
 ## 适用范围
@@ -49,7 +49,7 @@ content_hash: sha256:acd7d775b3ecdbab19898e2c673a5f734bde17eb769919b5ee7f70e96c7
       ]
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/HNVnwNR8Sd2DMDYXvbAMAw/zh-cn_image_0000002492564672.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/GhdFoQ9LQe-wgmeMl6qWGA/zh-cn_image_0000002492564672.png)
 4. 将模板工程推包到手机上，在手机上开通应用访问数据权限，即可开始体验模板。
 
    **注意** 

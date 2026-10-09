@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-check
 title: 代码检查
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:36+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-09T08:15:08+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:9278425e36a3a0e139d6f9b1b9973eccec23ad195f470f869dadfdbe7559c7d2
 ---
 

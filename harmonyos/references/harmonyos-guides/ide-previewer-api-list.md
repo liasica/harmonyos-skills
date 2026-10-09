@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer-api-list
 title: 支持使用预览器的API清单
-breadcrumb: 指南 > 编写与调试应用 > 界面预览 > 支持使用预览器的API清单
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > 支持使用预览器的API清单
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:31+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:f5a55dd09992a8e18748b0fc78969555c0a765a557292d6a545191d40aeace4b
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:5a5f9e6ad8531a5eab8d9489be22f0c2254000a1724a318796429edc9a8113e6
 ---
 
 ## 组件
@@ -223,7 +223,7 @@ content_hash: sha256:f5a55dd09992a8e18748b0fc78969555c0a765a557292d6a545191d40ae
 
 从DevEco Studio 6.0.0 Beta5版本开始，仅支持在预览/预览调试Stage模型的HAP/HSP时，使用文件管理的相关API，并且需要先打开**Enable file operation**开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/cgoXp4z9THSHdcdG1vKQlQ/zh-cn_image_0000002731543147.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/leZusYUyQkSspMTnRef4qg/zh-cn_image_0000002731543147.png "点击放大")
 
 | 模块 | API |
 | --- | --- |

@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-invokecloudfunc
 title: 在端侧调用云函数
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发端侧工程 > 在端侧调用云侧代码 > 在端侧调用云函数
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发端侧工程 > 在端侧调用云侧代码 > 在端侧调用云函数
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:49+08:00
+scraped_at: 2026-10-09T08:15:08+08:00
 doc_updated_at: 2026-01-15
 content_hash: sha256:a5c5c854c810007e343692a2231655412488e255ceb8b3e9a5232395251d1661
 ---

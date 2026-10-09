@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-native-child-process
 title: 调试Native子进程
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 调试Native子进程
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 调试Native子进程
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a2dacf7d9f15815fe189fa1f9290ea14c64337b7c323fa5fb0792cacaaf82581
+scraped_at: 2026-10-09T08:15:16+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:df18806c96ed44b05d8b46888251701d53ddf012edae81b359eb23471b2e847c
 ---
 
 从26.0.0版本开始，DevEco Studio支持对[Native子进程](capi-nativechildprocess-development-guideline.md)进行调试，包括OH\_Ability\_StartNativeChildProcess和OH\_Ability\_CreateNativeChildProcess接口创建的Native子进程。
@@ -20,8 +20,8 @@ content_hash: sha256:a2dacf7d9f15815fe189fa1f9290ea14c64337b7c323fa5fb0792cacaaf
 
 通过attach方式对Native子进程进行调试，在attach窗口中直接选择子进程进行调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/ZWyBoncXTZ61NpjuOyjH8Q/zh-cn_image_0000002731381977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/UO5Ab6_TTF2zoSurNnApeg/zh-cn_image_0000002731381977.png)
 
-或者先attach调试主进程，再点击调试面板的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/8zjCAhT-SgugYJgzVevI6Q/zh-cn_image_0000002701662750.png)，打开attach窗口选择子进程进行调试。
+或者先attach调试主进程，再点击调试面板的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/XupXb5skRhSUYMmXKZ99ng/zh-cn_image_0000002701662750.png)，打开attach窗口选择子进程进行调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/-Z79qBuFTRyNxprSFQekRA/zh-cn_image_0000002701822674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/VOOT5iQnQ3aH6HPCTZGZlw/zh-cn_image_0000002701822674.png)

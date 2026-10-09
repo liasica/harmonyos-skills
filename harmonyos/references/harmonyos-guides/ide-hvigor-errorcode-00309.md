@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-errorcode-00309
 title: ArkTS编译错误码
-breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > ArkTS编译错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > ArkTS编译错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:57+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-10-09T08:15:21+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:38db8b41e3ac567e36009e60f7d952c885c036dae28f10bbfbc5da34ba2823aa
 ---
 

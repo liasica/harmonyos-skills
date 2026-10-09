@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-clouddb
 title: 开发云数据库
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云数据库
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云数据库
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:34+08:00
+scraped_at: 2026-10-09T08:15:07+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:e081c832de5c4ff92b50876d62c0da0a140f7c4c0ca9d691fb626dc5e28544d6
 ---

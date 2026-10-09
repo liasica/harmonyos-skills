@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-native-variables
 title: 检查变量
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 检查变量
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 检查变量
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:32+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:95abefb4f1266bd0979c218a5078bd23b3a3621f34cbdf70f3d6fd100a1425ad
+scraped_at: 2026-10-09T08:15:16+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:faac899ad20d71d5837208bb5d3eee5f1d9876521fd1c07192cd75714b01a1f5
 ---
 
 调试时，在“Variables”页面查看变量，支持查看全局/静态变量、寄存器变量和局部变量。
@@ -20,27 +20,27 @@ content_hash: sha256:95abefb4f1266bd0979c218a5078bd23b3a3621f34cbdf70f3d6fd100a1
 
 ## 变量监视
 
-在"Watches"列表中输入表达式，然后点击Add to Watches 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/i4O9KrNWT6-rb0ImDNWjSg/zh-cn_image_0000002701663806.png)，或在某个变量右键菜单中的“Add to Watches”添加监视的表达式，在每次程序停住之后会计算表达式的值。
+在"Watches"列表中输入表达式，然后点击Add to Watches 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/w-UMgTgrRO65bF560j37Rg/zh-cn_image_0000002701663806.png)，或在某个变量右键菜单中的“Add to Watches”添加监视的表达式，在每次程序停住之后会计算表达式的值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/qUsV9rejQXuulFen-LpHIQ/zh-cn_image_0000002701663808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/rxOM5q9yT-GKoxRGXAp2ew/zh-cn_image_0000002701663808.png)
 
 ## 表达式求值
 
 通过点击“Evaluate Expression...”按钮，或Watches 页面中的输入行中，输入表达式进行计算。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vuwWfsZ5RUij9b9-1wL0oA/zh-cn_image_0000002701823728.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/8716626mRQKMNS87I0_HZQ/zh-cn_image_0000002701823728.png)
 
 ## 查看十六进制视图
 
 在“Variables”页面点击鼠标右键，弹出框中选择“Show As Hex Values”，此时页面中的整型变量会以十六进制进行展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/b2LGi0J-QtukevEWwfEMsg/zh-cn_image_0000002701823730.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/MxQLFx2RQIegIi_mi1Y7NQ/zh-cn_image_0000002701823730.png)
 
 ## 查看函数返回值
 
 当使用“Step Out”从一个函数内步出后，变量列表中的“ReturnValues”会展示所步出函数的返回值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/NUIbg6qgTuKrIZ1WoOOdYw/zh-cn_image_0000002701663804.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/2oe5qI96SR-5zOzdpSe3kw/zh-cn_image_0000002701663804.png)
 
 **说明** 
 
@@ -56,4 +56,4 @@ content_hash: sha256:95abefb4f1266bd0979c218a5078bd23b3a3621f34cbdf70f3d6fd100a1
 
 * ...View：支持展开查看较长的字符串。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/-48_mz2WQcq-0xfyONgJkA/zh-cn_image_0000002701823732.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/_w7M0JbQSDek0jcXBPDTLw/zh-cn_image_0000002701823732.png)

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdoc-link
 title: "{@link}"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 标准标签 > {@link}
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 标准标签 > {@link}
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:24+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-10-09T08:15:14+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:7c88a15d0e3bea9fbcbafcc0e191b13083c48a0e5648543bf5f2de28595d0d18
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-command-line
 title: 通过命令行使用模拟器
-breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 通过命令行使用模拟器
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 通过命令行使用模拟器
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:32+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-09T08:15:16+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:88ca039a270fbb491d693492beea75c960b10821143f064384f8384974b72121
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codelinter-correctness
 title: 正确性规则@correctness
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:43+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-09T08:15:13+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:1b9d9ddc7ca008bd1e64cf20a7e88fa9ec5a1609cf4d99d3b12f26efc82dc458
 ---
 

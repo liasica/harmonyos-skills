@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-deploycloudobj
 title: 部署云对象
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 部署云对象
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 部署云对象
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:22+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:f7c988581f85780251035efdf9fddd319b1406eadd78ad8076cdf8a6d6e602c7
+scraped_at: 2026-10-09T08:15:07+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:b22c0dd97c4fec52acbb28d83cad456e61bd521e3e3314e85cbc8c21fb3d152a
 ---
 
 完成云对象代码开发后，您可将云对象部署到AGC云端，支持单个部署和批量部署。
@@ -20,20 +20,20 @@ content_hash: sha256:f7c988581f85780251035efdf9fddd319b1406eadd78ad8076cdf8a6d6e
 
    如需批量部署多个云对象，右击“cloudfunctions”目录，选择“Deploy Cloud Functions”即可部署该目录下所有云对象。如“cloudfunctions”目录下同时存在云函数和云对象，云函数和云对象将会被一起部署到AGC云端。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/hNyFqROPRFuZ0al74881jQ/zh-cn_image_0000002179338528.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/VVyq_D0NRe-3qBuuCqIDqg/zh-cn_image_0000002179338528.png)
 2. 您可在底部状态栏右侧查看云对象打包与部署进度。
 
    请您耐心等待，直至出现“Deploy successfully”消息，表示当前云对象已成功部署。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/A_ThbAt8RX6hPbz-rzu6HQ/zh-cn_image_0000002214704473.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/J-_X7DpITTOX4dJKG332gQ/zh-cn_image_0000002214704473.png)
 3. 在菜单栏选择“Tools > CloudDev”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/-8zqYjBPS_yO_XMPpi7yPw/zh-cn_image_0000002179498224.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/cblq8leFTVisG-d80hHN0g/zh-cn_image_0000002179498224.png)
 4. 在打开的CloudDev面板中，点击“Serverless > Cloud Functions”下的“Go to console”，进入当前项目的云函数服务页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/5m1Gs-0hSCeXlip4GbFedA/zh-cn_image_0000002214858857.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/w-eh02p1RMq2-G5NePZDoQ/zh-cn_image_0000002214858857.png)
 5. 查看到“my-cloud-object”云对象已成功部署至AGC云端，云对象名称与本地工程的云对象目录名相同。
 
    部署成功后，您便可以从端侧调用云对象了，具体请参见[在端侧调用云对象](agc-harmonyos-clouddev-invokecloudobj.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/taF9dDFRSdK4ojIMK34AIw/zh-cn_image_0000002179338540.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/etXE3YrbQte1EF6jgmZVaw/zh-cn_image_0000002179338540.png)

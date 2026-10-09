@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-errorcode-00308
 title: 操作异常错误码
-breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 操作异常错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 操作异常错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:5c20170cba7eb8ba23cc94c294e7509ce5de758b1f0737c449bb962b7f6f8799
 ---
 

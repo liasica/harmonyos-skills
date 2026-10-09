@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff
 title: API变更清单
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > API变更清单
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:39+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:34+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:17cc0fb6ca83c571f5f621e506f15d79c03cad3033dda9d6028d4ab191252f5b
 ---
 

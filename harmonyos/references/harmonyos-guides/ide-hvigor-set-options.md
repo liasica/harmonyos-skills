@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-set-options
 title: hvigor-config.json5文件
-breadcrumb: 指南 > 构建应用 > 配置文件 > hvigor-config.json5文件
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置文件 > hvigor-config.json5文件
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:09+08:00
-doc_updated_at: 2026-09-16
+scraped_at: 2026-10-09T08:15:19+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:6223057b2227a4258b24ae639ee4ab74bda7c1fc1015d7f2be5fb9d096ab0d4e
 ---
 

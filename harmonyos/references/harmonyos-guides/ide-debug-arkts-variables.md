@@ -1,25 +1,25 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-arkts-variables
 title: 检查变量
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 检查变量
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 检查变量
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:32+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:2d50419cbe4371d185c2bfe404d7e7217082081d855f39ef134a81eb524201bc
+scraped_at: 2026-10-09T08:15:16+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:a7de912106b161029b6362ff82097106b78e3e19cd0e3a07269cee927161d8e7
 ---
 
 当应用停止在某个断点处时，您可以在"Debugger"窗口中查看当前的变量信息。在"Frame"窗格中选择某个帧之后，可以在"Variable"窗格中检查变量，或对变量进行计算。
 
-如需向"Watches"列表中添加变量或表达式，请按以下步骤操作：在"Watches"窗口中输入表达式，然后点击Add to Watches图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/XrQorbryT36BZ7sdgo3IZQ/zh-cn_image_0000002731542087.png)。
+如需向"Watches"列表中添加变量或表达式，请按以下步骤操作：在"Watches"窗口中输入表达式，然后点击Add to Watches图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Lz5u00diSQyjsbxHrangwQ/zh-cn_image_0000002731542087.png)。
 
 如需从"Watches"列表中移除某一项，点击鼠标右键，选择**Remove Watches**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ccJH3PxwSzOqQ9ha6DB01A/zh-cn_image_0000002731542083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/4hIJYu0UTKmcxe3pc5sudQ/zh-cn_image_0000002731542083.png)
 
 从DevEco Studio 6.0.2 Beta1版本开始，支持预览pixelMap类型的变量。点击pixelMap变量右侧的**View PixelMap**，即可预览pixelMap。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/9P1-nWvtQMK-SE3VzIavFw/zh-cn_image_0000002701662892.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/PwF4VE4WQ0KE1nYxXeCGJw/zh-cn_image_0000002701662892.png)
 
 预览效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/OCdmwvCmR6m_JYFg7GZsoQ/zh-cn_image_0000002731382115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/vMEZS89CS6eRiRGaQzvukg/zh-cn_image_0000002731382115.png)

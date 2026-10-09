@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-al
 title: 所有HarmonyOS开发套件版本
 breadcrumb: 版本说明 > 更多版本 > 所有HarmonyOS开发套件版本
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:12:02+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:efb8407fe040d558dc132dff922ff5096d03c3ae0f807342e21468f35f2aced7
 ---
 

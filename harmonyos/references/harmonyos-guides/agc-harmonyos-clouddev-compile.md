@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-compile
 title: 打包测试
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 打包测试
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 打包测试
 category: harmonyos-guides
-scraped_at: 2026-09-04T06:27:07+08:00
+scraped_at: 2026-10-09T08:15:08+08:00
 doc_updated_at: 2026-09-03
 content_hash: sha256:e78482c9a70e40ac2cd9ad077bac1dc2a35108d418a9e3d7d7b98e86848705a2
 ---

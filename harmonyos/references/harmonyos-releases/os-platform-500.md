@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-platform
 title: OS平台能力
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:40+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:35+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:07ccb422efc75aaff68c2126d8214871615cb040d8bebfcce46806a26440cb60
 ---
 

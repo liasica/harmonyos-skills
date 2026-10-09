@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-description
 title: 性能调优工具简介
-breadcrumb: 指南 > 优化应用性能 > 性能调优工具简介
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 性能调优工具简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:58+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-10-09T08:15:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:62668716e6f498eb799f187a8ef1db285238908b51521bdd7e63fc490093c55b
 ---
 

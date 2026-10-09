@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-project
 title: 工程创建
-breadcrumb: 指南 > 开发环境搭建 > 工程创建
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:30+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-09T08:15:05+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:8d17da90c56bc053600efae2a46538766e9583bda2deb571656f46a61f437a2e
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-511
 title: 5.1.1(19) Release引入的API
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > OS平台能力 > API变更清单 > 5.1.1(19) Release引入的API
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:31+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:2e810be4321b51334d3fba060cef45f93c962563ba2102ce1790bc4268977b87
 ---
 

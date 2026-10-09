@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-smooth-for-transition-0414
 title: 转场操作流畅
-breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 转场操作流畅
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 转场操作流畅
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:35+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:6612e1caf5bcf52d04270d71a3b77c7f8b64480e2c6f879544a658c6a5f6920f
+scraped_at: 2026-10-09T08:15:18+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:a2805daac370984bad553fb544dccef2704db8fc0bab2cf689e69363c276d4e8
 ---
 
 ## 规则详情
@@ -29,20 +29,20 @@ content_hash: sha256:6612e1caf5bcf52d04270d71a3b77c7f8b64480e2c6f879544a658c6a5f
 
   H:APP\_TABS\_FLING
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Ytj3o0tBRbyWl_4bihmCbw/zh-cn_image_0000002701663344.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/86tHavd1TY2IZVjNza3_fA/zh-cn_image_0000002701663344.png)
 
 * 总时长(s)：【最后一个“H:Waiting for Present Fence xxxx” 时间（如图标记2）】 - 【第一个“H:Waiting for Present Fence xxxx” 时间（如图标记1）】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/uvdISAEXQeiKA0sJXzgNvA/zh-cn_image_0000002701823252.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/JgAx8KmNQdinGFy1wkaAMQ/zh-cn_image_0000002701823252.png)
 
 * 每帧时长(ms)：1000ms / 刷新率。
 * 刷新率：在泳道范围内查找关键词H:RSHardwareThread::CommitAndReleaseLayers rate，如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/q2bfp0wkRteOHmeGqp3JdQ/zh-cn_image_0000002701823256.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/pNWPTUFERGGjr0ZE7JovFg/zh-cn_image_0000002701823256.png)
 
 * 每帧渲染实际耗时(ms)：【下一个H:Waiting for Present Fence xxxx的起始时间】 - 【当前H:Waiting for Present Fence xxxx的起始时间】如下图 【标记2 - 标记1】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/F0QwhVOXQ2ShI9X8EzS9Sg/zh-cn_image_0000002731382561.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/5j_pJBdETPS9AlCFQlV8LQ/zh-cn_image_0000002731382561.png)
 
 * 每帧丢帧时间(ms)：max（【每帧渲染实际耗时(ms)】- 【每帧时长(ms)】 \* 1.5, 0）；即每帧耗时大于标准耗时1.5倍时则判定为丢帧。
 

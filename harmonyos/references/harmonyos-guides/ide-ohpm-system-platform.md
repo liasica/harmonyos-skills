@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-system-platform
 title: 系统平台要求
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 系统平台要求
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 系统平台要求
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:58+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:b2071febce92e07579cbbcc042c5c39e9e8b5b70f42d810488281028c1f629ac
 ---
 

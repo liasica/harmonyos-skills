@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台API行为的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > OS平台行为变更说明 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:51+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:3a5d0f520814e773ac368264223f8e6bf54bd6b9b84ff890171c5b9222a84ebe
+scraped_at: 2026-10-09T08:12:33+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:e030d01d582bd42e40c63d1d8fd98de9e57d6c3f2499d82f85ec15c06c9dc31f
 ---
 
 ## Ability
@@ -642,7 +642,7 @@ struct zIndexTest {
 
 实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/AgBSL0UKRO6z0XHdeAcWcw/zh-cn_image_0000002300492512.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/LnmtR6QsTnawZOjwjhWWMQ/zh-cn_image_0000002300492512.png)
 
 ### 屏幕Display对象rotation和orientation属性变更
 
@@ -1706,7 +1706,7 @@ hdc命令行工具
 hidumper --mem `pidof render_service_`
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/n1l2368uSo-lkVNsH2KonQ/zh-cn_image_0000002334331997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/_zQ66DPgQLCLK0qDcRB-_A/zh-cn_image_0000002334331997.png)
 
 变更后：每一列数据后新增一个空格
 
@@ -1714,7 +1714,7 @@ hidumper --mem `pidof render_service_`
 hidumper --mem `pidof render_service_`
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/pt_0GHWVTOqXSmiOgBApCg/zh-cn_image_0000002334372173.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/AOdxXd73RBSAF-2EykMdjQ/zh-cn_image_0000002334372173.png)
 
 其中hidumper、hidumper --mem、hidumper -c [system]变更效果与hidumper --mem [pid]命令效果一致。
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_class-literal-property-style
 title: "@typescript-eslint/class-literal-property-style"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/class-literal-property-style
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/class-literal-property-style
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:50+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:08+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:88ac9cc6d2b2526abd7b8e11e3d37bb0f7470c1498cff5c7b635122d99c9bee0
 ---
 

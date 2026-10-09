@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台API行为的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > OS平台行为变更说明 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:46+08:00
+scraped_at: 2026-10-09T08:12:25+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:ad0eb5ede905b83a5728ee7ac359a3a61155c53bfa1785176b74b6b37cb1fe49
+content_hash: sha256:e20f378a9d80bb10b2bba62abd54997a6a42ccd1cea8d68512cbeed96765d818
 ---
 
 ## ArkTS
@@ -206,7 +206,7 @@ struct KeyboardAvoidExample1 {
 * 变更前：在XComponent组件上使用renderFit接口，使用部分fit模式的显示效果不符合预期。
 * 变更后：XComponent组件上使用renderFit接口后，可以正确显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/BnI6mJPmSYSouV0mPug54g/zh-cn_image_0000002295394565.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/hNvr3boyRlWwoA3ATRYMwg/zh-cn_image_0000002295394565.png)
 
 **起始API Level**
 
@@ -253,7 +253,7 @@ struct enableAnalyzer {
 
 在白名单的内置组件属性与自定义组件重名时，编译拦截报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/G-3HBGkHREOOKlFqTe3Gpw/zh-cn_image_0000002260714460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/qgeF0HkRT3m_zzCcziij_g/zh-cn_image_0000002260714460.png)
 
 **起始API Level**
 

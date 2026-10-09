@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-run-errorcode
 title: ohpm run错误码
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm run错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm run错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:59+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:25+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:13a69cebc576e3f0eba8b59a41661cb41615bc94e52549a87bcf47b21d4cb1ae
 ---
 

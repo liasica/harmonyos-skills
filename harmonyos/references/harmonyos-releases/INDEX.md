@@ -1,6 +1,6 @@
 # 版本说明（harmonyos-releases）
 
-共 1249 篇文档。
+共 1251 篇文档。
 
 - [26.0.0](2600.md)
 - [5.0.0(12)](5-0-0.md)
@@ -142,6 +142,7 @@
 - [UX样式或效果的变更](changelogs-ux-b123sp16.md)
 - [OS平台行为变更说明](changelogs.md)
 - [兼容性告警屏蔽](compatibility-warning-suppress.md)
+- [新增和增强特性](deveco-studio-hmos-new-features-2600.md)
 - [新增和增强特性](deveco-studio-new-features-2600.md)
 - [新增和增强特性](deveco-studio-new-features-500-release.md)
 - [新增和增强特性](deveco-studio-new-features-501-release.md)
@@ -180,6 +181,7 @@
 - [变更说明](ide-changelogs-502.md)
 - [变更说明](ide-changelogs-504-release.md)
 - [变更说明](ide-changelogs-610.md)
+- [DevEco Studio（鸿蒙电脑版）](ide-hmos-overview-releasenote-2600.md)
 - [DevEco Studio](ide-overview-releasenote-510.md)
 - [DevEco Studio](ide-overview-releasenote-511-beta1.md)
 - [DevEco Studio](ide-overview-releasenote-600.md)
@@ -187,7 +189,7 @@
 - [DevEco Studio](ide-overview-releasenote-602.md)
 - [DevEco Studio](ide-overview-releasenote-610.md)
 - [DevEco Studio](ide-overview-releasenote-611.md)
-- [DevEco Studio](ide-overview-releasenote.md)
+- [DevEco Studio（Windows/macOS版）](ide-overview-releasenote.md)
 - [Ability Kit](js-apidiff-abilitykit-5031.md)
 - [Ability Kit](js-apidiff-abilitykit-5032.md)
 - [Ability Kit](js-apidiff-abilitykit-5051.md)

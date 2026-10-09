@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-errorcode-00307
 title: 权限错误码
-breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 权限错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 权限错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:27+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-10-09T08:15:21+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:4278f4219623f351b8a3b8bb3ad790a21bb7b102fcaa26d73573a63c71619e72
 ---
 

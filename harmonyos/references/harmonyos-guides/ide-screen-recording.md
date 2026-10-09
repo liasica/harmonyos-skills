@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-screen-recording
 title: 录屏
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 录屏
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 录屏
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:33+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:722a9321966f1a2fa2c53107cb3b2738aa8744bef38138874f3eadfa98ba4369
+scraped_at: 2026-10-09T08:15:16+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:3cfcc0ca9bbaac35647e252f98abe0bec2fd2df3032faa9ec4ef179e9dc553ea
 ---
 
 在应用开发过程中，可以使用录屏功能录制应用的运行状态，并通过录屏文件向他人展示正在开发的应用的各种功能效果。
@@ -19,30 +19,30 @@ content_hash: sha256:722a9321966f1a2fa2c53107cb3b2738aa8744bef38138874f3eadfa98b
 
 1. 连接真机设备，并在其中运行应用。
 2. 在DevEco Studio底部切换到**Log**页签。
-3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/-EK7lDFAR0C2NxOYQn7mxg/zh-cn_image_0000002731382869.png "点击放大")，即可开始录屏。
+3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/kPvrcBUkQMGoJ1fPNZpFSg/zh-cn_image_0000002731382869.png "点击放大")，即可开始录屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/pLvxCpDZS5msbUAaazKYwA/zh-cn_image_0000002731382871.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/5_ssVOuYQ0mzMgzZis74Qg/zh-cn_image_0000002731382871.png)
 4. 录屏时，需要先选择录屏文件的保存路径，开发者可使用默认路径或[设置自定义路径](ide-screen-recording.md#section89111791511)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/CjR6tDsiSIi4OWChsAE6kw/zh-cn_image_0000002731542841.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/-GvjErD4RKeRwoMmvOPlkA/zh-cn_image_0000002731542841.png)
 5. 路径选择完毕后，点击**Start Recording**开始录屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ziz0UjzKTSq7HOwm8vIRNA/zh-cn_image_0000002701663648.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/aHK7Tnt7QJG-MSG60cE3iA/zh-cn_image_0000002701663648.png "点击放大")
 6. 录制完操作流程之后，点击**Stop Recording**结束录屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/M3Apa2CUTuWyT_aq66i8tg/zh-cn_image_0000002701823570.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/aRgcOuJuS--clFAUSPjG1Q/zh-cn_image_0000002701823570.png "点击放大")
 7. 结束录屏后，录屏文件将会保存到之前选择的路径下，可以选择调用系统播放器播放视频文件或打开文件所在的文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/MMbwjFMbTgWMxS8P7wEBFA/zh-cn_image_0000002731542839.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/5J8ws1rlTOSkRxkIC_37aQ/zh-cn_image_0000002731542839.png "点击放大")
 
 ## 设置录屏自定义路径
 
 1. 点击DevEco Studio底部**Log**页签，选择**HiLog >** **Settings** **>** **Record Screen**选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/hNc4t6d0Tb6T1siYJtjVow/zh-cn_image_0000002701823574.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/AP_EyTcaT2WBxvFOGyGfuA/zh-cn_image_0000002701823574.png)
 2. 在弹出的界面选择自定义路径，当设置好路径并勾选“Use the selected path and auto-generated file name as defaults and don't ask again”选项后，录屏时将自动使用此时设置的路径以及以录屏时的时间戳构造的文件名作为录屏文件的保存地址及文件名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/TJuEccIvSWaVhgswpVshRA/zh-cn_image_0000002701663652.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/5W27WrDCRxWhuWGQsyEQkQ/zh-cn_image_0000002701663652.png)
 
 ## 通过命令行方式录屏
 
@@ -66,7 +66,7 @@ hdc是可以用于调试的命令行工具，通过该工具可以实现录屏�
 
    * 如果查询的结果中包含uri字段，则返回值第三行对应的录屏文件路径不允许直接下载。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/-qoAE8zZSRWRtdUvD-XIkw/zh-cn_image_0000002701663654.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/BIwyCKiiSFSKELLxCJh70A/zh-cn_image_0000002701663654.png)
 
      需要再执行如下命令，指定该uri，将录屏文件复制到有下载权限的路径中（如/data/local/tmp）。
 
@@ -76,10 +76,10 @@ hdc是可以用于调试的命令行工具，通过该工具可以实现录屏�
 
      命令返回值第二行即为录屏文件路径{RecordFile}。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/lWUq7D-6Q8SthFJlFhCyKw/zh-cn_image_0000002701663650.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/kF3lSVwPQHSo0I6b5SbZUA/zh-cn_image_0000002701663650.png)
    * 如果查询结果不包含uri字段，则返回值第二行即为录屏文件路径{RecordFile}。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/W3c_6C2zQTW3zCQpPd0epA/zh-cn_image_0000002701823572.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/4_ojamLoTY2gGrLdaW_cOg/zh-cn_image_0000002701823572.png)
 4. 指定上一个步骤中获取到的录屏文件路径{RecordFile}，下载录屏文件到本地。
 
    ```bash

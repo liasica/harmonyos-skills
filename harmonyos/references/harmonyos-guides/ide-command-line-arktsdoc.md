@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-line-arktsdoc
 title: ArkTSDoc文档生成工具（arktsdoc）
-breadcrumb: 指南 > 命令行工具 > ArkTSDoc文档生成工具（arktsdoc）
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > ArkTSDoc文档生成工具（arktsdoc）
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:41+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-09T08:15:23+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:63478a89b480cda08407acf4aab2432c8f7433387b952d52106a333b3bb29851
 ---
 

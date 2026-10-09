@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/realtime-monitor
 title: 性能问题定界：实时监控
-breadcrumb: 指南 > 优化应用性能 > 使用Profiler进行性能调优 > 性能问题定界：实时监控
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 使用Profiler进行性能调优 > 性能问题定界：实时监控
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:13+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2ecb256eeb11f1774a36f7681dfc759d7ee620ff2275d9ccded689dd6bd1d0a5
+scraped_at: 2026-10-09T08:15:23+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:f925c8a02d3181c0ba703c1a39a37ddf006a18f99826cdb610547a4275335061
 ---
 
 ## 功能介绍
@@ -57,15 +57,15 @@ FPS、GPU、Temperature、\*Device Current泳道显示的是所使用设备的�
 
 * 启停控制
 
-  点击会话区“Realtime Monitor”页签上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/bAjlWFyVRUSdSN8S5yqGuA/zh-cn_image_0000002701663572.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/uDPYG-mlSHaqzcd53hbSQg/zh-cn_image_0000002731542761.png)按钮或工具控制栏上的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/wYaXLdLaS42FsiQkki7JWA/zh-cn_image_0000002731382793.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/FBrWgVKyREWe4XSbI7DxWQ/zh-cn_image_0000002701823492.png)来即时控制实时监控界面的录制状态。
+  点击会话区“Realtime Monitor”页签上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/hfNicoZjSkObXabgv9lt5g/zh-cn_image_0000002701663572.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/9SGL4ZCUQ72tjBIZfBywtQ/zh-cn_image_0000002731542761.png)按钮或工具控制栏上的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/35dRHdI8QUygfVtyz2XHSQ/zh-cn_image_0000002731382793.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/jqJR-hygQvyHgESlO7APfA/zh-cn_image_0000002701823492.png)来即时控制实时监控界面的录制状态。
 * 泳道筛选
 
-  点击工具控制栏上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Cmfn2F65Tt-susDnfIbboA/zh-cn_image_0000002731382789.png "点击放大")按钮，可以选择泳道进行筛选。筛选无需录制的泳道，可以降低数据采集本身的开销，但同时会造成数据分析维度的减少。
+  点击工具控制栏上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/38jSnv4eTXmQWP53BvhzNQ/zh-cn_image_0000002731382789.png "点击放大")按钮，可以选择泳道进行筛选。筛选无需录制的泳道，可以降低数据采集本身的开销，但同时会造成数据分析维度的减少。
 * 详细数据展示
 
   将鼠标悬浮于所关心的泳道数据上时，界面上会出现当前时间点的时间标线以及含有当前时间点上泳道详细数据的Tooltips。更进一步，当您将鼠标悬浮于时间轴上时，实时监控页面内的所有泳道均会以Tooltips展示出该时刻的数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/lJrLkxH-Q4uiCVY0Py-ghw/zh-cn_image_0000002701823494.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/E7KAZsDkRNS34T5lQk7a8g/zh-cn_image_0000002701823494.png "点击放大")
 
 * 图例选择
 
@@ -81,8 +81,8 @@ FPS、GPU、Temperature、\*Device Current泳道显示的是所使用设备的�
    * 在DevEco Studio底部工具栏中单击“Profiler”。
    * 使用“Ctrl+Shift+A”（macOS中为双击“Shift”）打开搜索功能，搜索“Profiler”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/PjcmPkZ-R1igt3N39a-w5w/zh-cn_image_0000002701663570.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/gV-bxBftTzCYrVp8f8csAg/zh-cn_image_0000002701663570.png)
 3. 在设备上启动您想要监测的应用。
 4. 在DevEco Profiler界面左上角选择调优设备、应用、进程。如果您的应用不止有一个主进程（还存在Extension或者Render进程），那么需要手动选择一个想要监控的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/QVgAmKqVQMi3WX-RBKWKQw/zh-cn_image_0000002701663566.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/nUVtTjEqSB6bb2t8pB17yA/zh-cn_image_0000002701663566.png)

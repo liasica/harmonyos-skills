@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-errorcode-00301
 title: 依赖错误码
-breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 依赖错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 依赖错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:26+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:20+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:736483920b95918241c870c21b7b13f427e05f78f20e38e317a32cef27b9ee17
 ---
 

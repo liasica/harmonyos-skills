@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-control-screen
 title: 操控屏幕
-breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 操控屏幕
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 操控屏幕
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:8145e74a1c51f7287acc0d2c460d72cb43f60d727463a205f1d17de471858c81
 ---
 

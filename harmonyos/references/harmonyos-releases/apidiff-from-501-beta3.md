@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-fro
 title: HarmonyOS 5.0.1(13) Beta3引入的API
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > API变更清单 > HarmonyOS 5.0.1(13) Beta3引入的API
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:39+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:34+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:467676fdcc1d59e0a597178758ae18e65bb9a190896f2300a183bd707648d8e9
 ---
 

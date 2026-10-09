@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-peak-foreground-memory-usage-0418
 title: 前台场景内存峰值占用
-breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 前台场景内存峰值占用
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 前台场景内存峰值占用
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:904c1940021c335a223d3d7b921eb772f2c0efb2da5775af21c8263dfb55d900
+scraped_at: 2026-10-09T08:15:18+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:00c99f1b9a78351ac873b977a8a3ba50d21a2343e2eb8e317f2040f1803d16de
 ---
 
 ## 规则详情
@@ -17,7 +17,7 @@ content_hash: sha256:904c1940021c335a223d3d7b921eb772f2c0efb2da5775af21c8263dfb5
 1. 执行hdc shell。
 2. 执行hidumper --mem <进程pid>命令，获取如图Pss字段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ZqMyiEOYRn-Xat2grQel1g/zh-cn_image_0000002731381845.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/UhIF5VsVSXm99kyNKtphpQ/zh-cn_image_0000002731381845.png)
 
 ## 计算逻辑
 

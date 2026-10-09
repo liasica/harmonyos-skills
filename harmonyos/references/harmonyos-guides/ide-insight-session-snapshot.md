@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-snapshot
 title: 内存泄漏：Snapshot分析
-breadcrumb: 指南 > 优化应用性能 > 内存泄漏：Snapshot分析
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 内存泄漏：Snapshot分析
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:53+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-09T08:15:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:82808d7077abfeef6afaa5cf027657b93d15617ad912078c92e814c959521ece
 ---
 

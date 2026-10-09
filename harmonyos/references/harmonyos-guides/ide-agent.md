@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent
 title: 自定义智能体配置
-breadcrumb: 指南 > 使用AI智能辅助编程（不推荐） > 自定义智能体配置
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:51:00+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-10-09T08:15:25+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:c61ada82c299c07aeaee47e1c847bfc7ac3796da8ebed6fae690eea93c365847
 ---
 

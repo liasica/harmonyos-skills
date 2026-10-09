@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-faq
 title: 常见问题
-breadcrumb: 指南 > 优化应用性能 > 附录 > 常见问题
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 附录 > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:58+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:23+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:37f844fc06c6cb7754b7d17e290f45155c28098d8a1d516fbed476c3074d7b7a
 ---
 

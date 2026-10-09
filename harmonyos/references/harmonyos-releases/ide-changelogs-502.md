@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-changel
 title: 变更说明
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:52+08:00
+scraped_at: 2026-10-09T08:12:34+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:5625f70ab6a6d35d30312cfb5f754eaae579556494c0e8601936dc9a447de2bd
+content_hash: sha256:2fcd1608cbd247c74fd2876d52eeff04d2b6f2412426c1a5c32f04e4c74ff21d
 ---
 
 ## 5.0.5.315至5.0.7.100
@@ -18,7 +18,7 @@ content_hash: sha256:5625f70ab6a6d35d30312cfb5f754eaae579556494c0e8601936dc9a447
 
 如果历史工程的工程级build-profile.json5文件中signingConfigs下的name字段为空字符串，编译时会报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/p2pCMxT5TxW-5DwiGCt9VA/zh-cn_image_0000002336615601.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/jFWJOPpGQ1ue-c-y2j1uXw/zh-cn_image_0000002336615601.png)
 
 **适配指导**
 

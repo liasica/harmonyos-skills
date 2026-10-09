@@ -1,0 +1,73 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-curly
+title: "@hw-stylistic/curly"
+breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/curly
+category: harmonyos-guides
+scraped_at: 2026-10-09T08:15:32+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:fb5517e9498ed99797e2c1017ba8c6b4f3b0aafb6c6abebc1618945932530876
+---
+
+条件语句和循环语句的逻辑代码必须写在大括号中。该规则仅检查.ets文件类型。
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  "rules": {
+    "@hw-stylistic/curly": "error"
+  }
+}
+```
+
+## 选项
+
+该规则无需配置额外选项。
+
+## 正例
+
+```ts
+export function test(a: number, b: number) {
+  if (a > b) {
+    console.info('doSomething');
+  } else if (a = b) {
+    console.info('doSomething');
+  } else {
+    console.info('doSomething');
+  }
+
+  while (a > b) {
+    a--;
+    console.info('doSomething');
+  }
+
+  console.info('doSomething');
+}
+```
+
+## 反例
+
+```ts
+export function test(a: number, b: number) {
+  if (a > b)
+  // Expected { after 'if' condition.
+    console.info('doSomething');
+  else if (a = b)
+  // Expected { after 'if' condition.
+    console.info('doSomething');
+  else
+  // Expected { after 'else'.
+    console.info('doSomething');
+  console.info('doSomething');
+}
+```
+
+## 规则集
+
+```screen
+"plugin:@hw-stylistic/recommended"
+"plugin:@hw-stylistic/all"
+```
+
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-hmos-code-linter.md)。

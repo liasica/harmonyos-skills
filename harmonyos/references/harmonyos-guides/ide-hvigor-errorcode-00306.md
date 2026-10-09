@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-errorcode-00306
 title: 规格错误码
-breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 规格错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 规格错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:afd74e6eca26457ab290201025e1883b60db266db3ad5a4d85ff19554a596ff3
 ---
 

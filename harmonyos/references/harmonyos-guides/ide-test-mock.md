@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-test-mock
 title: Mock能力
-breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > Mock能力
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > Mock能力
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:25+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-10-09T08:15:18+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:b24cee78bb0db829e084b79c4a99ffe73588151212b0c2bf78e5672ace25f4c5
 ---
 

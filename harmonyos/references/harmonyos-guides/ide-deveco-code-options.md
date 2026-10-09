@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-options
 title: 命令
-breadcrumb: 指南 > AI Coding > DevEco Code > 命令
+breadcrumb: 指南 > DevEco Code > 命令
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:56+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:39203d8739b6eca64f7abff64e1488d3124fda24028aba84893969aaf84bba4b
+scraped_at: 2026-10-09T08:15:39+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:903cfd2307dcd497f67f637688a6e1fd1f02de6e5868cdbc5182ad512a587623
 ---
 
 ## collect
@@ -16,6 +16,8 @@ DevEco Code日志默认存储路径为：
 
 * Windows：C:\Users\用户名\.local\share\deveco\log
 * macOS：~/.local/share/deveco/log
+
+鸿蒙电脑版DevEco Code不支持该命令。
 
 **命令格式：**
 

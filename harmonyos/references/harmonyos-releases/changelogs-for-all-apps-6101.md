@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对所有应用的变更
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > OS平台行为变更说明 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:34+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:a52c86728d5385aeaa2c04e0240ae5c6e8e372d00ced9e7ed36357040692197e
+scraped_at: 2026-10-09T08:12:04+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:9cb63d942f81adeff9bfa5efb0fec3f7865c6e110dab12495f55aa456fcf3a4f
 ---
 
 ## ArkUI
@@ -197,7 +197,7 @@ Hyphen库将移除部分不兼容语种，这些语种的连字符“-”进行�
 
 **变更的接口/组件**
 
-* ArkUI：文本组件text.d.ts文件TextAttribute中wordBreak属性对应属性值：WordBreak.HYPHENATION
+* ArkUI：component/text.d.ts中TextAttribute中wordBreak属性对应属性值：WordBreak.HYPHENATION
 * ArkGraphics 2D：
   + ArkTS API：@ohos.graphics.text.d.ts文件interface ParagraphStyle中wordBreak属性对应属性值：WordBreak.BREAK\_HYPHEN
   + C API：drawing\_text\_typography.h文件enum OH\_Drawing\_WordBreakType中类型：WORD\_BREAK\_TYPE\_BREAK\_HYPHEN

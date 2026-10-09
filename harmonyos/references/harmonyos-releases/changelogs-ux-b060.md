@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta5引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:27+08:00
+scraped_at: 2026-10-09T08:12:36+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:6bb5d97aae446352e7439426bf015b7a94889eca13eb7745cf83595d8d0c9a15
+content_hash: sha256:13c819a9aabf0aeb841f00368eaa9ea43425f473c78a90ec1fea9c8b4fb89f43
 ---
 
 ## 移动窗口布局模式瀑布流行为变更
@@ -117,11 +117,11 @@ UX规格变更
 
 变更前：RichEditor非用户手动点击收起键盘按钮收起键盘时，触发组件失焦，关闭菜单，复位选中区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/SwYeDDnyTTuPF1TggOJQmg/zh-cn_image_0000002027415465.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/jD0Tt-amQC2enKVKJpuBGA/zh-cn_image_0000002027415465.gif)
 
 变更后：RichEditor非用户手动点击收起键盘按钮收起键盘时，仅小窗模式下触发组件失焦，其他场景不触发组件失焦，不关闭菜单，不复位选中区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/1J606kZeS8iI2pnMsisgfg/zh-cn_image_0000002027334989.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/NDqxyT1oSTGW6vmMtNYD7w/zh-cn_image_0000002027334989.gif)
 
 **起始API Level**
 
@@ -203,7 +203,7 @@ UX默认行为变更，无需适配。可以通过[promptAction中ShowToastOptio
 
 在适老化场景，Menu集成保存控件“保存图片”，由于字体的尺寸增大，保存控件的实际布局宽度会大于所设定宽度，可能会出现截断情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ja9G7ugAR9mppEk2Tcd8Sg/zh-cn_image_0000002027415469.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/C9SmUr88S2a4z1vEcJ8oHQ/zh-cn_image_0000002027415469.png)
 
 变更后：
 
@@ -213,7 +213,7 @@ UX默认行为变更，无需适配。可以通过[promptAction中ShowToastOptio
 
 变更后，在相同的参数条件下，安全控件完整显示的最小宽度超过所设定的宽度，按钮文本信息会自动换行，控件高度会自适应增大，以保证安全控件显示的完整性。换行后，组件的高度增大，如果布局不满足实际要求，需要根据实际需要对安全控件的宽度和高度做调整。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ShyXHq6pS2Cy3c0CwhPPrw/zh-cn_image_0000002027334993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/BQZLUcjxQg6w_hXO5q7Dfw/zh-cn_image_0000002027334993.png)
 
 **起始API Level**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: HarmonyOS NEXT Release引入的接口行为变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Release引入的接口行为变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:40+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:35+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:1bd2175a98b3c4a38171d2a30549e623c767e9f15a679af2ce62e0010243663d
 ---
 

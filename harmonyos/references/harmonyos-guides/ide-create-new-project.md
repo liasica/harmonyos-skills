@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-create-new-project
 title: 创建一个新的工程
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 创建一个新的工程
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 创建一个新的工程
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:19+08:00
+scraped_at: 2026-10-09T08:15:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0dd732a3be25f981d596dcaa74d38f2a925be1420942258cd26162d7b06d5893
+content_hash: sha256:81cb5546774c1804387d0158d6e7035455358a3be1cac7618464fccd03894698
 ---
 
 当您开始开发一个应用/元服务时，首先需要根据工程创建向导，创建一个新的工程，工具会自动生成对应的代码和资源模板。
@@ -29,7 +29,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    * Atomic Service元服务工程暂不支持Native开发。
    * [CloudDev]Empty Ability模板：该功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DM-Hpj94RwCRrdiSRa2fPg/zh-cn_image_0000002701663196.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/L1NW7xEFT9elH52XoaT2ew/zh-cn_image_0000002701663196.png)
 3. 在工程配置页面，需要根据向导配置工程的基本信息。
    * **Project name**：工程的名称，可以自定义，由大小写字母、数字和下划线组成，必须由大小写字母开头，长度为1~200个字符。
    * **Bundle name**：标识应用的包名，用于标识应用的唯一性。
@@ -53,7 +53,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    * 从26.0.0版本开始，除[Lite]Empty Ability工程模板外，其余工程模板新增**View API version distribution**，点击可查看HarmonyOS设备各API版本使用量占比，其中Percentage为设备量占比，Cumulative Percentage为设备量累计占比。Compatible SDK默认显示设备量累计占比超过90%的最高的API版本。
    * View API version distribution功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wqbJw7ApRA6-S2qMUzQPgw/zh-cn_image_0000002701823120.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/4eg1xqWuRo6obYJXw1NCUQ/zh-cn_image_0000002701823120.png)
 4. 单击**Finish**，工具会自动生成示例代码和相关资源，等待工程创建完成。
 
 ## （可选）创建OpenHarmony工程
@@ -114,7 +114,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    ```
 2. 单击Sync Now进行同步。在Sync Check弹窗中点击**Yes**，同意将module.json5/config.json文件中的phone切换为OpenHarmony支持的default类型，并删除在OpenHarmony不适用的其他设备类型，同步成功无其他报错则工程创建完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/ksX9lOcNRAqQu97QL27xKA/zh-cn_image_0000002731542391.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/xOCAJh06TiSPCJ5bi4RjJQ/zh-cn_image_0000002731542391.png)
 
 **说明** 
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-prepublish
 title: ohpm prepublish
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm prepublish
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm prepublish
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:a2cfc144b8065c6d0c079090a11c14c793c4f0ebdd77be1c4b86665f0f4948f7
 ---
 

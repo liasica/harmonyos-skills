@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-release-app-stack-analysis
 title: 堆栈轨迹分析
-breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析 > 故障分析 > 堆栈轨迹分析
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 堆栈轨迹分析
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:33+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:dd4d792abacab99a2be8d9155767d692b7b4e5bb0165c03cf667ebac9dffb112
+scraped_at: 2026-10-09T08:15:17+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:b53e40b618b00ac9be4abe932d2bb9aef5f6ca547599829ff74ee273086d4268
 ---
 
 对于发布的应用（Release应用），为减小应用程序大小，提高运行效率，会对代码进行优化，去除其中的调试信息。因此无法直接通过Release应用的堆栈信息定位到源码的具体文件和行位置，不易于开发者快速定位解决问题。
@@ -16,17 +16,17 @@ Release应用堆栈解析功能操作方法如下：
 
 1. 单击菜单栏**Code > Analyze Stack Trace**，或在FaultLog页面异常堆栈信息处右键选择**Analyze Stack Trace。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qUrMCCYsTiKSv53UvkXIvw/zh-cn_image_0000002731541821.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/7cGn1caNRt-Wqgw2Kq_pxg/zh-cn_image_0000002731541821.png)
 2. 在弹出的**Analyze Stack Trace**对话框中，粘贴Release应用的异常堆栈信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/pc09fz6UQueCpDWIYu_huA/zh-cn_image_0000002701822546.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/-dkGiECyQFKEqj3IkWNUmA/zh-cn_image_0000002701822546.png)
 3. 如果当前工程为堆栈所在应用对应的工程，且存在Release构建产物，点击**Start Analyze**即可进行解析。
 
    如果当前工程不是堆栈所在应用对应的工程，则需要配置应用对应构建产物：勾选**Unscramble stack trace**, 在下方的文件选择框中，分别添加应用对应的sourceMap文件、so文件以及nameCache文件，点击**Start Analyze**进行转换。
 
    DevEco Studio将解析后的堆栈信息显示在右侧的输出框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/dw3FEywiRHuPKSevhaJAEA/zh-cn_image_0000002701662630.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/b0Ns443uQQ-L-gJ9vs7RBg/zh-cn_image_0000002701662630.png)
 
    在构建Release应用时，so文件是默认不包含符号表信息的，如果需要在构建Release应用时生成包含符号表的so文件，需要在工程的[模块级build-profile.json5](ide-hvigor-cpp.md)文件的buildOption属性中，配置如下信息：
 

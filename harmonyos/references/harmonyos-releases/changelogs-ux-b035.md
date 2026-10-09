@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta3引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:27+08:00
+scraped_at: 2026-10-09T08:12:36+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:c78ec1c92e8382779f5e11e722bbde2880394accdbbe818720a16b71fc76bcc8
+content_hash: sha256:0a8c493be3a94b9931e6ca1c3b0774f41fe1f1424a59426d989e238312c94687
 ---
 
 ## bindContentCover动效参数变更
@@ -233,7 +233,7 @@ BindContextMenu上下文菜单选项过多会出现滚动条，此时手指快�
 
 变更后：上下文菜单选项没有滚动条时，手指快速滑动菜单选项会自动关闭菜单；上下文菜单选项过多出现滚动条时，手指快速滑动菜单选项只会上下滚动菜单选项，不再主动关闭菜单。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/IuUcM45lRUuftaeXADf2Lw/zh-cn_image_0000001977570038.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/06_c4TQCTNi5dc4lD3KJ8Q/zh-cn_image_0000001977570038.png)
 
 **起始API Level**
 
@@ -401,7 +401,7 @@ Menu组件。
 
 变更后：竖屏时菜单默认避让挖孔；横屏时，应用配置开启避让手机挖孔，菜单会避让挖孔。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/MQrX9ETeRUqdY3f68Gr7Pw/zh-cn_image_0000002014049909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ZIcuEv-WQPytpYQ4pFXSjQ/zh-cn_image_0000002014049909.png)
 
 **起始API Level**
 
@@ -492,7 +492,7 @@ MenuItem设置enable为false时, 组件将处于禁用状态，此时字体颜�
 
 变更后：MenuItem设置enable为false时，若开发者未设置字体颜色，则组件禁用状态下的字体颜色为默认字体颜色 \* 不透明度40%；若开发者设置了字体颜色，则组件禁用状态下的字体颜色为自定义字体颜色 \* 不透明度40%；
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/LgGxzQqDSEGGP88At1eQuQ/zh-cn_image_0000001977570050.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/CueDaynYRW2dmOIp55Q5Vw/zh-cn_image_0000001977570050.png)
 
 **起始API Level**
 
@@ -717,7 +717,7 @@ Popup（气泡组件）UX样式不符合规范
 
 2、按钮上方与文本下方间距不足8vp
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/KsmbPQWES-ObFlx1zkTulg/zh-cn_image_0000002013930445.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/0WLz34f-SN2pd9WXcixG5Q/zh-cn_image_0000002013930445.png)
 
 变更后：
 
@@ -725,7 +725,7 @@ Popup（气泡组件）UX样式不符合规范
 
 2、按钮上方与文本下方间距8vp
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/vuaOqYnxTvOp9HhqC4dYqg/zh-cn_image_0000002014049929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/8eCJDDgWT7WlRWAs2rEYJg/zh-cn_image_0000002014049929.png)
 
 **起始API Level**
 

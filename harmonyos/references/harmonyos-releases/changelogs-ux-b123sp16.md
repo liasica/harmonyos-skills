@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > OS平台行为变更说明 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:51+08:00
+scraped_at: 2026-10-09T08:12:32+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:86f831cb8aeab62c0bf44f7432d817b811894f07d1e1a72bbd7cc7890c5f4ecd
+content_hash: sha256:695ff7c8b2dfef6938b8b10baa75d78e98516b6579e8a878cd7b2df8cce7869d
 ---
 
 ## borderImage的outset属性按照实际的延伸距离来绘制边框向外扩展的效果
@@ -86,11 +86,11 @@ API version 14及以后，设备宽度在600-840vp间时，默认显示居中弹
 
 变更前：设备宽度在600-840vp间时，SheetOptions中的preferType设置为SheetType.POPUP，实际显示居中弹窗样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vH-YgIG_QyS1zK2Rk07dPw/zh-cn_image_0000002334372189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/g4JumsAxQCSxKJAAuaqfBw/zh-cn_image_0000002334372189.png)
 
 变更后：设备宽度在600-840vp间时，SheetOptions中的preferType设置为SheetType.POPUP，实际显示跟手弹窗样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/8tvPsWLgQyCwAyO5Pab7wg/zh-cn_image_0000002334332009.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/ZqjSHmzESvWqZgRdOpYOtA/zh-cn_image_0000002334332009.png)
 
 **起始API Level**
 

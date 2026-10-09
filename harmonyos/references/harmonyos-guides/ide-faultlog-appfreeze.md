@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-faultlog-appfreeze
 title: 查看AppFreeze（应用冻屏）日志
-breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析 > 故障分析 > 查看AppFreeze（应用冻屏）日志
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 查看AppFreeze（应用冻屏）日志
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b20fcf7502ef5d962e4f969d2d5f9a8267d9efcd9216ee048f7d55ebb8dc53d5
+scraped_at: 2026-10-09T08:15:17+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:7e9d32a5873c9992b13d9e149b21ff5d7ade94b5e09127c779cc5f82726222f3
 ---
 
 从DevEco Studio 6.0.0 Beta2版本开始，支持对AppFreeze类型的FaultLog，进行结构化展示和日志过滤。关于AppFreeze日志的检测原理、日志规格等信息请查看[AppFreeze（应用冻屏）检测](appfreeze-guidelines.md)。
 
 1. 打开FaultLog窗口，双击appfreeze日志，**Fault Info**右侧会出现**Fault Analysis**页签。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/ZQwTDQ_6TgKB2aUkOpEmmw/zh-cn_image_0000002701823942.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/AFMVb0UlQpCrIzJD-PT79A/zh-cn_image_0000002701823942.png)
 2. 点击**Fault Analysis**页签，会展示结构化的日志信息。
    * 页面上方的字段对应了FaultLog中的字段，具体对应关系请参考[字段说明](ide-faultlog-appfreeze.md#section6678213185017)。
    * 页面下方包含Stacks、Logs、Binder Communication、System等页签，具体如下。
@@ -24,7 +24,7 @@ content_hash: sha256:b20fcf7502ef5d962e4f969d2d5f9a8267d9efcd9216ee048f7d55ebb8d
      + **3s/6s Compare**：从DevEco Studio 6.0.2 Beta1版本开始，新增3s/6s Compare页签，用于对[THREAD\_BLOCK\_6S](appfreeze-guidelines.md#thread_block_6s应用主线程卡死超时)类型的AppFreeze问题，展示3s和6s时间点的主线程堆栈日志，具体请参考[查看3s/6s堆栈日志](ide-faultlog-appfreeze.md#section699194455215)。
      + **Main Thread Task Queue**：从DevEco Studio 6.1.1 Beta1版本开始，新增Main Thread Task Queue页签，对应AppFreeze日志中的[EventHandler信息](appfreeze-guidelines.md#日志主干通用信息)，用于展示主线程的任务队列，包括历史任务和待调度任务，具体请参考[查看主线程任务队列信息](ide-faultlog-appfreeze.md#section3149310135314)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/KeDcZwnGSUuGFntU3yn9Dw/zh-cn_image_0000002731543217.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/72RFOzGQR5qQVNghcIPANA/zh-cn_image_0000002731543217.png)
 
 ## 字段说明
 
@@ -50,7 +50,7 @@ content_hash: sha256:b20fcf7502ef5d962e4f969d2d5f9a8267d9efcd9216ee048f7d55ebb8d
 
 Stacks页签用于查看AppFreeze中的堆栈信息，并以线程为单元进行折叠，点击展开按钮，可以展开对应线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/P6Ek80bwQemhbtdiCtqSzA/zh-cn_image_0000002731383243.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/I88Ui01iQcOmWhjInhn4lA/zh-cn_image_0000002731383243.png)
 
 图中标注1的勾选框是展开应用堆栈，标注2的勾选框是展开系统堆栈，两个勾选框一共组成了四种状态，具体如下表。
 
@@ -67,7 +67,7 @@ Stacks页签用于查看AppFreeze中的堆栈信息，并以线程为单元进�
 
 Logs页签用于查看AppFreeze中的HiLog日志，支持日志级别的过滤和搜索。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/l5BcOyTnSh6bx-DPQEaelQ/zh-cn_image_0000002731383241.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/4EoYy5fsR_WAWwA40PQTIQ/zh-cn_image_0000002731383241.png)
 
 ## 查看Binder通信信息
 
@@ -79,7 +79,7 @@ Binder Communication页签包含以下内容：
 
 ② 查看各进程Binder资源信息，包括进程ID/名称、当前IPC请求数、已启动IPC线程数、最大IPC线程数等，当进程资源紧张时会高亮显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/eoFdQRraQzygsAtKSZ5jZw/zh-cn_image_0000002731543215.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/L9pxL4ZYQyu5W014hwLSwA/zh-cn_image_0000002731543215.png "点击放大")
 
 ## 查看高负载CPU/内存日志信息
 
@@ -93,7 +93,7 @@ Binder Communication页签包含以下内容：
 
 ③：选中柱状图后，显示相关的日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/WXZ6xeweSmO9vBCeEAY-Hw/zh-cn_image_0000002701664022.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Rl2H-utPT6izO6gCyAIGOg/zh-cn_image_0000002701664022.png "点击放大")
 
 如下是内存的相关日志。
 
@@ -103,7 +103,7 @@ Binder Communication页签包含以下内容：
 
 ③：选中柱状图后，显示相关的日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/breQWiHhQjiJb5XWhlgEJQ/zh-cn_image_0000002701664018.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/-n5j_DByREaVc7mMmALdLg/zh-cn_image_0000002701664018.png "点击放大")
 
 ## 查看采样栈数据信息
 
@@ -122,17 +122,17 @@ Binder Communication页签包含以下内容：
 
 Sampling Stack页签默认展示堆栈水平条形图，按照堆栈的出现频率从高到低排序，条形图最后的数字是堆栈出现的次数，并通过不同颜色标识应用堆栈和系统堆栈，可通过左上角的勾选框选择查看对应的堆栈。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/0g-rRMFaTB-E3o4KMPR6mw/zh-cn_image_0000002701823944.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/dLPM9cvBTo-PCGpWwTZaGw/zh-cn_image_0000002701823944.png)
 
 点击切换图表类型按钮，可切换到堆栈火焰图，并通过不同颜色标识堆栈类型，其中红色代表异常堆栈。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/ce-pSf1ATjWmDRJ7ZwbR4g/zh-cn_image_0000002701823940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/cSsnLYfeQquRUn2UcKZ6Og/zh-cn_image_0000002701823940.png)
 
 ## 查看3s/6s堆栈日志
 
 从DevEco Studio 6.0.2 Beta1版本开始，新增3s/6s Compare页签，用于对[THREAD\_BLOCK\_6S](appfreeze-guidelines.md#thread_block_6s应用主线程卡死超时)类型的AppFreeze问题，展示3s和6s时间点的主线程堆栈日志，并标识栈帧中可能的故障处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/pn5xtVGTS1Czxl_JOaAiCQ/zh-cn_image_0000002701664020.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ZiRksyC7TCaTN7ORLc5-Lw/zh-cn_image_0000002701664020.png)
 
 如果不是THREAD\_BLOCK\_6S类型的AppFreeze问题，不会展示3s/6s Compare页签。
 
@@ -148,4 +148,4 @@ Sampling Stack页签默认展示堆栈水平条形图，按照堆栈的出现频
 
 ④ 支持切换查看3s和6s时间点的任务信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/TcbQKc7CQXOUbDoFhKzj-Q/zh-cn_image_0000002731383239.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/zYBZxdXBTDW1Gi-7sk0GDA/zh-cn_image_0000002731383239.png)

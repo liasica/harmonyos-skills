@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-501-rel
 title: DevEco Studio
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > DevEco Studio
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:39+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:35+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:18ca8dfd9fa3ccba999bfd6f9be52ef1a00e288716e52a66128ab89f5745af5d
 ---
 

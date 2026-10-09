@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-610
 title: 6.1.0(23) Beta1引入的变更
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:20+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:05+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:36c2255bc6b76d9c97f5b585fb08a932d8ca549abe2d6aa60b6bf486f17ff2d6
 ---
 

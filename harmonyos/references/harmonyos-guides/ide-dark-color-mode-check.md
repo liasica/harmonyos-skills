@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-dark-color-mode-check
 title: "@performance/dark-color-mode-check"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/dark-color-mode-check
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/dark-color-mode-check
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:11+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:d33899eb0f1c0c9a26eaa41afd6a31f61b1f6d7af8f0919a6c5d61fe743a239b
 ---
 

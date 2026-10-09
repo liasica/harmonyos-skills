@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-custom-auth-plugin-template
 title: 模板文件
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义认证插件 > 模板文件
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义认证插件 > 模板文件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:48+08:00
+scraped_at: 2026-10-09T08:15:06+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:9322d87c355b1959b937046c6c6f50fa6f2180c0066b0d80c6f394c7c301ab07
 ---

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-deployfunc
 title: 部署函数
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云函数 > 部署函数
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云函数 > 部署函数
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:21+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:dfcb8a7bcfc0b928ee45e2873faece3857c0d37e6df24a610c1f308d9ca356ef
+scraped_at: 2026-10-09T08:15:07+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:420426bcb0c35b2e9ac642d4f3a5ff4989a363770915d5e98eebfefde6fc42e0
 ---
 
 完成函数代码开发后，您可将函数部署到AGC云端，支持单个部署和批量部署。
@@ -20,20 +20,20 @@ content_hash: sha256:dfcb8a7bcfc0b928ee45e2873faece3857c0d37e6df24a610c1f308d9ca
 
    如需批量部署多个函数，右击“cloudfunctions”目录，选择“Deploy Cloud Functions”即可部署该目录下所有函数。如“cloudfunctions”目录下同时存在云函数和云对象，云函数和云对象将会被一起部署到AGC云端。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/ZkBsHY95RdaaOUEhjWHxCg/zh-cn_image_0000002179498368.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/CrqITXEkTNGBttXRSkEHtw/zh-cn_image_0000002179498368.png)
 2. 您可在底部状态栏右侧查看函数打包与部署进度。
 
    请您耐心等待，直至出现“Deploy successfully”消息，表示当前函数已成功部署。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/NqdeC78USmKxR4iVYLwosQ/zh-cn_image_0000002179498360.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/efcVS21ESdmD1ZLhOEn6Kw/zh-cn_image_0000002179498360.png)
 3. 在菜单栏选择“Tools > CloudDev”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Ux2qxHj_QOiiNbAxaeA4GA/zh-cn_image_0000002214858997.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/MhnoL_0gQ8GuIofP-2EY_w/zh-cn_image_0000002214858997.png)
 4. 在打开的CloudDev面板中，点击“Serverless > Cloud Functions”下的“Go to console”，进入当前项目的云函数服务页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Im-S0wL_RsKuChWf4TAEbQ/zh-cn_image_0000002214704617.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/6vPSPtayRmG491ueiVGZmg/zh-cn_image_0000002214704617.png)
 5. 查看到“my-cloud-function”函数已成功部署至AGC云端，函数名称与本地工程的函数目录名相同。
 
    部署成功后，您便可以从端侧调用云函数了，具体请参见[在端侧调用云函数](agc-harmonyos-clouddev-invokecloudfunc.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/a4OVtC-JQECIuisw4pZgUA/zh-cn_image_0000002179338680.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/QK0d4k5iS8KtDWw7m5sRkw/zh-cn_image_0000002179338680.png)

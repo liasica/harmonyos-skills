@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-custom-sign-plugin-configuration
 title: 自定义登录验证插件配置
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义登录验证插件 > 自定义登录验证插件配置
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义登录验证插件 > 自定义登录验证插件配置
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:21+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-09T08:15:06+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:50e50e834863d47ef1a7491a39eae30e4a3ee37e7e13a6f4201108e47f1d0af6
 ---
 

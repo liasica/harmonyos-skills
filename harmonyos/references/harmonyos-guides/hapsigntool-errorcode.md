@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hapsigntool-errorcode
 title: 签名工具错误码
-breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 签名工具错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 签名工具错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:18:13+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-09T08:15:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:50ee255bd9820506e73dee3bc995308f958b5d1c7c92ce10c4eadc727169c5a3
 ---
 

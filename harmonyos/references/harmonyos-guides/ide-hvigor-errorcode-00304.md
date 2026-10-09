@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-errorcode-00304
 title: 资源缺失错误码
-breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 资源缺失错误码
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 资源缺失错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:57+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-10-09T08:15:22+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:dbcb8251c4d850e068ccabac4ae7f522a25d37e6ea09afab99864c066082289d
 ---
 

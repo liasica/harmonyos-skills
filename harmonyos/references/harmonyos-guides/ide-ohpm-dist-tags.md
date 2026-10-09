@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dist-tags
 title: ohpm dist-tags
-breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm dist-tags
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm dist-tags
 category: harmonyos-guides
-scraped_at: 2026-09-17T06:47:16+08:00
-doc_updated_at: 2026-09-16
+scraped_at: 2026-10-09T08:15:24+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:2a9fadb7011b9261aaab5eee24f139dfdcade8a35a8344ce374876aa84d8da5a
 ---
 

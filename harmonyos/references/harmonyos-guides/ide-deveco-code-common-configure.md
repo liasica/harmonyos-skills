@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-common-configure
 title: 常用配置
-breadcrumb: 指南 > AI Coding > DevEco Code > 常用配置
+breadcrumb: 指南 > DevEco Code > 常用配置
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:30+08:00
-doc_updated_at: 2026-07-21
-content_hash: sha256:202c05125f3e4d4efb3c434add0eb90d558668f8a0b43d51fdf5e74e9ca3fac0
+scraped_at: 2026-10-09T08:15:39+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:59aac6a28eae163853964b8ac7026493ccc06aaff5c066d7a3466962e123c221
 ---
 
 DevEco Code支持在deveco.jsonc文件中配置绿灯模式、Skill、MCP的相关能力。
@@ -14,6 +14,7 @@ deveco.jsonc文件在项目和用户目录下各有一份，若不存在需新�
 
 * Windows：.deveco/deveco.jsonc（项目级） > C:/Users/用户名/.config/deveco/deveco.jsonc（用户级）
 * macOS：.deveco/deveco.jsonc（项目级） > ~/.config/deveco/deveco.jsonc（用户级）
+* 鸿蒙电脑：.deveco/deveco.jsonc（项目级）> ~/.deveco/deveco.jsonc（用户级）
 
 **说明** 
 
@@ -95,7 +96,7 @@ DevEco Code扫描以下位置的Skill：
 
 **说明** 
 
-* 以上用户级配置以Windows为例，如果是macOS环境，需要把路径中的C:/Users/用户名替换为~。
+* 以上用户级配置以Windows为例，如果是macOS/鸿蒙电脑环境，需要把路径中的C:/Users/用户名替换为~。
 * SKILL.md所在文件夹大小不超过100MB。
 
 **示例：**

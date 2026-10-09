@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对API 12应用的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta3引入的接口行为变更 > 针对API 12应用的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:53+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:bf9a8dc6cf3c1b67af90cf17a2aec2540627c38ea196c1e99f0cf095af943662
+scraped_at: 2026-10-09T08:12:36+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:60c1656f99266b2ac0c4b79c45888de4981d7acffd2d098679eb633384457812
 ---
 
 ## ArkTS
@@ -214,7 +214,7 @@ API 11：RenderNode的clipToFrame设为false不生效，超出节点大小范围
 
 API 12及以上版本：RenderNode的clipToFrame设为false时，超出节点大小范围的子节点内容不会被剪裁。为保证变更前后clipToFrame的默认行为一致，开发者在未显式设置clipToFrame属性的情况下，clipToFrame默认值变更为true。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/tpXvcR70QD2LDXgaQQ5VLg/zh-cn_image_0000001971091670.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/PXifi53OQmedzC2glNqMfw/zh-cn_image_0000001971091670.png)
 
 **起始API Level**
 
@@ -564,13 +564,13 @@ totalCount表示UI显示的数据个数。当0 < totalCount < arr.length时，�
 
 将arr.length设置为10，totalCount设置为5。显示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/NHDfH2e1QKOIj_B5Iw9Shg/zh-cn_image_0000002007771985.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/PO9qMfLfQK-6GLkRjiQB5A/zh-cn_image_0000002007771985.jpeg)
 
 变更后：Repeat设置totalCount属性时，如果totalCount小于数据长度，显示的数据个数为totalCount值。
 
 将arr.length设置为10，totalCount设置为5。显示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/OWV2ckXPSxO8GVv1Cglfjw/zh-cn_image_0000002007731453.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/dRLb8ekfRKSgsCVGK-H2Sw/zh-cn_image_0000002007731453.jpeg)
 
 **起始API Level**
 

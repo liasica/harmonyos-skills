@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_quotes
 title: "@typescript-eslint/quotes"
-breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/quotes
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/quotes
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:22+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:10+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:001fcea6a6529f261c2774343fc5039f77fc6b378549efd10a60d05896360c3e
 ---
 

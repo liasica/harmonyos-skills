@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-arkts-worker-taskpool
 title: 调试场景说明
-breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 调试场景说明
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 调试场景说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:46+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:0be6fd7063bebff3b67e6ee84700a536cb1d1e1d309c5eebfb7c72b863ae8240
 ---
 

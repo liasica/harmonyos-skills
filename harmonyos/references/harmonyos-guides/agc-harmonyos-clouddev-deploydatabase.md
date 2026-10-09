@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-deploydatabase
 title: 部署云数据库
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云数据库 > 部署云数据库
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云数据库 > 部署云数据库
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:22+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:15e7f704335d486c4f39eb23209798216823b9d18d2166299d7c3222120549e1
+scraped_at: 2026-10-09T08:15:08+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:c5ffa01504d5dd50f2d48037ca7bf65aaa59dce6bdd2cdb5cf7e13596a49e12c
 ---
 
 完成数据条目创建后，您可以直接部署该数据条目。您也可以等所有对象类型和数据条目开发完成后，再统一批量部署到AGC云端。
@@ -19,12 +19,12 @@ content_hash: sha256:15e7f704335d486c4f39eb23209798216823b9d18d2166299d7c3222120
 
 1. 右击“clouddb”目录，选择“Deploy Cloud DB”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/tpy8zU-NRR-lEp63NBO8Wg/zh-cn_image_0000002179338588.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/yVYdc9rMT_W80lF9FWt-ZA/zh-cn_image_0000002179338588.png)
 2. 您可在底部状态栏右侧查看云数据库打包与部署进度。
 
    请您耐心等待，直至出现“Deploy successfully”消息，表示云数据库已成功部署。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/BbVVrbmnQnaK12MxRKtgCQ/zh-cn_image_0000002179338568.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/6tDdy3JuQNy_-7sMYSxFZg/zh-cn_image_0000002179338568.png)
 
    **注意** 
 
@@ -33,10 +33,10 @@ content_hash: sha256:15e7f704335d486c4f39eb23209798216823b9d18d2166299d7c3222120
    如果后续又在本地工程修改了对象类型，请重新部署云数据库，DevEco Studio将自动更新schema.json文件；如果后续在AGC云侧修改了对象类型，您需[手动从AGC控制台导出schema.json文件](../AppGallery-connect-Guides/agc-clouddb-agcconsole-objecttypes-0000001127675459.md#section1558018208151)，拷贝至本地工程的“AppScope/resources/rawfile”目录下。否则，可能导致schema.json文件中的对象类型和代码中的对象类型不一致，端侧访问云数据库时提示[1008230002](../harmonyos-references/errorcode-cloudfoundation.md#section1008230002-云数据库schema配置错误)错误。
 3. 在菜单栏选择“Tools > CloudDev”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/x36kK4HQRo6D2WDJR_7mnw/zh-cn_image_0000002179338580.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/sLRVsja8TsSbcZ6SSOg-7Q/zh-cn_image_0000002179338580.png)
 4. 在打开的CloudDev面板中，点击“Serverless > Cloud DB”下的“Go to console”，进入当前项目的云数据库服务页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/eND0LJ7WS8ONZrLPXXkzEQ/zh-cn_image_0000002179338576.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/zFz8iUERSemXSXiwVqH_RQ/zh-cn_image_0000002179338576.png)
 5. 分别点击“对象类型”、“存储区”与“数据”页签，可查看到本地开发的云数据库资源均已成功部署至AGC云端。
 
    部署成功后，您便可以从端侧访问云数据库了，具体请参见[在端侧访问云数据库](agc-harmonyos-clouddev-invokeclouddatabase.md)。
@@ -45,11 +45,11 @@ content_hash: sha256:15e7f704335d486c4f39eb23209798216823b9d18d2166299d7c3222120
 
    对象类型“Post”与“objecttype1”：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Lv9sGdTfQDiJ-7jJz_ElOg/zh-cn_image_0000002214704533.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/cEOwFBaGSr24IR-S1yAAhA/zh-cn_image_0000002214704533.png)
 
    对象类型“Post”所属存储区“Demo”、“objecttype1”所属存储区“cloudDBZoneName1”：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/Ul9XMjuBSzqmzynFnobhbg/zh-cn_image_0000002179498272.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/_ajMq0zdRB6tgi2gWpwu6A/zh-cn_image_0000002179498272.png)
 
    “d\_Post.json”内的数据条目、“d\_objecttype1.json”内的数据条目：
 
@@ -57,6 +57,6 @@ content_hash: sha256:15e7f704335d486c4f39eb23209798216823b9d18d2166299d7c3222120
 
    部署对象类型或数据条目JSON文件，实际是部署JSON文件内包含的对象类型或数据条目。因此，您在AGC控制台查看到的将是一个个对象类型或者一条条数据，而非JSON文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/BDbOdv9zR4WgCLgtQpSLow/zh-cn_image_0000002214704537.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/j6NomHl3ToeJL5TQkGfsEw/zh-cn_image_0000002214704537.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/v94n0QIbSrmGGOW0XM14rQ/zh-cn_image_0000002179338572.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/RECopkEzQhyRL4hHxILsXw/zh-cn_image_0000002179338572.png)

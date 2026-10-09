@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-2600
 title: 新增和增强特性
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > DevEco Studio > 新增和增强特性
+breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > DevEco Studio（Windows/macOS版） > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-24T06:48:30+08:00
+scraped_at: 2026-10-09T08:12:02+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:d29f8f6b52895f1470a84a82e9b2422a2e129ad89f7b6d55b3db845d37a91123
 ---

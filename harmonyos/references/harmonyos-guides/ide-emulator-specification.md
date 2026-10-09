@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification
 title: 模拟器与真机的差异
-breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 模拟器与真机的差异
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 模拟器与真机的差异
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:995a7e85bb51bc3489f2cf30f44b074724e789f6be309d8d806e79a788780307
 ---
 

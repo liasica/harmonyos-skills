@@ -1,12 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cli-releasenote
 title: 版本说明
-breadcrumb: 指南 > AI Coding > DevEco CLI > 版本说明
+breadcrumb: 指南 > DevEco CLI > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:30+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c3cfafd3845989ea86097faee53769aa46ca46f227db59b9e2610f95e5665315
+scraped_at: 2026-10-09T08:15:39+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:820ab163fbff23bf44d1104aeedcb01fb831544108633ce2daa9cd9002e83bd3
 ---
+
+以下为Windows/macOS/Linux版DevEco CLI的版本说明，鸿蒙电脑版的版本说明请点击[此链接](https://gitcode.com/openharmony-sig/deveco-cli/releases)查看。
 
 ## 1.3.0（2026 年8月）
 
@@ -25,4 +27,4 @@ content_hash: sha256:c3cfafd3845989ea86097faee53769aa46ca46f227db59b9e2610f95e56
 
 ## 1.2.0（2026 年7月）
 
-首次发布！
+Windows/macOS版DevEco CLI首次发布！

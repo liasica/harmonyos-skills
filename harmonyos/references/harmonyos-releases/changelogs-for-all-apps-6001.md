@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台API行为的变更
 breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta1引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-09-10T06:20:58+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-10-09T08:12:15+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:ae04f25d503a45a8afd11b2582dbb09c2ee3ea95c3291dda2bcbcef823ed4ff0
 ---
 

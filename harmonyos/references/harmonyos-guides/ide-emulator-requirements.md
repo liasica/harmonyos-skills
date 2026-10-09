@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-requirements
 title: 使用环境
-breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 使用环境
+breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 使用环境
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:54+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-10-09T08:15:15+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:017526f69431b3c7c5bb12b7f775e5782e6c1d92bb11e7e2595997eea804d258
 ---
 

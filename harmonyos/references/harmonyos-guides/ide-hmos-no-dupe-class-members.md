@@ -1,0 +1,110 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-no-dupe-class-members
+title: "@typescript-eslint/no-dupe-class-members"
+breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-dupe-class-members
+category: harmonyos-guides
+scraped_at: 2026-10-09T08:15:29+08:00
+doc_updated_at: 2026-10-08
+content_hash: sha256:241767d056ec378999a5edb33135c22be67885d975311343ea32b9703a478881
+---
+
+不允许重复的类成员。
+
+如果类成员中有同名的声明，最后一个声明会覆盖其他声明，可能会导致意外行为。
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-dupe-class-members": "error"
+  }
+}
+```
+
+## 选项
+
+该规则无需配置额外选项。
+
+## 正例
+
+```ts
+/*eslint no-dupe-class-members: "error"*/
+export class A {
+  public bar() {
+    console.info('bar');
+  }
+
+  public qux() {
+    console.info('qux');
+  }
+}
+
+export class B {
+  private name: string = 'bar';
+
+  public get bar() {
+    return this.name;
+  }
+
+  public set bar(value) {
+    this.name = value;
+  }
+}
+
+export class E {
+  public static bar() {
+    console.info('static bar');
+  }
+
+  public bar() {
+    console.info('method bar');
+  }
+}
+```
+
+## 反例
+
+```ts
+/*eslint no-dupe-class-members: "error"*/
+export class A {
+  public bar() {
+    console.info('bar');
+  }
+
+  public bar() {
+    console.info('bar');
+  }
+}
+
+export class B {
+  private readonly name: string = 'bar';
+
+  public get bar() {
+    return this.name;
+  }
+
+  public bar() {
+    return this.name;
+  }
+}
+
+export class E {
+  public static bar() {
+    console.info('static bar');
+  }
+
+  public static bar() {
+    console.info('static bar');
+  }
+}
+```
+
+## 规则集
+
+```screen
+plugin:@typescript-eslint/all
+```
+
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-hmos-code-linter.md)。

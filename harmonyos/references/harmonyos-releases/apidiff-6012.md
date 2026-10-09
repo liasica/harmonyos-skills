@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-601
 title: 6.0.1(21) Release引入的API
 breadcrumb: 版本说明 > 更多版本 > 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Release引入的API
 category: harmonyos-releases
-scraped_at: 2026-09-02T15:16:25+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-10-09T08:12:12+08:00
+doc_updated_at: 2026-10-08
 content_hash: sha256:4a5efff6cc34a72d25add192e41f06c9e5f2712b855f2c807523c3ee3c103c5e
 ---
 
