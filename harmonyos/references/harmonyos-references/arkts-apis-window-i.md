@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:47+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:8958df71b7736429e9b8deb9590a6684de3668ea59fe8f825dbdffba25b3c1a5
+scraped_at: 2026-10-10T07:57:10+08:00
+doc_updated_at: 2026-10-09
+content_hash: sha256:86bd9e1d8e8a51088735e9bbf9e23c381df2d081a429e5b9e0094e5df41d0f4a
 ---
 
 **说明** 
@@ -87,13 +87,13 @@ content_hash: sha256:8958df71b7736429e9b8deb9590a6684de3668ea59fe8f825dbdffba25b
 
 窗口矩形区域。
 
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
 **说明** 
 
 与[RectInVP](arkts-apis-window-i.md#rectinvp23)相比，Rect使用像素（px）作为单位，适用于需要精确控制像素的场景；RectInVP使用虚拟像素作为单位，能够自动适配不同屏幕密度，更推荐在大多数UI场景中使用。
+
+**系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -141,7 +141,7 @@ content_hash: sha256:8958df71b7736429e9b8deb9590a6684de3668ea59fe8f825dbdffba25b
 
 示意图展示了leftRect、topRect、rightRect、bottomRect的含义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/hKk9Lx8vSWay73KA0aZOzQ/zh-cn_image_0000002778933467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/n8pgUOcFQ06e7j_ofouHTw/zh-cn_image_0000002751233248.png)
 
 ## UIEnvAvoidAreaVP23+
 
