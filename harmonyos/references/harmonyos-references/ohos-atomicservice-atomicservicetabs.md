@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceTabs
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceTabs
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:10+08:00
+scraped_at: 2026-10-11T07:24:38+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2591d51041e89f69680a8957f7be09cc6050a7fba00b63c2175207abca57fa24
+content_hash: sha256:1535bf6f9b5183bfbefd826eadc04d1ecd56138e2786e842af678b0d240d7014
 ---
 
 AtomicServiceTabs高级组件，对Tabs组件中不需要暴露给用户进行自定义的属性进行简化，限制最多显示5个页签，固定页签的样式、位置和大小。
@@ -219,7 +219,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/vYQt_n4xQBa9D6Gh8xIbFw/zh-cn_image_0000002749495066.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/gG__gZFWSnGy2c7x0R73zA/zh-cn_image_0000002755026068.png)
 
 ### 示例2(纯图标样式)
 
@@ -291,7 +291,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/tv5Bie-kTJaDJaBLdVzt6A/zh-cn_image_0000002779094123.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Ip5KUEkoQ7uUuTENBwob2A/zh-cn_image_0000002755185952.png)
 
 ### 示例3(图标加文本，自定义图文排布)
 
@@ -383,4 +383,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/r--bVd1rTveRHTvfCwfRYA/zh-cn_image_0000002778934267.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/GZBKKcg0SMmZV3rnx4Qyag/zh-cn_image_0000002784584819.gif)

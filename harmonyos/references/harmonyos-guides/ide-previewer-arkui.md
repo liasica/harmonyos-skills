@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: 查看ArkUI预览效果
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > 查看ArkUI预览效果
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
+scraped_at: 2026-10-11T07:23:02+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f841d7719c9b2dc8ad46da3b7dad2e82b2b14ff2c48c29df17ed340fd15a472d
+content_hash: sha256:338394504f02edf190f72dbe9131a4ce9e8bd0396855d0116fdaecfdfd109471
 ---
 
-ArkUI预览支持页面预览、组件预览、多断点预览和卡片预览，下图中左侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/DBd0NdXpS_ebNWqisnlJ2Q/zh-cn_image_0000002701823670.png)为页面预览，中间图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/5DIU2v8LT8GKMnmpNItiSQ/zh-cn_image_0000002701663744.png)为组件预览，右侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/G-pxt7gwRNGWSLsogpxURw/zh-cn_image_0000002701823666.png)为多断点预览，卡片预览在创建卡片文件后可直接预览。
+ArkUI预览支持页面预览、组件预览、多断点预览和卡片预览，下图中左侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/h82bXj_zQTOfBC8GxMf8XQ/zh-cn_image_0000002701823670.png)为页面预览，中间图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/tkmVsjCcREi_c00fmuOzNA/zh-cn_image_0000002701663744.png)为组件预览，右侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/9X2x0vqaRh2tc3ymlMLYlQ/zh-cn_image_0000002701823666.png)为多断点预览，卡片预览在创建卡片文件后可直接预览。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/yIL48HydQ_OLPTN1U8RGgg/zh-cn_image_0000002701823668.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/Bkv2GX2BSbukpVu6_Xx7eA/zh-cn_image_0000002701823668.png)
 
 ## 页面预览
 
@@ -60,7 +60,7 @@ struct ContentTablePreview {
 
 以上示例的组件预览效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ZqUaA_VSQSGWk2UR4C-uMA/zh-cn_image_0000002701663746.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/NouJhQnRQpOTqiWMGntAWw/zh-cn_image_0000002701663746.gif "点击放大")
 
 组件预览默认的预览设备为Phone，若您想查看不同的设备，或者不同的屏幕形状，或者不同设备语言等情况下的组件预览效果，可以通过设置@Preview的参数，指定预览设备的相关属性。若不设置@Preview的参数，默认的设备属性如下所示：
 
@@ -130,9 +130,9 @@ struct Index {
 
 以上示例的多断点预览效果如下图所示，会展示8个典型档位断点下的预览效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/j7kLlCF8Q9KOv7FTbIzITA/zh-cn_image_0000002701823664.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/we4FHE4nRMKxhau5v9r63g/zh-cn_image_0000002701823664.gif "点击放大")
 
-每个断点预览画面上均可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ADh41m_cSRu7K91cDMQUrg/zh-cn_image_0000002701823662.png)查看该断点档位下的组件树。
+每个断点预览画面上均可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/3ehV8pS8R8ePuJiBvAddCg/zh-cn_image_0000002701823662.png)查看该断点档位下的组件树。
 
 支持代码编辑器、UI界面和组件树三者之间的联动：
 
@@ -141,10 +141,10 @@ struct Index {
 * 选中组件树中的组件，则对应的代码块和UI界面也会高亮显示。
 * 不支持修改属性面板上的组件属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/L7lVlbJ5TMaPv9QHgwumsA/zh-cn_image_0000002701663740.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/Ta0eyUNsQFWxT6FcrNQYVg/zh-cn_image_0000002701663740.gif "点击放大")
 
 ## 卡片预览
 
 创建卡片并选中卡片文件后，点击右侧边栏**Previewer**按钮即可预览卡片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/xraskGXsTha-hijmbdiKAw/zh-cn_image_0000002701663742.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/7L0rTLNxTD6KNoNBKSrl-Q/zh-cn_image_0000002701663742.png "点击放大")

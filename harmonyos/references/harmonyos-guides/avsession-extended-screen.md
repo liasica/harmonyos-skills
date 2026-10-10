@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-ext
 title: 扩展屏投播开发指导
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布式媒体会话 > 使用投播组件 > 扩展屏投播开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:49+08:00
+scraped_at: 2026-10-11T07:21:54+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7ccd062eb25575adc51f8dd24487f3499a6da146f3b647ad2778610b9398692a
+content_hash: sha256:a6215e924a06a6666f19b38dcc099d78887e4091fe63fdc2003ea0ea4bec1ace
 ---
 
 通过本节开发指导，可在系统镜像投屏后，获取投屏设备信息，实现扩展屏模式的投播，实现双屏协作的能力。
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/tQ6CK0F4R2ConBW7ftT3vg/zh-cn_image_0000002778932385.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/pwFclqZxSvaysl5mqbkR0w/zh-cn_image_0000002784583083.png)
 
 * **虚拟扩展屏**
 

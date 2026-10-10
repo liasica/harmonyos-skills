@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 无障碍属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 无障碍属性
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:53+08:00
+scraped_at: 2026-10-11T07:24:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ca5358a943c85a9f6cb3e4718e3d30b2073c13716d6d34ab575f48e5a5a29695
+content_hash: sha256:2cc9c73a3cc90d5b78aadf6f2d3c23455ccc6f6ddb05b63ef699fa8d525986b2
 ---
 
 设置组件的无障碍属性和事件，以充分利用无障碍功能。支持设置无障碍分组、无障碍文本、无障碍说明、无障碍重要性、无障碍虚拟子节点、无障碍组件类型、屏幕朗读焦点控制、状态播报、自定义无障碍操作等能力，适用于需要为视障用户提供屏幕朗读辅助、提升应用无障碍可达性的场景。
@@ -994,7 +994,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/TeTlXqkoRw6DfLGaSZfqsg/zh-cn_image_0000002749494382.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/3_eJe6qzTAuW_zusVZxvsA/zh-cn_image_0000002755025520.png)
 
 ### 示例6（设置无障碍聚合功能下的子组件状态和操作接管功能）
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-product
 title: 音频编创
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:18+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-10-11T07:21:52+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:b5e75e6a4e7af152a39f7fffd586da23cc3baf1491999d906baa40580647f07f
 ---
 

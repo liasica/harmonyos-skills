@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/not-recommend
 title: OpenSL ES开发指导(不再推荐)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > OpenSL ES开发指导(不再推荐)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:17+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:52+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:1a6370ac1d214028abf7a7d18934706b8bccbfdddde505b51616acebcc952808
 ---
 

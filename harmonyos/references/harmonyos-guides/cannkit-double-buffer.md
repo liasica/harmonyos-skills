@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-doubl
 title: 如何使用double buffer优化性能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 附录 > 如何使用double buffer优化性能
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:25+08:00
+scraped_at: 2026-10-11T07:22:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:caf25d296baa6427c4f1fc2e3774fa486d5edc691b5de4a0415ce9875319fcdb
+content_hash: sha256:0d0d63226b5ea2d8f9889a4b29add3d790326ddebb42ce58aa6766c839023bbf
 ---
 
 执行于AI Core上的指令队列主要包括如下几类，即：Vector指令队列（V）、Matrix指令队列（M）和存储移动指令队列（MTE2、MTE3）。不同指令队列间的相互独立性和可并行执行性，是double buffer优化机制的基石。
@@ -16,7 +16,7 @@ content_hash: sha256:caf25d296baa6427c4f1fc2e3774fa486d5edc691b5de4a0415ce987531
 
 **图1** 数据搬运与Vector计算过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/lcA0fI4fT7u0VpqtAhrPlA/zh-cn_image_0000002779093045.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/aJZiJ7fKT6WrhFgOTPEf2w/zh-cn_image_0000002755185010.png)
 
 在此过程中，数据搬运与Vector计算串行执行，Vector计算单元无可避免存在资源闲置问题。举例而言，若CopyIn、Compute、CopyOut三阶段分别耗时\_t\_，则Vector的时间利用率仅为1/3，等待时间过长，资源利用率严重不足。
 
@@ -30,7 +30,7 @@ pipe.InitBuffer(inQueueX, 2, 256);
 
 **图2** double buffer机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/5us-A1CbRBeTnZXXgM_efg/zh-cn_image_0000002778933189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/FuXK8YkWThytBNyEx-POvw/zh-cn_image_0000002784583877.png)
 
 多数情况下，采用double buffer能有效提升Vector的时间利用率，缩减算子执行时间。然而，double buffer机制缓解Vector闲置问题并不代表它总能带来整体的性能提升。例如：
 

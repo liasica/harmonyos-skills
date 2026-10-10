@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 空域AI超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域AI超分
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:01+08:00
+scraped_at: 2026-10-11T07:22:06+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:a4e3f49369a53ef9a2e31eaa8371b7b0429852d3b889fe3780fad9ddb6de3f1a
+content_hash: sha256:e124e3a514ebfdfb1c556d25292952565c91d9e08ea5859eadb814c4b6fb12a8
 ---
 
 从API版本26.0.0开始，新增支持Vulkan协议。
@@ -47,7 +47,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 * 下面是基于OpenGL ES图形API平台集成空域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/rwMQqakaQFmI45OKjxTQ3A/zh-cn_image_0000002779092469.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/oPOzra7KRtSYUki2ge7N8w/zh-cn_image_0000002755184442.jpg)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale_extension_name)或[XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale2_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
@@ -60,7 +60,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 * 下面是基于Vulkan图形API平台集成空域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/M6mGtOXNQSa3SyM8wBUgmQ/zh-cn_image_0000002778932611.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/TWGbtR48SyOCq9DCN6e_jw/zh-cn_image_0000002784583309.jpg)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。

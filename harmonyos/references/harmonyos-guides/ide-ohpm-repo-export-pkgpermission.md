@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo export_pkgPermission
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo export_pkgPermission
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:06+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:54+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:b78f061509255f3975a41e88364079626efd96427f3d8626a2c51eea8492286f
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-im
 title: 图像跟踪（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 图像跟踪 > 图像跟踪（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:49+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:428004bb4b0d739dcb509ce53b72689107ef82b33519f2d49c0e94b5ca0be315
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:c18869046009ebbb26ea170cda423c2758297db0eb2a42dc176f0956fdf7d0e3
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
@@ -23,7 +23,7 @@ content_hash: sha256:428004bb4b0d739dcb509ce53b72689107ef82b33519f2d49c0e94b5ca0
 | [HMS\_AREngine\_ARSession\_Create](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_create) | 创建一个新的[AREngine\_ARSession](../harmonyos-references/arengine-capi-arengine.md#arengine_arsession)会话。 |
 | [HMS\_AREngine\_ARSession\_Update](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_update) | 更新AR Engine的计算结果。 |
 | [HMS\_AREngine\_ARSession\_Configure](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_configure) | 配置[AREngine\_ARSession](../harmonyos-references/arengine-capi-arengine.md#arengine_arsession)会话。 |
-| [HMS\_AREngine\_ARFrame\_Create](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arframe_create) | 创建一个新的[AREngine\_ARFrame](../harmonyos-references/arengine-capi-arengine.md#arengine_arframe)对象，将指针存储到中\*outFrame。 |
+| [HMS\_AREngine\_ARFrame\_Create](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arframe_create) | 创建一个新的[AREngine\_ARFrame](../harmonyos-references/arengine-capi-arengine.md#arengine_arframe)对象，将指针存储到\*outFrame中。 |
 | [HMS\_AREngine\_ARSession\_SetDisplayGeometry](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_setdisplaygeometry) | 设置显示的高和宽（以Pixel为单位）。该高度和宽度是显示视图的高度和宽度，如果不一致，会导致显示相机预览出错。 |
 | [HMS\_AREngine\_ARSession\_SetCameraGLTexture](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_setcameragltexture) | 设置可用于存储相机预览流数据的openGL纹理。 |
 | [HMS\_AREngine\_ARSession\_GetAllTrackables](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_getalltrackables) | 获取所有指定类型的可跟踪对象集合。 |
@@ -555,7 +555,7 @@ CHECK(HMS_AREngine_ARSession_GetAllTrackables(arSession, ARENGINE_TRACKABLE_AUGM
 
 ### 获取环境中的可跟踪图像数量
 
-调用[HMS\_AREngine\_ARTrackableList\_GetSize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_artrackablelist_getsize)函数获取平面数量，结果存放在augmentSize中。
+调用[HMS\_AREngine\_ARTrackableList\_GetSize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_artrackablelist_getsize)函数获取可跟踪图像数量，结果存放在augmentSize中。
 
 ```
 int32_t augmentSize = 0;
@@ -600,14 +600,14 @@ auto getPoseResult = HMS_AREngine_ARAugmentedImage_GetCenterPose(arSession, imag
 
 ### 获取跟踪图像的宽度
 
-调用[HMS\_AREngine\_ARAugmentedImage\_GetExtendX](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendx)函数，获取图像的中心点为坐标原点，物理图像的宽度（单位为米），得到X轴上的估计值。
+调用[HMS\_AREngine\_ARAugmentedImage\_GetExtendX](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendx)函数，获取图像的中心点为坐标原点，物理图像的宽度（单位：米），得到X轴上的估计值。
 
 ```
 float extent_x;
 HMS_AREngine_ARAugmentedImage_GetExtendX(arSession, image, &extent_x);
 ```
 
-调用[HMS\_AREngine\_ARAugmentedImage\_GetExtendZ](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendz)函数，获取图像的中心点为坐标原点，物理图像的宽度（单位为米），得到Z轴上的估计值。
+调用[HMS\_AREngine\_ARAugmentedImage\_GetExtendZ](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendz)函数，获取图像的中心点为坐标原点，物理图像的高度（单位：米），得到Z轴上的估计值。
 
 ```
 float extent_z;

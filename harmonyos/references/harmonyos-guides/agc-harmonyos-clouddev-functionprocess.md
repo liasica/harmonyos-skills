@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发流程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云函数 > 开发流程
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:07+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:a9bcc8159e5c713348e448f3411b945675623c71f7025f858be56a5633272d85
+scraped_at: 2026-10-11T07:22:55+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:8eb5178c46f09c71b3c25622d9f31a2516b7e5ab9489ea08c8a2df904af2ba72
 ---
 
 云函数是一项Serverless计算服务，可以根据函数的实际流量对函数进行弹性收缩。您只需聚焦业务逻辑，开发与上传业务模块相关的函数，云函数即可为您自动完成资源分配、代码部署、负载均衡等工作，既提高了开发和上线函数的速度，也保证了函数的高可用性。
@@ -14,7 +14,7 @@ content_hash: sha256:a9bcc8159e5c713348e448f3411b945675623c71f7025f858be56a56332
 
 使用DevEco Studio在端云一体化云侧工程下开发云函数，总体流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/gFiILvYLTOu-3Wgwjq6gsQ/zh-cn_image_0000002279816360.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/LLP56hAcQ1moh6gxJ_OypA/zh-cn_image_0000002279816360.png "点击放大")
 
 1. [创建并配置函数](agc-harmonyos-clouddev-createfunc.md)：您可直接在DevEco Studio创建函数、为函数配置入口以及调用的触发器等。
 2. [开发函数](agc-harmonyos-clouddev-funccoding.md)：函数创建并配置完成后，您便可以开始编写函数业务代码了。

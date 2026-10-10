@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 顶部窗口控制条避让适配智慧多窗
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 智慧多窗应用开发指导 > 顶部窗口控制条避让适配智慧多窗
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:11+08:00
+scraped_at: 2026-10-11T07:21:15+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:21d3b0b906939dbc6ee63716448e8295edd79172733b4b6f162efec8c716850e
+content_hash: sha256:e487bc9d79b7a26cc42efab2696ccd2435ad89956008cab4b569455e4e0ea6ec
 ---
 
-顶部窗口控制条是应用窗口处于智慧多窗模式下，应用顶部的操作横条 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/oaVouCcCSNmY-G0DfGaE-A/zh-cn_image_0000002749492698.png) 。
+顶部窗口控制条是应用窗口处于智慧多窗模式下，应用顶部的操作横条 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/ABklD8OAQaKFVFaBaCBVZg/zh-cn_image_0000002784662775.png) 。
 
 顶部窗口控制条示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/UCyHueWzTDGiOxYysGzoWQ/zh-cn_image_0000002779091757.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/mB9d1qsDQgKXPisOs3pLuA/zh-cn_image_0000002755023842.png)
 
 顶部横条的避让可通过以下两种方式适配：
 
@@ -20,7 +20,7 @@ content_hash: sha256:21d3b0b906939dbc6ee63716448e8295edd79172733b4b6f162efec8c71
 
   沉浸式布局是指应用布局不避让状态栏、导航栏以及智慧多窗顶部横条，这可能发生组件与顶部横条的重叠，导致文字遮挡、点击事件冲突等情况。非沉浸式布局是指布局避让状态栏、导航栏以及智慧多窗顶部横条，组件不会与其重叠。因此可设置isLayoutFullScreen值为false使窗口的布局为非沉浸式布局。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/n8wU76dnTguUzTLXFsYrFw/zh-cn_image_0000002778931899.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/gBOGiYHLR8iy0SbVoQfhbg/zh-cn_image_0000002755183730.png)
 
   示例：
 
@@ -135,7 +135,7 @@ content_hash: sha256:21d3b0b906939dbc6ee63716448e8295edd79172733b4b6f162efec8c71
 
   图1 设置窗口是否为沉浸式布局
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/NFD7MjjfT5i9jx-NR8JQFQ/zh-cn_image_0000002749332816.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/QLjgU_80Qc-nlr5K_WrMyQ/zh-cn_image_0000002784582597.gif)
 * 应用主动避让：应用不使用窗口避让能力（即设置窗口为沉浸式布局）。首次通过[getWindowAvoidArea](../harmonyos-references/arkts-apis-window-window.md#getwindowavoidarea9)接口可获取屏幕顶部需要规避的矩阵区域topRect，获取到该值后应用可对应做布局避让，并且注册[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)监听系统避让区域变化以进行布局的动态调整。
 
   ```ts
@@ -193,4 +193,4 @@ content_hash: sha256:21d3b0b906939dbc6ee63716448e8295edd79172733b4b6f162efec8c71
 
   图2 应用主动做布局避让
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Iqo_ugQ6SeqcUrgYq-pMzw/zh-cn_image_0000002749492700.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/tdZTJUF1QdaT01_CYqlz9Q/zh-cn_image_0000002784662777.gif)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-product
 title: 应用市场推荐
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:38+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:09+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:992ac325ef13959c1f142fc166ac8930dfa0da042cd5491d52159a9a82c79cf2
 ---
 

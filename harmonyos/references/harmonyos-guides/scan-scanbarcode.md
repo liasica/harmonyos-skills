@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-scanbarc
 title: 默认界面扫码
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 默认界面扫码
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:55+08:00
+scraped_at: 2026-10-11T07:22:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:21c3730a29af0102f1e44511aa39af0f76d02f50197b0975f4fa44154a85508e
+content_hash: sha256:d039b0e242bd3343416cc3240fd8ae5f1c9d2745a6e11742f1f939d3d9a15442
 ---
 
 默认界面扫码能力提供系统级体验一致的扫码界面，包含相机预览流，相册扫码入口，暗光环境闪光灯开启提示。Scan Kit默认界面扫码对系统相机权限进行了预授权且调用期间处于安全访问状态，无需开发者再次申请相机权限。适用于不同扫码场景的应用开发。
@@ -20,7 +20,7 @@ content_hash: sha256:21c3730a29af0102f1e44511aa39af0f76d02f50197b0975f4fa44154a8
 
 默认界面扫码UX：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/AKDK2JGwRqmE62mQtu9s8Q/zh-cn_image_0000002749333388.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/6Qk2TJnYQn6jjzsoTLzXew/zh-cn_image_0000002784663349.png)
 
 **说明** 
 
@@ -48,7 +48,7 @@ content_hash: sha256:21c3730a29af0102f1e44511aa39af0f76d02f50197b0975f4fa44154a8
 
 使用默认界面扫码的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/rbZmmTeBQ8C3t34Y9f6bbg/zh-cn_image_0000002749493272.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/wr21OO-4SdSVBQC6p6gigw/zh-cn_image_0000002755024416.png)
 
 1. 用户向开发者的应用发起扫码请求。
 2. 开发者的应用通过调用Scan Kit的startScanForResult接口启动扫码界面。

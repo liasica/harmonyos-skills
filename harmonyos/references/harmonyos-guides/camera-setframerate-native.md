@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-setfra
 title: 动态调整预览帧率(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 动态调整预览帧率(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:50+08:00
+scraped_at: 2026-10-11T07:21:56+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:01a9a233ff9f6590c1ce6bb6315ba35e7a2ae9c4fce9c5c3db137f01c85ce69e
+content_hash: sha256:646c1f3316a806b9a9463d6e2ac4f27a32b5471e9835d8577a18f420b4a576ac
 ---
 
 动态调整帧率是直播、视频等场景下控制预览效果的重要能力之一。应用可通过此能力，显式地控制流输出帧率，以适应不同帧率下的业务目标。
@@ -22,7 +22,7 @@ content_hash: sha256:01a9a233ff9f6590c1ce6bb6315ba35e7a2ae9c4fce9c5c3db137f01c85
 
 流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/EQrNrDk4RQyqQRD7V0XSww/zh-cn_image_0000002749333342.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/MuQhD9ddTmKD5U0_2sRpug/zh-cn_image_0000002784663303.png)
 
 与普通的[预览](native-camera-preview.md)流程相比，动态调整预览帧率的注意点如图上标识：
 

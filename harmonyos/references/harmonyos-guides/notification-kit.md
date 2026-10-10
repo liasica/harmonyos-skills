@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: Notification Kit（用户通知服务）
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:50+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:19+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:5618b0d9c54f235157fbc2db1ef0c4b21c3c55fe41b3ca334bd75d291bdd731d
 ---
 

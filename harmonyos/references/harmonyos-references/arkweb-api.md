@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkweb-ap
 title: ArkWeb（方舟Web）
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:49+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:15+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2592397b8c21f2c5778020b5bb8700c53070123348ddca7f834d9cd711b8d7a3
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:16+08:00
+scraped_at: 2026-10-11T07:24:46+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5f202641f61a7ff6724b1ae76c9dcf0646db85e86c40defe937f347aae55998c
+content_hash: sha256:2c302357b541352e83f3493f9f99b9a04e33f87435a9084e900d68a605b3be0d
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:5f202641f61a7ff6724b1ae76c9dcf0646db85e86c40defe937f347aae5
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/-urtXhVrQv-rIcomIkNfPQ/zh-cn_image_0000002749495178.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/YHg7kqmUTj-74TvtmTtSgQ/zh-cn_image_0000002755026180.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pZAO1bAuQJiX0Pvy1X-lcQ/zh-cn_image_0000002779094235.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/KXb8wBW8SDqI27THIwzhPA/zh-cn_image_0000002755186064.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/aOPsrWPRSMO8y1a5tGetGA/zh-cn_image_0000002778934379.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/hLTxC5mMQBaKIuI7aD3X0w/zh-cn_image_0000002784584931.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/ZDZiJ-UwSTuBlrcQ_FUitg/zh-cn_image_0000002749335296.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/k_39jRAXQcOgFzCQp8ln_A/zh-cn_image_0000002784665113.png)

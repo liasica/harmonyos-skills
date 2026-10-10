@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-web-
 title: 页面功能介绍
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:06+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:54+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7c46551eb24ac9eedab11dc379ec0275230f2872e45d158754f31e159d069899
 ---
 

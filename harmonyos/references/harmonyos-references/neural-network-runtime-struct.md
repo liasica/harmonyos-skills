@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/neural-ne
 title: 结构体
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:27+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:28:45+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ff67dbc87b1a9764615bd1ecb71faa0662c339a0cd5bc07a23b91ec3680d549d
 ---
 

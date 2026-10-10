@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelop
 title: Driver Development Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > Driver Development Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:37+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:fa29e74eac759b454498cdf9e58a3f37227f8dc7d928aad0a61238a435cf0ed7
+scraped_at: 2026-10-11T07:21:42+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:bd1798662d9ee24a252fbdf0b1db04bd51af44c55183189811e645374720569a
 ---
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
@@ -46,7 +46,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图1** 扩展外设驱动原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/oKUeu8HSRoO-kIMzw-lpSQ/zh-cn_image_0000002749493070.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/fInit9ghT-2_GgHbWBelZQ/zh-cn_image_0000002755024214.png)
 
 ### 运作流程
 
@@ -54,35 +54,33 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图2** 非标外设与对应扩展外设驱动应用匹配的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/VLSSZnp0T2Cvy2LPDSWNzg/zh-cn_image_0000002779092129.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/oIPUaZb3QeCD2H-Jz38hWg/zh-cn_image_0000002755184102.png)
 
 用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
 
 **图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ClUE2e3pQP2zeHuJKl417w/zh-cn_image_0000002778932271.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/iDGRp-XGTKWDzO9qOjF_WQ/zh-cn_image_0000002784582969.png)
 
 ## 约束与限制
 
-调用Driver Development Kit提供的ArkTS-API或者C-API，开发者需要申请特定权限，才能使用相关接口。
+1. 调用Driver Development Kit提供的ArkTS-API或者C-API，开发者需要申请特定权限，才能使用相关接口。
 
-所需权限如下：
+   所需权限如下：
 
-| API 类型 | DDK类型 | 权限名称 |
-| --- | --- | --- |
-| ArkTS-API | 不涉及 | ohos.permission.ACCESS\_EXTENSIONAL\_DEVICE\_DRIVER |
-| C-API | UsbDdk | ohos.permission.ACCESS\_DDK\_USB |
-| C-API | HidDdk | ohos.permission.ACCESS\_DDK\_HID |
-| C-API | USBSerialDDK | ohos.permission.ACCESS\_DDK\_USB\_SERIAL |
-| C-API | ScsiPeripheralDDK | ohos.permission.ACCESS\_DDK\_SCSI\_PERIPHERAL |
-
-Driver Development Kit提供的C-API仅支持在DriverExtension进程中使用。在其他进程（包括子进程）中使用可能会出现功能异常，具体可参考[在子进程或非驱动Ability中调用DDK的C-API失败](externaldevice-faqs.md#在子进程或非驱动ability中调用ddk的c-api失败)。
+   | API 类型 | DDK类型 | 权限名称 |
+   | --- | --- | --- |
+   | ArkTS-API | 不涉及 | ohos.permission.ACCESS\_EXTENSIONAL\_DEVICE\_DRIVER |
+   | C-API | UsbDdk | ohos.permission.ACCESS\_DDK\_USB |
+   | C-API | HidDdk | ohos.permission.ACCESS\_DDK\_HID |
+   | C-API | USBSerialDDK | ohos.permission.ACCESS\_DDK\_USB\_SERIAL |
+   | C-API | ScsiPeripheralDDK | ohos.permission.ACCESS\_DDK\_SCSI\_PERIPHERAL |
+2. Driver Development Kit提供的C-API仅支持在DriverExtension进程中使用。在其他进程（包括子进程）中使用可能会出现功能异常，具体可参考[在子进程或非驱动Ability中调用DDK的C-API失败](externaldevice-faqs.md#在子进程或非驱动ability中调用ddk的c-api失败)。
+3. 针对 DriverExtensionAbility接口调用限制，详细请参考 API 中的[约束限制](../harmonyos-references/js-apis-app-ability-driverextensionability.md#约束限制)。
 
 ## 模拟器支持情况
 
 本Kit不支持模拟器。
-
-针对 DriverExtensionAbility接口调用限制，详细请参考 API 中的[约束限制](../harmonyos-references/js-apis-app-ability-driverextensionability.md#约束限制)。
 
 ## 关联模块
 

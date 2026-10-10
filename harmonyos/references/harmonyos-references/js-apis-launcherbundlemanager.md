@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-l
 title: "@ohos.bundle.launcherBundleManager (launcherBundleManager模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.bundle.launcherBundleManager (launcherBundleManager模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:614ed66d3bc4c8fd14275e59b5e0bf1b97bd3531e7f0bbc0a147c1043a05be46
+scraped_at: 2026-10-11T07:23:33+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:0322a3dda4edbb864b61b07fa7ce31215f8cc38e26c757b4138f60902c5437df
 ---
 
 本模块支持launcher应用（桌面有图标的应用）所需的查询能力，支持[LauncherAbilityInfo](js-apis-bundlemanager-launcherabilityinfo.md)信息的查询。
@@ -22,7 +22,7 @@ import { launcherBundleManager } from '@kit.AbilityKit';
 
 ## launcherBundleManager.getLauncherAbilityInfoSync
 
-getLauncherAbilityInfoSync(bundleName: string, userId: number) : Array<[LauncherAbilityInfo](js-apis-bundlemanager-launcherabilityinfo.md)>
+getLauncherAbilityInfoSync(bundleName: string, userId: number) : Array<LauncherAbilityInfo>
 
 查询指定bundleName及用户的[LauncherAbilityInfo](js-apis-bundlemanager-launcherabilityinfo.md)。
 

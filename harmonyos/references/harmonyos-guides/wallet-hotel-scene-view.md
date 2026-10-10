@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-hotel-
 title: 查看酒店房卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 酒店房卡 > 开发场景 > 查看酒店房卡
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:21+08:00
+scraped_at: 2026-10-11T07:22:27+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:4e63dabfa948e7a56660a0c4bbb2d72b7c6f2aaf796b6b3e39ae12aaafe1f0f9
+content_hash: sha256:1b42ddff05d6dde019253efec8794fa1e3960fee370ab956287390305943d60a
 ---
 
 查询已开通酒店房卡的状态并展示，用户可以点击跳转钱包酒店房卡详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/h9w6gV35T2aOCvrV0wgpgg/zh-cn_image_0000002779092985.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/d69PVAzzQKaEzIbJG0Wp_A/zh-cn_image_0000002755184950.png)
 
 ## 客户端开发
 

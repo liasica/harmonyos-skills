@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-faultlog-
 title: 查看App Killed（应用终止）日志
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 查看App Killed（应用终止）日志
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:17+08:00
+scraped_at: 2026-10-11T07:23:04+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:4addcc5d20155c2fd64ead6a3a56cd05a176d050ed95a620b77f1c3263da32ac
+content_hash: sha256:a76c2525e1dd5687a0395a9704dd3842586b5bb2659ba47004cd4788e59df35e
 ---
 
 从DevEco Studio 6.0.2 Beta1版本开始，提供**AppKilled**窗口，用于查看设备上应用终止的相关信息，包括应用异常退出的时间、进程名、是否前台应用、异常退出原因，点击**recordId**可以查看详细的FaultLog信息。支持按设备、应用和异常原因对信息进行过滤。
@@ -16,4 +16,4 @@ AppKilled窗口中支持查看的异常退出原因请参考[reason字段说明]
 
 2in1、Tablet设备不支持查看APP\_INPUT\_BLOCK和THREAD\_BLOCK\_6S类型的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/hmbhVXchTJuoFpcMzxky6Q/zh-cn_image_0000002701823394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/e-rBtWC7SfWhapS5LytqpA/zh-cn_image_0000002701823394.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-next
 title: 代码重构
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码重构
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:33+08:00
+scraped_at: 2026-10-11T07:23:20+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:5de48b408afd4cfba65cc87755c27d45763d530b851fba98a51a0251f0e318cf
+content_hash: sha256:2ef03cefea378ae6d20f04f007fa38a55227a1a4b0a6a302e79b00db49ae8765
 ---
 
 ## ArkTS/TS代码重构
@@ -16,7 +16,7 @@ content_hash: sha256:5de48b408afd4cfba65cc87755c27d45763d530b851fba98a51a0251f0e
 
 **使用方式：**在编辑器内选中需要删除的标识符对象，右键单击**重构**，选择**安全删除**，单击**确认**后将自动检查当前对象在代码中被引用的情况，点击**查看引用**可查看具体使用的代码内容，点击**删除**将直接删除该对象的定义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/rffTZdgNSQ68bwNYWaN1hQ/zh-cn_image_0000002749483808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/AmGEZ0nARkWFVIyQiuoCxA/zh-cn_image_0000002779608747.png)
 
 ### 代码重命名
 
@@ -24,7 +24,7 @@ content_hash: sha256:5de48b408afd4cfba65cc87755c27d45763d530b851fba98a51a0251f0e
 
 **使用方式：**选中需要重新命名的标识符（变量、类、接口、函数等），右键单击**重构 > 重命名**（或快捷键**Shift+F6**），在弹框中输入新的标识符名称，点击**重命名**完成变量重命名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/wnw07LxcQtivki0CW2z9Mg/zh-cn_image_0000002749323940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/pto_omXETkO2j57bN_pGjw/zh-cn_image_0000002750009840.png)
 
 代码重命名支持预览功能。在**重命名**弹窗中点击**预览**，编辑器左侧的预览列表中查看变量被引用的位置。
 
@@ -38,23 +38,23 @@ content_hash: sha256:5de48b408afd4cfba65cc87755c27d45763d530b851fba98a51a0251f0e
 
 * 将选中的表达式提取为变量（Variable）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/IvrcMiOYR7K3OLXR422Y8w/zh-cn_image_0000002749483818.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/4mN9mD7BSKiQRGQ0tE2Sfw/zh-cn_image_0000002750169736.gif)
 * 将选中的单行表达式提取为常量（Constant）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/vT6wXpCxRtKFgnWpGR2MJg/zh-cn_image_0000002778923023.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/AbgirjRUQwGARHVj36MSPQ/zh-cn_image_0000002750009836.gif)
 * 将选中颜色、字体、间距和图标提取为资源（Resource）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/zpgLkqeGRHOoOx7w4eF2Jw/zh-cn_image_0000002778923025.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/_osaHbVcSay68WWxBm51XQ/zh-cn_image_0000002750009838.gif)
 * 将选中的代码块或完整语句提取为方法/函数（Method）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Jbpb56wjRMeOYB4Py3R-gQ/zh-cn_image_0000002749483814.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Ikjfvcw9RPOPGeuQSW5pkw/zh-cn_image_0000002779728905.gif)
 
   在ArkTS语言中，也支持将组件调用代码块提取为@Builder装饰器装饰方法，组件属性调用表达式则可提取为@Styles或@Extend装饰器装饰方法。选中需要提取的组件或属性，右键单击**重构**，选择**提取函数**，组件私有属性可提取为@Extend装饰的方法，通用属性可提取为@Styles或@Extend装饰的方法。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/_nVDMBcqRm-gfiIhpYK8XQ/zh-cn_image_0000002749483810.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/kIlHVKzTSeOyqK_oCoGeNg/zh-cn_image_0000002779608749.gif)
 * 将选中的对象自变量提取为接口（Interface）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/qP3SQePtT6yv6d49uFqadw/zh-cn_image_0000002749483812.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/EXqA0Xl5RsqP_ltzNeSQTw/zh-cn_image_0000002779608751.gif)
 
 ### 代码转换
 
@@ -93,7 +93,7 @@ content_hash: sha256:5de48b408afd4cfba65cc87755c27d45763d530b851fba98a51a0251f0e
 
 编辑器内选择需要转换的代码区域，右键单击**重构** > **代码操作**，选择**Swap if branches**，对原有if条件取反，并交换if-else原代码块顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/X94Dxzp9TR-4kadFgSVU6w/zh-cn_image_0000002778923033.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/D_sOptCJSFazo8qIsk0fXA/zh-cn_image_0000002779608761.gif)
 
 ### 将语句转为原始字符串
 
@@ -101,7 +101,7 @@ content_hash: sha256:5de48b408afd4cfba65cc87755c27d45763d530b851fba98a51a0251f0e
 
 在编辑器内选择字符串代码区域，右键单击**重构 > 代码操作**，选择**Convert to raw string**，将语句转换为原始字符串。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/JPiln578T5WS9lWnzSWHjA/zh-cn_image_0000002779082875.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/M-CbCmGDQIGltPg7EUQ36w/zh-cn_image_0000002750009842.gif)
 
 ### 定义构造函数
 
@@ -115,32 +115,32 @@ content_hash: sha256:5de48b408afd4cfba65cc87755c27d45763d530b851fba98a51a0251f0e
 
 **使用方法：**在类的定义的类名处，右键单击**重构** > **代码操作**，选择**Define constructor**，为成员变量定义一个构造函数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/o8e38oGVTuuSs3jBDYN7WA/zh-cn_image_0000002749323946.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/RE2tVjHcRtutHtZNkMf_kg/zh-cn_image_0000002750009846.gif)
 
 ### 提取表达式到变量
 
 在编辑器内，选中需要提取的表达式范围，右键单击**重构 > 代码操作**，选择**Extract subexpression to variable**，支持提取表达式到变量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/j_nCnBlITyS-rsBpDKcdGQ/zh-cn_image_0000002779082877.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/mf4xl3GbSrmP7zEJePPP9A/zh-cn_image_0000002779608757.gif)
 
 ### 移除namespace
 
-光标停留在需要移除的namespace处，右键单击**重构 > 代码操作**，选择**Remove using namespace, re-qualify names instead**进行移除，可以避免命名冲突，提高代码可读性。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/STgmJy9-SL68nwLs-j7ZjA/zh-cn_image_0000002749483816.gif)
+光标停留在需要移除的namespace处，右键单击**重构 > 代码操作**，选择**Remove using namespace, re-qualify names instead**进行移除，可以避免命名冲突，提高代码可读性。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/X-1O2w17QMWev3PC_w5d5g/zh-cn_image_0000002750169734.gif)
 
 ### 添加using声明
 
 编辑器内，光标停留在需要添加using声明处，右键单击**重构 > 代码操作**，选择**Add using-declaration for ff and remove qualifier**完成使用using定义类型别名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/rzoK4xw1Td2eCxneS2AlAQ/zh-cn_image_0000002779082879.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/8EHgAkfaRFOF8ROgz52zYw/zh-cn_image_0000002779728907.gif)
 
 ### auto自动展开
 
 在auto关键字处右键单击**重构 > 代码操作**，选择**Replace with deduced type**，可以使用推断类型替换auto类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/mtRRZKKISBeJLsh-St6Veg/zh-cn_image_0000002779082881.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/anL8of27Toq2UrFsamUoBw/zh-cn_image_0000002750009848.gif)
 
 ### 声明隐式成员
 
 编辑器支持在类中声明隐式复制/移动成员。光标停留在需要生成的类处，右键单击**重构 > 代码操作**, 选择**Declare implicit copy/move members**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/nxrjcoXWSFOHzhQObcboCw/zh-cn_image_0000002778923027.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/wzHJdUntTJSlyU8BaxQebA/zh-cn_image_0000002779608755.gif)

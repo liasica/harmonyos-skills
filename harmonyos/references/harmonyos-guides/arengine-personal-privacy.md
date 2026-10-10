@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-pers
 title: 个人数据处理说明
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 个人数据处理说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:17:35+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:488bc5da7aca8f3fefb38f0ff20dd04f21db53adcd4636db877349c498e82bd4
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:3a563f9babaefd59399bf5285056353c2fbc1a28f0f5577626f55b569d379aee
 ---
 
 此文档针对华为作为最终用户数据处理者，开发者作为最终用户数据控制者的数据处理进行说明，包括：
@@ -21,7 +21,7 @@ content_hash: sha256:488bc5da7aca8f3fefb38f0ff20dd04f21db53adcd4636db877349c498e
 | --- | --- | --- |
 | 传感器信息（包含加速度传感器、陀螺仪传感器、磁场传感器、重力传感器） | 该信息用于计算设备运动变化时位姿的状态。 | 传感器捕获到的信息只在端侧处理，处理完成后即丢弃，不会留存。 |
 | 相机捕获的图像 | AR Engine通过分析相机捕获到的图像信息来实现运动跟踪、环境跟踪和命中检测等AR能力。 | 相机捕获到的图像只在端侧处理，处理完成后即丢弃，不会留存。 |
-| 人脸信息 | AR Engine通过分析相机捕获的人脸信息，来实现面部特征识别，提供人脸跟踪能力。 | 相机捕获到的图像只在端侧处理，处理完成后即丢弃，不会留存。 |
+| 人脸信息 | AR Engine通过分析相机捕获的人脸信息，来实现面部特征识别，提供人脸跟踪能力。 | 人脸信息只在端侧处理，处理完成后即丢弃，不会留存。 |
 
 ## 指导开发者如何帮助最终用户实现对数据的控制
 

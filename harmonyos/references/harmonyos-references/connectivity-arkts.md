@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/connectiv
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-10-01T07:38:18+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-10-11T07:25:58+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:0e0bb02c4f5e8bdd4ae5fc0502d2f65c3f2ab839c432724024888f47faf65840
 ---
 

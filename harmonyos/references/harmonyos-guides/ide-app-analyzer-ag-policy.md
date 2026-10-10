@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 上架合规体检
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 上架合规体检
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:18+08:00
+scraped_at: 2026-10-11T07:23:05+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:79257e68d5f673791bae9621354f9c36c962ae53ca1800bb88314b5a3534b5a2
+content_hash: sha256:47e1e56ed46517b7105e9397ad5384a63c64e4e5b1d8aee4c447cb1ad110aa58
 ---
 
 从DevEco Studio 6.1.0 Beta1版本开始，AppAnalyzer新增上架合规体检，针对AppGallery应用的上架合规要求进行检测，提前发现需要重点关注的合规事项，了解应做和不应做的事项，避免常见误区。
@@ -15,19 +15,19 @@ content_hash: sha256:79257e68d5f673791bae9621354f9c36c962ae53ca1800bb88314b5a353
 1. 确保[DevEco Studio与真机设备已连接](ide-run-device.md)，并对应用进行[签名](ide-signing.md)。
 2. 通过以下任意一种方式，打开AppAnalyzer。
    * 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面。
-   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/dFdUNIweSUKADDoRVh6-gA/zh-cn_image_0000002731542415.png)，打开AppAnalyzer页面。
-3. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/EbbBA_4lTx6wm2IKNzshWg/zh-cn_image_0000002701663212.png)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
+   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/7VmMMUOZRU-PHJEOWFTjaQ/zh-cn_image_0000002731542415.png)，打开AppAnalyzer页面。
+3. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/GnT23LH4QZ25DpKGVinw6Q/zh-cn_image_0000002701663212.png)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/BlletNd4TMeO0e4gQ9mHfQ/zh-cn_image_0000002701663210.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/sBX96KdwT9SCMntY7sEW1g/zh-cn_image_0000002701663210.png)
 4. 在**AppAnalyzer**页面，选择**上架合规体检**，选择预置的体检卡片，或根据需要自定义卡片。
-   * 点击预置的体检卡片开始体检，如需查看卡片包含的体检规则，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/owuU9DVXTTe4FfEU3eUNAA/zh-cn_image_0000002731382429.png)按钮，规则详情请参考[体检规则](ide-app-analyzer-ag-policy.md#section63875091019)。
+   * 点击预置的体检卡片开始体检，如需查看卡片包含的体检规则，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ke512tShSkumLdyqj8YFNw/zh-cn_image_0000002731382429.png)按钮，规则详情请参考[体检规则](ide-app-analyzer-ag-policy.md#section63875091019)。
    * 如果需要自定义体检规则，点击**+**，选择体检规则。
-5. 开始体检后，请等待AppAnalyzer完成构建、签名、安装等操作，并根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/MAy1OkYIRCuMxPDAEjCFfw/zh-cn_image_0000002701663222.png)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/9aGzKQ-cSoO4FcCDhliV8Q/zh-cn_image_0000002731542411.png)按钮继续测试。在测试过程中，请保持连接的设备为解锁亮屏状态。
+5. 开始体检后，请等待AppAnalyzer完成构建、签名、安装等操作，并根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/q2mKmGFjT6qdIZd1iV8iSA/zh-cn_image_0000002701663222.png)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/AhwQ0WHJQlC6-BlVKDNOjw/zh-cn_image_0000002731542411.png)按钮继续测试。在测试过程中，请保持连接的设备为解锁亮屏状态。
 6. 测试完成后，查看测试报告，针对测试不通过的规则，AppAnalyzer会给出应该做和不应该做的事项，以及对应的优化建议。
 
    如果在体检中遇到问题，可点击报告右上角的**User Feedback**向我们反馈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/gAveE1vpQQavuhI6Wvqn9Q/zh-cn_image_0000002701823138.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/gwrkw7wMQ5Wrh3qwAQeDcg/zh-cn_image_0000002701823138.png)
 
 ## 体检规则
 

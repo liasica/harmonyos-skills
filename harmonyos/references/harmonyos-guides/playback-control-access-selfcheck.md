@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/playback-cont
 title: 应用接入播控自检
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 应用接入播控自检
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:20+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:54+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:4eaaef4176de65c2fc5c2c40203bab8e8caa4369720052e0e3aacfde14035887
 ---
 

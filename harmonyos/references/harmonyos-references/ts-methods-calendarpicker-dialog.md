@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 日历选择器弹窗 (CalendarPickerDialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 日历选择器弹窗 (CalendarPickerDialog)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:09+08:00
+scraped_at: 2026-10-11T07:24:37+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:aaeaf3bf364a4aab245b720bf1aa293acf885e89e230dd50aae20abaefd453e1
+content_hash: sha256:f56576b0775519a93122c80610aca52f5dc2006ea38d4de53840b8c13bf4d66f
 ---
 
 点击日期弹出日历选择器弹窗，可在弹窗内选择日期。适用于需要在应用中进行日期选择的场景，如日程管理、预订系统、表单填写等。
@@ -131,7 +131,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/t-feFWJzQfO6XpIPIQvKpw/zh-cn_image_0000002749335142.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/il5MKI-6RE2dGDnhAYhd-A/zh-cn_image_0000002784664959.gif)
 
 ### 示例2（自定义按钮样式）
 
@@ -187,7 +187,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ZFHfL71cSN68-gnr_zBZhg/zh-cn_image_0000002749495026.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/amfytcUrQPSFoAUnEMLUkw/zh-cn_image_0000002755026028.png)
 
 ### 示例3（悬停态弹窗）
 
@@ -237,7 +237,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/hb8mh6pvTeuh_IpIRrbO2Q/zh-cn_image_0000002779094083.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/zhcXVIqoSM6GhXAt4BUKkQ/zh-cn_image_0000002755185912.gif)
 
 ### 示例4（设置日期选中态底板样式）
 
@@ -271,7 +271,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/9tjwI4MuTNWSmGsCJAjSlg/zh-cn_image_0000002778934227.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/fO4DV2d7QduiHYzsMA63aQ/zh-cn_image_0000002784584779.png)
 
 ### 示例5（设置开始日期和结束日期）
 
@@ -304,7 +304,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/6CE0qAgwTCqWFSQTWFYW2Q/zh-cn_image_0000002749335144.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/y1i1-Ia4TT2B84X5uD-KxQ/zh-cn_image_0000002784664961.gif)
 
 ### 示例6（设置系统当前日期在日历选择器弹窗内保持高亮显示，并设置禁用日期区间）
 
@@ -336,7 +336,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/KxBwZZYeQ6eYkri_gYMhNg/zh-cn_image_0000002749495028.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/WZS8fWFxTYWndgEL09-KCg/zh-cn_image_0000002755026030.gif)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -375,7 +375,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/fy0T0b8KTtWns-RmkzWnTg/zh-cn_image_0000002779094085.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/PFvXv_0TTWix5IZN36C7aQ/zh-cn_image_0000002755185914.png)
 
 ### 示例8（自定义背景效果参数）
 
@@ -415,7 +415,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/cRl6-R_ZRXS3x0DtUSOCkg/zh-cn_image_0000002778934229.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/nYzhbBXHR1y7_l8tYfhuWg/zh-cn_image_0000002784584781.png)
 
 ### 示例9（设置沉浸光感）
 
@@ -453,4 +453,4 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/LqcDuArQQEe3EekfRRkDVA/zh-cn_image_0000002749335146.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/_HEcGp_sSfWNJQ7JEXrduA/zh-cn_image_0000002784664963.gif)

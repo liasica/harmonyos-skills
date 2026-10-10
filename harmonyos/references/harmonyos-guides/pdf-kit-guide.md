@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-kit-guide
 title: PDF Kit（PDF服务）
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:53+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:b547fb90791c41460ce0e3569e476451afc53a68ac51bdc0fe6fa85f6554cee0
 ---
 

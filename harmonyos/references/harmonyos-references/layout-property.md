@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/layout-pr
 title: 布局与边框
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:46+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:24:16+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:1c3cf942d923a1e3055a0b2023d9684549032dc680b5279fee84ad8d70f1d1b3
 ---
 

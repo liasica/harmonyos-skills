@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-store-k
 title: Asset Store Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > Asset Store Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:21+08:00
+scraped_at: 2026-10-11T07:21:24+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:0b967da31f02ec5b4679c7675508fa1edaddc02301121a9d9c48cb963f044697
+content_hash: sha256:511cdba7a21f54e17def5505802244fde3ea8bbd4238dda3607e3c42ec0cf21d
 ---
 
 Asset Store Kit（关键资产存储服务，简称ASSET）用于提供用户短敏感数据的安全存储及管理功能。这类短敏感数据包括但不限于密码类（账号/密码）、Token类（应用凭据）以及其他关键明文（如银行卡号）等长度较短的敏感信息。
@@ -18,7 +18,7 @@ Asset Store Kit（关键资产存储服务，简称ASSET）用于提供用户短
 
 ASSET数据存储结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/I9V9NjnPT9uJ-KUxNL3vMg/zh-cn_image_0000002749333054.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/GGBAzQdBSmigAy6xLRdAVA/zh-cn_image_0000002784663015.png)
 
 ## 基本概念
 

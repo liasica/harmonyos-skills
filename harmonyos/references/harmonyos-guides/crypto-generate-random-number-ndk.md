@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 安全随机数生成(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 随机数 > 安全随机数生成(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ee13e83732300d43d9a3389d6a7d57696718e90b62e490f93088159ab490058c
+scraped_at: 2026-10-11T07:21:27+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:889b29c72e1c15d2274bda0c73c20a86ab4b4df2d410f128809c7f090d416aee
 ---
 
 **说明** 
@@ -37,6 +37,12 @@ content_hash: sha256:ee13e83732300d43d9a3389d6a7d57696718e90b62e490f93088159ab49
 | 算法 | 长度（Byte） |
 | --- | --- |
 | CTR\_DRBG | [1, INT\_MAX] |
+
+## 在CMake脚本中链接相关动态库
+
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
+```
 
 ## 开发步骤
 

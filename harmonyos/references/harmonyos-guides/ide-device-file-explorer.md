@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-device-fi
 title: 访问设备文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 访问设备文件
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:16+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:edbb947672d7973e13ef277e11d4a32c03a3396d082684526b30009055ebbfc6
+scraped_at: 2026-10-11T07:23:04+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:eeb379269f98a4aa623f0bd104a8ae1edc6ef7ba396d79a1605559c3cd264730
 ---
 
 开发者可以使用Device File Browser，在DevEco Studio上如PC端操作一样，对设备文件进行新建、删除、上传、下载等操作，而无需使用命令行，提升开发效率，当前支持普通文件视图与应用沙箱视图两种模式。
@@ -31,7 +31,7 @@ content_hash: sha256:edbb947672d7973e13ef277e11d4a32c03a3396d082684526b30009055e
 
 1. 在菜单栏单击**View > Tool Windows > Device File Browser**，打开Device File Browser。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/IjpHpVXsRYyMvMeWnS_Vmw/zh-cn_image_0000002731382337.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/fYTufmjtT7S2Ak7rFvQXnw/zh-cn_image_0000002731382337.png)
 2. 从下拉列表中选择设备（设备需已连接）。
 3. 选择设备后，显示文件/文件夹列表，可进行以下操作：
    1. 右键单击目录或文件，进行新建/删除操作。
@@ -50,7 +50,7 @@ content_hash: sha256:edbb947672d7973e13ef277e11d4a32c03a3396d082684526b30009055e
 
 Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](app-sandbox-directory.md)、一般暂存区目录、日志目录、设备公共目录、媒体库目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/vg3TS3z8SFyVH7jfAdBxAg/zh-cn_image_0000002731382343.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/mOGjDljaRtmi6xN6i7b8Pw/zh-cn_image_0000002731382343.png)
 
 ### 应用沙箱目录
 
@@ -60,7 +60,7 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
   普通文件视图将按照设备的真实物理路径显示当前设备上的文件结构。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/tGRrytiLQ_WJwffqdV8Vew/zh-cn_image_0000002731382357.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/wZbMVx5FRYy71as9Vdj6Qw/zh-cn_image_0000002731382357.png)
 
   应用沙箱在设备上的物理路径位于/data/app/{el1，el2}/100/{base，database}/{packageName}路径下。
 
@@ -70,13 +70,13 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
   应用沙箱视图会展示所有debug类型的应用，按照应用的沙箱文件路径显示应用的沙箱文件结构。
 
-  从DevEco Studio 6.1.0 Beta1版本开始，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/gC_nFEvDQeGR8KXNu2GDrg/zh-cn_image_0000002701663126.png)即可过滤出当前工程对应的沙箱目录。
+  从DevEco Studio 6.1.0 Beta1版本开始，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/j8vZejrZSHKmtngERrtknA/zh-cn_image_0000002701663126.png)即可过滤出当前工程对应的沙箱目录。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/fBJze2o3SDi4KeOBeQ8Mug/zh-cn_image_0000002731382351.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/RIkv0XzHRrKjHmPBPJt1CA/zh-cn_image_0000002731382351.png)
 
   API 15以下的版本，当需要以沙箱视图查看应用的文件结构时，需在module.json5文件内配置ohos.permission.INTERNET开启网络权限，卸载并重新安装应用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/fCXQK-tURk-B3f6wHn5imw/zh-cn_image_0000002731542305.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/bmMRWgDKQnu_kuYzRCzBTg/zh-cn_image_0000002731542305.png)
 
   对应于物理路径，沙箱路径为/data/storage/{el1，el2}/{base，database}。
 
@@ -88,7 +88,7 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
 一般暂存区目录位于/data/local/tmp/路径下，支持新建、删除、上传、下载操作，在DevEco Studio进行调试、测试等操作时，将在此目录下生成相关的文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/-VpM_H_lQFyfxJPNhGO_Ag/zh-cn_image_0000002731382339.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/PlS7_7xIQgiA4MlT6j92RQ/zh-cn_image_0000002731382339.png)
 
 ### 日志目录
 
@@ -96,13 +96,13 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
 当需要查看历史日志时，需要将此目录下的压缩包文件和数据字典压缩包文件hilog\_dict.XXX.zip下载到本地计算机，然后使用[hilogtool工具](hilog-tool.md)解析出对应的日志原文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/PJplQut0QnO1vZTCWuowfQ/zh-cn_image_0000002731542311.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/QbE2uRNRRyOcM-Rvcfmtqw/zh-cn_image_0000002731542311.png)
 
 ### 公共目录
 
 用户的桌面、文档、下载等公共目录位于/storage/media/100/local/files/Docs路径下，支持删除、上传、下载操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/4vTjL7qYQRag0AA5WIQ0QQ/zh-cn_image_0000002701823046.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Dy-9CoiHSnewHX5K5eWPfw/zh-cn_image_0000002701823046.png)
 
 ### 媒体库目录
 
@@ -112,7 +112,7 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
 Wearable设备不支持媒体库目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/F0Ppl3W4TdCll-qX5U73JQ/zh-cn_image_0000002701663114.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Pp3Tckl8SVOR1GgVaqMVMQ/zh-cn_image_0000002701663114.png)
 
 ## 特殊目录
 
@@ -129,28 +129,28 @@ Wearable设备不支持媒体库目录。
      hdc shell hidumper -s 1201 -a "-p Faultlogger"
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/KsS78VN7Sx6FCYchABpNXw/zh-cn_image_0000002731542315.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/FZ7gz-_wTYWu0jCqJyi2dw/zh-cn_image_0000002731542315.png)
    * 设备版本为5.1.0.54及以上时，崩溃日志文件名时间戳新增了毫秒级信息，执行以下命令。
 
      ```bash
      hdc shell hidumper -s 1201 -a "-p Faultlogger %s -LogSuffixWithMs"
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/a7zS-7jNTNuSb0MbcwhZGg/zh-cn_image_0000002731382345.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hSUeTYVnTg6mCtsBu7DV2Q/zh-cn_image_0000002731382345.png)
 2. 执行命令，查看指定的崩溃日志文件的内容。
 
    ```bash
    hdc shell hidumper -s 1201 -a "-p Faultlogger -f {filename}"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/8ctT9fWQQNWhxLb_gdiTOg/zh-cn_image_0000002701663122.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/pz6l9aDhR4CJFywQYcIonA/zh-cn_image_0000002701663122.png)
 3. 执行命令，将文件保存到本地计算机指定的路径下。
 
    ```bash
    hdc file recv /data/log/faultlog/faultlogger/{filename} {path}
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/bw1s0wvEQQOmZR3CNqsbGg/zh-cn_image_0000002701663138.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/DaXDC2UOSmOswqbouWeh4w/zh-cn_image_0000002701663138.png)
 
 ### 图库目录
 
@@ -158,7 +158,7 @@ Wearable设备不支持媒体库目录。
 
 1. 在图库中查看文件名及后缀，例如a.mp4。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/B_cYWyRpRs6aQY8b43xl5g/zh-cn_image_0000002701823052.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/K6I3ap5TTvuAEqWI0XEMiw/zh-cn_image_0000002701823052.png)
 2. 查询文件路径，记录为{FilePath}。
 
    ```bash
@@ -167,7 +167,7 @@ Wearable设备不支持媒体库目录。
 
    * 如果查询的结果中包含uri字段，则返回值第三行对应的文件路径不允许直接下载。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/etkN3KHHRKOyId-tpwrQfg/zh-cn_image_0000002731542321.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/jQyfZxYsROuIHbcunUfw8Q/zh-cn_image_0000002731542321.png)
 
      需要再执行如下命令，指定该uri，将文件复制到有下载权限的路径中（如/data/local/tmp）。
 
@@ -177,10 +177,10 @@ Wearable设备不支持媒体库目录。
 
      命令返回值第二行即为文件路径{FilePath}。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/gEw9a151QSCwNM2q1qY19g/zh-cn_image_0000002701663130.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/U7Z7wblHR_GCAybW2g85Og/zh-cn_image_0000002701663130.png)
    * 如果查询结果不包含uri字段，则返回值第二行即为文件路径{FilePath}。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/o3pxnjtBTiSWU_3wbUwsxA/zh-cn_image_0000002731542329.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/BRAun8dXRoG8B5nE_3dwMw/zh-cn_image_0000002731542329.png)
 3. 指定上一个步骤中获取到的文件路径{FilePath}，下载文件到本地。
 
    ```bash
@@ -259,7 +259,7 @@ Wearable设备不支持媒体库目录。
 
 沙箱视图下，打开沙箱文件夹时报错：[Fail][E003001] Invalid bundle name。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/dVmUqxV_RnSPQ_5yoCBauQ/zh-cn_image_0000002701663118.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Lp7Te7obSyW-Ecywx0UUaA/zh-cn_image_0000002701663118.png)
 
 可能是以下原因：
 

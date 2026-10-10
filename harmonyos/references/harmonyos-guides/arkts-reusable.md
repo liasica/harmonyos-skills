@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusabl
 title: "@Reusable装饰器：V1组件复用"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > @Reusable装饰器：V1组件复用
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:19+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:df8cb71399d2142cc6002dd016afde77f09491abeb18eb0cc010e1007c122a94
+scraped_at: 2026-10-11T07:21:03+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:451b149aa715c4e98f1a95cedc683462698639dcce371caa5cfa3e5718046e9a
 ---
 
 [@Reusable](../harmonyos-references/ts-custom-component-decorator-reusable.md#reusable)装饰的自定义组件支持组件复用。当自定义组件从组件树上移除时，会被存入缓存池，后续在创建相同类型的组件节点时，将优先复用缓存池中的组件对象，从而避免重复创建和销毁，提升性能。
@@ -13,8 +13,6 @@ content_hash: sha256:df8cb71399d2142cc6002dd016afde77f09491abeb18eb0cc010e1007c1
 **说明** 
 
 API version 10开始支持@Reusable，支持在ArkTS中使用。
-
-关于组件复用的原理与使用、优化方法、适用场景，请参考[组件复用最佳实践](../best-practices/bpta-component-reuse.md)。
 
 ## 概述
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/notificat
 title: 头文件
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:08+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:28:28+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:223aadfe64a9e45a1e163d9050cacdaed41f1096b7c7d166ec63bbd5a5d54121
 ---
 

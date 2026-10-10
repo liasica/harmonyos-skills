@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-bind-ar
 title: NDK对接ArkTS
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > NDK对接ArkTS
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:29+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:11+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:32d91c92c7ed67ad664ac54b4e329d39bde6c2cb538db2354c247feedc75ac70
 ---
 

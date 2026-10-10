@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-cr
 title: 通过聚合链接按指定方式跳转至应用
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过聚合链接按指定方式跳转至应用
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:05+08:00
+scraped_at: 2026-10-11T07:22:11+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b99ad8
+content_hash: sha256:a046e770fe9413e07444ac4ea72bd4b9a725f5c8ef9f43b535181cf9a2758700
 ---
 
 ## 场景介绍
@@ -40,13 +40,13 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
 2. 在项目列表中点击HarmonyOS应用所在的项目（请确保所有平台的应用在同一项目下）。
 3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”，选择“链接前缀”页签，点击“添加链接前缀”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/uyTwNSKGSdyjLXiwkqVKYw/zh-cn_image_0000002749333604.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/zJXBplJzSE6OJob7elnE0g/zh-cn_image_0000002784663563.png)
 4. 在AGC提供的免费域名（例如中国站点的域名：drcn.agconnect.link）前再设置一个前缀字符串，前缀字符串仅支持小写字母和数字，且必须确保此前缀唯一。设置完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/dm5Zmx90TtarUEWxc3LqQg/zh-cn_image_0000002749493488.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/38Kkn-OmTymyuX3OevY7Qg/zh-cn_image_0000002755024630.png)
 5. 等待域名地址验证通过后，页面将显示完整域名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/fG2f1CMJQkKF9TIPGw39ZQ/zh-cn_image_0000002779092545.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/aSuQxeHKQCmuwJrU437zug/zh-cn_image_0000002755184518.png)
 
 ### 添加网址允许清单
 
@@ -56,10 +56,10 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
 2. 在项目列表中点击HarmonyOS应用所在的项目（请确保所有平台的应用在同一项目下）。
 3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”，选择“网址允许清单”页签，点击“添加允许清单规则”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/mqSX7JqITUWh-P11HSyHlw/zh-cn_image_0000002778932687.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/fyH_VxeHTtCNYoCB4vjzRQ/zh-cn_image_0000002784583385.png)
 4. 使用正则表达式设置允许清单规则，设置完成后点击右上角的“发布”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/7yUIjHu8Skimnthk4DKeCA/zh-cn_image_0000002749333606.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/vB7JMAbFQNaOlpUcWO-e0A/zh-cn_image_0000002784663565.png)
 
 ### 创建聚合链接
 
@@ -69,10 +69,10 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
 2. 在项目列表中点击HarmonyOS应用所在的项目（请确保所有平台的应用在同一项目下）。
 3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”，选择“聚合链接”页签，点击“创建聚合链接”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/GOwxacTtQY-GsqxipcO4lw/zh-cn_image_0000002749493490.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/GtOsPicSQgyJPR08Ga2evA/zh-cn_image_0000002755024632.png)
 4. 设置短链接，完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/B8hQsE2FSVqIdHMD-bX8fA/zh-cn_image_0000002779092547.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Aecv_PrSRV2qX92DOJ4ejA/zh-cn_image_0000002755184520.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -83,7 +83,7 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
    * 深度链接地址中使用的域名需满足“网址允许清单”要求。
    * 深度链接地址不允许设置为可执行文件格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/U1ykZTTcQRSrj2XUfBXVQQ/zh-cn_image_0000002778932689.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/Tq9igD3sQRqZhoZpR8qjXQ/zh-cn_image_0000002784583387.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -92,7 +92,7 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
    | （可选）HarmonyOS深度链接地址(api>=12) | 如果设置了HarmonyOS深度链接地址(api>=12)，则在HarmonyOS平台优先打开此链接。 |
 6. 设置聚合链接在HarmonyOS系统的链接行为，完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/jBeHb_LMTQmuFnsRowNGdg/zh-cn_image_0000002749333608.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/f5I79BIqT3eor9rNU-akbQ/zh-cn_image_0000002784663567.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -100,7 +100,7 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
    | 未安装应用时，则重定向到 | 如果用户未安装HarmonyOS应用，可通过此选项将用户引导到“华为应用市场页面详情页”或“自定义网址”。  **说明：** 如果选择“自定义网址”，链接不允许设置为可执行文件格式。 |
 7. （可选）在“设置跟踪参数”页面，设置广告跟踪参数，可用于广告、流量跟踪。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/c0YtlpJDTMKq-BHVOxhvVg/zh-cn_image_0000002749493492.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/sp-EeK0kQzCUQSQTggTP6g/zh-cn_image_0000002755024634.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -113,7 +113,7 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
 
    设置了社交分享标识参数后，可通过[社交分享标识说明](../AppGallery-connect-Guides/agc-applinking-socialdescription-0000001055261926.md)了解设置效果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/-WoUo7AkQaa7QjnjUH2Vug/zh-cn_image_0000002779092549.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/wBJ-C-NfQimb8ThlgGF1ww/zh-cn_image_0000002755184522.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -122,7 +122,7 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
    | 描述说明 | 聚合链接在社交平台上分享时展示的说明信息。 |
 9. （可选）设置预览页，可以将用户引导至合适的目标位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/00uSlaBnTBSUCWQK8jJJEA/zh-cn_image_0000002778932691.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/vBNQAb2OQCuquPI1NTgMpg/zh-cn_image_0000002784583389.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -132,11 +132,11 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
 
 * 点击网址中的二维码图标，或对应操作栏下方的“二维码下载”，可以下载该聚合链接的二维码图片。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/-ykvMujiRjG_nq85O39ivw/zh-cn_image_0000002749333610.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/lCFIE1fuQOqmrwKA-ZitUQ/zh-cn_image_0000002784663569.png)
 
   点击对应操作栏下方的“链接详情”，可以查看该聚合链接的详情，包括深度链接地址、HarmonyOS应用包名、短链接地址等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/hM6x5TpcQqipR4CQTyOfrQ/zh-cn_image_0000002749493494.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/gTV2bd1lRq6oIP2rkb639w/zh-cn_image_0000002755024636.png)
 
 ### （可选）归档聚合链接
 
@@ -154,10 +154,10 @@ content_hash: sha256:931bf9b1176ac20de2e4e5426742b41bd1d88d1abfc0e7b3b468d7cf02b
 
    * 单条归档：在聚合链接列表，选择待归档聚合链接对应“操作”列下方的“归档”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/YRrV9UGBQ5aKFFffkXf_dg/zh-cn_image_0000002779092551.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ZBGshF9LRQmaYQI6u8EysQ/zh-cn_image_0000002755184524.png)
    * 批量归档：在列表，勾选多条待归档，选择右上角“批量操作”的下拉选项中的“归档”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/IePEAoaqQOW0W4YMFyYGjg/zh-cn_image_0000002778932693.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/1mb6ba9jSGagELELE_U4qg/zh-cn_image_0000002784583391.png)
 
    **说明** 
 

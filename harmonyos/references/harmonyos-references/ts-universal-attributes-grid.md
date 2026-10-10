@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 栅格设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > 栅格设置
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:16+08:00
+scraped_at: 2026-10-11T07:24:46+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:bb9b03f2994b5da040ccc9e6c00a7674e61183b1cb6ce33bda621b0d4991efd2
+content_hash: sha256:d4181383c8459e218ec9f721bbd8f8680db92a207c709bdf974aca3433e30b22
 ---
 
 栅格设置可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题，保证不同设备上各个模块的布局一致性，适用于响应式布局开发、多设备UI适配、跨设备布局统一等场景。
@@ -116,16 +116,16 @@ struct GridContainerExample1 {
 
 **图1** 设备宽度为SM
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/uQ2-pDPpT9KFETDqZtu_nQ/zh-cn_image_0000002749335290.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/DslEMzY-SoiAUljDhH1Obg/zh-cn_image_0000002784665107.png)
 
 **图2** 设备宽度为MD
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/cYXjt6gvR0CRf-8sanePOA/zh-cn_image_0000002749495174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/rcn0JPikTz6oCUFUuTv79g/zh-cn_image_0000002755026176.png)
 
 **图3** 设备宽度为LG
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/1Dbv1amYQ3-HeLy24OmvDQ/zh-cn_image_0000002779094231.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/leCmvQatQ5aWPwXCAfhanA/zh-cn_image_0000002755186060.png)
 
 **图4** 单独设置gridSpan和gridOffset在特定屏幕大小下的效果与useSizeType效果一致
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/XcC8nBZhT1a4GYD5gBAZXA/zh-cn_image_0000002778934375.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/6BY0AMeoR8-2h4y0bNZKQw/zh-cn_image_0000002784584927.png)

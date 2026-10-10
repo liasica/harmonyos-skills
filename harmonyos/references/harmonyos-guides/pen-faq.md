@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-faq
 title: Pen Kit常见问题
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > Pen Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:07+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:42+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:58b7841126c5efb91915b0dd8e1638c90d71e7fe2916a28e2151de9907b593be
 ---
 

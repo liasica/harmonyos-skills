@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo encrypt_password
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo encrypt_password
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:05+08:00
+scraped_at: 2026-10-11T07:22:53+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:9510e0b9d74f3a6a9f90fb6a3a9842ab88ef57546eb8c55eef8fb3ee5841b909
+content_hash: sha256:7e3744b6d88501a0ceec0a948c1b1c1e85a5307d70a41ecc9416288be81d723d
 ---
 
 对键入的密码类型字符串进行加密。
@@ -39,4 +39,4 @@ ohpm-repo encrypt_password --crypto_path D:\encryptPath
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/IOYVgUxTQ1WTR31Gvl2DDg/zh-cn_image_0000002731541633.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/QxXA8W6fS56FavMhHrfHgg/zh-cn_image_0000002731541633.png "点击放大")

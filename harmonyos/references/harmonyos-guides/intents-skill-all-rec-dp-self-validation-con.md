@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 配置文件接入方式自测试方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 开发者测试 > 配置文件接入方式自测试方案
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:41+08:00
+scraped_at: 2026-10-11T07:22:47+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:039fa2abf07b49556ee06c6f4a709eb6c1b7a78bded8cbdcb41677b6c78fb1a5
+content_hash: sha256:d985fa6521123283dd1ce9313d83fa4694c7bb49b808fdcf0137dae98c046b53
 ---
 
 Intents Kit向开发者提供意图调用调试能力。开发者完成代码开发之后，功能正式上架应用市场前，可以在HarmonyOS 5及以上的设备上面进行自验证，调试分为三个步骤：基础信息提供，环境准备，联调验证。
@@ -30,13 +30,13 @@ Intents Kit向开发者提供意图调用调试能力。开发者完成代码开
 2. 安装开发完成并携有意图声明文件的应用。
 3. 打开开发者调试模式：进入“设置 > 机型 > 关于手机”，连续点击软件版本7次，弹出“开启开发者选项”弹窗，点击“确认开启”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/PHwU_voSQVGNq6slXFrdMQ/zh-cn_image_0000002778933251.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/CuUiOTIIQcy3YSjY_EK2Xw/zh-cn_image_0000002784583939.png)
 4. 长按电源键唤醒小艺，将半屏态小艺向上拉升至全屏态，点击左上角返回上层，返回后点击右上角的头像，进入“设置”，找到并进入应用网络设置，打开“WLAN下自动更新”开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/QMSmZstvRbq2mxw272u00g/zh-cn_image_0000002749334166.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/jaaV4WVCQ_2kRG7iTJ43OA/zh-cn_image_0000002784664121.png)
 5. 进入“设置 > 系统 > 开发者选项 > 意图框架调试”，打开意图框架调试开关，如果下方显示“已切换至真机模式”，则代表真机模式切换成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/2TTW6pqMRPmXU3Bi-CBxWg/zh-cn_image_0000002779093109.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/BvA1ORovQ2W4vR6HLImfCg/zh-cn_image_0000002755185074.png)
 
    【提示】如果出现意图框架调试开关打开后，设备长时间无法出现“已切换至真机模式”时，可以尝试以下操作：
 
@@ -44,6 +44,6 @@ Intents Kit向开发者提供意图调用调试能力。开发者完成代码开
    * 在小艺对话中点击右上角头像，点击“设置 > 服务管理 > 注销服务 > 注销服务”，然后返回桌面重新点击小艺建议的卡片，将展示“欢迎使用小艺建议”的卡片刷新成有服务推荐的卡片，最后重新开启意图框架调试开关。
 6. 打开意图调试助手：进入小艺App，返回主页面，切换“发现”页签，在搜索框内搜索“意图调试助手”，点击进入意图调试助手。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/i9zjHGJ-SZmb0qChHN3IPA/zh-cn_image_0000002778933269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/huCvAiX8RvmRSPhQqsREmg/zh-cn_image_0000002784583957.png)
 
 完成以上所有步骤，即可进行联调。

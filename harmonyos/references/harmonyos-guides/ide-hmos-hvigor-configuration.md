@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 配置构建流程
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置构建流程
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:34+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c8856eb4fa34b08cc1cf6ec91f55dbdb61c8eeaf92dd70ecca6e7ef2374b306f
 ---
 

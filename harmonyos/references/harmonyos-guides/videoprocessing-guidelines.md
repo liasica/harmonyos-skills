@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/videoprocessi
 title: 视频处理
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 视频处理
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:26+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:00+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:90bc4fd2bdb8081d12054c4a999a148740c1cbccdfac6fd57b9c660acebcea32
 ---
 

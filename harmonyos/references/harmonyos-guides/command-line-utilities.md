@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/command-line-
 title: 命令行工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:08+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-10-11T07:21:48+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:02d31a7d28a5a2a405ab60f954cb700dee02310c7618f0ecd642c26da5da596f
 ---
 

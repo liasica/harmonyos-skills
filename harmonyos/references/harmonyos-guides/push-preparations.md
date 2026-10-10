@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-preparat
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:54+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c6e09bd38b3f381506e7b37db9684d7743ec600f8d6e630657b12ecc20f554be
 ---
 

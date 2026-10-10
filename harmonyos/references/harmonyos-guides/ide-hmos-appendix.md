@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-appe
 title: 附录
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 附录
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:34+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:21+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:aa7ebf3cae2ca206aa2dee6e287b9d35c4e669116fa20eb9e323f03fd91ebfdd
 ---
 

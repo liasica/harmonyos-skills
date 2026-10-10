@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-prom
 title: "@typescript-eslint/promise-function-async"
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/promise-function-async
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:30+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:18+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:9da166dd69bd44953757ea27abce5308b2120d5e59a10ea02098122fa667e194
 ---
 

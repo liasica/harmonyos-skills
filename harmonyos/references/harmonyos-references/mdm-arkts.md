@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/mdm-arkts
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:22+08:00
-doc_updated_at: 2026-09-17
+scraped_at: 2026-10-11T07:26:39+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:01cba5cad2625e2051ff8a2561beb8827759ccf7e963f531ea4e6b2b160633f4
 ---
 

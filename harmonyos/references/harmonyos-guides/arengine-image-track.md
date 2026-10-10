@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-imag
 title: 图像跟踪（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 图像跟踪 > 图像跟踪（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:616b7c564103443a85b74d7a394b1c4692b9345a12e18df93bd22a0d1b6e5cf6
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:7c81dad8dea09f8c5a72d2b3569ee248758d80542c81d74bafe1d52dc5067f96
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -368,7 +368,7 @@ struct ARImage {
          trackables = session.getAllTrackables(arEngine.ARTrackableType.AUGMENTED_IMAGE);
        } catch (error) {
          const err: BusinessError = error as BusinessError;
-         logger.error(`Failed to get capacity. Code is ${err.code}, message is ${err.message}`);
+         logger.error(`Failed to get all trackables. Code is ${err.code}, message is ${err.message}`);
          return;
        }
 

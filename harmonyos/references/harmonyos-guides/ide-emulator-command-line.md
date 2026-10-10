@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 通过命令行使用模拟器
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 通过命令行使用模拟器
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:16+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:88ca039a270fbb491d693492beea75c960b10821143f064384f8384974b72121
+scraped_at: 2026-10-11T07:23:03+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:a850dda4e55aa7c4ac48bde150b6923227f9da2658b6a7567b291d3cde05a648
 ---
 
 除了在DevEco Studio的设备管理中使用模拟器外，开发者还可以通过Emulator命令行使用模拟器，支持Windows、macOS和Linux平台，Linux平台的使用方式请参考[模拟器工具（Emulator）](ide-commandline-emulator.md)。
@@ -493,7 +493,7 @@ Emulator -instance {模拟器名称} -screenshot -screenshotPath {截屏保存�
 | 参数名 | 说明 |
 | --- | --- |
 | -instance | 必选参数，指定模拟器名称。 |
-| -screenshot | 必选参数，截屏场景化命令，对模拟器界面进行截屏，可通过-screenshotPath命令指定截屏保存路径。如不指定则保存在默认路径下，默认路径可通过模拟器工具栏-设置进行修改。 |
+| -screenshot | 必选参数，截屏场景化命令，对模拟器界面进行截屏，可通过-screenshotPath参数指定截屏保存路径。如不指定则保存在默认路径下，默认路径可通过模拟器工具栏-设置进行修改。 |
 | -screenshotPath | 可选参数，指定截屏保存路径，与-screenshot命令搭配使用，单次有效，不会保存到默认路径中。 |
 
 **示例：**

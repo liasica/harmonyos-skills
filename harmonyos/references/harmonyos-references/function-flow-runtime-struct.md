@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/function-
 title: 结构体
 breadcrumb: API参考 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:14+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:36+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:aed2f27a89b6429c8ef36b43689918a969e404678cfc0e0bd9f3fd893a031672
 ---
 

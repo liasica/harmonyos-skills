@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-ascen
 title: AscendC算子开发
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:02+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:29+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:dbcf5fc9d0f24f923b9a44a3934b729604994aa9714d25ac50f09b0885b74000
 ---
 

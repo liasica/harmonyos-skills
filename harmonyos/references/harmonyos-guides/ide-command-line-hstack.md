@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-l
 title: 堆栈解析工具（hstack）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 堆栈解析工具（hstack）
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:24+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:570dd5c2ac88ba3039b432819c72de6b65d1aeb0e7d5dc712e3da83942e73e5f
+scraped_at: 2026-10-11T07:23:11+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:35d16f33b8c1d8bbc083e5d5ef5acc105aa2473f5315e3cf9658ccb585a3dd7b
 ---
 
 ## 简介
@@ -45,23 +45,23 @@ options: 可选配置，请参考[表hstack命令行配置](ide-command-line-hst
 1. hstack工具在Command Line Tools的bin目录下，需要[将bin目录配置到PATH变量中](ide-commandline-get.md#section17776863449)。
 2. 如果需要对C++文件产生的异常进行解析，则需要将SDK中的native\llvm\bin目录配置到环境变量中，变量名设置为“ADDR2LINE\_PATH”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/q7pm87MWRt2itxovs9Zemw/zh-cn_image_0000002731542081.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/AOKblRqrTQqcyWhw8Zq2qA/zh-cn_image_0000002731542081.png)
 
 ## 使用示例
 
 1. 将应用产生的crash文件归档到crashDir目录下（或者-c指定一条crash堆栈），关于堆栈的获取方式请参考[崩溃检测](fault-detection-overview.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/uaL41TaVQbyHYpj-qETqqQ/zh-cn_image_0000002731542077.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/jjBcAJ5jTta1DHnqsnFe_Q/zh-cn_image_0000002731542077.png)
 2. 使用-o指定输出目录，当不指定时，会输出至-i指定的crashDir目录下（通过-c输入为crash堆栈时，可以使用-o指定一个输出文件，或不指定，直接将结果输出至控制台）。
 3. 使用-s指定工程对应sourceMap文件归档目录（可选，与shared object文件归档目录至少提供一项）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/poXP3pq8RaeWme1l6RWHvQ/zh-cn_image_0000002731382109.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/IbQ4PLSuQi-4LLjidpKONw/zh-cn_image_0000002731382109.png)
 4. 使用--so指定shared object文件归档目录（可选，与sourceMap归档目录至少提供一项）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/4ZuzlUdJQtGy1eQZtOb4Kw/zh-cn_image_0000002701662884.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/4FqddCI7Q5KdojGFO_DTOQ/zh-cn_image_0000002701662884.png)
 5. 使用-n指定nameCache文件归档目录（可选）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/9cyR0Vs6SFiIVFY02MSO5g/zh-cn_image_0000002701662890.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/bcyKoKJkROKGDmMS9NthgA/zh-cn_image_0000002701662890.png)
 6. 执行以下命令，可将release应用crash堆栈解析为源码对应堆栈。
 
    ```bash
@@ -71,11 +71,11 @@ options: 可选配置，请参考[表hstack命令行配置](ide-command-line-hst
    hstack -c "at anonymous (entry|entry|1.0.0|src/main/ets/pages/Index.ts:401:1)" -o D:\outputDir\out.txt -s D:\sourcemapDir --so D:\soDir -n D:\nameCacheDir
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/mx1jfaM9RaSkix0pGcfZZA/zh-cn_image_0000002701822812.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/ADv3QkgoQXST8b1XNlOcZQ/zh-cn_image_0000002731382105.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/r8MrHRKGQIq6owg7Lk4ohw/zh-cn_image_0000002701822812.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/yUm9lVbjSgy3lGiIOy9RIQ/zh-cn_image_0000002731382105.png "点击放大")
 
    如果是指定crash文件归档目录，解析完成后，outputDir目录下会生成对应的解析结果，文件以原始crash文件名加“\_”前缀进行命名。crash堆栈中的C++日志以及ArkTS日志均已解析为源码对应的文件路径以及行列号，结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/pwi7WB_SSfKuxkrxpne0Ug/zh-cn_image_0000002701822806.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/JhDBDv2pQourHX57fveZ9A/zh-cn_image_0000002701822806.png)
 
    在构建Release应用时，so文件是默认不包含符号表信息的，如果需要在构建Release应用时生成包含符号表的so文件，需要在工程的模块级build-profile.json5文件的buildOption属性中，配置如下信息：
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 编译构建错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:20+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:08+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:11efcc834eab88b5cc59a127c6b55383250783fa8b5670f76d7c48934c302433
 ---
 

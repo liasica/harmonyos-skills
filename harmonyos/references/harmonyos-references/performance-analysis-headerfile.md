@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/performan
 title: 头文件
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:31+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:53+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:8716113d12cba73d8681a3aa62207b691423c585a90513d94625089a3cea17d9
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: Native代码调试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:03+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:9cc3b722b38c7e316b576062a7a1bf8ede247a56c1b0b4155a4893262ef1e4bc
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 版本说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:05+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:53+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:a6d1676dfeab019549094cf8334cca63eec6bf9c0fb0c4902878f59050eef1ed
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-mgmt-ove
 title: ArkData简介
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > ArkData简介
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:53+08:00
+scraped_at: 2026-10-11T07:20:57+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:3f5497ee24d2cefb9c7ceb5c3590d202398339ae2bcbf66f444c66aeff334634
+content_hash: sha256:4996f4323ad4cadbedc730df1e0b666212c9c4e0836e13a7325c5d4e8f70f082
 ---
 
 ## 功能介绍
@@ -25,7 +25,7 @@ ArkData （方舟数据管理）为开发者提供数据存储、数据管理和
 
 **图1** 数据管理架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/kJhjVpxdTLqGNhJpPiZ80Q/zh-cn_image_0000002749331742.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/ZU7O7KarQguvJSCBLtudBQ/zh-cn_image_0000002784581631.jpg)
 
 * 用户首选项（Preferences）：提供了轻量级配置数据的持久化能力，并支持订阅数据变化的通知能力。不支持分布式同步，常用于保存应用配置信息、用户偏好设置等。
 * 键值型数据管理（KV-Store）：提供了键值型数据库的读写、加密、手动备份以及订阅通知能力。应用需要使用键值型数据库的分布式能力时，KV-Store会将同步请求发送给DatamgrService由其完成跨设备数据同步。

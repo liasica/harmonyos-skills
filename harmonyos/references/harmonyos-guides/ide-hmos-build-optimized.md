@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-buil
 title: 提升构建效率
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 提升构建效率
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:35+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:fc74b74f29664c2b77ffb14e724a15f3d9e72f495d28fc509d0eb0452c9c7a82
 ---
 

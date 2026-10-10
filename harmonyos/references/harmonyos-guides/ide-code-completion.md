@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-comp
 title: 代码生成/补全
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码生成/补全
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
+scraped_at: 2026-10-11T07:22:56+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:7d191fa5c8862fc5ef5b4b04d0a3618c763c2d9589f00250aa4f2a1fe06d9807
+content_hash: sha256:43af6e736023e44eb28513beca80623c8a7243414346aeb31207cd69be652f07
 ---
 
 ## 代码自动补全
@@ -18,15 +18,15 @@ content_hash: sha256:7d191fa5c8862fc5ef5b4b04d0a3618c763c2d9589f00250aa4f2a1fe06
 
 若已勾选代码补全按最近使用排序但未生效，请检查**Code Completion**页面，确保“Sort suggestions alphabetically”已取消勾选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/C6-C_K_GSHeBBpGLgldrMw/zh-cn_image_0000002731542621.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/GhDJlDL3R-eTpIvRgI-pSA/zh-cn_image_0000002731542621.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/tFcr4t3QSLSMaf8_BTlvSQ/zh-cn_image_0000002701663430.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/eBDda9IJSr-7Hy5BW7O6AA/zh-cn_image_0000002701663430.gif)
 
 ## 快速覆写父类
 
 DevEco Studio提供Override Methods，辅助开发者根据父类模板快速生成子类方法，提升开发效率。将光标放于子类定义位置，使用**快捷键Ctrl+O**（macOS为**Control+O**），或右键单击**Generate**...，选择**Override Methods**，指定需要覆写的对象（方法、变量等），点击**OK**将自动生成该对象的覆写代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/kudiwHx9QhqFEwrnx8B7YQ/zh-cn_image_0000002701823348.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/O-7yhq4uTxupZUNegHs82w/zh-cn_image_0000002701823348.gif)
 
 ## 快速生成构造器
 
@@ -34,7 +34,7 @@ DevEco Studio提供Override Methods，辅助开发者根据父类模板快速生
 
 在类中使用**快捷键Alt+Insert**（macOS为**Command+N**），或单击鼠标右键选择**Generate**...，在弹窗中选择**Constructor**，选择一个或多个需要生成构造函数的参数，点击**OK**。若选择**Select None**，则生成不带参数的构造器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/O01xEDoiQhiRBknmPdZBEg/zh-cn_image_0000002731542619.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/cCYSCI2xTLatVJApPi8FKg/zh-cn_image_0000002731542619.gif)
 
 ## 快速生成get/set方法
 
@@ -42,7 +42,7 @@ DevEco Studio提供Override Methods，辅助开发者根据父类模板快速生
 
 将光标放置在当前类中，单击右键选择**Generate...>Getter and Setter**，或者使用快捷键**Alt+Insert**（macOS为**Command+N**），在菜单中选择**Getter and Setter**，完成方法快速生成。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/QIY6OL4GSXG5tgfgVGwgRw/zh-cn_image_0000002701663426.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/rIgTLFTiSbC1SckolBSzkg/zh-cn_image_0000002701663426.gif)
 
 ## 快速生成声明信息到Index文件
 
@@ -50,4 +50,4 @@ DevEco Studio提供Override Methods，辅助开发者根据父类模板快速生
 
 在HSP或HAR模块内的文件编辑界面，单击右键选择**Generate...>****Declarations**，或者使用快捷键**Alt+Insert**（macOS为****Command+N****），在菜单中选择**Declarations**，按住快捷键Ctrl并选择需要声明的变量名、方法名、接口名、类名等，即可在模块的Index.ets文件中批量生成相应的声明信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Q3n29AMASwerF7cnlFHYlg/zh-cn_image_0000002731382649.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ZmmqkxpDTVKqk6b8t2X0cA/zh-cn_image_0000002731382649.gif)

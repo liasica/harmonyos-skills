@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arEngine（AR增强现实能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arEngine（AR增强现实能力）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:87f354e22392e5a2c6563442107f1d4436051cb4254086298d7b8e2c9103f444
+scraped_at: 2026-10-11T07:27:44+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:f8cab31e03dfd06357d52cf1ed3b168d27916968ee9ebf8c550cc978cb830e39
 ---
 
 本模块提供AR Engine（AR引擎服务）的arEngine（AR增强现实能力）相关接口。
@@ -1547,10 +1547,10 @@ await anchors[0].release();
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| extendX | number | 是 | 否 | 表示在X轴上估计的物理图像宽度，单位为m。如果图像的追踪状态为PAUSED或STOPPED，返回的宽度信息是最后一次追踪的宽度。如果图像从未被追踪，返回0。 |
-| extendZ | number | 是 | 否 | 表示在Z轴上估计的物理图像宽度，单位为m。如果图像的追踪状态为PAUSED或STOPPED，返回的宽度信息是最后一次追踪的宽度。如果图像从未被追踪，返回0。 |
-| index | number | 是 | 否 | 表示增强图像在增强图像数据库中的图像索引，数值范围1~50，为图像在数据库中的唯一标识符。 |
-| name | string | 是 | 否 | 表示增强图像的图像名称，最大为255Byte，该值可能不唯一。 |
+| extendX | number | 是 | 否 | 在X轴上估计的物理图像宽度，单位：m。如果图像的追踪状态为PAUSED或STOPPED，返回的宽度信息是最后一次追踪的宽度。如果图像从未被追踪，返回0。 |
+| extendZ | number | 是 | 否 | 在Z轴上估计的物理图像宽度，单位：m。如果图像的追踪状态为PAUSED或STOPPED，返回的宽度信息是最后一次追踪的宽度。如果图像从未被追踪，返回0。 |
+| index | number | 是 | 否 | 增强图像在增强图像数据库中的图像索引，取值范围：[0,49]，为图像在数据库中的唯一标识符。 |
+| name | string | 是 | 否 | 增强图像的图像名称，最大值为255Byte，该值可能不唯一。 |
 
 ## ARBlendShapes
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-verify
 title: 证书链校验器对象的创建和校验
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书链校验器对象的创建和校验
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:24+08:00
+scraped_at: 2026-10-11T07:21:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:887e7c968a19a16b8dce516c271c2b3c821125f72b231294b1368daa6704eb4d
+content_hash: sha256:f51a4abd05c0cde99559fb6f492c3fc72314efc3faeafa85ab4229a6ef9a670a
 ---
 
 证书链是由一组证书组成的证书集合，以图中样例证书文件为例，即可放在一个证书链中。
 
 样例中可以看到GlobalSign自签名了证书，GlobalSign也签发了GlobalSign RSA OV SSL CA 2018的证书，GlobalSign RSA OV SSL CA 2018又签发了第三级证书。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/XaXeBlEbSgina9gsEc1bRA/zh-cn_image_0000002778932143.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/0DRe4SbNTZeO1KqtfSWkvA/zh-cn_image_0000002784582841.png)
 
 开发者可以参考示例将已有的多个证书构建出证书链数据。
 

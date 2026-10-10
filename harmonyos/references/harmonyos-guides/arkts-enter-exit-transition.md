@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-enter-e
 title: 出现/消失转场
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 出现/消失转场
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:06+08:00
+scraped_at: 2026-10-11T07:21:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4b5263606b9520cb8337e5cc4f1f488595884e82776a4c2a0e9becaa055cf2f6
+content_hash: sha256:5c75bfa1e7792511f60275ba01161d218cf587e1ff6e54ec7489333b5fe671e9
 ---
 
 [transition](../harmonyos-references/ts-transition-animation-component.md)是基础的组件转场接口，用于实现一个组件出现或者消失时的动画效果。可以通过[TransitionEffect10+对象说明](../harmonyos-references/ts-transition-animation-component.md#transitioneffect10对象说明)的组合使用，定义出各式效果。
@@ -137,7 +137,7 @@ struct TransitionEffectDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/GIjW4yrmRFO0tUBj5Ei4Ww/zh-cn_image_0000002779091505.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/M2WkIfSRTdWCK9A3jpK4Ng/zh-cn_image_0000002755023590.gif)
 
 对多个组件添加转场效果时，可以在[animation](../harmonyos-references/ts-animatorproperty.md#animation)动画参数中配置不同的delay值，实现组件渐次出现消失的效果：
 
@@ -202,4 +202,4 @@ struct Index1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/rLXX2TjvSu2l7CjcHvvXoQ/zh-cn_image_0000002778931647.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/3x0Ef_NISg-RGGDbdvfPPg/zh-cn_image_0000002755183476.gif)

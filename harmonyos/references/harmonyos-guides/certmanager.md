@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certmanager
 title: 证书管理服务
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书管理服务
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:50+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:28+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:72b3606b4557ab9fa510ba930bb9a6dc0cf29d4c72bee533f7b25eeeba4fc598
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 常见问题
 breadcrumb: 指南 > DevEco Code > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:39+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:69830e3ace73e3f721efa20d948ff5751871d4086ef50c828890e75b80bb946d
+scraped_at: 2026-10-11T07:23:26+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:774e68e80a614638e4efce1eba18aa1ea436cb19b92c401861c769d86d2399b3
 ---
 
 ## 在鸿蒙电脑版DevEco Code执行命令时，提示“Permission denied：node”
@@ -14,7 +14,7 @@ content_hash: sha256:69830e3ace73e3f721efa20d948ff5751871d4086ef50c828890e75b80b
 
 执行安装命令或检验环境搭建等命令时，提示没有node权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/OqhCUkUxT9-EYSg03t0yhA/zh-cn_image_0000002749157632.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/v7V_zsr0QN-VEnCO4coJ0w/zh-cn_image_0000002749157632.png)
 
 **可能原因**
 
@@ -32,7 +32,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 **问题现象**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/s0rzkXOwRgqMA57E3b_u-Q/zh-cn_image_0000002748997754.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/jRlj8fsiSs2XGzC5GTkfHA/zh-cn_image_0000002748997754.png)
 
 **可能原因**
 
@@ -64,7 +64,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑上执行npm install -g @deveco/deveco-code@stable命令安装DevEco Code时，有报错提示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/HdXSn2bWTGiGcdKSBjZHmA/zh-cn_image_0000002749173362.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/ZcGO0m4HS8uzYKJYw8WwtQ/zh-cn_image_0000002749173362.png)
 
 **可能原因**
 
@@ -73,3 +73,21 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 **解决措施**
 
 通过npm install -g @deveco/deveco-code命令安装尝鲜版。
+
+## 在鸿蒙电脑DevEco Studio中安装DevEco Code时，提示“无法运行来自非应用市场的扩展程序”
+
+**问题现象**
+
+在鸿蒙电脑DevEco Studio中安装DevEco Code时，弹窗提示“无法运行来自非应用市场的扩展程序”。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/_JMtxzVGRVKW7_xmHUa0RQ/zh-cn_image_0000002785060491.png)
+
+**可能原因**
+
+鸿蒙电脑的安全策略与防护机制，导致无法直接运行非应用市场的扩展程序。
+
+**解决措施**
+
+点击弹窗中的**去设置 >** **隐私和安全**，开启**运行来自非应用市场的扩展程序**后，重新安装DevEco Code。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/r8ObCGCbRa6f4im7BpWebw/zh-cn_image_0000002755421580.png)

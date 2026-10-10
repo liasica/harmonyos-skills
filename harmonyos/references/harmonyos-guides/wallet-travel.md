@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-travel
 title: 出行凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 出行凭证
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:00+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:27+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:757608b5f04d787b66e15e3d30684dc4d781801d54dbf0515fd209d0948bf10c
 ---
 

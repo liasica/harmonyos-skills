@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-creating-
 title: 开发发布和管理共享包
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:05+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:53+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:9368fe8acde4ca8d3db7a1900c2c5fd02766816e21e65db7116331de4e4baa56
 ---
 

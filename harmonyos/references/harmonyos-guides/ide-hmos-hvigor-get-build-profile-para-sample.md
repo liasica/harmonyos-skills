@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 定制构建 > 获取自定义编译参数 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:35+08:00
+scraped_at: 2026-10-11T07:23:22+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c722a73bcbd9b8c56af4db5188c1cbed52269fedbdb6dc63ccafdb73c1f5c19e
+content_hash: sha256:ad07f7ed7560c4dc1a71af3ae60ab710facec15a6a5ad0f0b96ea506ccb61b00
 ---
 
 示例：配置工程级和模块级的自定义参数并通过切换product来展示不同的message。
@@ -211,24 +211,24 @@ struct Index {
 
 右键点击har模块，在菜单中点击**生成BuildProfile文件**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/I8-cH8PsSkC3Yi0veGODwA/zh-cn_image_0000002778922759.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/qjZa1VBZRrS9KRsQrcLwow/zh-cn_image_0000002750169524.png)
 
 default模式下初始化的message为defaultMessage。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Y6oZVSrsScKAkpacLzCuwg/zh-cn_image_0000002749323676.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/qZcsl7kYTvypqunFevrknA/zh-cn_image_0000002750009640.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/f0jg3EJ1Qh6sBp3oa7ivGA/zh-cn_image_0000002749323678.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/uSLZ_qoNT56lUFHZsAz7Mg/zh-cn_image_0000002750009642.png)
 
 通过切换不同的product，可以使用不同的自定义参数来初始化message。
 
 切换product为mirror，可以观察到初始化参数为mirrorMessage。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/H5YUIBz9R8yGW7JQatmKYA/zh-cn_image_0000002779082617.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/b9CJ6CgkTjqyAmKrdknQDQ/zh-cn_image_0000002779608553.png)
 
 点击不同的Button，message会变为对应的自定义参数：
 
 **图1** 点击Button1  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/CewTF1grS0-UDKP997W9zQ/zh-cn_image_0000002779082613.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/QyLIxY9sS6edRBIWQE9gbw/zh-cn_image_0000002779728701.png)
 
 **图2** 点击Button2  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/U-XOQE4HTYKPlK_WRxg0og/zh-cn_image_0000002779082615.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/GWqoZ59oToy_GXXKGvTWUg/zh-cn_image_0000002779608551.png)

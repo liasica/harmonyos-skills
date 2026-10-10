@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 附录
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 附录
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:23+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:11+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:24d674bd384b660bd8d6b7171b6b43ace26e384430e577fac44808c83ba17f94
 ---
 

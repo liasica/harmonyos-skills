@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-camera
 title: 更改地图位置
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 更改地图位置
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:13+08:00
+scraped_at: 2026-10-11T07:22:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:23e1e5dc865602f012a444fb4342cfdd7b56de954dc9d5371e302310f7494eae
+content_hash: sha256:dc73ab0dc4941412bc4f2f9538821fb9f990aa14503122dbcd16757985321457
 ---
 
 ## 场景介绍
@@ -16,11 +16,11 @@ content_hash: sha256:23e1e5dc865602f012a444fb4342cfdd7b56de954dc9d5371e302310f74
 
 **图1** 相机移动前
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/y4yA7uwZTYevcx6HpvFA8Q/zh-cn_image_0000002749493710.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/8rjQXQsWTGuYzcToCxSXgg/zh-cn_image_0000002755024850.jpg "点击放大")
 
 **图2** 相机移动后
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/nyIXDP_hTgSmzjryk9qjPA/zh-cn_image_0000002779092765.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/RlIPYurPRw-8YGo8uKzARQ/zh-cn_image_0000002755184738.jpg "点击放大")
 
 ## 接口说明
 
@@ -80,11 +80,11 @@ content_hash: sha256:23e1e5dc865602f012a444fb4342cfdd7b56de954dc9d5371e302310f74
 
    **图3** 相机移动前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/r_pJGZvRRuebCh_bR8rCVg/zh-cn_image_0000002778932911.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Yz6yyJSeT8mOUsozwOEXTg/zh-cn_image_0000002784583605.jpg "点击放大")
 
    **图4** 相机移动后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/XWbS0AUTTTeAROQ2fnupSw/zh-cn_image_0000002749333826.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/L20TsQnqTNiVRbd8fLOq4A/zh-cn_image_0000002784663785.jpg "点击放大")
 4. 您还可以通过以下方式创建[CameraUpdate](../harmonyos-references/map-map-cameraupdate.md)对象。
 
    ```typescript

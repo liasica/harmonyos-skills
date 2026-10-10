@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/form-arkt
 title: ArkTS API
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:04+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:31+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:bb77f768e08ced00928c04cda791418891a81d40ee33b4aad73ce502e438f910
 ---
 

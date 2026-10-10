@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/natural-langu
 title: Natural Language Kit（自然语言理解服务）
 breadcrumb: 指南 > AI > Natural Language Kit（自然语言理解服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:24+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:47+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:4dcbc83c3e833c960ef175b4b900a7d3d9c6e125aaa67f74750df27463b018fa
 ---
 

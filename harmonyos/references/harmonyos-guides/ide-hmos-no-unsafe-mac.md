@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-no-u
 title: "@security/no-unsafe-mac"
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-mac
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:31+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:19+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:80e005219ab12b58298126a0eccb86b1f378da972531801a1e7ea53d0f5858d7
 ---
 

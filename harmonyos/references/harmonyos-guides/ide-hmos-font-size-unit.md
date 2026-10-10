@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-font
 title: "@cross-device-app-dev/font-size-unit"
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev > @cross-device-app-dev/font-size-unit
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:32+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:20+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:a954b6a2473c11ff69ca0f6599e2ba7419be000047b7e6198835475967770e44
 ---
 

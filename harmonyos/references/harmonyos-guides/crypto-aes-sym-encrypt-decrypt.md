@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sy
 title: 使用AES对称密钥加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用AES对称密钥加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:54+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:8363f1e7d0091a2f5262e5dd65a1e048e36f2977c777b19069c3c9920d0682ed
+scraped_at: 2026-10-11T07:21:26+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:378cd48dc6d4189406cb602b4da296c35866b0a5873b3efb44496d8bca61168d
 ---
 
 对应的算法规格请查看[对称密钥加解密算法规格：AES](crypto-encryption-decryption.md#aes)。
@@ -867,7 +867,7 @@ AES（GCM模式）解密失败返回错误码17630001可参考[使用AES-GCM算�
     let dataTag = new Uint8Array(arr);
     let tagBlob: cryptoFramework.DataBlob = {
       data: dataTag
-    }; // The GCM authTag is obtained by doFinal() in encryption and passed in params of init() in decryption.
+    }; // GCM的authTag在加密时通过doFinal()获取，在解密时通过init()的params传入。
     let gcmParamsSpec: cryptoFramework.GcmParamsSpec = {
       iv: ivBlob,
       aad: aadBlob,
@@ -971,7 +971,7 @@ AES（GCM模式）解密失败返回错误码17630001可参考[使用AES-GCM算�
     let dataTag = new Uint8Array(arr);
     let tagBlob: cryptoFramework.DataBlob = {
       data: dataTag
-    }; // The GCM authTag is obtained by doFinal() in encryption and passed in params of init() in decryption.
+    }; // GCM的authTag在加密时通过doFinal()获取，在解密时通过init()的params传入。
     let gcmParamsSpec: cryptoFramework.GcmParamsSpec = {
       iv: ivBlob,
       aad: aadBlob,

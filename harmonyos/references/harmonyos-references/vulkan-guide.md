@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan-gu
 title: Vulkan
 breadcrumb: API参考 > 标准库 > Vulkan
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:33+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:28:50+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2854418e24deba0fc04cdf3b3deb3910bab8c40225377f589fc67961a1346624
 ---
 

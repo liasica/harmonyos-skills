@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-intellige
 title: 使用AI智能辅助编程（不推荐）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐）
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:25+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:12+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:cacc72751ddb61e398da285864225f3c2186a43144d6928502b41c7417072688
 ---
 

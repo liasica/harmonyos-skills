@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-bo
 title: 人体跟踪与骨骼关键点识别（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人体骨骼点识别与跟踪 > 人体跟踪与骨骼关键点识别（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:5cc4a6c6a551f9f6224032f603306632c8be9c519f5c84c85f660a645263587d
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:d2f88401fdfeff61e0d83883c51236b133c55b40cbc00d027a7aba190caee8d2
 ---
 
 ## 约束与限制
@@ -277,7 +277,7 @@ HMS_AREngine_ARConfig_Destroy(arConfig);
 
 ### 创建可跟踪对象列表
 
-创建一个可跟踪对象列表targetList，用于存放AR Engine运行过程中检测到的所有可跟踪对象。
+创建一个可跟踪对象列表arTrackableList，用于存放AR Engine运行过程中检测到的所有可跟踪对象。
 
 ```
 AREngine_ARTrackableList *arTrackableList = nullptr;
@@ -286,7 +286,7 @@ CHECK(HMS_AREngine_ARTrackableList_Create(mArSession, &arTrackableList));
 
 ### 获取人体追踪对象
 
-调用[HMS\_AREngine\_ARSession\_GetAllTrackables](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_getalltrackables)函数，检测当前环境中的所有人体追踪对象，并将结果存放在targetList中。
+调用[HMS\_AREngine\_ARSession\_GetAllTrackables](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_getalltrackables)函数，检测当前环境中的所有人体追踪对象，并将结果存放在arTrackableList中。
 
 ```
 CHECK(HMS_AREngine_ARSession_GetAllTrackables(mArSession, ARENGINE_TRACKABLE_BODY, arTrackableList));
@@ -294,7 +294,7 @@ CHECK(HMS_AREngine_ARSession_GetAllTrackables(mArSession, ARENGINE_TRACKABLE_BOD
 
 ### 获取可跟踪对象数量
 
-调用[HMS\_AREngine\_ARTrackableList\_GetSize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_artrackablelist_getsize)函数获取当前可跟踪对象数量，结果存放在targetSize中。
+调用[HMS\_AREngine\_ARTrackableList\_GetSize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_artrackablelist_getsize)函数获取当前可跟踪对象数量，结果存放在trackableListSize中。
 
 ```
 int32_t trackableListSize = 0;
@@ -373,7 +373,7 @@ for (int i = 0; i < trackableListSize; i++) {
 
 ### 销毁可跟踪对象列表
 
-可跟踪对象列表targetList不再使用后需销毁：
+可跟踪对象列表arTrackableList不再使用后需销毁：
 
 ```
 HMS_AREngine_ARTrackableList_Destroy(arTrackableList);

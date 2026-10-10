@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/avcodec-h
 title: 头文件
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:43+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:27:04+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c487d97b5f616c2c088fa42bf35baaf13846ba6fe640680b7707620d9d904a77
 ---
 

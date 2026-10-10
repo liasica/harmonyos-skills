@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-union
 title: 使用自定义按钮登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号登录（获取UnionID/OpenID） > 使用自定义按钮登录
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:01+08:00
+scraped_at: 2026-10-11T07:22:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7909ed7a4a123b58100d27159a1ab0d900f49747e6b0243ce3dfb7f8adcb44c0
+content_hash: sha256:889a4e49d93a9cd8c160db9e8ca723950cfb902faadc9d9cf9ea88ce7a9b6f67
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:7909ed7a4a123b58100d27159a1ab0d900f49747e6b0243ce3dfb7f8adc
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/4-6lkFqTTg2zjILcxD7WLA/zh-cn_image_0000002749333546.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/T4ZszqYySamefk9pComcqw/zh-cn_image_0000002784663505.png)
 
 流程说明：
 

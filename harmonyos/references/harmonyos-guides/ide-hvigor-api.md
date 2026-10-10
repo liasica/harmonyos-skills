@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ap
 title: 基础构建能力
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 扩展构建能力 > 扩展构建API > 基础构建能力
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:21+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:09+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:3e42c33c6e244f52d622916b8c252d3bd34ce7847d7e692e3b914ad33be0f443
 ---
 

@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 使用环境
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 使用环境
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:017526f69431b3c7c5bb12b7f775e5782e6c1d92bb11e7e2595997eea804d258
+scraped_at: 2026-10-11T07:23:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:70951f56bc72e02804356de40d9c9e4be2e7bd71c118de96781e09b6ff40f417
 ---
 
-模拟器在本地计算机上创建和运行，能够在运行和调试应用/元服务时保持良好的流畅性和稳定性，但会占用一定的计算机资源，请确保预留充足的系统CPU和内存资源，具体的运行环境要求如下。
+模拟器在本地计算机上创建和运行，能够在运行和调试应用/元服务时保持良好的流畅性和稳定性，但会占用一定的计算机资源，请确保预留充足的系统CPU和内存资源，具体的运行环境要求如下。如果计算机未达到模拟器使用的最低要求配置，可能导致使用体验不佳。
 
 Windows运行环境：
 
 | 类别 | 最低要求 | 推荐 |
 | --- | --- | --- |
 | 操作系统 | Windows 10企业版、专业版或教育版及以上，且操作系统版本不低于10.0.18363 | 最新的64位Windows |
-| CPU | * 具有二级地址转换 (SLAT) 的64位处理器 * CPU支持AES指令集 * CPU支持VM监视器模式扩展（Intel CPU的VT-c技术） * 不支持在虚拟机系统中运行模拟器 * 不支持采用ARM CPU的Windows计算机 * 2017年以后CPU型号。 | * 最新的Intel Core i5、i7、i9系列CPU * 最新的AMD Ryzen 5、6、7、9系列CPU * CPU后缀为H/HK/HX的笔记本电脑或后缀为S/F/K的台式机   由于性能不足，不推荐使用 Intel® Core™ N 系列和 U 系列处理器 |
+| CPU | * 具有二级地址转换 (SLAT) 的64位处理器 * CPU支持AES指令集 * CPU支持VM监视器模式扩展（Intel CPU的VT-x技术） * 不支持在虚拟机系统中运行模拟器 * 不支持采用ARM CPU的Windows计算机 * 2017年以后CPU型号。 | * 最新的Intel Core i5、i7、i9系列CPU * 最新的AMD Ryzen 5、7、9系列CPU * CPU后缀为H/HK/HX的笔记本电脑或后缀为S/F/K的台式机   由于性能不足，不推荐使用 Intel® Core™ N 系列和 U 系列处理器 |
 | RAM | 16GB | 32GB及以上 |
-| 磁盘空间 | 16GB | 32GB及以上 |
+| 磁盘空间 | 16GB | 32GB及以上，推荐使用固态硬盘 |
 | 屏幕 | 屏幕分辨率1280\*800像素以上 | 屏幕分辨率1920\*1080像素以上 |
 | GPU | * 支持OpenGL版本4.1 * 支持2017年以后的集成显卡，或具有4GB或以上显存的独立显卡 * 从DevEco Studio 6.0.0 Release版本开始，AMD的GPU显示驱动要求不低于24.1.1版本 | * 支持OpenGL版本4.1及以上 * 最新的集成显卡 * 最新的具有8GB或以上显存的独立显卡，并配套最新驱动程序 |
 

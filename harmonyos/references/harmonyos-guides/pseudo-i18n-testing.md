@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pseudo-i18n-t
 title: 伪本地化测试
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 本地化测试 > 伪本地化测试
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:43+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:6f56edcac2fc97e17afff01b251020c4310406d76291b52bb1a4b012ff245bb3
 ---
 

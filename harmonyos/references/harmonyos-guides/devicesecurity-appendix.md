@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 附录
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 附录
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:52+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:30+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:146df69bff83a73e841f5796d9e2bf64411edd78fd571200676672db6a0f7e96
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 使用工具栏
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 使用工具栏
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:560eea2171a3a620d366cd57e987529bad2b8f6e6aa3d0ba340ed6037f7f5597
+scraped_at: 2026-10-11T07:23:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:4aae88d6f3e0e27db64e3dbd938f6bce55fe5b2852e913eb697df747f98c69e2
 ---
 
 工具栏上集成了模拟器的各种调试工具和控制选项，其中的扩展菜单栏包含了更加丰富的功能。注意，部分工具栏按键需要在模拟器开机亮屏后才能使用。以下对工具栏的各个按键功能作简要说明：
@@ -15,7 +15,7 @@ content_hash: sha256:560eea2171a3a620d366cd57e987529bad2b8f6e6aa3d0ba340ed6037f7
 | 关闭 | 关闭模拟器。 |
 | 最小化 | 最小化模拟器窗口。 |
 | 更多 | 打开侧边扩展菜单。 |
-| 电源 | 模拟电源，可模拟亮灭屏操作，从DevEco Studio 6.1.0 Beta1版本开始支持。 |
+| 电源 | 模拟电源键，可模拟亮灭屏操作，从DevEco Studio 6.1.0 Beta1版本开始支持。 |
 | 置顶 | 将模拟器置于所有打开窗口的顶层。 |
 | 左旋转 | 将设备屏幕逆时针旋转90度。 |
 | 右旋转 | 将设备屏幕顺时针旋转90度。 |
@@ -31,7 +31,7 @@ content_hash: sha256:560eea2171a3a620d366cd57e987529bad2b8f6e6aa3d0ba340ed6037f7
 | GPS | 打开GPS模拟面板，详情参考[GPS定位](ide-emulator-more-features.md#section81566471211)。 |
 | 虚拟传感器 | 打开虚拟传感器面板，详情参考[虚拟传感器](ide-emulator-more-features.md#section830415558395)。 |
 | 网络 | 打开网络面板，详情参考[网络](ide-emulator-more-features.md#section206461549731)。 |
-| 虚拟相机 | 打开虚拟相机面板，详情参考[3.6-摄像头](ide-emulator-more-features.md#section11725194916439)。 |
+| 虚拟相机 | 打开虚拟相机面板，详情参考[摄像头](ide-emulator-more-features.md#section11725194916439)。 |
 | 设置 | 打开设置面板。可设置模拟器主题、截屏保存路径、模拟器使用语言。 |
 | Bug报告 | 打开Bug报告面板。点击**保存并发送**按钮可以将Bug日志传递给我们。 |
 | 关于 | 打开关于面板。可以查看模拟器相关信息及许可证。 |

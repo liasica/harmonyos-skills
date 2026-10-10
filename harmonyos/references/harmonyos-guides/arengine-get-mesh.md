@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 获取网格扫描信息（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 环境Mesh识别 > 获取网格扫描信息（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:0363afdfd931aaaad7728953d5a1393f4f9704bddaf5df18d99c43b4820e5c01
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:aaa574bcc38f41f00913ea52ca7f59ead1f120a3cb920691c2d586b8c8d7aa5f
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -237,7 +237,7 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
       // ...
     } catch (error) {
       const err: BusinessError = error as BusinessError;
-      logger.error(`Failed to acquire depth information. Code is ${err.code}, message is ${err.message}.`);
+      logger.error(`Failed to acquire mesh information. Code is ${err.code}, message is ${err.message}.`);
     }
   }
 }

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: dialog开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > dialog开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:09+08:00
+scraped_at: 2026-10-11T07:21:13+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:a261255480618cccf05ba7b66251d9f0dd7c47b5eb416c791bf4bb06c48cb147
+content_hash: sha256:2ef2a12fe5597306e353d054f9b2241c80bb6f26e86e925452583ed0a57bf897
 ---
 
 dialog组件用于创建自定义弹窗，通常用来展示用户当前需要或用户必须关注的信息或操作。具体用法请参考[dialog API](../harmonyos-references/js-components-container-dialog.md)。
@@ -69,7 +69,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/RfhGGlGkTh2yvlLtunkIcA/zh-cn_image_0000002749332704.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/08nlRTHxQp2cI_CzyUt5QA/zh-cn_image_0000002784582485.gif)
 
 ## 设置弹窗响应
 
@@ -145,7 +145,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/2nkDixeSTcyQ7jLBM1-G2w/zh-cn_image_0000002749492588.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/2tRB1hyFRrqFoesot5OW5g/zh-cn_image_0000002784662665.gif)
 
 **说明** 
 
@@ -308,4 +308,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/c2fDeC8wRSipoW5q4T-fpg/zh-cn_image_0000002779091647.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/tt1pWmh7QrO0OdKSMgv-hQ/zh-cn_image_0000002755023732.gif)

@@ -3,12 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-de
 title: 使用PBKDF2进行密钥派生(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生 > 使用PBKDF2进行密钥派生(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:45f753bb0c6a6b008af280e80224c4c97cc67138c7c93ea7b56311b9f99a56e1
+scraped_at: 2026-10-11T07:21:27+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:1b457bd2e1cf2464c643585834ec5dd8bb8fbf7feaaae74ac899201857f38b93
 ---
 
 对应的算法规格请查看[密钥派生算法规格：PBKDF2](crypto-key-derivation-overview.md#pbkdf2算法)。
+
+## 在CMake脚本中链接相关动态库
+
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
+```
 
 ## 开发步骤
 

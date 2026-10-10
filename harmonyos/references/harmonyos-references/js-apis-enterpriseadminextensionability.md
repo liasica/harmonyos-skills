@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.EnterpriseAdminExtensionAbility (企业设备管理扩展能力)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.EnterpriseAdminExtensionAbility (企业设备管理扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:25+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:53ce73cc31d90ac754313cfbf6172f8a2c16f45df1f37c49623968fc6012e5fd
+scraped_at: 2026-10-11T07:26:41+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:e79c27013d604a484809ea33344d8e4ff4a8abbbf2e5a4da382c3cf113e72832
 ---
 
 本模块提供[企业设备管理扩展能力](../harmonyos-guides/mdm-kit-term.md#enterpriseadminextensionability企业设备管理扩展能力)，是企业设备管理应用的核心组件。
@@ -725,8 +725,7 @@ onKeyEvent(keyEvent: systemManager.KeyEvent): void
 **示例：**
 
 ```ts
-import { EnterpriseAdminExtensionAbility } from '@kit.MDMKit';
-import { systemManager } from '@kit.MDMKit';
+import { EnterpriseAdminExtensionAbility, systemManager } from '@kit.MDMKit';
 
 export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
 

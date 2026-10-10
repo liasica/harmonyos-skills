@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-parallel-
 title: 并行并发：Concurrency分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 并行并发：Concurrency分析
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:23+08:00
+scraped_at: 2026-10-11T07:23:10+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:9c818e9b2590524270da46d3d82dab9211e168479a820868792fd742197688dc
+content_hash: sha256:a37a662285ca041f4816763557549a9e0522d9a76ce328ab6c555248906fd89e
 ---
 
 ## 功能介绍
@@ -27,30 +27,30 @@ Concurrency模板支持的泳道包括：FFRT、TaskPool、Async NAPI、Async Ar
 
 1. 选择展开某个泳道，可以用options下拉框筛选不同进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/KRFqXJFwQri73WUTI7UHDA/zh-cn_image_0000002701663780.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/xqPCrQszRDenffonK2Q0YQ/zh-cn_image_0000002701663780.png "点击放大")
 2. 框选子泳道中某段时间范围，详情区会出现该时段内，泳道对应执行状态下，并行并发任务的统计信息。
 3. 点击Task Name的跳转按钮可跳转到对应的Task泳道。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/K0zYyJpRT7-owurFT7lnGw/zh-cn_image_0000002701823700.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ugHmshS_TmuHIdRYSexYcQ/zh-cn_image_0000002701823700.png "点击放大")
 
 ## 查看某一个Task的所有状态
 
 1. 选择展开某个泳道，可以用options下拉框筛选不同进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/YXdGKvRgT0Oz1CDaTugEww/zh-cn_image_0000002701823698.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/MG-L86E8R_-fjjgIKfc_Sw/zh-cn_image_0000002701823698.png)
 2. 框选子泳道中某段时间范围，可以看到该Task在框选时间范围内的任务状态。
 3. 点击Task Name的跳转按钮可跳转到对应线程的泳道，可查看在该Task执行时间范围内，trace文件的打点信息，反映的是线程该时段内的函数执行情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/MEkAqomURcCum6H4gFL7nw/zh-cn_image_0000002731542971.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/bCvFkVraRQ-j9EbOtSiYLg/zh-cn_image_0000002731542971.png "点击放大")
 4. 展开**Async ArkTS**泳道，可单独查看ArkTS异步调用任务详情。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/HWJCDp1nQi6BqvSobH8gfg/zh-cn_image_0000002701823702.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/2GhaGDYhTY2lQ2zXBR1xpQ/zh-cn_image_0000002701823702.png "点击放大")
 5. 展开**Async NAPI**泳道，单独查看NAPI异步调用任务详情。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ZHYQ037WQMe2QUtf05xpbg/zh-cn_image_0000002701663778.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/8qf6RizZSfi3tJQWH-ng-A/zh-cn_image_0000002701663778.png "点击放大")
 
 ## 查看Task的某个状态
 
 点击Task子泳道的某个执行节点，**Details**详情区里会出现task在该状态下的详细信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/6h7M-GJ5RbqphvtHLyo0nA/zh-cn_image_0000002701663776.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/E14JFe8DTputNU6uYMBevg/zh-cn_image_0000002701663776.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 账号密码填充
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动填充 > 账号密码填充
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:20+08:00
+scraped_at: 2026-10-11T07:21:24+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:64292d91988bdd1eded7a58d2302bbcfb84cefadabbf142244a3deb565f4472c
+content_hash: sha256:c7500405eed924abe210dd786f8d3b36e068d29247dff9dabca2e574bc846382
 ---
 
 密码保险箱可以在登录或修改密码时，自动填充已保存的用户名和密码。
@@ -22,7 +22,7 @@ content_hash: sha256:64292d91988bdd1eded7a58d2302bbcfb84cefadabbf142244a3deb565f
 
 ## 登录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/xPPHn_hnQGKvjGFlgWFJGw/zh-cn_image_0000002749492926.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/BVVZwEiCT3mCpRoVaby21w/zh-cn_image_0000002755024070.png)
 
 示例代码如下：
 
@@ -120,7 +120,7 @@ function commonButtonStyles() {
 
 ## 修改密码
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/pg0tzIMZRLaBdyfCAFvFhQ/zh-cn_image_0000002779091985.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/TpPmVkfqTwaTfsjsW5FpOA/zh-cn_image_0000002755183958.png)
 
 示例代码如下：
 

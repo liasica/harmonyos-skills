@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-dev-ar
 title: 开发相机应用基础能力(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:21+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:55+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:452c76fd5893ec26f35c2a1633551a99406d719d4902ecbfe9f625a8099b4ae6
 ---
 

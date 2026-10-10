@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/basic-playbac
 title: 基础播控
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 应用接入播控自检 > 应用接入播控检查项详细说明 > 基础播控
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:49+08:00
+scraped_at: 2026-10-11T07:21:55+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a4c8d4
+content_hash: sha256:f3180dd020fdf9d5db428a18bdde6e66b5f91e5cc6f2fe518486b520f6470f5c
 ---
 
 ## 媒体封面
@@ -18,7 +18,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 音乐类媒体内容应提供比例为1:1的方形封面图片，建议分辨率为800px \* 800px（如果应用提供的图片分辨率更大，将被压缩到800px \* 800px 显示），最小分辨率是300px \* 300px。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/WWlDWFggRUeROV6i4VUAEw/zh-cn_image_0000002749333302.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/vVxgsB6dRJqotQ1Sj_w6xg/zh-cn_image_0000002784663263.png)
 
 视频及其他类型的媒体内容除了上述建议分辨率的方形模板外，还支持纵向及横向的矩形封面模板。
 
@@ -26,7 +26,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 横向矩形模板的宽高比为16:9，如大于此比例，将会被自动缩放、裁切到该比例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/0AdZtaGzRAOjInzEzQs90A/zh-cn_image_0000002749493186.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/gCuAxYweR8epSAEx2_c49w/zh-cn_image_0000002755024330.png)
 
 ## 主标题
 
@@ -36,7 +36,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 主标题（[AVMetadata.title](../harmonyos-references/arkts-apis-avsession-i.md#avmetadata10)）用于显示歌曲名、影片名等内容名称，直播应用也可设置直播间名等，用于向用户展示当前正在播放的媒体内容，建议采用简短的字符串。字符串超长时会从右向左滚动显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/ozL1dihJQ8Cov6jWoAL5Fw/zh-cn_image_0000002779092245.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/xl31nvCGSOa4HZkLsCxoog/zh-cn_image_0000002755184218.png)
 
 ## 进度与时间
 
@@ -52,7 +52,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 2. 应用内本身不支持进度调节，可提供当前播放的媒体内容播放时长，不注册进度控制。播控显示第二种不可拖动，但进度随时间自动前进的进度条。
 3. 应用内本身不支持进度调节，且无法获取媒体内容播放时长（如直播），可不提供媒体播放时长，不注册进度控制。播控显示第三种进度条，告知用户当前进度条不可使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/DPTBr3_TTS2f644g6GBnrA/zh-cn_image_0000002778932387.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/xoebKzTPQGeBVdBhYnUUcA/zh-cn_image_0000002784583085.png)
 
 **进度的控制**
 
@@ -90,7 +90,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 副标题用于显示媒体内容的辅助信息，如歌曲的歌手名、影片的发布者信息、剧集/综艺节目的选集信息等。可通过[AVMetadata.subtitle](../harmonyos-references/arkts-apis-avsession-i.md#avmetadata10)或者[AVMetadata.artist](../harmonyos-references/arkts-apis-avsession-i.md#avmetadata10)，选其一设置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/dYXgI-veTvmNnd3nOCCs8A/zh-cn_image_0000002749333304.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/NmAOSN1pTXSWaJHQVD3f-g/zh-cn_image_0000002784663265.png)
 
 ## 滚动歌词
 
@@ -100,7 +100,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 歌曲类媒体内容如有歌词信息，可以选择在副标题区域显示歌词。将当前播放歌曲的全曲歌词内容，按照标准lyric格式拼接为字符串，如[00:25.44]xxx\r\n[00:26.44]xxx\r\n，通过[AVMetadata.lyric](../harmonyos-references/arkts-apis-avsession-i.md#avmetadata10)设置给播控中心。播控中心会自动按照进度，在副标题位置刷新显示，应用不需要实现其余功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/E5LasgaLTf-UkHGq2sIH2g/zh-cn_image_0000002749493188.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/KRQ4UtaxSRGWZCPDruFN8g/zh-cn_image_0000002755024332.png)
 
 ## 媒体音源特殊标识
 
@@ -110,7 +110,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 应用可以提供当前播放的媒体内容的资源标签信息（[AVMetadata.displayTags](../harmonyos-references/arkts-apis-avsession-i.md#avmetadata10)）。根据媒体资源的属性，应用可用提供标签信息以体现该媒体内容的特殊性，如：AudioVivid。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/jspyfxU_SfaZV2T5o-RnHw/zh-cn_image_0000002779092247.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/HwjRoHK_RUW8iq9XqyEnAQ/zh-cn_image_0000002755184220.png)
 
 ## 播放/暂停
 
@@ -120,7 +120,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 应用需支持播控中心播放暂停，在接收到播控的播放/暂停回调，或者用户在应用内播放暂停，需上报当前的播放状态与进度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/_mtAgObpTDSF_JZJLIkLYw/zh-cn_image_0000002778932389.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/PJ3UcuqpROil3ox-WsYvlg/zh-cn_image_0000002784583087.png)
 
 ## 上下一首/集
 
@@ -130,7 +130,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 应用按照内部实现，接入上下一首/集，在接收到播控的上下一首/集回调，或者用户在应用切歌切集时，需上报切换后新的媒体信息，播放状态、进度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Q-EkQWwDSEyS5r9woRgvXA/zh-cn_image_0000002749333306.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/5Xc_Ch1-RNaD05rGZ98Atw/zh-cn_image_0000002784663267.png)
 
 ## 按钮置灰
 
@@ -138,7 +138,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 **自验证关注点：** 播放过程中，进入播控中心，查看不支持的功能按钮是否已置灰。请按照自检表按应用类型接入必需的控制指令，以保障用户的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/ui6jNFVXQzSimNRowZ86IA/zh-cn_image_0000002749493190.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/n6ojWZKpTrSSGGmGS7jSVA/zh-cn_image_0000002755024334.png)
 
 应用按照内部实现，按需注册支持的播放控制指令。对于未注册的播放控制指令，在播控中心会显示为上图置灰样式，明确告知用户当前指令该应用不支持。具体实现可参考[处理不支持的控制命令](avsession-access-scene.md#处理不支持的控制命令)。
 
@@ -150,7 +150,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 用户通过点击播控卡片，应跳转到应用的具体业务页，如：音乐/听书/视频的播放详情页，直播间页，新闻阅读播放页，浏览器具体tab页。具体实现可参考[媒体会话提供方-开发步骤](using-avsession-developer.md#开发步骤)的第3步。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/BRCMlh85Tt67naMZnnSIow/zh-cn_image_0000002779092249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/EmsfhZugSVmEw1RinGFi9g/zh-cn_image_0000002755184222.png)
 
 ## 收藏
 
@@ -160,7 +160,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 音乐/听书类应用，如应用内支持收藏/喜欢功能，可按需适配播控的收藏功能，用户播放过程中可以通过播控中心点击收藏/取消收藏。应用适配收藏功能，接收到播控的收藏/取消收藏的回调，或者用户在应用内点击收藏/取消收藏，均需上报当前播放内容的收藏状态，保证应用与播控的显示一致。具体实现可参考[实现收藏功能](avsession-access-scene.md#实现收藏功能)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/7eHtBkPWQjutsYkQe9W9UA/zh-cn_image_0000002778932391.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/NxpjqLc9QLC8SKtaSEPcAA/zh-cn_image_0000002784583089.png)
 
 ## 循环模式
 
@@ -180,7 +180,7 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 例：收到播控切换循环模式回调参数为列表循环，表示当前的循环模式，应用内下一个循环模式为心动模式，可上报为随机播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/M-5Tk9-bR6WaZE7ss-XNoA/zh-cn_image_0000002749333308.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/MBxrPbPfSHiMkN-NffsXrA/zh-cn_image_0000002784663269.png)
 
 ## 快进/快退
 
@@ -192,4 +192,4 @@ content_hash: sha256:90ce7c48ce8111967cb48713ffad71cc3ffb41c1c01d0fa23147dd9599a
 
 可选择快进快退的时间长度：[10s、15s、30s](../harmonyos-references/arkts-apis-avsession-e.md#skipintervals11)。如下图显示。用户通过播控中心快进/快退，或在应用内快进快退，应用都需要通知播控当前调节完毕的状态与进度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ueyK4c68R7mFENqCSJW2fA/zh-cn_image_0000002749493192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Mn3S8SIiSHqYSYqLRJvWEA/zh-cn_image_0000002755024336.png)

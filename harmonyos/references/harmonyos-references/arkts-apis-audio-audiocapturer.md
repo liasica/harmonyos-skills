@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioCapturer)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioCapturer)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c15f5bcb4f1e72a8f050d7a49c283cba4fc7d72690c56b4ab6f30d3f31e5ff7f
+scraped_at: 2026-10-11T07:26:57+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:c2425b00a91b491c26fccce5993d0ed9e373b3c40bd4bd24d05de9620d968234
 ---
 
 提供音频采集的相关接口。
@@ -502,7 +502,7 @@ audioCapturer.release().then(() => {
   console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
   console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer.state}`);
 }).catch((err: BusinessError) => {
-  console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
+  console.error(`AudioFrameworkRecLog: Capturer release: ERROR: ${err}`);
 });
 ```
 

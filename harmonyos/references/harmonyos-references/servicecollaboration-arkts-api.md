@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/serviceco
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:58+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:21+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:b2e0fc06b5f3b39301a4d82408e5a59111af5c615e1519e1219c2225ccbb7b2c
 ---
 

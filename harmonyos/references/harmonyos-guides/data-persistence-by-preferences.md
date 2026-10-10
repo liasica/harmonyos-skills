@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过用户首选项实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过用户首选项实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:53+08:00
+scraped_at: 2026-10-11T07:20:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c59aa4ef1dde55b81f125b4c23dc2d5dcde8c198beb1a0ab3eb9e4ddb058fd94
+content_hash: sha256:7e1e472179d61ed32e77a96f31937cfd0d03efd2c0dc6a8c7abd5dabd2a22e88
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:c59aa4ef1dde55b81f125b4c23dc2d5dcde8c198beb1a0ab3eb9e4ddb05
 
 **图1** 用户首选项运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Kv2lNnH_RsCSLQqh4RPZiQ/zh-cn_image_0000002749331744.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/XjhMZiOJREa16s70zZH63A/zh-cn_image_0000002784581633.jpg)
 
 ## 存储模式说明
 

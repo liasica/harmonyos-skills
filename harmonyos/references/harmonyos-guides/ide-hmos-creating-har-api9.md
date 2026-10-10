@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-crea
 title: 开发发布与管理共享包
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布与管理共享包
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:28+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:15+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:dbbdb143cadb76f7700949b571e27372a176f60ea0764d10c1efbcba5e779723
 ---
 

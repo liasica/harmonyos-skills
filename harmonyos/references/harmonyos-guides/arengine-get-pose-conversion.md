@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 运动跟踪介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 运动跟踪 > 运动跟踪介绍
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:55+08:00
+scraped_at: 2026-10-11T07:22:01+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:4292c4ad89712dfe5fe25ef66ea134d9215d9ec8b612db2a4391f0f18428d015
+content_hash: sha256:a96acdff4114a9843876a113a11b88ff051c960352f4b516e0fd5412e62a7b78
 ---
 
 AR Engine通过获取终端设备摄像头数据，结合图像特征和惯性传感器（IMU），计算设备位置（沿x、y、z轴方向位移）和姿态（绕x、y、z轴旋转），实现6自由度（6DoF）运动跟踪能力。
@@ -14,7 +14,7 @@ AR Engine通过获取终端设备摄像头数据，结合图像特征和惯性�
 
 **图1** 6DoF运动跟踪能力示意图（红色线代表设备运动方向）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/SulBBDq5QMaDmxbsVt4Q2w/zh-cn_image_0000002749333396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/-Vxa0rYFQjuyUUQllcFiTQ/zh-cn_image_0000002784663355.png)
 
 ## 世界坐标系与位姿示意
 
@@ -22,14 +22,14 @@ AR Engine通过获取终端设备摄像头数据，结合图像特征和惯性�
 
 **图2** 世界坐标系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/drIfUGnMSoq2tYhB8Yfdeg/zh-cn_image_0000002749493278.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/uWp-HKvxQTG7ViAyOMCOmg/zh-cn_image_0000002755024422.png)
 
 AR Engine会自动完成世界坐标系初始化。
 
-在AR Engine中，设备位姿由一个7维向量描述，包括旋转量![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/6PQtGNVARi6hcSJ2SGeO0g/zh-cn_image_0000002779092337.png)和位移量![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/frDakiRqRCu-RFLgAIXzJg/zh-cn_image_0000002778932479.png)。其中旋转量![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/osL8AEawThm33fDHS_vZhA/zh-cn_image_0000002749333398.png)是一组四元数，描述了设备相对于坐标原点的旋转状态；位移量![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Vy0wdh_bQ--ZI98f_aG_BA/zh-cn_image_0000002749493280.png)是一组三维向量，描述了设备相对于坐标原点的平移状态，如下图所示。
+在AR Engine中，设备位姿由一个7维向量描述，包括旋转量![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/guQywPXwSKK2uBXkpN_DQQ/zh-cn_image_0000002755184310.png)和位移量![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/RIizVkD_T3ihKkfpIMMLQg/zh-cn_image_0000002784583177.png)。其中旋转量![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/N0HVpSTXRKK1QczPG20sqA/zh-cn_image_0000002784663357.png)是一组四元数，描述了设备相对于坐标原点的旋转状态；位移量![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/wt79mx7QTje11GHvtGHFGQ/zh-cn_image_0000002755024424.png)是一组三维向量，描述了设备相对于坐标原点的平移状态，如下图所示。
 
 **图3** 设备位姿的旋转和平移变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/2kNreSNWTlK6WrtNl__4Lw/zh-cn_image_0000002779092339.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/B1yNAI0oTriMQj3MSwFdDw/zh-cn_image_0000002755184312.png)
 
 通过旋转分量和平移分量，可以描述设备在空间中任意时刻的位姿状态。

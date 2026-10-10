@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/game-controll
 title: 监听游戏手柄的轴和按键事件（C/C++）
 breadcrumb: 指南 > 应用服务 > Game Controller Kit（游戏控制器服务） > 监听游戏手柄的轴和按键事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:07+08:00
+scraped_at: 2026-10-11T07:22:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:795a39ce5ca5e5b82054172a3c846915aa963e04da16931b25b29ee11236754b
+content_hash: sha256:ef66e43a01b6fc5b69f442f0062b4d20d2f5556412e23fece1f40f093b701cd1
 ---
 
 **说明** 
@@ -20,7 +20,7 @@ Game Controller Kit提供游戏手柄轴事件和按键事件的监听能力。�
 
 Game Controller Kit支持的手柄键位参考图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/KzOUwBvBQb6OFueZMoQJoQ/zh-cn_image_0000002778932765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/DFQrVqviT2OT3K5WW0FCaA/zh-cn_image_0000002784583463.png)
 
 ## 接口说明
 

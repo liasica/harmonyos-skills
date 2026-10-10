@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdoc-
 title: "@param"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 标准标签 > @param
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:01+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:a05f6482e62ad895f1bfddbcb88df72bdfc2938b36f68a411e3e3cacba9f8cab
 ---
 

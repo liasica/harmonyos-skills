@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-a
 title: 错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:52+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:15+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c1c5a477e5c22416041ca786182c34c7c1b099101f4d844749c1d5ce4d5186d5
 ---
 

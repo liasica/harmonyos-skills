@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ex
 title: 实验特性
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实验特性
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:20+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:5547e38441d0c34e18e10ad220bb6ddcc9c657b781a15cc617e477ea9733bf26
+scraped_at: 2026-10-11T07:23:08+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:27834397bf7ebb2b363f00440fcf9f902982bbab26386d303bdf918e54b0af2b
 ---
 
 为了打造更敏捷流畅的使用体验，新版本的Hvigor带来了一系列的编译构建性能优化实验特性，这些优化特性将显著提高工程的编译速度，降低峰值内存占用等。由于部分优化方案仍处于试验性阶段，您可能在这些特性中体验到效率的提升，也可能在特定场景中遇到待完善的问题，因此，这些特性提供了开关，用户可以根据业务需求开启后使用。
@@ -125,9 +125,12 @@ content_hash: sha256:5547e38441d0c34e18e10ad220bb6ddcc9c657b781a15cc617e477ea973
 
 ## 通过Hvigor执行ohpm install
 
-从DevEco Studio 6.0.0 Beta3版本开始，Settings中增加一个开关**Enable ohpm execution by hvigor**，该开关有两个使用场景，具体如下。
+从DevEco Studio 6.0.0 Beta3版本开始，Hvigor增加一个开关**Enable ohpm execution by hvigor**，该开关有两个使用场景，具体如下。
 
-**开启方式：**点击**File >** **Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable ohpm execution by hvigor**。
+**开启方式**
+
+* DevEco Studio：点击**File >** **Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable ohpm execution by hvigor**。
+* 命令行：在构建命令中添加参数-p enforce-ohpm=true。
 
 **使用场景**一
 
@@ -136,17 +139,17 @@ content_hash: sha256:5547e38441d0c34e18e10ad220bb6ddcc9c657b781a15cc617e477ea973
 1. 按照以上方式开启开关**Enable ohpm execution by hvigor**。
 2. 在工程级build-profile.json5的module字段下，添加工程中不存在的模块，如testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/YOhLeZ5USQyNhFhaodJ2TQ/zh-cn_image_0000002731542069.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/oBInyyoWSfu_U8C5l2z7_Q/zh-cn_image_0000002731542069.png)
 3. 调用excludeNodeByName方法，排除不存在的模块testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/gOpBz9hZT6GbETvx93lh2g/zh-cn_image_0000002701822798.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Tq1MBWfASLqSMHQJtpgjiw/zh-cn_image_0000002701822798.png)
 4. 执行构建成功。
 
 **使用场景二**
 
 调用[setDependenciesOpt](ide-build-expanding-context.md#section18789410129)、[setOverrides](ide-build-expanding-context.md#section469812496459)等方法动态修改oh-package.json5中的依赖信息后，执行sync或build等操作时，DevEco Studio会执行两次ohpm install操作，开启开关后，Hvigor仅执行一次ohpm install，可提升构建的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/k7qmKcQNRgOT8kr8A2mHaA/zh-cn_image_0000002701662876.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/wqxaEbAqS-2oqAGKzeB2fQ/zh-cn_image_0000002701662876.png)
 
 ## 通过IClang提升C++增量编译效率
 
@@ -208,6 +211,9 @@ content_hash: sha256:5547e38441d0c34e18e10ad220bb6ddcc9c657b781a15cc617e477ea973
 
 **优化结果：**提升sync阶段C++编译效率。
 
-**开启方式**：点击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable C++ syncNative compilation**。
+**开启方式****：**
+
+* DevEco Studio：点击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable C++ syncNative compilation**。
+* 命令行：在构建命令中添加参数--syncNative。
 
 **可能影响**：如果在hvigorfile.ts脚本的compileNative任务阶段有自定义插件或任务，开启开关后，由于compileNative任务不会被执行，会导致自定义插件或任务未执行。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.multimedia.drm (数字版权保护)"
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > ArkTS API > @ohos.multimedia.drm (数字版权保护)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:39+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-10-11T07:27:19+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:e3efbab4c940c07f0e27b44689f90d52807bc04d96c2df7c3f3b6a630c1baa2b
 ---
 

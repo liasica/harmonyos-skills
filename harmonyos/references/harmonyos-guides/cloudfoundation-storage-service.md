@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 云存储
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云存储
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:41+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:11+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2cb748682943107c40103ae177bb32396f0496f37fd5a7afea723757cb8ba917
 ---
 

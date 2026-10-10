@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-user
 title: 开发环境搭建
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:27+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:14+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:8d1e4c5cd97a89d50bd9c8ae2526a7019261f122554c7b185493bd9733140daf
 ---
 

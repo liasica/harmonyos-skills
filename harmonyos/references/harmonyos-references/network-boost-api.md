@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: Network Boost Kit（网络加速服务）
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:52+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:15+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:934fc0ce413fea33aaf7999e42b69f92590d8d95d0746a9cac7fc82abec382fb
 ---
 

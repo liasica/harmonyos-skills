@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-pref
 title: "@typescript-eslint/prefer-nullish-coalescing"
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-nullish-coalescing
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:30+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:18+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:8e6e9b15d3d8b0641d23b3e22d4db42646076d6295f91ee3e4a78904fef86511
 ---
 

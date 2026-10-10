@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 识别平面语义（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面语义 > 识别平面语义（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:2a8a95d8578cf7327b903b403d351717eafe94cf8b8241252612856cb391b33e
+scraped_at: 2026-10-11T07:22:01+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:cbc6e6ac570c91817a9012325ebc0ab40e815c58096551c1f92ae00e6f8ce70a
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -143,7 +143,7 @@ struct ARTarget {
         type: arEngine.ARType.WORLD,
         planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
         powerMode: this.params?.powerMode,
-        semanticMode: 3,
+        semanticMode: arEngine.ARSemanticMode.PLANE,
         poseMode: this.params?.poseMode,
         depthMode: this.params?.depthMode,
         meshMode: this.params?.meshMode,

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-infor
 title: 网络信息查询与连接管理
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 连接网络开发实践 > 网络信息查询与连接管理
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:32+08:00
+scraped_at: 2026-10-11T07:21:36+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:8f5ebcf0aff41a01b63e054fc1b6556df02cd344ad55d5f95bba19415c09ca5e
+content_hash: sha256:fee88ca9037f72cdb8832a90c80b7d67bf7a79a9343c713f322b7340f9091e2a
 ---
 
 ## 概述
@@ -26,13 +26,13 @@ content_hash: sha256:8f5ebcf0aff41a01b63e054fc1b6556df02cd344ad55d5f95bba19415c0
 
 **图 1** 连接到指定网络效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/QrwItv4IQe-y2drZkgSH5g/zh-cn_image_0000002779092075.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/JC-p32dkRIiusA6sATMuqQ/zh-cn_image_0000002755184048.gif)
 
 ### 实现方案
 
 连接到指定Wi-Fi场景主要通过[@ohos.wifiManager (WLAN)](../harmonyos-references/js-apis-wifimanager.md)模块结合[@ohos.net.connection (网络连接管理)](../harmonyos-references/js-apis-net-connection.md)模块相关API来实现。通过@ohos.wifiManager模块检查Wi-Fi是否启用，获取系统扫描的Wi-Fi列表，选中指定Wi-Fi后发起连接请求；通过@ohos.net.connection模块检测网络连通性，判断是否需要进行登录认证（如 Portal 认证）才能正常访问网络。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/OcD5eVe9SxWfXBRdy3F0eg/zh-cn_image_0000002778932217.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/WhkiCqaGTRORTAM_RYZpbw/zh-cn_image_0000002784582915.png)
 
 ### 开发步骤
 
@@ -274,7 +274,7 @@ content_hash: sha256:8f5ebcf0aff41a01b63e054fc1b6556df02cd344ad55d5f95bba19415c0
 
    从Wi-Fi切换为蜂窝网络后视频播放场景效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/CP5NotJ9SnW2SRdsoZ2ZMg/zh-cn_image_0000002749333134.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/tcVeeNb8SUGDx-TyBu8ncA/zh-cn_image_0000002784663095.png)
 3. 订阅网络丢失事件。
 
    通过[on('netLost')](../harmonyos-references/js-apis-net-connection.md#onnetlost)方法可以订阅网络丢失的事件通知，使用Toast提示用户网络已断开。
@@ -290,7 +290,7 @@ content_hash: sha256:8f5ebcf0aff41a01b63e054fc1b6556df02cd344ad55d5f95bba19415c0
 
    网络断开时效果图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/FRuNQoGjQvmlDaYiTmXM5w/zh-cn_image_0000002749493018.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/iI3C4_gzRVes5PLiPWQBYA/zh-cn_image_0000002755024162.png)
 
    当网络断开时，将继续播放视频缓存；缓存播放完毕后，将触发Video组件的onError方法。若此时网络仍未连接，需提示用户检查网络。
 
@@ -309,7 +309,7 @@ content_hash: sha256:8f5ebcf0aff41a01b63e054fc1b6556df02cd344ad55d5f95bba19415c0
 
    播放错误时效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/1u1KAtIcQ-qeatZpd2E3mA/zh-cn_image_0000002779092077.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/-vxlhtHfS3SpWCd9_xc82A/zh-cn_image_0000002755184050.png)
 4. 订阅网络状态变化通知。
 
    接下来需要调用[register()](../harmonyos-references/js-apis-net-connection.md#register)接口，用来订阅指定的网络状态变化通知，该接口需在on()方法调用之后使用。例如，若指定的网络可用，将触发on('netAvailable')、on('netCapabilitiesChange')回调；若超时时间内网络不可用，将触发on('netUnavailable')回调。若断网，将触发on('netLost')回调。
@@ -371,7 +371,7 @@ content_hash: sha256:8f5ebcf0aff41a01b63e054fc1b6556df02cd344ad55d5f95bba19415c0
 
 **图 2** 获取Wi-Fi MAC地址效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/s3Xmcvb7S-WBdvZ-RQvshA/zh-cn_image_0000002778932219.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/C6G9EyeaTCuWZ-_WdOaG5A/zh-cn_image_0000002784582917.gif)
 
 ### 实现方案
 
@@ -517,7 +517,7 @@ content_hash: sha256:8f5ebcf0aff41a01b63e054fc1b6556df02cd344ad55d5f95bba19415c0
 * 蜂窝网络信号强度
 * 网络时延
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/G3nd1jK9QWGarP8m9XWlDg/zh-cn_image_0000002749333136.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/iarIomjJRjSYB765dRm7xA/zh-cn_image_0000002784663097.png)
 
 ### 实现方案
 

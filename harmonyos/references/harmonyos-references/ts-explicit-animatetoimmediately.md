@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explic
 title: 显式动画立即下发 (animateToImmediately)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 显式动画立即下发 (animateToImmediately)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:08+08:00
+scraped_at: 2026-10-11T07:24:37+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a4ad0dda1e1ccf4f83e9a7c9de474d44399e448c4c683ffed5ad6370ae3432ab
+content_hash: sha256:b1a1b0a8a6175a31efb4ceb9efa0f7158e5af71a0c131f98312a1b8bc1558f4a
 ---
 
 animateToImmediately接口提供[显式动画](ts-explicit-animation.md)立即下发功能。典型应用场景包括：页面切换时优先展示关键过渡效果、主线程耗时期间提前刷新可见区域UI等。同时加载多个属性动画的情况下，使用该接口可以立即执行闭包代码中状态变化导致的过渡动效。
@@ -102,4 +102,4 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ZVXUdeH-QI6wii6S4WMH4w/zh-cn_image_0000002749495008.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/WDVpgAkSQECWtp8p6WA3rA/zh-cn_image_0000002755026010.gif)

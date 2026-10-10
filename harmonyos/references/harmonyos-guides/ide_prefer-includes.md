@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-in
 title: "@typescript-eslint/prefer-includes"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-includes
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:22:58+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ae67b47f0f11406be0ac384f2516e0c93cdf35555327a68af1bafd6b50a0a54d
 ---
 

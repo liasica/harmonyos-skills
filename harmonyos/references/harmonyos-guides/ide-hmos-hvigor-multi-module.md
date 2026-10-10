@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 多模块管理
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置构建流程 > 多模块管理
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:34+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:140eb087e9f53dfbbfd7adfd5c60692befd125226ac2573c9ece8227c2c5f5be
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: 模型优化
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:01+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:28+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:a6463770c9c9fdd1844a2505ad1c9fd51247cf349cb076a075f60bd62d8f460a
 ---
 

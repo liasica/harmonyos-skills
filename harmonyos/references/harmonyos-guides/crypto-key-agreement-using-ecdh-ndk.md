@@ -3,12 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-ag
 title: 使用ECDH进行密钥协商(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥协商 > 使用ECDH进行密钥协商(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6cfd2350891ff7bbc92589495a8b1b3d6a1bb554463e89a7bb3f00e2af3de122
+scraped_at: 2026-10-11T07:21:27+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:448ce7fd56653dcb0ebe1b70dcd85dfcc8b8f4958b5fe9f806f4e6a220bf6670
 ---
 
 对应的算法规格请查看[密钥协商算法规格：ECDH](crypto-key-agreement-overview.md#ecdh)。
+
+## 在CMake脚本中链接相关动态库
+
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
+```
 
 ## 开发步骤
 

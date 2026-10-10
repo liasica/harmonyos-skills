@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driver-develo
 title: Driver Development Kit（驱动开发服务）
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:06+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:42+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2548ee2ac736c64d92231083b06a5f76230a34298fb5de3421345aa77a07aa0d
 ---
 

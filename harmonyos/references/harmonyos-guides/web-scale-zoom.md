@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-scale-zoo
 title: 使用Web组件管理网页缩放
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件管理网页缩放
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:13+08:00
+scraped_at: 2026-10-11T07:21:16+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0691fba9db3d89452c72ad474f4e8b24cc178a5583fb9e275ecea570ae106e45
+content_hash: sha256:57abb55850b1c9d630a442c06d8a4fb181d5d3d6d5c07afe4e895dc638afaf1b
 ---
 
 Web组件支持手势缩放、鼠标滚轮、键盘缩放，以方便用户调整到舒适的显示大小。并对应用提供监听、控制页面缩放比例的功能，以便应用实现个性化的视觉效果。
@@ -209,7 +209,7 @@ struct WebComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/iy3ykAqgRdyC6tZh6Y7osA/zh-cn_image_0000002779091789.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/G81V3FNQQxue0WIVxekzyw/zh-cn_image_0000002755023874.gif)
 
 ### 缩放页面到目标比例:
 
@@ -260,4 +260,4 @@ struct WebComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Z3s8fhoxTnyNU4Z8AiVwLg/zh-cn_image_0000002778931931.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Tly1UPYpQ0qW6aNzmy91CQ/zh-cn_image_0000002755183762.gif)

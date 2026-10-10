@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-examp
 title: 模型轻量化示例
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 模型轻量化示例
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:23+08:00
+scraped_at: 2026-10-11T07:22:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f98c126113c92236f122a7b1fc78f6928d36675b0c21a3c3f7ac42dd56965ff3
+content_hash: sha256:402eca453f2ce9b1456aa0d7243325f14809ba5a0b4326dfda2c24f6b407b2ae
 ---
 
 ## TensorFlow Quant\_INT8-8无训练量化Demo
@@ -29,7 +29,7 @@ content_hash: sha256:f98c126113c92236f122a7b1fc78f6928d36675b0c21a3c3f7ac42dd569
 
 "dopt\_tf\_py3/demo/quant8-8/notrain/tensorflow\_mnist"中存有量化后的pb模型和量化配置文件，运行demo后生成的文件如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/rXeOOTj5SXa0sGq7MFhbIw/zh-cn_image_0000002749334062.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/5-CNXafQSSGcKQaEdP60DQ/zh-cn_image_0000002784664015.png)
 
 ## PyTorch Quant\_INT8-8无训练量化Demo
 
@@ -54,7 +54,7 @@ content_hash: sha256:f98c126113c92236f122a7b1fc78f6928d36675b0c21a3c3f7ac42dd569
 
 "dopt\_pytorch\_py3/demo/quant8-8/notrain/pytorch\_mnist/"中存有PyTorch无训练量化示例文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/czXps0q7RoamVvLN4ojxWQ/zh-cn_image_0000002749493948.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/EYphjyK1QjycX0BGILJIMw/zh-cn_image_0000002755025082.png)
 
 ## ONNX Quant\_INT8-8无训练量化Demo
 
@@ -270,7 +270,7 @@ if __name__ == "__main__":
 
 分类网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_cls\_imagenet，包含5个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/11EleIxwR8qgjvcGWKiYhQ/zh-cn_image_0000002779093005.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/8DPPYmOHRhK-_Y3_ARJb7g/zh-cn_image_0000002755184970.png)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -333,7 +333,7 @@ if __name__ == "__main__":
 
 检测网络Demo位于"tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_det\_coco"，包含6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/IWM2EwTwQEaCy16M7lCq9g/zh-cn_image_0000002778933149.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/FRW_JwaLQaKt3im9iDJuww/zh-cn_image_0000002784583837.png)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项。
@@ -411,7 +411,7 @@ if __name__ == "__main__":
 
 分割网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_seg\_voc，包含 6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/DLKkPOt9QXG7Yl_GXPNmyg/zh-cn_image_0000002749334064.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VqNVlmm_Qj-bRZ-S1vgS5w/zh-cn_image_0000002784664017.png)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项
@@ -503,7 +503,7 @@ if __name__ == "__main__":
 
 分类网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_cls\_imagenet\_pytorch，包含5个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/j-rrOoRuTLWLy5jrvcjwtA/zh-cn_image_0000002749493950.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Ivodpzo_QIuFyW2keVoX4A/zh-cn_image_0000002755025084.png)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -523,7 +523,7 @@ if __name__ == "__main__":
 
 分割网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_seg\_voc\_pytorch，包含 6个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ezAQTfzYQuG25sLrBx_Vcg/zh-cn_image_0000002779093007.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/UtdIhwm8TcmilMc-hxPhcQ/zh-cn_image_0000002755184972.png)
 
 * blocks.so：搜索空间文件
 * pre\_train.yaml：预训练的配置项

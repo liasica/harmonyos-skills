@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-kit-guide
 title: Ads Kit（广告服务）
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:37+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:08+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7614a363b510766537568f36fb459c4476030a0d085afd753e388970543d127a
 ---
 

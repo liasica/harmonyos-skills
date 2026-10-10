@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: OH_NativeBundle_ElementName
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 结构体 > OH_NativeBundle_ElementName
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:71df43a211d5f828c8c11182d719e30041d166b4c814d0822a05eedb7245db5e
+scraped_at: 2026-10-11T07:23:39+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:c598557cc2f239aa9ba6e2bc11b97ca8a263a4fec42040bdcb0d0bbd45687264
 ---
 
 ```c
-typedef struct {...} OH_NativeBundle_ElementName
+typedef struct OH_NativeBundle_ElementName {...} OH_NativeBundle_ElementName
 ```
 
 ## 概述

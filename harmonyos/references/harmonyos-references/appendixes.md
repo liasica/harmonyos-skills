@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/appendixe
 title: 附录
 breadcrumb: API参考 > 标准库 > 附录
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:34+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:28:52+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:992d58e468a8b6b940e37b3ab9521580bb0e1a00851c7dfb4e96464b95620e3b
 ---
 

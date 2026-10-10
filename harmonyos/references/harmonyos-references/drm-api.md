@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/drm-api
 title: DRM Kit（数字版权保护服务）
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:57+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:27:18+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c5279edbd5cb6b3925ff07efa6df5ecdcd2a73fd257720f7bcd44d8a86e04d37
 ---
 

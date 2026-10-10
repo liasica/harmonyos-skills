@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.util (util工具函数)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util (util工具函数)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:06+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-10-11T07:24:01+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:6569c1fe0453b1afa0092bf9a460f6cf45cde6077e360c84c1f9a95642f7f653
 ---
 

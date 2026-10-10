@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/media-mul
 title: multimedia
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > multimedia
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:09+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:27:32+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:340f7d672ebea79f8bf70d85f826e043a0ccfa57b920be470f416fae23f77d55
 ---
 

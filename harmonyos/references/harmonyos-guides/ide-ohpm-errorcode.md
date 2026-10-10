@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-erro
 title: 错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:24+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:12+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:dbe608252c1c01a1944101f3dae6be0a34b45f67753655165ed9e31cdf8a3e0d
 ---
 

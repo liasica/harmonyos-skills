@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Enums
 category: harmonyos-references
-scraped_at: 2026-10-01T07:39:53+08:00
+scraped_at: 2026-10-11T07:27:46+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c32807da46595a9881e9fbbeecea80e6865fd7fcc890d4678ab9980d241b4341
+content_hash: sha256:0fed23260bceb3ce38e36c247c4b25733cf931e2a8ed9d73717ea5c632b596bb
 ---
 
 **说明** 
@@ -195,7 +195,7 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
 
 **说明** 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ODB6uhB-Q0eMWBxVHyo3rQ/zh-cn_image_0000002749336008.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/F1gEQtMMTZWCDh1CmaVUkQ/zh-cn_image_0000002784665825.png)
 
 如图所示圆环为路径，箭头指示路径的方向，p为区域内任意一点，蓝色线条为点p出发的射线，黑色箭头所指为对应填充规则下使用蓝色填充路径的结果。WINDING填充规则下，射线与路径的交点计数为2，不为0，点p被涂色；EVEN\_ODD填充规则下，射线与路径的相交次数为2，是偶数，点p不被涂色。
 

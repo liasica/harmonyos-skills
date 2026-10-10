@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: Vulkan平台
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > 外插模式 > Vulkan平台
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:59+08:00
+scraped_at: 2026-10-11T07:22:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c05e8e287e6a76948b4770f3b9978b53231011be88d05d6fcb3719a508b81c36
+content_hash: sha256:efb89b2a907555a2975bf77382534665d4c93d2d18635801499e6248604090a7
 ---
 
 ## 业务流程
 
 基于Vulkan图形API平台，超帧外插模式的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/sIn3G0ufRE26TSjbiRbtwg/zh-cn_image_0000002779092439.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LE6O7CsqRdK-Ni1NvYGbWw/zh-cn_image_0000002755184412.png)
 
 1. 用户进入超帧适用的游戏场景。
 2. 游戏应用调用[HMS\_FG\_CreateContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_createcontext_vk)接口创建超帧上下文实例。如超帧上下文实例创建失败，则无需进入步骤6到步骤9的真实帧、预测帧交替渲染送显的循环流程，只需逐帧对场景进行渲染送显即可。

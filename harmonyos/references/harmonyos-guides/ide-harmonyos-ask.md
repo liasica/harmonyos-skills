@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-harmonyos
 title: 智能问答
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 智能问答
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:25+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:13+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:b73a54c4c38a3b427dcfcfb4c42014277ed779051317ec479f7ee289df20978c
 ---
 

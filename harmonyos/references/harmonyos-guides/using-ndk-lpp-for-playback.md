@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-lpp
 title: 使用LPP播放器播放视频 (C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用LPP播放器播放视频 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b8db86cce8e29094498f5a7405b92e3d52b66191241d81007aefc1be7471335d
+scraped_at: 2026-10-11T07:21:59+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:2abcf91906c4efe126651aa9be13626b549214c5e354b0329b59a26ea34f0801
 ---
 
 从API version 20开始，使用LPP（low power player）播放器可以通过低功耗实现从媒体源到渲染的视频通路能力。本指南通过播放本地视频的示例，讲解如何使用LowPowerPlayer播放视频。
@@ -18,7 +18,7 @@ LowPowerPlayer播放器不支持纯视频和纯音频播放。纯音频低功耗
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/hjO-WAGVSiSneEZHeh2O9Q/zh-cn_image_0000002778932457.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/gp3gXTzGRFqgcVx0lPVeKg/zh-cn_image_0000002784583155.png)
 
 播放流程包含：创建（created）、初始化（initialized）、就绪（ready）、解码（decoding）和渲染（rendering）五个阶段。
 
@@ -189,4 +189,4 @@ target_link_libraries(sample PUBLIC ${BASE_LIBRARY})
    调用[OH\_LowPowerAudioSink\_Reset](../harmonyos-references/capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosink_reset)或[OH\_LowPowerVideoSink\_Reset](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_reset)重置资源，允许更换资源，重新配置播放器。
 9. 退出播放。
 
-   调用[OH\_LowPowerAudioSink\_Destroy](../harmonyos-references/capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosink_destroy)或[OH\_LowPowerVideoSink\_Destroy](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_destroy)销毁实例，AVPlayer进入'RELEASED'状态，退出播放。
+   调用[OH\_LowPowerAudioSink\_Destroy](../harmonyos-references/capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosink_destroy)或[OH\_LowPowerVideoSink\_Destroy](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_destroy)销毁实例，LPP播放器进入'RELEASED'状态，退出播放。

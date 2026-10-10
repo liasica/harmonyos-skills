@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 消息回执
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 消息回执
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:31f8d046189e958f617dcef3b20973ef60663203aa1cefe0bc01f2386139bf79
+scraped_at: 2026-10-11T07:28:37+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:af37d00aaa72a53057c6990f5d5bd32ecac0507730b63989c3c837ea5d6d97e9
 ---
 
 ## 功能介绍
@@ -30,7 +30,7 @@ content_hash: sha256:31f8d046189e958f617dcef3b20973ef60663203aa1cefe0bc01f238613
 
 | 参数名 | 取值描述 | 样例 |
 | --- | --- | --- |
-| X-HUAWEI-CALLBACK-ID | 消息头鉴权参数，可选字段。当回执配置中回调用户名与回调秘钥均已配置时为必选参数。 | timestamp=1563\*\*\*\*\*1261; nonce=a07bfa17-6d82-4b53-a9a2-07c\*\*\*\*\*eef1; value=E4Ye\*\*\*\*\*HZ6592U8B9S37238E+Hwtjfrmpf8AQXF+c=  · timestamp为毫秒级时间戳  · nonce为UUID随机数  · value为待加密字符串（value示例中为了展示各字段，实际上是由timestamp、nonce、回调用户名拼接而成，不需要“+”），使用回调秘钥进行HmacSHA256加密后，经Base64编码后获得，具体请参见[示例代码](../harmonyos-guides/push-msg-receipt.md#配置回执参数) |
+| X-HUAWEI-CALLBACK-ID | 消息头鉴权参数，可选字段。当回执配置中回调用户名与回调秘钥均已配置时为必选参数。 | timestamp=1563\*\*\*\*\*1261; nonce=a07bfa17-6d82-4b53-a9a2-07c\*\*\*\*\*eef1; value=E4Ye\*\*\*\*\*HZ6592U8B9S37238E+Hwtjfrmpf8AQXF+c=  · timestamp为毫秒级时间戳  · nonce为UUID随机数  · value为待加密字符串（value示例中为了展示各字段，实际上是由timestamp、nonce、回调用户名拼接而成，不需要“+”），使用回调秘钥进行HmacSHA256加密后，经Base64编码后获得，具体请参见[示例代码](../harmonyos-guides/push-msg-receipt.md#配置回执参数)。 |
 
 ### Request Body
 

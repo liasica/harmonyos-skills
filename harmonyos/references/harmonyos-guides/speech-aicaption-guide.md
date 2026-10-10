@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/speech-aicapt
 title: AI字幕控件
 breadcrumb: 指南 > AI > Speech Kit（场景化语音服务） > AI字幕控件
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:42+08:00
+scraped_at: 2026-10-11T07:22:48+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:7f8036a6b0db5f1345b0d4adb1dc5a49f5a0809e423ffb7c2f751254c8b480db
+content_hash: sha256:6ce904bc7b0b28a134535535dbfe6f89b89bddfeff91cd804820513b5fc8a4f9
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ AI字幕控件应用广泛，例如在用户不熟悉音频源语言或者静音
 
 本章节将向您介绍如何使用AI字幕组件[AICaptionComponent](../harmonyos-references/speech-aicaptioncomponent.md)和[AICaptionController](../harmonyos-references/speech-aicaptioncomponent.md#aicaptioncontroller)展示AI字幕，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/hNgedTCES92aSO24XP3IoA/zh-cn_image_0000002749334214.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/bfQL9TtoRqCZ0HBYD9b4Fg/zh-cn_image_0000002784664169.jpg)
 
 ## 接口说明
 

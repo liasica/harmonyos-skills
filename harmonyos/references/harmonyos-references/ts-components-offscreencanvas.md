@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: OffscreenCanvas
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > OffscreenCanvas
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5dc9dce61f15b9962e8c6f3cec578073eb25b96271019044bb4d02ef90dd3d88
+scraped_at: 2026-10-11T07:24:35+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:32653fac020f3a789badc4cab7cb6df391b145de3dee6cb5ab050a27b6be305f
 ---
 
 OffscreenCanvas组件用于绘制自定义图形。
@@ -16,7 +16,7 @@ OffscreenCanvas组件用于绘制自定义图形。
 
 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-OffscreenCanvas无法在ServiceExtensionAbility中使用，ServiceExtensionAbility中建议使用[绘制模块](arkts-apis-graphics-drawing.md)进行离屏绘制。
+OffscreenCanvas使用时依赖UI上下文，无法在没有加载UI上下文时使用（如ServiceExtensionAbility，MDM企业设备管理服务等可能无UI页面的场景下使用需注意此约束），此类无UI上下文的场景建议使用[绘制模块](arkts-apis-graphics-drawing.md)进行离屏绘制。
 
 ## 子组件
 
@@ -114,7 +114,7 @@ struct OffscreenCanvasPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Hijg_TUWS16RsSWjMtDcvA/zh-cn_image_0000002779093991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/pfa5nT-KQOuuJ4ShPMy53Q/zh-cn_image_0000002755185820.png)
 
 ### height
 
@@ -152,7 +152,7 @@ struct OffscreenCanvasPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/b5XVrTB1RryhKdo_gvETLw/zh-cn_image_0000002778934135.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/SohIQclzTYGTo7IBWcmskg/zh-cn_image_0000002784584687.png)
 
 ## 方法
 
@@ -214,7 +214,7 @@ struct OffscreenCanvasPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Yv901WCaTz2dy7-Vt6gBbQ/zh-cn_image_0000002749335052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/VQB3L-2yS6OJ6joHOtYGaQ/zh-cn_image_0000002784664869.png)
 
 ### getContext10+
 
@@ -295,7 +295,7 @@ struct OffscreenCanvasExamplePage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/GfKrizjjRHmtHUJpc3apmg/zh-cn_image_0000002749494936.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/zfhq6RCaTeOXH9y7AnVALQ/zh-cn_image_0000002755025938.png)
 
 ## OffscreenCanvas支持并发线程绘制
 
@@ -408,4 +408,4 @@ workerPort.onmessage = (e: MessageEvents) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/TgiW6RifRCershYPKTchfQ/zh-cn_image_0000002779093993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/tJwZxfnfTDOlSbXGMrHHIA/zh-cn_image_0000002755185822.png)

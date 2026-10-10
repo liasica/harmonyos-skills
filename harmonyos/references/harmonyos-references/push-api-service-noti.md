@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 服务通知
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 服务通知
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:39+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:c2b8295f1f9216dc0c9f8f37f96999872a93832e26ccf9b2537d2c2ce99a1942
+scraped_at: 2026-10-11T07:28:37+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:e1051f878de15b77022120a474bac83396e88a8c31c04cafd4eb2c3bdb7db902
 ---
 
 ## 功能介绍
@@ -38,7 +38,7 @@ content_hash: sha256:c2b8295f1f9216dc0c9f8f37f96999872a93832e26ccf9b2537d2c2ce99
 
 | 参数 | 取值描述 | 样例 |
 | --- | --- | --- |
-| Authorization | 鉴权方式：  **JWT方式**  详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。  **说明：**  · 调用服务通知API接口必须使用**PS256**算法。  · 建议JWT令牌过期时间设置为3600秒，有效期内可以复用。  - Bearer后面拼接空格，再拼接获取的鉴权信息。 | Bearer eyJr\*\*\*\*\*OiIx---\*\*\*\*.eyJh\*\*\*\*\*iJodHR--\*\*\*.QRod\*\*\*\*\*4Gp---\*\*\*\* |
+| Authorization | 鉴权方式：  **JWT方式**  详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。  **说明：**  · 调用服务通知API接口必须使用**PS256**算法。  · 建议JWT令牌过期时间设置为3600秒，有效期内可以复用。  · Bearer后面拼接空格，再拼接获取的鉴权信息。 | Bearer eyJr\*\*\*\*\*OiIx---\*\*\*\*.eyJh\*\*\*\*\*iJodHR--\*\*\*.QRod\*\*\*\*\*4Gp---\*\*\*\* |
 
 ### Request Body
 

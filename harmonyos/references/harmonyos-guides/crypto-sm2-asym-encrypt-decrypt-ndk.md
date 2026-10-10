@@ -3,12 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-as
 title: 使用SM2非对称密钥加解密(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用SM2非对称密钥加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:568c2397bbfd700f187c5d7bb98fc5e0344c3a69151c498b49f0ce19d29e4f1d
+scraped_at: 2026-10-11T07:21:26+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:75493e37ff06b1a9fcd7a91d10062f6a945f359b6dfc337209dd8b87012f1b04
 ---
 
 对应的算法规格请查看[非对称密钥加解密算法规格：SM2](crypto-encryption-decryption.md#sm2)。
+
+## 在CMake脚本中链接相关动态库
+
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
+```
 
 **加密**
 

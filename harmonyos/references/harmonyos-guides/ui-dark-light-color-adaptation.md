@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-dark-light
 title: 应用深浅色适配
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 主题设置 > 应用深浅色适配
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:07+08:00
+scraped_at: 2026-10-11T07:21:11+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:035be8865e42361dc3fd21ce5220bc49187a942b5fb181839d19cd53cad21727
+content_hash: sha256:53284d28ec91fcfcc7d2678eed50d88289a58a838d7554a450d2c929eca69c9d
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:035be8865e42361dc3fd21ce5220bc49187a942b5fb181839d19cd53cad
 
      图1 resources目录结构示意
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/-bMcJdvTRQ2MOr34Iyratg/zh-cn_image_0000002778931729.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/5KAwws0kRwGNNUA9XS_CLA/zh-cn_image_0000002755183558.png)
 
      例如，开发者可在这两个color.json中定义同名配色定义并赋予不同的色值。
 
@@ -195,7 +195,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
    * 如果应用工程dark目录下有深色资源，则系统组件在深色模式下会自动切换成为深色。
    * 如果应用工程dark目录下没有任何深色资源，则系统组件在深色模式下仍会保持浅色体验。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/TTxmtcSuTbCf21AV2b_VPQ/zh-cn_image_0000002749332646.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/vZ2XPs1iSXOYkSZ6xayKEQ/zh-cn_image_0000002784582427.png)
 
 如果应用全部都是由系统组件/系统颜色开发，且想要跟随系统切换深浅色模式时，请参考以下示例修改代码来保证应用体验。
 

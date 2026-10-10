@@ -3,26 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/desktop-quick
 title: 应用接入快捷栏
 breadcrumb: 指南 > 系统 > 基础功能 > Desktop Extension Kit（桌面拓展服务） > 应用接入快捷栏
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3559e3741ca6bd2d40bb35b77e040087edcfcc17e5b06158785371d245cad1e4
+scraped_at: 2026-10-11T07:21:40+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:f1eda535a3b1115b90d870ceaa566c4644deae6f9fcaad82a577e0b3c9b00ef0
 ---
 
 应用接入快捷栏之后，可自定义应用的右键菜单分组、应用的窗口分组、应用的图标和进度条。
 
 * 从API版本26.0.0开始，支持查询是否支持接入快捷栏和自定义快捷栏应用的图标和进度条。
-* 从API版本6.1.1(23)开始，支持自定义快捷栏应用的窗口分组。
+* 从API版本6.1.0(23)开始，支持自定义快捷栏应用的窗口分组。
 * 从API版本6.0.2(22)开始，支持自定义快捷栏应用的菜单分组。
 
 ## 场景介绍
 
 快捷栏指的是PC/2in1设备的屏幕底部的图标区域，具体如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/cTc8W013SBKRjeNS5_PL8A/zh-cn_image_0000002749333160.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/jILQeWgvTcmH4AFxxu-8Fw/zh-cn_image_0000002784663121.png)
 
 应用接入快捷栏之后，快捷栏的应用图标菜单会显示应用自定义的菜单项，应用可以添加、删除、更新、查询菜单项，具体效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/xWR_JNlFTAqOM9YZ-OmpcA/zh-cn_image_0000002749493044.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Mp_-6GEjRe-J5qjlSxVTmA/zh-cn_image_0000002755024188.png)
 
 ## 接口说明
 
@@ -351,7 +351,7 @@ Desktop Extension Kit相关API仅在PC/2in1设备上生效。
       }
       try {
         // 删除分组id为1的分组
-        await quickBarManager.deleteCustomCategory(context, 3);
+        await quickBarManager.deleteCustomCategory(context, 1);
       } catch (error) {
         console.error(`deleteCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
       }

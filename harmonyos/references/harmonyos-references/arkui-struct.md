@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-str
 title: 结构体
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:46+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-10-11T07:25:09+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:6db09136c65306d9dc2b9d3c95efd20450d1a7454543ea1daa69b0c7f0c79a5b
 ---
 

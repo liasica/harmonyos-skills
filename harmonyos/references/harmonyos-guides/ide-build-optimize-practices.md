@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-opt
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:20+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:08+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7903cf295cdfc9afd9a9d3e20bfae9e4091788537347322f84ec9dd084abd81b
 ---
 

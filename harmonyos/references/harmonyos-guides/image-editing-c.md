@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-editing
 title: 图片编辑和处理
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:24+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:57+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2a406d07c15e8de2c4b37d81bb8e407fe94fcb887bf7a087b86a0a33d00c313a
 ---
 

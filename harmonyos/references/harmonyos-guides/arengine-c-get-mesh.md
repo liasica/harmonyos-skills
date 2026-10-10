@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ge
 title: 获取网格扫描信息（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 环境Mesh识别 > 获取网格扫描信息（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:24cebcfd94c726bcf1179847c7bf47d7e191b1b14bc0551d251799ae6f057ed1
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:fbd73654c441909f42484197fb584c83ae51a79e551b0dff39d15868de830085
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
@@ -138,7 +138,7 @@ CHECK(HMS_AREngine_ARSession_Configure(mArSession, arConfig));
 
 ### 获取当前环境中的mesh信息
 
-调用[HMS\_AREngine\_ARFrame\_AcquireSceneMesh](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arframe_acquirescenemesh)函数，获取当前环境中的mesh信息，并将结果存放在sceneMesh中。
+调用[HMS\_AREngine\_ARFrame\_AcquireSceneMesh](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arframe_acquirescenemesh)函数，获取当前环境中的mesh信息，并将结果存放在outSceneMesh中。
 
 ```
 AREngine_ARSceneMesh *outSceneMesh = nullptr;

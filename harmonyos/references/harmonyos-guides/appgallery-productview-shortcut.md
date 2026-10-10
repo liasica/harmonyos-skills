@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 应用内快捷方式
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 应用内快捷方式
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:38+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:09+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:11baf747c1257da9b04e69732329dd946b5ef763bda5bb462886755c8e06ec10
 ---
 

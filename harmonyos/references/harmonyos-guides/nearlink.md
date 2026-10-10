@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink
 title: 星闪
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 星闪
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:31+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-10-11T07:21:35+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:d4ee760f5eae4700110f9a0476fb927b8e310439e6f705bdc70481da9faa2c7d
 ---
 

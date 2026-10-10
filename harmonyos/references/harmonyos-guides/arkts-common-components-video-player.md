@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 视频播放 (Video)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 视频播放 (Video)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:03+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:b9578ea604646fa42e6acd748050628594deb13394d7479603ce3d4670a9823c
+scraped_at: 2026-10-11T07:21:07+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:c7126b33299ce5f86dfa5284661b90ebd73714892a0414e7581ad7b27478e5ff
 ---
 
 Video组件用于播放视频文件并控制其播放状态，常用于短视频和应用内部视频的列表页面。当视频完整出现时会自动播放，用户点击视频区域则会暂停播放，同时显示播放进度条，通过拖动播放进度条指定视频播放到具体位置。具体用法请参考[Video](../harmonyos-references/ts-media-components-video.md)。
@@ -26,7 +26,7 @@ Video组件支持加载本地视频和网络视频。具体的数据源配置请
 
   加载本地视频时，需在工程资源的rawfile目录中放置视频文件，如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/__Kj2UgUSM6-uMwmoyqb9Q/zh-cn_image_0000002778931413.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/fzPbrwzURuqOn_rttDbGNw/zh-cn_image_0000002755183322.png)
 
   再使用资源访问符$rawfile()引用视频资源。
 

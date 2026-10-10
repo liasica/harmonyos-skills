@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 邀请组队
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 邀请组队
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:20+08:00
+scraped_at: 2026-10-11T07:22:26+08:00
 doc_updated_at: 2026-06-05
-content_hash: sha256:a1f491ea300d419bb333291763f196cde7cc458911cce7a13ed606a427be4d69
+content_hash: sha256:69ea74a9b07f3307c8cc15cb1ec2d820482f37f4cb6953c4c8e186586ee82427
 ---
 
 ## 注册碰一碰事件
@@ -14,11 +14,11 @@ content_hash: sha256:a1f491ea300d419bb333291763f196cde7cc458911cce7a13ed606a427b
 
 **图1** 横屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/uCRTCfPUQfG4wpXcs56ZRQ/zh-cn_image_0000002779092941.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/O4suF_GnRh2tVGG55avr8Q/zh-cn_image_0000002755184908.png)
 
 **图2** 竖屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/rMPY3Z3RS46KVp16KNXeKA/zh-cn_image_0000002778933085.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/AWWQ_zOYRCKh9ypJygGivw/zh-cn_image_0000002784583775.png)
 
 ## 注册单向分享能力
 

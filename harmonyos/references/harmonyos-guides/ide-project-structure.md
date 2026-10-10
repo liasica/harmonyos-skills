@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-project-s
 title: 工程目录结构介绍
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 工程目录结构介绍
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:05+08:00
+scraped_at: 2026-10-11T07:22:53+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:8a5b0d3f54a552543ad0eb0ab2d319aa77b46d83dd0552dd667fd8b69e2df83d
+content_hash: sha256:2729c38351370ac0d9d8c9f8f113d69cfd7dff389bfd0e42efcc28c8196978fd
 ---
 
 ## ArkTS工程目录结构（Stage模型）
 
 ArkTS Stage模型支持API Version 10及以上版本，其工程目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/LiuB2A5OT063VfxOhlKytw/zh-cn_image_0000002701822846.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/8EtDx2-ARpa3NnCysPbP5w/zh-cn_image_0000002701822846.png)
 
 * **AppScope > app.json5**：应用的全局配置信息。
 * **entry：**应用/元服务模块，编译构建生成一个HAP。
@@ -46,7 +46,7 @@ ArkTS Stage模型支持API Version 10及以上版本，其工程目录结构如�
 
 C++ Stage模型支持API Version 10以上版本，支持使用ArkTS和C++进行开发，其工程目录结构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/yZ0kE149SBaNrbDekuvKdw/zh-cn_image_0000002731542117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/a5wl7XnbQDSny7NxxI-e0A/zh-cn_image_0000002731542117.png)
 
 * **entry**：应用模块，编译构建生成一个HAP。
   + **libs > {abi}**：用于存放.so文件，此目录下.so文件默认打包到产物包中。其中，{abi}为设备CPU架构类型（如arm64-v8a）。
@@ -80,7 +80,7 @@ C++ Stage模型支持API Version 10以上版本，支持使用ArkTS和C++进行�
 
 JS工程只支持FA模型，其工程目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/d_J3Qp6CS5mGjuff20S7yA/zh-cn_image_0000002731382145.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/ok2mnxcLSIq1IeFvlAXnfA/zh-cn_image_0000002731382145.png)
 
 * **entry：**应用/元服务模块，编译构建生成一个HAP。
   + **src > main > js**：用于存放js源码。

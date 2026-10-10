@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/avsession
 title: AVSession Kit（音视频播控服务）
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:46+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:27:07+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:95a9b0c1bb56b3031b0bb49328d5a0cb4a628b76ccb8f57ad2a37918cfb1127c
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-generate
 title: 码图生成
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 码图生成
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:28+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:01+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:575f94ceb3fd127219acd6cc0cc3f539d5c24fc17fe0c341e078128ab314f8d5
 ---
 

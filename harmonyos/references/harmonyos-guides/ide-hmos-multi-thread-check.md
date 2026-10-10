@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-mult
 title: 方舟运行时检测
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 方舟运行时检测
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:34+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:c4ee138b9aef4e1d0a5395a092226fedc66018ed69ecf67fe58f2ada5fa3a8cc
+scraped_at: 2026-10-11T07:23:21+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:689d677005da0ccbbb6b3f9c6d54e1b53763acdfcd7ab131be44cc65d2dac237
 ---
 
 ## 方舟多线程检测
@@ -19,12 +19,12 @@ content_hash: sha256:c4ee138b9aef4e1d0a5395a092226fedc66018ed69ecf67fe58f2ada5fa
 可通过以下方式开启方舟多线程检测。
 
 * **方式一**
-  1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/WwaB3lP3SMaRjllBfbZKxQ/zh-cn_image_0000002749324020.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Zzl4i5mXRs6hcGxxkgaq8Q/zh-cn_image_0000002749324024.png "点击放大")按钮打开配置界面。
+  1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/ndSwpFeWQdmD1EMQdI-EIQ/zh-cn_image_0000002779608827.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1I2AuOA2TVaAwZXamFkJlQ/zh-cn_image_0000002779728979.png "点击放大")按钮打开配置界面。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/JEpfpPmiTSS4maaceE4jfA/zh-cn_image_0000002749483898.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/dEepfAjyRjmwWoCZHZpKLA/zh-cn_image_0000002779728981.png)
   2. 在配置界面点击**故障分析**，勾选**多线程检测**。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/MeWg0Cw9QPWUrbvI-91okg/zh-cn_image_0000002778923107.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CgPatMiLRr-yR59OMnAamw/zh-cn_image_0000002750009910.png)
 
 * **方式二**
 
@@ -39,7 +39,7 @@ content_hash: sha256:c4ee138b9aef4e1d0a5395a092226fedc66018ed69ecf67fe58f2ada5fa
 1. 运行或调试当前应用。
 2. 当程序出现多线程安全问题时，会弹出Crash log信息，点击信息中的链接即可跳转至引起多线程安全问题的代码处。关于多线程安全问题的分析方法请参考[使用Node-API接口产生的异常日志/崩溃分析](use-napi-about-crash.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/dSmJ1MCxS5Km17pp705n2g/zh-cn_image_0000002778923109.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/081491JgSz2Cy_30b9N6fQ/zh-cn_image_0000002779728975.png)
 
 ## 方舟native模块加载异常信息增强
 
@@ -50,12 +50,12 @@ content_hash: sha256:c4ee138b9aef4e1d0a5395a092226fedc66018ed69ecf67fe58f2ada5fa
 可以通过以下两种方式开启方舟native模块加载异常信息增强。
 
 * 方式一
-  1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/MUrAUWNjTkKAElYM9MlwMg/zh-cn_image_0000002779082961.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ED_40KzORjm-p1Y_c7NmGQ/zh-cn_image_0000002749483890.png "点击放大")按钮打开配置界面。
+  1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/cWei27WBR4iXsMW7KK63Fw/zh-cn_image_0000002779608833.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/KCPSgPqrRue7EQoXU43FOg/zh-cn_image_0000002779728971.png "点击放大")按钮打开配置界面。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/L1cgc-YDSYC6YyazdIewLw/zh-cn_image_0000002778923111.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/aqxhaGwFS3GaXV4Vrd9VtQ/zh-cn_image_0000002750169810.png)
   2. 在配置界面点击**故障分析**，勾选**增强错误信息**。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/mMPbs9uuQoKc5ILmTdAZmw/zh-cn_image_0000002749324016.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/CTu6Vy0eRqSecV2T182FtQ/zh-cn_image_0000002779608823.png)
 
 * 方式二
 
@@ -70,4 +70,4 @@ content_hash: sha256:c4ee138b9aef4e1d0a5395a092226fedc66018ed69ecf67fe58f2ada5fa
 1. 运行或调试当前应用。
 2. 当程序出现因native模块加载导致的报错信息时，会显示更详细准确的错误信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/n9kyyS02R7GZzdk7RK5LpQ/zh-cn_image_0000002749483894.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/VZHzQ440QDGmiwC9T-gseg/zh-cn_image_0000002779728977.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 线性布局 (Row/Column)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 线性布局 (Row/Column)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:02+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:d3d5366ea6cd742c33fb0a6cb3a446b71069f31b7f7c808f2b2676f79b1b82f7
+scraped_at: 2026-10-11T07:21:05+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:9f7ca40b4023234c7a9ac05b8f026a54b7b16c46c6b5bdb20c8cae22bb417202
 ---
 
 ## 概述
@@ -18,11 +18,11 @@ content_hash: sha256:d3d5366ea6cd742c33fb0a6cb3a446b71069f31b7f7c808f2b2676f79b1
 
 **图1** Column容器内子元素排列示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/eLMyFc1oTsuojsTo3ONEvA/zh-cn_image_0000002749491988.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/iIhIS1jOQYKgjrWqaV4zTQ/zh-cn_image_0000002784662145.png)
 
 **图2** Row容器内子元素排列示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/D4riSSFGQt2tT60VwAHNkg/zh-cn_image_0000002779091045.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/YJvDT0AnStOgf2g5SUYTrw/zh-cn_image_0000002755023212.png)
 
 ## 基本概念
 
@@ -40,7 +40,7 @@ content_hash: sha256:d3d5366ea6cd742c33fb0a6cb3a446b71069f31b7f7c808f2b2676f79b1
 
 **图3** Column容器内排列方向的间距图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/9QqnGLWoRfqyYMnnr_nziA/zh-cn_image_0000002778931189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/sjCz3L7fSieL3wCHrvfyqA/zh-cn_image_0000002755183098.png)
 
 ```typescript
 Column({ space: 20 }) {
@@ -51,13 +51,13 @@ Column({ space: 20 }) {
 }.width('100%')
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/m8rLc_5ISJykEu1cyicSEA/zh-cn_image_0000002749332106.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/NPedsV0BSwiBwiwaMzV8YQ/zh-cn_image_0000002784581963.png)
 
 ### Row容器内排列方向上的间距
 
 **图4** Row容器内排列方向的间距图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/ES-bOLxcT7-6vdMfqsjw-A/zh-cn_image_0000002749491990.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/7vPfRXPxQ_moVgdXaVbpBA/zh-cn_image_0000002784662147.png)
 
 ```typescript
 Row({ space: 35 }) {
@@ -68,7 +68,7 @@ Row({ space: 35 }) {
 }.width('90%')
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/cve1_iUpSCCIOx4IoYOGDA/zh-cn_image_0000002779091047.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/6KjmA0ZrRL-bftrpSKsj0A/zh-cn_image_0000002755023214.png)
 
 ## 布局子元素在主轴上的排列方式
 
@@ -78,7 +78,7 @@ Row({ space: 35 }) {
 
 **图5** Column容器内子元素在垂直方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/6aKBXfpvRSC2yOVQAebRUA/zh-cn_image_0000002778931191.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/EBzr_1QaSrONUvT3K2s3nQ/zh-cn_image_0000002755183100.png)
 
 * justifyContent(FlexAlign.Start，默认值)：元素在垂直方向首端对齐，第一个元素与行首对齐，同时后续的元素与前一个对齐。
 
@@ -95,7 +95,7 @@ Row({ space: 35 }) {
   }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Start)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/kXFK9SzuSlaiy5tgb3ZwmQ/zh-cn_image_0000002749332108.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/msRhDkAaRsa1wq8tJrJtxg/zh-cn_image_0000002784581965.png)
 * justifyContent(FlexAlign.Center)：元素在垂直方向中心对齐，第一个元素与行首的距离与最后一个元素与行尾距离相同。
 
   ```typescript
@@ -111,7 +111,7 @@ Row({ space: 35 }) {
   }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Center)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/q2Q2DPlzRNqS8XGSo9oDTA/zh-cn_image_0000002749491992.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/p63VW4lZRGSpY4MA8xS0Zw/zh-cn_image_0000002784662149.png)
 * justifyContent(FlexAlign.End)：元素在垂直方向尾部对齐，最后一个元素与行尾对齐，其他元素与后一个对齐。
 
   ```typescript
@@ -127,7 +127,7 @@ Row({ space: 35 }) {
   }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.End)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/5HU9mVWBRxSoDt6rCUazng/zh-cn_image_0000002779091049.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/aEVSbxkdSPux55ehrZ0wMw/zh-cn_image_0000002755023216.png)
 * justifyContent(FlexAlign.SpaceBetween)：垂直方向均匀分配元素，相邻元素之间距离相同。第一个元素与行首对齐，最后一个元素与行尾对齐。
 
   ```typescript
@@ -143,7 +143,7 @@ Row({ space: 35 }) {
   }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceBetween)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/UVkdw6vsTtKCzqmkt4FXtA/zh-cn_image_0000002778931193.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/vQeQ4ajwRNmQp6gSZmrnJw/zh-cn_image_0000002755183102.png)
 * justifyContent(FlexAlign.SpaceAround)：垂直方向均匀分配元素，相邻元素之间距离相同。第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。
 
   ```typescript
@@ -159,7 +159,7 @@ Row({ space: 35 }) {
   }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceAround)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/t1UQZNehRPCH5Ru_8K8PMg/zh-cn_image_0000002749332110.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/_723rJgqQZK_WVCDFaJ21g/zh-cn_image_0000002784581967.png)
 * justifyContent(FlexAlign.SpaceEvenly)：垂直方向均匀分配元素，相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。
 
   ```typescript
@@ -175,13 +175,13 @@ Row({ space: 35 }) {
   }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceEvenly)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/0YWhlDooQlq_TtHEWeQVQw/zh-cn_image_0000002749491994.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/FDfyRsNgQsCCrB93ULOpPg/zh-cn_image_0000002784662151.png)
 
 ### Row容器内子元素在水平方向上的排列
 
 **图6** Row容器内子元素在水平方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/-cOilv2xRNm_0_W29herng/zh-cn_image_0000002779091051.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Ey_MDQqCSby_RKcBmeLoOQ/zh-cn_image_0000002755023218.png)
 
 * justifyContent(FlexAlign.Start，默认值)：元素在水平方向首端对齐，第一个元素与行首对齐，同时后续的元素与前一个对齐。
 
@@ -198,7 +198,7 @@ Row({ space: 35 }) {
   }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Start)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/3-C3tuqQRH6Wua3kRqSp2Q/zh-cn_image_0000002778931195.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/SGOq7INETTm082z1xpjZ7Q/zh-cn_image_0000002755183104.png)
 * justifyContent(FlexAlign.Center)：元素在水平方向中心对齐，第一个元素与行首的距离与最后一个元素与行尾距离相同。
 
   ```typescript
@@ -214,7 +214,7 @@ Row({ space: 35 }) {
   }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Center)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/HIOD8hKTQFKjU7Ua7ZBDsw/zh-cn_image_0000002749332112.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/jMmmH_c6RmG1rrkIFCqTNA/zh-cn_image_0000002784581969.png)
 * justifyContent(FlexAlign.End)：元素在水平方向尾部对齐，最后一个元素与行尾对齐，其他元素与后一个对齐。
 
   ```typescript
@@ -230,7 +230,7 @@ Row({ space: 35 }) {
   }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.End)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/UVEoVh9ATqSN-nODdlCn7Q/zh-cn_image_0000002749491996.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/67U2LEICR7umxb8-z__smw/zh-cn_image_0000002784662153.png)
 * justifyContent(FlexAlign.SpaceBetween)：水平方向均匀分配元素，相邻元素之间距离相同。第一个元素与行首对齐，最后一个元素与行尾对齐。
 
   ```typescript
@@ -246,7 +246,7 @@ Row({ space: 35 }) {
   }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceBetween)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/mrxKCMRYQvCxtXomse-a1Q/zh-cn_image_0000002779091053.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/DBtCOM6GSQC6s5iMTqrn-A/zh-cn_image_0000002755023220.png)
 * justifyContent(FlexAlign.SpaceAround)：水平方向均匀分配元素，相邻元素之间距离相同。第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。
 
   ```typescript
@@ -262,7 +262,7 @@ Row({ space: 35 }) {
   }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceAround)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Lf0pDcAmQg6FciVCm7G26Q/zh-cn_image_0000002778931197.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/LzD79GEWQFGYCB1NEc_Xrw/zh-cn_image_0000002755183106.png)
 * justifyContent(FlexAlign.SpaceEvenly)：水平方向均匀分配元素，相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。
 
   ```typescript
@@ -278,7 +278,7 @@ Row({ space: 35 }) {
   }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceEvenly)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/wpPDyH7mSWqis97Tg0cQMw/zh-cn_image_0000002749332114.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/YZ8an-JHTmKUjxJJIsQlkg/zh-cn_image_0000002784581971.png)
 
 ## 布局子元素在交叉轴上的对齐方式
 
@@ -290,7 +290,7 @@ Row({ space: 35 }) {
 
 **图7** Column容器内子元素在水平方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/IE3Tqr7XRYCB-Toido0fkQ/zh-cn_image_0000002749491998.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/992CqiW3SR62ufTDOO5TUg/zh-cn_image_0000002784662155.png)
 
 * HorizontalAlign.Start：子元素在水平方向左对齐。
 
@@ -307,7 +307,7 @@ Row({ space: 35 }) {
   }.width('100%').alignItems(HorizontalAlign.Start).backgroundColor('rgb(242,242,242)')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZqX3AymtQriiCg2wgZdtsA/zh-cn_image_0000002779091055.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/KuH1yIeXTF-ZM31h3LmeYQ/zh-cn_image_0000002755023222.png)
 * HorizontalAlign.Center（默认值）：子元素在水平方向居中对齐。
 
   ```typescript
@@ -323,7 +323,7 @@ Row({ space: 35 }) {
   }.width('100%').alignItems(HorizontalAlign.Center).backgroundColor('rgb(242,242,242)')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/a6AfOhv0QX6j8mvjdk7a5Q/zh-cn_image_0000002778931199.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/I73YVieZSlKFQTto3_UBig/zh-cn_image_0000002755183108.png)
 * HorizontalAlign.End：子元素在水平方向右对齐。
 
   ```typescript
@@ -339,13 +339,13 @@ Row({ space: 35 }) {
   }.width('100%').alignItems(HorizontalAlign.End).backgroundColor('rgb(242,242,242)')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/r4QkLOmoQ0WgnKqgXKB8xA/zh-cn_image_0000002749332116.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/l9Xrj4QFSSeGeJ9Y9wfFRg/zh-cn_image_0000002784581973.png)
 
 ### Row容器内子元素在垂直方向上的排列
 
 **图8** Row容器内子元素在垂直方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/SPhvQZVvTwSSCE81LdCORw/zh-cn_image_0000002749492000.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ZFf6MrZtQrumQTG1--cgwA/zh-cn_image_0000002784662157.png)
 
 * VerticalAlign.Top：子元素在垂直方向顶部对齐。
 
@@ -362,7 +362,7 @@ Row({ space: 35 }) {
   }.width('100%').height(200).alignItems(VerticalAlign.Top).backgroundColor('rgb(242,242,242)')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/dJot5rCHTw-cVcfSZk47Cg/zh-cn_image_0000002779091057.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/KdhtUw4pTlOLyaSqxo4rJw/zh-cn_image_0000002755023224.png)
 * VerticalAlign.Center（默认值）：子元素在垂直方向居中对齐。
 
   ```typescript
@@ -378,7 +378,7 @@ Row({ space: 35 }) {
   }.width('100%').height(200).alignItems(VerticalAlign.Center).backgroundColor('rgb(242,242,242)')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/685JuFX4TnaRNuK1mUidQA/zh-cn_image_0000002778931201.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/2li8XXIxRnexdI6d_5Zmrg/zh-cn_image_0000002755183110.png)
 * VerticalAlign.Bottom：子元素在垂直方向底部对齐。
 
   ```typescript
@@ -394,7 +394,7 @@ Row({ space: 35 }) {
   }.width('100%').height(200).alignItems(VerticalAlign.Bottom).backgroundColor('rgb(242,242,242)')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/1Yf8AgoEQ8OvVG-_Z2Rl9w/zh-cn_image_0000002749332118.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/F-jIwPJuT7OlLDO-zps-Xg/zh-cn_image_0000002784581975.png)
 
 ## 自适应拉伸
 
@@ -418,11 +418,11 @@ struct BlankExample {
 
 **图9** 竖屏（自适应屏幕窄边）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/MPr3__fNRouG9jvP4R-CGg/zh-cn_image_0000002749492002.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ayRa98L3ReuQYI-sw6KglA/zh-cn_image_0000002784662159.png)
 
 **图10** 横屏（自适应屏幕宽边）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/hOiNJeRBScmnYZYPkmAXqA/zh-cn_image_0000002779091059.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/XVoBY6hqS-aIwNXAxTOVjw/zh-cn_image_0000002755023226.png)
 
 ## 自适应缩放
 
@@ -479,11 +479,11 @@ struct BlankExample {
 
   **图11** 横屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/n7wcCUToSWKHAyv73X6Utg/zh-cn_image_0000002778931203.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/_VU2SkrvTbK9W7gvh-bT-g/zh-cn_image_0000002755183112.png)
 
   **图12** 竖屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/N84EnUKMRPmLmMGStHebSg/zh-cn_image_0000002749332120.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/WyhQA5CMSs2jsaPokSrX-A/zh-cn_image_0000002784581977.png)
 * 父容器尺寸确定时，使用百分比设置子元素和兄弟元素的宽度，使它们在任意尺寸的设备下保持固定的自适应占比。
 
   ```typescript
@@ -515,11 +515,11 @@ struct BlankExample {
 
   **图13** 横屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/jEyxJmmRQvm4Fcqq5-9VtQ/zh-cn_image_0000002749492004.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/m-WhQhxMRxu0KtWr2qsQbg/zh-cn_image_0000002784662161.png)
 
   **图14** 竖屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9eFfqsCnRKiBGeSWCGPYMg/zh-cn_image_0000002779091061.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/p95auLQdQH6xtcJLYYoYtw/zh-cn_image_0000002755023228.png)
 
 ## 自适应延伸
 
@@ -564,7 +564,7 @@ struct BlankExample {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/DZ4A-D8GTdi8HKwYIbS1Mw/zh-cn_image_0000002778931205.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/39W8BmuJTM-jd9uxQMgl3g/zh-cn_image_0000002755183114.gif)
 
   水平方向布局中使用Scroll组件：
 
@@ -602,4 +602,4 @@ struct BlankExample {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Lxpx3vukSqqKZYxgNAOlSw/zh-cn_image_0000002749332122.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/OOKKIiSkRRabBbrxEvZ6zQ/zh-cn_image_0000002784581979.gif)

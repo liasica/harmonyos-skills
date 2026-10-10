@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 创建自定义组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 创建自定义组件
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:59+08:00
+scraped_at: 2026-10-11T07:21:02+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:4eeca83ef591fec8ab946a0a6d9451b1e55da4c27aebf08f8ec8e36419948c7f
+content_hash: sha256:3c55e0b3fdca58ab94120dbf2f920e14446ec55f188e99df59f8216757decc72
 ---
 
 在ArkUI中，UI显示的内容均为组件，由框架直接提供的称为系统组件，由开发者定义的称为自定义组件。进行UI界面开发时，不仅要组合使用系统组件，还需考虑代码的可复用性、业务逻辑与UI的分离，以及后续版本的演进等因素。因此，将UI和部分业务逻辑封装成自定义组件是不可或缺的能力。
@@ -69,7 +69,7 @@ struct ParentComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/zj1H62PTREyBBHMHZ3R8lA/zh-cn_image_0000002749491672.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/wkdrb9FuR0OdrYTGyPoJNQ/zh-cn_image_0000002784661861.gif)
 
 要完全理解上面的示例，需要了解自定义组件的以下概念定义，本文将在后面的小节中介绍：
 
@@ -196,7 +196,7 @@ struct MyComponent {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/ZEGNFSwhSnOVnfr1TSLTHw/zh-cn_image_0000002779090729.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/DbaES-mTTriZMlY2fHFxXA/zh-cn_image_0000002755022928.gif)
 
 除非特别说明，@ComponentV2装饰的自定义组件将与@Component装饰的自定义组件保持相同的行为。
 
@@ -313,7 +313,7 @@ struct ParentComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/eo5R86K6ToiE0c6lM1nHsg/zh-cn_image_0000002778930873.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/pvMITW4zT42gyD9zo7AzTg/zh-cn_image_0000002755182814.png)
 
 以下示例代码将父组件中的函数传递给子组件，并在子组件中调用。
 
@@ -358,7 +358,7 @@ struct Son {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_1c9Hxa1S2mFeF9-bNaxHQ/zh-cn_image_0000002749331790.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/cw9sPscsQu2TCw1e4LCLhw/zh-cn_image_0000002784581679.gif)
 
 ## build()函数实现规则
 
@@ -549,7 +549,7 @@ struct Son {
 
   在ArkUI状态管理中，状态驱动UI更新。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/OhP0N3FfR8OVl9I3W04yTQ/zh-cn_image_0000002749491674.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/rgCD6kEDRVKvPcAVk6oD1w/zh-cn_image_0000002784661863.png)
 
   所以，不能在自定义组件的build()或@Builder方法里直接改变状态变量，这可能会造成循环渲染的风险。Text(`${this.count++}`)在全量更新或最小化更新会产生不同的影响：
 
@@ -611,7 +611,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/x1HeOZ8BTRCYxWzWEf1YXA/zh-cn_image_0000002779090731.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/ljIYbN3QQ46y3uhCZwL_7Q/zh-cn_image_0000002755022930.png)
 
 **说明** 
 
@@ -852,7 +852,7 @@ struct ExtraIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Unh77jQbRCOr4fMmETsGYg/zh-cn_image_0000002778930875.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/TOF3ciwIRz22ncP2HGmIFw/zh-cn_image_0000002755182816.gif)
 
 ## 限制条件
 

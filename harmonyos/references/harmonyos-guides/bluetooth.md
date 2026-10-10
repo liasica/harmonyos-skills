@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth
 title: 蓝牙
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:57+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:34+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:8fa476d2580952ff4a03df46233c3a2b49d4f4ea1c851c31c57d4662590ea68c
 ---
 

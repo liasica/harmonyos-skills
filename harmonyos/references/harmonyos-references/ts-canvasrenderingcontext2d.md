@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvas
 title: CanvasRenderingContext2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasRenderingContext2D
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:06+08:00
+scraped_at: 2026-10-11T07:24:35+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:468eda1a9f2528ac5f04e67632ffca248f4d59b0223d255a10dac8192c0f7f64
+content_hash: sha256:3cdcfa02d7a2231b8950da0594dbcd5982fdcb28fdaf4d1523f032f110b7c078
 ---
 
 CanvasRenderingContext2D是Canvas组件的2D绘图上下文对象，用于在Canvas组件上进行自定义绘图。支持绘制形状（矩形、圆形、椭圆、路径等）、文本、图片、渐变、阴影等多种绘制类型，适用于数据可视化、游戏开发、图像编辑、自定义UI绘制等场景。通过该对象，开发者可以灵活控制绘制过程，实现复杂的2D图形效果。
@@ -109,7 +109,7 @@ struct LengthMetricsUnitDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/wWFB4gq4QfaAb46pWFTtuw/zh-cn_image_0000002749335040.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/-zOxxC02SvqkL1To1MpLGQ/zh-cn_image_0000002784664857.png)
 
 ## 属性
 
@@ -177,7 +177,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ftKnjEMaTTCN89L5D9IWAw/zh-cn_image_0000002749494924.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/OntgqZ31SkC6WzA0QNrqTw/zh-cn_image_0000002755025926.png)
 
 ## on('onAttach')13+
 
@@ -402,7 +402,7 @@ struct AttachDetachExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/mQqLm9v7ReCwd6W905EiMQ/zh-cn_image_0000002779093981.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/-6zSfF2bRSKoiHN_mra7Vg/zh-cn_image_0000002755185810.gif)
 
 ## startImageAnalyzer12+
 
@@ -534,7 +534,7 @@ struct ImageAnalyzerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/ATPBMThEQ1SOrfFbclVKNg/zh-cn_image_0000002778934125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/wmnufCShSSmUAJovbcZ8oA/zh-cn_image_0000002784584677.png)
 
 ## getContext2DFromDrawingContext23+
 
@@ -602,7 +602,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/EnujWO54SSWk6-TDtoWB2w/zh-cn_image_0000002749335042.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/3lMJ-01jSR2BauHkapn5RA/zh-cn_image_0000002784664859.png)
 
 ## RenderingContextOptions23+
 
@@ -681,7 +681,7 @@ struct WidthExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/rbRD367gR76OD4_rpTHNFg/zh-cn_image_0000002749494926.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/zvbZijxnQaOxt220-dAKZg/zh-cn_image_0000002755025928.png)
 
 ### 示例2（height属性用法）
 
@@ -710,7 +710,7 @@ struct HeightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/DipCuMQ0S_u-5F5ZeQ42tg/zh-cn_image_0000002779093983.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ZOe5e7x0QpiQAZwdYnUCnQ/zh-cn_image_0000002755185812.png)
 
 ### 示例3（canvas属性用法）
 
@@ -754,4 +754,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5AmjdkY1SQGSXY62cmmj6Q/zh-cn_image_0000002778934127.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/raUaE2klQSW2JnygMhybfA/zh-cn_image_0000002784584679.png)

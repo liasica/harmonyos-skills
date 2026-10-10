@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/coding
 title: 代码开发
 breadcrumb: 指南 > NDK开发 > 代码开发
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:25+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:48+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:d9ed3defdf9585eb3d1a39aaa7eec2c7629b3b32444d90eb41da808e8808321c
 ---
 

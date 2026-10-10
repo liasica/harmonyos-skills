@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 开通Device Security服务
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 开发准备 > 开通Device Security服务
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:24+08:00
+scraped_at: 2026-10-11T07:21:28+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:33a00cda3b90574b66c8bf15b0a46b921f2b84f2eb119b982499500923e3232b
+content_hash: sha256:2a337840251d69e52a0b33ce65e9f9a6559927a2853c68c28b408d254c0f3d24
 ---
 
 在开通Device Security服务前，请先参考“[应用开发准备](application-dev-overview.md)”完成基本准备工作，再继续进行以下开发活动。
@@ -16,36 +16,36 @@ Device Security包括应用设备状态检测、安全检测、可信应用服�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择开发与服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/wtvo987OSM2fpd0w-2BPfw/zh-cn_image_0000002749333064.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/yGXm3CWLSUWPkA2Z0a9Aog/zh-cn_image_0000002784663025.png)
 2. 在项目列表中找到需要开通Device Security服务的项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/XiArt4GdSG6iXV7E0LvjEw/zh-cn_image_0000002749492948.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/7OEpAQorTCuUQSxlqVZzIA/zh-cn_image_0000002755024092.png)
 3. 选择“开放能力管理”Tab页，找到需要使用的功能，点击左侧的按钮，开通相应的功能。
 
    * **应用设备状态检测**：勾选“应用设备状态检测”并点击“保存”，接入“应用设备状态检测”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/asfATmh1QhGzkP9L6zQGiA/zh-cn_image_0000002779092007.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/82OuLnmeQjiNxpwU2U4eBw/zh-cn_image_0000002755183980.png)
    * **安全检测**：勾选“安全检测服务”并点击“保存”，接入“安全检测服务”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/0wGFKRn1QPuYjsuIYhSrgg/zh-cn_image_0000002778932149.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/0MpN9LcjQVG4IitKHx-Tmg/zh-cn_image_0000002784582847.png)
    * **可信应用服务**：勾选“可信应用服务”并点击“保存”，接入“可信应用服务”。
 
      **说明** 
 
      开通“可信应用服务”需要先申请进入允许清单，请将Developer ID、公司名称、应用名称、申请使用的服务和使用该服务的场景，发送到agconnect@huawei.com。AGC运营将审核相关材料，通过后将为您配置受限开放服务使用的名单，审核周期为1-3个工作日，请耐心等待。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/vC7nF-4BRcSvZu3b57RlCw/zh-cn_image_0000002749333066.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/pAmvt5-qTXWGpA5NrQqKyw/zh-cn_image_0000002784663027.png)
    * **业务风险检测-涉诈剧本检测**：点击“涉诈剧本检测”右侧申请按钮，接入“涉诈剧本检测”，审核通过后勾选对应服务并点击“保存”该服务配置。
 
      ① 在申请“涉诈剧本检测”前，需要在[华为开发者联盟](https://developer.huawei.com/consumer/cn/)网站上注册成为开发者，并完成[企业开发者实名认证](../start/edrna-0000001062678489.md)。
 
      ② 点击“涉诈剧本检测”右侧申请按钮，接入“涉诈剧本检测”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/IThkdKhNTM6tGe2QlSprHg/zh-cn_image_0000002749492950.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NbADhUYiS7uTLARuFJKiPg/zh-cn_image_0000002755024094.png)
 
      ③ 参考“申请原因”中的模板，提供申请必需的相关信息，包含Developer ID、公司名称、应用名称、使用场景、使用该服务的合法基础（应用使用该服务时需在其隐私声明中进行个人数据声明及用途说明，详细参考[个人数据处理说明](devicesecurity-personal-data.md)，并将合法基础的相关证明上传至申请附件），然后点击“提交”按钮。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/xriY2OYtR6iio712a3JAUw/zh-cn_image_0000002779092009.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Rhjb1RGVTkGhdif_v3fiJw/zh-cn_image_0000002755183982.png)
 
      **说明** 
 
@@ -54,7 +54,7 @@ Device Security包括应用设备状态检测、安全检测、可信应用服�
 
      ① 点击“数字盾服务”右侧申请按钮，接入“数字盾服务”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/NfwNagzVSFO9V5qnrILIvw/zh-cn_image_0000002778932151.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/S7MOOesBT6uoAeu-QnqxPA/zh-cn_image_0000002784582849.png)
 
      **说明** 
 
@@ -65,11 +65,11 @@ Device Security包括应用设备状态检测、安全检测、可信应用服�
 
      ① 点击“星盾机密风控引擎”右侧申请按钮，接入“星盾机密风控引擎”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/ZjbdfOTHSAyvJ4_cpS7uLQ/zh-cn_image_0000002749333068.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/vWq2YLJYT1SXfYNjhiKoUw/zh-cn_image_0000002784663029.png)
 
      ② 参考“申请原因”中的模板，提供申请必需的相关信息，包含公司名称、应用用户规模、使用场景及用途，然后点击“提交”按钮。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/hJ38wg2HRf-mxc-dl_IHGw/zh-cn_image_0000002749492952.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/eyEBeU1TQEK8EPu0EUm2BQ/zh-cn_image_0000002755024096.png)
 
      **说明** 
 

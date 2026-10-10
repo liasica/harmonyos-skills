@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.events.emitter (Emitter)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > @ohos.events.emitter (Emitter)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:23:02+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:794a220ed24a0c60c007ca52fffaeaa32543278cf4c02d36974f2684d8ea8c52
+scraped_at: 2026-10-11T07:26:30+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:ea7a0a43ca2f97713723ccbae84f4ebc3be2c969790c0f2d0aaa020dacb23586
 ---
 
 本模块提供进程内线程间或线程内事件的发送与处理能力。开发者可以使用本模块的 API，订阅事件（持续订阅或单次订阅）、取消订阅事件，发送事件到事件队列中，以及查询事件的订阅数量，从而实现同一进程内不同线程之间、以及同一线程内的事件通信。适用于跨线程通信、模块解耦、事件驱动等场景，能够帮助开发者实现轻量级的发布-订阅模式，降低组件间的耦合度，提升代码的可维护性和可扩展性。
@@ -48,7 +48,7 @@ on(event: InnerEvent, callback: Callback<EventData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | [InnerEvent](js-apis-emitter.md#innerevent) | 是 | 持续订阅的事件，其中[EventPriority](js-apis-emitter.md#eventpriority)在订阅事件时无需指定，也不生效。 |
-| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 接收到该事件时需要执行的回调处理函数。 |
+| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回发送事件时传递的数据对象。 |
 
 **示例：**
 
@@ -82,7 +82,7 @@ on(eventId: string, callback: Callback<EventData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 持续订阅的事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 接收到该事件时需要执行的回调处理函数。 |
+| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回发送事件时传递的数据对象。 |
 
 **示例：**
 
@@ -111,7 +111,7 @@ on<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 持续订阅的事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 接收到该事件时需要执行的回调处理函数。 |
+| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，返回发送事件时传递的泛型数据对象。 |
 
 **示例：**
 
@@ -154,7 +154,7 @@ once(event: InnerEvent, callback: Callback<EventData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | [InnerEvent](js-apis-emitter.md#innerevent) | 是 | 单次订阅的事件，其中[EventPriority](js-apis-emitter.md#eventpriority)在订阅事件时无需指定，也不生效。 |
-| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 接收到该事件时需要执行的回调处理函数。 |
+| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回发送事件时传递的数据对象。 |
 
 **示例：**
 
@@ -187,7 +187,7 @@ once(eventId: string, callback: Callback<EventData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 单次订阅的事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 接收到该事件时需要执行的回调处理函数。 |
+| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回发送事件时传递的数据对象。 |
 
 **示例：**
 
@@ -216,7 +216,7 @@ once<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 单次订阅的事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 接收到该事件时需要执行的回调处理函数。 |
+| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，返回发送事件时传递的泛型数据对象。 |
 
 **示例：**
 
@@ -311,7 +311,7 @@ off(eventId: number, callback: Callback<EventData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | number | 是 | 事件ID，由开发者定义，用于辨别事件。 |
-| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，指定要取消订阅的事件处理函数，需与订阅时使用的callback一致。 |
+| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回发送事件时传递的数据对象，需与订阅时使用的callback一致。 |
 
 **示例：**
 
@@ -343,7 +343,7 @@ off(eventId: string, callback: Callback<EventData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，指定要取消订阅的事件处理函数，需与订阅时使用的callback一致。 |
+| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回发送事件时传递的数据对象，需与订阅时使用的callback一致。 |
 
 **示例：**
 
@@ -375,7 +375,7 @@ off<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，指定要取消订阅的事件处理函数，需与订阅时使用的callback一致。 |
+| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，返回发送事件时传递的泛型数据对象，需与订阅时使用的callback一致。 |
 
 **示例：**
 
@@ -734,7 +734,7 @@ on(eventId: string, callback: Callback<EventData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 持续订阅的事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，在接收到该事件时被调用。 |
+| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回发送事件时传递的数据对象。 |
 
 **示例：**
 
@@ -765,7 +765,7 @@ on<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 持续订阅的事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，在接收到该事件时被调用。 |
+| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，返回发送事件时传递的泛型数据对象。 |
 
 **示例：**
 
@@ -810,7 +810,7 @@ once(eventId: string, callback: Callback<EventData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 单次订阅的事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，在接收到该事件时被调用。 |
+| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回发送事件时传递的数据对象。 |
 
 **示例：**
 
@@ -841,7 +841,7 @@ once<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 单次订阅的事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，在接收到该事件时被调用。 |
+| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，返回发送事件时传递的泛型数据对象。 |
 
 **示例：**
 
@@ -914,7 +914,7 @@ off(eventId: string, callback: Callback<EventData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，指定要取消订阅的事件处理函数。 |
+| callback | Callback<[EventData](js-apis-emitter.md#eventdata)> | 是 | 回调函数，返回发送事件时传递的数据对象。 |
 
 **示例：**
 
@@ -947,7 +947,7 @@ off<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 事件ID。  不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
-| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，指定要取消订阅的事件处理函数。 |
+| callback | Callback<[GenericEventData<T>](js-apis-emitter.md#genericeventdatat12)> | 是 | 回调函数，返回发送事件时传递的泛型数据对象。 |
 
 **示例：**
 

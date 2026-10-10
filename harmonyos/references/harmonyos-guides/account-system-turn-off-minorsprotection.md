@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-syste
 title: 关闭系统的未成年人模式
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 应用与系统实现未成年人模式联动 > 应用内关闭未成年人模式 > 关闭系统的未成年人模式
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:01+08:00
+scraped_at: 2026-10-11T07:22:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5e6826a79e780c25895a17e71a6d3a09e0f438324c2667b7a8ca0d260b6ec4bf
+content_hash: sha256:57145ad2d8f641e23f50856bdcb5a2b94d6748a70291b37fefb05a74b3e98aa2
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:5e6826a79e780c25895a17e71a6d3a09e0f438324c2667b7a8ca0d260b6
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/BxQO3AVrRYeLmZplxBXiXg/zh-cn_image_0000002749493440.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/m32AsSzFT4-H0tYi8o3g0Q/zh-cn_image_0000002755024582.png)
 
 流程说明：
 

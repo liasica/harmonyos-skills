@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkdata-debug
 title: arkdata数据库调试工具
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > arkdata数据库调试工具
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:13+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:20:58+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:701bc04408e46d3f3da105c4faa30aa498e39cdc0223f014d5fdac53d4c13ecb
 ---
 

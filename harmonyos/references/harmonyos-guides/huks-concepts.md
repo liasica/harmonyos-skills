@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-concepts
 title: 本地密钥管理基础概念
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 本地密钥管理基础概念
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:27+08:00
+scraped_at: 2026-10-11T07:21:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e26c31b888242c4c4bf2247f82bf287415e54d7800ae22c5b064407ea3e91ae0
+content_hash: sha256:f1a97107e6015888a51a9c14a3aa961dab5a56cfcc916a58f86c81943bbfaa4c
 ---
 
 在使用通用密钥库完成应用开发前，开发者需要了解以下相关概念，以下概念将贯穿整个开发过程。
@@ -26,7 +26,7 @@ content_hash: sha256:e26c31b888242c4c4bf2247f82bf287415e54d7800ae22c5b064407ea3e
 
 下图以RSA密钥材料内存结构为例，其他算法格式见样例下方表格。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/C6hK2SoES-Sag_6DUL5lmg/zh-cn_image_0000002749492984.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/_f2X5U1bRXekFmsvHW1XKQ/zh-cn_image_0000002755024128.png)
 
 其中，密钥算法的值取自枚举类[HuksKeyAlg](../harmonyos-references/js-apis-huks.md#hukskeyalg)。
 
@@ -127,7 +127,7 @@ let eccP256PubKey = new Uint8Array([
 
 以RSA私钥材料为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/1mwNvvE6SGGQYV0ppZGIqw/zh-cn_image_0000002779092043.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/J1VudoFpSBaQrHHskcPqXQ/zh-cn_image_0000002755184016.png)
 
 ```ts
 let rsa2048PrivateKeyMaterial = new Uint8Array([

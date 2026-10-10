@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 设备支持类型
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 设备支持类型
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:02+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:de835017705ce63d8a02e3d67e22f1d67c388ada8796efa7d36bc21fef25d4d7
 ---
 

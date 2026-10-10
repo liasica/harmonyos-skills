@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilityconnec
 title: 应用跨设备连接管理
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 应用跨设备连接管理
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:58+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:35+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:97b21ace62454cc4817d85b7a94eba37c7aec77fe6e045062209de5073d6e5ba
 ---
 

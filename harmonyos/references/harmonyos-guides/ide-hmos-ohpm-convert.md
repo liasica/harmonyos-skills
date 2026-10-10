@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm convert
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:349a7371d3c042eecf753654693c3727d638a8f3a1638a59ae52c93fa17f9dae
+scraped_at: 2026-10-11T07:23:26+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:99c59f1da3fd89e9a67333a665565728f6e7e2ff1cf27cf44c6631b5844c53eb
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -100,13 +100,13 @@ ohpm INFO: A total of 9 packets are converted successfully.
 ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/Documents/DevEcostudioProjects/MyApplication01/convert_1774947993178" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/cTXKaYIJQ_y2Hmh2se9gVg/zh-cn_image_0000002778923079.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/jmshy3LyTI2uuSOeJnNKQQ/zh-cn_image_0000002750169790.png)
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/vQfugnD1Q92qDvLIoGdr-Q/zh-cn_image_0000002749483862.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/7EDAId_HQlO7Agb2zf05Ow/zh-cn_image_0000002779728957.png)
 
 ```screen
 ohpm convert ./node_modules
@@ -122,4 +122,4 @@ ohpm INFO: A total of 1 package(s) are converted successfully.
 ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/xxxxx/convert_1774948851809" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/TJkcaLdOTdezwlNgHE-EUg/zh-cn_image_0000002778923077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/a-IxnfCaQMSarlnSpcxBbw/zh-cn_image_0000002750009894.png)

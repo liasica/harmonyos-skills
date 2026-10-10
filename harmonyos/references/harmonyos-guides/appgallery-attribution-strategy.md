@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-at
 title: 管理归因策略
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发准备 > 管理归因策略
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:03+08:00
+scraped_at: 2026-10-11T07:22:09+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:08e04db76398adff64468a97f845e464fd2c74cf06e1bba45deebd2b9fc475ae
+content_hash: sha256:8e49089e20d0d2b817e767f9b4e368c36f94fce3f910ed70c69f674fa2375b62
 ---
 
 通过归因策略管理，支持开发者在应用归因云端管理台维护可归因的分发平台及归因优先级、归因窗口期、归因节点设置，从而提升归因能力拓展性，适配开发者多样化归因诉求。
@@ -16,7 +16,7 @@ content_hash: sha256:08e04db76398adff64468a97f845e464fd2c74cf06e1bba45deebd2b9fc
 
 点击左侧归因策略管理菜单栏，进入归因策略管理页面，开发者基于推广应用、转化事件等维度进行归因策略的维护，所有的归因策略都是基于开发者下具体某个推广应用配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/4lDpNbddTq2aIjpRuVCTXw/zh-cn_image_0000002778932667.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/4mJ90cuhRFKcodwLgMrLRg/zh-cn_image_0000002784583365.png)
 
 **说明** 
 
@@ -26,7 +26,7 @@ content_hash: sha256:08e04db76398adff64468a97f845e464fd2c74cf06e1bba45deebd2b9fc
 
 在归因策略管理页面点击“新增”按钮，进入“新增归因策略”页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/uccMU78bTsaMVYg2CFuhkg/zh-cn_image_0000002749333586.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/5w5WByVkREOFw_LSlxjxQw/zh-cn_image_0000002784663545.png)
 
 参数填写说明如下：
 
@@ -52,7 +52,7 @@ content_hash: sha256:08e04db76398adff64468a97f845e464fd2c74cf06e1bba45deebd2b9fc
 
 在归因策略管理页面点击右侧“编辑”按钮，弹出窗口期维护页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/atdVGZq3RmGXOwx4mwWtAQ/zh-cn_image_0000002749493470.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/onPvs-zmQDiYKu9cLNQZHw/zh-cn_image_0000002755024612.png)
 
 维护完成后，点击“确认”即可生成有效记录，若点击“取消”，则不创建相应记录。
 
@@ -60,7 +60,7 @@ content_hash: sha256:08e04db76398adff64468a97f845e464fd2c74cf06e1bba45deebd2b9fc
 
 在归因策略管理页面点击右侧“查看”按钮，弹出归因策略查看页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/B2napUwDQb2n1ul7cz7B0Q/zh-cn_image_0000002779092527.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/kbDddWYVS5G_mJbZy9Dgnw/zh-cn_image_0000002755184500.png)
 
 可点击“编辑”按钮进入编辑页面，或点击“取消”关闭当前页面返回列表页面。
 
@@ -68,7 +68,7 @@ content_hash: sha256:08e04db76398adff64468a97f845e464fd2c74cf06e1bba45deebd2b9fc
 
 在归因策略管理页面点击右侧“删除”按钮：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/GcH42DJ4T8yeZzZUdUZAng/zh-cn_image_0000002778932669.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1T5yZFi-ThCuwfBZAIQtEQ/zh-cn_image_0000002784583367.png)
 
 点击确认该记录状态变为“删除”，删除状态的记录仅可查看。
 

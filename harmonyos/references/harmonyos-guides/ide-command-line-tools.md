@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-l
 title: 命令行工具
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:23+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:11+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c1337531dfb8b5c2ecdcb43b62d584709723218bfce69c2ddbc6f7c3b048809a
 ---
 

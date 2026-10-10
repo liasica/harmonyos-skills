@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-use
 title: JSVM-API使用指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:56+08:00
-doc_updated_at: 2026-09-17
+scraped_at: 2026-10-11T07:22:51+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:3c7656015788a27f928eb62c2dbf6deed496a601551819d5535e296363d57f75
 ---
 

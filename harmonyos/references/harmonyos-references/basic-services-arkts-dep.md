@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/basic-ser
 title: 已停止维护的接口
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:06+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:30+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:bd55f9f55b466185125356a199dfdaaf12d3d6566a484b77fc711214fa5fe49b
 ---
 

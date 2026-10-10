@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: neural_network_core.h
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 头文件 > neural_network_core.h
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:28+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:28:46+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:e43b0cb69cc5cf960bffa01aa89aad8399dda9d9d722c1fd3055c96f9f9b7396
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-for-oth
 title: 面向其他语言的ArkTS迁移指导
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 面向其他语言的ArkTS迁移指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:07+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:20:52+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:4c8687e93b1db61c55c7d3124b319e97baa1db370c526752513496fc7cc58542
 ---
 

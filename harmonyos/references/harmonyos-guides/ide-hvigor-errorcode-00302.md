@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 脚本错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 脚本错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:22+08:00
+scraped_at: 2026-10-11T07:23:08+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:e9d17b2f39c3e5c29cb183c8b67c3555daf0a3e1766aa6b7b63f681e93485726
+content_hash: sha256:5873dbbb2ac6ab4169a378f433cf4edb44acfb519a0f038c371d8467508c87bf
 ---
 
 ## 00302001 FA模型不支持单元测试
@@ -72,16 +72,16 @@ The root node is not yet available for build.
    console.log(hvigor.getParameter().getWorkspaceDir())
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/9F6PEG4aQUWayhqWwhifhg/zh-cn_image_0000002701823124.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/ccu-e4PtQJaNZNB8bMXl7w/zh-cn_image_0000002701823124.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/pgiCZj3rT4-W3RjQpQLnDw/zh-cn_image_0000002731382441.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/9x8HBjy3QGa69AnGLSM6Xg/zh-cn_image_0000002731382441.png)
 4. 在hvigorconfig.ts或hvigorfile.ts打印以下内容找到运行的hvigor的位置，如果在node\_modules下，请删除这个node\_modules。
 
    ```screen
    console.log(require.resolve('@ohos/hvigor'));
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/P7lianq-RaasZF5JSkh1KQ/zh-cn_image_0000002731542407.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/IampV9ojShyEuRelUCrIng/zh-cn_image_0000002731542407.png)
 
 ## 00302014 hvigorConfig未准备好用于构建
 
@@ -109,16 +109,16 @@ DevEco Studio或Command Line Tools默认内置了hvigor插件，无需开发者�
    console.log(hvigor.getParameter().getWorkspaceDir())
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/aFIEih8cQfiBJ37xtA-fYA/zh-cn_image_0000002701823132.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/O64q7r6iS3OL8bXk95qRpw/zh-cn_image_0000002701823132.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/_CFZp83bQD2KhNoEwzGa3A/zh-cn_image_0000002701663206.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/WFVOPcH8S1KJZxm4MpwNgw/zh-cn_image_0000002701663206.png)
 3. 在hvigorconfig.ts或hvigorfile.ts打印以下内容找到运行的hvigor的位置，如果在node\_modules下，请删除这个node\_modules。
 
    ```screen
    console.log(require.resolve('@ohos/hvigor'));
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/P-J-gDfJR4OLaiWdVw0o_Q/zh-cn_image_0000002731542403.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/h2WO7uT5QQ26wNHG13SoHw/zh-cn_image_0000002731542403.png)
 
 ## 00302015 调用内部hook函数时出现异常
 
@@ -529,16 +529,16 @@ Failed to execute function 'XXX' of the custom plugin whose pluginId is 'YYY': Z
       console.log(hvigor.getParameter().getWorkspaceDir())
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/kF_hxXDeQdi5YltZmOkuJA/zh-cn_image_0000002701663216.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/0D2S3ditQB6jYM8jddaARA/zh-cn_image_0000002701663216.png)
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Qx9Vdb43TFecODztlmbbdg/zh-cn_image_0000002731382435.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/C_NTFcSiQKqaxNBxs64V6g/zh-cn_image_0000002731382435.png)
    3. 在hvigorconfig.ts或hvigorfile.ts打印以下内容找到运行的hvigor的位置，如果在node\_modules下，请删除这个node\_modules。
 
       ```screen
       console.log(require.resolve('@ohos/hvigor'));
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/PNxEZCdzRmerKtde3nazUg/zh-cn_image_0000002701823128.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/j7R6o1XwTvac-tGLlhIW6A/zh-cn_image_0000002701823128.png)
 2. 将hvigor-config.json5中的stacktrace字段设置为true，根据堆栈信息排查。
 
 ## 00302036 生命周期XXX执行失败
@@ -587,16 +587,16 @@ hvigorfile.ts文件YYY及其依赖的文件代码执行报错。
       console.log(hvigor.getParameter().getWorkspaceDir())
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Iq1xbT2LR0mAWEJVHymUug/zh-cn_image_0000002731382433.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/9E84wOp2QsmGY-rOFn8t9A/zh-cn_image_0000002731382433.png)
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/OIiddip6T_KTCKG2aKJbuQ/zh-cn_image_0000002731542399.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/4dVNiVTaToOGbMuZw_mL5A/zh-cn_image_0000002731542399.png)
    3. 在hvigorconfig.ts或hvigorfile.ts打印以下内容找到运行的hvigor的位置，如果在node\_modules下，请删除这个node\_modules。
 
       ```screen
       console.log(require.resolve('@ohos/hvigor'));
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/sD-8MMkcQHyEbFEqg_ddvA/zh-cn_image_0000002701823134.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/v4UO7D2XTf2jShARxARdKQ/zh-cn_image_0000002701823134.png)
 2. 将hvigor-config.json5中的stacktrace字段设置为true，根据堆栈信息排查。
 
 ## 00302038 getAllDependencyInfo接口必须在依赖收集完成后调用

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-apply-gen
 title: 生成单层图标
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 生成单层图标
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:07+08:00
+scraped_at: 2026-10-11T07:22:55+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:c8033b1cdffdad49aae6d360f6c6025c6a60b1c831563bebd369fce17b9af48f
+content_hash: sha256:fb70b3e2921b802ec7ff4d435a7aeaaa4246c491872517bf534b93c21b73a2c6
 ---
 
 DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备、不同屏幕密度的图标，并展示图标在目录中的具体位置。Image Asset支持生成以下两种类型图标：
@@ -20,7 +20,7 @@ DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备�
 
 1. 在工程中选中模块或文件，右键单击**New > Image Asset**，进入图标配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/OJQ5jWpXSlGUeok1AABGQw/zh-cn_image_0000002701822600.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/IgcnYJnhQSmUjvPdDatmyw/zh-cn_image_0000002701822600.png "点击放大")
 2. 需要根据向导配置图标样式、大小等基本信息。
    * **Device**：选择当前配置的图标生效的设备类型。
    * **Icon Type**：展示当前图标的类型。
@@ -30,7 +30,7 @@ DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备�
      + **Trim**：选择Yes，将调整图标图形与边框之间的距离，同时会去除图片周围多余的透明空间。
      + **Resize**：拖动滑块，设置图形的缩放比例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/XvW_cHDyTq2d3NLeHwOcbg/zh-cn_image_0000002701662680.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/oYjnno_ESSaJZp1SNMes7w/zh-cn_image_0000002701662680.png)
 
    * **Background Layer**：分层图标资源背景层。请配置下列字段信息：
      + **Asset Type**：设置图标背景类型。可以选择颜色（**Color**）或图像（**Image**）。
@@ -39,7 +39,7 @@ DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备�
      + **Trim**：选择Yes，将调整图标图形与边框之间的距离，同时会去除图片周围多余的透明空间。
      + **Resize**：拖动滑块，设置图形的缩放比例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/5ZLE7-ouR9ymH6CgTKt8Zw/zh-cn_image_0000002731381903.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/in7Qmpo1S02PaRIQrFd9jw/zh-cn_image_0000002731381903.png)
 3. 点击**Next**，确认图标的存储路径和相应的尺寸信息，图标将默认存放在**resources** 目录下。点击**Finish**完成图标生成。
 
    icon.png为桌面图标，icon\_start window.png为启动页图标，Size为图标的尺寸信息，不同尺寸对照关系如下：
@@ -50,7 +50,7 @@ DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备�
    * xxldpi：表示超大规模的屏幕密度（Extra Extra Large-scale Dots Per Inch），适用于dpi取值为(320, 480]的设备。
    * xxxldpi：表示超特大规模的屏幕密度（Extra Extra Extra Large-scale Dots Per Inch），适用于dpi取值为(480, 640]的设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/FIMO-Pl7SjS_ZlOAZfJ73Q/zh-cn_image_0000002701822604.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/KspmBtjQTH63WLFcV6Gsdg/zh-cn_image_0000002701822604.png)
 4. 如需配置桌面或设置页面出现的应用图标，可将module.json5文件中icon字段修改为新生成的图标名称；如需修改启动页的icon图标，可将module.json5文件中startWindowIcon字段修改为新生成的图标名称。
 
    **说明** 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/c-cpp
 title: C/C++标准库
 breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:25+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:48+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:122447a80a6f0b78df737441e643cee0a6fd450cc157695e0347187b8e0c0656
 ---
 

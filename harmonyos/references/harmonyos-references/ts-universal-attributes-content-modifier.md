@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义内容
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义内容
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:53+08:00
+scraped_at: 2026-10-11T07:24:19+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:d2204a931888daf2358e6f44c3b3366233cc948d06333ac3b06a235fce968ac1
+content_hash: sha256:d58d0c5623c6e9ba1a0e6ef4080e0f8b6c57fee8277fc579e77cd59ade6d764b
 ---
 
 支持通过样式builder自定义特定组件的内容区。
@@ -138,4 +138,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ZqX5oK1MSiCZJ5po2B_nbQ/zh-cn_image_0000002779093459.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/h8pViW5XS9mvyyljzit5Lg/zh-cn_image_0000002755185420.gif)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileb
 title: 头文件和结构体
 breadcrumb: API参考 > 应用服务 > Preview Kit（文件预览服务） > C API > 头文件和结构体
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:15+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:28:34+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:a5fbc71303ee149d3b4b42708cf89b10c081ee826d79cddd862356ca51f7a75e
 ---
 

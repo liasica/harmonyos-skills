@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-config
 title: module.json5配置文件
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件 > module.json5配置文件
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:49+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:78a88bec2e779ac4825969202d858f838cbdcd318d3e775d0fbe1006da340694
+scraped_at: 2026-10-11T07:20:52+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:788b161e60f150d8466520d396c0f270850e80e3ff55749a05e4b2686d71e8b7
 ---
 
 模块级配置文件，包含模块的基本配置信息、UIAbility组件和ExtensionAbility组件信息，以及应用运行过程中需要的权限信息，用于向编译工具、操作系统和应用市场提供应用的基本信息。每个模块下必须包括一个module.json5配置文件，文件所在目录为工程名称/模块名称（例如entry）/src/main/module.json5。
@@ -625,7 +625,7 @@ shortcuts标识应用的快捷方式信息。标签值为数组，包含四个�
 | label | 标识快捷方式的标签信息，即快捷方式对外显示的文字描述信息。取值为长度不超过255字节的字符串，可以是描述性内容，也可以是标识label的资源索引。 | 字符串 | 该标签可缺省，缺省值为空。 |
 | icon | 标识快捷方式的图标，取值为资源文件的索引。  **说明：**  图标分为单层图标和分层图标，单层图标包含一个图片，分层图标包含前景图和背景图，推荐使用如下配置的分层图标：  1.前景图：图标显示大小为450\*450px，资源大小为1024\*1024px的透明图层。  2.背景图：大小为1024\*1024px。 | 字符串 | 该标签可缺省，缺省值为空。 |
 | visible | 标识快捷方式是否显示，取值为true时显示快捷方式，取值为false时不显示快捷方式。  **说明：**  1.从API version 20开始，支持该标签。 | 布尔值 | 该标签可缺省，缺省为true。 |
-| [wants](module-configuration-file.md#wants标签) | 标识快捷方式内定义的目标wants信息集合，在调用launcherBundleManager的startShortcut接口时，会拉起wants标签里的第一个目标组件，推荐只配置一个wants元素。 | 对象 | 该标签可缺省，缺省为空。 |
+| [wants](module-configuration-file.md#wants标签) | 标识快捷方式内定义的目标wants信息集合。 | 对象 | 该标签可缺省，缺省为空。 |
 
 1. 在/resources/base/profile/目录下配置shortcuts\_config.json配置文件。
 

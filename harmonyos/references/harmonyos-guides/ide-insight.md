@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight
 title: 优化应用性能
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:22+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:09+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:3f14bb0283172679f512be6a880bd4711bb9b60e1c6a0bbfa95c376a26804b05
 ---
 

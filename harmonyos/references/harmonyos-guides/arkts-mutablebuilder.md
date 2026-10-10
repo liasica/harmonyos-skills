@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mutable
 title: mutableBuilder：实现全局@Builder动态更新
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > mutableBuilder：实现全局@Builder动态更新
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:59+08:00
+scraped_at: 2026-10-11T07:21:03+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:fa29769515e6bc0d94023ac581675bc9eb5ce5924dfe5fc51759029919d1f1dd
+content_hash: sha256:8c3151d6a15b1fb0f9ecc9a9d9946ff843e549b9f4b02e0834db21a1a353055c
 ---
 
 当在一个自定义组件内使用多个全局[@Builder](arkts-builder.md)函数实现UI的不同效果时，代码维护将变得非常困难，且页面不够整洁。此时，可以使用[wrapBuilder](arkts-wrapbuilder.md)封装全局@Builder。但是wrapBuilder不支持动态切换@Builder，引入[mutableBuilder](../harmonyos-references/ts-universal-mutablebuilder.md)实现全局@Builder的动态切换。
@@ -216,7 +216,7 @@ struct MyApp {
 
 点击Button，可将textBuilder动态更改为buttonBuilder，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/QgXur-dWT8GEFVFP7P9OLA/zh-cn_image_0000002779090791.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/bKSFn1xhQ_uWkB-XChHBGQ/zh-cn_image_0000002755022990.gif)
 
 ## 使用mutableBuilder显示弹出菜单
 
@@ -318,6 +318,6 @@ struct MyApp {
 
 点击Click to change按钮，可将textBuilder动态切换为buttonBuilder，this.message将自动加B，界面会显示initB按钮。点击initB按钮，buttonBuilder中的p.value将自动加b，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/_8eDYvCuRgeky3lsEXt01Q/zh-cn_image_0000002778930935.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/yWpJyF5iR-aYAxJ859dTmA/zh-cn_image_0000002755182876.gif)
 
 点击Click to change按钮将textBuilder动态切换为buttonBuilder时，@Monitor将监听到全局@Builder的变化，并打印日志Builder changed. is buttonBuilder: true。

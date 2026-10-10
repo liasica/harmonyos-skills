@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-mod
 title: 模型（Model）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 模型（Model）配置
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:26+08:00
+scraped_at: 2026-10-11T07:23:13+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:961132c224dabd071532331692433483ec1db74c5b4661fb5de4991ac9ea8bd0
+content_hash: sha256:998b2f3f1d06add2b022712363ce99ed90ce7b61ca07c78cbe3cdebf442e072f
 ---
 
 CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自定义Agent提供多样化的模型选择。
@@ -18,10 +18,10 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
 
 ## 操作步骤
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/z4v15LrTSwWZwHSfG5PaQg/zh-cn_image_0000002701822998.png "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/wCAtCT0KQUGtVAgUtuM8jA/zh-cn_image_0000002701822994.png)按钮，选择**Model**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/w3RgNbMYSKyVulUQg8RVCw/zh-cn_image_0000002701822998.png "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Qq6L4dzDT4yKF9SxE1suTQ/zh-cn_image_0000002701822994.png)按钮，选择**Model**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/49Nl3d1cTZejCAT7IvCr0Q/zh-cn_image_0000002701663074.png "点击放大")
-2. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/5Oyz5L1WRDaDHuRG4p4p8Q/zh-cn_image_0000002701663088.png "点击放大")按钮添加模型，当前支持通过Service Provider（服务提供商）和URL两种方式添加，推荐使用Service Provider方式。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/IExnunUyT2igu3GTWmODig/zh-cn_image_0000002701663074.png "点击放大")
+2. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/rqJvD-LIQEyA9W1ZRGhh6w/zh-cn_image_0000002701663088.png "点击放大")按钮添加模型，当前支持通过Service Provider（服务提供商）和URL两种方式添加，推荐使用Service Provider方式。
    * 通过服务提供商添加。CodeGenie已预置主流模型服务商的配置信息，填写API Key即可快速接入。
 
      填写**Name**、**Provider**、**API Key**、**Model**字段后，点击**Add**，校验成功后模型将被添加到列表中。
@@ -30,7 +30,7 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
      + **API Key**：模型的访问密钥，在提供商网站申请。
      + **Model**：模型的标识。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/nbZIDR60R9mXmQw7GukpQw/zh-cn_image_0000002701663078.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ePztoRU6SwqqHn46pHKVvA/zh-cn_image_0000002701663078.png "点击放大")
 
      不同Service Provider的API Key和支持的模型如下：
 
@@ -50,14 +50,14 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
      + **API Key**：模型的访问密钥，在提供商网站申请。
      + **Model**：模型的标识。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/mNTDq6wUQka-xmG4ZUKOwg/zh-cn_image_0000002701823002.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/djuKb43UQzyVzzYHubtPxA/zh-cn_image_0000002701823002.png "点击放大")
 
      **说明** 
 
      配置说明、URL配置示例等内容请参考[通过URL添加模型](ide-agent-model.md#section1684210554158)。
 3. 在**All Models**下展示所有添加成功的模型，Built-in Models为内置模型，Custom Models为三方模型（自定义模型）。将鼠标悬浮在三方模型上会显示两个操作按钮：编辑、删除，方便开发者管理三方模型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/X6DNvGeZS3mTykqqnzsRFQ/zh-cn_image_0000002701663084.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/ecRO_MDVQa6lsDyo0AbCNw/zh-cn_image_0000002701663084.png)
 
 ## 附录
 
@@ -81,8 +81,8 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
 
 * 添加本地Ollama部署的模型
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/yFNMBwlnQOiYxuQcQ8L2YQ/zh-cn_image_0000002731382313.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/bQTR6ueyS5-eVggd7IWGDA/zh-cn_image_0000002731382313.png)
 
 * 添加DeepSeek模型（OpenAI协议）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/s2YBIhcqTE-RkqsKfnrBBA/zh-cn_image_0000002701823006.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/2kOZFbiORmu2Yqaqoz6Sgg/zh-cn_image_0000002701823006.png)

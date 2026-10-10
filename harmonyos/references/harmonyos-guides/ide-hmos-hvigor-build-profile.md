@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 模块级build-profile.json5文件
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置文件 > 模块级build-profile.json5文件
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:35+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7e094253076e9319294b30822965b4ed05e494c496e1b68ad00a2844d0c2e5f5
 ---
 

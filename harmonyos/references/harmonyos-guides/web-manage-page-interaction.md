@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-manage-pa
 title: 管理网页交互
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:36+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:16+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c26308b3f7827a421341b787db347f34b33643612cec49c864802955555a16b4
 ---
 

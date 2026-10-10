@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/audio-str
 title: 结构体
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:42+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:27:03+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:bec3872fbbbde05e77c153b49ec3e3e86e7496486444f366a01958838cf8158b
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-termi
 title: Network Kit术语
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > Network Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:36+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:6fd9d008a3c15b36d62eaa80b52a579a21e5256bc2c052e31d2f140d964e102d
+scraped_at: 2026-10-11T07:21:36+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:6b45f16512caf41e339106c1104e43b46451f343f15b852e622ca0d80672e704
 ---
 
 ## D
@@ -38,7 +38,7 @@ Hypertext Transfer Protocol，超文本传输协议。是一种用于分布式�
 
 Hypertext Transfer Protocol Secure，是一种基于HTTP的安全通信协议，通过SSL/TLS加密技术实现数据传输的保密性、完整性和身份认证‌。
 
-### Interceptor；拦截器
+### HTTP Interceptor；HTTP拦截器
 
 用于在HTTP请求和响应过程中进行拦截和修改的组件，支持创建拦截器链，按需定制一组拦截器对网络请求/响应进行修改。
 

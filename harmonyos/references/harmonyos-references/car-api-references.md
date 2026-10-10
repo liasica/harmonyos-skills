@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/car-api-r
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 硬件 > Car Kit（车服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:22+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:44+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ec62fc3587bd74f7694d37feaceff6c564135fb7275f792dfc35e851f0d67fdd
 ---
 

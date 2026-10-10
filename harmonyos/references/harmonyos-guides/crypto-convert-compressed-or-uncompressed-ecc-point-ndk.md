@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-conver
 title: 使用ECC压缩/非压缩点格式转换(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 使用ECC压缩/非压缩点格式转换(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:da547f70dccbdba78e4bca9d2d33e540faf9ae23efd2ba65ff057b1341cb0e14
+scraped_at: 2026-10-11T07:21:25+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:2a7392022aebb8f5e43c8814a5dc884fe1ddb9ad56d3c732e3fa72bdcb7fb2c1
 ---
 
 支持将压缩/非压缩的点数据，转换为Point对象，用于密钥对象生成；也支持将Point对象转换为压缩/非压缩的点数据。
@@ -13,6 +13,12 @@ content_hash: sha256:da547f70dccbdba78e4bca9d2d33e540faf9ae23efd2ba65ff057b1341c
 ECC的算法规格请查看[非对称密钥生成和转换规格：ECC](crypto-key-generation-conversion.md#ecc)。
 
 通过传入字符串参数format，可指定获取的点数据格式。如果获取压缩格式，则指定format为："COMPRESSED"；获取非压缩格式，则指定format为："UNCOMPRESSED"。
+
+## 在CMake脚本中链接相关动态库
+
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
+```
 
 ## 指定非压缩点数据转换为压缩点数据
 

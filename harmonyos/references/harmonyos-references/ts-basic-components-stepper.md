@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Stepper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > Stepper
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:16+08:00
+scraped_at: 2026-10-11T07:24:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0e0c384bf1915be35f9b73f710689980a9a5581825211883077bb6971beb8748
+content_hash: sha256:516c3380bab97f2a5db25831111ad5a74ef7003a37d4dfded7cf05614ed01400
 ---
 
 步骤导航器组件，适用于引导用户按照步骤完成任务的导航场景。
@@ -252,7 +252,7 @@ struct StepperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/qh05-NfjTwiThu7c9oWBZw/zh-cn_image_0000002749335292.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/hitY2FKDRM-pQpGXZvcr5A/zh-cn_image_0000002784665109.gif)
 
 ### 示例2（使用Swiper替代Stepper）
 

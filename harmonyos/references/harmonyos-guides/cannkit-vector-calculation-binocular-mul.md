@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: Mul
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 双目指令 > Mul
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:26+08:00
+scraped_at: 2026-10-11T07:22:32+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:3027c95fd824e37a98e5f41bff8d53f255f017b444e3c3cd6fcfc6d6cd805d05
+content_hash: sha256:ea539f12ef6e25d5005b8d7a0243bbe98890b17e633d5ea04c73db8748e9d74c
 ---
 
 ## 功能说明
 
 按元素求积，公式表达如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/SUE3IRe_RbmOQDomIlVHtw/zh-cn_image_0000002749334112.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/sTnlCHRVS3mbRjF_Y1Sihg/zh-cn_image_0000002784664067.png)
 
 ## 函数原型
 

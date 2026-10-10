@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-compila
 title: ArkTS编译工具链
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:16+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:00+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c9d71c78ce647cf01d8d829563aacf074d8f2b07733c6732a6a7c51c6aceafbe
 ---
 

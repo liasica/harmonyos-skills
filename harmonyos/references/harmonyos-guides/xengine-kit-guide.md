@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-g
 title: XEngine Kit（GPU加速引擎服务）
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:34+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:06+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:5d37fb96c9f9a23ba1226c09f716c271a79fc5d2d0a271bd42549347f6d54721
 ---
 

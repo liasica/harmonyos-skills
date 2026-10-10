@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-kit-guid
 title: Scan Kit（统一扫码服务）
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:27+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:00+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2a55d563ee277ec52a70fb97fbcc8384b72a2274610a970e878beecf1e4add36
 ---
 

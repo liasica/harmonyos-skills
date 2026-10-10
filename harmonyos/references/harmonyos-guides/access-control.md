@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/access-contro
 title: 程序访问控制
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:44+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:23+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:79d267e96b22f1857e6d58abc504b21d38bfa0502876a8e163659efd863b2efc
 ---
 

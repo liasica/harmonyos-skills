@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButton
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:14+08:00
+scraped_at: 2026-10-11T07:24:43+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:b2d9e0979c8650d96034109973f5d78546c14716ec9fbcde0c75eaef7651dee2
+content_hash: sha256:ccac44e9943eada48e7e66b6116b98cdd57a53701af29d13d0ad39adaf540764
 ---
 
 分段按钮组件包含页签类分段按钮和胶囊类分段按钮。页签类分段按钮适用于页面或内容区域的切换场景；胶囊类分段按钮适用于单选或多选的选择场景，包含胶囊类单选分段按钮和胶囊类多选分段按钮。该组件支持自定义文本颜色、字体大小、字体粗细、背景色、图片尺寸、内边距、背景模糊材质等外观属性，支持仅文本、仅图标和图标+文本三种按钮样式，并提供无障碍朗读、布局方向镜像、自定义圆角、属性动画等能力，适用于需要快速构建符合设计规范的分段选择界面的场景。
@@ -760,7 +760,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/eA8KS60nTESxVfvJ8RDrBQ/zh-cn_image_0000002749495120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/1Bx0d4R7TbuR65u96q7lNw/zh-cn_image_0000002755026122.png)
 
 ### 示例2（设置分段按钮样式）
 
@@ -868,7 +868,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/BXZN6X-uSceLQ7M9JdIKsw/zh-cn_image_0000002779094177.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/fupz0AUQRu263Tx7rQSXiA/zh-cn_image_0000002755186006.png)
 
 ### 示例3（分段按钮数组处理）
 
@@ -945,7 +945,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/NfsVisjbThS-rT2ww65R2w/zh-cn_image_0000002778934321.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/peTgJKd3Qf6vvEdhd88VmA/zh-cn_image_0000002784584873.gif)
 
 ### 示例4（设置镜像效果）
 
@@ -1055,7 +1055,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/NhiRw81wRFSGI54OoqWlEQ/zh-cn_image_0000002749335238.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/-T-WWj_zQRO4qbctbwW4WQ/zh-cn_image_0000002784665055.png)
 
 ### 示例5（设置无障碍朗读）
 
@@ -1202,7 +1202,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/t7MfHmXJTXmx-CEx7EF_hg/zh-cn_image_0000002749495122.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/wScFgEYERaetUtBEMDCf3g/zh-cn_image_0000002755026124.png)
 
 ### 示例6（设置自定义圆角）
 
@@ -1247,7 +1247,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/sPjDU8lbQ4KDr4c_bwXHEw/zh-cn_image_0000002779094179.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/A4m3M0KfSDmC5q0zoFifEg/zh-cn_image_0000002755186008.png)
 
 ### 示例7（开启SegmentButton的属性动画）
 
@@ -1323,7 +1323,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/mkW22z3_QdiBi86Jr45AZQ/zh-cn_image_0000002778934323.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/VkOmiM0BQFu-_ba671kquA/zh-cn_image_0000002784584875.gif)
 
 ### 示例8（设置背景板材质）
 
@@ -1394,7 +1394,7 @@ struct Index {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Q67o02XESg2BtFT_TrMH5Q/zh-cn_image_0000002749335240.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/yXnP7zKURzibmVkFwzxIwQ/zh-cn_image_0000002784665057.gif)
 
 ### 示例9（监听SegmentButtonOptions内属性的变化）
 
@@ -1458,4 +1458,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/KlEqFxCBQ4ag9Q6N-IEiRA/zh-cn_image_0000002749495124.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/tQ64OxLWS9K_92SOSY4EVw/zh-cn_image_0000002755026126.gif)

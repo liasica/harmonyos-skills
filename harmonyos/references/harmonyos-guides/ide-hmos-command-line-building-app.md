@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-comm
 title: 搭建流水线
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 搭建流水线
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:39+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:26+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:490a1c79f449025eb94b6d9ec9eeafc7693987ff1350e57df4b1a9be81eca0a1
 ---
 

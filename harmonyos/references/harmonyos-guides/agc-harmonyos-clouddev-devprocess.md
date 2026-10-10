@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发端云工程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:07+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:55+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:dc2e4e3f385a4f5776f2f35efa82560651bdef636fa3fcb99e5096bb4c73a051
 ---
 

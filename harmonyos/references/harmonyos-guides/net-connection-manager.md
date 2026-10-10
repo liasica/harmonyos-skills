@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-connectio
 title: 管理网络连接
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:59c4883611b82092eeb15f89beb64a4eedc99c33a0b32c26e0c6e6010a44ef47
+scraped_at: 2026-10-11T07:21:36+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:614a6682a9638fb2cb9f0150cd1e5ef3b9d3ff795bf0a57da6436fceb9289514
 ---
 
 ## 简介
@@ -265,17 +265,17 @@ function socketTest() {
    // 从@kit.NetworkKit中导入connection命名空间。
    import { connection } from '@kit.NetworkKit';
    import { hilog } from '@kit.PerformanceAnalysisKit';
-   // ···
+   // ...
        let netHandleInfo:connection.NetHandle|null = null;
        // 调用getDefaultNet方法，获取默认的数据网络(NetHandle)
        connection.getDefaultNet().then((data: connection.NetHandle) => {
          if (data.netId == 0) {
-           hilog.info(0x0000, 'testTag', `don't have defaultNet`);
+           hilog.error(0x0000, 'testTag', `don't have defaultNet`);
            // 当前无默认网络时，获取的netHandler的netid为0,属于异常情况，需要额外处理
            return;
          }
          if (data) {
-           // ···
+           // ...
            hilog.info(0x0000, 'testTag', 'getDefaultNet get data: ' + JSON.stringify(data));
            // 获取netHandle对应网络的能力信息。能力信息包含了网络类型、网络具体能力等网络信息
            netHandleInfo = data;
@@ -327,7 +327,7 @@ function socketTest() {
        connection.getConnectionProperties(netHandleInfo).then((data: connection.ConnectionProperties) => {
          hilog.info(0x0000, 'testTag', 'getConnectionProperties get data: ' + JSON.stringify(data));
        })
-   // ···
+     // ...
    ```
 3. 查询所有网络连接信息代码示例
 

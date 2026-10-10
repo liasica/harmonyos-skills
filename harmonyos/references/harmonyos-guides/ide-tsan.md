@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-tsan
 title: 使用TSan检测线程错误
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用TSan检测线程错误
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:17+08:00
+scraped_at: 2026-10-11T07:23:04+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:9f3c1463884eddcf3d7afa7c5a83ab428d4deb988967eeb32d4aee6be1c78830
+content_hash: sha256:b50e73ff0753f460080abecc9bbad32826e61a4dce692dfd302b52e555b09d30
 ---
 
 TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个编译器插桩模块和一个运行时库。TSan开启后，会使性能降低5到15倍，同时使内存占用率提高5到10倍。关于TSan的检测原理请参考[TSan](../best-practices/bpta-stability-tsan-detection.md)。
@@ -24,10 +24,10 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
 
 1. 点击**Run > Edit Configurations >** **Diagnostics**，勾选**Thread Sanitizer**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/mNj45G03RiKKvVlv_t7Kjw/zh-cn_image_0000002701823456.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/rJkdYC9uSwqxcldGwAlICA/zh-cn_image_0000002701823456.png)
 2. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_TSAN=ON”，表示以TSan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/eogrF5ODTiGhM7ucmzbbXQ/zh-cn_image_0000002731382767.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/XISUR7Q4Ss2FEFExj9m2ig/zh-cn_image_0000002731382767.png)
 
 ### 方式二
 
@@ -37,7 +37,7 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
     "tsanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Yltx-l5hRoeQYK1gHQAcJQ/zh-cn_image_0000002731382765.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/LV8Lwj6KTBm4eX3N_Bu5Kw/zh-cn_image_0000002731382765.png)
 2. 设置模块级构建TSan插桩。
 
    在需要开启TSan的模块中，通过添加构建参数开启TSan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
@@ -46,14 +46,14 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
    "arguments": "-DOHOS_ENABLE_TSAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/2WXgaSmlTVmKSIq7uFox8A/zh-cn_image_0000002731542733.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/en7GmRxZRR66UWwb06e5HA/zh-cn_image_0000002731542733.png)
 
 ## 使用TSan
 
 1. 运行或调试当前应用。
 2. 当程序出现线程错误时，弹出TSan log信息，点击信息中的链接即可跳转至引起线程错误的代码处。日志中的异常检测类型请参考[TSan异常检测类型](../best-practices/bpta-stability-tsan-detection.md#section1180812915516)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/eKsST5-sRwWp95ftfY8XuA/zh-cn_image_0000002731382761.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/1dRTRvSNRxm8Fxilsn-NhQ/zh-cn_image_0000002731382761.png)
 3. 如果是release应用，本地无工程代码，可以使用AnalyzeStackTrace功能，提供要解析堆栈的so，解析结果为源码地址。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/xPbK0FsrQXOcgATFeQAS_g/zh-cn_image_0000002701663538.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/BsYFSu8SQamKZJhL1Xrnig/zh-cn_image_0000002701663538.png)

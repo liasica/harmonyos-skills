@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-serv
 title: 创建服务卡片
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 创建服务卡片
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:28+08:00
+scraped_at: 2026-10-11T07:23:16+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:e8cf333371892a2cf7bd8a1b375d39708c8e6954abf3d58b31d1f3f6ff2228ac
+content_hash: sha256:cbf0e9679c9a3574819d504c780bf07703ba2b978a07109cd31b1556c5740523
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ content_hash: sha256:e8cf333371892a2cf7bd8a1b375d39708c8e6954abf3d58b31d1f3f6ff2
    **Static** **Widget**：静态服务卡片。**form\_config.json**文件中**isDynamic**参数配置为"false"。静态卡片内存占用较小，有助实现整机内存优化，可实现静态信息展示、刷新和点击跳转。
 2. 选择卡片模板，单击**确认**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/-22F_45bQzmEyNSFTTdc6Q/zh-cn_image_0000002778922755.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/9H1CiNmvTaqFK0k92XMQ7g/zh-cn_image_0000002750169520.png "点击放大")
 3. 在界面中配置卡片的基本信息，包括：
    * **服务卡片名**：卡片的名称，在同一个应用中，卡片名称不能重复，且只能包含大小写字母、数字和下划线。
    * **显示名**：卡片预览面板上显示的卡片名称。
@@ -45,6 +45,6 @@ content_hash: sha256:e8cf333371892a2cf7bd8a1b375d39708c8e6954abf3d58b31d1f3f6ff2
    * **Ability名称：**选择一个挂靠服务卡片的Form Ability，或者创建一个新的Form Ability。
    * **模块名：**卡片所属的模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/HWsHIsiZQt2DdiPceiisBg/zh-cn_image_0000002749323670.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/d57tEEmpSbyW-e-L__RXzA/zh-cn_image_0000002779608543.png "点击放大")
 4. 单击**确认**完成卡片的创建。创建完成后，工具会自动创建出服务卡片的布局文件，并在form\_config.json文件中写入服务卡片的属性字段，关于各字段的说明请参考[配置文件说明](arkts-ui-widget-configuration.md)。
 5. 卡片创建完成后，请根据开发指导，完成服务卡片的开发，详情请参考[服务卡片开发指南](arkts-ui-widget.md)。

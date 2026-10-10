@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-use-multi
 title: 使用网页多媒体
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:37+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:17+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:529340daf423d9587e19c3849eadf81803e15354d44ed333c2a7430742ce05ea
 ---
 

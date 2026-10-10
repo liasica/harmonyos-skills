@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:44+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:06+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c7741c253b9b18398357a179fee645da05f0fee27c022d5e8ee0abd3dddebaf7
 ---
 

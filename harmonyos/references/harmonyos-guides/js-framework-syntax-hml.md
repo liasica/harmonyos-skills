@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: HML语法参考
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 语法 > HML语法参考
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:09+08:00
+scraped_at: 2026-10-11T07:21:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8e75790de0047242f6177f64d7ba5c65d5056df20cd4930699e5b0fa5fb5c73d
+content_hash: sha256:11b432f628c14f8e0e3ce78543838e1fe158631bc03641b7c626f4b24c00f113
 ---
 
 HML是一套类HTML的标记语言，通过组件，事件构建出页面的内容。页面具备数据绑定、事件绑定、列表渲染、条件渲染和逻辑控制等高级能力。
@@ -55,7 +55,7 @@ export default {
 * 针对数组内的数据修改，请使用splice方法生效数据绑定变更。
 * hml文件中的js表达式不支持ES6语法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/yn6HEi-sRSifIP0LXt3Jhg/zh-cn_image_0000002749332692.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/HQlq49cvQsqIlyIHS5kNYQ/zh-cn_image_0000002784582473.png)
 
 ## 普通事件绑定
 
@@ -133,7 +133,7 @@ export default {
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/yjNJ5YZ9SK2fvG4ybYHc8w/zh-cn_image_0000002749492576.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/O27Z5zYoTkawEXDu0fev1A/zh-cn_image_0000002784662653.gif)
 
 ## 冒泡事件绑定5+
 
@@ -264,7 +264,7 @@ tid属性主要用来加速for循环的重渲染，旨在列表中的数据有�
 * 数组中被tid指定的属性要保证唯一性，如果不是则会造成性能损耗。比如，示例中只有id和name可以作为tid字段，因为它们属于唯一字段。
 * tid不支持表达式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Zc8hzkE_T9Gm-oateJzGCg/zh-cn_image_0000002779091635.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/JzvBq5f1SeG4lcBAhJ1LAQ/zh-cn_image_0000002755023720.gif)
 
 ## 条件渲染
 
@@ -310,7 +310,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/cb_sFU21S-WLgg2X_m3NaA/zh-cn_image_0000002778931777.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/GnhI6ZR3SoCzRrWbGF8eNg/zh-cn_image_0000002755183608.gif)
 
 优化渲染：show方法。当show为true时，节点正常渲染；当为false时，仅仅设置display样式为none。
 
@@ -351,7 +351,7 @@ export default {
 
 禁止在同一个元素上同时设置for和if属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/1YJTHs9KSP6ciuCew6QQPw/zh-cn_image_0000002749332694.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/IK9mFrv5QKeHlOpT6UxupA/zh-cn_image_0000002784582475.gif)
 
 ## 逻辑控制块
 
@@ -385,7 +385,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/O8Wotv_5TUO-6CvWSoXuBA/zh-cn_image_0000002749492578.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Ceb1hV0QSYOyIh311rMJPw/zh-cn_image_0000002784662655.png)
 
 ## 模板引用
 

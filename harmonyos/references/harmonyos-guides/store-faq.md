@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-faq
 title: AppGallery Kit常见问题
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > AppGallery Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:38+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:09+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:1cc103a83c499570370240916b5bdf49e0d4eaa543e13d5d2163c20f07c11e27
 ---
 

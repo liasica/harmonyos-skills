@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/mindspore
 title: 结构体
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:26+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:28:44+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7d0d7cd72f26166f91f7a6ca5b5462b36096954c4b9f33199930dccd8a16b7a9
 ---
 

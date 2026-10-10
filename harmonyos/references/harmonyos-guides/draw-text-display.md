@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/draw-text-dis
 title: 文本绘制与显示
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:31+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:03+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:fe0058092081734d0db87522f10bd4369b20bff8bfd72e530cfa8d8e5d4194ee
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-r
 title: 光线追踪反射
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 光线追踪反射
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:00+08:00
+scraped_at: 2026-10-11T07:22:06+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:45cc65e7e25092ccec4bc992606db1794b0d8354f39b5b7df40c675874946588
+content_hash: sha256:983465b8ec9e86ba429d7da328be383eb8e2179824d70eae9d32ddde97e3bddc
 ---
 
 从6.0.0(20) 版本开始，新增光线追踪反射特性。
@@ -32,7 +32,7 @@ XEngine Kit提供光线追踪反射（Ray-Traced Reflections）渲染能力。�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/OdevU0t5TVSuNVnnH0rGjg/zh-cn_image_0000002749333532.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/WntnOZ0YThK8QZ54NSH83w/zh-cn_image_0000002784663491.jpg)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_RT\_REFLECTION\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_rt_reflection_extension_name)。若不包含，则当前设备不支持此特性，流程终止。

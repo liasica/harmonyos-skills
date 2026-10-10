@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 应用前台下载资源包
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 应用前台下载资源包
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:59+08:00
+scraped_at: 2026-10-11T07:22:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1330b3b50af5731aa7e7d9873343481ec4a30e16318a61d97879dc828c7ea062
+content_hash: sha256:91a837d0446894e17f733d612ccb942dbb42a1db4586d386bb03c9054c137832
 ---
 
 启动游戏后，为游戏提供管理、创建资源包下载任务功能。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/jzOiDZI4SuGq2TuxUV0uLg/zh-cn_image_0000002749333508.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/u_VpDctZQMSIrU_ViVvqNQ/zh-cn_image_0000002784663467.png)
 
 1. 用户打开游戏App。
 2. 游戏调用[fetchManifestUrl](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerfetchmanifesturl)方法，从游戏资源加速服务获取manifestUrl资源清单。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed
 title: 服务端应用开发
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > 服务端应用开发
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:41+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:cad8148a3b681310ae5ae13c160f995f29faa8ac12aec2967911c10f78b8a0d4
+scraped_at: 2026-10-11T07:21:18+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:bd043bf964e4b5fe15b0843c6053b438615bae44ffd24d78dca2b578b0e93538
 ---
 
 ## 场景介绍
@@ -372,7 +372,7 @@ static void NativeOnDoEdit(ContentEmbed_ObjectHandle object)
             outputFile.close();
             OH_LOG_INFO(LOG_APP, "数据写入成功.");
         } else {
-            OH_LOG_INFO(LOG_APP, "无法打开文件.");
+            OH_LOG_ERROR(LOG_APP, "无法打开文件.");
         }
         char* tempFileUri;
         OH_FileUri_GetUriFromPath(tempPath.c_str(), tempPath.size(), &tempFileUri);
@@ -432,14 +432,14 @@ static void NativeOnWriteToDataStream(ContentEmbed_ObjectHandle object)
     // 获取OE文档
     ret = OH_ContentEmbed_Extension_GetContentEmbedDocument(object, &ceDocument);
     if (ret != CE_ERR_OK) {
-        OH_LOG_INFO(LOG_APP, "OH_ContentEmbed_Extension_GetContentEmbedDocument ret: %{public}d", ret);
+        OH_LOG_ERROR(LOG_APP, "OH_ContentEmbed_Extension_GetContentEmbedDocument ret: %{public}d", ret);
         return;
     }
     // 获取Root Storage
     ContentEmbed_Storage *rootStorage = nullptr;
     ret = OH_ContentEmbed_Document_GetRootStorage(ceDocument, &rootStorage);
     if (ret != CE_ERR_OK) {
-        OH_LOG_INFO(LOG_APP, "OH_ContentEmbed_Document_GetRootStorage ret: %{public}d", ret);
+        OH_LOG_ERROR(LOG_APP, "OH_ContentEmbed_Document_GetRootStorage ret: %{public}d", ret);
         return;
     }
 
@@ -455,7 +455,7 @@ static void NativeOnWriteToDataStream(ContentEmbed_ObjectHandle object)
     char nativeFilePath[MAX_PATH_LENGTH];
     ret = OH_ContentEmbed_Document_GetNativeFilePath(ceDocument, nativeFilePath);
     if (ret != CE_ERR_OK) {
-        OH_LOG_INFO(LOG_APP, "OH_ContentEmbed_Document_GetNativeFilePath ret: %{public}d", ret);
+        OH_LOG_ERROR(LOG_APP, "OH_ContentEmbed_Document_GetNativeFilePath ret: %{public}d", ret);
         return;
     }
 
@@ -474,13 +474,13 @@ static void NativeOnWriteToDataStream(ContentEmbed_ObjectHandle object)
     // 往OE文档写数据
     ret = OH_ContentEmbed_Stream_Write(destStream, buffer.data(), oriFileSize, &num);
     if (ret != CE_ERR_OK) {
-        OH_LOG_INFO(LOG_APP, "OH_ContentEmbed_Stream_Write ret: %{public}d", ret);
+        OH_LOG_ERROR(LOG_APP, "OH_ContentEmbed_Stream_Write ret: %{public}d", ret);
         return;
     }
     // 刷新OE文档
     ret = OH_ContentEmbed_Document_Flush(ceDocument);
     if (ret != CE_ERR_OK) {
-        OH_LOG_INFO(LOG_APP, "OH_ContentEmbed_Document_Flush ret: %{public}d", ret);
+        OH_LOG_ERROR(LOG_APP, "OH_ContentEmbed_Document_Flush ret: %{public}d", ret);
         return;
     }
 }

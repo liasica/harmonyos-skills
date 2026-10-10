@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/geometric-sha
 title: 几何形状绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 几何形状绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:57+08:00
+scraped_at: 2026-10-11T07:22:03+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:daef509d0f53b122d9c121da88481a7dabfe48c7b9f59bdc73e6a2542e00bf24
+content_hash: sha256:a2a3fb4825dee03478691e1ea0471863d5fb93ad69027614d249b3c8262113c1
 ---
 
 ## 场景介绍
@@ -63,7 +63,7 @@ canvas.detachPen();
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Mx0dMcgZSyCtyB9QTsXtoQ/zh-cn_image_0000002749493316.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/kWKkh14kS2KEwksC6pnjzw/zh-cn_image_0000002755024460.jpg)
 
 ## 绘制圆弧
 
@@ -102,7 +102,7 @@ canvas.detachPen();
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/2Vctli3ERXux4T4RuDFXew/zh-cn_image_0000002779092375.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/UIPnjukHRN63sX360UchjQ/zh-cn_image_0000002755184348.png)
 
 ## 绘制圆
 
@@ -134,7 +134,7 @@ canvas.detachPen();
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/kGiFJFYQTsmYCXnkxcjCTg/zh-cn_image_0000002778932517.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/DoayuvnzQG-qnZ5emOf0UQ/zh-cn_image_0000002784583215.jpg)
 
 ## 绘制路径
 
@@ -201,7 +201,7 @@ canvas.detachPen();
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/NiqH7oI3TFKdl6lECF9xJQ/zh-cn_image_0000002749333436.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/OBZ6v3_6S82xG8gLMX75Qg/zh-cn_image_0000002784663395.jpg)
 
 ## 绘制区域
 
@@ -234,7 +234,7 @@ canvas.detachBrush();
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/18WqnW8QQruB1X_-s67JPQ/zh-cn_image_0000002749493318.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/JnMwTqGhTXK9BuUsc_yYBQ/zh-cn_image_0000002755024462.jpg)
 
 ## 绘制矩形
 
@@ -257,7 +257,7 @@ canvas.detachBrush();
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/1mLxVUoMT6erqAuF3RaOYw/zh-cn_image_0000002779092377.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/MShRibloR8emSDP4wqjvIQ/zh-cn_image_0000002755184350.png)
 
 ## 绘制圆角矩形
 
@@ -296,7 +296,7 @@ canvas.detachBrush();
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/-AdcPNQqRK-kU5HQk9A8Ew/zh-cn_image_0000002778932519.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/r0zCmSWGQGGCB0HfU-WUrw/zh-cn_image_0000002784583217.png)
 
 ## 示例代码
 

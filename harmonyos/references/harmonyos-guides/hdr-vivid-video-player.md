@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-vivid-vid
 title: HDR Vivid视频播放
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > HDR Vivid能力 > HDR Vivid视频播放
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:303bd2bf670968891b61f73a612a4e9688db53f31742de9b12e66278d55ab3e6
+scraped_at: 2026-10-11T07:21:53+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:a181848359366f1e7547d665341f7ea0a8f0340683e36bc67aa00f921b80e9d4
 ---
 
 开发者可以调用本模块的Native API接口，实现在视频播放中支持HDR Vivid标准。
@@ -18,7 +18,7 @@ content_hash: sha256:303bd2bf670968891b61f73a612a4e9688db53f31742de9b12e66278d55
 
 ### 在 CMake 脚本中链接动态库
 
-```screen
+```
 target_link_libraries(sample PUBLIC libnative_media_codecbase.so)
 target_link_libraries(sample PUBLIC libnative_media_avdemuxer.so)
 target_link_libraries(sample PUBLIC libnative_media_avsource.so)
@@ -71,7 +71,7 @@ target_link_libraries(sample PUBLIC libnative_media_core.so)
    int32_t trackCount = 0;
    uint32_t audioTrackIndex = 0;
    uint32_t videoTrackIndex = 0;
-   int32_t trackType;
+   int32_t trackType = -1;
    ```
 
    ```
@@ -91,6 +91,12 @@ target_link_libraries(sample PUBLIC libnative_media_core.so)
       OH_AVFormat *format = OH_AVSource_GetTrackFormat(source, index);
       if (format == nullptr) {
          printf("get track format failed");
+         return;
+      }
+      // 获取轨道类型, 不支持的类型不会修改trackType的值。
+      // 注意trackType初始值建议设为非有效值（如-1），避免误用。
+      if (!OH_AVFormat_GetIntValue(format, OH_MD_KEY_TRACK_TYPE, &trackType)) {
+         printf("get track type from track format failed");
          return;
       }
       // 判断轨道类型。
@@ -119,7 +125,7 @@ target_link_libraries(sample PUBLIC libnative_media_core.so)
 
 ### 在 CMake 脚本中链接动态库
 
-```screen
+```
 target_link_libraries(sample PUBLIC libnative_media_codecbase.so)
 target_link_libraries(sample PUBLIC libnative_media_core.so)
 target_link_libraries(sample PUBLIC libnative_media_vdec.so)
@@ -304,7 +310,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
 
    在 CMake 脚本中链接动态库。
 
-   ```screen
+   ```
    target_link_libraries(sample PUBLIC libnative_buffer.so)
    ```
 
@@ -353,7 +359,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
            metadata = nullptr;
        }
    }
-   //销毁nativebuffer。
+   // 销毁nativebuffer。
    if (nativeBuffer != nullptr) {
        OH_NativeBuffer_Unreference(nativeBuffer);
        nativeBuffer = nullptr;

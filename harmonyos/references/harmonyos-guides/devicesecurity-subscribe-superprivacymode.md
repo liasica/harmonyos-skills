@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅超级隐私模式状态改变事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 订阅超级隐私模式状态改变事件
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9106568158e475de41b2be03b00eaed53b1c630a7a39730e12241b535ab94d48
+scraped_at: 2026-10-11T07:21:30+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:5a1808c7462673619aacca1e0d5eaf723afdf976f36209611eaded0d1b565ba3
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:9106568158e475de41b2be03b00eaed53b1c630a7a39730e12241b535ab
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/x9ymPERWRv2DoP2XLTXodg/zh-cn_image_0000002749492978.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/RhUWNc69Ruatp9IZfKKH6w/zh-cn_image_0000002755024122.png)
 
 **流程说明：**
 
@@ -83,7 +83,6 @@ content_hash: sha256:9106568158e475de41b2be03b00eaed53b1c630a7a39730e12241b535ab
    hilog.info(DOMAIN, TAG, 'start unregister super privacy mode changed listener');
    try {
      superPrivacyMode.off('superPrivacyModeChange', superPrivacyChangedCallback);
-     subscribeCallback_ = null;
      // ...
    } catch (err) {
      hilog.error(DOMAIN, TAG, `unregister super privacy changed listener failed, errCode:${err?.code}, errMessage:${err?.message}`);

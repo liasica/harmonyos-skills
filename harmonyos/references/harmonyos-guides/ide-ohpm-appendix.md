@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-appe
 title: 附录
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:06+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:54+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:f5aa5285e21a68a5f614d5f73ba373237cc4d4603db22220f8e2b8db33b8b5e5
 ---
 

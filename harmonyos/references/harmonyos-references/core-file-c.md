@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-file
 title: C API
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:00+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:28+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ce959191d00798db2f12e3a31af6bc222192ee4ffa886f01360ed0d86944d803
 ---
 

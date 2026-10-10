@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avplayer-shor
 title: 基于AVPlayer播放短视频实践
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放短视频实践
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:53+08:00
+scraped_at: 2026-10-11T07:21:59+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:3b975a3f43e653c99816866b2c74219387ea68233a2c0112c00574e0a958bae1
+content_hash: sha256:2f483a694b2c84ae38dc3b662727fa12d27a095b51203eb8ad1a8a99ee71f2f2
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:3b975a3f43e653c99816866b2c74219387ea68233a2c0112c00574e0a95
 2. 起点时间：松手时的时间。
 3. 终点时间：视频内容开始播放，画面首次变化的时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/BRVlCC9NQH-nfw2lLHU0DA/zh-cn_image_0000002778932447.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ufpFnvPKSbe4xjaZDm1Lhw/zh-cn_image_0000002784583145.gif)
 
 ### 场景体验指标
 
@@ -48,7 +48,7 @@ content_hash: sha256:3b975a3f43e653c99816866b2c74219387ea68233a2c0112c00574e0a95
 
 **图 1** **流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/xCmkNpjfTZGzPwnKH9PVmA/zh-cn_image_0000002749333364.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/hEkGLTmgQOWYow0Vk9C67A/zh-cn_image_0000002784663325.png)
 
 1. 使用视频播放框架AVPlayer可以将Audio/Video媒体资源（比如mp4/mp3/mkv/mpeg-ts等）转码为可供渲染的图像和可听见的音频模拟信号，并通过输出设备进行播放。
 2. 使用LazyForEach进行数据懒加载，设置cachedCount属性指定缓存数量，搭配组件复用能力。冷启动时创建并初始化AVPlayer到prepared阶段。
@@ -60,7 +60,7 @@ content_hash: sha256:3b975a3f43e653c99816866b2c74219387ea68233a2c0112c00574e0a95
 
 **图 2** **异步加载示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/-qEDBRhwTOm4dYR_StLj3w/zh-cn_image_0000002749493248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/6mcraredSbe7Ehnqi6YuTw/zh-cn_image_0000002755024392.png)
 
 在缓存池中有多个播放器实例，播放视频A时，提前预加载视频B并进入prepare状态；切换短视频时，可以立即播放已预加载的视频B，减少切换时间。手势上下滑动的时候，在动画开始时就更新当前索引值，最终实现短视频快速切换，综合起播时间≤230ms。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: CommonEventSubscriber
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > commonEvent > CommonEventSubscriber
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:29+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8f82f8f6d1cb6cf309d24398a892ccb02257788861f77e70fe1a52230b9093b8
+scraped_at: 2026-10-11T07:26:30+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:47d788d19e3dc7be6ed79e7af41ef8224a4f26bb8842ac4aeba156d1bc6743ee
 ---
 
 **说明** 
@@ -896,7 +896,7 @@ getAbortCommonEvent(callback: AsyncCallback<boolean>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<boolean> | 是 | 当查询成功时，err为undefined，data为true表示当前有序公共事件处于中止状态，data为false表示当前有序公共事件未处于中止状态；否则err为错误对象。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当查询成功时，err为undefined，data为true表示当前有序公共事件处于中止状态，data为false表示当前有序公共事件未处于中止状态；否则err为错误对象。 |
 
 **错误码：**
 

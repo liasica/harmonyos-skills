@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: input
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > input
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:22+08:00
+scraped_at: 2026-10-11T07:24:53+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:51d6e409fba1d79db0fa7dec6a550eb3bad2c08852a01a0405512def64913f62
+content_hash: sha256:3a9365bd1c1936bc9132a004b395a0a43e2d28098088dc839ae7082578cd46ae
 ---
 
 交互式组件，提供单选框功能。
@@ -72,4 +72,4 @@ content_hash: sha256:51d6e409fba1d79db0fa7dec6a550eb3bad2c08852a01a0405512def649
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/stbvHu9BSr-EJooO2dmsaA/zh-cn_image_0000002749495438.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/DIQJzQPnSHWO7dJ4BTTEIw/zh-cn_image_0000002755026440.gif)

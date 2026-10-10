@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/call-kit-guid
 title: Call Service Kit（通话服务）
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务）
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:12+08:00
-doc_updated_at: 2026-09-17
+scraped_at: 2026-10-11T07:22:11+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:73d59da0b4f3c7b4532849c76597001527cc0830dcabd5356dfbc276e64dc10c
 ---
 

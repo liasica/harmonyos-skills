@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-config-ag
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:12+08:00
+scraped_at: 2026-10-11T07:22:18+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:94d868ad024280f6ebb44256dca48bd2bbbaa9433f690f6deda19220175115d7
+content_hash: sha256:a583e2ca3253daf5e22faef5facfa8a633b450a98e975721399525a60489946e
 ---
 
 请优先[开通地图服务](map-config-agc.md#开通地图服务)后，再参考“[应用开发准备](application-dev-overview.md)”完成基本准备工作，然后再继续进行以下开发活动。
@@ -26,31 +26,31 @@ Map Kit提供2种方式开通地图服务：
 
 1. 登录DevEco Studio应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/n1N07yokRBe6E_L2_XYk5A/zh-cn_image_0000002778932879.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/vPAyKpd2Qqetsv93fZVJIg/zh-cn_image_0000002784583577.png)
 2. 选择文件，点击项目结构。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/slUu95mIRjyECP4XMYbhZg/zh-cn_image_0000002749333798.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/b8Yr1fbBR-GcbUWJOv6jOw/zh-cn_image_0000002784663757.png)
 3. 进入“Signing Configs”页面，点击“Enable open capabilities”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/oIbyjmCxRVScjOpO69ktDQ/zh-cn_image_0000002749493682.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/Ho3kEd8OQO6uy_TYL4bvKA/zh-cn_image_0000002755024824.png)
 4. 勾选“Map Kit”选项，点击“OK”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/jknB1i-EQQqF5E4E-RHePg/zh-cn_image_0000002779092739.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/d8hzBtWlS4aKXiK0kTC4RQ/zh-cn_image_0000002755184712.png)
 5. 选择“Apply”应用地图服务配置，点击“OK”完成地图服务配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/I13mOZieTWmrNqz0-qHuyQ/zh-cn_image_0000002778932881.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/RWeYFqnJQ2-HZJ5E87PLXw/zh-cn_image_0000002784583579.png)
 
 方式二：通过AppGallery Connect网站开通地图服务。
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/MC4m4hOySrypJNxY6Rm_hg/zh-cn_image_0000002749333800.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/N5j6wkLPSRinw_Qwwm4SUg/zh-cn_image_0000002784663759.png)
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要打开“地图服务”的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/7R0AtQdhT0mXJypZ6GFK0w/zh-cn_image_0000002749493684.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/NLXQgpkwTS-aNXV9S-SdaQ/zh-cn_image_0000002755024826.png)
 3. 选择开放能力管理，找到“地图服务”开关，打开开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/d_BVaPwOQDW13awkspn_0Q/zh-cn_image_0000002779092741.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/aKaNw2JRS7es1UWS9wdNdw/zh-cn_image_0000002755184714.png)
 4. 确认已经开启“地图服务”开放能力，并完成签名。
 
    * 调试阶段必须[申请调试证书](../app/agc-help-add-debugcert-0000001914263178.md)、[注册设备](../app/agc-help-add-device-0000002283189937.md)、开启"地图服务"后重新[申请调试Profile文件](../app/agc-help-debug-profile-0000002248181278.md)，并完成[手动签名](ide-signing-manual.md)。

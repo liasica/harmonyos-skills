@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Progress
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:06+08:00
+scraped_at: 2026-10-11T07:24:34+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:ff5e993e154373c3ea542cf83ad21a989ad6202c2d51bdd978bb774bbeb90731
+content_hash: sha256:2238e05998d20e9681f6b89852faac6155088498ec864781c46ec2c298bca9ed
 ---
 
 进度条组件，用于显示内容加载或操作处理等进度。支持线性、环形、圆形、胶囊等多种样式，可自定义颜色、渐变效果和动效，适用于文件下载、数据加载、任务处理等需要展示进度状态的场景。通过丰富的样式与动效配置，可快速实现进度可视化，提升用户体验。
@@ -439,7 +439,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/B67oQByERxeicokcF9a38Q/zh-cn_image_0000002779093963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/8XFM09caTtuOj_77xWTsyg/zh-cn_image_0000002755185792.png)
 
 ### 示例2（设置环形进度条属性）
 
@@ -469,7 +469,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Tb0ieYOWSy2wCUSVnesQJw/zh-cn_image_0000002778934107.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/4tHxP-SrSBK1d41cbrToFw/zh-cn_image_0000002784584659.png)
 
 ### 示例3（设置环形进度条动画）
 
@@ -496,7 +496,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/RbFxY-ugQzK8trnXMgsxUg/zh-cn_image_0000002749335024.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/_r6RCx6_RIiw9PjZ7DqfvA/zh-cn_image_0000002784664841.gif)
 
 ### 示例4（设置胶囊形进度条属性）
 
@@ -526,7 +526,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/FtV57S61Svupu3ZnwWUDQA/zh-cn_image_0000002749494908.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/F4QbwWNIRomNuOcelcwryg/zh-cn_image_0000002755025910.png)
 
 ### 示例5（设置进度平滑动效）
 
@@ -568,7 +568,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/dKdFTC9nQU-151x-rUfd_g/zh-cn_image_0000002779093965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/FbtuVAD9QPugCH00Muf8JA/zh-cn_image_0000002755185794.gif)
 
 ### 示例6（设置定制内容区）
 
@@ -648,7 +648,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/4I8-W0bnTI6Rlu5Cx-YrVA/zh-cn_image_0000002778934109.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/g3wI4VtVRwa5uQhZHEMAzA/zh-cn_image_0000002784584661.gif)
 
 ### 示例7（设置隐私隐藏）
 
@@ -685,7 +685,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/0QWMcWDfS8m_vTK3lXVpmQ/zh-cn_image_0000002749335026.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/AiL2Se8PT9-xduNiiRnFwQ/zh-cn_image_0000002784664843.gif)
 
 ### 示例8（设置Capsule进度条圆角半径）
 
@@ -722,7 +722,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/BDEy6mmaSzi6pNVhdgusnw/zh-cn_image_0000002749494910.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/HeOFVAcgTJafKAJiiB5F5Q/zh-cn_image_0000002755025912.png)
 
 ### 示例9（设置线性进度条和胶囊进度条属性）
 
@@ -754,4 +754,4 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/0ggqFF4RReG0sWPjoxoJ-Q/zh-cn_image_0000002779093967.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/8udSbVDPQNKOu5Ff3TY_nA/zh-cn_image_0000002755185796.png)

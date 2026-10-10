@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 应用调试
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:33+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:21+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ce70735ecf14215452372ada8e6d20e828ef87740acea3a67eb87bba62ae3d72
 ---
 

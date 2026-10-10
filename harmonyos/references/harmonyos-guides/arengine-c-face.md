@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-fa
 title: 人脸跟踪（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人脸识别与跟踪 > 人脸跟踪（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:aabed61beadb7232397d760a531b08c5af9e3fbbb990296079eb74ee5bc92a1b
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:a26fde47222fc3d45c4b9a2452c7fa359c1b4a636a56f5f9215c37447081fa71
 ---
 
 ## 约束与限制
@@ -25,7 +25,7 @@ content_hash: sha256:aabed61beadb7232397d760a531b08c5af9e3fbbb990296079eb74ee5bc
 | [HMS\_AREngine\_ARFace\_AcquireBlendShapes](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arface_acquireblendshapes) | 获取人脸表情信息。 |
 | [HMS\_AREngine\_ARFace\_AcquireGeometry](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arface_acquiregeometry) | 获取人脸几何信息。 |
 | [HMS\_AREngine\_ARFace\_AcquireViewMatrix](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arface_acquireviewmatrix) | 获取当前人脸的面视图矩阵。 |
-| [HMS\_AREngine\_ARFace\_GetCenterPose](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arface_getcenterpose) | 获取从人脸中心点位姿信息。 |
+| [HMS\_AREngine\_ARFace\_GetCenterPose](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arface_getcenterpose) | 获取人脸中心点的位姿信息。 |
 | [HMS\_AREngine\_ARFaceBlendShapes\_AcquireData](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arfaceblendshapes_acquiredata) | 获取微表情数据的集合。 |
 | [HMS\_AREngine\_ARFaceBlendShapes\_AcquireTypes](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arfaceblendshapes_acquiretypes) | 获取所有微表情参数类型数组。 |
 | [HMS\_AREngine\_ARFaceBlendShapes\_GetCount](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arfaceblendshapes_getcount) | 获取人脸微表情数据的个数。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localbu
 title: "@LocalBuilder装饰器：维持组件关系"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @LocalBuilder装饰器：维持组件关系
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:59+08:00
+scraped_at: 2026-10-11T07:21:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c9df7461d645d9b44b7efcee6a189d12f179a527520d012c5bcbaeb2cc261bb7
+content_hash: sha256:52a88112f7930553ea5c073e4639aa4991f8c687275014315344a3af8a875c47
 ---
 
 当开发者使用局部@Builder进行引用数据传递时，需要考虑组件的父子关系。然而在使用.bind(this)的方式更改函数调用上下文后，会出现组件的父子关系与状态管理的父子关系不一致的问题。为了解决这一问题，引入[@LocalBuilder](../harmonyos-references/ts-universal-localbuilder.md#localbuilder)装饰器。@LocalBuilder拥有和局部@Builder相同的功能，且比局部@Builder能够更好地确定组件的父子关系和状态管理的父子关系。
@@ -47,7 +47,7 @@ this.myBuilderFunction()
 
 跨组件传递局部@Builder函数时，会使用.bind(this)更改函数上下文，但这可能会导致组件的父子关系与状态管理的父子关系不一致。而@LocalBuilder无论是否使用.bind(this)，都不会改变组件的父子关系，即@LocalBuilder中定义组件所属的父组件是确定的，无法被改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/CAVCqBrWTZSK_E4CdqA-QA/zh-cn_image_0000002779090779.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Pyn6M7Y6QrChE6TAeJpCxg/zh-cn_image_0000002755022978.png)
 
 **说明** 
 
@@ -103,7 +103,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/t3OpIuslTXGJqc0LwKXG0A/zh-cn_image_0000002778930923.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/su8Lx0MMTQK9ztaAGLKxUw/zh-cn_image_0000002755182864.png)
 
 ## 限制条件
 
@@ -158,7 +158,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/KPXFphFsTqaLMA_lTEuL2A/zh-cn_image_0000002749331840.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/fF94HtghQ9OY8WDi9f1FXg/zh-cn_image_0000002784581729.gif)
 
 ### 按引用传递参数
 
@@ -205,7 +205,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/7vZniBAoRLiMXYxWTdzKzw/zh-cn_image_0000002749491724.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/BKeA7NnWTLqjqu_VMNLq7g/zh-cn_image_0000002784661913.gif)
 
 按引用传递参数时，如果在@LocalBuilder函数内调用自定义组件，ArkUI提供$$作为按引用传递参数的范式。
 
@@ -263,7 +263,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/L718vegXSt-x-p_gKpL5aw/zh-cn_image_0000002779090781.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/8Ju1_EVfTq6AIdWoXmLASw/zh-cn_image_0000002755022980.gif)
 
 当子组件引用父组件的@LocalBuilder函数并传入状态变量时，状态变量的改变不会触发@LocalBuilder函数内的UI刷新。这是因为调用@LocalBuilder装饰的函数创建出来的组件绑定于父组件，而状态变量的刷新机制仅作用于当前组件及其子组件，对父组件无效。而使用@Builder修饰函数可触发UI刷新，原因在于@Builder改变了函数的this指向，使创建出来的组件绑定到子组件上，从而在子组件修改变量能够实现@Builder中的UI刷新。
 
@@ -365,7 +365,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/NK1ynfx1TMmdpezwfZK7aw/zh-cn_image_0000002778930925.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/JYJ14LjQRyuHrfcHkIvfuA/zh-cn_image_0000002755182866.gif)
 
 ### 按值传递参数
 
@@ -400,7 +400,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/jcK_laZxRzW4lzPKBlIlWA/zh-cn_image_0000002749331842.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/uqhU6BfrTae5WJNl1KfCfg/zh-cn_image_0000002784581731.png)
 
 ## 使用场景
 
@@ -492,7 +492,7 @@ struct ParentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/XrlkcRR_TNCOp0pvun6DMA/zh-cn_image_0000002749491726.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/zpL2CIh5TQmSPdq1pc7yOQ/zh-cn_image_0000002784661915.gif)
 
 ## 常见问题
 
@@ -596,7 +596,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/g73q_Qu-RKuw06wtJiU9fA/zh-cn_image_0000002779090783.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/86fsaa7kS5KGOEA-5YkKOw/zh-cn_image_0000002755022982.gif)
 
 ### @LocalBuilder函数在参数处直接调用出现布局错乱
 
@@ -636,7 +636,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/8QA-qMIYSQysCkm0VAlPdA/zh-cn_image_0000002778930927.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/0__US94zRVa8d9T6_fcJPw/zh-cn_image_0000002755182868.png)
 
 【正例】
 
@@ -674,4 +674,4 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/4uJPsxgVThKSIfFeQ7-zBw/zh-cn_image_0000002749331844.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Nwg5Ao-3QSyCDLwun7Nntw/zh-cn_image_0000002784581733.png)

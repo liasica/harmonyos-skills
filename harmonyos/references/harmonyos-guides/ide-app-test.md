@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-test
 title: 开发自测试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:17+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:05+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:bb79fe90a2084ace5e6f222e34fb703ba83da373e2de3cd619fea0cced0c0baf
 ---
 

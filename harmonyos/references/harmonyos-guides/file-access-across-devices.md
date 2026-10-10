@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-access-a
 title: 跨设备文件共享和访问
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 分布式文件系统 > 跨设备文件共享和访问
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:670739bbc2fa482ca03ebd093476642f46635228d01b07093f8a140d6fdb33f5
+scraped_at: 2026-10-11T07:21:19+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:23069d7780822db7142f48647e5b8d6bd314936f62ff35f5e88667c29146fc1d
 ---
 
 分布式文件系统为应用提供了跨设备文件访问的能力，开发者在两个设备上安装同一应用时，通过[基础文件接口](app-file-access.md)，可跨设备读写另一个设备上该应用[分布式目录](app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)（/data/storage/el2/distributedfiles/）下的文件。例如：多设备数据流转的场景，设备组网互联之后，设备A上的应用可访问设备B上的同应用分布式目录下的文件，当期望应用文件被其他设备访问时，只需将文件移动到分布式目录即可。
@@ -22,7 +22,7 @@ content_hash: sha256:670739bbc2fa482ca03ebd093476642f46635228d01b07093f8a140d6fd
    将需要跨设备访问的两个设备登录同一账号，保证设备蓝牙和Wi-Fi功能开启，蓝牙无需互连，Wi-Fi无需接入同一个局域网。
 2. 授权分布式数据同步权限。
 
-   分布式数据同步权限的授权方式为user\_grant，因此需要调用requestPermissionsFromUser接口，以动态弹窗的方式向用户申请授权。示例中的context的获取方式请参见[获取UIAbility的上下文信息](uiability-usage.md#获取uiability的上下文信息)。
+   分布式数据同步权限的授权方式为user\_grant，因此需要调用requestPermissionsFromUser()接口，以动态弹窗的方式向用户申请授权。示例中的context的获取方式请参见[获取UIAbility的上下文信息](uiability-usage.md#获取uiability的上下文信息)。
 
    ```ts
    import { common, abilityAccessCtrl } from '@kit.AbilityKit';

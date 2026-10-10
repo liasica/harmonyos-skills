@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/update
 title: 升级服务
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 升级服务
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:02+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:39+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:e1c72d3dc32ea440e1fe74516de86ce825b921b753b7a422a2b2eaea05570ab7
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-comm
 title: 命令行工具
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:37+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:25+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:55a8a30b353446300b11d9c72277008fd3ffeff7557c0254efc6985cca5b908e
 ---
 

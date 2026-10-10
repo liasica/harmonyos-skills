@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ListItemGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ListItemGroup
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:55+08:00
+scraped_at: 2026-10-11T07:24:21+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:c58d4fdd7fb3558c667a2986ee554df75f2fd34519ed7967114a0e5dbefc4d65
+content_hash: sha256:e2e6cb728c6bce1b3f053c6707d2de245c30dbb9699756724b3afca3fee1490e
 ---
 
 ListItemGroup用来展示列表项分组，支持自定义分组头部和尾部区域、卡片样式、分割线、懒加载与预加载等能力，适用于需要对列表项进行逻辑分组展示的场景。宽度默认充满[List](ts-container-list.md)组件，必须配合List组件来使用。
@@ -301,7 +301,7 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/sDU_g8Z0Qj2jl3RVrVBNyA/zh-cn_image_0000002749334604.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ZaAjoOD_S-idmuL-h5yV7g/zh-cn_image_0000002784664511.gif)
 
 ### 示例2（设置卡片样式）
 
@@ -363,7 +363,7 @@ interface ArrObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/Df6MCgxvQvCSk6gmQQT9fw/zh-cn_image_0000002749494490.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/AjutCU5aSNq5fD4QFIcHlA/zh-cn_image_0000002755025580.jpeg)
 
 ### 示例3（设置Header/Footer）
 
@@ -501,7 +501,7 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/stC9ZdyATlK0OVQQNKvV1A/zh-cn_image_0000002779093545.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/4EgIiINhTL64OYQs4T-9rQ/zh-cn_image_0000002755185464.gif)
 
 ### 示例4（设置多列布局）
 
@@ -665,7 +665,7 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/pzhRPxz3S8uSM43vWLnceg/zh-cn_image_0000002778933691.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/r1CmBLwkRvWqL9vRmfwhoA/zh-cn_image_0000002784584331.gif)
 
 ### 示例5（设置悬浮态）
 
@@ -740,4 +740,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/XFnGrii5SRmE0ZyE83ppJQ/zh-cn_image_0000002749334606.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/23Jtb70QRSW4u6G-vN5hlw/zh-cn_image_0000002784664513.gif)

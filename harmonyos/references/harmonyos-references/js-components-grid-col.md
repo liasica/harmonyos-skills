@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: grid-col
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 栅格组件 > grid-col
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:19+08:00
+scraped_at: 2026-10-11T07:24:50+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a4f854839606796f4c541340edb80fbdbd2d4b00dcc77a577af15deec90e7ac2
+content_hash: sha256:3473ed8d5e00c755d28a6a5009559cb11d44ca014b93163d0957fd22e0d97457
 ---
 
 **说明** 
@@ -117,4 +117,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/bli-gh_wRVi_jv8iPB4AKw/zh-cn_image_0000002779094303.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/FHUwQRLqSsO48tVbJPsy7w/zh-cn_image_0000002755186132.gif)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-kit-fa
 title: Wallet Kit常见问题
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > Wallet Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:00+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:28+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:43b522c458a26997aa6326bf641cc832f9adfab10e63260a70565312f9d5c2d7
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 开通生物特征认证能力
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 生物特征绑定、认证与解绑 > 开通生物特征认证能力
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:52474b720a4f3304162fe4187c8cfaf96f75e98549d475cf4d9c4ba41c2886ab
+scraped_at: 2026-10-11T07:21:29+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:b4be0708a1c39ca1e78594317f5795dadd9357f07a3eda3d698ed4953288f327
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:52474b720a4f3304162fe4187c8cfaf96f75e98549d475cf4d9c4ba41c2
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/YS0uKGR3R6mb5NgBI6LxfQ/zh-cn_image_0000002779092023.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/2oceNKxFR0yzWBdxUYdTDA/zh-cn_image_0000002755183996.jpg)
 
 ## 接口说明
 
@@ -35,7 +35,7 @@ content_hash: sha256:52474b720a4f3304162fe4187c8cfaf96f75e98549d475cf4d9c4ba41c2
 
 如图表示开通人脸认证时对应的UI界面示例，当密码认证通过后，则会拉起系统人脸认证界面进行人脸信息绑定。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/AzSAGeE5Sp2bB9eBFu6gfQ/zh-cn_image_0000002778932165.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/bg2h-xkiTey8EbYjPMwWFg/zh-cn_image_0000002784582863.png)
 
 ## 开发步骤
 
@@ -51,9 +51,39 @@ content_hash: sha256:52474b720a4f3304162fe4187c8cfaf96f75e98549d475cf4d9c4ba41c2
    import { hilog } from '@kit.PerformanceAnalysisKit';
    import { common } from '@kit.AbilityKit';
    ```
-2. 通过用户认证服务提供的接口[查询设备是否已录入相关凭证](../harmonyos-references/js-apis-useriam-userauth.md#userauthgetenrolledstate12)。
-3. 参考密钥管理服务提供的[签名/验签指导](huks-signing-signature-verification-arkts.md)，初始化签名会话。
-4. 调用数字盾密码认证接口[trustedAuthentication](../harmonyos-references/devicesecurity-trusted-auth-api.md#trustedauthenticationtrustedauthentication)发起生物特征认证前的密码认证申请。
+2. 人脸认证功能需设备具备3D人脸识别能力，需通过用户认证服务提供的接口[查询支持的认证能力](obtain-supported-authentication-capabilities.md)确认设备是否支持3D人脸识别。
+
+   ```typescript
+   obtainingSupported() {
+     try {
+       // 查询认证能力是否支持
+       userAuth.getAvailableStatus(userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL3);
+       Logger.info('current auth trust level is supported.');
+       return true;
+     } catch (error) {
+       const err: BusinessError = error as BusinessError;
+       Logger.error(`current auth trust level is not supported, code is ${err?.code}, message is ${err?.message}`);
+       return false;
+     }
+   }
+   ```
+3. 通过用户认证服务提供的接口[查询设备是否已录入相关凭证](../harmonyos-references/js-apis-useriam-userauth.md#userauthgetenrolledstate12)，如下示例为查询用户人脸注册凭据的状态。
+
+   ```typescript
+   obtainingEnrolledCredentialInformation() {
+     try {
+       let enrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FACE);
+       Logger.info('get current enrolled state successfully.');
+       return enrolledState.credentialDigest;
+     } catch (error) {
+       const err: BusinessError = error as BusinessError;
+       Logger.error(`get current enrolled state failed, code is ${err?.code}, message is ${err?.message}`);
+       return false;
+     }
+   }
+   ```
+4. 参考密钥管理服务提供的[签名/验签指导](huks-signing-signature-verification-arkts.md)，初始化签名会话。
+5. 调用数字盾密码认证接口[trustedAuthentication](../harmonyos-references/devicesecurity-trusted-auth-api.md#trustedauthenticationtrustedauthentication)发起生物特征认证前的密码认证申请。
 
    ```typescript
    async PwdVerify(challenge: Uint8Array, assetName: string): Promise<trustedAuthentication.AuthToken> {
@@ -76,8 +106,8 @@ content_hash: sha256:52474b720a4f3304162fe4187c8cfaf96f75e98549d475cf4d9c4ba41c2
      }
    }
    ```
-5. 通过用户认证服务提供的接口，拉起生物特征认证控件并[发起认证](start-authentication.md)。
-6. 当订阅的生物认证结果获取到后，将数字盾密码认证结果和生物特征认证结果统一整合，发起生物特征绑定请求。
+6. 通过用户认证服务提供的接口，拉起生物特征认证控件并[发起认证](start-authentication.md)。
+7. 当订阅的生物认证结果获取到后，将数字盾密码认证结果和生物特征认证结果统一整合，发起生物特征绑定请求。
 
    ```typescript
    try {
@@ -98,5 +128,5 @@ content_hash: sha256:52474b720a4f3304162fe4187c8cfaf96f75e98549d475cf4d9c4ba41c2
      // ...
    }
    ```
-7. 参考密钥管理服务提供的[签名/验签指导](huks-signing-signature-verification-arkts.md), 对返回生物特征绑定对应的authToken数据进行签名，并结束会话。
-8. 企业开发者应用可将签名获取的生物特征进行验签校验，并将生物特征credential信息与账号信息在服务器端绑定。
+8. 参考密钥管理服务提供的[签名/验签指导](huks-signing-signature-verification-arkts.md), 对返回生物特征绑定对应的authToken数据进行签名，并结束会话。
+9. 企业开发者应用可将签名获取的生物特征进行验签校验，并将生物特征credential信息与账号信息在服务器端绑定。

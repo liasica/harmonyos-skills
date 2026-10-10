@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpmrc
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > ohpmrc
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a3929609e84bddf7042c8426e5a13cb9e2e90ffd8b10f0494c26367b8f486d69
+scraped_at: 2026-10-11T07:23:25+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:6dbbd023192ff58dc7539f57f0ba287c699cbeec00b0442292938a9258d32db8
 ---
 
 ohpm配置文件。
@@ -93,7 +93,7 @@ https://contentcenter-drcn.dbankcdn.cn/   //该域名用于文件资源下载，
 
 访问https://ohpm.openharmony.cn/地址，下载证书，请选择保存类型为**证书链**（访问https://contentcenter-drcn.dbankcdn.cn/ 执行相同操作）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/yEYKsAgaSnqrwft5S0-lcQ/zh-cn_image_0000002779082619.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ddqqCRYxSzavYSr1QIwvuw/zh-cn_image_0000002750009644.png "点击放大")
 
 通过访问https://ohpm.openharmony.cn/地址获取证书openharmony.cn.pem，通过访问https://contentcenter-drcn.dbankcdn.cn/地址获取证书update.hicloud.pem，在 .ohpmrc 文件中配置 ca\_files=证书路径1，证书路径2（两个文件均需配置）。
 
@@ -112,7 +112,7 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 debug日志如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/kd095-5ZRRq-pwIYy0SJbA/zh-cn_image_0000002749483552.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/8bQbK-S_QKiI6jVDBi2XDQ/zh-cn_image_0000002779608549.png "点击放大")
 
 ## install\_all
 
@@ -132,29 +132,29 @@ debug日志如下所示：
 
 ### 模块内依赖版本冲突
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/kIAM30GUTveqK2pXRgAyPQ/zh-cn_image_0000002778922763.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/heB_SAq8Rd2ji4tOO-X5Rg/zh-cn_image_0000002779728703.png)
 
 如上图所示的依赖路径中，moduleA 为您正在开发的模块，其直接依赖为 B@1.1，C@1.1。其中 B@1.1 与 C@1.1 分别依赖了 D 的两个版本 D@1.2 与 D@1.3。当您开启了依赖版本冲突自动解决功能，ohpm将会选择 D@1.3 版本作为待安装的版本，最终依赖路径被解析为下图蓝色箭头所指向的路径：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/_HJPbLr1Som_sTBWaCMcUg/zh-cn_image_0000002778922767.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/Ei3SbqkOSOe7kK4SvaaP4w/zh-cn_image_0000002750169532.png)
 
 ### 模块间依赖版本冲突
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/uk3SlU78QCybuANPIrI6Ng/zh-cn_image_0000002749483554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/ELJR6QIbSfSV40oeTdUcJw/zh-cn_image_0000002750169528.png)
 
 如上图所示的依赖路径中，moduleA、moduleB 为您同一项目下正在开发的两个模块，其中moduleA 依赖 B@1.1，moduleB 依赖 C@1.1，B@1.1 与 C@1.1 分别依赖了 D 的两个版本 D@1.2 与 D@1.3。当您开启了依赖版本冲突自动解决功能，并且您是使用 ohpm install --all 进行安装时，ohpm将会选择 D@1.3 版本作为待安装的版本，最终依赖路径被解析为下图蓝色箭头所指向的路径：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/tQUWgq8gSv2xFRftgngjCg/zh-cn_image_0000002749323682.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/6HEkyk2PSyaR8_TioqS4qQ/zh-cn_image_0000002779608555.png)
 
 ### 更新依赖版本的场景
 
 当您希望将您某个模块的直接依赖更新成另一个版本，如下图所示，您手动将 C@1.1 更新为 C@1.2：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/8abSEFfoSCSVuO0ET_GdXw/zh-cn_image_0000002749483558.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/EwwtZWeTS9-mCbb-eN5B-Q/zh-cn_image_0000002779728709.png)
 
 由于 C 更新为 C@1.2 后，不再依赖 D，若依赖 D 的版本在更新 C 版本之前已经通过 ohpm 的自动冲突处理机制锁定为 D@1.3 版本，此时 C 版本的升级将不会导致 D 的版本由 D@1.3 回退为 D@1.2，这样可以保证每一次更新都只是在上一次结果上进行影响最小的修改，最终的依赖路径将会被解析为下图蓝色箭头所指向的路径：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/lMmD8PwbQ0qnBXkD5ohMzA/zh-cn_image_0000002749323684.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/z8inUPN3QZaT0H-q-H91Hg/zh-cn_image_0000002779608557.png)
 
 对于上述场景，如果希望D版本同时也回退至D@1.2版本，则需要在ohpm install之前执行ohpm clean命令清理各模块下的oh-package-lock.json5文件，以消除上一次安装结果的影响。
 
@@ -201,7 +201,7 @@ target\_path下是hvigor在构建时根据目标产物target为各模块自动�
 * 同一依赖，同时存在本地版本（如：./a.har）与远程版本（如：^1.0.0）时，冲突决策失败；
 * 同一依赖，存在多个固定版本时，冲突决策失败。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/K4DvogtZTBas1Je-0Wtnag/zh-cn_image_0000002749323680.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/szoqQfQlR1auoQM2aTXVvQ/zh-cn_image_0000002779728705.png "点击放大")
 
 **注意** 
 
@@ -413,11 +413,11 @@ ohpm WARN: local dependency "fee" found in "/storage/Users/currentUser/Documents
 
 此时在entry的依赖树中，依赖fee存在两个版本：一个别名为fee的foo模块，一个名称为fee的fee模块，若此时开启了[resolve\_conflict](ide-hmos-ohpmrc.md#section368717475562)，由于fee模块的实际版本号为1.0.0要小于foo模块的版本号2.0.0，在执行ohpm install时将只会在entry模块的oh\_modules下安装以fee为别名的foo模块，而实际的fee模块则不会被安装，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Z91xCJGCT9uLK3rrv_uwSg/zh-cn_image_0000002779082621.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/CNU7AGmBTouTdd4IvQg7MA/zh-cn_image_0000002750009646.png "点击放大")
 
 在entry的oh\_modules下会生成一个名称为fee的软链接，该链接却指向foo模块的实际路径：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/HSSbLnOrTqqcWvj-RkrIBA/zh-cn_image_0000002778922765.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/9YNAWL50TPGHrJIkj8BuOQ/zh-cn_image_0000002750169530.png "点击放大")
 
 如果entry实际希望依赖的是真实的fee模块而不是foo模块，则此时会导致entry无法编译成功。
 
@@ -616,7 +616,7 @@ compability\_log\_level字段默认赋值为'warn'，可配置的日志等级请
 
 如下图所示，蓝色箭头标识最终要安装的依赖，安装的依赖D@1.0.0来自依赖B@1.0.0（依赖名称和依赖版本相同的依赖会被定性为相同依赖，最终安装哪个由依赖构建先后顺序决定）, 因B@1.0.0并没有安装，但oh-package-lock.json5中锁定了依赖D的版本，在二次安装时会爆出D的依赖路径不存在错误，此时需要将该开关设置为false。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/kjbHNhWaQKG47YtI_Jn59g/zh-cn_image_0000002749483556.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ZpNnZx7GQZyBg8W4wn47ZQ/zh-cn_image_0000002779728707.png)
 
 **oh-package-lock.json5示例**
 

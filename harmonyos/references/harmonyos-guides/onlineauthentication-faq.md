@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: Online Authentication Kit常见问题
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > Online Authentication Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:53+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:31+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:139b684ef8b1c6509906162573a6506018a237df4104f8b1d22b68af2b4fafe6
 ---
 

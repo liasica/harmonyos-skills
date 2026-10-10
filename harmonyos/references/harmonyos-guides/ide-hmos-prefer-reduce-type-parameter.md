@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-pref
 title: "@typescript-eslint/prefer-reduce-type-parameter"
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-reduce-type-parameter
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:30+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:18+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c006c34246a55950aec4b4c8f49d976f22a3520aef86cee9b722f1979cc5d6ca
 ---
 

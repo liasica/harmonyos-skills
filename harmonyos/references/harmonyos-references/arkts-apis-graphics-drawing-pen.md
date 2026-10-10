@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Pen)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Pen)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cc5f16d739317be4def3929b87c5a39525c36efe5f58c7d4acaf31f2b68280d7
+scraped_at: 2026-10-11T07:27:46+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:74a41d21af6c28677262168d66fcefb54e2a3e170141198cc3e7bf263d3bf6ea
 ---
 
 画笔对象，用于描述所绘制图形形状的轮廓信息，支持设置颜色、线宽、抗锯齿、透明度、混合模式、转角样式、线帽样式，以及颜色滤波器、蒙版滤波器、路径效果、着色器、阴影层等绘制效果。
@@ -292,7 +292,7 @@ setColor4f(color4f: common2D.Color4f, colorSpace: colorSpaceManager.ColorSpaceMa
 **示例：**
 
 ```ts
-import { common2D, drawing, colorSpaceManager } from "@kit.ArkGraphics2D";
+import { common2D, drawing, colorSpaceManager } from '@kit.ArkGraphics2D';
 
 const pen = new drawing.Pen();
 let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
@@ -342,7 +342,7 @@ getColor4f(): common2D.Color4f
 **示例：**
 
 ```ts
-import { common2D, drawing, colorSpaceManager } from "@kit.ArkGraphics2D";
+import { common2D, drawing, colorSpaceManager } from '@kit.ArkGraphics2D';
 
 const pen = new drawing.Pen();
 let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);

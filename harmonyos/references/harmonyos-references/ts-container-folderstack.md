@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: FolderStack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FolderStack
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:12+08:00
+scraped_at: 2026-10-11T07:24:42+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:06cf3d8b8e29798b52afd113ad01d86620888874b971826529b5ed0e571e504d
+content_hash: sha256:14f2cac854cf5afc4dee075440106199e5e0578041f31355b9f06d787f0a8135
 ---
 
 FolderStack继承自[Stack](ts-container-stack.md)（层叠布局）控件，新增了[折叠屏悬停](../best-practices/bpta-folded-hover.md)能力，通过在FolderStack的配置项[FolderStackOptions](ts-container-folderstack.md#folderstackoptions18对象说明)的upperItems数组上设置子组件id，使相应子组件自动避让折叠屏折痕区后移到上半屏。FolderStack适用于双折叠设备的悬停态场景，如视频播放、视频会议等应用，实现视频画面自动移至上半屏、控制面板保留在下半屏的布局。该组件能解决双折叠设备适配问题，带来提升用户体验、简化开发者布局适配工作的收益。
@@ -350,11 +350,11 @@ struct Index {
 
 **图1** 横屏展开
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Wg9QA92HSJO8xlfMtHK8Ow/zh-cn_image_0000002749335222.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/rDWxQj-xRkKQ2_L7rfExjQ/zh-cn_image_0000002784665039.png)
 
 **图2** 横屏半折叠
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/_s50XtlMRoiMFwcQh941HA/zh-cn_image_0000002749495106.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/QPqJM1vgS5qBxdY9tJtJTg/zh-cn_image_0000002755026108.png)
 
 ### 示例2（使用attributeModifier动态设置FolderStack组件的属性及方法）
 
@@ -454,7 +454,7 @@ this appRotation:3
 
 this windowStatusType:1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/tiJ8VO-XSY-Q58YEj16UxA/zh-cn_image_0000002779094163.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/RNHyqDLrT2e2YqYg5tgRiQ/zh-cn_image_0000002755185992.png)
 
 **图2** 横屏半折叠
 
@@ -470,4 +470,4 @@ this appRotation:3
 
 this windowStatusType:1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/7U3kJVqRT1-X2gF-1l0Zbw/zh-cn_image_0000002778934307.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/e9tC6uFnRoqrgEAFqinDKw/zh-cn_image_0000002784584859.png)

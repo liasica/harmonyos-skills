@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: PreviewChecker检测规则
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > PreviewChecker检测规则
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:02+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:362203c293f802b9e0f71aebe2822baf01d23093bee5a735707b980a3cbde360
 ---
 

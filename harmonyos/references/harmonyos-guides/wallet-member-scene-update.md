@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-member
 title: 更新会员卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 会员卡 > 开发场景 > 更新会员卡
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:21+08:00
+scraped_at: 2026-10-11T07:22:27+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:a0704f8014c1d41f26a706d5b05f7f21efbe36249d9c4f9d4c267aa28c5cab10
+content_hash: sha256:64f8372d9375588bcdfa2063b987a7fe1e3d969cf5e6459b73db5c7d3b598a33
 ---
 
 当会员卡信息发生变更时，如会员信息修改、权益发生变更等，更新钱包中的会员卡数据。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/tepRQW9aTB-pGdeSyQyivA/zh-cn_image_0000002749493922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/tPFU96RJToKVFxSkOvPPvw/zh-cn_image_0000002755025056.png)
 
 ## 服务端开发
 

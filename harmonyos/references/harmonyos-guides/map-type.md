@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-type
 title: 切换地图类型
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 切换地图类型
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:12+08:00
+scraped_at: 2026-10-11T07:22:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e6addf55fafb8208ce4d7ea4e34ebfdcd54d91b4b67dc1fe5e6b4c7bc82f5c05
+content_hash: sha256:b43993c4966136df1fdbb0a90f66086a919e7f31157105127132f186e24f9580
 ---
 
 ## 场景介绍
@@ -22,23 +22,23 @@ Map Kit支持以下地图类型：
 
 **图1** 标准地图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Sza56aR4TZG6nY-IVz8afQ/zh-cn_image_0000002779092747.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/o0CNaGChTq2CEkAnkFKTWQ/zh-cn_image_0000002755184720.jpg "点击放大")
 
 **图2** 空地图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1m1u5JmcRHy-vkaJDtbhOA/zh-cn_image_0000002778932889.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/M6_jwGoMQdaSrP-oFt745Q/zh-cn_image_0000002784583587.jpg "点击放大")
 
 **图3** 地形图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/U54YeOxKTRSaSgQ657qWSw/zh-cn_image_0000002749333808.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/F4Oej8k8S22ri8Br0rz5OA/zh-cn_image_0000002784663767.jpg "点击放大")
 
 **图4** 卫星图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/XVFu58UxRsWvqcKFrGAwHg/zh-cn_image_0000002749493692.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/tdYSs1JcSCCXGlafwB9U4Q/zh-cn_image_0000002755024834.jpg "点击放大")
 
 **图5** 混合地图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/IF-cGhe9TiqEDV9ZiEocRw/zh-cn_image_0000002779092749.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/QRws-_KsSSycF8u8PhzV_w/zh-cn_image_0000002755184722.jpg "点击放大")
 
 ## 接口说明
 
@@ -84,7 +84,7 @@ Map Kit提供2种方式设置地图类型：
 
    显示效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/npt0ODb2SxS03ffouRq5OQ/zh-cn_image_0000002778932891.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/GQztvmgfR8G5A86ApbcuYg/zh-cn_image_0000002784583589.jpg "点击放大")
 
    方式二：地图创建后，调用[setMapType](../harmonyos-references/map-map-mapcomponentcontroller.md#setmaptype)方法设置地图类型为地形图。设置为地形图时，为了获得最佳显示效果，推荐将地图缩放层级保持在5至14之间。
 
@@ -94,4 +94,4 @@ Map Kit提供2种方式设置地图类型：
 
    显示效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/nequx6oDTNuSD9G2IpxmUw/zh-cn_image_0000002749333810.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/X06rRCDZTPmR41Jbr1Ry2Q/zh-cn_image_0000002784663769.jpg "点击放大")

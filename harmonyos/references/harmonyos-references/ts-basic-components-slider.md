@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Slider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Slider
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:00+08:00
+scraped_at: 2026-10-11T07:24:27+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:43a9e5c626ca82a3f7678b6d8e5eaba33e4eaed31e61c7bbf8c6f74dc0d7c352
+content_hash: sha256:0c401e08ebb08ecddd5937bcaa5a00ba0ed03a6b08e5d7f7bae1596bc549186c
 ---
 
 滑动条组件，通常用于快速调节设置值，如音量调节、亮度调节等应用场景。支持样式定制、方向配置、交互方式和无障碍功能，能解决UI一致性问题，提升开发效率，从而改善用户体验并降低开发成本。
@@ -1099,7 +1099,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/OfkeKYl9Sgib1o0xN_VpjQ/zh-cn_image_0000002749334816.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/6jcqaQrWQla0kqKt8LxAew/zh-cn_image_0000002784664633.gif)
 
 ### 示例2（设置滑动条样式）
 
@@ -1154,7 +1154,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/kzF-c7i_Ru6FYwbLQozVZg/zh-cn_image_0000002749494700.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/JLzFgJ8dSTeVjZEbJPccGg/zh-cn_image_0000002755025702.png)
 
 ### 示例3（自定义滑动条）
 
@@ -1272,7 +1272,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/WfM9TKPXREWIm61lqYMM6g/zh-cn_image_0000002779093757.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/5n2WPoKcS6iHFeU9NGbamw/zh-cn_image_0000002755185586.gif)
 
 ### 示例4（设置滑动条渐变色）
 
@@ -1355,7 +1355,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/UOwAoTZ-TLGvT6ciU8GcbQ/zh-cn_image_0000002778933901.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Z_aoRRIoT-CnLBYLjnJZRg/zh-cn_image_0000002784584453.gif)
 
 ### 示例5（滑动条设置前后缀内容）
 
@@ -1572,7 +1572,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/QTKOM49YSXy-fau1dEInfw/zh-cn_image_0000002749334818.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Eyu-CZ_tTee8PPGIfw_7VA/zh-cn_image_0000002784664635.jpeg)
 
 ### 示例6（滑动条设置刻度点无障碍文本）
 
@@ -1640,7 +1640,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/5HpdxqrATDuSesHdlpaXaw/zh-cn_image_0000002749494702.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/4PDvNkZWTIepHY3-Q2pH1w/zh-cn_image_0000002755025704.png)
 
 ### 示例7（设置滑动条的双向绑定）
 
@@ -1673,7 +1673,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/pLvw0ji2R0qIfbF38nTFsA/zh-cn_image_0000002779093759.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/9FtAL4ryQbubhm3VYzD5bA/zh-cn_image_0000002755185588.gif)
 
 ### 示例8（滑块设置渐变色）
 
@@ -1792,7 +1792,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/50056eNmQ_u3FhPEth633A/zh-cn_image_0000002778933903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/2nU4C4CuSO-1F2vMSREoUQ/zh-cn_image_0000002784584455.png)
 
 ### 示例9（设置滑轨的背景颜色）
 
@@ -1836,7 +1836,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/s4UM01kqR7aZkoGW1PV6eQ/zh-cn_image_0000002749334820.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/CykWLWUcSLSHL1jyqK2Q0Q/zh-cn_image_0000002784664637.png)
 
 ### 示例10（设置滑动条的沉浸光感效果）
 
@@ -1876,8 +1876,8 @@ struct SliderSystemMaterial {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/LEqcfz2LTzCu3ObYUE65zg/zh-cn_image_0000002749494704.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/N1GJTP3JRa-mWQHCRd9DjQ/zh-cn_image_0000002755025706.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/d1coBKTcQo-Pl8VdojuqMg/zh-cn_image_0000002779093761.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/63U8g6SUS6-VF6kGmvA1yQ/zh-cn_image_0000002755185590.gif)

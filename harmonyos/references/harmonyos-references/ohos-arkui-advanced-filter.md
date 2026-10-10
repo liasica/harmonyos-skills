@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Filter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Filter
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:11+08:00
+scraped_at: 2026-10-11T07:24:41+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d139f9df2bfb03bc9b73c085355d4a132e15252c37784b224318f24c8ceac38f
+content_hash: sha256:99d9a7fdbb5b542649b6a032d05dd49690e67a75a5ec608d60491bc06bcbf3f0
 ---
 
 多条件筛选，帮助用户在大量信息中找到所需内容，应结合具体场景选择合适筛选方式。多条件筛选控件由筛选器与悬浮条构成，悬浮条可下拉展示悬浮筛选器。筛选器样式可分为多行可折叠类型与多行列表类型，并可以在筛选器最后一行附加快捷筛选器。
@@ -157,4 +157,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/WjVFB3XTTXaryl1inzdAIw/zh-cn_image_0000002778934305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/8FVXZPzER2aX6UOSAZcAtA/zh-cn_image_0000002784584857.png)

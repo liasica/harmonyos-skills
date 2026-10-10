@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义事件分发
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互事件分发控制 > 自定义事件分发
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:50+08:00
+scraped_at: 2026-10-11T07:24:15+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5eb714d7283ad29ee123aab9c987de3169dfea93b7c1ee03eafe8af83215c91c
+content_hash: sha256:0584f11a921665fee13cf751e43d3c0d3693ac2a9b5f094267ef9f7a9dfeaa4a
 ---
 
 在处理触屏事件时，ArkUI会在触屏事件触发前进行按压点和组件区域的[触摸测试](../harmonyos-guides/arkts-interaction-basic-principles.md#触摸测试)，收集需要响应触屏事件的组件，再基于触摸测试结果分发相应的触屏事件。在父节点，可以通过onChildTouchTest决定子节点的触摸测试方式，影响子组件的触摸测试，从而影响后续的触屏事件分发。具体影响参考[TouchTestStrategy](ts-universal-attributes-on-child-touch-test.md#touchteststrategy11枚举说明)枚举说明。
@@ -181,7 +181,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/QVe4YF7-TkG7seCncgOEPA/zh-cn_image_0000002749334396.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/l5dO-ghlQHidI80XDoYq5A/zh-cn_image_0000002784664351.gif)
 
 ### 示例2（设置事件派发策略为FORWARD）
 
@@ -256,7 +256,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/s4woBZwrRGWNJeKMkpyh1Q/zh-cn_image_0000002749494282.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Tzu7ibx8QqSZYBHg-bXPDw/zh-cn_image_0000002755025418.gif)
 
 ### 示例3（设置事件派发策略为DEFAULT）
 
@@ -326,4 +326,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Gugx-8xfT1eF7S1gknzfug/zh-cn_image_0000002779093339.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/4JMxQ9VTQFSfGhIc2XcKvw/zh-cn_image_0000002755185304.gif)

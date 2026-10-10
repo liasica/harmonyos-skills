@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/accessory-kit
 title: Accessory Kit（配件接入服务）
 breadcrumb: 指南 > 系统 > 网络 > Accessory Kit（配件接入服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:57+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:34+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:796eb261f8e8f7119000d1f056e869cd18ccc42792a464d71b7396b0d15414e0
 ---
 

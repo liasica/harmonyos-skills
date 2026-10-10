@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.usbManager.serial (串口管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.usbManager.serial (串口管理)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:38:42+08:00
+scraped_at: 2026-10-11T07:26:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:184f1120eac82a734865b702c8dc7ac3d69b9249e41829c433d51da8acd8e15d
+content_hash: sha256:ebed0b2f09cf879c5df8792a299acad09f93bafeabb5d552d4a3249ff1a126c7
 ---
 
 本模块主要用于管理串口设备的访问和通信，提供打开和关闭设备、读写数据、配置参数、权限管理等功能，解决了应用与串口设备通信时的权限申请、设备配置、数据传输等问题，使用该模块可以简化串口设备访问流程，提高开发效率。
 
 **典型使用流程：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/3XSEojGJQ-S0VbKHnuYX3Q/zh-cn_image_0000002778934753.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/XlJv1ZQ8T7uyXBJpqnz6_g/zh-cn_image_0000002784585303.png)
 
 **使用场景**：
 

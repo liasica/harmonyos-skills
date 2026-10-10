@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 区划选择
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 区划选择
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:13+08:00
+scraped_at: 2026-10-11T07:22:19+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1172cc40483531139a94e3160a1abac70c914a74b0d3f482e6745bdc750f04c4
+content_hash: sha256:bdf53c6592640d8148d1cc39b2187bedf2314b8fc97069ebbe62366e2e7067dc
 ---
 
 ## 场景介绍
@@ -22,19 +22,19 @@ content_hash: sha256:1172cc40483531139a94e3160a1abac70c914a74b0d3f482e6745bdc750
 
 **图1** 选择国家
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/DAsbNYj6RkWcLs_4p5Bf7g/zh-cn_image_0000002779092795.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Xiqykbn9T6a4GlArWUZr4w/zh-cn_image_0000002755184766.jpg "点击放大")
 
 **图2** 选择省市
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/n0FCirJtRiif_1lL2zZMCQ/zh-cn_image_0000002778932941.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/CFJF_rqeQoyK7T8B2KH1Jg/zh-cn_image_0000002784583633.jpg "点击放大")
 
 **图3** 搜索地区
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/QtmWUuMjSa6wu8vSa6aA1Q/zh-cn_image_0000002749333854.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/WmgVDN31Rzi2qFO2MJKZqg/zh-cn_image_0000002784663813.jpg "点击放大")
 
 **图4** 子窗拉起区划控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/YeFJPf5hSbqL25d8lC6KlQ/zh-cn_image_0000002749493742.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/cjrLv2r0TD2hnq6caNg_qw/zh-cn_image_0000002755024880.jpg "点击放大")
 
 ## 约束与限制
 

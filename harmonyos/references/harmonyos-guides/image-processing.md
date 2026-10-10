@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-process
 title: 使用ImageProcessing处理图片
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用ImageProcessing处理图片
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:24+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:58+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ab852c16b80e086e9ec01468e535149debe0d09fa02110a9ddf2f401f7d63f21
 ---
 

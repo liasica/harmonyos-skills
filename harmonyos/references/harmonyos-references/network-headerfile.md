@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-h
 title: 头文件
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:49+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:09+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:57844de758cefd0b8df36f6fabad365031bd38d18ad5a7d111a6bdfd7a11012f
 ---
 

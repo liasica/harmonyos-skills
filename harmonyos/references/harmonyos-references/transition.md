@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/transitio
 title: 模态转场设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 模态转场设置
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:49+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:24:18+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:41d7c67308d59ebe2687cabd4c34edd24fe2d1ade28e99161b887a5be1a0e6d5
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-cus
 title: 定制构建
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 定制构建
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:19+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:07+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7895343202d1c4fc0c77a9bbeb649ac039d79230cd602ddf1aacde11c4190576
 ---
 

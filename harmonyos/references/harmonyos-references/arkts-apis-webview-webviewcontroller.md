@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebviewController)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebviewController)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:44+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-10-11T07:25:18+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:017f5f1d181a5ffcc19562c683c28c92ca0cf1a9a907de5f5200b3a81ad54cec
 ---
 

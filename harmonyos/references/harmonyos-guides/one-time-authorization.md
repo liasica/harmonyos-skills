@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/one-time-auth
 title: 向用户申请单次授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 向用户申请单次授权
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:19+08:00
+scraped_at: 2026-10-11T07:21:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8bc96d1a7c75eb3bf5372342505b62f7a136f920ac89fe803c6cab03d605c409
+content_hash: sha256:9c6cf571e96c51f5531ab24b0bd34279607d3072f2fba77822e96f3047f4c18e
 ---
 
 基于授权最小化原则，防止应用获取和滥用用户数据。针对部分应用敏感权限，在弹窗向用户申请授权时，新增“允许本次使用”的授权选项。
@@ -14,7 +14,7 @@ content_hash: sha256:8bc96d1a7c75eb3bf5372342505b62f7a136f920ac89fe803c6cab03d60
 
 授权弹窗如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/VduPd5OpSeCvR_piL5TWDA/zh-cn_image_0000002779091977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/4eQIDbLqSNCT9jxmpauSGQ/zh-cn_image_0000002755183950.png)
 
 同时，用户可以在“设置”中修改授权。修改路径：设置 > 隐私 > 权限管理 > 应用 > 目标应用 > 位置信息。
 
@@ -40,5 +40,5 @@ content_hash: sha256:8bc96d1a7c75eb3bf5372342505b62f7a136f920ac89fe803c6cab03d60
 
     如下图样例所示，小艺建议处于卡片可见状态：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/bD4OvmL-RP6zEHD_GfBPSw/zh-cn_image_0000002778932119.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/2LQ6iPqiSpORHXz0rIpk2g/zh-cn_image_0000002784582817.png)
 * 当用户在权限设置中选择“每次询问”时，应用将获得模糊位置和位置临时权限。取消临时授权的操作与此相同。

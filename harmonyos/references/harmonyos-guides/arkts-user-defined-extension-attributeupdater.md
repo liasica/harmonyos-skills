@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 属性更新器 (AttributeUpdater)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > Modifier机制 > 属性更新器 (AttributeUpdater)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:07+08:00
+scraped_at: 2026-10-11T07:21:10+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:dba99c9cbcd5d66777202cc95d94d0bf3241909e814ad71dcc8f70571c1072e4
+content_hash: sha256:39d81c5242ec996be8ef2adcc13bba7e3eae8482b0feb702acd85c302f4bc3d5
 ---
 
 ## 概述
@@ -80,7 +80,7 @@ struct updaterDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/LDAXXHy-TNW5lJocLisjPA/zh-cn_image_0000002778931723.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/RrMG9AiWRl6FJWkG4g3U1A/zh-cn_image_0000002755183552.gif)
 
 ## 通过modifier更新组件的构造参数
 
@@ -124,4 +124,4 @@ struct updaterDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/wUbi_mOZReO3aMpFrY8vEw/zh-cn_image_0000002749332640.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/VPOKPPtZS0Kl6tzOVs3AKA/zh-cn_image_0000002784582421.gif)

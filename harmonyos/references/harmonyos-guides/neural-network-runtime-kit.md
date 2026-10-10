@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/neural-networ
 title: Neural Network Runtime Kit（Neural Network运行时服务）
 breadcrumb: 指南 > AI > Neural Network Runtime Kit（Neural Network运行时服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:24+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:48+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:b72a143e33ae5786fd09a7dd714a56f3c41d0f6f9900a26717385ac5017c2cd8
 ---
 

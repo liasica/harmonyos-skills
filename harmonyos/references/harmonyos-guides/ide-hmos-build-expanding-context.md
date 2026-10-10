@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-buil
 title: 插件上下文
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 扩展构建能力 > 扩展构建API > 插件上下文
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:37+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:24+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:4a3043ec75b72fb687e3138e973f27cc9e3b0c63dfd950670ee4fb62d1fbee5c
 ---
 

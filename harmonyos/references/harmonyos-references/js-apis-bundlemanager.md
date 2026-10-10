@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bundle.bundleManager (应用程序包管理模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.bundle.bundleManager (应用程序包管理模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9db2726be3a8eb77c49c8adb142fbaaadaec9d0ddf2e7e21c177c81b9fc6f1dc
+scraped_at: 2026-10-11T07:23:34+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:d7492544af6ae9285fc0a40652600a83f9bef9e003eeb0e7242f8525b7fcc0a3
 ---
 
 本模块提供应用信息的查询能力，支持应用包信息[BundleInfo](js-apis-bundlemanager-bundleinfo.md)、应用程序信息[ApplicationInfo](js-apis-bundlemanager-applicationinfo.md)、UIAbility组件信息[AbilityInfo](js-apis-bundlemanager-abilityinfo.md)、ExtensionAbility组件信息[ExtensionAbilityInfo](js-apis-bundlemanager-extensionabilityinfo.md)等信息的查询。
@@ -130,7 +130,7 @@ import { bundleManager } from '@kit.AbilityKit';
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| PAGE | 1 | UI界面类型的Ability。表示基于Page模板开发的FA，用于提供与用户交互的能力。 |
+| PAGE | 1 | UI界面类型的Ability。表示基于Page模板开发的FA模型，用于提供与用户交互的能力。 |
 | SERVICE | 2 | 后台服务类型的Ability，无UI界面。表示基于Service模板开发的[ParticleAbility](js-apis-ability-particleability.md)，用于提供后台运行任务的能力，例如后台下载或者播放音乐。 |
 | DATA | 3 | 表示基于Data模板开发的[ParticleAbility](js-apis-ability-particleability.md)，用于对外部提供统一的数据访问对象。 |
 

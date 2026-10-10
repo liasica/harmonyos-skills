@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-spmd-
 title: SPMD模型
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程模型 > SPMD模型
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:24+08:00
+scraped_at: 2026-10-11T07:22:30+08:00
 doc_updated_at: 2026-05-12
-content_hash: sha256:58065a3a48ec3b6a16ecfc18f9412316ed51f15f3ac6ea864fc52e58661742eb
+content_hash: sha256:5c093a28e46ed7fb984eed0ebe0804ff5c13f5de945e3b6cdfd477e2acb75726
 ---
 
 AscendC算子编程是SPMD(Single-Program Multiple-Data)编程，SPMD是一种常用的并行计算的方法，是提高计算速度的有效手段。
@@ -14,13 +14,13 @@ AscendC算子编程是SPMD(Single-Program Multiple-Data)编程，SPMD是一种�
 
 **图1** SPMD数据并行示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/EADsRqIMTGOitnhnf1q8PQ/zh-cn_image_0000002779093019.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/vXPxu87SS1afpQ6H_Z7h8w/zh-cn_image_0000002755184984.png)
 
 具体到AscendC编程模型中的应用，是将需要处理的数据拆分并同时在多个计算核心（类比于上文介绍中的多个进程）上运行，从而获取更高的性能。多个AI Core共享相同的指令代码，每个核上的运行实例唯一的区别是block\_idx不同，每个核通过不同的block\_idx来识别自己的身份。block的概念类似于上文中进程的概念，block\_idx就是标识进程唯一性的进程ID。并行计算过程如下图所示。
 
 **图2** SPMD并行计算示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/IRFxllWWTgiwx6YwnEyL0g/zh-cn_image_0000002778933163.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/ipqtkcnJQeaFB6ABcBMsvQ/zh-cn_image_0000002784583851.png)
 
 下面的代码片段取自于AscendC Add算子的实现代码，算子被调用时，所有的计算核心都执行相同的实现代码，入口函数的入参也是相同的。每个核上处理的数据地址需要在起始地址上增加[GetBlockIdx](cannkit-getblockidx.md)\*BLOCK\_LENGTH（每个block处理的数据长度）的偏移来获取。这样也就实现了多核并行计算的数据切分。
 

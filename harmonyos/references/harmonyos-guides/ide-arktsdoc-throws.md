@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdoc-
 title: "@throws"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 标准标签 > @throws
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:02+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:b796b917bf58176355350edab3077e0859f80a9af7277454b45a7ce15e9f7a3a
 ---
 

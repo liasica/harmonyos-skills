@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-typescrip
 title: 通用规则@typescript-eslint
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:22:56+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:74382472ff1dc7d88352e6de368c33f763da23e0205d5f7c76ad12295f54459b
 ---
 

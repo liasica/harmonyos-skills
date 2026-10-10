@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-insi
 title: 优化应用性能
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:36+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:23+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:242aff145cb7878a8bba20c91c8b7c7bd549347ea019908f8ad17544ec934209
 ---
 

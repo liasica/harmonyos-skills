@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/weather-servi
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Weather Service Kit（天气服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:03+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-10-11T07:22:28+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2b998298a02540cb1c46a16b59ad312567466430213381a5516c5df2de6e21ad
 ---
 

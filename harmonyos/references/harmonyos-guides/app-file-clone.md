@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-clon
 title: 应用克隆适配指导
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 应用克隆适配指导
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:15+08:00
+scraped_at: 2026-10-11T07:21:18+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:66cf69eefc8d52a29520e781744b4714a7ed4ac47ca02e0d8ffdb2b2a948d067
+content_hash: sha256:310af19955cd04cdda011328eb233ddd4d57da6ee8f63c5bb698326a7571d567
 ---
 
 ## 简介
 
 用户在日常换机过程中，需要将一台设备的数据备份并发送到另一台设备上进行恢复，以完成跨设备的数据迁移，此时需要使用克隆工具（"数据克隆"应用）。接入克隆工具时，应用需实现备份恢复接口[BackupExtensionAbility](../harmonyos-references/js-apis-application-backupextensionability.md#backupextensionability)，在onBackup中实现数据备份，在onRestore中实现数据恢复。若应用未实现BackupExtensionAbility，克隆过程将仅迁移旧设备上的应用，而不迁移应用数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/1WxBrNpYT7KZ4fVGqAK25A/zh-cn_image_0000002779091843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/J5vJpl_KQvC94NZOkh8wow/zh-cn_image_0000002755023928.png)
 
 ## 约束与限制
 

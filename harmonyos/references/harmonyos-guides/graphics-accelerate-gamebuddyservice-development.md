@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 实现游戏伴随
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏伴随服务 > 实现游戏伴随
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:87897082b26be7322b1238ff670dd45e42af4792d1afbf4340d52ad0baab79f1
+scraped_at: 2026-10-11T07:22:05+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:2e4a2287bf087afb0ee6acf44104124f72556a39db1d941c46e8b21e38797ac0
 ---
 
 从API版本26.0.0开始，新增游戏伴随服务。游戏伴随服务为游戏陪玩类的应用提供游戏应用状态感知、游戏应用截图等基础能力。
@@ -20,7 +20,7 @@ content_hash: sha256:87897082b26be7322b1238ff670dd45e42af4792d1afbf4340d52ad0baa
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/2wcIfNNRRPy_dOKBBN56Aw/zh-cn_image_0000002749333522.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/rFaedoXeT_mxhBFH-5aSxA/zh-cn_image_0000002784663481.png)
 
 1. 用户启动游戏陪玩类应用。
 2. 用户启动游戏。
@@ -50,8 +50,6 @@ content_hash: sha256:87897082b26be7322b1238ff670dd45e42af4792d1afbf4340d52ad0baa
    ```typescript
     import { gameBuddyService } from '@kit.GraphicsAccelerateKit';
     import { hilog } from '@kit.PerformanceAnalysisKit';
-    import { image } from '@kit.ImageKit';
-    import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 注册回调函数
 

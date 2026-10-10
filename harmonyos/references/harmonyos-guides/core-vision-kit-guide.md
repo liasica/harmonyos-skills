@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-k
 title: Core Vision Kit（基础视觉服务）
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:22+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:46+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:26ddcd9da1f2b8942d68fbdf1f95079f1e7ea6b4b8ff8b8daf763f65c3d200e5
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIContext)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIContext)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:43+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:a625689661bc5d0f72104a2628ab9e8834d5652a5651c053f3305209714ca65e
+scraped_at: 2026-10-11T07:24:06+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:b0f0729dbbca5a50980eca235926e455400d884daa9f61acef5308463387b767
 ---
 
 UIContext实例对象，用于提供与当前UI实例关联的上下文能力，支持获取UI相关控制器、管理弹窗与动画、查询节点和窗口信息、进行像素单位转换等，适用于在指定UI实例中管理页面、组件和交互行为的场景。
@@ -459,7 +459,7 @@ struct UIContextCompare {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Y5cqudFIRtyQ6SQUyNUTOQ/zh-cn_image_0000002749494202.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/FQh4SRbsTLGAAfKlQz1_sQ/zh-cn_image_0000002755025338.gif)
 
 ## getFont
 
@@ -822,7 +822,7 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/zyEZB6M9TSOB5qX1iOVBWQ/zh-cn_image_0000002779093259.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/s6SWLaRVSaO5azYKKL9s3g/zh-cn_image_0000002755185224.gif)
 
 ## animateTo
 
@@ -1333,7 +1333,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/ER9zUx2kSyy-gLfdcQKiTw/zh-cn_image_0000002778933403.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/66TP0MqBRXWSxIguvuHBlw/zh-cn_image_0000002784584091.gif)
 
 ## showActionSheet
 
@@ -1405,7 +1405,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/B5-b6jjwSmiRQr9cviYc9w/zh-cn_image_0000002749334318.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/VTAWeEpcQAa8RzXUw0p0pQ/zh-cn_image_0000002784664273.gif)
 
 ## showDatePickerDialog
 
@@ -1482,7 +1482,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/FknmcafPQDWRax9rrgBMhQ/zh-cn_image_0000002749494204.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/AjH3ZNwdT4u82j2pWVo0hw/zh-cn_image_0000002755025340.gif)
 
 ## showTimePickerDialog
 
@@ -1628,7 +1628,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/zNnu1lgmSa-n9JZwNbHSjA/zh-cn_image_0000002779093261.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/zCVGyn_yTFqnMgjnMKta_g/zh-cn_image_0000002755185226.gif)
 
 ## showTextPickerDialog20+
 
@@ -2927,7 +2927,7 @@ postDelayedFrameCallback(frameCallback: FrameCallback, delayTime: number): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | frameCallback | [FrameCallback](arkts-apis-uicontext-framecallback.md) | 是 | 下一帧需要执行的回调。 |
-| delayTime | number | 是 | 延迟的时间，以毫秒为单位。传入null、undefined或小于0的值，会按0处理。 |
+| delayTime | number | 是 | 延迟的时间，以ms为单位。传入null、undefined或小于0的值，会按0处理。 |
 
 **示例：**
 
@@ -3603,7 +3603,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/NxZ5B2pCQO-3HHO6MIWSfQ/zh-cn_image_0000002778933405.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/x1-MnAQER8y6sycKypvuoA/zh-cn_image_0000002784584093.gif)
 
 ## unbindTabsFromScrollable13+
 
@@ -4234,7 +4234,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/JM0cPP4CQ2-ZT56J-qs3hw/zh-cn_image_0000002749334320.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/0hyIWD0ZTsCnliUZYAmqMA/zh-cn_image_0000002784664275.gif)
 
 ## getPageRootNode24+
 
@@ -4387,7 +4387,7 @@ export struct PageThree {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/BSOmZDd0QQyVMsOeyh5sPA/zh-cn_image_0000002749494206.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/e0v469TfQ8aIz88ARy0cPg/zh-cn_image_0000002755025342.jpg)
 
 ## isEasySplit24+
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.commonEvent (公共事件模块)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @ohos.commonEvent (公共事件模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:04+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:76f23f824760853a676516e6044a29730280e551791638d1041b2b1fcb6a1a8a
+scraped_at: 2026-10-11T07:26:30+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:256c3ef3fba2f4ce06096d4f1307001731451b36665432cb4c4b113cbda60d82
 ---
 
 本模块提供了公共事件的能力，包括公共事件的权限列表，发布公共事件，订阅或取消订阅公共事件，获取或修改公共事件结果代码、结果数据等。
@@ -42,8 +42,8 @@ publish(event: string, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | string | 是 | 表示要发布的公共事件。 |
-| callback | AsyncCallback<void> | 是 | 表示发布公共事件的回调方法。 |
+| event | string | 是 | 表示要发布的公共事件。字符串长度不超过254字节，超出部分会被截断。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当公共事件发布成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -79,9 +79,9 @@ publish(event: string, options: CommonEventPublishData, callback: AsyncCallback<
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | string | 是 | 表示要发布的公共事件。 |
+| event | string | 是 | 表示要发布的公共事件。字符串长度不超过254字节，超出部分会被截断。 |
 | options | [CommonEventPublishData](js-apis-inner-commonevent-commoneventpublishdata.md) | 是 | 表示发布公共事件的属性。 |
-| callback | AsyncCallback<void> | 是 | 表示发布公共事件的回调方法。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当公共事件发布成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -126,7 +126,7 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallbac
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscribeInfo | [CommonEventSubscribeInfo](js-apis-inner-commonevent-commoneventsubscribeinfo.md) | 是 | 表示订阅信息。 |
-| callback | AsyncCallback<[CommonEventSubscriber](js-apis-inner-commonevent-commoneventsubscriber.md)> | 是 | 表示创建订阅者的回调方法。 |
+| callback | AsyncCallback<[CommonEventSubscriber](js-apis-inner-commonevent-commoneventsubscriber.md)> | 是 | 回调函数。当创建公共事件订阅者成功，err为undefined，data为获取到的公共事件订阅者，否则为错误对象。 |
 
 **示例：**
 
@@ -177,7 +177,7 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise<CommonEventSu
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[CommonEventSubscriber](js-apis-inner-commonevent-commoneventsubscriber.md)> | 返回订阅者对象。 |
+| Promise<[CommonEventSubscriber](js-apis-inner-commonevent-commoneventsubscriber.md)> | Promise对象，返回订阅者对象。 |
 
 **示例：**
 
@@ -218,7 +218,7 @@ subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback<CommonEvent
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscriber | [CommonEventSubscriber](js-apis-inner-commonevent-commoneventsubscriber.md) | 是 | 表示订阅者对象。 |
-| callback | AsyncCallback<[CommonEventData](js-apis-inner-commonevent-commoneventdata.md)> | 是 | 表示接收公共事件数据的回调方法。 |
+| callback | AsyncCallback<[CommonEventData](js-apis-inner-commonevent-commoneventdata.md)> | 是 | 回调函数。当订阅公共事件成功，err为undefined，data为获取到的公共事件数据，否则为错误对象。 |
 
 **示例：**
 
@@ -275,7 +275,7 @@ unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback<void>): 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscriber | [CommonEventSubscriber](js-apis-inner-commonevent-commoneventsubscriber.md) | 是 | 表示订阅者对象。 |
-| callback | AsyncCallback<void> | 否 | 表示取消订阅的回调方法。 |
+| callback | AsyncCallback<void> | 否 | 回调函数。当取消公共事件订阅成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 

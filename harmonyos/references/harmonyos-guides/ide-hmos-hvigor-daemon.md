@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 守护进程
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 提升构建效率 > 默认特性 > 守护进程
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:35+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:23+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:8bb2fa23ed70acd2dc7429230184eb2665ac38d9c14da9f0114af88a774611ef
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-perf
 title: 性能规则@performance
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:31+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:19+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:f240aa921b15479bb684b7acb818870bb1673246b14edf23f590b8697c667f5b
 ---
 

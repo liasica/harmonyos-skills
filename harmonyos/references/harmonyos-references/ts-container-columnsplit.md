@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ColumnSplit
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > ColumnSplit
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:55+08:00
+scraped_at: 2026-10-11T07:24:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6bfb7216db58498f8a86dc13382598cbc1a9e88096cc6e045c6fd3dc425316b2
+content_hash: sha256:0ec25db55c07868c230a91059cea2dca49d108adcf7221b7a5e10cb7705b3ce1
 ---
 
 将子组件纵向布局，并在每个子组件之间插入横向分割线。适用于需要垂直方向上多区域布局且支持动态调整区域大小的场景，如仪表盘界面、可调节高度的上下分区布局等。通过可拖拽的分割线，用户可以灵活调整各区域高度，提升界面交互性和用户体验。
@@ -132,7 +132,7 @@ struct ColumnSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Ft6NL6cFSe-GfcJv5geJnw/zh-cn_image_0000002778933661.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/tvWY9tZpQ36zaq-1JACp6A/zh-cn_image_0000002784584315.gif)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
@@ -162,4 +162,4 @@ struct ColumnSplitDividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/wgDpLNdqTDaBPRiewi1HBg/zh-cn_image_0000002749334576.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/5fU_ptz-RP-3C2tiHV_QnA/zh-cn_image_0000002784664497.png)

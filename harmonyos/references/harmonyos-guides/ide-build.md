@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build
 title: 构建应用
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:18+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:05+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:d800954682dc213c3610cf20086d03da383eb162dd9a9cff9dc5281099730b44
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 开启超帧外插模式后运动物体边缘出现严重拖影现象，可能的原因是什么
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏渲染加速服务 > 开启超帧外插模式后运动物体边缘出现严重拖影现象，可能的原因是什么
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:59+08:00
+scraped_at: 2026-10-11T07:22:05+08:00
 doc_updated_at: 2026-05-18
-content_hash: sha256:3587b66a4d73677073f3c66cded33fb706bd541ce082c83102389a4439ed25be
+content_hash: sha256:7a91331ec766989cfc24b34de44931cd1290ebeadf1b4decb8d5c811d5c5a4fa
 ---
 
 由于外插模式需要标记模板缓冲（Stencil Buffer）的第8位用于区分静态物体和动态物体，即静态物体模板值第8位标记成0，动态物体模板值第8位标记成1，模板缓冲的低7位模板值开发者可自行设置。如果标记错误或漏标记，可能会在动态物体边缘产生严重的拖影现象。
@@ -14,19 +14,19 @@ content_hash: sha256:3587b66a4d73677073f3c66cded33fb706bd541ce082c83102389a4439e
 
 Demo中运动角色出现头身分离等严重拖影现象，角色头部向右偏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/iEf9UgcbR0OumlznACuYsQ/zh-cn_image_0000002749493406.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Pw3WIs6gQ8qtuQFh3hVfNg/zh-cn_image_0000002755024548.png)
 
 **原因分析**
 
 通过抓帧查看模板缓冲中的模板值，发现头发区域模板值为0，身体区域模板值为0x80。由于角色头、身均属于运动目标区域，应该将所有运动物体区域的模板值第8位标记为1。错误的头部区域模板值导致超帧效果出现头身分离的严重拖影现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/0LRHGKtDSYuSzkLldtkOLw/zh-cn_image_0000002779092463.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/BALACkDrQ2yM2d3mK1XvrA/zh-cn_image_0000002755184436.png)
 
 **处理步骤**
 
 基于分析结论，造成头身分离拖影现象的主要原因是运动区域模板值未统一标记为1xxx xxxx。因此将运动角色头发和面部区域的模板值统一改为0x80，保持和身体模板值一致，头身分离的拖影现象消失，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/sRcJ78goS_CbpBzYkuQAHA/zh-cn_image_0000002778932605.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/xU9-2Bs0Qc2fWu1Nfm16ag/zh-cn_image_0000002784583303.png)
 
 **代码示例**
 

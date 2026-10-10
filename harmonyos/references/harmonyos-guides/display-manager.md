@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/display-manag
 title: 屏幕管理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 屏幕管理
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:35+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:16+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2c4ddbc165c2b86bfc86d7e26b42e916916fdbeb06574ebb40a4ad1168efd7b1
 ---
 

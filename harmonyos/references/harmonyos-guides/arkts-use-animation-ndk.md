@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-ani
 title: 使用动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用动画
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:30+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:12+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ac57af92fc07d4ad6ee85230c3249f33fb25e281b1535bdfd30c0e3714e8a2d5
 ---
 

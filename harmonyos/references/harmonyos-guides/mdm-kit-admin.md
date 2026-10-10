@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-admin
 title: EnterpriseAdminExtensionAbility开发指南
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > EnterpriseAdminExtensionAbility开发指南
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:36+08:00
+scraped_at: 2026-10-11T07:21:41+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b9283adf20ba6d7b960442aebc6213f41079b47266cad37716a482f47ae9ed83
+content_hash: sha256:0dab84d92eda43bdd817a025da92302921da4442fc4c384ee22070df6c221f9e
 ---
 
 ## 概述
@@ -29,11 +29,11 @@ content_hash: sha256:b9283adf20ba6d7b960442aebc6213f41079b47266cad37716a482f47ae
 
 新建一个工程后，结构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/L-kXlifKQIWzCo3nFwGnxQ/zh-cn_image_0000002778932259.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/ByzOMxnoRUGDidF5d22zww/zh-cn_image_0000002784582957.png)
 
 首先，创建一个EnterpriseAdmin类型的ExtensionAbility（也就是EnterpriseAdminExtensionAbility）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/mLAM5PcKRiO_lqpli46i0g/zh-cn_image_0000002749333176.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/G9jyHQ78QXGm32fgpjCtVQ/zh-cn_image_0000002784663137.png)
 
 其次，打开新建的EnterpriseAdminAbility文件，导入EnterpriseAdminExtensionAbility模块，使其继承EnterpriseAdminExtensionAbility并加上需要的应用通知回调方法，如onAdminEnabled()、onAdminDisabled()等回调方法。当设备管理应用激活或者解除激活时，可以在对应回调方法中接收系统发送通知。
 

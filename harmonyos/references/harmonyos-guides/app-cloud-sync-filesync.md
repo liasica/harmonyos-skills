@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-cloud-syn
 title: 端云文件协同适配指导
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 端云文件协同 > 端云文件协同适配指导
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:16+08:00
+scraped_at: 2026-10-11T07:21:20+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:0982b7116dbb43182bd921df72ae5d6b4ddfe8b6ec43528e3bb021c178406ae0
+content_hash: sha256:9f8932c59c34414c1c3238e97ccdd3694c2758042b2cac99943146ebcdd28d1c
 ---
 
 为方便开发者使用端云文件协同的文件缓存、同步等能力，此篇指南介绍了环境准备、文件同步和文件缓存，并且在指南的最后提供了完整的应用工程示例。
@@ -33,7 +33,7 @@ content_hash: sha256:0982b7116dbb43182bd921df72ae5d6b4ddfe8b6ec43528e3bb021c1784
   ```
 * 安装应用：两部设备应用安装后，登录账号，在设置->云空间中找到开发应用同步开关，如下图中的端云协同demo，打开同步开关，可以借助IDE的[Device File Browser](ide-device-file-explorer.md)浏览/data/storage/el2/cloud目录。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/NhG8sFryTCOcou-9W6NAFA/zh-cn_image_0000002778932001.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/vvOUXtrZShuCf9sM_6tR1w/zh-cn_image_0000002755183832.png)
 
 ### 接口说明
 

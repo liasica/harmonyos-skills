@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/online-authen
 title: Online Authentication Kit（在线认证服务）
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:55+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-10-11T07:21:31+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:293703663ae436766731b4efe02942a2d89ba559c9060bda37696f054ddc8e41
 ---
 

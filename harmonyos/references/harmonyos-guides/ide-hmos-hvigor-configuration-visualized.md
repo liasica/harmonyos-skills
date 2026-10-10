@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 可视化配置
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置文件 > 可视化配置
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:34+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:4e786effa3bb492ff8f6e897e5e1c158aa91fdea6e5204aba7aae8078a66a70a
+scraped_at: 2026-10-11T07:23:22+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:7ad9baf7b3106f8ee93a3867bebc9407f1879f3aad369793f14278d5a7953cfc
 ---
 
 鸿蒙电脑DevEco Studio为开发者提供配置文件的可视化操作，在可视化配置界面中配置相关字段后，会自动同步到对应配置文件中。可视化界面支持对工程级[app.json5](app-configuration-file.md)、[build-profile.json5](ide-hmos-hvigor-build-profile-app.md)、[oh-package.json5](ide-hmos-oh-package-json5.md)文件和模块级[module.json5](module-configuration-file.md)、[build-profile.json5](ide-hmos-hvigor-build-profile.md)、[oh-package.json5](ide-hmos-oh-package-json5.md)文件部分字段的可视化配置。
 
 点击菜单栏**文件** **> 项目结构**进入配置文件可视化界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/IWouNPToSqqA4WVvL9_l_g/zh-cn_image_0000002779082969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Yd7ljcUhTnqVp2DUBx2-5A/zh-cn_image_0000002779728991.png)
 
 ① Project可视化配置：配置应用信息，包含基础信息、构建信息等。
 
@@ -24,7 +24,7 @@ content_hash: sha256:4e786effa3bb492ff8f6e897e5e1c158aa91fdea6e5204aba7aae8078a6
 
 在可视化配置界面，点击文件名称跳转至对应映射文件查看配置字段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/sLek6unJTh-QOOvaksNx9Q/zh-cn_image_0000002749324034.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/v50tU6FbSJGSbkaqOhD-9w/zh-cn_image_0000002779608845.png)
 
 可视化配置内容及映射文件如下表所示：
 

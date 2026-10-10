@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 时间滑动选择器弹窗 (TimePickerDialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 时间滑动选择器弹窗 (TimePickerDialog)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:09+08:00
+scraped_at: 2026-10-11T07:24:37+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:a9c442def255b995d9b7716cdf831186a865d4f03426327ce20d68edaf3f7617
+content_hash: sha256:25b7f22bbd687085702bb96b30cc980c88520470987c2bd9556cbca7e29e5b7f
 ---
 
 以24小时的时间区间创建时间滑动选择器，展示在弹窗上。适用于需要用户选择时间的场景，如设置闹钟、日程安排、预约时间等。该组件提供直观的时间选择交互，支持12小时制和24小时制切换，并可自定义样式和布局，帮助应用快速实现时间选择功能，提升用户体验。
@@ -157,7 +157,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/VohSI3IDQ8i_kIqpJrL-xw/zh-cn_image_0000002749495036.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/n58R2rEeQ9KOl4OkuSw9IA/zh-cn_image_0000002755026038.gif)
 
 ### 示例2（自定义样式）
 
@@ -216,7 +216,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/AkPZ-Jr5SU2c54yHcr0odQ/zh-cn_image_0000002779094093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/01vMxbwfTxumCF-KahL9lA/zh-cn_image_0000002755185922.png)
 
 ### 示例3（悬停态弹窗）
 
@@ -272,7 +272,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/RSfxfV8fTga0FQi71GR2jA/zh-cn_image_0000002778934237.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/ilpeFiamQJCxf6e8fYmp9g/zh-cn_image_0000002784584789.gif)
 
 ### 示例4（设置弹窗位置）
 
@@ -307,7 +307,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Ikgyci7tTqesoY8_GKKevQ/zh-cn_image_0000002749335154.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/9c4-wGeUQ8KY5JqPSP6XiQ/zh-cn_image_0000002784664971.png)
 
 ### 示例5（设置遮蔽区）
 
@@ -341,7 +341,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/GYRFjXBjRaWfgHskWo-18Q/zh-cn_image_0000002749495038.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/J9-c8xLUSa2XLUJK8ggw0g/zh-cn_image_0000002755026040.png)
 
 ### 示例6（设置弹窗背板）
 
@@ -377,7 +377,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/vbSwhvo0TZWVAX0p6-E0Kg/zh-cn_image_0000002779094095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/UaI_ry4ZSCihgMAvUIpWuQ/zh-cn_image_0000002755185924.png)
 
 ### 示例7（设置时间滑动选择器弹窗的起始时间）
 
@@ -414,7 +414,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/QV6qms8HTzSEdkzLoShH6Q/zh-cn_image_0000002778934239.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/CTgE7oyaS06oXzxopc5hkQ/zh-cn_image_0000002784584791.png)
 
 ### 示例8（设置时间滑动选择器弹窗的结束时间）
 
@@ -451,7 +451,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/a1CuciqBTWGyzWeRGmWBcQ/zh-cn_image_0000002749335156.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Mz12n2HAQza9icYECKoBLA/zh-cn_image_0000002784664973.png)
 
 ### 示例9（设置上午下午跟随时间联动）
 
@@ -487,7 +487,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/T9MSwBSuRkWhgkFUlvFfZg/zh-cn_image_0000002749495040.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/MxJ9hk8fTUq59mPEjKzG2Q/zh-cn_image_0000002755026042.gif)
 
 ### 示例10（自定义背景模糊效果参数）
 
@@ -522,7 +522,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/kXTUiIZ1RTG-dSoEpUS24g/zh-cn_image_0000002779094097.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/1cipb69DQo2AWws7g44TIQ/zh-cn_image_0000002755185926.png)
 
 ### 示例11（自定义背景效果参数）
 
@@ -558,7 +558,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ML4GlPNgTOyH9CGyOINZ5A/zh-cn_image_0000002778934241.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/JcSyUTcHStOrPVnevuRMHQ/zh-cn_image_0000002784584793.png)
 
 ### 示例12（设置沉浸光感）
 
@@ -593,4 +593,4 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/oaw-Ss7FRbm9VBBjL9I54A/zh-cn_image_0000002749335158.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Uommm0UaR1mfgNlppNaHFw/zh-cn_image_0000002784664975.gif)

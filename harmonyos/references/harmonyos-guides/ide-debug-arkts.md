@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-ark
 title: ArkTS代码调试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:02+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:4d15f2e4a9bb5a93a18689d4fbd4d727a59c3f5f5990e3f26433fae9d4232b78
 ---
 

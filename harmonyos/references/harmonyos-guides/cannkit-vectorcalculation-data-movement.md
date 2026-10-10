@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: 数据搬运
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 数据搬运
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:05+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:33+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:1d9768e2da94329e5b2699417f6dbc6d2d7616406b71cebfe65bfe985665432c
 ---
 

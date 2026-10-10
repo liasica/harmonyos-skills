@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: WithTheme
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 主题 > WithTheme
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:09+08:00
+scraped_at: 2026-10-11T07:24:38+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:131f6dc6a8d4f1c4b4eae315b879cd7af21bb686a79c060e7db46577e2215a94
+content_hash: sha256:ef5a77db7def40c95c9056826bab3addbe8d2988f52b543de6c41d6d3dece482
 ---
 
 WithTheme组件用于设置应用局部页面自定义主题风格，可设置子组件深浅色模式和自定义配色。
@@ -76,7 +76,7 @@ type CustomTheme = import('../api/@ohos.arkui.theme').CustomTheme
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ZzwqVVooSGmnX0f_UV-2aw/zh-cn_image_0000002778934257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/9Yy-CtJ9SOePgS2L2WfzTw/zh-cn_image_0000002784584809.png)
 
 dark.json数据示例：
 
@@ -147,7 +147,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/mYhWyOIGSwaOiU12hl6RQQ/zh-cn_image_0000002749335174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/GLa0xfwKTMKGtc0raqoO9A/zh-cn_image_0000002784664991.png)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
@@ -233,4 +233,4 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/4mbn8X3mSqyN7pv0gEIlCw/zh-cn_image_0000002749495058.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/bzM6BRC1RQ-sa3-02WD26g/zh-cn_image_0000002755026060.gif)

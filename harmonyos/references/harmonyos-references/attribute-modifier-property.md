@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/attribute
 title: 动态属性与自定义
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:49+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:24:18+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:80c3331c946b58537820a22803205e08dd4fd44d1206e01f523848be58fa3c8e
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅任务执行超时事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 任务执行超时事件 > 订阅任务执行超时事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:13+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:e0f8bf9121cd87078fce4f5f4b684e71511dbd9ae3141b46689e8c8e18517b1d
+scraped_at: 2026-10-11T07:21:46+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:6d63af96d024f40566f5a429e8d7ed98a0487b1dc5b3f7087d34208761767559
 ---
 
 ## 简介
@@ -88,7 +88,7 @@ content_hash: sha256:e0f8bf9121cd87078fce4f5f4b684e71511dbd9ae3141b46689e8c8e185
    编辑工程中的“entry > src > main > cpp > napi\_init.cpp”文件，定义onReceive类型观察者相关函数：
 
    ```
-   // 定义一变量，用来缓存创建的观察者的指针。
+   // 定义一个变量，用来缓存创建的观察者的指针。
    static HiAppEvent_Watcher *appHicollieWatcherR;
    ```
 
@@ -159,10 +159,13 @@ content_hash: sha256:e0f8bf9121cd87078fce4f5f4b684e71511dbd9ae3141b46689e8c8e185
        const char *names[] = {EVENT_APP_HICOLLIE};
        // 开发者订阅感兴趣的事件，此处订阅了系统事件。
        OH_HiAppEvent_SetAppEventFilter(appHicollieWatcherR, DOMAIN_OS, 0, names, 1);
-       // 开发者设置已实现的回调函数，观察者接收到事件后回立即触发OnReceive回调。
+       // 开发者设置已实现的回调函数，观察者接收到事件后会立即触发OnReceive回调。
        OH_HiAppEvent_SetWatcherOnReceive(appHicollieWatcherR, AppHicollieOnReceive);
        // 使观察者开始监听订阅的事件。
-       OH_HiAppEvent_AddWatcher(appHicollieWatcherR);
+       int ret = OH_HiAppEvent_AddWatcher(appHicollieWatcherR);
+       if (ret != 0) {
+           OH_LOG_ERROR(LogType::LOG_APP, "HiAppEvent AddWatcher failed, ret=%{public}d", ret);
+       }
        return {};
    }
    ```
@@ -172,7 +175,7 @@ content_hash: sha256:e0f8bf9121cd87078fce4f5f4b684e71511dbd9ae3141b46689e8c8e185
    编辑工程中的“entry > src > main > cpp > napi\_init.cpp”文件，定义OnTrigger类型观察者相关函数：
 
    ```
-   // 定义一变量，用来缓存创建的观察者的指针。
+   // 定义一个变量，用来缓存创建的观察者的指针。
    static HiAppEvent_Watcher *appHicollieWatcherT;
    ```
 

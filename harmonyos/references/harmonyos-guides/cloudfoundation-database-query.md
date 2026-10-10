@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 查询数据
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云数据库 > 查询数据
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:16e7ad5fb6cb1e3e1932a357c30ba4032628095de7f7f5133b47cb47510e04a3
+scraped_at: 2026-10-11T07:22:12+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:5cabb98aba12cbcd067efe08af7724ba2494f6aba880187b7040326c38ddfd6b
 ---
 
 云数据库通过[query()](../harmonyos-references/cloudfoundation-clouddatabase.md#query)方法查询对象，并提供了丰富的谓词查询，比如[equalTo()](../harmonyos-references/cloudfoundation-clouddatabase.md#equalto)、[notEqualTo()](../harmonyos-references/cloudfoundation-clouddatabase.md#notequalto)、[in()](../harmonyos-references/cloudfoundation-clouddatabase.md#in)等。通过单个或者多个链式过滤条件，开发者可以从存储区查询到满足特定条件的对象，也可以通过排序谓词对查询结果排序，或者通过限定查询返回数量谓词限定查询结果返回的数量。详细的查询条件请参见[DatabaseQuery](../harmonyos-references/cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)。
@@ -71,6 +71,25 @@ content_hash: sha256:16e7ad5fb6cb1e3e1932a357c30ba4032628095de7f7f5133b47cb47510
      let condition = new cloudDatabase.DatabaseQuery(BookInfo);
 
      condition.equalTo('bookName', 'Jane Eyre');
+     databaseZone.query(condition).then((resultArray: BookInfo[]) => {
+       resultArray.forEach((value) => {
+         hilog.info(0x0000, 'cloudDb',
+           `Succeeded in querying: bookName = ${value.bookName}    price: ${value.price?.toString()}`);
+       });
+     }).catch((err: BusinessError) => {
+       hilog.error(0x0000, 'cloudDb', `Failed to query, code: ${err.code}, message: ${err.message}`);
+     });
+     ```
+   * 构造查询条件，并调用[query()](../harmonyos-references/cloudfoundation-clouddatabase.md#query)方法，查询借阅时间为“2025-09-01 18:00:00 000”的数据。
+
+     **说明** 
+
+     数据库对象 Date 字段存储的是本地时区时间，查询时需将入参转换为UTC时间，否则将导致查询结果为空。例如，若数据库存入中国时区（UTC+8）的2025-09-01 18:00:00:000，则需使用 2025-09-01 10:00:00:000 作为查询入参，才能正确匹配记录。
+
+     ```typescript
+     let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+         
+     condition.equalTo('borrowerTime', '2025-09-01 10:00:00 000');
      databaseZone.query(condition).then((resultArray: BookInfo[]) => {
        resultArray.forEach((value) => {
          hilog.info(0x0000, 'cloudDb',

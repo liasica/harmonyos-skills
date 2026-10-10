@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-speech-k
 title: Core Speech Kit（基础语音服务）
 breadcrumb: 指南 > AI > Core Speech Kit（基础语音服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:22+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:46+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:33ec82e1b8bd556fc2a9b86f1e72d41a15d9e8a4c812b8ea116d957e221f3be0
 ---
 

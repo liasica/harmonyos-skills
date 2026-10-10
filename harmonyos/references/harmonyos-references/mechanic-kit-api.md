@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/mechanic-
 title: Mechanic Kit（机械设备管理服务）
 breadcrumb: API参考 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:26+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:49+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:a25d4a0f6d2dc190ffe4833fdc530390ccd526962958207352442eb071288e97
 ---
 

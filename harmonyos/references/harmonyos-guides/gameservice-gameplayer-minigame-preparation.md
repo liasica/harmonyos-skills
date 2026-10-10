@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 小游戏 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:07+08:00
+scraped_at: 2026-10-11T07:22:13+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:4f6daf5b6541a158fbaec19fd197599f8e1c3503d51908032a173dd40528d37d
+content_hash: sha256:370f9c763f0687ffdd89e5399d7752d1757785ef65c6b99804e81b237ccdf61a
 ---
 
 ## 创建小游戏
@@ -50,7 +50,7 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的小游戏，获取“应用”下的APP ID和Client ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/_kWZunYqT4qFDuybNoDJlg/zh-cn_image_0000002779092635.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/v_EawUppTHavr478Z3WO8A/zh-cn_image_0000002755184608.png)
 2. 在工程的entry模块module.json5文件中，新增metadata并配置client\_id和app\_id，同时新增requestPermissions以配置ACL权限和开放能力。如下所示：
 
    ```typescript
@@ -87,14 +87,14 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的小游戏，左侧菜单选择“构建 > 游戏服务”，在右侧点击“新增配置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/1xTuKwD1RwOx6CUzyYcYrQ/zh-cn_image_0000002778932777.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/kWqY0RCpRcmGa1mbD0b0wA/zh-cn_image_0000002784583475.png)
 2. 在弹出的“新增配置信息”窗口中填写信息，完成后点击“下一步”。
 
    **说明** 
 
    请正确配置HAP小游戏与RPK快游戏的映射关系。若开发者配置错误类型的游戏，将会提示重新选择游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/njXCHQKBRhSrNo6EHsFCvw/zh-cn_image_0000002749333696.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/1fXAz3g3Tse-pIgG0R_ZOQ/zh-cn_image_0000002784663655.png)
 
    | 信息项 | 说明 |
    | --- | --- |
@@ -102,14 +102,14 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
    | HarmonyOS 4及以下游戏 | 请选择已上架或草稿态的RPK快游戏。 |
 3. （可选）填写开发者服务器的回调地址，完成后点击“确定”提交APP ID映射关系的审批申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/oLbMhocUT6O595C_6caH6Q/zh-cn_image_0000002749493580.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/2tvkmmQ3RHuCMVDRrpHysg/zh-cn_image_0000002755024722.png)
 4. 若出现异常情况（例如在架状态不符合要求），将在提示框以红字提醒，建议点击“取消”并重新配置映射关系。若忽略异常情况点击“确定”继续提交申请，可能会造成映射关系审批不通过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/A7mSq8W7REebNDp8l1o4EQ/zh-cn_image_0000002779092637.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/RbwnVcg1Tje6rRCK-tVikw/zh-cn_image_0000002755184610.png)
 5. 提交申请后，华为工作人员完成审核需要1-3个工作日，请耐心等待。APP ID映射关系生效后如需重新配置，请先提交映射关系的删除申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/1SOZEsugTMSHZJC-dxrABQ/zh-cn_image_0000002778932779.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/PQd8d5w7R6mM6g6zq0626A/zh-cn_image_0000002784583477.png)
 
    配置/删除APP ID映射关系的审核结果将通过互动中心或邮件进行通知。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/q162NSm-RWSjAJ2vzMF1Lg/zh-cn_image_0000002749333698.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/JPIG8_tRS62G9iUjZwzxaA/zh-cn_image_0000002784663657.png)

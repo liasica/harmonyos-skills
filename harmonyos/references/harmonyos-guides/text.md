@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text
 title: 文本
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:31+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:03+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:3b1b6595c05db9f7dfd623da6241ab9cd402cdcc1851ef73adddb7a77f218153
 ---
 

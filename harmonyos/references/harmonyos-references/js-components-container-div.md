@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: div
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > div
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:16+08:00
+scraped_at: 2026-10-11T07:24:48+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:324e0f6a5090bd04d259b4c564d305ffddbbff21031369b875fb8ec3351239ab
+content_hash: sha256:2591cf77a1e3d97ff660d9a6105b356baa6d2b8d5511ef086d89b8de1c7a7cb3
 ---
 
 **说明** 
@@ -130,7 +130,7 @@ content_hash: sha256:324e0f6a5090bd04d259b4c564d305ffddbbff21031369b875fb8ec3351
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/LDno3oALRIOeV1j9DsLH1A/zh-cn_image_0000002749335302.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/lNUrd6mgTnedl0howxSSTQ/zh-cn_image_0000002784665119.png)
 2. Flex Wrap样式
 
    ```html
@@ -177,7 +177,7 @@ content_hash: sha256:324e0f6a5090bd04d259b4c564d305ffddbbff21031369b875fb8ec3351
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/IM3HaC2NQDandeRYjbkKEQ/zh-cn_image_0000002749495186.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/u8lmhACPSxKpUD6g-lF20g/zh-cn_image_0000002755026188.png)
 3. Grid样式
 
    ```html
@@ -242,7 +242,7 @@ content_hash: sha256:324e0f6a5090bd04d259b4c564d305ffddbbff21031369b875fb8ec3351
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Cp7hA11lQ2q70K9R1Z58-Q/zh-cn_image_0000002779094243.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/odWAlJUjTOiXMUbtaDtjxA/zh-cn_image_0000002755186072.png)
 4. 拖拽7+
 
    ```html
@@ -292,7 +292,7 @@ content_hash: sha256:324e0f6a5090bd04d259b4c564d305ffddbbff21031369b875fb8ec3351
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/GKy_nTnCQpKSYxGn7cBFKg/zh-cn_image_0000002778934387.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/EdM45bSnR_62Ref3cIJivQ/zh-cn_image_0000002784584939.gif)
 
    ```html
    <!-- xxx.hml -->
@@ -355,7 +355,7 @@ content_hash: sha256:324e0f6a5090bd04d259b4c564d305ffddbbff21031369b875fb8ec3351
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/n7iYVeGlQpiF7SwoKCXAhw/zh-cn_image_0000002749335304.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Xp8nsnQLRJWbvDajtbYoIw/zh-cn_image_0000002784665121.gif)
 5. 手指捏合7+
 
    ```html
@@ -411,4 +411,4 @@ content_hash: sha256:324e0f6a5090bd04d259b4c564d305ffddbbff21031369b875fb8ec3351
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/u3tdJrm8TgGeYgkesuG-5g/zh-cn_image_0000002749495188.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/iwcg4NPNQGazZ3rqMZoLEg/zh-cn_image_0000002755026190.gif)

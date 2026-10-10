@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 组件内状态变量迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 组件内状态变量迁移
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:01+08:00
+scraped_at: 2026-10-11T07:21:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c94b4c054b7684d2475c27d5cf38486b1c9250aa99714a9691dc9b48e0d45f2f
+content_hash: sha256:b0a5edc4ad88335c505334589d072ecaf0d493549ff93d3be379feb2e3ebf114
 ---
 
 本文档主要介绍组件内的状态变量的迁移场景，包含以下场景：
@@ -85,7 +85,7 @@ struct Child {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/WzgQNAIFSyeLXEH19maW6g/zh-cn_image_0000002779090917.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ghpO8l6SQlWjtQhockviXA/zh-cn_image_0000002755023116.png)
 
 **复杂类型**
 
@@ -158,7 +158,7 @@ struct Example {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/YC69axFNRTGgMHSz724PuQ/zh-cn_image_0000002778931061.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/EFzwXGFlTNCz8vlmd_6k7Q/zh-cn_image_0000002755183002.gif)
 
 **外部初始化状态变量**
 
@@ -220,7 +220,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/LRC2GysHSjmzSjOeMU3LEg/zh-cn_image_0000002749331978.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/hmjrYWgkSmazWv48vr1yMQ/zh-cn_image_0000002784581867.png)
 
 ### @Prop -> @Param
 
@@ -294,7 +294,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/eCtUbw8AQCCzSn0FDQiZJQ/zh-cn_image_0000002749491862.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/4OShDjyIQcSejnCdL15EWg/zh-cn_image_0000002784662051.png)
 
 **复杂类型的单向数据传递**
 
@@ -432,7 +432,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/-gt2os1PTYaiEPnWR1zTpQ/zh-cn_image_0000002779090919.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/6ZiDjNSmT9aUNg8NRSerhQ/zh-cn_image_0000002755023118.gif)
 
 **子组件修改变量**
 
@@ -512,7 +512,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/0k91YNOMT2uKjgFzuNadgg/zh-cn_image_0000002778931063.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/8waJtw6uRT2A5xW3iWJCfA/zh-cn_image_0000002755183004.gif)
 
 在V1中，子组件可以修改@Prop的变量，且只会在本地更新，不会同步回父组件。父组件数据源更新时，会通知子组件更新，并覆写子组件本地@Prop的值。
 
@@ -632,7 +632,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/6xwUFKI3TNmM-pcRvlFSpA/zh-cn_image_0000002749331980.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/kV3s2WdCQWWPANCCKbimmg/zh-cn_image_0000002784581869.gif)
 
 ### @Link -> @Param/@Event
 
@@ -731,7 +731,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/MIP40NTERI-Yh0M2oX4JSA/zh-cn_image_0000002749491864.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/s5IvtCvNT-ynFUAzWZrRag/zh-cn_image_0000002784662053.gif)
 
 ### @ObjectLink -> @Param
 
@@ -861,7 +861,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/OY8qkwgvSRu50VUvY_tFsw/zh-cn_image_0000002779090921.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/BCQfD4rITGSXVHKLrzmWvA/zh-cn_image_0000002755023120.gif)
 
 ### @Provide/@Consume -> @Provider/@Consumer
 
@@ -957,7 +957,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ZwMFMXxJRiuDoodgR1MLXg/zh-cn_image_0000002778931065.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/9IivKKgrSt2d11uM7DvHNA/zh-cn_image_0000002755183006.png)
 
 **V1的@Consume不支持本地初始化，V2支持**
 
@@ -1021,7 +1021,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/xK-LXdxKRv6_bHf-ktFd5Q/zh-cn_image_0000002749331982.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/cd8AKUlARdapQsTRcJybqQ/zh-cn_image_0000002784581871.png)
 
 **V1的@Provide可以从父组件初始化，V2不支持**
 
@@ -1098,7 +1098,7 @@ struct Child {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/IKOFmhaQTtyj4cMpP9gJAw/zh-cn_image_0000002749491866.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/QAI6-BySSXaRHXSctB46bQ/zh-cn_image_0000002784662055.png)
 
 **V1的@Provide默认不支持重载，V2默认支持**
 
@@ -1188,7 +1188,7 @@ struct Child {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/8oQdh529RGWnf21Z0POlkw/zh-cn_image_0000002779090923.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/zDjgGT8RQIe5EhH72umR3A/zh-cn_image_0000002755023122.png)
 
 ### @Watch -> @Monitor
 
@@ -1278,7 +1278,7 @@ struct MonitorExample {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Yh3fBfBMSGK-cRIZaygriQ/zh-cn_image_0000002778931067.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/GYTrdziyRVGUE74-3Oam4w/zh-cn_image_0000002755183008.gif)
 
 **多变量监听**
 
@@ -1383,7 +1383,7 @@ struct MonitorExample {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-h1aVyo3RVyLS_7A1H167w/zh-cn_image_0000002749331984.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/oLqqKhAOTaeczdyi6FrE7Q/zh-cn_image_0000002784581873.gif)
 
 ### 重复计算 -> @Computed计算属性
 
@@ -1462,7 +1462,7 @@ struct Index {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/3AmVHPw-T261qsw3zIBw-Q/zh-cn_image_0000002749491868.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/DFGJqZTpRCia5cS07X0bFw/zh-cn_image_0000002784662057.gif)
 
 ### 双向绑定由$$迁移!!
 
@@ -1534,4 +1534,4 @@ struct TextInputExampleV2 {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/_P5--Ji9Q0-KcAbCrPsP1g/zh-cn_image_0000002779090925.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/5kzfFmV1QbKtCa1ELtH3Cw/zh-cn_image_0000002755023124.gif)

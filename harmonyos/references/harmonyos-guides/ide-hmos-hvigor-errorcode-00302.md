@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 脚本错误码
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 脚本错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:36+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:23+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:16eb4e83584bd3fb7c6026469a00209751af884f041674d717806dc36e55de3e
 ---
 

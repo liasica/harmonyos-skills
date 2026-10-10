@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-fast-re
 title: 低时延音频录制(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 低时延音频录制(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:75fb818057ab8b9153f5399a6c19c25aa7dcd7f986a706c2be253000a5d31dd2
+scraped_at: 2026-10-11T07:21:51+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:4eefe4f35b2bcb1542a48c79624e9d337f6426ad38c6135e8fffa30596455f06
 ---
 
 从API version 10开始支持低时延音频录制。
 
-低时延音频录制是一种通过软硬芯协同设计实现的音频渲染方案。其核心机制是通过减少buffer大小、优化读写数据架构，使该模式下音频录制具有更低的时延。
+低时延音频录制是一种通过软硬芯协同设计实现的音频采集方案。其核心机制是通过减少buffer大小、优化读写数据架构，使该模式下音频录制具有更低的时延。
 
 ## 使用前提
 

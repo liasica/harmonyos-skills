@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/data-augm
 title: Data Augmentation Kit（数据增强服务）
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:03+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:29+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:62d0df5b6db43c16ef4c60c33f24170381f4ca0b181e4847685dae59a6f98b2a
 ---
 

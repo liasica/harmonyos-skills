@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-augmenta
 title: Data Augmentation Kit（数据增强服务）
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:39+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:19+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:07279e8e100d256e92f9bf6be7fd82eda6053c53587a55e440f91b1e674a1074
 ---
 

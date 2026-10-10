@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/address-sanit
 title: 地址越界事件
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 地址越界事件
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:11+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:45+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:30f43e54b8b703e263c8b40a906b86974583af5ee5944ec5aecd412b7b073616
 ---
 

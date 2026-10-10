@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-root
 title: ohpm root
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm root
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:24+08:00
+scraped_at: 2026-10-11T07:23:12+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f128f9a651489315adfd8be5c4670f5493684feef4c527174fc6bd02809fb1be
+content_hash: sha256:548e8b963e372f453b907780521ff3f37496d8e06036cf20958100bb6ec6e67a
 ---
 
 在标准输出中打印有效的 oh\_modules 目录路径信息。
@@ -47,7 +47,7 @@ ohpm root
 
 项目结构为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/YbizQK41Si-mg3lqClSkaA/zh-cn_image_0000002701822560.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Mcn3Psy1SeOe3UoK0GuBOA/zh-cn_image_0000002701822560.png)
 
 在entry模块的src目录下执行：
 
@@ -57,4 +57,4 @@ ohpm root
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/4jZi70p3RfSt0fEGfW2OUw/zh-cn_image_0000002701662642.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/o9DrWCZrTAeA0u7of-Ai7g/zh-cn_image_0000002701662642.png)

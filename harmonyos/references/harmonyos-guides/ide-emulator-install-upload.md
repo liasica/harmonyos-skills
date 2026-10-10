@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 安装应用程序包和上传文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 安装应用程序包和上传文件
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:73caff13737d2241916ad8908fd1965b181827baf39173ffa448bbe988d4f8f5
+scraped_at: 2026-10-11T07:23:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:36e81d03aeaea45afbdc6e486a1d286f79faf6fd2b0799062c79c372ec9fb49a
 ---
 
 * 安装应用程序包
@@ -21,4 +21,4 @@ content_hash: sha256:73caff13737d2241916ad8908fd1965b181827baf39173ffa448bbe988d
 
   从DevEco Studio 6.1.0 Beta2版本开始，使用API 21及以上的镜像时，上传的图片类文件将保存在图库中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Elx3BGwmRC-ldOiH1zAwSw/zh-cn_image_0000002731381109.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/WT_TYRIzTMC4Dm5QxUZQLg/zh-cn_image_0000002731381109.gif "点击放大")

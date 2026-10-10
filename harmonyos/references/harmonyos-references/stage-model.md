@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/stage-mod
 title: Stage模型能力的接口
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:41+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-10-11T07:23:29+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:50239843fffd08b267df79b953df75322155d4c3771dc9162f887f111deef38a
 ---
 

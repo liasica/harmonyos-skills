@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 数字盾服务
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:50+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:29+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:0d0ab241e29108d3c24a0cc50f547898d6b1803f024883449d6fdc428ed16302
 ---
 

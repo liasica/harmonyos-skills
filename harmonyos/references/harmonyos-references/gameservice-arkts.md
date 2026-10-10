@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:50+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:28:09+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:dd4d34640551aef8cb4b834c5b7d2526bac9275be52e82595185d11ba8ac31de
 ---
 

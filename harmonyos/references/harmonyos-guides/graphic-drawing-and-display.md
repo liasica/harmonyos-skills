@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphic-drawi
 title: 图形绘制与显示
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:30+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:03+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:8cb2d0e49b327cb06b8caf035440d6ce1afddc055bb8088bffe554476ae34be4
 ---
 

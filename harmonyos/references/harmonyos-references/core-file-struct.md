@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-file
 title: 结构体
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:03+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:28+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2fea4fcb7d6fb7a2912f32e4f57750d148cf0b4733a7ded0c7f3c88f482a6258
 ---
 

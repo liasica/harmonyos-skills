@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 自动补全地址表单所在地区
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 自动补全地址表单所在地区
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:19+08:00
+scraped_at: 2026-10-11T07:22:25+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e4e20f419213fdf731f0dbc94d8b2276350fd1fea6ad0597c154529643a43786
+content_hash: sha256:fb3367904e5ff74fde461804975d291556e206a2ec18ea4e643efe8742f2c7ef
 ---
 
 在填写地址表单场景时，当应用使用了所在地区的省市区选择器，需要开发者对表单中的地址字段进行开发。
@@ -20,7 +20,7 @@ content_hash: sha256:e4e20f419213fdf731f0dbc94d8b2276350fd1fea6ad0597c154529643a
 
 地址表单中的所在地区能根据详细地址内容自动补全，当补全内容不符合预期时，可通过地址选择器进行修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/2tUkQibPSiCem60nizIJjQ/zh-cn_image_0000002779092911.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/ImONDqs7SvOBqNl5R0diAA/zh-cn_image_0000002755184878.png)
 
 ## 示例代码
 

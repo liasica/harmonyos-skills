@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/common-ba
 title: ArkTS API
 breadcrumb: API参考 > 公共基础能力 > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:09:29+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:28:47+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:91ee5e498d553403f19e8c4037ffa92a3b3463f8f35d9d166095418f04dd2960
 ---
 

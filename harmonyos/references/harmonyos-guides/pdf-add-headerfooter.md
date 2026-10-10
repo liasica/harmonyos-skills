@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-add-heade
 title: 添加、删除页眉页脚
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 添加、删除页眉页脚
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:16+08:00
+scraped_at: 2026-10-11T07:22:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7c4f6b551149c1cd222c9ca6e67aee0b087a9e87dd9a514f1d8f101b3f6be45c
+content_hash: sha256:dbb877e3ed00bbdabf8aa02e1bfd2644138231a0805e083fa84d7559a73e5d52
 ---
 
 PDF Kit支持对指定页面添加、删除页眉页脚。页眉页脚信息包含文字、日期和页码等相关内容，并可设置字体大小、颜色和间距等相关样式，具体属性参考[HeaderFooterInfo](../harmonyos-references/pdf-arkts-pdfservice.md#headerfooterinfo)。如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/4ZQ3NIx_QsmT8AE0Oj53Gg/zh-cn_image_0000002778932995.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Rj1QTmJpQ_O8XF6PgP5g5g/zh-cn_image_0000002784583687.png)
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-realtime-
 title: 代码实时检查及快速修复
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > 代码实时检查及快速修复
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:0debd55ca0017bee5fb2aec57520d3e4bde54674613190c00015bca0615b5cac
+scraped_at: 2026-10-11T07:22:56+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:249dc6dfce0af44437e6720a7bf66d1dd67cdca1af08a9fee620d634a95a5213
 ---
 
 ## 实时检查
@@ -14,7 +14,7 @@ content_hash: sha256:0debd55ca0017bee5fb2aec57520d3e4bde54674613190c00015bca0615
 
 对于ArkTS代码，从DevEco Studio 4.0 Release版本开始，当compileSdkVersion≥10时，编辑器代码实时检查支持ArkTS性能语法规范检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/fxuF9hlvRhazVo1NftkJ_Q/zh-cn_image_0000002701663178.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/RK8nRSAgSjGP9LEigPVK6g/zh-cn_image_0000002701663178.png)
 
 **说明** 
 
@@ -30,7 +30,7 @@ DevEco Studio支持代码快速修复能力，辅助开发者快速修复ArkTS�
 
 **快速修复：**将光标放在错误告警的位置，可在弹出的悬浮窗中查看问题描述和对应修复方式；单击**M****ore actions**可查看更多修复方法。或是在页面出现灯泡图标时，可点击图标并根据相应建议，实现代码快速修复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/OK7X2KhmS4CGVJF28le8fQ/zh-cn_image_0000002731542371.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/VRyZj4rPRcKYkBsb35tmkA/zh-cn_image_0000002731542371.png)
 
 **C++快速修复使用演示**
 
@@ -38,7 +38,7 @@ DevEco Studio支持代码快速修复能力，辅助开发者快速修复ArkTS�
 
 * 光标悬浮在switch表达式的条件变量处，点击灯泡图标，在下拉菜单中选择**Create missing switch cases**，完成缺失的case条件补充。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/vFXoQ1InTROrpKsFcI4_Lw/zh-cn_image_0000002731542377.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/bpsH7telSrCZifRRgRggYw/zh-cn_image_0000002731542377.gif)
 * 点击构造函数名称，左侧出现红色灯泡后，点击灯泡图标选择**Create new constructor 'xxx'**生成构造函数。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Zliknso1T62QdZMVOwKqpw/zh-cn_image_0000002731382401.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/lAlsvqr1QameHd_H00RmbA/zh-cn_image_0000002731382401.gif)

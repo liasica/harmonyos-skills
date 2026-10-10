@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 构建报错排查
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 构建报错排查
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:36+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:23+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:3dbdc42feaf357f273a9547c9ceda710f6a5e48f0544512862f83b2fea81e7b8
 ---
 

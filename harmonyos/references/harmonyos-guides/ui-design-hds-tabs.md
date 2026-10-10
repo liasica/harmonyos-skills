@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 底部页签
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:43+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2777e063651e4aa58fa875a29c77c8612068bc182145897bee585fc4924723b8
 ---
 

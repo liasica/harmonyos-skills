@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 模拟器与真机的差异
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 模拟器与真机的差异
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:995a7e85bb51bc3489f2cf30f44b074724e789f6be309d8d806e79a788780307
+scraped_at: 2026-10-11T07:23:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:c4843fb46c68c66dc022d406758029379bf48a3c12fc7f10f7f62540c68f8a18
 ---
 
 模拟器是开发和调试HarmonyOS应用/元服务的便捷工具，例如不需要配置服务器域名即可开发和调试元服务，在大多数情况下，模拟器上推包调试不需要签名，但部分Kit仍需签名后才能正常运行，具体要求请参考Kit的开发指南。
@@ -42,7 +42,7 @@ content_hash: sha256:995a7e85bb51bc3489f2cf30f44b074724e789f6be309d8d806e79a7887
 Kit不支持导致的报错信息如：
 
 ```txt
-LastFatalMessage:[default] [LoadJSPandaFile:00] resolveBufferCallback get hsp buffer failed，hsp path:/data/storage/el1/bundle/com.huawei.hmos.{KitName}.kit
+LastFatalMessage:[default] [LoadJSPandaFile:00] resolveBufferCallback get hsp buffer failed, hsp path:/data/storage/el1/bundle/com.huawei.hmos.{KitName}.kit
 ```
 
 ## 其他差异

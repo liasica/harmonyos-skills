@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-para
 title: 学习UI范式基本语法
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:18+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:02+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ab6cc3099284f33cd97b8a18d2693bfefcf8a5ac354ee82d11d5854992e3c806
 ---
 

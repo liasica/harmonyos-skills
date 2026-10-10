@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 容器断点 (ContainerReader)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 容器断点 (ContainerReader)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:02+08:00
+scraped_at: 2026-10-11T07:21:06+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c32fa39b2d8c999d052b291cceff20099d3114f4417781cfe63f8b945fc02e13
+content_hash: sha256:9a467807470c56bfc12da0aea874fd8a917b46c9661dc7387abb1d6da971d3c0
 ---
 
 容器断点组件[ContainerReader](../harmonyos-references/ts-container-containerreader.md)是ArkUI提供的一种响应式布局解决方案，从API版本26.0.0开始，允许开发者基于容器尺寸而非窗口尺寸实现自适应布局。与传统的窗口断点相比，容器断点提供了更细粒度的布局控制能力，使得组件能够在不同的容器尺寸下呈现不同的布局效果。
@@ -67,7 +67,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/4rzCb2hpTJGND6QSJFB3mg/zh-cn_image_0000002749492048.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/KWVM6fZXRMaegU-qCH5oiw/zh-cn_image_0000002784662205.png)
 
 [ContainerReader](../harmonyos-references/ts-container-containerreader.md)作为Flex、Row或Column的子组件使用时，会优先为非ContainerReader类型的子组件测算尺寸，再结合父容器剩余空间与开发者设置为ContainerReader组件分配空间。这在固定内容与自适应内容并存的场景中较为适用。
 
@@ -109,7 +109,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/GngfvPmASYCIagonzJ-Y3Q/zh-cn_image_0000002779091105.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/VZfZMoDXS4av4IPMGLbNSw/zh-cn_image_0000002755023272.png)
 
 当Flex、Row或Column容器中有多个[ContainerReader](../harmonyos-references/ts-container-containerreader.md)子组件时，按开发者书写顺序第一个ContainerReader会占满剩余空间，此时其余ContainerReader组件的主轴大小为0。但开发者可以通过layoutWeight属性使多个ContainerReader平分剩余空间。
 
@@ -173,7 +173,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/UFtNOhTOTpy3lnwuhjdz0Q/zh-cn_image_0000002778931249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/eOtvNUEKTJaMJephkYX_sg/zh-cn_image_0000002755183158.png)
 
 ## 约束与限制
 
@@ -314,7 +314,7 @@ ContainerReader的主要接口包括ContainerReader和breakpointConfig。
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Qax7UepqRqKfYUeR6bKsRA/zh-cn_image_0000002749492048.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/2RgzD9-pR-KEXM_Ff4Nphw/zh-cn_image_0000002784662205.png)
 
 ## 实现独立断点
 
@@ -377,7 +377,7 @@ struct MultiContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/HnH503QYSGmlGHzWM1bixw/zh-cn_image_0000002749332166.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/WU3rg9ADRO6wT9KzMOxE8w/zh-cn_image_0000002784582023.png)
 
 ## 网格组件根据自身容器断点设置列数
 
@@ -454,7 +454,7 @@ struct GridBreakpointExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/EXQn9QTjQIe8aoDNw8V3Cw/zh-cn_image_0000002749492050.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/by28YRfLQI-mzlt3GAd8iA/zh-cn_image_0000002784662207.png)
 
 ## 自定义组件根据容器断点自适应布局
 
@@ -525,7 +525,7 @@ struct AdaptiveCardExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/tmNIkN62TzKtH2ymW2ekdw/zh-cn_image_0000002779091107.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/2ei7M42PRiCgAldbdQOvfQ/zh-cn_image_0000002755023274.png)
 
 ## 左右分栏布局自适应
 
@@ -642,8 +642,8 @@ struct SplitLayoutExample {
 
 窄屏时上下排列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/prY46HxVTI2yh41OHnAddg/zh-cn_image_0000002778931251.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/6uZI1yWrTXKwWGXsfO2CFg/zh-cn_image_0000002755183160.png)
 
 宽屏时左右排列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/CzKdBpjjSPC8m7XN23tgCA/zh-cn_image_0000002749332168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/dH3FNLI8TBiJ-vh_EAseGA/zh-cn_image_0000002784582025.png)

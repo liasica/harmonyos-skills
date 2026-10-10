@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-debug
 title: 自定义运行/调试配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 自定义运行/调试配置
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a38c9c75750d028ef578813829126074e3ba8f1dbaddada438be92bd3c3ae2ea
+scraped_at: 2026-10-11T07:23:03+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:ef6b018ed279af3d787a9364e0f414664ed8e79859b04964aea7179b5861ee30
 ---
 
 ## 配置应用可调试
@@ -23,7 +23,7 @@ content_hash: sha256:a38c9c75750d028ef578813829126074e3ba8f1dbaddada438be92bd3c3
 
 点击**Run > Edit Configurations > Debugger**，选择相应模块，设置Debug type即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/UGLRXu_8RgKA1vmzvasqew/zh-cn_image_0000002701823562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/a6PP3siMQi-LIeBEBDLzog/zh-cn_image_0000002701823562.png)
 
 工程调试类型默认为**Detect Automatically**，关于各调试类型的说明如下表所示：
 
@@ -49,13 +49,13 @@ content_hash: sha256:a38c9c75750d028ef578813829126074e3ba8f1dbaddada438be92bd3c3
 
 单击**Run > Edit Configurations**，设置指定模块的HAP安装方式，勾选**Keep Application Data**，则表示采用覆盖安装方式，保留应用/元服务缓存数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/KAZ3QQUlRV-5UhDtwXpHTQ/zh-cn_image_0000002701823554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/1E-QqwaXSQuli8LPG86Zwg/zh-cn_image_0000002701823554.png)
 
 ### 配置自定义调试参数
 
 如果未进行自定义，将按默认配置安装和运行应用。如果开发者需要对应用安装、运行等流程增加参数配置，可在“Installation Options”和“Launch Options”下进行配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/zpE2KDfSRz6lmFSWB4ezqw/zh-cn_image_0000002701823550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/egbTDONoTU-dh69JBohNQA/zh-cn_image_0000002701823550.png)
 
 * Installation Options
   + DebugLine Support：勾选Enable DebugLine表示在构建产物中系统组件增加debugline属性，用于开启[ArkUI Inspector源码跳转](ide-arkui-inspector.md#section1226015494335)功能。
@@ -63,27 +63,27 @@ content_hash: sha256:a38c9c75750d028ef578813829126074e3ba8f1dbaddada438be92bd3c3
 * Launch Options
   + Launch：指定在安装应用后启动的Ability。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/y6RHNd3dTzymgExbj4ENvA/zh-cn_image_0000002731542825.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Se2GaRrPT6e7U21f0vxpyQ/zh-cn_image_0000002731542825.png)
     - Nothing：只安装不启动任何Ability。
     - Default Ability：默认的EntryAbility。
       * Stage模型：module.json5文件中配置了“skills”属性的第一个ability；若无配置“skills”属性的ability，则取“mainElement”指定的ability（该ability需存在于“abilities”数组内）；若“mainElement”未指定，则取“abilities”数组内的第一个ability。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/di13X-wpQXG7PKN9C_MTzA/zh-cn_image_0000002701823556.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/2jS5lvu1T-6riauIKKm47Q/zh-cn_image_0000002701823556.png "点击放大")
       * FA模型：config.json文件中配置了“skills”属性的第一个ability；若无配置“skills”属性的ability，则取“mainAbility”指定的ability（该ability需存在于“abilities”数组内）；若“mainAbility”未指定，则取“abilities”数组内的第一个ability。
     - Specified Ability：工程中的UIAbility或ExtensionAbility。
 
       您可以在工程中添加UIAbility或ExtensionAbility，详细请查看[UIAbility开发指导](uiability.md)或[ExtensionAbility开发指导](extensionability-overview.md)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/nqJ8cV_lRUaG3tuXhUoOqg/zh-cn_image_0000002731382855.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/0G5Zmu1NRyijPZ1iqUnxww/zh-cn_image_0000002731382855.png)
   + Launch Flags：输入aa start命令相关的选项，请参见[aa start 参数](aa-tool.md)。
 
 ### 配置环境变量
 
 如果开发者需要配置和管理应用开发环境，以及控制应用程序的行为，可在**Environment Variables**下配置环境变量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/qa5Iyv7WQdiD5RFMGasjbQ/zh-cn_image_0000002731542827.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/DF88foVzTJ-GtCIjKbjgbg/zh-cn_image_0000002731542827.png)
 
-点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/wl3YRLf1Qsy9YYxL2TlUDQ/zh-cn_image_0000002701823558.png)按钮，新增一行配置项。当前支持以下配置项：
+点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/c_Ilh7GkQsC5vSz7-RlegQ/zh-cn_image_0000002701823558.png)按钮，新增一行配置项。当前支持以下配置项：
 
 * ASAN\_OPTIONS：在运行时配置ASan的行为，包括设置检测级别、输出格式、内存错误报告的详细程度等，具体可配置的value请参见[配置参数](../best-practices/bpta-stability-asan-detection.md#section1496994494018)。若开发者未配置log\_exe\_name、abort\_on\_error，DevEco Studio将自动填充。ASAN\_OPTIONS是应用级别的，只在entry和feature模块中配置生效，HAR/HSP模块配置不生效。
 
@@ -93,7 +93,7 @@ content_hash: sha256:a38c9c75750d028ef578813829126074e3ba8f1dbaddada438be92bd3c3
 
 环境变量配置完成后，需确保环境变量已勾选，勾选后点击**Apply**才可生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ND0QrJVpQh6GSY_BTImuOg/zh-cn_image_0000002701663634.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/ycpFeaRGSMG797gPcNA0KQ/zh-cn_image_0000002701663634.png)
 
 ## 自动映射WebView调试链接
 
@@ -105,11 +105,11 @@ content_hash: sha256:a38c9c75750d028ef578813829126074e3ba8f1dbaddada438be92bd3c3
 
 单击**Run** **>** **Edit Configurations**，在**General**中，勾选**Auto WebView Debug**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/NKg36W9mTa6RylbdEWcIhg/zh-cn_image_0000002731542821.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/t5iSqPUPQ_qndKd2vyja3Q/zh-cn_image_0000002731542821.png)
 
 开启后，当检测到设备上有可调试的WebView组件进程时，会在Run面板中打印转发成功的端口，通过浏览器的DevTools工具连接该端口即可进行WebView调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/8-Y4FVuiQi66Adpd3oCfDg/zh-cn_image_0000002701663642.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/MG7jC0I_RGebeweQOuEIHQ/zh-cn_image_0000002701663642.png)
 
 ## 多模块调试
 
@@ -121,7 +121,7 @@ content_hash: sha256:a38c9c75750d028ef578813829126074e3ba8f1dbaddada438be92bd3c3
 
 单击**Run > Edit Configurations**，在**Deploy Multi Hap****/Hsp**中，勾选**Deploy Multi Hap/Hsp Packages**，选择多个模块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/zmrnODR-T8-entWeQrv6vA/zh-cn_image_0000002731382851.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/HJobFFZtSwOXV1UZS73CtA/zh-cn_image_0000002731382851.png)
 
 ### 自动安装依赖
 
@@ -131,15 +131,15 @@ content_hash: sha256:a38c9c75750d028ef578813829126074e3ba8f1dbaddada438be92bd3c3
 
 单击**Run > Edit Configurations**，在**General**中，勾选**Auto Dependencies。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/cqDdGl8WR7q5i38-fjbEDQ/zh-cn_image_0000002701663638.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/f78dpALWQcGr8ZXX4wZjyw/zh-cn_image_0000002701663638.png)
 
-在Before launch窗格中，您可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/hAg9ibpIQKSngqsD27G6tA/zh-cn_image_0000002701663640.png)添加应用启动前的任务。
+在Before launch窗格中，您可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/K0ydB1d4SeGOXwUP18kAbw/zh-cn_image_0000002701663640.png)添加应用启动前的任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/dPcD2FDJS4uNJNgGvENoHA/zh-cn_image_0000002731542831.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/7fv2zOt0TKmf-DI1JSwpxA/zh-cn_image_0000002731542831.png)
 
-也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/jLZZsnWARBaWTyrMJ0YIRw/zh-cn_image_0000002731382861.png)移除任务。
+也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/yYraSTVeSia_ST7P9ExUZA/zh-cn_image_0000002731382861.png)移除任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/6HxjS9_0QP2QNIfMTc9yVA/zh-cn_image_0000002701663628.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/tnFdLkbiSHyZfzyfoGLnTQ/zh-cn_image_0000002701663628.png)
 
 在勾选**Auto Dependencies**后，可以同时勾选**Deploy Multi Hap/Hsp Packages**，从而达到推送所有包的效果。
 
@@ -149,10 +149,10 @@ content_hash: sha256:a38c9c75750d028ef578813829126074e3ba8f1dbaddada438be92bd3c3
 
 1. 在设备选择框中，点击**Select Multiple Devices**，弹出多设备选择框。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/1uFrqlsfQH-jaHtoU6UaYA/zh-cn_image_0000002731382853.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/qbgtNY5KQCO7vd-ZSt5u9w/zh-cn_image_0000002731382853.png)
 2. 选择需要推包运行的设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/HKvzLe9xQNK9Y3zraTGEbw/zh-cn_image_0000002701823560.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/PP6FPhrjTEmQvEhW-gNrmg/zh-cn_image_0000002701823560.png)
 3. 设备栏会出现Multiple Devices(N)，表示选中N个设备，点击运行按钮即可同时在选中设备上运行应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vft1OtOMSIWKgIjMeQbacA/zh-cn_image_0000002701663636.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/pSRSV0MlToe_vOrZPeDNIw/zh-cn_image_0000002701663636.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-app
 title: "AppStorageV2: 应用全局UI状态存储"
 breadcrumb: "指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理应用拥有的状态 > AppStorageV2: 应用全局UI状态存储"
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:01+08:00
+scraped_at: 2026-10-11T07:21:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:59817684d14652ae0b1330baa0ab2ff7db0b9a56d92aaaf3397f76d231f5d377
+content_hash: sha256:c9320a9d16585fcf98f42b4e05367b7b4a44017e8729cd16597b50baa977e951
 ---
 
 为了增强状态管理框架对应用全局UI状态变量的共享能力，开发者可以使用AppStorageV2存储应用全局UI的状态变量数据。
@@ -176,7 +176,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/srg382kzTvGFKuBkOyLIuA/zh-cn_image_0000002779090899.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/4WPAa2vxQM60ijitpndXag/zh-cn_image_0000002755023098.gif)
 
 ### 在两个页面之间存储数据
 
@@ -329,4 +329,4 @@ struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/vCvKG9vBSWG5PPZpDaoLIg/zh-cn_image_0000002778931043.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/X9bce39BQqGzzLEaD9pJEA/zh-cn_image_0000002755182984.gif)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfservic
 title: pdfService能力
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:53+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:18d0f638b4a046495c6e2c9fff5455e227dd0e4a0d29165036270a5f7aef5f13
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-ana
 title: ArkUI分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 卡顿丢帧分析 > ArkUI分析
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:22+08:00
+scraped_at: 2026-10-11T07:23:10+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f2b760e62b05dbb76b23ffbb8a7120d3b1f7ee8b507797c4a1498c2044242998
+content_hash: sha256:db501f3d9d942d3cfcd9ea67b53d16fecc1377c73da570c2be08e634907e1754
 ---
 
 ## 功能介绍
@@ -29,13 +29,13 @@ ArkUI模板支持的泳道包括：APP Frame、ArkUI Component、ArkUI State、A
 1. 在时间轴上拖拽鼠标选定要查看的时间段。
 2. **Summary**区域展示录制时段内自定义组件以及系统组件的绘制统计情况，包括绘制次数、总耗时、最小耗时、平均耗时、最大耗时、耗时标准差。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/UbixA4mJS8uUtIy49Zitng/zh-cn_image_0000002731541985.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/egkCKRllTh-S2-WNiynMfA/zh-cn_image_0000002731541985.png "点击放大")
 3. **Details**详情区域可以查看按照时间线排序的组件详情，同时**More**区域展示以该组件为根节点的组件树信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/O0AIjVtgS7GFFApRXhhKtA/zh-cn_image_0000002701662788.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/nvTb5EIxQsKWihQsfk3ZHw/zh-cn_image_0000002701662788.png "点击放大")
 4. 点选ArkUI Component泳道中的条块，会打开**Slice Detail**区域，点击Slice Detail中的Name支持跳转至对应Process子泳道并选中trace信息，**More**区域展示以该组件为根节点的组件树信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/un7ZQXjBSZOTpx_1SiyNoQ/zh-cn_image_0000002731382011.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/OI-6_9n6R3SBzGAQMMdzYQ/zh-cn_image_0000002731382011.png "点击放大")
 
    **说明** 
 
@@ -46,13 +46,13 @@ ArkUI模板支持的泳道包括：APP Frame、ArkUI Component、ArkUI State、A
 1. 点击**ArkUI State**泳道，可在下方数据区查看录制过程中发生的状态变量变化。
    * **Summary**区域可查看状态变量名称、变化次数、状态变量类型、所属组件和所属类。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/dNB6_wBPRwe2wtq5W0uw_w/zh-cn_image_0000002701822712.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/eGblWvrWQH-EHNs7aubfxg/zh-cn_image_0000002701822712.png "点击放大")
    * **Current Value**区域以时间顺序展示状态变量变化，**Current Values**列展示变化后的值。选择**Current Value**中某一个数据，泳道区域将以虚线展示其时间位置，右侧**More**区域展示该状态变量影响的组件关联关系。打开页面下方的**Delivery Chain**开关，该状态变量影响的组件关联关系将以图形展示。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/CgPowhQmTCSUrbWaxh5hSg/zh-cn_image_0000002731541989.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/IpLV2lpxQ7ygrVhJP6SV-Q/zh-cn_image_0000002731541989.png "点击放大")
 2. 定位到可能造成卡顿的状态变量变化时间点，框选对应时间段，选择**ArkUI Component**泳道查看对应组件刷新时间。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/upeTrEl3ThOgUBLbeRTxiQ/zh-cn_image_0000002731382015.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/UENQcJjwQASbdK4mUbRefQ/zh-cn_image_0000002731382015.png "点击放大")
 
 **说明** 
 

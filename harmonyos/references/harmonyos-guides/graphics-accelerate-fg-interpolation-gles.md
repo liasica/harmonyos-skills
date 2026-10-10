@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: OpenGL ES平台
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > 内插模式 > OpenGL ES平台
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:58+08:00
+scraped_at: 2026-10-11T07:22:04+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b70d18972f5995a47b7d0e1e5aed328c0438344292eca344e96332ba7cbad772
+content_hash: sha256:825f6e47af2f417dd742018ce71afa2ce6df2b0666e8cf78ed41fabd5838a976
 ---
 
 ## 业务流程
 
 基于OpenGL ES图形API平台，超帧内插模式的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/fDviqaY2S5Onhu_L99kREg/zh-cn_image_0000002779092437.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/mVj_lq0DRVC502uTGPirdQ/zh-cn_image_0000002755184410.png)
 
 1. 用户进入超帧适用的游戏场景。
 2. 游戏应用调用[HMS\_FG\_CreateContext\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_fg_createcontext_gles)接口创建超帧上下文实例。如超帧上下文实例创建失败，则无需进入步骤5到步骤9的预测帧、真实帧交替渲染送显的循环流程，只需逐帧对场景进行渲染送显即可。

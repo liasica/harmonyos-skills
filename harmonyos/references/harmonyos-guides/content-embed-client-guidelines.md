@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed
 title: 客户端应用开发
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > 客户端应用开发
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:41+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:bec8cd438b73fa429b74c7f6f361d876c8759aab5d06d5705baffc3b38aa19d2
+scraped_at: 2026-10-11T07:21:18+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:0eb3f4393de137c094a20e9adff49c4078929068f3ff5f02434b09d7d66fbf76
 ---
 
 ## 场景介绍
@@ -33,7 +33,7 @@ OE客户端应用指嵌入其他文档的应用，通过调用OE框架层[conten
 | 接口名称 | 功能描述 |
 | --- | --- |
 | OH\_ContentEmbed\_CreateDocumentByFile | 通过被嵌入文档路径创建[OE文档](content-embed-kit-terminology.md#oe文档)。 |
-| OH\_ContentEmbed\_CreateDocumentByOEId | 通过[OEID](content-embed-kit-terminology.md#oeid)创建OE文档。 |
+| OH\_ContentEmbed\_CreateDocumentByOEid | 通过[OEID](content-embed-kit-terminology.md#oeid)创建OE文档。 |
 | OH\_ContentEmbed\_LoadDocumentFromFile | 通过已存在的[OE格式文件](content-embed-kit-terminology.md#oe格式文件)加载OE文档。 |
 | OH\_ContentEmbed\_CreateExtensionProxy | 创建[客户端OE对象](content-embed-kit-terminology.md#客户端oe对象)。 |
 | OH\_ContentEmbed\_DestroyExtensionProxy | 销毁客户端OE对象，释放相关资源。 |
@@ -275,7 +275,7 @@ void ClientCallBack_OnUpdateFunc(ContentEmbed_ExtensionProxy *proxy)
 
 void ClientCallBack_OnErrorFunc(ContentEmbed_ExtensionProxy *proxy, ContentEmbed_ErrorCode error)
 {
-    OH_LOG_INFO(LOG_APP, "Enter ClientCallBack_OnErrorFunc, error: %{public}d", error);
+    OH_LOG_ERROR(LOG_APP, "Enter ClientCallBack_OnErrorFunc, error: %{public}d", error);
 }
 
 void ClientCallBack_OnEditingFinishedFunc(ContentEmbed_ExtensionProxy *proxy, bool dataModified)

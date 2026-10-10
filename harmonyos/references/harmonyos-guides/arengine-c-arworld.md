@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ar
 title: 物体摆放（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 命中检测 > 物体摆放（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a90db284693fe6c73af2b136c7195f989b9f793b52950fe1a33ec21e8a8a3dcc
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:21ce3dc182be80749232846cd348dc6ef6d60058f92188afc4a57eca20140d10
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
@@ -218,9 +218,8 @@ struct ARWorld {
    if (OH_NativeDisplayManager_GetDefaultDisplayRotation(&displayRotation) == DISPLAY_MANAGER_OK) {
        mDisplayRotation = ArEngineRotateType(displayRotation);
    }
-   // ...
-   CHECK(HMS_AREngine_ARSession_SetDisplayGeometry(mArSession, mDisplayRotation, mWidth, mHeight));
    // 设置显示高度和宽度（以像素为单位）。请确保在此处设置的高度和宽度与显示视图的高度和宽度一致。
+   CHECK(HMS_AREngine_ARSession_SetDisplayGeometry(mArSession, mDisplayRotation, mWidth, mHeight));
    ```
 3. 通过OpenGL接口获取纹理ID。
 

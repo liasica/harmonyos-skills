@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义组件冻结（V2）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件冻结 > 自定义组件冻结（V2）
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:59+08:00
+scraped_at: 2026-10-11T07:21:03+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1c54a4ddf2a2268d631c199db1e2858c1febb7f236f7e12f63f8ebc988c1a690
+content_hash: sha256:0e94068c58a5d13e29767ee43362cc7718c1812e09016389319298902e8d2abf
 ---
 
 当@ComponentV2装饰的自定义组件处于非激活状态时，状态变量将不响应更新，即[@Monitor](arkts-new-monitor.md)不会调用，状态变量关联的节点不会刷新。该冻结机制在复杂UI场景下能显著优化性能，避免非激活组件因状态变量更新进行无效刷新，从而减少资源消耗。通过[freezeWhenInactive](../harmonyos-references/ts-custom-component-parameter.md#componentoptions)属性来决定是否使用冻结功能，不传参数时默认不使用。支持的场景有：[页面路由](../harmonyos-references/js-apis-router.md)、[TabContent](../harmonyos-references/ts-container-tabcontent.md)、[Navigation](../harmonyos-references/ts-basic-components-navigation.md)、[Repeat](../harmonyos-references/ts-rendering-control-repeat.md)。
@@ -34,7 +34,7 @@ content_hash: sha256:1c54a4ddf2a2268d631c199db1e2858c1febb7f236f7e12f63f8ebc988c
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/3HuGhjW7Qwqm_gfTCMC0Sg/zh-cn_image_0000002778930903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/PNLE2YzMQjm-xpoy2Zc-QQ/zh-cn_image_0000002755182844.png)
 
 页面1：
 
@@ -110,11 +110,11 @@ struct Page2 {
 
 Trace如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/7RBTgqu9TuqEplVuvZmRyA/zh-cn_image_0000002779090769.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/vVDCoPTxSj6wPnIp52IPPg/zh-cn_image_0000002755022968.png)
 
 3.点击Back，页面2被销毁，页面1的状态由inactive变为active。状态变量bookTest的更新被观察到，@Monitor中注册的方法onMessageChange被调用，对应的Text显示内容改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/RHd16o5DRtm7b0-Qt1M9FQ/zh-cn_image_0000002778930913.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Kgmu7SO-QTacfIDPUUEiNA/zh-cn_image_0000002755182854.gif)
 
 ### TabContent
 
@@ -124,7 +124,7 @@ Trace如下：
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/k4v1vVsYTkmk-xwALjcEtQ/zh-cn_image_0000002749331820.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/6obfngd0TLeiegBVPBgCBQ/zh-cn_image_0000002784581709.png)
 
 ```typescript
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -185,7 +185,7 @@ struct FreezeChild {
 
 3.再次点击change message更改message的值，仅当前显示的TabContent子组件中@Monitor注册的方法onMessageUpdated被触发。其他inactive的TabContent组件不会触发@Monitor。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/F3c2Cxs5RTy1A4xo0GARPg/zh-cn_image_0000002749491704.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Nvs26Z34TTugV89MSmdu3w/zh-cn_image_0000002784661893.gif)
 
 ### Navigation
 
@@ -374,7 +374,7 @@ struct NavigationContentMsgStack {
 
 10.再次点击Back Page回到初始页，此时，无任何触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/QZdVfT0RSwG6VHpUSYO6PQ/zh-cn_image_0000002778930905.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/vDbI83CITy6dD3hvDALCtg/zh-cn_image_0000002755182846.gif)
 
 ### Repeat
 
@@ -461,7 +461,7 @@ struct ChildComponent {
 
 开启组件冻结（freezeWhenInactive: true），只有剩余节点中@Monitor装饰的方法onBgColorChange被触发，如示例中屏上的5个节点会刷新并打印5条日志，缓存池中的节点则不会。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/XX0uiNHEQH2bB8zDuwwy6g/zh-cn_image_0000002749331830.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/5bQPMDbeTx-cGo3np0VU3A/zh-cn_image_0000002784581719.gif)
 
 ```typescript
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -490,7 +490,7 @@ struct ChildComponent1 {
 
 不开启组件冻结（freezeWhenInactive: false，当未指定freezeWhenInactive参数时默认不开启组件冻结），剩余节点和缓存池节点中@Monitor装饰的方法onBgColorChange都会被触发，即会有7个节点会刷新并打印7条日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/waVt4fFIQ76w3tGrw8d9AQ/zh-cn_image_0000002749491714.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/_A4xx8AWRSO6p8AVFp7_IQ/zh-cn_image_0000002784661903.gif)
 
 ### 仅子组件开启组件冻结
 
@@ -944,4 +944,4 @@ struct FreezeBuildNode {
 
 点击change，改变message的值，当前正在显示的TabContent组件中@Monitor注册的方法onMessageChange被触发。未显示的TabContent中的BuilderNode节点下组件的@Monitor方法onMessageChange也被触发，并没有被冻结。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/r13J7Ly7Rx6lbNJ9OEI4tA/zh-cn_image_0000002749491712.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/BSfXYfpITsiJM502P4KZyw/zh-cn_image_0000002784661901.gif)

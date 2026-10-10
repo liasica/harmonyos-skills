@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-arkt
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-10-01T07:40:34+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-10-11T07:28:35+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:5e37d3a2d312938b3cb41b2781c13806f4e54bd6e370bb43fddc1d63b109b8bd
 ---
 

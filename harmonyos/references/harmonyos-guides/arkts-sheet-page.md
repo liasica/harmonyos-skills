@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sheet-p
 title: 绑定半模态页面（bindSheet）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 绑定模态页面 > 绑定半模态页面（bindSheet）
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:04+08:00
+scraped_at: 2026-10-11T07:21:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e1d4c5ab94a8b175febbc780ade281f6d60c841b22e55dd0795d8e5be2920659
+content_hash: sha256:7c9f358cfc4b2fdd4d9193d64a93c7597b460da7ec53c3a943b1c8b91f401dcf
 ---
 
 [半模态页面（bindSheet）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)默认是模态形式的非全屏弹窗式交互页面，允许部分底层父视图可见，帮助用户在与半模态交互时保留其父视图环境。
@@ -119,7 +119,7 @@ struct SheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/QCfe2-0iTpKvk6R9cPv91A/zh-cn_image_0000002749332464.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/xJU4YDqhQ4yod03OYlwAjA/zh-cn_image_0000002784582267.png)
 
 ## 二次确认能力
 
@@ -201,7 +201,7 @@ struct OnWillDismiss_Dismiss {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/3sIHxIigQpa4ibwQdfYOzw/zh-cn_image_0000002749492348.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/J7lzjsJ6Qxy9vsS9Zi3UPA/zh-cn_image_0000002784662447.png)
 
 ## 屏蔽部分关闭行为
 
@@ -307,4 +307,4 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/MMq6C-SCToay6cV-dMLWxg/zh-cn_image_0000002779091405.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/aGlRS_5RTJmOuF4Pf9HCkA/zh-cn_image_0000002755023514.png)

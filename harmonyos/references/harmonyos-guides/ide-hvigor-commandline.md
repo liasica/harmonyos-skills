@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-co
 title: 命令行构建工具（hvigorw）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 命令行构建工具（hvigorw）
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:24+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:11+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:5300c3aa1e5f1c3ab9e9232759192bf51a7ff2100dcd7d6f198f02e7d82eba63
 ---
 

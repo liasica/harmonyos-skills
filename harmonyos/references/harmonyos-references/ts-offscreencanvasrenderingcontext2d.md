@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-offscr
 title: OffscreenCanvasRenderingContext2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > OffscreenCanvasRenderingContext2D
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:92df20e34b00de4b6fd6880d554600dcf5278bd6b51176cf1dc22316dceff801
+scraped_at: 2026-10-11T07:24:35+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:96a9c3d5e5f34dce97e29bc6d33460140284a4186688ceeb9d3527a5f88873fe
 ---
 
 使用OffscreenCanvasRenderingContext2D在Canvas上进行离屏绘制，绘制对象可以是形状、文本、图片等。离屏绘制是指将需要绘制的内容先绘制在缓冲区，然后将其转换成图片，一次性绘制到Canvas上。离屏绘制使用CPU进行绘制，绘制速度较慢，对绘制速度有要求的场景应避免使用离屏绘制。
@@ -13,7 +13,7 @@ content_hash: sha256:92df20e34b00de4b6fd6880d554600dcf5278bd6b51176cf1dc22316dce
 **说明** 
 
 * 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-* OffscreenCanvasRenderingContext2D无法在ServiceExtensionAbility中使用，ServiceExtensionAbility中建议使用[绘制模块](arkts-apis-graphics-drawing.md)进行离屏绘制。
+* OffscreenCanvasRenderingContext2D使用时依赖UI上下文，无法在没有加载UI上下文时使用（如ServiceExtensionAbility，MDM企业设备管理服务等可能无UI页面的场景下使用需注意此约束），此类无UI上下文的场景建议使用[绘制模块](arkts-apis-graphics-drawing.md)进行离屏绘制。
 * [beginPath](ts-components-canvas-common-method.md#beginpath)、[moveTo](ts-components-canvas-common-method.md#moveto)、[lineTo](ts-components-canvas-common-method.md#lineto)、[closePath](ts-components-canvas-common-method.md#closepath)、[bezierCurveTo](ts-components-canvas-common-method.md#beziercurveto)、[quadraticCurveTo](ts-components-canvas-common-method.md#quadraticcurveto)、[arc](ts-components-canvas-common-method.md#arc)、[arcTo](ts-components-canvas-common-method.md#arcto)、[ellipse](ts-components-canvas-common-method.md#ellipse)、[rect](ts-components-canvas-common-method.md#rect)和[roundRect](ts-components-canvas-common-method.md#roundrect20)接口只能对OffscreenCanvasRenderingContext2D中的路径生效，无法对[CanvasRenderingContext2D](ts-canvasrenderingcontext2d.md)和[Path2D](ts-components-canvas-path2d.md)对象中设置的路径生效。
 * 支持使用[画布绘制通用方法](ts-components-canvas-common-method.md)和设置[画布绘制通用属性](ts-components-canvas-common-property.md)。
 
@@ -116,7 +116,7 @@ struct ToDataURL {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/iSKLjeTHQtmcFapjfGYzgw/zh-cn_image_0000002778934137.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/JUnrlnAuSgGZxCaxryMBzQ/zh-cn_image_0000002784584689.png)
 
 ## transferToImageBitmap
 
@@ -173,4 +173,4 @@ struct PutImageData {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/ak-wwY56QUCtZhtloA3mdw/zh-cn_image_0000002749335054.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/PIEjdNa0Szu91cO6gQlZNA/zh-cn_image_0000002784664871.png)

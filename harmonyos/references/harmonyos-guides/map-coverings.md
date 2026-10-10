@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-coverings
 title: 覆盖物
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 覆盖物
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:13+08:00
+scraped_at: 2026-10-11T07:22:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:52543eeace48b146e9a0ae2f816087e5c7329aee387e7a6973222dbd703fda8f
+content_hash: sha256:14e549e7a8cf21b4ca57be0821b0d1e6d89d61197ff0a915f2de4a64f9cdfcc2
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:52543eeace48b146e9a0ae2f816087e5c7329aee387e7a6973222dbd703
 
 覆盖物是一种显示在地图表面的图像图层，它不会遮挡地图上的文字和图标标注，这种图层类型允许图片随地图操作自动调整位置和大小。通过[ImageOverlayParams](../harmonyos-references/map-common.md#imageoverlayparams)类来设置，开发者可以通过[ImageOverlayParams](../harmonyos-references/map-common.md#imageoverlayparams)类设置一张图片，该图片可随地图的平移、缩放、旋转等操作做相应的变换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/gnD0LQZIQOOqNkq2RigAag/zh-cn_image_0000002749333846.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/zkk2NmNaQEu5Ez-xAVzHDw/zh-cn_image_0000002784663805.jpg "点击放大")
 
 ## 接口说明
 

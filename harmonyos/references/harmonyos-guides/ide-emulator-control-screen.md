@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 操控屏幕
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 操控屏幕
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:15+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:8145e74a1c51f7287acc0d2c460d72cb43f60d727463a205f1d17de471858c81
+scraped_at: 2026-10-11T07:23:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:d6d7378e491ffd4e8bf4bdbd6c89891e094bf0ba2920791a03f5abd3df2c9742
 ---
 
 当模拟器运行时，您可以使用鼠标来模拟手指和设备屏幕进行交互，同时可以结合键盘来实现高级的屏幕操作，对应关系如下：
@@ -13,7 +13,7 @@ content_hash: sha256:8145e74a1c51f7287acc0d2c460d72cb43f60d727463a205f1d17de4718
 | 常用操作 | 描述 |
 | --- | --- |
 | 滑动屏幕 | 将鼠标放置屏幕上方，按住鼠标左键，在屏幕上轻扫，然后释放。 |
-| 拖动项目 | 将鼠标放置屏幕中的项目上方, 按住鼠标左键，移动项目，然后释放。 |
+| 拖动项目 | 将鼠标放置屏幕中的项目上方，按住鼠标左键，移动项目，然后释放。 |
 | 单击屏幕 | 将鼠标放置屏幕上方，按住鼠标左键，然后释放。 |
 | 双击屏幕 | 将鼠标放置屏幕上方，快速双击鼠标左键，然后释放。 |
 | 长按屏幕 | 指向屏幕上的一个项目，按下鼠标左键，保持一段时间，然后释放。 |

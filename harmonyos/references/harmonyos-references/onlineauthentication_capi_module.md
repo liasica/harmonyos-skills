@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineaut
 title: 模块
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > C API > 模块
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:26+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:52+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:995166c03901f398d9aee820d6bb400861898ccae3950b549b841774885c1a65
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.web.webview (Webview)"
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:49+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:15+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:bea66044bc0e20eacb3cc760e408ec84dd0e4cefe220da1168238bb0880be66f
 ---
 

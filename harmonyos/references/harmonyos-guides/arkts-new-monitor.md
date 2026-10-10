@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-mon
 title: "@Monitor装饰器：状态变量修改异步监听"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Monitor装饰器：状态变量修改异步监听
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:01+08:00
+scraped_at: 2026-10-11T07:21:04+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:46e466582ee056b75c1752be9e98cc3e84d422582228b2daf4d10988e101547d
+content_hash: sha256:9debfa56a434a767803cc28beacba10166efa9141cfdb267c9cc69a11ee3bde9
 ---
 
 为了增强状态管理框架对状态变量变化的监听能力，开发者可以使用[@Monitor](../harmonyos-references/ts-state-management-monitor.md#monitor)装饰器对状态变量进行监听。
@@ -103,7 +103,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/ZSLGXKCJRwOSfo4AfBzZuQ/zh-cn_image_0000002778931025.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/n6Xj6iYITDWFeoYLnNNXUA/zh-cn_image_0000002755182966.png)
 
 上述代码中，点击"change info name"更改info中的name属性或点击"change info age"更改age时，均会触发info注册的@Watch回调。点击"change numArr[2]"更改numArr中的第3个元素或点击"change numArr[3]"更改第4个元素时，均会触发numArr注册的@Watch回调。在这两个回调中，由于无法获取数据更改前的值，在业务逻辑更加复杂的场景下，无法准确知道是哪一个属性或元素发生了改变从而触发了@Watch事件，这不便于开发者对变量的更改进行准确监听。因此推出@Monitor装饰器实现对对象、数组中某一单个属性或数组项变化的监听，并且能够获取到变化之前的值。
 
@@ -198,7 +198,7 @@ IMonitor类型、IMonitorValue<T>类型以及MonitorDecoratorOptions的接口说
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/seL1QsUkS_ulkhT33WkqEQ/zh-cn_image_0000002749331942.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/acSvS9l6S_KR2NVlZioaJg/zh-cn_image_0000002784581831.png)
 * @Monitor监听的状态变量为类对象时，仅能监听对象整体的变化。监听类属性的变化需要类属性被@Trace装饰。
 
   ```typescript
@@ -252,7 +252,7 @@ IMonitor类型、IMonitorValue<T>类型以及MonitorDecoratorOptions的接口说
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/-z_zZ6dmRiyaa6c9-tWxQw/zh-cn_image_0000002749491826.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/-iVlgvVoS0yoYRenmXoSNg/zh-cn_image_0000002784662015.gif)
 
 ### 在@ObservedV2装饰的类中使用@Monitor
 
@@ -331,7 +331,7 @@ IMonitor类型、IMonitorValue<T>类型以及MonitorDecoratorOptions的接口说
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/CmFUJ0-7R-mEL-3Li0S7og/zh-cn_image_0000002779090883.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/t8sg8UHxSkqXeblDa1gbNQ/zh-cn_image_0000002755023082.png)
 * @Monitor可以监听深层属性的变化，该深层属性需要被@Trace装饰。
 
   ```typescript
@@ -372,7 +372,7 @@ IMonitor类型、IMonitorValue<T>类型以及MonitorDecoratorOptions的接口说
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/xK_1OGG4S1aSa8Du9oPkCA/zh-cn_image_0000002778931027.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Fb1EcBoyRhSxJ0O3MJMOYA/zh-cn_image_0000002755182968.png)
 * 在继承类场景下，可以在继承链中对同一个属性进行多次监听。
 
   ```typescript
@@ -425,7 +425,7 @@ IMonitor类型、IMonitorValue<T>类型以及MonitorDecoratorOptions的接口说
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/87E6PnfWSryvKLULEcy7TQ/zh-cn_image_0000002749331944.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/rg3qVsEKQJ21W7nUQPk-qg/zh-cn_image_0000002784581833.png)
 
 ### 通用监听能力
 
@@ -544,7 +544,7 @@ IMonitor类型、IMonitorValue<T>类型以及MonitorDecoratorOptions的接口说
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/I9xt-ME0QAK-QEXLBRgIiw/zh-cn_image_0000002749491828.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/1c07ZFl_R46exj3cEY0AMg/zh-cn_image_0000002784662017.png)
 * 对象整体改变，但监听的属性不变时，不触发@Monitor回调。
 
   下面的示例按照Step1-Step2-Step3的顺序点击，表现为代码注释中的行为。
@@ -617,7 +617,7 @@ IMonitor类型、IMonitorValue<T>类型以及MonitorDecoratorOptions的接口说
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/YWTCr-fyTGONFCpYhFfuVA/zh-cn_image_0000002779090885.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/BsRI6IBrRDCjWMwA9fl_sA/zh-cn_image_0000002755023084.png)
 * 在一次事件中多次改变被@Monitor监听的属性，以最后一次修改为准。
 
   ```typescript
@@ -664,7 +664,7 @@ IMonitor类型、IMonitorValue<T>类型以及MonitorDecoratorOptions的接口说
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/7Hpfyzd1SdOjLo1TisF3mA/zh-cn_image_0000002778931029.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Ehe2QaFuQfy5SAsXOgRvdw/zh-cn_image_0000002755182970.png)
 
 在点击按钮"change count to 1000"后，会触发一次onCountChange方法，并输出日志"count change from 0 to 1000"。在点击按钮"change count to 0 then to 1000"后，由于事件前后属性count的值并没有改变，都为1000，所以不触发onCountChange方法。
 
@@ -746,7 +746,7 @@ struct MonitorWildcardObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/EZfTNeqQRZykmxZWOBx_wQ/zh-cn_image_0000002749331946.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/-ZhJJYVjQUGXGM23tNBtHg/zh-cn_image_0000002784581835.gif)
 
 ### 使用通配符监听嵌套对象属性变化
 
@@ -847,7 +847,7 @@ struct MonitorWildcardNestedObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/4xUkU-JCQd21PsPv-K0eXg/zh-cn_image_0000002749491830.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/domgjjkQTBuA4gaJpPO_TA/zh-cn_image_0000002784662019.png)
 
 当使用配置项的@Monitor监听的变量在可访问和不可访问之间切换时，都会触发@Monitor回调。
 
@@ -999,7 +999,7 @@ struct MonitorWildcardArray {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/AA28Q1Q5SIGNNYOw7KjGfA/zh-cn_image_0000002779090887.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/1WBb4lAtSyaqgkQl56Ba0Q/zh-cn_image_0000002755023086.png)
 
 ### 使用通配符监听Date对象的变化
 
@@ -1068,7 +1068,7 @@ struct MonitorWildcardDate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/XMakqwsJQ-yMYeqqAJs6Ng/zh-cn_image_0000002778931031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/LY5gjqxnR1y1-gVKPFn9-g/zh-cn_image_0000002755182972.png)
 
 ### 使用通配符监听Map对象的变化
 
@@ -1188,7 +1188,7 @@ struct MonitorWildcardMap {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/RrkfGKw7T3OZwV7wdG5Cvw/zh-cn_image_0000002749331948.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/gWTz7x3jTwiHybynQyaSvg/zh-cn_image_0000002784581837.gif)
 
 ### 使用通配符监听Set对象的变化
 
@@ -1281,7 +1281,7 @@ struct MonitorWildcardSet {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vKm8kc5MTTWfto9H8VRv3A/zh-cn_image_0000002749491832.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/7qT57hv2RXe1hb-08hWvyQ/zh-cn_image_0000002784662021.png)
 
 ## 限制条件
 
@@ -1326,7 +1326,7 @@ struct MonitorWildcardSet {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/wdBQqHC9SL-yL7_bMPgP2A/zh-cn_image_0000002779090889.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/WXp4DA2bQlaRs-jPRu0uGA/zh-cn_image_0000002755023088.png)
 * 当@Monitor传入多个路径参数时，以参数的全拼接结果判断是否重复监听。全拼接时会在参数间加空格，以区分不同参数。例如，'ab', 'c'的全拼接结果为'ab c'，'a', 'bc'的全拼接结果为'a bc'，二者全拼接不相等。以下示例中，Monitor 1、Monitor 2与Monitor 3都监听了name属性的变化。由于Monitor 2与Monitor 3的入参全拼接相等（都为'name position'），因此Monitor 2不生效，仅Monitor 3生效。当name属性变化时，将同时触发onNameAgeChange与onNamePositionChangeDuplicate方法。但请注意，Monitor 2与Monitor 3的写法仍然被视作在一个类中对同一个属性进行多次@Monitor的监听，这是不建议的。
 
   ```typescript
@@ -1383,7 +1383,7 @@ struct MonitorWildcardSet {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/caH9HbcXRYSrzUbXjQ4NDg/zh-cn_image_0000002778931033.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/oRO7oKLdQGKhG2iGZGOKFw/zh-cn_image_0000002755182974.png)
 * @Monitor的参数需要为监听属性名的字符串，仅可以使用字符串字面量、const常量、enum枚举值作为参数。如果使用变量作为参数，仅会监听@Monitor初始化时，变量值所对应的属性。当更改变量时，@Monitor无法实时改变监听的属性，即@Monitor监听的目标属性从初始化时便已经确定，无法动态更改。不建议开发者使用变量作为@Monitor的参数进行初始化。
 
   ```typescript
@@ -1481,7 +1481,7 @@ struct MonitorWildcardSet {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/D_6WHGZwSliHyFNcmBJFTw/zh-cn_image_0000002749331950.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/L8YofdPwS9yw5CXEaLficQ/zh-cn_image_0000002784581839.png)
 * 建议开发者避免在@Monitor中再次更改被监听的属性，这会导致无限循环。
 
   ```ts
@@ -1681,7 +1681,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/uU-49F8SQvSG8nYbMKjzUg/zh-cn_image_0000002749491834.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/w-aSkiAIQnyHeM8UPJrqzA/zh-cn_image_0000002784662023.gif)
 
 ## 常见问题
 
@@ -1775,7 +1775,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/P8phfZ_tTlWSz5tKYJk1-A/zh-cn_image_0000002779090891.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Z99zQrFXQfq6_TuUmcv7Cw/zh-cn_image_0000002755023090.gif)
 
 在上面的例子中，可以通过创建和销毁Child组件来观察定义在自定义组件中的@Monitor的生效和失效时机。推荐按如下顺序进行操作：
 
@@ -1833,7 +1833,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/dAmz_BykSPqtrkvJ-8Xicg/zh-cn_image_0000002778931035.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/-G1IYvp1REa6kXL0YherAQ/zh-cn_image_0000002755182976.png)
 
 上面的例子中，@Monitor会在info创建完成后生效，这个时机晚于类的constructor，早于自定义组件的aboutToAppear。当界面加载完成后，点击“change message”，修改message变量。此时日志输出信息如下：
 
@@ -1935,7 +1935,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/o30FKdtsRMGhvS3XmbtSGg/zh-cn_image_0000002749331952.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/pwYdRywQQdCI_xo3jwuYAA/zh-cn_image_0000002784581841.gif)
 
 在上面的例子中，当点击“change showFlag”切换if组件的条件时，Child组件会被销毁。此时，点击“change number”修改age的值时，可以通过日志观察到InfoWrapper中定义的@Monitor回调仍然被触发了。这是因为此时自定义组件Child虽然执行了aboutToDisappear，但是其成员变量infoWrapper还没有被立刻回收，当变量发生变化时，依然能够调用到infoWrapper中定义的onInfoAgeChange方法，所以从现象上看@Monitor回调仍会被触发。
 
@@ -2033,7 +2033,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9v0u6lEkTMWcT7SqipHm7Q/zh-cn_image_0000002749491836.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/orVh00S8SauceAyiNk5JFQ/zh-cn_image_0000002784662025.gif)
 
 2、主动置空监听的对象。当自定义组件即将销毁时，主动置空@Monitor的监听目标，这样@Monitor无法再监听原监听目标的变化，达到取消@Monitor监听的效果。
 
@@ -2127,7 +2127,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/2gXli24mQg2NbEWJZZl4mA/zh-cn_image_0000002779090893.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/xk3ud_n9S-WYzfQP8M8A-w/zh-cn_image_0000002755023092.gif)
 
 ### 正确设置@Monitor入参
 
@@ -2172,7 +2172,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Vpk3B1b1SMysrDjRZKcgDg/zh-cn_image_0000002778931037.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/3JgJZSZnRW6v0YgRpDmR3g/zh-cn_image_0000002755182978.png)
 
 上面的代码中，当点击按钮同时更改状态变量age和非状态变量name时，会输出以下日志：
 
@@ -2229,7 +2229,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/MI5tZq-7QRm8HkxpCaO2SQ/zh-cn_image_0000002749331954.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/h5_iSU_HSdiAaYka1iTHUQ/zh-cn_image_0000002784581843.png)
 
 【反例2】
 
@@ -2314,7 +2314,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LOpcB9pdSemITtHaaXM0Sw/zh-cn_image_0000002749491838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Wlz3yc4DQhCoXG439_oDAg/zh-cn_image_0000002784662027.png)
 
 或直接监听状态变量本身：
 
@@ -2350,7 +2350,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/27wM9g5aQ96yVchdnIjagg/zh-cn_image_0000002779090895.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/KSIifbdSSZuLthq7Knir1g/zh-cn_image_0000002755023094.png)
 
 ### 无法监听变量从可访问变为不可访问和从不可访问变为可访问
 
@@ -2412,4 +2412,4 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/DncH9HrMSkSu1ZKFEqKVLw/zh-cn_image_0000002778931039.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/AA2XbCGiT52FZxQF-PhntA/zh-cn_image_0000002755182980.gif)

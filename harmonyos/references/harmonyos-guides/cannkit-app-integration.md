@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-app-i
 title: App集成
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > App集成
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:02+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:29+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:e0ef94e79e1983283ed955c350754f0247b41687664f7f41a4746c8fce6afdd3
 ---
 

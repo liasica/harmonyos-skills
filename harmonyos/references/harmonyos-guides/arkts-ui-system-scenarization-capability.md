@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-syst
 title: UI系统场景化能力
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:29+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:11+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ff509890b4582814e479cec5dca91fdf86b74fe957fd4936f81a8ac682f41b5e
 ---
 

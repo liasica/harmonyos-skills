@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-msg-
 title: 消息撤回
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 消息撤回
 category: harmonyos-references
-scraped_at: 2026-09-21T06:25:15+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:08bcf34575ad5ab9ebdd8e031f8438969d16435f26d5381d102ffd0870a8df5e
+scraped_at: 2026-10-11T07:28:37+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:678b822c4ef0da99051d83e4adf803ae30b921a2dafd3315f9420101ca357a2c
 ---
 
 ## 功能介绍
@@ -27,7 +27,7 @@ content_hash: sha256:08bcf34575ad5ab9ebdd8e031f8438969d16435f26d5381d102ffd0870a
 
 **说明** 
 
-**[clientId]** ：请替换为您应用的Client ID（参考[指导](../app/agc-help-view-app-info-0000002282674569.md)获取）
+**[clientId]** ：请替换为您应用的Client ID（参考[指导](../app/agc-help-view-app-info-0000002282674569.md)获取）。
 
 ## 请求参数
 

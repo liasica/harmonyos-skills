@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.deviceSettings (设备设置管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.deviceSettings (设备设置管理)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:09+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:00981a7c2c4e1cf3f2136fdd960666e5d7a7358f5c5e29f204fdf6beda0b5179
+scraped_at: 2026-10-11T07:26:43+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:df4981ebf6d70a367b025f47198aa721d553012326bfbe465839f5baa98a185c
 ---
 
 本模块提供企业设备设置能力，支持设置和获取设备息屏时间、系统时间、电源策略、护眼模式、默认输入法、壁纸、隐藏设置项等。
@@ -207,7 +207,7 @@ try {
 
 setHomeWallpaper(admin: Want, fd: number): Promise<void>
 
-设置桌面壁纸，使用Promise异步回调。
+设置桌面壁纸，折叠屏设备只支持设置单屏壁纸，使用Promise异步回调。
 
 **说明** 
 
@@ -276,7 +276,7 @@ deviceSettings.setHomeWallpaper(wantTemp, fd).then(() => {
 
 setUnlockWallpaper(admin: Want, fd: number): Promise<void>
 
-设置锁屏壁纸，使用Promise异步回调。企业设备管理应用可通过此接口统一设置企业设备的锁屏壁纸，用于企业形象展示或安全管控等场景。
+设置锁屏壁纸，折叠屏设备只支持设置单屏壁纸，使用Promise异步回调。企业设备管理应用可通过此接口统一设置企业设备的锁屏壁纸，用于企业形象展示或安全管控等场景。
 
 **说明** 
 

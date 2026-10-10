@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/metadatabindi
 title: 记忆链接开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 记忆链接开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:37+08:00
+scraped_at: 2026-10-11T07:21:42+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:50f6d9bf28e73cdb0ee4393f88d63ce0b809af2740fdefe6aaa06d685b4c7d01
+content_hash: sha256:5a6bb7a3d5b2686d14afbf0e9d317390e1cc417dd96f97e8ca0ff76ab96d7ed9
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ MetadataBinding（记忆链接）指由第三方应用提供[鸿蒙App Linking�
 
 ## 演示示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Z9nAjtniRM2Hd-GGd--xnQ/zh-cn_image_0000002779092131.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/rTLBmanqRQCGg-Sdi720FQ/zh-cn_image_0000002755184104.gif)
 
 ## 接口说明
 

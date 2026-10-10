@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-instrumen
 title: 仪器测试（Instrument Test）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > 代码测试 > 仪器测试（Instrument Test）
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:18+08:00
+scraped_at: 2026-10-11T07:23:05+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:d9d6e9f014181679f1ac834db6c1c51a5947fcb67351e41a91518f317d724a47
+content_hash: sha256:09b71f2a905c5cf76311a0184bdaa0bac439ae00e9a5b7af60f912d8058e5e90
 ---
 
 ## 创建ArkTS测试用例
@@ -14,13 +14,13 @@ content_hash: sha256:d9d6e9f014181679f1ac834db6c1c51a5947fcb67351e41a91518f317d7
 
 1. 在工程目录下打开待测试模块（支持HAP、HAR、HSP模块）下的ets文件，将光标置于代码中任意位置，单击**右键 > Show Context Actions** **> Create Instrument Test**或快捷键**Alt+Enter** **（macOS为Option+Enter）> Create Instrument Test**创建测试类。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/v6hcpwWmTb29Qnm5K20itA/zh-cn_image_0000002701663666.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/DTU7VHZoSpOC9TtfBYvLSg/zh-cn_image_0000002701663666.png)
 2. 在弹出的Create Instrument Test窗口，输入或选择如下参数。
    * **Testing library**：测试类型，默认为DECC-ArkTSUnit，JS语言默认为DECC-JSUnit。
    * **ArkTS name**：创建的测试文件名称，测试文件中包含了测试用例。测试文件名称要求在工程目录范围内具有唯一性，仅支持字母、数字、下划线（\_）和点（.）。
    * **Destination package**：测试文件存放的位置，建议存放在待测试模块的test目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/cI-AEJlzQHyKJCYJW07s6Q/zh-cn_image_0000002731382877.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/lu3x_j9vQzGRTqsgsL3iYg/zh-cn_image_0000002731382877.png)
 3. DevEco Studio在ohosTest/ets/test目录下自动生成对应的测试类。在测试类中，DevEco Studio会生成对应方法的用例模板，具体测试代码需要开发者根据业务逻辑进行开发，具体请参考[自动化测试框架使用指导](arkxtest-guidelines.md)。
 
    **说明** 
@@ -43,7 +43,7 @@ content_hash: sha256:d9d6e9f014181679f1ac834db6c1c51a5947fcb67351e41a91518f317d7
 | **新版本** | **历史版本** |
 |  |  |
 
-1. 创建以下目录或文件，文件内容示例可在[运行Instrument Test测试用例](ide-instrument-test.md#section1574003717165)后，在对应模块的.test/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1及以上版本）或build/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1以下版本）下查看，其中productName是当前生效的product，可以通过点击DevEco Studio右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/X60iCYfBSNafN_arOM9PoA/zh-cn_image_0000002731542833.png)图标进行查看。
+1. 创建以下目录或文件，文件内容示例可在[运行Instrument Test测试用例](ide-instrument-test.md#section1574003717165)后，在对应模块的.test/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1及以上版本）或build/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1以下版本）下查看，其中productName是当前生效的product，可以通过点击DevEco Studio右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/h32sqI5gTYmo0NccleoexQ/zh-cn_image_0000002731542833.png)图标进行查看。
    * testability目录 > TestAbility.ets文件
    * testability目录 > pages目录 > Index.ets文件
    * testrunner目录 > OpenHarmonyTestRunner.ets文件
@@ -93,19 +93,19 @@ content_hash: sha256:d9d6e9f014181679f1ac834db6c1c51a5947fcb67351e41a91518f317d7
 
 * 在工程目录中，单击**右键 > Run'测试文件名称'**，执行测试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/LHh-urzBQEikNq5u6EwXZg/zh-cn_image_0000002731542847.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Iv-gEMEkRHOjWiQTLIapkw/zh-cn_image_0000002731542847.png)
 * 打开测试文件，单击测试套件左侧按钮。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/Xqq74t3oTM67HwHS-WYbKw/zh-cn_image_0000002731382893.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/yWmuMBrVSP2aii4CMT9qEg/zh-cn_image_0000002731382893.png)
 * 如果要根据自定义的配置执行Instrument Test，在[创建测试用例运行任务](ide-instrument-test.md#section65264166107)后，通过如下方式的其中之一，执行Instrument Test：
   + 在工具栏主菜单单击**Run > Run'测试名称'**。
-  + 在DevEco Studio的右上角，选择测试任务，然后单击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Uwo80P_iQcOAgeylnzmbDw/zh-cn_image_0000002731382881.png)按钮，执行Instrument Test。
+  + 在DevEco Studio的右上角，选择测试任务，然后单击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/HDYQlnOxSkmP_FWlhWN4kw/zh-cn_image_0000002731382881.png)按钮，执行Instrument Test。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Sez7DZlBQbC8i0IcttUfnw/zh-cn_image_0000002701823576.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pMdWV98iTZCO3cckrrz6Ug/zh-cn_image_0000002701823576.png)
 
 执行完测试任务后，查看测试结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/un_zbfSvTUe515vXxqRQ0Q/zh-cn_image_0000002701823566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/zCMfNJ1fQmq4-BAg6s9xkw/zh-cn_image_0000002701823566.png)
 
 ### 调试模式
 
@@ -113,19 +113,19 @@ content_hash: sha256:d9d6e9f014181679f1ac834db6c1c51a5947fcb67351e41a91518f317d7
 
 以文件级别为例，在添加断点之后，在工程目录中，选中文件，单击**右键 > Debug'测试文件名称'**，以调试模式执行测试任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/tnPMIw6GSD-PlNBrFNvJSA/zh-cn_image_0000002701823564.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/vQm2ehNgSvanmytySZ-AbQ/zh-cn_image_0000002701823564.png)
 
 在断点命中时，下方将出现Debug窗口。开发者可在该窗口中进行断点管理与基础调试能力的可视化操作，在断点命中时可查看当前线程的变量和堆栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/vwSDmNQFQcumegZg1l5DdA/zh-cn_image_0000002731542863.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/fkIyRomASHycjo5-42-b1Q/zh-cn_image_0000002731542863.png)
 
 断点命中时，在代码编辑器窗口单击右键，在弹出的菜单中将出现调试模式特有功能，如计算表达式、添加变量监视等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/MXwnziagTaWUjjRJM-5K3g/zh-cn_image_0000002731382865.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/XChj8H6HS7WwkNPXxAOrOA/zh-cn_image_0000002731382865.png)
 
 在跳出所有断点后，测试结束，与运行模式相同，在测试窗口查看测试结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/aKz39G-6Rmu-e3en0fnLFg/zh-cn_image_0000002731382863.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/0FbZLBgUSYeJfQVfesA4NA/zh-cn_image_0000002731382863.png)
 
 **说明** 
 
@@ -143,22 +143,22 @@ DevEco Studio支持设置调试代码类型，具体请参考[设置调试代码
 
 * 方式一：在工程目录中，选中文件，单击**右键 > Run '测试文件名称' with Coverage**，执行测试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/TYICxxM1QbuxzplDv26_cA/zh-cn_image_0000002731382873.png)
-* 方式二：在DevEco Studio的右上角，选择测试任务，然后单击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/-jS9NhuBSZSL9XSesHMBqQ/zh-cn_image_0000002701663646.png)按钮，执行测试。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/mVW_mbC7S2yFBsZniaOB2A/zh-cn_image_0000002731382873.png)
+* 方式二：在DevEco Studio的右上角，选择测试任务，然后单击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/PnJxnG0EQIi3drg4Lg0mtQ/zh-cn_image_0000002701663646.png)按钮，执行测试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/006Ue_X-RFS3wIpVxv8_6Q/zh-cn_image_0000002731382887.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/WQqu0MGbTp2WK-xd_xt7Ig/zh-cn_image_0000002731382887.png)
 
 启动测试后，进行编译构建，底部将出现Cover窗口，构建结束后自动拉起Cover窗口，测试任务结束后，窗口中会打印测试报告的路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/FziDmN5GTfmA__Bht-WhBg/zh-cn_image_0000002701663668.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/6EhVZO-dRxqM0ZUd5DMOuw/zh-cn_image_0000002701663668.png)
 
 点击链接可打开报告，查看ArkTS代码覆盖率详情，关于覆盖率的计算方式请参考[查看覆盖率报告](ide-ui-test.md#section10394362109)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/NRvoON8fSVeNcZJFsE2Vyw/zh-cn_image_0000002731542865.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/zhykh-fuTSKT5UXEVkz1Kw/zh-cn_image_0000002731542865.png)
 
 在Cover窗口中，单击rerun按钮可以按照之前的设置，重新执行覆盖率用例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/NXlu07c3RTeFo-Ij0k9Tbg/zh-cn_image_0000002731382867.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/kB9w8TGQQNmMQX6Sk0AYhg/zh-cn_image_0000002731382867.png)
 
 ## （可选）自定义测试用例运行任务
 
@@ -167,26 +167,26 @@ DevEco Studio支持设置调试代码类型，具体请参考[设置调试代码
 1. 在工具栏主菜单单击**Run** > **Edit Configurations**进入Run/Debug Configurations界面。
 2. 在**Run/Debug Configurations**界面，单击+按钮，在弹出的下拉菜单中，单击Instrument Test。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/e284B2cUT2ScTIaHnMjR_w/zh-cn_image_0000002701823588.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ydjKvDwiRZWd6DSKDhNtkQ/zh-cn_image_0000002701823588.png)
 3. 根据实际情况，配置Instrument Test的运行参数。然后单击**OK**，完成配置。
    * 如果模块依赖共享包，请提前设置HAP安装方式，勾选“**Keep Application Data**”，则表示采用覆盖安装方式，保留应用/元服务缓存数据。
    * 如果工程中HAP/HSP模块直接依赖其他HSP模块（如entry模块依赖HSP模块）或间接依赖其他模块（如entry模块依赖HAR模块，HAR又依赖HSP模块）时，在测试阶段需要同时安装模块包及其所有依赖模块的包到设备中。此时，可以勾选“**Auto Dependencies**”，测试时会自动将所有依赖的模块都安装到设备上。该选项默认勾选。
    * 如果不涉及UI测试，勾选“**Only OhosTest Package**”，则只会推送OhosTest测试包到设备上，不会推送HAP/HSP包，可以缩短推包时间。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/KL7EJTuMRW2LnsA2kIZQDg/zh-cn_image_0000002731542853.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/LAA5nm4lTxSMwpBK18tfLw/zh-cn_image_0000002731542853.png)
 
 ### 使用过滤条件筛选待运行的测试用例
 
 1. 在用例编写时，通过配置it的第二个入参，为每个用例添加过滤参数。此参数用于为测试用例添加标注，不添加则参数默认为0表示未被标注。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/74mq7-O8S5yAz_Bp4SE4oQ/zh-cn_image_0000002731542855.png)
-2. 打开**Run/Debug Configurations**窗口，点击Test Args![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/C8ltIknnTnm7i_U4lvOw7g/zh-cn_image_0000002731542849.png)，打开**Test Args**界面，添加测试参数。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Qqc9M59pTuGhhlM2z_tgvQ/zh-cn_image_0000002731542855.png)
+2. 打开**Run/Debug Configurations**窗口，点击Test Args![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/I7het6fGRpyb9sKhduIphw/zh-cn_image_0000002731542849.png)，打开**Test Args**界面，添加测试参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Ls6nrHdNQNiIyQzH2RnAxg/zh-cn_image_0000002701823582.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/dBBonqZyShG_8F7zae_pDA/zh-cn_image_0000002701823582.png)
 
    例如将测试参数配置为level=1, size=medium
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/i1ojcz-3SVW1tQQKZguPvQ/zh-cn_image_0000002731542851.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Mb25cpP-S9e46Ep8-lKlqA/zh-cn_image_0000002731542851.png)
 
    **表2** 参数规则参考
 
@@ -197,13 +197,13 @@ DevEco Studio支持设置调试代码类型，具体请参考[设置调试代码
    | testType | 用例测试类型 | "function","performance","power","reliability","security","global","compatibility","user","standard","safety","resilience", 例如：-s testType function |
 3. 完成以上配置后，在运行此项配置对应的测试任务时，只运行过滤后的测试用例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/6qNQ_rdyTQKS86apFcpLWA/zh-cn_image_0000002731542843.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/mc3w5BqbQN-V2D0ozh_7rw/zh-cn_image_0000002731542843.png)
 
 ### 设置调试代码类型
 
 点击**Run > Edit Configurations**，打开**Run/Debug Configurations**窗口，选择Instrument Test，点击**Debugger**页签，设置Debug type。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/RD6-jDBHRqK05mKQZQJtWQ/zh-cn_image_0000002701663644.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Cm0fb7xzSB63iH7a3-gp5A/zh-cn_image_0000002701663644.png)
 
 调试类型Debug type默认为Detect Automatically，关于各调试类型的说明如下表所示：
 
@@ -224,14 +224,14 @@ Instrument Test针对C/C++方法提供ASan检测能力，关于ASan的介绍请�
 
 1. 在运行/调试配置窗口，选择对应的Instrument Test，点击**Diagnostics**页签，勾选**Address Sanitizer**选项，勾选后，测试包和源码包均开启ASan能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Seo2-7NxSAemsQ_XSY3YbA/zh-cn_image_0000002731382883.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/VI3dGbINTBqCO-RSNW_rFg/zh-cn_image_0000002731382883.png)
 2. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_ASAN=ON”，表示以ASan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/UNVJBenoRaevs-xw0Jk9kw/zh-cn_image_0000002731542859.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/H3bRf7GTTw2t2xfEslk9LQ/zh-cn_image_0000002731542859.png)
 3. 运行测试用例。
 4. 当程序出现内存错误时，弹出ASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/RP4EBHUgQIu_gWBpMWGbBA/zh-cn_image_0000002731382889.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/OrbTsId4Q0WWqBJwfduskw/zh-cn_image_0000002731382889.png)
 
 ## 测试C++代码
 
@@ -252,7 +252,7 @@ Instrument Test针对C/C++方法提供ASan检测能力，关于ASan的介绍请�
 
    DevEco Studio生成的cpp测试目录中不包含C++测试框架，需要开发者自行选择开源测试框架使用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/4Ohe-L--QpSwN9aMeswl0Q/zh-cn_image_0000002701823590.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/4mLCTSLvST2ndw7ec2U2aQ/zh-cn_image_0000002701823590.png)
 2. 通过ArkTS测试用例拉起C++测试，示例如下。
 
    ```ts
@@ -272,7 +272,7 @@ Instrument Test针对C/C++方法提供ASan检测能力，关于ASan的介绍请�
    ```
 3. 运行testNative测试用例，查看测试结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/KuPLPCqRQkSN6g-y-DkmQg/zh-cn_image_0000002731542861.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/DAhyeCOuS26gWexog4SSzQ/zh-cn_image_0000002731542861.png)
 
 ### 收集代码覆盖率
 
@@ -313,15 +313,15 @@ DevEco Studio默认不收集C++代码覆盖率，需要通过以下方式开启�
    ```
 3. 运行覆盖率测试，选中ArkTS测试文件，单击**右键 >** **Run '测试文件名称' with Coverage**，执行测试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/tzfxpIG-QPeijxUoPSx9og/zh-cn_image_0000002731542837.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/A8SYUHYqRV2VZo_i8V8wZQ/zh-cn_image_0000002731542837.png)
 
    启动测试后，进行编译构建，底部将出现Cover窗口，构建结束后自动拉起Cover窗口，测试任务结束后，窗口中会打印测试报告的路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Luro4TQ7T0-TmVYf90mEjA/zh-cn_image_0000002731542835.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/tXnvX_ylSc-g9nYJuxfetA/zh-cn_image_0000002731542835.png)
 
    点击链接可打开报告，查看C++代码覆盖率详情。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ypqILm7HTnK4rhz7ppAUEw/zh-cn_image_0000002731542845.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/wHztaDPPS_CYciZrCJwG8g/zh-cn_image_0000002731542845.png)
 
 ## 使用命令行执行测试
 

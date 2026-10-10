@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ar-engine-gui
 title: AR Engine（AR引擎服务）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:28+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:01+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:91f1c17d8c9053cf0f9bda78b54b212645a8d8a9ea7659a615c1cbe65af1e419
 ---
 

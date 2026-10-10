@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hw-s
 title: ArkTS代码风格规则@hw-stylistic
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:32+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:20+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:6199a1f8918ecdd844115c48dff4fb870403a8df2d0ef3d82d4e205f58f9fc31
 ---
 

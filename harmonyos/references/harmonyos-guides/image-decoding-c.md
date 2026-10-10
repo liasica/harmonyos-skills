@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decodin
 title: 图片解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片解码
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:23+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:57+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ca8911cb0346e875cf604fa53305de87dd55504db42132a2c8091aba0cdcff14
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ge
 title: 识别目标形状（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 物体语义 > 识别目标形状（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:aabd1ee044347321e7b1ab9cad28d3c09014ec95de85b5f04e47c571b1c3f4ed
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:a92f9b29a205dd01f289b8ab985e320ac81f4ca623274bfc418bd68100253d56
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
@@ -33,7 +33,7 @@ CHECK(HMS_AREngine_ARSession_Configure(mArSession, arConfig));
 
 ## 创建可跟踪对象列表
 
-创建一个可跟踪对象列表targetList，用于存放AR Engine运行过程中检测到的所有可跟踪对象。
+创建一个可跟踪对象列表planeList，用于存放AR Engine运行过程中检测到的所有可跟踪对象。
 
 ```
 AREngine_ARTrackableList *planeList = nullptr;
@@ -43,7 +43,7 @@ CHECK(HMS_AREngine_ARTrackableList_Create(arSession, &planeList));
 
 ## 获取当前环境中的可跟踪对象
 
-调用[HMS\_AREngine\_ARSession\_GetAllTrackables](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_getalltrackables)函数，检测当前环境中的所有可跟踪对象，并将结果存放在targetList中。
+调用[HMS\_AREngine\_ARSession\_GetAllTrackables](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_getalltrackables)函数，检测当前环境中的所有可跟踪对象，并将结果存放在planeList中。
 
 ```
 CHECK(HMS_AREngine_ARSession_GetAllTrackables(arSession, planeTrackedType, planeList));
@@ -51,7 +51,7 @@ CHECK(HMS_AREngine_ARSession_GetAllTrackables(arSession, planeTrackedType, plane
 
 ## 获取可跟踪对象数量
 
-调用[HMS\_AREngine\_ARTrackableList\_GetSize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_artrackablelist_getsize)函数获取当前可跟踪对象数量，结果存放在targetSize中。
+调用[HMS\_AREngine\_ARTrackableList\_GetSize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_artrackablelist_getsize)函数获取当前可跟踪对象数量，结果存放在planeListSize中。
 
 ```
 int32_t planeListSize = 0;
@@ -59,15 +59,15 @@ int32_t planeListSize = 0;
 CHECK(HMS_AREngine_ARTrackableList_GetSize(arSession, planeList, &planeListSize));
 ```
 
-当targetSize等于0时，代表当前环境中无可跟踪对象。
+当planeListSize等于0时，代表当前环境中无可跟踪对象。
 
-当targetSize等于1时，代表当前环境中仅存在1个可跟踪对象。
+当planeListSize等于1时，代表当前环境中仅存在1个可跟踪对象。
 
-当targetSize大于1时，代表当前环境中存在多个可跟踪对象。
+当planeListSize大于1时，代表当前环境中存在多个可跟踪对象。
 
 ## 遍历并识别物体形状
 
-1. 当环境中存在一个或多个可跟踪对象时，依次遍历targetList中所有可跟踪对象进行物体语义识别。
+1. 当环境中存在一个或多个可跟踪对象时，依次遍历planeList中所有可跟踪对象进行物体语义识别。
 
    ```cpp
    for (int i = 0; i < planeListSize; ++i) {

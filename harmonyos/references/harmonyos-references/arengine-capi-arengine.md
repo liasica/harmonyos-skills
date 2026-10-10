@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AR Engine
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 模块 > AR Engine
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4f244394360753914b0af33632ea5faaaba595543764ad8df3b69996fac563f1
+scraped_at: 2026-10-11T07:27:42+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:dee2c7071f4162d7f91490886fab950e55bdccef1dc05c70e94e03cd0f77e76c
 ---
 
 ## 概述
@@ -139,7 +139,7 @@ content_hash: sha256:4f244394360753914b0af33632ea5faaaba595543764ad8df3b69996fac
 | [AREngine\_ARStatus](arengine-capi-arengine.md#arengine_arstatus) [HMS\_AREngine\_ARAugmentedImageDatabase\_Serialize](arengine-capi-arengine.md#hms_arengine_araugmentedimagedatabase_serialize)(const [AREngine\_ARAugmentedImageDatabase](arengine-capi-arengine.md#arengine_araugmentedimagedatabase) \*database, uint8\_t \*\*outBuffer, uint64\_t \*outBufSize) | 序列化特征数据库。 |
 | [AREngine\_ARStatus](arengine-capi-arengine.md#arengine_arstatus) [HMS\_AREngine\_ARCamera\_GetDisplayOrientedPose](arengine-capi-arengine.md#hms_arengine_arcamera_getdisplayorientedpose)(const [AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession) \*session, const [AREngine\_ARCamera](arengine-capi-arengine.md#arengine_arcamera) \*camera, [AREngine\_ARPose](arengine-capi-arengine.md#arengine_arpose) \*outPose) | 获取虚拟相机（面向显示）在世界空间中的位姿，用以将AR内容渲染到最新帧中。 |
 | [AREngine\_ARStatus](arengine-capi-arengine.md#arengine_arstatus) [HMS\_AREngine\_ARCamera\_GetImageIntrinsics](arengine-capi-arengine.md#hms_arengine_arcamera_getimageintrinsics)(const [AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession) \*session, const [AREngine\_ARCamera](arengine-capi-arengine.md#arengine_arcamera) \*camera, [AREngine\_ARCameraIntrinsics](arengine-capi-arengine.md#arengine_arcameraintrinsics) \*outIntrinsics) | 获取物理相机离线内参的对象，可通过该对象获取相机的焦距、图像尺寸、主轴点和畸变参数。 |
-| [AREngine\_ARStatus](arengine-capi-arengine.md#arengine_arstatus) [HMS\_AREngine\_ARCamera\_GetPose](arengine-capi-arengine.md#hms_arengine_arcamera_getpose)(const [AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession) \*session, const [AREngine\_ARCamera](arengine-capi-arengine.md#arengine_arcamera) \*camera, [AREngine\_ARPose](arengine-capi-arengine.md#arengine_arpose) \*outPose) | 设置outPose为最新帧中物理相机在世界空间中的位姿。该位姿是OpenGL相机的位姿。 |
+| [AREngine\_ARStatus](arengine-capi-arengine.md#arengine_arstatus) [HMS\_AREngine\_ARCamera\_GetPose](arengine-capi-arengine.md#hms_arengine_arcamera_getpose)(const [AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession) \*session, const [AREngine\_ARCamera](arengine-capi-arengine.md#arengine_arcamera) \*camera, [AREngine\_ARPose](arengine-capi-arengine.md#arengine_arpose) \*outPose) | 获取最新帧中物理相机在世界空间中的位姿，写入outPose中。该位姿是OpenGL相机的位姿。 |
 | [AREngine\_ARStatus](arengine-capi-arengine.md#arengine_arstatus) [HMS\_AREngine\_ARCamera\_GetProjectionMatrix](arengine-capi-arengine.md#hms_arengine_arcamera_getprojectionmatrix)(const [AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession) \*session, const [AREngine\_ARCamera](arengine-capi-arengine.md#arengine_arcamera) \*camera, [AREngine\_ClipPlaneDistance](arengine-struct-clipplanedistance.md) clipPlaneDistance, float \*outDestColMajor4x4, int32\_t destColMajor4x4Num) | 获取用于在相机图像上层渲染虚拟内容的投影矩阵，可用于相机坐标系到裁剪坐标系转换。 |
 | [AREngine\_ARStatus](arengine-capi-arengine.md#arengine_arstatus) [HMS\_AREngine\_ARCamera\_GetTrackingState](arengine-capi-arengine.md#hms_arengine_arcamera_gettrackingstate)(const [AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession) \*session, const [AREngine\_ARCamera](arengine-capi-arengine.md#arengine_arcamera) \*camera, [AREngine\_ARTrackingState](arengine-capi-arengine.md#arengine_artrackingstate) \*outTrackingState) | 获取相机的当前追踪状态。 |
 | [AREngine\_ARStatus](arengine-capi-arengine.md#arengine_arstatus) [HMS\_AREngine\_ARCamera\_GetTrackingStateReason](arengine-capi-arengine.md#hms_arengine_arcamera_gettrackingstatereason)(const [AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession) \*session, const [AREngine\_ARCamera](arengine-capi-arengine.md#arengine_arcamera) \*camera, [AREngine\_ARTrackingStateReason](arengine-capi-arengine.md#arengine_artrackingstatereason) \*outTrackingStateReason) | 获取相机的当前追踪状态为[ARENGINE\_TRACKING\_STATE\_PAUSED](arengine-capi-arengine.md#arengine_artrackingstate)时的原因。 |
@@ -2225,7 +2225,7 @@ AREngine_ARStatus HMS_AREngine_ARCamera_GetPose(const AREngine_ARSession *sessio
 
 **描述**
 
-设置outPose为最新帧中物理相机在世界空间中的位姿。该位姿是OpenGL相机的位姿。
+获取最新帧中物理相机在世界空间中的位姿，写入outPose中。该位姿是OpenGL相机的位姿。
 
 其中X轴正方向为右，Y轴正方向为上，Z轴负方向为相机的观察方向。相机位置即物理相机位置，而相机X轴与Y轴指向不受屏幕方向（考虑显示旋转）的影响。
 
@@ -3307,7 +3307,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetARType(const AREngine_ARSession *sess
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | type | AR Engine支持的能力类型，参见[AREngine\_ARType](arengine-capi-arengine.md#arengine_artype)。 |
 
 **返回：**
@@ -3339,7 +3339,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetCameraPreviewMode(const AREngine_ARSe
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | mode | 相机预览模式，参见[AREngine\_ARPreviewMode](arengine-capi-arengine.md#arengine_arpreviewmode)。 |
 
 **返回：**
@@ -3370,7 +3370,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetDepthMode(const AREngine_ARSession *s
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | depthMode | 深度图像模式，参见[AREngine\_ARDepthMode](arengine-capi-arengine.md#arengine_ardepthmode)。 |
 
 **返回：**
@@ -3401,7 +3401,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetFocusMode(const AREngine_ARSession *s
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | focusMode | 对焦模式，参见[AREngine\_ARFocusMode](arengine-capi-arengine.md#arengine_arfocusmode)。 |
 
 **返回：**
@@ -3434,7 +3434,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetMaxMapSize(const AREngine_ARSession *
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | maxMapSize | 地图数据最大使用内存大小，单位MB，范围：100MB~16G。 若设备内存占用超过设备硬件限制，可能出现不可预知错误，需要应用侧自行评估设置的内存大小。 |
 
 **返回：**
@@ -3465,7 +3465,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetMeshMode(const AREngine_ARSession *se
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | meshMode | mesh模式，参见[AREngine\_ARMeshMode](arengine-capi-arengine.md#arengine_armeshmode)。 |
 
 **返回：**
@@ -3496,7 +3496,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetPlaneFindingMode(const AREngine_ARSes
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | planeFindingMode | 平面识别模式，参见[AREngine\_ARPlaneFindingMode](arengine-capi-arengine.md#arengine_arplanefindingmode)。 |
 
 **返回：**
@@ -3527,7 +3527,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetPoseMode(const AREngine_ARSession *se
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | poseMode | 相机位姿模式，参见[AREngine\_ARPoseMode](arengine-capi-arengine.md#arengine_arposemode)。 |
 
 **返回：**
@@ -3558,7 +3558,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetPowerMode(const AREngine_ARSession *s
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | powerMode | 功耗模式，参见[AREngine\_ARPowerMode](arengine-capi-arengine.md#arengine_arpowermode)。 |
 
 **返回：**
@@ -3589,7 +3589,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetPreviewSize(const AREngine_ARSession 
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | width | 预览画面的宽，以Pixel为单位。可调用[OH\_CameraManager\_GetSupportedCameraOutputCapability](capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapability)查看。 |
 | height | 预览画面的高，以Pixel为单位。可调用[OH\_CameraManager\_GetSupportedCameraOutputCapability](capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapability)查看。 |
 
@@ -3621,7 +3621,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetSemanticDenseMode(const AREngine_ARSe
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | semanticDenseMode | 高精几何重建模式，参见[AREngine\_ARSemanticDenseMode](arengine-capi-arengine.md#arengine_arsemanticdensemode)。 |
 
 **返回：**
@@ -3652,7 +3652,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetSemanticMode(const AREngine_ARSession
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | mode | 语义模式，参见[AREngine\_ARSemanticMode](arengine-capi-arengine.md#arengine_arsemanticmode)。 |
 
 **返回：**
@@ -3683,7 +3683,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetUpdateMode(const AREngine_ARSession *
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | updateMode | 预览更新模式，参见[AREngine\_ARUpdateMode](arengine-capi-arengine.md#arengine_arupdatemode)。 |
 
 **返回：**
@@ -3714,8 +3714,8 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetRemoteSensorMode(const AREngine_ARSes
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
-| remoteSensorMode | 预览更新模式，参见[AREngine\_RemoteSensorMode](arengine-capi-arengine.md#arengine_remotesensormode)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| remoteSensorMode | 远程传感器模式，参见[AREngine\_RemoteSensorMode](arengine-capi-arengine.md#arengine_remotesensormode)。 |
 
 **返回：**
 
@@ -3745,7 +3745,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetPhotoStreamSize(const AREngine_ARSess
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | width | 拍照流图像分辨率的宽，以Pixel为单位。可调用[OH\_CameraManager\_GetSupportedCameraOutputCapability](capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapability)查询设备支持的数值。 |
 | height | 拍照流图像分辨率的高，以Pixel为单位。可调用[OH\_CameraManager\_GetSupportedCameraOutputCapability](capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapability)查询设备支持的数值。 |
 
@@ -3777,7 +3777,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetImageStreamMode(const AREngine_ARSess
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | mode | 图像流模式，参见[AREngine\_ARImageStreamMode](arengine-capi-arengine.md#arengine_arimagestreammode)。 |
 
 **返回：**
@@ -7727,7 +7727,7 @@ AREngine_ARStatus HMS_AREngine_ARConfig_SetBodyDetectedNum(const AREngine_ARSess
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
-| config | 指向待获取配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+| config | 指向待设置配置信息的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
 | maxNum | 追踪人数，当前支持1或2，默认为1，若设置的追踪人数超过2，则按2处理。 |
 
 **返回：**

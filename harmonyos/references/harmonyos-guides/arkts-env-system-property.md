@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-sys
 title: "@Env：环境变量"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习响应式环境变量 > @Env：环境变量
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e570fc808c96ad87dd3bba391f273bc6213e1901da53149eb5a8890580be7437
+scraped_at: 2026-10-11T07:21:05+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:7428c573958b72c1d9f92b84de9eef93e89d50e4c4fb42db87b253f5708dfada
 ---
 
 在多设备开发的场景中，开发者可以使用[@Env](../harmonyos-references/ts-env-system-property.md)装饰器监听系统环境变量的改变，并根据系统环境变量来进行相应的场景判断，以减少不同设备间的适配逻辑和重复开发。
@@ -220,11 +220,11 @@ content_hash: sha256:e570fc808c96ad87dd3bba391f273bc6213e1901da53149eb5a8890580b
 
 流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/2LWP-G-iSTCkQNKfhJZNMw/zh-cn_image_0000002778931139.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ju-zEyFNRSONj6GCk1NLkw/zh-cn_image_0000002755183068.png)
 
 基于上面流程，下面的示例中以@Env使用SystemProperties.BREAK\_POINT为例，各个组件中的初始化如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/EfwvEbLXTpycSj_ptSJCoA/zh-cn_image_0000002749332058.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ifQv7pQBSSuyzsAvjAnKzw/zh-cn_image_0000002784581933.png)
 
 1. Child1初始化@Env(SystemProperties.BREAK\_POINT)：
    * 递归查找直到父组件为空：向上查找父组件Index，没有@Env对应的SystemProperties.BREAK\_POINT实例。
@@ -590,7 +590,7 @@ struct Index {
           }
           hilog.info(DOMAIN, 'testTag', 'Succeeded in changing the window size.');
         });
-         // 为子窗口加载对应的目标页面。
+        // 为子窗口加载对应的目标页面。
         subWindowClass.setUIContent('pages/EnvBuilderNodeSubWindow', (err: BusinessError) => {
           let errCode: number = err.code;
           if (errCode) {
@@ -733,7 +733,7 @@ struct SubWindow {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Yo0NJo-2RKWF9NhO8_DcEA/zh-cn_image_0000002749491944.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/aY3hUKFpTTSZZwfmxHbKoQ/zh-cn_image_0000002784662117.gif)
 
 可以使用lambda闭包函数将ComponentUnderBuilderNode中的@Env向下传递。通过这种方式ComponentUnderBuilderNode中的@Env可以收集到子组件Comp内组件的依赖，在切换窗口实例的时候触发Comp内组件的刷新。
 
@@ -773,7 +773,7 @@ struct Comp {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/VFvsfcmoTM6CjXUtE12Ixg/zh-cn_image_0000002779090999.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/zFKf50Q2Q8mz402CAOtW4w/zh-cn_image_0000002755023184.gif)
 
 ### @Watch与@Monitor监听@Env装饰的变量
 
@@ -824,7 +824,7 @@ struct ChildV1 {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/iLL_kr21R4GbXkSJ7_iXMA/zh-cn_image_0000002778931143.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/IOpyu5PgSw26qjp6yndcew/zh-cn_image_0000002755183070.png)
 
 在@ComponentV2中，可通过@Monitor监听@Env装饰变量的变化。需要注意的是，仅当@Env装饰的变量被整体赋值时才会触发@Monitor监听回调，其内部属性的变化不会触发回调。
 
@@ -877,4 +877,4 @@ struct Child {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/F6QozXUXSWiCfQ9FoliG6w/zh-cn_image_0000002749332062.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/4CLk7x7BQAiNCHNd1xhZ8A/zh-cn_image_0000002784581935.png)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-t
 title: 典型场景的开发指导
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:48+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-10-11T07:20:51+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:cbaeab2aab4706e0457464bc7551dee5b1bb3bc7848d4cad6ed17ae40497ecc9
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/input-str
 title: 结构体
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:15+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:38+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:22e0501857f11da52fc0433d4f6c129bb3da91cf6f79184ea909ebbe39b682b8
 ---
 

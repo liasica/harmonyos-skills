@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 基础构建能力
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 扩展构建能力 > 扩展构建API > 基础构建能力
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:37+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:24+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:351f2cdc73ea93a7b892f20b02006ff6b17bfb1e4d0069b784263f537e224c6a
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/aod-navig
 title: AOD Navigation Kit（熄屏导航服务）
 breadcrumb: API参考 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:27+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:49+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:739e1868e3e3ac8ae9a312e7834f3b3d676a48602b0eea143b7d57b51024e778
 ---
 

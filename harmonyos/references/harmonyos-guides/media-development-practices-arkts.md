@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-develop
 title: 媒体开发实践
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:18+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-10-11T07:21:59+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:92e7ced12de8d3c3813c50f5ee083488d702deda41f5fe7345a08c8a1997eae1
 ---
 

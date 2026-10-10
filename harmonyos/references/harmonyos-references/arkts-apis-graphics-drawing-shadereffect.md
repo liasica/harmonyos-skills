@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ShaderEffect)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (ShaderEffect)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:39:54+08:00
+scraped_at: 2026-10-11T07:27:45+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4ebd8c559def2fc7368f2c497d0ac566e166b3e3aa01dd8b2b9ae36458bc9042
+content_hash: sha256:c129fbb7ef9b82fad69ae84c6956a2a37a914ef83b50ece47521b930e295bd67
 ---
 
 着色器。画刷和画笔设置着色器后，会使用着色器效果而不是颜色属性去绘制，但此时画笔和画刷的透明度属性仍然生效。
@@ -190,7 +190,7 @@ static createLinearGradient(startPt: common2D.Point, endPt: common2D.Point, colo
 | pos | Array<number> |null | 否 | 表示每种对应颜色在颜色数组中的相对位置。数组长度需和colors保持一致，数组的首个元素应当是0.0，末尾元素应当是1.0，中间的元素应当在0与1之间并且逐下标递增，表示colors中每个对应颜色的相对位置。默认为null，表示颜色均匀分布在起点和终点之间。 |
 | matrix | [Matrix](arkts-apis-graphics-drawing-matrix.md) | null | 否 | 矩阵对象，用于对着色器做矩阵变换。默认为null，表示单位矩阵。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Zjx_itbDSQW9r8ynoKsjUg/zh-cn_image_0000002749495874.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/9FHzAyKeRbOnXRKcnrzCOA/zh-cn_image_0000002755026878.png)
 
 如上图所示，设置颜色数组为红绿蓝，位置数组为0.0、0.75和1.0后的显示效果。三角下标表示对应颜色的起始点和终点之间的相对位置，颜色之间使用渐变填充。
 
@@ -237,7 +237,7 @@ static createRadialGradient(centerPt: common2D.Point, radius: number, colors: Ar
 | pos | Array<number> | null | 否 | 表示每种对应颜色在颜色数组中的相对位置。数组长度需和colors保持一致，数组的首个元素应当是0.0，末尾元素应当是1.0，中间的元素应当在0与1之间并且逐下标递增，表示colors中每个对应颜色的相对位置。默认为null，表示颜色均匀分布在圆心和圆边界之间。 |
 | matrix | [Matrix](arkts-apis-graphics-drawing-matrix.md) | null | 否 | 矩阵对象，用于对着色器做矩阵变换。默认为null，表示单位矩阵。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/RO34SJelQIuSjuBnYHzuyw/zh-cn_image_0000002779094931.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/4S70ZxOYQPCCnXHmmgwrjg/zh-cn_image_0000002755186760.png)
 
 如上图所示，设置颜色数组为红绿蓝，位置数组为0.0、0.75和1.0后的显示效果。三角下标表示对应颜色所在圆心和圆边界之间的相对位置，颜色之间使用渐变填充。
 
@@ -284,7 +284,7 @@ static createSweepGradient(centerPt: common2D.Point, colors: Array<number>, mode
 | pos | Array<number> | null | 否 | 表示每种对应颜色在颜色数组中的相对位置。数组长度需和colors保持一致，数组的首个元素应当是0.0，末尾元素应当是1.0，中间的元素应当在0与1之间并且逐下标递增，表示colors中每个对应颜色的相对位置。默认为null，表示颜色均匀分布在起始角度和结束角度之间。 |
 | matrix | [Matrix](arkts-apis-graphics-drawing-matrix.md) | null | 否 | 矩阵对象，用于对着色器做矩阵变换。默认为null，表示单位矩阵。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/PxIPN2wjTBivZJipL15S3A/zh-cn_image_0000002778935077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Cxg_Fl4zTVmR6zqyJzSRew/zh-cn_image_0000002784585627.png)
 
 如上图所示，设置颜色数组为红绿蓝，位置数组为0.0、0.75和1.0，起始角度设置为0度，结束角度设置为180度后的显示效果。0.0对应0度的位置，0.75对应135度的位置，1.0对应180度的位置，颜色之间使用渐变填充。
 
@@ -332,7 +332,7 @@ static createConicalGradient(startPt: common2D.Point, startRadius: number, endPt
 | pos | Array<number> | null | 否 | 表示每种对应颜色在颜色数组中的相对位置。数组长度需和colors保持一致，数组的首个元素应当是0.0，末尾元素应当是1.0，中间的元素应当在0与1之间并且逐下标递增，表示colors中每个对应颜色的相对位置。默认为null，表示颜色均匀分布在起始圆和结束圆之间。 |
 | matrix | [Matrix](arkts-apis-graphics-drawing-matrix.md) | null | 否 | 矩阵对象，用于对着色器做矩阵变换。默认为null，表示单位矩阵。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/RQk_ICiKQlmCw1yixskT3g/zh-cn_image_0000002749335992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/fZHzMfM4SNSC0kpVz1NmVA/zh-cn_image_0000002784665809.png)
 
 如上图所示，设置颜色数组为红绿蓝，位置数组为0.0、0.5和1.0的绘制结果。左侧为起始圆不在结束圆内的绘制结果，右侧为起始圆在结束圆内的绘制结果。
 

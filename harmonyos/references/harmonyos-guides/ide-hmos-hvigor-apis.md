@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 扩展构建API
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 扩展构建能力 > 扩展构建API
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:36+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:23+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7252a1711d4468fd0d98f9f1b7361df128d103d0824b50848e0d181cc6dab53d
 ---
 

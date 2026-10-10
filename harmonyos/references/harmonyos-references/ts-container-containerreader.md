@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ContainerReader
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > ContainerReader
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:55+08:00
+scraped_at: 2026-10-11T07:24:21+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:c09ed0cdf215f22658499731cd9a0e1073550e1e8fa4c1f1706b63b2e381e6d9
+content_hash: sha256:3bc128335507c5563c787e9e3bb6c782fceba013e3bb884b89cb356e426fc96b
 ---
 
 ContainerReader是容器断点组件，用于在动态场景下根据容器尺寸获取断点信息并进行响应式布局。该组件通过[双向绑定](../harmonyos-guides/arkts-new-binding.md#系统组件参数双向绑定)实时返回容器的尺寸和断点，使开发者能够基于容器大小进行差异化的组件创建和布局。
@@ -191,7 +191,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/RE179ix9TBOWtd_xSq5Vmw/zh-cn_image_0000002749494454.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/pkWz99aPSm6KtIYkmCK2WA/zh-cn_image_0000002755025562.gif)
 
 ### 示例2 （自定义断点配置）
 
@@ -266,7 +266,7 @@ struct Index {
 
 通过单击按钮改变父容器的宽度，返回不同的宽度断点值，从而调整布局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ra0lH05ESzOujHFku9Gypw/zh-cn_image_0000002779093511.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/94kF40uJQ0-TdWG_Jy5gyw/zh-cn_image_0000002755185446.gif)
 
 ### 示例3 （利用宽度断点动态调整列数）
 
@@ -351,4 +351,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/uHTnZi81TMOQjLpoKlOcuw/zh-cn_image_0000002778933657.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/7jOqhCwuTveUmNAARIgPgg/zh-cn_image_0000002784584313.gif)

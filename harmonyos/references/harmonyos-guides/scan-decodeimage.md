@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-decodeim
 title: 识别图像数据
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 图像识码 > 识别图像数据
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:55+08:00
+scraped_at: 2026-10-11T07:22:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b3eb3d7e3be7f99f43cd68791285a70a94ecc88f8835b6fd6d884ce92563801f
+content_hash: sha256:9832a83dac038df5b3e0d024dc01eccf23f5693f8324d00435cf7c29597cdb62
 ---
 
 图像数据识码能力支持对NV21像素格式图像中的码图进行扫描识别，并获取信息。
@@ -16,7 +16,7 @@ content_hash: sha256:b3eb3d7e3be7f99f43cd68791285a70a94ecc88f8835b6fd6d884ce9256
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/uEmYVjWaT8aaxTZZW0r-jQ/zh-cn_image_0000002749493274.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ZDq3T6dGQM-iw5UEvIjcbw/zh-cn_image_0000002755024418.png)
 
 1. 用户向应用发起识码请求。
 2. 应用通过调用[Camera Kit](camera-overview.md)启动相机，获取预览流数据。

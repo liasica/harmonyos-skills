@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-un
 title: 文本展开折叠
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 文本展开折叠
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:03+08:00
+scraped_at: 2026-10-11T07:21:07+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:fdb79512f721f659d524fa1d35d4438e29e3c87a3d0b098b782f72f013870117
+content_hash: sha256:2a80c9a3cd313e6c728d2118d148c104171c165510dcb43a5fba46c77d23f135
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:fdb79512f721f659d524fa1d35d4438e29e3c87a3d0b098b782f72f0138
 
 本文将介绍解决这一问题的基本逻辑和解决方案，帮助开发者使用系统自带模块，更简洁的解决问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/rHbrKhiuQ6m2yaBW8BSqhw/zh-cn_image_0000002749492200.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/8PMn6DmhQPyiaknTqat69g/zh-cn_image_0000002784662357.png)
 
 ## 纯文本展开折叠
 
@@ -25,13 +25,13 @@ content_hash: sha256:fdb79512f721f659d524fa1d35d4438e29e3c87a3d0b098b782f72f0138
 1. 文本中只有文字。
 2. 超出2行要能显示"...展开"，展开后显示收起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Qw39K_tZThO5WOQYpr0mRw/zh-cn_image_0000002779091257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/H_DjsRRBR2WmioizZKwZag/zh-cn_image_0000002755023424.png)
 
 ### 实现原理
 
 需要计算出“...”前最后一个文字的索引和显示行高，以确定“收起”“展开”按钮的位置，其原理如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/hQ3PPzupSUCLmtJvoAmlOQ/zh-cn_image_0000002778931401.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/jW0KMuaETxWRGx133ILG0g/zh-cn_image_0000002755183310.png)
 
 计算文本高度，结合按钮和“...”的宽度，计算收起文本最后一个文字的坐标，换算为对应内容索引，截断显示相应的内容。
 
@@ -145,13 +145,13 @@ content_hash: sha256:fdb79512f721f659d524fa1d35d4438e29e3c87a3d0b098b782f72f0138
 
 当前展示内容需要针对整个文本做截断并最终显示...和"展开"字眼，例如图片中的文本就比较长，需要在"潮声与你"的位置截断。该场景由于文本中有图片和不同字号的限制，使得计算截断文本的位置比较困难。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/3pGiSv2MQhSJVa-LJE5-qw/zh-cn_image_0000002749332318.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/mjLox5aLSxy_KTK-cdGgRg/zh-cn_image_0000002784582177.png)
 
 ### 实现原理
 
 需要计算出“...”前最后一个文字的索引和显示行高，以确定“收起”“展开”按钮的位置，其原理如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/CUFDciD4RAu8w_g6-Y9ozA/zh-cn_image_0000002749492202.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Gzrxd5eRQA2U8T50F2Tc5A/zh-cn_image_0000002784662359.png)
 
 使用排版，计算实际需要收起内容的高度，结合按钮和“...”的宽度，计算收起文本最后一个文字的坐标，换算为对应内容索引，截断显示相应的内容。
 

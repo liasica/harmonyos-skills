@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-napi-in
 title: 使用Node-API实现ArkTS/JS与C/C++语言交互
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:25+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:48+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:3da35ef25ef11446476dfcdf40336969d6bc25b0af85641dd2b6b4fcfee419e6
 ---
 

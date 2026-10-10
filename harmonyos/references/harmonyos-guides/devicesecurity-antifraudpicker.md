@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 反诈选择器
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 反诈选择器
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:51+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:29+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:93d7756050700ead1309eeec544266226838e18733626ddf1b1669cc1d814053
 ---
 

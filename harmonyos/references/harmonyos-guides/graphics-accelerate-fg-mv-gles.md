@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: OpenGL ES平台
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > 顶点标记 > OpenGL ES平台
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:58+08:00
+scraped_at: 2026-10-11T07:22:05+08:00
 doc_updated_at: 2026-06-13
-content_hash: sha256:02a78e78448995cb9934eb4256d8fc08a81875c4615b2c0404a21353e969d812
+content_hash: sha256:6b6c9701f86f1f212097f758d16b25a70dbc24168762c8996f632a9265ecf023
 ---
 
 ## 业务流程
@@ -16,7 +16,7 @@ content_hash: sha256:02a78e78448995cb9934eb4256d8fc08a81875c4615b2c0404a21353e96
 
   开发阶段，开发者需要使用系统的图形驱动库提供的OpenGL ES接口，在期望被标记的物体绘制前后添加上开始标记指令和结束标记指令。运行阶段，基于OpenGL ES的Transform Feedback（变换反馈）特性，被标记的所有Draw Call处理的顶点数据将被缓存，再通过顶点匹配、运动估计、屏幕空间投影等过程，得到高精度运动向量，最终绘制出预测帧。运行阶段流程如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/RXyo-xwKRNqjRPgt27gS9g/zh-cn_image_0000002778932581.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/XE76skz_Q5mzQT0cI3uNfg/zh-cn_image_0000002784583279.png)
 * 顶点标记原则
 
   被标记的物体能在运动估计阶段得到更高精度的运动向量图（MV，Motion Vector），但需要付出额外的性能代价，开发者需要在这之间做出平衡。**建议只标记画面中相对场景运动的物体**，因为相对场景运动的物体的顶点数量较少，但运动预测却最为困难，这样的标记方式能以少量的性能代价换取较明显的超帧画质收益。

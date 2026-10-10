@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm clean
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm clean
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:26+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7a950c888261317c0b4037ad856fffc7481c9cb04481a8c27a69848904f28422
 ---
 

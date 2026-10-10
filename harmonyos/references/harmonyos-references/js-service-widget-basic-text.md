@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: text
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > text
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:22+08:00
+scraped_at: 2026-10-11T07:24:53+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ca0aabdba5e44058f44885d83a3fba82c5f599ebd04a3ab239953e4b2713e6bc
+content_hash: sha256:6925bd1374d89b27e13fe2df332c675b1799beacb6774a563612d0949dd773ef
 ---
 
 文本，用于呈现一段信息。
@@ -107,4 +107,4 @@ content_hash: sha256:ca0aabdba5e44058f44885d83a3fba82c5f599ebd04a3ab239953e4b271
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/-QfCv90fRq6DUMjGzTDxdQ/zh-cn_image_0000002778934639.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/LeOUVbTcTe6TpGB50pNomw/zh-cn_image_0000002784585191.png)

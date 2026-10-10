@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Region)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Region)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a6062bc131df09f3309591d44f51f98a4c3a6f4c84fb187400f7ecf8bcbf707e
+scraped_at: 2026-10-11T07:27:45+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:ecc2c68016e0d8c07ceef4f21aa5886266d8c01a26a7779cacbef0635b8fc015
 ---
 
 区域对象，用于描述所绘制图形的区域信息。Region支持设置矩形区域和路径区域，提供区域间的合并运算、相交判断、平移、边界获取等操作。
@@ -30,6 +30,8 @@ constructor()
 构造一个区域对象。
 
 **系统能力：** SystemCapability.Graphics.Drawing
+
+**示例：**
 
 ```ts
 import { RenderNode } from '@kit.ArkUI';

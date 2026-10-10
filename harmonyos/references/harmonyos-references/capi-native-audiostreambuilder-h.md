@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audiostreambuilder.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audiostreambuilder.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:fb35f20e335a0f96daa1409ebf449d0d668ad2fbe3641bc339d0ce89baf97aae
+scraped_at: 2026-10-11T07:27:02+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:20490fbf936a49422f9ae2211940e992a1466ba4edfd8202579c8eb06aa62d04
 ---
 
 ## 概述
@@ -62,7 +62,7 @@ content_hash: sha256:fb35f20e335a0f96daa1409ebf449d0d668ad2fbe3641bc339d0ce89baf
 | [OH\_AudioStream\_Result OH\_AudioStreamBuilder\_SetRendererFastStatusChangeCallback(OH\_AudioStreamBuilder\* builder, OH\_AudioRenderer\_OnFastStatusChange callback, void\* userData)](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setrendererfaststatuschangecallback) | 设置音频播放过程中低时延状态改变事件的回调函数。 |
 | [OH\_AudioStream\_Result OH\_AudioStreamBuilder\_SetCapturerFastStatusChangeCallback(OH\_AudioStreamBuilder\* builder, OH\_AudioCapturer\_OnFastStatusChange callback, void\* userData)](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setcapturerfaststatuschangecallback) | 设置音频录制过程中低时延状态改变事件的回调函数。 |
 | [OH\_AudioStream\_Result OH\_AudioStreamBuilder\_SetCapturerLoopbackEffectEnabled(OH\_AudioStreamBuilder\* builder, bool enabled)](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setcapturerloopbackeffectenabled) | 设置音频录制流是否采集带音频混响效果的音频数据。当音频环回设置为硬件模式并启用混响效果时，低时延模式的采集器可以获取到具备混响效果的录音数据。 |
-| [OH\_AudioStream\_Result OH\_AudioStreamBuilder\_SetPlaybackCaptureMode(OH\_AudioStreamBuilder\* builder, uint32\_t mode)](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setplaybackcapturemode) | 在使用内录（录制设备内部应用的声音）时设置可以录制的音频模式，该模式将决定要录制的音频流类型。此功能仅适用于[AudioStream\_Type\_Capturer](capi-native-audiostream-base-h.md#oh_audiostream_type)类型。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。 |
+| [OH\_AudioStream\_Result OH\_AudioStreamBuilder\_SetPlaybackCaptureMode(OH\_AudioStreamBuilder\* builder, uint32\_t mode)](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setplaybackcapturemode) | 在使用内录（录制设备内部应用的声音）时设置可以录制的音频模式，该模式将决定要录制的音频流类型。此功能仅适用于[AUDIOSTREAM\_TYPE\_CAPTURER](capi-native-audiostream-base-h.md#oh_audiostream_type)类型。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。 |
 | [OH\_AudioStream\_Result OH\_AudioStreamBuilder\_SetSensitiveRecordPermitCallback(OH\_AudioStreamBuilder\* builder, OH\_AudioCapturer\_SensitiveRecordPermitCallback callback, void\* userData)](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setsensitiverecordpermitcallback) | 设置蜂窝通话下行录音风险提示语播放结束的回调函数。仅在使用[OH\_AudioStream\_SourceType](capi-native-audiostream-base-h.md#oh_audiostream_sourcetype).AUDIOSTREAM\_SOURCE\_TYPE\_VOICE\_DOWNLINK录制时需要设置此函数。此回调必须成功设置，否则采集器无法创建。音频采集器创建后，风险提示语将自动添加到发送给通话对方的语音数据中。应用应等待回调结果后再启动采集器，否则[OH\_AudioCapturer\_Start](capi-native-audiocapturer-h.md#oh_audiocapturer_start)将返回错误。请确保音频采集器在蜂窝通话开始后创建，否则[OH\_AudioStreamBuilder\_GenerateCapturer](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_generatecapturer)将返回错误。 |
 | [OH\_AudioStream\_Result OH\_AudioStreamBuilder\_SetCellularRecordSecurityParams(OH\_AudioStreamBuilder\* builder, const char\* cellularRecordPhoneNum, const char\* cellularRecordToken)](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setcellularrecordsecurityparams) | 设置蜂窝通话下行录音的电话号码和安全令牌。仅在使用[OH\_AudioStream\_SourceType](capi-native-audiostream-base-h.md#oh_audiostream_sourcetype).AUDIOSTREAM\_SOURCE\_TYPE\_VOICE\_DOWNLINK录制时需要设置此函数。电话号码和安全令牌将用于校验蜂窝通话下行采集器是否匹配对应的蜂窝通话，必须成功设置，否则采集器无法创建。 |
 
@@ -933,7 +933,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetPlaybackCaptureMode(OH_AudioStrea
 
 **描述**
 
-在使用内录（录制设备内部应用的声音）时设置可以录制的音频模式，该模式将决定要录制的音频流类型。此功能仅适用于[AudioStream\_Type\_Capturer](capi-native-audiostream-base-h.md#oh_audiostream_type)类型。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。
+在使用内录（录制设备内部应用的声音）时设置可以录制的音频模式，该模式将决定要录制的音频流类型。此功能仅适用于[AUDIOSTREAM\_TYPE\_CAPTURER](capi-native-audiostream-base-h.md#oh_audiostream_type)类型。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。
 
 **起始版本：** 23
 

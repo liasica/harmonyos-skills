@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-kit-guid
 title: FAST Kit（算法加速服务）
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:03+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:40+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:e93ffdd659f54738a795cf7d3491ef649a56329389ad7601f41c87f52678eaa2
 ---
 

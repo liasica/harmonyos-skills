@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-scala
 title: LeakyRelu
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 标量双目指令 > LeakyRelu
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:26+08:00
+scraped_at: 2026-10-11T07:22:32+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:bd89cd783776c5f06506e038353f0fe5a7cdb4fec929da94751691dc04970506
+content_hash: sha256:d0d81a1b9ad2e9e728e33a9eabe206649301a7aed351e388554714c805404dbf
 ---
 
 ## 功能说明
 
-按元素做带泄露线性整流Leaky ReLU：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/RRtrgaZbRQ2jjYsafbQcqQ/zh-cn_image_0000002779093059.png)
+按元素做带泄露线性整流Leaky ReLU：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/OusHSwJOTxS8R8g-LiRXyQ/zh-cn_image_0000002755185024.png)
 
 带泄露线性整流函数（Leaky Rectified Linear Unit, Leaky ReLU激活函数），是一种人工神经网络中常用的激活函数，其数学表达式为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/wy1FJZJBSpW5dYCvejyIGw/zh-cn_image_0000002778933203.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/lbkJtyy6S0-t0os2N95ymA/zh-cn_image_0000002784583891.png)
 
 和ReLU的区别是：ReLU是将所有的负值都设为零，而Leaky Relu 是给所有负值赋予一个斜率。下图表示了Relu和Leaky Relu的区别：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/JF_uHaejTTCpw-wyLWx7dg/zh-cn_image_0000002749334118.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/pfzjk6l-RviIQSLA4sFk_w/zh-cn_image_0000002749494004.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ImTolYMIQ2GHpdDvmcQ6yg/zh-cn_image_0000002784664073.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/MxZEoTMORj68ZPuoROSOMA/zh-cn_image_0000002755025140.png)
 
 对于Leaky ReLU函数，如果src的值小于零，dst的值等于src的值乘以scalar的值。如果src大于等于零，则dst的值等于src的值。
 

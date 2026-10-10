@@ -3,12 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-de
 title: 使用SCRYPT进行密钥派生(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生 > 使用SCRYPT进行密钥派生(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:89a3d7afc3e6257afb5d09600fc79d3c56b08fa099db87ab76832da11ebae7a4
+scraped_at: 2026-10-11T07:21:27+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:b09b4def3b78c2e835e0471ab34938c11b3ff95abf3462a29a786c16ec9fa903
 ---
 
 对应的算法规格请查看[密钥派生算法规格：SCRYPT](crypto-key-derivation-overview.md#scrypt算法)。
+
+## 在CMake脚本中链接相关动态库
+
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
+```
 
 ## 开发步骤
 

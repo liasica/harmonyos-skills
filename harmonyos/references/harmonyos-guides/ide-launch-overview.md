@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-launch-ov
 title: 冷启动：Launch分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 冷启动：Launch分析
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:22+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:10+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2704ed3703a3385db67338129f82209569a14662444368e73fa3cf435b2f5a3a
 ---
 

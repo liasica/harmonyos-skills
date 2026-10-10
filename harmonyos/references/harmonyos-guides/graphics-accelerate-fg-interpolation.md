@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 内插模式
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > 内插模式
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:32+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:04+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:d1cfc40bb163a448761f5d2891685762bb49c514423cc8781a28dcc43ff9db32
 ---
 

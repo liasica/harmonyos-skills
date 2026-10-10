@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder
 title: "@BuilderParam装饰器：引用@Builder函数"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @BuilderParam装饰器：引用@Builder函数
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:59+08:00
+scraped_at: 2026-10-11T07:21:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:57b5390612fcf68bc57743313452232f52e3493db46739c9e1bbd44dd2f681e8
+content_hash: sha256:3cc655d4e9c50399fb5e0b52d782d554c2256f8212d29a21e52dfea337088321
 ---
 
 当开发者创建[自定义组件](arkts-create-custom-components.md)并需要为其添加特定功能（例如[Navigation](../harmonyos-references/ts-basic-components-navigation.md)功能）时，如果直接在组件内嵌入事件方法，会导致所有该自定义组件的实例都增加此功能。为了解决此问题，ArkUI引入了[@BuilderParam](../harmonyos-references/ts-universal-builderparam-dynamic.md#builderparam)装饰器。@BuilderParam用于装饰指向@Builder方法的变量，开发者可以在初始化自定义组件时，使用不同的方式（如参数修改、尾随闭包、借用箭头函数等）对@BuilderParam装饰的自定义构建函数进行传参赋值。在自定义组件内部，通过调用@BuilderParam为组件增加特定功能。
@@ -85,7 +85,7 @@ content_hash: sha256:57b5390612fcf68bc57743313452232f52e3493db46739c9e1bbd44dd2f
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/783MRDl2RDK__E1IecjZYA/zh-cn_image_0000002749491728.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/OgNDkqGlQxKGncOUc4Rt7Q/zh-cn_image_0000002784661917.png)
 
 * 需要注意this的指向。
 
@@ -145,7 +145,7 @@ content_hash: sha256:57b5390612fcf68bc57743313452232f52e3493db46739c9e1bbd44dd2f
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/PQ2odGjTTKmxdwAfVUq0mQ/zh-cn_image_0000002779090785.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/FHlI6oQrQr2SvwThDgDH0w/zh-cn_image_0000002755022984.png)
 
 ## 限制条件
 
@@ -214,7 +214,7 @@ struct Parent {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/2tDR_OV_S86Ap6hj2r2v0A/zh-cn_image_0000002778930929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/pd9AVJYORk2v3qmXGmXK1A/zh-cn_image_0000002755182870.png)
 
 ### 尾随闭包初始化组件
 
@@ -284,7 +284,7 @@ struct CustomContainerUser {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/GkaNA-CdQ0mo9OyKMwB6Lg/zh-cn_image_0000002749331846.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/JjdGMMPCT52Cqh3uOeOrhg/zh-cn_image_0000002784581735.gif)
 
 可以使用全局或局部@Builder通过尾随闭包的形式对[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件中的@BuilderParam装饰的方法进行初始化。
 
@@ -360,7 +360,7 @@ struct ParentPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/BWBrTnItRYWkQQ1cW1MeLw/zh-cn_image_0000002749491730.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/2KHRXfO_T8ewDh5069Ks3Q/zh-cn_image_0000002784661919.png)
 
 ### 使用@BuilderParam隔离多组件对@Builder跳转逻辑的调用
 
@@ -479,7 +479,7 @@ struct HelloWorldPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Wm8XbOFNRXCh93O36XGaCQ/zh-cn_image_0000002779090787.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/tyty6XAxTzazFtEOg4rghQ/zh-cn_image_0000002755022986.gif)
 
 ### 使用全局和局部@Builder初始化@BuilderParam
 
@@ -565,7 +565,7 @@ struct ParentPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/qZtAdabdSHWXhT87iDrQjg/zh-cn_image_0000002778930931.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/z253P6obSyO8xyUbSTjSKQ/zh-cn_image_0000002755182872.png)
 
 ### 在@ComponentV2装饰的自定义组件中使用@BuilderParam
 
@@ -651,7 +651,7 @@ struct ParentPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/tphYCbfbT_OtpoIuHuoMPQ/zh-cn_image_0000002749331848.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/d4aouvkBQC6IzNhP5tXmTw/zh-cn_image_0000002784581737.png)
 
 ## 常见问题
 

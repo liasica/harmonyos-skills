@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-o
 title: "@ohos.account.osAccount (系统账号管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 账号管理 > @ohos.account.osAccount (系统账号管理)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:57+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:01b1899b0251c208bbf2fa106fa5c138656415e2c24f0b8e31ce17e65ae930a7
+scraped_at: 2026-10-11T07:26:26+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:bad29e12c428b307585e9255862d321ac40f108f58da23d3eb4ed33d26c4656e
 ---
 
 本模块提供管理系统账号的基础能力，包括系统账号的添加、删除、查询、设置、订阅、启动等功能。
@@ -3344,7 +3344,7 @@ static updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: Doma
 
 修改指定域账号信息。使用Promise异步回调。
 
-**需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.MANAGE\_DOMAIN\_ACCOUNTS
+**需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS（仅系统应用可申请）或ohos.permission.MANAGE\_DOMAIN\_ACCOUNTS
 
 **系统能力：** SystemCapability.Account.OsAccount
 

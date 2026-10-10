@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/device-ce
 title: C API
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > C API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:29+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:53+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c1ee4425748ba637b02a889c6a39ffa062f1d1508da77b092e136162343cffd8
 ---
 

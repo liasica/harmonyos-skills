@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/device-ce
 title: 错误码
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 错误码
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:29+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:53+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:6f3e414691c3e300fba37eb0de8e92a77c32eb7ddbc13901b717501be79f04eb
 ---
 

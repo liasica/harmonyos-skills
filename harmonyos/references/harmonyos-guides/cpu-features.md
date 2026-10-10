@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cpu-features
 title: CPU特性
 breadcrumb: 指南 > NDK开发 > 硬件兼容性 > CPU特性
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:d189b161e62b573a05e021f0e56ae4a8190512e9e3864d94547bef6276f6a095
+scraped_at: 2026-10-11T07:22:53+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:5e358aa7d3bb06f64cce3607ced9b3a8f9c567ed6755123fffb521647e4741b6
 ---
 
-CPU特性是CPU提供的一些硬件扩展。开发者可以通过调用指令，设置特殊寄存器来使用这些CPU特性，例如ARMv7a架构上的VFP-v32d32、NEON、IDIV、AES等CPU特性。很多CPU特性是可选的，不同厂商的CPU通常有不同的特性。
+CPU特性是CPU提供的一些硬件扩展。开发者可以通过调用指令，设置特殊寄存器来使用这些CPU特性，例如ARMv7a架构上的VFPv3-D32、NEON、IDIV、AES等CPU特性。很多CPU特性是可选的，不同厂商的CPU通常有不同的特性。
 
 在HarmonyOS原生库开发中，如何使用CPU特性？如何在代码中处理CPU特性相关的代码？本章节将提供一些方法，以便帮助开发者开发出既能保持兼容性，又能利用CPU特性能力的应用。
 

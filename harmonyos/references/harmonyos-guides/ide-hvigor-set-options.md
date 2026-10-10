@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-se
 title: hvigor-config.json5文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置文件 > hvigor-config.json5文件
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:19+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:6223057b2227a4258b24ae639ee4ab74bda7c1fc1015d7f2be5fb9d096ab0d4e
+scraped_at: 2026-10-11T07:23:06+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:9567028a896abcdea199bb5d84cdf7a1b04fd654d7a21839d1e99006ba9c46d4
 ---
 
 ## 配置文件结构
@@ -70,6 +70,7 @@ properties
 └── ohos.defaults.release.cmakebuildtype
 └── ohos.defaults.autoLazyImport
 └── hvigor.daemon.idleTimeout
+└── ohos.rollup.transform.useUnifiedAst
 parameterFile
 ```
 
@@ -250,6 +251,7 @@ properties是额外配置参数。除了在hvigor-config.json5中配置propertie
 | ohos.defaults.release.cmakebuildtype | 可选 | 字符串 | 在release模式下构建时，指定cmake构建类型，对所有模块生效。   * Debug：不优化代码，附加调试信息。 * Release（缺省默认值）：最大化优化代码，但不包含调试信息。 * RelWithDebInfo：近似于Release模式，既进行了代码优化，同时保留部分调试信息。   从DevEco Studio 6.0.1 Beta1版本开始支持。  说明：  * 模块级build-profile.json5文件中也可以通过[arguments字段](ide-exception-stack-parsing-principle.md#section147714466283)指定cmake构建类型，例如"arguments": "-DCMAKE\_BUILD\_TYPE=RelWithDebInfo"。arguments字段的优先级比ohos.defaults.release.cmakebuildtype更高。 * 在debug模式下构建时，该字段配置无效，默认使用Debug构建类型。 |
 | ohos.defaults.autoLazyImport | 可选 | 布尔值 | 编译时是否自动将符合lazy-import语法规范的import语句添加"lazy"关键字。仅支持在源码中添加"lazy"关键字，不包含依赖的字节码HAR包或HSP。关于lazy-import的介绍及相关影响请参考[延迟加载（lazy import）](arkts-lazy-import.md)。   * true：添加。 * false（缺省默认值）：不添加。   从DevEco Studio 6.0.2 Beta1版本开始支持。  说明：  * 如果配置为true，编译时不会做场景识别，即源码中任何符合语法规范的import语句都会被添加"lazy"。 * 仅支持Stage模型。 * build-profile.json5文件中也可以通过autoLazyImport字段实现该能力，autoLazyImport的优先级比ohos.defaults.autoLazyImport更高。 |
 | hvigor.daemon.idleTimeout | 可选 | 整型数值 | 设置daemon进程的最大空闲时长，单位为毫秒。默认值为10800000，即3小时。  从最后一次构建任务完成时开始计算，超过最大空闲时长则daemon进程退出。  从26.0.0版本开始支持。 |
+| ohos.rollup.transform.useUnifiedAst | 可选 | 布尔值 | 是否开启ArkTS编译转换过程中的AST（抽象语法树）合一优化。   * true：开启，编译过程中将多个AST合并为统一AST，可有效降低编译峰值内存、缩短全量编译时间。 * false（缺省默认值）：不开启，编译过程中各阶段独立维护各自的AST。   从26.0.0版本开始支持。 |
 
 properties字段示例：
 

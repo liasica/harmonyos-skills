@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.accessibility (辅助功能)"
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > @ohos.accessibility (辅助功能)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fe65dac12ba364ec60443f81ef2c1060fb49042fcd1ccef7e26dbd3382726f23
+scraped_at: 2026-10-11T07:23:42+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:d3cbcc0ff206b4ab0b44a9bbb5d3480520f34577b2bf2475eb84fd54f073c1a1
 ---
 
 本模块提供辅助功能相关能力，包括获取辅助应用列表、获取辅助应用启用状态、获取无障碍字幕配置、发送无障碍事件、监听辅助应用状态变化等。
@@ -127,7 +127,7 @@ type Action = 'accessibilityFocus' | 'clearAccessibilityFocus' | 'focus' | 'clea
 | 'notificationCenter'12+ | 表示打开通知栏操作。 |
 | 'controlCenter'12+ | 表示打开控制中心操作。 |
 | 'setCursorPosition'12+ | 表示设置光标位置操作，需配置参数offset，参数值为光标的字符偏移量。 |
-| 'injectAction' | 表示注入动作，需配置参数injectActionType，参数值为注入动作类型。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| 'injectAction' | 表示注入动作，需配置参数injectActionType，参数值为注入动作类型。  **起始版本：** 26.0.0 |
 | 'executeCustomAction' | 表示执行自定义操作，需配置参数customAction，参数值为自定义操作的名称。  **起始版本：** 26.0.0 |
 
 ## Capability

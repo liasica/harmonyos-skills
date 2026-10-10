@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-device
 title: 音频设备路由管理
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频设备路由管理
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:17+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:51+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:ede0781c1d9e2727b60f652748273058c27ae45f1a375473a44e5590372c9017
 ---
 

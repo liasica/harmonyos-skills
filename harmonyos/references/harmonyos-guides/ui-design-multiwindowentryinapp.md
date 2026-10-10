@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-mul
 title: 应用内多窗
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 应用内多窗
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:19+08:00
+scraped_at: 2026-10-11T07:21:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cf0b91945e78c74ee6e8a9a03b17bd9f29f273d60f379f4bf44fef6b1acef4ae
+content_hash: sha256:3d3470eb1695a9dbeaab2e9f1546e50bf3db7283bb1dcde9495df0030f376709
 ---
 
 ## 场景介绍
@@ -74,4 +74,4 @@ content_hash: sha256:cf0b91945e78c74ee6e8a9a03b17bd9f29f273d60f379f4bf44fef6b1ac
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/wiu_-gH8S4ahdtGkQT1s-w/zh-cn_image_0000002779091975.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/VltGUjEcTRSPUr6d5rdQMg/zh-cn_image_0000002755183948.jpg)

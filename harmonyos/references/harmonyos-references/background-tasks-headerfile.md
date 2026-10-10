@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/backgroun
 title: 头文件
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:57+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:23+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:0ab41fd7a675670657b6dd17ea4ad077984fdc70466e2f933765c14a5f60a8f6
 ---
 

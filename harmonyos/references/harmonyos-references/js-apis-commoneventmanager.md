@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.commonEventManager (公共事件模块)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > @ohos.commonEventManager (公共事件模块)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:38:45+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:c99e6f9f02f892d7ddd2e10d8b8b0b893278c4447914db2523bc7f57cda5b6a8
+scraped_at: 2026-10-11T07:26:29+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:887376d430970e79e8592e05e882010f4a3d9e284135a469f7ebc54e26a7c866
 ---
 
 本模块提供公共事件的发布、订阅、取消订阅等能力。公共事件是一种系统级的事件通知机制，允许应用在系统状态变化（如开机完成、电量变化、屏幕亮灭等）或业务自定义事件发生时，向订阅了该事件的应用发送通知，实现跨组件、跨应用的信息传递。
@@ -66,7 +66,7 @@ publish(event: string, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | string | 是 | 表示要发布的公共事件。详见[系统定义的公共事件](commoneventmanager-definitions.md)。 |
+| event | string | 是 | 表示要发布的公共事件。详见[系统定义的公共事件](commoneventmanager-definitions.md)。字符串长度不超过254字节，超出部分会被截断。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当公共事件发布成功时，err为undefined；发布失败时，err为错误对象。 |
 
 **错误码：**
@@ -114,7 +114,7 @@ publish(event: string, options: CommonEventPublishData, callback: AsyncCallback<
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | string | 是 | 表示要发布的公共事件。详见[系统定义的公共事件](commoneventmanager-definitions.md)。 |
+| event | string | 是 | 表示要发布的公共事件。详见[系统定义的公共事件](commoneventmanager-definitions.md)。字符串长度不超过254字节，超出部分会被截断。 |
 | options | [CommonEventPublishData](js-apis-inner-commonevent-commoneventpublishdata.md) | 是 | 表示发布公共事件的属性。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当公共事件发布成功时，err为undefined；发布失败时，err为错误对象。 |
 
@@ -484,7 +484,7 @@ subscribeToEvent(subscriber: CommonEventSubscriber, callback: Callback<CommonEve
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscriber | [CommonEventSubscriber](js-apis-inner-commonevent-commoneventsubscriber.md#commoneventsubscriber-1) | 是 | 表示订阅者对象。 |
-| callback | Callback<[CommonEventData](js-apis-inner-commonevent-commoneventdata.md)> | 是 | 表示接收公共事件数据的回调函数。 |
+| callback | Callback<[CommonEventData](js-apis-inner-commonevent-commoneventdata.md)> | 是 | 回调函数，返回公共事件数据。 |
 
 **返回值：**
 

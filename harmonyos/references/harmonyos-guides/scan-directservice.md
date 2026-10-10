@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-directse
 title: 接入“扫码直达”服务
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 接入“扫码直达”服务
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:55+08:00
+scraped_at: 2026-10-11T07:22:01+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:748e4db3f250b5c43655840c44c20209905392cd217c14de718d9097eb8ffcba
+content_hash: sha256:dcb0d35d90dd54dfd8f234df0852de3c51d61fa426ef65fd68aec762037d9888
 ---
 
 **说明** 
@@ -24,7 +24,7 @@ content_hash: sha256:748e4db3f250b5c43655840c44c20209905392cd217c14de718d9097eb8
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/zcNIcoHUTq-zwpTIDk3jAg/zh-cn_image_0000002779092329.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/_cymEuGMQF6dbZ_Uu1yBNQ/zh-cn_image_0000002755184302.png)
 
 1. 开发者参考App Linking指导完成域名注册。
 2. 用户通过HarmonyOS扫码入口发起扫码请求。
@@ -123,7 +123,7 @@ content_hash: sha256:748e4db3f250b5c43655840c44c20209905392cd217c14de718d9097eb8
 
 集成效果，以美团单车场景为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/c2yQ_o_CRT25yYAKk58tFg/zh-cn_image_0000002778932471.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/C-FAjEf4SAi76ZIzlPgQjA/zh-cn_image_0000002784583169.gif)
 
 ## 开发后验证
 

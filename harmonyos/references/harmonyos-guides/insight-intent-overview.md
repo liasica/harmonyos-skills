@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-inten
 title: 意图框架概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 意图框架开发指导 > 意图框架概述
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:51+08:00
+scraped_at: 2026-10-11T07:20:55+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b12ed418c6d04c87fc7d1c721ea1b5f98dbb13a552ec5e97616e03284ee0d97c
+content_hash: sha256:585767bfb61a50fd2639bf05f90b49edd144dc6e4b9dc004cdf8e10de71735eb
 ---
 
 ## 场景介绍
@@ -34,7 +34,7 @@ content_hash: sha256:b12ed418c6d04c87fc7d1c721ea1b5f98dbb13a552ec5e97616e03284ee
 * 意图查询：系统入口可以查询注册到意图框架的意图及其定义。
 * 意图执行：系统入口根据用户请求匹配到相应意图后，触发该意图的执行，并将必要的参数传递给应用。应用执行对应功能并返回执行结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/30vKcMVXSJ2eUu7YiGTk1w/zh-cn_image_0000002779090675.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/grlygkZiToSCMIhxW0VfQg/zh-cn_image_0000002755022874.png)
 
 ## 意图开发方式
 

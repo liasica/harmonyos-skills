@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy
 title: 隐私管理服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 隐私管理服务
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:04+08:00
+scraped_at: 2026-10-11T07:22:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2ac572806050476a0ddcadb24d49265c92608245ad191c464b326dbf12d11a9a
+content_hash: sha256:3c45cae41f1d8f5ed2d24cc37aa376e1039cfdf03c9342fc48966b36c144202a
 ---
 
 隐私管理服务为使用[标准化隐私声明托管服务](../app/agc-help-privacy-policy-0000002316794885.md)的应用/元服务提供查询隐私链接、查询隐私签署状态、撤销同意记录和拉起标准化隐私弹框请求用户同意功能。
@@ -31,7 +31,7 @@ content_hash: sha256:2ac572806050476a0ddcadb24d49265c92608245ad191c464b326dbf12d
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ZPFjVN9kTTK4VnCLuFTitw/zh-cn_image_0000002749333588.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Y5wrdBaXQ3eiw6GkUvcYxA/zh-cn_image_0000002784663547.png)
 
 ### 查询隐私链接信息
 
@@ -178,7 +178,7 @@ content_hash: sha256:2ac572806050476a0ddcadb24d49265c92608245ad191c464b326dbf12d
 
 弹框样式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/1F7VoYV6TPGhiHyUypgkBg/zh-cn_image_0000002749493472.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/iXlCqpKGT_Wsk0X6yqHtcQ/zh-cn_image_0000002755024614.png)
 
 用户点击同意隐私弹框，应用市场会发送隐私弹框签署结果公共事件。应用可通过监听该事件，感知用户隐私签署结果。
 

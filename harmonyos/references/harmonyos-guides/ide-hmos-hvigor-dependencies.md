@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 添加依赖项
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置构建流程 > 添加依赖项
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:35+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:02e7a4aa365912bdb20abaf39780b2c3e5eb0fd9a256cacf1eee4400c6d70970
+scraped_at: 2026-10-11T07:23:22+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:738866009512f737f915d772086a1dd0cb5ef24e077dd0bf6b97e199793223d5
 ---
 
 应用/元服务支持通过包管理工具ohpm来安装、共享、分发代码，管理项目的依赖关系。本文介绍了在您的项目中如何配置依赖项，以及不同的配置方式在编译期间的处理逻辑和编译结果。
@@ -90,7 +90,7 @@ content_hash: sha256:02e7a4aa365912bdb20abaf39780b2c3e5eb0fd9a256cacf1eee4400c6d
 
 对比步骤2和3的构建日志，您会发现，步骤2会打印HAR相关的日志，如下图红框所示，步骤3并没有任何关于HAR的日志打印。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/2-m0v6d7SD-NHh8LSaZMwQ/zh-cn_image_0000002749483924.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/pazbAu8sRcyiHJibjYUu8A/zh-cn_image_0000002750009962.png)
 
 以上仅仅是日志的差异，为了确保编译正常，不建议将依赖项配置在工程级oh-package.json5中，下文将通过表格说明编译时具体的处理逻辑和可能造成的异常结果。
 

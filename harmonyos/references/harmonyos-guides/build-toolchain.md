@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-toolcha
 title: 编译工具链
 breadcrumb: 指南 > NDK开发 > 编译工具链
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:30+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:52+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:63e4bbefdb9566a5c78ca3e81bb06b936536057eeacf623701fa78b3e4de39cb
 ---
 

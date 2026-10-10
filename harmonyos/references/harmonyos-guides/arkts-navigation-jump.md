@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation页面路由
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation页面路由
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:02+08:00
+scraped_at: 2026-10-11T07:21:05+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:88c4ea261658f1120eb88efdc8b5e6ba3dd1d9406cf61d5aa515df86cefa8515
+content_hash: sha256:dc74d8842a143a1f5af611e83be724a3690adc74825f5f8a3f83542fa85018a1
 ---
 
 [Navigation](../harmonyos-references/ts-basic-components-navigation.md)路由相关操作均基于导航控制器[NavPathStack](../harmonyos-references/ts-basic-components-navigation.md#navpathstack10)提供的方法实现，每个Navigation都需要创建并传入一个NavPathStack对象，用于管理页面。NavPathStack主要提供了页面跳转、页面返回、页面替换、页面删除、参数获取、路由拦截等功能。
@@ -700,4 +700,4 @@ export struct PageTwo {
    ```
 2. 工程配置文件[module.json5](module-configuration-file.md)中配置{"routerMap": "$profile:router\_map"}。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/M2IAW6ZMQaGuf39F2c93yw/zh-cn_image_0000002778931171.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/q_cX-KgBTaO8hGWigfptyg/zh-cn_image_0000002755183086.gif)

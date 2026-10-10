@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/qos-guideline
 title: QoS 开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Kernel Enhance Kit（内核增强能力） > QoS 开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:37+08:00
+scraped_at: 2026-10-11T07:21:41+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:6e2df7234a55098fa4ffc5e5cd621363c99c29bc1d6649cd62b6badd05bd5c64
+content_hash: sha256:77865c4f15a44179e8f9e0df0c4ef03f02942db49fb992f26a954d4cfd59e9b2
 ---
 
 ## 场景介绍
@@ -76,7 +76,7 @@ QoS等级更高的任务相对等级更低的可能被分配更多的CPU时间�
 
 **优化前**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/a9Qj24_STrC06oAz1hLzlA/zh-cn_image_0000002749493060.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/PWAIvUIFQcin88muejbgMQ/zh-cn_image_0000002755024204.png)
 
 线程1和线程2是某程序的两个关键线程，线程1在运行时会触发新任务线程2，等线程2执行完后会唤醒线程1继续执行。在未标记这两个线程的QoS等级之前，其优先执行顺序低于线程3和线程4；此时线程1和线程2的执行效果如上图所示：
 
@@ -86,7 +86,7 @@ QoS等级更高的任务相对等级更低的可能被分配更多的CPU时间�
 
 **优化后**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/4aGBLbQuTpCrx4Jcn5Wjuw/zh-cn_image_0000002779092119.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/2AQ9wo6cR3KTU6jaDcd_fQ/zh-cn_image_0000002755184092.png)
 
 合理标记线程1和线程2的QoS等级后，两个线程的执行优化效果如上图所示：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_interface_xcomponent.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_interface_xcomponent.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7a80f971e7e128ca9f85d1c1799c01a8aa95c7cda806076dd5c46f2c56d1a456
+scraped_at: 2026-10-11T07:24:54+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:8db61c133904a734bfa86f3d1c652da26c8d3d5419c9cd217fe7b8a973f29296
 ---
 
 ## 概述
@@ -396,8 +396,8 @@ int32_t OH_NativeXComponent_GetXComponentOffset(OH_NativeXComponent* component, 
 | --- | --- |
 | [OH\_NativeXComponent](capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent.md)\* component | 表示指向[OH\_NativeXComponent](capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent.md)实例的指针。 |
 | const void\* window | 表示NativeWindow句柄。 |
-| double\* x | 表示指向当前Surface相对于XComponent父组件左顶点x坐标的指针。单位：vp。 |
-| double\* y | 表示指向当前Surface相对于XComponent父组件左顶点y坐标的指针。单位：vp。 |
+| double\* x | 表示指向当前Surface相对于XComponent父组件左顶点x坐标的指针。单位：px。 |
+| double\* y | 表示指向当前Surface相对于XComponent父组件左顶点y坐标的指针。单位：px。 |
 
 **返回：**
 

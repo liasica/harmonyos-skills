@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/canvas-dr
 title: 画布绘制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:05+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:24:34+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:0d43e6fd5fb4f664a6875f617111ffc2a5ee29f01a576ce0ae96698a72fa9ea0
 ---
 

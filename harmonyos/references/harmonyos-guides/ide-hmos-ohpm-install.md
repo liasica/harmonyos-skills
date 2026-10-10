@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm install
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm install
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:25+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7a341a7203eb9ec736733dc4a44828d90f9e3b0d76b7f51b42a73a2c19561c5c
 ---
 

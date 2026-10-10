@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arViewController（AR场景管理能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arViewController（AR场景管理能力）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3260cbc661ac12a520c766813f2659a268a30d44b2797bbb6e5f394a7301bff2
+scraped_at: 2026-10-11T07:27:41+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:262199e3acebcd75a16dd34f0a186668590a4ad6eeefd19ef401a45d23c980da
 ---
 
 本模块提供AR Engine（AR引擎服务）的arViewController（AR场景管理能力）相关接口。
@@ -774,7 +774,7 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
     console.info(`update node pose = ${node.position}`);
   }
 
-  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+  onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
     let arSession: arEngine.ARSession | undefined = ctx.session;
     if (arSession) {
       let frame: arEngine.ARFrame = arSession.getFrame();
@@ -782,7 +782,7 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
         console.error('Failed to get arSession.frame, it is undefined or null');
       } else {
         console.info(`Succeeded in getting arSession.frame = ${frame.timestamp}`);
-        await frame.release();
+        frame.release();
       }
     } else {
       console.error('Failed to get arSession, arSession is undefined');
@@ -880,7 +880,7 @@ onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine
 
 abstract onFrameUpdate(ctx: ARViewContext, sysBootTs: number): void
 
-AR场景每帧刷新前会自动触发该回调，开发者可以基于此回调进行AR实体摆放位姿调整、动画调整以及相机位姿调整等。
+AR场景每帧刷新前自动触发该回调，开发者可在此调整AR实体位姿、动画及相机位姿。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -911,7 +911,7 @@ onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
       console.error('Failed to get arSession.frame, it is undefined or null');
     } else {
       console.info(`Succeeded in getting arSession.frame = ${frame.timestamp}`);
-      await frame.release();
+      frame.release();
     }
   } else {
     console.error('Failed to get arSession, arSession is undefined');

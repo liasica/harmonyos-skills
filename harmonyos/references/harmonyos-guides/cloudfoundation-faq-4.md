@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 运行应用时报“XXX Read timed out”异常
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit常见问题 > 预加载 > 运行应用时报“XXX Read timed out”异常
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:06+08:00
+scraped_at: 2026-10-11T07:22:12+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:20a29207f6cd39edda1d393be49a5936af852c8e7bcb6f66875111b1b5cd0972
+content_hash: sha256:c5e5440c563682c11ef803966c636553735dbc7ae650046a7b223fcf3ceced1b
 ---
 
 **问题现象**
 
 运行应用时报“XXX Read timed out”异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ZULCcYkgRUOTVq0hcnQWZQ/zh-cn_image_0000002749493564.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/lycB3UOnSwKhuDfo2Y8L9w/zh-cn_image_0000002755024706.png)
 
 **解决措施**
 

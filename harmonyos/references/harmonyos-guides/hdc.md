@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc
 title: hdc
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hdc
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:44+08:00
+scraped_at: 2026-10-11T07:21:49+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:2f51625faaf09b70d466ad3d2aded32bb53297523961c4b6bb48a0f315569f63
+content_hash: sha256:f09d691b8da096c53fe0876aad71a4d6d3298b46e1877bd57d9998b41a4db552
 ---
 
 hdc（HarmonyOS Device Connector）是提供给开发人员的命令行调试工具，用于与设备进行交互调试、数据传输、日志查看以及应用安装等操作。该工具支持在Windows/Linux/MacOS系统上运行，为开发者提供高效、便捷的设备调试能力。
@@ -20,7 +20,7 @@ hdc包含三部分：
 
 如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/YEV8dHFoSeq80s8KJQ8URA/zh-cn_image_0000002749493110.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/f-1Kh1gUQUek5Fh8hjMfjQ/zh-cn_image_0000002755024254.png)
 
 **说明** 
 
@@ -401,7 +401,7 @@ TCP调试功能尚未稳定，建议仅在测试环境中使用。
 
 远程连接场景指客户端（通常是开发者使用的本地电脑）通过网络与服务器（通常是连接了调试设备的服务器或开发机）建立连接，实现客户端对目标设备的远程调试，控制和管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/chAdxVPDRP-sLBAjlTlPBQ/zh-cn_image_0000002779092169.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/gZMQoNiWQ72Y5Pdv6-MPaA/zh-cn_image_0000002755184142.png)
 
 远程连接使用-s参数来指定服务器的网络参数，包括地址和端口号，该设置只在当前命令执行期间有效，命令格式如下：
 
@@ -1867,7 +1867,7 @@ Linux和MacOS系统非管理员角色运行hdc后，使用USB方式连接设备�
 
 hdc文件传输命令执行出现乱码，如使用file recv从设备端发送带有中文名称的文件到本地，报错提示[Fail]Error opening file: no such file or directory, path:XXXXX，其中path显示中文乱码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/9zj3btI5QuikXuyFJr43pQ/zh-cn_image_0000002778932311.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/DRjShMuTRQuAyzIrWhZc0Q/zh-cn_image_0000002784583009.png)
 
 **可能原因&解决方法**
 
@@ -1881,7 +1881,7 @@ API版本12开始，文件传输命令支持参数路径中包含中文，版本
 
 使用hdc list targets命令查询已连接设备，连接设备标识后显示Unauthorized。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/eRCp68oZS9iFwC3sGjDVFw/zh-cn_image_0000002749333228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/19Q22Ls1QdOuV4emAFrYzA/zh-cn_image_0000002784663189.png)
 
 **可能原因&解决方法**
 

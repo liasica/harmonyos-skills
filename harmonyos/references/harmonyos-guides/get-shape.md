@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-shape
 title: 物体语义
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 物体语义
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:29+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:02+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:eda52cd489ff4e97aba89c62d7779bc30dc254764c9b2bf6dfc9328f8d6301bf
 ---
 

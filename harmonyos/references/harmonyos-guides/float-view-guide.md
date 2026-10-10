@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/float-view-gu
 title: 闪控窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 闪控窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:34+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:f7118ffe3d2f45473203c2cab002cab3191d919db80f54162f8265c2f7b2aca0
+scraped_at: 2026-10-11T07:21:15+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:1a1b501d611022cd174a76e300f5af16782c68e9936d997274467ac3e4f71c04
 ---
 
 ## 场景介绍
@@ -61,12 +61,12 @@ content_hash: sha256:f7118ffe3d2f45473203c2cab002cab3191d919db80f54162f8265c2f7b
 1. 使用闪控窗前请先参考[前提条件](float-view-guide.md#前提条件)申请ohos.permission.FLOAT\_VIEW权限。
 
    ```typescript
-   // 应用初始化创建，申请用户授权
+   // 应用初始化创建，确认用户授权状态
    aboutToAppear(): void {
      let flag = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
      let bundleInfo = bundleManager.getBundleInfoForSelfSync(flag);
      let atManager = abilityAccessCtrl.createAtManager();
-     atManager.verifyAccessToken(bundleInfo.appInfo.accessTokenId, 'ohos.permission.FLOAT_VIEW').then(data => {
+     atManager.checkAccessToken(bundleInfo.appInfo.accessTokenId, 'ohos.permission.FLOAT_VIEW').then(data => {
        console.info('Permission check: ' + JSON.stringify(data));
        this.result = data === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED ? '权限已授权' : '权限未授权';
      });
@@ -74,10 +74,11 @@ content_hash: sha256:f7118ffe3d2f45473203c2cab002cab3191d919db80f54162f8265c2f7b
      let enable: boolean = floatView.isFloatViewEnabled();
      console.info(TAG + 'floatView enabled is: ' + enable);
    }
-   // 确认用户授权状态
+   // 申请用户授权
    requestPermission(): void {
      let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-     atManager.requestPermissionsFromUser(getContext(this), ['ohos.permission.FLOAT_VIEW'] as Permissions[])
+     let hostContext = this.getUIContext().getHostContext();
+     atManager.requestPermissionsFromUser(hostContext, ['ohos.permission.FLOAT_VIEW'] as Permissions[])
        .then((data) => {
          console.info(TAG + `grant result: ${data.authResults}.`);
          this.result = data.authResults[0] === 0 ? '权限已授权' : '权限被拒绝';
@@ -199,7 +200,7 @@ content_hash: sha256:f7118ffe3d2f45473203c2cab002cab3191d919db80f54162f8265c2f7b
      let flag = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
      let bundleInfo = bundleManager.getBundleInfoForSelfSync(flag);
      let atManager = abilityAccessCtrl.createAtManager();
-     atManager.verifyAccessToken(bundleInfo.appInfo.accessTokenId, 'ohos.permission.FLOAT_VIEW').then(data => {
+     atManager.checkAccessToken(bundleInfo.appInfo.accessTokenId, 'ohos.permission.FLOAT_VIEW').then(data => {
        console.info('Permission check: ' + JSON.stringify(data));
        this.result = data === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED ? '权限已授权' : '权限未授权';
      });

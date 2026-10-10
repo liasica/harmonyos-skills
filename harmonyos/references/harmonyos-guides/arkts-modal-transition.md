@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-t
 title: 模态转场
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 模态转场
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:06+08:00
+scraped_at: 2026-10-11T07:21:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ce20d3d043671c9a41fc5bc56190f13508e7c196d221af9e358669cc0b39309a
+content_hash: sha256:287ab9f9c8891ace80e00d90ee09780989d512f0d8a0f2c2b724afd9b37fe53b
 ---
 
 模态转场是新的界面覆盖在旧的界面上，旧的界面不消失的一种转场方式。
@@ -257,7 +257,7 @@ struct BindContentCoverDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/t1z8nnHJS6Oybdbgv1ojdw/zh-cn_image_0000002749332564.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/3N42RF26S7CfNTr5-FO8sQ/zh-cn_image_0000002784582345.gif)
 
 ## 使用bindSheet构建半模态转场效果
 
@@ -374,7 +374,7 @@ struct BindSheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/pwBEFKC6QsSSjlQvo0bzYQ/zh-cn_image_0000002749492448.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/xP84VDt2RfmzMAJ3cqhjXg/zh-cn_image_0000002784662525.gif)
 
 ## 使用bindMenu实现菜单弹出效果
 
@@ -430,7 +430,7 @@ struct BindMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/mEiBuqylS4KRgrV-1NZKzg/zh-cn_image_0000002779091507.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ovvxYxtASQuUd3HaO0XrwA/zh-cn_image_0000002755023592.gif)
 
 ## 使用bindContextMenu实现菜单弹出效果
 
@@ -511,7 +511,7 @@ struct BindContextMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/KiKAKbXeQqaQiX_tYNjUfg/zh-cn_image_0000002778931649.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/lJusTvSVT6q-IvMXuMutsg/zh-cn_image_0000002755183478.gif)
 
 ## 使用bindPopup实现气泡弹窗效果
 
@@ -573,7 +573,7 @@ struct BindPopupDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/71m02vJBROCRqL-7Zsit-Q/zh-cn_image_0000002749332566.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_mfaenPuRhKbzjXgTgQ5Lw/zh-cn_image_0000002784582347.gif)
 
 ## 使用if实现模态转场
 
@@ -779,4 +779,4 @@ struct ModalTransitionWithIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/wBHsctNwTG62cQnmS4J2nQ/zh-cn_image_0000002749492450.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/TAMMhjL9TaeAgoqfK7T1hA/zh-cn_image_0000002784662527.gif)

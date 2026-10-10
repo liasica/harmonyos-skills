@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/multimoda
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:24+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:47+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:30d5a64d170aa1588f256ed8cd5215a31e3a41b698c932b39225b1ea750a522f
 ---
 

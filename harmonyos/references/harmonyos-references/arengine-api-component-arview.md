@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: ARView（AR场景可视化）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS组件 > ARView（AR场景可视化）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:39+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1ef5d7b55984e32ecbffda6d03e75799fc1353c091b4f3e341343af7c22cd00a
+scraped_at: 2026-10-11T07:27:40+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:b534fd7c0a10fcbcb47056d94db9ff265213af89e7b960a3b1d6883dc8e36e08
 ---
 
 用于承载ARViewContext，实现AR场景可视化呈现。
@@ -46,7 +46,7 @@ import { ARView, arViewController } from '@kit.AREngine';
 
 build(): void
 
-用于创建ARView对象的构造函数。
+用于构建ARView组件的UI结构。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

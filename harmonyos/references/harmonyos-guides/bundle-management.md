@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bundle-manage
 title: 包管理
 breadcrumb: 指南 > NDK开发 > 代码开发 > 包管理
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:30+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:52+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7988eb50bd60dffad7e6271e66b5355bb12b95d552394e656aeb782b76ee8617
 ---
 

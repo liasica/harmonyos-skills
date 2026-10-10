@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Polygon
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Polygon
 category: harmonyos-references
-scraped_at: 2026-10-01T07:37:07+08:00
+scraped_at: 2026-10-11T07:24:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d5c5ad04b6b2998861e70ac47a036e971196f9d81f1879b7dc5508b8fa35cbdb
+content_hash: sha256:1f8d46355ba7878f469ba9c61170e471e35043ec2a4add5001a636de4fa2cebc
 ---
 
 多边形绘制组件。该组件通过设置顶点坐标列表来定义多边形的形状，支持填充颜色、边框样式等属性配置。组件采用二维坐标系统，按照顶点顺序依次连接形成封闭多边形区域。适用于绘制三角形、四边形、五边形等自定义多边形形状，以及实现图表、图标等需要多边形元素的可视化场景。
@@ -138,7 +138,7 @@ struct PolygonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/0inZpFRkQIu1_f_zd29s2A/zh-cn_image_0000002779094041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/q718nP8TR06yImq1wzFCTg/zh-cn_image_0000002755185870.png)
 
 ### 示例2（宽和高使用不同参数类型绘制多边形）
 
@@ -169,7 +169,7 @@ struct PolygonTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/WPoav7QpR96WXJT-tfRymQ/zh-cn_image_0000002778934185.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/LlThE_IyTyaOY_4KYoYT2A/zh-cn_image_0000002784584737.png)
 
 ### 示例3（使用attributeModifier动态设置Polygon组件的属性）
 
@@ -212,4 +212,4 @@ struct PolygonModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/vG6z2WQWQqS_vZp9hc7SZA/zh-cn_image_0000002749335102.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/ebHFDs3XTtuaPG7aNMGn7A/zh-cn_image_0000002784664919.png)

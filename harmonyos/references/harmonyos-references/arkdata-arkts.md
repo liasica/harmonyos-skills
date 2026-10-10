@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkdata-a
 title: ArkTS API
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:11+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:23:40+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:13b110ca4bb72907661ffb7144e2be78790ed5dbb09705b1d6d7949f0b628ef9
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-buil
 title: 构建应用
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:34+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:21+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:de662f849282040862d1c87e4140aa0f850c0c365c6194d045911100d3d7ce06
 ---
 

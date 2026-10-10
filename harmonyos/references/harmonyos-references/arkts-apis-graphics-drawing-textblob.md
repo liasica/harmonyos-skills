@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (TextBlob)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (TextBlob)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6128b63030d714f0afb5342699ec607c92d7ae015a8688627d25217505315abe
+scraped_at: 2026-10-11T07:27:45+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:f40f5e9fc5219a25123350e572f30a5397ed5089f27e169e9d5a6d2eda8a98b3
 ---
 
 TextBlob是由一个或多个具有相同字型的字符组成的字块。支持通过文本、字符串、RunBuffer等多种方式创建字形集合，适用于需要批量渲染文本或获取文字边界框的场景。
@@ -93,7 +93,7 @@ uniqueID(): number
 **示例：**
 
 ```ts
-import { drawing } from "@kit.ArkGraphics2D";
+import { drawing } from '@kit.ArkGraphics2D';
 
 let text : string = 'TextBlobUniqueId';
 let font : drawing.Font = new drawing.Font();

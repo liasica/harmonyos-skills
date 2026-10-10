@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-right-s
 title: 选择合适的录制流类型
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 选择合适的录制流类型
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c3eed1e24cb174457a7ef4191538401332599978fe47517db905ff6e71fa0242
+scraped_at: 2026-10-11T07:21:51+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:ddc77d2911aff789e269a06ce20730a26bf68099d8e0883d93911fef4ced4210
 ---
 
 录制流类型由[SourceType](../harmonyos-references/arkts-apis-audio-e.md#sourcetype8)定义，用于向系统标识录制流的使用场景。系统会将其用于[音频焦点策略](audio-playback-concurrency.md#音频焦点策略)和[音频通路配置](audio-performance.md#了解系统音频通路)，部分类型还对应特定的录音处理场景。
@@ -18,7 +18,7 @@ content_hash: sha256:c3eed1e24cb174457a7ef4191538401332599978fe47517db905ff6e71f
 | --- | --- | --- |
 | SOURCE\_TYPE\_MIC | 普通录音，如录音机。 | 系统按普通录音场景配置默认输入通路和录音处理。存在更明确的业务类型时，优先选择对应类型。 |
 | SOURCE\_TYPE\_VOICE\_RECOGNITION9+ | 语音识别。 | 对应语音识别处理场景，系统可根据设备配置匹配语音识别输入通路。 |
-| SOURCE\_TYPE\_PLAYBACK\_CAPTURE | 录制其他应用送到系统中播放的原始音频数据。 | 从API版本12开始废弃，Audio Kit不再提供内录接口。内录场景请使用[AVScreenCapture](../harmonyos-references/capi-avscreencapture.md)。 |
+| SOURCE\_TYPE\_PLAYBACK\_CAPTURE | 录制其他应用送到系统中播放的原始音频数据。 | 以设备内部播放音频作为采集源进行录制，不受周围环境噪声影响。从API版本12开始废弃。如需实现内录功能，推荐使用[AVScreenCapture](../harmonyos-references/capi-avscreencapture.md)。从API版本26.0.0开始，也可以通过[AudioCapturer](../harmonyos-references/arkts-apis-audio-audiocapturer.md)（ArkTS）或[native\_audiocapturer.h](../harmonyos-references/capi-native-audiocapturer-h.md)（C API）配置内录模式，具体请参考[实现录制系统音频](implement-system-audio-recording.md)。 |
 | SOURCE\_TYPE\_VOICE\_COMMUNICATION | VoIP语音或视频通话。 | 增强人声录制并抑制环境音等非人声。根据[SourceType](../harmonyos-references/arkts-apis-audio-e.md#sourcetype8)定义，单独启动录制会开启3A算法。 |
 | SOURCE\_TYPE\_VOICE\_MESSAGE12+ | 录制语音短消息。 | 标识语音消息录制场景。根据系统默认的[音频焦点策略](audio-playback-concurrency.md#音频焦点策略)，开始录制时会暂停正在播放的音乐，并在录制结束后通知音乐应用恢复播放。 |
 | SOURCE\_TYPE\_CAMCORDER13+ | 相机录像。 | 向系统标识录像用途，系统可根据设备配置匹配录像输入通路。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: CommonEventSubscribeInfo
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > commonEvent > CommonEventSubscribeInfo
 category: harmonyos-references
-scraped_at: 2026-10-01T07:38:45+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:5b52b21f1adfe3ca610f482fcd773b7d88c36dd77abf780883790302acdbe23e
+scraped_at: 2026-10-11T07:26:29+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:1ed20a6ebb5ff6602ffebdd921dc525f40e03f1454a7bb1b4271c1964b03a0b1
 ---
 
 用于表示公共事件订阅者的信息，支持配置订阅的公共事件类型、发布方权限、发布方设备ID、用户ID、订阅优先级等参数，适用于应用需要订阅[系统公共事件](../harmonyos-guides/common-event-glossary.md#system-common-event系统公共事件)或自定义公共事件并精细化控制事件来源的场景。
@@ -25,8 +25,8 @@ content_hash: sha256:5b52b21f1adfe3ca610f482fcd773b7d88c36dd77abf780883790302acd
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | events | Array<string> | 否 | 否 | 表示要订阅的公共事件列表。 |
-| publisherPermission | string | 否 | 是 | 表示发布方的权限，取值为系统已定义的权限名。用于限制订阅方只接收具有该权限的发布方发布的公共事件。不设置时，可接收所有发布方发布的公共事件。 |
-| publisherDeviceId | string | 否 | 是 | 表示设备ID，用于限制订阅者只接收来自指定设备发布的公共事件。通过[@ohos.deviceInfo](js-apis-device-info.md)获取udid，作为发布方的设备ID。预留能力，暂不支持。 |
+| publisherPermission | string | 否 | 是 | 表示发布方的权限，取值为系统已定义的权限名。用于限制订阅方只接收具有该权限的发布方发布的公共事件。不设置时，可接收所有发布方发布的公共事件。字符串长度不超过254字节，超出部分会被截断。 |
+| publisherDeviceId | string | 否 | 是 | 表示设备ID，用于限制订阅者只接收来自指定设备发布的公共事件。通过[@ohos.deviceInfo](js-apis-device-info.md)获取udid，作为发布方的设备ID。预留能力，暂不支持。字符串长度不超过254字节，超出部分会被截断。 |
 | userId | number | 否 | 是 | 表示用户ID，用于限制订阅者只接收指定用户ID相关的公共事件。此参数是可选的，默认值为当前用户的ID。如果指定了此参数，则该值必须是系统中现有的用户ID。通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)获取系统用户ID，作为发布方的用户ID。 |
 | priority | number | 否 | 是 | 表示订阅者的优先级，数值越大，订阅者优先级越高，越优先接收到[有序公共事件](../harmonyos-guides/common-event-glossary.md#ordered-common-event有序公共事件)。取值范围是-100到1000，超过上下限的优先级将被设置为对应的上下限值，默认优先级为0。 |
-| publisherBundleName11+ | string | 否 | 是 | 表示要订阅的发布方的bundleName，用于限制订阅方只接收该bundleName的发布方发布的公共事件。不设置时，可接收所有应用发布的公共事件。 |
+| publisherBundleName11+ | string | 否 | 是 | 表示要订阅的发布方的bundleName，用于限制订阅方只接收该bundleName的发布方发布的公共事件。不设置时，可接收所有应用发布的公共事件。字符串长度不超过254字节，超出部分会被截断。 |

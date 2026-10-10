@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-tool
 title: 工具概述
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工具概述
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:27+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:15+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:973008f9dc92e69fd2bec2451527b1f30cb10e0bd52a5d2a79b43ca889b9c325
 ---
 

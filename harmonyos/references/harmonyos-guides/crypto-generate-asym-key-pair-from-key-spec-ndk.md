@@ -3,14 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 指定密钥参数生成非对称密钥对(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定密钥参数生成非对称密钥对(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8b30977d0733a5456f0474a1e7041395f72be7093815e1dfc6d4c22096f623d8
+scraped_at: 2026-10-11T07:21:25+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:ca9b82622ce9072e0ec4486d451f37c205944c31f6923132dc30d812ca734355
 ---
 
 以RSA、ECC、SM2为例，根据指定的密钥参数，生成非对称密钥对（KeyPair），并获取密钥参数属性。
 
 该对象可用于后续的加解密等操作。获取的密钥参数属性可用于存储或传输。
+
+## 在CMake脚本中链接相关动态库
+
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
+```
 
 ## 指定密钥参数生成RSA密钥对
 

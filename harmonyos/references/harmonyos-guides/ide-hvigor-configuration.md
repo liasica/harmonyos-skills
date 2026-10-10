@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-co
 title: 配置构建流程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:18+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:06+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:5696c30a65db507a1898b6c2bc53e899fe4ef9a4c40d9f672c20e7f8a6038512
 ---
 

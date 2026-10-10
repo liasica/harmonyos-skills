@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-ascen
 title: AscendC API列表
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > AscendC API列表
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:26+08:00
+scraped_at: 2026-10-11T07:22:31+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:18dafffb7ab1bc396010b78433d89526a3e22185b9308979ef43c3692acd1aa0
+content_hash: sha256:3ddd0fdd850be283074dc2bb9cd98049b768a85b1203accc9fd6c956ce686572
 ---
 
 AscendC提供一组类库API，开发者使用标准C++语法和类库API进行编程。AscendC编程类库API示意图如下所示，分为：
@@ -25,7 +25,7 @@ AscendC提供一组类库API，开发者使用标准C++语法和类库API进行�
 
   进行AscendC算子Host侧编程时，需要使用基础数据结构和API，请参考[gert命名空间](cannkit-anchorinstanceinfo-introduction.md)，完成算子开发后，需要使用Runtime API完成算子的调用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/f_r8nXJdTDG7xmocBIlXaA/zh-cn_image_0000002749493992.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/uy9D9z_sQWa8ysnAtewsgg/zh-cn_image_0000002755025128.png)
 
 ## Kernel API-基础API
 

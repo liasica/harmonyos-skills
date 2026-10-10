@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model
 title: 进程模型概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 进程模型 > 进程模型概述
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:50+08:00
+scraped_at: 2026-10-11T07:20:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bbc5daada9b2bd90808aadb3dcea15a16a0759bd57e13cbaf3d91f58f64cd81b
+content_hash: sha256:e57779f590e6912bf63ac0d4cae30886f6bfc45327d68550e697d8f216aa1a63
 ---
 
 进程是系统分配资源的基本单位，也是操作系统运行结构的重要基础。下面从应用全局视角介绍系统的进程模型。
@@ -32,7 +32,7 @@ HarmonyOS的进程模型则以组件为中心，大多数情况下应用并不�
 
 **图1** 基本进程类型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/w4e4i90dS0qc-cJ2Ug_0Nw/zh-cn_image_0000002779090643.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/KnK0Srh4QMijZRoIT-rrBw/zh-cn_image_0000002755022842.png)
 
 **说明** 
 
@@ -53,4 +53,4 @@ HarmonyOS的进程模型则以组件为中心，大多数情况下应用并不�
 
 **图2** 独立进程配置和子进程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/VjSeWSG1QCSJj7ad4CDyCQ/zh-cn_image_0000002778930787.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/ma5Zyn70TcalSpewlSMUPg/zh-cn_image_0000002755182728.png)

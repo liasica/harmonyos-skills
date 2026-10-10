@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-faq
 title: PDF Kit 常见问题
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PDF Kit 常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:54+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:22+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:b2a679dc4fccbcecc01d91c3b983a089c4221c923134bbf872e1f17c4d9bdda2
 ---
 

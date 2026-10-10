@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-devel
 title: 音视频编解码开发实践
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:19+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:53+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:70acdadb47aac346c6de8d795140258c524f4412072143df7c7236ac9b35c920
 ---
 

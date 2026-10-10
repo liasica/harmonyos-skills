@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 概述
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:34+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:21+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:bfb44694000e5968b87e1a03c496ac1a687f23bd2c987deee7d788e883818f33
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/universal
 title: 头文件
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:29+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:54+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:93bc0ec6d8c13ad4e9064a17382c456acafb9db64180b402ff19eed695d9d976
 ---
 

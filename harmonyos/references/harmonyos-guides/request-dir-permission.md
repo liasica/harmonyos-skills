@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-dir-p
 title: 获取并使用公共目录
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 获取并使用公共目录
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:39+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:19+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7cc98bc89ab58b0c4e4f524b9d6570c990fdd55f99d8fc30b55c2f6902394bc0
 ---
 

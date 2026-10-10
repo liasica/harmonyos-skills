@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 数字盾密码管理
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾密码管理
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:51+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:29+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:23aa03ba0b9ebf1bcc9a7c074159f1e1cb39f797864f6c3593578981c1ef1f66
 ---
 

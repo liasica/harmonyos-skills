@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/distribut
 title: Distributed Service Kit（分布式管理服务）
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:41+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:26:05+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7f5d7898eb856b6bcd406887011cab176137f01cd9c00ff88eb4dbebf99ffedd
 ---
 

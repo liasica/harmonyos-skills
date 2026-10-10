@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-body
 title: 人体骨骼点识别与跟踪介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人体骨骼点识别与跟踪 > 人体骨骼点识别与跟踪介绍
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:56+08:00
+scraped_at: 2026-10-11T07:22:02+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:e818a0b37ec3218d5a24c19b463d342760f6f19436970f515f724604d3d6ddf4
+content_hash: sha256:35da5315dc1bf66c56fc0158e1fa729de34668b3960e27ae5897e6ef53a72add
 ---
 
 AR Engine提供骨骼关键点识别的能力，检测场景中是否存在人体，识别之后输出人体20个骨骼关键点坐标。
@@ -14,7 +14,7 @@ AR Engine提供骨骼关键点识别的能力，检测场景中是否存在人�
 
 **图1** 人体骨骼点示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/0aGcTf8PQPmjD46NNSvq6w/zh-cn_image_0000002749333404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/-aBGDKiGSp68wCNFDjKQtQ/zh-cn_image_0000002784663363.png)
 
 **说明** 
 

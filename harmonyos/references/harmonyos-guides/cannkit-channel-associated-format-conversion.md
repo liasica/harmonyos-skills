@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-chann
 title: 随路格式转换
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 数据搬运 > DataCopy > 随路格式转换
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:27+08:00
+scraped_at: 2026-10-11T07:22:33+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:81bb66b7660f6ef56df4a5f85df35108634d30b5565328b07a042bf7d12e1280
+content_hash: sha256:645d02d37fba04c5f42d833e3079aebf75c30fa17a0ebc9c02dd0b040715913d
 ---
 
 ## 功能说明
@@ -90,7 +90,7 @@ ND2NZ转换示意图如下，样例中参数设置值和解释说明如下。
 
 **图1** Nd2Nz转换示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/1G4B8lRFTri66rNykxoS5A/zh-cn_image_0000002779093069.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Qu7bWj-HSBusonvb6ZLg6A/zh-cn_image_0000002755185034.png)
 
 ## 支持的型号
 

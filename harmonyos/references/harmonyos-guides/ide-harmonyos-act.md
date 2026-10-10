@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-harmonyos
 title: 智能执行
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 智能执行
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:25+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:13+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:37afac8d506eabcf0c2d89e3c0e934f2b50e725ca107c9ccac55b14147d11680
 ---
 

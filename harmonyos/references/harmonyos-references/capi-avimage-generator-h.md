@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avim
 title: avimage_generator.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avimage_generator.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3a11f627b73f50dcc24060a90cd5cbe75d0b999f4e5d6f9e3e88bc564af553d6
+scraped_at: 2026-10-11T07:27:33+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:532a441336af114f54a35d355504ca674612ab8a1b168f1e027d61a7f0a3889b
 ---
 
 ## 概述
@@ -59,7 +59,7 @@ OH_AVImageGenerator* OH_AVImageGenerator_Create(void)
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVImageGenerator](capi-avimagegenerator-oh-avimagegenerator.md)\* | 创建成功时返回指向OH\_AVImageGenerator实例的指针，否则返回空指针。  可能的失败原因：HstEngineFactory未能创建AVMetadataHelperEngine。 |
+| [OH\_AVImageGenerator](capi-avimagegenerator-oh-avimagegenerator.md)\* | 创建成功时返回指向OH\_AVImageGenerator实例的指针，否则返回空指针。  可能的失败原因：HstEngineFactory未能创建AVImageGeneratorEngine。 |
 
 ### OH\_AVImageGenerator\_SetFDSource()
 

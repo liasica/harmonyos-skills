@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 手势冲突处理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 手势冲突处理
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:06+08:00
+scraped_at: 2026-10-11T07:21:09+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:dd3df15033b75dbf6179899232cadbd6649c0b730d0308df9a7c8b38794292c8
+content_hash: sha256:50cc38c88ad280f66254d049e933b094d2aae109e27e267ca184b49eab1baebe
 ---
 
 手势冲突是指多个手势识别器在同一组件或重叠区域同时识别时产生竞争，导致识别结果不符合预期。常见冲突场景包括：
@@ -22,7 +22,7 @@ content_hash: sha256:dd3df15033b75dbf6179899232cadbd6649c0b730d0308df9a7c8b38794
 
 **图1** 自定义手势判定流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/WGVVXzy_TBKyiOpxHLW38A/zh-cn_image_0000002749332542.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Oan8gr4QRTyIitrG3tihog/zh-cn_image_0000002784582323.png)
 
 自定义手势判定涉及以下接口。
 
@@ -35,7 +35,7 @@ content_hash: sha256:dd3df15033b75dbf6179899232cadbd6649c0b730d0308df9a7c8b38794
 
 **图2** 示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/UotLGgXAQkSD0F7L57PO_A/zh-cn_image_0000002749492426.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/lFF_S18yT_axfpM8SftKvg/zh-cn_image_0000002784662503.png)
 
 1. Image组件设置拖拽。
 
@@ -163,7 +163,7 @@ content_hash: sha256:dd3df15033b75dbf6179899232cadbd6649c0b730d0308df9a7c8b38794
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Eh0EyDdrR_GeJG7AQD_iYw/zh-cn_image_0000002779091485.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/o-AX1vZPQgSsl9m6vgdG8w/zh-cn_image_0000002755023570.png)
 
 ## 手势并行动态控制
 
@@ -171,7 +171,7 @@ content_hash: sha256:dd3df15033b75dbf6179899232cadbd6649c0b730d0308df9a7c8b38794
 
 **图3** 手势并行动态控制流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Zx-izKslTqCWz5BM1U7Bgw/zh-cn_image_0000002778931627.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ewNy8N4aRh2ziJKf8DQjLA/zh-cn_image_0000002755183456.png)
 
 手势并行动态控制的前提是手势识别成功，如果手势不成功则不会产生手势回调响应。
 
@@ -962,7 +962,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/dOp8S-rCTNatfZR81iqdQQ/zh-cn_image_0000002749332544.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/er_I_eq_SKKM9oluB_A8Xw/zh-cn_image_0000002784582325.gif)
 
 ## 自定义干预事件和手势的收集结果
 

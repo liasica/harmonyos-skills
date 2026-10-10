@@ -3,12 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-ag
 title: 使用DH进行密钥协商(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥协商 > 使用DH进行密钥协商(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:524f47445b20bd93f77e00e0a492a3818f2092194d537cf5207341b5bc5ada2f
+scraped_at: 2026-10-11T07:21:27+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:50b835638cbdd7d2f2a7ffeccb4ed16b72b17e2f8c796f68bc22ba2dd5217ed1
 ---
 
 对应的算法规格请查看[密钥协商算法规格：DH](crypto-key-agreement-overview.md#dh)。
+
+## 在CMake脚本中链接相关动态库
+
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
+```
 
 ## 开发步骤
 

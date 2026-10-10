@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hicollie-sett
 title: 使用HiCollie监控函数执行时间超长问题（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 业务线程超时检测 > 使用HiCollie监控函数执行时间超长问题（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:14+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:bba70a71d16cc3f58ba41ccd16f7512df72550d4bc7459936e07d7f8701e93b1
+scraped_at: 2026-10-11T07:21:47+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:4f04fe24bc9dd0e31bdc7fad930f0ae9402a6ee596a5b4aa4f8759ce1722a4d4
 ---
 
 ## 简介
@@ -91,6 +91,8 @@ content_hash: sha256:bba70a71d16cc3f58ba41ccd16f7512df72550d4bc7459936e07d7f8701
            OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimer taskId: %{public}d", id); // 打印任务id
            sleep(2);  // 模拟执行耗时函数，在这里简单地将线程阻塞2s
            OH_HiCollie_CancelTimer(id);  // 根据id取消已注册任务
+       } else {
+           OH_LOG_INFO(LogType::LOG_APP, "OH_HiCollie_SetTimer failed, errorCode is %{public}d", errorCode);
        }
        return nullptr;
    }

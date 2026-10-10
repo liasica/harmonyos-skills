@@ -3,14 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-si
 title: SM2签名数据格式转换(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > SM2签名数据格式转换(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:43+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:ec90c24544b4ba862470e256046112d01e174ca9b90141737196ce61942e6eba
+scraped_at: 2026-10-11T07:21:27+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:4b9f1e5b0e9e5f64122ae4495ce7b20ae330217f85cea94ae9ffeed9650ec271
 ---
 
 当前支持DER格式与r、s格式互转的能力。
 
 开发者可指定SM2签名参数，将其转换成DER格式签名数据。反之，也可以从DER格式签名数据中提取出SM2的具体签名参数。
+
+## 在CMake脚本中链接相关动态库
+
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
+```
 
 **指定签名参数，转换为DER格式**
 

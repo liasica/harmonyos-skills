@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 模拟点击检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 业务风险检测 > 模拟点击检测
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:25+08:00
+scraped_at: 2026-10-11T07:21:29+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:846976b9c03738605c9e73e79bfe9f3403df3eee122c872c8ed61fee1007c255
+content_hash: sha256:5a33ab509296722d6ddbc264256c291e8b870f3a8f061106bca53833d3f2e708
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:846976b9c03738605c9e73e79bfe9f3403df3eee122c872c8ed61fee100
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/-njk-Ub2SL6B1WwRey-fFA/zh-cn_image_0000002749492972.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/u8TcE9WjTTyM_skqu7NPzQ/zh-cn_image_0000002755024116.png)
 
 **流程说明：**
 

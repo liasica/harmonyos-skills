@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ability-a
 title: application
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:04+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:23:33+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:846453a55daf405c0f166fc06d84e302cb99db25d11b202524c3b697b8009be7
 ---
 

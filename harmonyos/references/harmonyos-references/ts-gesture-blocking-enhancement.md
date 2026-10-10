@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 手势拦截增强
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 手势控制 > 手势拦截增强
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:55+08:00
+scraped_at: 2026-10-11T07:24:21+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7ac234aaf8b29021f7d38a0f254963f2a103111d69f4a5dd15809f36103918fa
+content_hash: sha256:df6477cd5515329694579cf33463851d3113ca04d3319e7609094f14fdc86de9
 ---
 
 为组件提供手势拦截能力，适用于嵌套滚动、父子组件手势协同、手势冲突处理等场景。开发者可根据需要，将系统内置手势和比其优先级高的手势做并行化处理，并动态控制手势事件的触发，从而更精细地管理手势响应顺序和交互行为。
@@ -460,7 +460,7 @@ struct FatherControlChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/mgX7qc95T5Gpfo_ui0IwYg/zh-cn_image_0000002779093479.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/GyEupDzoQ5aAlTnbWnk2ZA/zh-cn_image_0000002755185430.gif)
 
 ### 示例2（嵌套场景下拦截内部容器手势）
 
@@ -552,7 +552,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/J0CiiHSxSuOHhSoUznDjbw/zh-cn_image_0000002778933625.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/H8hrQVCWTAmlNg9XdH7TWg/zh-cn_image_0000002784584297.gif)
 
 ### 示例3（拦截手势获取属性）
 
@@ -636,7 +636,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/-RDkqt-KTtiVQbDtqhQY5w/zh-cn_image_0000002749334542.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/F9qDjMp7QK6p7WfUUFtoYA/zh-cn_image_0000002784664479.gif)
 
 ### 示例4（手势触发成功时取消子组件上的Touch事件）
 
@@ -835,7 +835,7 @@ struct FatherControlChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/GsrS-Ni8SyKFdaZ38S22-w/zh-cn_image_0000002749494426.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/xrTft1CRQt60fQCFK8laew/zh-cn_image_0000002755025548.gif)
 
 ### 示例5（自定义手势识别器是否参与手势处理）
 
@@ -924,7 +924,7 @@ struct TouchTestDoneExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Yvd0cWklTB6jXiDfwmXdXg/zh-cn_image_0000002779093483.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/wT1567IUSlG56dHXPPTwgw/zh-cn_image_0000002755185432.gif)
 
 ### 示例6（自定义干预事件和手势的收集结果）
 
@@ -1007,7 +1007,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/b7ym4ylHQFumzAAJ_eyAig/zh-cn_image_0000002778933629.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/g8D0-1zJRjCrMXBWA39jrg/zh-cn_image_0000002784584299.gif)
 
 示例对应的组件树如下图所示。
 
@@ -1162,4 +1162,4 @@ struct FatherControlChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Bf5ffwOnRuyaPkU1I3Ztdw/zh-cn_image_0000002779093479.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/7uZWriKJTAiNroUSycFNbw/zh-cn_image_0000002755185430.gif)

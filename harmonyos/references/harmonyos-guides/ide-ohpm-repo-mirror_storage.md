@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo mirror_storage
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo mirror_storage
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:05+08:00
+scraped_at: 2026-10-11T07:22:53+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:e2fb9326f22255aeecac8230ff001cc0fe5d205238d27ff0b31b005091e94276
+content_hash: sha256:ffab5f728e4a174ebbf2afe2b71c66c5543a18c8b3ac421d1e78b4c7bd78a60e
 ---
 
 同步sftp存储的包。
@@ -71,4 +71,4 @@ ohpm-repo mirror_storage test_one_sftp test_two_sftp repo_sftp2_mirror_gxy07056@
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/BSasTLhZSl24mt5A6-IDKw/zh-cn_image_0000002701822130.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/FOVQOlqCTGiKgvndP8U3Fg/zh-cn_image_0000002701822130.png)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-kit-l
 title: 意图框架上架配置指导
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 意图框架上架配置指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:24+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:47+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:7ec43fe9760b9f31146611a45e77674034b3bb692af6983d32b4e7803cba329e
 ---
 

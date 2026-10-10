@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/quick-start
 title: 快速入门
 breadcrumb: 指南 > 基础入门 > 快速入门
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:04+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:20:50+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:baea0f93323d449c05f968e062738ab353f7eef5789f9afd04abc0cb8a07f5f7
 ---
 

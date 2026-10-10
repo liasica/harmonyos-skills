@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/servicecollab
 title: Service Collaboration Kit常见问题
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > Service Collaboration Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:01+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:38+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:f1d580c6488f55d8bd24741e3425fec0ac5f49ae23debdcdbc2bedf4cae4593c
 ---
 

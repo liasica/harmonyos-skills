@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preload-appli
 title: 应用预加载
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用预加载
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:51+08:00
+scraped_at: 2026-10-11T07:20:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:301865b210ae015808f7251ecd41051445b7f539d66cc30ccdddb72494bf3968
+content_hash: sha256:a42b4efd0fd8bcf08ab604d7c350637b24127335c08e8a577c9592f326010b87
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:301865b210ae015808f7251ecd41051445b7f539d66cc30ccdddb72494b
 * abilityStageCreated：[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，随后触发entry模块[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)的[onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)回调。
 * windowStageCreated：[WindowStage](../harmonyos-references/arkts-apis-window-windowstage.md)创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，随后触发entry模块[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)的[onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)回调。接着会拉起entry模块的入口UIAbility，并触发其[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调和[onWindowStageCreate](../harmonyos-references/js-apis-app-ability-uiability.md#onwindowstagecreate)回调。开发者可以在UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调中，通过[launchParam.launchReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchreason)的枚举值获取启动原因。枚举值为PRELOAD表示当前UIAbility是由预加载机制启动的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/uvfTsgnbQamYjOgeLD8sHQ/zh-cn_image_0000002749331710.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Fxp7xJufT_C2su9cKaUryg/zh-cn_image_0000002784581599.png)
 
 ## 应用预加载状态识别与判断
 
@@ -87,7 +87,7 @@ export default class MyAbilityStage extends AbilityStage {
 
   用户点击应用启动到前台时，系统会依次触发UIAbility.onNewWant()、UIAbility.onForeground()生命周期回调，走完前台启动流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/E2kjxSGLTui9lBXiUPRXcg/zh-cn_image_0000002749491594.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/qkIOpbgIQ3eIB3Jdhsyrhw/zh-cn_image_0000002784661783.png)
 * 支持PC/2in1且不支持Phone的应用：加载至隐藏窗口前台初始状态
 
   此类应用在UIAbility生命周期中无后台状态，详见[不同设备UIAbility生命周期的差异化行为](window-lifecycle.md#不同设备uiability生命周期的差异化行为)。
@@ -96,7 +96,7 @@ export default class MyAbilityStage extends AbilityStage {
 
   用户点击应用启动到前台时，系统会依次触发UIAbility.onNewWant()、UIAbility.onForeground()生命周期回调，走完前台启动流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/YwBDaEMqThWAnZyOJmfdIA/zh-cn_image_0000002779090651.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/SvMy-0QhRCWo2BAOrgUfLA/zh-cn_image_0000002755022850.png)
 
 ## 开发步骤
 

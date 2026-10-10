@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-syste
 title: 系统变量访问
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 系统变量访问
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:03:07+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:34+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:6293a50528e36344b185c398e788fd8c8e3dba32feda77b9919e3a4e46a9ba2b
 ---
 

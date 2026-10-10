@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-p
 title: 应用程序包结构
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包结构
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:48+08:00
+scraped_at: 2026-10-11T07:20:50+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:cfc76b5f48de00b3d54ddaa78fc8e268d956d14fa98a6d5ae0a2ee4de8de7d20
+content_hash: sha256:0658c9f4b2002d2eb24819ee1e281a5cc6c43336cd670ab40526aecb1180ed60
 ---
 
 为了让开发者能对应用程序包在不同阶段的形态有更加清晰的认知，分别对开发态、编译态、发布态的应用程序结构展开介绍。
@@ -16,7 +16,7 @@ content_hash: sha256:cfc76b5f48de00b3d54ddaa78fc8e268d956d14fa98a6d5ae0a2ee4de8d
 
 **图1** 项目工程结构示意图（以实际为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/RTvqcD-wQyemne-_A5o9lw/zh-cn_image_0000002778930757.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5AgU7uDbQjqMVplwjcs3oA/zh-cn_image_0000002755182698.png)
 
 **说明** 
 
@@ -38,7 +38,7 @@ content_hash: sha256:cfc76b5f48de00b3d54ddaa78fc8e268d956d14fa98a6d5ae0a2ee4de8d
 
 **图2** 开发态与编译态的工程结构视图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/VCKE-U4AQnSRQjv27_cCQQ/zh-cn_image_0000002749331674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/moIiiDuzSP6q1rOtx0ktwA/zh-cn_image_0000002784581563.png)
 
 从开发态到编译态，Module文件变更如下：
 
@@ -59,4 +59,4 @@ content_hash: sha256:cfc76b5f48de00b3d54ddaa78fc8e268d956d14fa98a6d5ae0a2ee4de8d
 
 **图3** 编译发布与上架部署流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/eYNesWh_T1G3pYag3Yo2oA/zh-cn_image_0000002749491558.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/yzGYa2tpTF6EQv_-CGaXKQ/zh-cn_image_0000002784661747.png)

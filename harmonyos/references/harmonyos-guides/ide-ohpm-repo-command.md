@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 相关命令
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:05+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:22:53+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:d4bdf6d155a267d353738005cb37b010d5411eb1b9948c6814278c452edb70a3
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: URPC场景
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > URPC场景
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:01+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:38+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:2f74a67fdf7867d0acb9051b49bcab8a149550d94b2d3a10c73ec6fd44c4d148
 ---
 

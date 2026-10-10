@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 接收退款申请事件通知
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 退款申请通知与处理 > 接收退款申请事件通知
 category: harmonyos-references
-scraped_at: 2026-10-01T07:40:19+08:00
+scraped_at: 2026-10-11T07:28:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:43d84692aa4b3a49b0e908a49e664d66c99c7d1dc11ec2c92ef0136f1242a2ac
+content_hash: sha256:e21109837411df43a88194d520bd6133e6c26f4fbd938affda5254b0d74622d5
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ content_hash: sha256:43d84692aa4b3a49b0e908a49e664d66c99c7d1dc11ec2c92ef0136f124
 
 关键事件通知处理流程建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/gfRdqtqbTkKj1Jwu5oGF6g/zh-cn_image_0000002779094965.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/JPvrDkptQUCUxjM8ekVIkA/zh-cn_image_0000002755186794.png)
 
 1. IAP服务器发送退款请求关键事件通知。
 2. 应用服务器收到通知请求后，从通知中获取用户申请的退款信息，决策该笔退款订单的处理方式。

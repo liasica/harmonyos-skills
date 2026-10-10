@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avplayer-long
 title: 基于AVPlayer播放长视频实践
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放长视频实践
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:53+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d67fb0f
+scraped_at: 2026-10-11T07:21:59+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:bcc9d8b5fe73765ddf9a9762030d36e941778c95260f368910d675c0edd6c690
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d6
 
 用户在横屏播放视频时可通过手势滑动调节屏幕亮度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/qMzaO0W-Txys8PxR_QYUxA/zh-cn_image_0000002779092299.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/dc-V5XpOTtiARt1Za_W2Bg/zh-cn_image_0000002755184272.gif)
 
 ### 实现原理
 
@@ -138,7 +138,7 @@ content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d6
 
 通过正确设置音频流类型、中断事件处理和自定义焦点策略，完成播放过程中的音频焦点管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/sABYHZ3lSHCVLeWUL8OAOw/zh-cn_image_0000002778932441.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Bu81EeanRbq4mXNcKlYxrQ/zh-cn_image_0000002784583139.gif)
 
 ### 实现原理
 
@@ -190,7 +190,7 @@ content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d6
 
 应用从前台切到后台，再从后台切回前台时，能够保持原有进度继续播放原视频。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/b_EIgodXToitTQ9h--5Smw/zh-cn_image_0000002749333358.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/DNSHohdrQ-yi3TvCADdFCA/zh-cn_image_0000002784663319.gif)
 
 ### 实现原理
 
@@ -248,7 +248,7 @@ content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d6
 
 视频弹幕发送与显示是影音娱乐类应用中的高频使用场景之一，如用户在播放视频、观看直播时可以发送弹幕，实时评论互动，增强用户参与度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/YP2NJipJRuCTzcJZbin1sg/zh-cn_image_0000002749493242.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/7QcRHunhTGKzLxDP_XqC4Q/zh-cn_image_0000002755024386.gif)
 
 ### 实现原理
 
@@ -302,7 +302,7 @@ content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d6
 
 视频截图是影音娱乐类应用中的典型场景之一，如用户可在观看视频时截取画面，并对截图的前后帧进行微调，避免所截图片与预期不符。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/cttJkys6QI6UJX5YBZRKcg/zh-cn_image_0000002779092301.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/hAm0a3MiSRK6Te8ssKTgRw/zh-cn_image_0000002755184274.gif)
 
 ### 实现原理
 
@@ -359,7 +359,7 @@ content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d6
 
 应用在视频播放时，可以使用画中画能力将视频内容以小窗（画中画）模式呈现。切换为小窗（画中画）模式后，用户可以进行其他界面操作，提升使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ALm4U7OTSca1PeD-TJPJPw/zh-cn_image_0000002778932443.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/2-x0MkrMR8Gz_WY1aVB_ow/zh-cn_image_0000002784583141.gif)
 
 ### 实现原理
 
@@ -465,7 +465,7 @@ content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d6
 
 通过播控中心，控制视频的播放、暂停和上下切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Q1HB2ooQS-GCui_xXKBEyA/zh-cn_image_0000002749333360.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/26XbFrY8Te-DFBQUKWXlLQ/zh-cn_image_0000002784663321.gif)
 
 ### 实现原理
 
@@ -608,7 +608,7 @@ content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d6
 
 视频切换到后台播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/IvDISyDORl2L7bQLnyuu1A/zh-cn_image_0000002749493244.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/htsyQX7VTMWler9-IMY9qA/zh-cn_image_0000002755024388.gif)
 
 ### 实现原理
 
@@ -734,7 +734,7 @@ content_hash: sha256:42c6e00a197ae3fde0a48dbb021db05ad40e4aa5b25cb6fb5abb65929d6
 
 在播放列表或者窗口中显示视频的首帧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/eMvFZdxnT4SfbBB81IAIjw/zh-cn_image_0000002779092303.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/JxTzqE-JTF6ENKjg1oH48A/zh-cn_image_0000002755184276.gif)
 
 ### 实现原理
 
@@ -812,9 +812,9 @@ public static async getThumbnailFromVideo(src: string, timeUs: number) {
 
 用户播放视频时可以根据实际需求进行横竖屏切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/HQfqK1pvQZ-2uFGWa_ovFw/zh-cn_image_0000002778932445.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/yF6EKyBeTYGzeq6DNIR6QQ/zh-cn_image_0000002784583143.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/7NLb0GjtTu2ZNa_4-vyf0w/zh-cn_image_0000002749333362.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/w-OPSGhfT-KvB0726jPM_w/zh-cn_image_0000002784663323.png)
 
 ### 实现原理
 
@@ -865,9 +865,9 @@ public static async getThumbnailFromVideo(src: string, timeUs: number) {
 
 用户在横竖屏切换后，视频保持原有进度继续播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/qzLx81QUQw-Nt3CRWtRgMA/zh-cn_image_0000002749493246.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Jgd2GWdLSsysIMfpMdSJfg/zh-cn_image_0000002755024390.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/dJzqQPtfSwqxIhh8Dc1gdQ/zh-cn_image_0000002779092305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/JEj9F-QYTLmi6DYPvgR2WA/zh-cn_image_0000002755184278.png)
 
 ### 实现原理
 

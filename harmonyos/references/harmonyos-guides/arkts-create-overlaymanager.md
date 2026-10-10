@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 设置浮层（OverlayManager）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 设置浮层（OverlayManager）
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:05+08:00
+scraped_at: 2026-10-11T07:21:08+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:9aa82a6a63620eb7432c494c75e0573ec9c0944d12eb265fef1c678c069cbf50
+content_hash: sha256:f02a43f224d381bd74d6dd558777224782fd485e4ed40d09941d3e157e57bca3
 ---
 
 浮层（OverlayManager）用于在页面（Page）之上展示自定义的UI内容，位于Dialog、Popup、Menu、BindSheet、BindContentCover和Toast等组件之下，展示范围为当前窗口的安全区内，适用于常驻悬浮等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/75y7kK01TsiETOvDF2Gxdg/zh-cn_image_0000002778931553.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/VZ5YEbD2QGCvuRb9Hc3wkQ/zh-cn_image_0000002755183402.png)
 
 可以通过使用[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)中的[getOverlayManager](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getoverlaymanager12)方法获取当前UI上下文关联的[OverlayManager](../harmonyos-references/arkts-apis-uicontext-overlaymanager.md)对象，再通过该对象调用对应方法。
 
@@ -142,7 +142,7 @@ export struct OverlayManagerComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/S4wmlDY3QUe-pJRbJjes2Q/zh-cn_image_0000002749332472.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/zseK_v8uQ5qEhSXWVMv73g/zh-cn_image_0000002784582271.gif)
 
 显示一个始终在屏幕左侧的悬浮球，点击可以弹出AlertDialog弹窗。
 
@@ -215,7 +215,7 @@ export struct OverlayManagerAlertDialog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/f-5WEJNaTZq56l9JcW-AIg/zh-cn_image_0000002749492356.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/fprVu47-RtCgXmjN7axJLQ/zh-cn_image_0000002784662451.gif)
 
 从API version 18开始，可以利用OverlayManager对象在指定层级上新增指定节点（[addComponentContentWithOrder](../harmonyos-references/arkts-apis-uicontext-overlaymanager.md#addcomponentcontentwithorder18)），层次高的浮层会覆盖在层级低的浮层之上。
 
@@ -315,7 +315,7 @@ export struct OverlayManagerWithOrder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/nx8f_BY1S1S1h_po0qDxig/zh-cn_image_0000002779091415.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/3pnIz-LlQUi4MV4hFba7ag/zh-cn_image_0000002755023518.gif)
 
 从API版本26.0.0开始，可通过设置[OverlayManagerOptions](../harmonyos-references/arkts-apis-uicontext-i.md#overlaymanageroptions15)中的onBackPress回调拦截Overlay的侧滑返回事件。当enableBackPressedEvent设置为true并注册onBackPress回调时，侧滑返回事件不会自动关闭Overlay，而是调用该回调由开发者决定是否拦截：返回true表示拦截该事件（事件被消费，不会向下层传递），返回false表示事件向下层组件透传。该回调需在调用getOverlayManager之前通过[setOverlayManagerOptions](../harmonyos-references/arkts-apis-uicontext-uicontext.md#setoverlaymanageroptions15)设置。
 
@@ -488,4 +488,4 @@ export struct OverlayManagerOnBackPress {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/84vZnVHGRMOoRj0Y_DoRoA/zh-cn_image_0000002778931557.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/BxXMvpdNRIK85lNknGqdTw/zh-cn_image_0000002755183404.png)

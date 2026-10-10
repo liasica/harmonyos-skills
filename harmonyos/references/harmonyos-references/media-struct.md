@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/media-str
 title: 结构体
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-10-01T07:39:43+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-10-11T07:27:35+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:9751c7b8094dc7203189cf2be44f03e8cb2beaadc45f508f5f8b82768759d894
 ---
 

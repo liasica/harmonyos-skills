@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ime-heade
 title: 头文件
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:06+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:32+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:c607a6a38df1c0640581f09a4ee5db0099adb675a8f9f9538897545538e0e89d
 ---
 

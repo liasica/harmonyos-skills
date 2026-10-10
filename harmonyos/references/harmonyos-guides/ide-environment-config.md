@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-environme
 title: 配置代理
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 附录 > 配置代理
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:18+08:00
+scraped_at: 2026-10-11T07:23:05+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:8e52c044f2355e2c00592f98ea7e5cc2c233fd37be77be719399f0fc8187c8bc
+content_hash: sha256:3870c7b246853d9efd0ebc4a29489161cdd61ee97c5c17f7e982c7d059ede6e5
 ---
 
 DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确保工具的正常使用。
@@ -16,7 +16,7 @@ DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确�
 
 为了您开发应用/元服务的良好体验，DevEco Studio提供了开发环境诊断的功能，帮助您识别开发环境是否完备。您可以在欢迎页面单击**Diagnose**进行诊断。如果您已经打开了工程开发界面，也可以在菜单栏单击**Help > Diagnostic Tools > Diagnose Development Environment**进行诊断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/9PVWbkGIQVWM6rrt6WA-Nw/zh-cn_image_0000002731542107.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/b3c-ITm1So6SnKWkM6wOwQ/zh-cn_image_0000002731542107.png)
 
 DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况等。如果检测结果为未通过，请根据检查项的描述和修复建议进行处理。
 
@@ -32,7 +32,7 @@ DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况�
      + **Password**：访问代理服务器的密码。
      + **Remember**：勾选，记住密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/kYwvjgQVR7OXakBORouYww/zh-cn_image_0000002731542111.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/mqH6iUxdRDmy7cfdeVM-LQ/zh-cn_image_0000002731542111.png)
 2. 配置完成后，单击**Check connection**，输入网络地址（如：https://developer.huawei.com），检查网络连通性。提示“Connection successful”表示代理设置成功。
 
 ## 配置NPM代理
@@ -41,7 +41,7 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
 1. 进入*C:\Users\用户名*目录，打开**.npmrc**文件。如果该目录下没有**.npmrc**文件，请新建一个。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/wIDvaRQTQ8SmnB_vTUe4Xw/zh-cn_image_0000002701822836.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/8Mj9AsXmRFaZdRrbWqsBHg/zh-cn_image_0000002701822836.png)
 2. 修改npm仓库信息，示例如下所示：
 
    ```screen
@@ -85,7 +85,7 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Es2qF7KTTJqAWs08eXSqRA/zh-cn_image_0000002701662914.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Mkx8UUn_TQek06vpYSF5zw/zh-cn_image_0000002701662914.png)
 
 ## 配置OHPM代理
 
@@ -111,7 +111,7 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
 **填写**并**勾选**以上信息后，点击**OK**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/kRiItU0iQey1fP9FQZUwLA/zh-cn_image_0000002731382139.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/LFRPbU2BRnWRxLZlLX8qrg/zh-cn_image_0000002731382139.png)
 
 说明：ohpm默认校验registry仓库地址证书。如果环境检查中ohpm registry access出现'SELF\_SIGNED\_CERT\_IN\_CHAIN'或'UNABLE\_TO\_VERIFY\_LEAF\_SIGNATURE'等证书校验错误时，请查看[FAQ-问题现象2](../harmonyos-faqs/faqs-development-environment-10.md)解决证书校验错误问题。
 
@@ -160,4 +160,4 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/FemmwO_gS2-dHrD8M2bG1A/zh-cn_image_0000002701822840.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/TB6lJqvpR0aPNpgrx4jVZw/zh-cn_image_0000002701822840.png)

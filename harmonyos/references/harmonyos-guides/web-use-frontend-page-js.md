@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-use-front
 title: 在应用中使用前端页面JavaScript
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:36+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:21:16+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:e4f970f20226e8810672db1aad23896250da3320cb3ca415dccfa35f2e5aeb0a
 ---
 

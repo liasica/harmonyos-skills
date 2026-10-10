@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: TrustedAuthentication （数字盾服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > ArkTS API错误码 > TrustedAuthentication （数字盾服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4441a07932dfffdecb282530a7dc352d1915f2d92ded0e6d84bf465a2e34df58
+scraped_at: 2026-10-11T07:25:49+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:1aca778585fee73ed54f4eb954a35352344b14f2289a9b274bbbc2889fa0da59
 ---
 
 **说明** 
@@ -74,7 +74,7 @@ delete trusted authentication password failed.
 
 **错误描述**
 
-内部异常。
+删除密码流程内部异常。
 
 **可能原因**
 
@@ -92,7 +92,7 @@ trusted authentication verify failed.
 
 **错误描述**
 
-内部异常。
+密码认证流程内部异常。
 
 **可能原因**
 
@@ -110,7 +110,7 @@ Check input confirm text failed.
 
 **错误描述**
 
-内部异常。
+输入文本信息检查流程内部异常。
 
 **可能原因**
 
@@ -236,7 +236,7 @@ Set trusted authentication password failed.
 
 **错误描述**
 
-内部异常。
+创建密码流程内部异常。
 
 **可能原因**
 
@@ -254,7 +254,7 @@ Modify trusted authentication password failed.
 
 **错误描述**
 
-内部异常。
+修改密码流程内部异常。
 
 **可能原因**
 
@@ -272,7 +272,7 @@ Get biometric authToken failed.
 
 **错误描述**
 
-内部异常。
+生物认证authToken签发流程内部异常。
 
 **可能原因**
 
@@ -308,7 +308,7 @@ Failed to get the remaining number of authentication attempts.
 
 **错误描述**
 
-获取数字盾剩余认证次数失败。
+获取数字盾剩余认证次数流程内部异常。
 
 **可能原因**
 

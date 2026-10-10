@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 账号管理错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 账号管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:04+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:8a74a04783eedd0be8a010dd090df3a5ae989226e74a57b8f271c01d80c2d2ab
+scraped_at: 2026-10-11T07:26:34+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:ac994fb26449347a4a9dd8999e0835e3c2509da9145b7126084189a32846fd8c
 ---
 
 **说明** 
@@ -309,6 +309,56 @@ The number of logged in accounts reaches the upper limit.
 **处理步骤**
 
 将已经登录的账号退出，再登录新的账号。
+
+## 12300021 系统账号已绑定域账号
+
+**错误信息**
+
+The OS account is already bound.
+
+**错误描述**
+
+输入的系统账号已绑定域账号。
+
+**可能原因**
+
+输入的系统账号已绑定域账号。
+
+**处理步骤**
+
+系统账号不允许重复绑定域账号，请更换系统账号进行绑定。
+
+## 12300022 域账号已被绑定
+
+**错误信息**
+
+The domain account is already bound.
+
+**错误描述**
+
+输入的域账号已绑定系统账号。
+
+**可能原因**
+
+输入的域账号已绑定系统账号。
+
+**处理步骤**
+
+同一域账号不允许绑定多个系统账号，请更换域账号或删除绑定的账号后再进行绑定。
+
+## 12300023 指定类型的账号数量已达到上限
+
+**错误信息**
+
+The number of accounts of the specified type has reached the upper limit.
+
+**可能原因**
+
+指定类型的系统账号已达上限。
+
+**处理步骤**
+
+请删除多余的账号后再重试。
 
 ## 12300101 凭据不正确
 

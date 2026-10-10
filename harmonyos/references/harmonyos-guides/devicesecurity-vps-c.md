@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 病毒防护服务管理(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 病毒防护服务管理(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:25+08:00
+scraped_at: 2026-10-11T07:21:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4bdc86db50d231fbea2c35a65895a8ca37671eab1119f79918882f36d844b02d
+content_hash: sha256:00af596840d8fc647796747388966786e8de95435b2d77fe48864c7ae9564f66
 ---
 
 ## 场景介绍
@@ -19,11 +19,11 @@ content_hash: sha256:4bdc86db50d231fbea2c35a65895a8ca37671eab1119f79918882f36d84
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/FzfI471sTyK3GNOcbqtfWA/zh-cn_image_0000002749333092.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/R8atWp9kQT2JKKSac5cdqQ/zh-cn_image_0000002784663053.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/ojlUIiUZQg-Z3wB05Qwfsg/zh-cn_image_0000002749492976.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/KDV_8cYCQLmqgYCdwMnGyg/zh-cn_image_0000002755024120.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/ifBs5AB8R4GtpSGDVVnifg/zh-cn_image_0000002779092035.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/EHaWNl8XSY-chQYCvO1Org/zh-cn_image_0000002755184008.png)
 
 **流程说明**：
 

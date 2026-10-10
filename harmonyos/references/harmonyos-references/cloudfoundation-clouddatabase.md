@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoun
 title: cloudDatabase (云数据库模块)
 breadcrumb: API参考 > 应用服务 > Cloud Foundation Kit（云开发服务） > ArkTS API > cloudDatabase (云数据库模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:52+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6a76ae77fca456347d2106df5414aa5f6853a1127b1cc873d86547d1911a0e5d
+scraped_at: 2026-10-11T07:28:07+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:fce6adfaa60c239043332401ce34fd9027c76a0569f8a5f8d4af7866196cf54c
 ---
 
 本模块提供使用云数据库进行数据写入、查询、删除等操作的能力。
@@ -661,7 +661,7 @@ type FieldType = string | number | boolean | Uint8Array | Date
 | number | 表示值类型为数字，可取任意值。 |
 | boolean | 表示值类型为布尔类型，可取true或者false。 |
 | Uint8Array | 表示值类型为8位无符号整型数组，可取任意值。 |
-| Date | 表示值类型为日期，值固定格式为“YYYY-MM-DD”。 |
+| Date | 表示值类型为日期，UTC时间格式，值固定格式为：YYYY-MM-DD HH:MM:SS SSS。 |
 
 ## QueryCalculate
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: Device Security Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > Device Security Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:24+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:f7bf05150af7c2bda378c90cdafc8e769e83d0d15ed46bf2f9d53f4cc1a47751
+scraped_at: 2026-10-11T07:21:28+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:2bb883e7fde7b6e6b2eed4230b170a85b51a28f20e0a020e2a184d2aab1e4a8e
 ---
 
 Device Security Kit（设备安全服务）提供应用设备状态检测（DeviceVerify）、安全检测（SafetyDetect）、可信应用服务（TrustedAppService）、数字盾服务（TrustedAuthentication）、业务风险检测（BusinessRiskIntelligentDetection）、星盾机密风控引擎（RiskControlEngine）、安全审计（SecurityAudit）、反诈选择器（AntifraudPicker）、防窥保护（DlpAntiPeep）、病毒防护服务管理（VirusProtectionServiceManager）和超级隐私模式（SuperPrivacyMode），可以保护应用程序免受安全威胁和保证应用的数据安全。
@@ -15,7 +15,7 @@ Device Security Kit（设备安全服务）提供应用设备状态检测（Devi
 * 应用设备状态检测（DeviceVerify）场景：对应用在某台设备上的使用状态进行管理和检测，包括判断应用是否在该设备上首次安装，或在该设备上用户是否已获取了优惠券等的状态检测，以支撑业务进行新用户营销活动。
 * 安全检测（SafetyDetect）场景：判断设备环境是否安全，比如是否被越狱、非真实设备等，可基于结果评估如何响应；判断用户访问的URL是否为恶意网址，对于恶意网址，由开发者评估提示或拦截用户的访问风险；应用风控场景，提供统一风控凭证能力获取系统风控因子数据及安全证明，助力开发者快速构建可靠的风控体系。
 * 可信应用服务（TrustedAppService）场景：提供数据的安全证明服务，旨在为安全摄像头和安全地理位置功能提供基础的安全证明能力，确保图像或位置数据未被篡改。
-* 数字盾服务（TrustedAuthentication）场景：提供基于TUI PIN认证和TUI界面交易信息确认的安全能力，旨在为金融应用在数字盾交易场景下提供金融安全保护。
+* 数字盾服务（TrustedAuthentication）场景：提供基于TUI PIN认证和TUI界面交易信息确认的安全能力，旨在为金融企业开发者应用的大额转账交易以及网页端的网银认证场景提供端到端安全防护。
 * 业务风险检测（BusinessRiskIntelligentDetection）场景：提供基于场景（防作弊、反欺诈）的业务风险决策能力。
 * 星盾机密风控引擎（RiskControlEngine）场景：提供基于端侧机密计算空间的风控解决方案。
 * 安全审计（SecurityAudit）场景：为应用提供获取当前设备上的审计数据（窗口截屏、移动存储插拔、剪贴板复制粘贴等）能力，支撑审计相关业务。
@@ -38,7 +38,7 @@ Device Security Kit（设备安全服务）提供应用设备状态检测（Devi
 
 业务关联如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/cqyRNcf8RaiHEIthjJu6tQ/zh-cn_image_0000002778932147.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/eVErkvQjQnKWMuwndZE-1g/zh-cn_image_0000002784582845.jpg)
 
 ## 约束与限制
 

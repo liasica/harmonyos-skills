@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/backgroun
 title: 已停止维护的接口
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > 已停止维护的接口
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:56+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-10-11T07:25:23+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:b1cd62e286d87509683b55eb80132406bf395dd613dec8977e9800ac7a3ba837
 ---
 

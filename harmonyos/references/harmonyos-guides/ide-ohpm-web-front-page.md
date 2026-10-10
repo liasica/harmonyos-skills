@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-web-
 title: 前台页面
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 前台页面
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:06+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:12850b61dea01740c9ac724033040fb0a1288c68a310a47478c1ca85b53d9598
+scraped_at: 2026-10-11T07:22:54+08:00
+doc_updated_at: 2026-10-10
+content_hash: sha256:0985020752ad750c5357617c034b919fdfa20cd2c01b0c85eac133d5ab7b0f2f
 ---
 
 启动ohpm-repo私仓后，可以通过浏览器访问ohpm-repo页面，访问路径为http://<部署机器IP>:<监听端口>或者https://<部署机器IP>:<监听端口>。其中，http或者https是ohpm-repo网络协议，<部署机器IP> 是部署ohpm-repo服务器的IP地址，<监听端口> 是所设置的监听端口，均可在ohpm-repo配置文件[listen](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_listen)选项中编辑。
@@ -21,17 +21,17 @@ content_hash: sha256:12850b61dea01740c9ac724033040fb0a1288c68a310a47478c1ca85b53
 
 首页主要展示当前ohpm-repo私仓存储的包信息，同时提供搜索功能，页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ZsvLz4SJTs-5swg2qailJA/zh-cn_image_0000002731381377.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/r0e0UE8DRsOdEPRwaXhcLQ/zh-cn_image_0000002731381377.png "点击放大")
 
 * 区域1：搜索区域，搜索功能采用两级筛选：先通过下拉菜单选择目标仓库，然后基于所选仓库进行包名的模糊查询。
 * 区域2：登录注册区域，注册和登录后可通过此区域进入后台管理页面。
-* 区域3：包列表区域，全量展示符合查询条件的所有包。点击列表中包的摘要信息可进入包的详情页，查看更多关于该包的信息。若包名前显示![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/jSAb4OFARWWq0lYPM30NcA/zh-cn_image_0000002701662152.png "点击放大")锁图标，表示您暂无该包的访问权限。
+* 区域3：包列表区域，全量展示符合查询条件的所有包。点击列表中包的摘要信息可进入包的详情页，查看更多关于该包的信息。若包名前显示![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ZjJL4FSSR8akt_2WNFeSXA/zh-cn_image_0000002701662152.png "点击放大")锁图标，表示您暂无该包的访问权限。
 
 ## 包详情页
 
 包详情页主要展示当前包的详细信息，这些信息主要来源于包的内部文件，同时记录了包的版本信息和下载量数据，页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/IhFLJxeqQkqY4IYof0Dmsw/zh-cn_image_0000002731381385.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/KXHyaYvFTn29me9rdOJTiQ/zh-cn_image_0000002731381385.png "点击放大")
 
 * 区域1：包的基本信息区域，取自包的oh-package.json5文件。
 * 区域2：标签页区域，通过选择不同的标签展示包的更多信息。

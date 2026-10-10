@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 编译构建错误码
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 构建报错排查 > 编译构建错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:36+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-10-11T07:23:23+08:00
+doc_updated_at: 2026-10-10
 content_hash: sha256:8e630db00c03983292b38ab56bdd313acace653ce7cd326a31e573629d09e5fd
 ---
 

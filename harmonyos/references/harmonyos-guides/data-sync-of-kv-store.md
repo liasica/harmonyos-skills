@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 键值型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 键值型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:53+08:00
+scraped_at: 2026-10-11T07:20:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:038d8670f772bbf4ca42fcbe9f01a228e256069bd80f6040c8ed2880bc8503df
+content_hash: sha256:f39df0f5725f314461202b24c8dc2c138814b7a80502351f8afd1103859051c9
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:038d8670f772bbf4ca42fcbe9f01a228e256069bd80f6040c8ed2880bc8
 
 单版本是指数据在本地是以单个条目为单位的方式保存，当用户修改时，直接在这个条目上进行修改。在数据端端同步后多个设备全局只保留一份数据，多个设备的相同记录（主码相同）会按时间最新保留一条记录，数据不分设备，设备之间修改相同的key会覆盖。端端同步也以此为基础，按照它在本地被写入或更改的顺序将当前最新一次修改逐条同步至远端设备，常用于联系人、天气等应用存储场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/_-UWqOREQpWkEKV_9UVTNg/zh-cn_image_0000002779090685.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/QNKc4A7SS_ijqnsE3zgT_Q/zh-cn_image_0000002755022884.jpg)
 
 ### 多设备协同数据库
 
@@ -28,7 +28,7 @@ content_hash: sha256:038d8670f772bbf4ca42fcbe9f01a228e256069bd80f6040c8ed2880bc8
 
 底层按照设备的维度管理这些数据，多设备协同数据库支持以设备的维度查询分布式数据，但是不支持修改远端设备同步过来的数据。需要分开查询各设备数据的可以使用设备协同版本数据库。常用于图库缩略图存储场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/8azwkSAmS4GHc57nKI41Bg/zh-cn_image_0000002778930829.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/ZF1E23cySaSGCFY1d7mkxw/zh-cn_image_0000002755182770.jpg)
 
 ## 端端同步方式
 
@@ -48,7 +48,7 @@ content_hash: sha256:038d8670f772bbf4ca42fcbe9f01a228e256069bd80f6040c8ed2880bc8
 
 ### 数据跨设备端端同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/TVw1lLTSSM61-ebzYJFd4A/zh-cn_image_0000002749331746.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/dfgBVV8QSHumZwO_xQrB5Q/zh-cn_image_0000002784581635.jpg)
 
 如图所示，通过put、delete接口触发自动端端同步，将分布式数据通过通信适配层发送给对端设备，实现分布式数据的自动端端同步。
 
@@ -86,7 +86,7 @@ content_hash: sha256:038d8670f772bbf4ca42fcbe9f01a228e256069bd80f6040c8ed2880bc8
 
 此处以单版本键值型数据库跨设备数据端端同步的开发为例。以下是具体的开发流程和开发步骤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/n13CiK6RTuqxgHbcbVlhDg/zh-cn_image_0000002749491630.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/TG-zhD07T06SLGmW9HUQBw/zh-cn_image_0000002784661819.png)
 
 **说明** 
 
