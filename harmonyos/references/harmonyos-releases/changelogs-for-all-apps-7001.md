@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对所有应用的变更
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Beta1引入的行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:11:54+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:87b6f43c2af1208241848297858184f85b4185d54c060e8f062e193ce100f379
+scraped_at: 2026-10-14T07:38:40+08:00
+doc_updated_at: 2026-10-13
+content_hash: sha256:db797963d038e06786646ab45850d1e1ea422dad2e993859878aa2907faef4d3
 ---
 
 ## Ability Kit
@@ -175,23 +175,23 @@ API 8
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于26.0.0时生效。
 
-JSVM Wasm相关接口补充了jitless下默认行为，不再返回错误码[JSVM\_JIT\_MODE\_EXPECTED](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-types-h#jsvm_status)，Wasm解释器正常运行。
+JSVM Wasm相关接口补充了jitless下默认行为，不再返回错误码[JSVM\_JIT\_MODE\_EXPECTED](../harmonyos-references/capi-jsvm-types-h.md#jsvm_status)，Wasm解释器正常运行。
 
 变更前：
 
-[OH\_JSVM\_CompileWasmModule](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-h#oh_jsvm_compilewasmmodule)，返回错误码 [JSVM\_JIT\_MODE\_EXPECTED](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-types-h#jsvm_status)，并设置JSVM异常。
+[OH\_JSVM\_CompileWasmModule](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_compilewasmmodule)，返回错误码 [JSVM\_JIT\_MODE\_EXPECTED](../harmonyos-references/capi-jsvm-types-h.md#jsvm_status)，并设置JSVM异常。
 
-[OH\_JSVM\_CompileWasmFunction](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-h#oh_jsvm_compilewasmfunction)，返回错误码 [JSVM\_JIT\_MODE\_EXPECTED](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-types-h#jsvm_status)，并设置JSVM异常。
+[OH\_JSVM\_CompileWasmFunction](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_compilewasmfunction)，返回错误码 [JSVM\_JIT\_MODE\_EXPECTED](../harmonyos-references/capi-jsvm-types-h.md#jsvm_status)，并设置JSVM异常。
 
-[OH\_JSVM\_CreateWasmCache](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-h#oh_jsvm_createwasmcache)，返回错误码 [JSVM\_JIT\_MODE\_EXPECTED](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-types-h#jsvm_status)，并设置JSVM异常。
+[OH\_JSVM\_CreateWasmCache](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_createwasmcache)，返回错误码 [JSVM\_JIT\_MODE\_EXPECTED](../harmonyos-references/capi-jsvm-types-h.md#jsvm_status)，并设置JSVM异常。
 
 变更后：
 
-[OH\_JSVM\_CompileWasmModule](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-h#oh_jsvm_compilewasmmodule)，WasmCache不生效，其他行为与JIT模式一致。
+[OH\_JSVM\_CompileWasmModule](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_compilewasmmodule)，WasmCache不生效，其他行为与JIT模式一致。
 
-[OH\_JSVM\_CompileWasmFunction](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-h#oh_jsvm_compilewasmfunction)，直接返回JSVM\_OK（解释执行不依赖当前接口）。
+[OH\_JSVM\_CompileWasmFunction](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_compilewasmfunction)，直接返回JSVM\_OK（解释执行不依赖当前接口）。
 
-[OH\_JSVM\_CreateWasmCache](http://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-h#oh_jsvm_createwasmcache)，直接返回JSVM\_OK，并将WasmCache置为空。
+[OH\_JSVM\_CreateWasmCache](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_createwasmcache)，直接返回JSVM\_OK，并将WasmCache置为空。
 
 **起始 API Level**
 
@@ -1700,7 +1700,7 @@ Binary（可执行二进制，以下简称bin）是操作系统中可通过execv
 
 下图流程供应用参考进行排查，如果需要适配，则根据下文中的具体步骤进行适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/HX4ZgOBARiS2QBf80JqB1A/zh-cn_image_0000002623074963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/sfdVpVKIR22DlnXYm6yl8Q/zh-cn_image_0000002623074963.png)
 
 适配步骤：
 

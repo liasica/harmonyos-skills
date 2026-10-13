@@ -3,54 +3,79 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/support-dev
 title: 各版本支持设备型号清单
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 各版本支持设备型号清单
 category: harmonyos-releases
-scraped_at: 2026-10-01T07:33:48+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:26d30ab5b53a6d17ff5b6f9acf061b2119aedee7b51a13f1727c4f68926a257e
+scraped_at: 2026-10-14T07:39:45+08:00
+doc_updated_at: 2026-10-13
+content_hash: sha256:21cdfc830f84c17f7341d5f8ed89eb63129a3a781f92732efc9aa1faa15f54bc
 ---
 
 ## 26.0.0
 
 **说明** 
 
-以下设备为26.0.0开发者套件版本发布时同步配套的设备信息。
+以下为截止10月8日统计的支持API版本26.0.0的设备信息。
 
 ### Phone
 
 | 设备系列 | 设备型号 | 型号代码 |
 | --- | --- | --- |
+| Mate 90系列 | Mate 90 | HLS-AL00 |
+| Mate 90 Pro | CMS-AL20 |
+| Mate 90 Pro Max | CMM-AL00  CMM-AL10 |
+| Mate 90 RS 非凡大师 | CMU-AL10 |
+| Mate 80系列 | Mate 80 | VYG-AL00  VYG-AL30 |
+| Mate 80 Pro | SGT-AL00  SGT-AL50 |
+| Mate 80 Pro Max （含风驰版） | SGT-AL10 |
+| Mate 80 RS 非凡大师 | SGU-AL10 |
 | Mate 70系列 | Mate 70 | CLS-AL00  CLS-AL30 |
 | Mate 70 Pro | PLR-AL00  PLR-AL30 |
 | Mate 70 Pro 优享版 | PLR-AL50 |
 | Mate 70 Pro+ | PLA-AL10 |
 | Mate 70 RS 非凡大师 | PLU-AL10 |
 | Mate 70 Air | SUP-AL90  SUP-AL90a |
-| Mate 80系列 | Mate 80 | VYG-AL00  VYG-AL30 |
-| Mate 80 Pro | SGT-AL00  SGT-AL50 |
-| Mate 80 Pro Max （含风驰版） | SGT-AL10 |
-| Mate 80 RS 非凡大师 | SGU-AL10 |
+| Mate 60系列 | Mate 60 | BRA-AL00 |
+| Mate 60 Pro | ALN-AL00  ALN-AL80 |
+| Mate 60 Pro+ | ALN-AL10 |
+| Mate 60 RS 非凡大师 | ALN-AL10 |
+| Mate X7系列 | Mate X7 | DEL-AL10 |
+| Mate X7 典藏版 | DEL-AL20 |
+| Mate X6系列 | Mate X6 | ICL-AL10 |
+| Mate X6 典藏版 | ICL-AL20 |
+| Mate X5系列 | Mate X5 | ALT-AL10 |
+| Mate X5 典藏版 | ALT-AL10 |
+| Mate XT系列 | Mate XT 2 非凡大师 | LAP-AL10 |
+| Mate XTs 非凡大师 | GRL-AL20 |
+| Mate XT 非凡大师 | GRL-AL10 |
+| Pura 90系列 | Pura 90 | KEE-AL00 |
+| Pura 90 Pro | MLN-AL00 |
+| Pura 90 Pro Max | SCA-AL00 |
 | Pura 80系列 | Pura 80 | HED-AL00 |
 | Pura 80 Pro | LMR-AL00 |
 | Pura 80 Pro+ | LMR-AL10 |
 | Pura 80 Ultra | LMU-AL10 |
-| Pura 90系列 | Pura 90 | KEE-AL00 |
-| Pura 90 Pro | MLN-AL00 |
-| Pura 90 Pro Max | SCA-AL00 |
-| Pura X系列 | Pura X | VDE-AL00 |
-| Pura X 典藏版 | VDE-AL10 |
+| Pura 70系列 | Pura 70 | ADY-AL00 |
+| Pura 70 北斗卫星消息版 | ADY-AL10 |
+| Pura 70 Pro | HBN-AL00 |
+| Pura 70 Pro+ | HBN-AL10  HBN-AL80 |
+| Pura 70 Ultra | HBP-AL00 |
+| Pura X View系列 | Pura X View | VOL-AL00 |
 | Pura X Max系列 | Pura X Max | HOP-AL00 |
 | Pura X Max 典藏版 | HOP-AL10 |
-| Mate X6系列 | Mate X6 | ICL-AL10 |
-| Mate X6 典藏版 | ICL-AL20 |
-| Mate X7系列 | Mate X7 | DEL-AL10 |
-| Mate X7 典藏版 | DEL-AL20 |
-| Mate XT系列 | Mate XTs 非凡大师 | GRL-AL20 |
-| nova 15系列 | nova 15 | PSN-AL00 |
-| nova 15 pro | KLE-AL00U |
-| nova 15 Ultra | SLY-AL00 |
+| Pura X系列 | Pura X | VDE-AL00 |
+| Pura X 典藏版 | VDE-AL10 |
+| Pocket 2系列 | Pocket 2 | LEM-AL00 |
+| Pocket 2 艺术定制版 | LEM-AL00 |
+| Pocket 2 优享版 | LEM-AL50 |
 | nova 16系列 | nova 16 | EMA-AL00U |
 | nova 16 pro | CRS-AL00 |
 | nova 16 Ultra | HIP-AL00 |
 | nova 16z | PKN-AL00 |
+| nova 15系列 | nova 15 | PSN-AL00 |
+| nova 15 pro | KLE-AL00U |
+| nova 15 Ultra | SLY-AL00 |
+| nova 14 系列 | nova 14 | TLR-AL00 |
+| nova 14 Pro | MIA-AL00 |
+| nova 14 Ultra | MRT-AL10 |
+| nova 14 活力版 | TYR-AL00 |
 | 畅享 90系列 | 畅享 90 | JUY-AL80 |
 | 畅享 90 Plus | JUY-AL50 |
 | 畅享 90m Plus | JUY-AL50 |
@@ -68,6 +93,12 @@ content_hash: sha256:26d30ab5b53a6d17ff5b6f9acf061b2119aedee7b51a13f1727c4f68926
 | MatePad Mini 悦读版 | MLR-AL00 |
 | MatePad Mini | MLR-AL10 |
 | MatePad 11.5 2026款 | TXZ-W10  TXZ-W20  TXZ-AL10 |
+| MatePad Air 12英寸（第三代） | WKI-W10 |
+| MatePad Air 12英寸（第三代）悦享款 | WKI-W00 |
+| MatePad Pro 13.2 英寸 2025 | WEB-AL00  WEB-AL10  WEB-W00  WEB-W10 |
+| MatePad Pro 12.2 英寸 2025 | MRDI-W00  MRDI-W10  MRDI-W20 |
+| MatePad Air 12英寸 2025 | LRT-W00  LRT-W20  LRT-W30 |
+| MatePad 11.5 S 2025 | SLG-W10  SLG-W50 |
 
 ### PC/2in1
 
@@ -165,7 +196,7 @@ content_hash: sha256:26d30ab5b53a6d17ff5b6f9acf061b2119aedee7b51a13f1727c4f68926
 | MatePad Mini 悦读版 | MLR-AL00 |
 | MatePad Mini | MLR-AL10 |
 | MatePad 11.5 2026款 | TXZ-W10  TXZ-W20  TXZ-AL10 |
-| MatePad 11.5 S 2025款 | SLG-W00  SLG-W30  SLG-W60 |
+| MatePad 11.5 S 2025款 | SLG-W10  SLG-W50 |
 | MatePad Air 12英寸 2025 | LRT-W00  LRT-W20  LRT-W30 |
 
 ### PC/2in1
@@ -292,7 +323,7 @@ content_hash: sha256:26d30ab5b53a6d17ff5b6f9acf061b2119aedee7b51a13f1727c4f68926
 | MatePad Mini 悦读版 | MLR-AL00 |
 | MatePad Mini | MLR-AL10 |
 | MatePad 11.5 2026款 | TXZ-W10  TXZ-W20  TXZ-AL10 |
-| MatePad 11.5 S 2025款 | SLG-W00  SLG-W30  SLG-W60 |
+| MatePad 11.5 S 2025款 | SLG-W10  SLG-W50 |
 | MatePad 11.5 S | TGR-W00/W00G  TGR-W10/W10G  TGR-W20  TGR-W40 |
 | MatePad Air 12英寸 2025 | LRT-W00  LRT-W20  LRT-W30 |
 | MatePad Air 12英寸 2024 | BKY-W00  BKY-W10  BKY-W20  BKY-W21 |
@@ -420,9 +451,8 @@ content_hash: sha256:26d30ab5b53a6d17ff5b6f9acf061b2119aedee7b51a13f1727c4f68926
 | MatePad Pro 13.2 英寸 2023 典藏版 | PCE-AL40 |
 | MatePad Mini 悦读版 | MLR-AL00 |
 | MatePad Mini | MLR-AL10 |
-| MatePad 11.5 S 2025款 | SLG-W00 |
-| MatePad 11.5 S 2025款 | SLG-W30 |
-| MatePad 11.5 S 2025款 | SLG-W60 |
+| MatePad 11.5 S 2025款 | SLG-W10 |
+| MatePad 11.5 S 2025款 | SLG-W50 |
 | MatePad Air 12英寸 2025 | LRT-W00 |
 | MatePad Air 12英寸 2025 | LRT-W20 |
 | MatePad Air 12英寸 2025 | LRT-W30 |
