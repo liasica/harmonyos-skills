@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 包管理子系统通用错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > 包管理子系统通用错误码
 category: harmonyos-references
-scraped_at: 2026-10-11T07:23:40+08:00
+scraped_at: 2026-10-15T07:07:11+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8d1fa477ecf394e0eb3752cdd25b00bbdbbde50b04520558e3eaee1448a6628e
+content_hash: sha256:dd98958670f00a706e2297bc60b1471a52169d6c665dd188d333745e94aad958
 ---
 
 **说明** 
@@ -247,7 +247,7 @@ Failed to install the HAP since the version of the HAP to install is too early.
    ```
 2. 新安装的应用查看版本，HAP或者HSP用DevEco Studio打开，查看里面module.json文件中的versionCode字段配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/MPyT75D9Sdi39Q-j2aPuog/zh-cn_image_0000002755185202.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/PibhBjy-RImV0uOOKVXTdA/zh-cn_image_0000002762341600.png)
 
 ## 17700021 指定的uid无效
 

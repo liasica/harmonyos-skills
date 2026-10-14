@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-raw-dat
 title: 使用ImageSource获取RAW数据
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 使用ImageSource获取RAW数据
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0ae681e63c2fd2af9568511539894ec61a045dbb7b56be3a08f2d3ac651c30be
+scraped_at: 2026-10-15T07:05:07+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:94f3c604ab147d1b6785de4f1e9f42915913a777d39045d6281b3690682f472a
 ---
 
 图像的 RAW 数据是直接从图像传感器获取的原始数据，完整保留了所有传感器信息且无任何压缩损失。通过使用RAW数据，开发者可以获得最高质量的图像信息，并根据具体需求自定义图像处理算法，实现更灵活的图像处理和优化效果。
@@ -142,15 +142,7 @@ content_hash: sha256:0ae681e63c2fd2af9568511539894ec61a045dbb7b56be3a08f2d3ac651
    确认imageSource的异步方法已经执行完成，不再使用该变量后，可按需手动调用下面方法释放。
 
    ```typescript
-   async release() {
-     try {
-       await this.pixelMap?.release();
-     } catch (error) {
-       console.error(`Failed to release PixelMap: ${error}.`);
-     } finally {
-       this.pixelMap = undefined;
-     }
-
+   async release_imageSource() {
      try {
        await this.imageSource?.release();
      } catch (error) {

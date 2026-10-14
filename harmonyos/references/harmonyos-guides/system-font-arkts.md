@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-font-a
 title: 系统字体的信息获取和使用（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 系统字体的信息获取和使用（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:03+08:00
+scraped_at: 2026-10-15T07:05:15+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a50d7d89ce66a54c1933090f511c5b62f1dddb90a39407e2aec0b8b8887ad28c
+content_hash: sha256:d34686c66b535215ab2875d4af8c99f7b57a0c8666245b66c47e53b523019608
 ---
 
 ## 场景介绍
@@ -62,7 +62,7 @@ content_hash: sha256:a50d7d89ce66a54c1933090f511c5b62f1dddb90a39407e2aec0b8b8887
 
 以下打印的示例为应用设备系统对应的部分系统字体配置信息情况，不同设备系统配置信息可能不同，此处仅示意。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/QQ-OA6jLQLyX0um48UMOHw/zh-cn_image_0000002784583231.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/BdhtGLe8QTK2kMGY_zrE8g/zh-cn_image_0000002791859553.png)
 
 ## 使用或切换系统字体
 
@@ -126,4 +126,4 @@ content_hash: sha256:a50d7d89ce66a54c1933090f511c5b62f1dddb90a39407e2aec0b8b8887
 
 效果展示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/aUkjuf7DTwu7BBqczrjplQ/zh-cn_image_0000002784663411.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/TscAYNRtR-i-qnRgKXAzeQ/zh-cn_image_0000002762500678.png)

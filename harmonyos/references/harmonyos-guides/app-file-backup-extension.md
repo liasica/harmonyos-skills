@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-back
 title: 应用接入数据备份恢复
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 应用接入数据备份恢复
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:db374bfde6feda01a847a7bdcac61ead8ebd78c825e84a96cc778f440c8a6185
+scraped_at: 2026-10-15T07:04:21+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:e17d72721cc7189aa4ebd030402bab1ee70d2efda1434899280ecc2dbc5fcb37
 ---
 
 应用接入数据备份恢复需要通过BackupExtensionAbility实现。
@@ -156,13 +156,13 @@ BackupExtensionAbility是[Stage模型](stage-model-development-overview.md)中�
 
    const SCENARIO_BACKUP: number = 1;
    const SCENARIO_RESTORE: number = 2;
-   // 需要清理的临时目录
-   let filePath: string = '/data/storage/el2/base/.temp/';
 
    class BackupExt extends BackupExtensionAbility {
      // ...
      // onRelease
      async onRelease(scenario: number): Promise<void> {
+       // 清理应用在此目录下创建的备份或恢复临时文件。
+       let filePath: string = this.context.filesDir + '/.temp/';
        try {
          if (scenario == SCENARIO_BACKUP) {
            // 备份场景，应用自行实现处理，以清理备份产生的临时文件为例

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: extension协同下载
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 系统后台下载资源包 > extension协同下载
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:05+08:00
+scraped_at: 2026-10-15T07:05:17+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2f1f025e993392025dcd012474dd80207362b2ff6940d2e179ab75a08ffe4834
+content_hash: sha256:c24279b91af52ff627e1839c6059890e8a5e7e2a3bd1290c86ede331019dba54
 ---
 
 从5.1.1(19)版本开始，新增extension协同下载。
@@ -14,7 +14,7 @@ content_hash: sha256:2f1f025e993392025dcd012474dd80207362b2ff6940d2e179ab75a08ff
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/_8OmFTKERQSG8jnPHmTWAA/zh-cn_image_0000002784583287.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/2v7zRdrNQcaeN--8l-kJwQ/zh-cn_image_0000002791859609.png)
 
 1. 用户在应用市场安装游戏后、用户在应用市场更新游戏后、系统检测到用户设备符合闲时条件时，游戏资源加速服务开启资源包后台下载。
 2. 游戏资源加速服务从AppGallery Connect获取相关资源下载配置信息，例如下载类型、CDN类型、manifestUrl、域名白名单等。具体资源下载配置信息请参见[发布资源包下载任务](graphics-accelerate-assetdownload-release.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-cardre
 title: 卡证识别
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 卡证识别
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:48+08:00
+scraped_at: 2026-10-15T07:06:09+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:ae6659a34f2155a40031e627bf56b782c688a3a2ef70e7502ff61085d7461e54
+content_hash: sha256:9b34c14f9dc2af14495db07d90cb129a5134a5c891c1b7d33282025e1f269f54
 ---
 
 从6.1.1(24)开始，新增支持对港澳居民来往内地通行证、台湾居民来往大陆通行证的识别。
@@ -18,7 +18,7 @@ content_hash: sha256:ae6659a34f2155a40031e627bf56b782c688a3a2ef70e7502ff61085d74
 
 **图1** 银行卡识别示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/RRFqDpg2QYG7m2jQgI9kAw/zh-cn_image_0000002784583989.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/sYjCL-LoSDilqdVCsOD6_g/zh-cn_image_0000002791860311.png)
 
 ## 约束与限制
 

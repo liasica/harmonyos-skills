@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-anon
 title: 匿名密钥证明(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥证明 > 匿名密钥证明(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b166488da3f9cc4d0c1c3f8f3f08518b1854bfe967958e1ccdb77559f709b3dd
+scraped_at: 2026-10-15T07:04:38+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:7eca9464b03b4d54f9dee0cec4ff654a748f347626a99e4fd2af8463cdb87836
 ---
 
 在使用本功能时，需确保网络通畅。
@@ -109,11 +109,11 @@ function stringToUint8Array(str: string) {
 function generateKeyItem(keyAlias: string, huksOptions: huks.HuksOptions, throwObject: ThrowObject) {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.generateKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.generateKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {
@@ -129,8 +129,8 @@ async function publicGenKeyFunc(keyAlias: string, huksOptions: huks.HuksOptions)
   let throwObject: ThrowObject = { isThrow: false };
   try {
     await generateKeyItem(keyAlias, huksOptions, throwObject)
-      .then((data) => {
-        console.info(`promise: generateKeyItem success, data = ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`promise: generateKeyItem success`);
       })
       .catch((error: Error) => {
         if (throwObject.isThrow) {

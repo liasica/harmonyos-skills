@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agre
 title: 密钥协商(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 密钥协商 > 密钥协商(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8dd85e9d7bcd8d61a957fd6f6fd4e733c4651c823819717de7ba21a7d983cc70
+scraped_at: 2026-10-15T07:04:37+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:214c205775eb8914e294dd756d8df533440d7fca9a926ba2867086086e51222e
 ---
 
 以X25519，DH和ECDH三个协商密钥类型为例，在密钥由HUKS管理的情况下，完成密钥协商。具体的场景介绍及支持的算法规格，请参考[密钥协商支持的算法](huks-key-agreement-overview.md#支持的算法)。
@@ -261,7 +261,7 @@ async function deleteKeyItem(keyAlias: string, huksOptions: huks.HuksOptions) {
 }
 
 async function testAgree() {
-  /* 1.确定密钥别名并集成要参数集。A设备：srcKeyAliasFirst；B设备：srcKeyAliasSecond */
+  /* 1.确定密钥别名，并集成密钥参数集。A设备：srcKeyAliasFirst；B设备：srcKeyAliasSecond */
   /* 2.设备A生成密钥 */
   await generateKeyItem(srcKeyAliasFirst, huksOptions);
   /* 3.设备B生成密钥 */
@@ -791,7 +791,7 @@ async function deleteKeyItem(keyAlias: string, huksOptions: huks.HuksOptions) {
 }
 
 async function testAgree() {
-  /* 1.确定密钥别名并集成要参数集。A设备：srcKeyAliasFirst；B设备：srcKeyAliasSecond */
+  /* 1.确定密钥别名并集成密钥参数集。A设备：srcKeyAliasFirst；B设备：srcKeyAliasSecond */
   /* 2.设备A生成密钥 */
   await generateKeyItem(srcKeyAliasFirst, genHuksOptions);
   /* 3.设备B生成密钥 */

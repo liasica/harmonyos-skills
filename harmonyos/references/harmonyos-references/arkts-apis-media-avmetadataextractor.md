@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVMetadataExtractor)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVMetadataExtractor)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:39:39+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:46379730884cd94216c12ea2101aa0fb2a91fb9e53ec5bf6a65ad612e1a8452a
+scraped_at: 2026-10-15T07:11:29+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:a2570ff96a08d9b7fc2fd270c1f6273d7511ec3ee3c66ee377d4f8d6d40a8a69
 ---
 
 元数据获取类，用于从媒体资源中获取元数据、缩略图。在调用AVMetadataExtractor的方法前，需要先通过[media.createAVMetadataExtractor](arkts-apis-media-f.md#mediacreateavmetadataextractor11)构建一个AVMetadataExtractor实例。
@@ -541,7 +541,7 @@ fetchAlbumCover(callback: AsyncCallback<image.PixelMap>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operation not allowed. Return by callback. |
+| 5400102 | Operation not allowed. Returned by callback. |
 | 5400106 | Unsupported format. Returned by callback. |
 
 **示例：**

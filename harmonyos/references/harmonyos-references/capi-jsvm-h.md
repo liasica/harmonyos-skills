@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: jsvm.h
 breadcrumb: API参考 > 公共基础能力 > C API > 头文件 > jsvm.h
 category: harmonyos-references
-scraped_at: 2026-09-18T06:52:26+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:6cd45169fbe4d34f60c3ea1727939e422796a327583242ea05aeee06b053192b
+scraped_at: 2026-10-15T07:13:00+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:27b953e9bb6580ed8764d2150f845abaea14ac98f185f3bc86ddd874f5788c27
 ---
 
 ## 概述
@@ -681,7 +681,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScript(JSVM_Env env,JSVM_Value script,con
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入的 data 是空指针。 [JSVM\_STRING\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是string类型。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示有未知的原因导致执行失败。  [JSVM\_CANNOT\_RUN\_JS](capi-jsvm-types-h.md#jsvm_status) 不能执行JS。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示执行的过程中产生了JS异常。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入的 data 是空指针。 [JSVM\_STRING\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是string类型。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示有未知的原因导致执行失败，详见[常见问题](../harmonyos-guides/jsvm-frequently-questions.md#jsvm-api执行失败类)。  [JSVM\_CANNOT\_RUN\_JS](capi-jsvm-types-h.md#jsvm_status) 不能执行JS。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示执行的过程中产生了JS异常。 |
 
 ### OH\_JSVM\_CompileScriptWithOrigin()
 

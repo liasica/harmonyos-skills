@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: MultiWindowEntryInAPP (应用内多窗)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > MultiWindowEntryInAPP (应用内多窗)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:25:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:473be4c3aaef4df0ebb3c6a91036289150baeec96c469a0e192c0516275f1a6b
+scraped_at: 2026-10-15T07:09:26+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:f911eeab442a4f94f9c4a549e011a5124366be0d6c800e25ab30821468bf9def
 ---
 
 **说明** 
@@ -17,6 +17,8 @@ content_hash: sha256:473be4c3aaef4df0ebb3c6a91036289150baeec96c469a0e192c0516275
 * 平板：横屏态。
 
 对于不支持的设备形态，该组件不可交互，不响应点击事件。
+
+全景多窗特性在无障碍模式下不可使用。
 
 MultiWindowEntryInAPP组件承载单应用多窗口并行逻辑的实现，应用开发者结合本应用业务特点，通过MultiWindowEntryInAPP实现一个应用多个窗口任务并行场景的开发。
 
@@ -194,4 +196,4 @@ struct MultiWindowEntryInAPPTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/hS36jbyFT0uWSo88HLWKPQ/zh-cn_image_0000002755026542.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/aOiQnmaxR5i-NZjpdVcvkQ/zh-cn_image_0000002791741431.jpg)

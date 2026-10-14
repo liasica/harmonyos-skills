@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 自定义字体
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 自定义字体
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:41809f7354f77d9043de115de573d64bcb9e5248e412e6f4254e24fe774ebcb2
+scraped_at: 2026-10-15T07:05:40+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:9599aff5ebf1bec0bc949dbd947cb873e123d1ad49baafbb782f834f0e141743
 ---
 
 当应用需要支持自定义字体时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的fontPath属性，实现对阅读内容字体的实时修改。
@@ -17,7 +17,7 @@ content_hash: sha256:41809f7354f77d9043de115de573d64bcb9e5248e412e6f4254e24fe774
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/aW6O4Fv5RGaTTZUJZX1nkw/zh-cn_image_0000002755184864.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/V5bwizt-RUu4j-gR-PNVug/zh-cn_image_0000002762341256.png)
 
 ## 接口说明
 
@@ -26,7 +26,7 @@ content_hash: sha256:41809f7354f77d9043de115de573d64bcb9e5248e412e6f4254e24fe774
 | 接口名 | 描述 |
 | --- | --- |
 | [setPageConfig](../harmonyos-references/reader-read-core.md#setpageconfig)(pageConfig: ReaderSetting): void | 设置或者修改页面排版属性。 |
-| [on('resourceRequest')](../harmonyos-references/reader-read-core.md#onresourcerequest) | 注册资源请求回调，如果设置了自定义背景，字体时，排版引擎会通过此接口获取对应的资源ArrayBuffer。 |
+| [on('resourceRequest')](../harmonyos-references/reader-read-core.md#onresourcerequest) | 注册资源请求回调，如果设置了自定义背景、字体时，排版引擎会通过此接口获取对应的资源ArrayBuffer。 |
 | [off('resourceRequest')](../harmonyos-references/reader-read-core.md#offresourcerequest) | 注销资源请求回调接口，可在页面销毁时调用。 |
 
 ## 开发准备
@@ -82,7 +82,7 @@ content_hash: sha256:41809f7354f77d9043de115de573d64bcb9e5248e412e6f4254e24fe774
      let options = ['.ttf', '.woff2', '.otf'];
      let path = filePath.toLowerCase();
      let result = path.indexOf(options[0]) != -1 || path.indexOf(options[1]) != -1 || path.indexOf(options[2]) != -1;
-     hilog.info(0x0000, 'testTag',  'isFont = ' + result);
+     hilog.info(0x0000, 'ReaderLog',  'isFont = ' + result);
      return result;
    }
 
@@ -90,7 +90,7 @@ content_hash: sha256:41809f7354f77d9043de115de573d64bcb9e5248e412e6f4254e24fe774
     * 资源请求回调
     */
    private resourceRequest: bookParser.CallbackRes<string, ArrayBuffer> = (filePath: string): ArrayBuffer => {
-     hilog.info(0x0000, 'testTag', 'resourceRequest : filePath = ' + filePath);
+     hilog.info(0x0000, 'ReaderLog', 'resourceRequest : filePath = ' + filePath);
      if (filePath.length === 0) {
        return new ArrayBuffer(0);
      }
@@ -101,12 +101,12 @@ content_hash: sha256:41809f7354f77d9043de115de573d64bcb9e5248e412e6f4254e24fe774
        let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
        // 获取资源路径resources/rawfile/fonts下的字体文件Uint8Array数据
        let value: Uint8Array = context.resourceManager.getRawFileContentSync(this.readerSetting.fontPath);
-       hilog.info(0x0000, 'testTag', 'resourceRequest : get other resource succeeded ');
+       hilog.info(0x0000, 'ReaderLog', 'resourceRequest : get other resource succeeded ');
        return value.buffer as ArrayBuffer;
      } catch (error) {
        let code = (error as BusinessError).code;
        let message = (error as BusinessError).message;
-       hilog.error(0x0000, 'testTag',
+       hilog.error(0x0000, 'ReaderLog',
          `resourceRequest : get other resource failed, error code: ${code}, message: ${message}.`);
      }
      // 如果在资源路径resources/rawfile/fonts下获取字体文件数据失败，则去沙箱目录下获取字体文件数据
@@ -121,10 +121,10 @@ content_hash: sha256:41809f7354f77d9043de115de573d64bcb9e5248e412e6f4254e24fe774
        fs.readSync(file.fd, buffer);
        fs.closeSync(file);
        return buffer;
-     } catch (err) {
+     } catch (error) {
        let code = (error as BusinessError).code;
        let message = (error as BusinessError).message;
-       hilog.error(0x0000, 'testTag',
+       hilog.error(0x0000, 'ReaderLog',
          `loadFileFromPath : get file failed, error code: ${code}, message: ${message}.`);
        return new ArrayBuffer(0);
      }

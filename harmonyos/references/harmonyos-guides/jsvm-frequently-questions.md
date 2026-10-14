@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-frequent
 title: JSVM-API常见问题
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API开发规范 > JSVM-API常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b0bfa693c91b0a4d29390607564b2d71b0fcb9567208d8b1a224a15688a228aa
+scraped_at: 2026-10-15T07:06:12+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:b3cf0a0941a4a1f4e083d92d8b7d16ee564df4b616af79e440506308d7816297
 ---
 
 ## 定位方法
@@ -132,3 +132,6 @@ content_hash: sha256:b0bfa693c91b0a4d29390607564b2d71b0fcb9567208d8b1a224a15688a
 3. Q：JS执行时无法找到OH\_JSVM\_DefineClass定义的类。
 
    A：检查是否将定义的类绑定到上下文中，见[上下文绑定对象](jsvm-guidelines.md#上下文绑定对象)。
+4. Q：OH\_JSVM\_CompileScript()调用失败，返回值为JSVM\_GENERIC\_FAILURE。
+
+   A：见[程序崩溃类](jsvm-frequently-questions.md#程序崩溃类)第6点。

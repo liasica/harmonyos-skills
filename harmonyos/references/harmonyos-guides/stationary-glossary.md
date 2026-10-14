@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stationary-gl
 title: Multimodal Awareness Kit术语
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > Multimodal Awareness Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:797061c96c34c721509079bb245b4d54481798d3a57eeea83219b56dadbf8540
+scraped_at: 2026-10-15T07:04:49+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:d30fba1869d3f6a38b79f68114758c11a59b7520663b376d11c13959c6611263
 ---
 
 ## H
@@ -16,13 +16,13 @@ content_hash: sha256:797061c96c34c721509079bb245b4d54481798d3a57eeea83219b56dadb
 
 ## M
 
-### metadataBinding；记忆链接
+### metadataBinding；元数据绑定
 
-记忆链接（元数据绑定）功能用于将用户当前浏览的内容（如页面截图）与第三方应用提供的鸿蒙App Linking链接进行关联并保存。当用户再次浏览同一内容时，系统会解析已绑定的元数据，并向用户发出提示，引导其跳转至对应的第三方应用查看详情。
+元数据绑定功能用于将用户当前浏览的内容（如页面截图）与第三方应用提供的鸿蒙App Linking链接进行绑定并保存。当用户再次浏览同一内容时，系统会解析已绑定的元数据，并向用户发出提示，引导其跳转至对应的第三方应用查看详情。
 
-### motion；动作感知
+### multimodalAwareness.motion；多模态动作感知
 
-系统为应用提供的动作感知模块，通过传感器识别用户操作设备的方式，提供操作手、握持手等动作感知能力，用于感知设备状态、识别用户行为，优化交互体验。应用使用该模块需申请相应权限。
+系统为应用提供的多模态动作感知模块，通过传感器识别用户操作设备的方式，提供操作手、握持手等动作感知能力，用于感知设备状态、识别用户行为，优化交互体验。应用使用该模块需申请相应权限。
 
 ### multimodalAwareness；多模态感知
 
@@ -36,7 +36,7 @@ content_hash: sha256:797061c96c34c721509079bb245b4d54481798d3a57eeea83219b56dadb
 
 ## S
 
-### stationary；设备静止状态感知
+### stationary；静止
 
 系统为应用提供的设备静止状态感知模块。该模块支持订阅绝对静止、相对静止等设备静止状态的进入与退出事件，并在状态发生变化时将结果上报给应用。
 

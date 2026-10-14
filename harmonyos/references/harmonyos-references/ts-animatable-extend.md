@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animat
 title: "@AnimatableExtend：定义可动画属性"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > @AnimatableExtend：定义可动画属性
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:39+08:00
+scraped_at: 2026-10-15T07:08:17+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c155fb7da5e5cec16af8cb4b3b2a842da307002b5c4803c2dc03203602d35b14
+content_hash: sha256:aa5801f5d80dfc8b9de8b118f92ee395e26a903c534f2bc316052da40821cf64
 ---
 
 @AnimatableExtend装饰器用于自定义可动画的属性方法，该装饰器内定义的函数需要配合[animation](ts-animatorproperty.md#animation)属性使用，且必须在animation属性前调用，改变该属性值时才能使animation属性的动画效果生效。在动画过程中该函数会被逐帧调用，直到动画结束。该装饰器的常见用途有：
@@ -163,7 +163,7 @@ struct AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Yq1OErT6TVyaboise9TANQ/zh-cn_image_0000002784584825.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/InABjmYrS-aLRX-IFVzAYA/zh-cn_image_0000002791861169.gif)
 
 ### 示例2（折线的动画效果）
 
@@ -291,4 +291,4 @@ struct AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/mYh0V7fXQcCANZ3hEAEBZg/zh-cn_image_0000002784665007.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/RPvcjR7JRNGXMziuR-okzQ/zh-cn_image_0000002762502296.gif)

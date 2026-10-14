@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-soundpo
 title: 使用SoundPool播放短音频(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 播放 > 使用SoundPool播放短音频(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:88b9f968d743dec1f9391f377d53cd1fa5f41dba4465c68e9a4a866287f53fff
+scraped_at: 2026-10-15T07:05:09+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:8d63bed96d06c0a6492ece09cc22796bc8638d8f7f6a7d50558c72acbc05d2d0
 ---
 
 使用[SoundPool](media-kit-intro.md#soundpool)（音频池）提供的接口，可以实现低时延短音播放。
@@ -79,7 +79,7 @@ SoundPool当前支持播放解码后1MB以下的音频资源，解码后大小�
    ```
 5. 调用load方法进行音频资源加载。
 
-   可以传入uri或fd加载资源，此处使用传入fd的方式为例，更多方法请参考[API文档](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#load)。
+   可以传入URI或fd加载资源，此处使用传入fd的方式为例，更多方法请参考[load](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#load)。
 
    当系统加载完毕音频资源文件的时候，会通过loadComplete回调，通知用户资源加载完成，请在收到回调之后，再进行后续的play操作。
 

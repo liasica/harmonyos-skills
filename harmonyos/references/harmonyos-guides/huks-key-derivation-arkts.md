@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-deri
 title: 密钥派生(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 密钥派生 > 密钥派生(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:38e82d9d3bce72175eb4c7577793eebcce78cdb23f2848f58f0a8f59db9ce8a4
+scraped_at: 2026-10-15T07:04:37+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:d9d9e249d8227399bb9d82bd8919a23e0d9952966f5e0101d00189a2e1736a1e
 ---
 
 以PBKDF2和HKDF256密钥为例，完成密钥派生。具体的场景介绍及支持的算法规格，请参考[密钥派生支持的算法](huks-key-derivation-overview.md#支持的算法)。
@@ -164,11 +164,11 @@ class ThrowObject {
 function generateKeyItem(keyAlias: string, huksOptions: huks.HuksOptions, throwObject: ThrowObject) {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.generateKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.generateKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {
@@ -183,8 +183,8 @@ async function publicGenKeyFunc(keyAlias: string, huksOptions: huks.HuksOptions)
   let throwObject: ThrowObject = { isThrow: false };
   try {
     await generateKeyItem(keyAlias, huksOptions, throwObject)
-      .then((data) => {
-        console.info(`promise: generateKeyItem success, data = ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`promise: generateKeyItem success`);
       })
       .catch((error: Error) => {
         if (throwObject.isThrow) {
@@ -241,7 +241,7 @@ async function publicInitFunc(keyAlias: string, huksOptions: huks.HuksOptions) {
 }
 
 function updateSession(handle: number, huksOptions: huks.HuksOptions, throwObject: ThrowObject) {
-  return new Promise<huks.HuksOptions>((resolve, reject) => {
+  return new Promise<huks.HuksReturnResult>((resolve, reject) => {
     try {
       huks.updateSession(handle, huksOptions, (error, data) => {
         if (error) {
@@ -322,11 +322,11 @@ async function publicFinishFunc(handle: number, huksOptions: huks.HuksOptions) {
 function deleteKeyItem(keyAlias: string, huksOptions: huks.HuksOptions, throwObject: ThrowObject) {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.deleteKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.deleteKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {
@@ -341,8 +341,8 @@ async function publicDeleteKeyFunc(keyAlias: string, huksOptions: huks.HuksOptio
   let throwObject: ThrowObject = { isThrow: false };
   try {
     await deleteKeyItem(keyAlias, huksOptions, throwObject)
-      .then((data) => {
-        console.info(`promise: deleteKeyItem key success, data = ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`promise: deleteKeyItem key success`);
       })
       .catch((error: Error) => {
         if (throwObject.isThrow) {
@@ -499,11 +499,11 @@ class ThrowObject {
 function generateKeyItem(keyAlias: string, huksOptions: huks.HuksOptions, throwObject: ThrowObject) {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.generateKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.generateKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {
@@ -518,8 +518,8 @@ async function publicGenKeyFunc(keyAlias: string, huksOptions: huks.HuksOptions)
   let throwObject: ThrowObject = { isThrow: false };
   try {
     await generateKeyItem(keyAlias, huksOptions, throwObject)
-      .then((data) => {
-        console.info(`promise: generateKeyItem success, data = ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`promise: generateKeyItem success`);
       })
       .catch((error: Error) => {
         if (throwObject.isThrow) {
@@ -576,7 +576,7 @@ async function publicInitFunc(keyAlias: string, huksOptions: huks.HuksOptions) {
 }
 
 function updateSession(handle: number, huksOptions: huks.HuksOptions, throwObject: ThrowObject) {
-  return new Promise<huks.HuksOptions>((resolve, reject) => {
+  return new Promise<huks.HuksReturnResult>((resolve, reject) => {
     try {
       huks.updateSession(handle, huksOptions, (error, data) => {
         if (error) {
@@ -657,11 +657,11 @@ async function publicFinishFunc(handle: number, huksOptions: huks.HuksOptions) {
 function deleteKeyItem(keyAlias: string, huksOptions: huks.HuksOptions, throwObject: ThrowObject) {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.deleteKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.deleteKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {
@@ -676,8 +676,8 @@ async function publicDeleteKeyFunc(keyAlias: string, huksOptions: huks.HuksOptio
   let throwObject: ThrowObject = { isThrow: false };
   try {
     await deleteKeyItem(keyAlias, huksOptions, throwObject)
-      .then((data) => {
-        console.info(`promise: deleteKeyItem key success, data = ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`promise: deleteKeyItem key success`);
       })
       .catch((error: Error) => {
         if (throwObject.isThrow) {

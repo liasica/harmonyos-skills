@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 调用云存储业务接口失败，app日志提示“"state":65”，upload进程日志提示“404 Not Found”
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit常见问题 > 云存储 > 调用云存储业务接口失败，app日志提示“"state":65”，upload进程日志提示“404 Not Found”
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:12+08:00
+scraped_at: 2026-10-15T07:05:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:877fca5b74a73bccb2ef6c451e29f66ef6f14ccef74a16a1ed1382f685fbbc84
+content_hash: sha256:04488ce63095f227a8e93479316ea226bffaa9586aae7e3840aca4abc49845c7
 ---
 
 **问题现象**
@@ -14,10 +14,10 @@ content_hash: sha256:877fca5b74a73bccb2ef6c451e29f66ef6f14ccef74a16a1ed1382f685f
 
 * app日志提示“"state":65”
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/xt8CA1wYRj2xEXsNgyJtQg/zh-cn_image_0000002755184590.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/yA6y0uBVR06H-PZi_cAIyg/zh-cn_image_0000002762340982.png)
 * upload进程的日志提示“404 Not Found”（通过设置“No filters”模式、过滤“C01C50”关键字查找）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/ZX5kdM1MSICGFd-icNrr3g/zh-cn_image_0000002784663637.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/EedKOSG8SWOHlKsfcoljQw/zh-cn_image_0000002762500904.png)
 
 **解决措施**
 

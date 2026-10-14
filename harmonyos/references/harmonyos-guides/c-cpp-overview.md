@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/c-cpp-overvie
 title: C/C++标准库机制概述
 breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库 > C/C++标准库机制概述
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e9974eedc3a2fdb68bf8caac1aa21d7fe36d3202bf94b56ef66e71e8eae995d8
+scraped_at: 2026-10-15T07:06:09+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:b438115e09b25282a040486a909224ebfa4c9828fcf6fc25ed475cf2115df89e
 ---
 
 HarmonyOS NDK提供业界标准库[libc标准库](../harmonyos-references/musl.md)、[c++标准库](../harmonyos-references/cpp.md)，本文用于介绍C/C++标准库在HarmonyOS中的机制，开发者了解这些机制有助于在NDK开发过程中避免相关问题。
@@ -39,14 +39,14 @@ HarmonyOS中动态库加载namespace配置的情况
 
 * default ns：动态链接器启动时默认创建的ns，它可以搜索/system/lib{abi};/vendor/lib{abi}等系统目录路径下的so。
 * ndk ns：动态链接器启动时默认创建的ns，它可以搜索/system/lib{abi}/ndk目录下的so，主要是暴露了NDK接口的so。
-* app ns: 应用启动时创建的ns，它的搜索路径一般是应用的安装路径(可能为沙箱路径)，即可加载应用的so。
+* app ns：应用启动时创建的ns，它的搜索路径一般是应用的安装路径（可能为沙箱路径），即可加载应用的so。
 
 当前的命名空间机制主要限制了应用native库和系统native库之间的调用，规则如图所示：
 
 1. default ns和ndk ns可以互相访问全部so，不能访问app ns的so。
 2. app ns能访问ndk ns的全部so，不能访问default ns的so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/kNx8novnQZaUA_oXXSOo_w/zh-cn_image_0000002784664189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/rclA6xnbRUyNRk_L4-WOCQ/zh-cn_image_0000002762501458.png)
 
 ### rpath机制
 
@@ -61,7 +61,7 @@ SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 SET(CMAKE_INSTALL_RPATH "\${ORIGIN}/module")
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/4iGrrtQhSHSupNHKgxtoVA/zh-cn_image_0000002755025256.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/4yw8wdt3RBeKupWsRPyQEg/zh-cn_image_0000002791740117.png)
 
 ### 支持dlclose
 

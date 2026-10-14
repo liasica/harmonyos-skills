@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular
 title: 支持单复数
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用本地化 > 提升可翻译性 > 支持单复数
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5268f3485478b6505d9c2a0a1d2feee3dfaa96113fd6238ff2a9dd4e3478bb1b
+scraped_at: 2026-10-15T07:04:25+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:2eb219a581a7ca54687a10374b57fdad2b04c80b9d3089b79a256f53d914f3fd
 ---
 
 翻译过程中，不同语言对于名词或单位表达式的单复数格式要求各不相同。有些语言不区分单复数，有些语言有两种形式，还有一些语言有多种形式。例如，在英语中，名词支持两种单复数形式；对于中文，名词不分单复数，通过量词表达数量的不同。
@@ -19,7 +19,7 @@ content_hash: sha256:5268f3485478b6505d9c2a0a1d2feee3dfaa96113fd6238ff2a9dd4e347
 * many：数值较大的数
 * other：其他情况
 
-例如，在阿拉伯语中，单复规则如下：
+例如，在阿拉伯语中，单复数规则如下：
 
 * zero：0
 * one：1

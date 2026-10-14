@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 关系型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 关系型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:20:57+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:2680cb684bf7093c579f3ee898b0345abf411f46af45b41186b457037c1389af
+scraped_at: 2026-10-15T07:03:56+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:51afbc2304b74d8ba07b3c8e4ae6ed1d4d8d9b533771f0c4587f1f5707b4a96c
 ---
 
 ## 场景介绍
@@ -26,7 +26,7 @@ content_hash: sha256:2680cb684bf7093c579f3ee898b0345abf411f46af45b41186b457037c1
 
 ### 数据跨设备同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/bK1wXAq2TRGCymcYcpuAow/zh-cn_image_0000002755022886.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/oYBDojg5QQOBISBV_EMjXw/zh-cn_image_0000002762499074.jpg)
 
 业务将数据写入关系型数据库后，向数据管理服务发起同步请求。
 
@@ -51,7 +51,7 @@ content_hash: sha256:2680cb684bf7093c579f3ee898b0345abf411f46af45b41186b457037c1
 
 需要注意的是，该模式下不支持对其他设备同步过来的数据进行修改。这一限制旨在保障数据一致性与同步逻辑的稳定性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/5kfbuz64Sy66oMXdbjbgfg/zh-cn_image_0000002755182772.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/rhysgf_qQP-51WHAdfxKWg/zh-cn_image_0000002791737733.jpg)
 
 **单版本表模式**
 
@@ -59,7 +59,7 @@ content_hash: sha256:2680cb684bf7093c579f3ee898b0345abf411f46af45b41186b457037c1
 
 使用单版本表模式跨设备同步，需要配置schema文件，指定所需同步列以及解冲突列；单版本表模式同步数据支持修改对端设备同步过来的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ht3MUwQuShq01jFEwApC3A/zh-cn_image_0000002784581637.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/eBsRrztQTxu5BCPh6qh2hw/zh-cn_image_0000002762339160.jpg)
 
 ## 约束限制
 
@@ -736,7 +736,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
 
   错误示例："AGE"为UNIQUE列，但是未指定该字段同步。
 
-  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER UNIQUE, SALARY REAL, CODES BLOB)'。
+  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER UNIQUE, SALARY REAL, CODES BLOB)'
   + schema：
 
     ```json
@@ -777,7 +777,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
 
   错误示例：自增表下，指定"NAME"为解冲突列，但是又同步字段"ID"。
 
-  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'。
+  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'
   + schema：
 
     ```json
@@ -931,7 +931,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
 
   错误示例：字段"AGE"为not null值，没有默认值，同步schema中没有指定"AGE"同步。
 
-  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER NOT NULL, SALARY REAL, CODES BLOB)'。
+  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER NOT NULL, SALARY REAL, CODES BLOB)'
   + schema：
 
     ```json
@@ -972,7 +972,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
 
   错误示例："EMPLOYEE"是无主键表，设置单版本模式分布式表时会失败。
 
-  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'。
+  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'
   + schema：
 
     ```json
@@ -1013,7 +1013,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
 
   错误示例："NAME"为非自增主键，但是指定"AGE"为解冲突列。
 
-  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (NAME TEXT NOT NULL PRIMARY KEY, AGE INTEGER NOT NULL UNIQUE, SALARY REAL, CODES BLOB)'。
+  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (NAME TEXT NOT NULL PRIMARY KEY, AGE INTEGER NOT NULL UNIQUE, SALARY REAL, CODES BLOB)'
   + schema：
 
     ```json
@@ -1054,7 +1054,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
 
   错误示例：指定解冲突列"NAME"没有UNIQUE属性。
 
-  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)'。
+  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)'
   + schema：
 
     ```json
@@ -1095,7 +1095,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
 
   错误示例：字段"AGE"未出现在fields中，该字段将不会同步。
 
-  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'。
+  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'
   + schema：
 
     ```json
@@ -1129,7 +1129,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
 
   错误示例：schema中指定了"ID"同步，该字段为自增主键。
 
-  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'。
+  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'
   + schema：
 
     ```json
@@ -1170,7 +1170,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
 
   错误示例：若先执行写入语句，执行设置分布式表语句会失败；若先执行设置分布式表语句，执行写入语句会失败。
 
-  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'。
+  + 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)'
   + 写入语句：
 
     ```typescript

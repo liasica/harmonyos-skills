@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-polynomi
 title: 使用PolyRoot求解多项式根
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用PolyRoot求解多项式根
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:40+08:00
+scraped_at: 2026-10-15T07:04:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b4cef78d1ae1f8ff212cd7ca85dbd0f110245b7827ca3cf9aaddb33c8a29d00f
+content_hash: sha256:b531167b43dbf39db11a9be7aed44105b1b6c5a267ec919e05aa099df00fa7a6
 ---
 
 多项式零点求解器（Polynomial Root Solver）用于计算一元多项式的实数根。其接收稀疏格式的多项式描述作为输入进行零点求解，适用于计算机辅助设计、信号处理、控制理论等需要高精度多项式根计算的场景。
 
-其相关定义如下：多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/F62SdrHhQmiMIzaHS3fWJA/zh-cn_image_0000002784663127.png)由稀疏格式的FAST\_Poly结构体描述，其中coeff数组存储各项系数，pow数组存储对应指数，且需按指数升序排列。例如多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/1TxXld6bTCikXwMpWyxWfQ/zh-cn_image_0000002755024194.png)可表示为coeff={1, -2, 3}，pow={0, 1, 2}。
+其相关定义如下：多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/e6Tyry_mQLe6JwUBenko0Q/zh-cn_image_0000002762500390.png)由稀疏格式的FAST\_Poly结构体描述，其中coeff数组存储各项系数，pow数组存储对应指数，且需按指数升序排列。例如多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/TNZadPvnQX2W7pg5FlAeXg/zh-cn_image_0000002791739053.png)可表示为coeff={1, -2, 3}，pow={0, 1, 2}。
 
 ## 接口说明
 

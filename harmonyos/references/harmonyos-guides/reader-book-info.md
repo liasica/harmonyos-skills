@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-book-i
 title: 获取书籍信息
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取书籍信息
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:77690511fa028fe2310342d967d68c169a3b009626c0256e0618eff61af26db4
+scraped_at: 2026-10-15T07:05:39+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:ca51dbe7e42563ec16b05309c5f149207ec769cc51b9f0fd6ae90478306e7176
 ---
 
 在导入本地书籍到书架时，开发者需通过[DocumentViewPicker](../harmonyos-references/js-apis-file-picker.md#documentviewpicker)先将书籍文件导入到[应用沙箱目录](app-sandbox-directory.md)，然后利用解析能力获取书籍信息，包括书封、书名及作者等，以完成书架内容的展示。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Qi9si6W0S2q467XLQVBuLQ/zh-cn_image_0000002784583729.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/aWgwxzReQf6cQ91lbf2w3g/zh-cn_image_0000002791860051.png)
 
 ## 接口说明
 
@@ -50,7 +50,7 @@ content_hash: sha256:77690511fa028fe2310342d967d68c169a3b009626c0256e0618eff61af
      try {
        this.defaultHandler = await bookParser.getDefaultHandler(path);
      } catch (error) {
-       hilog.error(0x0000, "testTAG", `getDefaultHandler failed, Code: ${error.code}, message: ${error.message}`);
+       hilog.error(0x0000, "ReaderLog", `getDefaultHandler failed, Code: ${error.code}, message: ${error.message}`);
      }
    }
    ```
@@ -68,19 +68,25 @@ content_hash: sha256:77690511fa028fe2310342d967d68c169a3b009626c0256e0618eff61af
    }
 
    private async getBookInfo() {
+     let imageSource: image.ImageSource | null = null;
      try {
        let bookInfo: bookParser.BookInfo | undefined = this.defaultHandler?.getBookInfo();
        if (bookInfo) {
          this.bookTitle = bookInfo.bookTitle || '';
          this.author = bookInfo?.bookCreator || '';
          let buffer = this.defaultHandler?.getResourceContent(-1, bookInfo.bookCoverImage);
-         let imageSource: image.ImageSource = image.createImageSource(buffer);
-         this.bookCover = await imageSource.createPixelMap();
+         if (buffer) {
+           imageSource = image.createImageSource(buffer);
+           this.bookCover = await imageSource.createPixelMap();
+         }
+         hilog.info(0x0000, 'ReaderLog', 'getBookInfo bookInfo is: ' + JSON.stringify(bookInfo));
+       }
+     } catch (error) {
+       hilog.error(0x0000, 'ReaderLog', `getBookInfo failed, Code: ${error.code}, message: ${error.message}`);
+     } finally {
+       if (imageSource) {
          imageSource.release();
        }
-       hilog.info(0x0000, 'testTAG', 'getBookInfo bookInfo is: ' + JSON.stringify(bookInfo));
-     } catch (error) {
-       hilog.error(0x0000, 'testTAG', `getBookInfo failed, Code: ${error.code}, message: ${error.message}`);
      }
    }
 

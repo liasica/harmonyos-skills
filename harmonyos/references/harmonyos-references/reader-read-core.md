@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-re
 title: readerCore（阅读核心能力）
 breadcrumb: API参考 > 应用服务 > Reader Kit（阅读服务） > ArkTS API > readerCore（阅读核心能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ba0cf2edf1f2549d8bce456775aac01e463c683e813e4c47f3f08bada8a42469
+scraped_at: 2026-10-15T07:12:45+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:ac21583f45b4de7746d1c1183721f6d66297e7bac559e6b04b00d54acd3b7c65
 ---
 
 本模块为Reader Kit核心能力。提供阅读页面数据基础类、页面状态、内容分页信息、页面排版属性、组件控制器等能力。
@@ -215,7 +215,7 @@ struct Reader {
   private async init() {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     await this.readerComponentController.init(context);
-    hilog.info(0x0000, 'testTag', `init succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `init succeeded`);
   }
 
   build() {
@@ -288,7 +288,7 @@ struct Reader {
     let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
     await this.readerComponentController.init(context);
     this.readerComponentController.registerBookParser(bookParserHandler);
-    hilog.info(0x0000, 'testTag', `registerBookParser succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `registerBookParser succeeded`);
   }
 
   build() {
@@ -351,7 +351,7 @@ struct Reader {
     this.setPageConfig();
   }
 
-  private async setPageConfig(){
+  private async setPageConfig() {
     let readerSetting: readerCore.ReaderSetting = {
       fontName: '系统字体',
       fontPath: '',
@@ -372,7 +372,7 @@ struct Reader {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     await this.readerComponentController.init(context);
     this.readerComponentController.setPageConfig(readerSetting);
-    hilog.info(0x0000, 'testTag', `setPageConfig succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `setPageConfig succeeded`);
   }
 
   build() {
@@ -461,7 +461,7 @@ struct Reader {
     this.readerComponentController.registerBookParser(bookParserHandler);
     // 调用startPlay接口初始化书籍内容显示
     await this.readerComponentController.startPlay(spineIndex || 0, domPos);
-    hilog.info(0x0000, 'testTag', `startPlay succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `startPlay succeeded`);
   }
 
   build() {
@@ -528,7 +528,7 @@ struct Reader {
     await this.readerComponentController.init(context);
     // 翻下一页
     this.readerComponentController.flipPage(true);
-    hilog.info(0x0000, 'testTag', `flipPage succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `flipPage succeeded`);
   }
 
   build() {
@@ -580,7 +580,7 @@ struct Reader {
     await this.readerComponentController.init(context);
     // 释放加载书籍时的资源
     this.readerComponentController.releaseBook();
-    hilog.info(0x0000, 'testTag', `releaseBook succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `releaseBook succeeded`);
   }
 
   build() {
@@ -640,7 +640,7 @@ struct Reader {
     // 此处只演示方法调用，实际触发回调，需要配合startPlay接口使用
     this.readerComponentController.on('pageShow', (data: readerCore.PageDataInfo): void => {
       // 开发者可在此保存内容分布排版数据，利用data.resourceIndex及data.startDomPos数据调用startPlay接口继续阅读
-      hilog.info(0x0000, 'testTag', 'pageshow: data is: ' + JSON.stringify(data));
+      hilog.info(0x0000, 'ReaderLog', 'pageshow: data is: ' + JSON.stringify(data));
     });
   }
 
@@ -695,12 +695,12 @@ struct Reader {
     this.unregisterListener();
   }
 
-  private async unregisterListener(){
+  private async unregisterListener() {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
     await readerComponentController.init(context);
     readerComponentController.off('pageShow');
-    hilog.info(0x0000, 'testTag', `offPageShow succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `offPageShow succeeded`);
   }
 
   build() {
@@ -774,7 +774,7 @@ struct Reader {
       if (res && context) {
         // 获取资源路径下的字体数据
         let value: Uint8Array = context.resourceManager.getRawFileContentSync(this.selectFontPath);
-        hilog.info(0x0000, 'testTag', 'resourceRequest : get success');
+        hilog.info(0x0000, 'ReaderLog', 'resourceRequest : get success');
         return value.buffer as ArrayBuffer;
       }
     }
@@ -785,7 +785,7 @@ struct Reader {
     let options = ['.ttf', '.woff2', '.otf'];
     let path = filePath.toLowerCase();
     let result = path.indexOf(options[0]) != -1 || path.indexOf(options[1]) != -1 || path.indexOf(options[2]) != -1;
-    hilog.info(0x0000, 'testTag', 'isFont = ' + result);
+    hilog.info(0x0000, 'ReaderLog', 'isFont = ' + result);
     return result;
   }
 
@@ -844,7 +844,7 @@ struct Reader {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     await this.readerComponentController.init(context);
     this.readerComponentController.off('resourceRequest');
-    hilog.info(0x0000, 'testTag', `offResourceRequest succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `offResourceRequest succeeded`);
   }
 
   build() {

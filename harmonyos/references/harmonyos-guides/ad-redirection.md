@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ad-redirectio
 title: 广告跳转
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转典型场景 > 广告跳转
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:20:55+08:00
+scraped_at: 2026-10-15T07:03:53+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:af3408be1c0d53fac8c788ec66965e2aab5775b48bec0bbe6020c35a3cc7db00
+content_hash: sha256:2589174467ac54b085c865c582d00cc34254471dfbd5abf7cd1b8b85075c8eed
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:af3408be1c0d53fac8c788ec66965e2aab5775b48bec0bbe6020c35a3cc
 
 广告跳转的流程图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/WYwArvk3SjayGJBhDka6cQ/zh-cn_image_0000002755182754.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/V1eK2rz4QwOAjuyPlaAbGA/zh-cn_image_0000002791737715.png)
 
 跳转过程基于[App Linking](app-linking-startup.md)能力，分为几种情况：
 

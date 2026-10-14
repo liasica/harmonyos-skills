@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 监听文本缩放因子变化
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 监听文本缩放因子变化
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6e5c3617345f25b87d381a26cb2e3623a8a086fad275a23082f17cd8643b226a
+scraped_at: 2026-10-15T07:05:40+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:b0d426dd362dcfe55e0feb4c9bd0c02b8e8a9abb6f79847233d5884efb0f4bcb
 ---
 
 在[智慧多窗](multi-window-intro.md)等场景时，文本缩放因子[Display.scaledDensity](../harmonyos-references/js-apis-display.md#display)属性会发生变化。如果文本缩放因子的值与当前值不符，开发者需要更新[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的scaledDensity属性，触发ReaderComponentController组件控制器的setPageConfig接口重新进行页面排版。
@@ -42,7 +42,7 @@ content_hash: sha256:6e5c3617345f25b87d381a26cb2e3623a8a086fad275a23082f17cd8643
 
      aboutToAppear(): void {
        this.registerScreenDensityChange();
-       hilog.info(0x0000, 'testTag',
+       hilog.info(0x0000, 'ReaderLog',
          'aboutToAppear : current scaledDensity = ' + this.readerSetting.scaledDensity + ', change scaledDensity = ' +
          display.getDefaultDisplaySync().scaledDensity);
      }
@@ -51,7 +51,7 @@ content_hash: sha256:6e5c3617345f25b87d381a26cb2e3623a8a086fad275a23082f17cd8643
       * 注册缩放文本缩放因子变化监听
       */
      registerScreenDensityChange() {
-       this.screenDensityCallBack = (data: number) => {
+       this.screenDensityCallBack = (_data: number) => {
          let displaySync = display.getDefaultDisplaySync();
          let scaledDensity = displaySync.scaledDensity;
          if (scaledDensity !== this.readerSetting.scaledDensity) {
@@ -98,7 +98,7 @@ content_hash: sha256:6e5c3617345f25b87d381a26cb2e3623a8a086fad275a23082f17cd8643
 
      private jumper() {
        this.getUIContext().getRouter().pushUrl({ url: "pages/Reader" }).catch(() => {
-         hilog.error(0x0000, 'testTag', 'pushUrl failed');
+         hilog.error(0x0000, 'ReaderLog', 'pushUrl failed');
        });
      }
 

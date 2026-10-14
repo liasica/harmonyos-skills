@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-parse-
 title: 证书对象的创建、解析和校验
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书对象的创建、解析和校验
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d113ee106cb42da1a19a2c2f267bfe986b1c61b09db2170eba013c845a9a5b26
+scraped_at: 2026-10-15T07:04:32+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:db57f88412e9dbac0075fec364fced928ef0e56a41e6691986f4dc760723ea21
 ---
 
 以校验证书有效性为例，完成证书对象的创建、解析和校验。
@@ -72,8 +72,8 @@ function certSample(): void {
 
     // 获取证书主体名称。
     let subjectNameBin = x509Cert.getSubjectName(cert.EncodingType.ENCODING_UTF8);
-    let encoder = util.TextDecoder.create();
-    let subjectName = encoder.decodeToString(subjectNameBin.data);
+    let decoder = util.TextDecoder.create();
+    let subjectName = decoder.decodeToString(subjectNameBin.data);
     console.info(`X509 subjectName: ${subjectName}`);
 
     // 获取证书对象的字符串类型数据。

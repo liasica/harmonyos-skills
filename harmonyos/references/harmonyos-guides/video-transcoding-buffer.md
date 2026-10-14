@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-transco
 title: 基于Buffer模式进行视频转码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 基于Buffer模式进行视频转码
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:54+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:b3f42f999cec9788ea15bf0af52476281c776fb3a91085703a5289adceb00c63
+scraped_at: 2026-10-15T07:05:03+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:8020f878b19e69d4e2d80a71d4211edf70d13b178eeb74fd62ae48a333957e3b
 ---
 
 ## 概述
@@ -20,11 +20,11 @@ content_hash: sha256:b3f42f999cec9788ea15bf0af52476281c776fb3a91085703a5289adceb
 
 视频文件格式是视频保存的格式，常见的格式有MP4、AVI等。在视频文件（以MP4文件解码为例）解码时，首先需要将视频进行解封装，解封装会将一个封装好的音视频文件（如MP4、FLV等）中的音频和视频数据流分离出来。然后，从数据流中取出视频的媒体样本sample，通过视频解码器将媒体数据解码成YUV数据，流程如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/vW6ufmfMQxeu_jt-kh6ERA/zh-cn_image_0000002755184210.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/aY_U5U7bSnOsi1WyO9dIkw/zh-cn_image_0000002762340602.png)
 
 在视频文件编码（以MP4文件编码为例）时，首先会通过视频编码器对YUV数据进行编码，将未压缩的视频数据YUV压缩成视频码流H.264，然后，将编码后的媒体数据按一定的格式封装存储到MP4文件里，流程如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/SFE9FfeSSS2JGNtyJFABqQ/zh-cn_image_0000002784583077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/f0emYhdkQTiiU8TKRfMmrw/zh-cn_image_0000002791859397.png)
 
 关于视频文件编解码支持的格式，详情请参考[AVCodec支持的格式](avcodec-support-formats.md)。
 
@@ -36,7 +36,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
 以I420格式为例，其跨距对齐后的格式如下所示。其中，w\_stride是数据填充后的宽跨距，h\_stride是数据填充后的高跨距，height是实际的高度，width是实际的宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/B8-2zKQqRl-q_VuApYh0hw/zh-cn_image_0000002784663257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Q7ixgn_VRwWlTgX53bQMwg/zh-cn_image_0000002762500524.png)
 
 ### 视频编解码原理
 
@@ -44,7 +44,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
 在视频解码的过程中，主要包含两个部分，分别为输入数据流转和输出数据流转。开发者需要通过输入数据流转将需要解码的数据填充给解码器，解码器再进行解码处理。在输出数据流转中，解码器会将解码完成的数据返回给开发者使用，在开发者使用完毕后，需要通知解码器释放视频数据，从而实现整体的Buffer循环，详细原理流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/qTi6UWJ_RCWJbXOkWImskA/zh-cn_image_0000002755024324.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/SdYa5oRISeS6hg-_FxA7RA/zh-cn_image_0000002791739183.png)
 
 输入数据流转的步骤如下所示。
 
@@ -72,7 +72,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
 在视频转码的场景中，视频文件会经历解封装、视频解码、视频编码和视频封装的步骤，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/tfhVHe-dT9qmdtqYSZ26rw/zh-cn_image_0000002755184212.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/0osCzvVNRD2IPBzFBpJsLQ/zh-cn_image_0000002762340604.png)
 
 其主要包含三个大步骤。
 
@@ -91,7 +91,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
 在视频文件解码中，主要包含两个步骤，输入缓存处理、输出缓存处理。在OnNeedInputBuffer()回调函数中，维护了一个空Buffer的缓存队列，在实现输入缓存处理时，需要解封装、填充视频数据。在OnNewOutputBuffer()回调函数中，维护了一个已解码视频数据的缓存队列，在实现输出缓存处理时，需要处理视频数据，其调用顺序如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/cQM3Qa5iREyxxXZG2zumEw/zh-cn_image_0000002784583079.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/l0apT7FtQROxpk7tf3eeeA/zh-cn_image_0000002791859399.png)
 
 **视频文件解码**开发步骤如下所示。
 
@@ -126,12 +126,8 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
          isReleased_ = false;
          int32_t ret = demuxer_->Create(sampleInfo_);
-
-         if (ret == AVCODEC_SAMPLE_ERR_OK) {
-             ret = CreateVideoDecoder();
-         } else {
-             AVCODEC_SAMPLE_LOGE("Create audio decoder failed");
-         }
+         CHECK_AND_RETURN_RET_LOG(ret == AVCODEC_SAMPLE_ERR_OK, ret, "Create demuxer failed");
+         ret = CreateVideoDecoder();
          return ret;
      }
      ```
@@ -311,7 +307,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
                                   sampleInfo_.outputFd);
          ret = muxer_->Config(sampleInfo_);
          
-         CHECK_AND_RETURN_RET_LOG(ret == AVCODEC_SAMPLE_ERR_OK, ret, "Create audio encoder failed");
+         CHECK_AND_RETURN_RET_LOG(ret == AVCODEC_SAMPLE_ERR_OK, ret, "Muxer config failed");
 
          ret = CreateVideoEncoder();
          CHECK_AND_RETURN_RET_LOG(ret == AVCODEC_SAMPLE_ERR_OK, ret, "Create video encoder failed");
@@ -597,7 +593,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
      ```
      int32_t VideoEncoder::PushInputBuffer(CodecBufferInfo &info) {
-         CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Decoder is null");
+         CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Encoder is null");
          int32_t ret = OH_VideoEncoder_PushInputBuffer(encoder_, info.bufferIndex);
          CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Push input data failed");
          return AVCODEC_SAMPLE_ERR_OK;

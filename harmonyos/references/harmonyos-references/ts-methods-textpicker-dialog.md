@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 文本滑动选择器弹窗 (TextPickerDialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 文本滑动选择器弹窗 (TextPickerDialog)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:37+08:00
+scraped_at: 2026-10-15T07:08:16+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:c88d286331f64b9592ab128e41a19a535dc2fe346cc1784a2fb7c9cdf9f594a5
+content_hash: sha256:85b7ed5b6c6e58e9502240dead6e51eb8160585f4aa6670cb070aee9f1201e95
 ---
 
 根据指定的选择范围创建文本滑动选择器，展示在弹窗上。该组件适用于设置页面、表单录入、数据筛选等需要用户从预设选项中选择文本的场景。
@@ -210,7 +210,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/g0gLZWytQg-JM66KhbqMhg/zh-cn_image_0000002755026044.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/UUIjkNG0TXq_kLhfpExxAA/zh-cn_image_0000002791740919.gif)
 
 ### 示例2（自定义样式）
 
@@ -298,7 +298,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/xG9bONoCRGC06yCNNjwckw/zh-cn_image_0000002755185928.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/pQLaXspiRt2n94WtbvHT7Q/zh-cn_image_0000002762342346.png)
 
 ### 示例3（悬停态弹窗）
 
@@ -363,7 +363,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/a0_uf6HnR_afOC1kNpM1DA/zh-cn_image_0000002784584795.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/fD9Q5Uh6RVmBBMLG1nO18A/zh-cn_image_0000002791861139.gif)
 
 ### 示例4（设置弹窗位置）
 
@@ -405,7 +405,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/_KctKTrEQ_CkC3UF4eCjdA/zh-cn_image_0000002784664977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/JwcesufVT5-78hcS_Xn6hw/zh-cn_image_0000002762502266.png)
 
 ### 示例5（设置遮蔽区）
 
@@ -451,7 +451,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/wf0fDqEfS-GQItNgMTsMaQ/zh-cn_image_0000002755026046.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/SAfG47dvR-WCt6ytEl0q3w/zh-cn_image_0000002791740921.png)
 
 ### 示例6（设置弹窗背板）
 
@@ -494,7 +494,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/O-OkWD8uQ8OfSHDHXytaRQ/zh-cn_image_0000002755185930.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/P6f19FQgTAS5VGh6E0FdnA/zh-cn_image_0000002762342348.png)
 
 ### 示例7（设置循环滚动）
 
@@ -536,7 +536,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/iYx8vYezQPm67GEz0E3pbw/zh-cn_image_0000002784584797.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/sjS_IAvPQJ2nmOmIH-J7rw/zh-cn_image_0000002791861141.gif)
 
 ### 示例8（设置选中项的背景样式）
 
@@ -575,7 +575,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ZzpoKuERSUWYVQuwZI-2Aw/zh-cn_image_0000002784664979.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Y7Gnge3fRMGgPDzU9p1OcQ/zh-cn_image_0000002762502268.gif)
 
 ### 示例9（自定义背景模糊效果参数）
 
@@ -613,7 +613,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/86pOrwUGS0C6TSX8aO5-UQ/zh-cn_image_0000002755026048.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Qe77I-HETTqIR_HSQNBMdg/zh-cn_image_0000002791740923.png)
 
 ### 示例10（自定义背景效果参数）
 
@@ -652,7 +652,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/hneE02bORNmCWxq6E5iccg/zh-cn_image_0000002755185932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/OkUjomwNR_mTYQoaz3IvvQ/zh-cn_image_0000002762342350.png)
 
 ### 示例11（设置沉浸光感）
 
@@ -691,4 +691,4 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/c9GKH9ngRe6nXfZsyw2szQ/zh-cn_image_0000002784584799.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/CpLWRyPNThKua-fsQ20f4Q/zh-cn_image_0000002791861143.gif)

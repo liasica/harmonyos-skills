@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi
 title: Node-API
 breadcrumb: API参考 > 标准库 > Node-API
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:49+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:9cdc528de91fa8b2d10d8e82c9abbff3455e471fa582d2cbd36b2afc6f591a30
+scraped_at: 2026-10-15T07:13:01+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:5590d3998a376e31b04cb607ab4a2323d4f14648979972b35a81bb14f7e2f844
 ---
 
 ## 简介
@@ -1736,7 +1736,7 @@ napi_status napi_get_strong_reference_value(napi_env env, napi_strong_ref ref, n
 
 根据强引用获取其关联的ArkTS对象值。使用该接口需要注意以下几点：
 
-1. 不能使用已删除的强引用去获取ArkTS对象值，否则可能预期外的错误。
+1. 不能使用已删除的强引用去获取ArkTS对象值，否则可能导致预期外的错误。
 
 **起始版本：** 21
 

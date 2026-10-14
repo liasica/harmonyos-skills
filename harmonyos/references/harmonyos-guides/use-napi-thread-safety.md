@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-thre
 title: 使用Node-API接口进行线程安全开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口进行线程安全开发
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4bb10d7b9d51bb3b7d00a7381c6bc12c1e8062a4b8d6411acb2bf37b97f8792e
+scraped_at: 2026-10-15T07:06:12+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:25f6c9d3313a8c18dd1e176a620f46b10eed5827434358911b2c776b339cd7fe
 ---
 
 ## 场景介绍
@@ -69,7 +69,7 @@ content_hash: sha256:4bb10d7b9d51bb3b7d00a7381c6bc12c1e8062a4b8d6411acb2bf37b97f
            auto result = future.get();
            OH_LOG_INFO(LOG_APP, "XXX, Result from JS %{public}s", result.c_str());
        } catch (const std::exception &e) {
-           OH_LOG_INFO(LOG_APP, "XXX, Result from JS %{public}s", e.what());
+           OH_LOG_ERROR(LOG_APP, "XXX, Result from JS %{public}s", e.what());
        }
    }
 
@@ -422,7 +422,7 @@ content_hash: sha256:4bb10d7b9d51bb3b7d00a7381c6bc12c1e8062a4b8d6411acb2bf37b97f
 
    @Concurrent
    function nativeCall(input : string): void {
-     console.info('Taskpool thread received:%s', input);
+     console.info('Taskpool thread received:', input);
      nativeModule.startWithCallback('Taskpool', (result: string) => {
        console.info('[Taskpool] Got from native:', result);
      });

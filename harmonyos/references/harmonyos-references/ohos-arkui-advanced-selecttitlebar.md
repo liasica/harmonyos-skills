@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectTitleBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectTitleBar
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:42+08:00
+scraped_at: 2026-10-15T07:08:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:34b137344cf0cca1ea5b61bcd76fa79ee311767406139869b54323c954cf8260
+content_hash: sha256:1e5185293a9d0ca63d28f5b79594c25b1c8cfb23df392220c4abdfa09b7d7f27
 ---
 
 下拉菜单标题栏包含一个下拉菜单，可用于页面之间的切换；可用于一级页面、二级及其以上界面（配置返回键）。
@@ -188,7 +188,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/ENAGpBTxQcqb18blwS9R_g/zh-cn_image_0000002755026130.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/5qqy1mDHTd2S_WgA2aFGTA/zh-cn_image_0000002791741011.png)
 
 ### 示例2（右侧自定义按钮播报）
 
@@ -319,7 +319,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/bKo5ce6tQnanLJ1S2eIuYw/zh-cn_image_0000002755186014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/BYWLYnLzTVGvhGOSJUfK7g/zh-cn_image_0000002762342436.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -456,4 +456,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/yvigI_NNRgGodfl2QU9RmQ/zh-cn_image_0000002784584881.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/yYcwzfj_TFmp-zPxaJhYZQ/zh-cn_image_0000002791861225.png)

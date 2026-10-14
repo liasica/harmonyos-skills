@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-life
 title: 使用Node-API接口进行生命周期相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行生命周期相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3d95265d69104af258706a003680c57c0aea6d0bb8e8cad18f9c308dcacc5cb4
+scraped_at: 2026-10-15T07:06:11+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:1ff378540868181b30ab2b04be44d35e22c426148dce171feb83ece0623c6d7e
 ---
 
 ## 简介
@@ -124,8 +124,6 @@ static napi_value HandleScope(napi_env env, napi_callback_info info)
 
 接口声明
 
-index.d.ts
-
 ```typescript
 export const handleScopeTest: () => string; // napi_open_handle_scope、napi_close_handle_scope
 
@@ -219,8 +217,6 @@ static napi_value EscapableHandleScopeTest(napi_env env, napi_callback_info info
 ```
 
 接口声明
-
-index.d.ts
 
 ```typescript
 export const escapableHandleScopeTest: () => string; // napi_open_escapable_handle_scope、napi_close_escapable_handle_scope、napi_escape_handle
@@ -327,8 +323,6 @@ static napi_value GetWeakReferenceValue(napi_env env, napi_callback_info info)
 
 接口声明
 
-// index.d.ts
-
 ```typescript
 export const createWeakReference: () => void;
 
@@ -342,7 +336,7 @@ try {
     testNapi.createWeakReference();
     hilog.info(0x0000, 'testTag', 'reference test: %{public}s', testNapi.getWeakReferenceValue());
 } catch (error) {
-    hilog.error(0x0000, 'testTag', `调用错误：${error.message}`);
+    hilog.error(0x0000, 'testTag', `call error: ${error.message}`);
 }
 ```
 
@@ -416,8 +410,6 @@ static napi_value CleanupStrongReference(napi_env env, napi_callback_info info) 
 ```
 
 接口声明
-
-// index.d.ts
 
 ```typescript
 export const createStrongReference: () => void;
@@ -580,8 +572,6 @@ static napi_value DeleteReference(napi_env env, napi_callback_info info)
 ```
 
 接口声明
-
-// index.d.ts
 
 ```typescript
 export const addFinalizer: () => Object | undefined; // napi_add_finalizer

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-push
 title: pushCommon（推送服务公共信息）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > pushCommon（推送服务公共信息）
 category: harmonyos-references
-scraped_at: 2026-10-01T07:40:35+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:6db90a8331db4a86bbfb80e2e9b7be76870c43d7b28927c9d7e244ec4e23b874
+scraped_at: 2026-10-15T07:12:42+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:9b9817c636a4fbdaedffd3c3150cfb9c34169ecb2b1cac3e9e09e5136f15be6b
 ---
 
 本模块定义推送服务相关公共接口与枚举，为账号绑定、消息接收、通知内容替换等核心能力提供支撑。
@@ -30,8 +30,6 @@ import { pushCommon } from '@kit.PushKit';
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 对于5.1.0(18)以前版本，该枚举值在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)版本，该枚举值在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于5.1.1(19)及之后版本，该枚举值在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
-
 **起始版本：** 4.0.0(10)
 
 | 名称 | 值 | 说明 |
@@ -46,8 +44,6 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于5.1.1(19)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
 
 **起始版本：** 4.0.0(10)
 
@@ -126,8 +122,6 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)~6.0.2(22)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
-
 **起始版本：** 4.1.0(11)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -143,8 +137,6 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)~6.0.2(22)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -165,8 +157,6 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)~6.0.2(22)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
-
 **起始版本：** 4.1.0(11)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -181,8 +171,6 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于6.1.0(23)以前版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 4.1.0(11)
 

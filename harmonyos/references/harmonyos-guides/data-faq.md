@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-faq
 title: ArkData常见问题
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > ArkData常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:27+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:b34f66bdfe16573bc28b5fa8abebd0e671c64fe97b11d26c26009a86b8322d59
+scraped_at: 2026-10-15T07:03:57+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:93a1e547297987579c4c4b4f93a213799349f8a48f2658c66d0298df6a77b7a6
 ---
 
 ## 如何查看关系型数据库详细的SQL执行异常信息
@@ -38,10 +38,11 @@ content_hash: sha256:b34f66bdfe16573bc28b5fa8abebd0e671c64fe97b11d26c26009a86b83
 
 ## 调用getRdbStore接口使用原始密钥打开加密关系型数据库时，入参encryptionKey如何配置
 
-在关系型数据库中，调用[getRdbStore](../harmonyos-references/arkts-apis-data-relationalstore-f.md#relationalstoregetrdbstore)接口使用原始密钥打开加密库时，入参[CryptoParam.encryptionKey](../harmonyos-references/arkts-apis-data-relationalstore-i.md#cryptoparam14)需要按照如下操作配置：
+在关系型数据库中，调用[getRdbStore()](../harmonyos-references/arkts-apis-data-relationalstore-f.md#relationalstoregetrdbstore)接口使用原始密钥打开加密库时，入参[CryptoParam.encryptionKey](../harmonyos-references/arkts-apis-data-relationalstore-i.md#cryptoparam14)需要按照如下操作配置：
 
 ```ts
 import { relationalStore } from '@kit.ArkData'
+import { buffer } from '@kit.ArkTS';
 
 let password: string = "x'3605d7de19311edba4d3c88143c61cdd79dd5a58bc829c8b1234567891234567'"; // 需替换为实际的数据库原始密钥（64位十六进制字符串，对应32字节原始密钥）
 let key = new Uint8Array(buffer.from(password, 'utf8').buffer); // 返回的是Uint8Array

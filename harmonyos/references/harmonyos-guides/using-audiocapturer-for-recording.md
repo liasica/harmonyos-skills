@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audioca
 title: 使用AudioCapturer开发音频录制功能(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 使用AudioCapturer开发音频录制功能(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:51+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:73c95ed548785286439dc555bdb19031437b47a003c1b14390d565c84b969e29
+scraped_at: 2026-10-15T07:05:00+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:403718fee599cd02b8f6537685e187bf327bd939148fb21f8f06ce112f7d21ca
 ---
 
 AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音频数据，适合有音频开发经验的开发者实现更灵活的录制功能。
@@ -22,11 +22,13 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/-tGRUbhFQEW5dEOv0Yab0w/zh-cn_image_0000002755184172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/RUylmhRUTpeRnNYO_qVecg/zh-cn_image_0000002762340564.png)
 
 ### 开发步骤及注意事项
 
 以下各步骤示例为片段代码，可通过示例代码右下方链接获取[完整示例](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/Audio/AudioCaptureSampleJS)。
+
+完整示例展示了使用AudioCapturer完成录音，并在录音完成后播放所录制音频的实现。
 
 1. 配置音频采集参数并创建AudioCapturer实例，音频采集参数的详细信息可以查看[AudioCapturerOptions](../harmonyos-references/arkts-apis-audio-i.md#audiocaptureroptions8)。
 

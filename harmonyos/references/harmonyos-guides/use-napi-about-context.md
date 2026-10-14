@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用扩展的Node-API接口在当前线程中创建、切换和销毁上下文环境
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口在当前线程中创建、切换和销毁上下文环境
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:93177d62b3800d60b96d33f6bc7eabf21034498877b8ae66748ee2eb751e6075
+scraped_at: 2026-10-15T07:06:12+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:9bff9eaa96aee416cfedee793d7d932294eef1f99fe63caba1fe6ed50fd6c6cb
 ---
 
 在应用被拉起时，应用的主线程即为一个ArkTS线程，该线程中存在一个由系统管理的上下文环境，当ArkTS需要和C/C++交互时，在C/C++侧，napi\_env即代表该上下文环境，每个上下文环境中存在着独立的globalThis对象。
@@ -234,7 +234,7 @@ content_hash: sha256:93177d62b3800d60b96d33f6bc7eabf21034498877b8ae66748ee2eb751
 | napi\_delete\_strong\_sendable\_reference | napi\_invalid\_arg |
 | napi\_get\_strong\_sendable\_reference\_value | napi\_invalid\_arg |
 
-### 示例代码
+## 示例代码
 
 * 模块注册
 

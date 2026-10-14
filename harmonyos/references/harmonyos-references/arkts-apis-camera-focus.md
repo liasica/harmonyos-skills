@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Focus)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Focus)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:39:25+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:b3bcd009e8941c4eef88fde7502b782b2422cd0b2a959295ccb638e5c780eb36
+scraped_at: 2026-10-15T07:11:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:1532197b2215b0a824aacdee163be8dd321fc0c6b4d593eaa003b2b57bd61db1
 ---
 
 Focus继承自[FocusQuery](arkts-apis-camera-focusquery.md)。
@@ -111,9 +111,9 @@ function getFocusMode(photoSession: camera.PhotoSession): camera.FocusMode | und
 
 setFocusPoint(point: Point): void
 
-设置焦点，焦点应在0-1坐标系内，该坐标系左上角为{0，0}，右下角为{1，1}。
+设置焦点，焦点应在0-1坐标系内，该坐标系左上角为{0, 0}，右下角为{1, 1}。
 
-此坐标系是以设备充电口在右侧时的横向设备方向为基准的，例如应用的预览界面布局以设备充电口在下侧时的竖向方向为基准，布局宽高为{w，h}，且触碰点为{x，y}，则转换后的坐标点为{y/h，1-x/w}。
+此坐标系是以设备充电口在右侧时的横向设备方向为基准的，例如应用的预览界面布局以设备充电口在下侧时的竖向方向为基准，布局宽高为{w, h}，且触碰点为{x, y}，则转换后的坐标点为{y/h, 1-x/w}。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 

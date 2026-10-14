@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/async-concurr
 title: 异步并发 (Promise和async/await)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 异步并发 (Promise和async/await)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:44:55+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:336552c50720d4835b4099632d62370819983c5564a97cf1dfc6df68983fb67c
+scraped_at: 2026-10-15T07:03:58+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:6c9619f1ac9e041771eb4671be61ba2623fc0ada2042d0de920d07e03a205ae0
 ---
 
 Promise和async/await是标准的JS异步语法，提供异步并发能力。异步代码执行时会被挂起，在异步操作完成后恢复执行，确保同一时间只有一段代码在运行。以下是典型的异步并发使用场景：
@@ -61,14 +61,16 @@ import { BusinessError } from '@kit.BasicServicesKit';
     console.info(`Succeeded in getting number, number is ${result}`); // 成功时执行
   }, (error: BusinessError) => {
     console.error(`Failed to get number. Code: ${error.code}, message: ${error.message}`); // 失败时执行
-  }
-  );
+  });
 
-  // 使用then方法定义成功的回调，catch方法定义失败的回调
+  // 使用then方法定义成功的回调，catch方法定义失败的回调，finally方法定义任务结束后的回调
   promise.then((result: number) => {
     console.info(`Succeeded in getting number, number is ${result}`); // 成功时执行
   }).catch((error: BusinessError) => {
     console.error(`Failed to get number. Code: ${error.code}, message: ${error.message}`); // 失败时执行
+  }).finally(() => {
+    // 无论成功与否，任务结束后执行
+    console.info('Promise execution finished.');
   });
 ```
 

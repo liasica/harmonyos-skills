@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-lo
 title: RemoteLocationExtensionAbility（定位扩展Ability）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > RemoteLocationExtensionAbility（定位扩展Ability）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5d98e1f3fc7785960d4b2c2b33c221a2222e6ab578ad11781bc9cc306a771510
+scraped_at: 2026-10-15T07:12:43+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:48d0c5dda27ce1554e77f9bb7da956fcb0e58664d6e89232e7e86857bbe52109
 ---
 
 **说明** 
@@ -44,8 +44,6 @@ import { RemoteLocationExtensionAbility } from '@kit.PushKit';
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 该属性在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。
-
 **起始版本：** 4.1.0(11)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -61,8 +59,6 @@ onReceiveMessage(payload: pushCommon.PushPayload): Promise<void>
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 4.1.0(11)
 
@@ -131,8 +127,6 @@ onDestroy(): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 4.1.0(11)
 

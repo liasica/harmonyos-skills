@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行array相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行array相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:43a4e6907d61ef5ea0c394371b72635e5e471f2d25da6474b3e34f667b7e41ff
+scraped_at: 2026-10-15T07:06:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:153af243f81b485956c363e476dc42d77cb674630634ec69917f6f4a054fe50e
 ---
 
 ## 简介
@@ -754,7 +754,7 @@ try {
   // 将arraybuffer转为数组
   let arr = new Array(new Int8Array(arrBuffer));
   hilog.info(0x0000, 'Node-API', 'get_typedarray_info_arraybuffer: %{public}s', arr.toString());
-  hilog.info(0x0000, 'Node-API', 'get_typedarray_info_isIn8Array: %{public}s', testNapi.getTypedarrayInfo(int8Array, InfoType.TYPE).toString());
+  hilog.info(0x0000, 'Node-API', 'get_typedarray_info_isInt8Array: %{public}s', testNapi.getTypedarrayInfo(int8Array, InfoType.TYPE).toString());
   hilog.info(0x0000, 'Node-API', 'get_typedarray_info_length: %{public}d', testNapi.getTypedarrayInfo(int8Array, InfoType.LENGTH));
   hilog.info(0x0000, 'Node-API', 'get_typedarray_info_byte_offset: %{public}d', testNapi.getTypedarrayInfo(int8Array, InfoType.BYTE_OFFSET));
 } catch (error) {

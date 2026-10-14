@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 应用内通知设置快捷入口开发指导
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 应用内通知设置快捷入口开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:20+08:00
+scraped_at: 2026-10-15T07:05:35+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:969196d956768efe13162e143441d59ac1816b46060dc4d35a42b2b2b2e291f6
+content_hash: sha256:12705453196d636aaddb5351cc8338df001bff6dd09605b417d9b02ea30c2a03
 ---
 
 ## 使用场景
@@ -16,11 +16,11 @@ content_hash: sha256:969196d956768efe13162e143441d59ac1816b46060dc4d35a42b2b2b2e
 
 “设置 > 通知和状态栏 > XX应用”页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/l9CA1xoOQK-7jGmZa3TYuQ/zh-cn_image_0000002784583653.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/pA9mcm7uT02grcyzZNk7eQ/zh-cn_image_0000002791859975.png)
 
 通知中心页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/5TJjV5BBQuOQFAAPde83xg/zh-cn_image_0000002784663833.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/A75nxOiCS423QrL78dc2sg/zh-cn_image_0000002762501100.png)
 
 ## 开发准备
 

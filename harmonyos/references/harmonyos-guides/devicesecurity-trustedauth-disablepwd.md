@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 关闭数字盾服务
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾密码管理 > 关闭数字盾服务
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:29+08:00
+scraped_at: 2026-10-15T07:04:34+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:e8197aa47529a254c95135af08b84e9c810ac6f6169ddb1c106f6b3b8775bca9
+content_hash: sha256:7801e87d4446c3e9e637520697e4a69b75ed2514692bcf1e70fd8ff055d98983
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:e8197aa47529a254c95135af08b84e9c810ac6f6169ddb1c106f6b3b877
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/ksMNQZNVQ46BHYgosUWRmw/zh-cn_image_0000002784582859.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/8YFHIGZGRw6ZJGDl6oMwaQ/zh-cn_image_0000002791859179.jpg)
 
 当不需要密码认证进行关闭数字盾申请时，则无需和Universal Keystore Kit交互，使用随机生成的challenge完成关闭数字盾操作。
 
@@ -34,7 +34,7 @@ content_hash: sha256:e8197aa47529a254c95135af08b84e9c810ac6f6169ddb1c106f6b3b877
 
 如图为需要进行密码认证的方式关闭数字盾服务时对应的TUI界面示例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Nq6q9FqpQUOvMz-mR9KluA/zh-cn_image_0000002784663039.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/8DraJHy0T0e0CnTf5WAuTg/zh-cn_image_0000002762500300.png)
 
 ## 开发步骤
 

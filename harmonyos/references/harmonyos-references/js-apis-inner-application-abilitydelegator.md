@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: AbilityDelegator
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > 接口依赖的元素及定义 > AbilityDelegator
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c9d723b71c37bce7032b44e308b5899339cf3f0b2a466c55d646a5db7e8f7cfd
+scraped_at: 2026-10-15T07:10:51+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:f6d52fdb3d1d8ecd5b88b3c95ae80cb4b488b1263e4bba39e4206d6fae1a3ac5
 ---
 
 AbilityDelegator是用于调度和管理UIAbility测试生命周期的代理控制器，它通过AbilityMonitor机制来监听和管理[UIAbility](js-apis-app-ability-uiability.md)生命周期的变化。例如获取UIAbility当前状态（如是否已创建/是否在前台等）、查询当前获焦的UIAbility、等待UIAbility进入某个生命周期节点（如等待UIAbility进入onForeground）、启动指定UIAbility、设置超时机制等功能。
@@ -525,6 +525,10 @@ let context = abilityDelegator.getAppContext();
 getAbilityState(ability: UIAbility): number
 
 获取指定Ability的生命周期状态。
+
+**说明** 
+
+当前接口在调用失败时返回undefined，未包含401错误码。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-data-typ
 title: Node-API支持的数据类型和接口
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API支持的数据类型和接口
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:54+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:0ab77b041173ed7deb54b195a1e14c6e884fe9f117c74ad95da619f064e88d4f
+scraped_at: 2026-10-15T07:06:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:97d9b0a68ca4b12d5e29d6af0e07b23d1c4c922cb25fc8bf9636e37918a55b7d
 ---
 
 ## Node-API的数据类型
@@ -455,8 +455,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 | napi\_throw\_range\_error | 抛出一个带文本信息的ArkTS RangeError。 |
 | napi\_is\_error | 判断napi\_value是否表示为一个error对象。 |
 | napi\_create\_error | 创建并获取一个带文本信息的ArkTS Error。 |
-| napi\_create\_type\_error | 创建并获取一个带文本信息的ArkTS Error对象 |
-| napi\_create\_range\_error | 创建并获取一个带文本信息的ArkTS Error对象。 |
+| napi\_create\_type\_error | 创建并获取一个带文本信息的ArkTS TypeError对象。 |
+| napi\_create\_range\_error | 创建并获取一个带文本信息的ArkTS RangeError对象。 |
 | napi\_get\_and\_clear\_last\_exception | 获取并清除最近一次出现的异常。 |
 | napi\_is\_exception\_pending | 判断是否出现了异常。 |
 | napi\_fatal\_error | 引发致命错误以立即终止进程。 |

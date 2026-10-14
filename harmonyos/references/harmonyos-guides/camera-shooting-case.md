@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-shooti
 title: 拍照实践(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 拍照实践(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:55+08:00
+scraped_at: 2026-10-15T07:05:05+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:61d2645321396e3d0319ac181a7ed35f47fd26f345126a26f94336cf7091d285
+content_hash: sha256:c841c79d7e4d76ce03abb7b4f60a21d44caafad87745ac9cb05a690f81d0e168
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -18,7 +18,7 @@ content_hash: sha256:61d2645321396e3d0319ac181a7ed35f47fd26f345126a26f94336cf709
 
 在获取到相机支持的输出流能力后，开始创建拍照流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/0f4-XN2ASZ64iABSLfbjJg/zh-cn_image_0000002755024350.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/IsmNYF5oQqmpY2qjHgfi8A/zh-cn_image_0000002791739209.png)
 
 ## 完整示例
 

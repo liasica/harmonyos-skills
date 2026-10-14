@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-signing-
 title: 签名/验签(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 签名/验签 > 签名/验签(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:105fb32426845559ba8178cd1ee3d3c7a204ad66b502987b326470ecbda41223
+scraped_at: 2026-10-15T07:04:37+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:1ba6a9e489d93e9e84b8886b391df2618e4a48436c40a11322fc0ac22737bef6
 ---
 
 当前指导提供以下示例，供开发者参考完成签名、验签开发：
@@ -481,7 +481,7 @@ static OH_Huks_Result SignDataSM2NoDigest(const struct OH_Huks_Blob *keyAlias,
     return ohResult;
 }
 
-/* 3. 验签  */
+/* 3. 验签 */
 static OH_Huks_Result VerifySignatureSM2NoDigest(const struct OH_Huks_Blob *keyAlias,
                                                  const struct OH_Huks_ParamSet *verifyParamSet,
                                                  const struct OH_Huks_Blob *inData,
@@ -803,7 +803,7 @@ static OH_Huks_Result GenerateKey(const struct OH_Huks_Blob *keyAlias, const str
     return OH_Huks_GenerateKeyItem(keyAlias, genParamSet, nullptr);
 }
 
-/* 2. 验签 */
+/* 2. 签名 */
 static OH_Huks_Result SignData(const struct OH_Huks_Blob *keyAlias,
                                const struct OH_Huks_ParamSet *signParamSet,
                                const struct OH_Huks_Blob *inData,
@@ -1001,7 +1001,7 @@ static OH_Huks_Result SignDataRSA(const struct OH_Huks_Blob *keyAlias,
     return ohResult;
 }
 
-/* 3. 验签  */
+/* 3. 验签 */
 static OH_Huks_Result VerifySignatureRSA(const struct OH_Huks_Blob *keyAlias,
                                          const struct OH_Huks_ParamSet *verifyParamSet,
                                          const struct OH_Huks_Blob *inData,

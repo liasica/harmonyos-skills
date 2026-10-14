@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-compone
 title: 组件动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 组件动画
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:09+08:00
+scraped_at: 2026-10-15T07:04:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2cd33e7230ee98f8bddb588532b311e1081eb7fa35fd63ada8e5f4a5872b240a
+content_hash: sha256:d7215bf277836b769a3f5adc7628d46a1a9d2430fed84169fcd5b9c57b2389c7
 ---
 
 ArkUI为组件提供了通用的属性动画和转场动画能力的同时，还为一些组件提供了默认的动画效果。例如，[List](../harmonyos-references/ts-container-list.md)的滑动动效、[Button](../harmonyos-references/ts-basic-components-button.md)的点击动效，是组件自带的默认动画效果。在组件默认动画效果的基础上，开发者还可以通过属性动画和转场动画对容器组件内的子组件动效进行定制。
@@ -40,7 +40,7 @@ struct ComponentDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/0b0nDOIUSxONRqxNuQxCwA/zh-cn_image_0000002755183492.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/RLxc1dPlTuexOYxJNEUtWw/zh-cn_image_0000002762339882.gif)
 
 ## 打造组件定制化动效
 
@@ -352,7 +352,7 @@ export struct TaskSwitchMainPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/_uY30103QDapT3_oX2eRhg/zh-cn_image_0000002784582361.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/0kCNecIVR6m0EVY9i9RzEg/zh-cn_image_0000002791858677.gif)
 
 通过animateTo可以实现将List中指定的Item替换到首位，List中其余Item依次向下排列。定制List组件动态替换动效的示例代码和效果如下。
 
@@ -528,7 +528,7 @@ struct ListAutoSortExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/OquJybnmRqmheB55xrEshQ/zh-cn_image_0000002784662541.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/wSY1CDoWTPWO16CFYVf1lA/zh-cn_image_0000002762499802.gif)
 
 ## 示例代码
 

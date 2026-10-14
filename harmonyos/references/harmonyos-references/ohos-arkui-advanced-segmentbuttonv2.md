@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButtonV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButtonV2
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:43+08:00
+scraped_at: 2026-10-15T07:08:22+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:07d34a87dc5cd21456141863157f3801e68ae7eefb7f7bc02500464d62ed7039
+content_hash: sha256:65ddf1135d78ca7ed9d0d27352e3adbc78f24bd6edc9b637df93428992dd94cf
 ---
 
 分段按钮组件用于创建页签型、单选或多选的胶囊型分段按钮，支持文本、图标、Symbol等多种选项类型及图文混合配置，可自定义字体、颜色、圆角等样式。页签型分段按钮适用于页签切换场景，单选胶囊型分段按钮适用于单选切换场景，多选胶囊型分段按钮适用于多选筛选场景。
@@ -595,7 +595,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/pkhpzYdeTgm726gaEXGBlw/zh-cn_image_0000002755186010.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Mkk37pguTRWQq9xrtcwlfw/zh-cn_image_0000002762342432.gif)
 
 ### 示例2（单选的胶囊型分段按钮）
 
@@ -725,7 +725,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/l1CP6OnQS5a-8XM3bsv4hg/zh-cn_image_0000002784584877.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/dn2s3ksWRoaD7WR8jKr35A/zh-cn_image_0000002791861221.gif)
 
 ### 示例3（多选的胶囊型分段按钮）
 
@@ -855,7 +855,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/cfjNUoBDTK-K00nIa5GgyA/zh-cn_image_0000002784665059.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/9MeCUSYdQ_ejpjrE3-v-mA/zh-cn_image_0000002762502348.gif)
 
 ### 示例4（分段按钮Modifier的基本用法）
 
@@ -950,7 +950,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/V11Kx-fOS76LDYp6XFpyYQ/zh-cn_image_0000002755026128.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/LtBTx-VMT9qLA3EbgKsRTg/zh-cn_image_0000002791741009.png)
 
 ### 示例5（开启SegmentButtonV2的属性动画）
 
@@ -1045,7 +1045,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/LeE7FwNtT4eY1pTb3_dF1A/zh-cn_image_0000002755186012.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MgVgDEekQSO3b_TCcodjOQ/zh-cn_image_0000002762342434.gif)
 
 ### 示例6（设置背景板材质）
 
@@ -1165,7 +1165,7 @@ export struct VCard {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Vtw6QSQaSWC4gqw6pXDv2w/zh-cn_image_0000002784584879.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/aqncy-s-Qum-jGCQdGO12Q/zh-cn_image_0000002791861223.gif)
 
 ### 示例7（监听对象类型属性内部属性的变化）
 
@@ -1212,4 +1212,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/dZyv51eKRWqu9wl8xYmsow/zh-cn_image_0000002784665061.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/DDuR46fXTZGnuiLjn2F8Eg/zh-cn_image_0000002762502350.gif)

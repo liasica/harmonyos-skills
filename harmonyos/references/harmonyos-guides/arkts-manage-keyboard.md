@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-manage-
 title: 管理软键盘
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 管理软键盘
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:07+08:00
+scraped_at: 2026-10-15T07:04:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:66297c48153ba8893be4a1b46cbf21afbe5f152e75d7243ecc0350d082149e50
+content_hash: sha256:b16290fb7334848da733f1b3b67793a1be591254641aa3217f5e164ff649652e
 ---
 
 软键盘是用户交互的重要途径，提供文本输入功能。本文介绍在使用系统输入框组件（[TextInput](../harmonyos-references/ts-basic-components-textinput.md)、[TextArea](../harmonyos-references/ts-basic-components-textarea.md)、[Search](../harmonyos-references/ts-basic-components-search.md)、[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)）时，如何控制软键盘的弹出和收起。
@@ -26,7 +26,7 @@ content_hash: sha256:66297c48153ba8893be4a1b46cbf21afbe5f152e75d7243ecc0350d0821
 
 以下示例展示了单击、双击和长按输入框时，软键盘弹出效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Us9jK1KgTRunKwEXyxk6Mg/zh-cn_image_0000002784582165.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/FabS-A6OT_6axH8z9CFIBg/zh-cn_image_0000002791858481.gif)
 
 ### 通过代码请求焦点
 
@@ -57,7 +57,7 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/Pe-CsjbsRlibWrQIS3Mcpg/zh-cn_image_0000002784662347.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/jrpRmxlpRHuzX1uTWfH8og/zh-cn_image_0000002762499608.gif)
 
 ### 使用外接键盘的按键走焦
 
@@ -86,7 +86,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/KQQ3BHKmQjKvL0iDQkBjfg/zh-cn_image_0000002755023414.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/n6F3JOyJRgepBgz1d-ckDg/zh-cn_image_0000002791738269.gif)
 
 ## 收起软键盘
 
@@ -127,7 +127,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/CIWjmwQoSyeynGX8XjZhXQ/zh-cn_image_0000002755183300.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/rkiehDjeTr2UV5BeR8Kowg/zh-cn_image_0000002762339688.gif)
 
 ### 拖拽文本
 
@@ -157,13 +157,13 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/zbRVGHG0RGSYHFc8dI0mRw/zh-cn_image_0000002784582167.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/sL_VecjIQ1WCk8MGYzGajQ/zh-cn_image_0000002791858483.gif)
 
 ### 接收侧滑手势
 
 下面的动图展示了“用户侧滑时软键盘收起”的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/KTA0i4HnRbib6JXDAFW65A/zh-cn_image_0000002784662349.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/lzsL4f-zRq-OoxJZeaobtA/zh-cn_image_0000002762499610.gif)
 
 ### 页面发生切换
 
@@ -258,7 +258,7 @@ struct demo_text_1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/xzu9ajXkRT-DeFQAZqkq3Q/zh-cn_image_0000002755023416.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Ubn9U72KR463nZjKSdJ1kQ/zh-cn_image_0000002791738271.gif)
 
 ### 通过输入框的TextInputController退出编辑态
 
@@ -289,7 +289,7 @@ struct textInputControllerCloseKeyboard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/urb0JjHcTcm5JBegRxLInQ/zh-cn_image_0000002755183302.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/EzUvod1kRvuATx-mEDgIlQ/zh-cn_image_0000002762339690.gif)
 
 ### 焦点转移到不需要软键盘的组件
 
@@ -324,7 +324,7 @@ struct requestFocusCloseKeyBoard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/g5GkV5pFQsqJYkYHolKxRw/zh-cn_image_0000002784582169.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/yJMfy2rcQuqvy-hh_Tl4jA/zh-cn_image_0000002791858485.gif)
 
 以下示例展示了滚动容器在开始滚动时收起键盘的场景。[List](../harmonyos-references/ts-container-list.md)开始滚动时，调用[clearFocus](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#clearfocus12)方法清理焦点，焦点转移到页面根容器节点，页面根容器节点不需要软键盘，从而收起软键盘。
 
@@ -361,7 +361,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/VP_SAh5zTmy8uhUqFCp9ag/zh-cn_image_0000002784662351.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/YcHzL5OhQsenJgs40orDag/zh-cn_image_0000002762499612.gif)
 
 ## 常见问题
 
@@ -410,7 +410,7 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/adD_9pIgQl-TijH1S6vmUw/zh-cn_image_0000002755023418.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/KqhEFBX2QRqtLs-oEeYvzA/zh-cn_image_0000002791738273.gif)
 
 ### 点击发送按钮后不收起键盘
 
@@ -452,4 +452,4 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Fee-uR4dTSSNgWHgKlRvMw/zh-cn_image_0000002755183304.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/a8oFjATzSNmfDS2eutwoHA/zh-cn_image_0000002762339692.gif)

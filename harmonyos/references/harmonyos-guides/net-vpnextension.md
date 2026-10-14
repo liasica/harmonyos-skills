@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-vpnextens
 title: 连接VPN
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 连接VPN
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:36+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:64d70083a82b686b9706cd2936fd65528fbc0c2baa754d7374ca584d24ad3c95
+scraped_at: 2026-10-15T07:04:42+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:c73c866e528cc2d452909f4b2fcbda011999c5377e977e193c1c1f1a29effe2c
 ---
 
 ## 简介
@@ -289,7 +289,7 @@ let vpnConfig: vpnExtension.VpnConfig = {
   // 配置VPN虚拟网卡的IP地址。
   addresses: [{
     address: {
-      address:'192.x.x.5',
+      address:'192.xxx.xxx.5',
       family:1
     },
     prefixLength:24
@@ -300,14 +300,14 @@ let vpnConfig: vpnExtension.VpnConfig = {
     interface: 'vpn-tun',
     destination: {
       address: {
-        address:'10.x.x.8',
+        address:'10.xxx.xxx.8',
         family:1,
         port:8080
       },
       prefixLength:24
     },
     gateway: {
-      address:'10.x.x.5',
+      address:'10.xxx.xxx.5',
       family:1,
       port:8080
     },
@@ -317,7 +317,7 @@ let vpnConfig: vpnExtension.VpnConfig = {
   // 配置最大传输单元值。
   mtu: 1400,
   // 配置VPN使用的DNS服务器。
-  dnsAddresses: ['223.x.x.5', '223.x.x.6'],
+  dnsAddresses: ['223.xxx.xxx.5', '223.xxx.xxx.6'],
   // 受信任的应用信息列表。配置此项时，被阻止的应用信息列表应配置为空。
   trustedApplications: ['com.test.browser'],
   // 被阻止的应用信息列表。配置此项时，受信任的应用信息列表应配置为空。

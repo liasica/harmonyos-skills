@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: RelativeContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > RelativeContainer
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:21+08:00
+scraped_at: 2026-10-15T07:07:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:79323b139c89253b4b43ad8f8916da9517a1896432720e2b3ace407f77d45206
+content_hash: sha256:a53b66c4eddb2b09061a20ee00a80b248dabd6981a2d065722f7e8abf2faf5dc
 ---
 
 相对布局组件，用于复杂场景中元素对齐的布局。通过设置子组件的对齐规则，实现子组件相对于容器或其他子组件的对齐，适用于需要灵活布局、减少嵌套层级的复杂界面。
@@ -284,7 +284,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/FC3e-RtsRySgsQndrG3New/zh-cn_image_0000002784664487.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/qFt86_5rSi-9MVimOEv9zQ/zh-cn_image_0000002762501760.png)
 
 ### 示例2（子组件设置外边距）
 
@@ -360,7 +360,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/L9IKf8NUSJqFOg32AP96_A/zh-cn_image_0000002755025556.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/vze8IWNoT16mXojwH7PfMg/zh-cn_image_0000002791740421.png)
 
 ### 示例3（设置容器大小自适应内容）
 
@@ -430,7 +430,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/kulvwKLxThuGepyR7BZB4Q/zh-cn_image_0000002755185440.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/THE3yYbbTbKbDLO8mWIMQQ/zh-cn_image_0000002762341846.png)
 
 ### 示例4（设置偏移）
 
@@ -465,7 +465,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/7syM5We_QSmkj4p2j-SmMw/zh-cn_image_0000002784584307.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/pEb6P2EHTx2XEm7_G7A_qA/zh-cn_image_0000002791860637.png)
 
 ### 示例5（设置辅助线）
 
@@ -500,7 +500,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/S3t3UZR-TMOEz3mGsNn92Q/zh-cn_image_0000002784664489.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/WbGM1szOSyK520juGqZqsA/zh-cn_image_0000002762501762.png)
 
 ### 示例6（设置屏障）
 
@@ -573,7 +573,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/bFR04m9SR8ybANZcbxB_DA/zh-cn_image_0000002755025558.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/wTldZDfnTuGVr6AlanB_pQ/zh-cn_image_0000002791740423.png)
 
 ### 示例7（设置链）
 
@@ -724,7 +724,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/fFZ-Wd1_Si-1FqqbXTMlfQ/zh-cn_image_0000002755185442.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/cSNhnO0rQ5W3vFFx49KtRw/zh-cn_image_0000002762341848.png)
 
 ### 示例8（链中设置偏移）
 
@@ -790,7 +790,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/F_hlKY4bRLqNH2MmtcIA0A/zh-cn_image_0000002784584309.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/8RV9GwoMSgKu_tSUUv9ovA/zh-cn_image_0000002791860639.png)
 
 ### 示例9（设置镜像模式）
 
@@ -864,7 +864,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/X--PMN0iQzqkq_3Oobbd_Q/zh-cn_image_0000002784664491.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/wfdh-8AXR_mBemSmyvBMYw/zh-cn_image_0000002762501764.png)
 
 ### 示例10（设置链中节点权重）
 
@@ -933,4 +933,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/OJoH_iHjRl-S3QIRROx_MQ/zh-cn_image_0000002755025560.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/6ZD9hP6NRHi1-j1xLJ0zSw/zh-cn_image_0000002791740425.png)

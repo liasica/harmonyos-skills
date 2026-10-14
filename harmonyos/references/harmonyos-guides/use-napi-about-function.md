@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行函数创建和调用
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行函数创建和调用
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:54+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:d8332895d01d935af3e038a82c513c1d90792007cdf10435a4a09f4395b29c91
+scraped_at: 2026-10-15T07:06:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:b55bc9b00a5f075a20c2bfaceb356a75199079f683181b94bc9c30ac34cbaac5
 ---
 
 ## 简介
@@ -28,7 +28,7 @@ content_hash: sha256:d8332895d01d935af3e038a82c513c1d90792007cdf10435a4a09f4395b
 
 Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程](use-napi-process.md)，本文仅对接口对应C++及ArkTS相关代码进行展示。
 
-## napi\_get\_cb\_info
+### napi\_get\_cb\_info
 
 获取有关函数调用的详细信息。
 
@@ -132,7 +132,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get thisArg:%{publ
   testNapi.getCbContext().toString());
 ```
 
-## napi\_call\_function
+### napi\_call\_function
 
 在C/C++侧对ArkTS函数进行调用。
 
@@ -212,7 +212,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API call_function:%{public}d',
   testNapi.objCallFunction(person, person.age));
 ```
 
-## napi\_create\_function
+### napi\_create\_function
 
 将一个C/C++函数包装为可在ArkTS中调用的函数，并返回一个表示该函数的napi\_value。
 

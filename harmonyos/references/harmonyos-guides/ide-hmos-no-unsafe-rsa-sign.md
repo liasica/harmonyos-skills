@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-no-u
 title: "@security/no-unsafe-rsa-sign"
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-rsa-sign
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:31+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e618ea31eee898f921707cba602e74e1279c082533149d78655825e542c24169
+scraped_at: 2026-10-15T07:06:45+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:93e4be64932f59965bee9f20620456a47c795e1b494d138789f455c822bca749
 ---
 
-该规则禁止不安全的RSA签名算法，如RSA模数长度小于2048bit、摘要或掩码摘要中使用不安全的MD5或SHA1哈希算法。推荐使用Petal Aegis SDK中的安全RSA签名接口，详情参见： [RSA加解密](../AppGallery-connect-Guides/aegis-signature-verification-0000001866035345.md#section1039727112016)。
+该规则禁止不安全的RSA签名算法，如RSA模数长度小于2048bit、摘要或掩码摘要中使用不安全的MD5或SHA1哈希算法。推荐使用Petal Aegis SDK中的安全RSA签名接口，详情参见： [RSA加解密](../AppGallery-connect-Guides/aegis-signature-verification-0000001866035345.md)。
 
 ## 规则配置
 

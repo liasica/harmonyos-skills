@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-select-
 title: 按钮与选择组件常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 按钮与选择组件常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:14+08:00
+scraped_at: 2026-10-15T07:04:16+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3eecf39b5b659a1220c6415b812459799cba9ea002eec7a9638841a80b0f4134
+content_hash: sha256:b6fa4ab32093011169cac9d3b48ca5bc4294446d799b17f59a05755d57f0da47
 ---
 
 本文档介绍按钮与选择组件的常见问题并提供参考。
@@ -16,11 +16,11 @@ Slider的滑块与滑轨显示样式[SliderStyle](../harmonyos-references/ts-bas
 
 SliderStyle.OutSet模式下，滑块的中心与滑轨的端点对齐，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/jyszCu-oTtKHXqNFmaU5Ow/zh-cn_image_0000002784582561.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Vhe8fnyASDC6rEIiml8jfg/zh-cn_image_0000002791858877.jpg)
 
 SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑轨高度的一半的位置，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/HPuHhVwSQwWjW1k6kvpKqw/zh-cn_image_0000002784662741.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/CUQCRDltQROhbSoAvufXbQ/zh-cn_image_0000002762500002.jpg)
 
 **示例**
 
@@ -117,7 +117,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/SsdbWtLtRbSw1RF1Q3WliA/zh-cn_image_0000002755023808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/EJuJjpaSQdScDcmihnbAwQ/zh-cn_image_0000002791738665.png)
 
 ## Button组件设置type时，ButtonType枚举值与数字值不一致
 
@@ -186,4 +186,4 @@ struct ButtonTypeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/GhigrCYbRbO1FZLz8xC7HQ/zh-cn_image_0000002755183696.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Uk-kYD8PTQur4qplQ9Vehw/zh-cn_image_0000002762340084.png)

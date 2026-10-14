@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-scheduli
 title: 使用perfHint系统性能优化(ArkTS)
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > perfHint系统性能优化 > 使用perfHint系统性能优化(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d14af2bd82b6ca618f7fbb8813c3faca31a7f4ca4f6979b0bf177958a3afb811
+scraped_at: 2026-10-15T07:04:47+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:c658dbbe1861cf289a17f68f40290ec37e8b02d701b19de1965d8b11efa526a8
 ---
 
 从API版本26.0.0版本开始，新增支持perfHint系统性能优化特性。
@@ -29,7 +29,8 @@ perfHint(Performance Hint)是系统性能优化的简称，用于向系统提供
 
 * perfHint只是应用向系统发送的性能优化提示，系统收到提示后会综合考量整机CPU负载、系统温度等因素进行决策，**不保证一定进行性能提升**。
 * **性能提示仅当应用在前台运行时才会生效**，应用切换到后台后提示将失效。
-* 通过线程ID提升QoS优先级时，请避免与QoS API混用。
+* 调用本接口会一定程度上造成功耗和整机温度的上升。
+* 通过线程ID提升QoS优先级时，请避免与QoS API混用。通过线程ID提升QoS优先级的底层实现依赖于QoS API，针对同一个线程，两边任一调用生效即开始提升QoS优先级，任一调用结束即解除提升。因此混用可能导致QoS优先级提升的生效与解除行为不符合预期。
 
 ## 接口说明
 

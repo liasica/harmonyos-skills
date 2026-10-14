@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Window)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (Window)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:13+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:98df85b5346b922b19024109287f5cedd7c8790a099bade1cf4f251345575fca
+scraped_at: 2026-10-15T07:07:48+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:01c163022a835d27e97a63583f41d9e57a4d0ef87df7a11a465efc0a92e7ce9f
 ---
 
 当前窗口实例，窗口管理器管理的基本单元。
@@ -7366,6 +7366,10 @@ minimize(callback: AsyncCallback<void>): void
 
 该接口仅支持主窗口、子窗口或全局悬浮窗，其他窗口调用返回1300002错误码，使用callback异步回调。
 
+**说明** 
+
+* 当窗口已创建且未处于前台状态时，调用该接口不生效不报错。建议在调用该接口前确保窗口已创建并处于前台状态。
+
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
@@ -7411,6 +7415,10 @@ minimize(): Promise<void>
 * 当调用对象为子窗口或全局悬浮窗时，实现隐藏功能，可以使用[showWindow()](arkts-apis-window-window.md#showwindow9)进行还原。
 
 该接口仅支持主窗口、子窗口或全局悬浮窗，其他窗口调用返回1300002错误码，使用Promise异步回调。
+
+**说明** 
+
+* 当窗口已创建且未处于前台状态时，调用该接口不生效不报错。建议在调用该接口前确保窗口已创建并处于前台状态。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -11661,7 +11669,7 @@ convertOrientationAndRotation(from: RotationInfoType, to: RotationInfoType, valu
 
 示意图和表格展示了直板机窗口方向、屏幕方向和屏幕角度的关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/2lqdRUjVRt61XfuhXUlS3w/zh-cn_image_0000002755185288.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Y20Uh8cITlGEmZ5vJFFSKg/zh-cn_image_0000002762341690.png)
 
 | 屏幕角度 | 屏幕方向 | 窗口方向 |
 | --- | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/plugin-packag
 title: 开发与使用应用插件（PC/2in1）
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 开发与使用应用插件（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:20:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:65eded04c214efd2174c610109e43b3d31a17b7210d69805937985e56cd99543
+scraped_at: 2026-10-15T07:03:49+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:d31bd8ba450463bc50a3d4431241ae82bca0cd21e09c921ae077b5c56c55a704
 ---
 
 插件包是基于[HSP](in-app-hsp.md)的共享包组件，用于扩展宿主应用（加载并运行插件的应用程序）的功能。插件通常由第三方开发者或宿主应用开发者创建，旨在为宿主应用提供额外的特性或服务，例如专业设计软件通过插件为不同行业提供定制能力。插件运行依赖系统能力，例如调用ArkTS接口、使用Ability组件等。若插件自身不依赖系统能力，则可沿用应用原有的插件打包方式，无需采用HSP形式。插件不能独立运行，必须依赖宿主应用提供的运行环境和功能支持。
@@ -14,12 +14,12 @@ content_hash: sha256:65eded04c214efd2174c610109e43b3d31a17b7210d69805937985e56cd
 
 宿主应用使用插件需申请ohos.permission.kernel.SUPPORT\_LOCAL\_PLUGIN权限，具体申请方式请参考[声明权限](declare-permissions-in-acl.md)。
 
-```typescript
-"requestPermissions":[
-    {
-      "name" : "ohos.permission.kernel.SUPPORT_LOCAL_PLUGIN"
-    }
-  ]
+```json5
+"requestPermissions": [
+  {
+    "name": "ohos.permission.kernel.SUPPORT_LOCAL_PLUGIN"
+  }
+]
 ```
 
 ## 开发应用插件
@@ -30,7 +30,7 @@ content_hash: sha256:65eded04c214efd2174c610109e43b3d31a17b7210d69805937985e56cd
 
 1. 插件包本质上是动态共享包HSP，参考[创建HSP模块](ide-hsp.md#section79378499185)在工程中创建插件模块plugin。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/pG_u4XR3QOKsoVwcohIgkg/zh-cn_image_0000002755022822.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/LraMBTyESEy8MNJrkUgB7w/zh-cn_image_0000002762499010.png)
 2. 在[app.json5](app-configuration-file.md)中配置bundleType字段为appPlugin，该字段表示当前包为应用的插件包，bundleName为插件的包名。
 
    ```json5
@@ -49,16 +49,16 @@ content_hash: sha256:65eded04c214efd2174c610109e43b3d31a17b7210d69805937985e56cd
    ```
 3. 选择DevEco Studio菜单栏中的File > Project Structure，在Signing Configs页面勾选Automatically generate signature。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/gO4wzLKnQTeLEspYU4UKMw/zh-cn_image_0000002755182708.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/XsLWeNu7QqiX_CQtVfcBUw/zh-cn_image_0000002791737669.png)
 
 ### 编译打包
 
 1. 选中工程目录中插件模块的文件目录，通过DevEco Studio菜单栏的Build > Make Module ${libraryName}进行编译构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/IzEkSRL4Qm-3JlbHyn8qQQ/zh-cn_image_0000002784581573.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/CtWFUV7QRMCkMBeFYkgFbw/zh-cn_image_0000002762339096.png)
 2. 编译完成后，会在工程目录中生成对应的产物。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/7a_2PeFKTridZ4DKH_AZWg/zh-cn_image_0000002784661757.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/sfS9B7PtQPCG9cTGB_T7rw/zh-cn_image_0000002791857889.png)
 
 ## 使用应用插件
 
@@ -74,7 +74,8 @@ content_hash: sha256:65eded04c214efd2174c610109e43b3d31a17b7210d69805937985e56cd
    import { pluginBundleManager } from '@kit.AbilityKit';
    import { BusinessError } from '@kit.BasicServicesKit';
 
-   let pluginPaths: Array<string> = ['/storage/Users/currentUser/plugin.hsp'];
+   // ...
+   let pluginPaths: string[] = ['/storage/Users/currentUser/plugin.hsp'];
 
    pluginBundleManager.installLocalPlugin(pluginPaths)
      .then(() => {
@@ -82,6 +83,7 @@ content_hash: sha256:65eded04c214efd2174c610109e43b3d31a17b7210d69805937985e56cd
      }).catch((err: BusinessError) => {
      console.error(`installLocalPlugin errData is errCode:${err.code}  message:${err.message}`);
    });
+   // ...
    ```
 
 **说明** 
@@ -97,12 +99,14 @@ content_hash: sha256:65eded04c214efd2174c610109e43b3d31a17b7210d69805937985e56cd
 import { pluginBundleManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+// ...
 pluginBundleManager.getAllLocalPluginInfoForSelf().then((data): void => {
   console.info('getAllLocalPluginInfoForSelf plugin data is' + JSON.stringify(data));
 }).catch((err: Error): void => {
   const businessErr = err as BusinessError;
   console.error(`getAllLocalPluginInfoForSelf errData is errCode:${businessErr.code}  message:${businessErr.message}`);
 });
+// ...
 ```
 
 ### 卸载插件
@@ -113,7 +117,8 @@ pluginBundleManager.getAllLocalPluginInfoForSelf().then((data): void => {
 import { pluginBundleManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-let pluginBundleName = "com.example.plugin";
+// ...
+let pluginBundleName: string = 'com.example.plugin';
 
 pluginBundleManager.uninstallLocalPlugin(pluginBundleName)
   .then(() => {
@@ -121,4 +126,5 @@ pluginBundleManager.uninstallLocalPlugin(pluginBundleName)
   }).catch((err: BusinessError) => {
   console.error(`uninstallLocalPlugin errData is errCode:${err.code}  message:${err.message}`);
 });
+// ...
 ```

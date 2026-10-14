@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-get
 title: getTarget接口：获取状态管理框架代理前的原始对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > getTarget接口：获取状态管理框架代理前的原始对象
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:04+08:00
+scraped_at: 2026-10-15T07:04:04+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:dd06f72803a8aafbbd2d3c614b3f58c69fd4337d34a441a1db5c768c469d1c5a
+content_hash: sha256:fbf72f79c3db698a0c0c3ec7bcb78cd826030b72877b480a798f5f811fd98f57
 ---
 
 为了获取状态管理框架代理前的原始对象，开发者可以使用[getTarget接口](../harmonyos-references/js-apis-statemanagement.md#gettarget)。
@@ -86,7 +86,7 @@ content_hash: sha256:dd06f72803a8aafbbd2d3c614b3f58c69fd4337d34a441a1db5c768c469
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Z3EeF4tOSGCKVrerLpjTZg/zh-cn_image_0000002755023106.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/H4gOdtUGSP-8T64EQgw-mw/zh-cn_image_0000002791737955.gif)
 
 ## 使用场景
 
@@ -144,7 +144,7 @@ struct GetTargetNoChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/ySwsepe9Qxq8Hm5Yd0kmwA/zh-cn_image_0000002755182992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/923kfnkcSImPV2DLfzsZpQ/zh-cn_image_0000002762339380.png)
 
 使用UIUtils.getTarget接口可以获取代理前的原始对象。
 
@@ -205,7 +205,7 @@ struct GetTargetAgent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/mZvIgAqJQwO2vgoYZNHH9Q/zh-cn_image_0000002784581857.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/WAwfUb5HQLmjGwnWzEQDpw/zh-cn_image_0000002791858173.png)
 
 ### 获取状态管理V2代理前的原始对象
 
@@ -244,7 +244,7 @@ struct GetAgentObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/E7wzVhoWSRKmd1q9pAKF5Q/zh-cn_image_0000002784662041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/B26q6_n8S6CUf-1H1Ib-Dg/zh-cn_image_0000002762499300.png)
 
 使用UIUtils.getTarget接口可以获取代理前的原始对象。
 
@@ -296,7 +296,7 @@ struct GetBeforeAgent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/f6fWwDAiSAGgz13z76QXQw/zh-cn_image_0000002755023108.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/v7Umk21hT8qybJ0jZU8bEg/zh-cn_image_0000002791737957.png)
 
 状态管理V2装饰器会为装饰的变量生成getter和setter方法，同时为原有变量名添加"\_\_ob\_"的前缀。出于性能考虑，getTarget接口不会对V2装饰器生成的前缀进行处理，因此向getTarget接口传入@ObservedV2装饰的类对象实例时，返回的对象依旧为对象本身，且被@Trace装饰的属性名仍有"\_\_ob\_"前缀。
 

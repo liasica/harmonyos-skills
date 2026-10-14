@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-decodin
 title: 音频解码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频解码
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:52+08:00
+scraped_at: 2026-10-15T07:05:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1c709f16592531501dc989b4796d19c923dd607183ce8ecec9bb0422a1845899
+content_hash: sha256:83ad2e742bd46d165c30032689d59ba1e760019b444e6391b34f37114867637f
 ---
 
 开发者可以调用本模块的Native API接口，完成音频解码，即将媒体数据解码为PCM码流。
@@ -41,7 +41,7 @@ content_hash: sha256:1c709f16592531501dc989b4796d19c923dd607183ce8ecec9bb0422a18
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/RrQEVzAxTp-PnGXgHXAVGQ/zh-cn_image_0000002784583051.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/aVMiSt-IQkuuCsqDDh-FEA/zh-cn_image_0000002791859371.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -251,11 +251,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/JThsexsCTS29IFXC4PzMfA/zh-cn_image_0000002784583053.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/laA4qNldRCK1PC92QTdiyg/zh-cn_image_0000002791859373.png)
 
    各音频解码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/AleGsAG3Ru-CzdvdfMVmJA/zh-cn_image_0000002784663233.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Q6Qn-CJXSiWkVTT75u1X0g/zh-cn_image_0000002762500500.png)
 
    从API version 20开始，支持通过[OH\_AVCapability\_GetAudioSupportedSampleRateRanges](../harmonyos-references/capi-native-avcapability-h.md#oh_avcapability_getaudiosupportedsamplerateranges)接口进行采样率范围能力查询，以下几种音频解码类型支持对范围内的任意采样率进行解码：
 

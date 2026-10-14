@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: list
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > list
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:53+08:00
+scraped_at: 2026-10-15T07:08:32+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c8cc3cca849926b7c251c0e35d839ff194dc1483b3db97bf031ab6d3509c1caa
+content_hash: sha256:d5ac50a5c65bd80b6e19aa1bd7fa153bccbc3c181ccd812378f7b62a9b089749
 ---
 
 列表包含一系列相同宽度的列表项。适合连续、多行呈现同类数据，例如图片和文本。
@@ -116,4 +116,4 @@ content_hash: sha256:c8cc3cca849926b7c251c0e35d839ff194dc1483b3db97bf031ab6d3509
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/nDT7aUzeTY2GqgZQ43zBsw/zh-cn_image_0000002755026434.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/WL1WIF6VS7ekNxScHjMnMA/zh-cn_image_0000002791741321.png)

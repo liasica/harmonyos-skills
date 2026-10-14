@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-co
 title: rcp（数据请求）
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > ArkTS API > rcp（数据请求）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1082f22ff61e98025ca717ddd8bff46b523c89791144baa572c3bd6cb34877f9
+scraped_at: 2026-10-15T07:10:08+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:5f4cb30a798314b370ac3df9157bf6f1df00f49308ed0ea41cc01a9e595cae21
 ---
 
 本模块提供HTTP数据请求功能。应用程序可通过HTTP发起数据请求。常见的HTTP方法包括GET、POST、HEAD、PUT、DELETE、PATCH、OPTIONS等。
@@ -1313,7 +1313,7 @@ handle(context: RequestContext): Promise<Response>
 
 请求处理器的入口函数。每一层拦截器通过调用下一层[RequestHandler](remote-communication-rcp.md#requesthandler)的[handle](remote-communication-rcp.md#handle)方法，触发下一层拦截器的[intercept](remote-communication-rcp.md#intercept)函数，最终触发向服务器发起请求。使用promise异步回调。
 
-比如，拦截器[A, B, C, D]会被构造成：A {handler->B{handler->C{handler-D{handler->系统能力}}}}。
+比如，拦截器[A, B, C, D]会被构造成：A {handler->B{handler->C{handler->D{handler->系统能力}}}}。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3193,7 +3193,7 @@ type ReceivingPausePolicy = ReceivingPauseByCache | ReceivingPauseByTimeout
 
 const NetworkOutputQueue: NetworkOutputQueueConstructor
 
-通过new NetworkInputQueue()来创建一个[INetworkOutputQueue](remote-communication-rcp.md#inetworkoutputqueue)。
+通过new NetworkOutputQueue()来创建一个[INetworkOutputQueue](remote-communication-rcp.md#inetworkoutputqueue)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

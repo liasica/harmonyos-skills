@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: 文件组织
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 文件组织
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:12+08:00
+scraped_at: 2026-10-15T07:04:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b7e77128ea36f93e6bace633a94b6540845ea4483c42495f6655c80aaf3cfa3b
+content_hash: sha256:2db09e4f8fa1aace5cd82d84e39434ba745d15ced2bde2a2a8b5b6c92e864a10
 ---
 
 ## 目录结构
@@ -14,11 +14,11 @@ JS FA应用的JS模块（entry/src/main/js/module）的典型开发目录结构�
 
 **图1** 目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/dZnbDV_yTBKX-gf8QI02_A/zh-cn_image_0000002755023718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/t2GQGGI1Q0CipktCdBNcNg/zh-cn_image_0000002791738575.png)
 
 **图2** [多实例](../lite-wearable-guides/pageability-launch-type.md)资源共享目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/w_tuEZRtRs-8tqJQIVHRzg/zh-cn_image_0000002755183606.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/wIEfTWn-QcyvSUKDAsjtPQ/zh-cn_image_0000002762339994.png)
 
 目录结构中文件分类如下：
 

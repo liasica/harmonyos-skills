@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-screensho
 title: 截屏
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 截屏
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:04+08:00
+scraped_at: 2026-10-15T07:06:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:ee38d517e46c31b6d1d39d9bb43fbaa43672acccf7b2abe7029b0ac3c757599c
+content_hash: sha256:27a2b5a13485f4cf1725d78da0eec46569ee0806f64dac77ad8d9bc5081d675b
 ---
 
 在调试过程中，可以通过多种方式截取屏幕截图。
@@ -14,14 +14,14 @@ content_hash: sha256:ee38d517e46c31b6d1d39d9bb43fbaa43672acccf7b2abe7029b0ac3c75
 
 1. 连接真机设备或模拟器，并在其中运行应用。
 2. 在DevEco Studio底部切换到**Log**页签。
-3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/U-1vtEyqRceeDfu9AOj7mA/zh-cn_image_0000002701663696.png)，即可截取屏幕截图。
+3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/wXqf81v8Tv6XXEyYgqGH-Q/zh-cn_image_0000002701663696.png)，即可截取屏幕截图。
 
    截图的图片将直接显示在DevEco Studio中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/6X8N3w3WSb-SP5GGwtxAhA/zh-cn_image_0000002731382919.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/WUynHE2MQa6gxix-l_eOcQ/zh-cn_image_0000002731382919.png)
 4. （可选）在图片显示区域右击，选择**Copy Path/Reference...**可以查看截屏的本地存储路径或者在菜单栏下方查看本地存储路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/STxVdZQmQCuKf_bLqbC19g/zh-cn_image_0000002731542891.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/3yVNmSGNQEGtd0VsIR5PKg/zh-cn_image_0000002731542891.png)
 
 ## 通过命令行方式截屏
 

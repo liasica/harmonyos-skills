@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-import-w
 title: 安全导入密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 安全导入密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dcf5b13422a36b0c1a8f5b7d28844e32f44722776bf7c04260944fe8bed7f5e7
+scraped_at: 2026-10-15T07:04:37+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:b6b59ecadfab57d53573c5f87aa31d25852022883cb0ff91210c30a368dd056e
 ---
 
 以安全导入ECDH密钥对为例，涉及业务侧加密密钥的[密钥生成](huks-key-generation-overview.md)、[协商](huks-key-agreement-overview.md)等操作不在本示例中体现。
@@ -287,8 +287,8 @@ async function publicGenerateItemFunc(keyAlias: string, huksOptions: huks.HuksOp
   console.info(`enter promise generateKeyItem`);
   try {
     await huks.generateKeyItem(keyAlias, huksOptions)
-      .then(data => {
-        console.info(`promise: generateKeyItem success, data = ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`promise: generateKeyItem success`);
       })
       .catch((err: Error) => {
         console.error(`promise: generateKeyItem failed, ${JSON.stringify(err)}`);
@@ -304,8 +304,8 @@ async function publicImportKeyItemFunc(keyAlias: string, huksOptions: huks.HuksO
   console.info(`enter promise importKeyItem`);
   try {
     await huks.importKeyItem(keyAlias, huksOptions)
-      .then(data => {
-        console.info(`promise: importKeyItem success, data = ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`promise: importKeyItem success`);
       }).catch((err: Error) => {
         console.error(`promise: importKeyItem failed, ${JSON.stringify(err)}`);
         throw (err as Error);
@@ -320,8 +320,8 @@ async function publicDeleteKeyItemFunc(keyAlias: string, huksOptions: huks.HuksO
   console.info(`enter promise deleteKeyItem`);
   try {
     await huks.deleteKeyItem(keyAlias, huksOptions)
-      .then(data => {
-        console.info(`promise: deleteKeyItem key success, data = ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`promise: deleteKeyItem key success`);
       })
       .catch((err: Error) => {
         console.error(`promise: deleteKeyItem failed, ${JSON.stringify(err)}`);
@@ -333,49 +333,13 @@ async function publicDeleteKeyItemFunc(keyAlias: string, huksOptions: huks.HuksO
   }
 }
 
-function importWrappedKeyItem(keyAlias: string, wrappingKeyAlias: string, huksOptions: huks.HuksOptions) {
-  return new Promise<void>((resolve, reject) => {
-    try {
-      huks.importWrappedKeyItem(keyAlias, wrappingKeyAlias, huksOptions, (error, data) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(data);
-        }
-      });
-    } catch (error) {
-      throw (error as Error);
-    }
-  });
-}
-
-async function publicImportWrappedKeyFunc(keyAlias: string, wrappingKeyAlias: string, huksOptions: huks.HuksOptions) {
-  console.info(`enter promise importWrappedKeyItem`);
-  for (let i = 0; i < huksOptions.inData!.length; i++) {
-    console.error(`${i}: ${huksOptions.inData![i]}`);
-  }
-  try {
-    await importWrappedKeyItem(keyAlias, wrappingKeyAlias, huksOptions)
-      .then((data) => {
-        console.info(`promise: importWrappedKeyItem success, data = ${JSON.stringify(data)}`);
-      })
-      .catch((error: Error) => {
-        console.error(`promise: importWrappedKeyItem failed, ${JSON.stringify(error)}`);
-        throw (error as Error);
-      });
-  } catch (error) {
-    console.error(`promise: importWrappedKeyItem input arg invalid, ${JSON.stringify(error)}`);
-    throw (error as Error);
-  }
-}
-
 async function publicImportWrappedKeyPromise(keyAlias: string, wrappingKeyAlias: string,
   huksOptions: huks.HuksOptions) {
   console.info(`enter promise importWrappedKeyItem`);
   try {
     await huks.importWrappedKeyItem(keyAlias, wrappingKeyAlias, huksOptions)
-      .then((data) => {
-        console.info(`promise: importWrappedKeyItem success, data = ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`promise: importWrappedKeyItem success`);
       })
       .catch((error: Error) => {
         console.error(`promise: importWrappedKeyItem failed, ${JSON.stringify(error)}`);
@@ -491,7 +455,7 @@ async function agreeFunction(keyAlias: string, huksOptions: huks.HuksOptions, hu
   try {
     await huks.updateSession(handle, huksOptions)
       .then((data) => {
-        console.error(`promise: doUpdate success, data = ${JSON.stringify(data)}`);
+        console.info(`promise: doUpdate success, data = ${JSON.stringify(data)}`);
       })
       .catch((error: Error) => {
         console.error(`promise: doUpdate failed, ${JSON.stringify(error)}`);
@@ -645,7 +609,7 @@ async function ImportWrappedKey() {
   importWrappedAes192Params.inData = wrappedData;
 
   /* 7. 设备B导入封装的加密密钥材料 */
-  await publicImportWrappedKeyFunc(importedKeyAliasAes192, srcKeyAliasWrap, importWrappedAes192Params);
+  await publicImportWrappedKeyPromise(importedKeyAliasAes192, srcKeyAliasWrap, importWrappedAes192Params);
 
   /* 8. 设备A、B删除用于安全导入的密钥 */
   await publicDeleteKeyItemFunc(srcKeyAliasWrap, genWrappingKeyParams);
@@ -674,7 +638,7 @@ function Check() {
       if (error) {
         console.error(`callback: isKeyItemExist failed, ${JSON.stringify(error)}`);
       } else {
-        if (data !== null && data.valueOf() !== null) {
+        if (data) {
           isKeyExist = data.valueOf();
           console.info(`callback: isKeyItemExist success, isKeyExist = ${isKeyExist}`);
         }

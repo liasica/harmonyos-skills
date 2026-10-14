@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-ide-previe
 title: UI预览
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI预览
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:14+08:00
+scraped_at: 2026-10-15T07:04:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c42e422528adde149dbbc71f7462ce4f3cac3059fe2d44c8e6c9b0cc5d67f9c7
+content_hash: sha256:7adec58511511b41491a84cdab7fcfa794f6c46245525ba9467a617c5278a394
 ---
 
-DevEco Studio为开发者提供了UI预览功能，方便查看UI效果并随时调整页面布局。预览支持页面预览和组件预览。图1中左侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/uX4sUBnWRiKC2XqHD2tjIQ/zh-cn_image_0000002784582553.png)表示页面预览，右侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/l5_fh6PuSmWJGFmJsnKAyQ/zh-cn_image_0000002784662733.png)表示组件预览。
+DevEco Studio为开发者提供了UI预览功能，方便查看UI效果并随时调整页面布局。预览支持页面预览和组件预览。图1中左侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/xN0BOoN2RGKpDHNr6IKnow/zh-cn_image_0000002791858869.png)表示页面预览，右侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/wKvn8G2uSFKyeHGuVtWDMQ/zh-cn_image_0000002762499994.png)表示组件预览。
 
 **说明** 
 
@@ -16,7 +16,7 @@ DevEco Studio为开发者提供了UI预览功能，方便查看UI效果并随时
 
 **图1** 预览图标
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/3KU1cGsnTeOQnSyJwubvyw/zh-cn_image_0000002755023800.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/3N_Z-neaT5iihQteFUr2Qw/zh-cn_image_0000002791738657.png)
 
 ## 页面预览
 
@@ -30,7 +30,7 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 ### 极速预览
 
-支持在修改组件的属性时，无需使用Ctrl+S进行保存，可以直接观察到修改后的预览效果。极速预览默认开启，若需关闭，点击预览器右上角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/G9vBRUPhSXGJCuIwiWEIqA/zh-cn_image_0000002755183688.png)即可。
+支持在修改组件的属性时，无需使用Ctrl+S进行保存，可以直接观察到修改后的预览效果。极速预览默认开启，若需关闭，点击预览器右上角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/C8qtB-wiRNqxurUPtBEHrg/zh-cn_image_0000002762340076.png)即可。
 
 **注意** 
 
@@ -47,11 +47,11 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 **图2** 极速预览演示图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/7ICTg-exTiiI_aoFtdBBcw/zh-cn_image_0000002784582555.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/tuXp8ImtSzalbBTMrbAdeg/zh-cn_image_0000002791858871.gif)
 
 ### Inspector双向预览
 
-支持ets文件与预览器的双向预览。使用时，点击预览器界面图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/9p4UI7BPR-CYB-ocyfF-uA/zh-cn_image_0000002784662735.png)开启双向预览功能。
+支持ets文件与预览器的双向预览。使用时，点击预览器界面图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/fduncb0mQoeU-NLWvLSMLg/zh-cn_image_0000002762499996.png)开启双向预览功能。
 
 开启双向预览功能后，支持代码编辑器、UI界面和组件树之间的联动：
 
@@ -64,13 +64,13 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 **图3** Inspector双向预览演示图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/nvLg8bIlSKeEk_YbJwNeVA/zh-cn_image_0000002755023802.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/2uW4Ye5YT5SadcOf0FDRnQ/zh-cn_image_0000002791738659.gif)
 
 ## 组件预览
 
 ArkTS应用/元服务支持组件预览功能。组件预览通过在自定义组件前添加[@Preview装饰器](../harmonyos-references/ts-universal-component-previewer.md#preview装饰器)装饰器实现。在单个源文件中，最多可以使用10个@Preview装饰自定义组件。启动方式：
 
-* 当组件被@Entry和@Preview装饰时，点击右侧侧边栏的Previewer按钮，启动页面预览，页面加载成功后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/RkPN7npARa2MtafFdUWhlQ/zh-cn_image_0000002784662733.png)，切换到组件预览。
+* 当组件被@Entry和@Preview装饰时，点击右侧侧边栏的Previewer按钮，启动页面预览，页面加载成功后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/aaewVKzPSJebyNCEZAnTVg/zh-cn_image_0000002762499994.png)，切换到组件预览。
 * 当组件仅被@Preview装饰时，点击右侧侧边栏的Previewer按钮，则默认为组件预览。
 
 组件预览时，使用@Preview装饰器的默认属性（请参考[PreviewParams](../harmonyos-references/ts-universal-component-previewer.md#previewparams9)）进行效果显示。可以通过设置@Preview的参数，指定预览设备的相关属性，包括设备类型、屏幕形状等。
@@ -117,14 +117,14 @@ struct ComponentPreviewTwo {
 
 **图4** 组件预览效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/UCNi7BdHTESM8U-5cBYaqg/zh-cn_image_0000002755183690.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/mrg9BHyMRTi3G7DcTgYODQ/zh-cn_image_0000002762340078.png)
 
 ## 动态修改分辨率
 
-同一个应用/元服务可以运行在多个设备上，因不同设备的屏幕分辨率、形状、大小等不同，开发者需要在不同的设备上查看应用/元服务的UI布局和交互效果。预览支持动态修改分辨率，方便开发者随时查看不同设备上的页面显示效果。启动方式：启动页面预览后，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-ubQ_OwPSQ2_1nSCEMtvGw/zh-cn_image_0000002784582557.png)，即可拖动页面选中框动态修改当前设备的屏幕大小。
+同一个应用/元服务可以运行在多个设备上，因不同设备的屏幕分辨率、形状、大小等不同，开发者需要在不同的设备上查看应用/元服务的UI布局和交互效果。预览支持动态修改分辨率，方便开发者随时查看不同设备上的页面显示效果。启动方式：启动页面预览后，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Zvci3_wBTyKkuoidM_Zl_A/zh-cn_image_0000002791858873.png)，即可拖动页面选中框动态修改当前设备的屏幕大小。
 
 效果如图5所示：
 
 **图5** 动态修改分辨率效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/_aACRG1jRPul5fNxcwtThA/zh-cn_image_0000002784662737.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/1rdzYjcbSRC4nt05Sc_XPw/zh-cn_image_0000002762499998.gif)

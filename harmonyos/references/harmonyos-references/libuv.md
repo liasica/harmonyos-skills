@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/libuv
 title: libuv
 breadcrumb: API参考 > 标准库 > libuv
 category: harmonyos-references
-scraped_at: 2026-10-11T07:28:51+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:5e9407f5fb3b8866e78aa9c9f6e9129306581bcdb3ba3ab52cb58d96f8964e37
+scraped_at: 2026-10-15T07:13:00+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:1619a63c6f1a8a91ccba3f18eead7de070fe8dce7206606bba8bb031c9596cce
 ---
 
 ## 简介
@@ -661,7 +661,7 @@ napi_status napi_release_threadsafe_function(napi_threadsafe_function function,
 
 **1. 开发者创建loop**
 
-开发者可以通过调用uv\_loop\_new创建loop或者uv\_loop\_init接口初始化loop，loop的生命周期由开发者自行维护。在这种情况下，如前文所述，需要保证uv\_run执行在与创建/初始化loop操作相同的线程上，即loop线程上。此外，其余非线程安全操作，如timer相关操作等，均需要在loop线程上进行。
+开发者可以通过调用uv\_loop\_init接口初始化loop，loop的生命周期由开发者自行维护（如果使用uv\_loop\_new创建loop，失败时会只返回空指针，而uv\_loop\_init接口初始化loop失败时会返回错误码，详见[libuv的错误码](libuv.md#libuv的错误码)，提示开发者获取错误原因）。在这种情况下，如前文所述，需要保证uv\_run执行在与创建/初始化loop操作相同的线程上，即loop线程上。此外，其余非线程安全操作，如timer相关操作等，均需要在loop线程上进行。
 
 如果因为业务需要，必须在其他线程往loop线程抛任务，请使用uv\_async\_send函数：即在async句柄初始化时，注册一个回调函数，并在该回调中实现相应的操作，当调用uv\_async\_send时，在主线程上执行该回调函数。
 
@@ -1255,7 +1255,7 @@ handle：线程间通信句柄。
 1. uv\_async\_t从调用uv\_async\_init开始后就一直处于活跃状态，除非用uv\_close将其关闭。
 2. uv\_async\_t的执行顺序严格按照uv\_async\_init的顺序，而非通过uv\_async\_send的顺序来执行的。因此按照初始化的顺序来管理好时序问题是必要的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/SEAKcVR3SBmR3lCIUqK7pQ/zh-cn_image_0000002784585689.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/PDZTS70MQ6ypzK577qiLjA/zh-cn_image_0000002791862053.jpg)
 
 示例代码：
 
@@ -1352,7 +1352,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 下图为原生libuv的线程池工作流程，图中流程已简化，默认句柄的pending标志为1，worker线程个数不代表线程池中线程的真实数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/EcUlzZTzQFmHoSG81UgQ2A/zh-cn_image_0000002784665871.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/B19GMmcfS2-pq9DZ8iva2A/zh-cn_image_0000002762503178.jpg)
 
 **2. 异步任务提交注意事项**
 
@@ -1372,7 +1372,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 另外，在应用主线程中，所有的异步任务尽管最终都是通过libuv得到执行的。但是在当前系统中，libuv的线程池已经对接到了FFRT中，任何抛向libuv的异步任务都会在FFRT的线程中得到调度。应用主线程的回调函数也通过PostTask接口插入到eventhandler的队列上。这就意味着FFRT线程上的异步任务完成后不再通过uv\_async\_send的方式触发主线程的回调。过程如下图:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/OzRmsz04Qper4o6TYW2hUA/zh-cn_image_0000002755026942.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/6OIxIUycS5iY2GSS2L_G5Q/zh-cn_image_0000002791741835.jpg)
 
 我们总结了五种类型的请求任务是直接可以按照正常用法在应用主循环中生效的：
 
@@ -1582,3 +1582,23 @@ int uv_getnameinfo(uv_loop_t* loop,
 * check句柄
 * signal相关函数
 * tcp及udp相关函数
+
+### libuv的错误码
+
+**uv\_loop\_init的错误码**
+
+| 返回值 | 数值 | 含义 |
+| --- | --- | --- |
+| 0 | 0 | 成功 |
+| UV\_ENOMEM | -4057 | not enough memory(内存分配失败) |
+| UV\_EMFILE | -4066 | too many open files(进程fd耗尽) |
+| UV\_ENFILE | -4061 | file table overflow(系统fd耗尽) |
+| UV\_EINVAL | -4071 | invalid argument(无效参数) |
+| UV\_EAGAIN | -4088 | resource temporarily unavailable(资源暂不可用) |
+| UV\_EBUSY | -4082 | resource busy or locked(资源被占用) |
+
+所有错误码宏的完整定义位于SDK的errno.h头文件中，可在本地SDK目录下查看，路径形如：
+
+```cpp
+{SDK路径}/native/sysroot/usr/include/uv/errno.h
+```

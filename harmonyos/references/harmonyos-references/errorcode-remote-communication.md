@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: API错误码
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3a8b89c483351cd18e17fae4076bcd5b53f25d8a38542c4a9a6ef8566685812e
+scraped_at: 2026-10-15T07:10:11+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:fc24f5d6d40fc515fa487ebe716cf34524f7f457e7a1cdf18f1024aa3ec4ac6f
 ---
 
 **说明** 
@@ -516,7 +516,7 @@ Couldn't use specified SSL cipher.
 
 **可能原因**
 
-client和sever协商的加密算法系统不支持。
+client和server协商的加密算法系统不支持。
 
 **处理步骤**
 

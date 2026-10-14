@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 创建并使用材质资源
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用 > 创建并使用材质资源
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:31+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:d03c65aa272f9fb54bff141ab1855078e0a367ba8b86e51e8d3c14b1719bbf58
+scraped_at: 2026-10-15T07:05:16+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:702eac88808c0ab55c760d1b09e3bbca5e17e89e887eb2970e24324b6f3d8f62
 ---
 
 材质（Material）：材质是用于定义物体表面视觉效果的重要资源。材质决定了物体如何与光线交互，从而影响其最终的渲染效果，如颜色、金属感、粗糙度等外观属性。
@@ -114,10 +114,10 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
 
    ```typescript
    if (this.scene === null) {
-     // Switched from .gltf to .glb; same content, different format
+     // 从 .gltf 切换为 .glb；内容相同，格式不同
      Scene.load($rawfile('gltf/CubeWithFloor/glTF/AnimatedCube.glb'))
        .then(async (result: Scene) => {
-         // Assign loaded scene to globalScene for unified resource creation
+         // 将加载的场景赋值给globalScene，以便统一创建资源
          globalScene = result;
          this.scene = result;
          this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
@@ -145,7 +145,7 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
    ```typescript
    this.geom = this.scene.getNodeByPath('rootNode_/Unnamed Node 1/AnimatedCube') as Geometry;
 
-   // record original material
+   // 记录原始材质
    this.originalMat = this.geom.mesh.subMeshes[0].material;
    ```
 5. 创建Shader材质（空白）。
@@ -155,11 +155,11 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
    ```typescript
    function createMaterialPromise(): Promise<Material> {
      return new Promise((resolve, reject) => {
-       // Ensure the scene is loaded before accessing sceneFactory
+       // 确保在访问sceneFactory之前场景已加载
        if (globalScene) {
          let sceneFactory: SceneResourceFactory = globalScene.getResourceFactory();
          let sceneMaterialParameter: SceneResourceParameters = { name: 'material' };
-         // Create Material
+         // 创建材质
          let material: Promise<Material> = sceneFactory.createMaterial(sceneMaterialParameter, MaterialType.SHADER);
          material.then(resolve)
          .catch((err: string) => {
@@ -179,11 +179,11 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
    ```typescript
    function createShaderPromise(): Promise<Shader> {
      return new Promise((resolve, reject) => {
-       // Ensure the scene is loaded before accessing sceneFactory
+       // 确保在访问sceneFactory之前场景已加载
        if (globalScene) {
          let sceneFactory: SceneResourceFactory = globalScene.getResourceFactory();
 
-         // Create a SceneResourceParameters object and use it to create a shader
+         // 创建一个SceneResourceParameters对象，并用它来创建着色器
          let sceneResourceParameter: SceneResourceParameters = {
            name: 'shaderResource',
            uri: $rawfile('shaders/custom_shader/custom_material_sample.shader')
@@ -280,7 +280,7 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
 
    ```typescript
    if (this.scene == null) {
-     // Switched from .gltf to .glb; same content, different format
+     // 从 .gltf 切换为 .glb；内容相同，格式不同
      Scene.load($rawfile('gltf/CompareClearcoat/CompareClearcoat.glb'))
        .then(async (scene: Scene) => {
          this.scene = scene;

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口操作bigint类型值
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口操作bigint类型值
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:bf521480c23146f2d50075c234848e9d078fdcb7a39d4f2e15adf3ff2c90b7a8
+scraped_at: 2026-10-15T07:06:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:0fab0cbcf4f0b43bf4f2178c2c911e01a1a0d5ae619c9797db68fc622d65c983
 ---
 
 ## 简介
@@ -160,7 +160,7 @@ try {
     testNapi.createBigintWords());
   // ...
 } catch (error) {
-  hilog.error(0x0000, 'testTag', 'Test Node-API NapiGetValueBigint: %{public}s', error.message);
+  hilog.error(0x0000, 'testTag', 'Test Node-API NapiCreateValueBigint: %{public}s', error.message);
   // ...
 }
 ```

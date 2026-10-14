@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/calendarmanag
 title: 日历服务实践案例
 breadcrumb: 指南 > 应用服务 > Calendar Kit（日历服务） > 日历服务实践案例
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:11+08:00
-doc_updated_at: 2026-08-04
-content_hash: sha256:59e5aaa8e60165c8a21b9251239475a09021d19bb0dffc1f897c88dcf3fc1a7e
+scraped_at: 2026-10-15T07:05:24+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:fc47fa8a5e188120e2d782f751c4b8d21e14645458bb4e822978e26ae184e82e
 ---
 
 ## 场景介绍
@@ -20,14 +20,14 @@ content_hash: sha256:59e5aaa8e60165c8a21b9251239475a09021d19bb0dffc1f897c88dcf3f
 * 日程详情：始终显示。
 * 日程通知：通知弹出时显示，通知中心内点击对应日程卡片后显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/SXveJanSShmxSt4juUHe_A/zh-cn_image_0000002784583399.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/75r7rDXkSfObO5RNQ7Pg4g/zh-cn_image_0000002791859721.png)
 
 ## 开发准备
 
 请参考日程管理前三步的[开发步骤](calendarmanager-calendar-developer.md#开发步骤)：
 
 1. 导入相关依赖。
-2. 申请权限。使用Calendar Kit（日历服务）时，需要在module.json5中声明申请读写日历日程所需的权限：ohos.permission.READ\_CALENDAR和ohos.permission.WRITE\_CALENDAR。具体指导可见[声明权限](declare-permissions.md)。
+2. 申请权限。使用Calendar Kit时，需要在module.json5中声明申请读写日历日程所需的权限：ohos.permission.READ\_CALENDAR和ohos.permission.WRITE\_CALENDAR。具体指导可见[声明权限](declare-permissions.md)。
 3. 根据上下文获取日程管理器对象calendarMgr，用于对日历账户进行相关管理操作。推荐在EntryAbility.ets文件中进行操作。
 
 ## 一键服务典型场景
@@ -205,7 +205,7 @@ content_hash: sha256:59e5aaa8e60165c8a21b9251239475a09021d19bb0dffc1f897c88dcf3f
 
 示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/GUct2lGzRc2hG341sNiY3A/zh-cn_image_0000002784663579.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Qa0Rj9wSQauIoDooCtQ4ww/zh-cn_image_0000002762500846.png)
 
 ### 酒店住宿场景
 
@@ -282,7 +282,7 @@ async createHotelCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/MN_LrMzkSCusVchQMIBVxg/zh-cn_image_0000002755024646.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Ws-aXHEhQ5yM_PmewOpzRw/zh-cn_image_0000002791739505.png)
 
 ### 直播预约场景
 
@@ -351,7 +351,7 @@ async createLiveCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/BtiILW5qR2aJ0QfoAKwPlg/zh-cn_image_0000002755184534.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/GZAV18vvQui3cjDY6U0qrA/zh-cn_image_0000002762340926.png)
 
 ### 抢购预约场景
 
@@ -420,7 +420,7 @@ async createShoppingCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/LS_dFersTWe4hCcN4koF-w/zh-cn_image_0000002784583401.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7l2HOxfNREC3GVkOqBjRAA/zh-cn_image_0000002791859723.png)
 
 ### 还款提醒场景
 
@@ -491,7 +491,7 @@ async createRepaymentCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/2hwGqdPRRzKgddf1nKx0Wg/zh-cn_image_0000002784663581.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/JazBq44HTrKnwVH8CBHeUg/zh-cn_image_0000002762500848.png)
 
 ### 课程提醒场景
 
@@ -560,7 +560,7 @@ async createClassCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/2ypchqesSaurEm-SDJSYcQ/zh-cn_image_0000002755024648.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/qWqnTqbuQAmBSrLz8SMClQ/zh-cn_image_0000002791739507.png)
 
 ### 影音娱乐场景
 
@@ -629,7 +629,7 @@ async createSportsCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/zkAa3aeuTXSgShtjG6JAtA/zh-cn_image_0000002755184536.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/phZzOg-dQ4KuqbBGlPw7CQ/zh-cn_image_0000002762340928.png)
 
 ### 运动训练场景
 
@@ -698,7 +698,7 @@ async createSportsExerciseEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Q2ePWFt8Td-Yj-1xAkiexg/zh-cn_image_0000002784583403.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VCL8CJDLRFqXXRmnIrw-fw/zh-cn_image_0000002791859725.png)
 
 ### 会议场景
 
@@ -789,4 +789,4 @@ async createMeetingEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/_U4e515sRV6COu2OMGTN_A/zh-cn_image_0000002784663583.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/RPTkPKm2TSCqAdbm_IsDAw/zh-cn_image_0000002762500850.png)

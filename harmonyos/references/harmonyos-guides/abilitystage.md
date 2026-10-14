@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilitystage
 title: AbilityStage组件管理器
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > AbilityStage组件管理器
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6027308b9f5168da7a4a6e198f763f44edfbe8895ebf745d9d3e27ef3e627efe
+scraped_at: 2026-10-15T07:03:51+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:0cc3a4f1b965cb588e4378b4634e53d6e7bbc8ddf9a96089b32b7ec3f5daaa4f
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:6027308b9f5168da7a4a6e198f763f44edfbe8895ebf745d9d3e27ef3e6
 
 AbilityStage拥有[onCreate()](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)、[onDestroy()](../harmonyos-references/js-apis-app-ability-abilitystage.md#ondestroy12)生命周期回调和[onAcceptWant()](../harmonyos-references/js-apis-app-ability-abilitystage.md#onacceptwant)、[onConfigurationUpdate()](../harmonyos-references/js-apis-app-ability-abilitystage.md#onconfigurationupdate)、[onMemoryLevel()](../harmonyos-references/js-apis-app-ability-abilitystage.md#onmemorylevel)、[onNewProcessRequest()](../harmonyos-references/js-apis-app-ability-abilitystage.md#onnewprocessrequest11)、[onPrepareTermination()](../harmonyos-references/js-apis-app-ability-abilitystage.md#onpreparetermination15)等事件回调。
 
-* onCreate()生命周期回调：在开始加载对应Module的第一个应用组件（如[UIAbility组件](../harmonyos-references/js-apis-app-ability-uiability.md)或具体扩展能力的[ExtensionAbility组件](../harmonyos-references/js-apis-app-ability-extensionability.md)）实例之前会先创建AbilityStage，并在AbilityStage创建完成之后执行其onCreate()生命周期回调。AbilityStage模块提供在Module加载的时候，通知开发者，可以在此进行该Module的初始化（如资源预加载、线程创建等）。
+* onCreate()生命周期回调：在开始加载对应Module的第一个应用组件（如[@ohos.app.ability.UIAbility (带界面的应用组件)](../harmonyos-references/js-apis-app-ability-uiability.md)或具体扩展能力的[@ohos.app.ability.ExtensionAbility (扩展能力基类)](../harmonyos-references/js-apis-app-ability-extensionability.md)）实例之前会先创建AbilityStage，并在AbilityStage创建完成之后执行其onCreate()生命周期回调。AbilityStage模块提供在Module加载的时候，通知开发者，可以在此进行该Module的初始化（如资源预加载、线程创建等）。
 * onAcceptWant()事件回调：UIAbility[指定实例模式（specified）](uiability-launch-type.md#specified启动模式)启动时触发的事件回调，具体使用请参见[UIAbility启动模式综述](uiability-launch-type.md)。
 * onConfigurationUpdate()事件回调：当系统环境变量（例如系统语言、深浅色等）发生变更时触发的事件回调，配置项均定义在[Configuration](../harmonyos-references/js-apis-app-ability-configuration.md)类中。
 * onMemoryLevel()事件回调：当系统调整内存时触发的事件回调。应用被切换到后台时，系统会将在后台的应用保留在缓存中。即使应用处于缓存中，也会影响系统整体性能。当系统资源不足时，系统会通过多种方式从应用中回收内存，必要时会完全停止应用，从而释放内存用于执行关键任务。为了进一步保持系统内存的平衡，避免系统停止用户的应用进程，可以在AbilityStage中的onMemoryLevel()生命周期回调中订阅系统内存的变化情况，释放不必要的资源。
@@ -28,22 +28,26 @@ AbilityStage拥有[onCreate()](../harmonyos-references/js-apis-app-ability-abili
 
 DevEco Studio默认工程中未自动生成AbilityStage，如需要使用AbilityStage的能力，可以手动新建一个AbilityStage文件，具体步骤如下。
 
-1. 在工程Module对应的ets目录下，右键选择“New > Directory”，新建一个目录并命名为exampleabilitystage。
-2. 在exampleabilitystage目录，右键选择“New > ArkTS File”，新建一个文件并命名为MyAbilityStage.ets。
+1. 在工程Module对应的ets目录下，右键选择“New > Directory”，新建一个目录并命名为myabilitystage。
+2. 在myabilitystage目录，右键选择“New > ArkTS File”，新建一个文件并命名为MyAbilityStage.ets。
 3. 打开MyAbilityStage.ets文件，导入AbilityStage的依赖包，自定义类继承AbilityStage并加上需要的生命周期回调，示例中增加了一个[onCreate()](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)生命周期回调。
 
    ```typescript
-   import { AbilityStage, Want } from '@kit.AbilityKit';
+   import { EnvironmentCallback, AbilityStage, Want } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
    export default class MyAbilityStage extends AbilityStage {
+
      onCreate(): void {
        // 应用HAP首次加载时触发，可以在此执行该Module的初始化操作（例如资源预加载、线程创建等）。
+       console.info('AbilityStage onCreate');
+       // ...
      }
-
      onAcceptWant(want: Want): string {
        // 仅specified模式下触发
        return 'MyAbilityStage';
      }
+     // ...
    }
    ```
 4. 在[module.json5配置文件](module-configuration-file.md)中，通过配置 srcEntry 参数来指定模块对应的代码路径，以作为HAP加载的入口。
@@ -68,11 +72,13 @@ DevEco Studio默认工程中未自动生成AbilityStage，如需要使用Ability
 * 通过关闭应用进程，可以触发AbilityStage的onDestroy()生命周期回调。
 
   ```typescript
-  import { EnvironmentCallback, AbilityStage } from '@kit.AbilityKit';
+  import { EnvironmentCallback, AbilityStage, Want } from '@kit.AbilityKit';
   import { BusinessError } from '@kit.BasicServicesKit';
 
   export default class MyAbilityStage extends AbilityStage {
+
     onCreate(): void {
+      // 应用HAP首次加载时触发，可以在此执行该Module的初始化操作（例如资源预加载、线程创建等）。
       console.info('AbilityStage onCreate');
       let envCallback: EnvironmentCallback = {
         onConfigurationUpdated(config) {
@@ -95,7 +101,7 @@ DevEco Studio默认工程中未自动生成AbilityStage，如需要使用Ability
         console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
       }
     }
-
+    // ...
     onDestroy(): void {
       // 通过onDestroy()方法，可以监听到Ability的销毁事件。
       console.info('AbilityStage onDestroy');

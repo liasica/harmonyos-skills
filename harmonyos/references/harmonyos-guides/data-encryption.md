@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-encrypti
 title: 数据库加密 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 数据库加密 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-15T07:03:57+08:00
+doc_updated_at: 2026-10-14
 content_hash: sha256:94569ff0a363b31168782b175782aa1dca37af85bb85b1172f1ea4c8f25c9b38
 ---
 

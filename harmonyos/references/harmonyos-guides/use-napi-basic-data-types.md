@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-basi
 title: 使用Node-API接口创建基本数据类型
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口创建基本数据类型
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2b986f382986af64a63bd1922a131d91fb4ebdd83bfb722b081407b1ac42daca
+scraped_at: 2026-10-15T07:06:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:9ac3530c2f7e2e554ea2b4fbb53b1801e5d44085963abcb17e8cee966dcf1730
 ---
 
 ## 简介
@@ -147,8 +147,8 @@ hilog.info(0x0000, 'Node-API', 'get_value_int32_oversize %{public}d',
 // 大于2的31次-1的数字且不是二进制为111111111111111111111111111111111111这样的在int32中有特殊含义的数字也会溢出，导致数值发生改变，返回值按后32位二进制编码解码
 hilog.info(0x0000, 'Node-API', 'get_value_int32_oversize %{public}d',
   testNapi.getValueInt32(687194767355));
-// 传入NAN（not a number）、+Infinity（正无穷）或-Infinity（负无穷），会返回数字0
-hilog.info(0x0000, 'Node-API', 'get_value_int32_number_NAN %{public}d', testNapi.getValueInt32(NaN));
+// 传入NaN（not a number）、+Infinity（正无穷）或-Infinity（负无穷），会返回数字0
+hilog.info(0x0000, 'Node-API', 'get_value_int32_number_NaN %{public}d', testNapi.getValueInt32(NaN));
 hilog.info(0x0000, 'Node-API', 'get_value_int32_number_+Infinity %{public}d',
   testNapi.getValueInt32(+Infinity));
 hilog.info(0x0000, 'Node-API', 'get_value_int32_number_-Infinity %{public}d',
@@ -201,8 +201,8 @@ hilog.info(0x0000, 'Node-API', 'get_value_int64_not_number %{public}s',
 // 输入超过int64表示范围的数字会溢出，失去精度，导致输入数字与返回数字不相等
 hilog.info(0x0000, 'Node-API', 'get_value_int64_number_oversize %{public}d',
   testNapi.getValueInt64(9223372036854775809));
-// 传入NAN（not a number）、+Infinity（正无穷）或-Infinity（负无穷）接口返回数字0
-hilog.info(0x0000, 'Node-API', 'get_value_int64_number_NAN %{public}d', testNapi.getValueInt64(NaN));
+// 传入NaN（not a number）、+Infinity（正无穷）或-Infinity（负无穷）接口返回数字0
+hilog.info(0x0000, 'Node-API', 'get_value_int64_number_NaN %{public}d', testNapi.getValueInt64(NaN));
 hilog.info(0x0000, 'Node-API', 'get_value_int64_number_+Infinity %{public}d',
   testNapi.getValueInt64(+Infinity));
 hilog.info(0x0000, 'Node-API', 'get_value_int64_number_-Infinity %{public}d',

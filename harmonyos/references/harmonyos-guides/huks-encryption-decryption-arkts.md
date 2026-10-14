@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-encrypti
 title: 加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 加密/解密 > 加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c172eedb6d033f7b766082dd96ad78892484840eae7b78104bd4ad4cda83c86d
+scraped_at: 2026-10-15T07:04:37+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:fa6f7dc65317abdd56ec40961b085f6d69d7fd6e725ef847bdaacc0f4fb7727b
 ---
 
 以AES128、RSA2048、SM2和DES64为例，完成加解密。具体的场景介绍及支持的算法规格，请参考[加解密支持的算法](huks-encryption-decryption-overview.md#支持的算法)。
@@ -1087,7 +1087,7 @@ async function deleteKey() {
    * 1. 调用deleteKeyItem删除密钥
    */
   await huks.deleteKeyItem(rsaKeyAlias, emptyOptions)
-    .then((data) => {
+    .then(() => {
       console.info(`promise: delete data success`);
     }).catch((error: BusinessError) => {
       console.error(`promise: delete data failed, errCode : ${error.code}, errMsg : ${error.message}`);

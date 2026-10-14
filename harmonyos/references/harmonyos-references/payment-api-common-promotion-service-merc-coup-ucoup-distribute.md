@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 发放优惠券
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 运营工具 > 商家券 > 用户券 > 发放优惠券
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b85e5e922b6131248cc7d31d845063a06a396063c42a23f95200be2708f20a6e
+scraped_at: 2026-10-15T07:12:40+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:255fbf19029eef0bd505116dc5805865691ce8177628150c83829ed0dadafb1c
 ---
 
 ## 功能介绍
@@ -102,8 +102,6 @@ Content-Type: application/json; charset=UTF-8
   "resultCode": "000000",
   "resultDesc": "Success.",
   "sign":"MEQCIEIWzdpziRyTi8vhwWHFuDdxf********************CHljer0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-  "batchNo": "PV1202403211136181382014597367613***",
-  "openId": "OPEN_02032411234***",
   "distributeTime": "2024-03-23T16:42:12.000+0800",
   "succResults": [
     {

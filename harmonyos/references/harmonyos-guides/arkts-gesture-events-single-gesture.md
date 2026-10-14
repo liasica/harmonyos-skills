@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 单一手势
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 单一手势
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:09+08:00
+scraped_at: 2026-10-15T07:04:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5a37d558aed621f2ceea59c7c716e2b35983cfa44c0f5235604107c84543ac23
+content_hash: sha256:7bd352ac2e210d2c2c9b7e1e219eae8ab2ab76f4064495289d0dbd9574bfba92
 ---
 
 ## 点击事件（onClick）
@@ -117,7 +117,7 @@ export struct Tap {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/nPI-WAl8RGunl_aanVMscw/zh-cn_image_0000002755023564.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/n3cIm-usTDmSU7qfe3ADZw/zh-cn_image_0000002791738421.gif)
 
 ## 长按手势（LongPressGesture）
 
@@ -172,7 +172,7 @@ export struct LongPress {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/lKiTQsX4RwqGbaxIhQAEIg/zh-cn_image_0000002755183450.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/I6TNa1AVTSS_AxIwmMQT3g/zh-cn_image_0000002762339840.gif)
 
 ## 滑动手势（PanGesture）
 
@@ -273,7 +273,7 @@ export struct VolumeControlDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/pO6SEs9bRZ2YnVH5U0VhQg/zh-cn_image_0000002784582319.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/aBV_FerSQG2KjjYfmkKNwQ/zh-cn_image_0000002791858635.gif)
 
 **说明** 
 
@@ -345,7 +345,7 @@ export struct Pinch {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/lFkM3zrYQSmKmAcCZ6hZyQ/zh-cn_image_0000002784662499.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/FWti7zI9R4Cexz-kHDRvbA/zh-cn_image_0000002762499760.gif)
 
 ## 旋转手势（RotationGesture）
 
@@ -410,7 +410,7 @@ export struct Rotation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/H7NIvCWmRUGB9R9npQ6WWA/zh-cn_image_0000002755023566.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/H6d0_aSUTQ20tbf5M7CIPg/zh-cn_image_0000002791738423.gif)
 
 ## 快滑手势（SwipeGesture）
 
@@ -467,7 +467,7 @@ export struct Swipe {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/cLshvbAmRSekSaZdaytvWg/zh-cn_image_0000002755183452.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/AGhJM6QCSw-Bhdo2Ic9TUg/zh-cn_image_0000002762339842.gif)
 
 **说明** 
 

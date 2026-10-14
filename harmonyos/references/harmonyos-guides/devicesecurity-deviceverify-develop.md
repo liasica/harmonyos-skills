@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 应用设备状态检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 应用设备状态检测
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:01d765fe98994e8c738be6e831b6900329d30722f39fbd0864be649951f1bd65
+scraped_at: 2026-10-15T07:04:33+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:5b20ca3dbfbc5b7a038a0c39b8799ef6da22bb41c602dc791c006b9c9dd100a1
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:01d765fe98994e8c738be6e831b6900329d30722f39fbd0864be649951f
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/AQAaZ4RyTL-wh3PAtryRyw/zh-cn_image_0000002784582851.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/oCPNdGvxS-6OEjBV_wCzNA/zh-cn_image_0000002791859171.png)
 
 流程说明：
 
@@ -105,7 +105,7 @@ content_hash: sha256:01d765fe98994e8c738be6e831b6900329d30722f39fbd0864be649951f
 ### 服务端开发
 
 1. 获取凭证Token，详情请参见[基于服务账号生成鉴权令牌](devicesecurity-deviceverify-token.md)。
-2. 可分别调用checkDeviceToken、getDeviceStatus、setDeviceStatus、delDeviceStatus接口，实现deviceToken验证、查询设备标记状态、更新设备标记状态及删除设备标记状态功能。更多接口信息请参见[REST API](../harmonyos-references/devicesecurity-deviceverify-api.md)。
+2. 可分别调用checkDeviceToken、getDeviceStatus、setDeviceStatus、delDeviceStatus接口，实现deviceToken验证、查询设备标记状态、更新设备标记状态及删除设备标记状态功能。更多接口信息请参见[REST API](../harmonyos-references/devicesecurity-deviceverify-checkdevicetoken.md)。
 
    样例代码：
 

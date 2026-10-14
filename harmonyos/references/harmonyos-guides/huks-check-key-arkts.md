@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-check-ke
 title: 查询密钥是否存在(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 查询密钥是否存在 > 查询密钥是否存在(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4033c9566259ab4a563bc7854210d747ef945d3ff18522b65680342f8d4174cb
+scraped_at: 2026-10-15T07:04:38+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:102b4553c6d1412bddf4be93d905b3a2268af8930de772b9f7da36457a187e89
 ---
 
 HUKS提供了接口供应用查询指定密钥是否存在。
@@ -22,7 +22,7 @@ HUKS提供了接口供应用查询指定密钥是否存在。
 import { huks } from '@kit.UniversalKeystoreKit';
 
 let keyAlias = 'test_key';
-let isKeyExist: Boolean;
+let isKeyExist: boolean;
 
 let generateProperties: huks.HuksParam[] = [
   {
@@ -48,11 +48,11 @@ let generateHuksOptions: huks.HuksOptions = {
 function generateKeyItem(keyAlias: string, huksOptions: huks.HuksOptions) {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.generateKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.generateKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {
@@ -79,7 +79,7 @@ function hasKeyItem(keyAlias: string, huksOptions: huks.HuksOptions) {
         if (error) {
           reject(error);
         } else {
-          resolve(data.valueOf());
+          resolve(data);
         }
       });
     } catch (error) {

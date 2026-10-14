@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-tool
 title: hilogtool
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hilogtool
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:48+08:00
+scraped_at: 2026-10-15T07:04:57+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:209948c3faefc4cac5b27eb11d6fe6f113fa7cde60e94099b17d23f46a4f414e
+content_hash: sha256:f4e53d205372295e0b7438a68e74023d4096a93b6c20a8a2061ff7cbe97a19e5
 ---
 
 ## 使用场景
@@ -102,19 +102,19 @@ hilogtool parse --input xxx --output xxx --dict xxx
 
 在当前日志所在目录，通过cmd进入shell窗口，在shell窗口直接执行hilogtool parse，即可进行解析操作，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/YkDhj6K3T_GSFiRCijkl9g/zh-cn_image_0000002784663203.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/QDbfD-piSZmmMrDamvQDgw/zh-cn_image_0000002762500470.png)
 
 ### 解析指定目录下的hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/TQekkZ60SSm-1fsPleTUjQ/zh-cn_image_0000002755024270.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/qeEa-d6KQJa3cDbI1boAbQ/zh-cn_image_0000002791739129.png)
 
 ### 解析单个hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test\hilog.025.20231020-154659.gz -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/o7ap7ncFTx-5fzkfJThqSw/zh-cn_image_0000002755184158.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/fVA6C8HpT9mtEPwvSRN2_A/zh-cn_image_0000002762340550.png)
 
 ## 自动化脚本
 
@@ -136,7 +136,7 @@ pause
 
 脚本运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/LGtIvoOoTaeRBAoF-1UAkg/zh-cn_image_0000002784583025.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/jrgcGbqqScWXRLczciI6TA/zh-cn_image_0000002791859345.png)
 
 ### mac平台脚本
 

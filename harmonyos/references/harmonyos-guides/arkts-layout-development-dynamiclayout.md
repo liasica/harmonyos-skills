@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 动态布局 (DynamicLayout)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 动态布局 (DynamicLayout)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a6a5c78f5543a921f6975b7675a802aeee35b56b98ae1a96c3e0719f99930126
+scraped_at: 2026-10-15T07:04:07+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:41aa2a1ff6ce5b30ad902f911a6f61d3d03371f344e978e33e42b2d5bf43b7a7
 ---
 
 ## 概述
@@ -64,7 +64,7 @@ struct CreateDynamicLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/4X43WtQhTySc32QnAdps1A/zh-cn_image_0000002755183150.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/8ShGi623QiSzi__rll_0tw/zh-cn_image_0000002762339538.gif)
 
 ## 内置布局算法
 
@@ -145,7 +145,7 @@ struct RowLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/AfWCp8LaQteN_DwpSPDm2g/zh-cn_image_0000002784582015.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/cCGDhczcRNq1pBaSPDzlMw/zh-cn_image_0000002791858333.gif)
 
 ### ColumnLayoutAlgorithm
 
@@ -222,7 +222,7 @@ struct ColumnLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/B9v9PvqnRSez7ttdAyOLWg/zh-cn_image_0000002784662199.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/yZN-ASSLTDi1xOehtTCX7A/zh-cn_image_0000002762499460.gif)
 
 ### StackLayoutAlgorithm
 
@@ -293,7 +293,7 @@ struct StackLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/Qz9MNPofTbKnMhWtvagInw/zh-cn_image_0000002755023266.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/lnxj2wI1RG6C_rVoQKnU2w/zh-cn_image_0000002791738121.gif)
 
 ### GridLayoutAlgorithm
 
@@ -399,11 +399,11 @@ struct GridLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/oBA1zG1RQXC6sEzT4HzD3g/zh-cn_image_0000002755183152.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/0d4jnyuhR5OGaP3wSu0bww/zh-cn_image_0000002762339540.gif)
 
 ## 自定义布局算法
 
-自定义布局算法通过继承[CustomLayoutAlgorithm](../harmonyos-references/js-apis-arkui-layoutalgorithm.md#customlayoutalgorithm)类，重写[onMeasure](../harmonyos-references/js-apis-arkui-layoutalgorithm.md#onmeasure)和[onLayout](../harmonyos-references/js-apis-arkui-layoutalgorithm.md#onlayout)方法实现。开发者可以根据具体业务需求，自定义子组件的大小测量和位置排列，实现内置布局算法无法满足的个性化布局效果，如瀑布流、标签云等不规则布局。
+自定义布局算法通过继承[CustomLayoutAlgorithm](../harmonyos-references/js-apis-arkui-layoutalgorithm.md#customlayoutalgorithm)类，重写[onMeasure()](../harmonyos-references/js-apis-arkui-layoutalgorithm.md#onmeasure)和[onLayout()](../harmonyos-references/js-apis-arkui-layoutalgorithm.md#onlayout)方法实现。开发者可以根据具体业务需求，自定义子组件的大小测量和位置排列，实现内置布局算法无法满足的个性化布局效果，如瀑布流、标签云等不规则布局。
 
 ### 自定义布局算法实现指导
 
@@ -501,7 +501,7 @@ struct CustomLayoutBasic {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/MlkReYhRSRmEW3zia7CjcA/zh-cn_image_0000002784582017.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Xntu5YV0SRiuToawyVlZIw/zh-cn_image_0000002791858335.png)
 
 ### 瀑布流布局
 
@@ -664,7 +664,7 @@ interface Product {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/CErX8oHsQ4WGdfzQ75zpQg/zh-cn_image_0000002784662201.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/p_zsj5AoQQ-gutwRdVuAcA/zh-cn_image_0000002762499462.gif)
 
 ### 网格布局
 
@@ -819,7 +819,7 @@ struct GridLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/Uo9WOizgTEicjbdo2S5QWA/zh-cn_image_0000002755023268.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/9kayDDGHR-mtf14OndZYvA/zh-cn_image_0000002791738123.png)
 
 ### 标签云布局
 
@@ -968,7 +968,7 @@ struct TagCloudExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/lcyIkxpFRCizA12tLn2JtQ/zh-cn_image_0000002755183154.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/57kVHmhbRLqPgf0OsSbqZg/zh-cn_image_0000002762339542.png)
 
 ## 切换布局算法
 
@@ -1107,7 +1107,7 @@ struct StatePreservationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/w8VHx57NQOmUEu-rd3gmwg/zh-cn_image_0000002784582019.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Jd7Meu89RaCs9BMoh2VXfw/zh-cn_image_0000002791858337.gif)
 
 DynamicLayout支持以下几种方式触发重新布局：
 
@@ -1223,7 +1223,7 @@ DynamicLayout支持以下几种方式触发重新布局：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/bh3knCL-RhGuQkNVMC8kKA/zh-cn_image_0000002784662203.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/D6gngxGpTlKgMibBlnWccQ/zh-cn_image_0000002762499464.gif)
 * 通过条件运算符切换布局算法。
 
   开发者可以使用条件运算符，根据状态变量的值选择合适的布局算法。
@@ -1276,7 +1276,7 @@ DynamicLayout支持以下几种方式触发重新布局：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/kZ4Id6eHRmauZ6PYdptU-Q/zh-cn_image_0000002755023270.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/dDTE6ZgOTjyvqkciu-KinA/zh-cn_image_0000002791738125.gif)
 * 通过修改算法属性触发重新布局。
 
   布局算法类使用[@ObservedV2](arkts-new-observedv2-and-trace.md)装饰，布局算法成员属性使用[@Trace](arkts-new-observedv2-and-trace.md)装饰，修改属性值可以触发DynamicLayout组件重新布局。
@@ -1344,7 +1344,7 @@ DynamicLayout支持以下几种方式触发重新布局：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/XBv6boTWRRKayFNGEl75hw/zh-cn_image_0000002755183156.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/_cmAAoxaTbe_tLl0M0-9mg/zh-cn_image_0000002762339544.gif)
 * 响应式布局算法切换。
 
   开发者可以结合[mediaquery](../harmonyos-references/arkts-apis-uicontext-mediaquery.md)接口监听屏幕方向变化，自动切换商品列表的布局方式。竖屏时使用列表视图（每行一个商品），横屏时使用网格视图（2x2网格布局）。
@@ -1495,4 +1495,4 @@ DynamicLayout支持以下几种方式触发重新布局：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/1AVmRXbCQpadQHFK3thGcQ/zh-cn_image_0000002784582021.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/G7u6Y-0sTU6opVpbNCsVMg/zh-cn_image_0000002791858339.gif)

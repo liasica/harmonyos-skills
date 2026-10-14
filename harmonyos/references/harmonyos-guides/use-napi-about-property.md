@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口设置ArkTS对象的属性
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口设置ArkTS对象的属性
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:55+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:aa44d048a0270c3415a53dfea078828d33870b78af893f05298755463df041d2
+scraped_at: 2026-10-15T07:06:11+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:1dff203ff8924ff9383a9c3a2ba0c55130b1466c4ef33501e9b06c711de25f19
 ---
 
 ## 简介
@@ -150,7 +150,7 @@ try {
     JSON.stringify(result));
   // ...
 } catch (error) {
-  hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_property error: %{public}s', error.message);
+  hilog.error(0x0000, 'testTag', 'Test Node-API napi_set_property error: %{public}s', error.message);
   // ...
 }
 ```
@@ -201,7 +201,7 @@ try {
     testNapi.getProperty(obj, 'message'));
   // ...
 } catch (error) {
-  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_property error: %{public}s', error.message);
+  hilog.error(0x0000, 'testTag', 'Test Node-API napi_get_property error: %{public}s', error.message);
   // ...
 }
 ```
@@ -261,7 +261,7 @@ try {
     JSON.stringify(resultTrue));
   // ...
 } catch (error) {
-  hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_property error: %{public}s', error.message);
+  hilog.error(0x0000, 'testTag', 'Test Node-API napi_has_property error: %{public}s', error.message);
   // ...
 }
 ```
@@ -854,7 +854,7 @@ try {
     JSON.stringify(propertyNames));
   // ...
 } catch (error) {
-  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_all_property_names error: %{public}s',
+  hilog.error(0x0000, 'testTag', 'Test Node-API napi_get_all_property_names error: %{public}s',
     error.message);
   // ...
 }

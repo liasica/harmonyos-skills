@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroupV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroupV2
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:41+08:00
+scraped_at: 2026-10-15T07:08:18+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:ac2fd0cb4de37c587891fe5b25b2ace73f4a23465b312babec0430eed0c6cd24
+content_hash: sha256:bb64f5b4081fe5a17b974a262056c71b2d24f6255d30edf8caf604654cb9efdf
 ---
 
 ChipGroupV2组件提供操作块群组容器，支持单选或多选、自定义样式和间距、以及尾部自定义内容。该组件适用于文件或资源内容的分类、标签选择、筛选等场景，可帮助开发者快速构建美观且交互丰富的标签组界面。
@@ -621,7 +621,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/sTYqqfxpRdmi5hxADdYpgQ/zh-cn_image_0000002784584837.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/lE1hFCjHQ8C3Av-zYlSOfA/zh-cn_image_0000002791861181.png)
 
 ### 示例2（ChipGroupV2设置最右侧自定义组件）
 
@@ -719,7 +719,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/3144hhGuQfGEJPj-5DXavg/zh-cn_image_0000002784665019.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/e3J0FKSLSjW2nJSQT236hQ/zh-cn_image_0000002762502308.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -821,7 +821,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/h728mzyWR9ensSk0xnt1mA/zh-cn_image_0000002755026088.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/C82I_d4JQvatsdlFS-ArxQ/zh-cn_image_0000002791740969.png)
 
 ### 示例4（监听ChipGroupV2内对象类型属性的内部属性变化）
 
@@ -898,7 +898,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/07vN4o1EQNS5m8YKdRu5FQ/zh-cn_image_0000002755185972.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/3XUlQcHzTtSDx2955b2ttQ/zh-cn_image_0000002762342390.gif)
 
 ### 示例5（设置系统材质样式）
 
@@ -988,4 +988,4 @@ struct Index {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/mSGGHsZBT_SC-5PLuL6ovA/zh-cn_image_0000002784584839.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/8dm7gFp7S8OOHO4HlimyHg/zh-cn_image_0000002791861183.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/rcp_8h
 title: rcp.h
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 头文件 > rcp.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:57+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1951df03d60369390c282307532d81d86fb4d7c993aedd375a906a971f40a400
+scraped_at: 2026-10-15T07:10:07+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:d623d0ee7c6eda7435d49b10fcab1044b62beb42ec51e49a3d8b8dd41c129563
 ---
 
 ## 概述
@@ -245,7 +245,7 @@ content_hash: sha256:1951df03d60369390c282307532d81d86fb4d7c993aedd375a906a971f4
 | uint32\_t [HMS\_Rcp\_SetRequestCookieValue](remote-communication-overview.md#hms_rcp_setrequestcookievalue) ([Rcp\_RequestCookies](remote-communication-overview.md#rcp_requestcookies) \*cookies, const char \*name, const char \*value) | 设置请求Cookie。 |
 | char \* [HMS\_Rcp\_GetRequestCookieValue](remote-communication-overview.md#hms_rcp_getrequestcookievalue) ([Rcp\_RequestCookies](remote-communication-overview.md#rcp_requestcookies) \*cookies, const char \*name) | 通过名称获取请求Cookie的值。 |
 | [Rcp\_RequestCookieEntry](_rcp___request_cookie_entry.md) \* [HMS\_Rcp\_GetRequestCookieEntries](remote-communication-overview.md#hms_rcp_getrequestcookieentries) ([Rcp\_RequestCookies](remote-communication-overview.md#rcp_requestcookies) \*cookies) | 获取请求Cookie中的所有键值对。 |
-| void [HMS\_Rcp\_DestroyRequestCookieEntries](remote-communication-overview.md#hms_rcp_destroyrequestcookieentries) ([Rcp\_RequestCookieEntry](_rcp___request_cookie_entry.md) \*cookieEntry) | 销毁从[HMS\_Rcp\_GetRequestCookieValue](remote-communication-overview.md#hms_rcp_getrequestcookievalue)获取的所有与请求Cookie相关的键值对。 |
+| void [HMS\_Rcp\_DestroyRequestCookieEntries](remote-communication-overview.md#hms_rcp_destroyrequestcookieentries) ([Rcp\_RequestCookieEntry](_rcp___request_cookie_entry.md) \*cookieEntry) | 销毁从[HMS\_Rcp\_GetRequestCookieEntries](remote-communication-overview.md#hms_rcp_getrequestcookieentries)获取的所有与请求Cookie相关的键值对。 |
 | const char \* [HMS\_Rcp\_GetResponseCookieAttrValue](remote-communication-overview.md#hms_rcp_getresponsecookieattrvalue) ([Rcp\_CookieAttributes](remote-communication-overview.md#rcp_cookieattributes) \*cookieAttributes, const char \*name) | 通过名称获取Cookie属性的值。 |
 | [Rcp\_CookieAttributeEntry](_rcp___cookie_attribute_entry.md) \* [HMS\_Rcp\_GetResponseCookieAttrEntries](remote-communication-overview.md#hms_rcp_getresponsecookieattrentries) ([Rcp\_CookieAttributes](remote-communication-overview.md#rcp_cookieattributes) \*cookieAttributes) | 在[Rcp\_CookieAttributes](remote-communication-overview.md#rcp_cookieattributes)中获取所有响应Cookie属性。 |
 | void [HMS\_Rcp\_DestroyResponseCookieAttrEntries](remote-communication-overview.md#hms_rcp_destroyresponsecookieattrentries) ([Rcp\_CookieAttributeEntry](_rcp___cookie_attribute_entry.md) \*entries) | 销毁响应Cookie属性。 |

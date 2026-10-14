@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-v
 title: "@ohos.telephony.vcard (VCard模块)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.vcard (VCard模块)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:12:03+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:b86794d748cda23e9dad2b329f936030e39818ebbfe3513bc777d43400b65e4a
+scraped_at: 2026-10-15T07:10:12+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:cb679ce4bde84bcbbcb818828afdd6cc4f02dbaa829f7a28d1a6ce4206f729c0
 ---
 
-VCard是电子名片的文件格式标准，它可包含的信息有：姓名、地址资讯、电话号码、URL、logo、相片等。VCard模块提供了VCard能力，包括将VCard文件导入联系人数据库和将联系人数据导出为VCard文件等。
+VCard是电子名片的文件格式标准，它可包含的信息有：姓名、地址信息、电话号码、URL、logo、相片等。VCard模块提供了VCard能力，包括将VCard文件导入联系人数据库和将联系人数据导出为VCard文件等。
 
 **说明** 
 

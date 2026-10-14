@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 尺寸设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 尺寸设置
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:16+08:00
+scraped_at: 2026-10-15T07:07:50+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:86c49bcea3dab4e69430bd0a0776823264ad322cf8a3277bd0272b3deaa3878b
+content_hash: sha256:911f7fdc7bc535fe0cf334dc77c268a7ef164429d1e9d2f51d035c5c13e528fb
 ---
 
 设置组件的宽高、边距。通过设置组件尺寸相关属性，可以实现灵活的页面布局和响应式设计，常见场景包括固定组件大小、按比例分配布局空间、设置组件内外边距、实现安全区域适配等。
@@ -434,7 +434,7 @@ struct SizeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/dNQ8XoNJQPSaLN0ch0t9lg/zh-cn_image_0000002784664367.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/XwMJRqqdR2Wr3fdf79XFIg/zh-cn_image_0000002762501638.png)
 
 ### 示例2（LocalizedPadding和LocalizedMargin类型的使用）
 
@@ -486,11 +486,11 @@ struct SizeExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/F0QMsABQSQiBBAtmkrinrQ/zh-cn_image_0000002755025434.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/IvtWVbB-SkS5QMZ1PztjIw/zh-cn_image_0000002791740297.png)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hnZRmahaSQWU7WxpZ5RSXA/zh-cn_image_0000002755185320.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/H1OORp10R3G-5ExTje4HJw/zh-cn_image_0000002762341722.png)
 
 ### 示例3（设置组件级安全区）
 
@@ -524,7 +524,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wGX-gHR6SMqsNwxtDXU-rA/zh-cn_image_0000002784584187.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/1PC81ZLSSECI624Vyt1lNA/zh-cn_image_0000002791860515.png)
 
 ### 示例4（使用attributeModifier动态设置安全区）
 
@@ -569,7 +569,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/i9wj19dSSCq64nQTa0CJGg/zh-cn_image_0000002784664369.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/9c1_sNFBSoa1JCtVnpldnw/zh-cn_image_0000002762501640.png)
 
 ### 示例5（设置布局策略）
 
@@ -626,7 +626,7 @@ struct LayoutPolicyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/2KOlJM1ISLWhHXYRQluFsA/zh-cn_image_0000002755025436.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/ZuJRHDpqRRyL6t4ubmZE0Q/zh-cn_image_0000002791740299.jpg)
 
 ### 示例6（子组件单方向设置matchParent效果）
 

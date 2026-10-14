@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-introduct
 title: Pen Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > Pen Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:42+08:00
+scraped_at: 2026-10-15T07:04:49+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:3f5d3352e87e9b98d9865224c78e8c15307894c6d07a85efb15e9d86c69bafff
+content_hash: sha256:b1a63b7754bb6118258a78d0523316ab02b6b0c0d4fe589592632bb90b228600
 ---
 
 Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷效果、笔迹编辑、报点预测、一笔成形、全局取色和手写交互的功能。Pen Kit可以为产品带来优质手写体验，为您创造更多的手写应用场景。
@@ -28,13 +28,13 @@ Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷�
   + 手写波轮：从API版本26.0.0开始，新增环形工具栏，支持笔刷、笔宽、颜色、不透明度等属性的快速调节。通过轻捏手写笔笔身，隐藏原本工具栏，展开环形工具栏，再次轻捏笔身，隐藏环形工具栏。
   + 其他功能：撤销、重做、禁止手指书写。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_0EHI1YQQnu2JmISo0HC9g/zh-cn_image_0000002784582971.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/7aLHpZMQQH6ZMYwEaPo4jg/zh-cn_image_0000002791859291.png)
 
 ## 报点预测
 
 根据书写轨迹预测报点提前进行绘制，提高手写跟手性，手写套件已默认开启报点预测，您也可以在应用中单独集成报点预测功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/7it_VIKASdqYXmKJn6nv1A/zh-cn_image_0000002784663151.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/fjv8fpJJTkqO3P82ymHtHg/zh-cn_image_0000002762500416.png)
 
 ## 一笔成形
 
@@ -47,13 +47,13 @@ Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷�
 | 多边形 | 三角形、矩形、平行四边形、菱形、正五边形、五角星形 |
 | 曲线 | 抛物线、带箭头抛物线（单向、双向） |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/1g_5gLmoQt64TYdEod2B3A/zh-cn_image_0000002755024218.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/UrozJZU8TAaKhMtXJFfQIg/zh-cn_image_0000002791739077.png)
 
 ## 全局取色
 
 提供全屏取色基础能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/eMmidKzrSAer-V7atZfxQg/zh-cn_image_0000002755184106.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/5cxBJbxbRYS0crFFo5LS-g/zh-cn_image_0000002762340498.png)
 
 ## 手写交互
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-parse-
 title: "证书PKCS #12的创建和解析"
 breadcrumb: "指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书PKCS #12的创建和解析"
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1ffa94dc494c183d3a2f59cf13fbd84afed3204e967e9e14cba54cc17cb6f88d
+scraped_at: 2026-10-15T07:04:33+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:689928c827a332bc9ca81fef8a878bdf2a1e025d93967379f4725e07842cde85
 ---
 
 从API version 18开始，支持解析PKCS #12证书。
@@ -211,7 +211,7 @@ async function createX509Cert(certData: string): Promise<cert.X509Cert> {
   try {
     x509Cert = await cert.createX509Cert(encodingBlob);
   } catch (err) {
-    console.error(`doTestCreatePkcs12 failed: errCode: ${err.code}, message: ${err.message}`);
+    console.error(`createX509Cert failed: errCode: ${err.code}, message: ${err.message}`);
   }
   return x509Cert;
 }

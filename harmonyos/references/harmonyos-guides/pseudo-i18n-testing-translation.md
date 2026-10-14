@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pseudo-i18n-t
 title: 翻译伪本地化测试
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 本地化测试 > 伪本地化测试 > 翻译伪本地化测试
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:22+08:00
+scraped_at: 2026-10-15T07:04:25+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:05b5c8f3eaf167b4147df76eb6bcdb242ace21b138b89fcdc9b3dad051816b8c
+content_hash: sha256:b1865a14dde5b39cbbde955c0b10270371f7eaf567b2473c74334e1cf5a3a3a2
 ---
 
 ## 使用场景
@@ -27,7 +27,7 @@ content_hash: sha256:05b5c8f3eaf167b4147df76eb6bcdb242ace21b138b89fcdc9b3dad0518
 
 ## 测试事项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/I2n_52kFT0is8IWprM0uIg/zh-cn_image_0000002784582783.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/sZC88pAASUe2y4WLiZsu0Q/zh-cn_image_0000002791859101.png)
 
 1. 检查界面截断、变形或布局异常等问题。其中，界面截断可通过观察界面字符串是否以“]”正确结尾，看不到“]”说明界面字符串未完整显示。
 2. 检查硬编码问题。如果界面需要翻译的文字未处理为伪翻译格式，说明代码中存在对界面文字的硬编码。

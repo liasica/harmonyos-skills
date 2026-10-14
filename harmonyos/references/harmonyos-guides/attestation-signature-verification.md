@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/attestation-s
 title: 签名验签识别真实请求
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 签名验签识别真实请求
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:32+08:00
+scraped_at: 2026-10-15T07:04:38+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:95e78c04e8a61c0b97d1863fc49727e9a97943604da4c95f5cb22a63d9cc3c2d
+content_hash: sha256:7a3781df83fc7abf0f54606ae88e5874113777a529862c3f34b7469b8cbc4918
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:95e78c04e8a61c0b97d1863fc49727e9a97943604da4c95f5cb22a63d9c
 
 **图1** 签名验签识别真实请求流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/5_lC6K7JR8aUO_CMaE4sVA/zh-cn_image_0000002755184020.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/KNenWW7YR7OnnNuPXPRnig/zh-cn_image_0000002762340412.png)
 
 ### 签名验签识别真实请求流程
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-simul
 title: Simulator性能仿真功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > Simulator性能仿真功能
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:30+08:00
+scraped_at: 2026-10-15T07:05:48+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:eadd129aab3f2c63d68f3677d1ed5ce36de0a722ff411c756b893afebbd4c639
+content_hash: sha256:6092203efb4e9fb03c9f6af48284751cd05dab61e53752d76eec3d0614a3fc05
 ---
 
 ## CAModel性能仿真
@@ -141,7 +141,7 @@ Kirin9020/Kirin9030/KirinX90暂不支持使用该方法进行调优。
 
    **图1** 仿真打点示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Z5h1ouNEQOi4KEoRWkfOaw/zh-cn_image_0000002755025120.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ilvPMQDkTSivy4HdmEfZVQ/zh-cn_image_0000002791739977.png)
 
 ### Trace接口说明
 

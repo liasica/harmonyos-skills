@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-park-s
 title: 开通园区卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 园区卡 > 开发场景 > 开通园区卡
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:27+08:00
+scraped_at: 2026-10-15T07:05:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7c489a584043b26492925d3ca2bba1f364e32124e45910ec6afe76153e2007d4
+content_hash: sha256:8e81f04f1d432b8e0632c6d4a19f15611af563fc8da113795c56579b02b2fc09
 ---
 
 用户可以将园区卡添加至钱包，在钱包中方便查看卡片信息，亮证核验快速通行与消费，实现数字化便捷通行。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/MH1ajPZVQYKPyslXPcUCfg/zh-cn_image_0000002755025048.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Cni0Mx3DTWmo8PWSDEo8Ng/zh-cn_image_0000002791739907.png)
 
 ## 开发流程
 

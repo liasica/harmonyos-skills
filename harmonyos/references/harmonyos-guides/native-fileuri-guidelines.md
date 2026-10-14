@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-fileur
 title: FileUri开发指导(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > FileUri开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:802d820aae31865ce93f3781bac47619869604eab214f5130cb85bfbb2a60254
+scraped_at: 2026-10-15T07:04:22+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:4c8e6b55b28a151b62ef1dd5d3107dbbe24947b0de3abe3d2b0dea417ad756a8
 ---
 
 ## 场景介绍
@@ -55,31 +55,24 @@ target_link_libraries(sample PUBLIC libohfileuri.so)
    static napi_value NAPI_Global_OH_FileUri_GetUriFromPathExample(napi_env env, napi_callback_info info)
    {
        // ...
-       // 为 char* uri 分配内存
+       // 为char* uri分配内存
        char *path = new char[strLength + 1]; // +1 for null terminator
-       // 将 JavaScript 字符串复制到 uri
+       // 将JavaScript字符串复制到uri
        // ...
        unsigned int length = strlen(path);
        // 输出传入路径字符串
        // ...
        char *uriResult = nullptr;
        FileManagement_ErrCode ret = OH_FileUri_GetUriFromPath(path, length, &uriResult);
+       delete[] path;
        // 输出结果uri字符串
        // ...
-       if (ret == 0 && uriResult != nullptr) {
-           // 将C字符串转换为napi_value
-           napi_status status = napi_create_string_utf8(env, uriResult, NAPI_AUTO_LENGTH, &result);
-           if (status != napi_ok) {
-               free(uriResult);
-               return nullptr;
-           }
-           free(uriResult); // 释放临时字符串
-       } else {
-           // 将C字符串转换为napi_value
-           napi_status status = napi_create_string_utf8(env, "Hello World", NAPI_AUTO_LENGTH, &result);
-           if (status != napi_ok) {
-               return nullptr;
-           }
+       // 创建返回值后统一释放接口分配的内存，包括错误路径。
+       const char *value = (ret == 0 && uriResult != nullptr) ? uriResult : "Hello World";
+       napi_status status = napi_create_string_utf8(env, value, NAPI_AUTO_LENGTH, &result);
+       free(uriResult);
+       if (status != napi_ok) {
+           return nullptr;
        }
        return result;
    }
@@ -91,7 +84,7 @@ target_link_libraries(sample PUBLIC libohfileuri.so)
    {
        // ...
        char *uri = new char[strLength + 1]; // +1 for null terminator
-       // 将 JavaScript 字符串复制到 uri
+       // 将JavaScript字符串复制到uri
        napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
 
        unsigned int length = strlen(uri);
@@ -99,22 +92,15 @@ target_link_libraries(sample PUBLIC libohfileuri.so)
        OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
        char *pathResult = nullptr;
        FileManagement_ErrCode ret = OH_FileUri_GetPathFromUri(uri, length, &pathResult);
+       delete[] uri;
        // 输出获取路径结果字符串
        // ...
-       if (ret == 0 && pathResult != nullptr) {
-           // 将C字符串转换为napi_value
-           napi_status status = napi_create_string_utf8(env, pathResult, NAPI_AUTO_LENGTH, &result);
-           if (status != napi_ok) {
-               free(pathResult);
-               return nullptr;
-           }
-           free(pathResult); // 释放临时字符串
-       } else {
-           // 将空字符串转换为napi_value
-           napi_status status = napi_create_string_utf8(env, "", NAPI_AUTO_LENGTH, &result);
-           if (status != napi_ok) {
-               return nullptr;
-           }
+       // 创建返回值后统一释放接口分配的内存，包括错误路径。
+       const char *value = (ret == 0 && pathResult != nullptr) ? pathResult : "";
+       napi_status status = napi_create_string_utf8(env, value, NAPI_AUTO_LENGTH, &result);
+       free(pathResult);
+       if (status != napi_ok) {
+           return nullptr;
        }
        return result;
    }
@@ -126,7 +112,7 @@ target_link_libraries(sample PUBLIC libohfileuri.so)
    {
        // ...
        char *uri = new char[strLength + 1]; // +1 for null terminator
-       // 将 JavaScript 字符串复制到 uri
+       // 将JavaScript字符串复制到uri
        napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
 
        unsigned int length = strlen(uri);
@@ -134,6 +120,7 @@ target_link_libraries(sample PUBLIC libohfileuri.so)
        OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
        char *uriResult = nullptr;
        FileManagement_ErrCode ret = OH_FileUri_GetFullDirectoryUri(uri, length, &uriResult);
+       delete[] uri;
        // 输出所在路径uri字符串
        // ...
        if (ret == 0 && uriResult != nullptr) {
@@ -156,12 +143,13 @@ target_link_libraries(sample PUBLIC libohfileuri.so)
    {
        // ...
        char *uri = new char[strLength + 1]; // +1 for null terminator
-       // 将 JavaScript 字符串复制到 uri
+       // 将JavaScript字符串复制到uri
        napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
        unsigned int length = strlen(uri);
        // 输出传入uri字符串
        OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
        bool flags = OH_FileUri_IsValidUri(uri, length);
+       delete[] uri;
        // ...
    }
    ```
@@ -172,7 +160,7 @@ target_link_libraries(sample PUBLIC libohfileuri.so)
    {
        // ...
        char *uri = new char[strLength + 1]; // +1 for null terminator
-       // 将 JavaScript 字符串复制到 uri
+       // 将JavaScript字符串复制到uri
        napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
 
        unsigned int length = strlen(uri);
@@ -180,22 +168,15 @@ target_link_libraries(sample PUBLIC libohfileuri.so)
        OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
        char *uriResult = nullptr;
        FileManagement_ErrCode ret = OH_FileUri_GetFileName(uri, length, &uriResult);
+       delete[] uri;
        // 输出获取到的文件名称
        // ...
-       if (ret == 0 && uriResult != nullptr) {
-           // 将C字符串转换为napi_value
-           napi_status status = napi_create_string_utf8(env, uriResult, NAPI_AUTO_LENGTH, &result);
-           if (status != napi_ok) {
-               free(uriResult);
-               return NULL;
-           }
-           free(uriResult); // 释放临时字符串
-       } else {
-           // 将空字符串转换为napi_value
-           napi_status status = napi_create_string_utf8(env, "", NAPI_AUTO_LENGTH, &result);
-           if (status != napi_ok) {
-               return nullptr;
-           }
+       // 创建返回值后统一释放接口分配的内存，包括错误路径。
+       const char *value = (ret == 0 && uriResult != nullptr) ? uriResult : "";
+       napi_status status = napi_create_string_utf8(env, value, NAPI_AUTO_LENGTH, &result);
+       free(uriResult);
+       if (status != napi_ok) {
+           return nullptr;
        }
        return result;
    }

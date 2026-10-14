@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: 算子工程编译
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发 > 算子编译安装 > 算子工程编译
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:30+08:00
+scraped_at: 2026-10-15T07:05:47+08:00
 doc_updated_at: 2026-06-05
-content_hash: sha256:002933237feebb6cdace45011fe9310c25b22d0be724e0f94ef6e7e6c84f625a
+content_hash: sha256:e86a63fd4f957a835d02cefb51e60c37fe4139d00998d4002b647d7008f9b44f
 ---
 
 算子kernel侧和host侧实现开发完成后，需要对算子工程进行编译，将自定义算子部署到omg工具中，详细的编译操作包括：
@@ -23,7 +23,7 @@ content_hash: sha256:002933237feebb6cdace45011fe9310c25b22d0be724e0f94ef6e7e6c84
 
 **图1** 算子工程编译示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/iHkaW6sNQOS3IhuE7VksDg/zh-cn_image_0000002784583871.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/PVWtmjUTQOOqYwiikebgzQ/zh-cn_image_0000002791860193.png)
 
 ## 编译步骤
 

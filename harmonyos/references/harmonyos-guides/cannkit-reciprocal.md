@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-recip
 title: Reciprocal
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 单目指令 > Reciprocal
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:32+08:00
+scraped_at: 2026-10-15T07:05:49+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:9750241777f613dcc4bc2defb81d37cb64c9d8c0b3895a5231fbdbe2c842f5b4
+content_hash: sha256:cf0f9ac8a28a3120570f19bbd856c3002b394eaaa0fc6885cf96709202e9988d
 ---
 
 ## 函数功能
 
 按元素取倒数，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Zq9m4-wSRMqpFDAnAe8oEw/zh-cn_image_0000002755025130.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/s5VZL3scSdebmmkybTBPcg/zh-cn_image_0000002791739987.png)
 
 ## 函数原型
 

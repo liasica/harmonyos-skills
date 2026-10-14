@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-
 title: scheduling_optimization.h
 breadcrumb: API参考 > 系统 > 基础功能 > FAST Kit（算法加速服务） > C API > 头文件和结构体 > 头文件 > scheduling_optimization.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2f63492ca0b468f5c25f24d99b9f947ab585748aa2f2d2c2b4099219805f6b9a
+scraped_at: 2026-10-15T07:10:27+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:ea82de501f6d7701aa91a7bba554b2423a8c38bb23d29f0b83f4d9b600b9186a
 ---
 
 ## 概述
@@ -16,7 +16,8 @@ content_hash: sha256:2f63492ca0b468f5c25f24d99b9f947ab585748aa2f2d2c2b4099219805
 
 1. perfHint只是应用向系统发送的性能优化提示，系统收到提示后会综合考量整机CPU负载、系统温度等因素进行决策，**不保证一定进行性能提升**。
 2. **性能提示仅当应用在前台运行时才会生效**，应用切换到后台后提示将失效。
-3. 上报线程ID提升QoS优先级不能与QoS API混用。
+3. 调用本接口会一定程度上造成功耗和整机温度的上升。
+4. 上报线程ID提升QoS优先级不能与QoS API混用。通过线程ID提升QoS优先级的底层实现依赖于QoS API，针对同一个线程，两边任一调用生效即开始提升QoS优先级，任一调用结束即解除提升。因此混用可能导致QoS优先级提升的生效与解除行为不符合预期。
 
 **引用文件：** <FASTKit/scheduling\_optimization.h>
 

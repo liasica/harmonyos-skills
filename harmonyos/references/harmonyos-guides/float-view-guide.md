@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/float-view-gu
 title: 闪控窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 闪控窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:15+08:00
-doc_updated_at: 2026-10-10
+scraped_at: 2026-10-15T07:04:16+08:00
+doc_updated_at: 2026-10-14
 content_hash: sha256:1a1b501d611022cd174a76e300f5af16782c68e9936d997274467ac3e4f71c04
 ---
 

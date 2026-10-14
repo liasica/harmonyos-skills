@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 创建并使用图片资源
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用 > 创建并使用图片资源
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:30+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:ad32c87327e0e512a727c4dfec1b1d19a5bc761398d8a889e4270110e60f3084
+scraped_at: 2026-10-15T07:05:16+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:a3891e65db3bd9e6b196e0132c41820cdf4073567f4ba85bd1f563591396aa7a
 ---
 
 图片（Image）：3D渲染中的二维纹理资源，本质为存储像素数据的内存缓冲区（buffer）。它提供物体表面渲染所需的数据，包括基础颜色、法线、金属度、粗糙度和环境遮蔽等贴图，也可作为材质或自定义着色器的纹理输入，最终决定物体表面的外观。
@@ -34,10 +34,10 @@ ArkGraphics 3D提供基于JPEG、PNG和KTX格式创建Image资源的能力，支
 
    ```typescript
    if (this.scene === null) {
-     // Switched from .gltf to .glb; same content, different format
+     // 从 .gltf 切换为 .glb；内容相同，格式不同
      Scene.load($rawfile('gltf/CubeWithFloor/glTF/AnimatedCube.glb'))
        .then(async (result: Scene) => {
-         // Assign loaded scene to globalScene for unified resource creation
+         // 将加载的场景赋值给globalScene，以便统一创建资源
          globalScene = result;
          this.scene = result;
          this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
@@ -65,7 +65,7 @@ ArkGraphics 3D提供基于JPEG、PNG和KTX格式创建Image资源的能力，支
    ```typescript
    this.geom = this.scene.getNodeByPath('rootNode_/Unnamed Node 1/AnimatedCube') as Geometry;
 
-   // record original material
+   // 记录原始材质
    this.originalMat = this.geom.mesh.subMeshes[0].material;
    ```
 5. 创建图片资源。
@@ -75,7 +75,7 @@ ArkGraphics 3D提供基于JPEG、PNG和KTX格式创建Image资源的能力，支
    ```typescript
    function createImagePromise(): Promise<Image> {
      return new Promise((resolve, reject) => {
-       // Ensure the scene is loaded before accessing sceneFactory
+       // 确保在访问sceneFactory之前场景已加载
        if (globalScene) {
          let sceneFactory: SceneResourceFactory = globalScene.getResourceFactory();
 
@@ -111,16 +111,16 @@ ArkGraphics 3D提供基于JPEG、PNG和KTX格式创建Image资源的能力，支
          return;
        }
 
-       // create shader
+       // 创建着色器
        this.shader = await this.rf.createShader({
          name: 'shaderResource',
          uri: $rawfile('shaders/custom_shader/custom_material_sample.shader')
        });
 
-       // create imageMat
+       // 创建图像材质
        this.imageMat = await this.rf.createMaterial({ name: 'imageMat' }, MaterialType.SHADER) as ShaderMaterial;
 
-       // bind between shader and imageMat
+       // 在着色器和图像材质之间进行绑定
        this.imageMat.colorShader = this.shader;
        let createdImage =  await createImagePromise();
        if (createdImage) {

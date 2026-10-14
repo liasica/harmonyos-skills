@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 发券事件回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 运营工具 > 商家券 > 用户券 > 发券事件回调通知
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e7d1a9de2d814572c6b50ce42ae36c84be5a7c3bc0b25ab18bf76226cd581b10
+scraped_at: 2026-10-15T07:12:40+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:f0ff79daaf7b0695a80b386e9323a6a3b425d19dc7b2b80e22924324eac42460
 ---
 
 ## 功能介绍
@@ -56,7 +56,7 @@ POST /opengw/merc/v1/transactions/result HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 {
   "callbackId": "f2eff0509b864125bc3ea54852608***",
-  "callbackTime": "2023-03-29 09:52:37",
+  "callbackTime": "2023-03-29T09:52:37+08:00",
   "dataType": "plain",
   "sign": "MEYCIQD8RlHJ9tGmc2tass32BgGgRbV5m********************2KxxldbJA2GYpU7nDIJCYHcZpBY1ffr21wgjQ2l",
   "signType": "SM2",

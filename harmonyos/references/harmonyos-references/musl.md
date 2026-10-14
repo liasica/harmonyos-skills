@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/musl
 title: libc标准库
 breadcrumb: API参考 > 标准库 > libc标准库
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:99b311ee39d0a4a5b62953f9b4d1cd1da8bec740c1a4552741c964b05afdc889
+scraped_at: 2026-10-15T07:12:59+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:72c8e15311c441a01ec0797d1ace935036a309792dac5cb65d85713b69c33a5d
 ---
 
 ## 简介
@@ -42,7 +42,7 @@ libdl：dlopen等动态链接器接口，当前在HarmonyOS中是一个链接，
 
 ### 新增能力
 
-1. 动态加载器支持命名空间隔离能力，应用可以dlopen加载的动态库受系统命名空间限制（比如，无法打开系统侧动态库）。
+1. 动态加载器支持命名空间隔离能力，应用通过dlopen加载的动态库受系统命名空间限制（比如，无法打开系统侧动态库）。
 2. 支持dlclose真实卸载动态库能力，musl的开源版本不支持。
 3. 支持symbol-versioning功能。
 4. dlopen支持直接加载zip包中未压缩的文件。
@@ -58,7 +58,7 @@ libdl：dlopen等动态链接器接口，当前在HarmonyOS中是一个链接，
 
 | 宏定义名称 | 说明 |
 | --- | --- |
-| APIAVAILABLE(maj, min, patch) | 需与编译器配合使用，用于保障应用在不同系统版本间的兼容性与稳定性，通过编译时和运行时的条件检查，防止在低版本系统上调用不存在的接口导致崩溃。使用高于目标分发版本（compatibleSdkVersion）的接口时，须使用该宏进行兼容性保护并提供合理的降级方案。入参**maj**为主版本号（取值范围0-99），**min**为次版本号（取值范围0-99），**patch**为补丁版本号（取值范围0-99）。  **起始版本：** 22。 |
+| APIAVAILABLE(maj, min, patch) | 需与编译器配合使用，用于保障应用在不同系统版本间的兼容性与稳定性，通过编译时和运行时的条件检查，防止在低版本系统上调用不存在的接口导致崩溃。使用高于目标分发版本（compatibleSdkVersion）的接口时，须使用该宏进行兼容性保护并提供合理的降级方案。入参**maj**为主版本号（取值范围0-99），**min**为次版本号（取值范围0-99），**patch**为补丁版本号（取值范围0-99）。  **起始版本：** 22 |
 
 ## musl 差异规格接口说明
 

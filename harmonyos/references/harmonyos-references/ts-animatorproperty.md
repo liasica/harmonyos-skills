@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animat
 title: 属性动画 (animation)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 属性动画 (animation)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:36+08:00
+scraped_at: 2026-10-15T07:08:13+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:f5c70479bcee26cbf06c4d859dac3c367d10f256b6ff051e6ff3144156bc611d
+content_hash: sha256:d6565d363cd3d117d2c902cbaf56ff5a95ab5047336b963ab9e8aeb135ca9269
 ---
 
 组件的某些通用属性变化时，若不设置动画，属性变化会直接跳变到目标值。通过属性动画可实现渐变过渡效果，使界面变化更加自然流畅。支持的属性包括[width](ts-universal-attributes-size.md#width)、[height](ts-universal-attributes-size.md#height)、[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[opacity](ts-universal-attributes-opacity.md#opacity)、[scale](ts-universal-attributes-transformation.md#scale)、[rotate](ts-universal-attributes-transformation.md#rotate)、[translate](ts-universal-attributes-transformation.md#translate)等。对于改变布局类属性（如宽高）的动画，内容通常会直接跳变到最终状态，例如文字或[Canvas](ts-components-canvas-canvas.md)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md#renderfit)属性进行配置。
@@ -149,4 +149,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/qp4_LpR9RwKg9G4tbkYbmQ/zh-cn_image_0000002755025998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Hvl4GxCGSJKyHFBm1uCK8A/zh-cn_image_0000002791740873.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/encrypted-est
 title: E类加密数据库的使用 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > E类加密数据库的使用 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f37c9bd0396363524863c487f0c3859b00e36a00a2a217718d0f9ba60346cd52
+scraped_at: 2026-10-15T07:03:57+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:df178c987daa2d0c562b596aa97a9d42ad89588afdf5a840daa269212bcbd8a0
 ---
 
 ## 场景介绍
@@ -61,7 +61,7 @@ export class Mover {
         await eStore.putBatch(entries);
         Logger.info(`ECDB_Encry move success`);
       } catch (e) {
-        Logger.info(`ECDB_Encry move failed,code is ${e.code},message is ${e.message}`);
+        Logger.error(`ECDB_Encry move failed,code is ${e.code},message is ${e.message}`);
       }
     }
   }
@@ -342,8 +342,7 @@ import { ECStoreManager } from './ECStoreManager';
 import { StoreInfo } from './Store';
 import { Mover } from './Mover';
 import { SecretKeyObserver } from './SecretKeyObserver';
-import { commonEventManager } from '@kit.BasicServicesKit';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import Logger from '../common/Logger';
 
 export let storeManager = new ECStoreManager();

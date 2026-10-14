@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-pixelma
 title: 使用PixelMap完成位图操作
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片编辑和处理 > 使用PixelMap完成位图操作
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:57+08:00
+scraped_at: 2026-10-15T07:05:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a69d32528356537c5f8e8b33f3702a97f9ea864b9ab0acd1d451769a1a3ecf84
+content_hash: sha256:bc6ecff070196731f521ab195b3b460aa86838a061284dcfad826bc57bbd6bec
 ---
 
 当需要对目标图片中的部分区域进行处理时，可以使用位图操作功能。此功能常用于图片美化等操作。
@@ -14,7 +14,7 @@ content_hash: sha256:a69d32528356537c5f8e8b33f3702a97f9ea864b9ab0acd1d451769a1a3
 
 **图1** 位图操作示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/CeWzEpBcRB-CnkC9d9-SCw/zh-cn_image_0000002784663309.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/CmZlRI41TIW1dGK73ehnMg/zh-cn_image_0000002762500576.png)
 
 ## 开发步骤
 

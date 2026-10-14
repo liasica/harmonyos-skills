@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-ap
 title: ReadPageComponent（阅读页组件）
 breadcrumb: API参考 > 应用服务 > Reader Kit（阅读服务） > ArkTS组件 > ReadPageComponent（阅读页组件）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:44a42170726a235ea576db871800a6dbcd31c8c03f3e5b89dd872f0789c2827d
+scraped_at: 2026-10-15T07:12:45+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:2291682e3aca7286030bc20d95b0be62ad67f82301604d2de5be6b5b5c123949
 ---
 
 本模块提供ReadPageComponent组件，HarmonyOS应用通过集成该组件可快速构建书籍阅读功能。
@@ -88,7 +88,7 @@ struct Reader {
     await this.readerComponentController.init(context);
     this.readerComponentController.registerBookParser(bookParserHandler);
     await this.readerComponentController.startPlay(spineIndex || 0, domPos);
-    hilog.info(0x0000, 'testTag', `startPlay succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `startPlay succeeded`);
   }
 
   aboutToDisappear(): void {

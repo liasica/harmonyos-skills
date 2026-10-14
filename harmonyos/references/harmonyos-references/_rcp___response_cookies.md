@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___re
 title: Rcp_ResponseCookies
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_ResponseCookies
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:156459804f6fafa185f011b11763160db90d470bd9657c47c1232c1577095692
+scraped_at: 2026-10-15T07:10:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:4e5a720e4cf46fa25f144d778ed56d582c3318038298b46e5c056663777bc27a
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:156459804f6fafa185f011b11763160db90d470bd9657c47c1232c15770
 | char \* [expires](_rcp___response_cookies.md#expires) | 响应Cookie过期属性。 |
 | uint64\_t [maxAge](_rcp___response_cookies.md#maxage) | 响应Cookie maxAge属性。 |
 | bool [secure](_rcp___response_cookies.md#secure) | 响应Cookie安全属性。true表示此cookie是通过安全连接返回的，false表示此cookie不是通过安全连接返回的。 |
-| bool [httpOnly](_rcp___response_cookies.md#httponly) | 响应Cookie httpOnly属性。true表示不可通过页面脚本等活动内容访问cookie，false表示表示可以通过页面脚本等活动内容访问cookie。 |
+| bool [httpOnly](_rcp___response_cookies.md#httponly) | 响应Cookie httpOnly属性。true表示不可通过页面脚本等活动内容访问cookie，false表示可以通过页面脚本等活动内容访问cookie。 |
 | char \* [sameSite](_rcp___response_cookies.md#samesite) | 响应Cookie sameSite属性。 |
 | uint64\_t [rawSize](_rcp___response_cookies.md#rawsize) | 此响应Cookie的原始大小。 |
 | char \* [originString](_rcp___response_cookies.md#originstring) | 原始字符串。 |
@@ -78,7 +78,7 @@ bool Rcp_ResponseCookies::httpOnly
 
 **描述**
 
-响应Cookie httpOnly属性。true表示不可通过页面脚本等活动内容访问cookie，false表示表示可以通过页面脚本等活动内容访问cookie。
+响应Cookie httpOnly属性。true表示不可通过页面脚本等活动内容访问cookie，false表示可以通过页面脚本等活动内容访问cookie。
 
 ### maxAge
 

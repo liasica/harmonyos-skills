@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: Device Security Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > Device Security Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:28+08:00
+scraped_at: 2026-10-15T07:04:33+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:2bb883e7fde7b6e6b2eed4230b170a85b51a28f20e0a020e2a184d2aab1e4a8e
+content_hash: sha256:1598fdfa699f2a039304c7ba16647e296f5564b04fc891045de2ae0115f44e34
 ---
 
 Device Security Kit（设备安全服务）提供应用设备状态检测（DeviceVerify）、安全检测（SafetyDetect）、可信应用服务（TrustedAppService）、数字盾服务（TrustedAuthentication）、业务风险检测（BusinessRiskIntelligentDetection）、星盾机密风控引擎（RiskControlEngine）、安全审计（SecurityAudit）、反诈选择器（AntifraudPicker）、防窥保护（DlpAntiPeep）、病毒防护服务管理（VirusProtectionServiceManager）和超级隐私模式（SuperPrivacyMode），可以保护应用程序免受安全威胁和保证应用的数据安全。
@@ -38,7 +38,7 @@ Device Security Kit（设备安全服务）提供应用设备状态检测（Devi
 
 业务关联如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/eVErkvQjQnKWMuwndZE-1g/zh-cn_image_0000002784582845.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/S9Gcrb8eRB28wC6NOztcfA/zh-cn_image_0000002791859165.jpg)
 
 ## 约束与限制
 

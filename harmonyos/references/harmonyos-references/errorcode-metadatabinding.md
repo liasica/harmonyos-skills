@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-metadatabinding
-title: 记忆链接错误码
-breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 错误码 > 记忆链接错误码
+title: 元数据绑定错误码
+breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 错误码 > 元数据绑定错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:13+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ebc658f3d75840ffcc38552d85436a87ffb15cd822c39e22fd1158a172601763
+scraped_at: 2026-10-15T07:10:41+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:4fc5a1531e60ddeae6fd5b423d0bfe84b5622a7fdde3dfc76dd96f47ba7341e1
 ---
 
 **说明** 
@@ -20,7 +20,7 @@ Internal handling failed.
 
 **错误描述**
 
-当调用记忆链接模块接口时，若文件创建失败，会报此错误码。
+当调用元数据绑定模块接口时，若文件创建失败，会报此错误码。
 
 **可能原因**
 

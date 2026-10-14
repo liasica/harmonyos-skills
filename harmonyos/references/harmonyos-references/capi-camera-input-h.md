@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-came
 title: camera_input.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > camera_input.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7628c5611045cb1dba285ff832eff77bc0dc808f933deeacf6ccfb45ea20f132
+scraped_at: 2026-10-15T07:11:13+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:1f629570e2198b7d80226a65a6218480d1ece3aeee96ffc79e7d5cdd2d25fe74
 ---
 
 ## 概述
@@ -203,7 +203,7 @@ Camera_ErrorCode OH_CameraInput_OpenConcurrentCameras(Camera_Input* cameraInput,
 
 | 类型 | 说明 |
 | --- | --- |
-| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK: 方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_CONFLICT\_CAMERA：因冲突而无法使用相机。  CAMERA\_DEVICE\_DISABLED：由于安全原因禁用了相机。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_CONFLICT\_CAMERA：因冲突而无法使用相机。  CAMERA\_DEVICE\_DISABLED：由于安全原因禁用了相机。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
 
 ### OH\_CameraInput\_Close()
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-exte
 title: PushExtensionAbility（推送扩展Ability）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > PushExtensionAbility（推送扩展Ability）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0982c89ec1ff52e6b1009afa8ef74865503571404f57d2750869de661afbdd0a
+scraped_at: 2026-10-15T07:12:42+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:765f3a3024e35a7ca7967543a6180098349c8c2300a68b50e75201a772f3fd54
 ---
 
 **说明** 
@@ -44,8 +44,6 @@ import { PushExtensionAbility } from '@kit.PushKit';
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 对于5.1.0(18)以前版本，该属性在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)版本，该属性在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于5.1.1(19)及之后版本，该属性在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
-
 **起始版本：** 4.0.0(10)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -61,8 +59,6 @@ onReceiveMessage(payload: pushCommon.PushPayload): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于5.1.1(19)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
 
 **起始版本：** 4.0.0(10)
 
@@ -115,8 +111,6 @@ onDestroy(): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于5.1.1(19)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
 
 **起始版本：** 4.0.0(10)
 

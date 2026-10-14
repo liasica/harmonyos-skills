@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/access-contro
 title: 基于设备分类和数据分级的访问控制 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 基于设备分类和数据分级的访问控制 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-15T07:03:57+08:00
+doc_updated_at: 2026-10-14
 content_hash: sha256:49c021bcfc6ed6c2f570c7290d2ba95b49531ce67dbeb3a1921f6f5b72c194cb
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-s
 title: 通过App Linking应用链接拉起指定应用
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过App Linking应用链接拉起指定应用
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4d1da403cfc602eae035714eea969c1b0eeba357c02dc96a66150b9863c065c2
+scraped_at: 2026-10-15T07:05:24+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:0dc05fe82dd4228998254c73ebdddd0cce0c959cfe1ac4a2b387fd82ab2756e1
 ---
 
 ## 场景介绍
@@ -88,14 +88,14 @@ content_hash: sha256:4d1da403cfc602eae035714eea969c1b0eeba357c02dc96a66150b9863c
 2. 在项目列表中点击HarmonyOS应用所在的项目。
 3. 在左侧导航栏中选择“增长 > App Linking > 应用链接”，点击“创建”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/AWCVYTmqSjKyo72PfTWfvA/zh-cn_image_0000002784663557.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Ob5QJInXR0KEOBmr_cCjAA/zh-cn_image_0000002762500824.png)
 4. 填写[建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系)的网址域名，例如：https://www.example.com。必须输入精确的域名，不可输入包含特殊字符的模糊网址。
 
    **说明** 
 
    不可以在域名后面添加/，即不支持https://www.example.com/形式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/LtJRlpyURSWdOqQcGxrkxw/zh-cn_image_0000002755024624.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/FQ_Vp0XbQxulVFTIKkBb2g/zh-cn_image_0000002791739483.png)
 5. 设置完成后点击“发布”，AGC会对该网站域名的配置文件所包含的应用与本项目内的应用列表进行交集校验。
 
    **说明** 
@@ -104,15 +104,15 @@ content_hash: sha256:4d1da403cfc602eae035714eea969c1b0eeba357c02dc96a66150b9863c
 
    例如：开发者在4月7日17:21创建了应用链接，系统会在4月8日17:30去域名服务器上重新获取配置文件，然后进行交集校验，更新发布状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/HKTqDL3-RVquUOwjusT-aA/zh-cn_image_0000002755184512.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/lju_6SrNT-2lFB8FDWiW1A/zh-cn_image_0000002762340904.png)
 
    * 如果域名的配置文件中存在本项目中的应用，则发布成功，点击“查看”可显示该域名关联的应用信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9VK-eaQoTLiLRdHMf1SqQQ/zh-cn_image_0000002784583379.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/OKsJHNuBQqaWgmbKRco17A/zh-cn_image_0000002791859701.png)
    * 如果还在校验中，则状态为“发布中”。
    * 如果配置文件中没有包含任何本项目中的应用，则发布失败，点击“查看”可显示发布失败原因。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/e_Pr3owVQrqbVjywFPeRBg/zh-cn_image_0000002784663559.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/n7O4yC0PRL6asq2kS45GXw/zh-cn_image_0000002762500826.png)
 
 ### 在module.json5中配置关联的网址域名
 
@@ -232,7 +232,7 @@ export default class EntryAbility extends UIAbility {
 3. 验证App Linking应用链接拉起效果。
 
    * 方式一：[点击链接验证](app-linking-startupapp.md#点击链接验证)。
-   * 方式二：[通过openLink接口拉起](app-linking-startupapp.md#通过openlink接口拉起)。
+   * 方式二：[通过openLink()接口拉起](app-linking-startupapp.md#通过openlink接口拉起)。
    * 方式三：[通过系统浏览器或ArkWeb拉起](app-linking-startupapp.md#通过系统浏览器或arkweb拉起)。
    * 方式四：[通过系统级扫码入口拉起](app-linking-startupapp.md#通过系统级扫码入口拉起)。
 
@@ -240,11 +240,11 @@ export default class EntryAbility extends UIAbility {
 
 将App Linking应用链接地址存入备忘录中，并点击验证该链接是否可以拉起应用。
 
-### 通过openLink接口拉起
+### 通过openLink()接口拉起
 
 拉起方应用通过[UIAbilityContext.openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口，传入目标应用的链接，拉起目标应用。
 
-openLink接口提供了两种拉起目标应用的方式，开发者可根据业务需求进行选择。
+openLink()接口提供了两种拉起目标应用的方式，开发者可根据业务需求进行选择。
 
 * 方式一： 仅以App Linking的方式打开应用。
 
@@ -276,7 +276,7 @@ openLink接口提供了两种拉起目标应用的方式，开发者可根据业
      }
    }
    ```
-2. 在“entry/src/main/ets/entryability/EntryAbility.ets”文件中导入GlobalContext，在onCreate方法中使用GlobalContext.initContext(this.context)初始化全局应用上下文。
+2. 在“entry/src/main/ets/entryability/EntryAbility.ets”文件中导入GlobalContext，在onCreate()方法中使用GlobalContext.initContext(this.context)初始化全局应用上下文。
 3. 在“entry/src/main/ets/pages/Index.ets”文件中，使用[UIAbilityContext.openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口打开应用。
 
    ```typescript
@@ -327,7 +327,7 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
 
 通过系统级扫码入口扫描App Linking应用链接对应的二维码，然后查看跳转效果。以“扫码直达”服务的美团单车场景为例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/KFGyXsfNQHOtegiUjadYUA/zh-cn_image_0000002755024626.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/0uLBpSGNSBq1frz-Na9ysw/zh-cn_image_0000002791739485.gif)
 
 ## FAQ
 

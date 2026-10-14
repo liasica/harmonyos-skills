@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 查询用户可用平台券
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 运营工具 > 查询用户可用平台券
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c34695055bb59920cecefc2bee9cc89e3cf998f92c74c94bda42744be446b8b4
+scraped_at: 2026-10-15T07:12:40+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:5c10e838740e2dd75a49be3e9c09aa6a28aae7b5f0200d0886e9e56500f3e082
 ---
 
 ## 功能介绍
 
 商户通过自定义使用券的匹配条件（如订单金额、AppID等），查询用户满足使用条件的平台券信息。
-
-## 接口原型
 
 ## 接口原型
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-cloud-sy
 title: 端云数据同步关系型数据库端侧开发指导 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用端云数据同步（分布式） > 端云数据同步关系型数据库端侧开发指导 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-06-09
-content_hash: sha256:46c259d7d1984a5fe65fb95803a683721051b718e06708af8bf109fb495fc716
+scraped_at: 2026-10-15T07:03:57+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:9af0b41849fe794cd477f608e8ddb2d66a8c9bc12b5a2b9c8cc8b5f9b4f2e7ab
 ---
 
 ## 场景介绍
@@ -151,7 +151,7 @@ content_hash: sha256:46c259d7d1984a5fe65fb95803a683721051b718e06708af8bf109fb495
 6. 设备B收到数据变化通知后，可以使用cursor查询云侧数据变化。
 
    * 通过cursor可以查询同步表中变化的数据。数据管理会给每行数据绑定一个cursor字段，每次增删改都会将cursor字段赋值为最大值+1。应用通过使用predicates.greaterThan(relationalStore.Field.CURSOR\_FIELD, currentCursor)传入上次的最大cursor，如果数据经过更改，数据库会返回比上次更大的curosr。
-   * 开库需要把autoCleanDirtyData字段设置为false，不然感知不到删除的数据。autoCleanDirtyData字段设置为false之后，云端删除数据时并不会删除本地数据，应用可以通过cursor查询到删除的数据，需要调用cleanDirtyData方法删除本地数据。
+   * 开库需要把autoCleanDirtyData字段设置为false，不然感知不到删除的数据。autoCleanDirtyData字段设置为false之后，云端删除数据时并不会删除本地数据，应用可以通过cursor查询到删除的数据，需要调用[cleanDirtyData()](../doccenter-references/api/arkts-apis-data-relationalstore-rdbstore.md#cleandirtydata11)方法删除本地数据。
 
      ```ts
      const STORE_CONFIG: relationalStore.StoreConfig = {

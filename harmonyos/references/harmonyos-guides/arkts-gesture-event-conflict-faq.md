@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 手势事件冲突常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 手势事件冲突常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:33+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:b2e977d2ecd334dbe4af9f0db9dc5e2761ab44a9b2cca905dea0388ce596e2f8
+scraped_at: 2026-10-15T07:04:16+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:e4a432a046ee6bdf3fa6c306c21c9e4c82a9e3db8be232b2de7b4acc35cbba62
 ---
 
 ## 滚动容器嵌套滚动容器事件冲突
@@ -317,7 +317,7 @@ struct GesturesConflictScene6 {
 父子组件嵌套滚动发生手势冲突，父组件有机制可以干预子组件的手势响应。下面例子介绍了如何使用[手势拦截增强](../harmonyos-references/ts-gesture-blocking-enhancement.md)，在外层Scroll组件的[shouldBuiltInRecognizerParallelWith](../harmonyos-references/ts-gesture-blocking-enhancement.md#shouldbuiltinrecognizerparallelwith)和[onGestureRecognizerJudgeBegin](../harmonyos-references/ts-gesture-blocking-enhancement.md#ongesturerecognizerjudgebegin)回调中，动态控制内外层Scroll手势事件的滚动。
 
 1. 首先在父组件Scroll的[shouldBuiltInRecognizerParallelWith](../harmonyos-references/ts-gesture-blocking-enhancement.md#shouldbuiltinrecognizerparallelwith)方法中收集需做并行处理的手势。下面示例代码中收集到了子组件的手势识别器childRecognizer，使其和父组件的手势识别器currentRecognizer并行处理。
-2. 调用onGestureRecognizerJudgeBegin方法，判断滚动组件是否滑动到顶部或者底部，做业务逻辑处理，通过动态控制手势识别器是否可用，来决定并行处理器的childRecognizer和currentRecognizer是否可用。
+2. 调用onGestureRecognizerJudgeBegin()方法，判断滚动组件是否滑动到顶部或者底部，做业务逻辑处理，通过动态控制手势识别器是否可用，来决定并行处理器的childRecognizer和currentRecognizer是否可用。
 
    ```ts
    @Entry

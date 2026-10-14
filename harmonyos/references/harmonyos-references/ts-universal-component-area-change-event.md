@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件区域变化事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 组件区域变化事件
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:16+08:00
+scraped_at: 2026-10-15T07:07:50+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1a9da494569555ac9bcbc36c431961c8ae0aa6077c2f9c0aa03f87feca834080
+content_hash: sha256:d6478108fa736ad76fef5dc221dce982390a028d3bf9983bc3aa1258c650f31d
 ---
 
 组件区域变化事件指组件显示的尺寸、位置等发生变化时触发的事件，适用于需要监听组件布局变化并获取变化前后区域信息的场景，帮助开发者根据组件尺寸或位置变化及时更新页面内容或执行相关业务逻辑。
@@ -146,7 +146,7 @@ struct AreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/tIkd_DwjTXKMS3jM6QMdyQ/zh-cn_image_0000002784664353.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/Ojw9BFjARCaB-XYytk8d5g/zh-cn_image_0000002762501624.gif)
 
 ### 示例2（使用onAreaChange自定义间隔监听区域变化）
 
@@ -183,4 +183,4 @@ struct AreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/sCfPbKxkQeqOi1eF_iiUsQ/zh-cn_image_0000002755025420.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/Iq8LYinZSk6FlLYgpkaiGA/zh-cn_image_0000002791740283.gif)

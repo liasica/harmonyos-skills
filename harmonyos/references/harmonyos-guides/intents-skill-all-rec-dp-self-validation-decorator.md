@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 装饰器接入方式自测试方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 开发者测试 > 装饰器接入方式自测试方案
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:47+08:00
+scraped_at: 2026-10-15T07:06:07+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:0d0ce7605df4223a802e16e14892eddab6824244666d7ec9660b35980c6abc80
+content_hash: sha256:b6822d5b1846ff7dff6706e7ab9c45f938d951159ad1dd5fe1ae96a8f1924b47
 ---
 
 从6.0.0(20)开始，Intents Kit向开发者提供意图调用调试能力。开发者完成代码开发之后，功能正式上架应用市场前，可以在HarmonyOS 5及以上的设备上面进行自验证，调试分为两个步骤：环境准备和联调验证。
@@ -16,20 +16,20 @@ content_hash: sha256:0d0ce7605df4223a802e16e14892eddab6824244666d7ec9660b35980c6
 
    1. 登录[华为开发者联盟](https://developer.huawei.com/consumer/cn/) ，选择“管理中心 > 生态服务 > 智慧服务 > 小艺开放平台”，在管理中心找到小艺开放平台。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/3Xcm-n1NTaqtRmO_a5bXQQ/zh-cn_image_0000002784664139.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/PkC_r6YcQF2TllcRIa4c5w/zh-cn_image_0000002762501408.png)
    2. 点击“立即体验”按钮，进入项目管理页面。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/W83dmIgHRCKTVbkDO-iiTA/zh-cn_image_0000002755025206.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/pB75lEPBQUeSsb8vkdkjmA/zh-cn_image_0000002791740065.png)
    3. 在资源库中点击“意图框架”页签，即可到达意图注册配置操作入口。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/mkezizC0TsqZSlh749by-w/zh-cn_image_0000002755185092.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/gkjZD78sQC-jtQyLWAFXAw/zh-cn_image_0000002762341490.png)
 2. 点击“注册意图”，新增意图集。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/i7sVvmtqTOybrnP8TomDWw/zh-cn_image_0000002784583959.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/mDveqs2ISu2BJgDi9_6xjg/zh-cn_image_0000002791860281.png)
 
    1. 填写意图注册信息，点击“创建”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/p1eSHsvITT6_o5lEGnmKMQ/zh-cn_image_0000002784664141.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/0FRxKPoRSk-Jr3HTHh7h2w/zh-cn_image_0000002762501410.png)
 
       | 名称 | 描述 |
       | --- | --- |
@@ -38,7 +38,7 @@ content_hash: sha256:0d0ce7605df4223a802e16e14892eddab6824244666d7ec9660b35980c6
       | 分类 | 开发者根据自定义意图选择对应垂域。 |
    2. 编辑意图集基本信息并保存。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/v8KPYls-QvqphaE5a_cKRQ/zh-cn_image_0000002755025208.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/SnzqSR17RraLCA1Oghhf6w/zh-cn_image_0000002791740069.png)
 
       | 名称 | 描述 |
       | --- | --- |
@@ -53,13 +53,13 @@ content_hash: sha256:0d0ce7605df4223a802e16e14892eddab6824244666d7ec9660b35980c6
 
    1. 切换至意图页签，点击“添加”，进行添加意图。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/h0ax6KVRRhKLHhSmrhL0wQ/zh-cn_image_0000002755185094.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Rgmn7NnfS7-UJxBcNEWpnQ/zh-cn_image_0000002762341492.png)
    2. 选择自定义意图并填入意图信息（根据接入方案进行填入），填写完成后点击“确定”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/NozUz7C2SzyDfoRFXAjbAg/zh-cn_image_0000002784583961.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/tUZcDC0oQ_yigQ0COaQoKQ/zh-cn_image_0000002791860283.png)
    3. 展开已创建的意图，新增自定义意图输入参数和自定义意图输出参数，新增完毕后点击“保存”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/lRSKrvHhR_2-ZZpdx6TouA/zh-cn_image_0000002784664143.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Srmnm40qQKGXS7RtLnxl4Q/zh-cn_image_0000002762501412.png)
 4. （可选）新增/批量导入意图使用样本，用于提升模型对意图识别的准确率。
 
    ```screen
@@ -69,19 +69,19 @@ content_hash: sha256:0d0ce7605df4223a802e16e14892eddab6824244666d7ec9660b35980c6
 
    1. 切换至测试页签，点击“编辑用户组”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/j0GAKxGnQNGlnsyeYCYDVA/zh-cn_image_0000002755025210.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/M_FrAIDzRIOGXA31Rsr6Uw/zh-cn_image_0000002791740071.png)
    2. 点击“新增用户组”，填写用户组名称，填写完成后点击“确定”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/1ZJg-mRoQWOfTUrHSec1cw/zh-cn_image_0000002755185096.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/QIOlFfIjQeyrgbHkf9uauA/zh-cn_image_0000002762341494.png)
    3. 选择已新增好的用户组，点击“管理用户”进入。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/t_vOIg9kQ2yZlQUOKPQLrA/zh-cn_image_0000002784583963.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/V1ynlA6LQyewLxQBOoL8gg/zh-cn_image_0000002791860285.png)
    4. 点击“邀请用户”，填写测试用户的账号信息，账号类型支持选址邮箱或手机号码，填入后点击“确定”（测试用户须为该项目团队下的成员）。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/VW3nyoBPTZqb6i8N5vpmew/zh-cn_image_0000002784664145.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/drUaA201SFamu_rQld72RQ/zh-cn_image_0000002762501414.png)
    5. 返回测试页签，选择所创建的真机测试用户组进行保存，点击开始测试准备，开发者即可通过HarmonyOS 6.0.0(20)版本及以上的设备在小艺进行端到端测试。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/pK6QTfqASQa23-KkG1JSqg/zh-cn_image_0000002755025212.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/_uM8lYOiSnmVAaBVKm_DOg/zh-cn_image_0000002791740073.png)
 
 ## 联调验证
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-bo
 title: bookParser（书籍解析能力）
 breadcrumb: API参考 > 应用服务 > Reader Kit（阅读服务） > ArkTS API > bookParser（书籍解析能力）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bf19af8f3a1bdda025109d1bc21ac9b4360960625f831b364c8cb3110a691d77
+scraped_at: 2026-10-15T07:12:45+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:46a8adfa5836f2e2f1ddf8c7cef6b7d354dbd214f416bab6753d3556d9d94038
 ---
 
 本模块提供书籍解析的能力，支持对txt、epub、mobi、azw、azw3格式的书籍文件进行解析。通过提前导入到[应用沙箱目录](../harmonyos-guides/app-sandbox-directory.md)中的书籍文件，初始化[BookParserHandler](reader-book-parser.md#bookparserhandler)。将书籍基本信息、[书脊](../harmonyos-guides/reader-introduction.md#基本概念)内容列表、目录列表和章节内容解析出来。
@@ -146,7 +146,7 @@ struct Reader {
       if (res && context) {
         // 获取资源路径下的字体数据
         let value: Uint8Array = context.resourceManager.getRawFileContentSync(this.selectFontPath);
-        hilog.info(0x0000, 'testTag', 'resourceRequest : get success');
+        hilog.info(0x0000, 'ReaderLog', 'resourceRequest : get success');
         return value.buffer as ArrayBuffer;
       }
     }
@@ -157,7 +157,7 @@ struct Reader {
     let options = ['.ttf', '.woff2', '.otf'];
     let path = filePath.toLowerCase();
     let result = path.indexOf(options[0]) != -1 || path.indexOf(options[1]) != -1 || path.indexOf(options[2]) != -1;
-    hilog.info(0x0000, 'testTag', 'isFont = ' + result);
+    hilog.info(0x0000, 'ReaderLog', 'isFont = ' + result);
     return result;
   }
 
@@ -229,7 +229,7 @@ struct Reader {
     let filePath: string = `${context.filesDir}/abc.epub`;
     let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
     // 业务自行根据需要调用bookParserHandler接口
-    hilog.info(0x0000, 'testTag', `getDefaultHandler succeeded`);
+    hilog.info(0x0000, 'ReaderLog', `getDefaultHandler succeeded`);
   }
 
   build() {
@@ -298,7 +298,7 @@ struct Reader {
     let filePath: string = `${context.filesDir}/abc.epub`;
     let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
     let bookInfo: bookParser.BookInfo = bookParserHandler.getBookInfo();
-    hilog.info(0x0000, 'testTag', `getBookInfo succeeded, bookInfo:` + JSON.stringify(bookInfo));
+    hilog.info(0x0000, 'ReaderLog', `getBookInfo succeeded, bookInfo:` + JSON.stringify(bookInfo));
   }
 
   build() {
@@ -349,13 +349,13 @@ struct Reader {
     this.getCatalogList();
   }
 
-  private async getCatalogList(){
+  private async getCatalogList() {
     // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let filePath: string = `${context.filesDir}/abc.epub`;
     let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
     let catalogList: bookParser.CatalogItem[] = bookParserHandler.getCatalogList();
-    hilog.info(0x0000, 'testTag', `getCatalogList succeeded, catalogList:` + JSON.stringify(catalogList));
+    hilog.info(0x0000, 'ReaderLog', `getCatalogList succeeded, catalogList:` + JSON.stringify(catalogList));
   }
 
   build() {
@@ -406,13 +406,13 @@ struct Reader {
     this.getSpineList();
   }
 
-  private async getSpineList(){
+  private async getSpineList() {
     // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let filePath: string = `${context.filesDir}/abc.epub`;
     let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
     let spineList: bookParser.SpineItem[] = bookParserHandler.getSpineList();
-    hilog.info(0x0000, 'testTag', `getSpineList succeeded, spineList:` + JSON.stringify(spineList));
+    hilog.info(0x0000, 'ReaderLog', `getSpineList succeeded, spineList:` + JSON.stringify(spineList));
   }
 
   build() {
@@ -471,14 +471,14 @@ struct Reader {
     this.getSpineItemContent();
   }
 
-  private async getSpineItemContent(){
+  private async getSpineItemContent() {
     // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let filePath: string = `${context.filesDir}/abc.epub`;
     let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
     let spineList: bookParser.SpineItem[] = bookParserHandler.getSpineList();
     let spineItemContent: string = await bookParserHandler.getSpineItemContent(spineList[0].index);
-    hilog.info(0x0000, 'testTag', `getSpineItemContent succeeded, spineItemContent:` + JSON.stringify(spineItemContent));
+    hilog.info(0x0000, 'ReaderLog', `getSpineItemContent succeeded, spineItemContent:` + JSON.stringify(spineItemContent));
   }
 
   build() {
@@ -551,7 +551,7 @@ struct Reader {
     let imagePath = './2188093923226426261_image001.jpg'
     let spineList: bookParser.SpineItem[] = bookParserHandler.getSpineList();
     let resourceContent: ArrayBuffer = bookParserHandler.getResourceContent(spineList[0].index, imagePath);
-    hilog.info(0x0000, 'testTag', `getResourceContent succeeded, resourceContentByteLength:` + resourceContent.byteLength);
+    hilog.info(0x0000, 'ReaderLog', `getResourceContent succeeded, resourceContentByteLength:` + resourceContent.byteLength);
   }
 
   build() {
@@ -609,7 +609,7 @@ struct Reader {
     this.getDomPosByCatalogHref();
   }
 
-  private async getDomPosByCatalogHref(){
+  private async getDomPosByCatalogHref() {
     // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let filePath: string = `${context.filesDir}/abc.epub`;
@@ -617,7 +617,7 @@ struct Reader {
     let catalogList: bookParser.CatalogItem[] = bookParserHandler.getCatalogList();
     let href = catalogList[1]?.href || '';
     let domPos: string = bookParserHandler.getDomPosByCatalogHref(href);
-    hilog.info(0x0000, 'testTag', `getDomPosByCatalogHref succeeded, domPos:` + domPos);
+    hilog.info(0x0000, 'ReaderLog', `getDomPosByCatalogHref succeeded, domPos:` + domPos);
   }
 
   build() {
@@ -680,14 +680,14 @@ struct Reader {
     this.getAbsoluteResourcePath();
   }
 
-  private async getAbsoluteResourcePath(){
+  private async getAbsoluteResourcePath() {
     // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let filePath: string = `${context.filesDir}/abc.epub`;
     let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
     let spineList: bookParser.SpineItem[] = bookParserHandler.getSpineList();
     let resourcePath: string = bookParserHandler.getAbsoluteResourcePath(spineList[0].index);
-    hilog.info(0x0000, 'testTag', `getAbsoluteResourcePath succeeded, resourcePath:` + resourcePath);
+    hilog.info(0x0000, 'ReaderLog', `getAbsoluteResourcePath succeeded, resourcePath:` + resourcePath);
   }
 
   build() {

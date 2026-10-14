@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-ark-
 title: 使用Node-API接口创建ArkTS运行时环境
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口创建ArkTS运行时环境
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:25d69af7dcf5aaf5b3b8934de2185060501058609602be60e045936397c15b5b
+scraped_at: 2026-10-15T07:06:11+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:74a3d247643906b19204799dcb4baad5220e08d6375c89772f4d26c1fa5e8bd1
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:25d69af7dcf5aaf5b3b8934de2185060501058609602be60e045936397c
 
 一个进程最多只能创建64个运行时环境。
 
-### 示例代码
+## 示例代码
 
 * 接口声明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 交易信息密码认证
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 交易信息密码认证
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:29+08:00
+scraped_at: 2026-10-15T07:04:34+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:6c7d3824067b46696d9af15c2f2552543ef6fcecbb505611edb1e4f8787cd8bc
+content_hash: sha256:e1e3b1bb50be0f659167e220854af8a1a6b14c320316ccb4e6345d37092ad25a
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:6c7d3824067b46696d9af15c2f2552543ef6fcecbb505611edb1e4f8787
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/h47WSj4nRNiMongEyf8nQQ/zh-cn_image_0000002755024106.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/V5X4lwsyTKay5t4ZAnoQkQ/zh-cn_image_0000002791738963.jpg)
 
 ## 接口说明
 
@@ -37,15 +37,15 @@ content_hash: sha256:6c7d3824067b46696d9af15c2f2552543ef6fcecbb505611edb1e4f8787
 
 **图1** 无翻页密码认证
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/h9gCSOd9T9qWKXVI9MIjmw/zh-cn_image_0000002755183994.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/OZLCUm4yTQ2OikvLdLU-RQ/zh-cn_image_0000002762340384.png)
 
 **图2** 翻页密码认证-1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/w7zjw2lsTAmMhZ4PaYIsqw/zh-cn_image_0000002784582861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/iMvhzRNuSz2KCzVu2YI5qQ/zh-cn_image_0000002791859181.png)
 
 **图3** 翻页密码认证-2
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/p1HMB9XFS82epfmp9gjyMg/zh-cn_image_0000002784663041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/j71SvRo_Qt60tGBkEUW5Gg/zh-cn_image_0000002762500302.png)
 
 交易信息格式说明如下：
 
@@ -71,7 +71,7 @@ content_hash: sha256:6c7d3824067b46696d9af15c2f2552543ef6fcecbb505611edb1e4f8787
 
 如图为PC端使用数字盾密码进行交易认证时对应的TUI界面示例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/N7opf2CpQBmPdnKk507p3w/zh-cn_image_0000002755024108.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/YWLI-0mSTCmBJIzVnVzG1w/zh-cn_image_0000002791738965.png)
 
 PC场景数字盾规格说明如下：
 

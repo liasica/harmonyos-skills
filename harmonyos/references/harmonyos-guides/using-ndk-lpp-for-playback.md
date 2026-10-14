@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-lpp
 title: 使用LPP播放器播放视频 (C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用LPP播放器播放视频 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:59+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:2abcf91906c4efe126651aa9be13626b549214c5e354b0329b59a26ea34f0801
+scraped_at: 2026-10-15T07:05:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:b5d1cacae46b3facb885d3c766028752f85814b20cc342886db469057490eda0
 ---
 
 从API version 20开始，使用LPP（low power player）播放器可以通过低功耗实现从媒体源到渲染的视频通路能力。本指南通过播放本地视频的示例，讲解如何使用LowPowerPlayer播放视频。
@@ -18,7 +18,7 @@ LowPowerPlayer播放器不支持纯视频和纯音频播放。纯音频低功耗
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/gp3gXTzGRFqgcVx0lPVeKg/zh-cn_image_0000002784583155.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/gZZO3-yPSK-kDFoyOLmpiw/zh-cn_image_0000002791859477.png)
 
 播放流程包含：创建（created）、初始化（initialized）、就绪（ready）、解码（decoding）和渲染（rendering）五个阶段。
 
@@ -147,7 +147,7 @@ target_link_libraries(sample PUBLIC ${BASE_LIBRARY})
    ```
 5. 准备播放。
 
-   准备播放前，需要调用[OH\_LowPowerVideoSink\_SetSyncAudioSink](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_setsyncaudiosink)设置音画同步绑定。然后调用prepare方法，[OH\_LowPowerAudioSink\_Prepare](../harmonyos-references/capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosink_prepare)或[OH\_LowPowerVideoSink\_Prepare](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_prepare)进入'准备'阶段。
+   准备播放前，需要调用[OH\_LowPowerVideoSink\_SetSyncAudioSink](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_setsyncaudiosink)设置音画同步绑定。然后调用prepare方法，[OH\_LowPowerAudioSink\_Prepare](../harmonyos-references/capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosink_prepare)或[OH\_LowPowerVideoSink\_Prepare](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_prepare)进入"准备"阶段。
 
    ```
    auto ret = OH_LowPowerVideoSink_SetSyncAudioSink(lppVideoStreamer_, audioStreamer);
@@ -162,7 +162,7 @@ target_link_libraries(sample PUBLIC ${BASE_LIBRARY})
    ```
 6. 开始播放。
 
-   调用[OH\_LowPowerAudioSink\_Start](../harmonyos-references/capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosink_start)或[OH\_LowPowerVideoSink\_StartRenderer](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_startrenderer)开始渲染。视频流需要在渲染开始前调用[OH\_LowPowerVideoSink\_StartDecoder](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_startdecoder)开始解码或调用 [OH\_LowPowerVideoSink\_RenderFirstFrame](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_renderfirstframe)开始解码并送显首帧'接口'进入解码。
+   调用[OH\_LowPowerAudioSink\_Start](../harmonyos-references/capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosink_start)或[OH\_LowPowerVideoSink\_StartRenderer](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_startrenderer)开始渲染。视频流需要在渲染开始前调用[OH\_LowPowerVideoSink\_StartDecoder](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_startdecoder)开始解码或调用 [OH\_LowPowerVideoSink\_RenderFirstFrame](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_renderfirstframe)开始解码并送显首帧"接口"进入解码。
 
    ```
    auto ret = OH_LowPowerVideoSink_StartDecoder(lppVideoStreamer_);

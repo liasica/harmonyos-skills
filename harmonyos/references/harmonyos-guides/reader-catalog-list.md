@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-catalo
 title: 获取目录列表
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取目录列表
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8e0453d665e428b1d7d4635e3f2a33b4cfbda97f22de0eedbee361fbfe6f0fd6
+scraped_at: 2026-10-15T07:05:39+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:a759a772212c2953a698009c8d76130fd0b5492263c13bd42a1af102f41e89be
 ---
 
 当应用需要展示书籍目录列表时，开发者可通过解析能力获取目录节点列表，实现目录列表中章节名称按顺序、层级的展示。当用户点击目录节点时，开发者也需要获取目录位置及资源信息，用于跳转到指定位置。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/co-nRgXeRyqZJFT_2UnCvg/zh-cn_image_0000002784663909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/MRrw1BFMSeOZjW5PkbBcHw/zh-cn_image_0000002762501176.png)
 
 ## 接口说明
 
@@ -50,7 +50,7 @@ content_hash: sha256:8e0453d665e428b1d7d4635e3f2a33b4cfbda97f22de0eedbee361fbfe6
      try {
        this.defaultHandler = await bookParser.getDefaultHandler(path);
      } catch (error) {
-       hilog.error(0x0000, "testTAG", `getDefaultHandler failed, Code: ${error.code}, message: ${error.message}`);
+       hilog.error(0x0000, 'ReaderLog', `getDefaultHandler failed, Code: ${error.code}, message: ${error.message}`);
      }
    }
    ```
@@ -69,7 +69,7 @@ content_hash: sha256:8e0453d665e428b1d7d4635e3f2a33b4cfbda97f22de0eedbee361fbfe6
      try {
        this.catalogItemList = this.defaultHandler?.getCatalogList() || [];
      } catch (error) {
-       hilog.error(0x0000, "testTAG", `getCatalogList failed, Code: ${error.code}, message: ${error.message}`);
+       hilog.error(0x0000, 'ReaderLog', `getCatalogList failed, Code: ${error.code}, message: ${error.message}`);
      }
    }
 
@@ -127,7 +127,7 @@ content_hash: sha256:8e0453d665e428b1d7d4635e3f2a33b4cfbda97f22de0eedbee361fbfe6
      let domPos = this.getDomPos(catalogItem);
      let resourceIndex = this.getResourceItemByCatalog(catalogItem).index;
      // 通过domPos及resourceIndex信息，即可通过startPlay接口跳转到指定位置
-     hilog.info(0x0000, "testTAG", `jumpToCatalogItem domPos:${domPos}, resourceIndex:${resourceIndex}`);
+      hilog.info(0x0000, 'ReaderLog', `jumpToCatalogItem domPos:${domPos}, resourceIndex:${resourceIndex}`);
    }
 
    private getDomPos(catalogItem: bookParser.CatalogItem): string {
@@ -135,7 +135,7 @@ content_hash: sha256:8e0453d665e428b1d7d4635e3f2a33b4cfbda97f22de0eedbee361fbfe6
        let domPos: string = this.defaultHandler?.getDomPosByCatalogHref(catalogItem.href || '') || '';
        return domPos;
      } catch (error) {
-       hilog.error(0x0000, "testTAG", `getDomPos failed, Code: ${error.code}, message: ${error.message}`);
+       hilog.error(0x0000, 'ReaderLog', `getDomPos failed, Code: ${error.code}, message: ${error.message}`);
      }
      return '';
    }
@@ -152,19 +152,19 @@ content_hash: sha256:8e0453d665e428b1d7d4635e3f2a33b4cfbda97f22de0eedbee361fbfe6
        // 查找目录对应的资源条目
        let resourceItemArr = spineList.filter(item => item.href === resourceFile);
        if (resourceItemArr.length > 0) {
-         hilog.info(0x0000, 'testTag', 'getResourceItemByCatalog get resource ', resourceItemArr[0]);
+         hilog.info(0x0000, 'ReaderLog', 'getResourceItemByCatalog get resource ', resourceItemArr[0]);
          let resourceItem = resourceItemArr[0];
          return resourceItem;
        } else if (spineList.length > 0) {
          // 如果查找不到，则默认返回第1个资源条目
-         hilog.info(0x0000, 'testTag', 'getResourceItemByCatalog get resource in resourceList', spineList[0]);
+         hilog.info(0x0000, 'ReaderLog', 'getResourceItemByCatalog get resource in resourceList', spineList[0]);
          return spineList[0];
        }
      } catch (error) {
-       hilog.error(0x0000, "testTAG", `getResourceItemByCatalog failed, Code: ${error.code}, message: ${error.message}`);
+       hilog.error(0x0000, 'ReaderLog', `getResourceItemByCatalog failed, Code: ${error.code}, message: ${error.message}`);
      }
      // 如果没有资源条目，则返回默认值
-     hilog.info(0x0000, 'testTag', 'getResourceItemByCatalog get resource in escape');
+     hilog.info(0x0000, 'ReaderLog', 'getResourceItemByCatalog get resource in escape');
      return {
        idRef: '',
        index: 0,

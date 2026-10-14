@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendabl
 title: 共享模块
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > 共享模块
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:052c51d96582e6ad7740fec22df6944b203ce03e41baa81f29a631f69ba32ce5
+scraped_at: 2026-10-15T07:03:58+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:9d34bcf0af02d57d4065c325da9fff5b36f056131afe7d8a47faae28cc75b005
 ---
 
-共享模块是进程内只会加载一次的模块，使用"use shared"这一指令来标记一个模块是否为共享模块。
+共享模块是进程内只会加载一次的模块，使用'use shared'这一指令来标记一个模块是否为共享模块。
 
 非共享模块在同一线程内只加载一次，而在不同线程中会多次加载，每个线程都会生成新的模块对象。因此，目前只能使用共享模块实现进程单例。
 
 ## 约束限制
 
-* "use shared"需要写在ArkTS文件顶层，即写在import语句之后其他语句之前。
+* 'use shared'需要写在ArkTS文件顶层，即写在import语句之后其他语句之前。
 
   共享属性不具备传递性。非共享模块A即使引入了共享模块B，也不会因此变成共享模块。
 * 共享模块只支持ets文件。
@@ -56,14 +56,21 @@ content_hash: sha256:052c51d96582e6ad7740fec22df6944b203ce03e41baa81f29a631f69ba
   export {num, str} from './test'; // 可能导致运行时的未知异常
   ```
 * 共享模块可以引用其他共享模块或非共享模块，引用和被引用场景没有限制。
-* 仅支持使用静态加载、napi\_load\_module或napi\_load\_module\_with\_info加载共享模块。
+* 仅支持使用静态加载、[napi\_load\_module](../harmonyos-references/napi.md#napi_load_module)或[napi\_load\_module\_with\_info](../harmonyos-references/napi.md#napi_load_module_with_info)加载共享模块。
+
+  支持静态加载：
 
   ```typescript
   // test.ets
-  import { num } from './A'; // 支持静态加载
+  import { num } from './A';
+  ```
 
+  不支持作为worker入口加载共享模块，将产生运行时报错：
+
+  ```typescript
+  // test.ets
   import { worker } from '@kit.ArkTS';
-  let wk = new worker.ThreadWorker("./A"); // 不支持其他方式加载共享模块, 将产生运行时报错
+  let wk = new worker.ThreadWorker('./A');
   ```
 
   ```typescript

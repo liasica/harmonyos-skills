@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-co
 title: RemoteCommunication
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 模块 > RemoteCommunication
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f775f1156f3593b16b08b63e6e31dc2c6aaa16943641d45a4166d3425d5dc377
+scraped_at: 2026-10-15T07:10:07+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:20968d829911aa4a369df2f9301327a965c383b8fe3d4abc74b9ddac5323dce1
 ---
 
 ## 概述
@@ -253,7 +253,7 @@ content_hash: sha256:f775f1156f3593b16b08b63e6e31dc2c6aaa16943641d45a4166d3425d5
 | [Rcp\_QuicConnOpt](remote-communication-overview.md#rcp_quicconnopt) { RCP\_QUIC\_CONN\_IP\_ADDRESS = 0, RCP\_QUIC\_CONN\_IP\_RESOLVE, RCP\_QUIC\_CONN\_DNS\_FUNCTION, RCP\_QUIC\_CONN\_ON\_CONNECTED\_FUNCTION, RCP\_QUIC\_CONN\_ON\_ERROR\_FUNCTION, RCP\_QUIC\_CONN\_ON\_CLOSED\_FUNCTION, RCP\_QUIC\_CONN\_STREAM\_INBOUND\_FUNCTION, RCP\_QUIC\_CONN\_CONNECT\_TIMEOUT\_MS, RCP\_QUIC\_CONN\_IDLE\_TIMEOUT\_MS, RCP\_QUIC\_TLS\_CERT\_AUTHORITY\_FUNCTION = 1000, RCP\_QUIC\_TLS\_CERT\_AUTHORITY\_CONTENT, RCP\_QUIC\_TLS\_SESSION\_TICKET\_UPDATE\_FUNCTION, RCP\_QUIC\_TLS\_SESSION\_TICKET\_CONTENT, RCP\_QUIC\_TP\_INITIAL\_MAX\_BIDIRECTIONAL\_STREAMS = 2000, RCP\_QUIC\_TP\_INITIAL\_MAX\_DATA, RCP\_QUIC\_TP\_INITIAL\_MAX\_STREAMDATA\_BIDIRECTIONAL\_LOCAL, RCP\_QUIC\_TP\_INITIAL\_MAX\_STREAMDATA\_BIDIRECTIONAL\_REMOTE, RCP\_QUIC\_TP\_INITIAL\_MAX\_STREAMDATA\_UNIDIRECTIONAL, RCP\_QUIC\_TP\_INITIAL\_MAX\_UNIDIRECTIONAL\_STREAMS} | quic连接选项类型。 |
 | [Rcp\_QuicStreamOpt](remote-communication-overview.md#rcp_quicstreamopt) { RCP\_QUIC\_STREAM\_EVENT\_FUNCTION = 0, RCP\_QUIC\_STREAM\_DATA\_FUNCTION, RCP\_QUIC\_INBOUND\_STREAM\_USER\_OBJECT, RCP\_QUIC\_STREAM\_SND\_BUFFER\_SIZE\_KB} | quic连接中配置流选项。 |
 | [Rcp\_QuicConnInfo](remote-communication-overview.md#rcp_quicconninfo) { RCP\_INFO\_CONN\_GET\_LOCALADDR = 0, RCP\_INFO\_CONN\_GET\_PEERADDR, RCP\_INFO\_CONN\_DNS\_TIME\_MS, RCP\_INFO\_CONN\_CONNECT\_TIME\_MS, RCP\_INFO\_CONN\_SCID, RCP\_INFO\_CONN\_DCID } | quic连接中的信息类型。 |
-| [Rcp\_QuicStreamInfo](remote-communication-overview.md#rcp_quicstreamopt) { RCP\_INFO\_STREAM\_SND\_BUFFER\_SIZE\_KB = 0 } | quic流中的信息类型。 |
+| [Rcp\_QuicStreamInfo](remote-communication-overview.md#rcp_quicstreaminfo) { RCP\_INFO\_STREAM\_SND\_BUFFER\_SIZE\_KB = 0 } | quic流中的信息类型。 |
 | [Rcp\_QuicErrorCode](remote-communication-overview.md#rcp_quicerrorcode) { RCP\_QUIC\_ERROR\_CODE\_SUCCESS, RCP\_QUIC\_PERMISSION\_DENIED, RCP\_QUIC\_ERROR\_CODE\_FAILED, RCP\_QUIC\_ERROR\_CODE\_INVALID\_PARAM, RCP\_QUIC\_ERROR\_CODE\_INVALID\_STATE, RCP\_QUIC\_ERROR\_CODE\_OUT\_OF\_MEM, RCP\_QUIC\_ERROR\_CODE\_CLOSE\_FROM\_PEER, RCP\_QUIC\_ERROR\_CODE\_HANDSHAKE\_TIMEOUT, RCP\_QUIC\_ERROR\_CODE\_NETWORK\_IDLE\_TIMEOUT, RCP\_QUIC\_ERROR\_INVALID\_FRAME, RCP\_QUIC\_ERROR\_CODE\_SEND\_PENDING, RCP\_QUIC\_ERROR\_CODE\_FINALIZE\_PENDING, RCP\_QUIC\_ERROR\_CODE\_NETWORK\_UNREACHABLE, RCP\_QUIC\_ERROR\_CODE\_ENCRYPT\_ERROR, RCP\_QUIC\_ERROR\_CODE\_BUFFER\_TOO\_SMALL, RCP\_QUIC\_ERROR\_CODE\_EAGAIN, RCP\_QUIC\_ERROR\_CODE\_STREAM\_CLOSED, RCP\_QUIC\_ERROR\_CODE\_STREAM\_RESET\_RECEIVED, RCP\_QUIC\_ERROR\_CODE\_STREAM\_STOP\_SENDING\_RECEIVED } | quic请求中可能出现的错误码。 |
 | [Rcp\_QuicStreamDirection](remote-communication-overview.md#rcp_quicstreamdirection) { RCP\_QUIC\_STREAM\_BIDI = 0, RCP\_QUIC\_STREAM\_UNI } | quic流的方向类型。 |
 | [Rcp\_QuicStreamShutdown](remote-communication-overview.md#rcp_quicstreamshutdown) { RCP\_QUIC\_STREAM\_SHUTDOWN\_READ = 1, RCP\_QUIC\_STREAM\_SHUTDOWN\_WRITE = 2 } | quic流的关闭操作的类型。用于指定关闭流的读或写方向。 |
@@ -285,7 +285,7 @@ content_hash: sha256:f775f1156f3593b16b08b63e6e31dc2c6aaa16943641d45a4166d3425d5
 | uint32\_t [HMS\_Rcp\_SetRequestCookieValue](remote-communication-overview.md#hms_rcp_setrequestcookievalue) ([Rcp\_RequestCookies](remote-communication-overview.md#rcp_requestcookies) \*cookies, const char \*name, const char \*value) | 设置请求Cookie。 |
 | char \* [HMS\_Rcp\_GetRequestCookieValue](remote-communication-overview.md#hms_rcp_getrequestcookievalue) ([Rcp\_RequestCookies](remote-communication-overview.md#rcp_requestcookies) \*cookies, const char \*name) | 通过名称获取请求Cookie的值。 |
 | [Rcp\_RequestCookieEntry](_rcp___request_cookie_entry.md) \* [HMS\_Rcp\_GetRequestCookieEntries](remote-communication-overview.md#hms_rcp_getrequestcookieentries) ([Rcp\_RequestCookies](remote-communication-overview.md#rcp_requestcookies) \*cookies) | 获取请求Cookie中的所有键值对。 |
-| void [HMS\_Rcp\_DestroyRequestCookieEntries](remote-communication-overview.md#hms_rcp_destroyrequestcookieentries) ([Rcp\_RequestCookieEntry](_rcp___request_cookie_entry.md) \*cookieEntry) | 销毁从[HMS\_Rcp\_GetRequestCookieValue](remote-communication-overview.md#hms_rcp_getrequestcookievalue)获取的所有与请求Cookie相关的键值对。 |
+| void [HMS\_Rcp\_DestroyRequestCookieEntries](remote-communication-overview.md#hms_rcp_destroyrequestcookieentries) ([Rcp\_RequestCookieEntry](_rcp___request_cookie_entry.md) \*cookieEntry) | 销毁从[HMS\_Rcp\_GetRequestCookieEntries](remote-communication-overview.md#hms_rcp_getrequestcookieentries)获取的所有与请求Cookie相关的键值对。 |
 | const char \* [HMS\_Rcp\_GetResponseCookieAttrValue](remote-communication-overview.md#hms_rcp_getresponsecookieattrvalue) ([Rcp\_CookieAttributes](remote-communication-overview.md#rcp_cookieattributes) \*cookieAttributes, const char \*name) | 通过名称获取Cookie属性的值。 |
 | [Rcp\_CookieAttributeEntry](_rcp___cookie_attribute_entry.md) \* [HMS\_Rcp\_GetResponseCookieAttrEntries](remote-communication-overview.md#hms_rcp_getresponsecookieattrentries) ([Rcp\_CookieAttributes](remote-communication-overview.md#rcp_cookieattributes) \*cookieAttributes) | 在[Rcp\_CookieAttributes](remote-communication-overview.md#rcp_cookieattributes)中获取所有响应Cookie属性。 |
 | void [HMS\_Rcp\_DestroyResponseCookieAttrEntries](remote-communication-overview.md#hms_rcp_destroyresponsecookieattrentries) ([Rcp\_CookieAttributeEntry](_rcp___cookie_attribute_entry.md) \*entries) | 销毁响应Cookie属性。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-bin
 title: 应用程序包集成bin文件（PC/2in1）
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 应用程序包集成bin文件（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:20:51+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:7f45f22fb41f9d9a07c59549560df7b2a317f7d25fefaab217109172353c403e
+scraped_at: 2026-10-15T07:03:49+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:a7617a4db6b4a5e58aa1088582b7b5ee4d7fd947da486ba8ffc3a4195c21f1ec
 ---
 
 从API版本24开始，HAP包支持集成、加载并独立运行bin文件，有效拓展了应用的能力边界。开发者可在标准HAP应用内嵌入各类平台二进制工具与可执行程序，依托HarmonyOS运行时环境完成程序调度、脚本解析与任务执行，弥补无法直接调用本地化二进制工具的短板。基于此能力，应用可实现外部脚本解析、第三方工具调用等扩展功能；同时，bin文件的运行全程受系统安全机制管控，兼顾功能拓展性与系统安全性。
@@ -137,11 +137,11 @@ bin文件被拉起后，如需使用受保护的系统能力，应独立声明�
 
 ### 在HAP工程中声明bin文件
 
-在HAP工程entry目录下增加libs{abi}目录，{abi}值需要与HAP部署的设备abi类型保持一致。随后，将添加了.permission节的bin文件EXAMPLE放置在该目录下。
+在HAP工程entry目录下增加libs/{abi}目录，{abi}值需要与HAP部署的设备abi类型保持一致。随后，将添加了.permission节的bin文件EXAMPLE放置在该目录下。
 
 例如，需要将HAP部署在abi类型为arm64-v8a的PC/2in1设备上时，bin文件EXAMPLE应放置在如下目录：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/wapUidcxSwms309zhpT1dw/zh-cn_image_0000002784581569.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xbVH8Ns8QQu2H_FjRuqdow/zh-cn_image_0000002762339092.png)
 
 在[module.json5](module-configuration-file.md)中配置[executablebinarypaths标签](module-configuration-file.md#executablebinarypaths标签)，用于声明HAP中包含的可执行bin文件。该标签配置bin文件的路径，为相对路径，必须以libs/{abi}/为前缀，其中{abi}为设备CPU架构类型（如arm64-v8a、x86\_64、armeabi-v7a）：
 
@@ -168,7 +168,7 @@ bin文件被拉起后，如需使用受保护的系统能力，应独立声明�
    在[module.json5](module-configuration-file.md)中配置extractNativeLibs标签为true，使应用安装时自动将libs库解压至安装目录，从而确保bin文件可正常加载运行。
 2. HAP配置libs库打包选项
 
-   参考[nativeLib字段](ide-hvigor-cpp.md#section15889929155720)，在bundle-profile.json5中配置collectAllLibs标签为true，使bin文件可被打包进HAP中，示例如下：
+   参考[nativeLib字段](ide-hvigor-cpp.md#section15889929155720)，在build-profile.json5中配置collectAllLibs标签为true，使bin文件可被打包进HAP中，示例如下：
 
    ```json5
    {

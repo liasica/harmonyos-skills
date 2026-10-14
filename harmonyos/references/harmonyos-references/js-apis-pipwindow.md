@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.PiPWindow (画中画窗口)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.PiPWindow (画中画窗口)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1d6a2d04134a2b25f39cd7a6b299e1ed9bd89ec923cda68b08c576d63fcac380
+scraped_at: 2026-10-15T07:07:44+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:906f0202f01574bdd30321a5d7ba097ee894eeba53bf4571d57a8ee294ca6c10
 ---
 
 该模块提供画中画基础功能，包括判断当前设备是否支持画中画功能，以及创建画中画控制器用于启动或停止画中画等。支持用户在进行其他操作时以小窗形式继续观看视频内容，提升多任务处理效率。适用于视频播放、视频通话或视频会议场景。
@@ -656,6 +656,10 @@ setAutoStartEnabled(enable: boolean): void
 在开启自动拉起的情况下，当应用主窗为[智慧多窗悬浮窗](../harmonyos-guides/multi-window-intro.md#悬浮窗)状态且被收入侧边栏时，应用主窗虽退后台，但不会自动拉起画中画。
 
 在使用XComponent方案实现画中画功能并结合Navigation进行路由管理时，首次调用setAutoStartEnabled(true)方法，系统会缓存当前应用传入的NavigationId的栈顶信息。
+
+**说明** 
+
+跳转同名页面时会复用缓存页面，如果页面名为缓存的Navigation栈顶则不会跳转。如果需要跳转同名页面，则需要创建同名页面的新实例，将[NavigationOptions](ts-basic-components-navigation.md#navigationoptions12)的[launchMode](ts-basic-components-navigation.md#launchmode12枚举说明)设置为NEW\_INSTANCE即可。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

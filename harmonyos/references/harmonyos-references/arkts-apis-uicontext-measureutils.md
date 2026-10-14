@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MeasureUtils)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (MeasureUtils)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:04+08:00
+scraped_at: 2026-10-15T07:07:37+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5b0c4ff57425e4d3a656b90cd8af6dade626c8ca465f441feaad742d9d575bbd
+content_hash: sha256:03c6d816fa3846df85a0cae89a60270e6a95809cce0d4f7c1bd1cb70053e776d
 ---
 
 MeasureUtils提供文本宽度、高度等相关计算能力，适用于文本自适应布局、多行文本截断、动态UI适配等场景。通过该类可精确计算文本尺寸，帮助开发者在布局前预判文本显示效果，避免文本溢出或布局错乱等问题。
@@ -252,7 +252,7 @@ struct TextDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/UZ-sgP-6SO2rS0wChs__1g/zh-cn_image_0000002784664265.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/alnfip5lTQuWkhTB4WiTPw/zh-cn_image_0000002762501534.png)
 
 ## getParagraphs20+
 
@@ -486,4 +486,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/tE1S_G3WQp2ok9f5au_KAw/zh-cn_image_0000002755025332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/-UkAPtxGTSG4PcOOTrqU3w/zh-cn_image_0000002791740193.png)

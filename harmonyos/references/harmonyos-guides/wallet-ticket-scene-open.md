@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-ticket
 title: 开通活动/景点门票
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 活动/景点门票 > 开发场景 > 开通活动/景点门票
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:27+08:00
+scraped_at: 2026-10-15T07:05:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f841d0522e27bfabce7d1bbe7313c37e656f57659fe1fc3a7ed1018ca87696eb
+content_hash: sha256:84f4865a7a273e30598e975f984bf1b7d574fb8dd0ec99dc05be47fe3a9a4f68
 ---
 
 用户购买门票后，可以将电子门票添加至钱包，刷手机快速验票入场，提升验票体验和运营效率。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/dTPTwI5ITwSm64D5Qm6psQ/zh-cn_image_0000002784583809.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/CTNBpY54Tsq3kMZhaM_P3w/zh-cn_image_0000002791860131.png)
 
 ## 开发流程
 

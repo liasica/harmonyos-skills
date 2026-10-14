@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-import-k
 title: 明文导入密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 明文导入密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:00+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:3c0a8a596a4a3fc52b72a7a75708a35afe942cb295dcb534688480a965b8b7a7
+scraped_at: 2026-10-15T07:04:37+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:341271092909526702360d50590a9dca69d7c71072e1366ecb7e079a02911060
 ---
 
 分别以导入AES256、RSA2048和X25519密钥为例。具体的场景介绍及支持的算法规格，请参考[密钥导入支持的算法](huks-key-import-overview.md#支持的算法)。
@@ -58,15 +58,11 @@ async function importKeyItem(keyAlias: string, huksOptions: huks.HuksOptions): P
   console.info('promise: enter importKeyItem');
   let ret: boolean = false;
   try {
-    await huks.importKeyItem(keyAlias, huksOptions)
-      .then(() => {
-        console.info(`promise: importKeyItem success`);
-        ret = true;
-      }).catch((error: BusinessError) => {
-        console.error(`promise: importKeyItem failed errCode : ${error.code}, errMsg : ${error.message}`);
-      })
+    await huks.importKeyItem(keyAlias, huksOptions);
+    console.info(`promise: importKeyItem success`);
+    ret = true;
   } catch (error) {
-    console.error(`promise: importKeyItem input arg invalid`);
+    console.error(`promise: importKeyItem failed errCode : ${(error as BusinessError).code}, errMsg : ${(error as BusinessError).message}`);
   }
   return ret;
 }
@@ -162,15 +158,11 @@ async function importKeyItem(keyAlias: string, huksOptions: huks.HuksOptions): P
   console.info('promise: enter importKeyItem');
   let ret: boolean = false;
   try {
-    await huks.importKeyItem(keyAlias, huksOptions)
-      .then(() => {
-        console.info(`promise: importKeyItem success`);
-        ret = true;
-      }).catch((error: BusinessError) => {
-        console.error(`promise: importKeyItem failed errCode : ${error.code}, errMsg : ${error.message}`);
-      })
+    await huks.importKeyItem(keyAlias, huksOptions);
+    console.info(`promise: importKeyItem success`);
+    ret = true;
   } catch (error) {
-    console.error(`promise: importKeyItem input arg invalid`);
+    console.error(`promise: importKeyItem failed errCode : ${(error as BusinessError).code}, errMsg : ${(error as BusinessError).message}`);
   }
   return ret;
 }
@@ -228,15 +220,11 @@ async function importKeyItem(keyAlias: string, huksOptions: huks.HuksOptions): P
   console.info('promise: enter importKeyItem');
   let ret: boolean = false;
   try {
-    await huks.importKeyItem(keyAlias, huksOptions)
-      .then(() => {
-        console.info(`promise: importKeyItem success`);
-        ret = true;
-      }).catch((error: BusinessError) => {
-        console.error(`promise: importKeyItem failed errCode : ${error.code}, errMsg : ${error.message}`);
-      })
+    await huks.importKeyItem(keyAlias, huksOptions);
+    console.info(`promise: importKeyItem success`);
+    ret = true;
   } catch (error) {
-    console.error(`promise: importKeyItem input arg invalid`);
+    console.error(`promise: importKeyItem failed errCode : ${(error as BusinessError).code}, errMsg : ${(error as BusinessError).message}`);
   }
   return ret;
 }

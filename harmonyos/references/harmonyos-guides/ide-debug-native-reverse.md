@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 反向调试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 反向调试
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:03+08:00
+scraped_at: 2026-10-15T07:06:27+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:667a2a0ec99c73d8be774c911c6b8e1be45ddd1825be3c4e58919389d46a3d5e
+content_hash: sha256:9dbbb8b896c2c3f9b6178e0c7b6b39f58648e71077ef0f924602327d560c2649
 ---
 
 针对C/C++开发场景，DevEco Studio在提供基础调试能力的基础上，同时提供反向调试能力，帮助开发者更好地理解代码和更迅速定位问题。
@@ -21,26 +21,26 @@ content_hash: sha256:667a2a0ec99c73d8be774c911c6b8e1be45ddd1825be3c4e58919389d46
 
 在**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build,Execution,Deployment > Debugger > C++ Debugger**设置界面，勾选**Enable time travel debug**开启C++反向调试开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/H1r1bsbSQD255vZX2-FQYw/zh-cn_image_0000002731381937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/idwJuszNTjusX0psUSdwjQ/zh-cn_image_0000002731381937.png)
 
 ## 操作步骤
 
 1. 设置断点，进入调试模式。
 2. 开启反向调试开关后，在Debugger中会出现反向调试相关按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/EinZMqVFROSGGTFqiyCqiw/zh-cn_image_0000002731541901.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/pivorUmCTxO6kgUtOe4aSQ/zh-cn_image_0000002731541901.png)
 
-   需要查看历史调试信息时，点击“Open Time Travel Debug”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ZgwU8VbySai-QftYJCaWNA/zh-cn_image_0000002731541905.png)进入反向调试模式，您可以在此模式下进行调试。
+   需要查看历史调试信息时，点击“Open Time Travel Debug”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/At13C5YGSk2sqA1eDkhTiA/zh-cn_image_0000002731541905.png)进入反向调试模式，您可以在此模式下进行调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/jdEPPCDVTjK9kifHm7GQtA/zh-cn_image_0000002731381939.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/GN7O6cdNSEa29BAHtHU9xA/zh-cn_image_0000002731381939.png)
 
    其中，操作按钮说明如下：
 
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/qKYK68R3TC6fcL-ceSexvA/zh-cn_image_0000002731381941.png)：退出反向调试模式。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/fZV_kkTrTvCt3wVY8JKu7A/zh-cn_image_0000002731541907.png)：切换当前高亮行到下一个历史断点，并显示断点相关信息。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/kHda11Z9ROyktILQgh6qTQ/zh-cn_image_0000002731381931.png)：切换当前高亮行到上一个历史断点，并显示断点相关信息。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/reM4-ps1T7qmH7-buotDvA/zh-cn_image_0000002731541903.png)：切换当前高亮行到下一个历史行，并显示历史行相关信息。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/8V9C5hMfQRGgj-DIeMwTGw/zh-cn_image_0000002731541911.png)：切换当前高亮行到上一个历史行，并显示历史行相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/9ZNyo6JRS56zCTOPhWVfAg/zh-cn_image_0000002731381941.png)：退出反向调试模式。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/nuTOfKrDQOCL-r2HeKTMog/zh-cn_image_0000002731541907.png)：切换当前高亮行到下一个历史断点，并显示断点相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/64nfHhokRPCcNFynwLy23g/zh-cn_image_0000002731381931.png)：切换当前高亮行到上一个历史断点，并显示断点相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/G-Izl1N_R8qFBvwbR2rlHQ/zh-cn_image_0000002731541903.png)：切换当前高亮行到下一个历史行，并显示历史行相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/2OHjABklRDyMQ_gXceq1dA/zh-cn_image_0000002731541911.png)：切换当前高亮行到上一个历史行，并显示历史行相关信息。
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-export-k
 title: 密钥导出(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 密钥导出 > 密钥导出(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d54adc52543e3ed13175ddf80d1051dd76354dc155f902b7a14c2bfa1a078077
+scraped_at: 2026-10-15T07:04:38+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:dd0fbcc7c4192f18ff505db556d389a95dbdbc9c27407f1c89e636678328b573
 ---
 
 业务需要获取持久化存储的非对称密钥的公钥时使用，当前支持ECC/RSA/ED25519/X25519/SM2的公钥导出。
@@ -56,11 +56,11 @@ let huksOptions: huks.HuksOptions = {
 function generateKeyItem(keyAlias: string, huksOptions: huks.HuksOptions) {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.generateKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.generateKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {
@@ -73,15 +73,10 @@ async function publicGenKeyFunc(keyAlias: string, huksOptions: huks.HuksOptions)
   console.info(`enter promise generateKeyItem`);
   try {
     await generateKeyItem(keyAlias, huksOptions)
-      .then((data) => {
-        console.info(`promise: generateKeyItem success, data = ${JSON.stringify(data)}`);
-      })
-      .catch((error: Error) => {
-        console.error(`promise: generateKeyItem failed, ${JSON.stringify(error)}`);
-      });
+    console.info(`promise: generateKeyItem success`);
     return 'Success';
   } catch (error) {
-    console.error(`promise: generateKeyItem input arg invalid, ${JSON.stringify(error)}`);
+    console.error(`promise: generateKeyItem failed, ${JSON.stringify(error)}`);
     return 'Failed';
   }
 }

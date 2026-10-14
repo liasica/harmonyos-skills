@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohaudio
 title: 推荐使用OHAudio开发音频录制功能(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 推荐使用OHAudio开发音频录制功能(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cffff12da9764608046ceb38b180d5dd7f499c71852680ec2058c0d283b4d152
+scraped_at: 2026-10-15T07:05:00+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:48db75a5ea6efe64a877c5e87a8ad6d82dad04ed5d6c231c8bbeadfe04070f16
 ---
 
 OHAudio是系统在API version 10中引入的一套C API，此API在设计上实现归一，同时支持普通音频通路和低时延通路。仅支持PCM格式，适用于依赖Native层实现音频输入功能的场景。
@@ -14,7 +14,7 @@ OHAudio是系统在API version 10中引入的一套C API，此API在设计上实
 
 OHAudio音频录制状态变化示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/04eL-CZoTg6QODF6MWLWtg/zh-cn_image_0000002755024284.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/I6O8d3PmRk6_wBocvT2_fg/zh-cn_image_0000002791739143.png)
 
 ## 使用入门
 
@@ -222,9 +222,13 @@ OH_AudioStream_Result unsetResult = OH_AudioCapturer_SetMuteHint(audioCapturer, 
 
 ## 注意事项
 
-从API version 12开始**不再推荐**使用[OH\_AudioCapturer\_Callbacks](../harmonyos-references/capi-ohaudio-oh-audiocapturer-callbacks-struct.md)的方式设置音频回调函数。若必须使用，需要注意在设置音频回调函数时，通过下面两种方式中的任意一种来设置音频回调函数，避免不可预期的行为。
+从API version 12开始**不再推荐**使用[OH\_AudioCapturer\_Callbacks](../harmonyos-references/capi-ohaudio-oh-audiocapturer-callbacks-struct.md)的方式设置音频回调函数。若必须使用，请通过下面任意一种方式完成初始化，再配置回调函数。
 
-* 方式1：请确保[OH\_AudioCapturer\_Callbacks](../harmonyos-references/capi-ohaudio-oh-audiocapturer-callbacks-struct.md)的每一个回调都被**自定义的回调方法**或**空指针**初始化。
+**注意** 
+
+必须完成OH\_AudioCapturer\_Callbacks结构体的初始化。未初始化的回调字段可能包含随机地址，系统触发回调时可能将其误当作回调函数执行，产生野指针并导致进程崩溃。
+
+* 方式1：请确保[OH\_AudioCapturer\_Callbacks](../harmonyos-references/capi-ohaudio-oh-audiocapturer-callbacks-struct.md)的每一个回调都被**自定义的回调方法**或**空指针**显式初始化。未使用的回调必须设置为空指针，不能保留未初始化的值。
 
   ```
   int32_t MyOnReadData_Legacy(
@@ -254,7 +258,7 @@ OH_AudioStream_Result unsetResult = OH_AudioCapturer_SetMuteHint(audioCapturer, 
       callbacks.OH_AudioCapturer_OnStreamEvent = nullptr;
       callbacks.OH_AudioCapturer_OnError = nullptr;
   ```
-* 方式2：使用前，初始化并清零结构体。
+* 方式2：使用前，必须初始化并清零结构体，确保所有未配置的回调字段为空指针。
 
   ```
   int32_t MyOnReadData_Legacy(

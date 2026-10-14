@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:46+08:00
+scraped_at: 2026-10-15T07:08:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2c302357b541352e83f3493f9f99b9a04e33f87435a9084e900d68a605b3be0d
+content_hash: sha256:567622308ccde9d563647d01db07901ca7d020d9d29f3a9727b4e619dbef6c66
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:2c302357b541352e83f3493f9f99b9a04e33f87435a9084e900d68a605b
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/YHg7kqmUTj-74TvtmTtSgQ/zh-cn_image_0000002755026180.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/iaLDuV0vRViJriJ1Qs3eIg/zh-cn_image_0000002791741063.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/KXb8wBW8SDqI27THIwzhPA/zh-cn_image_0000002755186064.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/KA_3IroKRNyYmsE_4maSmQ/zh-cn_image_0000002762342488.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/hLTxC5mMQBaKIuI7aD3X0w/zh-cn_image_0000002784584931.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/qh6jFqQJRYKxwxkgZkBAow/zh-cn_image_0000002791861277.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/k_39jRAXQcOgFzCQp8ln_A/zh-cn_image_0000002784665113.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Fg4SdW98RJSr5XrNR9mHaw/zh-cn_image_0000002762502402.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-remo
 title: RemoteNotificationExtensionAbility（通知扩展Ability）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > RemoteNotificationExtensionAbility（通知扩展Ability）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:30+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:166a79d7f76ef02d4f8514925351d54e43356e2374b49dc154ed8dbb4aeef6c8
+scraped_at: 2026-10-15T07:12:42+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:a023674cab00514fe805285833aeee921cc25e94943b418422b8dad6bf01a452
 ---
 
 用户收到应用发送的语音播报消息（如订单、物流类语音提醒）时，若应用进程不在前台，Push Kit将拉起应用子进程并将消息内容传递到该进程。开发者可在该进程中完成业务处理（如语音播报），并返回自定义消息内容，Push Kit将根据该内容展示通知。开发者需在10秒内返回自定义消息内容，否则将默认展示发送消息时携带的原始内容。
@@ -42,8 +42,6 @@ import { RemoteNotificationExtensionAbility } from '@kit.PushKit';
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 对于5.1.0(18)以前版本，该属性在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)~6.0.2(22)版本，该属性在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该属性在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
-
 **起始版本：** 4.1.0(11)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -59,8 +57,6 @@ onReceiveMessage(remoteNotificationInfo: pushCommon.RemoteNotificationInfo): Pro
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)~6.0.2(22)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -134,8 +130,6 @@ onDestroy(): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)~6.0.2(22)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
 
 **起始版本：** 4.1.0(11)
 

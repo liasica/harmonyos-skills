@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API进行class相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API进行class相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:54+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:4f4fc548381af593a2d8ffe9ba849c9cc7c4ee14bb85bd065cce5483be3cb474
+scraped_at: 2026-10-15T07:06:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:c626d224507447fe9f0f01cc8db2652137b51c227fc2f35924b8e3299f0b74c1
 ---
 
 ## 简介
@@ -18,7 +18,7 @@ content_hash: sha256:4f4fc548381af593a2d8ffe9ba849c9cc7c4ee14bb85bd065cce5483be3
 
 * **类**：类是用于创建对象的模板。它提供了一种封装数据和行为的方式，以便于对数据进行处理和操作。类在ArkTS中是建立在原型（prototype）的基础上的，并且还引入了一些类独有的语法和语义。
 * **实例**：实例是通过类创建具体的对象。类定义了对象的结构和行为，而实例则是类的具体表现。通过实例化类，我们可以访问类中定义的属性和方法，并且每个实例都具有自己的属性值。
-* **原型**：ArkTS也采用Class的概念来实现类型之间的继承，早期EcmaScript规范定义了原型的概念，对象通过原型链的方式来实现继承的。原型的概念可以参考[EcmaScript的社区规范](https://262.ecma-international.org/#sec-terms-and-definitions-prototype)。
+* **原型**：ArkTS也采用Class的概念来实现类型之间的继承，早期ECMAScript规范定义了原型的概念，对象通过原型链的方式来实现继承的。原型的概念可以参考[ECMAScript的社区规范](https://262.ecma-international.org/#sec-terms-and-definitions-prototype)。
 
 ## 场景和功能介绍
 

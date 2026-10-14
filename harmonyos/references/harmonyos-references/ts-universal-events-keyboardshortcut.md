@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件快捷键事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 组件快捷键事件
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:15+08:00
+scraped_at: 2026-10-15T07:07:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:989e4ae24dd39d594237603cf43d95fa833cb8dd5c2062b89dba2ce891d417b0
+content_hash: sha256:9d1e2453b996c76c6a9dbc353e4cb4f815f96761a45f64d33de958eb28e799b4
 ---
 
 开发者可以设置组件的自定义组合键，每个组件可以设置多个组合键，适用于需要通过键盘快速触发组件操作的场景，可提升键盘操作效率。
@@ -130,7 +130,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/slHVLTTSRFWkUURu_5U9Cg/zh-cn_image_0000002755025416.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/9HjjmPTxQOaqpTZLK2WDHg/zh-cn_image_0000002791740277.gif)
 
 ### 示例2（快捷键的绑定和解除绑定）
 
@@ -170,4 +170,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/aL2C-MkSTS6xmWcw6M889g/zh-cn_image_0000002755185302.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/yiEMBEn0RQqPlkoAdeereg/zh-cn_image_0000002762341704.gif)

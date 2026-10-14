@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-customize
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 配置多目标产物 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:06+08:00
+scraped_at: 2026-10-15T07:06:31+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:684e531a48d4d9fb9d569bb5fa732051436294ddf50ff4b5bde8e19e2b409c6f
+content_hash: sha256:fe9a1eb1234563e94da086ca4f6b0279f641bf751897067e8c195473eadaead2
 ---
 
 某对外发布应用共有两个版本：
@@ -16,7 +16,7 @@ content_hash: sha256:684e531a48d4d9fb9d569bb5fa732051436294ddf50ff4b5bde8e19e2b4
 
 可以看出在Community版本与Ultimate版本之间，部分功能存在重合，同时也存在某些特定功能，所以期望通过一次开发以实现差异化，根据不同配置完成多种特定运行环境的开发、预览、打包、调试等功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/0JYPG9qqR0CBA7xXiH_m_g/zh-cn_image_0000002731382293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/IAwD1X71RsW_N5xIP7h9oQ/zh-cn_image_0000002731382293.png)
 
 1. 两个不同版本的软件，可能存在差异：如不同的应用标题、应用图标、版本声明。我们可以在工程级build-profile.json5->app{}->products[]中，可以对两种不同的外发版本进行差异化定制，新增两个product：Community和Ultimate。根据已支持的字段进行定制修改。
 
@@ -172,8 +172,8 @@ content_hash: sha256:684e531a48d4d9fb9d569bb5fa732051436294ddf50ff4b5bde8e19e2b4
 
 例：用户需要构建Ultimate版本的且具有vip特性的应用，可以选择product：Ultimate，target：vip，apply之后执行构建。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Nw5B2SzhTqyhbau9yidmpQ/zh-cn_image_0000002731542265.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/r41D0TENSF2DJUUQqkmOZg/zh-cn_image_0000002731542265.png)
 
 查看构建产物
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/WX9HdQyVSNuO3yufUDHVtg/zh-cn_image_0000002701822992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/2Yq73KgiQFK0HnTwMcNORg/zh-cn_image_0000002701822992.png)

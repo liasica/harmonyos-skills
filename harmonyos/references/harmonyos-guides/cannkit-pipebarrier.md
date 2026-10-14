@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-pipeb
 title: PipeBarrier(ISASI)
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 内存管理与同步控制 > 核内同步 > PipeBarrier(ISASI)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:34+08:00
+scraped_at: 2026-10-15T07:05:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ba152b99f0fe6c857603b988d687113fbec6d972c4ee424136c1e726ca68d1e9
+content_hash: sha256:37df628fab48bde55f5a04436e4826ef324e71dfe6ffefbf2bfebeb2b2753ab4
 ---
 
 ## 功能说明
@@ -63,7 +63,7 @@ Scalar流水之间的同步由硬件自动保证，调用PipeBarrier<PIPE\_S>()�
 
 **图1** Mul指令和Add指令是串行关系，必须等待Add指令执行完成后，才能执行Mul指令。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/3-6ekq3FSrS6al2fWeQQTg/zh-cn_image_0000002784664089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/KWMRs-FZTcuo4wbdS9v05A/zh-cn_image_0000002762501358.png)
 
 ```cpp
 AscendC::LocalTensor<half> src0Local;

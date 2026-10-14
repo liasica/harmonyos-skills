@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:27+08:00
+scraped_at: 2026-10-15T07:05:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:883d6cb24bf5540da46ac4b12481bea73edae58910a88ce0331f8bfcf9b35380
+content_hash: sha256:c38a0f3c19294c7dac4a3598e7765cb32d976e25168965158d9151bfc4fbc8ed
 ---
 
 ## 准备图片素材
@@ -30,31 +30,31 @@ content_hash: sha256:883d6cb24bf5540da46ac4b12481bea73edae58910a88ce0331f8bfcf9b
 
 1. 登录[AGC](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/O06yp_R9QBaxrECqVif3Ww/zh-cn_image_0000002784583785.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Sz0VNUf0T-mud1JR72-2bw/zh-cn_image_0000002791860107.png)
 2. 选择车主App所在的项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/0U5lzjJgT_Oe7F5bcDT2cQ/zh-cn_image_0000002784663965.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/T-S1Kna5RXiizKb58hMLYg/zh-cn_image_0000002762501232.png)
 3. 选择车主App对应的HarmonyOS应用，将会展示如下应用信息，其中Client ID和Client Secret会用于DK服务器向华为钱包服务器发起https请求时[获取AccessToken](../harmonyos-references/wallet-rest-api-public.md#获取accesstoken)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/5tBX65wKSbGA8B9lbsQBlg/zh-cn_image_0000002755025032.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/lkIIpwnGSxKIlU3FUQJoFw/zh-cn_image_0000002791739891.png)
 4. 选择“开放能力管理”，找到“华为钱包”，勾选并保存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/d_GLz1TmQjaKgHqUvUU68A/zh-cn_image_0000002755184920.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/qdC_FMV3SH6hIWQKTx1oaw/zh-cn_image_0000002762341312.png)
 5. 在车主App应用界面左侧的功能菜单中选择“钱包服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/C6lImVeHR8OM5fhkn_URYg/zh-cn_image_0000002784583787.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/drHoinEATZm25_hiG4IZWQ/zh-cn_image_0000002791860109.png)
 6. 点击“申请服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/dLR-xxM3T2q55_WnCp1DXw/zh-cn_image_0000002784663967.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/bEBdf8StQAO8RcnPqF_2wQ/zh-cn_image_0000002762501234.png)
 7. 选择“产品接入华为钱包服务”，然后点击“点击申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/XQOKcKaGRZSbfgaDvd2PhQ/zh-cn_image_0000002755025034.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/7d_pj-ENQhGon8dVWQ-j2g/zh-cn_image_0000002791739893.png)
 8. 选择接入版本，点击“老版本”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/-miV1LctRLqeEKYmjrU82g/zh-cn_image_0000002755184922.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/6V9CimCAQfCuugZeMJC62Q/zh-cn_image_0000002762341314.png)
 9. 配置Wallet Kit服务参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/GvQUKGEXTGOV1EqNCxXvQg/zh-cn_image_0000002784583789.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/dIcoXFNCQZCvMuVWg9aDGA/zh-cn_image_0000002791860111.png)
 
    | **参数** | **说明** |
    | --- | --- |
@@ -67,7 +67,7 @@ content_hash: sha256:883d6cb24bf5540da46ac4b12481bea73edae58910a88ce0331f8bfcf9b
    | 用户公钥 | 按照“公钥操作步骤指导说明”提供的第一种方式：“网页、短信、Email、App应用内方式生成安全密钥”，使用该方式生成的公钥，并妥善保存公钥和私钥。 |
 10. 配置NFC参数后，点击“下一步”，最终完成创建。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/UgGNyaqDRoS_7Fvf5zM_DQ/zh-cn_image_0000002784663969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/cboWEI_DQcC4_oa37roVgw/zh-cn_image_0000002762501236.png)
 
 | **参数** | **说明** |
 | --- | --- |

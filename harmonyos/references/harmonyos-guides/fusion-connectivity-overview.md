@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fusion-connec
 title: 融合短距服务开发概述
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 融合短距 > 融合短距服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:35+08:00
+scraped_at: 2026-10-15T07:04:41+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6af0ab05010fd256e8c7aed3bd5cbe9fe5516299a41e5545fc1488778871efaf
+content_hash: sha256:33a30ebe78c82b3b437267203cb131310bc76f5c577c6032aa22f46c28912bd8
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ content_hash: sha256:6af0ab05010fd256e8c7aed3bd5cbe9fe5516299a41e5545fc148877887
 
 ## 系统框架
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/akxI3Ym5RDaz6V39p7HmOg/zh-cn_image_0000002755184032.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/xOdcqcLISGC0z9s1M57QUw/zh-cn_image_0000002762340424.png)
 
 ### 模块功能说明
 

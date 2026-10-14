@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: div
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > div
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4a9e9140b9ffc17c08e49e0736cac42a758b4eb2dd1b9ce7e7a55ad280c7349e
+scraped_at: 2026-10-15T07:08:32+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:2d5e6de04a119c0bc9e8ccc77f6dbb317eb5c2e7a42d242fe4cc4da32f38f803
 ---
 
 基础容器，用作页面结构的根节点或将内容进行分组。
@@ -31,7 +31,7 @@ content_hash: sha256:4a9e9140b9ffc17c08e49e0736cac42a758b4eb2dd1b9ce7e7a55ad280c
 | flex-direction | string | row | 否 | flex容器主轴方向。可选项有：  - column：垂直方向从上到下。  - row：水平方向从左到右。 |
 | flex-wrap | string | nowrap | 否 | flex容器是单行还是多行显示，该值暂不支持动态修改。可选项有：  - nowrap：不换行，单行显示。  - wrap：换行，多行显示。 |
 | justify-content | string | flex-start | 否 | flex容器当前行的主轴对齐格式。可选项有：  - flex-start：项目位于容器的开头。  - flex-end：项目位于容器的结尾。  - center：项目位于容器的中心。  - space-between：项目位于各行之间留有空白的容器内。  - space-around：项目位于各行之前、之间、之后都留有空白的容器内。  - space-evenly5+： 均匀排列每个元素，每个元素之间的间隔相等。 |
-| align-items | string | stretch | 否 | flex容器当前行的交叉轴对齐格式，可选值为：  - stretch：弹性元素在交叉轴方向被拉伸到与容器相同的高度或宽度。  - flex-start：元素向交叉轴起点对齐。  - flex-end：元素向交叉轴终点对齐。  - center：元素在交叉轴居中。 |
+| align-items | string | stretch | 否 | 设置容器中元素交叉轴上的对齐方式：  - stretch：Flex容器内容在交叉轴方向被拉伸到与容器相同的高度或宽度。  - flex-start：Flex布局容器内元素向交叉轴起点对齐。  - flex-end：Flex布局容器内元素向交叉轴终点对齐。  - center：Flex布局容器内元素在交叉轴居中对齐。  - baseline：如Flex布局纵向排列，则该值与'flex-start'等效。横向布局时，内容元素存在文本时按照文本基线对齐，否则底部对齐。 |
 | align-content | string | flex-start | 否 | 交叉轴中有额外的空间时，多行内容对齐格式，可选值为：  - flex-start：所有行从交叉轴起点开始填充。第一行的交叉轴起点边和容器的交叉轴起点边对齐。接下来的每一行紧跟前一行。  - flex-end：所有行从交叉轴末尾开始填充。最后一行的交叉轴终点和容器的交叉轴终点对齐。同时所有后续行与前一个对齐。  - center：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的交叉轴起点边和第一行的距离相等于容器的交叉轴终点边和最后一行的距离。  - space-between：所有行在容器中平均分布。相邻两行间距相等。容器的交叉轴起点边和终点边分别与第一行和最后一行的边对齐。  - space-around：所有行在容器中平均分布，相邻两行间距相等。容器的交叉轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。 |
 | display | string | flex | 否 | 确定该元素视图框的类型，该值暂不支持动态修改。可选值为：  - flex：弹性布局  - none：不渲染此元素 |
 | grid-template-[columns|rows] | string | 1行1列 | 否 | 用于设置当前网格布局行和列的数量，不设置时默认1行1列，仅当display为grid时生效。  示例：如设置grid-template-columns为：  - 50px 100px 60px：分三列，第一列50px，第二列100px，第三列60px。  - 1fr 1fr 2fr：分三列，将父组件允许的宽分为4等份，第一列占1份，第二列占1份，第三列占2份。  - 30% 20% 50%：分三列，将父组件允许的宽为基准，第一列占30%，第二列占20%，第三列占50%。  - repeat(2,100px)：分两列，第一列100px，第二列100px。  - repeat(auto-fill,100px)5+：按照每列100px的大小和交叉轴大小计算最大正整数重复次数，按照该重复次数布满交叉轴。  - auto 1fr 1fr：分三列，第一列自适应内部子组件所需宽度，剩余空间分为两等份，第二列占一份，第三列占一份。 |
@@ -39,7 +39,6 @@ content_hash: sha256:4a9e9140b9ffc17c08e49e0736cac42a758b4eb2dd1b9ce7e7a55ad280c
 | grid-row-[start|end] | number | - | 否 | 用于设置当前元素在网格布局中的起止行号，仅当父组件display样式为grid时生效（仅div支持display样式设置为grid）。 |
 | grid-column-[start|end] | number | - | 否 | 用于设置当前元素在网格布局中的起止列号，仅当父组件display样式为grid时生效（仅div支持display样式设置为grid）。 |
 | grid-auto-flow | string | - | 否 | 使用框架自动布局算法进行网格的布局，可选值为：  - row：逐行填充元素，如果行空间不够，则新增行。  - column：逐列填充元素，如果列空间不够，则新增列。 |
-| align-items | string | - | 否 | 设置容器中元素交叉轴上的对齐方式：  - stretch：Flex容器内容在交叉轴方向被拉伸到与容器相同的高度或宽度。  - flex-start：Flex布局容器内元素向交叉轴起点对齐。  - flex-end：Flex布局容器内元素向交叉轴终点对齐。  - center：Flex布局容器内元素在交叉轴居中对齐。  - baseline：如Flex布局纵向排列，则该值与'flex-start'等效。横向布局时，内容元素存在文本时按照文本基线对齐，否则底部对齐。 |
 
 ## 事件
 
@@ -94,7 +93,7 @@ content_hash: sha256:4a9e9140b9ffc17c08e49e0736cac42a758b4eb2dd1b9ce7e7a55ad280c
 
    **2\*4卡片**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/onzgOST6RcySkqL1RsOluQ/zh-cn_image_0000002784585183.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/O9sI5V1tSu2FNftoBIUINg/zh-cn_image_0000002791861537.png)
 2. Flex Wrap样式
 
    ```html
@@ -143,4 +142,4 @@ content_hash: sha256:4a9e9140b9ffc17c08e49e0736cac42a758b4eb2dd1b9ce7e7a55ad280c
 
    **4\*4卡片**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/XsxXJtqVRcSHCLawaJOAKg/zh-cn_image_0000002784665365.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/V2aixZEOSGCNyu5afdaNqQ/zh-cn_image_0000002762502660.png)

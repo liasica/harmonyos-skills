@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行object相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行object相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a2996ed5da634a1fd1e411cdf3250ac13a8ef5e3bdd5599d516805c4c0491218
+scraped_at: 2026-10-15T07:06:11+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:4cad88cea6763a6c4fbab11eb60f91891290226dfc898c7886d61651c3246e4b
 ---
 
 ## 简介
@@ -492,7 +492,7 @@ static napi_value SetTypeTagToObject(napi_env env, napi_callback_info info)
     // 给参数（对象）设置类型标签
     napi_status status = napi_type_tag_object(env, args[0], &TagsData[index]);
     if (status != napi_ok) {
-        napi_throw_error(env, "Reconnect error", "napi_type_tag_object failed");
+        napi_throw_error(env, "napi_type_tag_object error", "napi_type_tag_object failed");
         return nullptr;
     }
     // 将bool结果转换为napi_value并返回
@@ -528,6 +528,8 @@ export const setTypeTagToObject: (obj: Object, index: number) => boolean | undef
 
 export const checkObjectTypeTag: (obj: Object, index: number) => boolean; // napi_check_object_type_tag
 ```
+
+ArkTS侧示例代码
 
 ```typescript
 // napi_type_tag_object and napi_check_object_type_tag

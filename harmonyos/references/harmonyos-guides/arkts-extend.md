@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-extend
 title: "@Extend装饰器：定义扩展组件样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Extend装饰器：定义扩展组件样式
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:03+08:00
+scraped_at: 2026-10-15T07:04:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:74b78ff602d7e968583c07c89937e325daf99715327b2e60d8eb9f5fb6d816c4
+content_hash: sha256:82465315b0c489d6aa842619409326b5d905007816fe72713adff3123a58b161
 ---
 
 在前文的示例中，可以使用[@Styles](arkts-style.md)复用样式，在@Styles的基础上，我们提供了[@Extend](../harmonyos-references/ts-custom-component-decorator-extend.md#extend)，用于扩展组件样式。
@@ -139,7 +139,7 @@ content_hash: sha256:74b78ff602d7e968583c07c89937e325daf99715327b2e60d8eb9f5fb6d
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/tV-zkBu3TWmds2eKjKRttQ/zh-cn_image_0000002755022992.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/iBIxkrt_SgKV95E56xC2ZQ/zh-cn_image_0000002762499182.gif)
 
 ## 限制条件
 
@@ -307,7 +307,7 @@ struct FancyUse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/b9Ru55TeQ6C65Emd5lVRXw/zh-cn_image_0000002755182878.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/uoBpDF9pSFS0OyKqyTWu7A/zh-cn_image_0000002791737839.png)
 
 使用@Extend将样式组合复用，示例如下。
 

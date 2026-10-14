@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: OH_NN_QuantParam
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 结构体 > OH_NN_QuantParam
 category: harmonyos-references
-scraped_at: 2026-10-11T07:28:45+08:00
+scraped_at: 2026-10-15T07:12:55+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0ad9b44ffce001d7facf72c676b63cde53627de0e26918c799c87519f6a212a4
+content_hash: sha256:87be537d2f8751e033668d3184f96915de1125f9c50921ad65c74f92a46740e0
 ---
 
 ```c
@@ -18,17 +18,17 @@ typedef struct OH_NN_QuantParam {...} OH_NN_QuantParam
 
 在量化的场景中，32位浮点型数据根据以下公式量化为定点数据：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/HbXN4XS4Q86mphuBjPb9vQ/zh-cn_image_0000002755026936.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/qlhiC8XjRMu-SFFRsXzJQA/zh-cn_image_0000002791741829.png)
 
 其中s和z是量化参数，在OH\_NN\_QuantParam中通过scale和zeroPoint保存，r是浮点数，q是量化后的结果，q\_min是量化后下界，q\_max是量化后的上界，计算方式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/QvRDOdUBRJ68eAfYJ_0HNA/zh-cn_image_0000002755186818.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/bxVkuT-xRTGwzbXDsel9yw/zh-cn_image_0000002762343256.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/NZfASvpvQAydqInNB218SQ/zh-cn_image_0000002784585685.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/IXJ9BADqQVi1xYRiBOhA2g/zh-cn_image_0000002791862049.png)
 
 clamp函数定义如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/eH7XMwZ1T1ilTI0xC-QzSw/zh-cn_image_0000002784665867.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/FINptMaFQXqIWf6hO5zQfg/zh-cn_image_0000002762503174.png)
 
 **起始版本：** 9
 

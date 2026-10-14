@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 组件适配沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 组件适配沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:22+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:f1583d1c3dac10c7fb95715ee46b4b71da794f2169bbfb18adcf8c7b544fc6cf
+scraped_at: 2026-10-15T07:04:09+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:cebd4bee386a6af1908b3e200fa75933b3beb3b9812fc5c230d29b07b0e4b749
 ---
 
 本文按导航类、弹窗类、按钮与选择类、其余组件四大场景分类，系统介绍各组件如何通过应用级开关与组件级配置开启沉浸光感，涵盖沉浸光感的视觉效果、设置方法及适配要点，帮助开发者快速完成沉浸光感的组件适配。
@@ -72,7 +72,7 @@ Toast支持通过应用级开启、组件级开启方式开启沉浸光感。
 
 ### 气泡提示（Popup和Tips）
 
-Popup和Tips支持通过应用级开启、组件级开启方式开启沉浸光感。
+Popup和Tips支持通过组件级开启方式开启沉浸光感。
 
 应用级开启：应用级开关处于[ENABLE](../harmonyos-references/arkts-apis-uimaterial.md#materialstate)模式下，气泡提示不会默认开启沉浸光感。
 
@@ -106,16 +106,17 @@ Popup和Tips支持通过应用级开启、组件级开启方式开启沉浸光�
 
 ## 按钮与选择类组件
 
-按钮与选择类组件包括Button、Select、Toggle、Slider、ChipGroup和SegmentButton，是内嵌于内容流中的交互元素，用户通过它们进行选择和操作。沉浸光感为选择类组件提供了细腻的交互反馈与通透的视觉质感：沉浸式系统材质通常使用较薄的材质样式（ULTRA\_THIN或THIN），在保持组件背景通透的同时，通过[ImmersiveOptions](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)中的交互形变（interactive）和点光源（lightEffect）为按压、触摸等操作提供灵动的视觉反馈，替代组件默认的按压态和悬浮态效果。
+按钮与选择类组件包括Button、Select、Toggle、Slider、ChipGroup/ChipGroupV2和SegmentButton/SegmentButtonV2，是内嵌于内容流中的交互元素，用户通过它们进行选择和操作。沉浸光感为选择类组件提供了细腻的交互反馈与通透的视觉质感：沉浸式系统材质通常使用较薄的材质样式（ULTRA\_THIN或THIN），在保持组件背景通透的同时，通过[ImmersiveOptions](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)中的交互形变（interactive）和点光源（lightEffect）为按压、触摸等操作提供灵动的视觉反馈，替代组件默认的按压态和悬浮态效果。
 
 ### 按钮（Button）
 
-按钮支持通过应用级开启、组件级开启方式开启沉浸光感。
+按钮支持通过组件级开启方式开启沉浸光感。
 
 应用级开启：应用级开关处于[ENABLE](../harmonyos-references/arkts-apis-uimaterial.md#materialstate)模式下，按钮不会默认开启沉浸光感。
 
 组件级开启：按钮支持通过[systemMaterial](../harmonyos-references/ts-universal-attributes-image-effect.md#systemmaterial)属性为[Button](../harmonyos-references/ts-basic-components-button.md)组件设置沉浸光感效果。
 
+* 本组件沉浸光感效果仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 * 材质样式为THIN或ULTRA\_THIN时，[fontColor](../harmonyos-references/ts-basic-components-button.md#fontcolor)使用系统预定义的可反色颜色资源，可随材质自动反色。
 * 当沉浸光感启用了光感交互反馈效果（[lightEffect](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)）时，按钮默认的点击态和悬浮态视觉反馈不再展示，由材质的光感交互反馈效果替代。
 * 配置沉浸光感但未设置[buttonStyle](../harmonyos-references/ts-basic-components-button.md#buttonstyle11)、[backgroundColor](../harmonyos-references/ts-universal-attributes-background.md#backgroundcolor)等颜色相关属性且未设置材质颜色时，默认生效Button主题色的材质样式。
@@ -171,7 +172,8 @@ Popup和Tips支持通过应用级开启、组件级开启方式开启沉浸光�
 
 组件级开启：子页签支持通过[ChipGroup](../harmonyos-references/ohos-arkui-advanced-chipgroup.md)、[ChipGroupV2](../harmonyos-references/ohos-arkui-advanced-chipgroupv2.md)的backgroundSystemMaterial、selectedBackgroundSystemMaterial（选中状态）和iconBackgroundSystemMaterial（图标）字段设置沉浸光感效果。
 
-需要文字、图标颜色随材质自动反色时，颜色应使用系统预定义的可反色颜色资源（如$r('sys.color.font\_primary')），硬编码颜色值不会触发自动反色，详见[设置沉浸式系统材质反色](arkts-immersive-light-sense-common-capability.md#设置沉浸式系统材质反色)。
+* 本组件沉浸光感效果仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
+* 需要文字、图标颜色随材质自动反色时，颜色应使用系统预定义的可反色颜色资源（如$r('sys.color.font\_primary')），硬编码颜色值不会触发自动反色，详见[设置沉浸式系统材质反色](arkts-immersive-light-sense-common-capability.md#设置沉浸式系统材质反色)。
 
 组件开启沉浸光感的效果请参见[示例6（设置系统材质样式）](../harmonyos-references/ohos-arkui-advanced-chipgroup.md#示例6设置系统材质样式)和[示例7（设置组件选中状态的系统材质样式）](../harmonyos-references/ohos-arkui-advanced-chipgroup.md#示例7设置组件选中状态的系统材质样式)。
 
@@ -183,6 +185,7 @@ Popup和Tips支持通过应用级开启、组件级开启方式开启沉浸光�
 
 组件级开启：[SegmentButton](../harmonyos-references/ohos-arkui-advanced-segmentbutton.md)支持通过SegmentButtonOptions中的backgroundSystemMaterial字段设置沉浸光感效果；[SegmentButtonV2](../harmonyos-references/ohos-arkui-advanced-segmentbuttonv2.md)通过各类分段按钮options参数中的backgroundSystemMaterial字段设置。
 
+* 本组件沉浸光感效果仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 * SegmentButton的胶囊类多选分段按钮（[SegmentButtonOptions](../harmonyos-references/ohos-arkui-advanced-segmentbutton.md#segmentbuttonoptions)的type为“capsule”且[SegmentButtonOptions](../harmonyos-references/ohos-arkui-advanced-segmentbutton.md#segmentbuttonoptions)的multiply为true）不支持backgroundSystemMaterial，设置后不生效。MultiCapsuleSegmentButtonV2不支持沉浸光感。
 * 分段按钮开启沉浸光感后，支持选中项背景跟随手指拖拽，否则不支持跟随手指拖拽。
 * 设置自动反色时，即colorInvert为true，如果SegmentButton中的fontColor、selectedFontColor，或SegmentButtonV2中的itemFontColor、itemSelectedFontColor、itemIconFillColor、itemSelectedIconFillColor等使用支持反色的系统资源，颜色自动适配到材质背景色的反色。

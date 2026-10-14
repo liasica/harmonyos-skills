@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo restart
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo restart
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:53+08:00
+scraped_at: 2026-10-15T07:06:15+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:c8d7c95bb595efc9f126b0b96891125522c1f27b422546015e7d4ab253115f9e
+content_hash: sha256:782cb085b7df8af7b3cd3abe2fdda25650a0087c47a20712d6570df87e6e3214
 ---
 
 重新启动ohpm-repo服务。
@@ -38,4 +38,4 @@ ohpm-repo restart
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/vpEmDT2gSGeU5CypUuW5Xg/zh-cn_image_0000002731541813.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/-tSbzFe-QMG5ggzSaR68BQ/zh-cn_image_0000002731541813.png "点击放大")

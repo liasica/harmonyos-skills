@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 文本显示 (Text/Span)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 文本显示 (Text/Span)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:07+08:00
+scraped_at: 2026-10-15T07:04:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:580c1fd8ef92ce36f16cbd48efd08c84eaa4ea8361efa1fa315cd29d82bfe06e
+content_hash: sha256:c958fa4da2e26f133dcd9a8cba53b77831ff3d81271b8432e72aa082ffcef9b6
 ---
 
 Text是文本组件，用于展示用户视图，如显示文章的文字内容。该组件支持绑定自定义文本选择菜单，用户可根据需要选择不同功能。此外，还可以扩展自定义菜单，丰富可用选项，进一步提升用户体验。Span则用于展示行内文本。
@@ -24,7 +24,7 @@ Text可通过以下两种方式来创建：
   Text('我是一段文本')
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/0WTZ2GWwS2CRfpopLtKWUQ/zh-cn_image_0000002784662287.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/PFfZQxoLTxWH7KMwemQBdw/zh-cn_image_0000002762499548.png)
 
 * 引用Resource资源。
 
@@ -51,7 +51,7 @@ Text可通过以下两种方式来创建：
     .width(300)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/s6dQjNffRdaVuK8oQIVt9g/zh-cn_image_0000002755023354.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/vYBrBxzBStW_8vnERfQGXQ/zh-cn_image_0000002791738209.png)
 
 ## 添加子组件
 
@@ -71,7 +71,7 @@ Text可通过以下两种方式来创建：
   .borderWidth(1)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/PY0vvdIFTA2Afsrvm_AM_g/zh-cn_image_0000002755183240.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/UDz1PGkYRESwhe-HDTnYVA/zh-cn_image_0000002762339628.png)
 * 设置文本装饰线及颜色。
 
   通过[decoration](../harmonyos-references/ts-basic-components-span.md#decoration)设置文本装饰线及颜色。
@@ -99,7 +99,7 @@ Text可通过以下两种方式来创建：
   .padding(10)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/RHL4Eu4aSOqf8W4NprTgsQ/zh-cn_image_0000002784582105.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ckeyDIAWSBi_MZxSBKr9QA/zh-cn_image_0000002791858423.png)
 * 通过[textCase](../harmonyos-references/ts-basic-components-span.md#textcase)设置文字一直保持大写或者小写状态。
 
   ```typescript
@@ -111,7 +111,7 @@ Text可通过以下两种方式来创建：
   .padding(10)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Hf3WAzubR-uvt6TPS7z4aw/zh-cn_image_0000002784662289.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/xIhTsqwvTwqEhcbpKJSHPQ/zh-cn_image_0000002762499550.png)
 * 添加事件。
 
   由于Span组件无尺寸信息，仅支持添加点击事件[onClick](../harmonyos-references/ts-universal-events-click.md#onclick)、悬浮事件[onHover](../harmonyos-references/ts-universal-events-hover.md#onhover)。
@@ -157,7 +157,7 @@ Text可通过以下两种方式来创建：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/W0_rgOnbR-Wy9o58zmfdvg/zh-cn_image_0000002755023356.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/XLPIF5wJRSmLXiKUJpzbqA/zh-cn_image_0000002791738211.gif)
 
 ## 创建自定义文本样式
 
@@ -223,7 +223,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .padding(10)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/YD8PV9VMRIy_8vDbKgEwWA/zh-cn_image_0000002755183242.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/XLKWZjSCQpmgXIB6fsUMhA/zh-cn_image_0000002762339630.png)
 * 通过[textOverflow](../harmonyos-references/ts-basic-components-text.md#textoverflow)属性控制文本超长处理，textOverflow需配合[maxLines](../harmonyos-references/ts-basic-components-text.md#maxlines)一起使用（默认情况下文本自动折行）。从API version 18开始，文本超长时设置跑马灯的方式展示时，支持设置跑马灯的配置项，比如开关、步长、循环次数、方向等。
 
   ```typescript
@@ -276,7 +276,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/2_9JNPNZRmel60u9NEOsUg/zh-cn_image_0000002784582107.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ABy125MiTHSsPj60aTAlsg/zh-cn_image_0000002791858425.gif)
 * 通过[lineHeight](../harmonyos-references/ts-basic-components-text.md#lineheight)属性设置文本行高。
 
   ```typescript
@@ -290,7 +290,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .lineHeight(20)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/tT720maBRsKno6INKl9-GQ/zh-cn_image_0000002784662291.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/md2_kM9NS4ODLYsm_0hGaQ/zh-cn_image_0000002762499552.png)
 * 通过[decoration](../harmonyos-references/ts-basic-components-text.md#decoration)属性设置文本装饰线样式、颜色及其粗细。
 
   ```typescript
@@ -343,7 +343,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .borderWidth(1).padding(15).margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/hZYsDa2oRMOya-claqIeGw/zh-cn_image_0000002755023358.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/iUrto1HdTAKqVCds0uKYMw/zh-cn_image_0000002791738213.jpg)
 * 通过[baselineOffset](../harmonyos-references/ts-basic-components-text.md#baselineoffset)属性设置文本基线的偏移量。
 
   ```typescript
@@ -370,7 +370,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/WCEOCdyXSTmwoGjaVdNTHQ/zh-cn_image_0000002755183244.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/hKdvpNfAQkWFMD2yEBANSA/zh-cn_image_0000002762339632.png)
 * 通过[letterSpacing](../harmonyos-references/ts-basic-components-text.md#letterspacing)属性设置文本字符间距。
 
   ```typescript
@@ -397,7 +397,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/jhdlJNW5SeWQhc1mrzytlw/zh-cn_image_0000002784582109.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/FPbzd5SET6SkvFoiSkMZaA/zh-cn_image_0000002791858427.png)
 * 通过[minFontSize](../harmonyos-references/ts-basic-components-text.md#minfontsize)与[maxFontSize](../harmonyos-references/ts-basic-components-text.md#maxfontsize)自适应字体大小。
 
   minFontSize用于设置文本的最小显示字号，maxFontSize用于设置文本的最大显示字号。这两个属性必须同时设置才能生效，并且需要与[maxLines](../harmonyos-references/ts-basic-components-text.md#maxlines)属性或布局大小限制配合使用，单独设置任一属性将不会产生效果。
@@ -449,7 +449,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/-uR9IKm_QiqyMQYZGtVxzw/zh-cn_image_0000002784662293.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/XhsopSbwQ2a0jLai7MEBFg/zh-cn_image_0000002762499554.png)
 * 通过[textCase](../harmonyos-references/ts-basic-components-text.md#textcase)属性设置文本大小写。
 
   ```typescript
@@ -474,7 +474,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/glRQaAoqRDWgSD814l0_Qg/zh-cn_image_0000002755023360.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/4FMYUw3xRiOxYuZyQrb3Sg/zh-cn_image_0000002791738215.png)
 * 通过[copyOption](../harmonyos-references/ts-basic-components-text.md#copyoption9)属性设置文本是否可复制粘贴。
 
   ```typescript
@@ -484,7 +484,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .copyOption(CopyOptions.InApp)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/V2dW3gMdR_ibEETmLCyoMA/zh-cn_image_0000002755183246.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/GU9DdMsBSQOy26UrUHlxpA/zh-cn_image_0000002762339634.png)
 * 通过[fontFamily](../harmonyos-references/ts-basic-components-text.md#fontfamily)属性设置文本字体族。应用当前支持'HarmonyOS Sans'字体和[注册自定义字体](../harmonyos-references/js-apis-font.md)。
 
   ```typescript
@@ -493,7 +493,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .fontFamily('HarmonyOS Sans')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/BynRNCk8SpiXaNBatbe2og/zh-cn_image_0000002784582111.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/-cY-uk5uRyCsUk7JxwLKJA/zh-cn_image_0000002791858429.png)
 * 从API version 20开始，支持通过[contentTransition](../harmonyos-references/ts-basic-components-text.md#contenttransition20)属性设置数字翻牌效果。
 
   ```typescript
@@ -525,7 +525,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/vYuFSthQRkaDXtgGcbI7vA/zh-cn_image_0000002784662295.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/nmiez5zhTVq3U8DFnmy9hA/zh-cn_image_0000002762499556.gif)
 * 从API version 20开始，支持通过[optimizeTrailingSpace](../harmonyos-references/ts-basic-components-text.md#optimizetrailingspace20)设置是否在文本布局过程中优化每行末尾的空格，可解决行尾空格影响对齐显示效果问题。
 
   ```typescript
@@ -547,7 +547,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/-q13TOTpRCuXHjOiC9FA3A/zh-cn_image_0000002755023362.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/9aUUfgvERLWejICxzfIf2w/zh-cn_image_0000002791738217.jpg)
 * 从API version 20开始，支持通过[lineSpacing](../harmonyos-references/ts-basic-components-text.md#linespacing20)设置文本的行间距。当不配置[LineSpacingOptions](../harmonyos-references/ts-text-common.md#linespacingoptions20对象说明)时，首行上方和尾行下方默认会有行间距，当onlyBetweenLines设置为true时，行间距仅适用于行与行之间，首行上方无额外的行间距。
 
   ```typescript
@@ -578,7 +578,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Il2E7z9vQvezbTlwJml31g/zh-cn_image_0000002755183248.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/vnj5soQXQfSAAIg3M2QIuA/zh-cn_image_0000002762339636.jpg)
 * 从API version 20开始，支持通过[enableAutoSpacing](../harmonyos-references/ts-basic-components-text.md#enableautospacing20)设置是否开启中文与西文的自动间距。
 
   ```typescript
@@ -632,7 +632,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/k9IJdhp4RLy7Bp-0Nnn8fA/zh-cn_image_0000002784582113.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/R_IzX19TR7m20fAopwP3Yw/zh-cn_image_0000002791858431.gif)
 * 从API version 20开始，支持通过[shaderStyle](../harmonyos-references/ts-basic-components-text.md#shaderstyle20)设置渐变色。
 
   ```typescript
@@ -667,7 +667,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/K484jCYJQriXD7fYXxVEyg/zh-cn_image_0000002784662297.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/n7pbDH0zTRCw903y6G88eg/zh-cn_image_0000002762499558.png)
 
 ## 添加事件
 
@@ -709,7 +709,7 @@ struct GeneralEvents {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/B_PULyAlTrSwDfwMmWK5Hg/zh-cn_image_0000002755023364.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/uOut1fv9RY2MzaxiEvf9PA/zh-cn_image_0000002791738219.gif)
 
 ## 设置垂直居中
 
@@ -730,7 +730,7 @@ struct GeneralEvents {
   .textVerticalAlign(TextVerticalAlign.CENTER)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Ad7-Q8zlRcutU79S_n6thw/zh-cn_image_0000002755183250.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ucb2d6VqQfCK4Wp5kKpkXg/zh-cn_image_0000002762339638.png)
 
 ## 设置选中菜单
 
@@ -747,7 +747,7 @@ struct GeneralEvents {
     .copyOption(CopyOptions.InApp)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/YKioRGqUQyylywWqNGttRw/zh-cn_image_0000002784582115.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/6a0sN-mPQS25B9yJAVa4WQ/zh-cn_image_0000002791858433.jpg)
 * Text组件通过设置[bindSelectionMenu](../harmonyos-references/ts-basic-components-text.md#bindselectionmenu11)属性绑定自定义选择菜单。
 
   ```typescript
@@ -797,7 +797,7 @@ struct GeneralEvents {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/aymQKLpaSMeLJQB6ld5Zxw/zh-cn_image_0000002784662299.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/yFXsEMudRSeVIsxJHb_ebA/zh-cn_image_0000002762499560.gif)
 * Text组件通过设置[editMenuOptions](../harmonyos-references/ts-basic-components-text.md#editmenuoptions12)属性扩展自定义选择菜单，可以设置扩展项的文本内容、图标以及回调方法。
 
   ```typescript
@@ -857,7 +857,7 @@ struct GeneralEvents {
   };
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/iq0NZJdKRjSx14ou6-wUrQ/zh-cn_image_0000002755023366.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/QGKYm8n8RuyvTbu-Jal9tg/zh-cn_image_0000002791738221.gif)
 
 ### 关闭选中菜单
 
@@ -906,7 +906,7 @@ struct GeneralEvents {
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Uk9A_JMUQ-i9PI2XTJ9W9Q/zh-cn_image_0000002755183252.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/x2WBNpORQEyC9hyR2m1KZg/zh-cn_image_0000002762339640.gif)
 
 ### 屏蔽系统菜单回调和自定义扩展菜单
 
@@ -1044,7 +1044,7 @@ struct CustomAndBlockMenus {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/YPjUxyNuS1unV4UwSicW7Q/zh-cn_image_0000002784582117.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/yG9CTlACRBSuK8_LfijTrg/zh-cn_image_0000002791858435.gif)
 
 ### 屏蔽系统服务类菜单
 
@@ -1094,7 +1094,7 @@ struct CustomAndBlockMenus {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/jlgWByN6TL--xstrr9kJKA/zh-cn_image_0000002784662301.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/5cp9CGRbTGSMVEvDs0YB4A/zh-cn_image_0000002762499562.jpg)
 * 从API version 20开始，支持通过[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)屏蔽文本选择菜单内指定的系统服务菜单项。更多详见[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)的API文档接口说明。以下示例只是完整示例工程中的一个示例，为了不影响工程其他页面示例效果，仅在页面的出现和消失生命周期中进行系统服务菜单的禁用和恢复，实际场景可自行选择其他时机，比如[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)和[onDestroy](../harmonyos-references/js-apis-app-ability-uiability.md#ondestroy)。
 
   ```typescript
@@ -1143,7 +1143,7 @@ struct CustomAndBlockMenus {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/0IDDItEcREijTpt4Y9swSQ/zh-cn_image_0000002755023368.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/9lEdF8bTQ2mNnTj5pomijg/zh-cn_image_0000002791738223.jpg)
 
 ### 默认菜单支持自定义刷新能力
 
@@ -1228,7 +1228,7 @@ struct PrepareMenu {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/SfKicwmpQRK7GlyiyWyU_A/zh-cn_image_0000002755183254.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/5gH5_v06SRyZKqtPKsQGdQ/zh-cn_image_0000002762339642.gif)
 
 ## 设置AI菜单
 
@@ -1260,7 +1260,7 @@ Text组件通过[enableDataDetector](../harmonyos-references/ts-basic-components
 * 如果需要调整识别出的样式，可以通过[dataDetectorConfig](../harmonyos-references/ts-basic-components-text.md#datadetectorconfig11)实现，具体可以参考[TextDataDetectorConfig](../harmonyos-references/ts-text-common.md#textdatadetectorconfig11对象说明)配置项。
 * 如果需要调整菜单的位置，可以通过[editMenuOptions](../harmonyos-references/ts-basic-components-text.md#editmenuoptions12)实现，具体可以参考示例[文本扩展自定义菜单](../harmonyos-references/ts-basic-components-text.md#示例12文本扩展自定义菜单)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/4Rg65RfzRyKZBfrUQfQCRQ/zh-cn_image_0000002784582119.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/wqdO5cYXSta0BZBok9lMjA/zh-cn_image_0000002791858437.gif)
 
 ## 实现热搜榜
 
@@ -1370,7 +1370,7 @@ struct TextHotSearch {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/QWZXvM2rSNeoF9_CJ3FYug/zh-cn_image_0000002784662303.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/HqK-gsGVSY22On9xQAY43A/zh-cn_image_0000002762499564.png)
 
 ## 示例代码
 

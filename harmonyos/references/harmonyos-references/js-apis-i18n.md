@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.i18n (国际化-I18n)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.i18n (国际化-I18n)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:49a8829105bfbfc2ada78b01f4650d65f27d164673be0979276f08080364755a
+scraped_at: 2026-10-15T07:09:25+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:e23f1c9dde4a57b9d88b61b5ed441c88555f4bdb56b0787412d26fe2a9ffd8f8
 ---
 
 本模块提供系统相关的以及增强的[国际化](../harmonyos-guides/i18n-l10n.md)能力，包括区域管理、电话号码处理、日历等，相关接口为[ECMA 402](https://dev.ecma-international.org/publications-and-standards/standards/ecma-402/)标准中未定义的补充接口。[国际化-Intl](js-apis-intl.md)模块提供了ECMA 402标准定义的基础国际化接口，与本模块共同使用可提供完整的国际化能力。接口中使用的名词定义如下：
@@ -1452,7 +1452,7 @@ let isExist = i18n.ChineseCalendar.checkLeapMonth(2026, 43, 2);
 | cyclicalYear | number | 否 | 否 | 农历的干支年。  取值范围：[1, 60]。 |
 | month | number | 否 | 否 | 农历的月。  **说明：**  月份从0开始计数，0表示一月。 |
 | date | number | 否 | 否 | 农历的日。 |
-| isLeapMonth | boolean | 否 | 是 | 是否是闰月。默认值：false。 |
+| isLeapMonth | boolean | 否 | 是 | 该月是否是闰月。  true表示该月是闰月，false表示该月不是闰月。默认值：false。 |
 | hour | number | 否 | 是 | 农历的时。默认值：0。 |
 | minute | number | 否 | 是 | 农历的分。默认值：0。 |
 | second | number | 否 | 是 | 农历的秒。默认值：0。 |
@@ -1562,10 +1562,10 @@ let option: i18n.PhoneNumberFormatOptions = { type: 'TYPING' };
 let typingFormatter: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', option);
 let phoneNumber: string = '130493';
 let formatResult: string = '';
-for (let i = 0; i < phoneNumber.length; i++) {
-  formatResult += phoneNumber.charAt(i);
+phoneNumber.split('').forEach((char: string) => {
+  formatResult += char;
   formatResult = typingFormatter.format(formatResult); // formatResult = '130 493'
-}
+});
 ```
 
 ### getLocationName9+
@@ -2762,11 +2762,10 @@ transform(text: string): string
 import { i18n } from '@kit.LocalizationKit';
 
 let transliterator: i18n.Transliterator = i18n.Transliterator.getInstance('Any-Latn');
-let wordArray: string[] = ['中国', '德国', '美国', '法国']
-for (let i = 0; i < wordArray.length; i++) {
-  let transliterateLatn: string =
-    transliterator.transform(wordArray[i]); // transliterateLatn依次为：'zhōng guó', 'dé guó', 'měi guó', 'fǎ guó'
-}
+let wordArray: string[] = ['中国', '德国', '美国', '法国'];
+wordArray.forEach((word: string): void => {
+  let transliterateLatn: string = transliterator.transform(word); // transliterateLatn依次为：'zhōng guó', 'dé guó', 'měi guó', 'fǎ guó'
+});
 
 // 汉语音译去声调
 transliterator = i18n.Transliterator.getInstance('Any-Latn;Latin-Ascii');

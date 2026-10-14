@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: WithEnv：环境变量容器
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 响应式环境变量 > WithEnv：环境变量容器
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:46+08:00
+scraped_at: 2026-10-15T07:08:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:761337f1ffe9316478a30c0e7aa4b5a7f6bd16f9ddc451ef54b87983ce07a6aa
+content_hash: sha256:852dfe1273a3306eddb89b0550e081a69e10433e25bb14a2b768fab5aa6e2aa9
 ---
 
 WithEnv组件用于为子组件树设置局部环境变量作用域。开发者可以通过该组件为后代组件提供自定义环境变量，或设置系统环境变量。
@@ -144,7 +144,7 @@ struct WithEnvExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/QVqterbtRNypkhAH_FGzhg/zh-cn_image_0000002755026150.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/6E_GIeZ4TuSVitr314GCQw/zh-cn_image_0000002791741033.png)
 
 ### 示例2（设置局部布局方向）
 
@@ -194,4 +194,4 @@ struct WithEnvExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/hrX9eMtmRDWrDGcRX2zaWg/zh-cn_image_0000002755186034.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/4stRLavfTQ60TUd3WnyTiw/zh-cn_image_0000002762342456.gif)

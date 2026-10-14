@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过键值型数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过键值型数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:54+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b4bcd32a9085ee68d26a4d8c81640aefd3d75ab01686d0ba8cce324268163062
+scraped_at: 2026-10-15T07:03:56+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:72ba802bed31ffbac8a5a1939fb170417dc2cd856c9774964e7654f572415dcc
 ---
 
 ## 场景介绍
@@ -35,54 +35,41 @@ content_hash: sha256:b4bcd32a9085ee68d26a4d8c81640aefd3d75ab01686d0ba8cce3242681
 
 ## 开发步骤
 
-1. 若要使用键值型数据库，首先要使用createKVManager()方法获取一个KVManager实例，用于管理数据库对象。示例代码如下所示：
+1. 若要使用键值型数据库，首先要使用createKVManager()方法获取一个KVManager实例，用于管理数据库对象。此处context获取以Stage模型为例，FA模型context的获取请见[context](../lite-wearable-guides/application-context-fa.md)，示例代码如下所示：
 
-   ```ts
-   // 导入模块
-   // 在pages目录下新建KvStoreInterface.ets
+   ```typescript
    import { distributedKVStore } from '@kit.ArkData';
    import { BusinessError } from '@kit.BasicServicesKit';
+   import { distributedDeviceManager } from '@kit.DistributedServiceKit';
    import EntryAbility from '../entryability/EntryAbility';
-   // Logger为hilog封装后实现的打印功能
    import Logger from '../common/Logger';
 
    let kvManager: distributedKVStore.KVManager | undefined = undefined;
    let kvStore: distributedKVStore.SingleKVStore | undefined = undefined;
    let appId: string = 'com.example.kvstoresamples';
    let storeId: string = 'storeId';
-   // Stage模型context从EntryAbility.ets中获取
+   // 获取context
    const context = EntryAbility.getContext();
 
-   // FA模型获取context
-   import { featureAbility } from '@kit.AbilityKit';
-   import { BusinessError } from '@kit.BasicServicesKit';
-
-   let context = featureAbility.getContext();
-
-   // 下面所有接口的代码都实现在KvInterface中
-   export class KvInterface {
-   }
-   ```
-
-   ```typescript
-   public CreateKvManager = (() => {
-     Logger.info('CreateKvManager start');
-     if (typeof (kvManager) === 'undefined') {
-       const kvManagerConfig: distributedKVStore.KVManagerConfig = {
-         bundleName: appId,
-         context: context
-       };
-       try {
-         // 创建KVManager实例
-         kvManager = distributedKVStore.createKVManager(kvManagerConfig);
-         Logger.info('Succeeded in creating KVManager.');
-       } catch (err) {
-         Logger.error(`Failed to create KVManager. Code:${err.code},message:${err.message}`);
+   // ...
+     public CreateKvManager = (() => {
+       Logger.info('CreateKvManager start');
+       if (typeof (kvManager) === 'undefined') {
+         const kvManagerConfig: distributedKVStore.KVManagerConfig = {
+           bundleName: appId,
+           context: context
+         };
+         try {
+           // 创建KVManager实例
+           kvManager = distributedKVStore.createKVManager(kvManagerConfig);
+           Logger.info('Succeeded in creating KVManager.');
+         } catch (err) {
+           Logger.error(`Failed to create KVManager. Code:${err.code},message:${err.message}`);
+         }
+       } else {
+         Logger.info ('KVManager has created');
        }
-     } else {
-       Logger.info ('KVManager has created');
-     }
-   })
+     })
    ```
 2. 使用getKVStore()方法创建并获取键值数据库。示例代码如下所示：
 

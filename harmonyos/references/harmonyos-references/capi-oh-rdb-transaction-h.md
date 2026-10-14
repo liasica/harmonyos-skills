@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-r
 title: oh_rdb_transaction.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_rdb_transaction.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8f428d513718b8f2dc9aabd44d631308f01e563c03f5ab63f4300c21aff5c5ec
+scraped_at: 2026-10-15T07:07:21+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:3fe9e1c1985b6108b811428e11711274b95df04ffb61c1d69ce745674d1eae5b
 ---
 
 ## 概述
@@ -56,7 +56,7 @@ content_hash: sha256:8f428d513718b8f2dc9aabd44d631308f01e563c03f5ab63f4300c21aff
 | [OH\_Cursor \*OH\_RdbTrans\_QuerySql(OH\_Rdb\_Transaction \*trans, const char \*sql, const OH\_Data\_Values \*args)](capi-oh-rdb-transaction-h.md#oh_rdbtrans_querysql) | 根据SQL语句查询数据库中的数据。 |
 | [int OH\_RdbTrans\_Execute(OH\_Rdb\_Transaction \*trans, const char \*sql, const OH\_Data\_Values \*args, OH\_Data\_Value \*\*result)](capi-oh-rdb-transaction-h.md#oh_rdbtrans_execute) | 执行包含指定参数的SQL语句。 |
 | [int OH\_RdbTrans\_Destroy(OH\_Rdb\_Transaction \*trans)](capi-oh-rdb-transaction-h.md#oh_rdbtrans_destroy) | 销毁事务对象。 |
-| [OH\_Cursor \*OH\_RdbTrans\_QueryWithoutRowCount(OH\_Rdb\_Transaction \*trans, const OH\_Predicates \*predicates, const char \* const columns[], int len)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-rdb-transaction-h#oh_rdbtrans_querywithoutrowcount) | 根据指定的条件查询数据库中的数据，不计算行数。 |
+| [OH\_Cursor \*OH\_RdbTrans\_QueryWithoutRowCount(OH\_Rdb\_Transaction \*trans, const OH\_Predicates \*predicates, const char \*const columns[], int len)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-rdb-transaction-h#oh_rdbtrans_querywithoutrowcount) | 根据指定的条件查询数据库中的数据，不计算行数。 |
 | [OH\_Cursor \*OH\_RdbTrans\_QuerySqlWithoutRowCount(OH\_Rdb\_Transaction \*trans, const char \*sql, const OH\_Data\_Values \*args)](capi-oh-rdb-transaction-h.md#oh_rdbtrans_querysqlwithoutrowcount) | 根据SQL语句查询数据库中的数据，不计算行数。 |
 | [int OH\_RdbTrans\_BatchInsertWithReturning(OH\_Rdb\_Transaction \*trans, const char \*table, const OH\_Data\_VBuckets \*rows, Rdb\_ConflictResolution resolution, OH\_RDB\_ReturningContext \*context)](capi-oh-rdb-transaction-h.md#oh_rdbtrans_batchinsertwithreturning) | 将批量数据插入目标表，并将变更信息输出到上下文中。 |
 | [int OH\_RdbTrans\_UpdateWithReturning(OH\_Rdb\_Transaction \*trans, OH\_VBucket \*row, OH\_Predicates \*predicates, Rdb\_ConflictResolution resolution, OH\_RDB\_ReturningContext \*context)](capi-oh-rdb-transaction-h.md#oh_rdbtrans_updatewithreturning) | 根据指定条件更新数据库中的数据并输出更改信息到上下文。 |
@@ -479,7 +479,7 @@ int OH_RdbTrans_Destroy(OH_Rdb_Transaction *trans)
 ### OH\_RdbTrans\_QueryWithoutRowCount()
 
 ```c
-OH_Cursor *OH_RdbTrans_QueryWithoutRowCount(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, const char * const columns[], int len)
+OH_Cursor *OH_RdbTrans_QueryWithoutRowCount(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, const char *const columns[], int len)
 ```
 
 **描述**

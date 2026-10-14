@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 基于服务账号生成鉴权令牌
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 开发准备 > 基于服务账号生成鉴权令牌
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:28+08:00
+scraped_at: 2026-10-15T07:04:33+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:732a2f8e9d720b7d21ab6770bedd9db3ef0336863691169209c64a6a89b430b3
+content_hash: sha256:4b51dc27446eac77a4155d015eccb4169d99ec47df8cd5f86e5a7dd545b6a38f
 ---
 
 **注意** 
@@ -40,7 +40,7 @@ BRNss*****7az5oU7-Zp5g9X2WJVXXX
 
    开发者需要在华为开发者联盟的[API Console](https://developer.huawei.com/consumer/cn/console/overview)上创建并下载服务账号的密钥文件，相关创建步骤请参见[API Console操作指南-服务账号密钥](../start/api-0000001062522591.md#section91275725415)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/QVRAH6XMS0ygxABqLM5yDQ/zh-cn_image_0000002755183984.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/A0cqY2E_RdadvhCsgVZowQ/zh-cn_image_0000002762340374.png)
 
    **说明** 
 

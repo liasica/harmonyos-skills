@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件的自定义布局
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件的自定义布局
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:39+08:00
+scraped_at: 2026-10-15T07:08:17+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b6e1d3bdd0171c06e0e39abfb641a3e742c5bb1b8844d4ae8cf78d93f9d7e119
+content_hash: sha256:eb93388d7e451fb0f640d2f349cdfba474aafa82f7ed8f17de5283647a3311d9
 ---
 
 自定义组件的自定义布局允许开发者通过onMeasureSize和onPlaceChildren接口，以数据计算的方式精确控制子组件的位置和尺寸，实现更灵活的布局效果。适用于需要实现复杂非标准布局、内置布局组件无法满足特定排列需求、需要根据动态数据计算子组件位置和尺寸等场景。
@@ -525,7 +525,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/6Yy2RjOBTZ2wf3n2PpkxMA/zh-cn_image_0000002784584823.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/60pPlVRoTqSb4oqczydE1w/zh-cn_image_0000002791861167.png)
 
 ### 示例2（判断是否参与布局计算）
 
@@ -628,7 +628,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Qdd3o1FZQtO1bILJEXM_fQ/zh-cn_image_0000002784665005.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/62WFHAXATlaYTgHBHFwuow/zh-cn_image_0000002762502294.png)
 
 ### 示例3（获取子组件FrameNode并设置相关属性）
 
@@ -705,7 +705,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/L3W3z3QUQaKnjirpn2o-wQ/zh-cn_image_0000002755026074.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/zSrHT0thSJ2NNyHHfzSF3w/zh-cn_image_0000002791740953.jpg)
 
 ### 示例4（子组件超过父组件大小约束）
 
@@ -779,4 +779,4 @@ struct CustomLayoutText {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/dD238WzIQEKI_7haGlPdDw/zh-cn_image_0000002755185958.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Y3gzoD3wS_KoY62zRU8S1Q/zh-cn_image_0000002762342376.jpg)

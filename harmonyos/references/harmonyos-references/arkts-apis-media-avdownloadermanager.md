@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVDownloaderManager)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVDownloaderManager)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7421e165d8522d2c5e5c8cc8e1ac717e71afe4a83f390bc434ee74f70cabc70d
+scraped_at: 2026-10-15T07:11:28+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:5c7fd4c955e7295ece5f73eb98abc34aefb84441f1ee219dcca4382dcbdaf670
 ---
 
 离线下载任务管理接口，用于管理媒体资源的离线下载任务，包括创建、暂停、恢复、移除下载任务以及监听下载状态和进度变化事件。适用于需要在应用内支持流媒体资源离线缓存、实现无网络环境下播放等场景，可帮助用户节省流量并提升弱网或离线场景下的媒体播放体验。通过[createAVDownloaderManager()](arkts-apis-media-f.md#mediacreateavdownloadermanager)创建实例。
@@ -13,6 +13,8 @@ content_hash: sha256:7421e165d8522d2c5e5c8cc8e1ac717e71afe4a83f390bc434ee74f70ca
 **说明** 
 
 * 本Interface首批接口从API版本26.0.0开始支持。
+* 离线下载任务的缓存路径由系统分配，不支持开发者自定义。
+* 该缓存路径与应用的缓存目录相对应，可能因配额超限、系统空间不足或用户操作等问题被系统清理，具体清理机制请参考[应用文件目录与应用文件路径](../harmonyos-guides/app-sandbox-directory.md#应用文件目录与应用文件路径)中的“表1 应用文件路径详细说明”。建议开发者在下载任务完成后，及时将缓存数据移动到应用的持久化目录中，以方便管理。
 
 ## 导入模块
 
@@ -79,6 +81,10 @@ async function test() {
 addAVDownloadTask(source: MediaSource): string
 
 根据媒体源创建一个离线下载任务。默认情况下，下载任务仅在Wi-Fi环境下进行，如需在蜂窝网络环境下下载，请先设置allowsCellularAccess为true。
+
+**说明** 
+
+下载任务的缓存路径由系统自动分配，不支持开发者指定。如需获取缓存路径，请在任务创建后调用[getTaskCacheDirectory](arkts-apis-media-avdownloadermanager.md#gettaskcachedirectory)。
 
 **起始版本：** 26.0.0
 
@@ -263,6 +269,12 @@ async function test() {
 getTaskCacheDirectory(taskId: string): string
 
 获取指定离线下载任务的缓存目录。
+
+**说明** 
+
+* 返回的缓存路径为系统分配的缓存目录，可能因配额超限、系统空间不足或用户操作等问题被系统清理，具体清理机制请参考[应用文件目录与应用文件路径](../harmonyos-guides/app-sandbox-directory.md#应用文件目录与应用文件路径)中的“表1 应用文件路径详细说明”。
+* 建议开发者在下载任务完成后，及时将缓存数据移动到应用的持久化目录中，以方便管理。
+* 数据移动操作应在下载任务完成后进行，下载过程中请勿移动或修改缓存数据，否则可能导致下载任务异常。
 
 **起始版本：** 26.0.0
 

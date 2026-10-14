@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-contro
 title: 相机控制器(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机控制器(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:55+08:00
+scraped_at: 2026-10-15T07:05:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6fd809a743060cebad2ae2556b0afd036f349ba296fb5c0b733df72495f514eb
+content_hash: sha256:5e57e9b5a6c9d7f41be039cacda0d8ea1f96801c2b5da9f957ec6d11bb43cc20
 ---
 
 从API version 20开始，相机框架通过相机控制器，为应用在直播场景提供美颜、虚化等能力。
@@ -51,10 +51,10 @@ content_hash: sha256:6fd809a743060cebad2ae2556b0afd036f349ba296fb5c0b733df72495f
    ```
 5. 使能相机控制器后，可以在状态栏看到新增的视频效果图标。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/o2dmhDNmSuiZn86ABnfhbw/zh-cn_image_0000002755184242.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/xmlEQAQGQZ-XLKo2_wwKTQ/zh-cn_image_0000002762340634.png)
 6. 点击视频效果图标，在弹出的二级页面中，用户可调节控制器支持的效果，如图所示为美颜和背景虚化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/PrHlBST4RFmlPgWbTXOqrQ/zh-cn_image_0000002784583109.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/eazvb58dTbSu21Jg_RBtuQ/zh-cn_image_0000002791859429.png)
 
 ## 状态监听
 

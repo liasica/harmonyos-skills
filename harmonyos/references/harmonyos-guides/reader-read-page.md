@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-read-p
 title: 构建阅读器
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 构建阅读器
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e411c4b8f71b57b92103fef87918fb3c41a5370e2e8aab3bf82708631eed3806
+scraped_at: 2026-10-15T07:05:40+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:c70bb4ca237345b3c059b2d6f8370b0c7c8752ba8e8a6d0479afee2e9d3aa066
 ---
 
 Reader Kit提供的阅读页组件ReadPageComponent，支持对标准的txt和富文本内容（html+css）按仿真和横滑方式进行分页排版的能力、支持翻页阅读过程中所需要的进度和行为感知能力。利用ReadPageComponent，开发者可快速实现书籍阅读的能力。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/jpD-wfOqT2-fSI4N-SqjwQ/zh-cn_image_0000002755024976.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/i9GyHpgxTui4ohDJPBPI6w/zh-cn_image_0000002791739835.png)
 
 ## 接口说明
 
@@ -103,7 +103,7 @@ Reader Kit提供的阅读页组件ReadPageComponent，支持对标准的txt和�
 
    private registerListener(): void {
      this.readerComponentController.on('pageShow', (data: readerCore.PageDataInfo): void => {
-       hilog.info(0x0000, 'testTag', 'pageshow: data is: ' + JSON.stringify(data));
+       hilog.info(0x0000, 'ReaderLog', 'pageshow: data is: ' + JSON.stringify(data));
        if (data.state === readerCore.PageState.PAGE_ON_SHOW) {
          this.isLoading = false;
        }
@@ -126,7 +126,7 @@ Reader Kit提供的阅读页组件ReadPageComponent，支持对标准的txt和�
        // 调用打开书籍接口，跳章至对应进度
        this.readerComponentController.startPlay(spineIndex|| 0, domPos);
      } catch (err) {
-       hilog.error(0x0000, 'testTag', 'startPlay: err: ' + JSON.stringify(err));
+       hilog.error(0x0000, 'ReaderLog', 'startPlay: err: ' + JSON.stringify(err));
      }
    }
 

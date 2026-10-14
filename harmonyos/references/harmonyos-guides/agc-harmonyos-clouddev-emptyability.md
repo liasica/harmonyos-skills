@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 通用云开发模板
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 附录：云开发工程模板 > 通用云开发模板
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:56+08:00
+scraped_at: 2026-10-15T07:06:18+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:2395602cf3515c54ebe7cf69602a1af3b017e1308a5eeca424134fa24ad5b872
+content_hash: sha256:2ec7e2c65656197a563e3f2cb7dad98d5f5ed281f85bfaaf4a9d5524672f2e7b
 ---
 
 ## 适用范围
@@ -49,7 +49,7 @@ content_hash: sha256:2395602cf3515c54ebe7cf69602a1af3b017e1308a5eeca424134fa24ad
       ]
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/mWC_-ZVvQ7SIjQaXnwvdFg/zh-cn_image_0000002492564672.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Xko0LMqvQtal4HO-3ZCJOQ/zh-cn_image_0000002492564672.png)
 4. 将模板工程推包到手机上，在手机上开通应用访问数据权限，即可开始体验模板。
 
    **注意** 

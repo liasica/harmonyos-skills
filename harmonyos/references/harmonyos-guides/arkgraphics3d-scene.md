@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 场景搭建与管理
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 场景搭建与管理
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:04+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:43815d5f64d3fc61a180116b464ad19dcdb4abd6a0e16a6a7a75b4f9f2893951
+scraped_at: 2026-10-15T07:05:16+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:b31ac4adfacb2a7e38c498834f49ad03ca65c6eb36a0d0ea09ca36147350dc2f
 ---
 
 一个3D场景通常由光源、相机、模型三个关键部分组成。
@@ -16,7 +16,7 @@ content_hash: sha256:43815d5f64d3fc61a180116b464ad19dcdb4abd6a0e16a6a7a75b4f9f28
 
 模型加载后，可以通过ArkUI的[Component3D](../harmonyos-references/ts-basic-components-component3d.md)渲染组件呈现给用户，Component3D负责将ArkGraphics 3D场景渲染到界面中。在自定义场景模式下，开发者可以使用ArkTS API创建并管理相机和光源节点，从而设置合适的观察角度和光照效果；在自动场景模式下，框架会根据模型自动创建基础相机和光照。ArkTS API可通过napi调用AGP中由C++实现的相应能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/AMQSneilTyOYJX8lU2kKoQ/zh-cn_image_0000002755184406.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Uk9FujnsTgipFLrPseS0IA/zh-cn_image_0000002762340798.png)
 
 ## 模型的加载及呈现
 
@@ -46,8 +46,8 @@ glTF模型中引用的纹理图片支持以下格式：
 
    ```typescript
    if (this.scene == null) {
-     // Load the model and place the gltf file in the related path. Use the actual path during loading.
-     // Switched from .gltf to .glb; same content, different format
+     // 加载模型，并将 gltf 文件放在相关路径下。加载时使用实际路径。
+     // 从 .gltf 切换为 .glb；内容相同，格式不同
      Scene.load($rawfile('gltf/DamagedHelmet/glTF/DamagedHelmet.glb'))
        .then(async (result: Scene) => {
          this.scene = result;
@@ -64,9 +64,9 @@ glTF模型中引用的纹理图片支持以下格式：
    使用SceneResourceFactory.createCamera()创建相机，并设置相机启用状态与观察位置。通过调整相机的z轴位置，可控制观察距离。随后将加载完成的Scene封装为SceneOptions，并指定渲染类型为ModelType.SURFACE，用于Component3D渲染显示。
 
    ```typescript
-   // Create a Camera.
+   // 创建一个相机。
    this.cam = await rf.createCamera({ name: 'Camera' });
-   // Set proper camera parameters.
+   // 设置合适的相机参数。
    this.cam.enabled = true;
    this.cam.position.z = 5;
 
@@ -78,7 +78,7 @@ glTF模型中引用的纹理图片支持以下格式：
 
    ```typescript
    if (this.sceneOpt) {
-     // Use Component3D to display the 3D scenario.
+     // 使用 Component3D 显示 3D 场景。
      Component3D(this.sceneOpt);
    } else {
      Text('Loading···');
@@ -121,16 +121,16 @@ ArkGraphics 3D提供了灵活的相机接口，开发者可根据需要动态创
    ```typescript
    let camera: Promise<Camera> = sceneFactory.createCamera(sceneCameraParameter);
    camera.then(async (cameraEntity: Camera) => {
-     // Enable the camera node.
+     // 启用相机节点。
      cameraEntity.enabled = true;
 
-     // Set the camera position.
+     // 设置相机位置。
      cameraEntity.position.z = 5;
 
-     // Set the FoV.
+     // 设置视场角（FoV）。
      cameraEntity.fov = 60 * Math.PI / 180;
 
-     // Set other camera parameters.
+     // 设置其他相机参数。
      // ...
      // ...
    }).catch((error: string) => {
@@ -215,10 +215,10 @@ ArkGraphics 3D提供创建光源及修改光源参数的功能，支持开发者
    ```typescript
    let light: Promise<Light> = sceneFactory.createLight(lightParameter, LightType.DIRECTIONAL);
    light.then(async (lightEntity: Light) => {
-     // Set the color of the directional light.
+     // 设置平行光的颜色。
      lightEntity.color = { r: 0.8, g: 0.1, b: 0.2, a: 1.0 };
 
-     // Set other light parameters.
+     // 设置其他光照参数。
      // ...
      // ...
    }).catch((err: string) => {
@@ -239,7 +239,7 @@ ArkGraphics 3D提供创建光源及修改光源参数的功能，支持开发者
      this.cam = await this.rf.createCamera({ name: 'Camera1' });
      this.cam.enabled = true;
      this.cam.position.z = 5;
-     // Initialize color value
+     // 初始化颜色值
      this.red = this.light.color.r;
      this.green = this.light.color.g;
      this.blue = this.light.color.b;

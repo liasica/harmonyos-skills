@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-playbac
 title: 使用AVPlayer播放视频(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 播放 > 使用AVPlayer播放视频(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:59+08:00
+scraped_at: 2026-10-15T07:05:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f9c83e0a512b9afaa1eea03bd58fcdd57d351966d898caeb4e369f15f6a7796c
+content_hash: sha256:a39aaddd17c4b902313ead7bc32b76bb46c06af559565e03210c6c976644293c
 ---
 
 当前提供两种视频播放开发的方案：
@@ -19,7 +19,7 @@ content_hash: sha256:f9c83e0a512b9afaa1eea03bd58fcdd57d351966d898caeb4e369f15f6a
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/qKXKDYucT4-sH6x0BFcxmg/zh-cn_image_0000002784663315.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/cp4dOCQ_Th2xYcEP6-WKMA/zh-cn_image_0000002762500582.png)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/arkts-apis-media-t.md#avplayerstate9)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源释放。
 

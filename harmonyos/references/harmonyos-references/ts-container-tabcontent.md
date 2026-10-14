@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: TabContent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > TabContent
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:26+08:00
+scraped_at: 2026-10-15T07:08:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:714a6e1d4be057549a79d2d1dafc1d25f7bee687967876df64d3aa7c027d9642
+content_hash: sha256:87c063fe3afb1d33fce8b3040a3af73cd12d00d49d1218de59c5d9d3e58b691e
 ---
 
 TabContent组件用于在[Tabs](ts-container-tabs.md)中定义每个页签的内容视图，支持单个子组件渲染、内容裁切控制、页签样式自定义等特性。适用于需要多页签切换的应用场景，如分类导航、功能模块切换等，帮助开发者快速实现内容分页展示和交互。
@@ -953,7 +953,7 @@ struct TabContentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/AgAjoe1VToiF0A9Grjz2gQ/zh-cn_image_0000002784584407.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/UoqurT1tSTiTrXd92HZYNQ/zh-cn_image_0000002791860739.gif)
 
 ### 示例2（自定义侧边页签）
 
@@ -1028,7 +1028,7 @@ struct TabContentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/1R_hPfETRMWNTo5OMNOQ1A/zh-cn_image_0000002784664589.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ko8qiRWtQFWCItCcXyf1Jg/zh-cn_image_0000002762501862.gif)
 
 ### 示例3（子页签/底部页签/侧边页签样式对比）
 
@@ -1205,7 +1205,7 @@ struct TabBarStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/w4xDflycRPS8rGHuU0G59g/zh-cn_image_0000002755025658.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/vHMeO8bwQrqvD45m5bF1cQ/zh-cn_image_0000002791740525.jpeg)
 
 ### 示例4（设置子页签下划线基本属性）
 
@@ -1443,7 +1443,7 @@ struct TabsAttr {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/e998ZlGyQ_yYiXep47n_zA/zh-cn_image_0000002755185542.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/74zhz-mbQhGbZl_Yx_23TQ/zh-cn_image_0000002762341952.gif)
 
 ### 示例5（设置子页签文本自适应高度属性）
 
@@ -1531,7 +1531,7 @@ struct TabsTextOverflow {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/-mnH7FX2R6-VQBObewAeKA/zh-cn_image_0000002784584409.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/6coiAAXmRJCCrF5L_Ul2Fw/zh-cn_image_0000002791860741.png)
 
 ### 示例6（设置底部页签基本属性）
 
@@ -1682,7 +1682,7 @@ struct TabContentExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/Iv7np1qZTqeWZHDplKhmxA/zh-cn_image_0000002784664591.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/EhZemuX9S-yg2dqQxvuEgg/zh-cn_image_0000002762501864.gif)
 
 ### 示例7（设置子页签/底部页签文本颜色）
 
@@ -1782,7 +1782,7 @@ struct TabBarStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Ana2HECLSQ6HqHsyIIymOg/zh-cn_image_0000002755025660.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/FzMEcWm4RnaFKa1eQ08vCA/zh-cn_image_0000002791740527.gif)
 
 ### 示例8（设置底部页签使用symbol图标）
 
@@ -1866,7 +1866,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mNdD8q1XQqCdIWB2oUX8CQ/zh-cn_image_0000002755185544.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/4misSbn_Rjy8PO6CWI9fow/zh-cn_image_0000002762341954.gif)
 
 ### 示例9（通过ComponentContent设置TabBar）
 
@@ -1972,7 +1972,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/AFVTiYJZSWSKvLnMX2eVGg/zh-cn_image_0000002784584411.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/k-8LQiF-QAakxyzKjIvf8Q/zh-cn_image_0000002791860743.gif)
 
 ### 示例10（通过ComponentContent预加载子节点）
 
@@ -2148,7 +2148,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/MoySL4CNRGeBuaPjA0ZW6Q/zh-cn_image_0000002784664593.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/m4NvmWFQQPiMwF3gLSVO4w/zh-cn_image_0000002762501866.gif)
 
 ### 示例11（设置子页签indicator为图片）
 
@@ -2214,4 +2214,4 @@ struct TabsIndicatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/KG85t3YzTVGYeychPAEfQw/zh-cn_image_0000002755025662.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/aMnQ2RH3S3WVdtVkZGF_Lg/zh-cn_image_0000002791740529.png)

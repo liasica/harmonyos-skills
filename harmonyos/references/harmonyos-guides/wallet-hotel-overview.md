@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-hotel-
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 酒店房卡 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:27+08:00
+scraped_at: 2026-10-15T07:05:44+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:5b2d48c47a2b272ea1b7be87d406e2f4ae1b29461b52112f13d297aca11e5bd2
+content_hash: sha256:a37657684cdb6c479fd22fcfb64bdf76016ba4382c2676a311b41d6f931d8fa4
 ---
 
 华为钱包将酒店房卡与会员卡合二为一。用户在线上领取会员卡，办理入住后自动激活房卡，手机轻碰门锁即可通行电梯、房门、洗衣房及健身房等场景。
@@ -17,7 +17,7 @@ content_hash: sha256:5b2d48c47a2b272ea1b7be87d406e2f4ae1b29461b52112f13d297aca11
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Kat-kPoORPufXWAWwmWTSA/zh-cn_image_0000002784583811.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Qfpq55D4Raihv1ZP7g243A/zh-cn_image_0000002791860133.png)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -35,15 +35,15 @@ content_hash: sha256:5b2d48c47a2b272ea1b7be87d406e2f4ae1b29461b52112f13d297aca11
 
 ### 酒店房卡开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/_tZVBWueQ4adVn3mL8MwmQ/zh-cn_image_0000002784663991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/-a81qgOKRCq4PtEFKURl5Q/zh-cn_image_0000002762501258.png)
 
 ### 酒店房卡展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Yt18eTDrSBuUs6FAFbKxKg/zh-cn_image_0000002755025058.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Uv6DzM7vTYmfJnJl9gFmaA/zh-cn_image_0000002791739917.png)
 
 ### 酒店房卡更新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/aibeAmIcSDqb-BzznxWKmw/zh-cn_image_0000002755184946.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/DBe-tkcTSDufT6pxwh6uCw/zh-cn_image_0000002762341340.png)
 
 ## 接入流程
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_render.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_render.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4947e4dd2290235c99f9dd9b3b3cf1fc3086760a5d786ec026535a11a8eac237
+scraped_at: 2026-10-15T07:08:42+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:1c292b5821b8601d2df6ec31bef2b01781f743f2333b3b41b343d5c28d24de0a
 ---
 
 ## 概述
@@ -2625,7 +2625,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeColorAnimatableProperty(ArkUI_ColorAnimatab
 ### OH\_ArkUI\_RenderNodeUtils\_SetContentModifierOnDraw()
 
 ```c
-int32_t OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(ArkUI_RenderContentModifierHandle modifier, void\* userData, void (\*callback)(ArkUI_DrawContext\* context, void\* userData))
+int32_t OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(ArkUI_RenderContentModifierHandle modifier, void* userData, void (*callback)(ArkUI_DrawContext* context, void* userData))
 ```
 
 **描述：**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 调试云对象
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 调试云对象
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:56+08:00
+scraped_at: 2026-10-15T07:06:18+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:add792fe057e014fcf40f39c181e00d8c3ab30c8e83df6da87e07a093fb6b6a9
+content_hash: sha256:a686b51419782a969b0a8b261c883a289236ac17858d7b8c18b1810a58dc3975
 ---
 
 云对象开发完成后，您可以对其进行调试，以验证云对象代码运行是否正常。
@@ -35,18 +35,18 @@ content_hash: sha256:add792fe057e014fcf40f39c181e00d8c3ab30c8e83df6da87e07a093fb
 
    * 如需批量调试多个云对象，右击“cloudfunctions”目录，选择“Debug Cloud Functions”，即可启动该目录下所有云对象。如“cloudfunctions”目录下同时存在云函数和云对象，将会启动所有的云函数和云对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/3mqUfkB8RNSJYg_0YkaAwA/zh-cn_image_0000002179338428.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/jYTo-B7ySZGlv6o-JBfaxw/zh-cn_image_0000002179338428.png)
 2. 在下方通知栏“cloudfunctions”窗口，查看调试日志。如果出现“Cloud Functions loaded successfully”，表示云对象已成功加载到本地运行的HTTP Server中，并生成对应的Function URI。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/kEFnzBdcT4GHs4_c60TEDQ/zh-cn_image_0000002179498092.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/yQ5Teu6-TjW1l8UN3iVZMw/zh-cn_image_0000002179498092.png)
 3. 如需设置断点调试，在函数代码中选定要设置断点的有效代码行，在行号（如下图行3）后单击鼠标左键设置断点（如下图的红点）。
 
    设置断点后，调试能够在断点处中断，并高亮显示该行。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/3zlF0_CnRuGx0D0faPTt4g/zh-cn_image_0000002179498088.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/mpbvsSpBSM26JW4I1PHW_w/zh-cn_image_0000002179498088.png)
 4. 在菜单栏选择“View > Tool Windows > Cloud Functions Requestor”，使用事件模拟器（Cloud Functions Requestor）触发云对象调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/u_nAizuKS2yo8Q1Y91wsKg/zh-cn_image_0000002214704325.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/rc_YrSz4T2-nO0N8lONQwA/zh-cn_image_0000002214704325.png)
 5. 在弹出的“Cloud Functions Requestor”面板，配置触发事件参数。
    * Cloud Function：选择需要触发的云对象，此处以云对象“my-cloud-object”为例。
    * Environment：选择云对象调用环境。此处选择“Local”，表示本地调用。
@@ -57,23 +57,23 @@ content_hash: sha256:add792fe057e014fcf40f39c181e00d8c3ab30c8e83df6da87e07a093fb
 
      如果Method的入参中的某一个是数组[]类型，那么Event中将至少包含两层方括号，如'[[1, 2], 3]'，外层的方括号表示参数列表。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/GSrqzB5EQcKcbLTUV88nkg/zh-cn_image_0000002214858713.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Xm9xMe53Sxmzm4qiIHwgQA/zh-cn_image_0000002214858713.png)
 6. （可选）点击“Save”，可保存当前触发事件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/o5vcP2BMQw-Y0QDL1wD8gA/zh-cn_image_0000002214704333.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/jVxw935lTjyH7iACbfCAYg/zh-cn_image_0000002214704333.png)
 
-   点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/TDkuCb3BSMm_YUeikWdchw/zh-cn_image_0000002179498084.png)可展开保存的触发事件，后续可直接点击“Load”加载事件。对于不需要保存的触发事件，也可以点击“Delete”删除。
+   点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/LCfphTdeS96J51_p9k1WYw/zh-cn_image_0000002179498084.png)可展开保存的触发事件，后续可直接点击“Load”加载事件。对于不需要保存的触发事件，也可以点击“Delete”删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/HJYsnuP-QUObnTkthJe_zg/zh-cn_image_0000002179498080.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/i0rJ3Az_QGiqiHeIM2edZA/zh-cn_image_0000002179498080.png)
 7. 点击“Trigger”， 将会触发执行云对象的方法，执行结果将展示在“Result”框内。
 
    **说明** 
 
    “Result”框右侧的“Logs”面板仅用于在[通过远程调用方式调试云对象](agc-harmonyos-clouddev-debugcloudobj.md#section123191549587)时查看日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/AaW-WORjReq0s6K_3KZ7tA/zh-cn_image_0000002214704357.png)
-8. 点击菜单栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/mdIjvzrXSsGuw6pvESBUGg/zh-cn_image_0000002214704361.png)，可停止调试。
-9. 根据调试结果修改云对象代码后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/v9gJzt8HRDus2QIDurRW7w/zh-cn_image_0000002179338408.png)重新以Debug模式启动调试，直至没有问题。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/lIUJjN-AS26rURn3asSa4A/zh-cn_image_0000002214704357.png)
+8. 点击菜单栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/S6VCav03SpW2gECoVEpT6g/zh-cn_image_0000002214704361.png)，可停止调试。
+9. 根据调试结果修改云对象代码后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/kHW4fqNkSba_r4FTg7zV1g/zh-cn_image_0000002179338408.png)重新以Debug模式启动调试，直至没有问题。
 10. 参考步骤5~9，完成云对象其他方法或其他云对象的调试。
 
 ## 通过远程调用方式调试云对象
@@ -83,7 +83,7 @@ content_hash: sha256:add792fe057e014fcf40f39c181e00d8c3ab30c8e83df6da87e07a093fb
 1. 参考[部署云对象](agc-harmonyos-clouddev-deploycloudobj.md)将需要调试的云对象部署至AGC云端。
 2. 在菜单栏选择“View > Tool Windows > Cloud Functions Requestor”，使用事件模拟器（Cloud Functions Requestor）触发云对象调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/g__7dsGuSIWJjwVPIGZY-Q/zh-cn_image_0000002179338432.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/POdRUIeTSiu7xuVsH6WecA/zh-cn_image_0000002179338432.png)
 3. 在弹出的“Cloud Functions Requestor”面板，配置触发事件参数。
    * Cloud Function：选择需要触发的云对象，此处依然以“my-cloud-object”为例。
    * Environment：选择云对象调用环境。此处选择“Remote”，表示远程调用。
@@ -94,9 +94,9 @@ content_hash: sha256:add792fe057e014fcf40f39c181e00d8c3ab30c8e83df6da87e07a093fb
 
      如果Method的入参中的某一个是数组[]类型，那么Event中将至少包含两层方括号，如'[[1, 2], 3]'，外层的方括号表示参数列表。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/T6gRD0-xT9yP4zadIM02yA/zh-cn_image_0000002214704353.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/5K3oR65qQYa8hUEIMVKDog/zh-cn_image_0000002214704353.png)
 4. 点击“Trigger”， 将会触发执行云对象方法，执行结果将展示在“Result”框内。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/F3ohVh8xR2SjEGZdDNuIkw/zh-cn_image_0000002314529249.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/4gaysfRHQZyKkCKHTT9OwQ/zh-cn_image_0000002314529249.png)
 5. 点击“Logs”页签，还可查看打印的日志定位问题。修改云对象代码、重新部署云对象后再次执行远程调用，直至没有问题。
 6. 参考步骤1~5，完成云对象其他方法或其他云对象的调试。

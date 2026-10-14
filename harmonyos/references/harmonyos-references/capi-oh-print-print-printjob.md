@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: Print_PrintJob
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 结构体 > Print_PrintJob
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f9f59759c246d372667f39c53e04bd3e46c3404c26819335db1539d08e7f044b
+scraped_at: 2026-10-15T07:10:24+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:aa94f8a4505764e34abfa910a85787647a8a3536d4d51d59aa312d4c8a54e2eb
 ---
 
 ```cpp
@@ -44,4 +44,4 @@ typedef struct {...} Print_PrintJob
 | [Print\_OrientationMode](capi-ohprint-h.md#print_orientationmode) orientationMode | 方向模式。纵向模式适合常规文档打印，横向模式适合表格、图表等宽幅内容，反向横向模式适合需要镜像翻转的横向内容，反向纵向模式适合需要镜像翻转的纵向内容，未指定表示由系统自动选择方向。 |
 | [Print\_Quality](capi-ohprint-h.md#print_quality) printQuality | 打印质量。高质量模式适合最终输出或正式文档，正常模式适合日常打印，草稿模式适合快速预览以节省耗材。 |
 | [Print\_DocumentFormat](capi-ohprint-h.md#print_documentformat) documentFormat | 文档的 MIME 媒体类型，如 PDF（application/pdf）、JPEG（image/jpeg）等。 |
-| char \*advancedOptions | JSON 格式的高级选项。  支持的键为以下两种：  - **isReverse**：布尔类型，表示是否逆序打印。  - **isCollate**：布尔类型，表示是否逐份打印。 |
+| char \*advancedOptions | JSON 格式的高级选项。  支持的键为以下几种：  - **isReverse**：布尔类型，表示是否逆序打印。  - **isCollate**：布尔类型，表示是否逐份打印。  - **printPages**：整数类型，表示实际打印的页数。取值必须大于等于 1，默认值为 1。 |

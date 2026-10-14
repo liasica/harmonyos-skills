@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-habit
 title: 接入方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 习惯推荐方案 > 接入方案
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:47+08:00
+scraped_at: 2026-10-15T07:06:07+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:80fc02598f57adb7559977bfce9085583d37ecbe650a74e1c20cd962f8799d77
+content_hash: sha256:b86729c1139ba70aaa93d8a8c9d4d6f89c93dea327b0255e02f821ee8007b0dc
 ---
 
 ## 方案概述
 
 当用户在应用/元服务内使用功能时，开发者需要按照标准意图Schema向系统共享行为数据，并支持意图调用（空调用与传参调用），以实现用户点击模板卡后跳转回对应页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/mInBbhM7Q7KyP0c5GPbe8Q/zh-cn_image_0000002755025186.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/9gerVwqlRlmm65OEsHVhGQ/zh-cn_image_0000002791740045.png)
 
 ## 意图注册
 

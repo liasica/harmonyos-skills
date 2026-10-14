@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-no-u
 title: "@security/no-unsafe-ecdsa"
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-ecdsa
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:31+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:c8ed8c14bc39ed9ea0433a30da3e6e255873b4e00822126f94d46e1fd6c991f1
+scraped_at: 2026-10-15T07:06:45+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:1d812aa65c294b7e5b256cfd0ea91bc6b61a1af8eb0bcac201322bf7455c31cf
 ---
 
-该规则禁止在ECDSA签名算法中使用不安全的SHA1摘要算法。推荐使用Petal Aegis SDK中的安全ECDSA接口，详情参见： [ECDSA签名验签](../AppGallery-connect-Guides/aegis-signature-verification-0000001866035345.md#section12984925133517)。
+该规则禁止在ECDSA签名算法中使用不安全的SHA1摘要算法。推荐使用Petal Aegis SDK中的安全ECDSA接口，详情参见： [ECDSA签名验签](../AppGallery-connect-Guides/aegis-signature-verification-0000001866035345.md)。
 
 ## 规则配置
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 通过预建连接提升HTTP传输性能
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 通过预建连接提升HTTP传输性能
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:35+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:43ff761a2763e8835f124f87e36dcf5a0d260a24219429b7051faf4601fb051f
+scraped_at: 2026-10-15T07:04:44+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:d0817e52de7f405273d61a9a444ce5d2686ebc0afea85cdb4b242ba3a1eaa902
 ---
 
 ## 概述
@@ -78,7 +78,7 @@ void dataTransRequest() {
     printf("session fetch end: %d\n", errCode);
 
     // 等待结果，仅是等待异步调用完成，开发者可根据自己实际场景处理回调。
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000 * 1000 * 3));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000 * 3));
 
     // 请求完成后，清理request
     HMS_Rcp_DestroyRequest(dataRequest);
@@ -147,7 +147,7 @@ void dataTransRequest() {
     errCode = HMS_Rcp_Fetch(defaultSession, dataRequest, &callback);
     printf("defaultSession fetch end: %d\n", errCode);
     // 等待结果，仅是等待异步调用完成，开发者可根据自己实际场景处理回调。
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000 * 1000 * 3));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000 * 3));
     // 清理request
     HMS_Rcp_DestroyRequest(dataRequest);
 

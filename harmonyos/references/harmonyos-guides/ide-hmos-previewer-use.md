@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-prev
 title: 使用多设备预览器
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 使用多设备预览器运行应用 > 使用多设备预览器
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:21+08:00
+scraped_at: 2026-10-15T07:06:48+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:af3607ee21b941a6e57c5da227070b70d58131b5133ec9b95dddc8c84aae9c13
+content_hash: sha256:9214dbf454820b56b148ad0752f078c38021f760b497cd4b92577434cd4cb3e9
 ---
 
 ## 前提条件
@@ -15,15 +15,15 @@ content_hash: sha256:af3607ee21b941a6e57c5da227070b70d58131b5133ec9b95dddc8c84aa
 
 ## 快速启动
 
-1. 点击鸿蒙电脑DevEco Studio顶部的设备选择框，选择**多设备预览器**中的设备类型，支持单选或者多选，点击运行![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/5ioTK15ZTm-Iu-Amj-ArPw/zh-cn_image_0000002750169550.png)或调试按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/V3iLURvvQuqPYvhk2ZHoWA/zh-cn_image_0000002779728727.png)。
+1. 点击鸿蒙电脑DevEco Studio顶部的设备选择框，选择**多设备预览器**中的设备类型，支持单选或者多选，点击运行![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ebB-zQuQReydU8B7ToMoGA/zh-cn_image_0000002750169550.png)或调试按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/XD1SR1uRS1mghwe6PWDw6g/zh-cn_image_0000002779728727.png)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/H6Iiy6xgR8KyW7AVXmYCIQ/zh-cn_image_0000002779608571.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Hhb1FFqeTvKcODxnqa0m2w/zh-cn_image_0000002779608571.png "点击放大")
 2. 等待项目编译安装完成后，拉起多设备预览器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Txdt1jPrQweU0-81MiAjBw/zh-cn_image_0000002779608573.png)
-3. 点击设备栏中的设备图标可以切换设备，滚动鼠标滚轮或使用左右箭头可以在设备过多时进行翻页。点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/UNqHahKPTHmyfW_6iSWH1A/zh-cn_image_0000002779728729.png)按钮可以查看所有设备详情。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/i46ec8j3T4OITZ-GmWDWaw/zh-cn_image_0000002779608573.png)
+3. 点击设备栏中的设备图标可以切换设备，滚动鼠标滚轮或使用左右箭头可以在设备过多时进行翻页。点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/RpXdQ7zHQHyRI9IqFULOLA/zh-cn_image_0000002779728729.png)按钮可以查看所有设备详情。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/kkWfNYBnRWia5Rn44gT39w/zh-cn_image_0000002779728725.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/RU5KY4z4RxKheglYLehcxg/zh-cn_image_0000002779728725.png)
 4. 多设备预览器窗口下方为设备操作按键，具体如下。
 
    | 按键 | 功能描述 |
@@ -63,7 +63,7 @@ content_hash: sha256:af3607ee21b941a6e57c5da227070b70d58131b5133ec9b95dddc8c84aa
 * 右侧可以输入再现步骤和上下文信息，勾选是否包含日志或截图。
 * 点击**保存**可以将Bug的相关信息保存至本地。点击**发送**可以在线提单，提交时，请在附件里上传保存的Bug信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ghAviQEnQ0akGdFlYuYrgQ/zh-cn_image_0000002779728721.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/X0q1lk5oS1CaTVoUMEYK4Q/zh-cn_image_0000002779728721.png)
 
 ## 移动和缩放多设备预览器
 
@@ -72,9 +72,9 @@ content_hash: sha256:af3607ee21b941a6e57c5da227070b70d58131b5133ec9b95dddc8c84aa
   开发者可以使用鼠标拖动多设备预览器到屏幕的指定位置。
 * 缩放多设备预览器
 
-  如需改变多设备预览器大小，将鼠标悬停到预览器四角的任意一处，当鼠标变成![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/1iIeZmquRYy-D6XkmwJm2A/zh-cn_image_0000002750009662.png)，按住鼠标左键并移动即可缩放多设备预览器。
+  如需改变多设备预览器大小，将鼠标悬停到预览器四角的任意一处，当鼠标变成![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/lpgIXkq6R5Gb6zEjF58voA/zh-cn_image_0000002750009662.png)，按住鼠标左键并移动即可缩放多设备预览器。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/I7J7MwTmQpy_ab3xqwwEIw/zh-cn_image_0000002750009660.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/VN6bcdU5R069mHPaiy2T5Q/zh-cn_image_0000002750009660.gif "点击放大")
 
 ## 自定义设备
 
@@ -82,7 +82,7 @@ content_hash: sha256:af3607ee21b941a6e57c5da227070b70d58131b5133ec9b95dddc8c84aa
 
 1. 点击设备选择框，选择**添加自定义预览器**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/C-eFxKrcQxycE1DuuhNmSg/zh-cn_image_0000002779728719.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/rmSADSTSR-a1rQ0ZvK9TZw/zh-cn_image_0000002779728719.png "点击放大")
 2. 设置设备名称，选择设备类型。如果是Phone类型，还支持选择设备子类型。
 
    | **设备子类型** | **说明** |
@@ -92,10 +92,10 @@ content_hash: sha256:af3607ee21b941a6e57c5da227070b70d58131b5133ec9b95dddc8c84aa
    | WideFold | 阔折叠 |
    | TripleFold | 三折叠 |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/HNVDMpoRTyO2BdaRasF75w/zh-cn_image_0000002750009664.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/AjKa-wueRn-XUdxilerw4Q/zh-cn_image_0000002750009664.png "点击放大")
 3. 设置屏幕尺寸。如果选择预置的机型配置，会自动填充各块屏幕的分辨率和DPI。也可选择**Custom**手动输入各块屏幕的分辨率和DPI，点击**确认**完成创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/zt1qKclySHCldijaKyHasg/zh-cn_image_0000002750169556.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/dP4enY6aQyGDB1mulvbV0g/zh-cn_image_0000002750169556.png)
 4. 新创建的预览器会显示在设备列表中。如需删除，可点击删除按钮，即可删除该自定义设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/vUxF705MQsaMY0wlkgMQYw/zh-cn_image_0000002750009666.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/dTSv25Q4Tv67IjjOWzMdDA/zh-cn_image_0000002750009666.png "点击放大")

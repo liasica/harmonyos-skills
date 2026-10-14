@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口产生的异常日志/崩溃分析
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口产生的异常日志/崩溃分析
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-21
-content_hash: sha256:a629dec462c8a4251c5888f9b3409cc2ea5019e2cc52ded944353309d3a7b407
+scraped_at: 2026-10-15T07:06:12+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:ffdd9fc3b69c58829a37d5451f60970c641446f0a35d31c136c671468242f645
 ---
 
 以下维测手段多数依赖于ArkTS运行时的多线程检测能力，因此建议在调试前启用此功能。启用方法参考文档[分析CppCrash（进程崩溃）](ide-multi-thread-check.md)。
@@ -334,7 +334,7 @@ napi\_call\_threadsafe\_function 和 napi\_release\_threadsafe\_function 的示�
                     [](napi_env, void *, void *) {}, nullptr,                           \
                     [](napi_env, napi_value, void *, void *) {}, &tsfn);                \
                 if (status != napi_ok) {                                                \
-                    OH_INFO_ERROR(LOG_APP,"napi_create_threadsafe_function failed");    \
+                    OH_LOG_ERROR(LOG_APP,"napi_create_threadsafe_function failed");     \
                     return nullptr;                                                     \
                 }                                                                       \
                 if (!localEnv.RecreateSame()) {                                         \

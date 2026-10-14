@@ -4503,7 +4503,7 @@
 - [使用PickerController将编辑后的图片替换原图](medialibrary-pickercontroller.md)
 - [设备升级继承媒体文件访问权限](medialibrary-request-photouris-permission.md)
 - [媒体库资源访问工具](mediatool.md)
-- [记忆链接开发指导](metadatabinding-guidelines.md)
+- [元数据绑定开发指导](metadatabinding-guidelines.md)
 - [管理麦克风静音状态](mic-management.md)
 - [OH_MIDI概述(C/C++)](midi-overview.md)
 - [MIDI设备通信](midi.md)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-fa
 title: 使用文本常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 使用文本常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:15+08:00
+scraped_at: 2026-10-15T07:04:16+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:895cd49dc1a345b6a2ee42e52ee2684af63eb22734cafe5ea793fdd707230c8e
+content_hash: sha256:60a5683245093a562804f0ca41251e78fb47855c9bb6790f76a0b0140076d71a
 ---
 
 本文档介绍使用文本的常见问题并提供参考。
@@ -20,7 +20,7 @@ content_hash: sha256:895cd49dc1a345b6a2ee42e52ee2684af63eb22734cafe5ea793fdd7072
 
 在Text组件上未设置宽度，当内容过长时，省略号与组件边缘之间会留有较大空白，且内容更新时省略号的位置会发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/diNl-DUtQuaGlVztBUdG2A/zh-cn_image_0000002784662743.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gW_UoBlATPSZI8GBlMwePw/zh-cn_image_0000002762500004.gif)
 
 **原因分析**
 
@@ -65,7 +65,7 @@ struct WordBreakd {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/dEo2xHlISLqTEB1JIqRz0w/zh-cn_image_0000002755023810.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/8bnZSvrXR3ajbY_nL9FpgA/zh-cn_image_0000002791738667.gif)
 
 ### Text组件如何实现行末展开样式
 
@@ -126,7 +126,7 @@ struct HeightAdaptivePolicy {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/lKFgVSKYTuCRoJhOIyBXkw/zh-cn_image_0000002755183698.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/X_tRPVM_QrOZChXs0ogTgQ/zh-cn_image_0000002762340086.gif)
 
 ### 在文本前后添加自定义标签
 
@@ -251,7 +251,7 @@ struct LengthMetric {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/qegQ0DzZTOCIOHtUIIeQHg/zh-cn_image_0000002784582565.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/EIs6fOXXR3CCoK737PASeA/zh-cn_image_0000002791858881.png)
 
 ### Text组件如何实现表情与文字一起显示
 
@@ -364,7 +364,7 @@ struct DisplayedTogether {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/W2kJg7IOToG_WYpdg1ZxPg/zh-cn_image_0000002784662745.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/d4CZv84DSS-_S0g3HjSblQ/zh-cn_image_0000002762500006.png)
 
 ### 文本超长时如何展示
 
@@ -408,7 +408,7 @@ struct TextLong {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/3snx-QESS_-fK61Orr-OlQ/zh-cn_image_0000002755023812.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/mCvIlK6aQU-DARnAKKqGAw/zh-cn_image_0000002791738669.png)
 
 **解决措施二**
 
@@ -445,7 +445,7 @@ struct TextLongTow {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/iSYnn0HKScSbS6gezTMnLg/zh-cn_image_0000002755183700.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/IgtxbNiLTxW0HQsTaoLgbA/zh-cn_image_0000002762340088.gif)
 
 ### selection如何触发弹出自定义菜单并设置菜单字体大小
 
@@ -515,7 +515,7 @@ export struct HowToSetCustomSelectionMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ZrXcVexLRNCe8nynq9zXrQ/zh-cn_image_0000002784582567.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/i1fACiErSp-eelIED0UEXQ/zh-cn_image_0000002791858883.gif)
 
 ### 如何屏蔽文本的长按手势
 
@@ -631,4 +631,4 @@ export struct CursorPersistsWhenTextInputIsCoveredExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/nuQD_xTaSZ6ZFHRWMF6a-w/zh-cn_image_0000002784662747.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/6O1_gd0eQrOb5O8kPbVoQw/zh-cn_image_0000002762500008.gif)

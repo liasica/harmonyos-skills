@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aodnavigation
 title: AOD Navigation Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > AOD Navigation Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:44+08:00
+scraped_at: 2026-10-15T07:04:51+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:f3069247cb9a27e9c01bd0c57e6fa4a23af88617d988f7feb633b57132e22e07
+content_hash: sha256:3987d6d49f8ff5106f76c8796fef882bed8df491e65ff5fd25ec99373b1618a2
 ---
 
 从API版本26.0.0开始，新增AOD Navigation Kit（熄屏导航服务）。
@@ -31,7 +31,7 @@ AOD（Always On Display，熄屏显示）界面实时显示当前导航状态和
 1. 此种接入方式下，熄屏导航场景功耗对比设备解锁亮屏场景下应用导航功耗预计收益50%。
 2. 能力约束：熄屏导航时不支持联网功能、无法连接wearable设备数据、仅提供固定范围数据项代理能力。当前代理数据能力支持：里程、步数、步频、全程耗时、运动耗时、累计爬升、累计下降、当前速度、全程均速、运动均速、当前配速、平均配速。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/qqWwDyOCRXWIqplUyJX3OQ/zh-cn_image_0000002784663169.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/hrVFjHOnQQaWLUI-ribrIg/zh-cn_image_0000002762500436.png)
 
 说明：
 
@@ -45,7 +45,7 @@ AOD（Always On Display，熄屏显示）界面实时显示当前导航状态和
 1. 此种接入方式下，熄屏导航时应用不进入休眠状态，熄屏导航场景功耗对比设备解锁亮屏下导航功耗预计收益20%。
 2. 无能力约束，熄屏导航数据依旧来源于应用，熄屏导航时开发者仍可支持联网功能、可支持连接wearable设备数据（如步数、心率等）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/STmJ0ZUyRwy3s4dmm4xp-g/zh-cn_image_0000002755024236.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/7raVxlLWTHm5orA9QQMQTg/zh-cn_image_0000002791739095.png)
 
 说明：
 

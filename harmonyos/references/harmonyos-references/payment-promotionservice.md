@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: promotionService(营销服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > promotionService(营销服务)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8ecd28f78116b45d7335d521bd85253b55d0bb7d014cfaafecb8a8f8288dfa1f
+scraped_at: 2026-10-15T07:12:33+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:ed8904491741b7b4fb4c5bb61cc5532b067a421535b6ace0c7169d3bceba9396
 ---
 
 本模块支持拉起营销服务，包括活动入口组件以及选券组件。
@@ -346,6 +346,7 @@ startPromotionDetailPopup(context: common.Context, mercNo: string): Promise<User
 
 ```typescript
 import { promotionService } from '@kit.PaymentKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Entry
 @Component

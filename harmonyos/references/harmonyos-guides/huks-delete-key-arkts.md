@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-delete-k
 title: 密钥删除(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥删除 > 密钥删除(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0511e0b3a48467c8bb7e83ae76e84b3ddb696da79014a09e5b1f18a42681937a
+scraped_at: 2026-10-15T07:04:38+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:64de62a232bdfec57163f826947dd5ae6ab155b859d7d8c95245e5275b913478
 ---
 
 为保证数据安全性，当不需要使用该密钥时，应该删除密钥。
@@ -52,11 +52,11 @@ let generateHuksOptions: huks.HuksOptions = {
 function generateKeyItem(keyAlias: string, huksOptions: huks.HuksOptions) {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.generateKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.generateKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {
@@ -83,11 +83,11 @@ let deleteHuksOptions: huks.HuksOptions = {
 function deleteKeyItem(keyAlias: string, huksOptions: huks.HuksOptions) {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.deleteKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.deleteKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-iap-pro
 title: 数字商品介绍
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数字商品服务 > 配置数字商品 > 数字商品介绍
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:09+08:00
+scraped_at: 2026-10-15T07:05:21+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:fd4aa01f163fa8ee189705cc07931bbe283046c029070b95dc07e7fd5fcde7df
+content_hash: sha256:194e2cda7e53092c0226e5620c9be827f175dc617d1f207f70df10fd35410408
 ---
 
 数字商品服务为接入应用内购买的应用提供了[展示数字商品](store-iap-distribute-query.md)、[购买数字商品](store-iap-distribute-purchase.md)、[发放数字商品权益](store-iap-distribute-delivering.md)的功能。
@@ -25,7 +25,7 @@ content_hash: sha256:fd4aa01f163fa8ee189705cc07931bbe283046c029070b95dc07e7fd5fc
 
 订阅是指用户在购买自动续期订阅商品后，可以在一段时间访问应用的增值功能或内容，并且会在订阅周期结束后自动续期购买下一期服务的能力。如果期间用户取消订阅，则订阅在当期结束后将不再自动续期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/IZxy-DvkS9uBVjwBssQejA/zh-cn_image_0000002784663525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/tZasusgCSU2yDQ3wS7S7og/zh-cn_image_0000002762500792.png)
 
 ## 配置自动续期订阅商品
 
@@ -44,7 +44,7 @@ content_hash: sha256:fd4aa01f163fa8ee189705cc07931bbe283046c029070b95dc07e7fd5fc
 | 已到期 | 订阅处于失效状态，用户无法享受商品的服务。最近一次的续期扣费没有成功、用户取消订阅、用户不同意涨价或者是扣款账户发生了异常等均可导致订阅进入该状态。  失效的订阅最长有180天的保留期，在保留期内，用户无法享受自动续期订阅商品的服务，但可以在恢复订阅后再次享受应用提供的服务。 |
 | 待生效 | 订阅还未开始生效，用户暂时还无法享受该自动续期订阅商品的服务。  当用户在订阅组内进行切换订阅时，如果切换到一个下周期生效的订阅时，则新切换的商品处于待生效状态，需要等原订阅到期后才生效。在用户的切换操作完成后，原订阅会变为到期状态，而新切换的商品为待生效状态，并且会在原自动续期订阅商品的编辑订阅页内显示新切换商品的开始时间。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/OHQU3PLSTge53vMD9um2Lg/zh-cn_image_0000002755024592.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/zWhEHICSTuOeIwAYlsTUSQ/zh-cn_image_0000002791739451.png)
 
 用户在成功购买自动续期订阅商品后，订阅会变为续期状态。当发生如下操作时，订阅的状态会随之改变：
 
@@ -63,7 +63,7 @@ content_hash: sha256:fd4aa01f163fa8ee189705cc07931bbe283046c029070b95dc07e7fd5fc
 
 数字商品服务为接入订阅型商品购买能力的应用提供[跳转到订阅页或订阅详情页](../harmonyos-references/iap-iap.md#iapshowmanagedsubscriptions)的能力，让用户管理订阅，包括查看订阅、取消订阅、切换订阅、恢复订阅等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/vgAJF53_RqGuXc3LM7ETtQ/zh-cn_image_0000002755184480.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/CZTxa7cRT0ieuhaZfhO_dQ/zh-cn_image_0000002762340872.png)
 
 ## 订阅续期处理
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-voip
 title: VoIPExtensionAbility（应用内通话消息扩展Ability）（已废弃）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > VoIPExtensionAbility（应用内通话消息扩展Ability）（已废弃）
 category: harmonyos-references
-scraped_at: 2026-10-01T07:40:36+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:b0764b6f99f942202619431f6b4188a883aae71db87922c5948b62600722c034
+scraped_at: 2026-10-15T07:12:42+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:89e20a59e4705db17771be57410110dccfbbfaec411c62450293f0f2ccfcd2e5
 ---
 
 VoIPExtensionAbility为应用内通话消息扩展Ability，继承自[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)，增加获取场景化消息数据的回调。有如下约束：
@@ -39,8 +39,6 @@ import { VoIPExtensionAbility } from '@kit.PushKit';
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 对于6.1.0(23)以前版本，该属性在Phone、Tablet中可正常使用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该属性在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。
-
 **起始版本：** 4.1.0(11)
 
 **废弃版本：** 26.0.0
@@ -58,8 +56,6 @@ onReceiveMessage(voipInfo: pushCommon.VoIPInfo): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于6.1.0(23)以前版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 4.1.0(11)
 

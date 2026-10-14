@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-serv
 title: serviceNotification（服务通知）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > serviceNotification（服务通知）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:56b47fc706494b886fbfd16d7b723fce669664f174c24bf2ca36f4575916275b
+scraped_at: 2026-10-15T07:12:43+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:af57bb2ec63f449083f820840b9df5ab8dfed7cb415dfecf23feab0f8760a3e5
 ---
 
 为了向用户提供更好的服务和更优的体验，Push Kit为开发者提供了消息订阅能力，支持通过Push Token订阅和通过账号订阅两种类型。通过Push Token订阅可通过申请开通订阅通知消息自分类权益，发送对应的订阅消息。HarmonyOS元服务支持[通过账号订阅](../atomic-guides/push-as-subscription.md)。
@@ -37,8 +37,6 @@ requestSubscribeNotification(context: Context, entityIds: Array<string>, callbac
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于6.1.0(23)以前版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回错误码1000900017。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回错误码1000900017。
 
 **起始版本：** 4.1.0(11)
 
@@ -122,8 +120,6 @@ requestSubscribeNotification(context: Context, entityIds: Array<string>, type?: 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回错误码1000900017。
 
 **起始版本：** 4.1.0(11)
 
@@ -220,8 +216,6 @@ querySubscribeNotificationSetting(): Promise<SubscribeNotificationSetting>
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回错误码1000900017。
-
 **起始版本：** 26.0.0
 
 **返回值：**
@@ -294,8 +288,6 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中无效果。
-
 **起始版本：** 4.1.0(11)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -311,8 +303,6 @@ export default class EntryAbility extends UIAbility {
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 4.1.0(11)
 
@@ -330,8 +320,6 @@ export default class EntryAbility extends UIAbility {
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 该枚举值在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。
 
 **起始版本：** 4.1.0(11)
 
@@ -353,8 +341,6 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 该枚举值在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。
-
 **起始版本：** 5.0.0(12)
 
 | 名称 | 值 | 说明 |
@@ -371,8 +357,6 @@ export default class EntryAbility extends UIAbility {
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。
 
 **起始版本：** 26.0.0
 
@@ -392,8 +376,6 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。
-
 **起始版本：** 26.0.0
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -412,8 +394,6 @@ export default class EntryAbility extends UIAbility {
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 该枚举值在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。
 
 **起始版本：** 26.0.0
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrong-u
 title: UI上下文异常调试
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI上下文异常调试
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b7da4949cedbb9f0fe8fb218d4bef5d9b77adaf4ddd0d6a0f69bea86fc3cbe3d
+scraped_at: 2026-10-15T07:04:16+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:e731de4cde49327823103989e1514ce7bd7d8086eb820d75b4b9b1330cd132b2
 ---
 
 本指导主要介绍如何解决因使用无效的[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)导致文本显示异常的问题。当开发者使用了已失效的UIContext对象（通常是因为对应的UI实例已被销毁），可能导致后续UI操作无效。此类问题常见于多窗口场景。从API version 12开始，该问题也见于调用[setSupportedProcessCache](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetsupportedprocesscache12)打开进程缓存后快速启动的情形。
@@ -48,7 +48,7 @@ content_hash: sha256:b7da4949cedbb9f0fe8fb218d4bef5d9b77adaf4ddd0d6a0f69bea86fc3
     (-2:100000:singleton)] [com.example.helloworld][entry][100000]: window foreground
   + 异常日志示例：
 
-    (100000:100000:scoped)] [com.example.helloworld][entry][100001]: window background
+    (100000:100000:scope)] [com.example.helloworld][entry][100001]: window background
 
     该异常日志说明存在错误跟踪ID为100000的UI实例。
   + 若前文出现以下特定格式的日志：

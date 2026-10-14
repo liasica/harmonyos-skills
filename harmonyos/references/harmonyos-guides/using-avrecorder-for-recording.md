@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avrecor
 title: 使用AVRecorder录制音频（ArkTS）
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 录制 > 使用AVRecorder录制音频（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:59+08:00
+scraped_at: 2026-10-15T07:05:09+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:f0b0269dce5d154a7b8e9f1239d2e520dfd73cd066a3a918cbd082cf2cb090bf
+content_hash: sha256:22b82f6f1453ea5de4a00dca528aae1271d310ff1dc896f63cae9eb03fcab1c1
 ---
 
 使用[AVRecorder](media-kit-intro.md#avrecorder)可以实现音频录制功能，本开发指导将以“开始录制-暂停录制-恢复录制-停止录制”的一次流程为例，向开发者讲解AVRecorder音频录制相关功能。
@@ -14,7 +14,7 @@ content_hash: sha256:f0b0269dce5d154a7b8e9f1239d2e520dfd73cd066a3a918cbd082cf2cb
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/jz61ST7xTua6qdOzjjsyEQ/zh-cn_image_0000002755024382.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/ReCeLYBBQcWQB5ZIr7QiXg/zh-cn_image_0000002791739241.png)
 
 状态的详细说明请参考[AVRecorderState](../harmonyos-references/arkts-apis-media-t.md#avrecorderstate9)。
 

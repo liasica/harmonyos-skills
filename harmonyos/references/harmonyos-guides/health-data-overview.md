@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-data-o
 title: 数据开放总览
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据开放总览
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:14+08:00
+scraped_at: 2026-10-15T07:05:28+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7764589fffc678d053250824e8b696689848191a64af173222caf68a35a2382c
+content_hash: sha256:c830e337db8facc217af91040c8d029e9933b377652975055fcaa93bc809fa3c
 ---
 
-当前提供如下Health Service Kit数据，开发者可申请对应数据权限进行应用开发。开放等级中，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/DZWYbE4SRoyk2OIQO9_CLA/zh-cn_image_0000002784583485.png)表示该数据权限为高阶数据，暂不对个人开发者开放。如需使用，请使用企业账号重新注册并申请权限；![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/UJ1TrY-6QT-X-bgJRhHGRw/zh-cn_image_0000002784663665.png)表示该数据权限为基础数据，个人及企业开发者均可申请查询/使用。
+当前提供如下Health Service Kit数据，开发者可申请对应数据权限进行应用开发。开放等级中，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/edPL9P2HTnK09efVKtFtqA/zh-cn_image_0000002791859807.png)表示该数据权限为高阶数据，暂不对个人开发者开放。如需使用，请使用企业账号重新注册并申请权限；![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/VXCed0Z-TPSHOkCm4wOrag/zh-cn_image_0000002762500932.png)表示该数据权限为基础数据，个人及企业开发者均可申请查询/使用。
 
 **说明** 
 

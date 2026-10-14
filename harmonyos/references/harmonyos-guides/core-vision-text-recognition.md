@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-t
 title: 通用文字识别
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 通用文字识别
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:46+08:00
+scraped_at: 2026-10-15T07:06:06+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:99e79e1d90b8b22c3a63067f002475b33f4571bf0f9179b9d49a9288c0ca928f
+content_hash: sha256:3012a5964d2dfe5f68b3863def3ecc0ede1bb79c28188dadd0bb8834d8d3cd1a
 ---
 
 ## 适用场景
@@ -18,7 +18,7 @@ content_hash: sha256:99e79e1d90b8b22c3a63067f002475b33f4571bf0f9179b9d49a9288c0c
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-qDxPxy1ScmyFiF32TIFpA/zh-cn_image_0000002784583929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/vI7r4-OtRcutu58_4qKMFw/zh-cn_image_0000002791860251.png)
 
 ## 开发步骤
 

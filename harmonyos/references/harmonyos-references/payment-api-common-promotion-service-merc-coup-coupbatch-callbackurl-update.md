@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 设置回调通知地址
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 运营工具 > 商家券 > 券批次 > 设置回调通知地址
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0c4bcca09aa1298e30cc8bdac3966faf475ca70b08420d4db335aff8d8a64a80
+scraped_at: 2026-10-15T07:12:40+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:2f5d12b5aea064ab592fa904e090a51f039c84900aaeba2597a02a207cd989fb
 ---
 
 ## 功能介绍
@@ -14,7 +14,7 @@ content_hash: sha256:0c4bcca09aa1298e30cc8bdac3966faf475ca70b08420d4db335aff8d8a
 
 **说明** 
 
-在创建券批次时通过notifyAppId数据模型notifyUrl参数指定了回调通知配置，未调用过该接口进行配置，以批次上的配置为准。调用该接口配置后以该接口配置的为准。
+在创建券批次时，通过NotifyConfig数据模型的notifyAppId、notifyUrl参数指定了回调通知配置；如果未调用过该接口进行配置，则以批次上的配置为准。调用该接口配置后，以该接口配置的为准。
 
 ## 接口原型
 

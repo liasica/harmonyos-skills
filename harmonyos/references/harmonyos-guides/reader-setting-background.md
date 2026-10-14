@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 自定义页面背景
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 自定义页面背景
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:40106a462ea3a5080a1ac68d8ba3c143e74e3b4c2ac007732f837dd7edd7371f
+scraped_at: 2026-10-15T07:05:40+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:1f43caae1580bf0aea6c72c4c9c88087e7abeb076388260a9346cf90d13332f0
 ---
 
 当应用需要支持自定义背景时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的themeColor及themeBgImg属性，实现对阅读内容自定义背景色及背景图片的实时修改。
@@ -19,15 +19,17 @@ content_hash: sha256:40106a462ea3a5080a1ac68d8ba3c143e74e3b4c2ac007732f837dd7edd
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/H0nLp-onTEyWqTXUoa5miA/zh-cn_image_0000002784583731.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/DlSq5w56SNmfIZniKWDq5Q/zh-cn_image_0000002791860053.png)
 
 ## 接口说明
 
-自定义页面背景主要涉及1个接口，具体介绍如下表所示。
+自定义页面背景主要涉及3个接口，具体介绍如下表所示。
 
 | 接口名 | 描述 |
 | --- | --- |
 | [setPageConfig](../harmonyos-references/reader-read-core.md#setpageconfig)(pageConfig: ReaderSetting): void | 设置或者修改页面排版属性。 |
+| [on('resourceRequest')](../harmonyos-references/reader-read-core.md#onresourcerequest) | 注册资源请求回调，如果设置了自定义背景、字体时，排版引擎会通过此接口获取对应的资源ArrayBuffer。 |
+| [off('resourceRequest')](../harmonyos-references/reader-read-core.md#offresourcerequest) | 注销资源请求回调接口，可在页面销毁时调用。 |
 
 ## 开发准备
 
@@ -46,21 +48,21 @@ content_hash: sha256:40106a462ea3a5080a1ac68d8ba3c143e74e3b4c2ac007732f837dd7edd
 2. 单独设置背景色。如果有设置背景图片的情况下，背景色通常用于仿真翻页时背面主题色的绘制。否则，背景色还会用于渲染阅读页的背景色。
 
    ```typescript
-   this.readerSetting.themeColor = '#000000';
+   this.readerSetting.themeColor = '#FFFFFF';
    this.readerSetting.themeBgImg = '';
    // 当设置背景色为浅色时，需要将深色模式关掉
    this.readerSetting.nightMode = false;
    // 当设置背景色为浅色时，字体颜色也需要适配
-   this.readerSetting.fontColor = '#FFFFFF';
+   this.readerSetting.fontColor = '#000000';
    ```
 3. 设置背景图片。需要同时设置与背景图片相近的主题颜色，用于仿真翻页时背面主题色的绘制。
 
    ```typescript
    this.readerSetting.themeBgImg = 'dark_sky_first.jpg';
    this.readerSetting.themeColor = '#000000';
-   // 当设置背景图为浅色时，需要将深色模式关掉
-   this.readerSetting.nightMode = false;
-   // 当设置背景图为浅色时，字体颜色也需要适配
+   // 当设置背景图为深色时，需要将深色模式开启
+   this.readerSetting.nightMode = true;
+   // 当设置背景图为深色时，字体颜色也需要适配
    this.readerSetting.fontColor = '#FFFFFF';
    ```
 4. 调用ReaderComponentController组件控制器的setPageConfig接口，重新渲染界面。
@@ -80,27 +82,27 @@ content_hash: sha256:40106a462ea3a5080a1ac68d8ba3c143e74e3b4c2ac007732f837dd7edd
 
    aboutToDisappear(): void {
      // 注销资源请求回调
-     this.readerComponentController.off('resourceRequest');
+     this.readerComponentController.off('resourceRequest', this.resourceRequest);
    }
 
    /**
     * 资源请求回调
     */
    private resourceRequest: bookParser.CallbackRes<string, ArrayBuffer> = (filePath: string): ArrayBuffer => {
-     hilog.info(0x0000, 'testTag', 'resourceRequest : filePath = ' + filePath);
-     if(filePath.length === 0){
+     hilog.info(0x0000, 'ReaderLog', 'resourceRequest : filePath = ' + filePath);
+     if (filePath.length === 0) {
        return new ArrayBuffer(0);
      }
      try {
        let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
        // 获取资源路径resources/rawfile下的背景图片文件Uint8Array数据
        let value: Uint8Array = context.resourceManager.getRawFileContentSync(filePath);
-       hilog.info(0x0000, 'testTag', 'resourceRequest : get other resource succeeded ');
+       hilog.info(0x0000, 'ReaderLog', 'resourceRequest : get other resource succeeded ');
        return value.buffer as ArrayBuffer;
      } catch (error) {
        let code = (error as BusinessError).code;
        let message = (error as BusinessError).message;
-       hilog.error(0x0000, 'testTag',
+       hilog.error(0x0000, 'ReaderLog',
          `resourceRequest : get other resource failed, error code: ${code}, message: ${message}.`);
      }
      // 如果在资源路径源路径resources/rawfile下获取背景图片文件数据失败，则去沙箱目录下获取背景图片数据
@@ -108,19 +110,23 @@ content_hash: sha256:40106a462ea3a5080a1ac68d8ba3c143e74e3b4c2ac007732f837dd7edd
    }
 
    private loadFileFromPath(filePath: string): ArrayBuffer {
+     let file: fs.File | null = null;
      try {
        let stats = fs.statSync(filePath);
-       let file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+       file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
        let buffer = new ArrayBuffer(stats.size);
        fs.readSync(file.fd, buffer);
-       fs.closeSync(file);
        return buffer;
-     } catch (err) {
+     } catch (error) {
        let code = (error as BusinessError).code;
        let message = (error as BusinessError).message;
-       hilog.error(0x0000, 'testTag',
+       hilog.error(0x0000, 'ReaderLog',
          `loadFileFromPath : get file failed, error code: ${code}, message: ${message}.`);
        return new ArrayBuffer(0);
-     }
-   }
+     } finally {
+       if (file) {
+         fs.closeSync(file);
+       }
+      }
+    }
    ```

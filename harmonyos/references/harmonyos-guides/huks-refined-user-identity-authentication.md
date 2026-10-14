@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-refined-
 title: 细粒度用户身份认证访问控制开发指导
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 访问控制 > 细粒度用户身份认证访问控制开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2af3d3d5c5b379ac6ff1ca7e253b86dc0127d1e6742c1debeaf7d8bbaf27e794
+scraped_at: 2026-10-15T07:04:38+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:4168c31eeb48e4c73b5de1f045e84d17e2e54787edec71b9a245cb9b4a560894
 ---
 
 细粒度用户身份认证访问控制是基于已有用户身份认证访问控制的扩展，提供了基于生物特征和锁屏密码二次身份认证的细粒度访问控制能力，允许设置密钥在加密、解密、签名、验签、密钥协商、密钥派生的单个或多个场景时是否需要进行身份验证。
@@ -94,11 +94,11 @@ const KEY_GENERATION_PROPERTIES: huks.HuksParam[] = [
 function generateKeyItem(keyAlias: string, huksOptions: huks.HuksOptions, throwObject: ThrowObject): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     try {
-      huks.generateKeyItem(keyAlias, huksOptions, (error, data) => {
+      huks.generateKeyItem(keyAlias, huksOptions, (error) => {
         if (error) {
           reject(error);
         } else {
-          resolve(data);
+          resolve();
         }
       });
     } catch (error) {
@@ -119,8 +119,8 @@ async function step1GenerateKey(): Promise<void> {
   let throwObject: ThrowObject = { isThrow: true };
   try {
     await generateKeyItem(KEY_ALIAS, generateOptions, throwObject)
-      .then((data) => {
-        console.info(`密钥生成成功: ${JSON.stringify(data)}`);
+      .then(() => {
+        console.info(`密钥生成成功`);
       })
       .catch((error: Error) => {
         if (throwObject.isThrow) {

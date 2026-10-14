@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 场景动画控制与管理
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 场景动画控制与管理
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:30+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:04918f721c5f179ca8a2fa78eac1dac428f62528e4dc318e8868e8567eda30a6
+scraped_at: 2026-10-15T07:05:16+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:eaa5c77cb446b03067429c2c658e22c4000319d1c00003663ff2e0198667facc
 ---
 
 动画（animation）：3D场景中重要的资源类型，用于控制场景中各种元素的运动。例如，要让场景中的人物完成走路动作，逐帧计算并设置人物每个关节的旋转角是难以实现的。因此，针对这类复杂的动画需求，3D场景资源的制作者会预先制作好动画，在模型文件中保存动画的关键帧数据以及关键帧之间的插值器类型。
@@ -48,7 +48,7 @@ ArkGraphics 3D提供播放并控制场景动画的能力，支持开发者灵活
    this.anim = this.scene.animations[0];
    if (this.anim) {
      this.anim.enabled = true;
-     // Register callback function
+     // 注册回调函数
      this.anim.onStarted(() => {
        // ...
        this.animationCallbackInvoked = 'animation on start';
@@ -68,9 +68,9 @@ ArkGraphics 3D提供播放并控制场景动画的能力，支持开发者灵活
    通过SceneResourceFactory.createCamera()创建相机并调整观察位置。随后将加载完成的Scene封装为SceneOptions，并指定渲染类型为ModelType.SURFACE，以便通过Component3D在界面上进行渲染。
 
    ```typescript
-   // create a new camera.
+   // 创建一个新相机。
    this.cam = await rf.createCamera({ name: 'Camera' });
-   // set the camera.
+   // 设置相机。
    this.cam.enabled = true;
    this.cam.position.z = 5;
    this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
@@ -146,7 +146,7 @@ ArkGraphics 3D提供播放并控制场景动画的能力，支持开发者灵活
          return;
        }
        this.anim = this.scene.animations[0];
-       // seek to 30%
+       // 定位到 30% 处
        this.anim.seek(0.3);
      });
    ```

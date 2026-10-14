@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持鼠标输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持鼠标输入事件
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:09+08:00
+scraped_at: 2026-10-15T07:04:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:530e97dc1281d9f670cca5cfda219e9ca96650153c061074d590719bbdc8308c
+content_hash: sha256:a47384e682d081e019510a021fbd264b485577e1a5a06b69f29558d37646e031
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/zInzOyRgQveh5hcmh22qcg/zh-cn_image_0000002784662483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/XfTCVOVPT3-2V-hhGMZwoQ/zh-cn_image_0000002762499744.png)
 
 鼠标设备是PC/2in1、Tablet类型设备必不可少的输入设备，其特点是可以通过按键达成点击或滑动操作，也可以通过滚轮触发滑动，另外还有一些按键，这些分别通过[MouseEvent](../harmonyos-references/ts-universal-mouse-key.md#mouseevent对象说明)及[AxisEvent](../harmonyos-references/ts-universal-events-axis.md#axisevent)上报给应用。
 
@@ -99,7 +99,7 @@ struct MouseMove {
 
    右键点击时：button = 2（MouseButton.Right的枚举值），按下时：action = 1（MouseAction.Press的枚举值），抬起时：action = 2（MouseAction.Release的枚举值）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/8yrXDl7XQtutm_iIz0zyDw/zh-cn_image_0000002755023550.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/tWnOv2QvRjmM-YFXNJRCbA/zh-cn_image_0000002791738407.gif)
 
 如果需要阻止鼠标事件冒泡，可以通过调用stopPropagation方法进行设置。
 
@@ -155,7 +155,7 @@ struct StopPropagation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/yDM_mhDHRZa54hTw0GzaYw/zh-cn_image_0000002755183436.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/hgfnnghjSZe4nByIVPH9eg/zh-cn_image_0000002762339826.gif)
 
 在子组件（Button）的onMouse中，通过回调参数event调用stopPropagation回调方法（如上）即可阻止Button子组件的鼠标事件冒泡到父组件Column上。
 
@@ -203,7 +203,7 @@ struct OnHover {
 
 当鼠标从Button内移动到Button外的瞬间，回调响应，isHover值等于false，又将组件变成了初始的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/VpXRPv1ZT46ohAeknNuchg/zh-cn_image_0000002784582305.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/xsFHMMB9Q8qIoaPhIJt8gw/zh-cn_image_0000002791858621.gif)
 
 ## 处理鼠标按键
 
@@ -343,7 +343,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/LciqBHRvTfSXcxF9vGuJNA/zh-cn_image_0000002784662485.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/emnGhI-LRDKNRkHTrUUIxQ/zh-cn_image_0000002762499746.gif)
 
 ## 处理滚轮
 
@@ -487,7 +487,7 @@ struct MouseWheel {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/LEvYIpWJSOiHHKyj2gbnjw/zh-cn_image_0000002755023552.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/FbmgbDAbSVC4tmzGoq0vWA/zh-cn_image_0000002791738409.gif)
 
 ## 鼠标事件转换
 
@@ -501,7 +501,7 @@ struct MouseWheel {
 
 在应用的entry/src/main/resources/base/profile目录下创建配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5](module-configuration-file.md)配置文件中添加easyGo字段，并指向引用的easy\_go.json配置文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/FU78POwgQcWXoKbYGkM8uA/zh-cn_image_0000002755183438.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/AcmccBXhTxy3BJaIYVkwKQ/zh-cn_image_0000002762339828.png)
 
 **2. 增加事件转换配置**
 

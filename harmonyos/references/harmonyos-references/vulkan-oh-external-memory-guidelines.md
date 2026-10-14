@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan-oh
 title: Vulkan External Memory开发指导
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan开发指导 > Vulkan External Memory开发指导
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:33f7fc4eae4639bf063198b885da67e0d9e219926b9180ef3f5657e7ff4e1c6b
+scraped_at: 2026-10-15T07:13:01+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:45016a5639487a13d32a07f0fc0a4f284b401e7ef9553a5438077b82dba1fa4f
 ---
 
 ## 场景介绍
@@ -95,7 +95,7 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
            return false;
        }
 
-       // // Load base function pointers
+       // Load base function pointers
        vkEnumerateInstanceExtensionProperties = reinterpret_cast<PFN_vkEnumerateInstanceExtensionProperties>(
            dlsym(g_libVulkan, "vkEnumerateInstanceExtensionProperties"));
        vkEnumerateInstanceLayerProperties = reinterpret_cast<PFN_vkEnumerateInstanceLayerProperties>(
@@ -113,7 +113,7 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
    bool VulkanRenderThread::CreateNativeImage() {
        nativeImage_ = OH_ConsumerSurface_Create();
        if (nativeImage_ == nullptr) {
-           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderThread", "OH_NativeImage_Create failed.");
+           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderThread", "OH_ConsumerSurface_Create failed.");
            return false;
        }
        int ret = 0;
@@ -190,7 +190,7 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
        VkSurfaceCreateInfoOHOS surfaceCreateInfo{};
        surfaceCreateInfo.sType = VK_STRUCTURE_TYPE_SURFACE_CREATE_INFO_OHOS;
        if (nativeWindow_ == nullptr) {
-           OH_LOG_INFO(LOG_APP, "nativeWindow_ is nullptr.Failed to create surface !");
+           OH_LOG_ERROR(LOG_APP, "nativeWindow_ is nullptr.Failed to create surface !");
            return false;
        }
        surfaceCreateInfo.window = nativeWindow_;
@@ -277,7 +277,7 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
        while (true) {
            if (!isStarted_) {
                OH_LOG_ERROR(LOG_APP, "Decoder input thread out");
-               break;;
+               break;
            }
            
            std::unique_lock<std::mutex> lock(videoDecContext_->inputMutex);

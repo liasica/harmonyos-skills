@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agre
 title: 密钥协商(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 密钥协商 > 密钥协商(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:904e0d803403442783db780f7d051ab4865cd104174d5970e604af8f369abd5f
+scraped_at: 2026-10-15T07:04:37+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:c8b267078b4ada0929c2836db3f28d7bc10b3924b2a5def051e49c36d1c98c73
 ---
 
 以X25519、DH和ECDH协商密钥类型为例，在密钥由HUKS管理的情况下，完成密钥协商。具体的场景介绍及支持的算法规格，请参考[密钥协商支持的算法](huks-key-agreement-overview.md#支持的算法)。
@@ -267,7 +267,7 @@ napi_value X25519AgreeKey(napi_env env, napi_callback_info info)
     struct OH_Huks_Blob outData02 = {.size = X25519_COMMON_SIZE, .data = nullptr};
     OH_Huks_Result ohResult;
     do {
-        /* 1.确定密钥别名集成密钥参数集 */
+        /* 1.确定密钥别名，并集成密钥参数集 */
         ohResult = InitializeAgreeParamSets(&genParamSet, &initParamSet01, &finishParamSet01,
                                             &initParamSet02, &finishParamSet02);
         if (ohResult.errorCode != OH_HUKS_SUCCESS) {

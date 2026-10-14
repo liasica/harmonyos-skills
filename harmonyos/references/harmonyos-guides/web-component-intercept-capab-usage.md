@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: Web组件拦截能力的使用
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > Web组件拦截能力的使用
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:17+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:d553f00d953b8b7d43b5e57849c5c886142fe3c9bbb2ad69487444c8a2d80b89
+scraped_at: 2026-10-15T07:04:20+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:3b1cf49b5da532c2fe1c0f85370c61c69535d4a817bcf5fe9080286aa43482a4
 ---
 
 ## 概述
@@ -77,7 +77,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 
 **图 1** 基于onLoadIntercept()的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/NTaAnJqIRmGaHPpvN6SLfA/zh-cn_image_0000002784662813.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/h5f8XyT_TLOKFrl8qKvfoQ/zh-cn_image_0000002762500074.png)
 
 ### 请求重定向
 
@@ -87,7 +87,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 
 **图 2** 请求重定向
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/-RXiEz5zTmS6jUQimUGlFQ/zh-cn_image_0000002755023880.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/USAZIGvNS7WX6zDY8HPFlA/zh-cn_image_0000002791738737.png)
 
 **实现原理**
 
@@ -175,7 +175,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 
 **图 3** 页面白名单配置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/KUXyxf20R3yfUENE8Pxw-A/zh-cn_image_0000002755183768.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/J_HaYER0R1CIvHthXH4q6w/zh-cn_image_0000002762340156.png)
 
 **实现原理**
 
@@ -300,7 +300,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 4** 基于onInterceptRequest()的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ml4LGe0-RACfMsZuPlG__w/zh-cn_image_0000002784582635.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ewCqie7lRqqzJ9ut7i3BNg/zh-cn_image_0000002791858951.png)
 
 ### 本地资源替换
 
@@ -310,7 +310,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 5** 本地资源替换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/L8YBqREITMmJ3ST5ir_CTA/zh-cn_image_0000002784662815.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/XGoDv0GxSpORQhfw25u00Q/zh-cn_image_0000002762500076.png)
 
 **实现原理**
 
@@ -458,11 +458,11 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 6** Wi-Fi网络环境下加载图片资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/q4EXuVqXSGWslN3jLwWSmw/zh-cn_image_0000002755023882.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/wtwMHklySiGDuwmCLaK0MQ/zh-cn_image_0000002791738739.png)
 
 **图 7** 非Wi-Fi网络环境下加载本地占位图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/WqQHkYb3QT6_Tz7tWMHvtQ/zh-cn_image_0000002755183770.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/BX9AcVRCQVGW1CpaVGRe-A/zh-cn_image_0000002762340158.png)
 
 **实现原理**
 
@@ -577,7 +577,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 8** 基于WebSchemeHandler的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/FsW0-H4tTeiEqn6uV4Xejw/zh-cn_image_0000002784582637.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/xqhV_xpORImsPixcgFdSgw/zh-cn_image_0000002791858953.png)
 
 ### 配置公共请求头
 
@@ -587,7 +587,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 9** 配置公共请求头
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/pfZLIwgOQOqYNw1yjpP-5g/zh-cn_image_0000002784662817.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/7BUGk20vRB-TtFq6UnQdxQ/zh-cn_image_0000002762500078.png)
 
 **实现原理**
 

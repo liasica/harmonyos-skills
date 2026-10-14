@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: 实名信息验证/授权场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 用户身份验证服务 > 实名信息验证/授权场景
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:21+08:00
+scraped_at: 2026-10-15T07:05:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:da95de8c752bdf65260d854374ac643bab5fabb416fff6c2f3669b6e08c2ca10
+content_hash: sha256:3aee71063d12d5edc8f5c37f676bee1fa90aeaa742fce90cff52cd2e082a9296
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:da95de8c752bdf65260d854374ac643bab5fabb416fff6c2f3669b6e08c
 
 实名信息验证授权页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/bHHQRR2IS4ipGN6itUtSHw/zh-cn_image_0000002755024924.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/rLNfUrxVRIWX5234cby2eA/zh-cn_image_0000002791739783.png)
 
 ## 接入流程
 
@@ -33,7 +33,7 @@ content_hash: sha256:da95de8c752bdf65260d854374ac643bab5fabb416fff6c2f3669b6e08c
 
 开发者通过接入Payment Kit实名信息验证授权能力，可以简便快捷地实现用户实名信息验证或获取用户授权后的实名信息（可二选一）。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/WneYdJLhRHOmQNPRGezb0Q/zh-cn_image_0000002755184812.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Ree4fjPIQKO32_oawMj_lQ/zh-cn_image_0000002762341204.png)
 
 ### 实名信息验证
 

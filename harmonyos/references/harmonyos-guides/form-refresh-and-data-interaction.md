@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/form-refresh-
 title: 卡片更新与数据交互
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片最佳实践 > 卡片更新与数据交互
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:21+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:64c58cdcdc659c29388b647fa9339bec783a307bc37318ce389a1472ee261c6a
+scraped_at: 2026-10-15T07:04:24+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:5c7381d58210d2284ff685ed676aa288e508736fcfcd112e1f07504f7273d2fe
 ---
 
 ## 概述
 
-服务卡片给用户提供一目了然的信息内容，具有易用可见、智能可选和多端可变的特点，提供给用户简洁、高效的体验。系统通过[卡片开发服务](form-kit.md)（Form Kit），提供了丰富的服务卡片开发能力，涵盖了卡片的创建、交互、更新与管理等多个方面，使开发者能够高效完成个性化服务卡片的开发。
+服务卡片给用户提供一目了然的信息内容，具有易用可见、智能可选和多端可变的特点，提供给用户简洁、高效的体验。系统通过[Form Kit（卡片开发服务）](form-kit.md)，提供了丰富的服务卡片开发能力，涵盖了卡片的创建、交互、更新与管理等多个方面，使开发者能够高效完成个性化服务卡片的开发。
 
 **图 1** 天气卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/42DUxXb7QvGG6Au2p8g9mQ/zh-cn_image_0000002755024008.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/wRQ30kVaS0-i_3w65VTAjw/zh-cn_image_0000002791738865.jpg)
 
 ### 卡片更新场景
 
@@ -39,21 +39,21 @@ content_hash: sha256:64c58cdcdc659c29388b647fa9339bec783a307bc37318ce389a1472ee2
 
 **图 2** 卡片提供方和使用方
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/OYNGRYj6QseQv7kU8s5zCg/zh-cn_image_0000002755024010.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/cSCd3UqUQp6-xTyy_ok4NA/zh-cn_image_0000002791738867.jpg)
 
-以天气卡片为例，天气应用作为[卡片提供方](formkit-overview.md#服务卡片架构)，提供天气卡片的显示内容、控件布局和卡片交互处理逻辑。例如，天气卡片显示地点、温度和天气情况，点击卡片跳转至天气应用等。此时，桌面作为[卡片使用方](formkit-overview.md#服务卡片架构)，即卡片的宿主应用，控制天气卡片在桌面中展示的位置并展示卡片内容。ArkTS服务卡片的实现依赖ArkTS卡片框架的能力，卡片框架管理卡片生命周期和刷新机制，负责卡片页面的渲染。如下图所示，卡片提供方和使用方都依赖于卡片框架，天气应用提供的天气卡片，其添加、删除和刷新依赖框架的卡片管理服务，桌面展示天气卡片内容依赖框架的卡片渲染服务。关于卡片提供方、使用方和卡片框架的详细内容可参考[ArkTS卡片实现原理](arkts-form-overview.md#实现原理)。
+以天气卡片为例，天气应用作为[卡片提供方](formkit-overview.md#服务卡片架构)，提供天气卡片的显示内容、控件布局和卡片交互处理逻辑。例如，天气卡片显示地点、温度和天气情况，点击卡片跳转至天气应用等。此时，桌面作为[卡片使用方](formkit-overview.md#服务卡片架构)，即卡片的宿主应用，控制天气卡片在桌面中展示的位置并展示卡片内容。ArkTS服务卡片的实现依赖ArkTS卡片框架的能力，卡片框架管理卡片生命周期和刷新机制，负责卡片页面的渲染。如下图所示，卡片提供方和使用方都依赖于卡片框架，天气应用提供的天气卡片，其添加、删除和刷新依赖框架的卡片管理服务，桌面展示天气卡片内容依赖框架的卡片渲染服务。关于卡片提供方、使用方和卡片框架的详细内容可参考ArkTS卡片[实现原理](arkts-form-overview.md#实现原理)。
 
 **图 3** 卡片运行机制示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/mi3cONJoSSSZcd0TDjgHtg/zh-cn_image_0000002755183898.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/QH3JSap-S8GJTSyldXINUA/zh-cn_image_0000002762340286.jpg)
 
 ### 卡片数据交互
 
-卡片更新场景的实现，依赖于[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)生命周期、[FormProvider模块](../harmonyos-references/js-apis-app-form-formprovider.md)提供的[updateForm()](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)接口和卡片框架提供的卡片刷新机制。如下图所示，应用主进程和应用的卡片进程是两个独立的进程，应用主进程持有[UIAbility](uiability.md)，应用的卡片进程持有[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)。卡片的UI页面由系统服务统一进行渲染，由卡片使用方（例如桌面）进行呈现。如果卡片数据不依赖于应用主进程，在卡片进程中使用卡片框架能力就能实现卡片更新。如果卡片数据依赖于应用主进程，应用主进程使用[FormProvider模块](../harmonyos-references/js-apis-app-form-formprovider.md)提供的[updateForm()](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)接口更新卡片时，需要明确卡片ID，所以卡片ID在添加卡片时需要进行存储，此类场景下需要借助卡片框架和数据存储等系统能力，保证应用主进程和卡片进程的卡片ID数据一致性。
+卡片更新场景的实现，依赖于[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)生命周期、[@ohos.app.form.formProvider](../harmonyos-references/js-apis-app-form-formprovider.md)提供的[updateForm()](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)接口和卡片框架提供的卡片刷新机制。如下图所示，应用主进程和应用的卡片进程是两个独立的进程，应用主进程持有[UIAbility组件](uiability.md)，应用的卡片进程持有[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)。卡片的UI页面由系统服务统一进行渲染，由卡片使用方（例如桌面）进行呈现。如果卡片数据不依赖于应用主进程，在卡片进程中使用卡片框架能力就能实现卡片更新。如果卡片数据依赖于应用主进程，应用主进程使用[@ohos.app.form.formProvider](../harmonyos-references/js-apis-app-form-formprovider.md)提供的[updateForm()](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)接口更新卡片时，需要明确卡片ID，所以卡片ID在添加卡片时需要进行存储，此类场景下需要借助卡片框架和数据存储等系统能力，保证应用主进程和卡片进程的卡片ID数据一致性。
 
 **图 4** 应用主进程与卡片进程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vilfOK4sRcK-y4wTu6iCPQ/zh-cn_image_0000002784582765.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/c3AnwvtiQ9-JtdBbKza9jA/zh-cn_image_0000002791859083.jpg)
 
 本文主要介绍由卡片或应用UI交互引起的、由系统刷新机制定时或定点触发的[卡片更新场景](form-refresh-and-data-interaction.md#卡片更新场景)。一般情况下，卡片实现这几种常见场景就可以满足用户对卡片信息更新的诉求。还有一类是需要实时更新信息的应用卡片，例如出行打车类卡片，用户对信息的实时性要求很高，这类场景可以通过[Push Kit（推送服务）](push-kit-guide.md)的能力来实现，详细可参考[推送卡片刷新消息](push-form-update.md)。
 
@@ -61,11 +61,11 @@ content_hash: sha256:64c58cdcdc659c29388b647fa9339bec783a307bc37318ce389a1472ee2
 
 ### 场景描述
 
-添加卡片时需要对卡片进行数据初始化，卡片创建及卡片配置参考[ArkTS卡片开发指导](arkts-ui.md)，本章节将对卡片数据初始化的流程进行介绍。
+添加卡片时需要对卡片进行数据初始化，卡片创建及卡片配置参考[ArkTS卡片开发](arkts-ui.md)，本章节将对卡片数据初始化的流程进行介绍。
 
 **图 5** 卡片预览页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/nTbjqVwzQ56T4pQw7Qb-Vw/zh-cn_image_0000002784662945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/-O5BxUZWRN-_LI2G1XJ8_Q/zh-cn_image_0000002762500206.png)
 
 ### 开发流程
 
@@ -73,7 +73,7 @@ content_hash: sha256:64c58cdcdc659c29388b647fa9339bec783a307bc37318ce389a1472ee2
 
 **图 6** 卡片数据初始化流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/mpqM2qZiTDeNYWyB5ErVww/zh-cn_image_0000002755024012.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/q05Y1InXQqupvqloIHC_SA/zh-cn_image_0000002791738869.jpg)
 
 桌面长按应用图标待展示卡片列表时，首先触发[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)生命周期接口onAddForm()。使用卡片参数枚举[FormParam](../harmonyos-references/js-apis-app-form-forminfo.md#formparam)可以从生命周期接口onAddForm()的入参[want](../harmonyos-references/js-apis-app-ability-want.md)中取出卡片的相关信息如卡片标识、卡片名称、卡片宽高等。针对必要的信息可以进行判断或者保存等操作。
 
@@ -104,7 +104,7 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
 创建需要返回卡片的数据类，可以是包含若干键值对的Object或JSON格式的字符串。使用卡片数据绑定模块[formBindingData](../harmonyos-references/js-apis-app-form-formbindingdata.md#formbindingdata)的createFormBindingData()接口封装卡片需要使用的数据类，作为生命周期接口onAddForm()的返回值并传递给卡片。
 
-说明：若onAddForm()接口中无法直接构建数据类作为接口返回值初始化卡片，例如依赖数据库查询结果或等待网络数据等使用异步的场景，可以使用[FormProvider模块](../harmonyos-references/js-apis-app-form-formprovider.md)提供的[updateForm()](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)接口将异步获取的数据推送至卡片。
+说明：若onAddForm()接口中无法直接构建数据类作为接口返回值初始化卡片，例如依赖数据库查询结果或等待网络数据等使用异步的场景，可以使用[@ohos.app.form.formProvider](../harmonyos-references/js-apis-app-form-formprovider.md)提供的[updateForm()](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)接口将异步获取的数据推送至卡片。
 
 ```ts
 export class FormData {
@@ -162,7 +162,7 @@ export default class EntryFormAbility extends FormExtensionAbility {
 }
 ```
 
-卡片页面使用页面级的UI状态存储[LocalStorage](arkts-localstorage.md)接收onAddForm()接口传递的数据。使用装饰器@LocalStorageProp装饰的状态变量接收数据类的详细信息，装饰器@LocalStorageProp(key)中的key值需与数据类的键值一一对应。使用获取的数据初始化卡片页面。
+卡片页面使用页面级的UI状态存储[LocalStorage：页面级UI状态存储](arkts-localstorage.md)接收onAddForm()接口传递的数据。使用装饰器@LocalStorageProp装饰的状态变量接收数据类的详细信息，装饰器@LocalStorageProp(key)中的key值需与数据类的键值一一对应。使用获取的数据初始化卡片页面。
 
 ```ts
 let storageLocal = new LocalStorage();
@@ -188,15 +188,15 @@ struct WidgetCard {
 
 ### 场景描述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/DiET9DGIQ3KZZw7lwBIlrQ/zh-cn_image_0000002755183900.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/W653z_sMQ4iFLjyADqnlGA/zh-cn_image_0000002762340288.gif)
 
-一般情况下，简单的卡片UI交互会引起卡片更新。例如，智能家电控制类卡片，通过卡片控制家电开关时，卡片上的开关状态会随设备状态而改变；点击新闻类卡片刷新按钮，从网络获取最新数据更新推荐内容列表。这类更新场景可以[通过message事件](arkts-ui-widget-event-formextensionability.md)实现，仅在卡片进程就可以完成卡片更新。
+一般情况下，简单的卡片UI交互会引起卡片更新。例如，智能家电控制类卡片，通过卡片控制家电开关时，卡片上的开关状态会随设备状态而改变；点击新闻类卡片刷新按钮，从网络获取最新数据更新推荐内容列表。这类更新场景可以通过[卡片传递消息给应用（message事件）](arkts-ui-widget-event-formextensionability.md)实现，仅在卡片进程就可以完成卡片更新。
 
 ### 开发流程
 
 **图 7** 卡片UI交互引起更新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ZlufCyH9TKSCrHaxZZ-Ghw/zh-cn_image_0000002784582767.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/ByqESsarR2eEe2SM6mEGEg/zh-cn_image_0000002791859085.jpg)
 
 在卡片页面注册onClick()点击事件，动态卡片使用postCardAction()接口，静态卡片使用FormLink组件触发事件。本文以动态卡片为例，在点击事件回调中调用postCardAction()接口，action参数选择message触发message事件。message事件未设置abilityName参数时，默认拉起FormExtensionAbility。
 
@@ -250,15 +250,15 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
 ### 场景描述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/yLTUDMxlRPa6UQ4gvk8PBw/zh-cn_image_0000002784662947.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/iRLdnYPRS52aLSc37aXHew/zh-cn_image_0000002762500208.gif)
 
-卡片UI交互引起卡片更新，实现和应用在前台时相同的功能。例如，音乐类卡片，点击播放或切换按钮，拉起后台播放音乐，同时更新卡片上的播放状态。这类更新场景可以[通过call事件](arkts-ui-widget-event-call.md)实现，需要在卡片进程拉起应用主进程至后台时更新卡片。
+卡片UI交互引起卡片更新，实现和应用在前台时相同的功能。例如，音乐类卡片，点击播放或切换按钮，拉起后台播放音乐，同时更新卡片上的播放状态。这类更新场景可以通过[卡片拉起应用UIAbility到后台（call事件）](arkts-ui-widget-event-call.md)实现，需要在卡片进程拉起应用主进程至后台时更新卡片。
 
 ### 开发流程
 
 **图 8** 拉起应用至后台时更新卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/cIasvpf4Sr-KqAs16pVqtA/zh-cn_image_0000002755024014.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/uq4cF1f2SMS1pYR2dP7nUg/zh-cn_image_0000002791738871.jpg)
 
 在卡片页面注册onClick()点击事件，本文以动态卡片为例，在回调中调用postCardAction()接口（静态卡片中使用FormLink），action参数选择call并配置需要调用的方法和传递的数据，触发call事件后台拉起指定UIAbility。配置参数注意以下限制：
 
@@ -391,15 +391,15 @@ class MyParcelable implements rpc.Parcelable {
 
 ### 场景描述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/4XZ2hhlRS_mD-IIv5V5k3g/zh-cn_image_0000002755183902.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/mHln16oRSj6BqmsIssrNkQ/zh-cn_image_0000002762340290.gif)
 
-卡片UI交互跳转至应用后，引起卡片更新。用于定时更新类卡片手动触发卡片更新。例如，天气类卡片，点击卡片跳转至应用，应用实时刷新天气，同时更新卡片展示的天气数据。这类更新场景可以[通过router事件](arkts-ui-widget-event-router.md)实现，需要从卡片进程跳转至应用主进程后进行卡片更新。
+卡片UI交互跳转至应用后，引起卡片更新。用于定时更新类卡片手动触发卡片更新。例如，天气类卡片，点击卡片跳转至应用，应用实时刷新天气，同时更新卡片展示的天气数据。这类更新场景可以通过[卡片跳转到应用页面（router事件）](arkts-ui-widget-event-router.md)实现，需要从卡片进程跳转至应用主进程后进行卡片更新。
 
 ### 开发流程
 
 **图 9** 跳转到应用后更新卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/KvsmyTjlRCu7F6ph2jtNkA/zh-cn_image_0000002784582769.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/zn_crV_QQ02lSghx7XDKAw/zh-cn_image_0000002791859087.jpg)
 
 在卡片页面注册onClick()点击事件，在回调中调用postCardAction()接口，action参数选择router触发router事件。router事件拉起指定的UIAbility，使用abilityName进行配置。
 
@@ -482,7 +482,7 @@ export default class EntryAbility extends UIAbility {
 
 ### 场景描述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/TG8hoi6lTOKGNkBQqwvuRQ/zh-cn_image_0000002784662949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Q1wyjrzBQjKsVZPmvfwsGA/zh-cn_image_0000002762500210.png)
 
 以应用点击收藏场景为例。卡片展示内容在应用内数据列表中，当点击应用内收藏按钮，收藏状态应同步至卡片。
 
@@ -492,7 +492,7 @@ export default class EntryAbility extends UIAbility {
 
 **图 10** 从应用更新数据到卡片流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/IY6L9Ev0QQul2EVSZiTZvA/zh-cn_image_0000002755024016.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/FF3FzG7rRLWz_Gm28mZpJw/zh-cn_image_0000002791738873.jpg)
 
 图片展示卡片创建时，在onAddForm()生命周期中使用首选项保存卡片ID至卡片ID列表及卡片当前状态。
 
@@ -596,13 +596,13 @@ Row() {
 
 服务卡片支持通过定时刷新及定点刷新的方式实现以上场景。
 
-在使用定时和定点刷新功能之前，需要在form\_config.json配置文件中设置updateEnabled字段为true，以启用周期性刷新功能。出于安全及性能考虑，每张卡片每天最多通过定时方式触发刷新50次，定时刷新包含[卡片配置项updateDuration](arkts-ui-widget-configuration.md)和调用setFormNextRefreshTime方法两种方式。当达到50次配额后，无法通过定时方式再次触发刷新，刷新次数会在每天的0点重置。
+在使用定时和定点刷新功能之前，需要在form\_config.json配置文件中设置updateEnabled字段为true，以启用周期性刷新功能。出于安全及性能考虑，每张卡片每天最多通过定时方式触发刷新50次，定时刷新可以通过[配置ArkTS卡片的配置文件](arkts-ui-widget-configuration.md)中的配置项updateDuration和调用setFormNextRefreshTime方法两种方式实现。当达到50次配额后，无法通过定时方式再次触发刷新，刷新次数会在每天的0点重置。
 
 ### 开发流程
 
 **定时刷新**
 
-定时刷新表示在指定的时间间隔后自动刷新卡片内容。可以在[form\_config.json](arkts-ui-widget-configuration.md)配置文件的updateDuration字段中进行设置。卡片定时刷新的更新周期updateDuration字段的单位为30分钟，即最短为半小时（30分钟）刷新一次。当取值为0时，表示该参数不生效，当取值为正整数N时，表示刷新周期为30\*N分钟。
+定时刷新表示在指定的时间间隔后自动刷新卡片内容。可以通过[配置ArkTS卡片的配置文件](arkts-ui-widget-configuration.md)的updateDuration字段中进行设置。卡片定时刷新的更新周期updateDuration字段的单位为30分钟，即最短为半小时（30分钟）刷新一次。当取值为0时，表示该参数不生效，当取值为正整数N时，表示刷新周期为30\*N分钟。
 
 定时刷新触发后，系统调用onUpdateForm()的生命周期回调函数，使用[updateForm()](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)方法更新卡片内容。
 
@@ -662,7 +662,7 @@ export default class EntryFormAbility extends FormExtensionAbility {
 }
 ```
 
-更多注意事项参考[卡片定时刷新和定点刷新](arkts-ui-widget-interaction-overview.md#被动刷新)。
+更多注意事项参考[被动刷新](arkts-ui-widget-interaction-overview.md#被动刷新)。
 
 ## 常见问题
 

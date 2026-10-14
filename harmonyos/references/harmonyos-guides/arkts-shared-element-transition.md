@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-shared-
 title: 共享元素转场 (一镜到底)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 共享元素转场 (一镜到底)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:10+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:b688acd8be07b996d502674ae91e83eb8ac20f8540620bd2bed4efad0f16f5e4
+scraped_at: 2026-10-15T07:04:11+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:d35f9f6bf7f1054a838e508945eb0f1b19a542692dc1957be03ba293c9b3f712
 ---
 
 共享元素转场是一种界面切换时对相同或者相似的两个元素做的一种位置和大小匹配的过渡动画效果，也称一镜到底动效。
@@ -192,7 +192,7 @@ export default struct Post {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/M7lW4mo9QeewtIzUBDUBtw/zh-cn_image_0000002784582349.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/wNwzgt-hToOy-zip2Sa_Mg/zh-cn_image_0000002791858665.gif)
 
 ## 新建容器并跨容器迁移组件
 
@@ -573,7 +573,7 @@ export const deleteNode = (id: string) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/_8H7uiEqTzuX6hzPimas-w/zh-cn_image_0000002784662529.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/-HVjGI-SSTKhqbY3ODW19g/zh-cn_image_0000002762499790.gif)
 
 ### 结合Navigation使用
 
@@ -1342,7 +1342,7 @@ export const getMyNode = (): MyNodeController | undefined => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/nvbHSGqSQuiggOYoVinQoA/zh-cn_image_0000002755023596.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/kPjfMNlvT-yYRrWH0JMgTA/zh-cn_image_0000002791738453.gif)
 
 ### 结合BindSheet使用
 
@@ -1884,7 +1884,7 @@ export default class EntryAbility extends UIAbility {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/W6fcExOHRwy2EhyfTMsidw/zh-cn_image_0000002755183482.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/RL0oCaWYSr-9-8sc4yvoZg/zh-cn_image_0000002762339872.gif)
 
 ## 使用geometryTransition共享元素转场
 
@@ -1893,6 +1893,11 @@ export default class EntryAbility extends UIAbility {
 geometryTransition的使用方式为对需要添加一镜到底动效的两个组件使用geometryTransition接口绑定同一id，这样在其中一个组件消失同时另一个组件创建出现的时候，系统会对二者添加一镜到底动效。
 
 geometryTransition绑定两个对象的实现方式使得geometryTransition区别于其他方法，最适合用于两个不同对象之间完成一镜到底。
+
+**说明** 
+
+1. 使用geometryTransition接口绑定同一id的组件不能相互嵌套，即一个绑定了该id的组件内部不能再嵌套另一个绑定了相同id的组件，否则会导致转场动画异常。
+2. 建议在动画结束回调（[onFinish](../harmonyos-references/ts-explicit-animation.md#animateparam对象说明)）中将绑定的id置空，防止在非预期场景（如页面快速连续点击、状态变量变化等）下误触发共享元素转场。下次触发转场前再将id设置回所需值。
 
 ### geometryTransition的简单使用
 
@@ -1905,6 +1910,8 @@ import { curves } from '@kit.ArkUI';
 @Component
 struct IfElseGeometryTransition {
   @State isShow: boolean = false;
+  // 使用状态变量管理geometryTransition的id，动画结束后置空防止误触发
+  @State geometryId: string = 'picture';
 
   build() {
     Stack({ alignContent: Alignment.Center }) {
@@ -1916,7 +1923,7 @@ struct IfElseGeometryTransition {
           .width(200)
           .height(200)
           .borderRadius(100)
-          .geometryTransition('picture')
+          .geometryTransition(this.geometryId)
           .transition(TransitionEffect.OPACITY)
           // 在打断场景下，即动画过程中点击页面触发下一次转场，如果不加id，则会出现重影
           // 加了id之后，新建的spring图片会复用之前的spring图片节点，不会重新创建节点，也就不会有重影问题
@@ -1939,7 +1946,7 @@ struct IfElseGeometryTransition {
         // 则对容器本身有圆角同步而不会操作容器内部子组件的borderRadius
         .borderRadius(50)
         .clip(true)
-        .geometryTransition('picture')
+        .geometryTransition(this.geometryId)
         // transition保证节点离场不被立即析构，设置通用转场效果
         .transition(TransitionEffect.OPACITY)
         .position({ x: 40, y: 40 })
@@ -1947,8 +1954,14 @@ struct IfElseGeometryTransition {
       }
     }
     .onClick(() => {
+      // 动画开始前确保id已设置
+      this.geometryId = 'picture';
       this.getUIContext()?.animateTo({
-        curve: curves.springMotion()
+        curve: curves.springMotion(),
+        onFinish: () => {
+          // 动画结束后置空id，防止误触发
+          this.geometryId = '';
+        }
       }, () => {
         this.isShow = !this.isShow;
       })
@@ -1958,7 +1971,7 @@ struct IfElseGeometryTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/FeURWyyISzKjTIhxzqbEIA/zh-cn_image_0000002784582351.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/BuzLkk8fQcufvtVC5txw5g/zh-cn_image_0000002791858667.gif)
 
 ### geometryTransition结合模态转场使用
 
@@ -1981,6 +1994,8 @@ struct Index {
   @State isPersonalPageShow: boolean = false;
   @State selectedIndex: number = 0;
   @State alphaValue: number = 1;
+  // 使用状态变量管理geometryTransition的id，动画结束后置空防止误触发
+  @State geometryId: string = '';
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
   // 数组中图片均使用Resource资源，需用户自定义
@@ -2018,9 +2033,15 @@ struct Index {
 
   private onAvatarClicked(index: number): void {
     this.selectedIndex = index;
+    // 动画开始前设置共享元素转场id
+    this.geometryId = index.toString();
     this.getUIContext()?.animateTo({
       duration: 350,
-      curve: Curve.Friction
+      curve: Curve.Friction,
+      onFinish: () => {
+        // 动画结束后置空id，防止误触发
+        this.geometryId = '';
+      }
     }, () => {
       this.isPersonalPageShow = !this.isPersonalPageShow;
       this.alphaValue = 0;
@@ -2028,9 +2049,15 @@ struct Index {
   }
 
   private onPersonalPageBack(index: number): void {
+    // 动画开始前设置共享元素转场id
+    this.geometryId = index.toString();
     this.getUIContext()?.animateTo({
       duration: 350,
-      curve: Curve.Friction
+      curve: Curve.Friction,
+      onFinish: () => {
+        // 动画结束后置空id，防止误触发
+        this.geometryId = '';
+      }
     }, () => {
       this.isPersonalPageShow = !this.isPersonalPageShow;
       this.alphaValue = 1;
@@ -2044,7 +2071,7 @@ struct Index {
         .size({ width: 200, height: 200 })
         .borderRadius(100)
         // 头像配置共享元素效果，与点击的头像的id匹配
-        .geometryTransition(index.toString())
+        .geometryTransition(this.geometryId)
         .clip(true)
         .transition(TransitionEffect.opacity(0.99))
 
@@ -2083,7 +2110,11 @@ struct Index {
       ForEach(this.allPostData, (postData: PostData, index: number) => {
         Column() {
           Post({
-            data: postData, index: index, onAvatarClicked: (index: number) => {
+            data: postData,
+            index: index,
+            geometryId: this.geometryId,
+            selectedIndex: this.selectedIndex,
+            onAvatarClicked: (index: number) => {
               this.onAvatarClicked(index);
             }
           })
@@ -2103,6 +2134,8 @@ struct Index {
 export default struct Post {
   @Prop data: PostData;
   @Prop index: number;
+  @Prop geometryId: string = '';
+  @Prop selectedIndex: number = -1;
   @State expandImageSize: number = 100;
   @State avatarSize: number = 50;
   private onAvatarClicked: (index: number) => void = (index: number) => { };
@@ -2118,7 +2151,10 @@ export default struct Post {
             this.onAvatarClicked(this.index);
           })
           // 对头像绑定共享元素转场的id
-          .geometryTransition(this.index.toString(), { follow: true })
+          .geometryTransition(
+            (this.index === this.selectedIndex && this.geometryId !== '') ? this.geometryId : '',
+            { follow: true }
+          )
           .transition(TransitionEffect.OPACITY.animation({ duration: 350, curve: Curve.Friction }))
 
         Text(this.data.name)
@@ -2144,7 +2180,7 @@ export default struct Post {
 
 效果为点击主页的头像后，弹出模态页面显示个人信息，并且两个页面之间的头像做一镜到底动效：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/CkHzbunPRkqtdBzomRd0ww/zh-cn_image_0000002784662531.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/xE80oXTpT0GKXYrx8TR0Hg/zh-cn_image_0000002762499792.gif)
 
 ## 元素转场案例
 
@@ -2154,7 +2190,7 @@ export default struct Post {
 
   图片使用双指放大转场显示图片详情页。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/gibVLRIlQpmqbZFQwdPW3A/zh-cn_image_0000002755023598.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Z_7h5L3AQ_263bCbNL1zpA/zh-cn_image_0000002791738455.gif)
 
   通过NodeContainer组件实现跨节点迁移，通过手势捏合来控制节点的上下树，达成一镜到底动效。
 
@@ -2254,7 +2290,7 @@ export default struct Post {
 
   比如图片在九宫格中显示，点击查看大图，同时还支持手势下拉返回到九宫格。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/sW_p_JSuQriUJ61RwjkDSA/zh-cn_image_0000002755183484.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/2GbQus8_TaurWlygOjrwWg/zh-cn_image_0000002762339874.gif)
 
   设置geometryTransition属性将图片首页和大图页面的图片绑定同一id值，结合属性动画效果实现一镜到底效果。核心代码如下：
 
@@ -2329,7 +2365,7 @@ export default struct Post {
 
   图片从页面向半模态弹窗中转场显示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/RTL1z2GlQ8KORIc8MSpQFg/zh-cn_image_0000002784582353.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/NWzm_BHKTqWe8m6GeH790A/zh-cn_image_0000002791858669.gif)
 
   利用NodeContainer组件实现跨节点迁移，将半模态SheetOptions()中的mode设置为SheetMode.EMBEDDED，该模式下新起的页面可以覆盖在半模态弹窗上，页面返回后该半模态依旧存在，半模态面板内容不丢失。通过属性动画，展示组件从初始界面至半模态页面的一镜到底动效，并在动画结束时关闭页面，并将该组件迁移至半模态页面。
 
@@ -2430,7 +2466,7 @@ export default struct Post {
 
 搜索框点击后，转场到搜索结果页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/E8AFLJRMSTerKuYTSMtd3w/zh-cn_image_0000002784662533.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/beRko8lnT_iMzr9EJqlZ2g/zh-cn_image_0000002762499794.gif)
 
 将搜索框首页与搜索框页面的Search组件同时设置geometryTransition属性，并绑定同一id值。设置显式动画和transition属性的转场效果，实现搜索框的一镜到底效果。
 
@@ -2466,7 +2502,7 @@ export default struct Post {
 
 在瀑布流或列表流布局中，当用户点击其中一个卡片或列表项时，应用将执行平滑的转场动画，引导用户从概览页面切换到详情页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/gPFRJ8jnTiSZoewcpwjZWg/zh-cn_image_0000002755023600.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/XTmXP6hTTs-uouMV8mcfLw/zh-cn_image_0000002791738457.gif)
 
 使用WaterFlow()和LazyForEach()实现卡片列表瀑布流。利用Navigation的自定义导航转场动画能力，通过customNavContentTransition()配置列表页与详情页的自定义导航转场动画，结合componentSnapshot()将卡片进行截图避免跳转页面白屏。
 
@@ -2596,7 +2632,7 @@ export default struct Post {
 
 列表一镜到底效果图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/95gRD6hUSCGU4KfDqUIXnA/zh-cn_image_0000002755183486.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/KCsBYcN9Ry2UnR89O3_UCg/zh-cn_image_0000002762339876.gif)
 
 将列表项与详情页面同时设置geometryTransition属性，并绑定同一id值。每个列表项设置显式动画和transition属性的转场效果，实现列表展开的一镜到底效果。
 
@@ -2722,7 +2758,7 @@ export default struct Post {
 
 阅读类应用中，点击一本“图书”的图标后，模拟图书翻页展开的效果，转场到书本内容页面，同时支持手势返回。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/F-eayXKeSPaxvPGn5hKhGw/zh-cn_image_0000002784582355.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/-K98pNwkTeCJ0qKL0LoEhw/zh-cn_image_0000002791858671.gif)
 
 利用Navigation的自定义导航转场动画能力，通过customNavContentTransition()配置书籍页与详情页的自定义导航转场动画实现图书翻页一镜到底效果。使用rotate属性实现书籍翻页的旋转效果。
 
@@ -2903,7 +2939,7 @@ export default struct Post {
 
 视频组件从一个页面向目标页面的转场，在一镜到底的过程中，视频需要持续播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/M1G_OpGcSou6y_sZVFmGVQ/zh-cn_image_0000002784662535.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/RoCaTTF0SZWQqsyNRuQQog/zh-cn_image_0000002762499796.gif)
 
 使用WaterFlow()和LazyForEach()实现卡片列表瀑布流。利用NodeController实现组件的跨节点迁移，通过customNavContentTransition配置概览页与视频详情的自定义导航转场动画，给节点的迁移过程赋予一镜到底效果。
 

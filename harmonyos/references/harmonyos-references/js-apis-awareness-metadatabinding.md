@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-awareness-metadatabinding
-title: "@ohos.multimodalAwareness.metadataBinding (记忆链接)"
-breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > ArkTS API > @ohos.multimodalAwareness.metadataBinding (记忆链接)
+title: "@ohos.multimodalAwareness.metadataBinding (元数据绑定)"
+breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > ArkTS API > @ohos.multimodalAwareness.metadataBinding (元数据绑定)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:13+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:734d61fb44f7184b90e649939b39ea98c80fa8751b955a2275529515b004f386
+scraped_at: 2026-10-15T07:10:41+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:20ca3cb29c6d247c5b2561090e3311edbf7827c5f5de818f1e77c2961c00a6bb
 ---
 
-本模块提供记忆链接能力调用，包括编码内容传递、订阅事件和取消订阅事件。记忆链接允许系统应用获取第三方应用的编码内容，支持实时事件监听和回调机制，适用于系统应用请求（如截图）并获取应用链接数据的场景，通过跨应用数据传递提升用户体验。
+本模块提供元数据绑定能力调用，包括编码内容传递、订阅事件和取消订阅事件。元数据绑定允许系统应用获取第三方应用的编码内容，支持实时事件监听和回调机制，适用于系统应用请求（如截图）并获取应用链接数据的场景，通过跨应用数据传递提升用户体验。
 
 **说明** 
 
@@ -38,7 +38,7 @@ submitMetadata(metadata: string): void
 
 **错误码**：
 
-以下错误码的详细介绍请参见[记忆链接错误码](errorcode-metadatabinding.md)。
+以下错误码的详细介绍请参见[元数据绑定错误码](errorcode-metadatabinding.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -79,7 +79,7 @@ on(type: 'operationSubmitMetadata', bundleName: string, callback: Callback<numbe
 
 **错误码**：
 
-以下错误码的详细介绍请参见[记忆链接错误码](errorcode-metadatabinding.md)。
+以下错误码的详细介绍请参见[元数据绑定错误码](errorcode-metadatabinding.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -125,7 +125,7 @@ off(type: 'operationSubmitMetadata', bundleName: string, callback?: Callback<num
 
 **错误码**：
 
-以下错误码的详细介绍请参见[记忆链接错误码](errorcode-metadatabinding.md)。
+以下错误码的详细介绍请参见[元数据绑定错误码](errorcode-metadatabinding.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |

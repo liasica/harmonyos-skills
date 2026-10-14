@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 基于Surface模式进行视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 基于Surface模式进行视频编码
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:54+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:3c114635133ce3cf5201a03a33b4331a21879c8b7edba209c55bb7e2c74fdd1b
+scraped_at: 2026-10-15T07:05:03+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:9ca1ae9517a4e2d04d4f7f4f572d289c28625e71084a937e41cfb8d68ced23cd
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ Surface分为生产者ProducerSurface和消费者ConsumerSurface。NativeWindow�
 
 Surface轮转流程如下所示，生产者先申请到一块Buffer，填充数据后将Buffer返回给BufferQueue。在触发回调函数后，通知消费者Buffer已经被生产者填充好数据。之后，消费者可以获取填充好数据的Buffer，直到不再需要该Buffer后，释放对应的Buffer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/G5X-2RdXQLGwEDff4gtw4g/zh-cn_image_0000002784663259.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/3gXQ0MW7SbKcpjl76DUoNw/zh-cn_image_0000002762500526.png)
 
 视频编码器提供了获取NativeWindow的接口，通过NativeWindow可以将相机产生的数据与视频编码器进行对接。视频编码器作为消费者，将Buffer数据进行消费编码，从而实现视频编码的操作。下面我们将通过相机录制和屏幕录制，介绍基于Surface模式进行视频编码。
 
@@ -50,7 +50,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 6. 创建并启动编码输出子线程。
 7. 将从编码器中获取的NativeWindow对象设置给AVScreenCapture，启动屏幕录制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/lNxFZgRGT0es_UCzm3OvwA/zh-cn_image_0000002755024326.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/jmqfRNg6Rpm-B493--aFVg/zh-cn_image_0000002791739185.png)
 
 ### 开发步骤
 
@@ -261,12 +261,12 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 
        InitAVScreenCapture(videoWidth, videoHeight);
        
-       m_IsRunning = true;
+       isStreamRunning = true;
 
        StartMuxerAndEncoder();
 
        int result = OH_AVScreenCapture_StartScreenCaptureWithSurface(g_avCapture, sampleInfo_.window);
-       OH_LOG_INFO(LOG_APP, "OH_VideoEncoder_Start Started 2 %{public}d", result);
+       OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_StartScreenCaptureWithSurface Started, result: %{public}d", result);
        if (result != AV_SCREEN_CAPTURE_ERR_OK) {
            OH_LOG_INFO(LOG_APP, "ScreenCapture Started failed %{public}d", result);
            OH_AVScreenCapture_Release(g_avCapture);
@@ -291,7 +291,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 5. 启动视频编码器。
 6. 创建并启动编码输出子线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/RWvB3vr4RjKkwEV7jnzcEQ/zh-cn_image_0000002755184214.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/09CVeNZUTcucyONFyuIWjA/zh-cn_image_0000002762340606.png)
 
 ### 开发步骤
 

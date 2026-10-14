@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持统一拖拽
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 支持统一拖拽
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:09+08:00
+scraped_at: 2026-10-15T07:04:10+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:250983d3ccca688bd4591fe5b0f59ee5daa26b63102e9b801c60428fdead8291
+content_hash: sha256:f7214c94eb76358795156fa37c5341e160e5b0928837b20e243f46216cba1ee6
 ---
 
 统一拖拽提供了一种通过鼠标或手势触屏传递数据的机制，即从一个组件位置拖出（drag）数据并将其拖入（drop）到另一个组件位置，以触发响应。在这一过程中，拖出方提供数据，而拖入方负责接收和处理数据。这一操作使用户能够便捷地移动、复制或删除指定内容。
@@ -29,7 +29,7 @@ content_hash: sha256:250983d3ccca688bd4591fe5b0f59ee5daa26b63102e9b801c60428fdea
 
 手势拖拽（手指/手写笔）触发拖拽流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/XKgX6ysDSgq_rkO8FPKfww/zh-cn_image_0000002784662505.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/v9X8eGLUQsqIKUd_RVw1Ww/zh-cn_image_0000002762499766.png)
 
 ### ​鼠标拖拽
 
@@ -90,7 +90,7 @@ content_hash: sha256:250983d3ccca688bd4591fe5b0f59ee5daa26b63102e9b801c60428fdea
 
 拖拽背板图当前支持设置透明度、圆角、阴影和模糊，具体用法见[拖拽控制](../harmonyos-references/ts-universal-attributes-drag-drop.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/Uq5b-o52TTuZY0GTfqb3_A/zh-cn_image_0000002755023572.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/qLxAdkt4TE22ebs8hsrlqA/zh-cn_image_0000002791738429.png)
 
 **约束限制：**
 
@@ -468,7 +468,7 @@ export struct DefaultDrag {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/JTigPWERRUmMN7DWyDVeYA/zh-cn_image_0000002755183458.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/XV8aUAA0QFGm--9Z3v4VMw/zh-cn_image_0000002762339848.gif)
 
 ### 多选拖拽适配
 
@@ -753,7 +753,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Ws4sn8DgSz-0zqJTyg8kQg/zh-cn_image_0000002784582327.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/v1hEZ6ZjSzG_03TZ36HlDg/zh-cn_image_0000002791858643.gif)
 
 ### 适配自定义落位动效
 
@@ -905,7 +905,7 @@ export struct DropAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/J-q5jGj6T1a_GX1iuTEgpg/zh-cn_image_0000002784662507.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/JRuu63eKSPiJl5Z1_-VbbA/zh-cn_image_0000002762499768.gif)
 
 ### 处理大批量数据
 
@@ -1200,7 +1200,7 @@ struct GridEts {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/8X2FSfH0Teu7dHIwjZ_hJA/zh-cn_image_0000002755023574.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/hgRpMJ6ATvKwWrW3GHlEmg/zh-cn_image_0000002791738431.gif)
 
 ## 支持悬停检测
 
@@ -1215,7 +1215,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 除了实现视图切换跳转功能，该能力也可用于特定视图的激活。例如，在用户将一段文本拖拽至按钮上停留后，可激活一个文本输入框。用户随后可将所拖拽文本移动至该输入框上方释放，触发搜索结果展示，实现单手高效完成整个操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ZADS_3aER8iEriSGzeAWUw/zh-cn_image_0000002755183460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/zanJqSaQR-uniAqBfWjvtg/zh-cn_image_0000002762339850.png)
 
 ### 触发原理
 
@@ -1223,7 +1223,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 Spring Loading的整个过程包含三个阶段：悬停检测 -> 回调通知 -> 结束。在结束之前，如果用户重新开始移动，会自动中断Spring Loading，并通知应用取消。如果在悬停检测期间移动，且尚未进入Spring Loading状态，则不会触发取消通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/hhWz1l4HSxq3blPIgmKfgw/zh-cn_image_0000002784582329.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/_cHwMmbxQhO_Y5Y71ZTTjw/zh-cn_image_0000002791858645.png)
 
 应用通过回调接收当前的状态，动态改变UI显示，从而达到用户提醒的效果。
 
@@ -1555,7 +1555,7 @@ export struct SpringLoadingPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ITONBZO4Q1yyUDGJLywNRA/zh-cn_image_0000002784662509.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Jf-BkeMGSISrVpjDWXsZxg/zh-cn_image_0000002762499770.gif)
 
 ## 示例代码
 

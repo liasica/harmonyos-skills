@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-large
 title: LLM模型一站式量化
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > Transformer结构量化 > LLM模型一站式量化
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:29+08:00
+scraped_at: 2026-10-15T07:05:46+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:a34afcaf4257ee24ae7364da20ab388796fbc0650dd3f7b5af02f6c5a9cab632
+content_hash: sha256:dac2b135301f15ea33f40bb74e98c6d35da357d4772c42a35ceebafe8b4a9c14
 ---
 
 ## 简介
@@ -213,7 +213,7 @@ trained_quant_weight.pth ### 阶段一的输出，阶段二的输入
 
 量化完成后，开发者可进行量化仿真推理，通过对比量化模型与原始浮点模型的输出结果，来评估量化模型精度是否满足要求。量化仿真推理工程可参考[qwen2模型量化仿真推理demo](cannkit-large-language-one-stop.md#qwen2模型量化仿真推理demo)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/PQnLr-4VRwKBYkDjQKpjFQ/zh-cn_image_0000002755025078.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/M67ZoFPTQnq2BO-D9SxyKg/zh-cn_image_0000002791739937.jpg)
 
 ### 插件方法
 

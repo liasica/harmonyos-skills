@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decodin
 title: 使用ImageSource完成图片解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 使用ImageSource完成图片解码
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c7eaff58f6afdb726502cb7bfdcb21be8949161da62893f6591f59e77bf84c5c
+scraped_at: 2026-10-15T07:05:07+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:e113cb6af6cb3a16c5a444218bf76d41f30286d0500da70d8a79e37386f6ec80
 ---
 
 当应用需要读取图片内容、显示图片，或对图片进行缩放、裁剪等处理时，可使用[ImageSource](../harmonyos-references/arkts-apis-image-imagesource.md)完成图片解码。应用可通过图片在应用沙箱中的路径、文件描述符或缓冲区创建ImageSource，并将图片解码为PixelMap。
@@ -203,15 +203,7 @@ content_hash: sha256:c7eaff58f6afdb726502cb7bfdcb21be8949161da62893f6591f59e77bf
    确认pixelMap和imageSource的异步方法已经执行完成，不再使用该变量后，可按需手动调用下面方法释放。
 
    ```typescript
-   async release() {
-     try {
-       await this.pixelMap?.release();
-     } catch (error) {
-       console.error(`Failed to release PixelMap: ${error}.`);
-     } finally {
-       this.pixelMap = undefined;
-     }
-
+   async release_imageSource() {
      try {
        await this.imageSource?.release();
      } catch (error) {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-co
 title: 故障日志关键字段说明
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 故障日志关键字段说明
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:78bf438e54f798dff6908d5cb85175fae3bb2aeba4d65392613957f487416ada
+scraped_at: 2026-10-15T07:10:10+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:2a86e7a905b9f1a54ad3a9df134a8beaaf9fffd341d1313cd275e67dc82efb31
 ---
 
 本文档详细介绍了Remote Communication Kit RCP模块故障日志中的关键字段，对每个字段的数据类型和含义进行了详细说明。
@@ -391,19 +391,19 @@ content_hash: sha256:78bf438e54f798dff6908d5cb85175fae3bb2aeba4d65392613957f4874
 
 **数据类型：** 整数。
 
-**字段含义：** 自定义CA证书路径。0表示未使用，1表示已使用。
+**字段含义：** 是否使用自定义CA证书路径。0表示未使用，1表示已使用。
 
 ### selfCaFile
 
 **数据类型：** 整数。
 
-**字段含义：** 自定义CA证书文件。0表示未使用，1表示已使用。
+**字段含义：** 是否使用自定义CA证书文件。0表示未使用，1表示已使用。
 
 ### selfCaBlob
 
 **数据类型：** 整数。
 
-**字段含义：** 自定义CA二进制数据。0表示未使用，1表示已使用。
+**字段含义：** 是否使用自定义CA二进制数据。0表示未使用，1表示已使用。
 
 ### caFun
 

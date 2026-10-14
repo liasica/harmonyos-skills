@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codegenie
 title: 工具概述
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 工具概述
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:13+08:00
+scraped_at: 2026-10-15T07:06:39+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:d2b694376e998efa0ecbf57039b3914cc0de992c08dc10b0995779450422501e
+content_hash: sha256:0217ad54fc3977dfb4ece34c519e0209edce2f9a35bbb6c8b42af4f1f11325e1
 ---
 
 DevEco CodeGenie是DevEco Studio AI辅助编程工具，支持智能问答、代码生成、页面生成、万能卡片生成、单元测试用例生成、代码智能解读、编译报错智能分析、智慧调优、应用UI生成、意图装饰器生成、小艺智能体创建、自定义Agent等能力，帮助开发者更高效地开发应用。
@@ -14,13 +14,13 @@ DevEco CodeGenie是DevEco Studio AI辅助编程工具，支持智能问答、代
 
 在DevEco Studio右侧边栏点击**CodeGenie**，26.0.0 Beta1之前版本，可直接进入CodeGenie问答界面；从26.0.0 Beta1版本开始，进入CodeGenie后界面如下图显示，点击**View Installation Guide**可查看DevEco Code的具体操作指导，点击**Continue with CodeGenie**可进入CodeGenie问答界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/yAj4a_oiSB-skmtCnv_nwQ/zh-cn_image_0000002731542993.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/juxgPvKKQFCQwdEFd3psBg/zh-cn_image_0000002731542993.png "点击放大")
 
 进入CodeGenie问答界面后，若未登录点击**Sign in**，跳转至华为账号登录页面。授权登录完成后返回DevEco Studio，提示登录成功后点击**Agree**，同意隐私安全政策及使用条款后开始体验。
 
 若需使用最新版本的CodeGenie，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/nuIXTuChQZuZ0zKsRauSTw/zh-cn_image_0000002701663794.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/xlsADP53QPu3CHmO9i3hlw/zh-cn_image_0000002701663794.png)
 
 **说明** 
 
@@ -33,15 +33,15 @@ DevEco CodeGenie是DevEco Studio AI辅助编程工具，支持智能问答、代
 
 下载完成后，插件安装包**无需解压**，依照下方步骤进行安装：
 
-1. 在DevEco Studio菜单栏，点击**File > Settings**（macOS为**DevEco Studio > Preferences****/****Settings**）**> Plugins**，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/0KSMLIQSQJmUlOXv1bYFog/zh-cn_image_0000002701663800.png) **> Install Plugin from Disk…**安装本地插件。
+1. 在DevEco Studio菜单栏，点击**File > Settings**（macOS为**DevEco Studio > Preferences****/****Settings**）**> Plugins**，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/TZXHTYsRSg-VoG4EcAmcxA/zh-cn_image_0000002701663800.png) **> Install Plugin from Disk…**安装本地插件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/u62D9I-vRaCZvfh1hYAqYA/zh-cn_image_0000002701823720.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/F6-qAgsZRLi8gZ9Gd3-6tA/zh-cn_image_0000002701823720.png)
 2. 在弹出的文件选择窗口中，选择**未解压的插件****包**的存放位置，点击**OK**确认安装插件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Mt533OpcTrariN-PyoISjA/zh-cn_image_0000002731383021.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/c3HB1Lo0Taeno5wHVTGqTQ/zh-cn_image_0000002731383021.png)
 3. 点击**Restart IDE**，重新启动DevEco Studio。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/VeasNO4aQ2KO5sEGngFkTg/zh-cn_image_0000002701663798.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/438x9pCcTyGYIORO8OjEwQ/zh-cn_image_0000002701663798.png)
 4. 在DevEco Studio右侧边栏点击**CodeGenie**，完成登录并开始体验。
 
 **说明** 

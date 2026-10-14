@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-hmac-ark
 title: HMAC(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > HMAC > HMAC(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:278e5313e93e96b57fc0a6525d086702eb05d0ee10f551cb0a3674abe785e679
+scraped_at: 2026-10-15T07:04:38+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:3566c8809a5be7b50c14c038e61300ff5221f4701c87bfca63e8590b55f24c74
 ---
 
 HMAC是密钥相关的哈希运算消息认证码（Hash-based Message Authentication Code）。具体的场景介绍及支持的算法规格，请参考[HMAC介绍及算法规格](huks-hmac-overview.md)。
@@ -77,13 +77,13 @@ async function generateHMACKey() {
     properties: getHMACProperties()
   };
 
-  await huks.generateKeyItem(hmacKeyAlias, options)
-    .then((data) => {
-      console.info(`promise: generate HMAC Key success`);
-    }).catch((error: Error) => {
-      console.error(`promise: generate HMAC Key failed, ${JSON.stringify(error)}`);
-      throw (error as Error);
-    })
+  try {
+    await huks.generateKeyItem(hmacKeyAlias, options);
+    console.info(`promise: generate HMAC Key success`);
+  } catch (error) {
+    console.error(`promise: generate HMAC Key failed, ${JSON.stringify(error)}`);
+    throw error as Error;
+  }
 }
 /* 2.执行 HMAC 计算 */
 async function hMACData() {
@@ -92,22 +92,22 @@ async function hMACData() {
     inData: stringToUint8Array(plainText)
   }
 
-  await huks.initSession(hmacKeyAlias, options)
-    .then((data) => {
-      handle = data.handle;
-    }).catch((error: Error) => {
-      console.error(`promise: init session failed, ${JSON.stringify(error)}`);
-      throw (error as Error);
-    })
+  try {
+    const data = await huks.initSession(hmacKeyAlias, options);
+    handle = data.handle;
+  } catch (error) {
+    console.error(`promise: init session failed, ${JSON.stringify(error)}`);
+    throw error as Error;
+  }
 
-  await huks.finishSession(handle, options)
-    .then((data) => {
-      console.info(`promise: HMAC data success, data is ` + uint8ArrayToString(data.outData as Uint8Array));
-      hashData = data.outData as Uint8Array;
-    }).catch((error: Error) => {
-      console.error(`promise: HMAC data failed, ${JSON.stringify(error)}`);
-      throw (error as Error);
-    })
+  try {
+    const data = await huks.finishSession(handle, options);
+    console.info(`promise: HMAC data success, data is ` + uint8ArrayToString(data.outData as Uint8Array));
+    hashData = data.outData as Uint8Array;
+  } catch (error) {
+    console.error(`promise: HMAC data failed, ${JSON.stringify(error)}`);
+    throw error as Error;
+  }
 }
 
 async function executeHMAC() {

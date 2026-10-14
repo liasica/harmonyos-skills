@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-aaid
 title: AAID（应用匿名标识符）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > AAID（应用匿名标识符）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:30+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:55c29e9b06053cdc431f9224e85840ac6cf2ac518f29ff43121452d1a1a649de
+scraped_at: 2026-10-15T07:12:42+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:7d3eb90a98cf965fa73d8f8f3bd9f6775519dbc6a9c85d61e8a00eb83a48bf6e
 ---
 
 AAID（Anonymous Application Identifier）是应用匿名标识符，标识运行在移动智能终端设备上的应用实例，只有该应用实例才能访问该标识符，它只存在于应用的安装期，总长度36个字符。与无法重置的设备级硬件ID相比，AAID具有更好的隐私属性。
@@ -52,8 +52,6 @@ getAAID(callback: AsyncCallback<string>): void
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于5.1.1(19)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
 
 **起始版本：** 4.0.0(10)
 
@@ -155,8 +153,6 @@ getAAID(): Promise<string>
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于5.1.1(19)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
-
 **起始版本：** 4.0.0(10)
 
 **返回值：**
@@ -249,8 +245,6 @@ deleteAAID(callback: AsyncCallback<void>): void
 
 **系统能力：** SystemCapability.Push.PushService
 
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于5.1.1(19)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
-
 **起始版本：** 4.0.0(10)
 
 **参数：**
@@ -314,8 +308,6 @@ deleteAAID(): Promise<void>
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Push.PushService
-
-**设备行为差异：** 对于5.1.0(18)以前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。对于5.1.0(18)版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用，在其他设备类型中无效果。对于5.1.1(19)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中均可正常使用。
 
 **起始版本：** 4.0.0(10)
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-nat
 title: 使用NDK接口实现画中画功能开发 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 画中画开发指导 > 使用NDK接口实现画中画功能开发 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:13+08:00
-doc_updated_at: 2026-09-17
+scraped_at: 2026-10-15T07:04:17+08:00
+doc_updated_at: 2026-10-14
 content_hash: sha256:cdb77d3cd0c6cf18a26fd68aa80ac28d105a03fbee2d2d4a3730abe14c798cb4
 ---
 

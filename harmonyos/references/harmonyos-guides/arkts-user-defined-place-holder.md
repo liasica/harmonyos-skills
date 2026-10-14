@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义占位节点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义占位节点
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:10+08:00
+scraped_at: 2026-10-15T07:04:11+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8ff19d10a5ad44f703c1a75aee9eac39118173416dfb1d7fc7bc4565f4ebeedb
+content_hash: sha256:649295a5a2a60d920819683d0fb80979c6d4465bbefa24214f70f69f15f30651
 ---
 
 ArkUI提供了系统组件[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)和[ContentSlot](../harmonyos-references/ts-components-contentslot.md)作为自定义节点的占位节点。主要用于自定义节点以及自定义节点树的显示。
@@ -277,4 +277,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/1IjfHJGzRcCW-ZLyUIQEOg/zh-cn_image_0000002755023636.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/WcA2VEMdSNGAWCr9C80-Dg/zh-cn_image_0000002791738493.gif)

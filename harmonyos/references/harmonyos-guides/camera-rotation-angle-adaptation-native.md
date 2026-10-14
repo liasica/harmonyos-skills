@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotati
 title: 适配相机旋转角度(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 相机旋转 > 适配相机旋转角度(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:79edee85584f9328d1915db965372d199cb9833698444d6313627a30fead5680
+scraped_at: 2026-10-15T07:05:07+08:00
+doc_updated_at: 2026-10-14
+content_hash: sha256:78efb2bfc07b73269a9520c648d9676a9733372b3cf3ed15173fdee62f66a5c2
 ---
 
 屏幕处于不同的屏幕状态时，原始图像需旋转不同的角度，以确保图像在合适的方向显示，效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/W5BrKS6kTQ2lIBPoPjLI3w/zh-cn_image_0000002784663289.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/H-WoTDwCSn2Nt23SBsVX1g/zh-cn_image_0000002762500556.png)
 
 本开发指导将指导开发者在预览、拍照、录像等不同场景下，如何适配相机的旋转角度。
 
@@ -328,16 +328,21 @@ void SensorDataCallback(Sensor_Event *event)
     g_deviceDegree = GetDeviceDegreeFromXYZ(x, y, z);
     g_isDegreeReady = true;
 
-    OH_Sensor_Unsubscribe(id, subscriber); // 取消订阅传感器数据。
-    if (id != nullptr) {
-        OH_Sensor_DestroySubscriptionId(id); // 销毁Sensor_SubscriptionId实例并回收内存。
+    Sensor_Result result = OH_Sensor_Unsubscribe(id, subscriber); // 取消订阅传感器数据。
+    if (result != SENSOR_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_Sensor_Unsubscribe error");
     }
-    if (attr != nullptr) {
-        OH_Sensor_DestroySubscriptionAttribute(attr); // 销毁Sensor_SubscriptionAttribute实例并回收内存。
-    }
-    if (subscriber != nullptr) {
-        OH_Sensor_DestroySubscriber(subscriber); // 销毁Sensor_Subscriber实例并回收内存。
-        subscriber = nullptr;
+    if (result == SENSOR_SUCCESS) {
+        if (id != nullptr) {
+            OH_Sensor_DestroySubscriptionId(id); // 销毁Sensor_SubscriptionId实例并回收内存。
+        }
+        if (attr != nullptr) {
+            OH_Sensor_DestroySubscriptionAttribute(attr); // 销毁Sensor_SubscriptionAttribute实例并回收内存。
+        }
+        if (subscriber != nullptr) {
+            OH_Sensor_DestroySubscriber(subscriber); // 销毁Sensor_Subscriber实例并回收内存。
+            subscriber = nullptr;
+        }
     }
 }
 

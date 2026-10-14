@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-park-s
 title: 更新园区卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 园区卡 > 开发场景 > 更新园区卡
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:27+08:00
+scraped_at: 2026-10-15T07:05:43+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:ee8dc2b5b22d31d14a80d4ae0e7adfb83c1b99cb9e13869a6bd19d101388449a
+content_hash: sha256:71313e137e6bbd510d9c33a822805547c348a5f9028299317218dc6f187d8664
 ---
 
 当园区卡信息发生变更时，如园区卡权限、信息变更等，更新钱包中的园区卡数据。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/pFCshTJkR6COs3NeyssC7Q/zh-cn_image_0000002784583803.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/GmzXFUa9TXq9u-U92JwOiQ/zh-cn_image_0000002791860125.png)
 
 ## 服务端开发
 

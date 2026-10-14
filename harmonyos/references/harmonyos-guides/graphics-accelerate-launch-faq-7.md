@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 秒级启动后，游戏出现类似UIContent is nullptr报错导致登录等异常，应该如何排查
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏启动加速服务 > 秒级启动后，游戏出现类似UIContent is nullptr报错导致登录等异常，应该如何排查
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:06+08:00
+scraped_at: 2026-10-15T07:05:18+08:00
 doc_updated_at: 2026-05-08
-content_hash: sha256:54adf52e4956bfa4b1114a774c423f38a8072ac3ec96bc5749b109d9d78fd58d
+content_hash: sha256:7d155c7acc15526c6ffd0f48ad9a43d4f65bbeac385e06f2caa8db086acf2057
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/re_30yUGQb2FQtgcehtt1A/zh-cn_image_0000002784583305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/KCNVUGfZRMGriMdqZBUDxg/zh-cn_image_0000002791859627.png)
 
 该报错通常是由于游戏在秒级启动后未重新获取并更新[UIAbilityContext](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md)，导致后续逻辑仍使用旧的Context对象。当[UIAbility](uiability.md)被重新创建时，如果相关模块或三方SDK继续使用旧的UIAbilityContext，可能会导致接口调用异常、资源访问失败或SDK功能异常。
 
@@ -18,7 +18,7 @@ content_hash: sha256:54adf52e4956bfa4b1114a774c423f38a8072ac3ec96bc5749b109d9d78
 
    以[示例工程](https://gitcode.com/HarmonyOS_Codelabs/graphics-accelerate-kit-launch-acceleration-codelab-arkts/blob/master/entry/src/main/ets/ability/TuanjiePlayerAbilityBase.ets)为例，AbilityContext的赋值应放在isFirstLaunchFlag判断之外，以确保每次启动（包括秒级启动）都能更新为当前UIAbility的UIAbilityContext。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/8RwIjAqjQ6Wlpp7lQ4u66A/zh-cn_image_0000002784663485.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/SzBoE7IxQziDZ561qvsXsQ/zh-cn_image_0000002762500752.png)
 2. 对于依赖UIAbilityContext的三方SDK，是否在每次启动时同步更新Context。
 
    若三方SDK在初始化或调用过程中依赖UIAbilityContext，需要在UIAbility重新创建时，将最新的UIAbilityContext重新传递给SDK，避免继续使用旧的Context实例。

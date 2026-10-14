@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 查看车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 查看车钥匙
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:26+08:00
+scraped_at: 2026-10-15T07:05:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6becc8238fadc301e83d74ec50dda7adb2af0ebf39d754cf91599e635c8733bd
+content_hash: sha256:22a13ff99bdfe34899be0991b8acaadbae3a40721ba51c681d5ad84afa278a4c
 ---
 
 查询已开通车钥匙的状态并展示，用户可以点击跳转钱包车钥匙详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/s82nLKAXSyulmwaUcIDfPg/zh-cn_image_0000002755184924.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/LrJl1XCVS8SAfIzo-YTzHg/zh-cn_image_0000002762341316.png)
 
 ## 客户端开发
 
