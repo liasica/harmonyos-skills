@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smart-reac
 title: 智感握姿
 breadcrumb: 最佳实践 > 技术创新 > 智感握姿
 category: best-practices
-scraped_at: 2026-09-21T06:25:32+08:00
-doc_updated_at: 2026-09-07
-content_hash: sha256:32034df4f6e0ecae4ebcbac4ccaf0e3cb5bcf92dd108f0b5a0756c42364b9903
+scraped_at: 2026-10-16T07:06:33+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:2d81b9e713ddb92972d813d146e995395d0e32564660b2401b65abebd6dc3776
 ---
 
 随着大屏和折叠屏设备的普及，用户单手握持设备时，拇指难以覆盖整个屏幕区域，尤其是位于屏幕顶部与侧边的交互元素往往难以触及。为有效解决这一痛点，HarmonyOS系统提供了[智感握姿](../design-guides/smart-reachability-0000002556657823.md)能力。该能力能够实时识别用户与设备的交互姿态，应用可据此将核心高频组件动态调整至拇指的可达范围内，从而显著提升单手操作的便捷性。智感握姿示例图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/OY40PDH5SZ6QaVe1UEX5EQ/zh-cn_image_0000002594053134.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/gZwD7gNlQSuZkQ1neO5q2Q/zh-cn_image_0000002594053134.png "点击放大")
 
 本文将从智感握姿的概念与适用场景出发，结合新闻阅读应用示例，详细讲解如何在HarmonyOS应用中接入智感握姿能力，具体包括组件原生适配与自定义交互感知两种方案。
 
@@ -48,7 +48,7 @@ content_hash: sha256:32034df4f6e0ecae4ebcbac4ccaf0e3cb5bcf92dd108f0b5a0756c42364
 在HarmonyOS中，接入智感握姿主要有两种方案：
 
 1. 自定义交互感知：通过监听系统握持手或者交互手状态变化，自行控制UI布局的动态调整。
-2. 组件原生适配：使用系统组件（如[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)）内置的智感握姿支持，通过简单属性配置即可实现。
+2. 组件原生适配：使用系统组件（如[HdsTabs（底部页签）](../harmonyos-references/ui-design-hdstabs.md)）内置的智感握姿支持，通过简单属性配置即可实现。
 
 ### 方案一：自定义交互感知实现智感握姿
 
@@ -59,7 +59,7 @@ content_hash: sha256:32034df4f6e0ecae4ebcbac4ccaf0e3cb5bcf92dd108f0b5a0756c42364
 
 ### 方案二：组件设置智感握姿
 
-部分[ArkTS组件](../harmonyos-references/ui-design-arkts-component.md)已经内置了智感握姿的支持，开发者只需通过属性配置即可启用。以[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)组件为例，当设置[barOverlap](../harmonyos-references/ui-design-hdstabs.md#baroverlap)启用悬浮态时，通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性中的adaptToHandedness设置为true，即可实现底部页签栏自动跟随交互手切换位置，无需手动监听交互状态。
+部分[ArkTS组件](../harmonyos-references/ui-design-arkts-component.md)已经内置了智感握姿的支持，开发者只需通过属性配置即可启用。以[HdsTabs（底部页签）](../harmonyos-references/ui-design-hdstabs.md)组件为例，当设置[barOverlap](../harmonyos-references/ui-design-hdstabs.md#baroverlap)启用悬浮态时，通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性中的adaptToHandedness设置为true，即可实现底部页签栏自动跟随交互手切换位置，无需手动监听交互状态。
 
 **说明** 
 
@@ -73,7 +73,7 @@ content_hash: sha256:32034df4f6e0ecae4ebcbac4ccaf0e3cb5bcf92dd108f0b5a0756c42364
 
 本示例通过配置HdsTabs的[barOverlap](../harmonyos-references/ui-design-hdstabs.md#baroverlap)属性开启底部悬浮模式，同时启用[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性中的adaptToHandedness参数实现智感握姿自动跟随功能。效果图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/QERB10InRG-CSzMgQsDlyw/zh-cn_image_0000002624492661.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/U9NBa-uIR1C5UZPOvFpK2w/zh-cn_image_0000002624492661.gif)
 
 具体适配方式如下：
 
@@ -119,7 +119,7 @@ HdsTabs({ controller: this.controller }) {
 
 本示例中侧边按钮通过自定义感知握持状态实现智感握姿。效果图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/lUpU6A10RR6lmAL3x1DTcA/zh-cn_image_0000002690301446.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/2jx0uVXNT9aakc9RGnOgtQ/zh-cn_image_0000002690301446.gif "点击放大")
 
 具体适配步骤如下：
 

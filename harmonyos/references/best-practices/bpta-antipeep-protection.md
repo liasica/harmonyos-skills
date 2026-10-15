@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-antipeep-p
 title: 防窥保护
 breadcrumb: 最佳实践 > 技术创新 > 防窥保护
 category: best-practices
-scraped_at: 2026-09-21T06:25:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:02071197e94bc8150b9845b5398900269c55de28f66fa882a38fa973b48ab890
+scraped_at: 2026-10-16T07:06:33+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:a2ef374723b07106af7b1d4fd9b2be4f84c54634874e30bf9bccfe1693214c45
 ---
 
 ## 概述
@@ -28,13 +28,13 @@ HarmonyOS自发布以来持续深化安全与隐私能力体系建设：从早�
 
 1. 金融类应用汇集了大量的财务敏感信息——账户余额、收益曲线、持仓明细，每一项都是不希望被他人知晓的隐私数据。在地铁、咖啡厅等人流密集的公共场所，用户往往无暇顾及身旁是否有人窥视屏幕。接入dlpAntiPeep能力后，应用可在检测到窥视的瞬间自动将敏感数字替换为 \*\*\*\*，并可选触发系统级防窥蒙层，让用户在任何环境下都能放心查看财务信息，效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/nqmCMzFgQFe5WQU13ZBobA/zh-cn_image_0000002624454639.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/zDf-0zZTRFO4738H5gxlnw/zh-cn_image_0000002624454639.gif "点击放大")
 2. 短视频内容往往折射出用户的个人偏好、生活习惯乃至私密时刻，这些信息在公共场所被他人看到，会带来不同程度的隐私不适感。接入dlpAntiPeep能力后，应用可在检测到窥视时暂停定制化推送内容的展示，或对关注列表进行模糊隐藏，待窥视解除后自动恢复，在不打断用户使用节奏的前提下，为内容浏览筑起一道隐形屏障，效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/BAZ9jnufQ0-SEDJ9bsIi9A/zh-cn_image_0000002594175038.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/dz9_JsvsR7-Z1PajVC3-cA/zh-cn_image_0000002594175038.png "点击放大")
 3. 即时通讯是隐私敏感度最高的应用场景之一——消息列表中的联系人姓名、消息预览，聊天详情中的情感交流、商业沟通，任何一条信息被旁观者读取都可能造成难以挽回的隐私损失。接入dlpAntiPeep能力后，应用可在检测到窥视时将消息内容隐藏或替换为自定义不敏感内容，确保私密对话只属于对话双方，效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/3M6aA8gYTBmYaJspobB6ww/zh-cn_image_0000002624574493.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/K2r1q389RFS20l-wI70Gog/zh-cn_image_0000002624574493.png "点击放大")
 
 ## 案例实现
 
@@ -46,11 +46,11 @@ dlpAntiPeep能力属于[Device Security Kit（设备安全服务）](../harmonyo
 
 整体实现流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/M4FVsShlTAm23vvfNsK7Rg/zh-cn_image_0000002594015116.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/uN4Ql3ulT16ljZbj9uEg3Q/zh-cn_image_0000002594015116.jpg "点击放大")
 
 ## 开发前置条件
 
-在正式接入防窥保护能力前，开发者需要引导用户授权打开防窥保护开关。防窥保护功能需要用户在系统设置中主动开启，应用才能获取相关权限并启用防窥能力。API23版本开始，可调用[requestAntiPeepOptions](../harmonyos-references/devicesecurity-dlpantipeep-api.md#requestantipeepoptions)拉起弹窗，弹窗中开启系统设置中的防窥保护按钮，此接口避免了用户主动转到设置中开启按钮。
+在正式接入防窥保护能力前，开发者需要引导用户授权打开防窥保护开关。防窥保护功能需要用户在系统设置中主动开启，应用才能获取相关权限并启用防窥能力。API23版本开始，可调用[requestAntiPeepOptions(context)](../doccenter-references/api/devicesecurity-dlpantipeep-api.md#requestantipeepoptions)拉起弹窗，弹窗中开启系统设置中的防窥保护按钮，此接口避免了用户主动转到设置中开启按钮。
 
 ```typescript
 // Request the system to obtain the configuration options for anti-peeping protection
@@ -227,7 +227,7 @@ const result = await dlpAntiPeep.requestAntiPeepOptions(context);
      });
    }
    ```
-6. 页面销毁时取消监听：在aboutToDisappear()生命周期中调用[off("dlpAntiPeep")](../harmonyos-references/devicesecurity-dlpantipeep-api.md#offdlpantipeep)取消监听，防止页面销毁后回调仍然触发导致内存泄漏。
+6. 页面销毁时取消监听：在[aboutToDisappear()](../doccenter-references/api/ts-custom-component-lifecycle.md#abouttodisappear)生命周期中调用[off("dlpAntiPeep")](../harmonyos-references/devicesecurity-dlpantipeep-api.md#offdlpantipeep)取消监听，防止页面销毁后回调仍然触发导致内存泄漏。
 
 ```typescript
 aboutToDisappear(): void {
@@ -270,7 +270,7 @@ export function listenOffAntiPeepStatus() {
 
 setAntiPeepMaskLayer()触发的系统防窥蒙层每次进入页面只触发一次，需通过标志位isSystemLayerTriggered控制，避免重复触发。
 
-如果仅本地调试防窥保护能力，自动签名时同意权限申请即可；如果应用上架需使用防窥保护能力则需要申请ohos.permission.DLP\_GET\_HIDE\_STATUS权限，并在AGC平台[申请ACL权限](../app/agc-help-apply-acl-0000002394212138.md)。
+如果仅本地调试防窥保护能力，自动签名时同意权限申请即可；如果应用上架需使用防窥保护能力则需要申请ohos.permission.DLP\_GET\_HIDE\_STATUS权限，并在HarmonyOS开发者中心平台[申请ACL权限](../app/agc-help-apply-acl-0000002394212138.md)。
 
 ## 约束与限制
 

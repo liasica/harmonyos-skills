@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-overview-o
 title: JSVM OOM故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > JSVM OOM故障模式说明 > JSVM OOM故障模式概述
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:447259c305562308407125fd17d17753aab0e1f0428dac5013f6f8a1c4404e96
+scraped_at: 2026-10-16T07:06:52+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:385de96ecd1a5e1df9de875ba30f33bcd8ede771d3203fe5d905bbd26f0cc5f0
 ---
 
 HarmonyOS JSVM-API（详细参考：[JSVM-API简介](../harmonyos-guides/jsvm-introduction.md)）基于标准JS引擎提供了一套稳定的API，支持创建和销毁引擎、执行JS代码、JS与C++的交互等关键功能，可在应用运行期间直接执行动态加载的JS代码。此外，可将对性能和底层系统调用有较高要求的核心功能用C/C++实现，并将C++方法注册到JS侧，从而在JS代码中直接调用，以提高应用执行效率。
@@ -31,7 +31,7 @@ JSVM-API引入开源项目V8 JavaScript engine（以下简称V8）作为底层JS
 
 ### V8堆内存管理（分代模型）
 
-V8的堆内存管理基于**分代假说**：大多数对象的生命周期较短。基于这一假设，堆内存被划分为新生代和老生代两大区域。
+V8的堆内存管理基于**分代假说**：大多数对象的生命周期较短。基于这一假说，堆内存被划分为新生代和老生代两大区域。
 
 **新生代（New Space / Young Generation）**
 
@@ -61,13 +61,18 @@ V8提供调整GC的参数与配置，可结合业务对内存或性能进行激�
 
 ### 堆内存快照
 
-JSVM-API提供了几种堆内存导出的方式和调试方法：
+快照格式说明：
 
-1. 参考[JSVM-API调试&定位](../harmonyos-guides/jsvm-debugger-cpuprofiler-heapsnapshot.md)方法，利用V8原生的堆导出能力，导出Heap Snapshot格式堆快照。
+**heapsnapshot格式：**业界标准的JS堆内存快照格式，可直接导入Chrome浏览器DevTools进行可视化分析。
 
-   **说明** 
+**rawheap格式：**为解决heapsnapshot格式导出耗时较长的问题，鸿蒙推出了rawheap格式。可使用[js-rawheap-translator工具](../doccenter-capabilities/js-rawheap-translator.md)解析为heapsnapshot文件。
 
-   这种方式导出较大堆内存快照时的耗时较长，可能会被HarmonyOS认定为应用卡死导致导出失败。
-2. 调用JSVM-API [OH\_JSVM\_TakeRawHeapSnapshot()](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_takerawheapsnapshot)导出Raw Heap格式的堆快照。
-3. 通过JSVM-API [OH\_JSVM\_SetHeapThresholdCallback()](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_setheapthresholdcallback)与[OH\_JSVM\_TakeRawHeapSnapshot()](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_takerawheapsnapshot)的配合，在堆内存达到设定的堆内存水线时导出堆内存快照。
-4. 通过[hidumper](../harmonyos-guides/hidumper.md)命令导出某个进程的Heap Snapshot或Raw Heap格式的堆快照。
+JSVM堆内存快照导出方法：
+
+1. 参考[导出heapsnapshot格式内存快照](../doccenter-capabilities/jsvm-debugger-cpuprofiler-heapsnapshot.md#heap-snapshot接口使用方法)，通过JSVM-API [OH\_JSVM\_TakeHeapSnapshot()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_takeheapsnapshot)，导出heapsnapshot格式内存快照。
+2. 参考[导出rawheap格式内存快照](../doccenter-capabilities/use-jsvm-threshold-callback.md)，通过JSVM-API [OH\_JSVM\_TakeRawHeapSnapshot()](../harmonyos-references/capi-jsvm-h.md#oh_jsvm_takerawheapsnapshot)，导出rawheap格式内存快照。
+3. 参考[查询虚拟机堆内存](../doccenter-capabilities/hidumper.md#查询虚拟机堆内存)，使用命令[hidumper](../doccenter-capabilities/hidumper.md) --jsvm pid [--raw]导出内存快照。其中--jsvm表示执行jsvm堆dump，pid为应用进程ID，--raw为非必选参数，表示导出rawheap格式文件，如果使用了该选项，可使用[js-rawheap-translator工具](../doccenter-capabilities/js-rawheap-translator.md)将rawheap格式文件转换为heapsnapshot格式文件。不使用该选项，默认导出heapsnapshot格式文件。
+
+堆内存快照分析方法：
+
+得到heapsnapshot格式文件后，参考[devtools通用分析手段](../doccenter-capabilities/use-jsvm-about-analyze-memory-usage.md)，导入Chrome浏览器DevTools进行可视化分析。

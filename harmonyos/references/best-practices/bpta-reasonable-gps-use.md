@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-reasonable
 title: GPS资源合理使用
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台硬件资源合理使用 > GPS资源合理使用
 category: best-practices
-scraped_at: 2026-09-02T14:53:45+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:0fffac608562416f5624da49efc67222eb4128d817488d6b1b589153a599edc1
+scraped_at: 2026-10-16T07:06:48+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:9d267a6d8a0b8f9a4d3900f2729a52e660d511db71ae3fc78018d3dec8f867ac
 ---
 
-无长时间任务的应用退到后台时，禁止使用定位服务。
+未申请长时任务的应用退到后台时，禁止使用定位服务。
 
 ## 约束
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用GWP-ASan检测内存错误
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 使用GWP-ASan检测内存错误
 category: best-practices
-scraped_at: 2026-09-21T06:25:49+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:266467ce05647300351ab6fafe385125ad0dde2c398a04d9e15d2bdb07bbc0c3
+scraped_at: 2026-10-16T07:06:49+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:8641b6aa6df458c210a16fda2b693d9ea511feb8b6e97e2e48fd9ba50ef5be29
 ---
 
 GWP-ASan的能力概述和检测原理可参看[地址越界检测能力概述](bpta-stability-address-sanitizer-overview.md)以及[GWP-ASan检测原理](bpta-stability-address-sanitizer-principle.md#section555616291854)，适用于运行态商用场景。
@@ -22,7 +22,7 @@ ASan、TSan、UBSan、HWASan、GWP-ASan不能同时开启，五个只能开启�
 
 在app.json5中添加"GWPAsanEnabled": true配置，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/jpwKYSMtT2We69LGnT6R2Q/zh-cn_image_0000002623557959.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/z8iRJ5XkRkuSgTrnivKO2w/zh-cn_image_0000002623557959.png)
 
 开启GWP-ASan检测后，如果应用发生地址越界问题，且该问题正好被GWP-ASan采样监控，GWP-ASan会记录地址越界事件并且使进程崩溃，开发者可以通过订阅地址越界事件来获取相关信息，请参考：[地址越界事件介绍](../harmonyos-guides/hiappevent-watcher-address-sanitizer-events.md)。
 
@@ -32,12 +32,12 @@ ASan、TSan、UBSan、HWASan、GWP-ASan不能同时开启，五个只能开启�
 
 | 名称 | 默认值 | 是否必填 | 说明 |
 | --- | --- | --- | --- |
-| alwaysEnabled | false | 否 | true：100%开启GWP-ASan，与app.json5中GWPAsanEnabled标签功能一致。  false：1/128概率开启GWP-ASan，在应用冷启动时候会判断是否开启。  注意：若在app.json5中设置了 GWPAsanEnabled，将会覆盖该参数。 |
+| alwaysEnabled | false | 否 | true：100%开启GWP-ASan，与app.json5中GWPAsanEnabled标签功能一致。  false：1/128概率开启GWP-ASan，在应用冷启动的时候会判断是否开启。  注意：若在app.json5中设置了 GWPAsanEnabled，将会覆盖该参数。 |
 | sampleRate | 2500 | 否 | GWP-ASan采样频率。1/sampleRate的概率对分配的内存进行采样。  建议值：≥1000，默认参数下性能开销小于1%。采样频率过小会显著影响性能，若调整参数请开发者自行保证用户体验。 |
 | maxSimutaneousAllocations | 1000 | 否 | 最大分配的插槽数。当插槽用尽时，新分配的内存将不再受监控。释放已使用的内存后，其占用的插槽将自动复用，以便于后续内存的监控。  建议值：≤20000，每个插槽会额外占用约4.5KB内存，默认参数下约占4.5MB，过大可能导致VMA超限崩溃。 |
 | isRecover24+ | false | 否 | 用于控制应用以100%概率开启GWP-ASan时，是否以可恢复模式运行。  true：当GWP-ASan以100%概率开启时，应用以可恢复模式运行。在该模式下，系统检测到地址越界故障后，避免因检测机制本身导致进程崩溃；但对于已造成非法内存访问的错误，应用仍可能发生崩溃。  false：当GWP-ASan以100%概率开启时，应用以不可恢复模式运行。  注意：该参数只在“以100%概率开启GWP-ASan”场景下生效；1/128概率开启场景下默认为可恢复，不受isRecover控制。 |
 
-接口具体使用方式，可查看[@ohos.hidebug (Debug调试)](../harmonyos-references/js-apis-hidebug.md#hidebugenablegwpasangrayscale20)。
+接口具体使用方式，可查看[hidebug.enableGwpAsanGrayscale](../harmonyos-references/js-apis-hidebug.md#hidebugenablegwpasangrayscale20)。
 
 ## GWP-ASan异常检测类型
 
@@ -523,7 +523,7 @@ Buffer Underflow at 0x5bb1c29ffc (4 bytes to the left of a 4096-byte allocation 
 
 **修改方法**
 
-检查指针算数运算；验证索引值，检查是否存在负索引。
+检查指针算术运算；验证索引值，检查是否存在负索引。
 
 **推荐建议**
 

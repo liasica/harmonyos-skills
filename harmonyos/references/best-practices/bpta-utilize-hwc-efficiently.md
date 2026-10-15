@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-utilize-hw
 title: 高效利用HWC的低功耗设计
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 高效利用HWC的低功耗设计
 category: best-practices
-scraped_at: 2026-09-21T06:25:47+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:38e6ecd709da985d87869b60a461ae800fe6c55204a67ea50a07f5ea65922ac4
+scraped_at: 2026-10-16T07:06:48+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:da410da8e1e73b351c5be37b9d4ea3608c3e3bdf2c2c4a48a596a88d573ba5f3
 ---
 
 ## 概述
@@ -50,9 +50,9 @@ content_hash: sha256:38e6ecd709da985d87869b60a461ae800fe6c55204a67ea50a07f5ea659
 
    该内容将由系统根据组件定义及布局进行绘制，用户应用程序不感知具体的绘制过程。
 2. 应用自渲染内容。
-   * Web页面：此时页面内容将直接替换为url地址传递的内容，使用示例见：[ArkWeb使用指导](bpta-arkweb_rendering_framework.md)。
+   * Web页面：此时页面内容将直接替换为url地址传递的内容，使用示例见：[ArkWeb渲染框架适配](bpta-arkweb_rendering_framework.md)。
    * 视频场景：常见的视频播放场景。
-   * 三方或者自有渲染框架生成内容：使用Native Xcomponent组件和接口直接传递内容，使用示例见[Native XComponent的使用指导](../harmonyos-references/capi-oh-nativexcomponent-native-xcomponent.md)。
+   * 三方或者自有渲染框架生成内容：使用Native XComponent组件和接口直接传递内容，使用示例见[OH\_NativeXComponent Native XComponent](../harmonyos-references/capi-oh-nativexcomponent-native-xcomponent.md)。
 
    这类内容在应用进程中解码或调用GPU渲染，然后作为整体传递给系统渲染服务进程。
 
@@ -62,7 +62,7 @@ content_hash: sha256:38e6ecd709da985d87869b60a461ae800fe6c55204a67ea50a07f5ea659
 
 下图介绍了图形渲染系统从应用界面内容到最终屏幕显示的工作流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/coT66uNIRui4Ep5jJtvBpw/zh-cn_image_0000002194011600.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/yJJNj4iGQqOag41XVaJouA/zh-cn_image_0000002194011600.png "点击放大")
 
 * **RenderService (RS) ：**系统渲染服务进程，接收来自于其他系统服务进程（如桌面进程）及用户进程（如应用）的自渲染图层及ArkUI控件绘制指令，进行统一的组合以及渲染控制。其渲染调用CPU/GPU等计算器件，能力灵活，兼容性强，但功耗和性能开销较大。
 * **Hardware Composer (HWC)：**HWC基于专用硬件构建，主要用于多图层叠加送显。接受RS绘制的图层和应用自渲染图层，将多个图层叠加后传递至屏幕。相对于GPU，HWC功耗和性能优势明显，但不具备复杂渲染能力。
@@ -71,9 +71,9 @@ content_hash: sha256:38e6ecd709da985d87869b60a461ae800fe6c55204a67ea50a07f5ea659
 
 当前系统的整体渲染送显策略描述如下：
 
-RS进程将ArkUI控件统一绘制到UI图层。UI内容来自应用定义的ArkUI控件和桌面进程传递的内容，如状态栏、系统导航等。根据UI图层和应用自渲染内容的Z序关系，优先使用HWC的图层叠加功能进行送显处理。
+RS进程将ArkUI控件统一绘制到UI图层。UI内容来自应用定义的ArkUI控件和桌面进程传递的内容，如状态栏、系统导航等。根据UI图层和应用自渲染内容的[Z序控制](../doccenter-references/api/ts-universal-attributes-z-order.md)，优先使能HWC的图层叠加功能进行送显处理。
 
-在该过程中，UI控件的视效和自渲染图层的Z序关系会影响HWC的使用。例如，若自渲染图层上方的UI控件使用了模糊等高阶视效，模糊算法需要实时读取背景自渲染图层的内容，并在图层叠加时进行额外处理。此时，HWC无法使能，RS将使用GPU进行图层叠加。
+在该过程中，UI控件的视效和自渲染图层的[Z序控制](../doccenter-references/api/ts-universal-attributes-z-order.md)会影响HWC的使用。例如，若自渲染图层上方的UI控件使用了模糊等高阶视效，模糊算法需要实时读取背景自渲染图层的内容，并在图层叠加时进行额外处理。此时，HWC无法使能，RS将使用GPU进行图层叠加。
 
 ### 如何高效使能HWC
 
@@ -104,10 +104,10 @@ RS进程将ArkUI控件统一绘制到UI图层。UI内容来自应用定义的Ark
 
   这里存在以下两种情况：
 
-  1. UI控件定义在自渲染图层下方，且自渲染图层设置了一定透明度，导致自渲染图层无法完全遮挡UI控件。进行渲染处理时，需要额外处理透明度，此时只能使用GPU，无法使用HWC叠加能力。
+  1. UI控件定义在自渲染图层下方，且自渲染图层设置了一定透明度，导致自渲染图层无法完全遮挡UI控件。进行渲染处理时，需要额外处理透明度，此时只能使用GPU，无法使能HWC叠加能力。
 
      建议开发者评估自渲染图层设定透明度的必要性。若全透明，应及时下树。若UI控件需位于自渲染图层下方，建议该控件也使用自渲染形式实现。
-  2. 两个或以上自渲染图层所在控件设定圆角且存在区域交叠时，进行自渲染图层处理需要GPU额外绘制圆角，这会导致无法使用HWC叠加能力。
+  2. 两个或以上自渲染图层所在控件设定圆角且存在区域交叠时，进行自渲染图层处理需要GPU额外绘制圆角，这会导致无法使能HWC叠加能力。
 
      建议评估是否需要多个自渲染图层交叠及底部图层圆角是否可以去除。
 
@@ -123,9 +123,9 @@ RS进程将ArkUI控件统一绘制到UI图层。UI内容来自应用定义的Ark
 
 **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/14stWZT3T6qnfrb90ea66g/zh-cn_image_0000002194011604.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/yLMXBSfySBm5X9_f7jOqcw/zh-cn_image_0000002775096927.png "点击放大")
 
-如上图，视频区域左上角的返回按钮控件带有模糊效果，需要进行视频图层采样，无法使用HWC叠加。可以通过移除控件的模糊效果或将其移动到非视频区域来启用HWC。
+如上图，视频区域左上角的返回按钮控件带有模糊效果，需要进行视频图层采样，无法使能HWC叠加。可以通过移除控件的模糊效果或将其移动到非视频区域来使能HWC。
 
 此处通过去除控件的模糊效果来使能HWC，从而优化场景功耗。相应对比代码如下：
 
@@ -232,13 +232,13 @@ struct NormalVideo {
 
 去除模糊后的效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/7AbsHm48Sje0eIvbANgWrg/zh-cn_image_0000002193852036.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/oO8i9A7DRUS-6-g3nbA5mQ/zh-cn_image_0000002745497866.png "点击放大")
 
 **功耗对比**
 
 同一界面下，测试视频区域上方控件去除模糊效果前后的CPU模块、GPU模块的功耗，以及设备总功耗。测试方式为视频播放30s，以3s为一个节点，取设备从6s运行到21s5个节点的平均功耗。最终，使用DevEco Studio的Profiler工具检测得到的数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/pZ3WbyiOSei8jG1_1Haotw/zh-cn_image_0000002194011620.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/uJaTamhmSI6ilzZ01SpfNg/zh-cn_image_0000002194011620.png "点击放大")
 
 从测试数据可以看出：
 
@@ -251,9 +251,9 @@ struct NormalVideo {
 
 **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/PKGMFiVRT_iktxmprIVLIQ/zh-cn_image_0000002229337409.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/X3I9hW7HThSu1GTlSj7drA/zh-cn_image_0000002229337409.png "点击放大")
 
-在该场景下，底部TabBar区域使用模糊，且背景区域使用Web类组件或者Native Xcomponent组件导入自渲染内容，同样导致UI图层与自渲染内容无法使用HWC叠加。对此开发者可以通过去除TabBar区域的模糊视效或者裁剪组件区域避免Web内容与模糊控件相交两种方式进行修改，以达到使用HWC降低功耗的目的。
+在该场景下，底部TabBar区域使用模糊，且背景区域使用Web类组件或者Native XComponent组件导入自渲染内容，同样导致UI图层与自渲染内容无法使能HWC叠加。对此开发者可以通过去除TabBar区域的模糊视效或者裁剪组件区域避免Web内容与模糊控件相交两种方式进行修改，以达到使能HWC降低功耗的目的。
 
 此处通过移除控件的模糊效果来启用HWC，从而优化场景功耗。相应对比代码如下：
 
@@ -330,13 +330,13 @@ struct NormalWeb {
 
 去除模糊后的效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/1v7BTevhSxuI2ht8aDR5sA/zh-cn_image_0000002229451905.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/obGfaanBQZmFLrTZqTFD6Q/zh-cn_image_0000002229451905.png "点击放大")
 
 **功耗对比**
 
 同一界面下，测试Web组件上方控件去除模糊效果前后的CPU模块、GPU模块的功耗，以及设备总功耗。测试方式为同样频率滑动界面30s，以3s为一个节点，取设备从6s运行到21s5个节点的平均功耗。最终，使用DevEco Studio的Profiler工具检测得到的数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/xm9saZAAT8yKV66zQWfovg/zh-cn_image_0000002229451901.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/XNjiJEu8QMGb6f3CGV3UfQ/zh-cn_image_0000002229451901.png "点击放大")
 
 从测试数据可以看出：
 
@@ -349,9 +349,9 @@ struct NormalWeb {
 
 **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Sh1WVSw_RA6_8WVGntyiJg/zh-cn_image_0000002193852020.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/RngkxjONQNqF5krwJqYqbA/zh-cn_image_0000002775217029.png "点击放大")
 
-视频图层设置透明度后，可以透视底部UI控件，但需要GPU进行额外处理，无法使用HWC叠加。建议评估透明度设置的必要性，考虑调整视频图层为不透明。若必须设置透明度，可将UI控件置于视频图层上方或使用自绘制方式实现UI控件，以支持HWC。
+视频图层设置透明度后，可以透视底部UI控件，但需要GPU进行额外处理，无法使能HWC叠加。建议评估透明度设置的必要性，考虑调整视频图层为不透明。若必须设置透明度，可将UI控件置于视频图层上方或使用自绘制方式实现UI控件，以支持HWC。
 
 通过调整视频图层的不透明度来使能HWC，从而优化功耗。相应对比代码如下：
 
@@ -437,13 +437,13 @@ struct OpaqueVideo {
 
 设置视频不透明后的效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/1cpgfR9qSXaBjElIt5ZYWg/zh-cn_image_0000002193852024.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/9BZT0vGOT0e82JbbU4mjYQ/zh-cn_image_0000002775097021.png "点击放大")
 
 **功耗对比**
 
 同一界面下，测试视频图层设置不透明前后的CPU模块、GPU模块的功耗，以及设备总功耗。测试方式为视频播放30s，以3s为一个节点，取设备从6s运行到21s5个节点的平均功耗。最终，使用DevEco Studio的Profiler工具检测得到的数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/-jkGXR5iSjWgt6PbZ3G_Iw/zh-cn_image_0000002193852016.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/_Z4mBfjFQvi-WfVItuXmQA/zh-cn_image_0000002193852016.png "点击放大")
 
 从测试数据可以看出：
 

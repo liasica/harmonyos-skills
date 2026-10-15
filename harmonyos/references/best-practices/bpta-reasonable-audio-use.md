@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-reasonable
 title: 音频资源合理使用
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台硬件资源合理使用 > 音频资源合理使用
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:6a571ed0cd1df1293a09388aa987fda3950ad59a650db35839d3a3e016df6f30
+scraped_at: 2026-10-16T07:06:48+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:83466398636286cb9625bfab67fabd3d8685e1094fbd9824ef44684dc3fb08ec
 ---
 
 无长时任务的应用退到后台时，禁止使用麦克风和扬声器。
@@ -133,7 +133,7 @@ const SoundPool = async () => {
 
 ### 录音场景
 
-```typescript
+```screen
 import { UIAbility } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { audio } from '@kit.AudioKit';
@@ -145,9 +145,9 @@ export default class EntryAbility extends UIAbility {
     //Apply for the resources required by the system, or reapply for the resources released in onBackground ()
     audio.createAudioCapturer(audioCapturerOptions, (err, data) => {
       if (err) {
-        console.error(`InvokecreateAudioCapturerfailed,codeis${err.code},messageis${err.message}`);
+        console.error(`Invoke create Audio Capturer failed, codeis${err.code}, messageis${err.message}`);
       } else {
-        console.info('InvokecreateAudioCapturersucceeded.');
+        console.info('Invoke createAudioCapturer succeeded.');
       }
     });
   }

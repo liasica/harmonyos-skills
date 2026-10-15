@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-overview-o
 title: ArkWeb V8 OOM故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkWeb OOM故障模式说明 > ArkWeb V8 OOM故障模式概述
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:dd77efd04fb99ce1f34c4f393c1343ff3a1aff9ad2989fa970ba02a448f66565
+scraped_at: 2026-10-16T07:06:52+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:21a41af502dd4fbb281f19684a696b02310c0f97094680648c20e22ea2983a5c
 ---
 
 [ArkWeb（方舟Web）](../harmonyos-guides/arkweb.md)是HarmonyOS新一代Web组件内核，为开发者提供原生Web服务能力，旨在让Web内容成为鸿蒙应用的一部分，如同使用原生控件般自然、高效。ArkWeb是基于Chromium内核深度定制的鸿蒙原生Web容器，V8是其内部用于执行JavaScript代码的核心引擎之一。
@@ -30,7 +30,7 @@ V8 JavaScript engine（以下简称V8）作为底层JS引擎，其内存划分�
 
 ### V8堆内存管理（分代模型）
 
-V8的堆内存管理基于**分代假说**：大多数对象的生命周期较短。基于这一假设，堆内存被划分为新生代和老生代。
+V8的堆内存管理基于**分代假说**：大多数对象的生命周期较短。基于这一假说，堆内存被划分为新生代和老生代。
 
 **新生代（New Space / Young Generation）**
 
@@ -60,9 +60,16 @@ V8提供了调整GC的参数与配置，可结合业务对内存/性能进行激
 
 ### 堆内存快照
 
-ArkWeb提供堆内存导出方式和调试方法：
+快照格式说明：
 
-1. 使用[hdc](../harmonyos-guides/hdc.md) shell命令，进入手机终端。
-2. 运行应用，在手机终端使用ps -ef | grep {[应用包名配置](../harmonyos-guides/application-component-configuration-stage.md#应用包名配置)}获得应用Render进程得进程号（以下简称Render PID）。
-3. 通过[hidumper](../harmonyos-guides/hidumper.md) --mem-heap --arkweb-js {Render PID}命令行导出Heap Snapshot或Raw Heap格式的堆内存快照。
-4. 参考[使用DevTools工具调试前端页面](../harmonyos-guides-V13/web-debugging-with-devtools-V13.md)方法，在JS代码中增加断点并结合[hidumper](../harmonyos-guides/hidumper.md)获取精确的运行时堆内存信息。
+**heapsnapshot格式：**业界标准的JS堆内存快照格式，可直接导入Chrome浏览器DevTools进行可视化分析。
+
+**rawheap格式：**为解决heapsnapshot格式导出耗时较长的问题，鸿蒙推出了rawheap格式。可使用[js-rawheap-translator工具](../doccenter-capabilities/js-rawheap-translator.md)解析为heapsnapshot文件。
+
+ArkWeb堆内存快照导出方法：
+
+参考[查询虚拟机堆内存](../doccenter-capabilities/hidumper.md#查询虚拟机堆内存)，使用命令[hidumper](../doccenter-capabilities/hidumper.md) --arkweb-js pid [--raw]导出内存快照。其中--arkweb-js表示执行arkweb js堆dump，pid为应用进程ID，--raw为非必选参数，表示导出rawheap格式文件，如果使用了该选项，可使用[js-rawheap-translator工具](../doccenter-capabilities/js-rawheap-translator.md)将rawheap格式文件转换为heapsnapshot格式文件。不使用该选项，默认导出heapsnapshot格式文件。
+
+堆内存快照分析方法：
+
+得到heapsnapshot格式文件后，参考[devtools通用分析手段](../doccenter-capabilities/use-jsvm-about-analyze-memory-usage.md)，导入Chrome浏览器DevTools进行可视化分析。

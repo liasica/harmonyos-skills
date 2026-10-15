@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-reasonable
 title: 后台定位导航服务合理使用
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台软件资源合理使用 > 后台定位导航服务合理使用
 category: best-practices
-scraped_at: 2026-09-02T14:53:45+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:96f4e670db4bc3286c1795bba27d026aa4be2d9b43ea19a1051e34ca2e86ba62
+scraped_at: 2026-10-16T07:06:48+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:ed54283ff5f1aa9360db0270f5ddf5b2e5c1826d1d8f676e35c4c5ba52388cc5
 ---
 
 使用定位导航服务时，申请长时任务的应用需设置正确应用场景。
 
 ## 约束
 
-NA
+不涉及
 
 ## 示例
 

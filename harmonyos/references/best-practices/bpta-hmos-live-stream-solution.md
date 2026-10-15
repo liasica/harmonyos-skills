@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmos-live-
 title: 基于媒体能力实现直播单播功能
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于媒体能力实现直播单播功能
 category: best-practices
-scraped_at: 2026-09-21T06:25:43+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:1520102367031e09e053636b5faecda8966050d67e9d30ccb208b0d8fbab4a09
+scraped_at: 2026-10-16T07:06:43+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:8c97e1a11a18b4bf973bdda1dd8c93338a130bf0efeff6ec7e53e7e1107a859c
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:1520102367031e09e053636b5faecda8966050d67e9d30ccb208b0d8fba
 
 本文基于系统的媒体底座能力，为开发者提供媒体直播系统的解决方案。系统在音视频采集、编解码、播放等方面能够高效处理多种格式的音视频数据，有效提升了音视频的质量和流畅度，助力开发者构建高清采集、高效编码及流畅播放等能力。本文主要涉及开播端的音视频采集与编码、看播端的流媒体播放与音画同步等技术方案。关于直播推拉流协议、云上服务器转码与分发等内容，本文暂不涉及。直播系统的完整链路可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/wbOYdlKDSHSAgpYXerowpg/zh-cn_image_0000002455689320.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/8ZnWWr13TeS6B2EhNaECRw/zh-cn_image_0000002455689320.png "点击放大")
 
 ## 开播端解决方案
 
@@ -22,7 +22,7 @@ content_hash: sha256:1520102367031e09e053636b5faecda8966050d67e9d30ccb208b0d8fba
 
 ### 开播端架构设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/8nH9LWKySVqWDSjHwGNwfg/zh-cn_image_0000002488808969.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/TFg0_yyOTNGxgSRpPRUaoQ/zh-cn_image_0000002488808969.png "点击放大")
 
 开播端架构设计如上图所示。图中将直播系统划分为云端、应用、系统与硬件四个逻辑层次。本文重点介绍应用SDK层如何通过调用底层媒体能力完成直播音视频基础能力的构建。应用SDK层主要为应用业务层提供平台技术的基础能力，通常可分为音频SDK和视频SDK两部分：
 
@@ -45,7 +45,7 @@ content_hash: sha256:1520102367031e09e053636b5faecda8966050d67e9d30ccb208b0d8fba
 
 1. 常规录音（AUDIOSTREAM\_SOURCE\_TYPE\_MIC）：支持录制48kHz双声道高清音频，但不具备回声消除等音频3A能力。
 2. 语音通话（AUDIOSTREAM\_SOURCE\_TYPE\_VOICE\_COMMUNICATION）：提供音频3A能力，但采样率只有16kHz。
-3. 直播录音（AUDIOSTREAM\_SOURCE\_TYPE\_LIVE）：API20提供了一种专为直播场景设计的高保真录音流类型。该流类型在保证48kHz采样率的同时，新增了高保真回声消除的能力，能够同时满足音频高清晰度和连麦通话无回声干扰的需求。建议开发者在直播场景中全程使用此录音流类型，以避免在单播和连麦场景需要切换录音流类型时的复杂操作。
+3. 直播录音（AUDIOSTREAM\_SOURCE\_TYPE\_LIVE）：API 20提供了一种专为直播场景设计的高保真录音流类型。该流类型在保证48kHz采样率的同时，新增了高保真回声消除的能力，能够同时满足音频高清晰度和连麦通话无回声干扰的需求。建议开发者在直播场景中全程使用此录音流类型，以避免在单播和连麦场景需要切换录音流类型时的复杂操作。
 
 上述几种录音流类型的区别可参考下表。
 
@@ -60,15 +60,15 @@ content_hash: sha256:1520102367031e09e053636b5faecda8966050d67e9d30ccb208b0d8fba
 
 **注意** 
 
-高保真AEC的能力并非所有产品均支持，建议开发者在使用AUDIOSTREAM\_SOURCE\_TYPE\_LIVE录音流类型前，先通过[OH\_AudioStreamManager\_IsAcousticEchoCancelerSupported](../harmonyos-references/capi-native-audio-stream-manager-h.md#oh_audiostreammanager_isacousticechocancelersupported)接口查询当前设备是否支持回声消除能力。
+高保真AEC的能力并非所有产品均支持，建议开发者在使用AUDIOSTREAM\_SOURCE\_TYPE\_LIVE录音流类型前，先通过[OH\_AudioStreamManager\_IsAcousticEchoCancelerSupported()](../doccenter-references/api/capi-native-audio-stream-manager-h.md#oh_audiostreammanager_isacousticechocancelersupported)接口查询当前设备是否支持回声消除能力。
 
 音频采集开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Jsh1yh5wSc6QrQ1fjSapRA/zh-cn_image_0000002455529676.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/kkUv8COJQd2BeLar5Td0tQ/zh-cn_image_0000002455529676.png "点击放大")
 
-音频采集开发详细步骤，可参考[《使用OHAudio开发音频录制功能》](../harmonyos-guides/using-ohaudio-for-recording.md)。其中，开发者使用直播录音（AUDIOSTREAM\_SOURCE\_TYPE\_LIVE）类型的回声消除能力的关键代码如下：
+音频采集开发详细步骤，可参考[推荐使用OHAudio开发音频录制功能（C/C++）](../doccenter-capabilities/using-ohaudio-for-recording.md)。其中，开发者使用直播录音（AUDIOSTREAM\_SOURCE\_TYPE\_LIVE）类型的回声消除能力的关键代码如下：
 
-```cpp
+```screen
 if (sampleInfo.audioInfo.isOpenEchoCancel) {
     // Echo cancellation (audio pickup path): Setting the audio stream type to
     // AUDIOSTREAM_SOURCE_TYPE_VOICE_COMMUNICATION or AUDIOSTREAM_SOURCE_TYPE_LIVE (live streaming scenario) enables
@@ -105,9 +105,9 @@ if (sampleInfo.audioInfo.isOpenEchoCancel) {
 
 ### 直播音频编码
 
-系统提供高效的音频编码能力，开发者可通过调用AVCodec Kit的Native侧[API接口](../harmonyos-references/capi-native-avcodec-audiocodec-h.md)完成音频编码任务。该接口不限制PCM数据的来源，开发者可以调用麦克风录制获取，也可以导入编辑后的PCM数据。通过音频编码，输出对应格式的码流，最后封装为目标格式文件。当前支持的编码能力请参考[AVCodec支持的格式](../harmonyos-guides/avcodec-support-formats.md#音频编码)。
+系统提供高效的音频编码能力，开发者可通过调用AVCodec Kit的Native侧API接口（参考[native\_avcodec\_audiocodec.h](../doccenter-references/api/capi-native-avcodec-audiocodec-h.md)）完成音频编码任务。该接口不限制PCM数据的来源，开发者可以调用麦克风录制获取，也可以导入编辑后的PCM数据。通过音频编码，输出对应格式的码流，最后封装为目标格式文件。当前支持的编码能力请参考AVCodec支持的[音频编码](../doccenter-capabilities/avcodec-support-formats.md#音频编码)。
 
-音频编码的全流程主要包括：创建编码器、设置编码参数（采样率、码率、声道数等）、开始、刷新、重置、销毁资源。在应用开发过程中，开发者应按一定顺序调用方法，执行对应操作，否则系统可能会抛出异常或生成其他未定义的行为。关于音频编码的具体开发步骤，开发者可以参考[《音频编码》](../harmonyos-guides/audio-encoding.md)。
+音频编码的全流程主要包括：创建编码器、设置编码参数（采样率、码率、声道数等）、开始、刷新、重置、销毁资源。在应用开发过程中，开发者应按一定顺序调用方法，执行对应操作，否则系统可能会抛出异常或生成其他未定义的行为。关于音频编码的具体开发步骤，开发者可以参考[音频编码](../doccenter-capabilities/audio-encoding.md)。
 
 **说明** 
 
@@ -115,15 +115,15 @@ if (sampleInfo.audioInfo.isOpenEchoCancel) {
 
 ### 直播音频文件播放
 
-当开播端需要播放背景音乐或氛围音效时，需要用到系统的音频解封装、解码及音频播放能力。其基本流程为：音频文件 -> 解封装 -> 音频解码 -> 播放。应用可通过先后调用AVCodec Kit中的[OH\_AVDemuxer](../harmonyos-guides/audio-video-demuxer.md)和[AudioCodec](../harmonyos-guides/audio-decoding.md)接口分别进行解封装和解码，再调用Audio Kit中的[OH\_AudioRenderer](../harmonyos-guides/using-ohaudio-for-playback.md)进行渲染播放。OH\_AudioRenderer需设置音频播放流类型（[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)），根据直播场景实际播放的音频类型，建议使用STREAM\_USAGE\_MUSIC音频流类型，以获得更通用的系统音效播放体验。具体开发流程如下：
+当开播端需要播放背景音乐或氛围音效时，需要用到系统的音频解封装、解码及音频播放能力。其基本流程为：音频文件 -> 解封装 -> 音频解码 -> 播放。应用可通过先后调用AVCodec Kit中的OH\_AVDemuxer（参考[媒体数据解封装](../doccenter-capabilities/audio-video-demuxer.md)）和AudioCodec接口（参考[音频解码](../doccenter-capabilities/audio-decoding.md)）分别进行解封装和解码，再调用Audio Kit中的OH\_AudioRenderer（参考[推荐使用OHAudio开发音频播放功能（C/C++）](../doccenter-capabilities/using-ohaudio-for-playback.md)）进行渲染播放。OH\_AudioRenderer需设置音频播放流类型（[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)），根据直播场景实际播放的音频类型，建议使用STREAM\_USAGE\_MUSIC音频流类型，以获得更通用的系统音效播放体验。具体开发流程如下：
 
 **（1）音频文件 -> 解封装 -> 音频解码**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/7uv7YI4nTROQDkFanIh8jw/zh-cn_image_0000002488689009.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Y7X7n_oRRKqFcVxVjTfw9A/zh-cn_image_0000002488689009.png "点击放大")
 
 **（2）音频解码 -> 播放**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/4AZbDr6RQcy1DdpgPTH2Uw/zh-cn_image_0000002455689324.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/VwvcQH8RTP-9RmVlf8-tig/zh-cn_image_0000002455689324.png "点击放大")
 
 开播端主播可能会使用本机扬声器或耳机进行音频文件收听。若主播播放的音频文件由应用提供，则应用需同时将该音频文件编码后推流发送，以方便看播端的观众同步收听。
 
@@ -133,12 +133,12 @@ if (sampleInfo.audioInfo.isOpenEchoCancel) {
 
 在直播场景下，应用通常比较关心直播采集音频被其他音频打断的处理方式。系统中，音频中断有终止（Stop）、暂停（Pause）、降音（Duck）、并发（Mix）四种策略。应用一般需要关注和处理的是终止式打断和暂停式打断。
 
-在处理音频中断事件时，应用需主动监听音频焦点事件[OH\_AudioCapturer\_OnInterruptEvent](../harmonyos-references/capi-ohaudio-oh-audiocapturer-callbacks-struct.md#oh_audiocapturer_oninterruptevent)/ [OH\_AudioRenderer\_OnInterruptEvent](../harmonyos-references/capi-ohaudio-oh-audiorenderer-callbacks-struct.md#oh_audiorenderer_oninterruptevent)中的打断提示（InterruptHint）。建议处理方式如下：
+在处理音频中断事件时，应用需主动监听音频焦点事件[OH\_AudioCapturer\_OnInterruptEvent()](../doccenter-references/api/capi-ohaudio-oh-audiocapturer-callbacks-struct.md#oh_audiocapturer_oninterruptevent)/ [OH\_AudioRenderer\_OnInterruptEvent()](../doccenter-references/api/capi-ohaudio-oh-audiorenderer-callbacks-struct.md#oh_audiorenderer_oninterruptevent)中的打断提示（InterruptHint）。建议处理方式如下：
 
 * 当收到终止（INTERRUPT\_HINT\_STOP）式打断时：此时直播音频将永久失焦，待后起音频流结束后，先起音频流不恢复播放。建议应用通过UI提示用户手动恢复音频采集/播放；
 * 当收到暂停（INTERRUPT\_HINT\_PAUSE）式打断时：此时直播音频会暂时失焦，建议应用通过UI提示用户此时音频采集/播放已暂停；待后续收到继续（INTERRUPT\_HINT\_RESUME）标志时，应用可选择通过start方法重启录音流/播放流。
 
-关于音频焦点冲突处理的详细原理和解决方案，开发者可以参考[《音频焦点管理》](bpta-audio-focus-management.md)，关键代码如下所示：
+关于音频焦点冲突处理的详细原理和解决方案，开发者可以参考[音频焦点管理解决方案](../doccenter-feature-dev/bpta-audio-focus-management.md)，关键代码如下所示：
 
 ```cpp
 // Customize the audio interrupt event function
@@ -170,16 +170,16 @@ static int32_t OnRenderInterruptEvent(OH_AudioRenderer *renderer, [[maybe_unused
 
 在直播的视频采集场景中，建议应用仅采集一路预览流，以降低直播功耗和时延。同时，在SDR直播场景下，颜色空间可配置为BT709\_LIMIT，以获得更广泛的设备支持。相机视频采集流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/VNkuK36uSraq-qlrnYagmA/zh-cn_image_0000002488808973.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/OU7N-i56SAevoI_ddMdsLg/zh-cn_image_0000002488808973.png "点击放大")
 
-关于相机视频采集的具体开发步骤，开发者可参考[《相机录像实践》](../harmonyos-guides/camera-recording-case.md)。其中，配置颜色空间的关键代码如下所示：
+关于相机视频采集的具体开发步骤，开发者可参考[录像实践（ArkTS）](../doccenter-capabilities/camera-recording-case.md)。其中，配置颜色空间的关键代码如下所示：
 
-```typescript
+```screen
 // Set the color space
 setColorSpaceBeforeCommitConfig(session: camera.VideoSession, isHdr: number): void {
   let colorSpace: colorSpaceManager.ColorSpace =
     isHdr ? colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT : colorSpaceManager.ColorSpace.BT709_LIMIT;
-  let colorSpaces: Array<colorSpaceManager.ColorSpace> = this.getSupportedColorSpaces(session);
+  let colorSpaces: colorSpaceManager.ColorSpace[] = this.getSupportedColorSpaces(session);
   let isSupportedColorSpaces = colorSpaces.indexOf(colorSpace) >= 0;
   if (isSupportedColorSpaces) {
     Logger.info(TAG, `setColorSpace: ${colorSpace}`);
@@ -208,7 +208,7 @@ setColorSpaceBeforeCommitConfig(session: camera.VideoSession, isHdr: number): vo
 
 在视频处理过程中，开发者需要完成NativeImage的创建、SurfaceId的获取及帧可用性监听设置，为后续相机数据的处理（如美颜、滤镜等）提供基础图像载体，确保相机生产的数据能被正确接收与处理。本文建议开发者通过NativeImage绑定外部OpenGL纹理并关联相机采集数据，由系统完成视频数据的流转，开发者可重点关注shader算法的实现。具体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/V5ld5rlUT36tQizk-UY6Pg/zh-cn_image_0000002455529680.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/RAw7VWFLSam30TsuhUKrpw/zh-cn_image_0000002455529680.png "点击放大")
 
 该环节的关键代码如下所示：
 
@@ -260,27 +260,27 @@ int32_t ret = OH_NativeWindow_SetColorSpace(nativeWindow_, OH_COLORSPACE_BT709_L
 
 ### 直播HDR Vivid视频采集
 
-HDR Vivid是UWA认证的动态HDR视频标准，使用HDR Vivid标准进行视频直播可以为用户带来更宽广的色彩范围、更细腻的层次表现、更显著的明暗对比。系统支持HDR Vivid视频采集、编码和解码显示功能，应用调用系统提供的API，配合云上链路的适配，可实现端到端的HDR Vivid视频直播。关于HDR Vivid视频采集的开发实践，开发者可参考[《HDR Vivid视频播放与录制开发实践》](../harmonyos-guides/hdr-vivid-video-play-recording.md)，但直播场景需注意选用预览流，而非录制流。
+HDR Vivid是UWA认证的动态HDR视频标准，使用HDR Vivid标准进行视频直播可以为用户带来更宽广的色彩范围、更细腻的层次表现、更显著的明暗对比。系统支持HDR Vivid视频采集、编码和解码显示功能，应用调用系统提供的API，配合云上链路的适配，可实现端到端的HDR Vivid视频直播。关于HDR Vivid视频采集的开发实践，开发者可参考[HDR Vivid视频播放与录制开发实践](../doccenter-capabilities/hdr-vivid-video-play-recording.md)，但直播场景需注意选用预览流，而非录制流。
 
 **（一）HDR Vivid视频采集**
 
-* 采集数据格式需配置为CAMERA\_FORMAT\_YCRCB\_P010：调用[OH\_CameraManager\_GetSupportedCameraOutputCapabilityWithSceneMode](../harmonyos-references/capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapabilitywithscenemode)接口获取目标相机设备在录像模式（NORMAL\_VIDEO）下支持的所有输出规格。该接口调用成功后，参数[cameraOutputCapability](../harmonyos-references/capi-oh-camera-camera-outputcapability.md)会包含一个profile数组，每个profile均携带宽高属性（对应分辨率）和format属性（对应数据格式）。从profile数组中筛选同时满足以下两个条件的profile：
+* 采集数据格式需配置为CAMERA\_FORMAT\_YCRCB\_P010：调用[OH\_CameraManager\_GetSupportedCameraOutputCapabilityWithSceneMode()](../doccenter-references/api/capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapabilitywithscenemode)接口获取目标相机设备在录像模式（NORMAL\_VIDEO）下支持的所有输出规格。该接口调用成功后，参数cameraOutputCapability会包含一个profile数组，每个profile均携带宽高属性（对应分辨率）和format属性（对应数据格式）。从profile数组中筛选同时满足以下两个条件的profile：
   1. 分辨率条件：profile的宽、高属性符合业务场景需求（例如根据屏幕尺寸、录像清晰度要求设定的宽高范围）。
   2. 数据格式条件：profile的format属性必须等于CAMERA\_FORMAT\_YCRCB\_P010（确保数据格式适配后续处理流程）。
 
-* 采集颜色空间需配置为OH\_COLORSPACE\_BT2020\_HLG\_LIMIT：调用[OH\_CaptureSession\_GetSupportedColorSpaces](../harmonyos-references/capi-capture-session-h.md#oh_capturesession_getsupportedcolorspaces)接口查询当前采集会话（Camera\_CaptureSession）支持的所有颜色空间配置，遍历supportedColorSpaces列表，筛选出颜色空间项OH\_COLORSPACE\_BT2020\_HLG\_LIMIT。调用[OH\_CaptureSession\_SetActiveColorSpace](../harmonyos-references/capi-capture-session-h.md#oh_capturesession_setactivecolorspace)接口将筛选出的OH\_COLORSPACE\_BT2020\_HLG\_LIMIT设置为采集会话的活跃颜色空间。
+* 采集颜色空间需配置为OH\_COLORSPACE\_BT2020\_HLG\_LIMIT：调用[OH\_CaptureSession\_GetSupportedColorSpaces()](../doccenter-references/api/capi-capture-session-h.md#oh_capturesession_getsupportedcolorspaces)接口查询当前采集会话（Camera\_CaptureSession）支持的所有颜色空间配置，遍历supportedColorSpaces列表，筛选出颜色空间项OH\_COLORSPACE\_BT2020\_HLG\_LIMIT。调用[OH\_CaptureSession\_SetActiveColorSpace()](../doccenter-references/api/capi-capture-session-h.md#oh_capturesession_setactivecolorspace)接口将筛选出的OH\_COLORSPACE\_BT2020\_HLG\_LIMIT设置为采集会话的活跃颜色空间。
 
 **（二）HDR Vivid视频处理**
 
 * OpenGL环境需配置为10bit YUV格式：首先需构建符合10bit YUV格式要求的EGL配置属性数组，明确YUV相关参数。然后调用eglChooseConfig函数，从EGL显示设备中筛选符合上述10bit YUV属性的配置。
-* 通过NativeImage获取NativeBuffer：通过[OH\_NativeImage\_AcquireNativeWindowBuffer](../harmonyos-references/capi-native-image-h.md#oh_nativeimage_acquirenativewindowbuffer)接口从NativeImage对象中获取NativeBuffer，该缓冲区将作为后续OpenGL纹理数据的来源。
+* 通过NativeImage获取NativeBuffer：通过[OH\_NativeImage\_AcquireNativeWindowBuffer()](../doccenter-references/api/capi-native-image-h.md#oh_nativeimage_acquirenativewindowbuffer)接口从NativeImage对象中获取NativeBuffer，该缓冲区将作为后续OpenGL纹理数据的来源。
 * 通过FrameBuffer绑定纹理进行10bit YUV数据处理：通过EGLImage将NativeBuffer关联为OpenGL纹理，再绑定到FrameBuffer完成10bit YUV数据的渲染/处理。
 
 **（三）动态元数据复用方案**
 
 如果对相机输出内容没有后处理要求，保持原汁原味输出，可以从相机中获取动态元数据，传递到编码器。主要步骤如下：
 
-* 获取HDR Vivid动态元数据和颜色空间：首先通过[OH\_NativeBuffer\_GetColorSpace](../harmonyos-references/capi-native-buffer-h.md#oh_nativebuffer_getcolorspace)接口从输入NativeBuffer中读取当前帧的颜色空间信息。然后通过调用[OH\_NativeBuffer\_GetMetadataValue](../harmonyos-references/capi-native-buffer-h.md#oh_nativebuffer_getmetadatavalue)接口读取输入缓冲区中HDR Vivid所需的三类核心元数据（元数据类型、静态元数据、动态元数据）。
+* 获取HDR Vivid动态元数据和颜色空间：首先通过[OH\_NativeBuffer\_GetColorSpace()](../doccenter-references/api/capi-native-buffer-h.md#oh_nativebuffer_getcolorspace)接口从输入NativeBuffer中读取当前帧的颜色空间信息。然后通过调用[OH\_NativeBuffer\_GetMetadataValue()](../doccenter-references/api/capi-native-buffer-h.md#oh_nativebuffer_getmetadatavalue)接口读取输入缓冲区中HDR Vivid所需的三类核心元数据（元数据类型、静态元数据、动态元数据）。
 * 设置HDR Vivid动态元数据和颜色空间：将上一步读取到的颜色空间和HDR Vivid元数据，通过对应的设置函数写入输出NativeBuffer中，确保输出帧能正确承载HDR Vivid效果，操作需按“颜色空间→元数据”的顺序执行，避免依赖项缺失导致配置无效。
 
   如果在调整相机输出内容后需要重新生成动态元数据，具体开发指导，开发者可以参考[《视频动态元数据生成》](../harmonyos-guides/generate-video-dynamic-metadata.md)。
@@ -289,13 +289,13 @@ HDR Vivid是UWA认证的动态HDR视频标准，使用HDR Vivid标准进行视�
 
 **（一）常规视频编码**
 
-由于Surface模式的数据流转性能优于Buffer模式，因此，在直播场景中建议开发者使用[Surface模式下的视频编码](../harmonyos-guides/video-encoding.md#surface模式)。系统支持常见的H.264、H.265视频编码格式，如果需要对HDR Vivid视频进行编码，需要配置MimeType为H.265 (OH\_AVCODEC\_MIMETYPE\_VIDEO\_HEVC)。关于视频编码参数配置，开发者可以参考[《典型场景的视频编码配置》](../harmonyos-guides/video-encoding-configuration-typical-scenarios.md)。
+由于Surface模式的数据流转性能优于Buffer模式，因此，在直播场景中建议开发者使用[Surface模式](../doccenter-capabilities/video-encoding.md#surface模式)下的视频编码。系统支持常见的H.264、H.265视频编码格式，如果需要对HDR Vivid视频进行编码，需要配置MimeType为H.265 (OH\_AVCODEC\_MIMETYPE\_VIDEO\_HEVC)。关于视频编码参数配置，开发者可以参考[典型场景的视频编码配置](../doccenter-capabilities/video-encoding-configuration-typical-scenarios.md)。
 
 **（二）ROI编码**
 
 ROI（Region of Interesting）编码是指对感兴趣区域和非感兴趣区域进行质量的人为干预调整，例如在码率或带宽受限情况下，对重点区域提高质量，对非重点区域降低质量（平衡码率）。
 
-ROI区域的坐标范围可由开发者自主指定。例如，开发者可以借助“美颜模块”的人脸识别功能，将检测输出的人脸区域范围作为ROI区域，并随视频的每一帧同步输出。开发者也可以利用相机的人脸区域检测能力来获取ROI区域（实际应用需先确认该能力是否受支持）。关于ROI编码具体开发指导，开发者可以参考[《ROI编码》](../harmonyos-guides/video-encoding-roi.md)。
+ROI区域的坐标范围可由开发者自主指定。例如，开发者可以借助“美颜模块”的人脸识别功能，将检测输出的人脸区域范围作为ROI区域，并随视频的每一帧同步输出。开发者也可以利用相机的人脸区域检测能力来获取ROI区域（实际应用需先确认该能力是否受支持）。关于ROI编码具体开发指导，开发者可以参考[ROI视频编码](../doccenter-capabilities/video-encoding-roi.md)。
 
 ```cpp
 // Static callback function: Used to handle encoder requests for input parameters
@@ -349,7 +349,7 @@ static void OnNeedInputParameter(OH_AVCodec *codec, uint32_t index, OH_AVFormat 
 
 直播作为典型的应用重负载场景，其系统性能设计直接影响设备续航、发热等关键指标，从而进一步影响用户体验。系统提供压力反馈监测方案，以帮助应用优化直播场景的性能及功耗。开发者可使用系统提供的压力反馈接口[on('systemPressureLevelChange')](../harmonyos-references/arkts-apis-camera-videosession.md#onsystempressurelevelchange20)，根据系统压力动态调整直播场景负载，例如在系统压力过大时主动进行动态应用负载降级。
 
-```typescript
+```screen
 systemPressureLevelChangeCallback(err: BusinessError, systemPressureLevel: camera.SystemPressureLevel): void {
   if (err !== undefined && err.code !== 0) {
     Logger.error(TAG, `Callback Error, errorCode: ${err.code}`);
@@ -369,25 +369,25 @@ registerSystemPressureLevelChangeCallback(videoSession: camera.VideoSession): vo
 
 **（1）高保真音频采集的焦点策略是怎么样的？**
 
-在系统中，高保真音频录音流类型（AUDIOSTREAM\_SOURCE\_TYPE\_LIVE）的焦点优先级和普通录音流（AUDIOSTREAM\_SOURCE\_TYPE\_MIC）一致，低于VOIP通话（AUDIOSTREAM\_SOURCE\_TYPE\_VOICE\_COMMUNICATION）的焦点优先级。例如，当开始语音通话时，将会停止正在直播采集的语音，同时应用会收到被打断的系统通知（[OH\_AudioCapturer\_OnInterruptEvent](../harmonyos-references/capi-ohaudio-oh-audiocapturer-callbacks-struct.md#oh_audiocapturer_oninterruptevent)）。出于安全性的考虑，语音通话的录制流与普通录音录制流不能并发，当应用接收到被打断通知后，建议通过UI提示窗的形式通知用户在语音通话后手动恢复直播语音采集录制。
+在系统中，高保真音频录音流类型（AUDIOSTREAM\_SOURCE\_TYPE\_LIVE）的焦点优先级和普通录音流（AUDIOSTREAM\_SOURCE\_TYPE\_MIC）一致，低于VOIP通话（AUDIOSTREAM\_SOURCE\_TYPE\_VOICE\_COMMUNICATION）的焦点优先级。例如，当开始语音通话时，将会停止正在直播采集的语音，同时应用会收到被打断的系统通知（[OH\_AudioCapturer\_OnInterruptEvent()](../doccenter-references/api/capi-ohaudio-oh-audiocapturer-callbacks-struct.md#oh_audiocapturer_oninterruptevent)）。出于安全性的考虑，语音通话的录制流与普通录音录制流不能并发，当应用接收到被打断通知后，建议通过UI提示窗的形式通知用户在语音通话后手动恢复直播语音采集录制。
 
 **（2）高保真采集录音流能录制到本机扬声器播放的声音吗？**
 
-不能，正常情况下本机扬声器播放的声音会被回声消除算法抑制掉。如果需要在启用高保真音频采集的同时录制本机扬声器播放的声音，建议可同时启动一个[系统内录](../harmonyos-guides/using-avscreencapture-arkts.md)的录音工作流。
+不能，正常情况下本机扬声器播放的声音会被回声消除算法抑制掉。如果需要在启用高保真音频采集的同时录制本机扬声器播放的声音，建议可同时启动一个系统内录（参考[使用AVScreenCaptureRecorder录屏写文件（ArkTS）](../doccenter-capabilities/using-avscreencapture-arkts.md)）的录音工作流。
 
 **（3）相机在多设备（手机、大折叠、阔折叠、三折叠、平板）上如何实现正常状态和折叠状态切换时的预览旋转、切换镜头等功能？**
 
 设备形态较多，直播相机页面的多设备适配是开发者需面临的一大挑战。由于不同设备的屏幕尺寸、相机镜头、折叠形态以及系统特性等方面存在较大差异，相机界面的开发往往会遇到一系列兼容性问题，影响用户体验。
 
-对于该问题，系统提供[多设备相机适配的实践建议](bpta-multi-device-camera.md)，包括如何选择相机设备、设置多设备上相机预览画面比例、设置录像旋转角度、实现悬停态相机页面等。
+对于该问题，系统提供多设备相机适配的实践建议（参考[相机硬件差异](../doccenter-multi-device/bpta-multi-device-camera.md)），包括如何选择相机设备、设置多设备上相机预览画面比例、设置录像旋转角度、实现悬停态相机页面等。
 
 **（4）直播页面前后台切换如何实现业务保活？**
 
 直播业务经常面临前后台切换的场景，当主播把开播页面切换至后台时，直播业务应停止音视频采集以保障主播的个人隐私，但同时业务有存活需求，以便于切换至前台时直播可以继续直播。
 
-该场景下，建议应用可在直播推后台时发送一张如“主播暂时离开”的画面垫片以告知看播端观众此时主播离开，音视频采集暂停。同时为满足后台存活需求，业务需向系统申请一个数据传输的[长时任务](../harmonyos-guides/continuous-task.md)，且持续发送直播画面垫片以满足数据传输长时任务的流量监控需求，如下图所示：
+该场景下，建议应用可在直播推后台时发送一张如“主播暂时离开”的画面垫片以告知看播端观众此时主播离开，音视频采集暂停。同时为满足后台存活需求，业务需向系统申请一个数据传输的[长时任务（ArkTS）](../doccenter-capabilities/continuous-task.md)，且持续发送直播画面垫片以满足数据传输长时任务的流量监控需求，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/kBmpNd-HTW6ssUamTz1voA/zh-cn_image_0000002488689013.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/rUFfmuDXQYWfYV_ASr0cdQ/zh-cn_image_0000002488689013.png "点击放大")
 
 **（5）同一页面内的相机切换生命周期如何管理？**
 
@@ -397,19 +397,19 @@ registerSystemPressureLevelChangeCallback(videoSession: camera.VideoSession): vo
 
 **（6）美颜线程需要在新建的子线程中进行吗？**
 
-需要，因为美颜处理的耗时较长，容易阻塞主线程，建议不要与相机出帧回调（[UpdateSurfaceImage](../harmonyos-references/capi-native-image-h.md#oh_nativeimage_updatesurfaceimage)）处于同一线程。
+需要，因为美颜处理的耗时较长，容易阻塞主线程，建议不要与相机出帧回调（[OH\_NativeImage\_UpdateSurfaceImage()](../doccenter-references/api/capi-native-image-h.md#oh_nativeimage_updatesurfaceimage)）处于同一线程。
 
 ## 看播端解决方案
 
 ### 流媒体播放
 
-系统提供音视频播放器AVPlayer接口，可用于开发流媒体直播和点播功能，实现端到端的流媒体资源播放。其开发步骤包括创建AVPlayer、设置播放资源和窗口、设置播放参数（如音量、倍速、缩放模式）、进行播放控制（如播放、暂停、跳转、停止）、重置资源、销毁资源等。具体开发指导，开发者可参考[《使用AVPlayer播放流媒体》](../harmonyos-guides/streaming-media-playback-development-guide.md)。
+系统提供音视频播放器AVPlayer接口，可用于开发流媒体直播和点播功能，实现端到端的流媒体资源播放。其开发步骤包括创建AVPlayer、设置播放资源和窗口、设置播放参数（如音量、倍速、缩放模式）、进行播放控制（如播放、暂停、跳转、停止）、重置资源、销毁资源等。具体开发指导，开发者可参考[使用AVPlayer播放流媒体（ArkTS）](../doccenter-capabilities/streaming-media-playback-development-guide.md)。
 
 ### 音画同步
 
 在看播端，通常音频渲染的时延大于视频硬件送显的时延，因此建议应用获取音频实际渲染的时间戳，调整视频送帧时延以匹配音频实际播放时延，从而实现音画同步。
 
-获取音频流时间戳的接口推荐使用最新的[OH\_AudioRenderer\_GetAudioTimestampInfo()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_getaudiotimestampinfo)，该接口适配了倍速播放能力，相比[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp)功能更为完备。关于音画同步的具体开发指导，开发者可参考[《音画同步最佳实践》](../harmonyos-guides/audio-video-synchronization.md)。
+获取音频流时间戳的接口推荐使用最新的[OH\_AudioRenderer\_GetAudioTimestampInfo()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_getaudiotimestampinfo)，该接口适配了倍速播放能力，相比[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp)功能更为完备。关于音画同步的具体开发指导，开发者可参考[音画同步](../doccenter-capabilities/audio-video-synchronization.md)最佳实践。
 
 **注意** 
 

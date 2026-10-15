@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-i
 title: 基于PixelMap实现图片编辑
 breadcrumb: 最佳实践 > 行业场景解决方案 > 拍摄美化 > 基于PixelMap实现图片编辑
 category: best-practices
-scraped_at: 2026-09-21T06:25:44+08:00
-doc_updated_at: 2026-08-10
-content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3fc4e68
+scraped_at: 2026-10-16T07:06:44+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062bdbed
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
    | [图片亮度调节](bpta-pixelmap-image-editing.md#section3308181519522) | 通过滑块调节图片整体明暗程度，适用于光线不足或过强的图片。 | 像素级RGB数据处理，通过线性缩放算法RGB\_new = RGB \* factor，结合Worker线程异步处理避免卡顿。 |
    | [图片透明度调节](bpta-pixelmap-image-editing.md#section18203523145211) | 通过滑块调节图片透明度，创建半透明叠加效果，用于UI遮罩或背景虚化。 | 通过PixelMap.[opacity()](../harmonyos-references/arkts-apis-image-pixelmap.md#opacity9-1)接口，直接修改Alpha通道。 |
    | [图片饱和度调节](bpta-pixelmap-image-editing.md#section8695327165213) | 通过滑块调节图片饱和度，增强或降低色彩鲜艳程度，实现图片艺术风格调整。 | 像素级RGB数据处理，通过亮度公式结合饱和度算法，并结合Worker线程异步处理。 |
-   | [图片滤镜添加](bpta-pixelmap-image-editing.md#section2124103385214) | 为图片添加预置滤镜效果，用于图片艺术创作、风格化处理。 | 通过[effectKit.createEffect()](../harmonyos-references/js-apis-effectkit.md#effectkitcreateeffect)创建filter图像效果对象，并结合对应接口实现滤镜效果添加。 |
+   | 图片滤镜添加（参考[图片黑白滤镜](bpta-pixelmap-image-editing.md#section2124103385214)） | 为图片添加预置滤镜效果，用于图片艺术创作、风格化处理。 | 通过[effectKit.createEffect()](../harmonyos-references/js-apis-effectkit.md#effectkitcreateeffect)创建filter图像效果对象，并结合对应接口实现滤镜效果添加。 |
 
 ## 图片信息展示
 
@@ -41,7 +41,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
 
 获取图片信息展示在页面中。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/czJb0Kc-RKCIkx6j05xm1g/zh-cn_image_0000002701095653.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/aTA2c73XQ2CgwDnBy44sFA/zh-cn_image_0000002701095653.png "点击放大")
 
 ### 实现原理
 
@@ -112,7 +112,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
 
 在编辑图片时，将图片按照1:1、4:3或16:9进行裁剪。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/QIgQL6qKQzaLXwGYEfxsWA/zh-cn_image_0000002701055737.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/_Le7CXXlTU2exONaXwZewQ/zh-cn_image_0000002701055737.gif "点击放大")
 
 ### 实现原理
 
@@ -256,7 +256,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
 
 通过滑动Slider，在横向/纵向调节图片位置。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/WOzPY1F_SvqIXB-BrNi60g/zh-cn_image_0000002671335926.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/6PWvZx9dQVCh8ji9xIkONg/zh-cn_image_0000002671335926.gif "点击放大")
 
 ### 实现原理
 
@@ -318,7 +318,9 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
    getStartEditPixelMap(mode: EditType): PixelMap | undefined {
      if (this.editMode !== mode) {
        this.editMode = mode;
-       this.startEditPixelMap = this.finalEditPixelMap;
+       if (this.finalEditPixelMap !== null && this.finalEditPixelMap !== undefined) {
+         this.startEditPixelMap = this.replaceWithClone(this.startEditPixelMap, this.finalEditPixelMap);
+       }
      }
      let target: PixelMap | undefined;
      switch (mode) {
@@ -380,13 +382,8 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
        let error = err as BusinessError;
        Logger.error(TAG, `translate failed: ${error.code}, ${error.message}`);
      }
-     this.finalEditPixelMap = px; // Save the edited PixelMap.
-     try {
-       this.notifyPreviewUpdate(px); // Update Preview.
-     } catch (err) {
-       let error = err as BusinessError;
-       Logger.error(TAG, `${error.code}, ${error.message}`);
-     }
+     this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px);
+     this.notifyPreviewUpdate(px);
    }
    ```
 
@@ -396,7 +393,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
 
 单击图片旋转按钮，改变图片显示方向。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Hhgd5W41RIezrQCYAuvP5g/zh-cn_image_0000002671176072.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Gie25J0NQUixSSxh2aYgVg/zh-cn_image_0000002671176072.gif "点击放大")
 
 ### 实现原理
 
@@ -417,11 +414,13 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
 
    ```typescript
    async cropImage(proportion: CropType, rotationAngle: number, isMirrored: boolean) {
-     // ...
+     if (this.originCropPixelMap !== null && this.originCropPixelMap !== undefined) {
+       // ...
 
-     await this.applyTransforms(px, rotationAngle, isMirrored);
-     this.finalEditPixelMap = px;
-     this.notifyPreviewUpdate(px);
+       await this.applyTransforms(px, rotationAngle, isMirrored);
+       this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px);
+       this.notifyPreviewUpdate(px);
+     }
    }
    ```
 
@@ -444,7 +443,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
 
 单击镜像翻转图标，使图片进行水平翻转。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/_I6ntt2DR0-4vibsQvdW3w/zh-cn_image_0000002701095655.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Nsns3cH8TRqKWV5p4uA3lQ/zh-cn_image_0000002701095655.gif "点击放大")
 
 ### 实现原理
 
@@ -457,7 +456,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
 
 1. 单击图片翻转图标时，调用mirrorImage()方法修改图片翻转状态。
 
-   ```screen
+   ```typescript
    mirrorImage(): void {
      this.editState.isMirrored = !this.editState.isMirrored;
      this.pixelMapManager.cropImage(this.editState.currentCropMode, this.editState.rotationAngle,
@@ -472,7 +471,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
        // ...
 
        await this.applyTransforms(px, rotationAngle, isMirrored);
-       this.finalEditPixelMap = px;
+       this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px);
        this.notifyPreviewUpdate(px);
      }
    }
@@ -497,7 +496,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
 
 滑动Slider，图片按照比例进行缩小或放大。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/O44J1JsFSGGSeHI0lI7MbQ/zh-cn_image_0000002701055781.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Akr89rVeRGShZiw-CHQvQg/zh-cn_image_0000002701055781.gif "点击放大")
 
 ### 实现原理
 
@@ -529,7 +528,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
        let error = err as BusinessError;
        Logger.error(TAG, `${error.code}, ${error.message}`);
      }
-     this.finalEditPixelMap = px;
+     this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px);
      this.notifyPreviewUpdate(px);
    }
    ```
@@ -540,7 +539,7 @@ content_hash: sha256:880c3c6de29cb7217b1674c040167d2f11fe88d87f527a0831b338eeb3f
 
 滑动Slider，调节图片显示亮度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/aEoG1J8TQYmPxrwLZw2yjw/zh-cn_image_0000002671335972.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/i13V6liOSZu7nTxfJADrvg/zh-cn_image_0000002671335972.gif "点击放大")
 
 ### 实现原理
 
@@ -617,6 +616,10 @@ factor = 当前调节值 / 100
      let cur: number = data.cur;
      let adjustType: AdjustType = data.adjustType;
      let buffer = execColorInfo(bufferArray, last, cur, adjustType);
+     if (!buffer) {
+       Logger.error(TAG, 'execColorInfo returned null');
+       return;
+     }
      try {
        // Return the processed buffer.
        workerPort.postMessage(buffer);
@@ -635,16 +638,21 @@ factor = 当前调节值 / 100
        return new Promise((resolve) => {
          this.adjustLock = new Promise<void>((release) => {
            const message = new MessageItem(buffer, CommonConstants.SLIDER_MAX, value, adjustType);
-           try {
-             this.adjustWorker.postMessage(message);
-           } catch (error) {
-             Logger.error(TAG, `postMessage failed, code is ${error.code}, message is ${error.message}`);
-             release();
-           }
            this.adjustWorker.onmessage = (event: MessageEvents) => {
              resolve(event.data);
              release();
            };
+           this.adjustWorker.onerror = () => {
+             resolve(buffer);
+             release();
+           };
+           try {
+             this.adjustWorker.postMessage(message);
+           } catch (error) {
+             Logger.error(TAG, `postMessage failed, code is ${error.code}, message is ${error.message}`);
+             resolve(buffer);
+             release();
+           }
          });
        });
      }
@@ -663,6 +671,7 @@ factor = 当前调节值 / 100
          Logger.error(TAG, `readPixelsToBuffer failed: ${err.code}, ${err.message}`);
        });
        if (!buffer) {
+         this.releasePixelMap(px);
          return;
        }
        if (currentAdjustData[AdjustType.BRIGHTNESS] !== CommonConstants.SLIDER_MAX) {
@@ -679,7 +688,7 @@ factor = 当前调节值 / 100
          }
        }
        // ...
-       this.finalEditPixelMap = px; // Save edited pixelMap.
+       this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px); // Save edited pixelMap.
        this.notifyPreviewUpdate(px); // Update Preview.
      }
      ```
@@ -724,7 +733,7 @@ factor = 当前调节值 / 100
 
 滑动Slider，调节图片透明度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/eg-NYRiQTai0QIvUrsJE_g/zh-cn_image_0000002671176144.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/C9BkpgASSiC-VNYB3ZFxww/zh-cn_image_0000002671176144.gif "点击放大")
 
 ### 实现原理
 
@@ -746,6 +755,7 @@ factor = 当前调节值 / 100
        Logger.error(TAG, `readPixelsToBuffer failed: ${err.code}, ${err.message}`);
      });
      if (!buffer) {
+       this.releasePixelMap(px);
        return;
      }
      // ...
@@ -760,7 +770,7 @@ factor = 当前调节值 / 100
          Logger.error(TAG, `${error.code}, ${error.message}`);
        }
      }
-     this.finalEditPixelMap = px; // Save edited pixelMap.
+     this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px); // Save edited pixelMap.
      this.notifyPreviewUpdate(px); // Update Preview.
    }
    ```
@@ -772,7 +782,7 @@ factor = 当前调节值 / 100
 
 滑动Slider，调节图片饱和度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/gIZSI2c8ThCgx0kQFVs6jQ/zh-cn_image_0000002701095731.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/0_hdTdcKQEevm9Nga6ZkgA/zh-cn_image_0000002701095731.gif "点击放大")
 
 ### 实现原理
 
@@ -865,6 +875,7 @@ factor = 当前调节值 / 100
        Logger.error(TAG, `readPixelsToBuffer failed: ${err.code}, ${err.message}`);
      });
      if (!buffer) {
+       this.releasePixelMap(px);
        return;
      }
      // ...
@@ -883,7 +894,7 @@ factor = 当前调节值 / 100
        }
      }
      // ...
-     this.finalEditPixelMap = px; // Save edited pixelMap.
+     this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px); // Save edited pixelMap.
      this.notifyPreviewUpdate(px); // Update Preview.
    }
    ```
@@ -895,7 +906,7 @@ factor = 当前调节值 / 100
 
 选中黑白滤镜，图片显示黑白效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/mbAthImJQiGzIbwXQM66sQ/zh-cn_image_0000002701055811.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/pkcyJdVPR6yS3GQgpMoe-w/zh-cn_image_0000002701055811.png "点击放大")
 
 ### 实现原理
 
@@ -915,18 +926,26 @@ factor = 当前调节值 / 100
        return;
      }
      let px: PixelMap = startMap;
-     let filter = effectKit.createEffect(px); // Create filter object.
 
-     switch (type) {
-       case FilterType.GRAYSCALE:
-         px = await filter.grayscale().getEffectPixelMap();
-         break;
-       // ...
-       default:
-         break;
+     try {
+       let filter = effectKit.createEffect(px); // Create filter object.
+       switch (type) {
+         case FilterType.GRAYSCALE:
+           const grayscaleResult = await filter.grayscale().getEffectPixelMap();
+           this.releasePixelMap(px);
+           px = grayscaleResult;
+           break;
+         // ...
+         default:
+           break;
+       }
+       this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px);
+       this.notifyPreviewUpdate(px);
+     } catch (err) {
+       let error = err as BusinessError;
+       Logger.error(TAG, `handleFilter failed: ${error.code}, ${error.message}`);
+       this.releasePixelMap(px);
      }
-     this.notifyPreviewUpdate(px); // Update Preview.
-     this.finalEditPixelMap = px; // Save edited pixelMap.
    }
    ```
 2. 在点击事件中调用handleFilter()并传入当前点击item的索引，应用黑白滤镜效果。
@@ -957,7 +976,7 @@ factor = 当前调节值 / 100
 
 选中高亮滤镜，图片显示高亮效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/FAYvAGMWQkmXbfEi_3mUDA/zh-cn_image_0000002671336002.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Nuu58q_mQcqnqfY3coDNww/zh-cn_image_0000002671336002.png "点击放大")
 
 ### 实现原理
 
@@ -975,19 +994,27 @@ factor = 当前调节值 / 100
        return;
      }
      let px: PixelMap = startMap;
-     let filter = effectKit.createEffect(px); // Create filter object.
 
-     switch (type) {
-       // ...
-       case FilterType.BRIGHTNESS:
-         px = await filter.brightness(0.7).getEffectPixelMap();
-         break;
-       // ...
-       default:
-         break;
+     try {
+       let filter = effectKit.createEffect(px); // Create filter object.
+       switch (type) {
+         // ...
+         case FilterType.BRIGHTNESS:
+           const brightnessResult = await filter.brightness(0.7).getEffectPixelMap();
+           this.releasePixelMap(px);
+           px = brightnessResult;
+           break;
+         // ...
+         default:
+           break;
+       }
+       this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px);
+       this.notifyPreviewUpdate(px);
+     } catch (err) {
+       let error = err as BusinessError;
+       Logger.error(TAG, `handleFilter failed: ${error.code}, ${error.message}`);
+       this.releasePixelMap(px);
      }
-     this.notifyPreviewUpdate(px); // Update Preview.
-     this.finalEditPixelMap = px; // Save edited pixelMap.
    }
    ```
 2. 在点击事件中调用handleFilter()并传入当前点击item的索引，应用高亮滤镜效果，参考黑白滤镜[开发步骤](bpta-pixelmap-image-editing.md#section07091429161817)中的步骤2。
@@ -998,7 +1025,7 @@ factor = 当前调节值 / 100
 
 选中反转滤镜，图片显示反转效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/vKiaVBkESuiOQTucz-Fmcw/zh-cn_image_0000002671176146.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/N0jHt4D5S1WsCs62VGWjYg/zh-cn_image_0000002671176146.png "点击放大")
 
 ### 实现原理
 
@@ -1016,19 +1043,27 @@ factor = 当前调节值 / 100
        return;
      }
      let px: PixelMap = startMap;
-     let filter = effectKit.createEffect(px); // Create filter object.
 
-     switch (type) {
-       // ...
-       case FilterType.INVERT:
-         px = await filter.invert().getEffectPixelMap();
-         break;
-       // ...
-       default:
-         break;
+     try {
+       let filter = effectKit.createEffect(px); // Create filter object.
+       switch (type) {
+         // ...
+         case FilterType.INVERT:
+           const invertResult = await filter.invert().getEffectPixelMap();
+           this.releasePixelMap(px);
+           px = invertResult;
+           break;
+         // ...
+         default:
+           break;
+       }
+       this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px);
+       this.notifyPreviewUpdate(px);
+     } catch (err) {
+       let error = err as BusinessError;
+       Logger.error(TAG, `handleFilter failed: ${error.code}, ${error.message}`);
+       this.releasePixelMap(px);
      }
-     this.notifyPreviewUpdate(px); // Update Preview.
-     this.finalEditPixelMap = px; // Save edited pixelMap.
    }
    ```
 2. 在点击事件中调用handleFilter()并传入当前点击item的索引，应用反转滤镜效果，参考黑白滤镜[开发步骤](bpta-pixelmap-image-editing.md#section07091429161817)中的步骤2。
@@ -1039,7 +1074,7 @@ factor = 当前调节值 / 100
 
 选中模糊滤镜，图片显示模糊效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/x8wxhmc8SWKwI0E7RAbM_w/zh-cn_image_0000002701095733.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/tg0aMyWkSLmNk6WBve649Q/zh-cn_image_0000002701095733.png "点击放大")
 
 ### 实现原理
 
@@ -1057,18 +1092,26 @@ factor = 当前调节值 / 100
        return;
      }
      let px: PixelMap = startMap;
-     let filter = effectKit.createEffect(px); // Create filter object.
 
-     switch (type) {
-       // ...
-       case FilterType.BLUR:
-         px = await filter.blur(5).getEffectPixelMap();
-         break;
-       default:
-         break;
+     try {
+       let filter = effectKit.createEffect(px); // Create filter object.
+       switch (type) {
+         // ...
+         case FilterType.BLUR:
+           const blurResult = await filter.blur(5).getEffectPixelMap();
+           this.releasePixelMap(px);
+           px = blurResult;
+           break;
+         default:
+           break;
+       }
+       this.finalEditPixelMap = this.replaceWith(this.finalEditPixelMap, px);
+       this.notifyPreviewUpdate(px);
+     } catch (err) {
+       let error = err as BusinessError;
+       Logger.error(TAG, `handleFilter failed: ${error.code}, ${error.message}`);
+       this.releasePixelMap(px);
      }
-     this.notifyPreviewUpdate(px); // Update Preview.
-     this.finalEditPixelMap = px; // Save edited pixelMap.
    }
    ```
 2. 在点击事件中调用handleFilter()并传入当前点击item的索引，应用模糊滤镜效果，参考黑白滤镜[开发步骤](bpta-pixelmap-image-editing.md#section07091429161817)中的步骤2。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 稳定性概览
 breadcrumb: 最佳实践 > 稳定性 > 稳定性概览
 category: best-practices
-scraped_at: 2026-09-21T06:25:48+08:00
+scraped_at: 2026-10-16T07:06:49+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:b104ce3ee532286611ba9764b054fca9d8997bbd65314e28c23a8469628c6259
+content_hash: sha256:03078541106cc0a666cc7dd2d08d666f97ae344ddd1ccb3b2f0f57e29dc99570
 ---
 
 应用稳定性是影响用户体验的重要因素之一，常见的稳定性问题包括：崩溃、应用冻屏、内存泄漏、内存越界等。HarmonyOS提供了完善的稳定性治理框架，围绕着稳定性治理活动，HarmonyOS提供了丰富的工具，工具覆盖开发、调试、上线及运维全生命周期。
@@ -14,4 +14,4 @@ content_hash: sha256:b104ce3ee532286611ba9764b054fca9d8997bbd65314e28c23a8469628
 
 以下稳定性最佳实践，结合HarmonyOS生态实践要求，按照故障稳定性检测、稳定性分析、稳定性优化、稳定性案例、稳定性运维等内容，介绍HarmonyOS生态稳定性治理的完整方案。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/19LfpkJvSKyiF7DrY9p0bQ/zh-cn_image_0000002370405532.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/_9SSrJx-RdKCqoQgOCC5cQ/zh-cn_image_0000002370405532.png "点击放大")

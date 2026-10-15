@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 匿名映射过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 匿名映射过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-21T06:25:51+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:bcc6e4344b56dd48e5dd56f073f24255d1d8e4e1e17f312260e4a534a71970a5
+scraped_at: 2026-10-16T07:06:51+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:b9fe3fef7b787e022b2c611d2b1b6883b7122d140235828487ad8056994e4538
 ---
 
 ## 概述
@@ -85,14 +85,14 @@ smaps维测关键字：LOGGER\_MEMCHECK\_SAMPLIFY\_SMAPS\_INFO。
   + 单击④处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
   + 找到内存申请异常的内存及其调用栈，如下图⑤、⑥处框选的内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ziXDp1sGQYm8hwoYUvijUA/zh-cn_image_0000002680464170.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/hfLo-ZgaSBiZIjiRzcC4lg/zh-cn_image_0000002680464170.png "点击放大")
 * 分析内存栈指向的代码段，可以得出单次点击“mmap”按钮，会通过Native层MmapMemoryLeak()函数，申请一次超大匿名页内存且未释放：
   + ArkTS层函数如下图所示：响应按钮点击动作，调用Native层的MmapMemoryLeak()函数：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/MXN2MMWQQ_K1Uz-9hz3nng/zh-cn_image_0000002710143985.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/LN6LSlgjQiej-dLUYZ04WA/zh-cn_image_0000002710143985.png "点击放大")
   + Native层函数实现如下图所示：每次执行都会通过mmap()创建匿名页内存，并且退出前未释放：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/iboxk09OQwqezertuFI4QQ/zh-cn_image_0000002710326177.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/DzIu06kDQRCo7avvdokhww/zh-cn_image_0000002710326177.png)
 
 **开发态问题分析思路：**
 
@@ -100,17 +100,17 @@ smaps维测关键字：LOGGER\_MEMCHECK\_SAMPLIFY\_SMAPS\_INFO。
 
 * 完成录制后，在下图①处Memory的options按钮中选择下图②处AnonPage Other复选框，观察下图③处AnonPage Other内存增长趋势，发现AnonPage Other内存的增长趋势最明显：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/38XTzzKLQ8GWNuVWlsi6VA/zh-cn_image_0000002710303839.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/HKNXVYbBSUCrVwT5vDUdIQ/zh-cn_image_0000002710303839.png "点击放大")
 * 选择①处ALL Anonymous VM中的VM:others泳道如②处，单击③处Call Trees查看内存申请调用栈，单击④处筛选Created & Existing可以找到内存增长点的内存申请调用栈，内存申请调用栈如下图⑤、⑥处框中所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/bR2wbKUpTEW2QN0YbtcEHg/zh-cn_image_0000002680464192.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/b7vLsIeKReeK53GbkiRQUA/zh-cn_image_0000002680464192.png "点击放大")
 * 根据调用栈能够找到具体的代码行，通过分析代码功能，发现每次点击按钮“mmap”，ArkTS层会响应点击动作，并调用Native层的MmapMemoryLeak()函数去通过mmap申请500MB匿名页内存，连续点击多次按钮后，最终发生了RSS内存泄漏。
   + ArkTS层函数如下图所示，响应按钮点击动作，调用Native层的MmapMemoryLeak()函数：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/pFwBQwldTHOwdTODMgOHyQ/zh-cn_image_0000002710143999.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/qLzczD_dQtmCOb3vx2sN-g/zh-cn_image_0000002710143999.png "点击放大")
   + Native层函数实现如下图所示，每次执行都会通过mmap()创建匿名页内存，并且退出前未释放：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/BvZZsR2MRvCk-CvaZux3Jw/zh-cn_image_0000002680646400.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/eI2s4FK7SwiC-Mj3PXSOPA/zh-cn_image_0000002680646400.png "点击放大")
 
 ### 预防建议
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-news-read
 title: 多设备新闻阅读界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备新闻阅读界面
 category: best-practices
-scraped_at: 2026-09-21T06:25:40+08:00
+scraped_at: 2026-10-16T07:06:41+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:95d26054c1bc1a664e14c511dcca74b577324278b57c08e45f4062ac646eb1d4
+content_hash: sha256:99d5083a5879d02287d516784ed4aa50ab95bf6994cf3f0ac73a85b5906ea3e8
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:95d26054c1bc1a664e14c511dcca74b577324278b57c08e45f4062ac646
 
 新闻阅读应用的UX设计可参考[新闻阅读类](../design-guides/responsive-design-examples4-0000001746657290.md)设计指南。应用在直板机上采用单列纵向布局，在折叠屏和平板上以双列栅格展示，在电脑上采用侧边栏加内容区的分栏布局。多设备新闻阅读界面在不同设备形态下的效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ROqnqYv5SlmD0qH2Pw-Ncg/zh-cn_image_0000002693047956.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/SgPDLsw9TEaRV_CHGVuIEA/zh-cn_image_0000002693047956.png "点击放大")
 
 ## 工程管理
 
@@ -165,7 +165,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端首页推荐页的页签栏展示在左侧，右侧承载内容区。效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/5m9Q6f_kTY67y3aY9H9UmQ/zh-cn_image_0000002722887399.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/GgJSoab7QemTFaR4OBEGIQ/zh-cn_image_0000002722887399.png "点击放大")
 
 **界面开发**
 
@@ -181,7 +181,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端新闻详情页左侧为新闻内容、右侧展示评论区，底部嵌入工具栏。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/3isyTEQyRSOAXmScbG9-TQ/zh-cn_image_0000002693207824.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/8uIv9vJrSUemYdTGR2U4ZQ/zh-cn_image_0000002693207824.png "点击放大")
 
 **界面开发**
 

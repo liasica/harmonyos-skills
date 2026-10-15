@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-focu
 title: 音频焦点管理解决方案
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频焦点管理解决方案
 category: best-practices
-scraped_at: 2026-09-21T06:25:37+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:eba86803206cd7dc12da45028d2a3876d2ed5e65adece7ebaabfc7c699302a8e
+scraped_at: 2026-10-16T07:06:38+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:8e1f3ed4b76f9c01750bd5381b8d85f4afc57d4d9cbb41af00556ba102fc0dc6
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:eba86803206cd7dc12da45028d2a3876d2ed5e65adece7ebaabfc7c6993
 
 不同应用可通过设置不同的音频焦点策略，以适配各种体验场景，满足用户良好的应用体验。同一应用内，则可通过调整焦点模式，适配不同体验场景，确保多音频播放的优质体验。同时本篇文章配套的sample覆盖了上述所有场景，效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/tEE1AqQUQhOXrRxQUFrL6A/zh-cn_image_0000002624617405.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/XBusGBneS_ONVf4W6CcQmg/zh-cn_image_0000002624617405.gif "点击放大")
 
 ## 实现原理
 
@@ -50,7 +50,7 @@ content_hash: sha256:eba86803206cd7dc12da45028d2a3876d2ed5e65adece7ebaabfc7c6993
 
 在详细了解音频焦点管理机制之前，开发者应先了解多音频流抢占焦点的时序流程。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/bsdlBrMQSXyNpctTaolN8A/zh-cn_image_0000002531200167.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/8E83kGvWRcmqc0aY7In_WQ/zh-cn_image_0000002531200167.png "点击放大")
 
 从上图可以看出系统音频焦点管理机制，开发者在开发音频相关功能时需要关注以下3点：
 
@@ -79,7 +79,7 @@ content_hash: sha256:eba86803206cd7dc12da45028d2a3876d2ed5e65adece7ebaabfc7c6993
 
 系统根据先播和后播音频流类型，查询默认焦点策略。不同策略对应着不同的焦点处理方式，具体如下流程图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/KsVIB2wHRiGtUJDKMzVfRg/zh-cn_image_0000002499520260.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/uVDNjKPsRbqxBSMMCxeI9Q/zh-cn_image_0000002499520260.png "点击放大")
 
 **音频流类型设置方法**
 
@@ -125,7 +125,7 @@ AudioSession提供的四种会话策略（即自定义焦点策略），具体�
 
 AudioSession的自定义焦点策略原理主要通过降低音频流优先级在系统默认策略上进行调整的。例如音频A stop 音频B，说明音频A优先级大于音频B优先级，此时开发者可以降低音频A优先级，自定义焦点策略为并发模式，使其能够与音频B进行并发播放。其原理流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/b21j8A1dRFq_Cz8l0ZjIMw/zh-cn_image_0000002499360276.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/DGTQiAU6RvKINu_tCS1Z4Q/zh-cn_image_0000002499360276.png "点击放大")
 
 以上文的内嵌短视频播放中断后台音乐场景为例，短视频音频流类型为STREAM\_USAGE\_MOVIE，后台音乐音频流类型为STREAM\_USAGE\_MUSIC，系统默认策略为Stop模式，用户预期策略为Pause模式。
 
@@ -202,7 +202,7 @@ AudioSession自定义焦点策略的原则主要为以下2点：
 
 应用可根据需求选择合适的焦点模式。在创建音频流时，系统默认采用共享焦点模式（SHARE\_MODE），多音频流间可以并发播放，若设置为独立模式，则音频流之前的打断策略使用系统默认焦点策略。应用可根据不同场景需求主动设置所需的焦点模式。下面以同应用内有两条音频流A和B为例，展示下在不同焦点模式下A和B的播放差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/tXeVuUMHRBS5dRoVhiHIbg/zh-cn_image_0000002531280215.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/io8qY1rxSM-gHq_eFpD7cw/zh-cn_image_0000002531280215.png "点击放大")
 
 设置焦点模式的方法：
 
@@ -746,7 +746,7 @@ VoIP全屏专注通话场景具体实现：
 
 该问题主要是因为上下两个短视频保持焦点不连贯，导致在滑动间隙后台音频重新获取焦点恢复播放。上文提到的音频会话（AudioSession）机制除了能够自定义焦点策略以外，还具有延迟焦点释放的功能。原理流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/2IsVNTuaRDuCSFAu1HLCYg/zh-cn_image_0000002531200173.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/frVAwhHRQBKrcuRCISqDQg/zh-cn_image_0000002531200173.png "点击放大")
 
 1. 若AudioSession处于激活状态，应用的音频流全部停止时，不会立刻释放音频焦点，系统会保持音频焦点进入静默等待状态，直到音频会话停用或者该应用有新的音频流申请焦点。
 2. 若应用存在音频流处于运行状态，AudioSession停用后，不会立刻释放音频焦点，系统会保持音频焦点，直到应用所有音频流均停止。

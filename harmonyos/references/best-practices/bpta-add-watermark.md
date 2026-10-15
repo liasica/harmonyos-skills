@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-add-waterm
 title: 水印添加
 breadcrumb: 最佳实践 > 图形 > 图形绘制 > 水印添加
 category: best-practices
-scraped_at: 2026-09-21T06:25:37+08:00
-doc_updated_at: 2026-08-17
-content_hash: sha256:304018b04cce4528a7dd82d08ca6345d8e08405bb963e011ab6a889ee606e9fc
+scraped_at: 2026-10-16T07:06:38+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:809e2a4848e8e0d8a7e12571b083a47b2564694e4429412d50fb1fc5e21d264b
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:304018b04cce4528a7dd82d08ca6345d8e08405bb963e011ab6a889ee60
 
 某个页面背景上添加水印文字，实现效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/0jiLUmhOTH2JHwOssTDDHQ/zh-cn_image_0000002229451785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/CAX4WLHtRl-tEWt1wfwuEg/zh-cn_image_0000002229451785.png "点击放大")
 
 ### 实现原理
 
@@ -39,7 +39,7 @@ content_hash: sha256:304018b04cce4528a7dd82d08ca6345d8e08405bb963e011ab6a889ee60
 **开发流程**
 
 1. 创建[Canvas](../harmonyos-references/ts-components-canvas-canvas.md)画布，在画布上绘制水印。
-2. 使用[Stack](../harmonyos-references/ts-container-stack.md)组件或[浮层overlay](../harmonyos-references/ts-universal-attributes-overlay.md#overlay)属性，将画布与UI页面组件融合显示。
+2. 使用[Stack](../harmonyos-references/ts-container-stack.md)组件或浮层[overlay](../harmonyos-references/ts-universal-attributes-overlay.md#overlay)属性，将画布与UI页面组件融合显示。
 
 ### 开发步骤
 
@@ -64,10 +64,10 @@ content_hash: sha256:304018b04cce4528a7dd82d08ca6345d8e08405bb963e011ab6a889ee60
    2. 实现绘制水印draw()方法。绘制的起点默认为坐标轴的原点（画布的左上角），通过坐标轴的平移及旋转，实现在画布的不同位置、不同角度绘制水印。如果水印有一定旋转角度，想保证第一个水印能完整显示，需要对绘制的起点做平移，平移距离通过旋转角度及水印宽高计算。
       * 旋转角度大于0，由下图可知，水印沿x轴方向平移距离positionX = tan(θ) \* 水印高度，即绘制起点为(positionX, 0)。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/B80SaHkZQhC_Z9zs33kfAg/zh-cn_image_0000002229337289.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/FLM3PKx0QN-2sw9el5H7pA/zh-cn_image_0000002229337289.png "点击放大")
       * 旋转角度小于0，由下图可知，水印沿y轴方向平移距离positionY = tan(θ) \* 水印宽度，即绘制起点为(0, positionY)。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/b4dEWOeOThqp76iMF-RFXw/zh-cn_image_0000002229337285.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/GotMEIltQiuMXXZbf4hoLQ/zh-cn_image_0000002229337285.png "点击放大")
 
       最终通过CanvasRenderingContext2D.[fillText()](../harmonyos-references/ts-components-canvas-common-method.md#filltext)方法进行水印文字的绘制。
 
@@ -152,7 +152,7 @@ content_hash: sha256:304018b04cce4528a7dd82d08ca6345d8e08405bb963e011ab6a889ee60
 
 保存的图片、拍照生成的图片等场景，需要添加水印。实现效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/SZChi6hAQV66K5r3u8J3Bw/zh-cn_image_0000002229451781.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/KsnbkcZDTPuRoBrhBf2Vfg/zh-cn_image_0000002229451781.png "点击放大")
 
 ### 实现原理
 
@@ -284,18 +284,18 @@ content_hash: sha256:304018b04cce4528a7dd82d08ca6345d8e08405bb963e011ab6a889ee60
 
 在PDF预览页面点击添加水印按钮，生成带水印的PDF文档，并显示在预览页面中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/gSWKf_tTQJmf3Qx6RQevWA/zh-cn_image_0000002229337293.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/IBqAr9_DQymjz5ajA_hQEg/zh-cn_image_0000002229337293.png "点击放大")
 
 ### 实现原理
 
 **关键技术**
 
-[pdfService](../harmonyos-references/pdf-arkts-pdfservice.md)模块为应用提供统一管理PDF页面的页眉页脚、水印、背景、批注、书签的能力。[TextWatermarkInfo](../harmonyos-references/pdf-arkts-pdfservice.md#textwatermarkinfo)类和[ImageWatermarkInfo](../harmonyos-references/pdf-arkts-pdfservice.md#imagewatermarkinfo)分别提供创建文本水印和图片水印的能力。[PdfDocument](../harmonyos-references/pdf-arkts-pdfservice.md#pdfdocument)类提供与文档相关能力，其中[addWatermark()](../harmonyos-references/pdf-arkts-pdfservice.md#addwatermark)方法用于添加水印。
+pdfService模块（参考[pdfService（PDF服务）](../harmonyos-references/pdf-arkts-pdfservice.md)）为应用提供统一管理PDF页面的页眉页脚、水印、背景、批注、书签的能力。[TextWatermarkInfo](../harmonyos-references/pdf-arkts-pdfservice.md#textwatermarkinfo)类和[ImageWatermarkInfo](../harmonyos-references/pdf-arkts-pdfservice.md#imagewatermarkinfo)分别提供创建文本水印和图片水印的能力。[PdfDocument](../harmonyos-references/pdf-arkts-pdfservice.md#pdfdocument)类提供与文档相关能力，其中[addWatermark()](../harmonyos-references/pdf-arkts-pdfservice.md#addwatermark)方法用于添加水印。
 
 **开发流程**
 
 1. 将应用侧PDF文件写入沙箱中。
-2. 使用[pdfService](../harmonyos-references/pdf-arkts-pdfservice.md)模块相关API加载指定沙箱路径的PDF并添加水印。
+2. 使用pdfService模块相关API（参考[pdfService（PDF服务）](../harmonyos-references/pdf-arkts-pdfservice.md)）加载指定沙箱路径的PDF并添加水印。
 
 ### 开发步骤
 
@@ -317,7 +317,7 @@ content_hash: sha256:304018b04cce4528a7dd82d08ca6345d8e08405bb963e011ab6a889ee60
      return filePath;
    }
    ```
-2. 使用[PdfController](../harmonyos-references/pdf-arkts-pdfviewmanage.md#pdfcontroller)控制器中的[loadDocument()](../harmonyos-references/pdf-arkts-pdfservice.md#loaddocument)方法通过沙箱路径加载文件，显示到PDF预览组件[PdfView](../harmonyos-references/pdf-arkts-pdfview-component.md)中。
+2. 使用[PdfController](../harmonyos-references/pdf-arkts-pdfviewmanage.md#pdfcontroller)控制器中的[loadDocument()](../harmonyos-references/pdf-arkts-pdfservice.md#loaddocument)方法通过沙箱路径加载文件，显示到PDF预览组件PdfView（参考[PdfView（PDF预览组件）](../harmonyos-references/pdf-arkts-pdfview-component.md)）中。
 
    ```typescript
    private controller: pdfViewManager.PdfController = new pdfViewManager.PdfController();
@@ -334,6 +334,7 @@ content_hash: sha256:304018b04cce4528a7dd82d08ca6345d8e08405bb963e011ab6a889ee60
            pageFit: pdfService.PageFit.FIT_WIDTH
          })
            // ...
+   }
    ```
 3. 通过文本水印类TextWatermarkInfo创建水印对象，设置水印内容、字体、颜色、位置等相关属性；图片水印对象通过ImageWatermarkInfo创建。
 

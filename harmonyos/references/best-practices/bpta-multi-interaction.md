@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-inte
 title: 多设备交互
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备交互 > 多设备交互
 category: best-practices
-scraped_at: 2026-09-21T06:25:39+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:4c48d2afa5f42f822907c818ea0f0f690c397cc5d199beb1bbd170d18141bd7f
+scraped_at: 2026-10-16T07:06:39+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:b0c2e832251d51787d51617a24dfee9e6e5d398940e38958bf39f79afaa8df89
 ---
 
 ## 概述
 
-在开发[“一多”](bpta-multi-device-overview.md)应用时，除了需要针对手机、平板、电脑、穿戴设备、智慧屏等设备的硬件差异进行适配外，还应关注其在交互方式上的差异性。不同设备的用户交互依赖于各异的输入设备，从而形成不同的交互方式，例如：手机/平板通过手指触控屏幕、电脑通过鼠标控制光标、智慧屏通过灵犀指向遥控控制光标。为确保应用在各类设备上均具备自然流畅的可用性，开发时需系统性关注并差异化适配相应的交互事件。
+在开发“一多”应用时，除了需要针对手机、平板、电脑、穿戴设备、智慧屏等设备的硬件差异进行适配外，还应关注其在交互方式上的差异性。不同设备的用户交互依赖于各异的输入设备，从而形成不同的交互方式，例如：手机/平板通过手指触控屏幕、电脑通过鼠标控制光标、智慧屏通过灵犀指向遥控控制光标。为确保应用在各类设备上均具备自然流畅的可用性，开发时需系统性关注并差异化适配相应的交互事件。
 
 ## 多设备交互
 
@@ -39,7 +39,7 @@ content_hash: sha256:4c48d2afa5f42f822907c818ea0f0f690c397cc5d199beb1bbd170d1814
 交互归一是一种面向多设备输入的响应框架，通过将不同输入设备的交互行为抽象为同一事件，来简化开发逻辑，例如：触屏点击、触控板点击、鼠标左键单击、遥控器OK键确认等统一抽象为点击事件；遥控器功能键、键盘快捷键抽象为按键事件。交互归一实现对多样化输入源的统一处理，确保组件在不同交互场景下具备一致的行为逻辑与用户体验。
 
 **图1** 输入设备  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YcIThFQDS0WuAdghhFB-UA/zh-cn_image_0000002499409917.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/TirSmoqvTwGr5wTxwjdpnw/zh-cn_image_0000002499409917.png "点击放大")
 
 交互归一并非将所有输入方式简单合并为单一事件或通过一个API处理，而是通过对不同设备的几十种底层交互事件进行语义抽象与归类，在保证交互差异可控的前提下，大幅减少事件类型数量。最终形成的是一组标准化的交互API集合，开发者仍需根据具体场景选择并适配相应的抽象事件，以实现跨设备的一致性与灵活性兼顾的交互体验。
 
@@ -56,7 +56,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
   场景案例：使用手写笔在屏幕上书写，当手写笔在屏幕的某个位置第一次点击的位置（例如画板），当前画板组件就是交互的目标。
 
   **图2** 手写笔套件效果图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/bA4cVeHGTtyZ_Ax9rO_EWA/zh-cn_image_0000002513308069.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/4LAjN8VhQUW1c8hYv-8OAg/zh-cn_image_0000002513308069.gif "点击放大")
 
   手写笔套件的示例代码如下所示：
 
@@ -75,7 +75,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
     Text($r('app.string.HandwriteDescInfo'))
   }
   ```
-* 非指向性事件：事件的接收者由当前焦点所在的组件决定。包括：[按键事件](../harmonyos-references/ts-universal-events-key.md)，[表冠事件](../harmonyos-references/ts-universal-events-crown.md)，[焦点轴事件](../harmonyos-references/ts-universal-events-focus_axis.md)。
+* 非指向性事件：事件的接收者由当前焦点所在的组件决定。包括：[按键事件](../harmonyos-references/ts-universal-events-key.md)，[表冠事件](../harmonyos-references/ts-universal-events-crown.md)，[焦点轴事件](../harmonyos-references/ts-universal-events-focus-axis.md)。
 
   场景案例：在使用键盘填写表单时，多个输入框之间可通过Tab键进行切换，当前获得焦点的输入框通常会被高亮显示。用户输入的字符内容会被系统视为针对该焦点输入框的交互，直接发送至该组件进行处理。
 
@@ -109,7 +109,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
   下图为常见基础输入事件，在不同输入设备上的触发方式。
 
   **图3** 输入设备基础输入事件触发方式一览表  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/-S079v6rTISI3tD65A0HZw/zh-cn_image_0000002545929217.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/eoejAawQRze_GBLTL_0ELg/zh-cn_image_0000002545929217.png "点击放大")
 
   **说明** 
 
@@ -130,7 +130,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 下图为常见手势事件在不同输入设备上的触发方式。
 
 **图4** 输入设备手势事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/ZRQ7miJVSIuTi7H2a75Kgg/zh-cn_image_0000002518761840.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/VcuafgKVTveIBa-cqCu8gA/zh-cn_image_0000002518761840.png "点击放大")
 
 如下是旋转手势的示例代码：
 
@@ -210,10 +210,10 @@ Grid() {
 * 走焦：触发走焦时，系统遍历组件树中可走焦的组件。当前焦点框架支持三种走焦算法：线性走焦，按照子节点在节点树中的挂载顺序进行焦点导航；投影走焦，适用于容器内子组件尺寸不一的场景，通过空间位置关系计算最佳焦点目标；此外，开发者还可通过 [tabIndex](../harmonyos-references/ts-universal-attributes-focus.md#tabindex9)和[nextFocus](../harmonyos-references/ts-universal-attributes-focus.md#nextfocus18)灵活自定义走焦逻辑，满足复杂交互需求。详情可参考[走焦规范](../harmonyos-guides/arkts-common-events-focus-event.md#走焦规范)和[走焦算法](../harmonyos-guides/arkts-common-events-focus-event.md#走焦算法)。
 
   **图5** 使用键盘走焦  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/RHPQ9vHOSz-GAswz9PTjxQ/zh-cn_image_0000002513429655.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/JgbA0Hj3QKelvIR5uU7lCQ/zh-cn_image_0000002728977626.gif "点击放大")
 
 **图6** 走焦样式指引案例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/llAFRK9ZRw21PRFuo8NnTg/zh-cn_image_0000002499449901.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/-1YkyVQ9RzCQ93hYdX2iBQ/zh-cn_image_0000002499449901.png "点击放大")
 
 更多焦点事件的能力和规范请参考[支持焦点处理](../harmonyos-guides/arkts-common-events-focus-event.md)。
 
@@ -230,7 +230,7 @@ Grid() {
 下图为不同输入设备上支持触发焦点事件的方式。
 
 **图7** 输入设备焦点事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/w9WWu2vQQyeA_r0Zf7yLFg/zh-cn_image_0000002545901089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/7wSas6XhRk-0R843p7Ma8g/zh-cn_image_0000002545901089.png "点击放大")
 
 ### 拖拽事件
 
@@ -256,7 +256,7 @@ Grid() {
 下图为不同输入设备上触发拖拽事件的方式。
 
 **图8** 输入设备拖拽事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/J931haS0S8Oh8d-QcQR3lw/zh-cn_image_0000002545813259.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/UtP07oq6S1-WJPrGMgDuOg/zh-cn_image_0000002545813259.png "点击放大")
 
 如下是图片拖拽的示例代码：
 
@@ -316,7 +316,7 @@ Grid() {
 接下来，以实现视频播放页的暂停/播放功能为例，阐述在多设备交互适配中的开发思路与实施步骤：
 
 1. 首先，明确长视频类应用的目标适配设备为手机、平板、电脑及智慧屏。
-2. 根据[设备支持的输入设备一览表](bpta-multi-interaction.md#table87765613332)可知手机、平板、电脑和智慧屏支持的输入设备包括：触控屏、手写笔、鼠标、键盘、手柄、灵犀指向遥控、灵犀悬浮触控。
+2. 根据[设备支持的输入设备一览表](bpta-multi-interaction.md#table87765613332)可知手机、平板、电脑和智慧屏支持的输入设备包括：触控屏、触控板（部分设备）、鼠标、键盘、手柄、灵犀指向遥控、灵犀悬浮触控（智慧屏）。
 3. 在实现播放/暂停功能时，需根据不同输入设备的交互方式，适配相应的事件处理机制。根据[输入设备手势事件触发方式一览表](bpta-multi-interaction.md#fig171915584482)可知：对于触控屏、鼠标和 灵犀指向遥控，均可通过响应[onClick](../harmonyos-references/ts-universal-events-click.md)点击事件来触发操作；根据[输入设备基础输入事件触发方式一览表](bpta-multi-interaction.md#fig181131199359)可知，使用键盘时，则需监听[特定按键](../harmonyos-references/js-apis-keycode.md#keycode)（如空格键、回车键）的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md)按键事件，识别后执行对应逻辑。
    * 触控屏：单击屏幕。鼠标：点击左键。灵犀指向遥控：单击OK键。
 

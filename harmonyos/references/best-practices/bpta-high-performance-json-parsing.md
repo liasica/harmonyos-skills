@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-high-perfo
 title: 高性能JSON解析
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 对象序列化性能优化 > 高性能JSON解析
 category: best-practices
-scraped_at: 2026-09-21T06:25:46+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:de14fb470c49e8c32360ef2c3cadfc22a08fa55e6d8e405108da8278e3a18cdc
+scraped_at: 2026-10-16T07:06:47+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:248c88d0c1299466e7e618a29d8b4967830977cb16e7415841dd0b5286600b02
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:de14fb470c49e8c32360ef2c3cadfc22a08fa55e6d8e405108da8278e3a
 
 * 类型支持：涵盖系统基本类型、常见容器类型（Array、Map、Set）、嵌套类型、泛型、多态和联合类型；
 * 装饰器支持：可通过@Serializable装饰器标记需序列化的类，并利用@SerialName(覆盖属性的名称)、@Required(指定必填属性)、@Transient(忽略属性)装饰器完成属性的定制化配置；
-* 系统能力兼容：支持与[Sendable](../harmonyos-guides/arkts-sendable.md)和[状态管理](../harmonyos-guides/arkts-state-management-overview.md)协同混用；
+* 系统能力兼容：支持与Sendable（参考[Sendable对象简介](../harmonyos-guides/arkts-sendable.md)）和状态管理（参考[状态管理概述](../harmonyos-guides/arkts-state-management-overview.md)）协同混用；
 * 大JSON文件读取优化：提供JsonNode懒加载机制与JsonPointer局部访问能力，支持直接读取ArrayBuffer，提升文件解析及反序列化为JSON对象的效率。
 
 本文将围绕JSON序列化和反序列化的典型场景，以TurboTransJSON框架为核心，介绍其使用要点及性能优势。
@@ -89,7 +89,7 @@ TurboTransJSON采用编译器代码生成的方式，当开发者使用TurboTran
    hvigorw jsonSync
    ```
 
-   该命令会扫描项目中使用 @Serializable 注解的模块，自动配置 build-profile.json5 文件并生成序列化器代码。
+   该命令会扫描项目中使用@Serializable注解的模块，自动配置build-profile.json5文件并生成序列化器代码。
 5. 获取网络数据后，可使用TJSON提供的fromBuffer()或fromString()方法进行反序列化，生成相应的业务对象。
 
    ```screen
@@ -225,7 +225,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 
 ## 性能对比
 
-测试用例输入包括4KB、53KB、467KB、2765KB大小的四个 JSON 文件，分别对应数据集small json、medium json、large json、huge json，以测试JSON大小对序列化以及反序列化速度的影响。
+测试用例输入包括4KB、53KB、467KB、2765KB大小的四个JSON文件，分别对应数据集small json、medium json、large json、huge json，以测试JSON大小对序列化以及反序列化速度的影响。
 
 **说明** 
 
@@ -240,7 +240,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 52.06MB/s | 9.51MB/s | 44.36MB/s |
 | huge json | 86.40MB/s | 18.90MB/s | 116.10MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/oQcwYG3aSQqcwrUb0XL_UQ/zh-cn_image_0000002501490386.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/CS229zhxS_qScGDOcx0LbQ/zh-cn_image_0000002501490386.png "点击放大")
 
 **反序列化性能对比**
 
@@ -251,7 +251,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 82.39MB/s | 57.49MB/s | 68.81MB/s |
 | huge json | 170.10MB/s | 140.40MB/s | 207.90MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/WT3zQz-rQeiwUAJn1ezswg/zh-cn_image_0000002501330544.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/r4V12xgVRRqwGxMAzEyBbg/zh-cn_image_0000002501330544.png "点击放大")
 
 通过上述比对数据发现：
 

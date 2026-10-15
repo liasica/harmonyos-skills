@@ -3,25 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-low-power-
 title: 省电和深色模式下低功耗设计
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 省电和深色模式下低功耗设计
 category: best-practices
-scraped_at: 2026-09-21T06:25:48+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:2913f1452bc6cd368fedaf793da9982d24bf420375aea98f1c015d16dbaf6ef3
+scraped_at: 2026-10-16T07:06:48+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:c273c3e0780677ec61a2e37a3478b833fd95841db06b9e7475af5b4c1c86a7e3
 ---
 
 ## 概述
 
-低功耗是指设备在执行各种任务时，通过应用一系列技术和策略来减少能耗，从而延长电池寿命和设备使用时间。手机等移动设备因其便携、移动的特性，续航时间的长短直接影响用户对品牌的体验和满意度。更长的续航时间可减少充电频率，提升户外使用体验。为了延长续航时间，可采取多种技术和方法来降低功耗、优化电池管理，例如优化软件算法、调整屏幕亮度和显示等。其中，省电模式和深色模式是常用的功耗优化手段：
+低功耗是指设备在执行各种任务时，通过应用一系列技术和策略来减少能耗，从而延长电池寿命和设备使用时间。手机等移动设备因其便携的特性，续航时间的长短直接影响用户对品牌的体验和满意度，更长的续航时间可减少充电频率，提升户外使用体验。为了延长续航时间，可采取多种技术和方法来降低功耗、优化电池管理，例如优化软件算法、调整屏幕亮度和显示等。其中，省电模式和深色模式是常用的功耗优化手段：
 
 * 省电模式：一种通过调整设备的设置来降低系统功耗的功能，例如适当降低屏幕亮度和CPU性能。
-* 深色模式：深色模式是应用程序的一种背景颜色设置，用于将应用程序显示背景颜色改为深色调，例如黑色或深灰色。
+* 深色模式：是应用程序的一种背景颜色设置，用于将应用程序显示背景颜色改为深色调，例如黑色或深灰色。
 
-为了有效去测量手机运行时的功耗，DevEco Profiler提供实时监控（Realtime Monitor）能力，可帮助开发者实时监控设备资源（如CPU、内存、FPS、GPU、Energy等）使用情况，其中Energy以3秒为周期进行刷新，体现统计周期内总功耗以及各耗能部件（包括CPU、Display、GPU、Location、Other）的功耗占用情况。综合考虑业界共识指标和实际用户使用体验，实验将主要对比屏幕显示耗电量、CPU耗电量、GPU耗电量以及最终总耗电量，关键指标如下所示：
+为了有效去测量手机运行时的功耗，DevEco Profiler提供实时监控（Realtime Monitor）能力，可帮助开发者实时监控设备资源（如CPU、内存、FPS、GPU、Energy等）使用情况，其中Energy以3秒为周期进行刷新，体现统计周期内总功耗以及各耗能部件（包括CPU、Display、GPU、Location、Other）的功耗占用情况。综合考虑业界共识指标和实际用户使用体验，实验将主要对比显示耗电量、CPU耗电量、GPU耗电量以及最终总耗电量，关键指标如下所示：
 
-* 显示耗电量：显示耗电量是手机耗电的主要来源之一，它通常占总能耗的很大比例，影响显示耗电量的关键因素包括屏幕亮度、显示内容、刷新率等。
+* 显示耗电量：是手机耗电的主要来源之一，它通常占总能耗的很大比例，影响显示耗电量的关键因素包括屏幕亮度、显示内容、刷新率等。
 
 * CPU耗电量：高性能的任务通常需要更多的CPU计算能力，导致较高的CPU耗电量，影响CPU耗电量的关键因素包括CPU的工作频率、功耗管理策略以及对任务的调度和分配等。
 * GPU耗电量：类似于CPU，高性能的图形任务会导致较高的GPU耗电量，影响GPU耗电量的关键因素包括GPU的工作频率、工作负载、绘制内容、分辨率、绘制帧率等。
-* 最终总耗电量：最终总耗电量是指设备在特定使用场景下的总能耗，包括屏幕显示、CPU计算和GPU图形处理等。它反映了设备在某种使用情境下的总体能耗水平。
+* 最终总耗电量：是指设备在特定使用场景下的总能耗，包括屏幕显示、CPU计算和GPU图形处理等。它反映了设备在某种使用情境下的总体能耗水平。
 
 本文以“HMOS世界”APP为例，验证省电模式和深色模式对手机功耗的影响，观察电量消耗变化。同时探讨主动降低应用亮度和停止冗余动画两项措施，测试不同条件下的电量消耗。实验结果表明：
 
@@ -33,7 +33,7 @@ content_hash: sha256:2913f1452bc6cd368fedaf793da9982d24bf420375aea98f1c015d16dba
 通过设置省电模式、深色模式、调节屏幕亮度、停止冗余动画，最终测量的总耗电量对比如下图所示：
 
 **图1** 总耗电量对比（相对于正常模式）  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/-_vG9WV5Q-W_1WhRLWtZgw/zh-cn_image_0000002194011364.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/VknVhsfvSi2y0vCdY_YW1g/zh-cn_image_0000002194011364.png "点击放大")
 
 ## 功耗测量工具
 
@@ -42,7 +42,7 @@ content_hash: sha256:2913f1452bc6cd368fedaf793da9982d24bf420375aea98f1c015d16dba
 DevEco Profiler 应用调优工具（以下简称 Profiler）已内置在 DevEco Studio 中，提供场景化的调优体验。Profiler 不仅帮助开发者及时了解应用或服务的 CPU、内存和图形资源使用情况，还提供高效的问题定位功能，帮助开发者快速找到问题代码。使用 Profiler 测试应用程序功耗的方法如下：
 
 1. 打开Profiler：在DevEco Studio内可以通过以下三种方式打开Profiler
-   * 在DevEco Studio顶部菜单栏中选择“View -> Tool Windows -> Profiler”。
+   * 在DevEco Studio顶部菜单栏中选择“View->Tool Windows->Profiler”。
    * 在DevEco Studio底部工具栏中单击“Profiler”。
    * 按“Double Shift”或者“Ctrl+Shift+A”打开搜索功能，搜索“Profiler”。
 2. 连接设备：将设备通过USB连接到计算机上。
@@ -50,10 +50,10 @@ DevEco Profiler 应用调优工具（以下简称 Profiler）已内置在 DevEco
 4. 进行应用程序操作：在设备上进行应用程序操作，如浏览网页、播放视频等。
 5. 查看结果：右侧区域展示时间窗内Energy资源的实时使用情况。将鼠标悬浮在统计图的任意位置，打开时间标线，左右移动鼠标，结合时间轴查看不同时间点的实时信息。
 
-Profiler耗电量示意图如下所示，详细信息及使用可参考[实时监控](../harmonyos-guides/realtime-monitor.md)。
+Profiler耗电量示意图如下所示，详细信息及使用可参考[性能问题定界：实时监控](../harmonyos-guides/realtime-monitor.md)。
 
 **图2** ProfilerEnergy模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vcAJbc0YSfOOrmtqLsOPTw/zh-cn_image_0000002193851784.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/2aHNzwscQbGKv0obad_S9w/zh-cn_image_0000002193851784.png "点击放大")
 
 **说明** 
 
@@ -62,7 +62,7 @@ Profiler耗电量示意图如下所示，详细信息及使用可参考[实时�
 
 ### 程控电源
 
-程控电源是一种能够控制电压、电流、功率、电阻等参数的电源设备，根据用户设定的参数输出相应的电压和电流，满足各种测试需求。程控电源支持编程控制，可以模拟不同的负载条件，测试应用程序在不同负载下的功耗表现。开发人员可以利用这些信息了解应用程序的能耗特性并进行优化。
+程控电源是一种能够控制电压、电流、功率、电阻等参数的电源设备，根据用户设定的参数输出相应的电压和电流，满足各种测试需求。程控电源支持编程控制，可以模拟不同的负载条件，测试应用程序在不同负载下的功耗表现。开发者可以利用这些信息了解应用程序的能耗特性并进行优化。
 
 使用程控电源测试应用程序功耗的方法如下所示：
 
@@ -170,7 +170,7 @@ export struct ArticleCardView {
 
 **图3** 使用省电模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/tA0ZAYYUSXOeIyQoHsHxWQ/zh-cn_image_0000002194011352.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Z9g7fjVTRwe2TpkOnBHsug/zh-cn_image_0000002194011352.png "点击放大")
 
 从测试数据可以看出：
 
@@ -196,7 +196,7 @@ export struct ArticleCardView {
 1. 创建深色模式资源文件夹：在项目的resources文件下，创建深色模式的Dark资源文件夹，如下图1所示。
 
    **图4** 创建深色模式资源文件夹  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/RRvTfVLbTB24B7qFRRyLTQ/zh-cn_image_0000002229337161.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/0zh17qsjQleF3TZlBot-hA/zh-cn_image_0000002229337161.png "点击放大")
 2. 资源文件适配：为深色模式下的界面设计相应的颜色和图标资源文件。
 3. 在主题中设置深色模式样式：在应用的主题中定义深色模式的样式，包括背景色、文本颜色、图标颜色等。
 4. 动态切换模式：在应用中实现动态切换深色模式和浅色模式的功能，使用户可以根据自己的喜好随时切换应用的界面模式。
@@ -204,7 +204,7 @@ export struct ArticleCardView {
 
 **图5** 深色模式示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/jL6AEGn4T8O-V8vmo25rKw/zh-cn_image_0000002229451645.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/I_gMk-KgRPqvu1MOyhmMzQ/zh-cn_image_0000002229451645.png "点击放大")
 
 ### 功耗分析
 
@@ -212,7 +212,7 @@ export struct ArticleCardView {
 
 **图6** 使用深色模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/gEtg1KdlRyKuX22WoGzJkg/zh-cn_image_0000002615254841.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/8-y7dCdjQrOVDKDAO63mrw/zh-cn_image_0000002615254841.png "点击放大")
 
 根据测试数据分析，得出以下结论：
 
@@ -278,14 +278,14 @@ export default class EntryAbility extends UIAbility {
 
 * 停止一些冗余动效
 
-在HMOS世界App的案例中，点赞和收藏的动画在省电和深色模式下会消耗更多资源。可以关闭这些冗余动效，关闭步骤如下：
+在“HMOS世界”App的案例中，点赞和收藏的动画在省电和深色模式下会消耗更多资源。可以关闭这些冗余动效，关闭步骤如下：
 
 1. 导入系统电源管理power模块。
 2. 根据power的[getPowerMode](../harmonyos-references/js-apis-power.md#powergetpowermode9)获取当前设备的电源模式，并判断当前是否为省电模式。
 3. 根据实际场景，停止或者替换冗余的动效。
 
 **图7** 省电和深色模式下停止冗余动效  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/TfAJN41QS-6jQko-jUEMvA/zh-cn_image_0000002193851772.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/8fgocmMpTqycmCofKMrG2g/zh-cn_image_0000002193851772.gif "点击放大")
 
 在省电模式下，停止点赞和收藏动画，具体代码实现如下：
 
@@ -378,11 +378,11 @@ export struct ArticleCardView {
 
 **图8** 主动降低应用亮度前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/N9dXPSpSTjeuRVV9zJbTGw/zh-cn_image_0000002614971219.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Z6PxefhRQgKlHgNMh3C29Q/zh-cn_image_0000002614971219.png "点击放大")
 
 **图9** 去掉冗余动画前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/MkPvX-CDQja3iYOHMAA9OQ/zh-cn_image_0000002615186285.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/pH-VdT0OTyWyUpCWXJI1Vg/zh-cn_image_0000002615186285.png "点击放大")
 
 测试数据显示：
 

@@ -3,32 +3,32 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AudioCapturer录制PCM音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AudioCapturer录制PCM音频（ArkTS）
 category: best-practices
-scraped_at: 2026-09-21T06:25:37+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:8df49a2a4d4766e9340c14318b33b68d90d511f61e42c186861593c6d9867266
+scraped_at: 2026-10-16T07:06:37+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:85de725f6d320cb5be5804cae8a3856dac1450f8968aaa34e4916c675946a633
 ---
 
 ## 概述
 
-AudioCapturer是用于音频录制的ArkTS API，仅支持录制PCM格式，可以用于录制音频母带。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了基于AudioCapturer如何录制PCM音频，指导开发者基于不同的业务场景，使用AudioCapturer实现音频录制功能。
+AudioCapturer是用于音频录制的ArkTS API，仅支持PCM格式录制。本文适用于音频录制类应用的开发，针对主流应用场景介绍如何基于AudioCapturer实现PCM音频录制功能。
 
 基于AudioCapturer录制PCM音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/NMDPrRN_TRSMoGGO6aR9kQ/zh-cn_image_0000002524061072.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/s2IS0VfVTMOHmf9QllW7OA/zh-cn_image_0000002524061072.gif "点击放大")
 
 本文的主要内容如下：
 
-[基础录制](bpta-audio-record-base-on-audiocapturer.md#section20569101215108)：介绍了基于AudioCapturer录制PCM音频，包括开始录制、结束录制。
+[基本录制功能](bpta-audio-record-base-on-audiocapturer.md#section20569101215108)：基于AudioCapturer录制PCM音频，包括开始录制、结束录制。
 
-## 基础录制
+## 基本录制功能
 
 ### 实现原理
 
-AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快速实现PCM的基础录制，支持设置静音打断和回声消除。在创建完AudioCapturer后，需要设置对应的回调函数、音频录制的参数配置，通过readData的回调函数将采集的数据写入到文件中。
+AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快速实现PCM的基本录制功能，支持设置静音打断和回声消除。在创建完AudioCapturer后，需要设置对应的回调函数、音频录制的参数配置，通过注册readData回调函数来获取采集数据。
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Y5x5axSkR_OF7aq_b7mLNQ/zh-cn_image_0000002555220981.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/DD0cDGERQvOHrI7kvgSXCg/zh-cn_image_0000002555220981.jpg "点击放大")
 
 ### 开发步骤
 
@@ -181,7 +181,7 @@ this.capturer.setWillMuteWhenInterrupted(true).catch((error: BusinessError) => {
 
 ### 获取音频振幅
 
-开发者在开发通讯软件的语音录制发送、音乐录制等场景时，为了体现当前录制音量的大小，需要实现音频录制波形。关于音频录制波形可以参考[基于AudioRenderer和AudioCapturer实现音频波形动画](bpta-audio-ripple-animation.md)。
+开发者在开发通讯软件语音录制、音乐录制等场景时，为了体现当前录制音量的大小，需要实现音频录制波形。关于音频录制波形可以参考[基于AudioRenderer和AudioCapturer实现音频波形动画](bpta-audio-ripple-animation.md)。
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口模式
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口模式
 category: best-practices
-scraped_at: 2026-09-21T06:25:39+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:9a580a897c5579885e72144f4b9b6f8f5d8c37f7531c2a2cecedf539e35be0cf
+scraped_at: 2026-10-16T07:06:39+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:b72c50a037267ea3244b42a12ecb98f467a4253c1e0a1173c04d8a36d1dec2a1
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:9a580a897c5579885e72144f4b9b6f8f5d8c37f7531c2a2cecedf539e35
 * **自由多窗**：自由窗口的大小和位置可自由调整。同一个屏幕上可同时显示多个自由窗口，这些自由窗口按照打开或者获取焦点的顺序在Z轴排布。当自由窗口被点击或触摸时，其Z轴高度提升，并获取焦点。
 * **悬浮窗**：悬浮窗是一种在设备屏幕上悬浮的非全屏应用窗口。一般用于在已有全屏任务运行的基础上，临时处理另一个任务，或短时间多任务并行使用。如浏览网页的同时回复消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/1UmlevG0RmKMQgzP64GEyA/zh-cn_image_0000002355145613.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ssMjQxvSSlGHY26TPKl4pg/zh-cn_image_0000002355145613.png "点击放大")
 
 ### 实现窗口模式
 
@@ -208,7 +208,7 @@ updateWindowInfo(): void {
 
 屏幕管理的生命周期如下图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/GthSIyw1Q4-gP_zM0K-tiA/zh-cn_image_0000002463652522.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/hRULulERTbm200QjmJzm_g/zh-cn_image_0000002463652522.jpg "点击放大")
 
 **说明** 
 
@@ -223,7 +223,7 @@ updateWindowInfo(): void {
 
 目前支持两种分屏样式：“上下分屏”和“左右分屏”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/PAInicABQVqG8cRel3LtsQ/zh-cn_image_0000002355265437.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/HaWcb7PrQjeHholBnV7LZg/zh-cn_image_0000002355265437.png "点击放大")
 
 分屏比例指的是分屏下两应用间尺寸的比例，调整分屏比例会调整应用窗口的大小。
 
@@ -288,7 +288,7 @@ updateWindowInfo(): void {
 
 自由多窗是一种多窗口显示模式，它允许用户在同一屏幕上同时运行多个应用窗口。自由窗口是默认居中启动并向右下方层叠排布，支持无极缩放的窗口。启动后，窗口的大小和位置可自由调整。同一个屏幕上可同时显示多个自由窗口，这些自由窗口按照打开或者获取焦点的顺序在Z轴排布。当自由窗口被点击或触摸时，将导致其Z轴高度提升，并获取焦点。自由窗口下默认显示标题栏，标题栏左侧显示应用图标，右侧显示三键：放大、缩小和关闭，长按或鼠标hover可显示切换至分屏菜单。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/rfP2UdM3QeG3N9xws1CO9w/zh-cn_image_0000002321306750.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ELz2ZN04T8yIRekgm7Famw/zh-cn_image_0000002321306750.png "点击放大")
 
 * 在电脑设备上，应用启动时默认应为自由窗口模式，而非全屏模式。在适配电脑设备时，存在拖动自由窗口导致尺寸过小而引起页面布局异常的问题，开发者可参考[如何限制自由窗窗口尺寸](bpta-multi-device-window-mode.md#section6754152523715)，确保页面正常显示。
 * 在平板设备上，用户需要下拉控制中心，点击自由多窗按钮，切换至自由多窗模式，窗口默认以自由窗口层叠显示。进入自由多窗模式后设备强制横屏，不支持切换竖屏。为优化窗口显示内容，DPI默认调整为最小档，并记忆调整前的DPI，用户可在设置-显示和亮度-字体大小和界面缩放中按需调整。退出自由多窗时恢复到记忆的DPI，如果用户在自由多窗模式下主动调整过DPI，则保持当前值不恢复记忆。
@@ -362,7 +362,7 @@ updateWindowInfo(): void {
 
    应用窗口拖拽缩放是在电脑和平板设备上使用自由多窗模式时常见的操作，指鼠标点击或手指触控应用窗口边缘，使得应用窗口跟随鼠标或手指位置移动而变化大小的现象，如下图所示。
 
-   [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/57/v3/eHd_EzwETf6YHBuV6EUo4Q/zh-cn_attachment_0000002453953437.mp4)
+   [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/80/v3/AJhXq2ROStCDmBj2_DFKAA/zh-cn_attachment_0000002453953437.mp4)
 
    对于窗口拖拽缩放有两种限制方式：
 
@@ -396,7 +396,7 @@ updateWindowInfo(): void {
 
 应用窗口拖动是在电脑和平板设备上使用自由多窗时常见的操作，指鼠标点击或手指触控应用窗口在屏幕区域内拖动，应用窗口跟随鼠标或手指位置移动的现象，如下图所示。对于使用默认标题栏的窗口，系统提供了高性能的应用窗口拖动能力。而对于没有标题栏或需要自定义标题栏的窗口，需要开发者调用系统提供的拖动能力来实现。本章节将重点探讨这一类窗口拖动场景的高性能开发方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/FDLF_f6OTvqwYtgEHj_pxA/zh-cn_image_0000002355145629.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/7QVptSS4QsCoRZ9l-5jTOw/zh-cn_image_0000002355145629.gif "点击放大")
 
 **实现方案**
 
@@ -654,7 +654,7 @@ struct Index {
 
 ### 界面被截断，无法上下滑动，应用分屏后内容显示不全，无法通过上下滑动展示未显示的内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/uq70DShDRHiyyCxG6Nxx-g/zh-cn_image_0000002321146966.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/tcacdInxRX-SoryKFuLGXA/zh-cn_image_0000002321146966.gif "点击放大")
 
 **原因**
 
@@ -722,11 +722,11 @@ export struct Question1Correct {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/UbtGxh7HQWSY_q8tY9J8TQ/zh-cn_image_0000002355265493.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hCkUrD_KSn2APf7hODIbpA/zh-cn_image_0000002355265493.gif "点击放大")
 
 ### XComponent视频画面在分屏页面显示不全，视频播放界面分屏后，视频被截断显示不全
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/OGjQC4xzSvGziAzlkjNENg/zh-cn_image_0000002321306822.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/F_LYrgd8SZSuUGVZbpOJGA/zh-cn_image_0000002321306822.gif "点击放大")
 
 **原因**
 
@@ -785,11 +785,11 @@ export struct Question2Correct {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/8BBSj_SrT2-vEr5UbzSF0g/zh-cn_image_0000002355145693.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/gCTCieurTj2YfmwYNXVfAw/zh-cn_image_0000002355145693.gif "点击放大")
 
 ### Video组件在分屏状态下截断，Video组件在分屏状态下，视频播放界面被截断显示不全
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/279WVUMBR3y3nZYA13Kmaw/zh-cn_image_0000002321146986.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/JviRXY8mTHiswdGK73CwCw/zh-cn_image_0000002321146986.gif "点击放大")
 
 **原因**
 
@@ -839,11 +839,11 @@ export struct Question3Correct {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/c8Ni_FH4So6nS5E6zrhXdg/zh-cn_image_0000002355265517.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5E3ZCbVjT4KKILRZVZ-Iag/zh-cn_image_0000002355265517.gif "点击放大")
 
 ### 子组件超出父组件的范围，子组件显示超出了父组件范围，无法通过上下滑动显示完全
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/XQ8qLxnXTNeVtxkYg2lkwQ/zh-cn_image_0000002321306858.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/C35ap0qVT8yi18DtkGbCsQ/zh-cn_image_0000002321306858.gif "点击放大")
 
 **原因**
 
@@ -908,11 +908,11 @@ customDialogComp() {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/AyYt0R2uT6mKcX8FF6syFw/zh-cn_image_0000002355145773.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/to45-y1QQIGlIZq4N5otzw/zh-cn_image_0000002355145773.gif "点击放大")
 
 ### Image组件在分屏状态下显示异常，应用进入分屏后，随着窗口变小，Image组件显示不全，页面布局显示异常
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/-qfKkzdjQ4iF-2GynKhw8A/zh-cn_image_0000002321147090.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/J1vb-TMfRzaxigiJ1Y5jAw/zh-cn_image_0000002321147090.gif "点击放大")
 
 **原因**
 
@@ -996,11 +996,11 @@ export struct Question5Correct {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/uJuIENPFRmKlhvRHT7VAkw/zh-cn_image_0000002355265609.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/7jb1svmORWSHvOVSyrEVbw/zh-cn_image_0000002355265609.gif "点击放大")
 
 ### 弹窗布局错乱，进入分屏后弹窗页面内容显示错乱，底部按钮挡住弹窗内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/ru-tLP5uRqqREKxz4EB4JQ/zh-cn_image_0000002321306938.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/KmLc7DrwRDaMBN_gBiKzrg/zh-cn_image_0000002321306938.gif "点击放大")
 
 **原因**
 
@@ -1086,13 +1086,13 @@ struct CustomDialogComp {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/AYBOtv9MTbK-bkhDOQvD2g/zh-cn_image_0000002355145833.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/qdpqnmR2RIG8Bk37X04dig/zh-cn_image_0000002355145833.gif "点击放大")
 
 ### 沉浸模式下顶部窗口控制条避让问题
 
 沉浸式应用在悬浮窗场景下，顶部操作栏无法操作，应用分屏后，视图和悬浮窗顶部重合的区域无法响应操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/wXvwJYz_TiKUz9_YNhDzAA/zh-cn_image_0000002321147162.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/7_VgddQzSJ-bLQCz8yTa4w/zh-cn_image_0000002321147162.gif "点击放大")
 
 **原因**
 
@@ -1204,11 +1204,11 @@ export struct Question7Correct {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/CnbXbOTSTracCxz9zaXvMA/zh-cn_image_0000002355265705.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/M2X6OEgPSLCVCWuHQLJo5A/zh-cn_image_0000002355265705.gif "点击放大")
 
 ### 视频或游戏类应用在横屏模式下开启悬浮窗，若应用未适配横屏悬浮窗，可能会导致内容显示不全，影响用户体验
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/FARvGg0aR2KbHnOF8SPjOg/zh-cn_image_0000002321307050.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/sWmg501kSEqg50B0tIqHag/zh-cn_image_0000002321307050.gif "点击放大")
 
 **原因**
 
@@ -1290,4 +1290,4 @@ export struct Question8Correct {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/wMKXP5CvQgCV_FTJBKTKOw/zh-cn_image_0000002355145941.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/w1OZR1vbQmS9zZ51fhRHkQ/zh-cn_image_0000002355145941.gif "点击放大")

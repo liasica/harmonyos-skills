@@ -3,17 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-decrease_p
 title: 应用包体积优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 应用包体积优化
 category: best-practices
-scraped_at: 2026-09-21T06:25:46+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:f15af7000fdeb65898a7bfb017b6c55cf95889ec197e6d5c640d0de15287570a
+scraped_at: 2026-10-16T07:06:46+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:447027a8eebbc97841720aa6fa6b431ed256fffd840d12668c6c0037a77f457c
 ---
 
 ## 概述
 
-减小应用包大小可以提升应用下载和安装体验。压缩、精简或复用代码和资源可以有效降低应用包体积。在优化包大小前，先了解HarmonyOS应用的[Stage模型应用程序包结构](../harmonyos-guides/application-package-structure-stage.md)，对HAP、HAR、HSP等特点建立一定认知，然后使用扫描工具分析App包，根据报告优化应用。具体优化方法可以参考以下内容：
+减小应用包大小可以提升应用下载和安装体验。压缩、精简或复用代码和资源可以有效降低应用包体积。在优化包大小前，先了解HarmonyOS应用的[应用程序包结构](../harmonyos-guides/application-package-structure-stage.md)，对HAP、HAR、HSP等特点建立一定认知，然后使用扫描工具分析App包，根据报告优化应用。具体优化方法可以参考以下内容：
 
 1. 对于含有so库的App工程，可以配置so库压缩选项，以减小应用包大小。
-2. 在应用存在多包（HAP、HSP）的场景中，可以使用HSP动态共享包在多个包（HAP、HSP）之间共享代码和资源，消除使用HAR静态共享包导致的代码和资源重复拷贝，从而减小应用包大小，同时开发者需要综合评估对编译性能的影响：大量使用HSP替代HAR，会在编译引用这些HSP共享包的模块时触发更多的语言编译任务，导致编译耗时、编译内存占用增加。
+2. 在应用存在多包（HAP、HSP）的场景中，可以使用HSP动态共享包在多个包之间共享代码和资源。该方式可消除使用HAR静态共享包导致的代码和资源重复拷贝，从而减小应用包大小。
+
+   但开发者需注意，大量使用HSP替代HAR会增加编译耗时和内存占用。因为在编译引用这些HSP共享包的模块时，会触发更多的语言编译任务。
 3. 使用ohpm的[override](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)机制或开启 `[resolve\_conflict](../harmonyos-guides/ide-ohpmrc.md#section368717475562)` 解决依赖冲突，减少依赖包导致的重复编译问题。
 4. 将不常用的功能作为按需加载的模块。
 
@@ -34,7 +36,7 @@ content_hash: sha256:f15af7000fdeb65898a7bfb017b6c55cf95889ec197e6d5c640d0de1528
 
 3. 特定类型的文件
 
-so文件，通过[配置so库压缩选项](bpta-decrease_pakage_size.md#section15826132851819)来实现压缩打包。
+so文件可以通过[配置so库压缩选项](bpta-decrease_pakage_size.md#section15826132851819)来实现压缩打包。
 
 ## 减小应用包大小的方法
 
@@ -63,11 +65,11 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 | --- | --- | --- | --- |
 | armeabi-v7a/libc++\_shared.so | 1108k | 386k | 34% |
 
-### 解决依赖减少依赖包重复编译
+### 解决依赖冲突，减少依赖包重复编译
 
 对于ohpm 1.5.0之前的版本，如果hap依赖了不同版本的har（例如下图中的V1版本的harC和V2版本的harC），默认情况下，V1和V2两个版本的harC都会被打包到hap中。开发者可以使用ohpm的[override](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)机制，指定只打包一个版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/N0Tq0e_VSOSkHViIvgY7yQ/zh-cn_image_0000002194011048.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/yfQW0HOjS_mv1I7u9Ww_dQ/zh-cn_image_0000002194011048.png "点击放大")
 
 如果使用的是ohpm 1.4.0 版本，可以使用override机制，开发者可以在项目级别的 oh-package.json5 （即项目根目录下的 oh-package.json5）文件中添加 overrides 配置，将依赖树中的依赖替换为另一个版本。替换的版本既可以是一个具体的版本号，也可以是本地存在的HAR包或源码目录。
 
@@ -75,7 +77,7 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 必须在项目级别的 oh-package.json5 中配置 overrides，配置在模块级别的 oh-package.json5 中不会生效。
 
-例如， 这里以 'foo' 库为例，如果在项目中始终需要使用'1.0.0'版本，可在项目级的 oh-package.json5 中添加以下配置：
+例如，这里以 'foo' 库为例，如果在项目中始终需要使用'1.0.0'版本，可在项目级的 oh-package.json5 中添加以下配置：
 
 ```screen
 {
@@ -87,21 +89,21 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 若本地存在 foo 的源码或 HAR 包，确保 foo 始终使用本地版本，可在项目级 oh-package.json5 中进行如下配置：
 
-1、本地存在"foo"的源码，即配置项目根目录下的foo目录，以"file:./foo"标识其路径。
+1. 本地存在"foo"的源码，即配置项目根目录下的foo目录，以"file:./foo"标识其路径。
 
 ```screen
 {
   "overrides": {
-    "foo": "file:./foo" 
+    "foo": "file:./foo"
   }
 }
 ```
 
-2、本地存在"foo.har"的HAR包，其存放在libs目录下，即配置"file:./libs/foo.har"。
+2. 本地存在"foo.har"的HAR包，其存放在libs目录下，即配置"file:./libs/foo.har"。
 
 ```screen
 {
-  "overrides": {   
+  "overrides": {
     "foo": "file:./libs/foo.har"
   }
 }
@@ -115,12 +117,16 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 ### 多包场景下使用HSP共享代码和资源
 
-当前系统提供了两种共享包：HAR静态共享包和HSP动态共享包。HAR和HSP都用于实现代码和资源的共享，可以包含代码、C++库、资源和配置文件。HAR中的代码和资源跟随使用方编译，如果有多个使用方，编译产物中会存在多份相同拷贝。HSP中的代码和资源可以独立编译，在运行时进程中只存在一份。
+当前系统提供了两种共享包：HAR静态共享包和HSP动态共享包。二者都用于实现代码和资源的共享，可以包含代码、C++库、资源和配置文件。
 
-在多包场景下，如果应用的多个HAP或HSP包使用HAR包实现代码和资源的共享，打包后的每个HAP或HSP包中都会包含共享HAR包的拷贝，导致App包中存在冗余代码和资源。如下图示例，应用模块HAP1和HAP2/HSP1都引用了HAR2和HAR3，打包后，App包中HAR2和HAR3有多份重复拷贝，体积较大。
+HAR中的代码和资源跟随使用方编译，多个使用方会存在多份相同拷贝。HSP中的代码和资源独立编译，在运行时进程中只存在一份。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Q3cm7sLfRRK1wTpAbmFHqA/zh-cn_image_0000002229451341.png "点击放大")
+在多包场景下，如果多个HAP或HSP包使用HAR包共享代码和资源，打包后每个包都会包含HAR包的拷贝。这就是App包中存在冗余代码和资源的原因。
+
+如下图示例：应用模块HAP1和HAP2/HSP1都引用了HAR2和HAR3。打包后，HAR2和HAR3在App包中有多份重复拷贝，导致体积较大。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/B3zLesgyR-OMQBA-LPhjZQ/zh-cn_image_0000002229451341.png "点击放大")
 
 推荐使用HSP代替HAR实现代码和资源共享。如下图示例，使用HSP2对原应用进行升级改造，打包后，APP包中HAR2和HAR3仅保留一份拷贝。当HAR2和HAR3的总大小超过HSP时，可以减小应用包大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/7WVltjl1S_GWCZHNekY1IA/zh-cn_image_0000002229336845.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/cCAoN1NdSnSY66x-VkS9Rg/zh-cn_image_0000002229336845.png "点击放大")

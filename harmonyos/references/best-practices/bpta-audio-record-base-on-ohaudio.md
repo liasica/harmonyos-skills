@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于OHAudio录制PCM音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于OHAudio录制PCM音频（C++）
 category: best-practices
-scraped_at: 2026-09-21T06:25:37+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:b9ebb8a35c960d78a2d99a51e2fe18f7eb4364f9891e33f18ba142265db71d8c
+scraped_at: 2026-10-16T07:06:37+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:da4e4b5530b82c768969a7a40d7998eec969346a66a98e27dffcb3caf43cb81d
 ---
 
 ## 概述
 
-在C/C++侧，OHAudio提供音频模块相关能力，包含音频采集（OH\_AudioCapturer）、音频管理和音频播放等能力。OH\_AudioCapturer仅支持录制PCM格式，可以在C/C++侧实现音频母带录制。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了基于OHAudio如何录制PCM音频，指导开发者实现基础录制。
+在C/C++侧，OHAudio提供音频模块相关能力，包含音频采集（OH\_AudioCapturer）、音频管理和音频播放等能力。OH\_AudioCapturer仅支持录制PCM格式，可以在C/C++侧实现原始音频数据（PCM）录制。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了基于OHAudio如何录制PCM音频，指导开发者实现基础录制。
 
 基于OHAudio录制PCM音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/DjFlGok9QuSSfqw2KAe0xg/zh-cn_image_0000002524221068.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/2thUUqsjSrCE4udkGe74xA/zh-cn_image_0000002524221068.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -24,11 +24,11 @@ content_hash: sha256:b9ebb8a35c960d78a2d99a51e2fe18f7eb4364f9891e33f18ba142265db
 
 ### 实现原理
 
-OH\_AudioCapturer仅支持PCM格式，同时支持设置低时延通路、静音打断和回声消除，适用于依赖Native层实现音频录制的场景。整个开发流程可以概括为：音频流构造器实例创建、音频采集参数配置、采集回调注册（各类事件监听）、采集器实例创建、采集的开始与停止以及资源的释放等。其中，事件监听主要包括音频输入流回调等。在创建完实例后，开发者可以调用相关方法使得音频录制流进入对应的状态。
+OH\_AudioCapturer仅支持PCM格式，同时支持设置低时延通路、静音打断和回声消除，适用于依赖Native层实现音频录制的场景。整个开发流程可以概括为：音频流构建器实例创建、音频采集参数配置、采集回调注册（各类事件监听）、采集器实例创建、采集的开始与停止以及资源的释放等。其中，事件监听主要包括音频输入流回调等。在创建完实例后，开发者可以调用相关方法使得音频录制流进入对应的状态。
 
 **图1** OHAudio音频录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/q8HPvag-R0q6s0ae3WrVww/zh-cn_image_0000002555340937.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/K5x-K3hqQ6CC5jBjZLwBKg/zh-cn_image_0000002555340937.jpg "点击放大")
 
 ### 开发步骤
 

@@ -3,42 +3,42 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-click-to-c
 title: 点击完成时延分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 点击完成时延分析
 category: best-practices
-scraped_at: 2026-09-21T06:25:45+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:ef0157220d5c5e77f5b11d1e5748e547fd4c681c5d9af278d11a8bb00d2c1ed3
+scraped_at: 2026-10-16T07:06:45+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:f5aa7325848dc6c4c6ed2a06f158786a6acdb6abefe29e45c52124b7236a2e84
 ---
 
 ## 完成时延优化概述
 
-在移动终端应用开发中，完成时延指用户从输入触控指令到界面完全刷新结束并达到可以阅读的稳定状态所用时间。点击完成时延分为页面内跳转和页面间跳转两种类型。完成时延在用户体验设计中至关重要，直接影响用户对产品的满意度和使用体验。完成时延反映了用户对响应速度的整体感受，影响触控交互的及时性和愉悦性。如图一所示，点击完成时延包含点击响应时延。有关响应时延阶段的优化分析，请参考[《点击响应时延分析》](bpta-click-to-click-response-optimization.md)。
+在移动终端应用开发中，完成时延指用户从输入触控指令到界面完全刷新结束并达到可以阅读的稳定状态所用时间。点击完成时延分为页面内跳转和页面间跳转两种类型。完成时延在用户体验设计中至关重要，直接影响用户对产品的满意度和使用体验。完成时延反映了用户对响应速度的整体感受，影响触控交互的及时性和愉悦性。如图一所示，点击完成时延包含点击响应时延。有关响应时延阶段的优化分析，请参考[点击响应时延分析](bpta-click-to-click-response-optimization.md)。
 
-《应用性能体验建议》中针对时延建议[应用或元服务应用内点击操作完成快](../harmonyos-guides/performance-delay.md#section2406192820717)（应用完成时延≤900ms，元服务≤1400ms），针对转场建议[应用或元服务应用内转场操作流畅](../harmonyos-guides/performance-frame-rate.md#section1591383182619)（卡顿率为0ms/s），当前AppAnalyzer工具已支持（或等效支持）上述指标项。
+应用性能体验建议中针对时延建议[应用或元服务应用内点击操作完成快](../harmonyos-guides/performance-delay.md#section2406192820717)（应用完成时延≤900ms，元服务≤1400ms），针对转场建议[应用或元服务应用内转场操作流畅](../harmonyos-guides/performance-frame-rate.md#section1591383182619)（卡顿率为0ms/s），当前AppAnalyzer工具已支持（或等效支持）上述指标项。
 
 在一定时延水平以上，完成时延越短越好，但在达到一定阈值后，用户的流畅体验不会继续提升。本文将介绍相关分析工具、点击完成时延问题定位流程及常见问题根因分析。
 
 **图1** 点击完成起止点示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/c1nIEB89SCWz0Umj5pH4kA/zh-cn_image_0000002229450665.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/cVgszjySS-6QCn2mEwl2fw/zh-cn_image_0000002229450665.png "点击放大")
 
 **图2** 页面转场过程解析  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/1pV4ynLFSoucl2-j0NLSoA/zh-cn_image_0000002420747058.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/uye8wmwsRZKZFM0bNMY8eg/zh-cn_image_0000002420747058.png "点击放大")
 
 ## 完成时延检测工具
 
 影响点击完成性能的因素很多，使用DevEco Studio集成的分析工具，可以收集系统数据，自动执行重复任务，建立统一优化标准和流程，减少个人差异和误操作的可能性，帮助开发者了解性能瓶颈和优化潜力。分析优化过程中，可能用到以下工具中的一个或多个。
 
-* [AppAnalyzer](bpta-performance-detection.md#section135451444171)：是DevEco Studio提供的检测评分工具，用于测试和诊断HarmonyOS应用或元服务的质量，快速提供诊断结果和改进建议。当前支持的测试类型包括兼容性、性能、UX测试和最佳实践。点击完成时延是性能测试中的一项检测规则，开发者可以使用该工具检测响应性能。
+* AppAnalyzer：是DevEco Studio提供的检测评分工具，用于测试和诊断HarmonyOS应用或元服务的质量，快速提供诊断结果和改进建议。当前支持的测试类型包括兼容性、性能、UX测试和最佳实践。点击完成时延是性能测试中的一项检测规则，开发者可以使用该工具检测响应性能。
 
-  具体使用可参考[《AppAnalyzer》](bpta-performance-detection.md#section135451444171)。
-* [ArkUI Inspector](bpta-optimization-overview.md#section1465143164111)：是DevEco Studio中提供用于检查UI的工具，开发者可以借助它预览真机或模拟器中的UI效果，快速定位布局层级问题，也可以观察组件属性、不同组件之间的关系等。
+  具体使用可参考[AppAnalyzer](bpta-performance-detection.md#section135451444171)。
+* ArkUI Inspector：是DevEco Studio中提供用于检查UI的工具，开发者可以借助它预览真机或模拟器中的UI效果，快速定位布局层级问题，也可以观察组件属性、不同组件之间的关系等。
 
-  具体使用可参考[《ArkUI Inspector》](bpta-optimization-overview.md#section1465143164111)。
-* [DevEco Testing](bpta-performance-detection.md#section3783182023119)：DevEco Testing是一款专项集成测试工具，提供了多项测试能力。旨在帮助开发者高效完成应用的功能、兼容性、性能和稳定性测试，确保应用质量。
+  具体使用可参考[ArkUI Inspector](bpta-optimization-overview.md#section1465143164111)。
+* DevEco Testing：DevEco Testing是一款专项集成测试工具，提供了多项测试能力。旨在帮助开发者高效完成应用的功能、兼容性、性能和稳定性测试，确保应用质量。
 
-  具体使用可参考[《DevEco Testing》](bpta-performance-detection.md#section3783182023119)。
-* [Profiler Frame](../harmonyos-guides/ide-insight-session-frame.md)：性能调优深入分析工具，支持冷启动、卡顿丢帧、状态变量、并行化、网络耗时、ArkWeb、内存优化等场景化调优能力。其中Frame分析可以帮助开发者深度分析性能问题，通过录制应用运行过程中的关键数据，从而识别卡顿丢帧、耗时长等问题的原因所在。
+  具体使用可参考[Testing测试报告导入体检工具分析](bpta-performance-detection.md#section3783182023119)。
+* Profiler Frame：性能调优深入分析工具，支持冷启动、卡顿丢帧、状态变量、并行化、网络耗时、ArkWeb、内存优化等场景化调优能力。其中Frame分析可以帮助开发者深度分析性能问题，通过录制应用运行过程中的关键数据，从而识别卡顿丢帧、耗时长等问题的原因所在。
 
-  具体使用可参考[《DevEco Profiler》](bpta-optimization-overview.md#section2012922312284)。
+  具体使用可参考[DevEco Profiler](bpta-optimization-overview.md#section2012922312284)。
 
 ## 问题定位流程
 
@@ -46,31 +46,31 @@ content_hash: sha256:ef0157220d5c5e77f5b11d1e5748e547fd4c681c5d9af278d11a8bb00d2
 
 **图3** 问题定位流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/HkPX3XtmRHyqhs_oLslXOw/zh-cn_image_0000002455895496.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/FhaIbRCbTe20wHBEGpkJPQ/zh-cn_image_0000002455895496.png "点击放大")
 
 如上图所示，分析点击完成时延问题通常需要以下步骤：
 
 1. 性能体检：使用性能检测工具AppAnalyzer检测和诊断应用是否存在性能问题。
-2. 确定完成时延：根据性能检测工具AppAnalyzer检测结果，确定完成时延的耗时，判断是否符合[《时延体验建议》](../harmonyos-guides/performance-delay.md)中的规范。
+2. 确定完成时延：根据性能检测工具AppAnalyzer检测结果，确定完成时延的耗时，判断是否符合[时延](../harmonyos-guides/performance-delay.md)体验建议中的规范。
 3. 抓取Trace信息：使用性能分析工具DevEco Profiler抓取Trace，并确定Trace图中的起止点。
 4. 分析问题：结合关键泳道Trace信息以及ArkUI Inspector布局分析工具来定位具体问题。
 
 ## 使用AppAnalyzer工具检测和分析
 
-在应用开发中，UI线程应用自身方法执行耗时、网络请求响应耗时、UI组件自身创建耗时等，都会导致应用点击完成时延受到影响，合理优化代码逻辑可以提升应用点击完成时延速度，提升用户体验。开发者可以通过[AppAnalyzer](../harmonyos-guides/ide-app-analyzer.md)对应用点击完成时延进行检测，并优化检测报告中存在的点击完成时延未达标的问题。
+在应用开发中，UI线程应用自身方法执行耗时、网络请求响应耗时、UI组件自身创建耗时等，都会导致应用点击完成时延受到影响，合理优化代码逻辑可以提升应用点击完成时延速度，提升用户体验。开发者可以通过AppAnalyzer对应用点击完成时延进行检测，并优化检测报告中存在的点击完成时延未达标的问题。
 
 使用AppAnalyzer工具检测点击完成时延步骤如下。
 
 1. 在DevEco Studio中启动AppAnalyzer工具，详细参见[AppAnalyzer](bpta-performance-detection.md#section135451444171)。
 2. 点击“手动性能页面间转场体检”按钮启动检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/TG7kx68dS-a7gGOSo73ZzQ/zh-cn_image_0000002480207908.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/8dAj-9NmQ_uoGdqaI-t5SA/zh-cn_image_0000002480207908.png "点击放大")
 3. 开发者需根据提示，在应用中找到待检测页面，点击工具中的开始按钮，然后在应用中手动执行转场，操作后点击停止完成本次检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/wagUCu__Ro6TOgwlU-Q43A/zh-cn_image_0000002482580170.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/EmmAO44tQnK0yWCv-yx3MQ/zh-cn_image_0000002482580170.png "点击放大")
 4. 检测结果分析，点击完成时延应小于或等于900ms。如果存在大于900ms的点击完成时延，判断为存在性能问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/pKiDN8W3Q2CMe6OL4SWEOg/zh-cn_image_0000002512327777.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/8vTO8p1eQN2R0vxZlBpCnA/zh-cn_image_0000002512327777.png)
 
 检测出的点击完成时延报告中，可能会存在以下五种影响性能的故障原因。
 
@@ -84,7 +84,7 @@ content_hash: sha256:ef0157220d5c5e77f5b11d1e5748e547fd4c681c5d9af278d11a8bb00d2
 
 1. 获得检测结果后，点击详情报告中的“点击完成时延”，可以查看UI线程应用自身方法耗时长的检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/mDU2Mm-XSEaO1jFTviWNvw/zh-cn_image_0000002480480340.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/-3ogq83ZTpWRpUGdyUJ3LQ/zh-cn_image_0000002480480340.png "点击放大")
 
    检测结果中，可以根据方法总耗时的大小来判断该方法是否为耗时方法。如上图中，aboutToAppear[PageJumpSceneUseCase3.ets, 29]表示PageJumpSceneUseCase3.ets页面中的aboutToAppear()方法，其执行耗时较长。
 2. 点击方法名，可跳转定位至PageJumpSceneUseCase3.ets页面中的耗时方法处。
@@ -99,13 +99,13 @@ content_hash: sha256:ef0157220d5c5e77f5b11d1e5748e547fd4c681c5d9af278d11a8bb00d2
    ```
 
    由于在该方法中执行了模拟长耗时的for循环代码，导致该方法在检测中总耗时过长。
-4. 点击优化建议下的跳转链接[分析UI主线程高耗时函数](bpta-zhenlv.md#section117831333645)，即可获取相应的优化建议。
+4. 点击优化建议下的跳转链接[第2步：丢帧问题分析](bpta-zhenlv.md#section117831333645)，即可获取相应的优化建议。
 
 ### UI线程应用自定义组件创建耗时长
 
 1. 获得检测结果。点击详情报告中的“点击完成时延”，可以查看UI线程应用自定义组件创建耗时检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/WTICs6rNS3evlY8q7FuQkg/zh-cn_image_0000002512328271.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/kj7tu0c1TiG_lBHBR8UVOg/zh-cn_image_0000002512328271.png "点击放大")
 
    检测结果中，可以根据总耗时列来判断自定义组件创建是否耗时。上图中，TestResponseLatency组件创建总耗时40.933ms，耗时过长。如下图，TextItem在页面中自定义组件被创建多次，导致创建耗时过长。
 
@@ -136,7 +136,7 @@ content_hash: sha256:ef0157220d5c5e77f5b11d1e5748e547fd4c681c5d9af278d11a8bb00d2
    ```
 2. 点击源文件定位到创建耗时的UI组件，根据提供的可能故障原因，对UI组件进行相应的优化，还可参考静态检测结果中的优化建议，来对组件创建耗时进行优化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/yKtYZ4MFSqmpLsW5LshGVA/zh-cn_image_0000002512368293.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/f2EGq_RERtWyycy1v3f1vg/zh-cn_image_0000002512368293.png "点击放大")
 
 ### 网络请求耗时长
 
@@ -144,14 +144,14 @@ content_hash: sha256:ef0157220d5c5e77f5b11d1e5748e547fd4c681c5d9af278d11a8bb00d2
 2. 根据检测结果中的请求耗时和点击离手到请求发起间隔可进行如下判断。
    * 网络请求本身耗时长
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/914WsOeGRTundU8gknfrpA/zh-cn_image_0000002480208772.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/JvU8fkUeQBS23fInvD2Pgw/zh-cn_image_0000002480208772.png "点击放大")
 
      网络请求本身是否耗时可通过检测结果中的请求耗时时长来进行判断，时间越长，则网络请求本身耗时越久。详细分析请参考：[网络诊断：Network分析](../harmonyos-guides/ide-profiler-network.md)。
 
      网络请求本身耗时长，可对该URL请求进行预连接和预解析来优化网络传输速度，提前完成DNS查询和TCP/TLS握手，即在应用启动或空闲时提前建立并维护一个持久的连接池；还可以使用CDN来优化网络传输速度，将静态资源部署到CDN上。
    * 网络请求发起太晚
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/NQASrsgtQ_mZ6eFOylFOxw/zh-cn_image_0000002512368655.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/H2oNDXOBSOWuTBN0dnyA4g/zh-cn_image_0000002512368655.png "点击放大")
 
      点击离手到请求发起间隔则表示用户进行点击操作后，到真正向服务器发起网络请求的那一刻止，这中间所经过的时间。可通过检测结果中的点击离手到请求发起间隔时长来进行判断，时间越长，则表示网络请求发起的越晚。可通过提前发起网络请求，来进行优化。可参考：[网络请求提前发送](bpta-application-cold-start-optimization.md#section199911250658)。
 
@@ -161,7 +161,7 @@ content_hash: sha256:ef0157220d5c5e77f5b11d1e5748e547fd4c681c5d9af278d11a8bb00d2
 
 1. 获得检测结果。点击详情报告中的“阻塞主线程的任务”，可以查看主线程长时间被阻塞的检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/QNEwa_V3SQqpEenxC6sUhw/zh-cn_image_0000002512328837.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/zh5t1xUNQM2Bmwh98i4D0A/zh-cn_image_0000002512328837.png "点击放大")
 
    通过关键线程识别技术，体检工具能够基于唤醒关系算法精确构建线程间依赖链路，同时结合传统调度分析方法，全面检测可能阻塞主线程的子线程任务。检测结果中，可以根据实际空闲时间判断主线程是否长时间被阻塞：空闲时间越长，则阻塞时间可能越久。通过识别并定位阻塞主线程的关键任务，可以快速找到对应的耗时代码位置。任务耗时代表诊断出的阻塞主线程任务本身的执行时长；主线程等待耗时表示任务结束点到主线程上一个 Running 结束点之间的时间，用于衡量该耗时任务对主线程造成的阻塞程度。
 2. 可能存在以下5种诊断结果。
@@ -229,13 +229,13 @@ content_hash: sha256:ef0157220d5c5e77f5b11d1e5748e547fd4c681c5d9af278d11a8bb00d2
    * [存在大量等待时间无法诊断](bpta-click-to-complete-delay-analysis.md#section1563932810516)
 3. 可参考优化建议中的文章，来对主线程长时间被阻塞导致完成时延不达标的问题进行优化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Wqhg8HCCRKGJdbyjliGE8Q/zh-cn_image_0000002480368946.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/qdiurdOJTTKTFw1fppGjzA/zh-cn_image_0000002480368946.png)
 
 ### 图片大纹理
 
 1. 获得检测结果。点击详情报告中的“点击完成时延”，可以查看图片大纹理的检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/bBWwVLdPTNuy4sT2VlscPg/zh-cn_image_0000002512368913.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/48_Ck2SiTDuWO4c3g_R1Pg/zh-cn_image_0000002512368913.png "点击放大")
 
    检测结果中，可以根据超出尺寸占比来判断是否需要优化。
 2. 可通过图片组件所在源码文件进行定位，找到包含图片的源码文件。检测结果可以看出，源图尺寸与目标尺寸不同，超出尺寸占比较大。建议源图尺寸不要超过目标尺寸大小的10%。
@@ -290,11 +290,11 @@ DevEco Profiler工具分使用方式可以参考[Frame分析](../harmonyos-guide
 1. 搜索"H:DispatchTouchEvent"标签，找到type=1的那个DispatchTouchEvent，就是点击离手起点，将该时间戳设为起点。
 
    **图4** 确认Trace起点  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/n7S5XOpRTY2sCpf_T4EzFQ/zh-cn_image_0000002456058024.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/U6cB7BiqSR6ZcGN6rEy75w/zh-cn_image_0000002456058024.png "点击放大")
 2. 点击操作完成时延的终点位置在泳道图中没有明确的Trace点，需要通过录屏工具计算出完成时延的耗时时间。从起点往后拉相同的时间找到终点位置。
 
    **图5** 确认Trace终点  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/V1czPEPRRhOZxivkN9rKNg/zh-cn_image_0000002489137641.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/y6-RPmpYQaylGWnT-TeH3Q/zh-cn_image_0000002489137641.png "点击放大")
 3. 使用Profiler工具标记Trace起点与终点。
 
 ### ArkTS Callstack泳道分析ArkTS侧耗时函数
@@ -302,12 +302,12 @@ DevEco Profiler工具分使用方式可以参考[Frame分析](../harmonyos-guide
 在ArkTS Callstack子泳道中，ArkVM是需要优先查看耗时情况的泳道，可以观察ArkTS侧方法的耗时。优先分析耗时最长的调用栈（program除外，program表示程序执行进入纯Native代码阶段，该阶段无ArkTS代码执行，也无ArkTS调用Native或Native调用ArkTS的情况，需要切换到Callstack泳道查看具体的调用栈信息，通常难以通过这里分析出有效信息）。逐级展开，可以看到具体耗时的文件。基于 [“HMOS世界”](https://gitcode.com/harmonyos_samples/hmosworld)切换tab页场景，抓取Trace信息。
 
 **图6** ArkTS Callstack泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/gr24njtMQWa3UhfaP7XjzQ/zh-cn_image_0000002455898360.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/TCX9GmcpQg2Y4RKYvxS5YQ/zh-cn_image_0000002455898360.png "点击放大")
 
 观察发现MainPage文件中匿名函数耗时350ms，展开该节点。
 
 **图7** ArkTS Callstack泳道耗时函数详情  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Ys3ZW4owQ0Ge5-wPVTRtLA/zh-cn_image_0000002489177673.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/DJW4gnC1TticWn8mK9VTeg/zh-cn_image_0000002489177673.png "点击放大")
 
 展开节点后发现函数调用链中AudioPlayerService中getInstance函数调用耗时327ms，接下来定位源代码。
 
@@ -352,7 +352,7 @@ export class AudioPlayerService {
 }
 ```
 
-观察源代码发现AudioPlayerService调用getInstance创建单例对象耗费大量时间，随即又调用destroy方法销毁对象。优化方式如下：获取单例对象前，先判断单例对象是否被实例化，若没有实例化则直接跳过获取与销毁，避免实例对象的无效创建与销毁，参考如下代码。
+观察源代码发现AudioPlayerService调用getInstance()创建单例对象耗费大量时间，随即又调用destroy方法销毁对象。优化方式如下：获取单例对象前，先判断单例对象是否被实例化，若没有实例化则直接跳过获取与销毁，避免实例对象的无效创建与销毁，参考如下代码。
 
 ```typescript
 // products\phone\src\main\ets\pages\MainPage.ets
@@ -405,7 +405,7 @@ export class AudioPlayerService {
 如下图所示的第145帧
 
 **图8** 超长帧Trace信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/c9r38ivHT2eDJbdWB3D2JQ/zh-cn_image_0000002489140921.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/ltyWSWjTTF-Qreqg-J9GXw/zh-cn_image_0000002489140921.png "点击放大")
 
 每帧的预期耗时（ms） = 1000ms / 帧率。如上图所示，选中超长帧后，可以看到该帧的预期耗时Expected Duration为 8ms 330μs，说明帧率是 120。实际耗时为 92ms 571μs，远超预期耗时，因此被识别为超长帧。超长帧的长时间渲染会直接影响用户体验，导致点击完成时延不达标。
 
@@ -420,7 +420,7 @@ Callstack泳道，该泳道显示Native函数调用泳道，也可以看到Nativ
 下图展示了超长帧案例中Callstack的主线程子泳道。
 
 **图9** Callstack主线程泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/k7krzVXBTby-EHHyqtHIlQ/zh-cn_image_0000002489180945.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/XbOY9I7iSlKiUggC-ajDUg/zh-cn_image_0000002489180945.png "点击放大")
 
 滑动查看右侧权重最高的函数调用栈，定位到MainPage.ets文件第203行代码为主要耗时原因。
 
@@ -429,25 +429,25 @@ Callstack泳道，该泳道显示Native函数调用泳道，也可以看到Nativ
 ArkUI Component泳道记录了自定义组件以及系统组件的绘制次数、耗时等信息，重点关注相对于其他组件耗时比较久的组件。
 
 **图10** ArkUI Component泳道泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/jLHqE0ZwT7iaZMiZuDNi5Q/zh-cn_image_0000002456061300.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/zQpW1d8sRjyGfgN8kOyklw/zh-cn_image_0000002456061300.png "点击放大")
 
 然后可以在详情（Details）中使用下图中被框选的按钮过滤目标组件，查看组件在刷新过程中不同阶段的耗时情况。结合函数调用栈和ArkUI Inspector工具，定位目标组件绘制耗时过长的具体原因。
 
 **图11** ArkUI Component泳道图Details信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/btKcMqsuQ3mU4vJN--6fdA/zh-cn_image_0000002455901644.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/DAipm0kpSV2PYKJplJavpQ/zh-cn_image_0000002455901644.png "点击放大")
 
 ### H:Animator泳道分析动画时长
 
 在页面切换过程中，如果存在加载的 loading 动画，出于用户体验考虑，可将动画停止与网络请求的完成相关联。例如，展示“加载中”状态，直到数据加载完成。通过 H:Animator 泳道，可以观察到动画的耗时。
 
 **图12** H:Animator 泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/u8g7Dh6JQjmk02EZWd6Xdg/zh-cn_image_0000002489140945.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/wHkdhpNMSi2Y3wE2yQlBug/zh-cn_image_0000002489140945.png "点击放大")
 
 ## 完成时延解决方案
 
 ### UI线程应用自身方法耗时长影响页面首次加载时延
 
-当UI线程应用自身方法耗时过长时，会影响页面首次加载时延。AppAnalyzer提供了场景化体验检测，能帮助检测出耗时函数，协助开发者快速定位到问题点，并提供相应的优化建议。UI线程应用自身方法耗时长可参考[分析耗时函数的callstack](bpta-zhenlv.md#section117831333645)中的解决方案进行相应的代码优化。
+当UI线程应用自身方法耗时过长时，会影响页面首次加载时延。AppAnalyzer提供了场景化体验检测，能帮助检测出耗时函数，协助开发者快速定位到问题点，并提供相应的优化建议。UI线程应用自身方法耗时长可参考[第2步：丢帧问题分析](bpta-zhenlv.md#section117831333645)中的解决方案进行相应的代码优化。
 
 ### 网络请求耗时
 
@@ -457,7 +457,7 @@ ArkUI Component泳道记录了自定义组件以及系统组件的绘制次数�
 
 由于ArkTS单线程EventLoop特性，异步调用的执行时机会被延迟到同步逻辑之后。如果将Http请求接口放在异步函数中，网络请求可能会被UI绘制阻塞，等待第一帧UI绘制结束才开始。如果页面首帧较复杂，这会导致网络请求的延迟时间显著增加。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/WDf1PyDCSc-I0DOqTwl7kQ/zh-cn_image_0000002194010436.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/esxxmyziRDm33DRQWj9xXQ/zh-cn_image_0000002194010436.png "点击放大")
 
 **避免在页面子组件中发起网络请求**
 
@@ -465,7 +465,7 @@ ArkUI Component泳道记录了自定义组件以及系统组件的绘制次数�
 
 如下图情况，应用页面结构分为Header和Tabs两部分，如果将Tabs内容数据的Http请求放在Tabs组件中发起，由于Tabs组件在UI结构上依赖Header部分，则需要先创建Header，同时又因为Header内容的渲染也依赖网络请求，所以最终导致Tabs的数据请求严重延后。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/nmbf9XfLQyOIG_AsZkCJVQ/zh-cn_image_0000002193850836.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/sB1AbwOQRtGoKAOFHliGCA/zh-cn_image_0000002193850836.png "点击放大")
 
 ### 动画时延耗时
 
@@ -475,7 +475,7 @@ ArkUI Component泳道记录了自定义组件以及系统组件的绘制次数�
 
 1. [Tabs](../harmonyos-references/ts-container-tabs.md)组件设置TabContent切换动画时长，即[animationDuration](../harmonyos-references/ts-container-tabs.md#animationduration)属性。
 2. [Swiper](../harmonyos-references/ts-container-swiper.md)组件设置子组件切换动画时长，即[duration](../harmonyos-references/ts-container-swiper.md#duration)属性。
-3. 页面间转场（[pageTransition](../harmonyos-references/ts-page-transition-animation.md)）设置转场动画时长，即[PageTransitionOptions](../harmonyos-references/ts-page-transition-animation.md#pagetransitionoptions对象说明)对象中的duration字段。
+3. [页面间转场 (pageTransition)](../harmonyos-references/ts-page-transition-animation.md)设置转场动画时长，即[PageTransitionOptions对象说明](../harmonyos-references/ts-page-transition-animation.md#pagetransitionoptions对象说明)中的duration字段。
 
 使用Tabs组件进行页面切换时，当不设置BottomTabBarStyle时默认[animationDuration](../harmonyos-references/ts-container-tabs.md#animationduration)属性有300ms的动画时长，当该属性值设置过长时会导致完成时延变大。接下来将该属性值分别设置为100ms与1000ms来探究animationDuration属性对完成时延的影响。
 
@@ -540,7 +540,7 @@ struct TabsPositiveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/gmhDjhMKSoaom_mrU6e6Eg/zh-cn_image_0000002194010416.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/mCoY4JWvR_egHybAgrY9KQ/zh-cn_image_0000002194010416.png "点击放大")
 
 实验二：设置animationDuration为1000ms
 
@@ -567,7 +567,7 @@ struct TabsNegativeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/OdHdVn75Rue3MpNNQL_h3w/zh-cn_image_0000002193850820.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/wZ8Lq_FhTaS3UkHZOCAxXg/zh-cn_image_0000002193850820.png "点击放大")
 
 **表1** 运行效果图
 
@@ -588,9 +588,9 @@ struct TabsNegativeExample {
 
 转场新页面的组件过于复杂、布局不合理以及资源全量加载等会影响页面首次加载时延，可以采取如下方法进行性能优化：
 
-* UI优化：可以通过减少嵌套层级、减少渲染时间、使用缓存动效、LazyForEach懒加载、动态import等方式进行优化。相关原理介绍以及场景案例，请参考[《点击响应时延分析-UI优化》](bpta-click-to-click-response-optimization.md#section1497610408322)。
+* UI优化：可以通过减少嵌套层级、减少渲染时间、使用缓存动效、LazyForEach懒加载、动态import等方式进行优化。相关原理介绍以及场景案例，请参考[UI组件自身创建耗时长](bpta-click-to-click-response-optimization.md#section1497610408322)。
 * 全局自定义组件复用：使用自定义组件复用池，实现跨页面的组件复用，实现思路以及场景案例，请参考[组件复用](bpta-component-reuse.md)。
-* 预创建组件：使用组件预创建，可以利用动画执行过程空闲时间进行组件预创建和属性设置。相关原理介绍以及场景案例，请参考[《声明式UI中实现组件动态创建》](bpta-ui-dynamic-operations.md)。
+* 预创建组件：使用组件预创建，可以利用动画执行过程空闲时间进行组件预创建和属性设置。相关原理介绍以及场景案例，请参考[组件动态创建](../harmonyos-guides/arkts-ui-component-dynamic-creation.md)。
 
 ## 实践案例
 
@@ -598,40 +598,40 @@ struct TabsNegativeExample {
 
 在主线程长时间被阻塞的检测结果中，点击“存在大量等待时间无法诊断，请您确认”，打开Profiler工具，加载完成trace数据后，会框选主线程运行空闲的区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/kP3i1QMPTlqacr03wXIrdQ/zh-cn_image_0000002480446276.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/beJJ80hWTtuARIoRKkKEow/zh-cn_image_0000002480446276.png "点击放大")
 
 可以看到框选的397ms中，主线程主要处于空闲状态。放大该选中区域，并从框选的范围内，从后往前找Running前面的Runnable，点击查看Runnable详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/vMKrAK-0QZKFlQRnE1sYYA/zh-cn_image_0000002455902388.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ASkAMRtuSTmtLgEEY0hAIg/zh-cn_image_0000002455902388.png "点击放大")
 
 通过Runnable详情中的WakeUP From Tid，可以看到是VSyncGenerator唤醒的主线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/nJVsbhNXSAKMUQAGA_g5qw/zh-cn_image_0000002489181689.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ZpOqLEG5TcmTuNomJvFpkA/zh-cn_image_0000002489181689.png "点击放大")
 
 点击该线程名后面的跳转按钮，跳转到VSyncGenerator线程的Running详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/TA2Rvi_dRvuZ5Iv4JDso2w/zh-cn_image_0000002456062016.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/8bGGVMWTS3GkwX7vjqYenQ/zh-cn_image_0000002456062016.png "点击放大")
 
 放大该区域，并点击该Running前面的Runnable，可看到详情中没有WakeUP From Tid，表示该线程此刻Running不是被其他线程唤醒的，且上一个状态是Sleeping，说明这条唤醒链路就断了。若该链路断掉，则需要回到主线程运行空闲的区域中，从后往前，继续上述查找步骤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/T-8maH4GR-awcs1iD_4a2w/zh-cn_image_0000002489141661.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/7PWQhJDaRg62dQkRfwOOkw/zh-cn_image_0000002489141661.png "点击放大")
 
 再次点击“存在大量等待时间无法诊断，请您确认”，回到主线程的空闲范围内，从后往前，继续找到上一个Running前面的Runnable，查看详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/VxM3lkWhR9m4zNvCZtFWrA/zh-cn_image_0000002455902392.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/TaEUjUQNRciGY2Dq-74GJA/zh-cn_image_0000002455902392.png "点击放大")
 
 通过WakeUP From Tid，可以看到是OS\_FFRT\_2\_1线程唤醒的主线程，点击后面的跳转按钮，跳转到对应线程的运行泳道。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/HgXSLWrzToSPbErva2pyWg/zh-cn_image_0000002489181693.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/mQ9mGrXPRjytRrRAUrumzA/zh-cn_image_0000002489181693.png "点击放大")
 
 可以看到上一个状态是Runnable（Preempted），可能是CPU的时间片调度用完了，可继续查看该状态的前一个线程状态是否为Running。如果是，则缩小该区域，观察该线程是否连续在Running，并找到连续Running的开始时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/mDyJ8jRHRkipVyT0Yb_4Lw/zh-cn_image_0000002456062020.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/4O9dwZt6QWG0aTMmrl0Weg/zh-cn_image_0000002456062020.png "点击放大")
 
 通过连续Running的开始时间的第一个Running前面的Runnable，继续找线程唤醒关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/1Ljj2TcVQeqebi9R82iZsQ/zh-cn_image_0000002489141665.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Osu2e_BvTgCkR-QC5PdzAw/zh-cn_image_0000002489141665.png "点击放大")
 
-查看Runnable详情中的WakeUP From Tid，可发现此刻Running的线程是主线程的唤醒的，将该子线程泳道收藏，并通过跳转按钮找到主线程唤醒该子线程的位置。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Gjyya1feRBGNrvv8Wj69Kg/zh-cn_image_0000002455902396.png "点击放大")
+查看Runnable详情中的WakeUP From Tid，可发现此刻Running的线程是主线程的唤醒的，将该子线程泳道收藏，并通过跳转按钮找到主线程唤醒该子线程的位置。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/6C-lHfihRYGx7rpDyDCmJg/zh-cn_image_0000002455902396.png "点击放大")
 
 可以看到该空闲时间段，主要是在等待子线程OS\_FFRT线程执行耗时任务导致，需要开发者判断主线程是否依赖子线程的返回，如果主线程依赖子线程返回，需要优化子线程的函数耗时，或者将耗时任务提前执行。

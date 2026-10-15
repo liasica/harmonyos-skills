@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-com
 title: ArkWeb组件安全开发
 breadcrumb: 最佳实践 > 应用安全 > ArkWeb组件安全开发
 category: best-practices
-scraped_at: 2026-09-16T06:55:07+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:1e112d918bc0738a4358402cc3376fea629ff30441f61d69bb7077b7a894b23a
+scraped_at: 2026-10-16T07:06:45+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:b1f2b52bdab95533683289cb07ed84a8c71af784a696c59befad928b94e099b5
 ---
 
 ## 概述
 
 ### 目标
 
-本文旨在指导应用开发者在Hybrid混合应用开发模式下安全地使用ArkWeb组件。Hybrid混合开发指，开发者通过Web H5技术构建可动态加载与渲染的页面（如商品推广、隐私政策等），并通过应用内置的ArkWeb组件进行展示。同时，开发者可依托[JSBridge](../harmonyos-guides/arkweb-ndk-jsbridge.md)的能力，让Web页面能够方便地使用应用原生功能，例如获取地理位置、调用摄像头甚至移动支付等功能。
+本文旨在指导应用开发者在Hybrid混合应用开发模式下安全地使用ArkWeb组件。Hybrid混合开发指，开发者通过Web H5技术构建可动态加载与渲染的页面（如商品推广、隐私政策等），并通过应用内置的ArkWeb组件进行展示。同时，开发者可依托[JSBridge](../doccenter-app-quality/bpta-web-develop-optimization.md#section58781855115017)的能力，让Web页面能够方便地使用应用原生功能，例如获取地理位置、调用摄像头甚至移动支付等功能。
 
 该模式在提升开发灵活性与Web交互能力的同时，也使大量敏感能力暴露至Web侧，显著扩大攻击面。此外，诸如跨站脚本攻击、身份混淆、明文数据传输等常见Web漏洞，会进一步削弱混合应用的整体安全性，增加了恶意代码注入、权限滥用、敏感信息泄露等高危风险的发生概率。
 

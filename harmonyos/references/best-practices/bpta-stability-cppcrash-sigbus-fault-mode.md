@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGBUS非法内存访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGBUS非法内存访问故障模式说明
 category: best-practices
-scraped_at: 2026-09-16T06:55:12+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:f8d04595319ef0d8f46499b4b66937f5998fba3dff04cd371ff826bf0c4f5646
+scraped_at: 2026-10-16T07:06:50+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:949700acc6c20fed70b52d6bec483ce9b92170ae23247c62bb6ef25feebaa971
 ---
 
 ## BUS\_ADRALN内存地址对齐错误
@@ -439,7 +439,7 @@ SIGBUS BUS\_OBJERR类型的Native崩溃，根本原因在于程序访问的内�
    #04 pc 00000000001de794 /system/lib/ld-musl-aarch64.so.1(start+240)(6416fe50fbbb03147eb5a67ffee3f4e4)
    ```
 
-   说明3：通常认为标准库、系统侧so较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
+   说明2：通常认为标准库、系统侧so较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
 3. 找到上下文。
 
    参考[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)使用llvm-addr2line工具定位行号，通常用法为llvm-addr2line -Cfie libentry.so 000000000001005f0，即可定位到行号，so为带符号版本。

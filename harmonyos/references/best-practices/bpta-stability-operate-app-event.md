@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用事件
 breadcrumb: 最佳实践 > 稳定性 > 稳定性运维 > 稳定性事件接入 > 应用事件
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:c4af5d25ba54d292c58d498c1ad062dabb36a9c7fe3b8866416ac0d0367f22df
+scraped_at: 2026-10-16T07:06:55+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:00c5d0fa4ccf81340a5c3d0c42bbe7c94c95912582e4e09f87dcd059d3c4ee5e
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ HiAppEvent提供了事件订阅接口，用于本地获取应用事件。
 
 ### 接口说明
 
-API接口的具体使用说明（参数使用限制、具体取值范围等）请参考[应用事件打点](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md)。
+API接口的具体使用说明（参数使用限制、具体取值范围等）请参考[@ohos.hiviewdfx.hiAppEvent (应用事件打点)](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md)。
 
 **订阅接口功能介绍：**
 
@@ -45,7 +45,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    ```screen
    import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
    ```
-2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets” 文件，在onCreate()函数中添加对用户点击按钮事件的订阅，示例代码如下：
+2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate()函数中添加对用户点击按钮事件的订阅，示例代码如下：
 
    ```ts
    hiAppEvent.addWatcher({
@@ -72,13 +72,13 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
      }
    });
    ```
-3. 编辑工程中的“entry > src > main > ets > pages > Index.ets” 文件，导入依赖模块：
+3. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，导入依赖模块：
 
    ```screen
    import { BusinessError } from '@kit.BasicServicesKit';
    import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
    ```
-4. 编辑工程中的“entry > src > main > ets > pages > Index.ets” 文件，添加一个按钮并在其onClick()函数中进行事件打点，以记录按钮点击事件，示例代码如下：
+4. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加一个按钮并在其onClick()函数中进行事件打点，以记录按钮点击事件，示例代码如下：
 
    ```screen
    Button("writeTest").onClick(() => {
@@ -130,7 +130,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 以实现对用户点击按钮行为的事件打点及订阅为例，说明开发步骤：
 
-1. 从[三方开源库jsoncpp代码仓](https://github.com/open-source-parsers/jsoncpp)下载源码的压缩包，并按照README的**Amalgamated source**中介绍的操作步骤得到jsoncpp.cpp、json.h和json-forwards.h三个文件。新建Native C++工程，并将jsoncpp导入到新建工程内，目录结构如下：
+1. 从三方开源库[JsonCpp](https://github.com/open-source-parsers/jsoncpp)代码仓下载源码的压缩包，并按照README的**Amalgamated source**中介绍的操作步骤得到jsoncpp.cpp、json.h和json-forwards.h三个文件。新建Native C++工程，并将jsoncpp导入到新建工程内，目录结构如下：
 
    ```screen
    entry
@@ -156,9 +156,9 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 2. 编辑“CMakeLists.txt”文件，添加源文件及动态库：
 
    ```screen
-   # 新增jsoncpp.cpp(解析订阅事件中的json字符串)源文件
+   # The jsoncpp.cpp source file (used to parse the JSON character string in the subscription event) is added.
    add_library(entry SHARED napi_init.cpp jsoncpp.cpp)
-   # 新增动态库依赖libhiappevent_ndk.z.so和libhilog_ndk.z.so(日志输出)
+   # Added the dynamic libraries libhiappevent_ndk.z.so and libhilog_ndk.z.so (for log output).
    target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libhiappevent_ndk.z.so)
    ```
 3. 编辑“napi\_init.cpp”文件，导入依赖的文件，并定义LOG\_TAG：

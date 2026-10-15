@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/changelog
 title: 最佳实践文档变更说明
 breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
-scraped_at: 2026-09-21T06:25:55+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1e7836
+scraped_at: 2026-10-16T07:06:56+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:9afaa4d2c567d5d7e655add2a72231b890738550bfb048d61d3f02ca33d0a111
 ---
 
 ## 2026年9月
@@ -41,7 +41,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 * [应用泛PSS内存泄漏故障模式说明](bpta-stability-app-extpssleak-fault-mode.md)：介绍了应用发生泛PSS内存泄漏的主要根因，并基于案例介绍开发态与运维态的问题分析思路。
 * [DMA内存泄漏故障模式概述](bpta-stability-dmaleak-fault-mode-overreview.md)：介绍了系统的DMA内存泄漏检测机制，并提供开发态与运维态的问题分析思路。
 * [应用DMA内存泄漏故障模式说明](bpta-stability-app-dmaleak-fault-mode.md)：介绍了应用DMA内存泄漏的几种常见根因，并基于案例介绍开发态与运维态的问题分析思路。
-* [ASHMEM内存泄漏故障模式概述](bpta-stability-app-ashmemleak-fault-mode.md)：介绍了系统的ASHMEM内存泄漏检测机制，并提供开发态与运维态的问题分析思路。
+* [ASHMEM内存泄漏故障模式概述](../doccenter-app-quality/bpta-stability-ashmemleak-fault-mode-overreview.md)：介绍了系统的ASHMEM内存泄漏检测机制，并提供开发态与运维态的问题分析思路。
 * [应用ASHMEM内存泄漏故障模式说明](bpta-stability-app-ashmemleak-fault-mode.md)：介绍ASHMEM内存泄漏的常见根因，并结合案例，指导在开发态与运维态场景下的常见分析思路。
 * [线程泄漏故障模式概述](bpta-stability-threadleak-fault-mode-overreview.md)：介绍了系统的线程泄漏检测机制和开发态与运维态的问题分析思路。
 * [应用线程泄漏故障模式说明](bpta-stability-app-threadleak-fault-mode.md)：介绍线程泄漏的几种常见根因，并基于案例介绍开发态与运维态的问题分析思路。
@@ -221,7 +221,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **自由流转**
 
-* [碰一碰文件分享](bpta-application-knock-file-share.md)：新增精准碰一碰章节。
+* [碰一碰文件分享](bpta-application-knock-file-share.md)：新增碰一碰精准分享章节。
 
 ### 下线文档
 
@@ -259,7 +259,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 * 基于AVPlayer播放长视频实践：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放长视频实践”](../harmonyos-guides/avplayer-long-video.md)。
 * 基于AVPlayer播放短视频实践：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放短视频实践”](../harmonyos-guides/avplayer-short-video.md)。
-* 基于AVPlayer播放嵌入式短视频实践：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放嵌入式短视频实践”](../harmonyos-guides/avplayer-embeded-short-video.md)。
+* 基于AVPlayer播放嵌入式短视频实践：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放嵌入式短视频实践”](../doccenter-capabilities/avplayer-embedded-short-video.md)。
 * 基于AVPlayer播放网络视频实践：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放网络视频实践”](../harmonyos-guides/avplayer-network-video.md)。
 * 在线视频播放卡顿优化：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 在线视频播放卡顿优化”](../harmonyos-guides/online-video-playback-lags-optimize.md)。
 * 音画同步：内容已迁移至[“指南 > 媒体 > AVCodec Kit（音视频编解码服务）> 音视频编解码开发实践 > 音画同步”](../harmonyos-guides/audio-video-synchronization.md)。
@@ -400,7 +400,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 * [应用UI进程空跑问题分析](bpta-ui-skip-analysis.md)：介绍了什么是应用UI进程空跑、应用UI进程空跑的分析思路和常见故障根因。
 * [自渲染图层未使用硬件合成问题分析](bpta-hwc-self-rendering-layer-analysis.md)：介绍了如何实现自渲染图层使用硬件合成、问题定位和常见问题根因。
-* [应用退后台禁止使用传感器问题分析](bpta-background-sensors-baned-analysis.md)：介绍了为何应用退后台禁止使用传感器和问题定位流程。
+* [应用退后台禁止使用传感器问题分析](bpta-background-sensors-banned-analysis.md)：介绍了为何应用退后台禁止使用传感器和问题定位流程。
 
 ### 优化文档
 
@@ -408,7 +408,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **多端设备体验提升**
 
-* [阔折叠应用开发](bpta-purax-guide.md)：在原有Pura X阔折叠基础上，补充Puira X Max的相关开发指导。
+* [阔折叠/阔直板应用开发](bpta-purax-guide.md)：在原有Pura X阔折叠基础上，补充Puira X Max的相关开发指导。
 
 **一次开发，多端部署**
 
@@ -432,7 +432,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **全场景协同**
 
-* [内容编辑多设备协同](bpta-continue.md)：介绍如何通过应用接续功能（实现不同设备间的快速切换）和跨设备互通功能，提升内容发布的便利性。
+* [社交通讯全场景协同最佳实践](bpta-continue.md)：介绍如何通过应用接续功能（实现不同设备间的快速切换）和跨设备互通功能，提升内容发布的便利性。
 * [视频投播](bpta-vdeocast.md)：介绍如何高效利用系统投播组件和接口实现视频投播。
 * [音频投播](bpta-audio-cast.md)：介绍如何高效利用系统投播组件和接口实现音频投播。
 * [办公编辑全场景协同最佳实践](bpta-collaboration-office.md)：介绍如何插入其他设备的图文、切换设备继续编辑、分享协作。
@@ -583,7 +583,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **一次开发，多端部署**
 
-* [多设备工程部署](bpta-multi-device-ide.md)：优化DevEco的版本截图和新增多设备工程部署的注意事项。
+* [多设备工程部署与发布](bpta-multi-device-ide.md)：优化DevEco的版本截图和新增多设备工程部署的注意事项。
 * [窗口沉浸式](bpta-multi-device-window-immersive.md)：新增自由窗口标题栏沉浸示例。
 * [音频焦点管理解决方案](bpta-audio-focus-management.md)：新增应用内多音频流焦点处理章节，新增移动端和电脑端音频焦点默认策略差异介绍，短视频滑动漏音增加代码介绍。
 
@@ -682,11 +682,11 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **多端设备支持**
 
-* [Mate TV智慧屏应用开发](bpta-matetv-guide.md)：介绍了Mate TV智慧屏的设备特点、参数、设计规范、窗口、界面、功能开发等。
+* [智慧屏应用开发](bpta-matetv-guide.md)：介绍了Mate TV智慧屏的设备特点、参数、设计规范、窗口、界面、功能开发等。
 
 **行业场景解决方案**
 
-* [媒体直播场景解决方案](bpta-hmos-live-stream-solution.md)**：**介绍了如何基于系统的媒体底座能力实现媒体直播系统的解决方案。包括开播端的音视频采集与编码、看播端的流媒体播放与音画同步等技术方案。
+* [基于媒体能力实现直播单播功能](bpta-hmos-live-stream-solution.md)**：**介绍了如何基于系统的媒体底座能力实现媒体直播系统的解决方案。包括开播端的音视频采集与编码、看播端的流媒体播放与音画同步等技术方案。
 
 ### 优化文档
 
@@ -738,7 +738,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 **多端设备支持**
 
 * [平板应用开发](bpta-pad-guide.md)：整篇文档内容优化，介绍了平板设备特点、参数、设计规范、窗口、界面、功能开发等。
-* [折叠屏应用开发](bpta-foldable-guide.md)：整篇文档内容优化，介绍了折叠屏设备特点、参数、设计规范、窗口、界面、功能开发等。
+* [双折叠应用开发](bpta-foldable-guide.md)：整篇文档内容优化，介绍了折叠屏设备特点、参数、设计规范、窗口、界面、功能开发等。
 
 ## 2025年7月
 
@@ -910,7 +910,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/HO2izIFaTGCz2MYBkIF6uA/zh-cn_image_0000002307192376.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/3JEuKeqFQKmC-uPb4-J59g/zh-cn_image_0000002307192376.png "点击放大")
 
 ### 新增文档
 
@@ -952,11 +952,11 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 * [多设备资源文件](bpta-multi-device-resource.md)：介绍了应用资源和系统资源对颜色、字体、间距、图片等资源的处理方式。
 * [多设备设置界面](bpta-multi-settings-application-page.md)：介绍如何使用自适应布局能力和响应式布局能力适配不同尺寸窗口。
 * [多设备功能开发](bpta-multi-device-function.md)：介绍应用如何解决设备系统能力差异的兼容问题。
-* [多设备工程部署](bpta-multi-device-ide.md)：介绍如何使用DevEco Studio进行多设备应用开发。
+* [多设备工程部署与发布](bpta-multi-device-ide.md)：介绍如何使用DevEco Studio进行多设备应用开发。
 
 **全场景协同**
 
-* [内容编辑多设备协同](bpta-continue.md)：介绍如何通过应用接续功能（实现不同设备间的快速切换）和跨设备互通功能，提升内容发布的便利性。
+* [社交通讯全场景协同最佳实践](bpta-continue.md)：介绍如何通过应用接续功能（实现不同设备间的快速切换）和跨设备互通功能，提升内容发布的便利性。
 * [视频投播](bpta-vdeocast.md)：介绍如何高效利用系统投播组件和接口实现视频投播，帮助开发者提升开发效率。
 * [碰一碰视频分享](bpta-application-knock-video-share.md)：介绍了在视频分享场景中，如何实现碰一碰快速分享视频的原理与开发步骤。
 * [智能穿戴导航协同](bpta-smartwatchnavigation.md)：介绍了手机与智能穿戴设备通过通信协作实现地图导航的技术方案，主要包含了智能穿戴设备协同导航的体验设计、方案设计、界面开发及功能开发。
@@ -967,7 +967,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **行业场景解决方案**
 
-* [基于adaptive\_video的短视频适配](bpta-short-video-base-adaptivevideo.md)：介绍adaptive\_video支持的短视频页面开发适配场景。
+* [全屏短视频自适应缩放和沉浸](bpta-short-video-base-adaptivevideo.md)：介绍adaptive\_video支持的短视频页面开发适配场景。
 * [阅读器翻页效果](bpta-reader-page-flip.md)：介绍了上下翻页、覆盖翻页和仿真翻页的实现原理和开发步骤。
 
 **AI使能**
@@ -981,7 +981,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **全场景协同**
 
-* 应用接续提升内容发布体验：该文档内容已并入内容编辑多设备协同中。
+* 应用接续提升内容发布体验：该文档内容已并入社交通讯全场景协同最佳实践中。
 
 **应用框架**
 
@@ -1010,9 +1010,9 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **特性解决方案**
 
-* [Mate XT三折叠应用开发](bpta-matext-guide.md)：介绍了如何从体验标准、窗口适配和典型布局场景三个角度实现三折叠的开发事项。
+* [三折叠应用开发](bpta-matext-guide.md)：介绍了如何从体验标准、窗口适配和典型布局场景三个角度实现三折叠的开发事项。
 * [平板应用开发](bpta-pad-guide.md)：从布局设计、窗口适配和交互体验三个方面介绍开发平板应用过程中的常见问题，并提供推荐的解决方案或开发指导，以满足用户的最佳体验。
-* [PC/2in1应用开发](bpta-pc-guide.md)：从布局设计、窗口适配、交互体验和特殊事项四个方面介绍开发PC/2in1应用时的常见问题，并提供推荐的解决方案或开发指导，以确保最佳用户体验。
+* [电脑应用开发](bpta-pc-guide.md)：从布局设计、窗口适配、交互体验和特殊事项四个方面介绍开发PC/2in1应用时的常见问题，并提供推荐的解决方案或开发指导，以确保最佳用户体验。
 
 **应用框架**
 
@@ -1053,7 +1053,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **媒体**
 
-* [音频焦点管理](bpta-audio-focus-management.md)：介绍了系统音频焦点管理机制原理和典型问题场景的解决思路。
+* [音频焦点管理解决方案](bpta-audio-focus-management.md)：介绍了系统音频焦点管理机制原理和典型问题场景的解决思路。
 
 ## 2025年3月
 
@@ -1063,7 +1063,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **特性解决方案**
 
-* [Pura X阔折叠应用开发](bpta-purax-guide.md)：介绍了如何在应用程序中实现手机分屏功能。包括手机分屏功能的适用场景、实现原理等内容。
+* [阔折叠/阔直板应用开发](bpta-purax-guide.md)：介绍了如何在应用程序中实现手机分屏功能。包括手机分屏功能的适用场景、实现原理等内容。
 
 **应用质量**
 
@@ -1107,7 +1107,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ZAAvaQsSR-G1UNxwWHtGTg/zh-cn_image_0000002318291885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/bKRfmUzOSQagtQP2UJusvw/zh-cn_image_0000002318291885.png "点击放大")
 
 ### 新增文档
 
@@ -1144,7 +1144,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 * 一多窗口适配：介绍因窗口类型及属性的差异产生的问题的说明及解决方案指导。
 * [Web响应式布局](bpta-web-adaptation.md)：介绍Web侧如何进行多设备适配，结合Web组件实现在不同设备上的定制体验。
 * 分级导航：本文提供分级导航栏的多端适配方案及指导，解决一多开发实现导航栏内的分级效果问题。
-* [浏览进度接续](bpta-application-continue-progess.md)：介绍如何在长列表进度、媒体播放进度以及Web浏览进度这三个场景，实现浏览进度无缝接续。
+* [常见接续最佳实践](bpta-application-continue-progess.md)：介绍如何在长列表进度、媒体播放进度以及Web浏览进度这三个场景，实现浏览进度无缝接续。
 
 **业务场景与解决方案**
 
@@ -1208,7 +1208,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 * 常见列表流：介绍了常见列表流程的最佳实践，包括列表流程的设计原则、列表流程的类型、列表流程的实现方式以及列表流程的性能优化等方面的内容。
 * [基于DialogHub的通用弹窗](bpta-hadss_dialoghub.md)：介绍了DialogHub解决方案的概述、架构设计、开发流程、技术要点等。
 * 长截图：本文以List组件和Web组件为例来介绍长截图功能的开发，分别通过控制器Scroller和WebviewController，结合组件截图模块componentSnapshot，实现长截图功能。
-* [2in1异形窗口](bpta-2in1-window-shape.md)：介绍了在开发应用程序时如何适配2in1设备的窗口形状，以提供更好的用户体验。
+* [PC/2in1异形窗口](bpta-2in1-window-shape.md)：介绍了在开发应用程序时如何适配2in1设备的窗口形状，以提供更好的用户体验。
 * [基于Web页面的视频适配](bpta-video-adaptation-based-web.md)：介绍了如何在Web应用中实现视频自适应，以提供更好的用户体验。
 * 应用网络重连：介绍了如何在移动应用开发中处理网络连接中断和重连。包括网络连接状态的监测、断线重连的策略、错误处理和用户体验优化等方面。
 * [低功耗蓝牙基础使用](bpta-bluetooth-low-energy.md)：介绍了基于BLE进行蓝牙扫描管理、蓝牙连接状态管理、蓝牙设备特征值同步三个场景，并分别从服务端和客户端描述其相关实现。
@@ -1259,7 +1259,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/jMsXatkHSpG8C69AvvKWCQ/zh-cn_image_0000002283692304.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/uIxCP97BT3GbculbQU5g_g/zh-cn_image_0000002283692304.png "点击放大")
 
 ### 新增文档
 
@@ -1332,7 +1332,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **HarmonyOS特征**
 
-* 华为视频接入播控中心和投播实践：部分场景和使用方式过时，已上线新的接续文章[内容编辑多设备协同](bpta-continue.md)。
+* 华为视频接入播控中心和投播实践：部分场景和使用方式过时，已上线新的接续文章[社交通讯全场景协同最佳实践](bpta-continue.md)。
 
 **性能**
 
@@ -1356,7 +1356,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 **性能**
 
 * [Web加载完成时延分析](bpta-web-completion-delay-analysis.md)：介绍Web页面的加载流程及关键Trace点、性能分析工具、加载完成时延分析方法、并总结了常见导致加载完成时延过高的原因与解决方案。
-* [预置图片资源加载优化](bpta-texture-compression-improve-performance.md)：介绍纹理压缩的概念、原理和优势，并提供了一些在开发过程中使用纹理压缩的最佳实践建议。通过使用纹理压缩，开发者可以减少纹理资源的大小，提高应用程序的性能和加载速度。
+* [图片资源加载优化](bpta-texture-compression-improve-performance.md)：介绍纹理压缩的概念、原理和优势，并提供了一些在开发过程中使用纹理压缩的最佳实践建议。通过使用纹理压缩，开发者可以减少纹理资源的大小，提高应用程序的性能和加载速度。
 
 **功耗**
 
@@ -1495,7 +1495,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 
 **运维**
 
-* [崩溃监测实践](bpta-crash-monitor-practice.md)：介绍如何使用HiAppEvent订阅崩溃事件和使用AGC崩溃服务进行崩溃监测。
+* [崩溃监测实践](bpta-crash-monitor-practice.md)：介绍如何使用HiAppEvent订阅崩溃事件和使用HarmonyOS开发者中心崩溃服务进行崩溃监测。
 * [应用埋点](bpta-application-track-practice.md)：介绍如何进行应用埋点开发，包括埋点分类、埋点方案介绍、如何上传埋点数据等。
 
 **功能开发**
@@ -1542,7 +1542,7 @@ content_hash: sha256:8d93c83b42b49d6f4394bebdc8035ad825419698f58a5574c96f16ed0e1
 **功能开发**
 
 * [组件嵌套优化](bpta-component-nesting-optimization.md)：本文通过原理概念、优化场景和实践数据对比三个角度，详细介绍组件嵌套的优化，着重从优化场景角度为开发者阐明组件嵌套的优化场景以及优化策略。
-* [横竖屏切换](bpta-landscape-and-portrait-development.md)：介绍横竖屏功能的开发过程中需要关注的内容，包括窗口旋转策略的选择、常用应用类型的横竖屏开发和常见的横竖屏开发问题。
+* [视频类应用横竖屏切换](bpta-landscape-and-portrait-development.md)：介绍横竖屏功能的开发过程中需要关注的内容，包括窗口旋转策略的选择、常用应用类型的横竖屏开发和常见的横竖屏开发问题。
 
 * 生态应用相机实现系统级相机体验：本文针对三方相机开发场景，基于HarmonyOS提供的相机开放能力，实现系统相机级别的效果和能力，比如分辨率、动图、视频防抖、连续变焦等。
 

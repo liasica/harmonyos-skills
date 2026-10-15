@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: CppCrash类问题优化建议
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 应用异常退出类问题优化建议 > CppCrash类问题优化建议
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
-doc_updated_at: 2026-05-22
-content_hash: sha256:74fad4f84863a391bf5394e1768ed4e811888309e65eabc5e682ab147a6d25c8
+scraped_at: 2026-10-16T07:06:54+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:43018dc97fa128bc9aaca3eb7860c7da5ea2de08c14151c9a79e46c0462130a5
 ---
 
 ## 优化建议1：使用map\vector\list\set等STL库时，要避免数据竞争
@@ -223,7 +223,7 @@ static void SignalHandlerEx(int signo, siginfo_t* si, void* context) // 信号�
 **malloc是非异步安全函数，因此在信号处理函数中，**
 
 1. 禁止在堆上申请内存
-2. 禁止使用STL类对象，比如在堆动态分配内存的 string、vector、list、set、map...
+2. 禁止使用STL类对象，比如在堆动态分配内存的string、vector、list、set、map...
 3. 调用的外部函数，需确保该函数异步安全，典型非异步安全的getproctid、fgets、fopen...
 
 **异步安全函数列表**

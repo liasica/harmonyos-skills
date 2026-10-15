@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: CppCrash类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用异常退出类问题案例 > CppCrash类问题案例
 category: best-practices
-scraped_at: 2026-09-21T06:25:55+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:6c1b80169195ec4b4b17ac66f30ca501aa3952e6a6231f6bf650d9900935bfbd
+scraped_at: 2026-10-16T07:06:54+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:8feb2445297b03b78e8b49b7cf9494177251494a017beb396b00fcaefc6342cb
 ---
 
 本文以列举常见案例方式介绍如何分析并修复CppCrash问题。阅读本文之前，建议开发者先阅读[应用崩溃问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测CppCrash问题的原理和机制，然后阅读[CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md)了解分析CppCrash问题的一般步骤。
@@ -70,7 +70,7 @@ napi\_env释放后仍被使用。
 
 核心崩溃栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/TeVW2og6RZiiA8EBl7MJGw/zh-cn_image_0000002404125269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/i-ReOyc8S2i3ns1t2sjRBQ/zh-cn_image_0000002404125269.png)
 
 ### 分析步骤
 
@@ -95,7 +95,7 @@ ipc在线程2中使用先前保存的env,出现崩溃
 
 ### 建议与总结
 
-对于栈顶崩溃在libace\_napi.z.so、libark\_jsruntime.so等库操作env的问题，并且出现概率相对较高，在CppCrash日志的调用栈难以直接分析出崩溃原因情况下，可以考虑开启[多线程检测](../harmonyos-guides/ide-multi-thread-check.md)帮助开发者快速定位问题。此外，在多线程操作STL容器（如vector、map、set等）的场景中，由于STL容器是非线程安全的，如果多线程进行添加和删除操作，容易出现SIGSEGV类崩溃，如果崩溃现场代码与STL容器相关，也可以考虑是多线程竞争问题。
+对于栈顶崩溃在libace\_napi.z.so、libark\_jsruntime.so等库操作env的问题，并且出现概率相对较高，在CppCrash日志的调用栈难以直接分析出崩溃原因情况下，可以考虑开启[方舟运行时检测](../harmonyos-guides/ide-multi-thread-check.md)帮助开发者快速定位问题。此外，在多线程操作STL容器（如vector、map、set等）的场景中，由于STL容器是非线程安全的，如果多线程进行添加和删除操作，容易出现SIGSEGV类崩溃，如果崩溃现场代码与STL容器相关，也可以考虑是多线程竞争问题。
 
 ## 案例3：内存访问类崩溃问题
 
@@ -114,11 +114,11 @@ ipc在线程2中使用先前保存的env,出现崩溃
 
 崩溃调用栈如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/eJf6-SO8SpSF1EtCrdnEYQ/zh-cn_image_0000002370405724.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/OGNd_y_vQv2XDG0PA4sJRA/zh-cn_image_0000002370405724.png)
 
 ### 分析步骤
 
-根据业务逻辑分析，node应该保存在堆上，node地址不可能落在libace\_napi\_ark.z.so的代码段。从问题的现象分析，大概率是踩内存问题。踩内存问题可使用[HWASan工具](../harmonyos-guides/ide-hwasan.md)排查问题。于是后续使用ASan版本进行压测复现，也找到了稳定必现的场景。ASan版本检测出来的问题也和上面崩溃栈反映的问题一致。ASan日志显示的踩内存类型是heap-use-after-free，根据日志信息弄清从内存申请、内存释放到使用已被释放的内存整个过程。经过分析后发现业务代码对同一个地址（0x003a375eb724）进行重复释放，在重复释放内存操作时，使用该地址去访问了其对象成员，因此报出了use-after-free（使用已经释放的内存）问题。
+根据业务逻辑分析，node应该保存在堆上，node地址不可能落在libace\_napi\_ark.z.so的代码段。从问题的现象分析，大概率是踩内存问题。踩内存问题可使用HWASan工具（参考：[使用HWASan检测内存错误](../harmonyos-guides/ide-hwasan.md)）排查问题。于是后续使用ASan版本进行压测复现，也找到了稳定必现的场景。ASan版本检测出来的问题也和上面崩溃栈反映的问题一致。ASan日志显示的踩内存类型是heap-use-after-free，根据日志信息弄清从内存申请、内存释放到使用已被释放的内存整个过程。经过分析后发现业务代码对同一个地址（0x003a375eb724）进行重复释放，在重复释放内存操作时，使用该地址去访问了其对象成员，因此报出了use-after-free（使用已经释放的内存）问题。
 
 ASan核心日志如下：
 
@@ -173,15 +173,15 @@ previously allocated by thread T0 (thread name) here: <- 内存申请的现场
 
 根据调用栈继续分析，JsiWeak析构或重置的时候会触发其成员（类型为JsiObject/JsiValue/JsiFunction）父类JsiType中CopyableGlobal被释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-KB7rdXqSQeYxoYJs8bR6g/zh-cn_image_0000002404045461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/GS73ohnTTPGnHH5uKT7Fng/zh-cn_image_0000002404045461.png)
 
 运行时在GC过程中IterateWeakEcmaGlobalStorage，会对无callback的WeakNode调用DisposeGlobalHandle操作，也对其进行释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/noj005aPQd-R5wXZgWSL4Q/zh-cn_image_0000002370565636.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/SfiK6n_WQle8u2n-OURx0w/zh-cn_image_0000002370565636.png)
 
 对于同一个WeakNode，可能会存在两个入口释放。如果是GC过程中IterateWeakEcmaGlobalStorage先释放，因为无callback回调通知到JsiWeak进行清理，JsiWeak那边仍保存一个对已释放的WeakNode引用，即CopyableGlobal；当前面讲的WeakNode所在的NodeList被整体释放，JsiWeak处保留的CopyableGlobal再释放，就会存在重复释放内存问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ifqgSlgRQJq8-X7JNcXLcg/zh-cn_image_0000002404125273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/aGgSIWggToO7EqxQYtxtSg/zh-cn_image_0000002404125273.png)
 
 ### 修复方法
 
@@ -253,6 +253,8 @@ JS侧通过Add接口添加数据，native侧以napi\_value保存到vector，JS�
 
 ## 案例5：SIGABRT类崩溃问题
 
+### 概述
+
 SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()函数，崩溃原因在调用abort()函数的代码。由程序检测到异常时触发，如线程创建失败，文件描述符使用异常等，大多数情况是各基础库（C库等）进行校验操作，校验失败会主动终止进程。
 
 ```cpp
@@ -264,7 +266,9 @@ static napi_value TriggerCrash(napi_env env, napi_callback_info info)
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/uoMfKahVSpqvTAA0jAs7Vw/zh-cn_image_0000002370405728.png)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
+### 分析步骤
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/4oGFKuRBRkyjH5vU3U56ow/zh-cn_image_0000002370405728.png)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
 
 除了调用abort函数外，C++中的另一个异常处理机制还包括assert函数，assert用于校验当前函数执行流程中的一些数据，校验失败进程会主动终止，分析问题的方法都是一样的。
 
@@ -281,9 +285,11 @@ static napi_value TriggerCrash(napi_env env, napi_callback_info info)
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/A--1HH3_THS9IoEAwef3CQ/zh-cn_image_0000002404045465.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/3oGdol_wR0OnugnugmvnzA/zh-cn_image_0000002404045465.png)
 
 ## 案例6：通过反汇编分析CppCrash问题
+
+### 概述
 
 **llvm-objdump工具使用方法**
 
@@ -311,7 +317,7 @@ Tid:48552, Name:xxx
 ...
 ```
 
-分析步骤：
+### 分析步骤
 
 1. 根据pc寄存器地址找到对应的汇编指令，确定在哪条指令执行时发生崩溃。
 
@@ -415,7 +421,7 @@ ILL\_ILLPACCFI类崩溃问题仅在开启指针校验功能后，在校验指针
 
 ### 问题现象
 
-进程发生崩溃后生成的cppcrash中Reason字段是ILL\_ILLPACCFI，崩溃日志核心内容如下：
+进程发生崩溃后生成的CppCrash中Reason字段是ILL\_ILLPACCFI，崩溃日志核心内容如下：
 
 ```screen
 Generated by HiviewDFX@OpenHarmony

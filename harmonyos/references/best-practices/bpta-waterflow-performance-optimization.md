@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 瀑布流加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 瀑布流加载丢帧优化
 category: best-practices
-scraped_at: 2026-09-21T06:25:46+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:da2b7a5c2618e07c73808e2b6318bf944d302487b71ff7878ddee7e8f51cc65b
+scraped_at: 2026-10-16T07:06:46+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:6d2f334ae51c6146716353624558c9b555ca5f011d463561971add6d6c78253d
 ---
 
 ## 概述
@@ -20,32 +20,35 @@ content_hash: sha256:da2b7a5c2618e07c73808e2b6318bf944d302487b71ff7878ddee7e8f51
 
 先看一下组件示例代码中瀑布流的基本用法：
 
-```typescript
+```screen
 build() {
   Column({ space: 2 }) {
+    // eslint-disable-next-line @performance/waterflow-data-preload-check
     WaterFlow({ footer: this.itemFoot() }) {
       LazyForEach(this.dataSource, (item: number) => {
         FlowItem() {
+          // eslint-disable-next-line @performance/hp-arkui-use-reusable-component
           Column() {
-            Text("N" + item).fontSize(12).height('16')
-            Image('res/waterFlowTest(' + item % 5 + ').jpg')
+            Text('N' + item).fontSize(NUM_12).height('16');
+            Image('res/waterFlowTest(' + item % NUM_5 + ').jpg')
               .objectFit(ImageFit.Fill)
               .width('100%')
-              .layoutWeight(1)
-          }
+              .layoutWeight(NUM_1);
+          };
         }
         .width('100%')
-        .height(this.itemHeightArray[item % 100])
-        .backgroundColor(this.colors[item % 5])
-      }, (item: string) => item)
+        .height(this.itemHeightArray[item % NUM_100])
+        .backgroundColor(this.colors[item % NUM_5]);
+      }, (item: string) => item);
     }
-    .columnsTemplate("1fr 1fr")
-    .columnsGap(10)
-    .rowsGap(5)
-    .backgroundColor(0xFAEEE0)
+    .cachedCount(NUM_2)
+    .columnsTemplate('1fr 1fr')
+    .columnsGap(NUM_10)
+    .rowsGap(NUM_5)
+    .backgroundColor(COLOR_BACKGROUND)
     .width('100%')
-    .height('100%')
-  }
+    .height('100%');
+  };
 }
 ```
 
@@ -63,7 +66,7 @@ build() {
 
 滑动场景中，FlowItem及其子组件频繁创建和销毁。将FlowItem中的组件封装成自定义组件，并使用@Reusable装饰器修饰，以减少ArkUI框架内部反复创建销毁节点的开销。
 
-@Reusable装饰器实现的组件复用仅限于父组件内。 若要支持全局范围的组件复用，可以使用全局组件复用池的第三方库。
+@Reusable装饰器实现的组件复用仅限于父组件内。若要支持全局范围的组件复用，可以使用全局组件复用池的第三方库。
 
 组件复用详细原理及性能分析参考：[组件复用](bpta-best-practices-long-list.md#section36781044162218)
 
@@ -82,7 +85,7 @@ build() {
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/sPfws8CORRGSe_tDiLWBKA/zh-cn_image_0000002194010900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/nUrwlq-aSCmE3yNz1e5LDA/zh-cn_image_0000002194010900.png)
 
 示例如下：
 
@@ -132,7 +135,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/SWPBk2mWTlS0YAmbLELmEw/zh-cn_image_0000002194010908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Jk5OVIwbR5K3G0Ia59oYAw/zh-cn_image_0000002194010908.png "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -159,7 +162,7 @@ getTitleHeight(title: string): number {
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/RH69n4otRnKix70sYvlM3Q/zh-cn_image_0000002194010904.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/0BTgCO9YSJaNyNlOLyDuvA/zh-cn_image_0000002194010904.png "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 
@@ -173,17 +176,17 @@ getTitleHeight(title: string): number {
 
 从测试结果可以看出，使用LazyForEach懒加载后，相关指标显著提升，尤其是在内存使用和首次渲染时间方面。其他优化方法可以进一步减少滑动过程中的丢帧率，从而优化交互体验。缓存数据项会影响首次渲染时间，因为缓存的数据未在首屏展示，但需要加载额外的数据，导致内存使用增加。由于UI组件的复用，内存使用显著减少。
 
-对于瀑布流性能优化方式，与长列表优化类似，都可以使用懒加载、缓存列表项、动态预加载、组件复用、布局优化等方式优化性能。固定宽高作为瀑布流特有的优化性能手段能够进一步提升瀑布流的性能，同时可以避免新加载元素瞬间刷新带来的"闪烁"问题。在滑动过程中加载数据，可以避免同一时间创建大量组件而导致丢帧的情况。相应技术总结见下表：
+对于瀑布流性能优化方式，与长列表优化类似，都可以使用懒加载、缓存列表项、动态预加载、组件复用、布局优化等方式优化性能。固定宽高作为瀑布流特有的优化性能手段能够进一步提升瀑布流的性能，同时可以避免新加载元素瞬间刷新带来的“闪烁“问题。在滑动过程中加载数据，可以避免同一时间创建大量组件而导致丢帧的情况。相应技术总结见下表：
 
 **表2** 瀑布流性能优化方法总结
 
 | 技术名称 | 适用场景 | 参考文章 |
 | --- | --- | --- |
-| 懒加载 | 适用于瀑布流场景，解决一次性加载并渲染大量数据造成的性能瓶颈。 | [长列表加载性能优化](bpta-best-practices-long-list.md)、  [使用懒加载优化性能](bpta-lazyforeach-optimization.md)、  [数据懒加载](../harmonyos-guides/arkts-rendering-control-lazyforeach.md) |
-| 缓存列表项 | 适用于加载列表项数据请求耗时的场景。比如，瀑布流列表中含有短视频、高清图片等数据量比较大的资源。 | [长列表加载性能优化](bpta-best-practices-long-list.md) |
-| 组件复用 | 适用于瀑布流中存在大量结构相同的组件频繁创建与销毁导致性能瓶颈的场景。 | [组件复用最佳实践](bpta-component-reuse.md) |
+| 懒加载 | 适用于瀑布流场景，解决一次性加载并渲染大量数据造成的性能瓶颈。 | [长列表加载丢帧优化](bpta-best-practices-long-list.md)、  [懒加载优化性能](bpta-lazyforeach-optimization.md)、  [LazyForEach：数据懒加载](../harmonyos-guides/arkts-rendering-control-lazyforeach.md) |
+| 缓存列表项 | 适用于加载列表项数据请求耗时的场景。比如，瀑布流列表中含有短视频、高清图片等数据量比较大的资源。 | [长列表加载丢帧优化](bpta-best-practices-long-list.md) |
+| 组件复用 | 适用于瀑布流中存在大量结构相同的组件频繁创建与销毁导致性能瓶颈的场景。 | [自定义组件复用开发实践](../doccenter-capabilities/arkts-component_reuse.md) |
 | 固定宽高 | 适用于瀑布流页面组件高度不一的场景。 | [利用布局边界减少布局计算](../harmonyos-guides/arkts-layout-optimization-guidance.md#利用布局边界减少布局计算) |
-| 布局优化 | 错误的布局方式可能会导致组件树和嵌套层数过多，在创建和布局绘制阶段产生较大的性能开销，所以可以通过布局优化提升性能。 | [合理使用布局](../harmonyos-guides/arkts-layout-optimization-guidance.md#合理使用布局组件) |
+| 布局优化 | 错误的布局方式可能会导致组件树和嵌套层数过多，在创建和布局绘制阶段产生较大的性能开销，所以可以通过布局优化提升性能。 | [合理使用布局组件](../harmonyos-guides/arkts-layout-optimization-guidance.md#合理使用布局组件) |
 | 状态管理 | 在ArkUI的开发过程中，如果没有选择合适的装饰器或合理的控制状态更新范围，会导致非必要的UI视图刷新，造成性能浪费。 | [状态管理最佳实践](bpta-status-management.md) |
 
 ## 示例代码

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-analyze-me
 title: 分析内存占用问题
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题
 category: best-practices
-scraped_at: 2026-04-28T08:22:21+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-10-16T07:06:45+08:00
+doc_updated_at: 2026-10-15
 content_hash: sha256:4874d2244b7c7470efc7a908f42662bfec0482a6a52c06930d17d847d1db8648
 ---
 

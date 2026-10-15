@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-ticket-cl
 title: 多设备股票类界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备股票类界面
 category: best-practices
-scraped_at: 2026-09-21T06:25:40+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:00e2fbbd74a28b5c62b39e46d0bb6db062c64f53739721a8488d380adc3b075e
+scraped_at: 2026-10-16T07:06:40+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:13a2756897f7ffc7b3677190c4bb18cdbb09650c2c63bedff2da54e84e9cb331
 ---
 
 ## 概述
 
-本文以当前流行的垂类市场中的股票类应用为典型案例，详细介绍“一多”在实际开发中的应用，主要涵盖自选股和个股详情两个典型页面，展示其在直板机、双折叠、三折叠、阔折叠、平板和电脑六种产品形态上的“一次开发，多端部署”。下文将从UX设计、工程管理、移动端页面、电脑端页面四个角度，介绍“一多”股票类应用在开发过程中的最佳实践。
+本文以当前流行的垂类市场中的股票类应用为典型案例，详细介绍“一多”在实际开发中的应用，主要涵盖自选股和个股详情两个典型页面，展示其在直板机、双折叠、三折叠、阔折叠、平板和电脑六种产品形态上的“一次开发，多端部署”。下文将从UX设计、工程管理、页面开发（移动端页面、电脑端页面）三个角度，介绍“一多”股票类应用在开发过程中的最佳实践。
 
 **说明** 
 
@@ -36,7 +36,7 @@ content_hash: sha256:00e2fbbd74a28b5c62b39e46d0bb6db062c64f53739721a8488d380adc3
 
 股票类应用的UX设计可参考金融理财类多设备响应式设计指南的[自选股](../design-guides/responsive-design-examples6-0000001793536905.md#section0732192812391)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/gctEq038SEavNpsFjFpniA/zh-cn_image_0000002579631774.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/qVCcFOfORamjmaPe7Mx0yA/zh-cn_image_0000002579631774.png "点击放大")
 
 ## 工程管理
 
@@ -50,12 +50,12 @@ content_hash: sha256:00e2fbbd74a28b5c62b39e46d0bb6db062c64f53739721a8488d380adc3
 
 HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力层，为开发者提供清晰、高效、可扩展的设计架构。详细请参见[分层架构设计](bpta-layered-architecture-design.md)。
 
-股票类应用根据一多推荐的commons、features、products的"三层工程架构"划分目录。其中，features（基础特性层）按业务功能划分为三个独立模块：股票交易-stockdeal（包含买入弹窗、K线图表、交易详情等组件）、股票详情-stockdetail（包含股票详情页、多窗口入口、信息表格等）以及股票市场-stockmarket（包含市场列表组件）。公共常量、媒体播放工具以及窗口管理工具等需要被不同页面依赖引用的内容，划分为一个commons（公共能力层）：基础能力-base。products（产品定制层）包含default和pc两个模块定制了程序标准启动流程和多场景协同场景的入口能力。
+股票类应用根据一多推荐的common、features、products的"三层工程架构"划分目录。其中，features（基础特性层）按业务功能划分为三个独立模块：股票交易-stockdeal（包含买入弹窗、K线图表、交易详情等组件）、股票详情-stockdetail（包含股票详情页、多窗口入口、信息表格等）以及股票市场-stockmarket（包含市场列表组件）。公共常量、媒体播放工具以及窗口管理工具等需要被不同页面依赖引用的内容，划分为一个common（公共能力层）：基础能力-base。products（产品定制层）包含default和pc两个模块定制了程序标准启动流程和多场景协同场景的入口能力。
 
 工程结构如下（目录层级）：
 
 ```screen
-├──commons
+├──common
 │  └──base/src/main
 │     └──ets
 │        ├──baseviews                     // 公共视图组件
@@ -90,9 +90,9 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
    │  └──resources                        // 应用静态资源目录
    └──pc/src/main
       ├──ets
-      │  ├──pages                         // PC端页面
-      │  ├──pcability                     // PC端程序入口
-      │  └──pcbackupability               // PC程序备份入口
+      │  ├──pages                         // 电脑端页面
+      │  ├──pcability                     // 电脑端程序入口
+      │  └──pcbackupability               // 电脑程序备份入口
       └──resources                        // 应用静态资源目录
 ```
 
@@ -137,7 +137,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 ### 股票详情页
 
-股票详情页主要用于响应用户输入、展示具体股票详细信息以及查看讨论信息等内容。按照功能设计，将自选股页相关内容划分为6个区域，效果图如下所示：
+股票详情页主要用于响应用户输入、展示具体股票详细信息以及查看讨论信息等内容。按照功能设计，将股票详情页相关内容划分为6个区域，效果图如下所示：
 
 | 横向(/纵向)断点 | sm/md | sm/lg | md | lg、xl |
 | --- | --- | --- | --- | --- |
@@ -413,10 +413,10 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 * 窗口模式
 
-  长视频应用在电脑端上支持全屏和自由窗口两种模式，具体实现可参考[窗口模式](bpta-multi-device-window-mode.md)。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏和自由窗口模式下的布局。
+  股票类应用在电脑端上支持全屏和自由窗口两种模式，具体实现可参考[窗口模式](bpta-multi-device-window-mode.md)。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏和自由窗口模式下的布局。
 * 窗口沉浸式
 
-  根据UX设计规范，需要实现全屏和自由窗口下的沉浸式效果，具体实现可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。全屏模式下，通过[window.setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现沉浸式。自由窗口模式下，通过[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使页面内容延伸至标题栏区域，实现沉浸式显示效果。
+  根据UX设计规范，需要实现全屏和自由窗口下的沉浸式效果，具体实现可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。全屏模式下，通过[setWindowLayoutFullscreen](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)方法实现沉浸式。自由窗口模式下，通过[setWindowDecorVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)方法将参数设置为false，隐藏标题栏。仅保留右上角三键，使页面内容延伸至标题栏区域，实现沉浸式显示效果。
 
 ### 自选股页面
 
@@ -424,7 +424,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 * 将电脑端自选股页划分为四个部分，效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/HxXihYTxTNmpbzIa0DKmcw/zh-cn_image_0000002610071557.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/EWXjppt2RA6X5bCIPo-veQ/zh-cn_image_0000002610071557.png "点击放大")
 
 * 对各个区域使用的多种能力进行分析，实现方案如下表：
 
@@ -441,7 +441,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 * 将电脑端股票详情页划分为五个部分，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/eOuTMZwtTpi_MYlO-5L8dQ/zh-cn_image_0000002579631780.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/5EdgSjwASeioYWMtatouYQ/zh-cn_image_0000002579631780.png "点击放大")
 
 * 对各区域使用的能力进行分析，实现方案如表所示：
 

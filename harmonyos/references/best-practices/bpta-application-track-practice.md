@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用埋点
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用埋点
 category: best-practices
-scraped_at: 2026-09-21T06:25:36+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:57f17fd7dc51540fcc99d0c97c757656f350de2b9ebcd40bc0b96d11107222c4
+scraped_at: 2026-10-16T07:06:35+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:6d5828fa054e3568d144a05b0c8331d64ad64abd161e9c244dbcbe41f682822d
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:57f17fd7dc51540fcc99d0c97c757656f350de2b9ebcd40bc0b96d11107
 
 接下来会从（1）组件动态绑定埋点数据；（2）点击埋点方案；（3）曝光埋点方案；（4）页面埋点方案四部分介绍。整体方案使用全局无感监听能力[UIObserver](../harmonyos-references/arkts-apis-uicontext-uiobserver.md)和[setOnVisibleAreaApproximateChange](../harmonyos-references/ts-uicommonevent.md#setonvisibleareaapproximatechange)属性实现埋点功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/S82RKwa5RZmq43sXN9Az0A/zh-cn_image_0000002194010920.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/iDbRt094SB2O0pkQQpcfsQ/zh-cn_image_0000002194010920.png "点击放大")
 
 ### 绑定埋点数据
 

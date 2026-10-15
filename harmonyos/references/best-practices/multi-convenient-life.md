@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-convenien
 title: 多设备便捷生活界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备便捷生活界面
 category: best-practices
-scraped_at: 2026-09-21T06:25:41+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:8cafc109aa2c829d52ad9069b5201b27bc0ddd3ef23a4c9d8aaa3c1bcbe302ff
+scraped_at: 2026-10-16T07:06:41+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:b3322026ac37aa7747e3bf16f6187359820f7eaea8e8b99601866dc8ba18a072
 ---
 
 ## 概述
@@ -86,7 +86,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 **店铺页**
 
-店铺页展示店铺信息和所有商品，侧边栏支持快速切换。用户可以选择商品规格，弹窗以不同形态显示，贴合操作习惯。观察店铺页在不同设备上的 UX 设计图，可以进行如下设计：
+店铺页展示店铺信息和所有商品，侧边栏支持快速切换。用户可以选择商品规格，弹窗以不同形态显示，贴合操作习惯。观察店铺页在不同设备上的UX设计图，可以进行如下设计：
 
 * 将店铺页划分为4个区域，效果图如下：
 
@@ -103,7 +103,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
   | 1 | 店铺信息展示区 | 在父元素上使用[Flex](../harmonyos-references/ts-container-flex.md)组件实现挪移布局和visibility属性实现样式切换。 |
   | 2 | 菜单列表 | 使用[Tabs](../harmonyos-references/ts-container-tabs.md)组件嵌套[Scroll](../harmonyos-references/ts-container-scroll.md)组件实现顶部页签嵌套列表。 |
   | 3 | 购物车 | 使用[拉伸能力](bpta-multi-device-adaptive-layout.md#拉伸能力)结合断点控制元素尺寸，在lg断点采用[Blank](../harmonyos-references/ts-basic-components-blank.md)组件填充中间空白区域。 |
-  | 4 | 选规格弹窗 | 使用[BindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)属性和[PopUp](../harmonyos-references/ts-universal-attributes-popup.md)属性实现不同设备上的弹窗显示。 |
+  | 4 | 选规格弹窗 | 使用[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)属性和[PopUp](../harmonyos-references/ts-universal-attributes-popup.md)属性实现不同设备上的弹窗显示。 |
 * 店铺信息展示区
 
   使用Flex属性的direction属性根据断点切换上下或左右布局。使用visibility属性根据断点切换显隐。
@@ -315,7 +315,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
   | --- | --- | --- |
   | 1 | 顶部功能区 | 使用[拉伸能力](bpta-multi-device-adaptive-layout.md#拉伸能力)结合断点控制元素尺寸。 |
   | 2 | 电影信息 | 利用响应式布局的栅格布局，使用[Grid](../harmonyos-references/ts-container-grid.md)组件实现挪移布局，设置aspectRatio属性实现缩放能力。 |
-  | 3 | 电影详情区 | 使用tabs嵌套column，不同模块标题使用[拉伸能力](bpta-multi-device-adaptive-layout.md#拉伸能力)结合断点控制元素尺寸，同时采用[Blank](../harmonyos-references/ts-basic-components-blank.md)组件填充中间空白区域。同多设备长视频界面 搜索发现，内容使用[List](../harmonyos-references/ts-container-list.md)组件实现延伸能力。 |
+  | 3 | 电影详情区 | 使用tabs嵌套column，不同模块标题使用[拉伸能力](bpta-multi-device-adaptive-layout.md#拉伸能力)结合断点控制元素尺寸，同时采用[Blank](../harmonyos-references/ts-basic-components-blank.md)组件填充中间空白区域。同多设备长视频界面搜索发现，内容使用[List](../harmonyos-references/ts-container-list.md)组件实现延伸能力。 |
 
 **选影院页**
 

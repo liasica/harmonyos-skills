@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-mate-book-
 title: 折叠电脑应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 电脑 > 折叠电脑应用开发
 category: best-practices
-scraped_at: 2026-09-21T06:25:43+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:0a890b9ce66d52a2acfa65350f33475e4bf154d8bbf2d2a686dae34edcc7bec0
+scraped_at: 2026-10-16T07:06:43+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:9550a2b7b6d64c13def5a792342360390a73218b55ecbe334b8dbfce56dc6dc3
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 除传统电脑的基础功能外，该设备还具备以下核心特性：
 
-1. 设备形态：支持唤起全尺寸键盘的半折叠态、关闭全尺寸键盘的半折叠态、横向展开态、竖向展开态和外接显示器五种使用形态。
+1. 设备形态：支持唤起全尺寸键盘和关闭全尺寸键盘两种半折叠态、横向展开态、以及竖向展开态和外接显示器五种使用形态。
 2. 交互设计：在半折叠态下，上下两块屏幕均可独立操作。用户可点击桌面右下角键盘图标，或通过八指及以上多指触控屏幕唤起全尺寸虚拟键盘，获得传统电脑的操作体验。
 3. 屏幕显示方向：半折叠态仅支持固定显示方向，不支持屏幕旋转；展开态支持三种屏幕显示方向（[display.Orientation](../harmonyos-references/js-apis-display.md#orientation10)）：横屏（1-LANDSCAPE）、反向横屏（3-LANDSCAPE\_INVERTED）和竖屏（0-PORTRAIT），且默认开启屏幕旋转，无法关闭。
 
@@ -80,7 +80,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
   [Display](../harmonyos-references/js-apis-display.md#display)对象中包含屏幕宽高，屏幕可用区域宽高等重要信息，对应的Display区域如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/F1BL3xz0Q7qQmVPmFIv4CQ/zh-cn_image_0000002585466890.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/--zeJlHES8SOQMLJiBhUuA/zh-cn_image_0000002585466890.png "点击放大")
 
   | API | 说明 |
   | --- | --- |
@@ -113,7 +113,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 折叠电脑具备独特的折叠功能，在不同折叠状态下展现出不同的特性。
 
-通过[display.isFoldable()](../harmonyos-references/js-apis-display.md#displayisfoldable10)接口可判断设备是否支持折叠，若支持则返回true，否则返回false。通过[display.getFoldStatus()](../harmonyos-references/js-apis-display.md#displaygetfoldstatus10)接口可获取折叠设备当前的折叠状态，返回结果可参考[FoldStatus](../harmonyos-references/js-apis-display.md#foldstatus10)。下表以Matebook Fold产品为例，展示了折叠电脑的折叠状态和属性。
+通过[display.isFoldable()](../harmonyos-references/js-apis-display.md#displayisfoldable10)接口可判断设备是否支持折叠，若支持则返回true，否则返回false。通过[display.getFoldStatus()](../harmonyos-references/js-apis-display.md#displaygetfoldstatus10)接口可获取折叠设备当前的折叠状态，返回结果可参考[FoldStatus](../harmonyos-references/js-apis-display.md#foldstatus10)。下表以MateBook Fold产品为例，展示了折叠电脑的折叠状态和属性。
 
 |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- |
@@ -150,11 +150,11 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/PxS0UHgpSAqzb-h_U47EnQ/zh-cn_image_0000002585626830.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/MWyniBpDTfWy_MEc-M4Dww/zh-cn_image_0000002585626830.png "点击放大")
 
 ### 开合适配
 
-开合连续指应用在屏幕形态与窗口状态切换时，保持页面内容连贯，延续任务进度与运行状态。支持用户快速接续切换前的操作，打造流畅的切换体验。例如折叠电脑在半折叠态和展开态之间切换时，应用页面内容保持不变、状态无缝接续，保障使用体验不受影响。具体实现方案，可参考[开合连续](bpta-multi-device-screen-diff.md#section16541144511135)章节。
+开合连续性指在屏幕形态与窗口状态切换时，保持页面内容连贯，延续任务进度与运行状态。支持用户快速接续切换前的操作，打造流畅的切换体验。例如折叠电脑在半折叠态和展开态之间切换时，应用页面内容保持不变、状态无缝接续，保障使用体验不受影响。具体实现方案，可参考[开合连续](bpta-multi-device-screen-diff.md#section16541144511135)章节。
 
 ### 焦点导航
 
@@ -173,7 +173,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 **如何区分MateBook Pro和MateBook Fold**
 
 * 页面布局类问题：页面布局由窗口形态、窗口宽高、宽高比决定，无需区分具体产品型号或设备类型。例如：MateBook Fold横向展开态布局应与MateBook Pro保持一致；MateBook Fold其余状态对应lg横向断点，布局需与平板保持一致。因此布局适配只需判断断点、实现响应式布局即可，详情可参考[断点](bpta-multi-device-responsive-layout.md#section1532120147301)的使用。
-* 非页面布局或功能类问题：MateBook Pro与 MateBook Fold的设备类型[deviceType](../harmonyos-references/js-apis-device-info.md#常量)均为2in1。因此，需要通过[isFoldable()](../harmonyos-references/js-apis-display.md#displayisfoldable10)判断是否为可折叠设备，MateBook Fold返回true，MateBook Pro返回false。
+* 非页面布局或功能类问题：MateBook Pro与MateBook Fold的设备类型[deviceType](../harmonyos-references/js-apis-device-info.md#常量)均为2in1。因此，需要通过[isFoldable()](../harmonyos-references/js-apis-display.md#displayisfoldable10)判断是否为可折叠设备，MateBook Fold返回true，MateBook Pro返回false。
 
 ### 页面异常
 

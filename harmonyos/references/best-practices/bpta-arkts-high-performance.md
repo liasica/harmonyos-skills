@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkts-high
 title: ArkTS高性能编程
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > ArkTS高性能编程
 category: best-practices
-scraped_at: 2026-09-16T06:54:57+08:00
-doc_updated_at: 2026-09-15
+scraped_at: 2026-10-16T07:06:35+08:00
+doc_updated_at: 2026-10-15
 content_hash: sha256:9c3b242fa0b4196bdca1abf9782cece1ddaad374e0bee42b3d97075f836e991b
 ---
 

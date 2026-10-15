@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGSEGV无效内存访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGSEGV无效内存访问故障模式说明
 category: best-practices
-scraped_at: 2026-09-16T06:55:13+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:024468cb3c7d0043e750f531ecb55b395e3240d8bc59549cb4c77c0907d145fc
+scraped_at: 2026-10-16T07:06:51+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:749bc951e6b1abce74b37fcb6b70a8f2a13cb67bc27258d758e49619d00674c3
 ---
 
 ## SEGV\_MAPERR不存在的内存地址
@@ -21,9 +21,9 @@ SEGV\_MAPERR表示程序试图访问一个未映射到物理内存或虚拟内�
 问题分析的步骤如下：
 
 1. **确认类型：**根据Reason字段等信息初步确认故障的具体类型。
-2. **调用栈分析：** 根据调用栈、寄存器等信息进一步确认问题原因，缩小分析范围。
-3. **代码分析：** 查找对应调用栈的具体代码行，结合代码上下文，查找代码中的异常原因，并据此进行防范修改。
-4. **更多日志：** 可以结合更多的流水日志等进行辅助定位，还原故障场景等。
+2. **调用栈分析：**根据调用栈、寄存器等信息进一步确认问题原因，缩小分析范围。
+3. **代码分析：**查找对应调用栈的具体代码行，结合代码上下文，查找代码中的异常原因，并据此进行防范修改。
+4. **更多日志：**可以结合更多的流水日志等进行辅助定位，还原故障场景等。
 
 常见的几种问题类型如下：
 
@@ -31,14 +31,14 @@ SEGV\_MAPERR表示程序试图访问一个未映射到物理内存或虚拟内�
 
    这是最常见的原因。当指针值为NULL(0x0)或接近0的小地址时，尝试读取或写入该地址会触发此错误。
 
-   **示例：** 详情参见下文案例一。
+   **示例：**详情参见下文案例一。
 
    ```cpp
    int *ptr = nullptr;
    int value = *ptr; // crash: SEGV_MAPERR, fault addr 0x0
    ```
 
-   **特征：** 在故障日志Reason字段中的故障地址通常为0x0、0x4、0x8等极小的值， 同时也会提示probably caused by NULL pointer dereference的字样。
+   **特征：**在故障日志Reason字段中的故障地址通常为0x0、0x4、0x8等极小的值， 同时也会提示probably caused by NULL pointer dereference的字样。
 2. **踩内存问题**。
 
    当发生踩内存问题，并且踩踏了指针指向的地址，当被踩踏后的指针指向了一个完全未映射（不存在）的内存区域，就会报SEGV\_MAPERR；如果指向的是一个已存在但权限不足或数据损坏的区域，可能会报其他错误（如SEGV\_ACCERR）或导致逻辑错误而非立即崩溃。
@@ -47,7 +47,7 @@ SEGV\_MAPERR表示程序试图访问一个未映射到物理内存或虚拟内�
 
       指针指向的内存已经被free或delete释放，或者对象已被销毁，但指针未被置空，后续再次访问该地址。
 
-      **示例：** 详情参见下文案例二。
+      **示例：**详情参见下文案例二。
 
       ```cpp
        int tmp = 1;
@@ -1075,7 +1075,7 @@ pstate:0000000020001000 esr:0000000092000047
 
 1. 确认类型。
 
-   在LastFatalMessage字段中有Failed to unwind stack, try to get unreliable call stack from #03 by reparsing thread stack.的字样。可以确定这是一个栈不可信的问题，真实原因是栈上的lr寄存器被踩导致的。
+   在LastFatalMessage字段中有Failed to unwind stack, try to get unreliable call stack from #03 by reparsing thread stack的字样。可以确定这是一个栈不可信的问题，真实原因是栈上的lr寄存器被踩导致的。
 2. 调用栈分析。
 
    分析调用栈，由于只有00帧和01帧可信，先看下这两帧。00帧是cfi检测，并且cfi检测失败，01帧是业务代码。 对01帧通过llvm-objdump.exe -C -S -l -d libentry.so | c++filt.exe > obj.asm命令进行反编译。（在entry\build\default\intermediates\cmake\default\obj\arm64-v8a目录下获取带符号的二进制文件）
@@ -1715,7 +1715,7 @@ void* mem = mmap(NULL, 4096, PROT_READ| PROT_WRITE | PROT_EXEC, MAP_PRIVATE | MA
    pstate:0000000000001000 esr:0000000092000047
    ```
 
-   说明1：如上故障日志Reason字段，可以看到崩溃类型为Signal:SIGSEGV(SEGV\_ACCERR)@0x0000005a027f8000 。后面便为访问出错的地址。
+   说明1：如上故障日志Reason字段，可以看到崩溃类型为Signal:SIGSEGV(SEGV\_ACCERR)@0x0000005a027f8000。后面便为访问出错的地址。
 2. 分析崩溃栈。
 
    证据2：

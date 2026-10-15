@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-always-on-
 title: 全链路盯盘开发实践
 breadcrumb: 最佳实践 > 场景创新 > 全链路盯盘开发实践
 category: best-practices
-scraped_at: 2026-09-21T06:25:34+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:286a7525f22b89e97fa2aff50dd40eeafc85abee2e6cdb09e5963f3f8607e7d7
+scraped_at: 2026-10-16T07:06:33+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:838a242ae6d11e9dbbcdebfa403a4a67575de84c17c45ea9418326d0ebd41acc
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ content_hash: sha256:286a7525f22b89e97fa2aff50dd40eeafc85abee2e6cdb09e5963f3f860
 
 全链路盯盘涉及多项系统能力的综合运用，各能力之间的协作关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/l4aHJG2DRRiBXWrW5AyfSA/zh-cn_image_0000002748611785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/_m9exJ6oQAmRhcRkj9UMBA/zh-cn_image_0000002748611785.png "点击放大")
 
 本文主要内容如下：
 
@@ -49,7 +49,7 @@ content_hash: sha256:286a7525f22b89e97fa2aff50dd40eeafc85abee2e6cdb09e5963f3f860
 
 **闪控球**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/BX-cwMzMRT6DcVh5sMWzKQ/zh-cn_image_0000002718931886.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/evohd8NuT4qF47apvYbTpQ/zh-cn_image_0000002718931886.png "点击放大")
 
 |  |  |  |
 | --- | --- | --- |
@@ -79,7 +79,7 @@ content_hash: sha256:286a7525f22b89e97fa2aff50dd40eeafc85abee2e6cdb09e5963f3f860
 
 桌面盯盘的初始化流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/rLhFF0YzS_-qhTjGoV-yrA/zh-cn_image_0000002748611789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Q8zDOJ2gQa-jv1M82GSXww/zh-cn_image_0000002748611789.png "点击放大")
 
 ### 开发步骤
 
@@ -350,25 +350,25 @@ async startFloatPanel() {
 
 **防窥保护**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/X6Qh3clEQA-zTSG63mz9AA/zh-cn_image_0000002718931890.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/RUdY_wGrRK23GZ7dVxUgqA/zh-cn_image_0000002718931890.png "点击放大")
 
 ### 实现原理
 
-防窥保护基于Device Security Kit中的[DlpAntiPeep](../harmonyos-references/devicesecurity-dlpantipeep-api.md)模块实现。系统通过智能判断，识别长期通过人脸解锁手机的用户为机主。当检测到非机主与机主同时注视屏幕时，系统会回调通知应用进入被窥视状态。
+防窥保护基于Device Security Kit中的[DlpAntiPeep（防窥保护）](../harmonyos-references/devicesecurity-dlpantipeep-api.md)模块实现。系统通过智能判断，识别长期通过人脸解锁手机的用户为机主。当检测到非机主与机主同时注视屏幕时，系统会回调通知应用进入被窥视状态。
 
 **说明** 
 
 核心API说明如下：
 
 * **[canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)：**查询系统是否具备某个系统能力。
-* **[DlpAntiPeep.isDlpAntiPeepSwitchOn()](../harmonyos-references/devicesecurity-dlpantipeep-api.md#isdlpantipeepswitchon)**：异步查询当前应用的防窥保护开关是否已开启。
-* **[DlpAntiPeep.on('dlpAntiPeep', callback)](../harmonyos-references/devicesecurity-dlpantipeep-api.md#ondlpantipeep)**：注册防窥保护状态监听，回调参数为DlpAntiPeepStatus枚举。
-* **[DlpAntiPeep.getDlpAntiPeepInfo()](../harmonyos-references/devicesecurity-dlpantipeep-api.md#getdlpantipeepinfo)：**同步获取当前窥视状态。
-* **[DlpAntiPeep.setAntiPeepMaskLayer()](../harmonyos-references/devicesecurity-dlpantipeep-api.md#setantipeepmasklayer)：**对指定窗口设置系统级蒙层。
+* **[isDlpAntiPeepSwitchOn()](../harmonyos-references/devicesecurity-dlpantipeep-api.md#isdlpantipeepswitchon)**：异步查询当前应用的防窥保护开关是否已开启。
+* **[on("dlpAntiPeep")](../harmonyos-references/devicesecurity-dlpantipeep-api.md#ondlpantipeep)**：注册防窥保护状态监听，回调参数为DlpAntiPeepStatus枚举。
+* **[getDlpAntiPeepInfo()](../harmonyos-references/devicesecurity-dlpantipeep-api.md#getdlpantipeepinfo)：**同步获取当前窥视状态。
+* **[setAntiPeepMaskLayer()](../harmonyos-references/devicesecurity-dlpantipeep-api.md#setantipeepmasklayer)：**对指定窗口设置系统级蒙层。
 
 防窥保护的监听流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/GG6JlGGJTLqEN82A7DoDpQ/zh-cn_image_0000002719091808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/gjI2qqQvQmiB1pAXx64xlA/zh-cn_image_0000002719091808.png "点击放大")
 
 ### 开发步骤
 
@@ -508,17 +508,17 @@ private async handleAntiPeepStatus(status: dlpAntiPeep.DlpAntiPeepStatus) {
 
 **锁屏卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/cWzvOq_6Tnu723e9j1jFdw/zh-cn_image_0000002748531717.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/TPu7hYtARROWaa5mJtcuag/zh-cn_image_0000002748531717.png "点击放大")
 
 ### 实现原理
 
-锁屏盯盘基于[Form Kit](../harmonyos-guides/formkit-overview.md)提供的锁屏卡片能力实现。锁屏卡片是[服务卡片](../design-guides/system-features-service-widget-0000002087671904.md)的一种特殊展示形式，在设备锁屏界面上显示，支持1×1和1×2两种尺寸。卡片数据通过[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md#formextensionability)管理，使用[formProvider.updateForm()](../harmonyos-references/js-apis-application-formprovider.md#formproviderupdateform)接口刷新卡片内容。
+锁屏盯盘基于[Form Kit（卡片开发服务）](../harmonyos-guides/formkit-overview.md)提供的锁屏卡片能力实现。锁屏卡片是[服务卡片](../design-guides/system-features-service-widget-0000002087671904.md)的一种特殊展示形式，在设备锁屏界面上显示，支持1×1和1×2两种尺寸。卡片数据通过[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md#formextensionability)管理，使用[formProvider.updateForm()](../harmonyos-references/js-apis-application-formprovider.md#formproviderupdateform)接口刷新卡片内容。
 
 锁屏卡片与桌面卡片共享同一套FormExtensionAbility数据管理逻辑。
 
 ### 开发步骤
 
-1. 申请锁屏卡片开放能力：在AppGallery Connect中创建应用时，在“开放能力接入”页面申请锁屏卡片能力。申请审批通过后，应用即可在锁屏页面展示卡片，详见[锁屏卡片开放能力申请](../harmonyos-guides/arkts-ui-lockscreen-form-development.md#锁屏卡片开放能力申请)。
+1. 申请锁屏卡片开放能力：在HarmonyOS开发者中心中创建应用时，在“开放能力接入”页面申请锁屏卡片能力。申请审批通过后，应用即可在锁屏页面展示卡片，详见[锁屏卡片开放能力申请](../harmonyos-guides/arkts-ui-lockscreen-form-development.md#锁屏卡片开放能力申请)。
 
 2. 配置锁屏卡片信息：在form\_config.json中配置卡片名称、页面路径、尺寸和渲染模式。锁屏卡片必须配置renderingMode和supportDimensions字段。其中renderingMode字段仅支持配置为“singleColor”或者“autoColor”。supportDimensions字段取值中必须包含"1\*1"或"1\*2"。
 
@@ -623,7 +623,7 @@ struct LockScreenCard {
 
 当设备插入充电器或开启“不充电可显示”开关，设备横屏锁屏并与桌面夹角45°至90°稳定摆放（折叠机需切换为外屏；同时折叠机支持帐篷模式显示），即可进入待机屏保界面。用户可在待机屏保编辑界面添加全链路盯盘卡片，在充电待机状态下持续查看股票行情。待机屏保盯盘功能效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/4Y_2RqbCR16ZNoWa5v6A7w/zh-cn_image_0000002748611791.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/c_t_rkEqRUqB7kv2aii4Bg/zh-cn_image_0000002748611791.png "点击放大")
 
 ### 实现原理
 
@@ -631,7 +631,7 @@ struct LockScreenCard {
 
 ### 开发步骤
 
-1. 申请待机屏保开放能力：在AppGallery Connect中创建应用时，在“开放能力接入”页面申请待机屏保卡片能力。申请审批通过后，应用即可在待机屏保界面展示卡片，详见[待机屏保开放能力申请](../harmonyos-guides/arkui-ui-standby-form-development.md#待机屏保开放能力申请)。
+1. 申请待机屏保开放能力：在HarmonyOS开发者中心中创建应用时，在“开放能力接入”页面申请待机屏保卡片能力。申请审批通过后，应用即可在待机屏保界面展示卡片，详见[待机屏保开放能力申请](../harmonyos-guides/arkui-ui-standby-form-development.md#待机屏保开放能力申请)。
 
 2. 配置待机屏保卡片信息：在form\_config.json中为待机屏保卡片配置standby字段，设置isSupported为true声明支持待机屏保展示，isAdapted为true表示已适配待机屏保UX规范。
 
@@ -797,7 +797,7 @@ struct WidgetCard {
 
 **解决方法**
 
-确保AppGallery Connect中已申请锁屏卡片权限，自动签名时勾选关联已注册应用。
+确保HarmonyOS开发者中心中已申请锁屏卡片权限，自动签名时勾选关联已注册应用。
 
 ## 示例代码
 

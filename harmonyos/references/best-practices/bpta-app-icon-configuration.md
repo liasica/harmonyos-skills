@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-icon-c
 title: 应用图标配置与开发
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 应用图标配置与开发
 category: best-practices
-scraped_at: 2026-09-21T06:25:35+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:e321baa4c8fb7cdf5821319ebff9ae20d3ed3a8df706f539be007bbdf664f5c2
+scraped_at: 2026-10-16T07:06:36+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:e71dbd0fab61af774ec761d50eb87d1595604b304b62c689f61f71ec89833e45
 ---
 
 ## 概述
@@ -24,13 +24,13 @@ content_hash: sha256:e321baa4c8fb7cdf5821319ebff9ae20d3ed3a8df706f539be007bbdf66
 * [使用DevEco Studio生成图标](bpta-app-icon-configuration.md#section2728125612346)：使用DevEco Studio将分层图标生成为单层图标，或者将单层图标生成为元服务图标。
 * [配置不同场景下的图标](bpta-app-icon-configuration.md#section1878513210537)：介绍应用图标与启动页图标的使用场景及配置方法。
 * [开发场景](bpta-app-icon-configuration.md#section686420451402)：应用图标主要开发场景有[动态切换应用图标](bpta-app-icon-configuration.md#section0642329412)与[应用内展示应用图标](bpta-app-icon-configuration.md#section65292247411)。
-* [上架AppGallery Connect时的图标规范](bpta-app-icon-configuration.md#section1470095312575)：介绍应用上架时软件包中应用图标应满足的标准，以及上传至AppGallery Connect平台的应用图标需遵循的规范，旨在帮助开发者了解相关要求，缩短应用审核与上架时间。
+* [上架HarmonyOS开发者中心时的图标规范](bpta-app-icon-configuration.md#section1470095312575)：介绍应用上架时软件包中应用图标应满足的标准，以及上传至HarmonyOS开发者中心平台的应用图标需遵循的规范，旨在帮助开发者了解相关要求，缩短应用审核与上架时间。
 
 在开始阅读之前，建议开发者先了解[应用图标](../design-guides/application-icon-0000001953444009.md)和[应用开发准备](../harmonyos-guides/application-dev-overview.md)。
 
 **须知** 
 
-在应用图标设计阶段，建议开发者依据[通用应用UX体验标准](../design-guides/ux-guidelines-general-0000001760708152.md)与[上架AppGallery Connect时的图标规范](bpta-app-icon-configuration.md#section1470095312575)，准备相应格式的图标资源。
+在应用图标设计阶段，建议开发者依据[通用应用UX体验标准](../design-guides/ux-guidelines-general-0000001760708152.md)与[上架HarmonyOS开发者中心时的图标规范](bpta-app-icon-configuration.md#section1470095312575)，准备相应格式的图标资源。
 
 ## 使用DevEco Studio生成图标
 
@@ -40,7 +40,7 @@ content_hash: sha256:e321baa4c8fb7cdf5821319ebff9ae20d3ed3a8df706f539be007bbdf66
 
 **说明** 
 
-发布应用时，phone-xxxldpi/media（设备类型为phone时生成）目录下的icon.png（216\*216px）图片可用于在AppGallery Connect上传应用图标。
+发布应用时，phone-xxxldpi/media（设备类型为phone时生成）目录下的icon.png（216\*216px）图片可用于在HarmonyOS开发者中心上传应用图标。
 
 ### 生成元服务图标
 
@@ -127,9 +127,9 @@ content_hash: sha256:e321baa4c8fb7cdf5821319ebff9ae20d3ed3a8df706f539be007bbdf66
 
 通过图标管理服务，开发者可以在不升级应用版本的情况下动态切换应用图标。例如在元宵节、中秋节等节日时加入对应节日元素。开发步骤可分为两步：
 
-* 在AppGallery Connect动态管理应用图标
+* 在HarmonyOS开发者中心动态管理应用图标
   1. 使用图标管理服务前，请向运营人员发送邮件[申请开通服务](../harmonyos-guides/appgallery-appinfo-manage.md#申请开通服务)。
-  2. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击“APP与元服务”查看已上架应用列表，在应用列表选择已开通图标管理服务的应用进入应用信息页面，选择“分发>服务>图标管理”进入图标管理页面。
+  2. 登录[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html)，点击“APP与元服务”查看已上架应用列表，在应用列表选择已开通图标管理服务的应用进入应用信息页面，选择“分发>服务>图标管理”进入图标管理页面。
   3. 在图标管理页面可进行[创建图标](../harmonyos-guides/appgallery-appinfo-manage.md#创建图标)、[编辑和更新图标](../harmonyos-guides/appgallery-appinfo-manage.md#编辑和更新图标)和[删除图标](../harmonyos-guides/appgallery-appinfo-manage.md#删除图标)。
 * 使用AppGallery Kit实现应用图标动态切换
   1. 调用[appInfoManager.queryDynamicIcons()](../harmonyos-references/appgallery-appinfomanager.md#appinfomanagerquerydynamicicons)接口查询动态图标信息。
@@ -170,9 +170,9 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和分层图�
 
   示例代码可参考[单层图标处理](../harmonyos-guides/ui-design-normal-process.md)。
 
-## 上架AppGallery Connect时的图标规范
+## 上架HarmonyOS开发者中心时的图标规范
 
-在AppGallery上架应用或元服务时需要上传软件包和应用图标。请开发者在软件包中正确预置图标资源，确保图标符合UX体验标准和审核标准。
+在HarmonyOS开发者中心上架应用或元服务时需要上传软件包和应用图标。请开发者在软件包中正确预置图标资源，确保图标符合UX体验标准和审核标准。
 
 * 软件包中图标规范
   + 应用图标资源使用PNG格式，不同设备上的应用图标资源应满足[多平台图标资源规格](../design-guides/application-icon-0000001953444009.md#section357075123214)。
@@ -184,8 +184,8 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和分层图�
     | --- | --- | --- | --- | --- |
     | icon.png | 单层 | 圆形 | 104\*104px | Launcher |
     | icon\_small.png | 单层 | 圆形 | 92\*92px | 权限管理 |
-* AppGallery Connect平台规范
-  + 上传至AppGallery Connect的应用图标资源需满足[素材规范](../app/agc-help-app-visual-asset-spec-0000002277607976.md)。
+* HarmonyOS开发者中心平台规范
+  + 上传至HarmonyOS开发者中心的应用图标资源需满足[素材规范](../app/agc-help-app-visual-asset-spec-0000002277607976.md)。
   + 上传的应用图标必须与软件包中的应用图标一致。
   + 应用图标应符合实际功能、用途，不能包含误导性、不相关、不恰当的信息。详细介绍请查看[应用信息](../app/50104.md#section1729024510210)。
 
@@ -197,7 +197,7 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和分层图�
 
 * 使用DevEco Testing进行[UX测试](../harmonyos-guides/ux-testing.md)。
 * 使用DevEco Testing的[上架预检](../harmonyos-guides/publish-testing.md)服务。
-* 使用AppGallery Connect平台的云测试服务进行[UX测试](../app/agc-help-cloudtest-uxtest-0000002289534109.md)。
+* 使用HarmonyOS开发者中心平台的云测试服务进行[UX测试](../app/agc-help-cloudtest-uxtest-0000002289534109.md)。
 
 ### 在app.json5文件或module.json5文件中配置图标后不生效
 
@@ -219,8 +219,8 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和分层图�
 
    app.json5文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/P2mI8uamSJ-AUw4qvFSChQ/zh-cn_image_0000002548066135.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ND9ezdNVRVqDtlC8JziwaA/zh-cn_image_0000002548066135.png)
 
    module.json5文件的abilities标签：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/5AVYHFwmTlqoFOm6S4PAJw/zh-cn_image_0000002516546242.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/w3BGI6bbTaKOG455BiCL3g/zh-cn_image_0000002516546242.png)

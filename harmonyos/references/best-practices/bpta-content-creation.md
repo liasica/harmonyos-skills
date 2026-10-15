@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-content-cr
 title: AI辅助图文内容编创
 breadcrumb: 最佳实践 > 行业场景解决方案 > 社交通讯 > AI辅助图文内容编创
 category: best-practices
-scraped_at: 2026-09-21T06:25:43+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:30a7d8b87371dd477b4acba4c21a66e0fe75594d9f836f331bc4b15f6933a667
+scraped_at: 2026-10-16T07:06:44+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:9135cb8bca7bd836baf8f90deaae61af701a98410593529fa40391ad9e741864
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:30a7d8b87371dd477b4acba4c21a66e0fe75594d9f836f331bc4b15f693
 
 图文编创操作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/jXGEGWeKR-m-gnkXTYUJCw/zh-cn_image_0000002229451385.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/O6Q17i9LRDiLyadiwPu58w/zh-cn_image_0000002229451385.gif)
 
 ## 场景适用说明
 
@@ -34,7 +34,7 @@ content_hash: sha256:30a7d8b87371dd477b4acba4c21a66e0fe75594d9f836f331bc4b15f693
 
 （1）跨设备互通能力使多设备用户可以灵活选择存储在不同设备上的媒体资源，并使用不同设备的拍摄能力获取新图像，简化了不同设备间的数据传输流程，提升了用户体验。
 
-（2）HarmonyOS智能的使用，为用户提供了强大的编创能力支持。用户可以从图中提取有效信息进行文字编辑，可以从候选图中提取目标去除背景，进行二次创作。这些技术的应用，为用户提供了更丰富的编创选择。
+（2）HarmonyOS智能处理能力为用户提供了强大的编创能力支持。用户可以从图中提取有效信息进行文字编辑，可以从候选图中提取目标去除背景，进行二次创作。这些技术的应用，为用户提供了更丰富的编创选择。
 
 （3）自由流转能力的接入，可无缝切换至其他设备，并同步最新编辑状态至新设备，用户可以灵活选择合适设备，实现接续编辑。
 
@@ -48,7 +48,7 @@ content_hash: sha256:30a7d8b87371dd477b4acba4c21a66e0fe75594d9f836f331bc4b15f693
 | 图片视图选择 | 发布首页资源文件类型选择 | 使用Photo Picker能力实现图片选择 |
 | 相机拍摄 | 自定义相机页面，可拍摄和预览Moving Photo图片 | 使用Camera相机组件能力自定义相机 |
 | 图片文字识别、抠取与HDR Vivid图片的展示 | 图片浏览页支持选定图片的目标抠取、复制图上文字信息获取，参与创作编辑，自动识别HDR模式并展示高亮 | 使用Image组件的智能识别能力，实现OCR文字识别与抠图 |
-| 跨端相册选取 | 从其他设备的相册中选取图片，回传到本端设备 | 基于CollaborationService跨设备互通组件 |
+| 跨端相册选取 | 从其他设备的相册中选取图片，回传到本端设备 | 基于[CollaborationService (跨设备互通组件)](../harmonyos-references/servicecollaboration-collaborationservice.md) |
 | 编辑页流转接续 | 编创内容支持在多设备之间接续编辑。开发者可以在不同设备上继续编辑内容 | 基于Ability的自由流转能力，使用ArkData数据管理和分布式文件管理实现本地创作内容的多设备之间接续编辑 |
 
 ## 场景实现
@@ -92,7 +92,7 @@ photoViewPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessH
 });
 ```
 
-## OCR文字识别、智能抠图与HDR vivid的使用
+## OCR文字识别、智能抠图与HDR Vivid的使用
 
 ### 子场景描述
 
@@ -102,7 +102,7 @@ photoViewPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessH
 
 长按图片可识别文字并实现物体抠图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/qV912Dc2Trypa2Vqh9nO6g/zh-cn_image_0000002229336901.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/6MCcvJnCTkK9gAST1v9ofQ/zh-cn_image_0000002229336901.gif)
 
 ### 关键点说明
 
@@ -345,7 +345,7 @@ build() {
 
 **说明** 
 
-本章节只介绍主干流程的关键代码，要实现自定义相机还需要其他配置，可详细关注封装模块CameraService文件，Moving Photo的使用可查看相关Api使用：[动图照片](../harmonyos-references/ohos-multimedia-movingphotoview.md)。
+本章节只介绍主干流程的关键代码，要实现自定义相机还需要其他配置，可详细关注封装模块CameraService文件，Moving Photo的使用可查看相关Api使用：[@ohos.multimedia.movingphotoview (动态照片)](../harmonyos-references/ohos-multimedia-movingphotoview.md)。
 
 ## 跨设备互通组件的使用
 
@@ -353,7 +353,7 @@ build() {
 
 跨端相册获取新的图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/PgizJbNgR8OiWeqIGP0xog/zh-cn_image_0000002229336897.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/g2OZMHcxT5OPqhOrkK6uRg/zh-cn_image_0000002730181338.gif "点击放大")
 
 ### 子场景描述
 
@@ -394,9 +394,9 @@ import {
 
 使用CollaborationCameraStateDialog弹窗组件提示对端相机拍摄状态。
 
-该组件在build()函数内直接调用，实现onState方法。拍摄完成后，通过onState方法回传内容。
+该组件在build()函数内直接调用，实现onState()方法。拍摄完成后，通过onState()方法回传内容。
 
-onState方法的回调函数包含两个参数：stateCode表示业务完成状态，buffer表示成功返回的数据。
+onState()方法的回调函数包含两个参数：stateCode表示业务完成状态，buffer表示成功返回的数据。
 
 ```screen
 @Builder
@@ -447,7 +447,7 @@ private doInsertPicture(stateCode: number, bufferType: string, buffer: ArrayBuff
 
 自由流转，接续编辑图文内容的功能已启用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/MvETFK9gQKilDHq5uQSlbA/zh-cn_image_0000002229336905.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/_CA2-bysTKmIf7wB2Ghz1w/zh-cn_image_0000002730021622.gif "点击放大")
 
 ### 关键点说明
 
@@ -459,7 +459,7 @@ private doInsertPicture(stateCode: number, bufferType: string, buffer: ArrayBuff
 
 （3）应用接续只能在同应用（UIAbility）之间触发，双端设备都需要该应用。
 
-（4）在onContinue回调中使用wantParam传输的数据应控制在100KB以内。对于大于100KB的数据，建议使用分布式数据对象或分布式文件系统，例如图片文件。
+（4）在onContinue()回调中使用wantParam传输的数据应控制在100KB以内。对于大于100KB的数据，建议使用分布式数据对象或分布式文件系统，例如图片文件。
 
 打开应用接续开关，在module.json5文件里的module对象的abilities字段内设置"continuable"的值为true。
 
@@ -504,7 +504,7 @@ onWindowStageRestore(windowStage: window.WindowStage) {
 }
 ```
 
-迁移端实现onContinue接口，多图片自由流转，使用资产卡片数组的方式传递，与其他文本数据分装成一个数据对象。
+迁移端实现onContinue()接口，多图片自由流转，使用资产卡片数组的方式传递，与其他文本数据分装成一个数据对象。
 
 ```screen
 async onContinue(wantParam: Record<string, Object | undefined>): Promise<AbilityConstant.OnContinueResult> {
@@ -573,7 +573,7 @@ private getAssetInfo(append: ImageInfo): commonType.Asset | undefined {
 
 这部分代码写在EntryAbility中，而不是Page页中。使用AppStorage进行数据的持续保存和双向绑定，当数据变化时更新视图。
 
-接收端实现onCreate接口和onNewWant接口，onCreate接口用于冷启动或多实例热启动，onNewWant接口用于单实例热启动。仅在应用接续状态下，注册数据监听，恢复页面流转的数据。
+接收端实现onCreate()接口和onNewWant()接口，onCreate()接口用于冷启动或多实例热启动，onNewWant()接口用于单实例热启动。仅在应用接续状态下，注册数据监听，恢复页面流转的数据。
 
 ```screen
 onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {

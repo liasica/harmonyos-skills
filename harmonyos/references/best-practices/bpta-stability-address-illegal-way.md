@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 地址越界类问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > 地址越界类问题分析方法
 category: best-practices
-scraped_at: 2026-09-21T06:25:53+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:9fcdc9e1dc1b4cb6e8b027099c29f23bec30b1a37540ade5610579c93894a40f
+scraped_at: 2026-10-16T07:06:52+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:fc23375dcba680f6267b78fa392ce1326004ddd3e5ae3864a6651ae957c7c0a2
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:9fcdc9e1dc1b4cb6e8b027099c29f23bec30b1a37540ade5610579c9389
 
 ## 检测能力
 
-目前系统提供了ASan、HWASan、GWP-ASan等检测工具，支撑应用解决地址越界问题，相关介绍、检测问题类型均在[《使用ASan检测内存错误》](bpta-stability-asan-detection.md)、[使用GWP-ASan检测内存错误](bpta-stability-gwpasan-detection.md)已有讲解，不再赘述。
+目前系统提供了ASan、HWASan、GWP-ASan等检测工具，支撑应用解决地址越界问题，相关介绍、检测问题类型均在[使用ASan检测内存错误](bpta-stability-asan-detection.md)、[使用GWP-ASan检测内存错误](bpta-stability-gwpasan-detection.md)已有讲解，不再赘述。
 
 ## 分析定位思路
 
@@ -24,11 +24,11 @@ content_hash: sha256:9fcdc9e1dc1b4cb6e8b027099c29f23bec30b1a37540ade5610579c9389
 
 如下，由于地址越界问题在应用的故障现象通常为崩溃闪退（Crash），且Crash的栈可能不是第一现场，而是受害者的栈，因此这类问题分析难度较高，且经常依赖于天网版本复现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/tlsl1QV7TQKg9zYsoU0_0w/zh-cn_image_0000002404045321.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/QML4HAObRniTJa3_e_kaLw/zh-cn_image_0000002404045321.png "点击放大")
 
 以下为踩内存问题的通用分析流程，力求提升踩内存问题检测和定位效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/9mecH9iDTbO3YW3ncTn8-w/zh-cn_image_0000002375398170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/BDgm1UDfQeyWFisncD18PA/zh-cn_image_0000002375398170.png)
 
 **第一步：****问题类型分析**
 
@@ -64,17 +64,17 @@ content_hash: sha256:9fcdc9e1dc1b4cb6e8b027099c29f23bec30b1a37540ade5610579c9389
 
    如下图所示，IDA（反汇编工具）展示了一个典型的函数指针数组操作，w8是数组下标，从1开始，x9是reference解引用出来的，如果blr x8这条挂了，说明x9[x8]上面的值是坏的，而如果是ldr x8, [x9,x8,LSL#3]这条挂了，说明x9[x8]这个地址是无效的。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/g29eV-wgR6-Pgx1l-hvX0g/zh-cn_image_0000002404125165.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/QoKHF1OrQIW1UToTKSuwoQ/zh-cn_image_0000002404125165.png)
 
-**找出现问题的内存大小：**
+**找出现问题的内存大小**
 
 在sizeclass类型的分配器中，大小是一个重要的信息，筛选该内存大小的栈有助于快速筛选，提升定位效率。
 
 以native内存分配器jemalloc为例，内存统计布局如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/b4jomOHsQ1uXy9sFUxkcSg/zh-cn_image_0000002370405612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/f_OjYCfHTou5B_dAnoHbiA/zh-cn_image_0000002370405612.png)
 
-假设踩内存大小为32，查看上图右边红框标记出来的地方表示128个32字节的内存会挤在1个page上，刚好是32\*128=4096字节。同样，下面80字节的内存块，每256个都挤在5个page上，80\*256==20480=4096\*5。17-32字节的内存分配，都会从这个32档位sizeclass的内存页上去分配，也就是说，如果发生overflow，凶手前后多半也是32字节的，因此受害者是32字节的，如果发生uaf（use-after-free），那么free的内存会被另一个17-32字节的申请者拿走，这个申请者就成为了受害者。
+假设踩内存大小为32，查看上图右边红框标记出来的地方表示128个32字节的内存会挤在1个page上，刚好是32\*128=4096字节。同样，下面80字节的内存块，每256个都挤在5个page上，80\*256=20480=4096\*5。17-32字节的内存分配，都会从这个32档位sizeclass的内存页上去分配，也就是说，如果发生overflow，凶手前后多半也是32字节的，因此受害者是32字节的，如果发生uaf（use-after-free），那么free的内存会被另一个17-32字节的申请者拿走，这个申请者就成为了受害者。
 
 **第四步：****用例部署**
 
@@ -106,7 +106,7 @@ content_hash: sha256:9fcdc9e1dc1b4cb6e8b027099c29f23bec30b1a37540ade5610579c9389
 
 ### 地址越界问题类型
 
-常见地址问题类型可参见[地址越界事件介绍-type字段说明](../harmonyos-guides/hiappevent-watcher-address-sanitizer-events.md#type字段说明)
+常见地址问题类型可参见地址越界事件介绍-[type字段说明](../harmonyos-guides/hiappevent-watcher-address-sanitizer-events.md#type字段说明)
 
 ### 地址越界问题的日志分析
 
@@ -116,14 +116,14 @@ content_hash: sha256:9fcdc9e1dc1b4cb6e8b027099c29f23bec30b1a37540ade5610579c9389
 2. 获取符号表，定位行号（use栈、free栈）。
 3. 结合应用代码逻辑分析代码的内存操作。
 
-地址越界问题代码示例：
+地址越界问题代码示例
 
-以地址越界问题类型栈缓存区溢出（stack-buffer-overflow）为例，该类型是指程序读、写的栈内存超出预期范围，程序运行异常、崩溃，具体影响如下
+以地址越界问题类型栈缓存区溢出（stack-buffer-overflow）为例，该类型是指程序读、写的栈内存超出预期范围，程序运行异常、崩溃，具体影响如下：
 
-1. 对于越界读的场景，读取到无效数据并且使用时，程序运行出现异常；
-2. 对于越界写的场景，出现对有效数据的覆盖，甚至覆盖支撑问题定位的信息（例如，栈帧信息）；
+1. 对于越界读的场景，读取到无效数据并且使用时，程序运行出现异常。
+2. 对于越界写的场景，出现对有效数据的覆盖，甚至覆盖支撑问题定位的信息（例如栈帧信息）。
 
-地址越界问题类型的示例代码如下。
+地址越界问题类型的示例代码如下：
 
 ```cpp
 int AddressOverflowCode(int argc)
@@ -134,9 +134,9 @@ int AddressOverflowCode(int argc)
 }
 ```
 
-* 地址越界问题日志分析
+地址越界问题日志分析
 
-开启HWASan检测，上报的地址越界问题日志如下，
+开启HWASan检测，上报的地址越界问题日志如下：
 
 ```screen
 ==27137==ERROR: HWAddressSanitizer: tag-mismatch on address 0x007fdfd21014 at pc 0x005578a3dad0
@@ -185,6 +185,6 @@ SUMMARY: HWAddressSanitizer: tag-mismatch (/data/local/tmp/test.out+0x1ad0)
 ==27137==End Hwasan report
 ```
 
-对应的日志结构如下，以#0栈为例，可使用反编译工具[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#section14952241528)，输入地址的偏移0x1ad0，即可解析出对应的源代码行号。
+对应的日志结构如下，以#0栈为例，可使用CppCrash类问题分析方法章节[步骤四：基于崩溃栈定位行号](bpta-stability-app-crash-cpp-way.md#section14952241528)中介绍的反编译工具llvm-addr2line，输入地址的偏移0x1ad0，即可解析出对应的源代码行号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/JX45vtofS9qyXR2ah5VW1w/zh-cn_image_0000002412946788.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/jve4J03gT225b9hWkl3NWQ/zh-cn_image_0000002412946788.png)

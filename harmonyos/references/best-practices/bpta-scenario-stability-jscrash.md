@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: JS Crash类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用异常退出类问题案例 > JS Crash类问题案例
 category: best-practices
-scraped_at: 2026-09-21T06:25:55+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:4c5bad61c904b24bb927086e4453762d527a9b4bff7f85e1fe9dc6a93e0100ff
+scraped_at: 2026-10-16T07:06:54+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:f45d8788c0f9952ef5a64aa1b62a1595cd147e83d09968c290f3b7eab43afd04
 ---
 
 本文将基于当前开发者所遇到的高频JS Crash故障进行案例介绍。开发者可阅读[应用崩溃类问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测JS Crash问题的原理和机制，阅读[JS Crash类问题分析方法](bpta-stability-app-crash-js-way.md)了解分析JS Crash问题的一般步骤。
@@ -147,7 +147,7 @@ HiLog:
 
 ```screen
 function b(a) {
-    a.trim(); // 报错undefined is not callable;
+    a.trim();  // undefined is not callable;
 }
 
 export function c() {
@@ -169,7 +169,7 @@ function b(a) {
 
 export function c1() {
     let a = 123;
-    b(a.toString()); // 转换为字符串 
+    b(a.toString()); // Convert to string
 }
 ```
 
@@ -215,7 +215,7 @@ import { BusinessError } from '@ohos.base'
 function createTask(a: number, b: number) {
   let sum = a + b;
   let task: taskpool.Task = new taskpool.Task(printArgs, sum);
-  return task; //返回值task任务是无法被序列化，导致问题产生
+  return task; // The return value task cannot be serialized, leading to the issue
 }
 
 function resultError() {
@@ -257,7 +257,7 @@ struct Index {
 
 上面的例子是在执行的任务中创建了一个task任务，并且返回。但是这个createTask函数返回值task对象是无法被序列化的，从而导致了任务的执行失败。
 
-目前taskpool只支持的类型参见[序列化支持类型](../harmonyos-guides/serializable-overview.md)。
+目前taskpool只支持的类型参见[线程间通信对象概述](../harmonyos-guides/serializable-overview.md)。
 
 ### 修复方法
 
@@ -395,7 +395,7 @@ import { a } from './XXXIsNotInitializedCase'
 export class Animal {
   static {
     console.log("this is in class");
-    let str = a; // 报错信息：a is not initialized
+    let str = a; // a is not initialized
   }
 }
 ```
@@ -419,7 +419,7 @@ export class Animal {
   static {
     console.log("this is in class");
   }
-  str = a; // 修改点
+  str = a; // Modification point
 }
 ```
 
@@ -453,7 +453,7 @@ throw new Error("TEST JS ERROR")
 
 通过DevEco Studio的FaultLog工具可收集到此类异常日志，其中JS异常栈信息可直接定位到抛异常的代码位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/CO-rpLTOR0Ol3vMbuH3dhw/zh-cn_image_0000002370565640.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/QANlHRnXQjCYkgN_n_XscA/zh-cn_image_0000002370565640.png)
 
 这类问题可通过故障日志定位到具体的代码行，检视上下文来分析问题即可。
 
@@ -480,7 +480,7 @@ Cannot get SourceMap info, dump raw stack:
    通过日志信息可以确定为Error类问题，为代码主动抛出的异常。可以通过异常代码调用栈，获取错误产生位置。Cannot get SourceMap info, dump raw stack信息表示该应用为release包安装，JS栈转换eTS行列号失败，可考虑使用[堆栈轨迹分析](../harmonyos-guides/ide-release-app-stack-analysis.md)来解析行号。
 2. 定位到具体代码
 
-   通过以上 JS 堆栈，能够定位到NetSpeedController.ts文件中具体代码片段如下，异常抛出位置为wifiManager.on函数调用。
+   通过以上JS堆栈，能够定位到NetSpeedController.ts文件中具体代码片段如下，异常抛出位置为wifiManager.on函数调用。
 
    ```screen
    wifiManager.on('wifiConnectionChange', (data) => {
@@ -541,7 +541,7 @@ Cannot get SourceMap info, dump raw stack:
     at anonymous entry (entry/src/main/ets/pages/Index.ts:21:13)
 ```
 
-### 分析过程
+### 分析步骤
 
 常规的JsCrash日志通过其清晰的调用堆栈，能够精准地定位到引发异常的根源代码。相比之下，OutOfMemory异常则不同，其相关的JsCrash日志往往是内存问题长期积累后的最终表现，而非一个直接的触发点。因此，OutOfMemoryError类异常JsCrash日志通常无法提供立竿见影的诊断价值，需要借助Snapshot内存占用分析工具来分析根本原因。
 
@@ -570,13 +570,13 @@ Cannot get SourceMap info, dump raw stack:
 
    在方舟虚拟机采用的是标记清除法回收内存，内存是通过维护一棵树来管理的，这颗树的根节点被称为GC Root，ArkTs对象只要被挂载到这颗树上则说明该对象存活。很多刚接触内存的同学可能会对GC Root产生误解，认为挂在GC Root上的对象是需要被回收的，而根节点之所以叫GC Root是因为标记清楚法在标记阶段，垃圾收集器从GC Root开始遍历。所有从GC Root可达的对象都会被标记为“存活”。在清除阶段，垃圾收集器会扫描内存中的所有对象。如果某个对象没有在标记阶段被标记为存活，那么该对象就是“垃圾”，可以被回收。垃圾收集器会释放这些未标记对象所占用的内存空间。每次GC都是从根节点开始，所以根节点被称为GC Root。该树的快照如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/mJGstW7TTAyhggp3RqrjrQ/zh-cn_image_0000002425122964.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/fjfYnkT8ToKnMJATZtobcA/zh-cn_image_0000002425122964.png)
 
    ArkTs的对象是存在引用和被引用关系的，图中箭头指向的都是被引用对象，所有存活的对象都直接或间接被GC Root所引用，从GC Root到被引用对象的路径为该对象的引用链。因此，解决内存泄漏的关键就是在于将对象的引用链在合适的地方（结合业务判断）断开。
 
    * 如下图，distance为1的时候为js\_proxy，没有被具体的应用的jsobject对象持有，下面就介绍下这些对象如何分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/cuOl-jJpSyOGCWSw_1FZew/zh-cn_image_0000002425282796.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/O-X8GqGYRWCT7QaGkR3jWQ/zh-cn_image_0000002425282796.png "点击放大")
 
 **场景构造：**
 
@@ -628,7 +628,7 @@ static napi_value TestLeak(napi_env env, napi_callback_info info) {
     napi_value proxy = args[0];
     napi_ref task_ref;
     napi_create_reference(env, proxy, 1, &task_ref);
-    // 由于未调用napi_delete_reference发生内存泄漏
+    // A memory leak occurs because napi_delete_reference is not called.
     // napi_delete_reference(env, task_ref->ref);
     return nullptr;
 }
@@ -638,15 +638,15 @@ static napi_value TestLeak(napi_env env, napi_callback_info info) {
 
 demo构造完成后，下面进行堆快照测试，在不点击前拍摄一个堆快照，点击7次后再拍摄一个堆快照，然后对比Snapshot1和Snapshot2看一下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/W3nfLyHkR9mUSHQ0Ng1xrQ/zh-cn_image_0000002458681541.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/CWRVK_LWT3qqXtdBmJXKtQ/zh-cn_image_0000002458681541.png "点击放大")
 
 在两个快照对比的结果中，我们可以看到Proxy的Delta（New/Delete）显示为7/0，这表示有7个对象被创建，但均未被释放。再进一步查看Proxy相关的属性，展开它的fields，可以看到它的target是一个叫testYY的function，它的handler是一个JSObject。通过这两个属性，就可以结合应用代码分析这个Proxy在哪创建的，在哪传入native的，再分析native的函数哪里存在内存泄漏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/lJ7U6DI3TYyHLb00JUAbhg/zh-cn_image_0000002497762978.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/juv4Nue9RTqsGKAHhSnmBQ/zh-cn_image_0000002497762978.png "点击放大")
 
 下面查看testYY的引用链，testYY被Proxy持有，这与背景中的引用链相符，只是该引用链较长，未在testYY中调用其他方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/aJXGPeH_SFCuDChcqghLPA/zh-cn_image_0000002425122976.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/9fHVfbriQ9y1THYbaW6eJA/zh-cn_image_0000002425122976.png "点击放大")
 
 ### 建议与总结
 
@@ -731,8 +731,8 @@ struct Index {
           .fontWeight(FontWeight.Bold)
           .onClick(() => {
             hilog.info(0x0000, 'testTag', 'Test NAPI 2 + 3 = %{public}d', testNapi.add(2, 3));
-            ArkTools.hintGC(); // 触发GC
-            // setTimeout(()=> {  // 异步方法
+            ArkTools.hintGC(); // Trigger GC
+            // setTimeout(()=> {  // Async method
             testNapi.getValue().length;
             // }, 1000);
           })
@@ -772,14 +772,14 @@ static napi_value Add(napi_env env, napi_callback_info info) {
     status = napi_open_handle_scope(env, &scope);
     napi_value jsArray = nullptr;
     napi_create_array(env, &jsArray);
-    // 将创建好的数组进行赋值
+    // Assign values to the created array
     for (int i = 0; i < 5; i++) {
         napi_value element;
         napi_create_int32(env, i, &element);
         napi_set_element(env, jsArray, i, element);
     }
-    status = napi_close_handle_scope(env, scope); // 作用域关闭，jsArray 被清理
-    objValues = jsArray;                          // 问题所在！
+    status = napi_close_handle_scope(env, scope); // Scope closed, jsArray is cleaned up
+    objValues = jsArray;                          // Problem here!
 
     return sum;
 }
@@ -809,7 +809,7 @@ static napi_ref objvalues = nullptr; // 使用napi_ref来管理跨作用域的�
 
 ### 概述
 
-在HarmonyOS应用开发中，Unexpected xxx in JSON是一种常见的运行时SyntaxError。该错误表示代码使用JSON.parse()时传入的字符串不符合 JSON 规范，在错误日志中通常表现为如下：
+在HarmonyOS应用开发中，Unexpected xxx in JSON是一种常见的运行时SyntaxError。该错误表示代码使用JSON.parse()时传入的字符串不符合JSON规范，在错误日志中通常表现为如下：
 
 ```screen
 Error name:SyntaxError
@@ -879,12 +879,9 @@ Stacktrace:
      ```
 2. 定位到具体代码
 
-   ```typescript
+   ```screen
    let str1 = "{\"name\":\"value\",\"age\""; // Unexpected end Text in JSON at position 15, e":"v*l*e","a*e"
    JSON.parse(str1)
-
-   let str2 = "{\"value\":0123}"; // Unexpected Number in JSON at position 10, {"v*l*e":0*2*}
-   JSON.parse(str2)
    ```
 3. 根据JSON字符串片段和报错位置，还原原始报错点
 
@@ -907,12 +904,9 @@ Stacktrace:
 
 根据上述分析，明确错误类型和修复方式，并按照JSON规范修复报错字符串。
 
-```typescript
+```screen
 let str1 = "{\"name\":\"value\",\"age\":21}";
 JSON.parse(str1)
-
-let str2 = "{\"value\":0.123}";
-JSON.parse(str2)
 ```
 
 ### 建议与总结

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 栈内存过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 栈内存过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-21T06:25:51+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:c64c2848c37c05864c18d439a1ecfc0df5c59831bac2a7ccfe17501492731da1
+scraped_at: 2026-10-16T07:06:51+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:78a6b50ebc65601b89ad747696347d45140171abc160202f2bff9690aef85648
 ---
 
 ## 概述
@@ -68,10 +68,10 @@ content_hash: sha256:c64c2848c37c05864c18d439a1ecfc0df5c59831bac2a7ccfe175014927
    4. 单击下图4处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
    5. 筛选出线程个数申请异常的线程及其调用栈，如下图5处框选的内容：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ysVRkktxQKi44Ofz3w0FAA/zh-cn_image_0000002729611091.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/oLqU-QUDT8mVPb6Y21dixg/zh-cn_image_0000002729611091.png "点击放大")
 5. 分析调用栈指向的代码段，发现应用循环申请线程，且该线程一直运行未释放，最终导致了RSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/jkvotcrzSqmY83MPGmH7DQ/zh-cn_image_0000002699891764.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Jt8ehxxJRfmygjWs-zbFjw/zh-cn_image_0000002699891764.png)
 
 **开发态分析思路**
 
@@ -108,10 +108,10 @@ content_hash: sha256:c64c2848c37c05864c18d439a1ecfc0df5c59831bac2a7ccfe175014927
 3. 录制完成后，单击System Resources下的Threads泳道，发现线程数异常增长。
 4. 先单击下图1处Call Trees按钮，再单击下图2处筛选Created & Existing，找到异常的线程申请调用栈如下图3处框中所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/3zdBZ2-GSsKkeRqDQUa3uQ/zh-cn_image_0000002699731878.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/JQyGfNyKR-OgMjo3QewshA/zh-cn_image_0000002699731878.png "点击放大")
 5. 分析调用栈指向的代码段，发现应用正在循环申请线程，且该线程一直运行未释放，最终导致了RSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/1HmGO8VhREylLh9EDatseQ/zh-cn_image_0000002729491133.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/-dkfeYaGSmiiU_vm5XSZog/zh-cn_image_0000002729491133.png)
 
 ## 修复建议
 

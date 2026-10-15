@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smartwatch
 title: 智能穿戴应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 穿戴 > 智能穿戴应用开发
 category: best-practices
-scraped_at: 2026-09-21T06:25:43+08:00
+scraped_at: 2026-10-16T07:06:43+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:f31c3696b0ee9852aa4770cb4bdfb04f51c8c129c98370fc92787e4696a209f0
+content_hash: sha256:c2dcd1f9f454d81dff5e60d88921bac2feb99f35e937347955050ebbfa0c050e
 ---
 
 智能穿戴是一种腕部可穿戴设备，提供沟通功能和与移动设备的数据交互功能，包括成人智能表和儿童智能表。智能穿戴设备具有以下显著特点：
@@ -130,7 +130,7 @@ content_hash: sha256:f31c3696b0ee9852aa4770cb4bdfb04f51c8c129c98370fc92787e4696a
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/1xwwn-aGRVOSjs6KYWBK0A/zh-cn_image_0000002585606726.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/KBxm7WA_SBWzSEk9xArKsQ/zh-cn_image_0000002585606726.png "点击放大")
 
 * 滑动切焦：切换当前焦点，以确认下一步操作，通过将拇指沿食指第二关节向指尖快速滑动两下切换焦点，后续再进行确认操作，可以用于切换到取消按钮，或切换到播放下一首按钮上，用于取消消息、切换歌曲等操作场景。
 
@@ -150,7 +150,7 @@ content_hash: sha256:f31c3696b0ee9852aa4770cb4bdfb04f51c8c129c98370fc92787e4696a
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/wArkZ9b7SAaI0WHC7BoRWA/zh-cn_image_0000002615966431.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/oZAesn0zQyqUkigKvsEz7A/zh-cn_image_0000002615966431.png "点击放大")
 
 智慧手势交互的前提是组件获焦。首先使用[activate()](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#activate14)激活当前界面的焦点激活态。
 
@@ -180,7 +180,7 @@ aboutToDisappear(): void {
 * 显示优化配置
   1. 默认启用深色主题模式降低显示能耗。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/3cMp8SxJTQGm3eVV-aHn-A/zh-cn_image_0000002585446792.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/KHDzxu2YRpag3L-0f9Ladg/zh-cn_image_0000002585446792.png "点击放大")
   2. 仅允许视频、游戏、导航等必要场景保持屏幕常亮。
 * 后台应用管理
   1. 关键服务类应用（闹钟、日程提醒、邮件、IM类应用）可依据实际需求启动。
@@ -592,14 +592,14 @@ aboutToDisappear(): void {
 
 1. 手表应用在发布时，仅可选择“手表”设备，无法对智能穿戴与轻量级智能穿戴做区分。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/6m9Yr1DOQGemFPIoO6p7KQ/zh-cn_image_0000002615886535.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/qgchSkRKTK63gpFPgs5MbA/zh-cn_image_0000002615886535.png "点击放大")
 2. 应用涉及两种穿戴设备时，应用发布是否需要上传两个对应的发布包。
 
 解决方案：
 
 1. 点击确认后跳转至发布页，可在发布页具体选择设备类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/gRAPy0fHS7iY08cfVz4hGQ/zh-cn_image_0000002585606732.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/9oyUcRvZTUuU1YvNHxBmKQ/zh-cn_image_0000002585606732.png "点击放大")
 2. 智能穿戴支持ArkTS与JS，轻量级智能穿戴仅支持JS，若应用发布包支持在智能穿戴与轻量级智能穿戴上运行，则无需对应用发布包做区分，若应用发布包仅支持某一种穿戴设备，则需要分别为智能穿戴设备与轻量级智能穿戴设备创建AppID，并上传其对应的发布包。
 3. APP创建流程可参考[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 
@@ -684,16 +684,16 @@ try {
 
    儿童智能表应用开发完成后，提交应用时选择智能手表选项，儿童智能表应用在智能手表选项下。发布应用的通用配置和流程可参考[发布HarmonyOS应用](../app/agc-help-release-app-0000002271695230.md)。在提交时，忽略以下弹窗，点击确认或关闭按钮以继续下一步操作：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/VTB0dBEVTzu4VI1_vR2o1w/zh-cn_image_0000002615966439.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/79iWY28VQTuT5eQbc37aag/zh-cn_image_0000002615966439.png)
 4. 选择应用分类标签。
 
    **应用分类**：根据应用特性选择相关分类（如音乐、休闲娱乐、儿童等），“应用/儿童”为非必选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/WDPEKM_hSF67NqYXlZSyEg/zh-cn_image_0000002585446802.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/-Qq9lulYQ_aLm1_468LQUg/zh-cn_image_0000002585446802.png)
 
    **应用标签**：至少选择一个标签作为应用主标签，同时可以再选择一个或多个其它标签作为补充（非必须）。根据应用特性选择标签，“儿童”为非必选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/6FFk5vFZSAmIM5n5f8eMmw/zh-cn_image_0000002615886547.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/2Vo_vd8VQ22fiQXVlSkSfg/zh-cn_image_0000002615886547.png "点击放大")
 
 ## FA工程迁移
 
@@ -703,41 +703,41 @@ try {
 
 1. 使用DevEco Studio创建项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/gLMwkQUWSEegX66x0Kwg2g/zh-cn_image_0000002585606740.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/SyPC_CxoTBeqg53ihXqusw/zh-cn_image_0000002585606740.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/EkV82uFTRFKtCyWvHT39LQ/zh-cn_image_0000002615966443.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/gWfHRVD0QMK90-UOhkrbaw/zh-cn_image_0000002615966443.png "点击放大")
 
    工程名目录右键选择“New”->“Module”创建模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/p84cgTH-QQ6QcyzDwfsLwg/zh-cn_image_0000002585446806.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/OiLu09_6TXybEogltVU5Vg/zh-cn_image_0000002585446806.png "点击放大")
 
    选择“Empty Ability”，点击“Next”进入下一步。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/y_N3CXP_TG6LRmKqdhwUdQ/zh-cn_image_0000002615886549.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/X-S6XV0IS5OqLTkMeGM8wQ/zh-cn_image_0000002615886549.png "点击放大")
 
    默认配置无需修改，点击“Next”进入下一步。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/SiNVOwUkRASQUN8J87UxJA/zh-cn_image_0000002585606742.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/EO-07WTzSNaDPe7TvxS5FQ/zh-cn_image_0000002585606742.png "点击放大")
 
    为了兼容智能穿戴，需要修改Ability name为“HiWearMainAbility”。点击“Finish”完成智能穿戴兼容模块创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/826QlYWLTzujQBUufnz90A/zh-cn_image_0000002615966445.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/X00cdy-xQey_y7DNd-y61g/zh-cn_image_0000002615966445.png "点击放大")
 
    删除工程默认创建的entry模块，此时实现轻量级智能穿戴项目迁移的基础框架创建完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/2mQ9NBrUSh2zVeZ189jz6g/zh-cn_image_0000002585446808.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/gi07kLxCQlyOuSSWxCeKTw/zh-cn_image_0000002585446808.png "点击放大")
 2. 将原轻量级智能穿戴项目/entry/src/main/js目录下的代码文件及资源文件按对应位置迁移至新工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/BtbuTLk4TrmUbrNTxqoHyA/zh-cn_image_0000002615886553.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/f_tPASiOS2yGWMyzsLjhOg/zh-cn_image_0000002615886553.png "点击放大")
 3. 修改适配智能穿戴所需的配置文件。
 
    迁移的文件后需要修改config.json。修改资源文件的引用；pages目录下如果有新页面文件需添加至config.json；修改页面设计基线宽度为466。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/nQc6JndZSTqI7NB7F14g0g/zh-cn_image_0000002585606744.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Yzh38JyIQeixxji0W6OY-A/zh-cn_image_0000002585606744.png "点击放大")
 
    config.json文件中补充所需的权限。如果原项目中使用了震动功能，需添加震动权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/bAJiYp2CR6C2xFuMmkSLYw/zh-cn_image_0000002615966447.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/n5_vSI8iS42A9Puq0ueQhQ/zh-cn_image_0000002615966447.png "点击放大")
 4. 代码适配。由于轻量级智能穿戴和智能穿戴的同步/异步机制不同，因此在迁移时，需要对相关接口进行修改。以Huks接口为例，说明如何进行这些修改。
 
    ```typescript

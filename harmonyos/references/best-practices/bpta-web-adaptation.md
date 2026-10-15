@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-adapta
 title: Web响应式布局
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 特殊界面布局场景 > Web响应式布局
 category: best-practices
-scraped_at: 2026-09-21T06:25:39+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:e77c09416fd503bd58972a6f82b2ded588e6e7ef1c2c5e286921c1fc3095e2cd
+scraped_at: 2026-10-16T07:06:39+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:52b67f6a256bc7444a0cfc1c57ded62a26947542c42e51f67bbf6104aa9bb497
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ CSS中设置的px单位会自动通过设备像素比（devicePixelRatio）进�
 
 ### 媒体查询
 
-媒体查询允许开发者根据设备特性（如屏幕尺寸、分辨率、方向等）应用不同的样式规则。这确保了网页在不同设备和屏幕尺寸下都能有良好的显示效果，从而提升用户体验。在Web页面适配HarmonyOS侧一多时，横纵向断点对应的尺寸范围与HarmonyOS侧[推荐的断点划分范围](bpta-multi-device-responsive-layout.md#section186821126131515)保持一致。
+媒体查询允许开发者根据设备特性（如屏幕尺寸、分辨率、方向等）应用不同的样式规则。这确保了网页在不同设备和屏幕尺寸下都能有良好的显示效果，从而提升用户体验。在Web页面适配HarmonyOS侧一多时，横纵向断点对应的尺寸范围与HarmonyOS侧推荐的[断点](bpta-multi-device-responsive-layout.md#section1532120147301)划分范围保持一致。
 
 **说明** 
 
@@ -173,10 +173,10 @@ window对象提供了resize事件注册，该事件在文档视图（窗口）�
 
 ### 宫格布局
 
-CSS中提供了grid布局，与[栅格布局](../harmonyos-guides/arkts-layout-development-grid-layout.md)类似，它将网页内容划分成一个一个的网格，通过任意组合不同的网格，从而做出各种各样的布局。
+CSS中提供了grid布局，与[栅格布局（GridRow/GridCol）](../harmonyos-guides/arkts-layout-development-grid-layout.md)类似，它将网页内容划分成一个一个的网格，通过任意组合不同的网格，从而做出各种各样的布局。
 
 **图1** 宫格布局示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/lcolDO8VSUmh0Y-2OUS8Jw/zh-cn_image_0000002193850828.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/1zXGXrFVTsOm2UzyPO_KEA/zh-cn_image_0000002193850828.png "点击放大")
 
 关于宫格布局，有几个关键概念需要了解。更多详细信息，开发者可以查阅CSS Grid的相关资料。
 
@@ -229,7 +229,7 @@ CSS中提供了grid布局，与[栅格布局](../harmonyos-guides/arkts-layout-d
 
 **图2** 示例代码效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/PYu39AJ4SU2ZQG-Yw_zySQ/zh-cn_image_0000002193850848.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/nqRwgZhFSwqjb1_UgodvsQ/zh-cn_image_0000002193850848.png)
 
 当元素个数较少时，可以通过逐个书写（如grid-template-columns: 100px 100px 100px）的方式进行排列指定。然而，当元素数量较多，例如一行有十列时，这种写法的可读性会变差。此时，可以使用repeat()函数来简化书写。该函数接收两个参数：第一个参数为重复的次数，第二个参数为要重复的值。例如，上述写法可以改写为grid-template-columns: repeat(3, 100px)，效果相同。在多列情况下，repeat()函数能显著提高代码的可读性和简洁性。
 
@@ -321,7 +321,7 @@ CSS中提供了grid布局，与[栅格布局](../harmonyos-guides/arkts-layout-d
 
 * 控制轮播元素的尺寸：使用媒体查询和断点，或窗口事件，设置每个断点下的轮播图尺寸样式。
 * 控制轮播元素的间距：根据轮播元素的排列方式选择合适的方法。使用flex布局时，推荐使用gap属性定义元素间距；其他情况下，使用margin属性控制间距。
-* 控制每次轮播的位移距离：根据轮播的实现方案选择。如果使用translateX()，需控制每次增加的步长；如果使用绝对定位，需根据对应的位移属性进行控制。
+* 控制每次轮播的位移距离：根据轮播的实现方案选择。如果使用translateX()（CSS transform属性，用于水平位移），需控制每次增加的步长；如果使用绝对定位，需根据对应的位移属性进行控制。
 
 此处只提供如下常见的轮播图一多效果并以React语言为例进行实现。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-unified-dr
 title: 统一拖拽
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 统一拖拽
 category: best-practices
-scraped_at: 2026-09-21T06:25:42+08:00
-doc_updated_at: 2026-06-23
-content_hash: sha256:2352b2fcabe81c903053df58c7239bd96e382efa009d1cb9121f252d2b23baa9
+scraped_at: 2026-10-16T07:06:42+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:beed47641bf9954593522b0a795d5d04983bb6234da3165034f113e92a445732
 ---
 
 ## 概述
@@ -51,7 +51,7 @@ content_hash: sha256:2352b2fcabe81c903053df58c7239bd96e382efa009d1cb9121f252d2b2
 
 ### 发起拖拽
 
-[默认支持拖出能力的组件](../harmonyos-references/ts-universal-events-drag-drop.md)，如[Search](../harmonyos-references/ts-basic-components-search.md)、[Hyperlink](../harmonyos-references/ts-container-hyperlink.md)等，在拖出时会使用组件的默认拖出响应。其中[Search](../harmonyos-references/ts-basic-components-search.md)组件默认拖拽内容为选中的文字，[Hyperlink](../harmonyos-references/ts-container-hyperlink.md)组件默认拖拽内容为超链接地址。如果想自定义组件的拖拽内容，需要在组件的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中将自定义数据封装成[UnifiedData](../harmonyos-references/js-apis-data-unifieddatachannel.md#unifieddata)数据对象，通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[setData()](../harmonyos-references/ts-universal-events-drag-drop.md#setdata10)接口设置拖出数据。对于其他非默认组件或自定义组件，如果想实现其拖出功能，需要将组件的[draggable()](../harmonyos-references/ts-universal-attributes-drag-drop.md#draggable)属性设置为true，并自定义组件的拖拽内容。以RichEditor组件为例：
+默认支持拖出能力的组件，如[Search](../harmonyos-references/ts-basic-components-search.md)、[Hyperlink](../harmonyos-references/ts-container-hyperlink.md)等，在拖出时会使用组件的默认拖出响应。其中[Search](../harmonyos-references/ts-basic-components-search.md)组件默认拖拽内容为选中的文字，[Hyperlink](../harmonyos-references/ts-container-hyperlink.md)组件默认拖拽内容为超链接地址。如果想自定义组件的拖拽内容，需要在组件的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中将自定义数据封装成[UnifiedData](../harmonyos-references/js-apis-data-unifieddatachannel.md#unifieddata)数据对象，通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[setData()](../harmonyos-references/ts-universal-events-drag-drop.md#setdata10)接口设置拖出数据。对于其他非默认组件或自定义组件，如果想实现其拖出功能，需要将组件的[draggable()](../harmonyos-references/ts-universal-attributes-drag-drop.md#draggable)属性设置为true，并自定义组件的拖拽内容。以RichEditor组件为例：
 
 ```screen
 RichEditor({ controller: this.sourceController })
@@ -120,7 +120,7 @@ Column() {
 
 ### 释放拖拽
 
-[默认支持拖入能力的组件](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)，如[Search](../harmonyos-references/ts-basic-components-search.md)组件等，将目标拖入组件区域内会使用默认拖入响应。如果想自定义组件的拖入响应，需要将组件的[allowDrop()](../harmonyos-references/ts-universal-attributes-drag-drop.md#allowdrop)属性设置为允许拖入的数据类型，并在其[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口中通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[getData()](../harmonyos-references/ts-universal-events-drag-drop.md#getdata10)接口获取拖入数据后，读取其中的UnifiedRecord记录的集合。对于每条记录，调用[getTypes()](../harmonyos-references/js-apis-data-unifieddatachannel.md#gettypes12)方法获取其中包含的数据类型，取出所需要的数据。以Text组件获取拖拽文字为例：
+默认支持拖入能力的组件，如[Search](../harmonyos-references/ts-basic-components-search.md)组件等，将目标拖入组件区域内会使用默认拖入响应。如果想自定义组件的拖入响应，需要将组件的[allowDrop()](../harmonyos-references/ts-universal-attributes-drag-drop.md#allowdrop)属性设置为允许拖入的数据类型，并在其[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口中通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[getData()](../harmonyos-references/ts-universal-events-drag-drop.md#getdata10)接口获取拖入数据后，读取其中的UnifiedRecord记录的集合。对于每条记录，调用[getTypes()](../harmonyos-references/js-apis-data-unifieddatachannel.md#gettypes12)方法获取其中包含的数据类型，取出所需要的数据。以Text组件获取拖拽文字为例：
 
 ```screen
 Column() {
@@ -157,11 +157,11 @@ Column() {
 **运行效果**
 
 **图1** 拖拽图片增加水印  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/CZ9HhL1ZS6OPbrIaXHHEZQ/zh-cn_image_0000002315615638.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LjuvSmWYS3yVVx_tbTELyw/zh-cn_image_0000002315615638.gif "点击放大")
 
 **实现原理**
 
-在拖出对象的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中获取图像信息，调用系统绘制能力[drawing](../harmonyos-references/js-apis-graphics-drawing.md)在图像上绘制水印，通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[setData()](../harmonyos-references/ts-universal-events-drag-drop.md#setdata10)接口将水印图像设置为拖拽数据。
+在拖出对象的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中获取图像信息，调用[@ohos.graphics.drawing](../harmonyos-references/js-apis-graphics-drawing.md)在图像上绘制水印，通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[setData()](../harmonyos-references/ts-universal-events-drag-drop.md#setdata10)接口将水印图像设置为拖拽数据。
 
 **开发步骤**
 
@@ -275,7 +275,7 @@ Column() {
 **运行效果**
 
 **图2** 自定义拖拽背板  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/a5aLizshRlSwcybAzwz6Mw/zh-cn_image_0000002349574333.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/vxKf0FWQQxi8WeZlxadJYg/zh-cn_image_0000002349574333.gif "点击放大")
 
 **实现原理**
 
@@ -320,7 +320,7 @@ Column() {
 
    **说明** 
 
-   由于[CustomBuilder](../harmonyos-references/ts-types.md#custombuilder8)需要离线渲染之后才能使用，存在一定的性能开销和时延，因此推荐开发者优先使用[DragItemInfo](../harmonyos-references/ts-universal-events-drag-drop.md#dragiteminfo)中的[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)方式返回背板图。
+   由于[CustomBuilder](../harmonyos-references/ts-types.md#custombuilder8)需要离线渲染之后才能使用，存在一定的性能开销和时延，因此推荐开发者优先使用[DragItemInfo](../harmonyos-references/ts-universal-events-drag-drop.md#dragiteminfo)中的PixelMap方式返回背板图。
 3. 在拖出对象的[onPreDrag()](../harmonyos-references/ts-universal-events-drag-drop.md#onpredrag12)接口中，预先创建背板图。
 
    ```screen
@@ -363,15 +363,15 @@ Column() {
 **运行效果**
 
 **图3** AI识别拖拽内容  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/TOFEMwWARTS7D5rNtAfl3w/zh-cn_image_0000002349614541.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/8hrw2R2oThaXHXYPKRyg4w/zh-cn_image_0000002349614541.gif "点击放大")
 
 **实现原理**
 
-在拖入对象的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口中，通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[getData()](../harmonyos-references/ts-universal-events-drag-drop.md#getdata10)接口获取拖拽数据后，调用系统能力[textRecognition（文字识别）](../harmonyos-references/core-vision-text-recognition-api.md)得到图像中的文字信息。
+在拖入对象的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口中，通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[getData()](../harmonyos-references/ts-universal-events-drag-drop.md#getdata10)接口获取拖拽数据后，调用[textRecognition（文字识别）](../harmonyos-references/core-vision-text-recognition-api.md)接口得到图像中的文字信息。
 
 **开发步骤**
 
-1. 在拖拽释放区域的[allowDrop()](../harmonyos-references/ts-universal-attributes-drag-drop.md#allowdrop)接口中设置允许拖入的数据类型为[uniformTypeDescriptor.UniformDataType.IMAGE](../harmonyos-references/js-apis-data-uniformtypedescriptor.md#uniformdatatype)。
+1. 在拖拽释放区域的[allowDrop()](../harmonyos-references/ts-universal-attributes-drag-drop.md#allowdrop)接口中设置允许拖入的数据类型为[UniformDataType](../harmonyos-references/js-apis-data-uniformtypedescriptor.md#uniformdatatype)中的IMAGE类型。
 
    ```screen
    Column() {
@@ -509,7 +509,7 @@ Column() {
 **运行效果**
 
 **图4** 在线图片拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jEP-bcW3TdmfDThkQquNGg/zh-cn_image_0000002315775454.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/FijraHgMQK-mT5ihLg9cPQ/zh-cn_image_0000002315775454.gif "点击放大")
 
 **使用说明**
 
@@ -622,7 +622,7 @@ Column() {
 **运行效果**
 
 **图5** 本地视频拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/PEudN0axRrW534WiC-i9xA/zh-cn_image_0000002315615654.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/71IEZP5gSPWz2JkH-IGf7Q/zh-cn_image_0000002315615654.gif "点击放大")
 
 **实现原理**
 
@@ -732,7 +732,7 @@ Column() {
 **运行效果如下所示**
 
 **图6** Text组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/wbOZRXPlSgGP20bL_vpesw/zh-cn_image_0000002349574337.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/67UMD35zQPiX6lSdn_fRMA/zh-cn_image_0000002349574337.gif "点击放大")
 
 **实现原理**
 
@@ -791,7 +791,7 @@ Column() {
 **运行效果展示**
 
 **图7** RichEditor组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/VIeUsW5zQIKF8eOtSekZYw/zh-cn_image_0000002349614553.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/E_Pw81ukT-246nkn_1KQHQ/zh-cn_image_0000002349614553.gif "点击放大")
 
 **实现原理**
 
@@ -875,7 +875,7 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下所示**
 
 **图8** 多Entry图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/DzZlCH1HRPWTOzZ7_92aPg/zh-cn_image_0000002315775466.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/LX6qKZ80QUCsAsVl-RX7vw/zh-cn_image_0000002315775466.gif "点击放大")
 
 **实现原理**
 
@@ -1119,7 +1119,7 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下图所示**
 
 **图9** 分屏拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Y1R0pvJ_QbKvMJi7s1MPWA/zh-cn_image_0000002315615670.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/3yBuoGeBSw6MQDJkvs4D3Q/zh-cn_image_0000002315615670.gif "点击放大")
 
 ## 跨设备拖拽
 
@@ -1132,7 +1132,7 @@ async receiveDragData(event: DragEvent) {
 **结果展示**
 
 **图10** 跨设备拖拽效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/GkBdF_8RSaOH8DiWTkfvRA/zh-cn_image_0000002349574349.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/BC38Y5QPTr6Btz9NfqdnZg/zh-cn_image_0000002349574349.gif "点击放大")
 
 ## 拖入小艺和中转站
 
@@ -1140,21 +1140,21 @@ async receiveDragData(event: DragEvent) {
 
 **使用限制**
 
-应用本身预置的[资源文件](../harmonyos-guides/resource-categories-and-access.md#资源组目录)（即应用在安装前的HAP包中已经存在的资源文件）不支持拖入小艺和中转站。
+应用本身预置的[资源组目录](../harmonyos-guides/resource-categories-and-access.md#资源组目录)中的文件（即应用在安装前的HAP包中已经存在的资源文件）不支持拖入小艺和中转站。
 
 **运行效果如下图所示**
 
 **图11** 将数据拖入小艺  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Zez7E1Y6SIiTvIJggdN0jg/zh-cn_image_0000002349614565.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/KUmQ3LwZQL6kiN_iQIEYUA/zh-cn_image_0000002349614565.gif "点击放大")
 
 **图12** 将数据拖入中转站  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/xDS0hK6IS1uASLUZzCLYJg/zh-cn_image_0000002315775482.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Ls4G5fBaQyKy6cXuRBpVQA/zh-cn_image_0000002315775482.gif "点击放大")
 
 ## 常见问题
 
 ### 模拟器无法识别AI拖拽内容
 
-模拟器不支持[textRecognition](../harmonyos-guides/core-vision-text-recognition.md)接口的调用，建议使用真机进行调试，详细请参见基础视觉服务[模拟器支持情况](../harmonyos-guides/core-vision-introduction.md#模拟器支持情况)。
+模拟器不支持[通用文字识别](../harmonyos-guides/core-vision-text-recognition.md)接口的调用，建议使用真机进行调试，详细请参见基础视觉服务[模拟器支持情况](../harmonyos-guides/core-vision-introduction.md#模拟器支持情况)。
 
 ### 拖拽的触发手势长按浮起与长按手势之间存在冲突
 

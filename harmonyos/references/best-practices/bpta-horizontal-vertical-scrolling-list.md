@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-horizontal
 title: 基于List和Scroller实现双向滚动列表
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 基于List和Scroller实现双向滚动列表
 category: best-practices
-scraped_at: 2026-09-21T06:25:43+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:28df3f69f781de850536effa0aaf6a958e868fd88f4d08ae3af16290592cd2b0
+scraped_at: 2026-10-16T07:06:43+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:d4036cd64c46b3c327ab7da6e4aa8d14ebd6325869ab32f7398274935c008ae3
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:28df3f69f781de850536effa0aaf6a958e868fd88f4d08ae3af16290592
 
 然而，当表格需要同时支持纵向和横向滚动（下文简称为双向滚动）时，单一列表组件无法满足需求。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Aanoz5XpRSyZ10avum_uFw/zh-cn_image_0000002683157325.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/9WK17bkhR8i5CWeW2CCTew/zh-cn_image_0000002683157325.gif "点击放大")
 
 本文基于List组件和Scroller控制器，封装核心组件[DualScrollTable](https://gitcode.com/HarmonyOS_Samples/DualScrollList/blob/master/tableview/src/main/ets/components/DualScrollTable.ets)（双向滚动列表组件）。提供满足基础功能的双向滚动列表解决方案，助力开发者快速实现表格双向滚动功能。
 
@@ -38,21 +38,21 @@ content_hash: sha256:28df3f69f781de850536effa0aaf6a958e868fd88f4d08ae3af16290592
 
 列表整体布局结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/0sZI0KaYSrG0aypDyTzU1g/zh-cn_image_0000002652957852.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/T9X2TKVTQj2CtleLhfdqLg/zh-cn_image_0000002652957852.png "点击放大")
 
 ### 关键API和模块介绍
 
 * [List](../harmonyos-references/ts-container-list.md)组件：滚动列表容器，支持横向（[Axis](../harmonyos-references/ts-appendix-enums.md#axis).Horizontal）和纵向（[Axis](../harmonyos-references/ts-appendix-enums.md#axis).Vertical）滚动方向配置。
 * [Scroller](../harmonyos-references/ts-container-scroll.md#scroller)控制器：List组件的滚动控制器，提供[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)、[currentOffset()](../harmonyos-references/ts-container-scroll.md#currentoffset)等方法用于精确控制滚动位置。
 * [onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)：List组件的回调接口，在每帧滚动开始前触发，可拦截并修改滚动偏移量，是实现滚动同步的核心入口。
-* [LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)懒加载数据：是一种高性能列表渲染方式，配合组件复用，提升长列表渲染性能。
+* [Repeat](../harmonyos-references/ts-rendering-control-repeat.md)可复用的循环渲染：基于数组类型数据循环渲染，配合懒加载和组件复用，提升长列表渲染性能。
 * [@ReusableV2装饰器：V2组件复用](../harmonyos-guides/arkts-new-reusablev2.md)：使用组件复用优化长列表渲染性能。
 
 ### 同步滚动时序图
 
 同步滚动时序图，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/1plabqanT_ieZu46YIwgmw/zh-cn_image_0000002653117762.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/kYIftqeUSyWJL8daCEnbuQ/zh-cn_image_0000002653117762.png "点击放大")
 
 * 横向滚动TopList时，通过[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法拦截滚动偏移量，调用RightList的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法同步横向滚动。
 * 横向滚动RightList时，通过[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法拦截滚动偏移量，调用TopList的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法同步横向滚动。
@@ -71,14 +71,14 @@ content_hash: sha256:28df3f69f781de850536effa0aaf6a958e868fd88f4d08ae3af16290592
 
 在TableDataModel中定义TableGroup和TableRow类，用于封装分组数据与行数据，每行通过Scroller控制器关联横向滚动同步逻辑。
 
-```typescript
+```screen
 /**
  * Table group data
  * Used to store the group name and array of parameter items under this group
  */
 export class TableGroup {
   /**
-   * Unique identifier for the group, used as LazyForEach key for stable component reuse
+   * Unique identifier for the group, used as Repeat key for stable component reuse
    */
   public id: string = '';
   /**
@@ -89,22 +89,17 @@ export class TableGroup {
    * Group data array, detailed parameters for different parameter items
    */
   public sub: TableRow[] = [];
-  /**
-   * Group sub data DataSource for inner LazyForEach rendering
-   */
-  public subDataSource: BasicDataSource<TableRow> = new BasicDataSource<TableRow>();
-
 }
 ```
 
-```typescript
+```screen
 /**
  * Table row data
  * Used to store the name and info for each parameter item
  */
 export class TableRow {
   /**
-   * Unique identifier for the row, used as LazyForEach key for stable component reuse
+   * Unique identifier for the row, used as Repeat key for stable component reuse
    */
   public id: string = '';
   /**
@@ -125,7 +120,7 @@ export class TableRow {
 
 在DualScrollTable中定义TableSceneConfig接口用于自定义表格样式，包括是否显示分割线、表格宽高等。
 
-```typescript
+```screen
 /**
  * Table scene configuration interface
  * Used to customize display differences for different scenarios
@@ -204,7 +199,7 @@ export interface TableLayoutConfig {
 
 本文示例采用本地模拟数据（存放于工程rawfile目录下）以方便演示。在实际开发中，开发者可根据业务需求自行重构loadTableData()方法，例如将其替换为从网络接口异步获取数据。
 
-```typescript
+```screen
 export class TableDataModel {
   /**
    * Load table data
@@ -248,7 +243,7 @@ export class TableDataModel {
 
 在DualScrollTable中采用Column嵌套Row布局方式，顶部放置TopList横向列表，底部Row内放置LeftList与RightList横向排列。同时定义BaseTableViewModel对象参数，用于后续在列表组件中调用同步滚动方法；定义TableSceneConfig对象参数，用于后续自定义表格样式。
 
-```typescript
+```screen
 export struct DualScrollTable {
   /**
    * ViewModel instance, provides data and scroll synchronization logic,
@@ -261,6 +256,7 @@ export struct DualScrollTable {
   @Param config: TableSceneConfig = {
     // ...
   };
+
   // ...
   build() {
     Column() {
@@ -272,35 +268,37 @@ export struct DualScrollTable {
       .layoutWeight(1)
     }
   }
+
   // ...
 }
 ```
 
 关于UI布局和列表加载，下面仅以TopList为例进行简单介绍。本文重点讲解列表联动实现思路，UI布局的具体实现，开发者可参考[示例代码](bpta-horizontal-vertical-scrolling-list.md#section91421919195114)。TopList主要通过以下能力来实现：
 
-* 使用LazyForEach循环渲染列表，提升了列表的整体性能。
+* 使用Repeat循环渲染列表，提升了列表的整体性能。
 * 给List绑定Scroller对象topListScroller，以便和其他列表进行滚动联动。
 * 给列表设置可配置参数，如表格的宽度itemWidth、字体颜色fontColor、字体大小fontSize等。
 
-```typescript
+```screen
 @Builder
 TopList() {
   Row() {
     this.TopListHeader(this.viewModel.leftTitle);
     List({ scroller: this.viewModel.topListScroller }) {
-      LazyForEach(this.viewModel.topListDataSource,
-        (item: ResourceStr, _index: number) => {
+      Repeat(this.viewModel.topListData)
+        .each((item: RepeatItem<ResourceStr>) => {
           ListItem() {
-             TopListItem({
-              info: item,
+            TopListItem({
+              info: item.item,
               itemWidth: this.config.layoutConfig.listItemWidth,
               fontColor: this.config.textStyleConfig?.topListItemFontColor ?? DEFAULT_TOP_LIST_ITEM_FONT_COLOR,
               fontSize: this.config.textStyleConfig?.topListItemFontSize ?? $r('sys.float.Body_L'),
               fontWeight: this.config.textStyleConfig?.topListItemFontWeight ?? FontWeight.Medium
-            }).reuse({ reuseId: () => TOP_TABLE_CELL_REUSE_ID })
+            })
           }
-        },
-        (_item: ResourceStr, index: number) => `top_${index}`)
+        })
+        .key((_item: ResourceStr, index: number) => `top_${index}`)
+        .virtualScroll()
     }
     .cachedCount(CommonConstants.LIST_HORIZONTAL_CACHED_COUNT)
     .listDirection(Axis.Horizontal)
@@ -314,11 +312,12 @@ TopList() {
 
 在BaseTableViewModel中给每个列表区域定义滚动控制器对象，便于控制列表横向和纵向联动。
 
-```typescript
+```screen
 /**
  * Dual scroll table ViewModel base class
  * Provides common data loading and scroll synchronization logic
  */
+@ObservedV2
 export class BaseTableViewModel {
   /**
    * Top list horizontal scroller, syncs with rightAreaScroller
@@ -346,7 +345,7 @@ export class BaseTableViewModel {
 
    在TopList的[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法中获取列表滚动预估偏移量，调用syncTopListScrollToSubList()方法同步RightList横向滚动位置。
 
-   ```typescript
+   ```screen
    @Builder
    TopList() {
      Row() {
@@ -367,7 +366,7 @@ export class BaseTableViewModel {
 
    调用RightList内Scroll组件的滚动控制器rightAreaScroller的scrollTo()方法，实现横向同步滚动。
 
-   ```typescript
+   ```screen
    public syncTopListScrollToSubList(offsetX: number): void {
      // Calculate target xOffset = current offset + per-frame delta
      const xOffset: number = offsetX + this.topListScroller.currentOffset().xOffset;
@@ -375,7 +374,7 @@ export class BaseTableViewModel {
    }
    ```
 
-   ```typescript
+   ```screen
    private scrollToX(scroller: Scroller, xOffset: number): void {
      // ...
      scroller.scrollTo({ xOffset: xOffset, yOffset: 0, animation: false });
@@ -385,7 +384,7 @@ export class BaseTableViewModel {
 
    横向滚动右边列表RightList时，实际Scroll组件带着所有RightSubList一起滚动，所以需要在Scroll的[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法中获取列表滚动预估偏移量offset，同时调用syncSubListScrollToTopList()方法同步顶部列表TopList滚动。
 
-   ```typescript
+   ```screen
    @Builder
    RightGroupList() {
      Scroll(this.viewModel.rightAreaScroller) {
@@ -404,7 +403,7 @@ export class BaseTableViewModel {
 
    在syncSubListScrollToTopList()中调用topListScroller的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法，同步顶部列表TopList横向滚动。
 
-   ```typescript
+   ```screen
    public syncSubListScrollToTopList(offsetX: number): void {
      // Calculate target xOffset = current offset + per-frame delta
      const xOffset: number = offsetX + this.rightAreaScroller.currentOffset().xOffset;
@@ -412,7 +411,7 @@ export class BaseTableViewModel {
    }
    ```
 
-   ```typescript
+   ```screen
    private scrollToX(scroller: Scroller, xOffset: number): void {
      // ...
      scroller.scrollTo({ xOffset: xOffset, yOffset: 0, animation: false });
@@ -425,7 +424,7 @@ export class BaseTableViewModel {
 
    在LeftList的[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法中获取列表滚动预估偏移量，调用syncBottomLeftScroll()方法。
 
-   ```typescript
+   ```screen
    @Builder
    LeftGroupList() {
      List({ scroller: this.viewModel.leftListScroller }) {
@@ -449,7 +448,7 @@ export class BaseTableViewModel {
    }
    ```
 
-   ```typescript
+   ```screen
    private scrollToY(scroller: Scroller, yOffset: number): void {
      // ...
      scroller.scrollTo({ xOffset: 0, yOffset: yOffset, animation: false });
@@ -459,7 +458,7 @@ export class BaseTableViewModel {
 
    在RightList下的[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法中获取列表滚动预估偏移量，调用syncBottomRightScroll()方法。
 
-   ```typescript
+   ```screen
    @Builder
    RightGroupList() {
      Scroll(this.viewModel.rightAreaScroller) {
@@ -478,7 +477,7 @@ export class BaseTableViewModel {
 
    在syncRightListScrollToLeftList()中调用leftListScroller的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法，使左侧列表LeftList纵向同步滚动。
 
-   ```typescript
+   ```screen
    public syncRightListScrollToLeftList(offset: number): void {
      // Calculate target yOffset = current offset + per-frame delta
      const yOffset: number = this.rightListScroller.currentOffset().yOffset + offset;
@@ -486,7 +485,7 @@ export class BaseTableViewModel {
    }
    ```
 
-   ```typescript
+   ```screen
    private scrollToY(scroller: Scroller, yOffset: number): void {
      // ...
      scroller.scrollTo({ xOffset: 0, yOffset: yOffset, animation: false });
@@ -501,7 +500,7 @@ export class BaseTableViewModel {
 
 在股票行情场景中，多只股票的最新价、涨跌额、涨跌幅等指标需要横向排列展示。该场景不启用分组标题和列分割线，表格布局尺寸更紧凑。股票信息表如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ePaj92qORi6imVk-65QNqA/zh-cn_image_0000002682997519.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/9DE-PCoSTSesOrc6tOK7hA/zh-cn_image_0000002682997519.gif "点击放大")
 
 ### 开发步骤
 
@@ -562,7 +561,7 @@ export class BaseTableViewModel {
    * 表格列宽（listItemWidth）：100vp。
    * 表格行高（subListHeight）：60vp。
 
-   ```typescript
+   ```screen
    @ComponentV2
    struct StockInfoTable {
      /**
@@ -592,7 +591,7 @@ export class BaseTableViewModel {
 
    在NavDestination中添加StockTableToolbar工具栏组件和DualScrollTable表格组件，在aboutToAppear()方法中调用viewModel.loadTableData()方法加载数据。
 
-   ```typescript
+   ```screen
    @ComponentV2
    struct StockInfoTable {
      /**
@@ -638,7 +637,7 @@ export class BaseTableViewModel {
 
 左侧参数名称与右侧数据行纵向同步滚动，顶部车型名称与底部数据列横向同步滚动。汽车参数表如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/lIgrL5QyRmaCdtOFGDGyAw/zh-cn_image_0000002683157331.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/WhkCMc4NTPm_t2GDH0j9aQ/zh-cn_image_0000002683157331.gif "点击放大")
 
 ### 开发步骤
 
@@ -743,7 +742,7 @@ export class BaseTableViewModel {
 
 本示例通过Frame分析结果显示，卡顿帧数为0，滚动过程流畅，无卡顿或掉帧现象。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/2AVaP8OTRzeNoDWyB_mTQA/zh-cn_image_0000002652957856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/8WTtNc_6T-mKpeYz5NG51A/zh-cn_image_0000002652957856.png "点击放大")
 
 ## 示例代码
 

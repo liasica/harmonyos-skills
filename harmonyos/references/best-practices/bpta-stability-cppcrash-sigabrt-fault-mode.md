@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGABRT进程主动终止故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGABRT进程主动终止故障模式说明
 category: best-practices
-scraped_at: 2026-09-16T06:55:12+08:00
-doc_updated_at: 2026-09-15
+scraped_at: 2026-10-16T07:06:50+08:00
+doc_updated_at: 2026-10-15
 content_hash: sha256:75b0183950c9cb0199a682d7604a42a41a6862eb6bc5587ddf94f15214553c54
 ---
 

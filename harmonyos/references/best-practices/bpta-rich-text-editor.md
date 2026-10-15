@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-rich-text-
 title: 实现富文本编辑器
 breadcrumb: 最佳实践 > 布局与弹窗 > 实现富文本编辑器
 category: best-practices
-scraped_at: 2026-09-21T06:25:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a6c58cbe6336adbece003c18b68175247aef8d4c91a237e49e9db2517d98dabc
+scraped_at: 2026-10-16T07:06:35+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:87ff9f1815d826039a50295eaa5711faedaa3e35b08997e624a0101e9a63493a
 ---
 
 ## 概述
@@ -14,13 +14,13 @@ content_hash: sha256:a6c58cbe6336adbece003c18b68175247aef8d4c91a237e49e9db2517d9
 
 本文旨在探讨如何使用[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)组件，在内容发布场景中实现自定义表情、@好友、添加话题等功能，并提供示例代码详细拆解细节逻辑，如@好友如何被视为一个整体，编辑器中内容如何获取并归一化处理等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/DGGkISlOT5OAEeHRdAJjlw/zh-cn_image_0000002428614480.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/mQXP8agpSUeVhs8rOyKKdA/zh-cn_image_0000002428614480.gif "点击放大")
 
 ## 实现原理
 
 ### RichEditor组件内容管理方式选型
 
-[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)组件提供两套内容管理接口，方式一使用[RichEditor(options: RichEditorStyledStringOptions)](../harmonyos-references/ts-basic-components-richeditor.md#richeditorstyledstringoptions12)接口创建基于属性字符串（[StyledString/MutableStyledString](../harmonyos-guides/arkts-styled-string.md)）进行内容管理的组件，方式二使用[RichEditor(value: RichEditorOptions)](../harmonyos-references/ts-basic-components-richeditor.md#richeditoroptions)接口创建基于Span进行内容管理的组件。在本文内容发布场景中需要频繁进行输入文字、添加表情、@好友、删除等操作，且无需复杂的样式操作，选择使用方式二基于Span进行内容管理更为合适。
+[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)组件提供两套内容管理接口，方式一使用[RichEditor(options: RichEditorStyledStringOptions)](../harmonyos-references/ts-basic-components-richeditor.md#richeditorstyledstringoptions12)接口创建基于[属性字符串（StyledString/MutableStyledString）](../harmonyos-guides/arkts-styled-string.md)进行内容管理的组件，方式二使用[RichEditor(value: RichEditorOptions)](../harmonyos-references/ts-basic-components-richeditor.md#richeditoroptions)接口创建基于Span进行内容管理的组件。在本文内容发布场景中需要频繁进行输入文字、添加表情、@好友、删除等操作，且无需复杂的样式操作，选择使用方式二基于Span进行内容管理更为合适。
 
 * 方式一：基于属性字符串管理
   + 进行内容样式更新，更加灵活便捷。
@@ -34,9 +34,9 @@ content_hash: sha256:a6c58cbe6336adbece003c18b68175247aef8d4c91a237e49e9db2517d9
 
 编辑区域支持输入文字、表情、@好友等内容。
 
-* 使用系统键盘可输入文字，通过[RichEditorController.setTypingStyle()](../harmonyos-references/ts-basic-components-richeditor.md#settypingstyle11)方法可以设置默认的文本样式。
-* 添加自定义表情图片可使用[RichEditorController.addImageSpan()](../harmonyos-references/ts-basic-components-richeditor.md#addimagespan)方法实现。
-* @好友可使用[RichEditorController.addTextSpan()](../harmonyos-references/ts-basic-components-richeditor.md#addtextspan)和[RichEditorController.addBuilderSpan()](../harmonyos-references/ts-basic-components-richeditor.md#addbuilderspan11)两种方法实现。
+* 使用系统键盘可输入文字，通过[setTypingStyle()](../harmonyos-references/ts-basic-components-richeditor.md#settypingstyle11)方法可以设置默认的文本样式。
+* 添加自定义表情图片可使用[addImageSpan()](../harmonyos-references/ts-basic-components-richeditor.md#addimagespan)方法实现。
+* @好友可使用[addTextSpan()](../harmonyos-references/ts-basic-components-richeditor.md#addtextspan)和[addBuilderSpan()](../harmonyos-references/ts-basic-components-richeditor.md#addbuilderspan11)两种方法实现。
 
   通过如下对比分析可知，使用addBuilderSpan()方法实现更为便捷，但是无法规避折行问题，具体实现可参考[编辑区功能](bpta-comment-reply-pop-up-window.md#section1318482323916)。本文使用addTextSpan()方法实现，提供@好友等自定义内容需要折行显示的开发指导。
 
@@ -88,7 +88,7 @@ updateTextSpans(insertOffset: number, insertLength: number) {
 
 点击下方表情按钮，系统键盘切换为表情面板。点击表情图标，会在编辑区域光标后方添加对应的表情内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/uXBXCSM8QQ6GkxXVVdAhCA/zh-cn_image_0000002428774296.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/kfmBwdHbQ5mgoeCP5ZJq1w/zh-cn_image_0000002428774296.gif "点击放大")
 
 ### 开发步骤
 
@@ -136,7 +136,7 @@ updateTextSpans(insertOffset: number, insertLength: number) {
 
 添加话题、标题与@好友逻辑一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/VT35edzHQo62-3xy-1P5jA/zh-cn_image_0000002462252949.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ESuEoC-5R0uSdWy3jAZalQ/zh-cn_image_0000002462252949.gif "点击放大")
 
 ### 开发步骤
 
@@ -231,7 +231,7 @@ updateTextSpans(insertOffset: number, insertLength: number) {
 
 光标不可落入@好友文本的内部。当用户点击或选中@好友这种自定义内容时，光标应自动跳转到内容的开始或结束位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/uW4MFLU4TLGez4PmDmezbg/zh-cn_image_0000002462133105.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gg3EwtY0T8uf_cHiHPR-GQ/zh-cn_image_0000002462133105.gif "点击放大")
 
 ### 开发步骤
 
@@ -297,7 +297,7 @@ updateTextSpans(insertOffset: number, insertLength: number) {
 
 点击软键盘删除按钮，光标前待删除的是@好友等自定义内容时，则作为整体删除。其余内容删除时无需额外处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/rPB1kMhuR2SZNPMSbDNn8w/zh-cn_image_0000002428614484.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/a9mtuzzOR3K3_BZdRgQoMw/zh-cn_image_0000002428614484.gif "点击放大")
 
 ### 开发步骤
 
@@ -351,7 +351,7 @@ aboutToDelete: (value: RichEditorDeleteValue) => boolean = deleteValue => {
      data?: ESObject;
    }
    ```
-2. RichEditor组件提供[getSpans()](../harmonyos-references/ts-basic-components-richeditor.md#getspans)方法来获取内容，但是例如@好友中一些结构化信息仍需要根据位置信息去手动维护的[textSpans](bpta-rich-text-editor.md#section153701489425)数组中去查找。最后将[getSpans()](../harmonyos-references/ts-basic-components-richeditor.md#getspans)方法获取的[RichEditorTextSpanResult](../harmonyos-references/ts-basic-components-richeditor.md#richeditortextspanresult)和[RichEditorImageSpanResult](../harmonyos-references/ts-basic-components-richeditor.md#richeditorimagespanresult)转换成CustomSpan。
+2. RichEditor组件提供[getSpans()](../harmonyos-references/ts-basic-components-richeditor.md#getspans)方法来获取内容，但是例如@好友中一些结构化信息仍需要根据位置信息去手动维护的textSpans数组（参考[维护输入内容](bpta-rich-text-editor.md#section153701489425)）中去查找。最后将[getSpans()](../harmonyos-references/ts-basic-components-richeditor.md#getspans)方法获取的[RichEditorTextSpanResult](../harmonyos-references/ts-basic-components-richeditor.md#richeditortextspanresult)和[RichEditorImageSpanResult](../harmonyos-references/ts-basic-components-richeditor.md#richeditorimagespanresult)转换成CustomSpan。
 
    ```screen
    getData(): CustomSpan[] {
@@ -380,7 +380,7 @@ aboutToDelete: (value: RichEditorDeleteValue) => boolean = deleteValue => {
    ```
 3. 图中内容通过getData()方法生成的数据序列化后的数据如下，如何与服务端交互或使用这些数据，根据业务需求调整即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/eetfADYkTpq4Y1ruf3Pabg/zh-cn_image_0000002428774300.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/_j0qzdAhThGJVIGXF8zbUg/zh-cn_image_0000002428774300.png "点击放大")
 
    ```json
    [{
@@ -402,6 +402,7 @@ aboutToDelete: (value: RichEditorDeleteValue) => boolean = deleteValue => {
      "data": {
        "topicId": "1",
        "title": "众测主题赛"
+     }
    }, {
      "value": " "
    }]

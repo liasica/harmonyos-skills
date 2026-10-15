@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGILL非法指令故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGILL非法指令故障模式说明
 category: best-practices
-scraped_at: 2026-09-21T06:25:49+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:fd2d936adec554e0cc5ffe7700ea05dd8022b0824089cec2913bf371cf39fb4c
+scraped_at: 2026-10-16T07:06:50+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:a5920309e02b6002d0b4e938fdd2cc4edb0db40d836fa621ecdc93a4aa66147f
 ---
 
 ## ILL\_ILLOPC非法操作码异常
@@ -137,7 +137,7 @@ napi_value TriggerUndefinedInstruction(napi_env env, napi_callback_info info)
    证据3：0000005a2e7e86b0是4字节对齐地址。
 4. 反编译libentry.so分析汇编代码指令有效性。
 
-   证据4：对应指令DCD 0x3C00B0F，0F是双字节操作码，0B是扩展操作码，组合表示UD2(Undefined Operation)指令，属于无效指令。
+   证据4：对应指令DCD 0x3C00B0F，0F是双字节操作码，0B是扩展操作码，组合表示UD2（Undefined Operation）指令，属于无效指令。
 
    ```screen
    .text:0000000000092AEC      DCD 0x3C00B0F
@@ -255,5 +255,5 @@ napi_value TriggerUndefinedInstruction(napi_env env, napi_callback_info info)
 
 ### 常见易错代码预防建议
 
-1. 开启编译选项CMAKE\_C\_FLAGS="-march=armv8-a"，锁定硬件架构与编译，拦截指令集架构不匹配问题。
+1. 通过编译选项锁定硬件架构与编译，拦截指令集架构不匹配问题。编译选项配置如：“CMAKE\_C\_FLAGS="-march=armv8-a"”。
 2. 代码静态分析，禁用内联汇编，使用NDK API，避免嵌入无效指令。

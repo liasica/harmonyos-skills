@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkts-kit-faq-0004
 title: ArkTS-Record工具类型使用常见问题
-breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 常见问题 > ArkTS-Record工具类型使用常见问题
+breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 常见问题 > ArkTS-Record工具类型使用常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:13:47+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-10-16T07:07:06+08:00
+doc_updated_at: 2026-10-15
 content_hash: sha256:919adb25b949fbd4d2430f1d1ceadf49c267a4813824f1d9512ae6a99f2effc8
 ---
 

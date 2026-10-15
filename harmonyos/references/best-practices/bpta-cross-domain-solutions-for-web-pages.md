@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-cross-doma
 title: Web页面跨域解决方案
 breadcrumb: 最佳实践 > 应用框架 > ArkWeb > Web页面跨域解决方案
 category: best-practices
-scraped_at: 2026-09-21T06:25:36+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:358ac6e06c00951a89cc31cb4a2cb26254eba3714abbf52ada42bc535e24614e
+scraped_at: 2026-10-16T07:06:36+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:22d344e12ce5094e32b7c48ad3ecafbfa3b37571c8c7e7b623a1b6b0f9da3320
 ---
 
 ## 概述
@@ -27,13 +27,13 @@ content_hash: sha256:358ac6e06c00951a89cc31cb4a2cb26254eba3714abbf52ada42bc535e2
 
 本地资源跨域具体的安全限制表现如下：
 
-* AJAX（XMLHttpRequest/Fetch）：无法向另一个本地文件发送请求，会遇到经典的CORS(跨域资源共享)错误。
+* AJAX(XMLHttpRequest/Fetch)：无法向另一个本地文件发送请求，会遇到经典的CORS（跨域资源共享）错误。
 * 访问iframe内容：如果一个file://协议页面通过<iframe>嵌入另一个本地文件，父页面无法使用JavaScript读取或操作iframe内部的内容。
 * Web Workers：可能无法从本地文件启动。
 * 某些HTML5 API：如localStorage和sessionStorage的访问可能会受到更严格的限制，甚至在某些情况下不可用。
 * CSS和JavaScript模块：使用import、@import或<link rel="modulepreload">引用其他本地模块文件时，可能会失败。
 
-本节以“WebView 加载本地H5离线包（file://协议），且该离线H5发起HTTP请求”的场景举例，介绍file协议下不同源跨域问题的解决方案。
+本节以“WebView加载本地H5离线包（file://协议），且该离线H5发起HTTP请求”的场景举例，介绍file协议下不同源跨域问题的解决方案。
 
 ### 实现原理
 
@@ -43,10 +43,10 @@ content_hash: sha256:358ac6e06c00951a89cc31cb4a2cb26254eba3714abbf52ada42bc535e2
 
 [setPathAllowingUniversalAccess()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setpathallowinguniversalaccess12)设置的路径列表中的路径应符合以下任一路径格式：
 
-1. 应用文件目录通过[Context.filesDir()](../harmonyos-references/js-apis-inner-application-context.md#context)获取，其子目录示例如下：
+1. 应用文件目录通过[Context](../harmonyos-references/js-apis-inner-application-context.md#context).filesDir()获取，其子目录示例如下：
    * /data/storage/el2/base/files/example
    * /data/storage/el2/base/haps/entry/files/example
-2. 应用资源目录通过[Context.resourceDir()](../harmonyos-references/js-apis-inner-application-context.md#context)获取，其子目录示例如下：
+2. 应用资源目录通过[Context](../harmonyos-references/js-apis-inner-application-context.md#context).resourceDir()获取，其子目录示例如下：
    * /data/storage/el1/bundle/entry/resources/resfile
    * /data/storage/el1/bundle/entry/resources/resfile/example
 
@@ -76,17 +76,17 @@ Web({ src: 'resource://resfile/LocalResource/dist/index.html', controller: this.
 
 ### 场景描述
 
-在Web应用中，当前端页面向不同源的远程服务器发送请求以获取数据时，浏览器会因为同源策略而拦截响应，导致请求失败。这种场景在前后端分离架构中十分常见，例如前端应用部署在http://\*\*\*a.com，而后端 API 部署在http://\*\*\*b.com（域名不同），或者调用第三方服务（如http://www.\*\*\*thirdparty.com）时，都会触发远程请求跨域问题。
+在Web应用中，当前端页面向不同源的远程服务器发送请求以获取数据时，浏览器会因为同源策略而拦截响应，导致请求失败。这种场景在前后端分离架构中十分常见，例如前端应用部署在http://\*\*\*a.com，而后端API部署在http://\*\*\*b.com（域名不同），或者调用第三方服务（如http://www.\*\*\*thirdparty.com）时，都会触发远程请求跨域问题。
 
 ### 实现原理
 
 远程请求跨域的解决方案基于浏览器的跨域资源共享（CORS）机制或间接代理方式，其核心是通过服务器配置或中间层转发来消除源的差异：
 
 * CORS（跨域资源共享）：由服务器端进行响应头配置，明确允许特定源的请求访问资源。服务器通过设置Access-Control-Allow-Origin指定允许的源，Access-Control-Allow-Methods指定允许的请求方法，Access-Control-Allow-Headers指定允许的请求头，使浏览器认可跨域请求的合法性。在ArkWeb中发起请求时，无需特殊配置，只需服务器正确设置CORS即可。
-* 代理请求：在WebView中设置拦截器拦截Web页面发起的跨域请求，使用[rcp](../harmonyos-references/remote-communication-rcp.md)请求代理请求到目标远程服务器。RCP请求与远程服务器的通信不受浏览器限制，因此可以接收到服务器的响应结果，但将结果传回WebView时仍需配置跨域响应头来解决跨域问题。
+* 代理请求：在WebView中设置拦截器拦截Web页面发起的跨域请求，使用[rcp（数据请求）](../harmonyos-references/remote-communication-rcp.md)代理请求到目标远程服务器。rcp与远程服务器的通信不受浏览器限制，因此可以接收到服务器的响应结果，但将结果传回WebView时仍需配置跨域响应头来解决跨域问题。
 
   **图1** 代理请求方案流程图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/PMoOk6HTQHKAhX26H5tTig/zh-cn_image_0000002451165758.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/yM_hg0XRRrmBaytZ93mnHA/zh-cn_image_0000002451165758.png "点击放大")
 
 ### 开发步骤
 
@@ -107,7 +107,7 @@ appB.use(cors({
 
 **方案二 代理请求**
 
-1. 在WebView中设置请求拦截器时，可通过[onLoadIntercept()](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)、[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)、[WebSchemeHandler.onRequestStart()](../harmonyos-references/arkts-apis-webview-webschemehandler.md#onrequeststart12)三种常用方法实现。下文以WebSchemeHandler.onRequestStart()方法为例，说明具体拦截逻辑的实现方式：
+1. 在WebView中设置请求拦截器时，可通过[onLoadIntercept()](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)、[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)、[onRequestStart()](../harmonyos-references/arkts-apis-webview-webschemehandler.md#onrequeststart12)三种常用方法实现。下文以WebSchemeHandler.onRequestStart()方法为例，说明具体拦截逻辑的实现方式：
 
    通过[setWebSchemeHandler()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setwebschemehandler12)为当前Web组件配置拦截器，专门用于拦截HTTP协议请求。当拦截到请求后，可在WebSchemeHandler的onRequestStart()回调中编写跨域请求的具体处理逻辑；回调中需返回true，以此告知Web组件“该请求已被拦截，无需继续执行默认请求流程”。
 
@@ -167,7 +167,7 @@ appB.use(cors({
      // ...
    }
    ```
-3. 新建响应头，将跨域响应头配置到新响应头上，将新响应头和RCP请求的结果都放到拦截器的[resourceHandler](../harmonyos-references/arkts-apis-webview-webresourcehandler.md)中，通知Web组件被拦截的请求已经完成。
+3. 新建响应头，将跨域响应头配置到新响应头上，将新响应头和RCP请求的结果都放到拦截器的[Class (WebResourceHandler)](../harmonyos-references/arkts-apis-webview-webresourcehandler.md)中，通知Web组件被拦截的请求已经完成。
 
    ```typescript
    private handleResponse(res: rcp.Response, resourceHandler: webview.WebResourceHandler,
@@ -203,7 +203,7 @@ appB.use(cors({
 跨域请求的Cookie设置需要同时满足前端请求配置与服务器响应头要求，核心是通过显式声明允许Cookie跨域传输，消除浏览器的安全限制。
 
 * 前端配置：在发送跨域请求时，需设置credentials: 'include'（Fetch API）或withCredentials: true（XMLHttpRequest），告知浏览器允许携带Cookie。
-* WebView配置：调用[WebCookieManager.putAcceptCookieEnabled()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#putacceptcookieenabled)接口以允许携带Cookie。
+* WebView配置：调用[putAcceptCookieEnabled()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#putacceptcookieenabled)接口以允许携带Cookie。
 * 服务器配置：响应头需包含Access-Control-Allow-Credentials: true，明确允许跨域请求携带Cookie；同时Access-Control-Allow-Origin不能为通配符“\*”，必须指定具体的前端源（如http://www.\*\*\*a.com），确保权限可控。
 * Cookie属性：根据业务开发需要，设置合适的允许携带的Cookie属性。
 
@@ -216,7 +216,7 @@ appB.use(cors({
      withCredentials: true
    });
    ```
-2. 在ArkWeb中，使用[WebCookieManager](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)的相关接口，完成允许携带Cookie、获取A域名下的Cookie、将Cookie设置到B域名下的操作。
+2. 在ArkWeb中，使用[Class (WebCookieManager)](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)的相关接口，完成允许携带Cookie、获取A域名下的Cookie、将Cookie设置到B域名下的操作。
 
    ```typescript
    webview.WebCookieManager.putAcceptCookieEnabled(true);
@@ -244,8 +244,8 @@ appB.use(cors({
 
 ### 实现原理
 
-* 拦截自定义协议替换为本地资源加载：通过[WebSchemeHandler](../harmonyos-references/arkts-apis-webview-webschemehandler.md)拦截器，在WebView加载页面资源时，对自定义协议的资源进行拦截，返回读取的本地资源。
-* 拦截自定义协议调用系统弹窗：通过[WebSchemeHandler](../harmonyos-references/arkts-apis-webview-webschemehandler.md)拦截器，拦截自定义协议接口，调用系统弹窗提示“已拦截自定义协议”。
+* 拦截自定义协议替换为本地资源加载：通过[Class (WebSchemeHandler)](../harmonyos-references/arkts-apis-webview-webschemehandler.md)拦截器，在WebView加载页面资源时，对自定义协议的资源进行拦截，返回读取的本地资源。
+* 拦截自定义协议调用系统弹窗：通过[Class (WebSchemeHandler)](../harmonyos-references/arkts-apis-webview-webschemehandler.md)拦截器，拦截自定义协议接口，调用系统弹窗提示“已拦截自定义协议”。
 
 ### 开发步骤
 

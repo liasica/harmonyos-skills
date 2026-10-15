@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-travel-na
 title: 多设备地图导航界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备地图导航界面
 category: best-practices
-scraped_at: 2026-09-21T06:25:40+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:b33d8d6b63ce6115fcefa8c0badc511fd48b187361ae53267e1dff7562f3b5bb
+scraped_at: 2026-10-16T07:06:41+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:ddd369b81633efee8e4b9bc09982a4af546fbd5110eda47ce90faba524267efe
 ---
 
 ## 概述
@@ -44,7 +44,7 @@ content_hash: sha256:b33d8d6b63ce6115fcefa8c0badc511fd48b187361ae53267e1dff7562f
 
 地图导航应用的UX设计可参考[出行导航类](../design-guides/travel-and-navigation-0000001957391017.md)多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/nqPQVJr4TxGhrn1WhIcuNA/zh-cn_image_0000002584589316.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ASWdCW6KSlujZOqnF_M0iw/zh-cn_image_0000002584589316.png "点击放大")
 
 ## 工程管理
 
@@ -156,7 +156,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 |  |  |  |
 | --- | --- | --- |
 | **区域编号** | **简介** | **实现方案** |
-| 1 | 地图画布 | 使用[Map Kit（地图服务）](../harmonyos-guides/map-kit-guide.md)的[MapComponent](../harmonyos-references/map-mapcomponent.md#mapcomponent)创建地图，并通过[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)更新定位、标记和路线。 |
+| 1 | 地图画布 | 使用[Map Kit（地图服务）](../harmonyos-guides/map-kit-guide.md)的[MapComponent](../harmonyos-references/map-mapcomponent.md#mapcomponent)创建地图，并通过[MapComponentController](../doccenter-references/api/map-map-mapcomponentcontroller.md#mapcomponentcontroller)更新定位、标记和路线。 |
 | 2 | 信息面板 | 自定义信息面板承载业务内容，使用[Stack](../harmonyos-references/ts-container-stack.md)组件覆盖在地图上展示。 |
 
 在不同设备形态下，可以将设备的窗口断点映射为地图面板不同布局，屏蔽业务对设备类型的直接感知。覆盖式布局再根据断点细分为底部面板、底部Mini面板和悬浮面板。
@@ -174,7 +174,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 * 面板档位/位置切换：底部面板支持上下拖动切换高度档位，悬浮面板除了支持高度档位切换外，还支持左右拖动切换吸附位置。面板交互完成后，地图容器根据面板高度、侧边位置和可见状态重新计算地图可视区域，使地图Logo、定位控件和路线内容避开面板区域。
 
-底部面板通过[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)监听上下拖动，悬浮面板通过PanGesture监听上下和左右拖动；面板高度或位置变化后，地图容器重新计算地图Padding，并调用Map Kit的[MapController.setPadding()](../harmonyos-references/map-map-mapcomponentcontroller.md#setpadding)更新地图可视区域。
+底部面板通过[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)监听上下拖动，悬浮面板通过PanGesture监听上下和左右拖动；面板高度或位置变化后，地图容器重新计算地图Padding，并调用Map Kit的MapComponentController.[setPadding()](../harmonyos-references/map-map-mapcomponentcontroller.md#setpadding)更新地图可视区域。
 
 面板档位/位置切换示意图如下所示（以首页为例）：
 
@@ -192,12 +192,12 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 地图容器页功能开发流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/d--TsQsEQeiuMqEjubAyRw/zh-cn_image_0000002614909169.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/HZp4C_AmQLKvVPiGFKEyqA/zh-cn_image_0000002614909169.png "点击放大")
 
 地图容器页主要包含以下功能：
 
-* 创建地图组件：使用[Map Kit（地图服务）](../harmonyos-guides/map-kit-guide.md)的[MapComponent](../harmonyos-references/map-mapcomponent.md#mapcomponent)创建地图实例，并通过回调获取[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)，为后续定位、标记、路线绘制和地图避让提供控制入口。获取MapComponentController后，开启我的位置、复位按钮、实时路况和建筑物显示等地图基础能力；其中，复位按钮用于快速回到当前位置，底部面板场景下可隐藏缩放控件，避免控件与面板重叠。
-* 设置当前位置：定位成功后，地图容器通过[MapController.setMyLocation()](../harmonyos-references/map-map-mapcomponentcontroller.md#setmylocation)设置当前位置，并在坐标转换后通过[MapController.animateCamera()](../harmonyos-references/map-map-mapcomponentcontroller.md#animatecamera)移动地图镜头，保证用户进入页面后能快速看到当前位置附近的地图内容。
+* 创建地图组件：使用[Map Kit（地图服务）](../harmonyos-guides/map-kit-guide.md)的[MapComponent](../harmonyos-references/map-mapcomponent.md#mapcomponent)创建地图实例，并通过回调获取[MapComponentController](../doccenter-references/api/map-map-mapcomponentcontroller.md#mapcomponentcontroller)，为后续定位、标记、路线绘制和地图避让提供控制入口。获取MapComponentController后，开启我的位置、复位按钮、实时路况和建筑物显示等地图基础能力；其中，复位按钮用于快速回到当前位置，底部面板场景下可隐藏缩放控件，避免控件与面板重叠。
+* 设置当前位置：定位成功后，地图容器通过MapComponentController.[setMyLocation()](../harmonyos-references/map-map-mapcomponentcontroller.md#setmylocation)设置当前位置，并在坐标转换后通过MapComponentController.[animateCamera()](../harmonyos-references/map-map-mapcomponentcontroller.md#animatecamera)移动地图镜头，保证用户进入页面后能快速看到当前位置附近的地图内容。
 * 更新业务状态：业务页面更新当前地图状态、选中地点、搜索结果和路线数据，地图容器监听状态变化，并统一触发地图内容刷新。
 * 刷新地图内容：地图容器根据当前业务场景区分首页、搜索结果、地点详情和路线规划等场景。
 
@@ -232,7 +232,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 * 搜索入口交互：用户点击搜索框时，通过点击事件触发回调自动将面板提升到高档位；以直板机为例，点击搜索框面板自动升高示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/bxBuQZ2NQtuYxF7oMBMYVg/zh-cn_image_0000002584429394.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/WztyrN0ASGq-sAp05-9Yqw/zh-cn_image_0000002584429394.gif "点击放大")
 
 ### 地点搜索页
 
@@ -253,7 +253,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 | **区域编号** | **简介** | **实现方案** |
 | 1 | 搜索输入区 | 复用搜索栏中的[TextInput](../harmonyos-references/ts-basic-components-textinput.md)展示搜索词，并通过提交事件重新发起地点搜索。 |
 | 2 | 结果列表 | 使用List组件展示搜索结果，高档位中支持纵向滚动浏览。 |
-| 3 | 地图标记 | 使用[MapController.addMarker()](../harmonyos-references/map-map-mapcomponentcontroller.md#addmarker)添加搜索结果标记，并通过[MarkerOptions](../harmonyos-references/map-common.md#markeroptions)配置标记的图标、位置和标题。 |
+| 3 | 地图标记 | 使用MapComponentController.[addMarker()](../harmonyos-references/map-map-mapcomponentcontroller.md#addmarker)添加搜索结果标记，并通过[MarkerOptions](../harmonyos-references/map-common.md#markeroptions)配置标记的图标、位置和标题。 |
 
 ### 地点详情页
 
@@ -297,7 +297,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 |  |  |  |
 | --- | --- | --- |
 | **区域编号** | **简介** | **实现方案** |
-| 1 | 地图路线区 | 调用[MapController.addPolyline()](../harmonyos-references/map-map-mapcomponentcontroller.md#addpolyline)绘制路线折线，并通过MapController.animateCamera()将地图镜头聚焦于路线图。 |
+| 1 | 地图路线区 | 调用MapComponentController.[addPolyline()](../harmonyos-references/map-map-mapcomponentcontroller.md#addpolyline)绘制路线折线，并通过MapController.animateCamera()将地图镜头聚焦于路线图。 |
 | 2 | 起终点信息 | 使用[TextInput](../harmonyos-references/ts-basic-components-textinput.md)组件展示起点和终点，其中终点回显当前选中的地点名称。 |
 | 3 | 出行方式区 | 使用[Scroll](../harmonyos-references/ts-container-scroll.md)容器横向展示出行方式入口，并通过选中态区分当前出行方式。 |
 | 4 | 路线方案列表 | 面板处于高档位时使用List组件纵向展示路线方案，面板处于中档位或Mini面板时使用横向卡片展示前3条路线。 |
@@ -308,19 +308,19 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 路线规划页主要包含以下交互：
 
-* 返回地点详情：用户点击返回按钮时，页面通过按钮点击事件触发返回逻辑，调用路线清理回调并将地图状态恢复为地点详情状态，同时通过页面路由退栈[NavPathStack.pop()](../harmonyos-references/ts-basic-components-navigation.md#pop11)返回上一页。路线清理后，地图侧重新展示当前地点标记，避免路线折线继续停留在详情场景中。
+* 返回地点详情：用户点击返回按钮时，页面通过按钮点击事件触发返回逻辑，调用路线清理回调并将地图状态恢复为地点详情状态，同时通过页面路由退栈NavPathStack.[pop()](../harmonyos-references/ts-basic-components-navigation.md#pop11)返回上一页。路线清理后，地图侧重新展示当前地点标记，避免路线折线继续停留在详情场景中。
 
   以直板机为例，返回清除路线并恢复地点标记的示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/m7QE5_pRSO-nEf_dc2EYqg/zh-cn_image_0000002584589344.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/4AWKrtu2Sxqh6DSF6bPn_A/zh-cn_image_0000002584589344.gif "点击放大")
 
 **功能开发**
 
 路线规划页主要负责路线请求、路线结果处理和地图路线同步：
 
-* 路线请求：页面进入时将地图状态切换为路线规划状态，并清理旧路线；随后优先使用当前定位作为起点，如果当前定位尚未就绪，则等待定位结果。起点坐标会通过[map.convertCoordinateSync()](../harmonyos-references/map-map-functions.md#convertcoordinatesync)完成坐标系转换，再使用Map Kit的[navi.getDrivingRoutes()](../harmonyos-references/map-navi-api.md#getdrivingroutes)发起驾车路线规划，通过[DrivingRouteParams](../harmonyos-references/map-navi-api.md#drivingrouteparams)传入起点origins、终点destination等参数。
-* 路线结果处理：路线规划成功后，页面保存路径[RouteResult.routes](../harmonyos-references/map-navi-api.md#routeresult)，并从首条路线的信息steps中提取[RouteRoad](../harmonyos-references/map-navi-api.md#routeroad)数据，用于地图侧绘制路线；同时通过路线步骤中的duration和distance汇总总耗时与总距离，并在路线列表中展示不同路线方案。
-* 路线地图同步：路线道路数据准备完成后，页面通过路线就绪回调将RouteRoad传递给地图容器。地图容器将[RouteRoad.polyline](../harmonyos-references/map-navi-api.md#routeroad)转换为路线点位集合，调用[MapComponentController.addPolyline()](../harmonyos-references/map-map-mapcomponentcontroller.md#addpolyline)接口绘制路线折线，并通过[MapPolylineOptions](../harmonyos-references/map-common.md#mappolylineoptions)配置折线样式和箭头纹理；随后根据路线点位计算东北角和西南角边界，传入[map.newLatLngBounds()](../harmonyos-references/map-map-functions.md#newlatlngbounds)生成镜头更新对象，并调用[MapComponentController.animateCamera()](../harmonyos-references/map-map-mapcomponentcontroller.md#animatecamera)将路线完整展示在当前地图可视区域内。
+* 路线请求：页面进入时将地图状态切换为路线规划状态，并清理旧路线；随后优先使用当前定位作为起点，如果当前定位尚未就绪，则等待定位结果。起点坐标会通过map.[convertCoordinateSync()](../harmonyos-references/map-map-functions.md#convertcoordinatesync)完成坐标系转换，再使用Map Kit的navi.[getDrivingRoutes()](../harmonyos-references/map-navi-api.md#getdrivingroutes)发起驾车路线规划，通过[DrivingRouteParams](../harmonyos-references/map-navi-api.md#drivingrouteparams)传入起点origins、终点destination等参数。
+* 路线结果处理：路线规划成功后，页面保存路径[RouteResult](../harmonyos-references/map-navi-api.md#routeresult).routes，并从首条路线的信息steps中提取[RouteRoad](../harmonyos-references/map-navi-api.md#routeroad)数据，用于地图侧绘制路线；同时通过路线步骤中的duration和distance汇总总耗时与总距离，并在路线列表中展示不同路线方案。
+* 路线地图同步：路线道路数据准备完成后，页面通过路线就绪回调将RouteRoad传递给地图容器。地图容器将[RouteRoad](../harmonyos-references/map-navi-api.md#routeroad).polyline转换为路线点位集合，调用MapComponentController.[addPolyline()](../harmonyos-references/map-map-mapcomponentcontroller.md#addpolyline)接口绘制路线折线，并通过[MapPolylineOptions](../harmonyos-references/map-common.md#mappolylineoptions)配置折线样式和箭头纹理；随后根据路线点位计算东北角和西南角边界，传入map.[newLatLngBounds()](../harmonyos-references/map-map-functions.md#newlatlngbounds)生成镜头更新对象，并调用MapComponentController.[animateCamera()](../harmonyos-references/map-map-mapcomponentcontroller.md#animatecamera)将路线完整展示在当前地图可视区域内。
 
 ### 实况窗
 
@@ -358,13 +358,13 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
   地图导航应用在电脑端上支持全屏和自由窗口两种模式，具体实现可参考[窗口模式](bpta-multi-device-window-mode.md)。应用内使用响应式组件，即可根据窗口大小，自动适配全屏和自由窗口模式下的布局
 * 窗口沉浸式
 
-  据UX设计规范，需要实现全屏和自由窗口下的沉浸式效果，具体实现可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。全屏模式下，通过[window.setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现沉浸式。自由窗口模式下，通过[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使页面内容延伸至标题栏区域，实现沉浸式显示效果。
+  据UX设计规范，需要实现全屏和自由窗口下的沉浸式效果，具体实现可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。全屏模式下，通过window.[setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现沉浸式。自由窗口模式下，通过向[window.setWindowDecorVisible()](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)传入false隐藏标题栏，仅保留右上角三键，使页面内容延伸至标题栏区域，实现沉浸式显示效果。
 
 ### 地图容器页
 
-电脑端地图容器页移动端功能定位一致，信息面板固定在侧边栏，面板右侧承载地图画布和电脑端装饰工具栏。效果图如下所示：
+电脑端地图容器页与移动端功能一致，信息面板固定在侧边栏，面板右侧承载地图画布和电脑端装饰工具栏。效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/vy_EigFSRDm77E33ErPPEQ/zh-cn_image_0000002584429408.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Iqs08bzNSYSUa1WS7Gk2Wg/zh-cn_image_0000002584429408.png "点击放大")
 
 **界面开发**
 
@@ -377,7 +377,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 | 2 | 地图画布 | 同[地图容器页](multi-travel-navigation.md#section1728173982316)地图画布区域的布局实现方案一致。 |
 | 3 | 地图操作区 | 使用[Stack](../harmonyos-references/ts-container-stack.md)组件，在地图主区域叠加工具栏区域。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/FIF_xKDuQPe6HX-PGuyo9w/zh-cn_image_0000002584589348.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/xGk3cX8fRxqlodqVvqKNig/zh-cn_image_0000002584589348.png "点击放大")
 
 ### 首页
 
@@ -390,22 +390,22 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 |  |  |  |
 | --- | --- | --- |
 | **区域编号** | **简介** | **实现方案** |
-| 1 | 搜索入口 | 同[移动端首页](multi-travel-navigation.md#section1813183410226)的布局实现方案一致。 |
+| 1 | 搜索入口 | 同移动端[首页](multi-travel-navigation.md#section1813183410226)的布局实现方案一致。 |
 | 2 | 出行功能区 |
-| 3 | 地点推荐区 |
+| 3、4 | 地点推荐区 |
 
 ### 地点搜索页
 
 电脑端地点搜索页在侧栏中展示搜索结果列表，在地图主区域同步展示搜索结果标记。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kFfVbt2AS5mJNJcMzWuTLg/zh-cn_image_0000002614789083.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/QaMz2zfATrm5dg0rTolB2g/zh-cn_image_0000002614789083.png "点击放大")
 
 **界面开发**
 
 |  |  |  |
 | --- | --- | --- |
 | **区域编号** | **简介** | **实现方案** |
-| 1 | 搜索输入区 | 同[移动端地点搜索页](multi-travel-navigation.md#section12545345162216)的布局实现方案一致。 |
+| 1 | 搜索输入区 | 同移动端[地点搜索页](multi-travel-navigation.md#section12545345162216)的布局实现方案一致。 |
 | 2 | 结果列表 |
 | 3 | 地图标记 |
 
@@ -413,7 +413,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端地点详情页固定在侧栏中，用户可以在确认地点信息的同时查看地图中的目的地位置。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/l-PiMsndQJyg7poGE8FcJA/zh-cn_image_0000002614909193.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Qg6EnBV7SXmR2oKpg7YUtA/zh-cn_image_0000002614909193.png "点击放大")
 
 **界面开发**
 
@@ -422,7 +422,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 |  |  |  |
 | --- | --- | --- |
 | **区域编号** | **简介** | **实现方案** |
-| 1 | 地点基础信息区 | 同[移动端地点详情页](multi-travel-navigation.md#section6685652152210)的布局实现方案一致。 |
+| 1 | 地点基础信息区 | 同移动端[地点详情页](multi-travel-navigation.md#section6685652152210)的布局实现方案一致。 |
 | 2 | 扩展内容区 |
 | 3 | 底部操作区 |
 
@@ -430,7 +430,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端路线规划页在侧栏中展示起终点和路线方案，在地图主区域展示完整路线走向。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/T57XyN87Qx2xmoU_uIOzAg/zh-cn_image_0000002584429410.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Ck7PMvPVSa-gUG_3lSUZEg/zh-cn_image_0000002584429410.png "点击放大")
 
 **界面开发**
 
@@ -439,10 +439,10 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 |  |  |  |
 | --- | --- | --- |
 | **区域编号** | **简介** | **实现方案** |
-| 1 | 起终点信息 | 除返回按钮的位置，同[移动端路线规划页](multi-travel-navigation.md#section35318452315)的布局实现方案一致。 |
+| 1 | 起终点信息 | 除返回按钮的位置，同移动端[路线规划页](multi-travel-navigation.md#section35318452315)的布局实现方案一致。 |
 | 2 | 出行方式区 |
 | 3 | 路线方案列表 | 使用纵向List列表展示路线方案，展示路线策略、总距离和总耗时。 |
-| 4 | 地图路线区 | 同[移动端路线规划页](multi-travel-navigation.md#section35318452315)的布局实现方案一致。 |
+| 4 | 地图路线区 | 同移动端[路线规划页](multi-travel-navigation.md#section35318452315)的布局实现方案一致。 |
 
 ## 示例代码
 

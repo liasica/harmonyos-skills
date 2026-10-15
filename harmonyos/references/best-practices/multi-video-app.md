@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-video-app
 title: 多设备长视频界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备长视频界面
 category: best-practices
-scraped_at: 2026-09-21T06:25:40+08:00
+scraped_at: 2026-10-16T07:06:39+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:50e28fb25eb708b8753eb16a8202ac800ffd15ff5208f2570a0e08078cc5ad67
+content_hash: sha256:1dbe6812549bddaa96e51f44512fb67be3d4ec90a948b29e56a50b68537cd10d
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:50e28fb25eb708b8753eb16a8202ac800ffd15ff5208f2570a0e08078cc
 
 长视频应用的UX设计可参考影音娱乐类多设备响应式设计指南的[长视频](../design-guides/responsive-design-examples1-0000001957369849.md#section10309114311327)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/XKEv67TlSu22TTH5cfw_Qg/zh-cn_image_0000002579786808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/iifmsmiYTHaJBKecebh_Rw/zh-cn_image_0000002579786808.png "点击放大")
 
 ## 工程管理
 
@@ -255,7 +255,7 @@ content_hash: sha256:50e28fb25eb708b8753eb16a8202ac800ffd15ff5208f2570a0e08078cc
 
   2. 悬停态页面布局：视频画面移至屏幕上半部分显示；屏幕中间设置为折叠屏折痕避让区；进度条及其他可操作组件统一排布在屏幕下半部分。效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/7_CUIuk3RK2rlt1mMX8oCQ/zh-cn_image_0000002610146917.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/_qLd_ZzDTCeO8oBXBBCUfw/zh-cn_image_0000002610146917.png "点击放大")
 
 **说明** 
 
@@ -288,7 +288,7 @@ content_hash: sha256:50e28fb25eb708b8753eb16a8202ac800ffd15ff5208f2570a0e08078cc
 
 电脑端推荐页与移动端功能定位一致，按照功能设计划分为6个区域，效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Yh9okME2TUGGsPh7NgwDzg/zh-cn_image_0000002579627030.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/DT6OPfhHRfaYz7pAGD-tRg/zh-cn_image_0000002579627030.png "点击放大")
 
 **界面开发**
 
@@ -307,10 +307,10 @@ content_hash: sha256:50e28fb25eb708b8753eb16a8202ac800ffd15ff5208f2570a0e08078cc
 
 * 社区页签沉浸式设计
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/nlMUSzHLQCC0yajXk1RQvA/zh-cn_image_0000002579786936.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/xbMca53EQy680ypLZPDo0g/zh-cn_image_0000002579786936.png "点击放大")
 * Banner图创新排版
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/EhInmNVBQBadtFxDtkIQ9g/zh-cn_image_0000002610066823.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/CEnP71ZlRMmticvdBJ-Kgw/zh-cn_image_0000002610066823.png "点击放大")
 
 **交互开发**
 
@@ -357,7 +357,7 @@ content_hash: sha256:50e28fb25eb708b8753eb16a8202ac800ffd15ff5208f2570a0e08078cc
 
 边看边评页按照功能设计划分为5个区域，效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/rokj9XX_QxybIel6wdu_xg/zh-cn_image_0000002579627036.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/L81QEo1eSz6pF9Y0W5MZ8g/zh-cn_image_0000002579627036.png "点击放大")
 
 **界面开发**
 
@@ -412,7 +412,7 @@ content_hash: sha256:50e28fb25eb708b8753eb16a8202ac800ffd15ff5208f2570a0e08078cc
 
 智慧屏端推荐页与移动端功能定位一致，按照功能设计划分为6个区域，效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/V-ypp9rQRb2G8Kb6P1gXYw/zh-cn_image_0000002610146927.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/LVhBP6BCRQiJGkjC5uN8Pg/zh-cn_image_0000002610146927.png "点击放大")
 
 **界面开发**
 

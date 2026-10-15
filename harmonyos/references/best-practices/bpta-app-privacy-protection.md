@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-privac
 title: 应用隐私保护
 breadcrumb: 最佳实践 > 安全设计 > 应用隐私保护
 category: best-practices
-scraped_at: 2026-09-21T06:25:54+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:07c6d12f8b420c2552b5f14cd9cd6ab054b0c0b88305b2328853ccfab42cc4b9
+scraped_at: 2026-10-16T07:06:55+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:acd3904623dca11167d9a606a8215f5138c20933bc6721c43ca4985b4f40edb0
 ---
 
 ## 概述
@@ -55,7 +55,7 @@ content_hash: sha256:07c6d12f8b420c2552b5f14cd9cd6ab054b0c0b88305b2328853ccfab42
    应用不是强位置关联应用（如导航、运动健康等），推荐使用模糊定位。
 3. 减少使用存储权限。
 
-   过多的存储访问权限可能会导致用户隐私数据的泄露，应该减少使用存储权限，仅请求访问应用程序所需的数据，可以用[Picker](../harmonyos-references/js-apis-file-picker.md)来减少对用户存储数据的访问权限。
+   过多的存储访问权限可能会导致用户隐私数据的泄露，应该减少使用存储权限，仅请求访问应用程序所需的数据，可以用[@ohos.file.picker (选择器)](../harmonyos-references/js-apis-file-picker.md)来减少对用户存储数据的访问权限。
 4. 动态申请敏感权限。
 
    申请敏感权限需满足最小化要求，只申请必需的信息或资源权限，减少权限滥用和敏感数据泄露。
@@ -80,10 +80,6 @@ content_hash: sha256:07c6d12f8b420c2552b5f14cd9cd6ab054b0c0b88305b2328853ccfab42
 3. 增强透明度：隐私声明弹窗为用户提供应用程序的数据使用透明度。弹窗中提供详细说明，用户了解所需权限及其使用目的，从而放心做出授权决策。
 
 隐私声明弹窗在HarmonyOS中用于保护用户隐私权益，增强用户对个人数据的控制。它提供透明度和选择权，使用户了解应用程序的权限要求，并自主决定是否授权。
-
-例如在[“HMOS世界”](https://gitcode.com/harmonyos_samples/hmosworld)中使用了隐私声明的弹窗，具体实现可以参考代码[SafePage.ets](https://gitcode.com/harmonyos_samples/hmosworld/blob/master/HMOSWorld/Application/products/phone/src/main/ets/pages/SafePage.ets)。应用首次启动后，会弹出该弹窗，当应用获得用户授权同意后，应用才能开始正常使用。
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/hbBeIM60Q2WfSWKkhFu_CQ/zh-cn_image_0000002194010840.png "点击放大")
 
 ### 减少应用的位置信息访问权限
 
@@ -110,7 +106,7 @@ content_hash: sha256:07c6d12f8b420c2552b5f14cd9cd6ab054b0c0b88305b2328853ccfab42
 
 **图1** 权限申请弹窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/S0xyC8ZwRp2ip61aDY-HOg/zh-cn_image_0000002681797507.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ROLWhXPBQvGLSJsK80g37w/zh-cn_image_0000002681797507.png "点击放大")
 
 接下来介绍模糊位置申请的实现方法：
 
@@ -185,9 +181,9 @@ content_hash: sha256:07c6d12f8b420c2552b5f14cd9cd6ab054b0c0b88305b2328853ccfab42
 
 应用获取“存储”权限后，能够读取手机内部存储上的所有文件，包括所有照片，这会带来隐私风险：它可能在用户不知情的情况下，分析文件和图片，泄露用户隐私。
 
-用户往往不愿意授予应用对其所有照片和视频的访问权限。因此，HarmonyOS在API9版本之后引入了Picker选择器，以满足用户正常的数据访问需求，同时最小化应用的数据泄露风险。通过减少授权范围，降低授权的颗粒度，例如用户在发送图片时，仅允许应用访问用户选择的图片。
+用户往往不愿意授予应用对其所有照片和视频的访问权限。因此，HarmonyOS在API9版本之后引入了@ohos.file.picker (选择器)Picker选择器，以满足用户正常的数据访问需求，同时最小化应用的数据泄露风险。通过减少授权范围，降低授权的颗粒度，例如用户在发送图片时，仅允许应用访问用户选择的图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/w-yDVIDwSdCaNCk8qj4rbA/zh-cn_image_0000002193851256.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/BXbpvZk5TneQK6ajTwQzqA/zh-cn_image_0000002193851256.png "点击放大")
 
 示例代码如下：
 
@@ -258,7 +254,6 @@ struct PickerDemo {
 ```
 
 ```json
-// string.json
 {
   "string": [
     {

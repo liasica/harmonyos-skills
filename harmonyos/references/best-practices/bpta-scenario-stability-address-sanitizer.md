@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: 地址越界类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 地址越界类问题案例
 category: best-practices
-scraped_at: 2026-09-21T06:25:54+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:d0d18cef7598a217dc23ae3cb3a47cebb50e4bd73db5fa6f71471a099b5df124
+scraped_at: 2026-10-16T07:06:54+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:008d103d7acef185cef419afd51f9755b2bc8560e000f861e9b6e5f5402772f5
 ---
 
 本文按照[地址越界类问题分析方法](bpta-stability-address-illegal-way.md)的流程展开，以实际案例的形式指导开发者如何从CppCrash日志出发，分析、定位，修复地址越界问题。开发者可阅读[地址越界类问题检测](bpta-stability-ram-detection.md)了解系统检测地址越界问题的原理和机制。
@@ -16,7 +16,7 @@ content_hash: sha256:d0d18cef7598a217dc23ae3cb3a47cebb50e4bd73db5fa6f71471a099b5
 
 ## 分析过程
 
-**第一步 问题类型分析**
+**第一步：问题类型分析**
 
 当进程崩溃时，首先从faultlogger下获取CppCrash日志，明确Crash的类型，判断是否为地址越界问题。
 
@@ -60,11 +60,11 @@ x28:0000005af31cb228 x29:0000007fba087470
 lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
 ```
 
-首先从日志可以看到这是一个SIGSEGV(SEGV\_MAPERR) 的问题，这表示进程试图访问一个不存在的内存地址，或者试图访问一个没有映射到进程地址空间的内存地址。这种情况通常是由于程序中的指针错误或内存泄漏引起。接下来就要解栈初步定位出问题的代码行， 根据[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#section14952241528)反编译#00号栈，可以看到该栈对应下图中黄色高亮代码行，该代码行在对裸指针做类型转换。
+首先从日志可以看到这是一个SIGSEGV(SEGV\_MAPERR)的问题，这表示进程试图访问一个不存在的内存地址，或者试图访问一个没有映射到进程地址空间的内存地址。这种情况通常是由于程序中的指针错误或内存泄漏引起。接下来就要解栈初步定位出问题的代码行，根据[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#section14952241528)llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，定位到具体业务代码行反编译#00号栈，可以看到该栈对应下图中黄色高亮代码行，该代码行在对裸指针做类型转换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/1YIAVd05T-GLQ7lSFJGKpQ/zh-cn_image_0000002404125237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Ut571THTRqCQkSRfZYbEXQ/zh-cn_image_0000002404125237.png "点击放大")
 
-用[llvm-objdump](bpta-scenario-stability-cppcrash.md#section10107179911)工具解该栈的地址，发现出问题的是x8寄存器，从当前指针里面取其中的第一个成员（虚表地址）取到了一个异常地址，从中偏移-80取内容的时候挂了。
+用llvm-objdump工具解该栈的地址，发现出问题的是x8寄存器，从当前指针里面取其中的第一个成员（虚表地址）取到了一个异常地址，从中偏移-80取内容的时候挂了。
 
 ```screen
 0000000000a5f814 <OHOS::Ace::RefPtr<OHOS::Ace::NG::AccessibilityProperty> OHOS::Ace::AceType::DynamicCast<OHOS::Ace::NG::AccessibilityProperty, OHOS::Ace::NG::AccessibilityProperty>(OHOS::Ace::RefPtr<OHOS::Ace::NG::AccessibilityProperty> const&)>:
@@ -73,25 +73,25 @@ lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
   a5f81c: a90657f6     	stp	x22, x21, [sp, #96]
   a5f820: a9074ff4     	stp	x20, x19, [sp, #112]
   a5f824: 910143fd     	add	x29, sp, #80
-  a5f828: f9400009     	ldr	x9, [x0] // 从RefPtr中取出实际对象指针
-  a5f82c: b4000fc9      cbz x9, ... // 取出对象虚表指针
+  a5f828: f9400009     ldr	x9, [x0] // 从Take out the actual object pointer from RefPtr
+  a5f82c: b4000fc9      cbz x9, ... // Extract the object's vtable pointer
   a5f830: aa0803f3     	mov	x19, x8
-  a5f834: f9400128     	ldr	x8, [x9] // 取出对象虚表指针
+  a5f834: f9400128     ldr	x8, [x9] // 取Extract the object's vtable pointer
   a5f838: b00141b5     	adrp	x21, 0x3294000 <OHOS::Ace::NG::SvgGraphic::OnDraw(OHOS::Rosen::Drawing::Canvas&, OHOS::Ace::Size const&, std::__h::optional<OHOS::Ace::Color> const&)+0x257c>
-  a5f83c: f85b0108      ldur	x8, [x8, #-80] // 尝试访问虚表中偏移为-80的位置
+  a5f83c: f85b0108      ldurx8, [x8, #-80] // 尝Trying to access the position at offset -80 in the virtual table
 ```
 
 前方的代码如下，从fnode指针中获取其成员时出现故障，通过汇编和代码初步定位可能是地址中的内存被覆盖。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/y_4MRqjmTTGuaVoROmU-_w/zh-cn_image_0000002370405692.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Xp-mXJlLRieGMO51Z6jLxw/zh-cn_image_0000002370405692.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/aGm0BeiLTem7Cl-dPMyrzA/zh-cn_image_0000002404045421.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/j7nGwB_OQj2-HfR35X1eAg/zh-cn_image_0000002404045421.png "点击放大")
 
 **第二步：场景分析**
 
 通过走读代码，发现可疑点，几个地址越界问题的流水日志都有一个共同点，存在设置声音的操作。最终决定增加设置声音的测试用例进行压测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/qq3sYvSLTI243TcvV7r8IQ/zh-cn_image_0000002370565604.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/XSFHO8oESBuhZdh55-7joQ/zh-cn_image_0000002370565604.png)
 
 **第三步：内存特征分析**
 
@@ -122,11 +122,11 @@ lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
 
 从指令add x0, x0, #864可以看出，在执行bl跳转之前，x0寄存器的值被偏移了864字节，目的是定位到类中的某个成员变量。为确定该偏移对应的具体成员，可通过gdb的ptype /o命令查看类的内存布局。如图所示，864字节的偏移恰好对应NG::FrameNode结构体中的成员变量accessibilityProperty\_的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/bRZbKE00Tt2yOkyeTIxrHg/zh-cn_image_0000002552638491.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/fy5WfX4FRNajOB46ZVurRw/zh-cn_image_0000002552638491.png)
 
-因此可判断，此时的x0指向的就是accessibilityProperty\_ 成员的地址。紧随其后的bl指令跳转至0xa5f814（DynamicCast），该函数会以x0为实参，对其执行虚表查找，并尝试进行向下类型转换。看x0的内存布局，和FrameNode结构体内存大小也能对上。说明FrameNode是正常的，但是里面的这个成员的指针指向的内容异常了，如下图所示5c3eb6ad68地址的值异常，可能是accessibilityProperty\_这个指针本身被踩，也可能是这个对象的内容被踩。
+因此可判断，此时的x0指向的就是accessibilityProperty\_成员的地址。紧随其后的bl指令跳转至0xa5f814（DynamicCast），该函数会以x0为实参，对其执行虚表查找，并尝试进行向下类型转换。看x0的内存布局，和FrameNode结构体内存大小也能对上。说明FrameNode是正常的，但是里面的这个成员的指针指向的内容异常了，如下图所示5c3eb6ad68地址的值异常，可能是accessibilityProperty\_这个指针本身被踩，也可能是这个对象的内容被踩。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/p2J37QL5RQKVKNMiyQ7UXQ/zh-cn_image_0000002370405696.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/D0KbRzKARESaMgmN94O4GQ/zh-cn_image_0000002370405696.png)
 
 **第四步：用例部署**
 
@@ -136,7 +136,7 @@ lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
 
 **第五步：应用天网部署**
 
-通过定位hap包中未插桩的so（共计 6 个），并完成插桩编译，结合场景分析开展压测。最终，在当天即捕获到了地址越界的内存问题，验证了插桩的有效性与场景分析的准确性。
+通过定位hap包中未插桩的so（共计6个），并完成插桩编译，结合场景分析开展压测。最终，在当天即捕获到了地址越界的内存问题，验证了插桩的有效性与场景分析的准确性。
 
 **第六步：日志分析**
 
@@ -167,7 +167,7 @@ Tid:3609, Name:ohos.sceneboard
    242c4: aa0803e1     	mov	x1, x8
    242c8: 1400952e     	b	0x49780 <memcpy@plt>
    242cc: f000012a     	adrp	x10, 0x4b000 <__hwasan_memcpy+0xb4>
-   242d0: 9240dd2b     and	x11, x9, #0xffffffffffffff // x11 = dest地址去tag
+   242d0: 9240dd2b     andx11, x9, #0xffffffffffffff // xx11 = get tag from dest address
    242d4: 8b02016e     	add	x14, x11, x2
    242d8: f941c94a     ldrx10, [x10, #912]
    242dc: f940014d     ldr	x13, [x10] // base_addr = *(shadow_table)
@@ -176,35 +176,35 @@ Tid:3609, Name:ohos.sceneboard
    242e8: eb0b019f     	cmp	x12, x11
    242ec: 54000202     	b.hs	0x2432c <__hwasan_memcpy+0x78>
    242f0: cb0c016d     	sub	x13, x11, x12
-   242f4: d378fd2e     lsr      x14, x9, #56 // >>56位后得到高8位的指针tag，x14 = tag(x9)
-   242f8: 3940018f     ldrb	w15, [x12] // 找到shadow memory中的tag
-   242fc: 6b0e01ff     cmp      w15, w14 // 比较 tag 是否一致
-   24300: 540000a1     b.ne     0x24314 <__hwasan_memcpy+0x60> // 不一致 → 报错
+   242f4: d378fd2e     lsr      x14, x9, #56 //  After shifting 56 bits, get the top 8-bit pointer tag, x14 = tag(x9)
+   242f8: 3940018f     ldrbw15, [x12] // Find the tag in shadow memory
+   242fc: 6b0e01ff     cmp      w15, w14 // Compare if the tags match
+   24300: 540000a1     b.ne     0x24314 <__hwasan_memcpy+0x60> // inconsistent → Error
    24304: 9100058c     	add	x12, x12, #1
    24308: f10005ad     	subs	x13, x13, #1
    2430c: 54ffff61     	b.ne	0x242f8 <__hwasan_memcpy+0x44>
    24310: 14000007     	b	0x2432c <__hwasan_memcpy+0x78>
-   24314: aa0903e0     mov      x0, x9 // x0 = dest (错误地址)
+   24314: aa0903e0     mov      x0, x9 // x0 = dest (wrong address)
    24318: aa0203e1     mov	x1, x2 // x1 = size
-   2431c: d42127e0     brk#0x93f // HWAASan测到问题，tag mismatch
+   2431c: d42127e0     brk#0x93f // HWASan detected a problem, tag mismatch
    24320: 9100058c     	add	x12, x12, #1
    24324: f10005ad     subs	x13, x13, #1
 ```
 
 看汇编hwasan抓到tag不对了，从汇编看就是x0寄存器不对，也就是dest的指针有问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Za9n-xvvTB6MGPXpS2lOTA/zh-cn_image_0000002404045425.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/40-ZDr9lTVSEMhnxv7K6LQ/zh-cn_image_0000002404045425.png "点击放大")
 
 向前回栈看：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/GETkaSAfQMq2oOxc03MusQ/zh-cn_image_0000002370565608.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/4TlVdsqLSvGVtiDN2WHxrA/zh-cn_image_0000002370565608.png "点击放大")
 
 结合反编译第一个参数，是音频audiorenderer传过来找soundpool要数据填充的目的地址，看是否提前释放导致野指针了。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Q-wT4BJOTJ6NYRxEcPjoYA/zh-cn_image_0000002370405700.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/YDXNU-DfStqrtsI5RpANLQ/zh-cn_image_0000002370405700.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/y8PJNP56ToyMbteipo1Pfg/zh-cn_image_0000002404045429.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/f-HUN-y0T0WZkclTy2PbGQ/zh-cn_image_0000002404045429.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/iugQ4SFXSS2xEYsOaArhpg/zh-cn_image_0000002370565612.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/UN50TfEgQtK8q3oIEB6rIg/zh-cn_image_0000002370565612.png "点击放大")
 
 问题已明确是Use-After-Free问题，GetBufferDesc函数将cbBuffer\_的裸指针返回出去，另一个线程将RendererInClientInner销毁了，生命周期不一致导致了Use-After-Free问题。

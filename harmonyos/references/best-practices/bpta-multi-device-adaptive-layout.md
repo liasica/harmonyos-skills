@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 自适应布局
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面元素自适应变化 > 自适应布局
 category: best-practices
-scraped_at: 2026-09-21T06:25:38+08:00
+scraped_at: 2026-10-16T07:06:39+08:00
 doc_updated_at: 2026-06-10
-content_hash: sha256:94af8ef546fddc64ccb8a143be401bc7db00224959ba449d330200b30af856ea
+content_hash: sha256:891da669520c57733739c25a12b53721df067302bcaadb6839273ce5a55fa2c3
 ---
 
 针对常见的开发场景，方舟开发框架提炼了七种自适应布局能力，这些布局可以独立使用，也可多种布局叠加使用。
@@ -54,7 +54,7 @@ content_hash: sha256:94af8ef546fddc64ccb8a143be401bc7db00224959ba449d330200b30af
 * 当父容器的尺寸大于600vp时，父容器中多余的空间全部分配给中间内容区。
 * 当父容器的尺寸小于600vp时，左右两侧的留白区按照“1:1”的比例收缩（即平均分配父容器的不足空间）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/mKc1lhCzTMuwwdTACbjkNQ/zh-cn_image_0000002355147005.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/zooxeKzaTFOUuqTLeLXsgA/zh-cn_image_0000002355147005.gif)
 
 ```typescript
 @Entry
@@ -115,7 +115,7 @@ struct FlexibleCapability1 {
 
 文字和开关的尺寸固定，仅有中间空白区域（Blank组件）随父容器尺寸变化而伸缩。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Oc2jD9DNTWaMhUaEsuy4NQ/zh-cn_image_0000002321148306.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/J6zks774RdWQvuqyDDvOHw/zh-cn_image_0000002321148306.gif)
 
 ```typescript
 @Entry
@@ -182,7 +182,7 @@ struct FlexibleCapability2 {
 
 父容器尺寸变化过程中，图标及文字的尺寸不变，图标间的间距及图标离左右边缘的距离同时均等改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/nOI_AWv-QYKyLRpZbPadGw/zh-cn_image_0000002355266889.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/oLdrfOynSzKMPHaLXRjOVQ/zh-cn_image_0000002355266889.gif)
 
 ```typescript
 @Entry
@@ -285,7 +285,7 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 将三个按钮的.layoutWeight(1)分别替换为.width('33%')、.width('34%')、.width('33%')，也可以实现与当前同样的显示效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/7yE9r-04RdWGEMHjwn1sEg/zh-cn_image_0000002321308190.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/4eyxRXzGSzqI5Vf-vc1BPg/zh-cn_image_0000002321308190.gif)
 
 ```typescript
 @Entry
@@ -370,7 +370,7 @@ struct ProportionCapability {
 
 为方便查看效果，示例中特意给Column组件加了边框。可以看到Column组件随着其Flex父组件尺寸变化而缩放的过程中，始终保持预设的宽高比，其中的图片也始终正常显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/GETcKe9HTNKLBX76s8lY_Q/zh-cn_image_0000002355147069.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/fayhMdxCQ-mIFOjVPJZ8_Q/zh-cn_image_0000002355147069.gif)
 
 ```typescript
 @Entry
@@ -461,7 +461,7 @@ struct ScaleCapability {
 
 分别通过List组件实现及通过Scroll组件配合Row组件实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/aIotOFNYQw-ACUc5kVKftQ/zh-cn_image_0000002321148358.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/wPXddhrWSwmEOAQ758J2hA/zh-cn_image_0000002321148358.gif)
 
 （1）通过List组件实现。
 
@@ -610,7 +610,7 @@ struct ExtensionCapability1 {
 
 父容器尺寸发生变化时，其子元素按照预设的优先级显示或隐藏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/QA42vXpVSXupoEz-f0ap5g/zh-cn_image_0000002355266913.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/kN5FZDkMTY-5Lakix3Agrg/zh-cn_image_0000002355266913.gif)
 
 ```typescript
 @Entry
@@ -716,7 +716,7 @@ struct HiddenCapability {
 
 父容器中的图片尺寸固定，当父容器尺寸发生变化，其中的内容做自适应换行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/BuCurm0YSBiZT7Vw2WAbcw/zh-cn_image_0000002321308202.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/RM7o7Am8RuGCaUzNyelNVQ/zh-cn_image_0000002321308202.gif)
 
 ```typescript
 @Entry

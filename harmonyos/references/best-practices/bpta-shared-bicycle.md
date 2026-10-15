@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-shared-bic
 title: 快捷骑行体验
 breadcrumb: 最佳实践 > 行业场景解决方案 > 出行导航 > 快捷骑行体验
 category: best-practices
-scraped_at: 2026-09-21T06:25:44+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:9fa60af43c683a01007359720b8c9cc667920fcdcf6af13e2c4f7c6fb9b1c5e1
+scraped_at: 2026-10-16T07:06:44+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:db7d0fcdcf6625855b1b7febcdd88c16519f85a02520ee60c8c04231017a543b
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:9fa60af43c683a01007359720b8c9cc667920fcdcf6af13e2c4f7c6fb9b
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Es4-jiwNQZWJCAupQRNQTg/zh-cn_image_0000002229450033.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/S9hLP1giQV-T18_xGCLqPg/zh-cn_image_0000002229450033.gif)
 
 ## 场景说明
 
@@ -23,9 +23,7 @@ content_hash: sha256:9fa60af43c683a01007359720b8c9cc667920fcdcf6af13e2c4f7c6fb9b
 为了简化骑行流程，提升用户体验，建议如下：
 
 1. 用户可以从应用内或者系统扫码入口进行扫码，直接进入共享单车解锁页面。
-
 2. 点击解锁按钮后，拉起实况窗显示骑行状态。
-
 3. 完成还车、支付等操作后，实况窗状态实时更新。
 
 这样，用户无需重复寻找应用和功能入口，整个流程更加简便。
@@ -55,33 +53,33 @@ content_hash: sha256:9fa60af43c683a01007359720b8c9cc667920fcdcf6af13e2c4f7c6fb9b
 
 左图展示了当前骑行场景的流程，右图展示了优化后的流程。优化后，省去了在应用间切换和寻找功能入口的步骤，简化了用户操作，提升了用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/q9vTsA7_QOSTUkP7i2vsQg/zh-cn_image_0000002193850172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/DpEAhy64TuuUIBFMUZgBgw/zh-cn_image_0000002193850172.png)
 
 ### 骑行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/xdkGug1rQh-_d3VVOZR0bw/zh-cn_image_0000002194009740.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/O04C4EVfSJeR5bmgLkGpew/zh-cn_image_0000002194009740.png)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/50H4-l0cTtuHqjpTZ5MBsQ/zh-cn_image_0000002193850156.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/SQx41m-eTyWM1_4ZHOVwag/zh-cn_image_0000002193850156.png "点击放大")
 
 ## 扫码解锁
 
 ### 效果展示
 
-在首页或者共享单车页面，点击扫码进入扫码界面，可以使用后置摄像头进行扫码，也可以点击图库选择二维码图片进行扫码。“扫码直达”相关的使用请参见“[接入扫码直达服务](../harmonyos-guides/scan-directservice.md)”。
+在首页或者共享单车页面，点击扫码进入扫码界面，可以使用后置摄像头进行扫码，也可以点击图库选择二维码图片进行扫码。“扫码直达”相关的使用请参见[接入“扫码直达”服务](../harmonyos-guides/scan-directservice.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/5U9uc5QkR8Gb8R9tv9TUrQ/zh-cn_image_0000002229335549.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/JPftUVeBRf-RX1-IsW2lGQ/zh-cn_image_0000002229335549.gif)
 
 ### 时序图
 
 主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/OYwCBEEKQNqxpdAsRleFPA/zh-cn_image_0000002193850148.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/64Q-quWURcOwNIl9VK4O2Q/zh-cn_image_0000002193850148.png "点击放大")
 
 ### 关键点说明
 
-1、使用[Scan Kit](../harmonyos-guides/scan-kit-guide.md)实现扫码能力，Scan Kit应用了多项计算机视觉技术和AI算法技术，不仅实现了远距离自动扫码，同时还针对多种复杂扫码场景（如暗光、污损、模糊、小角度、曲面码等）做了识别优化，提升扫码成功率与用户体验。
+1、使用[Scan Kit（统一扫码服务）](../harmonyos-guides/scan-kit-guide.md)实现扫码能力，Scan Kit应用了多项计算机视觉技术和AI算法技术，不仅实现了远距离自动扫码，同时还针对多种复杂扫码场景（如暗光、污损、模糊、小角度、曲面码等）做了识别优化，提升扫码成功率与用户体验。
 
 2、在Entry模块的module.json5文件的requestPermissions字段中添加ohos.permission.CAMERA权限，以申请系统相机权限。
 
@@ -142,17 +140,17 @@ export class ScanUtil {
 
 进入找车页面后，可以点击任意位置模拟自行车的所在地，地图将进行步行路线规划并增加标记点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/EqBpg2yXTwGGOGE3rvL_-g/zh-cn_image_0000002193850168.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/eKnLK_RtQEubQLdLXg_3jw/zh-cn_image_0000002193850168.gif)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/SgOxCbVVQ0yzv1-kw9UxEA/zh-cn_image_0000002194009744.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/YBMfD8VBRWOpaS3ZU8DLWw/zh-cn_image_0000002194009744.png "点击放大")
 
 ### 关键点说明
 
-1、使用[Map Kit](../harmonyos-guides/map-kit-guide.md)实现地图能力，Map Kit可以帮助开发者实现个性化地图呈现、地图搜索和路线规划等功能，轻松完成地图构建工作。
+1、使用[Map Kit（地图服务）](../harmonyos-guides/map-kit-guide.md)实现地图能力，Map Kit可以帮助开发者实现个性化地图呈现、地图搜索和路线规划等功能，轻松完成地图构建工作。
 
-2、参考文档[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)去AppGallery Connect开通地图服务。注意要在工程中entry模块的module.json5文件中配置client\_id。
+2、参考文档[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)去HarmonyOS开发者中心开通地图服务。注意要在工程中entry模块的module.json5文件中配置client\_id。
 
 3、启用“我的位置”之前，确保应用已获取用户定位权限。需要申请ohos.permission.LOCATION和ohos.permission.APPROXIMATELY\_LOCATION权限。
 
@@ -337,17 +335,17 @@ public static async paintRoute(routeResult: navi.RouteResult, mapPolyline?: map.
 
 点击解锁后，实况窗显示骑行状态。完成还车、支付等操作后，实况窗的状态实时更新。支持在锁屏、通知中心显示卡片，状态栏显示胶囊形态。点击状态栏的胶囊后，展开悬浮卡片，方便用户查看骑行状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/sgQymlj7TjGyfAHdtAM7cA/zh-cn_image_0000002229335553.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/ouEHm1JERlSCeC1-kHN7lw/zh-cn_image_0000002229335553.gif)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/iuUL7ZB1RSKkMU6AwSDmdw/zh-cn_image_0000002194009760.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Rdg3SkGETH6z5bDxXCClvQ/zh-cn_image_0000002194009760.png "点击放大")
 
 ### 关键点说明
 
-1、使用Live View Kit实现实况窗服务，支持应用在设备的关键界面展示订单或服务的实时状态信息。
+1、使用[Live View Kit（实况窗服务）](../harmonyos-guides/live-view-kit-guide.md)实现实况窗服务，支持应用在设备的关键界面展示订单或服务的实时状态信息。
 
-2、参考文档[申请实况窗正式权限](../harmonyos-guides/liveview-formal-authority.md)去AppGallery Connect开通实况窗服务。
+2、参考文档[申请实况窗正式权限](../harmonyos-guides/liveview-formal-authority.md)去HarmonyOS开发者中心开通实况窗服务。
 
 3、此场景中仅使用了本地实况窗的能力。本地更新或结束实况窗依赖于您的应用进程。若业务需要，可使用Push Kit远程更新或结束实况窗。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGTRAP断点或陷阱异常故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGTRAP断点或陷阱异常故障模式说明
 category: best-practices
-scraped_at: 2026-09-21T06:25:50+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:56c82d4f9e6600b4c6ffbbb2ddd7fbc273d799649afe6e844b9092bc6aaa6f41
+scraped_at: 2026-10-16T07:06:50+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:8e054041d2dd2a262217737a2d3d126bc139180d6022a83add98411d7fd49d4b
 ---
 
 ## TRAP\_BRKPT软件断点
@@ -20,7 +20,7 @@ TRAP\_BRKPT是SIGTRAP信号的一种类型，通常由软件断点指令触发�
 
 1. 模块内使用断言机制触发断言失败。
 
-2. 模块检测机制使用BRKPT信号检测异常，常见有jemalloc的Double Free和CFI后向检测机制。
+2. 模块检测机制使用BRKPT信号检测异常，常见有jemalloc的Double Free检测和CFI后向检测机制。
 
 备注：CFI检测拦截也会使用此指令，如遇栈帧符号信息包含.cfi内容，按照CFI问题排查分析，CFI检查机制触发信号场景对照表：
 
@@ -36,7 +36,7 @@ TRAP\_BRKPT是SIGTRAP信号的一种类型，通常由软件断点指令触发�
 1. **确认类型：**查看CppCrash日志中的Reason字段，确认信号为SIGTRAP(TRAP\_BRKPT)。
 2. **分析崩溃堆栈：**反编译首帧地址的汇编指令是否为BRK指令（arm64架构为BRK指令，arm32为BKPT指令，x86为INT3指令）。
 3. **定位代码位置：**参考[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)使用llvm-addr2line工具定位行号，结合代码走读分析，何处触发BRK指令。
-4. **确认BRK原因：** 分析使用断言或者采用BRKPT触发信号的模块机制。
+4. **确认BRK原因：**分析使用断言或者采用BRKPT触发信号的模块机制。
 
 ### 关键字
 

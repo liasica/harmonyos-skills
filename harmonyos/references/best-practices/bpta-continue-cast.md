@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue-c
 title: 应用接续概述
 breadcrumb: 最佳实践 > 自由流转 > 跨端迁移 > 应用接续概述
 category: best-practices
-scraped_at: 2026-09-21T06:25:42+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:56da7ee8737aee02bd534ed61009d1cc043c9ff3521adcaf3bd20d9ab5661d25
+scraped_at: 2026-10-16T07:06:42+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:9e0f9d2822e4e500291a9b9c2e5c91579f8e634b24a7a16c73e15017ea8c2d9a
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:56da7ee8737aee02bd534ed61009d1cc043c9ff3521adcaf3bd20d9ab56
 
 如图所示，在手机上编辑备忘录，到办公室后切换到电脑上继续编辑，完成任务的无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/PXt0zlB8Td6t7j9wdc-A6g/zh-cn_image_0000002591861418.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/HKH6ZdeOQeal_nYxZ08jmw/zh-cn_image_0000002591861418.gif "点击放大")
 
 HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等过程繁琐的开发难点，应用在接入时仅需关注数据的传输和恢复，参考如下章节完成开发：
 
@@ -34,7 +34,7 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
   + 双端设备需要打开WLAN和蓝牙开关，或者在设置中的“多设备协同 > 高级”中启用“多设备协同增强服务”功能。
   + 双端设备需要在“设置”应用中开启“多设备协同 > 接续”功能。
   + 双端设备都需要安装该应用。
-  + 为了接续体验，在onContinue回调中使用wantParam传输的数据需要控制在100KB以下，大数据量请[使用分布式对象迁移数据](bpta-continue-data.md#section1842122135815)。
+  + 为了接续体验，在onContinue()回调中使用wantParam传输的数据需要控制在100KB以下，大数据量请[使用分布式对象迁移数据](bpta-continue-data.md#section1842122135815)。
 * **模拟器支持**
   + 暂不支持
 
@@ -76,7 +76,7 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/CCRuh0RjSOCVxQJUsLB8Qg/zh-cn_image_0000002610187449.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/tnbmRJ4MTDCa6FvpJHybrQ/zh-cn_image_0000002610187449.png "点击放大")
 
 1. 在源端，通过[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md#uiability)的onContinue()回调，开发者可以保存待接续的业务数据。
 
@@ -182,7 +182,7 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
 
 在Stage模型中，应用在不同启动模式下将调用不同的接口，以恢复数据、加载界面。不同情况下的函数调用如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/S0Vh8mjfQ5aSKp5N38JFIg/zh-cn_image_0000002579667558.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/SDTz_4aaQJ-yAj2h5Q_ciQ/zh-cn_image_0000002579667558.png "点击放大")
 
 **说明** 
 
@@ -332,7 +332,7 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
 
 ### 支持同应用不同BundleName的Ability跨端迁移（适用于不同开发者）
 
-某款应用在不同类型的设备上，可能会由不同的开发者发布。在这种场景下，如果该应用需要支持跨端迁移，则需要在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)平台申请“接续服务” 。
+某款应用在不同类型的设备上，可能会由不同的开发者发布。在这种场景下，如果该应用需要支持跨端迁移，则需要在[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html)平台申请“接续服务” 。
 
 下面以同一应用对应2个开发者为例进行介绍操作步骤。假设手机应用A与PC应用B分别属于不同开发者，应用A的APP ID 为 AppId\_A，应用B的APP ID为AppId\_B。
 
@@ -340,11 +340,11 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
 
 操作步骤中的界面截图在不同版本中可能存在差异，请以实际网站效果为准。
 
-1. 接入AppGallery Connect（简称AGC），详细介绍参考[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)介绍章节。
+1. 接入HarmonyOS开发者中心，详细介绍参考[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html)介绍章节。
 2. 为应用A申请接续服务。
    1. 进入A应用详情页找到接续服务，点击“申请”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/6HN2v9ifRd2B80bHobC2aA/zh-cn_image_0000002579827480.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/XUVLAhTbRImGbS61Y3f6oQ/zh-cn_image_0000002579827480.png "点击放大")
    2. 在“新建业务申请”页面填写如下字段，填写完成后点击“提交”。
       * “接续应用AppID1”：填入“APP ID\_B”
       * “接续应用AppID2”：填入“APP ID\_A”。
@@ -361,16 +361,16 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
       | TV端 | PC端/移动端 | ① PC版A应用AppID  ② TV版A应用AppID  ③ 移动版A应用AppID |
       | PC端 | TV端/移动端 | ① TV版A应用AppID  ② PC版A应用AppID  ③ 移动版A应用AppID |
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/iczOobmXQdaAJBilZIqx1g/zh-cn_image_0000002610107361.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/KVOR7ArzTeCLfc79pSZt6A/zh-cn_image_0000002610107361.png "点击放大")
    3. 进入互动中心页面，可看到申请已提交的消息。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/V3uqPWMOTwi-zH9ijab4Jg/zh-cn_image_0000002610187451.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/0xBqg85HSxaFAX2U_lW5iA/zh-cn_image_0000002610187451.png "点击放大")
    4. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/scfDDDqNSyOuPm5rQyM68Q/zh-cn_image_0000002579667560.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/DjyNRPBvQmWNSCIYAWvbWA/zh-cn_image_0000002579667560.png "点击放大")
    5. 申请审批通过后，互动中心会发送通知消息给您。“申请中”按钮会变为“申请”，同时对应的能力开关会为您自动开启。至此，您的应用已成功接入接续服务能力。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/NbaZjBBDRIWY2HbjYrnqtw/zh-cn_image_0000002579827482.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/sTMZt2HcT5arNGi_8kBH3A/zh-cn_image_0000002579827482.png "点击放大")
 
 3. 为应用B进行接续服务申请，详细步骤同第2步。
 4. 重新分别申请并下载对应的Profile文件以供后续打包使用。
@@ -439,7 +439,7 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
 | 第一次启动请求 | onCreate (冷启动)  或 onNewWant (热启动) | AbilityConstant.LaunchReason.PREPARE\_CONTINUATION |
 | 第二次启动请求 | onNewWant | AbilityConstant.LaunchReason.CONTINUATION |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/SEjiCAsYQueesEtJ7b9LQQ/zh-cn_image_0000002610107363.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/5PhytsGCTuG9oys7MuHxBw/zh-cn_image_0000002610107363.png "点击放大")
 
 如果没有配置快速启动，则触发迁移时只会收到一次启动请求：
 
@@ -692,7 +692,7 @@ onContinue(wantParam: Record<string, Object>) {
 
    执行完成后，RemoteDeviceInfo中列出的设备即为已成功与当前设备组网的设备。如下图所示，该设备已与两台其他设备成功组网。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/HSV2QU0YSCialOeJ66kLrA/zh-cn_image_0000002610187453.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/UWrtnGNnQN6MFHjDdMzxIw/zh-cn_image_0000002610187453.png)
 
 ### 1分钟以上无任何操作，图标将自动消失；再次操作应用时，图标将重新出现
 

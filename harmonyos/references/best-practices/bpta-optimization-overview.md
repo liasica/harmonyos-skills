@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-optimizati
 title: 性能分析简介
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 性能分析简介
 category: best-practices
-scraped_at: 2026-09-21T06:25:44+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:71ccff4065c06fd2f2218f7596c5b1ef87e1ea1a6fae1b23b47f4087641ec1d1
+scraped_at: 2026-10-16T07:06:45+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:5bcd717bba53f5a0aaa81b59644f4f169bf834293484e97cda1548f62c28f661
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:71ccff4065c06fd2f2218f7596c5b1ef87e1ea1a6fae1b23b47f4087641
 
 本文将介绍调优方法和常用工具，帮助开发者分析和解决应用程序性能问题，提升用户体验，确保应用程序高效稳定运行。
 
-在日常开发中，需要关注的指标有完成时延、点击响应时延、滑动响应时延等，具体需要关注的指标可以参考[《性能体验设计》](bpta-smooth-application-design.md)。
+在日常开发中，需要关注的指标有完成时延、点击响应时延、滑动响应时延等，具体需要关注的指标可以参考[性能体验设计](bpta-smooth-application-design.md)。
 
 ## 调优分析步骤
 
@@ -37,16 +37,16 @@ content_hash: sha256:71ccff4065c06fd2f2218f7596c5b1ef87e1ea1a6fae1b23b47f4087641
 
 性能调优工具能帮助开发者识别应用中的性能问题。DevEco Studio提供了多种场景化调优工具DevEco Profiler，具体如下：
 
-* [启动分析工具Launch Profiler](../harmonyos-guides/ide-insight-session-launch.md)： 分析启动过程中各阶段的性能问题。Launch主要用于分析应用或服务的启动耗时，分析启动周期各阶段的耗时情况、核心线程的运行情况等，协助开发者识别启动缓慢的原因。
-* [帧率分析工具Frame Profiler](../harmonyos-guides/ide-insight-session-frame.md)： 用于深度分析应用或服务卡顿丢帧的原因。Frame用于录制GPU数据信息，录制完成的子泳道对应录制过程中各个进程的帧数据，主要用于深度分析应用或服务卡顿丢帧的原因。Frame会对Trace进行录制和解析，进而可以分析应用运行的性能及其瓶颈，最终得出优化方案，关于Trace的详细介绍可参考[Trace打点信息说明](bpta-optimization-overview.md#section085643405116)。
-* [耗时分析工具Time Profiler](../harmonyos-guides/ide-insight-session-time.md)： 在应用/服务运行时，展示热点区域内基于 CPU 和进程耗时分析的调用栈情况。Time可在应用/服务运行时，展示热点区域内基于CPU和进程耗时分析的调用栈情况，并提供跳转至相关代码的能力，使开发者更便捷地进行代码优化。
-* [内存分析工具Allocation Profiler](../harmonyos-guides/ide-insight-session-allocations.md)： 实时监测应用或服务内存使用情况。开发者可以使用Allocation内存分析器，识别可能会导致应用卡顿、内存泄漏、内存抖动的问题。
-* [内存快照Snapshot Profiler](../harmonyos-guides/ide-insight-session-snapshot.md)： 用于分析应用程序内存使用情况。内存快照（Snapshot）是一种用于分析应用程序内存使用情况的工具，通过记录应用程序在运行时的内存快照，可以快速查看应用程序在某一时刻的内存占用情况以及内存占用详情。
-* [应用性能分析工具CPU Profiler](../harmonyos-guides/ide-insight-session-cpu.md)： 该工具可以监测应用的CPU使用情况，为开发者提供性能采样分析手段，可在不插桩的情况下获取调用栈上各层函数的执行时间，并展示在时间轴上。
-* [ArkWeb分析工具](../harmonyos-guides/ide-profiler-arkweb.md)：DevEco Profiler提供ArkWeb分析模板，可以结合ArkWeb执行流程的关键trace点来定位问题发生的阶段。
-* [Network分析工具](../harmonyos-guides/ide-profiler-network.md)：DevEco Profiler提供Network模板，帮助用户在应用运行过程中查看http协议栈网络信息，包括请求分段耗时以及请求具体内容，方便对网络问题进行调优。
+* [Launch模板基本操作](../harmonyos-guides/ide-insight-session-launch.md)： 分析启动过程中各阶段的性能问题。Launch主要用于分析应用或服务的启动耗时，分析启动周期各阶段的耗时情况、核心线程的运行情况等，协助开发者识别启动缓慢的原因。
+* [Frame分析](../harmonyos-guides/ide-insight-session-frame.md)： 用于深度分析应用或服务卡顿丢帧的原因。Frame用于录制GPU数据信息，录制完成的子泳道对应录制过程中各个进程的帧数据，主要用于深度分析应用或服务卡顿丢帧的原因。Frame会对Trace进行录制和解析，进而可以分析应用运行的性能及其瓶颈，最终得出优化方案，关于Trace的详细介绍可参考[Trace打点信息说明](bpta-optimization-overview.md#section085643405116)。
+* [基础耗时：Time分析](../harmonyos-guides/ide-insight-session-time.md)： 在应用/服务运行时，展示热点区域内基于 CPU 和进程耗时分析的调用栈情况。Time可在应用/服务运行时，展示热点区域内基于CPU和进程耗时分析的调用栈情况，并提供跳转至相关代码的能力，使开发者更便捷地进行代码优化。
+* [基础内存：Allocation分析](../harmonyos-guides/ide-insight-session-allocations.md)： 实时监测应用或服务内存使用情况。开发者可以使用Allocation内存分析器，识别可能会导致应用卡顿、内存泄漏、内存抖动的问题。
+* [Snapshot模板基本操作](../doccenter-deveco-studio/ide-snapshot-basic-operations.md)： 用于分析应用程序内存使用情况。内存快照（Snapshot）是一种用于分析应用程序内存使用情况的工具，通过记录应用程序在运行时的内存快照，可以快速查看应用程序在某一时刻的内存占用情况以及内存占用详情。
+* [CPU活动分析](../harmonyos-guides/ide-insight-session-cpu.md)： 该工具可以监测应用的CPU使用情况，为开发者提供性能采样分析手段，可在不插桩的情况下获取调用栈上各层函数的执行时间，并展示在时间轴上。
+* [加载丢帧：ArkWeb分析](../harmonyos-guides/ide-profiler-arkweb.md)：DevEco Profiler提供ArkWeb分析模板，可以结合ArkWeb执行流程的关键trace点来定位问题发生的阶段。
+* [网络诊断：Network分析](../harmonyos-guides/ide-profiler-network.md)：DevEco Profiler提供Network模板，帮助用户在应用运行过程中查看http协议栈网络信息，包括请求分段耗时以及请求具体内容，方便对网络问题进行调优。
 
-其他常见的性能调优工具，包括[HiDumper](../harmonyos-guides/hidumper.md)、[SmartPerf](https://gitcode.com/openharmony-sig/smartperf)。
+其他常见的性能调优工具，包括[hidumper](../harmonyos-guides/hidumper.md)、[Smartperf-Host](https://gitcode.com/openharmony-sig/smartperf)。
 
 * 性能优化工具HiDumper：HiDumper是为开发和测试人员提供的系统信息获取工具，帮助分析和定位问题。在应用开发过程中，可以使用HiDumper命令行工具获取UI界面组件树信息，配合ArkUI Inspector等图形化工具定位布局性能问题。此外，还可以使用该命令行工具获取内存和CPU使用情况等系统数据，评估应用性能。
 * 性能功耗调优工具SmartPerf：SmartPerf是一款用于深入挖掘和细粒度展示数据的性能功耗调优工具。它可以采集CPU调度、频点、进程线程时间片、堆内存、帧率等数据，并通过泳道图清晰地呈现给开发者。同时，SmartPerf通过GUI以可视化的方式进行分析。目前，该工具为开发者提供了五个分析模板：帧率分析、CPU/线程调度分析、应用启动分析、TaskPool分析和动效分析。
@@ -77,7 +77,7 @@ HarmonyOS的DFX子系统提供了为应用框架以及系统底座核心模块�
 
 **图1** 线程状态转化图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/3ZDOyZ0KRZySsVRvDl_bsg/zh-cn_image_0000002193851692.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/lJqqdy14R0OmoHk-j3_hhg/zh-cn_image_0000002193851692.png)
 
 ### 通过Trace点位信息识别线程状态
 
@@ -85,31 +85,31 @@ Trace 会用不同的颜色来标识不同的线程状态，在每个方法上�
 
 **（1）运行中（Running）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/n6x729lWSlOyE5ExLJ-POg/zh-cn_image_0000002229337097.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/pA3gU4NfTJ-juGutS2a7uw/zh-cn_image_0000002229337097.png "点击放大")
 
 运行中（Running）表示处于该状态的线程才可能在CPU上运行。同一时刻可能有多个线程处于可执行状态，这些线程的task\_struct结构被放入对应CPU的可执行队列中，每个线程最多出现在一个CPU的可执行队列中。调度器从各个CPU的可执行队列中选择一个线程在该CPU上运行。
 
 **（2）可运行（Runnable）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Aym4B_hvTMWyLDjmUp27Wg/zh-cn_image_0000002194011288.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/P1OImMOdTvuvyF-tIEDnYA/zh-cn_image_0000002194011288.png "点击放大")
 
 可运行（Runnable）表示线程可以运行但当前未被调度，在等待CPU。Runnable状态持续时间越长，说明CPU调度越忙，未能及时处理该任务。
 
 **（3）休眠中（Sleep）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/xcCvXg7rSlmch1sVUwWrlA/zh-cn_image_0000002229337117.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/tFQls7OqSN6CIpMpPZ32Tg/zh-cn_image_0000002229337117.png "点击放大")
 
 休眠中（Sleep）表示线程没有工作，可能是因为在互斥锁上被阻塞，或在等待某些操作返回，通常是在等待事件驱动。
 
 **（4）IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ggoLalBQSeyCyZP5n2suKA/zh-cn_image_0000002194011280.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/9t1rgFn5ThySQoyzX_C3xQ/zh-cn_image_0000002194011280.png "点击放大")
 
 IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程在I/O上被阻塞或等待磁盘操作完成。当系统处于低内存状态时，申请内存的时候可能会触发page fault，从而导致有大量的不可中断的睡眠态出现。在Linux系统的page cache链表中，有时会出现一些还没准备好的page(即还没把磁盘中的内容完全地读出来) ，而正好此时用户在访问这个page时就会出现page fault。
 
 **（5）不可中断的睡眠态（Uninterruptible Sleep - non IO）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/k1EDkuBcQsWmu9Wa7mYXKw/zh-cn_image_0000002193851728.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/a7Y53KB7QdihT5bpip2lCQ/zh-cn_image_0000002193851728.png "点击放大")
 
 不可中断的睡眠态（Uninterruptible Sleep - non IO）表示线程在其他内核操作（如内存管理）上被阻塞。线程陷入内核态，有时是正常现象，有时则需要进一步分析。
 
@@ -118,7 +118,7 @@ IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程�
 在HarmonyOS中，图形系统采用统一渲染模式，遵循典型流水线模式。以60Hz刷新率为例，每个Vsync周期为16.7ms；90Hz时，每个Vsync周期为11.1ms；120Hz时，每个Vsync周期为8.3ms。
 
 **图2** 90Hz刷新率渲染流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/MgNpANHGT46VRGp3OrnL_g/zh-cn_image_0000002193851704.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/K_txryCESty4j6ENvcrDRQ/zh-cn_image_0000002193851704.png "点击放大")
 
 在整个渲染流程中，应用侧首先响应消费者的屏幕点击等输入事件，处理完成后提交给Render Service。Render Service协调GPU等资源处理，最终将图像送到屏幕上显示。
 
@@ -130,7 +130,7 @@ IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程�
 
 **图3** ArkUI渲染管线结构与Frame Insight性能打点
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/x8ziHREkTwOycxMTZKkifQ/zh-cn_image_0000002229337101.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/AxFap3irTumAhsSfY7a2PQ/zh-cn_image_0000002229337101.png "点击放大")
 
 * Animation：动画阶段，在动画过程中会修改相应的FrameNode节点触发脏区标记，在特定场景下会执行用户侧ets代码实现自定义动画；
 * Events：事件处理阶段，比如手势事件处理。在手势处理过程中也会修改FrameNode节点触发脏区标记，在特定场景下会执行用户侧ets代码实现自定义事件；
@@ -143,10 +143,10 @@ IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程�
 在整个处理流程中，应用侧和Render Service侧都可能出现卡顿，导致最终用户观察到丢帧。这两种情况分别称为AppDeadlineMissed和RenderDeadlineMissed。AppDeadlineMissed通常是由于应用逻辑处理代码不够高效导致的，而RenderDeadlineMissed则可能是因为界面结构过于复杂或GPU负载过大等原因引起的。这两个故障模型通过Frame模板可以直观地查看。相应的故障模型如下图所示。
 
 **图4** 应用卡顿导致丢帧的故障模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/WofcUj2SROqek4nBEEXdEg/zh-cn_image_0000002194011292.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/rIyI5t0eQeCaHWAzBGL0xA/zh-cn_image_0000002194011292.png "点击放大")
 
 **图5** Render Service卡顿导致丢帧的故障模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/36XscKKfRGm9INMFQe2dyQ/zh-cn_image_0000002193851724.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/LIJ2CfzSQ9eFMe12a52gHg/zh-cn_image_0000002193851724.png "点击放大")
 
 ### 通过Trace识别关键渲染流程
 
@@ -154,7 +154,7 @@ IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程�
 
 **图6** UI后端引擎渲染Trace泳道图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/AJX-bPTlRRqiHBh0AV4CWw/zh-cn_image_0000002193851696.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/2KPhsTO_Ti2DQ_TGlb8EmA/zh-cn_image_0000002193851696.png "点击放大")
 
 各部分介绍见下表：
 
@@ -178,7 +178,7 @@ Vsync信号刷新时的Trace泳道图如下所示。
 
 **图7** RS侧渲染Trace泳道图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/38I8Cl1fQtGuaSti03p4BQ/zh-cn_image_0000002193851708.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/_Kec4A8DT8KaXU8PTM4q_w/zh-cn_image_0000002193851708.png "点击放大")
 
 各部分介绍如下表：
 
@@ -201,7 +201,7 @@ Vsync信号刷新时的Trace泳道图如下所示。
 
 下图展示了懒加载过程中一帧的Trace泳道图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/wnxpACxNTpiGTG9pFYZ2_w/zh-cn_image_0000002229451597.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/RiV_IzQnRnaZ0pDHN19h7A/zh-cn_image_0000002229451597.png "点击放大")
 
 | 序号 | Trace | 参数说明 | 描述 |
 | --- | --- | --- | --- |
@@ -214,14 +214,14 @@ Vsync信号刷新时的Trace泳道图如下所示。
 
 ### 添加自定义Trace信息
 
-开发者可以根据业务需求，使用HiTraceMeter进行自定义Trace打点跟踪，具体使用细节可参考[《使用HiTraceMeter跟踪性能（ArkTS/JS）》](../harmonyos-guides/hitracemeter-guidelines-arkts.md)和[《使用HiTraceMeter跟踪性能（C/C++）》](../harmonyos-guides/hitracemeter-guidelines-ndk.md)。
+开发者可以根据业务需求，使用HiTraceMeter进行自定义Trace打点跟踪，具体使用细节可参考[使用HiTraceMeter跟踪性能（ArkTS）](../harmonyos-guides/hitracemeter-guidelines-arkts.md)和[使用HiTraceMeter跟踪性能（C/C++）](../harmonyos-guides/hitracemeter-guidelines-ndk.md)。
 
 添加自定义Trace后，可在SmartPerf-Host调试工具上查看。自定义Trace将以独立泳道的形式呈现在对应进程下。下图展示了两条泳道，使用了startTrace和finishTrace方法，表示程序运行过程中指定标签从调用startTrace到调用finishTrace的耗时统计。图中记录了CUSTOM\_TRACE\_TAG\_1和CUSTOM\_TRACE\_TAG\_2两个标签的耗时统计。
 
 自定义Trace示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/5tHqfm2ASqG83aPoMg-v2w/zh-cn_image_0000002194011304.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/5gboLhvQSw-RKl9IC5ypvw/zh-cn_image_0000002194011304.png "点击放大")
 
 自定义状态值示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/27duHroJQN6ceisoa0ed6A/zh-cn_image_0000002229337085.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/oRtPqxzsTGirAKhebqZ74A/zh-cn_image_0000002229337085.png "点击放大")

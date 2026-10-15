@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-jsvm-oom-j
 title: JS对象被Native持有导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > JSVM OOM故障模式说明 > JS对象被Native持有导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-21T06:25:52+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:447e47801e99c92581696d8b2ae820f150b0b4b059ebdf6db420b77e44ae46fb
+scraped_at: 2026-10-16T07:06:52+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:37e390f786c042a3911cec3768153a14a2c13e1ede4c06a3c5fd1c2174b1056b
 ---
 
 JSVM-API允许开发者通过创建引用、作用域等方式管理JS对象的生命周期，应合理使用这些接口，避免应用运行过程中产生过大的内存峰值。本文列举了五种JSVM-API错误使用的场景，分析JS对象被Native侧引用导致内存未及时释放的问题，并通过堆快照文件展示这些场景的堆内存特征。
@@ -25,16 +25,16 @@ JSVM-API允许开发者通过创建引用、作用域等方式管理JS对象的�
 
 JSVM-API允许Native侧通过接口持有JS对象或其引用，辅助业务逻辑完整执行。有五种典型的使用场景，以及可能触发OOM的情况：
 
-1. JS对象引用未删除导致内存泄漏：OH\_JSVM\_CreateReference()、OH\_JSVM\_DeleteReference()可以让Native（如C++代码）侧引用某个JS对象，延长JS对象的生命周期， 配合完成业务逻辑。当大量引用未调用删除接口时，会引发OOM。
-2. 未正确管理引用计数导致内存泄漏：OH\_JSVM\_ReferenceRef()、OH\_JSVM\_ReferenceUnref()可以管理引用计数，这两个接口通常与第一点中提到的引用创建、删除接口一起使用。业务逻辑通常会在OH\_JSVM\_ReferenceUnref()出参返回的新计数值为零时，调用OH\_JSVM\_DeleteReference()删除引用关系。因此，引用计数管理出现非预期的引用值时，会导致引用未删除，引发OOM。
-3. 大对象生命周期超出实际业务需要导致内存泄漏：OH\_JSVM\_OpenHandleScope()、OH\_JSVM\_CloseHandleScope()可以管理Native侧创建的JS对象的生命周期。当大对象生命周期超出实际业务需要，应用内存占用处于较高水平，容易引发OOM。
+1. JS对象引用未删除导致内存泄漏：[OH\_JSVM\_CreateReference()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_createreference)、[OH\_JSVM\_DeleteReference()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_deletereference)可以让Native（如C++代码）侧引用某个JS对象，延长JS对象的生命周期， 配合完成业务逻辑。当大量引用未调用删除接口时，会引发OOM。
+2. 未正确管理引用计数导致内存泄漏：[OH\_JSVM\_ReferenceRef()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_referenceref)、[OH\_JSVM\_ReferenceUnref()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_referenceunref)可以管理引用计数，这两个接口通常与第一点中提到的引用创建、删除接口一起使用。业务逻辑通常会在OH\_JSVM\_ReferenceUnref()出参返回的新计数值为零时，调用OH\_JSVM\_DeleteReference()删除引用关系。因此，引用计数管理出现非预期的引用值时，会导致引用未删除，引发OOM。
+3. 大对象生命周期超出实际业务需要导致内存泄漏：[OH\_JSVM\_OpenHandleScope()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_openhandlescope)、[OH\_JSVM\_CloseHandleScope()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_closehandlescope)可以管理Native侧创建的JS对象的生命周期。当大对象生命周期超出实际业务需要，应用内存占用处于较高水平，容易引发OOM。
 4. 未关闭Handle Scope导致内存泄漏：OH\_JSVM\_OpenHandleScope()、OH\_JSVM\_CloseHandleScope()未成对调用，JS对象的生命周期和内存占用与开发者预期不符，容易引发OOM。
-5. 未销毁env导致内存泄漏：OH\_JSVM\_CreateEnv()、OH\_JSVM\_DestroyEnv()可以管理用于执行JS代码的上下文结构（简称env），env中会存放生命周期较长的对象，包含虚拟机本身的各种方法，以及JS源码创建的Global对象。当env中包含大量Global对象，且未销毁时，会引发OOM。
+5. 未销毁env导致内存泄漏：[OH\_JSVM\_CreateEnv()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_createenv)、[OH\_JSVM\_DestroyEnv()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_destroyenv)可以管理用于执行JS代码的上下文结构（简称env），env中会存放生命周期较长的对象，包含虚拟机本身的各种方法，以及JS源码创建的Global对象。当env中包含大量Global对象，且未销毁时，会引发OOM。
 
 ## 问题分析思路
 
 1. 获取问题场景的Heap Snapshot，使用Chrome浏览器的DevTools展示各类JS对象在内存中的占比。
-2. 将内存占比从高到低排序，关注Global handle、Handle scope、NativeContext的内存占用。
+2. 将内存占比从高到低排序，关注Global handles、Handle scope、NativeContext的内存占用。
 3. 开发者可结合源码，逐对象分析内存占用的合理性，找到引发OOM的对象。
 
 ## 关键字
@@ -48,7 +48,7 @@ JSVM-API允许Native侧通过接口持有JS对象或其引用，辅助业务逻�
 
 ## 案例一：JS对象引用未删除导致内存泄漏
 
-以下为负向用例，用于说明JS对象引用使用完成后未删除导致的内存泄漏。该用例首先调用OH\_JSVM\_CreateArray()在当前作用域创建数组对象，随后调用OH\_JSVM\_CreateReference()创建数组对象的引用，并注释掉了对OH\_JSVM\_DeleteReference()的调用，最后调用OH\_JSVM\_CloseHandleScope()关闭当前作用域。由于对象引用未被删除，其引用的数组对象也无法随作用域关闭而回收，最终导致内存泄漏。
+以下为负向用例，用于说明JS对象引用使用完成后未删除导致的内存泄漏。该用例首先调用[OH\_JSVM\_CreateArray()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_createarray)在当前作用域创建数组对象，随后调用OH\_JSVM\_CreateReference()创建数组对象的引用，并注释掉了对OH\_JSVM\_DeleteReference()的调用，最后调用OH\_JSVM\_CloseHandleScope()关闭当前作用域。由于对象引用未被删除，其引用的数组对象也无法随作用域关闭而回收，最终导致内存泄漏。
 
 ```javascript
 static int32_t TestJsvmReference()
@@ -118,7 +118,7 @@ static napi_value RunTestJsvmReference([[maybe_unused]] napi_env env, [[maybe_un
 }
 ```
 
-HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。作用域关闭后，调用HeapMgmtTest()导出堆内存快照，开发者可通过分析该快照了解对象引用在堆内存快照上的特征，以辅助分析类似问题场景。
+[HeapMgmtTest()](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/Jsvm/entry/src/main/cpp/napi_init.cpp#L78-L110)函数封装了[OH\_JSVM\_TakeHeapSnapshot()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_takeheapsnapshot)的调用细节。作用域关闭后，调用HeapMgmtTest()函数导出堆内存快照，开发者可通过分析该快照了解对象引用在堆内存快照上的特征，以辅助分析类似问题场景。
 
 ### 分析思路
 
@@ -128,15 +128,15 @@ HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。作�
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Z6e-462aRE6dX93XmXSOag/zh-cn_image_0000002677658546.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/2S1iM6oiQu-wbUDrDd9cxw/zh-cn_image_0000002677658546.png)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见68%的内存分布在Array对象中，Array中包含大量字符串元素，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/v0naJbedRUKuLEoTkQ1VRw/zh-cn_image_0000002707458407.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/M6Sbkk0iQWS_y4WOp5eHsA/zh-cn_image_0000002707458407.png)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Nn7dsciZSDirh_f3tQv_ZQ/zh-cn_image_0000002677818396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/gDt3-5z8QgeC0h-HLCkYNQ/zh-cn_image_0000002677818396.png)
 
 可见大量内存被Global handles引用，这是Native侧对JS对象的引用。
 
@@ -226,7 +226,7 @@ static napi_value RunTestJsvmReferenceRef([[maybe_unused]] napi_env env, [[maybe
 }
 ```
 
-HeapMgmtTest()封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在作用域关闭后，调用HeapMgmtTest()导出堆内存快照，开发者可通过分析该快照了解对象引用在堆内存快照中的特征，以辅助分析类似问题。
+HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在作用域关闭后，调用HeapMgmtTest()函数导出堆内存快照，开发者可通过分析该快照了解对象引用在堆内存快照中的特征，以辅助分析类似问题。
 
 ### 分析思路
 
@@ -236,15 +236,15 @@ HeapMgmtTest()封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在作用�
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/W75cgK_XT0u45qYLeyex1w/zh-cn_image_0000002707578257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/XGOc7EGQSxqfQ6F7SSs6vg/zh-cn_image_0000002707578257.png)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见68%的内存分布在Array对象中，Array中包含大量的字符串元素，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/kFRhzLD2SnmvmHTvtgb-nQ/zh-cn_image_0000002677658548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Ed4ZVjzNSGSXFSjaXXOXOg/zh-cn_image_0000002677658548.png)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nS1a-BP8TH6mbpfBBj7bSw/zh-cn_image_0000002707458409.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/DftSiB5ZSjunMwc3umtMyw/zh-cn_image_0000002707458409.png)
 
 可见大量内存被Global handles引用，通常情况下这是Native侧对JS对象的引用。
 
@@ -323,7 +323,7 @@ static napi_value RunTestJsvmHandleScopeEscape([[maybe_unused]] napi_env env, [[
 }
 ```
 
-HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在右花括号至OH\_JSVM\_CloseHandleScope()接口调用之间，调用HeapMgmtTest()导出堆内存快照，开发者可分析该快照，了解作用域中JS对象在堆内存快照中的特征，以辅助分析相关问题场景。
+HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在右花括号至OH\_JSVM\_CloseHandleScope()接口调用之间，调用HeapMgmtTest()函数导出堆内存快照，开发者可分析该快照，了解作用域中JS对象在堆内存快照中的特征，以辅助分析相关问题场景。
 
 ### 分析思路
 
@@ -333,15 +333,15 @@ HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在�
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/rkGmRt7_T8m7bdwd8cZi8A/zh-cn_image_0000002677818398.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/bTEjdOgUQqe5_nf8FHzZ8A/zh-cn_image_0000002677818398.png)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见66%的内存分布在(string)类对象中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/5rGdDvTPQLOxWFb5GTmVsQ/zh-cn_image_0000002707578259.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/1ec4wYqoS22eEk1V5BOLEQ/zh-cn_image_0000002707578259.png)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直到无法进一步拆解，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Ammj0PYLQDqfVOcltaWCpg/zh-cn_image_0000002677658550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/_Xvdt_pnRQSBi9wUQWt74Q/zh-cn_image_0000002677658550.png)
 
 可见大部分内存被Handle scopes引用，这是创建在作用域内的JS对象。
 
@@ -421,7 +421,7 @@ static napi_value RunTestJsvmUnUseCloseHandleScope([[maybe_unused]] napi_env env
 }
 ```
 
-HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在右花括号到OH\_JSVM\_CloseHandleScope()接口调用之间，调用HeapMgmtTest()导出堆内存快照，开发者可通过分析该快照了解JS对象作用域中的对象在堆内存快照上的特征，以辅助分析类似问题场景。
+HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在右花括号到OH\_JSVM\_CloseHandleScope()接口调用之间，调用HeapMgmtTest()函数导出堆内存快照，开发者可通过分析该快照了解JS对象作用域中的对象在堆内存快照上的特征，以辅助分析类似问题场景。
 
 ### 分析思路
 
@@ -431,15 +431,15 @@ HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在�
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/IBClIvY8SV-Bk6wO-ArgQQ/zh-cn_image_0000002707458411.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/6FZXih3KQFWm1fjkSnD_VA/zh-cn_image_0000002707458411.png)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见66%的内存分布在(string)类对象中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/qL8KOjJqRjy3jFHdlUfeVg/zh-cn_image_0000002677818400.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/eeEem4STRUm-6QY9OrHxVA/zh-cn_image_0000002677818400.png)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/oajz1e9wSUyKOKV4eR--tQ/zh-cn_image_0000002707578261.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/vMJxc__1T0KyNpqEq5VVKw/zh-cn_image_0000002707578261.png)
 
 可见大量内存被Handle scopes引用，这些是创建在作用域内的JS对象。
 
@@ -515,7 +515,7 @@ static napi_value RunTestJsvmUnUseDestroyEnv([[maybe_unused]] napi_env env, [[ma
 }
 ```
 
-HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在OH\_JSVM\_DestroyEnv()注释点到OH\_JSVM\_CloseVMScope()接口调用之间，调用HeapMgmtTest()导出堆内存快照，开发者可通过分析该快照，了解JS全局对象在堆内存快照上的特征，以辅助分析类似问题场景。
+HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在OH\_JSVM\_DestroyEnv()注释点到[OH\_JSVM\_CloseVMScope()](../doccenter-references/api/capi-jsvm-h.md#oh_jsvm_closevmscope)接口调用之间，调用HeapMgmtTest()函数导出堆内存快照，开发者可通过分析该快照，了解JS全局对象在堆内存快照上的特征，以辅助分析类似问题场景。
 
 ### 分析思路
 
@@ -525,15 +525,15 @@ HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在OH
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/5FTQZUnFQt6mGml28qvvVg/zh-cn_image_0000002677658552.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Xol6kXkEQTGcenAalqWtyQ/zh-cn_image_0000002677658552.png)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见100%的内存分布在global\_object中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/GKoPvPDlSBmEVWo9T0f5oA/zh-cn_image_0000002707458413.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/aU33YKANQmqPkU5otGD6LA/zh-cn_image_0000002707458413.png)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/OBEA_EiwRAiCA60ASxB8cQ/zh-cn_image_0000002677818402.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/tB2xZ-SWSQimcc9HnoSEwg/zh-cn_image_0000002677818402.png)
 
 可见大量内存被global\_object引用，内存占用集中在全局对象。
 

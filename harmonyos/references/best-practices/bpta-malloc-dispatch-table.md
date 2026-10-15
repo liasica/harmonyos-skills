@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-malloc-dis
 title: 内存泄漏定制能力开放使用指导
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 资源泄漏类问题检测 > 内存泄漏类问题检测方法 > 内存泄漏定制能力开放使用指导
 category: best-practices
-scraped_at: 2026-09-21T06:25:49+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:af88be4bb6da6c53ed2f9bc9d96ed9da5e967e4831a98581f9b281be76d4e08a
+scraped_at: 2026-10-16T07:06:49+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:663f0bcd82abc63cdce6f09982d2f78cf0cbd083382354b2883d6a95759d3f03
 ---
 
 ## 概述
@@ -26,13 +26,13 @@ content_hash: sha256:af88be4bb6da6c53ed2f9bc9d96ed9da5e967e4831a98581f9b281be76d
 
 MallocDispatchTable简称内存分配表，提供对HarmonyOS [libc标准库](../harmonyos-references/musl.md)中的malloc、calloc、realloc、free等内存操作系列函数的Hook能力。此能力可用于跟踪应用的内存分配/释放信息，辅助内存泄漏问题快速定界定位。
 
-注：内存基础知识参考文档：[内存基础知识](bpta-memory-basic-knowledge.md#section085818715389)。
+注：内存基础知识参考文档：[基本概念](bpta-memory-basic-knowledge.md#section085818715389)。
 
 ### MallocDispatchTable的Hook流程
 
 如下图示例，开发者可使用自定义函数替换标准库函数，应用程序调用标准库函数时实际上执行的是自定义的函数。通过MallocDispatchTable里的函数指针，调用标准库函数时可以重定向到自定义的函数。MallocDispatchTable的主要功能在于将标准库函数的实现和自定义函数进行解耦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Oqkaa-QkRYa9SLj-44LR5g/zh-cn_image_0000002501437914.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/gdH0J8hhSUCaI16mLVXCCg/zh-cn_image_0000002501437914.png)
 
 开发人员可使用提供的[OH\_HiDebug\_SetMallocDispatchTable()](../harmonyos-references/capi-hidebug-h.md#oh_hidebug_setmallocdispatchtable)接口设置libc标准库中使用的MallocDispatchTable；使用[OH\_HiDebug\_GetDefaultMallocDispatchTable()](../harmonyos-references/capi-hidebug-h.md#oh_hidebug_getdefaultmallocdispatchtable)接口获取libc中默认的MallocDispatchTable。
 
@@ -86,7 +86,7 @@ MallocDispatchTable简称内存分配表，提供对HarmonyOS [libc标准库](..
    ```
 
    创建一个HiDebug\_MallocDispatch结构体current，通过[OH\_HiDebug\_GetDefaultMallocDispatchTable()](../harmonyos-references/capi-hidebug-h.md#oh_hidebug_getdefaultmallocdispatchtable)分配其占用的堆内存。修改结构体中的函数指针，让其指向之前定义的MyMmap和MyMunmap函数。
-4. **启用自定义 MallocDispatchTable。**
+4. **启用自定义MallocDispatchTable。**
 
    ```cpp
    OH_HiDebug_SetMallocDispatchTable(current);
@@ -107,7 +107,7 @@ MallocDispatchTable简称内存分配表，提供对HarmonyOS [libc标准库](..
    ```
 
    在执行上述基础库mmap函数时，会自动重定向到先前定义的MyMmap函数，完成业务自定义功能。
-6. **停用自定义 MallocDispatchTable。**
+6. **停用自定义MallocDispatchTable。**
 
    ```screen
    //release memory of self-defined MallocDispatchTable struct.
@@ -131,7 +131,7 @@ MallocDispatchTable简称内存分配表，提供对HarmonyOS [libc标准库](..
 
 具体限制如下：
 
-1. 无法通过GWP-ASan功能进行内存越界检测。GWP-ASan 的工作原理详见文档：[GWP-ASan检测原理](bpta-stability-address-sanitizer-principle.md#section555616291854)。
+1. 无法通过GWP-ASan功能进行内存越界检测。GWP-ASan的工作原理详见文档：[GWP-ASan检测原理](bpta-stability-address-sanitizer-principle.md#section555616291854)。
 2. 无法通过使用[native hook插件](../harmonyos-guides/hiprofiler.md#native-hook插件)对该应用程序进行函数调用栈捕获。
 
 **警告** 

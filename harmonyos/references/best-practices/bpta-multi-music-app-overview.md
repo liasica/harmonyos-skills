@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-musi
 title: 多设备音乐界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备音乐界面
 category: best-practices
-scraped_at: 2026-09-21T06:25:40+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd498e4
+scraped_at: 2026-10-16T07:06:40+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:7fc64d3b07a71f8368a6bb71b384c1264d1077faeb2cdf9d72c5464131ca198d
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 
 应用的UX设计可参考[音乐听书](../design-guides/responsive-design-examples1-0000001957369849.md#section12973333171715)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/tkJ-Q_zPSUaGOdxQMcqkFw/zh-cn_image_0000002622170035.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/mk5ZgANNTBeFIA37VzuOUg/zh-cn_image_0000002622170035.png "点击放大")
 
 ## 工程管理
 
@@ -152,7 +152,7 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 | 3 | 歌单卡片列表 | 使用响应式组件[Scroll](../harmonyos-references/ts-container-scroll.md)结合[Row](../harmonyos-references/ts-container-row.md)组件实现横向滚动。 |
 | 4 | 分类标签区域 |
 | 5 | 为你推荐区域 |
-| 7 | 音乐列表 | 使用[List](../harmonyos-references/ts-container-list.md)结合[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)实现列表渲染，并通过lanes()属性设置响应式列数，根据横向断点为sm展示一列，md展示两列，lg或者xl展示三列。 |
+| 6 | 音乐列表 | 使用[List](../harmonyos-references/ts-container-list.md)结合[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)实现列表渲染，并通过lanes()属性设置响应式列数，根据横向断点为sm展示一列，md展示两列，lg或者xl展示三列。 |
 
 ### 列表页
 
@@ -215,11 +215,11 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 
 ### 首页
 
-将电脑端首页划分为八个区域。
+将电脑端首页划分为七个区域。
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ABUaeIYyRsuC2fyp4G742g/zh-cn_image_0000002622249901.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/bLThCIbzS6GNOZlOA_c8sw/zh-cn_image_0000002622249901.png "点击放大")
 
 **界面开发**
 
@@ -232,8 +232,8 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 | 3 | 歌单卡片列表 |
 | 4 | 分类标签区域 |
 | 5 | 为你推荐区域 |
-| 7 | 音乐列表 |
-| 8 | 播放条 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现，分为封面区域和音乐控制区两部分，封面通过[Stack](../harmonyos-references/ts-container-stack.md)层叠环形进度条。 |
+| 6 | 音乐列表 |
+| 7 | 播放条 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现，分为封面区域和音乐控制区两部分，封面通过[Stack](../harmonyos-references/ts-container-stack.md)层叠环形进度条。 |
 
 ### 列表页
 
@@ -241,7 +241,7 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/sbG97KmZSl2kpqvEyxdIdQ/zh-cn_image_0000002622170043.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/55_MtxumQcOhL9Qf510IOg/zh-cn_image_0000002622170043.png "点击放大")
 
 **界面开发**
 
@@ -270,7 +270,7 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VHNWYqSGRn2xwuIRr6lzgA/zh-cn_image_0000002591610438.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/L75C50ACRdKLdgoKwTYqjQ/zh-cn_image_0000002591610438.png "点击放大")
 
 **界面开发**
 
@@ -289,7 +289,7 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/rsvoUM_ySR-kOxcFv-sdJA/zh-cn_image_0000002591770364.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/EMDin_JASB6DCzUasYpoRQ/zh-cn_image_0000002591770364.png "点击放大")
 
 **界面开发**
 
@@ -313,7 +313,7 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 
 穿戴首页通过[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)实现首页与歌单列表的横向切换，并在首页显示当前播放的音乐以方便用户操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/z7FDBB71SlGuv_HVk8srvg/zh-cn_image_0000002622249905.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/jH8ETgSySFOGp43pbu9Meg/zh-cn_image_0000002622249905.png "点击放大")
 
 实现方案如下表：
 
@@ -328,7 +328,7 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 
 穿戴列表页主要展示歌曲列表内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/DkuDy4HNRDOGuDEI1iCRyQ/zh-cn_image_0000002622170045.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/lzCk0WhWQO2Q4zWstTx7Og/zh-cn_image_0000002622170045.png "点击放大")
 
 实现方案如下表：
 
@@ -341,7 +341,7 @@ content_hash: sha256:70012fd57fd5520ef172cf968462ff6f910d5229efb7f1bead694cc73dd
 
 穿戴播放页划分为三个区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/eSMnSkJuTZG95mx9961bcA/zh-cn_image_0000002591610440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Or_iuo3ESaydCJU0ILGXgw/zh-cn_image_0000002591610440.png "点击放大")
 
 实现方案如下表：
 

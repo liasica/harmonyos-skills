@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smooth-swi
 title: 在线短视频流畅切换
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 在线短视频流畅切换
 category: best-practices
-scraped_at: 2026-09-21T06:25:43+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:63230f8297304c07498e1229d196357d458b8ff9c48d0b90582d96d020f9e701
+scraped_at: 2026-10-16T07:06:43+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:e957364f94a8d9a93ca40e39ae4228d51652d4bbdc7fff621bd7c81eb19cb04e
 ---
 
 ## 概述
 
 在短视频应用中，用户在快速切换视频时，新视频起播容易出现时延过长的问题。针对该问题，本文提供了如下解决方案：
 
-* 视频播放框架AVPlayer和滑块视图容器Swiper进行短视频滑动轮播切换。
-* 绘制组件XComponent的Surface类型动态渲染视频流。
-* 使用LazyForEach进行数据懒加载，设置cachedCount属性指定缓存数量，搭配组件复用能力以提升性能。冷启动时创建并初始化AVPlayer到prepared阶段。轮播过程中，每次异步创建一个播放器为下一个视频播放做准备。
+* 视频播放框架[AVPlayer](../doccenter-capabilities/media-kit-intro.md#avplayer)和滑块视图容器[Swiper](../doccenter-references/api/ts-container-swiper.md)进行短视频滑动轮播切换。
+* 绘制组件[XComponent](../doccenter-references/api/ts-basic-components-xcomponent.md)的Surface类型动态渲染视频流。
+* 使用[LazyForEach](../doccenter-references/api/ts-rendering-control-lazyforeach.md)进行数据懒加载，设置cachedCount属性指定缓存数量，搭配组件复用能力以提升性能。冷启动时创建并初始化AVPlayer到prepared阶段。轮播过程中，每次异步创建一个播放器为下一个视频播放做准备。
 
-在动画开始时使用预先准备的播放器起播，起播时延不超过230ms，具体可参考[在线短视频类应用的快速切换与快速起播](../harmonyos-guides/performance-delay.md#section12851131281914)。
+在动画开始时使用预先准备的播放器起播，起播时延不超过230ms，具体可参考[在线短视频类应用快速切换播放起播快](../doccenter-architecture/performance-delay.md#section12851131281914)。
 
 **说明** 
 
@@ -26,7 +26,7 @@ content_hash: sha256:63230f8297304c07498e1229d196357d458b8ff9c48d0b90582d96d020f
 
 **图1** **在线短视频滑动切换效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/-fHVI17HQkKBn30dwBpL1Q/zh-cn_image_0000002229336849.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/D1n-zVQuTOuLpUA0Tmp_tQ/zh-cn_image_0000002229336849.gif "点击放大")
 
 ## 场景说明
 
@@ -77,7 +77,7 @@ AVPlayer：
 
    滑动过程中，手指离开屏幕时，滑动动效开始播放。此时，可以调用AVPlayer的play方法进行播放。
 
-三方自研播放器：
+第三方自研播放器：
 
 1. 数据懒加载
 
@@ -97,13 +97,13 @@ AVPlayer：
 
 **图2** **功能时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Ya5i9KdbRTyQHWJ0hC38kw/zh-cn_image_0000002193851456.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/i3jMSJ2FRcGJj3DJRkp3UQ/zh-cn_image_0000002193851456.png "点击放大")
 
 ### 在线短视频快速切换
 
 **图3** **实现流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/YgDQc5Q2TV2LxDQkvZ4low/zh-cn_image_0000002229336837.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/S4Ws_st_Rt2ge3hOAgiDEw/zh-cn_image_0000002229336837.png "点击放大")
 
 **关键点**
 
@@ -120,21 +120,21 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 在通过Swiper切换时，会根据当前轮询滑动的窗口索引index到缓存池中找到对应的视频（prepared阶段），直接进行播放，从而提高切换性能。
 
 **图4** **视频懒加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/EoS9oDnnS-uZYLESjg7-7A/zh-cn_image_0000002229451329.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/-SdTh-HgThu5y5N61O9WVg/zh-cn_image_0000002229451329.png "点击放大")
 
 **异步视频预加载**
 
-异步视频预加载：在Swiper轮播过程中，在播放当前视频时，提前加载好下一个视频，在缓存中同时存在多个播放器实例，根据视频当前的索引来确定使用缓存中的哪个播放器来播放，从而达到流畅切换的效果。
+异步视频预加载：在Swiper轮播过程中，播放当前视频的同时预加载下一个视频，在缓存中同时存在多个播放器实例，根据视频当前的索引来确定使用缓存中的哪个播放器来播放，从而达到流畅切换的效果。
 
 （1）本地播放一个短视频的耗时。
 
 **图5** **单视频加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/BhlDYoENR06tIxT0A8lmnA/zh-cn_image_0000002229336853.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/cB28z4RYRxK3neKYOZXAyQ/zh-cn_image_0000002229336853.png "点击放大")
 
 （2）播放视频A时，提前预加载视频B。切换短视频时，可以立即播放已预加载的视频B，从而减少切换时间，提升切换性能。
 
 **图6** **异步视频预加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/qU8BHS8ZR26eHWyGEPDzWw/zh-cn_image_0000002229451333.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ah-TELa_QuqBOrBAWcRW7Q/zh-cn_image_0000002229451333.png "点击放大")
 
 **视频播放预启动接力**
 
@@ -147,39 +147,40 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 视频播放预启动接力：这种预加载机制的工作方式类似于接力赛跑。为了尽快完成接力，当第一个选手接近终点时，第二个选手会提前起跑并与第一个选手完美交接接力棒，从而减少整个接力赛的时间。短视频切换也是如此，如下图所示：
 
 **图7** **视频播放预启动接力****示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/TItFww3ZTRah-UPu_4OGbQ/zh-cn_image_0000002229336841.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/N8Odjjn7Q9-7mfj7QqoiTA/zh-cn_image_0000002229336841.png "点击放大")
 
 **开发步骤**
 
 1. 通过组件复用实现单个视频播放的自定义组件VideoPlayView。
 
-   ```typescript
+   ```screen
    // Key point: Reuse custom video playback components by using the @Reusable decorator.
    @Reusable
    @Component
    export struct VideoPlayView {
-     @Prop @Watch('onIndexChange') curIndex: number = -1;
+     @Prop @Watch('onIndexChange') curIndex: number = DEFAULT_INDEX;
      // ...
    }
    ```
 
    在自定义组件VideoPlayView中，设置XComponent组件用于视频流渲染，并获取SurfaceID以设置显示画面。在onLoad时，异步创建并初始化AVPlayer播放器，使其提前进入prepared状态，实现视频的异步预加载。
 
-   ```typescript
+   ```screen
    XComponent({
      id: 'player',
      type: XComponentType.SURFACE,
      controller: this.xComponentController
    })
-     .width(this.XComponentWidth)
-     .height(this.XComponentHeight)
+     .width(this.xComponentWidth)
+     .height(this.xComponentHeight)
      .onLoad(async () => {
        this.surfaceID = this.xComponentController.getXComponentSurfaceId();
-       hilog.info(0x0000, TAG,
+       hilog.info(DOMAIN, TAG,
          `surfaceID: ${this.surfaceID}, curIndex: ${this.curIndex}, index: ${this.index}.`);
-       // Key point: Initialize the AVPlayer asynchronously so that the AVPlayer enters the prepared state in advance to implement asynchronous video preloading.
+       // Key point: Initialize the AVPlayer asynchronously so that the AVPlayer enters the prepared state
+       // in advance to implement asynchronous video preloading.
        this.initAVPlayer();
-     })
+     });
    ```
 2. 在Swiper组件中使用LazyForEach懒加载自定义组件VideoPlayView，实现视频轮播。
 
@@ -191,9 +192,10 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 
    设置弹簧曲线为.curve(Curve.Ease)。
 
-   ```typescript
+   ```screen
    Swiper(this.swiperController) {
-     // Key point: Use LazyForEach to create an independent SurfaceID in the VideoPlayView component. (The AVPlayer is created in the VideoPlayView and does not share the AVPlayer.)
+     // Key point: Use LazyForEach to create an independent SurfaceID in the VideoPlayView component.
+     // (The AVPlayer is created in the VideoPlayView and does not share the AVPlayer.)
      LazyForEach(new AVDataSource(Const.VIDEO_SOURCE), (item: string, index: number) => {
        VideoPlayView({
          curSource: item,
@@ -201,26 +203,26 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
          index: index,
          firstFlag: this.firstFlag,
          isPageShow: this.isPageShow,
-         foldStatus: this.foldStatus
-       })
-     }, (item: string, index: number) => JSON.stringify(item) + index)
+         foldStatus: this.foldStatus,
+       });
+     }, (item: string, index: number) => item + index);
    }
    // Key point: Set cachedCount to implement preloading.
-   .cachedCount(this.firstFlag ? 0 : 2)
+   .cachedCount(this.firstFlag ? COUNT_0 : COUNT_2)
    .width('100%')
    .height('100%')
    .vertical(true)
    .loop(true)
    // Key point: Change the spring curve to Curve.Ease.
    .curve(Curve.Ease)
-   .duration(300)
+   .duration(DURATION_MS)
    .indicator(false)
    .backgroundColor(Color.Black)
    .onGestureSwipe((index: number, extraInfo: SwiperAnimationEvent) => {
-     hilog.info(0x0000, TAG, `onGestureSwipe index: ${index}, extraInfo: ${extraInfo}.`);
+     hilog.info(DOMAIN, TAG, `onGestureSwipe index: ${index}, extraInfo: ${extraInfo}.`);
    })
    .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {
-     hilog.info(0x0000, TAG,
+     hilog.info(DOMAIN, TAG,
        `onAnimationStart index: ${index}, targetIndex: ${targetIndex}, extraInfo: ${extraInfo}.`);
      // Key point: The curIndex is updated at AnimationStart and the next video starts to be played.
      this.curIndex = targetIndex;
@@ -230,64 +232,64 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 
    在自定义组件VideoPlayView中，使用@Watch装饰器监听Swiper轮播的curIndex值。
 
-   ```typescript
-   @Prop @Watch('onIndexChange') curIndex: number = -1;
+   ```screen
+   @Prop @Watch('onIndexChange') curIndex: number = DEFAULT_INDEX;
    ```
 
    将视频缓存流中的index与curIndex进行比较，判断视频流中哪个视频播放，其余视频均暂停。
 
    ```screen
-   onIndexChange() {
-     hilog.info(0x0000, TAG,
+   onIndexChange(): void {
+     hilog.info(DOMAIN, TAG,
        `enter onIndexChange. curIndex: ${this.curIndex}, index: ${this.index}, isPageShow: ${this.isPageShow}.`);
      if (this.curIndex !== this.index) {
        pauseVideo(this.avPlayer, this.curIndex, this.index);
        this.isPlaying = false;
        this.trackThicknessSize = Const.TRACK_SIZE_MIN;
-     } else {
-       hilog.info(0x0000, TAG,
-         `enter indexChange play. curIndex: ${this.curIndex}, index: ${this.index}, isPageShow: ${this.isPageShow}.`);
-       // Key point: When the index(curIndex) of the current window is the same as the index of the this, the playback starts.
-       if (this.flag === true) {
+       return;
+     }
+     hilog.info(DOMAIN, TAG,
+       `enter indexChange play. curIndex: ${this.curIndex}, index: ${this.index}, isPageShow: ${this.isPageShow}.`);
+     // Key point: When the index(curIndex) of the current window is the same as the index of the this, playback starts.
+     if (this.flag === true) {
+       playVideo(this.avPlayer, this.curIndex, this.index);
+       this.isPlaying = true;
+       this.trackThicknessSize = Const.TRACK_SIZE_MIN;
+       return;
+     }
+     let countNum = 0;
+     let intervalFlag = setInterval(() => {
+       countNum++;
+       if (this.curIndex !== this.index) {
+         hilog.info(DOMAIN, TAG, `enter indexChange play error, clearInterval. flag: ${this.flag},
+           curIndex: ${this.curIndex}, index: ${this.index}.`);
+         clearInterval(intervalFlag);
+       }
+       // Start playing when the video is prepared and the page is visible.
+       if (this.flag === true && this.isPageShow) {
+         countNum = NUMBER_0;
          playVideo(this.avPlayer, this.curIndex, this.index);
          this.isPlaying = true;
          this.trackThicknessSize = Const.TRACK_SIZE_MIN;
+         clearInterval(intervalFlag);
        } else {
-         let countNum = 0;
-         let intervalFlag = setInterval(() => {
-           countNum++;
-           if (this.curIndex !== this.index) {
-             hilog.info(0x0000, TAG, `enter indexChange play error, clearIntreval. flag: ${this.flag},
-           curIndex: ${this.curIndex}, index: ${this.index}.`);
-             clearInterval(intervalFlag);
-           }
-           // Start playing when the video is prepared and the page is visible.
-           if (this.flag === true && this.isPageShow) {
-             countNum = 0;
-             playVideo(this.avPlayer, this.curIndex, this.index);
-             this.isPlaying = true;
-             this.trackThicknessSize = Const.TRACK_SIZE_MIN;
-             clearInterval(intervalFlag);
-           } else {
-             hilog.info(0x0000, TAG, `enter indexChange play error, clearIntreval. countNum: ${countNum},
+         hilog.info(DOMAIN, TAG, `enter indexChange play error, clearInterval. countNum: ${countNum},
             flag: ${this.flag}, curIndex: ${this.curIndex}, index: ${this.index}.`);
-             if (countNum > 15) {
-               hilog.info(0x0000, TAG,
-                 `enter indexChange play error, reinit initAVPlayer. countNum: ${countNum}, flag: ${this.flag},
+         if (countNum > COUNT_MAX) {
+           hilog.info(DOMAIN, TAG,
+             `enter indexChange play error, reinit initAVPlayer. countNum: ${countNum}, flag: ${this.flag},
                curIndex: ${this.curIndex}, index: ${this.index}.`);
-               countNum = 0;
-               this.initAVPlayer();
-             }
-           }
-         }, 100);
+           countNum = NUMBER_0;
+           this.initAVPlayer();
+         }
        }
-     }
+     }, INTERVAL_TIME);
    }
    ```
 
 ## 总结
 
-本文介绍数据懒加载、异步在线视频预加载及在线视频播放预接力等优化方案，帮助开发者解决快速切换播放延时问题。开发者可基于[SwipePlayer](https://gitcode.com/harmonyos_samples/SwipePlayer#工程主要模块结构) 库快速实现短视频流畅滑动的场景开发体验，可以更加聚焦实际场景业务的开发。
+本文介绍数据懒加载、异步在线视频预加载及在线视频播放预接力等优化方案，帮助开发者解决快速切换播放延时问题。开发者可基于[实现短视频流畅点播](https://gitcode.com/HarmonyOS_Samples/SwipePlayer)工程快速实现短视频流畅滑动的场景开发体验，可以更加聚焦实际场景业务的开发。
 
 ## 示例代码
 

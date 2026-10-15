@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-shopping-
 title: 多设备购物比价界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备购物比价界面
 category: best-practices
-scraped_at: 2026-09-21T06:25:40+08:00
+scraped_at: 2026-10-16T07:06:40+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:691bd8df7023c3705988a906c97a6cb45822a24b3ab9470eef47ec87b16af825
+content_hash: sha256:2df30f16035236ab2e15f44a85bd04bb9c1703479b4cdd02d4e4bcb8a92bd924
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:691bd8df7023c3705988a906c97a6cb45822a24b3ab9470eef47ec87b16
 
 购物比价应用的UX设计可参考[电商购物类](../design-guides/responsive-design-examples5-0000001930419478.md)多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/03vSkQhhR7GxiGGErbVzGw/zh-cn_image_0000002591755542.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Z8PBNFsXQaObK6IbbtW9LA/zh-cn_image_0000002591755542.png "点击放大")
 
 ## 工程管理
 
@@ -187,7 +187,7 @@ content_hash: sha256:691bd8df7023c3705988a906c97a6cb45822a24b3ab9470eef47ec87b16
 
 商品详情页在折叠屏上提供分屏功能，满足用户同时查看两个商品详细参数进行比价的需求。分屏功能通过创建新的UIAbility并设置窗口显示为分屏模式实现。分屏后，左右屏幕的宽度比例为1:1。双折叠上的效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/n7ClpJ7SRDC_4wtL_qNTSw/zh-cn_image_0000002622155223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/zTIlIycwRgaAzs3s6nNQAQ/zh-cn_image_0000002622155223.png "点击放大")
 
 ### 商品支付页
 
@@ -245,7 +245,7 @@ content_hash: sha256:691bd8df7023c3705988a906c97a6cb45822a24b3ab9470eef47ec87b16
 
 ### 首页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/MhIdHHW5RfOEnOhrq-Bteg/zh-cn_image_0000002591595638.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/0AKljpXbSl2C0ogevhv4ww/zh-cn_image_0000002591595638.png "点击放大")
 
 使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)代替[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)作为导航，其余feature层代码复用，自由窗口的布局会复用断点进行适配，可以使自由窗口无论何时都有较好的布局效果。
 

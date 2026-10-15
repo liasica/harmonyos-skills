@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 组件布局场景
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面布局响应式变化 > 组件布局场景
 category: best-practices
-scraped_at: 2026-09-02T15:21:03+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:85f746f1a02c39cafc234bc7ac80f8de6f5db9310e34d736f81e242ff3f491a7
+scraped_at: 2026-10-16T07:06:39+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:457b3371e2d429ecc27e2ed35c219f92876c425c7022ecb2f323c3e2757aa997
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ ArkUI框架常用的响应式组件及能够实现的布局场景的对应关系
 
 | 属性 | 说明 |
 | --- | --- |
-| [lanes](../harmonyos-references/ts-container-list.md#lanes9) | 设置不同断点对应list组件布局的列数或行数，及列间距。 |
+| [lanes](../harmonyos-references/ts-container-list.md#lanes9) | 设置不同断点对应List组件布局的列数或行数，及列间距。 |
 
 重复列表布局效果如下图，实现方案和示例代码请参考[列表布局](bpta-multi-device-page-layout.md#section122004555383)。
 
@@ -65,7 +65,7 @@ ArkUI框架常用的响应式组件及能够实现的布局场景的对应关系
 | [displayCount](../harmonyos-references/ts-container-swiper.md#displaycount8) | 设置不同断点下Swiper视窗内元素显示的个数。 |
 | [nextMargin](../harmonyos-references/ts-container-swiper.md#nextmargin10) | 设置不同断点下的后边距，用于露出后一项的一小部分。 |
 | [prevMargin](../harmonyos-references/ts-container-swiper.md#prevmargin10) | 设置不同断点下的前边距，用于露出前一项的一小部分。 |
-| [onChange()](../harmonyos-references/ts-container-swiper.md#onchange) | 根据不同断点，设置索引值。例如lg横向断点下展示3张图片，即当displayCount=3时，当前显示索引为index的图片组（包含index, index+1, index+2），此时返回最右侧索引应为index+2。 |
+| [onChange](../harmonyos-references/ts-container-swiper.md#onchange) | 根据不同断点，设置索引值。例如lg横向断点下展示3张图片，即当displayCount=3时，当前显示索引为index的图片组（包含index, index+1, index+2），此时返回最右侧索引应为index+2。 |
 
 重复轮播布局效果如下图，实现方案和示例代码请参考[轮播布局](bpta-multi-device-page-layout.md#section17659141914012)。
 
@@ -115,8 +115,8 @@ ArkUI框架常用的响应式组件及能够实现的布局场景的对应关系
 
 | 横向断点 | sm | md | lg |
 | --- | --- | --- | --- |
-| 属性 | 导航栏和内容区单栏显示 | 导航栏和内容区分栏显示  导航栏宽度50% | 导航栏和内容区分栏显示  导航栏宽度50% |
-| 展示布局 |  |  |  |
+| 布局说明 | 导航栏和内容区单栏显示 | 导航栏和内容区分栏显示  导航栏宽度50% | 导航栏和内容区分栏显示  导航栏宽度50% |
+| 布局效果 |  |  |  |
 
 ## SideBarContainer+Navigation
 
@@ -136,7 +136,7 @@ ArkUI框架常用的响应式组件及能够实现的布局场景的对应关系
 
 | 横向断点 | sm | md | lg |
 | --- | --- | --- | --- |
-| 展示布局 |  |  |  |
+| 布局效果 |  |  |  |
 
 ## Tabs
 
@@ -156,7 +156,7 @@ ArkUI框架常用的响应式组件及能够实现的布局场景的对应关系
 
 ## GridRow/GridCol
 
-栅格布局分为栅格容器组件GridRow和栅格子组件GridCol，通过调整不同的属性可以实现挪移布局和缩进布局。
+栅格系统由容器组件GridRow和子组件GridCol组成，通过调整不同的属性可以实现挪移布局和缩进布局。
 
 | GridRow属性 | 说明 |
 | --- | --- |
@@ -175,7 +175,7 @@ ArkUI框架常用的响应式组件及能够实现的布局场景的对应关系
 
 | 横向断点 | sm | md | lg |
 | --- | --- | --- | --- |
-| 展示布局 |  |  |  |
+| 布局效果 |  |  |  |
 
 **缩进布局**
 
@@ -183,7 +183,7 @@ ArkUI框架常用的响应式组件及能够实现的布局场景的对应关系
 
 | 横向断点 | sm | md | lg |
 | --- | --- | --- | --- |
-| 展示布局 |  |  |  |
+| 布局效果 |  |  |  |
 
 ## 示例代码
 

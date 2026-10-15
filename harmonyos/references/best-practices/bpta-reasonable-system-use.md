@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-reasonable
 title: 后台系统资源合理使用
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台软件资源合理使用 > 后台系统资源合理使用
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:0b72ed8bf0272f394184b751e168861d003d1fca360e8b137653f472f7480003
+scraped_at: 2026-10-16T07:06:48+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:1c88d6eaa090cff16327e6fc058ba6cc3afcd58e5dc2b7b247b3e9d15d889805
 ---
 
 无长时任务的应用退至后台后，应释放对应资源，避免阻止系统休眠。
@@ -18,19 +18,19 @@ content_hash: sha256:0b72ed8bf0272f394184b751e168861d003d1fca360e8b137653f472f74
 
 ### 应用直接持锁
 
-```typescript
+```screen
 import { runningLock } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // Return to the background to release the lock
-runningLock.create('running_lock_test', runningLock.RunningLockType.BACKGROUND)
+runningLock.create('running_lock_test', runningLock.RunningLockType.BACKGROUND_USER_IDLE)
   .then((lock: runningLock.RunningLock) => {
     try {
       lock.unhold();
     } catch (error) {
       let err = error as BusinessError;
-      hilog.warn(0x000, 'testTag', `setColorMode failed, code=${err.code}, message=${err.message}`);
+      hilog.warn(0x0000, 'testTag', `setColorMode failed, code=${err.code}, message=${err.message}`);
     }
   })
   .catch((err: Error) => {
@@ -46,10 +46,12 @@ runningLock.create('running_lock_test', runningLock.RunningLockType.BACKGROUND)
 
 可参考[合理使用音频资源](bpta-reasonable-audio-use.md)。
 
-```typescript
+```screen
 import { UIAbility } from '@kit.AbilityKit';
 import { audio } from '@kit.AudioKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+// ...
+let audioRenderer: audio.AudioRenderer;
 // ...
 export default class EntryAbility extends UIAbility {
   // ...

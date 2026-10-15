@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi_game
 title: 多设备游戏界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备游戏界面
 category: best-practices
-scraped_at: 2026-09-21T06:25:40+08:00
+scraped_at: 2026-10-16T07:06:41+08:00
 doc_updated_at: 2026-08-10
-content_hash: sha256:fa8199c191bdd39ff495fb451844aebcbc78078ceefface802c28f1e273e9769
+content_hash: sha256:9e313b041660c3313c6b4218b72905929ff89b1c5baa74b89541e6fbe68e72f7
 ---
 
 ## 概述
@@ -227,7 +227,7 @@ void AppNapi::OnSurfaceChanged(OH_NativeXComponent* component, void* window)
 
 为了获得更好的游戏体验，游戏应用不仅需要设置沉浸式界面，还需要扩展布局并隐藏避让区，即隐藏状态栏和导航条（示意图所示的导航条在真实使用场景下已隐藏）。界面元素示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/2H4zseiLT9CGw41oKLuvtw/zh-cn_image_0000002276709524.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/fRQeDw7jTlqiUBl9gUXC1w/zh-cn_image_0000002276709524.png "点击放大")
 
 在这样的场景下，挖孔区（即摄像头区域）可能会遮挡部分页面信息或用户操作按钮。因此，为了优化用户体验，操作按钮需要移动到挖孔区的另一侧，同时避免侧边出现大量留白，需要获取挖孔区域并进行相应的避让设计。具体步骤分为以下三步：
 

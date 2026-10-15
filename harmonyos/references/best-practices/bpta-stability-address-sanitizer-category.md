@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 地址越界经典问题类型
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 地址越界经典问题类型
 category: best-practices
-scraped_at: 2026-09-10T06:30:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fb4202acc0aebd2bb0fe95fe5a5b528fb6f0827d65887dfb17f1e4d4ecb52aae
+scraped_at: 2026-10-16T07:06:49+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:9a4e8b1ee27ad19c6107946c52c61466f19fdcb02be2275e7ad7beb2275d4b0d
 ---
 
 ## heap-use-after-free
@@ -148,7 +148,7 @@ overflow：数据超出其分配的内存空间或数据类型所能表示的范
 
 想要检测HeapBufferOverflow的问题，只需要保证一点：
 
-* 正常的Heap前后需要插入一定长度的安全区，而且此安全区对应的shadow memory需要被标记为特殊的状态。在ASAN的实现里，安全区被标记为0xfa。
+* 正常的Heap前后需要插入一定长度的安全区，而且此安全区对应的shadow memory需要被标记为特殊的状态。在ASan的实现里，安全区被标记为0xfa。
 
 **影响**
 

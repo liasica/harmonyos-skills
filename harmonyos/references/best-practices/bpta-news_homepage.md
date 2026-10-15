@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-news_homep
 title: 首页信息流体验优化
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 首页信息流体验优化
 category: best-practices
-scraped_at: 2026-09-21T06:25:44+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2ccb9bd
+scraped_at: 2026-10-16T07:06:43+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:ee89cf507904e5ce05aafd35a1d3d5c3b0a6320b3f68cfb2ad65e198186511e8
 ---
 
 ## 概述
 
-本场景解决方案面向新闻类页面开发人员，指导开发者从零开始构建新闻类首页面。包含地址选择、tabs和tabContent切换的动态图标和流畅动效、下拉刷新、上拉加载、首页feed流等常见功能的实现及流畅体验。
+本场景解决方案面向新闻类页面开发人员，指导开发者从零开始构建新闻类首页面。包含地址选择、Tabs和tabContent切换的动态图标和流畅动效、下拉刷新、上拉加载、首页feed流等常见功能的实现及流畅体验。
 
 ### 整体场景介绍
 
@@ -18,7 +18,7 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
 * 应用的运行效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/yNw6AhGUTxCLawjBY7Yrbw/zh-cn_image_0000002193851428.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/OmfrphomQiyJ2zp8dys2Og/zh-cn_image_0000002193851428.gif "点击放大")
 
 * 操作流程如下：
 
@@ -60,11 +60,11 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   | 场景名称 | 描述 | 实现方案 |
   | --- | --- | --- |
-  | 导航栏切换动效流畅 | 点击页签或滑动切换页面时，页签同步切换 | tab组件添加动画开始时触发事件 |
-  | 底部页签跳转精致流畅 | 底部页签切换时具有动画效果 | 添加lottie动画 |
-  | 上拉加载下拉刷新 | 上拉加载更多新闻内容，下拉刷新整个页面，均具有加载动效 | pullToRefresh组件 |
-  | 首页feed流 | 首页展示流畅的图文列表 | 使用LazyForEach对子组件进行渲染，实现懒加载功能 |
-  | 地址选择页 | 提供地址选择、定位、地址首字母定位及模糊查询功能 | 位置服务与AlphabetIndexer组件 |
+  | 导航栏切换动效流畅 | 点击页签或滑动切换页面时，页签同步切换 | Tabs组件添加动画开始时触发事件 |
+  | 底部页签跳转精致流畅 | 底部页签切换时具有动画效果 | 添加[lottie](https://gitcode.com/CPF-ApplicationTPC/lottieArkTS)动画 |
+  | 上拉加载下拉刷新 | 上拉加载更多新闻内容，下拉刷新整个页面，均具有加载动效 | 三方库[PullToRefresh](https://gitcode.com/CPF-ApplicationTPC/ohos_pull_to_refresh)组件 |
+  | 首页feed流 | 首页展示流畅的图文列表 | 使用[LazyForEach](../doccenter-references/api/ts-rendering-control-lazyforeach.md)对子组件进行渲染，实现懒加载功能 |
+  | 地址选择页 | 提供地址选择、定位、地址首字母定位及模糊查询功能 | 位置服务与[AlphabetIndexer](../doccenter-references/api/ts-container-alphabet-indexer.md)组件 |
 
 ## 场景实现
 
@@ -72,11 +72,11 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
 通过添加Tab组件的动效触发事件，实现页面内容切换与页签样式切换的同步效果。具体效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Fm3sgyaYQb-KML4YDPd5fA/zh-cn_image_0000002229336809.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/-HZR8_BGQSKl80S7nt8AmA/zh-cn_image_0000002229336809.gif "点击放大")
 
 * 动效触发事件节点
 
-  推荐使用onAnimationStart事件设置切换标签动效。使用onChange事件会导致页面切换后再触发动效，造成效果延迟。使用onClick事件会与页面切换冲突。
+  推荐使用onAnimationStart()事件设置切换标签动效。使用onChange()事件会导致页面切换后再触发动效，造成效果延迟。使用onClick事件会与页面切换冲突。
 
   ```typescript
   // TabBar.ets
@@ -107,13 +107,13 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
 ### 底部页签跳转精致流畅
 
-底部页签样式添加Lottie动画，使跳转更加精致流畅。效果如图所示：
+底部页签样式添加lottie动画，使跳转更加精致流畅。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/jH8g-xUlRz-VcUzIL5edkA/zh-cn_image_0000002229451313.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/OkKDq47NTSumecXZeeOXEA/zh-cn_image_0000002229451313.gif "点击放大")
 
 * 底部页签跳转功能时序图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/EQVXUkwZR9yiCfePhT61Fg/zh-cn_image_0000002194011036.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/dadj5XDJR52zHl1PeYXfdg/zh-cn_image_0000002194011036.png "点击放大")
 
 * TabBar集成lottie动画
 
@@ -129,14 +129,15 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   导入lottie模块。
 
-  ```typescript
+  ```screen
   // Home.ets
-  import lottie, { AnimationItem } from '@ohos/lottie';
+  import lottie from '@ohos/lottie';
+  import type { AnimationItem } from '@ohos/lottie';
   ```
 
-  使用RenderingContext在Canvas组件上进行绘制，声明CanvasRenderingContext2D变量。使用RenderingContextSettings配置CanvasRenderingContext2D对象的参数，设置canvas是否开启抗锯齿。
+  使用RenderingContext在[Canvas](../doccenter-references/api/ts-components-canvas-canvas.md)组件上进行绘制，声明[CanvasRenderingContext2D](../doccenter-references/api/ts-canvasrenderingcontext2d.md)变量。使用RenderingContextSettings配置CanvasRenderingContext2D对象的参数，设置Canvas是否开启抗锯齿。
 
-  ```typescript
+  ```screen
   // Home.ets
   private renderingSettings1: RenderingContextSettings = new RenderingContextSettings(true);
   private canvasRenderingContext1: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.renderingSettings1);
@@ -144,7 +145,7 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   定义所需数据类型的接口，初始化变量。接口中包含资源路径信息和CanvasRenderingContext2D。
 
-  ```typescript
+  ```screen
   // Home.ets
   interface TabBarOption {
     index: number;
@@ -160,18 +161,18 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   实现动画播放的方法。
 
-  ```typescript
+  ```screen
   // Home.ets
   lottieController(): void {
-    if (this.currentBottomIndex === 0) {
+    if (this.currentBottomIndex === NUM_0) {
       lottie.stop();
       lottie.play(this.tabOption1.name);
     }
-    if (this.currentBottomIndex === 1) {
+    if (this.currentBottomIndex === NUM_1) {
       lottie.stop();
       lottie.play(this.tabOption2.name);
     }
-    if (this.currentBottomIndex === 2) {
+    if (this.currentBottomIndex === NUM_2) {
       lottie.stop();
       lottie.play(this.tabOption3.name);
     }
@@ -180,7 +181,7 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   在TabBar样式中实现Canvas子组件。
 
-  ```typescript
+  ```screen
   // Home.ets
   Canvas(tabBarOption.canvasRenderingContext)
     .width($r('app.float.canvas_size'))
@@ -199,12 +200,12 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
         path: tabBarOption.path,
       });
       tabBarOption.lottieItem = item;
-      item.addEventListener('DOMLoaded', (args: Object): void => {
+      item.addEventListener('DOMLoaded', (args: object): void => {
         if (tabBarOption.index === tabBarOption.currentBottomIndex) {
           item.play();
         }
-      })
-    })
+      });
+    });
   ```
 
   在tab组件的onAnimationStart事件中调用播放方法。
@@ -220,33 +221,31 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
 ### 上拉加载下拉刷新
 
-通过三方库组件pullToRefresh实现下拉刷新页面和上拉加载更多数据的效果。具体效果如图所示：
+通过三方库组件PullToRefresh实现下拉刷新页面和上拉加载更多数据的效果。具体效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/F3Ir58siQ--iaqNpNUs98A/zh-cn_image_0000002229451321.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7YtMnkBiSJ2QV-mWcKqyQQ/zh-cn_image_0000002229451321.gif "点击放大")
 
 * 上拉加载和下拉刷新时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/VRzG4qAIRnepb2ftJEIl6g/zh-cn_image_0000002229336825.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/-oM59PhkSd6Mrqgcwp7pSg/zh-cn_image_0000002229336825.png "点击放大")
 
-* pullToRefresh组件
+* PullToRefresh组件
 
-  使用第三方库的pullToRefresh组件，将列表组件、绑定的数据对象和scroller对象包含在内，并添加上滑和下拉方法。支持lazyForEach数据作为数据源。设置List组件的edgeEffect属性为EdgeEffect.None。
+  使用第三方库的PullToRefresh组件，将列表组件、绑定的数据对象和自定义的scroller对象包含在内，并添加上滑和下拉方法。支持lazyForEach数据作为数据源。设置[List](../doccenter-references/api/ts-container-list.md)组件的edgeEffect属性为EdgeEffect.None。
 
-  引入三方库pullToRefresh。
+  引入三方库PullToRefresh。
 
   ```screen
   ohpm install @ohos/pulltorefresh
   ```
 
-  ```typescript
-  // PullToRefreshNews.ets
+  ```screen
   import { PullToRefresh } from '@ohos/pulltorefresh/index';
   ```
 
   准备数据源，本场景使用本地资源模拟效果，资源文件在resources/rawfile目录下，实际情况可替换为从网络获取。
 
-  ```typescript
-  // PullToRefreshNews.ets
+  ```screen
   const MOCK_DATA_FILE_ONE_DIR: string =
     uiContext!.getHostContext()!.resourceManager.getStringSync($r('app.string.mock1').id);
   const MOCK_DATA_FILE_TWO_DIR: string =
@@ -255,8 +254,7 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   包含列表组件、数据对象和scroller对象，并添加上滑和下拉方法。
 
-  ```typescript
-  // PullToRefreshNews.ets
+  ```screen
   PullToRefresh({
     data: $newsData,
     scroller: this.scroller,
@@ -276,14 +274,14 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
     },
     customLoad: null,
     customRefresh: null,
-  })
+  });
   ```
 
 ### 首页feed流
 
 使用懒加载实现首页 feed 流的快速渲染和流畅滑动。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/eXqrBs2HSFe_PWlGnQWRBg/zh-cn_image_0000002194011028.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/OcLZE1r0TZa7BUW3yJgKwA/zh-cn_image_0000002194011028.gif "点击放大")
 
 * 懒加载
 
@@ -291,15 +289,13 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   准备需要加载的数据源：
 
-  ```typescript
-  // PullToRefreshNews.ets
+  ```screen
   @State newsData: NewsDataSource = new NewsDataSource();
   ```
 
   创建子组件：
 
-  ```typescript
-  // PullToRefreshNews.ets
+  ```screen
   @Component
   struct newsItem {
     // ...
@@ -308,17 +304,17 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   使用LazyForEach对子组件进行渲染：
 
-  ```typescript
-  // PullToRefreshNews.ets
+  ```screen
   List({ space: CommonConstants.LIST_SPACE, scroller: this.scroller }) {
     LazyForEach(this.newsData, (item: NewsData) => {
       ListItem() {
+        // eslint-disable-next-line @performance/hp-arkui-use-reusable-component
         newsItem({
           // ...
-        })
+        });
       }
       // ...
-    }, (item: NewsData, index?: number) => JSON.stringify(item) + index);
+    }, (item: NewsData, index?: number) => item.newsId);
   }
   ```
 
@@ -326,11 +322,11 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
 使用位置服务实现定位功能，AlphabetIndexer组件实现地址首字母定位导航条。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Yr1Bmiv3QZaoj5oZx-XStQ/zh-cn_image_0000002229336813.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/PBqZ2nnnSO2q3R6EYg4oow/zh-cn_image_0000002229336813.gif "点击放大")
 
 * 地址选择页效果功能时序图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/bRJjESoNRnOYhxjSJdQwMQ/zh-cn_image_0000002229336833.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Zwv411ClTZChNJQck7RfsQ/zh-cn_image_0000002229336833.png "点击放大")
 
 * 位置服务与索引条导航
 
@@ -338,7 +334,7 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   申请权限时，API9及之后的版本，需要申请ohos.permission.APPROXIMATELY\_LOCATION，或同时申请ohos.permission.APPROXIMATELY\_LOCATION和ohos.permission.LOCATION；无法单独申请ohos.permission.LOCATION。
 
-  ```json
+  ```screen
   "requestPermissions": [
     {
       "name": "ohos.permission.APPROXIMATELY_LOCATION",
@@ -365,7 +361,7 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
 
   申请用户安全权限：
 
-  ```typescript
+  ```screen
   // Index.ets
   onPageShow(): void {
     abilityAccessCtrl.createAtManager().requestPermissionsFromUser(this.getUIContext().getHostContext(), [
@@ -375,25 +371,25 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
         this.status = false;
       }
     }).catch((err: BusinessError) => {
-      hilog.error(0x0000, 'Index', `requestPermissionsFromUser fail, code: ${err.code}, message: ${err.message}`);
+      hilog.error(LOG_DOMAIN, 'Index', `requestPermissionsFromUser fail, code: ${err.code}, message: ${err.message}`);
     });
   }
   ```
 
   导入位置服务：
 
-  ```typescript
+  ```screen
   // Index.ets
   import { geoLocationManager } from '@kit.LocationKit';
   ```
 
   获取地理位置信息，进行逆地理编码以确定当前位置：
 
-  ```typescript
+  ```screen
   // Index.ets
   let locationChange: (err: BusinessError, location: geoLocationManager.Location) => void = (err, location) => {
     if (err) {
-      hilog.error(0x00000, 'locationChanger: err=', JSON.stringify(err));
+      hilog.error(LOG_DOMAIN, 'locationChanger: err=', JSON.stringify(err));
     }
     if (location) {
       let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
@@ -401,16 +397,20 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
         'longitude': location.longitude,
         'maxItems': CommonConstants.MAX_ITEMS
       };
-      geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+      const systemLanguage = i18n.System.getSystemLanguage();
+      if (systemLanguage.startsWith('en')) {
+        reverseGeocodeRequest.locale = 'en';
+      }
+      geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (_err, data) => {
         if (data) {
-          hilog.info(0x00000, 'getAddressesFromLocation: data=', JSON.stringify(data));
-          if (data[0].locality !== undefined) {
-            if (i18n.System.getSystemLanguage() === 'zh-Hans') {
-              AppStorage.setOrCreate('local', data[0].locality.replace(/"/g, '').slice(0, -1));
-              AppStorage.setOrCreate('currentLocal', data[0].locality.replace(/"/g, '').slice(0, -1));
+          hilog.info(LOG_DOMAIN, 'getAddressesFromLocation: data=', JSON.stringify(data));
+          if (data[NUM_0].locality !== undefined) {
+            if (systemLanguage === 'zh-Hans') {
+              AppStorage.setOrCreate('local', data[NUM_0].locality.replace(/"/g, '').slice(NUM_0, NUM_MINUS_1));
+              AppStorage.setOrCreate('currentLocal', data[NUM_0].locality.replace(/"/g, '').slice(NUM_0, NUM_MINUS_1));
             } else {
-              AppStorage.setOrCreate('local', data[0].locality.replace(/"/g, ''));
-              AppStorage.setOrCreate('currentLocal', data[0].locality.replace(/"/g, ''));
+              AppStorage.setOrCreate('local', data[NUM_0].locality.replace(/"/g, ''));
+              AppStorage.setOrCreate('currentLocal', data[NUM_0].locality.replace(/"/g, ''));
             }
           }
         }
@@ -422,7 +422,6 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
   使用AlphabetIndexer组件实现导航条。通过onSelect事件获取选中索引值，并使用Scroller的scrollToIndex()方法滑动到指定索引位置：
 
   ```screen
-  // CityView.ets
   AlphabetIndexer({ arrayValue: TAB_VALUE, selected: this.stabIndex })
     .height(CommonConstants.FULL_PERCENT)
     .selectedColor($r('app.color.alphabet_select_color'))
@@ -437,7 +436,7 @@ content_hash: sha256:b7bee2ebd16c7f0715acd82fc16893222edb46a95c43a1b62d040fd1c2c
     .itemSize(CommonConstants.ITEM_SIZE)
     .onSelect((tabIndex: number) => {
       this.scroller.scrollToIndex(tabIndex);
-    })
+    });
   ```
 
 ## 示例代码

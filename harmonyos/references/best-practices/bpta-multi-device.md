@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备功能开发
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发
 category: best-practices
-scraped_at: 2026-09-16T06:55:02+08:00
-doc_updated_at: 2026-09-15
+scraped_at: 2026-10-16T07:06:40+08:00
+doc_updated_at: 2026-10-15
 content_hash: sha256:6315c19dbd02f5274d4d81b1b11e5d56d87c3c612680195acc362b69cafe7b08
 ---
 

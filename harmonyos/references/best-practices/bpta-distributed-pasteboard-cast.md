@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distribute
 title: 跨设备剪贴板
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 跨设备剪贴板
 category: best-practices
-scraped_at: 2026-09-21T06:25:41+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:c3398e78012baca3dd351dc90d786de809c72616235eb823c2530cfe36730bfd
+scraped_at: 2026-10-16T07:06:42+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:38784eb0723d78ee516f373da954ab7defdb128d31744c2c3825c8c4d4d90f9a
 ---
 
 剪贴板分为本地剪贴板和跨设备剪贴板，本地剪贴板提供设备内的内容复制粘贴，跨设备剪贴板提供跨设备的内容复制粘贴。
@@ -14,11 +14,11 @@ content_hash: sha256:c3398e78012baca3dd351dc90d786de809c72616235eb823c2530cfe367
 
 当开发者正在开发一款浏览器类应用，或是备忘录、笔记、邮件等富文本编辑类应用时，均可接入跨设备剪贴板，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Pitm5ZzTSwiuCNcxOYby2Q/zh-cn_image_0000002594404769.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Psny_oDvSyCmVWdmfbCksA/zh-cn_image_0000002757092113.gif "点击放大")
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/_uc-qwUHRIaaoeac7Yx5QQ/zh-cn_image_0000002563685436.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/L-6yyh-OTZmWY-GEzQ7fWA/zh-cn_image_0000002563685436.png "点击放大")
 
 1. 用户在设备A复制数据。
 
@@ -30,11 +30,11 @@ content_hash: sha256:c3398e78012baca3dd351dc90d786de809c72616235eb823c2530cfe367
 
 | 设备版本 | 使用限制 |
 | --- | --- |
-| HarmonyOS NEXT Developer Preview0及以上 | * 双端设备需要打开跨设备剪贴板开关。 * 双端设备需要登录同一华为账号。 * 双端设备需要打开Wi-Fi和蓝牙开关。 * 双端设备在过程中需解锁、亮屏。 |
+| HarmonyOS NEXT Developer Preview 0及以上 | * 双端设备需要打开跨设备剪贴板开关。 * 双端设备需要登录同一华为账号。 * 双端设备需要打开Wi-Fi和蓝牙开关。 * 双端设备在过程中需解锁、亮屏。 |
 
 ## 接口说明
 
-在开发具体功能前，请先查阅[参考文档](../harmonyos-references/js-apis-pasteboard.md)，获取详细的接口说明。
+在开发具体功能前，请先查阅参考文档[@ohos.pasteboard (剪贴板)](../harmonyos-references/js-apis-pasteboard.md)，获取详细的接口说明。
 
 | 接口 | 说明 |
 | --- | --- |
@@ -55,34 +55,74 @@ content_hash: sha256:c3398e78012baca3dd351dc90d786de809c72616235eb823c2530cfe367
 * 设备A复制数据，写入到剪贴板服务。
 
   ```screen
-  import pasteboard from '@ohos.pasteboard';
-  import { BusinessError } from '@ohos.base';
-  export async function setPasteDataTest(): Promise<void> {
-      let text: string = 'hello world';
-      let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, text);
-      let systemPasteBoard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-      await systemPasteBoard.setData(pasteData).catch((err: BusinessError) => {
-          console.error(`Failed to set pastedata. Code: ${err.code}, message: ${err.message}`);
-      });
-  }
+  let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, 'PageABuilder');
+  let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+  await systemPasteboard.setData(pasteData);
   ```
 * 设备B粘贴数据，读取剪贴板内容。
 
   ```screen
-  import pasteboard from '@ohos.pasteboard';
-  import { BusinessError } from '@ohos.base';
-  // 设备B粘贴数据，读取剪贴板内容
-  export async function getPasteDataTest(): Promise<void> {
-      let systemPasteBoard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-      systemPasteBoard.getData((err: BusinessError, data: pasteboard.PasteData) => {
-          if (err) {
-              console.error(`Failed to get pastedata. Code: ${err.code}, message: ${err.message}`);
-              return;
+  PasteButton()
+  // ...
+    .onClick(async (_event: ClickEvent, result: PasteButtonOnClickResult) => {
+      if (result === PasteButtonOnClickResult.SUCCESS) {
+        try {
+          // ...
+          let systemPasteBoard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          let gettedData = await systemPasteBoard.getData();
+          if (gettedData.getRecordCount() <= 0) {
+            return;
           }
-          // 对pastedata进行处理，获取类型，个数等
-          let recordCount: number = data.getRecordCount(); // 获取剪贴板内record的个数
-          let types: string = data.getPrimaryMimeType(); // 获取剪贴板内数据的类型
-          let primaryText: string = data.getPrimaryText(); // 获取剪贴板内数据的内容
-      });
-  }
+
+          let isPastedSuccess: boolean = false;
+          for (let i = 0; i < gettedData.getRecordCount(); i++) {
+            let record = gettedData.getRecord(i);
+            let targetTypes: string[] = [
+              pasteboard.MIMETYPE_TEXT_HTML,
+              pasteboard.MIMETYPE_TEXT_PLAIN,
+              pasteboard.MIMETYPE_PIXELMAP
+            ];
+            let tmpTypes: string[] = record.getValidTypes(targetTypes);
+            for (let j = 0; j < tmpTypes.length; j++) {
+              switch (tmpTypes[j]) {
+                case pasteboard.MIMETYPE_TEXT_HTML: {
+                  let htmlRecord = await record.getData(pasteboard.MIMETYPE_TEXT_HTML);
+                  htmlRecord = htmlRecord as string;
+                  this.handlerPasteHtmlData(htmlRecord);
+                  isPastedSuccess = true;
+                  break;
+                }
+                case pasteboard.MIMETYPE_TEXT_PLAIN: {
+                  let textRecord = await record.getData(pasteboard.MIMETYPE_TEXT_PLAIN);
+                  textRecord = textRecord as string;
+                  let styledString = new StyledString(textRecord);
+                  this.pasteTextController.setStyledString(styledString);
+                  isPastedSuccess = true;
+                  break;
+                }
+                case pasteboard.MIMETYPE_PIXELMAP: {
+                  let pixelMapRecord = await record.getData(pasteboard.MIMETYPE_PIXELMAP);
+                  pixelMapRecord = pixelMapRecord as PixelMap;
+                  this.pastePixelMapController.deleteSpans();
+                  this.pastePixelMapController.addImageSpan(pixelMapRecord, {
+                    imageStyle: {
+                      size: ['57px', '57px']
+                    }
+                  });
+                  isPastedSuccess = true;
+                  break;
+                }
+                default:
+                  break;
+              }
+            }
+          }
+          // ...
+        } catch {
+          (err: BusinessError) => {
+            hilog.error(0x0000, '[PasteBoard]', `getData error.code: ${err.code}, message: ${err.message}`);
+          }
+        }
+      }
+    })
   ```

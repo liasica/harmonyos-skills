@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-matetv-gui
 title: 智慧屏应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 智慧屏 > 智慧屏应用开发
 category: best-practices
-scraped_at: 2026-09-21T06:25:43+08:00
-doc_updated_at: 2026-05-30
-content_hash: sha256:f5e3b517be1e5a62a40965918054cd5b4457bb2d9a2d4c811f2e93fc657bb8a0
+scraped_at: 2026-10-16T07:06:43+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:638121ce55a7608544871f09016a268890dc4a5edc881cf7a4ea7a270c84ba1a
 ---
 
 华为智慧屏作为家居场景下的核心设备，致力于为家庭用户带来更加智慧、沉浸、无缝的娱乐体验，是HarmonyOS 1+8设备全场景一体化体验中不可或缺的部分。具有以下突出特点：
@@ -65,7 +65,7 @@ Mate TV的屏幕不支持旋转，屏幕旋转角度为0°，屏幕方向为横�
 
 采用光标指向交互时，使用的是灵犀指向遥控器，相比传统的焦点导航遥控器，点选方式更加轻松自如。操控方式如同激光笔，可精准指向并选中目标，无需逐级切换图标，所指即所得，高效便捷、操控流畅。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Wd2hEiRMQ76XUvsZqIIdrA/zh-cn_image_0000002585626848.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/EocAcdzvThuDhLk50BxRAA/zh-cn_image_0000002585626848.png "点击放大")
 
 以下是对灵犀指向遥控按键的说明：
 
@@ -110,13 +110,13 @@ Mate TV交互默认使用遥控器进行控制，应用可通过[按键事件](.
 
 **说明** 
 
-同一应用在不同设备类型上可能使用不同的BundleName，若需支持应用接续，需进行额外配置以确保接续正常。详情可参考[支持同应用不同BundleName的Ability跨端迁移](bpta-continue-cast.md#section1610864011610)。
+同一应用在不同设备类型上可能使用不同的BundleName，若需支持应用接续，需进行额外配置以确保接续正常。详情可参考[支持同应用不同BundleName的Ability跨端迁移（适用于同一开发者）](bpta-continue-cast.md#section1610864011610)。
 
 ### 未成年人模式适配
 
 未成年人模式[概述](../harmonyos-guides/account-overview-minorsprotection.md)旨在协同应用与系统能力，构建安全、健康的网络环境，加强对未成年人的网络保护。智慧屏作为家庭场景中的核心设备，面向全家人共享使用，其应用生态中涵盖大量儿童教育类应用，尤其需要加强对未成年用户的使用监管与内容过滤。
 
-智慧屏上的应用通过接入Account Kit提供的[华为账号未成年人模式](../harmonyos-references/account-api-minorsprotection.md)与系统联动，可快速实现自动切换未成年人模式状态，简化了家长用户的设置步骤，为未成年人提供安全、健康的网络环境。主要包含以下几种场景：
+智慧屏上的应用通过接入Account Kit提供的[@hms.core.account.minorsProtection (华为账号未成年人模式)](../harmonyos-references/account-api-minorsprotection.md)与系统联动，可快速实现自动切换未成年人模式状态，简化了家长用户的设置步骤，为未成年人提供安全、健康的网络环境。主要包含以下几种场景：
 
 * 应用与系统联动切换未成年人模式：应用实时获取系统未成年人模式的开启状态，并确保应用内的未成年人模式状态与系统状态保持一致。
 * 应用内开启未成年人模式：调用系统未成年人模式的开启接口[leadToTurnOnMinorsMode()](../harmonyos-references/account-api-minorsprotection.md#leadtoturnonminorsmode)，拉起系统未成年人模式开启流程。
@@ -130,7 +130,7 @@ Mate TV交互默认使用遥控器进行控制，应用可通过[按键事件](.
 
 用户通过蓝牙外接鼠标和键盘进行操作时，应用应针对键鼠输入特性进行针对性适配，以提升操作效率与交互体验：
 
-* 鼠标交互：建议为可交互UI组件（如按钮、菜单、列表项等）适配悬浮态视觉反馈（如颜色变化、阴影、缩放等），增强操作可感知性。开发方案请参考[交互归一](bpta-multi-interaction.md#section088812013815)的悬浮场景。鼠标常用的点击、长按等交互事件已实现交互归一，开发指导可参考[交互归一事件适配](bpta-multi-interaction.md#section088812013815)。
+* 鼠标交互：建议为可交互UI组件（如按钮、菜单、列表项等）适配悬浮态视觉反馈（如颜色变化、阴影、缩放等），增强操作可感知性。开发方案请参考[交互归一](bpta-multi-interaction.md#section088812013815)的悬浮场景。鼠标常用的点击、长按等交互事件已实现交互归一，开发指导可参考[交互归一](bpta-multi-interaction.md#section088812013815)。
 * 键盘操作：建议支持常用快捷键（如Enter确认、Esc返回、方向键导航等），提升文本输入与页面浏览效率。开发方案请参考[基础输入事件](bpta-multi-interaction.md#section151791829184110)的按键事件适配。
 
 ## 设备常见适配问题
@@ -203,7 +203,7 @@ Mate TV交互默认使用遥控器进行控制，应用可通过[按键事件](.
 
 可能原因：应用通过调用浏览器打开协议或隐私政策，但智慧屏设备不支持浏览器，导致无法正常查看。
 
-解决方案：建议智慧屏应用使用[Webview](../harmonyos-references/js-apis-webview.md)的方式打开协议或隐私政策。
+解决方案：建议智慧屏应用使用[@ohos.web.webview (Webview)](../harmonyos-references/js-apis-webview.md)的方式打开协议或隐私政策。
 
 **智慧屏上ArkUI组件的设备兼容性与表现差异**
 

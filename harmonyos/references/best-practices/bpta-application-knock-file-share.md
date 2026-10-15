@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 碰一碰文件分享
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 碰一碰文件分享
 category: best-practices
-scraped_at: 2026-09-21T06:25:41+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:1a8c0f2ac1d1feea7f0b6a549c6c123db3b9b02dcdf72f884a25be2d14d74b2a
+scraped_at: 2026-10-16T07:06:42+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:52fb19ccc1134eca3674a7e04a8a002b22229de2d859568ee31a24dd3af08173
 ---
 
 ## 概述
 
-随着消费者终端设备不断增加，不同设备间进行文本分享（链接、文本等）和文件分享（图片、视频、文档等）已成为用户日常生活中不可或缺的需求。HarmonyOS通过[Share Kit（分享服务）](../harmonyos-guides/share-kit-guide.md)提供便捷的分享功能，其中“碰一碰”分享功能使用户能够轻松实现跨设备分享。API版本26.0.0及以上的电脑设备可以支持精准碰一碰。本文将重点介绍应用如何实现碰一碰文件分享。
+随着消费者终端设备不断增加，不同设备间进行文本分享（链接、文本等）和文件分享（图片、视频、文档等）已成为用户日常生活中不可或缺的需求。HarmonyOS通过[Share Kit（分享服务）](../harmonyos-guides/share-kit-guide.md)提供便捷的分享功能，其中“碰一碰”分享功能使用户能够轻松实现跨设备分享。API版本26.0.0及以上的电脑设备可以支持碰一碰精准分享。本文将重点介绍应用如何实现碰一碰文件分享。
 
 ## 特性体验
 
@@ -19,20 +19,20 @@ content_hash: sha256:1a8c0f2ac1d1feea7f0b6a549c6c123db3b9b02dcdf72f884a25be2d14d
 **说明** 
 
 * 手机与电脑碰一碰需登录同一华为账号方可进行分享。
-* 电脑设备在API版本26.0.0及以上可以进行精准碰一碰。
+* 电脑设备在API版本26.0.0及以上可以进行碰一碰精准分享。
 
 |  | 手机碰手机 | 手机碰电脑 |
 | --- | --- | --- |
-| 手机发送 | 通过手机顶部的相碰触发，文件被设备接收，接收端将媒体文件存储到图库中，非媒体文件存储到文件管理器中。 | **碰一碰：**  通过手机顶部与电脑窗口的相碰触发，使用约束详见手机与电脑碰一碰分享[概述](../harmonyos-guides/knock-share-pc-phones-overview.md)使用约束章节，文件应被窗口所属的应用接收，统一存储入沙箱文件中。    **精准碰一碰：**  手机向电脑碰一碰传输文件时，系统自动识别电脑屏幕触发点坐标位置：  若触发点位置存在展示图片或视频，接收的新文件自动插入到该位置；  若触发点位置无任何图片或视频元素，接收文件默认追加到文件列表末尾。 |
-| 手机接收 | **碰一碰：**  通过手机顶部与电脑窗口的相碰触发，使用约束详见手机与电脑碰一碰分享[概述](../harmonyos-guides/knock-share-pc-phones-overview.md)使用约束章节，文件被手机设备接收，接收端将媒体文件存储到图库中，非媒体文件存储到文件管理器中。    **精准碰一碰：**  电脑向手机碰一碰传输文件时，系统自动识别电脑屏幕触发点坐标位置：  若触发点位置存在展示图片或视频，则分享该文件；  若触发点位置无任何图片或视频元素，则不发送任何文件。 |
+| 手机发送 | 通过手机顶部的相碰触发，文件被设备接收，接收端将媒体文件存储到图库中，非媒体文件存储到文件管理器中。 | **碰一碰：**  通过手机顶部与电脑窗口的相碰触发，使用约束详见手机与电脑碰一碰分享[概述](../harmonyos-guides/knock-share-pc-phones-overview.md)使用约束章节，文件应被窗口所属的应用接收，统一存储入沙箱文件中。    **碰一碰精准分享：**  手机向电脑碰一碰传输文件时，系统自动识别电脑屏幕触发点坐标位置：  若触发点位置存在展示图片或视频，接收的新文件自动插入到该位置；  若触发点位置无任何图片或视频元素，接收文件默认追加到文件列表末尾。 |
+| 手机接收 | **碰一碰：**  通过手机顶部与电脑窗口的相碰触发，使用约束详见手机与电脑碰一碰分享[概述](../harmonyos-guides/knock-share-pc-phones-overview.md)使用约束章节，文件被手机设备接收，接收端将媒体文件存储到图库中，非媒体文件存储到文件管理器中。    **碰一碰精准分享：**  电脑向手机碰一碰传输文件时，系统自动识别电脑屏幕触发点坐标位置：  若触发点位置存在展示图片或视频，则分享该文件；  若触发点位置无任何图片或视频元素，则不发送任何文件。 |
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/5J8Mck10SaGLu6n2kk5R2A/zh-cn_image_0000002447912893.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/IjY6xH0kQqKSQm04MtgMTg/zh-cn_image_0000002447912893.png "点击放大")
 
 碰一碰文件分享基于华为分享服务，通过手机与手机碰一碰或手机与PC/2in1屏幕碰一碰实现文件的跨端传输。应用需实现监听方法[on('knockShare')](../harmonyos-references/share-harmony-share.md#onknockshare)，用户触发碰一碰后即可分享文件至对方设备。文件接收则由分享服务按照[目标设备接收分享数据一步直达体验](../harmonyos-guides/share-access-one-step.md)处理，存储于图库或文件管理中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/PxBRrlC4SY2PvbUwnKO68g/zh-cn_image_0000002414273862.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/cd6pDCJySFuwMBgfSlciTw/zh-cn_image_0000002414273862.png "点击放大")
 
 PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应用还可以注册监听文件接收接口[on('dataReceive')](../harmonyos-references/share-harmony-share.md#ondatareceive)方法，手机分享的文件将存储于应用沙箱目录下。详情可参考[手机与手机碰一碰分享](../harmonyos-guides/knock-share-between-phones.md)、[手机与PC/2in1碰一碰分享](../harmonyos-guides/knock-share-pc-phones.md)。
 
@@ -210,7 +210,7 @@ PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应�
 
 PC/2in1应用可以通过监听harmonyShare.on('dataReceive')方法来实现应用沙箱接收文件。该方法需要传入当前应用的窗口ID，并且需要传入capabilities属性，以表示当前应用支持接收的文件标准化数据类型及其最大接收数量，该属性不能传入空数组。
 
-在dataReceive回调方法中，通过receiveTarget.receive()传入应用接收文件的沙箱路径。当应用接收到碰一碰分享的文件后，会触发onDataReceived回调，开发者可以通过回调参数shareData.getRecords()获取分享的数据，当碰一碰接收事件结束后，将响应onResult回调，通过参数resultCode判断分享接收事件是否成功。
+在dataReceive()回调方法中，通过receiveTarget.receive()传入应用接收文件的沙箱路径。当应用接收到碰一碰分享的文件后，会触发onDataReceived()回调，开发者可以通过回调参数shareData.getRecords()获取分享的数据，当碰一碰接收事件结束后，将响应onResult()回调，通过参数resultCode判断分享接收事件是否成功。
 
 ```screen
 /**
@@ -304,13 +304,13 @@ public dataReceiveListeningPC() {
 }
 ```
 
-## 精准碰一碰
+## 碰一碰精准分享
 
 ### 开发步骤
 
 1. 设备版本校验
 
-   开发时需优先增加双重校验：判断设备是否为电脑，同时校验系统API版本≥26.0.0，不满足条件时禁用精准碰一碰逻辑，降级为普通碰一碰分享。
+   开发时需优先增加双重校验：判断设备是否为电脑，同时校验系统API版本≥26.0.0，不满足条件时禁用碰一碰精准分享逻辑，降级为普通碰一碰分享。
 
    ```screen
    public immersiveCallback(target: harmonyShare.SharableTarget) {
@@ -364,7 +364,7 @@ public dataReceiveListeningPC() {
      });
      ```
 3. 业务逻辑分支处理
-   * 接收端：在onDataReceived回调中，使用[getInfo](../harmonyos-references/share-harmony-share.md#getinfo-1)接口获取触碰点位置，根据触发点位置执行指定位置插入或列表末尾追加逻辑；
+   * 接收端：在onDataReceived()回调中，使用[getInfo()](../harmonyos-references/share-harmony-share.md#getinfo-1)接口获取触碰点位置，根据触发点位置执行指定位置插入或列表末尾追加逻辑；
 
      ```screen
      let knockX: number = 0;
@@ -380,7 +380,7 @@ public dataReceiveListeningPC() {
        }
      }
      ```
-   * 发送端：未手动选择文件时，使用[getInfo](../harmonyos-references/share-harmony-share.md#getinfo)接口获取触碰点位置，通过触发点位置匹配图片，无匹配图片则直接终止分享流程。
+   * 发送端：未手动选择文件时，使用[getInfo()](../harmonyos-references/share-harmony-share.md#getinfo)接口获取触碰点位置，通过触发点位置匹配图片，无匹配图片则直接终止分享流程。
 
      ```screen
      private immersiveCallbackPcFileList(target: harmonyShare.SharableTarget) {

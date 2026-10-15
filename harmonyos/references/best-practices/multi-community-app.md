@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-community
 title: 多设备社区评论界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备社区评论界面
 category: best-practices
-scraped_at: 2026-09-21T06:25:40+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b91be16
+scraped_at: 2026-10-16T07:06:40+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:8b88157b7211bff8d876f96a91d52b506d87aef675cb98a093336b1f677ac3f7
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b9
 
 应用的UX设计可参考[社交通讯类](../design-guides/responsive-design-examples2-0000001793536901.md)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/MiYCyFD3RbmlBooIEUCuMw/zh-cn_image_0000002591828652.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/yQVCAcxZSo2VYYS5rrbBew/zh-cn_image_0000002591828652.png "点击放大")
 
 ## 工程管理
 
@@ -106,10 +106,10 @@ content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b9
   适配设备支持全屏、分屏、悬浮窗和自由窗口模式，具体参见[窗口模式](bpta-multi-device-window-mode.md)。其中，分屏模式与悬浮窗无需特殊设计，可通过系统方式进入。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏、分屏、悬浮窗和自由窗口模式下的布局。
 * 窗口方向
 
-  在[model.json5配置文件](../harmonyos-guides/module-configuration-file.md)中将orientation字段设置为follow\_desktop（跟随桌面的旋转模式），详情可参考[为应用配置旋转策略](bpta-multi-device-window-direction.md#section714419371037)。
+  在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中将orientation字段设置为follow\_desktop（跟随桌面的旋转模式），详情可参考[为应用配置旋转策略](bpta-multi-device-window-direction.md#section714419371037)。
 * 窗口沉浸式
 
-  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者使用[实现沉浸式效果](bpta-multi-device-window-immersive.md#section180431120426)中的组件级沉浸方案（组件设置页面沉浸），同时进行动态安全区避让，确保沉浸式显示效果。自由窗口模式下，使用[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使应用页面延伸至标题栏区域，实现沉浸式显示效果。
+  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者使用[实现沉浸式效果](bpta-multi-device-window-immersive.md#section180431120426)中的组件级沉浸方案（组件设置页面沉浸），同时进行动态安全区避让，确保沉浸式显示效果。自由窗口模式下，使用[window.setWindowDecorVisible()](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)把参数设置为false，隐藏标题栏，仅保留右上角三键，使应用页面延伸至标题栏区域，实现沉浸式显示效果。
 
 ### 关注页
 
@@ -128,11 +128,11 @@ content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b9
 | 1 | 顶部页签栏 | 使用堆叠容器[Stack](../harmonyos-references/ts-container-stack.md)嵌套自定义组件实现。通过点击或左右滑动切换“关注”与“发现”页签的内容。 |
 | 2 | 全部关注(顶部/侧边) | 使用响应式组件[List](../harmonyos-references/ts-container-list.md)实现。 |
 | 3 | 社交内容列表 | 使用响应式组件[WaterFlow](../harmonyos-references/ts-container-waterflow.md)瀑布流容器实现。通过设置[columnsTemplate](../harmonyos-references/ts-container-waterflow.md#columnstemplate22)布局列数，以实现在不同设备上展示不同列数。 |
-| 4 | 底部导航栏 | 使用响应式组件[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
+| 4 | 底部导航栏 | 使用响应式组件[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
 
 ### 热点页
 
-热点页用于展示当前实时热点内容。根据功能设计，热点页相关内容划分为4个区域，效果图如下：
+热点页用于展示当前实时热点内容。根据功能设计，热点页相关内容划分为3个区域，效果图如下：
 
 | 横向断点 | sm | md | lg |
 | --- | --- | --- | --- |
@@ -146,7 +146,7 @@ content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b9
 | --- | --- | --- |
 | 1 | 顶部页签栏 | 使用堆叠容器[Stack](../harmonyos-references/ts-container-stack.md)嵌套自定义组件实现。通过点击或左右滑动切换“实时”与“本地”页签的内容。 |
 | 2 | 社交内容区 | 使用响应式组件[WaterFlow](../harmonyos-references/ts-container-waterflow.md)瀑布流容器实现。通过设置[columnsTemplate](../harmonyos-references/ts-container-waterflow.md#columnstemplate22)布局列数，以实现在不同设备上展示不同列数。 |
-| 3 | 底部导航栏 | 使用响应式组件[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
+| 3 | 底部导航栏 | 使用响应式组件[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
 
 ### 社交详情页
 
@@ -165,7 +165,7 @@ content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b9
 | 1 | 顶部标题栏 | 使用响应式组件[NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)设置[title](../harmonyos-references/ts-basic-components-navdestination.md#title)属性实现。在不同的设备宽度下组件自适应占满一屏。 |
 | 2 | 社交内容区+图片展示区 | 常用基础组件+使用嵌套网格容器[Grid](../harmonyos-references/ts-container-grid.md)实现。通过设置[columnsTemplate](../harmonyos-references/ts-container-waterflow.md#columnstemplate22)布局列数，以实现在不同设备上展示不同列数。 |
 | 3 | 社交评论区 | 使用可滚动的容器组件[Scroll](../harmonyos-references/ts-container-scroll.md)实现。 |
-| 4 | 底部互动栏 | 使用响应式组件[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
+| 4 | 底部互动栏 | 使用响应式组件[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
 
 ### 图片详情页
 
@@ -191,7 +191,7 @@ content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b9
 
 社区评论应用首页作为业务入口，关注页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/cdEhbCZ6RLW6-OQHSRn0RQ/zh-cn_image_0000002622348223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/PM6m6AvCTrevqiyDGxSSUQ/zh-cn_image_0000002622348223.png "点击放大")
 
 **界面开发**
 
@@ -206,9 +206,9 @@ content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b9
 
 ### 热点页
 
-热点页用于展示当前实时热点内容。根据功能设计，热点页相关内容划分为4个区域，效果图如下：
+热点页用于展示当前实时热点内容。根据功能设计，热点页相关内容划分为3个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/YetUgs-iSOC8W8EyGEvV4Q/zh-cn_image_0000002591988552.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/oitG0bSqSU6ng2FjfMx64w/zh-cn_image_0000002591988552.png "点击放大")
 
 **界面开发**
 
@@ -224,7 +224,7 @@ content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b9
 
 根据功能设计，社交详情页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/kSrF0D-HSr-xKI4O-hcmRQ/zh-cn_image_0000002622308087.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/cBv-QZC7RCCmIO9eS89ynQ/zh-cn_image_0000002622308087.png "点击放大")
 
 **界面开发**
 
@@ -242,7 +242,7 @@ content_hash: sha256:54244cc5f14d4254e79dfb018b6a634bc9c477e0cf76fbe079fbbb5a8b9
 
 图片详情页相关内容划分为1个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ScSvJAk1Qz6LFUPALBgeKw/zh-cn_image_0000002591828660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/7i0RbfZARwqopiJhSgdoFg/zh-cn_image_0000002591828660.png "点击放大")
 
 **界面开发**
 

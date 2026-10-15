@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-live-form-
 title: 互动卡片开发实践
 breadcrumb: 最佳实践 > 技术创新 > 互动卡片开发实践
 category: best-practices
-scraped_at: 2026-09-21T06:25:34+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:f2b33d88190c200e8ec639e5cc6d3c24981b7058a8032f44d924ccc9b55af3b0
+scraped_at: 2026-10-16T07:06:34+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:efc2a50e1e35cc4a629c51ac6645ea6f25d0e6ae4e789eca1f7c9d7f80a457e6
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:f2b33d88190c200e8ec639e5cc6d3c24981b7058a8032f44d924ccc9b55
 
 互动卡片包含趣味交互类型互动卡片和场景动效类型互动卡片两种类型，本文仅介绍**场景动效类型互动卡片**。
 
-在阅读本文之前，建议先了解HarmonyOS卡片开发基础、ArkTS语法和[UIAbility生命周期](../harmonyos-guides/uiability-lifecycle.md)，并准备好DevEco Studio 6.1.0 Release及以上版本的开发环境。
+在阅读本文之前，建议先了解HarmonyOS卡片开发基础、ArkTS语法和[UIAbility组件生命周期](../harmonyos-guides/uiability-lifecycle.md)，并准备好DevEco Studio 6.1.0 Release及以上版本的开发环境。
 
 ## 场景介绍
 
@@ -41,7 +41,7 @@ content_hash: sha256:f2b33d88190c200e8ec639e5cc6d3c24981b7058a8032f44d924ccc9b55
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/H-5DLduEQXClyO_gn8Slig/zh-cn_image_0000002623694219.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/GyLdRuDSSv6OWJqrlsmGdA/zh-cn_image_0000002623694219.gif "点击放大")
 
 ### 快递卡片
 
@@ -55,7 +55,7 @@ content_hash: sha256:f2b33d88190c200e8ec639e5cc6d3c24981b7058a8032f44d924ccc9b55
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/6a36qsw3QmKMM17zBOvYPA/zh-cn_image_0000002623534345.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/tSz234fBTl6ra_PIU1NRBg/zh-cn_image_0000002623534345.gif "点击放大")
 
 ### 运动卡片
 
@@ -72,10 +72,10 @@ content_hash: sha256:f2b33d88190c200e8ec639e5cc6d3c24981b7058a8032f44d924ccc9b55
 
 * 开始运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/gfFMXsosS9mEZnbWlZ78CA/zh-cn_image_0000002593094810.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/CgFXZPTzTPiqtG8inFt3sg/zh-cn_image_0000002593094810.gif "点击放大")
 * 结束运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/7jpPTHLGTTGczkl8-meJMA/zh-cn_image_0000002593254736.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/CrDxgabyRwGXpn2e4UCELg/zh-cn_image_0000002593254736.gif "点击放大")
 
 ### 音乐卡片
 
@@ -92,10 +92,10 @@ content_hash: sha256:f2b33d88190c200e8ec639e5cc6d3c24981b7058a8032f44d924ccc9b55
 
 * 播放：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/edpqGtNmRRG6cnpNOZ5Hgw/zh-cn_image_0000002623694221.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/mLurUkc1RciDp4RyYrHf-Q/zh-cn_image_0000002623694221.gif "点击放大")
 * 切歌：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/BbU-3EHiSZagSyWqbHzxZA/zh-cn_image_0000002623534347.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/coOrXbmtQD6ZMpAl1iBeXw/zh-cn_image_0000002623534347.gif "点击放大")
 
 ## 整体方案
 
@@ -175,7 +175,7 @@ content_hash: sha256:f2b33d88190c200e8ec639e5cc6d3c24981b7058a8032f44d924ccc9b55
 
 以快递卡片为例，演示完整的互动卡片开发流程。快递卡片需要实现点击触发出框动画、陀螺仪交互驱动憨憨移动、摇一摇激活等功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/wkwVwL_SRH-cGGBnOuv_Bg/zh-cn_image_0000002593094812.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/kDJm5RtfTbqb6Mjw0FEYww/zh-cn_image_0000002593094812.gif "点击放大")
 
 ### 实现原理
 
@@ -194,7 +194,6 @@ content_hash: sha256:f2b33d88190c200e8ec639e5cc6d3c24981b7058a8032f44d924ccc9b55
      "description": "$string:DeliveryCardDes",
      "src": "./ets/widget/pages/DeliveryCard.ets",
      "uiSyntax": "arkts",
-     // ...
      "defaultDimension": "2*2",
      "supportDimensions": [
        "2*2"

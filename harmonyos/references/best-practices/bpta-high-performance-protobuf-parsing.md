@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-high-perfo
 title: 高性能Protobuf解析
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 对象序列化性能优化 > 高性能Protobuf解析
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:c138865ff2d9a62d6412c27fcc5f6972b14747aba825f2896bdbdb63f1989ebc
+scraped_at: 2026-10-16T07:06:47+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:7f1866af528a2f0f385c596fcbbddb14009b1da6c6e1ebb7f6072a14e6b6a497
 ---
 
 ## 概述
 
-在跨语言通信场景中，[Protocol Buffers](https://protobuf.dev/)通过序列化和反序列化机制实现结构化数据的高效交互。[TurboTransProtobuf](https://gitcode.com/openharmony-sig/turbo_trans/tree/turbo_trans_protobuf)是基于ArkTS的高性能Protocol Buffers解析方案，针对现有的[protobufjs](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fprotobufjs)方案进行了多维度优化：
+在跨语言通信场景中，[Protocol Buffers](https://protobuf.dev/)通过序列化和反序列化机制实现结构化数据的高效交互。[TurboTransProtobuf](https://gitcode.com/openharmony-sig/turbo_trans)是基于ArkTS的高性能Protocol Buffers解析方案，针对现有的[protobufjs](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fprotobufjs)方案进行了多维度优化：
 
 * 全量类型支持：完整兼容.proto定义中的所有数据类型（包括map、oneof、any、数组等），同时适配singular、optional、required等关键字。
 * 系统生态兼容：原生支持[Sendable](../harmonyos-guides/arkts-sendable.md)类型，可无缝适配hvigor插件的代码生成流程，确保工程构建与运行的一致性。
@@ -33,14 +33,14 @@ TurboTransProtobuf通过Native层优化与代码生成实现高性能反序列�
    * 开发者通过.proto文件定义数据结构。
    * TurboTransProtobufPlugin在编译期解析.proto文件，收集字段信息并校验合法性。
 2. 代码生成
-   * 基于 .proto 结构生成高效的encode()/decode()方法，支持[@Sendable装饰器](../harmonyos-guides/arkts-sendable.md#sendable装饰器)以避免跨线程传输时的内存拷贝。
+   * 基于.proto结构生成高效的encode()/decode()方法，支持[@Sendable装饰器](../harmonyos-guides/arkts-sendable.md#sendable装饰器)以避免跨线程传输时的内存拷贝。
 3. 代码输出
    * 插件在编译期间自动生成对应的ArkTS代码(.ets文件)，开发者直接引用生成的.ets文件中的类型即可。
 
 ### 开发步骤
 
 1. 引入TurboTransProtobufPlugin和TurboTransProtobuf三方库。
-   * 插件引入，在工程根目录下的 hvigor/hvigor-config.json5 文件内加入如下配置：
+   * 插件引入，在工程根目录下的hvigor/hvigor-config.json5文件内加入如下配置：
 
      ```screen
      "dependencies": {
@@ -53,7 +53,7 @@ TurboTransProtobuf通过Native层优化与代码生成实现高性能反序列�
      ```shell
      ohpm install @hadss/turbo-trans-protobuf
      ```
-2. 插件生效还需在工程根目录的 hvigorfile.ts 文件中添加相关插件配置，参考如下：
+2. 插件生效还需在工程根目录的hvigorfile.ts文件中添加相关插件配置，参考如下：
 
    ```screen
    import { turboTransProtobufPlugin } from '@hadss/turbo-trans-protobuf-plugin';
@@ -70,7 +70,7 @@ TurboTransProtobuf通过Native层优化与代码生成实现高性能反序列�
      ],
    };
    ```
-3. 依据Protocol Buffers规范编写.proto文件，并将其保存在模块路径中，对应示例代码工程根目录下的 entry/protofile/UserProfile.proto 文件。
+3. 依据Protocol Buffers规范编写.proto文件，并将其保存在模块路径中，对应示例代码工程根目录下的entry/protofile/UserProfile.proto文件。
 
    ```screen
    syntax = "proto2";
@@ -83,7 +83,7 @@ TurboTransProtobuf通过Native层优化与代码生成实现高性能反序列�
    }
    ```
 
-   插件将基于步骤2完成的配置项，在编译阶段自动生成ets代码，生成结果将按照 hvigorfile.ts 中saveDir配置的路径存储。在示例代码工程中，对应的生成文件路径为entry/src/main/ets/model/UserProfile.ets（位于entry模块目录下）。
+   插件将基于步骤2完成的配置项，在编译阶段自动生成ets代码，生成结果将按照hvigorfile.ts中saveDir配置的路径存储。在示例代码工程中，对应的生成文件路径为entry/src/main/ets/model/UserProfile.ets（位于entry模块目录下）。
 4. 通过[@Concurrent装饰器](../harmonyos-guides/taskpool-introduction.md#concurrent装饰器)定义子线程任务，在任务内部调用步骤3中插件自动生成代码中暴露的静态方法decode()，以完成相应的数据处理逻辑。
 
    ```typescript
@@ -117,7 +117,7 @@ TurboTransProtobuf在跨线程数据传输方面采用了以下优化策略：
 
 ### 开发步骤
 
-1. 配置[插件和第三方库](bpta-high-performance-protobuf-parsing.md#li139972026192313)依赖后，确保在工程根目录下的 hvigorfile.ts 文件内将sendable属性设置为true：
+1. 配置[插件和第三方库](bpta-high-performance-protobuf-parsing.md#li139972026192313)依赖后，确保在工程根目录下的hvigorfile.ts文件内将sendable属性设置为true：
 
    ```screen
    import { turboTransProtobufPlugin } from '@hadss/turbo-trans-protobuf-plugin';
@@ -183,7 +183,7 @@ TurboTransProtobuf在跨线程数据传输方面采用了以下优化策略：
 
 ### 开发步骤
 
-1. 配置插件和第三方库依赖后，确保在工程根目录下的 hvigorfile.ts 文件内将sendable属性设置为true：
+1. 配置插件和第三方库依赖后，确保在工程根目录下的hvigorfile.ts文件内将sendable属性设置为true：
 
    ```screen
    import { turboTransProtobufPlugin } from '@hadss/turbo-trans-protobuf-plugin';

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 适配常见问题
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 适配常见问题
 category: best-practices
-scraped_at: 2026-09-21T06:25:48+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:19ce429c19dca3a7e38f9ecda49203a23274d1597cf6a9ae821309808f8bf414
+scraped_at: 2026-10-16T07:06:49+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:cb6c5b5a035fcecbd3276c9aee053ccd7db4981534e4f7c738b5d8b379f22c26
 ---
 
 ## HWASan napi int64转换时存在精度丢失
@@ -29,4 +29,4 @@ HWASan使用了地址的高8位来存储Tag，用于检测踩内存问题。应�
 Thread: T0 0x005a00002000 stack: [0x007ed30ba000,0x007ed38b9000) sz: 8384512 tls: [0x0059d8b7df20,0x0059d8b7e738) rb:(102300/102300) records(2033100/o:0) tid: 668
 ```
 
-这种情况下可考虑对HWASan 参数进行调参，调参方法可参考[HWASan参数配置](bpta-stability-hwasan-detection.md#section1496994494018)，设置heap\_history\_size\_main\_thread大于当前的个数（如上当前为102300）。
+这种情况下可考虑对HWASan参数进行调参，调参方法可参考[配置参数](bpta-stability-hwasan-detection.md#section1496994494018)，设置heap\_history\_size\_main\_thread大于当前的个数（如上当前为102300）。

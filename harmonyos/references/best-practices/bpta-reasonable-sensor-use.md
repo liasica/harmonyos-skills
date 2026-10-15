@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-reasonable
 title: 传感器资源合理使用
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台硬件资源合理使用 > 传感器资源合理使用
 category: best-practices
-scraped_at: 2026-09-02T14:53:45+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:30eadabb1d432404423920cc5aa5239a5b145eec2ab13ad01c14ed5ba20a6219
+scraped_at: 2026-10-16T07:06:48+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:437e05716128e26c3ecb35f59cce9ffae3378841a1dc513e7d04d66c41514a2f
 ---
 
 应用退至后台时，禁止使用传感器资源。若有正常业务需求，申请后台长时任务后，可在锁屏状态下获取传感器信息。
@@ -50,4 +50,4 @@ export default class EntryAbility extends UIAbility {
 }
 ```
 
-有关传感器开发相关接口的使用，详情可以参考[传感器开发指导](../harmonyos-guides/sensor-guidelines.md)。
+有关传感器开发相关接口的使用，详情可以参考[传感器开发指导(ArkTS)](../harmonyos-guides/sensor-guidelines.md)。

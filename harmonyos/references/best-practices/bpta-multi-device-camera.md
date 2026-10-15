@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 相机硬件差异
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发 > 相机硬件差异
 category: best-practices
-scraped_at: 2026-09-21T06:25:41+08:00
+scraped_at: 2026-10-16T07:06:41+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:f0467ddadc59adc9d6de078bca7a17c8989839811e24afe4f12b05294e5ca5fc
+content_hash: sha256:829e774290b9dee0f576851c8bce6cf55158b67e44ffe4580283d0b6aa2ab1ec
 ---
 
 ## 概述
@@ -190,10 +190,10 @@ content_hash: sha256:f0467ddadc59adc9d6de078bca7a17c8989839811e24afe4f12b05294e5
 
    * 在折叠态时CameraPosition为CAMERA\_POSITION\_FRONT，效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/gQ033mYQRB26hSxOJ2VYoQ/zh-cn_image_0000002355147089.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/7Y_tlccfRCantRdjXiIv6A/zh-cn_image_0000002355147089.png "点击放大")
    * 在展开态时CameraPosition为CAMERA\_POSITION\_BACK，效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/bxTH8TCMT8u55pFAQfh4sQ/zh-cn_image_0000002321148366.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/8YhO94KUSA-UOHLa6lSe9g/zh-cn_image_0000002321148366.png "点击放大")
 2. 其他需要重置预览流的场景需要开发者单独处理。折叠状态切换（例如双折叠的折叠态切换至半折叠态），会导致显示屏幕变化，需要重新选择相机设备。所以在[display.on('foldStatusChange')](../harmonyos-references/js-apis-display.md#displayonfoldstatuschange10)中判断变化前后的折叠状态，并根据变化前使用的相机位置，选择变化后使用前置相机或后置相机。
 
    ```screen
@@ -456,7 +456,7 @@ capture(): void {
 
 悬停态对应折叠状态为FOLD\_STATUS\_HALF\_FOLDED。在进入悬停态时，可以设计特殊的用户体验，UX效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/X21lklE9Tz6HUR__VFzCDg/zh-cn_image_0000002355266965.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/EIeQfj2LQw-gnG3JrMmzsw/zh-cn_image_0000002355266965.png "点击放大")
 
 ### 开发步骤
 

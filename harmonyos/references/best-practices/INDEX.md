@@ -130,7 +130,7 @@
 - [运维态高效处理GPU内核泄漏](bpta-handling-gpu-kernel-leaks.md)
 - [运维态高效处理线程泄漏](bpta-handling-thread-leaks.md)
 - [应用安全编码实践](bpta-harmony-application-security.md)
-- [CPU 高负载分析](bpta-high-cpu-load-analysis.md)
+- [CPU高负载分析](bpta-high-cpu-load-analysis.md)
 - [高性能JSON解析](bpta-high-performance-json-parsing.md)
 - [高性能Protobuf解析](bpta-high-performance-protobuf-parsing.md)
 - [基于媒体能力实现直播连麦功能](bpta-hmos-live-stream-audio-call.md)

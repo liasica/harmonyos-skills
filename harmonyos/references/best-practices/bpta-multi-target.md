@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-targ
 title: 多目标产物构建
 breadcrumb: 最佳实践 > 编译构建 > 多目标产物构建
 category: best-practices
-scraped_at: 2026-09-21T06:25:54+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:1dbf4c90bdf18b821c5fcb8a466d1f5d71ae2bff0d42062eca5e1c1bd6da5ece
+scraped_at: 2026-10-16T07:06:55+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:3a7a1bfbd2d58fc29dd33236912daabe561737afc9f9ee92e217b439d90e0008
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ HarmonyOS多目标产物支持[HAP](../harmonyos-guides/hap-package.md)（应用
 
 ### 构建原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/dWwo5HvvRk-FrljX0YhBbA/zh-cn_image_0000002523454541.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/I7HIcMg5QBSybQG1l7HWcg/zh-cn_image_0000002523454541.png "点击放大")
 
 如图所示，在HarmonyOS应用开发过程中，一个应用通常包含多个HAR/HAP/HSP模块。每个HAR/HAP/HSP模块可以通过配置模块级的build-profile.json文件定义多个target，每个target可以定制不同的资源（具体可参考上文定制项介绍）。因此形成了具有差异性的target，如：Module A通过定制生成了TargetA-1、TargetA-2；Module B通过定制生成了TargetB-1、TargetB-2、TargetB-3；Module C通过定制生成了TargetC-1、TargetC-2。然后通过配置工程级的build-profile.json定义多个product，每个product可以依赖不同的Target并且配置不同的App产物定制项。因此形成了具有差异的product，如：依赖TargetA-1、TargetB-1、TargetC-1构建出App-product1；依赖TargetB-3、TargetC-2构建出App-product2。最终在构建工程时选择相应的product就可以显示出对应的定制效果。
 
@@ -306,7 +306,7 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 4. 实现不同目标产物需要定制的业务逻辑。
    * 通过[source源码集-sourceRoots配置](../harmonyos-guides/ide-customized-multi-targets-and-products-guides.md#section18668905913)的差异性代码空间，实现标题（代码文件）多目标效果。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/9lcM0M2ZSrGIl1x07r1RWg/zh-cn_image_0000002229335589.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/tWU0CpLDTQiIjzZGULCpew/zh-cn_image_0000002193850196.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/UHDNMZJVTuO3NYbWJ647Eg/zh-cn_image_0000002229335589.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/uO7l8tnxSLyztUaX_AUk9g/zh-cn_image_0000002193850196.png)
 
      在上述配置文件中，配置了HAP模块的source源码集-sourceRoots目录，official版本与test版本分别对应src/official\_pages和src/test\_pages。
 
@@ -378,7 +378,7 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
      ```
    * 在HAR模块引用差异性资源，实现页面中资源多目标效果。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/CWaZAeGMT8-cpfwgZXhUdw/zh-cn_image_0000002194009792.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/wBhO4oXeSnad9hRnK7zuxg/zh-cn_image_0000002194009796.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/uV10ocS8SpKw3WLFlQwXgQ/zh-cn_image_0000002194009792.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/aoVzypu9RZqbgnrtI883RA/zh-cn_image_0000002194009796.png)
 
      在上述配置文件中，我们配置了HAR模块的资源文件路径，official版本和test版本分别对应src/main/official/resources和src/main/test/resources文件。
 
@@ -404,10 +404,10 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
      效果对比如下：
 
      **图1** official版本  
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/3t2R7gmWRDWW4sLRumybcw/zh-cn_image_0000002229335573.gif)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/GQt7kPesR7Wx63wMh_8x-g/zh-cn_image_0000002229335573.gif)
 
      **图2** test版本  
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Xf4BVbLmTG-3rokhSPVORw/zh-cn_image_0000002193850204.gif)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/mClx95q9RJ-fHfi6V0SAdA/zh-cn_image_0000002193850204.gif)
 
      在先前的案例中，已经介绍了如何在sourceRoots目录配置的差异性代码空间中实现对同名文件中的同名方法的调用。这里主要介绍在不同的target中如何调用不同名的文件中的不同方法。
 
@@ -452,16 +452,16 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 5. 选择不同的product构建出不同的目标产物。
 
    **图3** 构建图示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/N4cB4MBYSTu66H0m9XDs8Q/zh-cn_image_0000002229450045.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/eJMZUUvlT669YNGRZ3asMw/zh-cn_image_0000002229450045.png)
 
    首先点击DevEco Studio工具右上角的Product按钮，即图中的1号标识处，然后在2号标识处选择对应的product工程，选择完工程之后会自动映射出我们文件中已经依赖的target，最后点击Apply应用。上述操作完成之后就可以点击运行按钮查看多目标产物效果了。本案例运行效果图如下：
 
    **图4** Official版本
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/FUbbBXZISnWpDOWZ_7HSWQ/zh-cn_image_0000002194009800.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/2B4T5zyXQYSKiJ9M9baBCw/zh-cn_image_0000002194009800.gif)
 
    **图5** Test版本  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/YSmoMSeAS5iR-kss6jE5QQ/zh-cn_image_0000002229335577.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/eCpYy-oZQBeMhjk9-EUFlw/zh-cn_image_0000002229335577.gif)
 
 ## 常见问题
 
@@ -471,19 +471,19 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 
 首先需要在每个product下添加配置项"signingConfig"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/4BF2LhptRPC3DUEIrcqYIA/zh-cn_image_0000002229335565.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/_xqETLuRR3mC8IZm1Sp1AQ/zh-cn_image_0000002229335565.png "点击放大")
 
 然后进入到签名配置页面，点击加号，添加签名信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/L-ee1BIgRdOb9UhjkzeiDg/zh-cn_image_0000002229450081.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/lqLiioikR322MC_uQUUyzg/zh-cn_image_0000002229450081.png "点击放大")
 
 然后选择对应的bundle name，并填写上面配置的"signingConfig"信息（每个product产物都需要配置）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/xm7tZI-GRI-2arGO3j_7FQ/zh-cn_image_0000002193850180.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/IGSnC7EuQASoZa5CmnIMzg/zh-cn_image_0000002193850180.png "点击放大")
 
 点击ok之后，进行签名即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Lcfh87VrTXynuJGg20hybg/zh-cn_image_0000002193850208.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/WKaQG6d9TfaSrWBLGnrU_Q/zh-cn_image_0000002193850208.png "点击放大")
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-js-leak-wa
 title: JsLeakWatcher开发实践
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 资源泄漏类问题检测 > 内存泄漏类问题检测方法 > JsLeakWatcher开发实践
 category: best-practices
-scraped_at: 2026-09-21T06:25:49+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:a31fb33dd566c643dbe4e013179281d8f79b6165d867379fe5988d75ee04db8d
+scraped_at: 2026-10-16T07:06:49+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:461427769eba2d5f37b148b598f055b90049f95e5447876c1bd36d906a16ed50
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ ArkTS对象内存泄漏，通常会带来以下影响：
 
 ### JsLeakWatcher简介
 
-为帮助开发人员快速定位ArkTS对象内存泄漏问题，HarmonyOS提供了JS泄漏检测能力（[@ohos.hiviewdfx.jsLeakWatcher](../harmonyos-references/js-apis-jsleakwatcher.md)），开发者可轻松接入该API，实现对系统内具有生命周期的ArkTS组件对象定期执行泄漏自检测。当检测到ArkTS组件对象有内存泄漏时，会立即将泄漏对象记录到文件。
+为帮助开发人员快速定位ArkTS对象内存泄漏问题，HarmonyOS提供了JS泄漏检测能力（[@ohos.hiviewdfx.jsLeakWatcher (ArkTS泄漏检测)](../harmonyos-references/js-apis-jsleakwatcher.md)），开发者可轻松接入该API，实现对系统内具有生命周期的ArkTS组件对象定期执行泄漏自检测。当检测到ArkTS组件对象有内存泄漏时，会立即将泄漏对象记录到文件。
 
 开发者可将生成的泄漏信息文件（包括rawheap文件和jsleaklist文件，详细参考[生成文件类型介绍](bpta-js-leak-watcher.md#section1528540111118)）导入IDE（DevEco Studio 6.0.0起均支持），进行关联分析。通过泄漏对象列表中的泄漏对象直接跳转到引用链，加速找到持有该泄漏对象的根GC\_ROOT，提升泄漏问题闭环效率，降低定界定位成本。
 
@@ -59,7 +59,7 @@ ArkTS对象内存泄漏，通常会带来以下影响：
    2. 尝试去解除引用（参考[dispose](../harmonyos-references/js-apis-arkui-framenode.md#dispose12)()）的组件对象会被记录在列表list1。当组件对象生命周期结束时，FinalizationRegistry对象会通过a步骤注册的回调函数上报销毁组件对象，并将其记录在列表list2；list1与list2的差集（对应下图LeakObjMap）会记录到泄漏对象列表jsleaklist文件，最终会随ArkTS堆快照（rawheap）文件一起落盘至应用沙箱。
 3. 应用在退出时调用enableLeakWatcher接口关闭ArkTS泄漏检测功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/snivSEptS5aymAL0mRzMxQ/zh-cn_image_0000002533197977.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/6z9tRFFFS7Gtzyp5YT6RTw/zh-cn_image_0000002533197977.png "点击放大")
 
 ### 生成文件类型介绍
 
@@ -80,7 +80,7 @@ JsLeakWatcher提供零代码开发检测能力，支持通过配置系统参数�
 
 ### 使用方法
 
-通过设置系统参数"hiviewdfx.hichecker.jsleakwatcher.leak.check"的值为"enable.+包名"来启用检测功能。以应用包名"com.example.demo"为例，在命令行窗口执行以下指令：
+通过设置系统参数“hiviewdfx.hichecker.jsleakwatcher.leak.check”的值为“enable.+包名”来启用检测功能。以应用包名“com.example.demo”为例，在命令行窗口执行以下指令：
 
 ```screen
 hdc shell "param set hiviewdfx.hichecker.jsleakwatcher.leak.check enable.com.example.demo"
@@ -96,11 +96,11 @@ hdc shell "param set hiviewdfx.hichecker.jsleakwatcher.leak.check enable.com.exa
 
 **说明** 
 
-检测范围：零代码使能JsLeakWatcher时，支持应用内常用五大ArkUI组件（XComponent、NodeContainer、Window、CustomComponent或Ability）泄漏检测，相比使用API使能JSLeakwatcher缺少检测普通ArkTS对象能力。
+检测范围：零代码使能JsLeakWatcher时，支持应用内常用五大ArkUI组件（XComponent、NodeContainer、Window、CustomComponent或Ability）泄漏检测，相比使用API使能JsLeakWatcher缺少检测普通ArkTS对象能力。
 
-检测机制：系统每隔 90 秒执行一次Full GC操作，并在GC操作执行后5秒执行泄漏检测，生成的泄漏信息文件将存储于应用沙箱目录下。落盘文件路径：/data/app/el2/100/base/应用包名/files/jsleak/。导出命令：hdc file recv /data/app/el2/100/base/应用包名/files/jsleak/ ./ 。
+检测机制：系统每隔90秒执行一次Full GC操作，并在GC操作执行后5秒执行泄漏检测，生成的泄漏信息文件将存储于应用沙箱目录下。落盘文件路径：/data/app/el2/100/base/应用包名/files/jsleak/。导出命令：hdc file recv /data/app/el2/100/base/应用包名/files/jsleak/ ./ 。
 
-文件处理：见步骤5，[分析生成的文件](bpta-js-leak-watcher.md#li4311292112)。
+文件处理：见[开发步骤](bpta-js-leak-watcher.md#section1163693534618)中“分析生成的文件”。
 
 停用方式：如需关闭检测，请执行命令hdc shell "param set hiviewdfx.hichecker.jsleakwatcher.leak.check disable.com.example.demo"并重启应用，或直接重启设备。
 
@@ -116,17 +116,24 @@ hdc shell "param set hiviewdfx.hichecker.jsleakwatcher.leak.check enable.com.exa
 
 1. **添加依赖**
 
-   ```typescript
+   ```screen
    import { jsLeakWatcher } from '@kit.PerformanceAnalysisKit';
    ```
 2. **JsLeakWatcher检测功能开启**
 
-   ```typescript
+   ```screen
+   console.log('testTag', 'Start testJsLeakWatcherEnable.');
    let config : Array<string> = [];
-   jsLeakWatcher.enableLeakWatcher(true, config, (filepath: Array<string>) => {
-     hilog.info(0x0000, 'testTag', `testJsLeakWatcher leakListFileName: ${filepath[0]}`);
-     hilog.info(0x0000, 'testTag', `testJsLeakWatcher heapDumpFileName: ${filepath[1]}`);
-   });
+   try {
+     jsLeakWatcher.enableLeakWatcher(true, config, (filepath: Array<string>) => {
+       let leakList : string = jsLeakWatcher.check();
+       console.log('testTag', 'leakList: ' + leakList);
+       hilog.info(0x0000, 'testTag', `testJsLeakWatcher leakListFileName: ${filepath[0]}`);
+       hilog.info(0x0000, 'testTag', `testJsLeakWatcher heapDumpFileName: ${filepath[1]}`);
+     });
+   } catch (error) {
+     console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+   }
    ```
 
    调用enableLeakWatcher()并传递回调函数。
@@ -146,39 +153,43 @@ hdc shell "param set hiviewdfx.hichecker.jsleakwatcher.leak.check enable.com.exa
 
    若抓取到需要的维测数据，不再需要使用JsLeakWatcher持续生成泄漏文件，可以调用如下接口将JsLeakWatcher维测功能关闭。
 
-   ```typescript
+   ```screen
    let config : Array<string> = [];
-   jsLeakWatcher.enableLeakWatcher(false, config, () => {});
+   try {
+     jsLeakWatcher.enableLeakWatcher(false, config, () => {});
+   } catch (error) {
+     console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+   }
    ```
 5. **分析生成的文件**
    1. 将\*.rawheap文件导入IDE DevEco Studio执行解析：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/jiUKsTivSHqZ9e2HY61rxg/zh-cn_image_0000002533077929.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Jy8ht2i8QwCICcOACD1lVQ/zh-cn_image_0000002533077929.png "点击放大")
 
       解析结果：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/2x1iPfevQsmvcyj0GkyQYg/zh-cn_image_0000002501437912.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/MyyYCpCjR_-s5Il6xW1rrA/zh-cn_image_0000002501437912.png "点击放大")
 
       上图展示了ArkTS Snapshot的信息，其中记录了ArkTS对象的属性，包括成员变量、占用内存大小、类型名等。
 
-      ArkTS Snapshot介绍参考资料：[Snapshot分析](../harmonyos-guides/ide-insight-session-snapshot.md)。
+      ArkTS Snapshot介绍参考资料：[内存泄漏：Snapshot分析](../harmonyos-guides/ide-insight-session-snapshot.md)。
 
       ArkTS Snapshot分析方法，详细请参考资料：[分析Snapshot数据](../harmonyos-guides/ide-arkts-memory-leak-analysis.md#section87474517134)。
    2. 将\*.jsleaklist文件导入DevEco Studio解析：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/uqjYD4hVQle8mRf1joHzvg/zh-cn_image_0000002501278062.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/rge-vp-BQP-ds2CXHgbA8g/zh-cn_image_0000002501278062.png)
 
       解析之后展示泄漏对象的信息，是ArkTS堆快照的子集，分析方法和上述ArkTS Snapshot分析方式相同。
 
       查看[应用对象名称解析](../harmonyos-guides/ide-snapshot-basic-operations.md#section17661924162612)数据以及泄漏对象对应代码行号：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/bkHS7QKtQ1m3L4h3L9oKQg/zh-cn_image_0000002533197979.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/slrshUTCQYOcyRVeZ3vw5g/zh-cn_image_0000002533197979.png "点击放大")
 
-      查看泄漏对象的[节点属性与引用链](../harmonyos-guides/ide-snapshot-basic-operations.md#section1964818525439)：
+      查看泄漏对象的[查看节点属性和引用链](../harmonyos-guides/ide-snapshot-basic-operations.md#section1964818525439)：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/nJViz-ciRkSe01TP5eomiQ/zh-cn_image_0000002533077931.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/OvMjktKURFG8fCgPP09pMA/zh-cn_image_0000002533077931.png "点击放大")
 
-      DevEco支持导入jsleaklist文件的约束限制参考：[离线导入内存快照](../harmonyos-guides/ide-snapshot-basic-operations.md#section6760173514388)。
+      DevEco支持导入jsleaklist文件的约束限制参考：[离线导入内存快照文件](../harmonyos-guides/ide-snapshot-basic-operations.md#section6760173514388)。
 
 **注意** 
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-reasonable
 title: 后台上传下载合理使用
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台软件资源合理使用 > 后台上传下载合理使用
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:8a5a3e40ebd9d0ffff0ce5ebc1556897861b644628c166242daf2816f87c73e2
+scraped_at: 2026-10-16T07:06:48+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:c73a9e914e0a07cdb9f1126a2d8e93992473e7fe3f05fccfc99d686b8a42cf05
 ---
 
 应用上传下载时，应使用系统服务，不要申请长时任务。
 
 ## 约束
 
-NA
+不涉及
 
 ## 示例
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pre-connec
 title: 冷启网络预建链最佳实践
 breadcrumb: 最佳实践 > 技术创新 > 冷启网络预建链最佳实践
 category: best-practices
-scraped_at: 2026-09-21T06:25:33+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:7c4c366350dfbc1bd4ac62215bca98edb375ef1da8f6dca4d6224ec340712cda
+scraped_at: 2026-10-16T07:06:34+08:00
+doc_updated_at: 2026-10-15
+content_hash: sha256:1c98172de9d694c203a1b79ada9ecbccc2b6195a8b2a7c31077e9394bd817197
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:7c4c366350dfbc1bd4ac62215bca98edb375ef1da8f6dca4d6224ec3407
 
 使用预建链请求与未使用预建链请求时序对比图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/vdM0QXxdQr689e4zMSs0uA/zh-cn_image_0000002594079346.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/4-DUzhOzQKWFybsYwX7lEA/zh-cn_image_0000002624518875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/YPwC4Kt6SYq_OdKJrCTL0Q/zh-cn_image_0000002594079346.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/8o-hvh5WQmqbAjDAPPsLIQ/zh-cn_image_0000002624518875.png "点击放大")
 
 ## 冷启动网络预热
 
@@ -66,7 +66,7 @@ try {
 
 在应用启动时，使用预建链请求与非预建链正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/frlk0N7gSJeobQjxfb_-ZQ/zh-cn_image_0000002594239264.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/IhzWwoqlQlStu_BqUstOtw/zh-cn_image_0000002594239264.png)
 
 2.连接复用获取数据：当实际数据请求发起时，直接复用预建链阶段已建立的连接，跳过连接建立过程，实现向目标服务器动态预取数据，以优化资源加载。
 
@@ -95,7 +95,7 @@ try {
 
 从应用启动到发起请求获取数据内容，使用预建链技术与正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/KSsTOc0HTBCFWNyDuOUMCQ/zh-cn_image_0000002624638731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/p-3YqozkT-exzka7AKCEuQ/zh-cn_image_0000002624638731.gif)
 
 ## 常见问题
 
