@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行ArrayBuffer相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行ArrayBuffer相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c9ba20ee4bb463b816b36baf54178cf22c764229325e904de7fe07d8955ba8d5
+scraped_at: 2026-10-17T06:43:13+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:7d2a98ba190e3db068daa82b313c928bb810165a9cb1b77fa167514ecf16ee6f
 ---
 
 ## 简介
@@ -145,6 +145,8 @@ JSVM IsArrayBuffer: 1
 
 调用 ArrayBuffer 对象的 Detach 操作。
 
+示例代码与OH\_JSVM\_IsDetachedArraybuffer合并展示，请参考下文[OH\_JSVM\_IsDetachedArraybuffer](use-jsvm-about-arraybuffer.md#oh_jsvm_isdetachedarraybuffer)中的DetachArraybuffer方法。
+
 ### OH\_JSVM\_IsDetachedArraybuffer
 
 检查给定的 ArrayBuffer 是否已被分离。
@@ -185,7 +187,7 @@ static JSVM_Value IsDetachedArraybuffer(JSVM_Env env, JSVM_CallbackInfo info)
         OH_LOG_ERROR(LOG_APP, "JSVM IsDetachedArraybuffer: failed");
     } else {
         OH_LOG_INFO(LOG_APP, "JSVM IsDetachedArraybuffer: success");
-        OH_LOG_INFO(LOG_APP, "JSVM IsArrayBuffer: %{public}d", result);
+        OH_LOG_INFO(LOG_APP, "JSVM IsDetachedArraybuffer: %{public}d", result);
     }
     JSVM_Value isDetached = nullptr;
     OH_JSVM_GetBoolean(env, result, &isDetached);
@@ -215,7 +217,7 @@ isDetachedArraybuffer(arrayBuffer);
 ```txt
 JSVM DetachArraybuffer: success
 JSVM IsDetachedArraybuffer: success
-JSVM IsArrayBuffer: 1
+JSVM IsDetachedArraybuffer: 1
 ```
 
 ### OH\_JSVM\_CreateArraybuffer

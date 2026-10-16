@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: Drawing
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 模块 > Drawing
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:06+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:b0daa7d185a30fdc73ea353245cd94fc6ac7674c9333b7ddeb1ab6e0b06489ba
+scraped_at: 2026-10-17T06:48:27+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:7074bbe0b2425b3e0518ab12fab2b5e9f5c1eb1bdd9963f25a321ea91bed5f4f
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ Drawing模块提供包括2D图形渲染、文字绘制和图片显示等功能�
 | [drawing\_color.h](capi-drawing-color-h.md) | 文件中定义了与颜色相关的功能函数。 |
 | [drawing\_color\_filter.h](capi-drawing-color-filter-h.md) | 声明与绘图模块中的颜色滤波器对象相关的函数。 |
 | [drawing\_color\_space.h](capi-drawing-color-space-h.md) | 文件中定义了与颜色空间相关的功能函数。 |
-| [drawing\_error\_code.h](capi-drawing-error-code-h.md) | 声明与绘图模块中的错误码相关的函数。include native\_drawing/drawing\_error\_code.h |
+| [drawing\_error\_code.h](capi-drawing-error-code-h.md) | 声明与绘图模块中的错误码相关的函数。 |
 | [drawing\_filter.h](capi-drawing-filter-h.md) | 声明与绘图模块中的滤波器对象相关的函数。 |
 | [drawing\_font.h](capi-drawing-font-h.md) | 文件中定义了与字体相关的功能函数。 |
 | [drawing\_font\_collection.h](capi-drawing-font-collection-h.md) | 定义绘制模块中与字体集合相关的函数。 |

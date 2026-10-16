@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-rul
 title: 规则（Rules）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 规则（Rules）配置
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:39+08:00
+scraped_at: 2026-10-17T06:43:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:d82322f3cb229bbe24f89882e8b85b7334b016ab2e8aca27ed19f79328dc6079
+content_hash: sha256:e60edd75ca3da02e4cae6750b3cc80c8bb308de0cea3be83bbfe0f27e8372587
 ---
 
 从DevEco Studio 6.0.2 Beta1开始，CodeGenie支持用户配置规则（Rules）。在自定义智能体模型下，智能问答时可生成更加符合Rules规范的代码。规则包括全局级别规则（Global Rules）和工程级别规则（Project Rules）。
@@ -20,31 +20,31 @@ content_hash: sha256:d82322f3cb229bbe24f89882e8b85b7334b016ab2e8aca27ed19f79328d
 
 ## Global Rules配置
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Cdqx8dadSFqJZbUAYBr4rA/zh-cn_image_0000002731381899.png)按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/xtMfZt45SgWErKGxa4rqgw/zh-cn_image_0000002701822582.png)按钮，选择**Rules**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/IUZH9lblSdSjmx0mlVSqHQ/zh-cn_image_0000002731381899.png)按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/IoqgS5mFRHWjh4XkFMrGEw/zh-cn_image_0000002701822582.png)按钮，选择**Rules**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/yqSg4urqR422xQhHTkyGKw/zh-cn_image_0000002701822586.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/CAaDv9n9RdeW6jnNjh0Xtw/zh-cn_image_0000002701822586.png)
 2. 选择规则长度限制，包括**Quality first**、**Token efficiency first**，默认为Token efficiency first。DevEco Studio 6.1.0 Beta2版本新增。
    * Quality first：生成代码时遵循更多规则，帮助AI获取更准确答复。
    * Token efficiency first：生成代码时优先考虑Token长度，节省Token数量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/QxXnD5oGQLCuPQCQUPEUaA/zh-cn_image_0000002701662654.png)
-3. 以有网络环境为例，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Cb_ClYfwTzeRxgeuxz_ipA/zh-cn_image_0000002731541871.png)图标导入规则文件。无网络时操作界面可能存在差异，以实际为准。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/iDODEziSRXSO5I3oelj6kA/zh-cn_image_0000002701662654.png)
+3. 以有网络环境为例，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/cDhZJSdzTpasrUz30fP4jg/zh-cn_image_0000002731541871.png)图标导入规则文件。无网络时操作界面可能存在差异，以实际为准。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/x3ZSLQcyTUyRWZOE-hNSdw/zh-cn_image_0000002701822596.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/_xc3JPc5T0mnkEU6h8uwyQ/zh-cn_image_0000002701822596.png)
 4. 选择和管理规则文件。Global Rules列表全量展示了默认规则（Default rule）、自定义规则（Custom rule）和无规则（No rules），当前仅支持选择其中一个规则。若选择No rules，则全局规则不生效。
-   * 将鼠标悬停在默认规则上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Lb_Elx1dS9CINzBWyyEaSw/zh-cn_image_0000002731541853.png)编辑图标，开发者可查看具体规则内容。
+   * 将鼠标悬停在默认规则上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/RTj_uariTJa1esICM2WR5A/zh-cn_image_0000002731541853.png)编辑图标，开发者可查看具体规则内容。
    * 将鼠标悬停在自定义规则上，会出现编辑和删除按钮，方便开发者管理自定义规则。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/-AINFlpkSc2Lf9cxhIKa_w/zh-cn_image_0000002731541875.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/MubGLQ90Sg-K191Dr3XKHQ/zh-cn_image_0000002731541875.png)
 
 ## Project Rules配置
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/OWnsF2Y3T3yECt2jl2fDPA/zh-cn_image_0000002731541849.png)按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/iOCldKrGReu6TgU4I9KGEg/zh-cn_image_0000002731381891.png)按钮，选择**Rules**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/yc2flXkhTXSZG8PML_r68Q/zh-cn_image_0000002731541849.png)按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/SxZgwnnETMakcQUxg7h6dQ/zh-cn_image_0000002731381891.png)按钮，选择**Rules**，进入配置页面。
 2. 创建或导入Rule文件。
    * 创建Rule文件方法：点击**Create Rule**，工程目录中会新增/.codegenie/project\_rule.md文件，在project\_rule.md文件中输入规则内容。
    * 导入Rule文件方法：点击**Import Rule**，工程目录中会新增/.codegenie/project\_rule.md文件，project\_rule.md文件内容即为导入的规则文件内容。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/4SWd0OBqThGpBtAbwFHxyg/zh-cn_image_0000002701662652.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/OoyXeuoLTfalE0D5SJ2ugw/zh-cn_image_0000002701662652.png)
 3. 管理规则文件。将鼠标悬停在工程文件上，会出现编辑和删除按钮，方便开发者管理工程规则文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/fZT08j4cRnClS4UvW84Rqw/zh-cn_image_0000002701662672.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/NWNaF7inRZO6WSj86iba7w/zh-cn_image_0000002701662672.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (VideoSession)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (VideoSession)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d4fa77253dd4e5ed24b3e5d6db5d8810dbcfcedc2ced92f59bfccc8da059250c
+scraped_at: 2026-10-17T06:47:53+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:255e54fad0df4ccac2067561d00681f451d7c5509d61d5a625653af5b1af5af5
 ---
 
 VideoSession继承自[Session](arkts-apis-camera-session.md)、[Flash](arkts-apis-camera-flash.md)、[AutoExposure](arkts-apis-camera-autoexposure.md)、[WhiteBalance](arkts-apis-camera-whitebalance.md)、[Focus](arkts-apis-camera-focus.md)、[Zoom](arkts-apis-camera-zoom.md)、[Stabilization](arkts-apis-camera-stabilization.md)、[ColorManagement](arkts-apis-camera-colormanagement.md)、[AutoDeviceSwitch](arkts-apis-camera-autodeviceswitch.md)、[Macro](arkts-apis-camera-macro.md)、[ControlCenter](arkts-apis-camera-controlcenter.md)、[ManualExposure](arkts-apis-camera-manualexposure.md)、[ManualFocus](arkts-apis-camera-manualfocus.md)、[ManualIso](arkts-apis-camera-manualiso.md)、[OIS](arkts-apis-camera-ois.md)、[Aperture](arkts-apis-camera-aperture.md)。
@@ -362,7 +362,7 @@ off(type: 'autoDeviceSwitchStatusChange', callback?: AsyncCallback<AutoDeviceSwi
 **示例：**
 
 ```ts
-function unregisterSmoothZoomInfo(videoSession: camera.VideoSession): void {
+function unregisterAutoDeviceSwitchStatus(videoSession: camera.VideoSession): void {
   videoSession.off('autoDeviceSwitchStatusChange');
 }
 ```

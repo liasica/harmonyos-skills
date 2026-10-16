@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-silen
 title: 静默登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 静默登录
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:19+08:00
+scraped_at: 2026-10-17T06:42:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:97ec4761e68cfeb20615fc0896ad85d780521d937cb44d68b1056894d60bb605
+content_hash: sha256:35119498ccb72d23c6d798bebadfeb8a5329d639b3eab9180080704c459a3e66
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:97ec4761e68cfeb20615fc0896ad85d780521d937cb44d68b1056894d60
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/eWWwQ9_-R4WfbUrHZNsdvg/zh-cn_image_0000002791739431.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/_GJp4fB_Tl6kt2X8cxOzZw/zh-cn_image_0000002794491031.png)
 
 流程说明：
 

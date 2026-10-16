@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 快速入门
 breadcrumb: 指南 > DevEco CLI > 快速入门
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:54+08:00
+scraped_at: 2026-10-17T06:43:53+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:b5b75aa7593fea9a08b19e6048feeebb82ff518f68be7e69178902c655b2fff3
+content_hash: sha256:5c53c4d3e0793864f71ddf3e27ad1b4d4c23b4829bc93f4165937a31decbbf60
 ---
 
 ## 环境准备
@@ -144,7 +144,7 @@ devecocli update
 
 1. 初始化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/o1C05p6NRm-H2m9LSUcbQw/zh-cn_image_0000002701823622.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/gQxIYoN6TsanXt3ZIFuw6A/zh-cn_image_0000002701823622.png)
 2. 创建一个HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ohQc6WmPQmG3DvsH2nf4YQ/zh-cn_image_0000002701663700.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/VmF7YFthTJWlr9Haa7LraQ/zh-cn_image_0000002701663700.png)

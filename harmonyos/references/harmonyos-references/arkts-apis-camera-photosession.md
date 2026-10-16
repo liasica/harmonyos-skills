@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PhotoSession)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (PhotoSession)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:39:26+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:c0d4c6d35b79829229a1b0f9363f5989ee1dfc5b8e336d7fc4152a686cb1b936
+scraped_at: 2026-10-17T06:47:53+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:2b547b68fc86135163b398a7bf9c9a1eb7421ffbd065ff0f53ee804d8814d8b9
 ---
 
 PhotoSession继承自[Session](arkts-apis-camera-session.md)、[Flash](arkts-apis-camera-flash.md)、[AutoExposure](arkts-apis-camera-autoexposure.md)、[WhiteBalance](arkts-apis-camera-whitebalance.md)、[Focus](arkts-apis-camera-focus.md)、[Zoom](arkts-apis-camera-zoom.md)、[ColorManagement](arkts-apis-camera-colormanagement.md)、[AutoDeviceSwitch](arkts-apis-camera-autodeviceswitch.md)、[Macro](arkts-apis-camera-macro.md)、[ManualExposure](arkts-apis-camera-manualexposure.md)、[ManualFocus](arkts-apis-camera-manualfocus.md)、[ManualIso](arkts-apis-camera-manualiso.md)、[OIS](arkts-apis-camera-ois.md)、[Aperture](arkts-apis-camera-aperture.md)。
@@ -362,7 +362,7 @@ off(type: 'autoDeviceSwitchStatusChange', callback?: AsyncCallback<AutoDeviceSwi
 **示例：**
 
 ```ts
-function unregisterSmoothZoomInfo(photoSession: camera.PhotoSession): void {
+function unregisterAutoDeviceSwitchStatus(photoSession: camera.PhotoSession): void {
   photoSession.off('autoDeviceSwitchStatusChange');
 }
 ```

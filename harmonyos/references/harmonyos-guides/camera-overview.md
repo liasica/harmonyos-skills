@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-overvi
 title: Camera Kit简介
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:04+08:00
+scraped_at: 2026-10-17T06:42:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:12538be95eaa0f7c76e7ab6158b92322903b31e78c9ce9a72374db8a717c03cb
+content_hash: sha256:e3deea07c71953bd0572ffa2a6c36cb96e2c4b9adf0dcb7e3ba3b8d8a2d79723
 ---
 
 开发者通过调用Camera Kit（相机服务）提供的接口可以开发相机应用，应用通过访问和操作相机硬件，实现基础操作，如预览、拍照和录像；还可以通过接口组合完成更多操作，如控制闪光灯和曝光时间、对焦或调焦等。
@@ -28,7 +28,7 @@ content_hash: sha256:12538be95eaa0f7c76e7ab6158b92322903b31e78c9ce9a72374db8a717
 
 **图1** 相机工作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/rfgwLfZrTymP0VB-2-rirw/zh-cn_image_0000002791739199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/IWIDfb8PTHuv8dBOC3ovaA/zh-cn_image_0000002794490797.png)
 
 为便于开发者更好地开发相机应用，建议先了解相机开发工作流程，再了解相机的开发模型（如图2所示）。
 
@@ -38,7 +38,7 @@ content_hash: sha256:12538be95eaa0f7c76e7ab6158b92322903b31e78c9ce9a72374db8a717
 
 **图2** 相机开发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/_cLGCuN3Sz-g6zNzc1RWbQ/zh-cn_image_0000002762340620.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/fcWQY69DQeuEbxVBaW9N3w/zh-cn_image_0000002794411013.png)
 
 ## 模拟器支持情况
 

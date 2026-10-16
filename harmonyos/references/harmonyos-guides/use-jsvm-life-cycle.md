@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-life
 title: 使用JSVM-API接口进行生命周期相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行生命周期相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:06d34cf7b1571d7109c06f39bc2008ac10453c59551cb3cddc041edd4ffccddb
+scraped_at: 2026-10-17T06:43:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:bbe417ae5cf2358177560b8d63de1a820195cb962b8ad6796b4a23168e12d4a7
 ---
 
 ## 简介
@@ -300,7 +300,7 @@ static JSVM_Value RunDemo(JSVM_Env env, JSVM_CallbackInfo info)
     JSVM_VM vm;
     OH_JSVM_GetVM(env, &vm);
     if (AddFinalizer(vm, env) != 0) {
-        OH_LOG_INFO(LOG_APP, "Run AddFinalizer failed");
+        OH_LOG_ERROR(LOG_APP, "Run AddFinalizer failed");
     }
 
     return nullptr;

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 卡片拉起应用UIAbility到后台（call事件）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面交互 > 卡片拉起应用UIAbility到后台（call事件）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5de393de4ae7212afcfe2ff308fbacad75c448c70d46732a0f23135c9d191958
+scraped_at: 2026-10-17T06:41:28+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:7f556fe57d5f13fdcac32335bf5116cb9c53e0d125d2ce87b5a494e0911772a7
 ---
 
 许多应用希望借助卡片的能力，实现和应用在前台时相同的功能。例如音乐卡片，卡片上提供播放、暂停等按钮，点击不同按钮将触发音乐应用的不同功能，进而提高用户的体验。在卡片中使用[postCardAction](../harmonyos-references/js-apis-postcardaction.md#postcardaction-1)接口的call能力，能够将卡片提供方应用指定的UIAbility拉到后台。同时，call能力提供了调用应用指定方法、传递数据的功能，使应用在后台运行时可以通过卡片上的按钮执行不同的功能。
@@ -150,7 +150,7 @@ content_hash: sha256:5de393de4ae7212afcfe2ff308fbacad75c448c70d46732a0f23135c9d1
          this.callee.off('funA');
          this.callee.off('funB');
        } catch (err) {
-         hilog.error(DOMAIN_NUMBER, TAG, `Failed to register callee off. Cause: ${JSON.stringify(err as BusinessError)}`);
+         hilog.error(DOMAIN_NUMBER, TAG, `Failed to unregister callee off. error code: ${error.code}, error message: ${error.message}`);
        }
      }
    }

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-par
 title: "@Param装饰器：组件外部输入"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Param装饰器：组件外部输入
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:04+08:00
+scraped_at: 2026-10-17T06:41:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:708146445a8345da011616dc30f2484d8d967b6ab41d4e4040d98f63e7cd07f6
+content_hash: sha256:f8cf0071a0f0b5d7d9e34b710012756f11abdddde527d16f34fb2bed7f761533
 ---
 
 为了增强子组件接受外部参数输入的能力，开发者可以使用[@Param](../harmonyos-references/ts-state-management-param.md#param)装饰器。
@@ -105,7 +105,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/l2YiuQiKRpKcqtFN_ZmmeA/zh-cn_image_0000002762499250.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/JbAmiwQ4SZytL8k7Wmfbsg/zh-cn_image_0000002765130924.gif)
 
 在上面的示例中，@State仅能在初始化时接收info的引用，改变info之后无法同步。@Prop虽然能够进行单向同步，但是对于较复杂的类型来说，深拷贝性能较差。@Link能够接受传入的引用进行双向同步，但它必须要求数据源也是状态变量，因此无法接受info中的成员属性region。@ObjectLink能够接受类成员属性，但是要求该属性类型必须为@Observed装饰的类。装饰器的不同限制使得父子组件之间的传值规则复杂、不易使用。因此推出@Param装饰器，表示组件从外部传入的状态。
 
@@ -195,7 +195,7 @@ struct Child {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/TzDCO_0XTW-w1_-vLGUMqw/zh-cn_image_0000002791737905.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/W50Js8PmSdeFaGQZ2oCP6Q/zh-cn_image_0000002794489505.gif)
 * 当装饰的变量类型为类对象时，仅可以观察到对类对象整体赋值的变化，无法直接观察到对类成员属性赋值的变化，对类成员属性的观察依赖[@ObservedV2](arkts-new-observedv2-and-trace.md)和[@Trace](arkts-new-observedv2-and-trace.md)装饰器，也可以使用[makeObserved](arkts-new-makeobserved.md)将该对象变为可观察对象。
 
   ```typescript
@@ -275,7 +275,7 @@ struct Child {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/BQNjpR4hQn6YS6-t0--ecQ/zh-cn_image_0000002762339332.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/FS_qb4RhSHCqhZR1F3gHlg/zh-cn_image_0000002794409725.gif)
 * 装饰的变量为简单类型数组时，可观察数组整体或数组项变化。
 
   ```typescript
@@ -357,7 +357,7 @@ struct Child {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/4UjMILleR0-MxefZfE3Tww/zh-cn_image_0000002791858125.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/b2-yBG7jSbidmiX9i2ZNpg/zh-cn_image_0000002764971004.gif)
 * 当装饰的变量是嵌套类或对象数组时，@Param无法观察深层对象属性的变化。对深层对象属性的观测依赖@ObservedV2与@Trace装饰器。
 
   ```typescript
@@ -472,7 +472,7 @@ struct Child {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/zgLqpkjBSLq1m8Xf3aAT-A/zh-cn_image_0000002762499252.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/fCnKx6-HQWyyKiWm9H0Qaw/zh-cn_image_0000002765130926.gif)
 * 装饰的变量为内置类型时，可观察变量整体赋值和API调用的变化。
 
   | 类型 | 可观测变化的API |
@@ -672,7 +672,7 @@ struct SubComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/xFO1x3jZQh-zcWto71B56w/zh-cn_image_0000002791737907.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/45siXXgtRl6SiRoBU3wMGg/zh-cn_image_0000002794489507.gif)
 
 ### 装饰Array类型变量
 
@@ -743,7 +743,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/b8LhIUgYSwqEf9MSsa8Nsg/zh-cn_image_0000002762339334.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/JrpH9FPaRZC_-RmdPtMVJA/zh-cn_image_0000002794409727.gif)
 
 ### 装饰Date类型变量
 
@@ -810,7 +810,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/hQOx4KivQK2CKTynZ4hiYg/zh-cn_image_0000002791858127.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/cTmfOKfTRPaU7MSn_7713A/zh-cn_image_0000002764971006.gif)
 
 ### 装饰Map类型变量
 
@@ -891,7 +891,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/PIzLo6guRZOLNhJ_zonUpA/zh-cn_image_0000002762499254.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/EqtuZBdcSgSqXSz2L3mobw/zh-cn_image_0000002765130928.gif)
 
 ### 装饰Set类型变量
 
@@ -962,7 +962,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/6dgkf3blQ3KgWsgfdT3Whw/zh-cn_image_0000002791737909.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/UrsaF8JMRE2KZyHcPaM7PA/zh-cn_image_0000002794489509.gif)
 
 ### 联合类型
 
@@ -1004,4 +1004,4 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Fp7AhY9WR_6iassdNvEGQA/zh-cn_image_0000002762339336.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/czEhoNCPSP2DbPXznYhK4A/zh-cn_image_0000002794409729.gif)

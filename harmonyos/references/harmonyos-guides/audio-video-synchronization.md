@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-video-s
 title: 音画同步
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 音画同步
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:03+08:00
+scraped_at: 2026-10-17T06:42:06+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:12209b4c9da95d33e30d1f6bc27d2b848dfd3b60db794c48521ca4ef1c402199
+content_hash: sha256:3f850becfb6ae7b34d2790b0ee823ebed9dd20b83ad6343dfc00091f701e9c72
 ---
 
 ## 概述
@@ -83,7 +83,7 @@ content_hash: sha256:12209b4c9da95d33e30d1f6bc27d2b848dfd3b60db794c48521ca4ef1c4
 
 **连续播放音帧方案示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/MB5YIPouTuK4j96UsXvjQA/zh-cn_image_0000002791859389.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/V2Crp1o1QqCo6MZ64mvceA/zh-cn_image_0000002764972270.png)
 
 音频和视频的管道必须同时以相同的时间戳呈现每帧数据。将音频播放位置用作主时间参考，而视频管道只输出与最新渲染音频帧匹配的视频帧。对于所有可能的实现，精确计算最后一次呈现的音频时间戳是至关重要的。[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp) 接口用以查询音频管道各个阶段的音频时间戳和延迟信息，此信息可用于控制视频管道，使视频帧与音频帧匹配。
 

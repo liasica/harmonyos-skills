@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-con
 title: USB串口配置管理
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB串口通信服务 > USB串口配置管理
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:04+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:06b27476f0453042f042b94b887d49b40b605f7721d33cd9c4a6d432d95a3f9c
+scraped_at: 2026-10-17T06:41:49+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:85a7bd5e069f647ebd3fe1d84e8c11e966872921dcd4baac6b03fc95758a4e1d
 ---
 
 ## 简介
@@ -54,10 +54,8 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
 
    ```typescript
    // 导入serialManager模块
-   import { serialManager } from '@kit.BasicServicesKit';
-   import { BusinessError } from '@kit.BasicServicesKit';
-   import { buffer } from '@kit.ArkTS';
-   import { JSON } from '@kit.ArkTS';
+   import { serialManager, BusinessError } from '@kit.BasicServicesKit';
+   import { buffer, JSON } from '@kit.ArkTS';
    ```
 2. 获取设备列表。
 
@@ -88,8 +86,8 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
        console.info('serial device request right result: ' + result);
        this.logInfo_ += '\n[INFO] serial device request right result: ' + JSON.stringify(result);
      }).catch((error: BusinessError) => {
-       console.error(`usb device request right failed : ${error}`);
-       this.logInfo_ += '\n[ERROR] usb device request right failed: ' + JSON.stringify(error);
+       console.error(`usb device request right failed : code=${error.code}, message=${error.message}`);
+       this.logInfo_ += '\n[ERROR] usb device request right failed: code=' + error.code + ', message=' + error.message;
      });
    } else {
      console.info('serial device already request right');
@@ -106,8 +104,9 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
      console.info(`open usbSerial success, portId: ${portId}`);
      this.logInfo_ += '\n[INFO] open usbSerial success, portId: ' + JSON.stringify(portId);
    } catch (error) {
-     console.error(`open usbSerial error： ${error}`);
-     this.logInfo_ += '\n[ERROR] open usbSerial error: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`open usbSerial error： code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] open usbSerial error: code=' + errorObj.code + ', message=' + errorObj.message;
    }
    ```
 5. 获取和修改串口配置。
@@ -120,8 +119,9 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
      console.info(`getAttribute usbSerial success, attribute: ${JSON.stringify(attribute)}`);
      this.logInfo_ += '\n[INFO] getAttribute usbSerial success, attribute: ' + JSON.stringify(attribute);
    } catch (error) {
-     console.error(`getAttribute usbSerial error: ${error}`);
-     this.logInfo_ += '\n[ERROR] getAttribute usbSerial error: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`getAttribute usbSerial error: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] getAttribute usbSerial error: code=' + errorObj.code + ', message=' + errorObj.message;
    }
    ```
 
@@ -139,8 +139,9 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
      console.info(`setAttribute usbSerial success, attribute: ${JSON.stringify(attribute)}`);
      this.logInfo_ += '\n[INFO] setAttribute usbSerial success, attribute: ' + JSON.stringify(attribute);
    } catch (error) {
-     console.error(`setAttribute usbSerial error: ${error}`);
-     this.logInfo_ += '\n[ERROR] setAttribute usbSerial error: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`setAttribute usbSerial error: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] setAttribute usbSerial error: code=' + errorObj.code + ', message=' + errorObj.message;
    }
    ```
 

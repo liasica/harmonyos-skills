@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-add-
 title: 添加和删除模块
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加和删除模块
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:41+08:00
+scraped_at: 2026-10-17T06:43:40+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:b3640cda9304cc80e15e176231125697b04261a1faa0b6362884f1d82a2e4aea
+content_hash: sha256:6b5e76dc0979f6576381a48cf9f038f73bbec83570e5f381722af739fc24a69d
 ---
 
 模块（Module）是应用/元服务的基本功能单元，包含了源代码、资源文件、第三方库及应用/元服务配置文件。每一个模块都可以独立进行编译和运行。一个应用/元服务通常会包含一个或多个模块。因此，可以在工程中创建多个模块。模块支持entry、feature、har、shared四种类型，具体请参考[module.json5配置文件](module-configuration-file.md#配置文件标签)。
@@ -33,7 +33,7 @@ content_hash: sha256:b3640cda9304cc80e15e176231125697b04261a1faa0b6362884f1d82a2
      + 勾选（true）：可以被其它应用/元服务调用。
      + 不勾选（false）：不可以被其它应用/元服务调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/a90yGr4BReOaEaL2h_Ah7A/zh-cn_image_0000002750169642.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/4QGwZvkJSOWwqRBGSOz2Iw/zh-cn_image_0000002750169642.png "点击放大")
 3. 单击**确认**，等待创建完成后，可以在工程目录中查看和编辑新增的模块。工程中所包含模块的信息可以在[build-profile.json5](ide-hvigor-build-profile-app.md)中modules字段进行配置。
 
 ## 删除模块

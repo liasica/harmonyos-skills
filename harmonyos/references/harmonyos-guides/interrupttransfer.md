@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/interrupttran
 title: USB中断传输
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB中断传输
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:05+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:825e3e0a7d80e67e0985cf3d6b222ce93fcfd10841bc1e44d09588bac51938d6
+scraped_at: 2026-10-17T06:41:49+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:441e725ec08018aa5bf03884f376dba65b1690b52aaef10afcb167e93ccc22fa
 ---
 
 ## 场景介绍
@@ -56,8 +56,7 @@ content_hash: sha256:825e3e0a7d80e67e0985cf3d6b222ce93fcfd10841bc1e44d09588bac51
 
    ```typescript
    // 导入usbManager模块
-   import { usbManager } from '@kit.BasicServicesKit';
-   import { BusinessError } from '@kit.BasicServicesKit';
+   import { usbManager, BusinessError } from '@kit.BasicServicesKit';
    import { JSON } from '@kit.ArkTS';
    ```
 2. 获取设备列表。
@@ -68,8 +67,9 @@ content_hash: sha256:825e3e0a7d80e67e0985cf3d6b222ce93fcfd10841bc1e44d09588bac51
    try {
      deviceList = usbManager.getDevices();
    } catch (error) {
-       console.error(`USB getDevices failed: ${error}`);
-       this.logInfo_ += '\n[ERROR] USB getDevices failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`USB getDevices failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] USB getDevices failed: code=' + errorObj.code + ', message=' + errorObj.message;
    }
 
    console.info(`deviceList: ${deviceList}`);
@@ -147,16 +147,16 @@ content_hash: sha256:825e3e0a7d80e67e0985cf3d6b222ce93fcfd10841bc1e44d09588bac51
      console.info('usb device request right result: ' + hasRight);
      this.logInfo_ += '\n[INFO] usb device request right result: ' + JSON.stringify(hasRight);
    }).catch((error: BusinessError) => {
-     console.error(`usb device request right failed : ${error}`);
-     this.logInfo_ += '\n[ERROR] usb device request right failed: ' + JSON.stringify(error);
+     console.error(`usb device request right failed : code=${error.code}, message=${error.message}`);
+     this.logInfo_ += '\n[ERROR] usb device request right failed: code=' + error.code + ', message=' + error.message;
    });
    ```
 4. 获取通过中断传输读取数据的端点。
 
    ```typescript
    if (this.deviceList_ === undefined || this.deviceList_.length === 0) {
-     console.error('deviceList_ is empty');
-     this.logInfo_ += '\n[ERROR] deviceList_ is empty';
+     console.error('deviceList is empty');
+     this.logInfo_ += '\n[ERROR] deviceList is empty';
      return;
    }
    let usbDevice: usbManager.USBDevice = this.deviceList_[0];
@@ -167,8 +167,9 @@ content_hash: sha256:825e3e0a7d80e67e0985cf3d6b222ce93fcfd10841bc1e44d09588bac51
        return;
      }
    } catch (error) {
-     console.error(`USB hasRight failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] USB hasRight failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`USB hasRight failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] USB hasRight failed: code=' + errorObj.code + ', message=' + errorObj.message;
      return;
    }
 
@@ -181,8 +182,9 @@ content_hash: sha256:825e3e0a7d80e67e0985cf3d6b222ce93fcfd10841bc1e44d09588bac51
        return;
      }
    } catch (error) {
-     console.error(`USB connectDevice failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] USB connectDevice failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`USB connectDevice failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] USB connectDevice failed: code=' + errorObj.code + ', message=' + errorObj.message;
      return;
    }
 
@@ -222,8 +224,9 @@ content_hash: sha256:825e3e0a7d80e67e0985cf3d6b222ce93fcfd10841bc1e44d09588bac51
        return;
      }
    } catch (error) {
-     console.error(`USB claimInterface failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] USB claimInterface failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`USB claimInterface failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] USB claimInterface failed: code=' + errorObj.code + ', message=' + errorObj.message;
      return;
    }
    ```
@@ -259,30 +262,36 @@ content_hash: sha256:825e3e0a7d80e67e0985cf3d6b222ce93fcfd10841bc1e44d09588bac51
      console.info('USB transfer request submitted.');
      this.logInfo_ += '\n[INFO] USB transfer request submitted.';
    } catch (error) {
-     console.error(`USB transfer failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] USB transfer failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`USB transfer failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] USB transfer failed: code=' + errorObj.code + ', message=' + errorObj.message;
    }
    ```
 7. 取消传输，释放接口，关闭设备消息控制通道。
 
    ```typescript
    try {
-     usbManager.usbCancelTransfer(transferParams);
+     if (transferParams) {
+       usbManager.usbCancelTransfer(transferParams);
+     }
    } catch (error) {
-     console.error(`usbCancelTransfer failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] usbCancelTransfer failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`usbCancelTransfer failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] usbCancelTransfer failed: code=' + errorObj.code + ', message=' + errorObj.message;
    }
    try {
      usbManager.releaseInterface(devicePipe, usbInterface);
    } catch (error) {
-     console.error(`releaseInterface failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] releaseInterface failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`releaseInterface failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] releaseInterface failed: code=' + errorObj.code + ', message=' + errorObj.message;
    }
    try {
      usbManager.closePipe(devicePipe);
    } catch (error) {
-     console.error(`closePipe failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] closePipe failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`closePipe failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] closePipe failed: code=' + errorObj.code + ', message=' + errorObj.message;
    }
    ```
 

@@ -3,29 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 使用断点
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 使用断点
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:48+08:00
+scraped_at: 2026-10-17T06:43:46+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:567cf043ac0ae452c4df8b55e8d19030f760a2c34e4ee59093f118f277b07721
+content_hash: sha256:2a93d1e4ff3c37460f078010a4eea759557bfa09b59085d26dced7eb912c6908
 ---
 
-点击编辑器左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/9R2pr_QWT06aiorjfbwP5A/zh-cn_image_0000002750009770.png "点击放大")图标，打开断点管理界面进行断点管理。
+点击编辑器左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/i7pAcHHRSv2N8o2sv_09fg/zh-cn_image_0000002750009770.png "点击放大")图标，打开断点管理界面进行断点管理。
 
 * 勾选复选框，使能该断点。
 * 取消勾选复选框，禁用该断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/HyQ8lt1XTNalaUyIR8N5Aw/zh-cn_image_0000002779608677.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/AKOYTjncTJK8RoKcCEp0gg/zh-cn_image_0000002779608677.png)
 
 ## 条件断点
 
 在编辑器行号侧边栏单击鼠标右键，选择**添加条件****断点**并在输入框中设置表达式作为条件，使程序运行到断点且满足设置的条件时才会中断进程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/-yl11XksS6ucy8Ybn3turg/zh-cn_image_0000002750169662.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/EWQK18CHSCGLn9DdSkD9-g/zh-cn_image_0000002750169662.png)
 
 ## 日志断点
 
 在编辑器行号侧边栏单击鼠标右键，选择**添加记录点**设置日志断点，在输入框中添加表达式，可以使进程运行到断点时在console窗口打印相应日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/-JfoX1WVSS6h6cV2M6ZxZQ/zh-cn_image_0000002779608683.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/5SBzejg-TH6NXLD4S4udBQ/zh-cn_image_0000002779608683.png)
 
 **说明** 
 
@@ -33,9 +33,9 @@ content_hash: sha256:567cf043ac0ae452c4df8b55e8d19030f760a2c34e4ee59093f118f277b
 
 ## 临时断点
 
-临时断点允许开发者在光标停留处设置断点，点击调试器![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/Lf0lVt0uRMW8kXG3qQpSlA/zh-cn_image_0000002750169654.png "点击放大")图标，断点运行至光标停留处。该断点只生效一次，生效后该断点会被删除。
+临时断点允许开发者在光标停留处设置断点，点击调试器![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/h3fRFda1TUa9Cvd_-JQu9g/zh-cn_image_0000002750169654.png "点击放大")图标，断点运行至光标停留处。该断点只生效一次，生效后该断点会被删除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/JcvCo0sUQLafKyxhRFlFPg/zh-cn_image_0000002750009772.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/JH8VYAAFQJ2sGhRc7nIjwg/zh-cn_image_0000002750009772.gif "点击放大")
 
 ## 函数断点
 
@@ -43,7 +43,7 @@ content_hash: sha256:567cf043ac0ae452c4df8b55e8d19030f760a2c34e4ee59093f118f277b
 
 在断点管理界面中点击“+”，在弹出窗口中填写函数名，添加函数断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/F6PVn01lRTWrN6uJ3sDl8A/zh-cn_image_0000002779728827.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/HBuuupa1T3Kw2Nl2UFPNwg/zh-cn_image_0000002779728827.png)
 
 ## 异常断点
 
@@ -55,7 +55,7 @@ content_hash: sha256:567cf043ac0ae452c4df8b55e8d19030f760a2c34e4ee59093f118f277b
 
 在断点管理界面中勾选**catch catch**和**catch throw**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/pHN-XOdFRyesERwha8s6kQ/zh-cn_image_0000002750009774.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/YG1RJEukQ-WuEilB2J2UoQ/zh-cn_image_0000002750009774.png)
 
 ## 数据断点
 
@@ -63,11 +63,11 @@ content_hash: sha256:567cf043ac0ae452c4df8b55e8d19030f760a2c34e4ee59093f118f277b
 
 在变量列表中对某一个变量右键，在菜单中选择添加数据断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/MPQM6_JpTZOjPqn8twmcNQ/zh-cn_image_0000002779608679.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/1PCBG1bOTrmIvOEAiWZzdA/zh-cn_image_0000002779608679.png)
 
 在断点管理界面进行查看和禁用/使能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/FcZYqd6QQgqJhOqgazATmA/zh-cn_image_0000002779728831.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/21jvepF9R66D5gvQabx3ew/zh-cn_image_0000002779728831.png)
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1f7cb8a9b6b6fdf29e42c13b075bd86bd32f3603a24c1ec9232d9b8dcffefacd
+scraped_at: 2026-10-17T06:47:54+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:2bec053d266240c00ca2722a03738719f2173db8ddce370fb541597c605ebb78
 ---
 
 **说明** 
@@ -428,7 +428,7 @@ content_hash: sha256:1f7cb8a9b6b6fdf29e42c13b075bd86bd32f3603a24c1ec9232d9b8dcff
 | --- | --- | --- |
 | BEAUTY | 0 | 美颜。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 | PORTRAIT | 1 | 人像虚化。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
-| AUTO\_FRAMING24+ | 2 | 自动对焦。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| AUTO\_FRAMING24+ | 2 | 自动构图。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 | COLOR\_EFFECT | 3 | 色彩效果。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 ## PhotoQualityPrioritization21+

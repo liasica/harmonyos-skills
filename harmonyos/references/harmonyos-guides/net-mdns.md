@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-mdns
 title: 使用MDNS访问局域网服务
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用MDNS访问局域网服务
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8335a7915b44d4e4a9387fb443aced33053ff9d4c84664df532e9560ff836c9e
+scraped_at: 2026-10-17T06:41:46+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:775eaf2379f03bc6cb1353485a7351b27cec9e3fdc4e61cb5c66b0ed55920fcf
 ---
 
 ## 简介
@@ -138,19 +138,9 @@ MDNS管理的典型场景有：
 7. 取消订阅的MDNS服务。
 
    ```typescript
-   // 取消订阅的MDNS服务。
-   discoveryService.off('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
-     hilog.info(0x0000, 'testTag', JSON.stringify(data));
-   });
-   discoveryService.off('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
-     hilog.info(0x0000, 'testTag', JSON.stringify(data));
-   });
-   discoveryService.off('serviceFound', (data: mdns.LocalServiceInfo) => {
-     hilog.info(0x0000, 'testTag', JSON.stringify(data));
-     // ...
-   });
-   discoveryService.off('serviceLost', (data: mdns.LocalServiceInfo) => {
-     hilog.info(0x0000, 'testTag', JSON.stringify(data));
-     // ...
-   });
+   // 取消订阅的MDNS服务。不传入callback时，取消订阅该事件的所有回调。
+   discoveryService.off('discoveryStart');
+   discoveryService.off('discoveryStop');
+   discoveryService.off('serviceFound');
+   discoveryService.off('serviceLost');
    ```

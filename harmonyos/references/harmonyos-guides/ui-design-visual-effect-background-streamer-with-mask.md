@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-vis
 title: 自带背景的双边流光
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 视效 > 自带背景的双边流光
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:26+08:00
+scraped_at: 2026-10-17T06:41:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7e4dbdae512089eee8f36e19ff5737b059f435932f525c33d6093aa6cbc0a236
+content_hash: sha256:d3b6ee4ca80f1b5a75963d5399ca661625ae24313bcce289d587a9debf769f66
 ---
 
 ## 场景介绍
@@ -61,4 +61,4 @@ content_hash: sha256:7e4dbdae512089eee8f36e19ff5737b059f435932f525c33d6093aa6cbc
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/W0EvyznGQra48YP5473Csw/zh-cn_image_0000002791738917.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/G5WVkr4wTpG0NGjGdENNEw/zh-cn_image_0000002794490517.gif)

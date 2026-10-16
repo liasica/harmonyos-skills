@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口提供Latin1/UTF16格式字符串相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口提供Latin1/UTF16格式字符串相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:33ddbb83205b06859c3fb8114b30d03af9839d25af63005c0803851b049a3c26
+scraped_at: 2026-10-17T06:43:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:877c3083869de5f7ebd51aeb515854401a9776294c92a77088f5105cbbb8c69e
 ---
 
 ## 简介
@@ -71,7 +71,7 @@ static JSVM_CallbackStruct param[] = {
 
 static JSVM_CallbackStruct *method = param;
 
-// wrapperObject方法别名，供JS调用
+// testExternalString方法别名，供JS调用
 static JSVM_PropertyDescriptor descriptor[] = {
     {"testExternalString", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };

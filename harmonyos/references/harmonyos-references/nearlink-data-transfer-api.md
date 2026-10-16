@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: dataTransfer（星闪数传能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > dataTransfer（星闪数传能力）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ac1edcf6478bc1fe18df2b4e6316c9686134cacd4d6c43ebd48f16c086e3be43
+scraped_at: 2026-10-17T06:46:43+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:d6545b58514cbb892cd8db0be86f50c90e93301b4b667834054e7ea0feb5b506
 ---
 
 本模块提供了星闪数据传输的功能。
@@ -60,9 +60,9 @@ createPort(uuid: string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | [Sync] Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700020 | The UUID is already registered. |
 | 1009700021 | The number of ports exceeds the upper limit. |
@@ -109,9 +109,9 @@ destroyPort(uuid: string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | [Sync] Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700022 | The UUID is not registered. |
 | 1009700099 | Operation failed. |
@@ -163,9 +163,9 @@ connect(params: ConnectionParams): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | [Sync/Async] Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -224,9 +224,9 @@ disconnect(params: ConnectionParams): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | [Sync/Async] Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -280,9 +280,8 @@ on(type: 'connectionStateChanged', callback: Callback<ConnectionResult>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -328,9 +327,8 @@ off(type: 'connectionStateChanged', callback?: Callback<ConnectionResult>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -378,9 +376,9 @@ getConnectionState(params: ConnectionStateParams): ConnectionState
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | [Sync] Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -434,9 +432,9 @@ writeData(params: DataParams): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | [Sync/Async] Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700023 | The data writing process is congested. |
 | 1009700099 | Operation failed. |
@@ -496,9 +494,8 @@ on(type: 'readData', callback: Callback<DataParams>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -544,9 +541,8 @@ off(type: 'readData', callback?: Callback<DataParams>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**

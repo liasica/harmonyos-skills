@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行object相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行object相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:23dd4352d2f4aea49a4a11577c0cca52541d88220c5d64c24c9df7910fcc6ee8
+scraped_at: 2026-10-17T06:43:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:adfd8bcfedd71aa009f8494b37c53c7078e6090733900ce4a7e22f4634759b47
 ---
 
 ## 简介
@@ -213,29 +213,29 @@ static JSVM_Value ObjectSeal(JSVM_Env env, JSVM_CallbackInfo info)
     size_t argc = 1;
     JSVM_Value argv[1] = {nullptr};
     OH_JSVM_GetCbInfo(env, info, &argc, argv, nullptr, nullptr);
-    // 调用接口OH_JSVM_ObjectSeal将传入的object封闭，使其无法添加新的属性
+    // 调用接口OH_JSVM_ObjectSeal将传入的object密封，使其无法添加新的属性
     JSVM_Status status = OH_JSVM_ObjectSeal(env, argv[0]);
     if (status == JSVM_OK) {
         OH_LOG_INFO(LOG_APP, "Test JSVM OH_JSVM_ObjectSeal success");
     }
-    // 检查封闭后的对象中属性能否修改、删除、新增
-    // 封闭后对象修改
+    // 检查密封后的对象中属性能否修改、删除、新增
+    // 密封后对象修改
     JSVM_Value changeValue = nullptr;
     OH_JSVM_CreateInt32(env, TEST_VALUE, &changeValue);
     OH_JSVM_SetNamedProperty(env, argv[0], "data", changeValue);
-    // 封闭后对象删除
+    // 密封后对象删除
     JSVM_Value deleteProperty = nullptr;
     OH_JSVM_CreateStringUtf8(env, "message", JSVM_AUTO_LENGTH, &deleteProperty);
     bool result = false;
     OH_JSVM_DeleteProperty(env, argv[0], deleteProperty, &result);
     if (result) {
-        OH_LOG_INFO(LOG_APP, "Test JSVM OH_JSVM_ObjectSeal failed");
+        OH_LOG_ERROR(LOG_APP, "Test JSVM OH_JSVM_ObjectSeal failed");
     }
-    // 封闭后对象新增
+    // 密封后对象新增
     JSVM_Value addValue = nullptr;
     OH_JSVM_CreateStringUtf8(env, "addValue", JSVM_AUTO_LENGTH, &addValue);
     OH_JSVM_SetNamedProperty(env, argv[0], "newProperty", addValue);
-    // 将封闭后改动过的对象返回JavaScript侧
+    // 将密封后改动过的对象返回JavaScript侧
     return argv[0];
 }
 // ObjectSeal注册回调
@@ -644,7 +644,7 @@ static JSVM_Value CreateSymbol(JSVM_Env env, JSVM_CallbackInfo info)
     if (valuetypeSymbol == JSVM_SYMBOL) {
         OH_LOG_INFO(LOG_APP, "JSVM CreateSymbol Success");
     } else {
-        OH_LOG_INFO(LOG_APP, "JSVM CreateSymbol fail");
+        OH_LOG_ERROR(LOG_APP, "JSVM CreateSymbol fail");
     }
     return returnSymbol;
 }

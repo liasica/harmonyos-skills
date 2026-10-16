@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 上架前体检
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 上架前体检
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:29+08:00
+scraped_at: 2026-10-17T06:43:29+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:e0eda7df8c123377a1005ab2f54cbce46e97611da6652e4a33a01ca6178fa781
+content_hash: sha256:89489f12a029b4a2d230803d9d075616422514f8fb8dfaadbbb0016a69b50760
 ---
 
 从DevEco Studio 6.0.0 Beta1版本开始，AppAnalyzer新增上架前体检，针对上架阻塞问题进行快速检测，提前发现可能影响上架的问题，检测完成之后可以选择上传检测结果，用于应用市场上架参考，提升上架效率。
@@ -14,7 +14,7 @@ content_hash: sha256:e0eda7df8c123377a1005ab2f54cbce46e97611da6652e4a33a01ca6178
 
 1. 通过以下任意一种方式，打开AppAnalyzer。
    * 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面。
-   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/IkbcV8VXTZOgWEee1IYU5g/zh-cn_image_0000002701822910.png)，打开AppAnalyzer页面。
+   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/TLeW9HCiSzOGHVbqT3tytw/zh-cn_image_0000002701822910.png)，打开AppAnalyzer页面。
 2. 确保[DevEco Studio与真机设备已连接](ide-run-device.md)，并对应用进行[签名](ide-signing.md)。
 3. 如果使用DevEco Studio 6.0.1版本，未配置Python环境时，请根据界面提示，下载Python及三方库。或者点击AppAnalyzer底部**Python 配置**按钮进行配置。
 
@@ -24,7 +24,7 @@ content_hash: sha256:e0eda7df8c123377a1005ab2f54cbce46e97611da6652e4a33a01ca6178
 
 1. 在**AppAnalyzer**页面，选择**上架前体检**，点击预置的体检卡片，在弹框中选择待上架的产物和调试签名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/jty8J75hSJabJlINudjvMg/zh-cn_image_0000002731382219.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/BOpQixwRQhaBeZjAl0JPug/zh-cn_image_0000002731382219.png)
 2. 该体检模式无法自定义测试方式和体检规则，默认勾选所有规则，这些规则是[规则体检](ide-app-analyzer-all-rules.md)的子集。单击底部的**开始体检**按钮，等待AppAnalyzer完成构建、签名、安装等操作。
 3. 安装完成后，根据提示登录账号，开始进行测试。在测试过程中，请保持连接的设备为解锁亮屏状态。
 4. 测试完成后，查看测试报告如下。
@@ -34,7 +34,7 @@ content_hash: sha256:e0eda7df8c123377a1005ab2f54cbce46e97611da6652e4a33a01ca6178
 
      如需上传报告，请在体检结束后上传，[历史报告](ide-app-analyzer-history-reports.md)中无法上传报告。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/QLZUgkR2QmWBt6wXHGHmjg/zh-cn_image_0000002731382215.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/zE2pAAFXTYaaGrYKDPNpVw/zh-cn_image_0000002731382215.png)
    * 如果测试分数不是100分，无法上传报告，可根据详情报告中的信息，对问题进行分析优化，详情报告的具体内容可参考[规则体检](ide-app-analyzer-rules.md#li22241112508)。
 
    从DevEco Studio 6.0.2 Beta1版本开始，如果在体检中遇到问题，可点击报告右上角的**User Feedback**向我们反馈。
@@ -45,7 +45,7 @@ content_hash: sha256:e0eda7df8c123377a1005ab2f54cbce46e97611da6652e4a33a01ca6178
 
 1. 在**AppAnalyzer**页面，选择**上架前体检**，弹出上架前检测配置的弹框，选择待上架的产物和调试签名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/hjVs_zWqQ1-SM3Aq2JHd1A/zh-cn_image_0000002701822908.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/VoJxsrRfSsmCL1IxJRX7qQ/zh-cn_image_0000002701822908.png)
 2. 该体检模式无法自定义测试方式、模块和体检规则，默认勾选所有规则，这些规则是[规则体检](ide-app-analyzer-all-rules.md)的子集。单击底部的**开始**按钮，等待AppAnalyzer完成构建、签名、安装等操作。
 3. 安装完成后，根据提示登录账号，开始进行测试。在测试过程中，请保持连接的设备为解锁亮屏状态。
 4. 测试完成后点击**结束**按钮停止测试任务，等待数据解析完成后，查看测试结果如下。
@@ -55,5 +55,5 @@ content_hash: sha256:e0eda7df8c123377a1005ab2f54cbce46e97611da6652e4a33a01ca6178
 
      如需上传报告，请在体检结束后上传，[历史报告](ide-app-analyzer-history-reports.md)中无法上传报告。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ucqKFYFWRhqJHg0pJoFO2w/zh-cn_image_0000002701662996.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/nkfH2vp6SzKT8t11fsTLeg/zh-cn_image_0000002701662996.png)
    * 如果测试分数不是100分，无法上传报告，可根据详情报告中的信息，对问题进行分析优化，详情报告的具体内容可参考[规则体检](ide-app-analyzer-rules.md#li131614342254)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nonlinear-con
 title: 非线性容器
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > ArkTS容器类库 > 非线性容器
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:10+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:b7d7afb55be28517a5386b605b1bc294df0e528037f1a15152e0eec739f693d1
+scraped_at: 2026-10-17T06:41:02+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:20886461d837b96639f16868d544bacf6ecf8400d6ef3e67a53e0004bc577716
 ---
 
 非线性容器实现能快速查找的数据结构，其底层通过hash或者红黑树实现，包括HashMap、HashSet、TreeMap、TreeSet、LightWeightMap、LightWeightSet、PlainArray七种。非线性容器中的key及value的类型均满足ECMA标准。
@@ -46,7 +46,6 @@ HashMap支持增、删、改、查操作，常用API如下：
 | 访问元素 | forEach(callbackFn: (value?: V, key?: K, map?: HashMap<K, V>) => void, thisArg?: Object) | 遍历访问整个map的元素。 |
 | 访问元素 | [Symbol.iterator]():IterableIterator<[K,V]> | 创建迭代器以访问数据。 |
 | 修改元素 | replace(key: K, newValue: V) | 修改指定key对应的value值。 |
-| 修改元素 | forEach(callbackFn: (value?: V, key?: K, map?: HashMap<K, V>) => void, thisArg?: Object) | 遍历并修改整个map的元素。 |
 | 删除元素 | remove(key: K) | 删除map中匹配到的键值对。 |
 | 删除元素 | clear() | 清空整个map。 |
 

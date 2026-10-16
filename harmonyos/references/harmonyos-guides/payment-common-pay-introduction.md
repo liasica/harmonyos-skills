@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 业务规则说明
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 业务规则说明
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:36+08:00
+scraped_at: 2026-10-17T06:42:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:68f12aafd2ec54f50cc749ad188ba06793f11e6fa203f85cf997f1b8deb082ec
+content_hash: sha256:4246e140416c1b2fa42cc391c8acf50d92da6ce793262dcae9073d2fe1adfc68
 ---
 
 **说明** 
@@ -40,7 +40,7 @@ Payment Kit通用收银台上可以包含多种支付方式，支持自由组合
 
 可参考如下表格格式填写配置提供：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/42EeWFeSTqegHEEmk1S8Dg/zh-cn_image_0000002762341200.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/ufjS_BopSCCAJwBQCp9dGA/zh-cn_image_0000002794411605.png)
 
 ## 约束与限制
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: Canvas对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > Canvas对象
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:15+08:00
+scraped_at: 2026-10-17T06:41:20+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8d60f8727e6e83fccd0cef4f59a58fa8a3e87022369b9db7bb39d3b3e297b34a
+content_hash: sha256:8c823ae70ac21a1dcdcf58642bb9bb518c1b993db8040390883ae8172b322be9
 ---
 
 Canvas组件提供画布，用于自定义绘制图形。具体用法请参考[CanvasRenderingContext2D对象](../harmonyos-references/js-components-canvas-canvasrenderingcontext2d.md)。
@@ -37,7 +37,7 @@ canvas {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/inhveGDbSAyTOBpRC490Sw/zh-cn_image_0000002762499968.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/1QFTzln6TTCpqvfka04-Cg/zh-cn_image_0000002765131654.png)
 
 **说明** 
 
@@ -74,7 +74,7 @@ canvas {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ip79JHAgR-WwDcQ_vV8gMA/zh-cn_image_0000002791738631.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/oKPFowo4S8OXiUtOTF7XJA/zh-cn_image_0000002794490231.png)
 
 ## 添加事件
 
@@ -143,7 +143,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/tZg4b96rQF-nZQqQNKE00g/zh-cn_image_0000002762340050.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/r-37stXdSAKX9SrCRZ2M1g/zh-cn_image_0000002794410447.gif)
 
 **说明** 
 

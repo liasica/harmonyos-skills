@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-analyze-d
 title: 解析应用minidump/coredump文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 解析应用minidump/coredump文件
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:28+08:00
+scraped_at: 2026-10-17T06:43:28+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:ee122d70d79ee23b83913b5d6a6801b565ea65f5846af0ba61b34b5a8af00fd1
+content_hash: sha256:129a50bbcb12662887a3c43c01a4a6f1672aea3b14698a79186675bf92ef3233
 ---
 
 从26.0.0版本开始，DevEco Studio支持对应用minidump/coredump文件进行解析，展示堆栈信息，帮助开发者快速定位问题。
@@ -17,10 +17,10 @@ content_hash: sha256:ee122d70d79ee23b83913b5d6a6801b565ea65f5846af0ba61b34b5a8af
   1. 应用需要在module.json5中配置[ohos.permission.ALLOW\_COREDUMP权限](permissions-for-all.md#ohospermissionallow_coredump)，配置方式请参考[声明权限](declare-permissions.md)。
   2. 在2in1设备的任务管理器中右键应用进程，选择**创建转储文件**。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Q588Bz5wQ8yeHrBpiBRmRg/zh-cn_image_0000002701823714.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/6nBRqJ74QcK59zrW__Wl9A/zh-cn_image_0000002701823714.png)
   3. 创建成功后，会提示coredump文件的保存位置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/zOPfJbOgTim1-x7brBOvRA/zh-cn_image_0000002701823712.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/3rjvKG0IS1u_3Uh8TV_hPA/zh-cn_image_0000002701823712.png)
 
 ## 解析dump文件
 
@@ -30,14 +30,14 @@ content_hash: sha256:ee122d70d79ee23b83913b5d6a6801b565ea65f5846af0ba61b34b5a8af
 
    应用产生的dump，需要借助同一次构建生成的so文件中的符号信息才能解析。若使用源码变更后重新构建生成的so目录，可能会因符号不一致导致解析结果不准确或解析失败。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/we9_u_2eRJqmClkJwGdVhQ/zh-cn_image_0000002731542983.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UAR261tER5ai57_KJ3fYhA/zh-cn_image_0000002731542983.png)
 2. 等待解析成功后，默认会展示异常线程和对应的堆栈，展开堆栈可查看变量信息，支持切换查看不同线程的堆栈，点击堆栈中的超链接可以跳转到对应的源码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/2zKYSBgqSiiFgcIWBk2vWQ/zh-cn_image_0000002731542987.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/xQSRnn9eRqSaoPXFFpgH1Q/zh-cn_image_0000002731542987.png)
 3. 支持查看指定地址的内存，填写内存地址，点击**View**即可查看。也可以直接右键点击变量查看内存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/w_mAkxwuQ1akxxfJI5QHbA/zh-cn_image_0000002731383011.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/SiqoOWiTR8O6BQ7Sg3x3Zw/zh-cn_image_0000002731383011.png)
 
    点击**Settings**，可设置进制、偏移量和展示的内存字节数量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/GDhZr3ocQLSgMYdaEyQ33w/zh-cn_image_0000002701663790.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/oVZ4L9Y3QFG-oZYgpX5EpQ/zh-cn_image_0000002701663790.png)

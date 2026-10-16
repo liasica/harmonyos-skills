@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-vpnextens
 title: 连接VPN
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 连接VPN
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:42+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:c73c866e528cc2d452909f4b2fcbda011999c5377e977e193c1c1f1a29effe2c
+scraped_at: 2026-10-17T06:41:46+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:5003d38f21efadac528597234e594f951440eff05dcb9860e650cd2794cf3c70
 ---
 
 ## 简介
@@ -247,7 +247,10 @@ export class VpnTest extends VpnExtensionAbility {
     // ...
       this.vpnConnection = vpnExtension.createVpnConnection(this.context);
       hilog.info(0x0000, 'testTag', 'create success');
-      this.vpnConnection?.destroy(this.vpnId);
+      this.vpnConnection?.destroy(this.vpnId).catch(() => {
+        hilog.error(0x0000, 'testTag', 'destroy fail');
+        return false;
+      });
       // ...
   }
 };

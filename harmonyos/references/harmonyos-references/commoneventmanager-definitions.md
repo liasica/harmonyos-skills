@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneve
 title: 系统定义的公共事件
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > 系统定义的公共事件
 category: harmonyos-references
-scraped_at: 2026-09-21T06:23:02+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:2b455572e544d413eba283dcd65b0fdfa2cc7b0f03a9b4b48d0240eaeb781d49
+scraped_at: 2026-10-17T06:47:03+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:f23a02530181bab08b2328a1725cc2c7e5deb1dd57413cf4b6ba3c5376e45034
 ---
 
 本文档提供了系统定义的公共事件清单。
@@ -210,9 +210,8 @@ content_hash: sha256:2b455572e544d413eba283dcd65b0fdfa2cc7b0f03a9b4b48d0240eaeb7
 
 **说明** 
 
-应用默认只能接收自身应用的skill变化事件。
-
-申请ohos.permission.MANAGE\_SKILL\_PRIVILEGE权限后能接收自身应用和其他应用的skill变化事件。
+* 应用默认只能接收自身的Skill变化事件。
+* 应用申请ohos.permission.MANAGE\_SKILL权限后，可接收自身及其他应用的Skill变化事件。
 
 **起始版本：** 26.0.0
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawi
 title: 复杂绘制效果（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 复杂绘制效果（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:14+08:00
+scraped_at: 2026-10-17T06:42:17+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2be67c0606b8c5c3f985dcf8a5c67eeb2a15b613ca71390bfea3c6d5945367aa
+content_hash: sha256:f2583b50c99d19867c7600693411a0ccccf1110c9ce634497ffc49888731631e
 ---
 
 除了基础填充颜色、描边颜色和一些样式设置的绘制效果外，还支持通过画刷和画笔实现更多复杂的绘制效果。比如：
@@ -53,7 +53,7 @@ function drawRenderNode(canvas: drawing.Canvas) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Zsi0Jw1UTXmUGskXgihTTg/zh-cn_image_0000002762500648.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/m1b0y8C2T7iSSalGpo3Rdg/zh-cn_image_0000002765132328.png)
 
 ## 路径效果
 
@@ -144,7 +144,7 @@ canvas.drawRect(rect);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/fOfnHVkdTEK5B2tg4XMSRw/zh-cn_image_0000002791859525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Cv_leesySfWs3npcstG1lg/zh-cn_image_0000002764972406.png)
 
 ### 径向渐变着色器效果
 
@@ -177,7 +177,7 @@ canvas.drawRect(rect);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/KH_k4wnjSce61Cwuxc6CvA/zh-cn_image_0000002762500650.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ABWUFqmoQp2bIwchLwr73g/zh-cn_image_0000002765132330.jpg)
 
 ### 扇形渐变着色器效果
 
@@ -210,7 +210,7 @@ canvas.drawRect(rect);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Khp9uiAYQ1SYPllc4dE5QA/zh-cn_image_0000002791739309.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/cVREhrIrTFafEFOKghV2eg/zh-cn_image_0000002794490907.jpg)
 
 ## 滤波器效果
 

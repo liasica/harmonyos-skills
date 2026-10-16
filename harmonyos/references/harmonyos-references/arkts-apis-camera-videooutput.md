@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (VideoOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (VideoOutput)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:39:26+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:40eed6a5421d7cd901bff384c4df0dec2d1e0d90f2f17dc9d9856857ce93394c
+scraped_at: 2026-10-17T06:47:53+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:80523d5c1622d015e8c6ded2b12e4072358cc55383d70366690f56328df33d5b
 ---
 
 录像会话中使用的输出信息，继承[CameraOutput](arkts-apis-camera-cameraoutput.md)。
@@ -52,7 +52,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function startVideoOutput(videoOutput: camera.VideoOutput): void {
   videoOutput.start((err: BusinessError) => {
-    if (err.code) {
+    if (err) {
       console.error(`Failed to start the video output, error code: ${err.code}.`);
       return;
     }
@@ -467,7 +467,7 @@ getActiveProfile(): VideoProfile
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function testGetActiveProfile(videoOutput: camera.VideoOutput): camera.Profile | undefined {
+function testGetActiveProfile(videoOutput: camera.VideoOutput): camera.VideoProfile | undefined {
   let activeProfile: camera.VideoProfile | undefined = undefined;
   try {
     activeProfile = videoOutput.getActiveProfile();
@@ -614,7 +614,7 @@ function testGetVideoRotationWithOutParam(videoOutput: camera.VideoOutput): came
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
-    console.error(`The videoOutput.testGetVideoRotationWithOutParam call failed. error code: ${err.code}`);
+    console.error(`The videoOutput.getVideoRotation call failed. error code: ${err.code}`);
   }
   return videoRotation;
 }

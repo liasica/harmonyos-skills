@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 基础自定义弹出框 (CustomDialog)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 基础自定义弹出框 (CustomDialog)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c4d23cab14f724f8b1ada6c7aa6fb6ce0666bee8efe02e251979e5e3aae2ae0f
+scraped_at: 2026-10-17T06:41:13+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:ab3ef0800eae4fa2ce05f7a1082bfa12ed932bdff19645c025a2e3f0821b7612
 ---
 
 CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件更新等与用户交互响应操作。开发者可以通过CustomDialogController类显示自定义弹出框。具体用法请参考[自定义弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md)。
@@ -81,7 +81,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/hiuaMaz8QiapCXmLDpbgeQ/zh-cn_image_0000002762499684.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/w1IQIzGgRMuRMmvsRPHbqg/zh-cn_image_0000002765131368.png)
 
 ## 弹出框的交互
 
@@ -156,7 +156,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/9WN0MIzLTiKJIswP77MfAw/zh-cn_image_0000002791738345.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/RMG8HeV1RlGHBOLvz-Pi5A/zh-cn_image_0000002794489943.png)
 3. 可通过弹出框中的按钮实现路由跳转，同时获取跳转页面向当前页传入的参数。
 
    ```typescript
@@ -287,7 +287,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/rKHfER9bRnGkwFSqGwI0Qw/zh-cn_image_0000002762339766.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/bBvWvhQ0Qum6eTFa2aEJsw/zh-cn_image_0000002794410161.gif)
 
 ## 弹出框的动画
 
@@ -351,7 +351,7 @@ export struct DialogAnimationNew {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/JszMhh30T_28MtpyxO_BqA/zh-cn_image_0000002791858559.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/_rtlPNIoSEWGMgkHjBSkWw/zh-cn_image_0000002764971446.gif)
 
 ## 弹出框的样式
 
@@ -416,7 +416,7 @@ export struct DialogStyleNew {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/hktc81yhQ_iKzP6tctTi0w/zh-cn_image_0000002762499686.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/TBg4-RPERsuHowCRdkhOTQ/zh-cn_image_0000002765131370.gif)
 
 ## 嵌套自定义弹出框
 
@@ -528,13 +528,13 @@ export struct NestDialogNew {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/P-mAwKowRnu0NwUJQklzDw/zh-cn_image_0000002791738347.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/jUSG2ogyQ0yWwC9_N5u-aw/zh-cn_image_0000002794489945.gif)
 
 由于自定义弹出框在状态管理侧有父子关系，如果将第二个弹出框定义在第一个弹出框内，那么当父组件（第一个弹出框）被销毁（关闭）时，子组件（第二个弹出框）内无法再继续创建新的组件。
 
 ## 实现弹出框的物理返回拦截
 
-执行点击遮障层关闭、侧滑（左滑或右滑）、三键Back、键盘ESC关闭等交互操作时，如果注册了[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)中的onWillDismiss回调函数，弹出框不会立即关闭。在回调函数中，通过[DismissDialogAction](../harmonyos-references/ts-methods-custom-dialog-box.md#dismissdialogaction12)中的reason属性获取阻拦关闭弹出框的操作类型，根据原因决定是否关闭弹出框。
+执行点击遮障层关闭、侧滑（左滑或右滑）、三键Back、键盘ESC关闭等交互操作时，如果注册了[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)中的onWillDismiss()回调函数，弹出框不会立即关闭。在回调函数中，通过[DismissDialogAction](../harmonyos-references/ts-methods-custom-dialog-box.md#dismissdialogaction12)中的reason属性获取阻拦关闭弹出框的操作类型，根据原因决定是否关闭弹出框。
 
 ```typescript
 @CustomDialog
@@ -635,7 +635,7 @@ export struct DialogWithPhysicalBack {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ppV950LITreWOhO6iqXAQg/zh-cn_image_0000002762339768.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/wdoi85rBT--9IpKode4Zxw/zh-cn_image_0000002794410163.gif)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -700,13 +700,13 @@ export struct DialogAvoidSoftKeyboard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/exXh9DMZQYSY3aitMlpjxw/zh-cn_image_0000002762339764.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/R8aOuMyLTc--TTOhI3KOgg/zh-cn_image_0000002794410159.gif)
 
 ## 获取弹出框的状态
 
 在业务模块中，页面上可能会同时出现多个弹出框。为避免重复打开相同的弹出框，建议在显示弹出框前，先通过控制器检查其当前状态。如果弹出框已处于显示状态，则不应再次打开。
 
-从API version 20开始，新增了getState接口，用于获取弹出框的当前状态。具体的弹出框状态信息，请参见[CommonState](../harmonyos-references/js-apis-promptaction.md#commonstate20)枚举的详细说明。
+从API version 20开始，新增了getState()接口，用于获取弹出框的当前状态。具体的弹出框状态信息，请参见[CommonState](../harmonyos-references/js-apis-promptaction.md#commonstate20)枚举的详细说明。
 
 以下示例通过[getDialogController](../harmonyos-references/ts-custom-component-api.md#getdialogcontroller18)和[CustomDialogController](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontroller)两种方法，实现了获取弹出框当前状态的功能。
 
@@ -768,4 +768,4 @@ export struct GetDialogStatus {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ov0wHO_MReyNPFstBqYzZQ/zh-cn_image_0000002791858561.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/IahHv6btQ_Kaa1bkt3VZZQ/zh-cn_image_0000002764971448.gif)

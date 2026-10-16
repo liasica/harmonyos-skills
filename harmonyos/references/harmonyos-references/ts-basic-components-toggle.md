@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Toggle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Toggle
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:01+08:00
+scraped_at: 2026-10-17T06:44:55+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:d66555b05a62cfc611dacbf48eab97e7d6b283c5c885f2f23fecddd92d8e46ce
+content_hash: sha256:2b50a1eba2aad64fbe30a76ffdc95c242a18209debfa2f74f4b5a71e96e060c9
 ---
 
 组件提供勾选框样式、状态按钮样式和开关样式，适用于需要快速切换状态或进行单选确认的场景，能够有效提升交互体验与界面的直观性。
@@ -293,7 +293,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/0V-dS-35QZ-n5I2Hd4eSOA/zh-cn_image_0000002762501872.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/-6yxA36qRaiY4KUITWBZXw/zh-cn_image_0000002764973646.gif)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -335,7 +335,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/LSAe0hoYSZSIYAeCEfuBJg/zh-cn_image_0000002791740535.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/FFAtxKBRQNuSJxt6TM3kUA/zh-cn_image_0000002765133568.gif)
 
 ### 示例3（自定义Toggle样式）
 
@@ -395,7 +395,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/dmubDcWZQYa6ghi02p96OA/zh-cn_image_0000002762341962.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/weqCwdtUQki8C8sZrLkVqg/zh-cn_image_0000002794492143.gif)
 
 ### 示例4（Toggle沉浸光感效果）
 
@@ -430,8 +430,8 @@ struct ToggleMaterialTest {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/KYDDGA6QQvqoxH5AZ7OHUg/zh-cn_image_0000002791860751.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/xOHFkfjDSD2JNYoUS2VeYg/zh-cn_image_0000002794412363.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/X6CeKfb3Qo6FyjyuUHWdcg/zh-cn_image_0000002762501874.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/UN0HVz-zTd2MoiaqkLP80Q/zh-cn_image_0000002764973648.gif)

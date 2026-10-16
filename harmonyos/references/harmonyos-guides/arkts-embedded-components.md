@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-embedde
 title: 同应用进程嵌入式组件 (EmbeddedComponent)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 嵌入式组件 > 同应用进程嵌入式组件 (EmbeddedComponent)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:12+08:00
+scraped_at: 2026-10-17T06:41:17+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7adad9d9dad88f3012b77c322aca03585b81465f612f9cc3c3ae95807376cf88
+content_hash: sha256:83f55afde3dd002d424bdceefb4336b36fba32fcc0756c7981d797d78c78dfa8
 ---
 
 EmbeddedComponent组件允许当前页面嵌入同一应用内其他EmbeddedUIExtensionAbility提供的UI内容，这些UI运行在独立进程中，提供更高的安全性和稳定性。
@@ -247,5 +247,5 @@ struct Extension {
 
 1. 在支持EmbeddedUIExtensionAbility的设备上启动应用；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/kxE2fcBkQu69aPxBDwEDSw/zh-cn_image_0000002791858769.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/RHJO5XhdSfi62RC9GA8KIA/zh-cn_image_0000002764971654.jpg)
 2. 点击terminateSelfWithResult按钮，提供方内容消失，页面显示onTerminated信息。

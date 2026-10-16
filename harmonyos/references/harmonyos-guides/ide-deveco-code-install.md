@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 下载与安装
 breadcrumb: 指南 > DevEco Code > 下载与安装
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:55+08:00
+scraped_at: 2026-10-17T06:43:53+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:8d854f74f2b9be04e3235b83c5081b4a790c2cc045a991239df50ffb9c71fa9d
+content_hash: sha256:f51fd2a0c8d3f2eb73a35fcc48012beb14604bc8ad5c79995a5f49da4a0a720b
 ---
 
 DevEco Code支持通过npm包管理器进行分发，开发者可以在系统命令窗口或PowerShell中全局安装后，独立调用相关命令，灵活性高。同时，DevEco Code也支持在DevEco Studio的集成终端中直接使用，开发者无需额外配置即可在DevEco Studio终端调用相关命令，操作便捷。
@@ -205,19 +205,19 @@ npm uninstall -g @deveco/deveco-code   // 保留运行时数据，只卸载安�
 
 在鸿蒙电脑版DevEco Studio的菜单栏点击**安装DevEco Code**，等待完成安装。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/YljTJVDDSb2tCNspkg06Gg/zh-cn_image_0000002769879513.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/657lT1SwTy6hVnDocHcxEg/zh-cn_image_0000002769879513.png "点击放大")
 
 ### 启动与登录
 
 1. 安装完成后，点击**新对话**新建并开启一个会话。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/1o0PR4pwQqCkKgtNb1EXLg/zh-cn_image_0000002769999383.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/baynOwEySgWgCYDxK8I31w/zh-cn_image_0000002769999383.png)
 2. 选择信任当前文件夹，并点击链接登录华为账号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/T6xHBCNERiqBbFFvJznPiA/zh-cn_image_0000002740480074.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/CF3VF2qfQSyKNg05uwvQvA/zh-cn_image_0000002740480074.png)
 3. 登录完成后，在终端开始体验DevEco Code。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/pK0Cg1yZTfSeXTnDzKvGNw/zh-cn_image_0000002769880455.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/qpjfI6hWQLS74DxYYMkZ3g/zh-cn_image_0000002769880455.png)
 
 ### 更新与卸载
 

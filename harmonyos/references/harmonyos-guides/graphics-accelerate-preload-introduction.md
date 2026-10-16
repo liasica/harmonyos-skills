@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 业务概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 游戏预启动 > 业务概述
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:17+08:00
+scraped_at: 2026-10-17T06:42:20+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:b0af82b242e8c8d247e2ef7fa768048d8d9213c3de9aa5b14881e1db924454d9
+content_hash: sha256:a52a0edc7986a9696fe5d9a21356e99958566d9c99081f57928a549a93ea78db
 ---
 
 从API版本26.0.0开始，支持游戏预启动能力。
@@ -22,7 +22,7 @@ content_hash: sha256:b0af82b242e8c8d247e2ef7fa768048d8d9213c3de9aa5b14881e1db924
 
 * 游戏预启动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/pf5NKyzqRR6HkTS2_xVKmg/zh-cn_image_0000002791739405.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/ZwZEl4xiTKWbTCYXQvjmWQ/zh-cn_image_0000002794491005.gif "点击放大")
 * 游戏未预启动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/9vfFZ7N5T_aMib2jgdCMiA/zh-cn_image_0000002762340826.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/1Li969TkTqW3307z5SOdrg/zh-cn_image_0000002794411225.gif "点击放大")

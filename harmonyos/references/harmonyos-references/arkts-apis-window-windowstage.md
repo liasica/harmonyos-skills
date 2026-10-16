@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (WindowStage)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (WindowStage)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:41+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:a8267ecc7b27044faf24c3489fa35cf177a51616aea2804eb71151c57b2af712
+scraped_at: 2026-10-17T06:44:38+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:8441f650e262df7ddfd66d774290a15c5e80bed02657c92a2a12af9b730b6946
 ---
 
 **说明** 
@@ -1305,9 +1305,9 @@ on(eventType: 'windowStageClose', callback: Callback<void>): void
 
 **设备行为差异：**
 
-在HarmonyOS 6.1之前，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备及不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上调用返回801错误码。
+在HarmonyOS 6.1.0之前，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备及不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上调用返回801错误码。
 
-从HarmonyOS 6.1开始，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效，切换到[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态后生效；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效。
+从HarmonyOS 6.1.0开始，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效，切换到[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态后生效；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效。
 
 **参数：**
 
@@ -1365,9 +1365,9 @@ off(eventType: 'windowStageClose', callback?: Callback<void>): void
 
 **设备行为差异：**
 
-在HarmonyOS 6.1之前，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备及不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上调用返回801错误码。
+在HarmonyOS 6.1.0之前，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备及不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上调用返回801错误码。
 
-从HarmonyOS 6.1开始，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效，切换到[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态后生效；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效。
+从HarmonyOS 6.1.0开始，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效，切换到[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态后生效；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效。
 
 **参数：**
 
@@ -1731,9 +1731,9 @@ setWindowRectAutoSave(enabled: boolean): Promise<void>
 
 **设备行为差异：**
 
-在HarmonyOS 6.1之前，该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
+在HarmonyOS 6.1.0之前，该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
 
-从HarmonyOS 6.1开始，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效，切换到[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态后生效；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效。
+从HarmonyOS 6.1.0开始，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效，切换到[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态后生效；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效。
 
 **参数：**
 
@@ -1812,9 +1812,9 @@ setWindowRectAutoSave(enabled: boolean, isSaveBySpecifiedFlag: boolean): Promise
 
 **设备行为差异：**
 
-在HarmonyOS 6.1之前，该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
+在HarmonyOS 6.1.0之前，该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
 
-从HarmonyOS 6.1开始，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效，切换到[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态后生效；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效。
+从HarmonyOS 6.1.0开始，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效，切换到[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态后生效；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错不生效。
 
 **参数：**
 
@@ -1880,9 +1880,9 @@ isWindowRectAutoSave(): Promise<boolean>
 
 **设备行为差异：**
 
-在HarmonyOS 6.1之前，该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
+在HarmonyOS 6.1.0之前，该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
 
-从HarmonyOS 6.1开始，该接口在支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备正常调用；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错，返回false。
+从HarmonyOS 6.1.0开始，该接口在支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备正常调用；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备调用不报错，返回false。
 
 **返回值：**
 

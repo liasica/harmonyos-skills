@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-sta
 title: 查看ArkUI状态变量
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > 查看ArkUI状态变量
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:28+08:00
+scraped_at: 2026-10-17T06:43:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:426864d7d08ea04d423ce533d4afecb2ec046437819a3176401c1b5e40ae92e5
+content_hash: sha256:205de8f7fe87d595e44322fcb6d8ef5c5e8a99064f73cdcedf66dc2a795df850
 ---
 
 从DevEco Studio 6.0.2 Beta1版本开始，支持在调试时查看ArkUI状态变量的实时变化情况。
 
-在调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/YmoWrbTRQTC74OmES1mDeA/zh-cn_image_0000002731541933.png)，勾选**ArkUI State**，打开ArkUI状态变量面板。
+在调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/gMdrGidOQp2EfwUUDmLKQg/zh-cn_image_0000002731541933.png)，勾选**ArkUI State**，打开ArkUI状态变量面板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UG7V-b3iQymnSoz5nGUb9A/zh-cn_image_0000002701822664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/eeKW7S6vRwuEQjPlGGiiRA/zh-cn_image_0000002701822664.png)
 
 状态变量面板分为总览（Summary）和当前值（Current Value）两个子面板：
 
 * 总览面板显示了当前应用运行时，状态变量更新的总体情况，包含了状态变量的名称、更新次数、装饰器类型、所属组件、所属类、当前值。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/X7b20UaeTHmZxWtThpOxdw/zh-cn_image_0000002701662744.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/1h3k3_WjRlq2iZbIfaPPKw/zh-cn_image_0000002701662744.png)
 * 当前值面板记录了状态变量实时变化的数据，包含了状态变量的更新时间、名称、所属组件、所属类、装饰器类型、当前值、影响的组件数量。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/zwmaJAgiTIi-RTmUPzkCZQ/zh-cn_image_0000002731381961.png)当点击右侧的箭头时，新弹出的面板将显示当前选中状态变量影响的组件列表，包含影响组件的组件名、组件ID、是否为自定义组件。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/BdATtfdRQuunAOqjnVLoXw/zh-cn_image_0000002731381961.png)当点击右侧的箭头时，新弹出的面板将显示当前选中状态变量影响的组件列表，包含影响组件的组件名、组件ID、是否为自定义组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/lKqexJCSQi-3JU0nOWBuuw/zh-cn_image_0000002731541929.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ljQJpdFuTDmaoqwPp2BW-Q/zh-cn_image_0000002731541929.png)
 
 **说明** 
 

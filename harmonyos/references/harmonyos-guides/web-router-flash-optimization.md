@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-router-fl
 title: 优化跳转至新Web组件过程中的页面闪烁现象
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web渲染和布局 > 优化跳转至新Web组件过程中的页面闪烁现象
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:18+08:00
+scraped_at: 2026-10-17T06:41:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ddf377602e835af452a214dbbbb023192eff708584af6b8f6944ecae6f4173be
+content_hash: sha256:1360ae7cdf18841b8efbffa16a2f29bf03d18ae86e29ff7c94bde759f4eb6fbd
 ---
 
 应用使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)等路由策略导航至Web组件页面时，在网页加载过程中，页面底部可能出现闪烁现象，这会影响用户体验。
@@ -14,7 +14,7 @@ content_hash: sha256:ddf377602e835af452a214dbbbb023192eff708584af6b8f6944ecae6f4
 
 使用Navigation等路由策略导航至Web组件页面时，通常根据网页的回调通知判断是否隐藏系统导航栏。若决定隐藏，Web组件布局会进行调整。这一布局调整过程可简化为如下四个阶段：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/XFXEd7jBSUqfLpUyCYng-A/zh-cn_image_0000002762500060.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/8M8HjX3aRQC_xeOd_WjjkQ/zh-cn_image_0000002765131746.png)
 
 图中四个状态的说明（从左至右）：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ComposeListItem
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ComposeListItem
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:18+08:00
+scraped_at: 2026-10-17T06:45:10+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:30943445dd31d698681f84fdf7d30257ad78b5bd15c4e59abf1e3029800c815a
+content_hash: sha256:9815fdb014f116758c4cf6b15649fc75c106aa2c7dc666fc2b208dd30ab207bd
 ---
 
 该组件用于展示一系列宽度相同的列表项，适用于展示连续、多行的同类数据组合（如图片与文本）。
@@ -199,7 +199,7 @@ struct ComposeListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/dxXJPuEcQBiHj-zxnEm8ag/zh-cn_image_0000002762502310.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/z9JoQXz-QKSqBZvPVWy46Q/zh-cn_image_0000002764974068.jpg)
 
 ### 示例2（设置右侧不同元素自定义播报）
 
@@ -282,7 +282,7 @@ struct ComposeListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/oQM3pdKgSOGuVcR8hHdxAg/zh-cn_image_0000002791740971.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/2Lg7Ed6fSDi7JnLOli9U4Q/zh-cn_image_0000002765133992.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -357,4 +357,4 @@ struct ComposeListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/k_Gi0md1RxCrbLQ2LLKb-A/zh-cn_image_0000002762342394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/DnrLw-mPTemWsqvt0QzlUw/zh-cn_image_0000002794492567.png)

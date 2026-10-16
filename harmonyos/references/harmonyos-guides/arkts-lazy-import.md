@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-lazy-im
 title: 延迟加载 (lazy import)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 延迟加载 (lazy import)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:00+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:aeb14b67c8c04087929c7e8daf9e7ec7f05a9b6c502f3a11716065bcd5f736df
+scraped_at: 2026-10-17T06:41:04+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:d1d37e896f66c6c72970ce6d234651c7c9e4d5f8315430d2befb20ee1f15c124
 ---
 
 随着应用程序功能的扩展，冷启动时间显著增加，主要是因为启动初期加载了大量未实际执行的模块。这不仅延长了应用的初始化时间，还浪费了资源。需要精简加载流程，剔除非必需的文件执行，优化冷启动性能，确保用户体验流畅。
@@ -44,11 +44,15 @@ function useModules(): void{
     let xx = a;
     let yy = c;
 }
+```
 
+```typescript
 // mod1.ets
 export let a = "mod1 executed"
 console.info(a);
+```
 
+```typescript
 // mod2.ets
 export let c = "mod2 executed"
 console.info(c);
@@ -179,11 +183,15 @@ import type lazy { obj } from "./mod";    // 不支持，编译器、应用编�
 export let a = "Variable A from mod1";
 export let b = "Variable B from mod1";
 console.info("mod1 executed");
+```
 
+```typescript
 // mod2.ets
 export let c = "Variable C from mod2";
 console.info("mod2 executed");
+```
 
+```typescript
 // main.ets
 import lazy { a } from "./mod1";    // 从"mod1"内获取a对象，标记为延迟加载
 import { c } from "./mod2";
@@ -332,7 +340,7 @@ ReferenceError: module environment is undefined
 
 子线程文件名：data/app/el2/100/base/com.example.myapplication/files/com.example.myapplication\_18089\_redundant\_file.txt
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/AaQDDULNTkGBIIiGlRSNPw/zh-cn_image_0000002791737755.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/VYzM-ioAThiXWbXcp24C2Q/zh-cn_image_0000002794489351.png)
 
 ### 检测原理
 
@@ -515,7 +523,9 @@ export function func() {
 ```javascript
 // A.ets
 export let A = "A";
+```
 
+```javascript
 // Index.ets
 import { A } from "./A";
 
@@ -535,7 +545,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/s4uBEc1tSf6aOkGio7nNTw/zh-cn_image_0000002762339182.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/P3Z1wk4ETxOSEK5T4OfgXA/zh-cn_image_0000002794409573.png)
 
 通过抓取Trace图查看调用栈，可以发现应用在冷启动时加载了A文件。
 
@@ -554,7 +564,7 @@ struct Index {
    ```
 4. 对上述示例代码获取到的文件进行分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/FR-r4sGgTViNOKfVgWGYRg/zh-cn_image_0000002791857975.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/9ssuKIRQTcqlPjRNqma0pA/zh-cn_image_0000002764970852.png)
 
 **修改方式**
 
@@ -563,7 +573,9 @@ struct Index {
 ```javascript
 // A.ets
 export let A = "A";
+```
 
+```javascript
 // Index.ets
 import lazy { A } from "./A"; // 此处添加lazy关键字，标记该文件可延迟加载
 
@@ -583,7 +595,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/7avKHmTwRR23f77kOzacGg/zh-cn_image_0000002762499098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/zsGrifF7Sy-pFFXp7Vfl4A/zh-cn_image_0000002765130776.png)
 
 通过抓取Trace图查看调用栈可以发现，使用lazy-import标识后，应用在冷启动时不再加载A文件。
 

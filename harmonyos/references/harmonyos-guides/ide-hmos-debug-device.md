@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 调试概述
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 调试概述
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:48+08:00
+scraped_at: 2026-10-17T06:43:46+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f949c866dcd84cbb787a24653ac38770a4076dfc76cae9c1bbe9f6a3d77d59b1
+content_hash: sha256:b1b4d928d9498a30cf42ecc8e1c43414248e06ba7a573640abb8d3a22dd36733
 ---
 
 鸿蒙电脑DevEco Studio提供了丰富的HarmonyOS应用/元服务调试能力，支持JS、ArkTS、C/C++调试，帮助开发者更方便、高效地调试应用/元服务。
 
 HarmonyOS应用/元服务调试支持使用本机、真机设备、多设备预览器调试。接下来以使用真机设备为例进行说明，详细的调试流程如下图所示。关于本机和多设备预览器的调试请参考[使用本地真机运行应用](ide-hmos-run-device.md)和[使用多设备预览器运行应用](ide-hmos-run-previewer.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/i99B8y93TN6Y5uPwxbEwdg/zh-cn_image_0000002779728823.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/2XTrWRtDSDCrz29C2bCU7A/zh-cn_image_0000002779728823.png)
 
 1. [配置签名信息](ide-hmos-signing.md)：使用真机设备进行调试前需要对HAP进行签名。
 2. [设置调试代码类型](ide-hmos-run-debug-configurations.md#section1170735241213)：调试类型默认为Detect Automatically**。**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-lint
 title: Code Linter代码检查
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:19+08:00
+scraped_at: 2026-10-17T06:43:19+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:0979efdc25d090b38a468ea38b250b20116a7ea9da2012abf17b7996b7ef5623
+content_hash: sha256:bc8e71fa5251349960940819c0ad3b12126ee039413f26aee03c8a1e6a4e37a0
 ---
 
 Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/编程规范方面的检查。检查规则支持配置，配置方式请参考[配置代码检查规则](ide-code-linter.md#section19310459444)。
@@ -117,11 +117,11 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 
 在已打开的代码编辑器窗口右键点击**Code Linter**，或在工程管理窗口中鼠标选中单个或多个工程文件/目录，右键选择**Code Linter** **> Full Linter**执行代码全量检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/m7ueHz1YTq-TUYx5qNoQaQ/zh-cn_image_0000002701663480.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/Mpc4bbQHRF6gR4Ki3no_8Q/zh-cn_image_0000002701663480.png)
 
 如只需对Git工程中增量文件（包含新增/修改/重命名）进行检查，可直接右键选择**Code Linter** **> Incremental Linter**，或先点击commit界面右下角点击齿轮图标，勾选**Code Linter****-****Incremental** **Check**后，再点击**Commit**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/FrWKLhbKR1y-9ifm3uIG9g/zh-cn_image_0000002701823400.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/llk2s1dPR7uVlx-ukpDJrA/zh-cn_image_0000002701823400.png "点击放大")
 
 **说明** 
 
@@ -141,23 +141,23 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 
 扫描完成后，在底部工具面板查看检查结果。勾选**Defects**中不同告警等级，可分别查看对应告警级别的信息。点击**Filter by scene**下拉菜单，可以筛选不同规则的检查结果。双击某条告警结果，可以跳转到对应代码缺陷位置；选中告警结果时，可以在右侧**Defect Description窗口**查看告警对应的规则详细说明，其中包含正向和反向示例，并根据其中的建议修改代码；搜索规则时，可设定是否全词匹配和大小写敏感。
 
-单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/FrdJ2txjR8aMxFVktkgDOw/zh-cn_image_0000002731382707.jpg)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/eCbjBeIxQduaMags9O2uIw/zh-cn_image_0000002731382709.png)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
+单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/1RD4rBb4TISNz2fwoa9PtA/zh-cn_image_0000002731382707.jpg)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/umz97N7bQuecZaCH-NglFA/zh-cn_image_0000002731382709.png)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/NlqP8jmnTAe1urXT-7yyTQ/zh-cn_image_0000002701663476.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/MHho6L45QJCsIh0pcyHenA/zh-cn_image_0000002701663476.png)
 
 **屏蔽告警信息**：
 
-* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/cCoSzKt2SUuKhJQFWAjlIg/zh-cn_image_0000002731382701.jpg)**Ignore**图标**，**可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板**Ignore**图标批量执行操作。
+* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/_1cuBLfGSZ28kU6OYSksIQ/zh-cn_image_0000002731382701.jpg)**Ignore**图标**，**可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板**Ignore**图标批量执行操作。
 * 在文件顶部添加注释/\* eslint-disable \*/可以屏蔽整个文件执行code linter检查，在eslint-disable 后加入一个或多个以逗号分隔的规则Id，可以屏蔽具体检查规则。
 * 在需要忽略检查的代码块前后分别添加/\* eslint-disable \*/和/\* eslint-enable \*/添加注释信息，再执行**Code Linter，**将不再显示该代码块扫描结果；在待屏蔽的代码行前一行添加/\* eslint-disable-next-line \*/，也可屏蔽对该代码行的Code Linter检查。
 
 如需恢复忽略的报错信息，可以直接删除该行上方的注释，重新执行**Code Linter**检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/7BjGEruYSEa-1ogm0ccn7A/zh-cn_image_0000002701823402.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/SeennbFgTTKoG6csDopX4Q/zh-cn_image_0000002701823402.png)
 
-**导出检查结果**：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/qiEm3ug5S0iBxsMFa7KxNQ/zh-cn_image_0000002731542677.jpg)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
+**导出检查结果**：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/gZ4Fmq3uS1CW6sGmlVKVKA/zh-cn_image_0000002731542677.jpg)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/E5u3Gg8_Qr-Qd9nNWDbNfQ/zh-cn_image_0000002731542673.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/7EPfoZXaQr-nNMWzoTlNKQ/zh-cn_image_0000002731542673.png)
 
 ## 通过命令行进行代码检查
 
@@ -223,7 +223,7 @@ Foo.bar();
 
 对pages/Index.ets文件执行代码检查，检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/CHcrpAlFT3-PqSq8iG5SHg/zh-cn_image_0000002701823396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/IMc9u67eQZOaiDBcoPkbmQ/zh-cn_image_0000002701823396.png)
 
 ### 示例2：对类名Foo的命名风格校验
 
@@ -283,7 +283,7 @@ class foo {    //此处构造一个命名风格错误的示例，foo为错误使
 
 对pages/Index.ets文件执行代码检查，检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/g0206mP4RsKaSsqyuTo13w/zh-cn_image_0000002731382703.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/i0dgXnyiT7yCpHIehIgtSQ/zh-cn_image_0000002731382703.png)
 
 ### 示例3：检查代码文件的命名风格
 
@@ -318,4 +318,4 @@ class foo {    //此处构造一个命名风格错误的示例，foo为错误使
 
 对pages/test.ets文件执行代码检查，检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/pYOxQvAUSw6RiBfRLefhfA/zh-cn_image_0000002731542669.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/VD1XvUHEQv6sVRZcIoHc5w/zh-cn_image_0000002731542669.png)

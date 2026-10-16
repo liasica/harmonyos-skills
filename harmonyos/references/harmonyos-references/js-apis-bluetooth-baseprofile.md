@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.baseProfile (蓝牙baseProfile模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.baseProfile (蓝牙baseProfile模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:28e1a3e7e42d550fede11acd186caaa50a2994f1e078d97bfdd15ef4166f36e6
+scraped_at: 2026-10-17T06:46:32+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:a40b635053494635307db4ac059e32e9922608dc430e461a10517f34bfa08757
 ---
 
 本模块提供不同的蓝牙技术协议的基础公共方法，为[A2DP](../harmonyos-guides/terminology.md#a2dp)、[HFP](../harmonyos-guides/terminology.md#hfp)、[PAN](../harmonyos-guides/terminology.md#pan)等蓝牙[Profile](../harmonyos-guides/terminology.md#profile)提供连接状态查询、连接状态订阅与取消订阅等公共能力，适用于需要在应用中统一管理多种蓝牙Profile连接状态的场景。
@@ -91,10 +91,7 @@ getConnectedDevices(): Array<string>
 
 获取和本端设备间已连接Profile的对端设备列表。例如，在蓝牙音频播放应用中，可通过该方法获取当前已连接的A2DP音频设备列表以进行设备展示或管理。
 
-**需要权限**：
-
-* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 (ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC)
-* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -193,10 +190,7 @@ on(type: 'connectionStateChange', callback: Callback<StateChangeParam>): void
 
 订阅Profile的连接状态变化事件。使用Callback异步回调。例如，在蓝牙音频应用中，当耳机连接或断开时实时更新播放界面状态或提示用户。
 
-**需要权限**：
-
-* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 (ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC)
-* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 

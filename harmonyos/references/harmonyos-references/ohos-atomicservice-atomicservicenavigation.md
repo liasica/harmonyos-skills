@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceNavigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceNavigation
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:16+08:00
+scraped_at: 2026-10-17T06:45:07+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:e327f8e5dbd118f1fde94e2ac076e73aced91db4592d7b4e59107aa2a8cdb45b
+content_hash: sha256:32c32d70619cbadabf9b0911f2466791d15e31f6fa774c2d5f0ce1bd7057e1d2
 ---
 
 作为Page页面的根容器使用，其内部默认包含了标题栏、内容区。其中，内容区在首页默认显示导航内容，在非首页显示[NavDestination](ts-basic-components-navdestination.md)的子组件，首页和非首页通过路由进行切换。
@@ -329,7 +329,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/Nyt8_-AeTT6tjx8nTN1g0g/zh-cn_image_0000002762342362.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/eu6W1c6CRwyYfUp1uo99rg/zh-cn_image_0000002794492537.jpg)
 
 ### 示例2（抽屉样式，宽屏场景下插入自定义布局）
 
@@ -468,7 +468,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/sexEI9AoQ5GUyqfy7fpFCQ/zh-cn_image_0000002791861155.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Peimmul-SwyZ41Tw6nH6zQ/zh-cn_image_0000002794412759.png)
 
 ### 示例3（侧边栏使用场景）
 
@@ -608,4 +608,4 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/XS4_PsVJRSy7GKdaoqdZVg/zh-cn_image_0000002762502282.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/mqHtmlMBTPuJ_6pMaF8Gjg/zh-cn_image_0000002764974040.png)

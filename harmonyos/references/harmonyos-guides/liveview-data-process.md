@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-data
 title: 设置数据处理位置
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发准备 > 设置数据处理位置
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:31+08:00
+scraped_at: 2026-10-17T06:42:33+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:7a2be2bfe31e0af6a3c6b5f48ddfb0a57954307e7ea1e24faf30f257a72bcb3e
+content_hash: sha256:39fde74a5a936654f33dbb4576194b3a2e35852e8e1dce364bfe112a2619bf8e
 ---
 
 若开发者要[通过Push Kit更新实况窗](liveview-update-by-push.md)，需要设置默认数据处理位置为“中国”，否则可能导致推送消息无法正常下发，从而影响通过Push Kit更新实况窗的功能。
@@ -17,7 +17,7 @@ content_hash: sha256:7a2be2bfe31e0af6a3c6b5f48ddfb0a57954307e7ea1e24faf30f257a72
 3. 进入“项目设置 > 数据处理位置”页面，点击“管理”。
 4. 在“是否已启用”栏勾选“中国”，并在“是否设为默认”栏将中国设置为默认数据处理位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/8ZSXp_u_T1O4R4jpHM5_TQ/zh-cn_image_0000002791859869.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/IIRyZrpXRpi8tlkgd5726g/zh-cn_image_0000002764972756.png)
 5. 设置完成后，点击“保存”。
 
 **说明** 

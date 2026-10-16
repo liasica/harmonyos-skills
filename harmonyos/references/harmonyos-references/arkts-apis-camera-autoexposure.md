@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AutoExposure)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (AutoExposure)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:36c5e984b7039c7a1072ff16100ca335318327aec8e33ab1fca14509f6b8529a
+scraped_at: 2026-10-17T06:47:51+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:2d48626af10e2dc19e63dacfa96c75f5262f8ac63de3167f806441be40dc0e8f
 ---
 
 AutoExposure继承自[AutoExposureQuery](arkts-apis-camera-autoexposurequery.md)。
@@ -397,7 +397,7 @@ function callback(exposureState: camera.ExposureState): void {
   console.info(`exposureState: ${exposureState}`);
 }
 
-function registerPhotoOutputCaptureStart(captureSession: camera.PhotoSession): void {
+function registerExposureStateChange(captureSession: camera.PhotoSession): void {
   captureSession.onExposureStateChange(callback);
 }
 ```
@@ -431,11 +431,11 @@ function callback(exposureState: camera.ExposureState): void {
   console.info(`exposureState: ${exposureState}`);
 }
 
-function unregisterPhotoOutputCaptureStart(captureSession: camera.PhotoSession): void {
+function unregisterExposureStateChange(captureSession: camera.PhotoSession): void {
   captureSession.offExposureStateChange(callback);
 }
 
-function unregisterPhotoOutputCaptureStartWithoutParam(captureSession: camera.PhotoSession): void {
+function unregisterExposureStateChangeWithoutParam(captureSession: camera.PhotoSession): void {
   captureSession.offExposureStateChange();
 }
 ```

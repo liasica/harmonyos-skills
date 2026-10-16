@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: manager（星闪开关能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > manager（星闪开关能力）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:55+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:6745d9b6dbb6f06c664b7e6b502e078dbbd33c84009721ee2fdd24b16428a43e
+scraped_at: 2026-10-17T06:46:40+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:138d63d7dc1b3ba5bb07dccfca4f0339cfaeefdeecd25889ab42d3900c8a9b9b
 ---
 
 本模块提供了管理星闪基础能力，包括获取设备信息、订阅状态变化事件等。
@@ -90,7 +90,7 @@ getState(): NearlinkState
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -111,7 +111,7 @@ try {
 
 isNearLinkSupported(): boolean
 
-查询当前设备是否支持星闪服务。
+查询当前设备是否支持星闪服务。在使用其他星闪接口前，您可以调用本接口查询设备是否支持星闪。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -169,8 +169,8 @@ getLocalName(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -214,8 +214,8 @@ getPairedDevices(): Array<string>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -262,8 +262,7 @@ on(type: 'stateChange', callback: Callback<NearlinkState>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -315,8 +314,7 @@ off(type: 'stateChange', callback?: Callback<NearlinkState>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -359,9 +357,8 @@ on(type: 'pairingStateChange', callback: Callback<PairingStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -407,9 +404,8 @@ off(type: 'pairingStateChange', callback?: Callback<PairingStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -452,9 +448,8 @@ on(type: 'connectionStateChange', callback: Callback<ConnectionStateParam>): voi
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -500,9 +495,8 @@ off(type: 'connectionStateChange', callback?: Callback<ConnectionStateParam>): v
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -545,9 +539,8 @@ on(type: 'acbStateChange', callback: Callback<AcbStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**
@@ -593,9 +586,8 @@ off(type: 'acbStateChange', callback?: Callback<AcbStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700099 | Operation failed. |
 
 **示例：**

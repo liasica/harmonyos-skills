@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-scala
 title: Muls
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 标量双目指令 > Muls
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:50+08:00
+scraped_at: 2026-10-17T06:42:51+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:5cb72b25d832e0a016bf4927cda1e76557b5a4f36d1f88151788c6027d694ff0
+content_hash: sha256:d8cdba96c01acceff7cb36aa0a8150781a34c5d3c97ae59ff14c38e42a16a81e
 ---
 
 ## 功能说明
 
 矢量内每个元素与标量求积，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qSYlU8i1Rtqy85721ehXmw/zh-cn_image_0000002791860211.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/HjC1pJ4gS0G0XbXziaq5qQ/zh-cn_image_0000002794411825.png)
 
 ## 函数原型
 

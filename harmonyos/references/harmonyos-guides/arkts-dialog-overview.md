@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-
 title: 弹窗概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹窗概述
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:08+08:00
+scraped_at: 2026-10-17T06:41:12+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1d276012bbdce3919cb8b56fbf79adffdcbb36fc9fb37f68fbf50753c684c98f
+content_hash: sha256:e2d31aba47c8026471de78591f3d231a7cbc4ad7ac9e5f574fcc7b331599d5cc
 ---
 
 弹窗一般指打开应用时自动弹出或者用户行为操作时弹出的UI界面，用于短时间内展示用户需关注的信息或待处理的操作。
 
 从ArkUI组件树层级上来看，Overlay浮层、弹窗、模态、带Order的Overlay浮层都挂载在Root节点下。弹窗、模态、带Order的Overlay浮层根据设置的层级（数字大小）进行逐层显示，并且全部显示在Overlay浮层上面。如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/XjTjyFZ8Qi6NTKzldnOpgQ/zh-cn_image_0000002791858553.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/wYhNpuhvRnuYJy_Exh4IXQ/zh-cn_image_0000002764971440.png)
 
 对于一个多页面应用，基本树结构如下所示。多个Page页面之间使用[Router](../harmonyos-references/js-apis-router.md)的接口进行跳转。[NavBar](../harmonyos-references/ts-basic-components-navigation.md#navbar12)和[NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)组成的页面可以通过[Navigation](../harmonyos-references/ts-basic-components-navigation.md)接口进行跳转。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/fN4RrposT0iMAFbqMnRjAg/zh-cn_image_0000002762499680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/E6A-Vlw5QQ6rJ14mjLrT3g/zh-cn_image_0000002765131364.png)
 
 而[Dialog](arkts-base-dialog-overview.md)、[Popup](arkts-popup-overview.md)、[Menu](arkts-menu-overview.md)、[OverlayManager](arkts-create-overlaymanager.md)、[Toast](arkts-create-toast.md)、[bindSheet](arkts-sheet-page.md)以及[bindContentCover](arkts-contentcover-page.md)的组件在结合路由、导航使用时存在如下几种显示模式。
 
@@ -24,7 +24,7 @@ content_hash: sha256:1d276012bbdce3919cb8b56fbf79adffdcbb36fc9fb37f68fbf50753c68
 
   如下图所示，触发弹窗显示时，弹窗层级要高于Page页面和Navigation页面，即如果弹窗组件没有被关闭的话，页面切换前后，弹窗组件都会显示在页面上方，而不会出现新的路由/导航页面覆盖在弹窗之上的情况。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/iNqsRMbAQ-K7dWzy7s65nw/zh-cn_image_0000002791738341.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/471_vuT9QOaaO-rxPoGauQ/zh-cn_image_0000002794489939.png)
 
   **说明** 
 
@@ -33,14 +33,14 @@ content_hash: sha256:1d276012bbdce3919cb8b56fbf79adffdcbb36fc9fb37f68fbf50753c68
 
   当开发者期望弹窗是一个页面内的弹窗，即当路由/导航切换页面时，弹窗会被跳转的页面覆盖，随着页面切回原页面，弹窗仍然正常显示。此时弹窗层级如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/drN2dYtLT1eJoW85hUOSlg/zh-cn_image_0000002762339762.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/3iltNQ65T1G043b0vBLkGw/zh-cn_image_0000002794410157.png)
 
   页面级弹窗功能需要结合弹窗组件的页面级能力使用，当前支持页面级能力的有[Dialog](arkts-base-dialog-overview.md)和[bindSheet](arkts-sheet-page.md)。
 * 弹窗显示在独立窗口内，窗口层级高于应用所在窗口。
 
   在PC/2in1等设备上，开发者常期望弹窗的显示在应用窗口之外，此时需要借助子窗的能力。例如自定义弹窗可以通过[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)中的showInSubWindow属性控制是否使用子窗功能。基于子窗显示的弹窗效果如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/d8lFSjibRb24D0izIUlmBg/zh-cn_image_0000002791858555.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/iGLOesifSW6iJm4vrBrsXQ/zh-cn_image_0000002764971442.png)
 
   此时弹窗组件的显示层级受窗口的层级管理控制，会高于当前应用所在的窗口，低于系统窗口（如系统输入法、系统弹窗等）。
 
@@ -81,4 +81,4 @@ content_hash: sha256:1d276012bbdce3919cb8b56fbf79adffdcbb36fc9fb37f68fbf50753c68
 * 多个弹窗组件先后弹出时，后弹出的组件的层级高于先弹出的层级，退出时按照层级从高到低的顺序逐次退出。
 * 在移动设备中，子窗模式的弹窗当前无法超出主窗口。而在2in1设备上，使用模态类弹窗时，会出现需要超出主窗口显示的场景，开发者可以通过设置showInSubWindow为true实现超出主窗口的显示效果。如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/lYqrYA0GSQCuzEYPPGeFbw/zh-cn_image_0000002762499682.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/3GNJDKHpQ-Cdadu9l8pd4A/zh-cn_image_0000002765131366.png)

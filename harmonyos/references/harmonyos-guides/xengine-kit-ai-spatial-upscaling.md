@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 空域AI超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域AI超分
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:18+08:00
+scraped_at: 2026-10-17T06:42:21+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:e662cdcc7fafce56d32628f831ae1350cb429d6a5313786d5fd3ddb208069a89
+content_hash: sha256:dafdeb866f87578a7520ef1bdf5a7fe6033df44a2120d69c8b4779c132857e7a
 ---
 
 从API版本26.0.0开始，新增支持Vulkan协议。
@@ -47,7 +47,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 * 下面是基于OpenGL ES图形API平台集成空域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/-vgzRGldQsKm8r99FKE8jg/zh-cn_image_0000002762340834.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/3z5HczTeQJWwcEkHBLf34A/zh-cn_image_0000002794411233.jpg)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale_extension_name)或[XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale2_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
@@ -60,7 +60,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 * 下面是基于Vulkan图形API平台集成空域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/BZ32SxN1R9Oobwsjywbd0g/zh-cn_image_0000002791859631.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/hVP7PUIYRZ28BmlWuFMFdg/zh-cn_image_0000002764972514.jpg)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。

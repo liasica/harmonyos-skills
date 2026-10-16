@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: svg
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > svg
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:507d240fe531b7e4ab2d38773dae12a1a25d899cb37774b8a3606d8bf56eea94
+scraped_at: 2026-10-17T06:45:19+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:dce2e798fd79decaf5269287f0d2851c0a330901bd1e7c43347967336c8088ae
 ---
 
 基础容器，主要作为svg的根节点使用，也可以在svg中嵌套使用。
@@ -34,7 +34,7 @@ content_hash: sha256:507d240fe531b7e4ab2d38773dae12a1a25d899cb37774b8a3606d8bf56
 | height | <length>|<percentage> | - | 否 | 设置组件的高度。 |
 | x | <length>|<percentage> | - | 否 | 设置当前svg的x轴坐标，根svg节点无效。 |
 | y | <length>|<percentage> | - | 否 | 设置当前svg的y轴坐标，根svg节点无效。 |
-| viewBox | string | - | 否 | 设置当前svg的视口。支持的格式为<number number number number>，4个参数分别表示min-x, min-y, width and height，viewBox的宽高和svg的宽高不一致，会以中心对齐进行缩放。 |
+| viewBox | string | - | 否 | 设置当前svg的视口。支持的格式为<number number number number>，4个参数分别表示min-x、min-y、width和height，viewBox的宽高和svg的宽高不一致，会以中心对齐进行缩放。 |
 
 ## 示例
 
@@ -56,4 +56,4 @@ content_hash: sha256:507d240fe531b7e4ab2d38773dae12a1a25d899cb37774b8a3606d8bf56
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/KM2p8_1FS6OZwsnZc7xU8Q/zh-cn_image_0000002791861347.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/SIrFa44kRaOf-iMMVNve7g/zh-cn_image_0000002794412947.png)

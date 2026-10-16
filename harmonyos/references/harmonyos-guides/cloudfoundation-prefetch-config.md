@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 配置预加载
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 配置预加载
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:25+08:00
+scraped_at: 2026-10-17T06:42:27+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:ec1f1aa21e2af9fdfe3194458502c2604c479bc2ba69bd1c81a3ae5a1b8245bf
+content_hash: sha256:e5e7e711a0183c6bd637a3a85d20b91c01ecc59c3e22be29a8b548031c99a16c
 ---
 
 安装预加载、周期性预加载和跳链安装预加载需分别进行配置，且三者均可通过云函数和开发者服务器（即HTTPS请求）两种数据来源方式来实现。
@@ -30,7 +30,7 @@ content_hash: sha256:ec1f1aa21e2af9fdfe3194458502c2604c479bc2ba69bd1c81a3ae5a1b8
 2. 在项目列表中点击您的项目，在项目下的应用列表中选择需要配置预加载的HarmonyOS应用/元服务。
 3. 在左侧导航栏选择“云开发（Serverless）> 预加载”，进入预加载页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ksfqKnauRIaqFfgV8lmFkw/zh-cn_image_0000002791859767.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/10D4yydJTH2XFUMZe9qe6A/zh-cn_image_0000002764972652.png)
 4. 根据实际需要，在“周期性预加载”、“安装预加载”或者“跳链安装预加载”区域，“数据来源”选择“云函数”，然后点击“函数名称”后的“修改”。
 
    **说明** 
@@ -38,17 +38,17 @@ content_hash: sha256:ec1f1aa21e2af9fdfe3194458502c2604c479bc2ba69bd1c81a3ae5a1b8
    * 跳链安装预加载仅支持在HarmonyOS应用中调用。
    * 由于跳链安装预加载功能需要使用App Linking Kit提供的延迟链接能力，因此在配置跳链安装预加载之前，请务必先完成延迟链接的开发。具体请参见[通过延迟链接跳转至应用详情页](applinking-deferredlink.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Fg3UGzoORrOqp75Lgwq6zg/zh-cn_image_0000002762500892.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/DteErmHBSdKwzmOozRzkfQ/zh-cn_image_0000002765132576.png)
 5. 以“周期性预加载”为例，在“函数名称”下拉框选择实现周期性预加载的函数名称。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/5zYsHv6cRVa5JGSqcVmxbg/zh-cn_image_0000002791739551.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/t3NAF13jRi2NJ8vwfCzYNw/zh-cn_image_0000002794491153.png)
 6. 点击“保存”完成周期性预加载配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/8XOrdDCDStWDAZxJctw3MQ/zh-cn_image_0000002762340972.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Dsl3cB0KQEW9pdTosglCjg/zh-cn_image_0000002794411371.png)
 7. 若配置“安装预加载”或“跳链安装预加载”，重复步骤4-6即可。
 8. （可选）若后续需要修改绑定的云函数，只需点击“函数名称”后的“修改”进行更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/kqjuhrGfR4-hMPRCZPWC4g/zh-cn_image_0000002791859769.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/rK1BI5SXTTGz_xwR9vfQ_w/zh-cn_image_0000002764972654.png)
 
 ## 数据来源为开发者服务器
 
@@ -62,7 +62,7 @@ content_hash: sha256:ec1f1aa21e2af9fdfe3194458502c2604c479bc2ba69bd1c81a3ae5a1b8
 2. 在项目列表中点击您的项目，在项目下的应用列表中选择需要配置预加载的HarmonyOS应用/元服务。
 3. 在左侧导航栏选择“云开发（Serverless）> 预加载”，进入预加载页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/2OnLNQngSxytAooYWxnPDA/zh-cn_image_0000002762500894.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/6Q6zXzhkR8Kr5pMbMORsxw/zh-cn_image_0000002765132578.png)
 4. 根据实际需要，在“周期性预加载”、“安装预加载”或者“跳链安装预加载”区域，“数据来源”选择“开发者服务器”。
 
    **说明** 
@@ -70,10 +70,10 @@ content_hash: sha256:ec1f1aa21e2af9fdfe3194458502c2604c479bc2ba69bd1c81a3ae5a1b8
    * 跳链安装预加载仅支持在HarmonyOS应用中调用。
    * 由于跳链安装预加载功能需要使用App Linking Kit提供的延迟链接能力，因此在配置跳链安装预加载之前，请务必先完成延迟链接的开发。具体请参见[通过延迟链接跳转至应用详情页](applinking-deferredlink.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/PipTozCYRuuLnhWATbK3xA/zh-cn_image_0000002791739553.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/qIVWx-gfQ3muvgceAG2pZg/zh-cn_image_0000002794491155.png)
 5. 点击“下载地址”后的“修改”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/KmHLx1PVRRSS0pWNzsF_qA/zh-cn_image_0000002762340974.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/DrXtYjYGSua2DvRgiDcpQA/zh-cn_image_0000002794411373.png)
 6. 以“周期性预加载”为例，“下载地址”以“https://”开头，输入框中输入服务器地址，配置完成后点击“保存”。
 
    需要注意以下几点：
@@ -83,7 +83,7 @@ content_hash: sha256:ec1f1aa21e2af9fdfe3194458502c2604c479bc2ba69bd1c81a3ae5a1b8
    * IP地址：须填写准确的IP地址，确保没有输入错误。
    * 端口号：如果要指定端口号，可在服务器地址后面以冒号分隔，例如https://www.example.com:443。HTTPS协议的默认端口号（443）可以省略。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Mq30W_YiQaGArqZn_Lgcfw/zh-cn_image_0000002791859771.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/XhErZULgQbCm7iC-38BK4Q/zh-cn_image_0000002764972656.png)
 
    后续AGC会周期性地向该处配置的开发者服务器（即下载地址）发起一个HTTP GET请求，其中包含的query参数请参考[开发者服务器接口规范](cloudfoundation-prefetch-cloud-interdev.md#开发者服务器接口规范)，获取到数据后会将整个HTTP body缓存在本地。
 
@@ -94,4 +94,4 @@ content_hash: sha256:ec1f1aa21e2af9fdfe3194458502c2604c479bc2ba69bd1c81a3ae5a1b8
 7. 若配置“安装预加载”，重复步骤4-6即可。
 8. （可选）若后续需要修改下载地址，只需点击“下载地址”后的“修改”进行更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/J8WeeO2nQRGKymR9OJ12CQ/zh-cn_image_0000002762500896.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/pE8BV1qfQACgl96TsXQAjA/zh-cn_image_0000002765132580.png)

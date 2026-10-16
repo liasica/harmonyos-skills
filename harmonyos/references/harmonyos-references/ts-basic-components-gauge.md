@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Gauge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Gauge
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:10+08:00
+scraped_at: 2026-10-17T06:45:03+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:24277774e3eda8d2c6122fab66fa0453da7e1b915304667838888fbad6a42190
+content_hash: sha256:2e692ece9a3f706f606b7a588a98894904d385d221fb5e218028b0104336cb9c
 ---
 
 数据量规图表组件，用于将数据展示为环形图表。适用于展示任务完成进度、性能指标、数据占比等场景，支持自定义颜色、起止角度、指针样式、阴影效果等多种视觉配置，能够直观地呈现数据状态，提升用户对数据的理解和交互体验。
@@ -382,7 +382,7 @@ struct Gauge1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/tksdi6PxRICAE6nL2WI7_w/zh-cn_image_0000002762342198.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/vYjdOKffSfKOZk7H0ZyeRA/zh-cn_image_0000002794492377.png)
 
 ### 示例2（设置单色量规图）
 
@@ -426,7 +426,7 @@ struct Gauge2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/_DKKslEHQ9WfXxXuD09xvg/zh-cn_image_0000002791860989.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/xZvxCXYCQTCiP_jnmDZMSQ/zh-cn_image_0000002794412599.png)
 
 ### 示例3（设置定制说明区）
 
@@ -488,7 +488,7 @@ struct Gauge2 {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/-KFwQ0QmTGeqkr_o68Lfpg/zh-cn_image_0000002762502116.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/-AMtDmWaRX6HLAmE571Tww/zh-cn_image_0000002764973880.png)
 
 ### 示例4（设置辅助区）
 
@@ -543,7 +543,7 @@ struct Gauge4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/vNvLddx4Q8WFhlM9iSgO8g/zh-cn_image_0000002791740771.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/JRCXF3t4RoqUskVExR4nwA/zh-cn_image_0000002765133804.png)
 
 ### 示例5（设置最大最小值）
 
@@ -585,7 +585,7 @@ struct Gauge5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/k3J1qT-pSoCqf-ou42ouww/zh-cn_image_0000002762342200.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/CYaMMvU7T8qY4hzCBmgSag/zh-cn_image_0000002794492379.png)
 
 ### 示例6（设置指针）
 
@@ -633,7 +633,7 @@ struct Gauge6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/XBdiekfBSm2WQMi4y2XnCA/zh-cn_image_0000002791860991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/qG2f8Bk9RTq9psYSvcoQPw/zh-cn_image_0000002794412601.png)
 
 ### 示例7（设置起止角度）
 
@@ -673,7 +673,7 @@ struct Gauge7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/pCH3sYiESMGQXRnCaVhcKw/zh-cn_image_0000002762502118.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Gd9XsOOnSqS2j9pUuJ9PSQ/zh-cn_image_0000002764973882.png)
 
 ### 示例8（设置定制内容区）
 
@@ -756,7 +756,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/jLENMWdCTQ-PSsDKM_qGQw/zh-cn_image_0000002791740773.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/3nzWPu7ASUGOTQAK4c3bxg/zh-cn_image_0000002765133806.gif)
 
 ### 示例9（设置隐私隐藏）
 
@@ -787,7 +787,7 @@ struct GaugeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/rpVn9th5R1mjFZD3QZjVTA/zh-cn_image_0000002762342202.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/fNHRhhkYTO6nka-KK9o9tQ/zh-cn_image_0000002794492381.gif)
 
 ### 示例10（设置自定义指针）
 
@@ -822,4 +822,4 @@ struct Gauge2 {
 </svg>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/VkWfrf8EQxSIfKf0LQMD9w/zh-cn_image_0000002791860993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/YNAZcARzT1uXvojMvYFYNg/zh-cn_image_0000002794412603.png)

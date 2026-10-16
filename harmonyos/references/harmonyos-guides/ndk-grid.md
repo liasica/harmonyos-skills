@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-grid
 title: 使用网格
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用列表与网格 > 使用网格
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:13+08:00
+scraped_at: 2026-10-17T06:41:18+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3844ba56bfed18f53db23c5f57d6b9d6c72b78c97f1d9535a23662578d3362cd
+content_hash: sha256:6efbbca6040b66a95532b29b0f2a17ef02d184df5cc5353775dd07f25f62f6e6
 ---
 
 ## 概述
@@ -139,7 +139,7 @@ grid->SetColumnsTemplate("repeat(auto-fill, 100vp)");  // 自动填充100vp宽�
 
 如下图在前面创建的6行\*4列的网格布局中放置了一些子组件，其中“0”占据2行4列，“1”占据2行2列，“2”占据1行2列，0和1之间有一行空行，模拟页面放置不同大小卡片和图标的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/p5tFA_-9S5GDv6yoLgpaFw/zh-cn_image_0000002762339982.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/CAfaRAJVS-qDvrbeiQDIMQ/zh-cn_image_0000002794410379.png)
 
 通过[OH\_ArkUI\_GridLayoutOptions\_RegisterGetRectByIndexCallback](../harmonyos-references/capi-grid-h.md#oh_arkui_gridlayoutoptions_registergetrectbyindexcallback)给网格组件设置用于获取每一个子组件位置的回调函数，开发者可以在该回调中指定每一个子组件所在的起始行号、起始列号、占用行数和占用列数，即[ArkUI\_GridItemRect](../harmonyos-references/capi-arkui-nativemodule-arkui-griditemrect.md)。上图布局可以通过如下代码实现。
 
@@ -178,7 +178,7 @@ grid->SetLayoutOptions(layoutOptions);
 
 如下图模拟了分组展示图片或文件的场景，其中作为分组名称的子组件占据一整行，其他子组件占据1行1列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/SaeUuHU3TAabNs9nlCDyaQ/zh-cn_image_0000002791858777.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ve2wFRXzRHGPwHr2ldXM8g/zh-cn_image_0000002764971662.gif)
 
 纵向滚动的网格布局，只需要设置列数，无需设置行数。
 

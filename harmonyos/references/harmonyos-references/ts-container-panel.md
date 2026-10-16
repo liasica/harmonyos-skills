@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Panel
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > Panel
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:25+08:00
+scraped_at: 2026-10-17T06:45:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f2953b076ea9b292238bf91cdfdf3ab789c20ebc737b02bf9713d08355710c6b
+content_hash: sha256:552a0207ea36a8b0a1824a3e604f8a95cfe17c3bb9d6600b61ecefa0664d70c5
 ---
 
 可滑动面板，提供一种轻量的内容展示窗口，方便在不同尺寸中切换。
@@ -385,4 +385,4 @@ struct PanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ZE9TI9XkR7K0jiZBXT969A/zh-cn_image_0000002762502394.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/c4503pjUSGmjER9nTgzbIQ/zh-cn_image_0000002764974152.gif)

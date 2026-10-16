@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 通过命令行使用模拟器
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 通过命令行使用模拟器
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:03+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:a850dda4e55aa7c4ac48bde150b6923227f9da2658b6a7567b291d3cde05a648
+scraped_at: 2026-10-17T06:43:27+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:0617a950537b796e3ac1be4412370eb00be6ce68e728002870f19eaa20c287d8
 ---
 
 除了在DevEco Studio的设备管理中使用模拟器外，开发者还可以通过Emulator命令行使用模拟器，支持Windows、macOS和Linux平台，Linux平台的使用方式请参考[模拟器工具（Emulator）](ide-commandline-emulator.md)。
@@ -349,7 +349,7 @@ Emulator -screenProfileList -deviceType {模拟器类型} -details -update -http
 **示例：**
 
 ```bash
-$Emulator -screenProfileList -deviceType phone -details -update -http_proxy "http://user:password@proxy.proxyserver.com:port"
+$ Emulator -screenProfileList -deviceType phone -details -update -http_proxy "http://user:password@proxy.proxyserver.com:port"
 Phone   # 产品类型
   - "nova 15 Pro、nova 15 Ultra"    # 设备型号
        density: 560                 # 屏幕DPI

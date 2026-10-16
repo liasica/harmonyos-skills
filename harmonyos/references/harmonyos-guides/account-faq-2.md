@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-2
 title: 1001502014 应用未申请scopes或permissions权限的可能原因和解决方法
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 1001502014 应用未申请scopes或permissions权限的可能原因和解决方法
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:20+08:00
+scraped_at: 2026-10-17T06:42:22+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:1094a255aa149b6da3b0373eff70739b14099503f4262ab97fea933971bf8677
+content_hash: sha256:6b80cdb003dd7f7388fe5a5fb7637a4c41ac0dbb301381608477d4afedf939a0
 ---
 
 **问题现象**
@@ -22,14 +22,14 @@ content_hash: sha256:1094a255aa149b6da3b0373eff70739b14099503f4262ab97fea933971b
 
 1. 申请对应权限，请见[申请账号权限](account-config-permissions.md)章节。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/o1c2tA89TauGDwz-sMJVcQ/zh-cn_image_0000002791859637.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/6fdpZWynR2-nUMN1tnhCCA/zh-cn_image_0000002764972520.png)
 2. 权限申请通过后，您可通过修改应用工程 > app.json5中的versionCode触发权限生效。
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/zYv07izcRumTXbWLG4OjNw/zh-cn_image_0000002791739421.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/3dhhjd-aSzabte-JN3IYVQ/zh-cn_image_0000002794491021.png)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/6hQVgQCnQ7GhWylRHdgIAw/zh-cn_image_0000002762340842.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/XNG8oQ39TruRPmQkPOZ8pg/zh-cn_image_0000002794411241.png)
 3. 确认是否需要使用获取风险等级能力，如需使用，请参考[获取风险等级](account-get-risklevel-introduction.md)申请对应权限。

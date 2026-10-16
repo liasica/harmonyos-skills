@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: button开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > button开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:15+08:00
+scraped_at: 2026-10-17T06:41:19+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:0a2b043f36ed682a078f4367bd03fa5a2490a3bba51cebdc4d35db15b95c4f59
+content_hash: sha256:160a15a916a98891cbcae1ba251e8bf6b62d1097ab810b2ec5c62565413fd0ef
 ---
 
 button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按钮、弧形按钮、下载按钮。具体用法请参考[button API](../harmonyos-references/js-components-basic-button.md)。
@@ -33,7 +33,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/C0n0cr9WTg-PPFE4bmHN6w/zh-cn_image_0000002791858817.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/lSuWmszmTxyz2h3dz-JfIQ/zh-cn_image_0000002764971702.png)
 
 ## 设置button类型
 
@@ -73,7 +73,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/B44RyY5dR_iBBia7l0nRYg/zh-cn_image_0000002762499660.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ND4h_2VNR6KLbvaxTGIFag/zh-cn_image_0000002765131344.png)
 
 **说明** 
 
@@ -166,7 +166,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/sNJ84xdaShiToRNVgbYCBA/zh-cn_image_0000002762499942.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/IOaldlgFQv2LlSgI-nQ0HQ/zh-cn_image_0000002765131628.gif)
 
 **说明** 
 
@@ -273,4 +273,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/DG1cXOHUQCy7mwnCBm5zPA/zh-cn_image_0000002791738605.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/m-Rs0IJ8RNCh0xyzusr73w/zh-cn_image_0000002794490205.gif)

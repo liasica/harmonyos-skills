@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-impor
 title: 引用及管理共享包
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 引用及管理共享包
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:15+08:00
+scraped_at: 2026-10-17T06:43:15+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0567406d2beb13b8b1f87a1cf4764c9ab29497e44b8573e65084ec518a104d2c
+content_hash: sha256:248b89943d54b8f522bdda17bee3f3ef0250745c5bfee09ec084308e0987cd8c
 ---
 
 引用三方HAR/HSP包（以下简称三方包），包括从ohpm仓库进行安装、从本地文件夹和本地压缩包中进行安装三种方式。
@@ -127,14 +127,14 @@ ohpm install
 1. 在菜单栏点击**Tools >** **OHPM Index**，进入OpenHarmony三方库中心仓。
 2. 在左侧搜索框可查询三方包名称，或点击目录树，根据分类查看不同分类下推荐的依赖包信息。选定所需要安装的三方包，点击右上角蓝色按钮**Install**进行安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/oVNWSAQqSyCQFn-dDtKXzA/zh-cn_image_0000002731542135.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/qQI-4acRQ0KcTHVGwhaNXQ/zh-cn_image_0000002731542135.png)
 3. 安装过程中，如出现下方弹窗，点击**Add**按钮，将OpenHarmony三方库中心仓地址添加到.ohpmrc文件中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/JCuSLf_GTiWRezI3ObwWwA/zh-cn_image_0000002701822866.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/ntFRGzEnRtiMZ372OxL9pg/zh-cn_image_0000002701822866.png)
 4. 三方包安装完成后，在工程级oh-package.json5文件中可以看到已安装的三方包名称及版本信息，oh\_modules中将同时添加该三方包。
-5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/EK3-PHpNTqShacHTuUBYaA/zh-cn_image_0000002701822862.png "点击放大")图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
+5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/CHc_QT1BQM2ck-VpALYalw/zh-cn_image_0000002701822862.png "点击放大")图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Z63YZioLSkWjSBiNirds7w/zh-cn_image_0000002731542139.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/X4_4gx3PSbaaZw1ZNLJtcA/zh-cn_image_0000002731542139.png)
 6. 若对于已使用的三方包依赖存在推荐的同类三方包，可点击编辑界面中黄色灯泡图标，在弹框中选择**Replace selected with recommended library**，将当前依赖替换为推荐的三方包依赖；或选择**Replace all with recommended libraries**，一键替换当前文件中所有同类推荐三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/WdNfpRpLS5KzXjT_eOOFrw/zh-cn_image_0000002731542137.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/F2aEjPMkT-C871KoYm97OQ/zh-cn_image_0000002731542137.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.worker (启动一个Worker)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.worker (启动一个Worker)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:24+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:28dea0f54aa041701bf14319872236ddf9d38445eb4d3a4871a8110b66196299
+scraped_at: 2026-10-17T06:44:31+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:02c31c6e885b0551d28837b71c054c05c81fa38272a61c27f8522c94d84cbfcf
 ---
 
 Worker是与宿主线程并行的独立线程。创建Worker的线程称为宿主线程，Worker自身的线程称为Worker线程。创建Worker时传入的URL文件在Worker线程中执行，可以处理耗时操作，但不能直接操作UI。
@@ -296,7 +296,7 @@ postMessageWithSharedSendable(message: Object, transfer?: ArrayBuffer[]): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | Object | 是 | 发送至Worker的数据，该数据对象必须是可序列化对象，序列化支持类型见[序列化支持类型](js-apis-worker.md#序列化支持类型)。如果需要共享数据，支持类型见[Sendable支持的数据类型](../harmonyos-guides/arkts-sendable.md#sendable支持的数据类型)。 |
-| transfer | ArrayBuffer[] | 否 | 可转移的ArrayBuffer实例对象数组。该数组中对象的所有权将转移到Worker线程，在宿主线程中变为不可用，仅在Worker线程中可用，数组不可传入null。默认值为undefined。 |
+| transfer | ArrayBuffer[] | 否 | 可转移的ArrayBuffer实例对象数组。该数组中对象的所有权将转移到Worker线程，在宿主线程中变为不可用，仅在Worker线程中可用，数组不可传入null。默认值为空数组。 |
 
 **错误码：**
 

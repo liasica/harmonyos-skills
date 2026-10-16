@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 实现秒级启动
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 秒级启动 > 实现秒级启动
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:17+08:00
+scraped_at: 2026-10-17T06:42:19+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f4fc190d6636a2be719c43f899a49544fe095fb1915bcbb9ca4568a9cb8e16c9
+content_hash: sha256:a0f28f95512c325e585e13057758422bcb66c872d645eafe11b92d530f14176b
 ---
 
 ## 业务流程
@@ -16,7 +16,7 @@ content_hash: sha256:f4fc190d6636a2be719c43f899a49544fe095fb1915bcbb9ca4568a9cb8
 
 注意：团结引擎1.8.1～1.9.0版本在Tablet设备上存在未捕获异常的问题，详细信息请参见[本文FAQ](graphics-accelerate-launch-faq-11.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/nd5nNy_5QX27zua9YvYGjA/zh-cn_image_0000002791859621.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/q6ZwN24AT6yIXBWmhoeMuQ/zh-cn_image_0000002764972504.png)
 
 1. 用户启动游戏。
 2. 游戏在onCreate生命周期中调用[setSupportedProcessCache](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetsupportedprocesscache12)接口，设置游戏支持缓存后快速启动。
@@ -40,7 +40,7 @@ content_hash: sha256:f4fc190d6636a2be719c43f899a49544fe095fb1915bcbb9ca4568a9cb8
 
 ## 生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Lztub-dnRaKoaQDtnZXqew/zh-cn_image_0000002762500746.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/VfYy9G8zQECiEMo9t7ec5Q/zh-cn_image_0000002765132426.png)
 
 * 游戏冷启动场景
 

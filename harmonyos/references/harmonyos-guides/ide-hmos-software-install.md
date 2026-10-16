@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-soft
 title: 下载与安装DevEco Studio
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 下载与安装DevEco Studio
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:41+08:00
+scraped_at: 2026-10-17T06:43:40+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:0e38f6ac73c0544da72f4e83158f9d2348108dbc32a96fc67d22ab229c3032b1
+content_hash: sha256:4d3e206e0d914db495c274161eba39675743afc0a9168426cc6ab3456e7950b3
 ---
 
 ## 运行环境要求
@@ -22,7 +22,7 @@ content_hash: sha256:0e38f6ac73c0544da72f4e83158f9d2348108dbc32a96fc67d22ab229c3
 
 1. 打开**应用市场**，点击**我的** **>** **应用尝鲜**，查找DevEco Studio点击**安装**按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/BpOaUXzQR5SE11uVp1fGtA/zh-cn_image_0000002750009650.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/CWfcFweFTSO6PrVcpY38jQ/zh-cn_image_0000002750009650.png "点击放大")
 2. 点击鸿蒙电脑左下角**应用中心**，出现如下图标即为安装成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/R-46tulHTGq_yqPwKyHkbg/zh-cn_image_0000002779728713.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/xcx-WYIISb-_5hUV5sVovA/zh-cn_image_0000002779728713.png "点击放大")

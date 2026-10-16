@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioSession_StateChangedEvent
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioSession_StateChangedEvent
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cabdbcc93125debcc8a979edda23f96f27c2838ab66bdea8aec7190b67f32c96
+scraped_at: 2026-10-17T06:47:41+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:fe12ebcb7721aa293d222ede70818c4b2e16295f8e3d1fc78cf3ca7eb99d4065
 ---
 
 ```c
@@ -28,4 +28,4 @@ typedef struct OH_AudioSession_StateChangedEvent {...} OH_AudioSession_StateChan
 
 | 名称 | 描述 |
 | --- | --- |
-| [OH\_AudioSession\_StateChangeHint](capi-native-audio-session-manager-h.md#oh_audiosession_statechangehint) stateChangeHint | 音频会话停用的具体原因。 |
+| [OH\_AudioSession\_StateChangeHint](capi-native-audio-session-manager-h.md#oh_audiosession_statechangehint) stateChangeHint | 音频会话状态变更提示，用于表示状态变化的类型，如静音、取消静音、暂停、恢复等。 |

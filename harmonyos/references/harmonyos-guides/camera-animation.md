@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-animat
 title: 相机基础动效(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机基础动效(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:05+08:00
+scraped_at: 2026-10-17T06:42:08+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:1123e5c21ddd58efddf4e7e05b12783e8e660b1854a0750d0b350290b669e972
+content_hash: sha256:c7f9162aa66b51878883747fe1f9d73156f9ffa0e43556c477f6c4f2bcb450d3
 ---
 
 在使用相机过程中，当遇到相机模式切换、前后置镜头切换等场景时，会不可避免地出现预览流替换。为优化用户体验，可合理使用动效过渡。本文主要介绍如何使用预览流截图，并通过ArkUI提供的[animateToImmediately](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animatetoimmediately23)接口触发显式动画功能，实现下方三种核心场景动效。
@@ -14,17 +14,17 @@ content_hash: sha256:1123e5c21ddd58efddf4e7e05b12783e8e660b1854a0750d0b350290b66
 
   图片为从录像模式切换为拍照模式的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/8vstdhxIR-Gm9BqK6_BqZw/zh-cn_image_0000002762500552.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/AgGa5fMLRhiXfvhwZIP90w/zh-cn_image_0000002765132232.gif)
 * 前后置切换动效，使用预览流截图做翻转模糊动效过渡。
 
   图片为从前置相机切换为后置相机的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/y7XRxDPPSfGNCecQno7rIA/zh-cn_image_0000002791739211.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/dFLCQvkRSdSOO2ipd0O6XQ/zh-cn_image_0000002794490809.gif)
 * 拍照闪黑动效，使用闪黑组件覆盖预览流实现闪黑动效过渡。
 
   图片为点击完成拍摄的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ff0-IIwoQSa0gQpOXl_5Aw/zh-cn_image_0000002762340632.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/pBDvaTpKTTWgSTtguh9fLw/zh-cn_image_0000002794411025.gif)
 
 ## 闪黑动效
 

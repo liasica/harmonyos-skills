@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-impo
 title: 密钥导入介绍及算法规格
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 密钥导入介绍及算法规格
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:37+08:00
+scraped_at: 2026-10-17T06:41:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9e9dc38b8e2826e7e56767e5e2ab377fef8571bb78a5de3c1c7a2e15d455e12c
+content_hash: sha256:26136146671f1257b0d61d57339745e35fdbfe75219123fa79ab3980fe7619de
 ---
 
 如果业务在HUKS外部生成密钥（比如应用间协商生成、服务器端生成），业务可以将密钥导入到HUKS中由HUKS进行管理。密钥一旦导入到HUKS中，在密钥的生命周期内，其明文仅在安全环境中进行访问操作，不会传递出安全环境。
@@ -37,7 +37,7 @@ content_hash: sha256:9e9dc38b8e2826e7e56767e5e2ab377fef8571bb78a5de3c1c7a2e15d45
 
 下图为安全导入密钥开发时序图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/H2xKUte2S4yaGeLLRmSV-A/zh-cn_image_0000002791859203.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/4dYhSS9YRAmeGrHRgZseSg/zh-cn_image_0000002764972084.png)
 
 根据开发流程，在安全导入密钥过程中，需要依次调用HUKS的能力包括：
 
@@ -90,7 +90,7 @@ content_hash: sha256:9e9dc38b8e2826e7e56767e5e2ab377fef8571bb78a5de3c1c7a2e15d45
 
 下图为数字信封导入密钥开发时序图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/SjXeSmbbSRWaH1VWpuC0ZQ/zh-cn_image_0000002762500326.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-pSVSX_dSHaMUjgxDlCR4A/zh-cn_image_0000002765132010.png)
 
 根据业务流程，导入数字信封时需要调用HUKS的能力。
 

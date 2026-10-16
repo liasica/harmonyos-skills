@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: 滚动组件通用接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > 滚动组件通用接口
 category: harmonyos-references
-scraped_at: 2026-10-15T07:07:59+08:00
+scraped_at: 2026-10-17T06:44:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:210f5e6dbfe46edd789012e926c7ff41b7a354af35a53e00b15f61f91c46d010
+content_hash: sha256:e3129c3c4653c337c37a5575f1760ba6c7028d6fb62575865658f18d5a7be9a2
 ---
 
 滚动组件通用接口目前只支持[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)组件，提供滚动条样式、边缘滑动效果、嵌套滚动、摩擦系数控制、内容裁剪等通用属性，以及滚动开始、停止、到达边界等事件回调。开发者可通过这些接口统一管理各类滚动组件的行为，适用于列表展示、网格布局、瀑布流排列和页面滚动等场景。
@@ -976,7 +976,7 @@ List/Grid组件编辑模式选项属性参数对象。
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/2dYuqhjURKuCKgwfOgkiKg/zh-cn_image_0000002791740495.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/_od16nySSnef3IJoSjjiFA/zh-cn_image_0000002765133528.png)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1467,7 +1467,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/y0FMlIwdRj-l68QYGVTANQ/zh-cn_image_0000002791860647.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/UaIBol12QgeCgc5TdJezfA/zh-cn_image_0000002794412259.gif)
 
 ### 示例2（设置边缘渐隐）
 
@@ -1512,7 +1512,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/w6u-Er8eQAiyomxlpfPeNg/zh-cn_image_0000002791740435.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/VU_9L2gwRyeFZbLQeNEogQ/zh-cn_image_0000002765133470.gif)
 
 ### 示例3（设置裁剪区域）
 
@@ -1573,7 +1573,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/bAt9-GshQHaJj8L6enKa-Q/zh-cn_image_0000002762341918.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/RBTiXUnbQoixVt7JgbWBvQ/zh-cn_image_0000002794492103.gif)
 
 ### 示例4（设置滚动条边距）
 
@@ -1630,4 +1630,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/GMbnVcx-SFSchSscXVmNjQ/zh-cn_image_0000002791860711.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/0R3YPmsoQQq-5LOzPUxyQA/zh-cn_image_0000002794412323.gif)

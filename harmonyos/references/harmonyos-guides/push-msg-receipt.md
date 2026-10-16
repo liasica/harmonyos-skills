@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-msg-rece
 title: （可选）开发消息回执
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > （可选）开发消息回执
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:39+08:00
+scraped_at: 2026-10-17T06:42:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:18a4e948cd77ff70f7e6d6a034463889e75dd4c537d0116ae9c2bc923e877258
+content_hash: sha256:255651d447434c6e459150f270873ece8e77606551117972e98f706b7764f03e
 ---
 
 ## 场景介绍
@@ -22,22 +22,22 @@ content_hash: sha256:18a4e948cd77ff70f7e6d6a034463889e75dd4c537d0116ae9c2bc923e8
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Zw7ybbL-S66w_va4qaOxKA/zh-cn_image_0000002791739823.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/dK2OgsUvQ8eKZqzm740dug/zh-cn_image_0000002794491429.png)
 2. 在项目列表中找到您的项目，通过“增长 > 推送服务 > 配置”导航到“配置”页签。在该页面可以选择配置项目级回执或者应用级回执，需要注意的是项目级回执消息接收URL地址，对该项目下所有应用生效。如果您同时配置了项目级回执和应用级回执地址，则优先获取应用级回执地址信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/C-GQZNh6RpefDDgsA7orOw/zh-cn_image_0000002762341244.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/zwJ7CbUNThiGQyUbXRTD7Q/zh-cn_image_0000002794411649.png)
 3. 这里以应用级回执举例，选择需要配置回执的应用，点击“开通”应用回执状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/_QqH6nziR4CGblbXbw5EGA/zh-cn_image_0000002791860041.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/nyjSFRvsQaexo9oa4k9N9A/zh-cn_image_0000002764972930.png)
 4. 进入回执参数配置，可以选择已有回执或者新建回执。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/f9BaqAosQgevPT9KJGnUUg/zh-cn_image_0000002762501166.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Vs5oZz04QmmIq6-E2w7_mg/zh-cn_image_0000002765132854.png)
 
 ## 配置回执参数
 
 点击“新建回执”后，需要配置如下参数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/xgy3g_-pT528Jx5kLa8tdA/zh-cn_image_0000002791739825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/63Ljpa7UQd-NHjss-qIxbg/zh-cn_image_0000002794491431.png)
 
 1. 配置消息回执的名称和回调地址。
 
@@ -45,10 +45,10 @@ content_hash: sha256:18a4e948cd77ff70f7e6d6a034463889e75dd4c537d0116ae9c2bc923e8
 
    * 商用CA提示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/WD4sg8O7Tq-3EqWbLE7E3w/zh-cn_image_0000002762341246.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/C8zmrYNeSCqeNuVOKcTr2w/zh-cn_image_0000002794411651.png)
    * 自签CA提示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Dk9G0lmoT9SCwFv_g8OX0g/zh-cn_image_0000002791860043.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/YZYGqVcjQImHNviHWPODZw/zh-cn_image_0000002764972932.png)
 
    **说明** 
 
@@ -90,7 +90,7 @@ content_hash: sha256:18a4e948cd77ff70f7e6d6a034463889e75dd4c537d0116ae9c2bc923e8
       ```
 3. 配置回执支持版本
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/559qrmaWRK6j0Zj1Tr0B5w/zh-cn_image_0000002762501168.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/HCr9Ci32SIm_oGe5TbE9Hg/zh-cn_image_0000002765132856.png)
 
    V1回执不支持场景化消息发送，请使用V2回执。
 4. “测试回执”可以对回执地址进行功能测试，点击“提交”完成回执的创建。

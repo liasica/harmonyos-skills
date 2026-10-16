@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avpl
 title: avplayer.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avplayer.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5bee883dcd561ab4021493c579619c6b85db8a519596fc077d3627dc1e7bd039
+scraped_at: 2026-10-17T06:48:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:102c7e6c2a17f3e6308e305beb46db2097e362937230de860b8f65e19ef5da99
 ---
 
 ## 概述
@@ -116,7 +116,7 @@ AVPlayer是音视频播放组件，提供完整的播放控制和高级功能（
 | [OH\_AVFormat \*OH\_AVPlayer\_GetTrackFormat(OH\_AVPlayer \*player, uint32\_t trackIndex)](capi-avplayer-h.md#oh_avplayer_gettrackformat) | - | 通过索引获取播放器轨道信息。此接口仅可在AVPlayer处于prepared、playing、paused或completed状态时调用。  需要注意返回值OH\_AVFormat指针对象的生命周期需要用户手动释放。 |
 | [OH\_AVFormat \*OH\_AVPlayer\_GetPlaybackStatisticMetrics(OH\_AVPlayer \*player)](capi-avplayer-h.md#oh_avplayer_getplaybackstatisticmetrics) | - | 获取当前播放器的统计指标信息。设置完播放资源，并且当播放处于prepared、playing、paused、completed或stopped状态时，可调用该接口。  需要注意返回值[OH\_AVFormat](capi-core-oh-avformat.md)指针对象的生命周期需要用户手动释放。 |
 | [OH\_AVErrCode OH\_AVPlayer\_SetPCMOutputCallback(OH\_AVPlayer \*player, OH\_AVPlayerPCMOutputCallback callback, void \*userData)](capi-avplayer-h.md#oh_avplayer_setpcmoutputcallback) | - | 设置音频PCM数据输出回调。当播放处于idle或initialized状态时，可调用此接口。适用于需要获取音频原始数据的场景，如音频数据分析、音频录制、音频处理、音频可视化等。 |
-| [OH\_AVPlayerVideoOutput\* OH\_AVPlayer\_SetVideoSideOutput(OH\_AVPlayer \*player, OHNativeWindow \*window)](capi-avplayer-h.md#oh_avplayer_setvideosideoutput) | - | 设置视频解码帧输出回调。当播放处于idle或initialized状态时，可调用此接口。适用于需要获取视频解密帧的场景，如视频帧分析、视频滤镜处理、视频截图、视频特效处理等。 |
+| [OH\_AVPlayerVideoOutput\* OH\_AVPlayer\_SetVideoSideOutput(OH\_AVPlayer \*player, OHNativeWindow \*window)](capi-avplayer-h.md#oh_avplayer_setvideosideoutput) | - | 设置视频解码帧输出回调。当播放处于idle或initialized状态时，可调用此接口。适用于需要获取视频解码帧的场景，如视频帧分析、视频滤镜处理、视频截图、视频特效处理等。 |
 | [OH\_VideoOutputResult OH\_AVPlayerVideoOutput\_GetNewestVideoSample(OH\_AVPlayerVideoOutput \*videoOutput)](capi-avplayer-h.md#oh_avplayervideooutput_getnewestvideosample) | - | 获得一个视频解码帧。当播放处于paused或playing状态时，可调用此接口。适用于需要获取当前视频帧的场景，如视频帧捕获、视频帧分析、视频截图、视频帧处理等。 |
 | [OH\_AVErrCode OH\_AVPlayer\_SetPCMProcessorCallback(OH\_AVPlayer \*player, OH\_AVPlayerPCMProcessorCallback callback, void \*userData)](capi-avplayer-h.md#oh_avplayer_setpcmprocessorcallback) | - | 设置音频PCM数据后处理回调。当播放处于idle或initialized状态时，可调用此接口。 |
 | [OH\_AVErrCode OH\_AVPlayer\_SetPCMProcessorMaxLen(OH\_AVPlayer \*player, int32\_t maxProcessedPCMLen)](capi-avplayer-h.md#oh_avplayer_setpcmprocessormaxlen) | - | 设置音频后处理回调函数单次可返回的最大数据量。允许缓存部分数据，并与下一次返回的PCM数据一并输出。  当播放处于idle或initialized状态时，可调用此接口。 |
@@ -2201,7 +2201,7 @@ OH_AVPlayerVideoOutput* OH_AVPlayer_SetVideoSideOutput(OH_AVPlayer *player, OHNa
 
 **描述**
 
-设置视频解码帧输出回调。当播放处于idle或initialized状态时，可调用此接口。适用于需要获取视频解密帧的场景，如视频帧分析、视频滤镜处理、视频截图、视频特效处理等。
+设置视频解码帧输出回调。当播放处于idle或initialized状态时，可调用此接口。适用于需要获取视频解码帧的场景，如视频帧分析、视频滤镜处理、视频截图、视频特效处理等。
 
 **起始版本：** 26.0.0
 

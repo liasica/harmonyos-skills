@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-lin
 title: 分享链接
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享链接
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:42+08:00
+scraped_at: 2026-10-17T06:42:44+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:078b7d53649603f116f69fa2e24960f21b47d958e66a4ad0ec71dd1dccfa68cf
+content_hash: sha256:4a27d07da271c80998af83360cc610e194bf9a46cb5d700542ac10f707676325
 ---
 
 ## 分享App Linking直达应用
 
 使用App Linking分享应用，目标设备接收后可直达应用，参见：[使用App Linking实现应用间跳转](app-linking-startup.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/pua86eNvQO-w3A4Wto8MBw/zh-cn_image_0000002762341292.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/CPvPnl2vTtaow-zewFNKSQ/zh-cn_image_0000002794491479.png)
 
 ### 开发步骤
 

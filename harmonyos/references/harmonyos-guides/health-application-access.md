@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-applic
 title: 接入流程
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 接入流程
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:28+08:00
+scraped_at: 2026-10-17T06:42:30+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:68f688912c813fca3eacaf4134ec79feab39a869d0a5e236e434e0cf851ef533
+content_hash: sha256:0c63c1763f86d3ed42b38fa4e0c42ee1025664b5189df284f6fcde068bb3062c
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/A9HCuCFDQ_K8Ds0x2Ph4hg/zh-cn_image_0000002762341010.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/guxHWLJjQlSomZe6ZHOq3g/zh-cn_image_0000002794411411.png)
 
 | 步骤 | 说明 |
 | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-encrypti
 title: 加解密(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 加密/解密 > 加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:37+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:b37014b6c53a22db0177b46db2556aeb5ce5425dab506d09a93871bd1e2fbd65
+scraped_at: 2026-10-17T06:41:42+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:866dc4ee933dba1999fb407dff18e6ca75e391e21b3c1527b0124997f9fc3b02
 ---
 
 以AES256、RSA1024、SM2和DES64为例，完成加解密。具体的场景介绍及支持的算法规格，请参考[加解密支持的算法](huks-encryption-decryption-overview.md#支持的算法)。
@@ -842,7 +842,7 @@ napi_value TestRsaEcbPkcs(napi_env env, napi_callback_info info)
         if (ohResult.errorCode != OH_HUKS_SUCCESS) {
             break;
         }
-        char tmpInData[] = "RSA_ECB_PKCS1_IN";
+        char tmpInData[] = "RSA_ECB_PKCS1_V1_5_IN";
         struct OH_Huks_Blob inData = {(uint32_t)strlen(tmpInData), (uint8_t *)tmpInData};
         uint8_t cipher[RSA_COMMON_SIZE] = {0};
         struct OH_Huks_Blob cipherText = {RSA_COMMON_SIZE, cipher};

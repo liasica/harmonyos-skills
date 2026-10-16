@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: cdsm（星闪合作设备集合管理能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > cdsm（星闪合作设备集合管理能力）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:55+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:ca963f2ef28c815610303da2f12fdd47ac8b31a175290e421bd7f0e0c0df9694
+scraped_at: 2026-10-17T06:46:44+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:fb24f41f72bf52120a68fffdc18a403fa667b9c3341ef13c2a884c05f87d0ef6
 ---
 
 本模块提供了查询星闪合作设备集合信息的功能。
@@ -50,8 +50,8 @@ createCdsmClient(address: string): CdsmClient
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported because the chip does not support it. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700050 | Coordinated Devices Set Management not supported. |
 | 1009700099 | Operation failed. |
@@ -110,7 +110,7 @@ getCdsmInfo(): CdsmInfo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -157,7 +157,7 @@ onCdsmInfoChange(callback: Callback<CdsmInfo>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -205,7 +205,7 @@ offCdsmInfoChange(callback?: Callback<CdsmInfo>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 

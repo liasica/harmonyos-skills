@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: toggle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > toggle
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:28+08:00
+scraped_at: 2026-10-17T06:45:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:03499baee2b361b85b1cb3e178e30b88b3a23a9c2499132b6b5931374231dc74
+content_hash: sha256:5799e26f317b73a0ce61311513cd216415acd5f03ebff9221cf38f4fcdb60667
 ---
 
 **说明** 
@@ -131,4 +131,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/pnWs122-T3eod_vekF20GA/zh-cn_image_0000002791741095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/8Js6A95DR_WDF5cS8tyIXA/zh-cn_image_0000002765134114.png)

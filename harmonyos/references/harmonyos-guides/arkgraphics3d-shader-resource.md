@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: .shader资源文件格式要求
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用 > .shader资源文件格式要求
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:31+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:9c3b5cd953bdd30b195e666d2e3dd5d2c38f8aa272d763610bd6b339189a5f61
+scraped_at: 2026-10-17T06:42:18+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:3e91ecfe3ac8cbc2dd1bd744bcf1d248f7d55bb5444699f0e9416db1d6e87bdc
 ---
 
 ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时需符合JSON语法要求。文件包含以下部分：
@@ -239,11 +239,11 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 
   | 可取值 | 说明 |
   | --- | --- |
-  | "add" | 源alpha+目标alpha。 |
-  | "subtract" | 源alpha-目标alpha。 |
-  | "reverse\_subtract" | 目标alpha-源alpha。 |
-  | "min" | 取源alpha与目标alpha的最小值。 |
-  | "max" | 取源alpha与目标alpha的最大值。 |
+  | "add" | 源Alpha+目标Alpha。 |
+  | "subtract" | 源Alpha-目标Alpha。 |
+  | "reverse\_subtract" | 目标Alpha-源Alpha。 |
+  | "min" | 取源Alpha与目标Alpha的最小值。 |
+  | "max" | 取源Alpha与目标Alpha的最大值。 |
 
 ## materialMetadata
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-comm
 title: 代码检查工具（codelinter）
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 代码检查工具（codelinter）
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:53+08:00
+scraped_at: 2026-10-17T06:43:50+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:7c4c4af7766b4c98c2d255c2b153955d61e28bf4bfb53de11b9b272639998f39
+content_hash: sha256:e17f938fdc84653be4c5735e892189fb15be9463931bb8e7bc023c6e408f4672
 ---
 
 codelinter同时支持使用命令行执行代码检查与修复，可将codelinter工具集成到门禁或持续集成环境中。
@@ -42,21 +42,21 @@ dir：待检查的工程根目录；为可选参数，如不指定，默认为�
         codelinter // 进行codelinter检查
         ```
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/zmRpkQk1R1iWrwNjhlgxSw/zh-cn_image_0000002750009688.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/7l1VCw7NSEa0lhIO0KncaQ/zh-cn_image_0000002750009688.png "点击放大")
      2. 执行如下命令，指定codelinter检查所使用的code-linter.json5规则配置文件，并进行代码检查。
 
         ```screen
         codelinter -c filepath // 指定执行检查的规则配置文件位置
         ```
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/jvvUvnNxSE20SAFqsweg8w/zh-cn_image_0000002779608595.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/gO26nHgqQ4-uMzOrwtzBVQ/zh-cn_image_0000002779608595.png "点击放大")
      3. 执行如下命令，对指定工程将根据指定的规则配置文件执行codelinter检查，并对部分支持修复的告警信息进行自动修复。
 
         ```screen
         codelinter -c filepath --fix // 对工程中的告警进行修复
         ```
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/4jbuIc8YQWmej_PYmNg_-A/zh-cn_image_0000002779728741.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/F29VwgwYTwObOQ_Ld7lUJg/zh-cn_image_0000002779728741.png "点击放大")
    * 在非工程根目录下使用命令行工具：
      1. 执行如下命令，指定需要进行检查的工程目录或文件路径。此时根据默认codelinter检查规则，对该工程中的TS/ArkTS文件进行代码检查。默认的规则清单可在检查完成后，根据命令行提示，查看相应位置的code-linter.json5文件。
 
@@ -64,32 +64,32 @@ dir：待检查的工程根目录；为可选参数，如不指定，默认为�
         codelinter dir [filepath] [dir1] // 指定执行检查的工程目录或文件路径。支持同时配置多个文件/文件夹路径。 filepath为待检查的文件所在位置，dir、dir1指定待检查的工程目录
         ```
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/A_aiqNBVSUK64rj1TFOklA/zh-cn_image_0000002750009686.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Pr-KYex7SVebYNP2ixaJjA/zh-cn_image_0000002750009686.png "点击放大")
      2. 在指定的工程目录下，根据指定的codelinter规则配置文件进行代码检查。
 
         ```screen
         codelinter -c filepath dir // filepath为指定的规则配置文件所在位置，dir指定执行检查的工程根目录
         ```
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/SJuZEzXIR-6XtxD-dJlIGg/zh-cn_image_0000002750169568.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/jrDFz1TPTVSoSOapSQMHCA/zh-cn_image_0000002750169568.png "点击放大")
      3. 执行如下命令，对指定工程重新执行codelinter检查，并对部分支持修复的告警进行自动修复。
 
         ```screen
         codelinter -c filepath dir --fix // 对指定工程中的告警进行修复。支持配置同时多个工程路径
         ```
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/gYQVfjS5RgOBE0q6YSaM0A/zh-cn_image_0000002779608599.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Xe2qCaPhRWCPww2ZCZrcsA/zh-cn_image_0000002779608599.png "点击放大")
 2. 如需指定检查结果输出格式（以json格式为例），执行如下指令。检查结果将在命令行窗口展示。
 
    ```screen
    codelinter [dir] -f json  //[dir]为待检查的工程根目录
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/xSBXGUs5S3CVYPfb3keatA/zh-cn_image_0000002779728745.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Z6CuOs0uQNKO67KQDdgMrw/zh-cn_image_0000002779728745.png "点击放大")
 3. 执行如下指令，指定代码检查输出格式及结果保存位置。检查结果不在命令行窗口打印，可在指定的文件存放路径下查看。
 
    ```screen
    codelinter [dir] -f json -o filepath2     // [dir]为待检查的工程根目录，filepath2为指定存放代码检查结果的文件路径
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/LfV8zn4QRVmXwX-OsgoZqQ/zh-cn_image_0000002750009690.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/uOFX0_6ORXSETYitusWmjw/zh-cn_image_0000002750009690.png "点击放大")

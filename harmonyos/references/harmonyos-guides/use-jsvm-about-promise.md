@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口处理异步操作
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口处理异步操作
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:57+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:626739b7529dcf209f1b1e233ee9d3691b3735d1f63da916d7604473723d3635
+scraped_at: 2026-10-17T06:43:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:83c9dd20c2cf408e8c1c12b26fa66970f587fa078306e9bb290e0321770f703c
 ---
 
 ## 简介
@@ -268,7 +268,7 @@ static int PromiseRegisterHandler(JSVM_VM vm, JSVM_Env env) {
 
 static void RunDemo(JSVM_VM vm, JSVM_Env env) {
     if (PromiseRegisterHandler(vm, env) != 0) {
-        OH_LOG_INFO(LOG_APP, "Run PromiseRegisterHandler failed");
+        OH_LOG_ERROR(LOG_APP, "Run PromiseRegisterHandler failed");
     }
 }
 ```

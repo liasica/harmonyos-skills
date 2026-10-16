@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-skills
 title: 技能（Skills）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 技能（Skills）配置
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:39+08:00
+scraped_at: 2026-10-17T06:43:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f471302f61c3f7e90f0ed6474278d417bcd09f0a3888adcf5b97597c82cb81b9
+content_hash: sha256:0acde14190d55260f997e1e2525019c38ce76a8975d94fad359ec546453f416e
 ---
 
 ## 功能介绍
@@ -26,20 +26,20 @@ Skills实际是一个包含SKILL.md文件（区分大小写）的文件夹，在
 
 ## 操作步骤
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/uwfuBaHjRae7p6X782S2pw/zh-cn_image_0000002731542641.png "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/n_xUEtSYRPCEnpH4UMFYpA/zh-cn_image_0000002731542631.png)按钮，选择**Skills**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/WZmWTx3RSCyAETDs8D6Ihw/zh-cn_image_0000002731542641.png "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/a-M_7GvaRyaYdBYy7Aw_qQ/zh-cn_image_0000002731542631.png)按钮，选择**Skills**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/p4pntxMESdiqwjBdchTJAw/zh-cn_image_0000002731382669.png "点击放大")
-2. 在**Global Skills**或**Project Skills**下，首次导入时，点击**Import**导入技能文件；若已存在技能文件，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/SwlCXqGGSQqeZDcXAU2Zeg/zh-cn_image_0000002701823356.png "点击放大")按钮进行导入。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/e5gN_GBqRxuW8YsfLH71ZA/zh-cn_image_0000002731382669.png "点击放大")
+2. 在**Global Skills**或**Project Skills**下，首次导入时，点击**Import**导入技能文件；若已存在技能文件，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Pyq28KqfQZSZK32IexPTVQ/zh-cn_image_0000002701823356.png "点击放大")按钮进行导入。
 
    **说明** 
 
    * 若选择的文件夹中存在SKILL.md，则作为单个skill导入。
    * 若选择的文件夹中不存在SKILL.md，则遍历下一级文件夹，检查下一级文件夹中是否包含SKILL.md，遍历到的SKILL.md将作为skill导入。若下一级文件夹遍历出多个SKILL.md，将批量导入。仅支持遍历所选择文件夹的下一级，不支持更深层级的遍历。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/3tCGqhwtT5eeM-OK2XfsRw/zh-cn_image_0000002731542633.png "点击放大")
-3. 在**Global Skills**和**Project Skills**列表中，显示已导入的技能信息，包括技能名称（如openharmony-build）、描述信息、启用状态。同时，将鼠标悬浮在技能信息上会显示编辑和删除的操作按钮，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/EX29AbRnS6GeZDHx_CEOEQ/zh-cn_image_0000002701663444.png)可在代码编辑区打开SKILL.md文件。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/xTTL3NQvRIeVN__YlId17Q/zh-cn_image_0000002731542633.png "点击放大")
+3. 在**Global Skills**和**Project Skills**列表中，显示已导入的技能信息，包括技能名称（如openharmony-build）、描述信息、启用状态。同时，将鼠标悬浮在技能信息上会显示编辑和删除的操作按钮，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/xF2gK3jyS7GGFdBEusxbuQ/zh-cn_image_0000002701663444.png)可在代码编辑区打开SKILL.md文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/IoOEs1f2QWe2O1LovDa71w/zh-cn_image_0000002731382671.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/nqD4U7QBRXOt_RSTshbB8Q/zh-cn_image_0000002731382671.png "点击放大")
 4. 返回CodeGenie对话框调用Skills，在对话框输入时需要带有技能的name（如openharmony-build）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/a71fGi1QRRK4WMGPmSQlfg/zh-cn_image_0000002731542639.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/QCMHHzRuT86vVWWcpMHnPQ/zh-cn_image_0000002731542639.png)

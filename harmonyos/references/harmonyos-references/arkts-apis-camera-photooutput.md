@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PhotoOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (PhotoOutput)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:43dfef8f6c30b555d2fa0fc9a887b1d0a3c2b228882cb43cd859ddacbed232bc
+scraped_at: 2026-10-17T06:47:54+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:fba907b33549aaacc221d07e9618cf218215fc44b1ea112f8152049db59cfdda
 ---
 
 拍照会话中使用的输出信息，继承[CameraOutput](arkts-apis-camera-cameraoutput.md)。
@@ -1195,7 +1195,7 @@ function testGetPhotoRotationWithOutParam(photoOutput: camera.PhotoOutput): came
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
-    console.error(`The photoOutput.testGetPhotoRotationWithOutParam call failed. error code: ${err.code}`);
+    console.error(`The photoOutput.getPhotoRotation call failed. error code: ${err.code}`);
   }
   return photoRotation;
 }

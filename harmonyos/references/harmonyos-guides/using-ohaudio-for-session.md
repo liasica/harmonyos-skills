@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohaudio
 title: 使用OHAudio开发音频会话功能(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 使用OHAudio开发音频会话功能(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e0a58886f6332b516f7df6fa4d41762d115e6452782d4de666373a4270e7b86b
+scraped_at: 2026-10-17T06:42:02+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:4dc6e3f87f9b3988b4ccc70f838804b3b67aa674f3a303b54b8b5acbe1ee0972
 ---
 
 对于涉及多个音频流并发播放的场景，系统已预设了默认的[音频焦点策略](audio-playback-concurrency.md#音频焦点策略)，该策略将对所有音频流（包括播放和录制）实施统一的焦点管理。
@@ -182,8 +182,8 @@ OH_AudioSessionManager *audioSessionManager;
         audioSessionManager, MyAudioSessionDeactivatedCallback);
     // ...
     // 取消监听音频会话停用事件。
-    result = OH_AudioSessionManager_UnregisterStateChangeCallback(audioSessionManager,
-                                                                  AudioSessionStateChangedCallback);
+    result = OH_AudioSessionManager_UnregisterSessionDeactivatedCallback(audioSessionManager,
+                                                                         MyAudioSessionDeactivatedCallback);
     // ...
     // 停用音频会话。
     result = OH_AudioSessionManager_DeactivateAudioSession(audioSessionManager);

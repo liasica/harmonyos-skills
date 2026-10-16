@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-customi
 title: 自定义键盘
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 自定义键盘
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:08+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:072c90ff205dbf817d91732a8398665db8fc7c5468411aa6cb1b13046e0743a4
+scraped_at: 2026-10-17T06:41:12+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:22da01b06ee88c502cf2ce5456d4018001ec44dc4cba6e8dfffe46cd02d184f8
 ---
 
 ## 概述
@@ -52,7 +52,7 @@ export struct CustomKeyboard {
 
 **图 1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/z3SorB9OSwKF0YLOq13ORg/zh-cn_image_0000002791738281.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/JBHUu4FdTPGyfoUOWOl3fA/zh-cn_image_0000002794489879.gif)
 
 ```ts
 @Component
@@ -101,7 +101,7 @@ export struct NumberKeyboard {
 
 **图 2**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/8i1fweloTgSnWnfNzBtmJg/zh-cn_image_0000002762339700.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/yrwqPuTcT9O23tUeFmWA7Q/zh-cn_image_0000002794410097.gif)
 
 代码示例如下：
 
@@ -129,7 +129,7 @@ export struct NumberKeyboard {
 
 在输入组件内,使用@Link和@Watch('onChangeKeyboard')修饰isKeyboardShown；
 
-当键盘状态变化后,会调用onChangeKeyboard,此时要收起键盘,则执行和键盘控制器绑定的文字输入控制器的[stopEditing](../harmonyos-references/ts-text-common.md#stopediting12)。
+当键盘状态变化后,会调用onChangeKeyboard,此时要收起键盘,则执行和键盘控制器绑定的文字输入控制器的[stopEditing()](../harmonyos-references/ts-text-common.md#stopediting12)方法。
 
 ```ts
 @Component
@@ -149,9 +149,9 @@ export struct TextInputComponent {
 
 输入组件内有两个事件：
 
-[onFocus](../harmonyos-references/ts-universal-focus-event.md#onfocus)代表获得焦点,用户点击输入组件的时候,输入组件会获得焦点从而弹出键盘,此时设定isKeyboardShown为true,表示弹起;
+[onFocus()](../harmonyos-references/ts-universal-focus-event.md#onfocus)代表获得焦点,用户点击输入组件的时候,输入组件会获得焦点从而弹出键盘,此时设定isKeyboardShown为true,表示弹起;
 
-[onBlur](../harmonyos-references/ts-universal-focus-event.md#onblur)代表失去焦点,当输入组件失去焦点,会被调用, 此时设为isKeyboardShown为false,表示收起;
+[onBlur()](../harmonyos-references/ts-universal-focus-event.md#onblur)代表失去焦点,当输入组件失去焦点,会被调用, 此时设为isKeyboardShown为false,表示收起;
 
 ```ts
 .onBlur(() => {
@@ -196,9 +196,9 @@ struct MainPage {
 
 在键盘组件CustomKeyboard.ets引入方向检测与动态高度，在键盘组件内对应位置处理。
 
-引入[@ohos.display](../harmonyos-references/js-apis-display.md)，新增@State isLandscape保存当前方向。
+引入[@ohos.display (屏幕属性)](../harmonyos-references/js-apis-display.md)，新增@State isLandscape保存当前方向。
 
-在aboutToAppear注册监听器display.on('change') ，在aboutToDisappear注销监听器，方向变化时调用updateOrientation(), 通过 [display.getDefaultDisplaySync](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)()判断width > height判定横屏。
+在aboutToAppear注册监听器display.on('change') ，在aboutToDisappear注销监听器，方向变化时调用updateOrientation(), 通过 [display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)判断width > height判定横屏。
 
 ```ts
 @Component
@@ -232,7 +232,7 @@ export struct CustomKeyboard {
 }
 ```
 
-重写getKeyboardHeightVp()，判断设备为平板的时候，按照平板的比例给予，横屏0.33，竖屏0.22的屏幕高度占比，手机的话固定为0.36的占比高度。
+重写getKeyboardHeightVp()，判断设备为平板的时候，按照平板的比例给予横屏0.33、竖屏0.22的屏幕高度占比，手机的话固定为0.36的占比高度。
 
 ```ts
 @Component
@@ -282,7 +282,7 @@ export struct CustomKeyboard {
 
 **图 3**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/c3hOhV_kTO2tHbMv6lBSdA/zh-cn_image_0000002791858495.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/_kaQsKVWRXSzMdMi4DZ7aw/zh-cn_image_0000002764971378.gif)
 
 以英文键盘为例，监听EnglishButton的onClick事件，修改状态变量。
 
@@ -325,11 +325,11 @@ export struct TextInputComponent {
 
 ### 自定义键盘光标控制
 
-通过监听TextInput的[onTextSelectionChange](../harmonyos-references/ts-basic-components-textinput.md#ontextselectionchange10)生命周期，获取初始光标位置，文本输入后，调用TextInputController的[caretPosition](../harmonyos-references/ts-basic-components-textinput.md#caretposition8)方法，设置最终光标位置。
+通过监听TextInput的[onTextSelectionChange()](../harmonyos-references/ts-basic-components-textinput.md#ontextselectionchange10)生命周期，获取初始光标位置，文本输入后，调用TextInputController的[caretPosition](../harmonyos-references/ts-basic-components-textinput.md#caretposition8)方法，设置最终光标位置。
 
 **图 4**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/UpTXVAEMRECUFj3a_0QlIw/zh-cn_image_0000002762499622.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/uUftCT8VRS66bZD6G9Rd1g/zh-cn_image_0000002765131304.gif)
 
 获取光标位置：
 
@@ -361,11 +361,11 @@ onChange(value: string) {
 
 通过对焦点进行控制，可以实现键盘的弹出和收起，参考[软键盘的弹出收起和监听](../best-practices/bpta-keyboard-layout-adapt.md#section117216355229)。
 
-开发者也可以通过TextInputController的[stopEditing](../harmonyos-references/ts-basic-components-textinput.md#stopediting10)方法控制键盘关闭，下面的自定义键盘示例中，点击确认按键关闭自定义键盘。
+开发者也可以通过TextInputController的[stopEditing()](../harmonyos-references/ts-basic-components-textinput.md#stopediting10)方法控制键盘关闭，下面的自定义键盘示例中，点击确认按键关闭自定义键盘。
 
 **图 5**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/lA-FkVYCQxqjOsQG-3GsBw/zh-cn_image_0000002791738283.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/e7DOFcgwSn-rKxYjAnqhIg/zh-cn_image_0000002794489881.gif)
 
 ```ts
 onInput(value: string | Resource): string {
@@ -390,7 +390,7 @@ Tab栏点击“123”、“ABC”按钮，this.isCustomKeyboardAttach为true，T
 
 **图 6**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Z0IVd6qJRYKiJ0jpjKVzng/zh-cn_image_0000002762339702.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gE0q5ctZTOumplJtCxow-Q/zh-cn_image_0000002794410099.gif)
 
 ```ts
 TextInput({
@@ -406,11 +406,11 @@ TextInput({
 
 ### 使用系统提供的自定义键盘避让功能
 
-为了确保输入框不被自定义键盘挡住，系统默认提供了输入框避让自定义键盘的能力。在TextInput组件的[customKeyboard](../harmonyos-references/ts-basic-components-search.md#customkeyboard10)属性设置[supportAvoidance](../harmonyos-references/ts-basic-components-richeditor.md#keyboardoptions12)为true，开启系统提供的自定义键盘避让功能。键盘的避让机制和常见问题的解决方法，可以参考[软键盘布局适配场景介绍](../best-practices/bpta-keyboard-layout-adapt.md#section08221814182316)。
+为了确保输入框不被自定义键盘挡住，系统默认提供了输入框避让自定义键盘的能力。在TextInput组件的[customKeyboard](../harmonyos-references/ts-basic-components-search.md#customkeyboard10)属性设置[supportAvoidance](../harmonyos-references/ts-basic-components-richeditor.md#keyboardoptions12)为true，开启系统提供的自定义键盘避让功能。键盘的避让机制和常见问题的解决方法，可以参考[软键盘避让机制](../best-practices/bpta-keyboard-layout-adapt.md#section08221814182316)。
 
 **图 7**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/DrPqTN8jTeK2RN22fl0Vdg/zh-cn_image_0000002791858497.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Ra_IFgFiRtWJB6-7jRw1iw/zh-cn_image_0000002764971380.gif)
 
 ```ts
 TextInput({
@@ -426,13 +426,13 @@ TextInput({
 
 ### 开发者自己实现自定义键盘的避让功能
 
-开发者需要监听自定义键盘根节点的onAreaChange生命周期，获取自定义键盘的高度，根据实际场景设置布局的避让。
+开发者需要监听自定义键盘根节点的onAreaChange()生命周期，获取自定义键盘的高度，根据实际场景设置布局的避让。
 
 **图 8**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/UMSZTXKhT6e8vaUsJeQN8A/zh-cn_image_0000002762499624.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ZmJx4bRlSB66R727BcseDg/zh-cn_image_0000002765131306.gif)
 
-监听自定义键盘布局的[onAreaChange](../harmonyos-references/ts-universal-component-area-change-event.md#onareachange)生命周期，通过newValue.height获取自定义键盘弹出时的高度，根据实际业务场景计算布局避让高度avoidHeight。
+监听自定义键盘布局的[onAreaChange()](../harmonyos-references/ts-universal-component-area-change-event.md#onareachange)生命周期，通过newValue.height获取自定义键盘弹出时的高度，根据实际业务场景计算布局避让高度avoidHeight。
 
 ```ts
 @Component
@@ -453,7 +453,7 @@ export struct CustomKeyboard {
 }
 ```
 
-通过[emitter](../harmonyos-references/js-apis-emitter.md)的方式，发送自定义键盘高度变化的通知。
+通过emitter（详见[@ohos.events.emitter (Emitter)](../harmonyos-references/js-apis-emitter.md)）的方式，发送自定义键盘高度变化的通知。
 
 ```ts
 changeAvoidHeight(value: number) {

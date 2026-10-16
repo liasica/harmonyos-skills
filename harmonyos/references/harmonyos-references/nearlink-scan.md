@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: scan（星闪扫描能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > scan（星闪扫描能力）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:55+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:afe0b7a6813020b46cac08740499c16c0edb291892e6f12cd591d69e79768a53
+scraped_at: 2026-10-17T06:46:40+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:cde0eb07d9bf93e4646c9f05f95d77c9e073e202c17d10413c02871b26bd4ae7
 ---
 
 本模块提供了星闪扫描相关功能。
@@ -51,9 +51,9 @@ startScan(filters: Array<ScanFilters>, options?: ScanOptions): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | [Sync] Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -114,8 +114,8 @@ startScan(filters: Array<ScanFilters> | null, options?: ScanOptions): Promise<vo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -178,8 +178,8 @@ stopScan(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -227,9 +227,8 @@ on(type: 'deviceFound', callback: Callback<Array<ScanResults>>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 
@@ -274,9 +273,8 @@ off(type: 'deviceFound', callback?: Callback<Array<ScanResults>>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 

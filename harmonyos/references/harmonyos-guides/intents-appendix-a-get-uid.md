@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-appen
 title: 附录A：获取华为账号对应UID的方式
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 附录A：获取华为账号对应UID的方式
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:08+08:00
+scraped_at: 2026-10-17T06:43:09+08:00
 doc_updated_at: 2026-04-29
-content_hash: sha256:498b025645feb18983ad461e82f74c959b0ec1a5ba7fc7273c8d94feb49b02bc
+content_hash: sha256:3759cf4007b79e2f89f296a4c92bad3338b13ee11e2541e5edf2dd6d1d4ae94e
 ---
 
 1. 使用需要添加白名单的华为账号登录“[华为开发者联盟](https://developer.huawei.com/consumer/cn/)”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/xNPpfD0kT6WAofi-PbQFbA/zh-cn_image_0000002791860301.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/77oTwxuiSQ-lEJr3g6_dkA/zh-cn_image_0000002794411917.png)
 2. 点击右上角我的-头像进入详情页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/MMfYXXEBQ2mVG1hViXWbyQ/zh-cn_image_0000002762501430.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Al_cJvLyRHywERNWDVB-5A/zh-cn_image_0000002764973196.png)
 3. 如图开发者ID即为对应账号UID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/taLfUoYPRcqgMY6r9SjcGQ/zh-cn_image_0000002791740089.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/5Ee0giT2S4e7AMGPee73-Q/zh-cn_image_0000002765133120.png)

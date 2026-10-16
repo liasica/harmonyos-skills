@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-r
 title: 实时预览(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 实时预览(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:01+08:00
+scraped_at: 2026-10-17T06:42:04+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:551d47cd3e6492fd512ccf7bf530a4e7fbc7ab87a347fffdccf29ecaf2cdd99d
+content_hash: sha256:dfdb42376fc6f9bce3f072da28e77864208a47d2f114378c2139767324a48f01
 ---
 
 从API version 22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供音频编创的实时预览能力（API version 22只支持均衡器效果，API version 23及以后支持其他效果）。例如，可以使用均衡器中预置的音效，改变音乐的风格。
@@ -41,7 +41,7 @@ target_link_libraries(sample PUBLIC libohaudio.so libohaudiosuite.so)
 
 **图1**：实时预览示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/8tJRhfMKQgap3Fz2rztixg/zh-cn_image_0000002762340572.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/TMcLmOJBRtm-NOjrUoEihQ/zh-cn_image_0000002794410965.png)
 
 开发者可以通过以下步骤来实现一个简单的均衡器效果节点实时预览功能。此处以均衡器效果为例演示实时预览流程，其他效果节点的详细说明请参考[音频效果(C/C++)](audio-suite-effects.md)。
 

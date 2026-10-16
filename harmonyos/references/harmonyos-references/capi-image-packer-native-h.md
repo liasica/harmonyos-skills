@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_packer_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_packer_native.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:31+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:69f9e85670f31a450ca9518086936d8c3f173099ef5620d4661aaeab625b8e3a
+scraped_at: 2026-10-17T06:48:03+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:360384c9d37da2fe94554339c12a806a2be4d2c31b72d7bedb65950a53daef0c
 ---
 
 ## 概述
@@ -50,7 +50,7 @@ content_hash: sha256:69f9e85670f31a450ca9518086936d8c3f173099ef5620d4661aaeab625
 | [Image\_ErrorCode OH\_PackingOptions\_SetQuality(OH\_PackingOptions \*options, uint32\_t quality)](capi-image-packer-native-h.md#oh_packingoptions_setquality) | 设置编码质量。 |
 | [Image\_ErrorCode OH\_PackingOptions\_GetNeedsPackProperties(OH\_PackingOptions \*options, bool \*needsPackProperties)](capi-image-packer-native-h.md#oh_packingoptions_getneedspackproperties) | 获取OH\_PackingOptions结构体的needsPackProperties参数。 |
 | [Image\_ErrorCode OH\_PackingOptions\_SetNeedsPackProperties(OH\_PackingOptions \*options, bool needsPackProperties)](capi-image-packer-native-h.md#oh_packingoptions_setneedspackproperties) | 设置OH\_PackingOptions结构体的needsPackProperties参数。 |
-| [Image\_ErrorCode OH\_PackingOptions\_GetDesiredDynamicRange(OH\_PackingOptions options, int32\_t desiredDynamicRange)](capi-image-packer-native-h.md#oh_packingoptions_getdesireddynamicrange) | 获取编码时期望的图片动态范围。 |
+| [Image\_ErrorCode OH\_PackingOptions\_GetDesiredDynamicRange(OH\_PackingOptions \*options, int32\_t\* desiredDynamicRange)](capi-image-packer-native-h.md#oh_packingoptions_getdesireddynamicrange) | 获取编码时期望的图片动态范围。 |
 | [Image\_ErrorCode OH\_PackingOptions\_SetDesiredDynamicRange(OH\_PackingOptions \*options, int32\_t desiredDynamicRange)](capi-image-packer-native-h.md#oh_packingoptions_setdesireddynamicrange) | 设置编码时期望的图片动态范围。 |
 | [Image\_ErrorCode OH\_PackingOptions\_Release(OH\_PackingOptions \*options)](capi-image-packer-native-h.md#oh_packingoptions_release) | 释放OH\_PackingOptions指针。 |
 | [Image\_ErrorCode OH\_PackingOptionsForSequence\_Create(OH\_PackingOptionsForSequence \*\*options)](capi-image-packer-native-h.md#oh_packingoptionsforsequence_create) | 创建OH\_PackingOptionsForSequence结构体的指针。 |

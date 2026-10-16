@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: InterstitialDialogAction
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > InterstitialDialogAction
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:16+08:00
+scraped_at: 2026-10-17T06:45:08+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:3083c1cd02982fa0fa437b37f3b22500e3033b1d17c63509c105c4658713b054
+content_hash: sha256:4a5fcfeac4f45547c607c010ddf1f263ddace9198d541c69e7e43d1471261af8
 ---
 
 InterstitialDialogAction弹框在元服务中用于在保持当前的上下文环境时，临时展示用户需关注的信息或待处理的操作，用户点击弹框的不同区域可以触发对应的回调动作。
@@ -260,7 +260,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/aBnYOWHlQzarho1SGyBzvQ/zh-cn_image_0000002762502290.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/DvpRslELSCysBZubXtqymw/zh-cn_image_0000002764974048.png)
 
 ### 示例2
 
@@ -386,4 +386,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/X4_Pkb45T_SgN6LGgjWh-g/zh-cn_image_0000002791740949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/aYgYNzHgT0--QBbDFX8ylA/zh-cn_image_0000002765133972.png)

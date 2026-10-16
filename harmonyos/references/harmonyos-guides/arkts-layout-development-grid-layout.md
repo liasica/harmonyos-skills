@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 栅格布局 (GridRow/GridCol)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 栅格布局 (GridRow/GridCol)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:06+08:00
+scraped_at: 2026-10-17T06:41:11+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:d64d85930ca75120235e759efeb665200139c656620b6a319a1c939577fe377e
+content_hash: sha256:d6c75cab4204b6d2eda24b02518d914db917ba1eeadbdab94e194f6493010d32
 ---
 
 ## 概述
@@ -112,7 +112,7 @@ content_hash: sha256:d64d85930ca75120235e759efeb665200139c656620b6a319a1c939577f
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/VQpmcYOUQy69QiHzGJRG-Q/zh-cn_image_0000002791738111.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/B2a2PVFTSyyxxsLicuRpHg/zh-cn_image_0000002794489705.gif)
 
 ### 布局的总列数
 
@@ -146,11 +146,11 @@ GridRow中通过columns设置栅格布局的总列数。
 
   API version 20之前布局显示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/A9GOIGXeR_uLPmvD01BegA/zh-cn_image_0000002762339530.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/19GybB2vQ46GUu-mdiTujg/zh-cn_image_0000002794409925.png)
 
   API version 20及以后布局显示（以sm设备为例，默认栅格列数为4）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/_CMUraqbSFKFeXh-iyUJpQ/zh-cn_image_0000002791858325.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/6ahRaowHRaCX8s7_C4yvxQ/zh-cn_image_0000002764971208.png)
 
 columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)两种类型，可按两种方式设置栅格布局的总列数。
 
@@ -222,7 +222,7 @@ columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BYb_lO_3TqKflfFs-U_UZA/zh-cn_image_0000002762499452.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/JTrymAZfSYOAp2346TDdWA/zh-cn_image_0000002765131126.png)
 * 当columns类型为[GridRowColumnOption](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)时，支持下面6种不同尺寸（xs，sm，md，lg，xl，xxl）设备的栅格列数设置，不同尺寸的设备支持配置不同的栅格列数。
 
   ```typescript
@@ -256,11 +256,11 @@ columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container
 
   API version 20之前布局显示（xs设备未配置栅格列数，取默认列数12）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/VQq2KJ2LS_C0mztbG5utIg/zh-cn_image_0000002791738113.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/KGOUzLzVRnKVSGCisHEnTQ/zh-cn_image_0000002794489707.gif "点击放大")
 
   API version 20及以后布局显示（xs设备继承sm设备栅格列数）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/CPIrI1rtTNCTY4bhxXRWGQ/zh-cn_image_0000002762339532.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/1LhNrpBvT-W0NhQOLj1P2w/zh-cn_image_0000002794409927.gif "点击放大")
 
   仅部分设置sm、md的栅格列数，未配置的xs、lg、xl、xxl设备根据栅格列数补全（见[GridRowColumnOption](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)）取默认值。
 
@@ -274,14 +274,14 @@ columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container
   GridRow({ direction: GridRowDirection.Row }) { /* ... */ }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/IFLMJfF-QlWsMW4rE4V8oQ/zh-cn_image_0000002791858327.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/GWZNQIuFQhSBL9aXmdnDxg/zh-cn_image_0000002764971210.png)
 * 子组件从右往左排列。
 
   ```typescript
   GridRow({ direction: GridRowDirection.RowReverse }) { /* ... */ }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/KLGR4O3iQ8i9J3qaDVaiXQ/zh-cn_image_0000002762499454.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/KpH9leplRSuZ5Z8tRGWrhw/zh-cn_image_0000002765131128.png)
 
 ### 子组件间距
 
@@ -293,14 +293,14 @@ GridRow中通过[gutter](../harmonyos-references/ts-container-gridrow.md#gridrow
   GridRow({ gutter: 10 }) { /* ... */ }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/3hPSde1sTa-rysj_VR6gNA/zh-cn_image_0000002791738115.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/4V-WrFS6QC2d_SGRxiNivg/zh-cn_image_0000002794489709.png)
 * 当gutter类型为[GutterOption](../harmonyos-references/ts-container-gridrow.md#gutteroption)时，单独设置栅格子组件水平垂直边距，x属性为水平方向间距，y为垂直方向间距。
 
   ```typescript
   GridRow({ gutter: { x: 20, y: 50 } }) { /* ... */ }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/vtu5cKvuR66gtKegLYZ3Vw/zh-cn_image_0000002762339534.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/iW7k3vFiRTeqrCH5dCjFvA/zh-cn_image_0000002794409929.png)
 
 ## 子组件GridCol
 
@@ -376,7 +376,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/wLNltAAuRHKBtlr1gGCXnA/zh-cn_image_0000002791858329.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/niZytC00R2emnkJ5hhLmRg/zh-cn_image_0000002764971212.png)
 * 当span类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件所占列数设置，不同尺寸的设备下子组件支持配置不同列数。若仅部分设置sm、md的列数，未配置的xs、lg、xl、xxl设备根据列数补全（见[GridColColumnOption](../harmonyos-references/ts-container-gridcol.md#gridcolcolumnoption)）取默认值。
 
   ```typescript
@@ -419,7 +419,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/-KMqH3DFT7Sb0a9NEujIhg/zh-cn_image_0000002762499456.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/RWhQetjzTjuXwvLUIxqq-w/zh-cn_image_0000002765131130.gif)
 
 ### offset
 
@@ -454,7 +454,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/c1C5xThARz-M0ryfaeq98w/zh-cn_image_0000002791738117.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/KQfgtCoFSmyp0ZZxBHdQAw/zh-cn_image_0000002794489711.png)
 
   在lg及以上尺寸的设备上，栅格分成12列，每一个子组件占1列，偏移2列，每个子组件及间距共占3列，1行放4个子组件。
 * 当offset类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件所占列数设置，各个尺寸下数值可不同。
@@ -500,7 +500,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/q3RNDpl0S1CKaJ-F0tc0gw/zh-cn_image_0000002762339536.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rudtvZQkSPSW5M5p1A34NA/zh-cn_image_0000002794409931.gif)
 
 ### order
 
@@ -538,7 +538,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
   }.border({ width: 1, color: 'rgb(39,135,217)' }).height('200vp')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/nXcTsWE2S8m5mglOrycsjA/zh-cn_image_0000002791858331.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/nalr5PozTlC_2OPqq_dy1g/zh-cn_image_0000002764971214.png)
 * 当order类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件排序次序设置。在xs设备中，子组件排列顺序为1234；sm为2341，md为3412，lg为2431。
 
   ```typescript
@@ -585,7 +585,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/5vUU4D-DTKinT8eKaCtngw/zh-cn_image_0000002762499458.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/D5aPJFWQTCefKma2XImfWw/zh-cn_image_0000002765131132.gif)
 
 ## 栅格组件的嵌套使用
 
@@ -630,6 +630,6 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/-l8bC3CvSDGUmu8w3hVtPQ/zh-cn_image_0000002791738119.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/8o6FM4tDRBiODhu6LrU77g/zh-cn_image_0000002794489713.png)
 
 综上所述，栅格组件提供了丰富的自定义能力，功能非常灵活和强大。只需要明确栅格在不同断点下的[columns](../harmonyos-references/ts-container-gridrow.md#gridrowoptions对象说明)、[margin](../harmonyos-references/ts-universal-attributes-size.md#margin)、[gutter](../harmonyos-references/ts-container-gridrow.md#gridrowoptions对象说明)及[span](../harmonyos-references/ts-container-gridcol.md#gridcoloptions对象说明)等参数，即可确定最终布局，无需关心具体的设备类型及设备状态（如横竖屏）等。

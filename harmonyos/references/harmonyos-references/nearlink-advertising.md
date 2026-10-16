@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: advertising（星闪广播能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > advertising（星闪广播能力）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8a9b3f33bbf1910492f5a3e3f0ef24d33c464423aabc9622e791f93332455786
+scraped_at: 2026-10-17T06:46:40+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:3e2b7b5130149e844585e50e0aecc23695df39120acadc6eb8cf5af170a6e2d0
 ---
 
 本模块提供了发送星闪广播的相关功能，包括启动广播、停止广播、订阅广播状态等。
@@ -174,9 +174,9 @@ startAdvertising(advertisingParams: AdvertisingParams): Promise<number>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | [Sync/Async] Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -264,9 +264,9 @@ stopAdvertising(advertisingId: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | [Sync/Async] Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 1009700003 | NearLink is off. |
 | 1009700099 | Operation failed. |
 
@@ -315,9 +315,8 @@ on(type: 'advertisingStateChange', callback: Callback<AdvertisingStateChangeInfo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 
@@ -364,9 +363,8 @@ off(type: 'advertisingStateChange', callback?: Callback<AdvertisingStateChangeIn
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 

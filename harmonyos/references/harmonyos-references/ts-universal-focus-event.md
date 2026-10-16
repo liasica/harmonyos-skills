@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 焦点事件
 category: harmonyos-references
-scraped_at: 2026-10-15T07:07:49+08:00
+scraped_at: 2026-10-17T06:44:42+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:eeb10cf0bb303ccd2714742f6c1d5b3d9da491e2788bd9cd97f89d06596d6995
+content_hash: sha256:0b996997dd75fb2092c9f69867de2cb1936aba24b80687bf1cc0194fadfb0567
 ---
 
 焦点事件指页面焦点在可获焦组件间移动时触发的事件，组件可使用焦点事件来处理相关逻辑。
@@ -119,4 +119,4 @@ struct FocusEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/lO4C9wCIT9mRS493_KpVGw/zh-cn_image_0000002791740275.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/LO53NysPSWKz4gnL4Lm4UQ/zh-cn_image_0000002765133310.png)

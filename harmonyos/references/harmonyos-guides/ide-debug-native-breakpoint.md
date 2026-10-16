@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 使用断点
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 使用断点
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:27+08:00
+scraped_at: 2026-10-17T06:43:27+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:ec52535466cfc624cb66f6610e2279ac243de8efdb3aa3a4569df88ef28f5f4d
+content_hash: sha256:a9f123010ca1bbe3f7208c8bf862461c2ddf69dc895ede29f1c655c274607ccb
 ---
 
-点击**View Breakpoints** 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/QJodqsuoTzqtHOc0NukEpg/zh-cn_image_0000002731542099.png)可以打开断点管理界面，您可以在断点管理界面查看或更改您的断点。
+点击**View Breakpoints** 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/LTtbDEhcRDmk8kj3rIkCxg/zh-cn_image_0000002731542099.png)可以打开断点管理界面，您可以在断点管理界面查看或更改您的断点。
 
 * 勾选 Enable ，使能该断点。
 * 勾选 Suspend execution ，使程序运行到断点时中断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/pbBI_7wMQZS3JcvJQY9-Qw/zh-cn_image_0000002731542093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/-KvUpgOOTGqtOYkBOfxtvQ/zh-cn_image_0000002731542093.png)
 
 ## 条件断点
 
@@ -31,7 +31,7 @@ content_hash: sha256:ec52535466cfc624cb66f6610e2279ac243de8efdb3aa3a4569df88ef28
 
 未勾选 Enable 的断点不会打印日志，未勾选 Suspend execution 的断点会打印日志，不满足所设置的 Condition 的断点不会打印日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/dQnnWTUWTsOrn_OI1KW0zg/zh-cn_image_0000002701822830.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/GwxaE4yASLyBo_1COETK9g/zh-cn_image_0000002701822830.png)
 
 ## 临时断点
 
@@ -43,7 +43,7 @@ content_hash: sha256:ec52535466cfc624cb66f6610e2279ac243de8efdb3aa3a4569df88ef28
 
 在断点管理界面中点击“+”->“Cpp Symbolic Breakpoints”，在弹出窗口中填写函数名和模块名（模块名可缺省），添加函数断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/NyO9S_MYQsa9FDWP4V-0jQ/zh-cn_image_0000002701822824.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/nQoJsRu5Q6uMazu4mmS_yg/zh-cn_image_0000002701822824.png)
 
 ## 异常断点
 
@@ -55,7 +55,7 @@ content_hash: sha256:ec52535466cfc624cb66f6610e2279ac243de8efdb3aa3a4569df88ef28
 
 在断点管理界面中点选 “Cpp Exception Breakpoints” 下的 “Any exception”，勾选 Enable 使能异常断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/uT0rtqrFQD2TD_4z2lcjdQ/zh-cn_image_0000002701662902.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/8KXk8NoeQzKwCI7ctasTsw/zh-cn_image_0000002701662902.png)
 
 ## 数据断点
 
@@ -63,11 +63,11 @@ content_hash: sha256:ec52535466cfc624cb66f6610e2279ac243de8efdb3aa3a4569df88ef28
 
 在变量列表中对某一个变量右键，在菜单中选择添加数据断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/tVHE1IKRQaGqfhTw2x5ddQ/zh-cn_image_0000002701822826.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/NY_WQVhtS5GRb1zLFDrGMQ/zh-cn_image_0000002701822826.png)
 
 在断点管理界面进行查看和修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/SD-HE4opRK2M__f24-jJ7Q/zh-cn_image_0000002731382121.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Q2bMz6liQdiktasun19Z1w/zh-cn_image_0000002731382121.png)
 
 **说明** 
 

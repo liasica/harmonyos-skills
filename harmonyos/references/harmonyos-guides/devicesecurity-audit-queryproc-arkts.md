@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 进程信息查询场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 进程信息查询场景
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:34+08:00
+scraped_at: 2026-10-17T06:41:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0e9f3dd6aac3f59d3cb7e4272a6a126eb0562c23d22a778f153b8e20c9efdbcd
+content_hash: sha256:a62ff532bfaedc393c309cae560899f39517db3663533e06e9856843d930e38b
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:0e9f3dd6aac3f59d3cb7e4272a6a126eb0562c23d22a778f153b8e20c9e
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/UgZNkWKUSbOBJ_KAeTdJbw/zh-cn_image_0000002762500310.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/fH98AHyLQtqZz-2ZJHtMKw/zh-cn_image_0000002765131994.png)
 
 **流程说明：**
 

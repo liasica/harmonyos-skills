@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-heat
 title: 热力图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 热力图
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:33+08:00
+scraped_at: 2026-10-17T06:42:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ce8a2c36a5ff5001fc86396552d4766b20364f5da93e2e6da0ae7a39007269ea
+content_hash: sha256:911b8734b45867ac09a2b6675d7d4253f2b160c25aba17f41d84740eb33effa2
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:ce8a2c36a5ff5001fc86396552d4766b20364f5da93e2e6da0ae7a39007
 
 6.0.0(20)开始，支持热力图功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/uOQjAn2bRo29n9yL9RCrsQ/zh-cn_image_0000002791739733.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/xsFfShKOTZa-yefeeJE2MA/zh-cn_image_0000002794491337.jpg "点击放大")
 
 ## 接口说明
 

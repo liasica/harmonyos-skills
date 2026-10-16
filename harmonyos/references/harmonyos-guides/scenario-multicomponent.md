@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-mult
 title: 多UI控件组合
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 多UI控件组合
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:54+08:00
+scraped_at: 2026-10-17T06:40:58+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5fef4d9dc5a65e21185a76a60990014c0213a4a93de7612675547f7daba1d0be
+content_hash: sha256:8bc0551539e59102b13cc159fd7b6b70a3178e6540355a4af9a72a571fc1ca2a
 ---
 
 ## 设计场景
 
 在一些场景中，一个功能上完整的UI对象可能是由若干个更小的UI组件组合而成的。若每一个小的UI组件都可以获焦并朗读，则会造成信息冗余和效率降低。同时由于可聚焦的组件过多过细，也会影响触摸浏览时走焦的性能体验。在这种情况下，将它们在功能或语义上聚合成一个自然组并作为一个独立可获焦的UI元素来向视障用户表达内容更加合理，且更加高效。总体原则是：对于表示同一个对象信息的多个组件，需要进行组合标注，对外只暴露一个无障碍焦点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/j59H-lbOTX68Ehdi9q9cZg/zh-cn_image_0000002791737725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/hTxPq51ORN6OW0zyWSW-aw/zh-cn_image_0000002794489321.png)
 
 ## 开发流程
 

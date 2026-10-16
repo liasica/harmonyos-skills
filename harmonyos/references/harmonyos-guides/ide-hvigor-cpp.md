@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-cp
 title: 配置CPP
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 配置CPP
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:32+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:1cb3752b22415d6f317c719acff18527287e605ae9ba7855a2e9107e96ec5de8
+scraped_at: 2026-10-17T06:43:31+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:5da3507a89f723b81a17062d48c0dad9d7003ba8b4382001c9193d8f20ffb5c9
 ---
 
 Hvigor集成CMake、Ninja为cpp代码的构建工具。在初始状态下，无需额外配置，您也可以添加以下自定义配置，定制cpp代码编译。
@@ -68,7 +68,7 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
   + 三方包（包括远程三方包及本地har包）的优先级高于本地依赖模块的优先级。
   + 按照广度优先的遍历方式来收集依赖，如下图，优先级顺序为current > library0 > library1 > library5 > library2 > library3 > library4。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/D3IWTAEAS0yGpk2DlvbbZw/zh-cn_image_0000002701822894.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/RHNKxv6WTwCzD7tToY9D0g/zh-cn_image_0000002701822894.png "点击放大")
 * **select**
 
   **表4** select字段说明
@@ -114,13 +114,13 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
               package: "@ohos/curl", // 包名
               version: "1.3.5", // 包版本
               excludePattern: ['**/arm64-v8a/**'],    // 排除har包arm64-v8a目录下的所有.so文件
-             },
+            },
             {
               package: "@ohos/curl1", // 包名
               version: "1.3.5", // 包版本
               includePattern: ['**/x86_64/libcurl.so'],  // 针对重名的libcurl.so，指定打包har1包中的libcurl.so
               // include: ["libcurl.so"]  // 针对重名的libcurl.so，指定打包har1包中的libcurl.so
-             },
+            },
           ]
         }
       }
@@ -156,7 +156,7 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
               excludePattern: ['**/arm64-v8a/!(*(libcurl1|libcurl2).so*)'], // 打包arm64-v8a目录下的libcurl1.so和libcurl2.so
               // include: [],
               // exclude: ["libcurl.so"] // 打包arm64-v8a目录下的libcurl1.so和libcurl2.so
-             }
+            }
           ]
         }
       }

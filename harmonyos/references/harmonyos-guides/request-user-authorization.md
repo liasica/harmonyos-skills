@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-
 title: 向用户申请授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 向用户申请授权
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:27+08:00
+scraped_at: 2026-10-17T06:41:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:669dcefcda5bec562191e9975098f7f192cf45cc6dcbcc1daf8759ff531295fb
+content_hash: sha256:86ff8f985422f95491b29fbacec812f587da19ebb6b6d5ed09d2e6d245bdbf25
 ---
 
 当应用需要访问用户的隐私信息或使用系统能力时，如获取位置信息、访问日历、使用相机拍摄照片或录制视频等，应向用户申请授权。这些权限属于user\_grant权限。
@@ -46,7 +46,7 @@ content_hash: sha256:669dcefcda5bec562191e9975098f7f192cf45cc6dcbcc1daf8759ff531
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/OTb85JfOR_CV8h_7eUkYyA/zh-cn_image_0000002762500256.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/GUbe79eCQrm5rWMh-e-TCQ/zh-cn_image_0000002765131942.png)
 
 1. 申请ohos.permission.LOCATION、ohos.permission.APPROXIMATELY\_LOCATION权限，配置方式请参见[声明权限](declare-permissions.md)。
 2. 校验当前是否已经授权。

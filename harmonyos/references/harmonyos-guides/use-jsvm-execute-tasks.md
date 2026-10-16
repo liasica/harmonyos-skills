@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-exec
 title: 使用JSVM-API接口进行任务队列相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行任务队列相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:56+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:f60bd2496c83e07ec830bb4898404068fec4af43fc7ddec4e83df54f6f211b37
+scraped_at: 2026-10-17T06:43:13+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:9188e0eec10524ea61e95bd5a2ad7a879885075997c517c0f3ec94918017f159
 ---
 
 ## 简介
@@ -197,7 +197,7 @@ static int SetMicrotaskPolicy(JSVM_VM vm, JSVM_Env env) {
     CHECK_RET(OH_JSVM_GetValueBool(env, hasEvaluateMicrotask, &val));
     OH_LOG_INFO(
         LOG_APP,
-        "Policy: JSVM_MICROTASK_AUTO, evaluateMicrotask before calling OH_JSVM_PerformMicrotaskCheckpoint: %{public}d",
+        "Policy: JSVM_MICROTASK_EXPLICIT, evaluateMicrotask before calling OH_JSVM_PerformMicrotaskCheckpoint: %{public}d",
         val);
 
     CHECK_RET(OH_JSVM_PerformMicrotaskCheckpoint(vm));
@@ -205,7 +205,7 @@ static int SetMicrotaskPolicy(JSVM_VM vm, JSVM_Env env) {
     CHECK_RET(OH_JSVM_GetValueBool(env, hasEvaluateMicrotask, &val));
     OH_LOG_INFO(
         LOG_APP,
-        "Policy: JSVM_MICROTASK_AUTO, evaluateMicrotask after calling OH_JSVM_PerformMicrotaskCheckpoint: %{public}d",
+        "Policy: JSVM_MICROTASK_EXPLICIT, evaluateMicrotask after calling OH_JSVM_PerformMicrotaskCheckpoint: %{public}d",
         val);
 
     return 0;
@@ -213,7 +213,7 @@ static int SetMicrotaskPolicy(JSVM_VM vm, JSVM_Env env) {
 
 static void RunDemo(JSVM_VM vm, JSVM_Env env) {
     if (SetMicrotaskPolicy(vm, env) != 0) {
-        OH_LOG_INFO(LOG_APP, "Run Microtask Policy failed");
+        OH_LOG_ERROR(LOG_APP, "Run Microtask Policy failed");
     }
 }
 
@@ -254,6 +254,6 @@ static int32_t TestJSVM() {
 
 ```txt
 Policy :JSVM_MICROTASK_AUTO, evaluateMicrotask : 1
-Policy :JSVM_MICROTASK_AUTO, evaluateMicrotask before calling OH_JSVM_PerformMicrotaskCheckpoint: 0
-Policy :JSVM_MICROTASK_AUTO, evaluateMicrotask after calling OH_JSVM_PerformMicrotaskCheckpoint: 1
+Policy: JSVM_MICROTASK_EXPLICIT, evaluateMicrotask before calling OH_JSVM_PerformMicrotaskCheckpoint: 0
+Policy: JSVM_MICROTASK_EXPLICIT, evaluateMicrotask after calling OH_JSVM_PerformMicrotaskCheckpoint: 1
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-runtime
 title: ArkTS运行时常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS运行时常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:00+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:74ce882efba65c344e3b77b91ebd0672376d96abaf7b6092d02996472d2315d1
+scraped_at: 2026-10-17T06:41:05+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:269a9b2d59db491cc1d4e815a4f678717bf5ef8d8e4bc76de03f7a20550f2b54
 ---
 
 ## 正则运算与预期输出结果不一致场景
@@ -248,7 +248,7 @@ let res = str.replace(/^/, 'abc');
 
 **Async函数内部异常的捕获方式**
 
-1. 使用[errorManager.on()](../harmonyos-references/js-apis-app-ability-errormanager.md#errormanageronerror)捕获到Async函数产生的unhandledRejection事件，再通过编写errorManager.on()注册的回调函数，来进行异常处理操作。
+1. 使用[errorManager.on()](../harmonyos-references/js-apis-app-ability-errormanager.md#errormanageronunhandledrejection12)捕获到Async函数产生的unhandledRejection事件，再通过编写errorManager.on()注册的回调函数，来进行异常处理操作。
 
    ```typescript
    import { errorManager } from '@kit.AbilityKit';
@@ -274,7 +274,7 @@ let res = str.replace(/^/, 'abc');
 
 然后点击DevEco Studio下方HiLog选项卡，输入过滤条件“Throw error:”，即可查看到Async函数内产生的异常信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/M4KBeuBrTdOwoIsEMvvFEw/zh-cn_image_0000002762499104.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/AZ_7exAdTRadEN_bszxVPA/zh-cn_image_0000002765130782.png)
 
 ## Array.flatMap()接口常见问题
 

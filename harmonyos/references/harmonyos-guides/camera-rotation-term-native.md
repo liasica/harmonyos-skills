@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotati
 title: 相机旋转角度的术语
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 相机旋转 > 相机旋转角度的术语
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:07+08:00
+scraped_at: 2026-10-17T06:42:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:4ef92f1dafa0bccad761884a761dfc4bebbeb86dc76fdb8550cce3b39199b5a1
+content_hash: sha256:722528b24b63e1ea1a907ea01399f46f0121daedaa8bb688874309608116c3b9
 ---
 
 在适配相机旋转角度中涉及设备方向、镜头角度、屏幕显示角度等多个术语，开发者可以了解相关概念，帮助理解框架的运作机制。
@@ -14,13 +14,13 @@ content_hash: sha256:4ef92f1dafa0bccad761884a761dfc4bebbeb86dc76fdb8550cce3b3919
 
 **设备自然方向**指设备默认的使用方向，以手机为例，如图所示，手机的自然方向为竖屏且充电口向下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/z-Kcd5yUSaW0L7YkJYILLA/zh-cn_image_0000002791859431.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/rZz_w1aVRbS-irO1s0J4qg/zh-cn_image_0000002764972312.png)
 
 ## 屏幕显示方向
 
 **屏幕显示方向**指当前用户视角下，设备正确的显示方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/n6-lfJ-RSX-1wYqjh6pORA/zh-cn_image_0000002762500558.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/2dmNPxqESN-o9AcL9wC1Qw/zh-cn_image_0000002765132238.png)
 
 ## 屏幕旋转角度
 
@@ -28,7 +28,7 @@ content_hash: sha256:4ef92f1dafa0bccad761884a761dfc4bebbeb86dc76fdb8550cce3b3919
 
 如图所示，图示夹角即为屏幕旋转角度，可通过[OH\_NativeDisplayManager\_GetDefaultDisplayRotation](../harmonyos-references/capi-oh-display-manager-h.md#oh_nativedisplaymanager_getdefaultdisplayrotation)获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/qASDVgrOTjKbXQRC1op3cw/zh-cn_image_0000002791739217.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/3i_xmzkwQDOERbxzOthhdQ/zh-cn_image_0000002794490815.png)
 
 ## 相机镜头安装角度
 
@@ -38,11 +38,11 @@ content_hash: sha256:4ef92f1dafa0bccad761884a761dfc4bebbeb86dc76fdb8550cce3b3919
 
 此时图像需要顺时针旋转90度，才能与设备自然方向保持一致，所以**后置相机的镜头角度为90度**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/FNBC0rrbQ_q19iKeNbJThA/zh-cn_image_0000002762340638.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/GCnty0_0SxC5M112LmRG0Q/zh-cn_image_0000002794411031.png)
 
 而手机前置镜头，是朝向使用者的，当手机在竖屏方向使用前置相机镜头拍摄时，出图方向与后置出图方向互为镜像，如下图所示，**前置相机的镜头角度为270度**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/lZtKivvgSOqC3062b2NVEA/zh-cn_image_0000002791859433.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/hiAuoREPQnai6YWQbpQA0w/zh-cn_image_0000002764972314.png)
 
 ## 预览旋转角度
 

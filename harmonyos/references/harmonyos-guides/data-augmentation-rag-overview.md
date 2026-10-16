@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-augmenta
 title: RAG概述
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > RAG > RAG概述
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:22+08:00
+scraped_at: 2026-10-17T06:41:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ec2e30c34226f17aed237fa4e16b14f8a105155969f702e0834119ab855cbcad
+content_hash: sha256:102d3938b69bc0b9f044ffae10ae7b6188449a258d270cdb07eb014e9d4461d2
 ---
 
 RAG（Retrieval-Augmented Generation，检索增强生成）融合了智能检索与知识库技术，通过知识库驱动内容生成，具备强大的可解释性和深度定制能力。应用可通过接入Data Augmentation Kit提供的[RAG](../harmonyos-references/dataaugmentation-rag-api.md)能力，快速实现知识问答、智慧助手等业务场景。本模块还支持通过模板灵活配置RAG运行的核心参数，实现全流程的深度定制。
 
 其工作原理为：请求大语言模型解析用户问题，智能检索知识库内容，最终由大模型融合检索结果并生成自然流畅的回复。下文将以流式的知识问答场景为例，详细说明RAG的使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/wGHvOHH5RtCFZji_vfiqEw/zh-cn_image_0000002762500146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/-kxhfrUwQ6KpRQckN9jsgg/zh-cn_image_0000002765131832.png)

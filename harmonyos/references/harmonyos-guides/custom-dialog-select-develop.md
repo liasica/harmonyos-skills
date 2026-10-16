@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/custom-dialog
 title: 自定义弹窗选型与开发
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 自定义弹窗选型与开发
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:09+08:00
+scraped_at: 2026-10-17T06:41:14+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:1a0a2f2e16731f9cffd3c2383d3b3a321507e909c1269df5db80cf31ed869e64
+content_hash: sha256:ba7ff998bce5e854b55330d0ed7c7520c808966657594742628110a6378873e6
 ---
 
 ## 概述
@@ -85,7 +85,7 @@ content_hash: sha256:1a0a2f2e16731f9cffd3c2383d3b3a321507e909c1269df5db80cf31ed8
 
 图文提示弹窗常用于显示用户操作的结果，如成功或失败提示，也可以在等待系统响应时展示加载动画等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Zh0GKe7gTaKWkb_1z9eNpw/zh-cn_image_0000002791738377.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/wt2NyBHFRmKzq9zk6z9hEQ/zh-cn_image_0000002794489975.gif)
 
 **实现方案**
 
@@ -148,7 +148,7 @@ PromptActionClass.setOptions({
 
 隐私弹窗主要用于确保法律合规性，要求应用在收集用户数据前必须获得用户的同意。当用户打开隐私弹窗时，可以通过点击弹窗内的超链接跳转至详细的隐私协议页面。返回后，隐私弹窗依旧保持显示状态，确保用户能够在充分了解相关信息的基础上做出选择。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/d0lRETEGT5CwlfcJ7QJpCA/zh-cn_image_0000002762339798.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/FofGOP_LSsuBWZEuplyotQ/zh-cn_image_0000002794410195.gif)
 
 在隐私页面中，需要关注的点主要有两个：
 
@@ -269,7 +269,7 @@ API version 16之前的版本，可以使用NavDestinationMode.DIALOG弹窗实�
 
 展示进度条的弹窗是一种常见的弹窗组件，用于在耗时操作中向用户反馈任务进度，此类弹窗中主要涉及的特点在于弹窗与页面之间的数据交互，刷新弹窗的内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/7WoXyNt_RrKTmSWluXMusQ/zh-cn_image_0000002791858591.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/7KFdPMGbQ7mrgGDs-D7CPA/zh-cn_image_0000002764971478.gif)
 
 **实现方案**
 
@@ -334,7 +334,7 @@ API version 16之前的版本，可以使用NavDestinationMode.DIALOG弹窗实�
 
 操作栏弹窗通常是指在应用界面中，用户点击操作栏（如右上角的“更多”按钮）后触发的半模态菜单，通常具备分享、增删改查类功能。操作列表弹窗的内容主体是列表，分为固定高度，可变高度两种。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Fy_lZm9PSnm7Yhzz3ploOw/zh-cn_image_0000002762499718.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ER2SlNE7SvyO771l_znV_w/zh-cn_image_0000002765131402.gif)
 
 **实现方案**
 
@@ -388,7 +388,7 @@ API version 16之前的版本，可以使用NavDestinationMode.DIALOG弹窗实�
     })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/rDwRAOFpREeovc55l-tA2g/zh-cn_image_0000002791738379.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/yzULuDWpS9GqR2Jk61Gjkw/zh-cn_image_0000002794489977.gif)
 
 ### 实现评论回复弹窗
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-navi-hop
 title: 导航流转至车机
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 实现车机导航流转 > 导航流转至车机
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:49+08:00
+scraped_at: 2026-10-17T06:41:53+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:775758a0672cf69b98268610ca68dde9d3628c2f716db0a3ebf2b96cb4aa20a8
+content_hash: sha256:0627a1071a82f9ad45f4be903ab9d10f8ca9bda2e2ffb1cc9d70cb2190e597c5
 ---
 
 ## 场景介绍
@@ -14,13 +14,13 @@ content_hash: sha256:775758a0672cf69b98268610ca68dde9d3628c2f716db0a3ebf2b96cb4a
 
 * 碰一碰导航流转：用户在手机地图的指定页面中（地图选点页面、规划路线页面、驾车导航页面），与车机中控屏指定区域碰一碰后，将手机上的导航数据流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/CcZgBdVNQ-OQXpR9-zIDVg/zh-cn_image_0000002791859283.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/AqALAIOKSvynD6MvVJC4hw/zh-cn_image_0000002764972164.png)
 * 上车导航自动流转：用户使用手机地图应用发起驾车导航后上车，手机上的导航数据会自动流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/iXQJxCEJQ3-abNs0oBo2Xg/zh-cn_image_0000002762500408.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5rJFhzZCR4KweP_hlOyzpg/zh-cn_image_0000002765132090.png)
 * 车内导航自动流转：用户在车内，使用手机地图应用发起驾车导航，手机上的导航数据会自动流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/_vK794V8SnmCCwNHM6g3yA/zh-cn_image_0000002791739069.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/qqQMVzM_QtSGXYQq5_TJoA/zh-cn_image_0000002794490667.png)
 
 ## 接口说明
 
@@ -44,7 +44,7 @@ SmartMobilityEvent事件名（eventName）取值如下：
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/VD_aUAvETCeS9k5i3pMcsQ/zh-cn_image_0000002762340490.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/HXAuqtHKTYmmvjjkzKg7IA/zh-cn_image_0000002794410883.png)
 
 ## 开发步骤
 

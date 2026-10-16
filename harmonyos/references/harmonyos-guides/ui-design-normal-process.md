@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nor
 title: 单层图标处理
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 图标处理 > 单层图标处理
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:25+08:00
+scraped_at: 2026-10-17T06:41:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:813fef6276fb7b929f4af026f5d96f64d41a2ac1154f0ada13b63d045ade1ef6
+content_hash: sha256:0320418f0c4ac58a00d294593b870aec826fb5eff819546b0b54f3f03bda5b02
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:813fef6276fb7b929f4af026f5d96f64d41a2ac1154f0ada13b63d045ad
 
 ## 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/sx6rHup6SXaz46dxo3sUAw/zh-cn_image_0000002791859111.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/xnHNPSvkRuyaJgHAEabO4Q/zh-cn_image_0000002764971994.png)
 
 1. 在entry/src/main/resources/base/media下，配置一张图片资源normal\_icon.png。
 2. 将图标处理的相关类添加至工程。

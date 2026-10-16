@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo export_userinfo
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo export_userinfo
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:15+08:00
+scraped_at: 2026-10-17T06:43:16+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:cfed2225e9f1b1dcfca3158c8647223d750fee707b8f5601ca3031dd6064cb01
+content_hash: sha256:87118d9774cdd7f340b82f98ef929c37e7af2d931f5e293a55c7135762a38157
 ---
 
 导出用户的DB数据。
@@ -41,7 +41,7 @@ ohpm-repo export_userinfo
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/a_8MYWuLTYGnXlwYo4YY1A/zh-cn_image_0000002731541409.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/s17rTiLlQL6tVebjWKMdCA/zh-cn_image_0000002731541409.png "点击放大")
 
 ```screen
 PS D:\> ohpm-repo export_userinfo

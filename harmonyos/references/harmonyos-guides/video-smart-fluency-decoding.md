@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-smart-f
 title: 智能流畅倍速解码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 智能流畅倍速解码
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:54+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:445516ab21e710ccbc2bbb61010055c229271255a024d9a5e68133a657bb36db
+scraped_at: 2026-10-17T06:42:05+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:3af500645c84490ed7cb7da9e963430cfc700f99f486ccef12009cdf9c51e026
 ---
 
 ## 能力简介
@@ -37,70 +37,54 @@ content_hash: sha256:445516ab21e710ccbc2bbb61010055c229271255a024d9a5e68133a657b
 
    * 类型：int32\_t
    * 取值范围：参考[OH\_FrameRetentionMode](../harmonyos-references/capi-native-avcodec-base-h.md#oh_frameretentionmode)。
-   * 描述：能力的总开关与模式选择，建议在初始化阶段配置。
+   * 描述：能力的总开关与模式选择，可通过[OH\_VideoDecoder\_Configure()](../harmonyos-references/capi-native-avcodec-videodecoder-h.md#oh_videodecoder_configure)在初始化阶段配置，也可通过[OH\_VideoDecoder\_SetParameter()](../harmonyos-references/capi-native-avcodec-videodecoder-h.md#oh_videodecoder_setparameter)在运行态切换。正常倍速起播时，建议初始化为全量直通模式。
 2. **OH\_MD\_KEY\_VIDEO\_DECODER\_SPEED（解码倍速）**
 
    * 类型：double
    * 取值范围：严格大于0.0。
-   * 描述：**在ADAPTIVE模式下必须同步配置此参数**，作为系统动态计算的依据。
+   * 描述：配置或切换到感知自适应模式时，建议同时显式配置当前播放倍速，以获得最佳的算法准确性；倍速变化时建议同步更新。初始化为全量直通模式时无需配置。
 3. **OH\_MD\_KEY\_VIDEO\_DECODER\_FRAME\_RETENTION\_RATIO（保留比例）**
 
    * 类型：double
    * 取值范围：[0.01, 1.0]（例如0.5表示保留50%的解码帧）。
-   * 描述：仅在UNIFORM模式下生效。当配置越界或异常时，系统默认以30fps为目标帧率进行兜底。
+   * 描述：仅在平滑定比模式下生效。当配置越界或异常时，系统默认以30fps为目标帧率进行兜底。
 
 ## 约束与限制
 
 * **格式支持**：此能力仅在视频解码链路生效，当前仅支持H.264、H.265及H.266码流格式。
-* **参数异常兜底**：在UNIFORM模式下，若传入的保留比例非法或未明确指定，系统将默认以30fps为目标输出帧率进行解码与送显。
-* **硬件能力降级**：ADAPTIVE模式依赖硬件解码器输出运动矢量（MV）信息的能力。在无法提供MV数据的硬件平台上，系统将在底层自动触发基础降级策略（对外仍保留ADAPTIVE模式状态）。此时系统仍能维持基础的流畅播放效果，但无法获得基于内容感知的最佳收益。
-* **MV信息输出**：自适应模式的丢帧判决模块依赖解码过程的MV信息。解码过程输出MV信息需在初始化阶段使能ADAPTIVE模式，不支持中途切换模式时启用。若在初始化阶段未配置ADAPTIVE模式，丢帧判决模块将无法获取MV信息，退化为按固定间隔丢帧（解码帧率≥45fps时目标输出帧率为45fps，否则不丢帧），感知自适应收益将降低。建议需要使用ADAPTIVE模式的业务在初始化阶段即完成配置。
+* **参数异常兜底**：在平滑定比模式下，若传入的保留比例非法或未明确指定，系统将默认以30fps为目标输出帧率进行解码与送显。
+* **硬件能力降级**：感知自适应模式依赖硬件解码器输出运动矢量（MV）信息的能力。在无法提供MV数据的硬件平台上，系统将在底层自动触发基础降级策略（对外仍保留感知自适应模式状态）。此时系统仍能维持基础的流畅播放效果，但无法获得基于内容感知的最佳收益。
+* **MV信息输出**：感知自适应模式依赖解码过程中输出的MV信息，具体配置要求随系统版本不同而变化。
+  + 在搭载HarmonyOS 7.0.0.109及以上版本的设备上，无论初始化时配置为哪种帧保留模式，运行态切换到感知自适应模式后均可获取MV信息。MV信息是否可用仍取决于硬件解码器的支持能力。
+  + 在HarmonyOS 7.0.0.109之前支持本能力的系统版本中，需在初始化阶段配置感知自适应模式，才能获取MV信息。若初始化为其他模式，运行态切换到感知自适应模式后将无法获取MV信息，丢帧策略退化为按固定间隔丢帧（解码帧率≥45fps时目标输出帧率为45fps，否则不丢帧），感知自适应收益降低。
 * **音视频同步（AV Sync）安全**：智能倍速丢帧机制仅决定帧的存留，不会修改保留帧原始的PTS（显示时间戳）与DTS（解码时间戳）信息，不影响音画同步。
 
 ## 倍速播放场景开发实践
 
 对于常规视频播放业务，建议采用**初始化阶段配置与动态切换结合**的策略。
 
-* **初始化配置**：建议在视频起播前的初始化阶段直接配置为感知自适应（ADAPTIVE）模式。仅在初始化阶段配置ADAPTIVE模式时，解码器才会输出MV信息供丢帧判决使用，不支持中途切换模式后输出MV信息；若在初始化阶段未配置ADAPTIVE模式，中途切入该模式时，丢帧判决模块将无法获取MV信息，退化为按固定间隔丢帧，感知自适应收益将降低。
-* **动态切换**：在播放过程中，当倍速变化时，仍可通过OH\_VideoDecoder\_SetParameter动态切换模式与倍速参数；当恢复至1.0x及以下倍速时，恢复全量帧解码输出。
+* **初始化配置**：以正常倍速起播时，在视频起播前配置为全量直通模式，无需设置解码倍速参数。
+* **动态切换**：在播放过程中，当目标倍速大于1.0x时，通过OH\_VideoDecoder\_SetParameter()在同一个OH\_AVFormat中下发感知自适应模式与当前倍速；当恢复至1.0x及以下倍速时，切回全量直通模式，恢复全量帧解码输出。
 
 ### 初始化阶段配置
 
-在视频起播前的初始化阶段，仅需配置ADAPTIVE模式，倍速参数在播放过程中随用户倍速变化动态下发即可。
+以下示例以正常倍速起播，配置全量直通模式。SetOptionalFormatFeatures在完成同步模式配置后，当sampleInfo.codec.isSmartFluencySupported为true时调用ConfigureSmartFluency(format)并检查返回值。随后由VideoDecoder::Configure调用OH\_VideoDecoder\_Configure()完成配置。该辅助函数仅设置本能力的参数，不负责创建或销毁OH\_AVFormat。
+
+如果业务直接以高倍速起播，也可在初始化阶段配置感知自适应模式，建议同时显式设置OH\_MD\_KEY\_VIDEO\_DECODER\_SPEED为实际起播倍速。
 
 ```
-int32_t VideoDecoder::Configure(const SampleInfo &sampleInfo)
+bool ConfigureSmartFluency(OH_AVFormat *format)
 {
-    OH_AVFormat *format = OH_AVFormat_Create();
-    CHECK_AND_RETURN_RET_LOG(format != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "AVFormat create failed");
-
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, sampleInfo.videoWidth);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, sampleInfo.videoHeight);
-    OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, sampleInfo.frameRate);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, sampleInfo.pixelFormat);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_ROTATION, sampleInfo.rotation);
-    if (sampleInfo.codecSyncMode) {
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, sampleInfo.codecSyncMode);
-    }
-    if (sampleInfo.isSmartFluencySupported) {
-        // 在初始化阶段配置ADAPTIVE模式，确保解码过程MV信息输出到丢帧判决模块。
-        // MV信息输出需在初始化阶段使能ADAPTIVE模式，不支持中途使能。
-        // 若中途动态切入ADAPTIVE模式，丢帧判决模块将无法获取MV信息，退化为按固定间隔丢帧。
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_FRAME_RETENTION_MODE,
-                                OH_FRAME_RETENTION_MODE_ADAPTIVE);
-    }
-
-    int ret = OH_VideoDecoder_Configure(decoder_, format);
-    OH_AVFormat_Destroy(format);
-    format = nullptr;
-    CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Config failed, ret: %{public}d", ret);
-    return AVCODEC_SAMPLE_ERR_OK;
+    bool ret = OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_FRAME_RETENTION_MODE,
+        OH_FRAME_RETENTION_MODE_FULL);
+    CHECK_AND_RETURN_RET_LOG(ret, false, "Set smart fluency initial mode failed");
+    return true;
 }
 ```
 
 ### 运行态按需切换
 
-系统支持在运行态下动态切换帧保留模式。开发者可通过调用OH\_VideoDecoder\_SetParameter实时下发配置，参数的生效时机与该接口的标准行为一致。
+系统支持在运行态下动态切换帧保留模式。开发者可通过调用OH\_VideoDecoder\_SetParameter()实时下发配置，参数的生效时机与该接口的标准行为一致。
 
 ```
 int32_t VideoDecoder::OnUserSpeedChanged(double targetSpeed)
@@ -111,7 +95,8 @@ int32_t VideoDecoder::OnUserSpeedChanged(double targetSpeed)
     // 引入epsilon处理double类型的精度比较。
     const double EPSILON = 1e-6;
 
-    if (targetSpeed > 1.0 + EPSILON) {
+    const bool enableAdaptive = targetSpeed > 1.0 + EPSILON;
+    if (enableAdaptive) {
         // 场景：高倍速播放(如1.5x，2.0x，3.0x等)。
         // 策略：使能感知自适应模式。
         OH_AVFormat_SetIntValue(param, OH_MD_KEY_VIDEO_DECODER_FRAME_RETENTION_MODE,
@@ -129,6 +114,11 @@ int32_t VideoDecoder::OnUserSpeedChanged(double targetSpeed)
     OH_AVFormat_Destroy(param);
     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR,
                              "SetParameter failed, ret: %{public}d", ret);
+    if (enableAdaptive) {
+        AVCODEC_SAMPLE_LOGI("Smart fluency mode changed to ADAPTIVE, speed: %{public}.2f", targetSpeed);
+    } else {
+        AVCODEC_SAMPLE_LOGI("Smart fluency mode changed to FULL");
+    }
     return AVCODEC_SAMPLE_ERR_OK;
 }
 ```
@@ -137,8 +127,8 @@ int32_t VideoDecoder::OnUserSpeedChanged(double targetSpeed)
 
 除了在倍速播放场景下推荐使用本能力外，以下场景也可通过使用本能力获得性能和体验收益。
 
-* **高温场景下的降载降温**：当设备发热触发温控告警时，控制功耗的需求将高于维持高帧率。开发者可切换至UNIFORM模式，并配置较低的帧保留比例（如0.3），通过减少解码和显示帧率来降低系统负载，从而有效辅助设备降温。
-* **编辑预览场景下的拖拽流畅性提升**：在视频编辑等需要频繁拖拽进度条的场景中，全量解码途经帧会显著拖慢画面的刷新响应。开发者可在此状态下临时切入UNIFORM模式，并配置较低的帧保留比例，通过适当减少途经画面的解码帧数来换取更快的画面刷新速度，从而显著提升交互的跟手感与流畅性。
+* **高温场景下的降载降温**：当设备发热触发温控告警时，控制功耗的需求将高于维持高帧率。开发者可切换至平滑定比模式，并配置较低的帧保留比例（如0.3），通过减少解码和显示帧率来降低系统负载，从而有效辅助设备降温。
+* **编辑预览场景下的拖拽流畅性提升**：在视频编辑等需要频繁拖拽进度条的场景中，全量解码途经帧会显著拖慢画面的刷新响应。开发者可在此状态下临时切入平滑定比模式，并配置较低的帧保留比例，通过适当减少途经画面的解码帧数来换取更快的画面刷新速度，从而显著提升交互的跟手感与流畅性。
 
 **示例（以应对温控告警为例）：**
 

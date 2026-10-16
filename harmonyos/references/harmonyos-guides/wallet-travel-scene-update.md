@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-travel
 title: 更新出行凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 出行凭证 > 开发场景 > 更新出行凭证
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:44+08:00
+scraped_at: 2026-10-17T06:42:46+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9c1228bdd47ee1fb82c17decc340a9ac05135570b9d648c61c9762a183875517
+content_hash: sha256:19b8fb949e3e7ea12f8bd6d1a4a18728fef0acf0794a1e82211b60a92d6282e7
 ---
 
 当出行凭证信息发生变更时，如登机口变更、延误信息等，更新钱包中的凭证数据。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/MpRD5FiyQQ6c5APAPSql7Q/zh-cn_image_0000002791739915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/bnibhM-sQoyi0DgRuHQ1zQ/zh-cn_image_0000002765132946.png)
 
 ## 服务端开发
 

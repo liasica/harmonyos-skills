@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-trig
 title: 使用JSVM-API进行异常的定制化处理
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API进行异常的定制化处理
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:baad8e201e95708de967a70d56a839189fa68c6b7dd569e4c650701c70055191
+scraped_at: 2026-10-17T06:43:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:ed40837a9256271ad15acdc73d842b58fe807de33d00453eb7ca28ff238e5956
 ---
 
 ## 简介
@@ -105,7 +105,7 @@ const char *srcCallNative = R"JS(triggerOOMError();)JS";
 
 在LOG中输出：
 
-```cpp
+```txt
 JSVM Trigger OOM Error: success
 ```
 
@@ -179,7 +179,7 @@ const char* srcCallNative = R"JS(triggerFatalError())JS";
 
 在LOG中输出：
 
-```cpp
+```txt
 JSVM Trigger Fatal Error: success
 ```
 
@@ -262,6 +262,6 @@ const char* srcCallNative = R"JS(triggerPromiseReject())JS";
 
 在LOG中输出：
 
-```cpp
+```txt
 JSVM Trigger Promise Reject: success
 ```

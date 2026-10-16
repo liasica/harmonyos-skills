@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图像效果
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 图像效果
 category: harmonyos-references
-scraped_at: 2026-10-15T07:07:51+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:a7f900e5dd1f113b061478a01ed965b6203ac457e4a5375b6942d12337867074
+scraped_at: 2026-10-17T06:44:46+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:a3f88df7a9384f8375e05acbb31795a35a81091f69245c9e112d2cd64bf96141
 ---
 
 设置组件的模糊、阴影、球面效果以及设置图像效果。
@@ -1183,13 +1183,13 @@ freeze(freeze: Optional<boolean>): T
 
 systemMaterial(material: SystemUiMaterial | undefined): T
 
-设置组件的系统材质。不同系统材质对应不同的属性影响效果，该接口可以影响背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)、材质层滤镜[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)效果，影响的属性与设备材质等级相关，参考[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)。[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)只有在支持沉浸式材质的设备上设置才有效果，在不支持沉浸式材质的设备上可设置但无效果，可通过[isImmersiveMaterialSupported](arkts-apis-uimaterial.md#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质。使用示例请参考[示例1（设置沉浸式系统材质）](arkts-apis-uimaterial.md#示例1设置沉浸式系统材质)。
+设置组件的系统材质。不同系统材质对应不同的属性影响效果，该接口可以影响背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)、材质层滤镜[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)效果，影响的属性与设备材质等级相关，参考[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)。使用示例请参考[示例1（设置沉浸式系统材质）](arkts-apis-uimaterial.md#示例1设置沉浸式系统材质)。
 
 **说明** 
 
 * 通过该属性设置组件的系统材质时，仅在Navigation或NavDestination的标题栏，或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。
 * [ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)只有在支持沉浸式材质的设备上设置才有效果，在不支持沉浸式材质的设备上可设置但无效果，可通过[isImmersiveMaterialSupported](arkts-apis-uimaterial.md#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质。在不支持沉浸式材质的设备上，设置ImmersiveMaterial后，组件的样式仍由已设置的通用属性决定，ImmersiveMaterial不会覆盖任何通用属性。
-* 在同时设置了材质影响的通用属性发生冲突时，除阴影外，总体原则为后设置的生效，对于阴影属性取决于[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)的applyShadow参数。
+* 当[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)与其影响的通用属性（背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)、材质层滤镜[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)）同时设置时，二者会发生冲突。除阴影外，总体原则为后设置的生效；对于阴影属性，哪个生效取决于[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)的applyShadow参数。
 
   + 先设置[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)属性后设置[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)属性：backgroundColor属性被覆盖。在支持沉浸式材质的高算力和中算力设备上，背景色属性被清空为透明色；在支持沉浸式材质的低算力设备上，材质自带的背景色效果覆盖了先设置的backgroundColor属性。
   + 先设置[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)属性后设置[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)属性：systemMaterial属性影响的背景色效果被覆盖，背景色属性生效为后设置的backgroundColor属性的颜色。
@@ -1360,7 +1360,7 @@ struct ImageEffectsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/i_wCaSzhTQ2bbKCRhQoZjA/zh-cn_image_0000002762341746.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/LzMArQWPTquD0o4O5_VLjw/zh-cn_image_0000002794491929.png)
 
 ### 示例2（设置组件线性渐变模糊效果）
 
@@ -1390,7 +1390,7 @@ struct LinearGradientBlurExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/j_R257rKSFOeU12aygQ2hQ/zh-cn_image_0000002791860537.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/E7Zndww7S4Ctgx1i8pqAWA/zh-cn_image_0000002794412147.png)
 
 ### 示例3（设置离屏渲染效果）
 
@@ -1443,7 +1443,7 @@ struct RenderGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/eQ4bsuHxTZy6wd7U498GFA/zh-cn_image_0000002762501662.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/wNsuSJk-SGCTtZjCq7E6Qw/zh-cn_image_0000002764973432.png)
 
 ### 示例4（当前组件内容与下方画布内容混合）
 
@@ -1486,7 +1486,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/rfZ_54EdSEeMhe8JexntXg/zh-cn_image_0000002791740321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/GtZOcpaNT-26VMNS4NzzPg/zh-cn_image_0000002765133354.png)
 
 ### 示例5（前景智能取反色）
 
@@ -1526,7 +1526,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Zxb4nN8UQd-WmqH9OgKn0A/zh-cn_image_0000002762341748.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/-8H5xvC0QieeqYiqMke0cg/zh-cn_image_0000002794491931.png)
 
 ### 示例6（设置同层阴影不重叠效果）
 
@@ -1622,7 +1622,7 @@ struct UseShadowBatchingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/BgxiYngLTfir2AGAivCkrA/zh-cn_image_0000002791860539.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/dYrO3oBUSQqLlJuj3JJm2g/zh-cn_image_0000002794412149.png)
 
 ### 示例7（设置组件图像球面效果）
 
@@ -1655,11 +1655,11 @@ struct SphericalEffectExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/Cvblgu0BQU6sFzOy0SS58A/zh-cn_image_0000002762501664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/0i4ixCVQQieE90Fev_CKgg/zh-cn_image_0000002764973434.png)
 
 去掉sphericalEffect的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/yhTtibmjQXyhicLks2G9kg/zh-cn_image_0000002791740323.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/GOrH5ZruS0SMUaEzsPrbEw/zh-cn_image_0000002765133356.png)
 
 ### 示例8（设置组件图像渐亮效果）
 
@@ -1686,15 +1686,15 @@ struct LightUpExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/qlVK_9BDRNi2-4HxDRsH_Q/zh-cn_image_0000002762341750.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Cfe_M_1SRgisCGSLXRHETQ/zh-cn_image_0000002794491933.png)
 
 修改lightUpEffect参数值为0.2：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Mrr5KQD8R4idzR7J0Mdiew/zh-cn_image_0000002791860541.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/exzIjsxWR9SbBLu1K9R6Ew/zh-cn_image_0000002794412151.png)
 
 去掉lightUpEffect的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/6rsTmZxPQpCq1ZfOnBCk-Q/zh-cn_image_0000002762501666.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/3cT4nbEeSRm4u6bbkGorqg/zh-cn_image_0000002764973436.png)
 
 ### 示例9（设置组件图像边缘像素扩展效果）
 
@@ -1727,11 +1727,11 @@ struct PixelStretchExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/2OsGURNbStGZQnXIEXdwqw/zh-cn_image_0000002791740325.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rb-WdEWIRIyUXG0o7BzIvw/zh-cn_image_0000002765133358.png)
 
 去掉pixelStretchEffect的设置，原图效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/G-gx210JRSCy8cIyA7GHVA/zh-cn_image_0000002762341752.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/QO99T7lSTVeQU1YLV5b9qg/zh-cn_image_0000002794491935.png)
 
 ### 示例10（系统导航条智能反色）
 
@@ -1761,7 +1761,7 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/gb8InQAHR4Of9FsmUojacw/zh-cn_image_0000002791860543.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/C5tmBD5PSlGiA5G92hbxnQ/zh-cn_image_0000002794412153.png)
 
 ### 示例11（设置组件是否双面绘制）
 
@@ -1825,4 +1825,4 @@ struct DoubleSided {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/_N2hQ3iEQcyp1Hv2Y_dxrA/zh-cn_image_0000002762501668.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/cVA7mI5STDiLFThNKdxMng/zh-cn_image_0000002764973438.gif)

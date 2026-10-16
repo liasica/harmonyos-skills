@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-session
 title: 音频会话管理(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 音频会话管理(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:18+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:00618ea09976032b2fd304cdf2439742142928cddd71350a69dc50b751b732db
+scraped_at: 2026-10-17T06:42:03+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:555979058139b37b682fc6bdca5f9abdf6e26e4acaecdb64a7f93c17c95c8406
 ---
 
 对于涉及多个音频流并发的场景，系统已预设了默认的[音频焦点策略](audio-playback-concurrency.md#音频焦点策略)，该策略将对所有音频流（包括播放和录制）实施统一的焦点管理。
@@ -362,6 +362,7 @@ AudioSession申请的焦点和AudioRenderer申请的焦点是同等地位。
            break;
          case audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNDUCK:
            // 此分支表示系统已将应用所有播放音频流音量恢复正常。
+           break;
          case audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION:
            // 此分支表示其他应用开始播放非混音音频，系统可自行决定是否静音。
            break;
@@ -456,6 +457,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
         break;
       case audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNDUCK:
         // 此分支表示系统已将应用所有播放音频流音量恢复正常。
+        break;
       case audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION:
         // 此分支表示其他应用开始播放非混音音频，系统可自行决定是否静音。
         break;

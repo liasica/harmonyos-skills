@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-came
 title: camera_device.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > camera_device.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:30b7bde410e618d797fda5d2b21e2d8f5be264d24b7840399816c8f5a1953d3f
+scraped_at: 2026-10-17T06:47:54+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:1618fb742966cb63954fbbfa2bd910aec803c8b78005ab54f6087f2ef752eeb5
 ---
 
 ## 概述
@@ -69,7 +69,7 @@ Camera_ErrorCode OH_CameraDevice_GetCameraOrientation(Camera_Device* camera, uin
 
 | 类型 | 说明 |
 | --- | --- |
-| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功，返回传感器方向属性。  CAMERA\_CAMERA\_INVALID\_ARGUMENT：参数丢失或者参数不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功，返回传感器方向属性。  CAMERA\_INVALID\_ARGUMENT：参数丢失或者参数不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
 
 ### OH\_CameraDevice\_GetHostDeviceName()
 
@@ -94,7 +94,7 @@ Camera_ErrorCode OH_CameraDevice_GetHostDeviceName(Camera_Device* camera, char**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功，将返回远程设备名称属性。  CAMERA\_CAMERA\_INVALID\_ARGUMENT：参数丢失或者参数不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功，将返回远程设备名称属性。  CAMERA\_INVALID\_ARGUMENT：参数丢失或者参数不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
 
 ### OH\_CameraDevice\_GetHostDeviceType()
 
@@ -119,7 +119,7 @@ Camera_ErrorCode OH_CameraDevice_GetHostDeviceType(Camera_Device* camera, Camera
 
 | 类型 | 说明 |
 | --- | --- |
-| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功，将返回远程设备名称属性。  CAMERA\_CAMERA\_INVALID\_ARGUMENT：参数丢失或者参数不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功，将返回远程设备类型属性。  CAMERA\_INVALID\_ARGUMENT：参数丢失或者参数不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
 
 ### OH\_CameraDevice\_GetLensEquivalentFocalLengths()
 

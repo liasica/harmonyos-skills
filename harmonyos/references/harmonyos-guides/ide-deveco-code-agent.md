@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: Agent模式
 breadcrumb: 指南 > DevEco Code > Agent模式
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:54+08:00
+scraped_at: 2026-10-17T06:43:53+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:2d2adddc3c8bcd03bad8fbdcda5f9954b80f81879e12571d91d232219d3e0d05
+content_hash: sha256:74a4dfc1455bbe22c6af6ea1f57aad7c9f192196db425bea9eba83e361b7f4cc
 ---
 
 ## 功能概述
@@ -26,11 +26,11 @@ Windows/macOS版DevEco Code可配置模拟器进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/nXDxF1nVQRCGu5GZDJfu1w/zh-cn_image_0000002731383159.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/S20jO4giTO6EhO_78YbJWQ/zh-cn_image_0000002731383159.png "点击放大")
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/97/v3/oWxuFN6YRX-H1l7oNiFOhw/zh-cn_media_0000002701663942.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/45/v3/w1T8rrmBTCG4ZSwrL-YWtw/zh-cn_media_0000002701663942.mp4)
 
 ## Plan + Build模式
 
@@ -46,7 +46,7 @@ Windows/macOS版DevEco Code可配置模拟器进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/cfXjRkL-RIKL_Ycc00uEhA/zh-cn_image_0000002701823856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/rGeaRtW9SVWPFN0koXYy0g/zh-cn_image_0000002701823856.png "点击放大")
 
 Plan + Build模式实现流程分为三大阶段：
 
@@ -56,7 +56,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c1/v3/kIeL8oKLQeeE7KDFvRn83g/zh-cn_media_0000002701823862.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/53/v3/XYn9zw6DQ6u9fSrcapC1Og/zh-cn_media_0000002701823862.mp4)
 
 ## Goal模式
 
@@ -72,7 +72,7 @@ Windows/macOS版DevEco Code可配置模拟器进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/VtdpWoeDR6iD_H2hJLtM7A/zh-cn_image_0000002701663938.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/S_HdRC-sTbWr3fG1DUqVjA/zh-cn_image_0000002701663938.png "点击放大")
 
 Goal Agent实现流程分为两大阶段：
 
@@ -81,4 +81,4 @@ Goal Agent实现流程分为两大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/64/v3/qcAvzdr8SfeUQCa1awabFw/zh-cn_media_0000002731543137.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/51/v3/l1sokcgQTYGh1pG_l0F5sQ/zh-cn_media_0000002731543137.mp4)

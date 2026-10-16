@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-termin
 title: 窗口开发术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发术语
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:18+08:00
+scraped_at: 2026-10-17T06:41:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9e6d891d84f6504360a9ac6e1ed7604af12a812b20021802bfacb9bdf548caa8
+content_hash: sha256:c80d13355b742c881a958972dc76906f185d7bca104bf24932ccf648ffca2c6d
 ---
 
 ## F
@@ -44,7 +44,7 @@ content_hash: sha256:9e6d891d84f6504360a9ac6e1ed7604af12a812b20021802bfacb9bdf54
 
 部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9S2uMl8FTjCTMHgbb4WFPg/zh-cn_image_0000002762340120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/tl3Cv_nUQiCxiGb28Pc0RQ/zh-cn_image_0000002794410517.png)
 
 ### Freeform Window；自由窗口
 
@@ -58,7 +58,7 @@ content_hash: sha256:9e6d891d84f6504360a9ac6e1ed7604af12a812b20021802bfacb9bdf54
 
 自由窗口可以通过拖动窗口边缘调节窗口大小，可以通过拖动标题栏移动窗口位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/J_0ywKRRTTWrIv6SpqA-qQ/zh-cn_image_0000002791738701.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/oBE6LdguS_uYRfddc7mrAA/zh-cn_image_0000002794490301.png)
 
 当前设备支持情况：
 
@@ -74,7 +74,7 @@ content_hash: sha256:9e6d891d84f6504360a9ac6e1ed7604af12a812b20021802bfacb9bdf54
 
 在该坐标系中，所有物理屏幕被映射到同一连续的虚拟坐标空间内，各类窗口操作、坐标转换及窗口矩形变化事件均基于该坐标空间进行计算和回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/zr27APqLR9SzXY9d25kttw/zh-cn_image_0000002791738715.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/sJtaIg-jTw-fRZ2sTyT_XA/zh-cn_image_0000002794490315.png)
 
 使用场景：
 
@@ -121,7 +121,7 @@ content_hash: sha256:9e6d891d84f6504360a9ac6e1ed7604af12a812b20021802bfacb9bdf54
 
   桌面模式适用于折叠屏设备半折叠状态下，窗口铺满整个屏幕并在上下半屏之间适配不同布局的场景，例如视频播放、阅读等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/gq1C7o1ORbe7xPq2Cf45WQ/zh-cn_image_0000002762340134.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/L1j6L2ccSCmvNOzeNqVCTg/zh-cn_image_0000002794410531.jpg)
 
 ### Window Privacy Mode；隐私模式
 

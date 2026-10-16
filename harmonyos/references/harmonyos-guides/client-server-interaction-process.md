@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/client-server
 title: 客户端和服务端交互流程
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > 客户端和服务端交互流程
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:20+08:00
+scraped_at: 2026-10-17T06:41:25+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:cdd977b94fe70ead98b5c3b8724a84a2a5602bc8f47743338fd8054c11e3d963
+content_hash: sha256:5a5d6c6fe88453ec7d22586491094ffab7d347ad3d1331368d42206f5941d277
 ---
 
 [OE](content-embed-kit-terminology.md#oe)框架采用ExtensionAbility机制进行扩展，主要架构元素包括：[OE Extension](content-embed-kit-terminology.md#oe-extension)和[OE SA](content-embed-kit-terminology.md#oe-sa)。外部依赖元素包括：[AMS](content-embed-kit-terminology.md#ams)和[BMS](content-embed-kit-terminology.md#bms)。
 
 以下是OE客户端和服务端交互流程：客户端依赖服务端的OE Extension执行文档的嵌入与编辑操作；服务端则负责OE Extension的统一注册与管理。在运行时，服务端依据客户端请求，**动态启动**相应的OE Extension实例，以响应文档处理需求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/lqTqCn8sSZ6YyDYkxXT_gw/zh-cn_image_0000002791738779.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/A-Bjs203SHSilPrrP9oBPQ/zh-cn_image_0000002794490379.jpg)
 
 下图为应用间内容嵌入与协同编辑开发时序图。
 
 客户端和服务端开发步骤详见：[客户端应用开发](content-embed-client-guidelines.md)和[服务端应用开发](content-embed-server-guidelines.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/TYG0MD-EQ3CjHJDVkWDUjg/zh-cn_image_0000002762340198.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/wA0ydAOQSaSNgDFe_Llryw/zh-cn_image_0000002794410595.jpg)
 
 1. 创建[OE文档](content-embed-kit-terminology.md#oe文档)：客户端创建OE文档有三种方式：基于[OEID](content-embed-kit-terminology.md#oeid)创建OE文档，基于文件创建OE文档，基于[OE格式文件](content-embed-kit-terminology.md#oe格式文件)加载OE文档。
 2. 创建[客户端OE对象](content-embed-kit-terminology.md#客户端oe对象)：客户端基于OE文档创建客户端OE对象，实现OE文档与客户端OE对象的关联，并用于与服务端通信。创建客户端OE对象完成后需注册该对象回调以响应OE服务端通知。

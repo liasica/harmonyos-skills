@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-f
 title: js标签配置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 框架说明 > js标签配置
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:13+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:66e7637faaa294666dc3424fd6d17e333bd2fccaeced506c826ef0845d82a065
+scraped_at: 2026-10-17T06:45:20+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:8c5281d9f2e52292485e4671c9ce37386859035d4424f2c23976703597c6a89b
 ---
 
 js标签中包含了实例名称、页面路由信息。
@@ -23,7 +23,7 @@ name、pages标签配置需在配置文件中的“js”标签中完成设置。
 
 定义每个页面的路由信息，每个页面由页面路径和页面名组成，页面的文件名即为页面名，例如：
 
-```json
+```json5
 {
   // ...
   "pages": [
@@ -41,7 +41,7 @@ name、pages标签配置需在配置文件中的“js”标签中完成设置。
 
 ## 示例
 
-```json
+```json5
 {
   "app": {
     "bundleName": "com.example.player",

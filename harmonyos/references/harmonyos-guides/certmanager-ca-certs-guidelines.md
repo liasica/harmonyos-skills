@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certmanager-c
 title: CA证书开发指导
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书管理服务 > CA证书开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:33+08:00
+scraped_at: 2026-10-17T06:41:37+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b3b999f1e99a936c22a33177efb9c15a5d8538bf46deab962ea89f2be9b861bb
+content_hash: sha256:626aa14edf5a404d962ed780b6d64a5b24dddff07e4bd6fd98d590c8229c2faa
 ---
 
 在对其他实体（设备、服务器）的证书凭据进行校验时，您的应用需要使用CA证书。例如您的应用使用预置的CA证书对应用服务器的HTTPS证书链进行可信校验。根据通信实现方式的不同，证书信任的配置方案也存在差异，下面分两种典型场景说明：
@@ -14,13 +14,13 @@ content_hash: sha256:b3b999f1e99a936c22a33177efb9c15a5d8538bf46deab962ea89f2be9b
 
 您的应用可以参考[Network Kit配置证书校验](http-request.md#配置证书校验)内容，利用Device Certificate Kit的系统CA证书、用户CA证书，对HTTPS证书链进行校验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/hUV3jEX9Tn695mXXlNCagQ/zh-cn_image_0000002762340364.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/grV8G9rVTLKY-p3kdChYNQ/zh-cn_image_0000002794410761.png)
 
 场景2：采用底层或自定义的安全协议进行通信。
 
 如果您的应用需要采用底层或自定义的安全协议与应用服务器进行通信，则您的应用可能需要从Device Certificate Kit读取系统CA证书和用户CA证书对服务器的证书链进行校验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/OjbeEtH9S5qBxtur-1B6Xg/zh-cn_image_0000002791859163.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/uP4dEyFyQ-KfRCpsLFVahw/zh-cn_image_0000002764972044.png)
 
 Device Certificate Kit的CA证书管理功能包含如下能力：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅阻断类事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 多客户端订阅场景 > 订阅阻断类事件
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:34+08:00
+scraped_at: 2026-10-17T06:41:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:03b5515d4de82e66fcddd1496ba3a933f83f4e3e538ccf89e67c698bb3e8d84b
+content_hash: sha256:04e76589c830f4d222f5eaed0073ee80f6a19e0246360733eed04a13af68050e
 ---
 
 ## 场景介绍
@@ -31,7 +31,7 @@ content_hash: sha256:03b5515d4de82e66fcddd1496ba3a933f83f4e3e538ccf89e67c698bb3e
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/mziaIzIWTyCjVoM7y1wOhA/zh-cn_image_0000002791859187.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/1k_cmUbmTUKhi78e5cjxig/zh-cn_image_0000002764972068.png)
 
 **流程说明：**
 

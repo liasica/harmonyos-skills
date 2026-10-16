@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/power-saving-
 title: 低功耗音频播放
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 低功耗音频播放
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:00+08:00
+scraped_at: 2026-10-17T06:42:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:562c7a8f640aaa1c64108ba53f462017446932c2cce65656d6465c0c7af9de49
+content_hash: sha256:eb21b119cdfdec45729c77347fc11817244ec75755bf2ffb6d33e60e8bdcea00
 ---
 
 从API version 11开始支持低功耗音频播放。
@@ -22,13 +22,13 @@ content_hash: sha256:562c7a8f640aaa1c64108ba53f462017446932c2cce65656d6465c0c7af
 
 **数据周期示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/VKwDUq_PQ_auNO5WAswWsw/zh-cn_image_0000002791739141.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/6LQ86w7hS563uzs-pE7ljQ/zh-cn_image_0000002794490739.png)
 
 在数据周期内，快速请求数据写满缓存时，进入休眠状态。当缓存数据消费完后，会触发下一个周期。
 
 **播放进度示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/mh4BI6w-TMeegBWNVBp2Jw/zh-cn_image_0000002762340562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/csrTOOlsS5atXjiNK_LZzA/zh-cn_image_0000002794410955.png)
 
 在数据周期内，快速请求数据写满缓存时，播放进度按实际播放量计算。当缓存数据消费完（即播放进度到达写入数据量）后，会触发下一个周期。
 
@@ -51,4 +51,4 @@ content_hash: sha256:562c7a8f640aaa1c64108ba53f462017446932c2cce65656d6465c0c7af
    * 获取时间戳接口调用频率建议大于200ms一次，以免影响系统性能。
    * 应用程序调用接口[flush](../harmonyos-references/arkts-apis-audio-audiorenderer.md#flush11)或[OH\_AudioRenderer\_Flush()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_flush)后，播放的数据量会重置为0。
    * 播放数据量均会小于写入数据量。由于系统帧长与时延机制，已播放的数据量不等于写入数据量。
-   * 写完数据后获取时间戳，如果2个周期内时间戳不变，即为播完；或者根据设置的倍速推算剩余播放时长，超过相应时长，即为播完。（如：记总写入数据量p1，写完后获取时间戳p2，设置倍速α且α>0，音频采样率fs且fs>0，剩余可播时长t。公式：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/U4LaOG-6Q2eG7Ocom7z2cA/zh-cn_image_0000002791859357.png)）
+   * 写完数据后获取时间戳，如果2个周期内时间戳不变，即为播完；或者根据设置的倍速推算剩余播放时长，超过相应时长，即为播完。（如：记总写入数据量p1，写完后获取时间戳p2，设置倍速α且α>0，音频采样率fs且fs>0，剩余可播时长t。公式：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/gfKaQBNmSnCK3Mlbc0F4yg/zh-cn_image_0000002764972238.png)）

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-compa
 title: 兼容性说明
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > 兼容性说明
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:05+08:00
+scraped_at: 2026-10-17T06:43:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f95106ec97bc31d25e4f0690726c0697a4f24cbfe8dad77f882e93a09ee2bcae
+content_hash: sha256:107464c5b840dc8197bf91d3cbfefa4db7ea38a7ae0ff3fbba8d047b83b0d42d
 ---
 
 总体兼容性策略见表1 Ascend C API兼容策略，兼容性范围不包含编译器BuiltIn API、Ascend C内部实现接口等。若开发者希望在新平台运行其它平台开发的Ascend C程序，需要在新平台重新编译并运行，并可能需要根据迁移指导进行代码调整。
 
 **图1** Ascend C API层次结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/kcox8pIgSWePbdXsyRnTgA/zh-cn_image_0000002762341446.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/edS5Tp5DT5ykFGlPzwcHAQ/zh-cn_image_0000002794491629.png)
 
 **表1** Ascend C API兼容策略
 

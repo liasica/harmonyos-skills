@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-email-a
 title: 拉起邮件类应用（startAbilityByType）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起邮件类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:53+08:00
+scraped_at: 2026-10-17T06:40:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a0de0ac6e192bc5d0a535a8e87e2fe065fa167740287ee763582d9722358e7bf
+content_hash: sha256:05eb88c526fb56b37ac98e5feed2de706d75d570266d146af728a506a315053d
 ---
 
 本章节介绍如何拉起邮件类应用扩展面板。
@@ -95,7 +95,7 @@ startAbilityByType接口中type字段为mail，对应的wantParam参数：
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Zmi7s-fGR7OUC6FIPxSXww/zh-cn_image_0000002762339130.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/iB5NLOVpRGKnLBpY8fPMtw/zh-cn_image_0000002794409519.png)
 
 ## 目标方开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdoc-
 title: 文档生成
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 文档生成
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:25+08:00
+scraped_at: 2026-10-17T06:43:25+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:d28458e5e331465b8151fa60fb67b250e4f35c0664c5d7960e72bd03cd936778
+content_hash: sha256:66648e7d32e7e98578ce573ae192d92baa073de2270e85f4ea7fd7c712b6ba7d
 ---
 
 DevEco Studio支持通过Generate ArkTSDoc功能，将代码文件中变量、方法、接口、类等需要对外暴露的信息快速生成相应的参考文档。
@@ -25,18 +25,18 @@ DevEco Studio支持通过Generate ArkTSDoc功能，将代码文件中变量、�
 
    点击**Modules**后的下拉箭头，会弹出所有模块，可以选择单个或多个模块作为导出范围。当模块数量较多时，可以使用检索功能，快速定位模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/krqrVZqfQ0GVI9OTGoSMpg/zh-cn_image_0000002731382999.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/LRHjF1FvSXSLd7DkwKWtow/zh-cn_image_0000002731382999.png)
 3. 在导出时，可以在**Command line arguments**设置无需被导出的目录，使用"-e"子命令进行指定，多个目录使用英文";"分隔，使用"./"开头路径代表项目根路径。
 
    从DevEco Studio 6.1.0 Release版本开始，**Command line arguments**填写时支持Ant风格的路径匹配模式。在Ant风格中，使用'?'匹配单字符、'\*'匹配单层目录/文件、'\*\*'匹配任意层目录等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/LdSnJq-yRNqTvx3fXDqE7A/zh-cn_image_0000002731542973.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/amMg-IDPR-OzloC6tj5w2w/zh-cn_image_0000002731542973.png)
 4. 在**Output directory**中输入导出ArkTSDoc的存储路径后，点击**Generate**。
 5. 若勾选**Open generated documentation in browser**选项，在生成ArkTSDoc后，将自动打开相应页面查看生成的文档。配置完毕后点击Generate，开始扫描并生成ArkTSDoc文档。
 
    生成的ArkTSDoc左侧文档目录和原工程目录结构一致，右侧可点击跳转到当前文件包含的某个变量、方法、接口或类的文档位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Lu9qhHeLTja_6v2HX4WpNw/zh-cn_image_0000002731542975.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Z2BP_tG6TvOJawvPkckMVg/zh-cn_image_0000002731542975.png "点击放大")
 
    若没有勾选**Open generated documentation in browser**选项，在生成ArkTSDoc后，DevEco Studio右下角弹出对应提示框，可以点击Go to Folder跳转到生成的ArkTSDoc文件夹，用浏览器打开文件夹中index.html文件即可查看ArkTSDoc文档。
 
@@ -78,4 +78,4 @@ export class Demo {
 
 **ArkTSDoc文档生成结果：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/m76xrTnOSkC1JM6rh3ZOow/zh-cn_image_0000002731383001.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/BMHOdpGESDGRisuKZhw1lQ/zh-cn_image_0000002731383001.png "点击放大")

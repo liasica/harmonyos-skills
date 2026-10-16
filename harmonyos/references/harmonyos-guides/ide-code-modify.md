@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-modi
 title: 代码修改
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 智能执行 > 代码修改
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:38+08:00
+scraped_at: 2026-10-17T06:43:38+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:1737d3d665bd7723d3a83eef116dce81c095b1311fa260ac5c39c487aabf55ab
+content_hash: sha256:434c714f5aa0960df775a05b43bb875e511b6585808e0778f49b9cb4eec16ec1
 ---
 
 CodeGenie提供代码修改能力，在**对话框内**输入需求描述，生成符合要求的代码，提升代码质量与开发效率。
@@ -19,10 +19,10 @@ CodeGenie提供代码修改能力，在**对话框内**输入需求描述，生�
 **操作步骤**
 
 1. 选择HarmonyOS Act智能体，在对话框输入**@**符号选择**Files**，或点击**@****Add Context** > **Files**，或在对话框输入文件路径，指定需要分析的代码文件。未指定代码文件时，分析当前代码文件。
-2. 在对话框输入描述，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/z1xOK9DhTWe4pu-3UnXogA/zh-cn_image_0000002731382505.png)发送。
-3. 在问答区域的**Changed Files**可以查看被修改的文件；点击**Accept All****/Reject All**按钮，接受或拒绝所有文件的修改；将鼠标悬浮在文件路径上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/tC_JDhPwTC26bcc0iKaTQA/zh-cn_image_0000002731542475.png)可接受或拒绝该文件的修改。
+2. 在对话框输入描述，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/RyzMRzFWRZaeWxWOKlZNMA/zh-cn_image_0000002731382505.png)发送。
+3. 在问答区域的**Changed Files**可以查看被修改的文件；点击**Accept All****/Reject All**按钮，接受或拒绝所有文件的修改；将鼠标悬浮在文件路径上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/hXnZp4BHTdyiFzY-IXhEzg/zh-cn_image_0000002731542475.png)可接受或拒绝该文件的修改。
 4. 点击问答区域中**Run**，可以编译验证；开启**Auto Run**开关，可以进行自动编译验证。Auto Run更多描述可参考[Agent配置](ide-agent-use.md#section2075893021715)。
 
 **示例**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/0pGsuz3kQLG0IbX8nFq9Cw/zh-cn_image_0000002701823198.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/rq553Cd0TeeOG70t-JFKUQ/zh-cn_image_0000002701823198.gif "点击放大")

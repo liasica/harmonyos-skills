@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: refresh
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > refresh
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:26+08:00
+scraped_at: 2026-10-17T06:45:17+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7db0e317d149809c89a69d23309343ad9ca2096656b9c059824bfd25a62e9304
+content_hash: sha256:8c9268c7ad37852db07b41ab0b6ea69cd7a9cb770acd7197d982df3bbecb9141
 ---
 
 **说明** 
@@ -140,4 +140,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/-eKssE8RSO6rWHB__P7_rg/zh-cn_image_0000002791861291.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/eGkQ8v8lSLWBjevUyB1JdA/zh-cn_image_0000002794412891.gif)

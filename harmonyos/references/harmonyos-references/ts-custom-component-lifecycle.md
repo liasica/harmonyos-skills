@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件的生命周期
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件的生命周期
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:17+08:00
+scraped_at: 2026-10-17T06:45:09+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f6eaeb8bed6b61119a8850f7755e85515bda836101e64fc1ee073290029c6d81
+content_hash: sha256:0b05c3da722a8a7cb1729a9046fb6c3dd9edbd2640eda509b888649ca8a7d033
 ---
 
 自定义组件的生命周期回调函数用于通知用户该自定义组件的生命周期，这些回调函数是私有的，在运行时由开发框架在特定的时间进行调用，不能从应用中主动调用。通过这些回调，开发者可以在组件创建时初始化数据和状态变量，在组件销毁时释放资源，在页面显示和隐藏时更新页面状态、刷新数据或暂停恢复任务，在组件复用时传递参数与更新状态等，从而实现组件的精细化管理。不要在多个窗口复用同一个自定义组件节点，其生命周期可能会紊乱。
@@ -148,7 +148,7 @@ struct IndexComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/8SHxz5QjQwCUn1o7406azg/zh-cn_image_0000002762502292.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/-FCC_D9NSjCAdQP-2enyHg/zh-cn_image_0000002764974050.gif)
 
 ## onNewParam19+
 
@@ -558,7 +558,7 @@ struct IndexComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/_YxIc9qjSdmo3o-02HMqzg/zh-cn_image_0000002791740951.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/jxalFAnyTa22sR5u__th0Q/zh-cn_image_0000002765133974.png)
 
 V2：
 
@@ -631,7 +631,7 @@ struct IndexComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/NTpDpRfHRR2SeiwDcbrlTQ/zh-cn_image_0000002762342374.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/gjvTPfYHSbeEt7Zg8zpqTA/zh-cn_image_0000002794492549.png)
 
 ## pageTransition9+
 

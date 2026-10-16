@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 应用声明支持智慧多窗
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 智慧多窗应用开发指导 > 应用声明支持智慧多窗
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:17+08:00
+scraped_at: 2026-10-17T06:41:21+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:c4d352950fd1be244b081c1b8cfc2425bba528d0f5ae7368edbc1b5a729aeae5
+content_hash: sha256:0783d7f491ce469d6d47b21e32ed37b3607d23c6bf328527ba3d3e45e2dc971d
 ---
 
 当应用需要智慧多窗的能力时，可以通过在[module.json5配置文件](module-configuration-file.md)中对应标签添加相关字段声明支持。
@@ -261,23 +261,23 @@ struct Index {
 
 图1 启动左侧分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/i0TwA4Z3SOye-uH6EujvLA/zh-cn_image_0000002791738695.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/rR4-6qDOQmifDjrS6Gjm2A/zh-cn_image_0000002794490295.gif)
 
 图2 启动右侧分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/GN4vUPbYSieOaQ2kWj-V0Q/zh-cn_image_0000002762340114.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/mnzM1nXPSg6NiXaak8Fw5g/zh-cn_image_0000002794410511.gif)
 
 图3 以左分屏占较大比例启动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/bm7izcmnSxSng99FgQbPgA/zh-cn_image_0000002791858909.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/camC-xs9TreFw4rog3b7DQ/zh-cn_image_0000002764971794.gif)
 
 图4 以右分屏占较大比例启动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/68aMRo0URW-0O_HEqPging/zh-cn_image_0000002762500034.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/oY_U5B6GTZ6EJvArUIOj5A/zh-cn_image_0000002765131720.gif)
 
 图5 从二分屏拉起应用内分屏，形成三分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/k0DstwxORICiKCQgNqDbmw/zh-cn_image_0000002791738697.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/VYrivdOeQFm-dgiTvtuWuA/zh-cn_image_0000002794490297.gif)
 
 ## 应用内多窗
 

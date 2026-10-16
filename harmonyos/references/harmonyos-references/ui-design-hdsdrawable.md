@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: hdsDrawable (图标处理)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsDrawable (图标处理)
 category: harmonyos-references
-scraped_at: 2026-10-15T07:09:26+08:00
+scraped_at: 2026-10-17T06:46:14+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:51ac5616a77d97d4d671ba933f1adc1910be4b74f9ec822a6934d473e312de4c
+content_hash: sha256:d132e0bb7d9816c8823341b7e3ddf9c76ddadc09d906357662111ecef670e5ae
 ---
 
 本模块提供图标处理能力，包括对前后景合成、剪切、缩放、描边处理，支持分层图标和单层图标处理。
@@ -91,7 +91,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/skQWc9rjS1C-TUBNDtUp8A/zh-cn_image_0000002791741415.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Td2idVPDQVSBqNGITZNIIQ/zh-cn_image_0000002765134428.png)
 
 ## hdsDrawable.getHdsLayeredIconAsync
 
@@ -156,7 +156,7 @@ hdsDrawable.getHdsLayeredIconAsync(bundleName, layeredDrawableDescriptor, 48, tr
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/HG5sjyS2Tq-pd9Tl9aIrJg/zh-cn_image_0000002791741415.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/6apgRqn1QtO4w9DmUhsseQ/zh-cn_image_0000002765134428.png)
 
 ## hdsDrawable.getHdsIcon
 
@@ -228,7 +228,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/-EcxXwzyTtOLFJiIsTkUUA/zh-cn_image_0000002762342838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/h4g2gRCDS4G8BCyf6vaikQ/zh-cn_image_0000002794493003.png)
 
 ## hdsDrawable.getHdsIconAsync
 
@@ -303,7 +303,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/2_ogAbvnS5qNMKY7J_80Yw/zh-cn_image_0000002762342838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/njMO2z1wRNu-jebeIfCxhw/zh-cn_image_0000002794493003.png)
 
 ## hdsDrawable.getHdsLayeredIcons
 
@@ -386,7 +386,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/AXZcTPKsRBmy5BPEFuD-2w/zh-cn_image_0000002791741415.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/5bMpOJ0nQDOi7FrjKgejwA/zh-cn_image_0000002765134428.png)
 
 ## hdsDrawable.getHdsIcons
 
@@ -473,7 +473,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/WmpnSnpJSi-HHq9Jisitmg/zh-cn_image_0000002762342838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/lSsSm5VYTN6RtMU0tu5I4Q/zh-cn_image_0000002794493003.png)
 
 ## LayeredIcon
 

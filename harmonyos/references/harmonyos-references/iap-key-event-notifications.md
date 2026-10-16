@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-key-e
 title: 服务端关键事件通知
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 服务端关键事件通知
 category: harmonyos-references
-scraped_at: 2026-10-15T07:12:21+08:00
+scraped_at: 2026-10-17T06:48:59+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bee57533d8aa604399cc1d18da716c78f89fae196c904c8b7f176f5cdabb1760
+content_hash: sha256:d4f713312739221a44d5982813dd76555a4de3272ffd7e63617d5f7a7d1e947e
 ---
 
 如果接入了IAP Kit订单/订阅功能，建议在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站[配置通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)，用于接收IAP服务器发送的关键事件通知。IAP关键事件通知版本只支持v3。
@@ -57,7 +57,7 @@ content_hash: sha256:bee57533d8aa604399cc1d18da716c78f89fae196c904c8b7f176f5cdab
 
 关键事件通知处理流程建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/HEZ7hcp_SR6Miwcgczm99Q/zh-cn_image_0000002791741805.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/yrrA_opSTKWPPMSI4QIFGw/zh-cn_image_0000002765134824.png)
 
 1. IAP服务器发送订单/订阅关键事件通知。
 2. 应用服务器收到通知请求后，从通知中获取购买Token。

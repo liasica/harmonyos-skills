@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 刷新本地图片和网络图片
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面刷新 > 刷新本地图片和网络图片
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ed0cfd0f14a6d421334f783fa583ab8417cedbd3e80ddc9a8edbfb13cb626a88
+scraped_at: 2026-10-17T06:41:28+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:5a43b00ba1b6d5eca8b592b92152c343aac55130d6a5dd5bc4f936966b2fe114
 ---
 
 在卡片上需要展示本地图片或从网络上下载的图片，获取本地图片和网络图片需要通过FormExtensionAbility来实现，如下示例代码介绍了如何在卡片上显示本地图片和网络图片。
@@ -80,8 +80,8 @@ content_hash: sha256:ed0cfd0f14a6d421334f783fa583ab8417cedbd3e80ddc9a8edbfb13cb6
        let formInfo: formBindingData.FormBindingData = formBindingData.createFormBindingData(param);
        formProvider.updateForm(formId, formInfo);
 
-       // 注意：FormExtensionAbility在触发生命周期回调时被拉起，仅能在后台存在5秒
-       // 建议下载能快速下载完成的小文件，如在5秒内未下载完成，则此次网络图片无法刷新至卡片页面上
+       // 注意：FormExtensionAbility在触发生命周期回调时被拉起，仅能在后台存在10秒
+       // 建议下载能快速下载完成的小文件，如在10秒内未下载完成，则此次网络图片无法刷新至卡片页面上
        let netFile =
          'https://cn-assets.gitee.com/assets/mini_app-e5eee5a21c552b69ae6bf2cf87406b59.jpg';
        // 需要在此处使用真实的网络图片下载链接

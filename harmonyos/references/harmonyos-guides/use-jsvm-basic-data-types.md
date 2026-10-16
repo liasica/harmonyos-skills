@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-basi
 title: 使用JSVM-API接口创建和获取数值
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口创建和获取数值
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:46+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:93b1b74f413cb7889aa1ad93d4b34a4fb083cede8bc07aaa93776852d2ef71b5
+scraped_at: 2026-10-17T06:43:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:9b457b6b1ce5b81e389246584b1206f4892d3d7d599e0095668e5e76ee7132cc
 ---
 
 ## 简介
 
-在JavaScript中，整数类型是一种基本数据类型，用于表示没有小数部分的数值。Double类型用于表示有小数的数值。JavaScript的数值存储方式会导致在某些情况下无法准确表示非常大或非常小的数值，在这种情况下，需要使用BigInt对应的JSVM-API接口来处理更大范围的整数。
+在JavaScript中，整数类型是一种基本数据类型，用于表示没有小数部分的数值。double类型用于表示有小数的数值。JavaScript的数值存储方式会导致在某些情况下无法准确表示非常大或非常小的数值，在这种情况下，需要使用BigInt对应的JSVM-API接口来处理更大范围的整数。
 
 ## 基本概念
 
@@ -24,14 +24,14 @@ content_hash: sha256:93b1b74f413cb7889aa1ad93d4b34a4fb083cede8bc07aaa93776852d2e
 
 | 接口 | 功能说明 |
 | --- | --- |
-| OH\_JSVM\_GetValueUint32 | 获取给定JavaScript number的Uint32基础类型值。 |
-| OH\_JSVM\_GetValueInt32 | 获取给定JavaScript number的Int32基础类型值。 |
-| OH\_JSVM\_GetValueInt64 | 获取给定JavaScript number的Int64基础类型值。 |
-| OH\_JSVM\_GetValueDouble | 获取给定JavaScript number的Double基础类型值。 |
-| OH\_JSVM\_CreateInt32 | 根据Int32\_t类型对象创建JavaScript number对象。 |
-| OH\_JSVM\_CreateUint32 | 根据Uint32\_t类型对象创建JavaScript number对象。 |
-| OH\_JSVM\_CreateInt64 | 根据Int64\_t类型对象创建JavaScript number对象。 |
-| OH\_JSVM\_CreateDouble | 根据Double类型对象创建JavaScript number对象。 |
+| OH\_JSVM\_GetValueUint32 | 获取给定JavaScript number的uint32\_t基础类型值。 |
+| OH\_JSVM\_GetValueInt32 | 获取给定JavaScript number的int32\_t基础类型值。 |
+| OH\_JSVM\_GetValueInt64 | 获取给定JavaScript number的int64\_t基础类型值。 |
+| OH\_JSVM\_GetValueDouble | 获取给定JavaScript number的double基础类型值。 |
+| OH\_JSVM\_CreateInt32 | 根据int32\_t类型对象创建JavaScript number对象。 |
+| OH\_JSVM\_CreateUint32 | 根据uint32\_t类型对象创建JavaScript number对象。 |
+| OH\_JSVM\_CreateInt64 | 根据int64\_t类型对象创建JavaScript number对象。 |
+| OH\_JSVM\_CreateDouble | 根据double类型对象创建JavaScript number对象。 |
 
 ## 使用示例
 
@@ -39,7 +39,7 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
 
 ### OH\_JSVM\_GetValueUint32
 
-将JavaScript value转为JSVM模块中的uint32类型数据。
+将JavaScript value转为JSVM模块中的uint32\_t类型数据。
 
 cpp部分代码：
 
@@ -79,7 +79,7 @@ static JSVM_PropertyDescriptor descriptor[] = {
     {"getValueUint32", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };
 
-// 样例测试js
+// 样例测试JS
 const char* SRC_CALL_NATIVE = R"JS(getValueUint32(123))JS";
 ```
 
@@ -91,7 +91,7 @@ JSVM GetValueUint32 success: 123
 
 ### OH\_JSVM\_GetValueInt32
 
-将JavaScript value转为JSVM模块中的Int32类型数据。
+将JavaScript value转为JSVM模块中的int32\_t类型数据。
 
 cpp部分代码：
 
@@ -130,7 +130,7 @@ static JSVM_PropertyDescriptor descriptor[] = {
     {"getValueInt32", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };
 
-// 样例测试js
+// 样例测试JS
 const char* SRC_CALL_NATIVE = R"JS(getValueInt32(-123))JS";
 ```
 
@@ -142,7 +142,7 @@ JSVM GetValueInt32 success: -123
 
 ### OH\_JSVM\_GetValueInt64
 
-将JavaScript value转为JSVM模块中的Int64类型数据。
+将JavaScript value转为JSVM模块中的int64\_t类型数据。
 
 cpp部分代码：
 
@@ -180,7 +180,7 @@ static JSVM_PropertyDescriptor descriptor[] = {
     {"getValueInt64", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };
 
-// 样例测试js
+// 样例测试JS
 const char* SRC_CALL_NATIVE = R"JS(getValueInt64(-123))JS";
 ```
 
@@ -228,7 +228,7 @@ static JSVM_PropertyDescriptor descriptor[] = {
     {"getDouble", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };
 
-// 样例测试js
+// 样例测试JS
 const char* SRC_CALL_NATIVE = R"JS(getDouble(-110.0456))JS";
 ```
 
@@ -277,7 +277,7 @@ static JSVM_PropertyDescriptor descriptor[] = {
     {"createInt32", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };
 
-// 样例测试js
+// 样例测试JS
 const char* SRC_CALL_NATIVE = R"JS(createInt32())JS";
 ```
 
@@ -300,7 +300,7 @@ cpp部分代码：
 // ...
 
 // OH_JSVM_CreateUint32的样例方法
-static JSVM_Value CreateUInt32(JSVM_Env env, JSVM_CallbackInfo info)
+static JSVM_Value CreateUint32(JSVM_Env env, JSVM_CallbackInfo info)
 {
     // 如果使用
     // uint32_t类型来定义-26，会发生溢出，溢出时会对结果进行模运算，将负数的二进制补码转换为相应的正数。-26输出4294967270
@@ -311,33 +311,33 @@ static JSVM_Value CreateUInt32(JSVM_Env env, JSVM_CallbackInfo info)
     JSVM_Value result = nullptr;
     JSVM_Status status = OH_JSVM_CreateUint32(env, value, &result);
     if (status != JSVM_OK) {
-        OH_LOG_ERROR(LOG_APP, "JSVM CreateUInt32 fail");
+        OH_LOG_ERROR(LOG_APP, "JSVM CreateUint32 fail");
     } else {
         uint32_t number = 0;
         OH_JSVM_GetValueUint32(env, result, &number);
-        OH_LOG_INFO(LOG_APP, "JSVM CreateUInt32 success: %{public}u", number);
+        OH_LOG_INFO(LOG_APP, "JSVM CreateUint32 success: %{public}u", number);
     }
     return result;
 }
 
-// CreateUInt32注册回调
+// CreateUint32注册回调
 static JSVM_CallbackStruct param[] = {
-    {.data = nullptr, .callback = CreateUInt32},
+    {.data = nullptr, .callback = CreateUint32},
 };
 static JSVM_CallbackStruct *method = param;
-// CreateUInt32方法别名，供JS调用
+// CreateUint32方法别名，供JS调用
 static JSVM_PropertyDescriptor descriptor[] = {
-    {"createUInt32", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+    {"createUint32", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };
 
-// 样例测试js
-const char* SRC_CALL_NATIVE = R"JS(createUInt32())JS";
+// 样例测试JS
+const char* SRC_CALL_NATIVE = R"JS(createUint32())JS";
 ```
 
 预期的输出结果：
 
 ```txt
-JSVM CreateUInt32 success: 26
+JSVM CreateUint32 success: 26
 ```
 
 ### OH\_JSVM\_CreateInt64
@@ -381,7 +381,7 @@ static JSVM_PropertyDescriptor descriptor[] = {
     {"createInt64", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };
 
-// 样例测试js
+// 样例测试JS
 const char* SRC_CALL_NATIVE = R"JS(createInt64())JS";
 ```
 
@@ -429,7 +429,7 @@ static JSVM_PropertyDescriptor descriptor[] = {
     {"createDouble", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };
 
-// 样例测试js
+// 样例测试JS
 const char* SRC_CALL_NATIVE = R"JS(createDouble())JS";
 ```
 

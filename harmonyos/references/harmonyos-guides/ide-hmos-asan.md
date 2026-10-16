@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-asan
 title: 使用ASan检测内存错误
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用ASan检测内存错误
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:48+08:00
+scraped_at: 2026-10-17T06:43:47+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:cc3107a58d997fc0009ea49209c76647af5d6b75d40c24068b23d774ab2825e9
+content_hash: sha256:76cea1d6e55a7d3e790b8e81054544f93855f320ff7f72ef850ab2930dcea84d
 ---
 
 为追求C/C++的极致性能，编译器和OS运行框架不会对内存操作进行安全检测。针对该场景，鸿蒙电脑DevEco Studio集成ASan（Address-Sanitizer）为开发者提供面向C/C++的地址越界检测能力，并通过FaultLog展示错误的堆栈详情及导致错误的代码行。关于ASan的检测原理请参考[ASan检测原理](../best-practices/bpta-stability-address-sanitizer-principle.md#section159561141247)。
@@ -21,15 +21,15 @@ content_hash: sha256:cc3107a58d997fc0009ea49209c76647af5d6b75d40c24068b23d774ab2
 
 ### 方式一
 
-1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/zBb8mIwhRjWG5rBlcv9y8Q/zh-cn_image_0000002750169826.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/aItNruokTe-MHbTuPu5UzQ/zh-cn_image_0000002750169824.png "点击放大")按钮打开配置界面。
+1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/9GUThge3QDqPM02Iujb22w/zh-cn_image_0000002750169826.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/lOt3ALB2QIulNjnjpnMYBA/zh-cn_image_0000002750169824.png "点击放大")按钮打开配置界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/v9QzUDdDQyiUJQpoNbnl6g/zh-cn_image_0000002779728995.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/_oU8UqavTPWNujKiKJg1eg/zh-cn_image_0000002779728995.png)
 2. 在配置界面点击**故障分析**，勾选**地址越界检测**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/uTqqea0-TWmUP9qDS5kaAQ/zh-cn_image_0000002750009932.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/cw_cZu21TUq1XiIHS11zMg/zh-cn_image_0000002750009932.png)
 3. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_ASAN=ON”，表示以ASan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/3Cwa61N2Sv-T6SSiPiz4Ww/zh-cn_image_0000002750009930.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/F1JvV_Z1ToOeoReagw5vQg/zh-cn_image_0000002750009930.png)
 
 ### 方式二
 
@@ -39,7 +39,7 @@ content_hash: sha256:cc3107a58d997fc0009ea49209c76647af5d6b75d40c24068b23d774ab2
     "asanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/VU6iN3UES8aQxOWBObkp0A/zh-cn_image_0000002779608849.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/5ml-OEuwQ9S4A3j3hQ6Qdg/zh-cn_image_0000002779608849.png)
 2. 设置模块级构建ASan插桩。
 
    在需要开启ASan的模块中，通过添加构建参数开启ASan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
@@ -48,7 +48,7 @@ content_hash: sha256:cc3107a58d997fc0009ea49209c76647af5d6b75d40c24068b23d774ab2
    "arguments": "-DOHOS_ENABLE_ASAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/y3fwFjraQtejiVvTlQafhQ/zh-cn_image_0000002779608847.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/67uAnqqCTw6h5a06TGXdgQ/zh-cn_image_0000002779608847.png)
 
    **说明** 
 
@@ -63,4 +63,4 @@ ASAN\_OPTIONS用于在运行时配置ASan的行为，包括设置检测级别、
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出ASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。日志中各字段的说明请参考[ASan日志规格](address-sanitizer-guidelines.md#asan日志规格)，异常检测类型请参考[ASan异常检测类型](../best-practices/bpta-stability-asan-detection.md#section12508111110451)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/TYtIGV9gSrGp6vFzBlRO9g/zh-cn_image_0000002779728993.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/jbwy7qAvRJegFVJCLmzR3A/zh-cn_image_0000002779728993.png)

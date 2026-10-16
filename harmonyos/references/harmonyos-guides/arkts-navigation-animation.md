@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation转场动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation转场动画
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b08a6c8c50fba68e64bfa67e77bc9a6fe85071f3b46e78ce7fadcdc6f60717c0
+scraped_at: 2026-10-17T06:41:10+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:89e0198f85aeb0397955766a3d5e7afbbfcdd0eba150bf94d784a98455b2144a
 ---
 
 [Navigation](../harmonyos-references/ts-basic-components-navigation.md)存在默认转场动画，此外也提供了自定义转场和共享元素转场能力。
@@ -44,7 +44,7 @@ Navigation提供了两种自定义转场接口：Navigation自定义转场、Nav
 
   1. 实现一个自定义转场动画工具类CustomNavigationUtils，通过一个Map管理各页面的自定义动画对象CustomTransition。页面在创建时注册其自定义转场动画对象，在销毁时取消注册。
   2. 实现一个转场协议对象[NavigationAnimatedTransition](../harmonyos-references/ts-basic-components-navigation.md#navigationanimatedtransition11)。其中，transition属性为自定义转场动画的具体实现，开发者需在此实现自己的转场动画逻辑，系统在转场开始时会调用此方法。timeout属性表示转场结束的超时时间，默认为1000ms。onTransitionEnd为转场结束时的回调。
-  3. 调用customNavContentTransition方法并返回实现的转场协议对象，若返回undefined，则使用系统默认转场。
+  3. 调用customNavContentTransition()方法并返回实现的转场协议对象，若返回undefined，则使用系统默认转场。
 * NavDestination支持自定义转场动画，适用于控制单个页面的转场效果。通过设置[customTransition](../harmonyos-references/ts-basic-components-navdestination.md#customtransition15)属性即可实现单个页面的自定义转场效果。步骤如下，示例代码请参考[设置NavDestination自定义转场](../harmonyos-references/ts-basic-components-navdestination.md#示例2设置navdestination自定义转场)。
 
   1. 实现NavDestination的转场代理[NavDestinationTransitionDelegate](../harmonyos-references/ts-basic-components-navdestination.md#navdestinationtransitiondelegate15)，针对不同的堆栈操作类型返回自定义的转场协议对象[NavDestinationTransition](../harmonyos-references/ts-basic-components-navdestination.md#navdestinationtransition15)。其中，event是必填参数，需在此处实现自定义转场动画的逻辑，onTransitionEnd、duration、curve与delay为可选参数，分别对应动画结束后的回调、动画持续时间、动画曲线类型与开始前的延时。如果在转场代理中返回多个转场协议对象，这些动画效果将逐层叠加。

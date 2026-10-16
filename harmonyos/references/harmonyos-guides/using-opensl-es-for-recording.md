@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-opensl-
 title: 使用OpenSL ES开发音频录制功能(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > OpenSL ES开发指导(不再推荐) > 使用OpenSL ES开发音频录制功能(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:77f638d8a18aad9e54ddc5eed03d4b23982e077674f96fbe519b9f9c821c6e55
+scraped_at: 2026-10-17T06:42:04+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:af2eecf16749bc6e77edb11141308754805333da0032ded3fbe0fde2669ff3bb
 ---
 
 OpenSL ES全称为Open Sound Library for Embedded Systems，是一个嵌入式、跨平台、免费的音频处理库。为嵌入式移动多媒体设备上的应用开发者提供标准化、高性能、低延迟的API。HarmonyOS的Native API基于[Khronos Group](https://www.khronos.org/)开发的[OpenSL ES](https://www.khronos.org/opensles/) 1.0.1 API 规范实现，开发者可以通过<OpenSLES.h>和<OpenSLES\_OpenHarmony.h>在HarmonyOS上使用相关API。
@@ -79,14 +79,14 @@ target_link_libraries(sample PUBLIC libOpenSLES.so)
    #include "SLES/OpenSLES_OpenHarmony.h"
    #include "SLES/OpenSLES_Platform.h"
    ```
-2. 使用slCreateEngine接口创建引擎对象和实例化引擎对象engine。
+2. 使用slCreateEngine()接口创建并实例化引擎对象。
 
    ```cpp
    SLObjectItf engineObject = nullptr;
    slCreateEngine(&engineObject, 0, nullptr, 0, nullptr, nullptr);
    (*engineObject)->Realize(engineObject, SL_BOOLEAN_FALSE);
    ```
-3. 获取接口SL\_IID\_ENGINE的引擎接口engineEngine实例。
+3. 获取SL\_IID\_ENGINE对应的引擎接口句柄。
 
    ```cpp
    SLEngineItf engineItf = nullptr;
@@ -129,7 +129,7 @@ target_link_libraries(sample PUBLIC libOpenSLES.so)
        &audioSource, &audioSink, 0, nullptr, nullptr);
    (*pcmCapturerObject)->Realize(pcmCapturerObject, SL_BOOLEAN_FALSE);
    ```
-5. 获取录音接口SL\_IID\_RECORD的recordItf接口实例。
+5. 获取SL\_IID\_RECORD对应的录音接口句柄。
 
    ```cpp
    SLRecordItf  recordItf;

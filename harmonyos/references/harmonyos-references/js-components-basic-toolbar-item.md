@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: toolbar-item
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > toolbar-item
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:28+08:00
+scraped_at: 2026-10-17T06:45:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2ad88378f921f4800ca3abf7ede491ee9a06fe1959142ffc2586e825a0da7132
+content_hash: sha256:653073cbdee3442b5441821092066b86144ce67341528d7eff6289838baf8fcd
 ---
 
 **说明** 
@@ -72,4 +72,4 @@ content_hash: sha256:2ad88378f921f4800ca3abf7ede491ee9a06fe1959142ffc2586e825a0d
 </toolbar>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/u8D1JZvXQCmhBNnmGbQhQA/zh-cn_image_0000002762502432.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/BTTG0cOfQAed1bpofQMhjg/zh-cn_image_0000002764974190.jpg)

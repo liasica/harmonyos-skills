@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 界面布局
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > DevEco Profiler调优工具简介 > 界面布局
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:35+08:00
+scraped_at: 2026-10-17T06:43:33+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:106d8f720e979efaad75fde89f1b5dd87087ade1788c4584ead01cef146efc2f
+content_hash: sha256:fef473cbd31224754a0078f87c746b9751e3965f18ec4e37668eccd38e6d63cd
 ---
 
 DevEco Profiler工具的界面分为两大区域：
@@ -18,4 +18,4 @@ DevEco Profiler工具的界面分为两大区域：
 
 ②[数据区](ide-profiler-data.md)：负责性能数据的可视化呈现。包含工具控制栏、时间轴、泳道区域、详情区域，通过不同泳道展示，直观展示调优详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/NCkvou1aTpqu6N4C-qltTA/zh-cn_image_0000002770022359.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/boxFbGCgSSuXnDmKFxxkkw/zh-cn_image_0000002770022359.png "点击放大")

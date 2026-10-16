@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilitystage
 title: AbilityStage组件管理器
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > AbilityStage组件管理器
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:51+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-10-17T06:40:56+08:00
+doc_updated_at: 2026-10-16
 content_hash: sha256:0cc3a4f1b965cb588e4378b4634e53d6e7bbc8ddf9a96089b32b7ec3f5daaa4f
 ---
 

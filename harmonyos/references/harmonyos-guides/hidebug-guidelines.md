@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guide
 title: HiDebug能力概述
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 系统调试信息获取 > HiDebug能力概述
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:56+08:00
+scraped_at: 2026-10-17T06:41:59+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:43a3dae0b3a9eb30505e88ff7edb087cf9924b1ce8bf0039abb44b0e340feae2
+content_hash: sha256:4a3425c3f83e4f6f349fc2fb6d9076fa08282034002165651f804d8ce62992c2
 ---
 
 HiDebug可用于获取系统或应用进程的内存、CPU和GPU等数据，以及开启进程Trace采集。
@@ -217,7 +217,7 @@ ARM64架构函数栈帧的结构如下图所示：
 
 **图1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/JvbA6tdaSIeUM7r8-UteZw/zh-cn_image_0000002762500452.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/QR1O1LEtSn6wLwu9uoaY1g/zh-cn_image_0000002765132132.png)
 
 FP：栈顶指针，指向一个栈帧的顶部，当函数发生跳转时，会记录当时的栈的起始位置。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-external
 title: 外部密钥管理扩展简介
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 外部密钥管理扩展 > 外部密钥管理扩展简介
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:39+08:00
+scraped_at: 2026-10-17T06:41:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3b220d4686fb6cb83587d9980f530dc4cae7c9844c0979e61cabe107c7818012
+content_hash: sha256:d7612864fce3b3d2cdd81ab72b59a2ccc089891d9a5571285385e9e40b9b4cfc
 ---
 
 HUKS提供统一的Ability扩展接口，驱动HAP可基于此实现外部密钥管理扩展，注册、注销自定义的硬件密钥管理模块，满足金融领域UKey证书的浏览器双向SSL认证等场景的身份认证需求。
@@ -18,7 +18,7 @@ UKey：USB key，基于USB接口的硬件设备，可用于存储用户私钥、
 
 应用调用接口进行身份认证的流程可参考下图，图中流程请参见图后的标注。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/xcbHMlnJSVy1fZkbiewfow/zh-cn_image_0000002762500330.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/QQNqs5i5Rbyh2edmw44TBg/zh-cn_image_0000002765132014.png)
 
 * 标注1：UKey设备插入。
 * 标注2：驱动HAP通过Provider管理接口，注册外部密钥管理扩展能力（UKey Extension）。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed
 title: Content Embed Kit简介
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > Content Embed Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:56+08:00
-doc_updated_at: 2026-04-30
-content_hash: sha256:ea3fae8793c9d128bda731551b1a43aaaa270df7581dbc302973376497a8b4cf
+scraped_at: 2026-10-17T06:41:25+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:557196d2d8c9b54cf2ab9866cb5bed6a6d8cc7f0c5e071d9305e4216c4dbb3e3
 ---
 
 从API version 24开始，Content Embed Kit（内容嵌入服务）为开发者提供应用间文档互相嵌入与协同编辑的能力，帮助用户在本应用文档中嵌入其他格式的文档，并实现跨应用的文档编辑能力，丰富应用编辑体验。
@@ -32,10 +32,10 @@ content_hash: sha256:ea3fae8793c9d128bda731551b1a43aaaa270df7581dbc302973376497a
 
 跨应用协作：打破应用间的壁垒，实现不同类型文档的无缝嵌入与编辑。
 
-## 与相关Kit的关系
-
-[Ability Kit](abilitykit-overview.md)：Content Embed Kit内部实现依赖Ability Kit提供的Extension基础能力，与Ability Kit存在生命周期调度交互。
-
 ## 模拟器支持情况
 
 本Kit暂不支持模拟器。
+
+## 与相关Kit的关系
+
+[Ability Kit](abilitykit-overview.md)：Content Embed Kit内部实现依赖Ability Kit提供的Extension基础能力，与Ability Kit存在生命周期调度交互。

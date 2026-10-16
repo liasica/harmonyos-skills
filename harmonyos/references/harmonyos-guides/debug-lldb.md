@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/debug-lldb
 title: LLDB高性能调试器
 breadcrumb: 指南 > NDK开发 > 调试和性能分析 > LLDB高性能调试器
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:14+08:00
+scraped_at: 2026-10-17T06:43:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fefb20e01d58487aadced3a803cc7fe20bce87407f88c519f81caa045ff92d90
+content_hash: sha256:e83f10b5e92cae13c4c8eb9366425c8e5716f7ce3b138df5dd0e82904a6ce160
 ---
 
 ## 概述
@@ -224,7 +224,7 @@ lldb-server在运行时会对自身进行数字签名验证，只有通过华为
       ```
     - PC上准备lldb，如windows系统则使用**lldb.exe**, 稍后将使用lldb与OH设备上的lldb-server远程连接进行调试。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/nmyLsI4KQguoYsYstNtpvQ/zh-cn_image_0000002762341584.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/EmXRHB4PRtCX2Fw9wnlZrA/zh-cn_image_0000002794491767.png)
   + 设备状态与调试支持矩阵（分三种情况）：
 
     | 设备状态 | 调试支持范围 | lldb-server部署路径 |

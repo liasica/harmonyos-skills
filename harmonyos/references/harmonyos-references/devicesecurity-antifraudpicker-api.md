@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: AntifraudPicker（反诈选择器）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > AntifraudPicker（反诈选择器）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:44f57ab23e060e51f6b5b989383cf1d6410025eafcbae8b676f5d7f226a6370e
+scraped_at: 2026-10-17T06:46:22+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:922a9099f592025f5fc6ecf415d27103ef3ae92d42b31ab9b214afc4c22c3d78
 ---
 
 本模块提供获取诈骗消息、诈骗通话记录的接口，应用可以获取选择的消息或通话记录数据，以支撑反诈业务。
@@ -161,7 +161,7 @@ selectFraudMessage(context: common.Context, options?: [AntifraudMessageOptions](
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. Interface caller does not have permission "ohos.permission.USE\_FRAUD\_MESSAGES\_PICKER". |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1017100001 | Unknown error. |
 | 1017100002 | The device type is not supported. |
@@ -223,7 +223,7 @@ selectFraudCallLog(context: common.Context, options?: [AntifraudCallLogOptions](
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. Interface caller does not have permission "ohos.permission.USE\_FRAUD\_CALL\_LOG\_PICKER". |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1017100001 | Unknown error. |
 | 1017100002 | The device type is not supported. |
@@ -334,7 +334,7 @@ selectFraudApp(context: common.Context, options?: [AntifraudAppOptions](devicese
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. Interface caller does not have permission "ohos.permission.USE\_FRAUD\_APP\_PICKER". |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1017600001 | Unknown error. |
 | 1017600002 | The device type is not supported. |
 | 1017600003 | Parameter verification failed. |

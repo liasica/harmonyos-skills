@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:25+08:00
+scraped_at: 2026-10-17T06:45:17+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:567622308ccde9d563647d01db07901ca7d020d9d29f3a9727b4e619dbef6c66
+content_hash: sha256:9d58592fe9ddba3cd7381d4a0d230c0b9a42bc0508b0ee587d134400483efc9a
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:567622308ccde9d563647d01db07901ca7d020d9d29f3a9727b4e619dbe
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/iaLDuV0vRViJriJ1Qs3eIg/zh-cn_image_0000002791741063.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/tPYsGgpxTVuFwtEWieyzSQ/zh-cn_image_0000002765134082.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/KA_3IroKRNyYmsE_4maSmQ/zh-cn_image_0000002762342488.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/3KKhnhmvRF28aX_Qi9bFAg/zh-cn_image_0000002794492657.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/qh6jFqQJRYKxwxkgZkBAow/zh-cn_image_0000002791861277.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/fRvV01UWSlGTlhDu1Z9tvw/zh-cn_image_0000002794412879.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Fg4SdW98RJSr5XrNR9mHaw/zh-cn_image_0000002762502402.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/3UJhhnNkT4KLd2Zq7B-9-w/zh-cn_image_0000002764974160.png)

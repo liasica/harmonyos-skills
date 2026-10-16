@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: 算子调试概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 算子调试概述
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:48+08:00
+scraped_at: 2026-10-17T06:42:49+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:00d8566d94603ca36e9507b4caa0b39cbaebbb21c564fbaa377ac00a119242f8
+content_hash: sha256:bb9a33c4399e7e9571325396d0e93657df0ea276a0037928c01b51ae66ec923f
 ---
 
 ## 工具介绍
@@ -65,7 +65,7 @@ def gen_data_simple():
 
 **图1** 基于命令行的工具运行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/bVQb6U61TIKENO9KVAjRBg/zh-cn_image_0000002762501320.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/fyQIIaBIQ-GgLz6D-d0bmQ/zh-cn_image_0000002764973086.png)
 
 1. 环境准备：使用本工具进行算子调测前，请先完成基础环境搭建，详细操作参见[环境准备](cannkit-environment-preparation.md)。
 2. 数据准备（bin格式）：准备好bin格式的输入数据和标杆数据文件，该数据是调测工具的必要输入。

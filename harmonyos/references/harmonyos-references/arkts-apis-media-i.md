@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:10+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:79351c6c19a7b13dda96779a3c47c91fb74007a4e44930d3dd7f6b3780144ea9
+scraped_at: 2026-10-17T06:48:10+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:fe64f2ea74f85005808b528895fa352524c4d241065b923cee992a915094f0ae
 ---
 
 **说明** 
@@ -264,7 +264,7 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 | dateTime | string | 否 | 是 | 媒体资源的创建时间。不支持AVRecorder设置该属性。 |
 | dateTimeFormat | string | 否 | 是 | 媒体资源的创建时间，按YYYY-MM-DD HH:mm:ss格式输出。不支持AVRecorder设置该属性。 |
 | composer | string | 否 | 是 | 媒体资源的作曲家。不支持AVRecorder设置该属性。 |
-| duration | string | 否 | 是 | 媒体资源的时长。不支持AVRecorder设置该属性。 |
+| duration | string | 否 | 是 | 媒体资源的时长，单位为毫秒（ms）。不支持AVRecorder设置该属性。 |
 | genre | string | 否 | 是 | 媒体资源的类型或体裁。 |
 | hasAudio | string | 否 | 是 | 媒体资源是否包含音频。不支持AVRecorder设置该属性。 |
 | hasVideo | string | 否 | 是 | 媒体资源是否包含视频。不支持AVRecorder设置该属性。 |

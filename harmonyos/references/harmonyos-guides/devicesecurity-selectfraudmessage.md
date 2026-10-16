@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 获取诈骗消息
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 反诈选择器 > 获取诈骗消息
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:34+08:00
+scraped_at: 2026-10-17T06:41:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e983f4b4e6bc9f06abbd4343151a380ab58d1a599aa6a02e5a475f45a7266acb
+content_hash: sha256:b0e1a58551bb915d9918bd6f19503e9d38627f925f0d8aacecc888da4ff8db19
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:e983f4b4e6bc9f06abbd4343151a380ab58d1a599aa6a02e5a475f45a72
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/5_8njt-sRHGhbEG0uLnvQg/zh-cn_image_0000002762500314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/x321W8-zRDu3GeC2GPkxZA/zh-cn_image_0000002765131998.png)
 
 **流程说明：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-overvie
 title: UI开发 (兼容JS的类Web开发范式)概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > UI开发 (兼容JS的类Web开发范式)概述
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:14+08:00
+scraped_at: 2026-10-17T06:41:18+08:00
 doc_updated_at: 2026-05-08
-content_hash: sha256:4f998e1a3b9d5c28cf24273fcd9cbcfcaacddefd55ff48e74414ff04a080a70c
+content_hash: sha256:2a7b079ca075e6c6064820c379ead1f3a4b578dc225f50b5ddf1c7ede9ac334c
 ---
 
 兼容JS的类Web开发范式的方舟开发框架，采用经典的[兼容JS的类Web开发范式API](../harmonyos-references/arkui-js-full-comp.md)、CSS、JavaScript三段式开发方式。使用HML标签文件进行布局搭建，使用CSS文件进行样式描述，使用JavaScript文件进行逻辑处理。UI组件与数据之间通过单向数据绑定的方式建立关联，当数据发生变化时，UI界面自动触发更新。此种开发方式更接近Web前端开发者的使用习惯，快速将已有的Web应用改造成方舟开发框架应用。主要适用于界面较为简单的中小型应用开发。
@@ -16,7 +16,7 @@ content_hash: sha256:4f998e1a3b9d5c28cf24273fcd9cbcfcaacddefd55ff48e74414ff04a08
 
 兼容JS的类Web开发范式的方舟开发框架，包括应用层（Application）、前端框架层（Framework）、引擎层（Engine）和平台适配层（Porting Layer）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/4UPpeqTLRMmbQ16pt7Ghdg/zh-cn_image_0000002762499894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/DSHhVn9pSd-fOgLXjmQbVQ/zh-cn_image_0000002765131580.png)
 
 * **Application**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行array相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行array相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:10+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:153af243f81b485956c363e476dc42d77cb674630634ec69917f6f4a054fe50e
+scraped_at: 2026-10-17T06:43:11+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:afb9fcba18a6e3b08b534209529a6ff3d42e6d1a284a891c0e8b362e18de5411
 ---
 
 ## 简介
@@ -465,7 +465,7 @@ export const napiDeleteElement: <T>(arr: Array<T>,
 
 ArkTS侧示例代码
 
-index.d.ts需要同时导入前文示例代码中的napiHasElement、napiGetElement接口。
+index.d.ts需要同时导入前文示例代码中的napiHasElement()、napiGetElement()接口。
 
 ```typescript
 // 使用Node-API接口进行array相关开发 napi_delete_element

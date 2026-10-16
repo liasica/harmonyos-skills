@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS错误码
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS错误码
 category: harmonyos-references
-scraped_at: 2026-10-15T07:12:05+08:00
+scraped_at: 2026-10-17T06:48:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c8c545aa4b33bb6ebfbe80e0044ef07aa2c4bae6dd0a0beefee354e92524456d
+content_hash: sha256:4a5b9d2742bd2ed9a29bc78ad675e9561ffb438229748ddf31638a242577e8cd
 ---
 
 **说明** 
@@ -180,7 +180,7 @@ Invalid input parameter value.
 
 1. 在AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择对应的项目和对应的应用，在“常规 > 应用 ”下，找到**应用**的Client ID和APP ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/fSCdIw3ZQb6bhEMe0N9CYw/zh-cn_image_0000002762340844.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/wg-Bj14vQv-Krz7VFToD8Q/zh-cn_image_0000002794411243.png)
 
    * 若Client ID和APP ID不同：请检查module type为entry的模块下module.json5中的client\_id是否配置或配置的值是否正确，参考[配置Client ID](../harmonyos-guides/account-client-id.md)。
    * 若Client ID和APP ID相同：可无需配置Client ID。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.font (注册自定义字体)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.font (注册自定义字体)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:773857ad32bde4bb2a262733d5cc1526aa1bfc65376569934b6a06132a29bc6e
+scraped_at: 2026-10-17T06:44:34+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:f15ee013ea10674fc9c560be1b64c7d59869bb368356da4856c36696ef015204
 ---
 
 本模块提供注册自定义字体、获取系统字体列表、获取字体详细信息以及获取系统字体配置等能力，适用于应用需要使用自定义字体样式（如品牌字体、图标字体）或获取系统字体信息的场景。通过使用本模块，开发者可以实现品牌字体统一、提升用户界面美观度和一致性，满足多样化的设计需求。
@@ -14,7 +14,7 @@ content_hash: sha256:773857ad32bde4bb2a262733d5cc1526aa1bfc65376569934b6a06132a2
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](../harmonyos-guides/arkts-global-interface.md#ui上下文不明确)的地方使用，参见[UIContext](arkts-apis-uicontext-uicontext.md)说明。
-* 推荐使用字体引擎的[loadFontSync](js-apis-graphics-text.md#loadfontsync)接口注册自定义字体。
+* 推荐使用图形的[@ohos.graphics.text (文本模块)](js-apis-graphics-text.md)。
 
 ## 导入模块
 
@@ -29,6 +29,8 @@ registerFont(options: FontOptions): void
 在字体管理中注册自定义字体。
 
 该接口为异步接口，不支持并发调用。
+
+推荐使用字体引擎的[loadFontSync()](js-apis-graphics-text.md#loadfontsync)接口注册自定义字体。
 
 **说明** 
 
@@ -138,7 +140,7 @@ getSystemFontList(): Array<string>
 
 该接口仅在PC/2in1设备上生效，在其他设备上返回空数组。
 
-推荐使用[getSystemFontFullNamesByType](js-apis-graphics-text.md#textgetsystemfontfullnamesbytype14)接口获取系统最新支持的字体列表数据。
+推荐使用[getSystemFontFullNamesByType()](js-apis-graphics-text.md#textgetsystemfontfullnamesbytype14)接口获取系统最新支持的字体列表数据。
 
 **说明** 
 
@@ -190,6 +192,8 @@ struct FontExample {
 getFontByName(fontName: string): FontInfo
 
 根据传入的系统字体名称获取系统字体的相关信息。
+
+推荐使用[getFontDescriptorByFullName()](js-apis-graphics-text.md#textgetfontdescriptorbyfullname14)接口获取指定字体类型的字体相关信息。
 
 **说明** 
 

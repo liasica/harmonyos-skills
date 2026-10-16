@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: image开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > image开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:15+08:00
+scraped_at: 2026-10-17T06:41:19+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:78d566bd311f1e30807002ff03a689a6a0e69cd346b65686ba1be684001d2581
+content_hash: sha256:66bdb57af4c3fbf1293845daa124db037c5736556984ab019373e0e080192705
 ---
 
 image是图片组件，用来渲染展示图片。具体用法请参考[image](../harmonyos-references/js-components-basic-image.md)组件。
@@ -33,7 +33,7 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/S3ZZAFU3RwqnulkIOhe9RQ/zh-cn_image_0000002791858821.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/WfklGWCfTueW-Wfb3hs5gw/zh-cn_image_0000002764971706.png)
 
 ## 设置image样式
 
@@ -66,7 +66,7 @@ image{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Xts4lAjVRBOdGUw8wEePaA/zh-cn_image_0000002762499946.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/JN58THhtSeWjBVb_CQVvWA/zh-cn_image_0000002765131632.png)
 
 ## 加载图片
 
@@ -123,7 +123,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/vBlUEsrNRd2RDpuA7rEHzQ/zh-cn_image_0000002791738609.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/3Ci6bWdAQ0um-ilsuxBsjw/zh-cn_image_0000002794490209.gif)
 
 ## 场景示例
 
@@ -204,4 +204,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/UrSVR3rtSnKK0pdMeGOULA/zh-cn_image_0000002762340028.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/vZpN_jjFRVyLv50aC9P9Mg/zh-cn_image_0000002794410425.gif)

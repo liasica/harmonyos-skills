@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-task-visu
 title: 任务可视化与执行
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 任务可视化与执行
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:32+08:00
+scraped_at: 2026-10-17T06:43:33+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:6b0c015410ff3fb8c7985f2b614d6a2d557c228aa7dba50d14fbbf4b5bec9c2b
+content_hash: sha256:f00cd92e9fd02315a798ef426e460c5d1f2976a6b762b14a261d77c36ba66cfc
 ---
 
 从DevEco Studio 6.1.0 Beta1版本开始，Hvigor提供任务可视化窗口，用于展示工程和各个模块常用的构建任务，便于快速执行。
@@ -17,5 +17,5 @@ content_hash: sha256:6b0c015410ff3fb8c7985f2b614d6a2d557c228aa7dba50d14fbbf4b5be
 
    其中工程级和模块级的任务，build和help目录下是Hvigor的默认任务，other目录下是开发者[自定义的任务](ide-hvigor-task.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/zQicXXihQ9CldGAP3kLMpQ/zh-cn_image_0000002701823368.png)
-2. 可以通过鼠标双击、鼠标右键或Enter键快速执行一个选中的任务，也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/P6H_13qbTbKrvCFTYftpdg/zh-cn_image_0000002701663450.png)打开Run Anything窗口，搜索任务并双击执行。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/IJRSzpV3QEavlyaKEbn1Yw/zh-cn_image_0000002701823368.png)
+2. 可以通过鼠标双击、鼠标右键或Enter键快速执行一个选中的任务，也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/UqHQXgmrSL-Jn8X6QmBvCg/zh-cn_image_0000002701663450.png)打开Run Anything窗口，搜索任务并双击执行。

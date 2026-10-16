@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-sna
 title: 设置常驻通知弹窗
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 即时操作 > 设置常驻通知弹窗
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:26+08:00
+scraped_at: 2026-10-17T06:41:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:541da1baada6893d90bcf8de5551b27b5f59a0691da8c6bb665fe2b203069685
+content_hash: sha256:319e6e37338b91763ab1800767be6683140b28c9366cd6014333c9d88839cd53
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:541da1baada6893d90bcf8de5551b27b5f59a0691da8c6bb665fe2b2030
 
 [HdsSnackBar (即时操作)](../harmonyos-references/ui-design-hdssnackbar.md)支持常驻通知弹窗。当应用开发者需要常驻通知提醒弹窗时，可以通过HdsSnackBar的show方法显示HdsSnackBar弹窗，设置duration是-1表示常驻弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/hv-rda5bRqOBd1h-uIEEfg/zh-cn_image_0000002762500248.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/H_byRjJZRy2tVONje7y9Aw/zh-cn_image_0000002765131934.gif)
 
 ## 开发步骤
 

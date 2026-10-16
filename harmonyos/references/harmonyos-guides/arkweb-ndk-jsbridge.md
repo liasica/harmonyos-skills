@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-ndk-js
 title: 应用侧与前端页面的相互调用(C/C++)
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 应用侧与前端页面的相互调用(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:19+08:00
+scraped_at: 2026-10-17T06:41:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9ecc4ebd3c7976e6bd4e2b60e8d0468c1e292d1466a5c8e92391f499eee5f345
+content_hash: sha256:eaf88c7c2a0c6793eb5e5cd5e9d0f6ada3b661072edbae00c138458e430361ad
 ---
 
 本指导适用于ArkWeb应用侧与前端网页通信场景，开发者可根据应用架构选择使用ArkWeb Native接口完成业务通信机制（以下简称Native JSBridge）。
@@ -16,13 +16,13 @@ content_hash: sha256:9ecc4ebd3c7976e6bd4e2b60e8d0468c1e292d1466a5c8e92391f499eee
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_ComponentAPI](../harmonyos-references/capi-web-arkweb-componentapi.md)实现JSBridge功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/4xuku2BqTMyoDTH2irqpbg/zh-cn_image_0000002762340142.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/IopkStZMT0epYDAVJOD8Bw/zh-cn_image_0000002794410539.png)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS JSBridge接口。
 
 左图是使用ArkTS JSBridge接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native JSBridge接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/r9hUieI4TJ62X-tdePTHrA/zh-cn_image_0000002791858937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/CA-eJZUaQMapq1PGBUg65A/zh-cn_image_0000002764971822.png)
 
 Native JSBridge方案解决了ArkTS环境的冗余切换，同时允许回调在非UI线程上运行，避免造成UI阻塞。
 

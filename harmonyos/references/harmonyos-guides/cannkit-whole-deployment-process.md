@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-whole
 title: 部署全流程
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 部署全流程
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:46+08:00
+scraped_at: 2026-10-17T06:42:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fab36d924f94c6ef8afc1cfe2708e830aaa10fc44223e495397ae942c1033ab5
+content_hash: sha256:2a72d76a7d7763cbd11f30fc5bd99b47e9e429c259e82a7582d555ac2fa9cea7
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/WebAQWFaQNOcXGh-Q-iPvw/zh-cn_image_0000002762501288.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Q7b-yeTISjOZ3B9EhG8dMQ/zh-cn_image_0000002764973056.png)
 
 ## 离线模型转换
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deflate-and-i
 title: 压缩与解压
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 压缩与解压 > 压缩与解压
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:198b8e01c17414a612ca668d2b9928d4f58359a2269834881702c89431f369d2
+scraped_at: 2026-10-17T06:41:50+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:058863eb46d07519d07d1655c8d52c4c8e7d66f0ba31bf7d0021cabb0c733171
 ---
 
 本文针对常见的几种压缩、解压场景，介绍相关函数的使用方法。
@@ -251,7 +251,7 @@ async function deflateFile(src: fs.File, dest: fs.File) {
     let initStatus = zip.deflateInit(strm, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED);
     console.info('deflateInit ret: ' + (await initStatus).valueOf());
   } catch (err) {
-    console.info('deflateInit err: ' + JSON.stringify(err));
+    console.error('deflateInit err: ' + JSON.stringify(err));
   }
   do {
     try {
@@ -263,7 +263,7 @@ async function deflateFile(src: fs.File, dest: fs.File) {
       strm.availableIn = readLen;
       strm.nextIn = inBuf;
     } catch (err) {
-      console.info('readSync err: ' + JSON.stringify(err));
+      console.error('readSync err: ' + JSON.stringify(err));
     }
     do {
       // 设置输出缓冲区
@@ -297,7 +297,7 @@ async function deflateFile(src: fs.File, dest: fs.File) {
     // 释放资源
     zip.deflateEnd(strm);
   } catch (err) {
-    console.info('deflateEnd err: ' + JSON.stringify(err));
+    console.error('deflateEnd err: ' + JSON.stringify(err));
   }
 }
 
@@ -315,7 +315,7 @@ async function inflateFile(src: fs.File, dest: fs.File) {
     let initStatus = zip.inflateInit(strm);
     console.info('inflateInit ret: ' + (await initStatus).valueOf());
   } catch (err) {
-    console.info('inflateInit err: ' + JSON.stringify(err));
+    console.error('inflateInit err: ' + JSON.stringify(err));
   }
   do {
     try {
@@ -329,7 +329,7 @@ async function inflateFile(src: fs.File, dest: fs.File) {
       strm.availableIn = readLen;
       strm.nextIn = inBuf;
     } catch (err) {
-      console.info('readSync err: ' + JSON.stringify(err));
+      console.error('readSync err: ' + JSON.stringify(err));
     }
     do {
       // 设置输出缓冲区
@@ -364,7 +364,7 @@ async function inflateFile(src: fs.File, dest: fs.File) {
     // 释放资源
     zip.inflateEnd(strm);
   } catch (err) {
-    console.info('inflateEnd err: ' + JSON.stringify(err));
+    console.error('inflateEnd err: ' + JSON.stringify(err));
   }
 }
 ```
@@ -428,7 +428,7 @@ async function deflateGzipFile(src: fs.File, dest: fs.File) {
       zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY);
     console.info('deflateInit2 ret: ' + (await initStatus).valueOf());
   } catch (err) {
-    console.info('deflateInit2 err: ' + JSON.stringify(err));
+    console.error('deflateInit2 err: ' + JSON.stringify(err));
   }
   do {
     try {
@@ -440,7 +440,7 @@ async function deflateGzipFile(src: fs.File, dest: fs.File) {
       strm.availableIn = readLen;
       strm.nextIn = inBuf;
     } catch (err) {
-      console.info('readSync err: ' + JSON.stringify(err));
+      console.error('readSync err: ' + JSON.stringify(err));
     }
     do {
       // 设置输出缓冲区
@@ -474,7 +474,7 @@ async function deflateGzipFile(src: fs.File, dest: fs.File) {
     // 释放资源
     zip.deflateEnd(strm);
   } catch (err) {
-    console.info('deflateEnd err: ' + JSON.stringify(err));
+    console.error('deflateEnd err: ' + JSON.stringify(err));
   }
 }
 
@@ -493,7 +493,7 @@ async function inflateGzipFile(src: fs.File, dest: fs.File) {
     let initStatus = zip.inflateInit2(strm, windowBits);
     console.info('inflateInit2 ret: ' + (await initStatus).valueOf());
   } catch (err) {
-    console.info('inflateInit2 err: ' + JSON.stringify(err));
+    console.error('inflateInit2 err: ' + JSON.stringify(err));
   }
   do {
     try {
@@ -507,7 +507,7 @@ async function inflateGzipFile(src: fs.File, dest: fs.File) {
       strm.availableIn = readLen;
       strm.nextIn = inBuf;
     } catch (err) {
-      console.info('readSync err: ' + JSON.stringify(err));
+      console.error('readSync err: ' + JSON.stringify(err));
     }
     do {
       // 设置输出缓冲区
@@ -542,7 +542,7 @@ async function inflateGzipFile(src: fs.File, dest: fs.File) {
     // 释放资源
     zip.inflateEnd(strm);
   } catch (err) {
-    console.info('inflateEnd err: ' + JSON.stringify(err));
+    console.error('inflateEnd err: ' + JSON.stringify(err));
   }
 }
 ```

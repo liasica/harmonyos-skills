@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-sid
 title: 设置overlay模式的侧边栏
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 侧边栏样式 > 设置overlay模式的侧边栏
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:26+08:00
+scraped_at: 2026-10-17T06:41:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cb12bb5221e342ee8cbd18e00fb3e49af529febece0baca1b99192cb63f982f7
+content_hash: sha256:a430649783f859d982c21382431c7b59b4d8209b25cb0ac04eb78c52c54f17fb
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:cb12bb5221e342ee8cbd18e00fb3e49af529febece0baca1b99192cb63f
 
 [HdsSideBar (侧边栏)](../harmonyos-references/ui-design-hdssidebar.md)提供可以显示和隐藏的侧边栏容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区，通过设置[sideBarContainerType](../harmonyos-references/ts-container-sidebarcontainer.md#sidebarcontainertype枚举说明)的值为SideBarContainerType.Overlay，使得当前HdsSideBar为悬浮样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/V5C-vTSHQCuoWBUZdZnasA/zh-cn_image_0000002791859117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/b7JxQg_yQhuUne9kFS_org/zh-cn_image_0000002764972000.png)
 
 ## 开发步骤
 
@@ -27,7 +27,7 @@ content_hash: sha256:cb12bb5221e342ee8cbd18e00fb3e49af529febece0baca1b99192cb63f
 
    将图片资源，放到entry/src/main/resources/base/media下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/EYIVeGqYQlWKhb8EmncJIQ/zh-cn_image_0000002762500240.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/fWrgj0tqT8e_1PYAu0LUFg/zh-cn_image_0000002765131926.png)
 3. 创建HdsSideBar侧边栏组件，设置展开模式为overlay。
 
    ```typescript

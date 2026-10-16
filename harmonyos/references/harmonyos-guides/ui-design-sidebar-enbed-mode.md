@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-sid
 title: 设置embed模式的侧边栏
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 侧边栏样式 > 设置embed模式的侧边栏
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:26+08:00
+scraped_at: 2026-10-17T06:41:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:56261386ca92de9cd46fd418228b2a8493436b3883f42041274c5c0cbbb31fb4
+content_hash: sha256:d67f38fc21a0a5fbe35f0de8fdff379a651d49cfbee2c859a9c2ca01f2e33192
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:56261386ca92de9cd46fd418228b2a8493436b3883f42041274c5c0cbbb
 
 [HdsSideBar (侧边栏)](../harmonyos-references/ui-design-hdssidebar.md)提供可以显示和隐藏的侧边栏容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区，通过设置[sideBarContainerType](../harmonyos-references/ts-container-sidebarcontainer.md#sidebarcontainertype枚举说明)的值为SideBarContainerType.Embed，使得当前HdsSideBar为嵌入样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/_BgFIqJqQ3CE8ag4UcHEow/zh-cn_image_0000002791738903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/yd7Ub_MMRl-2hcREcO4Ipw/zh-cn_image_0000002794490503.png)
 
 ## 开发步骤
 
@@ -27,7 +27,7 @@ content_hash: sha256:56261386ca92de9cd46fd418228b2a8493436b3883f42041274c5c0cbbb
 
    将图片资源，放到entry/src/main/resources/base/media下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/CUG2uyUjSqG6QHMAq5zaNw/zh-cn_image_0000002762340322.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/7pidUSweSyq_RzS6_IDZIw/zh-cn_image_0000002794410719.png)
 3. 创建HdsSideBar侧边栏组件，设置展开模式为embed。
 
    ```typescript

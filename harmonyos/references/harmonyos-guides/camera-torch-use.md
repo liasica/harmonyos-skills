@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-torch-
 title: 手电筒使用(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 手电筒使用(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1216bf63c233470204ae35961ff2663d63e01aa0dbb7c153ac15a772db295690
+scraped_at: 2026-10-17T06:42:08+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:1fea813a6b1470ca389ea70d82892a44e9c445291401bb821dc437fbec25ed55
 ---
 
 通过操作设备启用手电筒功能，可使设备的手电筒保持常亮状态。
@@ -50,7 +50,7 @@ content_hash: sha256:1216bf63c233470204ae35961ff2663d63e01aa0dbb7c153ac15a772db2
        isTorchModeSupport = cameraManager.isTorchModeSupported(torchMode);
      } catch (error) {
        let err = error as BusinessError;
-       console.error('Failed to set the torch mode. errorCode = ' + err.code);
+       console.error('Failed to check the torch mode. errorCode = ' + err.code);
      }
      return isTorchModeSupport;
    }

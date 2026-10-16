@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/calendarmanag
 title: 日历账户管理
 breadcrumb: 指南 > 应用服务 > Calendar Kit（日历服务） > 日历账户管理
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d0276e5f47c0c474a468577f69785dc2646144fc47b81ac737e40eb4b0840b7f
+scraped_at: 2026-10-17T06:42:26+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:87eda989c9157beb7118505f3b1224a46182f6cf5fe0173c7d376b80586f98a0
 ---
 
 日历账户‌用于存储和管理个人或团队的日程，通过日历账户，用户可以方便地查看、编辑和共享日程信息。
@@ -129,13 +129,13 @@ content_hash: sha256:d0276e5f47c0c474a468577f69785dc2646144fc47b81ac737e40eb4b08
 5. 日历账户创建之后，日历账户颜色默认为黑色，不指定日历账户颜色可能导致部分版本/设备深色模式下显示效果不佳。开发者需要调用setConfig()接口设置日历配置信息，包括是否打开日历账户下的日程提醒能力、设置日历账户颜色。
 
    ```typescript
-   const calendarAccounts: calendarManager.CalendarAccount = {
+   const calendarAccount: calendarManager.CalendarAccount = {
      name: 'MyCalendar',
      type: calendarManager.CalendarType.LOCAL,
      displayName: 'MyCalendar'
    };
    // 日历配置信息
-   calendarMgr?.getCalendar(calendarAccounts, (err, data) => {
+   calendarMgr?.getCalendar(calendarAccount, (err, data) => {
      // 获取日历账户
      if (err) {
        console.error(`Failed to get calendar, Code is ${err.code}, message is ${err.message}`);

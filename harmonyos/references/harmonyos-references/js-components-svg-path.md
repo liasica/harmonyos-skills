@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: path
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > path
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:dd2a2569b3ea4e8c4c401907e43353942ab466917282c463355ec2f4c8e213ad
+scraped_at: 2026-10-17T06:45:20+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:bcc8760510b99372347f8409cb033b61f418ee9d3c4ec247abb397b35e33e3ea
 ---
 
 **说明** 
@@ -29,7 +29,7 @@ content_hash: sha256:dd2a2569b3ea4e8c4c401907e43353942ab466917282c463355ec2f4c8e
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | id | string | - | 否 | 组件的唯一标识。 |
-| d | string | - | 否 | 设置路径的形状。包含一组字符指令，大写字母为绝对路径，小写字符为相对路径。  字母指令表示的意义如下：  - M/m = moveto  - L/l = lineto  - H/h = horizontal lineto  - V/v = vertical lineto  - C/c = curveto  - S/s = smooth curveto  - Q/q = quadratic Bezier curve  - T/t = smooth quadratic Bezier curveto  - A/a = elliptical Arc  - Z/z = closepath |
+| d | string | - | 否 | 设置路径的形状。包含一组字母指令，大写字母为绝对路径，小写字母为相对路径。  字母指令表示的意义如下：  - M/m = moveto  - L/l = lineto  - H/h = horizontal lineto  - V/v = vertical lineto  - C/c = curveto  - S/s = smooth curveto  - Q/q = quadratic Bezier curve  - T/t = smooth quadratic Bezier curveto  - A/a = elliptical Arc  - Z/z = closepath |
 
 ## 示例
 
@@ -44,4 +44,4 @@ content_hash: sha256:dd2a2569b3ea4e8c4c401907e43353942ab466917282c463355ec2f4c8e
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/1-Kf4AY2QSmHY6Dah0h2Sg/zh-cn_image_0000002791861349.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/qgo21MQ6SSW4kPYYyyXD9g/zh-cn_image_0000002794412949.png)

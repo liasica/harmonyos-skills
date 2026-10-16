@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/select-user-f
 title: 选择用户文件
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 选择与保存用户文件 > 选择用户文件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:42cb811d83a462c538316c7fe9e915f3e3e8c360991c1a806ba0b9a22b7ba0bf
+scraped_at: 2026-10-17T06:41:26+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:96f1c0ccb4d9b89ec163885d9446acb3b00f6b1340459e23617553f0e959199d
 ---
 
 用户需要分享文件、保存图片、视频等用户文件时，开发者可以通过系统预置的[选择器](../harmonyos-references/js-apis-file-picker.md)，实现该能力。通过Picker访问相关文件，将拉起对应的应用，引导用户完成界面操作，接口本身无需申请权限。Picker选择文件或文件夹获取到的URI只具有**临时读写权限**，获取持久化权限需要通过[FilePicker设置永久授权](file-persistpermission.md#通过picker获取临时授权并进行授权持久化)方式获取。
@@ -41,7 +41,7 @@ if (!canIUse('SystemCapability.FileManagement.UserFileService.FolderSelection'))
    import { common } from '@kit.AbilityKit';
    import { BusinessError } from '@kit.BasicServicesKit';
    ```
-2. 需根据实际业务需求配置[文档选择选项](../harmonyos-references/js-apis-file-picker.md#documentselectoptions)。以下代码仅例举各选项的配置参考。
+2. 需根据实际业务需求配置[文档选择选项](../harmonyos-references/js-apis-file-picker.md#documentselectoptions)。以下代码仅列举各选项的配置参考。
 
    ```ts
    const documentSelectOptions = new picker.DocumentSelectOptions();

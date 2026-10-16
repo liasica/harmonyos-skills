@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-act
 title: 设置有主按钮的组件
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 核心操作栏 > 设置有主按钮的组件
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:26+08:00
+scraped_at: 2026-10-17T06:41:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:94d187cc67322a8424cb001cd06efaf97fa96b1626e8f22cdd94b05bda12ff97
+content_hash: sha256:196d1422c40c8209954fd900c746fc2b2a3827e574a0c5c227c40f200828b8bf
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:94d187cc67322a8424cb001cd06efaf97fa96b1626e8f22cdd94b05bda1
 
 [HdsActionBar (操作栏)](../harmonyos-references/ui-design-hdsactionbar.md)组件支持多个按钮的样式。当应用开发者需要多个按钮并且有主按钮，支持展开和收缩的动效时，可以通过设置主按钮配置样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/rAzLIn7MSq-4HdTPZSA8Vg/zh-cn_image_0000002762340330.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/MfTToLLASJeiE48Et8LnEA/zh-cn_image_0000002794410727.gif)
 
 ## 开发步骤
 

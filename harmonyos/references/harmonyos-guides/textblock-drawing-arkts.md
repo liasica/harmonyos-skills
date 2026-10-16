@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/textblock-dra
 title: 字块绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 字块绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:15+08:00
+scraped_at: 2026-10-17T06:42:17+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:922c7d223773c85d02b57b3ff3f18c4bedce56598357dd277da1e66df8dd22e7
+content_hash: sha256:b23545e1be5fa644d0dade7f77182917627c3a2d27ae53815e13729d88a8cd95
 ---
 
 ## 场景介绍
@@ -48,7 +48,7 @@ const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.Te
 canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/opCgpQyGTgirehEaOGM7uA/zh-cn_image_0000002791739323.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/V57DjfEtSNaO896sBcVndQ/zh-cn_image_0000002794490921.jpg)
 
 ## 文字描边
 
@@ -83,7 +83,7 @@ canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 canvas.detachPen();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/nCK4CL5ERiSyNn8KgDuniA/zh-cn_image_0000002762340744.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/mYTXqQgDQE-rmda0zoQVmg/zh-cn_image_0000002794411141.jpg)
 
 ### 中文文字描边
 
@@ -125,7 +125,7 @@ canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/smjWJxH1TW6sWgGMUbx7CQ/zh-cn_image_0000002791859541.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/c7FA39wFRA23tAg5mGG95Q/zh-cn_image_0000002764972422.png)
 
 ## 文字渐变
 
@@ -157,7 +157,7 @@ canvas.drawTextBlob(textBlob, VALUE_100, VALUE_300);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/fMvPJZ6ETeORfXeZPA64WQ/zh-cn_image_0000002762500666.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/V3DLGLxXRK-WA2reJK0ZDg/zh-cn_image_0000002765132346.jpg)
 
 ## 主题字体
 
@@ -211,7 +211,7 @@ for (let s of text) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Z3VpAXnKQ9KsFxyLjJf-sw/zh-cn_image_0000002791859543.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/tozii-IjRAS8PxBPCbhZlw/zh-cn_image_0000002764972424.jpg)
 
 进阶场景：绘制带字体特征的字符。
 
@@ -236,7 +236,7 @@ for (let s of text) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/D1gA-cipS_uMieVwM-RQag/zh-cn_image_0000002762500668.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/QrVqrSd2T6SCosj9x4vx5w/zh-cn_image_0000002765132348.png)
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/linear-contai
 title: 线性容器
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > ArkTS容器类库 > 线性容器
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:63c9d5e51e61fb9df76803cef5169cc9f3ca1ec6951a8e2b2ed0907257ada610
+scraped_at: 2026-10-17T06:41:02+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:894a5396aab87529d7362dd04e5ff97a7a2a3763f945ba455a21214aa97ce69b
 ---
 
 线性容器实现能按顺序访问的数据结构，其底层主要通过数组实现，包括ArrayList、Vector、List、LinkedList、Deque、Queue和Stack。
@@ -86,7 +86,7 @@ LinkedList和[ArrayList](../harmonyos-references/js-apis-arraylist.md)相比，L
 | 操作 | 方法 | 描述 |
 | --- | --- | --- |
 | 增加元素 | add(element: T) | 在数组尾部增加一个元素。 |
-| 增加元素 | insert(element: T, index: number) | 在指定位置插入一个元素。 |
+| 增加元素 | insert(index: number, element: T) | 在指定位置插入一个元素。 |
 | 访问元素 | get(index: number) | 获取指定index位置对应的元素。 |
 | 访问元素 | list[index: number] | 获取指定index位置对应的元素，若索引超出数组范围（index < 0 或 index >= list.length），或者数组是稀疏数组（存在未赋值的索引），则返回undefined。 |
 | 访问元素 | getFirst() | 获取第一个元素。 |

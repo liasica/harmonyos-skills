@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: badge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > badge
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:26+08:00
+scraped_at: 2026-10-17T06:45:17+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:1ead2dafd78cb1197bda9b21403353341dbaaf90dcb1e6a7c57fa735baff663f
+content_hash: sha256:58423566e376a4a4b7268be0754a82037f788aa33b938fb5db88896f62c160c5
 ---
 
 **说明** 
@@ -111,4 +111,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/hFSE_YeaTa-PqSfHFApqXw/zh-cn_image_0000002762342494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/KGLL62wpQLam5cJm6TzvNA/zh-cn_image_0000002794492663.png)

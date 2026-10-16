@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 服务动态推送接口
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 服务动态 > 服务动态推送接口
 category: harmonyos-references
-scraped_at: 2026-10-15T07:12:45+08:00
+scraped_at: 2026-10-17T06:49:22+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:3b2c8468c0cd825b337e20fd173f3450aeb03be8acc9a58ed7e91c26fa9e2570
+content_hash: sha256:ce28f5eb3ca649776c39880b0a41daee23ee818a3ccb96fe66732193156a846f
 ---
 
 ## 功能介绍
@@ -462,7 +462,7 @@ user close service.
 
 **处理步骤**
 
-请检查服务动态开关是否关闭，如关闭，需打开开关后再调用接口进行测试。服务动态开关设置路径：桌面主屏从左往右滑进入负一屏，点击头像进入“我的”，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/uLRY3B42SFSMqZv24KKLtg/zh-cn_image_0000002791741827.png "点击放大")，再点击“动态管理”，在“服务动态”列表找到对应的场景开关进行操作。
+请检查服务动态开关是否关闭，如关闭，需打开开关后再调用接口进行测试。服务动态开关设置路径：桌面主屏从左往右滑进入负一屏，点击头像进入“我的”，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/vrv4CHgEQAygtDxqgjE03A/zh-cn_image_0000002765134846.png "点击放大")，再点击“动态管理”，在“服务动态”列表找到对应的场景开关进行操作。
 
 ### 82600014 非法的图片资源ID
 
@@ -538,8 +538,8 @@ no authorization device.
 
 添加路径：
 
-* 方式一：桌面主屏从左往右滑进入负一屏，点击头像进入“我的”，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/p64wz3AcTp-xhCm1jce5TQ/zh-cn_image_0000002791741827.png "点击放大")，再点击“设置 > 服务数据同步 > 本设备开关打开”，开启设备授权。
-* 方式二：打开任意元服务，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/1Ar4Yxa_SbW3bS4ObXyfiw/zh-cn_image_0000002791741827.png "点击放大")，再点击“设置 > 服务数据同步 > 本设备开关打开”，开启设备授权。
+* 方式一：桌面主屏从左往右滑进入负一屏，点击头像进入“我的”，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/FJwKexNeRIKq_3-ti1X8fQ/zh-cn_image_0000002765134846.png "点击放大")，再点击“设置 > 服务数据同步 > 本设备开关打开”，开启设备授权。
+* 方式二：打开任意元服务，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/XFaZ6HwdREy4oYvdoTdcsw/zh-cn_image_0000002765134846.png "点击放大")，再点击“设置 > 服务数据同步 > 本设备开关打开”，开启设备授权。
 
 ### 82600018 服务动态事件已结束
 

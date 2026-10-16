@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicemanager
 title: USB设备管理
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB设备管理
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:05+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:f4eb30ee37ee0a0c6324fa92e204bddaa4671b01cc302b6fde911cf91e0d9d05
+scraped_at: 2026-10-17T06:41:49+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:a1bb636e1f3244c07021012fe6230f79c927b5cebad1c0b24c9f11281bbe31a4
 ---
 
 ## 场景介绍
@@ -66,8 +66,7 @@ USB设备可作为Host连接Device进行设备管理，开发示例如下：
 
    ```typescript
    // 导入usbManager模块
-   import { usbManager } from '@kit.BasicServicesKit';
-   import { BusinessError } from '@kit.BasicServicesKit';
+   import { usbManager, BusinessError } from '@kit.BasicServicesKit';
    import { JSON } from '@kit.ArkTS';
    ```
 2. 获取设备列表。
@@ -78,8 +77,9 @@ USB设备可作为Host连接Device进行设备管理，开发示例如下：
    try {
      deviceList = usbManager.getDevices();
    } catch (error) {
-       console.error(`USB getDevices failed: ${error}`);
-       this.logInfo_ += '\n[ERROR] USB getDevices failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`USB getDevices failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] USB getDevices failed: code=' + errorObj.code + ', message=' + errorObj.message;
    }
 
    console.info(`deviceList: ${deviceList}`);
@@ -157,15 +157,15 @@ USB设备可作为Host连接Device进行设备管理，开发示例如下：
      console.info('usb device request right result: ' + hasRight);
      this.logInfo_ += '\n[INFO] usb device request right result: ' + JSON.stringify(hasRight);
    }).catch((error: BusinessError) => {
-     console.error(`usb device request right failed : ${error}`);
-     this.logInfo_ += '\n[ERROR] usb device request right failed: ' + JSON.stringify(error);
+     console.error(`usb device request right failed : code=${error.code}, message=${error.message}`);
+     this.logInfo_ += '\n[ERROR] usb device request right failed: code=' + error.code + ', message=' + error.message;
    });
    ```
 4. 打开Device设备。
 
    ```typescript
    if (this.deviceList_ === undefined || this.deviceList_.length === 0) {
-     console.error('deviceList_ is empty');
+     console.error('deviceList is empty');
      this.logInfo_ += '\n[ERROR] deviceList is empty';
      return;
    }
@@ -199,8 +199,9 @@ USB设备可作为Host连接Device进行设备管理，开发示例如下：
      console.info('open device success');
      this.logInfo_ += '\n[INFO] open device success';
    } catch (error) {
-     console.error(`USB hasRight failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] USB hasRight failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`USB hasRight failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] USB hasRight failed: code=' + errorObj.code + ', message=' + errorObj.message;
    }
    ```
 5. 释放接口，关闭设备。
@@ -217,8 +218,9 @@ USB设备可作为Host连接Device进行设备管理，开发示例如下：
      usbManager.releaseInterface(pipe, interface1);
      usbManager.closePipe(pipe);
    } catch (error) {
-     console.error(`failed: ${error}`);
-     this.logInfo_ += '\n[ERROR] failed: ' + JSON.stringify(error);
+     let errorObj: BusinessError = error as BusinessError;
+     console.error(`failed: code=${errorObj.code}, message=${errorObj.message}`);
+     this.logInfo_ += '\n[ERROR] failed: code=' + errorObj.code + ', message=' + errorObj.message;
    }
 
    this.pipe_ = undefined;

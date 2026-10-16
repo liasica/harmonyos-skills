@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohaudio
 title: 推荐使用OHAudio开发音频录制功能(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 推荐使用OHAudio开发音频录制功能(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:00+08:00
+scraped_at: 2026-10-17T06:42:03+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:48db75a5ea6efe64a877c5e87a8ad6d82dad04ed5d6c231c8bbeadfe04070f16
+content_hash: sha256:e6f665e252b7da68ddd8c0edf87c99f028759818ea3bc6ffd813b8962e9a183d
 ---
 
 OHAudio是系统在API version 10中引入的一套C API，此API在设计上实现归一，同时支持普通音频通路和低时延通路。仅支持PCM格式，适用于依赖Native层实现音频输入功能的场景。
@@ -14,7 +14,7 @@ OHAudio是系统在API version 10中引入的一套C API，此API在设计上实
 
 OHAudio音频录制状态变化示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/I6O8d3PmRk6_wBocvT2_fg/zh-cn_image_0000002791739143.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/ecKWJbd1Su-BihhJABuNNw/zh-cn_image_0000002794490741.png)
 
 ## 使用入门
 

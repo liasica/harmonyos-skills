@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-join
 title: 接入联调测试
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发准备 > 接入联调测试
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:31+08:00
+scraped_at: 2026-10-17T06:42:33+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:ed5c6debcb4d01beb3160229b07539c42d5eaa9b1fd12fced3504036313758c4
+content_hash: sha256:76329a31195d5d9cebcf7fff13690a7bec241fd4de6a1a65f52a184dc89d579d
 ---
 
 若开发者需要在设备上调试、验证实况窗，可通过“调测设备管理”入口，添加设备进行调测。添加到调测名单中的设备，不做本地构建实况窗权限的校验。
@@ -24,6 +24,6 @@ content_hash: sha256:ed5c6debcb4d01beb3160229b07539c42d5eaa9b1fd12fced3504036313
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”，在项目列表中找到开发者的项目，通过“增长 > 推送服务 > 配置”导航到“配置”页签。
 2. 选择开发者的应用，点击实况窗-调测设备管理，根据[Push Token](push-get-token.md)添加调测设备后即可进行接入调测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/SJ4dkDWJTd2s73IF15EGRQ/zh-cn_image_0000002791739657.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/lKnygMiiTymrebCRAOpb9w/zh-cn_image_0000002794491259.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/QvsqK012QIyHpJKiPqPmZQ/zh-cn_image_0000002762341078.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/bvQ3DDVoT62xY4VmWnnCYA/zh-cn_image_0000002794411481.png)

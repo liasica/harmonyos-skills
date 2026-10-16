@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片被动刷新
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面刷新 > ArkTS卡片被动刷新
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7ee59bfed659183709ea2da55f38a564c6f0c36ba5a554954328f7e2aa69c03e
+scraped_at: 2026-10-17T06:41:28+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:4fcda3eeceab65a5db458ff6d972dc8d0ad4fa83817961220f0229aef119738e
 ---
 
 本文主要提供被动刷新的开发指导，刷新流程请参考[被动刷新概述](arkts-ui-widget-interaction-overview.md#被动刷新)。
@@ -76,7 +76,7 @@ content_hash: sha256:7ee59bfed659183709ea2da55f38a564c6f0c36ba5a554954328f7e2aa6
               `Failed to setFormNextRefreshTime. Code: ${err.code}, message: ${err.message}`);
             return;
           } else {
-            hilog.info(DOMAIN_NUMBER, TAG, 'Succeeded in setFormNextRefreshTiming.');
+            hilog.info(DOMAIN_NUMBER, TAG, 'Succeeded in setFormNextRefreshTime.');
           }
         });
       } catch (err) {

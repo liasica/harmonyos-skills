@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.rpc (RPC通信)"
 breadcrumb: API参考 > 应用框架 > IPC Kit（进程间通信服务） > ArkTS API > @ohos.rpc (RPC通信)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:25:37+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:58ec3073218d013968e5263f765ed96332fa9f2c28e6da2c7d15f6e1ce176308
+scraped_at: 2026-10-17T06:46:11+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:360ba95c7b258f99288752c813ff59262722f165620a5732d7045be881c5ecd1
 ---
 
 本模块提供进程间通信能力，包括设备内的进程间通信（IPC）和设备间的进程间通信（RPC），前者基于Binder驱动，后者基于软总线驱动。
@@ -9630,9 +9630,7 @@ try {
   let ret = rpc.IPCSkeleton.flushCommands(remoteObject);
   hilog.info(0x0000, 'testTag', 'RpcServer: flushCommands result: ' + ret);
 } catch (error) {
-  let e: BusinessError = error as BusinessError;
-  hilog.error(0x0000, 'testTag', 'proxy flushCmdBuffer fail, errorCode ' + e.code);
-  hilog.error(0x0000, 'testTag', 'proxy flushCmdBuffer fail, errorMessage ' + e.message);
+  hilog.error(0x0000, 'testTag', 'proxy flushCmdBuffer fail, error ' + error);
 }
 ```
 
@@ -11282,7 +11280,6 @@ try {
   let result = ashmem.setProtection(rpc.Ashmem.PROT_READ);
   hilog.info(0x0000, 'testTag', 'Ashmem setProtection result is ' + result);
 } catch (error) {
-  let e: BusinessError = error as BusinessError;
   hilog.error(0x0000, 'testTag', 'error ' + error);
 }
 ```

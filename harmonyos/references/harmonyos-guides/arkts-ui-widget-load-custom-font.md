@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片使用自定义字体
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片UI界面开发 > ArkTS卡片使用自定义字体
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:23+08:00
+scraped_at: 2026-10-17T06:41:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8460024b5ac0fe183ebbdbd07eedbcff1feabc256ecd693f0c685240ef1192bb
+content_hash: sha256:e991b14369891b95a6094831cc3457e15470fb60a8f35331fd9c930b81106f63
 ---
 
 API version 22开始新增了[ohos.graphics.text.FontCollection.getLocalInstance](../harmonyos-references/js-apis-graphics-text.md#getlocalinstance22)接口获取本地字体集实例，应用可以通过这个本地实例为卡片加载自定义字体。
@@ -58,4 +58,4 @@ struct loadFontSyncCard {
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/v90f37EHQq28nuMUTQncPQ/zh-cn_image_0000002762500158.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/wFkrCtIzS-u5B90bhPdQKw/zh-cn_image_0000002765131844.gif)

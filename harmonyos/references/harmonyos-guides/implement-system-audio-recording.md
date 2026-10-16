@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/implement-sys
 title: 实现录制系统音频
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发录制系统音频(内录)功能 > 实现录制系统音频
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:01+08:00
+scraped_at: 2026-10-17T06:42:04+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:90054ca7afa19b617e0b1ad62afab08045baff1cd6c19f8c8257acb975891c6e
+content_hash: sha256:5f790083da754b61c88c3af6aef98dbe146d99308395d5532bd9554101bb8519
 ---
 
 从API版本26.0.0开始，Audio Kit支持应用使用AudioCapturer（ArkTS）或OH\_AudioCapturer（C/C++）录制系统音频。本文介绍具体开发方法。
@@ -42,7 +42,7 @@ C/C++开发建议搭配[OH\_AudioStreamBuilderStruct](../harmonyos-references/ca
 
 **系统弹框示意图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Z_9vXtoBSgSjnMbs1k0YNw/zh-cn_image_0000002791859359.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/NmZ71qI7QlWHY_-FauHGFA/zh-cn_image_0000002764972240.jpg "点击放大")
 
 ### 开发步骤及注意事项(ArkTS)
 

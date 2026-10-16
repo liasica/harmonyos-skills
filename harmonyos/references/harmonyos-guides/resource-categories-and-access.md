@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-cate
 title: 资源分类与访问
 breadcrumb: 指南 > 基础入门 > 资源分类与访问
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a16a1d76afd4eeba1e39625d591eb9b63396b740f60de6398605e7a50ba0868f
+scraped_at: 2026-10-17T06:40:56+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:245c06a2ae0f63c2d8efa65a1448ea440a7a945aaf42a89dcdc5126fb3eff6c1
 ---
 
 ## 功能介绍
@@ -103,7 +103,7 @@ resources
 | 文字 | 表示设备使用的文字类型，由1个大写字母（首字母）和3个小写字母组成。例如：Hans表示简体中文，Hant表示繁体中文。  详细取值范围，请查阅[**ISO 15924**](https://www.iso.org/standard/81905.html)（ISO制定的文字编码标准）。 |
 | 国家或地区 | 表示用户所在的国家或地区，由2~3个大写字母或者3个数字组成。例如：CN表示中国，GB表示英国。  详细取值范围，请查阅[**ISO 3166-1**](https://www.iso.org/iso-3166-country-codes.html)（ISO制定的国家和地区编码标准）。 |
 | 横竖屏 | 表示设备的屏幕方向，取值如下：  - vertical：竖屏  - horizontal：横屏 |
-| 设备类型 | 表示设备的类型，取值如下：  - phone：手机  - car：车机  - tablet：平板  - tv：智慧屏  - wearable：智能穿戴  - 2in1：PC设备 |
+| 设备类型 | 表示设备的类型，取值如下：  - phone：手机  - tablet：平板  - car：车机  - tv：智慧屏  - wearable：智能穿戴  - 2in1：2in1 |
 | 颜色模式 | 表示设备的颜色模式，取值如下：  - dark：深色模式  - light：浅色模式 |
 | 屏幕密度 | 表示设备的屏幕密度（单位为dpi），取值如下：  - sdpi：表示小规模的屏幕密度（Small-scale Dots Per Inch），适用于dpi取值为(0, 120]的设备。  - mdpi：表示中规模的屏幕密度（Medium-scale Dots Per Inch），适用于dpi取值为(120, 160]的设备。  - ldpi：表示大规模的屏幕密度（Large-scale Dots Per Inch），适用于dpi取值为(160, 240]的设备。  - xldpi：表示特大规模的屏幕密度（Extra Large-scale Dots Per Inch），适用于dpi取值为(240, 320]的设备。  - xxldpi：表示超大规模的屏幕密度（Extra Extra Large-scale Dots Per Inch），适用于dpi取值为(320, 480]的设备。  - xxxldpi：表示超特大规模的屏幕密度（Extra Extra Extra Large-scale Dots Per Inch），适用于dpi取值为(480, 640]的设备。 |
 
@@ -206,19 +206,19 @@ plural.json文件的内容如下：
 
 创建的目录名自动生成，格式固定为“限定词/资源组”，例如：创建一个限定词为dark的element目录，自动生成的目录名称为“dark/element”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/1CIgr6k4Rz2d6ypme1N4dA/zh-cn_image_0000002791737673.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/ZRtFKAZfQru6q_7i-UwV1A/zh-cn_image_0000002794489267.png)
 
 ### 创建资源目录
 
 在resources目录右键菜单选择“New > Resource Directory”，可创建资源目录，默认创建的是base目录。如果选择了限定词，则会按照命名规范自动生成限定词和资源组目录。确定限定词后，选择资源组类型，当前资源组类型支持Element、Media、Profile三种，创建后生成资源目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/RnZer94hT0mOyrrGH05J5w/zh-cn_image_0000002762339100.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/D8PAcYkiSBKUvtmFP3N44g/zh-cn_image_0000002794409489.png)
 
 ### 创建资源文件
 
 在资源组目录（element、media、profile）的右键菜单选择“New > XXX Resource File”，可创建对应资源组目录的资源文件。例如，在element目录下可新建Element Resource File。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/CRFKZEgbTFiEQi1L4s65Xw/zh-cn_image_0000002791857893.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ib9EkSthRs2uVF8WiFh_iA/zh-cn_image_0000002764970768.png)
 
 ### 示例
 
@@ -226,12 +226,12 @@ plural.json文件的内容如下：
 
 1. 在resources目录右键菜单选择“New > Resource File”，File name填写为string\_sample，Resource type选择Element，Root Element选择string，Available qualifiers选中Locale，在右侧的语言列表中选择zh，地区列表中选择CN，将会在resources目录下创建zh\_CN/element/string\_sample.json文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/rXeLPLEtQn-6iFeMhMxgFA/zh-cn_image_0000002762499016.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/1FGuNQKKQhi3G8UP5X-liA/zh-cn_image_0000002765130694.png)
 2. 同理，语言选择en，地区选择US，创建en\_US/element/string\_sample.json文件。
 
    最终创建的资源文件如下。资源文件创建完成后，如何访问资源文件请参见[资源访问](resource-categories-and-access.md#资源访问)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/mf9TyKMCRVSYIcNEFG-E4Q/zh-cn_image_0000002791737675.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/PDVEb7QjSFS5cvhLuzOhUg/zh-cn_image_0000002794489269.png)
 
 ## 资源可翻译特性
 
@@ -364,7 +364,7 @@ string资源配置attr属性示例如下，其中string1字符串被标记为不
 
 1. 在entry的oh-package.json5文件中添加依赖。如"dependencies": {"library": "file:../library"}。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/eCdCoB-tSzS-CGip7xEzsA/zh-cn_image_0000002762339102.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/qMYqbXvSR_m74Zbl8gzJEg/zh-cn_image_0000002794409491.png)
 2. 获取资源。
 
    ```typescript

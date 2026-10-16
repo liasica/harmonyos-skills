@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-add-water
 title: 添加、删除水印
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 添加、删除水印
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:37+08:00
+scraped_at: 2026-10-17T06:42:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d172957e52ad8a3bf9c1fe1134f38a72aa6b4d19a7a9309b087cd1bb401798af
+content_hash: sha256:5f51f999061e8b529a0328d60c73ecbdada456f48cc047040c823ccde1ac3ae0
 ---
 
 对指定页面添加水印，包括文本水印或图片水印。
@@ -13,7 +13,7 @@ content_hash: sha256:d172957e52ad8a3bf9c1fe1134f38a72aa6b4d19a7a9309b087cd1bb401
 * 文本水印可以设置字体、大小、旋转，位置等属性。
 * 图片水印可以设置缩放、旋转、透明度和位置等属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/wvvaIA57RHiUNkIogvnsQQ/zh-cn_image_0000002762501134.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/xd4rtt4ST_SF0Fvl5Ayu2w/zh-cn_image_0000002765132822.png)
 
 ## 接口说明
 

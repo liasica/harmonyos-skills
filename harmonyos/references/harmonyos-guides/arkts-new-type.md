@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-typ
 title: "@Type装饰器：标记类属性的类型"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Type装饰器：标记类属性的类型
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:04+08:00
+scraped_at: 2026-10-17T06:41:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b6f7a1a1b01ce5ec1f189489386ea30b3fc62a475abbd3210faa76333e99b08b
+content_hash: sha256:622a45f866f5454a03441484059e1954e0e7266ce1313bf821222d9ede279e51
 ---
 
 为了实现序列化类时不丢失属性的复杂类型，开发者可以使用[@Type](../harmonyos-references/ts-state-management-type.md#type)装饰器装饰类属性。
@@ -105,7 +105,7 @@ struct TestCase {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/DWI8TmheTIut34D2KCDrkA/zh-cn_image_0000002762499290.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/YrtiiSx5Rhq7nL8x3mAXUw/zh-cn_image_0000002765130964.gif)
 
 ## 常见问题
 

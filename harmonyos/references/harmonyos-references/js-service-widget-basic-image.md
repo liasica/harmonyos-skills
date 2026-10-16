@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: image
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > image
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:afb7b52d7637856269c90dd9566ee6bb814b14a134ce497f6cb9792759fa6770
+scraped_at: 2026-10-17T06:45:23+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:de08e837195278e9b1477f82498b5c26f4bc72c016a2698f9f31048f02d4b055
 ---
 
 图片组件，用来渲染展示图片。
@@ -53,7 +53,7 @@ content_hash: sha256:afb7b52d7637856269c90dd9566ee6bb814b14a134ce497f6cb9792759f
 
 * 建议设置image组件的长宽，否则在父组件的长或宽为无穷大的场景下，svg资源将不会绘制。
 * 如果svg描述中未指定相应的长宽，则svg将会填满image组件区域。
-* 如果svg描述中指定了相应的长宽，和image组件本身的长宽效果如下：
+* 如果svg描述中指定了相应的长宽，则image组件本身的长宽效果如下：
 
   + 如果image组件本身的长宽小于svg中的长宽，svg会被裁切，仅显示左上角部分。
   + 如果image组件本身的长宽大于svg中的长宽，svg会被放置在image组件的左上角，image组件其他部分显示空白。
@@ -84,4 +84,4 @@ content_hash: sha256:afb7b52d7637856269c90dd9566ee6bb814b14a134ce497f6cb9792759f
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/CX0x2Uo9SViyFDfthVqN5Q/zh-cn_image_0000002762502666.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/qqlCdUsGTJGTQyNXfpeNGg/zh-cn_image_0000002764974418.jpg)

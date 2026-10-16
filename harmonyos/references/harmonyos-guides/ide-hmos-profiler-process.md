@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-prof
 title: 性能优化过程简介
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能 > 使用Profiler进行性能调优 > 性能优化过程简介
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:52+08:00
+scraped_at: 2026-10-17T06:43:50+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:a64c32069e75d4114c02c9fc4aa23169b6155edaca525ca8fe76d0ab0885814b
+content_hash: sha256:fd7790212867afb3b9d68b1176e296d8446470a843aa9117c60d6aec99dd6f37
 ---
 
 在开发应用时，开发者会对应用的运行情况有一个预期的指标，当应用在某些方面不能满足预期的指标或者表现不佳时，意味着您的应用可能存在性能问题，需要对应用进行性能优化以达到您的预期。应用的性能优化是一个持续的过程，您需要在应用开发过程中观察应用的运行表现来识别性能瓶颈，通过运行时数据定位性能问题，定位根因后修复代码并验证优化措施的可行性，循环往复直到应用满足您的性能指标。
@@ -17,4 +17,4 @@ DevEco Profiler也遵循以上流程，在使用DevEco Profiler进行性能优�
 3. 根据性能分析的结果优化代码；
 4. 再次通过实时监控查看各项资源的使用情况是否符合预期，来验证代码修改的可行性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/pa3dHRuoTEqumutI1NkmzQ/zh-cn_image_0000002779728825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/uLAUubTGSQqwMYGSIFen-A/zh-cn_image_0000002779728825.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 调试周期性预加载
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > （可选）使用命令行工具调试周期性预加载 > 调试周期性预加载
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:25+08:00
+scraped_at: 2026-10-17T06:42:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:728dbe22b3fd69831774a9188a6045de2cbf40f0c80c743a21fee891d7130778
+content_hash: sha256:0feac9c6129f9e2b26e3a8dee0c4521bb5fdec0b02f529eb439d464fed0264aa
 ---
 
 prefetch\_test\_tool是为周期性预加载功能提供的一种命令行工具，开发者集成预加载服务后，使用该工具可以更方便、更高效地进行周期性预加载功能测试和调试，提高开发效率，同时确保预加载服务的平稳运行。
@@ -25,7 +25,7 @@ prefetch\_test\_tool是为周期性预加载功能提供的一种命令行工具
 * 手机/平板终端设备的ROM版本已升级至HarmonyOS 6.0.0 Beta5及以上版本。
 * 设置HAP包的“Build Mode”为“debug”，且已[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/NfXfQTl9RMi1OfQ7V9p7Sw/zh-cn_image_0000002762340976.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/xUj0jt_KQnmQitp-2YiRoQ/zh-cn_image_0000002794411377.png)
 
 ## 切换shell环境
 
@@ -34,10 +34,10 @@ prefetch\_test\_tool命令行工具基于hdc shell调试，需要切换到hdc sh
 1. PC连接调试设备。连接方式请根据实际情况选择，详情请参见[设备连接管理](hdc.md#设备连接管理)。
 2. 打开DevEco Studio，菜单栏选择“View > Tool Windows > Terminal”进入Terminal窗口。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/nOrUg9pzRKigwMC326WXRQ/zh-cn_image_0000002791859773.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/TLzsd1fCQDyz9q0XthL45Q/zh-cn_image_0000002764972658.png)
 3. 输入hdc shell，切换到hdc shell命令环境。切换过程中如果出现报错，请参见[常见问题](hdc.md#常见问题)排查解决。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/7a5hQTvVT-aGAx8Ftys0Ww/zh-cn_image_0000002762500898.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/AofZMkKeT3uxfgKpzisYXQ/zh-cn_image_0000002765132582.png)
 
 ## 调试命令
 
@@ -61,13 +61,13 @@ cf_prefetch getcache -m <bundlename>
 
 * 输入cf\_prefetch help，获取命令行工具的使用说明。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/YUKmyyTTT6KDq7S0WnuB1A/zh-cn_image_0000002791739557.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/l7PkS2iHRFKd3zJc_BLawg/zh-cn_image_0000002794491159.png)
 * 输入cf\_prefetch getcache -h，获取getcache命令支持的参数信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/1aOAwmiQQCWtB3XF9cIHWg/zh-cn_image_0000002762340978.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ZoPgHVkCTCORmoiYYJz4hg/zh-cn_image_0000002794411379.png)
 * 输入cf\_prefetch getcache -m <bundlename>，立即向云侧请求获取一次周期性预加载数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/WyoOkhDOSayOmBuTZkj_kw/zh-cn_image_0000002791859775.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/hTHAb-nmSCiwE51v1JWkdA/zh-cn_image_0000002764972660.png)
 
   **说明** 
 
@@ -77,13 +77,13 @@ cf_prefetch getcache -m <bundlename>
 
 * 链路不通，例如无网络情况；或周期性预加载配置不正确。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/fFcG7P-7QraTU2UvzZeBXQ/zh-cn_image_0000002762500900.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/CUp_sPCISSiXlTY4eWmANg/zh-cn_image_0000002765132584.png)
 * 命令行工具内部错误。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/uzZvmBZLS8K9D-Hnyzfz2w/zh-cn_image_0000002791739559.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/tQ2J9fQmQpG7fdhiSfXFoQ/zh-cn_image_0000002794491161.png)
 * HAP包非debug调试模式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ooQm6gkVTFWmQ4TyuaDC-Q/zh-cn_image_0000002762340980.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/-EfP1iYAR3KGHGBT6mxg-g/zh-cn_image_0000002794411381.png)
 * 应用包名输入错误。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/SzFSJ_8QSnCmkwuMvjsLbQ/zh-cn_image_0000002791859777.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/jvsWdc17T5qGAqUzUUCGAQ/zh-cn_image_0000002764972662.png)

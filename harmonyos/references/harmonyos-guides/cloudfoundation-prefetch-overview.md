@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 概述
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:25+08:00
+scraped_at: 2026-10-17T06:42:27+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:84a9f4723421a43c4660d3e2301eb7c8a31d20902940942c54c9aa0e83a49e0d
+content_hash: sha256:f9d8295682faca4939e55080bed445e014d787dccbe9eec994e351675d95b1e7
 ---
 
 从5.0.3(15)版本开始，新增支持安装预加载和周期性预加载功能；从6.1.0(23)版本开始，新增支持跳链安装预加载功能。
@@ -30,7 +30,7 @@ content_hash: sha256:84a9f4723421a43c4660d3e2301eb7c8a31d20902940942c54c9aa0e83a
 2. 预加载服务将获取的数据在本地进行缓存。
 3. 应用使用获取的缓存数据，进行页面渲染。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/bzebBqhLRaefcMx7DSaFJw/zh-cn_image_0000002791859765.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/hGePG4IbTvOr7yZPNzoutw/zh-cn_image_0000002764972650.jpg)
 
 ## 典型应用场景
 
@@ -38,13 +38,13 @@ content_hash: sha256:84a9f4723421a43c4660d3e2301eb7c8a31d20902940942c54c9aa0e83a
 
 在应用启动前或初始化阶段，为避免出现首页内容加载慢、白屏等情况，开发者可以使用预加载将一些必要的资源，例如图片、音频、视频或数据文件，提前加载到本地进行缓存。用户首次访问应用时，可直接从缓存中获取数据，这样就减少了从服务器重新下载资源的时间，提升了应用首开速度，从而提高用户留存率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/1cBK428lTUazo3z3rtegBw/zh-cn_image_0000002762500890.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/k3PYzgL8Qca6PDuXoeqF8g/zh-cn_image_0000002765132574.png)
 
 ### 实现节日主题即发即现
 
 很多应用会在节日更换特定主题内容进行活动营销，用户打开应用时需要从服务器上获取相关资源来呈现内容，可能会造成页面加载速度较慢而导致用户体验不佳。开发者可以使用预加载，在节日活动开始前通过周期性的数据拉取提前将主题资源获取到本地，活动开始用户访问时直接从本地获取即可，减少了网络请求的时间和带宽消耗，从而能够更快地展示节日主题，实现即发即现的效果，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/MOiTgHK9QuWVeHdNC0FSCg/zh-cn_image_0000002791739549.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/dk4xTV99QlSCwVDt69oEyg/zh-cn_image_0000002794491151.png)
 
 ## 约束与限制
 

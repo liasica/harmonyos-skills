@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-setup-hil
 title: 日志分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 日志分析
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:28+08:00
+scraped_at: 2026-10-17T06:43:29+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:a42ab409ac0bd45014f0b31ccd42471d2b77e9a085de4e9f569d6c9bf1f964d2
+content_hash: sha256:b3c8047f49a9c2ab7804790a5bc59f7c22c251ccc878a0f77030ac54c6e12537
 ---
 
 **说明** 
@@ -22,31 +22,31 @@ DevEco Studio提供了“Log > HiLog”窗口查看设备当前所有应用实�
 
 HiLog窗口左侧各个按钮的作用为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/W7FAFiRoRsadwg7qg4Y_cQ/zh-cn_image_0000002701823678.png)：单击该按钮可以向上翻页，日志窗口取消自动滚动。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/dqUbB3ToQomMkZYAlJwG1A/zh-cn_image_0000002701823678.png)：单击该按钮可以向上翻页，日志窗口取消自动滚动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Vjn_l3rSSnKHtlI8HmvP0g/zh-cn_image_0000002701823674.png)：单击该按钮可以向下翻页，日志窗口取消自动滚动。如果翻页已到底部，日志窗口自动滚动。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/TBMcoS9IT6KL5uD0Qc3pfg/zh-cn_image_0000002701823674.png)：单击该按钮可以向下翻页，日志窗口取消自动滚动。如果翻页已到底部，日志窗口自动滚动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/XAtmUPmnSN-k_UwaGhjm7A/zh-cn_image_0000002731382965.png)：当该按钮处于选中状态时，日志自动换行显示，否则日志按行显示。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/HzLNhKjjRGuDvuPGAzlMBA/zh-cn_image_0000002731382965.png)：当该按钮处于选中状态时，日志自动换行显示，否则日志按行显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/0Yf3xTaJS0GSZxpnCm7sWQ/zh-cn_image_0000002731542939.png)：当该按钮处于选中状态时，日志自动滚动到窗口底部，否则停留在当前日志显示处。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/HOXYLh26SFmsey3_IV4WVg/zh-cn_image_0000002731542939.png)：当该按钮处于选中状态时，日志自动滚动到窗口底部，否则停留在当前日志显示处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/_uk8_tlGSdOwofe9zq2-og/zh-cn_image_0000002701663736.png)：单击该按钮可以重新开启日志接收，会重新加载设备缓存日志。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/7WiMThTTSzGQj7flXM530A/zh-cn_image_0000002701663736.png)：单击该按钮可以重新开启日志接收，会重新加载设备缓存日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/CG6u5edQQiqISBDhaW6MRw/zh-cn_image_0000002701823654.png)：单击该按钮可以清空窗口日志和设备缓存。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/19U-jQ8JRU6DTfCAI8N8lg/zh-cn_image_0000002701823654.png)：单击该按钮可以清空窗口日志和设备缓存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/lY45beKQR0uyrzAiPUQk7Q/zh-cn_image_0000002731382971.png): 单击该按钮可以对当前选择的设备屏幕进行截屏，并保存在本地。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/DSIhy9UgTEO8hRuACAG4bQ/zh-cn_image_0000002731382971.png): 单击该按钮可以对当前选择的设备屏幕进行截屏，并保存在本地。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/U_R4jFyaRzKXljPZWD-i-g/zh-cn_image_0000002701663738.png): 单击该按钮可以对当前选择的设备进行录屏，并保存在本地。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/8TQ6HiCMR-q-Ubdwlv8f9A/zh-cn_image_0000002701663738.png): 单击该按钮可以对当前选择的设备进行录屏，并保存在本地。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/um2qK8YgSlKI6iYKmXUmdA/zh-cn_image_0000002701823658.png)：单击该按钮可以保存日志缓存到指定文件（在线日志）或保存离线日志文件（离线日志）。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/EpRHGQVdSWOMzKJJC1pKGw/zh-cn_image_0000002701823658.png)：单击该按钮可以保存日志缓存到指定文件（在线日志）或保存离线日志文件（离线日志）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/4BAbXXp9Squ6Q1pN7eUNYg/zh-cn_image_0000002701823676.png)：单击该按钮可以自动选择和切换已连接的设备。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/E-CL40GtQdqtbW7dA0AMgg/zh-cn_image_0000002701823676.png)：单击该按钮可以自动选择和切换已连接的设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/7Z1Gu1StSCi0UhtXyiwIGQ/zh-cn_image_0000002731382947.png)：单击该按钮可以切换日志视图以及自定义日志格式。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/tpQW9fn8TtKpJ0q4ItJ9mg/zh-cn_image_0000002731382947.png)：单击该按钮可以切换日志视图以及自定义日志格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/bLBiMb_uRH2ih41AUYSdXA/zh-cn_image_0000002731542933.png)：单击该按钮可以关闭当前日志窗口。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/owzEfAlTQDe248EzqvwNlA/zh-cn_image_0000002731542933.png)：单击该按钮可以关闭当前日志窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/t5TjzMXZRBaI_Vmdv8mI-A/zh-cn_image_0000002701823632.png)：单击该按钮可以跳转到HiLog日志相关的在线帮助文档。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/p86b2jcSQ9m88iO9j3r6sQ/zh-cn_image_0000002701823632.png)：单击该按钮可以跳转到HiLog日志相关的在线帮助文档。
 
 ## 过滤日志
 
@@ -54,19 +54,19 @@ HiLog窗口左侧各个按钮的作用为：
 
 在HiLog搜索框中输入希望过滤的信息，即可过滤显示所有包含此信息的日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/GmP81XLnTLm1-Nh5tDKXIg/zh-cn_image_0000002731382969.png "点击放大")按钮表示是否区分大小写，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/WZcfJ_HFR2WOc84hQLhaKQ/zh-cn_image_0000002701823682.png "点击放大")按钮表示是否按照正则表达式匹配过滤，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/b0J5WOQcRNeNA-nywQ-AwQ/zh-cn_image_0000002701823636.png)按钮表示关键字是否高亮。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/7wfN3s09R3KxIHDhqsfHBg/zh-cn_image_0000002731382969.png "点击放大")按钮表示是否区分大小写，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/O2RrMU0XSdyD8D451isTmA/zh-cn_image_0000002701823682.png "点击放大")按钮表示是否按照正则表达式匹配过滤，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/dEHJUgPvTR-TTuv6cVGWmw/zh-cn_image_0000002701823636.png)按钮表示关键字是否高亮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/mLiHpZiSR3mOhQm8fl6JkA/zh-cn_image_0000002731542905.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/LGK1v6bGRSq_P73CsXQjVg/zh-cn_image_0000002731542905.png)
 
 从DevEco Studio 6.0.2 Beta1版本开始，支持使用逻辑运算符&拼接多个关键字，精准搜索日志，&字符前后要有空格。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/JOk0CbKtSCy7v1Jw-fpUdw/zh-cn_image_0000002701663750.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/QgJJJ7viRJWeqhrD5SmMPA/zh-cn_image_0000002701663750.png)
 
 ### 使用默认提供的过滤配置
 
 HiLog提供多种默认的过滤模式，开发者不需要反复输入关键字过滤日志信息，只需要切换相应的过滤项，即可快速过滤所需的日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/mzeo1mzlSIOtVG_bdEz3lA/zh-cn_image_0000002731382931.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/d_NRBQOHSCaEU0iFvxAiOg/zh-cn_image_0000002731382931.png)
 
 * All logs of selected app：按照应用进程过滤日志。
 * User logs of selected app：按照应用进程过滤用户输出的日志。
@@ -77,27 +77,27 @@ HiLog提供多种默认的过滤模式，开发者不需要反复输入关键字
 
 由于设备启动时，USB调试开关没有开启，部分系统应用没注册上，HiLog进程列表无法显示未注册上的系统应用，如需查看此部分的日志，可以[按关键字过滤](ide-setup-hilog.md#section1264082914019)查看，或者保持USB调试开关打开的状态，重启设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/atj5owFxT_y_yF8Cs-P4Sw/zh-cn_image_0000002731542943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/LbDH1uPKR4OHT9gDGqoUxA/zh-cn_image_0000002731542943.png)
 
 进程选择窗口可输入PID或应用名的关键字搜索要过滤的进程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/ik6tjf26SQefc9Ij2l1amw/zh-cn_image_0000002731382949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/nu_HIpnTQwKOvADlWzZoDQ/zh-cn_image_0000002731382949.png)
 
 ### 按日志级别过滤日志
 
 HiLog提供日志级别过滤以过滤某一级别及以上的日志。日志级别分为Debug、Info、Warn、Error、Fatal五个级别。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/oIroeP-xRmGlnwbMzsd52Q/zh-cn_image_0000002701663732.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/UW3SnIi9TtSanMJ1XtS_aw/zh-cn_image_0000002701663732.png)
 
 如选择Warn级别，则过滤展示Warn级别与Warn级别以上的日志信息，即展示Warn、Error、Fatal三个级别。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/jDFK48aYSASl4mMItq4-fA/zh-cn_image_0000002701663756.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/N4haihgRRz6M0PUtnQWORA/zh-cn_image_0000002701663756.png)
 
 ### 按日志标签过滤日志
 
 从26.0.0版本开始，支持根据日志标签过滤日志，可输入多个标签，不同标签之间使用英文逗号分隔。如包含特殊字符，标签需要添加引号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/qS-RTScMTnavJ1o08mLP-g/zh-cn_image_0000002731382939.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/IFG03RjASSi83xo6JKGWKg/zh-cn_image_0000002731382939.png)
 
 ### 按自定义过滤项过滤日志
 
@@ -105,18 +105,18 @@ HiLog提供日志级别过滤以过滤某一级别及以上的日志。日志级
 
 点击**Config custom filter**时将弹出自定义过滤配置窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/5OgTMH3-T4uNpoyRnCv7tw/zh-cn_image_0000002701823672.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/X9w9K7CKS0O2KZK9kVu3HQ/zh-cn_image_0000002701823672.png)
 
 先前介绍的过滤选项此处均可配置，同时增加了Package name和Set to all projects配置项。
 
 * Set to all projects：此配置当前工程及其他所有工程均可用。
 * Package name：按应用包名过滤日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/1WXMiZUiT-yiiGzgvJuuQA/zh-cn_image_0000002731542919.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PUOf6UlqQ4--dmDBulnkEA/zh-cn_image_0000002731542919.png)
 
 当配置完后将自动切换至此过滤配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/dEn30e5XQDSU4xPkXmzxdg/zh-cn_image_0000002701663730.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/TsWYewAwQCaLHWGVLlJz9A/zh-cn_image_0000002701663730.png)
 
 切换至此自定义配置时，日志级别过滤窗口和关键字过滤窗口将在此自定义配置过滤出的日志的基础上再进行过滤。
 
@@ -124,13 +124,13 @@ HiLog提供日志级别过滤以过滤某一级别及以上的日志。日志级
 
 开发者可以通过配置自定义格式，限制每条日志只显示用户关注的信息。
 
-点击左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/iDQlStEiRjCSXBQvIwIctw/zh-cn_image_0000002701823650.png)图标，将弹出自定义格式窗口。
+点击左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/DJz2-RceTKqYYbx-3CJfUQ/zh-cn_image_0000002701823650.png)图标，将弹出自定义格式窗口。
 
 * Standard Views：默认显示所有信息。
 * Compact Views：默认显示日志级别与日志信息。
 * Modify Views：进入“Hilog Format”窗口后，可以按照需要自定义日志格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/y_NOmnYQQAeZOFoC3eq7QA/zh-cn_image_0000002731542935.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/X0xskMsGShqHQdOAwJp3zA/zh-cn_image_0000002731542935.png)
 
 在“Hilog Format”中自定义日志格式：
 
@@ -154,31 +154,31 @@ HiLog提供日志级别过滤以过滤某一级别及以上的日志。日志级
 
   Package column width：包名列的最大宽度，超长信息将会缩略显示并以ToolTip形式显示完整信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/zLGQtK9xTpamd4yNmFz-kA/zh-cn_image_0000002731542937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/GD5Pnlx1RpWNkwlJSK3lbg/zh-cn_image_0000002731542937.png)
 
 ## 超长日志自动换行
 
-当日志的消息过长时，日志窗口可能不能完整显示日志消息，需要拖动滚动条查看信息。此时开发者可以点击**Soft-Wrap**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/AkvMdZ-3RkqEuY6SQTI1bg/zh-cn_image_0000002731382937.png)控制日志消息自动换行。
+当日志的消息过长时，日志窗口可能不能完整显示日志消息，需要拖动滚动条查看信息。此时开发者可以点击**Soft-Wrap**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/rczGc1yjS1-_5okDaE22yA/zh-cn_image_0000002731382937.png)控制日志消息自动换行。
 
 **图1** 未开启自动换行  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Fn842LDHTOGhiScC3dkqaA/zh-cn_image_0000002701823680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/nG7pCC57SUaUUJudoO4CTQ/zh-cn_image_0000002701823680.png)
 
 **图2** 开启自动换行  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/8WYaNIirQ2O0vNtryNH_ug/zh-cn_image_0000002701823640.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/a2yAzvVcQJyy4Yw9Fiegmg/zh-cn_image_0000002701823640.png)
 
 ## 显示最新日志
 
-设备输出的日志信息会实时刷新到HiLog窗口底部，用户可点击**Scroll to End**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/eQb9YtpMTf-Il2k7JYpNhg/zh-cn_image_0000002731382963.png)使HiLog一直显示底部的最新日志信息。当观察到需要的日志时，点击HiLog窗口，即可停止滚动，停留在当前行，以便查看日志信息。
+设备输出的日志信息会实时刷新到HiLog窗口底部，用户可点击**Scroll to End**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/coRqbUFVSBS_2KuRk-L6yA/zh-cn_image_0000002731382963.png)使HiLog一直显示底部的最新日志信息。当观察到需要的日志时，点击HiLog窗口，即可停止滚动，停留在当前行，以便查看日志信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/fDq5s6OaQfKque40nq2akQ/zh-cn_image_0000002701663726.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/okt1UKe7SEmtTlsoSxwS8A/zh-cn_image_0000002701663726.gif)
 
 ## 导出日志信息
 
 用户可将经上述步骤过滤后的关键日志信息保存到本地，以便进一步分析。
 
-点击**Export HiLog**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/PTb5Wic0RPSToV1Sza4yew/zh-cn_image_0000002701663720.png)，在弹出的Export HiLog To窗口中选择保存路径。
+点击**Export HiLog**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/qYfzzMw2R-iAbKxporuE7Q/zh-cn_image_0000002701663720.png)，在弹出的Export HiLog To窗口中选择保存路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/tBmxeb7_RjmFTYwOfB185g/zh-cn_image_0000002731382945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/XfKY3ENoSNyBLK2Js8MzKg/zh-cn_image_0000002731382945.png)
 
 ## 清除日志缓存
 
@@ -190,9 +190,9 @@ HiLog显示日志信息的流程为：
 2. Log组件将设备端日志缓存取出，保存在HiLog窗口缓存中；
 3. HiLog窗口根据过滤条件，将HiLog窗口缓存中的消息显示窗口在界面中。
 
-点击**Clear All**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/4bSNIWRoQNu1kD0YsbosBA/zh-cn_image_0000002731542913.png)，将同时清除设备日志缓存和HiLog窗口日志缓存，以及当前已经打印的日志。HiLog窗口将显示执行清除操作后，新输出至设备端缓存的日志信息。
+点击**Clear All**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Uo6drzaUTASwlGiYLUC0_w/zh-cn_image_0000002731542913.png)，将同时清除设备日志缓存和HiLog窗口日志缓存，以及当前已经打印的日志。HiLog窗口将显示执行清除操作后，新输出至设备端缓存的日志信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/BuJodMNNQgSqO8IYqhgF4Q/zh-cn_image_0000002701663724.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/RvZl_7tfQnSQsEY88qE5fA/zh-cn_image_0000002701663724.png)
 
 ## 设置HiLog窗口缓存
 
@@ -200,33 +200,33 @@ HiLog窗口显示的日志信息保存在此窗口的缓存中，缓存的大小
 
 点击**Settings > Buffer**，进入缓存设置窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/MEDfBPgLRG2DyZuf1bcSNA/zh-cn_image_0000002731542945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/x7iMwgUkS5m9JEl8v_3ebQ/zh-cn_image_0000002731542945.png)
 
 默认缓存大小为4096K，变更缓存大小需重启HiLog窗口后生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Q7RSDP-kRiGwOYiKIxR1oA/zh-cn_image_0000002701663734.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/c4FjflIxSgSk2acvTmMdJg/zh-cn_image_0000002701663734.png)
 
-重启HiLog窗口操作：先点击下方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/1M8mmCodRjypvAk0N-LQFQ/zh-cn_image_0000002701823656.png)按钮，再点击上方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/nogkfyUyTiWwF3_SGgxabg/zh-cn_image_0000002731542909.png)按钮中的Online Log即可。
+重启HiLog窗口操作：先点击下方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/bS_oY4b6Ry-C0qaW2E8DBw/zh-cn_image_0000002701823656.png)按钮，再点击上方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/-beKWRcuSeSgondjljyMRw/zh-cn_image_0000002731542909.png)按钮中的Online Log即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/2tX8e4Z9Qj2GxG7YX0jJ9A/zh-cn_image_0000002701663708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/gpr3LG0-TxitPt4sOj8PuA/zh-cn_image_0000002701663708.png)
 
 当日志量超出缓存时，顶部的旧日志不断被清除，因而顶部日志信息处于不停滚动的状态。此时若想查看此处的日志信息，可在日志滚动时，点击右键，勾选**Pause Output**暂停窗口打印，查看完后再取消勾选，重新开始打印日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/wFA-2u22SD2tfN5equPk0Q/zh-cn_image_0000002701663752.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ToNirqXMSn2qkKSKAp4h_A/zh-cn_image_0000002701663752.png)
 
 ## 设置设备端日志缓存
 
 使用hdc shell hilog -g命令可查看当前设备端设置的日志缓存，默认为256K。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/U38hFeyuSRKN-zL5uQlbaw/zh-cn_image_0000002701663748.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ogmnvQHTR8m7TpB2FrEjTA/zh-cn_image_0000002701663748.png "点击放大")
 
 使用hdc shell hilog -G命令可更改设备端日志缓存大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/RQZTnfIGRDK13slVC5unRA/zh-cn_image_0000002701663758.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/RJBKgmpZSgyFHs3NKsf-PQ/zh-cn_image_0000002701663758.png "点击放大")
 
 配合-t参数可单独设置某一类型的日志缓存大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/xpCabRmRT4KtKhQoNMQiEg/zh-cn_image_0000002701823660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/0Yclx2mXSy6C3VuV3SE96g/zh-cn_image_0000002701823660.png "点击放大")
 
 超出设备端缓存日志将被落盘于设备data/log/hilog路径下，开发者可在此目录下载历史hilog日志并查看。
 
@@ -236,28 +236,28 @@ DevEco Studio提供查看设备离线日志的功能，支持查看设备中/dat
 
 点击HiLog窗口左上角New，随后点击Offline Log即可打开离线日志窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/xhOXddwmTzSSDojYcGnmRQ/zh-cn_image_0000002731542941.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/k1Lx_l-EQ8mVwE66lcWLPg/zh-cn_image_0000002731542941.png)
 
 离线日志窗口左边工具栏中的按钮、日志级别下拉框和搜索框和在线日志的功能一致，设备下拉框仅支持选择真机和模拟器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/KqtUpTc0QaSky1YGoyP1eQ/zh-cn_image_0000002731382961.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/pW0o0yLJSBOhALHsWh8wzg/zh-cn_image_0000002731382961.png)
 
 离线日志支持通过时间筛选设备上的日志文件，默认时间范围为打开窗口时的前三十分钟，除显示格式外，也支持通过键入yyyyMMddHHmm后回车进行时间输入。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/63ZQzVFKSZ2OlaVB_Ckk7w/zh-cn_image_0000002701663716.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/1D_3khVeRpaxDjw7CbHUaw/zh-cn_image_0000002701663716.png)
 
 在输入时间之后，日志文件下拉框会进行刷新，点击文件会从设备端下载并自动解析后输出到离线日志窗口。
 
 由于最新的日志文件内容还在更新中，在达到设定的大小前，内容会不断增多。如果重新打开离线日志窗口或者修改时间，日志文件列表都会刷新，会从设备端重新下载最新的日志文件，解析的内容会更多。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/tuGS94D0Q4WsYGmWtqjhBA/zh-cn_image_0000002731542923.png)离线日志窗口能输出的文本量可参考[设置HiLog窗口缓存](ide-setup-hilog.md#section106741332995)进行设置，设置较小可能无法显示选择文件的所有日志，推荐设置6M(6144K)。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ogCPt84vRtCtYzUsrScDXA/zh-cn_image_0000002731542923.png)离线日志窗口能输出的文本量可参考[设置HiLog窗口缓存](ide-setup-hilog.md#section106741332995)进行设置，设置较小可能无法显示选择文件的所有日志，推荐设置6M(6144K)。
 
 通过设置窗口的缓存大小可能无法展示完整的日志，可点击左侧工具栏的保存按钮导出离线日志，支持导出解析后未经DevEco Studio格式化的原始日志文件，导出的文件可以看到完整日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/vtY7HYzzSyucq7yyC8yPKg/zh-cn_image_0000002701823642.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/7uysIsq8Qr6ow0_HY5qC3w/zh-cn_image_0000002701823642.png)
 
 ## 终止应用
 
 从DevEco Studio 6.0.0 Beta5版本开始，在日志窗口点击**右键 > Force Stop App**，可以终止该日志所属进程的应用，不支持系统应用和release签名的应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/hb4Va1TxTvCFuCO1kjG3dQ/zh-cn_image_0000002701663754.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ntzZb6-kTpquQMMqKOO2yA/zh-cn_image_0000002701663754.png)

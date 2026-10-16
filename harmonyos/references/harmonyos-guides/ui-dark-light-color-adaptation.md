@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-dark-light
 title: 应用深浅色适配
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 主题设置 > 应用深浅色适配
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:12+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:df1f4e9201025faa7583961085014a651648b96499a67a93e3531cdfb5b139a9
+scraped_at: 2026-10-17T06:41:16+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:2df498f48630809a95608025f2e28412dfee72192d195e483f1bc4e710702843
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:df1f4e9201025faa7583961085014a651648b96499a67a93e3531cdfb5b
 
      图1 resources目录结构示意
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/dFXYemHKScGI2KQvMmlgZQ/zh-cn_image_0000002762339948.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/G6Y6GPQhQDqOkGBgxofx2w/zh-cn_image_0000002794410345.png)
 
      例如，开发者可在这两个color.json中定义同名配色定义并赋予不同的色值。
 
@@ -106,7 +106,7 @@ content_hash: sha256:df1f4e9201025faa7583961085014a651648b96499a67a93e3531cdfb5b
    ```
 5. 应用监听深浅色模式切换事件
 
-   应用可以主动监听系统深浅色模式变化，进行其他类型的资源初始化等自定义逻辑。应用使用[setColorMode](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#setcolormode18)手动设置深浅色的情况下，将不会收到onConfigurationUpdate回调。除此之外，无论应用是否跟随系统深浅色模式变化，该监听方式均可生效。
+   应用可以主动监听系统深浅色模式变化，进行其他类型的资源初始化等自定义逻辑。应用使用[setColorMode](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#setcolormode18)手动设置深浅色的情况下，将不会收到onConfigurationUpdate()回调。除此之外，无论应用是否跟随系统深浅色模式变化，该监听方式均可生效。
 
    a. 在 AbilityStage的[onCreate()](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)生命周期中获取APP当前的颜色模式并保存到[AppStorage](../harmonyos-references/ts-state-management.md#appstorage)。
 
@@ -189,13 +189,13 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
 
 ## 系统判定应用深浅色模式的规则
 
-1. 如果应用调用上述setColorMode接口主动设置了深浅色，则以接口效果优先。
-2. 应用没有调用setColorMode接口时：
+1. 如果应用调用上述setColorMode()接口主动设置了深浅色，则以接口效果优先。
+2. 应用没有调用setColorMode()接口时：
 
    * 如果应用工程dark目录下有深色资源，则系统组件在深色模式下会自动切换成为深色。
    * 如果应用工程dark目录下没有任何深色资源，则系统组件在深色模式下仍会保持浅色体验。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XXInYw6sRt6sOLlBhzqG6g/zh-cn_image_0000002791858743.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/nR4miBRpSEK5Oaj4w-iAEQ/zh-cn_image_0000002764971628.png)
 
 如果应用全部都是由系统组件/系统颜色开发，且想要跟随系统切换深浅色模式时，请参考以下示例修改代码来保证应用体验。
 

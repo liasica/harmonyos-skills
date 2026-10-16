@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 定制构建 > 灵活定制编译选项 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:50+08:00
+scraped_at: 2026-10-17T06:43:48+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:5f57533237c4f3fbb4d7c04b57fb198cc0a904e538bb96700ca9e13a05d944ae
+content_hash: sha256:23bae711d9ee14729b887396f17a47c175b3b6caa33f68733d61940e44527331
 ---
 
 应用正式对外发布版本前，需要对应用进行代码调试。调试和正式发布版本，两者编译行为可能不同。此时，可以利用buildMode能力，来定制两个版本的编译差异性。
@@ -14,7 +14,7 @@ content_hash: sha256:5f57533237c4f3fbb4d7c04b57fb198cc0a904e538bb96700ca9e13a05d
 
 示例工程中包含一个模块entry，将entry模块交付到构建产物default中，模块定制两种不同的编译模式debug、release，将两种构建模式均绑定到构建产物default中。工程示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/s7l4SUT9QMWv6BLZG_TnKg/zh-cn_image_0000002750169776.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/VTClZRLLToaVvXWNtCS0iA/zh-cn_image_0000002750169776.png)
 
 ## 工程级build-profile.json5示例
 
@@ -140,7 +140,7 @@ hvigorw --mode project -p product=default -p buildMode=debug assembleApp
 
 编译产物示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/sT6CZRQAT_CLBYtStQNE3w/zh-cn_image_0000002779608801.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/1CZc8taIS_m8peU8bTK9HQ/zh-cn_image_0000002779608801.png)
 
 示例2：构建APP时，构建产物为default，指定构建模式为release，可执行如下命令：
 
@@ -150,10 +150,10 @@ hvigorw --mode project -p product=default -p buildMode=release assembleApp
 
 编译产物示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/LMj_l-0ZQjOwr8rsPqik6g/zh-cn_image_0000002779728945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5lU0apn8Rlidm38WjERoZw/zh-cn_image_0000002779728945.png)
 
 ### DevEco Studio界面
 
 在鸿蒙电脑DevEco Studio界面进行可视化配置，Product选择default，构建模式选择debug后，点击**构建** **>** **编译App(s)** ，打包出产物为default、构建模式为debug的APP包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/W0dZSdQ6RUiEbdM8jfpzxg/zh-cn_image_0000002750009884.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/__QpFgpbQwuXBpwmZLEvDg/zh-cn_image_0000002750009884.png)

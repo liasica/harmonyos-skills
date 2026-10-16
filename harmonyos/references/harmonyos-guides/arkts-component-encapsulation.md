@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-compone
 title: 组件封装
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件封装
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:02+08:00
+scraped_at: 2026-10-17T06:41:07+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:0aa158e33a91f49f746850bc40d81a8dbaf0aea752e340aebb1c34ef530f5887
+content_hash: sha256:6cd59c0162098c84be1fe8c384abe0d2807f2cdd72200c75b644b9ab1d10957e
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:0aa158e33a91f49f746850bc40d81a8dbaf0aea752e340aebb1c34ef530
 
 在开发不同的业务功能时，可能需要使用相同样式的组件。例如，登录页面的登录按钮与购物页面的结算按钮，二者在同一应用中且表示确认操作，可能会采用相同的UI样式。这时可以抽取按钮Button组件的公共样式，封装后实现全局复用。下图是一个在默认态、按压态两种不同情况下的Button按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/_wzt7uttSOqd7jzrsOfiPg/zh-cn_image_0000002762499158.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/md7ENcs7RquU_emKvtoaAg/zh-cn_image_0000002765130836.png)
 
 ### 实现原理
 
@@ -101,7 +101,7 @@ content_hash: sha256:0aa158e33a91f49f746850bc40d81a8dbaf0aea752e340aebb1c34ef530
 
 应用开发中，除了UI样式，布局、逻辑等也可能需要复用，这时可以考虑将相同功能或样式的UI内容封装成一个自定义组件。例如，下图是一个包含图片文字的自定义组件，由Image组件和Text组件纵向排列实现，其中Image和Text的样式可由使用方修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Mp3lbDVuR2O1oR_ySUO_AQ/zh-cn_image_0000002791737817.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/Sb5fUcioQFWvsoU-83qz-Q/zh-cn_image_0000002794489415.png)
 
 ### 实现原理
 
@@ -211,7 +211,7 @@ content_hash: sha256:0aa158e33a91f49f746850bc40d81a8dbaf0aea752e340aebb1c34ef530
 
 如下图所示，团队A实现了一个组件工厂类，其中封装了多个组件。业务团队B在不同的开发场景下，希望通过组件名从工厂类实例中获取对应的组件。例如，当B团队向实例中传入参数"TextInput"或"Radio"，可以分别获取TextInput或Radio组件模板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/oNhnLlvWR7G1Vnz_l-78kQ/zh-cn_image_0000002762339244.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/OVxgYCSwRCKuTmIbTbitsg/zh-cn_image_0000002794409635.png)
 
 ### 实现原理
 

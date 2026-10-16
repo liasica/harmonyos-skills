@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-face
 title: 人脸识别与跟踪介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人脸识别与跟踪 > 人脸识别与跟踪介绍
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:13+08:00
+scraped_at: 2026-10-17T06:42:16+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:fe36e5d3e882f6b838f3b0486e4ee95a9a133686833c1c0d55eb77ebb893642b
+content_hash: sha256:d2b150bc136b93bb10d0ebf4049f652ab29691786e34405d79140b81a090e437
 ---
 
 AR Engine提供人脸表情跟踪的能力，跟踪获取人脸图像信息，实时将其理解成人脸表情内容，并转化成各种表情参数。
@@ -14,7 +14,7 @@ AR Engine提供了64种包含眼睛、眉毛、眼球、嘴巴、舌头等主要
 
 **图1** 人脸拓扑点示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/sK51Q0LNSRGplEI_n61dFA/zh-cn_image_0000002791739289.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/DZoqyDn3R6eUjY49kI7pfQ/zh-cn_image_0000002794490887.png)
 
 **说明** 
 

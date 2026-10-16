@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionabil
 title: ExtensionAbility组件
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > ExtensionAbility组件
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:51+08:00
+scraped_at: 2026-10-17T06:40:56+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:808234e003f691deeb55cad5d2ceeb04985142b91d8ec9c762da95e3412af011
+content_hash: sha256:462c99b21efcc8f4a84b64a870207fc1dbdec4255fbf1b9ee56b2aa840628a36
 ---
 
 [ExtensionAbility](../harmonyos-references/js-apis-app-ability-extensionability.md)组件是一种面向特定场景的应用组件。每一个具体场景对应一个不同类型的ExtensionAbility，例如用于卡片场景的[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)，用于输入法场景的[InputMethodExtensionAbility](../harmonyos-references/js-apis-inputmethod-extension-ability.md)，用于延时任务场景的[WorkSchedulerExtensionAbility](../harmonyos-references/js-apis-workschedulerextensionability.md)等。开发者通过使用不同类型的ExtensionAbility组件，可以扩展和丰富应用功能，更好地与其他应用或系统开展交互。
@@ -76,7 +76,7 @@ content_hash: sha256:808234e003f691deeb55cad5d2ceeb04985142b91d8ec9c762da95e3412
 
 **图1** 使用InputMethodExtensionAbility组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/dzPu_P90QYKBbE2XUGl9PA/zh-cn_image_0000002762339108.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/1-lIos3VROeq_XikNDJbWg/zh-cn_image_0000002794409497.png)
 
 ## 实现指定类型的ExtensionAbility组件
 
@@ -84,7 +84,7 @@ content_hash: sha256:808234e003f691deeb55cad5d2ceeb04985142b91d8ec9c762da95e3412
 
 卡片FormExtensionAbility实现方不用关心使用方何时去请求添加、删除卡片，FormExtensionAbility实例及其所在的[ExtensionAbility](../harmonyos-references/js-apis-app-ability-extensionability.md)进程的整个生命周期，都是由卡片管理系统服务FormManagerService进行调度管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/iPc-U-qOQ9Kft007FJK27A/zh-cn_image_0000002791857901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6YbLVne8Qg2n0xuawN2wvQ/zh-cn_image_0000002764970778.png)
 
 * **[EmbeddedUIExtensionAbility](embeddeduiextensionability.md)**
 * **[使用AppServiceExtensionAbility组件实现后台服务](app-service-extension-ability.md)**

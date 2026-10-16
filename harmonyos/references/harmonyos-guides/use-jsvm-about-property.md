@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口设置JavaScript对象的属性
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口设置JavaScript对象的属性
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:bd67bbfece6f38e9e8f2f2677e0e6642b881802b8f76ac70f2059ecd139248db
+scraped_at: 2026-10-17T06:43:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:8de89f1afea6445afd76b20994e34917e05d1c97662d5422b12ef41d572edf93
 ---
 
 ## 简介
@@ -725,7 +725,7 @@ static JSVM_PropertyDescriptor descriptor[] = {
 
 // 样例测试js
 const char *SRC_CALL_NATIVE = R"JS(
-    let obj = '{ data: 0, message: "hello world", 50: 1}';
+    let obj = { data: 0, message: "hello world", 50: 1};
     let script = getAllPropertyNames(obj);
 )JS";
 ```

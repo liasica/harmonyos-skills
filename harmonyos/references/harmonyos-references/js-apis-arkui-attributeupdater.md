@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: AttributeUpdater
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > AttributeUpdater
 category: harmonyos-references
-scraped_at: 2026-10-15T07:07:43+08:00
+scraped_at: 2026-10-17T06:44:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6da516d761d7f98452ef99c45fcd9d8ac2329e98d6ed43c30e38c515ec37a7fe
+content_hash: sha256:8f3a2ed33ea0dc6af68b4e1d39cc3df74ba64c58b12256b84b64c71363d4dffe
 ---
 
 将属性直接设置给组件，无需标记为状态变量即可直接触发UI更新。适用于需要在不定义状态变量的情况下动态更新组件属性的场景，如动态修改组件构造参数、避免为一次性属性更新定义状态变量等。
@@ -148,7 +148,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/AKoAF5GsTAqZqWNb4iiLsA/zh-cn_image_0000002762341688.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/3trpNOvMSm-hnGbIGRS0eA/zh-cn_image_0000002794491869.gif)
 
 ### attribute
 
@@ -203,7 +203,7 @@ struct UpdaterDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/a_i56IDMRRKBiXHb3AlP-g/zh-cn_image_0000002791860481.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/TwIY09LBR8OY6gNOqB7V4A/zh-cn_image_0000002794412091.gif)
 
 ### 属性
 
@@ -252,7 +252,7 @@ struct AttributeDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/6FovVwQBRu6hU9JA0XsUxQ/zh-cn_image_0000002762501604.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/p_Mvl1VeQWGX_3jzb7V8Ng/zh-cn_image_0000002764973374.gif)
 
 ### onComponentChanged
 
@@ -319,4 +319,4 @@ struct UpdaterDemo4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/28tq3I2dSHuqo6gCKKDe9Q/zh-cn_image_0000002791740263.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/S9XVZZNDSnKXIDO5iTaqLg/zh-cn_image_0000002765133298.gif)

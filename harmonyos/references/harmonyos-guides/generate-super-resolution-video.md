@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/generate-supe
 title: 视频缩放
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 视频处理 > 视频缩放
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9ce6242abdaa7c44f67ffa4b31314ab544a73be773a24d419c9c61907853283c
+scraped_at: 2026-10-17T06:42:13+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:a6ab2f0fc6038c4ab0c79b335680422d28189ea37ced5f77b596b1167a1386e5
 ---
 
 本模块提供视频细节增强的[C API接口](../harmonyos-references/capi-videoprocessing.md)，通过调用本模块的接口，可以实现视频流图像内容的清晰度增强及缩放功能，处理后的数据可以用于送显、播放和录制。
@@ -35,7 +35,7 @@ content_hash: sha256:9ce6242abdaa7c44f67ffa4b31314ab544a73be773a24d419c9c6190785
 
 ### 在 CMake 脚本中链接动态库
 
-```screen
+```cmake
 target_link_libraries(sample PUBLIC libvideo_processing.so)
 ```
 
@@ -104,16 +104,16 @@ target_link_libraries(sample PUBLIC libvideo_processing.so)
    ```cpp
    // 创建回调实例
    ret = OH_VideoProcessingCallback_Create(&callback);
+   // 回调函数声明（其中userData会传递注册回调时传入的用户数据，如：this指针）
+   void OnError(OH_VideoProcessing* videoProcessor, VideoProcessing_ErrorCode error, void* userData);
+   void OnState(OH_VideoProcessing* videoProcessor, VideoProcessing_State state, void* userData);
+   void OnNewOutputBuffer(OH_VideoProcessing* videoProcessor, uint32_t index, void* userData);
    // 绑定回调函数
    OH_VideoProcessingCallback_BindOnError(callback, OnError);
    OH_VideoProcessingCallback_BindOnState(callback, OnState);
    OH_VideoProcessingCallback_BindOnNewOutputBuffer(callback, OnNewOutputBuffer);
    // 注册回调函数
    ret = OH_VideoProcessing_RegisterCallback(videoProcessor, callback, this);
-   // 回调函数声明（其中userData会传递注册回调时传入的用户数据，如：this指针）
-   void OnError(OH_VideoProcessing* videoProcessor, VideoProcessing_ErrorCode error, void* userData);
-   void OnState(OH_VideoProcessing* videoProcessor, VideoProcessing_State state, void* userData);
-   void OnNewOutputBuffer(OH_VideoProcessing* videoProcessor, uint32_t index, void* userData);
    ```
 6. （可选）配置细节增强档位，当前有高中低三档及NONE可选，若不配置则默认档位为LOW档。
 
@@ -128,7 +128,7 @@ target_link_libraries(sample PUBLIC libvideo_processing.so)
 7. 获取Surface。
 
    ```cpp
-   //配置算法的输入
+   // 配置算法的输入
    ret = OH_VideoProcessing_GetSurface(videoProcessor, inputWindow);
    // 将解码器的输出与算法的输入进行绑定，解码器输出的window分辨率即为算法输入分辨率
    OH_VideoDecoder_SetSurface(decoder_,  inputWindow_);

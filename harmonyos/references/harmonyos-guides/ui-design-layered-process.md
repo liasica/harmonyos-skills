@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-lay
 title: （推荐）分层图标处理
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 图标处理 > （推荐）分层图标处理
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:25+08:00
+scraped_at: 2026-10-17T06:41:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:51023379b0ce9823fbc3e74e6f2c2dd701a9f90e9bdc2ee9497cb8cfd12006c7
+content_hash: sha256:42775d6d805b7627eee99dde5db35bf10ca58c62f93c4aba0442ea7cc0b768ff
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:51023379b0ce9823fbc3e74e6f2c2dd701a9f90e9bdc2ee9497cb8cfd12
 * 展示应用详情：可调用UI Design Kit处理单个分层图标的接口获取处理后的应用图标。
 * 展示跟随在线主题的应用图标：可调用UI Design Kit处理分层图标的接口获取主题换肤后的应用图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/RF-KudafQx67p6Qnz0950g/zh-cn_image_0000002791859109.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/76VH_wUUTeC5LGO6v5Oe4w/zh-cn_image_0000002762500232.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Z3maPDUvTBivYpGJyP8nEw/zh-cn_image_0000002791738895.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/4Q9TT44SSICeTD0KZ5jdpg/zh-cn_image_0000002764971992.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/5hvPmZN0Q6ebPhfvsfdWdw/zh-cn_image_0000002765131918.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/SQKnMfZeSK-xtboHLLvWMg/zh-cn_image_0000002794490495.png)
 
 ## 约束条件
 
@@ -26,7 +26,7 @@ content_hash: sha256:51023379b0ce9823fbc3e74e6f2c2dd701a9f90e9bdc2ee9497cb8cfd12
 
 ## 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/4DT2hf-TTYeAHU4iTyAPzQ/zh-cn_image_0000002762340314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/_bcv3bCkQimNQMLrOzsqNQ/zh-cn_image_0000002794410711.png)
 
 1. 设置分层图标，将前景资源和背景资源放至entry/src/main/resources/base/media文件中，并在该目录下创建一个json文件（例如：drawable.json）：
 

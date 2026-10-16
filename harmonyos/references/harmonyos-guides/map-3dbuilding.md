@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-3dbuildin
 title: 3D建筑
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 3D建筑
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:33+08:00
+scraped_at: 2026-10-17T06:42:35+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cb7afcceaea25a3ef9acc62739157650f33d24fb0c5fc0e1d5e0ffa938339a0d
+content_hash: sha256:115f376d3053bd9d1130cf28fa3f8657ea7d63394ed96453c7f40fd1eda08766
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:cb7afcceaea25a3ef9acc62739157650f33d24fb0c5fc0e1d5e0ffa9383
 
 3D建筑主要用于展示城市建筑外观，帮助用户直观了解城市面貌，同时还可应用于楼盘、小区等三维模型的呈现，辅助用户全面了解周边环境。此外，在导航定位、旅游导览以及商业选址分析等场景中也有广泛应用，能够为用户提供更加真实、直观的地图体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/XKu0fNydQlq51THUlbFx2Q/zh-cn_image_0000002791739731.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/m0HqXl6zSXmjv0QhLVjquQ/zh-cn_image_0000002794491335.gif "点击放大")
 
 ## 接口说明
 

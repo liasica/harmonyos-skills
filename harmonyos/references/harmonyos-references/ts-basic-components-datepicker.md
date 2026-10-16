@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:00+08:00
+scraped_at: 2026-10-17T06:44:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b823244056300c9d81cc32417d298a59736945e8adbd953276d97173584bb646
+content_hash: sha256:7060b8c569e0ca701b1080f4a94f9ee6f8bc344f85a0db87d5d04cba6de2bbbb
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/lsDJPVSsTPyfDEFKFj6yuA/zh-cn_image_0000002762501886.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/eensqltpSu-GMd4-lba-IQ/zh-cn_image_0000002764973660.gif)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/fbzZH2B7Q-GNqD7QCPntDw/zh-cn_image_0000002791740549.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Htv1_DFgSjei-r1xQN4RDg/zh-cn_image_0000002765133582.png)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/UANbctBFSjS_ULpRhDuO3A/zh-cn_image_0000002762341976.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/SYgQY1jrTkSHo9AX2Eg0oA/zh-cn_image_0000002794492157.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/MbME6ytQToyYpwGHhnnE1g/zh-cn_image_0000002791860767.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/sc3SRwdHSK-d_miQYQIhkQ/zh-cn_image_0000002794412379.gif)

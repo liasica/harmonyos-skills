@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-choos
 title: 获取收货地址
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取收货地址
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:19+08:00
+scraped_at: 2026-10-17T06:42:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:290a56645765cd05ac600b540b5eb98cc21781d81e7f2dfca83793755ebe4c09
+content_hash: sha256:cccfb3ef61063624dabfac913cdc028821adcf5357cfb8f4e6eb318424e1abbe
 ---
 
 ## 场景介绍
 
 当应用需要获取用户收货地址时，可使用Account Kit提供的获取收货地址的能力，引导用户添加或选择已有的收货地址，并最终获取用户的收货地址。以下对Account Kit提供的获取收货地址能力进行介绍，获取收货地址功能还可使用场景化控件[选择收货地址Button](scenario-fusion-button-ship-to.md)进行实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/s1_UMQMNTBqMPrA6-9ELfw/zh-cn_image_0000002791739435.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/JWtwAlZDSh6Q8zYAUpLnDQ/zh-cn_image_0000002794491035.png "点击放大")
 
 ## 约束与限制
 
@@ -21,7 +21,7 @@ content_hash: sha256:290a56645765cd05ac600b540b5eb98cc21781d81e7f2dfca83793755eb
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/CI-LbpTZR7et57Kz7DgfiQ/zh-cn_image_0000002762340856.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/uNe5NQpOSdWk-8tD9F0fvQ/zh-cn_image_0000002794411255.png)
 
 流程说明：
 

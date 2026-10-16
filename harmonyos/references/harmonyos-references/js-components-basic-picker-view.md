@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: picker-view
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > picker-view
 category: harmonyos-references
-scraped_at: 2026-10-15T07:08:27+08:00
+scraped_at: 2026-10-17T06:45:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ef248fe4123e2c10c190826bbd685c116a1ba219ebefc8574d501ab88b34b89e
+content_hash: sha256:6488003fd16d6df3da1be801982d063064e6a81ab065c5ea031dbabe6f17aa79
 ---
 
 **说明** 
@@ -167,7 +167,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/6LEb_Q4gTg-8E0rdpgkk6g/zh-cn_image_0000002762502424.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/uwHVMMXZQHax87IvK95bjA/zh-cn_image_0000002764974182.gif)
 
 ### 时间选择器
 
@@ -225,7 +225,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/JbQr-HK5SlqzBKk7kAgEbQ/zh-cn_image_0000002791741087.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/RT24tOriQsC6fI1WSkmtNQ/zh-cn_image_0000002765134106.png)
 
 ### 日期选择器
 
@@ -267,7 +267,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/49G5143XRDCkFCsZeyHKBw/zh-cn_image_0000002762342512.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Xj4uGjdPTCWfp-IKfzI6og/zh-cn_image_0000002794492681.png)
 
 ### 日期时间选择器
 
@@ -309,7 +309,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Pu_vJp47Rhizaudo2UqBOQ/zh-cn_image_0000002791861303.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/MV5F_dhqR7Shgw4oUUpFbg/zh-cn_image_0000002794412903.png)
 
 ### 多列文本选择器
 
@@ -356,4 +356,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/UMVSJ8IQTs2P9L3DpMOAsA/zh-cn_image_0000002762502426.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/eZuky9pOQHCoV0hXXxwasg/zh-cn_image_0000002764974184.png)

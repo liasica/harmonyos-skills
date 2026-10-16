@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-cannk
 title: Sub
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 双目指令 > Sub
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:49+08:00
+scraped_at: 2026-10-17T06:42:51+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:1cafc5bc51b5c3b36e865beca614577b49fbfbdd2c22a744f52e94794c0d9bfe
+content_hash: sha256:a3cae028b04b053f6f984d2789916c9110cd33b05ab879ae0506cc18cc3e1a4a
 ---
 
 ## 功能说明
 
 按元素求差，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/O8gDaioCTiS5q5prmtPaWA/zh-cn_image_0000002791860207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/5yc-Ko48Sk6Yz5XTWID7vA/zh-cn_image_0000002794411821.png)
 
 ## 函数原型
 

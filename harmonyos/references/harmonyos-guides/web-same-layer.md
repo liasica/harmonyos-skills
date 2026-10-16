@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-same-laye
 title: 同层渲染
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 同层渲染 > 同层渲染
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:20+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:ed13e15daa3557a9833fbbbcf26c7783111ba237cb631c63155d533e310fed94
+scraped_at: 2026-10-17T06:41:25+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:8141acabe60f024cd4fe896cf079323d8cf1e21774f6dbd5f557f70638248d29
 ---
 
 在系统中，应用可以使用Web组件加载Web网页。当非系统框架的UI组件功能或性能不如系统组件时，可使用同层渲染技术，通过ArkUI组件渲染这些组件（简称为同层组件）。
@@ -35,7 +35,7 @@ ArkWeb同层渲染特性主要提供两种能力：同层标签生命周期和�
 
 **图1** 同层渲染整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/hKe8pI7KQ9ijE8P35HjhCA/zh-cn_image_0000002791858971.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/kHUq820xTLyTzGfhU07H_A/zh-cn_image_0000002764971856.png)
 
 ## 规格约束
 
@@ -115,11 +115,11 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
   **图2** 未使用Stack包裹，TextInput的位置错位
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/y5ld_EeERWq_ORflWTeP5A/zh-cn_image_0000002762500096.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/YqB1F5jiQaapED1dzbzOrg/zh-cn_image_0000002765131782.png)
 
   **图3** 使用Stack包裹，TextInput的位置正常
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/B_PLVBl-Rf6He_0BlxI4Ig/zh-cn_image_0000002791738759.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/j4avHSFnSpyXMws0aEZdtg/zh-cn_image_0000002794490359.png)
 
 ## Web页面中同层渲染输入框
 
@@ -127,7 +127,7 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
 **图4** 同层渲染输入框
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/iQrcVotLQOqVtXoJPm7MvA/zh-cn_image_0000002762340178.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ItLGFLlqRRuSe2NiSb0NVA/zh-cn_image_0000002794410575.png)
 
 1. 在Web页面中标记需要同层渲染的HTML标签。
 
@@ -443,8 +443,7 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
 ```typescript
 import { webview } from '@kit.ArkWeb';
-import { UIContext } from '@kit.ArkUI';
-import { NodeController, BuilderNode, NodeRenderType, FrameNode } from '@kit.ArkUI';
+import { UIContext, NodeController, BuilderNode, NodeRenderType, FrameNode } from '@kit.ArkUI';
 
 @Observed
 declare class Params{
@@ -1054,7 +1053,7 @@ struct Page{
   ```
 * 实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/g2ilWXs9TOWWOJZJQs40Xw/zh-cn_image_0000002791858973.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/N7oi3__CTSyFwpM32YVM1g/zh-cn_image_0000002764971858.png)
 
 ## 同层标签设置为最高层级
 
@@ -1069,8 +1068,7 @@ struct Page{
 
 ```typescript
 import { webview } from '@kit.ArkWeb';
-import { UIContext } from '@kit.ArkUI';
-import { NodeController, BuilderNode, NodeRenderType, FrameNode } from '@kit.ArkUI';
+import { UIContext, NodeController, BuilderNode, NodeRenderType, FrameNode } from '@kit.ArkUI';
 
 @Observed
 declare class Params{
@@ -1351,11 +1349,11 @@ struct Page{
 
   未设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/rNobvJWWQJiboNdd07MLRQ/zh-cn_image_0000002762500098.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/MGMKgaHkTrqpe1UUAKBfTw/zh-cn_image_0000002765131784.png)
 
   设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/kx075za8ScWlvndwIqY0RQ/zh-cn_image_0000002791738761.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/W9m85kfTQp-DPWcsz6_lnw/zh-cn_image_0000002794490361.png)
 
 ## 同层渲染纹理贴图对齐方式
 
@@ -1372,8 +1370,7 @@ ArkWeb同层渲染场景下的私有属性arkwebnativestyle，仅在开启同层
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
-  import { UIContext } from '@kit.ArkUI';
-  import { NodeController, BuilderNode, NodeRenderType, FrameNode } from '@kit.ArkUI';
+  import { UIContext, NodeController, BuilderNode, NodeRenderType, FrameNode } from '@kit.ArkUI';
   @Observed
   declare class Params{
     elementId: string

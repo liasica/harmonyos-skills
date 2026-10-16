@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-s
 title: 内存分析数据筛选
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 基础内存：Allocation分析 > 内存分析数据筛选
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:35+08:00
+scraped_at: 2026-10-17T06:43:35+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:c422bf1080397a7c16e8bbbb5839a61fabefe5c2a8ddec0b189f6e826def44bc
+content_hash: sha256:9fcd3f6e036fa52fe9c5d6658602db30fa3f1ae7553063ea51ae89050654d7a1
 ---
 
 Allocation分析过程中提供多种数据筛选方式，方便开发者缩小分析范围，更精确地定位问题所在。
@@ -22,7 +22,7 @@ Allocation分析过程中提供多种数据筛选方式，方便开发者缩小�
 * Created & Existing：默认选中，详情区域展示当前框选时间段内分配未释放的内存。
 * Created & Released：详情区域展示当前框选时间段内分配已释放的内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/IwBUn1YSQ5e0MC4438Aw9A/zh-cn_image_0000002701823584.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/plkHgNDvTW2e0baao0kQGw/zh-cn_image_0000002701823584.png "点击放大")
 
 ## 通过统计方式筛选
 
@@ -31,19 +31,19 @@ Allocation分析过程中提供多种数据筛选方式，方便开发者缩小�
 * Native Size：详情区域按照对象的内存进行展示。
 * Native Library：详情区域按照对象的so库进行展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/9QZVnYTcRXu3zNoF6LGapg/zh-cn_image_0000002731542857.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fMoWIlFAQESc9GG8sE8Wbw/zh-cn_image_0000002731542857.png "点击放大")
 
 ## 通过so库名筛选
 
 非统计模式下，在All Heap & Anonymous VM泳道、All Heap泳道、All Anonymous VM泳道、System Resources泳道、Graphic Memory泳道的**Allocations List**区域，可以单击**Click to choose**选择要筛选的so库以过滤出与目标so库相关的数据：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ZJpRQh9HQ2upAYiDR2Nynw/zh-cn_image_0000002701663658.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Oj_vWHAlTe2J4kITFatD9Q/zh-cn_image_0000002701663658.png "点击放大")
 
 ## 通过搜索筛选
 
 在All Heap & Anonymous VM泳道、All Heap泳道、All Anonymous VM泳道、System Resources泳道、Graphic Memory泳道的页签中， 根据界面提示信息输入需要搜索的项目，可定位到相关内容位置，使用搜索框的<、>按键可依次显示搜索结果的详细内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/RFrgoeAzSquRiw9T3YaP7w/zh-cn_image_0000002701663664.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/aDYv-8esQ7OwQh1dgfPtIg/zh-cn_image_0000002701663664.png "点击放大")
 
 ## 筛选内存分配堆栈
 
@@ -66,19 +66,19 @@ Call Trees选择框包含两种过滤条件：
 
   其中每一个类型的亮色和灰色分别代表开发者和系统的代码。其中，亮色代表开发者自定义的代码，灰色代表直接使用系统中代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/UUdMsTGLT5uLmvGshSMy-A/zh-cn_image_0000002701823578.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/TcHKQj5dRTKkH83LPiNkiA/zh-cn_image_0000002701823578.png "点击放大")
 
 Constraints选择框也包含了两种过滤条件：
 
 * Count：根据指定的内存申请次数过滤内存分配栈信息；
 * Bytes：根据指定的内存申请大小过滤内存分配栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/CNUvptLCRoKLhy_cNCPLhQ/zh-cn_image_0000002701823586.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/aL0Dk1lgQJmAW5F8IrkLAg/zh-cn_image_0000002701823586.png "点击放大")
 
 在Call Trees页签的More区域，单击**Heaviest Stack**旁的隐藏按钮可以单独控制是否显示More区域最大内存分配栈中的系统堆栈。System Resources泳道中不包含Bytes字段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/vln7M0zsQIqRjtWKfsHbCA/zh-cn_image_0000002731382885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/QsaL5CxeSzCZAcXrc-DFAQ/zh-cn_image_0000002731382885.png "点击放大")
 
 在Call Trees页签，可以通过底部的**Flame Chart**切换到火焰图视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/4at7m-r0Taq6PlPAxBwWvg/zh-cn_image_0000002701663660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Kkr2BxvjQCqiHVnCG3056g/zh-cn_image_0000002701663660.png "点击放大")

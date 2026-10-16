@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-dynamic-vs
 title: 对比动态模糊与静态模糊
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 模糊 > 对比动态模糊与静态模糊
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:11+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:2646dad48d250c82145ab2712f21dd9f52f9b95062de3dbb6178598dadeab243
+scraped_at: 2026-10-17T06:41:15+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:80066ede7591e54dc630288f093846e841e435eacbaa865ac0b45db4827e3450
 ---
 
 ## 概述
 
 模糊效果是一种常见的图像处理技术，它通过弱化图像细节来突出主体，使焦点更加鲜明。如下图所示，模糊效果不仅能增强界面空间感，还能清晰区分元素层级。当这一效果融入动态变化，便催生了模糊动效。模糊动效被广泛应用于页面转场、图像元素缩放等需要突出内容或改变用户关注点的场景中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/cetTpYpvS-6EkRU2X3tSOw/zh-cn_image_0000002762339890.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/KFgHb4iKTWOtgCDkNH44lA/zh-cn_image_0000002794410287.png)
 
 由于模糊算法需要进行精细的像素级处理，因而在组件需要实时渲染时，这要求在极短的周期内完成模糊化处理。尤其是在组件同时执行动画渲染任务时，则会进一步加剧计算资源的消耗，容易导致模糊效果处理时间不足，无法按时完成模糊动效，最终引发卡顿、丢帧等不良现象。
 
@@ -22,8 +22,8 @@ content_hash: sha256:2646dad48d250c82145ab2712f21dd9f52f9b95062de3dbb6178598dade
 
 在介绍静态模糊和动态模糊之前，需要说明静态模糊和动态模糊的区别在于要模糊的内容是不是动态更新的，如对视频做模糊就是动态模糊，对图片做模糊就是静态模糊。
 
-* **静态模糊**：静态模糊是指对输入的静态内容进行模糊处理并获取一张模糊后的图像的模糊。适用于需要为静态图像提供模糊化效果的场景。[Effect Kit](../harmonyos-references/js-apis-effectkit.md)在Filter图像效果类中提供了[blur](../harmonyos-references/js-apis-effectkit.md#blur)接口，可用于定义模糊半径，数值越大模糊效果越明显。
-* **动态模糊**：动态模糊是指模糊效果会随着每帧模糊内容和模糊半径的变化，进行实时变化的模糊。适用于模糊内容需要实时刷新和更改的场景。系统针对组件内容、背景的动态模糊提供了两种实现动态模糊的方法：[backgroundBlurStyle](../harmonyos-references/ts-universal-attributes-background.md#backgroundblurstyle9)和[foregroundBlurStyle](../harmonyos-references/ts-universal-attributes-foreground-blur-style.md#foregroundblurstyle)。这两个方法不能指定模糊半径、提亮、饱和度、蒙版颜色等具体参数，只能调用底层将这些参数封装好的[模糊样式](../harmonyos-references/ts-universal-attributes-background.md#blurstyle9)来实现不同风格的模糊效果。同时系统也为开发者提供了能够自定义参数的[backgroundEffect](../harmonyos-references/ts-universal-attributes-background.md#backgroundeffect11)，可以对组件背景实现自定义模糊动效。如果只需要对组件进行简单的模糊处理，系统还提供了与静态模糊类似的简单方法[blur](../harmonyos-references/ts-universal-attributes-image-effect.md#blur)和[backdropBlur](../harmonyos-references/ts-universal-attributes-background.md#backdropblur)，只需要定义模糊半径即可。
+* **静态模糊**：静态模糊是指对输入的静态内容进行模糊处理并获取一张模糊后的图像的模糊。适用于需要为静态图像提供模糊化效果的场景。[@ohos.effectKit (图像效果)](../harmonyos-references/js-apis-effectkit.md)在Filter图像效果类中提供了[blur](../harmonyos-references/js-apis-effectkit.md#blur)接口，可用于定义模糊半径，数值越大模糊效果越明显。
+* **动态模糊**：动态模糊是指模糊效果会随着每帧模糊内容和模糊半径的变化，进行实时变化的模糊。适用于模糊内容需要实时刷新和更改的场景。系统针对组件内容、背景的动态模糊提供了两种实现动态模糊的方法：[backgroundBlurStyle](../harmonyos-references/ts-universal-attributes-background.md#backgroundblurstyle9)和[foregroundBlurStyle](../harmonyos-references/ts-universal-attributes-foreground-blur-style.md#foregroundblurstyle)。这两个方法不能指定模糊半径、提亮、饱和度、蒙版颜色等具体参数，只能调用底层将这些参数封装好的[BlurStyle](../harmonyos-references/ts-universal-attributes-background.md#blurstyle9)来实现不同风格的模糊效果。同时系统也为开发者提供了能够自定义参数的[backgroundEffect](../harmonyos-references/ts-universal-attributes-background.md#backgroundeffect11)，可以对组件背景实现自定义模糊动效。如果只需要对组件进行简单的模糊处理，系统还提供了与静态模糊类似的简单方法[blur](../harmonyos-references/ts-universal-attributes-image-effect.md#blur)和[backdropBlur](../harmonyos-references/ts-universal-attributes-background.md#backdropblur)，只需要定义模糊半径即可。
 
 ## 场景示例
 
@@ -109,7 +109,7 @@ export struct MotionBlur {
 
 **图 1** 动态模糊
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/iliyPJv0SSqHllNxcQ9N6w/zh-cn_image_0000002791858685.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ZprjvPTFTeaTkR01aIdb6A/zh-cn_image_0000002764971570.gif)
 
 下面是使用静态模糊对图片进行模糊处理的场景示例。主要步骤如下：
 
@@ -236,17 +236,17 @@ export struct MotionBlur {
 
 **图 2** 静态模糊
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/ALjw1U-4Rxmi_N91scCQiA/zh-cn_image_0000002762499810.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/0Qzts4SwQzyjhVKzt8BbwQ/zh-cn_image_0000002765131496.gif)
 
 ## 效果对比
 
 下面使用DevEco Studio内置的Profiler中的帧率分析工具Frame抓取点击按钮触发转场过程的trace来分析静态模糊和动态模糊场景下的性能差异。需要说明，由于场景示例通过点击按钮触发转场，所以可以通过User Events（用户输入事件）的Click标签定位到转场过程的起点为Click标签结束位置。转场过程的终点为连续的RenderFrame（执行GPU绘制）标签不再连续的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/HCEp_FKHQsOlq9OOfdejVw/zh-cn_image_0000002791738473.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/HApJlH1PTWSjpEnM_zMuAg/zh-cn_image_0000002794490073.png)
 
 如上图所示，通过RenderFrame（执行GPU绘制）标签可以看出，动态模糊转场平均渲染耗时为6.113ms。同时从Present Fence（图形上屏信号）标签可以看出动态模糊转场平均帧率为108.0fps。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/wM11RYjXQ5uwtL-HvpG32Q/zh-cn_image_0000002762339892.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/f2B_WAebQcqoh3V6n1gkmA/zh-cn_image_0000002794410289.png)
 
 如上图所示，通过RenderFrame标签可以看出，静态模糊转场平均渲染耗时为3.357ms。同时从Present Fence标签可以看出静态模糊转场平均帧率为119.9fps。和动态模糊转场相比平均渲染耗时减少了约45%（性能耗时数据因应用场景、设备型号版本而异，以实测为准）。
 

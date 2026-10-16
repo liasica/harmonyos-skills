@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-t
 title: 模态转场
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 模态转场
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:87a22b2e162cf145d08caaee7bede68351a7cc8c69b6b23529dc1e913fdb0ee4
+scraped_at: 2026-10-17T06:41:15+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:12fd4544fa86d9e94cfccbdc7ee8acc5cb184fb015511a9a7a97e445bed61b76
 ---
 
 模态转场是新的界面覆盖在旧的界面上，旧的界面不消失的一种转场方式。
@@ -32,7 +32,7 @@ content_hash: sha256:87a22b2e162cf145d08caaee7bede68351a7cc8c69b6b23529dc1e913fd
    // 通过@Builder构建模态展示界面
    @Builder MyBuilder() {
      Column() {
-      Text('my modal view')
+       Text('my modal view')
      }
      // 通过转场动画实现出现消失转场动画效果，transition需要加在builder下的第一个组件
      .transition(TransitionEffect.translate({ y: 1000 }).animation({ curve: curves.springMotion(0.6, 0.8) }))
@@ -257,7 +257,7 @@ struct BindContentCoverDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/PJ_DegvJRWyKsxT8lFkNRw/zh-cn_image_0000002791858661.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Oca-raX0SEqhZ89XhJSJJQ/zh-cn_image_0000002764971546.gif)
 
 ## 使用bindSheet构建半模态转场效果
 
@@ -374,7 +374,7 @@ struct BindSheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/MNCZNcSQRI2R5Wte0d_OKw/zh-cn_image_0000002762499786.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/8kotsh2yQlymVXpOqiDtjg/zh-cn_image_0000002765131472.gif)
 
 ## 使用bindMenu实现菜单弹出效果
 
@@ -430,7 +430,7 @@ struct BindMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/L7U7CBmLTNKmP0ADGUyEvg/zh-cn_image_0000002791738449.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Ey3uF5cLSfiaG_o0bdDVHQ/zh-cn_image_0000002794490049.gif)
 
 ## 使用bindContextMenu实现菜单弹出效果
 
@@ -511,7 +511,7 @@ struct BindContextMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/1iWEqxULRA6OK7KMoV39wQ/zh-cn_image_0000002762339868.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/4cB5QPARRkKnOem7kv1Jyw/zh-cn_image_0000002794410265.gif)
 
 ## 使用bindPopup实现气泡弹窗效果
 
@@ -573,7 +573,7 @@ struct BindPopupDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/-3wH6U-tQH2sd054LeWIuQ/zh-cn_image_0000002791858663.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/V8DFd3kBTVWa9upJrS_QBw/zh-cn_image_0000002764971548.gif)
 
 ## 使用if实现模态转场
 
@@ -779,4 +779,4 @@ struct ModalTransitionWithIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/LwDgaNbPS5yOCzlD0Y6qnw/zh-cn_image_0000002762499788.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/LFUtVQrgQDOuB0YfKNbJsQ/zh-cn_image_0000002765131474.gif)

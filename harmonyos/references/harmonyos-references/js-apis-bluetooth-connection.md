@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.connection (蓝牙connection模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.connection (蓝牙connection模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:02+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9c005da17e9dfd860527227fd443e28567cb37434a4b08c6947c19ab85c3691b
+scraped_at: 2026-10-17T06:46:34+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:a0695561139db93647c9adc2cd3878fb1e4edc7a12d2876fd20b9c863e48254b
 ---
 
 connection模块提供了蓝牙设备的配对、连接、状态查询、设备扫描发现、扫描模式设置、电量信息获取及事件订阅等能力，适用于需要在应用中实现蓝牙设备发现、配对、连接和信息查询的场景。
@@ -623,10 +623,7 @@ getPairedDevices(): Array<string>
 
 获取已配对蓝牙设备的地址集合。
 
-**需要权限**：
-
-* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
-* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -1382,10 +1379,7 @@ on(type: 'bluetoothDeviceFind', callback: Callback<Array<string>>): void
 * 该上报方式只支持获取设备地址信息。
 * 推荐使用API version 18开始支持的[connection.on('discoveryResult')](js-apis-bluetooth-connection.md#connectionondiscoveryresult18)扫描上报方式，可获取到更多设备信息，包括设备地址、设备信号强度、设备名称和设备类型。
 
-**需要权限**：
-
-* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
-* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -1477,10 +1471,7 @@ on(type: 'bondStateChange', callback: Callback<BondStateParam>): void
 
 订阅蓝牙配对状态变化事件。使用Callback异步回调。
 
-**需要权限**：
-
-* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
-* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -1569,10 +1560,7 @@ on(type: 'pinRequired', callback: Callback<PinRequiredParam>): void
 
 订阅配对请求事件。使用Callback异步回调。
 
-**需要权限**：
-
-* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
-* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -1664,10 +1652,7 @@ on(type: 'discoveryResult', callback: Callback<Array<DiscoveryResult>>): void
 * 可扫描到的设备类型包括传统蓝牙设备和低功耗蓝牙设备。
 * 该上报方式支持获取设备地址、设备信号强度、设备名称和设备类型。
 
-**需要权限**：
-
-* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
-* API版本18-24：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -2107,7 +2092,7 @@ onAclStateChange(callback: Callback<AclStateResult>): void
 
 **起始版本**：26.0.0
 
-**需要权限**：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -2150,7 +2135,7 @@ offAclStateChange(callback?: Callback<AclStateResult>): void
 
 **起始版本**：26.0.0
 
-**需要权限**：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 

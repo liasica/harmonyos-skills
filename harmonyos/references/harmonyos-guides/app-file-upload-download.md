@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-uplo
 title: 应用文件上传下载
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 上传下载 > 应用文件上传下载
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d0b0edeff1b7e379b00e9bd0a73d9d05574531e70640363042473b207a60df61
+scraped_at: 2026-10-17T06:41:50+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:4d4162b55b0a310adf0d4ced4c2c14473d8bd5d12c163ed0387162320dc9074b
 ---
 
 应用支持将文件上传到网络服务器，也支持从网络服务器下载资源文件到本地目录。
@@ -154,7 +154,7 @@ async requestAgentUpload(fileName: string, callback: (progress: number, isSuccee
 
 下载任务不会删除生成的文件，若需清理文件，需由开发者手动操作。
 
-以下示例代码展示了将网络资源文件下载到应用内部文件目录的两种方法（示例requestDownloadFile中的clearExistFile方法可点击代码块右下角链接查看）：
+以下示例代码展示了将网络资源文件下载到应用内部文件目录的两种方法（示例requestDownloadFile中的clearExistFile()方法可点击代码块右下角链接查看）：
 
 ```typescript
 async requestDownloadFile(url: string, fileName: string, callback: (progress: number, isSuccess: boolean) => void,

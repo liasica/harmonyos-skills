@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ut-genera
 title: 单元测试用例生成
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 单元测试用例生成
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:39+08:00
+scraped_at: 2026-10-17T06:43:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:df4d139957d5001c165b26e5b3b5ff08a8e96931cf254f73ff4c513975891f04
+content_hash: sha256:deffc244114112b658574a5a04ad2ba0142873935ec091941bd4a874e9edf1b0
 ---
 
 根据选中的ArkTS方法名称，CodeGenie支持自动生成对应单元测试用例，提升测试覆盖率。
@@ -20,11 +20,11 @@ content_hash: sha256:df4d139957d5001c165b26e5b3b5ff08a8e96931cf254f73ff4c5139758
 
 1. 点击页面右侧菜单栏CodeGenie图标，完成登录后，在ArkTS文档中，光标放置于方法名称上或框选完整的待测试方法代码块，右键选择**CodeGenie > Generate UT**，开始生成单元测试用例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/4U8sHX5lQuS9fEXuOx7vdA/zh-cn_image_0000002731381925.png)
-2. 在问答对话区生成单元测试用例后，点击Code Genie问答区中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/_ThZAoN5QWK5wgCMdYZnaA/zh-cn_image_0000002731381921.png)可复制生成的代码，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/JsFn3NxOQvW-O_cwZirKtA/zh-cn_image_0000002701662706.png)将生成的代码插入到代码文件，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/_9juxfdvQxq9nfAY3OmROg/zh-cn_image_0000002731381915.png)弹出文件另存为框，填写文件名称后点击**OK**按钮保存。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/lZLnF_jHTyeAmsbnlmKAhQ/zh-cn_image_0000002731381925.png)
+2. 在问答对话区生成单元测试用例后，点击Code Genie问答区中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/1tsvyuozTVKABc7WBHw56A/zh-cn_image_0000002731381921.png)可复制生成的代码，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/jitfjlY3Td2-oYKIO5jMig/zh-cn_image_0000002701662706.png)将生成的代码插入到代码文件，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/6gonKdSpQ-yzLajeUQnwIg/zh-cn_image_0000002731381915.png)弹出文件另存为框，填写文件名称后点击**OK**按钮保存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/VK0Un0YaTUaPbSVZxBLetQ/zh-cn_image_0000002731381919.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/xKSCt7AQRr6soyp5Lh_Mtg/zh-cn_image_0000002731381919.png "点击放大")
 3. 生成的单元测试用例文件被保存在待测函数所在模块下的**ohosTest/ets/test**目录，目录结构和待测函数保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/_6EbKBrySMCk0pg-2rothQ/zh-cn_image_0000002701822624.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/AmgBn17PR2CeU-4hE7iVlg/zh-cn_image_0000002701822624.png)
 4. 运行单元测试用例，具体请参考[运行测试用例](ide-instrument-test.md#section14415226122419)。

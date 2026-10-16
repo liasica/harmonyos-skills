@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sheet-p
 title: 绑定半模态页面（bindSheet）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 绑定模态页面 > 绑定半模态页面（bindSheet）
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b17c844c118a02931392160ea88db2ef14ebdd342f21b64258cdf632566d569f
+scraped_at: 2026-10-17T06:41:13+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:9c5d27a4b76bac611c885d73192d9e0da05487ac9383fc4fc4666df1c4180c69
 ---
 
 [半模态页面（bindSheet）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)默认是模态形式的非全屏弹窗式交互页面，允许部分底层父视图可见，帮助用户在与半模态交互时保留其父视图环境。
@@ -17,7 +17,7 @@ content_hash: sha256:b17c844c118a02931392160ea88db2ef14ebdd342f21b64258cdf632566
 ## 使用约束
 
 * 半模态内嵌[UIExtension](../harmonyos-references/js-apis-arkui-uiextension.md)时，不支持再在UIExtension内拉起半模态/弹窗。
-* 若无二次确认或者自定义关闭行为的场景，不建议使用[shouldDismiss](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)/[onWillDismiss](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)接口。
+* 若无二次确认或者自定义关闭行为的场景，不建议使用[shouldDismiss](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)/[onWillDismiss](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)。
 
 ## 生命周期
 
@@ -119,15 +119,15 @@ struct SheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/zn5cHtO0QPSfu0dMoUFBpw/zh-cn_image_0000002791858581.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/LVHELGArSGCdeBh3-MjW-w/zh-cn_image_0000002764971468.png)
 
 ## 二次确认能力
 
-推荐使用onWillDismiss接口，此接口支持在回调中处理二次确认，或自定义关闭行为。
+推荐使用onWillDismiss，此接口支持在回调中处理二次确认，或自定义关闭行为。
 
 **说明** 
 
-声明onWillDismiss接口后，半模态页面的所有关闭操作，包括侧滑、点击关闭按钮、点击蒙层和下拉关闭，都需通过调用dismiss方法来实现。若未实现此逻辑，半模态页面将无法响应上述关闭操作。
+声明onWillDismiss后，半模态页面的所有关闭操作，包括侧滑、点击关闭按钮、点击蒙层和下拉关闭，都需通过调用dismiss方法来实现。若未实现此逻辑，半模态页面将无法响应上述关闭操作。
 
 ```typescript
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -201,11 +201,11 @@ struct OnWillDismiss_Dismiss {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/tn_rwhgNReWVlK8fhWifuQ/zh-cn_image_0000002762499708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/NRXCJ5s7Sc-6-yg3wisW9g/zh-cn_image_0000002765131392.png)
 
 ## 屏蔽部分关闭行为
 
-由于声明了onWillDismiss接口，半模态的关闭行为都需要dismiss处理。可以通过if等逻辑自定义处理关闭逻辑。
+由于声明了onWillDismiss，半模态的关闭行为都需要dismiss处理。可以通过if等逻辑自定义处理关闭逻辑。
 
 下述示例显示半模态页面只在下滑的时候关闭。
 
@@ -217,7 +217,7 @@ onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
 }),
 ```
 
-同理可以结合onWillSpringBackWhenDismiss接口实现更好的下滑体验。
+同理可以结合onWillSpringBackWhenDismiss实现更好的下滑体验。
 
 类比onWillDismiss，在声明了onWillSpringBackWhenDismiss后，半模态下滑时的回弹操作需要使用 SpringBackAction.springBack()处理，无此逻辑则不会回弹。
 
@@ -307,4 +307,4 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/CH8C3FkcSXKgHUSO_4-Exw/zh-cn_image_0000002791738369.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/TEMRB_slTWGDlgK1PyqItw/zh-cn_image_0000002794489967.png)

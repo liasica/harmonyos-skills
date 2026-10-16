@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/shared-arrayb
 title: SharedArrayBuffer对象
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > SharedArrayBuffer对象
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:58+08:00
+scraped_at: 2026-10-17T06:41:03+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:7a64bbf8584d6136b27a2f8cc664e8da0de1f4c3a8cd6ff6dcf120df1d98d540
+content_hash: sha256:5c889c95706028fb2c3700d3353f4d82bf132d64dc7dbf4914fc93d44d9d1774
 ---
 
 SharedArrayBuffer内部包含一块Native内存，其JS对象壳被分配在虚拟机本地堆（LocalHeap）。支持跨并发实例间共享Native内存，但是对共享Native内存的访问及修改需要采用Atomics类，防止数据竞争。SharedArrayBuffer可用于多个并发实例间的状态或数据共享。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/HwlSGqsBT6O74OqqjjZihw/zh-cn_image_0000002791857965.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/lE0CLVVuSCOmSCvbkL7Kwg/zh-cn_image_0000002764970842.png)
 
 ## 使用示例
 

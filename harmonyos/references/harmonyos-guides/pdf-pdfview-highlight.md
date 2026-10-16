@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-h
 title: 高亮显示PDF文档
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 高亮显示PDF文档
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:37+08:00
+scraped_at: 2026-10-17T06:42:40+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0cffd41b69bf28c0dee366d0f28eb22bc24f34f05d8465d487a500e877ace811
+content_hash: sha256:3e2186aaefb98abdd1734a0bc1b714f27d75b8650c519a6ee0b41099a4f47ef8
 ---
 
 PDF文档在预览时，可以对页面的矩形区域或文本设置高亮显示，高亮颜色可以自定义。
 
 [setHighlightText](../harmonyos-references/pdf-arkts-pdfviewmanage.md#sethighlighttext)可以同时高亮多个不同的文本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/DMBr1Y4JTVWx2ueAQhJgvg/zh-cn_image_0000002762501136.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/fXpdOj-0RQK7R3YuPy83BA/zh-cn_image_0000002765132824.png)
 
 ## 接口说明
 

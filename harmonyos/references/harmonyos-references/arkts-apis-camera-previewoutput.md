@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PreviewOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (PreviewOutput)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2af36dd9233d4e164e6938e0164c2e7f88c12101a0369ac1231ade18299bcdd4
+scraped_at: 2026-10-17T06:47:53+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:c76ae36cdaf9e78e95fb63bc25dd6d79dad4bc52453bac6b143f1b0af6a906ab
 ---
 
 预览输出类。继承[CameraOutput](arkts-apis-camera-cameraoutput.md)。
@@ -384,10 +384,10 @@ getPreviewRotation(displayRotation?: number): ImageRotation
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function testGetPreviewRotation(previewOutput: camera.PreviewOutput, imageRotation : camera.ImageRotation): camera.ImageRotation {
+function testGetPreviewRotation(previewOutput: camera.PreviewOutput, displayRotation: number): camera.ImageRotation {
   let previewRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
   try {
-    previewRotation = previewOutput.getPreviewRotation(imageRotation);
+    previewRotation = previewOutput.getPreviewRotation(displayRotation);
     console.info(`Preview rotation is: ${previewRotation}`);
   } catch (error) {
     // 失败返回错误码error.code并处理。
@@ -405,7 +405,7 @@ function testGetPreviewRotationWithOutParam(previewOutput: camera.PreviewOutput)
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
-    console.error(`The previewOutput.testGetPreviewRotationWithOutParam call failed. error code: ${err.code}`);
+    console.error(`The previewOutput.getPreviewRotation call failed. error code: ${err.code}`);
   }
   return previewRotation;
 }

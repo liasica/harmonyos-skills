@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全地理位置场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全地理位置场景
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:33+08:00
+scraped_at: 2026-10-17T06:41:38+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:992b5a144cdb03abbdc658d0acc59621b4fa52451a252ecbe8d822c7044f2624
+content_hash: sha256:006d401e546b7605531f029fcd747215bbaded6df33ca6573ee872dca82245fb
 ---
 
 ## 场景介绍
@@ -38,7 +38,7 @@ try {
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/XvfU5W0uSw6GCgN0ZLCVRA/zh-cn_image_0000002762340378.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/i8R1FAmKRdeU45iiliMBeg/zh-cn_image_0000002794410773.jpg)
 
 应用获取安全地理位置的优先级策略有两种，分别是精度优先和速度优先。如果选择精度优先策略，可信应用服务会优先返回GPS的结果，GPS获取超时后返回网络地理位置；而如果选择速度优先策略，可信应用服务会返回从二者中最先获取到的结果。
 

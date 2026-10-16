@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-re
 title: 版本说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:30+08:00
+scraped_at: 2026-10-17T06:43:31+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:ad296ded4d03cb8a0cef2d7e120af1eefb4fe0744506915d43d9819ba796e788
+content_hash: sha256:bbc0a4f411717eede711552342964d664b6879b1d734a60bda824440bc5a45fb
 ---
 
 ## DevEco Studio 26.0.0 Release
@@ -197,7 +197,7 @@ content_hash: sha256:ad296ded4d03cb8a0cef2d7e120af1eefb4fe0744506915d43d9819ba79
 
 如果历史工程的工程级build-profile.json5文件中signingConfigs下的name字段为空字符串，编译时会报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/YKazdh6NTfSIOaoLFGZfUg/zh-cn_image_0000002731382773.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/0u8mRu9vRvuohu0ERitl4Q/zh-cn_image_0000002731382773.png)
 
 **适配指导**
 
@@ -224,7 +224,7 @@ content_hash: sha256:ad296ded4d03cb8a0cef2d7e120af1eefb4fe0744506915d43d9819ba79
 
 如果历史工程使用了Form卡片并且在卡片页面文件（form\_config.json文件src字段对应的值）中直接或间接引用了HSP模块，则编译会报错，并提示相关文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Pilr9shRSEi8UoZFRdIhVA/zh-cn_image_0000002701823468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/YfDGyUEnTIWa4FLkk-s-lA/zh-cn_image_0000002701823468.png "点击放大")
 
 **适配指导**
 

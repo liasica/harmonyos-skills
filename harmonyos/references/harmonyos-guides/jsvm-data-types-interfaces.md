@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-data-typ
 title: JSVM-API支持的数据类型和接口
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API支持的数据类型和接口
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:56+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:4d199dd866a793e67647c35685f06e0c281016daf8379975526ede04cd40dbdf
+scraped_at: 2026-10-17T06:43:13+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:b7bd9d53be663c8d0f3a7a3d6dfb9ab9601346300c0bbf550f3623d43fe31d60
 ---
 
 ## JSVM-API 的数据类型
@@ -39,7 +39,7 @@ content_hash: sha256:4d199dd866a793e67647c35685f06e0c281016daf8379975526ede04cd4
         JSVM_DATE_EXPECTED,                   /* 期望传入日期类型 */
         JSVM_ARRAYBUFFER_EXPECTED,            /* 期望传入ArrayBuffer类型 */
         JSVM_DETACHABLE_ARRAYBUFFER_EXPECTED, /* 可分离的数组缓冲区预期状态 */
-        JSVM_WOULD_DEADLOCK,                  /* 将死锁状态 */
+        JSVM_WOULD_DEADLOCK,                  /* 操作将导致死锁 */
         JSVM_NO_EXTERNAL_BUFFERS_ALLOWED,     /* 不允许外部缓冲区 */
         JSVM_CANNOT_RUN_JS,                   /* 不能执行JS */
         JSVM_INVALID_TYPE,                    /* 非法类型 */
@@ -277,7 +277,7 @@ typedef struct {
 ```
 
 * 存储了两个无符号64位整数的128位值，用它来标识JavaScript对象，确保它们属于某种类型。
-* 比OH\_JSVM\_Instanceof更强的类型检查，如果对象的原型被操纵，OH\_JSVM\_Instanceof可能会报告误报。
+* 比OH\_JSVM\_Instanceof更强的类型检查，如果对象的原型被操纵，OH\_JSVM\_Instanceof可能会产生误报。
 * JSVM\_TypeTag 在与 OH\_JSVM\_Wrap 结合使用时最有用，因为它确保从包装对象检索的指针可以安全地转换为与先前应用于JavaScript对象的类型标签相对应的Native类型。
 
 ### 回调类型
@@ -713,7 +713,7 @@ static void RunScript(JSVM_Env env, string& src,
     } else {
         OH_JSVM_CompileScript(env, jsSrc, data, length, true, &cacheRejected, &script);
     }
-    printf("Code cache is %s\n", cacheRejected ? "rejected" : "used");
+    OH_LOG_INFO(LOG_APP, "Code cache is %{public}s", cacheRejected ? "rejected" : "used");
 
     JSVM_Value result;
     // 执行js代码
@@ -913,11 +913,11 @@ if (status != JSVM_OK) // 当执行失败出现异常时
 
             char stackstr[256];
             OH_JSVM_GetValueStringUtf8(env, stack, stackstr, 256, nullptr);
-            OH_LOG_INFO(LOG_APP, "JSVM error stack: %{public}s", stackstr);
+            OH_LOG_ERROR(LOG_APP, "JSVM error stack: %{public}s", stackstr);
 
             char messagestr[256];
             OH_JSVM_GetValueStringUtf8(env, message, messagestr, 256, nullptr);
-            OH_LOG_INFO(LOG_APP, "JSVM error message: %{public}s", messagestr);
+            OH_LOG_ERROR(LOG_APP, "JSVM error message: %{public}s", messagestr);
         }
     }
 }
@@ -925,7 +925,7 @@ if (status != JSVM_OK) // 当执行失败出现异常时
 
 ### 对象生命周期管理
 
-在调用JSVM-API接口时，底层VM堆中的对象可能会作为JSVM\_Values返回句柄。这些句柄必须在Native方法销毁或主动释放掉前，使其关联的对象处于“活动”状态，防止被引擎回收掉。
+在调用JSVM-API接口时，底层VM堆中的对象可能会作为JSVM\_Values返回句柄。在Native方法结束或句柄被主动释放之前，这些句柄必须使其关联的对象保持“活动”状态，防止对象被引擎回收。
 
 当对象句柄被返回时，它们与一个“scope”相关联。默认作用域的生命周期与Native方法调用的生命周期相关联，这些句柄及关联的对象将在Native方法的生命周期内保持活动状态。
 
@@ -973,7 +973,7 @@ JSVM_CALL(OH_JSVM_CloseEscapableHandleScope(env, scope));
 return escapee;
 ```
 
-通过CreateReference创建对象引用和释放。
+通过OH\_JSVM\_CreateReference创建对象引用，并在使用完毕后释放。
 
 ```
 JSVM_Value obj = nullptr;
@@ -1293,7 +1293,7 @@ JSVM_Value bigIntValue;
 OH_JSVM_CoerceToBigInt(env, boolValue, &bigIntValue);
 ```
 
-判断两个JSVM\_Value对象是否严格相同：先比较操作数类型，操作数类型不同就是不相等，操作数类型相同时，比较值是否相等，相等才返回true。
+判断两个JSVM\_Value对象是否严格相同：先比较操作数类型，类型不同则不相等；类型相同时再比较值，值相等才返回true。
 
 ```
 JSVM_Value value = nullptr;
@@ -1305,7 +1305,7 @@ bool isArray = true;
 OH_JSVM_StrictEquals(env, value, value, &isArray);
 ```
 
-判断两个JSVM\_Value对象是否宽松相同：判断两个操作数的类型是否相同，若不相同，且可以转换为相同的数据类型，转换为相同的数据类型后，值做严格相等比较，其他的都返回false。
+判断两个JSVM\_Value对象是否宽松相同：若两个操作数类型相同，则直接比较值是否相等；若类型不同但可以转换为相同类型，则转换后再对值做严格相等比较；其他情况均返回false。
 
 ```
 JSVM_HandleScope handleScope;
@@ -1486,7 +1486,7 @@ JS函数操作。
 ```
 JSVM_Value SayHello(JSVM_Env env, JSVM_CallbackInfo info)
 {
-    printf("Hello\n");
+    OH_LOG_INFO(LOG_APP, "Hello");
     JSVM_Value ret;
     OH_JSVM_CreateInt32(env, 2, &ret);
     return ret;
@@ -1587,7 +1587,7 @@ static JSVM_Value AssertEqual(JSVM_Env env, JSVM_CallbackInfo info)
 
 static napi_value TestWrap(napi_env env1, napi_callback_info info)
 {
-    OH_LOG_ERROR(LOG_APP, "testWrap start");
+    OH_LOG_INFO(LOG_APP, "TestWrap start");
     JSVM_InitOptions init_options;
     memset(&init_options, 0, sizeof(init_options));
     if (aa == 0) {
@@ -1639,7 +1639,7 @@ static napi_value TestWrap(napi_env env1, napi_callback_info info)
     OH_JSVM_DestroyEnv(env);
     OH_JSVM_CloseVMScope(vm, vm_scope);
     OH_JSVM_DestroyVM(vm);
-    OH_LOG_ERROR(LOG_APP, "testWrap pass");
+    OH_LOG_INFO(LOG_APP, "TestWrap pass");
     return nullptr;
 }
 ```
@@ -1856,7 +1856,7 @@ static JSVM_Value IndexedPropertyEnumerator(JSVM_Env env, JSVM_Value thisArg, JS
     uint64_t wordsOut[2] = {0ULL, 0ULL};
     JSVM_Status status = OH_JSVM_GetValueBigintWords(env, data, &signBit, &wordCount, wordsOut);
     if (status == JSVM_OK) {
-        OH_LOG_INFO(LOG_APP, "IndexedPropertyDeleter wordCount is %{public}zu", wordCount);
+        OH_LOG_INFO(LOG_APP, "IndexedPropertyEnumerator wordCount is %{public}zu", wordCount);
         auto test = reinterpret_cast<Test *>(wordsOut);
         typedef void (*callTest1)();
         callTest1 callTe = reinterpret_cast<callTest1>(test->ptr1);
@@ -1866,7 +1866,7 @@ static JSVM_Value IndexedPropertyEnumerator(JSVM_Env env, JSVM_Value thisArg, JS
 }
 
 static napi_value TestDefineClassWithProperty(napi_env env1, napi_callback_info info) {
-    OH_LOG_ERROR(LOG_APP, "TestDefineClassWithProperty start");
+    OH_LOG_INFO(LOG_APP, "TestDefineClassWithProperty start");
     JSVM_InitOptions init_options;
     memset(&init_options, 0, sizeof(init_options));
     init_options.externalReferences = externals;
@@ -1905,7 +1905,7 @@ static napi_value TestDefineClassWithProperty(napi_env env1, napi_callback_info 
     Test *test = new Test();
     test->ptr1 = (void *)test1;
     test->ptr2 = (void *)test1;
-    OH_LOG_INFO(LOG_APP, "OH_JSVM_CreateBigintWords 111 word count %{public}d",
+    OH_LOG_INFO(LOG_APP, "OH_JSVM_CreateBigintWords word count %{public}zu",
                 sizeof(*test) / sizeof(uint64_t));
     JSVM_Status status = OH_JSVM_CreateBigintWords(env, 1, 2, reinterpret_cast<const uint64_t *>(test), &res);
 
@@ -2043,7 +2043,7 @@ static napi_value TestDefineClassWithProperty(napi_env env1, napi_callback_info 
     OH_JSVM_DestroyEnv(env);
     OH_JSVM_CloseVMScope(vm, vm_scope);
     OH_JSVM_DestroyVM(vm);
-    OH_LOG_ERROR(LOG_APP, "TestDefineClassWithProperty pass");
+    OH_LOG_INFO(LOG_APP, "TestDefineClassWithProperty pass");
     return nullptr;
 }
 ```
@@ -2461,7 +2461,7 @@ static napi_value Add([[maybe_unused]] napi_env _env, [[maybe_unused]] napi_call
 }
 ```
 
-### 设置与获取和当前运行的JSVM环境相关联的数据
+### 设置和获取与当前运行的JSVM环境相关联的数据
 
 **场景介绍**
 
@@ -2535,7 +2535,7 @@ static napi_value GetInstanceData(napi_env env1, napi_callback_info info)
 {
     InstanceData *instanceData = reinterpret_cast<InstanceData *>(malloc(sizeof(InstanceData)));
     if (instanceData == nullptr) {
-        printf("Memory allocation failed!\n");
+        OH_LOG_ERROR(LOG_APP, "Memory allocation failed!");
         return nullptr;
     }
     size_t argc = 1;

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-traditi
 title: 传统曲线
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画曲线 > 传统曲线
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:10+08:00
+scraped_at: 2026-10-17T06:41:15+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:878bbe25dbb8f7bf75d2ba1b6260efdff4c739f4f1401fe1a31e29e623866531
+content_hash: sha256:332ff382f59cebe9e60e281a2a69ef03dbc4bcdc253f18c8b93654ef8b4cbaf9
 ---
 
 传统曲线基于数学公式，创造形状符合开发者预期的动画曲线。以三阶贝塞尔曲线[curves.cubicBezierCurve](../harmonyos-references/js-apis-curve.md#curvescubicbeziercurve9)为代表，通过调整曲线控制点，可以改变曲线形状，从而带来缓入、缓出等动画效果。对于同一条传统曲线，由于不具备物理含义，其形状不会因为用户行为发生任何改变，缺少物理动画的自然感和生动感。建议优先采用物理曲线创建动画，将传统曲线作为辅助用于极少数必要场景中。
@@ -110,4 +110,4 @@ struct CurveDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/xH56cjW8RfGiLqLgsoqJRw/zh-cn_image_0000002791738465.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/HPtKukT4TNem4Q_VadK50g/zh-cn_image_0000002794490065.gif)

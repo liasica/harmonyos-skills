@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/selection-ser
 title: 实现一个划词扩展能力
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 划词服务 > 实现一个划词扩展能力
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:46+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:24fb7c3085535c023a3e85250ee8c02af284e0ae39bd9ce82e55af3ca4668105
+scraped_at: 2026-10-17T06:41:50+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:f08f9dc58c00474e2320323e7c97e60d81873932509c2f60d548181c620614d3
 ---
 
 ## 接口说明
@@ -48,7 +48,7 @@ content_hash: sha256:24fb7c3085535c023a3e85250ee8c02af284e0ae39bd9ce82e55af3ca46
    ├── module.json5                             # 配置文件
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/CacRjkZlR2GtFvAA7BXntQ/zh-cn_image_0000002791859261.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/jif2h_C7SIeYhvY9Kappcw/zh-cn_image_0000002764972142.png)
 2. 在[SelectionModel.ets](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/SelectionService/SelectionAppSample/entry/src/main/ets/models/SelectionModel.ets)文件中，开发者可自定义划词模块管理类，用于统一管理划词内容、窗口等信息。并且实现一些get、set接口，便于信息的类间传递。
 
    ```typescript
@@ -323,7 +323,7 @@ content_hash: sha256:24fb7c3085535c023a3e85250ee8c02af284e0ae39bd9ce82e55af3ca46
            }
          })
          .catch((error: BusinessError) => {
-           hilog.info(0x0000, 'SelectionExtensionAbility', `Failed to createPanel, error: [${JSON.stringify(error)}]`);
+           hilog.error(0x0000, 'SelectionExtensionAbility', `Failed to createPanel, error: [${JSON.stringify(error)}]`);
            return;
          });
      }
@@ -340,7 +340,7 @@ content_hash: sha256:24fb7c3085535c023a3e85250ee8c02af284e0ae39bd9ce82e55af3ca46
              hilog.info(0x0000, 'SelectionExtensionAbility', `startAbility success, want: ${wantAbility.abilityName}`);
            })
            .catch((error: BusinessError) => {
-             hilog.info(0x0000, 'SelectionExtensionAbility', `startAbility failed, error: ${JSON.stringify(error)}`);
+             hilog.error(0x0000, 'SelectionExtensionAbility', `startAbility failed, error: ${JSON.stringify(error)}`);
            })
        }
      }

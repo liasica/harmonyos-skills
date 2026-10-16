@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 管理体检报告
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 管理体检报告
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:29+08:00
+scraped_at: 2026-10-17T06:43:29+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f39caab706bf9f92fb1956f86a4dba619692ea58b03277f5b4e90adbbaabd87c
+content_hash: sha256:5e3d3b27a57f5e683ccc1f01b040e44417f0ee506fe7543d7a217ed6a9930e38
 ---
 
 AppAnalyzer支持查看、导出、导入体检报告，具体如下。
@@ -17,14 +17,14 @@ AppAnalyzer支持查看、导出、导入体检报告，具体如下。
 1. 在DevEco Studio中，点击菜单栏**Tools >** **AppAnalyzer**，弹出AppAnalyzer页面。
 2. 点击底部**History**按钮，可查看体检报告卡片，点击卡片可跳转至详细的体检报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/HRrX-MWtSjyx2pIjYqvq1g/zh-cn_image_0000002731542455.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/wdOfzKA1SieIlnicCpBc7A/zh-cn_image_0000002731542455.png)
 
 ### DevEco Studio 6.0.1 Beta1以下版本
 
 1. 在DevEco Studio中，点击菜单栏**Tools >** **AppAnalyzer**，弹出AppAnalyzer页面。
 2. 点击底部**历史记录**按钮，可查看最近15次的体检报告记录，点击时间戳可跳转至详细的体检报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/sQgq_BTWSfuYkVfEoCRQDw/zh-cn_image_0000002731542461.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/nrXltdDaREWEEywBxgW04A/zh-cn_image_0000002731542461.png)
 
 ## 导出报告
 
@@ -37,10 +37,10 @@ AppAnalyzer支持查看、导出、导入体检报告，具体如下。
 
 1. 点击AppAnalyzer底部的**History**按钮，选择符合条件的报告卡片进入报告页面，点击右上角的**Export**按钮，选择需要保存的路径，点击**OK**后，等待报告导出。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Q5y5hxgzQv6tzz-YDnostg/zh-cn_image_0000002701663268.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/oektPOCMTl-2gznj4uEhBg/zh-cn_image_0000002701663268.png)
 2. 报告导出成功后，在DevEco Studio右下角会弹框提示，点击**View the report**可打开报告保存的路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/KlGHjbd4SKqKi0MOO_yh_g/zh-cn_image_0000002701663262.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/r7Zez_81Tq6zqOtaSWeYGg/zh-cn_image_0000002701663262.png)
 
 ## 导入报告
 
@@ -53,7 +53,7 @@ AppAnalyzer支持查看、导出、导入体检报告，具体如下。
 
 1. 点击AppAnalyzer底部的**History**按钮，点击右上角的**Import** **> Analyzer Report**，根据界面提示，确保即将导入的报告满足相关要求。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/GtlRPtF1Q3KzgbMQ6sL5CQ/zh-cn_image_0000002701663266.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/WfCu70WETFeUC8A5Iqv6dw/zh-cn_image_0000002701663266.png)
 2. 选择本地的体检报告zip文件，点击**OK**后，等待报告导入。导入成功后，AppAnalyzer会自动打开报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/9KAKAA4qTTOHwGbsGhg-Qg/zh-cn_image_0000002731382485.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/PtSJ1uVgQDWbdhGgj9XBEA/zh-cn_image_0000002731382485.png)

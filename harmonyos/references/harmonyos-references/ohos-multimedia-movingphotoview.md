@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-mult
 title: "@ohos.multimedia.movingphotoview (动态照片)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.multimedia.movingphotoview (动态照片)
 category: harmonyos-references
-scraped_at: 2026-10-15T07:11:39+08:00
+scraped_at: 2026-10-17T06:48:19+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9a74702d26f6ec488155ff4cc5591ea5200de96ffdfa20a86b7771396f332e7e
+content_hash: sha256:5fdcadb15496589f107f571a3036573395bfdce4f28fe15c8cbda1a84dfcc1df
 ---
 
 用于播放动态照片文件并控制其播放状态的组件。
@@ -483,7 +483,7 @@ class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHan
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/dHsH0VnHTfe4JO73oQB0qA/zh-cn_image_0000002791741761.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/CZnv6qsMQWaWGsxhMe5vIg/zh-cn_image_0000002765134780.gif)
 
 ## 示例2：在元服务中使用动态照片
 
@@ -579,7 +579,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/wqC3OyMBSQaX4gNgjC3u1Q/zh-cn_image_0000002762343186.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/t0Li_HK6RfaX5Sl1gW5Tsw/zh-cn_image_0000002794493355.gif)
 
 ## 示例3：图像分析功能使用
 
@@ -735,4 +735,4 @@ class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHan
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/tpX2opdFQjCW1HG0Wa2EFA/zh-cn_image_0000002791861977.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/5b651KnDRAaSFVthUSpajg/zh-cn_image_0000002794413579.gif)

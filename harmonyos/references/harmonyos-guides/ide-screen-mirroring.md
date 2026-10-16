@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-screen-mi
 title: 设备投屏
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 设备投屏
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:28+08:00
+scraped_at: 2026-10-17T06:43:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:9f0fd456562bb534f6876ffc80128ed20e144e4c4427503f9cb9305361a3b681
+content_hash: sha256:50a0ea8bcf308637397eaa2c6e5c664085b9ad04e754a0f51b1bc8304d853269
 ---
 
 从26.0.0版本开始，新增设备投屏功能，支持对已连接的设备进行投屏操作，方便查看设备屏幕内容并进行设备操控，提升开发调试效率。
@@ -19,25 +19,25 @@ content_hash: sha256:9f0fd456562bb534f6876ffc80128ed20e144e4c4427503f9cb9305361a
 
 1. 在DevEco Studio下方点击**Screen Mirroring，**或点击菜单栏**View > Tool Windows >** **Screen Mirroring**，打开设备投屏窗口。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/wr2W3JQGRCyVKtJiGmaQoA/zh-cn_image_0000002701823098.png)
-2. 从设备下拉列表中选择设备（设备需已连接），点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/drrqEtEfTJyyjtbNvKmMRA/zh-cn_image_0000002701823106.png)按钮开始投屏。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/UvxXGGG3TX-_TaLPAgNH8w/zh-cn_image_0000002701823098.png)
+2. 从设备下拉列表中选择设备（设备需已连接），点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/PnR324V8Qe6BkBtfSlTV6Q/zh-cn_image_0000002701823106.png)按钮开始投屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ZWrdDYaLSfWoJNG9U3PIDw/zh-cn_image_0000002701823092.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/OZAgqnruQLaUtdr_LGWn3g/zh-cn_image_0000002701823092.png)
 3. 设备投屏后，支持对设备进行如下操作：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/3OIzcuyeSAqqaoBnCjILtg/zh-cn_image_0000002731542365.png)：停止投屏。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/37w5s5uOTbqijq4gm5QbVg/zh-cn_image_0000002731542365.png)：停止投屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/eHd1ADggQKqObhUsYJTYxA/zh-cn_image_0000002731382395.png)：刷新重连设备。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Q9fs4DrNQFCexOF79Dzh8A/zh-cn_image_0000002731382395.png)：刷新重连设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/WwB8oZJzQuecLT3NNMbcgw/zh-cn_image_0000002701823096.png)：对应设备返回键，返回上一屏幕或退出应用等。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/MXqy1-5iRyKQhK25QJgrZQ/zh-cn_image_0000002701823096.png)：对应设备返回键，返回上一屏幕或退出应用等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/rWdiQES_QIyeKvVPYAV18g/zh-cn_image_0000002731382409.png)：查看最近使用的应用列表。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Noz3fxN0S-ifDLLc8ro2Zg/zh-cn_image_0000002731382409.png)：查看最近使用的应用列表。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/DtzsQNemTFegRO-BcciEZA/zh-cn_image_0000002731382405.png)：对应Home键，返回主屏幕。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/gQ7l8F16QL2KUhUfJIC6aA/zh-cn_image_0000002731382405.png)：对应Home键，返回主屏幕。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/6hr1Nn-iTqG4CmN2s_rGfA/zh-cn_image_0000002731542379.png)：对应电源键，可以锁屏和亮屏。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/22hWkxcZRTCFhUQBXGWjfQ/zh-cn_image_0000002731542379.png)：对应电源键，可以锁屏和亮屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/PLBJbjwMQeSJO8EuXxQwjQ/zh-cn_image_0000002701823102.png)：屏幕点击模式，默认为鼠标模式，点击按钮后切换为触摸屏模式，同时图标切换为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/lyxi1JoZTj6hqHnKlTIr-g/zh-cn_image_0000002701663174.png)。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/XgzznHBLSgyfOe8dbRkp1Q/zh-cn_image_0000002701823102.png)：屏幕点击模式，默认为鼠标模式，点击按钮后切换为触摸屏模式，同时图标切换为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/xB-3Hlh-S9O1dmg-hMPuNw/zh-cn_image_0000002701663174.png)。
 4. 支持使用鼠标操控屏幕、使用键盘输入等，具体参考下文介绍。
 
 ## 操控屏幕

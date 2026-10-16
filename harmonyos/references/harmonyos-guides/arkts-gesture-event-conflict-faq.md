@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 手势事件冲突常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 手势事件冲突常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:16+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:e4a432a046ee6bdf3fa6c306c21c9e4c82a9e3db8be232b2de7b4acc35cbba62
+scraped_at: 2026-10-17T06:41:21+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:032a031ba712130a6fbc8799c82aa6710c0cf3d03a7e75e5aba86d5a953001ed
 ---
 
 ## 滚动容器嵌套滚动容器事件冲突
@@ -71,7 +71,7 @@ content_hash: sha256:e4a432a046ee6bdf3fa6c306c21c9e4c82a9e3db8be232b2de7b4acc35c
 
 例如给组件同时设置单击和双击的点击手势[TapGesture](../harmonyos-references/ts-basic-gestures-tapgesture.md)，按如下方式设置会发现双击手势失效，这是因为在互斥识别的组合手势中，手势会按声明的顺序进行识别，若有一个手势识别成功，则结束手势识别。因为单击手势放在了前面，所以当双击的时候会优先识别了单击手势，单击成功后后面的双击回调就不会执行了。
 
-```ts
+```typescript
 @Entry
 @Component
 struct GesturesConflictScene2 {
@@ -85,6 +85,7 @@ struct GesturesConflictScene2 {
     }
     .height(200)
     .width('100%')
+    // 以下手势互斥，某个手势成功识别后，其他手势无法通过双击识别
     .gesture(
       GestureGroup(GestureMode.Exclusive,
         TapGesture({ count: 1 })
@@ -124,7 +125,7 @@ struct GesturesConflictScene2 {
 
 图片长按手势响应失败或冲突，在Image控件上添加长按手势后，长按图片无法响应对应方法，而是图片放大的动画，示例代码如下。
 
-```ts
+```typescript
 @Entry
 @Component
 struct GesturesConflictScene3 {
@@ -144,12 +145,13 @@ struct GesturesConflictScene3 {
             LongPressGesture({ repeat: true })
               .onAction((event: GestureEvent) => {
               })
+              // 长按动作结束
               .onActionEnd(() => {
                 try {
                   this.getUIContext().getPromptAction().showToast({ message: 'Long Press' });
                 } catch (err) {
                   let error = err as BusinessError;
-                  hilog.error(0x0000, 'testTag', `showToast err, code: ${error.code}, mesage: ${error.message}`);
+                  hilog.error(0x0000, 'testTag', `showToast err, code: ${error.code}, message: ${error.message}`);
                 }
               })
           )
@@ -163,7 +165,7 @@ struct GesturesConflictScene3 {
 
 这是因为Image组件内置的长按动画和用户自定义的长按手势[LongPressGesture](../harmonyos-references/ts-basic-gestures-longpressgesture.md)冲突了。可以使用priorityGesture绑定手势的方式替代[gesture](../harmonyos-references/ts-gesture-settings.md#gesture)的方式，这样就会只响应自定义手势LongPressGesture了。如果需要两者都执行可以使用parallelGesture的绑定方式。
 
-```ts
+```typescript
 .priorityGesture(
   LongPressGesture({ repeat: true })
     .onAction((event: GestureEvent) => {
@@ -173,7 +175,7 @@ struct GesturesConflictScene3 {
         this.getUIContext().getPromptAction().showToast({ message: 'Long Press' });
       } catch (err) {
         let error = err as BusinessError;
-        hilog.error(0x0000, 'testTag', `showToast err, code: ${error.code}, mesage: ${error.message}`);
+        hilog.error(0x0000, 'testTag', `showToast err, code: ${error.code}, message: ${error.message}`);
       }
     })
   )
@@ -183,7 +185,7 @@ struct GesturesConflictScene3 {
 
 和触摸事件一样，手势事件也可以通过[hitTestBehavior](../harmonyos-references/ts-universal-attributes-hit-test-behavior.md#hittestbehavior)属性来进行透传，例如下面这个示例，上层的Column组件设置hitTestBehavior属性为HitTestMode.None后，可以将滑动手势[SwipeGesture](../harmonyos-references/ts-basic-gestures-swipegesture.md)透传给被覆盖的Column组件。HitTestMode.None：自身不接收事件，但不会阻塞兄弟组件和子组件继续做触摸测试。
 
-```ts
+```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
@@ -197,14 +199,14 @@ struct GesturesConflictScene4 {
         .height('100%')
         .backgroundColor(Color.Black)
         .gesture(
-          SwipeGesture({ direction: SwipeDirection.Horizontal })
+          SwipeGesture({ direction: SwipeDirection.Horizontal }) // 水平方向滑动手势
             .onAction((event) => {
               if (event) {
                 try {
                   this.getUIContext().getPromptAction().showToast({ message: 'SwipeGesture' });
                 } catch (err) {
                   let error = err as BusinessError;
-                  hilog.error(0x0000, 'testTag', `showToast err, code: ${error.code}, mesage: ${error.message}`);
+                  hilog.error(0x0000, 'testTag', `showToast err, code: ${error.code}, message: ${error.message}`);
                 }
               }
             })
@@ -227,7 +229,7 @@ struct GesturesConflictScene4 {
 
 例如下面这个示例，给按钮Button1设置了.monopolizeEvents(true)之后，当手指首先触摸在Button1之后，在手指离开之前，其它组件的手势和事件都不会触发。
 
-```ts
+```typescript
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -251,7 +253,7 @@ struct GesturesConflictScene5 {
                 this.getUIContext().getPromptAction().showToast({ message: 'GesturesConflictScene5 Button2 click' });
               } catch (err) {
                 let error = err as BusinessError;
-                hilog.error(0x0000, 'testTag', `showToast err, code: ${error.code}, mesage: ${error.message}`);
+                hilog.error(0x0000, 'testTag', `showToast err, code: ${error.code}, message: ${error.message}`);
               }
           })
       }
@@ -275,7 +277,7 @@ struct GesturesConflictScene5 {
 
 在手势识别期间，开发者决定是否响应手势，例如下面的示例代码，通过[onGestureJudgeBegin](../harmonyos-references/ts-gesture-customize-judge.md#ongesturejudgebegin)回调方法在手势识别期间进行判定，当手势为GestureType.DRAG的时候，不响应该手势，所以会使定义的onDragStart事件失效。
 
-```ts
+```typescript
 @Entry
 @Component
 struct GesturesConflictScene6 {
@@ -302,6 +304,7 @@ struct GesturesConflictScene6 {
           console.info('GesturesConflictScene6: ' + longPressEvent.repeat);
         }
         if (gestureInfo.type === GestureControl.GestureType.DRAG) {
+          // 返回REJECT会使拖拽手势识别失败
           return GestureJudgeResult.REJECT;
         } else if (gestureInfo.tag === 'tap1' && event.pressure > 10) {
           return GestureJudgeResult.CONTINUE

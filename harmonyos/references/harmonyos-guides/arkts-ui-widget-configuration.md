@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 配置ArkTS卡片的配置文件
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 配置ArkTS卡片的配置文件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:77975bc2b00f57469682e0ea24f361e487a3cbb0f7f76c81f9d12c6ba3f31a96
+scraped_at: 2026-10-17T06:41:27+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:b427e2e8c26d574509824b7c2ec92f9893829b6150e7d32db26f64cafffec7dd
 ---
 
 卡片相关的配置文件包括[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)配置和卡片配置。如果是[独立卡片包](arkts-ui-widget-creation.md#方式二独立包方式创建卡片)，还会包含[独立卡片包配置](arkts-ui-widget-configuration.md#独立卡片包配置)。
@@ -106,9 +106,9 @@ content_hash: sha256:77975bc2b00f57469682e0ea24f361e487a3cbb0f7f76c81f9d12c6ba3f
 | multiScheduledUpdateTime | 表示卡片的多定点刷新的时刻，作为单点刷新的一个附加参数，采用24小时制，精确到分钟，多个时间用英文逗号分隔，最多写24个时间，例如："10:30,10:50,11:00"。  **说明：**  从API version 18开始，支持该字段。multiScheduledUpdateTime需要配合scheduledUpdateTime使用。 | 字符串 | 可缺省，缺省时不进行多定点刷新。 |
 | conditionUpdate | 表示卡片支持的条件刷新。当前支持取值如下：  - network：表示支持网络刷新。  **说明：**  从API version 18开始，支持该字段配置。从API版本26.0.0开始，设置后功能生效。 | 字符串数组 | 可缺省，缺省值为空字符串数组。 |
 | [funInteractionParams](arkts-ui-widget-configuration.md#funinteractionparams标签) | 趣味交互类型互动卡片扩展字段。  **说明：**  从API version 20开始，支持该字段。 | 对象 | 可缺省，缺省为空。funInteractionParams 和 sceneAnimationParams 同时配置时识别为趣味交互类型互动卡片。 |
-| [sceneAnimationParams](arkts-ui-widget-configuration.md#sceneanimationparams标签) | [场景动效类型互动卡片](arkts-ui-liveform-sceneanimation-development.md)扩展字段。从API version 20开始，支持该字段。 | 对象 | 可缺省，缺省为空。funInteractionParams 和 sceneAnimationParams 同时配置时识别为趣味交互类型互动卡片。 |
+| [sceneAnimationParams](arkts-ui-widget-configuration.md#sceneanimationparams标签) | [场景动效类型互动卡片](arkts-ui-liveform-sceneanimation-development.md)扩展字段。  **说明：**  从API version 20开始，支持该字段。 | 对象 | 可缺省，缺省为空。sceneAnimationParams和funInteractionParams同时配置时识别为趣味交互类型互动卡片；仅配置sceneAnimationParams时识别为场景动效类型互动卡片。 |
 | resizable | 表示是否可以拖拽卡片调整大小。调整值必须在该卡片或者同groupId卡片的supportDimensions配置列表中。  - true：可以调整大小。  - false：不可以调整大小。  **说明：**  从API version 20开始，支持该字段。 | 布尔类型 | 可缺省，缺省值为false。 |
-| groupId | 表示一组卡片的共同id。多张卡片的groupId相同且resizable为true时，多张卡片的supportDimensions配置共享，推荐多张卡片功能相同且需要调整卡片尺寸时配置。  示例一：卡片A的groupId配置为'1'，resizable配置为true，supportDimension为2\*2。卡片B的groupId配置为'1'，resizable配置为true，supportDimension为2\*4。那么支持卡片A、B之间调整大小。  示例二：当supportDimension存在多个，resizable设置为true时，优先在同一张卡片之间调整大小。卡片A的resizable配置为true，supportDimension为2\*2、2\*4，支持卡片A的两个尺寸之间调整大小。  示例三：卡片A的groupId配置为'1'，resizable配置为true，supportDimension为1\*2。卡片B的groupId配置为'1'，resizable配置为true，supportDimension为2\*2、2\*4、4\*4。卡片A可以调整到卡片B的默认尺寸，卡片B只支持在B卡片支持的三个尺寸之间调整大小，无法调整为卡片A。  **说明：**  从API version 20开始，支持该字段。 | 字符串 | 可缺省，空字符串。 |
+| groupId | 表示一组卡片的共同id。多张卡片的groupId相同且resizable为true时，多张卡片的supportDimensions配置共享，推荐多张卡片功能相同且需要调整卡片尺寸时配置。  示例一：卡片A的groupId配置为'1'，resizable配置为true，supportDimensions为2\*2。卡片B的groupId配置为'1'，resizable配置为true，supportDimensions为2\*4。那么支持卡片A、B之间调整大小。  示例二：当supportDimensions存在多个，resizable设置为true时，优先在同一张卡片之间调整大小。卡片A的resizable配置为true，supportDimensions为2\*2、2\*4，支持卡片A的两个尺寸之间调整大小。  示例三：卡片A的groupId配置为'1'，resizable配置为true，supportDimensions为1\*2。卡片B的groupId配置为'1'，resizable配置为true，supportDimensions为2\*2、2\*4、4\*4。卡片A可以调整到卡片B的默认尺寸，卡片B只支持在B卡片支持的三个尺寸之间调整大小，无法调整为卡片A。  **说明：**  从API version 20开始，支持该字段。 | 字符串 | 可缺省，空字符串。 |
 | [supportDeviceTypes](arkts-ui-widget-configuration.md#supportdevicetypes标签) | 表示特定卡片支持的设备类型。例如，卡片的supportDeviceTypes字段配置了“phone”、“tablet”、“tv”，那么该卡片就支持在手机、平板、大屏上面显示。  **说明：**  从API version 22开始，支持该字段。 | 字符串数组 | 可缺省，缺省值：["phone", "tablet", "tv", "wearable", "car", "2in1"]。 |
 | [supportDevicePerformanceClasses](arkts-ui-widget-configuration.md#supportdeviceperformanceclasses标签) | 表示特定卡片支持的设备性能等级信息。例如，卡片的supportDevicePerformanceClasses字段配置了“high”、“medium”、“low”，那么该卡片就支持在性能等级为“high”、“medium”、“low”设备上面显示。  **说明：**  从API version 22开始，支持该字段。 | 字符串数组 | 可缺省，缺省值：["high", "medium", "low"]。 |
 | [standby](arkts-ui-widget-configuration.md#standby标签) | 待机屏保显示页面卡片扩展字段。  **说明：**  从API version 23开始，支持该字段。依赖系统实现待机屏保显示应用后展示 | 对象 | 可缺省，属性缺省值见[standby标签](arkts-ui-widget-configuration.md#standby标签)。 |
@@ -147,7 +147,7 @@ content_hash: sha256:77975bc2b00f57469682e0ea24f361e487a3cbb0f7f76c81f9d12c6ba3f
 
 ### funInteractionParams标签
 
-此标签标识趣味交互类型互动卡片配置。funInteractionParams 和 sceneAnimationParams 同时配置时识别为趣味交互类型互动卡片。
+此标签标识趣味交互类型互动卡片配置。funInteractionParams和sceneAnimationParams同时配置时识别为趣味交互类型互动卡片。
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -172,7 +172,7 @@ content_hash: sha256:77975bc2b00f57469682e0ea24f361e487a3cbb0f7f76c81f9d12c6ba3f
 
 ### sceneAnimationParams标签
 
-此标签标识场景动效类型互动卡片配置。funInteractionParams 和 sceneAnimationParams 同时配置时识别为趣味交互类型互动卡片。
+此标签标识场景动效类型互动卡片配置。sceneAnimationParams和funInteractionParams同时配置时识别为趣味交互类型互动卡片；仅配置sceneAnimationParams时识别为场景动效类型互动卡片。
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

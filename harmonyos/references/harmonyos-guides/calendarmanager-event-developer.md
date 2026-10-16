@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/calendarmanag
 title: 日程管理
 breadcrumb: 指南 > 应用服务 > Calendar Kit（日历服务） > 日程管理
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e56d961de7ee261f27aa695f69762a3b681933aae034d3db890e757cea9b731b
+scraped_at: 2026-10-17T06:42:26+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:262cfd4c7794c14381fa456c2c8085625708503a624f8458f26af7d765f71737
 ---
 
 日程指特定的事件或者活动安排，日程管理即对这些事件、活动进行规划和控制，能更有效地利用相关资源、提高生产力和效率，使人们更好地管理时间和任务。
@@ -168,11 +168,11 @@ Calendar Kit中的日程[Event](../harmonyos-references/js-apis-calendarmanager.
      recurrenceRule: {
        // 日程重复规则类型，支持按天、按周、按月、按年重复
        recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
-       // 日程重复次数，该字段和expire属性只需要填写一个，如果两个都填写按照count属性计算。
+       // 日程重复次数，当count与interval和expire同时设置时，以先到达的限制条件及效果为准。
        count: 100,
        // 重复日程间隔时间，与recurrenceFrequency相关，此示例表示日程每隔2天进行重复。
        interval: 2,
-       // 日程过期时间，该字段和count属性只需要填写一个，如果两个都填写按照count属性计算。
+       // 日程过期时间，当expire与count和interval同时设置时，以先到达的限制条件及效果为准。
        expire: date.getTime() + 60 * 60 * 1000 * 3,
        // 日程排除日期，将该日期从重复日程中排除掉
        excludedDates: [date.getTime() + 60 * 60 * 1000 * 2]

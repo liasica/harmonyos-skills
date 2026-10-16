@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: SceneResources
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > graphics3d > SceneResources
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:de96df43a97c498ff049b923d308fcf88e0b08d777175ffc233a59524c895ae2
+scraped_at: 2026-10-17T06:48:39+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:13197c6205ea47e5b9e18e021d46dd27643f477741d09e19ba2b56c0fa309a61
 ---
 
 本模块提供ArkGraphics 3D中常用的基本资源类型，包括着色器、材质、网格、动画、环境或图片等用于构建3D场景的各类资源。
@@ -690,7 +690,7 @@ getPropertyValue(propertyName: string): Object | null | undefined
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| propertyName | string | 是 | 特定特效属性的名称。目前支持的字符串为：  -'exposure':该属性表示图像的曝光度。  -'vibrance': 该属性表示图像的自然饱和度。 |
+| propertyName | string | 是 | 特定特效属性的名称。目前支持的字符串为：  -'exposure'：该属性表示图像的曝光度。  -'vibrance'：该属性表示图像的自然饱和度。 |
 
 **返回值：**
 
@@ -732,7 +732,7 @@ setPropertyValue(propertyName: string, value: Object | undefined): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| propertyName | string | 是 | 特定特效属性的名称。目前支持的字符串为：  -'exposure':该属性表示图像的曝光度。  -'vibrance': 该属性表示图像的自然饱和度。 |
+| propertyName | string | 是 | 特定特效属性的名称。目前支持的字符串为：  -'exposure'：该属性表示图像的曝光度。  -'vibrance'：该属性表示图像的自然饱和度。 |
 | value | Object | undefined | 是 | 要设置的特效属性值。  -'exposure'：value实际类型为number，推荐取值范围[-5, 5]。取值越大，图像越亮。  -'vibrance'：value实际类型为number，推荐取值范围 [-1, 1]。取值越大，图像颜色越鲜艳。 |
 
 **返回值：**

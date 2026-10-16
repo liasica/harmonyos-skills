@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: Enterprise Space Kit简介
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > Enterprise Space Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:26+08:00
+scraped_at: 2026-10-17T06:42:28+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:b67bdf92b72264e4ca22766ba82289f562835c719b02ca008f8720dc652d508c
+content_hash: sha256:3a99364a3e9a952466f1348d9e1d0dbc8169e59cfe8dd4c9908b0365ab3b280e
 ---
 
 Enterprise Space Kit（企业数字空间服务）为企业[MDM](mdm-kit.md)应用提供[企业数字空间](enterprisespace-introduction.md#企业数字空间基础特性)的空间管控、空间互传管控等API，助力企业依托MDM应用实现集中管理与远程配置，确保企业数字空间适配企业业务场景，同时满足数据传输安全管控要求。
@@ -16,11 +16,11 @@ Enterprise Space Kit（企业数字空间服务）为企业[MDM](mdm-kit.md)应�
 
 **空间互传：** 企业数字空间专属应用，支持跨空间文件共享。企业可自主管控数据流转，保障数据安全，实现高效共创。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/yCrA4a7TTPSgQWXoyzmrKA/zh-cn_image_0000002762340986.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Ag8OMA7XRRyS6fUNSa2HXg/zh-cn_image_0000002794411387.gif)
 
 **空间切换：** 通过四指横滑、快捷键等多种便捷方式在两个空间之间丝滑切换，切换时身份、网络、数据整体切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/WU4sfXHyTOmcArU4ghplqQ/zh-cn_image_0000002791859783.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/nzPwg9ZNRV62MthypO-16w/zh-cn_image_0000002764972668.gif)
 
 **空间开启：** 企业可通过HEM或MDM开启企业数字空间。HEM开启的具体操作步骤请参考[PC企业版配置](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-devices-ot-0000002307766441#section1177603005511)。
 

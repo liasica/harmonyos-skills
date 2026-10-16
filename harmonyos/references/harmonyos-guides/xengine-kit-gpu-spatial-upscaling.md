@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-g
 title: 空域GPU超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域GPU超分
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:18+08:00
+scraped_at: 2026-10-17T06:42:21+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:7f2bcdf14aefd6773750b6c446d1a83f4a62e9e5cf7a26e757031dbe4df3b963
+content_hash: sha256:5890e5bd9bf4a0fc2e6c06b2417b6448eaa3c3b8a7a62b103ed616a63fada7c3
 ---
 
 XEngine Kit提供空域GPU超分特性，其基于单帧输入图像，使用空间邻域信息实现超采样，开销较小同时收益可观，建议使用超分倍率为[1.2, 1.5]。
@@ -45,7 +45,7 @@ XEngine Kit提供空域GPU超分特性，其基于单帧输入图像，使用空
 
 * 下面是基于OpenGL ES图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/5P4IIjrWRjGvl_-TY6YT6g/zh-cn_image_0000002762340832.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/YxPif4Q4SouvafxlyATgXA/zh-cn_image_0000002794411231.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_SpatialUpscaleParameter](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_spatialupscaleparameter)接口配置超分参数。
@@ -56,7 +56,7 @@ XEngine Kit提供空域GPU超分特性，其基于单帧输入图像，使用空
 
 * 下面是基于Vulkan图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/oB2yQTleTsGnewBz78vPTA/zh-cn_image_0000002791859629.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/3QE921eXTiGCXEMSrA0vXw/zh-cn_image_0000002764972512.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_CreateSpatialUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_createspatialupscale)接口创建超分实例。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: YUV拍照(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > YUV拍照(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:50+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:e086d026892bd26ee46f7768cf702756c39e32e1349ff085390582c4ed9c1228
+scraped_at: 2026-10-17T06:42:09+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:a3062744841dd6e2608fc9461128298080055af9f13a7ecee3fce75d419d834d
 ---
 
 从API version 23开始，相机框架提供YUV格式图片拍照能力。与普通拍照相比，YUV拍照获取到的是未经过编码的图像数据，完整保留了传感器捕获的原始亮度和色度信息，适用于视频编码或专业处理。同时，拍摄过程会产生更高的能耗开销，保存会占用更多的存储空间。
@@ -149,7 +149,7 @@ content_hash: sha256:e086d026892bd26ee46f7768cf702756c39e32e1349ff085390582c4ed9
          OH_PixelmapNative* mainPixelmap;
          Image_ErrorCode imageErr = OH_PictureNative_GetMainPixelmap(picture, &mainPixelmap);
          if (imageErr != IMAGE_SUCCESS || mainPixelmap == nullptr) {
-             OH_LOG_ERROR(LOG_APP, "OH_ImageNative_GetImageSize call failed, errorCode: %{public}d", imageErr);
+             OH_LOG_ERROR(LOG_APP, "OH_PictureNative_GetMainPixelmap call failed, errorCode: %{public}d", imageErr);
              return;
          }
          pixelMap = nullptr;

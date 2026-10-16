@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-erro
 title: 使用JSVM-API接口进行错误处理开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行错误处理开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:03f9787a42287430940db5f132d97101f1dad794b05cbfa3227bfb24745c6269
+scraped_at: 2026-10-17T06:43:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:e6e8bc8da54c178e676b7dc4d7fb4e54f90f29ade5b11fffdd7076d00bdb04f9
 ---
 
 ## 简介
@@ -68,7 +68,7 @@ static void GetLastErrorAndClean(JSVM_Env env)
     char codeStr[maxCodeLength];
     OH_JSVM_GetValueStringUtf8(env, message, messageStr, maxMessageLength, nullptr);
     OH_JSVM_GetValueStringUtf8(env, errorCode, codeStr, maxCodeLength, nullptr);
-    OH_LOG_INFO(LOG_APP, "JSVM error message: %{public}s, error code: %{public}s", messageStr, codeStr);
+    OH_LOG_ERROR(LOG_APP, "JSVM error message: %{public}s, error code: %{public}s", messageStr, codeStr);
 }
 
 // OH_JSVM_CreateError的样例方法
@@ -321,7 +321,7 @@ static JSVM_Value JsVmIsError(JSVM_Env env, JSVM_CallbackInfo info)
     if (status == JSVM_OK) {
         OH_LOG_INFO(LOG_APP, "JSVM API call OH_JSVM_IsError success, result is %{public}d", result);
     } else {
-        OH_LOG_INFO(LOG_APP, "JSVM API call OH_JSVM_IsError failed");
+        OH_LOG_ERROR(LOG_APP, "JSVM API call OH_JSVM_IsError failed");
     }
     // 取出result通过OH_JSVM_GetBoolean接口将取出的bool值转换为JSVM_Value类型的值返回出去
     JSVM_Value returnValue = nullptr;
@@ -368,7 +368,7 @@ static JSVM_Value JsVmCreateTypeError(JSVM_Env env, JSVM_CallbackInfo info)
     if (status == JSVM_OK) {
         OH_LOG_INFO(LOG_APP, "JSVM API Create TypeError SUCCESS");
     } else {
-        OH_LOG_INFO(LOG_APP, "JSVM API Create TypeError FAILED");
+        OH_LOG_ERROR(LOG_APP, "JSVM API Create TypeError FAILED");
     }
     return result;
 }
@@ -412,7 +412,7 @@ static JSVM_Value JsVmCreateRangeError(JSVM_Env env, JSVM_CallbackInfo info)
     if (status == JSVM_OK) {
         OH_LOG_INFO(LOG_APP, "JSVM API CreateRangeError SUCCESS");
     } else {
-        OH_LOG_INFO(LOG_APP, "JSVM API CreateRangeError FAILED");
+        OH_LOG_ERROR(LOG_APP, "JSVM API CreateRangeError FAILED");
     }
     return result;
 }
@@ -456,7 +456,7 @@ static JSVM_Value JsVmCreateSyntaxError(JSVM_Env env, JSVM_CallbackInfo info)
     if (status == JSVM_OK) {
         OH_LOG_INFO(LOG_APP, "JSVM API CreateSyntaxError SUCCESS");
     } else {
-        OH_LOG_INFO(LOG_APP, "JSVM API CreateSyntaxError FAILED");
+        OH_LOG_ERROR(LOG_APP, "JSVM API CreateSyntaxError FAILED");
     }
     return result;
 }
@@ -495,7 +495,7 @@ static JSVM_Value JsVmGetAndClearLastException(JSVM_Env env, JSVM_CallbackInfo i
     JSVM_Value result = nullptr;
     JSVM_Status status = OH_JSVM_GetAndClearLastException(env, &result);
     if (status != JSVM_OK) {
-        OH_LOG_INFO(LOG_APP, "JSVM API OH_JSVM_GetAndClearLastException FAILED");
+        OH_LOG_ERROR(LOG_APP, "JSVM API OH_JSVM_GetAndClearLastException FAILED");
     } else {
         OH_LOG_INFO(LOG_APP, "JSVM API OH_JSVM_GetAndClearLastException SUCCESS");
     }
@@ -550,7 +550,7 @@ static JSVM_Value JsVmIsExceptionPending(JSVM_Env env, JSVM_CallbackInfo info)
         // 将处理的异常返回出去
         return result;
     } else {
-        OH_LOG_INFO(LOG_APP, "JSVM API OH_JSVM_IsExceptionPending: FAILED");
+        OH_LOG_ERROR(LOG_APP, "JSVM API OH_JSVM_IsExceptionPending: FAILED");
     }
     return nullptr;
 }

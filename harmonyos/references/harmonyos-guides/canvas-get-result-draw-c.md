@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-re
 title: 画布的获取与绘制结果的显示（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 画布的获取与绘制结果的显示 > 画布的获取与绘制结果的显示（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:29+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:23b7b58979fbadbee88aadc6ac127726c005c0d81a52a5e9039ba4b8de1efa84
+scraped_at: 2026-10-17T06:42:17+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:7c6e445ff129fdc456f7133a46ce8cc81a5bedf2714b71446dd34b1d2a696b8b
 ---
 
 ## 场景介绍
@@ -328,7 +328,7 @@ GPU后端Canvas指画布是基于GPU进行绘制的，GPU的并行计算能力�
            return -1;
        }
 
-       SAMPLE_LOGE("Init success.");
+       SAMPLE_LOGI("Init success.");
        return 0;
    }
    ```

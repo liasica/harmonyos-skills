@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avp
 title: 使用AVPlayer播放视频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用AVPlayer播放视频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4571fed5c3a2ff92e7f824d23f39b01c61e1d58904b93f1d29cf5916511f6cec
+scraped_at: 2026-10-17T06:42:12+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:f17e1194c4906563ebb9045a43c0d63e05a65c5395276a5a99837c596174b1c4
 ---
 
 使用[AVPlayer](../harmonyos-references/capi-avplayer.md)可以实现端到端播放原始媒体资源，本开发指导将以完整地播放一个视频作为示例，向开发者讲解AVPlayer视频播放相关功能。
@@ -16,7 +16,7 @@ content_hash: sha256:4571fed5c3a2ff92e7f824d23f39b01c61e1d58904b93f1d29cf5916511
 
 **播放状态变化示意图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/1c6DPgpLQEisaISWofFRwQ/zh-cn_image_0000002762340680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/b9gigZmQTgC3wvkEPri56Q/zh-cn_image_0000002794411075.png)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)。当播放处于AV\_PREPARED/AV\_PLAYING/AV\_PAUSED/AV\_COMPLETED状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 
@@ -66,7 +66,7 @@ target_link_libraries(sample PUBLIC libhilog_ndk.z.so)
    | 回调函数类型 | 说明 |
    | --- | --- |
    | OH\_AVPlayerOnInfoCallback | 必要回调函数，监听播放器的过程信息。  需要播放器在AV\_IDLE状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的信息事件。 |
-   | OH\_AVPlayerOnErrorCallback | 必要回调函数，监听播放器的错误信息。  需要播放器在AV\_IDLE状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的信息事件。 |
+   | OH\_AVPlayerOnErrorCallback | 必要回调函数，监听播放器的错误信息。  需要播放器在AV\_IDLE状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的错误事件。 |
 
    应用使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)、[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，可以获取更多信息，还可以通过设置 userData 区分不同播放实例。
 3. 设置资源：调用[OH\_AVPlayer\_SetURLSource()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_seturlsource)，设置属性url，AVPlayer进入[AV\_INITIALIZED](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)状态。

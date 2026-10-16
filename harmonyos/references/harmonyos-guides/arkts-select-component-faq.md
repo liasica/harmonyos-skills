@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-select-
 title: 按钮与选择组件常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 按钮与选择组件常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:16+08:00
+scraped_at: 2026-10-17T06:41:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b6fa4ab32093011169cac9d3b48ca5bc4294446d799b17f59a05755d57f0da47
+content_hash: sha256:733e4ebadaf1d405ecead3665f89b568d34cd60ab3f5a8cc99b0ff74e03f56d2
 ---
 
 本文档介绍按钮与选择组件的常见问题并提供参考。
@@ -16,11 +16,11 @@ Slider的滑块与滑轨显示样式[SliderStyle](../harmonyos-references/ts-bas
 
 SliderStyle.OutSet模式下，滑块的中心与滑轨的端点对齐，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Vhe8fnyASDC6rEIiml8jfg/zh-cn_image_0000002791858877.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/XFyPkJslRkK1JCR9apowqQ/zh-cn_image_0000002764971762.jpg)
 
 SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑轨高度的一半的位置，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/CUQCRDltQROhbSoAvufXbQ/zh-cn_image_0000002762500002.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/nueWDAf5TtKdEIXocOpgaA/zh-cn_image_0000002765131688.jpg)
 
 **示例**
 
@@ -117,7 +117,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/EJuJjpaSQdScDcmihnbAwQ/zh-cn_image_0000002791738665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/ZvHfWOWaTbmphPif6hFdEQ/zh-cn_image_0000002794490265.png)
 
 ## Button组件设置type时，ButtonType枚举值与数字值不一致
 
@@ -186,4 +186,4 @@ struct ButtonTypeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Uk-kYD8PTQur4qplQ9Vehw/zh-cn_image_0000002762340084.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/qUyyDl7CTEeeIvUbFjUxcw/zh-cn_image_0000002794410481.png)

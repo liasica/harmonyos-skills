@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-manage-
 title: 管理软键盘
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 管理软键盘
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b16290fb7334848da733f1b3b67793a1be591254641aa3217f5e164ff649652e
+scraped_at: 2026-10-17T06:41:12+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:5f7ab4a514101508ea36b9540df1ba2a30d2cbe33d7e026dca0defd4a4f04a7b
 ---
 
 软键盘是用户交互的重要途径，提供文本输入功能。本文介绍在使用系统输入框组件（[TextInput](../harmonyos-references/ts-basic-components-textinput.md)、[TextArea](../harmonyos-references/ts-basic-components-textarea.md)、[Search](../harmonyos-references/ts-basic-components-search.md)、[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)）时，如何控制软键盘的弹出和收起。
@@ -26,7 +26,7 @@ content_hash: sha256:b16290fb7334848da733f1b3b67793a1be591254641aa3217f5e164ff64
 
 以下示例展示了单击、双击和长按输入框时，软键盘弹出效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/FabS-A6OT_6axH8z9CFIBg/zh-cn_image_0000002791858481.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/KIFiDrCXSEu47SKvOjPPTA/zh-cn_image_0000002764971364.gif)
 
 ### 通过代码请求焦点
 
@@ -57,7 +57,7 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/jrpRmxlpRHuzX1uTWfH8og/zh-cn_image_0000002762499608.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/oMsgTl5rTTWvmcxK5L3vBw/zh-cn_image_0000002765131290.gif)
 
 ### 使用外接键盘的按键走焦
 
@@ -86,7 +86,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/n6F3JOyJRgepBgz1d-ckDg/zh-cn_image_0000002791738269.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/xYcFsTNzQx-vnz7nTV1Bow/zh-cn_image_0000002794489867.gif)
 
 ## 收起软键盘
 
@@ -127,7 +127,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/rkiehDjeTr2UV5BeR8Kowg/zh-cn_image_0000002762339688.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/2JIwHxRjQgK9gQPH1P0kqQ/zh-cn_image_0000002794410085.gif)
 
 ### 拖拽文本
 
@@ -157,13 +157,13 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/sL_VecjIQ1WCk8MGYzGajQ/zh-cn_image_0000002791858483.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/v3_afWZhS6WdHbvdfF-xZQ/zh-cn_image_0000002764971366.gif)
 
 ### 接收侧滑手势
 
 下面的动图展示了“用户侧滑时软键盘收起”的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/lzsL4f-zRq-OoxJZeaobtA/zh-cn_image_0000002762499610.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/k6FCohKySDKfY4LQ5f_ziw/zh-cn_image_0000002765131292.gif)
 
 ### 页面发生切换
 
@@ -258,7 +258,7 @@ struct demo_text_1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Ubn9U72KR463nZjKSdJ1kQ/zh-cn_image_0000002791738271.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/CD_0b19JQki73WVmaQTF8w/zh-cn_image_0000002794489869.gif)
 
 ### 通过输入框的TextInputController退出编辑态
 
@@ -289,7 +289,7 @@ struct textInputControllerCloseKeyboard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/EzUvod1kRvuATx-mEDgIlQ/zh-cn_image_0000002762339690.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/U6zeG0-GRxqVPd-wS46LjQ/zh-cn_image_0000002794410087.gif)
 
 ### 焦点转移到不需要软键盘的组件
 
@@ -324,7 +324,7 @@ struct requestFocusCloseKeyBoard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/yJMfy2rcQuqvy-hh_Tl4jA/zh-cn_image_0000002791858485.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/-N22RQrmQXGCQ8CltcVU_g/zh-cn_image_0000002764971368.gif)
 
 以下示例展示了滚动容器在开始滚动时收起键盘的场景。[List](../harmonyos-references/ts-container-list.md)开始滚动时，调用[clearFocus](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#clearfocus12)方法清理焦点，焦点转移到页面根容器节点，页面根容器节点不需要软键盘，从而收起软键盘。
 
@@ -361,7 +361,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/YcHzL5OhQsenJgs40orDag/zh-cn_image_0000002762499612.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/cGNF7v79TKuYfk_jh3x_gQ/zh-cn_image_0000002765131294.gif)
 
 ## 常见问题
 
@@ -410,7 +410,7 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/KqhEFBX2QRqtLs-oEeYvzA/zh-cn_image_0000002791738273.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/QSP1jF3mTmmU_T8MDIzqdg/zh-cn_image_0000002794489871.gif)
 
 ### 点击发送按钮后不收起键盘
 
@@ -424,7 +424,7 @@ struct demo {
 
 **解决措施**
 
-软键盘的[enterKeyType](../harmonyos-references/ts-basic-components-textarea.md#enterkeytype11)可以设置输入法回车键类型。除EnterKeyType.NEW\_LINE外，enterKeyType设置其他的枚举值时，按下软键盘输入法回车键都会触发[onSubmit](../harmonyos-references/ts-basic-components-textarea.md#onsubmit14)事件。可以在TextArea的onSubmit回调中，通过调用[keepEditableState](../harmonyos-references/ts-basic-components-textinput.md#keepeditablestate11)接口保持输入框编辑态，使得点击回车键后不收起键盘。
+软键盘的[enterKeyType](../harmonyos-references/ts-basic-components-textarea.md#enterkeytype11)可以设置输入法回车键类型。除EnterKeyType.NEW\_LINE外，enterKeyType设置其他的枚举值时，按下软键盘输入法回车键都会触发[onSubmit](../harmonyos-references/ts-basic-components-textarea.md#onsubmit14)事件。可以在TextArea的onSubmit()回调中，通过调用[keepEditableState](../harmonyos-references/ts-basic-components-textinput.md#keepeditablestate11)接口保持输入框编辑态，使得点击回车键后不收起键盘。
 
 示例如下，软键盘的回车键显示为发送样式。按下发送之后，键盘不会收起。
 
@@ -452,4 +452,4 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/a8oFjATzSNmfDS2eutwoHA/zh-cn_image_0000002762339692.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/ND2PrQG6RYecQugFhCQjLw/zh-cn_image_0000002794410089.gif)

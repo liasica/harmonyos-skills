@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（布局属性）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（布局属性）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:44+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:83083c605fb67d5f433cec4caa0200309ed78d6ded539aa78f4cce824ab53d26
+scraped_at: 2026-10-17T06:45:26+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:cef7d80469d9710034af2dfe9b3e60a91a8ba87b376bcec399816b26a79009ea
 ---
 
 ```c
@@ -1214,7 +1214,7 @@ NODE_LAYOUT_GRAVITY = 122
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 设置Stack容器中子组件的对齐规则，决定子组件在Stack容器中的位置。参数类型为[ArkUI\_LocalizedAlignment](capi-layout-h.md#arkui_localizedalignment)，默认值：ARKUI\_ALIGNMENT\_CENTER。设置异常值时，按默认值显示。 |
+| .value[0].i32 | 设置Stack容器中子组件的对齐规则，决定子组件在Stack容器中的位置。参数类型为[ArkUI\_LocalizedAlignment](capi-layout-h.md#arkui_localizedalignment)，默认值：ARKUI\_LOCALIZED\_ALIGNMENT\_CENTER。设置异常值时，按默认值显示。 |
 
 **返回：**
 

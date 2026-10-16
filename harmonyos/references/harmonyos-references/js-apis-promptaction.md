@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.promptAction (弹窗)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.promptAction (弹窗)
 category: harmonyos-references
-scraped_at: 2026-10-15T07:07:41+08:00
+scraped_at: 2026-10-17T06:44:35+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:f43d9c4ddfb3e09189609eda629dfe518409a3699ef2ee8f4ee8ac0807900e44
+content_hash: sha256:b3032199481e0aac658d58a7a8cfb1ea4811193502096fb689447ad6ee2094c8
 ---
 
 创建并显示即时反馈、对话框和操作菜单，适用于系统通知、交互确认、菜单选择等场景。
@@ -107,7 +107,7 @@ struct toastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/RJHEsloFS6G1XgDbQqSGrQ/zh-cn_image_0000002791860439.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/VmLJnZmWRBWU1z9prGTgSw/zh-cn_image_0000002794412053.gif)
 
 ## promptAction.closeToast18+
 
@@ -795,11 +795,11 @@ struct toastExample {
 
 API version 11及之前Toast样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/7jYNnlJ8RVyj34znFXzKBQ/zh-cn_image_0000002791740225.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/bsCRiya-S1GwYnHy1df56g/zh-cn_image_0000002765133260.gif)
 
 API version 12及之后Toast样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/t6BWQResSA2dX0Mzt579LQ/zh-cn_image_0000002762341648.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/_QUGpNwCThu6GYk6ao-Wgg/zh-cn_image_0000002794491831.gif)
 
 ## promptAction.showDialog(deprecated)
 
@@ -864,7 +864,7 @@ promptAction.showDialog({
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/LEOcj4x1SZiPp5dy7oEmUw/zh-cn_image_0000002791860441.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/eSfcnsteTvu_U_vz93ULDw/zh-cn_image_0000002794412055.gif)
 
 ## promptAction.showDialog(deprecated)
 
@@ -931,7 +931,7 @@ try {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/kqS12dg0QTKg2huXHtXnHQ/zh-cn_image_0000002762501568.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/ubuujNFpTEGMxozVi7PM-g/zh-cn_image_0000002764973338.gif)
 
 当弹窗的showInSubWindow属性为true时，弹窗可显示在窗口外。
 
@@ -969,7 +969,7 @@ try {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/vP59sjePRlqX2zlRTYfK5g/zh-cn_image_0000002791740227.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/5FMf-C6tT9-XovuHByfOHA/zh-cn_image_0000002765133262.jpg)
 
 从API version 19开始，该示例通过调用[ShowDialogOptions](js-apis-promptaction.md#showdialogoptions)中的onDidAppear、onDidDisappear、onWillAppear和onWillDisappear属性展示了弹窗生命周期的相关接口的使用方法。
 
@@ -1032,7 +1032,7 @@ struct DialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/0XYB7ypgSGGMK48XTZw5WA/zh-cn_image_0000002762341650.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/9TZst-HlQRSTEqY4muK-1w/zh-cn_image_0000002794491833.gif)
 
 ## promptAction.showActionMenu(deprecated)
 
@@ -1098,7 +1098,7 @@ try {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/lp2EdwJOTgys08iJ7v8fdg/zh-cn_image_0000002791860443.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/gjrsIT4eTDazD1Tpy07LHg/zh-cn_image_0000002794412057.gif)
 
 **示例：2**
 
@@ -1173,7 +1173,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/1D-NFOmwQXS2RZEyTepBMQ/zh-cn_image_0000002762501570.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Os8hs1kNTqGSZnmQ_LZp4g/zh-cn_image_0000002764973340.gif)
 
 ## promptAction.showActionMenu(deprecated)
 
@@ -1237,7 +1237,7 @@ promptAction.showActionMenu({
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/_jLSD6XyQTaCiu3T2brKzA/zh-cn_image_0000002791740229.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/fZw_RpI4RvKD2C7nrs-L3A/zh-cn_image_0000002765133264.gif)
 
 ## promptAction.openCustomDialog(deprecated)
 
@@ -1433,7 +1433,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Wf-VboWMR4CLmYqexCQt-g/zh-cn_image_0000002762341652.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Z_XDIm3vTrezV7zgRc3njw/zh-cn_image_0000002794491835.gif)
 
 该示例实现了一个页面内的弹窗。
 
@@ -1523,7 +1523,7 @@ struct Next {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/mW_RTuu-Sv6YZKCSnXuDyQ/zh-cn_image_0000002791860445.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/pw71UyIhTRGWXQS0R_xLqg/zh-cn_image_0000002794412059.gif)
 
 ## promptAction.closeCustomDialog(deprecated)
 

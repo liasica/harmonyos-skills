@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ui-genera
 title: 应用UI生成
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 应用UI生成
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:39+08:00
+scraped_at: 2026-10-17T06:43:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:00b206871890e17379250d834e2d02125ba6c8e88bcf0742e283450ab0a6d3fb
+content_hash: sha256:4058770d0753a733c05ba45ae523027456fc6068e31b5a97a18b4df6a965cb26
 ---
 
 UI Generator用于快速生成可编译、可运行的HarmonyOS UI工程，支持基于已有UI布局文件（XML），快速生成对应的HarmonyOS UI代码，其中包含HarmonyOS基础工程、页面布局、组件及属性和资源文件等。
@@ -18,7 +18,7 @@ UI Generator用于快速生成可编译、可运行的HarmonyOS UI工程，支�
 
 1. 在DevEco Studio菜单栏，点击**File > Setting****s...**（macOS为**DevEco Studio > Preferences****/Settings**）**> Plugins**，在Installed列表中找到UI Generator插件，点击**Enable**启用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/SpkCBotAS3qjO__FK4eMmg/zh-cn_image_0000002731543125.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5HnujzH4Tb-l0m_-Cvc-Fg/zh-cn_image_0000002731543125.png)
 2. 单击OK并关闭设置窗口，插件启用成功。
 
 ## 开始使用
@@ -32,10 +32,10 @@ UI Generator用于快速生成可编译、可运行的HarmonyOS UI工程，支�
    | SDK path | 等于或高于编译应用包所使用版本的SDK路径。 |
    | Git Bash path | Git Bash工具存放路径。若本地已下载安装Git Bash，插件将自动获取其路径。 |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/DMSuWD19R6qaetcwrxSHuA/zh-cn_image_0000002701663926.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/FlGmHDM1RCiE1SfYYmEB0A/zh-cn_image_0000002701663926.png)
 3. 选择将要生成的XML页面（可在搜索框进行搜索），勾选后点击向右箭头将选中的XML导入至右侧。点击**Next**开始生成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/rzk_6HcNTnOGH7BYfuXkCw/zh-cn_image_0000002731383147.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/FKuDINCFSiGVhj4MI7Py0Q/zh-cn_image_0000002731383147.png)
 4. 配置输出工程待配置项，点击**Finish**进行生成。
 
    | 待配置项 | 说明 |
@@ -43,17 +43,17 @@ UI Generator用于快速生成可编译、可运行的HarmonyOS UI工程，支�
    | Destination Path | 生成新工程的保存路径（默认生成到用户目录下UIGenerationProjects，用户可根据需要自行更改） |
    | Compatible SDK | 生成的新工程所使用的SDK版本 |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/GlaoZRTHSN-LSlCyBvjsew/zh-cn_image_0000002701663930.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/mY9VbUhuTsOHS9e7PO_P6Q/zh-cn_image_0000002701663930.png)
 5. （可选）如果所选XML无有效根节点，需要选择根节点信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/QbEv45BSTyaS2HkOUcTAQw/zh-cn_image_0000002731383151.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/YPefcdR-RleLHI1_S8Dgqg/zh-cn_image_0000002731383151.png)
 6. 点击**Finish**，在弹窗中点击确认，打开新工程。
 
    生成的页面位于entry > src > main > ets > pages目录下，可以点击Previewer查看页面预览效果。不支持生成的组件、属性会以注释的形式给出，方便后续定位修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/19NC-aytQTCXvMi7wum2Zw/zh-cn_image_0000002731383153.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/1UfYHarETYC7xN-L3WVjZQ/zh-cn_image_0000002731383153.png)
 7. 生成的新工程内的entry > src > main > resources目录包含文本、图像、颜色资源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/2vLSU9wiTd2MVasn0OXIAA/zh-cn_image_0000002701823850.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/qxcNjd9rTs23Hhd9jmVZYw/zh-cn_image_0000002701823850.png "点击放大")
 
    更多操作指导，请参考视频课程：[毕方HarmonyOS UI代码生成工具](https://developer.huawei.com/consumer/cn/training/course/live/C101731322888995220)。

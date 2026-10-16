@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-inputmeth
 title: 在自绘编辑框中使用输入法开发指导 (C/C++)
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 在自绘编辑框中使用输入法开发指导 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5a57c9e8e9f8be45e1f0500e7b8e71d5d0aeef47735fc8debcb8db8516f88a99
+scraped_at: 2026-10-17T06:41:29+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:6d8ffcc442f97971bdc9796209e3ce3fb7e8bdabb50f1b48965fa95483dba904
 ---
 
 ## 场景介绍
@@ -160,7 +160,7 @@ InputMethod_TextEditorProxy *textEditorProxy = nullptr;
 InputMethod_AttachOptions *attachOptions = nullptr;
 InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
 
-void InputMethodDestroy();
+static napi_value InputMethodDestroy(napi_env env, napi_callback_info info);
 
 void InitText()
 {
@@ -294,7 +294,7 @@ int32_t GetTextIndexAtCursorFunc(InputMethod_TextEditorProxy *proxy)
 int32_t ReceivePrivateCommandFunc(InputMethod_TextEditorProxy *proxy, InputMethod_PrivateCommand *privateCommand[],
     size_t size)
 {
-    SetText("处理扩展编辑请求");
+    SetText("处理私有命令请求");
     return 0;
 }
 

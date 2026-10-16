@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 任务执行类场景方案（配置文件接入方式）
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（配置文件接入方式）
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:07+08:00
+scraped_at: 2026-10-17T06:43:09+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f0e98e1338d9fd04241be328b6b610de1056efec5faac51bc1fa0716699260bb
+content_hash: sha256:20943bc015e99edc260aca3e8f4fc0f1b9544d2086db4550a3a0a40d64e2dd37
 ---
 
 ## 方案概述
 
 开发者需要按照意图定义，进行意图注册并实现意图调用；用户通过对小艺对话进行自然语言输入，小艺理解语义转换成意图调用（含意图参数），执行意图调用实现对应交互体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/LVqxekWIQBaHN7gR3KI-WQ/zh-cn_image_0000002762501396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/mBf0FVS2R_OPYWdEuW1ZFw/zh-cn_image_0000002764973162.png)
 
 ## 意图声明
 

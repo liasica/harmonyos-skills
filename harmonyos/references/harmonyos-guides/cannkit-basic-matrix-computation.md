@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic
 title: 矩阵计算
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 矩阵计算
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:05+08:00
+scraped_at: 2026-10-17T06:43:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6074a05941c08e4ec4c000cf22c74887febc19174220050f2080d9dc48288f79
+content_hash: sha256:b6afc4ba949b9d90c238eb2aa0673d66850c5fae59bb36381da42f90e4e837eb
 ---
 
 KirinX90/Kirin9030处理器不支持结构化稀疏功能，并且Mmad左矩阵分形结构在Kirin9030有差异。
@@ -19,7 +19,7 @@ KirinX90/Kirin9030处理器不支持结构化稀疏功能，并且Mmad左矩阵�
 
 Mmad左矩阵分形格式变换修改适配方案：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/ifYn5KLtTXSHSr2IcRC2Cw/zh-cn_image_0000002791860237.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/8LmT7WbtQjyYxmOxzQjaqg/zh-cn_image_0000002794411853.png)
 
 ```cpp
 // 示例代码

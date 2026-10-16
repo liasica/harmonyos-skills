@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅资源泄漏事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 资源泄漏事件 > 订阅资源泄漏事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:12+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:854174d361132efb4fc11aa32c23776c46490fd66d97713f39adffc1779df52f
+scraped_at: 2026-10-17T06:41:57+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:70301d9091153dc39dd982b56d1da781c4139c74671531173b93babb8e66daa8
 ---
 
 ## 接口说明
@@ -304,7 +304,11 @@ content_hash: sha256:854174d361132efb4fc11aa32c23776c46490fd66d97713f39adffc1779
    ```
 3. 点击DevEco Studio界面中的运行按钮，运行应用工程，点击“pss leak”按钮，等待15~30分钟，系统会上报pss内存泄漏事件。
 
-   同一个应用，24小时内至多上报一次资源泄漏事件，如果短时间内要二次上报，需要重启设备。
+   **说明** 
+
+   1. [nolog版本](performance-analysis-kit-terminology.md#nolog版本)默认不抓取内存调用栈日志。
+   2. 同一应用在24小时内最多上报一次资源泄漏事件。若短时间内需要再次上报，需先重启设备。 触发内存泄漏后，开发者等待15～30分钟即可收到内存泄漏事件。
+   3. 若开发者在“开发者选项”中开启“系统资源泄漏日志”（开关状态变更后需重启设备），则会开启内存调用栈抓取，内存泄漏事件的上报时间通常会额外延长半小时以上。同理，其他涉及调用栈抓取的资源泄漏事件也会受到“系统资源泄漏日志”开关的影响。
 4. pss内存泄漏事件上报后，系统会回调应用的onReceive函数，可以在Log窗口看到对系统事件数据的处理日志：
 
    ```text

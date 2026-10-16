@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-nd
 title: 使用DevEco Studio模板构建NDK工程
 breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 使用DevEco Studio模板构建NDK工程
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:98b6b554736e6d16d131d283af66bfa26ed7991b0b8f1178d6cb4f47e59220c3
+scraped_at: 2026-10-17T06:43:10+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:5e1e156bb80de42c0f5d7f27ed0dd54b2bd20538a71bc00ebdacaae94613aec8
 ---
 
 NDK通过CMake和Ninja编译应用的C/C++代码，编译过程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/-jSWW3MrQPSlEBUn8C8CQw/zh-cn_image_0000002791740101.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/iEz8nRySSPactuOS28kujA/zh-cn_image_0000002765133132.png)
 
 核心编译过程如下：
 
@@ -50,18 +50,20 @@ target_link_libraries(entry PUBLIC libace_napi.z.so)
 模块级build-profile.json5中externalNativeOptions参数是NDK工程C/C++文件编译配置的入口，可以通过path指定CMake脚本路径、arguments配置CMake参数、cppFlags配置C++编译器参数、abiFilters配置编译架构等。
 
 ```json
-"apiType": "stageMode",
-"buildOption": {
-  "arkOptions": {
-   },
-  "externalNativeOptions": {
-    "path": "./src/main/cpp/CMakeLists.txt",
-    "arguments": "",
-    "cppFlags": "",
-    "abiFilters": [
-       "arm64-v8a",
-       "x86_64"
-    ],
+{
+  "apiType": "stageMode",
+  "buildOption": {
+    "arkOptions": {
+    },
+    "externalNativeOptions": {
+      "path": "./src/main/cpp/CMakeLists.txt",
+      "arguments": "",
+      "cppFlags": "",
+      "abiFilters": [
+         "arm64-v8a",
+         "x86_64"
+      ]
+    }
   }
 }
 ```

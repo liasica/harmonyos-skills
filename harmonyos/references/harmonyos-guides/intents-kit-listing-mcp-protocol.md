@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-kit-l
 title: MCP协议上架指导
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 意图框架上架配置指导 > MCP协议上架指导
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:08+08:00
+scraped_at: 2026-10-17T06:43:09+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:5f664932e135b36168975da1a8383e9f8ecf8fcb0fcb2a44e7c6995ee1ff103d
+content_hash: sha256:7d6fcc396bfa93f39214f866c162c6ef79075cb3e773d03ba69bae986e0587ee
 ---
 
 ## MCP注册配置操作步骤
@@ -14,21 +14,21 @@ content_hash: sha256:5f664932e135b36168975da1a8383e9f8ecf8fcb0fcb2a44e7c6995ee1f
 
    1. 登录[华为开发者联盟](https://developer.huawei.com/consumer/cn/) ，选择“管理中心 > 生态服务 > 智慧服务 > 小艺开放平台”，在管理中心找到小艺开放平台。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/9IHQAJaeRV-pt8k7IK6Qlw/zh-cn_image_0000002762501424.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/zEEet8f5R02QF2FXy3KfAw/zh-cn_image_0000002764973190.png)
    2. 点击“立即体验”按钮，进入项目管理页面。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/nE0DgHMCTl2VXK5mV9ta1A/zh-cn_image_0000002791740083.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/dT0DEhOmTpW0OsxoszMQBA/zh-cn_image_0000002765133112.png)
    3. 在资源库中点击“MCP”页签，即可到达MCP配置操作入口。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/BgWUCCAqQbqeUeqGf4TDYA/zh-cn_image_0000002762341506.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/s-D68K4kSWmNBFHzNE5EIg/zh-cn_image_0000002794491689.png)
 2. 新建MCP。
 
    1. 在资源库的“MCP”页签下，点击“新建MCP”按钮，创建一条MCP记录。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/b2aBs1rCSIOwZFsMip-NvQ/zh-cn_image_0000002791860297.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/r-qH2kenQeuVmRvN3wmktA/zh-cn_image_0000002794411913.png)
    2. 选择“标准注册方式”并填写基本信息，创建MCP。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/1rCbydetQ_ymWHQAPaT_AA/zh-cn_image_0000002762501426.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/gzBFBtEHQ8-rrQ6CmCvyfQ/zh-cn_image_0000002764973192.png)
 
       * MCP名称：需唯一标识。
       * MCP描述：开发者自定义插件描述信息。
@@ -38,33 +38,33 @@ content_hash: sha256:5f664932e135b36168975da1a8383e9f8ecf8fcb0fcb2a44e7c6995ee1f
       * 协议类型：开发者根据自身MCP的实现方式进行选择。
    3. 选择“外部平台导入”方式创建MCP的步骤，可参考[外部平台导入](../service/mcp-plugin-import-0000002493437678.md)章节。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/g4Z9fTh8Qq-yjXCNawgd8w/zh-cn_image_0000002791740085.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/esfv2Y_HSWubEM3HdmHOdQ/zh-cn_image_0000002765133116.png)
 3. 创建MCP后，切换至“插件信息”页签，编辑并保存MCP插件的基本信息。
 
    1. 编辑基本信息：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/HAobZmmURRa7O6paX4LUCg/zh-cn_image_0000002762341508.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/9DU0QCTwSx-DdazqlmlFjg/zh-cn_image_0000002794491691.png)
 
       * 开发者品牌：该信息是对外露出的品牌传播名（注意和企业账号，公司名称区别开）。
       * 图标：尺寸要求为192px\*192px；格式要求文件类型为png、jpg、jpeg任意一种；样式要求图标为方角图标且背景色不透明。
 4. 工具检查：保存基本信息后，切换至"工具"页签。若基本信息配置无误，工具列表中会自动拉取出开发者该MCP下的所有工具信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/lCCUXEPsTy-0s72GXY5b3Q/zh-cn_image_0000002791860299.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/aMr5GySxQfmX1S9J9gSCyw/zh-cn_image_0000002794411915.png)
 
    出现工具列表：请点击“配置”，检查工具入参，参数是否重复或者缺失，参数类型是否正确。若一切无误，则配置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/6eJJajvtRUyyxGi_yFZO4g/zh-cn_image_0000002762501428.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/TypxD2EaQi6R-5NZ10RJGQ/zh-cn_image_0000002764973194.png)
 
    未出现工具列表：请等候几分钟重新进入，后台加载存在延时；如若重新进入后，仍未加载出工具信息，可能是插件的链接和鉴权信息配置错误。如果以上方法仍未解决您的问题，可以通过[在线工单系统](https://developer.huawei.com/consumer/cn/support/feedback/#/add/13?level2=111)与我们进行联系，提交后的工单可在开发者联盟“管理中心”的“开发者中心 > 我的客服”页面查看工单处理进展。
 5. 审核：切换至“发布”页签，点击“提交审核”。
 
    1. 选择发布渠道，点击确定，提交审核。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/zoV8-clFTVyZxjrNfZsKfg/zh-cn_image_0000002791740087.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/dhs2JRxzSoaL0apBuxCoCA/zh-cn_image_0000002765133118.png)
 
       * 智能体：开发者上架MCP Server，仅供开发者自己开发的智能体来调用。发布后即可上架成功，无需人工审核。
       * 小艺对话：开发者上架MCP Server，可供开发者自己开发的智能体调用，也可供小艺App主对话调用，发布后必须经过意图框架人工审核。请根据[Intents Kit接入流程](intents-access-flow.md)，提交意图框架的技能调用方案能力申请，明确此次MCP发布的相关需求背景和审核诉求。
       * 插件市场：开发者上架MCP server，可供开发者自己开发的智能体调用，也可供插件市场上其他的开发者发现和使用，发布后必须经过意图框架人工审核。请根据[Intents Kit接入流程](intents-access-flow.md)，提交意图框架的技能调用方案能力申请，明确此次MCP发布的相关需求背景和审核诉求。
    2. 提交审核后，请耐心等待平台相关审核流程完成；审核完成后可在小艺开放平台内的[插件市场](https://developer.huawei.com/consumer/cn/hag/hagindex.html?isInFrame=true&lang=zh_CN#/agentHome/pluginShop)里找到您的工具。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/IYR2KxscS6Cfn1_wcsG40g/zh-cn_image_0000002762341510.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/lt-4BpcTT_GJ997eqMjshw/zh-cn_image_0000002794491693.png)

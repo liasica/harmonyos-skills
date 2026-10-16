@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行 private 属性相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行 private 属性相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:592c0f7c57cf034490941b12e8e501e6a97a12eca27a0105c56930c140e1dcdc
+scraped_at: 2026-10-17T06:43:14+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:c842ac90c5115797cb775e1d63e84505d0a744b23923aaa588eaa1518e05e93c
 ---
 
 ## 简介
@@ -88,7 +88,7 @@ static JSVM_CallbackStruct param[] = {
 
 static JSVM_CallbackStruct *method = param;
 
-// wrapperObject方法别名，供JS调用
+// privateTest方法别名，供JS调用
 static JSVM_PropertyDescriptor descriptor[] = {
     {"privateTest", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };

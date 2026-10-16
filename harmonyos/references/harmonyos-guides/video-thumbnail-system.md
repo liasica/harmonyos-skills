@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-thumbna
 title: 基于系统能力获取视频缩略图
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于系统能力获取视频缩略图
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:09+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:f217c40b289fe2ff1a03a807ccd0489ffb2baa3fced74052b982c1fb2fcc3aa5
+scraped_at: 2026-10-17T06:42:12+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:56dc029f48861acf85e12b1ee1e20b761ca6ba0797034084a017e08943b76765
 ---
 
 ## 概述
@@ -19,11 +19,11 @@ content_hash: sha256:f217c40b289fe2ff1a03a807ccd0489ffb2baa3fced74052b982c1fb2fc
 
 ### 实现原理
 
-视频的默认缩略图一般为视频的第一帧，可以通过[PhotoAsset](../harmonyos-references/arkts-apis-photoaccesshelper-photoasset.md)类的[getThumbnail()](../harmonyos-references/arkts-apis-photoaccesshelper-photoasset.md#getthumbnail-2)方法获取。这里以获取图库视频缩略图场景为例。
+视频的默认缩略图一般为视频的第一帧，可以通过[Interface (PhotoAsset)](../harmonyos-references/arkts-apis-photoaccesshelper-photoasset.md)类的[getThumbnail()](../harmonyos-references/arkts-apis-photoaccesshelper-photoasset.md#getthumbnail-2)方法获取。这里以获取图库视频缩略图场景为例。
 
 ### 开发步骤
 
-1. 通过相册管理模块[@ohos.file.photoAccessHelper](../harmonyos-references/js-apis-photoaccesshelper.md)的[PhotoViewPicker](../harmonyos-references/arkts-apis-photoaccesshelper-photoviewpicker.md)选取图库视频，获得视频的URL。
+1. 通过相册管理模块[@ohos.file.photoAccessHelper (相册管理模块)](../harmonyos-references/js-apis-photoaccesshelper.md)的[Class (PhotoViewPicker)](../harmonyos-references/arkts-apis-photoaccesshelper-photoviewpicker.md)选取图库视频，获得视频的URL。
 
    ```typescript
    async selectVideo(): Promise<string> {
@@ -73,17 +73,17 @@ content_hash: sha256:f217c40b289fe2ff1a03a807ccd0489ffb2baa3fced74052b982c1fb2fc
 
 **说明** 
 
-使用getAsset()和getThumbnail()方法需要申请受限开放权限'[ohos.permission.READ\_IMAGEVIDEO'](restricted-permissions.md#ohospermissionread_imagevideo)，对于需要克隆、备份或同步图片/视频类文件的应用可申请获取该权限，并通过[getAlbums()](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#getalbums)方法获取相册资源再调用这两个方法获取缩略图。或者通过picker的方式可以在不获取权限的情况下，使用这两个方法来访问用户指定的图库资源获取缩略图。本文中的示例使用的是第二种picker的方式。
+使用getAssets()和getThumbnail()方法需要申请受限开放权限[ohos.permission.READ\_IMAGEVIDEO](../doccenter-capabilities/restricted-permissions.md#ohospermissionread_imagevideo)，对于需要克隆、备份或同步图片/视频类文件的应用可申请获取该权限，并通过[getAlbums()](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#getalbums)方法获取相册资源再调用这两个方法获取缩略图。或者通过picker的方式可以在不获取权限的情况下，使用这两个方法来访问用户指定的图库资源获取缩略图。本文中的示例使用的是第二种picker的方式。
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/BZGAM9iKSrqM-1Q59TbJgg/zh-cn_image_0000002762340678.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Nf9vcIk7RWuJBcH6ngOYMA/zh-cn_image_0000002794411073.gif)
 
 ## 选取视频帧作为缩略图
 
 ### 实现原理
 
-HarmonyOS提供视频缩略图获取类[AVImageGenerator](../harmonyos-references/arkts-apis-media-avimagegenerator.md)用于选取视频指定时间的帧作为缩略图，这里以选取图库视频缩略图场景为例。
+HarmonyOS提供视频缩略图获取类[Interface (AVImageGenerator)](../harmonyos-references/arkts-apis-media-avimagegenerator.md)用于选取视频指定时间的帧作为缩略图，这里以选取图库视频缩略图场景为例。
 
 ### 开发步骤
 
@@ -148,13 +148,13 @@ HarmonyOS提供视频缩略图获取类[AVImageGenerator](../harmonyos-reference
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/nMuTw5fhQaqo9eZj-gpdHA/zh-cn_image_0000002791859475.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/McRHZhFZT1S_VSRpEXPzNg/zh-cn_image_0000002764972354.gif)
 
 ## 常见问题
 
 ### 如何获取网络视频的缩略图
 
-推荐使用系统在API20上的新增接口[setUrlSource()](../harmonyos-references/arkts-apis-media-avmetadataextractor.md#seturlsource20)，在[AVMetadataExtractor](../harmonyos-references/arkts-apis-media-avmetadataextractor.md)实例中调用该接口获取网络视频url地址对应的数据源，再调用[fetchFrameByTime()](../harmonyos-references/arkts-apis-media-avmetadataextractor.md#fetchframebytime20)接口即可获取网络视频的缩略图。
+推荐使用系统在API20上的新增接口[setUrlSource()](../harmonyos-references/arkts-apis-media-avmetadataextractor.md#seturlsource20)，在[Interface (AVMetadataExtractor)](../harmonyos-references/arkts-apis-media-avmetadataextractor.md)类的实例中调用该接口获取网络视频url地址对应的数据源，再调用[fetchFrameByTime()](../harmonyos-references/arkts-apis-media-avmetadataextractor.md#fetchframebytime20)接口即可获取网络视频的缩略图。
 
 ## 示例代码
 

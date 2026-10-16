@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-ap
 title: 通过AppGallery Connect动态管理应用图标
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 图标管理服务 > 通过AppGallery Connect动态管理应用图标
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:22+08:00
+scraped_at: 2026-10-17T06:42:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c98cd7a9abb93046ae2314170b18d313edd1bcbef54315af2416499f768cdf0d
+content_hash: sha256:75f01d67e1b48d55a28aa0575ae2a0508fa6a45e0e7f1397391722eebcde1536
 ---
 
 通过图标管理服务，开发者可以在不升级应用版本的情况下，通过AGC页面动态管理应用的个性化图标，并在应用侧实现应用图标动态切换。
@@ -37,7 +37,7 @@ content_hash: sha256:c98cd7a9abb93046ae2314170b18d313edd1bcbef54315af2416499f768
 
 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击“APP与元服务”，在应用列表中选择已经开通图标管理服务的HarmonyOS应用，选择“分发 > 服务 > 图标管理”，进入图标管理页面，就可以管理HarmonyOS应用的个性化图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Bd7jHuOaQSu3ZRQn_JPm3A/zh-cn_image_0000002762340894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/m5HAkrW3TvWJBT-OT0Ls3A/zh-cn_image_0000002794411293.png)
 
 **说明** 
 
@@ -48,7 +48,7 @@ content_hash: sha256:c98cd7a9abb93046ae2314170b18d313edd1bcbef54315af2416499f768
 
 1. 在图标管理页面点击“新增图标”按钮，进入创建图标页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/5GTBu9sRQ9KvO_OfSUDeEw/zh-cn_image_0000002791859691.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/SvQ07yjvTtaT9b3PZT9A6w/zh-cn_image_0000002764972574.png)
 2. 输入图标ID、图标名称，选择设备类型，上传图标文件，点击“保存”或者“提交”按钮，将图标保存为草稿状态或提交审核。
 
 **说明** 
@@ -60,7 +60,7 @@ content_hash: sha256:c98cd7a9abb93046ae2314170b18d313edd1bcbef54315af2416499f768
 
 1. 在图标管理页面选择一个草稿或审核不通过的图标，点击“编辑”按钮，或选择一个审核通过的图标，点击“更新”按钮，进入图标编辑页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/cUXFeUpfRyufANr0ruKBeA/zh-cn_image_0000002762500816.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/gC5q10vcTQ22RyAg1daIQg/zh-cn_image_0000002765132500.png)
 2. 输入图标ID、图标名称，选择设备类型，上传图标文件，点击“保存”或者“提交”按钮，将图标保存为草稿状态或提交审核。
 
 **说明** 
@@ -72,7 +72,7 @@ content_hash: sha256:c98cd7a9abb93046ae2314170b18d313edd1bcbef54315af2416499f768
 
 1. 在图标管理页面选择一个图标，点击“删除”按钮，再点击提示框中的“确认”按钮，就可以删除指定图标。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/vlWtf5ItS-mTjxXXSL0I0A/zh-cn_image_0000002791739475.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/0mZsaPO_QVyRUhiLJVBLxg/zh-cn_image_0000002794491075.png)
 
 **说明** 
 

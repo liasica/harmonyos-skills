@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 工具栏设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 其他 > 工具栏设置
 category: harmonyos-references
-scraped_at: 2026-10-15T07:07:53+08:00
+scraped_at: 2026-10-17T06:44:48+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1284d8b6c62e791f19d1f9a7b54a43c8b837b28b02d3d7200f605cc996b304bc
+content_hash: sha256:4c19cb760aadaeda17adb8894643e11fe03664b9c6570b4bfb8abdea96eb7b5a
 ---
 
 为组件设置对应的工具栏。toolbar是组件通用属性，可在窗口顶部标题栏相应分栏位置创建由ToolBarItem构成的自定义工具栏，适用于需要在标题栏区域添加自定义操作项（如按钮、滑动条、搜索栏等）的场景。
@@ -164,4 +164,4 @@ struct ToolbarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/bOYR56VoRSGpMwarPYRIFw/zh-cn_image_0000002791740403.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/a3HeGJ2DRTG_JVfS8sMoxQ/zh-cn_image_0000002765133436.png)

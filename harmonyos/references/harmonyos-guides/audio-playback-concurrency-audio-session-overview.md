@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playbac
 title: 音频焦点和音频会话开发概述
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 音频焦点和音频会话开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9be8dfcd57b1e50e3bb909784ad9185bc5bc16f3d0a7b6952da995267236141f
+scraped_at: 2026-10-17T06:42:02+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:228c738455cfe2fcbb1a004fdae81bd568faa6d7f9f3b2bf63c7c0d4ee4f0d74
 ---
 
 在应用播放或录制声音时，会遇到与其他应用或本应用内的其他音频流发生焦点冲突。本章节概括了该场景的处理方式，帮助开发者了解如何使用系统的音频焦点冲突管理能力来解决各类音频打断问题。
@@ -98,7 +98,7 @@ content_hash: sha256:9be8dfcd57b1e50e3bb909784ad9185bc5bc16f3d0a7b6952da99526723
 | - | 应用A | 应用B | 打断效果 | 备注 |
 | --- | --- | --- | --- | --- |
 | 默认场景 | 启动音乐播放 | 开启录制 | 录音抢占焦点，音乐暂停；录音结束后音乐收到RESUME提示可恢复 | RESUME事件需应用主动调用play()恢复 |
-| 方案一 | 使用音频录制接口[setIndependentAudioSessionStrategy](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setindependentaudiosessionstrategy24)，AudioSessionBehaviorFlags使用MUTE\_WHEN\_INTERRUPTED | 无需适配 | 录音期间音乐静音继续播放，录音结束后音乐恢复有声 | 复播会跳过静音期内容，对进度条敏感场景不建议使用 |
+| 方案一 | 使用音频渲染接口[setIndependentAudioSessionStrategy](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setindependentaudiosessionstrategy24)，AudioSessionBehaviorFlags使用MUTE\_WHEN\_INTERRUPTED | 无需适配 | 录音期间音乐静音继续播放，录音结束后音乐恢复有声 | 复播会跳过静音期内容，对进度条敏感场景不建议使用 |
 | 方案二 | 无需适配 | 音频会话并发策略使用CONCURRENCY\_DUCK\_OTHERS | 录音正常采集，音乐音量降低；录音结束后音量自动恢复 | 音量自动恢复，无需额外适配 |
 | 方案三 | 无需适配 | 音频会话并发策略使用CONCURRENCY\_MIX\_WITH\_OTHERS | 录音与音乐同时运行，互不影响 | - |
 

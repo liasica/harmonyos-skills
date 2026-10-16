@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevic
 title: 开发带UI界面基础驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设基础驱动开发 > 开发带UI界面基础驱动
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e9bcd25f1998ac7cb27f21710e7bf7c4cf7a2083924fb0d087c49a8f438e2003
+scraped_at: 2026-10-17T06:41:53+08:00
+doc_updated_at: 2026-10-16
+content_hash: sha256:0cb1fc2bec4eebc3d131d6ce8077832f34f07f06132f16d6d0fc39f29c8a17db
 ---
 
 ## 场景介绍
@@ -92,14 +92,14 @@ content_hash: sha256:e9bcd25f1998ac7cb27f21710e7bf7c4cf7a2083924fb0d087c49a8f438
      return -1;
    }
    ```
-5. 定义获取对应驱动远程对象的接口，通过bindDeviceDriver获取远程对象。
+5. 定义获取对应驱动远程对象的接口，通过bindDriverWithDeviceId获取远程对象。
 
    ```typescript
    private async getDriverRemote(deviceId: number): Promise<rpc.IRemoteObject | null> {
      try {
        let remoteDeviceDriver: deviceManager.RemoteDeviceDriver = await deviceManager.bindDriverWithDeviceId(deviceId,
          (err: BusinessError, id: number) => {
-           hilog.info(DOMAIN, 'testTag', `device[${id}] id disconnect, err: ${JSON.stringify(err)}`);
+           hilog.error(DOMAIN, 'testTag', `device[${id}] id disconnect, err: ${JSON.stringify(err)}`);
          });
        return remoteDeviceDriver.remote;
      } catch (error) {
