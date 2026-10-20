@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-payment-2
 title: 华为支付服务元服务支付鉴权报错
-breadcrumb: FAQ > 应用服务开发 > 鸿蒙支付服务（Payment Kit） > 华为支付服务元服务支付鉴权报错
+breadcrumb: FAQ > 应用服务开发 > 华为支付服务（Payment Kit） > 华为支付服务元服务支付鉴权报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
+scraped_at: 2026-10-21T07:12:26+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:615fd78cafcf6825560159aed45b61ce9dbcf5cde8c7a4d1a62ae1ea2c306355
 ---

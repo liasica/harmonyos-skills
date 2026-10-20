@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-intents-ki
 title: 小艺开放平台意图注册审核“APP名称”与应用名称不一致如何解决
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 意图框架服务（Intents Kit） > 小艺开放平台意图注册审核“APP名称”与应用名称不一致如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:39+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4ac42d1adb63c7e4fb853937f4ee21b01077a90ec6b5ad8e86e34fca97a41fe0
+scraped_at: 2026-10-21T07:12:55+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:35680822bd7383bb24f85d079dbf35dc44c7f376f82d7c3798b46d6e8ebd56f6
 ---
 
 ## 问题现象
 
 开发者在小艺开放平台进行意图注册配置并提交审核，被告知意图注册审核后台识别的“APP名称”与该应用的实际名称不一致，如何修改？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/sVcFcy81TSmUm7U12ayDRA/zh-cn_image_0000002658914055.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/M_kSjAmtTw2ePel5l68BRg/zh-cn_image_0000002658914055.png "点击放大")
 
 ## 背景知识
 
 * Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系，意图连接了应用/元服务内的业务功能。
-* 开发者完成开发者测试后需在小艺开放平台进行意图注册配置并提交审核，审核通过后完成意图的正式上线。意图注册配置之前，APP需要先在AppGallery Connect（以下简称AGC）完成应用上架。
+* 开发者完成开发者测试后需在小艺开放平台进行意图注册配置并提交审核，审核通过后完成意图的正式上线。意图注册配置之前，APP需要先在HarmonyOS 开发者中心完成应用上架。
 
 ## 问题定位
 
@@ -25,9 +25,9 @@ content_hash: sha256:4ac42d1adb63c7e4fb853937f4ee21b01077a90ec6b5ad8e86e34fca97a
 
    检查代码工程“AppScope/app.json5”文件中“app”内“label”字段对应的值（默认引用的为“AppScope/Resources/base/element/string.json”中name为“app\_name”的value值），是否与应用名称一致，见下图字段。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nD0aeG8aSvKZbTzdRt6tyg/zh-cn_image_0000002658794103.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/GVVEOxEGR-aPZXyd2ipfCQ/zh-cn_image_0000002658794103.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/1QslmqjVTxuL40FIS6OZ3w/zh-cn_image_0000002628394840.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/HjdNomlFQIC3YPkMeaKQIw/zh-cn_image_0000002628394840.png "点击放大")
 
    若不一致，则参考修改建议的步骤一和步骤二进行修改；若一致，执行下一步检查。
 2. 检查意图注册提交时间：

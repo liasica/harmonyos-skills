@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-4
 title: 单机应用/元服务是否可以接入应用内支付
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 单机应用/元服务是否可以接入应用内支付
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:205bf93745140e0d02d8fd009a48022c171795616f81eb77992d790132e301bc
+scraped_at: 2026-10-21T07:12:31+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:36e254cdbd58bf80b450d0ae47a338927748899b7b58a2e68627ea8b8e7217de
 ---
 
 ## 问题现象
@@ -28,7 +28,7 @@ content_hash: sha256:205bf93745140e0d02d8fd009a48022c171795616f81eb77992d790132e
 
 Q：官网描述必须先开通商户服务，若需在应用内开通此类订阅制会员服务，经营类目具体应该属于哪一类？
 
-A：是的，需要先[开通商户服务](../start/merchant-service-0000001053025967.md)，具体经营类目应根据App实际情况进行选择，可以参考[经营类目及特殊资质说明](../hwzf-jingyingleimu-0000001426308945.md)进行选择。
+A：是的，需要先[开通商户服务](../app/hdc-merchant-service-0000002752616107.md)，具体经营类目应根据App实际情况进行选择，可以参考[经营类目及特殊资质说明](../hwzf-jingyingleimu-0000001426308945.md)进行选择。
 
 Q：根据[IAP支付文档](../harmonyos-guides/iap-integrate-purchase.md)，单机应用支持接入IAP支付，但是支付需要联网，断网情况下不能正常支付，这种应该属于单机应用核心功能断裂，是否会在应用上架时被驳回不允许选择为单机应用？
 

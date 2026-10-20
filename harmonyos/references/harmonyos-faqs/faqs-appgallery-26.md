@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 新建商品后不能复用之前的商品ID，应用后台是否支持更改商品类型
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 新建商品后不能复用之前的商品ID，应用后台是否支持更改商品类型
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-08-05
-content_hash: sha256:a5a1ee695a0a5cbc1365f5a94340dd33c6ea32779858c8919daa41a4b91f082f
+scraped_at: 2026-10-21T07:12:32+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:167e12577049a0c65232bb2462868eaea5a2d9ebfb6f1f11c26782542c18e7f2
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ content_hash: sha256:a5a1ee695a0a5cbc1365f5a94340dd33c6ea32779858c8919daa41a4b91
 
 ## 常见FAQ
 
-Q：AppGallery Connect上商品管理的审核信息中，应用内截图指的是什么？
+Q：HarmonyOS 开发者中心上商品管理的审核信息中，应用内截图指的是什么？
 
 A：商品在应用内部页面的截图。
 
@@ -34,7 +34,7 @@ Q：数字商品未上架怎么测试？
 
 A：通过沙盒环境[测试数字商品服务](../harmonyos-guides/store-iap-sandbox.md)。
 
-Q：AppGallery Connect上商品管理的审核信息中应用内截图是否是每一个计费点都需要使用不同的截图？
+Q：HarmonyOS 开发者中心上商品管理的审核信息中应用内截图是否是每一个计费点都需要使用不同的截图？
 
 A：不需要，同一个模块下的计费点可以使用同一个截图，如：同一商品列表页下的商品可以统一使用商品列表页面，只要能看到商品位置即可。
 
@@ -42,9 +42,9 @@ Q：体验卡或月卡等不需要自动续期的有效期商品应该创建为�
 
 A：应创建为非续期订阅商品。非续期订阅商品的定义为：用户购买后在一段时间内允许访问增值功能或内容，周期结束后禁止访问，除非再次购买。
 
-Q：非续期订阅商品在AppGallery Connect商品配置中无法设置使用时长，如何管理有效期？
+Q：非续期订阅商品在HarmonyOS 开发者中心商品配置中无法设置使用时长，如何管理有效期？
 
-A：非续期订阅商品的使用时长和有效期由开发者根据自身业务逻辑管理，AppGallery Connect商品配置中不提供使用时长的设置项。
+A：非续期订阅商品的使用时长和有效期由开发者根据自身业务逻辑管理，HarmonyOS 开发者中心商品配置中不提供使用时长的设置项。
 
 Q：如何查询用户购买的商品信息？
 

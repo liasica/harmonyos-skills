@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用如何上架分发到多端（手机、PC、平板）
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用如何上架分发到多端（手机、PC、平板）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-08-05
-content_hash: sha256:1c3fc9f74955b3bb79890cf61bb95425a3ac6136be459843525f7c94c17afd84
+scraped_at: 2026-10-21T07:12:32+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:33994d4cd6d53a0a8b07152019b9ca220ed307d0c59d2d3350a71e2c02b15270
 ---
 
 ## 问题现象
 
-同一个应用如何上架分发到手机、PC、平板多端设备，工程代码和AppGallery Connect侧如何配置？
+同一个应用如何上架分发到手机、PC、平板多端设备，工程代码和HarmonyOS 开发者中心侧如何配置？
 
 ## 背景知识
 
@@ -18,15 +18,15 @@ content_hash: sha256:1c3fc9f74955b3bb79890cf61bb95425a3ac6136be459843525f7c94c17
 
 ## 解决方案
 
-应用上架时，需根据软件包中声明的设备（即module.json5配置文件中"[deviceTypes](../harmonyos-guides/module-configuration-file.md#devicetypes标签)"标签的枚举值）勾选对应的支持设备，确保软件包中声明的设备范围大于等于AppGallery Connect上勾选的支持设备范围。提交审核时会进行校验，如果AppGallery Connect上勾选的支持设备范围大于软件包内声明时，会提示上传的软件包与声明支持设备不一致，将无法提交审核。
+应用上架时，需根据软件包中声明的设备（即module.json5配置文件中"[deviceTypes](../harmonyos-guides/module-configuration-file.md#devicetypes标签)"标签的枚举值）勾选对应的支持设备，确保软件包中声明的设备范围大于等于HarmonyOS 开发者中心上勾选的支持设备范围。提交审核时会进行校验，如果HarmonyOS 开发者中心上勾选的支持设备范围大于软件包内声明时，会提示上传的软件包与声明支持设备不一致，将无法提交审核。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/97_JcPHOQHKvBmBqYX4EWg/zh-cn_image_0000002658391408.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/jaazjGFET-2UWJ99BZjY6g/zh-cn_image_0000002658391408.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/EIz8zh6dTrS5k4VKNpKX0g/zh-cn_image_0000002688550963.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/h8GahlEESLSmAWP3EzjYZQ/zh-cn_image_0000002688550963.png "点击放大")
 
 ## 常见FAQ
 
-Q：AppGallery Connect应用信息中的支持设备勾选分发的规则有哪些需要注意？
+Q：HarmonyOS 开发者中心应用信息中的支持设备勾选分发的规则有哪些需要注意？
 
 A：
 

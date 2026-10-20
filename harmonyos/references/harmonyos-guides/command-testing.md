@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/command-testi
 title: 命令行执行测试
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 命令行执行测试
 category: harmonyos-guides
-scraped_at: 2026-10-20T07:29:00+08:00
+scraped_at: 2026-10-21T07:03:49+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:575f32a078e24fdd49e36be1a5c56660be334ce29161bf391c07d274e6f2f5b8
+content_hash: sha256:cbd75098390a15b7cb7e55624a096e0f1d18245bd5c5ccdd7200526fc6070d21
 ---
 
 ## 环境准备
@@ -576,7 +576,7 @@ softwareCatagory参数取值说明：
 | generalData | JsonObject | 整体信息，包含任务基础信息、应用信息等 |
 | expandData | Jsonarray | 结果详情，包含整体情况、用例详细数据等 |
 
-更多参数详情及完整 json文件示例请点击下载：[场景化性能json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.59411504587465094891254092933727:20261021072858:2800:839274B03D63D0FBFC2C1F9E591A0994FA973652CD3974AA8935F60D6D3BBB22.zip?needInitFileName=true)
+更多参数详情及完整 json文件示例请点击下载：[场景化性能json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.59411504587465094891254092933727:20261022070213:2800:45BE78444FD63B36F5BA0A981E39E46B59226ADFD69A9DD9ED71E2DE0C2B75AF.zip?needInitFileName=true)
 
 ### 性能基础质量测试
 
@@ -604,7 +604,7 @@ softwareCatagory参数取值说明：
 | generalData | JsonObject | 整体信息，包含任务基础信息、应用信息等 |
 | expandData | Jsonarray | 结果详情，包含整体情况、用例详细数据等 |
 
-更多参数详情及完整 json文件示例请点击下载：[性能基础json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.77776542038461664646258699728448:20261021072858:2800:D923E65B4AD85AEDCE9D2718BA8E3BD955789D2075495D2E860CF6BA408A1990.zip?needInitFileName=true)
+更多参数详情及完整 json文件示例请点击下载：[性能基础json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.77776542038461664646258699728448:20261022070213:2800:A016126DF9F3B17979927530F9A514FCEE57086FE28C8BCC82B28A5F4DE248C3.zip?needInitFileName=true)
 
 ### 稳定性基础质量测试
 
@@ -633,7 +633,7 @@ softwareCatagory参数取值说明：
 | taskPath | string | 报告路径 |
 | taskParams | JsonObject | 执行参数 |
 
-更多详细参数查询可参考以下文档：[稳定性基础质量json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.20831291131987972057529442985167:20261021072858:2800:6D5AC76FADE6710EAA768DFA2DA7E25C985405F9B9B45743FBB29FAC8AC89C79.zip?needInitFileName=true)
+更多详细参数查询可参考以下文档：[稳定性基础质量json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.20831291131987972057529442985167:20261022070213:2800:75C637B1B503CEEE21056AD26F6FEEB9AE56DE805D1C2F1D18A1383FB3FCE9CA.zip?needInitFileName=true)
 
 ### 内存泄漏测试
 
@@ -663,7 +663,7 @@ softwareCatagory参数取值说明：
 | taskPath | String | 测试任务存储数据的文件夹路径。 |
 | taskParams | Object | 在创建任务选择的一些执行参数，详见下方文档。 |
 
-更多详细参数查询可参考以下文档：[内存泄漏json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.97240897388857626149443883315803:20261021072858:2800:2F7C97BF16921BEE8016507B7EFE404B20A448204A30E637230AFC524530489E.zip?needInitFileName=true)
+更多详细参数查询可参考以下文档：[内存泄漏json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.97240897388857626149443883315803:20261022070213:2800:B8D5F65F5348E005B02D057DC2B778F6EE8C658C4FE0EA9C44C32559C0600E03.zip?needInitFileName=true)
 
 ### 应用上架预检（本地）
 
@@ -697,7 +697,7 @@ softwareCatagory参数取值说明：
 | taskPath | string | 报告路径 |
 | taskParams | JsonObject | 执行参数 |
 
-更多参数详情及完整 json文件示例请点击下载：[上架预检json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.31964345009353290029951893083973:20261021072858:2800:7AC6FD0F370DFE9A07568ED58CB6AD9055D96252B1D59B93EA7A99053E41C8F0.zip?needInitFileName=true)
+更多参数详情及完整 json文件示例请点击下载：[上架预检json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.31964345009353290029951893083973:20261022070213:2800:EE05605AAB521A0F6AD70E7397C24A1A1DB93F98838A320A100DF3473CD7C0ED.zip?needInitFileName=true)
 
 ## 支持自动清理报告数据
 

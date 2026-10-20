@@ -3,33 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-device-cer
 title: APP备案如何获取公钥和证书指纹
 breadcrumb: FAQ > 系统开发 > 安全 > 证书管理（Device Certificate） > APP备案如何获取公钥和证书指纹
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:13+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:b2b39cd9353c2452252d7215b475da9113ef9f6f19049c344267f486b289f496
+scraped_at: 2026-10-21T07:11:56+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:cece334ccac9d43033e084b09d75c654629dd79f4d8856ffc8c6f8f26f3ee655
 ---
 
 ## 问题现象
 
 移动端应用在各大平台使用云资源时，需要在对应的平台进行应用备案，平台会要求提供应用对应的公钥和证书md5指纹的信息。示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/1qASJcyASsqD15n0LBCbLw/zh-cn_image_0000002679828592.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/UwqpuVTXT2mjq-utebM_ag/zh-cn_image_0000002679828592.png "点击放大")
 
 ## 背景知识
 
-证书是由AppGallery Connect颁发的数字证书，用于验证应用的身份和签名。通过证书，验证应用身份，可以确保应用由合法开发者发布；对应用签名，可以确保应用的完整性和来源的可靠性。证书格式为.cer，包含公钥、证书指纹（即证书的摘要信息）等信息。
+证书是由HarmonyOS 开发者中心颁发的数字证书，用于验证应用的身份和签名。通过证书，验证应用身份，可以确保应用由合法开发者发布；对应用签名，可以确保应用的完整性和来源的可靠性。证书格式为.cer，包含公钥、证书指纹（即证书的摘要信息）等信息。
 
 ## 解决方案
 
-1. 登录AppGallery Connect，点击“证书、APP ID和Profile”，在页面左侧点击“证书”，下载需要备案的HarmonyOS应用的发布证书。
+1. 登录HarmonyOS 开发者中心，点击“证书、APP ID和Profile”，在页面左侧点击“证书”，下载需要备案的HarmonyOS应用的发布证书。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/VV2hnThtTtqgZ5r57nZfKw/zh-cn_image_0000002679988488.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/riM9yE88QSmIRrG88s0XTQ/zh-cn_image_0000002679988488.png "点击放大")
 2. 使用文本编辑器（如记事本）打开已下载的证书，删除前两段证书（根证书和中间证书），只保留最后一段证书（叶子证书），点击保存。
 3. 双击打开已保存的证书，点击“详细信息-公钥”，获取APP的公钥信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/7dFUhhxaTSGhp1ezjgXVMg/zh-cn_image_0000002709668373.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/9VyBrddiSnyJm5yicPr_3A/zh-cn_image_0000002709668373.png "点击放大")
 4. 双击打开已保存的证书点击“详细信息-指纹”，获取APP的指纹信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Q_34B3DGR9iE7B54iSxxPg/zh-cn_image_0000002679828768.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/T5vjoN7kRDKXnU_DZ0BMww/zh-cn_image_0000002679828768.png "点击放大")
 
    **说明** 
 

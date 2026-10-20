@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-weatherser
 title: 查询天气数据失败怎么解决
 breadcrumb: FAQ > 应用服务开发 > 天气数据服务（Weather Service Kit） > 查询天气数据失败怎么解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:a9d594c6a8a1e67c64181a5d93ec94317039f5a05bd2bc1afc9c7781501e4bc8
+scraped_at: 2026-10-21T07:12:28+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:0f38a604cc332c7b899d47a13cbacbf16e18f924a3a11bb9577a78adb1d42320
 ---
 
 ## 问题现象
@@ -36,7 +36,7 @@ content_hash: sha256:a9d594c6a8a1e67c64181a5d93ec94317039f5a05bd2bc1afc9c7781501
 
 ## 常见FAQ
 
-Q：依据修改建议，在AppGallery Connect中，选不到开通“天气服务”能力开关，无法开通天气服务，是什么原因？
+Q：依据修改建议，在HarmonyOS 开发者中心中，选不到开通“天气服务”能力开关，无法开通天气服务，是什么原因？
 
 A：[天气服务](../harmonyos-guides/weather-service-preparations.md#开通天气服务)当前仅面向系统应用开放。
 

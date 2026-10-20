@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何动态设置应用图标
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何动态设置应用图标
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:30+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:77772f6a9445f123e7aa645924831d1d84e259942c6202d3376682d2bcfc0995
+scraped_at: 2026-10-21T07:12:33+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:c314ed16f5547806931af493885fc6524946dfade47ae1b508405d8da60ded85
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:77772f6a9445f123e7aa645924831d1d84e259942c6202d3376682d2bcf
 
 ## 背景知识
 
-* [通过AppGallery Connect动态管理应用图标](../harmonyos-guides/appgallery-appinfo-manage.md)：通过图标管理服务，开发者可以在不升级应用版本的情况下，通过AGC页面动态管理应用的个性化图标，并在应用侧实现应用图标动态切换。
+* [通过HarmonyOS 开发者中心动态管理应用图标](../harmonyos-guides/appgallery-appinfo-manage.md)：通过图标管理服务，开发者可以在不升级应用版本的情况下，通过AGC页面动态管理应用的个性化图标，并在应用侧实现应用图标动态切换。
 * [实现应用图标动态切换](../harmonyos-guides/appgallery-appinfo-use.md)：AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信息、切换动态图标、恢复默认图标功能。
 
 | 约束与限制 | 说明 |
@@ -27,9 +27,9 @@ content_hash: sha256:77772f6a9445f123e7aa645924831d1d84e259942c6202d3376682d2bcf
 1. 开发前准备：
 
    使用图标管理服务之前，请先[申请开通服务](../harmonyos-guides/appgallery-appinfo-manage.md#申请开通服务)。
-2. [通过AppGallery Connect配置应用图标](../harmonyos-guides/appgallery-appinfo-manage.md#通过appgallery-connect配置应用图标)：
+2. [通过HarmonyOS 开发者中心配置应用图标](../harmonyos-guides/appgallery-appinfo-manage.md#通过appgallery-connect配置应用图标)：
 
-   登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击“APP与元服务”，在应用列表中选择已经开通图标管理服务的HarmonyOS应用，选择“分发 > 服务 > 图标管理”，进入图标管理页面，就可以管理HarmonyOS应用的个性化图标，包括[创建图标](../harmonyos-guides/appgallery-appinfo-manage.md#创建图标)、[编辑和更新图标](../harmonyos-guides/appgallery-appinfo-manage.md#编辑和更新图标)、[删除图标](../harmonyos-guides/appgallery-appinfo-manage.md#删除图标)。
+   登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，点击“APP与元服务”，在应用列表中选择已经开通图标管理服务的HarmonyOS应用，选择“分发 > 服务 > 图标管理”，进入图标管理页面，就可以管理HarmonyOS应用的个性化图标，包括[创建图标](../harmonyos-guides/appgallery-appinfo-manage.md#创建图标)、[编辑和更新图标](../harmonyos-guides/appgallery-appinfo-manage.md#编辑和更新图标)、[删除图标](../harmonyos-guides/appgallery-appinfo-manage.md#删除图标)。
 3. 实现应用图标动态切换：
 
    AppGallery Kit为使用动态图标的应用客户端提供[查询动态图标信息](../harmonyos-guides/appgallery-appinfo-use.md#查询动态图标信息-1)、[切换动态图标](../harmonyos-guides/appgallery-appinfo-use.md#切换动态图标-1)、[恢复默认图标](../harmonyos-guides/appgallery-appinfo-use.md#恢复默认图标-1)功能，具体可参考[开发步骤](../harmonyos-guides/appgallery-appinfo-use.md#开发步骤)。

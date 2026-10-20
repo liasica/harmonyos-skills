@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-payment-4
 title: 华为支付预下单接口报错提示无效的商户号
-breadcrumb: FAQ > 应用服务开发 > 鸿蒙支付服务（Payment Kit） > 华为支付预下单接口报错提示无效的商户号
+breadcrumb: FAQ > 应用服务开发 > 华为支付服务（Payment Kit） > 华为支付预下单接口报错提示无效的商户号
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
+scraped_at: 2026-10-21T07:12:26+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:e7a4c418475ad62efe5830d664f9f283a3fc68baeec1b0bccbc31d566e1e7ea0
 ---

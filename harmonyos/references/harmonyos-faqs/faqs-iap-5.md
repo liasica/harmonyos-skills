@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-5
 title: 应用内支付沙盒测试常见问题及解决方案
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 应用内支付沙盒测试常见问题及解决方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:050b94f9f13d78ca9807418093bbd93b7ae68c696d3eab7a9d0388979c8f79a9
+scraped_at: 2026-10-21T07:12:30+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:1aa3d7c1ae4c99b6b1e26b6df3b68ee1779d06d444c73f5e06ed964977de4a10
 ---
 
 ## 问题现象
@@ -17,12 +17,12 @@ content_hash: sha256:050b94f9f13d78ca9807418093bbd93b7ae68c696d3eab7a9d0388979c8
 
 ## 背景知识
 
-[沙盒测试](../harmonyos-guides/iap-sandbox.md)允许开发者在接入华为应用内支付调测过程中对订单进行虚拟支付。沙盒订单并非真实订单，无法在开发者中心->我的报表->支付报表中查询。
+[沙盒测试](../harmonyos-guides/iap-sandbox.md)允许开发者在接入华为应用内支付调测过程中对订单进行虚拟支付。沙盒订单并非真实订单，无法在HarmonyOS 开发者中心->我的报表->支付报表中查询。
 
 ## 解决方案
 
 1. 可以按照如下方式进行排查：
-   * 支付服务开关验证：检查AGC控制台是否已开通支付服务，路径：AppGallery Connect>项目>应用服务>应用内支付>管理开关，确保已开启对应环境的支付功能（开发/生产环境）。
+   * 支付服务开关验证：检查AGC控制台是否已开通支付服务，路径：HarmonyOS 开发者中心 > 项目 > 应用服务 > 应用内支付 > 管理开关，确保已开启对应环境的支付功能（开发/生产环境）。
    * 应用签名校验：确认应用签名证书与AGC后台配置一致和验证签名证书指纹是否更新至AGC后台。
    * 检查config.json中bundleName与AGC注册的包名匹配。
    * 沙箱环境配置：确保使用华为官方沙箱测试账号，测试账号需完成实名认证（身份证+银行卡）以及检查测试商品是否配置为"沙箱测试商品"，确认接口地址为沙箱专用环境地址（与生产环境区分）时间同步与证书验证。
@@ -49,11 +49,11 @@ A：沙盒环境下是没有的，正式环境是有的，限制是48小时内�
 
 Q：华为应用内支付服务如何配置沙盒测试？
 
-A：在AppGallery Connect后台开通应用内支付服务并创建虚拟商品和[配置沙盒测试](../harmonyos-guides/iap-sandbox.md#配置沙盒测试)。
+A：在HarmonyOS 开发者中心后台开通应用内支付服务并创建虚拟商品和[配置沙盒测试](../harmonyos-guides/iap-sandbox.md#配置沙盒测试)。
 
 Q：应用内支付报错提示1001860058:The HUAWEI ID is not test account？
 
-A：该账号不是测试账号，新增沙盒测试账号，需要在AppGallery Connect网站左侧导航栏点击新增测试账号。
+A：该账号不是测试账号，新增沙盒测试账号，需要在HarmonyOS 开发者中心网站左侧导航栏点击新增测试账号。
 
 Q：申请沙盒测试配置信息时还未开通商户号，现已开通商户号，之前的沙盒配置信息是否还能使用？是否需要重新申请？
 

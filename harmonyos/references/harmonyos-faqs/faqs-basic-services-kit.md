@@ -3,9 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-basic-serv
 title: 基础服务（Basics Service）
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service）
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:27+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:b09bbf2d1424293c84305959c2053cec86910a2bbf124d338e2db1d550ff9f05
+scraped_at: 2026-10-21T07:12:03+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:ea831b53d1c7f04903ea1fa5b1532dbab574c78af0a48a341fe97c39029b0400
 ---
 
 * **[常见问题](basic-services-kit-faq.md)**
+* **[故障排查](basic-services-kit-troubleshooting.md)**

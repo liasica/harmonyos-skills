@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-liveview-2
 title: 实况窗有哪些支持对接的场景以及消息推送机制
 breadcrumb: FAQ > 应用服务开发 > 实况视图服务（Live View Kit） > 实况窗有哪些支持对接的场景以及消息推送机制
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:a0b28bbe176c62ceece8a848e274d8b2b46acc3e15e5d869494b6ec07c0908f8
+scraped_at: 2026-10-21T07:12:28+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:72e2c41e675f40d21a2c26fb37d94041c609e37da2f756041e24d6610c24f559
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:a0b28bbe176c62ceece8a848e274d8b2b46acc3e15e5d869494b6ec07c0
 
 * 问题一：
   1. [Live View Kit（实况窗服务）](../harmonyos-guides/liveview-introduction.md)支持应用将订单或者服务的实时状态信息变化在设备的关键界面展示，并对展示信息的生命周期、用户界面UI效果等进行管理。实况窗目前为Beta阶段，优先对满足场景准入原则和适用范围的应用开放申请。[实况窗支持对接的场景](../harmonyos-guides/liveview-introduction.md#实况窗支持对接的场景)主要有出行打车、即时配送、运动锻炼、导航等。
-  2. 实况窗权益需要开发者根据业务场景，同时满足[实况窗设计规范](../harmonyos-guides/liveview-design-formula.md)，在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)申请，具体申请方法参考[申请实况窗正式权限](../harmonyos-guides/liveview-formal-authority.md)。
+  2. 实况窗权益需要开发者根据业务场景，同时满足[实况窗设计规范](../harmonyos-guides/liveview-design-formula.md)，在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)申请，具体申请方法参考[申请实况窗正式权限](../harmonyos-guides/liveview-formal-authority.md)。
 * 问题二：
   1. 实况窗需要本地序列化，整体有大小限制，所以对使用的素材也有大小限制，建议下载到本地使用本地图片，且可能是图片超过大小限制了，image.PixelMap大小不能大于30KB，可使用[ImagePacker](../harmonyos-references/arkts-apis-image-imagepacker.md)压缩图片。
   2. 通过Push Kit更新实况窗内容的过程是自动更新的。客户端在创建本地实况窗后，使用Push Kit获取Push Token并调用相关API接口时，Push Kit会自动推送更新消息。因此无法进行拦截。

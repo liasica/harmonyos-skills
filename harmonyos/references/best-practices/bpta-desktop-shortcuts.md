@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-desktop-sh
 title: 桌面快捷方式
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 桌面快捷方式
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:7e6fd9dfc6a9c92154d4d7d9d1e00edc511b8e3bf068ce3ee488387bbd381e9a
+scraped_at: 2026-10-21T07:09:49+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:a94e31bf7546f20cab85d78b1993ef6622902456434b9c51e2f0569b7bff5fb1
 ---
 
 ## 概述
@@ -20,10 +20,10 @@ content_hash: sha256:7e6fd9dfc6a9c92154d4d7d9d1e00edc511b8e3bf068ce3ee488387bbd3
 
 * 点击快捷方式入口列表中的“回家”项，即可快速打开地图应用，开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/r8TACyOzSoyBYKQXHGU4yA/zh-cn_image_0000002229451729.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/VkZl3yDqRgGxn2qqnU-_Zw/zh-cn_image_0000002229451729.gif "点击放大")
 * 长按快捷方式入口列表中的“回家”项，可将其拖动至桌面，点击桌面对应图标，即可开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/iQoX4d-7TlWlB5zqJfhLtA/zh-cn_image_0000002229451733.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/cQ_OAJGuTuusUM0V003boQ/zh-cn_image_0000002229451733.gif "点击放大")
 
 **说明** 
 
@@ -37,7 +37,23 @@ content_hash: sha256:7e6fd9dfc6a9c92154d4d7d9d1e00edc511b8e3bf068ce3ee488387bbd3
 
 * shortcutId：标识快捷方式的ID，取值为长度不超过63字节的字符串。
 * label：标识快捷方式的标签信息，即快捷方式对外显示的文字描述信息。取值为长度不超过255字节的字符串，可以是描述性内容，也可以是标识label的资源索引。
-* icon：标识快捷方式的图标，取值为资源文件的索引。
+* icon：标识快捷方式的图标，取值为资源文件的索引。快捷方式图标规范详见[快捷方式图标规范](../doccenter-ux-design/shortcat-0000002550987962.md#section1989093019508)，若使用Svg格式的图标资源，相关规格需满足如下限制：
+
+  | 规格类型 | 限制 |
+  | --- | --- |
+  | 构建时DOM深度，渲染时节点和内部引用的统一递归路径 | 256 |
+  | XML元素和文本节点总数 | 100,000 |
+  | XML DOM arena中受计费分配的累计字节数 | 64 MiB |
+  | 整个文档所有 `<style>` 文本回调的累计字节数 | 1 MiB |
+  | 单个 `<text>` 子树的UTF-8文本长度 | 1 MiB |
+  | CSS style map中不同selector key的数量 | 10,000 |
+  | 单条CSS规则的声明数 | 1,000 |
+  | 整个DOM中所有 `class` 属性实际展开的属性总数 | 1,000,000 |
+  | 单个通用list属性值的字节数 | 1,000,000 |
+  | 单个polyline/polygon解析出的点数 | 100,000 |
+  | 单个path解析出的非move verb数 | 100,000 |
+  | mask/filter/opacity累计设备像素消耗 | 500,000,000 |
+  | 单个 `<feMerge>` 的输入数 | 10 |
 * [wants](../harmonyos-guides/module-configuration-file.md#wants标签)：标识快捷方式内定义的目标[wants](../harmonyos-guides/module-configuration-file.md#wants标签)信息集合，[wants](../harmonyos-guides/module-configuration-file.md#wants标签)中可配置如下参数：
 
   | 属性名称 | 含义 |

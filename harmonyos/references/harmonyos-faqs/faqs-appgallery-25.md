@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS应用在AGC申请ACL受限权限与Profile配置流程及常见问题解决说明
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS应用在AGC申请ACL受限权限与Profile配置流程及常见问题解决说明
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:f844e875a80b0a0e519918cd16b333daa42bc658d625451b6dd3ad1470b975c8
+scraped_at: 2026-10-21T07:12:32+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:f423432a3e5021588ad30adfd245220aaa270b4fe47b1efa2965e7916a40302c
 ---
 
 ## 问题现象
@@ -34,14 +34,14 @@ content_hash: sha256:f844e875a80b0a0e519918cd16b333daa42bc658d625451b6dd3ad1470b
 
 场景二：在AGC新建调试或发布Profile添加ACL权限时，若遇到无法按需勾选、全选报错或权限置灰等问题，请参考以下排查与解答。
 
-* 针对无法按需勾选（只能全选或不选），以及全选ACL权限后添加设备ID时出现权限校验不通过报错的情况：此为AppGallery Connect（AGC）平台早期的系统设定限制。目前平台已优化该逻辑，请开发者直接在AGC控制台重新新建调试或发布Profile。新创建的Profile已支持正常编辑和按需勾选，可以根据实际需求勾选相应的ACL权限，后续添加设备ID时不会再出现校验不通过的报错弹窗。
+* 针对无法按需勾选（只能全选或不选），以及全选ACL权限后添加设备ID时出现权限校验不通过报错的情况：此为HarmonyOS 开发者中心平台早期的系统设定限制。目前平台已优化该逻辑，请开发者直接在AGC控制台重新新建调试或发布Profile。新创建的Profile已支持正常编辑和按需勾选，可以根据实际需求勾选相应的ACL权限，后续添加设备ID时不会再出现校验不通过的报错弹窗。
 * 针对已申请过的ACL权限呈置灰且默认选中状态、无法手动修改的情况：这是系统当前的正常设定规则，并不是系统缺陷。已申请过的ACL权限在创建新Profile时会被默认选中且不可取消，开发者无需进行额外修改，直接使用默认选中的权限继续后续操作即可。
 
 ## 常见FAQ
 
 Q：申请ACL受限权限被拒绝后该如何处理？
 
-A：权限申请在AGC平台"开发与服务>项目设置>ACL权限"中选择需要的权限进行申请，请按需申请。如果申请被拒绝，建议重新审视应用场景是否符合受限权限的使用条件，并优先考虑使用Picker/控件等替代方案实现功能需求。
+A：权限申请在AGC平台“开发者管理 > ID、证书和Profile > APP ID > ACL权限”中选择需要的权限进行申请，请按需申请。如果申请被拒绝，建议重新审视应用场景是否符合受限权限的使用条件，并优先考虑使用Picker/控件等替代方案实现功能需求。
 
 Q：如何在Profile上取消不需要的ACL权限？
 

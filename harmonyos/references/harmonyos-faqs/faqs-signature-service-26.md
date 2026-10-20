@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 打包后hap包安装失败，错误码：9568320
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 打包后hap包安装失败，错误码：9568320
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d6b25bd74f6aef87590523c822bc2ba9ff21b6d4c37b0b788d70293c88b9c4ba
+scraped_at: 2026-10-21T07:12:44+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:ad76188fd109e7b6194cad9857f153bdefd78255fbe4dd0a83baa95062edccf7
 ---
 
 ## 问题现象
@@ -42,4 +42,4 @@ error: no signature file.
 * 场景二：
   1. 执行菜单栏操作：Build -> Clean Project -> File -> Invalidate Caches，然后重启DevEco Studio。
   2. 删除本地签名目录（路径在签名页面可见），重新运行自动签名。
-* 场景三：保证证书类型使用正确，调试包使用调试证书，正式发布包使用发布证书，发布证书需要在AppGallery Connect创建获取。
+* 场景三：保证证书类型使用正确，调试包使用调试证书，正式发布包使用发布证书，发布证书需要在HarmonyOS 开发者中心创建获取。

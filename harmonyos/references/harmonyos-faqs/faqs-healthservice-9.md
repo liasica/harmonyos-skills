@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 企业开发者同步运动健康数据指导
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 企业开发者同步运动健康数据指导
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:83a0917f956d519ae7c24c815541621438d93195e9f58c163a6ae835e91561e9
+scraped_at: 2026-10-21T07:12:35+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:b7787c267ef6aac19ab94427fef24c4423a2702e398d00cfcaf66e318e71326b
 ---
 
 ## 问题现象
 
-1. 管理中心申请运动健康服务，产品类型很多，具体如何选择？
+1. HarmonyOS 开发者中心申请运动健康服务，产品类型很多，具体如何选择？
 2. 申请运动健康数据权限上传材料有哪些注意事项？
 3. 申请成功后企业开发者如何同步运动健康数据？
 4. 海外穿戴应用服务开发可以获取健康云的数据吗？

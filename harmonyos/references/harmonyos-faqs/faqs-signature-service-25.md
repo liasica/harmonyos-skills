@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 手动签名失败的常见问题
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 手动签名失败的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6fde6bad558c20dead972779aaa782dafc49fb22cb5ec0cafd73e674033ca5a8
+scraped_at: 2026-10-21T07:12:45+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:b6cc7ed6bb2e9614a1045eebda9325cc1fe14e62688e5cc4e542b68c8b066bd0
 ---
 
 ## 问题现象
@@ -122,7 +122,7 @@ at sun security.tools.keytool.Main.main(Main.java:359)
 * 检查证书文件和调试Profile文件是否配套使用。
 * 检查调试证书和调试Profile文件的文件名是否包含中文。参考内容：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/uY-F1LM1Sge8k2oAQZpGIg/zh-cn_image_0000002628569308.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Jm6A1kGRS4m-u5OHGj8KPQ/zh-cn_image_0000002628569308.png "点击放大")
 
 **场景八**：
 
@@ -135,13 +135,13 @@ at sun security.tools.keytool.Main.main(Main.java:359)
 1. 查资料可知这个错误有可能是因为不同jdk版本间不兼容。
 2. 查看DevEco Studio的jdk版本为17.0.12：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/kwz3Mkg8Tji3JaFDHpRshQ/zh-cn_image_0000002658928625.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/8fNnRfo1QW6THsDBCKVkWw/zh-cn_image_0000002658928625.png "点击放大")
 3. 查看本地jdk版本为1.8.0：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/RCvsViksSv2BDI1-wf8XMg/zh-cn_image_0000002628409404.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/xn9_QxpzQNOrSfwwlAjQpg/zh-cn_image_0000002628409404.png "点击放大")
 4. 将本地的jdk升级到与IDE一致的版本后，再手动获取证书指纹，可以获取到：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/m9u2mpbGQp-U5JQpLoDfgA/zh-cn_image_0000002658808673.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/kD7UCQy1RWSCSeEfvPqZvw/zh-cn_image_0000002658808673.png "点击放大")
 
 ## 分析结论
 
@@ -218,7 +218,7 @@ IDE生成的密钥库与手动生成密钥指纹使用的jdk版本不一致，�
 **场景六**：
 
 * 使用[调试Profile文件](../app/agc-help-debug-profile-0000002248181278.md)重新签名应用。
-* 确保Profile文件是由配置中的.cer文件生成的，可以登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“证书、APP ID和Profile”，在左侧导航栏选择“证书、APP ID和Profile > Profile”，进入“Profile”页面，选择配置的Profile文件，右侧操作点击“查看”，确认“查看Profile”页面中“归属证书”是否与配置的.cer文件一致。
+* 确保Profile文件是由配置中的.cer文件生成的，可以登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，选择“证书、APP ID和Profile”，在左侧导航栏选择“证书、APP ID和Profile > Profile”，进入“Profile”页面，选择配置的Profile文件，右侧操作点击“查看”，确认“查看Profile”页面中“归属证书”是否与配置的.cer文件一致。
 * 在连接设备后，重新为应用进行自动签名。
 
 **场景七**：

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1555
 title: 如何解决Scroll嵌套地图组件时的滚动冲突问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Scroll嵌套地图组件时的滚动冲突问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:49+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:59827d7389616128c6ad508709eecf84bfe9c9e3a1df05383488cbd28cc2eb21
+scraped_at: 2026-10-21T07:11:02+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:a7f1b4be41cde0faf7c2fc283e067a796844d8c4a73a09945a97d6c69b08fb11
 ---
 
 ## 问题现象
@@ -14,17 +14,17 @@ content_hash: sha256:59827d7389616128c6ad508709eecf84bfe9c9e3a1df05383488cbd28cc
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/iAEYrLD3RAaFgnLFq-zyog/zh-cn_image_0000002658848495.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ZK-ZxogbTIqOZ9lrs8tYUg/zh-cn_image_0000002658848495.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Xu2a8_hETw2cCdf-njcxiA/zh-cn_image_0000002628609232.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/-b33ppzfRDqHzgs3fX-r8A/zh-cn_image_0000002628609232.gif "点击放大")
 
 ## 背景知识
 
 * [Scroll](../harmonyos-references/ts-container-scroll.md)可滚动的容器组件，当子组件的布局尺寸超过父组件的尺寸时，内容可以滚动，若子组件尺寸不超过父组件则Scroll不提供滚动能力。
 * [滚动组件通用接口](../harmonyos-references/ts-container-scrollable-common.md)滚动组件通用属性和事件目前只支持List、Grid、Scroll和WaterFlow组件。提供了诸如滚动条、摩擦系数、滚动到组件最后触发的回调注册等。
-* 在使用地图服务之前，需要先通过DevEco Studio或AppGallery Connect网站开通地图服务，详情可见官网指南[开发准备](../harmonyos-guides/map-config-agc.md)。
+* 在使用地图服务之前，需要先通过DevEco Studio或HarmonyOS 开发者中心网站开通地图服务，详情可见官网指南[开发准备](../harmonyos-guides/map-config-agc.md)。
 
 ## 解决方案
 

@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/payment-kit-faq-0001
 title: 收银台支付报错排查
-breadcrumb: FAQ > 应用服务开发 > 鸿蒙支付服务（Payment Kit） > 常见问题 > 收银台支付报错排查
+breadcrumb: FAQ > 应用服务开发 > 华为支付服务（Payment Kit） > 常见问题 > 收银台支付报错排查
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:51+08:00
+scraped_at: 2026-10-21T07:12:27+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:906a040991a5c70b438a373174e862ba7751be6f7fad7f0b88c38b9772ae9c6c
 ---

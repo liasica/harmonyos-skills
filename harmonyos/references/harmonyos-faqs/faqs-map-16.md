@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-16
 title: 地图服务使用报错
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 地图服务使用报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
-content_hash: sha256:ac91578ade70b9d6f07d635b770d626e57ffac455145c7bca8030baad08444db
+scraped_at: 2026-10-21T07:12:24+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:e7c11cfea8a46f2c266f2e0a03a63c4ca5c56f155b4e2760b26289b60ba79075
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ Map Kit（地图服务）为开发者提供强大而便捷的地图能力，助�
 ## 问题定位
 
 1. 检查设备网络状态。
-2. 检查是否在AppGallery Connect上提前开通了地图服务，并确保在申请Profile文件之前已开启地图服务。开通地图服务后最多需要等待24小时才能生效，可通过临时调整系统时间进行验证。
+2. 检查是否在HarmonyOS 开发者中心上提前开通了地图服务，并确保在申请Profile文件之前已开启地图服务。开通地图服务后最多需要等待24小时才能生效，可通过临时调整系统时间进行验证。
 3. 确认应用是否在真实设备上运行。
 4. 是否未更新手动签名中的证书。
 5. 是否开启了"useNormalizedOHMUrl": true配置。

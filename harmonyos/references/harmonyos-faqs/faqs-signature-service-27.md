@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 编译HAP时签名过期问题如何解决
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 编译HAP时签名过期问题如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:05e1c188ad3b3a4febddba2b29942f28ee3bdc243017b11ae4d4323932bd8a2a
+scraped_at: 2026-10-21T07:12:44+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:c7d7c3e7d8a57900e03ef3d537a1aa9545ad9624ed9c02200148ff777d093060
 ---
 
 ## 问题现象
@@ -47,4 +47,4 @@ Q：签名时，提示"Failed to query agreement signing records"。
 A：出现该问题的原因一般是签名过程中，DevEco Studio与查询协议链接通道异常导致。请尝试通过如下两种方式解决。
 
 * 方式一：该问题可能是由于DevEco Studio的HTTP代理问题引起的，请参考[配置代理](../harmonyos-guides/ide-environment-config.md)。
-* 方式二：进行开发者实名认证，具体指导可以参考[实名认证指导](../start/itrna-0000001076878172.md)。
+* 方式二：进行开发者实名认证，具体指导可以参考[实名认证指导](../app/hdc-verification-introduction-0000002752607793.md)。

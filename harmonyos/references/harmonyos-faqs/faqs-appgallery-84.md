@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何解决首次运行弹出两个隐私政策弹窗的问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何解决首次运行弹出两个隐私政策弹窗的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0d5a219efec4fb483bd3957caf4c3aa5f8bbb924f205341451dbb9cf6f86a675
+scraped_at: 2026-10-21T07:12:34+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:dc63720753f5b0a000fd8538f1ab0c025764a895d6cfff34beb58ba7c75b6fa6
 ---
 
 ## 问题现象
@@ -34,7 +34,7 @@ content_hash: sha256:0d5a219efec4fb483bd3957caf4c3aa5f8bbb924f205341451dbb9cf6f8
 
 Q：已上架的应用该如何关闭应用市场的隐私托管？
 
-A：根据官网对[修改已有隐私政策](../app/agc-help-privacy-policy-app-0000002282162168.md#section18976155114419)的介绍，关联在架版本的协议不可直接删除，无法直接切换隐私政策到自定义模式。只能在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)提交新版本应用上架时，在版本信息>准备提交>隐私声明模块选择自定义隐私政策，取消隐私托管，系统自动推送的隐私弹窗也将不会再推送。
+A：根据官网对[修改已有隐私政策](../app/agc-help-privacy-policy-app-0000002282162168.md#section18976155114419)的介绍，关联在架版本的协议不可直接删除，无法直接切换隐私政策到自定义模式。只能在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)提交新版本应用上架时，在版本信息>准备提交>隐私声明模块选择自定义隐私政策，取消隐私托管，系统自动推送的隐私弹窗也将不会再推送。
 
 Q：使用隐私协议弹窗会影响权限弹窗的弹出吗？
 

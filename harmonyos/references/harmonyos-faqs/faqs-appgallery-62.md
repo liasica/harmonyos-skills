@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用误删后的恢复与重新创建方式
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用误删后的恢复与重新创建方式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:d4922a156af4bd8e0c5beae6b3315cdaf58c4601d8fc679a2b4c324331afae9e
+scraped_at: 2026-10-21T07:12:33+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:41af213f1ffc481a87223166bdd7a2fe8f60e30c329ca2ec139dffbc56c4bd6d
 ---
 
 ## 问题现象
@@ -15,6 +15,6 @@ content_hash: sha256:d4922a156af4bd8e0c5beae6b3315cdaf58c4601d8fc679a2b4c324331a
 
 ## 解决方案
 
-问题一：删除操作不可逆，无法恢复。删除应用/元服务后，系统会彻底移除所有关联数据（包括AppID），不支持任何形式的恢复或撤销操作。点击删除确认后，系统将立即跳转至应用列表页，该应用不再展示。如已误删，必须在AppGallery Connect中重新创建应用。
+问题一：删除操作不可逆，无法恢复。删除应用/元服务后，系统会彻底移除所有关联数据（包括AppID），不支持任何形式的恢复或撤销操作。点击删除确认后，系统将立即跳转至应用列表页，该应用不再展示。如已误删，必须在HarmonyOS 开发者中心中重新创建应用。
 
 问题二：删除应用后包名会立即释放，可以使用相同包名重新创建AppID。现有发布证书和调试证书可以继续使用，但Profile文件必须重新申请。重新创建后还需重新配置应用签名、服务开通等信息，完成开发后需再次走提审、测试、上架流程。

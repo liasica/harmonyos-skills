@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-26
 title: 服务卡片实现长期破窗效果
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 服务卡片实现长期破窗效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:cfaa397d5db5888ebe8663f7c75b17e77ba1e9524284c493a0d12907bbf3a034
+scraped_at: 2026-10-21T07:10:28+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:7e5a7ff8fd94572a45bfd207e6076921e4ed0b4624eb263a09d578422beda10a
 ---
 
 ## 问题现象
@@ -23,7 +23,7 @@ content_hash: sha256:cfaa397d5db5888ebe8663f7c75b17e77ba1e9524284c493a0d12907bbf
 
 若要实现长期破窗（如自定义边框、卡片边缘悬浮感），可借助背板透明卡片间接达成。具体步骤如下：
 
-1. 参考[透明卡片开放能力申请](../harmonyos-guides/arkts-ui-transparent-backplate-form-development.md#透明卡片开放能力申请)，在AppGallery Connect中申请“背板透明卡片”权限，并重新生成应用Profile文件。
+1. 参考[透明卡片开放能力申请](../harmonyos-guides/arkts-ui-transparent-backplate-form-development.md#透明卡片开放能力申请)，在HarmonyOS 开发者中心中申请“背板透明卡片”权限，并重新生成应用Profile文件。
 2. 参考[创建ArkTS卡片](../harmonyos-guides/arkts-ui-widget-creation.md)按标准流程创建ArkTS卡片。
 3. 在卡片配置文件form\_config.json中，将transparencyEnabled字段设置为true（该字段为背板透明卡片的必配项）。
 

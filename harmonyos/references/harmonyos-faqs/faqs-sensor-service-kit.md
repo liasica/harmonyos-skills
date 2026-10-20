@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 传感器（Sensor Service）
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service）
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:31+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-10-21T07:12:07+08:00
+doc_updated_at: 2026-10-20
 content_hash: sha256:32961f1d0f421a03a314e94412e7b0186a08619af0b90a2e47d73b3a0be49b23
 ---
 

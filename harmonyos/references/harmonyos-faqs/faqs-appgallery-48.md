@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何接入AGC应用性能监测服务（含崩溃服务）
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何接入AGC应用性能监测服务（含崩溃服务）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-07-24
-content_hash: sha256:9b246962945ccf1f45bee88a9e384d0dddd7fa209d2ceee26f440eca73588959
+scraped_at: 2026-10-21T07:12:33+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:19ba046b4eecfdd37f3475087c57dc75153aa621c328659a418bed816b756dca
 ---
 
 ## 问题现象
@@ -16,13 +16,13 @@ content_hash: sha256:9b246962945ccf1f45bee88a9e384d0dddd7fa209d2ceee26f440eca735
 
 崩溃服务已经合并至性能管理服务，该服务提供了与友盟/bugly等平台类似的崩溃日志上报收集功能。
 
-应用性能管理服务（Application Performance Management Service，简称APMS）是AppGallery Connect（简称AGC）向开发者提供的一个现网质量监测解决方案。
+应用性能管理服务（Application Performance Management Service，简称APMS）是HarmonyOS 开发者中心向开发者提供的一个现网质量监测解决方案。
 
 应用性能管理服务能帮助您监测现网应用的崩溃（CPP CRASH、JS ERROR）、应用无响应（AppFreeze）等稳定性指标，以及应用的启动、页面加载、耗电等性能指标。它提供每个问题发生时的环境信息、堆栈信息等分析数据，并支持基于堆栈关键行进行准确的同类异常汇聚，让您轻松准确快速发现、识别、定位和解决问题。它还支持问题标记、指标告警等辅助能力，帮助您更高效的监测、处理质量问题。
 
 ## 解决方案
 
-2025年4月9日前，创建且从未使用过APMS服务的存量应用，可通过更新【应用信息】的方式完成服务开通，刷新应用具体方法：登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)进入“APP与元服务”，选择需要开启APMS服务的应用，在“应用信息”-“可本地化基础信息”中修改应用名称，点击右上角“保存”，再修改回原应用名。
+2025年4月9日前，创建且从未使用过APMS服务的存量应用，可通过更新【应用信息】的方式完成服务开通，刷新应用具体方法：登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)进入“APP与元服务”，选择需要开启APMS服务的应用，在“应用信息”-“可本地化基础信息”中修改应用名称，点击右上角“保存”，再修改回原应用名。
 
 2025年4月9日后，创建应用后，AGC将为应用自动开通APMS服务。创建应用可参考[AGC控制台配置](../AppGallery-connect-Guides/agc-cloudstorage-console-0000001275489978.md)。
 
@@ -65,7 +65,7 @@ Q：崩溃数据上传时效是怎么样的？
 
 A：崩溃数据是分钟级的数据。
 
-Q：AppGallery Connect平台上可以查询到多长时间内的崩溃数据？
+Q：HarmonyOS 开发者中心平台上可以查询到多长时间内的崩溃数据？
 
 A：目前只能查到最近一个月的崩溃数据。
 
@@ -73,7 +73,7 @@ Q：APMS报错信息是混淆的，能否还原至原始代码？
 
 A：点击“还原堆栈”页签，可将混淆后的业务堆栈信息还原成用户可读信息。请确保已上传对应符号表文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/zRwcIjXPTZSILpn3PmKWKQ/zh-cn_image_0000002675224017.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/__v9L3cfTeChbAW6I7F1MA/zh-cn_image_0000002675224017.png)
 
 Q：在APMS中为什么最新型号手机信息没有，导致异常日志搜索不到。
 
@@ -83,7 +83,7 @@ Q：本地调试的Debug版本崩溃日志也会上传APMS吗？是否能够设�
 
 A：应用接入异常管理后，可通过设置调试版本和发布版本的不同版本号进行区分。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/_NZYY-B6R7q65n6vOJ-YOA/zh-cn_image_0000002645184080.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/MBJTk6qGTteL80YosXc9mQ/zh-cn_image_0000002645184080.png)
 
 Q：为什么收集到的崩溃信息的行号与源代码不一致？
 

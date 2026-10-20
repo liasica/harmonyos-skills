@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 运动健康服务授权及取消授权失败问题
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 运动健康服务授权及取消授权失败问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:30+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:b67341a4c3f35680b2888b26b8269bfca98bd62d95fe1c50858bf29f32a5086b
+scraped_at: 2026-10-21T07:12:35+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:9a06bcfa1f31feaf59b69d267872e3e2a1f1cef6668b9400d494b7d23943c508
 ---
 
 ## 问题现象
@@ -28,7 +28,7 @@ content_hash: sha256:b67341a4c3f35680b2888b26b8269bfca98bd62d95fe1c50858bf29f32a
 * 针对运动健康Kit无法授权，或者请求授权无回调的问题：
   1. 检查HiLog日志，查看错误码。
   2. 检查是否申请相关运动健康服务权限。
-  3. 检查client\_id配置的位置及client\_id值配置的是否正确，应配置在‘\entry\src\main\module.json5’文件的module下，值为“xxxxxxxx”，即登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)平台，在“开发与服务”中选择目标应用，获取“项目设置>常规>应用”的Client ID：
+  3. 检查client\_id配置的位置及client\_id值配置的是否正确，应配置在‘\entry\src\main\module.json5’文件的module下，值为“xxxxxxxx”，即登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)平台，进入“开发者管理 -> ID、证书和Profile -> APP ID -> 项目管理”，获取客户端ID中的“Client ID"信息：
 
      ```json
      {

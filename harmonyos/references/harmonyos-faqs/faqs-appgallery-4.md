@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用配置图标不符合UX设计规范要求尺寸1024px*1024px该如何解决
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用配置图标不符合UX设计规范要求尺寸1024px*1024px该如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4cdf0161f11690fbcf2675d412ca5e4a8c3a36ceec7ce4af3e600dc87a9efe9f
+scraped_at: 2026-10-21T07:12:31+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:884a0d12dc71d49c21089725e8c4c36cd9e814cc02f7395e4e307abefeb7b1fd
 ---
 
 ## 问题现象
@@ -39,7 +39,7 @@ A：module.json5中的图标和标签配置优先级高于app.json5中的图标�
 
 Q：应用配置图标不符合UX设计规范问题在本地解决后，如何确认已修复完成？
 
-A：可以使用AppGallery Connect平台上的[UX测试](../app/agc-help-cloudtest-uxtest-0000002289534109.md)，UX测试完成后，可从测试报告获知修复结果。
+A：可以使用HarmonyOS 开发者中心平台上的[UX测试](../app/agc-help-cloudtest-uxtest-0000002289534109.md)，UX测试完成后，可从测试报告获知修复结果。
 
 Q：背景图一定要纯色的吗？
 
@@ -47,6 +47,6 @@ A：背景图要纯色的，但不能是透明的。
 
 Q：配置前景图背景图后，应用图标出现细微的栅格点，是什么原因？如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/iXy2BfmVTa-np3thE6FOvA/zh-cn_image_0000002658793845.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ddDD9OVXSP6YuK5jztrIYg/zh-cn_image_0000002658793845.png "点击放大")
 
 A：查看前景图后发现透明区域都是栅格点，且图片不是PNG格式，导致透明区域的栅格点都显现出来，整改图片确保透明区域100%透明度，图片格式为PNG后，可解决问题。

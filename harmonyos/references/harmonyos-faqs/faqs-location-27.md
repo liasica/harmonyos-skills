@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-2
 title: 位置服务支持范围和能力说明
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 位置服务支持范围和能力说明
 category: harmonyos-faqs
-scraped_at: 2026-09-30T07:43:58+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:4ec1ad331e1e0f7ba79f86b71c3c2e6e8b99c4938ea69bc960b795e44b6a0b3e
+scraped_at: 2026-10-21T07:12:29+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:84365b32d63a14b5f86a67199fd33820c4f247535f56cb680507f0ed0810e023
 ---
 
 ## 问题现象
@@ -25,7 +25,7 @@ content_hash: sha256:4ec1ad331e1e0f7ba79f86b71c3c2e6e8b99c4938ea69bc960b795e44b6
    * Beacon围栏后台唤醒：Beacon围栏是指通过蓝牙Beacon设备和手机应用配合，实现"虚拟围栏"的功能。当用户靠近或离开某个特定的Beacon设备时，手机应用会收到通知。支持应用在后台或者不在线时进出围栏拉起应用。接口API见[geoLocationManager.addBeaconFence](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageraddbeaconfence20)。
    * 获取蓝牙扫描信息：开通该能力后，应用可以扫描获取设备周边的蓝牙设备信息。接口API见[geoLocationManager.on('bluetoothScanResultChange')](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageronbluetoothscanresultchange16)。
 
-   以上能力需要在AppGallery Connect开通，开通指导见[申请开放能力权限指导](../harmonyos-guides/location-apply-open-capability.md)。
+   以上能力需要在HarmonyOS 开发者中心开通，开通指导见[申请开放能力权限指导](../harmonyos-guides/location-apply-open-capability.md)。
 3. 位置服务可以获取的位置信息。
 
    经度、纬度、海拔高度、设备移动速度、设备移动方向、当前位置附近的POI信息、附加信息（设备所在楼层等）。

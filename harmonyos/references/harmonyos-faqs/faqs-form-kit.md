@@ -3,11 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-kit
 title: 卡片开发（Form）
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form）
 category: harmonyos-faqs
-scraped_at: 2026-10-16T07:07:15+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:bb0cd4585bb463e7f916acb971656e0a50c8b53cee0bed86fa9660d00ba62266
+scraped_at: 2026-10-21T07:10:27+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:564a9703310de0a628dc6ba46a84de7d9dde24cac9b32be82fe6c388b91979f8
 ---
 
+* **[常见问题](form-kit-faq.md)**
 * **[点击服务卡片如何跳转至指定的页面](faqs-form-1.md)**
 * **[元服务与服务卡片的区别](faqs-form-6.md)**
 * **[卡片数据同步异常](faqs-form-8.md)**

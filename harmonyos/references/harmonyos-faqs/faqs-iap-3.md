@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-3
 title: 服务器关键事件消息通知常见问题及解决方案
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 服务器关键事件消息通知常见问题及解决方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:29+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3556d114b8ad036d9b9ab267e343340cf5f933357f60373ab4d28e83f125d9b7
+scraped_at: 2026-10-21T07:12:31+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:a398c70e93367848fe0b06be5ef15572481238c5f26fe1ccbf22b600a32f722b
 ---
 
 ## 问题现象
@@ -23,12 +23,12 @@ content_hash: sha256:3556d114b8ad036d9b9ab267e343340cf5f933357f60373ab4d28e83f12
 ## 背景知识
 
 * [服务端关键事件通知](../harmonyos-references/iap-key-event-notifications.md)：建议所有提供消耗型/非消耗型/自动续期订阅/非续期订阅商品的App均配置该通知接收地址，以便接收关键事件通知，为用户提供更好、更及时的服务。另外，通知接收地址必须基于HTTPS并且配置有商业域名机构颁发的证书。
-* 如果在AppGallery Connect申请支付服务时提前配置通知接收地址，并且通知版本设置为v3，用户购买消耗型/非消耗型/自动续期订阅/非续期订阅商品后，iap服务器会在某些关键事件发生时调用此接口通知已配置的服务器。详细信息参考：[配置订单/订阅通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)。
+* 如果在HarmonyOS 开发者中心申请支付服务时提前配置通知接收地址，并且通知版本设置为v3，用户购买消耗型/非消耗型/自动续期订阅/非续期订阅商品后，iap服务器会在某些关键事件发生时调用此接口通知已配置的服务器。详细信息参考：[配置订单/订阅通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)。
 
 ## 解决方案
 
 * **问题1**：在iap服务器查看日志显示报错信息为nested exception is javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake\_failure，即SSL握手失败，可以按照如下步骤进行排查：
-  + 开发前需要在AppGallery Connect平台中配置订单/订阅通知接收地址，地址必须支持HTTPS协议且具有合法商用证书。
+  + 开发前需要在HarmonyOS 开发者中心平台中配置订单/订阅通知接收地址，地址必须支持HTTPS协议且具有合法商用证书。
   + 出于安全考虑，cipher需要支持ECDHE-RSA-AES128-GCM-SHA256、ECDHE-ECDSA-AES128-GCM-SHA256、ECDHE-RSA-AES256-GCM-SHA384或ECDHE-ECDSA-AES256-GCM-SHA384中至少一种，否则无法正常接收通知消息。
   + 按照[接口约束](../harmonyos-references/iap-key-event-notifications.md#接口约束)，可以在支持的协议上增加TLSv1.3，加密套件可以选择上述列出的4种加密套件之一。
 * **问题2**：如果当前用户订阅没过期，就是在下个周期生效，通知会发DID\_CHANGE\_RENEWAL\_STATUS的DOWNGRADE通知类型；当前权益过期了，就是立即生效，会发DID\_NEW\_TRANSACTION的DOWNGRADE类型。

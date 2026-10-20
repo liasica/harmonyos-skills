@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 邀请测试链接点击无法安装如何解决
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 邀请测试链接点击无法安装如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0bd057fdc57dde4df05a8a3e711b17ecb3bc9302ae28f538b8cc22d6955cfc38
+scraped_at: 2026-10-21T07:12:32+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:9ed56cb0b08c374097dd05477e78bc35bd07bf5322b09bfae4f4f423c0e646ee
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:0bd057fdc57dde4df05a8a3e711b17ecb3bc9302ae28f538b8cc22d6955
 
 ## 背景知识
 
-通过[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，开发者可以在应用正式版本发布之前，创建[邀请测试](../app/agc-help-invite-test-0000002270829393.md)，挑选特定的用户群组来测试HarmonyOS应用/元服务。
+通过[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，开发者可以在应用正式版本发布之前，创建[邀请测试](../app/agc-help-invite-test-0000002270829393.md)，挑选特定的用户群组来测试HarmonyOS应用/元服务。
 
 ## 问题定位
 
@@ -52,6 +52,6 @@ A：
 
 Q：邀请测试，点击开始测试-打开，报：测试版本已过期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/bmHR7_a5Tf-HbAZt1zH6Wg/zh-cn_image_0000002658793879.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/lwFhCUAARsunmSKZj1kmFA/zh-cn_image_0000002658793879.png "点击放大")
 
 A：显示的是“打开”不是“安装”说明手机上已经安装了同版本的应用，并且该版本已经过期，卸载后用新的邀请链接重新安装即可。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-12
 title: 应用在设备上显示的图标，和应用市场上显示的图标不一致
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用在设备上显示的图标，和应用市场上显示的图标不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-07-31
-content_hash: sha256:3d9de1a91ab39629ab43211f0a5061106051707d32b6bd22fbf5c2db578416e0
+scraped_at: 2026-10-21T07:10:25+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:ab6da94b0667fbb4958ff0a901f01b2969d1ce355d3a655b5bd2209d116169ba
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ content_hash: sha256:3d9de1a91ab39629ab43211f0a5061106051707d32b6bd22fbf5c2db578
 
 ## 问题定位
 
-排查应用使用的图标和[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)中上传的图标是否一致。根据以下情况确认应用图标，检查对应配置文件中的icon标签是否引用的是期望的图标资源。若引用的图片资源与上架应用市场流程中上传的图片资源不一致，则会造成误导，不符合预期。
+排查应用使用的图标和[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)中上传的图标是否一致。根据以下情况确认应用图标，检查对应配置文件中的icon标签是否引用的是期望的图标资源。若引用的图片资源与上架应用市场流程中上传的图片资源不一致，则会造成误导，不符合预期。
 
 * 若HAP中包含UIAbility，查看是否在module.json5配置文件的abilities标签中配置了icon。
   + 若对应的ability中skills标签下面的entities中包含"entity.system.home"、actions中包含"ohos.want.action.home"或者"action.system.home"，则系统将优先返回module.json5中的icon。
@@ -82,15 +82,15 @@ content_hash: sha256:3d9de1a91ab39629ab43211f0a5061106051707d32b6bd22fbf5c2db578
 
 ## 常见FAQ
 
-A：AGC配置的图标和包名，会覆盖HAP包中配置的图标和包名吗？
+A：HarmonyOS 开发者中心配置的图标和包名，会覆盖HAP包中配置的图标和包名吗？
 
-Q：AGC的包名是强制校验项，HAP包必须主动匹配，而非被覆盖。AGC的图标配置仅影响应用市场展示和设置界面，桌面图标由HAP包的module.json5直接控制。参考以下覆盖规则：
+Q：HarmonyOS 开发者中心的包名是强制校验项，HAP包必须主动匹配，而非被覆盖。HarmonyOS 开发者中心的图标配置仅影响应用市场展示和设置界面，桌面图标由HAP包的module.json5直接控制。参考以下覆盖规则：
 
 * 包名覆盖规则：
 
-  不会自动覆盖：AGC配置的包名不会直接覆盖HAP包中的bundleName。相反，HAP包的bundleName必须与AGC创建应用时填写的包名严格一致，否则上传软件包时会因包名冲突而失败。
+  不会自动覆盖：HarmonyOS 开发者中心配置的包名不会直接覆盖HAP包中的bundleName。相反，HAP包的bundleName必须与HarmonyOS 开发者中心创建应用时填写的包名严格一致，否则上传软件包时会因包名冲突而失败。
 
-  手动维护一致性：开发者需确保module.json5或app.json5中的bundleName字段与AGC应用配置的包名一致。
+  手动维护一致性：开发者需确保module.json5或app.json5中的bundleName字段与HarmonyOS 开发者中心应用配置的包名一致。
 * 图标覆盖规则：
 
   桌面图标由HAP包决定：应用在设备桌面显示的图标由HAP包中module.json5的icon字段配置的图标资源决定。

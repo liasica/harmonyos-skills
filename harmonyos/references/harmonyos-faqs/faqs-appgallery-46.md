@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 多系统共用隐私政策协议时，需要注意哪些点
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 多系统共用隐私政策协议时，需要注意哪些点
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:86cf57653d2d6b846456714ece9cc70c64a3cac92213a334f669018c9b97b417
+scraped_at: 2026-10-21T07:12:33+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:e28810a3acaf964493a793b95e99506c2af432d4432c0faaaee9b72e8b45cc08
 ---
 
 ## 问题现象
@@ -33,7 +33,7 @@ content_hash: sha256:86cf57653d2d6b846456714ece9cc70c64a3cac92213a334f669018c9b9
 2. **开发实践建议：**
    * **采用标准化模板：**
 
-     建议使用[AGC（AppGallery Connect）](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)提供的隐私管理服务，通过标准模板生成协议内容，减少合规风险。
+     建议使用[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)提供的隐私管理服务，通过标准模板生成协议内容，减少合规风险。
    * **声明数据交互场景：**
 
      若涉及多平台数据交互，需在隐私政策协议中清晰描述：

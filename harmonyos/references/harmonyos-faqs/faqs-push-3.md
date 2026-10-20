@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-3
 title: 消息推送后手机未收到消息提示怎么处理
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 消息推送后手机未收到消息提示怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-08-12
-content_hash: sha256:ab147680f2d0fe339ea219de6f013e95f96d983f42403599e12f9cf3e9ab82ea
+scraped_at: 2026-10-21T07:12:30+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:aa59cee928c45f9d1f3c85767f3d865ba1ab7a756a3b8421a5d5a507f9885174
 ---
 
 ## 问题现象
@@ -47,15 +47,15 @@ content_hash: sha256:ab147680f2d0fe339ea219de6f013e95f96d983f42403599e12f9cf3e9a
 
 * 当收到资讯营销类消息时，由于静默通知仅在通知中心展示，并不会弹框提示，需要去通知中心查看。通知中心如下图，可以查看对应消息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/K7VtXzPKThe_bS64RgALGA/zh-cn_image_0000002658913759.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/0ExZA_G6QPeWr3LSeQLxfg/zh-cn_image_0000002658913759.png "点击放大")
 * 若终端上的app手动关闭了消息提醒方式，终端收到消息不会有提醒，需要打开所需的提醒方式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/bQbLmDsoQYeDUZCU_bO3wA/zh-cn_image_0000002658793813.png "点击放大")
-* 打开[AGC平台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，按查询路径：“开发与服务>增长>推送服务>自助分析（Beta）”，在自助分析里面输入requestId和token，系统会自动分析消息推送失败的可能原因，注意requestId有效期为三天。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/uOe8PvslS3yNevR716MWog/zh-cn_image_0000002658793813.png "点击放大")
+* 打开[AGC平台](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，按查询路径：“开发与服务>增长>推送服务>自助分析（Beta）”，在自助分析里面输入requestId和token，系统会自动分析消息推送失败的可能原因，注意requestId有效期为三天。
 
   也可能是Push token不是有效的token，建议您在应用启动时调用getToken()接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token，以防由于Push Token失效导致收不到消息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/reswrI7_TsuIHBnWvS5CSw/zh-cn_image_0000002628394542.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/xdu9SIc1RR-3MblQEZKhkg/zh-cn_image_0000002628394542.png "点击放大")
 * 检查服务端发送请求时是否正确携带Authorization请求头，value为JWT格式字符串，是基于服务账号生成鉴权令牌。可参考：[请求体结构说明](../harmonyos-references/push-scenariozed-api-request-struct.md)。
 * [推送后台消息](../harmonyos-guides/push-background.md)用于内容不频繁更新的场景，不会显示通知、播放铃声或改变应用角标。终端设备接收到后台消息后，如果应用进程在前台则将消息内容传给应用；如果应用进程不在前台则缓存消息，等待应用启动后再传给应用。
 * 如果设备离线，Push Kit会缓存消息，待设备上线后，再将消息推送给设备。

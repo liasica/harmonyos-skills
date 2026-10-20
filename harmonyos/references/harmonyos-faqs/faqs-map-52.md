@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-52
 title: Map Kit使用报错1002600003如何解决
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > Map Kit使用报错1002600003如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:7848c16fc084f6372ab798cc8b9a0489f9f855b1e57dbf871c65693722b4208c
+scraped_at: 2026-10-21T07:12:25+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:68fb4fe62ae747ac43ef92a4f39f672ab5d85cfb84d6e117710b17cc696cc117
 ---
 
 ## 问题现象
@@ -32,10 +32,10 @@ Map Kit地图服务提供以下能力：
 
 1. 未开通地图服务。
 
-   使用@kit.MapKit的[map（地图显示功能）](../harmonyos-references/map-map.md)、[navi（路径规划）](../harmonyos-references/map-navi-api.md)、[sceneMap（场景化控件）](../harmonyos-references/map-scenemap.md)、[site（地点搜索）](../harmonyos-references/map-site.md)、[staticMap（静态图）](../harmonyos-references/map-staticmap.md)能力，均需要应用开通地图服务，参见[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)章节，通过DevEco Studio或AppGallery Connect网站开通地图服务，并进行签名。
-2. 在AppGallery Connect网站开通地图服务后，未重新生成Profile文件进行重新签名。
+   使用@kit.MapKit的[map（地图显示功能）](../harmonyos-references/map-map.md)、[navi（路径规划）](../harmonyos-references/map-navi-api.md)、[sceneMap（场景化控件）](../harmonyos-references/map-scenemap.md)、[site（地点搜索）](../harmonyos-references/map-site.md)、[staticMap（静态图）](../harmonyos-references/map-staticmap.md)能力，均需要应用开通地图服务，参见[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)章节，通过DevEco Studio或HarmonyOS 开发者中心网站开通地图服务，并进行签名。
+2. 在HarmonyOS 开发者中心网站开通地图服务后，未重新生成Profile文件进行重新签名。
 
-   在AppGallery Connect网站重新生成[调试Profile](../app/agc-help-debug-profile-0000002248181278.md)或[发布Profile](../app/agc-help-release-profile-0000002248341090.md)文件，重新[配置签名](../harmonyos-guides/ide-signing.md#section1240072619462)。
+   在HarmonyOS 开发者中心网站重新生成[调试Profile](../app/agc-help-debug-profile-0000002248181278.md)或[发布Profile](../app/agc-help-release-profile-0000002248341090.md)文件，重新[配置签名](../harmonyos-guides/ide-signing.md#section1240072619462)。
 3. 如果使用HarmonyOS 5.0.2(14)及以前版本，请检查client\_id或公钥指纹配置不正确。
 
    参见[1002600003 应用身份校验失败](../harmonyos-references/errorcode-map.md#section1002600003-应用身份校验失败)指导中处理步骤1-4解决。

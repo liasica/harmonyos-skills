@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 解决同一个App包同时提交邀请测试和公开测试问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 解决同一个App包同时提交邀请测试和公开测试问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8f00ad7c411c56e39c8af34f760ef5a14070547d45a40bbfc0e9cb0c0a01941f
+scraped_at: 2026-10-21T07:12:32+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:965d8808e90667b8375982e424fcd7243ce69631ee4a5a56b1894c178cdfad5a
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:8f00ad7c411c56e39c8af34f760ef5a14070547d45a40bbfc0e9cb0c0a0
 
 ## 背景知识
 
-* [邀请测试](../app/agc-help-invite-test-0000002270829393.md)和[公开测试](../app/agc-help-public-test-0000002287814841.md)：通过AppGallery Connect，开发者可以在应用正式版本发布之前，挑选特定的用户群组来测试HarmonyOS应用/元服务，或向AppGallery用户公开发布应用的测试版本。
+* [邀请测试](../app/agc-help-invite-test-0000002270829393.md)和[公开测试](../app/agc-help-public-test-0000002287814841.md)：通过HarmonyOS 开发者中心，开发者可以在应用正式版本发布之前，挑选特定的用户群组来测试HarmonyOS应用/元服务，或向AppGallery用户公开发布应用的测试版本。
 * 开发者需要了解邀请测试与公开测试的区别，参考[业务介绍](../app/agc-help-invite-test-overview-0000002287701773.md)。
 
 ## 解决方案
@@ -29,7 +29,7 @@ content_hash: sha256:8f00ad7c411c56e39c8af34f760ef5a14070547d45a40bbfc0e9cb0c0a0
 * 邀请测试最多允许100个版本同时在架，公开测试最多允许1个版本在架。所有测试版本数量不超过100个。在架版本包括正在审核、等待生效、正在测试。
 * 应用尝鲜的一级页面只展示最近提交的一个测试版本，如果有多个版本正在测试，可以在“应用尝鲜-应用详情页-查看其他版本”页面查看其他测试版本。如果先提交发布了邀请测试版本，后发布了公开测试版本，那么应用尝鲜一级页面显示公开测试版本，邀请测试版本可以在“应用详情页-查看其他版本”看到，不同版本应用的差异建议在测试说明里加以描述区分。
 
-  关于邀请测试和公开测试更加详细的说明可以参考AppGallery Connect官网文档中的[邀请测试](../app/agc-help-invite-test-0000002270829393.md)和[公开测试](../app/agc-help-public-test-0000002287814841.md)章节。
+  关于邀请测试和公开测试更加详细的说明可以参考HarmonyOS 开发者中心官网文档中的[邀请测试](../app/agc-help-invite-test-0000002270829393.md)和[公开测试](../app/agc-help-public-test-0000002287814841.md)章节。
 
 ## 常见FAQ
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-1
 title: 应用如何获取定位权限
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 应用如何获取定位权限
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-07-24
-content_hash: sha256:a25941602dfc73db2153418cce878cdb1f75235b2b0e8e1939e50aacf837b992
+scraped_at: 2026-10-21T07:12:29+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:f4cd5d285852d1b6b79e3fb4c3b7295e722e9f1c6fa372584f654ef7a27a519a
 ---
 
 ## 问题现象
@@ -106,6 +106,6 @@ Q：是否有开启系统位置功能的API？
 
 A：Location Kit目前没有开启系统位置功能的API，需要引导用户手动开启“位置”功能开关。代码参考：[requestGlobalSwitch](../harmonyos-references/js-apis-abilityaccessctrl.md#requestglobalswitch12)。
 
-Q：应用获取定位信息是否需要在AppGallery Connect管理页面的“开放能力”里额外提交申请？
+Q：应用获取定位信息是否需要在HarmonyOS 开发者中心管理页面的“开放能力”里额外提交申请？
 
-A：不需要。定位权限属于HarmonyOS权限，只需在应用的module.json5配置文件中声明定位权限（如ohos.permission.APPROXIMATELY\_LOCATION、ohos.permission.LOCATION），并在运行时动态向用户请求授权即可，无需在AppGallery Connect管理页面额外开通。
+A：不需要。定位权限属于HarmonyOS权限，只需在应用的module.json5配置文件中声明定位权限（如ohos.permission.APPROXIMATELY\_LOCATION、ohos.permission.LOCATION），并在运行时动态向用户请求授权即可，无需在HarmonyOS 开发者中心管理页面额外开通。

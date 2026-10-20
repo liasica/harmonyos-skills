@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-intents-ki
 title: 意图框架接入流程问题
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 意图框架服务（Intents Kit） > 意图框架接入流程问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:e27cb09c29ef9925db78d340191386b6c3ff538c99445081537069f52aaff116
+scraped_at: 2026-10-21T07:12:55+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:d4357303244755ce8e60b80e9ad729a3433c61c25bbe59cd4cce70be23a41cad
 ---
 
 ## 问题现象
@@ -133,9 +133,9 @@ Q：意图框架公开测试完成后如何进行下一步操作，是否可以�
 
 A：在意图标准协议上架前需要保证应用已经正式上架应用市场。所以需要先提交应用上架审核，审核通过正式上架后在进行下一步操作。
 
-Q：个人开发者在AppGallery Connect平台的“开放能力管理”中搜索不到意图框架（Intents Kit）能力怎么办？
+Q：个人开发者在HarmonyOS 开发者中心平台的“开放能力管理”中搜索不到意图框架（Intents Kit）能力怎么办？
 
-A：意图框架（Intents Kit）目前仅对企业开发者开放，个人开发者无法在AppGallery Connect的“开放能力管理”中搜索到该能力。建议使用企业账号参考[Intents Kit接入流程](../harmonyos-guides/intents-access-flow.md)申请接入。
+A：意图框架（Intents Kit）目前仅对企业开发者开放，个人开发者无法在HarmonyOS 开发者中心的“开放能力管理”中搜索到该能力。建议使用企业账号参考[Intents Kit接入流程](../harmonyos-guides/intents-access-flow.md)申请接入。
 
 ## 总结
 

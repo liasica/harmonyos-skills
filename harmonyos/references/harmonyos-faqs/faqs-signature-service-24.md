@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 元服务编译打包时报错
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 元服务编译打包时报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:afa1ec2b48409e58d4bb35c0724c77de0ba41978ab6f84dfc9e439bc638544c8
+scraped_at: 2026-10-21T07:12:44+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:a0fd190df018e4f9fbb59a3c0d8c284d464667b5c192d5a07e8cd2c7e2d731a4
 ---
 
 ## 问题现象
@@ -14,18 +14,18 @@ content_hash: sha256:afa1ec2b48409e58d4bb35c0724c77de0ba41978ab6f84dfc9e439bc638
 
 ## 背景知识
 
-HarmonyOS通过数字证书与Profile文件等签名信息来保证应用/元服务的完整性，应用/元服务在AppGallery Connect上架前必须通过签名校验。因此，您需要使用发布证书和Profile文件对应用/元服务进行签名后才能发布。具体操作步骤请参见[元服务发布流程](../atomic-guides/atomic-service-debug-release.md)。
+HarmonyOS通过数字证书与Profile文件等签名信息来保证应用/元服务的完整性，应用/元服务在HarmonyOS 开发者中心上架前必须通过签名校验。因此，您需要使用发布证书和Profile文件对应用/元服务进行签名后才能发布。具体操作步骤请参见[元服务发布流程](../atomic-guides/atomic-service-debug-release.md)。
 
 ## 问题定位
 
-根据错误信息可以确认，这是由于项目中配置的BundleName与签名文件中配置的应用包名不一致所致。可在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)中查看Profile绑定的应用包名和项目中配置是否匹配，具体步骤如下：
+根据错误信息可以确认，这是由于项目中配置的BundleName与签名文件中配置的应用包名不一致所致。可在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)中查看Profile绑定的应用包名和项目中配置是否匹配，具体步骤如下：
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择“证书、APP ID和Profile”。
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，选择“证书、APP ID和Profile”。
 2. 选择查看Profile中绑定的包名是否正确。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/84o5bf0HQgmJpVzroTWvhQ/zh-cn_image_0000002628409402.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/i5kiGGUBR3mqJHgX5oPeWA/zh-cn_image_0000002628409402.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/8pTFYlkpQE6RwM3vpBj3Lg/zh-cn_image_0000002658808671.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/FCzGDlJKR0CUPN-ZTwLwxw/zh-cn_image_0000002658808671.png "点击放大")
 3. 如果当前Profile绑定的应用包名不符合要求，可以重新[申请发布Profile](../app/agc-help-release-cert-0000002283336729.md)。
 
 ## 分析结论

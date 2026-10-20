@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/push-kit-faq-00
 title: Push Kit推送服务接入常见错误码和解决方案
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 常见问题 > Push Kit推送服务接入常见错误码和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:56+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:3f258aef7ec1933815d30aebf5350ee70ae114907261029b6413c0711ba099f2
+scraped_at: 2026-10-21T07:12:31+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:587b6ac0d3475d434965bddf8823a2ad84b27bab48e8d3e352619486be3056e0
 ---
 
 **Q：消息推送时产生10009000xx、80xxxxxx等错误码，如何排查？**
@@ -21,7 +21,7 @@ content_hash: sha256:3f258aef7ec1933815d30aebf5350ee70ae114907261029b6413c0711ba
 场景一：REST API业务响应码错误。
 
 * [80200001 认证错误](../harmonyos-references/push-scenariozed-api-response.md#section203123193470)，常见于请求头中Authorization参数鉴权失败，建议排查方向：
-  1. 确认用于申请JWT Token的[服务账号密钥](../start/api-0000001062522591.md#section3554194116341)凭证中project\_id、[推送请求接口URL](../harmonyos-references/push-scenariozed-api-request-struct.md#section495142212220)中projectId与应用所属项目ID三者一致。
+  1. 确认用于申请JWT Token的[服务账号密钥](../app/hdc-credential-0000002723016406.md#section3554194116341)凭证中project\_id、[推送请求接口URL](../harmonyos-references/push-scenariozed-api-request-struct.md#section495142212220)中projectId与应用所属项目ID三者一致。
   2. 请确认生成JWT Token的正确性后再推送消息，详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
   3. HarmonyOS 5及以上系统版本使用V3版本的REST API下发消息，鉴权方式只支持JWT Token令牌；不支持Access Token的鉴权方式。
 * [80300002 当前应用无权限下发推送消息](../harmonyos-references/push-scenariozed-api-response.md#section3227145145010)。请确保当前应用所属的项目已开通了推送服务，并基于该项目重新生成鉴权令牌，并重新尝试推送消息。建议排查方向：
@@ -42,7 +42,7 @@ content_hash: sha256:3f258aef7ec1933815d30aebf5350ee70ae114907261029b6413c0711ba
 
 * [1000900010 APP身份验证失败](../harmonyos-references/push-error-code.md#section3835124673016)，常见于[pushService.getToken](../harmonyos-references/push-pushservice.md#section163204312464)失败的场景：
   1. 确认当前HarmonyOS应用已经开启推送服务，生成Profile证书打包，且应用签名正确，详情参见[开通推送服务](../harmonyos-guides/push-config-setting.md#section13206419341)步骤5、步骤6。
-  2. 如果生成Profile证书后，再开通推送服务。需要重新更新Profile文件，在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)的“项目设置->API管理”中启用“推送服务”开启后重新申请Profile文件。同时应用需要重新签名，
+  2. 如果生成Profile证书后，再开通推送服务。需要重新更新Profile文件，在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)的“开发者管理 > APP ID > API管理”中启用“推送服务”开启后重新申请Profile文件。同时应用需要重新签名，
   3. 保证设备网络环境通畅。
   4. 建议使用真机进行调试，不要使用云真机调试。
 * [1000900009 推送服务内部错误](../harmonyos-references/push-error-code.md#section558801012107)：

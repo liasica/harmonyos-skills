@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何修复上架审核的定向推送问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何修复上架审核的定向推送问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:29+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0dcd19fd6d54e6be24ee22aa55f176ca38356abf3d5c30ebdf41892744138642
+scraped_at: 2026-10-21T07:12:31+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:e92d0db9cf76eeecbd1fa6ce75c2b0c943c8bf56fe1de3fe62b9f802352cee12
 ---
 
 ## 问题现象
 
-应用提交应用市场上架更新时，AppGallery Connect反馈“您的应用存在定向推送功能，但未在应用内显著标识定向推送服务”，审核驳回里的定向推送问题应该如何修复？
+应用提交应用市场上架更新时，HarmonyOS 开发者中心反馈“您的应用存在定向推送功能，但未在应用内显著标识定向推送服务”，审核驳回里的定向推送问题应该如何修复？
 
 **须知** 
 
@@ -18,9 +18,9 @@ content_hash: sha256:0dcd19fd6d54e6be24ee22aa55f176ca38356abf3d5c30ebdf418927441
 
 修改建议：
 
-（1）如应用内存在定向推送功能，请确保满足以下三点要求：a.在应用内隐私政策及AppGallery Connect上提交的隐私政策网址中明示存在定向推送功能；b.在应用内显著标识定向推送服务；c.提供定向推送服务关闭选项。
+（1）如应用内存在定向推送功能，请确保满足以下三点要求：a.在应用内隐私政策及HarmonyOS 开发者中心上提交的隐私政策网址中明示存在定向推送功能；b.在应用内显著标识定向推送服务；c.提供定向推送服务关闭选项。
 
-（2）如应用内不存在定向推送功能，请删除用于显著区分定向推送功能的相关内容，包括a.应用内隐私政策；b.AppGallery Connect上提交的隐私政策网址；c.应用内页面。
+（2）如应用内不存在定向推送功能，请删除用于显著区分定向推送功能的相关内容，包括a.应用内隐私政策；b.HarmonyOS 开发者中心上提交的隐私政策网址；c.应用内页面。
 
 （3）说明：显著区分定向推送服务的方式包括但不限于使用“个性化推荐”、“为您推荐”、“猜你喜欢”等其他能显著区分的字样。
 

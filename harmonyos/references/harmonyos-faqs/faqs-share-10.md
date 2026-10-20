@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-share-10
 title: 如何隔空传送打开App Linking链接直达应用
 breadcrumb: FAQ > 应用服务开发 > 内容分享服务（Share Kit） > 如何隔空传送打开App Linking链接直达应用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:26+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:dd7f28866a9a98bae2a99fe25ed8266e83826b1ebb177f47c311c5b23b3738b8
+scraped_at: 2026-10-21T07:12:27+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:e75196304d68fd09017efe3106bbf86fff2c264fce671fa7c86d421df47445b3
 ---
 
 ## 问题现象
@@ -20,13 +20,13 @@ content_hash: sha256:dd7f28866a9a98bae2a99fe25ed8266e83826b1ebb177f47c311c5b23b3
 
 ## 解决方案
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/uGX2mijpRj2Bc-xgV29E8w/zh-cn_image_0000002643336236.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/1cGGrBGJQkajfvM28RMCsQ/zh-cn_image_0000002643336236.png "点击放大")
 
 实现跨设备链接隔空传送分享流程如上，其中A设备应用为宿主应用，B设备应用为目标应用。需要分别实现目标方和宿主方应用配置。
 
 **目标应用配置：**
 
-1. 关联的网址域名的配置。目标应用侧需要在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上完成关联的网址域名的配置，具体步骤参考[目标方应用配置应用链接能力](../harmonyos-guides/app-linking-startupapp.md#配置应用链接能力)并[在AGC为应用创建关联的网址域名](../harmonyos-guides/app-linking-startupapp.md#在agc为应用创建关联的网址域名)。
+1. 关联的网址域名的配置。目标应用侧需要在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上完成关联的网址域名的配置，具体步骤参考[目标方应用配置应用链接能力](../harmonyos-guides/app-linking-startupapp.md#配置应用链接能力)并[在AGC为应用创建关联的网址域名](../harmonyos-guides/app-linking-startupapp.md#在agc为应用创建关联的网址域名)。
 2. 在应用module.json5的skills中配置应用直达链接域名。App Linking链接格式通常为：scheme://host/path。具体步骤参考[在module.json5中配置关联的网址域名](../harmonyos-guides/app-linking-startupapp.md#在modulejson5中配置关联的网址域名)，代码设置如下：
 
    ```json

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ads-3
 title: 如何解决获取OAID异常的问题
 breadcrumb: FAQ > 应用服务开发 > 广告变现服务（Ads Kit） > 如何解决获取OAID异常的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:dfe186c862f994f66a388eb02c09e4695c23a56e4c76e20216ee7992880f24a2
+scraped_at: 2026-10-21T07:12:25+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:754d69e2f01a05d1ab8075f78ebdc42e937be757d08183994131d234f026c4bf
 ---
 
 ## 问题现象
@@ -126,7 +126,7 @@ content_hash: sha256:dfe186c862f994f66a388eb02c09e4695c23a56e4c76e20216ee7992880
 
 Q：如何分辨接口异常是权限问题导致的？
 
-A：一些常见的Kit（比如推送服务、地图服务等）需要在AppGallery Connect网站上先开通服务并完成[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)，或者在项目中需要配置相应的权限（可参考[申请应用权限](../harmonyos-guides/request-app-permissions.md)），因此需要先确认集成的Kit是否需要配置这些权限，在开发之前应该做好相应的开发准备，确保不会因为权限问题阻塞开发。
+A：一些常见的Kit（比如推送服务、地图服务等）需要在HarmonyOS 开发者中心网站上先开通服务并完成[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)，或者在项目中需要配置相应的权限（可参考[申请应用权限](../harmonyos-guides/request-app-permissions.md)），因此需要先确认集成的Kit是否需要配置这些权限，在开发之前应该做好相应的开发准备，确保不会因为权限问题阻塞开发。
 
 Q：OAID获取方式是否有变更？
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-26
 title: Map Kit地图无法加载显示
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > Map Kit地图无法加载显示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
-content_hash: sha256:209b23973ea461ac87248f5d561421569736d39f903814a73f0fef209df60170
+scraped_at: 2026-10-21T07:12:24+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:590e8103028c496db549e863b79777ec0393392adbdaf29727d1b51968da7e26
 ---
 
 ## 问题现象
@@ -23,7 +23,7 @@ content_hash: sha256:209b23973ea461ac87248f5d561421569736d39f903814a73f0fef209df
 1. 检查是否是使用了[自动签名](../harmonyos-guides/ide-signing.md#section18815157237)。
 2. 检查应用是否未[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)。
 3. 检查是否为先[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)，后开通地图服务。
-4. 检查项目module.json5文件中配置的client\_id与AppGallery Connect网站应用的Client ID（应用->OAuth 2.0客户端ID->Client ID）是否一致，检查是否[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。（仅HarmonyOS 5.0.2(14)及以前版本需检查）
+4. 检查项目module.json5文件中配置的client\_id与HarmonyOS 开发者中心网站应用的Client ID（应用->OAuth 2.0客户端ID->Client ID）是否一致，检查是否[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。（仅HarmonyOS 5.0.2(14)及以前版本需检查）
 5. 检查设备网络是否正常。
 
 ## 分析结论
@@ -36,7 +36,7 @@ content_hash: sha256:209b23973ea461ac87248f5d561421569736d39f903814a73f0fef209df
 
 ## 修改建议
 
-1. 在AppGallery Connect网站[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)，生成证书和profile文件，进行[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)。从DevEco Studio 6.0.0 Beta5版本开始，支持在DevEco Studio中开通地图服务，开通后可以使用自动签名调试地图，参见[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)中的方式二。
-2. 如果项目前期使用手动签名但未开通地图服务，需在AppGallery Connect网站开通地图服务后重新生成证书和profile文件，重新进行[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)。
+1. 在HarmonyOS 开发者中心网站[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)，生成证书和profile文件，进行[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)。从DevEco Studio 6.0.0 Beta5版本开始，支持在DevEco Studio中开通地图服务，开通后可以使用自动签名调试地图，参见[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)中的方式二。
+2. 如果项目前期使用手动签名但未开通地图服务，需在HarmonyOS 开发者中心网站开通地图服务后重新生成证书和profile文件，重新进行[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)。
 3. 如果是HarmonyOS 5.0.2(14)及以前版本，需正确配置module.json5文件中client\_id（参见[配置Client ID](../harmonyos-guides/account-client-id.md)）和[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。开通地图服务后，需等待24小时后生效（HarmonyOS 5.0.2(14)及以前版本）。
 4. 保证设备有网络并且网络稳定。

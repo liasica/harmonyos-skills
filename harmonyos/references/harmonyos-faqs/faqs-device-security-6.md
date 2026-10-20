@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-device-sec
 title: createAttestKey接口返回错误码1011500006
 breadcrumb: FAQ > 系统开发 > 安全 > 设备安全服务（Device Security） > createAttestKey接口返回错误码1011500006
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:b97893c32eb7f7236d703433af1f5f9d81393a25fef6f060e6ff5f9960ecc057
+scraped_at: 2026-10-21T07:11:56+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:5a27e8acedb0e69ed690464eab1ed26355cef09f4c520062a281b58adbc58f16
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:b97893c32eb7f7236d703433af1f5f9d81393a25fef6f060e6ff5f9960e
 
 [1011500006 IPC通信失败](../harmonyos-references/errorcode-devicesecurity-taas.md#section1011500006-ipc通信失败)可能原因和处理措施，无法指导开发者解决：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/lHbmPsFYTAuSrPSG5YSoIQ/zh-cn_image_0000002661522207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/lEiQ3f4_TQGJtUYcH0LIvg/zh-cn_image_0000002661522207.png)
 
 ## 背景知识
 
@@ -35,8 +35,8 @@ content_hash: sha256:b97893c32eb7f7236d703433af1f5f9d81393a25fef6f060e6ff5f9960e
 参考[开通Device Security服务](../harmonyos-guides/devicesecurity-deviceverify-activateservice.md)，引导开发者执行以下步骤：
 
 1. 申请“可信应用服务”白名单：将Developer ID、公司名称、应用名称、申请使用的服务和使用该服务的场景，发送到AGC官方邮箱。AGC运营将审核相关材料，通过后将配置受限开放服务使用的名单，审核周期为1-3个工作日。
-2. “可信应用服务”白名单申请通过后，在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)上开通可信应用服务。
+2. “可信应用服务”白名单申请通过后，在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)上开通可信应用服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/WOulb_uWQJ6Mx42eHeHU9A/zh-cn_image_0000002661522755.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/WK9TWaQJSSuwekX_e1OkhA/zh-cn_image_0000002661522755.png "点击放大")
 3. 在开通服务后，[重新申请profile（.p7b）文件](../app/agc-help-debug-profile-0000002248181278.md)。
 4. 本地替换profile签名文件，重新编译执行。

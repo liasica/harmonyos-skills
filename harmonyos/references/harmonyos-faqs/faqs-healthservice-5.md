@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 运动健康无法获取数据常见问题和解决方案
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 运动健康无法获取数据常见问题和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:ce40e9be899e36b74eaafe55dcaa78da504a649748d61639c556910552068d6e
+scraped_at: 2026-10-21T07:12:35+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:7750a6a3951e8bc07e04a6332dd15a2fb3ccfb648924b939f326c6284a671bb4
 ---
 
 ## 问题现象
@@ -32,9 +32,9 @@ content_hash: sha256:ce40e9be899e36b74eaafe55dcaa78da504a649748d61639c5569105520
 
 * 问题一：确保授权请求参数中的数据类型已经在Health Service Kit卡片中申请相应的权限，申请步骤请参考[申请运动健康服务](../harmonyos-guides/health-apply.md)，数据类型对应的权限参考[权限说明](../harmonyos-guides/health-permission-description.md)。
 
-  登录[开发者联盟网站](https://developer.huawei.com/consumer/cn/)，单击进入“管理中心”。在应用服务中，单击Health Service Kit卡片申请Health Service Kit服务，同意协议后，进入数据权限申请页面，确保使用权限scopes已勾选申请，应用内使用申请权限对照[权限说明](../harmonyos-guides/health-permission-description.md)。
+  登录[开发者联盟网站](https://developer.huawei.com/consumer/cn/)，单击进入“HarmonyOS 开发者中心”。在应用服务中，单击Health Service Kit卡片申请Health Service Kit服务，同意协议后，进入数据权限申请页面，确保使用权限scopes已勾选申请，应用内使用申请权限对照[权限说明](../harmonyos-guides/health-permission-description.md)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/buv-yNnyTpW0yZ22wCMAiQ/zh-cn_image_0000002661377573.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Q4QRF7jpRtez9f-PkEcOiA/zh-cn_image_0000002661377573.png "点击放大")
 
   更多错误码请参考[ArkTS API错误码](../harmonyos-references/errorcode-healthservice.md)。
 * 问题二：说明没有正确配置client\_id，将client\_id(xxxxxxx)配置到‘\entry\src\main\module.json5’文件中再次尝试，参考[配置Client ID](../harmonyos-guides/health-configuration-client-id.md)。

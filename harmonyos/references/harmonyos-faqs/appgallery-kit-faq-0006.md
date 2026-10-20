@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: 应用内检查更新实现及常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 应用内检查更新实现及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:58+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:01fe587eb3358cb500060da38d1d07eb29dca67367f830dcc144b768c4977c84
+scraped_at: 2026-10-21T07:12:32+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:3044059bf6debd90ee37436c1e57b297e38fdccd9b4113fe5d2b5937896f6669
 ---
 
 **Q：应用上架应用市场后，有新的版本更新时，如何实现老版本用户打开应用能提示更新版本？**
 
 A：业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/xo4jWEG_SheWtPMeLKppxA/zh-cn_image_0000002792076741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/1mXPP5ijQ8e3Um45cTn8fw/zh-cn_image_0000002792076741.png "点击放大")
 
 1. 应用调用检查更新接口。
 2. 升级服务API返回是否有新版本。
@@ -104,3 +104,17 @@ A：业务流程：
 **Q：更新应用版本是否支持通过API上传更新，绕开应用市场？**
 
 **A**：目前应用更新暂不支持绕开应用市场，需要通过应用市场进行版本更新。若需检查更新并跳转到应用市场，可参考【解决方案】章节中的checkAppUpdate和showUpdateDialog接口实现。
+
+**Q：穿戴设备系统版本较低时无法使用checkAppUpdate接口，如何实现应用内检查更新并引导用户升级？**
+
+**A**：当穿戴设备系统版本较低（如5.1.0）无法使用checkAppUpdate等系统提供的API时，可采用以下方案：
+
+1. 自行构建版本检测逻辑：比较latestVersionCode与localVersionCode判断是否有新版本。
+2. 使用[自定义弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md)提示用户更新。
+3. 用户点击"立即更新"后，通过startAbility搭配Want跳转应用市场详情页，拉起方式参考[拉起应用市场并跳转应用详情](faqs-appgallery-31.md)。
+
+**说明** 
+
+loadProduct接口不支持穿戴设备。
+
+若后续系统版本及应用市场版本满足要求（系统版本6.1.0.330 SP18及以上，应用市场7.6.1.300及以上），也可通过AppGallery Kit的checkAppUpdate接口检测应用是否有新版本，再通过showUpdateDialog弹出系统升级弹框，或使用自定义弹窗搭配loadProduct跳转应用市场详情页。参考[应用内检查更新实现及常见问题](faqs-appgallery-98.md)和[如何实现应用升级自定义弹窗](faqs-appgallery-43.md)。

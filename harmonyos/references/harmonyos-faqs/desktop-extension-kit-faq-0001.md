@@ -1,0 +1,43 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/desktop-extension-kit-faq-0001
+title: PC应用状态栏接入与气泡提示实现常见问题
+breadcrumb: FAQ > 系统开发 > 基础功能 > 桌面拓展服务（Desktop Extension Kit） > 常见问题 > PC应用状态栏接入与气泡提示实现常见问题
+category: harmonyos-faqs
+scraped_at: 2026-10-21T07:12:07+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:059a3105a2f4cd773dabfe42002c2101eb4289959084e0e200623b56ac733771
+---
+
+**Q：****HarmonyOS PC应用接入状态栏后应该如何配置才能实现在鼠标悬停时弹出气泡提示？**
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/LzyOgm-fQz-RiiITBvTcOw/zh-cn_image_0000002794565045.png "点击放大")
+
+**A**：配置步骤如下：
+
+1. 参考应用接入状态栏[开发步骤](../harmonyos-guides/statusbar-extension-guide.md#开发步骤)，先调用[statusBarManager.QuickOperation](../harmonyos-references/statusbar-extension-manager.md#quickoperation)构建左键业务弹窗信息，以下为关键代码：
+
+   ```ts
+   // 构建点击状态栏图标时弹出的快捷操作窗口
+   let operation: statusBarManager.QuickOperation = {
+     abilityName: 'MyStatusBarViewAbility',
+     title: 'Test Demo',
+     height: 300,
+     moduleName: 'entry'
+   };
+   ```
+
+   完整接入示例可参考官方教程：[接入状态栏开发](https://developer.huawei.com/consumer/cn/codelabsPortal/carddetails/tutorials_StatusBarExtensionKit)。
+2. 将上述[statusBarManager.QuickOperation](../harmonyos-references/statusbar-extension-manager.md#quickoperation)的moduleName参数设置为所在模块对应module.json5中module-name字段。要实现鼠标悬停于状态栏时弹出气泡提示，则当前moduleName不可缺省，若未配置moduleName参数，该参数默认为''，则鼠标悬停时不会显示气泡提示，如下图：
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/O2cASSdjQ82_vL7XEhilhQ/zh-cn_image_0000002794645267.png)
+3. 设置状态栏悬停气泡展示内容：需在接入状态栏提供的模块名对应/moduleName/src/main目录下的module.json5文件中，找到对应的abilities-label字段，修改该关键字对应的value值。注意：状态栏label和应用窗口对应的名称是相同字段。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/vp9z63HYRBG81eDjNG5TzQ/zh-cn_image_0000002765046558.png "点击放大")
+
+**Q：PC端应用的系统托盘图标，是否支持根据鼠标左键或右键点击，分别弹出不同的快捷菜单？**
+
+**A**：系统托盘图标能够识别左键操作：[statusBarManager.QuickOperation](../harmonyos-references/statusbar-extension-manager.md#quickoperation)，但暂不支持快捷菜单的控制。支持右键操作：[statusBarManager.StatusBarGroupMenu](../harmonyos-references/statusbar-extension-manager.md#statusbargroupmenu)，弹出快捷菜单。
+
+**Q：状态栏托盘图标是否支持闪烁或动态改变图标样式？**
+
+**A**：当前没有接口直接提供图标闪烁的能力。可以通过白图标和正常图标交替出现的方式模拟闪烁效果，调用[statusBarManager.updateStatusBarIcon](../harmonyos-references/statusbar-extension-manager.md#statusbarmanagerupdatestatusbaricon)接口实现图标更新。

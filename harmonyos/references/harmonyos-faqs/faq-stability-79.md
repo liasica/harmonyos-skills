@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-7
 title: 如何收集应用崩溃信息
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 如何收集应用崩溃信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:28766b1483ae31acc6587fa55c200155e4affd97c0bd7ab7343743e4172ea6e6
+scraped_at: 2026-10-21T07:10:13+08:00
+doc_updated_at: 2026-10-20
+content_hash: sha256:a1734cfe0cc117b45fccc727e064773afafb4802e7c6ac2568b0a80be485a97a
 ---
 
 ## 问题现象
@@ -25,7 +25,7 @@ Performance Analysis Kit、APMS和智能分析平台三种崩溃信息收集方�
 | 方式 | 故障检测范围 | 集成方式 | 成本 | 使用场景 |
 | --- | --- | --- | --- | --- |
 | Performance Analysis Kit | JS崩溃、C++崩溃、Freeze无响应 | 通过集成系统提供的开发接口 | 需要一定的开发成本 | 业务定制化信息采集 |
-| APMS | JS崩溃、C++崩溃、Freeze无响应 | 在AGC上直接开启相关服务 | 零成本快速使用 | 专业数据化分析场景下使用 |
+| APMS | JS崩溃、C++崩溃、Freeze无响应 | 在HarmonyOS 开发者中心上直接开启相关服务 | 零成本快速使用 | 专业数据化分析场景下使用 |
 | 智能分析平台 | JS崩溃、C++崩溃、Freeze无响应 | 直接登入分析平台使用 | 零成本快速使用 | 应用异常分析 |
 
 1. Performance Analysis Kit提供了FaultLogger、ErrorManager和HiAppEvent三种崩溃收集方式差异分析，主要从作用范围、触发机制、使用场景和崩溃表现上有以下四方面区分：
@@ -39,14 +39,14 @@ Performance Analysis Kit、APMS和智能分析平台三种崩溃信息收集方�
    * 三种崩溃日志的收集方式，主要是通过系统提供的接口来采集崩溃时的自定义日志信息。ErrorManager通过注册错误观测器[errorManager.on('error')](../harmonyos-references/js-apis-app-ability-errormanager.md#errormanageronerror)捕获到应用产生的crash；FaultLogger则是通过主动查询[FaultLogger.query(faultType, callback)](../harmonyos-references/js-apis-faultlogger.md#faultloggerquery9)，再由回调函数的方式获取故障信息；而HiAppEvent则是通过[hiAppEvent.addWatcher(watcher)](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)添加事件观察者订阅崩溃事件信息。
    * ErrorManager主要观测应用发生JS Crash和AppFreeze等崩溃，而HiAppEvent和FaultLogger主要观测JS Crash、Cpp Crash、应用冻结等崩溃。同时需要注意的是FaultLogger相关接口从API 18开始不再维护，建议使用HiAppEvent订阅崩溃事件（[ArkTS](../harmonyos-guides/hiappevent-watcher-crash-events-arkts.md)、[C/C++](../harmonyos-guides/hiappevent-watcher-crash-events-ndk.md)）。
 
-2. 应用性能监测服务（Application Performance Management Service，简称APMS）是AppGallery Connect（简称AGC）向开发者提供的一个现网质量监测解决方案。智能分析平台是一站式问题智能定位分析工具，平台支持对卡顿、崩溃、启动慢、资源泄漏等问题类型进行专家级的分析。
+2. 应用性能监测服务（Application Performance Management Service，简称APMS）是HarmonyOS 开发者中心向开发者提供的一个现网质量监测解决方案。智能分析平台是一站式问题智能定位分析工具，平台支持对卡顿、崩溃、启动慢、资源泄漏等问题类型进行专家级的分析。
    * 这两种方案都能快速开通一键使用，快速具备应用质量检测能力。而两者的差异在于，APMS侧重正式版本的质量问题检测以及异常数据采集上报多视角展示，智能分析平台则是倾向于应用异常分析。
    * 开通[APMS开通服务](../app/agc-help-apms-faq-0000002271373129.md)后，APMS可以采集性能指标，帮助快速界定问题范围：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/13HqbQsSQJW8gbdP7x8nnw/zh-cn_image_0000002680658384.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/LKsdAvbkR9SUVqsa6fqe5w/zh-cn_image_0000002680658384.png "点击放大")
    * [智能分析平台启动即接入](https://devecoservice.harmonyos.com/activateservice)，数据来源于系统侧上报，无需接入SDK，即可分析查看应用异常：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/zzLCFVt3S8mIOEMQUonBsg/zh-cn_image_0000002680498518.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/tbUd9rmhTk2jnxZ8QlMmlA/zh-cn_image_0000002680498518.png "点击放大")
 
 ## 常见FAQ
 
