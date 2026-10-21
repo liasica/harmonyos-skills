@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-ticket
 title: 查看活动/景点门票
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 活动/景点门票 > 开发场景 > 查看活动/景点门票
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:46+08:00
+scraped_at: 2026-10-22T07:06:01+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:fc79ac76e744b7dcc5488a15d523244764ef3dc825d06e38bda6ab7297b8a365
+content_hash: sha256:d02ce57184c10950febdce16095bcaa718761e81911be9de46a25c53d6f37e6d
 ---
 
 查询已开通门票的状态并展示，用户可以点击跳转钱包门票详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/xE7gBhdlSeCm33lxMMnbBQ/zh-cn_image_0000002764973022.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/_0tMFH_TQvqT41p9d3AANg/zh-cn_image_0000002797301679.png)
 
 ## 客户端开发
 

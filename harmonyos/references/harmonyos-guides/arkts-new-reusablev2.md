@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-reu
 title: "@ReusableV2装饰器：V2组件复用"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > @ReusableV2装饰器：V2组件复用
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:06+08:00
+scraped_at: 2026-10-22T07:04:37+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cf8ec323eaf12efa0e85708aaa219afa252273872bec887751040180f58933e0
+content_hash: sha256:1f0766007fb15e89d4d31f713239299989123a76f0832ea175fefe34033408db
 ---
 
 为了降低反复创建销毁自定义组件带来的性能开销，开发者可以使用[@ReusableV2](../harmonyos-references/ts-custom-component-decorator-reusablev2.md#reusablev2)装饰[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件，达成组件复用的效果。
@@ -278,7 +278,7 @@ struct ReusableV2Component {
 
 倘若该复用组件下有子组件时，会在回收和复用时递归调用子组件的aboutToRecycle和aboutToReuse（与子组件是否被标记复用无关），直到遍历完所有的孩子组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/UYK2_3zeRlipq7wQQGQObA/zh-cn_image_0000002794489381.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/zBpi12eATlikQLrhd16YEA/zh-cn_image_0000002797179589.gif)
 
 ## 复用阶段的冻结
 
@@ -364,7 +364,7 @@ struct ReusableV2Component {
 3. 点击Change value按钮，UI无变化，@Monitor不触发且onRender方法不被回调。
 4. 点击Reuse/Recycle按钮，此时调用aboutToReuse回调并输出aboutToReuse的日志，@Monitor触发并输出日志info.age change且onRender方法回调输出info.age onRender，UI发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/UdXARejtQH6AuiFxc8dYRA/zh-cn_image_0000002794409603.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/pODfzPyBQf6SGsb2DLt-3g/zh-cn_image_0000002768019610.gif)
 
 如果去掉aboutToReuse方法中的自增操作，则上述第四步不会触发@Monitor回调。
 
@@ -551,7 +551,7 @@ struct ReusableV2Component {
 
 开发者可以尝试点击各个变量，并点击Recycle/Reuse按钮查看复用后的重置情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/HHQcrwzSTkCUmIjw6hXW7Q/zh-cn_image_0000002764970884.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/eJO0DKA1TWCPBly746iZ6w/zh-cn_image_0000002797299557.gif)
 
 需要注意的是，上面的例子中noDecoInfo未被重置，如果存在监听noDecoInfo.age的@Monitor，因为noDecoInfo本身未产生变化，所以该@Monitor也不会被重置，因此在后续第一次更改noDecoInfo.age时，IMonitorValue的before值将不会被重置，仍是复用前的值。
 
@@ -629,7 +629,7 @@ struct ReusableV2Component {
 2. 点击Recycle/Reuse两次，UI刷新为noDecoInfo.age: 35，@Monitor触发并输出日志age change from 31 to 35。
 3. 点击noDecoInfo.age: 35，UI刷新为noDecoInfo.age: 36，@Monitor触发并输出日志age change from 35 to 36。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ykwCdVaNTpy57skxC341Lw/zh-cn_image_0000002765130806.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/GZ2ZHHvARau3ptGam8PrWA/zh-cn_image_0000002767859626.gif)
 
 由于冻结机制的存在，在aboutToRecycle中赋值不会被@Monitor观察到。而在经历完变量重置后，变量又会被赋予新的值，因此对于组件内状态变量来说，在aboutToRecycle中赋值不会有明显的效果；而常量（例如上面的noDecoInfo）由于冻结机制的存在，在aboutToRecycle中更改age也不会被观察到，并且因为不会被重置，所以相关的@Monitor也不会被重置，即这里的age值本身未被重置，也就不会重置与之绑定的@Monitor。最终表现出来的现象即：第二步回调的@Monitor中，monitor.value()?.before得到的值为31，而非age的初始值30。
 
@@ -688,7 +688,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/MN4Sxf62RZGbu6UoyyA4oA/zh-cn_image_0000002794489383.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ohuTWY4kSbijiaQn4-_8Bg/zh-cn_image_0000002797179591.gif)
 
 ### 在Repeat组件中使用
 
@@ -770,7 +770,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/f4Wz6jaRSRWsu8DGXB3fPA/zh-cn_image_0000002794409605.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/6KH6lSiOTa-Gm8ODYxBSDg/zh-cn_image_0000002768019612.gif)
 
 ### 在Repeat组件非懒加载场景的each属性中使用
 
@@ -854,7 +854,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/KYdCI3wZQcG29GxWVkCCCA/zh-cn_image_0000002764970886.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/mwTmQVFoR6KUvw6v-tSaGA/zh-cn_image_0000002797299559.gif)
 
 ### 在ForEach组件中使用
 
@@ -917,7 +917,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/B3XT5BaCTBWicOqPwvD48w/zh-cn_image_0000002765130808.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/sbz2UzjcRKmsG7deP_LSOA/zh-cn_image_0000002767859628.gif)
 
 ### 在LazyForEach组件中使用
 
@@ -1085,4 +1085,4 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/I8ODXKSrR1ywuCU5y7xIfg/zh-cn_image_0000002794489385.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/p8_3bYrlQTOfiJsXM2tJSQ/zh-cn_image_0000002797179593.gif)

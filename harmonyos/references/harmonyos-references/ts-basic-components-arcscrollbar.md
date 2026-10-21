@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ArcScrollBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ArcScrollBar
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:51+08:00
+scraped_at: 2026-10-22T07:07:41+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0d64eb77ba759b9fb6828134451217fa7776f0a83a7c09300af8f0c7db363e32
+content_hash: sha256:9c4e5f50af537da2d3dab4fbf6fb5eb4fcbb70994a5449f9405d5819161bce02
 ---
 
 弧形滚动条组件ArcScrollBar，适用于圆形屏幕等需要弧形滚动条的场景，用于配合可滚动组件使用，如[ArcList](ts-container-arclist.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)、[WaterFlow](ts-container-waterflow.md)。
@@ -95,4 +95,4 @@ struct ArcScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/BRNdOGBWSE2F3SDIUc009w/zh-cn_image_0000002764973604.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/iwcHe7-ATu-s8MeerLCsiw/zh-cn_image_0000002797302247.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation子页面
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation子页面
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:10+08:00
+scraped_at: 2026-10-22T07:04:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f9fc393d1304af0dd62063b1d06ecad87e573cf02364a3d94c804c39cb4d739c
+content_hash: sha256:bc5122f624fdf9a09a9aa30845e0877e8f53758ba72ede2501f95243f9945133
 ---
 
 [NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)是Navigation子页面的根容器，用于承载子页面的特殊属性和生命周期。NavDestination可以配置独立的标题栏、菜单栏与工具栏等属性，使用方法与Navigation一致。NavDestination还支持通过mode属性设置不同的显示模式，以适应不同页面的需求。
@@ -79,7 +79,7 @@ NavDestination提供了两种类型。
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/03FjEx_oRoGXwEF40ELelQ/zh-cn_image_0000002765131068.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/n0HIXNUJSlG9Z0LHUEmn7w/zh-cn_image_0000002767859886.gif)
 
 ## 页面生命周期
 
@@ -87,7 +87,7 @@ NavDestination提供了两种类型。
 
 生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/OD-ziRZVQ3-Z9SzfEFLFFw/zh-cn_image_0000002794489647.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/tGLb7qsdT_StwF-b52awHA/zh-cn_image_0000002797179851.png)
 
 * **[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)**：在创建自定义组件后，执行其build()函数之前执行（NavDestination创建之前），允许在该方法中改变状态变量，更改将在后续执行build()函数中生效。
 * **[onWillAppear](../harmonyos-references/ts-basic-components-navdestination.md#onwillappear12)**：NavDestination创建后，挂载到组件树之前执行，在该方法中更改状态变量会在当前帧显示生效。

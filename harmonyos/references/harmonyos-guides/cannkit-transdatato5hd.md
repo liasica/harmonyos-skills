@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-trans
 title: TransDataTo5HD
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 数据转换 > TransDataTo5HD
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:52+08:00
+scraped_at: 2026-10-22T07:06:06+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:14a2c2548b9e45768c7fe693ffa3c3cc4f497c0519916e057dc7641c672a8161
+content_hash: sha256:3bb6c47c3f6cb51bd212f49fba187e6d15dff5da8755022a8b6164723628f338
 ---
 
 ## 功能说明
@@ -18,17 +18,17 @@ content_hash: sha256:14a2c2548b9e45768c7fe693ffa3c3cc4f497c0519916e057dc7641c672
 
   **图1** 输入数据类型为int16\_t/uint16\_t/half时的转换规则
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mCtiLt4KTYa7wxMSe81Ijg/zh-cn_image_0000002764973114.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/xM2e2ZnPRxGBnxiimnx0Zw/zh-cn_image_0000002797301767.png)
 * 当数据类型是float/int32\_t/uint32\_t时，每个datablock包含8个数，指令内部会循环8次，每次循环都会分别从指定的16个datablock中的对应位置取值，组成2个新的datablock放入目的地址中。如下图所示：
 
   **图2** 输入数据类型为float/int32\_t/uint32\_t时的转换规则
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/kQuugpddQfyEazoNBx4N3g/zh-cn_image_0000002765133034.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ZQbEV9CIQ56OztzeOA1-7Q/zh-cn_image_0000002767861836.png)
 * 当数据类型是int8\_t/uint8\_t时，每个datablock包含32个数，指令内部会循环16次，每次循环都会分别从指定的16个datablock中的对应位置取值，组成半个datablock放入目的地址中，读取和存放是在datablock的高半部还是低半部由参数srcHighHalf和dstHighHalf决定。如下图所示：
 
   **图3** 输入数据类型为int8\_t/uint8\_t时的转换规则
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/PYTLtzaWTpmTr5KGMqc8PA/zh-cn_image_0000002794491613.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/7DqjOcZrTQCPmEANco5cUQ/zh-cn_image_0000002797181799.png)
 
 基于以上的转换规则，使用该接口进行NC1HWC0格式转换或者矩阵转置。NC1HWC0格式转换相对复杂，这里给出其具体的转换方法：
 
@@ -36,7 +36,7 @@ NCHW格式转换成NC1HWC0格式时，如果是数据类型是float/int32\_t/uin
 
 **图4** NCHW格式转换成NC1HWC0格式时的转换规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/2xSUX1byQoGNq95qFBBxxA/zh-cn_image_0000002794411835.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/B2QQERSpTI-W-KX5qWkyiw/zh-cn_image_0000002768021820.png)
 
 ## 函数原型
 

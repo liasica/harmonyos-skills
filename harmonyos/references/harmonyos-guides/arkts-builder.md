@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder
 title: "@Builder装饰器：自定义构建函数"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Builder装饰器：自定义构建函数
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:08+08:00
+scraped_at: 2026-10-22T07:04:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:24f25ca6c6b976ec85afcb7c8db0a3f5f6765ac1c172fe2043e25ea4c5c9b40c
+content_hash: sha256:7de8ef5b1d46dcfdb6c5f4b9ccf9d26bfc4c67ab6975c83ca1682c587f747406
 ---
 
 ArkUI提供轻量的UI元素复用机制[@Builder](../harmonyos-references/ts-universal-builder-dynamic.md#builder)，其内部UI结构固定，仅与使用方进行数据传递。开发者可将重复使用的UI元素抽象成函数，在build函数中调用。
@@ -279,7 +279,7 @@ struct PrivateBuilder {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Z1Ulk4BISRiaP_rzH8TQZg/zh-cn_image_0000002764970916.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/SwHq-ZXJRK6RyhMb5WjjmQ/zh-cn_image_0000002797299589.gif)
 
 ### 使用全局自定义构建函数
 
@@ -375,7 +375,7 @@ struct ParentDemo {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/YmTtFq0XSjWkDBM-nArpGw/zh-cn_image_0000002765130838.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/cI3Ulq8hRpuoagPvLZbwcQ/zh-cn_image_0000002767859658.gif)
 
 ### 修改装饰器修饰的变量触发UI刷新
 
@@ -433,7 +433,7 @@ struct ParentSample {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/n_BnpGkdTiOiNGzy7w26uA/zh-cn_image_0000002794489417.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/U_z90MhUSwem9cGPuIhpog/zh-cn_image_0000002797179623.gif)
 
 ### 将@Builder装饰的函数当作CustomBuilder类型使用
 
@@ -498,7 +498,7 @@ struct customBuilderDemo {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/kwkTp2LwTnqY6iwmPg9x_w/zh-cn_image_0000002794409637.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/3n8SXTA_RcOS1tjktbZTXQ/zh-cn_image_0000002768019644.gif)
 
 ### 多层@Builder函数嵌套
 
@@ -642,7 +642,7 @@ struct ParentExample {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/A832KDoYQ_W-iLVLykmleA/zh-cn_image_0000002764970918.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/lMN46oRDRPO2XeJVzIPvJw/zh-cn_image_0000002797299591.gif)
 
 ### @Builder函数联合V2装饰器
 
@@ -742,7 +742,7 @@ struct ParentPage {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/FgGtorHlTAqGuvJEeHUQcQ/zh-cn_image_0000002765130840.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/ZGRHK32ARW-2CWsqy_e2UA/zh-cn_image_0000002767859660.gif)
 
 当通过引用传递方式向@Builder传递参数时，若参数为[@Local](arkts-new-local.md)装饰的对象，对该对象进行整体赋值会触发@Builder中UI刷新。
 
@@ -832,7 +832,7 @@ struct ParentLocalPage {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/_KDVcuS8SqCWKJa_z2axqQ/zh-cn_image_0000002794489419.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/O9fwpcrrTne6j8-5Ip7_mA/zh-cn_image_0000002797179625.gif)
 
 ### 跨组件复用的全局@Builder
 
@@ -936,7 +936,7 @@ struct ReusableChildTwoPage {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/DhdYxsPwRPmnYNFaFpJodw/zh-cn_image_0000002794409639.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ULK7OfmnTuea88QbpYNNAg/zh-cn_image_0000002768019646.gif)
 
 ### @Builder支持状态变量刷新
 
@@ -1058,7 +1058,7 @@ struct Single {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/87E7iOLmQ0uZuAwJyHgO8g/zh-cn_image_0000002764970920.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/PBVWymkKQ7GJ5OXSNBaVJQ/zh-cn_image_0000002797299593.gif)
 
 ## 常见问题
 
@@ -1580,7 +1580,7 @@ struct BackGround2 {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/UxiLBAn1Ru-nwVjPe4kM2w/zh-cn_image_0000002765130842.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/8fHaaRh-T2SMPlkNJgoQJw/zh-cn_image_0000002767859662.gif)
 
 ### 在@Builder方法中使用MutableBinding未传递set访问器
 
@@ -1686,7 +1686,7 @@ struct MakeBindingTest2 {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/18ymlcG_R3K8oGInPV4hYQ/zh-cn_image_0000002794489421.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/uDoqpISuQ8e_-ljMrmm_Ig/zh-cn_image_0000002797179627.gif)
 
 ### 在@Builder装饰的函数内部修改入参内容
 
@@ -1851,7 +1851,7 @@ struct ParentMod2 {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/NByDKKMxSpqJj5F8_TvBeg/zh-cn_image_0000002794409641.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/NW5U3GOCQda7-6r_8B7Xtw/zh-cn_image_0000002768019648.gif)
 
 ### 在@Watch函数中执行@Builder函数
 
@@ -1931,4 +1931,4 @@ struct Child2 {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/2JhlzxRjRZq_Q6CMoCHEbA/zh-cn_image_0000002764970922.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/twV-QnmOQhaOEsBjDN-3IQ/zh-cn_image_0000002797299595.gif)

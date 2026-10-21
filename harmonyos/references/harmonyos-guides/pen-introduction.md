@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-introduct
 title: Pen Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > Pen Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:53+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:86611c0e90f016c0034026c979fcc9c3d2ee520ad8168be290fc19afc9def95b
+scraped_at: 2026-10-22T07:05:17+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:785a757f311df93db3ea22c5ce398d6ed992779529b0f24f8aba722e84b926d4
 ---
 
 Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷效果、笔迹编辑、报点预测、一笔成形、全局取色和手写交互的功能。Pen Kit可以为产品带来优质手写体验，为您创造更多的手写应用场景。
@@ -28,13 +28,13 @@ Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷�
   + 手写波轮：从API版本26.0.0开始，新增环形工具栏，支持笔刷、笔宽、颜色、不透明度等属性的快速调节。通过轻捏手写笔笔身，隐藏原本工具栏，展开环形工具栏，再次轻捏笔身，隐藏环形工具栏。
   + 其他功能：撤销、重做、禁止手指书写。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/NySyxxEERnq4xhFwsOtMug/zh-cn_image_0000002764972172.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/QqE7iRC9TfeO8htcykvvbA/zh-cn_image_0000002797300837.png)
 
 ## 报点预测
 
 根据书写轨迹预测报点提前进行绘制，提高手写跟手性，手写套件已默认开启报点预测，您也可以在应用中单独集成报点预测功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/bQxInyrrSbWDgDlQjOr31w/zh-cn_image_0000002765132098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/bZoBL3UESwWV7l5RCfZgTg/zh-cn_image_0000002767860906.png)
 
 ## 一笔成形
 
@@ -47,19 +47,19 @@ Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷�
 | 多边形 | 三角形、矩形、平行四边形、菱形、正五边形、五角星形 |
 | 曲线 | 抛物线、带箭头抛物线（单向、双向） |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/MdgooW5AQ-29QVVpf1JbFg/zh-cn_image_0000002794490675.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/OSdjL-bBQnaOmq4yD5W1Cg/zh-cn_image_0000002797180869.png)
 
 ## 全局取色
 
 提供全屏取色基础能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/FEdi-vK0Q9uB5yqPOito8A/zh-cn_image_0000002794410891.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/xFCrKj4HQE67371M73jOYQ/zh-cn_image_0000002768020892.png)
 
 ## 手写交互
 
-提供监听手写笔双击/轻捏事件能力。
+提供监听手写笔双击或轻捏事件能力。
 
-## 约束和限制
+## 约束与限制
 
 ### 支持的国家和地区
 

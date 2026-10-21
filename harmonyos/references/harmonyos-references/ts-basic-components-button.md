@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Button
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:54+08:00
+scraped_at: 2026-10-22T07:07:43+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:371226ebd410235fbeb1a149b5cf9a4fdd88beda6782819b969ce285e9b93aa6
+content_hash: sha256:4132e83dd51365a5b5fec16b1df742106a3da38be01c7accb55b1f6c00b32722
 ---
 
 按钮组件，可快速创建不同样式的按钮。
@@ -553,7 +553,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/r5urFIH-TkylXTqWfW7YXQ/zh-cn_image_0000002794492137.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/gCEfRndHQ8O1R3vNNiIAdw/zh-cn_image_0000002797182313.gif)
 
 ### 示例2 （为按钮添加渲染控制）
 
@@ -585,7 +585,7 @@ struct ButtonRenderControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Vr2z3dC6SJWB_VG4wDibhQ/zh-cn_image_0000002794412357.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/jYNyPG2pQZ2vAy4M75Ta_A/zh-cn_image_0000002768022334.gif)
 
 ### 示例3 （设置按钮文本样式）
 
@@ -627,7 +627,7 @@ struct ButtonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/jmPNpAIESm6qU8EoAfUt8g/zh-cn_image_0000002764973642.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/jjJaSfInQtuxbmJNpTIi2Q/zh-cn_image_0000002797302283.png)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
@@ -666,7 +666,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Fl-OpJ-NTp-H6o4wYiIYfQ/zh-cn_image_0000002765133564.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/rTM7MCPDSG-TLjjTx6QTFA/zh-cn_image_0000002767862352.jpeg)
 
 ### 示例5（设置按钮的角色）
 
@@ -696,7 +696,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/DEt6Ml76R7WFRTnlWutPuQ/zh-cn_image_0000002794492139.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/n1L-iOSMTReJOfWXgE5LAA/zh-cn_image_0000002797182315.jpeg)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -765,7 +765,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/oFSDyTZTTS-wsx_zu7orDw/zh-cn_image_0000002794412359.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/YW-0S5L4RRGaoOBEsJPooA/zh-cn_image_0000002768022336.gif)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -807,7 +807,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Fti-4UF7SDiJWw0scxRftQ/zh-cn_image_0000002764973644.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/XAcwYUmKSOicNsDZJA7Pog/zh-cn_image_0000002797302285.jpeg)
 
 ### 示例8（设置label文本水平对齐方式）
 
@@ -833,7 +833,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/hqJlg7WVTPGX5f97ab9E3w/zh-cn_image_0000002765133566.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/HcmBwYXvRrebGZiXQo_MJg/zh-cn_image_0000002767862354.jpeg)
 
 ### 示例9（设置按钮的沉浸光感效果）
 
@@ -909,8 +909,8 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/pmQ6Urt5STiwKrZqqy-NMQ/zh-cn_image_0000002794492141.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/-x9BkHZSSk2HF5VNfFZcKQ/zh-cn_image_0000002797182317.png)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Z1GbHCJoTjaezlauOAsYmQ/zh-cn_image_0000002794412361.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/swQeyRQvR2-oWRBJidbkXA/zh-cn_image_0000002768022338.png)

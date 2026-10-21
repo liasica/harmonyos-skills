@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputmethod-h
 title: Ime工具
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > Ime工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:26+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:72be3a78ca12e1366c4f93ddbdf031d675612a6ba3ddf1d72759f6f6db0b5620
+scraped_at: 2026-10-22T07:04:56+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:d8d6316f0b1bb145bc08567f324f9133a19e5b9e0e6cf193bc10ebde5cb29c43
 ---
 
 **说明** 
@@ -21,7 +21,7 @@ hdc shell ime [选项] [参数]
 | 选项 | 参数 | 描述 |
 | --- | --- | --- |
 | -u | userId | 指定操作的用户ID（该值默认为主屏幕的前台用户ID）。可与其他选项配合使用，用于多用户环境下的输入法管理。 |
-| -e | bundle [-b /-f] | 启用指定输入法到指定模式。未设置-b/-f选项时，默认-b为基础模式，-f为完整体验模式。  **注意：** 系统预置的默认输入法不支持通过此命令更改其使能状态。 |
+| -e | bundle [-b /-f] | 启用指定输入法到指定模式。未设置-b/-f选项时，默认-b为基础访问模式，-f为完整体验模式。  **注意：** 系统预置的默认输入法不支持通过此命令更改其使能状态。 |
 | -d | bundle | 禁用指定输入法。  **注意：** 不允许禁用预置默认输入法。 |
 | -s | bundle | 切换到指定输入法。  **注意：** 在锁屏或密码输入场景下，不允许切换到其他输入法。 |
 | -g | NA | 获取当前输入法。 |
@@ -30,13 +30,13 @@ hdc shell ime [选项] [参数]
 
 ## 通过Ime工具管理输入法示例代码
 
-1. 启用输入法，支持启用三方输入法到基础模式或者完整体验模式。
+1. 启用输入法，支持启用三方输入法到基础访问模式或者完整体验模式。
 
    ```shell
     # 输入：hdc命令启用输入法。
     # 处理：检查为shell调用后，将调用系统输入法管理接口。
     # 输出：效果等同于启用API调用。
-    # 基础模式
+    # 基础访问模式
     hdc shell ime -e com.xxx.yyy
     # 完整体验模式
     hdc shell ime -e com.xxx.yyy -f
@@ -106,7 +106,7 @@ hdc shell ime [选项] [参数]
 3. 为指定用户启用输入法。
 
    ```shell
-    # 输入：为用户100启用指定输入法到基础模式。
+    # 输入：为用户100启用指定输入法到基础访问模式。
     # 处理：系统会为用户100启用指定的输入法。
     # 输出：显示启用结果。
     hdc shell ime -u 100 -e com.example.ime

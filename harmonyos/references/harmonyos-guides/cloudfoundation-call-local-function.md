@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 调用本地云函数
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > （可选）通过端云一体化开发工程调试本地云函数 > 调用本地云函数
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:27+08:00
+scraped_at: 2026-10-22T07:05:45+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7aa51eacbc27bf722c8d73df53bab09f0e6761003979b6138d1e92909a9e9cc6
+content_hash: sha256:0d8f9dedcabc0a036490c45eae75e9931995dce104a41247ce90bf3c8020d4b2
 ---
 
 ## 约束与限制
@@ -82,4 +82,4 @@ hdc rport tcp:18090 tcp:18090
    ```
 3. 打开entry的“Run/Debug Configurations”窗口，勾选“Allow multiple instances”。若未勾选，启动entry调试任务时，系统会终止云函数调试进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/DnV1IX6vR1u-_-fapKFf6Q/zh-cn_image_0000002764972646.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Omw12wO9TQ6fDzAum08V-Q/zh-cn_image_0000002797301307.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-payme
 title: 商户基础支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 商户基础支付场景
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:38+08:00
+scraped_at: 2026-10-22T07:05:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:347b49ba462aa02057745a77d64b6aa96bcc43c9497f1c89c9db76c70432c363
+content_hash: sha256:3cc20e41f00ed57236def1f0eabe15f5079ca540664aeea0840d142d58d49c52
 ---
 
 ## 场景介绍
@@ -18,13 +18,13 @@ content_hash: sha256:347b49ba462aa02057745a77d64b6aa96bcc43c9497f1c89c9db76c7043
 
 华为支付收银台展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/L9VfbZCVS9CBWXZw9CycsQ/zh-cn_image_0000002765132804.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/rJIe6I-_Sla6yfl8-z9CQA/zh-cn_image_0000002767861606.png)
 
 ## 业务流程
 
 开发者通过接入Payment Kit基础支付，可以简便快捷的实现应用的支付能力。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/TNUzgaWPSPCauxDQ1lmSvw/zh-cn_image_0000002794491379.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/gGi78cEORDGIsGbX7Sj6_Q/zh-cn_image_0000002797181569.png)
 
 1. 商户客户端请求商户服务器创建商品订单。
 2. 商户服务器按照商户模型调用Payment Kit服务端[直连商户预下单](../harmonyos-references/payment-prepay.md)或[平台类商户/服务商预下单](../harmonyos-references/payment-agent-prepay.md)接口。

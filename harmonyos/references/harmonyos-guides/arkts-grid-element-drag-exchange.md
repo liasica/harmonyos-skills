@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-grid-el
 title: Grid网格元素拖拽
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > Grid网格元素拖拽
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:11+08:00
+scraped_at: 2026-10-22T07:04:41+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:5a1408daace2d5c83b13f89669f1b0c0c0aa1e8af479327351d4cf72a1c3608b
+content_hash: sha256:62a0d7541a3e5621e7e2fd673b171b8a8bf1cde4f5d3083f2dd6aa05d7fdf954
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ Grid网格元素拖拽交换功能在应用中经常会被使用，如当编辑�
 
 Grid网格布局一般由[Grid](../harmonyos-references/ts-container-grid.md)容器组件和子组件[GridItem](../harmonyos-references/ts-container-griditem.md)构建组成，Grid用于设置网格布局相关参数，GridItem定义子组件相关特征。网格布局中含有网格元素，当给Grid容器组件设置[editMode](../harmonyos-references/ts-container-grid.md#editmode8)属性为true时，可开启Grid组件的编辑模式。首先，开启编辑模式。然后，给[GridItem](../harmonyos-references/ts-container-griditem.md)组件绑定[长按](../harmonyos-references/ts-basic-gestures-longpressgesture.md)、[拖拽](../harmonyos-references/ts-basic-gestures-pangesture.md)等手势。最后，需要添加动画属性[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)，并设置相应的动画效果。最终，呈现出网格元素拖拽交换的动效过程，如下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/552oaXGOTcm4cVejTFlTcQ/zh-cn_image_0000002764971280.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/sy8EZnizS0KBVURtGrTkaA/zh-cn_image_0000002797299949.gif)
 
 ## 实现原理
 
@@ -46,7 +46,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/zCewLZ3rQtuc8KShYMwzvw/zh-cn_image_0000002765131202.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/38NlOX3iSsC_jpLVKc6AAQ/zh-cn_image_0000002767860016.gif)
 
 ### 开发步骤
 
@@ -110,7 +110,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fgoBcR9lRc614JBekT3jLg/zh-cn_image_0000002794489779.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/lK7w5vAJTCGStTFpMNnEMg/zh-cn_image_0000002797179981.gif)
 
 **说明** 
 
@@ -331,7 +331,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/2ULiEyKdTDaWKEIBzq8PmA/zh-cn_image_0000002794409999.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/B9mQD-HcR2qnfFS9pJ3AFQ/zh-cn_image_0000002768020002.gif)
 
 ### 开发步骤
 
@@ -541,7 +541,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/FK9MpgA9QLCsGxoiY8mGDA/zh-cn_image_0000002764971282.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/E32wWfO4R-6v6LqckOuijg/zh-cn_image_0000002797299951.gif)
 
 ### 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口创建和获取string值
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口创建和获取string值
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:14+08:00
+scraped_at: 2026-10-22T07:06:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d0d8537c4bdf9a876346755c61da576768b0bfcd79ea1e286e3dfdd725e1681d
+content_hash: sha256:7f39c3e0fba624a1b5335d5aa20bbccc2fffb9594b570fded63401c137030029
 ---
 
 ## 简介
@@ -326,7 +326,7 @@ const char *SRC_CALL_NATIVE = R"JS(
 
 预期输出结果（ISO-8859-1编码不支持中文，传入中文字符会导致乱码）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/lEskfqT3T0-_ERo0AiwBcA/zh-cn_image_0000002764973234.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/JSacmpLnT0-pceocikYqWA/zh-cn_image_0000002797301885.png)
 
 **注意事项**：getValueStringLatin1(arg)入参arg必须为字符串类型，否则接口调用会失败。
 

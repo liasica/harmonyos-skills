@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-clip-sh
 title: 形状裁剪（clipShape）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 几何图形绘制 > 形状裁剪（clipShape）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:14+08:00
+scraped_at: 2026-10-22T07:04:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f15ccce4120944859acbfabc09fb094b7a9279ad67fcd2ff1ce7377e520c0637
+content_hash: sha256:0ceedf8c3c3c403c0f6ad03bdf6eb688a9be77c62bf2ce56c806646b2a3c856e
 ---
 
 可利用[clipShape](../harmonyos-references/ts-universal-attributes-sharp-clipping.md#clipshape12)接口将组件裁剪为所需的形状。调用该接口后，可以保留该形状覆盖的组件部分，同时移除组件的其余部分。裁剪形状本身是不可见的。
@@ -49,7 +49,7 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/HsHk6y3wRHmR4TfiaY9bEA/zh-cn_image_0000002794489991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Qrorqxf6QjytycMAzDeoRQ/zh-cn_image_0000002797180189.png)
 
 ## 裁剪椭圆形
 
@@ -80,7 +80,7 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ux87izSOSwyF3okVw-A5DQ/zh-cn_image_0000002794410211.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/_gQFJ91URKCmZ495Gdtslg/zh-cn_image_0000002768020210.png)
 
 ## 裁剪矩形
 
@@ -111,7 +111,7 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/wOqqpT33SYuVAApoYKYXqQ/zh-cn_image_0000002764971494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/JtHDMWcbSjebyhaSpwkPEQ/zh-cn_image_0000002797300159.png)
 
 ## 裁剪不规则形状
 
@@ -141,4 +141,4 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Apj15XQySHa_PJAX56azeg/zh-cn_image_0000002765131420.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/BS_qLtIGQBK7akSklfTIIg/zh-cn_image_0000002767860226.png)

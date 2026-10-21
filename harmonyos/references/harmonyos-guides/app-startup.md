@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup
 title: 应用启动框架AppStartup
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用启动框架AppStartup
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:40:57+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:014055ae146ae2c07de8044597c612fabf3c613294cb625b908b490ea234f9e6
+scraped_at: 2026-10-22T07:04:30+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:10ddbf9062430a8f480ee397afdcf6278f98845758f72a602f859cc3f8466f22
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图1** 启动框架使用场景
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/Y-xgYH3sTxaxwQbZguZ4UQ/zh-cn_image_0000002794409507.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/tNeRAyleQvS94XoPSyA_pg/zh-cn_image_0000002768019516.png)
 
 ## 运行机制
 
@@ -24,18 +24,18 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图2** 启动框架自动模式执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/uPv5xG20RkOSAPu0YBAZqQ/zh-cn_image_0000002764970788.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/56FPhNQtQ1anAnoK7XXxRw/zh-cn_image_0000002797299463.png)
 
 开发者也可以在AbilityStage创建完后调用[startupManager.run](../harmonyos-references/js-apis-app-appstartup-startupmanager.md#startupmanagerrun)方法，执行手动模式的启动任务。
 
 **图3** 启动框架手动模式执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/zEsqhVNVTDuWtpotqz3yIQ/zh-cn_image_0000002765130712.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/E-tcpxxGRVueAhy2grba6Q/zh-cn_image_0000002767859532.png)
 
 ## 支持的范围
 
 * HAP：entry类型的HAP支持以自动和手动模式启动。从API version 20开始，feature类型的HAP支持以自动和手动模式启动。
-* HSP/HAR：从API version 18开始，支持在[HSP](in-app-hsp.md)和[HAR](har-package.md)中配置启动任务。HSP和HAR的启动任务、so预加载任务无法主动配置为自动模式，但可以被HAP中自动模式的启动任务、so预加载任务拉起。
+* HSP/HAR：从API version 18开始，支持在[HSP](in-app-hsp.md)和[HAR](har-package.md)中配置启动任务。HSP和HAR的启动任务、so预加载任务只能配置为手动模式，但可以被HAP中自动模式的启动任务、so预加载任务通过dependencies依赖关系拉起，将所依赖的HSP/HAR任务一并执行。示例可参考[HSP与HAR中使用启动框架](app-startup.md#hsp与har中使用启动框架)。
 * 启动框架从API version 18开始支持配置[应用级so](ability-terminology.md#应用级so)预加载任务，so文件开发可以参考[Node-API](use-napi-process.md)创建Native C++工程。不支持配置[系统级so](ability-terminology.md#系统级so)预加载任务。
 
 ## 约束限制
@@ -117,7 +117,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图4** 启动任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/wdn9l5t9QzO5OCetDMHVuQ/zh-cn_image_0000002794489287.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/REtjxtwTTwaROS2wULY44w/zh-cn_image_0000002797179497.png)
 
 1. 在“ets/startup”路径下，依次创建6个启动任务文件。文件名称必须确保唯一性。本例中的6个文件名分别为StartupTask\_001.ets~StartupTask\_006.ets。
 2. 在启动框架配置文件startup\_config.json中，添加启动任务配置。
@@ -206,7 +206,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图5** so预加载任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/xMxcitp2RTilh2h7Spui2A/zh-cn_image_0000002794409509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/xOniAFH2RKq6_TG_TgqF-A/zh-cn_image_0000002768019518.png)
 
 1. 参考[Node-API](use-napi-process.md)创建so文件。本例中的6个so文件名称分别为libentry\_001.so~libentry\_006.so。
 2. 在启动框架配置文件startup\_config.json中，添加预加载so任务配置。
@@ -357,7 +357,7 @@ export default class StartupTask_001 extends StartupTask {
 
 ### HSP与HAR中使用启动框架
 
-通常大型应用会有多个[HSP](in-app-hsp.md)和[HAR](har-package.md)，本节将提供一个应用示例，以展示如何在HSP包和HAR包中使用启动框架。该示例应用包括两个HSP包（hsp1、hsp2）和一个HAR包（har1），并且包含启动任务和so预加载任务。
+通常大型应用会有多个[HSP](in-app-hsp.md)和[HAR](har-package.md)，本节将提供一个应用示例，以展示如何在HSP包和HAR包中使用启动框架。该示例应用包括一个HAP模块（entry）、两个HSP模块（hsp1、hsp2）和一个HAR模块（har1），并且包含启动任务和so预加载任务。
 
 假设当前应用存在的启动任务与so预加载任务如下表所示。
 
@@ -365,31 +365,31 @@ export default class StartupTask_001 extends StartupTask {
 
 | 模块 | 启动任务 | so预加载任务 |
 | --- | --- | --- |
-| entry | HAP\_Task\_01 | libentry\_01 |
-| hsp1 | HSP1\_Task\_01  HSP1\_Task\_02 | libhsp1\_01  libhsp1\_02 |
-| hsp2 | HSP2\_Task\_01 | libhsp2\_01 |
-| har | HAR1\_Task\_01 | libhar1\_01 |
+| entry | HapTask01 | libentry\_01 |
+| hsp1 | Hsp1Task01  Hsp1Task02 | libhsp1\_01  libhsp1\_02 |
+| hsp2 | Hsp2Task01 | libhsp2\_01 |
+| har | Har1Task01 | libhar1\_01 |
 
 **图6** 启动任务与so预加载依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/TR6CJMgmRqSiClGOLy2CrA/zh-cn_image_0000002764970790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/IK0-v33DRNKVrEcRZbheYA/zh-cn_image_0000002797299465.png)
 
 开发步骤如下：
 
-1. 除[HAP](hap-package.md)外，在HSP包和HAR包的“resources/base/profile”目录下创建启动框架配置文件，不同模块可以使用相同文件名，本文以"startup\_config.json"为例。
-2. 分别在各个模块的启动框架配置文件startup\_config.json中， 添加对应的配置信息。
+1. 在HAP、HSP和HAR模块的“resources/base/profile”目录下创建启动框架配置文件，不同模块可以使用相同文件名，本文以"startup\_config.json"为例。
+2. 分别在各个HSP、HAR模块的启动框架配置文件startup\_config.json中， 添加对应的配置信息。
 
-   [HAP](hap-package.md)的startup\_config.json可参考[定义启动任务配置](app-startup.md#定义启动任务配置)，HSP与HAR的startup\_config.json文件无法配置"configEntry"字段，以hsp1包配置文件为例，示例如下：
+   HSP与HAR的startup\_config.json文件无法配置"configEntry"字段，以hsp1模块配置文件为例，示例如下：
 
    ```json
    {
      "startupTasks": [
        {
-         "name": "HSP1_Task_01",
-         "srcEntry": "./ets/startup/HSP1_Task_01.ets",
+         "name": "Hsp1Task01",
+         "srcEntry": "./ets/startup/Hsp1Task01.ets",
          "dependencies": [
-           "HSP1_Task_02",
-           "HAR1_Task_01"
+           "Hsp1Task02",
+           "Har1Task01"
          ],
          "runOnThread": "taskPool",
          "waitOnMainThread": false,
@@ -410,9 +410,51 @@ export default class StartupTask_001 extends StartupTask {
      ]
    }
    ```
-3. 分别在各个模块的[module.json5配置文件](module-configuration-file.md)的appStartup标签中，添加启动框架配置文件的索引。
+3. 在[HAP](hap-package.md)的startup\_config.json中，配置自动模式的启动任务和so预加载任务，并通过dependencies声明对HSP/HAR中任务的依赖，启动框架调度自动模式任务时会解析依赖链，将所依赖的HSP/HAR任务一并执行。HAP的startup\_config.json示例如下：
 
-   hsp1、hsp2以及har1的module.json5示例代码如下。
+   ```json
+   {
+     "startupTasks": [
+       {
+         "name": "HapTask01",
+         "srcEntry": "./ets/startup/HapTask01.ets",
+         "dependencies": [
+           "Hsp1Task01",
+           "Har1Task01"
+         ],
+         "runOnThread": "taskPool",
+         "waitOnMainThread": false
+       }
+     ],
+     "appPreloadHintStartupTasks": [
+       {
+         "name": "libentry_01",
+         "srcEntry": "libentry_01.so",
+         "dependencies": [
+           "libhsp1_01",
+           "libhar1_01"
+         ],
+         "runOnThread": "taskPool"
+       }
+     ],
+     "configEntry": "./ets/startup/StartupConfig.ets"
+   }
+   ```
+4. 分别在各个模块的[module.json5配置文件](module-configuration-file.md)的appStartup标签中，添加启动框架配置文件的索引。
+
+   各个模块的module.json5示例代码如下。
+
+   ```json5
+   {
+     "module": {
+       "name": "entry",
+       "type": "entry",
+       // ···
+       "appStartup": "$profile:startup_config", // 启动框架的配置文件
+       // ···
+     }
+   }
+   ```
 
    ```json5
    {
@@ -532,7 +574,7 @@ struct Index {
 
 **图7** 启动任务设置匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/C0VzAt1nSXCcsQJcCbkCAQ/zh-cn_image_0000002765130714.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/5QJjEtBJRwmqU3UHokEXxA/zh-cn_image_0000002767859534.png)
 
 可以通过以下两种方式添加匹配规则：
 
@@ -646,7 +688,7 @@ struct Index {
 
 **图8** 设置启动任务提前调度
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kqXuxTSoRBepjTLsbRqmrg/zh-cn_image_0000002794489289.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/C6aYs1zjSBKJYVx0txqhmQ/zh-cn_image_0000002797179499.png)
 
 例如，应用首页需要通过网络请求获取Feed流数据，且希望该任务能在异步线程中与AbilityStage模块加载并发执行。假设网络请求任务为[定义启动任务配置](app-startup.md#定义启动任务配置)步骤中的StartupTask\_004，开发步骤如下：
 

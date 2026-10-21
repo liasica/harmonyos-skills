@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 触摸热区设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 触摸交互控制 > 触摸热区设置
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:46+08:00
+scraped_at: 2026-10-22T07:07:37+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:82fc71d3ada51ad65340a9e2234e45849a42f62722233e77385b4219a0850b9d
+content_hash: sha256:c781fab70e243db4b0d4f45b9061fab401fc28409dc5f04186484884083a963e
 ---
 
 设置组件的触摸热区。在ArkUI开发框架中，处理触屏事件和鼠标事件时，会在事件触发前进行按压点与组件响应热区的[触摸测试](../harmonyos-guides/arkts-interaction-basic-principles.md#触摸测试)，以收集需响应事件的组件。基于测试结果，框架会分发相应的事件。影响[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)和[手势事件](ts-gesture-settings.md)的分发。
@@ -203,7 +203,7 @@ struct TouchTargetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/DvSAkYuvSsqrcYMSepL3nw/zh-cn_image_0000002794491965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/yUQxu4WISZCIwEAcgestrg/zh-cn_image_0000002797182145.gif)
 
 ### 示例2（通过responseRegionList接口设置触摸热区）
 
@@ -261,7 +261,7 @@ struct TouchTargetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/TYP3evJKTe6vm4KY2f0jQw/zh-cn_image_0000002794412183.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xGKs1OXzT_6ggpEE86ZrEA/zh-cn_image_0000002768022166.gif)
 
 ### 示例3（设置鼠标的触摸热区以响应点击事件）
 
@@ -353,4 +353,4 @@ struct MouseResponseRegionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/5D6nJcIPQB2EfuP4GuaRzg/zh-cn_image_0000002764973468.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/sdLqVYZRSqaODPcYxuWHOQ/zh-cn_image_0000002797302115.gif)

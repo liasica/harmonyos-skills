@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-typ
 title: 使用typeNode实现画中画功能开发 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 画中画开发指导 > 使用typeNode实现画中画功能开发 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:21+08:00
+scraped_at: 2026-10-22T07:04:50+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:9ca0b90e68a71b377fb62d1467212d2ff48e80e6230f56779dd8be3378cde122
+content_hash: sha256:5347b236159151fdfd9592fddd54ff3d3f2ffc108a21adaf67b7e3e00caa2fdb
 ---
 
 **说明** 
@@ -686,8 +686,8 @@ export class PipManager {
 
 应用使用typeNode自由节点（不添加到布局）实现画中画功能示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/79CcLUTpThmvhFDltEf-sg/zh-cn_image_0000002764971782.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/rhxzu5lbQ_CPwRQDA6B0kw/zh-cn_image_0000002797300447.gif)
 
 应用将typeNode 添加到布局中（使用Router导航、Navigation导航、单界面Ability）实现画中画功能示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NXvFJeuWSSq1kmfFTYxNmA/zh-cn_image_0000002794490283.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/L28pY7-sSl-XcBd30TP0CA/zh-cn_image_0000002797180477.gif)

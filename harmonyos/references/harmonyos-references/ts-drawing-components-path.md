@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Path
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Path
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:05+08:00
+scraped_at: 2026-10-22T07:07:50+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ad3c5a61ac7784dc88fc33971886cb9757b7b660dc55bac0ec15ed47f57c552b
+content_hash: sha256:37839a5d62588a4dceaf9322ca2761a422150a253439b97d58dbe9458882a709
 ---
 
 路径绘制组件，根据绘制路径生成封闭的自定义形状，支持通过SVG路径描述规范定义复杂的几何形状。
@@ -206,7 +206,7 @@ struct PathExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/1sNrWoQJShuONg9qYpVgyQ/zh-cn_image_0000002765133890.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/iixyqrZTSbKNfY2XzaIsWA/zh-cn_image_0000002767862676.png)
 
 ### 示例2（使用不同参数类型绘制路径）
 
@@ -243,7 +243,7 @@ struct PathTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/FAlHKFt9RXmQZ8AOVD1NoQ/zh-cn_image_0000002794492465.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/r72Mx9osSNiJTFMmBwv42w/zh-cn_image_0000002797182639.png)
 
 ### 示例3（使用attributeModifier动态设置Path组件的属性）
 
@@ -284,4 +284,4 @@ struct PathModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/yxyEogW3QY2igwlq5KSxAg/zh-cn_image_0000002794412687.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/tAOYlUDnSwaFsX0czRNbyw/zh-cn_image_0000002768022660.png)

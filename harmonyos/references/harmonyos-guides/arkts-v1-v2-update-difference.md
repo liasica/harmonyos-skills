@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-u
 title: 状态管理V1和V2更新机制差异
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1和V2更新机制差异
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:07+08:00
+scraped_at: 2026-10-22T07:04:38+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:67f33f878d295601f5051f3ee05590fb9d86dd01057154ec84a4661bf90f22b2
+content_hash: sha256:8b0b5bfceb843070377d4abf53e609c65e0d03c26d5a8ac3e48d0d0ae39e6319
 ---
 
 ## V1状态管理演进到V2状态管理背景
@@ -147,7 +147,7 @@ Button('Change state variable')
 
 如下图所示，展示V1和V2组件状态变量更新差异的流程图，相比V1状态管理，V2状态管理在状态变量变化时，会异步标脏组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/OPFHpGaxQ8G12A-thmozjQ/zh-cn_image_0000002764970944.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/g2zEvwSOQaOi0J7Pe6_new/zh-cn_image_0000002797299617.png)
 
 ### V1组件的更新
 

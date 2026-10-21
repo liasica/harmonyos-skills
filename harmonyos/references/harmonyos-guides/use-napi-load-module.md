@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-load
 title: 使用Node-API接口在主线程中进行模块加载
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口在主线程中进行模块加载
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0314fbcb72bbc2e1b4b0c34a7be6a42bd49bf83a0621e17694e4af804420ed38
+scraped_at: 2026-10-22T07:06:23+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:507660618d9fc53cd04f25e5a3306060553ef00eb2f28b2e564c1549c2a703ee
 ---
 
 ## 场景介绍
@@ -314,7 +314,7 @@ napi_status napi_load_module(napi_env env, const char* path, napi_value* result)
      }
    }
    ```
-2. 在使用library的模块中，对build-profile.json5进行配置：
+2. 在使用sharedlibrary的模块中，对build-profile.json5进行配置：
 
    ```json
    {

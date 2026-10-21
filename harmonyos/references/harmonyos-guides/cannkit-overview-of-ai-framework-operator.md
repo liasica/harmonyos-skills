@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-overv
 title: AI框架算子适配概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子部署 > AI框架算子适配 > AI框架算子适配概述
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:50+08:00
+scraped_at: 2026-10-22T07:06:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8f3cb6f3addb44031a0abacc2c0e5891d0ae49402c43b356a1c2590dfe9796fe
+content_hash: sha256:3bbe59da661d66178fb4062595f311d75cb643deb6ff724f0a30cc751db58993
 ---
 
 本章节内容介绍AI框架调用自定义算子的方法。如下图所示，PyTorch和TensorFlow仅支持图模式。
 
 AI框架调用时，除了需要提供DDK框架调用时需要的代码实现文件，还需要对插件进行适配开发。下文仅展示通过ONNX框架进行算子适配，TensorFlow框架开发流程与ONNX框架开发流程一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/8vPfwzrvTEGs76p2fZPbCA/zh-cn_image_0000002765133010.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/LbnBL9eOSq6E6HckWPbrgA/zh-cn_image_0000002767861812.png)

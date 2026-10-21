@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-fa
 title: HiAppEvent常见问题
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > HiAppEvent常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a79077587f1c4f99e896e8b53826aaa5c7f52bd92a7bdfbcb06c6e26abf1adf5
+scraped_at: 2026-10-22T07:05:21+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:bcba8fdd33aad26e200a1ffcd33e5ac4d2b5b0e8c0095ab31b4132dc0731ac49
 ---
 
 ## 查不到已通过HiAppEvent订阅的事件内容
@@ -140,14 +140,14 @@ import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
               hilog.info(0x0000, 'testTag', `HiAppEvent file=${externalLog} fd=${file.fd}`);
               fileIo.closeSync(file);
               }).catch((err: BusinessError) => {
-                hilog.info(0x0000, 'testTag',
+                hilog.error(0x0000, 'testTag',
                 `HiAppEvent open file=${externalLog} failed with error message=${err.message}, error code=${err.code}`);
               });
               // 删除external_log日志文件：
               fileIo.unlink(externalLog).then(() => {
-                console.info("HiAppEvent remove file:" + externalLog + " succeed");
+                hilog.info(0x0000, 'testTag', "HiAppEvent remove file:" + externalLog + " succeed");
               }).catch((err: BusinessError) => {
-                console.error("HiAppEvent remove file:" + externalLog + " failed with error message: " + err.message +
+                hilog.error(0x0000, 'testTag', "HiAppEvent remove file:" + externalLog + " failed with error message: " + err.message +
                 ", error code: " + err.code);
               });
             }

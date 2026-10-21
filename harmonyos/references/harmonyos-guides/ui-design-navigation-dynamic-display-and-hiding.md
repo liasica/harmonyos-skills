@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 标题栏动态显隐
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 标题栏动态显隐
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:30+08:00
+scraped_at: 2026-10-22T07:04:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:73a03b4f6a8447a7bf7c9d3f52431794bf17e4a56f3b486eb6947dcd73deb2ac
+content_hash: sha256:0be2cf021cdd39d4e35b0f93a7ed141fcbe921dd6eae285e9e2debec9cd0a7cc
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:73a03b4f6a8447a7bf7c9d3f52431794bf17e4a56f3b486eb6947dcd73d
 
 用于实现标题栏在特定条件下自动显示或隐藏的效果，适用于需要节省屏幕空间的应用界面。当应用开发者需要动态隐藏标题栏时，可通过使用[dynamicHideTitleBar](../harmonyos-references/ui-design-hdsnavigation.md#dynamichidetitlebar)属性实现该功能。在设置动态隐藏标题栏的前提下，才可进一步设置隐藏状态栏。隐藏状态栏表现为状态栏内容区颜色为透明，状态栏区域无模糊。仅在隐藏标题栏区域后，执行隐藏状态栏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/OE6RDftFRuiZDVI2Of8yRA/zh-cn_image_0000002794410715.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/RPz1AEknSmK2BSIgAi6utA/zh-cn_image_0000002768020716.gif)
 
 ## 开发步骤
 

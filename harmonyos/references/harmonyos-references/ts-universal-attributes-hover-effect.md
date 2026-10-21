@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 悬浮态效果
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 悬浮态效果
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:46+08:00
+scraped_at: 2026-10-22T07:07:37+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f59910202436d57ea6bdd5efcd3d35d04241aa4eb6f939b53d72279635907cb1
+content_hash: sha256:1be12e09bc999ac82ed7746448bba11fd5f66a0b39f48dd7ab1951f2785a2f7a
 ---
 
 设置组件的鼠标悬浮态显示效果，用于在鼠标指针悬停到组件上时呈现视觉反馈，帮助用户识别当前交互区域并提升界面交互体验。
@@ -87,4 +87,4 @@ struct HoverExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/a-rLP9NBQA2eFTAo6c5-Fw/zh-cn_image_0000002765133392.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/9TnyoOhERxKAyxaC6r_iHg/zh-cn_image_0000002767862182.gif)

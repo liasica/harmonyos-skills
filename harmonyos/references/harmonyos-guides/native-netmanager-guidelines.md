@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-netman
 title: 管理网络连接(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:46+08:00
+scraped_at: 2026-10-22T07:05:11+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d99f7497ff3d29815b01dde997337a88d32f0f3abc486a0119db0e5b29777270
+content_hash: sha256:6d55a9e73f85d0dddb67fc8bc3e0b80297572c278924bcfe4ac329fd6f0c413f
 ---
 
 ## 场景介绍
@@ -229,7 +229,7 @@ libnet_connection.so
 
    如图所示，在add\_library中的entry是工程自动生成的modname。若要做修改，需和步骤3中.nm\_modname保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/wws_uUcASA-NYoks8N54mw/zh-cn_image_0000002794410831.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/poLcBzyWTHWHMoEzqFlrYg/zh-cn_image_0000002768020832.png)
 
 经过以上步骤，整个工程的搭建已经完成，接下来就可以连接设备运行工程进行日志查看了。
 
@@ -241,10 +241,10 @@ libnet_connection.so
    * 点击GetDefaultNet时获取的是默认网络ID。
    * 点击codeNumber时获取的是接口返回的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/7xJ_pYb1QDOIAlAPjvvRCg/zh-cn_image_0000002764972114.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/w3GPCyqjTsaArL70UVNRWw/zh-cn_image_0000002797300779.png)
 3. 点击GetDefaultNet按钮，控制台会打印日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/38pWfh2UT1Of3NmM3aRxeA/zh-cn_image_0000002765132040.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/NxAa4fYoQDqyXGlCkQimwg/zh-cn_image_0000002767860848.png)
 4. 点击codeNumber按钮，控制台会打印相应的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/wkWi79uXR1KoSyXX6cRODg/zh-cn_image_0000002794490617.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ogxAvZi6SSOOJ9QZaGtmAw/zh-cn_image_0000002797180811.png)

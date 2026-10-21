@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-image-fea
 title: 接入全局取色
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入全局取色
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1f8c7973b8907dcbe37f394da04efc3c2280d8e68679d0b1fa5dcb8951ec537e
+scraped_at: 2026-10-22T07:05:17+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:049e67e076ef0153df4edd74c28864d27b02b8f0c4f42365d3f14ef5d533bca4
 ---
 
 接入全局取色功能，用户可以使用手指或者手写笔操作取色器在屏幕上移动，在目标位置抬起手指/抬起手写笔，会生成该位置色值对应的图像信息。
@@ -14,11 +14,11 @@ content_hash: sha256:1f8c7973b8907dcbe37f394da04efc3c2280d8e68679d0b1fa5dcb8951e
 
 在应用中拉起全局取色，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/mMfzSFxGT3WNwAfqWG9NlQ/zh-cn_image_0000002794410891.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/IreXgQuTSRa9M7M7EoJIUw/zh-cn_image_0000002768020892.png)
 
 支持获取当前屏幕上选中位置的色值和色域空间。
 
-## 限制与约束
+## 约束与限制
 
 * 全局取色能力支持设备：Tablet、PC/2in1，并且从5.1.1(19)版本开始，新增支持设备：Phone。
 * 设备不支持连接手写笔的话，无法使用全局取色能力。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行array相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行array相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:11+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:afb9fcba18a6e3b08b534209529a6ff3d42e6d1a284a891c0e8b362e18de5411
+scraped_at: 2026-10-22T07:06:22+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:6e19ffc591881805dbe6aec3a1ebeb7af6bf6864d43f337125f72870ab253508
 ---
 
 ## 简介
@@ -28,20 +28,20 @@ content_hash: sha256:afb9fcba18a6e3b08b534209529a6ff3d42e6d1a284a891c0e8b362e18d
 
 | 接口 | 描述 |
 | --- | --- |
-| [napi\_create\_array](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_create_array) | 用于在Node-API模块中向ArkTS层创建一个ArkTS数组对象。 |
-| [napi\_create\_array\_with\_length](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_create_array_with_length) | 用于在Node-API模块中向ArkTS层创建指定长度的ArkTS数组对象。 |
-| [napi\_get\_array\_length](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_get_array_length) | 用于在Node-API模块中获取ArkTS数组对象的长度。 |
-| [napi\_is\_array](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_is_array) | 用于在Node-API模块中判断一个napi\_value值是否为数组。 |
-| [napi\_set\_element](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_set_element) | 用于在Node-API模块中对ArkTS数组对象的特定索引处设置一个值。 |
-| [napi\_get\_element](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_get_element) | 用于在Node-API模块中从ArkTS数组对象的特定索引处获取一个值。 |
-| [napi\_has\_element](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_has_element) | 用于在Node-API模块中判断ArkTS数组对象请求索引处是否包含元素。 |
-| [napi\_delete\_element](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_delete_element) | 用于在Node-API模块中从ArkTS数组对象中删除请求索引对应的元素。 |
-| [napi\_create\_typedarray](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_create_typedarray) | 用于在Node-API模块中创建指定类型的TypedArray，例如Uint8Array、Int32Array等，通常用于将Node-API模块中的数据转换为ArkTS中的TypedArray，以便进行高性能的数据处理操作。 |
-| [napi\_is\_typedarray](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_is_typedarray) | 用于在Node-API模块中判断一个给定的napi\_value是否为TypedArray对象。 |
-| [napi\_get\_typedarray\_info](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_get_typedarray_info) | 用于在Node-API模块中获得某个TypedArray的各种属性。 |
-| [napi\_create\_dataview](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_create_dataview) | 用于在Node-API模块中创建一个DataView对象，可以访问和操作二进制数据。 |
-| [napi\_is\_dataview](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_is_dataview) | 用于在Node-API模块中判断给定的napi\_value是否为ArkTS中的DataView对象。 |
-| [napi\_get\_dataview\_info](https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_get_dataview_info) | 用于在Node-API模块中获得某个DataView的各种属性。 |
+| napi\_create\_array | 用于在Node-API模块中向ArkTS层创建一个ArkTS数组对象。 |
+| napi\_create\_array\_with\_length | 用于在Node-API模块中向ArkTS层创建指定长度的ArkTS数组对象。 |
+| napi\_get\_array\_length | 用于在Node-API模块中获取ArkTS数组对象的长度。 |
+| napi\_is\_array | 用于在Node-API模块中判断一个napi\_value值是否为数组。 |
+| napi\_set\_element | 用于在Node-API模块中对ArkTS数组对象的特定索引处设置一个值。 |
+| napi\_get\_element | 用于在Node-API模块中从ArkTS数组对象的特定索引处获取一个值。 |
+| napi\_has\_element | 用于在Node-API模块中判断ArkTS数组对象请求索引处是否包含元素。 |
+| napi\_delete\_element | 用于在Node-API模块中从ArkTS数组对象中删除请求索引对应的元素。 |
+| napi\_create\_typedarray | 用于在Node-API模块中创建指定类型的TypedArray，例如Uint8Array、Int32Array等，通常用于将Node-API模块中的数据转换为ArkTS中的TypedArray，以便进行高性能的数据处理操作。 |
+| napi\_is\_typedarray | 用于在Node-API模块中判断一个给定的napi\_value是否为TypedArray对象。 |
+| napi\_get\_typedarray\_info | 用于在Node-API模块中获得某个TypedArray的各种属性。 |
+| napi\_create\_dataview | 用于在Node-API模块中创建一个DataView对象，可以访问和操作二进制数据。 |
+| napi\_is\_dataview | 用于在Node-API模块中判断给定的napi\_value是否为ArkTS中的DataView对象。 |
+| napi\_get\_dataview\_info | 用于在Node-API模块中获得某个DataView的各种属性。 |
 
 ## 使用示例
 
@@ -703,7 +703,7 @@ static napi_value GetTypedarrayInfo(napi_env env, napi_callback_info info)
             result = int8_type;
             break;
         case INFO_LENGTH:
-            // TypedArray中元素的字节长度
+            // TypedArray中元素的数量
             napi_value napiLength;
             napi_create_int32(env, length, &napiLength);
             result = napiLength;

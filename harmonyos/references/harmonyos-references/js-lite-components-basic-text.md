@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: text
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > text
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:22+08:00
+scraped_at: 2026-10-22T07:08:03+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e3e09de19d656b8315e45b49ddfc94f322b597cc31fcbf425a4e28e08241646f
+content_hash: sha256:2468baf808d7608de2da1d6589c6019f727191b86f6450fee79a2f50ee479434
 ---
 
 文本，用于呈现一段信息。
@@ -100,4 +100,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/OOnjp1NhRaeXmxke9oUiMA/zh-cn_image_0000002765134324.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/iUOcR5AhRzCR5S_anOEqnQ/zh-cn_image_0000002767863110.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohav
 title: OHAVSession
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 模块 > OHAVSession
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:49+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:fd9c5a90eb5a3bb61ace47b662a4f917ca2e18b386dc280f80e4a2977fd45392
+scraped_at: 2026-10-22T07:09:55+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:187ba1ef88f95caad7036b9f355a5b08d4e2c1b18664f4dd739576edd40fe545
 ---
 
 ## 概述
@@ -25,3 +25,8 @@ content_hash: sha256:fd9c5a90eb5a3bb61ace47b662a4f917ca2e18b386dc280f80e4a2977fd
 | [native\_avmetadata.h](capi-native-avmetadata-h.md) | 提供媒体元数据的定义。 |
 | [native\_avsession.h](capi-native-avsession-h.md) | 提供媒体会话定义，用于设置元数据和播放状态信息。 |
 | [native\_avsession\_errors.h](capi-native-avsession-errors-h.md) | 提供媒体会话错误码的定义。 |
+| [native\_avcastcontroller.h](capi-native-avcastcontroller-h.md) | 提供播控控制器的定义。 |
+| [native\_avplaybackstate.h](capi-native-avplaybackstate-h.md) | 提供播放状态的定义。 |
+| [native\_avqueueitem.h](capi-native-avqueueitem-h.md) | 提供音视频队列元素的定义。 |
+| [native\_avsession\_base.h](capi-native-avsession-base-h.md) | 声明AVSession基本信息。 |
+| [native\_deviceinfo.h](capi-native-deviceinfo-h.md) | 提供播控设备信息的定义。 |

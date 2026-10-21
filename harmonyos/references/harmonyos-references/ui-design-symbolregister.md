@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: symbolRegister (symbol注册)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > symbolRegister (symbol注册)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:46:13+08:00
+scraped_at: 2026-10-22T07:08:42+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:aeda7364e7aa4c24792fd148060e66a974813879dd1c97640ebce249bb7ce7dd
+content_hash: sha256:dbe70354d01e0bc3b7355b9a3a340918f3c86ff60f14ccf7eb073530e3ef0b75
 ---
 
 本模块提供自定义Symbol图标资源与动效参数资源注册加载能力。
@@ -83,4 +83,4 @@ struct test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/gGXRpU6ZRb-UzMRXSZBduw/zh-cn_image_0000002794413227.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/2ECvIspoQ8-CB5NZZqMv-Q/zh-cn_image_0000002768023200.png)

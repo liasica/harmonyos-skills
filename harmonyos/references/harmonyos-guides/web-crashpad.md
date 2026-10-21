@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-crashpad
 title: 使用Crashpad收集Web组件崩溃信息
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 使用Crashpad收集Web组件崩溃信息
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:de2d545233342346612270235c9dbeff950eca0f329cc919660e95adfeef3c3c
+scraped_at: 2026-10-22T07:04:53+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:8c502caffda012830fd2ce653811d67b49fb1d8560fae0ede1b3ae473cabf352
 ---
 
 Web组件支持使用Crashpad记录进程崩溃信息。Crashpad是Chromium内核提供的进程崩溃信息处理工具，在应用使用Web组件导致的进程（Web渲染进程）崩溃出现后，Crashpad会在应用主进程沙箱目录写入dmp文件。该文件为二进制格式，后缀为dmp，其记录了进程崩溃的原因、线程信息、寄存器信息等，应用可以使用该文件分析Web组件相关进程崩溃问题。Web组件分别从API version 9和API version 12开始支持接口onRenderExited和onRenderProcessNotResponding，开发者可以分别通过Web接口[onRenderExited](../harmonyos-references/arkts-basic-components-web-events.md#onrenderexited9)和[onRenderProcessNotResponding](../harmonyos-references/arkts-basic-components-web-events.md#onrenderprocessnotresponding12)来检测渲染进程退出和渲染进程不响应，也可以在这些接口中增加应用处理的逻辑。
@@ -14,64 +14,62 @@ Web组件支持使用Crashpad记录进程崩溃信息。Crashpad是Chromium内�
 
 1. 在应用使用Web组件导致的进程崩溃出现后，Crashpad收到信号，对应Hilog日志（节选部分）如下
 
-```c
-pid-30069             I     [crashpad_ohos.cc:254] crashpad SandboxedHandler::HandleCrash, received signo = 6
-pid-30069             I     [crashpad_ohos.cc:182] crashpad SandboxedHandler::HandleCrashNonFatal, connect to handler successfully, need to request dump
-...
-arkweb_cr..._handler  I     [crash_report_database.cc:91] crash dmp path : /data/storage/el2/log/crashpad/new/xxx.dmp
-```
+   ```c
+   pid-30069             I     [crashpad_ohos.cc:254] crashpad SandboxedHandler::HandleCrash, received signo = 6
+   pid-30069             I     [crashpad_ohos.cc:182] crashpad SandboxedHandler::HandleCrashNonFatal, connect to handler successfully, need to request dump
+   ...
+   arkweb_cr..._handler  I     [crash_report_database.cc:91] crash dmp path : /data/storage/el2/log/crashpad/new/xxx.dmp
+   ```
 
-这时Crashpad开始请求dump，成功之后，会在应用主进程沙箱目录下产生对应的dmp文件，对应的沙箱路径如下：
+   这时Crashpad开始请求dump，成功之后，会在应用主进程沙箱目录下产生对应的dmp文件，对应的沙箱路径如下：
 
-```c
-/data/storage/el2/log/crashpad
-```
+   ```c
+   /data/storage/el2/log/crashpad
+   ```
+2. 参考[Native访问应用沙箱](file-native-side.md)实现访问应用沙箱dmp文件；也可将存放dmp文件的沙箱路径的文件复制到可以查看的路径。示例如下
 
-1. 参考[Native访问应用沙箱](file-native-side.md)实现访问应用沙箱dmp文件；也可将存放dmp文件的沙箱路径的文件复制到可以查看的路径。示例如下
+   ```typescript
+   import { fileIo as fs } from '@kit.CoreFileKit'
+   import { BusinessError } from '@kit.BasicServicesKit'
+   import { webview } from '@kit.ArkWeb'
 
-```typescript
-import { fileIo as fs } from '@kit.CoreFileKit'
-import { BusinessError } from '@kit.BasicServicesKit'
-import { webview } from '@kit.ArkWeb'
+   @Entry
+   @Component
+   struct Index {
+     controller: webview.WebviewController = new webview.WebviewController();
+     uiContext: UIContext = this.getUIContext();
+     build() {
+       RelativeContainer() {
+         Web({src:'chrome://memory-exhaust/', controller:this.controller})
+         Button('file')
+           .onClick(() => {
+             let pathDir = this.uiContext.getHostContext()?.filesDir;
+             console.info("pathdir=" + pathDir);
+             fs.copyDir("/data/storage/el2/log/crashpad/pending/", pathDir, 0)
+               .then(()=>{
+                 console.info("copy files success");
+               })
+               .catch((err: BusinessError)=>{
+                 console.error("copy failed with error message: " + err.message + ", error code: " + err.code);
+               })
+           })
+       }
+       .height('100%')
+       .width('100%')
+     }
+   }
+   ```
 
-@Entry
-@Component
-struct Index {
-  controller: webview.WebviewController = new webview.WebviewController();
-  uiContext: UIContext = this.getUIContext();
-  build() {
-    RelativeContainer() {
-      Web({src:'chrome://memory-exhaust/', controller:this.controller})
-      Button('file')
-        .onClick(() => {
-          let pathDir = this.uiContext.getHostContext()?.filesDir;
-          console.info("pathdir=" + pathDir);
-          fs.copyDir("/data/storage/el2/log/crashpad/pending/", pathDir, 0)
-            .then(()=>{
-              console.info("copy files success");
-            })
-            .catch((err: BusinessError)=>{
-              console.error("copy failed with error message: " + err.message + ", error code: " + err.code);
-            })
-        })
-    }
-    .height('100%')
-    .width('100%')
-  }
-}
-```
+   以上示例将所有的dmp文件都复制到可查看的沙箱路径中，也可以搜索Hilog日志“.dmp”得到dmp文件名，这样就可以将某个dmp文件复制到另一个沙箱路径下了，具体的路径为
 
-以上示例将所有的dmp文件都复制到可查看的沙箱路径中，也可以搜索Hilog日志“.dmp”得到dmp文件名，这样就可以将某个dmp文件复制到另一个沙箱路径下了，具体的路径为
+   ```c
+   /data/app/el2/100/base/com.example.myapplication/haps/entry/files/
+   ```
 
-```c
-/data/app/el2/100/base/com.example.myapplication/haps/entry/files/
-```
+   这个路径可以利用DevEco Studio查看。
 
-这个路径可以利用DevEco Studio查看。
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/AVUY12JmTbGDzgrEAO_3tQ/zh-cn_image_0000002794410589.png)
-
-1. 获取dmp文件后进行解析，具体步骤如下：
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/5ZJKyHmdQTSe3jafe83FSw/zh-cn_image_0000002768020588.png)
+3. 获取dmp文件后进行解析，具体步骤如下：
 
    * 通过minidump\_stackwalk工具解析dmp文件，可以得到上述dmp文件对应的进程崩溃信息（崩溃的原因、线程信息、寄存器信息等），示例如下（Linux环境）：
 

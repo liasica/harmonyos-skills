@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-stylus-fr
 title: 接入手写笔跟手性加速
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入手写笔跟手性加速
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:43+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f918387335c6a264f6a4434cb0c4178519189eace2bd33bf7e2259f538971d80
+scraped_at: 2026-10-22T07:05:17+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:a88d0b6f7f1a7354f37e87cc429e5262830066f0ef3c6efaf9de1ec238d96888
 ---
 
 从API版本26.0.0开始，新增手写笔跟手性加速接口，支持笔记类应用提升手写笔书写时延。
@@ -14,7 +14,7 @@ content_hash: sha256:f918387335c6a264f6a4434cb0c4178519189eace2bd33bf7e2259f5389
 
 在应用使用书写绘制功能时，获取到界面的触摸事件的类型，通过调用手写笔跟手性加速的接口，可以提升手写笔书写时延。
 
-## 限制与约束
+## 约束与限制
 
 * 调用手写笔跟手性加速的能力需要申请手写笔跟手性权限ohos.permission.STYLUS\_FRAME\_BOOST。
 * 设备未连接手写笔，无法使用手写笔跟手性加速能力。

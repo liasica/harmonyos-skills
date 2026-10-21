@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-s
 title: Scan_PictureScanProgress
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 结构体 > Scan_PictureScanProgress
 category: harmonyos-references
-scraped_at: 2026-09-25T07:12:16+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:91912c9ee7e0c99aa57813e875fa1e2ec72b5856ed50c05c07a929b5fb58a414
+scraped_at: 2026-10-22T07:09:24+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:ee7c88f9e71e73ca6d2a48aae9f5e3240deb3e1e0d57c3c411ce633bd1583bc5
 ---
 
 ```cpp
@@ -28,6 +28,6 @@ typedef struct {...} Scan_PictureScanProgress
 
 | 名称 | 描述 |
 | --- | --- |
-| int32\_t progress | 图片的扫描进度，取值范围[0, 100]，单位：百分比。0 表示扫描刚开始，100 表示扫描完成。 |
-| int32\_t fd | 扫描仪扫描图片的文件描述符，用于读取扫描仪传输的图片数据。仅当 progress 为 100 时，该 fd 为有效文件描述符。 |
-| bool isFinal | 指示该图片是否为最后扫描的图片。true 表示是最后扫描的图片，false 表示不是最后扫描的图片。仅当 progress 为 100 时，该 isFinal 为有效标识符。 |
+| int32\_t progress | 图片的扫描进度，取值范围[0, 100]，单位：百分比。0表示扫描刚开始，100表示扫描完成。 |
+| int32\_t fd | 扫描仪扫描图片的文件描述符，用于读取扫描仪传输的图片数据。仅当progress为100时，该fd为有效文件描述符。 |
+| bool isFinal | 指示该图片是否为最后扫描的图片。true表示是最后扫描的图片，false表示不是最后扫描的图片。仅当progress为100时，该isFinal为有效标识符。 |

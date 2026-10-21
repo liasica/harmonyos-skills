@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: SafetyDetect（安全检测）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > SafetyDetect（安全检测）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:179debaf9fc0872b635a61369f506cefbb5368dbce9e9acaae80bb0648b404c2
+scraped_at: 2026-10-22T07:08:48+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:685df7dded06da33e92ca2821a781584ec01b8b0e216de7f8e682b86d5cb250f
 ---
 
 安全检测模块提供设备环境安全检测能力，包括系统完整性检测、恶意URL检测、统一风控凭证等安全评估功能。开发者应用可基于检测结果评估设备安全风险并采取相应防护措施。
@@ -150,13 +150,13 @@ checkSysIntegrity(req: SysIntegrityRequest): Promise<SysIntegrityResponse>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameters.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
-| 801 | API is not supported.  适用版本：5.1.0(18)+ |
+| 201 | Permission verification failed. The application does not have the permission. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
+| 801 | Capability not supported.  Possible causes:  1. The hardware does not support the capability;  2. The chip does not support the capability;  3. A dependent service feature is not supported.  适用版本：5.1.0(18)+ |
 | 1010800001 | Internal error. |
 | 1010800002 | The network is unreachable. |
 | 1010800003 | Access cloud server fail. |
@@ -220,13 +220,13 @@ checkUrlThreat(req: UrlCheckRequest): Promise<UrlCheckResponse>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameters.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
-| 801 | API is not supported.  适用版本：5.1.0(18)+ |
+| 201 | Permission verification failed. The application does not have the permission. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
+| 801 | Capability not supported.  Possible causes:  1. The hardware does not support the capability;  2. The chip does not support the capability;  3. A dependent service feature is not supported.  适用版本：5.1.0(18)+ |
 | 1010800001 | Internal error. |
 | 1010800002 | The network is unreachable. |
 | 1010800003 | Access cloud server fail. |
@@ -309,11 +309,11 @@ checkSysIntegrityOnLocal(): Promise<string>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | API is not supported. |
+| 801 | Capability not supported.  Possible causes:  1. The hardware does not support the capability;  2. The chip does not support the capability;  3. A dependent service feature is not supported. |
 | 1010800001 | Internal error. |
 | 1010800004 | Verify capability fail. |
 | 1010800005 | The number of calls exceeds the parallel threshold. |
@@ -372,11 +372,11 @@ checkSysIntegrityEnhanced(req: SysIntegrityRequest): Promise<SysIntegrityRespons
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | API is not supported. |
+| 801 | Capability not supported.  Possible causes:  1. The hardware does not support the capability;  2. The chip does not support the capability;  3. A dependent service feature is not supported. |
 | 1010800001 | Internal error. |
 | 1010800002 | The network is unreachable. |
 | 1010800003 | Access cloud server fail. |
@@ -524,11 +524,11 @@ queryRiskFactors(req: RiskFactorRequest): Promise<RiskFactorResponse>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-devicesecurity-safetydetect.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | API is not supported. |
+| 801 | Capability not supported.  Possible causes:  1. The hardware does not support the capability;  2. The chip does not support the capability;  3. A dependent service feature is not supported. |
 | 1010800004 | Verify capability fail. |
 | 1010800005 | The number of calls exceeds the parallel threshold. |
 | 1010800006 | The invoking frequency exceeds the threshold. |

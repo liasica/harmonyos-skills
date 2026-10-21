@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 防窥保护
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 防窥保护
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:39+08:00
+scraped_at: 2026-10-22T07:05:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bbf60e9cf7efcc73b26a2c1e6646edf2f42508c8c3a28af79bb0fa79b9109944
+content_hash: sha256:3aaaa12c5fa9a0758c5f9570f833801d4fd7585ceca2f6ddce06554fd9646f5c
 ---
 
 ## 场景介绍
@@ -29,7 +29,7 @@ content_hash: sha256:bbf60e9cf7efcc73b26a2c1e6646edf2f42508c8c3a28af79bb0fa79b91
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/6FVksokWR_mN6Nn4hJAI4w/zh-cn_image_0000002764972074.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/aXs3WYBDReujOSQEEpdRgg/zh-cn_image_0000002797300739.jpg)
 
 **流程说明：**
 

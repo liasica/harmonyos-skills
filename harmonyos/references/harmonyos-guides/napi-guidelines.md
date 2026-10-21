@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-guidelin
 title: Node-API开发规范
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API开发规范
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:11+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:b7fbc67eb1689e8820a479ffd61c700bb77ff00b42133d1e5df27d4c7d6265d1
+scraped_at: 2026-10-22T07:06:21+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:6ed470d641a0c9b801597257dad612494fa1853d465efcaf8177db61b83fc003
 ---
 
 ## 获取JS传入参数及其数量
@@ -103,13 +103,13 @@ napi_create_string_utf8(env1, "bar", NAPI_AUTO_LENGTH, &string);
 // 线程2执行，在env2创建object对象，并将上述的string对象设置到object对象中
 napi_status status = napi_create_object(env2, &object);
 if (status != napi_ok) {
-    napi_throw_error(env, ...);
+    napi_throw_error(env2, ...);
     return;
 }
 
 status = napi_set_named_property(env2, object, "foo", string);
 if (status != napi_ok) {
-    napi_throw_error(env, ...);
+    napi_throw_error(env2, ...);
     return;
 }
 ```
@@ -371,11 +371,11 @@ extern "C" __attribute__((constructor)) void RegisterModule()
 
 图一
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/bT7wCS0TQw2wnOBNQ61w2A/zh-cn_image_0000002794491725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/I-QssMIGT-awRxiFFKj-Rg/zh-cn_image_0000002797181911.png)
 
 图二
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/3DuAYu1qT360shD_qOgOIg/zh-cn_image_0000002794411949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/EwPho8NeS3KtnI06Jg83gA/zh-cn_image_0000002768021932.png)
 
 **正确示例**：
 

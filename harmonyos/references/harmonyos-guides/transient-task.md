@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/transient-tas
 title: 短时任务(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 短时任务(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:25+08:00
+scraped_at: 2026-10-22T07:04:53+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2625b3b4d96add950292c16e7086e48d0939c764607852b7ec345acc46e10c38
+content_hash: sha256:5957e0c43aba5c40c6e6bbe7d6c1b86933cc5afb383e63e74f17f2e85934eebc
 ---
 
 ## 概述
@@ -21,7 +21,7 @@ content_hash: sha256:2625b3b4d96add950292c16e7086e48d0939c764607852b7ec345acc46e
 
   **图1** 短时任务配额计算原理图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/7hBeMixtTxavvAGj0RDIHw/zh-cn_image_0000002764971874.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/sYWaNhwYQlughTeCAhpI8Q/zh-cn_image_0000002797300539.png)
 
   **说明** 
 

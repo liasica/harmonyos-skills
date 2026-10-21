@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: Path2D对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > Path2D对象
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:19+08:00
+scraped_at: 2026-10-22T07:08:01+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6bd6e138f22f56e661f61fc25fe15d750b3cd67564b43b91f0a5f37697a52e6c
+content_hash: sha256:0eff59e465fc3a55d3ce94a947c7cdac3e6f835cf79d08efe3ec7a8aa15c094d
 ---
 
 路径对象，支持通过对象的接口进行路径的描述，并通过Canvas的[stroke](js-components-canvas-canvasrenderingcontext2d.md#stroke)接口进行绘制。
@@ -49,7 +49,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/v8rKgvJtSDqI3O1Ld8fpeA/zh-cn_image_0000002794492717.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/skwgib9lTg6NIaPmEBcZRQ/zh-cn_image_0000002797182891.png)
 
 ## setTransform
 
@@ -90,7 +90,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/l19YyExfTAKoL0Ml0BY9PA/zh-cn_image_0000002794412939.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/sgq8oon8T9u8BY0Vfm9bHQ/zh-cn_image_0000002768022912.png)
 
 ## closePath
 
@@ -123,7 +123,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/7f4qUTRyRqO9WPqzGzoLZg/zh-cn_image_0000002764974220.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/MulW00IJQ5GFqDcMJ92aDQ/zh-cn_image_0000002797302863.png)
 
 ## moveTo
 
@@ -163,7 +163,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/n-wFh1kbS3Kv-xeWWEfMgg/zh-cn_image_0000002765134144.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/qIcyM5OvQryv-8RWTE_xcQ/zh-cn_image_0000002767862930.png)
 
 ## lineTo
 
@@ -204,7 +204,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/PvHL8vRdQB2AEdM_aLynyA/zh-cn_image_0000002794492719.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/WKYl4IhOQU-H8lvwZL7uIA/zh-cn_image_0000002797182893.png)
 
 ## bezierCurveTo
 
@@ -246,7 +246,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/SyslJ1uqQKKNI0qlFw9GNQ/zh-cn_image_0000002794412941.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/WWictr_8TMu-_SM7GfJAjQ/zh-cn_image_0000002768022914.png)
 
 ## quadraticCurveTo
 
@@ -286,7 +286,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/MCQQKmeZSJKz5RkoSa0u-g/zh-cn_image_0000002764974222.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/J8uUbgkMRUqpg-fMIwiGBg/zh-cn_image_0000002797302865.png)
 
 ## arc
 
@@ -327,7 +327,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/RHmL6ryYRj6TqPHNibebEA/zh-cn_image_0000002765134146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ZcYYfwMXQMSHW22IzzhWiQ/zh-cn_image_0000002767862932.png)
 
 ## arcTo
 
@@ -367,7 +367,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Hg2UjNoHTb-4nAESW_f47w/zh-cn_image_0000002794492721.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/toVTrAl9Th-4UKhd7Yut4w/zh-cn_image_0000002797182895.png)
 
 ## ellipse
 
@@ -410,7 +410,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/BhN6me5gQtWP87HtLYif7A/zh-cn_image_0000002794412943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/aOgFtrCKTY6ng5sPoqa6aQ/zh-cn_image_0000002768022916.png)
 
 ## rect
 
@@ -449,4 +449,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/pjIMD0fyT3q0hPj3COb2zA/zh-cn_image_0000002764974224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/0c-mY_GkSTqt7_L_FCXjqw/zh-cn_image_0000002797302867.png)

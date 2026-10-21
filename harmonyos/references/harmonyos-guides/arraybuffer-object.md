@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arraybuffer-o
 title: ArrayBuffer对象
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > ArrayBuffer对象
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:02+08:00
+scraped_at: 2026-10-22T07:04:34+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:93f107549244d1b270a4843961a6358bd9270740679625e5f676f0de443f73aa
+content_hash: sha256:7be330debc0d208b1deb7734b6040d801a2748021e778318d988b2a15ef5858c
 ---
 
 ArrayBuffer包含两部分：底层存储数据的Native内存区域，以及封装操作的JS对象壳。JS对象壳分配在虚拟机的本地堆（LocalHeap）中。跨线程传递时，JS对象壳需要序列化和反序列化拷贝传递，而Native内存区域可以通过拷贝或转移的方式传递。
 
 Native内存使用拷贝方式（递归遍历）传输时，传输后两个线程可以独立访问ArrayBuffer。此方式需要重建JS壳和拷贝Native内存，传输效率较低。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/f7zEHz0tQXaDPWvh0kN7ag/zh-cn_image_0000002794489341.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/THLgXi2dS_OVCnIV_K1j1Q/zh-cn_image_0000002797179549.png)
 
 Native内存使用转移方式传输时，传输后原线程将无法使用此ArrayBuffer对象。跨线程时只需重建JS壳，Native内存无需拷贝，从而提高效率。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/mR9T5xZ3TCm01LjUyMueMw/zh-cn_image_0000002794409563.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/XqQlN1hAQ2WzWdkBDAlpew/zh-cn_image_0000002768019570.png)
 
 ArrayBuffer常用于表示图片等二进制资源，在应用开发中，处理图片（如调整亮度、饱和度、大小等）会比较耗时，为了避免长时间阻塞UI主线程，可以将图片传递到子线程中进行处理。采用转移方式传递ArrayBuffer可提高传输性能，但原线程将无法再访问该ArrayBuffer对象。如果两个线程都需要访问该对象，只能采用拷贝方式。反之，建议采用转移方式以提升性能。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi
 title: Node-API
 breadcrumb: API参考 > 标准库 > Node-API
 category: harmonyos-references
-scraped_at: 2026-10-15T07:13:01+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:5590d3998a376e31b04cb607ab4a2323d4f14648979972b35a81bb14f7e2f844
+scraped_at: 2026-10-22T07:11:14+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:79a514f6ac40a75ab10bb14ea5bc0d3c26801bdddf2c30966731f72b8858efed
 ---
 
 ## 简介
@@ -55,8 +55,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 | FUNC | napi\_get\_and\_clear\_last\_exception | 获取并清除最近一次出现的异常。 | 10 |
 | FUNC | napi\_is\_exception\_pending | 判断是否出现了异常。 | 10 |
 | FUNC | napi\_fatal\_error | 引发致命错误以立即终止进程。 | 10 |
-| FUNC | napi\_open\_handle\_scope | 创建一个上下文环境使用。 | 10 |
-| FUNC | napi\_close\_handle\_scope | 关闭传入的上下文环境，关闭后，所有在其中声明的引用都将被关闭。 | 10 |
+| FUNC | napi\_open\_handle\_scope | 创建一个napi\_handle\_scope。 | 10 |
+| FUNC | napi\_close\_handle\_scope | 关闭传入的napi\_handle\_scope，关闭后，所有在其中声明的引用都将被关闭。 | 10 |
 | FUNC | napi\_open\_escapable\_handle\_scope | 创建出一个可逃逸的handle scope，可将范围内声明的值返回到父作用域。 | 10 |
 | FUNC | napi\_close\_escapable\_handle\_scope | 关闭传入的可逃逸的handle scope。 | 10 |
 | FUNC | napi\_escape\_handle | 提升传入的js object的生命周期到其父作用域。 | 10 |
@@ -122,7 +122,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 | FUNC | napi\_has\_named\_property | 判断给定Object中是否有给定名称的属性。 | 10 |
 | FUNC | napi\_set\_element | 在给定Object的指定索引处，设置元素。 | 10 |
 | FUNC | napi\_get\_element | 获取给定Object指定索引处的元素。 | 10 |
-| FUNC | napi\_has\_element | 若给定Object的指定索引处拥有属性，获取该元素。 | 10 |
+| FUNC | napi\_has\_element | 判断给定Object的指定索引处是否存在元素。 | 10 |
 | FUNC | napi\_delete\_element | 尝试删除给定Object的指定索引处的元素。 | 10 |
 | FUNC | napi\_define\_properties | 批量的向给定Object中定义属性。 | 10 |
 | FUNC | napi\_type\_tag\_object | 将tag指针的值与Object关联。 | 10 |
@@ -177,7 +177,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 | FUNC | napi\_get\_all\_property\_names | 获取一个数组，其中包含此对象过滤后的属性名称。 | 10 |
 | FUNC | napi\_detach\_arraybuffer | 分离给定ArrayBuffer的底层数据。 | 10 |
 | FUNC | napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | 10 |
-| FUNC | napi\_run\_script | 将给定对象作为js代码运行。当前接口实际为空实现，可使用系统扩展接口napi\_run\_script\_path接口，提升安全性。 | 10 |
+| FUNC | napi\_run\_script | 将给定对象作为js代码运行。当前接口实际为空实现，请使用系统扩展接口napi\_run\_script\_path替代，提升安全性。 | 10 |
 | FUNC | napi\_set\_instance\_data | 绑定与当前运行的环境相关联的数据项。 | 11 |
 | FUNC | napi\_get\_instance\_data | 检索与当前运行的环境相关联的数据项。 | 11 |
 | FUNC | napi\_add\_env\_cleanup\_hook | 注册环境清理钩子函数。 | 11 |
@@ -645,6 +645,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **说明：**
 
 * HarmonyOS调用uv\_async\_send接口前会检查env是否存活。
+* 调用uv\_async\_send接口失败时，HarmonyOS中会返回napi\_generic\_failure。
 * ThreadCount为0时，HarmonyOS中会返回napi\_generic\_failure。
 
 ### napi\_ref\_threadsafe\_function
@@ -703,6 +704,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **返回：**
 
 * HarmonyOS中创建的buffer类型为ArrayBufferLike。
+* HarmonyOS中，data为nullptr时返回napi\_invalid\_arg。
 * HarmonyOS中，length小于等于0时返回napi\_invalid\_arg。
 * HarmonyOS中，length大于2097152时返回napi\_invalid\_arg并打印错误日志。
 * 标准库中，因未知原因导致创建失败时将返回napi\_generic\_failure，HarmonyOS中返回napi\_pending\_exception。
@@ -868,7 +870,7 @@ napi_status napi_queue_async_work_with_qos(napi_env env,
 
 **返回：**
 
-如果API成功，则返回napi\_ok。
+如果API成功，则返回napi\_ok。当底层任务入队失败时，HarmonyOS中仍返回napi\_ok，并打印失败日志，execute和complete回调函数不会执行。
 
 ### napi\_run\_script\_path
 
@@ -968,7 +970,7 @@ napi_status napi_create_object_with_named_properties(napi_env env,
 * [out] result: 一个指向napi\_value类型的指针，用于存储创建的对象。
 * [in] property\_count: 要添加到对象中的属性的数量。
 * [in] keys: 一个指向const char\*数组的指针，表示属性的名称。
-* [in] values: 一个指向napi\_value数组的指针，表示属性的值，与属性名称一一对应。
+* [in] values: 一个指向napi\_value数组的指针，表示属性的值，与属性名称一一对应。keys数组与values数组的元素个数须一致，若不匹配将返回napi\_invalid\_arg。
 
 **返回：**
 
@@ -1018,7 +1020,7 @@ napi_status napi_create_ark_runtime(napi_env *env)
 
 **参数：**
 
-* [in] env: Node-API的环境对象，表示当前的执行环境。
+* [out] env: 新创建的Node-API环境对象。
 
 **返回：**
 
@@ -1154,7 +1156,7 @@ napi_status napi_deserialize(napi_env env, void* buffer, napi_value* object)
 **参数：**
 
 * [in] env: Node-API的环境对象，表示当前的执行环境。
-* [in] buffer: 指向包含二进制数据的指针。这些二进制数据需要被反序列化为JavaScript对象。
+* [in] buffer: 指向包含二进制数据的指针，该数据需通过napi\_serialize接口序列化获得。这些二进制数据需要被反序列化为JavaScript对象。
 * [out] object: 用于接收反序列化后的JavaScript对象。
 
 **返回：**
@@ -1201,7 +1203,7 @@ napi_status napi_call_threadsafe_function_with_priority(napi_threadsafe_function
 
 * [in] func: 线程安全函数对象，在创建线程安全函数时返回。
 * [in] data: 传递给 JavaScript 回调函数的参数数据。
-* [in] priority: 指定调用 JavaScript 回调函数的任务优先级。
+* [in] priority: 指定调用 JavaScript 回调函数的任务优先级，取值范围参见napi\_task\_priority枚举，该枚举定义了不同的任务优先级等级。
 * [in] isTail: 一个布尔值，指示调用是否应该排队等待在事件循环的尾部执行。如果为 true，则调用将在事件循环的尾部执行；如果为 false，则调用将立即执行，不会排队等待。
 
 **返回：**
@@ -1253,7 +1255,7 @@ napi_status napi_define_sendable_class(napi_env env,
 **参数：**
 
 * [in] env: Node-API的环境对象，表示当前的执行环境。
-* [in] utf8name：一个const char\*类型的参数，表示类的名称。
+* [in] utf8name：一个const char\*类型的参数，表示类的名称。与length配合使用，HarmonyOS中使用min(length, strlen(utf8name))对名称进行截断。
 * [in] length：一个size\_t类型的参数，表示类名称的字节数。
 * [in] constructor：一个napi\_callback类型的参数，表示类的构造函数。
 * [in] data：[可选]一个void\*类型的参数，表示构造函数的附加数据。
@@ -1379,8 +1381,8 @@ napi_status napi_create_sendable_typedarray(napi_env env,
 
 * [in] env: Node-API的环境对象，表示当前的执行环境。
 * [in] type：TypedArray 的类型。
-* [in] length：TypedArray 的长度。
-* [in] arraybuffer：一个 ArrayBuffer 实例。
+* [in] length：TypedArray 的长度。length与byte\_offset、arraybuffer的大小存在制约关系，若length \* sizeof(elementType) + byte\_offset超过arraybuffer的大小，将抛出RangeError异常并返回napi\_pending\_exception。
+* [in] arraybuffer：一个Sendable ArrayBuffer实例（如通过napi\_create\_sendable\_arraybuffer创建）。
 * [in] byte\_offset：ArrayBuffer 的偏移量。
 * [out] result：一个napi\_value类型的指针，用于存储创建的TypedArray。
 
@@ -1407,9 +1409,9 @@ napi_status napi_wrap_sendable(napi_env env,
 **参数：**
 
 * [in] env: Node-API的环境对象，表示当前的执行环境。
-* [in] js\_object：ArkTS对象。
+* [in] js\_object：Sendable ArkTS对象。
 * [in] native\_object：将被包裹在ArkTS对象中的native实例。
-* [in] napi\_finalize：[可选]ArkTS对象被销毁时调用的回调函数。
+* [in] finalize\_cb：[可选]ArkTS对象被销毁时调用的回调函数。
 * [in] finalize\_hint：[可选]上下文提示，会传递给回调函数。
 
 **返回：**
@@ -1436,9 +1438,9 @@ napi_status napi_wrap_sendable_with_size(napi_env env,
 **参数：**
 
 * [in] env: Node-API的环境对象，表示当前的执行环境。
-* [in] js\_object：ArkTS对象。
+* [in] js\_object：Sendable ArkTS对象。
 * [in] native\_object：将被包裹在ArkTS对象中的native实例。
-* [in] napi\_finalize：[可选]ArkTS对象被销毁时调用的回调函数。
+* [in] finalize\_cb：[可选]ArkTS对象被销毁时调用的回调函数。
 * [in] finalize\_hint：[可选]上下文提示，会传递给回调函数。
 * [in] native\_binding\_size：[可选]绑定的native实例的大小。
 
@@ -1461,7 +1463,7 @@ napi_status napi_unwrap_sendable(napi_env env, napi_value js_object, void** resu
 **参数：**
 
 * [in] env: Node-API的环境对象，表示当前的执行环境。
-* [in] js\_object：ArkTS对象。
+* [in] js\_object：Sendable ArkTS对象。
 * [out] result：包裹在ArkTS对象中的native实例。
 
 **返回：**
@@ -1483,7 +1485,7 @@ napi_status napi_remove_wrap_sendable(napi_env env, napi_value js_object, void**
 **参数：**
 
 * [in] env: Node-API的环境对象，表示当前的执行环境。
-* [in] js\_object：ArkTS对象。
+* [in] js\_object：Sendable ArkTS对象。
 * [out] result：包裹在ArkTS对象中的native实例。
 
 **返回：**
@@ -1672,7 +1674,7 @@ napi_status napi_get_buffer_string_utf16_in_critical_scope(napi_env env,
 **参数：**
 
 * [in] env：Node-API的环境对象，表示当前的执行环境。
-* [in] value：ArkTS String对象。
+* [in] value：ArkTS String对象。该接口必须在通过napi\_open\_critical\_scope打开的临界区作用域内调用。
 * [out] buffer：接收UTF-16编码内存缓冲区数据的指针。
 * [out] length：接收字符串长度的指针。
 
@@ -1705,7 +1707,7 @@ napi_status napi_create_strong_reference(napi_env env, napi_value value, napi_st
 ### napi\_delete\_strong\_reference
 
 ```cpp
-napi_status napi_delete_strong_reference(napi_env env, napi_value value, napi_strong_ref ref);
+napi_status napi_delete_strong_reference(napi_env env, napi_strong_ref ref);
 ```
 
 **描述：**
@@ -1719,7 +1721,6 @@ napi_status napi_delete_strong_reference(napi_env env, napi_value value, napi_st
 **参数：**
 
 * [in] env：Node-API的环境对象，表示当前的执行环境。
-* [in] value：ArkTS对象。
 * [in] ref：要删除的强引用。
 
 **返回：**
@@ -1970,7 +1971,9 @@ napi_status napi_throw_business_error(napi_env env,
 
 **返回：**
 
-如果API成功，则返回napi\_ok。
+* napi\_ok：API调用成功时返回。
+* napi\_invalid\_arg：入参env或msg为nullptr时返回。
+* napi\_pending\_exception：当前上下文中存在ArkTS Error时返回。
 
 ### napi\_create\_callsite\_info
 

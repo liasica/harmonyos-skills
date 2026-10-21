@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用方法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 通用方法
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:17+08:00
+scraped_at: 2026-10-22T07:07:59+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:30c60782244f233c3847d837ac4f2c68377f98030e903a6841c50e0bc4266323
+content_hash: sha256:090375af5d6f1733234ec6240131bcab1ebeaed2b5aa61a8b0c82458a113adba
 ---
 
 **说明** 
@@ -189,7 +189,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/xQPNwhHmRTS9iHYHFBbaGQ/zh-cn_image_0000002764974158.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/ED2_M_oWSOWqBnfeR9KVMA/zh-cn_image_0000002797302801.gif)
 
 ## getBoundingClientRect
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-white-scr
 title: 定位与解决Web白屏问题
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 定位与解决Web白屏问题
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:25+08:00
+scraped_at: 2026-10-22T07:04:53+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2b2c62ab2f40a91b110e5675af7c942fa897f83b9ca78308c5cbdab7fa27193d
+content_hash: sha256:cd89e5502159d2333f2b7817735c46f4ae323b6cf37242ffb1177a7f676bd509
 ---
 
 Web页面出现白屏的原因众多，本文列举了若干常见白屏问题的排查步骤，供开发者快速定位。
@@ -103,7 +103,7 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 
    （3）网络里面是否有资源加载时间特别长等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/nA6-TW-ORxO2sn1DMda-sw/zh-cn_image_0000002764971872.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/tfZFQN0XSVyDxdXWqP1Kvg/zh-cn_image_0000002797300537.png)
 2. 检查控制台，确认是否存在因MixedContent策略或CORS策略导致的异常，或JS错误等。可参考[解决Web组件本地资源跨域问题](web-cross-origin.md)。为了提高安全性，ArkWeb内核禁止file协议和resource协议访问跨域请求。因此，在使用Web组件加载本地离线资源的时候，Web组件会拦截file协议和resource协议的跨域访问。Web组件无法访问本地跨域资源时，DevTools控制台会显示报错信息：
 
    ```txt
@@ -410,7 +410,7 @@ Web组件提供了自适应页面布局的能力，详情见 [Web组件大小自
 
 下面说明一下Web组件网络加载过程中的关键日志，正常情况下一个Web组件的加载过程应该包含这些关键节点：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/GaIqEj7TQXqaVVSEQOGOUA/zh-cn_image_0000002765131798.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/y5GOUPkHSKec5lv_ErGzWw/zh-cn_image_0000002767860606.png)
 
 | 日志关键字 | 说明 |
 | --- | --- |

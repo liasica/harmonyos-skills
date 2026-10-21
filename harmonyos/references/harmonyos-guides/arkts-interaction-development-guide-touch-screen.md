@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持触屏输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持触屏输入事件
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:14+08:00
+scraped_at: 2026-10-22T07:04:44+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ce90e60310542789fa6e053cff58b70349f30ded38e848f9951f52f4c5f47f18
+content_hash: sha256:056032eae522dd08f086c4e8f0dd8ee41151ddf17d7a0aaf55d744bf726778db
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/67BVLv8TT-a_um3cwYXjJw/zh-cn_image_0000002794490001.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/hyofGm5mR9meF3szHTQILw/zh-cn_image_0000002797180199.png)
 
 触屏设备是最常见的输入设备，几乎所有手持类终端设备都支持用户通过触控操作。触摸事件也是应用开发者最常处理的事件类型之一。
 
@@ -76,7 +76,7 @@ struct PreventBubbling {
 
 基础事件的上报频率与具体的输入设备类型有关，但一般频率都是非常高的，如触屏一般每5~7ms即上报一个点，而对于一些高精度鼠标，上报频率最高可达到每1ms上报一次。由于对输入事件的响应是为了UI界面的变化来产生对用户操作的响应，因此将如此之高的基础事件上报给应用，多数情况下是冗余的。为此系统会对两帧之间所收到的基础事件进行重采样，只在帧内上报一次给应用。重采样是针对每个触点单独进行的，不同触点会单独进行重采样。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/lRlA2cHQTRmAelEOK14Emw/zh-cn_image_0000002794410221.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Gdyxxn6bSyS3Pmd1tT7KLA/zh-cn_image_0000002768020220.png)
 
 * 按下时产生的事件会立即上报给应用；
 * 帧内的move报点并不会立即下发，而是会在送显帧到来时重采样合并后上报；
@@ -180,7 +180,7 @@ struct MultipleFingerInformation {
 
 以下是上面的示例在如下操作序列时产生的日志输出情况：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xU8LS2U_SIOXnuY1m0GzbA/zh-cn_image_0000002764971504.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/hPGWZrTSRsikYqq509Rh5g/zh-cn_image_0000002797300169.png)
 
 按下手指① -> 按下手指② -> 按下手指③ -> 抬起手指② -> 抬起手指③ -> 按下手指③ -> 抬起手指① -> 抬起手指③
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-print-
 title: 文件打印（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 打印 > 文件打印（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5f141321a76724b5cbb76f377d10bcaa3cbc6f9daac4250363ac28df492c3cec
+scraped_at: 2026-10-22T07:05:15+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:6045a9737fec24b192a522f608ac1853b5c8e30b5466483f08ce4d5064141639
 ---
 
 ## HarmonyOS提供的两种打印方式
@@ -24,7 +24,7 @@ C/C++接口需要在NDK工程中使用，请参考[NDK开发导读](ndk-developm
 
 ### 引用NDK头文件
 
-初始路径为entry/src/main/cpp/types/napi\_init.cpp # C++ 源码目录 NAPI 初始化入口（桥接 ArkTS 与 C++）。
+初始路径为entry/src/main/cpp/types/napi\_init.cpp # C++源码目录NAPI初始化入口（桥接ArkTS与C++）。
 
 ```
 #include "napi/native_api.h"
@@ -41,7 +41,7 @@ C/C++接口需要在NDK工程中使用，请参考[NDK开发导读](ndk-developm
 #define LOGI(...) OH_LOG_INFO(LOG_APP, ##__VA_ARGS__)
 ```
 
-初始路径为entry/src/main/ets/pages/Index.ets # ArkTS 源码目录主页面。
+初始路径为entry/src/main/ets/pages/Index.ets # ArkTS源码目录主页面。
 
 ```typescript
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -57,7 +57,7 @@ class HiLog {
 
 ### 在CMake脚本中添加动态链接库
 
-初始路径为entry/src/main/cpp/types/CMakeLists.txt # C++ 源码目录 CMake 构建配置。
+初始路径为entry/src/main/cpp/types/CMakeLists.txt # C++源码目录CMake构建配置。
 
 ```cmake
 target_link_libraries(entry PUBLIC
@@ -207,7 +207,7 @@ aboutToDisappear(): void {
 封装C/C++接口。
 
 ```
-// WriteFile 由开发者实现，示例仅为简单的文件拷贝。根据当前用户修改后的打印参数，若需要更新打印文件可重新写入系统提供的fd中
+// WriteFile由开发者实现，示例仅为简单的文件拷贝。根据当前用户修改后的打印参数，若需要更新打印文件可重新写入系统提供的fd中
 static uint32_t WriteFile(uint32_t fd, const Print_PrintAttributes *oldAttrs, const Print_PrintAttributes *newAttrs)
 {
     // 沙箱内合法路径
@@ -250,7 +250,7 @@ static void OnStartLayoutWriteCb(const char *jobId,
 // 任务ID对应的打印状态变化的回调函数
 static void OnJobStateChangedCb(const char *jobId, uint32_t state)
 {
-    // state取值：0-任务准备中，1-任务排队中， 2-任务打印中， 3-任务异常暂停， 4-任务结束， 100-任务未知异常
+    // state取值：0-任务准备中，1-任务排队中，2-任务打印中，3-任务异常暂停，4-任务结束，100-任务未知异常
     LOGI("do something with OnJobStateChangedCb, jobId: %{public}s, jobState: %{public}u", jobId, state);
 }
 ```
@@ -263,7 +263,7 @@ static napi_value NativeStartPrintByNative(napi_env env, napi_callback_info info
     void *context = nullptr;
     size_t argc = 1;
     napi_value argv[1] = {nullptr};
-    // 假设 napi_get_cb_info 和 napi_unwrap 均正常返回
+    // 假设napi_get_cb_info和napi_unwrap均正常返回
     napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     napi_unwrap(env, argv[0], &context);
 
@@ -351,7 +351,7 @@ static napi_value NativeStartPrintJob(napi_env env, napi_callback_info info)
         return n_ret;
     }
     std::vector<uint32_t> fdList = { static_cast<uint32_t>(fd) };
-    // 本例子使用首选项 printerInfo->defaultValue 作为打印任务参数来下发任务
+    // 本例子使用首选项printerInfo->defaultValue作为打印任务参数来下发任务
     Print_PrintJob printJob{ "jobName", fdList.data(), static_cast<uint32_t>(fdList.size()), printerInfo->printerId,
                              1, printerInfo->defaultValue.defaultPaperSource,
                              printerInfo->defaultValue.defaultMediaType, printerInfo->defaultValue.defaultPageSizeId,

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-renderi
 title: if/else：条件渲染
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > if/else：条件渲染
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:10+08:00
+scraped_at: 2026-10-22T07:04:40+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:29e382d8a866fd572fc29254e93eb32bb27735295406467a01031ad9ef90b6e4
+content_hash: sha256:db40596b1d8eea9ffb3b9a8134a5fec761b03e33fa887d335db42d9c869967b9
 ---
 
 ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if、else和else if渲染相应的UI内容。
@@ -65,7 +65,7 @@ struct IfExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/PL2ppb8PQtq0-3dpOE3WPA/zh-cn_image_0000002765131018.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/phNONsG0TB6u8iX5E7H1FQ/zh-cn_image_0000002767859836.gif)
 
 if语句的每个分支都包含一个构建函数。此类构建函数必须创建一个或多个子组件。在初始渲染时，if语句会执行构建函数，并将生成的子组件添加到其父组件中。
 
@@ -123,7 +123,7 @@ struct MainView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/PF0zx4mbTnujZH4xadN16w/zh-cn_image_0000002794489597.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/aDwx0YpDTwyuLVNBSxdppQ/zh-cn_image_0000002797179801.gif)
 
 **初次渲染**：创建CounterView子组件（label为 'CounterView #positive'），其状态变量counter初始值为0。
 
@@ -185,7 +185,7 @@ struct KeepMainView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/Z1GPZ7bkSzCw_EZ4Dd70PA/zh-cn_image_0000002794409817.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/AMSuM8U4RIyY_S57187z6Q/zh-cn_image_0000002768019822.gif)
 
 此处，@State counter变量归父组件所有。因此，当KeepCounterView组件实例被删除时，该变量不会被销毁。KeepCounterView组件通过[@Link](arkts-link.md)装饰器引用状态。状态必须从子级移动到其父级（或父级的父级），以避免在条件内容或重复内容被销毁时丢失状态。
 
@@ -243,4 +243,4 @@ struct NestedIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/jQtxiLVJRDezqDjvIPxqvw/zh-cn_image_0000002764971100.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/i066dQACQ5qCYZVf4VworA/zh-cn_image_0000002797299771.gif)

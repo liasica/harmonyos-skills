@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/special-text-
 title: 特殊文本识别跳转
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转典型场景 > 特殊文本识别跳转
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:40:57+08:00
+scraped_at: 2026-10-22T07:04:30+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:9c2379cf9ce5fb226609f41a37544ee1d02681be08f73878b5751539d4c6f9db
+content_hash: sha256:494086435848e300647172d23c420525b4331d616a3e3aa28b1687b0d619e4bc
 ---
 
 ## 概述
@@ -114,7 +114,7 @@ Text组件提供了[enableDataDetector](../harmonyos-references/ts-basic-compone
 
    实现效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/yef3uZd3S_SUTtHAHzoQbQ/zh-cn_image_0000002765130738.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/dyVPJRfwT0eTRtjbH52jmg/zh-cn_image_0000002767859558.png)
 3. 启用特殊文本识别。
 
    在Text组件上启用[enableDataDetector](../harmonyos-references/ts-basic-components-text.md#enabledatadetector11)属性，即可实现对一段文字中的链接、日期、电话号码、地址、邮箱等特殊文本进行自动识别并标记。
@@ -127,7 +127,7 @@ Text组件提供了[enableDataDetector](../harmonyos-references/ts-basic-compone
 
    分别传入包含标准HTTP/HTTPS链接、App Linking链接、日期、电话号码、地址、邮箱等文字内容到TextLink组件中，均以可交互形式显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/hrQKmd9BQF2HKlsYvSgCUw/zh-cn_image_0000002794489315.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/yGDOZUhoStCG8nJMtiIptQ/zh-cn_image_0000002797179523.png)
 
 ## 示例代码
 

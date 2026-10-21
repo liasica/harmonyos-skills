@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/metadatabindi
 title: 元数据绑定开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 元数据绑定开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:53+08:00
+scraped_at: 2026-10-22T07:05:17+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:01b8735a544b8279b6f391818f5535facb0c33f8a2dfc501069939ad5caa7acf
+content_hash: sha256:76dd475eb53098ecd64cb4e44a10066824f3a9b4de468bc4e0adb2568b022a64
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ MetadataBinding（元数据绑定）指由第三方应用提供[鸿蒙App Linkin
 
 ## 演示示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/dZ8t0Eo2T_mg-SewF6FD3Q/zh-cn_image_0000002794410889.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/tr2sVnHCTSqBtA2aAGE5kg/zh-cn_image_0000002768020890.gif)
 
 ## 接口说明
 

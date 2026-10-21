@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-mak
 title: makeObserved接口：将非观察数据变为可观察数据
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > makeObserved接口：将非观察数据变为可观察数据
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:09+08:00
+scraped_at: 2026-10-22T07:04:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:baebbf19777afee3c2aec38892a88bef977fb171ec313bf4fc25ba81187d59a0
+content_hash: sha256:11ac2ece89ac3097ff8051f00c863647748d363b187e61d3a7b1f0e99f4aa633
 ---
 
 为了将普通不可观察数据变为可观察数据，开发者可以使用[makeObserved接口](../harmonyos-references/js-apis-statemanagement.md#makeobserved)。
@@ -110,7 +110,7 @@ makeObserved可以在@Trace无法标记的情况下使用。在阅读本文档�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/oz4-BVsoRp-opux1oPIfdQ/zh-cn_image_0000002794409775.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/nuuT-wJ1ShGl8vGqs7fzZA/zh-cn_image_0000002768019780.png)
 
 ### makeObserved仅对入参对象进行深度观察
 
@@ -158,7 +158,7 @@ struct Page2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/b6H7ELIMScS4zIHZcABR5w/zh-cn_image_0000002764971058.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/LSg_Y9X1R2e9nE7PDXcfxg/zh-cn_image_0000002797299729.gif)
 
 ## 支持类型和观察变化
 
@@ -269,7 +269,7 @@ struct Page3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/wz3qdssuS2W6P0uhfyMncg/zh-cn_image_0000002765130976.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/eTeZe1PXTpy7rEyRyrl3ow/zh-cn_image_0000002767859796.gif)
 
 需要注意：数据的构建和处理可以在子线程中完成，但有观察能力的数据不能传给子线程，只有在主线程里才可以操作可观察的数据。所以上述例子中只是将this.send的属性name传给子线程操作。
 
@@ -439,7 +439,7 @@ struct Page4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/FuUjs5fqSwOpqFqHUBLyqA/zh-cn_image_0000002794489557.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2pO7PLkNRcS301ijjZaR1A/zh-cn_image_0000002797179761.gif)
 
 **collections.Map**
 
@@ -508,7 +508,7 @@ struct Page5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/NabrrZqBSIGUeHQz4FoiFQ/zh-cn_image_0000002794409777.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/V68ipUoSQSS7ow6yEXDttg/zh-cn_image_0000002768019782.gif)
 
 **collections.Set**
 
@@ -575,7 +575,7 @@ struct Page6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/O91Q2wfWSuOVsifZy70CTg/zh-cn_image_0000002764971060.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/3FhmajjmQ4yYeMGwkhkSJw/zh-cn_image_0000002797299731.gif)
 
 ### makeObserved的入参为JSON.parse的返回值
 
@@ -628,7 +628,7 @@ struct Page7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/EWipoWK3TYCw-e0Nf2X0uA/zh-cn_image_0000002765130978.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/esxJqZerRAGMjCZaSfw1KA/zh-cn_image_0000002767859798.gif)
 
 ### makeObserved和V2装饰器配合使用
 
@@ -716,7 +716,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/gmHF1lHmR6m_kwP5DtqfNg/zh-cn_image_0000002794489559.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/icVAz4xWSjCrpC_j0-60dA/zh-cn_image_0000002797179763.gif)
 
 ### makeObserved在@Component内使用
 
@@ -754,7 +754,7 @@ struct Page9 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/CShVuiSoSYy3u-L2EurHvQ/zh-cn_image_0000002794409779.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/eyz4o1B5R2aBTJ-3Vc4y7Q/zh-cn_image_0000002768019784.gif)
 
 ## 常见问题
 
@@ -806,4 +806,4 @@ struct Page10 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/bYmcxPdQThqo-DbyTUELqg/zh-cn_image_0000002764971062.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/iNVuEI8eS-SOUuw2rvcuKw/zh-cn_image_0000002797299733.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/location-appl
 title: 申请开放能力权限指导
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 开发准备 > 申请开放能力权限指导
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:34+08:00
+scraped_at: 2026-10-22T07:05:51+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:151fd2862eae37fe0d6fa009b94abd687da8a3b73d669da5446318e9658a6ca6
+content_hash: sha256:f51e443181043c1324decc4d6241329fc1c2718b456672b924243533c06ec1e7
 ---
 
 ## 开放能力申请准备
@@ -28,18 +28,18 @@ content_hash: sha256:151fd2862eae37fe0d6fa009b94abd687da8a3b73d669da5446318e9658
 2. 在项目列表选择项目，并在应用列表下选择需要申请室内高精度定位功能的应用。
 3. 进入“项目设置 > 开放能力管理”页面，选择能力名称为定位服务（HarmonyOS NEXT），然后点击“室内高精度定位”对应的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/EOEyqo2GR3Gko8256MYJ_A/zh-cn_image_0000002764972776.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/EtKXKpy1Qmi7xuhufKHtYw/zh-cn_image_0000002797301435.png)
 4. 参考“申请原因”中的模板，提供申请必需的相关信息，包括应用介绍、使用场景、申请用途，然后点击“提交”按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/JoETXgfNQ8-xOftRxl5YGw/zh-cn_image_0000002765132700.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Q6S28kAERI-Ft5y8qVgWjQ/zh-cn_image_0000002767861504.png)
 
 返回“开放能力管理”页面，原“申请”变为“申请中”，1~3个工作日内反馈申请结果，请留意互动中心的“服务开通申请”信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/WEUCzKsOSVa9Hv1dXMQ5wg/zh-cn_image_0000002794491275.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/C-9uXHecRi2yPMCNBLWRrg/zh-cn_image_0000002797181467.png)
 
 申请通过后，互动中心会发送通知给您，同时“申请中”会变为置灰显示的“申请”，至此，应用已成功开启室内高精度定位开放能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/DUJl2WoxSDiYWW-ihK5zkg/zh-cn_image_0000002794411497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/27WYYbxpTVCbn8b4_gji4A/zh-cn_image_0000002768021488.png)
 
 ### 位置语义
 
@@ -51,18 +51,18 @@ content_hash: sha256:151fd2862eae37fe0d6fa009b94abd687da8a3b73d669da5446318e9658
 2. 在项目列表选择项目，并在应用列表下选择需要申请位置语义功能的应用。
 3. 进入“项目设置 > 开放能力管理”页面，选择能力名称为定位服务（HarmonyOS NEXT），然后点击“位置语义”对应的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/05b4ieTXSZiAgaa01tB4XQ/zh-cn_image_0000002764972776.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/gJzWJmxaR86dLpjKJn9XCQ/zh-cn_image_0000002797301435.png)
 4. 参考“申请原因”中的模板，提供申请必需的相关信息，包括应用介绍、使用场景、申请用途，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/H1hY3tgqRvWsWtaQSBXj8g/zh-cn_image_0000002764972778.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/EOkIKJl7TtGbl1fh4SMvzA/zh-cn_image_0000002797301437.png)
 
    返回“开放能力管理”页面，原“申请”变为“申请中”，1~3个工作日内反馈申请结果，请留意互动中心的“服务开通申请”信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/FwTlvg2CTjCKQwfUs-CshQ/zh-cn_image_0000002765132702.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/4Dkq_xadSPKIxd3vn-5I3g/zh-cn_image_0000002767861506.png)
 
    申请通过后，互动中心会发送通知给您，同时“申请中”会变为置灰显示的“申请”，至此，应用已成功开启位置语义开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/zBPqv7UKRD-R5M7Mh7I3ug/zh-cn_image_0000002794491277.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/YmpPO6B0TKWGX0bjwIwbZQ/zh-cn_image_0000002797181469.png)
 
 ### 围栏后台唤醒
 
@@ -74,18 +74,18 @@ content_hash: sha256:151fd2862eae37fe0d6fa009b94abd687da8a3b73d669da5446318e9658
 2. 在项目列表选择项目，并在应用列表下选择需要申请围栏后台唤醒功能的应用。
 3. 进入“项目设置 > 开放能力管理”页面，选择能力名称为定位服务（HarmonyOS NEXT），然后点击“围栏后台唤醒”对应的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/ID3UzOJjTIiCXeaChTxmHw/zh-cn_image_0000002764972776.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/uRTrpq9zQLKodikovONldg/zh-cn_image_0000002797301435.png)
 4. 参考“申请原因”中的模板，提供申请必需的相关信息，包括应用介绍、使用场景、申请用途，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/zw-4aFQTQwCxGENgtgn_Bg/zh-cn_image_0000002794411499.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/au8oCOn8SciF0WEgZSTrPQ/zh-cn_image_0000002768021490.png)
 
    返回“开放能力管理”页面，原“申请”变为“申请中”，1~3个工作日内反馈申请结果，请留意互动中心的“服务开通申请”信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/f6ibJJMKQ52Vh4NJcpML3g/zh-cn_image_0000002764972780.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/nbvF0izaRZm0qtTs6RHl6Q/zh-cn_image_0000002797301439.png)
 
    申请通过后，互动中心会发送通知给您，同时“申请中”会变为置灰显示的“申请”，至此，应用已成功开启围栏后台唤醒开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/-7rTO_hsQ9Gd9GvTfHs4Pg/zh-cn_image_0000002765132704.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/W2-zmwYnTSyozH8bmmMJEA/zh-cn_image_0000002767861508.png)
 
 ### 获取蓝牙扫描信息
 
@@ -97,15 +97,15 @@ content_hash: sha256:151fd2862eae37fe0d6fa009b94abd687da8a3b73d669da5446318e9658
 2. 在项目列表选择项目，并在应用列表下选择需要申请获取蓝牙扫描信息功能的应用。
 3. 进入“项目设置 > 开放能力管理”页面，选择能力名称为定位服务（HarmonyOS NEXT），然后点击“获取蓝牙扫描信息”对应的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Mu9Hw4rDS5OBxClhxX5z4Q/zh-cn_image_0000002764972776.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Pk0dv7M9TRCBb0hlzHe-Lw/zh-cn_image_0000002797301435.png)
 4. 参考“申请原因”中的模板，提供申请必需的相关信息，包括应用介绍、使用场景、申请用途，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/lYoZSTKRSkqslRvcwhRkcA/zh-cn_image_0000002794491279.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/vme7MnnbReKT0euOqEscqw/zh-cn_image_0000002797181471.png)
 
    返回“开放能力管理”页面，原“申请”变为“申请中”，1~3个工作日内反馈申请结果，请留意互动中心的“服务开通申请”信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/g6n491mLRcmIrjbYfRIRkQ/zh-cn_image_0000002794411501.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/RJFQehmJSOmD90GZRe_aWA/zh-cn_image_0000002768021492.png)
 
    申请通过后，互动中心会发送通知给您，同时“申请中”会变为置灰显示的“申请”，至此，应用已成功开启获取蓝牙扫描信息开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/HyUJbu0ZQ4S22tayf3tJHg/zh-cn_image_0000002764972782.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/wt2ltS0rRICUSYwqWZD-Rw/zh-cn_image_0000002797301441.png)

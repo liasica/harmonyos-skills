@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observe
 title: "@Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:08+08:00
+scraped_at: 2026-10-22T07:04:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0e8dde500d533a7d584bc6953749045fed6eda9df3ba4695c2546e49f67299ca
+content_hash: sha256:4bf89f59bf98ea05c07b1285910c3bcb92a45675dc0ef52c36bd8be6f3ad3b4f
 ---
 
 上文所述的装饰器（包括[@State](arkts-state.md)、[@Prop](arkts-prop.md)、[@Link](arkts-link.md)、[@Provide和@Consume](arkts-provide-and-consume.md)装饰器）仅能观察到第一层的变化，但是在实际应用开发中，应用会根据开发需要，封装自己的数据模型。对于多层嵌套的情况，比如二维数组、对象数组、嵌套类场景，无法观察到第二层的属性变化。因此，为了实现对嵌套数据结构中深层属性变化的观察，引入了[@Observed](../harmonyos-references/ts-state-management-observed.md#observed)和[@ObjectLink](../harmonyos-references/ts-state-management-objectlink.md#objectlink)装饰器。
@@ -67,7 +67,7 @@ this.objLink= ...
 
 **图1** 初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/18oCQaC6RwWsPvfl8fqT_A/zh-cn_image_0000002794489469.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/UnvOjFOVQlWypSo4MkZs-g/zh-cn_image_0000002797179673.png)
 
 ## 观察变化和行为表现
 
@@ -154,7 +154,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/PyeEg_9TRXqYD_QgSzaEnw/zh-cn_image_0000002794409687.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/5r7Fc00DSruMVn8ARQDnoA/zh-cn_image_0000002768019694.gif)
 
 @ObjectLink装饰继承于Map的class时，可以观察到Map整体的赋值，同时可通过调用Map的接口set, clear, delete 更新Map的值。示例请参考[继承Map类](arkts-observed-and-objectlink.md#继承map类)。
 
@@ -322,7 +322,7 @@ struct Parent {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/OrAZxbTCRjOpkxmJ6xVWtw/zh-cn_image_0000002764970968.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/NkzoOmknSqaUJUmhRoMQbA/zh-cn_image_0000002797299641.gif)
 
 ## 使用场景
 
@@ -375,7 +375,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/fcheFh8QRcm3Fsy5Jk6Scg/zh-cn_image_0000002765130890.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/eS8DeJSZQz6w_OwIFk49TQ/zh-cn_image_0000002767859710.gif)
 
 ### 嵌套对象
 
@@ -444,7 +444,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/eUFmDP0NTRKF-6NIV0NxFw/zh-cn_image_0000002794489471.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/YvxvBVLjT6m7DuvCqF6kFA/zh-cn_image_0000002797179675.gif)
 
 上述示例中：
 
@@ -553,7 +553,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/r40-g9eyQZev1fSknfXYNw/zh-cn_image_0000002794409689.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/DOW7gr5oR_y0XgZgGsw7Lw/zh-cn_image_0000002768019696.gif)
 
 * this.arrA[Math.floor(this.arrA.length/2)] = new Info(..) ：该状态变量的改变触发2次更新：
 
@@ -652,7 +652,7 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/h_UuIqsDQ-ajYa4PJY4cxQ/zh-cn_image_0000002764970970.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/EFCtNk8KQ9is-vT6w27deQ/zh-cn_image_0000002797299643.gif)
 
 API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-references/js-apis-statemanagement.md#makev1observed19)的返回值初始化。所以开发者如果不想额外声明继承Array的类，也可以使用makeV1Observed来达到同样的效果。
 
@@ -719,7 +719,7 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/xIYYegHJRHSuW1olQSiLhQ/zh-cn_image_0000002765130892.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Gfd2Tca3SfCgbJGAO1eY5A/zh-cn_image_0000002767859712.gif)
 
 ### 继承Map类
 
@@ -815,7 +815,7 @@ struct MapSampleNestedChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/XWcs0XQdRHWMHrp3h63LUQ/zh-cn_image_0000002794489473.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/XadkKABeTraYeYhCjVsvVw/zh-cn_image_0000002797179677.gif)
 
 ### 继承Set类
 
@@ -903,7 +903,7 @@ struct SetSampleNestedChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/aULLQrM7Tre1JI5QP-vFjQ/zh-cn_image_0000002794409691.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/ZDI7gq1UR8SyqfTH7W_f4g/zh-cn_image_0000002768019698.gif)
 
 ### @ObjectLink支持联合类型
 
@@ -997,7 +997,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/VB2ByVKvS3aTREzJahNM1g/zh-cn_image_0000002764970972.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/DcZmIbUSSTWHA50Ue2PUUg/zh-cn_image_0000002797299645.gif)
 
 ## 常见问题
 
@@ -1232,7 +1232,7 @@ struct MyView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Kwr19NOgQteuq8hdVN2itg/zh-cn_image_0000002765130894.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/udEXRlJ2S9Kp3OfDo3YGPw/zh-cn_image_0000002767859714.gif)
 
 ### 复杂嵌套对象属性更改失效
 
@@ -1414,7 +1414,7 @@ struct CounterChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/6VuqSC6fTCaWq240_WoHaQ/zh-cn_image_0000002794489475.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/oU-iReEnTUqD8n1Ahi304g/zh-cn_image_0000002797179679.gif)
 
 该方法使得@ObjectLink分别代理了ParentCounter和SubCounter的属性，这样对于这两个类的属性的变化都可以观察到，即都会对UI视图进行刷新。即使删除了上面所说的this.counter[0].incrCounter()，UI也会进行正确的刷新。
 
@@ -1537,7 +1537,7 @@ struct ParentComp {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/oVlvDvdkR225TK3YtspR6Q/zh-cn_image_0000002794409695.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/D1K7AKHaRsaG-q4mWwgquw/zh-cn_image_0000002768019700.gif)
 
 ### @Prop与@ObjectLink的差异
 
@@ -1608,11 +1608,11 @@ struct UserChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/yuFZj2tnQ5m71uTj8mHdwA/zh-cn_image_0000002764970974.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/xvTA89NZTre4N61Q67OfRQ/zh-cn_image_0000002797299647.gif)
 
 上面的示例关系如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/-6ZB-SZTRv2iix5jdAeLcg/zh-cn_image_0000002765130896.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/e35Qge8kRvOxHULoPlRyvA/zh-cn_image_0000002767859716.jpg)
 
 ### 在@Observed装饰类的构造函数中延时更改成员变量
 
@@ -1710,7 +1710,7 @@ struct DelayedChangeIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/lJ90S0ETQiyuQXdal3IEhw/zh-cn_image_0000002794489477.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/jJLXyhHcTNiQ54KsNN3z0w/zh-cn_image_0000002797179681.png)
 
 上文的示例代码将定时器修改移入到组件内，此时界面显示时会先显示“The value of renderClass is: false”。待定时器触发时，renderClass的值改变，触发[@Watch](arkts-watch.md)回调，此时界面刷新显示“The value of renderClass is: true”，日志输出“The value of renderClass is changed to: true”。
 
@@ -1805,7 +1805,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/eWmA_vhjQ_ehXP2V5xAwew/zh-cn_image_0000002794409697.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/iv1-y0iMRYi_1BKncF4U-Q/zh-cn_image_0000002768019702.gif)
 
 @ObjectLink的数据源更新依赖其父组件，当父组件中数据源改变引起父组件刷新时，会重新设置子组件@ObjectLink的数据源。这个过程不是在父组件数据源变化后立刻发生的，而是在父组件实际刷新时才会进行。上述示例中，Parent包含Child，Parent传递箭头函数给Child，在点击时，日志打印顺序是1-2-3-4-5，打印到日志4时，点击事件流程结束，此时仅仅是将子组件Child标记为需要父组件更新的节点，因此日志4打印的this.per.name的值仍为Bob，等到父组件真正更新时，才会更新Child的数据源。
 
@@ -1906,7 +1906,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/_6Z3RqjTQNOnqufH2Gdj3A/zh-cn_image_0000002764970976.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Mkobvj3gRaqsoJV46vPb8g/zh-cn_image_0000002797299649.gif)
 
 ### LazyForEach和@ObjectLink一起使用时，替换数组数据后UI不刷新
 
@@ -2191,4 +2191,4 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/MKuYT8O0S6iE3fYdRUKwhA/zh-cn_image_0000002765130898.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/WgL32uRgQXCGhSj_Bzy8IQ/zh-cn_image_0000002767859718.gif)

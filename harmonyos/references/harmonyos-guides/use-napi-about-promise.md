@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口处理异步操作
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口处理异步操作
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:42d0a291fed7d74134749059fd62758b2aee2daee46e6cfa658b5d83b2f010c7
+scraped_at: 2026-10-22T07:06:22+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:45f2525ca2e47bc282118e8b8171ad824bab34fbcab82e05d515d69d1c9e377a
 ---
 
 ## 简介
@@ -114,7 +114,7 @@ napi_value NapiPromiseDemo(napi_env env, napi_callback_info info)
 
 ### napi\_resolve\_deferred & napi\_reject\_deferred
 
-使用napi\_resolve\_deferred对Promise关联的deferred对象进行解析，从挂起状态转换为已兑现状态，或从挂起状态转换为已拒绝状态。
+使用napi\_resolve\_deferred对Promise关联的deferred对象进行解析，使其从挂起状态转换为已兑现状态；使用napi\_reject\_deferred对Promise关联的deferred对象进行拒绝，使其从挂起状态转换为已拒绝状态。
 
 为确保微任务正确执行，ArkTS运行时在使用Node-API方法兑现Promise时，会触发一次微任务执行。
 

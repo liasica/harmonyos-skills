@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > progress
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:23+08:00
+scraped_at: 2026-10-22T07:08:04+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:a6d95b2c37bc916cffc7e500dafdb0558b11930e33ed3bca656baf324ed3775a
+content_hash: sha256:1429c5dfedba405b99896b2d20fed62ea563543a0e4d3dd811d92359783ea856
 ---
 
 进度条，用于显示内容加载或操作的处理进度。
@@ -120,4 +120,4 @@ type=arc
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/bZ3EhTzCRXmJFNGUoR6pog/zh-cn_image_0000002794492917.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ES-g46FnQJKRxUD7oDnEqg/zh-cn_image_0000002797183091.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.resourceManager (资源管理)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.resourceManager (资源管理)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:22:07+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:72a3ae7923757bf55cf9b53377a49c30b58c260d1100d8ef341788c44e3bfe67
+scraped_at: 2026-10-22T07:08:41+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:1009f43c71004381902bbf88cc0f745910e7f060458f54f0751c0af479a01df3
 ---
 
 本模块提供应用资源和系统资源的访问能力，允许应用根据当前的[Configuration](js-apis-resource-manager.md#configuration)配置，获取最匹配的应用资源或系统资源，支持国际化资源匹配和多设备适配。具体匹配规则参考[资源匹配](../harmonyos-guides/resource-categories-and-access.md#资源匹配)。
@@ -291,11 +291,11 @@ try {
 | --- | --- | --- |
 | DEVICE\_TYPE\_PHONE | 0x00 | 手机。 |
 | DEVICE\_TYPE\_TABLET | 0x01 | 平板。 |
-| DEVICE\_TYPE\_CAR | 0x02 | 汽车。 |
+| DEVICE\_TYPE\_CAR | 0x02 | 车机。 |
 | DEVICE\_TYPE\_PC | 0x03 | 电脑。 |
-| DEVICE\_TYPE\_TV | 0x04 | 电视。 |
-| DEVICE\_TYPE\_WEARABLE | 0x06 | 穿戴。 |
-| DEVICE\_TYPE\_2IN111+ | 0x07 | 2IN1。 |
+| DEVICE\_TYPE\_TV | 0x04 | 智慧屏。 |
+| DEVICE\_TYPE\_WEARABLE | 0x06 | 智能穿戴。 |
+| DEVICE\_TYPE\_2IN111+ | 0x07 | 2in1。 |
 
 ## ScreenDensity
 

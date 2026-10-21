@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频编码
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:05+08:00
+scraped_at: 2026-10-22T07:05:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:772d1884c8ba455977c55a70ddc0bc8fb6ce45b8ee2f8dc7338c0db1a3e9d654
+content_hash: sha256:58959f6ae350d45d8a610d0d483a0727324223ce251c1b58df65696c33bb03f9
 ---
 
 视频编码是多媒体处理流程中的重要环节，功能是将未压缩的视频数据压缩成视频码流，旨在降低原始视频数据的大小以便存储或传输。视频编码支持同步模式与异步模式两种运行机制，两者主要区别为buffer获取方式的同异步之分，开发者可根据自身业务选择适合的接口调用模式。
@@ -53,7 +53,7 @@ AVCodec支持的视频编码格式请参考[视频编码](avcodec-support-format
 
 **图1** 状态机调用关系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/TcEhZ8UGQCS40ahS0Cce7Q/zh-cn_image_0000002794490757.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/xstFHoOtSY2pH9ZlpQomEg/zh-cn_image_0000002797180951.png)
 
 ## 开发指导
 
@@ -64,7 +64,7 @@ AVCodec支持的视频编码格式请参考[视频编码](avcodec-support-format
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/yQb0qqIpTHCkxqHpIWfLwg/zh-cn_image_0000002794410973.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/GMKgLimiQcuVjdAN5ZcCpQ/zh-cn_image_0000002768020974.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -873,7 +873,7 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
 
    **图3** NV12图像排布示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/M4coIHx2S3KpfRWemXoOJg/zh-cn_image_0000002764972256.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/_0AWoASmSIGJczzVZCl5-g/zh-cn_image_0000002797300921.png)
 
    添加头文件。
 
@@ -948,11 +948,11 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
 
    **图4** YUVI420图像排布示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/8xWa7EHgS5Wk8A9DzHtCyQ/zh-cn_image_0000002765132182.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/7cvslotsR-6I6QJqUDqWtw/zh-cn_image_0000002767860990.png)
 
    **图5** RGBA1010102图像排布示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/LUKAgBuwRqeIsvOVupI9Dg/zh-cn_image_0000002794490759.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/7YCPuKbPRMuTfwiNO2R-Pg/zh-cn_image_0000002797180953.png)
 9. 通知编码器结束。
 
    在编码过程中，当最后一帧数据被送入编码输入队列时，需要设置bufferInfo的flag标识为AVCODEC\_BUFFER\_FLAGS\_EOS，通知编码器输入结束。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-app-page-
 title: 建立应用侧与前端页面数据通道
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 建立应用侧与前端页面数据通道
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ef467e88812c298f9d777f7b9d713a34ea551fa68f9d2cfa97a6016bf279c66b
+scraped_at: 2026-10-22T07:04:51+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:22dfcb195fa71f5e7daaf301a7632a89f9f0ecbf3853538f83683dee43a3299e
 ---
 
 前端页面和应用侧之间可以用[createWebMessagePorts()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#createwebmessageports)接口创建消息端口来实现两端的通信。
@@ -14,8 +14,7 @@ content_hash: sha256:ef467e88812c298f9d777f7b9d713a34ea551fa68f9d2cfa97a6016bf27
 
 * 应用侧代码。
 
-  ```ts
-  // xxx.ets
+  ```typescript
   import { webview } from '@kit.ArkWeb';
   import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -68,7 +67,8 @@ content_hash: sha256:ef467e88812c298f9d777f7b9d713a34ea551fa68f9d2cfa97a6016bf27
                 console.error(`ports is null, Please initialize first`);
               }
             } catch (error) {
-              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              console.error(
+                `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
             }
           })
 
@@ -82,7 +82,8 @@ content_hash: sha256:ef467e88812c298f9d777f7b9d713a34ea551fa68f9d2cfa97a6016bf27
                 console.error(`ports is null, Please initialize first`);
               }
             } catch (error) {
-              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              console.error(
+                `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
             }
           })
 
@@ -94,10 +95,11 @@ content_hash: sha256:ef467e88812c298f9d777f7b9d713a34ea551fa68f9d2cfa97a6016bf27
               this.ports[0].close();
               this.ports = [];
             } else {
-              console.error("ports is null, not need close");
+              console.error(`ports is null, not need close`);
             }
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
         Web({ src: $rawfile('index.html'), controller: this.controller })

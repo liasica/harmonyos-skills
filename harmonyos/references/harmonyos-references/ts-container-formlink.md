@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: FormLink
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 卡片 > FormLink
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:07+08:00
+scraped_at: 2026-10-22T07:07:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f12b4ca065e9e759747297fd5ff942e6dd274f94b2a24a4cfdfd8cc5d2054f1f
+content_hash: sha256:d0a3a40a60765a8cd6df67f09f0118f71abb7c516c3b0a15b80a60e114a43259
 ---
 
 提供静态卡片交互组件，用于静态卡片内部和卡片提供方应用间的交互，当前支持router、message和call三种类型的事件。
@@ -124,7 +124,7 @@ struct FormLinkDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/qsNj7lObS2WoI-c15WnBDw/zh-cn_image_0000002794492531.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/cw3TbDSxQmSPm1k2vilBrA/zh-cn_image_0000002797182705.png)
 
 **待跳转应用 [module.json5](../harmonyos-guides/module-configuration-file.md#skills标签) uris 配置示例：**
 

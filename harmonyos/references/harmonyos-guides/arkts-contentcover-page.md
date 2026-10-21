@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-content
 title: 绑定全模态页面（bindContentCover）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 绑定模态页面 > 绑定全模态页面（bindContentCover）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:14+08:00
+scraped_at: 2026-10-22T07:04:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b04ac961fe7c2955a069582a05b734c87b4b126407712751a596acc06a0c9c23
+content_hash: sha256:09b30c3cc72e40bc4001143ffa82e5b4528eb95ec82c852ae9eaeb268ba86379
 ---
 
 [全模态页面（bindContentCover）](../harmonyos-references/ts-universal-attributes-modal-transition.md#bindcontentcover)是全屏模态形式的弹窗交互页面，完全覆盖底层父视图。适用于查看大图，全屏查看文稿等场景。
@@ -244,4 +244,4 @@ struct BindContentCoverDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/FGq9RkKwRIabLG5lqjxkmw/zh-cn_image_0000002794410187.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/nAsZ5G0fQj-bfGuNECQJ0w/zh-cn_image_0000002768020186.gif)

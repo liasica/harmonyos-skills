@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ime-kit-gloss
 title: 输入法开发服务术语
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 输入法开发服务术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:eb1e744c4a9dd630842f2b5c5a0b3cf35a67445d3a5addbc81cfbd8174210604
+scraped_at: 2026-10-22T07:04:56+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:4c969ab8689e5c7f43c339199306b3dcbce81ad9c4f5b87a161d2f38eddcc2ae
 ---
 
 ## B
@@ -40,11 +40,11 @@ Extension能力的上下文环境，提供启动、停止、绑定、解绑Abili
 
 ### FLAG\_FIXED; 固定态
 
-输入法面板位置固定在屏幕底部的状态类型。
+输入法面板位置固定在屏幕底部的状态类型。对应@ohos.inputMethod.Panel模块中的FLAG\_FIXED。@ohos.inputMethodEngine模块中对应名称为FLG\_FIXED。
 
 ### FLAG\_FLOATING; 悬浮态
 
-输入法面板可浮动移动的状态类型。
+输入法面板可浮动移动的状态类型。对应@ohos.inputMethod.Panel模块中的FLAG\_FLOATING。@ohos.inputMethodEngine模块中对应名称为FLG\_FLOATING。
 
 ### FLAG\_CANDIDATE; 候选词态
 
@@ -108,7 +108,10 @@ Extension能力的上下文环境，提供启动、停止、绑定、解绑Abili
 
 ### PanelFlag; 面板状态类型
 
-输入法面板的状态类型枚举，包括固定态（FLAG\_FIXED）、悬浮态（FLAG\_FLOATING）、候选词态（FLAG\_CANDIDATE）。
+输入法面板的状态类型枚举，包括固定态、悬浮态、候选词态。不同模块下枚举成员命名不同：
+
+* @ohos.inputMethod.Panel：FLAG\_FIXED、FLAG\_FLOATING、FLAG\_CANDIDATE
+* @ohos.inputMethodEngine：FLG\_FIXED、FLG\_FLOATING、FLAG\_CANDIDATE
 
 ### PanelInfo; 面板配置信息
 

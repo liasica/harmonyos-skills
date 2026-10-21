@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-listener-
 title: 监听HiCar的连接状态
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 获取HiCar连接状态 > 监听HiCar的连接状态
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:53+08:00
+scraped_at: 2026-10-22T07:05:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9149db29b6e3b5467388f744b7c62cdc9bf3f0266510e410b514793ca8abf40c
+content_hash: sha256:df416aeae4aef53f7e475ae6b3d27b450e929debfe7ae8037ae14f1600b2ee2c
 ---
 
 ## 场景介绍
 
 生态应用可以通过监听智慧出行连接状态接口获取连接信息，适配HiCar业务（如：应用流转）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/UCDG_25yQDyxNTRYwbu0tA/zh-cn_image_0000002764972168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/3x79J3HyQzC1EGKEqlnO_g/zh-cn_image_0000002797300833.png)
 
 ## 接口说明
 
@@ -25,7 +25,7 @@ content_hash: sha256:9149db29b6e3b5467388f744b7c62cdc9bf3f0266510e410b514793ca8a
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/aoK617uwQiGYlmR7fFv3pA/zh-cn_image_0000002765132094.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/WDhkr8MmQ7SLlj81n_d95w/zh-cn_image_0000002767860902.png)
 
 ## 开发步骤
 

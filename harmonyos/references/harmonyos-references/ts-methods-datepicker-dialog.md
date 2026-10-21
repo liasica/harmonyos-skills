@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 日期滑动选择器弹窗 (DatePickerDialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 日期滑动选择器弹窗 (DatePickerDialog)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:07+08:00
+scraped_at: 2026-10-22T07:07:52+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:cbc52ad5c31babcd9f1268b2825f5991d519ba86d459cdad674be44027e736b0
+content_hash: sha256:9e9862fe7a7e0ae12a90f0dcbf552e8a48fb94fbe712ce687caec56eb8fd831d
 ---
 
 根据指定的日期范围创建日期滑动选择器并展示在弹窗上。该组件适用于需要用户快速选择日期的应用场景，如日程安排、活动安排、生日设置等。使用该组件可以简化开发流程，提供统一的日期选择用户体验，并支持多种自定义选项以满足不同需求。
@@ -166,7 +166,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/78C-RZmcSRaLaML9q-MGuQ/zh-cn_image_0000002765133934.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/rMW8gG0_TFub9HtxhKt5fw/zh-cn_image_0000002767862720.gif)
 
 ### 示例2（自定义样式）
 
@@ -245,7 +245,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/eHDPiXS9RFuSLBsoyXY_Bw/zh-cn_image_0000002794492509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/YurcDJ1HTFexKIcA27SglQ/zh-cn_image_0000002797182683.png)
 
 **说明** 
 
@@ -307,7 +307,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/Iqb-TwcFTe2XNv2anlxLaw/zh-cn_image_0000002794412731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/exXuz-E9Ty2OzIq7oN32kg/zh-cn_image_0000002768022704.gif)
 
 ### 示例4（设置弹窗位置）
 
@@ -343,7 +343,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Xh-SKv8uS4qQA3GBST1IhA/zh-cn_image_0000002764974012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/vhtpIa6vRI-fPczVy_1d5Q/zh-cn_image_0000002797302653.png)
 
 ### 示例5（设置遮蔽区）
 
@@ -383,7 +383,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Ytzr-oRaQeyoYKOUupCEGw/zh-cn_image_0000002765133936.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/bvtYSXQtRJOhBhV1_yVXwA/zh-cn_image_0000002767862722.png)
 
 ### 示例6（设置弹窗背板）
 
@@ -420,7 +420,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/sKgq4jaSTiOG-EVjWHmTHA/zh-cn_image_0000002794492511.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/cCpfEccGT3ujz8RkaJguCg/zh-cn_image_0000002797182685.png)
 
 ### 示例7（设置公历农历）
 
@@ -471,7 +471,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/F6vYx9wdQny0VBfzPh853g/zh-cn_image_0000002794412733.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/giXZtl9NRPaz5HmzT_ZXZg/zh-cn_image_0000002768022706.gif)
 
 ### 示例8（设置显示月、日列）
 
@@ -506,7 +506,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/kkvj7qjdQLeaiz5Xu2XAsg/zh-cn_image_0000002764974014.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/aDke_xF8SUuBS8MgiXu2Xw/zh-cn_image_0000002797302655.gif)
 
 ### 示例9（设置循环滚动）
 
@@ -550,7 +550,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/1GxGrC0ERtWg79fK3hoPUg/zh-cn_image_0000002765133938.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/X8s1guS6Qgau6OxEqJT7wA/zh-cn_image_0000002767862724.gif)
 
 ### 示例10（自定义背景模糊效果参数）
 
@@ -590,7 +590,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Cm5UFlr8TFykbgk3K2voTQ/zh-cn_image_0000002794492513.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/fiNBqaQ_RHqx0MSN1MzkEw/zh-cn_image_0000002797182687.png)
 
 ### 示例11（自定义背景效果参数）
 
@@ -631,7 +631,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Bms3DMOKQmKmE6kBn8DkgA/zh-cn_image_0000002794412735.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/B4PIT8-9Rcea5GrpuLNw_g/zh-cn_image_0000002768022708.png)
 
 ### 示例12（设置沉浸光感）
 
@@ -669,4 +669,4 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/3grroOJJQNOxqTTU3SWlAQ/zh-cn_image_0000002764974016.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/zCKuLE6ZQESYOCodzztt_A/zh-cn_image_0000002797302657.gif)

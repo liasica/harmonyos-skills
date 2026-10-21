@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-a
 title: 不依赖UI组件的全局菜单 (openMenu)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 菜单 > 不依赖UI组件的全局菜单 (openMenu)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:13+08:00
+scraped_at: 2026-10-22T07:04:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:880a110659892b34361c8beae8335c67cef0d8bc85cf86e0ba5ad254daeaf5cd
+content_hash: sha256:c5943f099c25c57aab27037cc1f1d1f20c35035d6aa26ff2a56eb04dc8098c41
 ---
 
 [菜单控制 (Menu)](arkts-popup-and-menu-components-menu.md)在使用时依赖绑定UI组件，否则无法使用。从API version 18开始，可以通过使用全局接口[openMenu](../harmonyos-references/arkts-apis-uicontext-promptaction.md#openmenu18)的方式，在无UI组件的场景下直接或封装使用，例如在事件回调中使用或封装后对外提供能力。
@@ -27,7 +27,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/EYnA5nCRTnK327TWcFFJBg/zh-cn_image_0000002764971462.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/01uXSz4NT8CpYB3DGImPPw/zh-cn_image_0000002797300127.gif)
 
 ### 创建ComponentContent
 
@@ -167,7 +167,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/qdZcAZ-MRai-7o8YbD_vnA/zh-cn_image_0000002764971462.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/p7jCyIHBTKGe3Zf6pSzwhg/zh-cn_image_0000002797300127.gif)
 
 ## 关闭菜单
 
@@ -184,7 +184,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/b_VhLLpmQoq1BgLYmodOnw/zh-cn_image_0000002764971462.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/QgEtBXz1RFeRN5h2_6YtDA/zh-cn_image_0000002797300127.gif)
 
 **说明** 
 

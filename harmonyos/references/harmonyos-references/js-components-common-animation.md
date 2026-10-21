@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:17+08:00
+scraped_at: 2026-10-22T07:07:59+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9d58592fe9ddba3cd7381d4a0d230c0b9a42bc0508b0ee587d134400483efc9a
+content_hash: sha256:d2105ffa5450d899d39404b8ae1fae61be49d78e440c8c7da0d9dec70d866759
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:9d58592fe9ddba3cd7381d4a0d230c0b9a42bc0508b0ee587d134400483
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/tPYsGgpxTVuFwtEWieyzSQ/zh-cn_image_0000002765134082.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/sbqZvgK7RYu27RE9WNindQ/zh-cn_image_0000002767862868.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/3KKhnhmvRF28aX_Qi9bFAg/zh-cn_image_0000002794492657.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/8Q1RYqHGT-aI9KfLo3pniw/zh-cn_image_0000002797182831.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/fRvV01UWSlGTlhDu1Z9tvw/zh-cn_image_0000002794412879.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/YgBnt1nzQH-0tK9J0hhIFw/zh-cn_image_0000002768022852.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/3UJhhnNkT4KLd2Zq7B-9-w/zh-cn_image_0000002764974160.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/oHn98lUGS0Grvuq4BgJbOw/zh-cn_image_0000002797302803.png)

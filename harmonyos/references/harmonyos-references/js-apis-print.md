@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.print (打印)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.print (打印)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:29+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1375368c517e2110346002f250bc789ae0b9746d9089659193de7f640cb60dab
+scraped_at: 2026-10-22T07:09:18+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:bf04d3d2cc00b3c69898bea70c98510a39d72eb0524f9a46c4163177881da4aa
 ---
 
 该模块提供打印相关的操作接口，支持文件打印、打印任务事件监听、打印机发现与管理、打印任务状态更新等功能，适用于需要在应用内集成打印相关能力的场景。
@@ -632,7 +632,7 @@ print(files: Array<string>, callback: AsyncCallback<PrintTask>): void
 
 **说明** 
 
-从 API version 10开始支持，从API version 26.0.0开始废弃。建议使用[print](js-apis-print.md#printprint11)替代。
+从API version 10开始支持，从API version 26.0.0开始废弃。建议使用[print](js-apis-print.md#printprint11)替代。
 
 **需要权限：** ohos.permission.PRINT
 
@@ -683,7 +683,7 @@ print(files: Array<string>): Promise<PrintTask>
 
 **说明** 
 
-从 API version 10开始支持，从API version 26.0.0开始废弃。建议使用[print](js-apis-print.md#printprint11-1)替代。
+从API version 10开始支持，从API version 26.0.0开始废弃。建议使用[print](js-apis-print.md#printprint11-1)替代。
 
 **需要权限：** ohos.permission.PRINT
 
@@ -1177,8 +1177,8 @@ class MyPrintDocumentAdapter implements print.PrintDocumentAdapter {
 | E\_PRINT\_RPC\_FAILURE | 13100002 | 表示RPC失败，请检查RPC通信状态并重试。 |
 | E\_PRINT\_SERVER\_FAILURE | 13100003 | 表示打印服务失败，请检查打印服务是否正常运行并重试。 |
 | E\_PRINT\_INVALID\_EXTENSION | 13100004 | 表示打印扩展无效，请检查扩展能力实现是否正确。 |
-| E\_PRINT\_INVALID\_PRINTER | 13100005 | 表示打印机无效，请确认打印机 ID 及打印机信息是否正确后重试。 |
-| E\_PRINT\_INVALID\_PRINT\_JOB | 13100006 | 表示打印任务无效，请检查任务 ID 和状态是否正确。 |
+| E\_PRINT\_INVALID\_PRINTER | 13100005 | 表示打印机无效，请确认打印机ID及打印机信息是否正确后重试。 |
+| E\_PRINT\_INVALID\_PRINT\_JOB | 13100006 | 表示打印任务无效，请检查任务ID和状态是否正确。 |
 | E\_PRINT\_FILE\_IO | 13100007 | 表示文件输入/输出错误，请检查文件路径、文件状态和操作是否正确。 |
 | E\_PRINT\_TOO\_MANY\_FILES18+ | 13100010 | 表示文件数量超过上限，当前上限99个。 |
 | E\_PRINT\_SMB\_LOGIN\_LOCKOUT24+ | 13100012 | 表示当前SMB协议共享打印机账号因多次登录失败而被锁定。请等待账号解锁后重试，或联系管理员处理。  **模型约束：** 此接口仅可在Stage模型下使用。 |
@@ -1507,7 +1507,7 @@ print.getPrinterInformationById(printerId).then((printerInformation : print.Prin
 | defaultDuplexMode | [PrintDuplexMode](js-apis-print.md#printduplexmode11) | 否 | 是 | 表示默认单双面模式。 |
 | defaultPrintQuality | [PrintQuality](js-apis-print.md#printquality14) | 否 | 是 | 表示默认打印质量。 |
 | defaultMediaType | string | 否 | 是 | 表示默认纸张类型。 |
-| defaultPageSizeId | string | 否 | 是 | 表示默认纸张尺寸的ID，其范围包含国际标准化组织定义的标准纸张尺寸（如ISO\_A4）和系统中定义的非标准的纸张尺寸（如Custom.178x254mm，表示这种纸张尺寸为178毫米 x 254毫米）。 |
+| defaultPageSizeId | string | 否 | 是 | 表示默认纸张尺寸的ID，其范围包含国际标准化组织定义的标准纸张尺寸（如ISO\_A4）和系统中定义的非标准的纸张尺寸（如Custom.178x254mm，表示这种纸张尺寸为178毫米\*254毫米）。 |
 | defaultOrientation | [PrintOrientationMode](js-apis-print.md#printorientationmode14) | 否 | 是 | 表示默认打印方向。 |
 | borderless | boolean | 否 | 是 | 表示是否无边距打印，true表示无边距，false表示有边距。默认值为false。 |
 | defaultColorMode24+ | [PrintColorMode](js-apis-print.md#printcolormode11) | 否 | 是 | 表示默认色彩模式。默认值为黑白。  **模型约束：** 此接口仅可在Stage模型下使用。 |
@@ -1548,7 +1548,7 @@ getAddedPrinters(): Promise<Array<string>>
 
 获取系统中已添加的打印机列表，使用Promise异步回调。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -1680,7 +1680,7 @@ startDiscoverPrinter(extensionList: Array<string>, callback: AsyncCallback<void>
 
 通过指定“打印扩展能力列表”来发现打印机，发现的打印机具备指定的打印扩展能力。如果指定空的打印扩展能力列表，则表示加载所有扩展能力。使用callback异步回调。在不需要继续发现时，调用[stopDiscoverPrinter](js-apis-print.md#printstopdiscoverprinter20)停止发现，释放系统资源，否则会导致系统持续进行打印机发现，消耗系统资源。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -1724,7 +1724,7 @@ startDiscoverPrinter(extensionList: Array<string>): Promise<void>
 
 通过指定“打印扩展能力列表”来发现打印机，发现的打印机具备指定的打印扩展能力。如果指定空的打印扩展能力列表，则表示加载所有扩展能力，使用Promise异步回调。在不需要继续发现时，调用[stopDiscoverPrinter](js-apis-print.md#printstopdiscoverprinter20)停止发现，释放系统资源，否则会导致系统持续进行打印机发现，消耗系统资源。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -1771,7 +1771,7 @@ stopDiscoverPrinter(callback: AsyncCallback<void>): void
 
 停止发现打印机，使用callback异步回调。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -1810,7 +1810,7 @@ stopDiscoverPrinter(): Promise<void>
 
 停止发现打印机，使用Promise异步回调。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -1847,7 +1847,7 @@ connectPrinter(printerId: string, callback: AsyncCallback<void>): void
 
 通过打印机ID连接打印机，使用callback异步回调。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -1889,7 +1889,7 @@ connectPrinter(printerId: string): Promise<void>
 
 通过打印机ID连接打印机，使用Promise异步回调。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -2176,7 +2176,7 @@ updatePrintJobState(jobId: string, state: PrintJobState, subState: PrintJobSubSt
 
 更新打印任务状态，使用callback异步回调。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.ENTERPRISE\_MANAGE\_PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.ENTERPRISE\_MANAGE\_PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -2223,7 +2223,7 @@ updatePrintJobState(jobId: string, state: PrintJobState, subState: PrintJobSubSt
 
 更新打印任务状态，使用Promise异步回调。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.ENTERPRISE\_MANAGE\_PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.ENTERPRISE\_MANAGE\_PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -2273,7 +2273,7 @@ updatePrinterInformation(printerInformation: PrinterInformation): Promise<void>
 
 更新系统中打印机的部分信息，使用Promise异步回调。当前仅允许更新[PrinterInformation](js-apis-print.md#printerinformation14)的alias和options字段。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.ENTERPRISE\_MANAGE\_PRINT
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.ENTERPRISE\_MANAGE\_PRINT
 
 **系统能力：** SystemCapability.Print.PrintFramework
 
@@ -2376,7 +2376,7 @@ addPrinter(printerName: string, uri: string, ppdName?: string, options?: string)
 
 添加打印机到系统中，使用Promise异步回调。该接口面向打印驱动、打印管理软件、三方打印管理软件、云打印等需要管理打印机或扫描仪的场景。
 
-**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB 或 ohos.permission.PRINTER\_DRIVER
+**需要权限：** ohos.permission.MANAGE\_PRINT\_JOB或ohos.permission.PRINTER\_DRIVER
 
 **系统能力：** SystemCapability.Print.PrintFramework
 

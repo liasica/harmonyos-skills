@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-select-
 title: 按钮与选择组件常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 按钮与选择组件常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:20+08:00
+scraped_at: 2026-10-22T07:04:49+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:733e4ebadaf1d405ecead3665f89b568d34cd60ab3f5a8cc99b0ff74e03f56d2
+content_hash: sha256:20442ae7fd649ee12652bb5aa9b5d506f62a9995be4448f9dba5689501ec2d8a
 ---
 
 本文档介绍按钮与选择组件的常见问题并提供参考。
@@ -16,11 +16,11 @@ Slider的滑块与滑轨显示样式[SliderStyle](../harmonyos-references/ts-bas
 
 SliderStyle.OutSet模式下，滑块的中心与滑轨的端点对齐，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/XFyPkJslRkK1JCR9apowqQ/zh-cn_image_0000002764971762.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/-xA1IvuLSvKHCFXqeJqnyQ/zh-cn_image_0000002797300427.jpg)
 
 SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑轨高度的一半的位置，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/nueWDAf5TtKdEIXocOpgaA/zh-cn_image_0000002765131688.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/L7id88p9Q2GiFKPjFFLUjg/zh-cn_image_0000002767860494.jpg)
 
 **示例**
 
@@ -117,7 +117,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/ZvHfWOWaTbmphPif6hFdEQ/zh-cn_image_0000002794490265.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/w5ON14JCRHen91Bvxx7KaA/zh-cn_image_0000002797180459.png)
 
 ## Button组件设置type时，ButtonType枚举值与数字值不一致
 
@@ -186,4 +186,4 @@ struct ButtonTypeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/qUyyDl7CTEeeIvUbFjUxcw/zh-cn_image_0000002794410481.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/C_c0MD3zT52824HhdsPzBA/zh-cn_image_0000002768020480.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-integrate
 title: 接入购买
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 非续期订阅商品购买 > 接入购买
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:33+08:00
+scraped_at: 2026-10-22T07:05:50+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:35d68e87b3b0fc6f97cc195c5baab3946670ad2fe3657f80a34f5bd3c344f5af
+content_hash: sha256:a52eeab53f735560ed87f78804ec7e58374ad09ceffab122d4d83258b3da69f4
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:35d68e87b3b0fc6f97cc195c5baab3946670ad2fe3657f80a34f5bd3c34
 
 在接入非续期订阅商品购买能力前，需要提前[配置商品信息](iap-config-product.md)。用户在应用内购买时，应用拉起IAP Kit的收银台，收银台处会展示商品名称、商品价格等信息，用户根据需求完成商品购买。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/hiS2amTPS-yK0SyZoWxp5g/zh-cn_image_0000002764972716.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/hRy5HeNZRDucx_rLt2TZfQ/zh-cn_image_0000002797301375.png)
 
 ## 提供优惠
 
@@ -37,7 +37,7 @@ content_hash: sha256:35d68e87b3b0fc6f97cc195c5baab3946670ad2fe3657f80a34f5bd3c34
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Pm0FzqDDSwycrxX4MUTznQ/zh-cn_image_0000002765132638.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/m0vv77DlRAecMDSJA9noJg/zh-cn_image_0000002767861444.png)
 
 **展示商品**
 

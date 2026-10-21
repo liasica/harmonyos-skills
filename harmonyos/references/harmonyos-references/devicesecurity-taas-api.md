@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAppService（可信应用服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > TrustedAppService（可信应用服务）
 category: harmonyos-references
-scraped_at: 2026-10-17T06:46:21+08:00
+scraped_at: 2026-10-22T07:08:48+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:a0ccee7b67259469123845dc79fe56d2ca618e52d4358a969c3902597812b828
+content_hash: sha256:e84ed21f6b3de322e69c08a6098c49c9824ec9810b02d700bba1e23378f59b16
 ---
 
 本模块提供应用数据的安全证明服务，支持创建证明密钥、销毁证明密钥、初始化证明会话、结束证明会话和获取安全地理位置，能够为安全摄像头和安全地理位置功能提供安全证明能力，确保图像或位置数据未被篡改。
@@ -895,7 +895,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).the
 | width | number | 否 | 否 | 裁剪区域的宽度，即横向的长度，取值范围在 0 到 640 之间的偶数，且需满足 x 与 width 的和不大于 640。单位：像素（pixel）。 |
 | height | number | 否 | 否 | 裁剪区域的高度，即纵向的长度，取值范围在 0 到 480 之间的偶数，且需满足 y 与 height 的和不大于 480。单位：像素（pixel）。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/ktrO_QR-SRmddpE_k3DrPg/zh-cn_image_0000002764974524.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/KD4W0hoqQMmoJxuwiCJtgQ/zh-cn_image_0000002797303165.jpg)
 
 ## SecImageBuffer
 

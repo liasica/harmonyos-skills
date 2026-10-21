@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-modulei
 title: 产品特性按需分发(ArkTS)
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 产品特性按需分发 > 产品特性按需分发(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:24+08:00
+scraped_at: 2026-10-22T07:05:43+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:86b4a506343d582428c769f190d77567460c3154b00393b6550fd4b643b09ca6
+content_hash: sha256:3e40f565e0eab9a9522ca3bdab3693968bad591425e630263f5b3a3796fafb94
 ---
 
 **说明** 
@@ -22,7 +22,7 @@ content_hash: sha256:86b4a506343d582428c769f190d77567460c3154b00393b6550fd4b643b
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/dR9PZAjdQz-2UepschmCzQ/zh-cn_image_0000002764972560.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/JY6VfnH4QSONJ34SHES0TA/zh-cn_image_0000002797301221.png)
 
 1. 用户下载A应用的基础包。
 2. 用户使用增强功能。
@@ -480,7 +480,7 @@ entry中主要实现如下：
 
 运行结果效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/NGHFvSrETFCh-JgO4jd-Ig/zh-cn_image_0000002765132486.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/YbzMpTMGQSGr2zTeuygz5Q/zh-cn_image_0000002767861292.gif)
 
 ### 接入调试功能
 
@@ -494,5 +494,5 @@ entry中主要实现如下：
 2. 打开[开发者调试模式](ide-developer-mode.md#section530763213432)：进入设置 -> 机型 -> 关于手机，连续点击软件版本7次，弹出“开启“开发者模式””，点击“确认开启”。
 3. [访问设备沙箱路径](ide-device-file-explorer.md#section48216711204)，在[应用el2级别加密数据目录](app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)下，创建cache/moduleinstall/<ModuleName>目录（这里<ModuleName>是AModulelib），将模块调试包AModulelib.hsp上传至对应模块目录下（请确保模块调试包文件应有读写权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/rdr9Oy48RLix0vu92A6Hmg/zh-cn_image_0000002794491061.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/VuUPCnmlTB6yXbdyDOi6-w/zh-cn_image_0000002797181253.png)
 4. 按照[创建按需加载的请求实例](store-moduleinstall_arkts.md#创建按需加载的请求实例)、[请求按需加载的接口](store-moduleinstall_arkts.md#请求按需加载模块)、[取消下载任务](store-moduleinstall_arkts.md#取消下载任务)、[恢复下载任务](store-moduleinstall_arkts.md#恢复下载任务)和[使用动态模块](store-moduleinstall_arkts.md#使用动态模块)，无需改动参数即可安装好模块调试包，实现取消及恢复下载任务。监听到安装成功后，对应模块目录下的文件会被自动删除。

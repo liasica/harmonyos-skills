@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-vector
 title: 通过向量数据库实现数据持久化 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过向量数据库实现数据持久化 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:12+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:d0c84da2c1754efeb585ad8af4881defb48f4a2eac55a0867295e4bc1c8355da
+scraped_at: 2026-10-22T07:04:32+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:efbf43e1c03de57f5a1e1d562e4e1f6ed4d1b8aad0e08049334289bffd1d0bdf
 ---
 
 ## 场景介绍
@@ -67,12 +67,18 @@ libnative_rdb_ndk.z.so
 #include <database/rdb/relational_store_error_code.h>
 ```
 
-1. 判断当前系统是否支持向量数据库，若不支持，则表示当前系统不具备向量数据库能力。示例代码如下：
+1. 调用[OH\_Rdb\_GetSupportedDbType()](../harmonyos-references/capi-relational-store-h.md#oh_rdb_getsupporteddbtype)接口获取当前系统支持的所有数据库类型，遍历其中元素查找是否支持目标数据库类型。若包含[RDB\_SQLITE](../harmonyos-references/capi-relational-store-h.md#rdb_dbtype)，则表示当前系统支持SQLite数据库。若包含[RDB\_CAYLEY](../harmonyos-references/capi-relational-store-h.md#rdb_dbtype)，则表示当前系统支持向量数据库。示例代码如下：
 
    ```
-   int numType = 0;
-   // 如果numType为2则支持向量数据库，为1则不支持向量数据库
-   OH_Rdb_GetSupportedDbType(&numType);
+   int typeCount = 0;
+   const int *dbTypes = OH_Rdb_GetSupportedDbType(&typeCount);
+   bool isVectorStoreSupported = false;
+   for (int i = 0; i < typeCount; i++) {
+       if (dbTypes[i] == RDB_CAYLEY) {
+           isVectorStoreSupported = true;
+           break;
+       }
+   }
    ```
 2. 当前系统支持向量数据库时，获取OH\_Rdb\_Store实例。示例代码如下：
 
@@ -153,7 +159,7 @@ libnative_rdb_ndk.z.so
 
    **说明** 
 
-   当应用完成查询数据操作，不再使用结果集（OH\_Cursor）时，请及时调用destroy方法关闭结果集，释放系统为其分配的内存。
+   当应用完成查询数据操作，不再使用结果集（OH\_Cursor）时，请及时调用[destroy()](../harmonyos-references/capi-rdb-oh-cursor.md#destroy)接口关闭结果集，释放系统为其分配的内存。
 
    示例代码如下：
 

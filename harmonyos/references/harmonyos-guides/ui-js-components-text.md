@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: text开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > text开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:19+08:00
+scraped_at: 2026-10-22T07:04:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8b3daa3752d4a50bea45f25931e8d12c202b6097d480d84107317c37f61022f5
+content_hash: sha256:53ce033e65745e99aa3a7d8f3156f233fd39e0ff0ffd7cd9b69ca8644109717e
 ---
 
 text是文本组件，用于呈现一段文本信息。具体用法请参考[text](../harmonyos-references/js-components-basic-text.md)的API文档。
@@ -33,7 +33,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/l_x6-hELRtOpd5l-M2pmlA/zh-cn_image_0000002765131622.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/qcPshTlySJ-BqowDj4VFyA/zh-cn_image_0000002767860428.png)
 
 ## 设置text组件样式和属性
 
@@ -66,7 +66,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4gcmlg43S-G1gE9GmEShwA/zh-cn_image_0000002794490199.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/m2rR0XepTIOKIhfm8dafhQ/zh-cn_image_0000002797180393.png)
 * 添加划线
 
   设置text-decoration和text-decoration-color属性为文本添加划线和划线颜色，text-decoration枚举值请参考text自有样式。
@@ -97,7 +97,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ufg-3jMjR3uftxkalb6nCA/zh-cn_image_0000002794410415.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/FfJy-U1FTEOxBZgfYWZdcw/zh-cn_image_0000002768020414.png)
 * 隐藏文本内容
 
   当文本内容过多而显示不全时，添加text-overflow属性将隐藏内容以省略号的形式展现。
@@ -133,7 +133,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   + text-overflow样式需配合max-lines样式使用，在设置了最大行数的情况下才会生效。
   + max-lines属性设置文本最多可以展示的行数。
 
-  ​ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/HC06LdlnTnG8IBM7fCIRbw/zh-cn_image_0000002764971698.png)
+  ​ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/AfbkexBRRlmAlH6WeiOSkg/zh-cn_image_0000002797300363.png)
 * text组件支持[span](../harmonyos-references/js-components-basic-span.md)子组件
 
   ```html
@@ -151,7 +151,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   </div>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/F05dxjPmS_iwAm5AO5JwTQ/zh-cn_image_0000002765131624.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ThkFP0JCQ-K3TgPObPSohg/zh-cn_image_0000002767860430.png)
 
   **说明** 
 
@@ -213,4 +213,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/gyPjYwGUTWyl5xXefzNCXQ/zh-cn_image_0000002794490201.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/m4qR41_vQY2v9A-1uy7NHQ/zh-cn_image_0000002797180395.gif)

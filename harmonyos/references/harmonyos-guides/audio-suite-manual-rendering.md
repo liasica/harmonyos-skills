@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-m
 title: 离线编辑(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 离线编辑(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:04+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:8aa941da4922f16f040fb371c1fde00195766090338ce7ba111f2fde23977761
+scraped_at: 2026-10-22T07:05:26+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:9c033a4ed0a739b65cf03397951954e1a08f9ce3c8b19241c07c1efde8e419dc
 ---
 
 从API version 22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供音频离线编辑能力，允许在非实时预览场景下对音频数据进行处理，开发者可以组合多个音频节点实现复杂的音频处理流程。
@@ -49,7 +49,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
 
 **图1**：基础离线编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/UE9nrT5IRP-cyO2dpTWU8Q/zh-cn_image_0000002764972246.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/k50UDu4CS5q8ATxkghjWPg/zh-cn_image_0000002797300911.png)
 
 1. 创建引擎和管线。
 
@@ -219,7 +219,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
 
 **图2**：音源分离编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/p_uJDKJnTZqQyG_Jeis_-g/zh-cn_image_0000002765132172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/DjVvv4GgRH2Vt1P_bPDFuA/zh-cn_image_0000002767860980.png)
 
 示例代码如下：
 
@@ -409,7 +409,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
 
 **图3**：级联编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/4WK6csAORH2RTljjsokevw/zh-cn_image_0000002794490749.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/vBL3koULRc-iAKGx07OpcQ/zh-cn_image_0000002797180943.png)
 
 示例代码如下：
 

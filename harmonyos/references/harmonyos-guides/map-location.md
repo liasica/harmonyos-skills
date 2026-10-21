@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location
 title: 显示我的位置
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示我的位置
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:35+08:00
+scraped_at: 2026-10-22T07:05:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ef1f5a59568afdc87e4b5e50e0594473cf2c8901208fb6502f0febd4c7904cc4
+content_hash: sha256:529abecfc4f2b2691ba4770a30ce3741b274c8972e6856edfa0cf706ea63cee7
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:ef1f5a59568afdc87e4b5e50e0594473cf2c8901208fb6502f0febd4c79
 
 本章节将向您介绍如何开启和展示“我的位置”功能，“我的位置”指的是进入地图后点击“我的位置”显示当前位置点的功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7ZmaylMrTwyg6T0nCiBlbA/zh-cn_image_0000002794491297.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/xn9RNLv6TaOan91sw5G3Nw/zh-cn_image_0000002797181489.jpg "点击放大")
 
 ## 接口说明
 
@@ -181,9 +181,9 @@ content_hash: sha256:ef1f5a59568afdc87e4b5e50e0594473cf2c8901208fb6502f0febd4c79
    ```
 3. 检查“我的位置”功能是否成功启用。
 
-   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/1wn63LRaTKKpk9GQKO42Iw/zh-cn_image_0000002794411519.png)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/MBdo8RJNQ4Cqce3Xq0MsMg/zh-cn_image_0000002764972800.png)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
+   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/E7IqibdyQamnc-mH-kb4yw/zh-cn_image_0000002768021510.png)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/gn84h1K8R9KZeV2sWEiCLg/zh-cn_image_0000002797301459.png)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/i0mfqogDR0OqYhqK-3vsww/zh-cn_image_0000002765132726.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/fg8VFxh8S5OjAlKZysrusg/zh-cn_image_0000002767861528.jpg "点击放大")
 4. 获取用户位置坐标并设置用户的位置。
 
    Map Kit默认使用系统的连续定位能力，如果您希望定制显示频率或者精准度，可以调用[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)相关接口获取用户位置坐标（WGS84坐标系）。注意访问设备的位置信息必须申请权限，并且获得用户授权，详情见[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)。
@@ -237,7 +237,7 @@ let style: mapCommon.MyLocationStyle = {
 await this.mapController.setMyLocationStyle(style);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/a1DzSXx9SR-tzNXMeUse7w/zh-cn_image_0000002794491299.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/G2bdTxxVS5SN3iFPeKe1Jw/zh-cn_image_0000002797181491.jpg "点击放大")
 
 ### 更改我的位置图层相对于覆盖物的压盖顺序
 
@@ -248,4 +248,4 @@ await this.mapController.setMyLocationStyle(style);
 this.mapController?.changeMyLocationLayerOrder(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/fPebEmL7Tk6CxMVzu95e3w/zh-cn_image_0000002794411521.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/JBCgSxQpRyati5jioWwz6Q/zh-cn_image_0000002768021512.jpg "点击放大")

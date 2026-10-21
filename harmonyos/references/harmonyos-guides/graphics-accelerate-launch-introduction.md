@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 业务概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 秒级启动 > 业务概述
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:19+08:00
+scraped_at: 2026-10-22T07:05:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c9e8a3f05740162ea9e232f9bcad6d130f6652165df0a4b1a986252736be1934
+content_hash: sha256:fc1393d15171a1ae30b44c2141f3aace04fce0758682d53646adadf380af82c6
 ---
 
 秒级启动是在游戏退出时，开发者先切换场景，系统再自动为该场景制作内存镜像。在该游戏下一次无资源更新冷启动时，可以直接进入内存镜像界面，实现游戏的秒开秒进，无需再经过漫长的加载过程。
@@ -26,10 +26,10 @@ content_hash: sha256:c9e8a3f05740162ea9e232f9bcad6d130f6652165df0a4b1a986252736b
 
 * 加载内存镜像
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/8mAoDZy9R1ONn03nEXnPNA/zh-cn_image_0000002794491003.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/p2CpRpEiRUi89qF43EOy3Q/zh-cn_image_0000002797181195.gif)
 * 未加载内存镜像
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/S7V8m-vmT6CIerZ9ze6SDA/zh-cn_image_0000002794411223.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/jVsXL1yLQr24tRodUz2vlg/zh-cn_image_0000002768021218.gif)
 
 ## 快速上手体验
 

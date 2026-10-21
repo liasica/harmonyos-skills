@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-ui-desig
 title: 国际化界面设计
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 国际化界面设计
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:29+08:00
+scraped_at: 2026-10-22T07:04:57+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:82e22d8d22fbb44195e83e79317b73c6180430fa1e69d35340da0d383a0e2519
+content_hash: sha256:a1f55756951d9baab4a9c5cc6e69b3f7d299977bb2ab2f88ba27e78f08003651
 ---
 
 一套有效的国际化界面布局设计规则，既可以树立产品在国际化设计中产品调性，还可以保证操作的一致性，遵循以下设计规则可有效提升应用全球化质量。
@@ -36,20 +36,20 @@ content_hash: sha256:82e22d8d22fbb44195e83e79317b73c6180430fa1e69d35340da0d383a0
 
 **图1** 一般布局示例（英文）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Y5fbsFjLQVac98vvUHSOig/zh-cn_image_0000002765131906.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/WpgYabS0Q_eRYB9NUFdXnA/zh-cn_image_0000002767860714.png)
 
 **图2** 镜像布局示例（阿拉伯文）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/EThyvjF5Tg6bCloC5FyZnw/zh-cn_image_0000002794490483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/GZqWZ7VZQ7uRHTscjKyX8Q/zh-cn_image_0000002797180677.png)
 
 **图3** 一般图标资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/ppgty9Q5SG6EoXl5W9eLzw/zh-cn_image_0000002794410699.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/OpRte5DTTcKxFG3GRgT8qQ/zh-cn_image_0000002768020700.png)
 
 **图4** RTL语言系统下提供的图标资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/vNNY5uBTQ7OnJWJvovyxqA/zh-cn_image_0000002764971982.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/tItdXVK2R-OJ5MwX4oVPrQ/zh-cn_image_0000002797300647.png)
 
 **图5** RTL语言下提供的镜像控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/T4VECHleTYOu65bEZf9KFA/zh-cn_image_0000002765131908.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/UwzdtV7eQc2Ap7KUnU7nmQ/zh-cn_image_0000002767860716.png)

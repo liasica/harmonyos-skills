@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-page-load
 title: 定位网页加载问题
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 定位网页加载问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a2e77632402807c5e6dfaf6732a8ed874f3fe5a85d94240ef1aec425d4f2f49e
+scraped_at: 2026-10-22T07:04:53+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:0ccc1443b2af1432e0cc1a1375370200c83a23f097818e90b15e5fa0b82b604d
 ---
 
 Web页面加载失败问题复杂多样，本文详细列举常见问题的排查方法，供开发者快速定位。
@@ -73,8 +73,7 @@ Web页面加载失败问题复杂多样，本文详细列举常见问题的排�
 
    以下结合示例说明如何使用HTTP或HTTPS等协议解决本地资源跨域访问失败的问题。其中，index.html和js/script.js文件置于工程的rawfile目录下。当使用resource协议访问index.html时，js/script.js文件因跨域而被拦截，无法加载。在示例中，使用https://www.example.com/域名替换了原有的resource协议，同时利用onInterceptRequest接口替换资源，确保js/script.js文件可以成功加载，从而解决跨域拦截问题。
 
-   ```ts
-   // main/ets/pages/Index.ets
+   ```typescript
    import { webview } from '@kit.ArkWeb';
 
    @Entry
@@ -84,27 +83,27 @@ Web页面加载失败问题复杂多样，本文详细列举常见问题的排�
      webviewController: webview.WebviewController = new webview.WebviewController();
      // 构造域名和本地文件的映射表
      schemeMap = new Map([
-       ["https://www.example.com/index.html", "index.html"],
-       ["https://www.example.com/js/script.js", "js/script.js"],
+       ['https://www.example.com/index.html', 'index.html'],
+       ['https://www.example.com/js/script.js', 'js/script.js'],
      ])
      // 构造本地文件和构造返回的格式mimeType
      mimeTypeMap = new Map([
-       ["index.html", 'text/html'],
-       ["js/script.js", "text/javascript"]
+       ['index.html', 'text/html'],
+       ['js/script.js', 'text/javascript']
      ])
 
      build() {
        Row() {
          Column() {
-           // 针对本地index.html,使用HTTP或HTTPS协议代替file协议或者resource协议，并且构造一个属于自己的域名。
+           // 针对本地index.html,使用http或者https协议代替file协议或者resource协议，并且构造一个属于自己的域名。
            // 本例中构造www.example.com为例。
-           Web({ src: "https://www.example.com/index.html", controller: this.webviewController })
+           Web({ src: 'https://www.example.com/index.html', controller: this.webviewController })
              .javaScriptAccess(true)
              .fileAccess(true)
              .domStorageAccess(true)
              .geolocationAccess(true)
-             .width("100%")
-             .height("100%")
+             .width('100%')
+             .height('100%')
              .onInterceptRequest((event) => {
                if (!event) {
                  return;
@@ -148,8 +147,7 @@ Web页面加载失败问题复杂多样，本文详细列举常见问题的排�
    </html>
    ```
 
-   ```js
-   // main/resources/rawfile/js/script.js
+   ```javascript
    const body = document.body;
    const element = document.createElement('div');
    element.textContent = 'success';
@@ -263,7 +261,6 @@ Web页面加载失败问题复杂多样，本文详细列举常见问题的排�
    ```
 
    ```javascript
-   // main/resources/resfile/js/script.js
    const body = document.body;
    const element = document.createElement('div');
    element.textContent = 'success';

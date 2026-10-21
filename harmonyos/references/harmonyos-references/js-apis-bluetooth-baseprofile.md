@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.baseProfile (蓝牙baseProfile模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.baseProfile (蓝牙baseProfile模块)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:46:32+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:a40b635053494635307db4ac059e32e9922608dc430e461a10517f34bfa08757
+scraped_at: 2026-10-22T07:08:56+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:a9d93e8c19a2c70b56eb6f17bc13e0359de2dcd44a5e7ee32c2b94195fb0053d
 ---
 
 本模块提供不同的蓝牙技术协议的基础公共方法，为[A2DP](../harmonyos-guides/terminology.md#a2dp)、[HFP](../harmonyos-guides/terminology.md#hfp)、[PAN](../harmonyos-guides/terminology.md#pan)等蓝牙[Profile](../harmonyos-guides/terminology.md#profile)提供连接状态查询、连接状态订阅与取消订阅等公共能力，适用于需要在应用中统一管理多种蓝牙Profile连接状态的场景。
@@ -136,7 +136,9 @@ getConnectionState(deviceId: string): ProfileConnectionState
 
 获取和对端设备间Profile的连接状态。例如，在蓝牙应用中判断设备是否已连接，以决定是否可以发起数据传输或更新设备连接状态显示。
 
-* 从API version 21开始，此接口支持使用对端设备的实际MAC地址获取Profile连接状态。
+* 从API version 21开始，此接口支持使用对端设备的实际MAC地址获取A2DP Profile连接状态。
+* 从API版本26.0.0开始，此接口支持使用对端设备的实际MAC地址获取HFP、PAN Profile的连接状态。
+* 不同Profile对实际MAC地址的支持起始版本不同，请按需使用。
 
 **需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 

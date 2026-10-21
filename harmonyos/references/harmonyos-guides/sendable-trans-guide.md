@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-tran
 title: Sendable对象改造实践
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > Sendable对象改造实践
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:29+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:1dbe50cffd43d97db542395ffc27300fe7b5b3a30dfdebf56067bf86c5053896
+scraped_at: 2026-10-22T07:04:35+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:683f7c964bfdf4cbd30f03093212aa0226d0e42ee88237c63c7d7f09f775aa50
 ---
 
 ## 简介
@@ -86,8 +86,8 @@ content_hash: sha256:1dbe50cffd43d97db542395ffc27300fe7b5b3a30dfdebf56067bf86c50
 
    使用TJSON.fromString<Model>(jsonStr, Model)从JSON字符串反序列化为普通对象，可用ArkTSUtils.isSendable(obj)进行校验。工程示例演示了两种输入来源，并在反序列化后继续将普通对象转换为Sendable对象，形成“JSON字符串 -> 普通对象 -> Sendable对象”的前半段链路。
 
-   * testJSON1方法是将普通对象通过JSON.stringify()序列化为JSON字符串后，再将JSON字符串反序列化为普通对象，最后再转换为Sendable对象的过程。
-   * testJSON2方法是将手写的JSON字符串反序列化为普通对象，然后再转换为Sendable对象的过程。
+   * testJSON1()方法是将普通对象通过JSON.stringify()序列化为JSON字符串后，再将JSON字符串反序列化为普通对象，最后再转换为Sendable对象的过程。
+   * testJSON2()方法是将手写的JSON字符串反序列化为普通对象，然后再转换为Sendable对象的过程。
 
      ```typescript
      // 本文件在工程中的路径：entry/src/main/ets/turbotrans_JSON/test1.ets
@@ -239,7 +239,7 @@ content_hash: sha256:1dbe50cffd43d97db542395ffc27300fe7b5b3a30dfdebf56067bf86c50
    * test\_pb.decode(buffer)：将二进制数据解码回test\_pb。
 4. 创建Sendable消息对象并进行编码与解码。
 
-   使用生成类提供的encode/decode完成二进制序列化/反序列化并且解码后得到的消息对象仍可继续作为Sendable对象向后传递。test\_pb经过编解码后仍然保留Sendable特性，因此也可以像JSON路径生成的Sendable对象一样，继续作为并发任务的返回值进入UI绑定流程。以下示例中testProtobuf方法先创建test\_pb实例，再编码为二进制，最后解码回test\_pb并校验其仍为Sendable对象。
+   使用生成类提供的encode()/decode()完成二进制序列化/反序列化并且解码后得到的消息对象仍可继续作为Sendable对象向后传递。test\_pb经过编解码后仍然保留Sendable特性，因此也可以像JSON路径生成的Sendable对象一样，继续作为并发任务的返回值进入UI绑定流程。以下示例中testProtobuf()方法先创建test\_pb实例，再编码为二进制，最后解码回test\_pb并校验其仍为Sendable对象。
 
    ```ts
    import { test_pb } from '../protobuf/test_pb'

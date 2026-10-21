@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Z序控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > Z序控制
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:44+08:00
+scraped_at: 2026-10-22T07:07:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6261e19a20864eb67180f2c6afa9f7e346567e23f0924ffb96fb2c6c40b12abc
+content_hash: sha256:5f2bc2dfa7ce721456a53923d2dc893816138abe0b8fc567d995be208a964aee
 ---
 
 组件的Z序，设置同一容器中兄弟组件的堆叠顺序。
@@ -73,11 +73,11 @@ struct ZIndexExample {
 
 Stack容器内子组件不设置zIndex时，默认按照声明顺序显示，后声明的组件会覆盖在先声明的组件上方。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/i4ypXlY9Rt-hqy3Y3xhnbw/zh-cn_image_0000002764973404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/hlIsgGAFTDycAdt6zkEdBw/zh-cn_image_0000002797302051.png)
 
 Stack容器子组件设置zIndex后的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/cHniiGsER5a_JKUC70_hPg/zh-cn_image_0000002765133326.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Mbx4Bsn1Q16rJtOY_sFSgg/zh-cn_image_0000002767862120.png)
 
 ### 示例2（动态修改zIndex属性）
 
@@ -114,15 +114,15 @@ struct ZIndexExample {
 
 不点击Button修改zIndex值的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/WO4r0bXlS0i8AxStX1dXpQ/zh-cn_image_0000002794491901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/ukk6d9DPShCuY0d_ZutVaw/zh-cn_image_0000002797182083.png)
 
 点击Button动态修改zIndex，使Text1和Text2的zIndex相等，因为在点击Button前的层级顺序上根据zIndex进行稳定排序，层级顺序不发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/55B9CME7RL29mEFbrryE9Q/zh-cn_image_0000002794412121.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/QmxNbYfgT5m0-IQ6RipZ9A/zh-cn_image_0000002768022104.png)
 
 点击Button动态修改zIndex，使Text2的zIndex大于Text1，层级顺序发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/r9OROojfQpa0NPAqkQtSuA/zh-cn_image_0000002764973406.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/xyR-KI3wT-ywZKCAeQTzsQ/zh-cn_image_0000002797302053.png)
 
 ### 示例3（设置不同容器内组件的zIndex属性）
 
@@ -158,4 +158,4 @@ struct ZIndexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/VSiGI7apTpW8rflt8ALb3w/zh-cn_image_0000002765133328.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/lS6gQxf7QjyVXgacvFsv-w/zh-cn_image_0000002767862122.png)

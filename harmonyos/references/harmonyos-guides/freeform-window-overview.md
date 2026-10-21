@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/freeform-wind
 title: 自由窗口简介
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 自由窗口 > 自由窗口简介
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:21+08:00
+scraped_at: 2026-10-22T07:04:50+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:8e8170390792973dfad68de82d4d60e8fc79507b7aab2e51a2e9fef11e69d086
+content_hash: sha256:90eeabc08d125cbbaf2a802a718b7e749b5e01b5c17d93b704ecb10cf491473a
 ---
 
 ## 自由窗口
@@ -20,7 +20,7 @@ content_hash: sha256:8e8170390792973dfad68de82d4d60e8fc79507b7aab2e51a2e9fef11e6
 
 自由窗口可以通过拖动窗口边缘调节窗口大小，可以通过拖动标题栏移动窗口位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/YkdeEJzFQVyXqsBbKJ8Oyg/zh-cn_image_0000002794490301.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/5uluHupaRsaRmQ1fDJHAag/zh-cn_image_0000002797180495.png)
 
 当前设备支持情况：
 
@@ -38,7 +38,7 @@ content_hash: sha256:8e8170390792973dfad68de82d4d60e8fc79507b7aab2e51a2e9fef11e6
 
 部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/LeaUbMjoRMeEgo--s5qFuQ/zh-cn_image_0000002794410517.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/861gQ71FSq2lZWL9UZd17A/zh-cn_image_0000002768020516.png)
 
 ### 电脑模式
 

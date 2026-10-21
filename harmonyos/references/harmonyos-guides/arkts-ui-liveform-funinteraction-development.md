@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 趣味交互类型互动卡片开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 趣味交互类型互动卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:28+08:00
+scraped_at: 2026-10-22T07:04:56+08:00
 doc_updated_at: 2026-04-17
-content_hash: sha256:ede6ca742a2e0f38e8c0019b18f67a73ae1dbda3313a73eb8afc4bdadf127193
+content_hash: sha256:ccf1ee116585c12aa325664447c54926a1de8a3fbe457b0fb2d06cbd1912595e
 ---
 
 趣味交互类型互动卡片当前仅支持基于[快游戏](../quickApp-Guides/quickgame-interact-card-0000002045917828.md)开发的卡片小游戏，互动卡片默认处于非激活态，当用户点击卡片时，卡片切换为激活态，并开始游戏。在游戏过程中，用户可以点击“暂停”按钮进入暂停态。在暂停态，用户可以通过“继续游戏”和“停止游戏”按钮选择返回激活态继续游戏，或者结束游戏。
@@ -20,7 +20,7 @@ content_hash: sha256:ede6ca742a2e0f38e8c0019b18f67a73ae1dbda3313a73eb8afc4bdadf1
 
 **图1** 趣味交互类型互动卡片激活态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/-S4CJbNRRWmsz3dxHPjOPw/zh-cn_image_0000002765131864.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/718YZ0eMRPm6oxXUv31TsQ/zh-cn_image_0000002767860672.gif)
 
 ### 暂停态
 
@@ -28,7 +28,7 @@ content_hash: sha256:ede6ca742a2e0f38e8c0019b18f67a73ae1dbda3313a73eb8afc4bdadf1
 
 **图2** 趣味交互类型互动卡片暂停态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/daU4D-DrRm-gAS5Id3BJzw/zh-cn_image_0000002794490441.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Ewj7xEpIRGitI_ECpSSu_Q/zh-cn_image_0000002797180635.jpg)
 
 ### 非激活态
 
@@ -36,7 +36,7 @@ content_hash: sha256:ede6ca742a2e0f38e8c0019b18f67a73ae1dbda3313a73eb8afc4bdadf1
 
 **图3** 趣味交互类型互动卡片非激活态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/cSffLSPbSlu0RY-gLlp9Ig/zh-cn_image_0000002794410657.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/P7eRn57FTtmEJGhdgzyakA/zh-cn_image_0000002768020658.jpg)
 
 ## 约束与限制
 

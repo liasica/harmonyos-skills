@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawfile-guide
 title: Rawfile开发指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 资源管理 > Rawfile开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8088481a03a4750f7747a964a87cc7ff878602685c2dd81f52ba7428459e0e3d
+scraped_at: 2026-10-22T07:06:25+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:b589057e24ead4330c233ae346246fc0b5b4336d65f028da86e985717361c7cd
 ---
 
 ## 场景介绍
@@ -27,7 +27,7 @@ content_hash: sha256:8088481a03a4750f7747a964a87cc7ff878602685c2dd81f52ba7428459
 | int OH\_ResourceManager\_ReadRawFile(const RawFile \*rawFile, void \*buf, size\_t length) | 读取rawfile文件内容。 |
 | void OH\_ResourceManager\_CloseRawFile(RawFile \*rawFile) | 释放rawfile文件相关资源。 |
 | void OH\_ResourceManager\_CloseRawDir(RawDir \*rawDir) | 释放rawfile目录相关资源。 |
-| bool OH\_ResourceManager\_GetRawFileDescriptor(const RawFile \*rawFile, RawFileDescriptor &descriptor) | 获取rawfile的fd。 |
+| bool OH\_ResourceManager\_GetRawFileDescriptorData(const RawFile \*rawFile, RawFileDescriptor \*descriptor) | 获取rawfile的fd。 |
 | void OH\_ResourceManager\_ReleaseNativeResourceManager(NativeResourceManager \*resMgr) | 释放native resource manager相关资源。 |
 | bool OH\_ResourceManager\_IsRawDir(const NativeResourceManager \*mgr, const char \*path) | 判断路径是否是rawfile下的目录。 |
 
@@ -39,7 +39,7 @@ content_hash: sha256:8088481a03a4750f7747a964a87cc7ff878602685c2dd81f52ba7428459
 
 **1. 创建工程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/NbyUUJUhSGOqL4Z2-mxLcw/zh-cn_image_0000002765133168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/kdrNN47sTTm_dyV4XMZyPg/zh-cn_image_0000002767861966.png)
 
 **2. 添加依赖**
 
@@ -298,7 +298,7 @@ content_hash: sha256:8088481a03a4750f7747a964a87cc7ff878602685c2dd81f52ba7428459
        }
        // 获取rawfile的描述符RawFileDescriptor {fd, offset, length}
        RawFileDescriptor descriptor;
-       OH_ResourceManager_GetRawFileDescriptor(rawFile, descriptor);
+       OH_ResourceManager_GetRawFileDescriptorData(rawFile, &descriptor);
        // 关闭打开的指针对象
        OH_ResourceManager_CloseRawFile(rawFile);
        OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);

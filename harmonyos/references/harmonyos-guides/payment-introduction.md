@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-intro
 title: Payment Kit简介
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:38+08:00
+scraped_at: 2026-10-22T07:05:54+08:00
 doc_updated_at: 2026-06-13
-content_hash: sha256:4f3ba9df0ceea2477a28a150fc7431d3a47a9f989fc639c29e751bc0b7476728
+content_hash: sha256:f8a2a3ba987975c234fbb8686a8a2110d0d006871bbe1e7b6a9d5591c5ab7093
 ---
 
 Payment Kit（鸿蒙支付服务）提供了方便、安全和快捷的支付方式，助力开发者在商户应用/元服务中快速实现支付功能。
@@ -83,23 +83,23 @@ Payment Kit支持的支付能力如下：
 
 华为支付接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/hCXUKGmaREm2NqCPEuMlJA/zh-cn_image_0000002794491363.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/8BKzoBHpSeaZ9TsUS7CvJQ/zh-cn_image_0000002797181553.png)
 
 [数字人民币支付](payment-digital-cny-pay.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/7lDgezmeRfCx-79e_s1Vcw/zh-cn_image_0000002794411585.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/vT6mjRpjRfq90arxFja3LA/zh-cn_image_0000002768021574.png)
 
 通用收银台[混合支付场景](payment-common-pay-mix.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/jr91SzTDQyKtODO3YukVXg/zh-cn_image_0000002764972864.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Jf7R26jSQWiGOTUHrMtwVg/zh-cn_image_0000002797301523.png)
 
 通用收银台[纯外部支付场景](payment-common-pay-external.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/J6Ld5T-rRgadPj0hHQgZ4Q/zh-cn_image_0000002765132790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/amVI2LdNRiSzYXuS5pW1XQ/zh-cn_image_0000002767861592.png)
 
 用户身份验证服务、人脸核身实人验证接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/mpoBruEuRKms3sbAkmx_DA/zh-cn_image_0000002794491365.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/TbBPVILXT86vEBO5ugzYcA/zh-cn_image_0000002797181555.png)
 
 ## 约束与限制
 

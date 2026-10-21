@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-long-sc
 title: 长截图
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 长截图
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:16+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:853cfaae571435d0be6cbf21be0acc4bfef74002c36f696b59a25df30e78ddc1
+scraped_at: 2026-10-22T07:04:46+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:12fef21bd42f0ae80734fbf0dd89c1537510dcad15ea102e03806b1f82eb7701
 ---
 
 ## 概述
 
 在移动应用中，标准的截图方法仅能捕捉当前屏幕显示的内容，对于超出屏幕可视区域的长页面或文档而言，这种方式显得不够便捷。当用户截图分享和保存（如聊天记录、网页文章、活动海报等）的内容较长的时候，需要用户多次截图来保证内容完整性。为了解决这一问题，本文将介绍长截图功能，使用户能够一键截取整个页面的长图，更轻松地分享和保存信息。
 
-长截图功能适用于支持滚动的UI组件，比如List组件、Scroll组件、Web组件等。本文将以List组件为例来介绍长截图功能的开发，通过控制器[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)，结合UIContext的[getComponentSnapshot().get()](../harmonyos-references/arkts-apis-uicontext-componentsnapshot.md#get12-1)方法，实现长截图功能。
+长截图功能适用于支持滚动的UI组件，比如List组件、Scroll组件、Web组件等。本文将以List组件为例来介绍长截图功能的开发，通过控制器[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)，结合UIContext的getComponentSnapshot().[get()](../harmonyos-references/arkts-apis-uicontext-componentsnapshot.md#get12-1)方法，实现长截图功能。
 
 ## 实现原理
 
@@ -22,13 +22,13 @@ List组件可以通过模拟用户滚动行为，然后使用getComponentSnapsho
 
 **图 1** 长截图拼接原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/qtMkDrXfSZm0N9cC4u6_AQ/zh-cn_image_0000002794490151.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/B4DRM0U3Q4a5hOp6L1StrQ/zh-cn_image_0000002797180345.png)
 
 长截图主要流程如下：
 
 **图 2** 滚动长截图流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/VXkahFzUTo-pE-rPuFlF-w/zh-cn_image_0000002794410367.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ay5d61zrRXKTpaxFJG_uiw/zh-cn_image_0000002768020366.png)
 
 **说明** 
 
@@ -48,112 +48,141 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“一键截图”，会生成整个列表的长截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/6U1V6RZcR_ufe1n3VTb8IA/zh-cn_image_0000002764971650.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/f_YxuNGAROW7BwWmrQHadg/zh-cn_image_0000002797300315.gif)
 
 **开发流程**
 
 1. 给List绑定滚动控制器，添加监听事件。
 
    1. 为List滚动组件绑定[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)控制器，以控制其滚动行为，并给List组件绑定自定义的id。
-   2. 通过[onDidScroll](../harmonyos-references/ts-container-scroll.md#ondidscroll12)()方法实时监听并获取滚动偏移量，确保截图拼接位置的准确性。
-   3. 同时，利用[onAreaChange](../harmonyos-references/ts-universal-component-area-change-event.md#onareachange)()事件获取List组件的尺寸，以便精确计算截图区域的大小。
+   2. 通过[onDidScroll()](../harmonyos-references/ts-container-scroll.md#ondidscroll12)方法实时监听并获取滚动偏移量，确保截图拼接位置的准确性。
+   3. 同时，利用[onAreaChange()](../harmonyos-references/ts-universal-component-area-change-event.md#onareachange)事件获取List组件的尺寸，以便精确计算截图区域的大小。
 
-   ```ts
-   @Component
-   export struct ScrollSnapshot {
-     private scroller: Scroller = new Scroller();
-     private listComponentWidth: number = 0;
-     private listComponentHeight: number = 0;
-     private curYOffset: number = 0;
-     private scrollHeight: number = 0;
-     // ...
-     build() {
-       // ...
-           Stack() {
-             // ...
-             List({
-               space: 12,
-               scroller: this.scroller
-             })
-             // ...
-             .id(LIST_ID)
-             .onDidScroll(() => {
-               this.curYOffset = this.scroller.currentOffset().yOffset;
-             })
-             .onAreaChange((oldValue, newValue) => {
-               this.listComponentWidth = newValue.width as number;
-               this.listComponentHeight = newValue.height as number;
-               this.scrollHeight = this.listComponentHeight;
-             })
-             .onClick(() => {
-               if (!this.isEnableScroll) {
-                 this.scroller.scrollBy(0, 0);
-                 this.isClickStop = true;
-               }
-             })
-           }
-           .width('100%')
-           .layoutWeight(1)
-           .padding({
-             left: 16,
-             right: 16,
-             top: 16
-           })
-           .bindContentCover($$this.isShowPreview, this.previewWindowComponent(),
-             {
-               modalTransition: ModalTransition.NONE,
-               onWillDismiss: (action: DismissContentCoverAction) => {
-                 if (action.reason === DismissReason.PRESS_BACK) {
-                   Logger.info('BindContentCover dismiss reason is back pressed');
-                 }
-               }
-             })
-
-           Row({ space: 12 }) {
-             Button($r('app.string.one_click_snapshot'))
-               .layoutWeight(1)
-               .onClick(() => {
-                 this.onceSnapshot();
-               })
-             Button($r('app.string.scroll_snapshot'))
-               .layoutWeight(1)
-               .onClick(() => {
-                 if (this.scrollYOffsets.length === 0) {
-                   this.scrollSnapshot();
-                 }
-               })
-           }
-           .width('100%')
-           .padding({
-             left: 16,
-             right: 16,
-             bottom: (AppStorage.get<number>('naviIndicatorHeight') ?? 0) + 16,
-             top: 12
-           })
-         }
-       }
-       .title($r('app.string.title_scroll_snapshot'))
-       .backgroundColor($r('sys.color.background_secondary'))
-     }
-   }
-   ```
+      ```typescript
+      @ComponentV2
+      export struct ScrollSnapshot {
+        @Local sizeInfo: WindowSizeInfo =
+          AppStorageV2.connect(WindowSizeInfo, 'windowSizeInfo', () => new WindowSizeInfo()) ?? new WindowSizeInfo();
+        // 截图过程中覆盖组件的遮罩图
+        @Local componentMaskImage: PixelMap | undefined = undefined;
+        // 是否点击停止滚动
+        @Local isEnableScroll: boolean = true;
+        // 是否显示预览窗口
+        @Local isShowPreview: boolean = false;
+        // 拼接后的长图
+        @Local mergedImage: PixelMap | undefined = undefined;
+        // 滚动控制器
+        private scroller: Scroller = new Scroller();
+        private listComponentWidth: number = 0;
+        private listComponentHeight: number = 0;
+        // List组件的当前偏移量
+        private curYOffset: number = 0;
+        private scrollHeight: number = 0;
+        // ...
+        build() {
+          // ...
+              Stack() {
+                // ...
+                List({
+                  space: 12,
+                  scroller: this.scroller
+                })
+                // ...
+                .id(LIST_ID)
+                .onDidScroll(() => {
+                  this.curYOffset = this.scroller.currentOffset().yOffset;
+                })
+                .onAreaChange((oldValue, newValue) => {
+                  this.listComponentWidth = newValue.width as number;
+                  this.listComponentHeight = newValue.height as number;
+                  this.scrollHeight = this.listComponentHeight;
+                })
+                .onClick(() => {
+                  // 点击列表停止滚动
+                  if (!this.isEnableScroll) {
+                    this.scroller.scrollBy(0, 0);
+                    this.isClickStop = true;
+                  }
+                })
+              }
+              .width('100%')
+              .layoutWeight(1)
+              .padding({
+                left: 16,
+                right: 16,
+                top: 16
+              })
+              .bindContentCover(this.isShowPreview!!, this.previewWindowComponent(),
+                {
+                  modalTransition: ModalTransition.NONE,
+                  onWillDismiss: (action: DismissContentCoverAction) => {
+                    if (action.reason === DismissReason.PRESS_BACK) {
+                      Logger.info('BindContentCover dismiss reason is back pressed');
+                    }
+                  }
+                })
+              Row({ space: 12 }) {
+                Button($r('app.string.one_click_snapshot'))
+                  .layoutWeight(1)
+                  .onClick(() => {
+                    this.onceSnapshot();
+                  })
+                Button($r('app.string.scroll_snapshot'))
+                  .layoutWeight(1)
+                  .onClick(() => {
+                    // 防止用户在截图过程中点击按钮
+                    // 导致方法被重复调用而产生异常
+                    if (this.scrollYOffsets.length === 0) {
+                      this.scrollSnapshot();
+                    }
+                  })
+              }
+              .width('100%')
+              .padding({
+                left: 16,
+                right: 16,
+                bottom: this.sizeInfo.naviIndicatorHeight + 16,
+                top: 12
+              })
+            }
+          }
+          .title($r('app.string.title_scroll_snapshot'))
+          .backgroundColor($r('sys.color.background_secondary'))
+        }
+      }
+      ```
 2. 给List添加遮罩图，初始化滚动位置。
 
    “一键截图”功能确保在滚动截图过程中用户不会察觉到页面的滚动。通过截取当前屏幕生成遮罩图覆盖列表，并记录此时的滚动偏移量（yOffsetBefore），便于后续完成滚动截图之后，恢复到之前记录的偏移量，使用户无感知页面变化。
 
    为保证截图的完整性，设置完遮罩图后，同样利用scrollTo()方法将列表暂时滚至顶部，确保截图从最顶端开始。
 
-   ```ts
-   @Component
+   ```typescript
+   @ComponentV2
    export struct ScrollSnapshot {
+     @Local sizeInfo: WindowSizeInfo =
+       AppStorageV2.connect(WindowSizeInfo, 'windowSizeInfo', () => new WindowSizeInfo()) ?? new WindowSizeInfo();
+     // 截图过程中覆盖组件的遮罩图
+     @Local componentMaskImage: PixelMap | undefined = undefined;
+     // 是否点击停止滚动
+     @Local isEnableScroll: boolean = true;
+     // 是否显示预览窗口
+     @Local isShowPreview: boolean = false;
+     // 拼接后的长图
+     @Local mergedImage: PixelMap | undefined = undefined;
+     // 滚动控制器
      private scroller: Scroller = new Scroller();
      private listComponentWidth: number = 0;
      private listComponentHeight: number = 0;
+     // List组件的当前偏移量
      private curYOffset: number = 0;
      private scrollHeight: number = 0;
-     @State componentMaskImage: PixelMap | undefined = undefined;
+     // 截图前备份的组件位置
      private yOffsetBefore: number = 0;
      // ...
+     /**
+      * 一键截图
+      */
      async onceSnapshot() {
        await this.beforeSnapshot();
        await this.snapAndMerge();
@@ -161,72 +190,17 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
        // ...
      }
 
-     async scrollSnapshot() {
-       this.isEnableScroll = false;
-       this.yOffsetBefore = this.curYOffset;
-       await this.scrollSnapAndMerge();
-       this.isShowPreview = true;
-       await this.afterGeneratorImage();
-       this.isEnableScroll = true;
-       this.isClickStop = false;
-     }
-
-     async snapAndMerge() {
-       try {
-         this.scrollYOffsets.push(this.curYOffset);
-         const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
-         let area: image.PositionArea =
-           await ImageUtils.getSnapshotArea(this.getUIContext(), pixelMap, this.scrollYOffsets, this.listComponentWidth,
-             this.listComponentHeight);
-         this.areaArray.push(area);
-         if (!this.scroller.isAtEnd()) {
-           CommonUtils.scrollAnimation(this.scroller, 200, this.scrollHeight);
-           await CommonUtils.sleep(200)
-           await this.snapAndMerge();
-         } else {
-           this.mergedImage =
-             await ImageUtils.mergeImage(this.getUIContext(), this.areaArray,
-               this.scrollYOffsets[this.scrollYOffsets.length - 1],this.listComponentHeight);
-         }
-       } catch (err) {
-         let error = err as BusinessError;
-         Logger.error(TAG, `snapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
-       }
-     }
-
-     async scrollSnapAndMerge() {
-       try {
-         this.scrollYOffsets.push(this.curYOffset - this.yOffsetBefore);
-         const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
-         let area: image.PositionArea =
-           await ImageUtils.getSnapshotArea(this.getUIContext(), pixelMap, this.scrollYOffsets, this.listComponentWidth,
-             this.listComponentHeight)
-         this.areaArray.push(area);
-
-         if (!this.scroller.isAtEnd() && !this.isClickStop) {
-           CommonUtils.scrollAnimation(this.scroller, 1000, this.scrollHeight);
-           await CommonUtils.sleep(1500);
-           await this.scrollSnapAndMerge();
-         } else {
-           this.mergedImage =
-             await ImageUtils.mergeImage(this.getUIContext(), this.areaArray,
-               this.scrollYOffsets[this.scrollYOffsets.length - 1], this.listComponentHeight);
-         }
-       } catch (err) {
-         let error = err as BusinessError;
-         Logger.error(TAG, `scrollSnapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
-       }
-     }
+     // ...
 
      async beforeSnapshot() {
        try {
          this.yOffsetBefore = this.curYOffset;
+         // 对已加载的List组件截图，作为List组件的封面图
          this.componentMaskImage = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
          this.scroller.scrollTo({
            xOffset: 0,
            yOffset: 0,
-           animation:
-           {
+           animation: {
              duration: 200
            }
          });
@@ -250,25 +224,18 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
      }
 
      async afterGeneratorImage() {
+       // 延时用于过渡动画
        await CommonUtils.sleep(200);
        this.componentMaskImage = undefined;
        this.scrollYOffsets.length = 0;
        this.areaArray.length = 0;
      }
-
-     @Builder
-     previewWindowComponent() {
-       Column() {
-         SnapshotPreview({
-           mergedImage: $mergedImage,
-           isShowPreview: $isShowPreview
-         })
-       }
-     }
-
+     // ...
      build() {
        // ...
            Stack() {
+             // 截图过程的遮罩层，防止用户察觉到屏幕快速滑动
+             // 提升用户体验
              if (this.componentMaskImage) {
                Image(this.componentMaskImage)
                // ...
@@ -288,160 +255,158 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
                this.scrollHeight = this.listComponentHeight;
              })
              .onClick(() => {
+               // 点击列表停止滚动
                if (!this.isEnableScroll) {
                  this.scroller.scrollBy(0, 0);
                  this.isClickStop = true;
                }
              })
            }
-           .width('100%')
-           .layoutWeight(1)
-           .padding({
-             left: 16,
-             right: 16,
-             top: 16
-           })
-           .bindContentCover($$this.isShowPreview, this.previewWindowComponent(),
-             {
-               modalTransition: ModalTransition.NONE,
-               onWillDismiss: (action: DismissContentCoverAction) => {
-                 if (action.reason === DismissReason.PRESS_BACK) {
-                   Logger.info('BindContentCover dismiss reason is back pressed');
-                 }
-               }
-             })
-
-           Row({ space: 12 }) {
-             Button($r('app.string.one_click_snapshot'))
-               .layoutWeight(1)
-               .onClick(() => {
-                 this.onceSnapshot();
-               })
-             Button($r('app.string.scroll_snapshot'))
-               .layoutWeight(1)
-               .onClick(() => {
-                 if (this.scrollYOffsets.length === 0) {
-                   this.scrollSnapshot();
-                 }
-               })
-           }
-           .width('100%')
-           .padding({
-             left: 16,
-             right: 16,
-             bottom: (AppStorage.get<number>('naviIndicatorHeight') ?? 0) + 16,
-             top: 12
-           })
-         }
-       }
-       .title($r('app.string.title_scroll_snapshot'))
-       .backgroundColor($r('sys.color.background_secondary'))
+           // ...
      }
    }
    ```
 3. 循环滚动截图，裁剪和缓存截图数据。
 
-   1. 记录每次滚动的位置到数组scrollYOffsets中，并使用componentSnapshot.get(LIST\_ID) 方法获取当前画面的截图。
+   1. 记录每次滚动的位置到数组scrollYOffsets中，并使用componentSnapshot.get(LIST\_ID)方法获取当前画面的截图。
    2. 如果非首次截图，则使用[crop](../harmonyos-references/arkts-apis-image-pixelmap.md#crop9)方法截取从底部滚动进来的区域，然后调用pixmap.readPixelsSync(area)方法将截图数据读取到缓冲区域area中，并将area通过集合进行保存，用于后续截图拼接。
    3. 如果页面没有滚动到底部，继续滚动，继续递归调用snapAndMerge()方法进行截图；如果到达底部，则调用mergeImage()方法拼接所有收集到的图像片段，生成完整的长截图；同时还需限制截图的高度，以防过大的截图占用过多内存，影响应用性能，例如这里设置截长截图高度不超过5000。
 
-   ```ts
-   async snapAndMerge() {
-     try {
-       this.scrollYOffsets.push(this.curYOffset);
-       const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
-       let area: image.PositionArea =
-         await ImageUtils.getSnapshotArea(this.getUIContext(), pixelMap, this.scrollYOffsets, this.listComponentWidth,
-           this.listComponentHeight);
-       this.areaArray.push(area);
-       if (!this.scroller.isAtEnd()) {
-         CommonUtils.scrollAnimation(this.scroller, 200, this.scrollHeight);
-         await CommonUtils.sleep(200)
-         await this.snapAndMerge();
-       } else {
-         this.mergedImage =
-           await ImageUtils.mergeImage(this.getUIContext(), this.areaArray,
-             this.scrollYOffsets[this.scrollYOffsets.length - 1],this.listComponentHeight);
-       }
-     } catch (err) {
-       let error = err as BusinessError;
-       Logger.error(TAG, `snapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
-     }
-   }
-   ```
+      ```typescript
+      /**
+       * 一键截图循环遍历截图并合并
+       */
+      async snapAndMerge() {
+        try {
+          this.scrollYOffsets.push(this.curYOffset);
+          // 调用组件截图接口获取当前截图
+          const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
+          // 获取图像像素每行的字节数
+          let area: image.PositionArea =
+            await ImageUtils.getSnapshotArea(this.getUIContext(), pixelMap, this.scrollYOffsets, this.listComponentWidth,
+              this.listComponentHeight);
+          this.areaArray.push(area);
+          // 循环过程中判断是否已到达底部
+          if (!this.scroller.isAtEnd()) {
+            CommonUtils.scrollAnimation(this.scroller, 200, this.scrollHeight);
+            await CommonUtils.sleep(200);
+            await this.snapAndMerge();
+          } else {
+            this.mergedImage =
+              await ImageUtils.mergeImage(this.getUIContext(), this.areaArray,
+                this.scrollYOffsets[this.scrollYOffsets.length - 1], this.listComponentHeight);
+          }
+        } catch (err) {
+          let error = err as BusinessError;
+          Logger.error(TAG, `snapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
+        }
+      }
+      ```
 
-   ```ts
-   static async getSnapshotArea(uiContext: UIContext, pixelMap: PixelMap, scrollYOffsets: number[], listWidth: number,
-     listHeight: number): Promise<image.PositionArea> {
-     let stride = pixelMap.getBytesNumberPerRow();
-     let bytesNumber = pixelMap.getPixelBytesNumber();
-     let buffer: ArrayBuffer = new ArrayBuffer(bytesNumber);
-     let len = scrollYOffsets.length;
+      ```typescript
+      /**
+       * 将截图的PixelMap对象读取到缓冲区
+       * @param {PixelMap} pixelMap - 截图的PixelMap
+       * @param {number[]} scrollYOffsets - 组件滚动的y轴偏移量数组
+       * @param {number} listWidth - List组件宽度
+       * @param {number} listHeight - List组件高度
+       * @returns {image.PositionArea} 图片缓冲区
+       */
+      static async getSnapshotArea(uiContext: UIContext, pixelMap: PixelMap, scrollYOffsets: number[], listWidth: number,
+        listHeight: number): Promise<image.PositionArea> {
+        // 获取图像像素每行的字节数
+        let stride = pixelMap.getBytesNumberPerRow();
+        // 获取图像像素的总字节数
+        let bytesNumber = pixelMap.getPixelBytesNumber();
+        let buffer: ArrayBuffer = new ArrayBuffer(bytesNumber);
+        // 区域大小，按区域读取。PositionArea表示图像指定区域内的数据。
+        let len = scrollYOffsets.length;
 
-     if (scrollYOffsets.length >= 2) {
-       let realScrollHeight = scrollYOffsets[len-1] - scrollYOffsets[len-2];
-       if (listHeight - realScrollHeight > 0) {
-         let cropRegion: image.Region = {
-           x: 0,
-           y: uiContext.vp2px(listHeight - realScrollHeight),
-           size: {
-             height: uiContext.vp2px(realScrollHeight),
-             width: uiContext.vp2px(listWidth)
-           }
-         };
-         await pixelMap.crop(cropRegion);
-       }
-     }
+        // 除第一次截图不需要裁剪外，其余需要裁剪新增部分
+        if (scrollYOffsets.length >= 2) {
+          // 实际滚动距离
+          let realScrollHeight = scrollYOffsets[len - 1] - scrollYOffsets[len - 2];
+          Logger.info(TAG, `getSnapshotArea: realScrollHeight=${realScrollHeight}, listHeight=${listHeight}`);
+          if (realScrollHeight > 0 && listHeight - realScrollHeight > 0) {
+            let cropRegion: image.Region = {
+              x: 0,
+              y: Math.ceil(uiContext.vp2px(listHeight - realScrollHeight)),
+              size: {
+                height: uiContext.vp2px(realScrollHeight),
+                width: uiContext.vp2px(listWidth)
+              }
+            };
+            // 裁剪滚动区域
+            try {
+              await pixelMap.crop(cropRegion);
+            } catch (err) {
+              let error = err as BusinessError;
+              Logger.error(TAG, `crop err, code: ${error.code}, message: ${error.message}`);
+            }
+          }
+        }
 
-     let area: image.PositionArea = {
-       pixels: buffer,
-       offset: 0,
-       stride: stride,
-       region: {
-         size: {
-           width: 0,
-           height: 0
-         },
-         x: 0,
-         y: 0
-       }
-     }
+        let area: image.PositionArea = {
+          pixels: buffer,
+          offset: 0,
+          stride: stride,
+          region: {
+            size: {
+              width: 0,
+              height: 0
+            },
+            x: 0,
+            y: 0
+          }
+        }
 
-     try {
-       let imgInfo = pixelMap.getImageInfoSync();
-       area = {
-         pixels: buffer,
-         offset: 0,
-         stride: stride,
-         region: {
-           size: {
-             width: imgInfo.size.width,
-             height: imgInfo.size.height
-           },
-           x: 0,
-           y: 0
-         }
-       }
-       pixelMap.readPixelsSync(area);
-     } catch (err) {
-       let error = err as BusinessError;
-       Logger.error(TAG, `getSnapshotArea err, code: ${error.code}, message: ${error.message}`);
-     }
-     return area;
-   }
-   ```
+        try {
+          let imgInfo = pixelMap.getImageInfoSync();
+          // 区域大小，按区域读取。PositionArea表示图像指定区域内的数据。
+          area = {
+            pixels: buffer,
+            offset: 0,
+            stride: stride,
+            region: {
+              size: {
+                width: imgInfo.size.width,
+                height: imgInfo.size.height
+              },
+              x: 0,
+              y: 0
+            }
+          }
+          // 将数据写入指定区域
+          pixelMap.readPixelsSync(area);
+        } catch (err) {
+          let error = err as BusinessError;
+          Logger.error(TAG, `getSnapshotArea err, code: ${error.code}, message: ${error.message}`);
+        }
+        return area;
+      }
+      ```
 4. 拼接截图片段。
 
-   使用image.createPixelMapSync()方法创建长截图longPixelMap，并遍历之前保存的图像片段数据 (this.areaArray)，构建image.PositionArea对象area，然后调用longPixelMap.writePixelsSync(area) 方法将这些片段逐个写入到正确的位置，从而拼接成一个完整的长截图。
+   使用image.createPixelMapSync()方法创建长截图longPixelMap，并遍历之前保存的图像片段数据(this.areaArray)，构建image.PositionArea对象area，然后调用longPixelMap.writePixelsSync(area)方法将这些片段逐个写入到正确的位置，从而拼接成一个完整的长截图。
 
-   ```ts
+   ```typescript
+   /**
+    * 将图片区域数组合并为长截图
+    * @param {image.PositionArea[]} areaArray - 截图区域
+    * @param {number} lastOffsetY - 最后一次截图的Y轴偏移量
+    * @param {number} listWidth - List组件宽度
+    * @param {number} listHeight - List组件高度
+    * @returns {PixelMap} 合并后的长图
+    */
    static async mergeImage(uiContext: UIContext, areaArray: image.PositionArea[], lastOffsetY: number,
      listHeight: number): Promise<PixelMap> {
+     // 创建长截图PixelMap
      let opts: image.InitializationOptions = {
        editable: true,
-       pixelFormat: 4,
+       pixelFormat: PIXEL_FORMAT_RGBA_8888,
        size: {
-         width:  ImageUtils.getMaxAreaWidth(areaArray),
+         // 需要确保PixelMap的宽度大于区域的宽度
+         width: ImageUtils.getMaxAreaWidth(areaArray),
          height: uiContext.vp2px(lastOffsetY + listHeight)
        }
      };
@@ -490,7 +455,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
    ```
 6. 使用安全控件SaveButton保存截图相册。
 
-   通过安全控件[SaveButton](../harmonyos-references/ts-security-components-savebutton.md)结合[photoAccessHelper](../harmonyos-references/js-apis-photoaccesshelper.md)模块保存截图到相册。
+   通过安全控件[SaveButton](../harmonyos-references/ts-security-components-savebutton.md)结合[@ohos.file.photoAccessHelper (相册管理模块)](../harmonyos-references/js-apis-photoaccesshelper.md)保存截图到相册。
 
    ```ts
    SaveButton({
@@ -504,12 +469,17 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
      })
    ```
 
-   ```ts
+   ```typescript
+   /**
+    * 将图片保存到相册
+    * @param {SaveButtonOnClickResult} result - 安全控件返回的结果
+    */
    async saveSnapshot(result: SaveButtonOnClickResult): Promise<void> {
      try {
        if (result === SaveButtonOnClickResult.SUCCESS) {
          const helper = photoAccessHelper.getPhotoAccessHelper(this.context);
          const uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'png');
+         // 以URI打开文件以连续写入内容
          const file = await fileIo.open(uri, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
          const imagePackerApi: image.ImagePacker = image.createImagePacker();
          const packOpts: image.PackingOption = {
@@ -546,7 +516,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“滚动截图”按钮后，列表将自动滚动。点击列表中的任意条目时，滚动会立即停止，并开始截取从滚动开始到停止这段时间内的数据截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/jZJtX1K5QDi6k-m796Evag/zh-cn_image_0000002765131576.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/d2rmzCf6Qb2OED49IS5rsw/zh-cn_image_0000002767860382.gif)
 
 **功能实现**
 
@@ -556,64 +526,44 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
    当准备开始截图时，将isEnableScroll设置为false以禁用滚动交互。而当用户点击列表项以确定截图结束位置时，使用scroller.scrollBy(0, 0)方法确保列表立即停止滑动。
 
-   ```ts
-   @Component
+   ```typescript
+   @ComponentV2
    export struct ScrollSnapshot {
-     private scroller: Scroller = new Scroller();
-     private listComponentWidth: number = 0;
-     private listComponentHeight: number = 0;
-     private curYOffset: number = 0;
-     private scrollHeight: number = 0;
-     @State componentMaskImage: PixelMap | undefined = undefined;
-     private yOffsetBefore: number = 0;
-     private isClickStop: boolean = false;
-     @State isEnableScroll: boolean = true;
      // ...
+     /**
+      * 滚动截图
+      */
      async scrollSnapshot() {
+       // 截图过程中设置列表不可手动滚动
+       // 以避免对截图造成干扰
        this.isEnableScroll = false;
+       // 保存组件当前位置以便恢复
        this.yOffsetBefore = this.curYOffset;
+       // 设置提示弹窗居中
        await this.scrollSnapAndMerge();
        // ...
        this.isEnableScroll = true;
        this.isClickStop = false;
      }
 
+     /**
+      * 一键截图循环遍历截图并合并
+      */
      async snapAndMerge() {
        try {
          this.scrollYOffsets.push(this.curYOffset);
+         // 调用组件截图接口获取当前截图
          const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
+         // 获取图像像素每行的字节数
          let area: image.PositionArea =
            await ImageUtils.getSnapshotArea(this.getUIContext(), pixelMap, this.scrollYOffsets, this.listComponentWidth,
              this.listComponentHeight);
          this.areaArray.push(area);
+         // 循环过程中判断是否已到达底部
          if (!this.scroller.isAtEnd()) {
            CommonUtils.scrollAnimation(this.scroller, 200, this.scrollHeight);
-           await CommonUtils.sleep(200)
+           await CommonUtils.sleep(200);
            await this.snapAndMerge();
-         } else {
-           this.mergedImage =
-             await ImageUtils.mergeImage(this.getUIContext(), this.areaArray,
-               this.scrollYOffsets[this.scrollYOffsets.length - 1],this.listComponentHeight);
-         }
-       } catch (err) {
-         let error = err as BusinessError;
-         Logger.error(TAG, `snapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
-       }
-     }
-
-     async scrollSnapAndMerge() {
-       try {
-         this.scrollYOffsets.push(this.curYOffset - this.yOffsetBefore);
-         const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
-         let area: image.PositionArea =
-           await ImageUtils.getSnapshotArea(this.getUIContext(), pixelMap, this.scrollYOffsets, this.listComponentWidth,
-             this.listComponentHeight)
-         this.areaArray.push(area);
-
-         if (!this.scroller.isAtEnd() && !this.isClickStop) {
-           CommonUtils.scrollAnimation(this.scroller, 1000, this.scrollHeight);
-           await CommonUtils.sleep(1500);
-           await this.scrollSnapAndMerge();
          } else {
            this.mergedImage =
              await ImageUtils.mergeImage(this.getUIContext(), this.areaArray,
@@ -621,23 +571,63 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
          }
        } catch (err) {
          let error = err as BusinessError;
-         Logger.error(TAG, `scrollSnapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
+         Logger.error(TAG, `snapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
+       }
+     }
+
+     /**
+      * 滚动截图，循环遍历截图并合并
+      */
+     async scrollSnapAndMerge() {
+       try {
+         // 记录滚动偏移量数组
+         this.scrollYOffsets.push(this.curYOffset - this.yOffsetBefore);
+         Logger.info(TAG, `scrollSnapAndMerge: curYOffset=${this.curYOffset}, yOffsetBefore=${this.yOffsetBefore}, isAtEnd=${this.scroller.isAtEnd()}, scrollHeight=${this.scrollHeight}`);
+         // 调用截图接口获取当前截图
+         const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
+         if (!pixelMap) {
+           Logger.error(TAG, 'scrollSnapAndMerge: component snapshot is null');
+           return;
+         }
+         // 获取图像像素每行的字节数
+         let area: image.PositionArea =
+           await ImageUtils.getSnapshotArea(this.getUIContext(), pixelMap, this.scrollYOffsets, this.listComponentWidth,
+             this.listComponentHeight);
+         this.areaArray.push(area);
+
+         // 循环过程中判断是否到达底部，且用户未停止截图
+         if (!this.scroller.isAtEnd() && !this.isClickStop) {
+           // 未滚动到底部，滚动到下一页
+           CommonUtils.scrollAnimation(this.scroller, 1000, this.scrollHeight);
+           await CommonUtils.sleep(1500);
+           await this.scrollSnapAndMerge();
+         } else {
+           // 滚动到底部后，将每轮滚动获得的缓冲区拼接
+           // 生成一张长截图
+           this.mergedImage =
+             await ImageUtils.mergeImage(this.getUIContext(), this.areaArray,
+               this.scrollYOffsets[this.scrollYOffsets.length - 1], this.listComponentHeight);
+         }
+       } catch (err) {
+         let error = err as BusinessError;
+         Logger.error(TAG, `scrollSnapAndMerge err, errCode: ${error.code}, message: ${error.message}, stack: ${error.stack ?? ''}`);
        }
      }
 
      async beforeSnapshot() {
        try {
          this.yOffsetBefore = this.curYOffset;
+         // 对已加载的List组件截图，作为List组件的封面图
          this.componentMaskImage = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
          this.scroller.scrollTo({
            xOffset: 0,
            yOffset: 0,
-           animation:
-           {
+           animation: {
              duration: 200
            }
          });
          this.isShowPreview = true;
+         // 延时确保滚动已到达顶部
          await CommonUtils.sleep(200);
        } catch (err) {
          let error = err as BusinessError;
@@ -657,6 +647,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
      }
 
      async afterGeneratorImage() {
+       // 延时用于过渡动画
        await CommonUtils.sleep(200);
        this.componentMaskImage = undefined;
        this.scrollYOffsets.length = 0;
@@ -667,12 +658,13 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
      previewWindowComponent() {
        Column() {
          SnapshotPreview({
-           mergedImage: $mergedImage,
-           isShowPreview: $isShowPreview
+           mergedImage: this.mergedImage,
+           onMergedImageChange: (value: PixelMap | undefined) => { this.mergedImage = value; },
+           isShowPreview: this.isShowPreview,
+           onIsShowPreviewChange: (value: boolean) => { this.isShowPreview = value; }
          })
        }
      }
-
      build() {
        // ...
              List({
@@ -690,6 +682,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
                this.scrollHeight = this.listComponentHeight;
              })
              .onClick(() => {
+               // 点击列表停止滚动
                if (!this.isEnableScroll) {
                  this.scroller.scrollBy(0, 0);
                  this.isClickStop = true;
@@ -703,7 +696,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
              right: 16,
              top: 16
            })
-           .bindContentCover($$this.isShowPreview, this.previewWindowComponent(),
+           .bindContentCover(this.isShowPreview!!, this.previewWindowComponent(),
              {
                modalTransition: ModalTransition.NONE,
                onWillDismiss: (action: DismissContentCoverAction) => {
@@ -712,59 +705,49 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
                  }
                }
              })
-
-           Row({ space: 12 }) {
-             Button($r('app.string.one_click_snapshot'))
-               .layoutWeight(1)
-               .onClick(() => {
-                 this.onceSnapshot();
-               })
-             Button($r('app.string.scroll_snapshot'))
-               .layoutWeight(1)
-               .onClick(() => {
-                 if (this.scrollYOffsets.length === 0) {
-                   this.scrollSnapshot();
-                 }
-               })
-           }
-           .width('100%')
-           .padding({
-             left: 16,
-             right: 16,
-             bottom: (AppStorage.get<number>('naviIndicatorHeight') ?? 0) + 16,
-             top: 12
-           })
-         }
-       }
-       .title($r('app.string.title_scroll_snapshot'))
-       .backgroundColor($r('sys.color.background_secondary'))
+           // ...
      }
    }
    ```
 2. “滚动截图”功能依据当前坐标启动截图过程，因此在记录滚动偏移量时，通过this.curYOffset - this.yOffsetBefore来计算相对于初始位置的变化。
 
-   ```ts
+   ```typescript
+   /**
+    * 滚动截图，循环遍历截图并合并
+    */
    async scrollSnapAndMerge() {
      try {
+       // 记录滚动偏移量数组
        this.scrollYOffsets.push(this.curYOffset - this.yOffsetBefore);
+       Logger.info(TAG, `scrollSnapAndMerge: curYOffset=${this.curYOffset}, yOffsetBefore=${this.yOffsetBefore}, isAtEnd=${this.scroller.isAtEnd()}, scrollHeight=${this.scrollHeight}`);
+       // 调用截图接口获取当前截图
        const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
+       if (!pixelMap) {
+         Logger.error(TAG, 'scrollSnapAndMerge: component snapshot is null');
+         return;
+       }
+       // 获取图像像素每行的字节数
        let area: image.PositionArea =
          await ImageUtils.getSnapshotArea(this.getUIContext(), pixelMap, this.scrollYOffsets, this.listComponentWidth,
-           this.listComponentHeight)
+           this.listComponentHeight);
        this.areaArray.push(area);
 
+       // 循环过程中判断是否到达底部，且用户未停止截图
        if (!this.scroller.isAtEnd() && !this.isClickStop) {
+         // 未滚动到底部，滚动到下一页
          CommonUtils.scrollAnimation(this.scroller, 1000, this.scrollHeight);
          await CommonUtils.sleep(1500);
          await this.scrollSnapAndMerge();
        } else {
+         // 滚动到底部后，将每轮滚动获得的缓冲区拼接
+         // 生成一张长截图
          this.mergedImage =
            await ImageUtils.mergeImage(this.getUIContext(), this.areaArray,
              this.scrollYOffsets[this.scrollYOffsets.length - 1], this.listComponentHeight);
        }
      } catch (err) {
        let error = err as BusinessError;
-       Logger.error(TAG, `scrollSnapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
+       Logger.error(TAG, `scrollSnapAndMerge err, errCode: ${error.code}, message: ${error.message}, stack: ${error.stack ?? ''}`);
      }
    }
    ```

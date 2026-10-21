@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 平面识别介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面识别 > 平面识别介绍
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:15+08:00
+scraped_at: 2026-10-22T07:05:35+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:92ea2815aa9fa78735ba3daf1f0ad40e9c318a8ccf7787368b0749113d1203dd
+content_hash: sha256:227c7b788145c7f3c90b1990d9bb75d8ad4271e1ef100ac3e878db1c87cb94c6
 ---
 
 AR Engine可以检测环境中的水平和竖直平面（如地面、墙面等），并识别平面边界。
 
 **图1** 平面检测示意图（左图为水平平面，右图为竖直平面）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/APAXe-3uRl2FwQcWQfcJiA/zh-cn_image_0000002764972382.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/kv0yukPWQcuGme_Xh1k-LQ/zh-cn_image_0000002797301045.jpg)
 
 **说明** 
 

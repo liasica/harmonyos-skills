@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-act
 title: 设置无主按钮的组件
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 核心操作栏 > 设置无主按钮的组件
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:30+08:00
+scraped_at: 2026-10-22T07:04:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7f2a96ead2af163cb27134f2b1c6d3de986f215385303186f615169f7056fc4f
+content_hash: sha256:517e7609654100e4c8ae7f75c08edcdaf867c483ab25308b1241b40014024f5a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:7f2a96ead2af163cb27134f2b1c6d3de986f215385303186f615169f705
 
 [HdsActionBar (操作栏)](../harmonyos-references/ui-design-hdsactionbar.md)组件支持多个按钮的样式。当应用开发者需要多个按钮并且没有主按钮，没有展开和收缩的动效时，可以通过设置左按钮和右按钮配置样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Ehc4WyPyR7KXeZMM4eRdjw/zh-cn_image_0000002764972010.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/WnFdmIuJRQOptfnJvVYPWQ/zh-cn_image_0000002797300675.png)
 
 ## 开发步骤
 

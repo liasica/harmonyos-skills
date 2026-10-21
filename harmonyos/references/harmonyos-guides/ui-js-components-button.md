@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: button开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > button开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:19+08:00
+scraped_at: 2026-10-22T07:04:48+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:160a15a916a98891cbcae1ba251e8bf6b62d1097ab810b2ec5c62565413fd0ef
+content_hash: sha256:c0f1e0d4a572bc2a96b553067b2c26d5f29e74b88e611d75d0a72ca11c330ab0
 ---
 
 button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按钮、弧形按钮、下载按钮。具体用法请参考[button API](../harmonyos-references/js-components-basic-button.md)。
@@ -33,7 +33,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/lSuWmszmTxyz2h3dz-JfIQ/zh-cn_image_0000002764971702.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/sUqgqJDuS9WzDWJxdTXFlQ/zh-cn_image_0000002797300367.png)
 
 ## 设置button类型
 
@@ -73,7 +73,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ND4h_2VNR6KLbvaxTGIFag/zh-cn_image_0000002765131344.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ss2MPy0LS-2hew6oXt1skQ/zh-cn_image_0000002767860152.png)
 
 **说明** 
 
@@ -166,7 +166,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/IOaldlgFQv2LlSgI-nQ0HQ/zh-cn_image_0000002765131628.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/iySeycR2Sy6nesYobyOl6A/zh-cn_image_0000002767860434.gif)
 
 **说明** 
 
@@ -273,4 +273,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/m-Rs0IJ8RNCh0xyzusr73w/zh-cn_image_0000002794490205.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/2UpCEBIWTXGY5qFWZ_QGFA/zh-cn_image_0000002797180399.gif)

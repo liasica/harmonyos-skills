@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-workgro
 title: 音频工作组管理
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频性能调优 > 音频工作组管理
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:45+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-10-22T07:05:25+08:00
+doc_updated_at: 2026-10-21
 content_hash: sha256:dd6f45bfde5fd74b9a68d7af6dfa5a589640b2c4af792b63a17d5624f9b92934
 ---
 

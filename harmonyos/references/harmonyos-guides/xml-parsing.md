@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xml-parsing
 title: XML解析
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > XML生成、解析与转换 > XML解析
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f2d8102391ae3cba061033a95683fe1194c7753bcbbfd8ab1f42d9c514c0e5ca
+scraped_at: 2026-10-22T07:04:34+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:60e8772770d6d188c87c1943f502b172ffe9f1832c77e3e6892d119768acaa13
 ---
 
 对于以XML作为载体传递的数据，实际使用中需要对相关的元素进行解析，一般包括[解析XML标签和标签值](xml-parsing.md#解析xml标签和标签值)、[解析XML属性和属性值](xml-parsing.md#解析xml属性和属性值)、[解析XML事件类型和元素信息](xml-parsing.md#解析xml事件类型和元素信息)三类操作。如在Web服务中，XML是SOAP（Simple Object Access Protocol）协议的基础，SOAP消息通常以XML格式封装，包含请求和响应参数，通过解析这些XML消息，Web服务可以处理来自客户端的请求并生成相应的响应。
@@ -18,9 +18,9 @@ XML模块提供XmlPullParser类用于解析XML文本，输入为包含XML数据�
 | --- | --- | --- | --- |
 | supportDoctype | boolean | 否 | 是否解析文档类型，false表示不解析文档类型，true表示解析文档类型，默认false。 |
 | ignoreNameSpace | boolean | 否 | 是否忽略命名空间，忽略命名空间后，将不会对其进行解析。true表示忽略命名空间，false表示不忽略命名空间，默认false。 |
-| tagValueCallbackFunction | (name: string, value: string) => boolean | 否 | 获取tagValue回调函数，打印XML标签及标签值。默认为undefined，表示不解析XML标签和标签值。 |
-| attributeValueCallbackFunction | (name: string, value: string) => boolean | 否 | 获取attributeValue回调函数，打印XML属性及属性值。默认为undefined，表示不解析XML属性和属性值。 |
-| tokenValueCallbackFunction | (eventType: EventType, value: ParseInfo) => boolean | 否 | 获取tokenValue回调函数，打印XML事件类型及parseInfo对应属性。默认为undefined，表示不解析XML事件类型。 |
+| tagValueCallbackFunction | (name: string, value: string) => boolean | 否 | 获取tagValue()回调函数，打印XML标签及标签值。默认为undefined，表示不解析XML标签和标签值。 |
+| attributeValueCallbackFunction | (name: string, value: string) => boolean | 否 | 获取attributeValue()回调函数，打印XML属性及属性值。默认为undefined，表示不解析XML属性和属性值。 |
+| tokenValueCallbackFunction | (eventType: EventType, value: ParseInfo) => boolean | 否 | 获取tokenValue()回调函数，打印XML事件类型及parseInfo对应属性。默认为undefined，表示不解析XML事件类型。 |
 
 ## 注意事项
 

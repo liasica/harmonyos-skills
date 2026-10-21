@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/printextensio
 title: 打印扩展能力
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 打印 > 打印扩展能力
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cb3ca24a57567ffee823e738ec199bba496a4aa44362139ed077e65abf30e6f6
+scraped_at: 2026-10-22T07:05:14+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:e765288727e5463cb5f984621b5b596abd368e031b03682100f228fcacd949ea
 ---
 
 ## 概述
@@ -32,12 +32,12 @@ content_hash: sha256:cb3ca24a57567ffee823e738ec199bba496a4aa44362139ed077e65abf3
    在工程entry Module对应的ets目录（./entry/src/main/ets）下，新建目录及ArkTS文件。例如新建一个目录并命名为PrintExtensionAbility，在PrintExtensionAbility目录下，新建一个ArkTS文件并命名为MyPrintExtension.ets，用以实现打印扩展能力接口。
 2. 打开MyPrintExtension.ets文件，导入模块。
 
-   ```ts
+   ```typescript
    import { PrintExtensionAbility } from '@kit.BasicServicesKit';
    ```
 3. 实现PrintExtensionAbility提供的接口。
 
-   ```ts
+   ```typescript
    import { PrintExtensionAbility } from '@kit.BasicServicesKit';
    import { Want } from '@kit.AbilityKit';
    // 创建打印扩展能力类，继承PrintExtensionAbility，并实现打印扩展功能。

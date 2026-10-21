@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: CanvasPattern
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasPattern
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:03+08:00
+scraped_at: 2026-10-22T07:07:49+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d9da9debf08c385af871d0dbcc25906099896e9416c8e429bbdc945823dec6d1
+content_hash: sha256:06246bb196380d2a1248f34c112529de6196cc4abfb2a930f376b5ff93b2f39e
 ---
 
 CanvasPattern对象，使用[createPattern](ts-components-canvas-common-method.md#createpattern)方法创建，通过指定图像和重复方式生成图片填充的模板，适用于需要在Canvas中实现图案填充或背景纹理的场景，可简化图案填充的实现并提高绘制效率。
@@ -92,4 +92,4 @@ struct CanvasPatternPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/QZw46Zj5TEKl4nN6fUIrew/zh-cn_image_0000002794412623.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/pMfy5O3bQvSTKi5_SfEeTg/zh-cn_image_0000002768022596.gif)

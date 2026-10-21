@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: RiskControlEngine（星盾机密风控引擎）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > RiskControlEngine（星盾机密风控引擎）
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:29+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:355afc09b9b848ecfc35c4af68b1bbef20c5a0af4e97b934a181304d128a686b
+scraped_at: 2026-10-22T07:08:48+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:5ce4b31ad2c9e2d735cf8015007d4db92ad23b397938bc08c9ab938e80cffd2a
 ---
 
 本模块提供基于应用风险因子的风险控制检测能力。通过接收应用侧采集的多维度风险因子数据，结合预定义的风控策略进行综合风险评估，帮助应用实现设备安全风险识别和防控。
@@ -139,7 +139,7 @@ importRiskFactors(data: ImportData): Promise<void>
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 801 | API is not supported. |
+| 801 | Capability not supported.  Possible causes:  1. The hardware does not support the capability;  2. The chip does not support the capability;  3. A dependent service feature is not supported. |
 | 1010800004 | Verify capability fail. |
 | 1010800005 | The number of calls exceeds the parallel threshold. |
 | 1010800006 | The invoking frequency exceeds the threshold. |
@@ -213,7 +213,7 @@ getRiskControlResult(req: RiskControlDetectionRequest): Promise<RiskControlDetec
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 801 | API is not supported. |
+| 801 | Capability not supported.  Possible causes:  1. The hardware does not support the capability;  2. The chip does not support the capability;  3. A dependent service feature is not supported. |
 | 1010800004 | Verify capability fail. |
 | 1010800005 | The number of calls exceeds the parallel threshold. |
 | 1010800006 | The invoking frequency exceeds the threshold. |

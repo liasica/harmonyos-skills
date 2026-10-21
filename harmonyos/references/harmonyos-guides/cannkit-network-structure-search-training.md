@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-netwo
 title: 网络结构搜索训练
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 网络结构搜索训练
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:48+08:00
+scraped_at: 2026-10-22T07:06:02+08:00
 doc_updated_at: 2026-07-17
-content_hash: sha256:71b026624807fef1981d039df17eb84e00144ef862c6d47daf075bf51f7bf13a
+content_hash: sha256:ef0c488fd3fe774cb556d7b226851edb8e44f6598114f074218565ce69ae1f3c
 ---
 
 网络结构搜索训练请按照如下步骤进行：
@@ -296,13 +296,13 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 * loss-模型精度损失loss曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/gsK4vhz_Saq5hpt6Ph0lxQ/zh-cn_image_0000002794411767.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/lavWO5_FTdy_z5ybvJwWOQ/zh-cn_image_0000002768021754.png)
 * lr-学习率变化曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/btmMfdMPQvG3lSVNU05jAA/zh-cn_image_0000002764973048.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/QeMzjMrHTyqJT6QGr1TVHQ/zh-cn_image_0000002797301703.png)
 * pareto-帕累托前沿图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/FavJ2_rwQBq1z6OviiC5-g/zh-cn_image_0000002765132970.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/4SLjv-PjS_OC4D5KqorkWg/zh-cn_image_0000002767861772.png)
 
 帕累托图横坐标为模型大小或计算量即约束项，纵坐标为结构搜索后的精度。图中的精度为搜索过程的评估结果，如果要获得更好的精度，建议对搜索结构进行充分训练。
 
@@ -312,7 +312,7 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 搜索结束后，工具会自动将pareto图中模型结构保存在results目录，生成多个model\_arch\_result\_$NUM.py文件。其中$NUM文件编号与pareto图上的编号一致，头部有model\_param\_size和accuracy，开发者可根据TensorBoard中的pareto图或者这两个参数选择合适的网络结构，例如TensorFlow版本的搜索结果（PyTorch版本的搜索结果只是实现框架不同，不再赘述）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Tz9Otn4qSimxL3cNg5MXmg/zh-cn_image_0000002794491549.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/WH2mk4LiSUCtdt_PFTs-5g/zh-cn_image_0000002797181735.png)
 
 开发者选定合适的模型结构文件，可以拷贝到results的上一级目录，并执行模型结构文件。
 
@@ -322,4 +322,4 @@ python3 model_arch_result_$NUM.py
 
 执行结束后，当前目录下会生成模型的pb文件和TensorBoard日志文件，开发者可通过TensorBoard查看模型的图结构。如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/DIgAOa4_Qu-C62sIvK1vXQ/zh-cn_image_0000002794411769.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/dpDp3FGIQPqQ_-tPATSf0Q/zh-cn_image_0000002768021756.png)

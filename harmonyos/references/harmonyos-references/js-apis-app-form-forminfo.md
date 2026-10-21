@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.form.formInfo (formInfo)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formInfo (formInfo)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b174629bd9564f5b4818743c2faebc8791c5b1ce635c9a072a1f2b3d8dd71072
+scraped_at: 2026-10-22T07:08:34+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:5ba549938d03694a0f0915de0990e1f5fefdd581218c67e2041a984c99d2b6d4
 ---
 
 formInfo模块提供了卡片信息和状态等相关类型和枚举，用于获取卡片配置信息、状态信息、参数枚举等，适用于需要查询卡片属性、管理卡片状态、处理卡片参数的场景，帮助开发者快速访问和操作卡片相关信息。
@@ -233,7 +233,7 @@ import { formInfo } from '@kit.FormKit';
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | area | [Rect](js-apis-app-form-forminfo.md#rect20) | 否 | 否 | 描述互动卡片动效区域范围，以卡片左上角为原点。 |
-| duration | number | 否 | 否 | 互动卡片动效持续时长，单位ms。取值为大于0的整数，取值要求不大于3500。 |
+| duration | number | 否 | 否 | 互动卡片动效持续时长，单位ms。取值为大于等于0的整数，取值要求不大于3500。 |
 | useDefaultAnimation | boolean | 否 | 是 | 互动卡片状态切换时是否启动系统提供的默认动效，默认为true。  - true：表示系统提供默认切换动效。  - false：表示系统不提供切换动效，画面直接切换，适合切换时非激活态和激活态UI完全一致的场景。 |
 
 ## Rect20+

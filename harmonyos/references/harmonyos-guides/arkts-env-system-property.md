@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-sys
 title: "@Env：环境变量"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习响应式环境变量 > @Env：环境变量
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:10+08:00
+scraped_at: 2026-10-22T07:04:41+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:41d99c1bd1a5a4539bc34630db8fdf70241ec0aa25d5b98729fbdbcebbd76c66
+content_hash: sha256:862684dfd36d00b27f8a1a4cb41330c31606b734a965aa53664cf40e8992e4c7
 ---
 
 在多设备开发的场景中，开发者可以使用[@Env](../harmonyos-references/ts-env-system-property.md)装饰器监听系统环境变量的改变，并根据系统环境变量来进行相应的场景判断，以减少不同设备间的适配逻辑和重复开发。
@@ -220,11 +220,11 @@ content_hash: sha256:41d99c1bd1a5a4539bc34630db8fdf70241ec0aa25d5b98729fbdbcebbd
 
 流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/b6NSfCh0RZexxMsSd5THYQ/zh-cn_image_0000002794409851.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/q490S3EPRTq8RFU-Z60VbA/zh-cn_image_0000002768019854.png)
 
 基于上面流程，下面的示例中以@Env使用SystemProperties.BREAK\_POINT为例，各个组件中的初始化如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/lLbKN5rjQ-Cj-w9707onuw/zh-cn_image_0000002764971132.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/CHdo-eTjTH-oZcYMjgwRIA/zh-cn_image_0000002797299803.png)
 
 1. Child1初始化@Env(SystemProperties.BREAK\_POINT)：
    * 递归查找直到父组件为空：向上查找父组件Index，没有@Env对应的SystemProperties.BREAK\_POINT实例。
@@ -733,7 +733,7 @@ struct SubWindow {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/7Cy5xxvgRyi_Vz6HKNGcPg/zh-cn_image_0000002765131052.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/oOvd7q96Ty2MqPiprNbqzg/zh-cn_image_0000002767859870.gif)
 
 可以使用lambda闭包函数将ComponentUnderBuilderNode中的@Env向下传递。通过这种方式ComponentUnderBuilderNode中的@Env可以收集到子组件Comp内组件的依赖，在切换窗口实例的时候触发Comp内组件的刷新。
 
@@ -773,7 +773,7 @@ struct Comp {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/dyHrPKIlS1yUQiQSI3LJKg/zh-cn_image_0000002794489631.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/vnjrCQnmQeCLULL2liH6Nw/zh-cn_image_0000002797179835.gif)
 
 ### @Watch与@Monitor监听@Env装饰的变量
 
@@ -824,7 +824,7 @@ struct ChildV1 {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/rjyluaiPSgWSP8j-mnol8w/zh-cn_image_0000002794409853.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/gUviMxFARny3PdlNbkNfCQ/zh-cn_image_0000002768019856.png)
 
 在@ComponentV2中，可通过@Monitor监听@Env装饰变量的变化。需要注意的是，仅当@Env装饰的变量被整体赋值时才会触发@Monitor监听回调，其内部属性的变化不会触发回调。
 
@@ -877,4 +877,4 @@ struct Child {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/GFQJU_25SBuKx8N9U3JHtQ/zh-cn_image_0000002764971134.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/gT9VelxcRYuor8i3p1Rm2g/zh-cn_image_0000002797299805.png)

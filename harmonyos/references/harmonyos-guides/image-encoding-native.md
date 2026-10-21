@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-encodin
 title: 图片编码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(依赖JS对象)(不再推荐) > 图片编码
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:11+08:00
+scraped_at: 2026-10-22T07:05:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6cc36fd35ac214e8c37efd070a7809f9e7c134c4402ee9f72d51d8912437a24c
+content_hash: sha256:9628b95e85bd2afab6de8eee5989930dcac8d1c1e1ba8a2e1a147c665fa7cdd0
 ---
 
 **说明** 
@@ -39,7 +39,7 @@ content_hash: sha256:6cc36fd35ac214e8c37efd070a7809f9e7c134c4402ee9f72d51d891243
 
 如下为图片编码调用关系图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/KlGkyZrJTumk1CqvTsV9ug/zh-cn_image_0000002794490835.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/jqD6t_BpTsS8hO_leyg_aw/zh-cn_image_0000002797181029.png)
 
 ### 在 CMake 脚本中链接动态库
 

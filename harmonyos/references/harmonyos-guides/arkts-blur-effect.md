@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-blur-ef
 title: 动态模糊
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 模糊 > 动态模糊
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:15+08:00
+scraped_at: 2026-10-22T07:04:45+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:d5c13159e9111ce445241f6a85130dc67dd25bdebdc07802444fc2ee5379d973
+content_hash: sha256:eefc3c16389f031be5ecb535d292d2549771268878fac8454bd77a043b27842b
 ---
 
 动画效果可以丰富界面的细节，提升UI界面的真实感和品质感。例如，模糊和阴影效果可以让物体看起来更加立体，使得动画更加生动。ArkUI提供了丰富的效果接口，开发者可快速打造出精致、个性化的效果。本章主要介绍常用的模糊、阴影和色彩效果等接口。
@@ -50,7 +50,7 @@ struct BlurEffectsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/7tsQ2deWQCGC5b9iB7bx8A/zh-cn_image_0000002794490069.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/q0QkzWb2RbW3mE3WBX9ccQ/zh-cn_image_0000002797180263.png)
 
 ## 使用blur为组件添加内容模糊
 
@@ -112,7 +112,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/MK7xZzdOSRmEbyol2ITKBw/zh-cn_image_0000002794410285.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/VcMU0HtTSBil0jUw4awS8Q/zh-cn_image_0000002768020284.gif)
 
 ## 使用backgroundBlurStyle为组件添加背景模糊效果
 
@@ -382,7 +382,7 @@ struct BackDropBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/6BlA4NBnSNazn4MCUGduyA/zh-cn_image_0000002764971568.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/Yb-6LKDwSYKVa5reVnKMgg/zh-cn_image_0000002797300233.png)
 
 ## 使用foregroundBlurStyle为组件添加内容模糊效果
 
@@ -650,7 +650,7 @@ struct ForegroundBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/gJ_v_HilTImS1AY_LLOR7w/zh-cn_image_0000002765131494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/1uxNvjSZTC2NsUmA7W3FTA/zh-cn_image_0000002767860300.png)
 
 ## 使用motionBlur为组件添加运动模糊效果
 
@@ -696,4 +696,4 @@ struct motionBlurTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/hQHFKE5lS-WrMS3iK_onJA/zh-cn_image_0000002794490071.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/IAJxE6RwTlGo74btQfc7nw/zh-cn_image_0000002797180265.gif)

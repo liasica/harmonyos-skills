@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/servicecollab
 title: 跨设备互通特性简介
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > 跨设备互通（ArkTS） > 跨设备互通特性简介
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:48+08:00
+scraped_at: 2026-10-22T07:05:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5f715f058aeeb0b0852f34654cdbedad6ed783f1b5d53a401273bf9d13258b6a
+content_hash: sha256:46480ce6dda352bf343ff0a0fa5c5bb0b18cd8c7ec6c78a4d69d5a5325bfac38
 ---
 
 对于API 6.0.0(20)之前版本，仅支持匹配跨端拍照、文档扫描、图库选择器；对于API 6.0.0(20)及之后版本，支持匹配跨端拍照、文档扫描、图库选择器、视频选择器、图片和视频选择器；从API 6.1.0(23)开始，TV、Phone、Tablet或PC/2in1设备可调用具备如下能力的远程设备：支持拍照、扫描及图库（图片与视频）能力的Phone和Tablet，支持图库（图片与视频）能力的PC/2in1设备。
@@ -20,13 +20,13 @@ content_hash: sha256:5f715f058aeeb0b0852f34654cdbedad6ed783f1b5d53a401273bf9d132
 
 如果同一组网下有多台Phone或Tablet设备，用户可以选择不同的设备进行拍摄。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/V4W8-xaVQq6FPrwc3Ipr6g/zh-cn_image_0000002764972124.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/oNiWZx9YQImrEeBr5xFAfw/zh-cn_image_0000002797300789.gif)
 
 ## 运作机制
 
 基于分布式协同框架面向跨设备拍照的业务场景，为您提供了[createCollaborationServiceMenuItems](../harmonyos-references/servicecollaboration-collaborationservice.md#createcollaborationservicemenuitems)（相机设备列表组件）和[CollaborationServiceStateDialog](../harmonyos-references/servicecollaboration-collaborationservice.md#collaborationservicestatedialog)（远端相机状态弹窗组件）两个组件。应用只需要调用这两个组件，即可完成跨端拍照，无需关注分布式场景下数据传输、指令控制等具体细节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/qRPLnJ7jSfWVYpi3qgXiVA/zh-cn_image_0000002765132050.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/XAi8SmFXT4yk4DjpETkkAg/zh-cn_image_0000002767860858.png)
 
 跨设备互通-拍照的具体流程如上图所示。
 

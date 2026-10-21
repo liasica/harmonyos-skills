@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-
 title: 弹出框蒙层控制
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 弹出框蒙层控制
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:13+08:00
+scraped_at: 2026-10-22T07:04:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:83f5445411c165c1b9effb6d09c1a739b9214b41ff6b93f418a106369ea78760
+content_hash: sha256:13726f1005aa566d4055ac6de78f6c0f4f022e25cff0f8971f445b0b7e458171
 ---
 
 开发者对弹出框的定制不仅限于弹出框里的内容，对弹出框蒙层的定制需求也逐渐增加。本文介绍ArkUI弹出框的蒙层控制，包括点击蒙层时是否消失、蒙层区域、蒙层颜色和蒙层动画等特性。
@@ -93,7 +93,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/DhkX0xByQQanjjZBbXGFEA/zh-cn_image_0000002794410173.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/O3uxqXx9Q2SdNkYFi-38Sg/zh-cn_image_0000002768020172.gif)
 
 设置isModal为false，将默认的模态弹出框变为非模态弹出框。
 
@@ -124,7 +124,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/6aY9P9ljRAGxYd4Dm8-6zw/zh-cn_image_0000002764971456.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/yn7B8y4JQaKCPo2juObqUA/zh-cn_image_0000002797300121.png)
 
 ## 弹出框蒙层样式控制
 
@@ -165,7 +165,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/fREKM0laSp-sat1_7lwNJg/zh-cn_image_0000002765131380.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/4O87my-RQ7a-dJjJ-LveOQ/zh-cn_image_0000002767860188.png)
 
 在levelMode为LevelMode.EMBEDDED下，展示不同immersiveMode对蒙层在导航栏和状态栏的延伸效果。
 
@@ -199,7 +199,7 @@ build() {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/PAk_oTmeS5SoPcZRy51tiw/zh-cn_image_0000002794489955.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/PMcfA4RSRGa8ZQ5v96HqLg/zh-cn_image_0000002797180153.gif)
 
 ## 弹出框蒙层动画控制
 
@@ -234,7 +234,7 @@ build() {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/fKZcZONwQX-CO25O4eX-pA/zh-cn_image_0000002794410175.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/fzeBdErrQrOkAMVCZpOQCQ/zh-cn_image_0000002768020174.gif)
 
 设置maskTransition，实现弹出框中蒙层单独的动画定制能力。
 
@@ -253,7 +253,7 @@ Button('openCustomDialog maskTransition')
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/d4_JM9uySvaFidyoQ3_jiA/zh-cn_image_0000002764971458.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/2tl5meQoRJamngCl-Bi6Iw/zh-cn_image_0000002797300123.gif)
 
 [CustomDialog](arkts-common-components-custom-dialog.md)虽然不支持transition接口，但与之对应的openAnimation和closeAnimation接口在动画的打开和关闭时可进行定制，示例代码如下：
 
@@ -316,7 +316,7 @@ export struct CustomDialogAnimation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/vISih85fRdSBec74mncq3A/zh-cn_image_0000002765131382.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/fBUbengvQfezsOfw4cahMw/zh-cn_image_0000002767860190.gif)
 
 ## 完整示例
 
@@ -438,4 +438,4 @@ export struct CustomDialogControl {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/ZV-gfv_DTuK0Q7AHpSDNPg/zh-cn_image_0000002794489957.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/IfWNxhQ3TqGe_XBtDklt5w/zh-cn_image_0000002797180155.gif)

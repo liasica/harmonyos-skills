@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.inputMethodEngine (输入法服务)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethodEngine (输入法服务)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6ad567b570097a78c48f8e9bf112a1e86835421d3d7062c4368bc817a73f9b16
+scraped_at: 2026-10-22T07:08:37+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:cf83d37782068bfa66acc237227c5cc196ebffc238ab8c1c69ccd9472e2c1928
 ---
 
 @ohos.inputMethodEngine模块是面向输入法应用（包括系统输入法和第三方输入法）的服务端API模块，提供了输入法应用与系统输入法框架之间的交互能力。
@@ -124,8 +124,8 @@ import { inputMethodEngine } from '@kit.IMEKit';
 | PATTERN\_ONE\_TIME\_CODE20+ | number | 13 | 验证码编辑框。  **模型约束：** 该参数仅可在Stage模型下使用。 |
 | OPTION\_ASCII | number | 20 | 允许输入ASCII值。 |
 | OPTION\_NONE | number | 0 | 不指定编辑框输入属性。 |
-| OPTION\_AUTO\_CAP\_CHARACTERS | number | 2 | 允许输入字符。 |
-| OPTION\_AUTO\_CAP\_SENTENCES | number | 8 | 允许输入句子。 |
+| OPTION\_AUTO\_CAP\_CHARACTERS | number | 2 | 自动将字符首字母大写。 |
+| OPTION\_AUTO\_CAP\_SENTENCES | number | 8 | 自动将句子首字母大写。 |
 | OPTION\_AUTO\_WORDS | number | 4 | 允许输入单词。 |
 | OPTION\_MULTI\_LINE | number | 1 | 允许输入多行。 |
 | OPTION\_NO\_FULLSCREEN | number | 10 | 半屏样式。 |

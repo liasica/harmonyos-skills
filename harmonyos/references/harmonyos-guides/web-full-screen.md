@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-full-scre
 title: Web组件支持视频沉浸式全屏播放
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > Web组件支持视频沉浸式全屏播放
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:37+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:247240fa7a4e6ed9910941c5cc2060b217eca4c73d4fae07320260a67f71e6cd
+scraped_at: 2026-10-22T07:04:52+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:a558487729611c7431e573f858dacd3cf9ae436746632257fba2b39a4b95feb1
 ---
 
 Web组件提供了视频进入全屏和退出全屏的事件功能，应用可通过监听这些事件实现进入和退出沉浸式全屏模式。
@@ -28,6 +28,7 @@ import { webview } from '@kit.ArkWeb';
 struct ShortWebPage {
   controller: webview.WebviewController = new webview.WebviewController();
   CONSTANT_HEIGHT = 100;
+  @State marginTop: number = this.CONSTANT_HEIGHT;
   @State isVisible: boolean = true; // 自定义标志位isVisible，来控制是否需要显示组件
 
   build() {
@@ -118,7 +119,7 @@ private changeOrientation(isLandscape: boolean) {
       this.changeOrientation(false);
       return true;
     } else {
-      router.back();
+      this.getUIContext().getRouter().back();
       return true;
     }
   }
@@ -128,7 +129,7 @@ private changeOrientation(isLandscape: boolean) {
 
 ```typescript
 import { webview } from '@kit.ArkWeb';
-import { window, router } from '@kit.ArkUI';
+import { window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 
 @Entry
@@ -155,7 +156,7 @@ struct WebVideo {
       this.changeOrientation(false);
       return true;
     } else {
-      router.back();
+      this.getUIContext().getRouter().back();
       return true;
     }
   }

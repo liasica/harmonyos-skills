@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-ren
 title: Repeat：可复用的循环渲染
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > Repeat：可复用的循环渲染
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:10+08:00
+scraped_at: 2026-10-22T07:04:40+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:517c01eea9d1f06198a8c0e4d928095ac1de1935eb6793f9fcd94ea30b50cb28
+content_hash: sha256:280c3408247e1493c5404059c7afc149b34e99d5b7f2c6988ede2141f305d6dc
 ---
 
 **说明** 
@@ -97,7 +97,7 @@ struct RepeatExample {
 
 运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/I77RqpPQQ3aN3xleiZPWdg/zh-cn_image_0000002794409839.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/oFejnZjARoOuu1e8JQRVRw/zh-cn_image_0000002768019842.png)
 
 **多种类型子组件**
 
@@ -161,7 +161,7 @@ struct RepeatExampleWithTemplates {
 
 运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/9KJpaBTUS-upYJz9bp2knA/zh-cn_image_0000002764971120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ly2OFQNGR8SIOU51xQtawA/zh-cn_image_0000002797299791.png)
 
 ### 键值生成规则
 
@@ -232,7 +232,7 @@ Repeat加载子节点具有懒加载和全量加载两种模式。开发者可�
 
 使用Repeat的.virtualScroll()属性，即可使能懒加载能力。在懒加载模式下，Repeat根据当前的容器组件显示区域和预加载区域范围，按需加载子组件。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/1hhpJA_CTjmtBapbc6BtBw/zh-cn_image_0000002765131040.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/00gdGdbWSs62O5XD_-eL_w/zh-cn_image_0000002767859858.png)
 
 **说明** 
 
@@ -282,7 +282,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    首次渲染时列表的节点状态如下图所示（template type在图中简写为ttype）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/bMT6UCEPR_2u5j0ABKIoFw/zh-cn_image_0000002794489619.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/JEUtPx98R9GUCGmhpQblDw/zh-cn_image_0000002797179823.png)
 2. 滑动场景。
 
    将列表向下滑动一个节点的距离，Repeat会复用缓存池中的节点。
@@ -293,7 +293,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    3）其余节点仍在容器显示区域和预加载区域范围，均只更新索引index。如果对应template type的缓存池已满，Repeat会在UI主线程空闲时销毁掉多余的节点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/PDZzbbOeQOOLzxpwUPwwqw/zh-cn_image_0000002794409841.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/lAubQytvRTiMtGHmCTxxNw/zh-cn_image_0000002768019844.png)
 3. 数据更新场景。
 
    在上一小节的基础上做如下的数组更新操作，删除index=4的节点，修改节点数据07为new。
@@ -304,7 +304,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    3）对于节点数据从07变为new的情况，页面监听到数据源变化将会触发重新渲染。Repeat数据更新触发重新渲染的逻辑是比较当前索引处节点数据item是否变化，以此判断是否进行UI刷新，仅改变键值不改变item的情况不会触发刷新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/7_h5JKC_RY2pGGpo9V-r5A/zh-cn_image_0000002764971122.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/_KbgYFatSMKskWKO9ftZpg/zh-cn_image_0000002797299793.png)
 
 **全量加载模式下的节点更新/复用**
 
@@ -320,11 +320,11 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
 最后，如果新数组键值遍历结束后，deletedKeys非空，则销毁集合中的键值所对应的节点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/_5PZ1IGDSSWNF_rBEoXzhA/zh-cn_image_0000002765131042.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/Zssiv2HyQV-PQmJ0s272iA/zh-cn_image_0000002767859860.png)
 
 以下图中的数组变化为例，图中的item\_X表示数据项的键值key。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/IKmwOFenSdOHvO-3tAqPpw/zh-cn_image_0000002794489621.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/rJd6GLv_SkKKGFt5N1VhyA/zh-cn_image_0000002797179825.png)
 
 根据上述判断逻辑：item\_0没有变化，item\_1和item\_2只更新了索引，item\_n1和item\_n2分别由item\_4和item\_3进行节点更新获得，item\_n3为新创建的节点。
 
@@ -382,7 +382,7 @@ struct ChildItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/gc9Liq5zSNizZYe6LS8X9w/zh-cn_image_0000002764971102.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/XxJkaGrnTfmVmvMy7h91vA/zh-cn_image_0000002797299773.gif)
 
 点击红色字体，第三个数据项发生变化（直接使用旧的组件节点，仅刷新数据）。
 
@@ -390,7 +390,7 @@ struct ChildItem {
 
 查看节点是否为复用可以使用[DevEco Testing](deveco-testing.md)工具进行查看，进入DevEco Testing工具后，选择实用工具，界面如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/EMroDw1sTDSWixKtYYGyLA/zh-cn_image_0000002794409843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/7yjS4WNKTXuYqsyIVPS0qA/zh-cn_image_0000002768019846.png)
 
 在实用工具中选择UIViewer，该工具可以获取设备快照、控件树信息及控件节点属性，在右侧的控件树中选择Repeat子节点，右下方的节点属性会显示节点ID等信息，可以通过节点ID是否相同，判断组件复用或者新建的情况。
 
@@ -455,7 +455,7 @@ struct RepeatLazyLoadingLongData {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/tsafpbHRRz2vtznBYwC2Jg/zh-cn_image_0000002764971124.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/AOM2Y9-CRrmZEEOWW2bmdg/zh-cn_image_0000002797299795.gif)
 
 **示例2**
 
@@ -503,7 +503,7 @@ struct RepeatLazyLoadingSync {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/bYLrUxx_S3SUgt1qtSTI-g/zh-cn_image_0000002765131044.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/9YWkRHkoS_ulsZAKD22KFA/zh-cn_image_0000002767859862.gif)
 
 **示例3**
 
@@ -561,7 +561,7 @@ struct RepeatLazyLoadingInfinite {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/2VNox9R9SpyUA7NXOFu1Dw/zh-cn_image_0000002794489623.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qptLyE4kQY2Te0rLkGYMJA/zh-cn_image_0000002797179827.gif)
 
 ### 拖拽排序
 
@@ -623,7 +623,7 @@ struct RepeatVirtualScrollOnMove {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/LzBwTQcsS769h3mW4B5LCg/zh-cn_image_0000002794409845.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/7MaaZMszRAWvYVWaUcJN7Q/zh-cn_image_0000002768019848.gif)
 
 ### 数据前插保持
 
@@ -695,7 +695,7 @@ struct PreInsertDemo {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/S14BjBmYRkih2IVIESMsig/zh-cn_image_0000002764971126.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/D1J_eiDtRaqZSAwH1xRR2g/zh-cn_image_0000002797299797.gif)
 
 ### animateTo动效
 
@@ -802,7 +802,7 @@ class ItemInfo {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/tOw-ymFkSb-vwQDiRKqqgA/zh-cn_image_0000002765131046.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/fqbNxup3Qg60JvIb_XctbA/zh-cn_image_0000002767859864.gif)
 
 ## 常见使用场景
 
@@ -954,7 +954,7 @@ struct RepeatVirtualScroll {
 
 该示例代码展示了100项自定义类Repeat006Clazz的message字符串属性，[List](../harmonyos-references/ts-container-list.md)组件的[cachedCount](../harmonyos-references/ts-container-list.md#cachedcount)属性设为2，模板'odd'和'even'的空闲节点缓存池大小分别设为3和1。运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Ovh2rzqOS4WTJb35Bu2G-A/zh-cn_image_0000002794489625.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/erGGjVAuRGi3b_ZoE7C09Q/zh-cn_image_0000002797179829.gif)
 
 ### Repeat嵌套
 
@@ -1022,7 +1022,7 @@ struct NestedRepeat {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/D5HHvDibSHG_R2uMhKLIVw/zh-cn_image_0000002794409847.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/5GB3ER6NSIqrfAoF4Rhn1g/zh-cn_image_0000002768019850.png)
 
 ### 父容器组件应用场景
 
@@ -1129,7 +1129,7 @@ struct DemoList {
 
 右滑并点击按钮，或点击底部按钮，可删除视频卡片：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/pidKA5oTSquU6sflVfH9sQ/zh-cn_image_0000002764971128.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ZTc3QDI3T5uaqI73sqbbhA/zh-cn_image_0000002797299799.gif)
 
 **与Grid组合使用**
 
@@ -1261,7 +1261,7 @@ struct DemoGrid {
 
 下拉屏幕，或点击刷新按钮，或点击“先前浏览至此，点击刷新”，可加载新的视频内容：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/dBQX2rypRIC_YiK0qUtgYg/zh-cn_image_0000002765131048.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/40-l0vR6RmqsFteUwD9EhQ/zh-cn_image_0000002767859866.gif)
 
 **与Swiper组合使用**
 
@@ -1338,7 +1338,7 @@ struct DemoSwiper {
 
 定时1秒后加载图片，模拟网络延迟：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/gfzXx0g_SK-OtpMy4cN81A/zh-cn_image_0000002794489627.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/KBopM_h0QDmsrV22J94Mow/zh-cn_image_0000002797179831.gif)
 
 ## 常见问题
 
@@ -1407,7 +1407,7 @@ struct RepeatTemplateSingle {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Yi-wVYm_QAynD4dNRIjC7g/zh-cn_image_0000002794409849.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/NFVhANkuRheyfPBDttOaPQ/zh-cn_image_0000002768019852.gif)
 
 以下为修正后的示例：
 
@@ -1487,7 +1487,7 @@ struct RepeatSingle {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ZgynazluQHy7nr5_5Qp8xA/zh-cn_image_0000002764971130.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/u4cZG6QURfKqgS76xVWmsQ/zh-cn_image_0000002797299801.gif)
 
 ### totalCount值大于数据源长度
 
@@ -1586,7 +1586,7 @@ struct EntryCompSucc {
 
 示例代码运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/6K7YGHp_Qmy_ZE6PJJ20MQ/zh-cn_image_0000002765131050.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/r6wy-yphTXu9uCVGrRWLlA/zh-cn_image_0000002767859868.gif)
 
 ### 与@Builder混用时状态变量未刷新
 
@@ -1661,7 +1661,7 @@ struct RepeatBuilderPage {
 
 @Builder传参方式依次为makeBinding()、地址传递和值传递，界面展示如下图，进入页面后点击按钮改变数据。在@Builder构造函数中使用值传递传参不会引起函数内的UI刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/ICtLlmmiSbW640CMaOG72A/zh-cn_image_0000002794489629.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/CxN7X3CDSDKwNBspD-_PyQ/zh-cn_image_0000002797179833.png)
 
 ### expandSafeArea属性失效
 

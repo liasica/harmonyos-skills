@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyVWaterFlowLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyVWaterFlowLayout
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:52+08:00
+scraped_at: 2026-10-22T07:07:40+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:6801ce62212840c0a00ca84ccb770d3bd3400fc51a64f79a1b05390916013d54
+content_hash: sha256:4be2db3684545e86f4e25c8a70c68e7c09fc3246bdd9b22246768dba323b7726
 ---
 
 LazyVWaterFlowLayout用于实现支持懒加载的瀑布流布局，适用于展示大量高度不一的列表项场景，如图片墙、商品列表等。通过懒加载机制，该组件仅加载可视区域及附近内容，减少内存占用和渲染开销，提升滚动流畅度。该组件应位于竖直方向的[List](ts-container-list.md)、[Scroll](ts-container-scroll.md)或[WaterFlow](ts-container-waterflow.md)组件下，并支持通过[FlowItem](ts-container-flowitem.md)、[LazyColumnLayout](ts-container-lazycolumnlayout.md)、[自定义组件](../harmonyos-guides/arkts-create-custom-components.md)或[NodeContainer](ts-basic-components-nodecontainer.md)组件封装后使用。
@@ -446,7 +446,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/LZ4-1cwtTZuQ6Ccxcjcb0Q/zh-cn_image_0000002765133518.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/0WpkAMK_Ta-mvG7h_rrsfA/zh-cn_image_0000002767862306.png)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -555,7 +555,7 @@ struct LazyVWaterFlowLayoutStickyDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/HL_8Ho_XRSem106K1H627A/zh-cn_image_0000002794492093.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/d5Waz9EOSbStVI5cLgxGLg/zh-cn_image_0000002797182269.gif)
 
 ### 示例3（设置自适应列数）
 
@@ -685,4 +685,4 @@ struct LazyVWaterFlowLayoutColumnsTemplateDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/hTbMs7Q1TfSuI2I7szAHNQ/zh-cn_image_0000002794412313.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/64aqZP2DTq-2Y0TyVpeF4g/zh-cn_image_0000002768022290.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkaf-overvie
 title: 方舟智能开发框架概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 方舟智能开发框架概述
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:40:58+08:00
+scraped_at: 2026-10-22T07:04:30+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:e87bf58ce16b43477a350f9c0d945457e17288d4fb2e4948542453323f2ee1b5
+content_hash: sha256:b27f54b5510e40893ca97b7e0b23ec315315c17ade33db24965c1b628aa6865c
 ---
 
 随着系统智能体逐步成为用户与操作系统交互的新入口，用户交互方式正从“打开应用”转向“直接表达需求”。应用通过开放能力融入系统智能体生态，为用户提供更自然、便捷的服务体验，同时拓展应用的触达场景与使用频次。
@@ -26,7 +26,7 @@ ArkAF提供三种核心能力框架，为开发者提供标准化的能力开放
 
 **图1** ArkAF架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/tGiUA0uNQraXGF9VxFJEPQ/zh-cn_image_0000002764970816.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/FngXunykSQScT6ZIne-Zjw/zh-cn_image_0000002797299491.png)
 
 工作流程分为四个阶段：
 

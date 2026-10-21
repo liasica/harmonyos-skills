@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 基于Surface模式进行视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 基于Surface模式进行视频编码
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:06+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:92d5926a0c84257460ebbfab6455113d554997dda960f286ce50def57ffc2ce7
+scraped_at: 2026-10-22T07:05:28+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:8d7bb01183794746bfc40065cb0ef8917bddeab4f440ff21b6ed6bf4cb64680e
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ Surface分为生产者ProducerSurface和消费者ConsumerSurface。NativeWindow�
 
 Surface轮转流程如下所示，生产者先申请到一块Buffer，填充数据后将Buffer返回给BufferQueue。在触发回调函数后，通知消费者Buffer已经被生产者填充好数据。之后，消费者可以获取填充好数据的Buffer，直到不再需要该Buffer后，释放对应的Buffer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/o41-q-kCRaWpRX4fxTo-5A/zh-cn_image_0000002765132206.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/-pEMf7tHQZ2M80XBoxof3w/zh-cn_image_0000002767861014.png)
 
 视频编码器提供了获取NativeWindow的接口，通过NativeWindow可以将相机产生的数据与视频编码器进行对接。视频编码器作为消费者，将Buffer数据进行消费编码，从而实现视频编码的操作。下面我们将通过相机录制和屏幕录制，介绍基于Surface模式进行视频编码。
 
@@ -50,7 +50,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 6. 创建并启动编码输出子线程。
 7. 将从编码器中获取的NativeWindow对象设置给AVScreenCapture，启动屏幕录制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/X4tYPsNvT5-k46asHzXBuQ/zh-cn_image_0000002794490783.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/sQsHdychQbaYj3YE4J7NWQ/zh-cn_image_0000002797180977.png)
 
 ### 开发步骤
 
@@ -291,7 +291,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 5. 启动视频编码器。
 6. 创建并启动编码输出子线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/oQu95KBVTjOVPV_nuyouag/zh-cn_image_0000002794410999.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/tj6c-beUSLegd9HDv1Gqzg/zh-cn_image_0000002768021000.png)
 
 ### 开发步骤
 

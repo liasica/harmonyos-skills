@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-particl
 title: 粒子动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 粒子动画
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:15+08:00
+scraped_at: 2026-10-22T07:04:44+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:6ba7cbc2f32f3e194f54968600b103d7a2ae205dbbedad21e56a782825097943
+content_hash: sha256:a3a63f32cf4aa24968bc3e9a81284657dec7765609f303a8fbb60ae9ee4b6bbb
 ---
 
 [粒子动画](../harmonyos-references/ts-particle-animation.md)是通过在限定区域内随机生成大量粒子的运动，进而组合成的动画效果，通过Particle组件来实现。动画的基本构成元素为单个粒子，这些粒子可以表现为圆点或图片等形式。开发者能够通过对粒子在颜色、透明度、大小、速度、加速度、自旋角度等多个维度上的动态变化做动画，以营造特定的氛围，例如模拟下雪场景时，飘舞的雪花实际上是由一个个雪花粒子的动画效果所构成。
@@ -42,7 +42,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/F2zJyzxQTa6eYUVuDmaTRg/zh-cn_image_0000002794490061.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/-IaDT5W0RX6IGzMzEp2EmQ/zh-cn_image_0000002797180255.gif)
 
 ## 实现粒子发射器
 
@@ -63,7 +63,7 @@ Particle(...).width(300).height(300).emitter(this.emitterProperties) // 动态�
 // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/zXSwHvAqRjafp8ZwfMWG7g/zh-cn_image_0000002794410277.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Q69YfhrQRjCoT6FrtkOw4Q/zh-cn_image_0000002768020276.gif)
 
 ## 设置粒子颜色
 
@@ -78,7 +78,7 @@ color: {
 // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/0pp-YwhMT4yx3lLOAK-d_A/zh-cn_image_0000002764971560.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Fa5TnZ22R0ex-NmHrI4GWA/zh-cn_image_0000002797300225.gif)
 
 ## 粒子的生命周期
 
@@ -102,7 +102,7 @@ color: {
 // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/_p6APjZ_SyiwllNjKLbrJw/zh-cn_image_0000002765131486.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/LL-kjem-TIq_gG3PCUCuiQ/zh-cn_image_0000002767860292.gif)
 
 ## 设置粒子扰动场
 
@@ -157,4 +157,4 @@ Particle({ particles: [
 // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/81PFSU0gQ1WHYvIzIsh-PA/zh-cn_image_0000002794490063.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/RlnjYABoRzC8IVsrIMWtXA/zh-cn_image_0000002797180257.gif)

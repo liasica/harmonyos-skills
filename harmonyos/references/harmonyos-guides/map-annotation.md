@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-annotatio
 title: 点注释
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 点注释
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:35+08:00
+scraped_at: 2026-10-22T07:05:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3c3679db11977c736117599312a29d0d99c0c979a0004b989c6f82fdc814abda
+content_hash: sha256:565b3fc31d4cbbf619b68510967f74406f0410459527d01f73ce770467e6edc0
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:3c3679db11977c736117599312a29d0d99c0c979a0004b989c6f82fdc81
 
 [PointAnnotation](../harmonyos-references/map-map-pointannotation.md)有默认风格，同时也支持自定义。由于内容丰富，以下只展示一些基础功能的使用，详细内容可参见[接口文档](../harmonyos-references/map-map-pointannotation.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Eu1lYQmqRKuNAuMfX8KoOQ/zh-cn_image_0000002794491331.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/VfoG44r0RKaQH9izWEPmPQ/zh-cn_image_0000002797181521.jpg "点击放大")
 
 ## 接口说明
 
@@ -136,7 +136,7 @@ content_hash: sha256:3c3679db11977c736117599312a29d0d99c0c979a0004b989c6f82fdc81
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/RypCGh8yRRSLDp_LfcSFrA/zh-cn_image_0000002794411551.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/AlRY9mrSRv2tEEmW_qTxIw/zh-cn_image_0000002768021542.jpg "点击放大")
 3. 在添加点注释之后，修改已经设置的点注释属性。
 
    ```typescript
@@ -187,7 +187,7 @@ this.pointAnnotation.setAnimation(animation);
 this.pointAnnotation.startAnimation();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/xSxfEn9rTye9OvIyxhR6JA/zh-cn_image_0000002764972832.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/AAZcgHzWQVi99BIJgCoZ4Q/zh-cn_image_0000002797301491.gif "点击放大")
 
 ### 点注释标题动画
 
@@ -221,4 +221,4 @@ this.pointAnnotation.setTitleAnimation(animation);
 this.pointAnnotation.startTitleAnimation();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/Gk2PWkqdSf6J09ETCRS3vw/zh-cn_image_0000002765132758.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/cvspTbWAQVKOZHGZn7L89A/zh-cn_image_0000002767861560.gif "点击放大")

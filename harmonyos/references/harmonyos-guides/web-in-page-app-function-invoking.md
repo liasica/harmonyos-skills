@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-in-page-a
 title: 前端页面调用应用侧函数
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 前端页面调用应用侧函数
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3c2e6519fd0d5512e1b01a1fbed25d7c6ebe38497c1d8bdb3b8026909de19047
+scraped_at: 2026-10-22T07:04:51+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:5bfc258c90f3e0c6b9bc0da8dc1cedae014600305a4e6d02cdbfef9c1998535f
 ---
 
 开发者使用Web组件将应用侧代码注册到前端页面中，注册完成之后，前端页面中使用注册的对象名称就可以调用应用侧的方法。
@@ -290,8 +290,7 @@ struct WebComponent {
 
 Array可以作为注册对象方法的参数或返回值，在应用侧和前端页面之间传递。
 
-```ts
-// xxx.ets
+```typescript
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -300,10 +299,10 @@ class TestClass {
   }
 
   test(): Array<number> {
-    return [1, 2, 3, 4]
+    return [1, 2, 3, 4];
   }
 
-  toString(param: string): void {
+  toString(param: Array<number>): void {
     console.info('Web Component toString' + param);
   }
 }
@@ -321,33 +320,36 @@ struct Index {
           try {
             this.webviewController.refresh();
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('Register JavaScript To Window')
         .onClick(() => {
           try {
-            this.webviewController.registerJavaScriptProxy(this.testObj, "testObjName", ["test", "toString"]);
+            this.webviewController.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'toString']);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('deleteJavaScriptRegister')
         .onClick(() => {
           try {
-            this.webviewController.deleteJavaScriptRegister("testObjName");
+            this.webviewController.deleteJavaScriptRegister('testObjName');
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
-      Web({ src: $rawfile('index.html'), controller: this.webviewController })
+      Web({ src: $rawfile('index7.html'), controller: this.webviewController })
     }
   }
 }
 ```
 
 ```html
-<!-- index.html -->
+<!-- index7.html -->
 <!DOCTYPE html>
 <html>
 <body>
@@ -366,28 +368,27 @@ struct Index {
 
 非Function等复杂类型作为注册对象方法的参数或返回值，在应用侧和前端页面之间传递。
 
-```ts
-// xxx.ets
+```typescript
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class Student {
-  name: string = '';
-  age: string = '';
+  public name: string = '';
+  public age: string = '';
 }
 
 class TestClass {
   constructor() {
   }
 
-  // 传递的基础类型name:"jeck", age:"12"。
+  // 传递的基础类型name:'jeck', age:'12'。
   test(): Student {
-    let st: Student = { name: "jeck", age: "12" };
+    let st: Student = { name: 'jeck', age: '12' };
     return st;
   }
 
   toString(param: ESObject): void {
-    console.info('Web Component toString' + param["name"]);
+    console.info('Web Component toString' + param['name']);
   }
 }
 
@@ -404,33 +405,36 @@ struct Index {
           try {
             this.webviewController.refresh();
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('Register JavaScript To Window')
         .onClick(() => {
           try {
-            this.webviewController.registerJavaScriptProxy(this.testObj, "testObjName", ["test", "toString"]);
+            this.webviewController.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'toString']);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('deleteJavaScriptRegister')
         .onClick(() => {
           try {
-            this.webviewController.deleteJavaScriptRegister("testObjName");
+            this.webviewController.deleteJavaScriptRegister('testObjName');
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
-      Web({ src: $rawfile('index.html'), controller: this.webviewController })
+      Web({ src: $rawfile('index9.html'), controller: this.webviewController })
     }
   }
 }
 ```
 
 ```html
-<!-- index.html -->
+<!-- index9.html -->
 <!DOCTYPE html>
 <html>
 <body>
@@ -449,8 +453,7 @@ struct Index {
 
 Callback可以作为注册对象方法的参数或返回值，在应用侧和前端页面之间传递。
 
-```ts
-// xxx.ets
+```typescript
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -459,7 +462,7 @@ class TestClass {
   }
 
   test(param: Function): void {
-    param("call callback");
+    param('call callback');
   }
 
   toString(param: String): void {
@@ -480,33 +483,36 @@ struct Index {
           try {
             this.webviewController.refresh();
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('Register JavaScript To Window')
         .onClick(() => {
           try {
-            this.webviewController.registerJavaScriptProxy(this.testObj, "testObjName", ["test", "toString"]);
+            this.webviewController.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'toString']);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('deleteJavaScriptRegister')
         .onClick(() => {
           try {
-            this.webviewController.deleteJavaScriptRegister("testObjName");
+            this.webviewController.deleteJavaScriptRegister('testObjName');
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
-      Web({ src: $rawfile('index.html'), controller: this.webviewController })
+      Web({ src: $rawfile('index8.html'), controller: this.webviewController })
     }
   }
 }
 ```
 
 ```html
-<!-- index.html -->
+<!-- index8.html -->
 <!DOCTYPE html>
 <html>
 <body>
@@ -525,8 +531,7 @@ struct Index {
 
 前端页面Object里的Function可以作为注册对象方法的参数或返回值，在应用侧和前端页面之间传递。
 
-```ts
-// xxx.ets
+```typescript
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -535,7 +540,7 @@ class TestClass {
   }
 
   test(param: ESObject): void {
-    param.hello("call obj func");
+    param.hello('call obj func');
   }
 
   toString(param: string): void {
@@ -556,33 +561,36 @@ struct Index {
           try {
             this.webviewController.refresh();
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('Register JavaScript To Window')
         .onClick(() => {
           try {
-            this.webviewController.registerJavaScriptProxy(this.testObj, "testObjName", ["test", "toString"]);
+            this.webviewController.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'toString']);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('deleteJavaScriptRegister')
         .onClick(() => {
           try {
-            this.webviewController.deleteJavaScriptRegister("testObjName");
+            this.webviewController.deleteJavaScriptRegister('testObjName');
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
-      Web({ src: $rawfile('index.html'), controller: this.webviewController })
+      Web({ src: $rawfile('index6.html'), controller: this.webviewController })
     }
   }
 }
 ```
 
 ```html
-<!-- index.html -->
+<!-- index6.html -->
 <!DOCTYPE html>
 <html>
 <body>
@@ -625,32 +633,31 @@ struct Index {
 
 应用侧Object里的Function可以作为注册对象方法的参数或返回值，在应用侧和前端页面之间传递。
 
-```ts
-// xxx.ets
+```typescript
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class ObjOther {
-  methodNameListForJsProxy: string[]
+  public methodNameListForJsProxy: string[];
 
   constructor(list: string[]) {
-    this.methodNameListForJsProxy = list
+    this.methodNameListForJsProxy = list;
   }
 
   testOther(json: string): void {
-    console.info(json)
+    console.info(json);
   }
 }
 
 class TestClass {
-  ObjReturn: ObjOther
+public objReturn: ObjOther
 
   constructor() {
-    this.ObjReturn = new ObjOther(["testOther"]);
+    this.objReturn = new ObjOther(['testOther']);
   }
 
   test(): ESObject {
-    return this.ObjReturn
+    return this.objReturn
   }
 
   toString(param: string): void {
@@ -671,33 +678,36 @@ struct Index {
           try {
             this.webviewController.refresh();
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('Register JavaScript To Window')
         .onClick(() => {
           try {
-            this.webviewController.registerJavaScriptProxy(this.testObj, "testObjName", ["test", "toString"]);
+            this.webviewController.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'toString']);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('deleteJavaScriptRegister')
         .onClick(() => {
           try {
-            this.webviewController.deleteJavaScriptRegister("testObjName");
+            this.webviewController.deleteJavaScriptRegister('testObjName');
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
-      Web({ src: $rawfile('index.html'), controller: this.webviewController })
+      Web({ src: $rawfile('index5.html'), controller: this.webviewController })
     }
   }
 }
 ```
 
 ```html
-<!-- index.html -->
+<!-- index5.html -->
 <!DOCTYPE html>
 <html>
 <body>
@@ -716,8 +726,7 @@ struct Index {
 
 第一种使用方法，在应用侧new Promise，将Promise作为对象方法的参数或返回值，向前端页面传递。
 
-```ts
-// xxx.ets
+```typescript
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -728,7 +737,7 @@ class TestClass {
   test(): Promise<string> {
     let p: Promise<string> = new Promise((resolve, reject) => {
       setTimeout(() => {
-        console.info('执行完成');
+        console.info('Execute Finished');
         reject('fail');
       }, 10000);
     });
@@ -736,7 +745,7 @@ class TestClass {
   }
 
   toString(param: string): void {
-    console.info(" " + param);
+    console.info(' ' + param);
   }
 }
 
@@ -753,33 +762,36 @@ struct Index {
           try {
             this.webviewController.refresh();
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('Register JavaScript To Window')
         .onClick(() => {
           try {
-            this.webviewController.registerJavaScriptProxy(this.testObj, "testObjName", ["test", "toString"]);
+            this.webviewController.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'toString']);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('deleteJavaScriptRegister')
         .onClick(() => {
           try {
-            this.webviewController.deleteJavaScriptRegister("testObjName");
+            this.webviewController.deleteJavaScriptRegister('testObjName');
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
-      Web({ src: $rawfile('index.html'), controller: this.webviewController })
+      Web({ src: $rawfile('index2.html'), controller: this.webviewController })
     }
   }
 }
 ```
 
 ```html
-<!-- index.html -->
+<!-- index2.html -->
 <!DOCTYPE html>
 <html>
 <body>
@@ -796,8 +808,7 @@ struct Index {
 
 第二种使用方法，在前端页面new Promise，将Promise作为对象方法的参数或返回值，向应用侧传递。
 
-```ts
-// xxx.ets
+```typescript
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -806,11 +817,11 @@ class TestClass {
   }
 
   test(param:Function): void {
-    setTimeout( () => { param("suc") }, 10000)
+    setTimeout( () => { param('suc') }, 10000)
   }
 
   toString(param:string): void {
-    console.info(" " + param);
+    console.info(' ' + param);
   }
 }
 
@@ -827,33 +838,36 @@ struct Index {
           try {
             this.webviewController.refresh();
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('Register JavaScript To Window')
         .onClick(() => {
           try {
-            this.webviewController.registerJavaScriptProxy(this.testObj, "testObjName", ["test", "toString"]);
+            this.webviewController.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'toString']);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Button('deleteJavaScriptRegister')
         .onClick(() => {
           try {
-            this.webviewController.deleteJavaScriptRegister("testObjName");
+            this.webviewController.deleteJavaScriptRegister('testObjName');
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(
+              `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
-      Web({ src: $rawfile('index.html'), controller: this.webviewController })
+      Web({ src: $rawfile('index3.html'), controller: this.webviewController })
     }
   }
 }
 ```
 
 ```html
-<!-- index.html -->
+<!-- index3.html -->
 <!DOCTYPE html>
 <html>
 <body>
@@ -880,4 +894,4 @@ struct Index {
 
    使用[复杂类型使用方法](web-in-page-app-function-invoking.md#复杂类型使用方法)中应用侧和前端页面之间传递Array作为示例，调试结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/LPuPeBDQSuCsWRzMoOZrrQ/zh-cn_image_0000002794490323.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/EZcN0cqASU6lz5AcoXI6Ew/zh-cn_image_0000002797180517.png)

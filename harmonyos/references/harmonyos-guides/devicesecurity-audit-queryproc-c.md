@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 进程信息查询场景（C/C++）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 进程信息查询场景（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:38+08:00
+scraped_at: 2026-10-22T07:05:04+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a15d5465cbb97dfee68d5dbd4f04402551380a183597de8d9957f9c23ad56e61
+content_hash: sha256:82acbb4a7f154cefe3dfa181f036097ac62731c53a658e2397388964c5b71a67
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:a15d5465cbb97dfee68d5dbd4f04402551380a183597de8d9957f9c23ad
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/Y7znPt9-TC2OrcpzrqTq_A/zh-cn_image_0000002765131994.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/hE_0D8GrStmOs3z8N8-p5g/zh-cn_image_0000002767860802.png)
 
 **流程说明：**
 

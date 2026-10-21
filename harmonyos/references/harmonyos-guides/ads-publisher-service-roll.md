@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 贴片广告
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 贴片广告
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:23+08:00
+scraped_at: 2026-10-22T07:05:42+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:1cef0bf6b5c1e2a2f12818dda0477fa490ca17fb1f16bccfc97a383711a7e00c
+content_hash: sha256:874a5981df5fe1c1256e51ee00972eb9900598d1339e6afdf7373e416cc32d7c
 ---
 
 ## 场景介绍
 
 贴片广告是一种在视频播放前、视频播放中或视频播放结束后插入的视频或图片广告。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/g4pAZiBjR5CKkOtvWzGVJw/zh-cn_image_0000002794411269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/5EEjVX3aQ-6Zx0P-aGgiow/zh-cn_image_0000002768021264.png)
 
 ## 约束与限制
 

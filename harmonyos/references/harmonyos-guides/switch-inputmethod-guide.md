@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/switch-inputm
 title: 切换输入法应用
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 切换输入法应用
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:21+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:738e324f5b25822f60cb5ad472c15c4f9a2a215b6e2ca953be395b9ef4ec696c
+scraped_at: 2026-10-22T07:04:56+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:717d6f36d9dbbb5a0acd00068ba45d1c98a22a8b2e2cac3fff92c0fd9e1d2e88
 ---
 
 输入法框架服务提供了切换输入法应用的API，支持切换输入法、切换输入法和子类型、切换当前输入法的子类型。
@@ -56,13 +56,13 @@ async switchInputMethod(item: string) {
     this.inputMethods = await inputMethod.getSetting().getInputMethods(true); // 获取已使能的输入法列表
     let currentInputMethod = inputMethod.getCurrentInputMethod(); // 获取当前输入法
     for (let i = 0; i < this.inputMethods.length; i++) {
-      if (item != currentInputMethod.name) { // 判断不是当前输入法时，切换到该输入法，实际开发中可以切换到固定输入法
+      if (this.inputMethods[i].name === item && item != currentInputMethod.name) { // 判断是目标输入法且不是当前输入法时，切换到该输入法
         await inputMethod.switchInputMethod(this.inputMethods[i]);
       }
     }
   } catch (err) {
     let error = err as BusinessError;
-    Log.showError(TAG, `switchInputMethod catch error: ${error.code} ${error.message}`);
+    console.error(`switchInputMethod catch error: ${error.code} ${error.message}`);
   }
 }
 ```

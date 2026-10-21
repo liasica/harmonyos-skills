@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-genera
 title: 开通通用凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 通用凭证 > 开发场景 > 开通通用凭证
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:46+08:00
+scraped_at: 2026-10-22T07:06:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0c310975241beea68d97fa1c9d65f1e25e4329cf7fc6fca69c896b76aa22a58b
+content_hash: sha256:844e5532d9401ffd23eabc8400b8fd67887ab9851323ddd18dd36b49fe30a01b
 ---
 
 用户可以将各类灵活凭证添加至钱包，亮证核验或收藏保存，实现数字化凭证管理。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/BgtwYYDpSqSPFZqWlilwHg/zh-cn_image_0000002794411743.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/_o4bA7WESxeRAwc8RZxVWg/zh-cn_image_0000002768021730.png)
 
 ## 开发流程
 

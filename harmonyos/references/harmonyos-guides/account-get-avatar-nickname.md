@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-a
 title: 获取头像昵称
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取头像昵称
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:22+08:00
+scraped_at: 2026-10-22T07:05:40+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:eac440bdea1b8936e5c8ea441e447905f840bb6b2d66462972fbd7c2c6732b60
+content_hash: sha256:030d8c5479bdb674a0b2a158976e97c5460a7b5093514a5c59dfc84f8c2c7aa8
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:eac440bdea1b8936e5c8ea441e447905f840bb6b2d66462972fbd7c2c67
 
 **图1** 手机端获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/IH0ubk06SyW6iPJCvSCeUQ/zh-cn_image_0000002764972532.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ty0KO46eSByV3ozDJRv_HA/zh-cn_image_0000002797301193.png "点击放大")
 
 **图2** Wearable设备获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/WKnCodyXQb2ltf4qq4ogmw/zh-cn_image_0000002765132456.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/_rJ6cMU6R_-KP69Wez7_0g/zh-cn_image_0000002767861264.png "点击放大")
 
 ## 约束与限制
 
@@ -26,7 +26,7 @@ content_hash: sha256:eac440bdea1b8936e5c8ea441e447905f840bb6b2d66462972fbd7c2c67
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/CKbcHH4wQA2GzJL0s0tRFw/zh-cn_image_0000002794491033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/b7ziCoBkRHy9lSJIULzYjQ/zh-cn_image_0000002797181225.png)
 
 流程说明：
 

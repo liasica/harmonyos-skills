@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义组件生命周期（推荐）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件生命周期（推荐）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:07+08:00
+scraped_at: 2026-10-22T07:04:37+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:3f3e8a183ec8b309f76d92c0e69a5967aab221b3a5c752ce9eb236601a6a31b2
+content_hash: sha256:e4caa75840619e50bdde80896922d5798ecf3a491fd5605be172aa2f72367fc0
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:3f3e8a183ec8b309f76d92c0e69a5967aab221b3a5c752ce9eb236601a6
 
 自定义组件生命周期受状态机限制，每个生命周期回调函数仅在特定的状态转换阶段才会被调用，比如@ComponentReuse的限制条件是从CustomComponentLifecycleState.RECYCLED到CustomComponentLifecycleState.BUILT阶段触发，@ComponentAppear仅在组件处于CustomComponentLifecycleState.INIT状态时触发，流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Fnrt5tYmTlKW_Y4a-apLCw/zh-cn_image_0000002794489375.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/rNeDBPH8RN6qhdP5xHqfQA/zh-cn_image_0000002797179583.png)
 
 ### 自定义组件的创建和渲染流程
 
@@ -122,7 +122,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/GqPfhS23Q_mxNMC4zab-rA/zh-cn_image_0000002794409597.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/UOYBMPQDQWy7Dg_Jwe72kA/zh-cn_image_0000002768019604.gif)
 
 上述代码建议按以下步骤执行。
 
@@ -364,7 +364,7 @@ struct TabsComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/sF-_qBsEQ22v1ZbWwGwzIA/zh-cn_image_0000002764970878.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/4B3FMGDUTHOMg36fp2aWCQ/zh-cn_image_0000002797299551.gif)
 
 **场景说明与日志输出：**
 
@@ -521,7 +521,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/3LMZS9BJSvC8r44BzMLNrg/zh-cn_image_0000002765130800.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ssDgQku-QtiLHypzsYc3cg/zh-cn_image_0000002767859620.gif)
 
 **场景说明与日志输出：**
 
@@ -582,7 +582,7 @@ struct MyActiveSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/l9WCcrg6Qmu7gSuAmNxyFg/zh-cn_image_0000002794489377.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/3R_eQP_XScmrIvoHLOMjfQ/zh-cn_image_0000002797179585.png)
 
 **场景说明与日志输出：**
 
@@ -714,7 +714,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/en4bl9OwQaG2b_4bCFx0ig/zh-cn_image_0000002794409599.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Mz6nndoUTOGb6VP7T50rVQ/zh-cn_image_0000002768019606.gif)
 
 以上示例中，Index页面包含两个自定义组件，一个是Parent，一个是Child，Parent及其子组件Child分别声明了各自的自定义组件生命周期装饰器装饰的函数（myAppear / myBuilt / myDisappear）。
 
@@ -753,7 +753,7 @@ Child myBuilt
 
 当showChild为默认值true时，该示例的生命周期流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/sUVl95baTxqJGVICybubFg/zh-cn_image_0000002764970880.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/3RIRZaQVSNefrg6Inxb4PA/zh-cn_image_0000002797299553.png)
 
 ### 自定义组件回收复用
 
@@ -900,7 +900,7 @@ struct GrandChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/YEEBQoyrS5SEYPuw9pI-SA/zh-cn_image_0000002765130802.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/7XktcKWSR5efSlErrsN5cw/zh-cn_image_0000002767859622.gif)
 
 以上示例中，Index页面包含自定义组件Child，Child组件包含自定义组件GrandChild。Child和GrandChild分别声明了各自的自定义组件生命周期装饰器装饰的函数（myInit / myAppear / myBuilt / myRecycle / myReuse / myDisappear）。
 
@@ -1015,7 +1015,7 @@ export function unRegisterObserver(lifeCycle: CustomComponentLifecycle) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/IxL4m4-fQ0mP7vT_26ea0g/zh-cn_image_0000002794489379.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Su9cLVu2QVubvYhu1EkiyA/zh-cn_image_0000002797179587.gif)
 
 在@ComponentDisappear装饰的函数中解除注册监听，所以监听器无法监听到aboutToDisappear。
 
@@ -1194,7 +1194,7 @@ export struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/4MClUmfSTkeWpU7_x9aFGQ/zh-cn_image_0000002794409601.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/75-GcZ8IQ4-IqgWnI1hy4Q/zh-cn_image_0000002768019608.gif)
 
 启动程序后，先按start按钮，此时只有Swiper缓存的五个节点开始执行aboutToAppear和myAppear，非缓存的节点未触发aboutToAppear和myAppear。
 
@@ -1322,7 +1322,7 @@ struct ReusableComp3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/jog5pV6PQROAS4fvTrl5hA/zh-cn_image_0000002764970882.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/HPVSlZTyRd-n2ZY6_KgAcg/zh-cn_image_0000002797299555.gif)
 
 按下change flag 1按钮，此时ReusableComp2进入回收状态，再按下change flag 2按钮，此时ReusableComp3第一次被创建，此时日志输出信息如下：
 

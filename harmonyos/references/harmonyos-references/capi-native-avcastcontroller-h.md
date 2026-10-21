@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcastcontroller.h
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 头文件 > native_avcastcontroller.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:24+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:efe166c9df5ccf4eb747c7113bc3cdf5c5175ae56f786ecd61debeb4b0da206f
+scraped_at: 2026-10-22T07:09:55+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:8b65c27495755ba050641bf7973d2a67a5aebf9abed4ac1b71a59b5e606b1df4
 ---
 
 ## 概述
@@ -80,6 +80,14 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlaybackStateChang
 
 **起始版本：** 23
 
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCastController](capi-ohavsession-oh-avcastcontroller.md)\* avcastcontroller | OH\_AVCastController实例指针。 |
+| [OH\_AVSession\_AVPlaybackState](capi-ohavsession-oh-avsession-avplaybackstate.md)\* playbackState | 设置的播放状态。 |
+| void\* userData | 传递的用户数据。 |
+
 ### OH\_AVCastControllerCallback\_MediaItemChange()
 
 ```c
@@ -91,6 +99,14 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_MediaItemChange)(O
 媒体项目变更的回调函数。
 
 **起始版本：** 23
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCastController](capi-ohavsession-oh-avcastcontroller.md)\* avcastcontroller | OH\_AVCastController实例指针。 |
+| [OH\_AVSession\_AVQueueItem](capi-ohavsession-oh-avsession-avqueueitem.md)\* avQueueItem | 设置音视频队列项。 |
+| void\* userData | 传递的用户数据。 |
 
 ### OH\_AVCastControllerCallback\_PlayNext()
 
@@ -104,6 +120,13 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlayNext)(OH_AVCas
 
 **起始版本：** 23
 
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCastController](capi-ohavsession-oh-avcastcontroller.md)\* avcastcontroller | OH\_AVCastController实例指针。 |
+| void\* userData | 传递的用户数据。 |
+
 ### OH\_AVCastControllerCallback\_PlayPrevious()
 
 ```c
@@ -115,6 +138,13 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlayPrevious)(OH_A
 播放上一首的回调函数。
 
 **起始版本：** 23
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCastController](capi-ohavsession-oh-avcastcontroller.md)\* avcastcontroller | OH\_AVCastController实例指针。 |
+| void\* userData | 传递的用户数据。 |
 
 ### OH\_AVCastControllerCallback\_SeekDone()
 
@@ -128,6 +158,14 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_SeekDone)(OH_AVCas
 
 **起始版本：** 23
 
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCastController](capi-ohavsession-oh-avcastcontroller.md)\* avcastcontroller | OH\_AVCastController实例指针。 |
+| int32\_t position | 跳转后的位置。 |
+| void\* userData | 传递的用户数据。 |
+
 ### OH\_AVCastControllerCallback\_EndOfStream()
 
 ```c
@@ -140,6 +178,13 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_EndOfStream)(OH_AV
 
 **起始版本：** 23
 
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCastController](capi-ohavsession-oh-avcastcontroller.md)\* avcastcontroller | OH\_AVCastController实例指针。 |
+| void\* userData | 传递的用户数据。 |
+
 ### OH\_AVCastControllerCallback\_Error()
 
 ```c
@@ -151,6 +196,14 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_Error)(OH_AVCastCo
 播放错误的回调函数。
 
 **起始版本：** 23
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCastController](capi-ohavsession-oh-avcastcontroller.md)\* avcastcontroller | OH\_AVCastController实例指针。 |
+| void\* userData | 传递的用户数据。 |
+| [AVSession\_ErrCode](capi-native-avsession-errors-h.md#avsession_errcode) error | 投播播放错误码。 |
 
 ### OH\_AVCastController\_Destroy()
 

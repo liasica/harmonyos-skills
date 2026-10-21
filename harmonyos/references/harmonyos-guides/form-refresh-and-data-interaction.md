@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/form-refresh-
 title: 卡片更新与数据交互
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片最佳实践 > 卡片更新与数据交互
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:29+08:00
+scraped_at: 2026-10-22T07:04:56+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:4fecce99c26da4a2fb65329913644f10a4200248c1aafe0e7b4b9f1f0a58a1ff
+content_hash: sha256:5db1420932d79fd0106e78e0c3ff5fe44fab5278af449793a26437a7b5866294
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:4fecce99c26da4a2fb65329913644f10a4200248c1aafe0e7b4b9f1f0a5
 
 **图 1** 天气卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/plw9uZw6QsSHglGCxONJzQ/zh-cn_image_0000002794490465.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/7FOj4_7yReOZJabPVz1_Nw/zh-cn_image_0000002797180659.jpg)
 
 ### 卡片更新场景
 
@@ -39,13 +39,13 @@ content_hash: sha256:4fecce99c26da4a2fb65329913644f10a4200248c1aafe0e7b4b9f1f0a5
 
 **图 2** 卡片提供方和使用方
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/vsX2HSZYSMClbpOzaU4RTw/zh-cn_image_0000002794490467.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/KY3yIlITTMmJh6t707IQZw/zh-cn_image_0000002797180661.jpg)
 
 以天气卡片为例，天气应用作为[卡片提供方](formkit-overview.md#服务卡片架构)，提供天气卡片的显示内容、控件布局和卡片交互处理逻辑。例如，天气卡片显示地点、温度和天气情况，点击卡片跳转至天气应用等。此时，桌面作为[卡片使用方](formkit-overview.md#服务卡片架构)，即卡片的宿主应用，控制天气卡片在桌面中展示的位置并展示卡片内容。ArkTS服务卡片的实现依赖ArkTS卡片框架的能力，卡片框架管理卡片生命周期和刷新机制，负责卡片页面的渲染。如下图所示，卡片提供方和使用方都依赖于卡片框架，天气应用提供的天气卡片，其添加、删除和刷新依赖框架的卡片管理服务，桌面展示天气卡片内容依赖框架的卡片渲染服务。关于卡片提供方、使用方和卡片框架的详细内容可参考ArkTS卡片[实现原理](arkts-form-overview.md#实现原理)。
 
 **图 3** 卡片运行机制示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/m16JHkmLRm-UgN3o_DnREA/zh-cn_image_0000002794410683.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/vxggSFvVQOWxtoFEu-3Bnw/zh-cn_image_0000002768020684.jpg)
 
 ### 卡片数据交互
 
@@ -53,7 +53,7 @@ content_hash: sha256:4fecce99c26da4a2fb65329913644f10a4200248c1aafe0e7b4b9f1f0a5
 
 **图 4** 应用主进程与卡片进程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/AkfzxhCOSUiLtalQOHGQpg/zh-cn_image_0000002764971966.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/niNFWTM2T3aVPUwx43s8ww/zh-cn_image_0000002797300631.jpg)
 
 本文主要介绍由卡片或应用UI交互引起的、由系统刷新机制定时或定点触发的[卡片更新场景](form-refresh-and-data-interaction.md#卡片更新场景)。一般情况下，卡片实现这几种常见场景就可以满足用户对卡片信息更新的诉求。还有一类是需要实时更新信息的应用卡片，例如出行打车类卡片，用户对信息的实时性要求很高，这类场景可以通过[Push Kit（推送服务）](push-kit-guide.md)的能力来实现，详细可参考[推送卡片刷新消息](push-form-update.md)。
 
@@ -65,7 +65,7 @@ content_hash: sha256:4fecce99c26da4a2fb65329913644f10a4200248c1aafe0e7b4b9f1f0a5
 
 **图 5** 卡片预览页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/aw4_bWC0QS6opFdx0pifxQ/zh-cn_image_0000002765131892.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/sMjdBcmGRNSZExPUrG6q3Q/zh-cn_image_0000002767860700.png)
 
 ### 开发流程
 
@@ -73,7 +73,7 @@ content_hash: sha256:4fecce99c26da4a2fb65329913644f10a4200248c1aafe0e7b4b9f1f0a5
 
 **图 6** 卡片数据初始化流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/zUYEch0_TfeEzIwUvPeDTg/zh-cn_image_0000002794490469.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Vcxb7Y46Saqvcu6z2VMaIw/zh-cn_image_0000002797180663.jpg)
 
 桌面长按应用图标待展示卡片列表时，首先触发[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)生命周期接口onAddForm()。使用卡片参数枚举[FormParam](../harmonyos-references/js-apis-app-form-forminfo.md#formparam)可以从生命周期接口onAddForm()的入参[want](../harmonyos-references/js-apis-app-ability-want.md)中取出卡片的相关信息如卡片标识、卡片名称、卡片宽高等。针对必要的信息可以进行判断或者保存等操作。
 
@@ -188,7 +188,7 @@ struct WidgetCard {
 
 ### 场景描述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/TsfvKEDCTyWOdnj3upeW_Q/zh-cn_image_0000002794410685.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/wc40TcdDSMWyHMDDuk31cg/zh-cn_image_0000002768020686.gif)
 
 一般情况下，简单的卡片UI交互会引起卡片更新。例如，智能家电控制类卡片，通过卡片控制家电开关时，卡片上的开关状态会随设备状态而改变；点击新闻类卡片刷新按钮，从网络获取最新数据更新推荐内容列表。这类更新场景可以通过[卡片传递消息给应用（message事件）](arkts-ui-widget-event-formextensionability.md)实现，仅在卡片进程就可以完成卡片更新。
 
@@ -196,7 +196,7 @@ struct WidgetCard {
 
 **图 7** 卡片UI交互引起更新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/5LxfE2wRQ1WgBKataw929w/zh-cn_image_0000002764971968.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/wCqsR8OvQCKpeSLqF5UGNw/zh-cn_image_0000002797300633.jpg)
 
 在卡片页面注册onClick()点击事件，动态卡片使用postCardAction()接口，静态卡片使用FormLink组件触发事件。本文以动态卡片为例，在点击事件回调中调用postCardAction()接口，action参数选择message触发message事件。message事件未设置abilityName参数时，默认拉起FormExtensionAbility。
 
@@ -250,7 +250,7 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
 ### 场景描述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/h0p8nOV6TjWcg4OWBILgpQ/zh-cn_image_0000002765131894.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/AGEgljQ6RMyGXgNxHjgLIg/zh-cn_image_0000002767860702.gif)
 
 卡片UI交互引起卡片更新，实现和应用在前台时相同的功能。例如，音乐类卡片，点击播放或切换按钮，拉起后台播放音乐，同时更新卡片上的播放状态。这类更新场景可以通过[卡片拉起应用UIAbility到后台（call事件）](arkts-ui-widget-event-call.md)实现，需要在卡片进程拉起应用主进程至后台时更新卡片。
 
@@ -258,7 +258,7 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
 **图 8** 拉起应用至后台时更新卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ZbX_76M6TqOR7n359B4_3g/zh-cn_image_0000002794490471.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/p8RfLrGkTgy8e2GzWOwQOQ/zh-cn_image_0000002797180665.jpg)
 
 在卡片页面注册onClick()点击事件，本文以动态卡片为例，在回调中调用postCardAction()接口（静态卡片中使用FormLink），action参数选择call并配置需要调用的方法和传递的数据，触发call事件后台拉起指定UIAbility。配置参数注意以下限制：
 
@@ -391,7 +391,7 @@ class MyParcelable implements rpc.Parcelable {
 
 ### 场景描述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/HFDFPHwXQ1qnP4FAXnPyng/zh-cn_image_0000002794410687.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2Yl4kerARuaa1EznaNQrqQ/zh-cn_image_0000002768020688.gif)
 
 卡片UI交互跳转至应用后，引起卡片更新。用于定时更新类卡片手动触发卡片更新。例如，天气类卡片，点击卡片跳转至应用，应用实时刷新天气，同时更新卡片展示的天气数据。这类更新场景可以通过[卡片跳转到应用页面（router事件）](arkts-ui-widget-event-router.md)实现，需要从卡片进程跳转至应用主进程后进行卡片更新。
 
@@ -399,7 +399,7 @@ class MyParcelable implements rpc.Parcelable {
 
 **图 9** 跳转到应用后更新卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/i_srCuYhQNKFn8zgbTTrBQ/zh-cn_image_0000002764971970.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/i4I2Fl93S6-zCJrimDu5VQ/zh-cn_image_0000002797300635.jpg)
 
 在卡片页面注册onClick()点击事件，在回调中调用postCardAction()接口，action参数选择router触发router事件。router事件拉起指定的UIAbility，使用abilityName进行配置。
 
@@ -482,7 +482,7 @@ export default class EntryAbility extends UIAbility {
 
 ### 场景描述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/v8J-N62TRuiQs8FXhPu39w/zh-cn_image_0000002765131896.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Pf6nOdgHTUmoGykhkxdjEw/zh-cn_image_0000002767860704.png)
 
 以应用点击收藏场景为例。卡片展示内容在应用内数据列表中，当点击应用内收藏按钮，收藏状态应同步至卡片。
 
@@ -492,7 +492,7 @@ export default class EntryAbility extends UIAbility {
 
 **图 10** 从应用更新数据到卡片流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/-OsSvRg7RMiGnvSaQGj6dw/zh-cn_image_0000002794490473.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/GXkx8YxQSmmyqAKLegOBCQ/zh-cn_image_0000002797180667.jpg)
 
 图片展示卡片创建时，在onAddForm()生命周期中使用首选项保存卡片ID至卡片ID列表及卡片当前状态。
 

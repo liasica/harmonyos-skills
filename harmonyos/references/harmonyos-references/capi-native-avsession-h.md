@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avsession.h
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 头文件 > native_avsession.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:24+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ec01db38c5d67aa5f1fe3d108792b4c2b863441f839f6813cf5dadea93de97e2
+scraped_at: 2026-10-22T07:09:55+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:2998be7b147c56409636ef908a2cb79c6054113bef1d7b22ef2145e0829a6f15
 ---
 
 ## 概述
@@ -88,6 +88,14 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnCommand)(OH_AVSession*
 
 **起始版本：** 13
 
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* session | OH\_AVSession实例指针。 |
+| [AVSession\_ControlCommand](capi-native-avsession-base-h.md#avsession_controlcommand) command | 播放命令。 |
+| void\* userData | 传递的用户数据。 |
+
 ### OH\_AVSessionCallback\_OnFastForward()
 
 ```c
@@ -99,6 +107,14 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnFastForward)(OH_AVSess
 快进的回调。参数seekTime单位为毫秒(ms)。
 
 **起始版本：** 13
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* session | OH\_AVSession实例指针。 |
+| uint32\_t seekTime | 快进时间，单位为毫秒(ms)。 |
+| void\* userData | 传递的用户数据。 |
 
 ### OH\_AVSessionCallback\_OnRewind()
 
@@ -112,6 +128,14 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnRewind)(OH_AVSession* 
 
 **起始版本：** 13
 
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* session | OH\_AVSession实例指针。 |
+| uint32\_t seekTime | 快退时间，单位为毫秒(ms)。 |
+| void\* userData | 传递的用户数据。 |
+
 ### OH\_AVSessionCallback\_OnSeek()
 
 ```c
@@ -123,6 +147,14 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSeek)(OH_AVSession* se
 进度调节的回调。参数seekTime单位为毫秒(ms)。
 
 **起始版本：** 13
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* session | OH\_AVSession实例指针。 |
+| uint64\_t seekTime | 跳转后的位置，单位为毫秒(ms)。 |
+| void\* userData | 传递的用户数据。 |
 
 ### OH\_AVSessionCallback\_OnSetLoopMode()
 
@@ -136,6 +168,14 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSetLoopMode)(OH_AVSess
 
 **起始版本：** 13
 
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* session | OH\_AVSession实例指针。 |
+| [AVSession\_LoopMode](capi-native-avsession-base-h.md#avsession_loopmode) curLoopMode | 当前的循环模式。 |
+| void\* userData | 传递的用户数据。 |
+
 ### OH\_AVSessionCallback\_OnToggleFavorite()
 
 ```c
@@ -148,6 +188,14 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnToggleFavorite)(OH_AVS
 
 **起始版本：** 13
 
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* session | OH\_AVSession实例指针。 |
+| const char\* assetId | 需要切换收藏状态的媒体资源ID。 |
+| void\* userData | 传递的用户数据。 |
+
 ### OH\_AVSessionCallback\_OutputDeviceChange()
 
 ```c
@@ -159,6 +207,12 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OutputDeviceChange)(OH_A
 设备变化的回调。
 
 **起始版本：** 23
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* session | OH\_AVSession实例指针。 |
+| [AVSession\_ConnectionState](capi-native-avsession-base-h.md#avsession_connectionstate) state | 输出设备的连接状态。 |
+| [AVSession\_OutputDeviceInfo](capi-ohavsession-avsession-outputdeviceinfo.md)\* outputDeviceInfo | 输出设备信息。请勿单独释放outputDeviceInfo指针。当不再需要时，应通过调用OH\_AVSession\_ReleaseOutputDevice来统一释放。 |
 
 ### OH\_AVSession\_Create()
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 动态属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 动态属性设置
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:47+08:00
+scraped_at: 2026-10-22T07:07:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:940ad3d7f779a368e10240cfc642d8176e37f95b0fbaeaf70558ebab443c6cb0
+content_hash: sha256:ce7130481fc77c24b704d90841397582bcedfbafcae927de241c03089ed51cfb
 ---
 
 动态设置组件的属性，支持开发者在属性设置时使用if/else语法，且根据需要使用多态样式设置属性。适用于需要根据组件状态（如按压、获焦、禁用、选中、悬浮等）动态切换样式的场景，可提升样式管理的灵活性和代码复用性。
@@ -415,7 +415,7 @@ struct AttributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/2DmHN_wQTn2FjwpErm5k8g/zh-cn_image_0000002765133428.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/PR1dkiEqRtKU-Gbl01NqsQ/zh-cn_image_0000002767862218.gif)
 
 ### 示例2（组件绑定Modifier实现按压态效果）
 
@@ -452,7 +452,7 @@ struct AttributePressedDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Tj9klx_RQFqAtrHGoRhpIg/zh-cn_image_0000002765133428.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/XQFDM8OzQveJXBI1nhRSvQ/zh-cn_image_0000002767862218.gif)
 
 ### 示例3（自定义Modifier不支持感知@State装饰的状态数据变化）
 
@@ -509,7 +509,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/E77-_fg7QuWh_XkIyqG9qg/zh-cn_image_0000002794492001.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/cOfsdXmBRzClw6O45YdLkw/zh-cn_image_0000002797182181.gif)
 
 ### 示例4（Modifier和自定义Modifier的属性同时生效）
 
@@ -574,7 +574,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/dwrwMKg1Rt6gr_cOc5gMvQ/zh-cn_image_0000002794412221.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/uPkPr47RRS6kx-LDlZdruw/zh-cn_image_0000002768022202.gif)
 
 ### 示例5（组件绑定Modifier获焦样式）
 
@@ -619,7 +619,7 @@ struct AttributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Sm7yJCZnQCqatZcquMmEFg/zh-cn_image_0000002764973506.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/xRmxL5sVRRew293h7QtXFw/zh-cn_image_0000002797302151.gif)
 
 ### 示例6（组件绑定Modifier禁用状态的样式）
 
@@ -658,7 +658,7 @@ struct AttributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/DC0gKkVYSu22D11FE085Yg/zh-cn_image_0000002765133430.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/1Y79hVJySku21N8u6MS_nQ/zh-cn_image_0000002767862220.gif)
 
 ### 示例7（组件绑定Modifier选中状态样式）
 
@@ -704,7 +704,7 @@ struct AttributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/jMnlZ9pnTIe6II0ATeEWxQ/zh-cn_image_0000002794492003.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/LpDWb7QXQiihfMuK4dlyKQ/zh-cn_image_0000002797182183.gif)
 
 ### 示例8（自定义组件绑定Modifier实现按压态效果）
 
@@ -754,7 +754,7 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Eb6focp5QhmOpl5z4TMmHw/zh-cn_image_0000002794412223.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ip8sHZ1hQH6n8ETA_w1dOA/zh-cn_image_0000002768022204.gif)
 
 ### 示例9（组件绑定Modifier实现鼠标悬浮态效果）
 
@@ -794,4 +794,4 @@ struct AttributeHoveredDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Uc6oY8AVRXa18JvFt4n80g/zh-cn_image_0000002764973508.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/rdIEWfyMTOW5X_MF_vdLwQ/zh-cn_image_0000002797302153.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 推荐车牌号场景
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 推荐车牌号场景
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:42+08:00
+scraped_at: 2026-10-22T07:05:57+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:163ad7ae40c769b8bc5434341a9d0bd926ea2bc32f33e5a1e232155f847668ca
+content_hash: sha256:48f64f6aa0345316b085b3ed143a3b010d06b5b69b86b3fd8282ab682b2e5c85
 ---
 
 从5.1.0(18)开始，支持智能填充的推荐车牌号场景。
@@ -18,7 +18,7 @@ content_hash: sha256:163ad7ae40c769b8bc5434341a9d0bd926ea2bc32f33e5a1e232155f847
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/XIUAQTREQmSe1dVJpRBdyg/zh-cn_image_0000002794411679.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/MrcMHv9ISNefHC14gVS-qw/zh-cn_image_0000002768021666.png)
 
 ## 示例代码
 

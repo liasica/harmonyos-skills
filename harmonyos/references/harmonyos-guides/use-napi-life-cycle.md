@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-life
 title: 使用Node-API接口进行生命周期相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行生命周期相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:11+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:1ff378540868181b30ab2b04be44d35e22c426148dce171feb83ece0623c6d7e
+scraped_at: 2026-10-22T07:06:22+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:16d6ea78b355bd231dad010911a60a0dc08b9dc714f04c5b1022911e47043ae2
 ---
 
 ## 简介
@@ -64,7 +64,7 @@ import testNapi from 'libentry.so';
 
 ### napi\_open\_handle\_scope、napi\_close\_handle\_scope
 
-通过接口napi\_open\_handle\_scope创建一个上下文环境，并使用napi\_close\_handle\_scope进行关闭。这组接口用于管理ArkTS对象的生命周期，确保在Node-API模块代码处理ArkTS对象时能够正确地管理其句柄，以避免出现对象错误回收的问题。
+通过接口napi\_open\_handle\_scope创建一个napi\_handle\_scope，并使用napi\_close\_handle\_scope进行关闭。这组接口用于管理ArkTS对象的生命周期，确保在Node-API模块代码处理ArkTS对象时能够正确地管理其句柄，以避免出现对象错误回收的问题。
 
 需要注意的是，接口仅支持单层嵌套的scope结构。在任何时刻，只有一个scope处于活动状态，所有新创建的handles都将与该scope相关联。scope必须按照与打开顺序相反的顺序关闭。此外，在native方法中创建的所有scope必须在该方法返回之前被关闭。
 

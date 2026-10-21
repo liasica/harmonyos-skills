@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-data-
 title: Duplicate
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 数据填充 > Duplicate
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:51+08:00
+scraped_at: 2026-10-22T07:06:05+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:143d9aff405422e8a2c1701b0a3d63e032b5dfc957c9681ac229d147b113a77c
+content_hash: sha256:5e35e6befb09bf80fd84b14a474d7b7d806f7810e71740cae5d4a1ebd9fff80a
 ---
 
 ## 功能说明
 
 将一个变量或一个立即数，复制多次并填充到向量，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/OHJrnKH5QQG6BmxW-QLXNA/zh-cn_image_0000002764973116.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/jxNRdSJSQjKYbfDvFq9yNw/zh-cn_image_0000002797301769.png)
 
 ## 函数原型
 

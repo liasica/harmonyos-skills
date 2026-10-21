@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avi
 title: 使用AVImageGenerator获取视频帧(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 媒体信息查询 > 使用AVImageGenerator获取视频帧(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e4dd0f181abbe33c073b3c169b45e312ae1cda85f714276761982b1683258afe
+scraped_at: 2026-10-22T07:05:33+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:475137ded3f435b3984fb3ef0a649737a6f374d08243444f230ee26237e1ad16
 ---
 
 使用AVImageGenerator可以实现从原始媒体资源中获取指定时间的视频帧，本开发指导将以获取视频帧作为示例，向开发者讲解AVImageGenerator相关功能。
@@ -20,7 +20,7 @@ content_hash: sha256:e4dd0f181abbe33c073b3c169b45e312ae1cda85f714276761982b16832
 target_link_libraries(entry PUBLIC libavimage_generator.so libace_napi.z.so)
 ```
 
-使用[OH\_PixelmapNative\_ConvertPixelmapNativeToNapi()](../harmonyos-references/capi-pixelmap-native-h.md#oh_pixelmapnative_convertpixelmapnativetonapi)接口将nativePixelMap对象转换为PixelMapnapi对象、[OH\_PixelmapNative\_Release()](../harmonyos-references/capi-pixelmap-native-h.md#oh_pixelmapnative_release)接口释放OH\_PixelmapNative对象资源，需引入如下头文件。
+使用[OH\_PixelmapNative\_ConvertPixelmapNativeToNapi()](../harmonyos-references/capi-pixelmap-native-h.md#oh_pixelmapnative_convertpixelmapnativetonapi)接口将OH\_PixelmapNative对象转换为PixelMapnapi对象、[OH\_PixelmapNative\_Release()](../harmonyos-references/capi-pixelmap-native-h.md#oh_pixelmapnative_release)接口释放OH\_PixelmapNative对象资源，需引入如下头文件。
 
 ```c
 #include <multimedia/image_framework/image/pixelmap_native.h>
@@ -77,7 +77,7 @@ target_link_libraries(entry PUBLIC libavmetadata_extractor.so libnative_media_co
 
    int64_t offset = 0; // 媒体源在文件描述符中的偏移量。
    int32_t fileDescribe = -1; // 媒体文件描述符。
-   int32_t fileSize = 0; // 媒体文件大小。
+   int64_t fileSize = 0; // 媒体文件大小。
        
    // 设置视频资源的文件描述符。
    OH_AVErrCode avErrCode = OH_AVImageGenerator_SetFDSource(generator, fileDescribe, offset, fileSize);
@@ -140,7 +140,7 @@ target_link_libraries(entry PUBLIC libavmetadata_extractor.so libnative_media_co
    ```
 4. 获取指定时间的视频帧：调用[OH\_AVImageGenerator\_FetchFrameByTime()](../harmonyos-references/capi-avimage-generator-h.md#oh_avimagegenerator_fetchframebytime)，可以获取到一个OH\_PixelmapNative对象，该对象可用于图片显示。
 
-   使用完成需要调用OH\_PixelmapNative\_Release释放OH\_PixelmapNative对象资源，详细使用方法请参阅[Image\_NativeModule](../harmonyos-references/capi-pixelmap-native-h.md#oh_pixelmapnative_release)。
+   使用完成需要调用OH\_PixelmapNative\_Release释放OH\_PixelmapNative对象资源，详细使用方法请参阅[OH\_PixelmapNative\_Release()](../harmonyos-references/capi-pixelmap-native-h.md#oh_pixelmapnative_release)。
 
    ```c
    #include "napi/native_api.h"
@@ -154,7 +154,7 @@ target_link_libraries(entry PUBLIC libavmetadata_extractor.so libnative_media_co
        int64_t timeUs = 0; // 指定的时间（单位us）。
        int64_t offset = 0; // 媒体源在文件描述符中的偏移量。
        int32_t fileDescribe = -1; // 媒体文件描述符。
-       int32_t fileSize = 0; // 媒体文件大小。
+       int64_t fileSize = 0; // 媒体文件大小。
        int32_t options = OH_AVIMAGE_GENERATOR_QUERY_CLOSEST; // OH_AVIMAGE_GENERATOR_QUERY_CLOSEST表示选取离传入时间点最近的关键帧。
    };
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-arwo
 title: 命中检测介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 命中检测 > 命中检测介绍
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:15+08:00
+scraped_at: 2026-10-22T07:05:35+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:66663d4126ce71be23498fe8b959c80e5526c6f539ca65a9bdd7678c2a4cb3c8
+content_hash: sha256:ebfb70ea8de18a1d14b289c6e400ffc4faf37d45ff962574a861ca72a7ce2f56
 ---
 
 AR Engine通过命中检测（Hit Testing）技术，将终端设备屏幕上的兴趣点映射为现实环境中的兴趣点。命中检测以现实环境中的兴趣点为源，发出一条射线连接到摄像头所在位置，返回射线与平面、稀疏点云、Mesh的交点。
@@ -16,4 +16,4 @@ AR Engine通过命中检测（Hit Testing）技术，将终端设备屏幕上的
 
 **图1** 命中检测示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Ra54Mq07Qk-AeT7Oq90hJQ/zh-cn_image_0000002765132306.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/3--k0zRsS2SCSTf-ypIYoA/zh-cn_image_0000002767861114.jpg)

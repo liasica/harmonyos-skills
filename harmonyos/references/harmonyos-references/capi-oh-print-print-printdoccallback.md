@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: Print_PrintDocCallback
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 结构体 > Print_PrintDocCallback
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9ad5c6878180f7c95be075daa82ad73c90dca234b8c2f367e0b45cb66e4326ee
+scraped_at: 2026-10-22T07:09:24+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:444473cc184e5298279f7b66c531a375b8a6072d29b6b6e7ffb4e8245b861bc7
 ---
 
 ```cpp
@@ -14,7 +14,7 @@ typedef struct {...} Print_PrintDocCallback
 
 ## 概述
 
-表示打印文档回调结构体。用于 C/C++ 原生应用向打印框架提供文件生成和任务状态接收能力。
+表示打印文档回调结构体。用于C/C++原生应用向打印框架提供文件生成和任务状态接收能力。
 
 **起始版本：** 13
 

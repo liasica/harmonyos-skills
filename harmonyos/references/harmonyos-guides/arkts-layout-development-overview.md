@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 布局概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 布局概述
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:10+08:00
+scraped_at: 2026-10-22T07:04:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5d550adc4ca4a6717b4ff7bc16d5cec2c2dfd3cff8a51b29810c67baf3ab82ca
+content_hash: sha256:69c330aa71a68aca5c71f6e233ad85ca2241842818e89fed6a7ab52bfeefb6d1
 ---
 
 组件按照布局的要求依次排列，构成应用的页面。在声明式UI中，所有的页面都是由自定义组件构成，开发者可以根据自己的需求，选择合适的布局进行页面开发。
@@ -22,7 +22,7 @@ content_hash: sha256:5d550adc4ca4a6717b4ff7bc16d5cec2c2dfd3cff8a51b29810c67baf3a
 
 **图1** 常见页面结构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/3wN2mj2FQYSXjYRr5KNfGg/zh-cn_image_0000002794409879.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/y9wPgLk6QRiLhpl_egKpqw/zh-cn_image_0000002768019882.png)
 
 为实现上述效果，开发者需要在页面中声明对应的元素。其中，Page表示页面的根节点，[Column](../harmonyos-references/ts-container-column.md)/[Row](../harmonyos-references/ts-container-row.md)等元素为系统组件。针对不同的页面结构，ArkUI提供了不同的布局组件来帮助开发者实现对应布局的效果，例如Row用于实现线性布局。
 
@@ -32,7 +32,7 @@ content_hash: sha256:5d550adc4ca4a6717b4ff7bc16d5cec2c2dfd3cff8a51b29810c67baf3a
 
 **图2** 布局元素组成图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/fz0m6vMcQnymmQ_VNdHypQ/zh-cn_image_0000002764971162.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/oi9hfaCbQ8u6Gkd13d7RFA/zh-cn_image_0000002797299831.png)
 
 * 组件区域（蓝色方块）：组件区域表示组件的大小，[width](../harmonyos-references/ts-universal-attributes-size.md#width)、[height](../harmonyos-references/ts-universal-attributes-size.md#height)属性用于设置组件区域的大小。
 * 组件内容区（黄色方块）：组件内容区大小为组件区域大小减去组件的[border](../harmonyos-references/ts-universal-attributes-border.md#border)值，组件内容区大小会作为组件内容（或者子组件）进行大小测算时的布局测算限制。

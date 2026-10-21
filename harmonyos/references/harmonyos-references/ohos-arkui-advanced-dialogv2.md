@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: DialogV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > DialogV2
 category: harmonyos-references
-scraped_at: 2026-10-17T06:45:10+08:00
+scraped_at: 2026-10-22T07:07:54+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:ac34c93270db3324276f1fa890d1cd8adef5a26cf96bc8c03a58014757a48d8b
+content_hash: sha256:a99bd8bdb7d1cea48051a4f4b4775ce035c32f36a1376b1d5e420b132c08cf97
 ---
 
 弹出框是一种模态窗口，用于在保持当前上下文环境时，临时展示用户需关注的信息或待处理的操作，用户在弹出框内完成交互。模态弹出框需要用户进行交互才能够退出模态模式。DialogV2提供了提示、选择、确认、警告、加载等多种类型的弹出框，适用于确认删除、显示加载进度、用户选择项、重要提示等场景，帮助开发者简化模态对话框的实现，提供一致的用户交互体验。
@@ -355,7 +355,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/YArG9QfgTzmQodqwHWNAyg/zh-cn_image_0000002765133998.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/mQAEyJ6ITYGUBQ5INjcw5A/zh-cn_image_0000002767862784.png)
 
 ### 示例2（纯列表弹出框）
 
@@ -425,7 +425,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/wcXt_RvlQ7ynaCvTMQ_IZw/zh-cn_image_0000002765133952.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ljQjRRyJRm-w3Qw89v-aKQ/zh-cn_image_0000002767862738.png)
 
 ### 示例3（文本与勾选弹出框）
 
@@ -493,7 +493,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/GLWafzxJThOGimG-1V4ZAQ/zh-cn_image_0000002794492527.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ulJxQof7TFOTzVWlQpVUfA/zh-cn_image_0000002797182701.png)
 
 ### 示例4（纯文本弹出框）
 
@@ -553,7 +553,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/0Bd_q8WNTLSrJmjpH50iEg/zh-cn_image_0000002794412749.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ByY0lFAvTG-oHdZB5rvj3A/zh-cn_image_0000002768022722.png)
 
 ### 示例5（进度加载类弹出框）
 
@@ -598,7 +598,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/BgxpJGNDSL6oXoLt27zhwQ/zh-cn_image_0000002764974030.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/4uyk7uEZQrGg1ImKM10j5w/zh-cn_image_0000002797302671.gif)
 
 ### 示例6（使用WithTheme自定义主题的弹出框）
 
@@ -657,7 +657,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/BrgGeWUGTdKwuZkM8_AG3w/zh-cn_image_0000002794492573.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/vsQZVdbzStSj_gZP2An6ag/zh-cn_image_0000002797182747.png)
 
 ### 示例7（自定义内容弹出框）
 
@@ -718,7 +718,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zo6XBoqeSE-K0U78HWKKAg/zh-cn_image_0000002794412795.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/bFOWq_g3Qk-6tNMfAsN1Dw/zh-cn_image_0000002768022768.png)
 
 ### 示例8（跟手弹出框）
 
@@ -776,4 +776,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/VTCyH7hQRU-vSgUds_MwWA/zh-cn_image_0000002764974076.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/tGQDKzCLTp-H6Tac1-rl-g/zh-cn_image_0000002797302719.png)

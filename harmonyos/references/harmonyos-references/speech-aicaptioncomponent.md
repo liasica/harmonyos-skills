@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-ai
 title: AICaptionComponent（AI字幕组件）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS组件 > AICaptionComponent（AI字幕组件）
 category: harmonyos-references
-scraped_at: 2026-10-17T06:49:33+08:00
+scraped_at: 2026-10-22T07:11:11+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a2537b864c185aa1bc543c9315762aecdf6644a39551ec53eabb04d3dcd67905
+content_hash: sha256:905349b6a9504d47f624018ec1e39ca5cc948b2d80bceeadc32d2e9f1cffa677
 ---
 
 AI字幕控件使用AI能力将语音实时转化成文本并翻译，提供原文、译文的展示。适用于一些音乐类、视频类等音视频内容App，帮助用户在一些无法直接浏览音频内容或者对音频源语言不熟悉的场景下，通过字幕来高效获取信息。
@@ -91,7 +91,7 @@ struct Index {
 
 组件如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/EukeazKaTRmD32YJl9Hgew/zh-cn_image_0000002794413649.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/EXmsptgUTrWhYexYQDUGsg/zh-cn_image_0000002768023610.png)
 
 ## AICaptionController
 

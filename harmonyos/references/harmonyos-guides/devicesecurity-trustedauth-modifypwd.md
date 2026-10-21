@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 修改数字盾密码
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾密码管理 > 修改数字盾密码
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:38+08:00
+scraped_at: 2026-10-22T07:05:04+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:203cc135208a169081cfd6005f5abe6211156ba2e315380af5083cc7bfdc9548
+content_hash: sha256:3ac0eeb19d3329f8fe424a8826aeebe68d208e921c7d7014011c41727d067494
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:203cc135208a169081cfd6005f5abe6211156ba2e315380af5083cc7bfd
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ofku2nqdQ2-mY_4imph41g/zh-cn_image_0000002765131984.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/9_OSveWAQTSdbfWO_A61ng/zh-cn_image_0000002767860792.jpg)
 
 ## 接口说明
 
@@ -34,11 +34,11 @@ content_hash: sha256:203cc135208a169081cfd6005f5abe6211156ba2e315380af5083cc7bfd
 
 **图1** 旧密码认证
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/9BZ8gJpATcm67TI4Nkgdig/zh-cn_image_0000002794490561.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/0_gw_sg7S8qXQG41IFQEVQ/zh-cn_image_0000002797180755.png)
 
 **图2** 新密码设置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/CiBkLr7BTaCCcsvJNsmjfw/zh-cn_image_0000002794410777.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/NJWzpyUFSnKWRI0yMy7dNA/zh-cn_image_0000002768020778.png)
 
 ## 开发步骤
 

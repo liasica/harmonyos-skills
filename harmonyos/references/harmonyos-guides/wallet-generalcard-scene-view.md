@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-genera
 title: 查看通用凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 通用凭证 > 开发场景 > 查看通用凭证
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:46+08:00
+scraped_at: 2026-10-22T07:06:01+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:9188e48340172ccc6436cf27a5334caef79a5e5b12b63233938a519b71a2f88e
+content_hash: sha256:bf91b1129ae4230f89c3ce44f0abf66a0cb06e808e62da64cc43e6b407815446
 ---
 
 查询已开通通用凭证的状态并展示，用户可以点击跳转钱包通用凭证详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/xJ9jorJfQZaoCwLHKr_Bzg/zh-cn_image_0000002764973022.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/G08uxa2PTbKLy-fvb8Z9cw/zh-cn_image_0000002797301679.png)
 
 ## 客户端开发
 

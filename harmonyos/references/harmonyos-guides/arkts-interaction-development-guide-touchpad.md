@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持触控板输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持触控板输入事件
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:14+08:00
+scraped_at: 2026-10-22T07:04:44+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5dd869ee4125fd5a6eecc204290da04135a97f36c38dc4a2b99ab321513a25f6
+content_hash: sha256:84c844d9f0f7cc0f6ca36728fdfc14b3d11c4d776b77c575b5d05e4e770014b6
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/0WwnxBQRSkyM3In85oBzjA/zh-cn_image_0000002764971508.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/W92v_JDdTMiZKtdwGu8yYg/zh-cn_image_0000002797300173.png)
 
 当用户使用触控板时，会根据不同的操作方式生成相应的事件。单指点触会产生鼠标左键点击事件，单指轻触移动会产生不按键的鼠标移动事件；双指点触会产生鼠标右键点击事件，双指轻触移动会产生轴事件。
 
@@ -18,7 +18,7 @@ content_hash: sha256:5dd869ee4125fd5a6eecc204290da04135a97f36c38dc4a2b99ab321513
 
 ## 单指操作
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/_Ye8RBRUQnm6sSePB6eVaA/zh-cn_image_0000002765131434.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/gH_AxlPwQz2xu52nZUQc4Q/zh-cn_image_0000002767860240.png)
 
 单指操作触控板与操作鼠标的方式相同。例如，轻触后滑动会产生鼠标移动事件，而重按则会产生鼠标左键按下事件。若需判断鼠标事件是来自触控板还是鼠标设备，可以通过[sourceType](../harmonyos-references/ts-gesture-settings.md#sourcetype枚举说明8)和[sourceTool](../harmonyos-references/ts-gesture-settings.md#sourcetool枚举说明9)信息进行区分。
 
@@ -26,7 +26,7 @@ content_hash: sha256:5dd869ee4125fd5a6eecc204290da04135a97f36c38dc4a2b99ab321513
 
 ## 双指滑动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/bBzELq5rRLWv0O2i3oFxlw/zh-cn_image_0000002794490007.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/SFKkHnqAT5WC5jScZZNGjw/zh-cn_image_0000002797180205.png)
 
 与鼠标滚轮不同，触控板上双指滑动产生的轴事件上报的数值单位并非角度，而是位移像素，为了区分该点，在处理轴值之前，可以通过sourceType及sourceTool来区分。
 
@@ -40,6 +40,6 @@ content_hash: sha256:5dd869ee4125fd5a6eecc204290da04135a97f36c38dc4a2b99ab321513
 
 ## 双指捏合
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/7hIMr3prRnOxnboCyMA9GA/zh-cn_image_0000002794410227.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/8lphs9_rTk-r-1WSXwvtxQ/zh-cn_image_0000002768020226.png)
 
 在触控板上通过双指捏合，可以产生捏合缩放值上报。该值表示一个相对缩放比例，可用于实现UI缩放效果。系统上报的数值为一个scale比例，其以双指开始捏合的那一刻（此时为1.0）为基准参考。当双指往外扩张时，scale逐渐从1.0增大；当双指往内合并时，scale逐渐减小。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 半模态样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 半模态样式
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:30+08:00
+scraped_at: 2026-10-22T07:04:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f02a89827426a6035092743d9f2c6627300e7b41df1af732258bfa9b1b9b8c43
+content_hash: sha256:3fc351d58a81da1f4e48ee534113972182fa861caf39cf15467b47415a524860
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:f02a89827426a6035092743d9f2c6627300e7b41df1af732258bfa9b1b9
 
 用于半模态弹窗中使用导航组件场景。通过设置[HdsNavigationTitleMode](../harmonyos-references/ui-design-hdsnavigation.md#hdsnavigationtitlemode)为MODAL可以实现标题栏半模态样式及动态模糊。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/qfFu7fiHRwqbZvqBvpCw7w/zh-cn_image_0000002764971998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/0wuSTGW9QSSFFC3I_5yLgQ/zh-cn_image_0000002797300663.gif)
 
 ## 开发步骤
 

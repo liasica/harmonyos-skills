@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/immersive-win
 title: 窗口沉浸式
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口沉浸式
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:22+08:00
+scraped_at: 2026-10-22T07:04:50+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:10182448fb56b7fa8b3601dfe2b24e175596ec1d718c933938353ff0835a3d66
+content_hash: sha256:7a74e01fb5f86e058f6828aac9f9ec8b317693bb28722796087e370c317889f9
 ---
 
 ## 场景介绍
@@ -28,7 +28,7 @@ content_hash: sha256:10182448fb56b7fa8b3601dfe2b24e175596ec1d718c933938353ff0835
 
 典型全屏应用窗口包括系统界面元素和应用界面。其中系统界面元素包含状态栏和导航区域，通常在[沉浸式布局](immersive-window-feature.md#沉浸式布局)下称为避让区域，避让区域之外的区域称为安全区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/EB2WHuhISqS6ZCjyUUGPqg/zh-cn_image_0000002794490305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/JuWIUPRFRRq9bbyjNvsGGA/zh-cn_image_0000002797180499.png)
 
 ### 沉浸式布局
 
@@ -125,13 +125,13 @@ interface Rect {
 
 在避让区域的计算中，将窗口按照对角线分为四个三角形区域，当对应系统界面元素的位置（矩形中心点）落于某个方向上的三角形区域时，提供的避让区域将在对应的Rect中。如下图所示整个矩形为窗口区域，以窗口左上角为原点，水平向右为X轴正方向，垂直向下为Y轴正方向，窗口矩形的两条对角线将整个矩形划分为四个方向上的Rect区域，用以表示避让区域相对窗口的几何位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/JfYVJFdqSaWS8UUtgcX5Hg/zh-cn_image_0000002794410523.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/w48APt1nQw6Lhon4J3MPjA/zh-cn_image_0000002768020522.png)
 
 其中每个Rect为(X, Y, Width, Height)构成的四元组，表示以**窗口左上角为原点**的唯一矩形区域。
 
 如下图，挖孔区域表示为 **[topRect, (x1, y1, w1, h1)]** ，底部导航区域表示为 **[bottomRect, (0, H-h2, W, h2)]** 。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/KdoERGoHRB-nqcJZ1Ass9w/zh-cn_image_0000002764971806.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/N7yKyacnRdCSgU9GAyADhA/zh-cn_image_0000002797300471.png)
 
 ## 隐藏系统界面元素实现沉浸式效果
 
@@ -141,7 +141,7 @@ interface Rect {
 
 [setSpecificSystemBarEnabled()](../harmonyos-references/arkts-apis-window-window.md#setspecificsystembarenabled11)、[setWindowSystemBarEnable()](../harmonyos-references/arkts-apis-window-window.md#setwindowsystembarenable9)等控制系统界面元素显示的接口仅非[自由窗口](freeform-window-overview.md#自由窗口)状态下的主窗口支持调用，在[辅助窗口](window-type-overview.md#辅助窗口)中调用或[自由窗口](freeform-window-overview.md#自由窗口)状态下调用不生效。在主窗口非全屏/非最大化模式时调用不会立即生效，应用在进入全屏/最大化模式后配置生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/SEd1Cn5rRR-c395iHwOyBQ/zh-cn_image_0000002765131732.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Ze7Sm6F8QBCE4BNLTjoSZA/zh-cn_image_0000002767860538.png)
 
 1. 调用[setWindowLayoutFullScreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)接口设置窗口进入沉浸式布局。
 2. 调用[setSpecificSystemBarEnabled()](../harmonyos-references/arkts-apis-window-window.md#setspecificsystembarenabled11)隐藏状态栏。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 相对布局 (RelativeContainer)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 相对布局 (RelativeContainer)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:11+08:00
+scraped_at: 2026-10-22T07:04:41+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:8d0a4b9443cec276204da6710cbe3a43be2d44d262f4e038fcd565f88af89cac
+content_hash: sha256:9dd164fb50cbffde1164af41cddbfd17943f0956f4fd4765fc23a055caf8065c
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 **图1** 相对布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/iT54BHg5REyOTH7HeH7CxQ/zh-cn_image_0000002764971200.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/y5Gnlzl8Sxer50-4TeOXqw/zh-cn_image_0000002797299869.png)
 
 子元素并不完全是上图中的依赖关系。比如，Item4可以以Item2为依赖锚点，也可以以RelativeContainer父容器为依赖锚点。
 
@@ -37,10 +37,10 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 * 在水平方向上，可以按照起始（left）、居中（middle）或尾端（right）的组件边界与锚点对齐。当设置三个边界时，仅起始（left）和居中（middle）的边界设置生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/GeYOuYYnQYKrtQr5P8oRnQ/zh-cn_image_0000002765131118.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/0saXB7eWSX6jGYmY6425gQ/zh-cn_image_0000002767859936.png)
 * 在垂直方向上，可以设置组件边界与锚点对齐，具体包括顶部（top）、居中（center）和底部（bottom）。当设置三个边界时，仅顶部（top）和居中（center）生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/JUJjTXzNSnesQmvwiF62Wg/zh-cn_image_0000002794489699.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/rklxZvrYSIK-A5SSf57QBA/zh-cn_image_0000002797179901.png)
 
 ### 设置锚点
 
@@ -98,7 +98,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/9c9AvWfWSgCy7p6_9vfk0g/zh-cn_image_0000002794409919.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/j4o4puyERS-i6D4_SyoXsw/zh-cn_image_0000002768019922.png)
 * 以兄弟元素为锚点。
 
   ```typescript
@@ -144,7 +144,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/Br5xMGUUS9evXtYjTbd1Og/zh-cn_image_0000002764971202.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/wFUpiFTPThCq9HOaCyohYw/zh-cn_image_0000002797299871.png)
 * 子组件锚点可以任意选择，但需注意不要相互依赖。
 
   ```typescript
@@ -214,7 +214,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/MD090_LWRmuYIQ4phrSnQQ/zh-cn_image_0000002765131120.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/mQRhSc71RJOZSGERXThxJA/zh-cn_image_0000002767859938.png)
 
 ### 设置相对于锚点的对齐位置
 
@@ -222,11 +222,11 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 在水平方向上，对齐位置可以设置为HorizontalAlign.Start、HorizontalAlign.Center、HorizontalAlign.End。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/nv0vATeHQnuwOYDtqEQdiQ/zh-cn_image_0000002794489701.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/rvkxZBnCQn6rMK7wPxISQQ/zh-cn_image_0000002797179903.png)
 
 在垂直方向上，对齐位置可以设置为VerticalAlign.Top、VerticalAlign.Center、VerticalAlign.Bottom。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/iYuJHsqiQlCDQxb0QGABMg/zh-cn_image_0000002794409921.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/07CO5ph7SYe21RRTHpw8RQ/zh-cn_image_0000002768019924.png)
 
 ### 子组件位置偏移
 
@@ -348,7 +348,7 @@ struct ChildComponentOffsetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/LGb1bfD9TxupQ-m4nRMdDQ/zh-cn_image_0000002764971204.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/zG2e0TS-S06Q7IqaE8-lJg/zh-cn_image_0000002797299873.png)
 
 ## 多种组件的对齐布局
 
@@ -425,7 +425,7 @@ struct RelativeContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/S1IrFBlWTUKH6yzZpU5usg/zh-cn_image_0000002765131122.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/L3sYZ2lVSqiCAoSvI-r_5g/zh-cn_image_0000002767859940.png)
 
 ## 组件尺寸
 
@@ -530,7 +530,7 @@ struct RelativeAlignRulesExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/9YvkG7lnSemKAm8HGiP1cQ/zh-cn_image_0000002794489703.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/YxX--vQgSRKhF129iZ4qgg/zh-cn_image_0000002797179905.png)
 
 ## 多个组件形成链
 
@@ -686,7 +686,7 @@ struct RelativeChainModeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/1m-55Sr_Qkisd4T2alKirA/zh-cn_image_0000002794409923.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tk4sTK7vRBOFlSqwHOecoA/zh-cn_image_0000002768019926.png)
 
 ## 使用辅助线辅助定位子组件
 
@@ -728,7 +728,7 @@ struct RelativeGuideLineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/-Lv8VzqvSoySwxCYimbp9A/zh-cn_image_0000002764971206.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/UMlEYVE1RxaqIIIa-wOJNw/zh-cn_image_0000002797299875.png)
 
 ## 多个组件的屏障
 
@@ -856,4 +856,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/rVKX4Q3zTs2z1QOqvkIsIQ/zh-cn_image_0000002765131124.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/RO-RaPTiRBuZQH8KDoKgqw/zh-cn_image_0000002767859942.png)

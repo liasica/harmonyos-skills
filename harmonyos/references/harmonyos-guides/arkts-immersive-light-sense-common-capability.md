@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸式系统材质视效
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 沉浸式系统材质视效
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:13+08:00
+scraped_at: 2026-10-22T07:04:44+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:41a84d4fd47c1b6e27857bc9f3e58c545892065ad5c6123612228133806bbb0f
+content_hash: sha256:c3affb06d8781010719c0294fed6d8bd3c0e36e17196e8a48c59f60dfc399491
 ---
 
 本文介绍如何按场景定制沉浸式系统材质的视效，包括设置沉浸式系统材质反色、为沉浸式系统材质赋色、设置沉浸式系统材质交互效果以及设置沉浸式系统材质阴影效果。
@@ -84,7 +84,7 @@ struct PageMaterialReverse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/g4BLQ74iQqeMH6_GHx_Brg/zh-cn_image_0000002764971480.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/1Io58_RcQJ-czVdJOTExIw/zh-cn_image_0000002797300145.gif)
 
 ## 为沉浸式系统材质赋色
 
@@ -143,7 +143,7 @@ struct MaterialColorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/nfvEt022QcyLZh8AVQZE4A/zh-cn_image_0000002765131404.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/1x2QyzhyTOig5Fjt82n-og/zh-cn_image_0000002767860212.jpg)
 
 ## 设置沉浸式系统材质交互效果
 
@@ -201,7 +201,7 @@ struct MaterialInteractiveLightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/A3aVnwAiT_yNV_WGFy0jPw/zh-cn_image_0000002794489979.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/eY6h7ab5TJiG7ONqb99tlA/zh-cn_image_0000002797180177.gif)
 
 ## 设置沉浸式系统材质阴影效果
 
@@ -257,4 +257,4 @@ struct CustomShadowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/4UuE_yS3SROSoXUcmE6Wxg/zh-cn_image_0000002794410199.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/FAim3xEuTRuK3ClPz-1eUA/zh-cn_image_0000002768020198.jpg)

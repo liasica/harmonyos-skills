@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-mult
 title: 多维信息整体朗读
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 多维信息整体朗读
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:40:58+08:00
+scraped_at: 2026-10-22T07:04:31+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:8b6cd22c085249949feb28299699efaf178c73adaedded1fff405cfc82192b68
+content_hash: sha256:d22e089ed7f05018e0c0d63bf2de1e94ab1f2f223fb885ce52d05780cb453357
 ---
 
 ## 设计场景
 
 如果应用展示的是多维信息，还可能出现“嵌套组”的情况。在嵌套组中，应避免两个可获焦对象的功能或朗读内容产生重复。比如下图的天气卡片，时间和地点信息获取到焦点时，都是朗读的时间信息；不同焦点的重复朗读会额外增加用户的操作步骤，焦点控制杂乱，这些对同一个信息结构的完整描述应该统一标注在这几个子控件的父控件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/LNvDQNjKRNWmbVlQivLKBQ/zh-cn_image_0000002765130744.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/X-7QGi8xS7WzHTWlYoM-ZQ/zh-cn_image_0000002767859564.png)
 
 ## 开发流程
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-basi
 title: 使用Node-API接口创建基本数据类型
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口创建基本数据类型
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:10+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:9ac3530c2f7e2e554ea2b4fbb53b1801e5d44085963abcb17e8cee966dcf1730
+scraped_at: 2026-10-22T07:06:21+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:45ea88d9d8f79f7073704fae7ea1efbeaf6907a958bbab7e7a162bbe7eb426c3
 ---
 
 ## 简介
@@ -340,7 +340,7 @@ static napi_value CreateInt64(napi_env env, napi_callback_info info)
     // 要表示的整数值
     int64_t value = 2147483648;
     // 使用给定数值创建一个ArkTS number，仅能准确表示范围从-2^53 + 1到2^53 - 1（闭区间）的整数
-    // 如果想表示的数值超过了2^53，请使用napi_create_bigint64接口
+    // 如果想表示的数值超过了2^53，请使用napi_create_bigint_int64接口
     napi_value result = nullptr;
     napi_status status = napi_create_int64(env, value, &result);
     if (status != napi_ok) {

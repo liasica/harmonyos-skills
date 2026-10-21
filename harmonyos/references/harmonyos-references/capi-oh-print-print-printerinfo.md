@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: Print_PrinterInfo
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 结构体 > Print_PrinterInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5ec54825697234b1ddb511ea8096238ae0091c5984139590abf89f2e7d4c38fc
+scraped_at: 2026-10-22T07:09:23+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:5a8106d6a5452311596aafc2dfd162d7ac279709495aa3991e3b85732cf63cd8
 ---
 
 ```cpp
@@ -31,11 +31,11 @@ Print\_PrinterInfo表示打印机信息，包含打印机的状态、能力、�
 | [Print\_PrinterState](capi-ohprint-h.md#print_printerstate) printerState | 打印机的当前运行状态。 |
 | [Print\_PrinterCapability](capi-oh-print-print-printercapability.md) capability | 打印机支持的能力集合，如支持的纸张尺寸、色彩模式等。 |
 | [Print\_DefaultValue](capi-oh-print-print-defaultvalue.md) defaultValue | 打印机默认属性，如默认纸张尺寸、色彩模式等。 |
-| bool isDefaultPrinter | 是否为默认打印机。true 表示是默认打印机，false 表示不是默认打印机。 |
-| char \*printerId | 打印机 ID。 |
+| bool isDefaultPrinter | 是否为默认打印机。true表示是默认打印机，false表示不是默认打印机。 |
+| char \*printerId | 打印机ID。 |
 | char \*printerName | 打印机名称。 |
 | char \*description | 打印机描述。 |
 | char \*location | 打印机位置。 |
 | char \*makeAndModel | 打印机品牌和型号信息。 |
-| char \*printerUri | 打印机 URI，用于定位和访问打印机。格式形如 scheme://[user@]host[:port]/resource。 |
-| char \*detailInfo | JSON 格式的详细信息。  支持的键包括：  - **printerAlias**：string 类型，表示打印机别名，**起始版本：** 24。  - **vendorId**：int 类型，表示 USB 打印机的 VID，取值范围 [0, 65535]，**起始版本：** 12。  - **productId**：int 类型，表示 USB 打印机的 PID，取值范围 [0, 65535]，**起始版本：** 12。  - **protocol**：string 数组，表示探测到的打印机支持的协议列表，取值包括 ipp、ipps、lpd、socket，**起始版本：** 24。  - **ipp**：string 类型，表示探测到的 IPP 协议对应的打印机 URI，**起始版本：** 24。  - **ipps**：string 类型，表示探测到的 IPPS 协议对应的打印机 URI，**起始版本：** 24。  - **lpd**：string 类型，表示探测到的 LPD 协议对应的打印机 URI，**起始版本：** 24。  - **socket**：string 类型，表示探测到的 Socket 协议对应的打印机 URI，**起始版本：** 24。 |
+| char \*printerUri | 打印机URI，用于定位和访问打印机。格式形如scheme://[user@]host[:port]/resource。 |
+| char \*detailInfo | JSON格式的详细信息。  支持的键包括：  - **printerAlias**：string类型，表示打印机别名，**起始版本：** 24。  - **vendorId**：int类型，表示USB打印机的VID，取值范围 [0, 65535]，**起始版本：** 12。  - **productId**：int类型，表示USB打印机的PID，取值范围 [0, 65535]，**起始版本：** 12。  - **protocol**：string数组，表示探测到的打印机支持的协议列表，取值包括ipp、ipps、lpd、socket，**起始版本：** 24。  - **ipp**：string类型，表示探测到的IPP协议对应的打印机URI，**起始版本：** 24。  - **ipps**：string类型，表示探测到的IPPS协议对应的打印机URI，**起始版本：** 24。  - **lpd**：string类型，表示探测到的LPD协议对应的打印机URI，**起始版本：** 24。  - **socket**：string类型，表示探测到的Socket协议对应的打印机URI，**起始版本：** 24。 |

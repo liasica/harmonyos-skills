@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: RenderNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > RenderNode
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:37+08:00
+scraped_at: 2026-10-22T07:07:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ae82e29439c0a4a9eeb2b8ebf403631c45cc5e204f5ab35e57c3d74d79dbac7c
+content_hash: sha256:8022ce98e7a4c27bceb0c01e2c83ac8873477466a3226e82162d6e8235c32881
 ---
 
 提供自绘制渲染节点RenderNode，支持开发者通过C API进行开发，完成自定义绘制需求。RenderNode还支持渲染节点树管理（添加、删除、查询子节点）、背景色与不透明度等视觉属性设置、变换（缩放、旋转、平移、变换矩阵）、阴影、边框、遮罩与裁剪、模糊效果等能力，适用于在Stage模型下进行自定义渲染与节点树管理的场景。
@@ -1898,7 +1898,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/8DoGLm5lQLiO6BE5GsmavQ/zh-cn_image_0000002794412087.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Y8j-WV_mT6OBuTPou_pf6Q/zh-cn_image_0000002768022070.jpg)
 
 ### shadowRadius
 
@@ -1980,7 +1980,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/EnMmfRiYTJivpzAThtpiqQ/zh-cn_image_0000002764973370.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/LM_oOgu8Styupd5T8Slcqw/zh-cn_image_0000002797302019.jpg)
 
 ### draw
 
@@ -2815,7 +2815,7 @@ set markNodeGroup(isNodeGroup: boolean)
 
 标记是否优先绘制节点及其子节点。若设置为true，则透明度等属性将在节点绘制完毕后再进行合成，适用于多个半透明节点重叠且需要正确合成透明度效果的场景。设置效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/wFjIteJEQNa-LXrioVu1-w/zh-cn_image_0000002765133294.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/bdwbTnUpQ02Io5LgDVdiCA/zh-cn_image_0000002767862088.png)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3085,7 +3085,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/3Vpo4SaEQ1q-bpQDdC7c3Q/zh-cn_image_0000002794491867.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/YsPIGxraSKK7DVMHZE_S_A/zh-cn_image_0000002797182051.gif)
 
 ### backgroundBlur
 
@@ -3209,7 +3209,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/BQw2Qn3BQU2tGgQVvHQeCg/zh-cn_image_0000002794412089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/yVYKuGYHQvWutqNo5ybQ5A/zh-cn_image_0000002768022072.png)
 
 ### contentBlur
 
@@ -3333,7 +3333,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/YCmPpL1TQMyZsGLpaudwJg/zh-cn_image_0000002764973372.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/XyHI8unsRFKSbk7A3_vlAQ/zh-cn_image_0000002797302021.png)
 
 ### foregroundBlur
 
@@ -3456,4 +3456,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/7W8SNuZPT6SFTi73FMUAJw/zh-cn_image_0000002765133296.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Iur2g0m1T6m7elQuoZAHfA/zh-cn_image_0000002767862090.png)

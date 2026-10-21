@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.scan (扫描)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.scan (扫描)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:02+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5c3bb94db3f8eae06b3c88d5c62bba7480cc978b8fe17be862ae8b37cd51efb4
+scraped_at: 2026-10-22T07:09:18+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:1c07cc7f2aa765fca3a26f3fb8d2877268ca79207ce4c1c845a1b2922ae8e0a0
 ---
 
-该模块提供扫描框架的 JS API，支持扫描仪的发现与管理、扫描执行、设备事件监听等能力，适用于应用需要集成扫描仪进行文档数字化采集与设备管理的场景。
+该模块提供扫描框架的JS API，支持扫描仪的发现与管理、扫描执行、设备事件监听等能力，适用于应用需要集成扫描仪进行文档数字化采集与设备管理的场景。
 
 **说明** 
 

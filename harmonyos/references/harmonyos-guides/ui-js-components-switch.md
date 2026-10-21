@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: switch开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > switch开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:19+08:00
+scraped_at: 2026-10-22T07:04:48+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:d46f7c76e391c0d1c0fba7c03f090a01079985ae499bef5fa7c4e7ad28a29ef0
+content_hash: sha256:f8cfb2079fcbf6d2672c21359d4201359b3c02192d7dc1d939a2b2d54fa338d8
 ---
 
 switch为开关选择器，切换开启或关闭状态。具体用法请参考[switch](../harmonyos-references/js-components-basic-switch.md)。
@@ -29,7 +29,7 @@ switch为开关选择器，切换开启或关闭状态。具体用法请参考[s
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/2PKbNy4PQ7-uho33l6TT7w/zh-cn_image_0000002765131642.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/jiprjDJaQh6VulG47WwZ5A/zh-cn_image_0000002767860448.png)
 
 ## 添加属性和方法
 
@@ -77,7 +77,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/IbjmF7drROag0br1AB_Yhw/zh-cn_image_0000002794490219.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/BUxm_WW-SamcEgxJ9uCZJA/zh-cn_image_0000002797180413.gif)
 
 **说明** 
 
@@ -186,4 +186,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/fH4AyvKUSR2fHwbtAo_5sA/zh-cn_image_0000002794410435.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/2IeW1fPLQg6pnoqRtJDLjg/zh-cn_image_0000002768020434.gif)

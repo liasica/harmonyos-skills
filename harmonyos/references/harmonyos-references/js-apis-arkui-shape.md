@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.shape (形状)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.shape (形状)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:30+08:00
+scraped_at: 2026-10-22T07:07:25+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:83a3c29290fe233ffc1555092a40cf2cfdc2aae9430e35c6196bbc3684efd0f8
+content_hash: sha256:b25f8c6c4a6516117cb98884ac565f00c9b330e0e9a37ce262a652a7a7630229
 ---
 
 @ohos.arkui.shape模块提供了CircleShape、EllipseShape、PathShape、RectShape等多种形状定义，用于在[clipShape](ts-universal-attributes-sharp-clipping.md#clipshape12)和[maskShape](ts-universal-attributes-sharp-clipping.md#maskshape12)接口中传入对应的形状，实现对组件的裁剪和遮罩效果。适用于需要将组件裁剪为圆形、椭圆、矩形等特定形状，或通过形状遮罩实现视觉效果的场景，如头像裁剪、图标遮罩等。
@@ -526,4 +526,4 @@ struct ShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/UooVZZH8QDyMnkDg5RnUYw/zh-cn_image_0000002765133218.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/g3D1f-W7R_mzDR8vF2fmbg/zh-cn_image_0000002767862014.png)

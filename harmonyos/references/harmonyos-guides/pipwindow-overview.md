@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-ove
 title: 画中画开发概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 画中画开发指导 > 画中画开发概述
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:21+08:00
+scraped_at: 2026-10-22T07:04:50+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6bcc4fb47e04bed48e936cb6c69d8d0e622358b50e70e8937150b99171752f4f
+content_hash: sha256:96bf8bfb60560ff2dd9f2ae6edf145bd56603ad01b56e708e5e8c8a2c2222a9a
 ---
 
 ## 场景介绍
@@ -90,7 +90,7 @@ content_hash: sha256:6bcc4fb47e04bed48e936cb6c69d8d0e622358b50e70e8937150b991717
 
 **图1** 不同场景下画中画控制层的不同呈现
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/VH3ZAuJdR_qycg10gCmMOg/zh-cn_image_0000002794490279.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/NrFJd-g-TC-JfgdFx-OIgQ/zh-cn_image_0000002797180473.png)
 
 ## 配置画中画控制层可选控件
 
@@ -100,26 +100,26 @@ content_hash: sha256:6bcc4fb47e04bed48e936cb6c69d8d0e622358b50e70e8937150b991717
 
   **图2** 视频播放场景配置控制层可选控件
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/EgGS7TMmRNiZuNfQW-D31w/zh-cn_image_0000002794410495.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/u6mNUw-9SC24lEL7MiSd3w/zh-cn_image_0000002768020494.png)
 * 视频通话场景可通过配置[VideoCallControlGroup](../harmonyos-references/js-apis-pipwindow.md#videocallcontrolgroup12)来显示可选的控制层控件。示意图如下所示。
 
   **图3** 视频通话场景配置控制层可选控件
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/-SMQWT74R1OacduLvZieHg/zh-cn_image_0000002764971778.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/pd7p2cuWRuaKUCE0u89Ckw/zh-cn_image_0000002797300443.png)
 
   若不配置，视频通话模版默认不存在任何按钮，点击画中画窗口即可启动还原（见下图左，未配置任何控件的操作示意图）。下图右为配置控件的操作示意图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/dLoBJHx4TdOT2gNSkds91A/zh-cn_image_0000002765131704.gif) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/nsFPYXuWTNCxryD1FGJSxw/zh-cn_image_0000002794490281.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Pefjg3fFTsmq5oXwTsw0Ww/zh-cn_image_0000002767860510.gif) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/JtvTMlomSKCTEO8QcUjWRQ/zh-cn_image_0000002797180475.gif)
 * 视频会议场景可通过配置[VideoMeetingControlGroup](../harmonyos-references/js-apis-pipwindow.md#videomeetingcontrolgroup12)来显示可选的控制层控件。示意图如下所示。若不配置，视频会议模版默认不存在任何按钮，点击画中画窗口即可启动还原（与视频通话模版操作示意图一致）。
 
   **图4** 视频会议场景配置控制层可选控件
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/asjMggYaTqGXe8Z7ogjWtw/zh-cn_image_0000002794410497.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/S8-hSnoOSaqh2_M84RQG1g/zh-cn_image_0000002768020496.png)
 * 直播场景可通过配置[VideoLiveControlGroup](../harmonyos-references/js-apis-pipwindow.md#videolivecontrolgroup12)来显示可选的控制层控件。示意图如下所示。
 
   **图5** 直播场景配置控制层可选控件
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/IF0BStICTlar1MFSROAp9w/zh-cn_image_0000002764971780.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/QtIF1KSuTNqM-czdt_lxdQ/zh-cn_image_0000002797300445.png)
 
 ## 在画中画内容上方展示自定义UI
 
@@ -131,7 +131,7 @@ content_hash: sha256:6bcc4fb47e04bed48e936cb6c69d8d0e622358b50e70e8937150b991717
 
 **图6** 在画中画内容上方显示自定义UI
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/5XVPzrmKSmuQIG1LfGsKIQ/zh-cn_image_0000002765131706.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/XIa-eZ0SQ7GpoaTy69M6BQ/zh-cn_image_0000002767860512.png)
 
 ## 更新画中画控制面板控件状态
 
@@ -141,8 +141,8 @@ content_hash: sha256:6bcc4fb47e04bed48e936cb6c69d8d0e622358b50e70e8937150b991717
 
 **图7** 更新控件功能状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/mI7W1xfFTk-ETcETLEpY2g/zh-cn_image_0000002794490283.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/GF7lFL-tQiyJIw4l47SYgA/zh-cn_image_0000002797180477.gif)
 
 **图8** 设置控件使能状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/uNtGhOOGRxup4jhlgpRWFQ/zh-cn_image_0000002794410499.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/ftPSJfXrQW-oxR1d7sRD_w/zh-cn_image_0000002768020498.gif)

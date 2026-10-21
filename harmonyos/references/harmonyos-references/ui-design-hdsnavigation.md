@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsNavigation (导航根视图容器)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsNavigation (导航根视图容器)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:46:14+08:00
+scraped_at: 2026-10-22T07:08:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:71c1473ccd3fb2d44c2e558085bed0dde8a633a5b0f1252bf2c5b2e999a206aa
+content_hash: sha256:8aef61a90cdf1da54f6b4faca9d3e27fde7eff0f079329d63d52c7848bf5b242
 ---
 
 本模块提供导航组件的能力，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)及以上版本，推荐使用[bindToScrollable](ui-design-hdsnavigation.md#bindtoscrollable)、[bindToNestedScrollable](ui-design-hdsnavigation.md#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
@@ -1430,7 +1430,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/hmGo22F3TwKYmTmVA4ThWA/zh-cn_image_0000002794413229.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/wDmMuB29ReOA0clfPWYFKQ/zh-cn_image_0000002768023202.gif)
 
 ### 设置菜单消息提醒
 
@@ -1494,7 +1494,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/5K8llNhWSPiCnhI_u8fXnQ/zh-cn_image_0000002764974510.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/3TLZ8tIeTeaBYd5FyX33EA/zh-cn_image_0000002797303151.jpg)
 
 ### 设置自定义区域
 
@@ -1582,7 +1582,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/R8alhmo0Rbq-75JbeEMm8Q/zh-cn_image_0000002765134432.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/g2LWUsypTWGWHxupEsfQBQ/zh-cn_image_0000002767863218.jpg)
 
 ### 设置标题栏的动态显隐
 
@@ -1649,7 +1649,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/bjzsec_aT6GzipxpOFtjwg/zh-cn_image_0000002794493007.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/S3dLvKn2QQiO7tUv4G1dPQ/zh-cn_image_0000002797183181.gif)
 
 ### 设置标题栏图标样式
 
@@ -1725,7 +1725,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/lkXz1yBsTA-mtseLIDd5Cw/zh-cn_image_0000002794413231.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/EpGqjs4DRr2oXuvFCnoSJQ/zh-cn_image_0000002768023204.jpg)
 
 ### 半模态标题栏样式
 
@@ -1818,7 +1818,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/qZS-0KhDQL-3PjuACk69Lg/zh-cn_image_0000002764974512.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/OtbWbfzmSiq9nWd9QzFe6g/zh-cn_image_0000002797303153.jpg)
 
 ### 图标上绑定自定义menu
 
@@ -1911,7 +1911,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/f1nkN2KlTx2QjM2_qwM3Nw/zh-cn_image_0000002765134434.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/4fHONYRXSiKaa0i6HY2Lpg/zh-cn_image_0000002767863220.gif)
 
 ### 设置应用内多窗图标
 
@@ -1964,7 +1964,7 @@ struct MultiWindowEntryInAPPTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/XCYhX1b1SOK7UpD9geuK8A/zh-cn_image_0000002794493009.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/5XtVM26HRouu-BMUFrPvdw/zh-cn_image_0000002797183183.jpg)
 
 ### 设置HdsNavigation双栏模式
 
@@ -2031,7 +2031,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ERNjWxIrQIKII5_Q8N54eQ/zh-cn_image_0000002794413233.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/-vlwz9LnR8C1bwAjNTS11Q/zh-cn_image_0000002768023206.gif)
 
 ### 设置标题栏沉浸式样式
 
@@ -2139,7 +2139,7 @@ struct Index {
 
 执行上述代码展示的效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/XBCBRnmHSEikJLj5iXcHrw/zh-cn_image_0000002764974514.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/xYb43kubSMWwlx03aU89MA/zh-cn_image_0000002797303155.gif)
 
 ### 通过onReady获取栈
 
@@ -2280,4 +2280,4 @@ struct NavigationExample2 {
 
 执行上述代码，效果展示如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Eie42mj8QPqSG5pv2Y3jaA/zh-cn_image_0000002765134436.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/_adNfARsSQCwIO0lJsftIg/zh-cn_image_0000002767863222.gif)

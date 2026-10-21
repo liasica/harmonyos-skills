@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-deliverin
 title: 权益发放
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 自动续期订阅商品购买 > 权益发放
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:33+08:00
+scraped_at: 2026-10-22T07:05:49+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:3e7d18d58ff1643d181ff1683af17b6e691ea1eaae1d60565a58cf27a452b747
+content_hash: sha256:2675b14bfc39ac0c9a77865c82b9461eb2e2356da46a4d732f18809f91b31c9b
 ---
 
 ## 对生效中的订阅发放权益
@@ -20,7 +20,7 @@ content_hash: sha256:3e7d18d58ff1643d181ff1683af17b6e691ea1eaae1d60565a58cf27a45
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/je1QfdnASsuUmHaPGnb2sQ/zh-cn_image_0000002794491213.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/nKXMcUuiRx21-zJMklnm-Q/zh-cn_image_0000002797181405.png)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户生效中的订阅列表。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订阅信息。
@@ -178,7 +178,7 @@ import {
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/l2lbV_yWQ0m9dt5U3oXHKg/zh-cn_image_0000002794411433.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/nDZvMulmQhaiBpuDNP-ljg/zh-cn_image_0000002768021426.png)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户已购买但未确认发货的订阅列表。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订阅信息。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rotatio
 title: 旋转屏动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 旋转屏动画
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:15+08:00
+scraped_at: 2026-10-22T07:04:44+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:b54d5f5bb533efd6753536edfb246eea28fdd0bec497aa19c753820ce3d15927
+content_hash: sha256:435ceafa59c83f9b5335bd58ba5c779de7fd464dafc65ea07f0fd8e47baec344
 ---
 
 旋转屏动画主要分为两类：[布局切换的旋转屏动画](arkts-rotation-transition-animation.md#布局切换的旋转屏动画)和[透明度变化的旋转屏动画](arkts-rotation-transition-animation.md#透明度变化的旋转屏动画)，旨在实现屏幕显示方向变化时的自然过渡。布局切换的旋转屏动画实现较为简便，例如在module.json5中配置自动旋转（或设置窗口显示方向）即可实现。而透明度变化的旋转屏动画则需在module.json5配置的基础上，预备两套视图，在屏幕旋转时，通过视图切换，使消失的视图呈现渐隐效果，新出现的视图则渐显，从而营造流畅的视觉体验。
@@ -44,7 +44,7 @@ struct RotationTest {
 
 布局切换的旋转屏动画，会对同步旋转的窗口与应用视图做大小和位置的过渡。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/3LeObbB1R8y_29xmMfvPLg/zh-cn_image_0000002794490059.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/c7MS4rSnSjWAXEhUG5FDtA/zh-cn_image_0000002797180253.gif)
 
 ## 透明度变化的旋转屏动画
 
@@ -147,4 +147,4 @@ const TAG: string = 'EntryAbility';
 
 透明度变化的旋转屏动画，会对窗口做大小和位置的过渡，并同时对应用视图做切换过渡，且为消失隐藏的应用视图做渐隐效果，对新出现的视图做渐显的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/5zfuZ8EsRnaXuj_1ie5uOQ/zh-cn_image_0000002794410275.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/3MBNkVi7TaSzNT2O2wdmBQ/zh-cn_image_0000002768020274.gif)

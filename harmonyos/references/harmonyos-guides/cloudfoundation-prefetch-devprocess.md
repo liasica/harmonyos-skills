@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 开发流程
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 开发流程
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:27+08:00
+scraped_at: 2026-10-22T07:05:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:02961b10574ec2d7f0f3cfbba6427e2dfe8edb0a9c46589b263d3e239b0c03da
+content_hash: sha256:1902f03fff959c5fbd1c5300708937030b126235757332fd865978866199e4dc
 ---
 
 开发预加载，总体流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/5LuZTQETSLOdxPxywKmGXw/zh-cn_image_0000002794411369.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/BCBch2RoR96yGz6H1RbKpQ/zh-cn_image_0000002768021364.png)
 
 1. [配置预加载](cloudfoundation-prefetch-config.md)：在AGC云端预加载界面选择数据来源类型，并进行相关配置。
 2. [开发预加载资源接口](cloudfoundation-prefetch-cloud-interdev.md)：根据选择的数据来源类型，开发对应的云侧接口，以提供预加载所需的资源数据。

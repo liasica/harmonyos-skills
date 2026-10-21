@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Row
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > Row
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:49+08:00
+scraped_at: 2026-10-22T07:07:39+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b914c5e86a16d2684817c4e35b1e59726423c20100c571cc0e88aeca41585430
+content_hash: sha256:8cfc0ee7e7fdb61c1a7d114508e179d20050c59a98cd03ca3697a2fa538e5015
 ---
 
 沿水平方向布局的容器，支持设置子组件间距、对齐方式，适用于需要横向排列多个子组件的场景，如工具栏、标签栏、按钮组等。
@@ -252,7 +252,7 @@ struct RowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/zVS0k3cYTWW4oMDJP6PjWg/zh-cn_image_0000002765133454.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/jPWgG6PJRNO8txcBC39l5A/zh-cn_image_0000002767862242.png)
 
 ### 示例2（设置反转属性）
 
@@ -282,4 +282,4 @@ struct RowReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/KG0ZkKFsRzSoRGQGlorDBA/zh-cn_image_0000002794492025.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/NYgiobvCS92tTC81EcJ2-Q/zh-cn_image_0000002797182205.png)

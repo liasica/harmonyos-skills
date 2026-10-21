@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口产生的异常日志/崩溃分析
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口产生的异常日志/崩溃分析
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:12+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:ffdd9fc3b69c58829a37d5451f60970c641446f0a35d31c136c671468242f645
+scraped_at: 2026-10-22T07:06:23+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:aabdb7b73045d7c3a51235994a878cbcb6b42d7c17b7db02c6146eec6c2762e6
 ---
 
 以下维测手段多数依赖于ArkTS运行时的多线程检测能力，因此建议在调试前启用此功能。启用方法参考文档[分析CppCrash（进程崩溃）](ide-multi-thread-check.md)。
@@ -87,7 +87,7 @@ public:
         if (argc_ > 0) {
             argv_ = new napi_value[argc_];
             CHECK_NOT_NULL(argv_);
-            memset(argv_, 0, sizeof(argv_));
+            memset(argv_, 0, sizeof(napi_value) * argc_);
             napi_get_cb_info(env, info, &argc_, argv_, nullptr, nullptr);
         }
     }
@@ -329,13 +329,13 @@ napi\_call\_threadsafe\_function 和 napi\_release\_threadsafe\_function 的示�
                 napi_create_string_utf8(localEnv, "Test", NAPI_AUTO_LENGTH, &taskName); \
                 // napi_create_threadsafe_function创建线程安全函数，任务执行完成后，      \
                 // 需调用napi_release_threadsafe_function释放
-                napi_create_threadsafe_function(                                        \
+                napi_status status = napi_create_threadsafe_function(                   \
                     localEnv, nullptr, nullptr, taskName, 0, 1, nullptr,                \
                     [](napi_env, void *, void *) {}, nullptr,                           \
                     [](napi_env, napi_value, void *, void *) {}, &tsfn);                \
                 if (status != napi_ok) {                                                \
                     OH_LOG_ERROR(LOG_APP,"napi_create_threadsafe_function failed");     \
-                    return nullptr;                                                     \
+                    return;                                                             \
                 }                                                                       \
                 if (!localEnv.RecreateSame()) {                                         \
                     return;                                                             \

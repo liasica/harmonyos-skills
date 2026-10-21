@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/floatingball-
 title: 闪控球开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 闪控球开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:21+08:00
+scraped_at: 2026-10-22T07:04:50+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:372e6029bad849351d147b0763e71c3b1ed699c22ed9bb4a3f6e029fcfa7a109
+content_hash: sha256:e3338ab44102455ce6c22eea0e8400ef625e88dc8c348f5588c2f7201abbbe32
 ---
 
 ## 场景介绍
@@ -68,49 +68,49 @@ content_hash: sha256:372e6029bad849351d147b0763e71c3b1ed699c22ed9bb4a3f6e029fcfa
 
 **图1** 静态布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/s5AH2u5gRjOLKpEBSND56w/zh-cn_image_0000002794410489.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/MsByQ2fLSG6AJ27qkLr_jQ/zh-cn_image_0000002768020488.png)
 
 **图2** 静态布局-超长文本标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/p2u9gAD6QCC8dFJt7Hiemw/zh-cn_image_0000002764971772.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/yApG4ZJ4Q9CK80QVhIq6kA/zh-cn_image_0000002797300437.png)
 
 **图3** 普通文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/JTAeud5SRyOf5PNZS5ukQQ/zh-cn_image_0000002765131698.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Qu5MkuJ7SxKrXan-H0S3BA/zh-cn_image_0000002767860504.png)
 
 **图4** 普通文本布局-超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/1hZO-ZJ7TaatwzwCxP9C5Q/zh-cn_image_0000002794490275.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/jPYlBWczSBSrrpnI9wJi0Q/zh-cn_image_0000002797180469.png)
 
 **图5** 强调文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/xqlKj-FKSEK5z2qO1XOrqA/zh-cn_image_0000002794410491.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/lu7z_VMASKaJ8N6Wwdt9ag/zh-cn_image_0000002768020490.png)
 
 **图6** 强调文本布局-超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/2X2LWB-aSzyPdhqxpnhZ5Q/zh-cn_image_0000002764971774.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/tbAiXk4ZQ6m1Xj4SwdERkQ/zh-cn_image_0000002797300439.png)
 
 **图7** 强调文本布局-图标
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/6S5XQx8jQ16U3hRbV76TFQ/zh-cn_image_0000002765131700.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/An2iD5ijRNaqX_p33FOO7Q/zh-cn_image_0000002767860506.png)
 
 **图8** 强调文本布局-图标和超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/7hXfDUlnSuaXemmO4XDWng/zh-cn_image_0000002794490277.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/rOAycE_UR8q1Cnd3Nn_rwA/zh-cn_image_0000002797180471.png)
 
 **图9** 纯文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/uHQadYicRtGYpQvylOKB3w/zh-cn_image_0000002794410493.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Zc4_h-9lQTqmHcl9fWdUSA/zh-cn_image_0000002768020492.png)
 
 **图10** 纯文本布局-超长文本标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/gSTfFuUMQqyWTalaIZ6UHw/zh-cn_image_0000002764971776.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/DYwwDmA1RlKGxCbRgEnapg/zh-cn_image_0000002797300441.png)
 
 当有两个应用启动了闪控球后，闪控球将合并展示，如下图所示。整体高度为76vp。
 
 **图11** 闪控球上下合并展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/5fczFR1DRyGKRgv08itDYw/zh-cn_image_0000002765131702.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Hzno38wvSBCJOd0CX2Ndsg/zh-cn_image_0000002767860508.png)
 
 ## 开发步骤
 

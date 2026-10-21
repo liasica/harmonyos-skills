@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-hotel-
 title: 开通酒店房卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 酒店房卡 > 开发场景 > 开通酒店房卡
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:46+08:00
+scraped_at: 2026-10-22T07:06:00+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:844f1122fc4e72b948cccccc844c9f824ec89da9b09512437aad641dd9ed91cf
+content_hash: sha256:a626d312e1e59797b8c0ef4c5e259bb9f8a0c9d0824571e86ea4c394a09cc50e
 ---
 
 用户线上预定酒店后，可以将房卡添加至钱包，在钱包中方便查看房号、入住有效期等信息，刷手机轻碰门锁即可通行电梯、房门。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/YO6J-9BQSRmoRBm-QD8qLg/zh-cn_image_0000002765132952.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/9wJr_l3wRwydUOKy7XFb7Q/zh-cn_image_0000002767861754.png)
 
 ## 开发流程
 

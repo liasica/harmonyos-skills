@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-drawing
 title: 使用画布绘制自定义图形 (Canvas)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义绘制 > 使用画布绘制自定义图形 (Canvas)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:16+08:00
+scraped_at: 2026-10-22T07:04:46+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:b0399255f9536b68d738c9405643c5437b57e49a73f0b4336d09d8de8c7e2f1c
+content_hash: sha256:ea5c46b799c70b604c8ebe5c277c1a593ff473c6c6823e0a53c3bdb16acff2f7
 ---
 
 [Canvas](../harmonyos-references/ts-components-canvas-canvas.md)提供画布组件，用于自定义绘制图形，开发者使用[CanvasRenderingContext2D](../harmonyos-references/ts-canvasrenderingcontext2d.md)对象和[OffscreenCanvasRenderingContext2D](../harmonyos-references/ts-offscreencanvasrenderingcontext2d.md)对象在Canvas组件上进行绘制，绘制对象可以是基础形状、文本、图片等。
@@ -43,7 +43,7 @@ struct CanvasExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/XDCDUea_Q-GJL3DhYKckTw/zh-cn_image_0000002794490111.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/y-Ah6OdmTcK0py8xrLVKCg/zh-cn_image_0000002797180305.jpg)
 
 * 离屏绘制是指将需要绘制的内容先绘制在缓存区，再将其转换成图片，一次性绘制到Canvas上，加快了绘制速度。过程为：
 
@@ -83,7 +83,7 @@ struct CanvasExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/AkaevdoFQnGQ80ptz5JVWg/zh-cn_image_0000002794490111.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/7AZG1i-_QvGjMg56zf9z5A/zh-cn_image_0000002797180305.jpg)
 
 **说明** 
 
@@ -110,7 +110,7 @@ Canvas(this.context)
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/nNWRIWulRHaLyClfR6X4nQ/zh-cn_image_0000002794410327.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/5ejwCmQ5QPqWMsDTnHKOVQ/zh-cn_image_0000002768020326.jpg)
 
 ## 画布组件绘制方式
 
@@ -131,7 +131,7 @@ Canvas(this.context)
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/9kpvWJGoQdOuY7tqtDiuwg/zh-cn_image_0000002764971610.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/BWw_4h_EToujcrX0WHwehg/zh-cn_image_0000002797300275.jpg)
 
 * 先单独定义path2D对象构造理想的路径，再通过调用CanvasRenderingContext2D对象和OffscreenCanvasRenderingContext2D对象的[stroke](../harmonyos-references/ts-components-canvas-common-method.md#stroke-1)接口或者[fill](../harmonyos-references/ts-components-canvas-common-method.md#fill-1)接口进行绘制，具体使用可以参考[Path2D](../harmonyos-references/ts-components-canvas-path2d.md)对象。
 
@@ -147,7 +147,7 @@ Canvas(this.context2)
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/LQal0zJzQPiKTiZ5fgxygw/zh-cn_image_0000002765131536.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/ZqZYKDnZRBSX6-pSprQNXg/zh-cn_image_0000002767860342.jpg)
 
 ## 画布组件常用方法
 
@@ -178,7 +178,7 @@ Canvas(this.context)
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/1YbBw3hYRbiaEOMaLvWrgQ/zh-cn_image_0000002794490113.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Fz0dde66TCm_0hZwKIymXA/zh-cn_image_0000002797180307.jpg)
 
 * 绘制文本。
 
@@ -201,7 +201,7 @@ Canvas(this.context)
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/5EYpAJ7qSNC5j4JUgb7tdg/zh-cn_image_0000002794410329.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/tm3fJQSoTMC9Z3Z97SLQjQ/zh-cn_image_0000002768020328.jpg)
 
 * 绘制文本边框。
 
@@ -245,7 +245,7 @@ struct CanvasComponentTextBorder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/15cBvKpLTCa1rfAURqoZfA/zh-cn_image_0000002764971612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/6iq7LuLNQviAV6jhcwFCPw/zh-cn_image_0000002797300277.png)
 
 * 使用自定义字体绘制文本。
 
@@ -281,7 +281,7 @@ struct CustomFont {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ga8XxlZsSQ6n_rxvynf7Tg/zh-cn_image_0000002765131538.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/bDc60wSSQ4S_yzFIlnyQFQ/zh-cn_image_0000002767860344.jpeg)
 
 * 绘制图片和图像像素信息处理。
 
@@ -322,7 +322,7 @@ struct CanvasComponentDrawingPictureAndImagePixel {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/7ljZPiqAQDCZ5XbJUvO9hQ/zh-cn_image_0000002794490115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/15uxazJBSqiPnMMEDATCzw/zh-cn_image_0000002797180309.png)
 
 * 其他方法。
 
@@ -346,7 +346,7 @@ Canvas(this.context)
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/GisI5-kRTZmBRzKjobxdnQ/zh-cn_image_0000002794410331.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/5ZTBugvPQYabBA5yCw-r_w/zh-cn_image_0000002768020330.jpg)
 
 ## 使用状态变量驱动画布刷新
 
@@ -386,7 +386,7 @@ struct CanvasContentUpdate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Jt45z86rTrSwcGKpKGvq0Q/zh-cn_image_0000002764971614.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/osUdlr31QkK6KHMnxS0crw/zh-cn_image_0000002797300279.gif)
 
 ## 控制在画布组件不可见时不进行绘制
 
@@ -459,7 +459,7 @@ struct CanvasContentSetOnVisibleAreaApproximateChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/NpS6o0bmTLCF_ijaq7vx6A/zh-cn_image_0000002765131540.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/vXZCOGScQuGPZQ6eq_HVVw/zh-cn_image_0000002767860346.gif)
 
 * 从API version 17开始，使用[onVisibleAreaApproximateChange](../harmonyos-references/ts-universal-component-visible-area-change-event.md#onvisibleareaapproximatechange17)接口监听Canvas组件可见性。
 
@@ -525,7 +525,7 @@ struct CanvasContentOnVisibleAreaApproximateChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/AVIAOXP3SCyBgXgr9_duew/zh-cn_image_0000002794490117.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/FEeluxiySUufpIrRCsvlbQ/zh-cn_image_0000002797180311.gif)
 
 ## 场景示例
 
@@ -559,7 +559,7 @@ struct ClearRect {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/DDeleetlThiUrw9NPc01Ew/zh-cn_image_0000002794410333.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/c-j6vISeRzy1-xhHCH3xmw/zh-cn_image_0000002768020332.jpg)
 
 * 绘制不规则图形。
 
@@ -599,7 +599,7 @@ struct Path2d {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/C3U0hnpvTwmWC5hhd6tqjw/zh-cn_image_0000002764971616.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/X-eoh-PPTtqw7Ms04RiGkg/zh-cn_image_0000002797300281.jpg)
 
 * 绘制可拖动的光标。
 
@@ -792,7 +792,7 @@ export interface Position {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/oK8Ud4OEQry8aql-i3Wtkg/zh-cn_image_0000002765131542.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/-r_8OmO-QcW4QDXKL6pxsw/zh-cn_image_0000002767860348.gif)
 
 ## 示例代码
 

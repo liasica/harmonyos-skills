@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/linear-contai
 title: 线性容器
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > ArkTS容器类库 > 线性容器
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:02+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:894a5396aab87529d7362dd04e5ff97a7a2a3763f945ba455a21214aa97ce69b
+scraped_at: 2026-10-22T07:04:34+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:a93765d6e57ace2a3719d2bf9416ef923af16358350803469ad35fbb644252dc
 ---
 
 线性容器实现能按顺序访问的数据结构，其底层主要通过数组实现，包括ArrayList、Vector、List、LinkedList、Deque、Queue和Stack。
@@ -37,7 +37,7 @@ ArrayList支持增、删、改、查操作，常用API如下：
 | 增加元素 | add(element: T) | 在数组尾部增加一个元素。 |
 | 增加元素 | insert(element: T, index: number) | 在指定位置插入一个元素。 |
 | 访问元素 | arr[index: number] | 获取指定index对应的value值。 |
-| 访问元素 | forEach(callbackFn: (value: T, index?: number, arrlist?: ArrayList<T>) => void, thisArg?: Object) | 访问整个ArrayList容器的元素，其中callbackFn是forEach方法中用于处理每个元素的回调函数，它接收当前元素、索引和原列表作为参数。 |
+| 访问元素 | forEach(callbackFn: (value: T, index?: number, arrlist?: ArrayList<T>) => void, thisArg?: Object) | 访问整个ArrayList容器的元素，其中callbackFn是forEach()方法中用于处理每个元素的回调函数，它接收当前元素、索引和原列表作为参数。 |
 | 访问元素 | [Symbol.iterator]():IterableIterator<T> | 创建迭代器以进行数据访问。 |
 | 修改元素 | arr[index] = xxx | 修改指定index位置对应的value值。 |
 | 删除元素 | remove(element: T) | 删除第一个匹配到的元素。 |

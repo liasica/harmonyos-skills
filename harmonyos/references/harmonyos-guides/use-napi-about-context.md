@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用扩展的Node-API接口在当前线程中创建、切换和销毁上下文环境
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口在当前线程中创建、切换和销毁上下文环境
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:12+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:9bff9eaa96aee416cfedee793d7d932294eef1f99fe63caba1fe6ed50fd6c6cb
+scraped_at: 2026-10-22T07:06:23+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:8649f3505f79a109721ca48795e9ad5a37a8fbba8f2c93ae28aa01a50a551dda
 ---
 
 在应用被拉起时，应用的主线程即为一个ArkTS线程，该线程中存在一个由系统管理的上下文环境，当ArkTS需要和C/C++交互时，在C/C++侧，napi\_env即代表该上下文环境，每个上下文环境中存在着独立的globalThis对象。
@@ -363,7 +363,7 @@ content_hash: sha256:9bff9eaa96aee416cfedee793d7d932294eef1f99fe63caba1fe6ed50fd
 
   ```ts
   // index.d.ts
-  export const callFunctionInContext: (func: (func:()=>number)=>{}) => number;
+  export const callFunctionInContext: (func: (func:()=>number)=>number) => number;
   ```
 * 编译配置
 

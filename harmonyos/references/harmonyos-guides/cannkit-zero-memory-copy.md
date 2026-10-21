@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-zero-
 title: 内存零拷贝
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 内存零拷贝
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:48+08:00
+scraped_at: 2026-10-22T07:06:02+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1df5f074ca2b1f2d77734dbb9668fcd0f53cb2eee7279c7f9256f4713ce35766
+content_hash: sha256:d69e79dd2ac643b9ce552026214641e0c89e947aa48c71e2c88c7c82c82d6844
 ---
 
 ## 概述
@@ -18,4 +18,4 @@ content_hash: sha256:1df5f074ca2b1f2d77734dbb9668fcd0f53cb2eee7279c7f9256f4713ce
 
 **说明** 
 
-若size为模型输出大小，对于输出张量，建议开发者申请ION内存的大小为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/GiHZNnIFRKWl-LB0L_R-pw/zh-cn_image_0000002764973058.png)。
+若size为模型输出大小，对于输出张量，建议开发者申请ION内存的大小为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/9fAjEfeVR7O5zMbrG7BT1Q/zh-cn_image_0000002797301713.png)。

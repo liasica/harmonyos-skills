@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-scheme-ha
 title: 拦截Web组件发起的网络请求
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 拦截Web组件发起的网络请求
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:16+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:65cfe478aa299b90387a838478908e0d2b06cbdfb22401b6c89c1bc348264442
+scraped_at: 2026-10-22T07:04:52+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:2baa6657d9720f743c7085c10eaa4ef3273122286dec1b0ae64f5867a22065df
 ---
 
 应用可以通过[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)拦截Web组件发起的网络请求，也可以通过SchemeHandler来拦截Web组件发起的网络请求。SchemeHandler提供了ArkTS与NDK两套接口。
@@ -186,30 +186,34 @@ OH_ArkWeb_RegisterCustomSchemes("custom-isolated", ARKWEB_SCHEME_OPTION_DISPLAY_
 
 在ArkTS中，获取被拦截请求的信息：
 
-```ts
-this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
+```typescript
+this.schemeHandler.onRequestStart
+((request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
+  console.info('[schemeHandler] onRequestStart');
   try {
-    console.info("[schemeHandler] onRequestStart url:" + request.getRequestUrl());
-    console.info("[schemeHandler] onRequestStart method:" + request.getRequestMethod());
-    console.info("[schemeHandler] onRequestStart referrer:" + request.getReferrer());
-    console.info("[schemeHandler] onRequestStart isMainFrame:" + request.isMainFrame());
-    console.info("[schemeHandler] onRequestStart hasGesture:" + request.hasGesture());
-    console.info("[schemeHandler] onRequestStart header size:" + request.getHeader().length);
-    console.info("[schemeHandler] onRequestStart resource type:" + request.getRequestResourceType());
-    console.info("[schemeHandler] onRequestStart frame url:" + request.getFrameUrl());
+    console.info('[schemeHandler] onRequestStart url:' + request.getRequestUrl());
+    console.info('[schemeHandler] onRequestStart method:' + request.getRequestMethod());
+    console.info('[schemeHandler] onRequestStart referrer:' + request.getReferrer());
+    console.info('[schemeHandler] onRequestStart isMainFrame:' + request.isMainFrame());
+    console.info('[schemeHandler] onRequestStart hasGesture:' + request.hasGesture());
+    console.info('[schemeHandler] onRequestStart header size:' + request.getHeader().length);
+    console.info('[schemeHandler] onRequestStart resource type:' + request.getRequestResourceType());
+    console.info('[schemeHandler] onRequestStart frame url:' + request.getFrameUrl());
     let header = request.getHeader();
     for (let i = 0; i < header.length; i++) {
-      console.info("[schemeHandler] onRequestStart header:" + header[i].headerKey + " " + header[i].headerValue);
+      console.info('[schemeHandler] onRequestStart header:' + header[i].headerKey + ' ' + header[i].headerValue);
     }
     let stream = request.getHttpBodyStream();
     if (stream) {
-      console.info("[schemeHandler] onRequestStart has http body stream");
+      console.info('[schemeHandler] onRequestStart has http body stream');
     } else {
-      console.info("[schemeHandler] onRequestStart has no http body stream");
+      console.info('[schemeHandler] onRequestStart has no http body stream');
     }
   } catch (error) {
     console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
   }
+
+  // ...
   return true;
 })
 ```

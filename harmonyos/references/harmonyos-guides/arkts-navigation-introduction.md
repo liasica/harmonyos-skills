@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: 组件导航和页面路由概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航和页面路由概述
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:11+08:00
+scraped_at: 2026-10-22T07:04:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ed40d2351dc5317d5b9bda23907dac3406a5ea0577a3fa9ef099520739c87806
+content_hash: sha256:d1113d5c10d3d25e8eb3bcdd70cffa91470768d62d3c03239639b4a1618ec193
 ---
 
 页面是指由布局、组件、交互逻辑等构成的可视化交互单元，承载着特定功能逻辑与信息展示，是用户与应用进行操作交互的核心界面载体。一个完整的应用往往由多个页面组成，组件导航（[Navigation](../harmonyos-references/ts-basic-components-navigation.md)）和页面路由（[@ohos.router](../harmonyos-references/arkts-apis-uicontext-router.md)）均提供了应用内的页面跳转能力。
@@ -19,7 +19,7 @@ content_hash: sha256:ed40d2351dc5317d5b9bda23907dac3406a5ea0577a3fa9ef099520739c
 
 从ArkUI组件树层级上来看，原先由Router管理的Page在页面栈管理节点Stage的下面。Navigation作为导航容器组件，可以挂载在单个page节点下，也可以叠加、嵌套。Navigation管理了标题栏、内容区和工具栏，内容区用于显示用户自定义页面的内容，并支持页面的路由能力。Navigation的这种设计上有如下优势：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/mQh5twhrSteUgKuHf7CcAQ/zh-cn_image_0000002794489641.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/grPI-bWEQp6vO523DjZNxA/zh-cn_image_0000002797179845.png)
 
 1. 接口上显式区分标题栏、内容区和工具栏，实现更加灵活的管理和UX动效能力；
 2. 显式提供路由容器概念，由开发者决定路由容器的位置，支持在全模态、半模态、弹窗中显示；

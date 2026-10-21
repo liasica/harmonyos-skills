@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper
 title: hidumper
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hidumper > hidumper
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:30ddf0fd877f5334565740a863c47240a0a51a3e8099225fdf37f4fc4a3444ec
+scraped_at: 2026-10-22T07:05:24+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:979f8a5eec2f68328339c44fe5a66b72a0abce1137c17584b677656d87995793
 ---
 
 HiDumper是用于统一系统信息导出的命令行工具，支持分析CPU、内存、存储等系统资源使用情况，查询系统服务运行情况，定位资源使用异常、通信等相关问题。
@@ -313,8 +313,8 @@ Total Ashmem:144 kB
 
 使用样例：
 
-```txt
-$ hidumper --mem-smaps 3456  # 3456 为目标可调试应用进程号
+```shell
+$ hidumper --mem-smaps 3456  -> 3456 为目标可调试应用进程号
 
 -------------------------------[memory]-------------------------------
 
@@ -339,8 +339,8 @@ Size        Rss         Pss         Clean       Dirty       Clean       Dirty   
 
 使用样例：
 
-```txt
-$ hidumper --mem-smaps 3456 -v   # 3456 为目标可调试应用进程号
+```shell
+$ hidumper --mem-smaps 3456 -v  -> 3456 为目标可调试应用进程号
 
 -------------------------------[memory]-------------------------------
                                     Shared      Shared      Private     Private

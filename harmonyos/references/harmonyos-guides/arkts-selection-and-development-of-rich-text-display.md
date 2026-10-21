@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-selecti
 title: 富文本显示的选型与开发
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 富文本显示的选型与开发
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:12+08:00
+scraped_at: 2026-10-22T07:04:42+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:b4fdbc49e7fada836024dea8f3d363877bbf8ee6f933b95eb1aacb5b54adf35a
+content_hash: sha256:50d328df82c7bc0f3c0b3efd399b0930d42a07a63d48f782441cccb21e2d2ac2
 ---
 
 ## 概述
@@ -56,7 +56,7 @@ content_hash: sha256:b4fdbc49e7fada836024dea8f3d363877bbf8ee6f933b95eb1aacb5b54a
 
 **选择路线图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/Uxl6ibSCSsCObTZXwuwfBg/zh-cn_image_0000002764971370.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Ze6-JfTzQXOzV0A2EHM8JA/zh-cn_image_0000002797300039.png)
 
 从上图可以看出，在简单场景中通常使用[Text](../harmonyos-references/ts-basic-components-text.md)+[Span](../harmonyos-references/ts-basic-components-span.md)组件，因为其使用简便且能满足需求，可以优先考虑。相比之下，[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)+[addTextSpan()](../harmonyos-references/ts-basic-components-richeditor.md#addtextspan)较为复杂，适用于更复杂的场景。而[Text](../harmonyos-references/ts-basic-components-text.md)/[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)+[StyledString](../harmonyos-references/ts-universal-styled-string.md#styledstring)属性字符串的使用虽然更为复杂，但其兼容性更高，功能更丰富，可以根据具体场景自定义组件，适用范围更广。以下将详细介绍几种常见属性字符串的应用案例。
 
@@ -66,13 +66,13 @@ content_hash: sha256:b4fdbc49e7fada836024dea8f3d363877bbf8ee6f933b95eb1aacb5b54a
 
 在社交和聊天等应用平台中，常见的文本元素包括@昵称、#话题和https链接等高亮显示的内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/3FngLC2wQgqWFpYIvJDRiQ/zh-cn_image_0000002765131296.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/NpzaITEFSoOndn0lchfi5g/zh-cn_image_0000002767860106.png)
 
 ### 实现原理
 
 只需对文中的@昵称和#话题等文字设置高亮样式，并添加点击跳转事件，点击后跳转至相应的话题详情页面或用户详情页面。选择的方案如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Ivo0jKIpQuKduWu3XxAWUg/zh-cn_image_0000002794489873.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/2i1UsRScRDCfpXtYVmd0jQ/zh-cn_image_0000002797180071.png)
 
 可以通过属性字符串[StyledString](../harmonyos-references/ts-universal-styled-string.md#styledstring)中的[TextStyle](../harmonyos-references/ts-universal-styled-string.md#textstyle)属性设置样式，并通过[GestureStyle](../harmonyos-references/ts-universal-styled-string.md#gesturestyle)属性实现点击事件。
 
@@ -157,13 +157,13 @@ content_hash: sha256:b4fdbc49e7fada836024dea8f3d363877bbf8ee6f933b95eb1aacb5b54a
 
 文本中的自定义emoji表情通常使用类似[哈哈]这样的字符进行传输，但在显示时会被替换为本地或网络图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/6jrUYKeISTSMeG-1-8qA4A/zh-cn_image_0000002794410091.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/TVDTj5FLS-Gyn8HqA53qyw/zh-cn_image_0000002768020092.png)
 
 ### 实现原理
 
 文本中显示为表情图片，需要调整其样式设置，而无需编辑文本信息。以下是可选方案：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/DxO1vaveRM-BNQ42RlphAw/zh-cn_image_0000002764971372.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/1GpxR3L3S0OJzZe4uf9IWw/zh-cn_image_0000002797300041.png)
 
 可以先获取输入字符对应的图片，然后通过属性字符串[StyledString](../harmonyos-references/ts-universal-styled-string.md#styledstring)的[ImageAttachment](../harmonyos-references/ts-universal-styled-string.md#imageattachment)属性加载图片，并使用[UserDataSpan](../harmonyos-references/ts-universal-styled-string.md#userdataspan)属性存储自定义扩展信息。
 
@@ -223,13 +223,13 @@ content_hash: sha256:b4fdbc49e7fada836024dea8f3d363877bbf8ee6f933b95eb1aacb5b54a
 
 文中包含小图标与文本的组合，点击可跳转至详情页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_zlgY9hyTV2iATicMIhHQA/zh-cn_image_0000002765131298.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/POZPDq3SQsWvOnxFimuNww/zh-cn_image_0000002767860108.png)
 
 ### 实现原理
 
 文本中包含一个系统小图标和一段高亮显示的文字，点击可跳转至详情页面。选择方案如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/8BGvrngQTXOwkKY37vIGUg/zh-cn_image_0000002794489875.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/h8dsMl_GRx-qhKHV-tAOKA/zh-cn_image_0000002797180073.png)
 
 需要自定义一个包含系统图标的超链接文本，可以通过属性字符串[StyledString](../harmonyos-references/ts-universal-styled-string.md#styledstring)中的[ImageAttachment](../harmonyos-references/ts-universal-styled-string.md#imageattachment)属性来加载系统图片，并通过[TextStyle](../harmonyos-references/ts-universal-styled-string.md#textstyle)属性设置来调整字体样式，点击事件则可以通过[GestureStyle](../harmonyos-references/ts-universal-styled-string.md#gesturestyle)属性来实现。
 
@@ -337,13 +337,13 @@ content_hash: sha256:b4fdbc49e7fada836024dea8f3d363877bbf8ee6f933b95eb1aacb5b54a
 
 文中包含自定义的小图标与文本的组合。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/oC7v7n0cTla2lMRnCL56Sw/zh-cn_image_0000002794410093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/qXRQvkl0RySZ32PF7dkMqg/zh-cn_image_0000002768020094.png)
 
 ### 实现原理
 
 文本中包含一个小图标、文字和背景颜色的复杂样式。以下是选择方案：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/w5TM5zvFSISDpTllA15Ztw/zh-cn_image_0000002764971374.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/kLsYGPbdSH6FVXOSjfq8bw/zh-cn_image_0000002797300043.png)
 
 需要通过属性字符串[StyledString](../harmonyos-references/ts-universal-styled-string.md#styledstring)属性中的自定义[CustomSpan](../harmonyos-references/ts-universal-styled-string.md#customspan)来进行绘制。
 

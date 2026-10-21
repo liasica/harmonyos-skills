@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotati
 title: 适配相机旋转角度(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机旋转 > 适配相机旋转角度(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:09+08:00
+scraped_at: 2026-10-22T07:05:30+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:d46e73a66d1d55abd0c545b81f9c26872c6c1374e5316837653782585c124b04
+content_hash: sha256:23581e1df067ae23061ec75bcce9dc324fec186c537bc0e0203f297e2b6770e7
 ---
 
 屏幕处于不同的屏幕状态时，原始图像需旋转不同的角度，以确保图像在合适的方向显示，效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/rumAjUHpRF-vIBZL-3s1kQ/zh-cn_image_0000002765132236.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/WPXi8184S3G_Gpv6ZfUplw/zh-cn_image_0000002767861044.png)
 
 本开发指导将指导开发者在预览、拍照、录像等不同场景下，如何适配相机的旋转角度。
 

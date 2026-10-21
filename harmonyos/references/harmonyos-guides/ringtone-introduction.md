@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ringtone-intr
 title: Ringtone Kit简介
 breadcrumb: 指南 > 媒体 > Ringtone Kit（铃声服务） > Ringtone Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:14+08:00
+scraped_at: 2026-10-22T07:05:34+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:36c90e3e3150f3ca72af6c0a13b9cb0adf35140b3bb9f930e83612882af41c94
+content_hash: sha256:2204b1f35a52f0cf1f8769c71f5365146f19ff485b9d9fac8d95afd3784ea698
 ---
 
 Ringtone Kit（铃声服务）是一个用于设置铃声的工具库。通过使用Ringtone Kit，开发者可以在HarmonyOS应用中提供铃声设置的功能，为用户提供简单一致、安全高品质的铃声设置体验。
@@ -20,7 +20,7 @@ Ringtone Kit支持将音视频文件设置成多种铃声类型，满足各类�
 
 铃声设置组件效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/7iJsxS61SPWY3Bgv46Blmw/zh-cn_image_0000002794490871.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/7RvOKpeCSMyxFXAOcJATRw/zh-cn_image_0000002797181065.jpg "点击放大")
 
 ## 约束与限制
 

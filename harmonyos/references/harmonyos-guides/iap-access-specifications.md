@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-access-sp
 title: IAP Kit接入规范
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > IAP Kit接入规范
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:32+08:00
+scraped_at: 2026-10-22T07:05:49+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9dd27b8e22e33a3a39560aa786d44fea10926593c16407950df0e39f74a7ee78
+content_hash: sha256:b25ae5e838547c042faf0093647a05598331242e97f3c9e1a3af970800b0ab91
 ---
 
 为了确保用户获得良好的支付体验，IAP Kit制定了应用接入IAP Kit的设计规范，请开发者遵照执行，否则可能影响应用上架。具体要求如下：
@@ -15,7 +15,7 @@ content_hash: sha256:9dd27b8e22e33a3a39560aa786d44fea10926593c16407950df0e39f74a
 1. 请不要在应用商品购买页展示支付方式栏目信息，包括支付方式logo、支付方式名称（如“华为支付”、“鸿蒙支付”、“应用内支付”等）等信息。建议采用购买、订阅等按钮确认用户购买或订阅意愿。用户点击按钮确认购买或订阅意愿后，应用直接拉起IAP Kit收银台完成购买流程。
 2. 建议应用在商品购买页拉起IAP Kit收银台时，展示加载动效，保证应用购买的流畅性，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/W7MnVfdiQC6XjMRIN_hloQ/zh-cn_image_0000002794491205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/MMAhi67bRF-_OXz8H00qvg/zh-cn_image_0000002797181397.png)
 
 ## 接入限制
 

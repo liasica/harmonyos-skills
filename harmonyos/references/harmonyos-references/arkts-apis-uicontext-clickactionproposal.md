@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ClickActionProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (ClickActionProposal)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:32+08:00
+scraped_at: 2026-10-22T07:07:27+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b05f5c3c20b38117d3fc8071c632f9882e13b8ccf86606b76305eb359800231a
+content_hash: sha256:92f4e2d065c4cdc29c575bc7421c067f9bac8d8a9decfec5a8bdcee64dc6ba4e
 ---
 
 智慧手势点击动作处理。当通过[registerMonitor](arkts-apis-uicontext-smartgesturecontroller.md#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](arkts-apis-uicontext-gesturehandlingresolution.md)的selectedProposal为该类型对象，会触发目标组件的点击操作。
@@ -100,4 +100,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/4Gl5-eHxSCKc-Q1rjeVorA/zh-cn_image_0000002794491801.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/JRgQg8TGQeuweXO8cWW5vw/zh-cn_image_0000002797181987.png)

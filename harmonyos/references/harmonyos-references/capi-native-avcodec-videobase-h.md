@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcodec_videobase.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcodec_videobase.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:eacc814d0db64402f210b37f797360e8d58e6df405146fa2d463b669e3c355f4
+scraped_at: 2026-10-22T07:09:49+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:be442a94e0442c03301b48518b3d94818ac8688847b6a74f555940ebfa6732ae
 ---
 
 ## 概述
@@ -42,7 +42,7 @@ content_hash: sha256:eacc814d0db64402f210b37f797360e8d58e6df405146fa2d463b669e3c
 
 | 名称 | 描述 |
 | --- | --- |
-| const char \* OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_TOP | 用于描述单个ROI（感兴趣区域）矩形顶部坐标（y）的键，值类型为int32\_t。坐标系的原点位于视频的左上角。取值范围为[0, OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_BOTTOM)。这是配置ROI参数时的必填键。  **起始版本：** 26.0.0  **系统能力：** SystemCapability.Multimedia.Media.CodecBase |
+| const char \* OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_TOP | 用于描述单个ROI（感兴趣区域）矩形顶部坐标（y）的键，值类型为int32\_t。坐标系的原点位于视频的左上角。取值范围为[0, OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_BOTTOM)。这是配置ROI参数时的必填键。  **起始版本：** 26.0.0 |
 | const char \* OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_LEFT | 用于描述单个ROI矩形左侧坐标（x）的键，值类型为 int32\_t。坐标系的原点位于视频的左上角。取值范围为[0, OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_RIGHT)。这是配置ROI参数时的必填键。  **起始版本：** 26.0.0 |
 | const char \* OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_BOTTOM | 用于描述单个ROI矩形底部坐标（y）的键，值类型为int32\_t。坐标系的原点位于视频的左上角。取值范围为(OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_TOP, OH\_MD\_KEY\_VIDEO\_HEIGHT]。这是配置ROI参数时的必填键。  **起始版本：** 26.0.0 |
 | const char \* OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_RIGHT | 用于描述单个ROI矩形右侧坐标（x）的键，值类型为int32\_t。坐标系的原点位于视频的左上角。取值范围为(OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_LEFT, OH\_MD\_KEY\_VIDEO\_WIDTH]。这是配置ROI参数时的必填键。  **起始版本：** 26.0.0 |
@@ -140,7 +140,10 @@ OH_AVErrCode OH_VideoMetadata_ParseRoiString(const char *roiStr, OH_AVFormat **o
 
 **说明** 
 
-调用者拥有每个成功创建的OH\_AVFormat句柄的所有权。返回时，有效的句柄存储在outOwnedFormats数组的前\*outCount个元素中。- 完全或部分成功时（\*outCount > 0），调用者必须使用[OH\_AVFormat\_Destroy](capi-native-avformat-h.md#oh_avformat_destroy)逐个销毁有效句柄，以防止内存泄漏。- 完全失败时（\*outCount == 0），不会创建任何句柄，也无需销毁。
+调用者拥有每个成功创建的OH\_AVFormat句柄的所有权。返回时，有效的句柄存储在outOwnedFormats数组的前\*outCount个元素中。
+
+* 完全或部分成功时（\*outCount > 0），调用者必须使用[OH\_AVFormat\_Destroy](capi-native-avformat-h.md#oh_avformat_destroy)逐个销毁有效句柄，以防止内存泄漏。
+* 完全失败时（\*outCount == 0），不会创建任何句柄，也无需销毁。
 
 **起始版本：** 26.0.0
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 账号密码更新
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动保存 > 账号密码更新
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:32+08:00
+scraped_at: 2026-10-22T07:04:59+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:63cc0661d213d452eb61e1dc3bd298e7796f69eb413198f6cd1a3d18a1c2461d
+content_hash: sha256:ebffcb2c91dc612e788750d26d28167186ee52a7c303991936614c9f8d913e90
 ---
 
 应用界面触发账号密码自动保存时，若密码保险箱中已存在同应用下与本次使用账号相同的账号，则弹出密码更新提示框，用户点击更新按钮，即可更新密码保险箱内对应账号的密码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/UQKSgtpTQCer-KrBmKxkZA/zh-cn_image_0000002764972024.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/EcYMYsK3TvCrbWkLHYEuQg/zh-cn_image_0000002797300689.png)
 
 应用触发修改密码或使用已经保存过的账号手动登录时，均会触发密码更新功能。
 
@@ -20,7 +20,7 @@ content_hash: sha256:63cc0661d213d452eb61e1dc3bd298e7796f69eb413198f6cd1a3d18a1c
 
 ## 修改账号密码
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/vNjmkRsOSgukKV_uIYNFug/zh-cn_image_0000002765131950.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Ce1d-vsUSzyOVMlENgB3mQ/zh-cn_image_0000002767860758.png)
 
 示例代码如下：
 

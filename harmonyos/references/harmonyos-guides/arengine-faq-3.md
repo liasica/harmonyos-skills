@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-faq-
 title: 反光、光线暗或者弱纹理场景（输入图像颜色变化小）下无法识别平面
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > AR Engine常见问题 > 反光、光线暗或者弱纹理场景（输入图像颜色变化小）下无法识别平面
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:16+08:00
+scraped_at: 2026-10-22T07:05:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:019149d050d3438c4841e071bcc657cbaf61a28663fc62361baffb5ae57e29a2
+content_hash: sha256:fc84795b79bab3607f78788b6d9d91d62377b96a43e0c6b8a5c6b009b0137f81
 ---
 
 ## 现象描述
@@ -16,21 +16,21 @@ content_hash: sha256:019149d050d3438c4841e071bcc657cbaf61a28663fc62361baffb5ae57
 
    **图1** 镜面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/kcKACtyqQCGTWUOtzKe3Zg/zh-cn_image_0000002764972388.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/EOg4YonmRNKpMa7Qb0f6KA/zh-cn_image_0000002797301051.jpg)
 2. 光线暗：夜晚的路面或摄像头遮挡等。
 
    **图2** 夜晚的路面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Xu3vIfG5RcK851S3i4abzA/zh-cn_image_0000002765132312.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/XpEU6EmsSrCWS3R4Xili6A/zh-cn_image_0000002767861120.jpg)
 3. 弱纹理：如单色柜子、单色桌面和墙面等。
 
    **图3** 墙面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/VB8LDkwGQ0SO05Zwt_Rryw/zh-cn_image_0000002794490889.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/rwhA-1UJTi6hIGQidl7wKQ/zh-cn_image_0000002797181083.jpg)
 
    **图4** 纯色的桌面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/pCYnrG7qQtmhKbfkf202Jw/zh-cn_image_0000002794411109.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/WPul3F8bTsKJxoUVD5N3aA/zh-cn_image_0000002768021106.jpg)
 
 ## 可能原因
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-inputmeth
 title: 在自绘编辑框中使用输入法开发指导 (C/C++)
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 在自绘编辑框中使用输入法开发指导 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:29+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:6d8ffcc442f97971bdc9796209e3ce3fb7e8bdabb50f1b48965fa95483dba904
+scraped_at: 2026-10-22T07:04:56+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:f3bcaa1df94620d187212b3801366f08374e7f76e4bd147498aeb04f247db557
 ---
 
 ## 场景介绍
@@ -22,6 +22,7 @@ CMakeLists.txt中添加以下lib。
 
 ```txt
 libohinputmethod.so
+libhilog_ndk.z.so
 ```
 
 ## 引用头文件

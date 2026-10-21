@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-page-load
 title: 使用Web组件加载页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 使用Web组件加载页面
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b6f94d64bf099326c57bd1ced8f92cb44c411ee1209109613d653b3b44ff0173
+scraped_at: 2026-10-22T07:04:52+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:fcbf2b62a048008192ef43b3fc09c5e7dd0bd596d38a58d253293a41162a7291
 ---
 
 页面加载是Web组件的基本功能。根据页面加载数据来源可以分为三种常用场景，包括加载网络页面、加载本地页面、加载HTML格式的富文本数据。
@@ -72,7 +72,7 @@ struct WebComponent {
 
   **图1** 资源文件路径
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/QiP3qS6YR_61nxZWQbn89Q/zh-cn_image_0000002764971834.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/nJ4Z6iUKTDO-nMFPLmfGjA/zh-cn_image_0000002797300499.png)
 * 应用侧代码。
 
   ```typescript
@@ -176,32 +176,33 @@ struct WebComponent {
 
    以filesDir为例，获取沙箱路径。若想获取其他路径，请参考[应用文件路径](application-context-stage.md#获取应用文件路径)。
 
-   ```ts
-   // xxx.ets
-   import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-   import { webview } from '@kit.ArkWeb';
-   import { GlobalContext } from '../GlobalContext';
+```typescript
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
+import { GlobalContext } from '../pages/GlobalContext';
 
-   export default class EntryAbility extends UIAbility {
-     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
        // 通过在GlobalContext对象上绑定filesDir，可以实现UIAbility组件与UI之间的数据同步。
-       GlobalContext.getContext().setObject("filesDir", this.context.filesDir);
-       console.info("Sandbox path is " + GlobalContext.getContext().getObject("filesDir"));
+       GlobalContext.getContext().setObject('filesDir', this.context.filesDir);
+       console.info('Sandbox path is ' + GlobalContext.getContext().getObject('filesDir'));
      }
-   }
-   ```
+  // ...
+}
+```
 
-   加载的html文件。
+加载的html文件。
 
-   ```html
-   <!-- index.html -->
-   <!DOCTYPE html>
-   <html>
-       <body>
-           <p>Hello World</p>
-       </body>
-   </html>
-   ```
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Hello World</p>
+    </body>
+</html>
+```
 
 ## 加载HTML格式的文本数据
 

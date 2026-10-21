@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-bin
 title: 应用程序包集成bin文件（PC/2in1）
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 应用程序包集成bin文件（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:40:54+08:00
+scraped_at: 2026-10-22T07:04:27+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:0eae1d49fb5c0cabe76af3837eeeefa9bcdc9c69aedc5c7a024dedb54ef82590
+content_hash: sha256:6b4f21d4e872da23b69796c7419a87c40f2381e6f59b80597e6ddb5bd3d153c2
 ---
 
 从API版本24开始，HAP包支持集成、加载并独立运行bin文件，有效拓展了应用的能力边界。开发者可在标准HAP应用内嵌入各类平台二进制工具与可执行程序，依托HarmonyOS运行时环境完成程序调度、脚本解析与任务执行，弥补无法直接调用本地化二进制工具的短板。基于此能力，应用可实现外部脚本解析、第三方工具调用等扩展功能；同时，bin文件的运行全程受系统安全机制管控，兼顾功能拓展性与系统安全性。
@@ -141,7 +141,7 @@ bin文件被拉起后，如需使用受保护的系统能力，应独立声明�
 
 例如，需要将HAP部署在abi类型为arm64-v8a的PC/2in1设备上时，bin文件EXAMPLE应放置在如下目录：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/FhSiyJubRwGqvQDSzkf_Gw/zh-cn_image_0000002794409481.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Mqf3EIfHQ9yOxa4nQ2lNsQ/zh-cn_image_0000002768019490.png)
 
 在[module.json5](module-configuration-file.md)中配置[executablebinarypaths标签](module-configuration-file.md#executablebinarypaths标签)，用于声明HAP中包含的可执行bin文件。该标签配置bin文件的路径，为相对路径，必须以libs/{abi}/为前缀，其中{abi}为设备CPU架构类型（如arm64-v8a、x86\_64、armeabi-v7a）：
 

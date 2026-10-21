@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: 基于AVScreenCapture实现屏幕录制（C/C++）
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 基于AVScreenCapture实现屏幕录制（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:13+08:00
+scraped_at: 2026-10-22T07:05:33+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:b60803d7ebd6d9c9e32dfdcd69fe003104e532086d88bc64e4488a0469c66519
+content_hash: sha256:77aff27e76317a59f0deb32be6b496327186037e4b6f042a4b9c57b9a7b96cc8
 ---
 
 ## 概述
@@ -47,13 +47,13 @@ content_hash: sha256:b60803d7ebd6d9c9e32dfdcd69fe003104e532086d88bc64e4488a0469c
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ufddouJMQxmxwhs7FdHydQ/zh-cn_image_0000002765132284.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/6-P_y_2FQkGr8L7AMP6y-A/zh-cn_image_0000002767861092.gif)
 
 ### 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/8DKWTwJ1TzSurb9DhVzPTg/zh-cn_image_0000002794490861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/OBmuI0DkRFyf0_BuMfDnPA/zh-cn_image_0000002797181055.png)
 
 当点击录制按钮时，会调用异步方法进行屏幕录制。关键过程如下：
 
@@ -394,13 +394,13 @@ content_hash: sha256:b60803d7ebd6d9c9e32dfdcd69fe003104e532086d88bc64e4488a0469c
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/u4mbdWT-T6qxipuFFHO-ag/zh-cn_image_0000002794411079.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ATK39LfTTHqJ54t-d6pXfQ/zh-cn_image_0000002768021078.gif)
 
 ### 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/XLIMS-LITFG0yfRKhI-ISQ/zh-cn_image_0000002764972360.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/TXDQqZZSTGeerQuGgSEJrA/zh-cn_image_0000002797301025.png)
 
 当点击录制按钮时，系统会调用异步方法来执行屏幕录制。关键过程如下：
 

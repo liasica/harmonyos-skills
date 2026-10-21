@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-travel
 title: 查看出行凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 出行凭证 > 开发场景 > 查看出行凭证
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:46+08:00
+scraped_at: 2026-10-22T07:06:00+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:e4bb66f0cddafb220aab6b81c0fa6cdd08b622fb225aec238cd2e6f3fb9e7411
+content_hash: sha256:12fc2566d80d27762c6e584b422574b9fdaaf8ecd9a78b634c8afcf7d143592a
 ---
 
 查询已开通出行凭证的状态并展示，用户可以点击跳转钱包出行凭证详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/y_wu_CT9TSCmFDyrZXyT8Q/zh-cn_image_0000002764973022.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/rC0IXiCHQ4mIGc5V7wPnbw/zh-cn_image_0000002797301679.png)
 
 ## 客户端开发
 

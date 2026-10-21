@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/right-click-m
 title: 配置应用右键扩展菜单（PC/2in1）
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 配置应用右键扩展菜单（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:40:54+08:00
+scraped_at: 2026-10-22T07:04:27+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:e20446e42e3b253a9fad4a66a2f39bec0dd39c496889acc6eb666927d65a60ac
+content_hash: sha256:421e5f68110d03dea6678bdf01dd758d694b82f180b64fd98fea0f69d14567c8
 ---
 
 应用通过配置右键菜单，可以在桌面、文件管理器的右键菜单中注册自定义菜单项，用户点击后拉起应用执行对应的操作，从而将应用的能力便捷地融入系统的文件操作流程中。典型场景如下：
@@ -202,4 +202,4 @@ resources/base/profile路径下的menu.json配置文件示例如下：
 
 效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/_AIrAHZQTQu8GHYNnxi0Ag/zh-cn_image_0000002765130684.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Zdj8JThHSAK6gv_q4StVwQ/zh-cn_image_0000002767859504.png)

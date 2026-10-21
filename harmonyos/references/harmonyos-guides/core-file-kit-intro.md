@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-file-kit
 title: Core File Kit简介
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > Core File Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:26+08:00
+scraped_at: 2026-10-22T07:04:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c0c5aaca557131c3db79f85190759169226d12ec81cc087bf5d04ce087f5f0d0
+content_hash: sha256:f040b83a5f6de338a97a0ba3ad8e8637fdd85efa7e08fe26d14d1fcf429fa826
 ---
 
 Core File Kit（文件基础服务）为开发者提供一套访问和管理应用文件和用户文件的能力。帮助用户更高效地管理、查找和备份各类文件，使用户能够轻松应对各种文件管理的需求。
@@ -26,7 +26,7 @@ Core File Kit（文件基础服务）为开发者提供一套访问和管理应�
 
 **图1** 文件分类模型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/GB6QKofiQ5Wmia1MG5b9uA/zh-cn_image_0000002765131804.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/GwL6hNNqRQW1NSSb82S5JA/zh-cn_image_0000002767860612.png)
 
 在Core File Kit套件中提供高性能的[压缩解压缩能力](archive-overview.md)，按照使用场景的不同分为以下类型：
 
@@ -92,7 +92,7 @@ Core File Kit常见的使用场景：
 
 **图2** 用户文件访问框架示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/0pFf6jx3TSyFYJDoUDHVEQ/zh-cn_image_0000002794490381.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/GeR57GKKSNatTPkfLjyKvg/zh-cn_image_0000002797180575.png)
 
 * 系统应用或三方应用（即图中的文件访问客户端）若需访问用户文件，如选择一张照片或保存多个文档等，可以通过拉起“文件选择器应用”来实现。
 * FilePicker：系统预置应用，提供文件访问客户端选择和保存文件的能力，无需配置权限。FilePicker的使用指导请参见[选择用户文件](select-user-file.md)。

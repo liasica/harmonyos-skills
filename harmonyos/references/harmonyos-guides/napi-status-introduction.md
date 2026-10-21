@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-status-i
 title: Node-API接口返回状态码介绍
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API接口返回状态码介绍
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:46:55+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:955a9c0a2f5759452290da6043da270d5997e8d899e7b6a9dd4bc5414a14c8d3
+scraped_at: 2026-10-22T07:06:22+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:eb139f8f3f3d7fa9037f0f27f8926885c477b0db8b4eaebb13a38c35e988fb20
 ---
 
 ## 概述
@@ -54,11 +54,11 @@ content_hash: sha256:955a9c0a2f5759452290da6043da270d5997e8d899e7b6a9dd4bc5414a1
 | napi\_is\_exception\_pending | 判断是否出现了异常。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_is\_exception\_pending | 判断是否出现了异常。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_fatal\_error | 引发致命错误以立即终止进程。 | 不涉及 | 不涉及 | 不涉及 |
-| napi\_open\_handle\_scope | 创建一个上下文环境使用。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_open\_handle\_scope | 创建一个上下文环境使用。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
-| napi\_close\_handle\_scope | 关闭传入的上下文环境，关闭后，全部在其中声明的引用都将被关闭。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_close\_handle\_scope | 关闭传入的上下文环境，关闭后，全部在其中声明的引用都将被关闭。 | napi\_invalid\_arg | 入参scope为nullptr | 确保入参正确 |
-| napi\_close\_handle\_scope | 关闭传入的上下文环境，关闭后，全部在其中声明的引用都将被关闭。 | napi\_handle\_scope\_mismatch | napi\_open\_handle\_scope调用次数小于napi\_close\_handle\_scope | napi\_open\_handle\_scope和napi\_close\_handle\_scope需要成对使用 |
+| napi\_open\_handle\_scope | 创建一个napi\_handle\_scope。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
+| napi\_open\_handle\_scope | 创建一个napi\_handle\_scope。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
+| napi\_close\_handle\_scope | 关闭传入的napi\_handle\_scope，关闭后，全部在其中声明的引用都将被关闭。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
+| napi\_close\_handle\_scope | 关闭传入的napi\_handle\_scope，关闭后，全部在其中声明的引用都将被关闭。 | napi\_invalid\_arg | 入参scope为nullptr | 确保入参正确 |
+| napi\_close\_handle\_scope | 关闭传入的napi\_handle\_scope，关闭后，全部在其中声明的引用都将被关闭。 | napi\_handle\_scope\_mismatch | napi\_open\_handle\_scope调用次数小于napi\_close\_handle\_scope | napi\_open\_handle\_scope和napi\_close\_handle\_scope需要成对使用 |
 | napi\_open\_escapable\_handle\_scope | 创建出一个可逃逸的handle scope，可将范围内声明的值返回到父作用域。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_open\_escapable\_handle\_scope | 创建出一个可逃逸的handle scope，可将范围内声明的值返回到父作用域。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_close\_escapable\_handle\_scope | 关闭传入的可逃逸的handle scope。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |

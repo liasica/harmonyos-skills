@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/high-load-thr
 title: 高负载场景线程优先级设置
 breadcrumb: 指南 > 系统 > 基础功能 > Kernel Enhance Kit（内核增强能力） > 内存管理 Purgeable Memory 开发指导 > 高负载场景线程优先级设置
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:52+08:00
+scraped_at: 2026-10-22T07:05:16+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:e57c3f631cf855e23f9c1a90336477fff879c1ba73326c13f5fcb65f2b35f8f7
+content_hash: sha256:26fe3941f70f66915b77452595a263393d6ed2082b83c38d6fd0821a18d48718
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:e57c3f631cf855e23f9c1a90336477fff879c1ba73326c13f5fcb65f2b3
 
 下面是一个在高负载情况下，配置了不同QoS等级的两个关键线程完成相同计算任务所花时间的对比图，从界面的运行结果可以看到在高负载情况下，配置了高优先级的线程执行完计算所花的时间更少一些。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/BkqrtS1fSoCMAtfX3zNIVg/zh-cn_image_0000002764972160.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/quPueTV0QVKyhDD-k4LSyA/zh-cn_image_0000002797300825.gif)
 
 具体实现步骤如下：
 
@@ -172,7 +172,7 @@ void SetQoS(QoS_Level level) {
 
 计算线程（线程id：39260）设置低QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/7gzZuN9bQ3yER1NgMt8plA/zh-cn_image_0000002765132086.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/KkJoO7zTSv2Cqueu3Ky26Q/zh-cn_image_0000002767860894.png)
 
 如上图所示，计算线程执行完计算任务耗时726.8毫秒。
 
@@ -205,7 +205,7 @@ void SetQoS(QoS_Level level) {
 
 计算线程（线程id：39204）设置高QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/D-iVFWQ-S0KMmrMIEVCPsg/zh-cn_image_0000002794490663.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/-Xe_0cdkQ12ivQ2bnct_tQ/zh-cn_image_0000002797180857.png)
 
 如上图所示，计算线程执行完计算任务耗时323.9毫秒。
 

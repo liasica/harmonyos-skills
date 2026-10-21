@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-invoicing
 title: 开票
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 售后 > 开票
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:33+08:00
+scraped_at: 2026-10-22T07:05:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5db2adb8d70f9fb58a80a8d408c65764d3bfe96349d4759eac0ab7955b9ea0fb
+content_hash: sha256:295e33b6e0e162cf66f2f67dec9a36c47abe12b7c95f61fb522507aca4cb33e3
 ---
 
 ## 用户申请开发票
@@ -16,14 +16,14 @@ content_hash: sha256:5db2adb8d70f9fb58a80a8d408c65764d3bfe96349d4759eac0ab7955b9
 
 1. 选择“手机设置 > 华为账号 > 付款与账单 > 发票中心”，点击“开发票”，在需要开发票的订单后，点击“下一步”，进入“开发票”页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/1ENilfDFRwaS-qL1hrcG9g/zh-cn_image_0000002765132654.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Lx2gHQhrSE2thUNY3LRvYw/zh-cn_image_0000002794491229.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/6056gE7URWeYrQPeblFuGg/zh-cn_image_0000002767861458.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/-uagkZmiSh-CaTkNWskkxw/zh-cn_image_0000002797181421.png)
 2. 在“开发票”页面，选择发票类型、抬头类型，输入发票抬头、税号和电子邮箱，然后提交开发票申请，提交后等待即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/ElcRK3btTsWd8pRTfKRTnw/zh-cn_image_0000002794411449.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/iLXXwzX9Q0GJK-WyFZ6thQ/zh-cn_image_0000002768021442.png)
 
    用户提交开发票申请后，返回“发票中心”页面，在“我的发票”中查看所有订单的开发票状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/JD8FdfzxR2-o1pJWNrEtQA/zh-cn_image_0000002764972732.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/gW7q9OmiQmWpOuW2cppeEw/zh-cn_image_0000002797301391.png)
 
 ## 应用内接入开发票入口
 

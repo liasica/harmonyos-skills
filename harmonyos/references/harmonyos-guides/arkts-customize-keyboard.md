@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-customi
 title: 自定义键盘
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 自定义键盘
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:12+08:00
+scraped_at: 2026-10-22T07:04:42+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:22da01b06ee88c502cf2ce5456d4018001ec44dc4cba6e8dfffe46cd02d184f8
+content_hash: sha256:dda18aa8cd837d6782b566a109dc31e39d222dddd6c03e8deafa8adab824d388
 ---
 
 ## 概述
@@ -52,7 +52,7 @@ export struct CustomKeyboard {
 
 **图 1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/JBHUu4FdTPGyfoUOWOl3fA/zh-cn_image_0000002794489879.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/Db2zDasxTUGcYtMlhO-QUw/zh-cn_image_0000002797180077.gif)
 
 ```ts
 @Component
@@ -101,7 +101,7 @@ export struct NumberKeyboard {
 
 **图 2**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/yrwqPuTcT9O23tUeFmWA7Q/zh-cn_image_0000002794410097.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/yjIZa1-nQgWW04bz1EdPFA/zh-cn_image_0000002768020098.gif)
 
 代码示例如下：
 
@@ -282,7 +282,7 @@ export struct CustomKeyboard {
 
 **图 3**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/_kaQsKVWRXSzMdMi4DZ7aw/zh-cn_image_0000002764971378.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/tb83KYQhSuqmV7E2fq-U7g/zh-cn_image_0000002797300047.gif)
 
 以英文键盘为例，监听EnglishButton的onClick事件，修改状态变量。
 
@@ -329,7 +329,7 @@ export struct TextInputComponent {
 
 **图 4**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/uUftCT8VRS66bZD6G9Rd1g/zh-cn_image_0000002765131304.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/QL1yFYGrRIG9Kv8bbmCRBw/zh-cn_image_0000002767860114.gif)
 
 获取光标位置：
 
@@ -365,7 +365,7 @@ onChange(value: string) {
 
 **图 5**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/e7DOFcgwSn-rKxYjAnqhIg/zh-cn_image_0000002794489881.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/6ZO2WAFpQkm8D89Z-R_15Q/zh-cn_image_0000002797180079.gif)
 
 ```ts
 onInput(value: string | Resource): string {
@@ -390,7 +390,7 @@ Tab栏点击“123”、“ABC”按钮，this.isCustomKeyboardAttach为true，T
 
 **图 6**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gE0q5ctZTOumplJtCxow-Q/zh-cn_image_0000002794410099.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/2_rx75VMQ2SAKh33pW2EBg/zh-cn_image_0000002768020100.gif)
 
 ```ts
 TextInput({
@@ -410,7 +410,7 @@ TextInput({
 
 **图 7**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Ra_IFgFiRtWJB6-7jRw1iw/zh-cn_image_0000002764971380.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/MFZSuUXxRXOUf-ihEmeegg/zh-cn_image_0000002797300049.gif)
 
 ```ts
 TextInput({
@@ -430,7 +430,7 @@ TextInput({
 
 **图 8**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ZmJx4bRlSB66R727BcseDg/zh-cn_image_0000002765131306.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/f9dOO2k3RsamhAOxULR5aw/zh-cn_image_0000002767860116.gif)
 
 监听自定义键盘布局的[onAreaChange()](../harmonyos-references/ts-universal-component-area-change-event.md#onareachange)生命周期，通过newValue.height获取自定义键盘弹出时的高度，根据实际业务场景计算布局避让高度avoidHeight。
 

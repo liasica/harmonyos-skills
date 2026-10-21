@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-data-
 title: 数据排布格式
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 附录 > Tensor基础知识参考 > 数据排布格式
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:50+08:00
+scraped_at: 2026-10-22T07:06:04+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:7c47ce78a47a16f9fc1566c76cf455594bee008c401e7f7f3e5889628cc2f97c
+content_hash: sha256:aaf4fa630f6b111aec1565c404d5fe0af92f0201ba0748717c6b36226ea5a5cd
 ---
 
 Format为数据的物理排布格式，决定了如何解读数据的维度，比如1D，2D，3D，4D，5D等。
@@ -23,7 +23,7 @@ Format为数据的物理排布格式，决定了如何解读数据的维度，�
 
 如下图所示，以一张格式为RGB的图片为例，NCHW中，C排列在外层，实际存储的是“RRRRRRGGGGGGBBBBBB”，即同一通道的所有像素值顺序存储在一起；而NHWC中C排列在最内层，实际存储的则是“RGBRGBRGBRGBRGBRGB”，即多个通道的同一位置的像素值顺序存储在一起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/7LkPdHqpRzeWrbjqpjGtLw/zh-cn_image_0000002794491589.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/oArSYhJaQFGWcITQcsoGXA/zh-cn_image_0000002797181775.png)
 
 尽管存储的数据相同，但不同的存储顺序会导致数据的访问特性不一致，因此即便进行同样的运算，相应的计算性能也会不同。
 
@@ -35,7 +35,7 @@ C1=(C+C0-1)/C0。如果结果不整除，向上取整。
 
 NHWC/NCHW -> NC1HWC0的转换过程为：将数据在C维度进行分割，变成C1份NHWC0/NC0HW，再将C1份NHWC0/NC0HW在内存中连续排列成NC1HWC0，其格式转换示意图如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/bwU_RVJ0RsWI4SSZuE94Hw/zh-cn_image_0000002794411811.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/3NdX6jM8QXq2YXJiaATO8Q/zh-cn_image_0000002768021796.png)
 
 * NHWC -> NC1HWC0的转换公式如下。
 
@@ -52,7 +52,7 @@ NHWC/NCHW -> NC1HWC0的转换过程为：将数据在C维度进行分割，变�
 
 FRACTAL\_NZ是分形格式，如Feature Map的数据存储，在cube单元计算时，输出矩阵的数据格式为NW1H1H0W0。整个矩阵被分为（H1\*W1）个分形，按照column major排布，形状如N字形；每个分形内部有（H0\*W0）个元素，按照row major排布，形状如z字形。考虑到数据排布格式，将NW1H1H0W0数据格式称为Nz（大N小z）格式。其中，H0,W0表示一个分形的大小，示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/b1TjERmQSM-FzXhXfx95dQ/zh-cn_image_0000002764973092.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/QM0e6-ULQfaZ40FD-k7TYw/zh-cn_image_0000002797301745.png)
 
 ND –> FRACTAL\_NZ的变换过程为：
 
@@ -66,7 +66,7 @@ FRACTAL\_Z是用于定义卷积权重的数据格式，由FT Matrix（FT：Filte
 
 数据有两层Tiling，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/mbp5BBNVRyGPyO1Av2ZC0A/zh-cn_image_0000002765133012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/LiK12NWgTceFSw50JrBUwA/zh-cn_image_0000002767861814.png)
 
 第一层与Cube的Size相关，数据按照列的方向连续（小n）；第二层与矩阵的Size相关，数据按照行的方向连续（大Z）。
 

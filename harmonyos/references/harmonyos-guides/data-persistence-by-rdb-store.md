@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过关系型数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过关系型数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:00+08:00
+scraped_at: 2026-10-22T07:04:33+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:9dbe051ef098e99bd434c3b30d407f1dc0ffd6c902a16acaff2c82fc2aa19bcc
+content_hash: sha256:f88e6223d5efa68087eeda0e7b923ff91f43f08b3aef24f930df04c3883d67f3
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:9dbe051ef098e99bd434c3b30d407f1dc0ffd6c902a16acaff2c82fc2aa
 
 **图1** 关系型数据库运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/64HGcpsmRd-4umu56JnDmw/zh-cn_image_0000002764970826.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/li3yh28xQ-abqbmuEJz8vg/zh-cn_image_0000002797299501.jpg)
 
 ## 约束限制
 

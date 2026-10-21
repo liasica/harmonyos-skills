@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 弧形列表 (ArcList)（圆形屏幕推荐使用）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 弧形列表 (ArcList)（圆形屏幕推荐使用）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:12+08:00
+scraped_at: 2026-10-22T07:04:41+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:1f55ba4c477ded26b94504ba2cdf2181fba083ede16f2c7679b15cf0a1857098
+content_hash: sha256:2542463ec66518aeca517f25cef67beb530dc4829394cbdd53c702d02431c180
 ---
 
 从API version 18开始支持弧形列表。弧形列表是一种专为圆形屏幕设备设计的特殊列表，它能够以结构化、可滚动的形式高效展示信息。具体用法可参考[ArcList](../harmonyos-references/ts-container-arclist.md)。
@@ -153,7 +153,7 @@ export struct ArcListShow {
 
 **图1** 显示弧形列表数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/gQ2lTfWUSVaF1JnWSnlxAA/zh-cn_image_0000002794489753.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/3g1yjxRwRUWtvyfF1QxdRQ/zh-cn_image_0000002797179955.png)
 
 ## 迭代弧形列表内容
 
@@ -231,7 +231,7 @@ export struct ArcListContents {
 
 **图2** 迭代弧形列表内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UHAAP3wrTP2YlhyLK-zDlg/zh-cn_image_0000002765131192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/1dNcRkTsQl2yxgP4jUxwSQ/zh-cn_image_0000002767860006.png)
 
 ## 自定义弧形列表样式
 
@@ -275,7 +275,7 @@ export struct ArcListContents {
 
 **图3** 自定义弧形列表标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/0bjSVAgYR1W6xS3wXGcwxg/zh-cn_image_0000002794489769.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/KtSJyOpVR4-W28H-YhaFIw/zh-cn_image_0000002797179971.png)
 
 ### 设置弧形列表项间距
 
@@ -290,7 +290,7 @@ ArcList({ initialIndex: 2 }) {
 
 **图4** 设置弧形列表项间距
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/fS6cCGntT-OEInMoVOKOKQ/zh-cn_image_0000002794409989.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/uaC7dhxwQ9K6Ei1EC-B41w/zh-cn_image_0000002768019992.png)
 
 ### 列表项关闭自动缩放
 
@@ -305,7 +305,7 @@ ArcListItem() {
 
 **图5** 列表项关闭自动缩放
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/n0agcvXtQqWx0deZkrys8A/zh-cn_image_0000002764971272.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/RrpP5mGuQoWuUILkNtupcQ/zh-cn_image_0000002797299941.png)
 
 ### 添加内置滚动条
 
@@ -324,7 +324,7 @@ ArcList({ header: this.arcListHeader }) {
 
 **图6** 弧形列表的内置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/qxZI6MS5RRmoT7Ctoejvlw/zh-cn_image_0000002765131194.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/hg4b6SvAQFOKNYt5TG3OVA/zh-cn_image_0000002767860008.gif)
 
 ## 添加外置滚动条ArcScrollBar
 
@@ -352,7 +352,7 @@ ArcList({ header: this.arcListHeader }) {
 
 **图7** 弧形列表的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/JxJKoL3ORZ6F1DIlFERcgQ/zh-cn_image_0000002794489771.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/31IP_1kaRgSWfY5D0Cv0wA/zh-cn_image_0000002797179973.gif)
 
 **说明** 
 
@@ -432,7 +432,7 @@ export struct ArcListArcIndexerBar {
 
 **图8** 弧形列表与弧形索引条联动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/6zR_51eIQcydoAD5VyQtdQ/zh-cn_image_0000002794409991.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/tZI5DglkT_6pyC8sqjGb_w/zh-cn_image_0000002768019994.gif)
 
 ## 响应列表项侧滑
 
@@ -488,7 +488,7 @@ export struct ArcListArcIndexerBar {
 
 **图9** 侧滑删除列表项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/wj4zOv2YR-GNOICDLoG_vg/zh-cn_image_0000002764971274.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/tVMCf35JQwGwYPXcjCOF5Q/zh-cn_image_0000002797299943.gif)
 
 ## 处理长列表
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilityconnec
 title: 跨设备连接UIAbility开发指南
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 应用跨设备连接管理 > 跨设备连接UIAbility开发指南
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:46+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:ccebf79584175da1da4f1671d4b3e001b4e7531ee9b56507140637ee087804ef
+scraped_at: 2026-10-22T07:05:10+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:3fa9a19334c96ac1dc9c6064d4d5159325e6d4ac0c392f3fd2d20e43c98629ac
 ---
 
 ## 简介
@@ -37,7 +37,7 @@ content_hash: sha256:ccebf79584175da1da4f1671d4b3e001b4e7531ee9b56507140637ee087
 
 **图1** 应用跨设备连接运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/L-BRriX_QIO9TRgn04Z7IA/zh-cn_image_0000002794490603.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/n6Kg7W1rRKmZliAP-sqPvg/zh-cn_image_0000002797180797.png)
 
 ### 约束与限制
 
@@ -126,7 +126,7 @@ function initDmClass(): void {
   try {
     dmClass = distributedDeviceManager.createDeviceManager('com.example.remotephotodemo');
   } catch (err) {
-    hilog.info(0x0000, 'testTag', 'createDeviceManager err');
+    hilog.error(0x0000, 'testTag', 'createDeviceManager err');
   }
 }
 
@@ -137,17 +137,17 @@ function getRemoteDeviceId(): string | undefined {
     hilog.info(0x0000, 'testTag', 'getRemoteDeviceId begin');
     let list = dmClass.getAvailableDeviceListSync();
     if (typeof (list) === 'undefined' || typeof (list.length) === 'undefined') {
-      hilog.info(0x0000, 'testTag', 'getRemoteDeviceId err: list is null');
+      hilog.error(0x0000, 'testTag', 'getRemoteDeviceId err: list is null');
       return;
     }
     if (list.length === 0) {
-      hilog.info(0x0000, 'testTag', 'getRemoteDeviceId err: list is empty');
+      hilog.error(0x0000, 'testTag', 'getRemoteDeviceId err: list is empty');
       return;
     }
     // 弹框选择设备
     return list[0].networkId;
   } else {
-    hilog.info(0x0000, 'testTag', 'getRemoteDeviceId err: dmClass is null');
+    hilog.error(0x0000, 'testTag', 'getRemoteDeviceId err: dmClass is null');
     return;
   }
 }

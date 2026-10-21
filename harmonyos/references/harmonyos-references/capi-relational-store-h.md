@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rela
 title: relational_store.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > relational_store.h
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:59+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:da50344fd5471fa75fc857fa4491f992eebb53c3ee01e84509d43bae107c0ebd
+scraped_at: 2026-10-22T07:07:16+08:00
+doc_updated_at: 2026-10-21
+content_hash: sha256:0e5e6a7819fbed585081f7a25b237499bb91b8745e812de698d5d4255db5b61b
 ---
 
 ## 概述
@@ -78,7 +78,7 @@ content_hash: sha256:da50344fd5471fa75fc857fa4491f992eebb53c3ee01e84509d43bae107
 | [int OH\_Rdb\_IsTokenizerSupported(Rdb\_Tokenizer tokenizer, bool \*isSupported)](capi-relational-store-h.md#oh_rdb_istokenizersupported) | - | 判断当前平台是否支持传入的分词器。 |
 | [int OH\_Rdb\_SetTokenizer(OH\_Rdb\_ConfigV2 \*config, Rdb\_Tokenizer tokenizer)](capi-relational-store-h.md#oh_rdb_settokenizer) | - | 给指定的数据库文件配置设置分词器类型。 |
 | [int OH\_Rdb\_SetPersistent(OH\_Rdb\_ConfigV2 \*config, bool isPersistent)](capi-relational-store-h.md#oh_rdb_setpersistent) | - | 指定数据库是否需要持久化。 |
-| [const int \*OH\_Rdb\_GetSupportedDbType(int \*typeCount)](capi-relational-store-h.md#oh_rdb_getsupporteddbtype) | - | 获得支持的数据库类型[Rdb\_DBType](capi-relational-store-h.md#rdb_dbtype)。 |
+| [const int \*OH\_Rdb\_GetSupportedDbType(int \*typeCount)](capi-relational-store-h.md#oh_rdb_getsupporteddbtype) | - | 获取当前系统支持的所有数据库类型。 |
 | [OH\_VObject \*OH\_Rdb\_CreateValueObject()](capi-relational-store-h.md#oh_rdb_createvalueobject) | - | 创建[OH\_VObject](capi-rdb-oh-vobject.md)实例。 |
 | [OH\_VBucket \*OH\_Rdb\_CreateValuesBucket()](capi-relational-store-h.md#oh_rdb_createvaluesbucket) | - | 创建[OH\_VBucket](capi-rdb-oh-vbucket.md)实例。 |
 | [OH\_Predicates \*OH\_Rdb\_CreatePredicates(const char \*table)](capi-relational-store-h.md#oh_rdb_createpredicates) | - | 创建[OH\_Predicates](capi-rdb-oh-predicates.md)实例。 |
@@ -202,7 +202,7 @@ enum Rdb_DBType
 
 | 枚举项 | 描述 |
 | --- | --- |
-| RDB\_SQLITE = 1 | 表示使用sqlite作为数据库内核。 |
+| RDB\_SQLITE = 1 | 表示使用SQLite作为数据库内核。 |
 | RDB\_CAYLEY = 2 | 表示使用凯莱数据库作为数据库内核。 |
 | DBTYPE\_BUTT = 64 | 表示内核类型枚举值允许取值的最大值，这是一个非法值。 |
 
@@ -794,7 +794,7 @@ const int *OH_Rdb_GetSupportedDbType(int *typeCount)
 
 **描述**
 
-获得支持的数据库类型[Rdb\_DBType](capi-relational-store-h.md#rdb_dbtype)。
+获取当前系统支持的所有数据库类型。
 
 **起始版本：** 14
 
@@ -802,13 +802,13 @@ const int *OH_Rdb_GetSupportedDbType(int *typeCount)
 
 | 参数项 | 描述 |
 | --- | --- |
-| int \*typeCount | 表示支持的数据库类型的数组的长度，作为出参使用。 |
+| int \*typeCount | 返回当前系统支持的数据库类型个数，即返回值的数组长度。typeCount为nullptr时返回nullptr。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| const int \* | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
+| const int \* | 返回当前系统支持的所有数据库类型，元素为[Rdb\_DBType](capi-relational-store-h.md#rdb_dbtype)枚举值，个数由typeCount返回。 |
 
 ### OH\_Rdb\_CreateValueObject()
 
@@ -2256,7 +2256,7 @@ OH_Cursor *OH_Rdb_QuerySqlWithoutRowCount(OH_Rdb_Store *store, const char *sql, 
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor \*](capi-rdb-oh-cursor.md) \* | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针。如果SQL语句无效或内存分配失败，则返回nullptr。 |
+| [OH\_Cursor](capi-rdb-oh-cursor.md) \* | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针。如果SQL语句无效或内存分配失败，则返回nullptr。 |
 
 ### OH\_Rdb\_BatchInsertWithReturning()
 

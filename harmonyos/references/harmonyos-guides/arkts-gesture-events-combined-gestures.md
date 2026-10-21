@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 组合手势
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 组合手势
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:14+08:00
+scraped_at: 2026-10-22T07:04:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:00322e566fb474a2215911b74974d17838f7888747f8df4c85d36239fc71386d
+content_hash: sha256:3b439779074f9f7746e2c40567c15b237aecb790ff2c6ba1425c64fe6df0ede6
 ---
 
 组合手势由多种单一手势组合而成，通过在[GestureGroup](../harmonyos-references/ts-combined-gestures.md)中使用不同的[GestureMode](../harmonyos-references/ts-combined-gestures.md#gesturemode枚举说明)来声明该组合手势的类型，支持[顺序识别](arkts-gesture-events-combined-gestures.md#顺序识别)、[并行识别](arkts-gesture-events-combined-gestures.md#并行识别)和[互斥识别](arkts-gesture-events-combined-gestures.md#互斥识别)三种类型。
@@ -100,7 +100,7 @@ struct sequenceIdentification {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/_yxQKW2wSo6fg8iYeS3USQ/zh-cn_image_0000002764971522.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/r4CskdwRSMKGHyivpqvOUA/zh-cn_image_0000002797300187.gif)
 
 **说明** 
 
@@ -145,7 +145,7 @@ struct parallelRecognition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/iMNp3fuMTKG6K9EYBEorUg/zh-cn_image_0000002765131448.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/dw6M2h7XR4uNQGJd6dXNyQ/zh-cn_image_0000002767860254.gif)
 
 **说明** 
 
@@ -193,7 +193,7 @@ struct MutualExclusion {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/EiHKPw-JSBuaGI8hudqTTQ/zh-cn_image_0000002794490025.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/bDGy_f3DTXiwBGZE_ENWiQ/zh-cn_image_0000002797180219.gif)
 
 **说明** 
 
@@ -266,4 +266,4 @@ struct CombinedGestureDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/_NdHwp_gRLOB8Ow1naIxHQ/zh-cn_image_0000002794410241.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/PYJH109dQhCyd9Jbs9gojA/zh-cn_image_0000002768020240.gif)

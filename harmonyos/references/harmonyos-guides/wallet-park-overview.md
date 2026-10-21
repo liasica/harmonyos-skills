@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-park-o
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 园区卡 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:45+08:00
+scraped_at: 2026-10-22T07:06:00+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:88e66359c33474dc300986528d1ff577f6a1674949a203c99ba1cf14ecd21477
+content_hash: sha256:f7719f9daa6244c188f9325b8b43d0c496293da744816dbfc366be3deeb9bea0
 ---
 
 园区卡是华为钱包推出的面向企事业单位职员或学校学生的门禁解决方案，用户可将自己单位所属的入场凭证（如校园卡）等添加到华为钱包，并使用手机来通过单位门禁。
@@ -14,7 +14,7 @@ content_hash: sha256:88e66359c33474dc300986528d1ff577f6a1674949a203c99ba1cf14ecd
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/9_AMF9XASpq-YdmlX_A0ow/zh-cn_image_0000002765132932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/9JhaV1Y7Qoq0luQOAdbHlA/zh-cn_image_0000002767861734.png)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -31,11 +31,11 @@ content_hash: sha256:88e66359c33474dc300986528d1ff577f6a1674949a203c99ba1cf14ecd
 
 ### 园区卡开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/R-eVv4A-SX-Y7ALs6Ll8BA/zh-cn_image_0000002794491511.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/i3uaz6VpReO8zaltXKuMjg/zh-cn_image_0000002797181697.png)
 
 ### 园区卡展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/JHbCEQy1Qm-WRe3yaExd0A/zh-cn_image_0000002794411731.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/UAK7LWOTT-KyETUOnAljXg/zh-cn_image_0000002768021718.png)
 
 ## 接入流程
 
