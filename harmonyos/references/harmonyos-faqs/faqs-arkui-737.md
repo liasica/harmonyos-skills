@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-737
 title: GestureEvent手势事件坐标之间的区别
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > GestureEvent手势事件坐标之间的区别
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:ca1e7a3d163e95578c4384e3159277d73d26e2caea0211add5b46b6b3c5fdf30
+scraped_at: 2026-10-23T07:12:50+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:c5e1ee4ce60ac9aa0a65e1c57e8e705c40c217718786255539fea06c8d4d31de
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:ca1e7a3d163e95578c4384e3159277d73d26e2caea0211add5b46b6b3c5
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/evrOQ1vAQtupymKtQUd6hw/zh-cn_image_0000002658914551.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/YZvEJg9NT2m2v5NA918L0Q/zh-cn_image_0000002658914551.gif "点击放大")
 
 ## 背景知识
 
@@ -67,7 +67,7 @@ GestureEvent手势事件中涉及的坐标之间的区别主要在于参考系�
   }
   ```
 
-* 使用localX/localY实现Canvas手签功能。当手指按下时，记录当前位置并开始新的路径。当手指移动时，调用draw()方法绘制线段。当手指抬起时，关闭路径并结束绘制。示例可以参考：[公文审批-画板签名、文件预览下载](../architecture-guides/document_approval-0000002280673593.md)。
+* 使用localX/localY实现Canvas手签功能。当手指按下时，记录当前位置并开始新的路径。当手指移动时，调用draw()方法绘制线段。当手指抬起时，关闭路径并结束绘制。
 
 ## 总结
 

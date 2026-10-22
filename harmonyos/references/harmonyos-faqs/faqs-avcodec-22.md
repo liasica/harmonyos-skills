@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-22
 title: 如何实现视频压缩
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 如何实现视频压缩
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e423e2ce85245a9c8d6a48bff42419d3b73d7f13db4b7d0861d34da126171b94
+scraped_at: 2026-10-23T07:14:22+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:3ec0ce6f0e74b864e472ed879f9fef2f5d381e12c0412fce2750010ae5330183
 ---
 
 ## 问题现象
@@ -34,7 +34,7 @@ content_hash: sha256:e423e2ce85245a9c8d6a48bff42419d3b73d7f13db4b7d0861d34da1261
 
 可通过videoCompressor压缩视频质量，或者通过AVCodec Kit、AVTranscoder转码或者改变源视频文件的编码参数（格式、码率）达到缩小视频大小的目的。
 
-* **方案一**：可以使用[videoCompressor](https://gitee.com/openharmony-sig/ohos_videocompressor)压缩视频质量实现视频压缩。视频压缩实现思路参考[videoCompressor实现视频压缩功能](../architecture-guides/video_compress_demo-0000002248722292.md)。
+* **方案一**：可以使用[videoCompressor](https://gitee.com/openharmony-sig/ohos_videocompressor)压缩视频质量实现视频压缩。
 * **方案二**：AVCodec Kit视频编码功能能够将未经压缩的视频数据传输至视频编码器进行编码处理。应用程序可以设定所需的编码格式、比特率、帧率等参数，并对编码输出进行控制，从而实现视频文件的压缩目的，编码器参数可参考[设置正确的音频编解码参数](../harmonyos-guides/obtain-supported-codecs.md#设置正确的音频编解码参数)。详细demo请参考：[AVCodecSample](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/BasicFeature/Media/AVCodec#avcodecsample)。
 * **方案三**：采用AVTranscoder实现视频转码功能，支持通过减少比特率和分辨率等方式来实现视频的压缩。详细demo请参考：[UseAVTranscoderVideo](https://gitcode.com/HarmonyOS_Samples/UseAVTranscoderVideo)。
 

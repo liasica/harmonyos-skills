@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-18
 title: 如何实现拖拽卡片调整大小
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何实现拖拽卡片调整大小
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-23T07:12:33+08:00
+doc_updated_at: 2026-10-22
 content_hash: sha256:a4aa11d9f69b8d6061e99465876d63035124a0451b3e880045e0d8821159a54e
 ---
 

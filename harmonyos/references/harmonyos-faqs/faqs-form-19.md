@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-19
 title: 如何根据不同尺寸的卡片适配不同的UI
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何根据不同尺寸的卡片适配不同的UI
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-23T07:12:33+08:00
+doc_updated_at: 2026-10-22
 content_hash: sha256:ef067175146ee2214582fc5a7b5d60693ea00085a358701f3f211845ab55d358
 ---
 

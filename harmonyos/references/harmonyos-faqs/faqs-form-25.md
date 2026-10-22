@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-25
 title: 如何定位并解决卡片白屏展示的问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何定位并解决卡片白屏展示的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-23T07:12:34+08:00
+doc_updated_at: 2026-10-22
 content_hash: sha256:b70c34ef5602c9e28b5182e9a46b62d38f38b10e916992dedab156fd60fe5807
 ---
 

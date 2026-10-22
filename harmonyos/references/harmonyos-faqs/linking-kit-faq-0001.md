@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/linking-kit-faq
 title: App Linking跳转失败问题排查
 breadcrumb: FAQ > 应用服务开发 > 应用链接跳转服务（App Linking Kit） > 常见问题 > App Linking跳转失败问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:31+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:90183808302e6c2d68c49f137433188a937f9958080c5586bba741e50fed0cd6
+scraped_at: 2026-10-23T07:14:33+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:5aba387827687af53f02adb280c962c34da42bccd3262eea1d2dea995e3a52b6
 ---
 
-**Q：开发者在AGC开通了App Linking服务，并且在域名服务器上配置了对应文件，AGC上面也显示发布成功，但是点击跳转失败，提示16000019，是什么原因呢？**
+**Q：开发者在HarmonyOS 开发者中心开通了App Linking服务，并且在域名服务器上配置了对应文件，HarmonyOS 开发者中心上面也显示发布成功，但是点击跳转失败，提示16000019，是什么原因呢？**
 
 **A**：[16000019](../harmonyos-references/errorcode-ability.md#section16000019-隐式启动未查找到匹配应用)是隐式拉起失败，可能的原因是隐式启动的参数配置有误或者指定的HAP包未安装。排查方式：
 
@@ -33,7 +33,7 @@ content_hash: sha256:90183808302e6c2d68c49f137433188a937f9958080c5586bba741e50fe
 
 **Q：拉起应用的Harmony相关参数应该如何填写？**
 
-**A**：在AGC上创建项目，并在项目中开通App Linking，创建应用链接，形成聚合链接，详情可参考[目标方应用配置应用链接能力](../harmonyos-guides/app-linking-startupapp.md#配置应用链接能力)和[目标方应用配置聚合链接能力](../harmonyos-guides/applinking-cross-platform.md#配置聚合链接能力)。
+**A**：在HarmonyOS 开发者中心上创建项目，并在项目中开通App Linking，创建应用链接，形成聚合链接，详情可参考[目标方应用配置应用链接能力](../harmonyos-guides/app-linking-startupapp.md#配置应用链接能力)和[目标方应用配置聚合链接能力](../harmonyos-guides/applinking-cross-platform.md#配置聚合链接能力)。
 
 **Q：使用App Linking链接拉起应用，但拿不到回调，怎么处理？**
 
@@ -51,12 +51,12 @@ content_hash: sha256:90183808302e6c2d68c49f137433188a937f9958080c5586bba741e50fe
 
 **A**：通过普通表单（Form）的HTTP请求不会直接触发App Linking跳转机制。App Linking的触发条件：App Linking需要特定的URI格式，且需通过openLink()接口或特定组件（如ArkWeb中的链接点击）主动调用才能触发跳转。表单的常规HTTP请求属于普通网络行为，无法直接激活App Linking机制。
 
-**Q：AGC后台已开通App Linking，但是配置完域名链接发布后状态是失败是报错信息为：下载源JSON文件失败，请确认源文件是否存在异常？**
+**Q：HarmonyOS 开发者中心后台已开通App Linking，但是配置完域名链接发布后状态是失败是报错信息为：下载源JSON文件失败，请确认源文件是否存在异常？**
 
 **A**：App Linking发布链接后平台状态显示失败，可以点击旁边的查看来获取到错误信息，遇到这种问题的可能原因：
 
 1. 网络原因：域名下服务器网络问题导致下载JSON文件失败。
-2. 网站链接安全性问题：如果网站证书不安全，也可能导致直接下载JSON文件失败（可以通过复制JSON配置链接后在浏览器中点击查看来确认是否可以直接查看），另外JSON文件中配置的AppID如果不在AGC配置的应用列表中，状态也会显示失败。
+2. 网站链接安全性问题：如果网站证书不安全，也可能导致直接下载JSON文件失败（可以通过复制JSON配置链接后在浏览器中点击查看来确认是否可以直接查看），另外JSON文件中配置的AppID如果不在HarmonyOS 开发者中心配置的应用列表中，状态也会显示失败。
 
 **Q：系统读NFC标签是否可通过App Linking进行应用跳转？**
 
@@ -68,25 +68,25 @@ content_hash: sha256:90183808302e6c2d68c49f137433188a937f9958080c5586bba741e50fe
 
 **Q：放置文件applinking.json的作用是什么？每次调用scheme拉起App都需要访问该文件吗？**
 
-**A**：applinking.json文件放到域名服务器主要用于域名校验，表明该服务支持的应用才能打开，防止仿冒应用打开。在AGC发布的时候会访问一次applinking.json文件，后续缓存在AGC，手机都是访问的AGC，不会直接访问这个文件，AGC每隔24小时访问一次applinking.json文件。
+**A**：applinking.json文件放到域名服务器主要用于域名校验，表明该服务支持的应用才能打开，防止仿冒应用打开。在HarmonyOS 开发者中心发布的时候会访问一次applinking.json文件，后续缓存在HarmonyOS 开发者中心，手机都是访问的HarmonyOS 开发者中心，不会直接访问这个文件，HarmonyOS 开发者中心每隔24小时访问一次applinking.json文件。
 
 **Q：App Linking在配置path、pathStartWith、pathRegex时前后多加了/会有影响吗？**
 
 **A**：path、pathStartWith、pathRegex的取值前后均不需要加斜杠/，如果多加了/可能会影响匹配失败。
 
-**Q：在AGC创建元服务的App linking链接时报错：源JSON文件中未找到正确的AppID，请检查源JSON文件的配置是否准确？**
+**Q：在HarmonyOS 开发者中心创建元服务的App linking链接时报错：源JSON文件中未找到正确的AppID，请检查源JSON文件的配置是否准确？**
 
-**A**：报错是由于applinking.json配置文件中appIdentifier字段值错误或缺失导致，此字段必须与AGC控制台的应用标识符严格匹配，否则系统无法验证域名与应用的关系。元服务需参考[在开发者网站上关联元服务](../doccenter-atomic-service/atomic-applinking.md)配置正确的appIdentifier字段值。
+**A**：报错是由于applinking.json配置文件中appIdentifier字段值错误或缺失导致，此字段必须与HarmonyOS 开发者中心控制台的应用标识符严格匹配，否则系统无法验证域名与应用的关系。元服务需参考[在开发者网站上关联元服务](../doccenter-atomic-service/atomic-applinking.md)配置正确的appIdentifier字段值。
 
-**Q：在AGC创建应用链接时错出现报错：源JSON文件中的index字段不符合要求，请检查配置是否准确？**
+**Q：在HarmonyOS 开发者中心创建应用链接时错出现报错：源JSON文件中的index字段不符合要求，请检查配置是否准确？**
 
 **A**：报错是由于applinking.json文件中类型不对导致的，比如HarmonyOS应用在applinking.json文件中类型为atomicServices，或者元服务应用在applinking.json文件中类型为apps。需要改为对应的正确类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/AAOVa9OwQLG6b6V57QxKuw/zh-cn_image_0000002797176341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/mOke6pQOTJumtDjFFdigyg/zh-cn_image_0000002797176341.png "点击放大")
 
-**Q：应用链接发布失败后，在域名服务器上重新完成了applinking.json配置文件放置，为何AGC显示的状态仍然是"失败"？**
+**Q：应用链接发布失败后，在域名服务器上重新完成了applinking.json配置文件放置，为何HarmonyOS 开发者中心显示的状态仍然是"失败"？**
 
-**A**：应用链接发布失败后，重新设置applinking.json配置文件，并不会自动去刷新配置状态，需要在AGC平台重新发布配置。
+**A**：应用链接发布失败后，重新设置applinking.json配置文件，并不会自动去刷新配置状态，需要在HarmonyOS 开发者中心平台重新发布配置。
 
 **Q：App Linking配置pathRegex使用负向前瞻正则表达式后，点击链接无法拉起应用而是打开浏览器，如何解决？**
 

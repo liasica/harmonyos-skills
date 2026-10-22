@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/push-kit-faq-00
 title: Push Kit推送服务接入常见错误码和解决方案
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 常见问题 > Push Kit推送服务接入常见错误码和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:31+08:00
-doc_updated_at: 2026-10-20
+scraped_at: 2026-10-23T07:14:32+08:00
+doc_updated_at: 2026-10-22
 content_hash: sha256:587b6ac0d3475d434965bddf8823a2ad84b27bab48e8d3e352619486be3056e0
 ---
 

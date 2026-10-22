@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-21
 title: 卡片跳转到应用页面
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 卡片跳转到应用页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-23T07:12:34+08:00
+doc_updated_at: 2026-10-22
 content_hash: sha256:64c24808c7c0fd9d64584042b37ecd61683da3371ab1696524caf3caf7579cc7
 ---
 

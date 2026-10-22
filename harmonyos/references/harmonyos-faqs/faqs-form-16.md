@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-16
 title: 如何在服务卡片上实现分钟级刷新的效果
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何在服务卡片上实现分钟级刷新的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-23T07:12:33+08:00
+doc_updated_at: 2026-10-22
 content_hash: sha256:3669393803ced0bc61aa7a9b8144407934d2d229d982eb488f35a6f22314abc0
 ---
 

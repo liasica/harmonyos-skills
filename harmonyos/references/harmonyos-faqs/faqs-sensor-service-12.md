@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 平板上指南针方位指向异常
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 平板上指南针方位指向异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:b38ba94683e512306697965e01f0a7067067a6ed8ca63c0be14816341252dc5a
+scraped_at: 2026-10-23T07:14:09+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:4df459fb96d383e78450dd57972fdadeee099e5318a6882089b0cb8aecf0cc19
 ---
 
 ## 问题现象
@@ -31,7 +31,7 @@ content_hash: sha256:b38ba94683e512306697965e01f0a7067067a6ed8ca63c0be1481634125
 
 * 方式一：适配横屏，检测屏幕横屏状态时，将计算的方位旋转90度。
 
-  以[指南针](../architecture-guides/compass_effect-0000002317882746.md)示例代码为基础，修改CompassPage.ets，通过点击“旋转屏幕”模拟屏幕横竖屏。
+  修改CompassPage.ets，通过点击“旋转屏幕”模拟屏幕横竖屏。
 
   ```screen
   import { common } from '@kit.AbilityKit';
@@ -107,7 +107,7 @@ content_hash: sha256:b38ba94683e512306697965e01f0a7067067a6ed8ca63c0be1481634125
   ```
 * 方式二：固定该应用/元服务的屏幕状态为竖屏。
 
-  以[指南针](../architecture-guides/compass_effect-0000002317882746.md)示例代码为基础，修改CompassPage.ets，固定竖屏显示。
+  修改CompassPage.ets，固定竖屏显示。
 
   ```screen
   import { common } from '@kit.AbilityKit';

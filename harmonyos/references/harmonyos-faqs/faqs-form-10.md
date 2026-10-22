@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-10
 title: 服务卡片拉起编辑页，出现闪屏
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 服务卡片拉起编辑页，出现闪屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-23T07:12:33+08:00
+doc_updated_at: 2026-10-22
 content_hash: sha256:ce6d98fe975b1671f0494da04b2187ba34dae6ca7b7a7ab7823e6209edbe8102
 ---
 

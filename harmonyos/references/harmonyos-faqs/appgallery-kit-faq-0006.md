@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: 应用内检查更新实现及常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 应用内检查更新实现及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:32+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:3044059bf6debd90ee37436c1e57b297e38fdccd9b4113fe5d2b5937896f6669
+scraped_at: 2026-10-23T07:14:34+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:55b1e518299acb19c7d60fcd53460cd05019ecef837f1355300e850e3ac9508d
 ---
 
 **Q：应用上架应用市场后，有新的版本更新时，如何实现老版本用户打开应用能提示更新版本？**
 
 A：业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/1mXPP5ijQ8e3Um45cTn8fw/zh-cn_image_0000002792076741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/J2iEXLwiTe6-7CUT0dsFhg/zh-cn_image_0000002792076741.png "点击放大")
 
 1. 应用调用检查更新接口。
 2. 升级服务API返回是否有新版本。
@@ -55,7 +55,7 @@ A：业务流程：
 
 **Q：本地安装版本和应用市场在架版本签名保持一致怎么理解？**
 
-**A**：应用升级需要进行[签名证书一致性校验](../harmonyos-guides/install-and-update-consistency-verification.md#签名证书一致性校验)和[配置文件一致性校验](../harmonyos-guides/install-and-update-consistency-verification.md#配置文件一致性校验)。只需要保证[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)和[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)（对应AGC上应用的APP ID，应用的唯一标识）任一相同即可满足签名信息保持一致。
+**A**：应用升级需要进行[签名证书一致性校验](../harmonyos-guides/install-and-update-consistency-verification.md#签名证书一致性校验)和[配置文件一致性校验](../harmonyos-guides/install-and-update-consistency-verification.md#配置文件一致性校验)。只需要保证[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)和[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)（对应HarmonyOS 开发者中心上应用的APP ID，应用的唯一标识）任一相同即可满足签名信息保持一致。
 
 **Q：是否支持强制升级（不升级无法进入应用）？**
 
@@ -63,7 +63,7 @@ A：业务流程：
 
 **Q：升级弹窗是否能自定义？**
 
-**A**：不可以，检测到有新版本需要更新后，系统弹窗的版本信息和更新说明来源于应用市场客户端应用详情页数据。如果需要修改，需要在上架版本时AGC页面更新。详情可参考[升级版本。](../app/agc-help-maintain-upgrade-0000002236494386.md)
+**A**：不可以，检测到有新版本需要更新后，系统弹窗的版本信息和更新说明来源于应用市场客户端应用详情页数据。如果需要修改，需要在上架版本时HarmonyOS 开发者中心页面更新。详情可参考[升级版本。](../app/agc-help-maintain-upgrade-0000002236494386.md)
 
 **Q：为什么调用checkAppUpdate接口[UpdateAvailableCode](../harmonyos-references/store-updatemanager.md#updateavailablecode)返回结果为-1？**
 

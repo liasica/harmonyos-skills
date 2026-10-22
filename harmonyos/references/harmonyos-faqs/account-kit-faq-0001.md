@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/account-kit-faq
 title: 华为账号登录与授权常见问题
 breadcrumb: FAQ > 应用服务开发 > 华为账号服务（Account Kit） > 常见问题 > 华为账号登录与授权常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:26+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:5e7f2d8079ae4e8164d557dc6dedaf861033f6d81003a4c41e566dfc8141501d
+scraped_at: 2026-10-23T07:14:27+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:c266f61bd4b676bb4ed04465b6c37557e26880325a722578357a87d9feb88c80
 ---
 
 **Q：华为账号登录报错，常见错误码是1001500001，主要报错信息如下：**
@@ -20,12 +20,12 @@ Failed to auth, errorCode=1001500001, errorMsg=Failed to check the fingerprint o
 
 检查步骤：
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)查看[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)：
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)查看[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/anlAvKWcQTWw23tN0xZqlw/zh-cn_image_0000002794282667.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/QxMBtCVWS6KcfIxurb36KA/zh-cn_image_0000002794282667.png "点击放大")
 2. 使用DevEco Studio打开项目工程，打开File->Project Structure->Project->Signing Configs界面，不能勾选"Automatically generate signature"进行自动签名，需要手动配置签名。可以按照开发准备里面的说明配置：[配置签名信息](../harmonyos-guides/application-dev-overview.md#配置签名信息)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/kKCMOpIrTEGyrRuPijlnxg/zh-cn_image_0000002794282669.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/IXVN3n5rSJu-xnrL_onmgw/zh-cn_image_0000002794282669.png)
 3. 查看应用签名证书指纹，安装应用后执行：
    * Windows系统
 
@@ -37,7 +37,7 @@ Failed to auth, errorCode=1001500001, errorMsg=Failed to check the fingerprint o
      ```shell
      hdc shell bm dump -n 包名 | grep appId
      ```
-   * 将"appId"中包名下划线后的字符串拷贝到新文件中（文件名可自行定义，例如SHA.txt）再执行下面的命令行即可得到公钥指纹。检查应用签名证书指纹与AppGallery Connect是否一致。
+   * 将"appId"中包名下划线后的字符串拷贝到新文件中（文件名可自行定义，例如SHA.txt）再执行下面的命令行即可得到公钥指纹。检查应用签名证书指纹与HarmonyOS 开发者中心是否一致。
 
      ```shell
      certutil -hashfile F:\\SHA.txt SHA256
@@ -47,7 +47,7 @@ Failed to auth, errorCode=1001500001, errorMsg=Failed to check the fingerprint o
 
    检查module type为entry的模块下module.json5中的client\_id是否配置错误，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)。
 
-   注意：此处client\_id的获取路径为：AppGallery Connect中开发与服务->常规->应用->OAuth 2.0客户端ID（凭据->Client ID）。
+   注意：此处client\_id的获取路径为：HarmonyOS 开发者中心中应用管理->基本信息->OAuth 2.0客户端ID（凭据)->Client ID。
 
    在工程中entry模块的module.json5文件中，新增metadata，配置name为client\_id，value为Client ID的值。
 
@@ -168,9 +168,9 @@ GOpen.User.getInfo service is not found
 * 去除URL中多余的回车符。
 * 建议使用新接口开发，参考[通过Code换取用户信息（一键登录）](../harmonyos-references/account-api-get-user-info-quicklogin-by-code.md)。
 
-**Q：AppGallery Connect和应用的证书指纹已经确认一致还是报错？**
+**Q：HarmonyOS 开发者中心和应用的证书指纹已经确认一致还是报错？**
 
-**A**：在AGC上面，添加公钥指纹（HarmonyOS API 9及以上）后，指纹有一定时间的缓存，不会立刻生效，建议配置完成后等半小时再尝试。检查手机是否有修改系统时间。
+**A**：在HarmonyOS 开发者中心上面，添加公钥指纹（HarmonyOS API 9及以上）后，指纹有一定时间的缓存，不会立刻生效，建议配置完成后等半小时再尝试。检查手机是否有修改系统时间。
 
 **Q：点击《华为账号用户认证协议》无反应？**
 
@@ -189,7 +189,7 @@ GOpen.User.getInfo service is not found
 
 **Q：华为账号一键登录获取公钥指纹报错：Failed to login with LoginWithHuaweiIDButton. errorCode=1001500001, errorMsg is Failed to check the fingerprint of the app bundle.Incomplete response information from gateway.？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/p_vH-h7hT66isXJxrGRoqw/zh-cn_image_0000002765095280.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/UtEgGcYFStSuBJbu_dx2FQ/zh-cn_image_0000002765095280.png "点击放大")
 
 **A**：首先排查是否企业开发者，个人开发者暂不支持一键登录，再根据当前知识解决方案思路依次排查。
 
@@ -207,29 +207,29 @@ GOpen.User.getInfo service is not found
 
 **Q：为什么使用华为账号登录，使用调试证书或者发布证书，只有当前开发者可以正常登录，其他人报错误码:1001500001？**
 
-**A**：如您的应用当前集成的华为相关服务（如华为账号服务）依赖公钥指纹，您需要在应用调试或上架前将公钥指纹配置到AppGallery Connect。调试和发布使用的签名证书不同，因此调试和发布前请分别基于使用的证书配置相应的公钥指纹。发布应用前，需在AppGallery Connect中将调试应用的指纹更新为发布证书指纹。具体操作请参见[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
+**A**：如您的应用当前集成的华为相关服务（如华为账号服务）依赖公钥指纹，您需要在应用调试或上架前将公钥指纹配置到HarmonyOS 开发者中心。调试和发布使用的签名证书不同，因此调试和发布前请分别基于使用的证书配置相应的公钥指纹。发布应用前，需在HarmonyOS 开发者中心中将调试应用的指纹更新为发布证书指纹。具体操作请参见[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
 
 **Q：调试证书华为账号一键登录正常，提交上架的版本使用华为账号一键登录失败？**
 
-**A**：调试证书指纹已添加到应用下，发布证书未配置，请登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)检查。
+**A**：调试证书指纹已添加到应用下，发布证书未配置，请登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)检查。
 
 **Q：使用账号登录时，服务端返回ResponseCode：403如何排查？**
 
 **A**：客户端能拉起账号登录流程但服务端返回403，属于服务端鉴权失败，建议按以下顺序排查：
 
-1. 确认真机/模拟器里安装包的bundleName/package与AGC注册应用一致，当前调试或发布证书的SHA-256指纹已配置到同一个应用下。换过签名证书后，要重新下载配置文件并重新打包。
-2. 后端使用的Client ID、Client Secret必须与当前应用属于同一个AGC项目/应用，避免混用Web客户端、其他包名应用或旧项目的Client信息。
+1. 确认真机/模拟器里安装包的bundleName/package与HarmonyOS 开发者中心注册应用一致，当前调试或发布证书的SHA-256指纹已配置到同一个应用下。换过签名证书后，要重新下载配置文件并重新打包。
+2. 后端使用的Client ID、Client Secret必须与当前应用属于同一个HarmonyOS 开发者中心项目/应用，避免混用Web客户端、其他包名应用或旧项目的Client信息。
 3. 如果请求了手机号、匿名手机号、riskLevel等scope/permission，先确认对应权限已申请并通过。未申请所需scope/permission会对应错误码1001502014，不支持的scope/permission会对应错误码1001500003。
 4. 后端换取用户信息时要传客户端刚获取到的authorizationCode，该code只能用一次且有效期较短；重复使用、过期，或和错误Client ID搭配，都可能导致服务端拒绝。
 5. 建议把后端调用接口的完整响应体、错误码以及requestId/traceId一并记录，方便区分是签名指纹校验、scope权限，还是服务端凭据不匹配。
 
 Q：登录授权模拟器时，若提示华为账号需要实名制认证，请在账号中心检查账号状态。若状态显示“已实名”，请核对相关信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/NdEOcbwuTUOtslTk2HGhxw/zh-cn_image_0000002764937408.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Q3kf9pZ1SWuXobmB19L01Q/zh-cn_image_0000002764937408.png)
 
 **A**：华为账号实名分两种，一个是账号实名认证，即上图展示的状态，还有一个是开发者实名认证。这两种实名认证方式是不一样的，模拟器的登录授权是需要开发者实名认证，请根据[实名认证指导](../start/itrna-0000001076878172.md)进行处理。开发者实名认证后的结果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/xX4qL0PbR1a5DCWYP6zdlg/zh-cn_image_0000002794455925.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/dKhEUJwhTu68D1hgUQrPVw/zh-cn_image_0000002794455925.png)
 
 **Q：使用浏览器登录华为账号后，如果账号已实名认证但未出现授权的“允许”按钮，界面也未跳转或提示，该如何处理？**
 
@@ -239,16 +239,16 @@ Q：登录授权模拟器时，若提示华为账号需要实名制认证，请�
    * Windows平台：以Windows 10为例，打开“控制面板 > 程序 > 默认程序 > 设置默认程序”，更改或设置默认浏览器。
    * macOS平台：以macOS 15为例，打开系统设置，选择“桌面与程序坞”，再选择“默认网页浏览器”，更改或设置默认浏览器。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/UjX_3cJqRMW8IsqqtyQ2zQ/zh-cn_image_0000002764939608.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/EaNzNa4BQQmTfWjqq8gi1w/zh-cn_image_0000002764939608.png "点击放大")
 
      使用Safari浏览器时，点击Safari 浏览器 > 偏好设置>隐私/高级，取消“防止跨站跟踪”和“阻止所有Cookie”设置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/_v0Fl12WS-GrdNbk9xMrYw/zh-cn_image_0000002764940340.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/o18d6jG6RA-KbexIMkbL6Q/zh-cn_image_0000002764940340.png "点击放大")
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/tpgVJvBaQi2xubmVOuA7Qg/zh-cn_image_0000002794379077.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/l--_h3jZRCusZE1CBHg6jA/zh-cn_image_0000002794379077.png "点击放大")
 2. 在DevEco Studio界面，点击Cancel按钮，然后重新登录授权。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/xbxdy0qBShWp8D7g-PiJIA/zh-cn_image_0000002764941134.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/tebHPjtwQBiUAQq9YAuJhQ/zh-cn_image_0000002764941134.png "点击放大")
 
 **Q：获取匿名手机号只能与openid同时使用。在获取匿名手机号时如何同时获取头像和昵称？**
 

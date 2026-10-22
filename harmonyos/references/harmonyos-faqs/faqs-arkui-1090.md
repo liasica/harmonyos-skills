@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1090
 title: 如何监听页面切换
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何监听页面切换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-07-31
-content_hash: sha256:4749b43c2433867e32c9c8b2101eb163c3f51fc4c50a5397e280243078ef6713
+scraped_at: 2026-10-23T07:13:46+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:5dc2e321880f0f37c1c73e21b5f7ba9913800f5482d5cd012f41679db5426ebe
 ---
 
 ## 问题现象
@@ -493,4 +493,4 @@ content_hash: sha256:4749b43c2433867e32c9c8b2101eb163c3f51fc4c50a5397e280243078e
 * **场景三：实现页面埋点监听。**
   + **方案：通过无感监听实现。**
 
-    通过[@ohos.arkui.observer](../harmonyos-references/js-apis-arkui-observer.md)监听页面切换navDestinationSwitch、页面更新navDestinationUpdate、router页面状态变化routerPageUpdate三个事件。示例参考[页面埋点监听](../architecture-guides/page_tracing_point-0000002283641138.md)。
+    通过[@ohos.arkui.observer](../harmonyos-references/js-apis-arkui-observer.md)监听页面切换navDestinationSwitch、页面更新navDestinationUpdate、router页面状态变化routerPageUpdate三个事件。

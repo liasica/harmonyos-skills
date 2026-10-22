@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 罗盘指南针方向与实际不符
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 罗盘指南针方向与实际不符
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:5948a81e3fc3f7586b587aabb0f110f74d4a99fc492884b93ab8a97d75260a9d
+scraped_at: 2026-10-23T07:14:09+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:ad2d2c1409cd47e02de5b106637ab085bf520f68755ae553552e144efa7d2ddb
 ---
 
 ## 问题现象
@@ -14,7 +14,6 @@ content_hash: sha256:5948a81e3fc3f7586b587aabb0f110f74d4a99fc492884b93ab8a97d752
 
 ## 背景知识
 
-* [指南针](../architecture-guides/compass_effect-0000002317882746.md)：是一种常见的工具类应用，用于检测设备的物理方向。
 * [OrientationResponse](../harmonyos-references/js-apis-sensor.md#orientationresponse)：方向传感器数据，继承于Response。
 * [RotationVectorResponse](../harmonyos-references/js-apis-sensor.md#rotationvectorresponse)：旋转矢量传感器数据，继承于Response。
 

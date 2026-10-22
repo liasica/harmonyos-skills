@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/share-kit-troub
 title: 碰一碰分享未跳转应用内页面问题
 breadcrumb: FAQ > 应用服务开发 > 内容分享服务（Share Kit） > 故障排查 > 碰一碰分享未跳转应用内页面问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:27+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:14f71f8eebf51d3eae587b61445bb7c113f5f4af06204323d8077eaba3a4f8a4
+scraped_at: 2026-10-23T07:14:28+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:4f2258e50ece6c3d4391f7ac65747f53debd78eef29931e8eca3f78c163a5acb
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:14f71f8eebf51d3eae587b61445bb7c113f5f4af06204323d8077eaba3a
    hdc shell aa start -U "https://www.example.com/test.xxx" --pb appLinkingOnly true
    ```
 
-   返回error: failed to start ability，说明App Linking未配置成功，未完成关联应用和网址域名关联，需在AGC开通App Linking。完善AGC相关配置后，还需要等待链接生效（参考[链接生效机制](../harmonyos-guides/applinking-direct-to-ag.md#section1928659151514)）24小时后，仍无法跳转应用。
+   返回error: failed to start ability，说明App Linking未配置成功，未完成关联应用和网址域名关联，需在HarmonyOS 开发者中心开通App Linking。完善HarmonyOS 开发者中心相关配置后，还需要等待链接生效（参考[链接生效机制](../harmonyos-guides/applinking-direct-to-ag.md#section1928659151514)）24小时后，仍无法跳转应用。
 2. 确认域名校验是否成功，使用以下命令查询验证结果：
 
    ```bash

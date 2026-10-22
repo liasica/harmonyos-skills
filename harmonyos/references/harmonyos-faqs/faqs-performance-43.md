@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 点击视频播放按钮后长时间初始化
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 点击视频播放按钮后长时间初始化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f3fd456a864046df130d696158061b5c42076281189da5727b51984049e037e6
+scraped_at: 2026-10-23T07:12:20+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:038df23a1c786c27179305c04487c19177794fc027adfacc081839c652afa042
 ---
 
 ## 问题现象
@@ -31,13 +31,13 @@ content_hash: sha256:f3fd456a864046df130d696158061b5c42076281189da5727b51984049e
 
 1. 使用ArkUI Inspector可以看到视频初始化过程中的加载组件名为LoadingProgress。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/2Jh4XjoPRK-X86grdXxLug/zh-cn_image_0000002658914511.png)
-2. 使用DevEco Profiler Frame模板抓取从点击播放按钮到视频开始播放的Trace，搜索关键字H:DispatchTouchEvent XXX type=1作为起始时间。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/nKJ86OTuSUqAdQtt4JIGgg/zh-cn_image_0000002628395280.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/8BuuZv0mQm2wVeDUZgrILw/zh-cn_image_0000002658914511.png)
+2. 使用DevEco Profiler Frame模板抓取从点击播放按钮到视频开始播放的Trace，搜索关键字H:DispatchTouchEvent XXX type=1作为起始时间。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/XNA6IvSRTECvf3_GmeJdyQ/zh-cn_image_0000002628395280.png "点击放大")
 
-   搜索最后一次关于LoadingProgress渲染的Trace点H:FrameNode[LoadingProgress]作为结束时间。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/b8TMnXBSR2adE0jjlUly2g/zh-cn_image_0000002658794555.png "点击放大")
+   搜索最后一次关于LoadingProgress渲染的Trace点H:FrameNode[LoadingProgress]作为结束时间。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/yhtnTcwpT32OOkLIlsJyzA/zh-cn_image_0000002658794555.png "点击放大")
 
-   可以看到在此时间范围内应用包名主线程并无耗时过长的Trace点，可以排除应用主线程阻塞导致的耗时。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/cacTeu5KQeCO-FcX_NqgAQ/zh-cn_image_0000002628555192.png "点击放大")
-3. 查看media\_service泳道中PlayerEngine子泳道，可以明显看到16s多的耗时点，耗时主要集中在H:ffmpeg\_init，ffmpeg\_init是应用对资源进行解封装初始化。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/zcbxg9NbRhSeqKThBtUi-g/zh-cn_image_0000002658914513.png "点击放大")
+   可以看到在此时间范围内应用包名主线程并无耗时过长的Trace点，可以排除应用主线程阻塞导致的耗时。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/WXJRQil5SJSIYKf6NGGlJw/zh-cn_image_0000002628555192.png "点击放大")
+3. 查看media\_service泳道中PlayerEngine子泳道，可以明显看到16s多的耗时点，耗时主要集中在H:ffmpeg\_init，ffmpeg\_init是应用对资源进行解封装初始化。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/-0X7V86IRI2GRJKYi5e_ZQ/zh-cn_image_0000002658914513.png "点击放大")
 4. 根据背景知识中对解封装初始耗时原因的介绍，重点分析数据申请耗时。因为在不同网络环境下可复现问题，故排除网络环境差导致的耗时问题。
 
    在HiLog中搜索content-type|content-range：
@@ -68,5 +68,5 @@ content_hash: sha256:f3fd456a864046df130d696158061b5c42076281189da5727b51984049e
 
 ## 修改建议
 
-1. 适当调整视频分辨率和码率，对视频进行压缩处理，具体可参考[视频压缩处理](../architecture-guides/video_compress_demo-0000002248722292.md)。
+1. 适当调整视频分辨率和码率，对视频进行压缩处理。
 2. 长视频分割为多段时长适中的视频，减少初始化阶段数据下载量。

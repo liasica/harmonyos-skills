@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-84
 title: 如何优化WebSocket长连接在弱网环境下的重连效率与心跳机制
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何优化WebSocket长连接在弱网环境下的重连效率与心跳机制
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:36+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:ab64d2533dcf25296682645463a0f6f6e93358fed32dab43ef2d82335779bfb8
+scraped_at: 2026-10-23T07:13:59+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:583e48958322d124dd26b1d45aead359ca2d197f875509ca9368919160c3e2f8
 ---
 
 ## 问题现象
@@ -54,8 +54,6 @@ websocket-manager.ets中主要实现为动态重连策略、指数退避算法�
 * 客户端记录已接收的最后一条消息的唯一标志，服务端缓存每个客户端连接过程中已发送的消息标志，并提供按标志重新请求的接口。
 * 客户端重连成功后，携带最后接收的消息标志向服务端请求断连期间的消息。
 * 客户端收到服务端返回的断连期间消息后进行正常处理。
-
-完整可运行案例可见[弱网情况下的即时通讯](../architecture-guides/weak_network_reconnection-0000002288904746.md)。
 
 ## 常见FAQ
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-13
 title: 主应用如何获取卡片列表中某个卡片添加/移除
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 主应用如何获取卡片列表中某个卡片添加/移除
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-23T07:12:33+08:00
+doc_updated_at: 2026-10-22
 content_hash: sha256:2fe1aca6c8e01b63f166163bb1176a402c83cb2858ca5c40ff818641ad5d09ad
 ---
 

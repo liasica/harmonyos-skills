@@ -3,12 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-basic-func
 title: 基础功能
 breadcrumb: FAQ > 系统开发 > 基础功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:96ee4dc22b344780ac93d7cfe86b255e9a3ad62ca0221d440c780f5790fa8284
+scraped_at: 2026-10-23T07:14:05+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:18943731360bbcad4a387eef9c946785e4b6cf436c62c55c1af381eff88d1a6c
 ---
 
 * **[基础服务（Basics Service）](faqs-basic-services-kit.md)**
-* **[多模输入（Input）](faqs-input.md)**
-* **[企业设备管理（MDM）](faqs-mdm.md)**
 * **[桌面拓展服务（Desktop Extension Kit）](faqs-desktop-extension-kit.md)**

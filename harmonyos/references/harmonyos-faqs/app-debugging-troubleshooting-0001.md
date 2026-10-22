@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-debugging-t
 title: 真机安装HAP包失败故障排查
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 故障排查 > 真机安装HAP包失败故障排查
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:47+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:e377ef202d65d5f1ec1240206251ba4c0666fefb223bbaf18d8c8e7601ee30db
+scraped_at: 2026-10-23T07:14:50+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:ee8540a99d030f17a101926aadb157831fa9ebed50e221e34cc8e49dff18b1d8
 ---
 
 ## 报9568263错误：版本降级安装失败
@@ -14,7 +14,7 @@ content_hash: sha256:e377ef202d65d5f1ec1240206251ba4c0666fefb223bbaf18d8c8e7601e
 
 报9568263错误。
 
-在AGC中配置了真机的udid，并应用了更新后的p7b文件、证书文件进行sign后重新打包，使用hdc命令始终无法安装新HAP包。其他机器均正常安装。
+在HarmonyOS 开发者中心中配置了真机的udid，并应用了更新后的p7b文件、证书文件进行sign后重新打包，使用hdc命令始终无法安装新HAP包。其他机器均正常安装。
 
 运行命令hdc install xxx.hap的报错信息如下：
 
@@ -72,7 +72,7 @@ error: install releaseType compatible not same.
 
 项目配置了多个入口ability，运行项目报错，错误信息如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/_6v5IulnTT2oZB3ObyEgdQ/zh-cn_image_0000002797142633.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/inRrwC8_RM-c8wEZiW_sHg/zh-cn_image_0000002797142633.png "点击放大")
 
 ### 定位过程
 
@@ -86,7 +86,7 @@ error: install releaseType compatible not same.
 ### 修改建议
 
 * 在运行报错时，把该命令中对应ability的module.json5中的skills字段去掉，不作为入口ability；
-* 在运行项目前，编辑运行配置，在Launch Options下手动选择项目的正确入口ability。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/BmW7xReLTVqa2sOv730CWA/zh-cn_image_0000002767982646.png "点击放大")
+* 在运行项目前，编辑运行配置，在Launch Options下手动选择项目的正确入口ability。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/cndAQg2RTx-69RzvyFHKYQ/zh-cn_image_0000002767982646.png "点击放大")
 
 ## 报9568320错误：缺少签名文件
 

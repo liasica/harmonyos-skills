@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-699
 title: 已经登录过，但是点击评论依然提示需要登录
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 已经登录过，但是点击评论依然提示需要登录
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2ee5a72653fdda573edef730153dc364a02791d9eb6dd0f71fc08dc66de22b0e
+scraped_at: 2026-10-23T07:12:49+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:5e3bf5e4dfefd5fb2affc69a7206e272cc9f0705bc85e61eb8d9de95f30a6b6a
 ---
 
 ## 问题现象
@@ -14,8 +14,7 @@ content_hash: sha256:2ee5a72653fdda573edef730153dc364a02791d9eb6dd0f71fc08dc66de
 
 ## 背景知识
 
-1. [PersistentStorage](../harmonyos-guides/arkts-persiststorage.md)：PersistentStorage提供状态变量持久化的能力，但是需要注意，其持久化和读回UI的能力都需要依赖[AppStorage](../harmonyos-guides/arkts-appstorage.md)。
-2. [静默登录](../architecture-guides/silent_login-0000002292499361.md)：初次登录后后续不再显示登录页面。
+[PersistentStorage](../harmonyos-guides/arkts-persiststorage.md)：PersistentStorage提供状态变量持久化的能力，但是需要注意，其持久化和读回UI的能力都需要依赖[AppStorage](../harmonyos-guides/arkts-appstorage.md)。
 
 ## 问题定位
 
@@ -79,7 +78,7 @@ content_hash: sha256:2ee5a72653fdda573edef730153dc364a02791d9eb6dd0f71fc08dc66de
 
 ## 修改建议
 
-1. 使用静默登录，参考[静默登录示例代码](../architecture-guides/silent_login-0000002292499361.md#section9361334121520)。
+1. 使用静默登录。
 2. 同步登录状态。
 
    ```screen
@@ -167,4 +166,4 @@ content_hash: sha256:2ee5a72653fdda573edef730153dc364a02791d9eb6dd0f71fc08dc66de
 
    效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/w5epPleST0ShDRVXMpi2xw/zh-cn_image_0000002658914203.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/UaQV_lVQRuWpm5aSjNauyw/zh-cn_image_0000002658914203.png "点击放大")

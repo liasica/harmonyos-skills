@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: BLE连接成功后状态监听会回调2次
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > BLE连接成功后状态监听会回调2次
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f60f4aea1eb6d6bcfd5c23fe3d9d126436c91c32b4b972ebc1e2657bdcf7f225
+scraped_at: 2026-10-23T07:14:03+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:bc96d170681cc34d1a75dd9ca4f7f27a91287bb2a08c51e009313636d1c76201
 ---
 
 ## 问题现象
@@ -80,4 +80,4 @@ bleConnect(deviceId: string): void {
 
 依据ProfileConnectionState在对应的状态下再执行自己的业务。
 
-完整性案例参考官方示例[低功耗设备蓝牙扫描与连接](../architecture-guides/search_and_connect_ble-0000002293947117.md)，依据真实设备可查看on('BLEConnectionStateChange')具体状态变化。
+依据真实设备可查看on('BLEConnectionStateChange')具体状态变化。

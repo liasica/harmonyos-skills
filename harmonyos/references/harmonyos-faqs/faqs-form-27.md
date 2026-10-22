@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-27
 title: 卡片数据更新时应用内数据不会自动更新
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 卡片数据更新时应用内数据不会自动更新
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-07-31
+scraped_at: 2026-10-23T07:12:33+08:00
+doc_updated_at: 2026-10-22
 content_hash: sha256:9c7898d4f394aa160bfbcb9daf7e3ba429fe161beb20dae517f8cc27ab791880
 ---
 

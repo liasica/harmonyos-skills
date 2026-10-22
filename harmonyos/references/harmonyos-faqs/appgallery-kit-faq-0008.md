@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: 应用内支付商品类型与ID配置常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 应用内支付商品类型与ID配置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:32+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:39917bb90494fc604178c6d89163a29f51d373c9088d98edcd5b6f0b08b2e20a
+scraped_at: 2026-10-23T07:14:34+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:43b4d0344d7d15f7abf71cd75790b7a1c6066262e52c6e9d12780ddebfbac7ab
 ---
 
 **Q：由于想更换商品类型从消耗型商品更改为非续期订阅商品，发现新建商品后不能复用之前的商品ID，在后台能否直接更改商品类型？**
 
 **A**：应用后台不支持更换商品类型，同时商品ID和商品类型创建成功后是不能修改的，只能[重新创建应用内商品](../doccenter-distribution/create-digital-products-0000001958955105.md)。但是消耗型商品和非续期订阅商品IAP交互流程是一样的，非必要可以不进行更改商品类型。
 
-**Q：AppGallery Connect上商品管理的审核信息中，应用内截图指的是什么？**
+**Q：HarmonyOS 开发者中心上商品管理的审核信息中，应用内截图指的是什么？**
 
 **A**：商品在应用内部页面的截图。
 
@@ -20,7 +20,7 @@ content_hash: sha256:39917bb90494fc604178c6d89163a29f51d373c9088d98edcd5b6f0b08b
 
 **A**：通过沙盒环境[测试数字商品服务](../harmonyos-guides/store-iap-sandbox.md)。
 
-**Q：AppGallery Connect上商品管理的审核信息中应用内截图是否是每一个计费点都需要使用不同的截图？**
+**Q：HarmonyOS 开发者中心上商品管理的审核信息中应用内截图是否是每一个计费点都需要使用不同的截图？**
 
 **A**：不需要，同一个模块下的计费点可以使用同一个截图，如：同一商品列表页下的商品可以统一使用商品列表页面，只要能看到商品位置即可。
 
@@ -28,9 +28,9 @@ content_hash: sha256:39917bb90494fc604178c6d89163a29f51d373c9088d98edcd5b6f0b08b
 
 **A**：应创建为非续期订阅商品。非续期订阅商品的定义为：用户购买后在一段时间内允许访问增值功能或内容，周期结束后禁止访问，除非再次购买。
 
-**Q：非续期订阅商品在AppGallery Connect商品配置中无法设置使用时长，如何管理有效期？**
+**Q：非续期订阅商品在HarmonyOS 开发者中心商品配置中无法设置使用时长，如何管理有效期？**
 
-**A**：非续期订阅商品的使用时长和有效期由开发者根据自身业务逻辑管理，AppGallery Connect商品配置中不提供使用时长的设置项。
+**A**：非续期订阅商品的使用时长和有效期由开发者根据自身业务逻辑管理，HarmonyOS 开发者中心商品配置中不提供使用时长的设置项。
 
 **Q：如何查询用户购买的商品信息？**
 

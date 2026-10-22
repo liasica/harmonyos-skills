@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-faq-0005
-title: AGC软件包上传与打包签名常见问题
-breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > AGC软件包上传与打包签名常见问题
+title: HarmonyOS 开发者中心软件包上传与打包签名常见问题
+breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > HarmonyOS 开发者中心软件包上传与打包签名常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:57+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:bc9fff087d7efce78ec2e4bac8574e50ce86dd5f727f672e5824dd97010dc93f
+scraped_at: 2026-10-23T07:14:34+08:00
+doc_updated_at: 2026-10-22
+content_hash: sha256:c69473fcc9f24190c5ef04dc8048e90bcde94ff998e3419845bdb40369b4ffe0
 ---
 
 **Q：应用开发完成后，打好的app包上传应用市场，经常会遇到软件包报错的情况，阻塞上架流程。报错有错误码和无错误码两种场景：**
@@ -13,7 +13,7 @@ content_hash: sha256:bc9fff087d7efce78ec2e4bac8574e50ce86dd5f727f672e5824dd97010
 * 常见的错误码：
   + 上传软件包，提示软件包无效缺少依赖的包，错误码9。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/yDGahkkvRCeInN2jmYHg2g/zh-cn_image_0000002792068633.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Ffh60Y3BRhabKMWO3fJxdA/zh-cn_image_0000002792068633.png "点击放大")
   + 上传软件包，提示非法软件包，错误码991。
   + 使用Profile打包，上传软件包报错误码993。
   + 上传软件包，提示包解析失败，错误码1015。
@@ -34,15 +34,15 @@ content_hash: sha256:bc9fff087d7efce78ec2e4bac8574e50ce86dd5f727f672e5824dd97010
 
 * 报错返回错误码。
   + [错误码9](../app/agc-help-harmonyoserror-0000001651912985.md#section148217589452)：软件包无效，缺少依赖的包。可以根据以下方向排查问题：
-    - 压缩软件包时是否压缩掉依赖包？解决措施：如果项目中配置了包依赖，压缩掉依赖包会导致AGC找不到项目依赖包，上传时可以不压缩依赖包上传。参考链接：[远程三方包](../harmonyos-guides/ide-hvigor-dependencies.md#section0999112011818)。
-    - 打app包时使用的DevEco Studio是否不是最新版本，导致打出的包AGC解析异常？解决措施：安装使用最新版本的DevEco Studio。
+    - 压缩软件包时是否压缩掉依赖包？解决措施：如果项目中配置了包依赖，压缩掉依赖包会导致HarmonyOS 开发者中心找不到项目依赖包，上传时可以不压缩依赖包上传。参考链接：[远程三方包](../harmonyos-guides/ide-hvigor-dependencies.md#section0999112011818)。
+    - 打app包时使用的DevEco Studio是否不是最新版本，导致打出的包HarmonyOS 开发者中心解析异常？解决措施：安装使用最新版本的DevEco Studio。
   + [错误码991](../app/agc-help-package-errorcode-0000002312513009.md#section522814356119)，表示非法软件包，按照下面步骤排查原因：
     - 是否错误上传了hap类型的包，app包和hap包存放路径不同，app包在工程目录的build/default/outputs下，hap包在entry模块build/default/outputs目录。
     - 检查签名和证书是否匹配，可以重新生成p12文件还有p7b和cer文件，然后再打包上传。
     - hap包的名字与pack.info中name值不同。
     - 在File > Project Structure > Project > Signing Configs窗口中，取消勾选"Automatically generate signature"（如果是HarmonyOS应用，请勾选"Support HarmonyOS"）然后配置工程的签名信息。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/rsmayoVZQo6-j09NNZGJEw/zh-cn_image_0000002762670042.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/6miWqsyJTA2cpoZ4ItpaeA/zh-cn_image_0000002762670042.png "点击放大")
   + [错误码993](../app/agc-help-package-errorcode-0000002312513009.md#section411361491513)，表示Profile文件非法，出现此错误涉及多种原因，请根据[官网步骤](../app/agc-help-package-errorcode-0000002312513009.md#section411361491513)排查。若排查后依旧报错，可能有以下原因：
     - 工程级目录build-Profile.json5文件中可能配置了多个签名，需确保打包时使用的签名正确，即products下的signingConfig需为配置了发布证书、发布Profile的签名。
     - build-profile.json5文件中没有配置签名，而是在hvigorfile.ts内overrides重写加载签名。需要将签名写入build-profile.json5文件中。
@@ -71,7 +71,7 @@ content_hash: sha256:bc9fff087d7efce78ec2e4bac8574e50ce86dd5f727f672e5824dd97010
 
   上传软件包，提示"软件包解析失败，请联系客服处理"，可能是软件包内资源文件的名称包含了/\*?|"<>字符或者名称的长度超过了100个字符，建议修改或者删除软件包内违规命名的资源文件后重新打包上传。
 
-  上传软件包，提示"The bundle name xxx is already in use. Change and rebuild the .app bundle."，根因为包名已被其他团队占用。请在AppGallery Connect的"证书、APP ID和Profile > APP ID"下检查是否存在该包名，右上角可以切换团队查看。若确认所属团队有该包名但依旧报错，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/89?level2=101594901521145579)求助。
+  上传软件包，提示"The bundle name xxx is already in use. Change and rebuild the .app bundle."，根因为包名已被其他团队占用。请在HarmonyOS 开发者中心的"证书、APP ID和Profile > APP ID"下检查是否存在该包名，右上角可以切换团队查看。若确认所属团队有该包名但依旧报错，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/89?level2=101594901521145579)求助。
 
 **Q：重新生成Profile文件，增加权限重新生成Profile是否会对软件更新产生影响？**
 
@@ -95,7 +95,7 @@ content_hash: sha256:bc9fff087d7efce78ec2e4bac8574e50ce86dd5f727f672e5824dd97010
 
 **Q：上传更新包报错106，根据[版本升级错误码说明](../app/agc-help-update-errorcode-0000002322270833.md#section19598144518319)排查未修改module.json5，还有什么原因会导致该报错？**
 
-**A**：检查AppGallery Connect[配置支持设备](../app/agc-help-release-app-devicetype-0000002271592112.md)的勾选范围，确保其在升级包工程模块的module.json5文件中deviceTypes字段配置声明范围内。
+**A**：检查HarmonyOS 开发者中心[配置支持设备](../app/agc-help-release-app-devicetype-0000002271592112.md)的勾选范围，确保其在升级包工程模块的module.json5文件中deviceTypes字段配置声明范围内。
 
 **Q：应用经检测含有【h.COLLECTOR.ClipboardLeaker.15[PUA]这类应用收集用户剪贴板数据，监听到剪贴板数据变化后，在用户无感知且未授权的情况下，将剪贴板数据通过网络或其他途径上传到远程服务器】病毒，不符合华为应用市场《审核指南》第2.19项。**
 
@@ -107,11 +107,11 @@ content_hash: sha256:bc9fff087d7efce78ec2e4bac8574e50ce86dd5f727f672e5824dd97010
 
 **Q：上传软件包时提示"上传的软件包与声明支持设备不一致"？**
 
-**A**：检查工程"entry"路径下，"module.json5"文件中的"deviceTypes"是否和AGC平台上应用支持的设备勾选的应用基本信息中支持的设备保持一致。如支持设备勾选手机，那么"module.json5"中"deviceTypes"需配置为"phone"。
+**A**：检查工程"entry"路径下，"module.json5"文件中的"deviceTypes"是否和HarmonyOS 开发者中心平台上应用支持的设备勾选的应用基本信息中支持的设备保持一致。如支持设备勾选手机，那么"module.json5"中"deviceTypes"需配置为"phone"。
 
 **Q：上传软件包时提示"软件包数量已达上限"？**
 
-**A**：AGC对每个应用有软件包数量限制，需手动清理。删除状态为"已过期"或"待优化"的旧软件包（优先保留正式上架版本）。
+**A**：HarmonyOS 开发者中心对每个应用有软件包数量限制，需手动清理。删除状态为"已过期"或"待优化"的旧软件包（优先保留正式上架版本）。
 
 **Q：应用无法提交，提示"授权书及其他材料"压缩包解析失败。**
 
