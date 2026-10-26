@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-support
 title: 屏幕录制支持矩形区域录制
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 屏幕录制支持矩形区域录制
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:26+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:bb6e9c1ca24e01738efe01c6654354a9f825e393045a14f08715185af57b85ec
+scraped_at: 2026-10-27T07:39:33+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:d2e0d6838bcc1fee5e5be8ce715e0c4ef5004b756244e8953dda9c8812a3cd36
 ---
 
 ## 基础概念
@@ -84,7 +84,7 @@ if (g_avCapture == nullptr) {
 }
 OpenFile("Demo");
 SetCallback(g_avCapture);
-// 初始化录屏，传入配置信息OH_AVScreenRecorderConfig。
+// 初始化录屏，传入配置信息OH_AVScreenCaptureConfig。
 OH_AVScreenCaptureConfig config;
 SetConfig05(config);
 OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_Init(g_avCapture, config);

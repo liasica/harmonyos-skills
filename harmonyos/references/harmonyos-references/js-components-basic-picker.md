@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: picker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > picker
 category: harmonyos-references
-scraped_at: 2026-10-22T07:08:00+08:00
+scraped_at: 2026-10-27T07:41:36+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:79b0fd8b6a6f9e8aef82e768b595c683079e9fa8fb141b62b506d70ffac7c589
+content_hash: sha256:0997ab8e19a7265e48499d840122dd5966ad9d4c99c367d55fa719daeb4ca621
 ---
 
 **说明** 
@@ -309,4 +309,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/5C5MHef4RSCtE8H8kk88iA/zh-cn_image_0000002768022874.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/yxuyJrYXSdWC-qLke1dqLw/zh-cn_image_0000002800987823.gif)

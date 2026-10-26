@@ -3,11 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > 内插模式 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:37+08:00
+scraped_at: 2026-10-27T07:39:37+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:7e1b45a84fec2033f78ee9d06827639eded26982d72a54484635eb79bec7c1bf
+content_hash: sha256:652577af3c9f098c9c73c4090244b4815ea129a746db098edde96331f28d1d12
 ---
 
 超帧内插模式是利用相邻两个真实渲染帧进行超帧计算生成中间的预测帧，即利用第N-1帧和第N帧真实渲染帧预测第N-0.5帧预测帧，如下图所示。由于中间预测帧的像素点通常能在前后两帧中找到对应位置，因此内插模式的预测帧效果较外插模式更优。由于第N帧真实渲染帧需要等待第N-0.5帧预测帧生成并送显后才能最终送显，因此会新增1~2帧的响应时延。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/8p_9WSyNRjqXgxZ_mHzjng/zh-cn_image_0000002797181173.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/iC-1l9XeRuSAcO_ncoxpPw/zh-cn_image_0000002771666284.png)

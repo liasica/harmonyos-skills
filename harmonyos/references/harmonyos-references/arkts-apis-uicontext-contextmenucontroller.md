@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ContextMenuController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (ContextMenuController)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:26+08:00
+scraped_at: 2026-10-27T07:41:07+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:32501d49804d8be1bbbd38098431d97a18fe717ee99a2a2294b5a8e479f48f25
+content_hash: sha256:805a2307a38735b98e69356fc2081e560a79ccabe430faac99db23cd33d31eef
 ---
 
 提供控制菜单关闭的能力。开发者可以通过此接口在特定场景下（如定时关闭、点击外部区域关闭等）主动关闭菜单。
@@ -79,4 +79,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Xw-wkHqqTyKYDMjz5jBTDg/zh-cn_image_0000002797181979.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/EMaD5d_OS_e5uwAvnbky4w/zh-cn_image_0000002771667088.gif)

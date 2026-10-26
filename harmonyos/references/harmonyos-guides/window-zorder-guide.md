@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-zorder
 title: 窗口层级
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口层级
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fda7c3a6289062d833ca0049959f8342e39072e3620c2fb91184dade09a7ad6c
+scraped_at: 2026-10-27T07:38:56+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:39e6ad41f5f155e0fcd723e7cc65051e75403c424350842dd9db00fa5a827d84
 ---
 
 ## 场景介绍
@@ -77,7 +77,7 @@ ZOrder值越大，窗口越靠前显示，能够覆盖ZOrder值较小的窗口�
 | ZOrder | 系统管理 | 可跨应用生效 | 内部渲染顺序管理 |
 | zLevel | setSubWindowZLevel()/创建窗口时设置 | 仅同应用内生效 | 子窗口层级管理 |
 | 窗口置顶 | setWindowTopmost() | 可跨应用生效 | 视频、导航等常驻窗口 |
-| 点击抬升 | setRaiseByClickEnabled() | 可跨应用生效 | 防误触、固定布局 |
+| 点击抬升 | setRaiseByClickEnabled() | 同应用内同类型子窗口之间 | 防误触、固定布局 |
 
 ## 层级相关开发场景
 

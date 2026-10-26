@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 自定义手势判定
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 手势控制 > 自定义手势判定
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:39+08:00
+scraped_at: 2026-10-27T07:41:18+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6ff85aed74380ee7de661432439b8aaa655c0330bc3b61e8493c622e46dccd47
+content_hash: sha256:b5d11df45665c73c0a787cb95b7fddb849fa6991b31be7d6f6be4015c2aaf4c1
 ---
 
 为组件提供自定义手势判定能力。开发者可根据需要，在手势识别期间，结合手势类型、触点位置等信息决定是否响应手势，适用于需要自定义组件手势响应逻辑、按区域控制手势响应或过滤特定手势的场景。
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/5IhWWQtpSTyEDV-53HFx0A/zh-cn_image_0000002768022216.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/CEZaa7PjRdGIQ_Daj0GJxg/zh-cn_image_0000002800987165.gif)
 
 ### 示例2（自定义区域手势判定）
 
@@ -217,7 +217,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/-dczzKqVSCudxlbDRkeIRg/zh-cn_image_0000002797302165.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/qL-ShnOfTf-8m90CpvoLTw/zh-cn_image_0000002771827272.gif)
 
 ### 示例3（实时监测参与手势的有效触点的数量及其简要信息）
 
@@ -304,4 +304,4 @@ struct GestureDetectorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/M4IPkx-nQNST4lZIAi_Ipw/zh-cn_image_0000002767862234.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/rjRFz1dpSFKn2h87Y5ZSlw/zh-cn_image_0000002801107087.gif)

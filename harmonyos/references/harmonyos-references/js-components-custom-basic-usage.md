@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 自定义组件的基本用法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 自定义组件 > 自定义组件的基本用法
 category: harmonyos-references
-scraped_at: 2026-10-22T07:08:01+08:00
+scraped_at: 2026-10-27T07:41:37+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e86ca52e7c7e990c53d52ebddd5f3f5bd9e578b06c7211d1c19e131bd82b909e
+content_hash: sha256:2cbc4d5452ad1e857ce4e759d40514da3e451b33ee17f9478576ea7f80e16b8d
 ---
 
 自定义组件是用户根据业务需求，将已有的组件组合，封装成的新组件，可以在工程中多次调用，从而提高代码的可读性。自定义组件通过element引入到宿主页面，使用方法如下：
@@ -151,7 +151,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Ap9y33alR6iEtgWURk3LHQ/zh-cn_image_0000002797182915.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/7c8_3df9Q5Ow_5i8OFWPxQ/zh-cn_image_0000002771668026.gif)
 
 ## 自定义组件数据
 

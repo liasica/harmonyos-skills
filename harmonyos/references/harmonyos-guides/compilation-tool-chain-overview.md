@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/compilation-t
 title: ArkTS编译工具链概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkTS编译工具链概述
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:36+08:00
+scraped_at: 2026-10-27T07:38:43+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:50fcd7fc474d30819e3b47bfce22bc508843aeb3f6b059a8f682045acfd9d017
+content_hash: sha256:3b91b9f3a477b3b503e61cae73018545ce447a0a088d4dd44eba64f453e0e5ed
 ---
 
 ArkTS SDK提供了一套完整的编译工具链，以支持ArkTS的应用编译，通过集成至[Hvigor](ide-hvigor.md)编译任务的编排工具上，实现将应用的ArkTS/TS/JS源码编译生成方舟字节码文件（\*.abc）。
@@ -23,4 +23,4 @@ ArkTS编译工具链目前主要包含以下功能：
 
 ArkTS编译工具链参与构建HAP的流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/rzr4O5fZT_-4m11ax4NZug/zh-cn_image_0000002797179567.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ql-zhOiTSNO0TKB3MDoIWA/zh-cn_image_0000002771664678.png)

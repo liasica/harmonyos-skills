@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: ImageBitmap
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > ImageBitmap
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:49+08:00
+scraped_at: 2026-10-27T07:41:27+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:c5710fda72fdceea7e187a6d84dd198b72e83c04127e7d980eaac2e0b82b3b29
+content_hash: sha256:eb331900e44995a1654d36b2d9bba395cc5c68e460806264f6f3bcb3d867b51a
 ---
 
 ImageBitmap对象可以存储canvas渲染的像素数据。从API version 11开始，当应用创建[Worker线程](../harmonyos-guides/worker-introduction.md)，支持使用postMessage将ImageBitmap实例传到Worker中进行绘制，并使用onmessage接收Worker线程发送的绘制结果进行显示。
@@ -197,7 +197,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/n2lxqKJRRF6PlXJMbclS6A/zh-cn_image_0000002768022602.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/OFLno7tiT--sCqNlELcM6Q/zh-cn_image_0000002800987551.png)
 
 ### 示例2（创建ImageBitmap）
 
@@ -236,7 +236,7 @@ struct Demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/MIPltDzTR7-O76FWYOWm5A/zh-cn_image_0000002797302551.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/_uuwIXldSveiqGmTjs4sZA/zh-cn_image_0000002771827658.png)
 
 ### 示例3（支持并发线程绘制）
 
@@ -298,7 +298,7 @@ workerPort.onmessage = (e: MessageEvents) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/UqEiVAEVSDWusmTCalaYeA/zh-cn_image_0000002768022602.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/MD92xydRReytVEqyxuP8_g/zh-cn_image_0000002800987551.png)
 
 ### 示例4（加载Resource图片）
 
@@ -333,4 +333,4 @@ struct ImageBitmapResourceExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/zFolhKbbTlGymguBd7Pvog/zh-cn_image_0000002767862620.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/3DBIHetkSJuk80_SPpcFfw/zh-cn_image_0000002801107473.png)

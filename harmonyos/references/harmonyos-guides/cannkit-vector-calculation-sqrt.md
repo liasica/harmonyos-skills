@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: Sqrt
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 单目指令 > Sqrt
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:04+08:00
+scraped_at: 2026-10-27T07:40:01+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:bf1660dcd32a1390b04ed939a7cdd30b411c6e3ba8ed7c5ddab34d5edea93f95
+content_hash: sha256:9cf69ea419150d1f50e64eb3f8cef984b5401d8c8366e9d43abb38c268cdc4dc
 ---
 
 ## 函数功能
 
 按元素做开方，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/JY0yajmSQfWAptBAhxV08A/zh-cn_image_0000002797181783.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/g1Vv9iGARBOret596wr_eA/zh-cn_image_0000002771666892.png)
 
 ## 函数原型
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_http_type.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_http_type.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:934ac8fd5df765a6efcfe5182316d23ec066d90d92c98c1b780c52bee1f008e6
+scraped_at: 2026-10-27T07:42:30+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:099bb69cdc06bee32fdf2c954aed3a60ae95aafa33e01cfadac2b95007f5e4aa
 ---
 
 ## 概述
@@ -273,7 +273,7 @@ typedef void (*Http_ResponseCallback)(struct Http_Response *response, uint32_t e
 | 参数项 | 描述 |
 | --- | --- |
 | [struct Http\_Response](capi-netstack-http-response.md) \*response | HTTP响应结构体，指向Http\_Response的指针，参考[Http\_Response](capi-netstack-http-response.md)。 |
-| uint32\_t errCode | 响应码。 |
+| uint32\_t errCode | HTTP请求错误码，参考 [Http\_ErrCode](capi-net-http-type-h.md#http_errcode)。 |
 
 ### Http\_OnDataReceiveCallback()
 

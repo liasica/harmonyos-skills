@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: IFAA免密认证
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 免密认证 > IFAA免密认证
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:06+08:00
+scraped_at: 2026-10-27T07:39:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9dbe2f7fa604b34f0a0ac8cdb2257a0f34dbb17d0c0661a36ef6db43512bd3c9
+content_hash: sha256:fea4bc26ebe760cfdcabd5d4c6e86a6bdd811e568186e8a40d7ce7e6fd6c7f28
 ---
 
 ## 场景介绍
@@ -39,7 +39,7 @@ content_hash: sha256:9dbe2f7fa604b34f0a0ac8cdb2257a0f34dbb17d0c0661a36ef6db43512
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/seMvbPtYTWG_oZOn9G5RHw/zh-cn_image_0000002767860812.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/nj1OFuOHSi-JBHfUUGyBAw/zh-cn_image_0000002801105665.png)
 
 **注册流程说明：**
 

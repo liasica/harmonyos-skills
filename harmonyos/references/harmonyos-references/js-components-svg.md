@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: svg
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > svg
 category: harmonyos-references
-scraped_at: 2026-10-22T07:08:01+08:00
+scraped_at: 2026-10-27T07:41:36+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:66234536563e48db984a8e5608724ef9e95bbe76f28939befa07dcc4e3e2c2fd
+content_hash: sha256:5975a6f029a5260b30cc9c9ff8ab1b874dcb03b8617987734314f3f3c51f87aa
 ---
 
 基础容器，主要作为svg的根节点使用，也可以在svg中嵌套使用。
@@ -56,4 +56,4 @@ content_hash: sha256:66234536563e48db984a8e5608724ef9e95bbe76f28939befa07dcc4e3e
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/lPcHIDYUQR2F3lYbaN789A/zh-cn_image_0000002768022920.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/1obzyr7WRc2CkE-J2vpHZA/zh-cn_image_0000002800987869.png)

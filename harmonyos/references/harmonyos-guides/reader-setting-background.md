@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 自定义页面背景
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 自定义页面背景
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:57+08:00
+scraped_at: 2026-10-27T07:39:54+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:e22c4f221f74cf2f6e17a2dcc6651443113295cba46f1cf711026187d52fbfd5
+content_hash: sha256:bac59d0d5f3110e654e85cf1367269355079030bbed9213e5df2fc469b4928c0
 ---
 
 当应用需要支持自定义背景时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的themeColor及themeBgImg属性，实现对阅读内容自定义背景色及背景图片的实时修改。
@@ -19,7 +19,7 @@ content_hash: sha256:e22c4f221f74cf2f6e17a2dcc6651443113295cba46f1cf711026187d52
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Z_1oQfm6Qb2-FsFhpsC0iA/zh-cn_image_0000002797301599.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/JYHJMNfLQPObjcPrtJ5amA/zh-cn_image_0000002771826706.png)
 
 ## 接口说明
 

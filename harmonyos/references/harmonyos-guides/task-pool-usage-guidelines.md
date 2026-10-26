@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/task-pool-usa
 title: TaskPool使用规范
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > TaskPool使用规范
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:35+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:c5376149130e1bbe68406bfb4b2ffd3eb29e7833090eaadea879c5f8521d1435
+scraped_at: 2026-10-27T07:38:42+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:469ae740af3aca6e02044cb6035ebe20d34d1344024629b97227441623499b88
 ---
 
 ## 概述
 
-[任务池（TaskPool）](taskpool-introduction.md)基于池化思想和任务机制，提供了一系列并发API，旨在充分发挥多核CPU的优势，降低主线程负载，提高程序性能。使用TaskPool进行开发需遵守一些规范，并综合业务和并发特性，细分场景使用。违反这些规范可能会导致性能劣化，引起稳定性或者其他非预期的问题。
+任务池（TaskPool）基于池化思想和任务机制，提供了一系列并发API，旨在充分发挥多核CPU的优势，降低主线程负载，提高程序性能。使用TaskPool进行开发需遵守一些规范，并综合业务和并发特性，细分场景使用。违反这些规范可能会导致性能劣化，引起稳定性或者其他非预期的问题。具体请参阅[TaskPool简介](taskpool-introduction.md)。
 
 本文就TaskPool错误使用导致的一些诸如应用报错、业务异常、资源消耗过大等问题进行了分析，并总结出了一些使用规范，以帮助开发者更好地使用TaskPool进行应用开发。
 
@@ -20,9 +20,9 @@ content_hash: sha256:c5376149130e1bbe68406bfb4b2ffd3eb29e7833090eaadea879c5f8521
 
 **场景描述**
 
-在工程中导入文件和HAR时，某些文件使用了如@Observed、AppStorage等UI装饰器或状态变量，这些UI装饰器或状态变量即使没有被显式调用也可能会被解析执行。然而目前子线程并不支持UI属性，当解析到这些UI装饰器或状态变量时，会抛出异常并返回，导致本模块的解析会被中断。访问这些包含UI的文件中的某些变量时可能会抛出错误：xxx is not initialized ，导致功能失效甚至crash。如下图所示：
+在工程中导入文件和HAR时，某些文件使用了如[@Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化](../doccenter-capabilities/arkts-observed-and-objectlink.md)、[AppStorage：应用全局的UI状态存储](../doccenter-capabilities/arkts-appstorage.md)等UI装饰器或状态变量，这些UI装饰器或状态变量即使没有被显式调用也可能会被解析执行。然而目前子线程并不支持UI属性，当解析到这些UI装饰器或状态变量时，会抛出异常并返回，导致本模块的解析会被中断。访问这些包含UI的文件中的某些变量时可能会抛出错误：xxx is not initialized，导致功能失效甚至crash。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/lS5L84gPRvSCqToPTWgIUA/zh-cn_image_0000002768019562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/TvS-9TykSuWwzrEoJO05Yg/zh-cn_image_0000002800984507.png)
 
 另外在一些复杂项目中，即使本模块未发生改动，也可能由于SDK或其他依赖模块发生变更而导致该问题。此类问题排查起来较为困难，因此推荐在开发和迭代阶段就做好相应的约束和验证。
 
@@ -73,7 +73,7 @@ function wrongConcurrentFunc() {
 }
 ```
 
-在组件的onClick()方法中使用taskpool.execute()调用wrongConcurrentFunc()。
+在组件的onClick()方法中使用[taskpool.execute()](../doccenter-references/api/js-apis-taskpool.md#taskpoolexecute)调用wrongConcurrentFunc()。
 
 ```ts
 // Sample1.ets
@@ -145,7 +145,7 @@ taskpool.execute(correctConcurrentFunc)
 
 因此，当开发者有监听需求时，推荐使用长时任务，主动管理任务所在线程的生命周期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/D4mWEn4zQpe7RHQSWPZ0BQ/zh-cn_image_0000002797299509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/L3V9r1mWT_eojZ7yMpjFmA/zh-cn_image_0000002771824618.png)
 
 **反例**
 
@@ -225,7 +225,7 @@ taskpool.execute(task)
   })
 ```
 
-需要根据业务诉求合理选择任务类型。像http类的监听性质的接口适合使用长时任务，同时主动管理任务所在线程的生命周期，在具体逻辑执行完成后调用terminateTask()接口(通常在拿到结果时调用，即await之后或then逻辑里)，释放资源，避免造成执行长时任务的线程长时间不释放。
+需要根据业务诉求合理选择任务类型。像http类的监听性质的接口适合使用长时任务，同时主动管理任务所在线程的生命周期，在具体逻辑执行完成后调用[terminateTask()](../doccenter-references/api/js-apis-taskpool.md#taskpoolterminatetask12)接口(通常在拿到结果时调用，即await之后或then逻辑里)，释放资源，避免造成执行长时任务的线程长时间不释放。
 
 ### 使用emitter和LongTask的组合实现回调场景的通信诉求，避免在回调函数中使用sendData()
 
@@ -237,7 +237,7 @@ TaskPool提供了支持TaskPool子线程和宿主线程通信的接口[sendData(
 
 如果有需要，推荐使用emitter，emitter能够方便地实现宿主线程和子线程之间的双向通信。另外emitter的on()接口具有监听性质，在没有取消注册的情况下，能在任意时间被触发，因此需要在LongTask中注册。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/_yZiOBgtSUOiHcKKs16g7g/zh-cn_image_0000002767859578.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/u7TeSztpRwOiKBTSVhy9cA/zh-cn_image_0000002801104433.png)
 
 **反例**
 
@@ -281,7 +281,7 @@ taskpool.execute(task)
 
 **正例**
 
-实现一个被@Concurrent修饰的并发函数方法，并在其中通过emitter()方法发送数据。
+实现一个被@Concurrent修饰的并发函数方法，并在其中通过[emitter.emit()](../doccenter-references/api/js-apis-emitter.md#emitteremit)方法发送数据。
 
 ```ts
 // Sample3.ets
@@ -294,7 +294,7 @@ function correctConcurrentFunc() {
 }
 ```
 
-创建一个LongTask，并在emitter()接收到数据后中断该task。
+创建一个LongTask，并在接收到数据后中断该task。
 
 ```ts
 // Sample3.ets
@@ -314,7 +314,7 @@ taskpool.execute(task)
   })
 ```
 
-正例中仍使用了Promise then的用法，与反例不同的是，在then的逻辑里使用了emitter()来代替sendData()接口。同时将correctConcurrentFunc()这个任务声明为LongTask，并使用terminateTask()手动管理生命周期，在实现功能的同时也能够保证程序的正确性。
+正例中仍使用了Promise then的用法，与反例不同的是，在then的逻辑里使用了emitter.emit()来代替sendData()接口。同时将correctConcurrentFunc()这个任务声明为LongTask，并使用terminateTask()手动管理生命周期，在实现功能的同时也能够保证程序的正确性。
 
 ### 根据业务场景和性能数据控制并发度
 
@@ -326,7 +326,7 @@ taskpool.execute(task)
 
 在合适的场景下也可以使用[SequenceRunner](../harmonyos-references/js-apis-taskpool.md#sequencerunner11)()等API，以避免短时间内大量任务连续进入任务池，使线程数瞬间提升到最大。主线程连续处理大量任务密集返回时的回调和微任务会阻塞UI，影响用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/lxRMwMrnSs-TghFTSbGJCw/zh-cn_image_0000002797179543.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Jng-XhYuT6-YCgyCLDAJtQ/zh-cn_image_0000002771664654.png)
 
 ```ts
 // Sample5.ets
@@ -382,7 +382,7 @@ histogramStatistic(buffer);
 
 **场景描述**
 
-在TaskPool并发场景下，调用接口需要保证匹配，例如open()接口和close()接口要对应，使用了setInterval()后也需要调用clearInterval()。如果接口不匹配，在退出阶段可能会有些句柄未正常关闭，这将会导致线程不能被释放。当线程较多时，这种情况对常驻内存会有较大影响。
+在TaskPool并发场景下，调用接口需要保证匹配，例如open()接口和close()接口要对应，使用了[setInterval()](../doccenter-references/api/js-apis-timer.md#setinterval)后也需要调用[clearInterval()](../doccenter-references/api/js-apis-timer.md#clearinterval)。如果接口不匹配，在退出阶段可能会有些句柄未正常关闭，这将会导致线程不能被释放。当线程较多时，这种情况对常驻内存会有较大影响。
 
 推荐使用try...catch...来处理业务逻辑可能出现的异常。例如当taskpool.execute()传入的参数可能发生异常时，使用外层try...catch...及时捕获，当子线程中的task可能出现异常时，则可以使用.catch进行捕获。
 
@@ -562,19 +562,19 @@ function concurrentFunc() {
 
 如上面的例子，模块a、b、c虽然都被引用了，但concurrentFunc()中仅仅使用了模块a，因此在TaskPool中执行concurrentFunc()函数，仅有模块a会被解析执行。但a中所有依赖的模块仍然都会被解析执行。
 
-另一种常见的情形是导入HAR包，当使用 import { case } from '@ohos/common' 导入时，前端会翻译成 import { case } from '@ohos/common/index'。由于index文件是整个HAR包导出的接口，虽然开发者可能只是想使用其中一个接口，但实际上却执行了整个HAR包(包括HAR包中导入的文件)，导致较大的耗时。虽然这部分耗时在子线程，但是也会对任务的执行耗时和内存产生较大影响。
+另一种常见的情形是导入HAR包，当使用import { case } from '@ohos/common' 导入时，前端会翻译成import { case } from '@ohos/common/index'。由于index文件是整个HAR包导出的接口，虽然开发者可能只是想使用其中一个接口，但实际上却执行了整个HAR包(包括HAR包中导入的文件)，导致较大的耗时。虽然这部分耗时在子线程，但是也会对任务的执行耗时和内存产生较大影响。
 
-一般来说，在子线程中导入HAR包通常仅是使用其中某些独立的方法，在这种情况下，采用精准导入的方法可以带来比较明显的收益。比如使用import { case } from '@ohos/common/xxx/xxx/case' 来导入具体文件(需要考虑可操作性)，或者将这个方法封装到一个全新的文件，这样仅解析这个单独的文件即可。
+一般来说，在子线程中导入HAR包通常仅是使用其中某些独立的方法，在这种情况下，采用精准导入的方法可以带来比较明显的收益。比如使用import { case } from '@ohos/common/xxx/xxx/case'来导入具体文件(需要考虑可操作性)，或者将这个方法封装到一个全新的文件，这样仅解析这个单独的文件即可。
 
 因此在使用TaskPool时应该遵循最小化导入原则，尤其避免在独立的任务中引入大量不相关文件或者HAR。
 
 **说明** 
 
-由于不同线程中上下文对象不同，TaskPool工作线程只能使用线程安全的模块。例如，不能使用UI相关的非线程安全模块。TaskPool/Worker等工作线程不支持使用操作UI的模块、线程不安全的模块以及其他只支持在主线程中使用的模块。不支持UI模块是因为目前工作线程不支持操作UI，不支持线程不安全的模块是因为多线程使用该模块可能会导致多线程问题，只支持在主线程中使用的模块明确在文档中说明的有[ApplicationContext](../harmonyos-references/js-apis-inner-application-applicationcontext.md)等。线程安全的模块是指多线程同时使用该模块也不会引入多线程问题，如TaskPool/[Worker](worker-introduction.md)/[hilog](hilog.md)等。
+由于不同线程中上下文对象不同，TaskPool工作线程只能使用线程安全的模块。例如，不能使用UI相关的非线程安全模块。TaskPool/Worker等工作线程不支持使用操作UI的模块、线程不安全的模块以及其他只支持在主线程中使用的模块。不支持UI模块是因为目前工作线程不支持操作UI，不支持线程不安全的模块是因为多线程使用该模块可能会导致多线程问题，只支持在主线程中使用的模块明确在文档中说明的有[ApplicationContext (应用上下文)](../harmonyos-references/js-apis-inner-application-applicationcontext.md)等。线程安全的模块是指多线程同时使用该模块也不会引入多线程问题，如TaskPool/[hilog](hilog.md)等。
 
 ### 子线程使用同步接口和异步接口有什么差异 ，使用哪种接口比较合适
 
-TaskPool线程池线程的最大数量是有限的，当前策略是maxThreads=CPU核数 -1，因此基于当前的设备，正常情况下线程数上限为11个。当所有线程都被占用时，后续的任务可能不会被及时调度。因此，在工作线程中推荐使用异步接口而非同步接口，在等待I/O时能够及时处理新入队的任务，避免任务池阻塞。
+TaskPool线程池线程的最大数量是有限的，当前策略是maxThreads=CPU核数-1，因此基于当前的设备，正常情况下线程数上限为11个。当所有线程都被占用时，后续的任务可能不会被及时调度。因此，在工作线程中推荐使用异步接口而非同步接口，在等待I/O时能够及时处理新入队的任务，避免任务池阻塞。
 
 以文件系统copy为例，以下提供了同步和异步两种接口。由于文件拷贝比较耗时，推荐在子线程使用异步接口。
 
@@ -608,7 +608,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 比如从网络数据库获取数据，可以将获取数据的逻辑改造到子线程中，并将期望获取的业务模型声明为Sendable。子线程中获取到JSON数据、转换并生成模型数据后，通过Sendable以引用的方式传回到主线程，这样能显著减少主线程的负载。
 
-另外由于子线程不支持UI属性，放入子线程的数据需要同UI剥离出来，返回的数据需要使用合理的方式同UI结合并渲染。对于这种Sendable对象和UI的组合使用可以参考ArkUI的新特性[makeObserved](arkts-new-makeobserved.md)。将makeObserved和@Sendable配合使用满足了应用开发中，在子线程进行大数据处理时，在UI线程实现ViewModel的显示和观察数据的需求。
+另外由于子线程不支持UI属性，放入子线程的数据需要同UI剥离出来，返回的数据需要使用合理的方式同UI结合并渲染。对于这种Sendable对象和UI的组合使用可以参考ArkUI的新特性[makeObserved接口：将非观察数据变为可观察数据](arkts-new-makeobserved.md)。将makeObserved和@Sendable配合使用满足了应用开发中，在子线程进行大数据处理时，在UI线程实现ViewModel的显示和观察数据的需求。
 
 此外，Sendable特性支持共享模块。对于一些工具类单例，由于线程隔离的特性，需要在子线程调用时使用Init重新初始化一次。在使用共享模块后，可以保证多线程内共享一个单例，优化写法，提升易用性。对一些耗时的SDK，如果能使用共享模块，也可以将初始化阶段下沉到子线程，主线程使用的时候将不用重新初始化相关模块，能够有效提升性能。
 

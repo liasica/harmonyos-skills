@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-offline-m
 title: 使用离线Web组件
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用离线Web组件
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:53+08:00
+scraped_at: 2026-10-27T07:38:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4f40f00d4bd64e77366a04fdf6c785b6f95901aa927dd40e2820f14f853632c2
+content_hash: sha256:0ca681d80cbb91b4a3086e17cd92caa4a4b520eea78fe549aca28c595b0418ea
 ---
 
 Web组件能够实现在不同窗口的组件树上进行挂载或移除操作，这一能力使得开发者可以预先创建Web组件，从而实现性能优化。例如，Tab页为Web组件时，页面预先渲染，便于即时显示。
@@ -21,7 +21,7 @@ Web组件能够实现在不同窗口的组件树上进行挂载或移除操作�
 
 如下图所示，在需要离屏创建Web组件时，定义一个自定义组件以封装Web组件，此Web组件在离线状态下被创建，封装于无状态的[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)节点中，并与相应的[NodeController](../harmonyos-references/js-apis-arkui-nodecontroller.md)组件绑定。Web组件在后台预渲染完毕后，当需要展示时，通过[NodeController](../harmonyos-references/js-apis-arkui-nodecontroller.md)将其挂载到ViewTree的[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)中，即与对应的[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)组件绑定，即可挂载上树并显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/dY6-m1O7RyiYsSwGrTPaRw/zh-cn_image_0000002797180559.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/AlxeccfhTo-Xc84ugnfrGg/zh-cn_image_0000002771665670.png)
 
 ## 创建离线Web组件
 
@@ -640,14 +640,14 @@ onBackground(): void {
   + 第一个离线Web组件执行了预渲染，可以直接显示页面内容，比第二个离线Web组件更快。
   + 第二个离线Web组件是复用空闲的离线Web组件，其在UI页面的aboutToAppear的生命周期中动态加载这个url。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/DMPlo7DjTuef3j6zifFblg/zh-cn_image_0000002768020580.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/OI9NteZmRvaBeOZc9_hUvg/zh-cn_image_0000002800985527.gif)
 * Page2页面显示单个Web页面，使用复用空闲离线Web组件的方式加载指定url。
 
   + Page2页面可以通过传入参数加载指定url，并允许用户在加载后跳转到其他url。
   + Page2会在NavDestination的onWillHide回调中，让当前Web组件加载空白页并取消与当前UI的关联，为下次复用做准备。
   + Page2页面支持嵌套，即使有多层UI页面嵌套，由于采用复用离线Web组件的方式，Web组件数量不会增加。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/pVjsBhwUTUGPSxgveYTubA/zh-cn_image_0000002797300529.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/ZlrOCLxCTveW0NHf1MkmVg/zh-cn_image_0000002771825638.gif)
 
 **完整示例**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-devi
 title: DeviceManager
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > C API > 模块 > DeviceManager
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:18+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d49a599623d002b14cfb5f614878615386433254a6e73f62230489bb5c58e995
+scraped_at: 2026-10-27T07:42:26+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:72e84d5eb0c16bda6018f0b90defd03039d1467b43b5e3ac2c362a6d539feb8f
 ---
 
 ## 概述
@@ -20,5 +20,5 @@ content_hash: sha256:d49a599623d002b14cfb5f614878615386433254a6e73f62230489bb5c5
 
 | 名称 | 描述 |
 | --- | --- |
-| [oh\_device\_manager.h](capi-oh-device-manager-h.md) | 提供访问可信设备和本地设备信息的接口。引用文件：<distributedhardware/device\_manager/oh\_device\_manager.h> |
-| [oh\_device\_manager\_err\_code.h](capi-oh-device-manager-err-code-h.md) | 声明设备管理模块错误码信息。引用文件：<distributedhardware/device\_manager/oh\_device\_manager\_err\_code.h> |
+| [oh\_device\_manager.h](capi-oh-device-manager-h.md) | 提供访问可信设备和本地设备信息的接口。 |
+| [oh\_device\_manager\_err\_code.h](capi-oh-device-manager-err-code-h.md) | 声明设备管理模块错误码信息。 |

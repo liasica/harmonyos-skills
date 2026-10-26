@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:59+08:00
+scraped_at: 2026-10-27T07:41:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d2105ffa5450d899d39404b8ae1fae61be49d78e440c8c7da0d9dec70d866759
+content_hash: sha256:a1e487efb4637637b020ef90f5db5077d1f39503b776f1015ac408535e513adb
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:d2105ffa5450d899d39404b8ae1fae61be49d78e440c8c7da0d9dec70d8
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/sbqZvgK7RYu27RE9WNindQ/zh-cn_image_0000002767862868.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/qK7EzqOATuiRG8AbZ4kJWQ/zh-cn_image_0000002801107721.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/8Q1RYqHGT-aI9KfLo3pniw/zh-cn_image_0000002797182831.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/PHcEpRQzRgO_LXvax4iG1w/zh-cn_image_0000002771667942.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/YgBnt1nzQH-0tK9J0hhIFw/zh-cn_image_0000002768022852.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/MUZ1Gt9bQnmaYEeu7Ixylw/zh-cn_image_0000002800987801.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/oHn98lUGS0Grvuq4BgJbOw/zh-cn_image_0000002797302803.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/DZQNCDQgQOuRR9AGqq2GnA/zh-cn_image_0000002771827912.png)

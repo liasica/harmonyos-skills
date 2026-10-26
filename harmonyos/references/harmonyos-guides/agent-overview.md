@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-overvie
 title: 端侧A2A框架概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 端侧A2A框架开发指导 > 端侧A2A框架概述
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:31+08:00
+scraped_at: 2026-10-27T07:38:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e9716c9d87e7eda551982587e6d2b015e9b9f0fd6df24381b7cfe147ba5443ce
+content_hash: sha256:e6b9fa4d4bdaac12e4f8c4e256a9cf623e180f4c476f56150a5e803ffdbe80f3
 ---
 
 ## 场景介绍
@@ -40,4 +40,4 @@ content_hash: sha256:e9716c9d87e7eda551982587e6d2b015e9b9f0fd6df24381b7cfe147ba5
 
 **图1** 智能体架构示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/mdkktf9cQsaqqKsgKbHokA/zh-cn_image_0000002797179525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/E-bZZ8z1TUmtXll9Tpv4bw/zh-cn_image_0000002771664636.png)

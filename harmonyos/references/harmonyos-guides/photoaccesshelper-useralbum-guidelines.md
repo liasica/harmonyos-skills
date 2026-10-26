@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 用户相册资源使用指导
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 用户相册资源使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:02+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:23c1975fbc29265a8f17a242143c71f50e99f472920553f7dffcb5c03832383d
+scraped_at: 2026-10-27T07:39:33+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:d0e2a3117fe713f1c052a6d5276494b0a1ebb8cff730dca6eb1b4bda1e77de4b
 ---
 
 photoAccessHelper提供用户相册相关的接口，支持查询和重命名相册，以及添加和删除相册中的图片和视频资源。
@@ -151,9 +151,9 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 1. 建立相册检索条件，用于获取用户相册。
 2. 建立图片检索条件，用于获取图片。
 3. 调用PhotoAccessHelper.getAlbums接口获取用户相册资源。
-4. 调用[FetchResult.getFirstObject](../harmonyos-references/arkts-apis-photoaccesshelper-fetchresult.md#getfirstobject)接口获取第一个用户相册。
+4. 调用[FetchResult.getFirstObject](../harmonyos-references/arkts-apis-photoaccesshelper-fetchresult.md#getfirstobject-1)接口获取第一个用户相册。
 5. 调用[PhotoAccessHelper.getAssets](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#getassets)接口获取图片资源。
-6. 调用[FetchResult.getFirstObject](../harmonyos-references/arkts-apis-photoaccesshelper-fetchresult.md#getfirstobject)接口获取第一张图片。
+6. 调用[FetchResult.getFirstObject](../harmonyos-references/arkts-apis-photoaccesshelper-fetchresult.md#getfirstobject-1)接口获取第一张图片。
 7. 调用MediaAlbumChangeRequest.addAssets接口往用户相册中添加图片。
 8. 调用PhotoAccessHelper.applyChanges接口提交相册变更请求。
 

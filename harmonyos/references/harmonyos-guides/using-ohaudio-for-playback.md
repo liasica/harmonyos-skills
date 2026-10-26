@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohaudio
 title: 推荐使用OHAudio开发音频播放功能(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 推荐使用OHAudio开发音频播放功能(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:24+08:00
+scraped_at: 2026-10-27T07:39:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6d7475cfd2a92b86b3b59720f8e1371d7e11eb64b3f67216a73e9583f09f87c0
+content_hash: sha256:d17e3ff614f85e2850ecb2b6a3f1655133c78287c75a8c606b2eb0cae8af0cac
 ---
 
 OHAudio是系统在API version 10中引入的一套C API，此API在设计上实现归一，同时支持普通音频通路和低时延通路。仅支持PCM格式，适用于依赖Native层实现音频输出功能的场景。
@@ -14,7 +14,7 @@ OHAudio是系统在API version 10中引入的一套C API，此API在设计上实
 
 OHAudio音频播放状态变化示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/8IIRaAt9R-qmH7HtbTdXZA/zh-cn_image_0000002797300901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/UYBQ38-ZQ-qZRqBQVctlhw/zh-cn_image_0000002771826010.png)
 
 ## 使用入门
 

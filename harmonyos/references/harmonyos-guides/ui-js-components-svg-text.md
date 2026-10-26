@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: 绘制文本
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > svg开发指导 > 绘制文本
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:48+08:00
+scraped_at: 2026-10-27T07:38:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:bbafb2b0dd0f478bf1a9fe90bee3760f6a44d5ebe48a6c3e6629c8a538d5eaca
+content_hash: sha256:be9ec5fe594c7546e1ce0da13cac2aaab8373b092c201a7dec1f47e456df8b12
 ---
 
 svg组件还可以绘制文本。
@@ -32,7 +32,7 @@ svg组件还可以绘制文本。
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/CdNTdFX3Tg-LeVLJ-83rDg/zh-cn_image_0000002797180435.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/CYx-_6XdSK2KjSqr6KSaSA/zh-cn_image_0000002771665546.png)
 
 ## 沿路径绘制文本
 
@@ -52,4 +52,4 @@ textpath文本内容沿着属性path中的路径绘制文本。
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/oSTKzl6aQP6DS2lJZGWlrA/zh-cn_image_0000002768020456.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/PPuwmoKHSxGKiY_KN-fXcQ/zh-cn_image_0000002800985403.png)

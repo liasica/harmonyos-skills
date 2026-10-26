@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (OverlayManager)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (OverlayManager)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:26+08:00
+scraped_at: 2026-10-27T07:41:08+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:2b60a7a3df20f31f72834264b2463d1df817d37ec2821edb030ac80f6c851737
+content_hash: sha256:552debc73a58ce51dabe43d12d8dfcc7684bea0bc9e8ce32c7f26b4486164410
 ---
 
 提供绘制浮层的能力。OverlayManager支持通过配置浮层层级、显示顺序、显示模式等方式管理浮层节点，适用于需要在Page页面之上但Dialog、Popup、Menu等之下的长时间显示的浮层场景，为开发者提供灵活的浮层管理能力。
@@ -245,7 +245,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/hT7L0GvXSu6VmQf7IkTO-w/zh-cn_image_0000002797181985.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/FcKhZCOCTZ-6IRHyxmCjRQ/zh-cn_image_0000002771667094.gif)
 
 ## addComponentContentWithOrder18+
 
@@ -347,7 +347,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Z5ecgDeZQJmbcrWm5ulIpw/zh-cn_image_0000002768022006.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/6FJhCU7nRcCTDoJ3-HL_bQ/zh-cn_image_0000002800986953.gif)
 
 ## removeComponentContent12+
 

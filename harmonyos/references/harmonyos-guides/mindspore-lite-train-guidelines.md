@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: 使用MindSpore Lite进行端侧训练 (C/C++)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 模型部署 > 使用MindSpore Lite进行端侧训练 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:20+08:00
+scraped_at: 2026-10-27T07:40:15+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:d57428d3d40bd11d7a64ea06783e2163fd95f9bf13142456972c6a2089df638c
+content_hash: sha256:b13c6e17b2bbfd75757344799a95f3d4de1f187c411f907b2edcc0d0a2a36268
 ---
 
 ## 场景介绍
@@ -39,7 +39,7 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 **图 1** 使用MindSpore Lite进行模型训练的开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/jzT5udvZT6umtAAHQMBSpg/zh-cn_image_0000002797301851.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/fCyhQF-pRYiQiYqEwji0XQ/zh-cn_image_0000002771826958.png)
 
 进入主要流程之前需要先引用相关的头文件，并编写函数生成随机的输入，具体如下：
 

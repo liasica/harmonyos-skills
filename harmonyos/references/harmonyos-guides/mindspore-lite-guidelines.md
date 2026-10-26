@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: 使用MindSpore Lite进行模型推理 (C/C++)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 模型部署 > 使用MindSpore Lite进行模型推理 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:20+08:00
+scraped_at: 2026-10-27T07:40:15+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:06acbb34a9ccd1e8f85c62cc6601a4d2cc60e7a574088cb485332d8e8d394534
+content_hash: sha256:bda580036faf9f2e983b6a89df3b5d8448b30395e41854bf3ac3b2a9c0e3857c
 ---
 
 ## 场景介绍
@@ -54,7 +54,7 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 **图 1** 使用MindSpore Lite进行模型推理的开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/wEJjqt3rT3u4_P9laTljqg/zh-cn_image_0000002768021902.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/T3F5_npRQQWlpS8SEZLbww/zh-cn_image_0000002800986849.png)
 
 进入主要流程之前需要先引用相关的头文件，并编写函数生成随机的输入，具体如下：
 

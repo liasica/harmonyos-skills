@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-book-i
 title: 获取书籍信息
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取书籍信息
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:57+08:00
+scraped_at: 2026-10-27T07:39:54+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:bc6d12fb1c7f692a170c1170217b8abc7b417ca0ed24fa096a817aafaaecffae
+content_hash: sha256:2dcc7ab230ca2ce32233306ff0eddb336a29dcb59ef0657d2dd31ad3c788a1ee
 ---
 
 在导入本地书籍到书架时，开发者需通过[DocumentViewPicker](../harmonyos-references/js-apis-file-picker.md#documentviewpicker)先将书籍文件导入到[应用沙箱目录](app-sandbox-directory.md)，然后利用解析能力获取书籍信息，包括书封、书名及作者等，以完成书架内容的展示。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/3GPPzhhsRzeSxlBNfZQHpg/zh-cn_image_0000002797301597.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/GZP8-Y-WTNaSKdRKtap4uQ/zh-cn_image_0000002771826704.png)
 
 ## 接口说明
 

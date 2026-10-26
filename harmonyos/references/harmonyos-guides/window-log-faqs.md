@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-log-fa
 title: 窗口开发常见日志问题与定位
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发常见日志问题与定位
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:45+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:3aa1565e86774127d1a6e2b5e4c346d85a7cc2c6a753620b4b3777b2b5a2709b
+scraped_at: 2026-10-27T07:38:56+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:f28f850e900890dfe6ded2608778d3df01f907f0ba10bb0c7e80521e6a7b8300
 ---
 
 ## 使用窗口hidumper命令查看窗口信息定位问题
@@ -196,7 +196,7 @@ ParentWindowId: 0
    * 确认操作是否生效
 4. 关注关键属性：
 
-   * ZOrder：确认层级关系
+   * ZOrd：确认层级关系
    * WindowRect：确认窗口大小和位置
 
 **说明** 

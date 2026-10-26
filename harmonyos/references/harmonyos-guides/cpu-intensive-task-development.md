@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cpu-intensive
 title: CPU密集型任务开发指导 (TaskPool和Worker)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 耗时任务并发场景 > CPU密集型任务开发指导 (TaskPool和Worker)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:35+08:00
+scraped_at: 2026-10-27T07:38:43+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:b0cfa105e2f1264f02d8812a1698a696a5b1b9b469e7626c3a219d52992b8004
+content_hash: sha256:8cf260f7843a09604c785d26235cf7c7b1f365ec17f9db8611672814ced68bd1
 ---
 
 CPU密集型任务是指需要占用系统资源进行大量计算的任务，这类任务需要长时间运行，会阻塞线程中其他事件的处理，因此不适合在UI主线程中执行。例如图像处理、视频编码、数据分析等。
@@ -87,7 +87,7 @@ struct Index {
 
 1. DevEco Studio提供了Worker创建的模板，创建一个Worker线程，例如命名为“MyWorker1”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/wtmsEivwQFmdIZg1OOmKsw/zh-cn_image_0000002767859588.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/cC7yYrGBSSmI2PZhqubtrA/zh-cn_image_0000002801104443.png)
 2. 在宿主线程中首先调用ThreadWorker的[constructor()](../harmonyos-references/js-apis-worker.md#constructor9)方法创建Worker对象；然后通过注册[onmessage()](../harmonyos-references/js-apis-worker.md#属性)回调接收Worker线程发送过来的消息；最后通过调用[postMessage()](../harmonyos-references/js-apis-worker.md#postmessage9)方法向Worker线程发送消息。
 
    例如，向Worker线程发送训练和预测的消息，并接收Worker线程发送回来的消息。

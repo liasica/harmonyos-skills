@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-same-laye
 title: 同层渲染
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 同层渲染 > 同层渲染
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:53+08:00
+scraped_at: 2026-10-27T07:38:58+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:e960cfaef0f3d17ada3118b8b41e32656118a33e8cd2a3e76ed59673baa8719a
+content_hash: sha256:43f00bfac5f0179f38d254720cfa4f0e96fdb3a958a553e31f7b9ac08e54ddb9
 ---
 
 在系统中，应用可以使用Web组件加载Web网页。当非系统框架的UI组件功能或性能不如系统组件时，可使用同层渲染技术，通过ArkUI组件渲染这些组件（简称为同层组件）。
@@ -35,7 +35,7 @@ ArkWeb同层渲染特性主要提供两种能力：同层标签生命周期和�
 
 **图1** 同层渲染整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/_ZmvWjTATgqyyhmj0rXJvA/zh-cn_image_0000002797300521.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/SQX8OxZ_T0qsfU84NGeJVQ/zh-cn_image_0000002771825630.png)
 
 ## 规格约束
 
@@ -115,11 +115,11 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
   **图2** 未使用Stack包裹，TextInput的位置错位
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/4nACJ9YkRB2ar2bmus2jEA/zh-cn_image_0000002767860590.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/bF89sUgqRvaSReaJzkfIng/zh-cn_image_0000002801105443.png)
 
   **图3** 使用Stack包裹，TextInput的位置正常
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/qcA9eQq8Qy2_YcE6QQi8pw/zh-cn_image_0000002797180553.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/NrhB1LgJTCOW35ZoA9V-eQ/zh-cn_image_0000002771665664.png)
 
 ## Web页面中同层渲染输入框
 
@@ -127,7 +127,7 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
 **图4** 同层渲染输入框
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/zbupQwDzSYixNPU8COISkg/zh-cn_image_0000002768020574.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/IX2byRTGT6SNK_2ptZqxWA/zh-cn_image_0000002800985521.png)
 
 1. 在Web页面中标记需要同层渲染的HTML标签。
 
@@ -1053,7 +1053,7 @@ struct Page{
   ```
 * 实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/biiwlzxoT9iXtIzYYpnY9w/zh-cn_image_0000002797300523.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/dbxGCQ1QSoudd-m4I3WWFw/zh-cn_image_0000002771825632.png)
 
 ## 同层标签设置为最高层级
 
@@ -1349,11 +1349,11 @@ struct Page{
 
   未设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/8bvaD_4AQwyBezq2rSIMzw/zh-cn_image_0000002767860592.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/jcWJj3hVSMWK4j6lp0GL5A/zh-cn_image_0000002801105445.png)
 
   设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/D6z3xqhHRVeiuCzEyythHg/zh-cn_image_0000002797180555.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Fj1SOkV1QYKAhlx2419byA/zh-cn_image_0000002771665666.png)
 
 ## 同层渲染纹理贴图对齐方式
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-com
 title: "@Computed装饰器：计算属性"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Computed装饰器：计算属性
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:39+08:00
+scraped_at: 2026-10-27T07:38:46+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:5e7c8134b283d99d5b4bee28aab66147081b14a9d790dc48200050497b24d11f
+content_hash: sha256:d4b055b9f5721ee696eff0d2de90b03ac287ee90efadd54200bd764a064d4619
 ---
 
 当开发者使用相同的计算逻辑重复绑定在UI上时，为了防止重复计算，可以使用[@Computed](../harmonyos-references/ts-state-management-computed.md#computed)计算属性。计算属性中依赖的状态变量变化时，只会计算一次。这解决了UI多次重用该属性导致的重复计算和性能问题。如下面例子。
@@ -118,7 +118,7 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/93KJrdjBQoGEep0Y-r53tw/zh-cn_image_0000002768019766.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/fvUbvcv5RfyvgnST6Z1Gjw/zh-cn_image_0000002800984713.gif)
 * 在@Computed装饰的getter方法中，不能改变参与计算的属性，以防止重复执行计算属性导致的appfreeze。
 
   在下面例子中，计算fullName1时触发了this.lastName的改变，this.lastName的改变，触发fullName2的计算，在fullName2的计算中，改变了this.firstName，再次触发fullName1的重新计算，从而导致循环计算，最终引起appfreeze。
@@ -258,7 +258,7 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/x6yhsKjWTtCf2yTb8BJOOQ/zh-cn_image_0000002797299715.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/xs-uCMFfQeeXPp9nV_p3hA/zh-cn_image_0000002771824822.gif)
 
 ## 使用场景
 
@@ -325,7 +325,7 @@ get varName(): T {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/qkW_ngfdQmaokU6ktgPJ5g/zh-cn_image_0000002767859782.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/f4BTQnHTSY6HIjRo-Oz0Gg/zh-cn_image_0000002801104637.gif)
 
    计算属性本身会带来性能开销，在实际应用开发中需要注意：
 
@@ -382,7 +382,7 @@ get varName(): T {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/lq-T_79LQGWhzv8rYMpPMg/zh-cn_image_0000002797179747.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/cWD5kArzQdCdlSQSPXHAhg/zh-cn_image_0000002771664858.gif)
 
 ### @Computed装饰的属性可以被@Monitor监听变化
 
@@ -446,7 +446,7 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/V8eQ202aQs-oJ8m_8pmhCg/zh-cn_image_0000002768019768.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/q8FisVbcSRuD_YWSEVC-XQ/zh-cn_image_0000002800984715.gif)
 
 ### @Computed装饰的属性可以初始化@Param
 
@@ -537,4 +537,4 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/QAUiq5VLRFKUZsophqNlhw/zh-cn_image_0000002797299717.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/PDrvmq7qR6O9XnH_HVFjxg/zh-cn_image_0000002771824824.gif)

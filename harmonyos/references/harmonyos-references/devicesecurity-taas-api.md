@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAppService（可信应用服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > TrustedAppService（可信应用服务）
 category: harmonyos-references
-scraped_at: 2026-10-22T07:08:48+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:e84ed21f6b3de322e69c08a6098c49c9824ec9810b02d700bba1e23378f59b16
+scraped_at: 2026-10-27T07:42:15+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:1623f6fa1473a4d2fb3141ec0237d90a41b0b21999e2002a1c207d21bbf04c6f
 ---
 
 本模块提供应用数据的安全证明服务，支持创建证明密钥、销毁证明密钥、初始化证明会话、结束证明会话和获取安全地理位置，能够为安全摄像头和安全地理位置功能提供安全证明能力，确保图像或位置数据未被篡改。
@@ -50,8 +50,8 @@ createAttestKey(options: AttestOptions): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
-| 401 | argument is invalid. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 1011500001 | algorithm param is invalid. |
 | 1011500002 | algorithm param is missing. |
 | 1011500003 | create attestation key failed. |
@@ -218,7 +218,7 @@ destroyAttestKey(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1011500005 | operating file failed. |
 | 1011500006 | IPC communication failed. |
 | 1011500007 | item not found. |
@@ -281,8 +281,8 @@ initializeAttestContext(userData: string, options: AttestOptions): Promise<Attes
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
-| 401 | argument is invalid. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 1011500002 | param is missing. |
 | 1011500005 | operating file failed. |
 | 1011500006 | IPC communication failed. |
@@ -460,8 +460,8 @@ finalizeAttestContext(options: AttestOptions): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
-| 401 | argument is invalid. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 1011500002 | param is missing. |
 | 1011500006 | IPC communication failed. |
 | 1011500007 | item not found. |
@@ -529,8 +529,8 @@ getCurrentSecureLocation(timeout : number, priority: LocatingPriority): Promise<
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | has no permission. |
-| 401 | argument is invalid. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 1011500012 | attestation context not initialized. |
 | 1011500013 | attestation key has expired. |
 | 1011500014 | location service is unavailable. |
@@ -660,8 +660,8 @@ procSecImageTransform(srcSecImage: ArrayBuffer, procParams: SecImageProcParamsAr
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 1011500011 | secure image processing is not supported. |
 | 1011500012 | attestation context not initialized. |
 | 1011500013 | attestation key has expired. |
@@ -895,7 +895,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).the
 | width | number | 否 | 否 | 裁剪区域的宽度，即横向的长度，取值范围在 0 到 640 之间的偶数，且需满足 x 与 width 的和不大于 640。单位：像素（pixel）。 |
 | height | number | 否 | 否 | 裁剪区域的高度，即纵向的长度，取值范围在 0 到 480 之间的偶数，且需满足 y 与 height 的和不大于 480。单位：像素（pixel）。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/KD4W0hoqQMmoJxuwiCJtgQ/zh-cn_image_0000002797303165.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/RFxL8bznQTCOe-kNb0Sp2Q/zh-cn_image_0000002771828274.jpg)
 
 ## SecImageBuffer
 
@@ -1031,7 +1031,7 @@ hasImageSignature(data: ImageAuthData): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid params type. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 1027200001 | Incorrect image format. |
 | 1027200007 | No signature assertion found in the image. |
 | 1027200008 | No signature manifest found in the image signature. |
@@ -1091,7 +1091,7 @@ verifyImageSignature(data: ImageAuthData): Promise<Uint8Array>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid params type. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 1027200001 | Incorrect image format. |
 | 1027200004 | Image data hash check failed. |
 | 1027200006 | Signature verification failed. |
@@ -1155,7 +1155,7 @@ parseImageMetadata(manifests: Uint8Array): Promise<string>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The input argument is invalid. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 1027200002 | Insufficient storage space for the service. |
 | 1027200010 | APIs not supported on the platform. |
 | 1027200014 | argument is invalid. |

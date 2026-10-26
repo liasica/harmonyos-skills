@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-netman
 title: 管理网络连接(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6d55a9e73f85d0dddb67fc8bc3e0b80297572c278924bcfe4ac329fd6f0c413f
+scraped_at: 2026-10-27T07:39:14+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:015c4e5ecffbc713cd2eb8b6e2dea2940d2cd2a2b440e4b6704e4a0e72089fd1
 ---
 
 ## 场景介绍
@@ -81,7 +81,7 @@ libnet_connection.so
        napi_get_value_int32(env, args[0], &param); // 从 args[0] 获取整数值并存储到 param 中
        
        NetConn_NetHandle netHandle;
-       if (param == 0) { // 如果参数是0
+       if (param == 0) { // 如果参数是0，传入NULL用于演示参数错误场景，接口将返回401
            param = OH_NetConn_GetDefaultNet(NULL);
        } else {
            param = OH_NetConn_GetDefaultNet(&netHandle);
@@ -197,6 +197,7 @@ libnet_connection.so
      }
 
      CodeNumber() {
+       // 非0表示传入有效的netHandle指针；0表示传入NULL，用于演示参数错误（401）
        let testParam = 1;
        // ...
          let codeNumber = testNetManager.GetDefaultNet(testParam);
@@ -229,7 +230,7 @@ libnet_connection.so
 
    如图所示，在add\_library中的entry是工程自动生成的modname。若要做修改，需和步骤3中.nm\_modname保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/poLcBzyWTHWHMoEzqFlrYg/zh-cn_image_0000002768020832.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/9BjNLSu8SSC8aErdYw-uQw/zh-cn_image_0000002800985777.png)
 
 经过以上步骤，整个工程的搭建已经完成，接下来就可以连接设备运行工程进行日志查看了。
 
@@ -241,10 +242,10 @@ libnet_connection.so
    * 点击GetDefaultNet时获取的是默认网络ID。
    * 点击codeNumber时获取的是接口返回的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/w3GPCyqjTsaArL70UVNRWw/zh-cn_image_0000002797300779.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/b6w5_TkITeyNG6HgUJCNRg/zh-cn_image_0000002771825888.png)
 3. 点击GetDefaultNet按钮，控制台会打印日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/NxAa4fYoQDqyXGlCkQimwg/zh-cn_image_0000002767860848.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/OF-n6m8YR4aa8v07ErzQ7Q/zh-cn_image_0000002801105701.png)
 4. 点击codeNumber按钮，控制台会打印相应的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ogxAvZi6SSOOJ9QZaGtmAw/zh-cn_image_0000002797180811.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/97_vB7_VTXiROcsmZE1QxQ/zh-cn_image_0000002771665922.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.InsightIntentDecorator (意图装饰器定义)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.InsightIntentDecorator (意图装饰器定义)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:42+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:0be00e8acbf00538693ad3dee19b4bded93714a5adac8e0718c27002d308bd03
+scraped_at: 2026-10-27T07:40:48+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:364df888fc1a7da8f2cd82bd4e4129fd2e5419c02cfd7201f41177f9d7c71698
 ---
 
 InsightIntentDecorator模块提供了几类意图装饰器，用于装饰类或方法。开发者可以[使用装饰器开发意图](../harmonyos-guides/insight-intent-decorator-development.md)，将应用的功能定义为意图，并集成到智能问答、智能搜索、智能推荐等AI入口。
@@ -146,7 +146,7 @@ export class ClassForLink {
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | intentName | string | 否 | 否 | 表示意图名称，是意图的唯一标识。 |
-| domain | string | 否 | 否 | 表示意图垂域，用于将意图按垂直领域分类（例如：视频、音乐、游戏），取值范围参见[各垂域的智慧分发特性列表](../service/intents-ai-distribution-characteristic-0000001901922213.md#section2656133582215)中的垂域字段。 |
+| domain | string | 否 | 否 | 表示意图垂域，用于将意图按垂直领域分类（例如：视频、音乐、游戏），取值范围参见[各垂域的智慧分发特性列表](../doccenter-celia/intents-ai-distribution-characteristic-0000002733287140.md#section2656133582215)中的垂域字段。 |
 | intentVersion | string | 否 | 否 | 表示意图版本号。当意图能力演进时，可通过版本号进行区分和管理。 |
 | displayName | string | 否 | 否 | 表示显示给用户的意图名称。 |
 | displayDescription | string | 否 | 是 | 表示显示给用户的意图描述。 |
@@ -154,7 +154,7 @@ export class ClassForLink {
 | icon | ResourceStr | 否 | 是 | 表示意图图标，用于在AI入口显示。  - 当取值为字符串类型时，表示图标读取网络资源。  - 当取值为[Resource](js-apis-resource-manager.md)时，表示图标读取本地资源。 |
 | llmDescription | string | 否 | 是 | 表示意图的功能描述，用于大型语言模型理解该意图。 |
 | keywords | string[] | 否 | 是 | 表示意图的搜索关键字。 |
-| parameters | Record<string, Object> | 否 | 是 | 表示意图参数的数据格式声明，用于意图调用时定义入参的数据格式。取值参见[各垂域意图Schema](../service/intents-schema-0000001901962713.md)。 |
+| parameters | Record<string, Object> | 否 | 是 | 表示意图参数的数据格式声明，用于意图调用时定义入参的数据格式。取值参见[各垂域意图Schema](../doccenter-celia/intents-schema-0000002762846649.md)。 |
 | result | Record<string, Object> | 否 | 是 | 表示意图调用返回结果的数据格式声明，用于定义意图调用返回结果的数据格式。 |
 
 ## LinkIntentDecoratorInfo

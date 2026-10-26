@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: 基于AVScreenCapture实现屏幕录制（C/C++）
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 基于AVScreenCapture实现屏幕录制（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:33+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:77aff27e76317a59f0deb32be6b496327186037e4b6f042a4b9c57b9a7b96cc8
+scraped_at: 2026-10-27T07:39:33+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:fbf97757b0642e83cfac9002960de5dcd471d0ce44da718e6dcfecae3d00120d
 ---
 
 ## 概述
@@ -47,13 +47,13 @@ content_hash: sha256:77aff27e76317a59f0deb32be6b496327186037e4b6f042a4b9c57b9a7b
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/6-P_y_2FQkGr8L7AMP6y-A/zh-cn_image_0000002767861092.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Ij3vAFlcRDalOj-9rO6dgw/zh-cn_image_0000002801105947.gif)
 
 ### 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/OBmuI0DkRFyf0_BuMfDnPA/zh-cn_image_0000002797181055.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/U6aULXErR5GRE2bPUwwmzQ/zh-cn_image_0000002771666166.png)
 
 当点击录制按钮时，会调用异步方法进行屏幕录制。关键过程如下：
 
@@ -394,13 +394,13 @@ content_hash: sha256:77aff27e76317a59f0deb32be6b496327186037e4b6f042a4b9c57b9a7b
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ATK39LfTTHqJ54t-d6pXfQ/zh-cn_image_0000002768021078.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/RHBw6iPpTL6ZRYcK6e77Pw/zh-cn_image_0000002800986023.gif)
 
 ### 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/TXDQqZZSTGeerQuGgSEJrA/zh-cn_image_0000002797301025.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Acf05FGJR1WBxDTCSmbjrA/zh-cn_image_0000002771826134.png)
 
 当点击录制按钮时，系统会调用异步方法来执行屏幕录制。关键过程如下：
 
@@ -638,7 +638,7 @@ content_hash: sha256:77aff27e76317a59f0deb32be6b496327186037e4b6f042a4b9c57b9a7b
    ```
 3. 初始化视频采集（视频录制）器。
 
-   类似于上述C/C+文件存储方法，首先创建实例化对象，接着配置相关回调函数及参数。随后，调用OH\_AVScreenCapture\_Init()方法初始化视频采集器。
+   类似于上述C/C++文件存储方法，首先创建实例化对象，接着配置相关回调函数及参数。随后，调用OH\_AVScreenCapture\_Init()方法初始化视频采集器。
 
    ```
    void CAVScreenCaptureToStream::StartScreenCapture(int32_t outputFd, int32_t videoWidth, int32_t videoHeight) {

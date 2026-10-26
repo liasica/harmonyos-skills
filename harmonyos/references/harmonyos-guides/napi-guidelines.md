@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-guidelin
 title: Node-API开发规范
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API开发规范
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:21+08:00
+scraped_at: 2026-10-27T07:40:16+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:6ed470d641a0c9b801597257dad612494fa1853d465efcaf8177db61b83fc003
+content_hash: sha256:19248e60b2756d247911817c77072e73e32e38ca5728abe9349c8fe8772b5713
 ---
 
 ## 获取JS传入参数及其数量
@@ -371,11 +371,11 @@ extern "C" __attribute__((constructor)) void RegisterModule()
 
 图一
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/I-QssMIGT-awRxiFFKj-Rg/zh-cn_image_0000002797181911.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/FxwbLOx2S-27YNQBdMiKaw/zh-cn_image_0000002771667020.png)
 
 图二
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/EwPho8NeS3KtnI06Jg83gA/zh-cn_image_0000002768021932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/mbVgrh2DSqStUGuhv9QOlw/zh-cn_image_0000002800986879.png)
 
 **正确示例**：
 

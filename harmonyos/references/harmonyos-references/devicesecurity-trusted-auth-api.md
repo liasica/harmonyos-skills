@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAuthentication（数字盾服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > TrustedAuthentication（数字盾服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f9fe8222aebb20a0be7b4c9901be91af134051226dbe96e579e85c67b1822d96
+scraped_at: 2026-10-27T07:42:15+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:8b4043b998fe0e26e7b457c09c25e8706a87386bc8f26a1ac3049b3ad348a89a
 ---
 
 本模块提供数字盾密码创建、修改、删除、交易认证，开通生物特征（3D人脸/指纹）交易认证能力、生物特征交易认证，密钥信息导入导出相关接口，金融应用可以使用对应接口，支撑数字盾业务开发。
@@ -50,11 +50,11 @@ enableTrustedAuthentication(challenge: Uint8Array, pwdInfo: PasswordInfo, label:
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Failed to call the API due to limited device capabilities.  适用版本：26.0.0+ |
+| 801 | Capability not supported. Possible causes:  1. The hardware does not support the capability;  2. The chip does not support the capability;  3. A dependent service feature is not supported.  适用版本：26.0.0+ |
 | 1019100001 | The interface invoker does not have the corresponding permission. |
 | 1019100002 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1019100007 | Unsupported custom image. |

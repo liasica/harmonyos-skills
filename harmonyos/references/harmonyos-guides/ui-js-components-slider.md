@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: slider开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > slider开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:48+08:00
+scraped_at: 2026-10-27T07:38:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7823584de5c871495b5d5038aa0d92b4c2245ca2660a40e734cbf87e70692936
+content_hash: sha256:b85d8a54c1f6682f303c9a80279e869d8ca22403143670a84a49919fd51506b3
 ---
 
 slider为滑动条组件，用来快速调节音量、亮度等。具体用法请参考[slider](../harmonyos-references/js-components-basic-slider.md)。
@@ -33,7 +33,7 @@ slider为滑动条组件，用来快速调节音量、亮度等。具体用法�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/SJhV-JNWQZO1YQ54EiSCuA/zh-cn_image_0000002767860444.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/v-wcMDoKRyKLlJFxvDMeDQ/zh-cn_image_0000002801105299.gif)
 
 ## 设置样式和属性
 
@@ -63,7 +63,7 @@ slider组件通过color、scrollbar-color、background-color样式分别为滑�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ITaRut7rQJyNB4HJxauLFg/zh-cn_image_0000002797180409.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/fu2kp85HQEy2B500S7GZJw/zh-cn_image_0000002771665520.gif)
 
 通过添加min、max、value、step、mode属性分别为滑动条设置最小值、最大值、初始值、滑动步长和滑动条样式。
 
@@ -86,7 +86,7 @@ slider组件通过color、scrollbar-color、background-color样式分别为滑�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/uB0e1BXoRHaMGwQ-e_fnGQ/zh-cn_image_0000002768020430.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/H7qB7eDiRxKYdxs10gr2mQ/zh-cn_image_0000002800985377.gif)
 
 **说明** 
 
@@ -145,7 +145,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/__wkaLvQS3ywvaN2zzBPFQ/zh-cn_image_0000002797300379.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/mGI0udx5QPSXNm-I6ijLEg/zh-cn_image_0000002771825488.gif)
 
 ## 场景示例
 
@@ -200,4 +200,4 @@ export default{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/B4txp2FjRCSSJRwgUJR0AA/zh-cn_image_0000002767860446.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/eZrK7_nMSL2r2dOixFp90Q/zh-cn_image_0000002801105301.gif)

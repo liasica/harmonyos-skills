@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/float-view-gu
 title: 闪控窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 闪控窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:16+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:1a1b501d611022cd174a76e300f5af16782c68e9936d997274467ac3e4f71c04
+scraped_at: 2026-10-27T07:38:55+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:79ec0630e3985b38d8ddae1989748a2940ecbfc0fa84579ade4502dc342c74fc
 ---
 
 ## 场景介绍
@@ -48,7 +48,7 @@ content_hash: sha256:1a1b501d611022cd174a76e300f5af16782c68e9936d997274467ac3e4f
 
 ### 模板类型
 
-闪控窗支持的模板类型可见[FloatViewTemplateType](../harmonyos-references/js-apis-floatview.md#floatviewtemplatetype)，不同模板类型效果可见闪控窗[视觉规格](../design-guides/floatview-0000002624640357.md#section910624871013)。
+闪控窗支持的模板类型可见[FloatViewTemplateType](../harmonyos-references/js-apis-floatview.md#floatviewtemplatetype) ，不同模板类型效果可见闪控窗[视觉规格](../design-guides/floatview-0000002624640357.md#section910624871013) 。
 
 ## 前提条件
 

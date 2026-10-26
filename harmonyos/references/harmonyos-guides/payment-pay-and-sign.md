@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-pay-a
 title: 支付并签约场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 免密支付接入 > 支付并签约场景
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:54+08:00
+scraped_at: 2026-10-27T07:39:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5aeb69b62b99bb69a5ff8517f64bc3fe613c20f3c65883774d7b30343730da80
+content_hash: sha256:599b21914e2f36e45da200f17556de7b26345e8676916f6b2ac06c2a459b9d3c
 ---
 
 ## 场景介绍
@@ -18,13 +18,13 @@ content_hash: sha256:5aeb69b62b99bb69a5ff8517f64bc3fe613c20f3c65883774d7b3034373
 
 华为支付支付并签约页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/S_9rSz6ISgCPzKKTcFovIw/zh-cn_image_0000002767861608.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/yo_wuC1mTU6GDyONVJiv5Q/zh-cn_image_0000002801106461.png)
 
 ## 业务流程
 
 开发者通过接入Payment Kit 提供的支付并签约能力，可以让用户在支付完成后快速与商户建立签约代扣的关系。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/AhTyImQkS5Woh4xOy1gSrg/zh-cn_image_0000002797181571.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/tOuSkQBtSle0GEN_kr3MBw/zh-cn_image_0000002771666680.png)
 
 1. 商户客户端请求商户服务端创建商品订单。
 2. 商户服务端调用Payment Kit服务端[直连商户预下单](../harmonyos-references/payment-pas-prepay.md)或[服务商预下单](../harmonyos-references/payment-partner-pas-prepay.md)接口。

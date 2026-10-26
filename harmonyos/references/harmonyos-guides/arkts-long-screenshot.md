@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-long-sc
 title: 长截图
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 长截图
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:46+08:00
+scraped_at: 2026-10-27T07:38:52+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:12fef21bd42f0ae80734fbf0dd89c1537510dcad15ea102e03806b1f82eb7701
+content_hash: sha256:b591462f879fbfd3b81fe6e6b0ae48b9653f01adb38be6a1ec0237e541f9037a
 ---
 
 ## 概述
@@ -22,13 +22,13 @@ List组件可以通过模拟用户滚动行为，然后使用getComponentSnapsho
 
 **图 1** 长截图拼接原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/B4DRM0U3Q4a5hOp6L1StrQ/zh-cn_image_0000002797180345.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/a8CxQZm_SG-gU-cuMlTBow/zh-cn_image_0000002771665456.png)
 
 长截图主要流程如下：
 
 **图 2** 滚动长截图流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ay5d61zrRXKTpaxFJG_uiw/zh-cn_image_0000002768020366.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/VquKUjgsSXmTQLp1cyg-Xg/zh-cn_image_0000002800985313.png)
 
 **说明** 
 
@@ -48,7 +48,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“一键截图”，会生成整个列表的长截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/f_YxuNGAROW7BwWmrQHadg/zh-cn_image_0000002797300315.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/MPOxgX8BRZeQ_9cysQLMJQ/zh-cn_image_0000002771825424.gif)
 
 **开发流程**
 
@@ -516,7 +516,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“滚动截图”按钮后，列表将自动滚动。点击列表中的任意条目时，滚动会立即停止，并开始截取从滚动开始到停止这段时间内的数据截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/d2rmzCf6Qb2OED49IS5rsw/zh-cn_image_0000002767860382.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/2siy_sZ6TAidMneuGNZhrg/zh-cn_image_0000002801105237.gif)
 
 **功能实现**
 

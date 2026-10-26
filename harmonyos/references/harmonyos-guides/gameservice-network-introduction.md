@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 网络游戏登录概述
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 游戏登录 > 网络游戏登录 > 网络游戏登录概述
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:46+08:00
+scraped_at: 2026-10-27T07:39:44+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:4752b52b2cc289c2b8c1057b2c9627cc7f1943c791995cc4276d0cceb4be5007
+content_hash: sha256:53b59e0570a92fc9d9836bf78734bda038e0bedf3ab9058c4484553dd35ce401
 ---
 
 网络游戏是指需要联网的游戏。
 
 接入基础游戏服务后，网络游戏支持用户在联合登录面板选择华为账号登录或游戏官方账号登录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/4BaQLcZiTmOECDcnePSIEg/zh-cn_image_0000002767861400.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/NCZ_pAvMR-6dnSOHNNmO5g/zh-cn_image_0000002801106253.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/-EV10-qpQkq4eVxsJktGbQ/zh-cn_image_0000002797181363.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/QXYJTWBhQfi5RXGGkx-tmA/zh-cn_image_0000002771666472.png)
 
 ## 网络游戏登录场景介绍
 
@@ -38,7 +38,7 @@ content_hash: sha256:4752b52b2cc289c2b8c1057b2c9627cc7f1943c791995cc4276d0cceb4b
 
 ### 账号关系总览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/f8WIkpRnRoSsaFQNuvTVKA/zh-cn_image_0000002768021384.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/qdxd6jgcSI-zVAralaxH6w/zh-cn_image_0000002800986329.png)
 
 ## 网络游戏用户体验
 
@@ -48,7 +48,7 @@ content_hash: sha256:4752b52b2cc289c2b8c1057b2c9627cc7f1943c791995cc4276d0cceb4b
 
 首次启动游戏时，向用户展示联合登录面板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/MmTEobHHQWSN08azqQWdRw/zh-cn_image_0000002797181363.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/AXiQB1X1QlWYEv0QDcU7OQ/zh-cn_image_0000002771666472.png)
 
 * 点击游戏官方账号，弹出游戏官方账号的登录界面，用户正确输入账号后进入游戏。
 * 点击华为账号，用户使用华为账号进入游戏，顶部展示欢迎横幅。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: CounterV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > CounterV2
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:56+08:00
+scraped_at: 2026-10-27T07:41:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cd24924a2d78be014ec127d926939117fee9f641b6d4b335c19c2ec59c396b86
+content_hash: sha256:9ce69393d5677f9ffa3961b36cc91f58244a2f43f841be14f577322ca5de0687
 ---
 
 CounterV2组件用于精确调节数值，包含列表型、紧凑型、数值内联型和日期内联型四种类型，适用于购物车数量调节、日期选择等场景。
@@ -316,7 +316,7 @@ struct ListCounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/m6Nu1h_KTfeNCT9OjtlaNQ/zh-cn_image_0000002797302767.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/WTJmLXaHTWWIKX17xk7USg/zh-cn_image_0000002771827876.gif)
 
 ### 示例2（紧凑型CounterV2）
 
@@ -350,7 +350,7 @@ struct CompactCounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Z6Nzt67tTSKdVJ3fumoJqQ/zh-cn_image_0000002767862834.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/sCXLz_-FQruT2uL0EmOKnA/zh-cn_image_0000002801107687.gif)
 
 ### 示例3（数值内联型CounterV2）
 
@@ -387,7 +387,7 @@ struct NumberStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/8-1IZSSiT3uI6qlFB7I0oA/zh-cn_image_0000002797182797.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/mZDHduDoSP-QBpGke-DxgQ/zh-cn_image_0000002771667908.gif)
 
 ### 示例4（日期内联型CounterV2）
 
@@ -420,7 +420,7 @@ struct DateStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/lSUDU9axRpKlKQ-L4bcydg/zh-cn_image_0000002768022818.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/iuENZm97TgCrMR5B96Tang/zh-cn_image_0000002800987767.gif)
 
 ### 示例5（镜像布局展示）
 
@@ -508,4 +508,4 @@ struct CounterPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/3aHNihlpQhKKmMI6HA-STQ/zh-cn_image_0000002797302769.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/q5QQi-T-S565KVdqL9zcQA/zh-cn_image_0000002771827878.png)

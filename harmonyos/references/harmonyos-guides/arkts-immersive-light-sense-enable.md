@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 开启沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 开启沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:21+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:d0db643a318bcdaeac147f7bf31ebdb1fa8006e6747c4f7cb43eb3dd70fa6ce0
+scraped_at: 2026-10-27T07:38:50+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:b9b5ca0033f017dc52337e1f861b6cf5eef4b6b390a43e8780d5d5e13a32690f
 ---
 
 沉浸光感提供应用级开启和组件级开启两种方式，可按需选择。沉浸光感开启后，需要大量GPU资源，具体的适配指导请参考[沉浸光感功耗优化](arkts-immersive-light-sense-constraints.md)，其余开启后的常见问题请参考[沉浸光感常见问题](arkts-immersive-light-sense-faq.md)。
 
 **说明** 
 
-* 开启沉浸光感，要确保应用的[targetSDKVersion](../harmonyos-releases/app-compatibility-influence-factor.md)不低于26.0.0。如果应用需要开启沉浸光感，同时还需要兼容在低于26.0.0的老版本的运行，请参考[ArkTS API兼容性保护](../harmonyos-releases/arkts-api-compatibility-warning-elim.md)。
+* 开启沉浸光感，要确保应用的[targetSdkVersion](../harmonyos-releases/app-compatibility-influence-factor.md)不低于26.0.0。如果应用需要开启沉浸光感，同时还需要兼容在低于26.0.0的老版本的运行，请参考[ArkTS API兼容性保护](../harmonyos-releases/arkts-api-compatibility-warning-elim.md)。
 * 沉浸光感开启后：
   + 指定弹窗类组件（[AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md)、[ActionSheet](../harmonyos-references/ts-methods-action-sheet.md)、[CustomDialog](../harmonyos-references/ts-methods-custom-dialog-box.md)、[CalendarPickerDialog](../harmonyos-references/ts-methods-calendarpicker-dialog.md)、[DatePickerDialog](../harmonyos-references/ts-methods-datepicker-dialog.md)、[TimePickerDialog](../harmonyos-references/ts-methods-timepicker-dialog.md)、[TextPickerDialog](../harmonyos-references/ts-methods-textpicker-dialog.md)、[SelectionMenu](../harmonyos-references/ohos-arkui-advanced-selectionmenu.md)、[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)弹窗、[Text](../harmonyos-references/ts-basic-components-text.md)设置[copyOption](../harmonyos-references/ts-basic-components-text.md#copyoption9)后长按或双击触发的文本菜单）的沉浸光感效果可在全页面生效。
   + 指定弹窗类接口（[PromptAction](../harmonyos-references/arkts-apis-uicontext-promptaction.md)、[ArkUI\_NativeDialog](../harmonyos-references/capi-arkui-nativemodule-arkui-nativedialog.md)、[@ohos.promptAction (弹窗)](../harmonyos-references/js-apis-promptaction.md)、[Popup控制](../harmonyos-references/ts-universal-attributes-popup.md)、[Tips控制](../harmonyos-references/ts-universal-attributes-tips.md)、[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)、[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)）的沉浸光感效果可在全页面生效。
   + [Slider](../harmonyos-references/ts-basic-components-slider.md)、[Toggle](../harmonyos-references/ts-basic-components-toggle.md)、[Select](../harmonyos-references/ts-basic-components-select.md)的沉浸光感效果可在全页面生效。
   + 其他组件仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
-* 沉浸式系统材质反色、材质赋色、交互形变与点光源、阴影开关等个性化配置，具体请参见[沉浸式系统材质视效](arkts-immersive-light-sense-common-capability.md)。
+* 沉浸式系统材质反色、材质赋色、交互形变与光感交互反馈、阴影开关等个性化配置，具体请参见[沉浸式系统材质视效](arkts-immersive-light-sense-common-capability.md)。
 
 ## 沉浸光感开启方式对比
 
@@ -27,7 +27,7 @@ content_hash: sha256:d0db643a318bcdaeac147f7bf31ebdb1fa8006e6747c4f7cb43eb3dd70f
 | 开启方式 | 支持的组件 | 说明 |
 | --- | --- | --- |
 | 应用级开启 | 组件清单详见[MaterialState](../harmonyos-references/arkts-apis-uimaterial.md#materialstate)。 | 支持通过如下两种方式开启：  1. 通过[module.json5](module-configuration-file.md)统一配置，为支持沉浸光感的组件，批量开启或全局禁用沉浸光感，具体开启方法请参考表格下方内容。  2. module.json5未配置该字段时即为default模式，开发者的应用从API版本26.0.0之前升级至API版本26.0.0及以上，在未主动设置沉浸光感的情况下，组件默认开启沉浸光感，无需任何配置。 |
-| 组件级开启 | 支持设置沉浸式系统材质的组件 | 支持通过如下三种方式开启：  1. 通过通用属性[systemMaterial](../harmonyos-references/ts-universal-attributes-image-effect.md#systemmaterial)设置。  2. 弹窗类组件通过options参数中的systemMaterial字段设置，例如Toast的[ShowToastOptions](../harmonyos-references/js-apis-promptaction.md#showtoastoptions)、自定义弹窗的[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)等。  3. 组件专属接口设置，例如Select下拉菜单的[menuSystemMaterial](../harmonyos-references/ts-basic-components-select.md#menusystemmaterial)、Navigation标题栏的[systemMaterial](../harmonyos-references/ts-basic-components-navigation.md#navigationtitleoptions11)等。  各组件详细适配方法请参考[组件适配沉浸光感](arkts-immersive-light-sense-component-adaptation.md)。 |
+| 组件级开启 | 组件清单及各组件设置方式详见[组件适配沉浸光感](arkts-immersive-light-sense-component-adaptation.md) | 支持通过如下三种方式开启：  1. 通过通用属性[systemMaterial](../harmonyos-references/ts-universal-attributes-image-effect.md#systemmaterial)设置。  2. 弹窗类组件通过options参数中的systemMaterial字段设置，例如Toast的[ShowToastOptions](../harmonyos-references/js-apis-promptaction.md#showtoastoptions)、自定义弹窗的[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)等。  3. 组件专属接口设置，例如Select下拉菜单的[menuSystemMaterial](../harmonyos-references/ts-basic-components-select.md#menusystemmaterial)、Navigation标题栏的[systemMaterial](../harmonyos-references/ts-basic-components-navigation.md#navigationtitleoptions11)等。 |
 
 应用级开启通过配置文件统一设置应用的沉浸光感开关。在[module.json5](module-configuration-file.md)中，将[metadata](module-configuration-file.md#metadata标签)参数的name字段配置为"ohos.arkui.UIMaterial.state"，value字段为default或enable时开启，字段为disable时关闭。该配置仅在entry类型的module中生效。
 

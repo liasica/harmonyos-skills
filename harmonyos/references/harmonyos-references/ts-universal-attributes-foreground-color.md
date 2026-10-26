@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 前景色设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 前景色设置
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:36+08:00
+scraped_at: 2026-10-27T07:41:16+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:94caf985264c6ebab61d4d19f09492407df0a6c17e86e51979e87f7a95a83d53
+content_hash: sha256:468c930526dc6cbda9f972928a946e5a7573768f0b33ef064a65c2d7d11d7f27
 ---
 
 设置组件的前景色。与背景色相对应，前景色会影响绘制组件内容的颜色。主要影响文字的颜色、形状绘制组件（如Circle、Rect、Path等）的填充色。
@@ -81,7 +81,7 @@ struct ForegroundColorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/-1ozaBzhRK-bHj-7jGsbmQ/zh-cn_image_0000002797182119.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/RZix2xlSQc6mIerL6giwjg/zh-cn_image_0000002771667228.png)
 
 ### 示例2（设置前景色为组件背景色反色）
 
@@ -105,7 +105,7 @@ struct ColoringStrategyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/I4LchOIqTHuoijnps-8q8Q/zh-cn_image_0000002768022140.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/zNe5jrWtRBSCh7vw3ynT-w/zh-cn_image_0000002800987087.png)
 
 ### 示例3（前景色未继承父组件）
 
@@ -126,4 +126,4 @@ struct ForegroundColorInherit {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Z5ONnGYDSnahcRe59DJFYQ/zh-cn_image_0000002797302089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/O9ncxEBVQauu8bamNFBEvQ/zh-cn_image_0000002771827196.png)

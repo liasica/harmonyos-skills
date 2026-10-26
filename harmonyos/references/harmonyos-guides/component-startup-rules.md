@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-sta
 title: 组件启动规则
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 组件启动规则
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:29+08:00
+scraped_at: 2026-10-27T07:38:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:26dd5928ea905a0d6999bea29ef2d1432514dc275c470e004da895f8c43391d6
+content_hash: sha256:db5edaa4acd161af31ac44e56229e014ca9afd2911bca4404e73737bb08f5eef
 ---
 
 启动组件是指一切启动或连接应用组件的行为：
@@ -50,7 +50,7 @@ content_hash: sha256:26dd5928ea905a0d6999bea29ef2d1432514dc275c470e004da895f8c43
 
 下图中的BACKGROUND权限是指ohos.permission.START\_ABILITIES\_FROM\_BACKGROUND，CALL权限是指ohos.permission.ABILITY\_BACKGROUND\_COMMUNICATION。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/AeQWsa7sRayGAtNoXqv8IA/zh-cn_image_0000002768019512.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/Z8tOFaMORNiMNayKeg-T7w/zh-cn_image_0000002800984457.png)
 
 ## 分布式跨设备组件启动规则
 
@@ -64,4 +64,4 @@ content_hash: sha256:26dd5928ea905a0d6999bea29ef2d1432514dc275c470e004da895f8c43
 
 下图中的BACKGROUND权限是指ohos.permission.START\_ABILITIES\_FROM\_BACKGROUND，DATASYNC权限是指ohos.permission.DISTRIBUTED\_DATASYNC。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/e4G_T7F8RL2tDtmX08nn2Q/zh-cn_image_0000002797299459.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ssXC_3w4Tj-9LPFYWocvuQ/zh-cn_image_0000002771824568.png)

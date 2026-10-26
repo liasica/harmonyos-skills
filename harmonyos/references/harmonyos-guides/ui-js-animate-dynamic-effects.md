@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 动画动效
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > JS动画 > 插值器动画 > 动画动效
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:49+08:00
+scraped_at: 2026-10-27T07:38:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:561f5f137fb5d62ce0d8002b6d053c65f60d7a5771fe973557221c40c795b6e7
+content_hash: sha256:7e111a376c26ca60b136664ca039e891dbb4a423c089fa5c43ee8ee26dc4b476
 ---
 
 通过设置插值器来实现动画效果。
@@ -78,7 +78,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/VnWpjjR5Rq2_iOHLJHToJQ/zh-cn_image_0000002797180443.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/3ipib866RyOkYFXiLvACIQ/zh-cn_image_0000002771665554.gif)
 
 **说明** 
 
@@ -230,7 +230,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/2HeXxbZxSNCzA2DGQZqgHA/zh-cn_image_0000002768020464.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/_K-KBVL6S-KK5JLR2y529A/zh-cn_image_0000002800985411.gif)
 
 **说明** 
 

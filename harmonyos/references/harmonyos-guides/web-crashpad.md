@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-crashpad
 title: 使用Crashpad收集Web组件崩溃信息
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 使用Crashpad收集Web组件崩溃信息
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:53+08:00
+scraped_at: 2026-10-27T07:38:58+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:8c502caffda012830fd2ce653811d67b49fb1d8560fae0ede1b3ae473cabf352
+content_hash: sha256:d41c63e56db78e64000e959620f21477779ba30c8cbd8feab2a78b60af96b403
 ---
 
 Web组件支持使用Crashpad记录进程崩溃信息。Crashpad是Chromium内核提供的进程崩溃信息处理工具，在应用使用Web组件导致的进程（Web渲染进程）崩溃出现后，Crashpad会在应用主进程沙箱目录写入dmp文件。该文件为二进制格式，后缀为dmp，其记录了进程崩溃的原因、线程信息、寄存器信息等，应用可以使用该文件分析Web组件相关进程崩溃问题。Web组件分别从API version 9和API version 12开始支持接口onRenderExited和onRenderProcessNotResponding，开发者可以分别通过Web接口[onRenderExited](../harmonyos-references/arkts-basic-components-web-events.md#onrenderexited9)和[onRenderProcessNotResponding](../harmonyos-references/arkts-basic-components-web-events.md#onrenderprocessnotresponding12)来检测渲染进程退出和渲染进程不响应，也可以在这些接口中增加应用处理的逻辑。
@@ -68,7 +68,7 @@ Web组件支持使用Crashpad记录进程崩溃信息。Crashpad是Chromium内�
 
    这个路径可以利用DevEco Studio查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/5ZJKyHmdQTSe3jafe83FSw/zh-cn_image_0000002768020588.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/SmqouGtISF-g0g3K-a52lw/zh-cn_image_0000002800985535.png)
 3. 获取dmp文件后进行解析，具体步骤如下：
 
    * 通过minidump\_stackwalk工具解析dmp文件，可以得到上述dmp文件对应的进程崩溃信息（崩溃的原因、线程信息、寄存器信息等），示例如下（Linux环境）：

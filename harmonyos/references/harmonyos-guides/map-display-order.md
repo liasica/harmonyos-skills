@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-display-o
 title: 设置地图元素压盖顺序
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 设置地图元素压盖顺序
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:52+08:00
+scraped_at: 2026-10-27T07:39:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5a077b4e8c56c64ddeb7af324babf5256ce3ea8e8cc3ff0ca94ecdea9c6e17a0
+content_hash: sha256:a1c0ae6b422b22152d4253e495a7ecfe505d1b7a405376585e9669274a7df0bf
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:5a077b4e8c56c64ddeb7af324babf5256ce3ea8e8cc3ff0ca94ecdea9c6
 
 设置地图元素的显示顺序，按照从低到高排列，即后面的地图元素会压盖前面的地图元素。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/_D-LQTnFSKuW1jvEcQSlpQ/zh-cn_image_0000002797301495.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YVFNbQJqQ4qJGX-s9my7wQ/zh-cn_image_0000002771826602.jpg "点击放大")
 
 **表1** 地图元素类型压盖顺序
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jscrash-guide
 title: JS Crash（进程崩溃）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 崩溃检测 > JS Crash（进程崩溃）检测
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6b40a217e20fb03470ec04fa56c5d84b7706a7520269f910e548e0c1c8d31983
+scraped_at: 2026-10-27T07:39:21+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:61a1e872fa6e03482be4ac70b1d11008eceed6d4b02485ecee8c179992011c61
 ---
 
 ## 简介
@@ -184,7 +184,7 @@ Stacktrace:
 
 ### Page switch history
 
-从API 20起，使用Page switch history段记录页面切换的历史，故障日志最多记录最新的10条历史轨迹。单条记录的格式如下：
+从API version 20起，使用Page switch history段记录页面切换的历史，故障日志最多记录最新的10条历史轨迹。单条记录的格式如下：
 
 ```text
   14:08:30:327 /ets/pages/Index:JsError
@@ -274,7 +274,7 @@ at onPageShow har1 (har1/src/main/ets/pages/Index.ets:7:13)
 
 ### HybridStack格式
 
-从API 22起，在ARM 64位系统下，HybridStack中支持打印CPP和JS之间跨语言的代码调用栈。
+从API version 22起，在ARM 64位系统下，HybridStack中支持打印CPP和JS之间跨语言的代码调用栈。
 
 CPP代码调用栈详细说明[CPP异常代码调用栈格式规范](cppcrash-guidelines.md#一般故障场景日志规格)。
 

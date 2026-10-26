@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (CursorController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (CursorController)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:26+08:00
+scraped_at: 2026-10-27T07:41:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3f709aba34ea011b6c79978e803c1bb36eec9aa495af20b2fee3783887091268
+content_hash: sha256:522cf91646fc1b8bd800b95c0e429fde02b4b9b9edb118de4cf0fed128fec74c
 ---
 
 提供鼠标光标样式设置的能力，支持恢复默认鼠标光标样式、设置系统鼠标光标样式以及设置自定义鼠标光标样式，适用于需要根据界面交互状态动态调整鼠标光标显示效果的场景，有助于提升界面交互提示的清晰度。
@@ -58,7 +58,7 @@ struct CursorControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/eyfTtnRsT0apHYTqFKx2ng/zh-cn_image_0000002768022000.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/1T2sSIt3Rf-7j6iEhUs3BA/zh-cn_image_0000002800986947.gif)
 
 ## setCursor12+
 
@@ -111,7 +111,7 @@ struct CursorControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/HSVFyH9vRVyxikZH4Wse1A/zh-cn_image_0000002797301949.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/1qZ-TEfcQ1ufIxJoslMm1w/zh-cn_image_0000002771827056.gif)
 
 ## setCustomCursor
 
@@ -232,4 +232,4 @@ struct CustomCursorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/jcuydIoaTOOpgicm4cJ3rw/zh-cn_image_0000002767862018.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Lcg8g4XYT92xk_5Lcaitsg/zh-cn_image_0000002801106871.gif)

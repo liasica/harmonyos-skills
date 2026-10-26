@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-musi
 title: 音乐服务卡片
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片最佳实践 > 音乐服务卡片
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:56+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace68e34c
+scraped_at: 2026-10-27T07:39:01+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:66c6b8ee95eeb74f62f34c59a98bcfcd48e991dff0afea2d5a7b1d3286ac7ed0
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 **图 1** 音乐服务卡片场景效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/NiiQnV51RTuObjY8QqJJ5Q/zh-cn_image_0000002768020662.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/M80Aopo-RWOQJBpO2DYr2w/zh-cn_image_0000002800985607.png)
 
 本文将以音乐服务卡片场景为例，分别介绍音乐播控、歌单推荐、心动歌词、动态歌词四种服务卡片的实现，包括卡片设计和功能开发，以及开发中常见的一些问题。通过本案例，开发者可以更加深入的了解服务卡片与应用的交互和卡片的数据更新机制，快速高效的进行精美的服务卡片开发。
 
@@ -24,7 +24,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 ### 音乐播控
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/4leFW_wzTkO9L4LIzei3dA/zh-cn_image_0000002797300609.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/pkDzowGpSqyIjEcDZKlzOg/zh-cn_image_0000002771825718.png)
 
 场景定义：
 
@@ -33,7 +33,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 ### 动态歌词
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/h3FWCD43TRKNCPKQvlpATw/zh-cn_image_0000002767860678.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/TqHj__2lRYuxIgknEToB9g/zh-cn_image_0000002801105531.png)
 
 场景定义：
 
@@ -42,7 +42,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 ### 歌单推荐
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/EGJik_MvS8i040ml1tQbCA/zh-cn_image_0000002797180641.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/oSpZnu7NQtWNENeR5tUX7w/zh-cn_image_0000002771665752.png)
 
 场景定义：
 
@@ -51,7 +51,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 ### 心动歌词
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/Lw2hqkJZTpuMFgb_l1CnNg/zh-cn_image_0000002768020664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/qBUvNGZMT4irahzrdl7dCA/zh-cn_image_0000002800985609.png)
 
 场景定义：
 
@@ -60,11 +60,11 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 ### 场景互动卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/1NVjeE0NT--8nJCrRvm0BA/zh-cn_image_0000002797300611.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/U425KtPtTdCx72Uzw87CDA/zh-cn_image_0000002771825720.png)
 
 场景定义：
 
-* 体验：客户可以通过点击卡片，卡片展示溢出屏幕的动效，提供技术创新提供富有趣味的用户体验。
+* 体验：客户可以通过点击卡片，卡片展示溢出屏幕的动效，提供技术创新和富有趣味的用户体验。
 * 功能：提供富有趣味的用户互动。
 
 ## 卡片设计
@@ -73,7 +73,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 **图 2** 音乐服务卡片沉浸效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/jJr5YKY2Ss6DzQ7ZZZ51qw/zh-cn_image_0000002767860680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/HXFQy7qERAmj5-G99xNnvg/zh-cn_image_0000002801105533.png)
 
 音乐播控、歌单推荐、心动歌词和动态歌词卡片设计效果如下所示：
 
@@ -90,17 +90,17 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 ### 整体方案
 
-音乐应用作为[卡片提供方](formkit-overview.md#服务卡片架构)，提供音乐服务卡片的内容显示、控件布局和卡片交互处理逻辑。桌面作为[卡片使用方](formkit-overview.md#服务卡片架构)，即卡片的宿主应用，控制卡片在桌面中展示的位置和内容。卡片框架管理卡片生命周期和刷新机制，负责卡片页面的渲染。关于卡片提供方、使用方和卡片框架的详细内容可参考[ArkTS卡片实现原理](arkts-form-overview.md#实现原理)。
+音乐应用作为[卡片提供方](../doccenter-capabilities/formkit-overview.md#服务卡片架构)，提供音乐服务卡片的内容显示、控件布局和卡片交互处理逻辑。桌面作为[卡片使用方](../doccenter-capabilities/formkit-overview.md#服务卡片架构)，即卡片的宿主应用，控制卡片在桌面中展示的位置和内容。卡片框架管理卡片生命周期和刷新机制，负责卡片页面的渲染。关于卡片提供方、使用方和卡片框架的详细内容可参考ArkTS卡片[实现原理](../doccenter-capabilities/arkts-form-overview.md#实现原理)。
 
 **图 3** 音乐服务卡片运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/iuoJY-z-R8aCjU53pHir_A/zh-cn_image_0000002767860686.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/SzBNhlqZQnSxVjhC61nNaw/zh-cn_image_0000002801105539.png)
 
-音乐应用包含[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)（主进程）和[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)（卡片进程）两个进程。其中，主进程包含音乐播控、收藏、热门歌单、以及歌词处理等功能模块；卡片进程是卡片业务逻辑模块，提供卡片创建、刷新、销毁等生命周期回调。如下图所示：
+音乐应用包含[UIAbility](../doccenter-references/api/js-apis-app-ability-uiability.md#uiability)（主进程）和[FormExtensionAbility](../doccenter-references/api/js-apis-app-form-formextensionability.md#formextensionability)（卡片进程）两个进程。其中，主进程包含音乐播控、收藏、热门歌单、以及歌词处理等功能模块；卡片进程是卡片业务逻辑模块，提供卡片创建、刷新、销毁等生命周期回调。如下图所示：
 
 **图 4** 音乐应用进程结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/izYVS4uKS5iPEhyBeeJXsA/zh-cn_image_0000002797180649.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/0ksdCBC1Qde1EwFOI4dNDg/zh-cn_image_0000002771665760.png)
 
 开发者可以根据FormExtensionAbility生命周期回调，在对应回调方法中处理卡片数据持久化、卡片数据更新等操作，FormExtensionAbility生命周期回调时机和功能实现说明如下表所示：
 
@@ -108,16 +108,16 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 | 生命周期 | 回调时机 |
 | --- | --- |
-| [onAddForm](../harmonyos-references/js-apis-app-form-formextensionability.md#formextensionabilityonaddform) | 长按 APP 图标/卡片后，点击“服务卡片”拉起卡片视图后 |
-| [onUpdateForm](../harmonyos-references/js-apis-app-form-formextensionability.md#formextensionabilityonupdateform) | 定时更新、定点更新、卡片使用方主动请求更新时执行回调 |
-| [onFormEvent](../harmonyos-references/js-apis-app-form-formextensionability.md#formextensionabilityonformevent) | 用户触发了卡片上的postCardAction或FormLink组件中的message事件时执行回调 |
-| [onRemoveForm](../harmonyos-references/js-apis-app-form-formextensionability.md#formextensionabilityonremoveform) | 长按卡片选择“移除”后 |
+| [onAddForm](../doccenter-references/api/js-apis-app-form-formextensionability.md#formextensionabilityonaddform) | 长按 APP 图标/卡片后，点击“服务卡片”拉起卡片视图后 |
+| [onUpdateForm](../doccenter-references/api/js-apis-app-form-formextensionability.md#formextensionabilityonupdateform) | 定时更新、定点更新、卡片使用方主动请求更新时执行回调 |
+| [onFormEvent](../doccenter-references/api/js-apis-app-form-formextensionability.md#formextensionabilityonformevent) | 用户触发了卡片上的postCardAction或FormLink组件中的message事件时执行回调 |
+| [onRemoveForm](../doccenter-references/api/js-apis-app-form-formextensionability.md#formextensionabilityonremoveform) | 长按卡片选择“移除”后 |
 
 ### 互动卡片
 
-场景类型互动卡片在定位上是对普通卡片能力的增强，因此开发者需首先完成普通卡片的业务开发。之后在特定业务环节通过接口请求，触发互动卡片特有的动态效果。开发者可参考[互动卡片开发](arkts-ui-liveform.md)。
+场景类型互动卡片在定位上是对普通卡片能力的增强，因此开发者需首先完成普通卡片的业务开发。之后在特定业务环节通过接口请求，触发互动卡片特有的动态效果。开发者可参考[互动卡片开发](../doccenter-capabilities/arkts-ui-liveform.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/m-zKKBbNRlWcUkuyTEKIeA/zh-cn_image_0000002768020672.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/uakTmE2IRsW6DujzcWfLeg/zh-cn_image_0000002800985617.png)
 
 ### 关键技术
 
@@ -126,17 +126,17 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 1. **卡片的选择**
 
    * 动态卡片支持通用事件能力和自定义动效能力，适用于有复杂业务逻辑和交互的场景，功能丰富但内存开销较大。
-   * 静态卡片支持UI组件和布局能力，不支持通用事件和自定义动效能力，卡片内容以静态图显示，可以通过[FormLink](../harmonyos-references/ts-container-formlink.md)组件跳转到指定的UIAbility，适用于展示类卡片（UI相对固定），功能简单但可以有效控制内存开销。
+   * 静态卡片支持UI组件和布局能力，不支持通用事件和自定义动效能力，卡片内容以静态图显示，可以通过[FormLink](../doccenter-references/api/ts-container-formlink.md)组件跳转到指定的UIAbility，适用于展示类卡片（UI相对固定），功能简单但可以有效控制内存开销。
 
    音乐播控卡片和动态歌词卡片具有播放/暂停、上一曲/下一曲、收藏等功能，需较强的播控逻辑和交互处理，更适合选择动态卡片；歌单推荐和心动歌词仅需要页面跳转功能，业务逻辑和交互都比较简单，选择静态卡片更合适。
 2. **沉浸式卡片**
 
-   沉浸式卡片设计能给用户带来更好的视觉体验，开发者可以使用[@ohos.effectKit](../harmonyos-references/js-apis-effectkit.md)模块的ColorPicker的[getMainColor()](../harmonyos-references/js-apis-effectkit.md#getmaincolor)方法获取歌曲封面图像主色，作为卡片的背景色，使卡片和歌曲封面融为一体达到卡片沉浸效果。此外，在一些场景下，还可以给卡片添加背景图片，使用Image组件的blur属性或者@ohos.effectKit模块的[blur()](../harmonyos-references/js-apis-effectkit.md#blur)方法给图片做模糊化处理，来达到卡片沉浸效果。
+   沉浸式卡片设计能给用户带来更好的视觉体验，开发者可以使用[@ohos.effectKit (图像效果)](../doccenter-references/api/js-apis-effectkit.md)模块的ColorPicker的[getMainColor()](../doccenter-references/api/js-apis-effectkit.md#getmaincolor)方法获取歌曲封面图像主色，作为卡片的背景色，使卡片和歌曲封面融为一体达到卡片沉浸效果。此外，在一些场景下，还可以给卡片添加背景图片，使用Image组件的blur属性或者@ohos.effectKit模块的[blur()](../doccenter-references/api/js-apis-effectkit.md#blur)方法给图片做模糊化处理，来达到卡片沉浸效果。
 3. **卡片更新与数据交互**
 
-   针对音乐服务卡片这种多类型多规格的卡片场景，推荐使用关系型数据库[relationalStore](../harmonyos-references/js-apis-data-relationalstore.md)进行卡片数据持久化存储。
+   针对音乐服务卡片这种多类型多规格的卡片场景，推荐使用[@ohos.data.relationalStore (关系型数据库)](../doccenter-references/api/js-apis-data-relationalstore.md)进行卡片数据持久化存储。
 
-   应用主进程通过FormProvider的[updateForm()](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)方法实现卡片的主动刷新，例如更新歌曲信息、歌词信息等；在FormExtensionAbility的onUpdateForm()生命周期回调方法中实现卡片被动刷新逻辑，例如定时和定点刷新。
+   应用主进程通过FormProvider的[updateForm()](../doccenter-references/api/js-apis-app-form-formprovider.md#formproviderupdateform)方法实现卡片的主动刷新，例如更新歌曲信息、歌词信息等；在FormExtensionAbility的onUpdateForm()生命周期回调方法中实现卡片被动刷新逻辑，例如定时和定点刷新。
 
    关于服务卡片的数据交互和更新机制，具体可以参考：[卡片更新与数据交互](form-refresh-and-data-interaction.md)。
 
@@ -145,27 +145,27 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 **音乐播控卡片**
 
 * 音乐播控卡片具有播放/暂停、上一曲/下一曲、收藏等功能，需较强的播控逻辑和交互处理，选择动态卡片实现。
-* 音乐播控卡片和应用之间存在较多的交互，选择使用动态卡片来实现。动态卡片支持通用事件能力和自定义动效能力，适用于有复杂业务逻辑和交互的场景。动态卡片的创建可以参考：[创建ArkTS卡片](arkts-ui-widget-creation.md)**。**
-* 卡片与应用主进程之间通过call事件进行交互，比如播放、暂停、收藏等。call事件的发送和订阅可以参考：[通过router或call事件刷新卡片内容](arkts-ui-widget-event-overview.md)。
-* 本示例音乐播放功能使用的是AVPlayer，具体实现可以参考[使用AVPlayer播放音频(ArkTS)](using-avplayer-for-playback.md)。为保证音乐能在后台播放或熄屏播放，需要接入[AVSession（媒体会话）](avsession-access-scene.md)和[申请长时任务](continuous-task.md)，避免播放被系统强制中断。
-* 场景动效类型互动卡片采用的是LiveFormExtensionAbility完成其页面的布局和渲染。
+* 音乐播控卡片和应用之间存在较多的交互，选择使用动态卡片来实现。动态卡片支持通用事件能力和自定义动效能力，适用于有复杂业务逻辑和交互的场景。动态卡片的创建可以参考：[创建ArkTS卡片](../doccenter-capabilities/arkts-ui-widget-creation.md)。
+* 卡片与应用主进程之间通过call事件进行交互，比如播放、暂停、收藏等。call事件的发送和订阅可以参考：[卡片拉起应用UIAbility到后台（call事件）](../doccenter-capabilities/arkts-ui-widget-event-call.md)。
+* 本示例音乐播放功能使用的是AVPlayer，具体实现可以参考[使用AVPlayer播放音频(ArkTS)](../doccenter-capabilities/using-avplayer-for-playback.md)。为保证音乐能在后台播放或熄屏播放，需要接入[AVSession Kit（音视频播控服务）](../doccenter-capabilities/avsession-kit.md)（接入方式可参考[应用接入AVSession场景介绍](../doccenter-capabilities/avsession-access-scene.md)）和申请[长时任务(ArkTS)](../doccenter-capabilities/continuous-task.md)，避免播放被系统强制中断。
+* 场景动效类型互动卡片采用的是[@ohos.app.form.LiveFormExtensionAbility (LiveFormExtensionAbility)](../doccenter-references/api/js-apis-app-form-liveformextensionability.md)完成其页面的布局和渲染。
 
 **动态歌词卡片**
 
 * 该卡片支持切换歌曲、播控、跳转功能，可参考前面[音乐播控卡片](arkts-ui-music-service-form.md#卡片实现方案)相关介绍。
-* 动态歌词可实时显示与当前播放进度匹配的歌词内容。切换歌曲时，除更新歌曲基本信息外，歌词部分会同步更新并从头开始跟随播放进度显示，需要开发者在实际开发中获取相应歌曲的歌词信息。歌词在播放期间以及切换不同歌曲的时候，需要通过动画实现歌词的平滑[过渡效果](../harmonyos-references/ts-transition-animation-component.md)。在卡片初始化的时候，需要预处理好歌词数组，在音频进度回调中，需根据当前时间匹配对应歌词，并更新卡片。
-* 应用内添加卡片到桌面功能。在应用内长按指定元素，将弹出包含"添加至桌面"选项的菜单，点击后弹出应用支持的卡片。长按添加至桌面菜单可以参考：[FormMenu](../harmonyos-references/ohos-arkui-advanced-formmenu.md)组件。
+* 动态歌词可实时显示与当前播放进度匹配的歌词内容。切换歌曲时，除更新歌曲基本信息外，歌词部分会同步更新并从头开始跟随播放进度显示，需要开发者在实际开发中获取相应歌曲的歌词信息。歌词在播放期间以及切换不同歌曲的时候，需要通过动画实现歌词的平滑过渡效果（效果实现参考[组件内转场 (transition)](../doccenter-references/api/ts-transition-animation-component.md)）。在卡片初始化的时候，需要预处理好歌词数组，在音频进度回调中，需根据当前时间匹配对应歌词，并更新卡片。
+* 应用内添加卡片到桌面功能。在应用内长按指定元素，将弹出包含"添加至桌面"选项的菜单，点击后弹出应用支持的卡片。长按添加至桌面菜单可以参考：[FormMenu](../doccenter-references/api/ohos-arkui-advanced-formmenu.md)组件。
 
 **歌单推荐卡片**
 
 * 歌单推荐卡片没有复杂的业务逻辑和数据交互，选择使用静态卡片来实现，歌单推荐的交互动作主要是点击卡片对应组件之后，拉起应用主进程进行页面跳转。
-* 页面跳转通过[FormLink](../harmonyos-references/ts-container-formlink.md)组件router类型事件来实现。
-* 卡片创建的时候会加载网络图片，网络图片的刷新可以参考：[刷新本地图片和网络图片](arkts-ui-widget-image-update.md)。
+* 页面跳转通过[FormLink](../doccenter-references/api/ts-container-formlink.md)组件router类型事件来实现。
+* 卡片创建的时候会加载网络图片，网络图片的刷新可以参考：[刷新本地图片和网络图片](../doccenter-capabilities/arkts-ui-widget-image-update.md)。
 
 **心动歌词卡片**
 
 * 心动歌词卡片和应用主进程之间交互逻辑比较简单，仅有点击卡片跳转到应用播放页面的交互，所以选择静态卡片实现，通过FormLink组件实现点击卡片跳转。
-* 心动歌词卡片内容主要是通过被动刷新的方式进行卡片数据刷新，在FormExtensionAbility的onUpdateForm()回调方法中，对卡片数据进行刷新，在卡片配置文件form\_config中配置updateDuration参数实现定时刷新。具体实现可以参考：[卡片定时刷新和定点刷新](arkts-ui-widget-passive-refresh.md)。
+* 心动歌词卡片内容主要是通过被动刷新的方式进行卡片数据刷新，在FormExtensionAbility的onUpdateForm()回调方法中，对卡片数据进行刷新，在卡片配置文件form\_config中配置updateDuration参数实现定时刷新。具体实现可以参考：[卡片定时刷新](../doccenter-capabilities/arkts-ui-widget-passive-refresh.md#卡片定时刷新)和[卡片定点刷新](../doccenter-capabilities/arkts-ui-widget-passive-refresh.md#卡片定点刷新)。
 
 ## 场景实现
 
@@ -173,13 +173,13 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 **实现步骤**
 
-音乐播控卡片的主要实现步骤如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ula2GhY5TrWw4jVemakx8g/zh-cn_image_0000002797300619.png)
+音乐播控卡片的主要实现步骤如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/gdp4tCLHSLCsg7QIvqMfLQ/zh-cn_image_0000002771825728.png)
 
 其中“实现音乐播控功能”需要通过卡片、数据库、媒体播放等多个模块之间的数据交互来实现，音乐播控功能实现时序图如下：
 
 **图 5** 卡片音乐播控时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/sIVfiSWzRuiLsTF1LPsT_A/zh-cn_image_0000002767860688.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/VcIKkPsiRz2wRBHmx67xzg/zh-cn_image_0000002801105541.png)
 
 音乐播控卡片的详细开发流程如下：
 
@@ -187,11 +187,11 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    **图 6** 音乐播控卡片效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/XOzgcIBrRDiOzc1bsRrebQ/zh-cn_image_0000002797180651.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/B21f77CdTXO1wiyLM1qvCA/zh-cn_image_0000002771665762.png)
 
-   分别创建2x2和2x4两个规格的动态卡片，动态卡片的创建可以参考[创建ArkTS卡片](arkts-ui-widget-creation.md)。对于比较复杂的布局，优先考虑使用相对布局 [RelativeContainer](arkts-layout-development-relative-layout.md)来减少性能开销。由于2x4卡片包含了2x2卡片的功能，下面将以2x4卡片为例介绍音乐播控卡片的实现。
+   分别创建2x2和2x4两个规格的动态卡片，动态卡片的创建可以参考[创建ArkTS卡片](../doccenter-capabilities/arkts-ui-widget-creation.md)。对于比较复杂的布局，优先考虑使用[相对布局 (RelativeContainer)](../doccenter-capabilities/arkts-layout-development-relative-layout.md)来减少性能开销。由于2x4卡片包含了2x2卡片的功能，下面将以2x4卡片为例介绍音乐播控卡片的实现。
 
-   在卡片布局文件中定义卡片所需要的变量信息，使用[@LocalStorageProp](arkts-localstorage.md#localstorageprop)装饰器修饰，用于接收应用侧传递过来的数据，其中isPlay与isCollected分别表示歌曲的播放和收藏状态，根据状态的不同展示不同的图标，示例代码如下：
+   在卡片布局文件中定义卡片所需要的变量信息，使用[@LocalStorageProp](../doccenter-capabilities/arkts-localstorage.md#localstorageprop)装饰器修饰，用于接收应用侧传递过来的数据，其中isPlay与isCollected分别表示歌曲的播放和收藏状态，根据状态的不同展示不同的图标，示例代码如下：
 
    ```ts
    // src/main/ets/widget/pages/PlayControlCard2x4.ets
@@ -241,7 +241,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    **图 7** 音乐播控卡片预览效果
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/n24cjlgvSkC1VBmM5hyYSg/zh-cn_image_0000002768020674.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/VRpzFfB8S6GI8KeSSky2gQ/zh-cn_image_0000002800985619.png)
 
    在音乐应用中，EntryFormAbility继承了FormExtensionAbility类并实现了其生命周期回调方法。当预览卡片时，会触发EntryFormAbility的onAddForm()回调方法，在此方法中可以获取卡片名称、卡片ID等信息。开发者可以根据卡片名称判断是否为音乐播控卡片，如果是，则调用FormUtils.updateMusicControlCard()方法更新卡片数据。FormUtils是卡片管理工具类，封装了卡片添加、删除、更新等相关功能。示例代码如下：
 
@@ -433,7 +433,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    1. 发送音乐播控相关的call事件。
 
-      给“播放/暂停”等播控相关的组件绑定onClick事件，调用[postCardAction](../harmonyos-references/js-apis-postcardaction.md)接口触发call事件，向音乐应用发送音乐播控信息。postCardAction方法封装在ActionUtils里面，参数action为事件类型，值为FormCarAction.CALL（枚举值为“call”）；method为方法名，用于触发UIAbility中对应的方法；type为播控操作类型，例如PlayActionType.PLAY表示播放。
+      给“播放/暂停”等播控相关的组件绑定onClick事件，调用[postCardAction](../doccenter-references/api/js-apis-postcardaction.md)接口触发call事件，向音乐应用发送音乐播控信息。postCardAction方法封装在ActionUtils里面，参数action为事件类型，值为FormCarAction.CALL（枚举值为“call”）；method为方法名，用于触发UIAbility中对应的方法；type为播控操作类型，例如PlayActionType.PLAY表示播放。
 
       ```ts
       // src/main/ets/widget/pages/PlayControlCard2x4.ets
@@ -495,7 +495,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
       ```
    2. 订阅和处理卡片发送的call事件。
 
-      在EntryAbility（即应用主进程的入口UIAbility）的onCreate方法中，使用callee.on()方法订阅卡片发送的call事件。当EntryAbility接收到call事件后，根据事件类型playActionType，调用MediaService中的playByAction()方法来控制音乐播放。MediaService封装了[AVPlayer](media-kit-intro.md#avplayer)的媒体播放功能，如歌曲资源加载、播放/暂停等，具体实现可以参考[音乐服务卡片](https://gitcode.com/harmonyos_samples/MusicCard)示例代码中的MediaService.ets源码。
+      在EntryAbility（即应用主进程的入口UIAbility）的onCreate方法中，使用callee.on()方法订阅卡片发送的call事件。当EntryAbility接收到call事件后，根据事件类型playActionType，调用MediaService中的playByAction()方法来控制音乐播放。MediaService封装了[AVPlayer](../doccenter-capabilities/media-kit-intro.md#avplayer)的媒体播放功能，如歌曲资源加载、播放/暂停等，具体实现可以参考[基于Form Kit实现音乐服务卡片](https://gitcode.com/harmonyos_samples/MusicCard)示例代码中的MediaService.ets源码。
 
       ```ts
       // src/main/ets/entryability/EntryAbility.ets
@@ -867,7 +867,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
       ```
 6. **实现沉浸式卡片效果**
 
-   整个卡片的色调跟随歌曲封面图片来进行变化，这种沉浸式效果会给用户不断变化的视觉感受，防止了固定的UI色彩造成用户的审美疲劳。可以利用[effectKit](../harmonyos-references/js-apis-effectkit.md)图像效果的智能取色[ColorPicker](../harmonyos-references/js-apis-effectkit.md#colorpicker)取出歌曲封面图片的主颜色，以实现沉浸式UI效果。当歌曲切换的时候，可以先对歌曲封面图片进行取色，将歌曲封面图片的颜色imageColorHex更新给卡片。
+   整个卡片的色调跟随歌曲封面图片来进行变化，这种沉浸式效果会给用户不断变化的视觉感受，防止了固定的UI色彩造成用户的审美疲劳。可以利用[@ohos.effectKit (图像效果)](../doccenter-references/api/js-apis-effectkit.md)的智能取色[ColorPicker](../doccenter-references/api/js-apis-effectkit.md#colorpicker)取出歌曲封面图片的主颜色，以实现沉浸式UI效果。当歌曲切换的时候，可以先对歌曲封面图片进行取色，将歌曲封面图片的颜色imageColorHex更新给卡片。
 
    ```ts
    // src/main/ets/utils/FormUtils.ets
@@ -936,7 +936,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
    }
    ```
 
-   卡片侧获取到图片颜色imageColorHex后\*\* \*\*，颜色的数据格式为rgb，可以使用linearGradient属性，给imageColorHex设置不同的透明度，做渐变色处理，使卡片背景平滑过渡自然。
+   卡片侧获取到图片颜色imageColorHex后，颜色的数据格式为rgb，可以使用linearGradient属性，给imageColorHex设置不同的透明度，做渐变色处理，使卡片背景平滑过渡自然。
 
    ```ts
    // src/main/ets/widget/pages/PlayControlCard2x4.ets
@@ -968,7 +968,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    **图 8** 卡片沉浸效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Inx3nqv7QaesORe2wdCdYw/zh-cn_image_0000002768020676.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/19q-_pCdR0uePcDw99mGmQ/zh-cn_image_0000002800985621.gif)
 
    **说明** 
 
@@ -1054,7 +1054,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
    }
    ```
 
-   播放页面是通过bindContentCover方法绑定的一个弹窗，通过状态变量isShowPlay来控制其显示和隐藏，isShowPlay使用@StorageLink装饰器修饰用于接收EntryAbility中isShowPlay的值，示例代码如下：
+   播放页面是通过bindContentCover方法绑定的一个弹窗，通过状态变量isShowPlay来控制其显示和隐藏，isShowPlay使用[@StorageLink](../doccenter-references/api/ts-state-management-storagelink.md#storagelink)装饰器修饰用于接收EntryAbility中isShowPlay的值，示例代码如下：
 
    ```ts
    // src/main/ets/components/PlayController.ets
@@ -1088,7 +1088,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    **图 9** 点击卡片跳转到播放页面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/L_8msicGQbWo_jkZufDhIw/zh-cn_image_0000002797300623.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/lSbDDPSFTByJp6NNvGGSLA/zh-cn_image_0000002771825732.gif)
 
 ### 动态歌词卡片
 
@@ -1096,20 +1096,20 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 动态歌词卡片的主要实现步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/3O5clK1PQOCHY_dFTbJmpw/zh-cn_image_0000002767860692.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CPeaEV7YQBibuvguYyhylg/zh-cn_image_0000002801105545.png)
 
 动态歌词目前支持2\*4规格的卡片，效果图如下：
 
 **图 10** 动态歌词卡片效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/uxdgfQTgTtmJ05C8nKV_yg/zh-cn_image_0000002797180655.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Uct6uIx8T4ueFmTKWmdEpQ/zh-cn_image_0000002771665766.png)
 
 动态歌词卡片的**播控**相关内容，具体实现请参考[音乐播控卡片](arkts-ui-music-service-form.md#音乐播控卡片)的详细开发流程。
 
 动态歌词卡片的**歌词切换功能**开发流程如下：
 
-1. 动态歌词卡片更新，具体请参考音乐播控卡片的[卡片数据初始化](arkts-ui-music-service-form.md#音乐播控卡片)内容。
-2. 更新动态歌词卡片时，需要处理歌词相关的数据，在音乐播控卡片的[卡片数据初始化](arkts-ui-music-service-form.md#音乐播控卡片)基础上，新增getSongLyricsArray()方法获取当前歌曲的歌词数组lrcArray，通过调用FormUtils的updateForm()方法更新卡片。
+1. 动态歌词卡片更新，具体请参考[音乐播控卡片](arkts-ui-music-service-form.md#音乐播控卡片)的卡片数据初始化内容。
+2. 更新动态歌词卡片时，需要处理歌词相关的数据，在[音乐播控卡片](arkts-ui-music-service-form.md#音乐播控卡片)的卡片数据初始化基础上，新增getSongLyricsArray()方法获取当前歌曲的歌词数组lrcArray，通过调用FormUtils的updateForm()方法更新卡片。
 
    ```ts
    // src/main/ets/utils/FormUtils.ets
@@ -1127,7 +1127,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
      this.updateForm(formData.formId, formData);
    }
    ```
-3. 卡片页面使用页面级的UI状态存储[LocalStorage](arkts-localstorage.md)接收onAddForm()接口传递的数据，参考音乐播控卡片的[卡片数据初始化](arkts-ui-music-service-form.md#音乐播控卡片)内容。使用装饰器@LocalStorageProp装饰的状态变量接收数据类的详细信息，装饰器@LocalStorageProp(key)中的key值需与数据类的键值一一对应。动态歌词卡片展示歌词的时候，用的就是更新卡片所新增的lrcArray歌词数组字段，用户点击播放歌曲后，就会根据播放进度显示对应歌词信息。
+3. 卡片页面使用[LocalStorage：页面级UI状态存储](../doccenter-capabilities/arkts-localstorage.md)接收onAddForm()接口传递的数据，参考[音乐播控卡片](arkts-ui-music-service-form.md#音乐播控卡片)的卡片数据初始化内容。使用装饰器@LocalStorageProp装饰的状态变量接收数据类的详细信息，装饰器@LocalStorageProp(key)中的key值需与数据类的键值一一对应。动态歌词卡片展示歌词的时候，用的就是更新卡片所新增的lrcArray歌词数组字段，用户点击播放歌曲后，就会根据播放进度显示对应歌词信息。
 
    ```ts
    @Entry(storageUpdateCall1)
@@ -1140,7 +1140,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
      // ...
    }
    ```
-4. 为了实现歌词上一句与下一句之间平滑的切换效果，使用ForEach新增/删除组件结合[组件内转场](../harmonyos-references/ts-transition-animation-component.md)给每一行歌词Text组件绑定transition属性，实现歌词之间显示的过渡效果。
+4. 为了实现歌词上一句与下一句之间平滑的切换效果，使用ForEach新增/删除组件结合[组件内转场 (transition)](../doccenter-references/api/ts-transition-animation-component.md)给每一行歌词Text组件绑定transition属性，实现歌词之间显示的过渡效果。
 
    ```ts
    Column() {
@@ -1161,13 +1161,13 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    **图 11** 动态歌词最终效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/-ivHQnVvR1Gm793qB33TZg/zh-cn_image_0000002768020678.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/H2SMDQzKRTuQdcV0PSO4cQ/zh-cn_image_0000002800985623.gif)
 
 **应用内添加卡片到桌面场景实现步骤**
 
 应用内**添加卡片到桌面**功能开发流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/1PDb6pnuTrqAt7mwM1daKg/zh-cn_image_0000002797300625.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Pi6wlr9qRn2j2vaz4H747Q/zh-cn_image_0000002771825734.png)
 
 1. 配置好添加卡片的相关数据（ cardRealName：卡片名称；cardDimension：卡片类型； displayName：显示名称； description：卡片描述； url：预览图），已完成卡片布局开发。
 
@@ -1188,7 +1188,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
      // ...
    }
    ```
-2. 在实现添加至桌面功能时，需要用到[FormMenu](../harmonyos-references/ohos-arkui-advanced-formmenu.md)菜单组件。首先需要导入[AddFormMenuItem](../harmonyos-references/ohos-arkui-advanced-formmenu.md#addformmenuitem)模块，在AddFormMenuItem里面配置好相关参数，在其中的参数options回调中，获取添加是否成功的信息，提示用户，以便用户感知。最后在应用内点击按钮后显示交互菜单。
+2. 在实现添加至桌面功能时，需要用到[FormMenu](../doccenter-references/api/ohos-arkui-advanced-formmenu.md)菜单组件。首先需要导入[AddFormMenuItem](../doccenter-references/api/ohos-arkui-advanced-formmenu.md#addformmenuitem)模块，在AddFormMenuItem里面配置好相关参数，在其中的参数options回调中，获取添加是否成功的信息，提示用户，以便用户感知。最后在应用内点击按钮后显示交互菜单。
 
    ```ts
    import { AddFormMenuItem } from '@kit.ArkUI';
@@ -1255,7 +1255,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
    ```
 4. 弹出模态窗。
 
-   在[模态窗](../harmonyos-references/ts-universal-attributes-sheet-transition.md)组件中，通过[Menu](../harmonyos-references/ts-basic-components-menu.md)结合[FormMenu](../harmonyos-references/ohos-arkui-advanced-formmenu.md)组件生成可选的卡片类型列表。通过前置条件配置好的信息，拿到所有卡片预览图，采用[轮播图](../harmonyos-references/ts-container-swiper.md)的方式，提供给用户选择不同的卡片预览图，给每一个预览图绑定[bindContextMenu](../harmonyos-references/ts-universal-attributes-menu.md#bindcontextmenu8)属性，预览图支持长按后，添加到桌面。
+   在[半模态转场](../doccenter-references/api/ts-universal-attributes-sheet-transition.md)组件中，通过[Menu](../doccenter-references/api/ts-basic-components-menu.md)结合[FormMenu](../doccenter-references/api/ohos-arkui-advanced-formmenu.md)组件生成可选的卡片类型列表。通过前置条件配置好的信息，拿到所有卡片预览图，采用轮播图（实现参考[Swiper](../doccenter-references/api/ts-container-swiper.md)组件）的方式，提供给用户选择不同的卡片预览图，给每一个预览图绑定[bindContextMenu](../doccenter-references/api/ts-universal-attributes-menu.md#bindcontextmenu8)属性，预览图支持长按后，添加到桌面。
 
    用户通过轮播图选择需要添加的卡片之后，也可以通过模态窗下方“添加到桌面”按钮，把卡片添加到桌面。
 
@@ -1283,11 +1283,11 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    **图 12** 应用内添加到桌面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/9U1KUta1Ttu_HxP1-kNvng/zh-cn_image_0000002767860694.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/tjcfRPMfQJKFghmhwgebBw/zh-cn_image_0000002801105547.gif)
 
 ### 音乐播控互动卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/0WIeSzsdSaaExb5yGDcyIA/zh-cn_image_0000002797180657.png)/
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/IMDMIJ2NTBeXno3jLlmwFg/zh-cn_image_0000002771665768.png)/
 
 **实现步骤**
 
@@ -1451,13 +1451,13 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
 **图 13** 歌单推荐卡片效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/DqPn8WvzQkuoS3-vt-L1eg/zh-cn_image_0000002768020680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Ff99hP8bSAWuJ_u30QiT7w/zh-cn_image_0000002800985625.png)
 
 **实现步骤**
 
 1. **更新卡片图片**
 
-   歌单推荐封面图片加载的是网络图片，加载网络图片需要申请ohos.permission.INTERNET权限。在卡片预览的时候会下载网络图片，并更新到卡片。网络图片的下载以及如何更新到卡片，开发者可以参考：[刷新本地图片和网络图片](arkts-ui-widget-image-update.md)。
+   歌单推荐封面图片加载的是网络图片，加载网络图片需要申请ohos.permission.INTERNET权限。在卡片预览的时候会下载网络图片，并更新到卡片。网络图片的下载以及如何更新到卡片，开发者可以参考：[刷新本地图片和网络图片](../doccenter-capabilities/arkts-ui-widget-image-update.md)。
 
    1. 首先在EntryFormAbility的onAddForm()方法中，调用FormUtils的updateRecommendedCard()方法更新卡片，示例代码如下。
 
@@ -1566,10 +1566,10 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    **说明** 
 
-   卡片加载的图片过大可能会导致卡片白屏，建议卡片加载的图片大小不超过2M，在加载卡片图片前需要判断下图片是否过大，如果过大可以采取压缩的方案，图片压缩可以参考FAQ：[如何将PixelMap压缩到指定大小以下](../harmonyos-faqs/faqs-image-16.md)。
+   卡片加载的图片过大可能会导致卡片白屏，建议卡片加载的图片大小不超过2M，在加载卡片图片前需要判断下图片是否过大，如果过大可以采取压缩的方案，图片压缩可以参考FAQ：[如何将图片压缩到指定大小以下](../doccenter-dev-faq/faqs-image-16.md)。
 2. **卡片跳转功能实现**
 
-   下面将以2x4卡片实现为例进行介绍，歌单推荐卡片使用的是静态卡片，通过[FormLink](../harmonyos-references/ts-container-formlink.md)组件进行跳转，有以下三种跳转场景。
+   下面将以2x4卡片实现为例进行介绍，歌单推荐卡片使用的是静态卡片，通过[FormLink](../doccenter-references/api/ts-container-formlink.md)组件进行跳转，有以下三种跳转场景。
 
    * 点击“我的收藏”方块跳转到收藏页面。
    * 点击“热门歌单”跳转到热门歌单页面。
@@ -1717,7 +1717,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
       }
       ```
 
-      跳转热门歌单，是当用户点击卡片上的“热门歌单”拉起应用后，音乐应用会从首页自动跳转到热门歌单列表页面。这一过程通过在MainPage的onPageShow回调函数中判断isToPlaylists参数来实现，如果该参数为true，则使用pageStack.pushPathByName()方法跳转到热门歌单页面。示例代码如下：
+      跳转热门歌单，是当用户点击卡片上的“热门歌单”拉起应用后，音乐应用会从首页自动跳转到热门歌单列表页面。这一过程通过在MainPage的onPageShow()回调函数中判断isToPlaylists参数来实现，如果该参数为true，则使用pageStack.pushPathByName()方法跳转到热门歌单页面。示例代码如下：
 
       ```ts
       // src/main/ets/pages/MainPage.ets
@@ -1767,7 +1767,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    **图 14** 点击卡片跳转效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/t03NLmmvRlWRa5STPo_jEg/zh-cn_image_0000002797300627.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/OZTE_zb_QOOWdt84oLSqHg/zh-cn_image_0000002771825736.gif)
 
 ### 心动歌词卡片
 
@@ -1888,7 +1888,7 @@ content_hash: sha256:e088f64a3022122eec464d497e1631ecb3df514928d122dc55b94f9ace6
 
    **图 15** 心动歌词卡片效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/7ao6CMm-S-qDQgUR8_qdog/zh-cn_image_0000002767860696.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Ysdsy08GTYyPJVmMexDK8w/zh-cn_image_0000002801105549.png)
 
 ## 常见问题
 
@@ -1907,7 +1907,7 @@ if (stackIndexArray.length > 0 && stackIndexArray[stackIndexArray.length-1] === 
 
 ### 手机重启/解锁后卡片内图片消失，出现白屏
 
-该问题可能是卡片加载的图片过大导致的，在加载卡片图片前需要判断图片是否过大，如果过大可以采取压缩的方案，图片压缩可以参考FAQ：[如何将PixelMap压缩到指定大小以下](../harmonyos-faqs/faqs-image-16.md)。关于卡片图片加载规格限制说明可以参考：[刷新本地图片和网络图片](arkts-ui-widget-image-update.md)。
+该问题可能是卡片加载的图片过大导致的，在加载卡片图片前需要判断图片是否过大，如果过大可以采取压缩的方案，图片压缩可以参考FAQ：[如何将PixelMap压缩到指定大小以下](../doccenter-dev-faq/faqs-image-16.md)。关于卡片图片加载规格限制说明可以参考：[刷新本地图片和网络图片](../doccenter-capabilities/arkts-ui-widget-image-update.md)。
 
 ### 手机重启后卡片数据变回兜底内容
 

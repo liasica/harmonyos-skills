@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-takeovers
 title: 托管网页中的媒体播放
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > 托管网页中的媒体播放
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:53+08:00
+scraped_at: 2026-10-27T07:38:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1e7ae74c145531a0f9528b050d9a2aac517fec0f5105cb4fc060c65828ba490d
+content_hash: sha256:bda1ee39640a6af8e15a4f55ab76e49b9821520457b03f1330001d8bea1d2b8c
 ---
 
 Web组件提供了应用接管网页中媒体播放的能力，用来支持应用增强网页的媒体播放，如画质增强等。
@@ -26,7 +26,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 不开启该功能时，ArkWeb内核的播放架构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Dc3GkjFITeKqQZg32SR5wQ/zh-cn_image_0000002768020560.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/frlXwhYHSkWxcPPMyP0Yrw/zh-cn_image_0000002800985507.png)
 
 **说明** 
 
@@ -35,7 +35,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 开启该功能后，ArkWeb内核的播放架构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/cSErt91AST-3jYbEbL-1Ug/zh-cn_image_0000002797300509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/-aaksE-iRruPr8-nFsmPUQ/zh-cn_image_0000002771825618.png)
 
 **说明** 
 
@@ -44,7 +44,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 ### ArkWeb内核与应用的交互
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/QR-pyD_hTE6chhjlwd2TyA/zh-cn_image_0000002767860576.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/3pBsS_iMRv-7tTWPZV92Nw/zh-cn_image_0000002801105431.png)
 
 **说明** 
 

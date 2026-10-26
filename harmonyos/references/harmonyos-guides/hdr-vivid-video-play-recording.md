@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-vivid-vid
 title: HDR Vivid视频播放与录制开发实践
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > HDR Vivid视频播放与录制开发实践
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:27+08:00
+scraped_at: 2026-10-27T07:39:28+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:ef40efd1f89746b6adb07e62e02cd653165a7f9a5959c1e3cd4576c00d98169f
+content_hash: sha256:9209919e36cb6e73618fc080ef82bd789ac1595aceff05f5a0e305676b65b6ab
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ HDR Vivid是高动态范围视频技术标准，中文名为“菁彩影像”�
 
 [AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)提供功能完善的一体化播放能力，应用只需提供流媒体来源，无需数据解析和解码，即可实现播放效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/1qyTiyX0QN-5gWKuAZaA_g/zh-cn_image_0000002797180971.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ZiFTJR5nTcauA3rQ35z6VQ/zh-cn_image_0000002771666082.png)
 
 ### 开发步骤
 
@@ -41,7 +41,7 @@ HDR Vivid是高动态范围视频技术标准，中文名为“菁彩影像”�
 
 AVCodec模块中[视频解码](video-decoding.md)的Native API接口，可以完成视频解码功能。解码后的YUV图像数据通过回调接口返回给应用，由应用侧自行控制送显。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/PHtmQOqKQ4-Rmm_cAANc3w/zh-cn_image_0000002768020994.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/48vMri_vSDyRcghrxaw5Kg/zh-cn_image_0000002800985939.png)
 
 ### 开发步骤
 
@@ -157,7 +157,7 @@ AVCodec模块中[视频解码](video-decoding.md)的Native API接口，可以完
 
 应用通过调用[AVRecorder](media-kit-intro.md#avrecorder)实现视频录制时，先通过Camera Kit接口调用相机服务，通过视频HDI捕获图像数据送显至应用，同时送至AVRecorder的录制服务，录制服务将图像数据编码后封装至文件中，实现视频录制功能。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/z1U3Oj2oTnavIfbaGca0EA/zh-cn_image_0000002797300941.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/zMz311D7SNeqvCWnVlhFdw/zh-cn_image_0000002771826050.png)
 
 **说明** 
 
@@ -378,7 +378,7 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
 
 应用通过调用AVCodec实现视频录制时，先通过Camera Kit接口调用相机服务，通过视频HDI捕获图像数据送显至应用，同时送至AVCodec的编码模块将图像数据编码后封装至文件中，实现视频录制功能。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/rM2Jzkp6Sku8J2x3tIWHYw/zh-cn_image_0000002767861010.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/9rwB2QShQlOvJ1wu96dCaA/zh-cn_image_0000002801105863.png)
 
 使用[Interface (CameraManager)](../harmonyos-references/arkts-apis-camera-cameramanager.md)+AVCodec录制HDR Vivid视频，与录制普通视频两者在组件配置上存在如下差异：
 

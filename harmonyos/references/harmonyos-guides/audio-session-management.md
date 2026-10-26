@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-session
 title: 音频会话管理(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 音频会话管理(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:03+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-10-27T07:39:26+08:00
+doc_updated_at: 2026-10-26
 content_hash: sha256:555979058139b37b682fc6bdca5f9abdf6e26e4acaecdb64a7f93c17c95c8406
 ---
 

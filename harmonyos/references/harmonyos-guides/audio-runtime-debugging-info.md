@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-runtime
 title: 使用音频快照获取问题定位信息
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit常见问题 > 使用音频快照获取问题定位信息
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-27T07:39:27+08:00
+doc_updated_at: 2026-10-26
 content_hash: sha256:20a9bb6617ccbabe2cab0f0df870a7d0b05837924d85b3cfd1220da9803f6d3a
 ---
 

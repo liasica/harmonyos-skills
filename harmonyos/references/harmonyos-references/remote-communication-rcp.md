@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-co
 title: rcp（数据请求）
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > ArkTS API > rcp（数据请求）
 category: harmonyos-references
-scraped_at: 2026-10-15T07:10:08+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:5f4cb30a798314b370ac3df9157bf6f1df00f49308ed0ea41cc01a9e595cae21
+scraped_at: 2026-10-27T07:42:34+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:35fce8fe3f4d1d03b9c4aa9fc649f52723f0597e9eba6b1b290dd8c0f4501cd4
 ---
 
 本模块提供HTTP数据请求功能。应用程序可通过HTTP发起数据请求。常见的HTTP方法包括GET、POST、HEAD、PUT、DELETE、PATCH、OPTIONS等。
@@ -393,7 +393,7 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise<Response>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP UPLOADFROMFILE请求资源的URL。 |
-| uploadFrom | [UploadFromFile](remote-communication-rcp.md#uploadfromfile) | 是 | 从本地计算机上传文件到服务器的请求。 |
+| uploadFrom | [UploadFromFile](remote-communication-rcp.md#uploadfromfile-2) | 是 | 从本地计算机上传文件到服务器的请求。 |
 
 **返回值：**
 
@@ -1038,7 +1038,7 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise<Response>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP UPLOADFROMFILE请求资源的URL。 |
-| uploadFrom | [UploadFromFile](remote-communication-rcp.md#uploadfromfile) | 是 | 从本地计算机上传文件到服务器的请求。 |
+| uploadFrom | [UploadFromFile](remote-communication-rcp.md#uploadfromfile-2) | 是 | 从本地计算机上传文件到服务器的请求。 |
 
 **返回值：**
 
@@ -1142,7 +1142,7 @@ uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise<Respon
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP UPLOADFROMSTREAM请求资源的URL。 |
-| uploadFrom | [UploadFromStream](remote-communication-rcp.md#uploadfromstream) | 是 | 从一个输入流中上传数据到服务器的请求。 |
+| uploadFrom | [UploadFromStream](remote-communication-rcp.md#uploadfromstream-2) | 是 | 从一个输入流中上传数据到服务器的请求。 |
 
 **返回值：**
 
@@ -3769,8 +3769,8 @@ RequestContent是HTTP模块中的一种类型，代表HTTP请求的内容。
 | [Form](remote-communication-rcp.md#form) | HTTP简单的表格数据。 |
 | [MultipartForm](remote-communication-rcp.md#multipartform) | HTTP多部分表格数据。 |
 | [GetDataCallback](remote-communication-rcp.md#getdatacallback) | 获取任意数据的回调方法的类型，其入参为数据最大字节数。 |
-| [UploadFromStream](remote-communication-rcp.md#uploadfromstream) | UploadFromStream表示以流的形式进行上传操作。  **起始版本：** 5.0.0(12) |
-| [UploadFromFile](remote-communication-rcp.md#uploadfromfile) | UploadFromFile表示一种文件上传的方式，允许客户端将本地计算机上的文件上传到服务器。  **起始版本：** 5.0.0(12) |
+| [UploadFromStream](remote-communication-rcp.md#uploadfromstream-2) | UploadFromStream表示以流的形式进行上传操作。  **起始版本：** 5.0.0(12) |
+| [UploadFromFile](remote-communication-rcp.md#uploadfromfile-2) | UploadFromFile表示一种文件上传的方式，允许客户端将本地计算机上的文件上传到服务器。  **起始版本：** 5.0.0(12) |
 | [INetworkInputQueue](remote-communication-rcp.md#inetworkinputqueue) | INetworkInputQueue是用于写请求体的同步写队列。  **起始版本：** 5.0.0(12) |
 
 ## Form

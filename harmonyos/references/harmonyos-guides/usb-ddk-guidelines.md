@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usb-ddk-guide
 title: 开发适用USB协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用USB协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:17+08:00
+scraped_at: 2026-10-27T07:39:19+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:25601fcf0eed161e9065bd1f5335f1fd46792c200d4de44f04718ef6231414b4
+content_hash: sha256:6b36ff3bbf520978f751158a6068a1c6b29bf987ee8813fd357245839666b220
 ---
 
 ## 简介
@@ -31,7 +31,7 @@ UsbDdk（USB Driver Development Kit）是为开发者提供的USB驱动程序开
 
 **图1** UsbDdk调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/yXpWXhbrShGeIFh5syN1iQ/zh-cn_image_0000002797180867.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/7tYarIs6SFSCBqpHZSFEqg/zh-cn_image_0000002771665978.png)
 
 ## 约束与限制
 

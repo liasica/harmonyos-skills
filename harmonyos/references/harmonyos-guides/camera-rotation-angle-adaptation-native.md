@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotati
 title: 适配相机旋转角度(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 相机旋转 > 适配相机旋转角度(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:30+08:00
+scraped_at: 2026-10-27T07:39:30+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:22cea98e51f1321bc2dbcade3bd9eed03b91a744992e6050804319071f97f77e
+content_hash: sha256:9bee96900092829b5f6defd496421682d38e19156bb95bceb2f901d0da61ecc8
 ---
 
 屏幕处于不同的屏幕状态时，原始图像需旋转不同的角度，以确保图像在合适的方向显示，效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/0F0DQPB-SJ6cB0DINBCJRw/zh-cn_image_0000002767861044.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/OgMoPi9PS7Kikhrd5J6Mtg/zh-cn_image_0000002801105899.png)
 
 本开发指导将指导开发者在预览、拍照、录像等不同场景下，如何适配相机的旋转角度。
 

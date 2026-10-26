@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 删除策略
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 删除策略
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:58+08:00
+scraped_at: 2026-10-27T07:39:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d733d15bf67d827f24b9aefbd4c38e89340b05b32accbaed776019a472b59d40
+content_hash: sha256:ecce9b40ca25dfe98d4f4db8fae955cf6c224b995be73b3a469db393e4bb04f3
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:d733d15bf67d827f24b9aefbd4c38e89340b05b32accbaed776019a472b
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/EIZWDWpORvinZd8XERen0g/zh-cn_image_0000002797301629.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/wKLRsV-_TdaP-Pusb5wWTg/zh-cn_image_0000002771826736.png)
 
 流程说明：
 

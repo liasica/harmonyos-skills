@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avsessi
 title: 媒体会话控制方
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 媒体会话控制方
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:04+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:16ad186bcba618f9ebe2b67020699a27659ad439b942922fc2620445e5fcb4e6
+scraped_at: 2026-10-27T07:39:28+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:fd926b8b305ab135046bcaa7f6e17f8e024da85e754d4f9745735a8c3bee766c
 ---
 
 从API版本23开始，支持应用通过AVSession Kit获取媒体会话的播放信息和控制媒体会话的播放暂停等，实现对系统中的音视频应用进行统一的播放控制。该文档介绍媒体会话控制方接口能力及开发基本流程，包括获取媒体会话提供方的元数据，播放状态信息等，也可向媒体会话提供方发送命令及事件，控制媒体会话提供方的播放、暂停等。
@@ -80,7 +80,7 @@ content_hash: sha256:16ad186bcba618f9ebe2b67020699a27659ad439b942922fc2620445e5f
          });
        } catch (error) {
          if (error) {
-           console.error(`avSession Error: Code: ${error.code}, message: ${error.message}`);
+           Log.error(TAG, `avSession Error: Code: ${error.code}, message: ${error.message}`);
          }
        }
      }
@@ -92,7 +92,7 @@ content_hash: sha256:16ad186bcba618f9ebe2b67020699a27659ad439b942922fc2620445e5f
      // 获取会话元数据。
      this.currentController?.getAVMetadata((error: BusinessError, metadata: avSession.AVMetadata) => {
        if (error) {
-         Log.info(TAG, 'Failed to get AV metadata, code: ' + error.code + ', message: ' + error.message);
+         Log.error(TAG, 'Failed to get AV metadata, code: ' + error.code + ', message: ' + error.message);
          return;
        }
        Log.info(TAG, 'Succeeded in getting AV metadata, assetId: ' + metadata.assetId);
@@ -104,7 +104,7 @@ content_hash: sha256:16ad186bcba618f9ebe2b67020699a27659ad439b942922fc2620445e5f
      // 获取播放状态。
      this.currentController?.getAVPlaybackState((error: BusinessError, state: avSession.AVPlaybackState) => {
        if (error) {
-         Log.info(TAG, 'Failed to get AV playback state, code: ' + error.code + ', message: ' + error.message);
+         Log.error(TAG, 'Failed to get AV playback state, code: ' + error.code + ', message: ' + error.message);
          return;
        }
        Log.info(TAG, 'Succeeded in getting AV playback state.');
@@ -136,7 +136,7 @@ content_hash: sha256:16ad186bcba618f9ebe2b67020699a27659ad439b942922fc2620445e5f
        // ...
      } catch (error) {
        if (error) {
-         console.error(`listenControllerInfo Error: Code: ${error.code}, message: ${error.message}`);
+         Log.error(TAG, `listenControllerInfo Error: Code: ${error.code}, message: ${error.message}`);
        }
      }
    }
@@ -150,7 +150,7 @@ content_hash: sha256:16ad186bcba618f9ebe2b67020699a27659ad439b942922fc2620445e5f
        this.currentController?.getValidCommands((error: BusinessError,
          validCommands: avSession.AVControlCommandType[]) => {
          if (error) {
-           Log.info(TAG, 'Failed to get valid commands, code: ' + error.code + ', message: ' + error.message);
+           Log.error(TAG, 'Failed to get valid commands, code: ' + error.code + ', message: ' + error.message);
            return;
          }
          Log.info(TAG, 'Succeeded in getting valid commands, size: ' + validCommands.length);
@@ -164,7 +164,7 @@ content_hash: sha256:16ad186bcba618f9ebe2b67020699a27659ad439b942922fc2620445e5f
        });
      } catch (error) {
        if (error) {
-         console.error(`validCommand Error: Code: ${error.code}, message: ${error.message}`);
+         Log.error(TAG, `validCommand Error: Code: ${error.code}, message: ${error.message}`);
        }
      }
    }
@@ -243,7 +243,7 @@ content_hash: sha256:16ad186bcba618f9ebe2b67020699a27659ad439b942922fc2620445e5f
        });
      } catch (error) {
        if (error) {
-         console.error(`destroy Error: Code: ${error.code}, message: ${error.message}`);
+         Log.error(TAG, `destroy Error: Code: ${error.code}, message: ${error.message}`);
        }
      }
    }

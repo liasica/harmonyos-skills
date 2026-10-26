@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avscreen_capture.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > native_avscreen_capture.h
 category: harmonyos-references
-scraped_at: 2026-09-25T07:13:23+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:c1cf9d552fa0a43199b6a7dc389dcc9a4e8371e260eb20b3fc87376a2577198f
+scraped_at: 2026-10-27T07:43:23+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:526d656cdd7cf779b9b9086f07d39f71976078eb799da5b7921c042552d495b8
 ---
 
 ## 概述
@@ -56,7 +56,7 @@ content_hash: sha256:c1cf9d552fa0a43199b6a7dc389dcc9a4e8371e260eb20b3fc87376a257
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_ExcludeContent(struct OH\_AVScreenCapture \*capture, struct OH\_AVScreenCapture\_ContentFilter \*filter)](capi-native-avscreen-capture-h.md#oh_avscreencapture_excludecontent) | 设置OH\_AVScreenCapture实例的内容过滤器ContentFilter。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_ContentFilter\_AddWindowContent(struct OH\_AVScreenCapture\_ContentFilter \*filter, int32\_t \*windowIDs, int32\_t windowCount)](capi-native-avscreen-capture-h.md#oh_avscreencapture_contentfilter_addwindowcontent) | 向ContentFilter实例添加可被过滤的窗口ID列表。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_ResizeCanvas(struct OH\_AVScreenCapture \*capture, int32\_t width, int32\_t height)](capi-native-avscreen-capture-h.md#oh_avscreencapture_resizecanvas) | 调整屏幕的分辨率。  调用该方法可以设置录屏屏幕数据的分辨率，width为屏幕的宽度，height为屏幕的高度。  该接口目前仅支持录屏取码流的场景，不支持录屏存文件的场景。并且调用该接口的调用者以及视频数据的消费者需要确保自身能够支持收到的视频数据分辨率发生变化。 |
-| [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_SkipPrivacyMode(struct OH\_AVScreenCapture \*capture, int32\_t \*windowIDs, int32\_t windowCount)](capi-native-avscreen-capture-h.md#oh_avscreencapture_skipprivacymode) | 录屏时豁免隐私窗口，应在录屏启动之前被调用。  调用该方法可以豁免隐私窗口，windowIDs为需要豁免的隐私窗口ID指针，windowCount 为隐私窗口ID列表的长度，目前豁免需要传入所有隐私子窗口和主窗口ID。 |
+| [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_SkipPrivacyMode(struct OH\_AVScreenCapture \*capture, int32\_t \*windowIDs, int32\_t windowCount)](capi-native-avscreen-capture-h.md#oh_avscreencapture_skipprivacymode) | 录屏时豁免隐私窗口，应在录屏启动之前被调用。  应用调用该方法可以豁免本应用隐私窗口，windowIDs为需要豁免的隐私窗口ID指针，windowCount为隐私窗口ID列表的长度，目前豁免需要传入所有隐私子窗口和主窗口ID。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_SetMaxVideoFrameRate(struct OH\_AVScreenCapture \*capture, int32\_t frameRate)](capi-native-avscreen-capture-h.md#oh_avscreencapture_setmaxvideoframerate) | 设置录屏时的最大帧率。  该接口应在录屏启动之后被调用。  调用该方法可以设置录屏时的最大帧率，frameRate为想要设置的最大帧率。  该接口设置最大帧率时，实际设置的帧率受限设备的能力，由底层的系统能力决定。  目前接口入参的最大值不设限制，但当前支持的最高帧率为60FPS，当入参设置超过60FPS，将以60FPS处理。不超过上限时，则按照实际入参值处理。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_ShowCursor(struct OH\_AVScreenCapture \*capture, bool showCursor)](capi-native-avscreen-capture-h.md#oh_avscreencapture_showcursor) | 设置光标显示开关。应在录屏启动之前被调用。 |
 | [OH\_AVSCREEN\_CAPTURE\_ErrCode OH\_AVScreenCapture\_SetDisplayCallback(struct OH\_AVScreenCapture \*capture, OH\_AVScreenCapture\_OnDisplaySelected callback, void \*userData)](capi-native-avscreen-capture-h.md#oh_avscreencapture_setdisplaycallback) | 设置获取录屏屏幕ID的回调。 |
@@ -826,7 +826,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SkipPrivacyMode(struct OH_AVScree
 
 录屏时豁免隐私窗口，应在录屏启动之前被调用。
 
-调用该方法可以豁免隐私窗口，windowIDs为需要豁免的隐私窗口ID指针，windowCount 为隐私窗口ID列表的长度，目前豁免需要传入所有隐私子窗口和主窗口ID。
+应用调用该方法可以豁免本应用隐私窗口，windowIDs为需要豁免的隐私窗口ID指针，windowCount为隐私窗口ID列表的长度，目前豁免需要传入所有隐私子窗口和主窗口ID。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-processi
 title: 拉起文件处理类应用（startAbility）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起文件处理类应用（startAbility）
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:30+08:00
+scraped_at: 2026-10-27T07:38:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:755afbfa0a598c08e056f7f24efff9f4e7de15c9809910995641960a22348b8b
+content_hash: sha256:8ef95c487f93f1a8f025ce2216f1e5b6094d2e7e2cbc0da0f050652ff4aed3ee
 ---
 
 ## 使用场景
@@ -16,7 +16,7 @@ content_hash: sha256:755afbfa0a598c08e056f7f24efff9f4e7de15c9809910995641960a223
 
 图1 效果示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Ga-m8hjQR9OnvQ7jqDVr9g/zh-cn_image_0000002797179511.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/iLZTCPzDSL6URO8s-qpQTA/zh-cn_image_0000002771664622.jpeg)
 
 ## 接口关键参数说明
 

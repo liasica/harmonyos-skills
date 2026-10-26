@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-multilin
 title: 多语言适配
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用本地化 > 多语言适配
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4188b49789ad25addc6ada381cda31d7ff9a34c6200f7cdf815f1b9f6110d4a3
+scraped_at: 2026-10-27T07:39:02+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:f211ee66f6b570f4108b28e2b65b26d64cefdb4e1d71b4ba020fd372ce81f414
 ---
 
 ## 功能介绍
@@ -24,7 +24,9 @@ content_hash: sha256:4188b49789ad25addc6ada381cda31d7ff9a34c6200f7cdf815f1b9f611
 
   ```typescript
   import { i18n } from '@kit.LocalizationKit';
+  ```
 
+  ```typescript
   // 获取系统区域对象
   let locale = i18n.System.getSystemLocaleInstance();
 
@@ -40,7 +42,9 @@ content_hash: sha256:4188b49789ad25addc6ada381cda31d7ff9a34c6200f7cdf815f1b9f611
 
   ```typescript
   import { i18n } from '@kit.LocalizationKit';
+  ```
 
+  ```typescript
   let systemLanguage = i18n.System.getSimplifiedLanguage();
   // languagesList根据应用实际需要进行配置。例如，当应用不需要区分不同的繁体中文时，可将'zh-Hant-HK'和'zh-Hant-TW'合并成'zh-Hant'
   let languagesList = ['zh-Hans', 'zh-Hant-HK', 'zh-Hant-TW'];

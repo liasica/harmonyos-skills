@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-developm
 title: Function Flow Runtime开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:16+08:00
+scraped_at: 2026-10-27T07:39:18+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:d4a245b432992d45a741142c966d80d594bb5c8d110ee562ecb472023daaec37
+content_hash: sha256:f866793608eb86a75572dd3a6dd36d3e7b30283e2dbb12964981bc445816ad22
 ---
 
 ## 介绍
@@ -603,7 +603,7 @@ FFRT C API已集成在NDK中，在DevEco Studio中可以直接使用对应的接
 
 FFRT的部署依赖FFRT动态库libffrt.so和一组头文件，其中动态库仅导出C接口，C++接口调用C接口，并基于头文件的方式将API中的C++元素编译到用户的动态库中，从而保证了ABI兼容性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/bNZKhzC4TcqfiLpKRAe77A/zh-cn_image_0000002768020872.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/kGDV-APyTfm_lqZilDB36w/zh-cn_image_0000002800985817.png)
 
 如果要使用FFRT C++ API，需要使用FFRT C++接口三方库[@ppd/ffrt](https://ohpm.openharmony.cn/#/cn/detail/@ppd%2Fffrt)，该三方库是由FFRT官方维护的FFRT C++ API库。
 

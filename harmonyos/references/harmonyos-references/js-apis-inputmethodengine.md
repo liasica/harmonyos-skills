@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.inputMethodEngine (输入法服务)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethodEngine (输入法服务)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:08:37+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:cf83d37782068bfa66acc237227c5cc196ebffc238ab8c1c69ccd9472e2c1928
+scraped_at: 2026-10-27T07:42:05+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:956bc2e859ddf7f51ec7598935abea18f97a999d3726be1c1506c37277490962
 ---
 
 @ohos.inputMethodEngine模块是面向输入法应用（包括系统输入法和第三方输入法）的服务端API模块，提供了输入法应用与系统输入法框架之间的交互能力。
@@ -467,7 +467,7 @@ on(type: 'inputStop', callback: () => void): void
 
 订阅停止输入法应用事件。使用callback异步回调。
 
-使用场景：输入法应用需要在编辑框失去焦点或用户切换输入法时，执行清理操作（如隐藏面板、释放资源）。
+使用场景：输入法应用需要在用户切换输入法时，执行清理操作（如隐藏面板、释放资源）。
 
 使用后效果：当输入法应用被停止绑定时触发回调。输入法应用应在回调中隐藏面板、取消事件订阅、释放InputClient相关资源。
 

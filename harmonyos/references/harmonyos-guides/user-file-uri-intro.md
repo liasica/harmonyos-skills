@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri
 title: 用户文件URI介绍
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 用户文件URI介绍
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:54+08:00
+scraped_at: 2026-10-27T07:38:59+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9df2ca1887a52fa30198754eff18d2fc6c199dc79cc1cec19f8f7b71e6c28085
+content_hash: sha256:63ef2bd2c040567b056f1c6680482001cafa688ad05e5660f583541b31a452f3
 ---
 
 用户文件URI是文件的唯一标识，在对用户文件进行访问与修改等操作时往往都会使用到URI，不建议开发者解析URI中的片段用于业务代码开发，不同类型的URI使用方式将在下文详细介绍。
@@ -17,7 +17,7 @@ URI类型可以归纳为文档类URI和媒体文件URI两类
 * 文档类URI：由picker拉起文件管理器选择或保存返回。具体获取方式参见[文档类URI获取方式](user-file-uri-intro.md#文档类uri获取方式)。
 * 媒体文件URI：由picker通过拉起图库选择图片或者视频返回，通过photoAccessHelper模块获取图片或者视频文件的URI，以及通过userFileManager模块获取图片、视频或者音频文件的URI。具体获取方式参见[媒体文件URI获取方式](user-file-uri-intro.md#媒体文件uri获取方式)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/qQe5ZNwbSPC4zzzOZZV7DA/zh-cn_image_0000002797300563.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/985j-sDETC663561asOJ7Q/zh-cn_image_0000002771825672.png)
 
 ## 文档类URI
 

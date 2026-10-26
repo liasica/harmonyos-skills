@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-transi
 title: 删除交通卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 交通卡 > 开发场景 > 删除交通卡
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:00+08:00
+scraped_at: 2026-10-27T07:39:56+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:014d2c35de9d795b765261590c039669b1dde39b5198dbed30725a30a6f6723c
+content_hash: sha256:896fea2b09c66177310ae81be5374dc50f02d0bd30ad36a63fbec1190b6666e7
 ---
 
 删除钱包中的交通卡，同时取消与交通卡公司的关联关系。
@@ -14,7 +14,7 @@ content_hash: sha256:014d2c35de9d795b765261590c039669b1dde39b5198dbed30725a30a6f
 
 交通卡的删卡过程分为：卡片展示、生成删卡业务订单和发起删卡三个步骤，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/2L-bsB2iQBuZV3GLDph4vg/zh-cn_image_0000002797301665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/mEy5bc94TyC80AY2GlEDvw/zh-cn_image_0000002771826772.png)
 
 ## 开发步骤
 

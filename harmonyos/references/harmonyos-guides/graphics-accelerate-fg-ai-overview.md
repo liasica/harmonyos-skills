@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > AI超帧模式 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:38+08:00
+scraped_at: 2026-10-27T07:39:37+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9c4592257ecad05ee28831b6d5182ad880fedebccd004da1a91fd357710fa325
+content_hash: sha256:9a423cd0640257c095f92fe85e73609fb654791d184ddf0531762ddaf9b44940
 ---
 
 从6.0.0(20)版本开始，新增支持AI超帧能力。
 
 AI超帧主要利用了设备上的NPU执行模型推理，大幅降低GPU上的负载从而降低渲染的功耗。此外，AI超帧相比传统超帧算法在大幅运动和非线性运动场景的预测效果上也有明显优势。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/pUlgBGJcT2WlgnQbhogwuA/zh-cn_image_0000002767861218.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/s2XyFN5VRPqzA5Mq0CS-KQ/zh-cn_image_0000002801106071.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avp
 title: 使用AVPlayer播放音频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用AVPlayer播放音频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:32+08:00
+scraped_at: 2026-10-27T07:39:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:fe3667c94a8c6c7ac977ba96d94547ec252fdee89b7501376c2e99c4c13cf962
+content_hash: sha256:8456591755b7da8feddc8c600fc4222fd3434496bc1f79cba6f1ed31d4e6086f
 ---
 
 使用[AVPlayer](media-kit-intro.md#avplayer)可以实现端到端播放原始媒体资源，本开发指导将以完整地播放一首音乐作为示例，向开发者讲解AVPlayer音频播放相关功能。
@@ -16,7 +16,7 @@ content_hash: sha256:fe3667c94a8c6c7ac977ba96d94547ec252fdee89b7501376c2e99c4c13
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/6EeV8IhRT1OFQHLwN4tM2Q/zh-cn_image_0000002768021074.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/yRUvkPCZT82I7Tbn1u84sQ/zh-cn_image_0000002800986019.png)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multimedia-hi
 title: 如何正确处理高像素图片
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > Media Library Kit常见问题 > 如何正确处理高像素图片
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:8da9a085c328899196242fd6c1861f495bdd2ef65492314953881cd31597e0cc
+scraped_at: 2026-10-27T07:39:34+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:c32b6c805a9393897262179a1471a4ce92696157c3d90b79eea2417770a56832
 ---
 
 ## 概述
@@ -183,8 +183,8 @@ target_link_libraries(entry PUBLIC libimage_source.so libimage_common.so)
 ```cpp
 #include <cstdlib>
 #include <cstring>
-#include <multimedia/image_framework/image_source_native.h>
-#include <multimedia/image_framework/image_common.h>
+#include <multimedia/image_framework/image/image_source_native.h>
+#include <multimedia/image_framework/image/image_common.h>
 
 /**
  * @brief 通过文件描述符获取图片MIME类型。

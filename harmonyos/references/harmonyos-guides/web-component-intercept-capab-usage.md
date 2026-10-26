@@ -3,30 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: Web组件拦截能力的使用
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > Web组件拦截能力的使用
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:52+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:00a45758e5256572c20528b48c7a6c60853a0f89cb7cf054527e773454be7488
+scraped_at: 2026-10-27T07:38:57+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:d07d6f2069f85fdbeaeecc396ab517226e0add686e98f6248c4de7d48429a55a
 ---
 
 ## 概述
 
-[ArkWeb](web-component-overview.md)（方舟Web）提供的Web组件支持在应用嵌入网页访问功能。在实际使用过程中，网页内的大量图片、视频等静态资源容易造成用户流量消耗过快，同时，嵌入的恶意脚本也会拖慢网页加载速度，影响用户体验。为此，可以利用Web组件的拦截能力，使用本地资源副本替换高频访问的静态资源，并基于黑名单机制拦截恶意脚本的加载，从而有效提升网页加载效率，优化用户体验。
+[ArkWeb简介](web-component-overview.md)（方舟Web）提供的Web组件支持在应用嵌入网页访问功能。在实际使用过程中，网页内的大量图片、视频等静态资源容易造成用户流量消耗过快，同时，嵌入的恶意脚本也会拖慢网页加载速度，影响用户体验。为此，可以利用Web组件的拦截能力，使用本地资源副本替换高频访问的静态资源，并基于黑名单机制拦截恶意脚本的加载，从而有效提升网页加载效率，优化用户体验。
 
 ArkWeb提供了多种拦截能力，使开发者能够监控、修改和记录网络请求及其响应，有助于实现业务功能的自定义与性能提升等。这些能力在拦截时机、拦截范围和拦截效果等方面存在差异，因此适用于不同的开发场景。本文将介绍三种基于Web组件的拦截方案，并提供各方案在典型应用场景中的实例，帮助开发者更好地掌握ArkWeb拦截能力的选择和使用。
 
 ## 原理介绍
 
-应用可通过[onLoadIntercept()](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)接口拦截Web组件的页面跳转，或通过[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)接口和[WebSchemeHandler](../harmonyos-references/arkts-apis-webview-webschemehandler.md)机制拦截Web组件发起的网络请求。这三种拦截方案存在一定的差异，以下为具体原理和使用场景介绍。
+应用可通过[onLoadIntercept](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)接口拦截Web组件的页面跳转，或通过[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)接口和[WebSchemeHandler](../harmonyos-references/arkts-apis-webview-webschemehandler.md)机制拦截Web组件发起的网络请求。这三种拦截方案存在一定的差异，以下为具体原理和使用场景介绍。
 
 **表 1** 三种Web组件的拦截方案
 
 | 使用场景 | 页面跳转控制 | 网络请求拦截 | 网络请求拦截 |
 | --- | --- | --- | --- |
 | 方案 | onLoadIntercept | onInterceptRequest | WebSchemeHandler |
-| 典型应用场景 | • [Web和应用的跳转与拉起](navigating-between-web-and-apps.md)  • [请求重定向](web-component-intercept-capab-usage.md#请求重定向)  • [页面白名单配置](web-component-intercept-capab-usage.md#页面白名单配置) | • [本地资源替换](web-component-intercept-capab-usage.md#本地资源替换)  • [自定义资源加载策略](web-component-intercept-capab-usage.md#自定义资源加载策略)  • 提示恶意请求 | 除支持 onInterceptRequest 的应用场景外，还支持：  • [配置公共请求头](web-component-intercept-capab-usage.md#配置公共请求头)  • 跨域请求  • POST请求拦截 |
+| 典型应用场景 | • [Web和应用的跳转与拉起](navigating-between-web-and-apps.md)  • [请求重定向](web-component-intercept-capab-usage.md#请求重定向)  • [页面白名单配置](web-component-intercept-capab-usage.md#页面白名单配置) | • [本地资源替换](web-component-intercept-capab-usage.md#本地资源替换)  • [自定义资源加载策略](web-component-intercept-capab-usage.md#自定义资源加载策略)  • 提示恶意请求 | 除支持onInterceptRequest的应用场景外，还支持：  • [配置公共请求头](web-component-intercept-capab-usage.md#配置公共请求头)  • 跨域请求  • POST请求拦截 |
 | 拦截时机 | Web组件加载url之前 | 请求发起前 | 请求发起前 |
 | 拦截范围 | 页面主URL的请求（包括页面中iframe的导航行为，不包括子资源的请求） | 页面主URL的请求和子资源的请求 | 页面主URL的请求和子资源的请求 |
-| 数据访问能力 | 支持获取请求的 URL、是否为主 frame 等相关信息  参考：[WebResourceRequest](../harmonyos-references/arkts-basic-components-web-webresourcerequest.md) | 支持获取请求的 URL、是否为主 frame 等相关信息  参考：[WebResourceRequest](../harmonyos-references/arkts-basic-components-web-webresourcerequest.md) | 除支持获取请求的 URL、是否为主 frame 等相关信息外，还支持获取 POST 请求体和 buffer 类型数据  参考：[WebSchemeHandlerRequest](../harmonyos-references/arkts-apis-webview-webschemehandlerrequest.md) |
+| 数据访问能力 | 支持获取请求的URL、是否为主frame等相关信息  参考：[WebResourceRequest](../harmonyos-references/arkts-basic-components-web-webresourcerequest.md) | 支持获取请求的URL、是否为主frame等相关信息  参考：[WebResourceRequest](../harmonyos-references/arkts-basic-components-web-webresourcerequest.md) | 除支持获取请求的URL、是否为主frame等相关信息外，还支持获取POST请求体和buffer类型数据  参考：[WebSchemeHandlerRequest](../harmonyos-references/arkts-apis-webview-webschemehandlerrequest.md) |
 | 拦截效果 | 可以拦截或放行Web组件发起当前请求 | 可以拦截当前请求并返回自定义响应，或者放行当前请求并返回原始响应 | 可以拦截当前请求并返回自定义响应，或者放行当前请求并返回原始响应 |
 
 三种拦截方案的不同特性，对应着不同的使用场景。下面将分别提供这三种方案的使用指导，开发者可根据实际应用场景选择合适的拦截方案。
@@ -73,11 +73,11 @@ ArkWeb提供了多种拦截能力，使开发者能够监控、修改和记录�
 
 ## 基于onLoadIntercept()拦截能力的使用
 
-Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)回调，用于判断是否拦截此次请求。基于该回调，可以实现[请求重定向](web-component-intercept-capab-usage.md#请求重定向)或[页面白名单配置](web-component-intercept-capab-usage.md#页面白名单配置)功能。
+Web组件在加载URL前会触发[onLoadIntercept](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)回调，用于判断是否拦截此次请求。基于该回调，可以实现[请求重定向](web-component-intercept-capab-usage.md#请求重定向)或[页面白名单配置](web-component-intercept-capab-usage.md#页面白名单配置)功能。
 
 **图 1** 基于onLoadIntercept()的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/aO2oc_gURj6AKO2k6fTykw/zh-cn_image_0000002767860566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3LBPfBDtT2yQ5Kpl_Cuuqw/zh-cn_image_0000002801105421.png)
 
 ### 请求重定向
 
@@ -87,11 +87,11 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 
 **图 2** 请求重定向
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Nm0lspqaSK-okyboDzYYwg/zh-cn_image_0000002797180531.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/XuSIbQeURYGEG4EJKV07gw/zh-cn_image_0000002771665642.png)
 
 **实现原理**
 
-在Web组件的[onLoadIntercept()](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)回调中获取请求的URL，若URL满足重定向条件，则通过[WebviewController.loadUrl()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#loadurl)加载重定向页面。
+在Web组件的[onLoadIntercept](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)回调中获取请求的URL，若URL满足重定向条件，则通过[loadUrl](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#loadurl)加载重定向页面。
 
 **开发步骤**
 
@@ -175,11 +175,11 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 
 **图 3** 页面白名单配置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/DbEIj7pdTUePbo0UkGc1AA/zh-cn_image_0000002768020552.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Gti6MznbT5Gh-5ly2mGQsg/zh-cn_image_0000002800985499.png)
 
 **实现原理**
 
-在Web组件的[onLoadIntercept()](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)回调中获取请求的URL，若URL不属于白名单链接，则跳转到浏览器打开请求页面。
+在Web组件的[onLoadIntercept](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)回调中获取请求的URL，若URL不属于白名单链接，则跳转到浏览器打开请求页面。
 
 **开发步骤**
 
@@ -296,11 +296,11 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 
 ## 基于onInterceptRequest()拦截能力的使用
 
-Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)回调，用于判断是否拦截此次请求并返回自定义响应数据。基于该回调，可以实现[本地资源替换](web-component-intercept-capab-usage.md#本地资源替换)或[自定义资源加载策略](web-component-intercept-capab-usage.md#自定义资源加载策略)。
+Web组件在加载URL之前会触发[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)回调，用于判断是否拦截此次请求并返回自定义响应数据。基于该回调，可以实现[本地资源替换](web-component-intercept-capab-usage.md#本地资源替换)或[自定义资源加载策略](web-component-intercept-capab-usage.md#自定义资源加载策略)。
 
 **图 4** 基于onInterceptRequest()的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/V1T5ioxPTnCiKiurp2oy-g/zh-cn_image_0000002797300501.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/EKPN9eK9Te2fG8vf5TSRlQ/zh-cn_image_0000002771825610.png)
 
 ### 本地资源替换
 
@@ -310,11 +310,11 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 5** 本地资源替换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/RcIsTnGDT3WFNNAtUSmNTg/zh-cn_image_0000002767860568.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/3obsK2P4R9-IbwNrqF2drg/zh-cn_image_0000002801105423.png)
 
 **实现原理**
 
-在Web组件的[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)回调中获取网络请求信息，通过网络请求资源与本地资源的映射关系，获取对应的本地资源并将其设置给[WebResourceResponse](../harmonyos-references/arkts-basic-components-web-webresourceresponse.md)作为请求响应。
+在Web组件的[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)回调中获取网络请求信息，通过网络请求资源与本地资源的映射关系，获取对应的本地资源并将其设置给[WebResourceResponse](../harmonyos-references/arkts-basic-components-web-webresourceresponse.md)作为请求响应。
 
 **开发步骤**
 
@@ -331,12 +331,15 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
        ['index.html', 'text/html'],
        ['mountain.png', 'image/png']
      ]);
-       Web({ src: this.requestUrl, controller: this.controller })
-         .onInterceptRequest((event) => {
-           // Update scheme map before intercepting
-           this.viewModel?.updateMappings(this.schemeMap, this.mimeTypeMap);
-           // ...
-         })
+   ```
+
+   ```ts
+     Web({ src: this.requestUrl, controller: this.controller })
+       .onInterceptRequest((event) => {
+         // Update scheme map before intercepting
+         this.viewModel?.updateMappings(this.schemeMap, this.mimeTypeMap);
+         // ...
+       })
    ```
 
    ```ts
@@ -387,6 +390,9 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
        }
        // ...
      }
+   ```
+
+   ```ts
      /**
       * Gets the matching URL scheme key from the map
       */
@@ -431,6 +437,9 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
        // Create response with local file
        return this.createLocalResourceResponse(rawfileName, mimeType);
      }
+   ```
+
+   ```ts
      /**
       * Creates a response with local file data
       */
@@ -458,15 +467,15 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 6** Wi-Fi网络环境下加载图片资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Fq4eaYSURyu6SyLCY4mRtA/zh-cn_image_0000002797180533.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/UGcJ4NU1TqqI-fwxmzoMRg/zh-cn_image_0000002771665644.png)
 
 **图 7** 非Wi-Fi网络环境下加载本地占位图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ztPHPgkFRPGCdnNx5Kr6VQ/zh-cn_image_0000002768020554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/9_9537n-R_uwuRCLcGiUAA/zh-cn_image_0000002800985501.png)
 
 **实现原理**
 
-在Web组件的[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)回调中获取网络请求信息，对于图片资源请求，判断当前是否处于Wi-Fi网络环境下。若非Wi-Fi网络环境，则将本地占位图设置给[WebResourceResponse](../harmonyos-references/arkts-basic-components-web-webresourceresponse.md)作为请求响应。
+在Web组件的[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)回调中获取网络请求信息，对于图片资源请求，判断当前是否处于Wi-Fi网络环境下。若非Wi-Fi网络环境，则将本地占位图设置给[WebResourceResponse](../harmonyos-references/arkts-basic-components-web-webresourceresponse.md)作为请求响应。
 
 **开发步骤**
 
@@ -485,6 +494,9 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
        }
        // ...
      }
+   ```
+
+   ```ts
      /**
       * Checks if currently connected to a Wi-Fi network
       */
@@ -528,6 +540,9 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
        }
        // ...
      }
+   ```
+
+   ```ts
      /**
       * Checks if a URL request is for an image
       */
@@ -552,6 +567,9 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
        // Replace with placeholder image
        return this.createPlaceholderResponse();
      }
+   ```
+
+   ```ts
      /**
       * Creates a placeholder image response for non-WiFi networks
       */
@@ -577,7 +595,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 8** 基于WebSchemeHandler的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/sYk3cFinQAia64ZqmEmsGQ/zh-cn_image_0000002797300503.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/2moJDnTXQOePrNaA2hG__Q/zh-cn_image_0000002771825612.png)
 
 ### 配置公共请求头
 
@@ -587,7 +605,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 **图 9** 配置公共请求头
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/IZ4sjuSuRveTnBih5T4Xbg/zh-cn_image_0000002767860570.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/YBLtCrF0Q22oSYJkAQHQRQ/zh-cn_image_0000002801105425.png)
 
 **实现原理**
 
@@ -601,7 +619,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
      // Bind interceptor to HTTP
      controller.setWebSchemeHandler('http', this.schemeHandler);
    ```
-2. 在[WebSchemeHandler.onRequestStart()](../harmonyos-references/arkts-apis-webview-webschemehandler.md#onrequeststart12)回调中拦截网络请求。
+2. 在[onRequestStart](../harmonyos-references/arkts-apis-webview-webschemehandler.md#onrequeststart12)回调中拦截网络请求。
 
    ```ts
      // Set up request interceptor
@@ -631,7 +649,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
        }
      }
    ```
-4. 通过[rcp](../harmonyos-references/remote-communication-rcp.md)将请求转发到服务端获取请求响应。
+4. 通过[rcp（数据请求）](../harmonyos-references/remote-communication-rcp.md)将请求转发到服务端获取请求响应。
 
    ```ts
      /**
@@ -719,11 +737,11 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 
 ### Web组件支持异步判断是否拦截网络请求吗
 
-不支持。Web组件不支持异步判断是否拦截网络请求，但是可以在拦截网络请求后，异步处理响应数据，具体可参考[onInterceptRequest()示例代码](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)。
+不支持。Web组件不支持异步判断是否拦截网络请求，但是可以在拦截网络请求后，异步处理响应数据，具体可参考[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)示例代码。
 
 ### Web组件是否支持拦截Ajax原始响应
 
-不支持。Web组件目前仅提供网络请求的拦截方法，无法拦截请求的响应。然而，可以通过[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)回调或[WebSchemeHandler](../harmonyos-references/arkts-apis-webview-webschemehandler.md)机制自定义响应。
+不支持。Web组件目前仅提供网络请求的拦截方法，无法拦截请求的响应。然而，可以通过[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)回调或[WebSchemeHandler](../harmonyos-references/arkts-apis-webview-webschemehandler.md)机制自定义响应。
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audioca
 title: 使用AudioCapturer开发音频录制功能(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 使用AudioCapturer开发音频录制功能(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:25+08:00
+scraped_at: 2026-10-27T07:39:26+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:db1a8be6d2552b32fcab27e1f5000576bd232beef589f07352f7c6163349714f
+content_hash: sha256:ee32587550820b4729065246ea713bfec933220fd2778fdd63f339cfffb5b2fc
 ---
 
 AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音频数据，适合有音频开发经验的开发者实现更灵活的录制功能。
@@ -22,7 +22,7 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/az2lRojvTDuTwLWB17O5FQ/zh-cn_image_0000002768020958.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/IkrBOGYgQFKTuJ_71x-bHg/zh-cn_image_0000002800985903.png)
 
 ### 开发步骤及注意事项
 

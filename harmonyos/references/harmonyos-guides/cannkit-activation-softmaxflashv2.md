@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-activ
 title: SoftmaxFlashV2
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 激活函数 > SoftmaxFlashV2
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:07+08:00
+scraped_at: 2026-10-27T07:40:03+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:3bc1da5452c8a5910a5c14242077d5bd889c6cbbd86b53bb6adf294f38936293
+content_hash: sha256:24dff8bd0f62b0a60978e35e7751a1c25cadc4363134a605c549c72d06dbbc0d
 ---
 
 ## 功能说明
@@ -14,10 +14,10 @@ content_hash: sha256:3bc1da5452c8a5910a5c14242077d5bd889c6cbbd86b53bb6adf294f389
 
 * update为false：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/pt9bOQ6lQIWehMef5_ftTg/zh-cn_image_0000002797301781.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/bu9tPJF2TfqMk69wINz7LQ/zh-cn_image_0000002771826888.png)
 * update为true：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/NB2GGbeMRoiVxiyHuS193w/zh-cn_image_0000002767861850.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/j1VkFTeoTCWM2NIUEsoneQ/zh-cn_image_0000002801106703.png)
 
 当输入shape为ND格式时，内部的reduce过程按last轴进行。当输入shape为NZ格式时，内部的reduce过程按照last轴和first轴进行
 

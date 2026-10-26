@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp-overview
 title: 数据防泄漏服务简介
 breadcrumb: 指南 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 数据防泄漏服务 > 数据防泄漏服务简介
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:03+08:00
+scraped_at: 2026-10-27T07:39:06+08:00
 doc_updated_at: 2026-07-17
-content_hash: sha256:7441e54678f50dc8363909f0053c1326d9917b8e3edf02d27101a365c9c55034
+content_hash: sha256:6b5cc624b00a9a4119e8afaac8d93c0b9ee205483c0a649700f7c5207c5984fa
 ---
 
 数据防泄漏服务（Data Loss Prevention，简称为DLP），是系统提供的系统级的数据防泄漏解决方案，提供文件权限管理、加密存储、授权访问等能力，数据所有者可以基于账号认证对机密文件进行权限配置，允许设置只读、编辑、拥有者等权限，随后机密文件会通过密文存储，在支持DLP机制的设备上可以通过端云协同进行认证授权，获取对数据的访问和修改的能力。
@@ -26,7 +26,7 @@ DLP整体解决方案由3个主要部件构成。
 
 ## 运作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_2fBXClHR0e0a84BdfKQHw/zh-cn_image_0000002797180735.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/RyR8_syxRsamOri3zSOYeQ/zh-cn_image_0000002771665846.png)
 
 **DLP文件生成**
 

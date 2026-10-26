@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hid-ddk-guide
 title: 开发适用HID协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用HID协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:17+08:00
+scraped_at: 2026-10-27T07:39:19+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9a7c8c580728ede81e5b670fd36424b2a2ba58a36b4feb5f14b365af5a3ebb05
+content_hash: sha256:41761e4cdb66a55a5443357284211dc4ebfc4e940bafa9af2aaeb0ad38f57868
 ---
 
 ## 简介
@@ -31,7 +31,7 @@ HidDdk（HID Driver Development Kit）是为开发者提供的HID设备驱动程
 
 **图1** HidDdk调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/qQbeuzTySbS7IfSlBoa3Qg/zh-cn_image_0000002797180867.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/IYxkcZHlRl-gEWA4tV53xg/zh-cn_image_0000002771665978.png)
 
 ## 约束与限制
 

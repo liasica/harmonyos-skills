@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan-oh
 title: Vulkan External Memory开发指导
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan开发指导 > Vulkan External Memory开发指导
 category: harmonyos-references
-scraped_at: 2026-10-15T07:13:01+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:45016a5639487a13d32a07f0fc0a4f284b401e7ef9553a5438077b82dba1fa4f
+scraped_at: 2026-10-27T07:44:12+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:e8fddaf28d39c96455227e27f026d2c91876eba96916db81eda820f354078f13
 ---
 
 ## 场景介绍
@@ -84,9 +84,9 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
    动态加载libvulkan.so，并加载Vulkan基础函数的指针。
 
    ```
-   // Dynamically load Vulkan library and base function pointers
+   // 动态加载Vulkan库及基础函数指针
    bool LoadVulkanLibrary() {
-       // Load vulkan library
+       // 加载Vulkan库
        constexpr char *path = "libvulkan.so";
        dlerror();
        g_libVulkan = dlopen(path, RTLD_NOW | RTLD_LOCAL);
@@ -95,7 +95,7 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
            return false;
        }
 
-       // Load base function pointers
+       // 加载基础函数指针
        vkEnumerateInstanceExtensionProperties = reinterpret_cast<PFN_vkEnumerateInstanceExtensionProperties>(
            dlsym(g_libVulkan, "vkEnumerateInstanceExtensionProperties"));
        vkEnumerateInstanceLayerProperties = reinterpret_cast<PFN_vkEnumerateInstanceLayerProperties>(
@@ -423,7 +423,7 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
        VkMemoryDedicatedAllocateInfo dedicatedAllocateInfo = {
            .sType = VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO,
            .pNext = &importBufferInfo,
-           .image = VK_NULL_HANDLE, // will be set later
+           .image = VK_NULL_HANDLE, // 将在稍后设置
            .buffer = VK_NULL_HANDLE
        };
 
@@ -446,7 +446,7 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
            .sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO,
            .pNext = &dedicatedAllocateInfo,
            .allocationSize = nbProps.allocationSize,
-           .memoryTypeIndex = 0 // Memory type assigned in the next step
+           .memoryTypeIndex = 0 // 将在下一步中赋值的内存类型索引
        };
 
        mapMemoryTypeToIndex(nbProps.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, &allocInfo.memoryTypeIndex);
@@ -486,7 +486,7 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
            .sharingMode = VK_SHARING_MODE_EXCLUSIVE,
            .queueFamilyIndexCount = 1,
            .pQueueFamilyIndices = &queueFamilyIndex_,
-           // VK_IMAGE_LAYOUT_UNDEFINED is mandatory when using external memory
+           // 在使用外部内存时，VK_IMAGE_LAYOUT_UNDEFINED是必需的
            .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED
        };
 
@@ -538,7 +538,7 @@ VK\_OHOS\_external\_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本�
        };
        CheckResult(vkCreateImageView(device, &view, nullptr, &externalTextureInfo.view));
 
-       // Create sampler
+       // 创建采样器
        const VkSamplerCreateInfo sampler = {
            .sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO,
            .pNext = &convInfoWrap,

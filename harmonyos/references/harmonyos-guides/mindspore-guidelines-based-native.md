@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-gui
 title: 使用MindSpore Lite实现图像分类 (C/C++)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite实现图像分类 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:20+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:0f6fccd039afca82278f92a68ae9374bd1849bdf4c511deff2e90126ef6311e0
+scraped_at: 2026-10-27T07:40:15+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:e2a34e0fe8d20fdfe81fbe084804bca27b134e6d82caa6562b465bad678e859a
 ---
 
 ## 场景说明
@@ -63,20 +63,25 @@ content_hash: sha256:0f6fccd039afca82278f92a68ae9374bd1849bdf4c511deff2e90126ef6
        auto rawFile = OH_ResourceManager_OpenRawFile(nativeResourceManager, modelName.c_str());
        if (rawFile == nullptr) {
            LOGE("MS_LITE_ERR: Open model file failed");
-           OH_ResourceManager_CloseRawFile(rawFile);
            return nullptr;
        }
        long fileSize = OH_ResourceManager_GetRawFileSize(rawFile);
        if (fileSize <= 0) {
            LOGE("MS_LITE_ERR: FileSize not correct");
+           OH_ResourceManager_CloseRawFile(rawFile);
+           return nullptr;
        }
        void *modelBuffer = malloc(fileSize);
        if (modelBuffer == nullptr) {
            LOGE("MS_LITE_ERR: malloc failed");
+           OH_ResourceManager_CloseRawFile(rawFile);
+           return nullptr;
        }
        int ret = OH_ResourceManager_ReadRawFile(rawFile, modelBuffer, fileSize);
        if (ret == 0) {
            LOGE("MS_LITE_ERR: OH_ResourceManager_ReadRawFile failed");
+           free(modelBuffer);
+           modelBuffer = nullptr;
            OH_ResourceManager_CloseRawFile(rawFile);
            return nullptr;
        }
@@ -558,9 +563,9 @@ struct Index {
 
 在设备上，点击photo按钮，选择相册中的一张图片，点击确定。在图片下方显示此图片占比前4的分类信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/AHRifS2_RReGXhpXE0YbYg/zh-cn_image_0000002767861922.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/3gPGWr3nQ12s63lMCY07Ow/zh-cn_image_0000002797181883.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/I2rRWbpFS4aIvIdg5NRSSw/zh-cn_image_0000002801106775.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/9tp4j_aDRjClH8k0n-rn4Q/zh-cn_image_0000002771666992.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kPJKdLpGQYKnADlAi-XObg/zh-cn_image_0000002768021904.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/9AGQpyIcRSSowXLJiffaUw/zh-cn_image_0000002797181885.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/F0cJb2gNRBGD4OPzRZYRnQ/zh-cn_image_0000002800986851.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/_620_iPET0q8HBXJe5QIOg/zh-cn_image_0000002771666994.png)
 
 ## 示例代码
 

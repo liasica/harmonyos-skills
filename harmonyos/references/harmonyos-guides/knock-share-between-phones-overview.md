@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 概述
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:59+08:00
+scraped_at: 2026-10-27T07:39:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5832191d8631efdae6bdeacbf523f97d8e487ddd29c3d26d1b77da0f4d7d4a73
+content_hash: sha256:20bfe24645bc3118520f43ccecce12e66d86c58cc634fffe962778bf0d2b0f02
 ---
 
 Share Kit推出碰一碰分享，支持用户通过碰一碰发起跨端分享，可实现传输图片、共享Wi-Fi等。
@@ -15,11 +15,11 @@ Share Kit推出碰一碰分享，支持用户通过碰一碰发起跨端分享�
 * 宿主应用进入一个可以分享的界面，比如打开或者选中的一个文件、一条备忘录、一个联系人详情，或个人热点/Wi-Fi等。
 * 宿主应用可以分享多个内容，如选中的多张图片等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/fkffazVAQZyYI-8HH6VUjA/zh-cn_image_0000002797181663.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/S1DKF5OGTjyxBTdwztRaqw/zh-cn_image_0000002771666772.gif)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Fc7aI6ZbQA2IOcxeVZvNRA/zh-cn_image_0000002797181669.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/f95CvrKQQTaQ4rd0sMIwVw/zh-cn_image_0000002771666778.png)
 
 流程说明：
 
@@ -32,7 +32,7 @@ Share Kit推出碰一碰分享，支持用户通过碰一碰发起跨端分享�
 
 手机应用发起碰一碰分享时，双端设备需要在**亮屏、且解锁**的状态下并且都已开启华为分享服务（系统默认开启），设备顶部轻碰即可触发。如果用户已手动关闭华为分享服务开关，轻碰事件触发时，用户会接收到系统通知提示开启。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/KY4h0O4BSGibJgt6npdl5Q/zh-cn_image_0000002768021690.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/-BvNHkbQSEy0V4qHlpXSWA/zh-cn_image_0000002800986635.png)
 
 Share Kit的处理机制：
 

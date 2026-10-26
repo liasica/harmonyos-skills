@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-leak
 title: Resource Leak（资源泄漏）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > Resource Leak（资源泄漏）检测
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:19+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:972ba2db6fa84f710df58042f18a79d925c26de7ea256ae0cd51305b02c11e74
+scraped_at: 2026-10-27T07:39:21+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:fe98d6954ba56bbf328f6734b1e1d12c43b4d4328bba9d6409a4c3586d8f1034
 ---
 
 ## 简介
@@ -38,7 +38,7 @@ content_hash: sha256:972ba2db6fa84f710df58042f18a79d925c26de7ea256ae0cd51305b02c
    totalHeap：当前虚拟机的堆总大小，单位：KB。可通过[hidebug.getAppVMMemoryInfo()](../harmonyos-references/js-apis-hidebug.md#hidebuggetappvmmemoryinfo12)接口获取。
 3. 当应用上报JS\_ERROR/CPP\_CRASH故障，Error message包含“OutOfMemory”时，可参考[内存泄漏分析方法](../best-practices/bpta-stability-leak-way.md#section728319329442)辅助定位。
 4. 管控是指当系统判定应用发生泄漏后，主动终止泄漏应用的行为。
-5. 在资源泄漏资料中，DMA（ION）、dmaheap、dmabuf 可理解为同一种内存类型，不作强区分。
+5. 在资源泄漏资料中，DMA、ION、dmaheap、dmabuf 可理解为同一种内存类型，不作强区分。本篇文档均采用DMA(ION)统一表达。
 
 资源泄漏内核管控方式如下：
 
@@ -78,7 +78,7 @@ content_hash: sha256:972ba2db6fa84f710df58042f18a79d925c26de7ea256ae0cd51305b02c
 
   DevEco Studio的profiler模块提供[Allocation](ide-insight-session-allocations-memory.md)（获取native调用栈profiler）和 **[Snapshot](ide-arkts-memory-leak-analysis.md)** （获取JS层heapdump）两种采集方式：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/EmpriU5pRh2Te8PeW0YHDg/zh-cn_image_0000002768020916.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/R5vkyVoOR225Gn3c_VzQsA/zh-cn_image_0000002800985861.png)
 * 方式三：通过HiAppEvent接口订阅。
 
   HiAppEvent对外提供故障订阅接口，可以订阅各类故障打点，详见[HiAppEvent介绍](hiappevent-intro.md)，其中资源泄漏的订阅方式详见[资源泄漏事件介绍](hiappevent-watcher-resourceleak-events.md)。资源泄漏故障日志存于/data/storage/el2/log/resourcelimit/路径，日志名统一为RESOURCE\_OVERLIMIT\_[TIMESTAMP]\_[PID].log，可根据日志内容区分文件类型。
@@ -595,7 +595,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
 * 检测到泄漏后抓取**15min内的进程内存trace**，可将日志如下图通过Open File加载到DevEco Studio进行解析。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/WgxhuqJ0T6SXpalogOSJqg/zh-cn_image_0000002797300863.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/lKlVyP9wRuy3-kn0llLcWA/zh-cn_image_0000002771825972.png)
 
   **注意** 
 
@@ -604,7 +604,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
   点击Call Trees可以查看抓取进程的调用栈，筛选“Created & Existing”，根据没有释放的内存占比排序，展开可查看详细进程调用信息，优先排查内存占用较高的堆栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/Ochm-V7nR0-4UvkYD_T23A/zh-cn_image_0000002767860932.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Q1a0Mty0RUGKcJWi1c5nLA/zh-cn_image_0000002801105785.png)
 
   **说明** 
 
@@ -613,7 +613,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
   同样选择“Created & Existing”，表示在hook抓取内存申请未释放的。长度越长代表在剩余内存中占用越多，优先排查。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-GcF8jURTNqQL_IyBYmwCw/zh-cn_image_0000002797180895.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/YerMTnetRm2VzDJlQLsbcQ/zh-cn_image_0000002771666006.png)
 
 ### native泄漏聚类规则
 
@@ -814,6 +814,8 @@ Buffers:               0 kB
 | exp\_name | DMA（ION）内存的buffer扩展名。 |
 | buf\_type | DMA（ION）内存的buffer类型。 |
 | leak\_type | DMA（ION）内存泄漏维测的buffer类型。 |
+
+开发者可以参考[DMA内存基础日志分析方法](../doccenter-app-quality/bpta-stability-dmaleak-fault-mode-overreview.md#section170311436201)初步定位DMA内存泄漏问题。
 
 * GPU/GPU\_RS内存泄漏：
 
@@ -1068,7 +1070,7 @@ LOGGER_MEMCHECK_GERNAL_INFO
  threadCount : 3001
 
 the process is killed by runnable thread threshold 3001 / 4124.
-process1:2099
+Thread_process1:2099
 Thread_HI:9
 Thread_GI:9
 Thread_FI:9
@@ -1082,5 +1084,5 @@ Thread_CI:9
 
 **说明** 
 
-1. 日志中展示了按照线程名聚类后，top10数量的线程，如“process1”、“Thread\_HI”等。“process1:2099” 表示线程“process1”的数量为“2099”个。
+1. 日志中展示了按照线程名聚类后，top10数量的线程，如“Thread\_process1”、“Thread\_HI”等。“Thread\_process1:2099” 表示线程“Thread\_process1”的数量为“2099”个。
 2. "the process is killed by runnable thread threshold 3001 / 4124." 表示应用被杀时总线程数为4124个，处于running和runnable状态的线程总和为3001个。

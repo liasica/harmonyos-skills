@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.hyperSnapManager (应用快启管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.hyperSnapManager (应用快启管理)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:00+08:00
+scraped_at: 2026-10-27T07:40:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3e4337852b70baeb9ce176164939307f9e7e05578fdfacbabfe20c3173268076
+content_hash: sha256:85aaa06456e50594921508dadcacaeb8918e29191792f755a2ef8e1d935f7019
 ---
 
 应用启动过程中的初始化流程可以提前进行快启初始化，快启启动的应用不再重复执行初始化流程，从而起到加速启动的作用。hyperSnapManager模块提供应用快启管理的能力，包括启用或禁用应用的快启功能、请求重新初始化应用快启等。
@@ -20,7 +20,7 @@ content_hash: sha256:3e4337852b70baeb9ce176164939307f9e7e05578fdfacbabfe20c31732
 
 **图1** 快启启动流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/iNGUef-1SsW6YNV0pzVeAg/zh-cn_image_0000002768021988.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/8EIBlXKwRkGNaJUiPzQ0TQ/zh-cn_image_0000002800986935.png)
 
 ## 导入模块
 

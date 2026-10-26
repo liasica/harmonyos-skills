@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-bin
 title: "!!语法：双向绑定"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 语法糖 > !!语法：双向绑定
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:40+08:00
+scraped_at: 2026-10-27T07:38:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8d77f204ca8f986d9d5993fcb23dbb32baebd283054dcb42602be1c5fc04f6f5
+content_hash: sha256:fd29af5ad1eb60bb321e23d7695c57735e52b1eb2d3ba4a0b75560a88031124d
 ---
 
 在状态管理V1中，推荐使用[$$](arkts-two-way-sync.md)实现系统组件的双向绑定。
@@ -177,7 +177,7 @@ struct BindMenuInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/flMTUaIyRE2RFplQvMT80A/zh-cn_image_0000002767859802.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/dQ3wde1rRICFwrlRhK8JvA/zh-cn_image_0000002801104657.gif)
 
 **使用规则**
 

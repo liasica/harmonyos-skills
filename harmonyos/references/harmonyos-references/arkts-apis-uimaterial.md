@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: "@ohos.arkui.uiMaterial (系统材质)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.uiMaterial (系统材质)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:28+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:a61298418d26c59202035fbf58a506c4746bc953542906fef3ff82d381016b81
+scraped_at: 2026-10-27T07:41:09+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:6ad8ecdb6523f69bacf73783b09888c19316009c7658531514e5d359882b52b3
 ---
 
-本模块提供系统材质的接口定义。不同的系统材质对应不同的UI效果，包括背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)、材质层滤镜[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)效果。当前提供的系统材质为沉浸式材质类型[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)，沉浸式材质对象在不同设备上的表现存在差异，只有支持沉浸式材质的设备上设置才有效果，在不支持沉浸式材质的设备上可设置但无效果，可通过[isImmersiveMaterialSupported](arkts-apis-uimaterial.md#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质。在支持沉浸式材质的设备上，材质效果在不同算力的设备上有分档表现，可通过[getGlobalMaterialLevel](arkts-apis-uimaterial.md#uimaterialgetglobalmateriallevel)获取设备的材质等级，分档效果具体参考[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)的描述。
+本模块提供系统材质的接口定义。不同的系统材质对应不同的UI效果，包括背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)、材质层滤镜[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)效果。当前提供的系统材质为沉浸式材质类型[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)，其设备兼容性和算力分档表现，请参考[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)的描述。
 
 开发指导请参考[沉浸光感](../harmonyos-guides/arkts-immersive-light-sense-overview.md)指南文档。
 
@@ -31,13 +31,19 @@ import { uiMaterial } from '@kit.ArkUI';
 * [Slider](ts-basic-components-slider.md)、[Toggle](ts-basic-components-toggle.md)、[Select](ts-basic-components-select.md)的沉浸光感效果可在全页面生效。
 * 其他组件仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 
-沉浸式材质根据设备是否支持沉浸式材质和设备算力有分档表现，可通过[isImmersiveMaterialSupported](arkts-apis-uimaterial.md#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质，通过[getGlobalMaterialLevel](arkts-apis-uimaterial.md#uimaterialgetglobalmateriallevel)获取设备的材质等级。在不支持沉浸式材质的设备上可设置沉浸式材质但无效果。在支持沉浸式材质的高算力和中算力设备上，通过材质层滤镜属性[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)和阴影[shadow](ts-universal-attributes-image-effect.md#shadow)属性实现材质效果，当[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)属性生效后，已设置的背景色属性[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)会被恢复为透明色，已设置的边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)属性会被恢复为无边框效果。在支持沉浸式材质的低算力设备上，通过背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)属性实现材质效果。同一材质的效果，会受到系统设置应用中沉浸光感配置项的影响，不同强弱程度的沉浸光感配置下，材质的参数和效果存在差异。
+沉浸式材质根据设备是否支持沉浸式材质和设备算力有分档表现：
+
+* 判断支持的设备：可通过[uiMaterial.isImmersiveMaterialSupported](arkts-apis-uimaterial.md#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质。在不支持沉浸式材质的设备上可设置沉浸式材质但无效果。
+* 获取算力等级：在支持沉浸式材质的设备上，可通过[uiMaterial.getGlobalMaterialLevel](arkts-apis-uimaterial.md#uimaterialgetglobalmateriallevel)获取设备的材质等级。
+* 高算力和中算力设备：通过材质层滤镜属性[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)和阴影[shadow](ts-universal-attributes-image-effect.md#shadow)属性实现材质效果。当[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)属性生效后，已设置的背景色属性[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)会被恢复为透明色，已设置的边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)属性会被恢复为无边框效果。
+* 低算力设备：通过背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)属性实现材质效果。
+* 系统设置的影响：同一材质的效果，会受到系统设置应用中沉浸光感配置项的影响，不同强弱程度的沉浸光感配置下，材质的参数和效果存在差异。
 
 ### constructor
 
 constructor(options?: ImmersiveOptions)
 
-ImmersiveMaterial的构造函数。
+ImmersiveMaterial的构造函数。创建的ImmersiveMaterial对象需通过组件的[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)通用属性设置到组件上才能生效，其设备兼容性和算力分档表现参考[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)的描述。
 
 **起始版本：** 26.0.0
 
@@ -73,7 +79,7 @@ static get empty(): Material
 
 返回空材质对象，用于组件单独关闭沉浸式系统材质效果。使用方式为uiMaterial.Material.empty。
 
-在ENABLE使能模式下，可通过设置systemMaterial(uiMaterial.Material.empty)来单独关闭某个组件的沉浸式系统材质效果。如果组件未支持组件级沉浸式系统材质接口，则无法通过此方法关闭材质效果。
+可通过设置systemMaterial(uiMaterial.Material.empty)来单独关闭某个组件的沉浸式系统材质效果。如果组件不支持组件级沉浸式系统材质接口，则无法通过此方法关闭材质效果。
 
 **起始版本：** 26.0.0
 
@@ -138,7 +144,7 @@ static get empty(): Material
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | state | [MaterialState](arkts-apis-uimaterial.md#materialstate) | 否 | 否 | 材质使能状态配置，决定当前应用沉浸式系统材质的使能模式。不同状态影响组件默认是否开启沉浸式系统材质效果，具体参考[MaterialState](arkts-apis-uimaterial.md#materialstate)枚举说明。 |
-| type | [MaterialType](arkts-apis-uimaterial.md#materialtype) | 否 | 否 | 系统材质类型标识，表示当前配置对应的材质类型。该值仅用于类型标识，不映射到底层功能。 |
+| type | [MaterialType](arkts-apis-uimaterial.md#materialtype) | 否 | 否 | 系统材质类型标识，表示当前配置对应的材质类型，开发者无需也无法通过配置文件设置。该值仅用于类型标识，不映射到底层功能。 |
 
 ## uiMaterial.getMaterialInfo
 
@@ -269,11 +275,11 @@ isImmersiveMaterialSupported(): boolean
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | style | [ImmersiveStyle](arkts-apis-uimaterial.md#immersivestyle) | 否 | 是 | 材质样式。不同样式对应不同的材质参数，影响材质的厚度。  **说明**：该参数仅对支持沉浸式材质的高算力和中算力设备的显示效果生效。  默认值：uiMaterial.ImmersiveStyle.REGULAR |
-| materialColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 材质层赋色。对于支持沉浸式材质的高算力和中算力设备，若不设置该参数或该参数为undefined，不额外混合纯色效果；若设置该参数为有效颜色值，该参数会为材质层滤镜再混合一层纯色效果，若该颜色为纯不透明的颜色，会遮挡材质层滤镜效果。对于支持沉浸式材质的低算力设备，若不设置该参数或该参数为undefined，生效低算力设备材质自带的背景色效果；若设置该参数为有效颜色值，该参数作为背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)属性值。  **说明**：该参数对支持沉浸式材质的所有档位的算力设备的显示效果生效。  默认值：undefined |
+| materialColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 材质层赋色。不同算力档位下生效方式不同：  - 高算力和中算力设备：不设置该参数或该参数为undefined时，不额外混合纯色效果；设置为有效颜色值时，在材质层滤镜效果的基础上再混合一层纯色效果；若设置的颜色为纯不透明颜色，会遮挡材质层滤镜效果。  - 低算力设备：不设置该参数或该参数为undefined时，生效材质自带的背景色效果；设置为有效颜色值时，该颜色作为背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)属性值生效。  **说明**：该参数对支持沉浸式材质的所有档位的算力设备的显示效果生效。  默认值：undefined |
 | colorInvert | boolean | 否 | 是 | 设置了材质对象的节点的子树是否自动将颜色适配为材质背景色的反色。  若为false，则不会自动反色。  若为true，则当材质样式满足系统定义的反色条件时才会自动反色。具体的使用限制如下：  - 自动反色仅在高算力和中算力设备上生效，低算力设备上设置colorInvert不会产生视觉效果差异。  - 自动反色与系统沉浸光感的强弱配置相关，沉浸式系统材质越薄、沉浸光感越强，越容易符合反色要求。  - 自动反色能力使用硬编码的颜色值（如Color.White、'#FFFFFFFF'）不会触发自动反色，仅对以下属性接口设置特殊资源（见下表1）值时生效：  Text组件的[fontColor](ts-basic-components-text.md#fontcolor)，Button组件的[fontColor](ts-basic-components-button.md#fontcolor)，SymbolGlyph组件的[fontColor](ts-basic-components-symbolglyph.md#fontcolor)，Image组件的[fillColor](ts-basic-components-image.md#fillcolor)，Search组件的[placeholderColor](ts-basic-components-search.md#placeholdercolor)、[fontColor](ts-basic-components-search.md#fontcolor10)，[searchIcon](ts-basic-components-search.md#searchicon10)中的图标颜色、[cancelButton](ts-basic-components-search.md#cancelbutton10)中的图标颜色、[caretStyle](ts-basic-components-search.md#caretstyle10)中的光标颜色，[searchButton](ts-basic-components-search.md#searchbutton) 中的按钮颜色，TabContent组件的[tabBar](ts-container-tabcontent.md#tabbar)属性使用[BottomTabBarStyle](ts-container-tabcontent.md#bottomtabbarstyle9)，Chip组件的[prefixIcon](ohos-arkui-advanced-chip.md#prefixiconoptions)、suffixIcon属性的[fillColor](ohos-arkui-advanced-chip.md#iconcommonoptions)，[label](ohos-arkui-advanced-chip.md#labeloptions)属性的[fontColor](ohos-arkui-advanced-chip.md#labeloptions)，ChipGroup组件的[itemStyle](ohos-arkui-advanced-chipgroup.md#chipitemstyle)的[fontColor](ohos-arkui-advanced-chipgroup.md#chipitemstyle)，TextArea组件的[fontColor](ts-basic-components-textarea.md#fontcolor)、[placeholderColor](ts-basic-components-textarea.md#placeholdercolor)，TextInput组件的[fontColor](ts-basic-components-textinput.md#fontcolor)、[placeholderColor](ts-basic-components-textinput.md#placeholdercolor)，SegmentButton组件的[fontColor](ohos-arkui-advanced-segmentbutton.md#属性-1)、[selectedFontColor](ohos-arkui-advanced-segmentbutton.md#属性-1)，SegmentButtonV2组件的[itemFontColor](ohos-arkui-advanced-segmentbuttonv2.md#tabsegmentbuttonv2)、[itemSelectedFontColor](ohos-arkui-advanced-segmentbuttonv2.md#tabsegmentbuttonv2)、[itemIconFillColor](ohos-arkui-advanced-segmentbuttonv2.md#tabsegmentbuttonv2)、[itemSelectedIconFillColor](ohos-arkui-advanced-segmentbuttonv2.md#tabsegmentbuttonv2)、[itemSymbolFontColor](ohos-arkui-advanced-segmentbuttonv2.md#tabsegmentbuttonv2)、[itemSelectedSymbolFontColor](ohos-arkui-advanced-segmentbuttonv2.md#tabsegmentbuttonv2)，Swiper组件的[fontColor](ts-container-swiper.md#fontcolor)。  默认值：false |
 | applyShadow | boolean | 否 | 是 | 是否添加材质的阴影效果。  当该参数为true时，材质中的阴影效果固定生效，优先于[shadow](ts-universal-attributes-image-effect.md#shadow)通用属性。当该参数为false时，shadow通用属性生效，材质的阴影效果不生效。  **说明**：该参数对支持沉浸式材质的所有档位的算力设备的显示效果生效。  默认值：true |
 | interactive | boolean | 否 | 是 | 是否启用交互形变效果。交互形变效果是指组件在用户交互时产生形变的视觉反馈效果。  当该参数为true时，启用交互形变效果。当该参数为false时，不启用交互形变效果。  **说明**：该参数对支持沉浸式材质的所有档位的算力设备的显示效果生效。  默认值：false |
-| lightEffect | [LightEffectOptions](arkts-apis-uimaterial.md#lighteffectoptions) | null | 否 | 是 | 光感交互反馈效果参数。传入LightEffectOptions对象时启用光感交互反馈；传入null时显式禁用光感交互反馈效果；不传入时默认为undefined，取决于组件是否默认有交互光感效果。  **说明**：该参数仅对支持沉浸式材质的高算力和中算力设备的显示效果生效。  默认值：undefined，不设置光感交互反馈效果。 |
+| lightEffect | [LightEffectOptions](arkts-apis-uimaterial.md#lighteffectoptions) | null | 否 | 是 | 光感交互反馈效果参数。传入LightEffectOptions对象时启用光感交互反馈；传入null时显式禁用光感交互反馈效果；不传入时默认为undefined，取决于组件是否默认有交互光感效果。  **说明**：该参数仅对支持沉浸式材质的高算力和中算力设备的显示效果生效。  默认值：undefined，跟随组件的默认效果。 |
 
 **表1** 特殊资源值对应的深浅色值
 
@@ -407,67 +413,67 @@ struct SystemMaterialPage {
 
 ULTRA\_THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/xmsg5sHrSlahEjKc-zru8A/zh-cn_image_0000002797301965.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/_h_Q6Z5oTp-G7qJdplQyOQ/zh-cn_image_0000002771827072.jpg)
 
 THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/h23Yl-HKQAi5JKFHSAc_CQ/zh-cn_image_0000002767862034.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/26D-34IFTNCeDU944BV0Kg/zh-cn_image_0000002801106887.jpg)
 
 REGULAR样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/WCeQxibrTPa5t23rXiKheg/zh-cn_image_0000002797181997.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/0eI2W2EfRqu0vUOgxuKXGA/zh-cn_image_0000002771667106.jpg)
 
 THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/pK0uqp9mS6mBYFbpNyZv2A/zh-cn_image_0000002768022018.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/x7ZTW9yXS-Wj2Sb32u_9pg/zh-cn_image_0000002800986965.jpg)
 
 ULTRA\_THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/dJ-lsD6PQYKhS8Q2OPcdxw/zh-cn_image_0000002797301967.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/4_e0nBY3RsaigPwYmeDh_Q/zh-cn_image_0000002771827074.jpg)
 
 在支持沉浸式材质的中算力设备上表现：
 
 ULTRA\_THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/FlQFHSLIQVWcXVpqeXERag/zh-cn_image_0000002767862036.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/JL-juGCuQEC_CCaW15p6fg/zh-cn_image_0000002801106889.jpg)
 
 THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/K8XctGz9R92vi1sC6yKrWg/zh-cn_image_0000002797181999.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/-kYFc_PqS1m0fPe4exOt-g/zh-cn_image_0000002771667108.jpg)
 
 REGULAR样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NW360DhbTaWXhcHEYZeZIg/zh-cn_image_0000002768022020.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/AY91x6f5T2W87qKWDkTYXQ/zh-cn_image_0000002800986967.jpg)
 
 THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/h0cSE1WbQKaEjthwODKc0w/zh-cn_image_0000002797301969.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/PapB0O9sQWykkbuHs5VqYw/zh-cn_image_0000002771827076.jpg)
 
 ULTRA\_THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/LAEuct4aTtmurtfn0evHvA/zh-cn_image_0000002767862038.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/DY6DOzeIRC-V6vzc1e2DLw/zh-cn_image_0000002801106891.jpg)
 
 在支持沉浸式材质的高算力设备上表现：
 
 ULTRA\_THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/WRuejK1jQVWlleGeRrqWTw/zh-cn_image_0000002797182001.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/_QZeu1pXRku59K79XYQbag/zh-cn_image_0000002771667110.jpg)
 
 THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/xHER_k9OQniBvGOblb6Urg/zh-cn_image_0000002768022022.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/z46GQVVsTt-hA7qfILwDLQ/zh-cn_image_0000002800986969.jpg)
 
 REGULAR样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/j2MyvCE2Tt-V2g0zmITJ9Q/zh-cn_image_0000002797301971.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/QuQ1ASJxQX6VKn-em7uLpg/zh-cn_image_0000002771827078.jpg)
 
 THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/CFVUm0RvSIC3gIBEH5pJ4w/zh-cn_image_0000002767862040.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/R8AXg8USSTGp5yWhhkdycQ/zh-cn_image_0000002801106893.jpg)
 
 ULTRA\_THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/DQ7G8HjvRU6HgSQaUSW6Dg/zh-cn_image_0000002797182003.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/gIObYYCpQ9CfNQyHpfkwCw/zh-cn_image_0000002771667112.jpg)
 
 ### 示例2（获取材质配置信息并使用空材质关闭沉浸式系统材质）
 
@@ -541,15 +547,15 @@ struct MaterialInfoPage {
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/7HyHYwrMT2SFsiZHwZ9zDA/zh-cn_image_0000002768022024.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/oL0Coy6DTOaLyxdarlJ5Mw/zh-cn_image_0000002800986971.jpg)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Hx_kRYoyRuqf5ysbcPkBcg/zh-cn_image_0000002797301973.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/vrzADORWQJ69FLPR_JKhig/zh-cn_image_0000002771827080.jpg)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/xv7X3OGeR4G_Thvf5YJ-Rw/zh-cn_image_0000002767862042.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/rTwlu8o2TDSTBs3-PaSzuw/zh-cn_image_0000002801106895.jpg)
 
 ### 示例3（设置组件材质的交互形变效果）
 
@@ -595,15 +601,15 @@ struct Index {
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/9gOz5FM8RquUEgJv_UxDxw/zh-cn_image_0000002797182005.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/QCJLeDURQYOhAbZTVP2vXw/zh-cn_image_0000002771667114.gif)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/pOnZDH05Q7mg4cEhhZrZVA/zh-cn_image_0000002768022026.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/eJ9mrbKuT3ipkEhbU2fvSw/zh-cn_image_0000002800986973.gif)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/AionWcVTTBe-IMyX0nir8g/zh-cn_image_0000002797301975.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/0ZVmqeQ8Tq2iU9F7nsZZRw/zh-cn_image_0000002771827082.gif)
 
 ### 示例4（设置组件材质的光感交互反馈效果）
 
@@ -680,15 +686,15 @@ struct NavigationTitleMaterialDemo {
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/z2KllP0mRhWth8bPhvGg2w/zh-cn_image_0000002767862044.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/M0FeEeHsReCcVNJau8egfg/zh-cn_image_0000002801106897.gif)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/ycsbL2yDSgGCX-lo9L2tlg/zh-cn_image_0000002797182007.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/1OJMjXyhSFOE4BCp2sP-Ig/zh-cn_image_0000002771667116.gif)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/D5FWK-WWThS1LNgZlOwCuw/zh-cn_image_0000002768022028.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/1r0gD80wQ-a1sPzRQChPLg/zh-cn_image_0000002800986975.gif)
 
 ### 示例5（查询材质等级与是否支持沉浸式材质）
 
@@ -790,16 +796,16 @@ struct NavigationTitleMaterialDemo {
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/yA8gU2gEREi0Hv239gVUBg/zh-cn_image_0000002797301977.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/hI9MG13XRiqF6KQQy9IYEg/zh-cn_image_0000002771827084.jpg)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/3GcfhLZbQBeGBpVDCQGHlg/zh-cn_image_0000002767862046.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/JyKXJ5ruTbe0h7mWn3RB2g/zh-cn_image_0000002801106899.jpg)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/0LXitSjGSuGwRucNpN773A/zh-cn_image_0000002797182009.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/9yhd33ChT2OE_LfVG4DMzw/zh-cn_image_0000002771667118.jpg)
 
 在不支持沉浸式材质的设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/gHDJ3SCIQy6hyWIYLo0EXw/zh-cn_image_0000002768022030.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/7wCcvpiJRf6WMuQzCrfNVw/zh-cn_image_0000002800986977.jpg)

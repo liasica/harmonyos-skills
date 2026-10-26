@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: 查看的媒体图片未包含地理位置信息
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > Media Library Kit常见问题 > 查看的媒体图片未包含地理位置信息
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:8b04a137e4d8634f9f881c21ce5025f245759fd967c3e8cbc06f393a8db5d6a2
+scraped_at: 2026-10-27T07:39:33+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:999cfd1f3e3d2addb4da0278b86c12eeab320bf1ffb09fc692ced5a56572faaa
 ---
 
 ## 问题现象
@@ -89,11 +89,11 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 地理位置信息字段说明，具体字段说明和使用方式请参考Image Kit中的[PropertyKey](../harmonyos-references/arkts-apis-image-e.md#propertykey7)。
 
-| 名称 | 说明 |
-| --- | --- |
-| GPSLatitude | 图片纬度。 |
-| GPSLongitude | 图片经度。 |
-| GPSTimeStamp | GPS时间戳。 |
-| GPSDateStamp | GPS日期戳。 |
-| GPSAltitude | 基于GPSAltitudeRef的高度。 |
-| GPSVersionID | GPS信息版本号。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| GPS\_LATITUDE | GPSLatitude | 图片纬度。 |
+| GPS\_LONGITUDE | GPSLongitude | 图片经度。 |
+| GPS\_TIME\_STAMP | GPSTimeStamp | GPS时间戳。 |
+| GPS\_DATE\_STAMP | GPSDateStamp | GPS日期戳。 |
+| GPS\_ALTITUDE | GPSAltitude | 基于GPSAltitudeRef的高度。 |
+| GPS\_VERSION\_ID | GPSVersionID | GPS信息版本号。 |

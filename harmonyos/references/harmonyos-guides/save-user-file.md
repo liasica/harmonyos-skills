@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/save-user-fil
 title: 保存用户文件
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 选择与保存用户文件 > 保存用户文件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:687f8420e3021422f44bf560d81f13f935aafcc44fee99979b62b9a40f524693
+scraped_at: 2026-10-27T07:38:59+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:5018dc7062aca1005554acf3fb3a815ede7b8875d2a6057346273721e538b51c
 ---
 
 在从网络下载文件到本地或将已有用户文件另存为新的文件路径等场景下，需要使用FilePicker提供的保存用户文件的能力。需关注以下关键点：
@@ -44,8 +44,7 @@ if (!canIUse('SystemCapability.FileManagement.UserFileService.FolderSelection'))
 1. 模块导入。
 
    ```ts
-   import { picker } from '@kit.CoreFileKit';
-   import { fileIo } from '@kit.CoreFileKit';
+   import { picker, fileIo } from '@kit.CoreFileKit';
    import { BusinessError } from '@kit.BasicServicesKit';
    import { common } from '@kit.AbilityKit';
    ```
@@ -107,8 +106,7 @@ if (!canIUse('SystemCapability.FileManagement.UserFileService.FolderSelection'))
 1. 模块导入。
 
    ```ts
-   import { picker } from '@kit.CoreFileKit';
-   import { fileIo } from '@kit.CoreFileKit';
+   import { picker, fileIo } from '@kit.CoreFileKit';
    import { BusinessError } from '@kit.BasicServicesKit';
    import { common } from '@kit.AbilityKit';
    ```
@@ -173,8 +171,7 @@ DOWNLOAD模式创建的目录仅用于保存文件，目录之间无访问隔离
 1. 模块导入。
 
    ```ts
-   import { fileUri, picker } from '@kit.CoreFileKit';
-   import { fileIo } from '@kit.CoreFileKit';
+   import { fileUri, picker, fileIo } from '@kit.CoreFileKit';
    import { BusinessError } from '@kit.BasicServicesKit';
    import { common } from '@kit.AbilityKit';
    ```

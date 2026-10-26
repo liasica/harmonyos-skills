@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-overv
 title: 简介
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 内存管理与同步控制 > TQueBind > 简介
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:06+08:00
+scraped_at: 2026-10-27T07:40:02+08:00
 doc_updated_at: 2026-07-21
-content_hash: sha256:abda64487b670a9cf85b2aa62a128666a0df06376716b9d04aadcd9e7a2aee4e
+content_hash: sha256:6606138105e8ac64316d554600f5cea8cf9866fcd02d153241a33a212299fb60
 ---
 
 TQueBind绑定源逻辑位置和目的逻辑位置，根据源位置和目的位置，来确定内存分配的位置、插入对应的同步事件，帮助开发者解决内存分配和管理、同步等问题。TQue是TQueBind的简化模式。通常情况下开发者使用TQue进行编程，TQueBind对外提供一些特殊数据通路的内存管理和同步控制，涉及这些通路时可以直接使用TQueBind。
 
 如下图的数据通路示意图所示，红色线条和蓝色线条的通路可通过TQueBind定义表达，蓝色线条的通路可通过TQue进行简化表达。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/cWPamR9bQC69uAfHe8IjWA/zh-cn_image_0000002768021826.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/hKFiMwjjTwG64J5Rv9ClLg/zh-cn_image_0000002800986773.png)
 
 **表1** TQueBind和TQue对于数据通路的表达
 
@@ -40,7 +40,7 @@ TQueBind绑定源逻辑位置和目的逻辑位置，根据源位置和目的位
 
 * 如下的编程范式示例，图中的两个队列分别绑定的是GM VECIN和VECOUT GM。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/ETiaqT-tRJOXBc63xRyXkw/zh-cn_image_0000002797301775.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/j5lBb-KcSme1v_eUbl42yA/zh-cn_image_0000002771826882.png)
 * 如果不需要进行Vector计算，比如仅需要做格式随路转换等场景，可对上述流程进行优化，对VECIN和VECOUT进行绑定，绑定的效果可以实现输入输出使用相同buffer，实现double buffer。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/1fmXsAB2RDKpXMwachfJFg/zh-cn_image_0000002767861844.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/afDhX6MmTDqvy2tEKtrfIg/zh-cn_image_0000002801106697.png)

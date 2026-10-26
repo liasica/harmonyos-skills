@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohaudio
 title: 使用OHAudio开发音频会话功能(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 使用OHAudio开发音频会话功能(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:02+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-10-27T07:39:25+08:00
+doc_updated_at: 2026-10-26
 content_hash: sha256:4dc6e3f87f9b3988b4ccc70f838804b3b67aa674f3a303b54b8b5acbe1ee0972
 ---
 

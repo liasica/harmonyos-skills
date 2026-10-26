@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-voip
 title: 推送应用内通话消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送应用内通话消息
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:98e74dcd313d3815172f4ef35f0e9f00b72d0412cbf0c4ac510362eb957f5569
+scraped_at: 2026-10-27T07:39:53+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:51ed396f2c35b2076fd0a9c447c9c9231084b50311788f0c1cffde175a64f86b
 ---
 
 ## 场景介绍
@@ -62,10 +62,10 @@ content_hash: sha256:98e74dcd313d3815172f4ef35f0e9f00b72d0412cbf0c4ac510362eb957
        hilog.info(DOMAIN, 'testTag', 'VoIPUIAbility onCreate');
 
        try {
-         pushService.receiveMessage('VoIP', this, async (data) => {
+         pushService.receiveMessage('VoIP', this, (data) => {
            // 处理应用内通话消息数据
            try {
-             await VoipCallService.processVoIPMainMsg(data.data, this.context);
+             VoipCallService.processVoIPMainMsg(data.data, this.context);
            } catch (error) {
              hilog.error(DOMAIN, 'testTag', 'Failed to process VoIP message: %{public}d %{public}s', error.code,
                error.message);

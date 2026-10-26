@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 添加桌面快捷方式
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 应用内快捷方式 > 添加桌面快捷方式
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:42+08:00
+scraped_at: 2026-10-27T07:39:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ec7eb013a2c6286bffff1d387b808a552d76c2c5f754bcf0dccde44c73ce8586
+content_hash: sha256:7bc04534889c97ae0a575fcf57a4e768f002cfd5fa33e97d36d358f43e1eb8be
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:ec7eb013a2c6286bffff1d387b808a552d76c2c5f754bcf0dccde44c73c
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/xcoDbo5aT8isg7ccnJ6f3g/zh-cn_image_0000002767861288.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Rv1Ux83_ShmmwJCyW4Nb1w/zh-cn_image_0000002801106141.png)
 
 1. 应用预先调用[checkPinShortcutPermitted](../harmonyos-references/store-productviewmanager.md#productviewmanagercheckpinshortcutpermitted)接口检查是否允许快捷方式加桌。
 2. AppGallery Kit获取应用传入的快捷方式信息并生成检查结果。

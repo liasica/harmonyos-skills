@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Window)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (Window)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:33+08:00
+scraped_at: 2026-10-27T07:41:14+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:fae7f78002cea3b10be0d593fb5d229c6710be75636db2b1cf25b9b23c1815ed
+content_hash: sha256:5fea0539889d379ee61528704fb1494d3de6054f350e436baf12b648f27a6834
 ---
 
 当前窗口实例，窗口管理器管理的基本单元。
@@ -11669,7 +11669,7 @@ convertOrientationAndRotation(from: RotationInfoType, to: RotationInfoType, valu
 
 示意图和表格展示了直板机窗口方向、屏幕方向和屏幕角度的关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/8t1cOKK4TZ6NXT7AjIn6xA/zh-cn_image_0000002797182055.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/bhIHuS-7QJ2h0XvAW07sjg/zh-cn_image_0000002771667164.png)
 
 | 屏幕角度 | 屏幕方向 | 窗口方向 |
 | --- | --- | --- |

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Album)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Interface (Album)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c80bcb554dfa39175d0e7fb60816566e627ff3194d04ac71e54de09448f9d3d7
+scraped_at: 2026-10-27T07:43:25+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:fa9a90dd83fd111e2b35933703177df62537434e1a293ab8bee2c775b5d3d9d0
 ---
 
-Album extends [AbsAlbum](arkts-apis-photoaccesshelper-absalbum.md).
+Album继承自[AbsAlbum](arkts-apis-photoaccesshelper-absalbum.md)。
 
 实体相册。
 

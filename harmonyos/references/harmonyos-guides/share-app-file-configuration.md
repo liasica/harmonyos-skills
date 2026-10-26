@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-app-fil
 title: 应用共享目录配置
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用共享目录配置
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:39+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:e5a7d01d10f98c338ef46317f7d0e3085780168432c094c6bc4794392811072b
+scraped_at: 2026-10-27T07:38:59+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:51a8ee86f7ac35289a4ac2e91ecd33db38fa393ebcf5a93582823191839b0d75
 ---
 
 从API版本23开始，系统支持配置共享目录。在[应用文件分享](share-app-file.md)场景中，开发者可[配置共享目录](share-app-file-configuration.md#配置共享目录)，配置后仅共享目录中的文件可供用户分享给其他应用查阅，以防止应用敏感数据泄露。配置仅在手机（Phone）、平板（Tablet）上生效。
@@ -14,9 +14,7 @@ content_hash: sha256:e5a7d01d10f98c338ef46317f7d0e3085780168432c094c6bc479439281
 
 从API版本26.0.0开始，可配置共享目录范围扩大，请开发者按照最新范围进行配置，下述配置指导配套版本为26.0.0。
 
-从API版本26.0.0开始，系统支持配置应用捐献沙箱目录。当配置了共享目录时，开发者可[配置捐献沙箱目录](share-app-file-configuration.md#配置捐献沙箱目录)。捐献目录为共享目录的子目录。应用配置捐献目录后，文件管理器等系统应用可访问并操作其中的文件数据。
-
-以文件管理器上的交互体验为例，应用配置了捐献目录后，用户在手机、平板设备上可通过文件管理器查阅、修改捐献目录中的文件。配置仅在手机（Phone）、平板（Tablet）上生效。
+从API版本26.0.0开始，系统支持配置应用捐献沙箱目录。当配置了共享目录时，开发者可[配置捐献沙箱目录](share-app-file-configuration.md#配置捐献沙箱目录)。捐献目录为共享目录的子目录。应用配置捐献目录后，文件管理器等系统应用可访问并操作其中的文件数据。配置仅在手机（Phone）、平板（Tablet）上生效（本文档仅用于指导开发者接入能力，达成效果以系统应用的实现为准。当前系统应用陆续接入中，具体交互体验依赖于系统应用的实现）。
 
 ## 开发步骤
 

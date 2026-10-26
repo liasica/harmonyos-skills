@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 组件内隐式共享元素转场 (geometryTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 组件内隐式共享元素转场 (geometryTransition)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:51+08:00
+scraped_at: 2026-10-27T07:41:28+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:7e82758ceaec5ba1ff248e0cc3e5c86140e5f0e879624b8b5d4c268d32d23a31
+content_hash: sha256:c16e7dfee230c47c3569fa86fab868ef439eafcd7649e44116e988294c3e70e7
 ---
 
 在视图切换过程中提供丝滑的上下文衔接过渡。通用transition机制提供了opacity、scale等转场效果。geometryTransition通过安排绑定的in/out组件（in指新视图、out指旧视图）的frame、position，使得原本独立的transition动画在空间位置上发生联系，将视觉焦点由旧视图位置引导到新视图位置。in/out组件需要配合transition使用，以保证组件离场不被立即析构并提供转场效果；若不配合transition使用，out组件离场时将被立即析构，共享元素转场动画可能无法正常呈现。
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Z4W6RuUzReCLeNDGKAg7FQ/zh-cn_image_0000002797182655.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/elSalYYCQa-59ZlzJK5VuA/zh-cn_image_0000002771667766.gif)
 
 ### 示例2（if范式下使用follow实现跟随效果）
 
@@ -225,4 +225,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/LOY-hEJPSaeHb54VB9uhKw/zh-cn_image_0000002768022676.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1FCzUL2CTYughvGbAaS9TQ/zh-cn_image_0000002800987625.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.wifiManager (WLAN)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.wifiManager (WLAN)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:11:42+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:105c04c28529fb4327c3645a8d426a2e0413a4f73f2db805820c74b92275c6da
+scraped_at: 2026-10-27T07:42:23+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:50a0baad7ccb79026895b015630a1e7c399e98960291839c20cfb20a89f99ad0
 ---
 
 该模块主要提供Wi-Fi基础功能（无线接入、无线加密、无线漫游等）、P2P（peer-to-peer）服务的基础功能和Wi-Fi消息通知的相应服务，让应用可以通过Wi-Fi和其他设备互联互通。
@@ -1067,7 +1067,7 @@ connectToCandidateConfig(settings: ConnectSettings): Promise<void>
 
 **需要权限：** ohos.permission.SET\_WIFI\_INFO
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
@@ -1103,10 +1103,15 @@ connectToCandidateConfig(settings: ConnectSettings): Promise<void>
 
 ```ts
   import { wifiManager } from '@kit.ConnectivityKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   try {
     let setting:wifiManager.ConnectSettings = { networkId: 0 }; // 候选网络ID，在添加候选网络时生成
-    wifiManager.connectToCandidateConfig(setting);
+    wifiManager.connectToCandidateConfig(setting).then(() => {
+      console.info("connect success");
+    }).catch((error: BusinessError) => {
+      console.error(`connectToCandidateConfig failed. Code: ${error.code}, message: ${error.message}`);
+    });
   }catch(error){
     console.error("failed:" + JSON.stringify(error));
   }

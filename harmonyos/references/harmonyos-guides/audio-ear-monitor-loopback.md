@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-ear-mon
 title: 实现低时延耳返
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 实现低时延耳返
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:25+08:00
+scraped_at: 2026-10-27T07:39:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2ab713b3fbf63b778b7b84b607d2a6914ac5d5750b3265d96e68b264c953968a
+content_hash: sha256:c29f4c68ae9650bc2b7c316523515333956e36bb88d049597280fa9640b5b729
 ---
 
 从API version 20开始，支持音频低时延耳返。
@@ -37,7 +37,7 @@ AudioLoopback是音频返听器，可将音频以更低时延的方式实时传�
 
 **AudioLoopback状态变化示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Cy6ZXzrmR92515HjS1IWJQ/zh-cn_image_0000002797180937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/xtRKBxXXSGS9437HbJDFEQ/zh-cn_image_0000002771666048.png)
 
 使用[on('statusChange')](../harmonyos-references/arkts-apis-audio-audioloopback.md#onstatuschange20)方法可以监听AudioLoopback的状态变化，每个状态对应值与说明见[AudioLoopbackStatus](../harmonyos-references/arkts-apis-audio-e.md#audioloopbackstatus20)。
 

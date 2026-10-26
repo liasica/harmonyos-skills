@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: gamePlayer（基础游戏服务）
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gamePlayer（基础游戏服务）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6f61ddeeb6b29770c477032a51c4d51594e09336f21907615f0f9370d17bd9f3
+scraped_at: 2026-10-27T07:43:46+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:2031cd45e67acc9a5fae51abce521749e380fb7a02d5c9a5c09380a0cf2ecf6e
 ---
 
 本模块提供Game Service Kit（游戏服务）的基础游戏服务能力，包括游戏登录、华为账号实名认证、未成年人防沉迷等功能，让开发者聚焦游戏本身的业务能力。
@@ -1136,7 +1136,7 @@ try {
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| gameAppId | string | 否 | 否 | 小游戏APP ID。小游戏APP ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中创建小游戏时自动生成的APP ID，具体请参见[为小游戏创建APP ID](../app/agc-help-create-minigame-0000002434138360.md#section16423184171915)。  最大长度64个字符。 |
+| gameAppId | string | 否 | 否 | 小游戏APP ID。小游戏APP ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中创建小游戏时自动生成的APP ID，具体请参见[创建小游戏](../app/agc-help-create-minigame-0000002434138360.md)。  最大长度64个字符。 |
 | extraData | string | 否 | 是 | 附加信息，要求JSON String格式，可以将额外需要传入的字段以key:value的形式设置在JSON String中，并通过该参数传入。例如：  let extraData = "{"key1":"value1","key2":"value2"}"; |
 
 ## MiniGamePlayer

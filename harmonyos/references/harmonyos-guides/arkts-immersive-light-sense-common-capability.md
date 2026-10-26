@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸式系统材质视效
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 沉浸式系统材质视效
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:44+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:c3affb06d8781010719c0294fed6d8bd3c0e36e17196e8a48c59f60dfc399491
+scraped_at: 2026-10-27T07:38:50+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:7c10fe93d9556bf2b0571c3477f6079005e84344d758d16409fa995cd32f0dac
 ---
 
 本文介绍如何按场景定制沉浸式系统材质的视效，包括设置沉浸式系统材质反色、为沉浸式系统材质赋色、设置沉浸式系统材质交互效果以及设置沉浸式系统材质阴影效果。
@@ -84,7 +84,7 @@ struct PageMaterialReverse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/1Io58_RcQJ-czVdJOTExIw/zh-cn_image_0000002797300145.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/qT72WbcqTI2VT5myeNOc2w/zh-cn_image_0000002771825252.gif)
 
 ## 为沉浸式系统材质赋色
 
@@ -143,16 +143,16 @@ struct MaterialColorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/1x2QyzhyTOig5Fjt82n-og/zh-cn_image_0000002767860212.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ngbMWDYERTWaGPN1HtZPKw/zh-cn_image_0000002801105067.jpg)
 
 ## 设置沉浸式系统材质交互效果
 
-沉浸式系统材质支持设置交互形变和点光源效果：
+沉浸式系统材质支持设置交互形变和光感交互反馈效果：
 
 * **交互形变**：通过[interactive](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)开启交互形变，组件在按压时产生弹性形变，松手后自动恢复，增强交互的视觉反馈。
-* **点光源**：通过[lightEffect](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)开启点光源，用户手指触摸组件时会产生流光跟随效果。lightEffect传入有效对象即启用，传入null或undefined则不启用；对象中的color字段自定义流光颜色，默认值为Color.White。
+* **光感交互反馈**：通过[lightEffect](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)开启光感交互反馈，用户手指触摸组件时会产生流光跟随效果。lightEffect传入有效对象即启用，传入null则显式禁用，不传入时默认为undefined，跟随组件的默认效果；对象中的color字段自定义流光颜色，默认值为Color.White。
 
-以下示例为高算力设备均衡档位的交互形变与点光源的效果：设置interactive为true并传入lightEffect对象后，按压组件时产生弹性形变，手指触摸时产生流光跟随效果。
+以下示例为高算力设备均衡档位的交互形变与光感交互反馈的效果：设置interactive为true并传入lightEffect对象后，按压组件时产生弹性形变，手指触摸时产生流光跟随效果。
 
 ```typescript
 import { uiMaterial } from '@kit.ArkUI';
@@ -201,7 +201,7 @@ struct MaterialInteractiveLightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/eY6h7ab5TJiG7ONqb99tlA/zh-cn_image_0000002797180177.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/dExVpnp9QsiFXJvoc73Hvg/zh-cn_image_0000002771665288.gif)
 
 ## 设置沉浸式系统材质阴影效果
 
@@ -257,4 +257,4 @@ struct CustomShadowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/FAim3xEuTRuK3ClPz-1eUA/zh-cn_image_0000002768020198.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/B_8OGXfaSFq0xSspR-0X1A/zh-cn_image_0000002800985145.jpg)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-recordi
 title: 查询和监听其他应用录制状态
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 查询和监听其他应用录制状态
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:25+08:00
+scraped_at: 2026-10-27T07:39:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f8dbf0e8d34336bc9979882e2ff3cf34777b13e5a9fec4de1c45569a4258084f
+content_hash: sha256:f98be07e333271362256a80f3db056a638b092219915eea4fbeb4f5bb038e33d
 ---
 
 对于录制音频类的应用，开发者需要关注该应用的音频流的状态以做出相应的操作，比如监听到状态为结束时，及时提示用户录制已结束。
@@ -54,7 +54,7 @@ content_hash: sha256:f8dbf0e8d34336bc9979882e2ff3cf34777b13e5a9fec4de1c45569a425
 
 如下为音频流管理调用关系图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/mjdFOZVETEa8EZ1q8facVg/zh-cn_image_0000002767860974.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/q1-UyXMSQ6OYikb9XzFCjQ/zh-cn_image_0000002801105827.png)
 
 在进行应用开发的过程中，开发者需要先调用[getStreamManager](../harmonyos-references/arkts-apis-audio-audiomanager.md#getstreammanager9)创建AudioStreamManager实例，进而通过该实例管理音频流。
 

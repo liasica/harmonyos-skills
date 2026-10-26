@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-render-mo
 title: Web组件渲染模式
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web渲染和布局 > Web组件渲染模式
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:51+08:00
+scraped_at: 2026-10-27T07:38:56+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:56cfce40e16fcc8d1e378bb06baa0ee3cb5cb00ff38b121f03b788976c4a821a
+content_hash: sha256:c361abbf13db035713dff4f75c0c751df7e9e2f9d79ee6a384f15e29eb8c2456
 ---
 
 Web组件提供了两种可配置的渲染模式，能够根据不同的容器大小进行适配，从而满足使用场景中对容器尺寸的需求。
@@ -21,7 +21,7 @@ Web组件提供了两种可配置的渲染模式，能够根据不同的容器�
 
 **图一 异步渲染模式场景**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/4Nax9HYZQX6YwxGnTi65kg/zh-cn_image_0000002768020534.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/suV2LanAR3qcjT85oKwrWw/zh-cn_image_0000002800985481.png)
 
 ## 同步渲染模式
 
@@ -35,7 +35,7 @@ Web组件提供了两种可配置的渲染模式，能够根据不同的容器�
 
 **图二 同步渲染模式场景**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/AFJGufrwSZGjao0mm4nHug/zh-cn_image_0000002797300483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/PkfSmVI3RO-qwyV9AlxUEA/zh-cn_image_0000002771825592.png)
 
 ## 示例代码
 

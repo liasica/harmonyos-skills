@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 功能搜索方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 本地搜索方案 > 接入方案 > 功能搜索方案
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:20+08:00
+scraped_at: 2026-10-27T07:40:14+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:288c83d112b39b8241a7d3453b6708c9670298b4f647db85cc0b0bc61837fa5e
+content_hash: sha256:68342b192a91051739798642369e75b47d68e72cd165bb3c3efd817ba9e502c6
 ---
 
 ## 方案概述
 
 从5.1.0(18)开始，新增功能搜索接入方案，可通过该方案实现快速打开应用内功能页面。开发者将应用内的功能在意图声明文件中声明，并实现对应的意图调用，即可实现用户在小艺搜索入口直接搜索到应用内功能，点击后可直接拉起应用，直达功能页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Ei54uxDKTe6kenQOV2Jggg/zh-cn_image_0000002767861904.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/lUY6dreXTcCOHnCvrFe1Sg/zh-cn_image_0000002801106757.png)
 
 **意图名称：跳转App功能页 JumpFunctionPage（端侧前台意图调用）**
 

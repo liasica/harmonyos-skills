@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: HTTP错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > HTTP错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2a5c9aa5fed7f47fc9528105c77dd7acf822c4b27d369cf62a1bf52385483c23
+scraped_at: 2026-10-27T07:42:31+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:a8fdcf5cecd34dffbd85fbd842c74acdbdea72b76a58fb8e2e6bdbd827b60eb1
 ---
 
 **说明** 
@@ -569,6 +569,27 @@ Authentication error.
 **处理步骤**
 
 排查传入的校验身份的字段是否与服务器匹配。
+
+## 2300996 请求被全局HTTP拦截器拦截
+
+**错误信息**
+
+The request was intercepted by the HTTP global interceptor.
+
+**错误描述**
+
+请求被已注册的全局HTTP拦截器拦截，导致当前请求未继续执行。
+
+**可能原因**
+
+当前请求被已注册的全局HTTP拦截器拦截，通常是因为拦截器在请求阶段判定当前请求不应继续执行，或拦截器实现存在误判、异常返回或强制中断逻辑。
+
+**处理步骤**
+
+1. 检查是否配置了全局HTTP请求拦截器，并确认拦截器类型、注册方式和执行顺序是否符合业务预期。
+2. 查看拦截器回调中是否存在误判条件，例如对某些请求统一拒绝、对异常数据提前中断，或返回了错误的中止状态。
+3. 结合日志关键词GlobalRequestInterceptorCheck fail、GlobalRequestInterceptorCheck failed定位拦截器校验失败或中断位置。
+4. 如业务允许，调整拦截器策略，确保仅在必要场景中拦截请求，并在拦截前验证请求参数与上下文是否正确。
 
 ## 2300997 明文HTTP被拦截
 

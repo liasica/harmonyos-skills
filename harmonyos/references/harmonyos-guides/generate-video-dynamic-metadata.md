@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/generate-vide
 title: 视频动态元数据生成
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 视频处理 > 视频动态元数据生成
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:33+08:00
+scraped_at: 2026-10-27T07:39:33+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:eba81d499417bcc044d9e4b91e31b3fb50429fe899741878df920063303b1d5b
+content_hash: sha256:d5a424d2897c988f3a9661f23543db935874384e12f727f485a8412e9088c1df
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-videoprocessing.md)，实现HDRVivid标准动态元数据生成。
 
 该能力常用于视频编辑中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/mMsdDNceS2-vxPe60_KUbQ/zh-cn_image_0000002797181057.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/dz9XoOFTS8mbSIUFoslucw/zh-cn_image_0000002771666168.png)
 
 ## 规格说明
 

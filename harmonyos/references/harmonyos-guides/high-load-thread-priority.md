@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/high-load-thr
 title: 高负载场景线程优先级设置
 breadcrumb: 指南 > 系统 > 基础功能 > Kernel Enhance Kit（内核增强能力） > 内存管理 Purgeable Memory 开发指导 > 高负载场景线程优先级设置
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:16+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:26fe3941f70f66915b77452595a263393d6ed2082b83c38d6fd0821a18d48718
+scraped_at: 2026-10-27T07:39:18+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:4cb7a4079e97f915a9b1d53f2b6a2630c56874fac338a1ebf35f901929fc78bf
 ---
 
 ## 概述
@@ -18,11 +18,11 @@ content_hash: sha256:26fe3941f70f66915b77452595a263393d6ed2082b83c38d6fd0821a18d
 
 ### QoS
 
-[服务质量（QoS）](qos-guidelines.md)一文介绍了QoS的基本概念、原理、各个QoS等级适用的场景及负载特征及相关接口的用法。
+[QoS 开发指导](qos-guidelines.md)一文介绍了QoS的基本概念、原理、各个QoS等级适用的场景及负载特征及相关接口的用法。
 
 在操作系统层面，QoS等级是一种用于区分不同线程优先级和服务质量的技术。通常系统会自动识别主线程，并在前台焦点情况下为其配置高于开放给应用开发者调用的QoS等级，以确保其优先执行。
 
-与ArkTS端[taskpool.Priority](../harmonyos-references/js-apis-taskpool.md#priority)的线程优先级类似，QoS提供的优先级等级也都会相对应的映射到内核的优先级上。不过QoS提供的等级更多，自适应调度策略更强，它们属于两套不同的逻辑。
+与ArkTS端[Priority](../harmonyos-references/js-apis-taskpool.md#priority)的线程优先级类似，QoS提供的优先级等级也都会相对应的映射到内核的优先级上。不过QoS提供的等级更多，自适应调度策略更强，它们属于两套不同的逻辑。
 
 [Function Flow Runtime Kit概述](ffrt-overview.md)的QoS提供了ffrt\_qos\_inherit（-1）到ffrt\_qos\_user\_initiated（3）5个优先等级，它与当前的QoS接口有着同一套底层逻辑。两者的差别在于，当前开发所用的QoS接口是直接开放给应用线程的，而FFRT的QoS则是面向任务的优先级配置，关于线程编程模型和任务编程模型的对比详见[Function Flow Runtime Kit概述](ffrt-overview.md)。
 
@@ -30,7 +30,7 @@ content_hash: sha256:26fe3941f70f66915b77452595a263393d6ed2082b83c38d6fd0821a18d
 
 下面是一个在高负载情况下，配置了不同QoS等级的两个关键线程完成相同计算任务所花时间的对比图，从界面的运行结果可以看到在高负载情况下，配置了高优先级的线程执行完计算所花的时间更少一些。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/quPueTV0QVKyhDD-k4LSyA/zh-cn_image_0000002797300825.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/YWf2ywmdQK-49vVkTHBFsw/zh-cn_image_0000002771825934.gif)
 
 具体实现步骤如下：
 
@@ -70,7 +70,7 @@ void AddLoads(int n) {
 }
 ```
 
-2、实现高、低QoS等级计算线程（关键线程）所要完成的计算任务（斐波那契数列计算）。先通过[OH\_QoS\_SetThreadQoS](qos-guidelines.md#oh_qos_setthreadqos)接口设置当前线程的QoS等级，再执行DoFib()斐波那契数列计算。
+2、实现高、低QoS等级计算线程（关键线程）所要完成的计算任务（斐波那契数列计算）。先通过[OH\_QoS\_SetThreadQoS()](qos-guidelines.md#oh_qos_setthreadqos)接口设置当前线程的QoS等级，再执行DoFib()斐波那契数列计算。
 
 ```
 // Perform Fibonacci sequence calculations
@@ -172,9 +172,9 @@ void SetQoS(QoS_Level level) {
 
 计算线程（线程id：39260）设置低QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/KkJoO7zTSv2Cqueu3Ky26Q/zh-cn_image_0000002767860894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/J95eRk5KQRqrYhi0jteD7w/zh-cn_image_0000002801105747.png)
 
-如上图所示，计算线程执行完计算任务耗时726.8毫秒。
+如上图所示，计算线程执行完计算任务耗时726.8ms。
 
 * **给计算线程配置高QoS等级**
 
@@ -205,9 +205,9 @@ void SetQoS(QoS_Level level) {
 
 计算线程（线程id：39204）设置高QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/-Xe_0cdkQ12ivQ2bnct_tQ/zh-cn_image_0000002797180857.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CopQvwOpSH-hwtdvlm7KFg/zh-cn_image_0000002771665968.png)
 
-如上图所示，计算线程执行完计算任务耗时323.9毫秒。
+如上图所示，计算线程执行完计算任务耗时323.9ms。
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-navig
 title: 使用网络领航员进行网络模拟
 breadcrumb: 指南 > 系统 > 网络 > 网络调试调优 > 使用网络领航员进行网络模拟
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:13+08:00
+scraped_at: 2026-10-27T07:39:16+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:87525993534af9cdb1a2de2da234b920d311f70eeaa3efeced233c38e4244681
+content_hash: sha256:b438905989f18a7af1118b19b8a05f8d38ec0915b4d44bf0e76e6d1e39293d15
 ---
 
 ## 网络领航员功能简介
@@ -30,29 +30,29 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 当您首次使用该功能时，可根据 **[开启开发者选项](ide-developer-mode.md#section530763213432)** 指引先开启设备的开发者模式，然后点击**设置** -> **系统** -> **开发者选项** -> **网络领航员**即可进入网络领航员页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/PKbNZ5BtShOOD7_3L94VbA/zh-cn_image_0000002797180827.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/RErSrdlLRZ-cHMcJqUdryw/zh-cn_image_0000002771665938.png)
 
 网络领航员已预置如下常用网络模拟场景，您可以直接使用预置的网络模拟场景快速进行App使用体验测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/HPHAYjSZSd6lNWsTMtPhLw/zh-cn_image_0000002768020850.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/P2BKcXWkTuyqLQtzyGeU6A/zh-cn_image_0000002800985795.png)
 
 **如何启用一个网络模拟场景**
 
 在**可用的网络模拟场景**中点击任意一个您需要模拟的场景即可启用网络模拟。例如，点击**进出电梯**后，即可启用该模拟场景，并可查看**已生效的网络模拟场景。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/cFkDtoD9T9is6QfBn_1yww/zh-cn_image_0000002797300797.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/pJontLhbS3iJB0eT10JvlQ/zh-cn_image_0000002771825906.png)
 
 同时您可在设备实况窗中查看到网络模拟内容（以进出电梯为例）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/rkBJtwCnTt-8PqMLbOaHTw/zh-cn_image_0000002767860866.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/SG67fgEmSTWKQaQsNY7GWw/zh-cn_image_0000002801105719.png)
 
 **如何停止一个网络模拟场景**
 
-如果您需要停止网络模拟场景，可点击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/orUHbES1QneKUDsPI26qgQ/zh-cn_image_0000002797180829.png)，然后点击退出该网络模拟场景即可退出模拟。
+如果您需要停止网络模拟场景，可点击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/4BKmIytiSLu8VFTSWYaXpQ/zh-cn_image_0000002771665940.png)，然后点击退出该网络模拟场景即可退出模拟。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/7xcfzwQMRCasrzSOygpHrQ/zh-cn_image_0000002768020852.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/4zXY7fsoQoOeQiaU9te7YA/zh-cn_image_0000002800985797.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/RjqL-osESvqqlmvg-6FtUQ/zh-cn_image_0000002797300799.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/FKcd2TPlRDOEykfNgAEzdg/zh-cn_image_0000002771825908.png)
 
 预置的网络模拟场景使用前置条件及模拟场景阶段说明如下：
 
@@ -73,7 +73,7 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 当上述预置网络模拟场景无法满足您的开发需要时，您也可以在网络领航员页面通过点击底部的 **添加自定义网络场景** 来新增所需网络配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/IVEUqt4ETiiKAHPR7irHqg/zh-cn_image_0000002767860868.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/sEwgGvljTtiA7CBtSuFBOQ/zh-cn_image_0000002801105721.png)
 
 参数的取值范围参考如下，输入参数取值后会自动添加单位。自定义场景的参数配置将应用于启动时的默认网络，建议在网络环境稳定时使用。
 
@@ -92,9 +92,9 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 当您使用网络领航员能力时，可以通过实况窗实时了解网络变化，同时您也可以点击实况窗查看该场景的详细介绍，点击蓝色字体可**查看详细的网络参数**和**网络开发代码开发最佳实践**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/b0ufLR4SRl-dg0W3-QepCQ/zh-cn_image_0000002797180831.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/zZtj1liES1aRIw3HxNCmtg/zh-cn_image_0000002771665942.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/GSlbGk01TtyCuqTv_35stw/zh-cn_image_0000002768020854.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/DUHBvkX3QRm-z4qBcVnx8g/zh-cn_image_0000002800985799.png)
 
 ## 网络领航员代码优化建议
 

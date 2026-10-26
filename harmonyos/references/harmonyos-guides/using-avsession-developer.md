@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avsessi
 title: 媒体会话提供方(ArkTS)
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 媒体会话提供方(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e43fbe29d3aae68b3e209e65fa63d848257064baddd2b66ec833d5090b40b76c
+scraped_at: 2026-10-27T07:39:28+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:24792083b67ed9bd6c477545fd317d626c4d44f3553028c752bfaac24ee8c2f5
 ---
 
 音视频应用在实现音视频功能的同时，需要作为媒体会话提供方接入媒体会话，在媒体会话控制方（例如播控中心）中展示媒体相关信息，并响应媒体会话控制方下发的播控命令。
@@ -120,7 +120,7 @@ content_hash: sha256:e43fbe29d3aae68b3e209e65fa63d848257064baddd2b66ec833d5090b4
                artist: 'ARTIST'
              };
              session.setAVMetadata(metadata).then(() => {
-               console.info(`SetAVMetadata successfully`);
+               console.info(`setAVMetadata successfully`);
                // ...
              }).catch((err: BusinessError) => {
                console.error(`Failed to set AVMetadata. Code: ${err.code}, message: ${err.message}`);
@@ -136,7 +136,7 @@ content_hash: sha256:e43fbe29d3aae68b3e209e65fa63d848257064baddd2b66ec833d5090b4
                  console.error(`Failed to set AVPlaybackState. Code: ${err.code}, message: ${err.message}`);
                  // ...
                } else {
-                 console.info(`SetAVPlaybackState successfully`);
+                 console.info(`setAVPlaybackState successfully`);
                  // ...
                }
              });
@@ -360,49 +360,49 @@ content_hash: sha256:e43fbe29d3aae68b3e209e65fa63d848257064baddd2b66ec833d5090b4
                console.info(`on play , do play task`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('play')取消监听。
-               // 处理完毕后，请使用SetAVPlaybackState上报播放状态。
+               // 处理完毕后，请使用setAVPlaybackState上报播放状态。
              });
              session.on('pause', () => {
                console.info(`on pause , do pause task`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('pause')取消监听。
-               // 处理完毕后，请使用SetAVPlaybackState上报播放状态。
+               // 处理完毕后，请使用setAVPlaybackState上报播放状态。
              });
              session.on('stop', () => {
                console.info(`on stop , do stop task`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('stop')取消监听。
-               // 处理完毕后，请使用SetAVPlaybackState上报播放状态。
+               // 处理完毕后，请使用setAVPlaybackState上报播放状态。
              });
              session.on('playNext', () => {
                console.info(`on playNext , do playNext task`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('playNext')取消监听。
-               // 处理完毕后，请使用SetAVPlaybackState上报播放状态，使用SetAVMetadata上报媒体信息。
+               // 处理完毕后，请使用setAVPlaybackState上报播放状态，使用setAVMetadata上报媒体信息。
              });
              session.on('playPrevious', () => {
                console.info(`on playPrevious , do playPrevious task`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('playPrevious')取消监听。
-               // 处理完毕后，请使用SetAVPlaybackState上报播放状态，使用SetAVMetadata上报媒体信息。
+               // 处理完毕后，请使用setAVPlaybackState上报播放状态，使用setAVMetadata上报媒体信息。
              });
              session.on('fastForward', () => {
                console.info(`on fastForward , do fastForward task`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('fastForward')取消监听。
-               // 处理完毕后，请使用SetAVPlaybackState上报播放状态和播放position。
+               // 处理完毕后，请使用setAVPlaybackState上报播放状态和播放position。
              });
              session.on('rewind', () => {
                console.info(`on rewind , do rewind task`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('rewind')取消监听。
-               // 处理完毕后，请使用SetAVPlaybackState上报播放状态和播放position。
+               // 处理完毕后，请使用setAVPlaybackState上报播放状态和播放position。
              });
              session.on('seek', (time: number) => {
                console.info(`on seek , the time is ${time}`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('seek')取消监听。
-               // 处理完毕后，请使用SetAVPlaybackState上报播放状态和播放position。
+               // 处理完毕后，请使用setAVPlaybackState上报播放状态和播放position。
              });
              session.on('setSpeed', (speed) => {
                console.info(`on setSpeed , the speed is ${speed}`);
@@ -413,13 +413,13 @@ content_hash: sha256:e43fbe29d3aae68b3e209e65fa63d848257064baddd2b66ec833d5090b4
                console.info(`on setLoopMode , the loop mode is ${mode}`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('setLoopMode')取消监听。
-               // 应用自定下一个模式，处理完毕后，请使用SetAVPlaybackState上报切换后的LoopMode。
+               // 应用自定义下一个模式，处理完毕后，请使用setAVPlaybackState上报切换后的LoopMode。
              });
              session.on('toggleFavorite', (assetId) => {
                console.info(`on toggleFavorite , the target asset Id is ${assetId}`);
                // ...
                // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('toggleFavorite')取消监听。
-               // 处理完毕后，请使用SetAVPlaybackState上报收藏结果isFavorite。
+               // 处理完毕后，请使用setAVPlaybackState上报收藏结果isFavorite。
              });
              // ...
            })

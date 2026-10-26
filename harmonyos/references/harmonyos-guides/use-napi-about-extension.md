@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API进行扩展能力功能开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API进行扩展能力功能开发
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:22+08:00
+scraped_at: 2026-10-27T07:40:16+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:eadac4bbf981e317c9089fc637ee177d2336d152cd312086f50639c52aa8347b
+content_hash: sha256:6838d9e73da1f46e345f5330be762ce210f366eaca7e75f8946946e74104d1f8
 ---
 
 ## 简介
@@ -642,7 +642,7 @@ test01();
 
 对ArkTS对象A调用napi\_coerce\_to\_native\_binding\_object将开发者实现的detach/attach回调和native对象信息加到A上，再将A跨线程传递。跨线程传递需要对A进行序列化和反序列化。此处的序列化与反序列化是人为控制的，需要调用后文介绍的napi\_serialize、napi\_deserialize接口。过程如下图所示：在当前线程thread1序列化A得到数据data，序列化阶段执行detach回调。然后将data传给目标线程thread2，在thread2中反序列化data，执行attach回调，最终得到ArkTS对象A。此处的detach/attach是告知开发者序列化与反序列化执行完毕的回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/-vUnGlQcR-u1y2CZXOcKDQ/zh-cn_image_0000002797301881.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/gulsepxsRwW3QdDSwfy0yw/zh-cn_image_0000002771826988.png)
 
 ## 事件循环
 

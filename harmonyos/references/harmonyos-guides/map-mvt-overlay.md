@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-mvt-overl
 title: 矢量图层
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 矢量图层
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:52+08:00
+scraped_at: 2026-10-27T07:39:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2b03301b6c5973dc1b64918accb077932696d7ba79ddd62dcc140333ea3255de
+content_hash: sha256:43a40998f29626ee084e34b6f5b982914627e1d1e2c13e5794fe9adbe8abb0b2
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2b03301b6c5973dc1b64918accb077932696d7ba79ddd62dcc140333ea3
 
 6.0.0(20)开始，支持矢量图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/p-sCSL3cR1eMOCrAk8r5eQ/zh-cn_image_0000002768021548.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/ShEv87FYSdyn2_efdjEjVw/zh-cn_image_0000002800986493.gif "点击放大")
 
 ## 接口说明
 

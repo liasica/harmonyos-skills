@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ime-kit-secur
 title: 输入法安全模式介绍
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 输入法安全模式介绍
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:56+08:00
+scraped_at: 2026-10-27T07:39:01+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:684630f1d6301bf802b45f52311109e1ac0c737a9238941213f385785bc81cb1
+content_hash: sha256:e1cbdd860f82846aa01cb0b3cabbf17a3c0cf3cc1e0c59cae45978c3cd17517c
 ---
 
 为了保护用户数据安全，系统增加了输入法安全模式功能，包括基础模式和完整体验模式。在基础模式下，输入法扩展无法调用任何可能涉及访问或泄漏用户隐私数据的系统能力；而在完整体验模式下，则没有该限制。
@@ -40,7 +40,7 @@ content_hash: sha256:684630f1d6301bf802b45f52311109e1ac0c737a9238941213f385785bc
 
    **图1** 共享沙箱
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/RZHIuIS-QeSPcVXdEk5CRg/zh-cn_image_0000002797300641.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/kGCR4v4GSx-73G20Rl2mgw/zh-cn_image_0000002771825750.png)
 3. 共享沙箱的配置流程。
 
    当应用主入口的[profile](../app/agc-help-add-releaseprofile-0000001914714796.md)和输入法扩展的[dataGroupIds](module-configuration-file.md#extensionabilities标签)中包含相同的data-group-id时，他们就可以使用这个data-group-id对应的共享沙箱。
@@ -55,26 +55,26 @@ content_hash: sha256:684630f1d6301bf802b45f52311109e1ac0c737a9238941213f385785bc
 
       1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“APP与元服务”，选择要配置的应用，在应用信息中[配置应用分类、标签](../doccenter-submission/agc-help-release-app-class-tag-0000002271695234.md)为工具、输入法。
 
-         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/5OIbHi6RTY6tEgaBzBINaQ/zh-cn_image_0000002767860710.png)
+         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/BIWC1joaSLqdR7sczt0aQQ/zh-cn_image_0000002801105563.png)
       2. 选择“开发与服务”，在项目列表选择项目，并在应用列表下选择需要申请共享沙箱的应用。
       3. 进入“项目设置 > 开放能力管理”页面，点击“输入法应用内数据共享”对应的“申请”。
 
-         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/uG5iAZoBS2SavM9bnuJw7w/zh-cn_image_0000002797180673.png)
+         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/uga2s3lVTpqwMdaoz3jVnw/zh-cn_image_0000002771665784.png)
       4. 参考“申请原因”中的模板，提供申请必需的相关信息，包括应用名称、应用appId、开发者Id，并参考样例提供附件材料，然后点击“提交”按钮。
 
-         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/PtTgUhcbROa1H7wJbDWM8w/zh-cn_image_0000002768020696.png)
+         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/I14tjRkpQcOVxO-0bqjdBw/zh-cn_image_0000002800985641.png)
 
          返回“开放能力管理”页面，原“申请”变为“申请中”，1~3个工作日内反馈申请结果，请留意互动中心的“服务开通申请”信息。
 
-         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/zquNixYaT9SttLbBl-V07Q/zh-cn_image_0000002797300643.png)
+         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/dDKgDyZ_SQSSv-uk2Yn71g/zh-cn_image_0000002771825752.png)
 
          申请通过后，互动中心会发送通知给您，“申请中”会变为置灰显示的“申请”，同时，您将收到一个data-group-id。
 
-         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/hbCImxvyTdWdpRvqvlBzmw/zh-cn_image_0000002767860712.png)
+         ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/QjPpPPGUQMyibQG34iToGw/zh-cn_image_0000002801105565.png)
    3. 待您收到data-group-id申请成功的回复后，重新生成[应用的profile](../app/agc-help-add-releaseprofile-0000001914714796.md)，新生成的profile里面包含本次申请到的data-group-id；并使用DevEco Studio[配置工程的签名信息](ide-publish-app.md#section945904791115)，将新的profile配置到工程中。
    4. 将您本次申请获取到的data-group-id，配置到InputMethodExtensionAbility所在的module.json5中的[dataGroupIds](module-configuration-file.md#extensionabilities标签)中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/FhXEbyFRRSSbIxHMAhOlPQ/zh-cn_image_0000002797180675.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/n90VrNu3SV-vSUofGLjmXw/zh-cn_image_0000002771665786.png)
 4. 共享沙箱使用流程。
 
    a. 分别在输入法扩展和应用主入口通过[getGroupDir](../harmonyos-references/js-apis-inner-application-context.md#getgroupdir10)获取共享沙箱路径。

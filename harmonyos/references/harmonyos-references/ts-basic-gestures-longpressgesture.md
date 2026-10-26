@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: LongPressGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > LongPressGesture
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:39+08:00
+scraped_at: 2026-10-27T07:41:18+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:7b1abfdcc7ddbc2c0debbd362d5f21d9a50cd76ed41e0d832ecd18c5f3fa6a93
+content_hash: sha256:c8dac22fda222e447dc6eb8d7bd8859b21845cf0c5703e9c21f2fbccb0f5a321
 ---
 
 用于触发长按手势事件，触发长按手势的最少手指数为1，默认最短长按时间为500毫秒。可配置duration参数控制最短长按时长，适用于需要通过用户长按操作触发组件交互的场景。
@@ -179,4 +179,4 @@ struct LongPressGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Ta5felahTmKpds39AJuojg/zh-cn_image_0000002797182191.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/mQwKZo-HTuiuwCS0oA_okw/zh-cn_image_0000002771667300.gif)

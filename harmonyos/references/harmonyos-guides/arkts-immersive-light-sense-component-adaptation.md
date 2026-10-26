@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 组件适配沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 组件适配沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:09+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:cebd4bee386a6af1908b3e200fa75933b3beb3b9812fc5c230d29b07b0e4b749
+scraped_at: 2026-10-27T07:38:50+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:420a7ef3e7715f17f64d849d7d1eb83c8f48cd62a37798728f4e337059d27ade
 ---
 
 本文按导航类、弹窗类、按钮与选择类、其余组件四大场景分类，系统介绍各组件如何通过应用级开关与组件级配置开启沉浸光感，涵盖沉浸光感的视觉效果、设置方法及适配要点，帮助开发者快速完成沉浸光感的组件适配。
@@ -58,7 +58,7 @@ Navigation标题栏支持通过应用级开启、组件级开启方式开启沉�
 
 ## 弹窗类组件
 
-弹窗类组件包括Toast、Popup、Tips、Menu和Dialog（包含AlertDialog、CustomDialog、bindSheet及各类PickerDialog），是浮层元素，在内容之上建立视觉层次。沉浸光感为弹窗类组件赋予了核心价值：沉浸式系统材质让弹窗背景呈现轻盈通透的质感，底层内容透过材质层自然透出，配合折射、高光、阴影等多层效果，使弹窗在内容之上建立清晰的视觉层次；沉浸式空间动效为弹窗和菜单的弹出过程增添形变、流光等动态表现，使弹出过程灵动自然。弹窗类组件通常使用较厚的材质样式（THICK或ULTRA\_THICK），以获得更强的背景模糊效果，确保弹窗内容与背景内容之间有清晰的视觉分离。沉浸光感开启后，主动设置的背景色、背景模糊等自定义样式属性不生效。
+弹窗类组件包括Toast、Popup、Tips、Menu和Dialog（包含AlertDialog、CustomDialog及各类PickerDialog）。这些组件是浮层元素，在内容之上建立视觉层次。沉浸式系统材质让弹窗背景呈现轻盈通透的质感，底层内容透过材质层自然透出，配合折射、高光、阴影等多层效果，使弹窗在内容之上建立清晰的视觉层次。沉浸式空间动效为弹窗和菜单的弹出过程增添形变、流光等动态表现，使弹出过程灵动自然。弹窗类组件通常使用较厚的材质样式（THICK或ULTRA\_THICK），以获得更强的背景模糊效果，确保弹窗内容与背景内容之间有清晰的视觉分离。沉浸光感开启后，主动设置的背景色、背景模糊等自定义样式属性不生效。
 
 ### 即时反馈（Toast）
 
@@ -96,17 +96,27 @@ Popup和Tips支持通过组件级开启方式开启沉浸光感。
 
 应用级开启：应用级开关处于[ENABLE](../harmonyos-references/arkts-apis-uimaterial.md#materialstate)模式下，弹出框默认开启沉浸光感，沉浸式系统材质样式默认取值为ULTRA\_THICK。
 
-组件级开启：弹出框支持通过弹出框options参数中的systemMaterial字段设置沉浸光感效果，如[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)、[AlertDialogParam](../harmonyos-references/ts-methods-alert-dialog-box.md#alertdialogparam对象说明)、[ActionSheetOptions](../harmonyos-references/ts-methods-action-sheet.md#actionsheetoptions对象说明)、[SheetOptions](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)等。如果未主动设置背景色、背景模糊等自定义样式属性且未设置systemMaterial字段，弹出框沉浸式系统材质样式ImmersiveStyle默认取值为ImmersiveStyle.ULTRA\_THICK。
+组件级开启：弹出框支持通过弹出框options参数中的systemMaterial字段设置沉浸光感效果，如[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)、[AlertDialogParam](../harmonyos-references/ts-methods-alert-dialog-box.md#alertdialogparam对象说明)、[ActionSheetOptions](../harmonyos-references/ts-methods-action-sheet.md#actionsheetoptions对象说明)等。如果未主动设置背景色、背景模糊等自定义样式属性且未设置systemMaterial字段，弹出框沉浸式系统材质样式ImmersiveStyle默认取值为ImmersiveStyle.ULTRA\_THICK。
 
 * 大面积的弹出框开启沉浸光感效果，会带来更多的动效绘制开销，不建议开启。详见[控制弹窗尺寸](arkts-immersive-light-sense-constraints.md#控制弹窗尺寸)中的尺寸建议。
 * [CalendarPicker](../harmonyos-references/ts-basic-components-calendarpicker.md)组件拉起的弹出框目前暂不支持开启沉浸光感效果，通过通用属性设置的沉浸光感效果会体现在CalendarPicker组件本身。
 * [CalendarPickerDialog](../harmonyos-references/ts-methods-calendarpicker-dialog.md)、[DatePickerDialog](../harmonyos-references/ts-methods-datepicker-dialog.md)、[TextPickerDialog](../harmonyos-references/ts-methods-textpicker-dialog.md)、[TimePickerDialog](../harmonyos-references/ts-methods-timepicker-dialog.md)组件沉浸光感效果同CustomDialog相同。
 
-组件开启沉浸光感的效果请参见[示例9（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-alert-dialog-box.md#示例9设置弹窗的沉浸光感效果)、[示例14（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-custom-dialog-box.md#示例14设置弹窗的沉浸光感效果)、[示例9（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-action-sheet.md#示例9设置弹窗的沉浸光感效果)和[示例10（半模态设置系统材质）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#示例10半模态设置系统材质)。
+组件开启沉浸光感的效果请参见[示例9（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-alert-dialog-box.md#示例9设置弹窗的沉浸光感效果)、[示例14（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-custom-dialog-box.md#示例14设置弹窗的沉浸光感效果)和[示例9（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-action-sheet.md#示例9设置弹窗的沉浸光感效果)。
+
+### 半模态（bindSheet）
+
+bindSheet半模态转场仅支持通过组件级开启方式开启沉浸光感。
+
+应用级开启：应用级开关处于[ENABLE](../harmonyos-references/arkts-apis-uimaterial.md#materialstate)模式下，bindSheet半模态转场不会默认开启沉浸光感。
+
+组件级开启：bindSheet支持通过[SheetOptions](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)中的systemMaterial字段设置沉浸光感效果。systemMaterial默认值为undefined，无默认沉浸光感效果，需显式设置后生效。设置systemMaterial后，其影响的背景色[backgroundColor](../harmonyos-references/ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](../harmonyos-references/ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](../harmonyos-references/ts-universal-attributes-border.md#borderwidth)、阴影[shadow](../harmonyos-references/ts-universal-attributes-image-effect.md#shadow)等属性不再生效，不建议与上述属性一起使用。
+
+组件开启沉浸光感的效果请参见[示例10（半模态设置系统材质）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#示例10半模态设置系统材质)。
 
 ## 按钮与选择类组件
 
-按钮与选择类组件包括Button、Select、Toggle、Slider、ChipGroup/ChipGroupV2和SegmentButton/SegmentButtonV2，是内嵌于内容流中的交互元素，用户通过它们进行选择和操作。沉浸光感为选择类组件提供了细腻的交互反馈与通透的视觉质感：沉浸式系统材质通常使用较薄的材质样式（ULTRA\_THIN或THIN），在保持组件背景通透的同时，通过[ImmersiveOptions](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)中的交互形变（interactive）和点光源（lightEffect）为按压、触摸等操作提供灵动的视觉反馈，替代组件默认的按压态和悬浮态效果。
+按钮与选择类组件包括Button、Select、Toggle、Slider、ChipGroup/ChipGroupV2和SegmentButton/SegmentButtonV2，是内嵌于内容流中的交互元素，用户通过它们进行选择和操作。沉浸光感为选择类组件提供了细腻的交互反馈与通透的视觉质感：沉浸式系统材质通常使用较薄的材质样式（ULTRA\_THIN或THIN），在保持组件背景通透的同时，通过[ImmersiveOptions](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)中的交互形变（interactive）和光感交互反馈（lightEffect）为按压、触摸等操作提供灵动的视觉反馈，替代组件默认的按压态和悬浮态效果。
 
 ### 按钮（Button）
 

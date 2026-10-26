@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-acces
 title: 接入规范学习
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 接入规范学习
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:53+08:00
+scraped_at: 2026-10-27T07:39:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0d3411a6a8e511fb87f3aaff2f61af14c762cdb74080f86917fe2cbf17f5b6a1
+content_hash: sha256:72094c9c4928f9a1f1d8e57f9043e801112d60d06c61be23217704f9c6e6ba64
 ---
 
 为了确保用户获得良好的支付体验，Payment Kit制定了相关接入规范，请开发者遵照执行，具体要求（非强制性）如下：
@@ -22,4 +22,4 @@ content_hash: sha256:0d3411a6a8e511fb87f3aaff2f61af14c762cdb74080f86917fe2cbf17f
 1. 建议在应用的订单页或支付页内直接拉起华为支付收银台，不建议跳转空白页拉起收银台。
 2. 商户收银台展示数字人民币支付入口时，需与其他支付App在同一层级，建议不要隐藏数字人民币支付入口或满足一定条件后才在收银台页面展示。具体参考如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Xr26meq8TzOKO35g2kpJWQ/zh-cn_image_0000002768021576.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/vKE4Jx8QS5Ky3izB7LJZHA/zh-cn_image_0000002800986521.png)

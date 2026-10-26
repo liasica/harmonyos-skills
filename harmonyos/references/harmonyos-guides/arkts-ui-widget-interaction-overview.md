@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片页面刷新概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面刷新 > ArkTS卡片页面刷新概述
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:55+08:00
+scraped_at: 2026-10-27T07:39:00+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:7a78551881a103f4b82c4f2bff6ff2502807148bf0e1f97b2cbb39ab02bde21c
+content_hash: sha256:f0f79c0430893c5fe3f8c8a7642db125e44f5dd6f1d376979c8d6cbffa233591
 ---
 
 卡片使用方（例如：桌面）和卡片提供方均可主动触发卡片页面刷新。此外，卡片管理服务会根据开发者声明的定时信息，按需通知卡片提供方进行卡片刷新。因此，卡片刷新方式包括：卡片提供方主动触发刷新、卡片使用方主动触发刷新以及卡片定时定点刷新。这些刷新方式均需由卡片提供方推送需要刷新的卡片数据。
@@ -26,13 +26,13 @@ ArkTS卡片管理服务支持卡片提供方（例如：应用）和卡片之间
 
 **图1 卡片提供方主动刷新卡片流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/u1xnsf4QRfuMmU4DSKaioQ/zh-cn_image_0000002797180615.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/5H_ErC2zQoyesUtsWoVQ8w/zh-cn_image_0000002771665726.png)
 
 卡片提供方应用运行过程中，如果识别到有要更新卡片数据的诉求，可以主动通过formProvider提供的[updateForm](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)接口更新卡片。
 
 **图2 卡片使用方主动刷新卡片流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FxoyrGX-SCmXf4gD2geWxA/zh-cn_image_0000002768020636.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/lrHRQQgnQkWSXLBdKKjxyg/zh-cn_image_0000002800985583.png)
 
 当卡片使用方检测到系统语言或主题模式（如深浅色）发生变化时，可以主动通过formHost提供的requestForm（仅支持系统应用使用）接口请求更新卡片，卡片管理服务会进而通知卡片提供方完成卡片更新。
 
@@ -46,7 +46,7 @@ ArkTS卡片管理服务支持卡片提供方（例如：应用）和卡片之间
 
 **图3 卡片管理服务通知卡片提供方定时定点刷新卡片流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/qAkhRqO3SS-5LQ4hkXiY3Q/zh-cn_image_0000002797300585.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/FZVOj4hBT6CWLgKuskN75Q/zh-cn_image_0000002771825694.png)
 
 根据卡片提供方开发者提前配置声明的定时刷新信息，卡片管理服务会根据定时信息、卡片可见状态、刷新次数等因素综合判断是否需要通知卡片提供方更新卡片。
 

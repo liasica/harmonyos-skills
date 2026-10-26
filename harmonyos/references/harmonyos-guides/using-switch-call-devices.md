@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-switch-
 title: 使用组件切换通话设备
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布式媒体会话 > 使用组件切换通话设备
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:574d6c724d0f82c99e3da08ed72a9f11758564ae5db01137d1fd1b845e1cbe80
+scraped_at: 2026-10-27T07:39:29+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:569ce7d0de8c834409928f7ee3b82aaaa260ee4f4355f94ddf0fbf7d13de493f
 ---
 
 ## 切换通话输出设备
@@ -101,7 +101,7 @@ content_hash: sha256:574d6c724d0f82c99e3da08ed72a9f11758564ae5db01137d1fd1b845e1
        this.avCastPicker.select(avCastPickerOptions).then(() => {
          console.info('select successfully');
        }).catch((err: BusinessError) => {
-         console.error('AVCastPicker.select failed with err: ${err.code}, ${err.message}');
+         console.error(`AVCastPicker.select failed with err: ${err.code}, ${err.message}`);
        });
      }
    }

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感简介
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感简介
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:43+08:00
+scraped_at: 2026-10-27T07:38:50+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:1ed7648aa7421c3b015d3eec6e5327bcc0879cd19be0781254bd3394a807b4ee
+content_hash: sha256:3e8a757af24119606bd37a1489e9524a8d45793d0f59baddd09db564ae6bbe61
 ---
 
 从API版本26.0.0开始，ArkUI新增沉浸光感。
 
 沉浸光感是ArkUI提供的一套从“视觉层”到“感知层”的体验，将光影材质与交互动效表现相结合，帮助应用建立清晰的视觉层次，并在不同设备上保持和谐一致的观感。例如：用户展开菜单时，伴随着形变弹出打破生硬的规整边界，边缘流光勾勒着面板轮廓，将菜单的弹出操作转化为富有沉浸感的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/nIPpHczpQUGRtcX_r4pGkg/zh-cn_image_0000002768020196.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/y5VbycU4Rq-0S8qugU_9xA/zh-cn_image_0000002800985143.gif)
 
 沉浸光感包含[沉浸式系统材质](arkts-immersive-light-sense-overview.md#沉浸式系统材质)与[沉浸式空间动效](arkts-immersive-light-sense-overview.md#沉浸式空间动效)两部分能力，前者为组件赋予轻盈通透的质感、在内容之上建立清晰的视觉层次，后者为弹窗和菜单的弹出过程增添灵动自然的动态表现。
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-vs-w
 title: TaskPool和Worker的对比
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > TaskPool和Worker的对比
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:35+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:075bd441d8644f55111c0f1f161a796f34535fa039a5e66475a7f95d9370240b
+scraped_at: 2026-10-27T07:38:42+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:a3e9146e69293725226a4feb2f7eaab1581be03bd523d6587497a930c76ffe30
 ---
 
 TaskPool和Worker的作用是为应用程序提供多线程运行环境，用于处理耗时计算任务或其他密集型任务，避免任务阻塞宿主线程，提高系统性能和资源利用率。这两种多线程并发能力均是基于Actor并发模型实现的。TaskPool在Worker之上做了更多场景化的功能封装，内置调度器和Worker线程池，支持任务优先级设置、任务组管理、自动扩缩容等能力，开发者无需关注线程生命周期；Worker则拥有独立的运行环境，适合需要长时间占据线程或依赖线程上下文的场景。
 
-本文将从[实现特点](taskpool-vs-worker.md#实现特点对比)、[工作原理](taskpool-vs-worker.md#工作原理对比)、[适用场景](taskpool-vs-worker.md#适用场景对比)和[具体实践](taskpool-vs-worker.md#具体实践对比)四个方面对TaskPool与Worker进行全面对比分析，帮助开发者根据自身业务场景选择合适的并发方案。
+本文将从[实现特点对比](taskpool-vs-worker.md#实现特点对比)、[工作原理对比](taskpool-vs-worker.md#工作原理对比)、[适用场景对比](taskpool-vs-worker.md#适用场景对比)和[具体实践对比](taskpool-vs-worker.md#具体实践对比)四个方面对TaskPool与Worker进行全面对比分析，帮助开发者根据自身业务场景选择合适的并发方案。
 
 ## 实现特点对比
 
@@ -50,21 +50,21 @@ Worker拥有独立的运行环境，每个Worker线程和主线程一样拥有�
 
 **图 1** Worker工作原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/i0Z800muRDS5D_OknUDWUQ/zh-cn_image_0000002797299511.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ecEbEpBXQH2tI9yMA-_qNQ/zh-cn_image_0000002771824620.png)
 
 在多核的情况下（下图中的CPU 1和CPU 2能同时工作），多个Worker线程（下图中的Worker thread1和Worker thread2）可以同时执行，因此Worker线程做到了真正的并发，如下图所示：
 
 **图 2** 多核CPU下Worker并发原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/gJY7UnNgS7CIyRII7f_NMw/zh-cn_image_0000002767859580.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/-CypJDoBRD2t0A9Bb9LvnA/zh-cn_image_0000002801104435.png)
 
 ### TaskPool工作原理
 
-TaskPool在Worker之上实现了调度器和Worker线程池，无需管理生命周期。在主线程（ArkTS Main Thread）中调用execute接口会将待执行的任务方法及参数信息，根据设置的任务优先级放入任务队列（TaskQueue）中等待调度执行。调度器会依据调度算法（优先级，防饥饿），从优先级队列中取出任务进行序列化，放入TaskPool中的Worker线程池，工作线程（ArkTS Worker Thread）根据调度器的安排执行任务方法，并将任务处理结果进行反序列化，最终以Promise-Then的方式返回给主线程。TaskPool的工作线程池会根据待执行的任务数量，任务的执行时间进行相应的扩容与缩容。原理图如下所示：
+TaskPool在Worker之上实现了调度器和Worker线程池，无需管理生命周期。在主线程（ArkTS Main Thread）中调用[taskpool.execute()](../doccenter-references/api/js-apis-taskpool.md#taskpoolexecute)接口会将待执行的任务方法及参数信息，根据设置的任务优先级放入任务队列（TaskQueue）中等待调度执行。调度器会依据调度算法（优先级，防饥饿），从优先级队列中取出任务进行序列化，放入TaskPool中的Worker线程池，工作线程（ArkTS Worker Thread）根据调度器的安排执行任务方法，并将任务处理结果进行反序列化，最终以Promise-Then的方式返回给主线程。TaskPool的工作线程池会根据待执行的任务数量，任务的执行时间进行相应的扩容与缩容。原理图如下所示：
 
 **图 3** TaskPool工作原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/OW3zmSLoSpeetduhnCd91g/zh-cn_image_0000002797179545.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/K0lkQGc3Qri_Kt2Bexz_Ug/zh-cn_image_0000002771664656.png)
 
 ## 适用场景对比
 
@@ -82,7 +82,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
 
   例如后台进行1小时的预测算法训练等CPU密集型任务，适合使用Worker。
 
-  场景示例可参考[常驻任务开发指导](resident-task-guide.md)。
+  场景示例可参考[常驻任务开发指导 (Worker)](resident-task-guide.md)。
 * **有强关联的一系列同步任务**
 
   例如在需要创建并使用句柄的场景中，每次创建的句柄都不同，且必须持续保存该句柄，以确保后续操作正确执行，此类场景适合使用Worker。
@@ -102,7 +102,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
 
   从API version 18开始，Worker支持设置调度优先级，开发者可以根据使用场景和任务特性选择使用TaskPool或Worker。
 
-  例如[图像直方图绘制场景](cpu-intensive-task-development.md#使用taskpool进行图像直方图处理)，后台计算的直方图数据会用于前台界面的显示，影响用户体验，且任务相对独立，推荐使用TaskPool。
+  例如[使用TaskPool进行图像直方图处理](cpu-intensive-task-development.md#使用taskpool进行图像直方图处理)，后台计算的直方图数据会用于前台界面的显示，影响用户体验，且任务相对独立，推荐使用TaskPool。
 * **需要频繁取消的任务**
 
   如图库大图浏览场景，为提升体验，系统会同时缓存当前图片左右各两张图片。当往一侧滑动跳到下一张图片时，需取消另一侧的缓存任务，此时适合使用TaskPool。
@@ -118,7 +118,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
 
 **图 4** ArkTS图片编辑效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/WyzE4BQvTb6W2IH5-1S4Qw/zh-cn_image_0000002768019566.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/KiKzOsSOSHSrWLalVwtPpQ/zh-cn_image_0000002800984511.gif)
 
 **说明** 
 
@@ -219,7 +219,8 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
    ```
 4. 当主线程接收到子线程的计算结果时，如果还有剩余任务没有处理，就会复用该Worker子线程继续处理剩余任务；当所有任务都处理完成时，销毁所有子线程，并将所有任务处理结果进行合并进而更新UI。
 
-   ```ts
+   ```typescript
+   function test() {
      let num = 0; // Number of tasks processed
      let newBuffers: ArrayBuffer[] = [];
      for (let i = 0; i < taskNum; i++) {
@@ -240,6 +241,8 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
          that.updatePixelMap(entireArrayBuffer); // Refresh the UI according to the calculation result.
        }
      }
+   }
+
    // Merge the calculation results of all tasks.
    function mergeArrayBuffers(buffers: ArrayBuffer[]) {
      // Calculate the combined total length.
@@ -308,18 +311,21 @@ TaskPool提供了比较简洁的API接口，开发者只需把任务方法、参
    ```
 2. 根据任务数拆分任务，并把任务放进任务组里面，调用TaskPool的execute()接口将TaskGroup任务组中的每个任务放入线程池中，系统会根据第二个参数任务优先级进行调度执行。TaskGroup任务组内的每个任务的执行顺序会与执行结果数组中的顺序保持一致。将任务组的执行结果（数组内多个任务的处理结果）合并并返回给主线程。
 
-   ```ts
-     private async execImageProcessing(buffer: ArrayBuffer, type: AdjustId, value: number): Promise<ArrayBuffer> {
-       const buffers = splitArrayBuffer(buffer, 240);
-       const group = splitTask(buffers, type, value);
-       try {
-         return mergeArrayBuffers(await taskpool.execute(group, taskpool.Priority.HIGH) as ArrayBuffer[]);
-       } catch (err) {
-         let error = err as BusinessError;
-         hilog.error(0x0000, TAG, `${error.code}, ${error.message}`);
-         return buffer;
-       }
+   ```typescript
+   private async execImageProcessing(buffer: ArrayBuffer, type: AdjustId, value: number): Promise<ArrayBuffer> {
+     const buffers = splitArrayBuffer(buffer, 240);
+     const group = splitTask(buffers, type, value);
+     try {
+       return mergeArrayBuffers(await taskpool.execute(group, taskpool.Priority.HIGH) as ArrayBuffer[]);
+     } catch (err) {
+       let error = err as BusinessError;
+       hilog.error(0x0000, TAG, `${error.code}, ${error.message}`);
+       return buffer;
      }
+   }
+   ```
+
+   ```typescript
    /**
     * Each task processes a portion of the pixel data and adds the task to the task group.
     *
@@ -358,7 +364,7 @@ TaskPool提供了比较简洁的API接口，开发者只需把任务方法、参
 
 ### 数据传输方式对比
 
-使用Worker与TaskPool处理并发任务时需要将数据从主线程传递到任务池的执行线程。目前支持传输的数据对象可以分为[普通对象](normal-object.md)、[ArrayBuffer对象](arraybuffer-object.md)、[SharedArrayBuffer对象](shared-arraybuffer-object.md)、[Transferable对象](transferabled-object.md)、[Sendable对象](sendable-object.md)五种，具体可参考指南文档。Worker与TaskPool均提供了两种传递数据的方式。
+使用Worker与TaskPool处理并发任务时需要将数据从主线程传递到任务池的执行线程。目前支持传输的数据对象可以分为[普通对象](normal-object.md)、[ArrayBuffer对象](arraybuffer-object.md)、[SharedArrayBuffer对象](shared-arraybuffer-object.md)、[Transferable对象 (NativeBinding对象)](transferabled-object.md)、[Sendable对象](sendable-object.md)五种，具体可参考指南文档。Worker与TaskPool均提供了两种传递数据的方式。
 
 * 转移控制权：可以将transfer列表中的ArrayBuffer对象在传输时转移控制权至工作线程，而非复制内容到工作线程。传输后当前的ArrayBuffer失效，在宿主线程中将变为不可用，不允许再访问。
 * 深拷贝：将宿主线程的数据复制一份传递给执行线程，执行线程对数据的修改不会对宿主线程中的原数据产生影响。
@@ -377,7 +383,7 @@ TaskPool与Worker底层都是采用了同一套序列化与反序列化的机制
 | 参数 | 217 | 36.111 | 6.023 | 115.294 | 1.933 |
 | 结果 | 47 | 16.667 | 2.990 | 85.243 | 0.567 |
 
-上面实验待编辑图片有24520520个像素字节数，如果采用转移控制权的方式，序列化的数据就小很多且效率高。采用深拷贝方式的话会增加序列化与反序列化的开销。在宿主线程将数据（支持控制权转移）传递给执行线程后，不需要紧接着对数据进行访问的场景，推荐使用**转移控制权**的方式，这样可以提升数据传输效率。
+上面实验待编辑图片有24520520个像素字节数，如果采用转移控制权的方式，序列化的数据就小很多且效率高。采用深拷贝方式的话会增加序列化与反序列化的开销。在宿主线程将数据（支持控制权转移）传递给执行线程后，不需要紧接着对数据进行访问的场景，推荐使用转移控制权的方式，这样可以提升数据传输效率。
 
 TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支持任务方法的传递，只能将任务方法写在Worker.ets文件中。TaskPool支持任务方法的传递，因此相较于Worker，TaskPool多了任务方法的序列化与反序列化步骤。数据传输两者差异不大。
 
@@ -387,11 +393,11 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
 
 **图 5** 中载模型下Worker与TaskPool耗时对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/5f6bdzcjSXmQbShE0gLN-g/zh-cn_image_0000002797299513.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/vCvac9WRSeuazh18836-sw/zh-cn_image_0000002771824622.png)
 
 **图 6** 重载模型下TaskPool与Worker耗时对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/bZ07ahE1T8OukpnKNqVKNg/zh-cn_image_0000002767859582.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ysR8D0AQS46GtEQB6Fqxvw/zh-cn_image_0000002801104437.png)
 
 从模型实验数据可以看出：
 
@@ -415,11 +421,11 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
 
 **图 7** 中载模型下TaskPool与Worker运行时内存占用对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/gP8DpGzNTgCKJDF3ec7VxA/zh-cn_image_0000002797179547.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/vRvUxXknRYmxh0R_19zQFQ/zh-cn_image_0000002771664658.png)
 
 **图 8** 重载模型下TaskPool与Worker运行时内存占用对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/uFWvHWNBSO2IA1CRxrFzoA/zh-cn_image_0000002768019568.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Mx9-YGPQSIKobgZEsIZscg/zh-cn_image_0000002800984513.png)
 
 从以上实验数据可以看出：
 

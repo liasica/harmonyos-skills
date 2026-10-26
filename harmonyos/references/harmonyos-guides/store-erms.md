@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-erms
 title: 生态查询服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 生态查询服务
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:42+08:00
+scraped_at: 2026-10-27T07:39:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:71b884e0f33aadcd1f256695391b2b98e9f8c3272602a7dc1a87813772510f2e
+content_hash: sha256:9e07df0cfad98cca6a2db2f902fd416e238e52bead087697fd1f318cac8992e8
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:71b884e0f33aadcd1f256695391b2b98e9f8c3272602a7dc1a878137725
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/E5yH81etReK63DfAgf835Q/zh-cn_image_0000002768021276.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/nRtxaj3HSqOyE2OOC1wH8Q/zh-cn_image_0000002800986221.png)
 
 1. 用户需要查询应用/元服务自身场景值或者查询广告验签版本。
 2. 应用调用[getSelfSceneCode](../harmonyos-references/store-scenemanager.md#scenemanagergetselfscenecode)接口和[getAdsVerificationVersion](../harmonyos-references/store-scenemanager.md#scenemanagergetadsverificationversion)接口分别获取自身场景值和广告验签版本。

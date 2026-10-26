@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-m
 title: "@ohos.distributedHardware.mechanicManager (机械体控制模块)"
 breadcrumb: API参考 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务） > ArkTS API > @ohos.distributedHardware.mechanicManager (机械体控制模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5076e28462d3971522aff8290e6aa6ad1d4fe4026b20c4378c6adbecadb9343e
+scraped_at: 2026-10-27T07:42:55+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:9291d19547491ae73afbff4ee114a19cbd046466559b45fbf718695a7f5cb5ec
 ---
 
 本模块提供与机械体设备交互的能力，包括设备连接状态监听、跟踪控制和跟踪状态监听功能。
@@ -46,6 +46,12 @@ on(type: 'attachStateChange', callback: Callback<AttachStateChangeInfo>): void
 **示例：**
 
 ```ts
+// 判断当前设备是否支持对特定设备类型的机械体设备控制（isControlSupported()接口API起始版本：26.0.0）
+let isSupported: boolean = mechanicManager.isControlSupported();
+if (!isSupported) {
+  console.info('The control function is not supported.');
+  return;
+}
 // 定义连接状态变化回调函数，result为设备连接状态变化信息
 let callback = (result: mechanicManager.AttachStateChangeInfo) => {
   console.info(`'callback result:' ${result}`);
@@ -85,6 +91,12 @@ off(type: 'attachStateChange', callback?: Callback<AttachStateChangeInfo>): void
 **示例：**
 
 ```ts
+// 判断当前设备是否支持对特定设备类型的机械体设备控制（isControlSupported()接口API起始版本：26.0.0）
+let isSupported: boolean = mechanicManager.isControlSupported();
+if (!isSupported) {
+  console.info('The control function is not supported.');
+  return;
+}
 // 定义连接状态变化回调函数
 let callback = (result: mechanicManager.AttachStateChangeInfo) => {
   console.info(`'callback result:' ${result}`);
@@ -121,6 +133,12 @@ getAttachedMechDevices(): MechInfo[]
 **示例：**
 
 ```ts
+// 判断当前设备是否支持对特定设备类型的机械体设备控制（isControlSupported()接口API起始版本：26.0.0）
+let isSupported: boolean = mechanicManager.isControlSupported();
+if (!isSupported) {
+  console.info('The control function is not supported.');
+  return;
+}
 console.info('Query device list');
 // 调用getAttachedMechDevices方法获取已连接的机械体设备列表
 let mechanicInfos = mechanicManager.getAttachedMechDevices();
@@ -154,6 +172,12 @@ setCameraTrackingEnabled(isEnabled: boolean): void
 **示例：**
 
 ```ts
+// 判断当前设备是否支持对特定设备类型的机械体设备控制（isControlSupported()接口API起始版本：26.0.0）
+let isSupported: boolean = mechanicManager.isControlSupported();
+if (!isSupported) {
+  console.info('The control function is not supported.');
+  return;
+}
 console.info('Enable tracing');
 // 调用setCameraTrackingEnabled方法，参数true表示启用摄像头跟踪
 mechanicManager.setCameraTrackingEnabled(true);
@@ -186,6 +210,12 @@ getCameraTrackingEnabled(): boolean
 **示例：**
 
 ```ts
+// 判断当前设备是否支持对特定设备类型的机械体设备控制（isControlSupported()接口API起始版本：26.0.0）
+let isSupported: boolean = mechanicManager.isControlSupported();
+if (!isSupported) {
+  console.info('The control function is not supported.');
+  return;
+}
 console.info('Get tracking status');
 // 调用getCameraTrackingEnabled方法获取当前摄像头跟踪是否启用
 let enabled = mechanicManager.getCameraTrackingEnabled();
@@ -218,6 +248,12 @@ on(type: 'trackingStateChange', callback: Callback<TrackingEventInfo>): void
 **示例：**
 
 ```ts
+// 判断当前设备是否支持对特定设备类型的机械体设备控制（isControlSupported()接口API起始版本：26.0.0）
+let isSupported: boolean = mechanicManager.isControlSupported();
+if (!isSupported) {
+  console.info('The control function is not supported.');
+  return;
+}
 // 定义跟踪状态变化回调函数，result为跟踪事件信息
 let callback = (result: mechanicManager.TrackingEventInfo) => {
   console.info(`'callback result:' ${result}`);
@@ -255,6 +291,12 @@ off(type: 'trackingStateChange', callback?: Callback<TrackingEventInfo>): void
 **示例：**
 
 ```ts
+// 判断当前设备是否支持对特定设备类型的机械体设备控制（isControlSupported()接口API起始版本：26.0.0）
+let isSupported: boolean = mechanicManager.isControlSupported();
+if (!isSupported) {
+  console.info('The control function is not supported.');
+  return;
+}
 // 定义跟踪状态变化回调函数
 let callback = (result: mechanicManager.TrackingEventInfo) => {
   console.info(`'callback result:' ${result}`);
@@ -292,6 +334,12 @@ getCameraTrackingLayout(): CameraTrackingLayout
 **示例：**
 
 ```ts
+// 判断当前设备是否支持对特定设备类型的机械体设备控制（isControlSupported()接口API起始版本：26.0.0）
+let isSupported: boolean = mechanicManager.isControlSupported();
+if (!isSupported) {
+  console.info('The control function is not supported.');
+  return;
+}
 console.info('Query layout');
 // 调用getCameraTrackingLayout方法获取当前摄像头跟踪布局
 let layout = mechanicManager.getCameraTrackingLayout();

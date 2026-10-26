@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-a
 title: 音频解码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频解码同步模式
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:26+08:00
+scraped_at: 2026-10-27T07:39:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:720820bc897592190f116493075e06a47073c047cfaff20ed7c42127b181578d
+content_hash: sha256:08d7bef1bdced7ced90f9aa61051d33a4ea7043497ee9718d25b8444a3c82dab
 ---
 
 从API version 20开始，支持音频解码同步模式。
@@ -37,7 +37,7 @@ content_hash: sha256:720820bc897592190f116493075e06a47073c047cfaff20ed7c42127b18
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/wHVwbnzARHKC2AMv4qjKNQ/zh-cn_image_0000002768020972.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/SKjV2rcuTpq8QZvEqe2l3A/zh-cn_image_0000002800985917.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -141,11 +141,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/jM7kY-ycTPiKwaIwLiGDbQ/zh-cn_image_0000002797300919.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/rml4g8_KR8qng_xkrebhVA/zh-cn_image_0000002771826028.png)
 
    各音频解码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/s1W1cTNeRYy3vNSeaM3ffQ/zh-cn_image_0000002767860988.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/pDSzB_apTEapil2YaAvqBg/zh-cn_image_0000002801105841.png)
 
    从API version 20开始，支持通过[OH\_AVCapability\_GetAudioSupportedSampleRateRanges](../harmonyos-references/capi-native-avcapability-h.md#oh_avcapability_getaudiosupportedsamplerateranges)接口进行采样率范围能力查询，以下几种音频解码类型支持对范围内的任意采样率进行解码：
 

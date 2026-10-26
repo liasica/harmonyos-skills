@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-di
 title: 通过直达应用市场能力跳转至应用市场下载详情页
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过直达应用市场能力跳转至应用市场下载详情页
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:44+08:00
+scraped_at: 2026-10-27T07:39:42+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:80ba376c5d587401456273fb265843585cd1100b4715671f95c1ead73c802919
+content_hash: sha256:a7b359852566dbb2f734b4e31b1b5d7c8f36632a35a98d49a1b5995bdcc71d52
 ---
 
 ## 场景介绍
@@ -45,10 +45,10 @@ content_hash: sha256:80ba376c5d587401456273fb265843585cd1100b4715671f95c1ead73c8
 
       只有[在AGC创建关联的网址域名](app-linking-startupapp.md#在agc为应用创建关联的网址域名)状态为“成功”时，才支持配置直达应用市场链接。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/0zh-YHPDRGGLNZM6FHvIbQ/zh-cn_image_0000002767861318.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/n2kDu5NMQnO2v-Ccj0Wa0A/zh-cn_image_0000002801106171.png)
    4. 在配置页面，下拉选择与该域名关联的在架应用，为应用配置直达应用市场链接。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/cSZXT3tARaCWgVqkwaXLBA/zh-cn_image_0000002797181281.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/XkGPcvfkSUWcRO1id3UVNw/zh-cn_image_0000002771666390.png)
 
       * 可以点击“添加应用”为多个应用配置直达链接，当该域名下关联的在架应用全部配置后，无法再添加应用。
       * 可以根据以下规则配置直达链接。
@@ -79,7 +79,7 @@ content_hash: sha256:80ba376c5d587401456273fb265843585cd1100b4715671f95c1ead73c8
 
       链接配置成功后，一般需要24~48小时才能生效，请耐心等待。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/TkzNjGZQRm2yCoAEcSmgCg/zh-cn_image_0000002768021302.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/5mKuVgtLTMGk7IYcy_QN7g/zh-cn_image_0000002800986247.png)
 2. 验证应用被拉起效果。
 
    * 方式一：将直达应用市场链接地址存入备忘录中，并点击验证该链接是否可以拉起应用。

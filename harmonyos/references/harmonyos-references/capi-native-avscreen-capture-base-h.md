@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avscreen_capture_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > native_avscreen_capture_base.h
 category: harmonyos-references
-scraped_at: 2026-09-25T07:13:21+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:8d8dfdaa62403a0518a23b3acc109bbe1b794579f0243157d9594efb89db91ab
+scraped_at: 2026-10-27T07:43:23+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:195920515cd126f3f701e7c0330bc65260e733f14219f9dd7b22de618e24d888
 ---
 
 ## 概述
@@ -100,17 +100,15 @@ enum OH_CaptureMode
 
 枚举，表示屏幕录制的不同模式。
 
-根据录制需求选择合适的模式：录制主屏幕适用于全屏录制场景；录制指定屏幕适用于多屏环境下选择特定屏幕的场景；录制指定窗口适用于仅录制单个应用窗口的场景。
-
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
 **起始版本：** 10
 
 | 枚举项 | 描述 |
 | --- | --- |
-| OH\_CAPTURE\_HOME\_SCREEN = 0 | 录制主屏幕。 |
-| OH\_CAPTURE\_SPECIFIED\_SCREEN = 1 | 录制指定屏幕。使用此模式需在OH\_AVScreenCaptureConfig中指定displayId。 |
-| OH\_CAPTURE\_SPECIFIED\_WINDOW = 2 | 录制指定窗口。使用此模式需在OH\_AVScreenCaptureConfig中指定windowId。 |
+| OH\_CAPTURE\_HOME\_SCREEN = 0 | 录制主屏幕。适用于全屏录制场景。 |
+| OH\_CAPTURE\_SPECIFIED\_SCREEN = 1 | 录制指定屏幕。适用于多屏环境下选择特定屏幕的场景。使用此模式需在OH\_AVScreenCaptureConfig中指定displayId。 |
+| OH\_CAPTURE\_SPECIFIED\_WINDOW = 2 | 录制指定窗口。适用于仅录制单个应用窗口的场景。使用此模式需在OH\_AVScreenCaptureConfig中指定windowId。 |
 | OH\_CAPTURE\_INVAILD = -1 | 无效模式。 |
 
 ### OH\_AudioCaptureSourceType

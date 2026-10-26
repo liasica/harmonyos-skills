@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-dyntrajec
 title: 动态轨迹
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 动态轨迹
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:52+08:00
+scraped_at: 2026-10-27T07:39:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cead564b44096450ba470498fe60a33a29df5bfb44d8f08fac400a5aa845e25a
+content_hash: sha256:c77a9d215cb80bebf46d81ea1fe35483d11a01cac9e35c2c2863a257d476d07b
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:cead564b44096450ba470498fe60a33a29df5bfb44d8f08fac400a5aa84
 
 动态轨迹功能可用于实时展示车辆行驶路径、用户运动轨迹等，帮助用户直观了解行程信息，并支持轨迹回放、暂停、删除等操作，广泛应用于物流跟踪、出行导航、运动监测等领域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/HzzPnnK7Q42ZnKfYXv59eg/zh-cn_image_0000002768021546.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/OJm5FnInQmyU7oij4w7ITw/zh-cn_image_0000002800986491.gif "点击放大")
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 深度估计介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 深度估计 > 深度估计介绍
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:35+08:00
+scraped_at: 2026-10-27T07:39:35+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:2890b17dabadc8b1982af263db1b94143ddea04c1ebe35d2317084a35c4690b5
+content_hash: sha256:b68db9007fa3554ea848ec10f233298de390ee0699feea9292af5ad48e368c8e
 ---
 
 AR Engine支持持续输出周围环境相对终端设备的深度信息，利用这些深度信息，可以实现更加自然、无缝的虚实体验。
@@ -16,4 +16,4 @@ AR Engine支持持续输出周围环境相对终端设备的深度信息，利�
 
 **图1** 深度渲染示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/2jHnGTdKTY6y029Lv8rhVg/zh-cn_image_0000002767861116.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/vxvpAMHPQbmbhwyEqLOvPA/zh-cn_image_0000002801105971.png)

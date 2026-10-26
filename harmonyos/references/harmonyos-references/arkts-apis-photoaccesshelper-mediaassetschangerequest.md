@@ -3,19 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MediaAssetsChangeRequest)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Class (MediaAssetsChangeRequest)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f1e67d567d91991dd152bad7ec04fbb8c0a2aa2a52a97ffa8bb44120b6679040
+scraped_at: 2026-10-27T07:43:25+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:8cda70ba51f25935bc1245831471a8e4b2ef5ecfaec0e743c71df1d2a88399a3
 ---
 
-MediaAssetsChangeRequest implements [MediaChangeRequest](arkts-apis-photoaccesshelper-i.md#mediachangerequest11).
+MediaAssetsChangeRequest类实现了[MediaChangeRequest](arkts-apis-photoaccesshelper-i.md#mediachangerequest11)接口。
 
 批量媒体资产变更请求。
 
+**起始版本：** 26.0.0
+
 **说明** 
 
-* 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-* 本Class首批接口从API version 26.0.0开始支持。
+本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 

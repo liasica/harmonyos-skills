@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 混合支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 混合支付场景
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:54+08:00
+scraped_at: 2026-10-27T07:39:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d0250563c615961939ae9d29f15d97ad2878ac1047e37278d887d38d36ad90f9
+content_hash: sha256:80912848073cc9a84653c7556cb48337556b25c0ceeb6e8c802747ad2ca1dea1
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:d0250563c615961939ae9d29f15d97ad2878ac1047e37278d887d38d36a
 
 通用收银台混合支付页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/yJF3gop5QB-pWwYRaSvIZg/zh-cn_image_0000002797301543.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Nl7Q7A3aRDy5rVPUWkjNrQ/zh-cn_image_0000002771826650.png)
 
 ## 接入流程
 
@@ -34,7 +34,7 @@ content_hash: sha256:d0250563c615961939ae9d29f15d97ad2878ac1047e37278d887d38d36a
 
 混合支付模式，收银台上用户可选择华为支付或三方支付方式支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/P7jmqEr7RxOI0xQz6uE2TA/zh-cn_image_0000002767861612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/awtqna5hTLa3e72V3CyHQg/zh-cn_image_0000002801106465.png)
 
 1. 商户客户端请求商户服务器创建订单。
 2. 商户服务器按照商户模型调用Payment Kit服务端[直连商户预下单](../harmonyos-references/payment-prepay.md)或[平台类商户/服务商预下单](../harmonyos-references/payment-agent-prepay.md)接口。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/p2p-developme
 title: P2P模式开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > P2P模式开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9bb9053430e46c3b343d699d2a5199d429f48cedb806eb6ffc7f48e7376e6043
+scraped_at: 2026-10-27T07:39:13+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:039a1f432cfdec547dbbc2feffcfc449eda301e45a6a6e41372a341c1694a9d9
 ---
 
 ## 简介
@@ -21,7 +21,7 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
 
 ## 接口说明
 
-完整的JS API说明以及示例代码请参考：[P2P接口](../harmonyos-references/js-apis-wifimanager.md)。
+完整的JS API说明以及示例代码请参考：[@ohos.wifiManager (WLAN)](../harmonyos-references/js-apis-wifimanager.md)。
 
 具体接口说明如下表。
 
@@ -111,8 +111,15 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
    } catch (error) {
      console.error("failed:" + JSON.stringify(error));
    }
+
+   // 取消注册，停止获取永久组状态改变事件
+   try {
+     wifiManager.off("p2pPersistentGroupChange", recvP2pPersistentGroupChangeFunc);
+   } catch (error) {
+     console.error("failed:" + JSON.stringify(error));
+   }
    ```
-6. 错误码请参见[WIFI错误码](../harmonyos-references/errorcode-wifi.md)。
+6. 错误码请参见[Wi-Fi错误码](../harmonyos-references/errorcode-wifi.md)。
 
 ### 建立P2P连接
 
@@ -224,7 +231,7 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
    // 开始发现P2P设备，即，开始P2P扫描
    console.info("start discover devices -> " + wifiManager.startDiscoverDevices());
    ```
-7. 错误码请参见[WIFI错误码](../harmonyos-references/errorcode-wifi.md)。
+7. 错误码请参见[Wi-Fi错误码](../harmonyos-references/errorcode-wifi.md)。
 
 ### 获取对端IP以及Socket通信
 

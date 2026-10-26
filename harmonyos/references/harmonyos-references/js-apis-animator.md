@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.animator (动画)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.animator (动画)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:25+08:00
+scraped_at: 2026-10-27T07:41:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:82c0c595b2f34d1fd85e0bc02ee5227e67b29adc9728c7c8a6a7974d86ab9b20
+content_hash: sha256:4bdc784e78b2cc09aabdf38c10474729c1c17ea3ee906366fc13f2f0e835f3f0
 ---
 
 本模块提供组件动画效果，包括定义动画、启动动画和以相反的顺序播放动画等。
@@ -963,7 +963,7 @@ class AnimatorState {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/1IW7GgK5TLmPP3dhL-HClA/zh-cn_image_0000002797301939.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/FyuSQ3mNRGS6dYFNjsKdbw/zh-cn_image_0000002771827046.gif)
 
 ### 基于ArkTS扩展的声明式开发范式
 
@@ -1135,7 +1135,7 @@ struct AnimatorTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/08dpEsW1TayUNoub1rk4Cg/zh-cn_image_0000002767862008.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/LKCAk6MrT4Knc3s4iBVVWQ/zh-cn_image_0000002801106861.gif)
 
 ### 位移动画示例（简易入参）
 
@@ -1236,4 +1236,4 @@ struct AnimatorTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Zi_WJJoUS2WPWh8Ix6SDcw/zh-cn_image_0000002797181971.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/FncUzDPFTO-95Y8VcTEIVg/zh-cn_image_0000002771667080.gif)

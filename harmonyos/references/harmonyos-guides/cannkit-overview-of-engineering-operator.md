@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-overv
 title: 工程化算子开发概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发 > 工程化算子开发概述
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:03+08:00
+scraped_at: 2026-10-27T07:39:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a1483082f3a731678bedef42c809d01280bc0b91270a2f4619ac4aab339b3530
+content_hash: sha256:3b21e9a23b42b766da04b00fefee503506f8263c6671aea3c86efbc4160ca1e6
 ---
 
 工程化算子开发是指基于自动生成的**自定义算子工程**完成算子实现、编译部署、单算子调用代码自动生成等一系列流程。
@@ -14,7 +14,7 @@ content_hash: sha256:a1483082f3a731678bedef42c809d01280bc0b91270a2f4619ac4aab339
 
 工程化算子开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/UUjcD2PXT660dPOrLLsmuw/zh-cn_image_0000002768021790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/K19WxVyqTCO5d1QJ7RY6jw/zh-cn_image_0000002800986737.png)
 
 1. 环境准备。
 

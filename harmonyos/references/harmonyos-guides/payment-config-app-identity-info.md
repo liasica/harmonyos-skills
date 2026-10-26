@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-confi
 title: 端侧应用配置
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > 端侧应用配置
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:53+08:00
+scraped_at: 2026-10-27T07:39:51+08:00
 doc_updated_at: 2026-05-19
-content_hash: sha256:504731c9529852ad658430a3d56f7c3e010bcac29f31f8d9a19447a6a7d0cad0
+content_hash: sha256:70bb92f7f11f029eddf16154bda345c2dc8c67842073b43ad34abd1a8ea913a8
 ---
 
 可下载并参考[示例代码-客户端](https://gitcode.com/HarmonyOS_Samples/payment-kit-sample-code-clientdemo-arkts)，以此来快速的完成商户端侧应用开发环境的构建。
@@ -55,4 +55,4 @@ content_hash: sha256:504731c9529852ad658430a3d56f7c3e010bcac29f31f8d9a19447a6a7d
 * 其中**app\_id**的value值为应用的APP ID（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“开发与服务”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“APP ID”的值），详见下图的**标号1**处。
 * 其中**client\_id**的value值为应用的OAuth 2.0客户端ID（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“开发与服务”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“OAuth 2.0客户端ID（凭据）：Client ID”的值），详见下图的**标号2**处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/xqGtqFQJRnqDalj9yC4f_Q/zh-cn_image_0000002767861604.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/KicJzB_qSQi_NUVEuZZRPw/zh-cn_image_0000002801106457.png)

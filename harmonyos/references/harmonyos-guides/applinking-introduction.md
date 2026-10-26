@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-in
 title: App Linking Kit简介
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > App Linking Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:43+08:00
+scraped_at: 2026-10-27T07:39:42+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f720b1152237b906d5defaa7eb721a6145ee42a895481e93d9e0dd53e28980af
+content_hash: sha256:320be2ade917dcc587fd3fda6da2f254b326a3b75d7e8cb293fc84260862ee35
 ---
 
 App Linking Kit（应用链接服务）提供了一系列增强的链接特性。
@@ -30,19 +30,19 @@ App Linking Kit（应用链接服务）提供了一系列增强的链接特性�
 
 随着全场景智慧生活的不断演进，跨设备内容分享已成为用户的核心需求之一。传统分享方式普遍存在操作繁琐（需手动选择设备或应用）、依赖特定网络环境、传输效率低等问题，影响了用户体验。HarmonyOS提供的[Share Kit（分享服务）](share-introduction.md)结合App Linking Kit技术，能够实现内容的快速跨设备分享，直达目标应用，无需依赖第三方应用中转，提供高效、便捷、无缝的分享体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Cnx7_cRpT7-p9dDPLZXEPQ/zh-cn_image_0000002797301241.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hGOfTGYIQk2mTzKC3o00TA/zh-cn_image_0000002771826350.gif)
 
 ### 游戏碰一碰快速组队
 
 在《多乐中国象棋》这款组队竞技类游戏中，玩家只需轻轻碰触两台设备，即可实现秒速组队，省去了传统邀请流程中的繁琐操作，一步直达指定页面。与传统的通信软件邀请流程相比，操作步骤大幅减少。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/0OVBoIzlR3Ku2j4ZvrE6bw/zh-cn_image_0000002767861312.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/s8gmjyQHRVWzKSb2Stlrnw/zh-cn_image_0000002801106165.gif)
 
 ### 通过扫码使服务快速触达用户
 
 美团App结合App Linking技术，实现用户无需打开App，通过系统扫码即可直接解锁共享单车。在负一屏、控制中心、系统相机中均可解锁，相比打开App扫码，操作入口增加了3倍，一步扫码直达，操作效率提升了30%以上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/i3gpIrPRSoW9q8EhLJZcCw/zh-cn_image_0000002797181273.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/4sI-5l9aQCGsFJxw6Pm4sA/zh-cn_image_0000002771666384.gif)
 
 ## 约束与限制
 

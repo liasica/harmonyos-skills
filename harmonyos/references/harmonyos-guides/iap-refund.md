@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-refund
 title: 退款
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 售后 > 退款
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:50+08:00
+scraped_at: 2026-10-27T07:39:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d57228d7a38e0e8f8d93bd41c0449486a1a5abe4fcd8bac5833240d4318eb10f
+content_hash: sha256:892bfb632563728aa23cac9fe1c7de9504449f8eb4f0cd19da6e8cd8e40b6257
 ---
 
 当[用户申请退款](iap-refund.md#用户申请退款)时，对于非游戏类应用，开发者可以在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上审核退款订单，实现用户的退款。
@@ -23,27 +23,27 @@ content_hash: sha256:d57228d7a38e0e8f8d93bd41c0449486a1a5abe4fcd8bac5833240d4318
 
 1. 开发者登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“APP”。 在应用列表中点击待处理退款订单的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/LOYtG_k1R_SuEBRS0XBmsg/zh-cn_image_0000002767861452.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/_e7B0aNnTAekGl3G-qogUQ/zh-cn_image_0000002801106305.png)
 2. 在“运营”页签下，点击“产品运营 > 退款管理”，查看用户提交的退款申请，处理退款订单。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/qXSgXW05T9OeWhvzqkvfxA/zh-cn_image_0000002797181415.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/RkwllNqYTiicV25Q_1CA1A/zh-cn_image_0000002771666524.png)
 3. 审核或查询退款订单。
 
    **同意退款**：如果开发者同意退款，可在 “退款金额“下输入可退款金额，点击“同意”。在弹窗中点击“确认”，即可完成退款。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Dl0oMxBtTvOqQM31WZMR6w/zh-cn_image_0000002768021436.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/YtimJQRjSiuqKfrnzfOIVw/zh-cn_image_0000002800986381.png)
 
    **驳回退款**：开发者不同意退款，可点击“驳回”，输入驳回原因，点击“确认”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/hKKbUaF5TnWeQq8pLGlHTQ/zh-cn_image_0000002797301385.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/f8GbOyfeSwuMYKNPTnjt2w/zh-cn_image_0000002771826492.png)
 
    **退款详情页面审核退款**：开发者也可以在退款详情页面审核退款，输入退款金额后选择“同意”或“驳回”，点击提交，完成审核。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/DYvqwyc5T3G6velyCohttQ/zh-cn_image_0000002767861454.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/pPC9xKdvSISHBkQbZvbRIg/zh-cn_image_0000002801106307.png)
 
    **查询退款订单**：点击“已完成”页签，开发者可以查看所有已处理的退款订单。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/TxR1BLqZSnOahtToP8SDgw/zh-cn_image_0000002797181417.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/DtKvcvuyR9qvs-OJnGWLbw/zh-cn_image_0000002771666526.png)
 
    退款订单状态如下：
 
@@ -68,14 +68,14 @@ content_hash: sha256:d57228d7a38e0e8f8d93bd41c0449486a1a5abe4fcd8bac5833240d4318
 
 1. 在“手机设置 > 华为账号 > 付款与账单 > 购买记录”中点击待退款的订单，跳转至详情页面，点击“对订单有疑问”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/I9tZOq4HSmq7nvvkOo4k-Q/zh-cn_image_0000002768021438.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/R3UBp_gSTVm2Z7gPQlavLA/zh-cn_image_0000002797301387.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/zmME5_WCQ-a9eiUtZ3-CfQ/zh-cn_image_0000002800986383.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/0Qjz4x9ETOaVIPg0AobRoA/zh-cn_image_0000002771826494.png)
 2. 在“对订单有疑问”页面，点击“申请退款”，选择退款原因后，提交退款申请，提交后等待应用审核。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/TD0qilAWQJuelRXa4jN1Kg/zh-cn_image_0000002767861456.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/Mwbfu-22RgSgp2qC-bVrSw/zh-cn_image_0000002797181419.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/hPcGCdEbS56-AU5WlL4feg/zh-cn_image_0000002801106309.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Cqay3XBCSI29otk0OtreDw/zh-cn_image_0000002771666528.png)
 
    用户提交退款后，可点击“查看退款记录”，在“退款记录”查看所有退款订单的退款状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/f8hxLrf1S0aN12neaKRvlw/zh-cn_image_0000002768021440.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/si0JyvW7Q6q03sh6Iry1Eg/zh-cn_image_0000002797301389.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/0oC55mK-QiuD6-kfKSpoeQ/zh-cn_image_0000002800986385.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/EKRUreCnThSuzlyTAohDCg/zh-cn_image_0000002771826496.png)
 
 ## 应用内接入退款入口
 

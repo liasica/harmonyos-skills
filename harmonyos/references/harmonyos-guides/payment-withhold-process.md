@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-withh
 title: 签约代扣场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 免密支付接入 > 签约代扣场景
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:54+08:00
+scraped_at: 2026-10-27T07:39:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4b725ee08064f7ff71a939f3547ed3ae9a1f080f99b9ea9226a0ec631b74dccb
+content_hash: sha256:2f6859d35aab41bd61157b00ea53650c169182dc6f55e83ed8a49fa49a64aa6f
 ---
 
 ## 场景介绍
@@ -18,13 +18,13 @@ content_hash: sha256:4b725ee08064f7ff71a939f3547ed3ae9a1f080f99b9ea9226a0ec631b7
 
 华为支付签约页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/hOyWH1smTcmYK-wkCkybnw/zh-cn_image_0000002768021592.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/IdCujgOvRJOejTaJ_cmsaw/zh-cn_image_0000002800986537.png)
 
 ## 业务流程
 
 开发者通过接入Payment Kit 签约代扣能力，在获取用户签约授权的前提下，可以向用户的华为支付账户发起支付扣款，无需用户输入支付密码就可以优先使用签约的支付方式完成扣款。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/rE6A-aiMRl6C86vTCiHFAQ/zh-cn_image_0000002797301541.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/-ZXaf9gdRJ2NRAsZFdmX1g/zh-cn_image_0000002771826648.png)
 
 1. 商户客户端请求商户服务端创建签约订单。
 2. 商户服务端按照商户模型调用Payment Kit服务端[直连商户预签约](../harmonyos-references/payment-withhold-presign.md)或[服务商预签约](../harmonyos-references/payment-partner-withhold-presign.md)接口。

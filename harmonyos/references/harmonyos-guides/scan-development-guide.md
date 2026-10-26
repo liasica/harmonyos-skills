@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-developm
 title: Wi-Fi扫描开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > Wi-Fi扫描开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:93af03fb939d832db6ad8177ba195abf5f9191d923c00b16e715888caad5998c
+scraped_at: 2026-10-27T07:39:13+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:40e5c5e6ccd9ec63eb8fafb73e81f17fcb1d7c7f31a0cc9a4599da0dee899d9e
 ---
 
 ## 简介
@@ -21,7 +21,7 @@ Wi-Fi扫描是指设备（如手机、电脑、路由器等）搜索周围可用
 
 ## 接口说明
 
-完整的JS API说明以及示例代码请参考：[SCAN接口](../harmonyos-references/js-apis-wifimanager.md)。
+完整的JS API说明以及示例代码请参考：[@ohos.wifiManager (WLAN)](../harmonyos-references/js-apis-wifimanager.md)。
 
 接口具体说明如下表所示。
 
@@ -48,11 +48,11 @@ Wi-Fi扫描是指设备（如手机、电脑、路由器等）搜索周围可用
    ```ts
    import { wifiManager } from '@kit.ConnectivityKit';
 
-   try {
-     let recvWifiScanStateChangeFunc = (result:number) => {
-         console.info("Receive Wifi scan state change event: " + result);
-     }
+   let recvWifiScanStateChangeFunc = (result:number) => {
+       console.info("Receive Wifi scan state change event: " + result);
+   }
 
+   try {
      // 获取扫描状态 0：扫描失败；1：扫描成功。
      wifiManager.on("wifiScanStateChange", recvWifiScanStateChangeFunc);
 
@@ -81,14 +81,18 @@ Wi-Fi扫描是指设备（如手机、电脑、路由器等）搜索周围可用
          console.info("isHiLinkNetwork: " + scanInfoList[i].isHiLinkNetwork);
        }
      }
-
-     // 取消注册，停止获取扫描状态。
-     wifiManager.off("wifiScanStateChange", recvWifiScanStateChangeFunc);
    } catch (error) {
      console.error(`WiFi scan fail. ${error.message}`);
+   } finally {
+     // 取消注册，停止获取扫描状态。放在finally块中，确保异常时也能解绑，避免资源泄漏。
+     try {
+       wifiManager.off("wifiScanStateChange", recvWifiScanStateChangeFunc);
+     } catch (e) {
+       console.error(`WiFi scan off failed. ${e.message}`);
+     }
    }
    ```
-6. 错误码详情请参见[WIFI错误码](../harmonyos-references/errorcode-wifi.md)。
+6. 错误码详情请参见[Wi-Fi错误码](../harmonyos-references/errorcode-wifi.md)。
 
 ### PNO扫描
 

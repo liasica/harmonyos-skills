@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-connectio
 title: 管理网络连接
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:36+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:614a6682a9638fb2cb9f0150cd1e5ef3b9d3ff795bf0a57da6436fceb9289514
+scraped_at: 2026-10-27T07:39:14+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:f3831ecd513e1b8d19f51abc6b26fe6682172fb68c4d29cd57dae1af235b1121
 ---
 
 ## 简介
@@ -320,13 +320,12 @@ function socketTest() {
                  }
                }
              });
+           // 获取netHandle对应的网络的连接信息。需在获取到有效netHandle后调用。
+           connection.getConnectionProperties(netHandleInfo).then((data: connection.ConnectionProperties) => {
+             hilog.info(0x0000, 'testTag', 'getConnectionProperties get data: ' + JSON.stringify(data));
+           })
          }
        });
-
-       // 获取netHandle对应的网络的连接信息。
-       connection.getConnectionProperties(netHandleInfo).then((data: connection.ConnectionProperties) => {
-         hilog.info(0x0000, 'testTag', 'getConnectionProperties get data: ' + JSON.stringify(data));
-       })
      // ...
    ```
 3. 查询所有网络连接信息代码示例
@@ -425,7 +424,7 @@ function socketTest() {
    import { hilog } from '@kit.PerformanceAnalysisKit';
    // ...
          // 使用默认网络解析主机名以获取所有IP地址
-         connection.getAddressesByName('xxxx').then((data: connection.NetAddress[]) => {
+         connection.getAddressesByName('www.example.com').then((data: connection.NetAddress[]) => {
            hilog.info(0x0000, 'testTag', 'Successfully retrieved default network IP address: ' + JSON.stringify(data));
            // ...
          })

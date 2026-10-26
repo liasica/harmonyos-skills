@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-nd
 title: 使用DevEco Studio模板构建NDK工程
 breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 使用DevEco Studio模板构建NDK工程
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:21+08:00
+scraped_at: 2026-10-27T07:40:15+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:d001d74f15243d9a9a5b378209970fa1e3127c5a980cdf308de257b679a2c881
+content_hash: sha256:e5f17fbac122a112274bfe3e3568c63abc113a2b4c7fb3911e3979bcc40a3ad7
 ---
 
 NDK通过CMake和Ninja编译应用的C/C++代码，编译过程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/6gx81ggYQ465jRQSCbDYBw/zh-cn_image_0000002767861930.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/gjGknxW0TZeM44AICtfReA/zh-cn_image_0000002801106783.png)
 
 核心编译过程如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.componentUtils (componentUtils)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentUtils (componentUtils)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:25+08:00
+scraped_at: 2026-10-27T07:41:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:47ba8c1ea40305bfce8b57571b1dabbe71634ad52636aeb12d2da98c489add81
+content_hash: sha256:63a316e1cc8bc4021899caa91a5433cd72ac32f1af0cccbf3a60ab2b7fe99cb9
 ---
 
 提供获取组件绘制区域坐标和大小的能力，适用于在组件布局完成后查询组件实际绘制区域信息的场景，帮助开发者获取组件尺寸、位置等布局结果。
@@ -232,4 +232,4 @@ struct Utils {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/O9cdkwWKQjeRVvgpWDr4Fg/zh-cn_image_0000002797181973.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/nMaLUqYOSg2SX7DSWAepyw/zh-cn_image_0000002771667082.gif)

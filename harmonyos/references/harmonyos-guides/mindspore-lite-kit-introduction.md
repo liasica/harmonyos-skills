@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: MindSpore Lite Kit简介
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > MindSpore Lite Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:54ac310855d4dc0d3d22a587cbac933c3e80a932916d3f703eefce4b866284d3
+scraped_at: 2026-10-27T07:40:14+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:95e91af822cff9066736b0337ecb085ec88df69dc217c94e5443957811072c44
 ---
 
 ## 使用场景
@@ -35,7 +35,7 @@ MindSpore Lite提供面向不同硬件设备的AI模型推理能力，使用Mind
 
 **图 1** 使用MindSpore Lite进行模型推理的开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/j2C2prdIQ1mMgW1-d7wMJA/zh-cn_image_0000002797181881.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/piHp27E_TZmzrxACj1FH1g/zh-cn_image_0000002771666990.jpg)
 
 MindSpore Lite开发流程分为两个阶段：
 
@@ -60,7 +60,7 @@ MindSpore Lite已作为系统部件在HarmonyOS标准系统内置，基于MindSp
 
 ## 模拟器支持情况
 
-本Kit支持模拟器，但与与真机存在部分能力差异，具体差异如下。
+本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
 
 * 通用差异，详情请参见“[模拟器与真机的差异](ide-emulator-specification.md)”。
 * 不支持NPU后端。

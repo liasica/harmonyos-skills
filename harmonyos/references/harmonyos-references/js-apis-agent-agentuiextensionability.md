@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.agent.AgentUIExtensionAbility (带界面的智能体扩展组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.agent.AgentUIExtensionAbility (带界面的智能体扩展组件)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:42+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:2ae050e24757afe41bed2aec57f0863cf12ef1e94b1fcbac3529497dcdae05fd
+scraped_at: 2026-10-27T07:40:48+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:2082a349561789d8a5e02841f56379242619aa13249f77ba07940528ffedcd00
 ---
 
 AgentUIExtensionAbility继承自[ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件)](js-apis-app-ability-uiextensionability.md)，为开发者提供接入端侧Agent UI界面显示能力。
@@ -39,4 +39,4 @@ AgentUIExtensionAbility继承自[ohos.app.ability.UIExtensionAbility (带界面�
 
 **系统能力**：SystemCapability.Ability.AgentRuntime.Core
 
-**元服务API**：从API版本24开始，该接口支持在元服务中使用。
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。

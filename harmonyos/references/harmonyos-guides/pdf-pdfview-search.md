@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-s
 title: 搜索关键字
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 搜索关键字
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:55+08:00
+scraped_at: 2026-10-27T07:39:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:432d4f5579e08c730360914881153e9ecd48735d84540ae5e39869006c51c1a0
+content_hash: sha256:ca35372538352083946f275b3bcc2bffa0c666a3e32ded3301cba50ccd6c193c
 ---
 
 预览PDF文档时，可以对页面的关键词（英文字符不区分大小写）进行搜索并高亮显示，同时使用[setSearchIndex](../harmonyos-references/pdf-arkts-pdfviewmanage.md#setsearchindex)方法高亮显示指定的搜索结果。
 
 使用[getSearchIndex](../harmonyos-references/pdf-arkts-pdfviewmanage.md#getsearchindex)方法获取当前高亮的索引，可以使用[clearSearch](../harmonyos-references/pdf-arkts-pdfviewmanage.md#clearsearch)方法清除所有搜索结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/OG-kGsi9TL6eAdS_lAtb5A/zh-cn_image_0000002797301557.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/J0MUxPtoQQi3KOFVvEI6RA/zh-cn_image_0000002771826664.png)
 
 ## 接口说明
 

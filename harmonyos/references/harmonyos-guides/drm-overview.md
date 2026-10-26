@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-overview
 title: DRM Kit 简介
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > DRM Kit 简介
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:30+08:00
+scraped_at: 2026-10-27T07:39:30+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:a87a5c61bcf25df5173ab22b7ba7454e74a6b9ff1c358a32c1c9f069e7968f54
+content_hash: sha256:a980d5440954c8cae34fb1f8995c4aad32acbf9bae2da863c452cc7530b6e396
 ---
 
 DRM Kit（Digital Rights Management Kit，数字版权保护服务）提供了DRM加密节目授权解密的功能，包括DRM插件管理、DRM证书管理、DRM许可证管理、DRM节目授权、DRM节目解密等功能，可实现DRM解决方案的集成、DRM解决方案的证书下载、节目的授权及解密。
@@ -74,7 +74,7 @@ DRM插件管理功能一般由DRM解决方案集成方实现。
 
 应用集成DRM Kit工作流程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/iVMaqLwXTjCWxq1vz4tBtA/zh-cn_image_0000002797181021.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/92nyTam8TISgc3QkPPSoSg/zh-cn_image_0000002771666132.png)
 
 工作流程主要包括：
 

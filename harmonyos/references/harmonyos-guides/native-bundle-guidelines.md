@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-bundle
 title: NativeBundle开发指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 包管理 > NativeBundle开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:25+08:00
+scraped_at: 2026-10-27T07:40:19+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4525ccf2859c5def99215a5e9c814ba275d489c25ef6d51ce5122c0ad83b7856
+content_hash: sha256:d3bf3ed65950fb92564cb1dc300b118eb87c76583985f8655a1f6cb377a0f297
 ---
 
 ## 场景介绍
@@ -31,7 +31,7 @@ content_hash: sha256:4525ccf2859c5def99215a5e9c814ba275d489c25ef6d51ce5122c0ad83
 
 **1. 创建工程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/MzEPPWisS9SCzXFvZSU5jQ/zh-cn_image_0000002767861966.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/v_bgghMAR6-IT4DM8rWxQA/zh-cn_image_0000002801106819.png)
 
 **2. 添加依赖**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-fs-space-
 title: 应用及文件系统空间统计
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用文件访问与管理 > 应用及文件系统空间统计
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fd1ebc29a23a14bc81d50e35b8f1faea5d85e5072d16667d390d33fe50a7c534
+scraped_at: 2026-10-27T07:38:59+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:3980c29b69496fec4fea7ff2cae8ca871384d3043e4fb0cd01cce4c5c72574cd
 ---
 
 在系统中，可能出现系统空间不够或者cacheDir等目录受系统配额限制等情况，需要应用开发者关注系统剩余空间，同时控制应用自身占用的空间大小。
@@ -23,8 +23,8 @@ API的详细介绍请参见[ohos.file.statvfs](../harmonyos-references/js-apis-f
 | @ohos.file.storageStatistics | getFreeSizeSync | 同步获取内置存储的可用空间大小（单位为Byte）。  **说明**：从API version 15开始，支持该接口。 |
 | @ohos.file.storageStatistics | getTotalSize | 异步获取内置存储的总空间大小（单位为Byte）。  **说明**：从API version 15开始，支持该接口。 |
 | @ohos.file.storageStatistics | getTotalSizeSync | 同步获取内置存储的总空间大小（单位为Byte）。  **说明**：从API version 15开始，支持该接口。 |
-| @ohos.file.statvfs | getFreeSize | 获取指定文件系统的剩余空间大小（单位为Byte）。  **说明**：从API version 20开始，支持该接口。 |
-| @ohos.file.statvfs | getTotalSize | 获取指定文件系统的总空间大小（单位为Byte）。  **说明**：从API version 20开始，支持该接口。 |
+| @ohos.file.statvfs | getFreeSize | 获取指定文件系统的剩余空间大小（单位为Byte）。  **说明**：从API version 9开始，支持该接口。 |
+| @ohos.file.statvfs | getTotalSize | 获取指定文件系统的总空间大小（单位为Byte）。  **说明**：从API version 9开始，支持该接口。 |
 
 **表2** 应用空间统计
 

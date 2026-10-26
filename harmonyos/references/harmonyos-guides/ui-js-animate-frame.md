@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 动画帧
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > JS动画 > 插值器动画 > 动画帧
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:49+08:00
+scraped_at: 2026-10-27T07:38:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:cbe70bd0ede3196ff9f0a10acf70f982f07a312ac6338491e0a4c1a64f8b2b4d
+content_hash: sha256:14cc700cbcfb0b0432cf7fc590acc8bfb7efd6bb6002e24a43d217ea2ad119b0
 ---
 
 ## 请求动画帧
@@ -101,7 +101,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/qCC6t8hFRL6Jv4IwN4cU6A/zh-cn_image_0000002797300413.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/l0acZr-pSOybtvvMjMG9eQ/zh-cn_image_0000002771825522.gif)
 
 **说明** 
 
@@ -190,7 +190,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/syUmYU6bSfCCAiQtplTU8A/zh-cn_image_0000002767860480.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/20r4It4SSYidH3z3V5YPPg/zh-cn_image_0000002801105335.gif)
 
 **说明** 
 

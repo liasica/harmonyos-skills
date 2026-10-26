@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PhotoAccessHelper)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Interface (PhotoAccessHelper)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c84c5a8004fa4a9d31f2225cfec9a3f2d881d1f4b4919649906a9b1fe5859519
+scraped_at: 2026-10-27T07:43:26+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:924756dfd0055719c5a174ac323f1393e9c4e7d21633ed00275fa17097915ff9
 ---
 
 PhotoAccessHelper提供图片和视频资源的访问管理能力，支持获取、创建、删除媒体资产，管理相册，监听资产变化等操作。
@@ -80,7 +80,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
         console.info('photoAsset.displayName : ' + photoAsset.displayName);
       }
     } else {
-      console.error(`fetchResult fail with error: ${err.code}, ${err.message}`);
+      console.error(`failed to fetchResult`);
     }
   });
 }
@@ -2091,7 +2091,7 @@ onSinglePhotoAlbumChange(album: Album, callback: Callback<AlbumChangeInfos>): vo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | album | Album | 是 | 注册单个监听的媒体相册。注册完成后，当该相册发生变化时，通过callback返回变更信息。 |
-| callback | Callback<[AlbumChangeInfos](arkts-apis-photoaccesshelper-i.md#albumchangeinfos20)> | 是 | 返回变更的媒体相册信息[PhotoAssetChangeInfos](arkts-apis-photoaccesshelper-i.md#photoassetchangeinfos20)。  **注意：**  该接口可以注册多个不同的callback监听。 |
+| callback | Callback<[AlbumChangeInfos](arkts-apis-photoaccesshelper-i.md#albumchangeinfos20)> | 是 | 返回变更的媒体相册信息。  **注意：**  该接口可以注册多个不同的callback监听。 |
 
 **错误码：**
 

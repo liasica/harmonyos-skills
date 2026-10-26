@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Functions
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:956fafdf44eca0ebaf44df64f7bfc35d4c363765a51013630cc55723805030f1
+scraped_at: 2026-10-27T07:41:11+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:d98f85da628cb36115a9a62ba632001ad4904b0996a78b837588bff645f84e76
 ---
 
 **说明** 
@@ -1247,7 +1247,7 @@ onApplicationFocusStateChange(callback: Callback<boolean>): void
 import { window } from '@kit.ArkUI';
 
 try {
-  window.onApplicationFocusStateChange((data) =>{
+  window.onApplicationFocusStateChange((data) => {
       console.info(`Succeeded in enabling the listener for application focus state changes. Data: ${data}`);
   })
 } catch (exception){
@@ -1630,7 +1630,7 @@ import { UIAbility } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class EntryAbility extends UIAbility {
-  onWindowStageCreate(windowStage:window.WindowStage){
+  onWindowStageCreate(windowStage: window.WindowStage){
     console.info('onWindowStageCreate');
     let windowClass: window.Window | undefined = undefined;
     try {
@@ -1682,7 +1682,7 @@ import { UIAbility } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class EntryAbility extends UIAbility {
-  onWindowStageCreate(windowStage:window.WindowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage) {
     console.info('onWindowStageCreate');
     let windowClass: window.Window | undefined = undefined;
     let promise = window.getTopWindow(this.context);

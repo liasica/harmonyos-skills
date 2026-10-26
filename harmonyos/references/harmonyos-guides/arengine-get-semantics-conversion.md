@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 平面语义介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面语义 > 平面语义介绍
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:35+08:00
+scraped_at: 2026-10-27T07:39:35+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:e2664a530d842663546ca20c2256240736f87496bd2b25a206b711a2a513e187
+content_hash: sha256:5f9661e0561c24ba90b435b2c9ce8c29109ead61515d40c27ea1a7326d441f50
 ---
 
 AR Engine可以检测并识别不同的平面类型。当前支持的平面类型共11种，分别为：墙面、地面、座椅面、桌面、天花板、门面、窗面、床面、平面空间、立方体体积、立方体空间容积（平面空间、立方体体积和立方体空间容积仅在高精几何重建模式下支持）。
 
 **图1** 平面语义示意图（蓝色表示地面，绿色表示桌面）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/ee0jLhYMQJ-FiucvqXWR_Q/zh-cn_image_0000002797181077.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/lVtcGfs_ThGNJF0RLlnmAQ/zh-cn_image_0000002771666188.jpg)

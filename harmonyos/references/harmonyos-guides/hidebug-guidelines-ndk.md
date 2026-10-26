@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guide
 title: HiDebug接口使用示例（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 系统调试信息获取 > HiDebug接口使用示例（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:05+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:5f78ea4d58d93ac74393b942a25b2dfc6befcda9ff9a10caac7877101a4af813
+scraped_at: 2026-10-27T07:39:23+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:707cc1dc8e7e1791767d5f5f47b645b0275421eb6d53e74e7c7be2e9a32450b7
 ---
 
 HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具体调用示例请参考下文。
@@ -181,9 +181,9 @@ HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具�
    ```
 4. 编辑“CMakeLists.txt”文件，添加库依赖：
 
-   ```cmake
+   ```text
    # 新增动态库依赖libohhidebug.so和libhilog_ndk.z.so（日志输出）
-   add_library(entry SHARED napi_init.cpp test_backtrace.cpp)
+   add_library(entry SHARED napi_init.cpp test_backtrace.cpp test_async_context.cpp)
    target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libohhidebug.so)
    ```
 5. 编辑“napi\_init.cpp”文件，导入依赖文件并定义测试方法：
@@ -193,6 +193,7 @@ HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具�
    #include "hidebug/hidebug.h"
    #include "hilog/log.h"
    #include "test_backtrace.h"
+   #include "test_async_context.h"
 
    #undef LOG_TAG
    #define LOG_TAG "testTag"
@@ -220,7 +221,13 @@ HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具�
                "GetAppThreadCpuUsage: threadId %{public}d, cpuUsage: %{public}f", cpuUsage->threadId, cpuUsage->cpuUsage);
            cpuUsage = cpuUsage->next; // 获取下一个线程的cpu使用率对象指针。
        }
-       OH_HiDebug_FreeThreadCpuUsage(&cpuUsage); // 释放内存，防止内存泄露。
+       OH_HiDebug_FreeThreadCpuUsage(&cpuUsage); // 释放内存，防止内存泄漏。
+       return nullptr;
+   }
+
+   napi_value TestAsyncContext(napi_env env, napi_callback_info info)
+   {
+       TestAsyncContextChain();
        return nullptr;
    }
    ```
@@ -231,6 +238,7 @@ HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具�
    napi_property_descriptor desc[] = {
        { "testGetThreadCpuUsage", nullptr, TestGetThreadCpuUsage, nullptr, nullptr, nullptr, napi_default, nullptr },
        { "testBackTrace", nullptr, TestBackTrace, nullptr, nullptr, nullptr, napi_default, nullptr },
+       { "testAsyncContext", nullptr, TestAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr },
    };
    ```
 6. 编辑“index.d.ts”文件，声明ArkTS接口：
@@ -238,6 +246,7 @@ HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具�
    ```typescript
    export const testGetThreadCpuUsage: () => void;
    export const testBackTrace: () => void;
+   export const testAsyncContext: () => void;
    ```
 7. 编辑“Index.ets”文件，添加触发接口调用的按钮，示例代码如下：
 
@@ -263,6 +272,10 @@ HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具�
 
    function testGetThreadCpuUsage() : void {
      testNapi.testGetThreadCpuUsage();
+   }
+
+   function testAsyncContext() : void {
+     testNapi.testAsyncContext();
    }
    ```
 
@@ -290,6 +303,17 @@ HiDebug C/C++接口功能独立，需要获取调试信息时直接调用。具�
      .height('5%')
      // 添加点击事件
      .onClick(testBackTrace);
+
+   Button('testAsyncContext')
+     .type(ButtonType.Capsule)
+     .margin({
+       top: 20
+     })
+     .backgroundColor('#0D9FFB')
+     .width('60%')
+     .height('5%')
+     // 添加点击事件
+     .onClick(testAsyncContext);
    ```
 
 步骤二：运行工程

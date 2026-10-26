@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-event
 title: 接入方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 事件推荐方案 > 接入方案
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:19+08:00
+scraped_at: 2026-10-27T07:40:14+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:d057aa9c685dcc87afe0dc6fe62dc64f06539102745e56ca390cb9f855b2af33
+content_hash: sha256:4edbce4cca421639a73dd8bc6210d0db190b012c3bb94fa2b6aa0d84cc74033d
 ---
 
 ## 方案概述
 
 当开发者有事件想要通知到用户时，可通过应用/元服务的云侧服务器向智慧分发平台推送事件内容（意图共享）。系统通过智慧决策判断事件发生的条件，在满足条件时，向用户推荐事件提醒卡片，当用户点击卡片后，可跳转到应用/元服务的详情页查看事件详情（意图调用）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/uT9M5d_jRp2KEz8fQ6QJRA/zh-cn_image_0000002797181843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/WQmB8njtQ_OG9dAtbBFjLg/zh-cn_image_0000002771666952.png)
 
 ## 流程图
 
@@ -21,7 +21,7 @@ content_hash: sha256:d057aa9c685dcc87afe0dc6fe62dc64f06539102745e56ca390cb9f855b
 3. 华为侧会根据事件和具体场景制定事件服务推出规则和时机。
 4. 在满足制定规则场景下展示对应用户事件，增加服务曝光率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/yaHcaJLgRdS4bh2VTj1etg/zh-cn_image_0000002768021864.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/jOm0hyF8T5iVqSWTEreSgA/zh-cn_image_0000002800986811.png)
 
 ## 意图注册
 

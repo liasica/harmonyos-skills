@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 获取诈骗通话记录
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 反诈选择器 > 获取诈骗通话记录
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:05+08:00
+scraped_at: 2026-10-27T07:39:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:332f2d3597f0012c789e9aea46323244d7e17d3275f5b8c13af829223f5102c1
+content_hash: sha256:922bd1f9828f0003cf604ccd087e58ea673e1eeb9a80d13f9aef71befc1e06f5
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:332f2d3597f0012c789e9aea46323244d7e17d3275f5b8c13af829223f5
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/XgbSqhS3TvWADIq6UiJDIQ/zh-cn_image_0000002797180769.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/9gLXoPjJS1K1jUCToEm5Og/zh-cn_image_0000002771665880.png)
 
 **流程说明：**
 

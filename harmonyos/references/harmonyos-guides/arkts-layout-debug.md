@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: UI显示异常调试
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI显示异常调试
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:79a94f4538afa556263bd413fa8247a47bd11cbfba6ede35100d240e5717203f
+scraped_at: 2026-10-27T07:38:55+08:00
+doc_updated_at: 2026-10-26
+content_hash: sha256:fb4fcb293f9b8f97cacf97c736631d471c7a4f4b9a4e919c3e1af92b1c8e4f76
 ---
 
 本章节主要介绍UI显示异常问题的调试方法，并结合案例讲解具体的解决步骤。
@@ -108,9 +108,6 @@ struct Page {
       this.msg = `${this.componentId}: ` + this.getRectInfo(this.componentId) + `, pivot: {x: ${this.pivotX}, y: ${this.pivotY}}`;
       this.flag = true;
     }
-  }
-
-  onDidBuild(): void {
   }
 
   build() {

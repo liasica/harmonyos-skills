@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/call-introduc
 title: Call Service Kit简介
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > Call Service Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:44+08:00
+scraped_at: 2026-10-27T07:39:42+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:d7681752677056a1e247dcb2f00b6f6cfdea07a4665ef985e90b9dc37be17025
+content_hash: sha256:cd8f802e0bd77e796af4c07fbd215831c35160241c6b0c69d73d3b35efa35f6e
 ---
 
 Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通话管理服务。
@@ -36,7 +36,7 @@ Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通�
 
 业务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/tAZV5P37SouDmozkpEWmpA/zh-cn_image_0000002797181303.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/tKPSs_T_RKOfaBSKSVHYdg/zh-cn_image_0000002771666412.jpg)
 
 ## 约束和限制
 

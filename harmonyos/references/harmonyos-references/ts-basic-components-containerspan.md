@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ContainerSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > ContainerSpan
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:45+08:00
+scraped_at: 2026-10-27T07:41:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a92fa2025af4b1930cfee18b04d450dc25135b8fd542b275974a31be3e03f5f9
+content_hash: sha256:eaab1f922dd9ec2bfabacc176ca7fa522f9ceb66a17f157b2c290927f9cadafe
 ---
 
 [Text](ts-basic-components-text.md)组件的子组件，用于统一管理多个[Span](ts-basic-components-span.md)、[ImageSpan](ts-basic-components-imagespan.md)的背景色及圆角弧度，适用于需要为文本片段和图片组合设置统一背景样式的场景。
@@ -108,7 +108,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/NX2ZsD_xQ6a_jDf7BVfu9w/zh-cn_image_0000002768022474.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/fp5OYV9sSJi4t2EShqrRZA/zh-cn_image_0000002800987423.png)
 
 ### 示例2（通过attributeModifier设置背景样式）
 
@@ -146,4 +146,4 @@ struct ContainerSpanModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/OUVTMG0XSEuEQhW2VetJbQ/zh-cn_image_0000002797302423.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/cPkl3Zb_ST2QxhXHQSJZpw/zh-cn_image_0000002771827530.png)
