@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-13
 title: 如何解决LocalSocket创建报错
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何解决LocalSocket创建报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:36ab6ea7821442ae7c2dee13b9775a96f06d2a3c4bdfcfb9dfdf0c61efa008ce
+scraped_at: 2026-10-28T07:48:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:27f89e336ad67ff3eea80d687b7fd9cef1db5b94d3c845a609cb673550defa14
 ---
 
 ## 问题现象
@@ -15,6 +15,7 @@ LocalSocket无法正常使用，常见问题：
 1. 创建LocalSocket报错：2301111 Connection refused。
 2. 创建LocalSocket/LocalSocketServer报错：2301002 No such file or directory。
 3. 客户端发送数据，服务端没有监听到消息。
+4. 服务端开启后立即发送消息，随后服务关闭，导致LocalSocket无法收到对方发送的消息。
 
 ## 背景知识
 
@@ -26,11 +27,13 @@ LocalSocket无法正常使用，常见问题：
 1. 报错2301111 Connection refused通常需要排查服务端是否可连接，在LocalSocket连接前需要创建并启动[LocalSocketServer](../harmonyos-references/js-apis-socket.md#localsocketserver11)，并检查LocalAddress是否一致。
 2. 报错2301002 No such file or directory。对于LocalSocketServer，通常是没有本地套接字文件路径的权限，无法自动创建此文件。对于LocalSocket，除检查路径外，需要保证已提前创建LocalSocketServer并调用其[listen](../harmonyos-references/js-apis-socket.md#listen11)函数自动创建套接字文件。
 3. 对于服务端无法监听到发送的消息，需要确保LocalSocket客户端在发送数据前，服务端已开启了[on('connect')](../harmonyos-references/js-apis-socket.md#onconnect11-1)以及回调中连接的[on('message')](../harmonyos-references/js-apis-socket.md#onmessage11-1)监听。否则服务端没有监听到客户端连接事件，就无法再监听到对应连接的其他事件。
+4. 对于服务端开启后立即发送消息随后服务关闭的问题，需要排查发送消息的时机是否在[on('connect')](../harmonyos-references/js-apis-socket.md#onconnect11-1)回调之外。如果在回调之外发送消息，此时尚未获得LocalSocketConnection对象，消息无法正确投递，服务关闭后连接断开，导致LocalSocket无法收到对方发送的消息。
 
 ## 分析结论
 
 1. 2301002 No such file or directory问题：应用没有权限访问LocalAddress的address，或客户端没有使用同一个套接字文件。
 2. 2301111 Connection refused和服务端没有接收到客户端发送的消息问题：使用LocalSocket时没有先启动LocalSocketServer，再启动客户端。
+3. 服务端开启后立即发送消息随后服务关闭问题：在[on('connect')](../harmonyos-references/js-apis-socket.md#onconnect11-1)回调之外发送消息，此时缺少连接对象LocalSocketConnection，消息发送后服务关闭，导致无法正常通信。
 
 ## 修改建议
 
@@ -38,68 +41,80 @@ LocalSocket无法正常使用，常见问题：
 
    ```ts
    genLocalAddress(socketFileName: string) {
-     let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-     let sandboxPath: string = context.filesDir + '/' + socketFileName;
-     let localAddress: socket.LocalAddress = {
-       address: sandboxPath
-     };
-     return localAddress;
-   }
+       let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+       let sandboxPath: string = context.filesDir + '/' + socketFileName;
+       let localAddress: socket.LocalAddress = {
+         address: sandboxPath
+       };
+       return localAddress;
+     }
    ```
 2. LocalSocket使用需要先启动LocalSocketServer：
 
    ```ts
    // 创建并绑定本地套接字文件，进行监听。
-   this.server.listen(this.localAddress).then(() => {
-     console.info('LocalSocket Server listen success');
-   }).catch((err: BusinessError) => {
-     console.error('LocalSocket Server listen fail: ' + JSON.stringify(err));
-   });
+             this.server.listen(this.localAddress).then(() => {
+               console.info('LocalSocket Server listen success');
+             }).catch((err: BusinessError) => {
+               console.error('LocalSocket Server listen fail: ' + JSON.stringify(err));
+             });
 
-   // 订阅LocalSocketServer的connect事件。
-   this.server.on('connect', (connection: socket.LocalSocketConnection) => {
-     console.info('LocalSocket Server 监听到客户端连接: ' + JSON.stringify(connection.clientId));
-     // 订阅LocalSocketConnection相关的事件。
-     connection.on('message', (value: socket.LocalSocketMessageInfo) => {
-       console.info('LocalSocket Server total: ' + JSON.stringify(value));
-       console.info('LocalSocket Server message information: ' + this.decodeMessage(value));
-       // ...
-     });
+             // 订阅LocalSocketServer的connect事件。
+             this.server.on('connect', (connection: socket.LocalSocketConnection) => {
+               console.info('LocalSocket Server 监听到客户端连接: ' + JSON.stringify(connection.clientId));
+               // 订阅LocalSocketConnection相关的事件。
+               connection.on('message', (value: socket.LocalSocketMessageInfo) => {
+                 console.info('LocalSocket Server total: ' + JSON.stringify(value));
+                 console.info('LocalSocket Server message information: ' + this.decodeMessage(value));
+                 // ...
+               });
 
-     connection.on('error', (err: BusinessError) => {
-       console.error('LocalSocket Server err:' + JSON.stringify(err));
-     });
+               connection.on('error', (err: BusinessError) => {
+                 console.error('LocalSocket Server err:' + JSON.stringify(err));
+               });
 
-     // 向客户端发送数据。
-     this.sendMessage(connection, 'Hello Client!');
-     // ...
-   });
+               // 向客户端发送数据。
+               this.sendMessage(connection, 'Hello Client!');
+               // ...
+             });
    ```
 3. 再启动LocalSocket客户端发送消息：
 
    ```ts
    // 启动客户端端前，需要先启动LocalSocketServer，否则报错：2301111 Connection refused
-   let connectOpt: socket.LocalConnectOptions = {
-     address: this.localAddress,
-     timeout: 6000
-   };
+           let connectOpt: socket.LocalConnectOptions = {
+             address: this.localAddress,
+             timeout: 6000
+           };
 
-   this.client.connect(connectOpt).then(() => {
-     console.info('LocalSocket Client connect success');
-   }).catch((err: BusinessError) => {
-     console.error('LocalSocket Client connect fail: ' + JSON.stringify(err));
+           this.client.connect(connectOpt).then(() => {
+             console.info('LocalSocket Client connect success');
+           }).catch((err: BusinessError) => {
+             console.error('LocalSocket Client connect fail: ' + JSON.stringify(err));
+           });
+
+           this.client.on('message', (value: socket.LocalSocketMessageInfo) => {
+             console.info('LocalSocket Server total: ' + JSON.stringify(value));
+             console.info('LocalSocket Server message information: ' + this.decodeMessage(value));
+           });
+           this.client.on('connect', () => {
+             console.info('LocalSocket Client on connect');
+           });
+           this.client.on('close', () => {
+             console.info('LocalSocket Client on close');
+           });
+   ```
+4. 确保在on('connect')回调中获得LocalSocketConnection对象后再发送消息，避免在回调之外发送导致消息丢失和服务关闭：
+
+   ```ts
+   // 正确做法：在on('connect')回调中获取connection对象后再发送消息
+   this.server.on('connect', (connection: socket.LocalSocketConnection) => {
+     // 在此处获取到LocalSocketConnection对象后发送消息
+     this.sendMessage(connection, 'Hello Client!');
    });
 
-   this.client.on('message', (value: socket.LocalSocketMessageInfo) => {
-     console.info('LocalSocket Server total: ' + JSON.stringify(value));
-     console.info('LocalSocket Server message information: ' + this.decodeMessage(value));
-   });
-   this.client.on('connect', () => {
-     console.info('LocalSocket Client on connect');
-   });
-   this.client.on('close', () => {
-     console.info('LocalSocket Client on close');
-   });
+   // 错误做法：在on('connect')回调之外发送消息，此时缺少LocalSocketConnection对象
+   // this.sendMessage(connection,'Hello Client!'); // connection未定义，消息无法投递
    ```
 
 完整示例如下：
@@ -117,6 +132,7 @@ struct LocalSocketPage {
   private client: socket.LocalSocket = socket.constructLocalSocketInstance();
   private localAddress: socket.LocalAddress = this.genLocalAddress('socket_1'); // 创建本地文件，server和client均需对此路径具备访问权限
 
+  // Start solution1
   genLocalAddress(socketFileName: string) {
     let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let sandboxPath: string = context.filesDir + '/' + socketFileName;
@@ -125,6 +141,7 @@ struct LocalSocketPage {
     };
     return localAddress;
   }
+  // End solution1
 
   decodeMessage(data: socket.LocalSocketMessageInfo): string {
     if (data?.message) {
@@ -150,6 +167,7 @@ struct LocalSocketPage {
     Column({ space: 24 }) {
       Button('启动LocalSocket服务端')
         .onClick(() => {
+          // Start solution2
           // 创建并绑定本地套接字文件，进行监听。
           this.server.listen(this.localAddress).then(() => {
             console.info('LocalSocket Server listen success');
@@ -175,8 +193,10 @@ struct LocalSocketPage {
             this.sendMessage(connection, 'Hello Client!');
             // ...
           });
+          // End solution2
         });
       Button('启动LocalSocket客户端').onClick(() => {
+        // Start solution3
         // 启动客户端端前，需要先启动LocalSocketServer，否则报错：2301111 Connection refused
         let connectOpt: socket.LocalConnectOptions = {
           address: this.localAddress,
@@ -199,6 +219,7 @@ struct LocalSocketPage {
         this.client.on('close', () => {
           console.info('LocalSocket Client on close');
         });
+        // End solution3
       });
       Button('客户端发送数据').onClick(() => {
         // 需要服务端先使用on('connect')、on('message')监听到客户端连接，否则无法监听到消息

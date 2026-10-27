@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-890
 title: 如何设置APP内全局字体大小
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置APP内全局字体大小
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:731f7a8d6879c9f6be0bdd7b0a64d19df159f3cae8a04c31e197da93c4b47fd7
+scraped_at: 2026-10-28T07:47:37+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9922596b0795d418c3cb2f70ded84086fdbbd83363cb1b02e66c774ae2db7eb7
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ content_hash: sha256:731f7a8d6879c9f6be0bdd7b0a64d19df159f3cae8a04c31e197da93c4b
 
 * 方案一：通过preferences调节应用内全局字体大小。
 
-  自定义PreferencesUtil类，通过其提供的创建、保存和查询的数据，将读取到的数据保存到页面带有@State的变量中，通过状态变量对文本字体大小进行设置。具体应用可以参考官网[使用preferences实现应用内字体大小调节功能](https://developer.huawei.com/consumer/cn/codelabsPortal/carddetails/tutorials_NEXT-SetAppFontSize)。
+  自定义PreferencesUtil类，通过其提供的创建、保存和查询的数据，将读取到的数据保存到页面带有@State的变量中，通过状态变量对文本字体大小进行设置。具体应用可以参考官网[使用preferences实现应用内字体大小调节功能](../doccenter-capabilities/subscribe-system-environment-variable-changes.md#设置字体大小)。
 * 方案二：通过动态属性设置全局字体大小。
 
   使用动态属性，自定义class实现AttributeModifier接口，设定好Text需要的fontSize后在页面调用，实现字体大小统一修改。
@@ -69,7 +69,7 @@ content_hash: sha256:731f7a8d6879c9f6be0bdd7b0a64d19df159f3cae8a04c31e197da93c4b
 
   效果预览图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Udxo0wgMRTmdPLxxNz4Paw/zh-cn_image_0000002658798907.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/hZO0odKaSp2jWC5ygUW5zQ/zh-cn_image_0000002658798907.png "点击放大")
 * 方案三：使用ApplicationContext接口实现设置应用内全局字体大小。
 
   通过setFontSizeScale方法设置应用字体的全局缩放比例：在entryability/EntryAbility中调用ApplicationContext接口，并使用setFontSizeScale方法，即可设置应用内全局字体比例大小。页面代码为默认Hello World页面，EntryAbility示例代码如下：
@@ -162,11 +162,11 @@ content_hash: sha256:731f7a8d6879c9f6be0bdd7b0a64d19df159f3cae8a04c31e197da93c4b
 
   正常字体大小：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/N1XF72zjTkioxksGqImqmA/zh-cn_image_0000002628559546.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/xaE_CWduQTe3MPqAmkZ9uw/zh-cn_image_0000002628559546.png "点击放大")
 
   设置setFontSizeScale(2)方法的字体大小：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/-q6lWHN_SDSVp3EJ65gD7Q/zh-cn_image_0000002658918857.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/peB4ZdVNSYiDEa7dC-sgbQ/zh-cn_image_0000002658918857.png "点击放大")
 
 ## 常见FAQ
 

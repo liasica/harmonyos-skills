@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1478
 title: 如何实现视频自动播放下一集
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现视频自动播放下一集
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6f09f2809bc33de3fcc32441cbc7ea2329c1830b6500710f2b6d368b36a162dd
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:863b0ee7cccddfba88c9cecbcbc02b24b7fc76282b4b765ba7736fddd76b20f7
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:6f09f2809bc33de3fcc32441cbc7ea2329c1830b6500710f2b6d368b36a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/hA9W8MA6TMqe2ecx6AfsJw/zh-cn_image_0000002658965023.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/I7NLPcLpSYSdnvEA4d73JQ/zh-cn_image_0000002658965023.gif "点击放大")
 
 ## 背景知识
 

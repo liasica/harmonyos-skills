@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-116
 title: H5页面点击邮件链接后跳转空白页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > H5页面点击邮件链接后跳转空白页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eb8f8ebb959ea1e2a597c0960a07dfd18faad2cbaae249232ebce60c15a4f7e4
 ---
 

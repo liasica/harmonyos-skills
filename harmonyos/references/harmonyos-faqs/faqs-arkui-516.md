@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-516
 title: 对象引用错误导致UI无法刷新
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 对象引用错误导致UI无法刷新
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:41+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:f45f30a85ee285acf7d9ab30b6283a31c9aabfbef599c341d37ec415fc5043cb
+content_hash: sha256:de7a2c394031562e21b1def846a0914cc50a788d53039b35655887ba5797f291
 ---
 
 ## 问题现象
@@ -67,7 +67,7 @@ struct MainPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/q-S9sZRwQK-hSj_KVJh0Nw/zh-cn_image_0000002628391164.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/qg9MPTn9RsmJi0uEQBqZ0g/zh-cn_image_0000002628391164.png "点击放大")
 
 ## 背景知识
 
@@ -144,7 +144,7 @@ struct TouchDownCustom {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Mc1ylV5gQqO8V3UpZXuCeQ/zh-cn_image_0000002658790415.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/TnNhfZo9THq61BCh65QuOQ/zh-cn_image_0000002658790415.png "点击放大")
 
 ## 常见FAQ
 

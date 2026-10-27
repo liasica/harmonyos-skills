@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1322
 title: CanvasRenderingContext2D绘制长文本自动换行
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > CanvasRenderingContext2D绘制长文本自动换行
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:d77e1f14228889e67f16af3efe14b1982675ddccb1e0406a738550a025c77cfa
+content_hash: sha256:d5c3f466acdc2b541d53603a9855b0e71c778364d8066407fd8f00e054b6d4b7
 ---
 
 ## 问题现象
 
 使用CanvasRenderingContext2D绘制长文本时，这些长文本既没有换行符，也没有空格符，如何对绘制的文本进行自动换行？效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/UBEmRlnjSXuqm1tgTU0wzg/zh-cn_image_0000002658838901.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Q5-whPdcS-Gb09g4ynknzA/zh-cn_image_0000002658838901.png "点击放大")
 
 ## 背景知识
 

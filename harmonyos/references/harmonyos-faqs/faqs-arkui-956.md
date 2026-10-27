@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-956
 title: 如何实现连续点击小圆点的动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现连续点击小圆点的动画
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:47+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:08d4b0db97b432ed2f42f386d0e8009a066bf29dded93c6a165696d0999c536e
+content_hash: sha256:bd475b7306044a8c89ebdcf09adf0553d3212555ce3597a9e5116eadacd13f0c
 ---
 
 ## 问题现象
 
 在页面上根据手指点击动态增加小圆点，1秒后自动淡出，要求可以连续点击，后面的点击不会影响前面点击的小圆点动画，这种功能需要如何实现？效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/gAU_PGU9Q3yz5VcTEQ__uw/zh-cn_image_0000002628561176.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/lahnAUv1SMej5ErR-4lnXg/zh-cn_image_0000002628561176.png "点击放大")
 
 ## 背景知识
 

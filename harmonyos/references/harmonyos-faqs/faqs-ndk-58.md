@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-58
 title: 在ArkTS侧如何引用Native侧使用napi_create_buffer接口构造的对象
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 在ArkTS侧如何引用Native侧使用napi_create_buffer接口构造的对象
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9f7308e59d34f2a38445188b1ed5af34dd0f3fb2f800b7f9bd54113c283b63fe
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-background
 title: 如何在Stage模型中创建后台任务
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 后台任务开发（Background Tasks） > 如何在Stage模型中创建后台任务
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:18+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:73760647674ab3586a70a80d60808ce0d622426af0fe04098077926ac64d90fe
 ---
 

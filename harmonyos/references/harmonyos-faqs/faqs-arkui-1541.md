@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1541
 title: 如何解决Column子组件超出容器边界
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决Column子组件超出容器边界
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:41+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:925ac7d23ae55b19610b77361b9f8fa6b2a25e2204f5f3b9a29af88e186387dd
+content_hash: sha256:99b12ea34df0cd141ac1438057feba3a6464ce09ac508f3035dfafffaa56dabc
 ---
 
 ## 问题现象
@@ -46,7 +46,7 @@ struct ProblemCode {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Z5g2KpcvSNSR6ug0dP7QCQ/zh-cn_image_0000002628769118.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gnbgn4ohRdONN4H4Hz8Dbg/zh-cn_image_0000002628769118.png "点击放大")
 
 ## 背景知识
 
@@ -95,7 +95,7 @@ struct OptionOne {
 
 修改后的预览效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/FqZQvvhjR8Gzdv9pWNYngg/zh-cn_image_0000002658968437.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/1N6LevzwQK6Ru3jxFsJeiQ/zh-cn_image_0000002658968437.png "点击放大")
 
 另外，在使用constraintSize的时候，注意constraintSize(minWidth/maxWidth/minHeight/maxHeight)取值对width/height影响。
 
@@ -138,7 +138,7 @@ struct OptionTwo {
 
 预览效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/UCYVZ8jOTq60jZhEpFx8uQ/zh-cn_image_0000002658848483.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/bFs4TD2PRcmyf99HGSLCPQ/zh-cn_image_0000002658848483.png "点击放大")
 
 如果需要处理这个问题，可以在外部使用Scroll组件，并在Scroll组件上设置constraintSize。此时当子组件的占用空间超过constraintSize设置的约束值时，就会出现滚动条，从而不会破坏整个布局的结构。
 
@@ -177,6 +177,6 @@ struct OptionThree {
 
 修改后的预览效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/JQ-_P3t7Rwyb2gM8EBSSdQ/zh-cn_image_0000002628609222.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WuENvcDKSTOYOrH7NAYNww/zh-cn_image_0000002628609222.png "点击放大")
 
 这样不仅保持了constraintSize的有效性，还通过滚动条提供了一种查看超出部分内容的方式，确保了用户体验不受影响。

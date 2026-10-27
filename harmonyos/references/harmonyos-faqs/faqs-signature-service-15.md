@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 软件包格式异常
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 软件包格式异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:22:16+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bc062437fa1ccf0c242520f619487c8d77448f450a99bb90c267c2dc27ac0c83
 ---
 

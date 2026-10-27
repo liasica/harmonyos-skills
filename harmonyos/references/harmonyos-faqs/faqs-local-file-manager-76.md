@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何读取占用空间不同的文件
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何读取占用空间不同的文件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d63baaea11891ea166bed0237891a0a475863ab3f43f0a6a72a908400613b127
 ---
 

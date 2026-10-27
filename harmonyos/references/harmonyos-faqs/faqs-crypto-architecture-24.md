@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何使用SM3算法进行消息认证码计算
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何使用SM3算法进行消息认证码计算
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:10+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:41d3207fa0224deeddf6a02403f127ac807e0cc248c5e686ea070c46e74c6a80
 ---
 

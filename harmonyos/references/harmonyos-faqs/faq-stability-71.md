@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-7
 title: 应用闪退-Native内存(PSS_MEMORY)泄漏问题排查
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 应用闪退-Native内存(PSS_MEMORY)泄漏问题排查
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
+scraped_at: 2026-10-28T07:46:41+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:3b8062f508de75d22f473b140fa13251c70bcf7ffce4a86129d0e0d29c24aadc
+content_hash: sha256:4d3273c7746f1d5e30de23c4ed8d8365844759b7ea71c2221760983da18ef4d6
 ---
 
 ## 问题现象
@@ -172,7 +172,7 @@ native泄漏问题速查表：
           ```
        2. 使用HiSmartPref分析内存栈文件memleak-native-[process\_name]-[pid]-[timestamp].txt，拖拽导入，框选All Heap，选择Created & Existing，找到最大size的调用栈，分析业务代码确认泄漏点。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/oU71ag5bSByIAJBqLXq8dw/zh-cn_image_0000002628554906.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/pxtPQfIuShGi8zBpNxewhg/zh-cn_image_0000002628554906.png "点击放大")
    * 场景二：ashmem泄漏。
      + 判定方法：dev/ashmem的PSS > Summary的PSS\*0.5。
      + 定位方法：
@@ -186,7 +186,7 @@ native泄漏问题速查表：
           ```
        2. 使用HiSmartPref分析内存栈文件memleak-native-[process\_name]-[pid]-[timestamp].txt，拖拽导入，框选All Anonymous VM，选择Created & Existing，找到最大Virtual\_size的调用栈，分析业务代码确认泄漏点。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/IZDK2UfvQwKdX5QL33lZaA/zh-cn_image_0000002628395006.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/oY2L20UWTK-DJuenzcFdWg/zh-cn_image_0000002628395006.png "点击放大")
 3. **结合业务代码分析泄漏点。**
    * 排查方向：
      + 堆内存泄漏：

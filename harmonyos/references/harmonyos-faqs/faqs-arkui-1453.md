@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1453
 title: 如何获取组件在屏幕中显示的比例
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何获取组件在屏幕中显示的比例
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:adf8c3f5b4117f126150a8da95db07478537a98e49f811e93f3f1529d182a1fd
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e285a0a58a503baeba8c6be751f62a3e75420b84f0d317295b9c1994a31c7b61
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:adf8c3f5b4117f126150a8da95db07478537a98e49f811e93f3f1529d18
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/_lTbABIdS221zqZoSS6Oxg/zh-cn_image_0000002658843533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/RkzdQKBYR6SfMgptk8fvVw/zh-cn_image_0000002658843533.png "点击放大")
 
 ## 背景知识
 

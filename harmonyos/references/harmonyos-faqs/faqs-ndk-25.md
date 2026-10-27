@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-25
 title: Native侧获取env具有线程限制，如何在C++子线程触发ArkTS侧回调
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime） > Native侧获取env具有线程限制，如何在C++子线程触发ArkTS侧回调
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:13a60f2412d4db71a3151fb390ba0ae57584686352819ff5ceb592259bf21c05
 ---
 

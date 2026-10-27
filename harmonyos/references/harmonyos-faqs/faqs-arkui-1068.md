@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1068
 title: 使用状态管理V1、V2进行深度观测的区别和优缺点
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用状态管理V1、V2进行深度观测的区别和优缺点
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:04+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:dde718bb7a5de3528423c1178b54029f72cac470784cf7a6f67849b057c930eb
+content_hash: sha256:949c3ed011205537145215344d8184eef5e607dd58667af0dd552c3ab24f7ed9
 ---
 
 ## 问题现象
@@ -160,7 +160,7 @@ V1版本的复杂嵌套数据的深层嵌套观测相较于V2版本的深层嵌�
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/sUMu7wd2RqmZBqqQfy_PGw/zh-cn_image_0000002628407224.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/ccpH0psnSdeUmvnJllD8DA/zh-cn_image_0000002628407224.png "点击放大")
 
      **说明** 
 
@@ -285,7 +285,7 @@ V1版本的复杂嵌套数据的深层嵌套观测相较于V2版本的深层嵌�
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/3dAcdnUUSZqchtfYwNRToQ/zh-cn_image_0000002658806487.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/6pMkMIg7Se6Yf8cvcp4UKg/zh-cn_image_0000002658806487.png "点击放大")
 
      **说明** 
 

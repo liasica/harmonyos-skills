@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-190
 title: 如何获取窗口的宽高信息
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何获取窗口的宽高信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:03d558b8af6b4accc908a0fae5431320e5271d9fea3056b4977073aa316316ec
 ---
 

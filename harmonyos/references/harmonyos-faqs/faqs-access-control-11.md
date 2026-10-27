@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 应用申请位置信息权限为什么没有弹窗
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 应用申请位置信息权限为什么没有弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8dfd690c84f2188de3350cb9d73090d7d9948b9bc785e4fd30ce5f83eb1a2b61
 ---
 

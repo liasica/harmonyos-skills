@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-187
 title: 如何避免多个页面同时触发onRenderExited回调
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何避免多个页面同时触发onRenderExited回调
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:752468308a940d1be38925f1b5816a412d40c56da146cf5ff7b75fe5a22c0c75
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b40e2ceac42316af0000adecf65407f449e85a67628eca256fdab5c949c950e4
 ---
 
 ## 问题现象
@@ -121,6 +121,6 @@ content_hash: sha256:752468308a940d1be38925f1b5816a412d40c56da146cf5ff7b75fe5a22
 
    查看日志，只触发了PageB页面的onRenderExited回调。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/5C8J8-U6TmeZIYaxuvSM_A/zh-cn_image_0000002628899174.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/SmLv-wiiRfWUQooD_EjTmg/zh-cn_image_0000002628899174.png "点击放大")
 
    需要注意的是，setRenderProcessMode是静态方法，设置后对整个应用都生效，无需对每个Web页面重复设置。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1083
 title: 圆角边框问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 圆角边框问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7223b0bcc1fdf66cc7190b636f5ac3b6e9bfbf77195980c1cbd2426b37dfa87b
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b401b95d6dac80caf3061c37d8ba7e0b6f7985f561e65af79c3eb4499be37ad8
 ---
 
 ## 问题现象
@@ -105,7 +105,7 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/lvAwkTvtTOC20wmSQfrU4w/zh-cn_image_0000002658926553.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ufY55xnlT7umJAN-yUV7KQ/zh-cn_image_0000002658926553.png "点击放大")
 * 场景二：同时设置border属性和borderRadius属性圆角不生效。
 
   border设置在borderRadius之后会导致border覆盖borderRadius，并且，border已经存在参数radius用于控制圆角。如果border属性的radius参数缺省，需要borderRadius设置在border后。
@@ -140,14 +140,14 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/IrWOzpXORdS4WU_wN-2SPg/zh-cn_image_0000002658806607.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/YP-bI8ugRYugd-KE5p8L0w/zh-cn_image_0000002658806607.png "点击放大")
 * 场景三：不同背景色重叠导致圆角出现黑边。
 
   示例一：Video组件与父容器Column背景色不同时，四角出现黑边。
 
   问题现象图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/GZm54TrJRGagOIuVFQy77Q/zh-cn_image_0000002628407344.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_7yaElMQTfWiFNCvaC0bUg/zh-cn_image_0000002628407344.png "点击放大")
 
   由于抗锯齿是半透明像素（GPU绘制正常原理），导致无法完全遮挡下方内容。需要将两者背景色统一或者将Video组件的背景色设为透明。
 
@@ -188,7 +188,7 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/moKwDFCIT9SZeEJD8h7W0w/zh-cn_image_0000002628567242.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/hNuelDhyRDeT07xKqtvQDQ/zh-cn_image_0000002628567242.png "点击放大")
 
   示例二：存在重叠关系的兄弟组件背景色不同时，四角出现黑边。
 
@@ -222,7 +222,7 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/9N9PfOVBRFOX5Mz_f76pww/zh-cn_image_0000002658926555.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/6tJaOG9OS5CvuSyC8uhUpg/zh-cn_image_0000002658926555.png "点击放大")
 
   方法一：同示例一解决方法，需要将两者背景色统一。
 
@@ -289,4 +289,4 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/F2wYcOhkQYa4RalcetuSdQ/zh-cn_image_0000002658806609.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/VrjZPCjaQrad1xCoyyHvaw/zh-cn_image_0000002658806609.png "点击放大")

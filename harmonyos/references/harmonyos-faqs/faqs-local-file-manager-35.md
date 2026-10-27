@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何将数据持续写入文件内
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何将数据持续写入文件内
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f89cce3d5f88f5bcf0785fa9ab2d211951d0bb44e63f19ab4b172d82a6f9b2e5
 ---
 

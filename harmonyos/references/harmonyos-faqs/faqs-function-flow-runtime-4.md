@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-function-f
 title: 线程安全函数使用问题汇总
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime） > 线程安全函数使用问题汇总
 category: harmonyos-faqs
-scraped_at: 2026-09-30T07:42:09+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-28T07:46:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f7d0411d8e4f608ba5fc4be185e6f94558584d6f025935a66114a89620c2a2a8
 ---
 

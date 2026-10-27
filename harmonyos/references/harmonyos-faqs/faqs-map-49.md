@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-49
 title: Map Kit如何设置“我的位置”模式（方向、跟随、移动）
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > Map Kit如何设置“我的位置”模式（方向、跟随、移动）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:c05604c5632758a123511de1e2d6fce429bde1b5da2402ae820f05d0407e736b
+content_hash: sha256:537e1022d83df9446b1061f03f9e170a71a145d04a92d65f200a987153970f15
 ---
 
 ## 问题现象
@@ -42,7 +42,7 @@ Map Kit地图服务提供自带的“我的位置”图标显示，但应用有�
 
   实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/WeP07aM9SWWhGtGeWVXDZQ/zh-cn_image_0000002710186485.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/JM-DFotzRCOu3HfKewwePg/zh-cn_image_0000002710186485.png "点击放大")
 
   完整代码：
 

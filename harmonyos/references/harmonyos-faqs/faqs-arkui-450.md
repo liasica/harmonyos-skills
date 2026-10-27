@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-450
 title: TextInput、TextArea等组件如何禁止提示拍摄输入
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput、TextArea等组件如何禁止提示拍摄输入
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:dbcfcd4a66e29dc98d569c16b56a150be87acabf6fc409ca1c367e6d26770f66
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4179d4a8e229ed3bb1b099102ed55628960a9e36dc0a81f44650284955bfda94
 ---
 
 **问题描述**
 
 在使用TextInput、TextArea等文本输入类组件时，系统会默认生成编辑选项，如拍照输入、全选等气泡内容，如果希望隐藏该内容，如何实现？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/cMJ4gJr1T4Gto3QzZod4Jw/zh-cn_image_0000002654835249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/EBei_k-cTEyJxu95SazVZQ/zh-cn_image_0000002654835249.png)
 
 **解决措施**
 
@@ -55,7 +55,7 @@ struct TextAreaExample {
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/qMkUdVFUSrGZbxMh3f5G3Q/zh-cn_image_0000002654795311.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/TMwX72GtSJeXKwx6XJjv_A/zh-cn_image_0000002654795311.png)
 
 方案二：如果想隐藏该组件上所有的弹出气泡，包括复制、粘贴、全选、拍摄输入等，可以利用selectionMenuHidden属性隐藏系统文本选择菜单，示例代码如下：
 

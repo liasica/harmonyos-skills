@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-41
 title: 使用OHAudio播放音频码流如何让音量最大
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 使用OHAudio播放音频码流如何让音量最大
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:32398db246bc25cc038b984641e07c3408bba5124d9eb174426a14e19db9c82d
+scraped_at: 2026-10-28T07:48:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7a5eb89b1b2035b4ea7d99ca0d499810911308519e88f704a993c9b6a7ab90c5
 ---
 
 ## 问题现象
@@ -24,7 +24,7 @@ content_hash: sha256:32398db246bc25cc038b984641e07c3408bba5124d9eb174426a14e19db
 
 * 开发者可使用OH\_AudioRenderer\_SetVolume接口设置当前音频流音量值，1.0为最大值。
 
-  ```screen
+  ```cpp
   // 要设置的音量值，音量值的范围是[0.0f, 1.0f]。
   float volume = 1.0f;
   // 设置当前音频流音量值。
@@ -32,13 +32,13 @@ content_hash: sha256:32398db246bc25cc038b984641e07c3408bba5124d9eb174426a14e19db
   ```
 * 当音频流类型[OH\_AudioStream\_Usage](../harmonyos-references/capi-native-audiostream-base-h.md#oh_audiostream_usage)为语音消息、VoIP语音通话或者VoIP视频通话的场景时可以使用OH\_AudioRenderer\_SetDefaultOutputDevice()方法设置本机内置发声设备为扬声器获得最大音量的效果。
 
-  ```screen
+  ```cpp
   // 设置本机内置发声设备为扬声器。
   OH_AudioRenderer_SetDefaultOutputDevice(m_renderer, AUDIO_DEVICE_TYPE_SPEAKER);
   ```
 * PCM码流本身可以直接做乘以系数的操作以提高音量。
 
-  ```screen
+  ```cpp
   void AudioHelper::RaiseVolume(char *buf, uint32_t size, double vol) {
       OH_LOG_INFO(LOG_APP, "RaiseVolume");
       if (!size) {

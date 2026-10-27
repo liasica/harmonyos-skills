@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: RCP响应结果解析及常见问题定位思路
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > RCP响应结果解析及常见问题定位思路
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
+scraped_at: 2026-10-28T07:48:17+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:ff9ce7acc55b6515fa67c24f175997dadcfd811906b4173c13ed83fbe53834c3
+content_hash: sha256:f7234d73cf95d8848352f457862bf049cff7d34eaddb4d5ac8b6408844c7257c
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ Rcp {"code":errCode,"data":"errInfo xxx","extendInfo":{"httpPhase":"111100","dns
 
    一次完整的HTTPS请求过程如下图所示，包括构造网络请求、DNS解析、TCP握手、TLS握手、发送HTTP请求、服务器处理并生成响应、客户端接收响应数据、TCP四次挥手。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/lGnwAQLoRoyA-SIHpHcH0Q/zh-cn_image_0000002661541099.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/C86OWO1zQQu0BYQrdO7Fkg/zh-cn_image_0000002661541099.png "点击放大")
    1. **构造网络请求**
 
       RCP模块中[Request](../harmonyos-references/remote-communication-rcp.md#request)的参数包含请求地址、请求方法、请求头、请求内容、请求cookie等，通过请求参数的设置来构造网络请求。

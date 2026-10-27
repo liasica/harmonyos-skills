@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-869
 title: 搜索建议需要点击两次才会消失
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 搜索建议需要点击两次才会消失
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:ac9f0cddae467856ef51e52664601fbddf206fc5fb26b23194f4d07252181a52
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:18be543d3f70c734379a861a49078b0eddac257da04ebf7d491c2ad1817c15ad
 ---
 
 ## 问题现象
 
 在搜索框组件中，当用户输入内容触发搜索建议时，下拉列表需要点击两次才会消失。正常情况下，点击一次即可关闭下拉列表。该问题导致用户体验不一致，且不符合常规交互预期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/3GwFiTBkSXq5BUYBnT95rA/zh-cn_image_0000002658798187.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/3JBlLpElQLqM-378jVkoIw/zh-cn_image_0000002658798187.png "点击放大")
 
 ## 背景知识
 

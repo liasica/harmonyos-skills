@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1627
 title: 如何解决地图页面操作手势卡顿或者不生效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决地图页面操作手势卡顿或者不生效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:50+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e0962ee7f655dc9b267aedcea168902c81d43aa96abebb580dc3c04b4220f543
+scraped_at: 2026-10-28T07:47:25+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2e2b06b63d41b639e358b6c9bef7c03b70860caaa330c05748125f5b5dc949ad
 ---
 
 ## 问题现象
@@ -23,7 +23,7 @@ content_hash: sha256:e0962ee7f655dc9b267aedcea168902c81d43aa96abebb580dc3c04b422
        触摸测试流程从根节点开始遍历，默认按照UI的Z序由子节点开始收集事件响应链（决定组件的响应顺序），触摸事件（onTouch事件）是冒泡事件默认会向上一直传递下去，直到被消费或者丢弃，允许多个组件同时触发。
      + 事件响应链：ArkUI事件响应链收集，根据右子树（按组件布局的先后层级）优先的后序遍历流程。响应链举例，按下图的组件树，hitTestBehavior属性均为默认，用户点按的动作如果发生在组件E上，则最终收集到的响应链，以及先后关系是E->D->A。因为组件D的hitTestBehavior属性为default，收集到事件后会阻塞兄弟节点，所以没有收集组件B的左子树，存在遮盖关系。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/d_mVvOZkTYGZ0mYPqoKCig/zh-cn_image_0000002658976791.png)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/RkZjEy4bTe28AcupKfmuVg/zh-cn_image_0000002658976791.png)
   2. [手势与事件](../harmonyos-guides/arkts-gesture-events-multi-level-gesture.md#手势与事件)响应及优先级：除了触摸事件（onTouch事件）外的所有手势与事件，均是通过基础手势或者组合手势实现的。在默认情况下，这些手势为非冒泡事件，除非显式声明允许多个手势同时成功，同一时间只会有一个手势响应。
 
      **说明** 
@@ -35,7 +35,7 @@ content_hash: sha256:e0962ee7f655dc9b267aedcea168902c81d43aa96abebb580dc3c04b422
      + 当一个组件同时绑定多个手势时，先达到手势触发条件的手势优先触发。
      + 同一组件绑定相同事件类型的隐式手势和显式手势时，隐式手势会优先响应。比如显式手势TapGesture和隐式手势onClick，只会响应onClick事件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VEWHVHeyT56f3jzPIKr8dw/zh-cn_image_0000002658856851.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/s3rhV-CCR9CK4F5BohNdNA/zh-cn_image_0000002658856851.png)
   3. [自定义控制的多层级手势事件](../harmonyos-guides/arkts-gesture-events-multi-level-gesture.md#自定义控制的多层级手势事件)：可以通过设置属性，控制默认的多层级手势事件竞争流程，更好的实现手势事件。
 * [单一手势](../harmonyos-guides/arkts-gesture-events-single-gesture.md)：包括点击手势（TapGesture）、长按手势（LongPressGesture）、拖动手势（PanGesture）、捏合手势（PinchGesture）、旋转手势（RotationGesture）和滑动手势（SwipeGesture）六种。
 * [组合手势](../harmonyos-guides/arkts-gesture-events-combined-gestures.md)：组合手势由多种单一手势组合而成，通过在[GestureGroup](../harmonyos-references/ts-combined-gestures.md#接口)中使用不同的[GestureMode](../harmonyos-references/ts-combined-gestures.md#gesturemode枚举说明)来声明该组合手势的类型，支持顺序识别、并行识别和互斥识别三种类型。

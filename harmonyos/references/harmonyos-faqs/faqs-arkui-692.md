@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-692
 title: HarmonyOS中多个组件同时使用animateTo动画不同步的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > HarmonyOS中多个组件同时使用animateTo动画不同步的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:256524560e70d9ed8de16fd80b4dbf7c6d1a8b89110abeb84868703895537a05
+content_hash: sha256:f212b6b41f4c2a2707a5ee7badf839d98680cebaffb91d83c01ea68aedc6b81d
 ---
 
 ## 问题现象
@@ -71,7 +71,7 @@ struct Index {
 
 问题效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/AE0H7F7oS8yWf0qn5OjBGA/zh-cn_image_0000002658914075.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/xVuvOzkvRAiPHBP0JjBuTg/zh-cn_image_0000002658914075.png "点击放大")
 
 ## 背景知识
 
@@ -149,4 +149,4 @@ struct AnimationOutOfSync {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/7I2NZns9SFGLqaDTLW9W4Q/zh-cn_image_0000002658794123.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ydM7XdnrSTKhTsrcvvbZUA/zh-cn_image_0000002658794123.png "点击放大")

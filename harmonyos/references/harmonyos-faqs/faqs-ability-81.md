@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-81
 title: 如何查询应用进程的pid信息
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何查询应用进程的pid信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:17a4dc281bc7477cdc8097c34f11872d85e0eeb8d7d4f497f34fca94f2c6285e
 ---
 

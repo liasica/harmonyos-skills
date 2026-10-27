@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1025
 title: 如何让轮播图根据进度条指示器进行切换
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何让轮播图根据进度条指示器进行切换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:57e41be57c34efce70250ca94f8f005af4c4cc66a8d58696e40a1d64108fb8ef
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2ca79f93254bcc5875eb96da74954e3689b6657382b1643d494b67cc6b5fdc3a
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:57e41be57c34efce70250ca94f8f005af4c4cc66a8d58696e40a1d64108
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/eKkORyMRR-auPpkuy6FCiA/zh-cn_image_0000002628404814.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ic-1j2EzRVu5QjotRg-ODQ/zh-cn_image_0000002628404814.png "点击放大")
 
 ## 背景知识
 

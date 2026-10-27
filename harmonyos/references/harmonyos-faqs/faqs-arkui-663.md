@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-663
 title: 应用退出到后台如何正确自动启动画中画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用退出到后台如何正确自动启动画中画
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-07-07
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e0f7edc70ba54c1ef38722917df0aa4ede31ce82b6703f7f4ad8d22abe3cf0a9
 ---
 

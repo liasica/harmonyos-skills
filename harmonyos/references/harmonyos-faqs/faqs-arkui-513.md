@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-513
 title: Text组件如何给文本添加下划线
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件如何给文本添加下划线
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6ef526bf732d9ea6fcbcecd7ce5c5dd21faf794f5aceb7c03fa7bbd954a33f04
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2b9937be98c0f21b1b56630384e15f1fd3b58043dd8ea48d60ee57ae3e272c01
 ---
 
 ## 问题现象
@@ -65,7 +65,7 @@ Text组件本身支持decoration属性，设置文本装饰线样式及其颜色
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/bVbNRzBYSYWFRY-pHZ0xPg/zh-cn_image_0000002658907835.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/fU0vXbi1REqG8DSx2kpcGA/zh-cn_image_0000002658907835.png "点击放大")
 * **方案二**：通过Text组件的decoration参数直接设置基础线条样式。
 
   ```screen
@@ -166,7 +166,7 @@ Text组件本身支持decoration属性，设置文本装饰线样式及其颜色
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/eF07obbQRISKoJHpdJNOKw/zh-cn_image_0000002658787897.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/G3nPOxFTRqekeA_FhR_K7g/zh-cn_image_0000002658787897.png "点击放大")
 * **方案三**：通过border属性给Text组件添加下边框来实现文字下划线的效果。
 
   ```screen
@@ -261,4 +261,4 @@ Text组件本身支持decoration属性，设置文本装饰线样式及其颜色
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/YLnaeX6lTi6jF7cBUGv0tw/zh-cn_image_0000002628388624.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/3XUtvzH8TsibkWVSyuO34Q/zh-cn_image_0000002628388624.png "点击放大")

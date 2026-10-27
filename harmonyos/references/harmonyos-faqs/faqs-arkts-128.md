@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-128
 title: 如何指定对象某些属性参与序列化
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何指定对象某些属性参与序列化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:52+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ae7ad7502880f3fa8a5dedcb5c8099b1eff831ee2b23e9bb420282390631dc41
 ---
 

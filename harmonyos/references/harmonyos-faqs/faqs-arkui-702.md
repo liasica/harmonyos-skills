@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-702
 title: 如何监听屏幕旋转事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何监听屏幕旋转事件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a998c737b73ff41a0a7595357280bd9ddf42f7b9c2cf7c326ecb655560d6852e
 ---
 

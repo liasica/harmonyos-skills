@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI自定义弹窗功能实现与控制常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI自定义弹窗功能实现与控制常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:10+08:00
+scraped_at: 2026-10-28T07:47:32+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:51cc7b0b0c5b4573624fcfcde440e58928817e89419160344fd36b550a4e7035
+content_hash: sha256:19c5e6a57e22e69aafa0c8e74a8ba775485dfc8c7912df4dda1415a27fdfa573
 ---
 
 **Q：利用this.getUIContext().getPromptAction().openCustomDialog打开自定义弹窗，并且给dialog设置宽高100%依旧无法全屏，问题效果预览：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Tksql0hdSv2Ry0Zuf2UX-A/zh-cn_image_0000002767995142.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Sw7qsnzsSn-hbqibQFcwew/zh-cn_image_0000002767995142.png "点击放大")
 
 **A**：解决方法如下：
 
@@ -144,11 +144,11 @@ content_hash: sha256:51cc7b0b0c5b4573624fcfcde440e58928817e89419160344fd36b550a4
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/dV1WQIWLQHeRtf2XTwOCOA/zh-cn_image_0000002767836862.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/FXFkLcK6SgWyf02cuFQeMQ/zh-cn_image_0000002767836862.png "点击放大")
 
 **Q：如何给自定义弹窗使用CustomBuilder，实现下图的功能，且确认取消按钮需要一个带有倒计时的功能，倒计时结束后才能点击。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/cdXrb3GbRoup1QExjIpIwg/zh-cn_image_0000002797157915.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ylgylLE_TnOAsXluvi5mFA/zh-cn_image_0000002797157915.png "点击放大")
 
 **A**：实现弹窗按钮计时禁用效果步骤如下：
 
@@ -303,7 +303,7 @@ struct Index {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/SPGv6XZ8Sii7fMME9sWG7Q/zh-cn_image_0000002797281409.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/hSd3HGfaQGG1efNjsBGj1Q/zh-cn_image_0000002797281409.png "点击放大")
 
 **Q：当弹窗内容高度不确定时，如何实现动态高度、最大高度限制以及滚动体验？**
 
@@ -418,13 +418,13 @@ struct customDialogScroll {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/tUULXXh4R2KR2qVCgd9Uqw/zh-cn_image_0000002768004588.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/-m_bm02vRaaWtOe9AZre5g/zh-cn_image_0000002768004588.png "点击放大")
 
 **Q：对于一个弹窗，如何使用非交互方式关闭，即支持使用代码关闭它，不是用户触摸屏幕操作关闭？**
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/6pXbpUeFR4mx3WVGPMjxmg/zh-cn_image_0000002797286381.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/mGGWr12gSK6cJoFuiqUbCw/zh-cn_image_0000002797286381.png "点击放大")
 
 A：在aboutToAppear生命周期中调用setInterval方法实现一个倒计时功能，在倒计时结束后调用[关闭弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md#close)的方法并清理interval任务。
 

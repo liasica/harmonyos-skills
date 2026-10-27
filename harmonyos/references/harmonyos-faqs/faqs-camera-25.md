@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-25
 title: 应用拍摄出现偏色如何解决
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 应用拍摄出现偏色如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
+scraped_at: 2026-10-28T07:48:24+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:adff5ee6de3b014a8c4e51984803a6918e9de700d59ebffeb0a172603f286d3d
+content_hash: sha256:a6c144a6e8d73528aba36245416b09e8d3c27027e86a45a8acfe6693fdd686ef
 ---
 
 ## 问题现象
@@ -31,10 +31,10 @@ content_hash: sha256:adff5ee6de3b014a8c4e51984803a6918e9de700d59ebffeb0a172603f2
 
 1. 应用中全局搜索setWhiteBalanceMode，查看有无白平衡模式的相关设置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/VD-KFqOdQHurSZm8tZKgLg/zh-cn_image_0000002628552462.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/6U-Gr-QGRjyZvKm4N4g1fg/zh-cn_image_0000002628552462.png "点击放大")
 2. 相机在背光情况下拍摄时，需要增加曝光补偿以照亮主体；而在强光环境下，需要减少曝光补偿以避免画面过度曝光。应用中全局搜索[setExposureBias](../harmonyos-references/arkts-apis-camera-autoexposure.md#setexposurebias11)，查看有无曝光补偿的相关设置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/4jyae98kRIqHc7C_-Q1pqw/zh-cn_image_0000002658911785.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/CWrsnCyISCOP_0ZdEnA3sA/zh-cn_image_0000002658911785.png "点击放大")
 
 ## 分析结论
 

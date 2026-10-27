@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 点击返回按钮响应慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 点击返回按钮响应慢
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:414f80b53f736586c82d1e939ddffa89550e5c34e971bd375503dbe5d6169282
+content_hash: sha256:c5f433bb20171fa644a3a473a6f7ab225939e65d430d98c06b58f8781b2e793c
 ---
 
 ## 问题现象
@@ -37,11 +37,11 @@ content_hash: sha256:414f80b53f736586c82d1e939ddffa89550e5c34e971bd375503dbe5d61
 
 1. 使用DevEco Studio Frame分析工具抓取点击返回按钮过程的Trace信息，然后在抓取结果上方的输入框分别输入H:originEventHandle code:501、type=1找到mmi\_service检测到手指离开屏幕、应用收到点击离手事件的Trace点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/q5MliYVGTfiQeNrBwPhDJg/zh-cn_image_0000002628555074.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/4rewaDcfQUKNrRWJ73TvOw/zh-cn_image_0000002628555074.png "点击放大")
 
    然后以应用收到点击离手事件的Trace点为起点，在上方输入框分别输入H:MarshRSTransactionData、H:RSMainThread::ProcessCommandUni、H:RSHardwareThread::CommitAndReleaseLayers找到应用第一次发送渲染请求、render\_service处理渲染请求、render\_service提交渲染结果的Trace点。计算Trace关键字的时间间隔，得到mmi\_service、应用、render\_service各阶段耗时如下图表所示，耗时主要集中在应用部分。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/nOwJfwBlT9quH6EQdJsl3A/zh-cn_image_0000002628395168.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/NlyWWB1qSFG_i_ajhVg6Ng/zh-cn_image_0000002628395168.png "点击放大")
 
    | mmi\_service | 应用 | 应用->render\_service（应用结束点到render\_service起始点） | render\_service | 总和 |
    | --- | --- | --- | --- | --- |
@@ -50,11 +50,11 @@ content_hash: sha256:414f80b53f736586c82d1e939ddffa89550e5c34e971bd375503dbe5d61
 
    aboutToAppear部分的堆栈信息中可看到执行了XXXPage组件的aboutToAppear函数，该函数中调用了一个load方法较耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/J5bmDgVBQSeI3k_cZE0uJw/zh-cn_image_0000002658914397.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/8LZtZeGkRWepinWKosXAwg/zh-cn_image_0000002658914397.png "点击放大")
 
    组件测量部分的堆栈中可看到有初始化渲染大量组件，组件创建较耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/kPd3J9WzTZa1mcaTYIp3-w/zh-cn_image_0000002658794439.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/wy9B1svQT_a26kF3ZLMjfQ/zh-cn_image_0000002658794439.png "点击放大")
 
    结合前后两者信息可知，在点击返回按钮时，应用创建了XXXPage组件，该组件包含大量子组件，执行aboutToAppear和测量时耗时较多，导致响应慢的问题。
 

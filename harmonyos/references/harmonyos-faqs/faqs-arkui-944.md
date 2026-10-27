@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-944
 title: RichEditor组件高度限制失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor组件高度限制失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eec39250f977aef96a6715553c79cdb82bdc0bdedb9fcb712980fe44ba66f18f
 ---
 

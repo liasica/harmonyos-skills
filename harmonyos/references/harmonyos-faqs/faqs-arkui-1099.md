@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1099
 title: 通过UIPickerComponent动态渲染实现多级联动选择器
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 通过UIPickerComponent动态渲染实现多级联动选择器
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:eba86a36516b6277ce1d71767f3365d916d0113e8a0ab91c146bbab1060aae55
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a85c557a61865cf48f6d52113a06effa494ff379478577300d712f2a0d84924a
 ---
 
 ## 问题现象
@@ -168,7 +168,7 @@ content_hash: sha256:eba86a36516b6277ce1d71767f3365d916d0113e8a0ab91c146bbab1060
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/BSiPPRy8RleWdHPfP6c8vg/zh-cn_image_0000002628567342.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/I2nO2-SlSBG1MLNwrW0Zaw/zh-cn_image_0000002628567342.png "点击放大")
 * **场景三**：该场景主要在于根据当前选中的年动态渲染展示的月。当前年为第一年或者最后一年时通过slice截取需要展示的月份，如第一年设置为4月-12月，最后一年设置为1月-4月，中间的其他年设置为1-12月，通过ForEach渲染月选择器的数据列。可参考如下代码：
 
   ```ts
@@ -238,12 +238,12 @@ content_hash: sha256:eba86a36516b6277ce1d71767f3365d916d0113e8a0ab91c146bbab1060
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/07bQhVqNQKGo9fTuG4qIDw/zh-cn_image_0000002658926663.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ybEtPf_NSeq7zTHoOB3Ofg/zh-cn_image_0000002658926663.png "点击放大")
 
 ## 常见FAQ
 
 Q：TextPicker组件实现三级联动选择的省市区动画联动出现延迟，省看起来已经选中了，但是市和区会延迟变化，导致返回的值出现延迟。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/ySvC7LPgROC2ABTSwAjbug/zh-cn_image_0000002658806703.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/On5ITVfeQHSnZ4xuzwp9nw/zh-cn_image_0000002658806703.png "点击放大")
 
 A：TextPicker组件在滚动过程中，选项归位至选中项位置时才会触发[onChange](../harmonyos-references/ts-basic-components-textpicker.md#onchange18)，此时如果动画还未结束就会出现延迟的情况。可以使用API22新增的UIPickerComponent实现，该组件onChange只需要有选项一半以上进入区域就可以选中，且动画结束较快。具体实现可参考[自定义地区选择器](../harmonyos-references/ts-container-ui-picker-component.md#示例6自定义地区选择器)。

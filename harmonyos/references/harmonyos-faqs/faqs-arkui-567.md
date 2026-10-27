@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-567
 title: 如何解决Scroll组件嵌套Web组件滑动冲突问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Scroll组件嵌套Web组件滑动冲突问题
 category: harmonyos-faqs
-scraped_at: 2026-09-11T06:30:01+08:00
-doc_updated_at: 2026-09-10
-content_hash: sha256:e836c24b9d8664ab11c6f109f6c3a67cc99ad85a171a4d437a2c879f62e6bf65
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c177740cf0f5b72c5cc7a511eca2d32d7590ec0a1615bff7e158c77f53707163
 ---
 
 ## 问题现象
@@ -49,7 +49,7 @@ content_hash: sha256:e836c24b9d8664ab11c6f109f6c3a67cc99ad85a171a4d437a2c879f62e
 
     代码运行效果图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/sQ3v8bMWQU2WeYXIN409eA/zh-cn_image_0000002747576209.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/GHYRgE-TS6mtwf1UmpAzuw/zh-cn_image_0000002747576209.png "点击放大")
   + **方案二**：触摸事件传递。
 
     可以使用触摸测试控制来规避此种情况，请给显示在上层的节点设置hitTestBehavior为HitTestMode.Transparent。详情见[参考文档](../harmonyos-references/ts-universal-attributes-hit-test-behavior.md)。
@@ -62,7 +62,7 @@ content_hash: sha256:e836c24b9d8664ab11c6f109f6c3a67cc99ad85a171a4d437a2c879f62e
 
     代码运行效果图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/rYnUooz8T6O5DQInkgWXLA/zh-cn_image_0000002747577235.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/8Xv8-9M4QamrJyURvahRqw/zh-cn_image_0000002747577235.png "点击放大")
   + **方案三**：调整嵌套滚动模式。
 
     在嵌套滚动组件时，可以通过设置"nestedScroll"属性来控制滚动顺序。
@@ -76,7 +76,7 @@ content_hash: sha256:e836c24b9d8664ab11c6f109f6c3a67cc99ad85a171a4d437a2c879f62e
 
     代码运行效果图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/78w5MJ3vRcaG4yCqYLgc3Q/zh-cn_image_0000002718057924.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/AoEYtUu6RTqPOnp3HN9SiQ/zh-cn_image_0000002718057924.png "点击放大")
   + 完整示例代码如下。
 
     ArkTS页面代码：

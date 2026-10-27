@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-15
 title: 如何隐藏应用启动时展示的应用图标
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何隐藏应用启动时展示的应用图标
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
+scraped_at: 2026-10-28T07:46:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a9d779310429235a60907605584b2650690909db1a8ee40f95329df86530f4a7
+content_hash: sha256:b0d16abe08f81e5fb5dc7cce4ba3d18bf75fe175c4f7217027948948ee6da303
 ---
 
 ## 问题现象
 
 应用启动时会先展示应用图标，然后再跳转至首页（如下效果图所示）。如何隐藏该应用图标呢？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/GUf30hjZQUG3DCf-PmHtTA/zh-cn_image_0000002628789248.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/VnIk0Q4NTDSxGbak1qgkbw/zh-cn_image_0000002628789248.png "点击放大")
 
 ## 背景知识
 
@@ -43,7 +43,7 @@ content_hash: sha256:a9d779310429235a60907605584b2650690909db1a8ee40f95329df8653
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/fjUU5YeOQG2WOoZf5FCc7Q/zh-cn_image_0000002628629350.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-OS808MkRey8QFm1PZQ6pg/zh-cn_image_0000002628629350.png "点击放大")
 
    深色模式：
 
@@ -60,4 +60,4 @@ content_hash: sha256:a9d779310429235a60907605584b2650690909db1a8ee40f95329df8653
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/lD9WUbY8R7SmHqa35NQ0uQ/zh-cn_image_0000002658988571.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/raKVtu_ARGqVWAHftk4-PQ/zh-cn_image_0000002658988571.png "点击放大")

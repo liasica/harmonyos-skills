@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-12
 title: 编辑器内存告警
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > 编辑器内存告警
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
+scraped_at: 2026-10-28T07:48:50+08:00
 doc_updated_at: 2026-08-05
-content_hash: sha256:123fecdce53d9636eaa4f27425294f3d59baed1308f2ece66e8d175689c7c59f
+content_hash: sha256:bd3eb9b9e1ce61be0ab356cc89808cdbbc9f0cbfcd4b65b390fdb03d69b75119
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ content_hash: sha256:123fecdce53d9636eaa4f27425294f3d59baed1308f2ece66e8d175689c
 
 **问题现象**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/_cz1Fr2RR8C_QpOk6184Iw/zh-cn_image_0000002659518338.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/lBy5WgU0QESQaDBEGU-lJA/zh-cn_image_0000002659518338.png)
 
 **解决措施**
 
@@ -35,13 +35,13 @@ content_hash: sha256:123fecdce53d9636eaa4f27425294f3d59baed1308f2ece66e8d175689c
 
 以配置内存上限为12G举例，打开DevEco Studio，通过菜单栏的Help > Edit Custom Properties...，打开idea.properties配置文件。在文件中新增一行 arkts.server.max.old.space.size=12288，然后重启DevEco Studio。编辑器Node进程的内存上限将设置为12288M（即12G）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/spQW6czfTPWe5VpEs-hrVw/zh-cn_image_0000002689477947.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/SUOx58MFRA6_IU-Yy2n_Aw/zh-cn_image_0000002689477947.png "点击放大")
 
 ## 场景2
 
 **问题现象**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/YmDLLTOPQ2G58oIFDIQKFg/zh-cn_image_0000002689597745.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/jy0lC8zhQP-25aPDOJIDYw/zh-cn_image_0000002689597745.png)
 
 **解决措施**
 
@@ -49,7 +49,7 @@ content_hash: sha256:123fecdce53d9636eaa4f27425294f3d59baed1308f2ece66e8d175689c
 
 点击配置内存（打开DevEco Studio，通过菜单栏的文件>设置... 打开，搜索内存设置）增加ArkTS语言服务最大内存大小的值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/lWP0mrImQB6gvWlx46LXxw/zh-cn_image_0000002659358418.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Npfnd2QaR6Gb6SYdqq0boA/zh-cn_image_0000002659358418.png "点击放大")
 
 默认值通常为8G，如果在idea.properties中配置了arkts.server.max.old.space.size值则默认值等于该值。ArkTS语言服务最大内存大小是工程独立配置，配置后不会影响其他工程。idea.properties中的arkts.server.max.old.space.size值为全局配置。
 
@@ -57,7 +57,7 @@ content_hash: sha256:123fecdce53d9636eaa4f27425294f3d59baed1308f2ece66e8d175689c
 
 **问题现象**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/VAKQ-HvqQT-cZRahYxx4Ew/zh-cn_image_0000002659518340.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/e6ZWy26CR9-64t5ePVHDYQ/zh-cn_image_0000002659518340.png)
 
 **解决措施**
 
@@ -69,7 +69,7 @@ content_hash: sha256:123fecdce53d9636eaa4f27425294f3d59baed1308f2ece66e8d175689c
 
 **问题现象**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/QX83AsSxQ9W_KqcbGsTMMQ/zh-cn_image_0000002689477949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/WgcZZk_1Rl-R4LE6a9vlcQ/zh-cn_image_0000002689477949.png)
 
 **解决措施**
 

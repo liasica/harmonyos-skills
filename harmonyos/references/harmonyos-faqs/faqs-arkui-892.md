@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-892
 title: 组件在扩展到安全区域后渲染异常如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 组件在扩展到安全区域后渲染异常如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0b811329e92a4646cfc5d8c907b707828a509cc5197288ef0485f4d30429ff5c
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f746660e98d1d0f7f0b5a630f8a945a5b6abd8bc423de266d17bd60280ebc90e
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:0b811329e92a4646cfc5d8c907b707828a509cc5197288ef0485f4d3042
 
 问题截图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/7Lt9XtlCSkqdLKn7zyQ45Q/zh-cn_image_0000002628399648.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/-lHTe1muSWOOTNGU2a3ayg/zh-cn_image_0000002628399648.png "点击放大")
 
 代码如下：
 

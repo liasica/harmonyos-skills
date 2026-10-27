@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: TextInput组件常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > TextInput组件常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:10+08:00
+scraped_at: 2026-10-28T07:47:32+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:3e4e6b0caafe2428043c8b1f8d719adcce36b775b813dd7a63f3a3584841443b
+content_hash: sha256:6d4697ce19ce9ddd3f7d2ec1ee5c6ee8ca6dc5f45d779857d2eff3c062808459
 ---
 
 **Q：如何实现不限字数的单行输入框，且TextInput获取焦点时，光标应正常显示在文本末尾；失去焦点时，超出宽度的文本应该以省略号结尾？**
@@ -69,7 +69,7 @@ content_hash: sha256:3e4e6b0caafe2428043c8b1f8d719adcce36b775b813dd7a63f3a358484
 
   代码运行效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gfkShA-ZRcaLj_jFnBSsbg/zh-cn_image_0000002766065524.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/iR2L69o9RJaIEOfMrTwASw/zh-cn_image_0000002766065524.png "点击放大")
 * 方案二：
   1. 失焦时，使用Text覆盖TextInput，textOverflow设置为Ellipsis，超出正常文本宽度显示省略号。
   2. 获焦时，Text隐藏，显示TextInput，不需要设置textOverflow，光标正常展示在文本最后面。
@@ -139,7 +139,7 @@ content_hash: sha256:3e4e6b0caafe2428043c8b1f8d719adcce36b775b813dd7a63f3a358484
 
   代码运行效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ZkepsuL0Q_6hPoLAxoOjaQ/zh-cn_image_0000002795304363.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/v3gr2zDwQyyRlFGodJn5vA/zh-cn_image_0000002795304363.png "点击放大")
 
 **Q：TextInput组件绑定自定义键盘，如何实现当内容超过父组件宽度时新输入的内容能够全部显示，已输入的内容向左移动，超出父组件部分的内容可以隐藏的效果？主要代码如下：**
 
@@ -210,7 +210,7 @@ build() {
 
 异常效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/a-kh7raQRQmSNmlmUEtVjg/zh-cn_image_0000002767983188.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/B-bb-I66ToyH6vn4VVQc5g/zh-cn_image_0000002767983188.png "点击放大")
 
 输入内容时给自定义键盘点击事件添加获焦逻辑，使TextInput组件获取到焦点实现当内容超过组件宽度时自动左滑的功能，示例代码如下：
 
@@ -578,7 +578,7 @@ build() {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/e1E4CLmRQwi9f3ZBbxAVSg/zh-cn_image_0000002765905994.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/U0VXuYQkRy2FLqJVTTbuVw/zh-cn_image_0000002765905994.png "点击放大")
 
 **Q：TextInput组件获取焦点的几种场景有哪些？**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: "@ohos.request和rcp的上传下载功能有何区别"
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > @ohos.request和rcp的上传下载功能有何区别
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b694521433f3aee87251774556fb41343943b189aa3a8b1a188670900e5d85d4
 ---
 

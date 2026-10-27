@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-2
 title: 如何使用AbilityStage的生命周期函数
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何使用AbilityStage的生命周期函数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ae6681177ff0b42d94f7413cbc6d4b2165011f9cb28d65c681a87dd8b4efc976
 ---
 

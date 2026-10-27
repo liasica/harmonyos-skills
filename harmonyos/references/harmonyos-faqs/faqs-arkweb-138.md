@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-138
 title: Web组件加载视频时无法隐藏下载按钮怎么处理
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件加载视频时无法隐藏下载按钮怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d4ba028dd622352433006ea1438780626ed471072bff4fb8abbaa4f3968bc966
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7281381ca7115aadb15647cdff13a1e304bb026bda4e5f23146f90358c6265c0
 ---
 
 ## 问题现象
 
 正常情况下Web组件通过url加载视频时，默认会提供一个下载按钮：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ZqD8cGz2RsywPYUmWABMAg/zh-cn_image_0000002629059054.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/n3fSJ6a0RCmMl-NtRaY5Ag/zh-cn_image_0000002629059054.png "点击放大")
 
 如上图所示。但是有些场景下并不希望视频被下载，如何实现隐藏下载按钮？
 

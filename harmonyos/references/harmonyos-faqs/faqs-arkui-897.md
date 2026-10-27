@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-897
 title: 沉浸式效果避让策略失效该如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 沉浸式效果避让策略失效该如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:5298419f7d0e88d1bfc8def2a2536f61e642c21586af910b01b70c921a25da3f
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a7427b6b069b73cfbea3a94a8d371fb9061117c5d121893c24345343f0c7cdfa
 ---
 
 ## 问题现象
@@ -213,7 +213,7 @@ content_hash: sha256:5298419f7d0e88d1bfc8def2a2536f61e642c21586af910b01b70c921a2
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/q03mJSjJRr2O8Go9hB-XJg/zh-cn_image_0000002628559558.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/1SOErmf_RxeCrzhc8cQgXA/zh-cn_image_0000002628559558.png "点击放大")
    * 在FullScreen模式下，Navigation的TitleBar会被顶部状态栏遮挡，底部Tab组件会被系统导航条遮挡。可以通过设置padding来手动避让，设置padding后子页面也会受到影响，需要更新Navigation根页面中设置的padding才生效，使用AppStorage可以设置此padding值。
 
      **代码示例如下：**
@@ -379,7 +379,7 @@ content_hash: sha256:5298419f7d0e88d1bfc8def2a2536f61e642c21586af910b01b70c921a2
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/1SlZVH-HSduT9vm-ruGtQA/zh-cn_image_0000002658918873.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/PMkF4hhwQi-OEPb4qmcEyQ/zh-cn_image_0000002658918873.png "点击放大")
 2. **不设置FullScreen**：
 
    当应用中大多数页面需要避让系统顶部状态栏和底部导航条时，可以不使用FullScreen模式，使用组件的扩展安全区域方式。当组件布局不需要避让时，可以通过expandSafeArea属性让组件渲染到非安全区。List组件还可以通过contentStartOffset和contentEndOffset设置内容顶部和底部的空余高度。
@@ -435,7 +435,7 @@ content_hash: sha256:5298419f7d0e88d1bfc8def2a2536f61e642c21586af910b01b70c921a2
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/19NSlJ9fQMqYAFgJFDNnHw/zh-cn_image_0000002628399654.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/OowW7QcjQDWKbCDsZDgjTA/zh-cn_image_0000002628399654.png "点击放大")
 
    这种方案特别需要注意的是，默认摄像头挖孔区域不为非安全区域，页面不避让挖孔。在不设置FullScreen时，竖屏状态下摄像头挖孔区域会因为导航栏非安全区域的存在避让，但在横屏状态下不会主动避让。如果要实现横屏状态下页面默认避让摄像头挖孔区域，需要在module.json5中添加配置项，具体请参考[安全区域](../harmonyos-references/ts-universal-attributes-expand-safe-area.md)章节开头说明部分。
 

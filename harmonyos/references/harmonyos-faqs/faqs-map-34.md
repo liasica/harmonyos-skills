@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-34
 title: 如何实现地图自动缩放并移动到中心点
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何实现地图自动缩放并移动到中心点
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:13f82ab74ff3fcc382ff897ef4031aea3c6827234c8a8d733ccef8cd08a442a7
+content_hash: sha256:6327b159b5196fae4c2aa6030040dcc530dd5c43ae8f81645ccc73b0a0b0e06c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:13f82ab74ff3fcc382ff897ef4031aea3c6827234c8a8d733ccef8cd08a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/MxQjis7bQwefsARFFVoSTg/zh-cn_image_0000002628394374.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/5Hdpo5hbTcuuMA0bJErCAA/zh-cn_image_0000002628394374.png "点击放大")
 
 ## 背景知识
 

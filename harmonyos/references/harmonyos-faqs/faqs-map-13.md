@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-13
 title: Map Kit如何知道地图进行了缩放
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > Map Kit如何知道地图进行了缩放
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1a4437a52b94136b0c945a6dedbe9965cc95a5f0d6a49024074238492982a30a
 ---
 

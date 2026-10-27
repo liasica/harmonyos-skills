@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-12
 title: 解封装和解码后的视频大小不一致
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 解封装和解码后的视频大小不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0ca8e3c5cd31aa052194a3e8196b1ec447d6f664c7033fcb19c589dae9a289b7
 ---
 

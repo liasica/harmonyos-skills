@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-35
 title: 如何解决自定义扫码界面创建的截图与预览流中不一致问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何解决自定义扫码界面创建的截图与预览流中不一致问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
+scraped_at: 2026-10-28T07:48:25+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:a542f8d891f772ea51e4e6372caaf301d76578a9476e6f1f6fca9b036cef97cf
+content_hash: sha256:0c4c154b2890530d5161898dc53efedb38d058b9f11065da535a044ed1c4281e
 ---
 
 ## 问题现象
 
 自定义相机，使用createPixelMapFromSurface创建XComponent的截图和自定义扫码预览流XComponent中显示的不一致，createPixelMapFromSurface创建的截图不完整。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/GghghiX5SAC8VpRPpbyM_Q/zh-cn_image_0000002658791851.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/z_G-EaFRTwuiYrzSumEdyQ/zh-cn_image_0000002658791851.png "点击放大")
 
 ## 背景知识
 

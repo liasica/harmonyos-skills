@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-655
 title: 进入/退出全屏时，弹幕字体大小变化后才旋转屏幕
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 进入/退出全屏时，弹幕字体大小变化后才旋转屏幕
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:bb785fa5d1b958eda7c333ccb9db0ec4193c75ec9248256f06207c7ee5ac0def
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a9b520be385d08cec02c901da2b871ad2b707651d5c0003c88b4b41a52a58d04
 ---
 
 ## 问题现象
 
 播放视频时，进入横向全屏前弹幕字体会突然变大，退出横向全屏前弹幕字体会突然变小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/kCBFcS-LQ6q1FWSoETMBGA/zh-cn_image_0000002658913731.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/4ceMNN0WSU-YdeJSKLn7OQ/zh-cn_image_0000002658913731.png "点击放大")
 
 ## 背景知识
 
@@ -475,4 +475,4 @@ struct BulletCommentFont {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/v7LK94PhSNGFbgVoIKJi6A/zh-cn_image_0000002628394518.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Y2z78qySTLypzadV3uJPmw/zh-cn_image_0000002628394518.png "点击放大")

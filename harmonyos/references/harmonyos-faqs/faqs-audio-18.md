@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-18
 title: 如何在录制采集音频时获取麦克风的音量大小
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 如何在录制采集音频时获取麦克风的音量大小
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:30+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bafa9022ce22e5e2812d2a8b08edaab07e87f57742f59a90b9d7400596e95a71
 ---
 

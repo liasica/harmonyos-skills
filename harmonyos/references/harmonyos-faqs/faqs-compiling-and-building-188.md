@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: DevEco Studio 6.0.0 Beta1 及以上版本DevEco Studio ARKUI-X工程构建app报错
 breadcrumb: FAQ > DevEco Studio > 编译构建 > DevEco Studio 6.0.0 Beta1 及以上版本DevEco Studio ARKUI-X工程构建app报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:55+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:171e2cca81804743b26b87768c96e4cbb9532c3288bf9c41dbccd3f26e2fae8d
+content_hash: sha256:adbb209f57765ddf5526cb2eda6240049cd28990c8e06757a634f8c5ec73c6c5
 ---
 
 **问题现象**
 
 构建app报错：“Could not open settings generic class cache for settings file”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/NvMVPJAnSTSzFM4IXrKsQA/zh-cn_image_0000002654798059.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Yl4mCngTRdWWpFLAgzqQdA/zh-cn_image_0000002654798059.png)
 
 **常见错误场景**
 
@@ -36,4 +36,4 @@ DevEco Studio 6.0.0 Beta1版本DevEco Studio内置的Java版本为21，当前Gra
 
   如果本地有JDK17，可以在Gradle.properties中通过org.gradle.java.home变量指定使用Java17。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Ghq1ltO6QEytzGgzEtt7yw/zh-cn_image_0000002624638612.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/TsLvxnY-SEm6dOeUb-pWnQ/zh-cn_image_0000002624638612.png)

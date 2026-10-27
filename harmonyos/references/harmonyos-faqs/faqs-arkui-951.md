@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-951
 title: 如何使用List组件实现流畅的无限下拉滑动效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何使用List组件实现流畅的无限下拉滑动效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:48+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:3d0b07f3ea600fd7a2fba1c2b77d13c363e0c0957eca2d67036d7a13fe26dab2
+content_hash: sha256:f275ba41f50e3d0c50a6ebca9e9f3ba41e6994b3a5bc49d19bf897cc741b0452
 ---
 
 ## 问题现象
@@ -109,7 +109,7 @@ content_hash: sha256:3d0b07f3ea600fd7a2fba1c2b77d13c363e0c0957eca2d67036d7a13fe2
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/BXB4d9ElTUif-Fm8vG-1IQ/zh-cn_image_0000002628401248.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/q3QZkdU7TKO42Z3ZMw5kTw/zh-cn_image_0000002628401248.gif "点击放大")
 
 * 场景二：在状态管理V1场景中实现，具体实现方法与场景一相似，示例代码如下：
 
@@ -307,7 +307,7 @@ content_hash: sha256:3d0b07f3ea600fd7a2fba1c2b77d13c363e0c0957eca2d67036d7a13fe2
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ERdwVJslRF-KDAZ-z1WStg/zh-cn_image_0000002658800515.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/QrdJinBgSgm0RxORfIzJGQ/zh-cn_image_0000002658800515.gif "点击放大")
 * 场景三：当ListItem类型不同时，在[onScrollStart](../harmonyos-references/ts-container-list.md#onscrollstart9)触发时通过滚动偏移量和ListItem的高度进行比较，提前加载更多数据。
 
   ```ts
@@ -397,4 +397,4 @@ content_hash: sha256:3d0b07f3ea600fd7a2fba1c2b77d13c363e0c0957eca2d67036d7a13fe2
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/4musROLISgaD5hz5BnD8eg/zh-cn_image_0000002628561156.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/bS5ddgqZSjCtT_kT6xStEw/zh-cn_image_0000002628561156.png "点击放大")

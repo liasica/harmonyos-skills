@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1138
 title: 如何实现多行文本行中省略的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现多行文本行中省略的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:bdf87931f7a737c6679d5bda1a9525e5b4e685ad289a947b0f7ff6644975b36e
+content_hash: sha256:b3a27acd4caa7724362a8ea320831d5628fd4f50a4ea577a0a64c70c266342ac
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ Text文本多行时，可以利用[textOverflow](../harmonyos-references/ts-basi
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/oud2BVZJTnW6ZoY1KuhC9Q/zh-cn_image_0000002628569602.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/jOzMf4djSgehZFA1OT6hqw/zh-cn_image_0000002628569602.png "点击放大")
 
 ## 背景知识
 

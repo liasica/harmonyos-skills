@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-6
 title: 应用点击某功能时卡死无响应
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 应用点击某功能时卡死无响应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:39+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f2f15324dc7bf8bef27226c698e1d8d2c3182737b79b4d19a418aab75b07dd85
 ---
 

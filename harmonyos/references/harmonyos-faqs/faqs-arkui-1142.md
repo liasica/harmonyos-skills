@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1142
 title: SegmentButton如何设置点击回调事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > SegmentButton如何设置点击回调事件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4710c32120c3072188f36dcd39bd6ba2c795908a26944ba3b6a34d8c1669bb38
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b87a1ce9a6713cd13078abfaf5a03dcf632e59784f01dbb089fc02be02ce5af7
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ SegmentButton如何设置点击回调事件来监听当前点击的Tab？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ydMMVG19SyuxCeX8HIRK1g/zh-cn_image_0000002628409706.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/UChX95UPTwiRVd9OD8A1Dw/zh-cn_image_0000002628409706.gif "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-40
 title: 如何在打开地图时，自动移动相机到当前设备位置
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何在打开地图时，自动移动相机到当前设备位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:06731b945984c5226f2a79ff26589e13acb1059ede8badf5f815736253f97c0e
+content_hash: sha256:194c9968313144ea0b62972083d4f76f2e739944a894eb05e699428c91553f0e
 ---
 
 ## 问题现象
@@ -48,7 +48,7 @@ content_hash: sha256:06731b945984c5226f2a79ff26589e13acb1059ede8badf5f815736253f
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/sGXMKjj5Qnq1Fa7QtJ5R0Q/zh-cn_image_0000002658913601.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/MVUPGBoXTji60wKu7pDM9w/zh-cn_image_0000002658913601.png "点击放大")
 
 完整示例参考如下：
 

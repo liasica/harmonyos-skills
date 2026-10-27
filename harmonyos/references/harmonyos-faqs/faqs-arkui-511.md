@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-511
 title: Image组件设置aspectRatio后宽度无法充满
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image组件设置aspectRatio后宽度无法充满
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c59a1cc0b50958c4b9191febd6a3932c876942b29f499a14e5817baf7dd5cb82
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-71
 title: 多so相互依赖场景下如何解耦
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 多so相互依赖场景下如何解耦
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1b15f534da487a0910f6980c76b15904b3d20ba4d4e2cfe616b2ea3c4e9e0ac4
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:910e29c97e575dab299560a47233f7e36f0eab080c0b1d55bf3a1dbc8eacf3c4
 ---
 
 **问题现象**
@@ -100,7 +100,7 @@ A模块包含a.so，B模块包含b.so。a.so调用b.so的函数，b.so也调用a
 
    移动完成后，目录结构如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/NQnscVEAQWSk4PXBpsSdOA/zh-cn_image_0000002654795277.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/v8sD458GSGKiplpf_sGnhA/zh-cn_image_0000002654795277.png "点击放大")
 3. 修改CMakeLists.txt文件，将编译生成的.so文件引入到工程中。
 
    ```text

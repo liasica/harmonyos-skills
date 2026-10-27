@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1512
 title: Swiper如何实现惯性滚动效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper如何实现惯性滚动效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:32cf0570387ee6fbb627baabdd795040aec9d899a3d987ea5037df0e375d7d1a
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bd02ece414bb6dc61bf0607c723d8bd5c58e39366cdbb5a29d03296a9b9da827
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ Swiper组件在滑动时只能一次滚动一页，在需要一次滑动多个�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/FirrMhCdSSKQurRC15Xcaw/zh-cn_image_0000002658845805.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/EVrF70jERCKb5O4p3Rz31w/zh-cn_image_0000002658845805.png "点击放大")
 
 ## 背景知识
 

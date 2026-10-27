@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: 组件背景拉伸常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > 组件背景拉伸常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:09+08:00
+scraped_at: 2026-10-28T07:47:32+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:7eac8c4910998ff7e271ead6700f079fab706f3c2aa9a5a408b6a2bb7cb06819
+content_hash: sha256:f248a4409e4215f5dc8eb3054e19734ae237f43c09dcda8ced695c769ac9115e
 ---
 
 **Q：给Text组件设置一个点九图的聊天气泡背景，聊天气泡根据内容自动拉伸时，聊天气泡边上会变形、失真，如何解决？**
@@ -150,4 +150,4 @@ struct NinePatchPage {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/qaQGJNC5QsmAZXgYxzZWtg/zh-cn_image_0000002765916856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/PWvIrGExQ6qpbxoBCbQ37Q/zh-cn_image_0000002765916856.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-649
 title: 如何实现List组件在多列模式下特殊列表项的独立布局
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现List组件在多列模式下特殊列表项的独立布局
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f2a57ad9457f36bf7b270bd598f9cb8874b9780b3afddf77337bbb704c18e15d
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7b8556f7e49d2a65b1f7123b8963e41889f1f19715831c9b4ad1ba2c6649e635
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:f2a57ad9457f36bf7b270bd598f9cb8874b9780b3afddf77337bbb704c1
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/PQRJHpr8QKyNp7YbvfwYwg/zh-cn_image_0000002658793783.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/xpQX4pZTQLKD9Rqyeudkcw/zh-cn_image_0000002658793783.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-1
 title: 如何判断卫星是否参与定位
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 如何判断卫星是否参与定位
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:28+08:00
+scraped_at: 2026-10-28T07:48:42+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:bcde89ae1e20512e778790c8b075313ff3870f6bd3948f96a1a6caa4375e8ae2
+content_hash: sha256:76180d8bc7c2feee65bf926a670c20288dba7049c455e427eed833ba2beeca45
 ---
 
 ## 问题现象
@@ -117,10 +117,10 @@ struct locationTest {
 
 打印卫星附加信息，信息会不断刷新，举例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/_211csGZTdekK4wR3qzkpg/zh-cn_image_0000002628394534.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/1OFFXSb4R4OBjlh2DPsKUg/zh-cn_image_0000002628394534.png "点击放大")
 
 SatelliteAdditionalInfo每一项表示一个卫星的附加信息，返回的是十进制数字“15,15,14,15,15,15...”，需要先转换为二进制数字再判断各个比特位，对应比特位上为1表示有对应的信息，每个比特位的含义见下图。比如返回卫星附加信息为15，转换成二进制是1111，表示使用了本卫星，且具有星历数据、年历数据和载波频率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/pQs9_IiVQRmHlYelyn4tTg/zh-cn_image_0000002628554428.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/oAONX5ITRpG3AFxJb9i5KQ/zh-cn_image_0000002628554428.png "点击放大")
 
 要判断这些卫星是否参与定位，只需要判断转换后的二进制数字从右向左数第三位是否为1，上述十进制数字中“15、14、13”满足要求，这些数字对应的卫星参与了定位。

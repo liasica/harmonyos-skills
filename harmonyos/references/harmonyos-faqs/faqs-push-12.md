@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-12
 title: 应用在前台时能否获取通知消息的内容
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 应用在前台时能否获取通知消息的内容
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:28+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3dfc1b9a10ad50e64c70adbfbc43a7dbcdb2097a64770aa3bd7b49de57837abe
 ---
 

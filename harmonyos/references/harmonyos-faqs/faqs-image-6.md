@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-6
 title: 如何将相册选择的图片生成PixelMap
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何将相册选择的图片生成PixelMap
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:26+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c3cd430c09f4c1664e72d39607a48cf57a2804bf1ae3fb31a035b1be2cef97b3
 ---
 

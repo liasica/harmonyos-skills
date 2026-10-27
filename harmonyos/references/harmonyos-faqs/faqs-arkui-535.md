@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-535
 title: 页面中的图片无法被放大
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面中的图片无法被放大
 category: harmonyos-faqs
-scraped_at: 2026-09-22T07:14:50+08:00
-doc_updated_at: 2026-09-21
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cedc7b55028230ef4be58dac331d0f25fc859b4e77d6de7ebc1cc9d9095f912c
 ---
 

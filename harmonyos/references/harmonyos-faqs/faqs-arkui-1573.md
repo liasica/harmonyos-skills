@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1573
 title: 子窗口控制主窗口的页面跳转
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 子窗口控制主窗口的页面跳转
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d9e38d1b60c6cf6a091baae9329b1b43d7f104a92c8cae6c828826d6d1b23ed6
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bc5a868af578ddd2d26e622106269b050a7a30b04dd89e5e3d6bafcb4175709f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:d9e38d1b60c6cf6a091baae9329b1b43d7f104a92c8cae6c828826d6d1b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/94Mn0xSESM-k1O0_lE6lZA/zh-cn_image_0000002658969081.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/BmYIjhhMROeqW--cWF9eNg/zh-cn_image_0000002658969081.png "点击放大")
 
 ## 背景知识
 

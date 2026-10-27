@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-37
 title: onUnhandledException与onException回调分别什么时候触发
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > onUnhandledException与onException回调分别什么时候触发
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:caab81576850275eeafb00123825ce2a340de66bd5543cfa60713f15ef380e50
 ---
 

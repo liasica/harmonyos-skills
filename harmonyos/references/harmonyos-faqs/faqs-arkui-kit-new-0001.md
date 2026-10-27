@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-kit-
 title: 组件如何实现始终居中放大
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 组件如何实现始终居中放大
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:14e897b4f4866ad90d5dceba96d4fa22a169a50eef4e77dcae7b1a49bb7a7516
 ---
 

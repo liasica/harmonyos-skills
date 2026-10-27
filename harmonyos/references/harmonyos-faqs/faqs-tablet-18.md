@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-tablet-18
 title: 自由多窗模式关闭后状态栏与页面内容重叠
 breadcrumb: FAQ > 多设备场景 > 平板 > 常见问题 > 自由多窗模式关闭后状态栏与页面内容重叠
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:48+08:00
+scraped_at: 2026-10-28T07:46:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9ca78e271b44e61e90604afed8b232a015d025b9d1b5d0c378b0493ce49692b5
+content_hash: sha256:602fb5c8b29fc6fe4051271396370c682f2679bd549129e90ba644c6630f6249
 ---
 
 ## 问题现象
 
 平板从自由多窗模式退出后，应用页面内容与状态栏有重叠。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/MhOBzrTGR6a6nMT4--kn-w/zh-cn_image_0000002628552230.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/uQGm8z8YSN2YgY-0Eu1YsA/zh-cn_image_0000002628552230.png "点击放大")
 
 ## 背景知识
 

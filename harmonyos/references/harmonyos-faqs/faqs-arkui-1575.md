@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1575
 title: 如何实现规定时间范围内，应用任何页面都可显示的计时弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现规定时间范围内，应用任何页面都可显示的计时弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:801f967b6c453185a7737186cbf2d986b10029b47850f2427866b49a516d1b6e
+content_hash: sha256:9ccdf2c6b3dfd368129095a621c8f38012f313924c39a0be4f44491b7c5081f2
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:801f967b6c453185a7737186cbf2d986b10029b47850f2427866b49a516
 
 以09点23分为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Y_lo67WSTC6LOWXa07_Mvg/zh-cn_image_0000002628769768.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/shvinqVhRLyOyaVOOWF1Wg/zh-cn_image_0000002628769768.png "点击放大")
 
 ## 背景知识
 

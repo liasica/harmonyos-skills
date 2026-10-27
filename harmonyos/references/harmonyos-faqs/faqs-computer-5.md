@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-computer-5
 title: 自由多窗模式下，应用页面与标题栏三键区域重叠
 breadcrumb: FAQ > 多设备场景 > 电脑 > 常见问题 > 自由多窗模式下，应用页面与标题栏三键区域重叠
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:aada3d6c938e15cff8199ebebf45d3e8ca835f7111c6d2f1677179f43ab527cd
+content_hash: sha256:b7af9dd0abe7382658d4ba5f36f87d6c1402c64f86266fb6210710fd9270ac59
 ---
 
 ## 问题现象
 
 应用在自由多窗模式下，标题栏右侧的最大化、最小化、关闭按钮与页面重叠，导致页面内容被遮挡。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/4LwO89DzQCOvLhLxVbIj1g/zh-cn_image_0000002628392458.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Z-VGdNb-TdCK4t8ISIs2XQ/zh-cn_image_0000002628392458.png "点击放大")
 
 ## 背景知识
 

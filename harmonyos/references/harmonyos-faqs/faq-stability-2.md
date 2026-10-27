@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-2
 title: 启动应用时发生闪退
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 启动应用时发生闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:26+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:46:39+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:570b77218c510b1f0c4bd22c9ad0f4dd004c6cc9f15de9faaa33c36076ea04e5
 ---
 

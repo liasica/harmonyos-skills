@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-500
 title: 自由多窗小页面，页面向上滑动，正文内容跳动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 自由多窗小页面，页面向上滑动，正文内容跳动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:569bf8592e700e6dd48f68933f17da722ea71bd74b4d48c06ef5f7bbc2450c1e
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:dcda8494718dc294d4b10a2031e50e4bd1d89573473e3f7deebe2fe3ee0da9e0
 ---
 
 ## 问题现象
@@ -23,10 +23,10 @@ content_hash: sha256:569bf8592e700e6dd48f68933f17da722ea71bd74b4d48c06ef5f7bbc24
 
 * 通过UIView查阅页面布局，找到跳动的内容区域，如下所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/VoABkKHQR9CXdAq7dsDl_Q/zh-cn_image_0000002658907555.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/L3-E0WB1Twi8Rn828ezGSQ/zh-cn_image_0000002658907555.png "点击放大")
 * 查阅页面代码中Scroll组件的一级子组件的height属性，判断Scroll组件滑动到底部时，跳动区域是否会滑出Scroll组件之外，下图通过Tabs组件的tabBar模拟跳动区域，当前TabContent的区域高度大于Scroll组件展示区域，tabBar会滑出Scroll组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/yw2ys-8_QQe4MIxFJ3pzhg/zh-cn_image_0000002628388356.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/hmEuMwHgQ8qZILJQnqS6oA/zh-cn_image_0000002628388356.png "点击放大")
 * 查阅页面代码中是否调用scrollTo方法将Scroll组件强制滚动到某个位置。
 
 ## 分析结论
@@ -101,4 +101,4 @@ content_hash: sha256:569bf8592e700e6dd48f68933f17da722ea71bd74b4d48c06ef5f7bbc24
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/WZTk9GitQQmjWoNr_cWCFg/zh-cn_image_0000002658787627.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/fyqv_B2hSQuWnxPMCX9Ixw/zh-cn_image_0000002658787627.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-103
 title: Web页面点击无响应
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web页面点击无响应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:dcf1ce41056f4ca6f550cbd867af797db67df857c90ce501ba8c799a2a573867
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e5ad7681f914dfbe20db1f7f26124ba8e8d2282c3e83e70b5d1d9c066c297999
 ---
 
 ## 问题现象
@@ -19,7 +19,7 @@ content_hash: sha256:dcf1ce41056f4ca6f550cbd867af797db67df857c90ce501ba8c799a2a5
 * [Devtools](../harmonyos-guides/web-debugging-with-devtools.md)：可以用来在电脑上调试手机、平板等移动设备前端页面，查看页面加载的信息、页面样式等。
 * 不同类型的智能设备，用户可能有不同的交互方式，如通过触摸屏、鼠标、触控板等。如果针对不同的交互方式单独做适配，会增加开发工作量同时产生大量重复代码。为解决这一问题，系统统一了各种交互方式的API，即实现了交互归一。常见的基础输入方式及其在各输入设备上的表现如[下图](../best-practices/bpta-multi-interaction.md#section182814229423)所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/sJRhDfCXTK2TLG-O9V4Exw/zh-cn_image_0000002628899124.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/JSg_YpRiSciv-13p97aq1A/zh-cn_image_0000002628899124.png "点击放大")
 
 ## 问题定位
 

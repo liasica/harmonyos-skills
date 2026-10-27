@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-740
 title: 如何解决拖动手势时获取屏幕位置为空的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决拖动手势时获取屏幕位置为空的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:cf512eb76fe348cb95514140a73690fdaac0f2a98edf86643a7071c893f0c37f
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:5648b864a429e1e974a3d85df37cf03d0dd9c22490c2878507271f1baf76a12e
 ---
 
 ## 问题现象
@@ -61,11 +61,11 @@ struct GetScreen {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/LF5cY3tiS6Cnbl7m7Cg_Sw/zh-cn_image_0000002658914681.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/bck_oJtPTmuE0z5vDM1Zxg/zh-cn_image_0000002658914681.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/uFuJjYKCRlyMnY-cYLtuAQ/zh-cn_image_0000002658794731.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/NhMSSlX8SUCwKVm5P4_XSA/zh-cn_image_0000002658794731.gif "点击放大")
 
 ## 背景知识
 

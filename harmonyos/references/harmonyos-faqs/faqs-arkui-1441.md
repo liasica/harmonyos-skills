@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1441
 title: 关于Span减少字体大小无法自适应缩放的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 关于Span减少字体大小无法自适应缩放的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:be1cae7bab63d7ae4b701273fc49f7cfd62b37d7befedd6204bb0370a6d0c5e7
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:115e9718a39979781c341897aaa8cbccb1e6a45b89ca2448ec0303960a4d9057
 ---
 
 ## 问题现象
@@ -42,7 +42,7 @@ struct NavigationPage {
 
 异常效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/bW1SNaz8S8OC-yA8mEGZAw/zh-cn_image_0000002658843523.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/jlq4oc8CSkiWmG6AhQvLrQ/zh-cn_image_0000002658843523.png "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1354
 title: XComponent实现多个画面切换
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > XComponent实现多个画面切换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:21+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bbda25fb7dd62ee54f7b0559ad1b852905208f506fefd726e711600eec9c1813
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-38
 title: Native侧如何获取可操作的文件目录
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > Native侧如何获取可操作的文件目录
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f723fa506e660a95f16ef2828cdc519f8094a3758bcc88a3675fd87e3f26f499
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-16
 title: 如何获取应用包及项目配置项信息
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何获取应用包及项目配置项信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
+scraped_at: 2026-10-28T07:46:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:afc31473bf4783b30cc6f27c6b36ed5f65d92204b85590d0a8eea964625fe3b1
+content_hash: sha256:22e19306b53d89ca1e486cd070ca637824ec3978ee7b8d94fa6855b34d34060a
 ---
 
 ## 问题现象
@@ -183,7 +183,7 @@ content_hash: sha256:afc31473bf4783b30cc6f27c6b36ed5f65d92204b85590d0a8eea964625
 
     如果开发者需要的包信息或者构建信息，在上述方式中都取不到，可以自定义在模块级、工程级的build-profile.json5文件中，构建完成后这些自定义参数会生成到对应的BuildProfile文件中，导出后代码里面即可直接获取；
 
-    其中Hvigor编译构建生成的BuildProfile类文件如图：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/yyPA2jsGRRO78c258Jp5YA/zh-cn_image_0000002658990785.png "点击放大")
+    其中Hvigor编译构建生成的BuildProfile类文件如图：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/hjK9h_RJTnmTJ1RepYzg2w/zh-cn_image_0000002658990785.png "点击放大")
 
   对于自定义构建参数，详细调用示例：[动态获取自定义构建参数](../harmonyos-guides/ide-hvigor-get-build-profile-para-sample.md)。
 

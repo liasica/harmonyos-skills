@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 横竖屏切换时，如何防止画布被清空
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 横竖屏切换时，如何防止画布被清空
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
+scraped_at: 2026-10-28T07:48:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:ac0b2fa1975ab0cc568c66031d602faa5ff5363094f38e89ceca53fce167df75
+content_hash: sha256:89794f1b2915101b9df76a7d66b2a799d1759adbaba927c0a7ad77fc714d5a69
 ---
 
 ## 问题现象
 
 横竖屏切换时，画布中的内容被清空。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/b6xSu_oWSdKeBodxAm9X7g/zh-cn_image_0000002658792623.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/4T7kzMcQRVCwI4DvpfJioA/zh-cn_image_0000002658792623.png "点击放大")
 
 ## 背景知识
 

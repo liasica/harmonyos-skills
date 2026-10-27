@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1127
 title: 多个弹窗链式调用时失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 多个弹窗链式调用时失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:36+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0456dab4b65cfc4326f2b260fa5ea63c36e7be545f3c64bf965009eaa19a3e5c
+content_hash: sha256:7581a697c1e0e59c3962b2432ca63546ffa5d4292e95d908d1c8e5d869b18bf5
 ---
 
 ## 问题现象
@@ -98,7 +98,7 @@ struct DialogTest {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/umaikSFoTFGIavqJEX1Eow/zh-cn_image_0000002658808785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Cz3NcawCQ8a_f-rkjPqOOA/zh-cn_image_0000002658808785.png "点击放大")
 
 ## 背景知识
 

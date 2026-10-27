@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1177
 title: 如何设置应用内滚动条滑块的颜色与主题色保持一致
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何设置应用内滚动条滑块的颜色与主题色保持一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:52849176a2c608b30e6ddf023287b5bd138ac8e3773ed562e6cde76639528614
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:da65573fe429de4b0ead2e7b973d0a5b6aa139fc90d7e6e07c6f8fd29ae2798c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:52849176a2c608b30e6ddf023287b5bd138ac8e3773ed562e6cde766395
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/rplWvuVEQ1qchWTeq7-hvw/zh-cn_image_0000002658809149.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/AgYlurTeSzel3XQZwJ-WcQ/zh-cn_image_0000002658809149.png "点击放大")
 
 ## 背景知识
 

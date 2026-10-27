@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-13
 title: 如何开关闪光灯
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何开关闪光灯
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:89ffc98deaae59d1fa2ff120465f3dfe7190cdf2b61d0e26177298c0d1eee8ce
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-114
 title: ArkUI中icon资源锯齿感严重
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > ArkUI中icon资源锯齿感严重
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:07574dd2c1cc9b0070c78eb77d8fb968e7c56bad87c82b318a3efe2271f52dec
 ---
 

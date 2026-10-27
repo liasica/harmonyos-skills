@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用证书到期后的影响及处理方式
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用证书到期后的影响及处理方式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:ce8918dac27b263241f63cdc99560decdf1006dc7fc4c3c5d8e9a7932f32cc64
+scraped_at: 2026-10-28T07:48:46+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:df6c4afad5e119f811b42ffcf4e9dce9adb114cc9433b5b54715c5814b4ac547
 ---
 
 ## 问题现象
@@ -30,9 +30,9 @@ content_hash: sha256:ce8918dac27b263241f63cdc99560decdf1006dc7fc4c3c5d8e9a7932f3
 2. 若证书状态变为“失效”或“已吊销”，表示当前证书已不可用，且通过此证书申请的Profile也会全部失效或吊销。您需要重新申请证书与Profile。
 3. 证书到期是否有通知？
 
-   可以在AGC平台的用户与访问->个人信息->通知中，开启证书即将过期通知项。
+   可以在HarmonyOS 开发者中心平台的用户与访问->个人信息->通知中，开启证书即将过期通知项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/vT29PlQvQ_6vKNGCtdpgBA/zh-cn_image_0000002670430911.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/NrCC4pLNSyOWHgfeKN-0dA/zh-cn_image_0000002670430911.png "点击放大")
 4. 如何查看证书指纹的有效期？
 
-   可以在AGC网站首页，点击“证书、APPID和Profile”查看证书失效日期。
+   可以在HarmonyOS 开发者中心网站首页，点击“证书、APPID和Profile”查看证书失效日期。

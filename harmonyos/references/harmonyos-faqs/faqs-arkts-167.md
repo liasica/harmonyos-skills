@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-167
 title: 如何将多个JSON字符串合并
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何将多个JSON字符串合并
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4b6fc2f16148944d549d8793ad10588c796637dbb66a54c3d85a479e661a7f7e
 ---
 

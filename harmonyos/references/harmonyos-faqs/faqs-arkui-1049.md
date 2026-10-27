@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1049
 title: 如何实现Canvas绘制刷新以及防止绘制丢失
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现Canvas绘制刷新以及防止绘制丢失
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:53+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:0e14b79b821b3952a12a2affb9a0b5750ee5f6ee7e92143131fc1a7bfc178625
+content_hash: sha256:16c09c5c450e40cc56a8b48516bc99aeee9f91d3d40f3d24e5824d1fc12ff4cc
 ---
 
 ## 问题现象
@@ -75,7 +75,7 @@ Canvas动态绘制时，如何实现内容实时刷新与防止绘制丢失是�
 
     实现效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/nMEP6PLoTBGvJWOrt41tIg/zh-cn_image_0000002628565454.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/GefxCfeaRES5YXZ1889Yeg/zh-cn_image_0000002628565454.png "点击放大")
   + **方式二**：利用[reset](../harmonyos-references/ts-components-canvas-common-method.md#reset12)方法重置画布状态，清空绘制路径，代码示例如下：
 
     ```ts
@@ -125,7 +125,7 @@ Canvas动态绘制时，如何实现内容实时刷新与防止绘制丢失是�
 
     实现效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Nd3YS6KXRbSYNpyVpa9kqQ/zh-cn_image_0000002658924761.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/S7HQsuxvQIiDdj51SaUSgw/zh-cn_image_0000002658924761.png "点击放大")
   + **方式三**：利用[@Watch](../harmonyos-guides/arkts-watch.md)装饰器监听状态变量，当数据刷新时，触发重新绘制逻辑，示例参考：[Canvas绘制内容如何动态更新](faqs-arkui-225.md)。
   + **方式四**：利用@Monitor装饰器监听嵌套Class对象属性的变化，代码示例如下：
 
@@ -184,7 +184,7 @@ Canvas动态绘制时，如何实现内容实时刷新与防止绘制丢失是�
 
     实现效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/078VejpcTIyo5mIpLhMDGw/zh-cn_image_0000002628405556.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/puXE9Su7T_eiQcHrlrfA9A/zh-cn_image_0000002628405556.png "点击放大")
 * **场景二**：Canvas绘制防止丢失。
 
   Canvas的onReady方法在Canvas组件初始化完成或者发生大小变化时会触发。比如折叠屏展开场景、横竖屏切换场景以及动态扩展Canvas组件宽高场景，可能会触发onReady方法，这时在onReady方法之外绘制的内容就会丢失，需要恢复绘制，共有2种实现方式，对比如下：
@@ -240,7 +240,7 @@ Canvas动态绘制时，如何实现内容实时刷新与防止绘制丢失是�
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/8BOBoWreRQStM9WuM7yqKg/zh-cn_image_0000002658804829.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/pKyPIEgFTDiuxRuKT9EUXw/zh-cn_image_0000002658804829.png "点击放大")
 
 ## 常见FAQ
 

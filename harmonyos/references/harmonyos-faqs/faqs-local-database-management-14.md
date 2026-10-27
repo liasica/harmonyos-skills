@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 用sqlite开发时，怎么保证数据库同一时间只能支持一个写操作？怎么创建索引
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 用sqlite开发时，怎么保证数据库同一时间只能支持一个写操作？怎么创建索引
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-07-07
+scraped_at: 2026-10-28T07:47:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a1e1720327f93a2432c9b437eed863ba17c917799a5c8cd388b162a868f1c12a
 ---
 

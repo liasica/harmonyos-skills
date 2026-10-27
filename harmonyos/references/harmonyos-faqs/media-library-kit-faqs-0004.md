@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/media-library-k
 title: 图库图片选择与上传常见问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 常见问题 > 图库图片选择与上传常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:45+08:00
+scraped_at: 2026-10-28T07:48:02+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:02f6b9e457b7d4c194953ef76fdb556b097498298f6366d60305a7d8090980ae
+content_hash: sha256:6aae0e8f7ae8a43bfbac4a29355761b13e0269d989c1f4cc04d041de6fa6cf9b
 ---
 
 **Q：使用PhotoPicker拉起图库选择器，应该如何去除拍照选项只保留视频和图片的选择，如下图所示。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/RJHbwVAlTyCDSOQBliByFA/zh-cn_image_0000002768292924.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/bbjuD7vnQhqUfGlr3veezA/zh-cn_image_0000002768292924.png "点击放大")
 
 **A**：开发者可以通过以下步骤实现去除拍照选项的效果：
 

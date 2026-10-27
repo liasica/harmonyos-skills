@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1634
 title: 弹窗无法通过侧滑关闭
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 弹窗无法通过侧滑关闭
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b79510c2436cf578dfe8cff5edfba0f4e3e45c653ca81548756f330e65394664
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b0de1ce5d84333d4fd56e813899aab7bbcb272310b030d403914b0828a9b0a6f
 ---
 
 ## 问题现象
@@ -73,7 +73,7 @@ content_hash: sha256:b79510c2436cf578dfe8cff5edfba0f4e3e45c653ca81548756f330e653
 1. 在日志中搜索onBackPress，可以看到onBackPress return true，说明应用重写了onBackPress方法。
 2. 通过DevEco Testing查看页面，发现页面由JsView构成。商品页和评论区在同一个根节点上。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/XJW_lcbSQYWCRerBSDAw6g/zh-cn_image_0000002628777548.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/jxNZmq1PSKaYsDMpwsNXAg/zh-cn_image_0000002628777548.png "点击放大")
 3. 在侧滑关闭弹窗前，通过日志发现焦点聚焦在了Column下的子节点，此时侧滑逻辑由主页面的onBackPress方法确定。因此是主页面onBackPress方法内逻辑错误，未优先关闭弹出框而是返回了上一级。
 
    ```shell

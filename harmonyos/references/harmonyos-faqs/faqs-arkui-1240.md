@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1240
 title: 应用未适配分屏模式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用未适配分屏模式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:51+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3f8e8b7c1943a4104688f440c8a2679277601776ceb2a1c99825a779b8b96036
 ---
 

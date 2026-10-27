@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-880
 title: 调整显示大小缩放后，布局异常如何处理
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 调整显示大小缩放后，布局异常如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:41fa1c9c305f46594e945a7631225899c80f6fb17040b8b548126a8627093cb2
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4fb8d8cd1e13d1ec42ea6a4447d1484dd54a0eee846ca900c47e54f7e24556b7
 ---
 
 ## 问题信息
 
 在设置>显示和亮度>字体大小和界面缩放中调整显示大小缩放后，出现组件遮挡、截断、错乱等布局异常问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/0Hp7m5RqR3GpkDjndSgq_g/zh-cn_image_0000002658918849.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/H9-CO04QR0idfascpJu_RA/zh-cn_image_0000002658918849.png "点击放大")
 
 ## 背景知识
 
@@ -26,7 +26,7 @@ content_hash: sha256:41fa1c9c305f46594e945a7631225899c80f6fb17040b8b548126a86270
 
 1. 使用DevEco Testing的UIViewer工具查看布局异常时的UI结构。在显示大小缩放修改后，页面组件尺寸发生变化，页面布局出现异常。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/bJ12DtHJQbSHcUzCBmPHQA/zh-cn_image_0000002628399634.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/qEfSNOAOS6umcYICMt3UCg/zh-cn_image_0000002628399634.png "点击放大")
 2. 排查是否采用响应式布局或自适应布局。排查代码中是否在[on('windowSizeChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowsizechange7)事件中更新断点。排查代码中是否使用flexGrow、justifyContent、layoutWeight等和自适应布局相关的属性。
 3. 排查代码中是否使用densityUpdate、onSizeChange等监听事件，修改组件的大小和位置（如组件width、height、position等属性）。
 
@@ -71,7 +71,7 @@ content_hash: sha256:41fa1c9c305f46594e945a7631225899c80f6fb17040b8b548126a86270
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/PvqPCTzqSg2XsQOCa6mb1Q/zh-cn_image_0000002658798899.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/oF-zlFqtSbm6WD8h0uiz7g/zh-cn_image_0000002658798899.png "点击放大")
 * 在densityUpdate或onSizeChange监听事件中，调整组件大小和位置。
 
   ```ts
@@ -149,7 +149,7 @@ content_hash: sha256:41fa1c9c305f46594e945a7631225899c80f6fb17040b8b548126a86270
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/jAAKwSzGRUemkbGFWgVUoA/zh-cn_image_0000002628559540.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/JTSAW8KATlW7kC1owqaAYw/zh-cn_image_0000002628559540.png "点击放大")
 
 ## 常见FAQ
 

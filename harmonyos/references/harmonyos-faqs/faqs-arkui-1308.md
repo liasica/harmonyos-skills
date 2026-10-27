@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1308
 title: Swiper组件被遮挡，导致点击事件不生效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper组件被遮挡，导致点击事件不生效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:aac1f69c1c20e712d2a0742f6c219da44431e40ea3b80b33bbea13fd50794a28
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:dcb861cf34458e0b702ccf400c06d7c18bfd62aac80dc09348f0ebdccc210c80
 ---
 
 ## 问题现象
@@ -77,7 +77,7 @@ struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/z08QF2cJQriOjSuG0_4TVw/zh-cn_image_0000002658958241.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/4W-hubUsQ2WDPCpV3uZyVA/zh-cn_image_0000002658958241.png "点击放大")
 
 ## 背景知识
 
@@ -176,7 +176,7 @@ Column组件遮挡Swiper组件，导致Swiper组件无法响应点击事件。
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/x6q9crcgQJir_eQKklZJDw/zh-cn_image_0000002658838293.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/I42dIuU7Q3qemPOLWTEYHw/zh-cn_image_0000002658838293.png "点击放大")
 * **方案二**：调整页面UI布局，使得Swiper组件上方无任何组件遮挡。
 
   ```ts
@@ -260,4 +260,4 @@ Column组件遮挡Swiper组件，导致Swiper组件无法响应点击事件。
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Ns-loMxtTHuOfo91UCnLNQ/zh-cn_image_0000002628599024.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/KwKy4nR4Q4yDPlNLIJ6AhA/zh-cn_image_0000002628599024.png "点击放大")

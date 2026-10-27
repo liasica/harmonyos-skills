@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1331
 title: 使用bindPopup实现气泡占用全屏时TextInput可以输入文本的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用bindPopup实现气泡占用全屏时TextInput可以输入文本的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f36003e79b08f048def6f3fd4d39a43eb4c1e53352a070bd96cad6485f6f5242
+content_hash: sha256:4ecd1ec3e17e8f5eb99e8d28fee0899071ff72d6160b36b7eed0f59f17801fcd
 ---
 
 ## 问题现象
@@ -17,7 +17,7 @@ content_hash: sha256:f36003e79b08f048def6f3fd4d39a43eb4c1e53352a070bd96cad6485f6
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/EORzekH6QxWKvTVkpjTVHA/zh-cn_image_0000002658839163.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/OC-gU0fWSoG8CVZTW66PSw/zh-cn_image_0000002658839163.gif "点击放大")
 
 ## 背景知识
 

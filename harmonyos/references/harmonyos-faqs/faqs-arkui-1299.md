@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1299
 title: screenshot.capture截图获取的图片无法展示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > screenshot.capture截图获取的图片无法展示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1547e98529f325f9dab7cbccbf09a7891574723d873f87d1a597a446ce972ddd
 ---
 

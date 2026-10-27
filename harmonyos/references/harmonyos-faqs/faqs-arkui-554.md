@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-554
 title: 自定义弹窗键盘避让问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 自定义弹窗键盘避让问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:54+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b39a0e354fa5af43bb17a4972ea14dd51a25e0402a0bc9f6e592aa7fb6d12692
+content_hash: sha256:cd2381e45a5859148b93b83c0c4c034a0bc692bb325129fbd51b7c9ecb7f7152
 ---
 
 ## 问题现象
@@ -17,11 +17,11 @@ content_hash: sha256:b39a0e354fa5af43bb17a4972ea14dd51a25e0402a0bc9f6e592aa7fb6d
 
 预期效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/WyCKadshTSeqEhlJ0PXNDg/zh-cn_image_0000002658910905.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Cht1LjbIS4aedUoHky64CA/zh-cn_image_0000002658910905.png "点击放大")
 
 实际效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/EAaxGdpkR4mhjItopPjK5w/zh-cn_image_0000002658790957.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/B9IY5BhLTqK9SdgECrBKRw/zh-cn_image_0000002658790957.png "点击放大")
 
 ## 背景知识
 

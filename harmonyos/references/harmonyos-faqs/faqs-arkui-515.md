@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-515
 title: 实现从外部获取RichEditor焦点
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现从外部获取RichEditor焦点
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:ea64d6efbf99d50ea99c17af3cb9af8bf2262eaeae503ee4a88309c148d0926f
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:6153b7001a73fa7cd463b1bdaf59689b005cbae7526af86d315c24d169a757ea
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ RichEditor点击输入框后会自动获取焦点，然后弹出软键盘；那�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/dMUTUV8YQV63ysbdBumblQ/zh-cn_image_0000002658787901.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/NiI0SMf0QxSZc6PmWB7mfA/zh-cn_image_0000002658787901.png "点击放大")
 
 ## 背景知识
 

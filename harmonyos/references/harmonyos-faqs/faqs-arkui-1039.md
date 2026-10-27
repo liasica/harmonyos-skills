@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1039
 title: 半模态弹窗高度问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 半模态弹窗高度问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:cafc42ce4cc27208530e480a9d37ac1ebba6aa43958e6440da76e4ebccbaad51
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:07cd78c4e074afdb495863279d87c518dda3f83e46d3f93816574fdca8ec16be
 ---
 
 ## 问题现象
@@ -86,7 +86,7 @@ content_hash: sha256:cafc42ce4cc27208530e480a9d37ac1ebba6aa43958e6440da76e4ebccb
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/jLIhNPxMQyOz5TILZREEGw/zh-cn_image_0000002628565422.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/HkFThZpTQxCTQhdTCUm0cA/zh-cn_image_0000002628565422.png "点击放大")
 * 场景二：同时实现自适应高度和自定义限高。
 
   直接设置半模态弹窗的height参数为SheetSize.FIT\_CONTENT时，半模态弹窗可以根据内容自适应高度，但此时半模态弹窗的最大高度也会被系统设为一个固定值。如果希望既可以实现自适应高度，又可以自定义限高，需要监听半模态内容的高度并配置给height参数。
@@ -163,11 +163,11 @@ content_hash: sha256:cafc42ce4cc27208530e480a9d37ac1ebba6aa43958e6440da76e4ebccb
 
   列表高度超过最大高度时，效果如图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/FfUNTaTkQVmaiviKLL8UIg/zh-cn_image_0000002658924729.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/7LDm9J0DTaiNCn2Ve7AZeA/zh-cn_image_0000002658924729.png "点击放大")
 
   列表高度小于最大高度时，效果如图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/j77Gz3prQ4mOlIMS86QA3g/zh-cn_image_0000002628405522.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/baOK0qG3Txibp5ZqxVbstQ/zh-cn_image_0000002628405522.png "点击放大")
 * 场景三：最小挡位不可下拉。
 
   半模态弹窗在默认情况下，即使已经停靠在最小挡位高度，也能通过滑动弹窗继续下拉，松手后系统会依据下拉速度和距离，关闭半模态弹窗或者是回弹到最小挡位高度。如果希望最小挡位时完全禁止下拉，可以使用滑动手势事件来自定义半模态的上下滑动效果。
@@ -428,4 +428,4 @@ content_hash: sha256:cafc42ce4cc27208530e480a9d37ac1ebba6aa43958e6440da76e4ebccb
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/4sUZnF8xSsuQs2bgYm2dEA/zh-cn_image_0000002658804795.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/aWFmlBVfRQCwP-c9jMQ1Xg/zh-cn_image_0000002658804795.png "点击放大")

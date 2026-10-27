@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-991
 title: 如何实现旋转共享元素转场
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现旋转共享元素转场
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:50+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:75d799f406aeefc864816a8180d52b4e6f4b2853e1de361e0ed5478d0c8ef14c
+content_hash: sha256:b53d31a6ebf5b3600d96274e1bc1a4322f149c2de866701b1faa347dbc49b788
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:75d799f406aeefc864816a8180d52b4e6f4b2853e1de361e0ed5478d0c8
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/Awck5x6eSaKFIpwqxqcPqQ/zh-cn_image_0000002628561716.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/dn4uuVtbSmuIGMuo04yY7Q/zh-cn_image_0000002628561716.png "点击放大")
 
 ## 背景知识
 

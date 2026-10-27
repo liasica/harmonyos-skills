@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-770
 title: 解决LazyForEach懒加载数据UI渲染失败的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 解决LazyForEach懒加载数据UI渲染失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:41+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:28a3ac94a904eac1cbd7a96affbb88a5a7890aee352599be2159dafeebf99d33
 ---
 

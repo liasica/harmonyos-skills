@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-account-2
 title: 使用华为账号一键登录成功后，用户名显示为长段随机字符
 breadcrumb: FAQ > 应用服务开发 > 华为账号服务（Account Kit） > 使用华为账号一键登录成功后，用户名显示为长段随机字符
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:cc85960ddb5bb6b887d0866709170a52a1820a3e267fc32a52f6b2eb19f179de
+scraped_at: 2026-10-28T07:48:39+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:25e39496085fa124b09d3dead31813b86ae4ac801ca70947c6667cede0a906a6
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ content_hash: sha256:cc85960ddb5bb6b887d0866709170a52a1820a3e267fc32a52f6b2eb19f
 
 1. 确认应用是否进行获取用户头像和昵称的申请操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/AISNV-nqSuSTgjBxLFpsXg/zh-cn_image_0000002658793675.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/lm6qqMivQEyBITuu5_SgLg/zh-cn_image_0000002658793675.png "点击放大")
 2. 排查是否进行获取用户头像和昵称的相关代码开发。
    * 排查是否导入authentication模块及相关公共模块。
 

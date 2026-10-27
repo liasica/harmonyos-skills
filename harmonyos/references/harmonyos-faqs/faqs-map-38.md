@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-38
 title: 如何处理自定义地图通过JSON指定元素无法显示问题
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何处理自定义地图通过JSON指定元素无法显示问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:e835d2d99ab7049736168b0f6571d37121fab60486363aecc587acfbcd460554
+content_hash: sha256:86e8c706a3a130324c36a39057b072cf40a842cb2108d6e184086037aa29f43f
 ---
 
 ## 问题现象
@@ -41,7 +41,7 @@ content_hash: sha256:e835d2d99ab7049736168b0f6571d37121fab60486363aecc587acfbcd4
 ]
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/2qHdJEbfTBykqQ8pwcRABA/zh-cn_image_0000002658793645.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/z9KRty4WSDGTlIuPnH75HA/zh-cn_image_0000002658793645.png "点击放大")
 
 ## 背景知识
 
@@ -92,7 +92,7 @@ content_hash: sha256:e835d2d99ab7049736168b0f6571d37121fab60486363aecc587acfbcd4
   ```
 * JSON文件放入..\entry\src\main\resources\rawfile下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/gjdrvRkcRyqywx1etu6MbA/zh-cn_image_0000002628554280.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/itvxUlv9QzCwmd1e-dS3og/zh-cn_image_0000002628554280.png)
 * 代码示例如下：
 
   ```ts

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS指定设备发布常见错误码深度解析
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS指定设备发布常见错误码深度解析
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
+scraped_at: 2026-10-28T07:48:46+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:37d13614a22969ecba830ca615d6f1fd580a90e93a551a9fd7ecbfbb7891c02e
+content_hash: sha256:b13da4dabde7178ff67bfba7ee984c8ed1c1168880b075563bc5d869aeecc7eb
 ---
 
 ## 问题现象
@@ -46,7 +46,7 @@ content_hash: sha256:37d13614a22969ecba830ca615d6f1fd580a90e93a551a9fd7ecbfbb789
 
      示例如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/OuEHxJJfQ0SY_j8YWFF81g/zh-cn_image_0000002640108094.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/HJR3yx50RhyZTJd6X-6GhQ/zh-cn_image_0000002640108094.png "点击放大")
 3. **错误码10000：DeepLink格式错误；**
 
    解决方案：

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-903
 title: Image组件加载含有特殊字符的图片失败如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image组件加载含有特殊字符的图片失败如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f48f646eb072a869559db98c8d7313ed3a305537bc0a893a8f54f0e03b713550
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4d0be1046c6413b05df382269962f99e0657f908afca1aa83551b8ec80bbfec1
 ---
 
 ## 问题现象
@@ -77,7 +77,7 @@ Image组件使用file://路径前缀的字符串的路径格式加载应用沙�
 
    可以看到展示结果中，URI的图片可以正常显示，而path的无法显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/4Qzl8ViUS0uX1ur7T0B3Vg/zh-cn_image_0000002628559670.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/WidCosPfSBKUrJnDGRqzdw/zh-cn_image_0000002628559670.png "点击放大")
 
 完整示例代码如下：
 

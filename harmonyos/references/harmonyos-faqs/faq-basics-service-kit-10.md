@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 如何获取系统版本号
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 如何获取系统版本号
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:39+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:19+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0cfe69f0efdd26dfb31e17335ea2731e2cddc9d22f800c051e5986988235a43e
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-728
 title: ListItemGroup如何使用三元运算符
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ListItemGroup如何使用三元运算符
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:eaad2b9cf9a588f99b389849120ff3aa9b9c0a5bdf31dd13a1ae83aef019bea5
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:580f4af61267c0ff2e466a73a931e3ff6152268c476d0e3691c3900d7930f653
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ ListItemGroup如何使用三元运算符，渲染不同的组件？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/WvGzHW18TXeRZoR-RwQ-QA/zh-cn_image_0000002658794589.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/5J_G-H78SHKUYfg5BU37aA/zh-cn_image_0000002658794589.gif "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-4
 title: 应用启动中进行加解密处理时，出现闪退
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 应用启动中进行加解密处理时，出现闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2fbd52b1359fd7cb8645c063300065cd942ec1686fa08342d921803092bd00bf
+scraped_at: 2026-10-28T07:46:40+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f16e61a2012f729418eeec5f019aa73edc6a50228cf8319a9d1a1a9503172b20
 ---
 
 ## 问题现象
@@ -17,7 +17,7 @@ content_hash: sha256:2fbd52b1359fd7cb8645c063300065cd942ec1686fa08342d921803092b
 * JsCrash异常根据不同的异常场景，在Reason字段进行了分类，分为Error、TypeError、SyntaxError、ReferenceError、RangeError等错误类型。参考文档[JS Crash（进程崩溃）检测](../harmonyos-guides/jscrash-guidelines.md)。
 * JsCrash日志规格说明可以参考[日志规格](../harmonyos-guides/jscrash-guidelines.md#日志规格)。
 * [doFinal](../harmonyos-references/js-apis-cryptoframework.md#dofinal)和[doFinalSync](../harmonyos-references/js-apis-cryptoframework.md#dofinalsync12)用于加解密本次传入的数据，并获取加密或解密后的数据。
-* 在数据存储或传输场景中，可以使用加解密操作用于保证数据的机密性，防止敏感数据泄露，详细可见[加解密开发指导](../harmonyos-guides/crypto-encrypt-decrypt-dev.md)。
+* 在数据存储或传输场景中，可以使用加解密操作用于保证数据的机密性，防止敏感数据泄露，详细可见[加解密开发指导](../doccenter-capabilities/crypto-development-practice.md)。
 
 ## 问题定位
 

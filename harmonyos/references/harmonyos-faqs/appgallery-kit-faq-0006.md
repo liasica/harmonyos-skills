@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: 应用内检查更新实现及常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 应用内检查更新实现及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:14:34+08:00
+scraped_at: 2026-10-28T07:48:44+08:00
 doc_updated_at: 2026-10-22
-content_hash: sha256:55b1e518299acb19c7d60fcd53460cd05019ecef837f1355300e850e3ac9508d
+content_hash: sha256:ed70a9a68449b4f0ac64963bb4856f7197bbcb4f551b38aeb04434548f1e65c5
 ---
 
 **Q：应用上架应用市场后，有新的版本更新时，如何实现老版本用户打开应用能提示更新版本？**
 
 A：业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/J2iEXLwiTe6-7CUT0dsFhg/zh-cn_image_0000002792076741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/gwpbHTo7RNqAAV33VvBfzg/zh-cn_image_0000002792076741.png "点击放大")
 
 1. 应用调用检查更新接口。
 2. 升级服务API返回是否有新版本。

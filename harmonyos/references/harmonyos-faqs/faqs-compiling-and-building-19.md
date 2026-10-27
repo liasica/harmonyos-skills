@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“keystore password was incorrect”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“keystore password was incorrect”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:32+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:d57796df078da25ec325db1ecb8efb68d984e22932c1c65e4ac0a00280c7533d
+scraped_at: 2026-10-28T07:48:52+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:8c3ba8af927b41e3f78672a61abc28c47454e400d0767bef8ae8e66082302195
 ---
 
 **问题现象**
 
 编译时出现错误，提示“ERROR - hap-sign-tool: error: ACCESS\_ERROR, code: 109. Details: Init keystore failed: keystore password was incorrect”。请检查密钥库密码是否正确。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/ryubatshSp-bvPC98SrZsg/zh-cn_image_0000002624638392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/vFecHZ2PQrCKPFbxozrn8A/zh-cn_image_0000002624638392.png)
 
 **报错原因**
 
 密钥库(p12)的密码错误。签名文件中的签名密码错误导致该问题出现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/cW9PGwlUQXaXFe6SOTgiJQ/zh-cn_image_0000002654837801.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/BzDgQDxaRiSs36Ij7WUywg/zh-cn_image_0000002654837801.png)
 
 **注意** 
 
@@ -38,4 +38,4 @@ content_hash: sha256:d57796df078da25ec325db1ecb8efb68d984e22932c1c65e4ac0a00280c
 
 2. 勾选“Automatically generate signing”（如果是HarmonyOS工程，还需勾选“Support HarmonyOS”），等待重新签名，点击**OK**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/vEjAsBBqShSZkB-AOetpzA/zh-cn_image_0000002624478488.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/0GdSxwsaRJyST0wkgApQ9w/zh-cn_image_0000002624478488.png)

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-13
 title: 应用和元服务列表中无图标显示
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用和元服务列表中无图标显示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
+scraped_at: 2026-10-28T07:46:48+08:00
 doc_updated_at: 2026-07-31
-content_hash: sha256:79678ea4cd6c0877f2a81774c80014661dc57fb4d5d531fffbd573895bc6947b
+content_hash: sha256:3f5c96bb001b77f311c0aca88f2bd3dd2f0863dffd8c452e987ddb1a093bd5e3
 ---
 
 ## 问题现象
 
 在系统的“设置->应用和元服务”中，列表中无图标显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/xGNLiYspT9CdVZ3m25bulw/zh-cn_image_0000002628789134.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/CpTNX__RTvWdZ3KFwDH9_A/zh-cn_image_0000002628789134.png "点击放大")
 
 ## 背景知识
 
@@ -33,4 +33,4 @@ content_hash: sha256:79678ea4cd6c0877f2a81774c80014661dc57fb4d5d531fffbd573895bc
 
 工程AppScope路径文件结构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/XB7YVWucQdyMH80Il1gcKg/zh-cn_image_0000002658988445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ZIa5mZEMR7ue6Y5-zwgEGw/zh-cn_image_0000002658988445.png "点击放大")

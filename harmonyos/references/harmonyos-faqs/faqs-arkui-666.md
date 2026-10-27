@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-666
 title: 常见截图场景实现方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 常见截图场景实现方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:13d9de9b9b37955428c83a4fd44092424d103cd21926c5dbd1e5a0c3dc4dfa41
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:159f723244b9f2f2f1c52d16763663b28bd4b6791b51ba777654053f9c0c5ad9
 ---
 
 ## 问题现象
@@ -86,7 +86,7 @@ HarmonyOS开发中有三种截图方式，分别是组件截图、窗口截图�
 
   实现效果展示如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/awQjDnM4TGCeEFUc40985Q/zh-cn_image_0000002628554546.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/_uaT32scQ96Z7HvFA6QZBg/zh-cn_image_0000002628554546.gif "点击放大")
 * 截图后保存到相册。
 
   三种截图方式在调用API后都会返回image.PixelMap数据，这时可以利用SaveButton实现图片保存到相册，完整示例代码如下：

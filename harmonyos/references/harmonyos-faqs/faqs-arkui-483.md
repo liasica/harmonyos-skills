@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-483
 title: 设置了动态的visibility属性，切换组件的显示隐藏，使用requestFocus让组件获取焦点报错150003：the component is not on tree or does not exist.
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 设置了动态的visibility属性，切换组件的显示隐藏，使用requestFocus让组件获取焦点报错150003：the component is not on tree or does not exist.
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6d37759ab4ed899c591c4e313308c6d78cf983036a93e01f9dbc603f2b5f8510
 ---
 

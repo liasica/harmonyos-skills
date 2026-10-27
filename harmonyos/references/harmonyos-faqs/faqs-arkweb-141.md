@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-141
 title: 如何使用Web播放16进制数据流格式的音频
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何使用Web播放16进制数据流格式的音频
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2431813d510c690018d47eec921e1bd804804fa1ad65b7397875ed2aa3d738cf
 ---
 

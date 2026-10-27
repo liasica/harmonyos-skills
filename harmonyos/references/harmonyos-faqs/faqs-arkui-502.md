@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-502
 title: 图片全屏预览蒙层未遮住背景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 图片全屏预览蒙层未遮住背景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:54c941f2f7625acd9c763d4435c4d8f7fac665d308848f8f749aa4c373051130
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:230c1c53a97dad0f8eda059754893e74b6d18a2bf976adef64c392e445280c84
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:54c941f2f7625acd9c763d4435c4d8f7fac665d308848f8f749aa4c3730
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/elOnq3MrSTWpX2u74G0rVg/zh-cn_image_0000002658907829.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/C8uA7WxkRZqBZrNGFQgiQA/zh-cn_image_0000002658907829.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/gTiLPKoNTpKbFRE5_SypYw/zh-cn_image_0000002658787893.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/p5D2-U9yTMijD01oHhRlcA/zh-cn_image_0000002658787893.gif "点击放大")
 
 ## 背景知识
 

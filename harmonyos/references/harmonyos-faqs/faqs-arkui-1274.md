@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1274
 title: priorityGesture监听点击事件导致Tabs页面卡顿的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > priorityGesture监听点击事件导致Tabs页面卡顿的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:936dd025faf5b9c96082eba2b07e214498dfddd0af2fb0a9a1ad5e7bea7faba3
+content_hash: sha256:2bf861e539e6e8787c0d55a6165a63074d0c33e04c053c32a32f4ce1dea9d9f3
 ---
 
 ## 问题现象
@@ -112,7 +112,7 @@ struct TabsExample {
 
 问题示例实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/RyfqjEa1ShOMFnbMdJW6tQ/zh-cn_image_0000002658955335.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/Y-atWCD8TbqxB6rrN-8FYQ/zh-cn_image_0000002658955335.png "点击放大")
 
 ## 背景知识
 
@@ -254,7 +254,7 @@ struct TabsExample {
 
 实现效果如下，当双击的页面不是当前Tab2页面时，不会触发Tab2页面双击事件，优先响应单击跳转事件，跳转到Tab1页面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/vn1CcsCxTbWQuv0hn2M4-w/zh-cn_image_0000002628596118.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/HaH_JV6fTeGNUIdntt_JMQ/zh-cn_image_0000002628596118.png "点击放大")
 
 ## 常见FAQ
 

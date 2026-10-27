@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 运动健康服务授权及取消授权失败问题
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 运动健康服务授权及取消授权失败问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:35+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:9a06bcfa1f31feaf59b69d267872e3e2a1f1cef6668b9400d494b7d23943c508
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:33c608bae78dc8ac3bd4aa90c8f55e20b964c515d4b2f05623b2abae1fb7a363
 ---
 
 ## 问题现象
@@ -66,7 +66,7 @@ content_hash: sha256:9a06bcfa1f31feaf59b69d267872e3e2a1f1cef6668b9400d494b7d2394
 
      **说明** 
 
-     在AGC上面，添加公钥指纹（HarmonyOS API 9及以上）后，指纹有一定时间的缓存，不会立刻生效，建议配置完成后等半小时再尝试。
+     在HarmonyOS 开发者中心上面，添加公钥指纹（HarmonyOS API 9及以上）后，指纹有一定时间的缓存，不会立刻生效，建议配置完成后等半小时再尝试。
   2. 如果错误码是1001502014，说明缺少运动健康服务的Scope权限。参考：[申请运动健康服务](../harmonyos-guides/health-apply.md)。
   3. 如果报错如下所示：那么说明没有正确[配置Client ID](../harmonyos-guides/health-configuration-client-id.md)，将client\_id(xxxxxxx)配置到‘\entry\src\main\module.json5’文件中再次尝试。
 

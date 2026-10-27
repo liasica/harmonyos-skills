@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-11
 title: HarmonyOS 3.x/4.x已接入过华为推送，HarmonyOS Next/5.x及以上版本应用如何升级适配
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > HarmonyOS 3.x/4.x已接入过华为推送，HarmonyOS Next/5.x及以上版本应用如何升级适配
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:30+08:00
-doc_updated_at: 2026-10-20
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:36b4a925a5747c322f02e095358dd759a3b2bdb09a01a344270a36d234fc0427
 ---
 

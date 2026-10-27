@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-mdm-3
 title: MDM设置网络白名单功能异常
 breadcrumb: FAQ > 系统开发 > 基础功能 > 企业设备管理（MDM） > MDM设置网络白名单功能异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
+scraped_at: 2026-10-28T07:48:22+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:d99e43ef503495cbedca44f4bd218c889929debb3a796b7f22691ff40b27af44
+content_hash: sha256:b0c2bdaa58543645ac02f37f87b78fecdb2c9cc929fa783760303baf3774f748
 ---
 
 ## 问题现象
@@ -28,7 +28,7 @@ MDM应用可以通过[addAllowedWifiList](../harmonyos-references/js-apis-enterp
 1. 确保[restrictions](../harmonyos-references/js-apis-enterprise-restrictions.md)中启用Wi-Fi，wifiManager确保没有[Disallowed](../harmonyos-references/js-apis-enterprise-wifimanager.md#wifimanageradddisallowedwifilist19)和[Allowed](../harmonyos-references/js-apis-enterprise-wifimanager.md#wifimanageraddallowedwifilist19)的Wi-Fi。
 2. 使用[addAllowedWifiList](../harmonyos-references/js-apis-enterprise-wifimanager.md#wifimanageraddallowedwifilist19)添加一个Wi-Fi白名单，其参数类似[{"ssid":"mate60","BSSID":"92:EF:1C:F1:21:81"}]，BSSID值在此处获取：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/t1J7IdKESjGhTkxlYqA-hA/zh-cn_image_0000002633616294.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/tX94dZQ7RaO8EOu5uhGBMg/zh-cn_image_0000002633616294.png "点击放大")
 3. 设置后，Wi-Fi白名单未生效。
 
 分析以上操作步骤，发现Wi-Fi白名单未生效的原因是**未正确传递BSSID值**。
@@ -37,10 +37,10 @@ BSSID的正确获取方法：
 
 1. 打开“开发者选项”-->"开启wlan详细日志记录"：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FWKD92X4S66-kK2rpaajxA/zh-cn_image_0000002633456400.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/1dh7oqgXRIOAIXs1mPaxLQ/zh-cn_image_0000002633456400.png)
 2. 查看BSSID：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Z6q8OLa9TveeiP32Rhc7ug/zh-cn_image_0000002663855485.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/AueEJllfR--MI08v470jXA/zh-cn_image_0000002663855485.png "点击放大")
 
 ## 分析结论
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-calendar-8
 title: 如何使用editEvent接口新建日程
 breadcrumb: FAQ > 应用服务开发 > 日历服务（Calendar Kit） > 如何使用editEvent接口新建日程
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e81aed87f26c645d53ceaf2faad0554961995b237e05cefb646eab87dac5887f
 ---
 

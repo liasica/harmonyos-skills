@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio代码编辑界面显示元素如何关闭
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio代码编辑界面显示元素如何关闭
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
+scraped_at: 2026-10-28T07:48:49+08:00
 doc_updated_at: 2026-08-19
-content_hash: sha256:1161aef256e46851b46005670135ecaa57a88f8cddf80cb3235eecae0bc13fa7
+content_hash: sha256:1e7e64087fb5a0ece04fe72db4e99fa5c52a65c9a1c98ece12af3a8912fe3092
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:1161aef256e46851b46005670135ecaa57a88f8cddf80cb3235eecae0bc
 
 在这个白竖线附近时，代码就会自动折行显示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/gRY3u1DOSnqam0C7EGej1g/zh-cn_image_0000002710337997.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/UZJtMgTWQCyC_-Ga4kJIHg/zh-cn_image_0000002710337997.png "点击放大")
 
 场景二：DevEco Studio中，代码编辑界面的灯泡图标如何关闭？
 
@@ -32,12 +32,12 @@ content_hash: sha256:1161aef256e46851b46005670135ecaa57a88f8cddf80cb3235eecae0bc
 
   在开发工具File->Settings->Editor->General->Appearance取消勾选show hard wrap and visual guides。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/U6U8p2tFQz2LRSoHk0nV0w/zh-cn_image_0000002710178153.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/fv9oPp1gT2GTP4UArkqOgg/zh-cn_image_0000002710178153.png "点击放大")
 * 增大代码的宽度限制：
 
   在开发工具File->Settings->Editor->Code Style中增大Hard wrap值，如将其值改为1000。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/b9GbZkr2SDmdTg9PX8wJSQ/zh-cn_image_0000002680498362.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/zKsFhjq4TnqStYzET8MfeA/zh-cn_image_0000002680498362.png "点击放大")
 
 场景二：
 
@@ -49,13 +49,13 @@ Q：过长的三元表达式会直接换行但不带缩进，是否有办法可�
 
 A：在IDE的setting中，Editor-Code Style-ArkTS下，找到Ternary operation，勾选下面的两个选项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/7MDr1TeWTMeB3B524uP0-A/zh-cn_image_0000002680658264.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/s-gb5e-IT1qld2eySAtvnw/zh-cn_image_0000002680658264.png "点击放大")
 
 Q：粘贴代码时，如何关闭编辑器自动格式化？
 
 A：在IDE的setting中，Editor-General-Smart Keys下，找到Reformat on paste选项，下拉选择None。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/WV7YPLxbQquv1ZHJZTTuhQ/zh-cn_image_0000002710178187.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/mte7rR5cRpaiTvrqm1fNMA/zh-cn_image_0000002710178187.png "点击放大")
 
 Q：在File -> Settings -> Appearance -> Editor -> Font设置字体大小大于14（比如设置为16），在File -> Settings -> Editor -> Color Scheme修改任意类型代码颜色，预览器颜色错乱。
 
@@ -65,4 +65,4 @@ Q：如何使用快捷键批量注释代码？
 
 A：选中需要注释的代码，按住ctrl + /键方可批量注释。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/OoVon6DOTNeHgROI0Dt8fw/zh-cn_image_0000002680498394.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/mskleZwkQ52exQxCOG-ROA/zh-cn_image_0000002680498394.png "点击放大")

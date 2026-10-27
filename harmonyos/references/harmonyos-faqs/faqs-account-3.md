@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-account-3
 title: 华为账号一键登录获取不到手机号怎么解决
 breadcrumb: FAQ > 应用服务开发 > 华为账号服务（Account Kit） > 华为账号一键登录获取不到手机号怎么解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:39+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:76b3a567a46c590948affb02acaf1f144c4f3dbf98eb7d710b37ee574c8733ee
 ---
 

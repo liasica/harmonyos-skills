@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-164
 title: ArkWeb如何根据异步请求返回数据加载真实Url页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > ArkWeb如何根据异步请求返回数据加载真实Url页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:10+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4ea04cfab3466df4965f950e11f833836a465dfb253538bc0c8d674139e6f2f1
 ---
 

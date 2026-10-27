@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/share-kit-faq-0
 title: 系统分享与数据接收常见问题
 breadcrumb: FAQ > 应用服务开发 > 内容分享服务（Share Kit） > 常见问题 > 系统分享与数据接收常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:52+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:5d7ee9aabe55eb5adc0051e0f07209729266bdb2d7e24551fc2f2bd3a0d4500a
+scraped_at: 2026-10-28T07:48:40+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:15bd236186735272db4f9138a9196b4c0e9c25fb3771dccdde140f9fa9c0e90e
 ---
 
 **Q：开发者在使用系统分享时，会遇到以下几个经典场景：**
@@ -60,7 +60,7 @@ context: common.UIAbilityContext = this.getUIContext().getHostContext() as commo
        console.error(`addRecord error. Code: ${error?.code}, message: ${error?.message}`);
        }
        ```
-    2. 启动分享面板，并配置不显示打印快捷操作。如需屏蔽其他系统级快捷操作，请参考[ShareAbilityType](../doccenter-capabilities/api/share-system-share.md#shareabilitytype)介绍。
+    2. 启动分享面板，并配置不显示打印快捷操作。如需屏蔽其他系统级快捷操作，请参考[ShareAbilityType](../doccenter-references/api/share-system-share.md#shareabilitytype)介绍。
 
        ```ts
        import { BusinessError } from '@kit.BasicServicesKit';
@@ -79,7 +79,7 @@ context: common.UIAbilityContext = this.getUIContext().getHostContext() as commo
        ```
     3. 实现效果图：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/jbLzW1O1S6mm2F2k2P5UIw/zh-cn_image_0000002792063557.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/yOkseyRxR56qUiRflXuTNA/zh-cn_image_0000002792063557.png "点击放大")
   + 更多实现示例代码可以参考实现华为分享功能。
 * 针对场景二：将[SelectionMode](../harmonyos-references/share-system-share.md#selectionmode)设置为BATCH可支持批量模式，分享全部数据记录，可实现分享多张图片。示例代码如下：
 
@@ -323,7 +323,7 @@ context: common.UIAbilityContext = this.getUIContext().getHostContext() as commo
   2. 应用启动后，在onCreate或onNewWant回调中获取want参数，通过[systemShare.getSharedData](../harmonyos-references/share-system-share.md#getshareddata)解析分享数据，再跳转到编辑页面，可参考[应用内处理分享内容](../harmonyos-guides/share-interface-description.md)。
   3. 图片/文件建议使用[fileUri.getUriFromPath](../harmonyos-references/js-apis-file-fileuri.md#fileurigeturifrompath)或系统可访问URI传递，接收方收到后如需长期编辑，应复制到自己的沙箱目录。
 
-  发送方需使用精确UTD，图片优先使用general.image或按扩展名解析出的UTD，不要直接传应用沙箱物理路径。若需实现文字和图片一起分享，可通过多条SharedRecord添加文本和图片记录，两端需约定清楚数据结构。如需定向跳转到指定应用的指定编辑页，优先让目标应用提供明确的分享接收Ability或App Linking/深链能力。接收其他应用分享的图片示例可参考[接收分享图片示例](../architecture-guides/receive_image_share-0000002405380589.md)。
+  发送方需使用精确UTD，图片优先使用general.image或按扩展名解析出的UTD，不要直接传应用沙箱物理路径。若需实现文字和图片一起分享，可通过多条SharedRecord添加文本和图片记录，两端需约定清楚数据结构。如需定向跳转到指定应用的指定编辑页，优先让目标应用提供明确的分享接收Ability或App Linking/深链能力。
 * 针对场景五：该功能仅对企业应用开放，可通过[配置目标应用名单](../harmonyos-guides/share-app-sharing-mode.md)限制分享目标应用范围。配置成功后，仅名单内的目标应用可出现在系统分享面板的分享推荐区和分享方式区。
   1. 申请受限开放权限ohos.permission.SET\_SYSTEMSHARE\_APPLAUNCHTRUSTLIST，在module.json5配置文件的requestPermissions标签中声明该权限。
   2. 启动分享面板时，通过配置appLaunchTrustInfo参数指定目标应用范围，最多支持50个应用。

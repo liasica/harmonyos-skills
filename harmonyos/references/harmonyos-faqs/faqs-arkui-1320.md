@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1320
 title: 图标点击间歇性无反应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 图标点击间歇性无反应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6acb934e2d7bce56a13bab4cc8f5c555e6f00f777ff717d8cdc548644ea1bd02
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:8ef47197293b2d3bc8bdf3fe65bc61344756fcb4fff9826a1b380d08d1ed110d
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:6acb934e2d7bce56a13bab4cc8f5c555e6f00f777ff717d8cdc548644ea
 
 复现问题场景发现点击图标左上角无反应，点击图标左下角正常，利用DevEcoTesting的UIViewer定位发现点击事件的触发范围与图标显示范围没有完全重叠。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/3aiiGlhDQNy2Y_ZN5LkkAw/zh-cn_image_0000002658958851.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/0G7vxRTZSOmGH1XxxWOqRA/zh-cn_image_0000002658958851.png "点击放大")
 
 ## 分析结论
 

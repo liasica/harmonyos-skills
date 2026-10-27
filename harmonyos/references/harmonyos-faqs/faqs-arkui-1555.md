@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1555
 title: 如何解决Scroll嵌套地图组件时的滚动冲突问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Scroll嵌套地图组件时的滚动冲突问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:02+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:a7f1b4be41cde0faf7c2fc283e067a796844d8c4a73a09945a97d6c69b08fb11
+scraped_at: 2026-10-28T07:47:25+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:79821fd9924e34321688623fac20696afd3eef8727c98f735b1ea6b2af76d393
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:a7f1b4be41cde0faf7c2fc283e067a796844d8c4a73a09945a97d6c69b0
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ZK-ZxogbTIqOZ9lrs8tYUg/zh-cn_image_0000002658848495.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/I3QHZusUQ_uJZgjcrTmjcg/zh-cn_image_0000002658848495.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/-b33ppzfRDqHzgs3fX-r8A/zh-cn_image_0000002628609232.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/oY4iIKV2ReK9WaEOebKLPQ/zh-cn_image_0000002628609232.gif "点击放大")
 
 ## 背景知识
 

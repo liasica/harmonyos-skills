@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: rcp请求未正常执行且catch未捕获异常
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > rcp请求未正常执行且catch未捕获异常
 category: harmonyos-faqs
-scraped_at: 2026-09-30T07:43:31+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1da3813877c1ec8797a8fb9037b16c6eef8c986f1dbda7535f9440db8cdbdbc5
 ---
 

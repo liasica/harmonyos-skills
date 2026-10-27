@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 移动滑块拼图验证慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 移动滑块拼图验证慢
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:1f6a1ece1a8da660ce21d9b43b72d49791c1beb7d6b5d0e87b75c8ec1188ec87
+content_hash: sha256:4a57c02363910f58b48be18e840ac76c45bfa61a561c1528c0f81753f4e1f344
 ---
 
 ## 问题现象
@@ -21,20 +21,20 @@ content_hash: sha256:1f6a1ece1a8da660ce21d9b43b72d49791c1beb7d6b5d0e87b75c8ec118
 
 1. 使用ArkUI Inspector抓取图片验证码页面，发现该页面为Web页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/idXajyS1QPS_TAFI16dseA/zh-cn_image_0000002658794565.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/abLPh564ROij5uJ5ONc9lw/zh-cn_image_0000002658794565.png "点击放大")
 2. 使用DevTools录制图片验证码验证过程，在搜索框中输入touchend找到手指从屏幕移开的时间点为03.270左右，查看该时间点后未发现有较长耗时的网络请求。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/HgceNMsmS5uHaUQWZKJdZg/zh-cn_image_0000002628555200.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/lX4YRU22SuO9QaNiPbFkuA/zh-cn_image_0000002628555200.png "点击放大")
 3. 排查图片验证码开始消失之前网页执行的任务，发现在05.049时间点有触发计时器，推测是在执行安全验证时有延迟操作，同时在该时间点附近有进行query（查询）网络请求。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Ttp81itRSk69ErI1Qo3GYA/zh-cn_image_0000002658914521.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/znzyv86QSlSaIHFm6nzdrA/zh-cn_image_0000002658914521.png "点击放大")
 4. 在搜索框中输入setTimeout，发现在03.548时间有设置超时1.5s的计时器，与上述触发计时器的时间点吻合。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/OCeVCGS7S7yRb0xZ5afFgw/zh-cn_image_0000002628395290.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/P9js3XboQN68tlFyOFYcWA/zh-cn_image_0000002628395290.png "点击放大")
 
    查看手指离开屏幕到设置计时器的过程，发现有进行网络请求，耗时257ms左右。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/JV7pBA0uTBew62Mb-pQnvw/zh-cn_image_0000002658794567.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/TEZVaO_6SIGMFpy5SpLTpw/zh-cn_image_0000002658794567.png "点击放大")
 
    综上可知在手指离开屏幕后，应用网页有触发网络请求进行验证，然后延迟1.5s后才隐藏图片验证码，导致验证慢的问题。
 

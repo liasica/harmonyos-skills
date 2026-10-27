@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-41
 title: httpRequest.request 请求https接口ssl证书验证失败
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > httpRequest.request 请求https接口ssl证书验证失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:36+08:00
+scraped_at: 2026-10-28T07:48:14+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:4edbd5d1a020f932b6f0b2adad6c5bbd1c6c156c96ce71cd1ce633e2f15c47b0
+content_hash: sha256:c05986095ba88fd2df0c58e5b70ce1bb9fb785710b4ce2b9393249624fd2859f
 ---
 
 **问题现象**
@@ -40,7 +40,7 @@ HTTPS校验主要包括以下几个步骤：
 SSL劫持原理：第三方攻击者会先接入请求方和接收方之间，通过伪造的证书与请求方交换数据，再以请求方的身份与接收方进行数据交互。SSL劫持通常发生在用户安装了未经权威CA认证的证书时，因此需要进行证书校验。
 
 **图1** SSL劫持  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/H2U1V7m5QQCvclMKa89d8Q/zh-cn_image_0000002624476794.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/887XVsQkSP6NegEf552Agw/zh-cn_image_0000002624476794.png "点击放大")
 
 SSL剥离通常发生在HTTP请求中，现代网站多强制使用HTTPS。
 

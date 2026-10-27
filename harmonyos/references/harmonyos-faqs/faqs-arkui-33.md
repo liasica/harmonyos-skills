@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-33
 title: 如何通过PanGesture手势或者SwipeGesture手势实现自定义组件的惯性滚动效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何通过PanGesture手势或者SwipeGesture手势实现自定义组件的惯性滚动效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:29372f2906ae7288364d65c49d0af01683d5fa74ab3039755bd471406ce29c3a
 ---
 

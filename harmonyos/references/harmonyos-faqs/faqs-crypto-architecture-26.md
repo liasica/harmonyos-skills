@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何存储公钥
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何存储公钥
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:10+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5bb777bf80e25d2de2a814a155c088655698842e5f2325e72381e429a044a23d
 ---
 

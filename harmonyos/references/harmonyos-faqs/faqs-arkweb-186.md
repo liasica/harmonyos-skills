@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-186
 title: H5网页中Cookie跨域场景及解决方案
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > H5网页中Cookie跨域场景及解决方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3a473a652ad73afae315c2c48f019d74adec0982e4828344d10aa327a63d3fc5
 ---
 

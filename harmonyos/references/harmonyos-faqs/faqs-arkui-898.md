@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-898
 title: 并发接口拦截器中如何实现全局弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 并发接口拦截器中如何实现全局弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:09a0051880278e92238c0887eee870069cd1f9cfd98a3af57ee6150808c3ffc7
+content_hash: sha256:3cd0274371e9ac903aea5e42e694dfc829d68498b2d39dae808b6679382bd88f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:09a0051880278e92238c0887eee870069cd1f9cfd98a3af57ee6150808c
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/G8bAFqjTSda5QX_XVd36Yg/zh-cn_image_0000002658799017.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/R2nvZl50THO9pbc2IX7ljw/zh-cn_image_0000002628559664.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/3rbbsyGxRwO3CuY69A4H-g/zh-cn_image_0000002658918971.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Kh2f2PRSTIGXlhyXLmyVwg/zh-cn_image_0000002658799017.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/JamdG-DOT0OuUuAXypiTwQ/zh-cn_image_0000002628559664.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/g2q_CNImQUCwVDKK98tUFg/zh-cn_image_0000002658918971.png "点击放大")
 
 ## 背景知识
 

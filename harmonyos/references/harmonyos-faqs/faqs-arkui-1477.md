@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1477
 title: 状态变量随滚动重复赋值引起UI不刷新
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 状态变量随滚动重复赋值引起UI不刷新
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:5a1cf06391e78baf67fdcf806ed7a14031bd2b84149854fa8cce122e4bc3b8b1
+content_hash: sha256:14830cccbf512f0b780cd90d68ace87d1039a02a4beb74870a47e0adb1b6e5c0
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:5a1cf06391e78baf67fdcf806ed7a14031bd2b84149854fa8cce122e4bc
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/vxDWhN0DRFK1gjJSI0s0Nw/zh-cn_image_0000002628605360.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/d6zBSDKiRZ-O86s2CoEO3g/zh-cn_image_0000002628605360.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Z-kW0u9TRC-A7QUV3rB6ZQ/zh-cn_image_0000002658844617.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/01eYEoCFQk2dT_E9BGB2_w/zh-cn_image_0000002658844617.gif "点击放大")
 
 ## 背景知识
 
@@ -55,7 +55,7 @@ content_hash: sha256:5a1cf06391e78baf67fdcf806ed7a14031bd2b84149854fa8cce122e4bc
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/8dIsFVNGSRi4fmyn6ME8Ww/zh-cn_image_0000002628765252.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/lMx3X0lkTFCjolnj6ZcUNQ/zh-cn_image_0000002628765252.png "点击放大")
 
 ## 分析结论
 

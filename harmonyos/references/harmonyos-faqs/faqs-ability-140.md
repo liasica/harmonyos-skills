@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-14
 title: 在设置中修改字体大小和显示缩放大小后，应用页面布局异常
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 在设置中修改字体大小和显示缩放大小后，应用页面布局异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1bba8cfb46982ce4fa20e6d8932b295c1979c061fafb139b2b35cf84611adf9a
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:5846a308a08020a3bce88837e4cdebd5679ad428c7ce69b2e11857fab85a29dd
 ---
 
 ## 问题现象
@@ -73,7 +73,7 @@ content_hash: sha256:1bba8cfb46982ce4fa20e6d8932b295c1979c061fafb139b2b35cf84611
       }
     }
     ```
-  + 如果有需要的话，可以配置应用字体不跟随系统设置变化，在应用内自行统一管理字体。可以参考[应用内字体大小调节功能](https://developer.huawei.com/consumer/cn/codelabsPortal/carddetails/tutorials_NEXT-SetAppFontSize)。
+  + 如果有需要的话，可以配置应用字体不跟随系统设置变化，在应用内自行统一管理字体。可以参考[应用内字体大小调节功能](../doccenter-capabilities/subscribe-system-environment-variable-changes.md#设置字体大小)。
 * 订阅相关事件，并在其中限制组件大小、调整页面布局，如订阅环境变量关注屏幕显示密度、添加densityUpdate或onSizeChange监听事件。
 
   ```ts

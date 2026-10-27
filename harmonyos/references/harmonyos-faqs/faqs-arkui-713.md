@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-713
 title: 实现多个长度不一的子组件中间组件居中显示的功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现多个长度不一的子组件中间组件居中显示的功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f51004d35fcf09d6bbb0315d31939240a822399f509a17002ae226c0c26727de
+content_hash: sha256:91b160fc73330030620f25503b8f8b285efd0c5a1f7df2f04ef50752502907e8
 ---
 
 ## 问题现象
@@ -37,7 +37,7 @@ struct RowPageOne {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/nINXnLjYSymuexJWTOGaCw/zh-cn_image_0000002658914223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/bEc_6nhwQTKU196IpxPSjg/zh-cn_image_0000002658914223.png "点击放大")
 
 ## 背景知识
 

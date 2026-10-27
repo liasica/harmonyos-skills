@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-484
 title: 如何实现当长按触发成功后，移出组件取消当前长按手势
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现当长按触发成功后，移出组件取消当前长按手势
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3c20aae9d946d91be51b7ceea61945b65d2c3490633ce294e1b831a5e2608eaa
 ---
 

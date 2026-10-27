@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-2
 title: 在Native侧如何处理ArkTS侧传入的字符串被截断的异常场景
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 在Native侧如何处理ArkTS侧传入的字符串被截断的异常场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:edbb8401aa9412e7e7d03b6005c123e1987a97e5493b763c128995836fe928fd
 ---
 

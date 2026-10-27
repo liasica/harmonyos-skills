@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-334
 title: List控件加载的数据如何判断是否超过一屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > List控件加载的数据如何判断是否超过一屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fd3d545b204e9b58d98d7aa24376d3387f9b47041cfdadfd3c57722713bc5bca
 ---
 

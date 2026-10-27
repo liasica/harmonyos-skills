@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-10
 title: 视频无法进行倍速播放
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > 视频无法进行倍速播放
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:99d17c90a2a209ed4ea4174198f2ae139b5c4dcc1447a68cd30c4e8ec049213b
+scraped_at: 2026-10-28T07:48:31+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2fe68852e19999577451d07287e7bfdafc076f6fb293ea5ba60b2b15ac8b562c
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:99d17c90a2a209ed4ea4174198f2ae139b5c4dcc1447a68cd30c4e8ec04
 
 搜索关键字SetSpeed，查看是否有修改视频倍速的日志，如果没有相关关键词SetSpeed，说明没有修改视频倍速。下面的日志为成功设置倍速的样例，先设置视频为二倍速，四秒后松开长按变回原速。
 
-```screen
+```txt
 06-12 20:03:32.970   546-11001     C02b22/AudioSinkFilter          media_service         I     (SetSpeed(), 256): AudioSinkFilter::SetSpeed in, speed is 2.000
 06-12 20:03:32.971   546-11001     C02b22/HiStreamer               media_service         I     [ASSP]:SetSpeed entered.
 06-12 20:03:32.971   546-11001     C02b87/AudioRenderer            media_service         I     [SetSpeed]set speed 2.000000
@@ -43,7 +43,7 @@ content_hash: sha256:99d17c90a2a209ed4ea4174198f2ae139b5c4dcc1447a68cd30c4e8ec04
 
 修改视频倍速相关代码逻辑。以Video组件为例：
 
-```screen
+```ts
 import { window } from '@kit.ArkUI';
 
 @Entry

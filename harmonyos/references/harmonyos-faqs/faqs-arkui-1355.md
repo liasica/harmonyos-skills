@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1355
 title: LazyForEach删除数据出错
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > LazyForEach删除数据出错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:21+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:718bf95a35790ac94bb59570e4f37e38a2e5db02099561496c8be72b906ce13c
 ---
 

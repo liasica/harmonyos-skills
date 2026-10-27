@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-41
 title: 在Web组件的H5页面中，如何使用a标签实现打开各种页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 在Web组件的H5页面中，如何使用a标签实现打开各种页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0638271045b8250c773a2a4dee4aafab8068e647ff76b24f8e29cc68d28001a1
 ---
 

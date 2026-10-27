@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-834
 title: 点击图片，图片异常上下跳动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 点击图片，图片异常上下跳动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d8efa583fe85c73385a38c561aa1d8c30db25db092d4e20e2217f5b07d1cc48f
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a2cf71cad28ece3979d27a60f0aafd2dce545a4a1426e68970292433f3e7cc5c
 ---
 
 ## 问题现象
 
 点击图片，图片放大跳动并显示弹窗，关闭弹窗时图片缩小跳动，放大缩小时无动画，显示异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/jkBT23PcRA-_zhMiO4PbAQ/zh-cn_image_0000002628558358.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/XSyaurEpRhyYaOALPYYjGA/zh-cn_image_0000002628558358.png "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:d8efa583fe85c73385a38c561aa1d8c30db25db092d4e20e2217f5b07d1
 
 1. 使用DevEco Testing查看问题组件，该组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/3CZeEVe2Tc2KyOGgIWYp1w/zh-cn_image_0000002658917669.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/mNvTz7F4TbinszlrZvKc5A/zh-cn_image_0000002658917669.png "点击放大")
 2. 查看该Image组件的设置，该组件设置点击显示弹窗和关闭弹窗时改变图片组件的尺寸，且未对尺寸变化通过animateTo设置动画，而是直接改变尺寸。
 
    ```screen

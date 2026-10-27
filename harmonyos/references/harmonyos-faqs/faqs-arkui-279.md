@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-279
 title: 如何在代码中触发应用后台运行
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何在代码中触发应用后台运行
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bab6e8b5f7853f001630699d5e7b3e71492417b5f2f860351f9ef58c6c88b4af
 ---
 

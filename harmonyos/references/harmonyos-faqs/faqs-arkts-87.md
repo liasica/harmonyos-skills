@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-87
 title: 如何获取对象的类名
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何获取对象的类名
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:52+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7733a26b4f747d02a14013519f4cdd8da8b0b107d7be8325087db5c04893d6a9
 ---
 

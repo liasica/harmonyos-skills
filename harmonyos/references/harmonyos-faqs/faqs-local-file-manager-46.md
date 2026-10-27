@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 解决冷启动picker选择器无权限问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 解决冷启动picker选择器无权限问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3cecff6a48cc619e5f440573ece24d2c181aab84779f53b782c4794e0be59b62
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 怎么获取应用已使用的缓存大小，如何使用API清理缓存
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 怎么获取应用已使用的缓存大小，如何使用API清理缓存
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:574a974e489bc063f520fd667d8ca357d3fc47150bb8eeb94d4d0b45efc6154d
 ---
 

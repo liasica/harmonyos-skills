@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-532
 title: 播放视频时，画面展示不全，存在截断的情况
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 播放视频时，画面展示不全，存在截断的情况
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c7c5c7d22e8f3b897a0c7418c67acdb0f0849c78a0d9443bd438dd78f433e4be
 ---
 

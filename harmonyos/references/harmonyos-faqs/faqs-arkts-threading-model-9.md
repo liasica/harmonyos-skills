@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-thre
 title: useNormalizedOHMUrl配置为true导致HAR包中创建Worker失败
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > useNormalizedOHMUrl配置为true导致HAR包中创建Worker失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:31+08:00
+scraped_at: 2026-10-28T07:46:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b2eb4399cd636d269dac7063881085d614d68305857f031b480aedff411301c5
+content_hash: sha256:ca4a40ecf6fb21cff69da56b8dc18b91da166799a11878079f535ff6f4e9b565
 ---
 
 ## 问题现象
@@ -127,6 +127,6 @@ Stage模型下加载HAR中Worker线程文件存在以下两种情况：
 
 Q：在项目中引入ijkplayer实现录屏功能，引入ijkplayer本地HAR包后，编译时提示useNormalizedOHMUrl is not true，将该属性设置为true时，再打开项目时，整个项目直接出现白屏，无法进入到首页。报错信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/8XfbqsF4TOanDbuTjAqkyg/zh-cn_image_0000002659138347.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/I8DiyAOgSbqZ87OJfxgIzg/zh-cn_image_0000002659138347.png "点击放大")
 
 A：根据报错信息分析得出是Worker路径不对，Worker使用有这样一个限制，当开启useNormalizedOHMUrl（在工程目录中与entry同级别的应用级build-profile.json5文件中，将strictMode属性下的useNormalizedOHMUrl字段配置为true）或HAR包被打包成三方包使用时，HAR包中使用Worker仅支持通过相对路径的加载形式创建。可参考Worker线程文件路径注意事项。

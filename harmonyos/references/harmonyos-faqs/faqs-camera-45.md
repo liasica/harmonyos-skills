@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-45
 title: 打开相机进行拍照时，拍照预览区域尺寸异常
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 打开相机进行拍照时，拍照预览区域尺寸异常
 category: harmonyos-faqs
-scraped_at: 2026-09-23T06:59:49+08:00
+scraped_at: 2026-10-28T07:48:25+08:00
 doc_updated_at: 2026-09-22
-content_hash: sha256:90e663a4da0fd67dc19dbe8facfdebc3aff553472275aec663db4fe1dd6a8c3f
+content_hash: sha256:f9abded80ef388910bf7cbb770da330aaacda94573a3de9ad709a5cb043cbd68
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ content_hash: sha256:90e663a4da0fd67dc19dbe8facfdebc3aff553472275aec663db4fe1dd6
 
 1. 通过DevEco Studio自带的布局分析能力[ArkUI Inspector](../harmonyos-guides/ide-arkui-inspector.md)查看页面布局，可见页面通过XComponent组件渲染。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/vEZUq400SIKiKxN8gY9vog/zh-cn_image_0000002628392586.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/PM1QDnrbQR6Gm-yyaLpG3A/zh-cn_image_0000002628392586.png "点击放大")
 2. 由于现象是拍照区域大小异常，查询XComponent官方文档中跟大小，宽高，显示区域相关的API，发现通用属性中Width和Height属性以及setXComponentSurfaceRect方法都会影响XComponent的渲染显示区域。
 3. 因此建议检查代码中XComponent的宽高属性及setXComponentSurfaceRect方法中surfaceWidth和surfaceHeight的值设置的是否与设备屏幕宽高一致，如果这些值设置不一致，则会导致拍摄显示区域出现尺寸异常的现象。
 

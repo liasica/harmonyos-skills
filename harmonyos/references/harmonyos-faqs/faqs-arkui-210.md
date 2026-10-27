@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-210
 title: 如何在自定义弹窗中再次弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在自定义弹窗中再次弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
+scraped_at: 2026-10-28T07:47:56+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:49b902999d6393c2a66a5050e3871f8fab8b1e7b4bd05811829a3d8881a31216
+content_hash: sha256:9672349d835ed5517be8a58985835dd78a8eb88878c9bee4c37b36f2727cb73c
 ---
 
 通过[openCustomDialog](../harmonyos-references/arkts-apis-uicontext-promptaction.md#opencustomdialog12)打开弹窗A，在弹窗A中点击按钮打开弹窗B。通过[getDialogController](../harmonyos-references/ts-custom-component-api.md#getdialogcontroller18)获取PromptActionDialogController实例对象并调用close()方法关闭当前弹窗。具体可参考示例代码：
@@ -118,4 +118,4 @@ struct PopUpDialogAgainInCustomDialog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/7lkRAaqGSz-aEXp6pBjL-w/zh-cn_image_0000002624635826.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/0lT2KxUwRg6Jhi23tI4IWw/zh-cn_image_0000002624635826.gif "点击放大")

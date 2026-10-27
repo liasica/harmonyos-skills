@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: 如何解决蓝牙订阅事件异常问题
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 如何解决蓝牙订阅事件异常问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
+scraped_at: 2026-10-28T07:48:19+08:00
 doc_updated_at: 2026-08-19
-content_hash: sha256:5e9266bea89d7509cc7e0925a42245036c36855204235b2a72ea4a199b8bee42
+content_hash: sha256:e8c53262cc6b2cf84598cf46d91603a350b8068f16a2a8d36dc4f6d2af6d4701
 ---
 
 ## 问题现象
@@ -64,10 +64,10 @@ content_hash: sha256:5e9266bea89d7509cc7e0925a42245036c36855204235b2a72ea4a199b8
    ```
 2. 分析hilog日志，发现应用的订阅时间为14:16:50.545，对端设备回复消息的时间为14:16:50.543，对端设备已经回复过消息了，应用才订阅通知，因此订阅事件未能触发。若订阅BLE特征值变更事件后回调未触发，还需检查是否已调用setCharacteristicChangeNotification或setCharacteristicChangeIndication启用通知或指示能力，未启用则无法接收server端的特征值变更通知。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/pHrETneWR9S1Eca02fQPPg/zh-cn_image_0000002682922530.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/OzI4357BTjiKSaS-7uckWQ/zh-cn_image_0000002682922530.png "点击放大")
 3. 订阅stateChange事件会监听所有[BluetoothState](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)状态变化，而不仅仅是最终的开启或关闭状态。关闭蓝牙时会经历STATE\_BLE\_TURNING\_OFF中间态，最终到达STATE\_OFF状态，每个状态变化都会触发回调。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/bUK2L1l0QWiRH3DlhQ4E7w/zh-cn_image_0000002712522461.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/9XQcVfw4RpGFqDco3RgJWQ/zh-cn_image_0000002712522461.png "点击放大")
 
 ## 修改建议
 

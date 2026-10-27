@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-950
 title: 解决bindContextMenu长按菜单关闭时的事件穿透问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 解决bindContextMenu长按菜单关闭时的事件穿透问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:4b8eb3bb2ddd6166d4899af592ec7732165dbb208de244f7c715cde52ad6dd23
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:fc2051af296cafe73b3aee6bc55146f749eddd0d64a6a7f39d5d996c0f07fb29
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:4b8eb3bb2ddd6166d4899af592ec7732165dbb208de244f7c715cde52ad
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/-jhsaGTyTmuYw73k-LYlfw/zh-cn_image_0000002658920459.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/G2i_1DvwQdy9K1qkU5SOHw/zh-cn_image_0000002658920459.gif "点击放大")
 
 ## 背景知识
 

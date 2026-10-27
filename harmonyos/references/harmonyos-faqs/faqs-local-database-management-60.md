@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何解决PersistentStorage在EntryAbility中获取持久化数据失败的问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何解决PersistentStorage在EntryAbility中获取持久化数据失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a1bd16c98aedd97bb75e7f69334cfb00403d45ed575a3db7d1ef66e1230c715f
+scraped_at: 2026-10-28T07:47:59+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2b0b4ab2467b36cf65b5c2ae5a71b51e83e31b8012abd3f7bfa398101aacb0ba
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:a1bd16c98aedd97bb75e7f69334cfb00403d45ed575a3db7d1ef66e1230
 
 1. 检查PersistentStorage存储的Token信息是否持久化在本地。检查“/data/app/el2/100/base/包名/haps/entry/files/persistent\_storage”文件，发现Token信息已经持久化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/euXSAGAjRIWAbUyB6QsMBg/zh-cn_image_0000002659138355.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/Y2XDYn6MQPyXGgFGgZdt5w/zh-cn_image_0000002659138355.png "点击放大")
 2. 检查EntryAbility中获取Token信息是否有值。经过断点调试，发现该值为空。
 
 ## 分析结论

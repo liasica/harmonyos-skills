@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决编译本地依赖包失败的问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决编译本地依赖包失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:56+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:2385c883ca072af993f731afb2d6a3b191d02ea62903c6b348c9f364ad3334f6
+content_hash: sha256:79fccf56e3d84a92eb4a3745288923ca99264d6312fd07b0f3f02f88f5a7a5fa
 ---
 
 ## 问题现象
@@ -42,10 +42,10 @@ HSP（Harmony Shared Package）是动态共享包，包含代码、C++库、资�
 1. [安装引用共享包](../harmonyos-guides/ide-har-import.md)参考官方文档。
 2. 在运行配置页，选择[Deploy Multi Hap](../harmonyos-guides/ide-run-debug-configurations.md#section711735724014)标签页，勾选Deploy Multi Hap Packages，选择依赖的模块，点击OK保存配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Zox4qrW4RY-uuSm53sw0PQ/zh-cn_image_0000002628569172.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/yR9M34wATHyFro_nHC6dcg/zh-cn_image_0000002628569172.png "点击放大")
 3. 在运行配置页，选择General标签页中配置[Auto Dependencies](../harmonyos-guides/ide-run-debug-configurations.md#section18910152417412)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/EP2t7BItRlmU62CiE-JPlQ/zh-cn_image_0000002658928497.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/Zbh3gW6ERo2MO2BDc0hrwg/zh-cn_image_0000002658928497.png "点击放大")
 4. [配置签名](../harmonyos-guides/ide-signing.md#section18815157237)，DevEco Studio在打包时会对HSP模块重签名，只有重签名才会进行部署entry时自动部署HSP依赖。
 
 ## 总结

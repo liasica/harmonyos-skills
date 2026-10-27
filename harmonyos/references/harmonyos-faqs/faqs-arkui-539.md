@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-539
 title: 页面退出时，旧页面的内容与新页面的内容重叠
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面退出时，旧页面的内容与新页面的内容重叠
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:ca20d739c0c3c18a08a488271b46b9b69d701c5deba22339924d68b474d82af0
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bf091fe70e27441e86331fedcf5dd06d32b2116ce73262a1835dcd33bb141153
 ---
 
 ## 问题现象
 
 页面退出时，新页面与正在退出的页面显示重叠。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/uJd54rYNSh6prAe94EzHWQ/zh-cn_image_0000002628391616.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/CLgzbr8vQnq_mUBuxBJRzg/zh-cn_image_0000002628391616.png "点击放大")
 
 ## 背景知识
 
@@ -189,4 +189,4 @@ src/main/module.json5文件中需添加"routerMap": "$profile:router\_map"。
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/DdL4pt9eQvyhh5NuB4zbzw/zh-cn_image_0000002658910833.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/NGY7Qq9jRhi0dhTYHGzrCQ/zh-cn_image_0000002658910833.png "点击放大")

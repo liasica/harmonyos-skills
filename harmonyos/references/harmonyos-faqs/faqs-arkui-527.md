@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-527
 title: 如何实现滑块移动并跟随滑块进度显示不同的内容UI
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现滑块移动并跟随滑块进度显示不同的内容UI
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1c96547cae462110ffd51cd6a2bd72c7435b2dc1ef6c3ea8769db72dfb03940f
 ---
 

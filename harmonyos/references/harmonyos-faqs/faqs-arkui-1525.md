@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1525
 title: 无法通过点击在画板上画出点
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 无法通过点击在画板上画出点
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ecaa59d3d79474b07ac7f14f6b71e6d0c6e03898278e8be6db324da7071b736c
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-82
 title: 如何解决使用TcpSocket接收到的数据被截断的问题
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何解决使用TcpSocket接收到的数据被截断的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:36+08:00
+scraped_at: 2026-10-28T07:48:15+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:fa1166a73249b8bdb375fa1a9241fbc422c76ca264493223f4ea410bf3a8f6a5
+content_hash: sha256:a28c72abc18ea47f35d049e300f2af7b3ef9fff1e612d6812ce94c5672b81d0d
 ---
 
 ## 问题现象
@@ -18,21 +18,21 @@ TCP是面向字节流的协议，是无边界的。由于没有边界，当发�
 
 * 正常传输数据包：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/sxlU0n25T0y5NR9nFQgATg/zh-cn_image_0000002628770212.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/sQGLuQpSRlickFrhsaVv7g/zh-cn_image_0000002628770212.png "点击放大")
 * TCP粘包：
 
   是指发送方发送的若干数据，在接收方的缓冲区里被组合到一起后读取，后面数据包的头部“粘着”前面数据包的尾部，当单个包比较小时，多个包可能会被合并成一个数据包，所以称为粘包。
 
   粘包示意图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/kqk42HNPStOpq7nugkV3lg/zh-cn_image_0000002658969537.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/hWyGAFy2QXilo625Rj2CJg/zh-cn_image_0000002658969537.png "点击放大")
 * TCP拆包：
 
   是指一个比较大的数据包，在接收方缓冲区被拆分成多个数据包来读取，这些多个数据包组合起来才是正确的数据包。
 
   拆包和粘包示意图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/7H1pJfL1RTa1DZFnxjqVbQ/zh-cn_image_0000002628610326.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/tnt2zOyWRTmwp6jw3Zpb8A/zh-cn_image_0000002628610326.png "点击放大")
 
 ## 问题定位
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-k
 title: 在室内时，在持续定位场景中设置interval为1，为何不生效
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 在室内时，在持续定位场景中设置interval为1，为何不生效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:22:10+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:42+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1691cfe91e78319ceba790d8d707a5a99433590fc43bfc31743d3f391591f6d6
 ---
 

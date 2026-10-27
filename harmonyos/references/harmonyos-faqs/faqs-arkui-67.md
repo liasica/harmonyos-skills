@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-67
 title: 如何设置窗口旋转
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何设置窗口旋转
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d47d8e2ab1daa590658e5a6e546ccfce5818a8d4ccb426f585c41daf4a45e301
 ---
 

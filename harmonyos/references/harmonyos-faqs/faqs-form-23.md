@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-23
 title: 如何将卡片添加至桌面
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何将卡片添加至桌面
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:79b6877eedea37f436349723ec69b3280825c84be449659cd0468edd9f25beb7
+scraped_at: 2026-10-28T07:46:51+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3fbae76d073236cd3f2ff915f7843e69220e04605bedeeed17a69263749f6997
 ---
 
 ## 问题现象
@@ -24,10 +24,10 @@ content_hash: sha256:79b6877eedea37f436349723ec69b3280825c84be449659cd0468edd9f2
 
 * 桌面长按应用图标，点击卡片，拉起卡片管理页面，将卡片添加至桌面。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/IxH7rWgWSdyyJlaXR8_W_Q/zh-cn_image_0000002658990873.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/EGJhGn-0TeOYL0_9EoTz6A/zh-cn_image_0000002658990873.png "点击放大")
 * 桌面双指捏合，进入桌面管理，点击下方卡片，拉起卡片页面，将卡片添加至桌面。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/OccMChWSTTeTA7SjIkXhlg/zh-cn_image_0000002628631664.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/p0vuMs68Q8ulDjqJYfsN3g/zh-cn_image_0000002628631664.png "点击放大")
 * 应用内调用formProvider.openFormManager接口，拉起卡片管理页面，将卡片添加至桌面。[formProvider.openFormManager](../harmonyos-references/js-apis-app-form-formprovider.md#formprovideropenformmanager18)接口根据传入的want参数，拉起卡片管理页面并优先显示参数对应的卡片。若want参数错误，则无法拉起卡片管理页面；若want参数的parameters字段不完整或指定的卡片不存在，则默认展示form\_config.json中配置的默认卡片。
   + want参数需包含字段包括：
     - bundleName：卡片所属应用的包名。
@@ -87,7 +87,7 @@ content_hash: sha256:79b6877eedea37f436349723ec69b3280825c84be449659cd0468edd9f2
 
   实现效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/yxWL3GK5SfSAZmInwmnf6w/zh-cn_image_0000002658870937.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/T8LZbFvcRSGk1BMytEQzMA/zh-cn_image_0000002658870937.png "点击放大")
 * 使用[FormMenu](../harmonyos-references/ohos-arkui-advanced-formmenu.md)组件，通过长按组件弹出“添加至桌面”菜单，将卡片添加至桌面。以[Menu](../harmonyos-references/ts-basic-components-menu.md)组件为菜单容器，通过[AddFormMenuItem](../harmonyos-references/ohos-arkui-advanced-formmenu.md#addformmenuitem)添加菜单子项，根据AddFormMenuItem中传入的参数want，将指定的卡片添加至桌面，添加时会根据传入的组件ID获取组件快照和位置，用于添加桌面时的过渡动效。若want参数或组件ID错误、指定的卡片不存在或未在form\_config.json中配置，则无法将卡片添加至桌面。
   + want参数需包含字段包括：
     - bundleName：卡片所属应用的包名。
@@ -165,7 +165,7 @@ content_hash: sha256:79b6877eedea37f436349723ec69b3280825c84be449659cd0468edd9f2
 
   实现效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/bbMtMiBrS0WFtWN18-dNPA/zh-cn_image_0000002628791568.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/hKpRr64NSoSu-mAIVOFVCA/zh-cn_image_0000002628791568.png "点击放大")
 
 ## 总结
 

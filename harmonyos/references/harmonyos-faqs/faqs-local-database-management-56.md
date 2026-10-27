@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何导出并查看数据库文件
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何导出并查看数据库文件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2252f15afaa1e2061515772876dd3af5b58ef49958b823ca4496f09e92df1c0e
+scraped_at: 2026-10-28T07:47:58+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:86fe8fa0e2aa30e82224371cbd7e0bddadf1672a704326158137fd60701b3b80
 ---
 
 ## 问题现象
@@ -35,10 +35,10 @@ HarmonyOS侧提供了关系型数据库（Relational Database，RDB）供开发�
   hdc命令可参考[hdc命令列表](../harmonyos-guides/hdc.md#hdc命令列表)。
 * 通过DevEco Studio导出。打开DevEco Studio使用自带的Device File Browser找到数据库存放的路径，选中文件->右键->Save As导出。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/t9O0IFmISMq6eccqTYfFKQ/zh-cn_image_0000002659138353.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/hkrmmprxT2C8LEIMnFs9Tg/zh-cn_image_0000002659138353.png "点击放大")
 * 使用三方库[@hadss/debug-db](https://ohpm.openharmony.cn/#/cn/detail/@hadss%2Fdebug-db)实现,项目中集成debug-db后，通过浏览器访问可视化页面查看并操作数据，点击Download下载数据库文件（db文件+wal文件+shm文件）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/cTcMDk7PSom0Q5qYWsUTXw/zh-cn_image_0000002629059002.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/RW_IrWJ7S2OMk2zLJE1PMw/zh-cn_image_0000002629059002.png "点击放大")
 
   **说明** 
 
@@ -46,4 +46,4 @@ HarmonyOS侧提供了关系型数据库（Relational Database，RDB）供开发�
 
 **查看**数据库文件，HarmonyOS侧未给出官方的可视化工具，可通过第三方数据库工具查看如（DB Browser for SQLite、SQLitestudio等）或者集成三方库@hadss/debug-db，通过可视化页面查看。下图以DB Browser for SQLite工具为例，打开了名为database.db的数据库文件，可看到对应的数据库结构及表数据，使用系统默认加密的数据库不支持导出到本地使用数据库工具查看。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/2OXFiYZFRlunSXvTF2Wu_g/zh-cn_image_0000002628899084.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/gXZ-5SvVQxuzPJ-GbiItBA/zh-cn_image_0000002659258295.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/txvSToxBSH6HPV4Kl9dpjw/zh-cn_image_0000002628899084.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/pQgScJOnRS2riDJV0uCeKg/zh-cn_image_0000002659258295.png "点击放大")

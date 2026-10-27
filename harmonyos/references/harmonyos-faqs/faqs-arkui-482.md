@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-482
 title: Text组件设置opacity后，文字颜色在整体透明度基础上叠加了一个透明，应该如何处理
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件设置opacity后，文字颜色在整体透明度基础上叠加了一个透明，应该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:19cf2af34c5b6d02adab52430d628c8363412da7ff552d25c25af2cb4b91a5b2
 ---
 

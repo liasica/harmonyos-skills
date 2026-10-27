@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: ohpm unpublish ${name} -f命令执行失败
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > ohpm unpublish ${name} -f命令执行失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
+scraped_at: 2026-10-28T07:49:03+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:70d93ef4cb453a94f295d7075dcc404663380c663561f00f3fcf40b12035fd70
+content_hash: sha256:c7332ba2ad289bd49402eb4e999e30c8b10f0d8c3c3acf4edbde884d1d20f6be
 ---
 
 ## 问题现象
@@ -17,7 +17,7 @@ ERROR: HttpCode 400 The OHPM package has been depended on by other components
 ERROR: Unpublish failed, detail: The "Unpublish" request to url "https://ohom.openharmony.cn/ohpm/XXX" has failed
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/tRwq0h5kSzi_NeQAeNXNbQ/zh-cn_image_0000002658928949.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/HNMlX58DQEms9aHXKZ55HQ/zh-cn_image_0000002658928949.png "点击放大")
 
 ## 背景知识
 

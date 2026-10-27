@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-736
 title: 通过自定义弹窗实现自定义样式的Toast
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 通过自定义弹窗实现自定义样式的Toast
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:59e142d8e0abda821f5f6f206bacdda18bf5ebd16b286a8a8009a3f1078b9450
+content_hash: sha256:f01879446940a056d1e0df21be86f55aeda68d5be56e452de6414d8586806546
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ HarmonyOS的Toast接口，不支持设定圆角样式。如何实现类似其他
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/MnsOToPCRf6FOeRY_LoQFg/zh-cn_image_0000002628555228.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/WcEZ23e-TViVRZ94yyqEZA/zh-cn_image_0000002628555228.gif "点击放大")
 
 ## 背景知识
 

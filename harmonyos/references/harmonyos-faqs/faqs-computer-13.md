@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-computer-1
 title: PC中List如何通过上下键循环走焦
 breadcrumb: FAQ > 多设备场景 > 电脑 > 常见问题 > PC中List如何通过上下键循环走焦
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:101127a3d8f9dafb586963e071ba118528ab1f87302c3322eed8bb10126a3daf
+content_hash: sha256:0a36e85dd6be4ee552949454329e2cdc15ab51864ed9201d9e4890e7680a55f6
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:101127a3d8f9dafb586963e071ba118528ab1f87302c3322eed8bb10126
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/2jWQqYswT1mnCpvJqXXdqQ/zh-cn_image_0000002628392468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Ha1iL2IQQw-e0hJesIs0Qg/zh-cn_image_0000002628392468.png "点击放大")
 
 ## 背景知识
 

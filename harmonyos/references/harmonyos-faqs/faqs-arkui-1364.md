@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1364
 title: 工厂模式创建的自定义弹窗背景颜色不随系统深色模式变化如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 工厂模式创建的自定义弹窗背景颜色不随系统深色模式变化如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:13e1f4b9299371654c27e0b491011936d654850333148d43e4762336a89c45fd
+content_hash: sha256:010ccabafd1ce582df0971a9fefbd6e538a7ed0d14d125668dff6dc32a3dc61b
 ---
 
 ## 问题现象
@@ -65,11 +65,11 @@ struct TestComponent {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/idoSy5aAScWdmfJJ9E_rpw/zh-cn_image_0000002628761920.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/5GMBgdVvS9-PxDUPpEaAxg/zh-cn_image_0000002628761920.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/g0I1f2hSTjaBmWOUzYX-GQ/zh-cn_image_0000002658961249.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ZHe4AwqETEe1jyirNXKmjw/zh-cn_image_0000002658961249.gif "点击放大")
 
 ## 背景知识
 

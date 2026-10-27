@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-276
 title: 如何实现List内拖拽交换子组件位置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现List内拖拽交换子组件位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e67465a4946bba85a8907ca7e38577ddc078502a5cb41957ee11ac0d38205d9b
 ---
 

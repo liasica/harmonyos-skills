@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-169
 title: 如何自定义日期时间格式
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何自定义日期时间格式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4b2782fc15209e175975dd604b994b7524ea1c1592145efebd2692fc9963cbf9
 ---
 

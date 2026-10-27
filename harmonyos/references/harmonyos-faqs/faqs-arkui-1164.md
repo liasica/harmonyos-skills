@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1164
 title: 自定义组件添加链式调用导致布局异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义组件添加链式调用导致布局异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d29b03bff4493f1a1f6abdbaaa8e00848574f94258eba8d28e6f84c751cfe179
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4151f27db261f364bd8c8b530ff2084f451345d44b159985d06dc09452b3fee9
 ---
 
 ## 问题现象
@@ -56,11 +56,11 @@ struct ChildComponent {
 
 添加背景色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/elImD9WzSY647FtrP4OWEQ/zh-cn_image_0000002658929085.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/1ycJEfRhRDyd2o_2rNdkug/zh-cn_image_0000002658929085.png "点击放大")
 
 不添加背景色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/i82O_XLkQQKuR2L32OxlHw/zh-cn_image_0000002658809135.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/NsZLT4yDSQiOJSBHUMeAvA/zh-cn_image_0000002658809135.png "点击放大")
 
 ## 背景知识
 
@@ -70,7 +70,7 @@ ArkUI给[自定义组件设置样式](../harmonyos-guides/arkts-create-custom-co
 
 打开DevEco Studio中的ArkUI Inspector工具，对比设置背景色与无背景色的自定义子组件的节点树。发现设置背景色的自定义子组件外层嵌套了一层容器组件。左图设置背景色，右图无背景色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/8ebDIcMXRW2XULuQAHdbXA/zh-cn_image_0000002628569774.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/cITGuX2hRGKzV3ruS_h5gQ/zh-cn_image_0000002628409870.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/C0UdZwuoQmuPmpwFZWyE-w/zh-cn_image_0000002628569774.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/MaSWuKhUQ9eQBN14Gap5Hg/zh-cn_image_0000002628409870.png "点击放大")
 
 ## 分析结论
 

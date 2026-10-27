@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-kit
 title: ASCF框架web-view组件如何向H5的window对象注入方法或属性
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > ASCF框架web-view组件如何向H5的window对象注入方法或属性
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-07-22
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5d95f69cdddcd9a0b54c6e944274c1f1da20e75366d541f9134a58cd8a12d5a3
 ---
 

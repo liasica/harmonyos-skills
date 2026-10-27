@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1458
 title: Video初始化阶段闪屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Video初始化阶段闪屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9475a19bdb4ef63480c971d547d02f3f1ba91ae05421f071fa1c08c74b67a821
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-11
 title: Native查询麦克风权限状态时崩溃
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > Native查询麦克风权限状态时崩溃
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:12c529bee71fa296d52c1a5a1a13424c1bd5b5f8a4084f24bfbed7689f4c0ab7
+scraped_at: 2026-10-28T07:46:59+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7fdf1bb43d4bce093c554c9e9f248591f0e5f2bdd3fb0f7e1274b105cfd05fd5
 ---
 
 ## 问题现象
@@ -31,7 +31,7 @@ content_hash: sha256:12c529bee71fa296d52c1a5a1a13424c1bd5b5f8a4084f24bfbed7689f4
 
 如上，在native层调用ArkTS API查询当前麦克风的权限状态时，会出现崩溃。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ZVS2J2NpQfeZln7q9K7ewA/zh-cn_image_0000002628388614.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/4P0RTWYNTT2hJns9nzW3hA/zh-cn_image_0000002628388614.png "点击放大")
 
 ## 背景知识
 
@@ -41,7 +41,7 @@ napi\_value是一个C的结构体指针，表示一个JavaScript对象的引用�
 
 根据崩溃日志定位分析NULL pointer dereference原因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/uGg2hGRyRPWUxniY0FpUCQ/zh-cn_image_0000002628548514.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/NdLplnSJRaWTMpzVWdL9vA/zh-cn_image_0000002628548514.png "点击放大")
 
 对案例Demo进行debug分析可见abilityAccessCtrlModule获取出来是一个napi\_undefined类型，而status = napi\_get\_named\_property(env,abilityAccessCtrlModule,"createAtManager", &createAtManagerMethod)，期望abilityAccessCtrlModule是一个napi\_value的object类型。
 

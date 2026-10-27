@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-119
 title: 页面标题内容快速变化
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 页面标题内容快速变化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:cf8d9679cdde3c87a6d90bb4d5f77168ad1545a62d4c6f30c3664aaa31632953
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ab00ea2beecd9a537578d966164c9d781ed107815cd4c947db53857e967bc88a
 ---
 
 ## 问题现象
 
 进入Web页面时，页面顶部的标题内容快速变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/tnzMoK_BQHy7qmngIXt-zg/zh-cn_image_0000002628899130.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/FAInoCP4QsiPt3ndeuB-NQ/zh-cn_image_0000002628899130.png "点击放大")
 
 ## 背景知识
 
@@ -150,4 +150,4 @@ resource://rawfile/title.html：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6aY29U-MSS2_bCJtsgktOw/zh-cn_image_0000002659138399.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Bb3WQzQBT5ClmgR_NzIfGA/zh-cn_image_0000002659138399.png "点击放大")

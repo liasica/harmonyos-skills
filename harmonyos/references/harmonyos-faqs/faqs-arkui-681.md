@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-681
 title: Video播放网络视频异常的常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Video播放网络视频异常的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bc60150c02087e48d4918a6e395e9e4713cbf9b0e4e71a83a61a3ff260fb949f
 ---
 

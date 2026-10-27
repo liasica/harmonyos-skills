@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-510
 title: 自定义弹窗如何使用WrappedBuilder封装的样式实现倒计时效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义弹窗如何使用WrappedBuilder封装的样式实现倒计时效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2b9e72daa712d37a03cf47ced02e6da9b839e59851ffc18eb1f57b206453208d
 ---
 

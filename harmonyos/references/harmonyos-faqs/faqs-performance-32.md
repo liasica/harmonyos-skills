@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 打开隐私政策页面，隐私政策内容加载慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 打开隐私政策页面，隐私政策内容加载慢
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:191b77afbd7e0e69c550871de771d653984c3c74ea4c46e9efbd811aa541d431
+content_hash: sha256:5c7ae67f96b1c47657217516f3c45281911370c8bbfb713ecf0a57a2999c8fb1
 ---
 
 ## 问题现象
@@ -22,10 +22,10 @@ content_hash: sha256:191b77afbd7e0e69c550871de771d653984c3c74ea4c46e9efbd811aa54
 ## 问题定位
 
 1. 使用ArkUI Inspector抓取隐私政策界面布局，发现隐私政策采用Web组件显示，因此隐私政策内容加载涉及Web网页加载。
-2. 使用DevEco Profiler ArkWeb工具抓取隐私政策内容加载过程的Trace信息，查看ArkWeb泳道的信息，可知加载耗时主要集中在网页子资源下载和渲染部分。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/_byILQk8TwOnH2-q22zsUA/zh-cn_image_0000002628395172.png "点击放大")
+2. 使用DevEco Profiler ArkWeb工具抓取隐私政策内容加载过程的Trace信息，查看ArkWeb泳道的信息，可知加载耗时主要集中在网页子资源下载和渲染部分。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/di9Wt8yMRsGtnlM75VoVQw/zh-cn_image_0000002628395172.png "点击放大")
 
-   查看应用的Web渲染线程，发现耗时集中在H:EvaluateScript和H:v8.callFunction，网页加载时JS编译与执行耗时较多，与网页有关。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/N9LML6nrSIakCCt0t03TAg/zh-cn_image_0000002658914401.png "点击放大")
-3. 使用DevTools录制隐私政策内容加载情况，可看到隐私政策页面加载的JS、CSS文件较多，脚本编译和执行耗时达到1.2s，脚本代码逻辑复杂，导致隐私政策内容加载慢。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/OYbrq1DzQ16FuH5nfpb8Hw/zh-cn_image_0000002658794443.png "点击放大")
+   查看应用的Web渲染线程，发现耗时集中在H:EvaluateScript和H:v8.callFunction，网页加载时JS编译与执行耗时较多，与网页有关。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/FagnQm14QTmiknHi4Zkp0w/zh-cn_image_0000002658914401.png "点击放大")
+3. 使用DevTools录制隐私政策内容加载情况，可看到隐私政策页面加载的JS、CSS文件较多，脚本编译和执行耗时达到1.2s，脚本代码逻辑复杂，导致隐私政策内容加载慢。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/M9v_mbfwQ1u3ytOVHmvtMQ/zh-cn_image_0000002658794443.png "点击放大")
 
 ## 分析结论
 

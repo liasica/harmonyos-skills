@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: AES加密如何使用ISO7816-4PADDING进行填充
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > AES加密如何使用ISO7816-4PADDING进行填充
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
+scraped_at: 2026-10-28T07:48:11+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:79a707e6898c5c756e927784363a21922abb9bfcd4e2b2207236b3315666b83d
+content_hash: sha256:5f73e579566eedf317b315454891da090d42a5c82b5125f9fa78b20e389e349b
 ---
 
 ## 问题现象
@@ -17,7 +17,7 @@ AES加密无法在CBC模式下用ISO7816-4PADDING进行填充，CBC模式下填�
 * AES为分组加密算法，分组长度为128位。在实际应用中，最后一组明文可能不足128位（16字节），此时可以通过不同的[填充模式](../harmonyos-guides/crypto-sym-encrypt-decrypt-spec.md#填充模式)进行数据填充。
 * 不同分组模式支持的填充模式如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/zrcFZv-2SCGKCOMsUt6Olg/zh-cn_image_0000002628609218.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/1O6nJKVWQ3u7BoxCQH-0ug/zh-cn_image_0000002628609218.png "点击放大")
 * 使用算法库CBC的NoPadding填充，依据业务自行对数据进行ISO7816-4PADDING填充和校验。
 * ISO 7816-4是智能卡通信的国际标准，其中定义了一种特殊的数据填充（Padding）机制，用于将数据块扩展到特定长度；这种填充方案确保数据在传输或加密时符合块大小要求，同时保持数据完整性。
 * ISO 7816-4填充的核心规则：

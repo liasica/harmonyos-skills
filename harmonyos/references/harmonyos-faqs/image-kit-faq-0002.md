@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/image-kit-faq-0
 title: ArkUI-Image图片数据转换与显示常见问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 常见问题 > ArkUI-Image图片数据转换与显示常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:35+08:00
+scraped_at: 2026-10-28T07:48:26+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:d31e0b6ed88ada18026c7f55122737e411912b26c02d7f391a30665d4dd83012
+content_hash: sha256:acd04fa0f621d6efe732f7cc4af59089c21ea282e68392936084e03ab3c6f4fb
 ---
 
 **Q：HarmonyOS中视频流格式转换成的RGB格式的图像文件，如何以图片的形式展示？**
@@ -83,7 +83,7 @@ struct Index {
 
 **A**：需要显示的SVG图片样例如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/LT52yMV_T1G3E5ZbNtp7cA/zh-cn_image_0000002760057440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/sqQ7OiQQR12KefPdB-FlgQ/zh-cn_image_0000002760057440.png "点击放大")
 
 首先可以使用[TextEncoder](../harmonyos-references/js-apis-util.md#textencoder)类的[encodeInto](../harmonyos-references/js-apis-util.md#encodeinto9)方法，将SVG字符串转化为Uint8Array类型，然后使用[createImageSource](../harmonyos-references/arkts-apis-image-f.md#imagecreateimagesource9-2)通过buffer创建ImageSource实例，最后使用[createPixelMap](../harmonyos-references/arkts-apis-image-imagesource.md#createpixelmap7)返回结果，参考代码如下：
 

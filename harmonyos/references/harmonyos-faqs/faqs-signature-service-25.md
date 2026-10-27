@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 手动签名失败的常见问题
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 手动签名失败的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:45+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:b6cc7ed6bb2e9614a1045eebda9325cc1fe14e62688e5cc4e542b68c8b066bd0
+scraped_at: 2026-10-28T07:48:58+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:02d48e2813748755140bf0768be410dca06e5630042b782c8b93f057af2d4b41
 ---
 
 ## 问题现象
@@ -66,7 +66,7 @@ ERROR: Tools execution failed.
 Detail: Please check the message from tools.
 ```
 
-**场景九**：在AGC上配置项目的SHA256指纹，其中在[手动生成签名证书指纹](../hiai-Guides/signature-information-harmonyos-0000001246159273.md#section819817413167)时报错：
+**场景九**：在HarmonyOS 开发者中心上配置项目的SHA256指纹，其中在[手动生成签名证书指纹](../hiai-Guides/signature-information-harmonyos-0000001246159273.md#section819817413167)时报错：
 
 ```txt
 C:\Program Files\Huawei\jdk1.8.0_242\bin>keytool -list -v -keystore D:\myProject\cer1\.p12
@@ -87,7 +87,7 @@ at sun security.tools.keytool.Main.main(Main.java:359)
 
 * [手动签名](../harmonyos-guides/ide-signing.md#section297715173233)。
 * [bm工具错误码](../harmonyos-guides/bm-tool.md#bm工具错误码)。
-* [发布应用](../app/agc-help-releaseharmony-0000001933963166.md)：完成HarmonyOS应用开发、调试与测试后，开发者便可以在AGC正式提交应用上架申请。发布应用涉及申请发布证书、申请发布Profile和正式发布HarmonyOS应用三大步骤，证书和Profile是可能造成上述问题现象的原因之一。
+* [发布应用](../app/agc-help-releaseharmony-0000001933963166.md)：完成HarmonyOS应用开发、调试与测试后，开发者便可以在HarmonyOS 开发者中心正式提交应用上架申请。发布应用涉及申请发布证书、申请发布Profile和正式发布HarmonyOS应用三大步骤，证书和Profile是可能造成上述问题现象的原因之一。
 * 通过DevEco Studio[生成密钥和证书请求文件](../harmonyos-guides/ide-publish-app.md#section1079214271414)时，实际是用IDE内置的jdk生成的密钥库。
 
 ## 问题定位
@@ -122,7 +122,7 @@ at sun security.tools.keytool.Main.main(Main.java:359)
 * 检查证书文件和调试Profile文件是否配套使用。
 * 检查调试证书和调试Profile文件的文件名是否包含中文。参考内容：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Jm6A1kGRS4m-u5OHGj8KPQ/zh-cn_image_0000002628569308.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/XhrM4lekSWOlUu8XBHlhUA/zh-cn_image_0000002628569308.png "点击放大")
 
 **场景八**：
 
@@ -135,13 +135,13 @@ at sun security.tools.keytool.Main.main(Main.java:359)
 1. 查资料可知这个错误有可能是因为不同jdk版本间不兼容。
 2. 查看DevEco Studio的jdk版本为17.0.12：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/8fNnRfo1QW6THsDBCKVkWw/zh-cn_image_0000002658928625.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/PfxuW0oYSIycGi79dUTaVw/zh-cn_image_0000002658928625.png "点击放大")
 3. 查看本地jdk版本为1.8.0：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/xn9_QxpzQNOrSfwwlAjQpg/zh-cn_image_0000002628409404.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/6aYXl7xLTPaiI272x14x4w/zh-cn_image_0000002628409404.png "点击放大")
 4. 将本地的jdk升级到与IDE一致的版本后，再手动获取证书指纹，可以获取到：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/kD7UCQy1RWSCSeEfvPqZvw/zh-cn_image_0000002658808673.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ByI0OfaQRIOTEQUPDoihmg/zh-cn_image_0000002658808673.png "点击放大")
 
 ## 分析结论
 
@@ -225,7 +225,7 @@ IDE生成的密钥库与手动生成密钥指纹使用的jdk版本不一致，�
 
 * 核查证书状态，若证书已过期，请重新申请新的证书及Profile。
 * 重新选取对应类型的证书及Profile，再次构建应用包。
-* 在AGC平台生成对应的调试证书和调试Profile文件时，建议使用英文命名，后续本地调试配置文件路径时就不会产生乱码，避免了修改调试文件名，会避免因与云端文件不一致导致签名失败。
+* 在HarmonyOS 开发者中心平台生成对应的调试证书和调试Profile文件时，建议使用英文命名，后续本地调试配置文件路径时就不会产生乱码，避免了修改调试文件名，会避免因与云端文件不一致导致签名失败。
 
 **场景八**：
 

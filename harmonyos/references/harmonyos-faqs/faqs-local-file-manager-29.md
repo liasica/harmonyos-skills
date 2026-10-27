@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: fileIo.open读取应用沙盒路径失败
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > fileIo.open读取应用沙盒路径失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-18
+scraped_at: 2026-10-28T07:48:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:114b2291477bfe00d18a75e3fa8dc310e8e03311de9ba9f0fa129dd1db8ea955
 ---
 

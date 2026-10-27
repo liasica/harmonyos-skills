@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1655
 title: 如何将自定义弹窗Builder作为变量传递实现弹窗控制器
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何将自定义弹窗Builder作为变量传递实现弹窗控制器
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9548fd8515d5e474b9952be1e4751ec9effb5418cadacc51b7c2822dcf252916
+content_hash: sha256:e82ba5703fe54865f5674f74a313c0608852554757ceacc54328231213c0d63f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:9548fd8515d5e474b9952be1e4751ec9effb5418cadacc51b7c2822dcf2
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/G1rhRRYZQCS_Z_l3CJTwyw/zh-cn_image_0000002659020193.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5AMgcR7hTmqfQxAeWUlCGA/zh-cn_image_0000002659020193.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1479
 title: 使用animateTo循环播放动画时刷新状态变量无法刷新UI
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用animateTo循环播放动画时刷新状态变量无法刷新UI
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:1e765eaae9181002ddddb4669dda96c81167fe2cc26a6bf4d100b03b8a47959c
+content_hash: sha256:3db25cdeac85b728c1f4e89aadd6d163824ffb0abca26877649ae7e7f5f79ef7
 ---
 
 ## 问题现象
@@ -58,7 +58,7 @@ struct AnimateToExample {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/a2DEte1MToarvlEoamInhg/zh-cn_image_0000002628605818.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/adjlcbFFR82MPmS7WXhTcw/zh-cn_image_0000002628605818.png "点击放大")
 
 ## 背景知识
 

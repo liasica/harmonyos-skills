@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: ArkUI页面点击响应慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > ArkUI页面点击响应慢
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:313223495d7f80fbcdb509e47428663d78360d87457188e8c1cb1a810981dfc1
+content_hash: sha256:f46b9d2f0f3471bcac280c88afeab401dc5c9158c2fc934a30d8456fc3f139c4
 ---
 
 ## 问题现象
@@ -44,7 +44,7 @@ content_hash: sha256:313223495d7f80fbcdb509e47428663d78360d87457188e8c1cb1a81098
 
   借助DevEco Profiler Time工具可以查看应用执行的ArkTS代码以及相应耗时，如下图所示，更多详细内容可看[基础耗时分析：Time分析](../harmonyos-guides/ide-insight-session-time.md)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/4oU9EZBiSQ27YsUUs8_Jlg/zh-cn_image_0000002658914331.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/rdiGs2gwRMyX8VQnpo8rhQ/zh-cn_image_0000002658914331.png "点击放大")
 
 ## 问题定位
 
@@ -52,31 +52,31 @@ content_hash: sha256:313223495d7f80fbcdb509e47428663d78360d87457188e8c1cb1a81098
 
 1. 多模输入模块耗时为手指离开屏幕到应用收到该事件的时间。用SmartPerf打开Trace文件，在上方搜索框中输入H:originEventHandle code:501找到手指离开屏幕的地方。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/ewRBu1brSlW0Dxk7Sj_lhg/zh-cn_image_0000002658794377.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/2in3VGwGSFGApO1VWMB8Cg/zh-cn_image_0000002658794377.png "点击放大")
 
    接着以该点为起始点，在应用包名泳道中往后查看几ms范围内的Trace关键字H:DispatchTouchEvent XXX type=1，找到应用收到该事件的地方，得到该部分耗时为1.5ms。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/PEZkwEAOQeqpNaifm-mNPw/zh-cn_image_0000002628555012.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/sl1CxOOITwqNQ6AMopxAeQ/zh-cn_image_0000002628555012.png "点击放大")
 2. 应用模块耗时起点为应用收到手指离开屏幕的事件，终点为应用从当前页面开始跳转到新页面时第一次发送绘制请求的结束点。
 
    手指离开屏幕事件的地方为上述多模输入模块耗时的结束点。应用第一次发送绘制请求的地方可以通过应用收到手指离开屏幕的事件后第一次接收Vsync信号（Trace关键字为H:ReceiveVsync）中发送绘制请求（关键字为H:SendCommands）的结束点来确定，同时该点会在页面切换Trace关键字H:ABILITY\_OR\_PAGE\_SWITCH的起始点附近。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/0VLFc1xLTRqkGP78dCmFcg/zh-cn_image_0000002628395112.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/nt2DtUwzQMy7C-OQQHIVPA/zh-cn_image_0000002628395112.png "点击放大")
 
    计算应用收到手指离开屏幕的事件和该点之后应用第一次提交绘制请求的时间可确定应用模块处理耗时142.5ms。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/W4qjvXmCQtyounEl8VghSA/zh-cn_image_0000002658914333.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/CWV1oSI4TtCY5E5exBOUbQ/zh-cn_image_0000002658914333.png "点击放大")
 3. 渲染服务模块耗时为渲染服务处理应用发送的渲染请求到将GPU处理的渲染结果提交到显示硬件的时间。
 
    渲染服务处理应用发送的渲染请求可以通过应用模块耗时的结束点来确定。在应用包名泳道上方有个Actual Timeline泳道，在应用接收Vsync信号、提交绘制请求处会有对应的一段Trace点（以数字呈现），点击后在下方显示框中点击render\_service右侧的跳转箭头可以找到渲染服务处理页面有变化第一帧数据的地方。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/_4YRdDqjTNKTHPvXjVMw5w/zh-cn_image_0000002658794379.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/_HHkLQgmQ1uS69M5N7BSkA/zh-cn_image_0000002658794379.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/8qjHXZiuRo2SW-J0bkyCNQ/zh-cn_image_0000002628555014.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/sM9ZTdKqT6qg3J1_rgUa1g/zh-cn_image_0000002628555014.png "点击放大")
 
    然后以render\_service这次处理Vsync信号为起点，根据now（时间戳），在RSHardwareThread泳道中找到render\_service将该帧GPU处理的渲染结果提交到显示硬件的地方，最终得到渲染服务模块耗时15.7ms。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/BDfY16x3Ty-2XcTiSvxDtw/zh-cn_image_0000002628395114.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/qbig1CT4TXKbr7gu-5Lumw/zh-cn_image_0000002628395114.png "点击放大")
 
    最终得到如下耗时拆分结果，耗时主要集中在应用模块。
 
@@ -88,16 +88,16 @@ content_hash: sha256:313223495d7f80fbcdb509e47428663d78360d87457188e8c1cb1a81098
 
      框选Trace中应用主进程该阶段的运行状态，发现耗时主要在Running部分，查看该阶段的Trace信息，得知其中一部分是加载NewsPage页面，还有另一部分没有Trace点，无法看到在执行什么业务流程。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Rt3rMezmRE2J_n1_Nw19Bg/zh-cn_image_0000002658914335.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/UuW6QYliSxGFD55rv-haJw/zh-cn_image_0000002658914335.png "点击放大")
 
      使用Profiler工具抓取该过程的Trace信息，发现应用在执行dispatchJson方法，该方法耗时占比较多。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/yglEGHYwSLOH9ZJNIYLAbA/zh-cn_image_0000002658794381.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/hll5l51dQcaPTLClpgwAHg/zh-cn_image_0000002658794381.png "点击放大")
    * 场景二：http请求耗时：
 
      查看该阶段应用包名泳道Trace，发现耗时主要在http请求部分。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/ZDwZU8aZSwerbzYjscXOWA/zh-cn_image_0000002628555016.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/pV7IU0LbRFa77RUBIsxAyw/zh-cn_image_0000002628555016.png "点击放大")
 
      结合问题发生时的Hilog日志，根据Trace信息中的TaskID可以看到问题发生时http请求总耗时7.237秒，因此点击响应慢。
 

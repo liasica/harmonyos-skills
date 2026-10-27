@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-96
 title: Web加载失败时的白屏页面如何改为自定义错误页
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web加载失败时的白屏页面如何改为自定义错误页
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f58bebdf802020cf95119e24a57aafd94fdd589d21dfe3fe42001793a422ccec
 ---
 

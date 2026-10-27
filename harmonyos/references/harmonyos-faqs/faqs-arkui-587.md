@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-587
 title: router在RouterMode.Single模式下如何接收新参数
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > router在RouterMode.Single模式下如何接收新参数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f3d6c7c996ed36b12ce38ece419ae2ab3854778050c9afb85dc930ed6a99aaf4
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c3aa9e3c003e2a313a43142d0ed5f5c265216abce75e06b9bcff34939a25db0d
 ---
 
 ## 问题现象
 
 使用router的Single模式进行路由跳转时，跳转已存在的页面，如何接收参数？在页面的onPageShow生命周期函数中接收参数，切换后台会导致参数重置，如何处理？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/cYoJSgNRRQ-21HltA2nQwQ/zh-cn_image_0000002658791771.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/oE0NDAKtTGmAHTiA0FNTTw/zh-cn_image_0000002658791771.png "点击放大")
 
 ## 背景知识
 

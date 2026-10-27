@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 签名证书文件解析错误
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 签名证书文件解析错误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:4e26df61a2456e6c89214857725af58879a60f94b4741dd9d8557769ded3b265
+scraped_at: 2026-10-28T07:48:57+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:203d19169e31d82e843e5f99de0a30c5b461246b22c448adfa1a3279ae9677bc
 ---
 
 **问题现象**
@@ -20,7 +20,7 @@ content_hash: sha256:4e26df61a2456e6c89214857725af58879a60f94b4741dd9d8557769ded
 
 Certpath file配置了错误的证书文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Ynjr1gY-SeihGfvavBCdGw/zh-cn_image_0000002654798101.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/mU5ixZTFQIWFBWM1YPK4zA/zh-cn_image_0000002654798101.png)
 
 **解决措施**
 
@@ -30,8 +30,8 @@ DevEco Studio Terminal窗口使用keytool命令查看配置的证书文件，示
 
 * 格式正确的证书文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/QkHTwHWaRImuS8eFfwzItA/zh-cn_image_0000002624638650.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/rAJUa7bZTHyXhfRXBEQsYQ/zh-cn_image_0000002624638650.png)
 
 * 格式错误的证书文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/JCdQtE0qSWCwyPpeM7aHVQ/zh-cn_image_0000002654838053.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/rmRyfGarTBasdh4j-lXN5g/zh-cn_image_0000002654838053.png)

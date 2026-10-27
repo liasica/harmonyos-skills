@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-546
 title: 应用退到后台后重新打开，会弹出相同的弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用退到后台后重新打开，会弹出相同的弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:05b892831f16ea49d139ac3f6a98fcd5ae0157ac637a8208bf96bc78c2746691
 ---
 

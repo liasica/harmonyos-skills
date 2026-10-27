@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: 自定义弹窗弹出或关闭异常如何排查
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > 自定义弹窗弹出或关闭异常如何排查
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:32+08:00
+scraped_at: 2026-10-28T07:47:00+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:b2f48d15782332d1825170d1cd3446d0da4a214fb2a82dbc49f7672aa169b971
+content_hash: sha256:45ac2357899bbacbd44f1b67ab1f940032529678857f9647b2e845da50ce91ee
 ---
 
 **Q：使用promptAction.openCustomDialog创建自定义弹窗，将全局Builder构建函数作为自定义弹窗内容构造器。弹窗弹出时应用闪退。错误日志为：**
@@ -110,7 +110,7 @@ struct Index55 {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/ef1lua5_RieqSxCgObrqdA/zh-cn_image_0000002766076806.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/R9qR0hE-SgSy4_Gpu-NxsA/zh-cn_image_0000002766076806.png "点击放大")
 
 **Q：如何解决弹出多个弹窗，无法关闭的问题？问题代码如下：**
 
@@ -129,11 +129,11 @@ closeDialog() {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/K8y8czDPSgK7glVfD1u2bg/zh-cn_image_0000002795315663.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/dG1IBwxoQVOxieza2AyT-Q/zh-cn_image_0000002795315663.png "点击放大")
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/WYOyxmCHRIyUwsdt6fkFzQ/zh-cn_image_0000002795475457.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/9hg-gxJiR-qhgNPfXTjMJw/zh-cn_image_0000002795475457.png "点击放大")
 
 **A**：弹窗关闭的代码有误，“DialogUtils.contentNode = null”关闭一个弹窗就清空了，后面调用就都是null，所以关不掉。方案如下：用个数组存储每个弹窗的contentNode，每关闭一个pop()一个，并将数组最后一个值赋值给contentNode，关闭的就是上一个弹窗的contentNode。完整示例如下：
 
@@ -364,7 +364,7 @@ struct Index {
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/aff-LNCVQ62hxZjxAlXEgA/zh-cn_image_0000002765917346.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/TPxiAK-nT_iNvs55RvJccg/zh-cn_image_0000002765917346.png "点击放大")
 
 **A**：由于系统级弹窗的模态化窗口级别较高，不可与CustomDialog或openCustomDialog同时弹出，因此禁止直接弹出子窗口或其他弹窗，必须按照先后顺序展示。
 
@@ -449,7 +449,7 @@ struct Index {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/kEFMXX5PSoeF7hAWdzZYPQ/zh-cn_image_0000002795475973.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Z7AiOQBFS_WTo4xXMrJ4QQ/zh-cn_image_0000002795475973.png "点击放大")
 
 **Q：点击Web内组件同时弹出alert弹窗和系统弹窗，拉起alert弹窗时，Web进程会阻塞等待应用恢复如何规避？**
 

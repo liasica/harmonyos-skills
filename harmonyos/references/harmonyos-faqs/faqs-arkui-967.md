@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-967
 title: 手势触发的前提
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 手势触发的前提
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1a9f3c6f8587c3df172c1a0e95460bcea43be97c4f7b957ecc2449feff9cb8ec
 ---
 

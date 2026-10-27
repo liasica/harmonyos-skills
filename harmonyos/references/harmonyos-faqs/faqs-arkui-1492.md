@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1492
 title: 下载完成后，进度条回滚
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 下载完成后，进度条回滚
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:2016f3d63018e4a8974e4cd8471da0659b937254e1478052bbc9f88d452e4820
+content_hash: sha256:bd80a7f42d99de302eacc90a738703b9e52283e119be9a45b2f8e23789d8b2e0
 ---
 
 ## 问题现象
 
 下载文件已成功，但下载进度条达到百分百后，存在回退现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/7AJZnCOhS9S80UxGfEPlSQ/zh-cn_image_0000002658965031.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/nYy0fls9TcWCDrs-lmUhpw/zh-cn_image_0000002658965031.png "点击放大")
 
 ## 背景知识
 
@@ -88,4 +88,4 @@ struct ProgressTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/aWcZz3njRHSGTDy30jZNig/zh-cn_image_0000002628605826.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/a9CbaGUMQ9yCZ_VKXEfX3g/zh-cn_image_0000002628605826.png "点击放大")

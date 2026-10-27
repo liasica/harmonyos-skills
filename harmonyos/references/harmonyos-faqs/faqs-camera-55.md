@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-55
 title: 组件宽高与Profile分辨率的关系
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 组件宽高与Profile分辨率的关系
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
+scraped_at: 2026-10-28T07:48:26+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:72b0e29f7b0ef8d39d6240ad4f005d91d7248c6c5da89491a70300341b2934f0
+content_hash: sha256:a45c0c67a348c97350c6d1d7d08f029f579b10b0c9e07a58120d7796405ea169
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ content_hash: sha256:72b0e29f7b0ef8d39d6240ad4f005d91d7248c6c5da89491a70300341b2
 
    在相机预览流渲染这一开发场景下，我们可以将Surface和XComponent想象成两个矩形区域，XComponent组件区域就是前端页面上绘制并显示的区域，Surface区域是预览流渲染的区域。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/PWbLwYhJSVGye2JNTrwBjA/zh-cn_image_0000002628392588.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/ojK_jkbERwec8TOCRX_8WA/zh-cn_image_0000002628392588.png "点击放大")
 
    以上图为例，用户实际上能看到的XComponent区域的内容，因为Surface的范围超出了XComponent组件范围，所以预览流的帧画面中只有灰色部分的画面能被看到，而白色部分的画面将被裁切掉。
 
@@ -43,7 +43,7 @@ content_hash: sha256:72b0e29f7b0ef8d39d6240ad4f005d91d7248c6c5da89491a70300341b2
 
    如上所说，相机采集到的帧画面最终是送到Surface渲染，如果帧画面的分辨率宽高比与Surface宽高比不一致，那么帧画面在被渲染到Surface区域时，帧内的像素格无法保持其原本的显示比例而在某一个方向上出现“排列拥挤”，也就会使最终画面发生拉伸或压缩变形。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/bf1HWO5ZTWGVaaS-UxuPgg/zh-cn_image_0000002658791859.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/B2p0nwUGQvyVEJjn1htvUA/zh-cn_image_0000002658791859.png "点击放大")
 
    以上图为例，假设原始帧画面是2\*3的像素排列，由于帧的宽高比和XComponent区域的宽高比相差较大，所以画面渲染到XComponent之后，每一个像素格都由原先“瘦长”的比例变成了“短胖”的比例，最终呈现出来的效果就是画面在纵向上的压缩变形。
 4. 如何处理画面拉伸/压缩变形？
@@ -57,13 +57,13 @@ content_hash: sha256:72b0e29f7b0ef8d39d6240ad4f005d91d7248c6c5da89491a70300341b2
 
      如果业务的页面布局限制严格，无法调整XComponent组件宽高，且XComponent组件宽高比并不在16:9、4:3、1:1之中，则可以将XComponent区域与Surface区域解耦，然后使Surface区域的宽高比与分辨率宽高比保持一致，这样一来就可以防止预览画面产生形变。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/OZdC4ZsFSBKfMN0vL_yRzg/zh-cn_image_0000002628552480.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/raYDMX5PQO-sVt4UZ67qMg/zh-cn_image_0000002628552480.png "点击放大")
 
      从上图可以看到，因为Surface的宽高比与帧画面的宽高比一致，所以在渲染时就不会产生拉伸/压缩变形，但是由于Surface的实际大小超过了XComponent组件的大小，因此在最终显示时阴影部分的画面将被裁剪掉。
 
      如果不希望预览画面被裁剪，也可以通过调整Surface宽高，使Surface区域包含在XComponent区域内，在这种情况下Surface未覆盖的部分将以黑色填充，如下图所示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/1ZzdPd_1QcqgvaVpg8rcyg/zh-cn_image_0000002658911801.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/tig0AXVuRESesSHi0UL9DA/zh-cn_image_0000002658911801.png "点击放大")
 
      该思路的实现方案可以参考[自定义相机预览开发步骤](../harmonyos-guides/camera-preview.md#开发步骤)第3步中的setPreviewSize()方法，通过setXComponentSurfaceRect()设置Surface的宽高，将XComponent组件区域与Surface区域解耦，完整代码可参考[自定义相机预览示例代码](../harmonyos-guides/camera-preview.md#示例代码)。
 
@@ -79,6 +79,6 @@ A：切换前后的分辨率宽高比不一致导致的。出图的时候系统�
 
 Q：使用XComponent渲染组件搭配Camera接口实现拍照功能时，页面拍照区域显示过小，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/0Ba6x9kxTROHV1C-pJtJug/zh-cn_image_0000002628392594.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/onp9Mbn5QrK6lk4Tc42kgw/zh-cn_image_0000002628392594.png "点击放大")
 
 A：使用[ArkUI Inspector](../best-practices/bpta-optimization-overview.md#section1465143164111)工具查看可知，XComponent本身区域就很小，导致预览区域也小。另外从图中可以看到不只是预览区域范围小，图片的视角也很小（画面中只能看到键盘的一角），这种情况主要是因为Surface区域的大小远超XComponent组件的大小，导致最终渲染出来的画面只有Surface中的一小部分。

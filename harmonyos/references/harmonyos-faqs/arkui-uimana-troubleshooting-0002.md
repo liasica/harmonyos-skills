@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: ArkUI复杂嵌套对象属性更新失效问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > ArkUI复杂嵌套对象属性更新失效问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:14:31+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:7439d9512722898cce554a6f128cfbed1773922ead33ff09faff94adca7a1663
+scraped_at: 2026-10-28T07:47:32+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:6897c53a886fa4e7b99e51e6d98fb39d8fce444e5f97e5faa0bdf1f60a194480
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ content_hash: sha256:7439d9512722898cce554a6f128cfbed1773922ead33ff09faff94adca7
 
 **说明** 
 
-在状态管理V2中深度观测的装饰器为[@ObservedV2/@Trace](../harmonyos-guides/arkts-new-observedv2-and-trace.md)，其装饰器规则与V1版本@Observed/@ObjectLink存在一定差异，详情可参考官网行业常见问题[使用@ObservedV2和@Trace深度观测对象时，数据改变而UI未刷新](../architecture-guides/common-v1_26-ts_481-0000002515668666.md)、[使用状态管理V1、V2进行深度观测的区别和优缺点](../architecture-guides/common-v1_26-ts_610-0000002560690939.md)，其它排查步骤一致。
+在状态管理V2中深度观测的装饰器为[@ObservedV2/@Trace](../harmonyos-guides/arkts-new-observedv2-and-trace.md)，其装饰器规则与V1版本@Observed/@ObjectLink存在一定差异，其它排查步骤一致。
 
 * 场景一：违背装饰器作用规则第一点，未使用new创建可深度观测的嵌套对象，导致复杂嵌套对象不刷新。
   + 方案一：参考官网行业常见问题，[如何解决使用@State修饰对象数组，数据变化时页面不刷新问题](../architecture-guides/common-v1_26-ts_c203-0000002528014942.md)场景一，使用new创建即可。
@@ -100,13 +100,13 @@ content_hash: sha256:7439d9512722898cce554a6f128cfbed1773922ead33ff09faff94adca7
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Fs-szkE9T1Sfuljzgbw8PA/zh-cn_image_0000002760048578.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/KF35G7zzRxC3CLFVHYXtpg/zh-cn_image_0000002760048578.png "点击放大")
 * 场景二：违背装饰器作用规则第二点和第三点，@Observed/@ObjectLink搭配使用不正确，导致复杂嵌套对象不刷新。
 
   @ObjectLink装饰器仅能观察其代理的属性，无法观察到代理属性的嵌套对象属性，所以每一层被嵌套的对象都需要封装一个子组件并用@ObjectLink接收。详情可参考官网链接：[复杂嵌套对象属性更改失效](../harmonyos-guides/arkts-observed-and-objectlink.md#复杂嵌套对象属性更改失效)。
 * 场景三：违背控制渲染规则，以ForEach为例，参数更新时，key值未改变，导致复杂嵌套对象不刷新。
 
-  在ForEach组件进行非首次渲染时，它会检查新生成的键值是否在上次渲染中已经存在。如果键值不存在，则会创建一个新的组件；如果键值存在，则不会创建新的组件，而是直接渲染该键值所对应的组件。此时，若未注意控制渲染组件刷新规则，则可能造成UI不刷新的情况，详情可参考官网行业常见问题，[如何解决使用@State修饰对象数组，数据变化时页面不刷新问题](../architecture-guides/common-v1_26-ts_c203-0000002528014942.md)场景三，区别控制渲染刷新与状态管理刷新即可。
+  在ForEach组件进行非首次渲染时，它会检查新生成的键值是否在上次渲染中已经存在。如果键值不存在，则会创建一个新的组件；如果键值存在，则不会创建新的组件，而是直接渲染该键值所对应的组件。此时，若未注意控制渲染组件刷新规则，则可能造成UI不刷新的情况。
 * 场景四：违反参数传递规则，在进行复杂嵌套对象属性更新时，由于内部自定义组件使用了@Builder/@LocalBuilder自定义构建函数，且使用的值传递的方式，导致复杂嵌套对象不刷新。
 
   在@Builder/@LocalBuilder自定义构建函数传参过程中，如果使用的是值传递的方式，会导致自定义构建函数中的UI不会刷新，建议使用引用传递与回调传递，详情可参考官网：[按回调传递参数](../harmonyos-guides/arkts-builder.md#按回调传递参数)、[按引用传递参数](../harmonyos-guides/arkts-builder.md#按引用传递参数)。此时，需要注意深层嵌套的数据需要是被@ObjectLink装饰器接收的，否则依旧不会刷新。完整示例代码如下：
@@ -209,6 +209,6 @@ content_hash: sha256:7439d9512722898cce554a6f128cfbed1773922ead33ff09faff94adca7
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/TYhOsRNGSkGrduvpAFRwwA/zh-cn_image_0000002789287511.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/LaYPCTF-SQOYhiwRomDIfA/zh-cn_image_0000002789287511.png "点击放大")
 
   除引用传递与回调传递外，还可以通过以下方式避免@Builder值传递导致的UI不刷新：传单个对象参数而非多个普通参数、传整个[RepeatItem](../harmonyos-references/ts-rendering-control-repeat.md#repeatitemt)，或使用[UIUtils.makeBinding](../harmonyos-references/js-apis-statemanagement.md#makebinding20)绑定可变值。

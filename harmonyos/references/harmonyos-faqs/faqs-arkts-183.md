@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-183
 title: 如何给泛型实例化
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何给泛型实例化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:551a352dc8d1577b81386d3cf53d3b67c2abdc4c810907abb9e68a400e6e16c3
 ---
 

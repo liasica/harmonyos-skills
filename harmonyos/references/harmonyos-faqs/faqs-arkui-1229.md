@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1229
 title: 如何实现从底部弹出自定义弹窗并根据手势下拉关闭
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现从底部弹出自定义弹窗并根据手势下拉关闭
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e086217d9927c62505181519fa4296d74c8d057e0e3c80f6acd11c96ee48d21d
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1e4b997199dca52a59ed40cd811608ea2f06b88df11df0dbd7a179a4dd509b62
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:e086217d9927c62505181519fa4296d74c8d057e0e3c80f6acd11c96ee4
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ohZzGh7LQgmsCGxguwf5Wg/zh-cn_image_0000002628594046.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/OhbWtKPqToyQwVSqCAIaUA/zh-cn_image_0000002628594046.gif "点击放大")
 
 ## 背景知识
 

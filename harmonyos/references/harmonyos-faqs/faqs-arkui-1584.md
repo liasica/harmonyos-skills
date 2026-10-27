@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1584
 title: 如何设置Tabs沉浸式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置Tabs沉浸式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:52+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0455c8f2b9cf98b275818a782cdc07326dec3b3017c3a7b8d2106a160ee1c9a8
+content_hash: sha256:1c5d6349e6e752894b40518999119804ad7ec36151b2c237b9256b394ac2c4b2
 ---
 
 ## 问题现象
@@ -83,7 +83,7 @@ content_hash: sha256:0455c8f2b9cf98b275818a782cdc07326dec3b3017c3a7b8d2106a160ee
 
   参考图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/UuOsAO9aSxSY3UYmZ22zvA/zh-cn_image_0000002658849563.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/1T3PdfPFRsSPWyNJp59hmQ/zh-cn_image_0000002658849563.png "点击放大")
 
 * **方案二：安全区域拓展实现沉浸式。**
 
@@ -140,7 +140,7 @@ content_hash: sha256:0455c8f2b9cf98b275818a782cdc07326dec3b3017c3a7b8d2106a160ee
 
   参考图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/zt5kIqiYRoOklZ-n6sfRDw/zh-cn_image_0000002628770198.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/tV7eIf_YRreNs89-L1mPtQ/zh-cn_image_0000002628770198.png "点击放大")
 * **方案三：设置页面沉浸。**
 
   对Tabs组件设置ignoreLayoutSafeArea属性并设置高度为LayoutPolicy.matchParent，页面背景与布局均扩展至顶部状态栏和底部导航条。代码如下：
@@ -258,7 +258,7 @@ content_hash: sha256:0455c8f2b9cf98b275818a782cdc07326dec3b3017c3a7b8d2106a160ee
 
      参考图如下所示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/R1krGLJZT36lGoXu_qMXGA/zh-cn_image_0000002658969521.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/GAHtXgNiQpWjCTQJCKsTlw/zh-cn_image_0000002658969521.png "点击放大")
 * **方案四：设置窗口沉浸。**
 
   调用aboutToAppear，在执行build()函数前，设置主窗为沉浸式布局，可实现对整个应用实现沉浸式效果。代码如下：
@@ -335,7 +335,7 @@ content_hash: sha256:0455c8f2b9cf98b275818a782cdc07326dec3b3017c3a7b8d2106a160ee
 
   参考图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Eo6c8OhjS9KtsSzEDimp1A/zh-cn_image_0000002628610302.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/PBrZ3iWbRi6Lu8vCtmyuhA/zh-cn_image_0000002628610302.png "点击放大")
 
 ## 常见FAQ
 

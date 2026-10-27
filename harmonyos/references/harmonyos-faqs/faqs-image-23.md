@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-23
 title: 如何生成带logo的二维码
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何生成带logo的二维码
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:26+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9a1d4a1eb967c46d4182573e34d8f9925d2bf6b2fd61c43b3a24d53e68c79167
 ---
 

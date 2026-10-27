@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-402
 title: Navigation页面级弹窗，下层页面如何监听是否被Dialog覆盖
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation页面级弹窗，下层页面如何监听是否被Dialog覆盖
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:136bfe4f7aa9ad2d188c18dc22e60a14d278f3f098c34cf3d0838a2def0b8984
 ---
 

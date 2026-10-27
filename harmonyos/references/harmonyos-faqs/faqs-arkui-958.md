@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-958
 title: Tabs如何实现TabBar中TabItem不均匀分布
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Tabs如何实现TabBar中TabItem不均匀分布
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:47+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0948d0f5665ef3ea0b8f6ac59654d7b0eb167a2afc7fd9a00083a6a9a594a26c
+content_hash: sha256:9ea3aeb44bc8d14b7f854e39ed19764df7f2cf052a223ebb3a1f9bf43a3b790b
 ---
 
 ## 问题现象
@@ -151,7 +151,7 @@ export struct CusTab2 {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/z9KWFqpDQcq-Ph41r6OVRg/zh-cn_image_0000002658800929.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/2IzZk9iCQCWEqHicKwTB1A/zh-cn_image_0000002658800929.gif "点击放大")
 
 方案二：设置异形TabBar达到不均匀分布的效果。
 
@@ -264,7 +264,7 @@ export struct CusTab2 {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/_WPSkHNCThKcLtEYmzDtJg/zh-cn_image_0000002628401672.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/MmitFtsZRLyKCFIq7ybhWg/zh-cn_image_0000002628401672.gif "点击放大")
 
 ## 总结
 

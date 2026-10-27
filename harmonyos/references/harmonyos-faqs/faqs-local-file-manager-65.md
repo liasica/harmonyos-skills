@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 文件下载到本地后内容丢失
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 文件下载到本地后内容丢失
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5724ce912a90d423af28eb5416d6cd96fb9ec46637281d181493201556d5209e
 ---
 

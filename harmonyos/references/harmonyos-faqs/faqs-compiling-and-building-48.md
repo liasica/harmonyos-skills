@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何配置oh-package.json5动态依赖
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何配置oh-package.json5动态依赖
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7abfbef6a9643b8847c830598698fb77c30adbe8624508bba33c7eb736d1da20
 ---
 

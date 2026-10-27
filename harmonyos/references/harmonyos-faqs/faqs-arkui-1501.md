@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1501
 title: 输入框组件自动获焦问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 输入框组件自动获焦问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7415fcf4e46d2dab8993c096405dc49a970cc6d2931caf2d6d53733220b68acc
+content_hash: sha256:96f2c1c0bc4d0abb28c597f6c573a5434bac13f760e0b6f4ea07990888c57f64
 ---
 
 ## 问题现象
@@ -88,7 +88,7 @@ content_hash: sha256:7415fcf4e46d2dab8993c096405dc49a970cc6d2931caf2d6d53733220b
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/531aO5ffSDi1Ana8rDtUKg/zh-cn_image_0000002628766424.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/yvQnC_hbSoOcDjJBlnAuBA/zh-cn_image_0000002628766424.png "点击放大")
 * 场景二：当输入框通过动态渲染的方式出现在当前弹窗或者页面中时，无法通过设置defaultFocus使成默认焦点，这时可以通过调用requestFocus方法将焦点转移至输入框上。例如，在当前页面中通过visibility属性使输入框出现时，需要通过requestFocus方法使输入框组件获焦。
 
   ```screen
@@ -183,12 +183,12 @@ content_hash: sha256:7415fcf4e46d2dab8993c096405dc49a970cc6d2931caf2d6d53733220b
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/hxL9pJVMQ6agyv19A8bpdA/zh-cn_image_0000002658965759.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/khhA2EsJQC-tfn5p4yiJ0g/zh-cn_image_0000002658965759.png "点击放大")
 * 场景三：为防止自动获焦导致打断用户体验，可以通过clearFocus方法清除焦点。例如：在页面中的TextInput获焦时打开一个弹窗，此时焦点会转移到弹窗上，弹窗关闭时，焦点会尝试转移到上一个获取焦点的组件（即TextInput），导致软键盘再次弹出。为避免这种跳焦效果，可以在点击弹窗按钮时调用clearFocus方法清除焦点。
 
   关闭弹窗后的跳焦现象：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/dHGlVFCZQ0OdfuskiDKYag/zh-cn_image_0000002628606548.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/TufzkRx0TOW8j0U2Nw_UFA/zh-cn_image_0000002628606548.png "点击放大")
 
   ```screen
   @Entry
@@ -280,4 +280,4 @@ content_hash: sha256:7415fcf4e46d2dab8993c096405dc49a970cc6d2931caf2d6d53733220b
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/eAdHfhr8R_2Ozf4OxaUEJw/zh-cn_image_0000002658845797.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/fewaw4c4RYypPKROL25EyQ/zh-cn_image_0000002658845797.png "点击放大")

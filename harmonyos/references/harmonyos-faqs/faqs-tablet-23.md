@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-tablet-23
 title: 应用指南针在平板上有90度偏差
 breadcrumb: FAQ > 多设备场景 > 平板 > 常见问题 > 应用指南针在平板上有90度偏差
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:48+08:00
+scraped_at: 2026-10-28T07:46:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:faf208e95c481d3e6214b5daf61350cb002ef70e36c736b9c5672da69b09da45
+content_hash: sha256:89c2b3bf805e8961ca5ebd9d8f2e70c2a9a8c70e50ebf8b7585f19c7cb8d3977
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:faf208e95c481d3e6214b5daf61350cb002ef70e36c736b9c5672da69b0
 
 手机上现象：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Orh0XS3ZSieQ0Zv2byyaIA/zh-cn_image_0000002628392334.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/7MMPL-7qTHqM2VX7xMyf-Q/zh-cn_image_0000002628392334.png "点击放大")
 
 平板上现象：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Eh5Qn9xlRWaWWXRn_biV6Q/zh-cn_image_0000002658791621.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/ynwCch-ySjS558GEqPypMA/zh-cn_image_0000002658791621.png "点击放大")
 
 ## 背景知识
 

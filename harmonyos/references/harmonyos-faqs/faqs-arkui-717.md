@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-717
 title: 实现在单行或多行文本后添加自定义标签
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现在单行或多行文本后添加自定义标签
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:425372ca809db6245a09865574cde1fc086f693af21b2588b74620831bbeace7
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a678a40cbc6a5b074cbe99e553b393f636a843066346a6ae0d1b80af6effc9aa
 ---
 
 ## 问题现象
@@ -99,7 +99,7 @@ content_hash: sha256:425372ca809db6245a09865574cde1fc086f693af21b2588b74620831bb
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/iQyurbjaSxScJdUxU1u2DA/zh-cn_image_0000002628554920.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/XiBReb3TRi2hGNIuejuTNA/zh-cn_image_0000002628554920.gif "点击放大")
 * **方案二**：
   1. 使用@Builder创建一个自定义的浮层组件OverlayNode。
   2. 使用overlay属性将浮层组件OverlayNode绑定到Text组件，并通过offset来控制浮层位置。
@@ -179,7 +179,7 @@ content_hash: sha256:425372ca809db6245a09865574cde1fc086f693af21b2588b74620831bb
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ZqLuwdJPQFOuCOuz058Dpg/zh-cn_image_0000002658914237.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/i91HpLcrQ7eWEHvi3sRRJg/zh-cn_image_0000002658914237.png "点击放大")
 * **方案三**：
   1. 使用Text嵌套Span组件和ContainerSpan组件。
   2. 使用ContainerSpan组件嵌套Span组件，展示标签。
@@ -217,7 +217,7 @@ content_hash: sha256:425372ca809db6245a09865574cde1fc086f693af21b2588b74620831bb
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/c0Gruc7dR-uaO-zH9nY3tA/zh-cn_image_0000002628395020.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Js7ogFOdQbWY9l_jUyFHIg/zh-cn_image_0000002628395020.png "点击放大")
 * **方案四：**
 
   使用Stack层叠布局，创建一个Text标签，通过rotate属性固定位置，实现自定义标签。

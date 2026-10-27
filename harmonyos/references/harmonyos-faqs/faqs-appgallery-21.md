@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 加入HarmonyOS开发服务商，需要使用未经认证的新账号吗
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 加入HarmonyOS开发服务商，需要使用未经认证的新账号吗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:16c89c95c6afc6d38c70f49a7221d6b526001e682f4af91424441f7b4187a10d
 ---
 

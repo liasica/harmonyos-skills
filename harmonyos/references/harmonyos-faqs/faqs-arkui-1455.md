@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1455
 title: 如何在目标页面判断路由来源于Navigation还是Router
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在目标页面判断路由来源于Navigation还是Router
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:23+08:00
+scraped_at: 2026-10-28T07:47:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:769435194cdb1287b845d35c630188e0418ad55e77ddc2e03d3cd8c6ccfb15c4
+content_hash: sha256:e80dad559d7134a8b50dbdd168a5ccbbc84d912d0884074890c06a828e8ce9f4
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:769435194cdb1287b845d35c630188e0418ad55e77ddc2e03d3cd8c6ccf
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/UFb2u7uOSzKuFHJbmC-HWw/zh-cn_image_0000002658963487.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/_JuPq4oDTYC3SI-MvVShAA/zh-cn_image_0000002658963487.gif "点击放大")
 
 ## 背景知识
 

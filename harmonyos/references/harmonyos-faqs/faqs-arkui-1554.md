@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1554
 title: 页面上的图片无法显示或显示默认的图片样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 页面上的图片无法显示或显示默认的图片样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1b5e4f9d56daec609d5b7bcf63be9c6fe592ba2e6d37a6bf9acbe7729295976a
 ---
 

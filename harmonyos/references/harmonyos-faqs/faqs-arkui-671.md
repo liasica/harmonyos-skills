@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-671
 title: 如何实现组件RTL方向排列与滑动效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现组件RTL方向排列与滑动效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:40+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:766357705da91167139124b4a2803750147575eb64bd91892b0e02866e731cfd
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cfdce796c51ed14d0960f1c06e9b43ce8714dbdced69301015728e8cb4fe0243
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ List组件横向排列，要求RTL方向排列与滑动并且内容靠右显示�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/UOiFOD9ERFC6jZFZjJNGlg/zh-cn_image_0000002628554564.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/E54vkNa-QmqUX1mJ4iaTYg/zh-cn_image_0000002628554564.gif "点击放大")
 
 ## 背景知识
 

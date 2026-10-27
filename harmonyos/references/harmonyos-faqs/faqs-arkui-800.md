@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-800
 title: 自定义Progress样式的常见场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义Progress样式的常见场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:eac715831693bd0eeb49cb37a39dc8c59bd170c713f21883227be0ec3811f60e
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b420623febe0817aba43816a77ab633766a153b835df1b15b65a5afcf3973cf5
 ---
 
 ## 问题现象
@@ -104,7 +104,7 @@ content_hash: sha256:eac715831693bd0eeb49cb37a39dc8c59bd170c713f21883227be0ec381
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/GEiHX9AKTTaKkHsIBSwSOA/zh-cn_image_0000002628557788.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/7BjN6QZYQOmUVftKbyS8cw/zh-cn_image_0000002628557788.png "点击放大")
 * **场景二**：阶段进度条。同样是自定义内容区，但是是使用多个基础组件组合实现自定义进度条。在布局组件中通过相对定位的方式将多个阶段图标设置在相应的进度对应的位置，在下层添加线性渐变的组件实现进度条功能（如果需要可设置多个阶段的颜色）。
 
   ```ts
@@ -196,7 +196,7 @@ content_hash: sha256:eac715831693bd0eeb49cb37a39dc8c59bd170c713f21883227be0ec381
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/vvhGHc1fRXur2km-EmlYSg/zh-cn_image_0000002658917105.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/qWlra54xT3OeVecsuaJVvQ/zh-cn_image_0000002658917105.png "点击放大")
 * **场景三**：弧形进度条。不仅可以使用contentModifier方法自定义内容区，还可以通过通用属性[drawModifier](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawmodifier)绘制组件内容。在绘制内容接口中获取[DrawContext](../harmonyos-references/js-apis-arkui-graphics.md#drawcontext)对象，再通过该对象中[canvas](../harmonyos-references/js-apis-arkui-graphics.md#canvas)方法获取用于绘制的画布实例。通过[@ohos.graphics.drawing (绘制模块)](../harmonyos-references/js-apis-graphics-drawing.md)的接口绘制内容到画布，从而实现自定义进度条样式。该方案可以在组件基础上添加前景保留原本的内容。
 
   ```ts
@@ -306,7 +306,7 @@ content_hash: sha256:eac715831693bd0eeb49cb37a39dc8c59bd170c713f21883227be0ec381
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/0jBMeGkiQHO4znTX369WZg/zh-cn_image_0000002628397884.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-vanuj-hQXuDwHEKIdC-GA/zh-cn_image_0000002628397884.png "点击放大")
 * **场景四**：方形环绕的进度条。除了如上三个场景中的方案，还可以直接通过组件模仿进度条效果，从而实现自定义Proress。
   1. 直接使用画布组件自定义进度条，参考[如何实现圆角矩形进度条](faqs-arkui-785.md)。
   2. 通过[Polyline](../harmonyos-references/ts-drawing-components-polyline.md)（折线绘制组件）设置不同进度下坐标点的位置，实现环绕内容的方形进度条。如下是通过折线组件实现。
@@ -400,7 +400,7 @@ content_hash: sha256:eac715831693bd0eeb49cb37a39dc8c59bd170c713f21883227be0ec381
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/5umxYWifQY-UnDXX6_2apQ/zh-cn_image_0000002658797153.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/5cNUdnsbRE283UU0Lmg7JA/zh-cn_image_0000002658797153.png "点击放大")
 
 ## 常见FAQ
 

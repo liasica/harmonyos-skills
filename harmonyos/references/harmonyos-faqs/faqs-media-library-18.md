@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 使用安全控件、弹窗授权保存图片与视频的相关问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 使用安全控件、弹窗授权保存图片与视频的相关问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1a0b42c5ca393539fb9dfe083c1a9e95d6eef9c39ffff14eb33597c2b5c1de1e
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:408be76a1c0472f878da756adb8b909547a431a3aa9eed47185ffea817491b11
 ---
 
 ## 问题现象
@@ -25,7 +25,7 @@ content_hash: sha256:1a0b42c5ca393539fb9dfe083c1a9e95d6eef9c39ffff14eb33597c2b5c
 
 * 问题现象：使用fs.copyFile复制文件时报错，报错信息如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/g5_3jxiETuiUUrjGlSvKGQ/zh-cn_image_0000002659258339.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/fcYcmaYvTgCkzr4ImQfZwA/zh-cn_image_0000002659258339.png)
 * 原因分析：fs.copyFile的dest参数（目标文件路径或目标文件描述符）不支持uri。
 * 解决方案：使用openSync打开获取fd后再使用fs.copyFile，示例代码如下：
 
@@ -43,7 +43,7 @@ content_hash: sha256:1a0b42c5ca393539fb9dfe083c1a9e95d6eef9c39ffff14eb33597c2b5c
 * 问题现象：保存图片到相册后，有部分图片保存后相册显示白板，有部分正常显示。
 * 原因分析：根据日志得出失败原因是打包大小超出限制，使用[OffscreenCanvas](../harmonyos-references/ts-components-offscreencanvas.md)绘制的图片过大，压缩图片时用了[packing](../harmonyos-references/arkts-apis-image-imagepacker.md#packing13)接口，该接口只能压缩25M以下图片，导致保存相册为空白。日志如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/gJrgf36ISiCe0RzTxdvTaQ/zh-cn_image_0000002628899120.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/58H_niVRRziu7inQDmXNkg/zh-cn_image_0000002628899120.png "点击放大")
 * 解决方案：压缩25M以上大图时请使用[packToFile](../harmonyos-references/arkts-apis-image-imagepacker.md#packtofile11)代替，示例代码如下：
 
   ```ts
@@ -141,10 +141,10 @@ content_hash: sha256:1a0b42c5ca393539fb9dfe083c1a9e95d6eef9c39ffff14eb33597c2b5c
 
 * 问题现象：弹出框没有预览图或视频。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ARozFbX-SQOGsnfcTMlGuA/zh-cn_image_0000002659138389.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/QC9fuTn9QAKSyFZZycun1g/zh-cn_image_0000002659138389.png)
 * 原因分析：根据日志分析showAssetsCreationDialog的入参srcFileUri为沙箱路径。当传入uri为沙箱路径时，可正常保存图片/视频，但无界面预览。日志如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/asUFgYlcQ2uA7lfjtDrHUA/zh-cn_image_0000002629059038.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Tbs-eTfoTu2GBRT_sQ52Kw/zh-cn_image_0000002629059038.png "点击放大")
 * 解决方案：showAssetsCreationDialog的入参srcFileUri里的uri需要使用fileUri.getUriFromPath获取沙箱文件的全路径，示例代码如下：
 
   ```ts

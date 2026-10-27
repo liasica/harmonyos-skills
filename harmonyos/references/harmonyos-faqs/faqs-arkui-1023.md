@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1023
 title: 如何获取窗口的尺寸及位置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何获取窗口的尺寸及位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:5123eea2ee0fd576d4f7fd92283f5f46dc06a93389da4b4bcdc7dcdec1944c3e
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2671e1e78f57d4d33559a5c140c819419176cb5f85fb39cc72279ee1296803b7
 ---
 
 ## 问题现象
@@ -112,7 +112,7 @@ struct WindowProp {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/X9uFYXlYQROqFWcskuCCaw/zh-cn_image_0000002658804079.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/gSaLFAHUS3iwXQIR69oDEg/zh-cn_image_0000002658804079.png "点击放大")
 
 方案二：通过OH\_WindowManager\_GetWindowProperties接口在Native侧获取窗口属性。
 

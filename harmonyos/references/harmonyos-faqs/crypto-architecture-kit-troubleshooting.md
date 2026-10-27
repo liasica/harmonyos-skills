@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/crypto-architec
 title: 故障排查
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 故障排查
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:53+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:370a66312474b793dd7c32e154bd71ff43c5042e5452ba3add21327f467d5b76
+scraped_at: 2026-10-28T07:48:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0df1ae391fe611065778493b9c04f08117333f1fb902eeae3fbd960a98bab5e8
 ---
 
 ## 如何解决DES密钥生成报错Invalid param: input key length is invalid
@@ -28,7 +28,7 @@ const symKey = symKeyGenerator.convertKeySync({
 
 运行上文代码，使用密钥进行DES加密时报错如下图所示，根据报错信息可以判断是Key长度问题引起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/yKFyvg9jS9aUh7P--s7Y6w/zh-cn_image_0000002794642573.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ihQYKlXJQuymweHre19GRg/zh-cn_image_0000002794642573.png "点击放大")
 
 ### 分析结论
 

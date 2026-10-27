@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "编译报错\"Error: open 'xxx\\libimage_transcoder_shared.dll' failed\""
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译报错\"Error: open 'xxx\\libimage_transcoder_shared.dll' failed\""
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9ac2b9a3f147d3d25a45c5cddc75654d3f8185e6ff7ea230af1e8cb5f3282b64
+content_hash: sha256:2c14a8e4dfb2e95badf6e16b0d29375b0a74e562ea894909c4f6a949f93cd94b
 ---
 
 **问题现象**
 
 Windows下编译工程出现错误，提示“Error: open 'xxx\deveco-studio\sdk\default\hms\toolchains\lib\libimage\_transcoder\_shared.dll' failed”，加载dll失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/xpgyrHvARV2h6rKL9-uRlg/zh-cn_image_0000002624638562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/H3XXRH6CRRKWEEkkZXZhlA/zh-cn_image_0000002624638562.png)
 
 **可能原因**
 
@@ -22,11 +22,11 @@ Windows下编译工程出现错误，提示“Error: open 'xxx\deveco-studio\sdk
 
 例如，用户环境变量中包含%USERPROFILE%\AppData\Local\Microsoft\WindowsApps。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/UACSUPGfRFO9aiLq-Y916Q/zh-cn_image_0000002654837967.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/1U6lhuCuRmqGqP8c-ZKEWQ/zh-cn_image_0000002654837967.png)
 
 该路径的文件无法访问。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/tDF9ga1zRJ2ENcVd4VkZnA/zh-cn_image_0000002624478656.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/SOamCwfERhSij7IL4XhleQ/zh-cn_image_0000002624478656.png)
 
 **解决措施**
 

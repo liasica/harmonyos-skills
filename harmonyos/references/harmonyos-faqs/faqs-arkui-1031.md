@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1031
 title: 分类筛选功能异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 分类筛选功能异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6c79e16a83f40c1264461e796dd3a313e9e86faea81c5d7fb5add57d9955ab97
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:331344221c67f9116419251762e2d10accb45f0437751225f11b66a89fdaa482
 ---
 
 ## 问题现象
 
 点击打开筛选界面，有分类和主题两个部分，主题可以多选，若没有选择主题，则分类只能选择一个。但是选择主题后，多选分类，此时再将选择的主题全部取消，分类还是会保存多选状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/lFm-Mq4ITXaMPRVuT484AQ/zh-cn_image_0000002658924029.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/KNYat8TqS8qF3ZpXvMvQ-g/zh-cn_image_0000002658924029.png "点击放大")
 
 ## 背景知识
 

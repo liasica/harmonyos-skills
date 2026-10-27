@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-361
 title: Button组件无法设置字体最大、最小值
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Button组件无法设置字体最大、最小值
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c232bae8df6b2cef1828100d9767d431b2991eef1c4f62fc76be4c389d15afa3
 ---
 

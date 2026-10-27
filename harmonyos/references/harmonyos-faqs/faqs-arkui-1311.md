@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1311
 title: 模拟实现Swiper
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 模拟实现Swiper
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a13f9930a5c261cb33ef7ebd6238d9f1ed949594e6bab125c2d2a8131ca059a1
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:5d1f5bdce67fca9f7602dd8849da158cc084fe18be08df530e2b47f40504bd83
 ---
 
 ## 问题现象
@@ -98,7 +98,7 @@ content_hash: sha256:a13f9930a5c261cb33ef7ebd6238d9f1ed949594e6bab125c2d2a8131ca
 
   代码运行效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/atWodRI1QzKD-_SUFlcDvw/zh-cn_image_0000002628599030.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/oCPzUOekSweiZMqecD3C3A/zh-cn_image_0000002628599030.png "点击放大")
 * Swiper滑动一页的宽度为子组件宽度中的最大值：SwiperDisplayMode枚举说明中表示AUTO\_LINEAR类型（Swiper滑动一页的宽度为视窗内最左侧子组件的宽度）从API10开始支持，从API12开始不再维护，建议使用Scroller.scrollTo代替。目前未能完全使用Scroll替代Swiper功能，仅提供两种场景的实现方式。
 * 方式一：通过使用scrollTo，搭配gesture手势，只能实现手动轮播，且循环衔接效果差。
 
@@ -195,7 +195,7 @@ content_hash: sha256:a13f9930a5c261cb33ef7ebd6238d9f1ed949594e6bab125c2d2a8131ca
 
   实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/9pJZHwRVT1-6FeePpqlRaw/zh-cn_image_0000002628758928.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/8p0hMsuUTNSIG2NidwrRaA/zh-cn_image_0000002628758928.png "点击放大")
 * 方式二：通过scrollBy可以实现自动循环轮播但未能同时实现手动轮播，[scrollBy](../harmonyos-references/ts-container-scroll.md#scrollby9)为滑动指定距离。
 
   代码如下：
@@ -280,4 +280,4 @@ content_hash: sha256:a13f9930a5c261cb33ef7ebd6238d9f1ed949594e6bab125c2d2a8131ca
 
   实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/467wZqcRTI-VgyzIP1L9Cw/zh-cn_image_0000002658958253.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/IapoRs6QTT2n0mQvFgNEaw/zh-cn_image_0000002658958253.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何绘制虚线
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何绘制虚线
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
+scraped_at: 2026-10-28T07:48:35+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:aa3e177474bf75d086399f3a7b3e0ec74f1cffe1efa2c2113069efd5b2c845fc
+content_hash: sha256:fe0738951e1ca0cc24bf38f42758a15ce2501ecddcc12d69aa4c431c01541f10
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:aa3e177474bf75d086399f3a7b3e0ec74f1cffe1efa2c2113069efd5b2c
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/D91NRnUWQDmCM-_pDOqbww/zh-cn_image_0000002628553240.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/6eIOGA_ORxixyyDyGxpCqg/zh-cn_image_0000002628553240.png "点击放大")
 
 ## 背景知识
 

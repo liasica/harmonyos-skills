@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-1
 title: 位置权限关闭后，如何实现在应用内一步操作重新开启
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 位置权限关闭后，如何实现在应用内一步操作重新开启
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:28+08:00
+scraped_at: 2026-10-28T07:48:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:64b7f141451aee1e649797a46a30a341d02cb32113debfa5e46fe67baa2dd924
+content_hash: sha256:7f2e23d8c14a024cbac9539ec8ccad163b0b1d7fd6a514b8dc0dfc48e240c076
 ---
 
 ## 问题现象
@@ -128,7 +128,7 @@ content_hash: sha256:64b7f141451aee1e649797a46a30a341d02cb32113debfa5e46fe67baa2
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/j9_HQl_ZSLWlzVccEyzOIg/zh-cn_image_0000002658793799.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/27Ql14rXSAuyCpHjQz1FnQ/zh-cn_image_0000002658793799.png "点击放大")
 * **场景二：代码引导用户开启“后台位置”。**
 
   确认完成前台位置权限授权后，使用[requestPermissionOnSetting()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissiononsetting12)接口向用户申请后台位置授权：
@@ -159,7 +159,7 @@ content_hash: sha256:64b7f141451aee1e649797a46a30a341d02cb32113debfa5e46fe67baa2
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/1JHrr02dSoGWFK4iUHXzVA/zh-cn_image_0000002628394530.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/gdcUCBJrRmKle0dyeCNF4A/zh-cn_image_0000002628394530.png "点击放大")
 * **场景三：代码引导用户开启“系统位置”功能开关。**
 
   使用[isLocationEnabled()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagerislocationenabled)检查当前系统位置功能是否被禁用。如果位置功能被禁用则无法获取位置信息，需要调用[requestGlobalSwitch()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestglobalswitch12)拉起半模态对话框打开位置开关。
@@ -189,7 +189,7 @@ content_hash: sha256:64b7f141451aee1e649797a46a30a341d02cb32113debfa5e46fe67baa2
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ei8qYismTj-JF4hTyTRjEw/zh-cn_image_0000002628554424.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/7I8A-JGLQRu8z3o5CBIcqA/zh-cn_image_0000002628554424.png "点击放大")
 
 完整代码如下，使用前请先在module.json5中声明ohos.permission.APPROXIMATELY\_LOCATION、ohos.permission.LOCATION和ohos.permission.LOCATION\_IN\_BACKGROUND权限：
 

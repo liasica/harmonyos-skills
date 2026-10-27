@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1034
 title: 如何实现文本颜色渐变
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现文本颜色渐变
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e97a7ef252d35953c5104681bda27a46dd52a32875c37e837747363cf82d6457
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cde9c0b7baac84663ce62a5c34b84d58d2018200c1ec097f0eb8ac91d5a55ccc
 ---
 
 ## 问题现象
@@ -61,7 +61,7 @@ content_hash: sha256:e97a7ef252d35953c5104681bda27a46dd52a32875c37e837747363cf82
 
   运行效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/JHRiF0LaQI-vCPuRgsQvHw/zh-cn_image_0000002658924031.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/AnD88gxFRU6MovaxOyRaDw/zh-cn_image_0000002658924031.png "点击放大")
 * 方案二：使用shaderStyle，通过Text组件的shaderStyle属性直接设置线性渐变参数。（仅支持API20+）
 
   ```ts
@@ -86,7 +86,7 @@ content_hash: sha256:e97a7ef252d35953c5104681bda27a46dd52a32875c37e837747363cf82
 
   运行效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/9kkTsswHT06v7T76qLhPhA/zh-cn_image_0000002628404820.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/L-PuFz4qRCyCFzWX7BA_iA/zh-cn_image_0000002628404820.png "点击放大")
 * 方案三：拓展功能实现。为背景渐变色添加动画，实现动态流光效果。
 
   ```ts
@@ -146,7 +146,7 @@ content_hash: sha256:e97a7ef252d35953c5104681bda27a46dd52a32875c37e837747363cf82
 
   运行效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/z8IlPFqyTDeZfTtxpCH7ZA/zh-cn_image_0000002658804089.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/zsh2ZjkcTsmcUAiRLhUDQw/zh-cn_image_0000002658804089.png "点击放大")
 
 ## 常见FAQ
 

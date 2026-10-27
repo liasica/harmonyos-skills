@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-15
 title: 应用被拉起时如何获取外部传入参数
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用被拉起时如何获取外部传入参数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
+scraped_at: 2026-10-28T07:46:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:88c558ae14607b7fe09ce8e00010d8ad5cbe0dc185f5c35e888138c9a4bf474b
+content_hash: sha256:030ee345882548aaaab41bf526da4cf5d90a8e0613ec067f6fbac890ae5cc40c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:88c558ae14607b7fe09ce8e00010d8ad5cbe0dc185f5c35e888138c9a4b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/JD-OsmgCQAGHCDA3Enf8gg/zh-cn_image_0000002658868627.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Xz3KoRRNQE2BKXyf_HwGVw/zh-cn_image_0000002658868627.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-557
 title: "@State修饰单例模式实例时无法刷新UI"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > @State修饰单例模式实例时无法刷新UI
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:513ee296735edf68fe8f2545d1538315090c49e9802575df043e5f006724ac4b
+content_hash: sha256:c2895b4d1eafaa3aaa612e3cdb48088fc7e599c12a93a5d00764b9d06cbbbb5a
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:513ee296735edf68fe8f2545d1538315090c49e9802575df043e5f00672
 
 效果演示如下：在Page2中改变颜色后，返回Index页面，颜色没有同步刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/jOYxSf0iS_WMHFSNf6Rnjw/zh-cn_image_0000002628392114.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/UyVR0KApQ1O7_8NQU9JMlA/zh-cn_image_0000002628392114.png "点击放大")
 
 问题代码如下：
 
@@ -97,7 +97,7 @@ export class VoiceReadHelper {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/j554BvMuSCmy8fa8g5CMew/zh-cn_image_0000002658791395.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/8PYX1wgWRW2Fh5y8CFmXtg/zh-cn_image_0000002658791395.gif "点击放大")
 
 ## 背景知识
 

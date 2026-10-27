@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1510
 title: 如何解决父子组件传递私有@Builder函数，内容不显示的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决父子组件传递私有@Builder函数，内容不显示的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:48+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8e64bc7773b963b99221e94d12a341007dd3710782211f0db90a7ea8980f1fec
+content_hash: sha256:2e262a92ed95d8210f4da3da2e0b2b37330e8c3700b7c118acf4734ee8aeb37e
 ---
 
 ## 问题现象
@@ -76,11 +76,11 @@ export struct SectionView {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/UnEMKGJ8QWOLJqMWqd_WDw/zh-cn_image_0000002628766434.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/_l_4sM1DQnivUIg4Q_lIdg/zh-cn_image_0000002628766434.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/1xdX4EOxTLyLSi2KEXhfLQ/zh-cn_image_0000002658965769.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/cHOAycizQdOO9IVgAzhV1g/zh-cn_image_0000002658965769.png "点击放大")
 
 ## 背景知识
 
@@ -97,7 +97,7 @@ export struct SectionView {
 
 本地运行代码，没有报错信息，@Builder函数被成功调用，但是内部的Text文本未显示，推测是传入自定义组件的参数值有问题，通过debug发现contentComponent方法中this.message的值为undefined。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/zOaRtXY_RISfSszSWkUf_A/zh-cn_image_0000002628606556.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/mtGOmC5eQD-T46JsbPQxwg/zh-cn_image_0000002628606556.png "点击放大")
 
 ## 分析结论
 

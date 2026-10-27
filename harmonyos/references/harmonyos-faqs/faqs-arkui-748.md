@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-748
 title: 如何使用一个进度条同时显示两个进度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使用一个进度条同时显示两个进度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:00012fc54d6fd47411e3aaf5efcd75e9959ff89525d89697339f9384b78d06ca
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b38792e5313fa147ca0c2d52f6aec6795a05de44ce8720f2844750b62eff9497
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:00012fc54d6fd47411e3aaf5efcd75e9959ff89525d89697339f9384b78
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/1pZuqkZQQ-2lyx8I2wHxTQ/zh-cn_image_0000002658914685.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/ZtU7H0e6SvOsTWk266ouXg/zh-cn_image_0000002658914685.gif "点击放大")
 
 ## 背景知识
 

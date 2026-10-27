@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-550
 title: 上下文内容显示不一致
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 上下文内容显示不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:33+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:bec5f14ac4918d150c26868424eeab8a7da88ea364cf1f2b5690671adfec1727
+content_hash: sha256:4051de8bfcb66a1a999a23891bad6889a4b5cba3f2dc4c1058f37dd24c095fe2
 ---
 
 ## 问题现象
 
 点击进入详情页面，标题和页面内的数据正好相反，问题现象如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Hv2YDJQ7RSmuLM29scLWRQ/zh-cn_image_0000002628391628.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/uMCB5h-pSP2CuXUOPOu3dQ/zh-cn_image_0000002628391628.png "点击放大")
 
 ## 背景知识
 
@@ -95,4 +95,4 @@ class Per {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/e5-0tET4Tz284rTv_DLXtw/zh-cn_image_0000002658910843.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/db2ttaltQ--fCBOIc7u21w/zh-cn_image_0000002658910843.png "点击放大")

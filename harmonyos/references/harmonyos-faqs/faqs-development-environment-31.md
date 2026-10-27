@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: IDE编写C++代码时没有提示
 breadcrumb: FAQ > DevEco Studio > 环境准备 > IDE编写C++代码时没有提示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
+scraped_at: 2026-10-28T07:48:49+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:8be95484d6a4ecad9667c905d306e5d88395ee9fbf12a0167c8982c8e1e059f9
+content_hash: sha256:14c2308375bfb873cd92d10f64147de9bc4d05d6c68b1cf7d1b33c75af41479f
 ---
 
 ## 问题现象
 
 IDE编写C++代码没有自动补全提示，点击变量名也无法快速定位或者跳转，且IDE右下角服务点为红色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Ib52u4HFRomLqqAu8qsr9g/zh-cn_image_0000002658924309.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/nTvT4X9kQc6waJB_W8ggog/zh-cn_image_0000002658924309.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9e39VDdBQtWJ7ii0lIqsXw/zh-cn_image_0000002658804363.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/LN6XFpmcRRuSyT3ftzRDFQ/zh-cn_image_0000002658804363.png "点击放大")
 
 ## 背景知识
 

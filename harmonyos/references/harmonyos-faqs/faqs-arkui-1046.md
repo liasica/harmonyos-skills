@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1046
 title: 如何实现Canvas画布移动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现Canvas画布移动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:52+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:39116da6e6e54af81a6b35b390a55b976b276b951aaf1b3d2c7faf54b2340c51
+content_hash: sha256:f37b5e94d304f754eabac31875109442b53ceb4930641625a44817a7341898c9
 ---
 
 ## 问题现象
@@ -165,4 +165,4 @@ struct RenderTest {
 
 运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/-jKghDTiThSoEPp2By7hKA/zh-cn_image_0000002628405550.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/FFXJvUNXRmy5I8_ZS81T8w/zh-cn_image_0000002628405550.png "点击放大")

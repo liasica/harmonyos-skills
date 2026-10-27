@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1247
 title: 每输入一个字输入法软键盘都会收回
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 每输入一个字输入法软键盘都会收回
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:501b18f9bde90ce37f1ad2a2008743861f613c171e3e021a3f9383ae468599fe
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f43f035458d4e171fd5fb1af3e67be777e12c1fa770a113261a3a7caed26eefe
 ---
 
 ## 问题现象
 
 用户在输入框打字时，每打一个字输入法软键盘都会收回。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/uDcc9cNfQpGhuXECUjtApQ/zh-cn_image_0000002628595452.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/YDrG3MghRuGjekMT9ZGQRA/zh-cn_image_0000002628595452.png "点击放大")
 
 ## 背景知识
 

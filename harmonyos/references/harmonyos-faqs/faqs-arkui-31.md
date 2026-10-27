@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-31
 title: 如何实现类似插槽的功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现类似插槽的功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cd6a04478a5c259eb4b839d9e8ec2b39413924cd253625b53cec5b2edd7fcccd
 ---
 

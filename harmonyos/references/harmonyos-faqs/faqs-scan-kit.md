@@ -3,11 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-kit
 title: 扫码服务（Scan）
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:dabe9b5ae068ee95f9d88040787d3c6b96afba0e062950e22315472e7c0f693a
+scraped_at: 2026-10-28T07:48:28+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:fb502f2037bc81fe9e46a79b8b70c67b567fd53d0b0a86503322541057a7d3cb
 ---
 
+* **[故障排查](scan-kit-faq.md)**
 * **[扫码时无法识别多个码图](faqs-scan-1.md)**
 * **[如何解决生成的二维码无法使用的问题](faqs-scan-2.md)**
 * **[在自定义扫码界面退到后台再回到前台时扫码停止该如何解决](faqs-scan-3.md)**

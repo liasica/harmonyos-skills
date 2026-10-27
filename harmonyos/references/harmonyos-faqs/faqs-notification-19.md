@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 如何判断应用启动是来自于Notification Kit拉起的
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 如何判断应用启动是来自于Notification Kit拉起的
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a965fdb1b5e997d549d5e20cb7c4c2f0cd198b8f17b17d52c9bc002988c04831
 ---
 

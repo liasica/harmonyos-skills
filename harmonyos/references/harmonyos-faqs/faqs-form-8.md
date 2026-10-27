@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-8
 title: 卡片数据同步异常
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 卡片数据同步异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:47cc3c8991d55de1fa80e364583b5ef54502f422d041593d4dbdc618f590b092
 ---
 

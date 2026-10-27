@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用更新无法拉起升级对话框
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用更新无法拉起升级对话框
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:0e175336b5390f689280c681913a3f7824bff0855d07e2a94060e364c77532f3
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:85b6c991e7a4d8d85e17a172170986ba9ef83247edf152fb5386080dd49d99d5
 ---
 
 ## 问题现象
@@ -36,7 +36,7 @@ content_hash: sha256:0e175336b5390f689280c681913a3f7824bff0855d07e2a94060e364c77
    ```
 3. 如果本地版本确实低于在架版本，则需要抓取hilog进行分析，搜索"app invalid"查看报错信息，如下报错，显示本地调试应用的appid和在架版本不一致，这就是问题原因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/wBFmMmuxSuGA-8vx-XF9jg/zh-cn_image_0000002705154589.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/wGE8VXl9Q4mKen0wBhYZXA/zh-cn_image_0000002705154589.png "点击放大")
 
 ## 分析结论
 
@@ -65,4 +65,4 @@ A：静默更新：在满足WIFI、闲时（代指设备状态，非凌晨的概
 
 Q：发布证书不支持本地测试时，如何调试应用市场更新功能？
 
-A：可以先上架一个不含更新功能的版本，后续再使用调测证书本地调测更新功能。本地安装版本和应用市场在架版本签名信息保持一致，只需要保证[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)和[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)（对应AGC上应用的App ID，应用的唯一标识）任一相同即可。
+A：可以先上架一个不含更新功能的版本，后续再使用调测证书本地调测更新功能。本地安装版本和应用市场在架版本签名信息保持一致，只需要保证[appId](../harmonyos-guides/common-problem-of-application.md#什么是appid)和[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)（对应HarmonyOS 开发者中心上应用的App ID，应用的唯一标识）任一相同即可。

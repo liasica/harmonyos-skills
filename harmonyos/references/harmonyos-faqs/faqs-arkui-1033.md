@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1033
 title: bindSheet如何实现与List联动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > bindSheet如何实现与List联动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:06508b88240a3d8d64fab716675349434b804d297512e837a05bcae7bdb79279
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:076bf367ecabaf83adb010996d65c3093eb133d5fc29d99be462d597199547fa
 ---
 
 ## 问题现象
@@ -151,7 +151,7 @@ bindSheet通过isShow参数决定是否显示半模态页面。使用[@State装�
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/loEGJflSQkyoC_18gaTrsA/zh-cn_image_0000002628404818.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/QapumtmvTkqi45yUN7Glzw/zh-cn_image_0000002628404818.png "点击放大")
 * 场景二：bindSheet通过builder参数配置半模态页面内容。可以在[@Builder装饰](../harmonyos-guides/arkts-builder.md)的构建函数中规定一个传入参数，根据传入的参数选择构建的半模态页面。对于List组件中的每个元素，绑定bindSheet属性，判断当前组件的参数是否应该显示半模态页面。完整示例参考如下：
 
   ```ts
@@ -272,7 +272,7 @@ bindSheet通过isShow参数决定是否显示半模态页面。使用[@State装�
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/r6aAfGZIT-myJ-iRR5loSA/zh-cn_image_0000002658804087.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/guJRXaRkROCJQ-F54jw_4g/zh-cn_image_0000002658804087.png "点击放大")
 * 场景三：实现侧边弹窗需要将preferType设置为SheetType.SIDE，具体可参考[SheetType枚举说明](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheettype11枚举说明)。同时设置[自动旋转方向类型](../harmonyos-guides/window-rotation.md#自动旋转方向类型)，实现横屏效果。完整示例参考如下：
 
   ```ts
@@ -346,4 +346,4 @@ bindSheet通过isShow参数决定是否显示半模态页面。使用[@State装�
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/WSq7HcPATX6JSNQeVIcwiA/zh-cn_image_0000002628564724.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/6NXKSPHhSAKBVxJVBBI6Vw/zh-cn_image_0000002628564724.png "点击放大")

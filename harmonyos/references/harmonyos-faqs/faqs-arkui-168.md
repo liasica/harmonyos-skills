@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-168
 title: 键盘拉起时列表无法上下滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 键盘拉起时列表无法上下滑动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:21+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2e9bdd7e7426b273cb628694074619f4e7c623864ab42af2162484062551165a
 ---
 

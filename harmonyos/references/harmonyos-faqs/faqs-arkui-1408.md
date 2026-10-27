@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1408
 title: 如何解决Scroll组件无法设置某个元素一直固定在首位的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Scroll组件无法设置某个元素一直固定在首位的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b519579a750596cffc21b6b336c60319d2274a143a5b4a37c98411fca108f95d
+scraped_at: 2026-10-28T07:47:22+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:389742407b1809a796ffd2fa9f10b7a24206fee507660498a77c13feae18bc24
 ---
 
 ## 问题现象
@@ -95,7 +95,7 @@ content_hash: sha256:b519579a750596cffc21b6b336c60319d2274a143a5b4a37c98411fca10
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/SbVoisbfSpmNCuk7E-0peQ/zh-cn_image_0000002658962477.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/O1BYQ0d1QGK6ErA3X7AcGg/zh-cn_image_0000002658962477.png "点击放大")
 * 实现List组件吸顶的效果。
 
   ```ts
@@ -203,7 +203,7 @@ content_hash: sha256:b519579a750596cffc21b6b336c60319d2274a143a5b4a37c98411fca10
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/gVVf9Ny3QZGQm2gb5NHPQg/zh-cn_image_0000002628603266.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Vd8KJUrzTHSjyGTIfyABvg/zh-cn_image_0000002628603266.png "点击放大")
 
 ## 总结
 

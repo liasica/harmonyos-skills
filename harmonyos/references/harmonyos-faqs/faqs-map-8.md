@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-8
 title: 地图绘制在使用点聚合时并支持设置点信息窗和点注释功能
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 地图绘制在使用点聚合时并支持设置点信息窗和点注释功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-19
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d6caa08d814fa1e48cfd4c18ce9effc8dfbdafe38c5fb1cf637de96a49f7f80c
 ---
 

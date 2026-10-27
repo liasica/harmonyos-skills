@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1254
 title: 如何通过ArrayBuffer流数据的方式注册全局字体
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何通过ArrayBuffer流数据的方式注册全局字体
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4cda8f718120b1a935511ee83799017e2cd0d27ae7d0566f80db399de0fc7fa4
 ---
 

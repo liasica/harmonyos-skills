@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-381
 title: onAreaChange回调事件和windowStatusChange回调事件两者有什么关系，时序是怎样的
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > onAreaChange回调事件和windowStatusChange回调事件两者有什么关系，时序是怎样的
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3326050532ecdd9e8a659b354b52fa1f4a2b7a156d20390c00bd84803e6a8a7e
 ---
 

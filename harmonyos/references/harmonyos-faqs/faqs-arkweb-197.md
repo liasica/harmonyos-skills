@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-197
 title: Web组件加载网页过程中遇到的证书相关问题及解决方案
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件加载网页过程中遇到的证书相关问题及解决方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:11+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:0e93a7b857b0121c00e3e98a4a0b69cb39c4a5e379d7eda5b751467f6739f93b
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:69bd8959bc5366f06f68cd2a905f2008cb55de86d5e3dbbc0ca0e0d156a112ae
 ---
 
 ## 问题现象
@@ -134,10 +134,10 @@ Web组件加载网页过程中，会遇到证书相关问题，如：
   双向认证是指客户端和服务器端都需要验证对方的身份，在建立HTTPS连接的过程中，握手的过程比单向认证多了几步。
   + 单向认证的流程是：客户端（浏览器）请求服务端，服务端返回证书，客户端验证证书合法性后，开始通信。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/v0cIgGIeSKmAZv3uxYIPqw/zh-cn_image_0000002639521234.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/hyXIwCjCReeAd3R6IrbIHg/zh-cn_image_0000002639521234.png "点击放大")
   + 双向认证的流程是：除单向认证步骤外，服务端还会验证客户端提供证书，验证通过后，开始通信。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/OQZdYj4MSEOOYrL0xm7nOA/zh-cn_image_0000002669681273.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/dgveh0vLSNGBrpgpcQPIHw/zh-cn_image_0000002669681273.png "点击放大")
 * 解决方案：
 
   双向认证，客户端发送请求时，需要携带客户端证书，此时依赖客户端设备证书库中已经安装了客户端证书，若是未安装，需要在发送请求前，完成证书安装，再发送请求。实现方式有两种：

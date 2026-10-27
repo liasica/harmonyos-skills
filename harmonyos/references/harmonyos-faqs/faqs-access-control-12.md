@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 向用户申请授予权限但被用户拒绝后，如何处理才能避免应用二次进入时崩溃
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 向用户申请授予权限但被用户拒绝后，如何处理才能避免应用二次进入时崩溃
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2cb394afae0b960be195da11c4c4c02c4684c235c4d36f0c6532056d2b813cde
 ---
 

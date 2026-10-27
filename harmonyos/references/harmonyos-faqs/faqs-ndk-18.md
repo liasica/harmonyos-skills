@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-18
 title: 如何在Native侧调用ArkTS侧的系统能力
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在Native侧调用ArkTS侧的系统能力
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0e9c3c1421c3500f0b7dbb890d68ce1a6586ca96eb5e5d77591714efcb49c521
 ---
 

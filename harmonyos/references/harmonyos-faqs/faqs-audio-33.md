@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-33
 title: 播放视频，摘下耳机后暂停播放，佩戴上以后未恢复播放
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 播放视频，摘下耳机后暂停播放，佩戴上以后未恢复播放
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:05fe40ae5cb0185fa4bfbe567929f56e9bf87a206db6b0c189b5b8fd1ce96fa8
+scraped_at: 2026-10-28T07:48:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:41ee9744ddb2d89eb490b7298235f454893c26ce60fcf9b0b4ed20c5268ad5e7
 ---
 
 ## 问题现象
@@ -35,7 +35,7 @@ content_hash: sha256:05fe40ae5cb0185fa4bfbe567929f56e9bf87a206db6b0c189b5b8fd1ce
 
 添加音频设备连接状态发生变化的监听，在监听里完成再次连接后开启播放的逻辑。
 
-```screen
+```ts
 import audio from '@ohos.multimedia.audio';
 
 @Entry

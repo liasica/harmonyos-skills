@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-function-f
 title: NAPI使用线程安全函数相关问题
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime） > NAPI使用线程安全函数相关问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
+scraped_at: 2026-10-28T07:46:58+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:47ddde48d75938bd6440d836b6c419a6168dccdf087dceef415e62427131706e
+content_hash: sha256:4b0513a52549fa8bd1a32ec502a782658a631fef12d51c092dfbd991d8a0b9e2
 ---
 
 ## 问题现象
 
 调用napi\_create\_threadsafe\_function创建ArkTS回调接口和线程安全回调函数，传入线程安全回调函数的ArkTS侧回调接口函数地址为0，无法正确获取到ArkTS侧回调函数的原始值。线程安全回调函数代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/rnAhld0YRcCY1xZlRBCaOQ/zh-cn_image_0000002659258291.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/-9_kP4AbTmCMMiFiXRjuig/zh-cn_image_0000002659258291.png "点击放大")
 
 运行结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/oJqeq56HQ9SdQTettuoXmA/zh-cn_image_0000002659138351.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/YjgXqgb_SiWbgGEp0pbtXw/zh-cn_image_0000002659138351.png "点击放大")
 
 ## 背景知识
 
@@ -59,7 +59,7 @@ napi_status napi_create_threadsafe_function(napi_env env,
 
 ## 问题定位
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/usWvA9QsRjyydHY2WITzQg/zh-cn_image_0000002629059000.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/S6A-PPClQ5aqmN8zpzaQlw/zh-cn_image_0000002629059000.png "点击放大")
 
 根据代码分析，发现ArkTS侧回调接口传入到线程安全函数的第三个参数，此参数关联async\_hooks，用来追踪异步资源的API。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: 故障排查
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:33+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:850c0c6178c80c75012e8cea025f807cd394dd002a45aa456e3b3117f872bb5b
+scraped_at: 2026-10-28T07:47:00+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cdca65110750087525177dfeb74f036e703550870eeb1a0fe51696a165c146e5
 ---
 
 * **[ArkUI-RichEditor键盘弹出与焦点问题定位](arkui-kit-troubleshooting-0001.md)**
@@ -17,3 +17,7 @@ content_hash: sha256:850c0c6178c80c75012e8cea025f807cd394dd002a45aa456e3b3117f87
 * **[ArkUI-List组件滑动与展示问题定位](arkui-kit-troubleshooting-0007.md)**
 * **[router参数传递和接收示例](arkui-kit-troubleshooting-0008.md)**
 * **[Video组件播放与显示问题定位](arkui-kit-troubleshooting-0009.md)**
+* **[ArkUI-Image组件图片显示异常问题定位](arkui-kit-troubleshooting-0010.md)**
+* **[ArkWeb多组件拖拽手势冲突问题定位](arkui-kit-troubleshooting-0011.md)**
+* **[Swiper嵌套Image显示图片失败](arkui-kit-troubleshooting-0012.md)**
+* **[LazyForEach懒加载界面不刷新问题定位](arkui-kit-troubleshooting-0013.md)**

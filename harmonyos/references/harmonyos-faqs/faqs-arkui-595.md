@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-595
 title: 监听导航条安全区域高度处理不当导致布局异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 监听导航条安全区域高度处理不当导致布局异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:001a7dd3a14c82382b42d63abb924178b6861326077a1d4ce1539c39def71848
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:826db54ad445ba22dd230630af1965d95cfb9e0d0f343edcd3074c3aed6f6813
 ---
 
 ## 问题现象
@@ -83,7 +83,7 @@ export default class EntryAbility extends UIAbility {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/SyMD4mi6S8iEf3hNj_V-NA/zh-cn_image_0000002628392532.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/su7oVYFvTOitm76xOBJVQw/zh-cn_image_0000002628392532.png "点击放大")
 
 ## 背景知识
 
@@ -114,7 +114,7 @@ export default class EntryAbility extends UIAbility {
    |  |  |
 4. 通过确认发现padding-bottom=0px是因为getWindowAvoidArea()传入的类型为Type=window.AvoidAreaType.TYPE\_SYSTEM，此时获取的不是底部导航条避让区域高度而是顶部状态栏的高度，因此需要传入Type=window.AvoidAreaType.TYPE\_NAVIGATION\_INDICATOR来获取底部导航条避让区域高度。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/-ND0KpDTTu6G20msxXe1Yw/zh-cn_image_0000002628552428.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/eo6wYKOPSXu35NXN4m74Zg/zh-cn_image_0000002628552428.png "点击放大")
 5. 根据上一步修改后发现页面初始化后最外层Column的padding-bottom=28px，还是存在页面布局上抬的情况，再次排查发现监听避让区域变化后获取的高度单位是px，而初始化时进行了单位转换，使用的是vp，所以需要全局统一单位。
 
 ## 分析结论

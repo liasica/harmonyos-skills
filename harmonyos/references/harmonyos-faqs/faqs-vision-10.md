@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-10
 title: 如何解决活体检测报错1008302000
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 如何解决活体检测报错1008302000
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:49:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f76c2aa7f31e89268258356b0b39791e2f99f675acd084cf124ef266d544a494
 ---
 

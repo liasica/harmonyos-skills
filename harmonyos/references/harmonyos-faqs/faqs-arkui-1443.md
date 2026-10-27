@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1443
 title: 如何让一个组件显示在另一个组件上面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何让一个组件显示在另一个组件上面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a4f8cf0348f3f3e22c13f5757ddbb83f2e59a067577288ca4c2a5a96fc0dde03
+content_hash: sha256:e7a4dcc7ce78a2776b6ad85773d64acd41fb06ef724d74cd43477e676a01b9c8
 ---
 
 ## 问题现象
@@ -48,7 +48,7 @@ struct ZIndexExample {
 
 运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/NBHUhC_mT3qDJKesOUPHaw/zh-cn_image_0000002628764156.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/7wH12xu5QtGb23jcexokYQ/zh-cn_image_0000002628764156.png "点击放大")
 
 ## 常见FAQ
 

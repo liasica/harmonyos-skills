@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1416
 title: router使用pushUrl回调崩溃
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > router使用pushUrl回调崩溃
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:22+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:de1eb8d4c04c5949c4f49d2ac015cf7d9f558bbb711586b7d47b2e0e13ea5f74
 ---
 

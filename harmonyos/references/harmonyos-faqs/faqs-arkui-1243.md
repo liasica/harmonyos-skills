@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1243
 title: 用户未登录时显示退出登录按钮
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 用户未登录时显示退出登录按钮
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c321ebe288daf9bde696b276faccaccc2ecae27996f8e7926c0903f2bcf94925
 ---
 

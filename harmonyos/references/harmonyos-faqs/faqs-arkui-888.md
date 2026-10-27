@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-888
 title: Text组件下Span布局属性和触摸事件无效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件下Span布局属性和触摸事件无效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-09-02
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4f210bdca5e7a399e25ba05a1ab758105d53885e0a307d0cff62b7671ea44fed
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何解决应用缓存无法彻底清除问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何解决应用缓存无法彻底清除问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:104bdada6207a146256639adeb035f562876c9e6ab52c7a81976ff3881508b53
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bc339a1bed4f84dc1b8c11dd0385564184d411377c14e7af733bcf8c6357758d
 ---
 
 ## 问题现象
@@ -25,7 +25,7 @@ content_hash: sha256:104bdada6207a146256639adeb035f562876c9e6ab52c7a81976ff38815
 
 ${el1-el5}指的是[el1，el2，el3，el4，el5目录](../harmonyos-guides/app-sandbox-directory.md#应用文件目录与应用文件路径)。${moduleName}是模块名。日常业务中，用户的缓存主要在el1，el2目录下，如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Z2aPN8LKRcm7BXL2v5-qRA/zh-cn_image_0000002628899112.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ybv938PwSD6S2zNsU6cZDA/zh-cn_image_0000002628899112.png "点击放大")
 
 实际情况还是以应用业务为准，应用可以通过[切换应用文件加密分区](../harmonyos-guides/application-context-stage.md#获取和修改加密分区)，获取所有的包含缓存文件的目录。
 

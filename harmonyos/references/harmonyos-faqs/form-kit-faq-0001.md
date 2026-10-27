@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/form-kit-faq-00
 title: 元服务卡片多张图片刷新展示常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 常见问题 > 元服务卡片多张图片刷新展示常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:28+08:00
+scraped_at: 2026-10-28T07:46:50+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:0d976bcdcce70d7d7ea522686c7e281cbc58865bb90999abacfaed751598f1e9
+content_hash: sha256:ba90c122fd90fa0041863efcdbc02d0c2a0db2e6a7eadc5a22dff1b3b6476c26
 ---
 
 **Q：卡片加载时，有多张图片需要显示在卡片页面里，如何一次性添加到卡片页面上？**
@@ -100,7 +100,7 @@ content_hash: sha256:0d976bcdcce70d7d7ea522686c7e281cbc58865bb90999abacfaed75159
 
    效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/4NYJomGYTrSFIT3xqmVwfQ/zh-cn_image_0000002766078502.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/KXIZEsFtTx-NbCusgpAX8g/zh-cn_image_0000002766078502.png "点击放大")
 
 **Q：服务卡片中是否可以加载GIF图？**
 

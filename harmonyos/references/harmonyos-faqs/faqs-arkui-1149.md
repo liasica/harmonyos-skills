@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1149
 title: 使用Image组件加载图片，发现图片变为了正方形
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用Image组件加载图片，发现图片变为了正方形
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:04486e588d862e7aecdaed700e7f3d7ea8200067201c0dd42925738fe28093aa
+content_hash: sha256:8655ea77c0b188daf77b75a74fb4ce613d0259d976c8ce4fb9edc02084470617
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:04486e588d862e7aecdaed700e7f3d7ea8200067201c0dd42925738fe28
 
 错误现象展示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/0Hiahax3RgiPX1pvHyszrA/zh-cn_image_0000002658928931.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/l19DFEwjT_uMNYdGqDz6rQ/zh-cn_image_0000002658928931.png "点击放大")
 
 正常现象展示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/zYjHYlAGRpivEY9BwyX7oA/zh-cn_image_0000002658808975.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/RD360OixTre7yjLQFPyF-A/zh-cn_image_0000002658808975.png "点击放大")
 
 ## 背景知识
 

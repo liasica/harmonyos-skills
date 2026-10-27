@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-1
 title: 如何统计单元测试的覆盖率
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 如何统计单元测试的覆盖率
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
+scraped_at: 2026-10-28T07:49:01+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:3e247ce806123658f83e6700bcf173d040f3f225f7d35336069f43b8535877b3
+content_hash: sha256:b01833b6928432b2c58e1adecb9d88b3f49aba5d599f0e54bceb5bbd0bf21902
 ---
 
 ## 问题现象
@@ -18,9 +18,9 @@ content_hash: sha256:3e247ce806123658f83e6700bcf173d040f3f225f7d35336069f43b8535
 
 ## 解决方案
 
-在执行![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/lKmJV5ylTQKGhBnJM46xdQ/zh-cn_image_0000002658808811.png)run with coverage之后，会在对应模块的“.test/default/intermediates/test”文件夹路径下生成js\_coverage.json和init\_coverage.json文件，供后续生成覆盖率报告使用。
+在执行![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/D4Bm55xWQOWJgSGOXD0TQA/zh-cn_image_0000002658808811.png)run with coverage之后，会在对应模块的“.test/default/intermediates/test”文件夹路径下生成js\_coverage.json和init\_coverage.json文件，供后续生成覆盖率报告使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/xOr57niRQ8mO-52YYMeRzw/zh-cn_image_0000002628409546.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/dJtCED-SSqOWRGs2c_XTxw/zh-cn_image_0000002628409546.png "点击放大")
 
 想要整合多个模块的覆盖率报告，可以使用如下命令，将各模块的json文件在命令后使用#拼接。
 
@@ -37,7 +37,7 @@ hvigorw collectCoverage -p projectPath={projectPath} -p reportPath={reportPath} 
 hvigorw collectCoverage -p projectPath=D:/HarmonyProject/CoverageTest -p reportPath=D:/HarmonyProject/CoverageTest/coverage_report -p coverageFile=D:/HarmonyProject/CoverageTest/harModule1/.test/default/intermediates/test/init_coverage.json#D:/HarmonyProject/CoverageTest/harModule1/.test/default/intermediates/test/coverage_data/js_coverage.json#D:/HarmonyProject/CoverageTest/harModule2/.test/default/intermediates/test/init_coverage.json#D:/HarmonyProject/CoverageTest/harModule2/.test/default/intermediates/test/coverage_data/js_coverage.json
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/G0OOPzO9QjaQIW5RwijMZg/zh-cn_image_0000002628569444.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/3VzRLMvuQN-mveUs8pIJkA/zh-cn_image_0000002628569444.png "点击放大")
 
 ## 常见FAQ
 
@@ -53,7 +53,7 @@ init_coverage.json#bjc_cov_1742528669171.json#bjc_cov_1742528671121.json
 
 Q：Instrument Test如何执行全部测试用例来统计覆盖率？
 
-A：右击ohosTest目录下的test文件夹，选择![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/aErPE1QZTXCNhVbD0fZCDw/zh-cn_image_0000002658928761.png)，可以统计全部测试用例的覆盖率。
+A：右击ohosTest目录下的test文件夹，选择![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/jF0_mJkfQ6O-rdbSyZtRJw/zh-cn_image_0000002658928761.png)，可以统计全部测试用例的覆盖率。
 
 Q：Local Test用例如何获取单元测试通过率？
 

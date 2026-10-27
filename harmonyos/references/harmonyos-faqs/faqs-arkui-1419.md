@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1419
 title: TextArea注入长文本未自动滚动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextArea注入长文本未自动滚动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:bcfdd801713e8b63a1f0bc8b3a49fd437144518a13414744ed920f4d6edae70c
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ab8b19ca77c6bcf153238d9705bdbe3d062cdbcbe8c38d6794c5bcdfd30e95a2
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:bcfdd801713e8b63a1f0bc8b3a49fd437144518a13414744ed920f4d6ed
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/paSjsFAJSyOpYG6FYOx70A/zh-cn_image_0000002628603740.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/1ZAdLbe3Q0Sns3U5Jfid2Q/zh-cn_image_0000002628603740.jpg "点击放大")
 
 ## 背景知识
 
@@ -73,7 +73,7 @@ content_hash: sha256:bcfdd801713e8b63a1f0bc8b3a49fd437144518a13414744ed920f4d6ed
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/_tXJuZdBQwO9HWsgCfruDw/zh-cn_image_0000002658843007.jpg "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/X8DcuXBmQTiDfDooJwsS8A/zh-cn_image_0000002658843007.jpg "点击放大")
 * **方案二**：在TextArea组件外面再套一层Scroll组件，通过Scroller控制器滚动到容器边缘，从而实现自动滚动。
 
   ```ts
@@ -115,4 +115,4 @@ content_hash: sha256:bcfdd801713e8b63a1f0bc8b3a49fd437144518a13414744ed920f4d6ed
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/GyYExA28RWeM8_tlZR-h_Q/zh-cn_image_0000002628763642.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/cGseAElSR_6v0FdES4AiTw/zh-cn_image_0000002628763642.gif "点击放大")

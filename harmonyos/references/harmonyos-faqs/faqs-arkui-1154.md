@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1154
 title: 如何实现基于dialogContent的自定义弹窗的双向数据绑定
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现基于dialogContent的自定义弹窗的双向数据绑定
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:6a9d8d3388852d5dbec86952e7fe353be82a0c0b4e0430e92b1c2305963831f8
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e247af3d6ce1bf4de16d2b89548fffe315c557d950e7dd3f0bc1fc51185946e9
 ---
 
 ## 问题现象
@@ -267,7 +267,7 @@ content_hash: sha256:6a9d8d3388852d5dbec86952e7fe353be82a0c0b4e0430e92b1c2305963
 
   场景一实现效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/oNwg8U7VTJClp9Bx-OVn4A/zh-cn_image_0000002683244604.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/hoocFl4XSKSrD6RbDvdHKg/zh-cn_image_0000002683244604.png "点击放大")
 * 场景二：使用bindSheet时，如何实现弹窗和页面间的双向数据绑定？
 
   该场景与场景一中的方案二基本一致，只需要注意builder的使用传递规则即可，完整示例代码如下：
@@ -335,7 +335,7 @@ content_hash: sha256:6a9d8d3388852d5dbec86952e7fe353be82a0c0b4e0430e92b1c2305963
 
   场景二实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/KN2ilZr3Q3uUd3jQplqkkQ/zh-cn_image_0000002683246076.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/QWYc8pdjRqChK35FwUiaCA/zh-cn_image_0000002683246076.png "点击放大")
 * 场景三：使用@CustomDialog时，如何实现弹窗和页面间的双向数据绑定？
 
   详情可参考官方文档：[示例6（使用@Link和@Consume监听数据变化）](../harmonyos-references/ts-methods-custom-dialog-box.md#示例6使用link和consume监听数据变化)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: Video组件播放与显示问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > Video组件播放与显示问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:33+08:00
+scraped_at: 2026-10-28T07:47:00+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:865e113b5a2763d450ff1a43bb078084edc3a70874fa259b7b4fb2c7f9ffe78a
+content_hash: sha256:ae7834056e286cc0aae0c2816415ee2c4cfdaea100b280af77eb00047ba112a0
 ---
 
 ## 平板上视频显示不全
@@ -438,7 +438,7 @@ struct OptionTwo {
 
 当前视频播放状态未保持连续性，切换到后台后视频停止播放，返回前台后需要手动刷新页面才能恢复播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/iV3aFQD1Q3u_XtQ_Cw-ENg/zh-cn_image_0000002768130662.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/P5Dz1oWTTMmeJux21oxs9A/zh-cn_image_0000002768130662.png "点击放大")
 
 ### 定位过程
 
@@ -626,4 +626,4 @@ struct VideoControlPage {
 
 **效果预览图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/rGy_ewyjSrm-Q_RLWtQfog/zh-cn_image_0000002768292190.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/Wc7OzWsnSUOSpOb2kxD9Cw/zh-cn_image_0000002768292190.png "点击放大")

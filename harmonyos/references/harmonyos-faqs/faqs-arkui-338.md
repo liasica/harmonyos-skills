@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-338
 title: Marquee组件的文字滚动，第一次滚动出现大量空白，如何避免空白出现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Marquee组件的文字滚动，第一次滚动出现大量空白，如何避免空白出现
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bf489111ff38ca8918b2af080ae2ab8bdcc39234b22fd096d65dff66a12a9f70
 ---
 

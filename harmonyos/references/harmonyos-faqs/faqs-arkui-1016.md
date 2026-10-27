@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1016
 title: 如何在EntryAbility中获取Toggle组件的值
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在EntryAbility中获取Toggle组件的值
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c8c356f724c7bf6af168fd1f00f9c6df039d3d1e0cb72f223443616200db39f9
+scraped_at: 2026-10-28T07:47:15+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e6b46746dca17ba9e13d2b7e09b28d2001c1a8d519b16b4f4013392d788ebf60
 ---
 
 ## 问题现象
@@ -93,7 +93,7 @@ content_hash: sha256:c8c356f724c7bf6af168fd1f00f9c6df039d3d1e0cb72f223443616200d
 
 问题现象效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/fKGmNDA9QiyylHISMbqy2w/zh-cn_image_0000002658804047.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/_Boccm0aTO6JkGaRFDxY-Q/zh-cn_image_0000002658804047.png "点击放大")
 
 ## 背景知识
 
@@ -225,4 +225,4 @@ struct SetPage {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/FGPpFZTzQ6CLaWvZ_-APKQ/zh-cn_image_0000002628404778.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/qSHVkS_EQ_qtYxTfppn3ZA/zh-cn_image_0000002628404778.png "点击放大")

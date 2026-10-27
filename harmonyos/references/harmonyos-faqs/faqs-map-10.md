@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-10
 title: 使用POI关键字搜索结果跟花瓣地图搜索不一致
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 使用POI关键字搜索结果跟花瓣地图搜索不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d3e9250f46692e13a29b58f46cf12078a69c2c8a16cadccdae3009d49afe6015
 ---
 

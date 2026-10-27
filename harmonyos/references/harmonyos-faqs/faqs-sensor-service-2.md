@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 如何读取运动传感器比如加速度传感器
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 如何读取运动传感器比如加速度传感器
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:55f963df1d1ceb5b7ea4c7b0aff946b769768c0e694001296020ad4401ea67a2
 ---
 

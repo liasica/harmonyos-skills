@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1621
 title: 如何实现点击下拉菜单跳转指定页签
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现点击下拉菜单跳转指定页签
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4406891c50a97f3ccd28ca6b00be040b9bc7d88c1c08656e3d4f9f9731cc8f58
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:828b9e541f964bb31d1bf52b0d1a7f6b80210643e006e0c7aea2f4279b8839f9
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:4406891c50a97f3ccd28ca6b00be040b9bc7d88c1c08656e3d4f9f9731c
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/HoBnVb1HQr-GLBvxNtIlKg/zh-cn_image_0000002658856843.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/HxMfsosORM-RWEhyfGA1pQ/zh-cn_image_0000002658856843.gif "点击放大")
 
 ## 背景知识
 

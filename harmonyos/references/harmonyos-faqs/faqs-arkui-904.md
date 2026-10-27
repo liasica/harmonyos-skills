@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-904
 title: Tab组件内Navigation跳转，TabBar导航栏隐藏失败如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Tab组件内Navigation跳转，TabBar导航栏隐藏失败如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a75634448705614125e6e29145b5bf25d685f61665728e8438c971b5b5f2bf47
+content_hash: sha256:2b8fb0885e87d876883b8ec302fa540ed95beddb98c614ff11c692bc756f8c74
 ---
 
 ## 问题现象
 
 在“我的”页面点击“跳转设置页”按钮跳转到设置页面，底部的TabBar导航栏仍然存在。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/XN0I7Qu9RWeKUJGfYj8PxQ/zh-cn_image_0000002658918977.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Q3EdubCPQ76R5XOWPuo6yQ/zh-cn_image_0000002628399756.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/byVzUIx4R-Wd1O_6LmaDvA/zh-cn_image_0000002658918977.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/2uh3MueAQDi6amfVNwfA8w/zh-cn_image_0000002628399756.png "点击放大")
 
 主页面有“首页”、“我的”两个Tab页面，部分代码如下：
 
@@ -80,7 +80,7 @@ struct Settings {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/un0ap7csQJCKg7_JS0p0uQ/zh-cn_image_0000002658799025.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/fx0FehJRTkWJV4K0sp_zRQ/zh-cn_image_0000002658799025.png "点击放大")
 
 ## 背景知识
 

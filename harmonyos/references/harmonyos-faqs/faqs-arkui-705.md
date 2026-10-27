@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-705
 title: LazyForEach实现骨架屏预加载效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > LazyForEach实现骨架屏预加载效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:36+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:02770dcd5721b785473fc6b502424ba226f6837ee211e27ab09d4ea255a72e1d
+content_hash: sha256:938f1d12f3520741328f2de12c213d5ce71dbca37021a5c7528d543e229dafea
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:02770dcd5721b785473fc6b502424ba226f6837ee211e27ab09d4ea255a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/hAvegf_SSiuumkuMhGG5pw/zh-cn_image_0000002658914207.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/_K1Fcg4HS8GlKxCN-5JZBQ/zh-cn_image_0000002658914207.png "点击放大")
 
 ## 背景知识
 

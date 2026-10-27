@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-152
 title: Tabs组件嵌套Web，无法左右滑动
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Tabs组件嵌套Web，无法左右滑动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0ec1dbbf765a616d26e70370ca264f6500e68e0d07d5ad79e2a04a5ef29ac848
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:22c5690b5ed328d447e2a67b960a944dfa48e6fc481712b334345c573928dcd2
 ---
 
 ## 问题现象
 
 使用Tabs组件嵌套Web组件的布局，当左右滑动时，Tabs组件不能切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/vp-xoMhVRDKxLFsmYIm4oQ/zh-cn_image_0000002629059056.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/IKko4hqTRkGoCN1_cbB3Tw/zh-cn_image_0000002629059056.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/xvJYbdUaQsebW0J9jzdCMg/zh-cn_image_0000002659258359.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/HPUAKzbuQBOQ0z9Mw-0PAA/zh-cn_image_0000002659258359.png "点击放大")
 
 ## 背景知识
 

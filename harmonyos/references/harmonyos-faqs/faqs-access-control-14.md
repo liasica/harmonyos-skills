@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: module.json5配置文件中extensionAbilities和requestPermissions的权限声明有何区别
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > module.json5配置文件中extensionAbilities和requestPermissions的权限声明有何区别
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:37f4148b66290f8dd96e9bfa2fc40972c44b79b761810fb8b04a3922c826ddc3
 ---
 

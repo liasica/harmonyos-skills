@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-171
 title: 如何使用泛型定义接口数据
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何使用泛型定义接口数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:67ddd856705138c3ec8ff17cc867a3d91e77c446f53c25064e004a462c242c20
 ---
 

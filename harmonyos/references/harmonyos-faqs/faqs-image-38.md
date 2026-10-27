@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-38
 title: 使用PixelMap高效完成一张图片裁剪为多个部分
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 使用PixelMap高效完成一张图片裁剪为多个部分
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
+scraped_at: 2026-10-28T07:48:27+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f174de227ee311e33ede7d63c711b5fa1ac5afda10c0aa8811bb4a471acf1fe8
+content_hash: sha256:8b516894c997927c8edcb27228783457832269ca79b69d3f3d11e75fa1e5545e
 ---
 
 ## 问题现象
@@ -22,11 +22,11 @@ content_hash: sha256:f174de227ee311e33ede7d63c711b5fa1ac5afda10c0aa8811bb4a471ac
 
 由于PixelMap.crop方法操作PixelMap自身而不是返回副本，一张图裁剪为多张小图时，需要将原图拷贝后再剪切的方式处理，大量的复制拷贝增加了处理耗时，参考[PixelMap深拷贝案例](https://gitee.com/harmonyos_samples/image-depth-copy)。实现逻辑如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/hfc8SHdGRNWiitTi5-kYmQ/zh-cn_image_0000002658911815.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/oZmk5ip3RVaU5YVsFkwKXg/zh-cn_image_0000002658911815.png "点击放大")
 
 实现一张图片的高效裁剪，可以使用PixelMap.readPixels，传入area参数仅读取裁剪范围，再使用writePixels写入新图片。此时仅复制了必须的裁剪结果数据，降低大量复制消耗并且可以省略复制后的裁剪步骤，操作示意图及步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/SpDVVciwRdy6p8QmvNPt3Q/zh-cn_image_0000002628392608.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/fmmZkbGoRTKurw0uQy853Q/zh-cn_image_0000002628392608.png "点击放大")
 
 1. 获取需要裁剪的PixelMap通过readPixels读取裁剪区域数据。
 2. 使用writePixels将读取到的数据写入空白PixelMap，生成小图。

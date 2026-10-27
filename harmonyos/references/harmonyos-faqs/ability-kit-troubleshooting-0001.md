@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/ability-kit-tro
 title: UIAbility生命周期与启动问题定位
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 故障排查 > UIAbility生命周期与启动问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:24+08:00
+scraped_at: 2026-10-28T07:46:47+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:4b54b05c8b0cf684b01e4902bf6f26069eddbf588674b8269b6b6859c87a1a8a
+content_hash: sha256:66bd6e21b610739c5030ff508334d08c7cd414849dcfa07fe478e548c859895c
 ---
 
 ## 应用二次侧滑退出到桌面，背景声音还在继续播放
@@ -99,7 +99,7 @@ struct Index {
 
 应用启动后，在页面内容出现前显示黑屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/9QAZEt7JTRuChSt3jXE3Ew/zh-cn_image_0000002797578507.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/eIu9tVXuRWSNn30zBScVow/zh-cn_image_0000002797578507.png "点击放大")
 
 ### 定位过程
 
@@ -171,4 +171,4 @@ struct StartDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/kreUhEXUQ8eht42rK_UC2g/zh-cn_image_0000002768139012.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/PhL60ugTRUCLWIBUUxSl0w/zh-cn_image_0000002768139012.png "点击放大")

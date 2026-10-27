@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-2
 title: 通过页面跳转将CardRecognition控件拍照界面关闭
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 通过页面跳转将CardRecognition控件拍照界面关闭
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:38+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:49:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:dce24e148d8c2845c425257d054c94d0de0bc71cd025efef88a99811f744979a
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1110
 title: NavDestination生命周期使用常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > NavDestination生命周期使用常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8f42b37edd346a71fcedff88129ba090f9ca52ce2a226a6b3232ce31c1966c24
+content_hash: sha256:890ace47c99a36c73298966e5974eee2d1bc5ef8c46e16958763e66408d288f9
 ---
 
 ## 问题现象
@@ -166,7 +166,7 @@ content_hash: sha256:8f42b37edd346a71fcedff88129ba090f9ca52ce2a226a6b3232ce31c19
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/NBtX6De-QWCrTo1MpmYo4Q/zh-cn_image_0000002658806747.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/1c6BKElHQ3qa2GdDwzDlLw/zh-cn_image_0000002658806747.png "点击放大")
 * **场景三**：申请权限弹窗触发onHidden和onShown。
 
   权限弹窗属于全局模态组件，会强制覆盖当前页面。当弹窗显示时，当前NavDestination页面会触发onHidden（页面被遮挡）和onInactive（失去焦点）。弹窗关闭后，页面重新可见并激活，触发onShown和onActive回调。
@@ -353,11 +353,11 @@ content_hash: sha256:8f42b37edd346a71fcedff88129ba090f9ca52ce2a226a6b3232ce31c19
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/F5EeRKi-SBmG4EokPZZE-w/zh-cn_image_0000002628407494.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/q0224TzBSyeGdGbUIm_F1g/zh-cn_image_0000002628407494.png "点击放大")
 
   日志如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/2Xg3cYd1Q7q25XU-e9yzxA/zh-cn_image_0000002628567390.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/F85HQcpySZKSWjE0p747hA/zh-cn_image_0000002628567390.png "点击放大")
 
 ## 常见FAQ
 

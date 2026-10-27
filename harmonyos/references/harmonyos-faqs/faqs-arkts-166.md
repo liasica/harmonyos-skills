@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-166
 title: Release模式下对象无法使用Object.attribute方式获取属性
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > Release模式下对象无法使用Object.attribute方式获取属性
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-08-27
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:30d301cbcae3d2bf4eb91fcd8366db1acf00a5f6a59a9cbed422666a044552bd
 ---
 

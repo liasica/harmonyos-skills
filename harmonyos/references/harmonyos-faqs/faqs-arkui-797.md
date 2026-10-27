@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-797
 title: 在子窗口中使用Navigation进行多页面跳转
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 在子窗口中使用Navigation进行多页面跳转
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-07-02
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:911eada7b1078e53a7d25b8780fb55be572aaded33126cb96072880dbd8c45ff
 ---
 

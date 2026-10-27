@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-505
 title: 动态属性的使用场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 动态属性的使用场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:14eba6b4a0d2e8c864284f6724588e20ad7f271a59e8c3ffe82f660205954373
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:803d45769f505ea14be70180da637fb43a5bfb3b8dfd7bbb9dbd390ea58aaee2
 ---
 
 ## 问题现象
@@ -137,7 +137,7 @@ content_hash: sha256:14eba6b4a0d2e8c864284f6724588e20ad7f271a59e8c3ffe82f6602059
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/-8HXvFS3TG6w0S4HWSjhiA/zh-cn_image_0000002658907833.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/gKihosgkQdWwR-1j2iutaA/zh-cn_image_0000002658907833.png "点击放大")
 
 * 场景二：在不同组件下如何实现复用相同的属性。
 
@@ -218,7 +218,7 @@ content_hash: sha256:14eba6b4a0d2e8c864284f6724588e20ad7f271a59e8c3ffe82f6602059
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/l_DsdUWvRkaax2_5tslhgA/zh-cn_image_0000002658787895.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/WrhkpemgSfmbN5nprxQ6EQ/zh-cn_image_0000002658787895.png "点击放大")
 
 ## 常见FAQ
 

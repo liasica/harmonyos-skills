@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-122
 title: 视频播放页面出现标签栏
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 视频播放页面出现标签栏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e719ac48cf553009227c09d42e30025cb4eed37697d8638da4f7637cd5bdfa6c
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:928faf872e18b56f121c65056ec50f74f6e11d432e997c72a6bd2a2c44fb5ddd
 ---
 
 ## 问题现象
 
 跳转到视频播放页面时，标签栏依然存在，影响用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/yWKeJTckTBOVKyTBhKTYUw/zh-cn_image_0000002629059048.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/hd4WiJ56RUmMGPya1Ec8ew/zh-cn_image_0000002629059048.png "点击放大")
 
 ## 背景知识
 
@@ -336,4 +336,4 @@ index\_cn.html.ets：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/9JdsWvQSSkq3Dba1el181Q/zh-cn_image_0000002659258351.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/jegaYr9YSNSW-qHyP66-BA/zh-cn_image_0000002659258351.png "点击放大")

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-54
 title: 如何实现通过调用其他已安装的应用来打开特定文件
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何实现通过调用其他已安装的应用来打开特定文件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6bd36520688b66f244273063f461d86d9d97f9b44b9cee094994e2661445b2b1
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a1263f5d29bb53f6a211bbeb5a1ef65765c4e8319864bc05755880cb72259d3a
 ---
 
 开发者可以通过使用隐式Want机制来调用其他应用打开文件。通过设置合适的携带的数据（uri）、MIME type类型（type）、处理Want的方式（flag）等字段，以便系统能够识别并弹出一个选择框，让用户选择合适的应用来打开文件，若仅匹配到一个应用，则会直接拉起该应用。
 
 效果示意如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/S5HkdmiES6SEoHWVMcow8w/zh-cn_image_0000002624635778.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/xVjR-ThCRqKdpWnWPDH03w/zh-cn_image_0000002624635778.jpg "点击放大")
 
 **调用方**
 

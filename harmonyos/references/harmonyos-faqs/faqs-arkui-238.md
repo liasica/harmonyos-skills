@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-238
 title: 在屏幕底部的组件的响应区域是否存在遮挡
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 在屏幕底部的组件的响应区域是否存在遮挡
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1de8415f41b4ff4bab13ceab9462520894912c333e1fa3a290fe5d7356c6c31b
 ---
 

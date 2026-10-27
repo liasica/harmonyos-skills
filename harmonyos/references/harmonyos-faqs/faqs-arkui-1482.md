@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1482
 title: TextInput组件点击组件外区域收起软键盘的实现方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput组件点击组件外区域收起软键盘的实现方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-07-07
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a5b9e986dc8b7a2359f9b880fdae9f03e713cd12a3f1f0f79bd8e04bfe0e9054
 ---
 

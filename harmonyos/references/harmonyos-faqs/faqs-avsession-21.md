@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 应用内直播切换后台后声音正常但无播控组件
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 应用内直播切换后台后声音正常但无播控组件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:69dd78b93c828f859db678a7ced4f9b8bf05a974b005e38b17a265d0963b52ec
+scraped_at: 2026-10-28T07:48:33+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:df859540f78c4c201154b30566968c9bd6a5dad6172575310fd5be74ca379fcb
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ content_hash: sha256:69dd78b93c828f859db678a7ced4f9b8bf05a974b005e38b17a265d0963
 
 1. 查看问题日志信息进行分析，全局搜索关键词AVSession，可见此时当前的AVSession会话焦点（Session Focus）指向了另一个应用（进程ID：1654），并且有且只有这一个最高优先级媒体会话。
 
-   ```screen
+   ```txt
    08-12 16:32:27.873 1654 22650 I C02B91/av_session/AVSession: [GetAllSessionDescriptors]GetAllSessionDescriptors with size=1, topSession:com.***
    ```
 2. 全局搜索代码关键词AVSessionManager进行定位，发现应用并未通过AVSessionManager接口创建并激活媒体会话。

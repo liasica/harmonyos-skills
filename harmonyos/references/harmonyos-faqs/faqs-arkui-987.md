@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-987
 title: 智能表结合ArcSlider实现调节屏幕亮度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 智能表结合ArcSlider实现调节屏幕亮度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:15+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9a17f5bcc949210bb1002a23d8f9632c53d4de2e6f45fed9d6ebe984c7d87957
 ---
 

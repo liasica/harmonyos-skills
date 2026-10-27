@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-561
 title: Stack组件实现Swiper堆叠动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Stack组件实现Swiper堆叠动画效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:55+08:00
+scraped_at: 2026-10-28T07:47:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9d378f3c488ddebbfc54d40a4aee0c944b9e0141a7902fa8fa16581eef47bca7
+content_hash: sha256:d34c0308915245290d077bafec9717780099f7802027ae53adf7e1a2822dae2f
 ---
 
 ## 问题现象
@@ -148,7 +148,7 @@ Swiper如何实现卡片堆叠样式：
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/MDjGkCXwTPSS8uRCndGLug/zh-cn_image_0000002628552022.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/n5HBKy71QWuzDenUd7oUjg/zh-cn_image_0000002628552022.gif "点击放大")
 
 * **左右堆叠实现。**
 
@@ -186,7 +186,7 @@ Swiper如何实现卡片堆叠样式：
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/VXw9uYg-TGGFtErOCrDlPA/zh-cn_image_0000002658911343.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/PpBsnvrfT2a5Y3ov9YrfNg/zh-cn_image_0000002658911343.gif "点击放大")
 
 **说明** 
 

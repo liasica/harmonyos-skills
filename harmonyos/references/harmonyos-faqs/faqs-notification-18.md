@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 如何设置应用通知角标
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 如何设置应用通知角标
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:30+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:354242f127560aab6a5849f44b9c8d350c38c1735cedd271142125faa0b86a4a
 ---
 

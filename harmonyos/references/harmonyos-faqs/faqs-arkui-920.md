@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-920
 title: 系统组件双向同步语法对深层对象是否兼容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 系统组件双向同步语法对深层对象是否兼容
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8ac0199a9883085381ccd31a9db0b1b839617f8fa6d0e1ef82f329ae855be7ed
 ---
 

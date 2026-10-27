@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-941
 title: 水印遮罩导致TextInput无法获取粘贴权限
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 水印遮罩导致TextInput无法获取粘贴权限
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:42+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b6f8ec483a79c502db3f3870d01f27d0da9e7de512190c411d96a31047e6c5e4
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c9d395cf3dd11d6cc5671cabdb37ac4439a8934473b518e3e8c24266cb68a370
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:b6f8ec483a79c502db3f3870d01f27d0da9e7de512190c411d96a31047e
 
 问题效果预览:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/2rznFASaQ16OBBDxjmyRMw/zh-cn_image_0000002658800465.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/FIPhsACzQ5y0gbESTlKg3w/zh-cn_image_0000002658800465.png "点击放大")
 
 ## 效果预览
 

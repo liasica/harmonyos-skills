@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1184
 title: 如何监听自定义子组件中TextInput输入内容的变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何监听自定义子组件中TextInput输入内容的变化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cd8ad12ed35ce0416b89c8ae7d648908762b64647ffdf14ea10fae32379bd25f
 ---
 

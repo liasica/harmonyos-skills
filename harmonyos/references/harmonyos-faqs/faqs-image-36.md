@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-36
 title: 如何实现PixelMap图片颜色翻转
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何实现PixelMap图片颜色翻转
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
+scraped_at: 2026-10-28T07:48:27+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a5adc36a914a9f6c6ea0d71fab4d70b1c85d0f980672bbf23af596e8ca2ec819
+content_hash: sha256:f3a787bd00bfdec06090236ce9d916b082cba2f5cd66e9ac8991818521d4cb33
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:a5adc36a914a9f6c6ea0d71fab4d70b1c85d0f980672bbf23af596e8ca2
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/G1YqpdYfTzyheW3GtrZhVw/zh-cn_image_0000002628552500.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/SFbK2q4oSYyaegK1M7fukw/zh-cn_image_0000002628552500.png "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-9
 title: 如何监听地图的移动
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何监听地图的移动
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:23+08:00
-doc_updated_at: 2026-10-20
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7966772f13c84b4b9458b3a2807805f1593d41ed8a50277c8c2c4035236c3a6d
 ---
 

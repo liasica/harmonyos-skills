@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 打开应用弹出的通知授权弹窗来不及点就消失了
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 打开应用弹出的通知授权弹窗来不及点就消失了
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d241155113edabe7a7c5626645ce050c5a3fc4a22b7b56a78a11c7893b88b557
 ---
 

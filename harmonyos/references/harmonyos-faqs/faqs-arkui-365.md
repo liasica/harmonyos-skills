@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-365
 title: Image组件长按和拖拽的系统手势和自定义手势冲突
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image组件长按和拖拽的系统手势和自定义手势冲突
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f8c93dd1951fbdb27342d33de2313cdf641829959f943a5dbcc0f195a1292430
 ---
 

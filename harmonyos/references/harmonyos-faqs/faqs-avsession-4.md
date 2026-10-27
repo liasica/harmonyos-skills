@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 能否定制播控中心界面上显示的控制元素
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 能否定制播控中心界面上显示的控制元素
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:32+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b5d46512e6720be52ed400a80d2469480b3749dfe5ec52b404de50c45c14fd26
 ---
 

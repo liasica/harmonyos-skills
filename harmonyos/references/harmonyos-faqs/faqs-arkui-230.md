@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-230
 title: Component如何监听应用前后台切换
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Component如何监听应用前后台切换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eff0629a9ab4ecf41487549c0d460b75fbebef8fc1bc20fc33a53e70d4694103
 ---
 

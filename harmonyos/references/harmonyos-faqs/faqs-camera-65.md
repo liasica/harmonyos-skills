@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-65
 title: 如何使用CameraPicker拍摄HEIF图
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何使用CameraPicker拍摄HEIF图
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
+scraped_at: 2026-10-28T07:48:26+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:5e46217b303587415ed4fc752d2721a9401cc2446b5fdf734aa55e68958498ae
+content_hash: sha256:77835557308d50ed0d815380b21d1d6ac5d60424b5e9ae52952c541117e112d7
 ---
 
 ## 问题现象
@@ -250,4 +250,4 @@ struct Index {
 
 拍摄照片如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/SGHdAAJvSOmERP-ZVNPOiw/zh-cn_image_0000002628552486.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/tFdRV0B2TUC0dLbY1139lw/zh-cn_image_0000002628552486.png "点击放大")

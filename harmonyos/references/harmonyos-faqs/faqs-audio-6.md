@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-6
 title: 音频处理哪些场景内置3A算法及AEC、ANC、AGC是否支持独立开关
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 音频处理哪些场景内置3A算法及AEC、ANC、AGC是否支持独立开关
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:651ce96c4aa78f22459170722a9a442229ea99944c76a3b1678a2842f4275dec
 ---
 

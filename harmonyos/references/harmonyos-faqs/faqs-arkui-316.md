@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-316
 title: 如何实现Scroll、List单边回弹效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Scroll、List单边回弹效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9c35f5d0db21b4f82ee8958e47cf7c53e718ca9b23727faf6b1f64e5de376ae0
 ---
 

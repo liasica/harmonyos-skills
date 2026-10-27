@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-46
 title: 如何将类Java语言的线程模型（内存共享）的实现方式转换成在ArkTS的线程模型下（内存隔离）的实现方式
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何将类Java语言的线程模型（内存共享）的实现方式转换成在ArkTS的线程模型下（内存隔离）的实现方式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:51+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1a44868e1cfc508f853a3c9865d923c1b2b64781754f0293cf2f7e6f3e7bc9da
 ---
 

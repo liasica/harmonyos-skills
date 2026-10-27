@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-605
 title: LazyForEach懒加载修改数据界面不刷新
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > LazyForEach懒加载修改数据界面不刷新
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:51b2f7167ac524185dd1123bfc21b84c8a7b053ea16fbf7b002360e34039158b
 ---
 

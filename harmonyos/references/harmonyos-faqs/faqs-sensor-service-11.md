@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 水平仪气泡移动方向错误
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 水平仪气泡移动方向错误
 category: harmonyos-faqs
-scraped_at: 2026-09-18T06:54:38+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:4b41b21d5c435cbeb07e7746657fd0bbee08f4b13176dd426008fb8a187bce71
+scraped_at: 2026-10-28T07:48:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ff6a7aa98f335e361b6450ede02a29edd6cd9ab3b0b91a9e8e64857b5f69901c
 ---
 
 ## 问题现象
@@ -19,19 +19,19 @@ content_hash: sha256:4b41b21d5c435cbeb07e7746657fd0bbee08f4b13176dd426008fb8a187
   + [OrientationResponse](../harmonyos-references/js-apis-sensor.md#orientationresponse)：方向传感器数据，包含alpha、beta、gamma三个属性，分别表示设备围绕Z、X、Y轴的旋转角度（单位：度），取值范围分别为[0-360]、[0-±180]、[0-±90]度。
 * [translate](../harmonyos-references/ts-universal-attributes-transformation.md#translate)：设置组件平移。可使组件在以组件左上角为坐标原点的坐标系中进行移动（坐标系如下图所示）。其中，x，y，z的值分别表示在对应轴移动的距离，值为正时表示向对应轴的正向移动，值为负时表示向对应轴的反向移动。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/ne5uLP22QfmEqcDMq_A0dg/zh-cn_image_0000002658854361.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/M-o2aqZSR62b8PTLRhxiYg/zh-cn_image_0000002658854361.png)
 * [Canvas](../harmonyos-references/ts-components-canvas-canvas.md)：提供画布组件，用于自定义绘制图形。
   + [CanvasRenderingContext2D](../harmonyos-references/ts-canvasrenderingcontext2d.md)：使用RenderingContext在Canvas组件上进行绘制，绘制对象可以是矩形、文本、图片等。
   + Canvas2D的坐标系默认以Canvas的左上角为坐标原点，沿X轴向右为正值，沿Y轴向下为正值，如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/AI2zYxhuTkS2Az-DyB_pZA/zh-cn_image_0000002628615114.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/YPVkMQdRTgiqX0gZZksWBQ/zh-cn_image_0000002628615114.png)
 
 ## 问题定位
 
 1. 查看水平仪气泡在水平、垂直方向的移动是否符合规律，即往更高处移动。当设备左高右低时，气泡应向左移动，反之向右移动；当设备上高下低时，气泡应向上移动，反之向下移动。
 2. 水平仪气泡运动常见的实现方式有[Canvas](../harmonyos-references/ts-components-canvas-canvas.md)或设置[translate](../harmonyos-references/ts-universal-attributes-transformation.md#translate)属性，这两种方式的坐标系X轴、Y轴方向相同，当设备左高右低时，气泡应沿X轴逆向移动，反之沿X轴正向移动；当设备上高下低时，气泡应沿Y轴逆向移动，反之沿Y轴正向移动。可通过[DevEco Testing](https://developer.huawei.com/consumer/cn/deveco-testing/?ha_source=sousuo&ha_sourceId=89000251)的UIViewer功能查看是[Canvas](../harmonyos-references/ts-components-canvas-canvas.md)方案还是[translate](../harmonyos-references/ts-universal-attributes-transformation.md#translate)方案，如下图组件树中无[Canvas](../harmonyos-references/ts-components-canvas-canvas.md)，气泡是[Circle](../harmonyos-references/ts-drawing-components-circle.md)组件，可得知是利用[translate](../harmonyos-references/ts-universal-attributes-transformation.md#translate)属性实现气泡移动。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/IFDkDxwPTHmavC13gP9Lbw/zh-cn_image_0000002628775010.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/F95hlQsGRuehwregGk6ElA/zh-cn_image_0000002628775010.png "点击放大")
 3. 设备旋转方向及角度的数据来源是方向传感器数据[OrientationResponse](../harmonyos-references/js-apis-sensor.md#orientationresponse)中的beta（设备围绕X轴的旋转角度）和gamma值（设备围绕Y轴的旋转角度），这两个值是有正负符号的，beta值为负表示设备上高下低，gamma值为负表示设备左高右低。在将设备旋转角度映射为水平仪气泡移动距离的处理代码中，需要根据旋转角度的正负符号确定气泡的移动方向。
 
 ## 分析结论

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1272
 title: 组件外层加了Navigation后，该组件的高度不能达到整个屏幕高度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 组件外层加了Navigation后，该组件的高度不能达到整个屏幕高度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0865ba721396f16f2ff5fad452f73c161a9b847b64f8a878e3c2c6f006af98f6
+content_hash: sha256:42ba2abbb143f1b0f054e506424a6e6271c158f84ca0895a1fde2515f10cd8b5
 ---
 
 ## 问题现象
@@ -41,11 +41,11 @@ struct PrivatePage34 {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/gaeorCjHT0KIuBeT-aOmLw/zh-cn_image_0000002658835379.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Uh3Xgi82RpWg4SRYCmZdRA/zh-cn_image_0000002658835379.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/dKPd0VKkQ_qGCFJoEokHcQ/zh-cn_image_0000002628756014.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/YlnTNYhjQpmRpeNh5i6rkQ/zh-cn_image_0000002628756014.png "点击放大")
 
 ## 背景知识
 

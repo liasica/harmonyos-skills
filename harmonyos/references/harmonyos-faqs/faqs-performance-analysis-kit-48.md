@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何在多设备情况下使用hdc
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何在多设备情况下使用hdc
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:46:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:696b2bafa6a6389b0821967e5699948e38bae99b06e83f7cd713150d3fd190fa
 ---
 

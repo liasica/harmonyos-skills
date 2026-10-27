@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-19
 title: 如何实现拍照预览onPreviewFrame回调
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何实现拍照预览onPreviewFrame回调
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:183a67a2df4924aea62455348cbaf75f1488cf9635ff282c0342da87a54dc4d2
 ---
 

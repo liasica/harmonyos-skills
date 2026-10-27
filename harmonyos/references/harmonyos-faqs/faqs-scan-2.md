@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-2
 title: 如何解决生成的二维码无法使用的问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 如何解决生成的二维码无法使用的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:20+08:00
+scraped_at: 2026-10-28T07:48:28+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f348d371e71af99e26f3245ef8363959dcf2042f59832e0c78ee00c79dce1dcf
+content_hash: sha256:a06611a79e70a722124bb5d7640a5578dc44d9eab86a5977d27f0296b7de8873
 ---
 
 ## 问题现象
@@ -37,7 +37,7 @@ content_hash: sha256:f348d371e71af99e26f3245ef8363959dcf2042f59832e0c78ee00c79dc
 
 按照以上代码生成后的二维码如下图，需要通过二维码读取字符串的**二进制字节**信息，扫码后得到的是字符串信息。最终导致扫码设备无法识别，说明二维码生成失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/jtDUPDDQRHqgLNaqEblGMg/zh-cn_image_0000002628392618.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/-8Q6R_d9QN-L37ob1pxcsg/zh-cn_image_0000002628392618.png "点击放大")
 
 ## 背景知识
 

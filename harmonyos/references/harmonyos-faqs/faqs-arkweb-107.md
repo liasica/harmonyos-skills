@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-107
 title: 进入页面后，页面内容抖动
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 进入页面后，页面内容抖动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7e435e7c821401adb92847149cbe70ef902d0b12bfa2335b2e83e471ac286a6e
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9bc149a8c5cece4e9d6c3ece3057e222d7af0d58f9335e9abdb5cb09ee0be09a
 ---
 
 ## 问题现象
 
 进入Web页面后，页面内容先上移后下移，造成视觉上页面内容抖动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VihWuHjgTbWFdX9YoDLIzA/zh-cn_image_0000002629059044.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/vVMiyr74RaGst5ZvO8cx0g/zh-cn_image_0000002629059044.png "点击放大")
 
 ## 背景知识
 
@@ -146,7 +146,7 @@ H5页面设置了在数据为空时不显示该组件，且数据获取的等待
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/DXslEHIbT_CIIY1e7jQjYw/zh-cn_image_0000002659258347.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/EskykdyBRC6_Q1Md7hXeBA/zh-cn_image_0000002659258347.png "点击放大")
 * 方案二：延长数据获取的等待时间。
 
   ```screen
@@ -225,4 +225,4 @@ H5页面设置了在数据为空时不显示该组件，且数据获取的等待
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/CY7_AWWIRqu4Cx0zHSd6qg/zh-cn_image_0000002628899128.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/G39R0tZtT3mCXjnC_2e_aQ/zh-cn_image_0000002628899128.png "点击放大")

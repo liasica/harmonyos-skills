@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 录屏已结束，通知栏仍显示录屏
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 录屏已结束，通知栏仍显示录屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:77806529ec99185255831743ce89a6388795a29427d595b4dbb0018f310ce58b
 ---
 

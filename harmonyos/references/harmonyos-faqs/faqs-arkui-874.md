@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-874
 title: 下拉刷新列表，部分数据无变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 下拉刷新列表，部分数据无变化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:62769aea014788da51820c37a8763455637add9234847c364e4dec6b8a093f23
+content_hash: sha256:b991765f4aa04148fdd7751a5be8fd7aae37a9360e53f636fb901ffecbca1680
 ---
 
 ## 问题现象
 
 列表每次下拉刷新，只刷新了前两条内容，第三条内容无变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/IBfcJK8USmW7CX6yKILxtQ/zh-cn_image_0000002628398916.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/1IUWL1HlSsKPzSALfrGyuQ/zh-cn_image_0000002628398916.png "点击放大")
 
 ## 背景知识
 

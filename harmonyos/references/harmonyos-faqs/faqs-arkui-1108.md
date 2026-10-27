@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1108
 title: 组件如何实现带三角形指示箭头的边框
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 组件如何实现带三角形指示箭头的边框
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d4310ed455d0891b9b32c864841908814c0ac7c28a132ef4791a7625a42f560e
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ff7b402fe1354c0f3681f39c6bc4917b953c412d372948bc786e83d3ea4bc7b9
 ---
 
 ## 问题现象
 
 如何实现带三角形指示箭头的容器边框。效果见下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/TNRvE4YFSKOctsCHOT0IUw/zh-cn_image_0000002658806745.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/azR7vLcpTySNBB9CI-ffMA/zh-cn_image_0000002658806745.png "点击放大")
 
 ## 背景知识
 

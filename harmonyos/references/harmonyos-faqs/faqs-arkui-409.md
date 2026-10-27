@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-409
 title: Navigation如何设置默认页
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation如何设置默认页
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3979120e8130b5b32268b92f45c7d2edf20a1413616afc2aa5a1398251c3cbdf
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: Linux环境下编译报错“JavaScript heap out of memory”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > Linux环境下编译报错“JavaScript heap out of memory”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:52+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5b7a4a3865953db4aa4f6c64fada8142c6b433a7cc0b73c47018c035a8825425
 ---
 

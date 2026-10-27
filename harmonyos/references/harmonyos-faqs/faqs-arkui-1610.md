@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1610
 title: 多任务切换应用时，页面闪屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 多任务切换应用时，页面闪屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:33+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:74ff013aea98bd1c3db2421f31984133c5f1f45709cc0017be9858ff0ee4ac51
+content_hash: sha256:a695ee44302be7709175d5c7ba9244328f5b2b9e1fdeec833496dc8bd040cf77
 ---
 
 ## 问题现象
 
 从其他应用切换到当前应用时，弹窗重新弹出，页面闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/kgCZ9UqQR0SIXFYoDMSNhw/zh-cn_image_0000002628613380.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/6zaQAeHwTtWCBOwocbXf7w/zh-cn_image_0000002628613380.png "点击放大")
 
 ## 背景知识
 
@@ -150,4 +150,4 @@ struct SplashScreen {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/nsi--VxCTpGKJ4jt86qsrA/zh-cn_image_0000002658972593.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Ua0um471RZ65cyDYPMfRcw/zh-cn_image_0000002658972593.png "点击放大")

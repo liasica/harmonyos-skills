@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1346
 title: 视频全屏时顶部有白条，随后消失
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 视频全屏时顶部有白条，随后消失
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:d9d14b93651786db982f33837a5a1a609c8c70ecb557b43a9c4910182f85d498
+content_hash: sha256:358506e7c52e98a23a970cb161ef6aa70ef420d15370639707d65f06a1a867cc
 ---
 
 ## 问题现象
 
 视频切换到横屏全屏时，页面顶部短暂显示标题栏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/csYxyShDRhOYEBhAGTV3DA/zh-cn_image_0000002658840789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/K4cN4rtgR0G-vdUt2qXLkQ/zh-cn_image_0000002658840789.png "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:d9d14b93651786db982f33837a5a1a609c8c70ecb557b43a9c4910182f8
 
 1. 使用DevEco Testing查看问题组件，问题组件为XComponent组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/XgR28b3jQcWqH3rLcy7K_A/zh-cn_image_0000002628761412.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-fhf8zZBRLaJdy8FFxGU9w/zh-cn_image_0000002628761412.png "点击放大")
 2. 排查该XComponent组件的相关设置，全屏时XComponent组件的尺寸重新变化后才触发去除视频上方的标题栏。
 
    ```screen
@@ -630,4 +630,4 @@ struct XComponentTranslation {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/frcBmT97QZ6t7CMIYnz_Lw/zh-cn_image_0000002658960737.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/ujZ8rvdwSiSyjt8iz7mNgg/zh-cn_image_0000002658960737.png "点击放大")

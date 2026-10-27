@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-49
 title: setDefaultOutputDevice切换听筒扬声器耗时较长
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > setDefaultOutputDevice切换听筒扬声器耗时较长
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
+scraped_at: 2026-10-28T07:48:32+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:ecf221d70c50c9bf1851076189456c582409f614794f6a3d6a50937757c4818e
+content_hash: sha256:bae05ac1aa1fd43809009e42c18e781c0a1f07d7998c2465fff60190fc6d0763
 ---
 
 ## 问题现象
@@ -32,7 +32,7 @@ AudioRenderer的[setDefaultOutputDevice](../harmonyos-references/arkts-apis-audi
   I C02B89/audio_server/AudioRenderSink: [SetSinkMuteForSwitchDevice]set voip mute 0 // 取消静音操作
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Evt4nCtiQpu3snbrUrEIGw/zh-cn_image_0000002658792059.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/fDTKZaHgSoSA8J2RwhgX-Q/zh-cn_image_0000002658792059.png "点击放大")
 
 ## 分析结论
 

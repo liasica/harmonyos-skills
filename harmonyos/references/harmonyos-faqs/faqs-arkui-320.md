@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-320
 title: 如何解决滚动类容器的滚动事件和手势之间的冲突
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决滚动类容器的滚动事件和手势之间的冲突
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a0e013e9f3e5912f9ee9886aa406c45c02498790d21a64175f89d47260c61e87
 ---
 

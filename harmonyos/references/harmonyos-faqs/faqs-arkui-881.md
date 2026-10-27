@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-881
 title: 快速滑动页面时，顶部区域颜色渐变异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 快速滑动页面时，顶部区域颜色渐变异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:bc0cfcf2f25c400882b6da87abc28ec9cbfac41cd3bc9209d7618787ac7c75d9
+content_hash: sha256:16eca814f10dcad3c8416f879292e491dffc80ba194c60dac65923e341a0e547
 ---
 
 ## 问题现象
@@ -15,7 +15,7 @@ content_hash: sha256:bc0cfcf2f25c400882b6da87abc28ec9cbfac41cd3bc9209d7618787ac7
 * 颜色卡在半透明色，视觉上颜色断层。
 * 渐变延迟（约1秒后才恢复）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/ogxggTAwTUKslAkDOiLD3A/zh-cn_image_0000002658918851.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/SpERDnOeS96GF2VdgyPUcw/zh-cn_image_0000002658918851.png "点击放大")
 
 ## 背景知识
 
@@ -27,7 +27,7 @@ content_hash: sha256:bc0cfcf2f25c400882b6da87abc28ec9cbfac41cd3bc9209d7618787ac7
 
 1. 使用DevEco Testing-实用工具-UIViewer查看布局实现，确认滚动页面基于Scroll组件实现。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/sNmOisjmTIaCmOnhD4uRwA/zh-cn_image_0000002628399636.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/bljVEvPZRS6jTw4eTMBn0g/zh-cn_image_0000002628399636.png "点击放大")
 2. 排查代码中关于顶部固定区域透明度变化的相关事件是否在onWillScroll回调函数中执行。
 
    ```screen
@@ -266,4 +266,4 @@ export function StackDemoBuilder() {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/8UtGeeOwQL--DZjIGXpaDQ/zh-cn_image_0000002658798903.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/smM0_hWOSresjdk9S4oNmg/zh-cn_image_0000002658798903.png "点击放大")

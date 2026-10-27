@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery-70
-title: AGC自检结果是否阻塞上架提审
-breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > AGC自检结果是否阻塞上架提审
+title: HarmonyOS 开发者中心自检结果是否阻塞上架提审
+breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS 开发者中心自检结果是否阻塞上架提审
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:ee25a4285f71ea720fe9f0404c3eec3445b223beb5e3cf5c871c75fc2f15a77f
+scraped_at: 2026-10-28T07:48:46+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:812078b0c98a7a50ccdecba3e3db94bd061011c80310055b816414147d62f752
 ---
 
 ## 问题现象
 
-AGC平台上传软件包提供了“合法性”和“启动自检”能力，自检结果不通过，是否影响开发者提交上架审核？
+HarmonyOS 开发者中心平台上传软件包提供了“合法性”和“启动自检”能力，自检结果不通过，是否影响开发者提交上架审核？
 
 ## 解决方案
 

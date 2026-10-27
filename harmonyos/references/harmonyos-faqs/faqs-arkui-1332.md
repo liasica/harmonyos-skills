@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1332
 title: 如何隐藏PatternLock控件的解锁轨迹
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何隐藏PatternLock控件的解锁轨迹
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:6fff7e4fe95e64beceff59f65c76733b4a738988725070f2d80f6b3f58e0de49
+content_hash: sha256:39eab63006db0046e29ffa1fd11549e9724b2c5644fdf40f01b18221cfb31d53
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ HarmonyOS如何隐藏图案锁PatternLock控件的解锁轨迹。
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/TX29rzy2T8m2aREsnR-1Vg/zh-cn_image_0000002628599896.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/A3FyO1IdRFSptYk5LiEFHg/zh-cn_image_0000002628599896.png "点击放大")
 
 ## 背景知识
 
@@ -38,7 +38,7 @@ PatternLock()
 
 解锁效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/MMzjGOCVTGWINR-yAbnavA/zh-cn_image_0000002628759800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/DXJocjL-QmS-QrtKdBUQEQ/zh-cn_image_0000002628759800.png "点击放大")
 
 ## 解决方案
 
@@ -93,7 +93,7 @@ struct HiddenPatternLock {
 
 在日志中会打印出选择的数字，截图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/LTCZu-XSSvyvC_-dMCGNvA/zh-cn_image_0000002658959115.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Jlxetj7FQS2kzZ81GIVtPg/zh-cn_image_0000002658959115.png "点击放大")
 
 ## 常见FAQ
 
@@ -141,4 +141,4 @@ struct SelectedPatternLock {
 
 运行效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/yniu02UkQy-WNByieTE0TA/zh-cn_image_0000002658839165.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/h1YCS8e4TY-A6QWXv6u2eQ/zh-cn_image_0000002658839165.png "点击放大")

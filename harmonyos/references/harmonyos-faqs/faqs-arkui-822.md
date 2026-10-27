@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-822
 title: 实现组件拖拽不超出限定区域
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现组件拖拽不超出限定区域
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a2c772c7af9249ba5cf722db926e1cc2ca4dd4ec7801d9692a8b7a0915f96710
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ba1a221450a1b40fc47201e1e96283fef461fd37fdfb4befced45f0da018f614
 ---
 
 ## 问题现象
@@ -75,7 +75,7 @@ content_hash: sha256:a2c772c7af9249ba5cf722db926e1cc2ca4dd4ec7801d9692a8b7a0915f
 
   问题效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/HiBz3ttfSWOJb2fE1zsVRQ/zh-cn_image_0000002658917663.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/6fxqQh85RpqbFlhYBHVmvQ/zh-cn_image_0000002658917663.png "点击放大")
 * **场景二**：
 
   可拖拽组件的初始位置(Stack({ alignContent: Alignment.End }))不在屏幕左上角的场景时，如何限制组件拖拽范围？在代码中给Stack组件添加了拖动事件，设置了任意方向可拖动，当前发现组件会拖动到屏幕以外的区域，期望能够实现组件只在屏幕内拖动的效果。
@@ -131,7 +131,7 @@ content_hash: sha256:a2c772c7af9249ba5cf722db926e1cc2ca4dd4ec7801d9692a8b7a0915f
 
   问题效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/SPLOsxk-TfOBUpZdNTLWRQ/zh-cn_image_0000002628398436.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/uM7bvwJKSESMddH1HEJjjQ/zh-cn_image_0000002628398436.png "点击放大")
 
 ## 背景知识
 
@@ -233,7 +233,7 @@ content_hash: sha256:a2c772c7af9249ba5cf722db926e1cc2ca4dd4ec7801d9692a8b7a0915f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/2DBu4d7dR5KG0MQ0laGPXQ/zh-cn_image_0000002658797719.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/V_I2KsDVQL24ByftnfPGTw/zh-cn_image_0000002658797719.png "点击放大")
 * **场景二**：
 
   设置Stack({ alignContent: Alignment.End })后，布局为尾端纵向居中，此时，坐标(0，0)不在屏幕的左上角，而是在方块右上角向左平移100vp，向下平移(xx)vp的位置。此时，整个屏幕被划分成了四个区域，左上角为(x<0,y<0)，右上角为(x>0,y<0)，左下角为(x<0,y>0)，右下角为(x>0,y>0)。
@@ -320,4 +320,4 @@ content_hash: sha256:a2c772c7af9249ba5cf722db926e1cc2ca4dd4ec7801d9692a8b7a0915f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Hpc-v290Tv-ySEqdAXbPTg/zh-cn_image_0000002628558354.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/JwNlhPipStCQNCEMqz-Xig/zh-cn_image_0000002628558354.png "点击放大")

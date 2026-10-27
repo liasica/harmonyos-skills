@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1357
 title: 使用栅格布局，span和offset的具体数值对应关系
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用栅格布局，span和offset的具体数值对应关系
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:21+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e7ac749a9b5d75f52e20a12376603d490c1a499f92148650af12db6036943639
 ---
 

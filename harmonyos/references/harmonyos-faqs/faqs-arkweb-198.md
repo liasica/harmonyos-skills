@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-198
 title: 如何解决应用侧浮层被Web遮挡及触摸事件穿透问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决应用侧浮层被Web遮挡及触摸事件穿透问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-07-09
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c2b2d44e6d316dc60afdd095d1d60e229c0f142c47ca3a3dcb3202f71031e535
 ---
 

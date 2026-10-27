@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1551
 title: 如何实现可调高度的下载按钮
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现可调高度的下载按钮
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:25+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:74eb1a7c0cd77ba7a69cf5e5c1aecc8103da6fb4f1e144abd4b608de8f9b139e
 ---
 

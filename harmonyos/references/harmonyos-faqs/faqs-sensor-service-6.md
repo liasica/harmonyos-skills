@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 权限申请和使用的顺序不合理
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 权限申请和使用的顺序不合理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1394f581c21895e195ba8f559895de90542f52050a45c86ef5dc1720bea037d6
 ---
 

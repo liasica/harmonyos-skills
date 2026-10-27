@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-138
 title: ArkTS如何定义callback函数
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS如何定义callback函数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:82994214e569a3e2fbbb9b580d91e2277a89c863b1f70e81421a471ee779291b
 ---
 

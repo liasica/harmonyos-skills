@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-980
 title: PC或平板自由多窗模式下，如何做到主窗口获焦，子窗口隐藏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > PC或平板自由多窗模式下，如何做到主窗口获焦，子窗口隐藏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:659e60e7c421508bc9939b118c0bb39b0d51e5f99511becac400365d0ca610c2
 ---
 

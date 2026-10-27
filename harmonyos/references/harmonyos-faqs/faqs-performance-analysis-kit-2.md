@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: hilog日志如何设置为只打印当前应用的日
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > hilog日志如何设置为只打印当前应用的日
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f6c068c30ff23966f97e8ee9dce3622e8cddf2ee8b308dc02ac148f15904d4f5
 ---
 

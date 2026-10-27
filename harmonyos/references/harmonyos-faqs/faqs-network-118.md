@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-11
 title: HarmonyOS Next如何使用Wireshark工具抓包
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > HarmonyOS Next如何使用Wireshark工具抓包
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
+scraped_at: 2026-10-28T07:48:16+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9a97ddb3b895f62dbe960bddaa5e61f5aa1ce1779ab32f4e3a2e53f2e24a0d36
+content_hash: sha256:a7b9f2a53764e2b01614b8ce53d01e2450f1830c01c789f46f0f6fb846fa483f
 ---
 
 ## 问题现象
@@ -22,14 +22,14 @@ Wireshark是全球主流的开源跨平台网络数据包分析工具，核心�
 
 1. 下载并安装Wireshark软件；电脑开启热点，手机连接电脑热点，保证手机的请求转发到电脑；通过ipconfig命令查看对应的网络接口，示例中网络对应的本地连接10如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/9yCGuqpqSsOW9nJGoa0f1Q/zh-cn_image_0000002658850167.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/bMRRdUDTS_K8H3pduxFUgw/zh-cn_image_0000002658850167.png "点击放大")
 2. 根据当前手机连接的局域网设置捕获的网络接口；具体设置的路径为捕获-选项-勾选具体的网络接口，例如本次选择的是本地连接10。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/mjYeoHNnT-Kt0kqQxzdQ9A/zh-cn_image_0000002628610908.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Rov8XClPRjKuyy1gLJtdmQ/zh-cn_image_0000002628610908.png "点击放大")
 3. 点击开始捕获分组。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/U7yTb33hSMiTg5gSWBteYQ/zh-cn_image_0000002628770802.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/57xkscOdRlS2myG7RfvX8Q/zh-cn_image_0000002628770802.png "点击放大")
 4. 操作App复现问题，可以查看Wireshark的包列表区和包内容细节区。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/yjfUDioQToSX9cy6UZAC1g/zh-cn_image_0000002658970125.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/wGBIzxc3SIuQIgewsJyZFw/zh-cn_image_0000002658970125.png "点击放大")
 5. 保存生成的tcpdump包文件；具体路径为文件-保存（另存为），即可生成后缀名为pcapng的文件。

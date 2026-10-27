@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-178
 title: Buffer如何追加数据
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > Buffer如何追加数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3c6cf99edc90fb3a7f92e1eb1c41fa5bf47c281cecbf020c6cd0aee88ee8e0d0
 ---
 

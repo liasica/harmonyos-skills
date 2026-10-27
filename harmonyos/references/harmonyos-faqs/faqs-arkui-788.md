@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-788
 title: 设置密码时，可输入的长度与提示长度不符
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 设置密码时，可输入的长度与提示长度不符
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cfc727377da1394bcdce5a3d4ad49c9a0e48b0df8c77318d87fb10b120c30c85
 ---
 

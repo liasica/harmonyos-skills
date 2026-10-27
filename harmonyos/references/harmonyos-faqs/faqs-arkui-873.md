@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-873
 title: 标题栏与底部的列表条目无法一起滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 标题栏与底部的列表条目无法一起滑动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-08-27
-content_hash: sha256:49e7db4b3bdbf4c7c0a70ba7366147ce2af609df189a95273d367c8f937bb95a
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0ba7bf555cb970585fc9dae5da7a94aeb2389c424b5bb15a836c7b9eb1c0a810
 ---
 
 ## 问题现象
 
 在页面结构中，存在一个标题栏和多个底部列表条目。当用户横向滑动标题栏时，底部对应的列表条目未能同步滑动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/egKmdPlkQ72CSr_beQCowQ/zh-cn_image_0000002722988121.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/oelEIfnlQgO_KqF0KjJ39w/zh-cn_image_0000002722988121.png "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-22
 title: 如何在Native侧访问应用包内Rawfile资源
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在Native侧访问应用包内Rawfile资源
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7e16632821226f6cf9e41fdbdd63b70138fe3966e35336972007981dd772eeae
 ---
 

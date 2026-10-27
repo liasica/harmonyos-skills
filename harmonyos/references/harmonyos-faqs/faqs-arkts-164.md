@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-164
 title: 如何解决网络传输中字节流解码为UTF-8时出现的乱码问题
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何解决网络传输中字节流解码为UTF-8时出现的乱码问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6bed4f382775d4538768483b586f5e788fa6d4d8951ef0b114edde6393dda4b0
 ---
 

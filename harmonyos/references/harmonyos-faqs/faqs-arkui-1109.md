@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1109
 title: 实现卡片投影效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现卡片投影效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9d2c4a126bbe7eefa8b99970e7da0bea9770deed23ff680ab1d9132f686ab498
+content_hash: sha256:32fa31f93cbdf0ac0505553307d5bc0da1119d95a973fc72f6cd91d4f928a733
 ---
 
 ## 问题现象
@@ -62,7 +62,7 @@ content_hash: sha256:9d2c4a126bbe7eefa8b99970e7da0bea9770deed23ff680ab1d9132f686
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/wWB3CMVlRgudezN5TR5Bjg/zh-cn_image_0000002628407492.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/r-GZRH1EQr26OjbxjF2M5A/zh-cn_image_0000002628407492.png "点击放大")
 * 场景二：实现阴影扩展效果。
   1. 使用radius属性给阴影添加圆角效果与卡片圆角对齐。
   2. 给卡片外部增加一层容器，通过padding实现扩展效果，通过position实现扩展方向。
@@ -99,7 +99,7 @@ content_hash: sha256:9d2c4a126bbe7eefa8b99970e7da0bea9770deed23ff680ab1d9132f686
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ZrVKrrzKTva3FjBiTyHQag/zh-cn_image_0000002628567388.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/UaY33a8qSu2c--Bc2utemQ/zh-cn_image_0000002628567388.png "点击放大")
 * 场景三：实现多个阴影样式。
 
   通过父子组件嵌套实现，设置父子组件的大小，边框等完全一致，仅设置的阴影效果不一致。
@@ -151,4 +151,4 @@ content_hash: sha256:9d2c4a126bbe7eefa8b99970e7da0bea9770deed23ff680ab1d9132f686
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/9tMixtb1RVyc9KCsntw3qA/zh-cn_image_0000002658926705.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/973b0HlNTbub9V07V2SfLw/zh-cn_image_0000002658926705.png "点击放大")

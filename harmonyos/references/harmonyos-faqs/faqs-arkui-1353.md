@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1353
 title: 通过colorFilter和颜色矩阵修改Image的颜色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 通过colorFilter和颜色矩阵修改Image的颜色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:15ba154e89960c4fb57a06b4a45a8433f3f47697a25db5cef5096bf472e24d6b
+scraped_at: 2026-10-28T07:47:21+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:5f2afae1bb2dd311cdaa62b7e810984f17e7b0138bf5b49127777bcf50b66bca
 ---
 
 ## 问题现象
@@ -28,17 +28,17 @@ Image($r('app.media.icon_toast_warning'))
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/oU_rCNXpSzW8x2xKaaAK5w/zh-cn_image_0000002628601520.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/zu8LyCtOQvm44aOtFsvO0w/zh-cn_image_0000002628601520.png "点击放大")
 
 ## 背景知识
 
 在计算机图形学中，每个像素由四个维度的数据构成，可表示为四维向量：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/h9Gm8FTNSaOrUu-LcjdDeg/zh-cn_image_0000002658840793.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/YwXAYn9RTo-tkBmafwWR2A/zh-cn_image_0000002658840793.png "点击放大")
 
 颜色矩阵本质是执行以下运算的线性变换器：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/gqvkhXqWS_aazTo7rh2JNw/zh-cn_image_0000002628761416.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/3PQLsJCERvO9ta_euY8szg/zh-cn_image_0000002628761416.png "点击放大")
 
 颜色矩阵M的参数语义：
 
@@ -62,7 +62,7 @@ A' = m30*R + m31*G + m32*B + m33*A + m34
 
 **纯色替换矩阵**：将图像转换为目标色（如#2196F3）需满足：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/b8Kod9l-Q0GgBUa40WD54A/zh-cn_image_0000002658960741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_ofu9dqmRt-xdVNCSoTVtA/zh-cn_image_0000002658960741.png "点击放大")
 
 对应矩阵：
 

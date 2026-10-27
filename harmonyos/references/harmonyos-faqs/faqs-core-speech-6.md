@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-core-speec
 title: 语音识别是否能够根据音色区分人物
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > 语音识别是否能够根据音色区分人物
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:49:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:97b444a51f9e926f7ff8a49d66bab9ea1b6f32f9e5ee4eec6332e6acf35a88d2
 ---
 

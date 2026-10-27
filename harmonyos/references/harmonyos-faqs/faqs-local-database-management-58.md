@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 首选项保存数据时报错：Cannot read property putSync of undefined
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 首选项保存数据时报错：Cannot read property putSync of undefined
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ee25857e92c4f4e7a28b32262905fc0f4f79e2547d85d85007b97340f1f979df
 ---
 

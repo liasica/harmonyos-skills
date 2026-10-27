@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-32
 title: 如何在Native侧调用ArkTS侧异步方法，并获取异步计算结果到Native侧
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime） > 如何在Native侧调用ArkTS侧异步方法，并获取异步计算结果到Native侧
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:ea5958b9428553ce5679ad85873afc925ccad219583eb9b0621728c5d79b6236
+scraped_at: 2026-10-28T07:46:58+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0c4c3051ef47df1460269679f277226378531eaed0b7e0e441b2d13bbdd4e6d2
 ---
 
 该场景可以通过在Native侧获取ArkTS侧的Promise对象来实现。具体步骤如下：
@@ -135,7 +135,7 @@ static napi_value TestPromise(napi_env env, napi_callback_info info) {
 
 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/hIFuR6U0SPe3AlepSSI9EA/zh-cn_image_0000002624635810.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/m-Nh_mCrQjGuvWxW4r3ejg/zh-cn_image_0000002624635810.png "点击放大")
 
 * 结果（1）：表示ArkTS侧调用Native接口后，Native侧运行未阻塞，直接返回。
 * 结果（2）：表示ArkTS侧调用Native接口后，等待2秒（异步计算）。如果异步操作中生成的随机数小于或等于50，通过Promise对象的reject接口传入异常信息到Native侧，并通过catch回调进行处理。

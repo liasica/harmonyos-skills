@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-61
 title: 如何解决webview每次调试都需要寻找进程号问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决webview每次调试都需要寻找进程号问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5512ec09f2ccaff47d86dc9ff682368531939664fdcfed8abe9f2866bbcdba6e
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-5
 title: 图片编解码支持的格式有哪些
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 图片编解码支持的格式有哪些
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:26+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ce03adc5022af8e9ae13a48203f0a4c7860ed38042478122e12ca0f1b1bc9e37
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-natural-la
 title: Natural Language Kit获取Entity中缺少rrule字段
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 自然语言理解（Natural Language） > Natural Language Kit获取Entity中缺少rrule字段
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:49:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3e89547cbb343396d628c00aa771f9a7637e611f431e56a70654f5937249e3bb
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-11
 title: AVPlayer视频列表反复滑动播放失败问题
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > AVPlayer视频列表反复滑动播放失败问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
+scraped_at: 2026-10-28T07:48:31+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8ef7e9a249ea53232cbb6e32b6d082105ecd0b603eeaaa7364430c02b2d2a6bb
+content_hash: sha256:e99b6aa685592d785149beeb76e0502a2ecc96c82eddbcbc864d300db1e784c3
 ---
 
 ## 问题现象
@@ -60,7 +60,7 @@ content_hash: sha256:8ef7e9a249ea53232cbb6e32b6d082105ecd0b603eeaaa7364430c02b2d
    上述日志说明在视频列表切换时更新视频播放状态错误，视频在错误状态下停止或启动播放失败。
 2. 视频播放状态示意如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/YZdFGJObTNyJIEjSm2scNg/zh-cn_image_0000002658792019.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/oxAqSt2USaSsYb2A1Au7jw/zh-cn_image_0000002658792019.png "点击放大")
 
    * 当视频状态为stopped时，若需要重新播放视频，则需要将视频状态置为prepared后再播放。
    * 当视频出现error状态时，无法进行继续播放或停止播放，需要调用reset()重置视频状态或调用release()销毁重建。

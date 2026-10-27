@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-372
 title: 如何设置customspan不同位置的点击事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何设置customspan不同位置的点击事件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7807b6bddeceee2537cd449662b41dcc6c60acb67f1cb78c064cf7a66de4eb41
 ---
 

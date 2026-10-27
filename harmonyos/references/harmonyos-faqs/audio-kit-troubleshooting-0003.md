@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/audio-kit-troub
 title: 音视频播放音量不同步与被打断后状态异常问题定位
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 故障排查 > 音视频播放音量不同步与被打断后状态异常问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:14+08:00
+scraped_at: 2026-10-28T07:48:29+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:ab040a435120d5d2b385485fec2da5a1ff24f3fe632d4520decaab77b79be96d
+content_hash: sha256:289a0b3444bf8e529c3666400f79ac25cea94f8e01dcb9e1681a0b34f877ae63
 ---
 
 ## 视频音量与系统音量不同步
@@ -39,7 +39,7 @@ this.avPlayer.setVolume(this.playerModel.volume);
 
 应用在播放过程中，若播放的媒体数据涉及音频，存在会被其他应用打断后，该应用内与播控中心的播放状态显示异常的现象，以下图为例，播放视频时被语音助手小艺打断后，需连续点击2次后才继续播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/eMQ8sz5_Sd6zOw430xqPFA/zh-cn_image_0000002793692187.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/7jLNzO5dSGeRlf4OjMgDWA/zh-cn_image_0000002793692187.png "点击放大")
 
 ### 定位过程
 

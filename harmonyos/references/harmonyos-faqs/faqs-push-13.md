@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-13
 title: 发送无效消息是否会消耗频控额度
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 发送无效消息是否会消耗频控额度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:aeb7e028a1f685ea38828822a5ae9895096d1afa92e3512efb7fd15f98e3acee
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:96f5c9d182c83aa2631152516f094afdda03da2c3bdb50a9a2d56f3c8840e5a1
 ---
 
 ## 问题现象
 
-通过AGC自助查询推送消息，结果显示频控。但设备当天从未收到通知，为何显示被频控？
+通过HarmonyOS 开发者中心自助查询推送消息，结果显示频控。但设备当天从未收到通知，为何显示被频控？
 
 ## 解决方案
 

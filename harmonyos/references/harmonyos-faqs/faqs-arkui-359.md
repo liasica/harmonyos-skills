@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-359
 title: 在深色模式切换下如何适配状态栏颜色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 在深色模式切换下如何适配状态栏颜色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:81dbd5319f45649094820ec3723317d089ff93e75b96fb8b8736523ffa8ab8ac
 ---
 

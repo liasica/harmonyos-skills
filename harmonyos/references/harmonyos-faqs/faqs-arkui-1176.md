@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1176
 title: 如何解决页面上大量动效组件导致页面卡顿的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决页面上大量动效组件导致页面卡顿的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-08-27
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c7bdb9040f6af927579e6da9842cefc760412ee8ce629a3436d913c56098588d
 ---
 

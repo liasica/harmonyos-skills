@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-22
 title: 卡片中引用HAR包中组件的实现方式及白屏问题解决
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 卡片中引用HAR包中组件的实现方式及白屏问题解决
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:970fe777b6fb5cb4c832e8730c287c2427ee016f3c89727096c2809d3c8b244f
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:46394d2cc32312c405c8af28c4e826d07c6f80ab55a7b58978bb3c894342967b
 ---
 
 ## 问题现象
@@ -24,10 +24,10 @@ content_hash: sha256:970fe777b6fb5cb4c832e8730c287c2427ee016f3c89727096c2809d3c8
 * **场景一：从本地文件夹安装。**
   1. 参考[创建ArkTS卡片](../harmonyos-guides/arkts-ui-widget-creation.md)，在工程中创建动态卡片。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/E14DYbz6ROKgTJpxaVnzUg/zh-cn_image_0000002681833717.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/TpBhUrTbSVCPBPLO9tVKXw/zh-cn_image_0000002681833717.png)
   2. 参考[构建HAR](../harmonyos-guides/ide-hvigor-build-har.md#section3761328124112)，在工程中创建名称为localFolderPack的HAR包。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Yj0QVX5cQ6641FuA7a0Olw/zh-cn_image_0000002681673901.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/jYNB5NiOQA6SaJNjD5dmnQ/zh-cn_image_0000002681673901.png)
   3. 在localFolderPack的HAR包中自定义MainPage组件，并导出。
 
      ```ts
@@ -73,10 +73,10 @@ content_hash: sha256:970fe777b6fb5cb4c832e8730c287c2427ee016f3c89727096c2809d3c8
 * **场景二：从本地压缩包安装。**
   1. 参考[创建ArkTS卡片](../harmonyos-guides/arkts-ui-widget-creation.md)，在工程中创建动态卡片。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Ui2-Zyz6TrKVwgmyM2_m-g/zh-cn_image_0000002681834069.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/bbIH99AWSv67tesvVFVuww/zh-cn_image_0000002681834069.png)
   2. 参考[构建HAR](../harmonyos-guides/ide-hvigor-build-har.md#section3761328124112)，在工程中创建名称为localZipPack的HAR包。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/cc2xkuytSlyBeBNaqOweqw/zh-cn_image_0000002651794458.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/amnB9nRERIeHYLAegRyJ6Q/zh-cn_image_0000002651794458.png)
   3. 在localZipPack的HAR包中自定义MainPage组件，并导出。
 
      ```ts

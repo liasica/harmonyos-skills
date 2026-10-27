@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-62
 title: 如何排查相机界面黑屏问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何排查相机界面黑屏问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
+scraped_at: 2026-10-28T07:48:26+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:02882e93302222cbd896343939f7ac9148b17ad96e767f895109781368386935
+content_hash: sha256:10372ca676806700920fb1c2761011a7a1c4f67b1f4a947e813a48c350a77652
 ---
 
 ## 问题现象
@@ -25,7 +25,7 @@ content_hash: sha256:02882e93302222cbd896343939f7ac9148b17ad96e767f8951097813683
 * 相机切换后台之后，相机资源全部回收，需要重新初始化。
 * 按照相机生命周期顺序排查黑屏问题的大致流程如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/XXlt1LvJSHGSRDPHEMQEIg/zh-cn_image_0000002658791861.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/CySi_nl8Q0SaBoZYqoGHwA/zh-cn_image_0000002658791861.png "点击放大")
 * 常见黑屏场景：
 
   |  |  |  |  |
@@ -45,7 +45,7 @@ content_hash: sha256:02882e93302222cbd896343939f7ac9148b17ad96e767f8951097813683
 
 1. 检查应用是否有相机权限ohos.permission.CAMERA。查看日志，如果出现以下日志，说明应用缺少相机权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/yjaime_aQNKkpzcn6fHi2g/zh-cn_image_0000002628552482.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/u1Mp7aZNQ-qDc31bc0MCpQ/zh-cn_image_0000002628552482.png "点击放大")
 
    ```txt
    I     [CreateBusinessError:30] CreateBusinessError errCode: 201 errMsg: Permission denied.

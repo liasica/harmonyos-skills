@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-135
 title: Web组件点击全屏播放导致页面布局错乱的问题如何处理
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件点击全屏播放导致页面布局错乱的问题如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c4e0dcee9f89266517c88611150b92fc63d10022fdee3c3d95770c73c9ba9476
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a2d49e90a967a9f19114583085a934811014858af702bfe869cfe3282bd492c7
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ Web组件引用三方H5页面加载的视频，当点击视频全屏，视频区
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/vz6-dl3sThqJo3DqLM6FnA/zh-cn_image_0000002659258353.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/z3yd_uiXTBWN1d8yrWySnw/zh-cn_image_0000002659258353.png "点击放大")
 
 ## 背景知识
 

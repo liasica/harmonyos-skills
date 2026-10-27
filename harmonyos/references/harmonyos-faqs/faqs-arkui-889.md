@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-889
 title: 使用restore时出现801和1300004错误码时如何处理
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 使用restore时出现801和1300004错误码时如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:63dc54b920097388cbea8db81c6a2364318dfc4de37bca71a2ec138276268721
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:781657a1ee9a25d726125053fb3dd196165bdcec3c7d4982bd26111938315d77
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:63dc54b920097388cbea8db81c6a2364318dfc4de37bca71a2ec1382762
 
 使用平板出现错误码801：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/QOTu5SXCSduHjaH8wRYdoQ/zh-cn_image_0000002658918855.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/wLYBr8vkRSSc4xQR0fclYQ/zh-cn_image_0000002658918855.png "点击放大")
 
 使用PC设备出现错误码1300004：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/QiuaMdsuRPafD46alrm7ag/zh-cn_image_0000002628399640.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/QBTI4-ocTGKsRUD-Ib_wVw/zh-cn_image_0000002628399640.png "点击放大")
 
 ## 背景知识
 

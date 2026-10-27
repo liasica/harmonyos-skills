@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-6
 title: http网络连接中的通用知识
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > http网络连接中的通用知识
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:36+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:13+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e122039a41a472a364ab0b8ff75eaad366feb36f071054ce5cadc0a532cef18a
 ---
 

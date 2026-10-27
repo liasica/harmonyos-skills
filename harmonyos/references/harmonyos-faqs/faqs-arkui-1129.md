@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1129
 title: 如何实现手势控制多个Canvas图形的关联滑动与缩放效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现手势控制多个Canvas图形的关联滑动与缩放效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:c3d3691e6031e422921d5ef83c872d8096ad105d3fc26d9983cd526a13f49958
+content_hash: sha256:43cfe8e5334a2fe43ea5072a437e3b710697d9691a4b96861d58c4f7cc06ada9
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:c3d3691e6031e422921d5ef83c872d8096ad105d3fc26d9983cd526a13f
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/112Ys7phThW56Z0wb2XSoA/zh-cn_image_0000002628409522.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/t6CF3KVdTnS1TXThx9pzsg/zh-cn_image_0000002628409522.png "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1532
 title: 如何解决attributeModifier常见报错问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决attributeModifier常见报错问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ba20ce602c2b1a7c3dfe27ac22ce86569fdb1873d22611eab1c67658654d0c60
 ---
 

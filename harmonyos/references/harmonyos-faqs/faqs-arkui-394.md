@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-394
 title: 如何对手势事件进行限流？例如500ms内不允许点击事件重复触发
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何对手势事件进行限流？例如500ms内不允许点击事件重复触发
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:24b2b692a4d4a0ed5317fc55810e538da2afce75e2b12fc1b797b865907440a4
 ---
 

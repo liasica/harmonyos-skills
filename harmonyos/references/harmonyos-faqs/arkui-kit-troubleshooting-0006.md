@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: 开启“高对比度文字”时应用文字显示模糊
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > 开启“高对比度文字”时应用文字显示模糊
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:33+08:00
+scraped_at: 2026-10-28T07:47:00+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:301a251155e6bbf267e81c58e0c2c01783220c075537972e35137e3fb5212c9e
+content_hash: sha256:bf94e701d4ad93df7d40c6f9c49d485b94012d59de49f36a19fcdd8816224fe8
 ---
 
 ## 开启高对比度文字时文字显示模糊
@@ -16,17 +16,17 @@ content_hash: sha256:301a251155e6bbf267e81c58e0c2c01783220c075537972e35137e3fb52
 
 图一：未开启“高对比度文字”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Dp1WBTmQTyyxmQ4giud-nQ/zh-cn_image_0000002793681787.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/hvUnYk3jQwWAsT5ByI7UOQ/zh-cn_image_0000002793681787.png "点击放大")
 
 图二：开启“高对比度文字”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/0L8iuIZyQ3OyIPRbRZa8VQ/zh-cn_image_0000002764443194.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/iIrglYBdRjq7HUbY9M1PQA/zh-cn_image_0000002764443194.png "点击放大")
 
 ## 定位过程
 
 1. 使用DevEco Testing查看问题组件，该组件为TextInput组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/w483LmwdQQ6oQ3RsQk7kHA/zh-cn_image_0000002793681903.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/6N4ZYhlaTx2io7LPSwKRGA/zh-cn_image_0000002793681903.png "点击放大")
 2. 查看该TextInput组件的设置，placeholder文本颜色设置为#d6d6d6，三原色之和大于594，开启“高对比度文字”时显示为外黑内白。且组件背景色设置为#f1f3f5灰色，导致文字颜色与背景色相近，显示模糊。
 
    ```ts
@@ -95,7 +95,7 @@ struct TextinputExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/rEJMd_jATo-QxbHgZIASkQ/zh-cn_image_0000002764443800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/J7PPt5tTQkGG0MHoybM4sQ/zh-cn_image_0000002764443800.png "点击放大")
 
 ## 描边文字预览与实际效果不一致
 

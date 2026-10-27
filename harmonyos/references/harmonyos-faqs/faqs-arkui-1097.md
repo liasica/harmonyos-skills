@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1097
 title: 可见区域变化监听事件onVisibleAreaChange使用问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 可见区域变化监听事件onVisibleAreaChange使用问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e1600f262e709f2a03938d98e0c96539cf81c1a82088e003168c0af22d1c6367
 ---
 

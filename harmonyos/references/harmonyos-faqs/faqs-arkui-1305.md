@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1305
 title: 如何在List使用懒加载时动态修改最后一条数据样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在List使用懒加载时动态修改最后一条数据样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:46+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e2a99c92600d0f463006cd3213eb31c09d88883c056e46a7486e072bf17fb329
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:14b03dce930960c02c5169900e6718a357cf66bf65c1d18b3b665b100649d3a6
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:e2a99c92600d0f463006cd3213eb31c09d88883c056e46a7486e072bf17
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/9TVz5nB0SQ6o_T90tnHX4Q/zh-cn_image_0000002658838283.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/7fqGBVRFRqKodb7ZGjrWBQ/zh-cn_image_0000002658838283.gif "点击放大")
 
 ## 背景知识
 

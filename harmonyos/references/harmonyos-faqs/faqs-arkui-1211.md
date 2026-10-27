@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1211
 title: 滚动组件是否支持滚动时隐藏键盘
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 滚动组件是否支持滚动时隐藏键盘
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6cdc4b6541ef47c7c4519f27e0e17592d8e997ef4839bb7bb2e6a612ebfec13f
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f253f67a66077a90abf1b23267e5789e631baea4d396f79dfdd61ad6260986c7
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ List组件里面嵌套TextInput组件，如何实现滚动时隐藏键盘的效�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/aInfjqumSAuf3j9W3eqNFw/zh-cn_image_0000002628593592.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/R3REJkPsSBKWafA7NKl6bw/zh-cn_image_0000002628593592.png "点击放大")
 
 ## 背景知识
 

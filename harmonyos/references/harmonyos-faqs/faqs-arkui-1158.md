@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1158
 title: List如何实现滑动翻页效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > List如何实现滑动翻页效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:45+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:e31584a4d2078c78d84dd241ea150ba0d0f1f98ce53b93d531f7caa4e6c58819
+content_hash: sha256:c5244e7ce066cfd48f75c694e08425e337e31135cf3c7d482d40f11355b1c03b
 ---
 
 ## 问题现象
@@ -69,7 +69,7 @@ List有无enablePaging类似的方法？Scroll嵌套List后的enablePaging会失
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/A9WV98ENTuK_FUzNlmC2tA/zh-cn_image_0000002628569770.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/glRUpfg2SqCKn_hA_KOpRw/zh-cn_image_0000002628569770.png "点击放大")
 * **方案二**：自定义实现List翻页效果。通过onAreaChange获取List的高度，在onTouch回调中实现滑动翻页逻辑，手指按下时，获取当前List的滚动偏移量，手指抬起时，根据手指滑动方向决定向前或向后滚动一个List高度的距离。示例代码如下：翻页判定条件为手指滑动List的距离超过List高度的三分之一。
 
   ```ts
@@ -143,4 +143,4 @@ List有无enablePaging类似的方法？Scroll嵌套List后的enablePaging会失
 
   效果如下：实现整页滑动以及点击Item自动移动至屏幕中间：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/4dnMsawLQ4uMuGoLTIDynw/zh-cn_image_0000002628409866.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/1oEhZbSZRCeOhyBhzFzPJg/zh-cn_image_0000002628409866.png "点击放大")

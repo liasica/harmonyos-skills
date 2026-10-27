@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1417
 title: Scroll嵌套List滚动回顶部的动画实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Scroll嵌套List滚动回顶部的动画实现
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:07b502660a9bc04c1749388f0daf7efaa0f5b24f681bddef71e43d63301d90c7
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:caf3def1f6d97a1e19c125935d213ded95deecf3a0699f3935ded46f03c66d2d
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:07b502660a9bc04c1749388f0daf7efaa0f5b24f681bddef71e43d63301
 
 点击按钮返回顶部时，Scroll和List同时出现滚动动画。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/IyUwNjPcRUGF9kCK7PoeRg/zh-cn_image_0000002628603272.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/WMr0iLbNS5m8045Qd5vzxw/zh-cn_image_0000002628603272.gif "点击放大")
 
 ## 背景知识
 

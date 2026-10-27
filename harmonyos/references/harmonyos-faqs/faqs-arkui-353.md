@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-353
 title: Toggle组件响应点击后会立即渲染并回调。如何实现点击后延迟改变状态并时回调
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Toggle组件响应点击后会立即渲染并回调。如何实现点击后延迟改变状态并时回调
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cb704c2d5f03e2d17059e1cde6e4934809ce5dd213824409d4bb7865d53aa9d7
 ---
 

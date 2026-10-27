@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-630
 title: 如何实现子组件对角线分布效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现子组件对角线分布效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:39+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:989f923cba1d77e784c8d62d09bb7445a79ae3eb3fcd03dff517026c3f790765
+scraped_at: 2026-10-28T07:47:08+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0ef4a46252b351c2f17d47388728dafe8bfcebc45813275cba054ffb0ba7171c
 ---
 
 ## 问题现象
 
 如何实现组件对角线布局效果，如一个子组件位于父组件的左上角，另一个子组件位于父组件的右下角。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/vqHHx8ZXS5mbbKzKuxkepw/zh-cn_image_0000002658913489.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/fIHCUTgBR4ebdreuIy3qog/zh-cn_image_0000002658913489.png "点击放大")
 
 ## 背景知识
 
@@ -69,7 +69,7 @@ content_hash: sha256:989f923cba1d77e784c8d62d09bb7445a79ae3eb3fcd03dff517026c3f7
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/MK6T1cHWSS2x6za0-bkduQ/zh-cn_image_0000002658793541.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/759tunenSD2zBJBhuF0clg/zh-cn_image_0000002658793541.png "点击放大")
 * **方案二**：使用Stack组件。
 
   实现原理：设置多个子组件在容器内的对齐方式，但需要定义里面Stack组件的宽高，来控制子组件重叠情况。
@@ -112,7 +112,7 @@ content_hash: sha256:989f923cba1d77e784c8d62d09bb7445a79ae3eb3fcd03dff517026c3f7
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/2aVgSvTrRdS6BnEkWdf6fg/zh-cn_image_0000002628554174.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ujgm9wZKTbiibi82IV0qQw/zh-cn_image_0000002628554174.png "点击放大")
 * **方案三**：设置position属性。
 
   实现原理： 基于父组件内容区四边确定位置，top/left/right/bottom分别为组件各边距离父组件内容区相应边的边距，通过边距来确定组件相对于父组件内容区的位置。
@@ -151,7 +151,7 @@ content_hash: sha256:989f923cba1d77e784c8d62d09bb7445a79ae3eb3fcd03dff517026c3f7
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/i_R6sR9HQ429qn2bYXnPDA/zh-cn_image_0000002628394276.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/9BhPnWJ7S8mpeV0SSZnwEA/zh-cn_image_0000002628394276.png "点击放大")
 
 ## 总结
 

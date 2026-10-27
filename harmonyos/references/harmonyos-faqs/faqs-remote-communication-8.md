@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: 链接系统网络库librcp_c.so报错unable to find library -lrcp_c
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > 链接系统网络库librcp_c.so报错unable to find library -lrcp_c
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0bc747f77c802979950b2a8197ab96061e3881a0b27c505de397f3b7371d5dbe
 ---
 

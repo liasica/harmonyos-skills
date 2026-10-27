@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-utilities-
 title: DevEco Testing实用工具设备投屏一直提示加载中的排查方法
 breadcrumb: FAQ > DevEco Testing > 实用工具 > 设备投屏 > DevEco Testing实用工具设备投屏一直提示加载中的排查方法
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:59+08:00
+scraped_at: 2026-10-28T07:49:06+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:420b54096a313f64e1c5ef578d2b1d13445169b7509b0bbd626ac10de0704238
+content_hash: sha256:2bf2050c2702819a60562cf48ff1eacb26a7f92714994a395290a54c69662027
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ hdc shell ls /data/local/tmp
 
 执行结果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Fe9EMLwhQEK__rrQGV48sw/zh-cn_image_0000002658923403.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/5-A5IJ8vSM-AXBUy5SlXPA/zh-cn_image_0000002658923403.png "点击放大")
 
 ## 分析结论
 
@@ -45,7 +45,7 @@ hdc shell ls /data/local/tmp
 3. 重试设备投屏，如果获取页面仍失败可重启设备后再试。
 4. 如果问题仍未解决，将右上角的流畅模式切换成标准模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/SWuouiKjQYS0cMNsFxFORg/zh-cn_image_0000002658803455.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/3315KLN-SBC7d1v5xGV-pA/zh-cn_image_0000002658803455.png "点击放大")
 
 ## 常见FAQ
 
@@ -55,10 +55,10 @@ A：
 
 1. 本地hdc list targets可识别，但DevEco Testing中无法识别，可以先尝试关闭DevEco Testing，然后本地执行hdc kill，再重新启动查看是否已识别。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/43vfrSklSliuRWYab8_npg/zh-cn_image_0000002628404192.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/vt9qC2MBSFi_Fzs1XGxCIg/zh-cn_image_0000002628404192.png)
 2. 若仍未解决请参考[环境准备](../harmonyos-guides/hdc.md#环境准备)获取最新版本的hdc至安装路径D:\DevEco Testing\app\resources\bin下（安装路径D盘时），替换hdc.exe、libusb\_shared.dll文件，并将DevEco Testing安装路径下hdc地址配置到系统环境变量中，重启即可恢复。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/hWOC1vOtThOu4MgC19Ageg/zh-cn_image_0000002628564096.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/rX65QHNCQyy9HugClI4U1Q/zh-cn_image_0000002628564096.png "点击放大")
 
 Q：DevEco Testing更换版本后流畅模式提示“设备无法使用视频流进行投屏，请切换至普通模式进行投屏”，切换后显示一直加载中，无法投屏。
 

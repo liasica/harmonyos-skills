@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1418
 title: TextInput如何监听键盘的删除操作
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput如何监听键盘的删除操作
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e6454ed08a455fece020ffee948d1b12b511cc90f42aeb3e4b11e5effb943d89
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ff783f5e9ad19ad5aec3268a6bc7a38f67d94fe4b3fbbb15e20c5103677f826f
 ---
 
 ## 问题现象
@@ -106,7 +106,7 @@ TextInput监听onKeyEvent时，收不到回调，如何实现监听键盘的删�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/CLNh8UFrTu-v22gwLwLEfw/zh-cn_image_0000002658843005.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/tcSGp5B8QZGjdp6VIudgyw/zh-cn_image_0000002658843005.gif "点击放大")
 * **方案二**：使用onWillDelete和onDidDelete回调，监听键盘的删除操作。
 
   ```ts
@@ -168,9 +168,9 @@ TextInput监听onKeyEvent时，收不到回调，如何实现监听键盘的删�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/0-MctUqJSJye0dyYdqk7ng/zh-cn_image_0000002628763640.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Cgk_CT53TqqibJZ410RPHw/zh-cn_image_0000002628763640.gif "点击放大")
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/5K9WBvpMQ6GcjrvZmv9A6w/zh-cn_image_0000002658962955.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/9tFMk52xSly_mNLseuFhxw/zh-cn_image_0000002658962955.png "点击放大")
 
 ## 总结
 

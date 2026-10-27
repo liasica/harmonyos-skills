@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-132
 title: 如何获取与设置屏幕亮度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何获取与设置屏幕亮度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d2465b5f0173abc4b589175ff1455e0c56c8b76e450952528bf856ce804e1283
 ---
 

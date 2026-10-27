@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: rawfile下文件拷贝到沙箱后大小和内容错误如何解决
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > rawfile下文件拷贝到沙箱后大小和内容错误如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:02097474456cd7fa9d808c0ff1c03f9e73b0b17f3c4104ad30c63bf046558b69
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:27287f86036ae14b5024c52435de8d79c513e0a748ed49c2c43d9f2be9a8380b
 ---
 
 ## 问题现象
@@ -47,7 +47,7 @@ function copyRawFileToSdcard(context: common.Context) {
 
 原始文件与拷贝后文件对比如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/KDR9wT8ESTuca_yLDGxbVg/zh-cn_image_0000002659138375.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ucChzzyUQT6ChiMIullg5Q/zh-cn_image_0000002659138375.png "点击放大")
 
 ## 背景知识
 

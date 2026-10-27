@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: C++工程编译导致电脑卡顿的处理建议
 breadcrumb: FAQ > DevEco Studio > 编译构建 > C++工程编译导致电脑卡顿的处理建议
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:52+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3e1f4953760c74206e5d512e4dcf113ce50ae3f039429e57ea7d20c321be61c8
 ---
 

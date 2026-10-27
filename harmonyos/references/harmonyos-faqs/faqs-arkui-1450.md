@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1450
 title: 如何设置页面背景的透明度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置页面背景的透明度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:00+08:00
+scraped_at: 2026-10-28T07:47:45+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:2a0a3dccefd18730b07684ac30f893f738c25187e6ebd115e77cccf439f97948
+content_hash: sha256:2abf2a13747e000731417bbfb1ea4bfb565a08059e004903894ef34667ca7f25
 ---
 
 ## 问题现象
@@ -102,7 +102,7 @@ content_hash: sha256:2a0a3dccefd18730b07684ac30f893f738c25187e6ebd115e77cccf439f
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/yyRFoPfzT8-pK-a7VPHtug/zh-cn_image_0000002658843529.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/H3QtgH5_RFGP45WtaPSJIg/zh-cn_image_0000002658843529.png "点击放大")
 * 方案二：在entry页面的根组件下设置透明度属性opacity，实现当前页面整体透明度变化，示例代码如下：
 
   ```ts
@@ -130,7 +130,7 @@ content_hash: sha256:2a0a3dccefd18730b07684ac30f893f738c25187e6ebd115e77cccf439f
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/Ci_DsSBxQRmoBpBa0KEbRA/zh-cn_image_0000002628764162.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/vJewbZ7kQ0COtnSdqJO3UQ/zh-cn_image_0000002628764162.png "点击放大")
 * 方案三：由于官方已不推荐使用@ohos.router页面路由，建议使用Navigation完成页面跳转，可以通过NavDestination组件中的NavDestinationMode.DIALOG来设置透明，实现拉起弹窗的全透明效果，使用说明具体如下：
 
   | 名称 | 值 | 说明 |
@@ -201,7 +201,7 @@ content_hash: sha256:2a0a3dccefd18730b07684ac30f893f738c25187e6ebd115e77cccf439f
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Vgl98R4iQWWBIWYUuKU2Pg/zh-cn_image_0000002658963481.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/sgZafLOjT2umz6fQz8Fj_Q/zh-cn_image_0000002658963481.png "点击放大")
 * 方案四：A页面弹出B页面，将B页面作为一个子窗口加载并设置其组件背景为半透明，可以看到A页面内容。
 
   示例代码如下：
@@ -296,7 +296,7 @@ content_hash: sha256:2a0a3dccefd18730b07684ac30f893f738c25187e6ebd115e77cccf439f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/uCCSohPnQy6Wlko-Lw4wbg/zh-cn_image_0000002628604262.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/h-U86T9cQ0eN6jCvCJheuw/zh-cn_image_0000002628604262.png "点击放大")
 
 ### 场景二
 
@@ -353,7 +353,7 @@ struct ScrollExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/vtqAUzdYRrGJyyiswQ_TNQ/zh-cn_image_0000002658843531.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/VVrhsnseROOTj17sPtWMyA/zh-cn_image_0000002658843531.png "点击放大")
 
 ## 常见FAQ
 

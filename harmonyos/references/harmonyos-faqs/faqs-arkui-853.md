@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-853
 title: 列表左右滑动时表头与列表内容未整体双向同步滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 列表左右滑动时表头与列表内容未整体双向同步滑动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c811df553e02817be52da1b5f699fb4e6e85f3eca0b7ef07326fb49a241af5f8
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:415a670eab18afecbf00e79fe1c8aced86cdc34d760e4397bea4f63eeff19552
 ---
 
 ## 问题现象
@@ -440,4 +440,4 @@ struct MainArea {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/l_Bkh0LtTn6hTqaOCj0V_A/zh-cn_image_0000002658917861.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/38vDbU3LSuCLzTWc_J7S5g/zh-cn_image_0000002658917861.png "点击放大")

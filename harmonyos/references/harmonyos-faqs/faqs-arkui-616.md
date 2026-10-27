@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-616
 title: 如何实现文本在标签右侧显示并自动换行
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现文本在标签右侧显示并自动换行
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a8a60fa905a64cd3b68b505e7467f962175fbce7af4e41daf6cd47444bc187ed
+content_hash: sha256:003f2c24eecd146c292ef4aeeda79dbf8b895048e9bda7bd226764796c0f6c74
 ---
 
 ## 问题现象
 
 如何实现文本标题显示在标签右侧，当文本标题过长时自动换行至标签下方？需求效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/LKIzYLv_R6yHDyQfo9krnA/zh-cn_image_0000002658792005.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/QaDi3F6sQxK3uk0s84T2qA/zh-cn_image_0000002658792005.png)
 
 ## 背景知识
 
@@ -242,4 +242,4 @@ struct styled_string_set_customspan_demo {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/iV6wJaBNQKOTTCp5cf_2vg/zh-cn_image_0000002628552630.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/WptyyayrQyCPv5Os6cULCg/zh-cn_image_0000002628552630.png "点击放大")

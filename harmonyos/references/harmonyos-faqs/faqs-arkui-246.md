@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-246
 title: 如何实现背景跟随文字大小改变
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现背景跟随文字大小改变
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:703778f24b62a63479ba36a42e0a6e7c8c32d49d3f25f0e5a7e553d3e13ec960
 ---
 

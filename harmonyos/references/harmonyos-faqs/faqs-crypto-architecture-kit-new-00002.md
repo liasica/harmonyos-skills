@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何实现SM2签名与验签数据预处理
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何实现SM2签名与验签数据预处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:2a232ac2c34cf02206bd9feb37b86a13ecc449fb171793620fdaa0a2aaeec11a
+scraped_at: 2026-10-28T07:48:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:64cbd947bf6c2b20413f602bce82f7d1339910642f7c99ed69b84cb0bde2c000
 ---
 
 ## 问题现象
@@ -18,7 +18,7 @@ HarmonyOS提供了CryptoArchitectureKit（加密架构套件），支持SM2非�
 
 国密SM2签名标准中，签名前需要对明文进行预处理：先根据签名者公钥计算Z值（由曲线参数、公钥坐标等按固定格式拼接而成），再将Z值与明文一起送入SM3摘要算法计算，最终得到预处理摘要e，最后对e执行SM2签名运算。在Java等平台中，这一Z值计算和拼接步骤需要开发者手动实现（如通过BouncyCastle等库获取sm3Z并手动拼接）。在HarmonyOS中，当指定签名算法为SM2\_256|SM3时，系统底层会自动完成国密标准的Z值计算和拼接预处理，开发者无需手动获取Z值或拼接SM3，只需将明文数据传入update或sign接口即可。
 
-更多加解密开发指导可参考[SM2签名和验签](../harmonyos-guides/crypto-asym-key-generation-conversion-spec.md#sm2)。
+更多加解密开发指导可参考[SM2签名和验签](../doccenter-capabilities/crypto-sign-sig-verify-overview.md#sm2)。
 
 ## 解决方案
 

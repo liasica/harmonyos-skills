@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-877
 title: 应用内展示时间和系统时间不一致
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 应用内展示时间和系统时间不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:552503e83e5605de914205b9fabd8eecb7c7c49dc063ce893549ef35ff7978bc
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-linking-1
 title: 如何解决AppLinking跳转与推送通知消息跳转配置冲突问题
 breadcrumb: FAQ > 应用服务开发 > 应用链接跳转服务（App Linking Kit） > 如何解决AppLinking跳转与推送通知消息跳转配置冲突问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:74c3a66dc59770a9306f41ddcfbc30456622dce40a828228faa654c1396cb88d
 ---
 

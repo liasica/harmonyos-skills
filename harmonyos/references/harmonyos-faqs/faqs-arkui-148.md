@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-148
 title: 如何解决Web页面输入框拉起键盘后，页面头部被截断的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何解决Web页面输入框拉起键盘后，页面头部被截断的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:775705660642566bfb93c1fd9e49ee837c2b393b40e7f62739f1d5ee736e490d
 ---
 

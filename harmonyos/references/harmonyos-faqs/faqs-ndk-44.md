@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-44
 title: Native侧如何引入头文件deviceinfo.h
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > Native侧如何引入头文件deviceinfo.h
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5c7f6b4d8f998d6969f370b0eb19e6e24c4a2362dc09fbab9fa53f60e48dad4c
 ---
 

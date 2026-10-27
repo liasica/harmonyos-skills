@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-17
 title: 三方应用如何添加到控制中心中
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 三方应用如何添加到控制中心中
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
+scraped_at: 2026-10-28T07:46:49+08:00
 doc_updated_at: 2026-07-09
-content_hash: sha256:614de6817a79a8a56351ce3c2d0db50f283dd10bb805c5d2f79d08d81d7c6ccd
+content_hash: sha256:e8398123de4c52c053aa4afe3ed7d8669a57c8c91bc8989b5b5e580d9c917ae9
 ---
 
 ## 问题现象
@@ -23,20 +23,20 @@ content_hash: sha256:614de6817a79a8a56351ce3c2d0db50f283dd10bb805c5d2f79d08d81d7
 
 * **步骤一**：打开“智慧生活”App，选择下方的“场景”页签。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Rzn-4kTtSi-eT63gFJOiSg/zh-cn_image_0000002633969786.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/wk6RS3xaTm23UbnL2dBhNQ/zh-cn_image_0000002633969786.png "点击放大")
 * **步骤二**：点击场景上方的“+”号创建场景。
   + 条件支持“语音控制”、“手动点击”、“指定位置”等等，我们这里选择“手动点击”。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/WjdBISq7T7WGy_eO2P7T8A/zh-cn_image_0000002664169127.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/qM1joS_aR6GGyKvxh-OjZA/zh-cn_image_0000002664169127.png "点击放大")
   + “添加任务”选择“应用服务”，然后选择“控制应用”-“打开应用”选择手机上已经安装的应用。这里我们选择“计算器”。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/avRdwtz_SjWt4ha0Cu9_Qg/zh-cn_image_0000002664169203.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/OMUDm_glT_SpIpRrT2uB4w/zh-cn_image_0000002633810146.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/kpqzPLEfQQyb-2lp8aPMSQ/zh-cn_image_0000002664289281.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/PC-tK31lRoWpYTokYrYugw/zh-cn_image_0000002664169203.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/-TKds-ngS5OydQk5yAXOTg/zh-cn_image_0000002633810146.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/6ydAHI59T5CXsgd820wmKg/zh-cn_image_0000002664289281.png "点击放大")
   + 点击右上方“√”完成场景创建。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Yuni9xJmQRa1VoV887Qm0A/zh-cn_image_0000002633810246.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/LsdQuzVbQGe_-AFDVjxvlw/zh-cn_image_0000002633810246.png "点击放大")
 * **步骤三**：打开控制中心，点击左上方编辑按钮，然后在页面最下方点击“+”号，添加上面创建的“计算器”场景。点击右上方“√”完成控制中心编辑。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/B8tiANayR1uKNgQvAUwt8g/zh-cn_image_0000002633970336.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/6Gc2as2iQ0aQesEity0tPw/zh-cn_image_0000002664169477.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/TZJ_Tt8ySQOi4RAKHrbVhw/zh-cn_image_0000002633970336.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/S1pTgc-0R8Ol7HDxBmYI5Q/zh-cn_image_0000002664169477.png "点击放大")
 
 ## 常见FAQ
 

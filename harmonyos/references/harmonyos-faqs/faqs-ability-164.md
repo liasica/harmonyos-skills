@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-16
 title: 如何实现资源替换overlay机制
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何实现资源替换overlay机制
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:33+08:00
+scraped_at: 2026-10-28T07:46:49+08:00
 doc_updated_at: 2026-07-31
-content_hash: sha256:90d4431e279d04a0947c42d766faac46a231ca656ad0d87313d9919ab9489665
+content_hash: sha256:8e0ebddb5208bd025b21e9e2f668a08c9fc392af353eb7d606384541fdcff771
 ---
 
 ## 问题现象
@@ -71,11 +71,11 @@ HarmonyOS如何实现资源替换的静态overlay以及动态overlay？
       }
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/haNcKTWPTiWUwRSbA6L5SQ/zh-cn_image_0000002658870847.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/f1Roj8iWRDis_swjtxWg6A/zh-cn_image_0000002658870847.png "点击放大")
    3. 创建静态overlay资源包staticOverlay.hsp，Resource目录中也有“bg.png”文件，路径和entry相同：
       * [使用DevEco Studio创建HSP模块](../harmonyos-guides/ide-hsp.md#section79378499185)，和正常创建HSP步骤一致，不再赘述。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/0OUoNGF7TTqtjXSPBGuVuw/zh-cn_image_0000002628791472.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/gd9V-V7nRM299Xu4xkubWg/zh-cn_image_0000002628791472.png "点击放大")
       * staticOverlay.hsp中module.json5配置：
 
         targetModuleName和targetPriority标签需要单独设置。
@@ -105,18 +105,18 @@ HarmonyOS如何实现资源替换的静态overlay以及动态overlay？
 
       由于静态overlay需要替换实现主Entry包中的资源，所以需要注意的是，要在DevEco Studio上Run->Edit Configurations中选中entry包进行勾选“Deploy Multi Hap/Hsp Packages”选项，打包编译时会将静态资源包编译到应用HAP中：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/siQBV6GhR9KQMQkuZQOaRQ/zh-cn_image_0000002658990787.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/NgBP8jM4RluUYaeIeiPRNg/zh-cn_image_0000002658990787.png "点击放大")
 
       执行编译后，在静态资源包这里会看到编译生成了编译产物：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/OqwxWvVZSW2TMRuTBPitGA/zh-cn_image_0000002628631570.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/T5dmwaCfSCGb0GiClotM5w/zh-cn_image_0000002628631570.png "点击放大")
    5. 最终，应用安装后的效果为：
 
       **说明** 
 
       staticOverlay包中“bg.png”资源替换了entry包中的“bg.png”，资源文件的路径、名称要和被替换包中资源文件一致。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/C5PrS2SuTRiJcdGddo2UzA/zh-cn_image_0000002658870849.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ofVM9SCHQBuX6IkTEIvfBQ/zh-cn_image_0000002658870849.png "点击放大")
 2. 利用动态overlay机制实现资源替换：
    1. 主应用Index页面中使用Resource目录下的“bg.png”文件:
 
@@ -156,11 +156,11 @@ HarmonyOS如何实现资源替换的静态overlay以及动态overlay？
       }
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/s67RQYEMRL6wONzQ9QyJrQ/zh-cn_image_0000002628791474.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/MEFvagZoQy6rQGTFf-R-Hw/zh-cn_image_0000002628791474.png "点击放大")
    2. 创建动态overlay资源包dynamicOverlay.hsp，Resource目录中也有“bg.png”文件，路径和entry相同：
       * 使用DevEco Studio创建HSP，和正常创建HSP步骤一致，不再赘述。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Ue4DCM5-Ss-kXeFBI7T0Qg/zh-cn_image_0000002658990789.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/J1SKGqUmQoCQOByyMNuY4Q/zh-cn_image_0000002658990789.png "点击放大")
       * dynamicOverlay.hsp中module.json5配置：（动态overlay不需要配置targetModuleName和targetPriority标签）。
 
         ```json
@@ -181,4 +181,4 @@ HarmonyOS如何实现资源替换的静态overlay以及动态overlay？
    3. 编译动态overlay资源包dynamicOverlay.hsp，和上述静态overlay资源包编译步骤一致，不再赘述。
    4. 应用安装后，点击图标运行效果预览：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/gF2EX7DNSf-l0knJ1cNqBA/zh-cn_image_0000002628631572.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/01koVHw1TLGIjXJ11EogDA/zh-cn_image_0000002628631572.png "点击放大")

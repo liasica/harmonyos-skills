@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1141
 title: Canvas绘制矩形无法覆盖文字
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Canvas绘制矩形无法覆盖文字
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:fb1685c2131543ed4a90dc361571d5c9eb10b99f88f19a72eab1d95ab178e1ca
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2bd2f69e3ccf0dd99270f689bdfeefa97b223dbacfe98b032edcfcb67cb3248b
 ---
 
 ## 问题现象
@@ -43,11 +43,11 @@ struct CanvasTestPage {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/TAh1sALVQoym6QzcW6qrJw/zh-cn_image_0000002658808969.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/4aPwKE6tRfuxHzOmhEF0_g/zh-cn_image_0000002658808969.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ktq9CvNARiSta-L1hcrFOw/zh-cn_image_0000002628569606.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/nxyNUd4FRQubzm5pbR5dNg/zh-cn_image_0000002628569606.png "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-localizati
 title: 在多模块工程中，如何获取har/hsp中的rawfile资源
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 本地化开发（Localization） > 在多模块工程中，如何获取har/hsp中的rawfile资源
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6d71e3f88bdf617cc91c13c9f47195543b2fdc6c89aeb1e038ba3d805661b90f
 ---
 

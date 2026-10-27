@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-396
 title: 如何实现在图片进行绘制马赛克的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现在图片进行绘制马赛克的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7dbbdb9ec0b3df96894c5822edf5e8ffd06cc8e9ad0282cdc15052a43036c519
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1191
 title: 应用未显示系统导航栏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用未显示系统导航栏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:9bcc9e009ecb88057b465b87aa9924420df9096db1206c4854197f91fdcad141
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2b1640634afeb0a81f6b24dc6fbb043ba23426bb944fe13fd9d0dffde3372fc9
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:9bcc9e009ecb88057b465b87aa9924420df9096db1206c4854197f91fdc
 
 期望效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/KHr49reYSjquwGrvhCA1MQ/zh-cn_image_0000002628752866.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/VqF2AlErRq2Cu9ZAQVeUHw/zh-cn_image_0000002628752866.png "点击放大")
 
 实际效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/xMVMLGsBSeeoyxo7zFn4Sg/zh-cn_image_0000002658952185.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/AytyJQ3kSAeXyM2GzjDCzQ/zh-cn_image_0000002658952185.png "点击放大")
 
 ## 背景知识
 
@@ -96,7 +96,7 @@ content_hash: sha256:9bcc9e009ecb88057b465b87aa9924420df9096db1206c4854197f91fdc
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/xV53pdbXRmmwq1L2wWfhbg/zh-cn_image_0000002628592972.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/bA5cQvAtTMO9jwLj2srNng/zh-cn_image_0000002628592972.png "点击放大")
 * 场景二：使用setSpecificSystemBarEnabled方法设置导航条显示。
 
   ```ts
@@ -135,4 +135,4 @@ content_hash: sha256:9bcc9e009ecb88057b465b87aa9924420df9096db1206c4854197f91fdc
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Uqwe0unrR5ebCIeuKf5T0A/zh-cn_image_0000002658832227.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/hQoTIFcoT-m8XUxeS7G7cw/zh-cn_image_0000002658832227.png "点击放大")

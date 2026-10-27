@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何解决关闭开发者模式时应用无法打开的问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何解决关闭开发者模式时应用无法打开的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
+scraped_at: 2026-10-28T07:48:45+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:fdf8fe8db97db374e8788755adb51b0e5af4d8d58391bde6507ce7cb6022be1a
+content_hash: sha256:56f7ba6f98a744eb765f069db0d94a78bfe33d2bd82003426910c4e040ca0123
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ content_hash: sha256:fdf8fe8db97db374e8788755adb51b0e5af4d8d58391bde6507ce7cb602
 2. 应用闪退后会存在FaultLog日志，可以在DevEco Studio[查看设备历史抛出的FaultLog日志](../harmonyos-guides/ide-fault-log.md#section4692114071018)。
 3. 观察到出现了JS Crash日志：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/qHbiE_kUSBGCyN6LpFzw6Q/zh-cn_image_0000002658913823.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/u7rLpUEKTxCh4WDOjjbg8w/zh-cn_image_0000002658913823.png "点击放大")
 4. 根据JS Crash日志可以定位到错误的代码行，然后根据报错修改。
 
 ## 分析结论

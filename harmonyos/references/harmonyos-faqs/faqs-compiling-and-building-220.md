@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决编译构建时间过长问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决编译构建时间过长问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:56+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:af9392a75dac8b07d6025e68df56e29a824f762f6fa5a7e17ac94ed147cb742d
+content_hash: sha256:e6dc3aa70870855a05fbce8bc2803df812328c0c11a45df9714bd18478b06f6c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:af9392a75dac8b07d6025e68df56e29a824f762f6fa5a7e17ac94ed147c
 
 场景示例：HAP+20个HSP混合打包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/GGSAIjJxSuy11tqAfNnyfQ/zh-cn_image_0000002658808635.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/KH8J6eNsRhCN9f5HGum8iQ/zh-cn_image_0000002658808635.png "点击放大")
 
 ## 背景知识
 
@@ -26,7 +26,7 @@ content_hash: sha256:af9392a75dac8b07d6025e68df56e29a824f762f6fa5a7e17ac94ed147c
 
 分析代码，发现应用使用了过多的HSP包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/pMJQNaH5TS2rIRg4A2x8vg/zh-cn_image_0000002628569270.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/ysejUC-LSQqqIgqsIsWa1w/zh-cn_image_0000002628569270.png "点击放大")
 
 ## 分析结论
 

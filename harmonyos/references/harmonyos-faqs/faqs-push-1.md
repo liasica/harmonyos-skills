@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-1
 title: 进入应用阅读消息后，下滑通知栏中的消息通知没有自动消失
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 进入应用阅读消息后，下滑通知栏中的消息通知没有自动消失
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a8f3ee7f5b9f28c0f7b4579c00b46433aa7dba981c12de50fdb2c4c7c2dad1a1
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1101
 title: HarmonyOS应用侧基于Tabs组件实现胶囊样式、悬浮留空及重叠毛玻璃等常见TabBar自定义样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > HarmonyOS应用侧基于Tabs组件实现胶囊样式、悬浮留空及重叠毛玻璃等常见TabBar自定义样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:df7bbef8b2d3462c64eebe7cac288c88a6b3a4a0bf0f38022db6163e94b97c8c
+content_hash: sha256:19a3fc86f9242884bec3102f5a1a291a57991d4b98c09a78be8367312f3a7256
 ---
 
 ## 问题现象
@@ -113,7 +113,7 @@ content_hash: sha256:df7bbef8b2d3462c64eebe7cac288c88a6b3a4a0bf0f38022db6163e94b
 
     效果图如下所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/LwnqO1z_Sg6dzBkNV60uww/zh-cn_image_0000002680323059.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/u4v-07lLRXyYS4SJ6eL3XQ/zh-cn_image_0000002680323059.png "点击放大")
   + 方案二：使用自定义页签实现。
 
     设置单个页签的宽度在(页签宽度/页签数-padding值\*页签数，页签宽度/页签数)之间。参考代码如下所示：
@@ -179,7 +179,7 @@ content_hash: sha256:df7bbef8b2d3462c64eebe7cac288c88a6b3a4a0bf0f38022db6163e94b
 
     效果图如下所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/z-UH_7hrSQef-4foAr6iuQ/zh-cn_image_0000002650243726.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/ZOmD22cUTOOIyWkUdqzOXg/zh-cn_image_0000002650243726.png "点击放大")
 * **场景四：实现页签栏和内容区重叠，并启用毛玻璃效果。**
 
   通过设置Tabs的barOverlap为true，并设置barBackgroundBlurStyle为BlurStyle.Thin，实现页签栏和内容区的重叠及毛玻璃效果。设置底部组件的padding值大于TabBar的高度防止遮挡。参考代码如下所示：
@@ -237,7 +237,7 @@ content_hash: sha256:df7bbef8b2d3462c64eebe7cac288c88a6b3a4a0bf0f38022db6163e94b
 
   效果图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/wYopQ8vnTLmg2u1LGiavOA/zh-cn_image_0000002680163711.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Figrmxh6T5G_AfXhEF-GBA/zh-cn_image_0000002680163711.png "点击放大")
 * **场景五：实现悬浮式、两端留空的Tab栏样式。**
   + 方案一：使用自定义组件实现。
 
@@ -334,7 +334,7 @@ content_hash: sha256:df7bbef8b2d3462c64eebe7cac288c88a6b3a4a0bf0f38022db6163e94b
 
     效果图如下所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/fL6vQGfBS9yiJUbrvYdfog/zh-cn_image_0000002680163987.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/azEBAWNBTOypGssvlORwrQ/zh-cn_image_0000002680163987.png "点击放大")
 * **场景六：处理页签数较多时的TabBar的样式。**
 
   通过设置barMode为BarMode.Scrollable，当标签数量较多或内容超出屏幕宽度时，用户可以通过滑动来切换标签。解决方案：参考[示例2（设置Scrollable模式下的TabBar的布局样式）](../harmonyos-references/ts-container-tabs.md#示例2设置scrollable模式下的tabbar的布局样式)。

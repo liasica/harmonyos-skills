@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-609
 title: 如何解决Repeat渲染数据重复显示问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决Repeat渲染数据重复显示问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:52+08:00
 doc_updated_at: 2026-07-31
-content_hash: sha256:2dfdec637ae230e9a4fb45a234476ba9287e05ab34f3fb320ada631be23f8201
+content_hash: sha256:efb849477194110586644d155ef8fe8b6cf4e81b2c649d13212311111f9c82eb
 ---
 
 ## 问题现象
@@ -19,10 +19,10 @@ content_hash: sha256:2dfdec637ae230e9a4fb45a234476ba9287e05ab34f3fb320ada631be23
 
 1. 场景一：滑动加载新数据，在aboutToAppear方法里处理数据逻辑，问题如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/6uzIpgxhTTSrIx5f3RxTzg/zh-cn_image_0000002673095881.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/byNnmxbKTY2lOOKFSDGDnw/zh-cn_image_0000002673095881.png "点击放大")
 2. 场景二：进行Repeat与@Builder混用场景下，传参使用错误，导致数据重复，问题如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/oPacz8KNQwuRurF_PQwCig/zh-cn_image_0000002643056034.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Z7agfcd-S4yaB1uN_2yN-Q/zh-cn_image_0000002643056034.png "点击放大")
 
 ## 背景知识
 
@@ -294,8 +294,8 @@ content_hash: sha256:2dfdec637ae230e9a4fb45a234476ba9287e05ab34f3fb320ada631be23
 
 场景一：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/UlmqEPpeS6mW4i52nJJmNQ/zh-cn_image_0000002673098375.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/OdK4AEGtQU2aw4a4aI-Buw/zh-cn_image_0000002673098375.png "点击放大")
 
 场景二：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/FN4gQPQoRz-yKc1lClw2XQ/zh-cn_image_0000002643058520.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hzw3K6hST3GJqiLKDjAOEg/zh-cn_image_0000002643058520.png "点击放大")

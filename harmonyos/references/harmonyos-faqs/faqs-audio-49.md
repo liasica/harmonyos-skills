@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-49
 title: 如何判断设备正在播放音频
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 如何判断设备正在播放音频
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7d0bb2daf9c735cfc2922b490e221280863a4b4369791bc3b6d4e6e1b92827f9
+scraped_at: 2026-10-28T07:48:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:22c41efa61d3a7ad47e14a7da3066aa84b73a2efcb57869f6fcd9f55f867bd95
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:7d0bb2daf9c735cfc2922b490e221280863a4b4369791bc3b6d4e6e1b92
 
 开发者可通过[isStreamActive](../harmonyos-references/arkts-apis-audio-audiostreammanager.md#isstreamactive20)接口获取指定音频流（如音乐、视频等）是否为活跃状态，活跃即正在播放。当需要获取是否有任意音频流在播放时，可通过getCurrentAudioRendererInfoArraySync接口获取音频流列表，并通过isStreamActive判断音频流是否活跃，从而判断当前是否有音频正在播放。
 
-```screen
+```ts
 import { audio } from '@kit.AudioKit';
 
 @Entry

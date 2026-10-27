@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1585
 title: Button组件背景色设置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Button组件背景色设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8b4f71943c52a4656f3d9ccd68146e0f2039d92abceb573ffb3b471422902b08
+scraped_at: 2026-10-28T07:47:25+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:04f0a73609fa9d19a4ed263c8f96120678c469ceb3692d6e0fbbbd5e12f0445d
 ---
 
 ## 问题现象
@@ -60,7 +60,7 @@ content_hash: sha256:8b4f71943c52a4656f3d9ccd68146e0f2039d92abceb573ffb3b4714229
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/d_ZkqdRDSK-OyhkTkMtXgg/zh-cn_image_0000002658849565.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/kT0yG8wzRB6jahMLHVKEwQ/zh-cn_image_0000002658849565.png "点击放大")
 * **场景二**：Button设置disabled多态样式会受到Button组件禁用控制属性样式影响导致显示颜色偏淡，建议用Text组件多态样式代替Button组件实现想要的效果。
 
   ```ts
@@ -169,7 +169,7 @@ content_hash: sha256:8b4f71943c52a4656f3d9ccd68146e0f2039d92abceb573ffb3b4714229
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/_vodlE8BRrGC8BuffO86Yw/zh-cn_image_0000002628770200.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/kVd0-CFqTtu8NEwBeuoL5g/zh-cn_image_0000002628770200.png "点击放大")
 * **场景三**：Button默认有背景色，直接设置渐变色会影响渐变效果，解决方案是设置渐变色的同时设置Button组件背景色为透明。
 
   ```ts
@@ -226,7 +226,7 @@ content_hash: sha256:8b4f71943c52a4656f3d9ccd68146e0f2039d92abceb573ffb3b4714229
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/BEwXTFK2T6Gfcq5Y-hONDQ/zh-cn_image_0000002658969523.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/k80xPNaBQAah4DSN1XtvKg/zh-cn_image_0000002658969523.png "点击放大")
 * **场景四**：Button组件可以设置不透明度属性达到置灰效果，如设置不透明度属性opacity(0.4)实现与禁用控制属性enabled(false)时的相同样式效果。
 
   ```ts
@@ -252,7 +252,7 @@ content_hash: sha256:8b4f71943c52a4656f3d9ccd68146e0f2039d92abceb573ffb3b4714229
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/W_DFsSmYSNmyh7kHj5vzIw/zh-cn_image_0000002628610304.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/SV6LWCnaSx634jXwqk4wXA/zh-cn_image_0000002628610304.png "点击放大")
 * **场景五**：定义调色板数据源，用数组存储自定义颜色，通过@State响应式状态管理维护当前选中颜色的索引，实现状态与视图的双向联动。用Flex和ForEach组件完成调色板布局。给按钮和调色板都绑定点击事件，点击按钮时索引递增，超出数组长度自动重置，循环遍历调色板；点击调色板色块通过当前索引值，切换到对应颜色。
 
   ```ts
@@ -328,7 +328,7 @@ content_hash: sha256:8b4f71943c52a4656f3d9ccd68146e0f2039d92abceb573ffb3b4714229
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/r3x6W1g4Tk2f1Cw3eE-qMQ/zh-cn_image_0000002658849567.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/UCaP-SvORvCQAHEbZZDShA/zh-cn_image_0000002658849567.png "点击放大")
 * **场景六**：使用stateStyles属性方法可以依据组件的内部状态的不同，快速设置不同样式，使用此方法将各个状态下的背景设为透明，此外通过stateEffect属性设置组件是否开启按压态显示效果。stateEffect默认值为true，将其设置为false即可关闭按压效果。
 
   ```ts
@@ -393,7 +393,7 @@ content_hash: sha256:8b4f71943c52a4656f3d9ccd68146e0f2039d92abceb573ffb3b4714229
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/aS6b3K3jSpyQ1vTP4267rA/zh-cn_image_0000002628770202.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/QLae5E-kS8aXvApRRmZPsg/zh-cn_image_0000002628770202.png "点击放大")
 
 ## 常见FAQ
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-37
 title: napi_module结构体字段描述解析
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > napi_module结构体字段描述解析
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:117b9194b0f2a793080dca9a7b7a981354f0e6a541301fdb5a21631692907502
 ---
 

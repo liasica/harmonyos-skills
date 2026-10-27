@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-486
 title: 自定义组件内定义方法报错，出现异常的原因
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义组件内定义方法报错，出现异常的原因
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6bb7587a258f37456926d2fce026b0c6d86378fd91eb20633144425e649a2a15
 ---
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 使用hdc shell param命令查询软件版本报错
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 使用hdc shell param命令查询软件版本报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
+scraped_at: 2026-10-28T07:49:03+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:75d3daf7b6da13f3dcb82b6c4592d641538e56fec8f81defdc70ae449003fa69
+content_hash: sha256:a491b2c45f744c2f31055cff85f8f9e4e2fb22ba94b508ac17fb39d16b1df2dd
 ---
 
 ## 问题现象
 
 执行hdc shell param get const.product.software.version.name命令报错：Get parameter "xxx" fail! errNum is:106!
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/khGWtI3PSyipLQEYR2mnoA/zh-cn_image_0000002658808993.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/8tKiUuZzTqqBT3zmOPD6LA/zh-cn_image_0000002658808993.png "点击放大")
 
 ## 解决方案
 
@@ -22,10 +22,10 @@ content_hash: sha256:75d3daf7b6da13f3dcb82b6c4592d641538e56fec8f81defdc70ae44900
 
 1. 执行hdc list targets保证设备连接正确。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_olrIVnZSkS0cH3VvRZFNA/zh-cn_image_0000002628409728.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/b_Lr1yBVQVKr4kFeci4hBg/zh-cn_image_0000002628409728.png)
 2. 进入hdc shell模式，执行param get | grep "const.product.software"命令，查找该设备所支持的命令参数，然后基于返回的结果进行软件版本的查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/imvD8VAxQi-9Pv26DFj1ew/zh-cn_image_0000002628569630.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/nX4wJNmYQI-Yf-Nqab1iVg/zh-cn_image_0000002628569630.png "点击放大")
 
 ## 总结
 

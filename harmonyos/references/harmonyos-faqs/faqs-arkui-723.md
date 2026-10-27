@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-723
 title: 如何解决Refresh每次下拉重复触发刷新回调的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Refresh每次下拉重复触发刷新回调的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:39b7fb502b4ee218f7cbf17c8989b87be7149a7c2a666b0b7397d4c2fea56413
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bb126c7ea39e3431408ba9c6366db46bcff8450f28154a776f18591475b9fad4
 ---
 
 ## 问题现象
 
 Refresh组件在反复滑动时，会重复触发刷新回调，无法控制刷新状态，问题图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ZO4IywDySHKkBqI7zIEROw/zh-cn_image_0000002658914537.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/suE0-gadRMGfevRgBpR5Pg/zh-cn_image_0000002658914537.png "点击放大")
 
 由图可见，Refresh的刷新不断重复触发，如何解决Refresh每次下拉重复触发刷新回调的问题？
 
@@ -138,6 +138,6 @@ struct RefreshRepeatProblem {
 
 修正效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/WDAAYU2HQJyl04-XJTp9Bg/zh-cn_image_0000002628395312.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/2Zf_-z_XRXiT1ugR3e2r_g/zh-cn_image_0000002628395312.png "点击放大")
 
 由图可见，Refresh组件的刷新状态不会在短时间内频繁触发。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 如何根据图片名称过滤系统相册内图片
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 如何根据图片名称过滤系统相册内图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:91303d2efc1d5e293db2c0c4b3680b96e24a70f39329ef227d0c92c271ca6ba1
 ---
 

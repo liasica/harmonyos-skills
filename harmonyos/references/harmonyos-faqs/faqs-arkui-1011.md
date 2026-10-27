@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1011
 title: 使用@ObservedV2和@Trace深度观测对象时，数据改变而UI未刷新
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用@ObservedV2和@Trace深度观测对象时，数据改变而UI未刷新
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:03+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:182c01dbb924d917097877e8a96ca615171cb9b3f0820ad799beef1c2831ddd3
+content_hash: sha256:7a5c1888e982f20e6d1231d1251ef12dd92a5e3a11fa3ed1c98db50c4284240f
 ---
 
 ## 问题现象
@@ -192,7 +192,7 @@ content_hash: sha256:182c01dbb924d917097877e8a96ca615171cb9b3f0820ad799beef1c283
 
    运行效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/T5Ow_1JxQI2FFBl4kAiMIw/zh-cn_image_0000002628564680.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/QgkYhaWpSluXA37_yPiJ4g/zh-cn_image_0000002628564680.png "点击放大")
 2. **场景二**：@ObservedV2装饰的对象中使用了三方包中的类，三方包中类的实例数据变化了，对应的UI未刷新。
 
    由于PhoneInfo类是一个三方包中的类，无法被@ObservedV2装饰，即便Person类中phoneInfo属性使用@Trace装饰，也不能进行深度观测。所以可以使用makeObserved接口将不可观察的数据变为可观察。
@@ -258,7 +258,7 @@ content_hash: sha256:182c01dbb924d917097877e8a96ca615171cb9b3f0820ad799beef1c283
 
    运行效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/MCUiruAlQCiNVpWrgsyF4w/zh-cn_image_0000002658923995.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/Z7a_1nnoSK-il79fM7t2AA/zh-cn_image_0000002658923995.png "点击放大")
 3. **场景三**：@ObservedV2装饰的对象经过序列化和反序列化之后，失去观察能力。
 
    @ObservedV2装饰的对象序列化后会为@Trace装饰的属性添加\_\_ob\_前缀，将@ObservedV2装饰的对象通过JSON.stringify序列化后，再通过JSON.parse反序列化，将失去观察能力。涉及到@ObservedV2装饰对象的序列化与反序列化，解决方案可以参考官网指南中的[@ObservedV2装饰对象的序列化与反序列化](../harmonyos-guides/arkts-new-observedv2-and-trace.md#observedv2装饰对象的序列化与反序列化)。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-background
 title: 音视频播放开发中长时任务的使用流程以及注意事项
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 后台任务开发（Background Tasks） > 音视频播放开发中长时任务的使用流程以及注意事项
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c00992de9aa017c5c0c32d6a77fcc2b208e9958412f48eff657723ccaaaa2964
 ---
 

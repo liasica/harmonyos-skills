@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-851
 title: 文本展示换行，布局异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 文本展示换行，布局异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c4d2abb92296aebbad8f59fee398e7d9112cd8232774b9e1bdb7eda64b7a1623
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:8c59ba3abd0635881692fe90186f1b32ca15f0d2d909e216627ef812e98b4569
 ---
 
 ## 问题现象
@@ -93,7 +93,7 @@ content_hash: sha256:c4d2abb92296aebbad8f59fee398e7d9112cd8232774b9e1bdb7eda64b7
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/UdnNjLtxSC-Pm7gevfyvrQ/zh-cn_image_0000002658797921.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/DAWUzGp2R8mifnpgAVo96A/zh-cn_image_0000002658797921.png "点击放大")
 
 * 文本所在的页面为H5页面：
 
@@ -174,6 +174,6 @@ content_hash: sha256:c4d2abb92296aebbad8f59fee398e7d9112cd8232774b9e1bdb7eda64b7
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/897weXneRAm_5VL1cbUO7Q/zh-cn_image_0000002628558550.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Uw4xHtwSTz2xnPd18U-vwQ/zh-cn_image_0000002628558550.png "点击放大")
 
 * 调整页面布局。通过缩小字体大小以及拓宽父组件容器等方式，确保文本在一行内显示。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-171
 title: 如何根据Web中的权限请求去动态申请权限
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何根据Web中的权限请求去动态申请权限
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c5a748d4da5cc4cc3e85d29be3a684ff07c98c85172ccf280676424008f43163
 ---
 

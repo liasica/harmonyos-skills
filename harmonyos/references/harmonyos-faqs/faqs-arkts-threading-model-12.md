@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-thre
 title: TaskPool创建多线程修改单例对象变量失败问题如何解决
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > TaskPool创建多线程修改单例对象变量失败问题如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
+scraped_at: 2026-10-28T07:46:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:34728f576198b9d1f5af8b6ada7d6623e208152d37436c7299636c47ec7867a1
+content_hash: sha256:b4a1f82b28a43dd5e978a876e5773fb57fa80683c25b03f01b3eb005ef6e977e
 ---
 
 ## 问题现象
@@ -123,7 +123,7 @@ TaskPool和worker的多线程方案都是基于Actor并发模型实现的。每�
 
    **结果如下图所示：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/fjOpWsSYT96M5lzpuk46-g/zh-cn_image_0000002629058996.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/v4X5P3_XTeSfL8DUDeQHbQ/zh-cn_image_0000002629058996.png "点击放大")
 
 ## 常见FAQ
 

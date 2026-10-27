@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-459
 title: FrameNode的isAttached接口是否可以判断FrameNode节点出现在屏幕上
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > FrameNode的isAttached接口是否可以判断FrameNode节点出现在屏幕上
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0ca7389fe1b40fec725489ad89a990775055163da61e36e95f54aca9ebfc72b5
 ---
 

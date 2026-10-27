@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-81
 title: 如何设置自定义弹窗位置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何设置自定义弹窗位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:20+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:498ae95cf2d228b1d35a587b17a02cf1d55f43080cc36939a86f05e8232f0606
 ---
 

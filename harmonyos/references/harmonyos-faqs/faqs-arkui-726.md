@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-726
 title: GridRow布局如何设置滚动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > GridRow布局如何设置滚动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8bf2692f52f172f3f2ebe785ac0bce70a75df7e23f765b1b1a68b1a646417cc7
 ---
 

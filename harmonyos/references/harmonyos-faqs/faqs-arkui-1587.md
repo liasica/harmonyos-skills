@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1587
 title: "@ObservedV2与@Trace装饰的对象key都带有__ob_导致反序列化异常"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > @ObservedV2与@Trace装饰的对象key都带有__ob_导致反序列化异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:47:25+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:91943e23b942ab51bcb699352b9dcdd53df4e797aa478f17388691e4a7538b5b
 ---
 

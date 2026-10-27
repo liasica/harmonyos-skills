@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-364
 title: 如何实现组件动态上下树
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现组件动态上下树
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:34c45eebfeac8fdc960da8d1b2e939edd4465b62260fe0717e03bc7d40bd3ab5
 ---
 

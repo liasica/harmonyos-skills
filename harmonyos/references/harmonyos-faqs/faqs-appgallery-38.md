@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用市场评论互动服务账号使用问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用市场评论互动服务账号使用问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4576cf937997b0780b42438d42910222698b9746ec5fa97947ecb8ad5b49afa9
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c872e46efab4ba528da66515e8b32894d5c8d51352170b4ffa09bb32ad1ab6ff
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:4576cf937997b0780b42438d42910222698b9746ec5fa97947ecb8ad5b4
 
 * 账号持有者登录：
 
-  应用市场应用评论评分能力，已完成升级。您可以通过[华为应用市场评论互动服务](https://developer.huawei.com/consumer/cn/service/apcs/aggrowth/chassis/home)查看及管理应用评论评分。在访问之前请务必确认您的登录账号为持有者账号（即在AGC上【开发者ID】关联账号，【角色管理】为“账号持有者”）。
+  应用市场应用评论评分能力，已完成升级。您可以通过[华为应用市场评论互动服务](https://developer.huawei.com/consumer/cn/service/apcs/aggrowth/chassis/home)查看及管理应用评论评分。在访问之前请务必确认您的登录账号为持有者账号（即在HarmonyOS 开发者中心上【开发者ID】关联账号，【角色管理】为“账号持有者”）。
 * 注册账号持有者：
 
   如您【角色管理】为空，您可以先[注册为账号持有者](https://developer.huawei.com/consumer/cn/service/apcs/aggrowth/chassis/home)。首次登录时，将会自动识别登录账号为账号持有者并完成注册。当您查看右上角登录信息，账号显示【主账号】则代表已注册完成。您可以直接在平台内通过用户互动服务查看和管理评论评分。

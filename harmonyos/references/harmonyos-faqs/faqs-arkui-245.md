@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-245
 title: 使用0x八位颜色设置渐变透明度为什么与#八位资源颜色值不同
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用0x八位颜色设置渐变透明度为什么与#八位资源颜色值不同
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:d9f26b3866ab36d633961db2ca6fba11cecb5b41582e7df6870f1edc2092ec26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:25cd8e7349bd00c541ca64ae5ca5a28c586df89ade9652806fcd01ef4c7af26b
 ---
 
 HarmonyOS支持0x开头加八位或六位的写法。当透明度设为00时，前两位透明度不再借位，即0x00333333等于0x333333，相当于没有设置透明度，因此没有透明效果。建议使用rgba方式明确颜色。参考代码如下：
@@ -51,4 +51,4 @@ struct ColorGradientExample {
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/pt0tINxMRCSAYO2o9wh9BA/zh-cn_image_0000002624635834.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/U6mQqOqSSHqvqvgI9E4E5A/zh-cn_image_0000002624635834.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1421
 title: 实现子组件适应最高子组件的高度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现子组件适应最高子组件的高度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8452ed2536ea31bc47ef5ae2756507f173534a577d8b5067c90ed06be722da79
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:71144333b82c963dd75141787f7a2c993f2ad7bf85f7015a4bae178db03a613f
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:8452ed2536ea31bc47ef5ae2756507f173534a577d8b5067c90ed06be72
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/KFaHFEnRQbWfZnraw-ugmA/zh-cn_image_0000002658843009.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/5iLTf7ZZShml53E2kNYVNA/zh-cn_image_0000002658843009.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/6lUWQwhDSbSKylDaCN3Jiw/zh-cn_image_0000002628763644.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/X1aFJLLHRlCdcb0G-dOxFQ/zh-cn_image_0000002628763644.png "点击放大")
 
 ## 背景知识
 

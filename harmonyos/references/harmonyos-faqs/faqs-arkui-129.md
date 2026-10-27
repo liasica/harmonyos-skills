@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-129
 title: UI布局默认是多少vp为基准，以达到不同机器自适应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > UI布局默认是多少vp为基准，以达到不同机器自适应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a3b37c9bff9a3ecf807dbe3441c44944f93e4438bbf5b0152ed3beff656ad8c1
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1076
 title: "@Monitor使用限制及常见问题介绍"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > @Monitor使用限制及常见问题介绍
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7c9351c686ee8407d7b929813286c55ec0dd7fb44cdabf04a456a278e377ea2c
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2e478df35db8b5ba9df66d438e29aeaddba23e20d840a8397c5d5f375cb197fe
 ---
 
 ## 问题现象
@@ -50,7 +50,7 @@ content_hash: sha256:7c9351c686ee8407d7b929813286c55ec0dd7fb44cdabf04a456a278e37
 
   场景一问题现象：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/zHMdk31TSkikwTI4MTiBig/zh-cn_image_0000002628567148.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/i5BWDwWxQXK0KNAIxnhWcw/zh-cn_image_0000002628567148.png "点击放大")
 
 * 场景二：没有被@Trace修饰属性也会一起被@Monitor监听。
 
@@ -133,7 +133,7 @@ content_hash: sha256:7c9351c686ee8407d7b929813286c55ec0dd7fb44cdabf04a456a278e37
 
   场景三问题现象：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/qm-jJ4xYSbyXNrdLBc0wCA/zh-cn_image_0000002658926453.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/SxtPtBiNR6alskYrcimtkg/zh-cn_image_0000002658926453.png "点击放大")
 
 ## 背景知识
 
@@ -195,7 +195,7 @@ content_hash: sha256:7c9351c686ee8407d7b929813286c55ec0dd7fb44cdabf04a456a278e37
 
   场景一实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/d5ZlYvB3RKCifC-UOLYXyQ/zh-cn_image_0000002628407240.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/DwfQgwnCT0CSuklGZRQGjQ/zh-cn_image_0000002628407240.png "点击放大")
 * 场景二：没有被@Trace修饰属性也会一起被@Monitor监听。
 
   @Monitor暂无对入参做编译时的校验，当同时入参多个变量，且变量中存在状态变量与普通变量同时修改时，@Monitor会同时监听到普通变量的变化。应当正确传入@Monitor入参，不传入非状态变量，避免造成功能异常或行为表现不符合预期。完整示例代码如下：
@@ -289,7 +289,7 @@ content_hash: sha256:7c9351c686ee8407d7b929813286c55ec0dd7fb44cdabf04a456a278e37
 
   场景三实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/sXo81LYXS8CPp4DQnDUXpg/zh-cn_image_0000002658806507.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/9q3rpfjWRHW4cWfOJdZIiw/zh-cn_image_0000002658806507.png "点击放大")
 
 ## 常见FAQ
 

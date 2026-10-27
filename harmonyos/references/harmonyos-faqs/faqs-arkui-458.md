@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-458
 title: FrameNode的性能为什么不如声明式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > FrameNode的性能为什么不如声明式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cbb74c3e3b111eb864ecf9a111681e94fc2a2963071fab55575ea0fe9fa62832
 ---
 

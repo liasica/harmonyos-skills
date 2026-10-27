@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-98
 title: 如何设置组件不同状态下的样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置组件不同状态下的样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a50761652e47d014afd930a2d3b60e5139c8f33c3f58df0476c91e6ce32942c4
 ---
 

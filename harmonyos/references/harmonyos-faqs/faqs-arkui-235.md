@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-235
 title: 如何实现下拉刷新和上滑加载的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现下拉刷新和上滑加载的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:422f083621335b01bb5663e904e3a9e79c26782293d59d2d98156c6364c1173a
 ---
 

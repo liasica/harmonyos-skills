@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1318
 title: 应用未适配悬浮窗模式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用未适配悬浮窗模式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0f3e2ae1577e0b3efcc0ccd83d83103776ecd1d1bbaa7bcd1a9dc892e1e8e961
 ---
 

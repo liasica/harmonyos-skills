@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1002
 title: ActionSheet如何设置item样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > ActionSheet如何设置item样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:50+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b3af690f0b59de522c968de6b99f0e63ffe3b80111b8910cfdd6aaef3b427fa1
+content_hash: sha256:50c5a193ef46aeef61865910a6769958bddf32bec7ecbd18d1858f47110d5ea2
 ---
 
 ## 问题现象
@@ -73,7 +73,7 @@ struct ShowActionSheetExample {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/9EIIahzkREC1mOkXjSEBDg/zh-cn_image_0000002658804039.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/31c-FpvRRBCdRReqOG9yeQ/zh-cn_image_0000002658804039.png "点击放大")
 
 ## 背景知识
 

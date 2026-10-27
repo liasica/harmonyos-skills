@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-571
 title: 自定义字体无法全局使用如何处理
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义字体无法全局使用如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:ca77e5622e36970a6aea233ea4749506d11c68c98418d7b764e851bb1a019864
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:62432240cbd980b20cc6ad3231c41bce76b606dcee39d945b63e632e3914a2ce
 ---
 
 ## 问题现象
@@ -15,7 +15,7 @@ registerFont注册**应用全局生效**的自定义字体失败。
 * 预期效果：注册自定义字体后，在应用中能成功使用该字体。
 * 实际效果：注册自定义字体后，显示效果与默认字体相同。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/LDJkcGqqS86PuGyESC3XXw/zh-cn_image_0000002684134941.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/0Uf2ehogQUOH3Opj9RIeBw/zh-cn_image_0000002684134941.png "点击放大")
 
 问题代码如下：
 
@@ -126,7 +126,7 @@ registerFont注册**应用全局生效**的自定义字体失败。
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/EUYcPkBLRZW3z7vK08JX5Q/zh-cn_image_0000002684295417.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/yHfug15YR1iOMGoBapQIXA/zh-cn_image_0000002684295417.png "点击放大")
 
 **其他注意事项：**
 

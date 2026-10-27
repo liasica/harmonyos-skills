@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 运动健康无法获取数据常见问题和解决方案
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 运动健康无法获取数据常见问题和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:35+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:7750a6a3951e8bc07e04a6332dd15a2fb3ccfb648924b939f326c6284a671bb4
+scraped_at: 2026-10-28T07:48:48+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e839023caf236f5d2a33b649ccf03ef5a7f1d702910f65f9c487f64f4aeacc23
 ---
 
 ## 问题现象
@@ -34,7 +34,7 @@ content_hash: sha256:7750a6a3951e8bc07e04a6332dd15a2fb3ccfb648924b939f326c6284a6
 
   登录[开发者联盟网站](https://developer.huawei.com/consumer/cn/)，单击进入“HarmonyOS 开发者中心”。在应用服务中，单击Health Service Kit卡片申请Health Service Kit服务，同意协议后，进入数据权限申请页面，确保使用权限scopes已勾选申请，应用内使用申请权限对照[权限说明](../harmonyos-guides/health-permission-description.md)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Q4QRF7jpRtez9f-PkEcOiA/zh-cn_image_0000002661377573.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/IOHG2H73TzKIZirgaehq6A/zh-cn_image_0000002661377573.png "点击放大")
 
   更多错误码请参考[ArkTS API错误码](../harmonyos-references/errorcode-healthservice.md)。
 * 问题二：说明没有正确配置client\_id，将client\_id(xxxxxxx)配置到‘\entry\src\main\module.json5’文件中再次尝试，参考[配置Client ID](../harmonyos-guides/health-configuration-client-id.md)。
@@ -51,7 +51,7 @@ content_hash: sha256:7750a6a3951e8bc07e04a6332dd15a2fb3ccfb648924b939f326c6284a6
 
   处理步骤：
 
-  1. 检查AGC上应用的指纹证书，详情请见[添加公钥指纹](../harmonyos-guides/application-dev-overview.md#条件必选添加公钥指纹)。
+  1. 检查HarmonyOS 开发者中心上应用的指纹证书，详情请见[添加公钥指纹](../harmonyos-guides/application-dev-overview.md#条件必选添加公钥指纹)。
   2. 参考[管理用户授权](../harmonyos-guides/health-add-permissions.md)，确认用户已授权相关权限。
   3. 用户申请成为测试用户失败，请尽快参考[申请验证获取正式权限](../harmonyos-guides/health-verification.md)，完成管理台应用验收。
   4. 通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/ticketCard)提交问题，华为支持人员会及时处理。

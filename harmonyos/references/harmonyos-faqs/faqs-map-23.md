@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-23
 title: MapKit服务中使用TileOverlayOptions访问瓦片地址tileUrl时报错：1007900060
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > MapKit服务中使用TileOverlayOptions访问瓦片地址tileUrl时报错：1007900060
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a3335e6ca8c8d66509243246bde3999982bde07bfcc730a0992fb972ee8a687f
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1282
 title: 实现手指按下切换图片，松手换回原图
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现手指按下切换图片，松手换回原图
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2d1bdb0531657f94c0ed49275e04b5c1ff6e8387ff9036a665d8a15c2f322de5
 ---
 

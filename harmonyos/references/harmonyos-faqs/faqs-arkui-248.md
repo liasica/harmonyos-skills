@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-248
 title: 如何设置Text的字体，可以不受系统设置里显示字体大小的影响
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何设置Text的字体，可以不受系统设置里显示字体大小的影响
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:83af05754e3da5b1897c4b5f85ccaadb60ec981d3d6bb5b52079e1ee6de83ee6
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-443
 title: Scroll内容区的高度小于组件高度，是否无法滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Scroll内容区的高度小于组件高度，是否无法滑动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:64b4697f7f797f7d374422199b16f0f7b93ebdfc2d2fc707b12c5ca0951997e0
 ---
 

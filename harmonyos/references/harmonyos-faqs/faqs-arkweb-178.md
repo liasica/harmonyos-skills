@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-178
 title: Web组件页面加载失败后如何获取加载异常的信息
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件页面加载失败后如何获取加载异常的信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6df26525da8d514bc608edecabc06c8cf3b3646c1862e6a61d672d874f5a7e1a
 ---
 

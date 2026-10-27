@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何在构建打包时获取云端文件新增或更新到rawfile文件夹中
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何在构建打包时获取云端文件新增或更新到rawfile文件夹中
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:56+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:50e74a179db261ef64f68a99e7c0d220e06191f2be79e4770478f7f3fb603a88
+content_hash: sha256:c78565b008af5fbd17f86e0ed9170345606628d98da07fa43bf66b113b96d6b9
 ---
 
 ## 问题现象
@@ -119,11 +119,11 @@ content_hash: sha256:50e74a179db261ef64f68a99e7c0d220e06191f2be79e4770478f7f3fb6
    ```
 3. 在未构建前，可以看到目前rawfile文件夹中没有文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Rp1ZxWuHTACzXbCVqPSMjg/zh-cn_image_0000002658928503.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/mkV7DQXlRgSnHbmKIbmDRQ/zh-cn_image_0000002658928503.png "点击放大")
 4. 在构建打包之后，可以看到rawfile文件夹中多出来了一个文件，而且通过查看APP包的内容也能看到Entry模块打出来的Hap包的rawfile文件夹中，包含了之前下载好的文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/GLIKrEaPSVS8a3PyiKM48w/zh-cn_image_0000002628409284.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/CQFOAAN_T9eqHBu-FLBZZQ/zh-cn_image_0000002628409284.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/XwHbce8XQne90GfgQVac9w/zh-cn_image_0000002658808555.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/RWUI3_-JSbGSJGOBPQdBRA/zh-cn_image_0000002658808555.png "点击放大")
 
    以上运行结果说明脚本执行成功，可以通过自定义构建任务获取云端文件新增或更新到rawfile文件夹中。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-367
 title: 如何获取ArkTS状态管理框架代理前的原始对象
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何获取ArkTS状态管理框架代理前的原始对象
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:84c4e6af19aa36cdedc32f151484ec0b2b48b6d6530c31006579ae8d1e364f1e
 ---
 

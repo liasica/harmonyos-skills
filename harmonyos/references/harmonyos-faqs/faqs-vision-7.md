@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-7
 title: 活体检测返回后没有沉浸式如何解决
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 活体检测返回后没有沉浸式如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:49:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c2ed4ed6760a7d1a13031dea4929b5f79a841ac03329cae34fde58b5a0012f9c
 ---
 

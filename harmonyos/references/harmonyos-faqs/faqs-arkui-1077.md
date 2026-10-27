@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1077
 title: 如何实现HAP和HAR/HSP页面跳转
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现HAP和HAR/HSP页面跳转
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:74575ad0d6a4c501925a2614713a817b82d0c8bbae24683a308fd8ee004086d4
 ---
 

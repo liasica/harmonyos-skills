@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1457
 title: 如何设置应用的启动图为全屏图片
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何设置应用的启动图为全屏图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3210542058da661a550ca1cc52bacec27e251864ce6eb39e476a33e99df1e915
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1dea61d59b571dbc00d81424b1dbd38f25b2f5a34bbc262ff450a080171f76d6
 ---
 
 ## 问题现象
@@ -207,7 +207,7 @@ startWindowIcon的大小跟随图源尺寸，一般推荐放一个icon小图。s
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/TYTlDg2xQ9y1AOG9e9xpwg/zh-cn_image_0000002658843535.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/EloVPy0ZTSmiOy3VqyKgSA/zh-cn_image_0000002658843535.png "点击放大")
 
 ## 常见FAQ
 

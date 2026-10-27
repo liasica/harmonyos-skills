@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-90
 title: 如何获取可滚动组件的当前滚动偏移量
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何获取可滚动组件的当前滚动偏移量
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:20+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d7352d99b166bd94727b751cede043ac2bb494a4c63d4aa1bee54ee193f1899e
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-60
 title: 在CMakeLists文件中如何获取模块版本信息
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 在CMakeLists文件中如何获取模块版本信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ae4c750c20bc4b516a8142399f50b81e06e0c8b44ef836f3146b24c614baa285
 ---
 

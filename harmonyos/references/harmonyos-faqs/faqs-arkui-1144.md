@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1144
 title: 如何解决容器类组件内容为空时margin的空间占用问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决容器类组件内容为空时margin的空间占用问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:57+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a9624a5404f155aa93c4be753b6686fdcc7a110c44fc3c812b33095457f122e6
+content_hash: sha256:6c1a056acc3b47b39f87544db0b1124bcb7b691362493df88db87381c3497d4c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:a9624a5404f155aa93c4be753b6686fdcc7a110c44fc3c812b33095457f
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/uxBDR-e-T_CuTiHHRx-hZw/zh-cn_image_0000002628569608.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/SuRNTuD8SOywe-4BtvkNEA/zh-cn_image_0000002628569608.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1534
 title: 如何阻断事件传递
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何阻断事件传递
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c0b224055028dc0723981f4336776c31f3a6acb33b75fc48b86d0185b10a0987
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e3de1de64db3eb29d605c7d7fab6bd1b92d55598e71ca65961579302ffe2449d
 ---
 
 ## 问题现象
@@ -90,7 +90,7 @@ content_hash: sha256:c0b224055028dc0723981f4336776c31f3a6acb33b75fc48b86d0185b10
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/NM5rhc8WTcupXqohymB70g/zh-cn_image_0000002628607000.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/f9SuRJHBToSzXDxK7j_10A/zh-cn_image_0000002628607000.png "点击放大")
 
 * **方案三**：设置事件独占控制：在其中一个组件上设置monopolizeEvents属性，并赋值为true，该组件就将独占所有事件，包括触摸、点击和手势事件，当该组件响应事件后，其他组件将不会响应任何事件，直到事件结束，达到隔离其他触摸事件的效果，具体实现可以参考官网[示例](../harmonyos-references/ts-universal-attributes-monopolize-events.md#示例)。
 

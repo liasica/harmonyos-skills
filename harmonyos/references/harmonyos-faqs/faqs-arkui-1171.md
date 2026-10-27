@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1171
 title: 如何实现光标跟随
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现光标跟随
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:47+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:de0db74a6c3a10ffbfd350a7238cc0ced30b4d78271af0a9408e4301417db1d9
+content_hash: sha256:67f0446d93108c57b007ad1f8c072cca69317c9ec2f7d923293ea3993e0f7c98
 ---
 
 ## 问题现象
 
 如何实现光标跟随，同时四个角线同步跟随的效果？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Z-hrz3HPRUuYdDNzlhc_vQ/zh-cn_image_0000002658929093.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/bA09jEkMQWykz84_VgDBMw/zh-cn_image_0000002658929093.png "点击放大")
 
 ## 背景知识
 
@@ -408,4 +408,4 @@ content_hash: sha256:de0db74a6c3a10ffbfd350a7238cc0ced30b4d78271af0a9408e4301417
 
 代码效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/gUIAV4AnQaOhJG2XlODiJw/zh-cn_image_0000002658809145.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/FgmXhBfDRbuFo53jbqB__w/zh-cn_image_0000002658809145.png "点击放大")

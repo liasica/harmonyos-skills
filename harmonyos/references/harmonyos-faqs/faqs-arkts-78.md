@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-78
 title: 如何在ArkTS中实现自定义装饰器能力
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何在ArkTS中实现自定义装饰器能力
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:30+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:52+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3ba4ad05e148ab6660cdaba76e346b68f13624635df9a0d5799e71cb0dc25117
 ---
 

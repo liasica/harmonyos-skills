@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: 如何获取网络类型：Wi-Fi，3G，4G等
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 如何获取网络类型：Wi-Fi，3G，4G等
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e993ec46bb75e30b494d6df3df5beb4b67011ea53063f099b803089bcf8ddc1d
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-17
 title: 如何判断应用是release包还是debug包
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何判断应用是release包还是debug包
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
+scraped_at: 2026-10-28T07:46:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:e005d1f1e783f071b852ce6bc3aea896c33eae3e88db4c7be41e1fb7492ee9ca
+content_hash: sha256:1fc2b1c4fcabd027edec754e82d75d4d8d7b6464b0915a7997b5a0e32bb66d17
 ---
 
 ## 问题现象
@@ -17,10 +17,10 @@ content_hash: sha256:e005d1f1e783f071b852ce6bc3aea896c33eae3e88db4c7be41e1fb7492
 * 方法1：通过命令行：
   + bm dump -n [bundleName] |grep appProvisionType：判断应用程序签名证书文件的类型来判断release还是debug。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/NcixGPTvQJiAKE6HhE6Mkw/zh-cn_image_0000002628791476.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/i77uTEZ1TLaruZsOCgR6PA/zh-cn_image_0000002628791476.png "点击放大")
   + bm dump -n [bundleName] |grep debug：标识应用是否处于调试模式，取值为true表示应用处于调试模式，取值为false表示应用处于非调试模式，以及应用程序签名证书文件的类型。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/AFBMwcHUR3iz722kETzk8Q/zh-cn_image_0000002658990791.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Ser697PFRu6xODpjCyhu1w/zh-cn_image_0000002658990791.png)
 * 方法2：通过bundleManager.getBundleInfoForSelf获取自身的应用程序信息：
   + [ApplicationInfo.appProvisionType](../harmonyos-references/js-apis-bundlemanager-applicationinfo.md)表示应用程序签名证书文件的类型，分为debug和release两种类型。示例代码如下：
 

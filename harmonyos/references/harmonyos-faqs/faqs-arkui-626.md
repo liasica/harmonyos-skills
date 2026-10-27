@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-626
 title: 沉浸式状态栏深色模式下显示不清晰
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 沉浸式状态栏深色模式下显示不清晰
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:37+08:00
 doc_updated_at: 2026-07-31
-content_hash: sha256:29d627d2c016eafb7b3e7c216066ca9ab97c69c995040bc260dd9608fad8c4ec
+content_hash: sha256:ef028bd32e6925c67c7a32d8b58eef662b9974cc5f40124ba61d137e6ccd043e
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:29d627d2c016eafb7b3e7c216066ca9ab97c69c995040bc260dd9608fad
 
 如下图所示（左边是正常模式，右边是深色模式）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ufQCF-ZLRUKWf2YoauNh5Q/zh-cn_image_0000002628554170.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/EwpRJ6DfSgahYZK68g5DQA/zh-cn_image_0000002628394270.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/p4qPnKJwQeWBxFS0zdeEEA/zh-cn_image_0000002628554170.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/-jV9QHypRFmaddxCxvy-2g/zh-cn_image_0000002628394270.png "点击放大")
 
 ## 背景知识
 

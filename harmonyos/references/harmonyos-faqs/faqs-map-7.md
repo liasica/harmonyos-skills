@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-7
 title: 怎么在地图中确定某一段路线的方向
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 怎么在地图中确定某一段路线的方向
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2ad75d8597e619b4e7ddebe05e27e00e50f1b676fd842663cc093c413738209e
 ---
 

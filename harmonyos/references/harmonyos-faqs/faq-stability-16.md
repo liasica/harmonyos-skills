@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-1
 title: 未申请JIT权限导致应用卡死在启动页
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 未申请JIT权限导致应用卡死在启动页
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:39+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:af22d75765031ca420996fbe44059417065386a4f1da4c13ef8ca233318ef70d
+content_hash: sha256:9355e776414aac9ca5f52cad02ea81a114f1e1f2894a0a5154ced1297835abd9
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:af22d75765031ca420996fbe44059417065386a4f1da4c13ef8ca233318
 
 * 应用启动流程，应用启动大致分为6个阶段：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/A7DtsEkEScu8H7lSDSsASg/zh-cn_image_0000002628476146.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/M3-ZUYW9Q6-53w3EtvebfA/zh-cn_image_0000002628476146.png "点击放大")
 
   1. AbilityManagerService请求AppSpawn创建应用进程。
   2. AppManagerService触发应用启动流程、应用进程加载应用包—handleLaunchApplication。

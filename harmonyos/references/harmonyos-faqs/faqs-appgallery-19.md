@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 申请证书数量限制问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 申请证书数量限制问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:388ff2e642a223ed109e556e9717095beaa2287ce572512c75d9fb8876428fb7
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ea13b11a1ebaab50f764fa70b726e73283a18e80ed6eaffb43cdd0b4df3ecedf
 ---
 
 ## 问题现象
@@ -19,7 +19,7 @@ content_hash: sha256:388ff2e642a223ed109e556e9717095beaa2287ce572512c75d9fb88764
 
 ## 背景知识
 
-* 在AGC平台进行证书申请操作时，存在数量限制，仅支持申请3个发布证书与3个调试证书，如已达到上限，需要在证书管理页面中“废除”多余的证书文件。当有多个应用的时候，cer文件（证书）跟应用不绑定，在新建[Profile（p7b文件）](../harmonyos-guides/ide-publish-app.md#section793484619307)时需要选择应用名，此时才跟应用绑定。多个应用使用相同的签名文件，p7b文件不同即可。
+* 在HarmonyOS 开发者中心平台进行证书申请操作时，存在数量限制，仅支持申请3个发布证书与3个调试证书，如已达到上限，需要在证书管理页面中“废除”多余的证书文件。当有多个应用的时候，cer文件（证书）跟应用不绑定，在新建[Profile（p7b文件）](../harmonyos-guides/ide-publish-app.md#section793484619307)时需要选择应用名，此时才跟应用绑定。多个应用使用相同的签名文件，p7b文件不同即可。
 * 基于同一发布证书的多个应用，可共用同一套MD5指纹与签名公钥完成备案。
 
 ## 解决方案
@@ -43,19 +43,19 @@ A：不同应用可以使用同一个发布证书，Profile文件不一样。
 
 使用同一个csr文件申请发布证书。
 
-升级应用时保证使用相同的证书和Profile文件就没有问题。AGC页面删除后不影响在架的版本运行。新版本需要使用相同的csr文件生成证书cer和Profile，然后下载至工程中编译应用即可。
+升级应用时保证使用相同的证书和Profile文件就没有问题。HarmonyOS 开发者中心页面删除后不影响在架的版本运行。新版本需要使用相同的csr文件生成证书cer和Profile，然后下载至工程中编译应用即可。
 
 Q：开发者账号能否支持多个发布证书？
 
 A：每个账号最多可申请3个发布证书，发布证书是可以共用，更多问题可以参考[官网](../app/agc-help-release-cert-0000002283336729.md)。
 
-Q：签名流程中涉及到的文件有p12、csr、cer、p7b这些，他们是否可以多应用共用？以及他们分别应该由开发者创建还是在AGC上生成？
+Q：签名流程中涉及到的文件有p12、csr、cer、p7b这些，他们是否可以多应用共用？以及他们分别应该由开发者创建还是在HarmonyOS 开发者中心上生成？
 
 A：
 
 |  | p12（密钥库文件） | csr（证书请求文件） | cer（证书） | p7b（Profile） |
 | --- | --- | --- | --- | --- |
-| 生成方式 | 可通过IDE自主创建 | 可通过IDE自主创建 | AGC上生成 | AGC上生成 |
+| 生成方式 | 可通过IDE自主创建 | 可通过IDE自主创建 | HarmonyOS 开发者中心上生成 | HarmonyOS 开发者中心上生成 |
 | 多应用共用 | 是 | 是 | 是 | 否 |
 | 调试/发布模式共用 | 是 | 是 | 否 | 否 |
 

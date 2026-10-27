@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-32
 title: SoundPool快速播放音频有破音
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > SoundPool快速播放音频有破音
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:22+08:00
+scraped_at: 2026-10-28T07:48:32+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:db2e264d85323ea9aeb6c2d81bea201f732dfdb0036e313e4b5d16619a93fb50
+content_hash: sha256:f6a9c4f50e99154bac4f14a230cbe7f1b21c79bf428bc8c8401e0800b247cbdc
 ---
 
 ## 问题现象
@@ -36,11 +36,11 @@ Button() {
 
 在查看PCM文件时，发现客户端下发的两段音频数据存在重叠。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/yZiEY8hxTuaRDY6f86kd1A/zh-cn_image_0000002628552674.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/CbBf1KEtTpegftXQJLy2-g/zh-cn_image_0000002628552674.png "点击放大")
 
 具体表现为：Demo中音频源的正常播放时间为45毫秒，但在播放到第20毫秒时，接收到新的音频片段播放请求，导致当前音频未播放完即被中断，新音频随即开始播放，从而产生破音现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/nHFBYzrlTuCMh44bqlmfbg/zh-cn_image_0000002658911993.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/HWzMxe04SnSED7KhIrbgUQ/zh-cn_image_0000002658911993.png "点击放大")
 
 ## 分析结论
 

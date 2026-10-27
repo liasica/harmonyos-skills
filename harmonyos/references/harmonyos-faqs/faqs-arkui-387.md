@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-387
 title: 使用Text嵌套Span或者使用属性字符串渲染文本，部分文本颜色显示异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用Text嵌套Span或者使用属性字符串渲染文本，部分文本颜色显示异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:27f13972f69a215a9ab4093dbdee0c093b682cdb61017ec7760ae046c998caa0
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9152ba3e378d5e607d7567dbeb917fbf171631db416de282ca5143f63e0c4ccb
 ---
 
 **问题现象**
@@ -34,7 +34,7 @@ struct Index {
 
 预期效果应为r显示蓝色、f显示红色，但实际rf都显示为蓝色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ZU-Q_z2ERxuB7jRze6LuUw/zh-cn_image_0000002624635842.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/FJsi1wPLSdK1EZErnxchRg/zh-cn_image_0000002624635842.png)
 
 2、使用属性字符串，同段文本设置不同样式后，与预期渲染结果不符。
 
@@ -78,7 +78,7 @@ struct Index {
 
 预期结果应该是sr为蓝色，fff为黄色，实际srf结合为蓝色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/H_Qlb6-KRaqPBhYkZVW5Vw/zh-cn_image_0000002624475938.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/wV5i5GoJTEi-7X6Fe8yPjQ/zh-cn_image_0000002624475938.png)
 
 **解决措施**
 

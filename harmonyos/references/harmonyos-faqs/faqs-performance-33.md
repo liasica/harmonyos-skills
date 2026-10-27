@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 点击桌面应用卡片按钮，按钮状态变化响应慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 点击桌面应用卡片按钮，按钮状态变化响应慢
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c377e3582a1fd120ccad337d3d5cbae32b93c52bc1058a7c711ae9c50380a237
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1631
 title: 如何在子窗口为主窗口打开半模态弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何在子窗口为主窗口打开半模态弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5bb40b5ad4a66492e89489927b6f2e3d4d71aa3d0a6e386ba6303b240454dbec
 ---
 

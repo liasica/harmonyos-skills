@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-testing-faq-9
 title: DevEco Testing在无网络情况下能否使用
-breadcrumb: FAQ > DevEco Testing > 常见问题 > DevEco Testing在无网络情况下能否使用
+breadcrumb: FAQ > DevEco Testing > DevEco Testing在无网络情况下能否使用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:49:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2d5b5ccf76b420cbf67061c9f4c4a5b0d5755de9b197462163293b34833daf04
 ---
 

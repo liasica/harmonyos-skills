@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-18
 title: 音频切出页面重新进入无法播放
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > 音频切出页面重新进入无法播放
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a34990d0e19966f2f3060e7cd9dd94ec967a1e85baf468c191b36833d8ae2cac
+scraped_at: 2026-10-28T07:48:32+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b80aad5a46ec7db215ec78d391e2ac163083fe747aa9b1a92d2b8ac90c8a1f17
 ---
 
 ## 问题现象
@@ -36,7 +36,7 @@ content_hash: sha256:a34990d0e19966f2f3060e7cd9dd94ec967a1e85baf468c191b36833d8a
 
 将应用中创建AVPlayer实例的代码，从首页的aboutToAppear函数中，调整到音频播放页的aboutToAppear函数中，这样在退出页面销毁AVPlayer实例后，再次进入音频播放页面后可以重新创建AVPlayer实例，保证音频的正常播放，示例如下：
 
-```screen
+```ts
 async aboutToAppear() {
   this.windowWidth = display.getDefaultDisplaySync().width;
   this.windowHeight = display.getDefaultDisplaySync().height;
@@ -73,7 +73,7 @@ async aboutToAppear() {
 
 1. 工程配置文件module.json5中配置{"routerMap": "$profile:route\_map"}。
 
-   ```screen
+   ```json
    {
      "module": {
        "name": "entry",
@@ -130,7 +130,7 @@ async aboutToAppear() {
    ```
 2. 在工程resources/base/profile中创建route\_map.json文件，添加如下配置信息。
 
-   ```screen
+   ```json
    {
      "routerMap": [
        {
@@ -146,7 +146,7 @@ async aboutToAppear() {
    ```
 3. 应用首页，点击子页面音频会跳转到音频播放子页面。
 
-   ```screen
+   ```ts
    @Entry
    @Component
    struct Index {
@@ -187,7 +187,7 @@ async aboutToAppear() {
    ```
 4. 音频播放页面在组件初始化aboutToAppear中创建AVPlayer实例，播放音频，返回首页时在aboutToDisappear函数中调用release，销毁了AVPlayer实例，后续再次进入会重新创建AVPlayer实例并播放音频。
 
-   ```screen
+   ```ts
    import display from '@ohos.display';
    import { common } from '@kit.AbilityKit';
    import media from '@ohos.multimedia.media';

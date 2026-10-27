@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-88
 title: TextInput在聚焦时如何使光标回到起点
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput在聚焦时如何使光标回到起点
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:506a7f00dae07ae6031aafcb8df7bedf965b4d8a4a74dbb9ad377cb4699bcf61
 ---
 

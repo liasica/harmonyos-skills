@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1256
 title: Scroll容器嵌套RelativeContainer组件时无法滚动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Scroll容器嵌套RelativeContainer组件时无法滚动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:45+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d9388bd8cfef81be02e0257db89c9c85123e82235ed6011e58e442a816ed30f6
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:09f9c0c69a1f5b29bd709ddacaf5be232f03c824a62b761fa9878a0fd5288496
 ---
 
 ## 问题现象
@@ -58,7 +58,7 @@ struct Index {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/swOAF5qES5efuvq5aTiBHQ/zh-cn_image_0000002628755406.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/GJ1ubBU_R16cyoLnI6UiIw/zh-cn_image_0000002628755406.png "点击放大")
 
 ## 背景知识
 

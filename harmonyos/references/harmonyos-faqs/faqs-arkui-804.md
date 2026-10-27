@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-804
 title: 实现页面级弹出框的功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现页面级弹出框的功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:53+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:f895c48648e5f9aa2ca48693d3a14715da30e867ee0904d421cfb4c040a7754e
+content_hash: sha256:13922f15b7432a1e779f5f735bd8a497ea1dd4c347a78930793850f84a96d57e
 ---
 
 ## 问题现象
 
 使用自定义弹窗功能时，在特殊场景下，需要弹窗开启状态下进行页面跳转。用Navigation导航或者router导航在弹窗内跳转到新页面时，会遇到弹窗显示在所有的新入栈的页面上的问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/h5OIfD47SUWWA-MWAGNkbQ/zh-cn_image_0000002665416043.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/P1YlQycVRzeMPjRvJMFD2g/zh-cn_image_0000002665416043.png "点击放大")
 
 ## 背景知识
 
@@ -168,7 +168,7 @@ content_hash: sha256:f895c48648e5f9aa2ca48693d3a14715da30e867ee0904d421cfb4c040a
 
      方案一实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/MAEuEkTfQGaqC475OFmYPg/zh-cn_image_0000002658917109.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Mg-xcjIkTOa-w8nAcnjLqQ/zh-cn_image_0000002658917109.png "点击放大")
 * **方案二**：适用于Navigation导航方式。
 
   当采用@ohos.router（页面路由）方式跳转NavDestinationMode.DIALOG页面时不适用，会导致弹窗蒙层不透明。
@@ -305,7 +305,7 @@ content_hash: sha256:f895c48648e5f9aa2ca48693d3a14715da30e867ee0904d421cfb4c040a
 
      方案二实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/WQ0j8Ok2RTu9J7SCw0KfdA/zh-cn_image_0000002635181782.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/v13LiKBiS9-xnWaRaQznGw/zh-cn_image_0000002635181782.png "点击放大")
 
      **说明** 
 
@@ -433,7 +433,7 @@ content_hash: sha256:f895c48648e5f9aa2ca48693d3a14715da30e867ee0904d421cfb4c040a
 
      方案三Navigation导航实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/smuZhQ_OS-mA235q58nq4A/zh-cn_image_0000002658797157.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/cJOrJ5dbR0yBKyrzFuOj3w/zh-cn_image_0000002658797157.png "点击放大")
 * **方案四**：适用于@ohos.router（页面路由）导航方式。
 
   通过@ohos.window（窗口）创建子窗口的形式创建弹窗：
@@ -582,7 +582,7 @@ content_hash: sha256:f895c48648e5f9aa2ca48693d3a14715da30e867ee0904d421cfb4c040a
 
      方案四实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/MnLRiCwFS8CvTyPG0t2Enw/zh-cn_image_0000002665306201.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/lOFku9wlT--4gw5jyMQYGQ/zh-cn_image_0000002665306201.png "点击放大")
 
 ## 常见FAQ
 

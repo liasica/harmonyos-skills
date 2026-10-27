@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-311
 title: 绑定类型的组件和ForEach的正确连用方式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 绑定类型的组件和ForEach的正确连用方式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9ecad62a43e378564f8848c425997d2a4974af69ff15f5ce6f847769689b2e9a
 ---
 

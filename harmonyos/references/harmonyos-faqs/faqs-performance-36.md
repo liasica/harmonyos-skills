@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 动态变化的页面卡住一段时间无变化
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 动态变化的页面卡住一段时间无变化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:667fbc2e3ce9220bf2313fe19b2b8f31ada2d4061300653daeb822cd0d8745b0
+content_hash: sha256:bb205b556c33ba303f3e10e00b68d906ae4d004e46248a763eaa125c744f8baf
 ---
 
 ## 问题现象
@@ -23,14 +23,14 @@ content_hash: sha256:667fbc2e3ce9220bf2313fe19b2b8f31ada2d4061300653daeb822cd0d8
 1. 使用ArkUI Inspector抓取该页面布局，发现该动态变化的页面使用XComponent组件来完成渲染绘制。
 2. 使用DevEco Profiler Frame工具抓取该过程的Trace信息，在上方搜索框中输入H:NativeWindowFlushBuffer找到应用将自绘制内容传送到XComponent组件的Surface的相关线程。从下图中可看到该线程为应用的44780子线程，同时有持续1.6s左右未将自绘制内容传送到XComponent组件的Surface。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/cq0_ofBxSAicGiCh9KBPhA/zh-cn_image_0000002658914493.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/JIn3W_8GTs6dzULctEly_g/zh-cn_image_0000002658914493.png "点击放大")
 
    在过程该线程大部分时间处于Running状态，在执行耗时操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/wReRxbCGRoqU97gPvYgSXQ/zh-cn_image_0000002628395264.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/l59An57MQ8CKKVVrwAGsNg/zh-cn_image_0000002628395264.png "点击放大")
 3. 通过查看Callstack泳道中的XXX[44780]子泳道，可看到耗时主要集中在libxxx.so文件的函数中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Cuq-S5IRSpamuqtGj7vr9g/zh-cn_image_0000002658794539.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/54n7DxMtTPavlUp00UA0rw/zh-cn_image_0000002658794539.png "点击放大")
 
 ## 分析结论
 

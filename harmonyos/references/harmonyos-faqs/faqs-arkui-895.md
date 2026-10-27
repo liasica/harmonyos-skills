@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-895
 title: 怎么解决自定义Span组件在NavDestination下无法显示问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 怎么解决自定义Span组件在NavDestination下无法显示问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6d50f7d57e55d9cbe8810edba032e82b4d9430a5172295b65370d749617f06ef
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:de7c1338cb915f397fadeee7607e493b9daf591a62c3663a181ad64c43a063fb
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:6d50f7d57e55d9cbe8810edba032e82b4d9430a5172295b65370d749617
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/vekZBIQ5RqOsRB0s_UjIXQ/zh-cn_image_0000002658918867.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/-RWIawDPQzuIa-4DxBHgpQ/zh-cn_image_0000002658918867.png "点击放大")
 
 ## 背景知识
 
@@ -83,7 +83,7 @@ content_hash: sha256:6d50f7d57e55d9cbe8810edba032e82b4d9430a5172295b65370d749617
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Wl3jZ8E6RfmIkhD35-GEsQ/zh-cn_image_0000002628399650.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/tvAZPw64Qjq5ijtCpOCNzA/zh-cn_image_0000002628399650.png "点击放大")
 2. 如果Span组件是一组公共的特性，则可以通过@Builder装饰器把公共的部分抽取出来。
 
    ```ts
@@ -139,7 +139,7 @@ content_hash: sha256:6d50f7d57e55d9cbe8810edba032e82b4d9430a5172295b65370d749617
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/okcsi1iGQ-6LJVVOisumwA/zh-cn_image_0000002658798917.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/zbh9D9m1QcWvM9IuD-fa1A/zh-cn_image_0000002658798917.png "点击放大")
 3. 如果需要使用自定义组件，应该选择支持自定义子组件的组件，比如Column组件。
 
    ```ts
@@ -202,7 +202,7 @@ content_hash: sha256:6d50f7d57e55d9cbe8810edba032e82b4d9430a5172295b65370d749617
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/zOcuOjfhQWuPgnUyaaBuxg/zh-cn_image_0000002628559556.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/PHywAtG1SMmRi_gEKfJEDQ/zh-cn_image_0000002628559556.png "点击放大")
 
 ## 总结
 

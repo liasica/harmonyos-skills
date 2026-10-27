@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1465
 title: 如何实现根据屏幕宽度自适应列数
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现根据屏幕宽度自适应列数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-07-07
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:021db067ef7839bffca31b3a0e6f58824e36fa6fdb757bcb305104a3be749d46
 ---
 

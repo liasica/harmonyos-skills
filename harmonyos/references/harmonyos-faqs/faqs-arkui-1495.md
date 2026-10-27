@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1495
 title: Text组件如何获取关键字相对组件的坐标进行绘制下划线
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件如何获取关键字相对组件的坐标进行绘制下划线
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:48+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3a0fe07cd1ae6b87f6d04b88d4e43152359c9f4609f19fa75ed5ae0bceb0a80f
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:40b4df88f2e09964812f1a2c517d65ef9114b4d5ad03ef62ab33fe24d625b1d5
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:3a0fe07cd1ae6b87f6d04b88d4e43152359c9f4609f19fa75ed5ae0bceb
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Mht2r6e5SGmILchSquYbMw/zh-cn_image_0000002658845083.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/4iEEMLbpS5iE18Qm14Ulhg/zh-cn_image_0000002658845083.png "点击放大")
 
 ## 背景知识
 

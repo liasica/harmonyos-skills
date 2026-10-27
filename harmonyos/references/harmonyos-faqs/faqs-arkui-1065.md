@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1065
 title: 如何设置TabBar布局
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何设置TabBar布局
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d9a1f284069ac45c01167932c5fac02bce7c593314c4080f0c9b5a4cc938d47c
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a215fdd20628ab5bba40d72b05321b2b975c1438ecc1145671a02fcc5dffe15b
 ---
 
 ## 问题现象
@@ -90,7 +90,7 @@ TabBar的布局效果可以根据不同的设计需求来实现多种样式。�
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/ZYul09dkSXi6sKdzJpCGkA/zh-cn_image_0000002628567120.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/mAmm8XbMQPK1UiUD6zY0IQ/zh-cn_image_0000002628567120.png "点击放大")
 
   + **场景二：实现页签的居中或左右对齐的布局效果。**
 
@@ -206,7 +206,7 @@ TabBar的布局效果可以根据不同的设计需求来实现多种样式。�
 
     实现效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/n5G6E465ThyZOBHdTcRF8w/zh-cn_image_0000002658926419.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/5uo1yl_ISpq_aSgjZZ8tpA/zh-cn_image_0000002658926419.png "点击放大")
   + **场景四：实现每个页签宽度均不相同的布局效果。**
 
     通过将[barMode](../harmonyos-references/ts-container-tabs.md#barmode10-1)设置为BarMode.Scrollable可滚动模式，tabBar的宽度即可以根据实际宽度显示。
@@ -255,7 +255,7 @@ TabBar的布局效果可以根据不同的设计需求来实现多种样式。�
 
     实现效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/pmohc6u-RH25GuWRLAde3w/zh-cn_image_0000002628407220.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/K3vwxYjeRcewqaGXfF1Qtg/zh-cn_image_0000002628407220.png "点击放大")
 
     更多实现方式和详情可参考示例：[如何给tabBar页签设置不同宽度](faqs-arkui-580.md)。
   + **场景五：实现页签布局根据数量不同，进行动态调整的效果。**

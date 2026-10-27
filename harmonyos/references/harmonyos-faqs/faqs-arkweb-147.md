@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-147
 title: Web组件加载链接，如何修改链接网页中的文本
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件加载链接，如何修改链接网页中的文本
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e830abd22e4147036f714a3082a3d22056efd0d10f0e91a3baf59a18158fa21e
 ---
 

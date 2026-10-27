@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: 如何排查rcp请求返回数据为空包的问题
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > 如何排查rcp请求返回数据为空包的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f4d1a4ff2efc3245135d96a4ddbb4fb814fd082e6b284f6b09423cc0f872ee12
 ---
 

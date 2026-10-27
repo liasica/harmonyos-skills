@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1103
 title: expandSafeArea常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > expandSafeArea常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-24T06:56:46+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:282e824e0bb391a5ad14aa540b76b8d968c30ceb3ba77810d33fc07f69fa87a1
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9d59f1f7793cdde2c413133f42c5ba4a32de0e9bb4a74e30f08a1fc319775626
 ---
 
 ## 问题现象
@@ -23,7 +23,7 @@ content_hash: sha256:282e824e0bb391a5ad14aa540b76b8d968c30ceb3ba77810d33fc07f69f
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vyCujgZJRHes0fxCAtQxBw/zh-cn_image_0000002767843647.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/0TRH9bHsTsmIw8od_Vw5cA/zh-cn_image_0000002767843647.png "点击放大")
 
 示例代码如下：
 
@@ -54,7 +54,7 @@ struct Index {
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/BIIjM-ZJR0Gr3G6aSOscPw/zh-cn_image_0000002767964817.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-5qPBPXUQD6mrjWm1CZqGA/zh-cn_image_0000002767964817.png "点击放大")
 
 灰色为TabContent背景色。
 
@@ -103,7 +103,7 @@ struct TabsExample {
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/GikoSTJATvelBzPGGB7Kag/zh-cn_image_0000002738166878.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/jtkgGEE9SNSmCA2SWXzP8Q/zh-cn_image_0000002738166878.png "点击放大")
 
 示例代码如下：
 
@@ -134,7 +134,7 @@ struct Index4 {
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Pn9_7iO4TSSyjEw6BPDK0Q/zh-cn_image_0000002767847479.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/NGOVNQt0RMirdaPO1E4t2Q/zh-cn_image_0000002767847479.png "点击放大")
 
 示例代码如下：
 
@@ -166,7 +166,7 @@ struct Index6 {
 
 问题效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/xLP_6-7XQiacZoxUvpk91w/zh-cn_image_0000002738329086.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9iBpYZ6MQQS47hSODnyGSA/zh-cn_image_0000002738329086.png "点击放大")
 
 其中，灰色为Canvas背景色，已经扩展至底部导航条，但fillRect方法绘制的黑色矩形与底部导航条仍有一定距离。
 
@@ -221,7 +221,7 @@ struct CanvasExample {
 
   横屏状态下，挖孔区域处于屏幕左侧或右侧，会出现挖孔区域遮挡内容的情况。
 
-  如果希望边缘组件避让挖孔区域，需要在模块的module.json5文件中配置metadata，完成配置后，边缘组件会避让挖孔区域，效果如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/o82RdmrHSP6Wjyx9uzvWCg/zh-cn_image_0000002767969967.png "点击放大")
+  如果希望边缘组件避让挖孔区域，需要在模块的module.json5文件中配置metadata，完成配置后，边缘组件会避让挖孔区域，效果如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/hi4lybzTQyaibpUhS6iXVQ/zh-cn_image_0000002767969967.png "点击放大")
 
   module.json5文件如下：
 
@@ -314,7 +314,7 @@ struct CanvasExample {
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/wFgI62JPRIWaoNEfb5C5Hw/zh-cn_image_0000002738494118.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/ju3KepI5SWC57djEtP3igw/zh-cn_image_0000002738494118.png "点击放大")
 * 场景二：TabContent设置expandSafeArea属性无法扩展至非安全区域。Tabs组件本身虽然不是滚动类组件，但其子组件TabContent是通过放置在一个Swiper中实现的，因此如果需要让某个TabContent可以扩展至状态栏，需要按照组件嵌套关系，将当前节点到滚动类祖先容器间所有直接节点设置expandSafeArea属性。如下代码所示，需要同时给Tabs组件，TabContent组件和TabContent内容的根节点设置expandSafeArea属性。
 
   ```ts
@@ -358,7 +358,7 @@ struct CanvasExample {
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/H78czB5XQjmtuAU0DXO5Pw/zh-cn_image_0000002738336458.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/lNyYLYzyQCiO_gob3N9Cfg/zh-cn_image_0000002738336458.png "点击放大")
 * 场景三：使用expandSafeArea实现沉浸式，原有UI比例发生变化。
   + 示例一：组件使用百分比高度时，由于状态栏高度与导航栏高度不一，扩展内容后会导致原有的UI比例发生变化。
 
@@ -407,7 +407,7 @@ struct CanvasExample {
 
     效果图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/JU_YyVIgSsOfFqxdTNzxtQ/zh-cn_image_0000002738339430.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/bGTr6fS1TJ2ZBPpPX5Snvg/zh-cn_image_0000002738339430.png "点击放大")
   + 示例二：组件使用固定高度时，使用expandSafeArea扩展到顶部，中间出现空白。
 
     设置expandSafeArea属性进行组件绘制扩展时，建议组件尺寸不要设置固定宽高（百分比除外），当设置固定宽高（包括设置'auto'）时，扩展安全区域的方向只支持[SafeAreaEdge.TOP, SafeAreaEdge.START]，扩展后的组件尺寸保持不变。设置百分比高度时，组件是延伸至非安全区域，设置固定高度时，组件相当于是移动并填满非安全区域而非扩展内容至非安全区域。
@@ -419,7 +419,7 @@ struct CanvasExample {
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/yCpNpFnWQ0qsWutMZQn4Hg/zh-cn_image_0000002767862017.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/oEVnZyjTRKGR_2ZtWV4eww/zh-cn_image_0000002767862017.png "点击放大")
 
   注意：本文中需要用到的横竖屏切换效果和windowStage需要在EntryAbility.ets中的onWindowStageCreate方法中添加如下代码：
 

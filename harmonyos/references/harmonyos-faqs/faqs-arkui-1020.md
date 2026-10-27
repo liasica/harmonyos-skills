@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1020
 title: Tabs预加载的实现方式及常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs预加载的实现方式及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-08-19
+scraped_at: 2026-10-28T07:47:15+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ad6f1ac2867a3fd17388072e7d42ba4e31953ef7aae603fa4c6c468f33e39ab5
 ---
 

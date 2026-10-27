@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-721
 title: Radio组件通过ContentModifier实现自定义样式后如何实现单选
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Radio组件通过ContentModifier实现自定义样式后如何实现单选
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:939b147434aec604053023d4525c69dec1c1bc0ddbba3856f125bae4f4c49a9f
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:eeee660ffd1a886313ab6701cfe189fab920bb46f7bd872bf001dfedac623d64
 ---
 
 ## 问题现象
@@ -57,11 +57,11 @@ struct CustomRadio {
 
 问题效果预览:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/AXeLT94VSSmpMMIb3suaCw/zh-cn_image_0000002658914533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/XXWbh5JGQI2ExVAsd84DMw/zh-cn_image_0000002658914533.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/BM71IsMDT1-Ad8FR4WThKQ/zh-cn_image_0000002628395308.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/3bu2Mg_JQga1NCvptu73Nw/zh-cn_image_0000002628395308.png "点击放大")
 
 ## 背景知识
 

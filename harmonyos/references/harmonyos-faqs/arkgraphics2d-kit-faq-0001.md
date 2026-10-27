@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkgraphics2d-k
 title: 如何实现图片模糊效果
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 常见问题 > 如何实现图片模糊效果
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:44+08:00
+scraped_at: 2026-10-28T07:48:34+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:84a5d98f16a232a291e3a64c9e57e2d98e980635bd9c5b0e9b8376d15a5bb679
+content_hash: sha256:de05079ad7ba791aeaba53ab81aea93f87780eb538970e7a895474001923749b
 ---
 
 **Q：HarmonyOS如何设置组件内容高斯模糊效果，或修改图片像素数据实现高斯模糊效果，如为图片设置高斯模糊？**
@@ -40,7 +40,7 @@ content_hash: sha256:84a5d98f16a232a291e3a64c9e57e2d98e980635bd9c5b0e9b8376d15a5
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/y8hz0xpQR36DUoTOLMR3Ig/zh-cn_image_0000002762492350.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/00E8KwTlTkOfNO04zkFHqQ/zh-cn_image_0000002762492350.png "点击放大")
 
   + 方案二：使用[图片编解码](../harmonyos-guides/image-decoding.md)创建新的PixelMap实例对象，并通过创建一个图像效果实例Filter，将高斯模糊效果添加到效果链表当中，最后使用[getEffectPixelMap](../harmonyos-references/js-apis-effectkit.md#geteffectpixelmap11)获取已添加链表的源图像，示例代码如下：
 
@@ -98,4 +98,4 @@ content_hash: sha256:84a5d98f16a232a291e3a64c9e57e2d98e980635bd9c5b0e9b8376d15a5
 
     实现效果图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/cH6j26N3QlWc9q9u_1QWqA/zh-cn_image_0000002792011127.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/ieRBOMqfSViFqYwWP7rz-Q/zh-cn_image_0000002792011127.png "点击放大")

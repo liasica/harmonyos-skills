@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-164
 title: 如何获取router.back传递的参数
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何获取router.back传递的参数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ba0e8c6d6a1a05c914fe4047889c5550c3fdc03f3ca65af21c56b35e65819d30
 ---
 

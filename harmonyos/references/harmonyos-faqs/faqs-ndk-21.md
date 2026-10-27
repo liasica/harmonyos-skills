@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-21
 title: 如何在ArkTS侧引用其他三方so库
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在ArkTS侧引用其他三方so库
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
+scraped_at: 2026-10-28T07:46:56+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:3815e83d9d05db2281d496d5492cae24e0b17b5bf71be40b9d5392fd01af2376
+content_hash: sha256:4b76419890bcdee0a3843c20f3f7f7e76dd7c99be1a1297e009f7b68e4c2e605
 ---
 
 **解决措施**
@@ -14,10 +14,10 @@ content_hash: sha256:3815e83d9d05db2281d496d5492cae24e0b17b5bf71be40b9d5392fd01a
 
 1. 将so文件移动到libs文件夹下对应架构的目录。如果在纯ArkTS工程中，还需将编译三方库时生成的libc++\\_xxx.so移动到该目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Twi1AxOwROqrRIC-YRfYbg/zh-cn_image_0000002654835197.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/kpXChPtIQdCgcFQ1yhpsfA/zh-cn_image_0000002654835197.png "点击放大")
 2. 在src/main/cpp/types目录下创建新目录，并将Index.d.ts和oh-package.json5文件移动到该目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/kl9vhsZsS92HUSmSWv5hpA/zh-cn_image_0000002654795263.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Rk7EdIbXTSq92tp7hJueAg/zh-cn_image_0000002654795263.png "点击放大")
 3. 在模块级的oh-package.json5文件中声明该 so 库的根目录路径。
 
    ```json
@@ -57,7 +57,7 @@ content_hash: sha256:3815e83d9d05db2281d496d5492cae24e0b17b5bf71be40b9d5392fd01a
 
 运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ltB8_JZnQzy0LW9bENxnwQ/zh-cn_image_0000002624635798.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/V6kb6QGVRfG1fFkKTSf3RA/zh-cn_image_0000002624635798.png "点击放大")
 
 **参考链接**
 

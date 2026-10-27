@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-399
 title: Navigation自定义标题栏不生效，可能是什么原因
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation自定义标题栏不生效，可能是什么原因
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:df5b9ec5cd48068de2c59a7828928dea7734bdc0db38335e351f634fc4fe92b6
 ---
 

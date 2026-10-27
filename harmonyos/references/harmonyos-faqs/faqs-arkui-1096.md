@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1096
 title: 如何设置TabBar切换动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置TabBar切换动画
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:05+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:266d8b617aaff5a0316bd920cbe30e6062d9c30ab031d96995781a8c91225b88
+content_hash: sha256:8d152eb8707ddfaf6911ae20e5c2868b52ce5b00e2b6b520508b83310bfe1983
 ---
 
 ## 问题现象
@@ -158,7 +158,7 @@ struct OutFrame {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/uVjw6bp3TPivNlYq6UkGHQ/zh-cn_image_0000002628407368.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/63MM80-WTlW5JhFVCDuN3A/zh-cn_image_0000002628407368.png "点击放大")
 
 ### 场景二：点击空白区域实现Tab栏下滑隐藏动效
 
@@ -228,7 +228,7 @@ struct HideTabBar {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/OD0D2TqbSfOPBPEhBBhN3A/zh-cn_image_0000002628567264.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/RVR3ayV1QW-Dv6ulIcZwzw/zh-cn_image_0000002628567264.png "点击放大")
 
 ### 场景三：实现背景跟随手指拖动效果
 
@@ -366,7 +366,7 @@ struct DragAction {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/rQwN3ZoCQkqIcYUfVgDs6Q/zh-cn_image_0000002658926577.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/gKIjGy2XR9-tBVK8qxpBMg/zh-cn_image_0000002658926577.png "点击放大")
 
 ## 常见FAQ
 

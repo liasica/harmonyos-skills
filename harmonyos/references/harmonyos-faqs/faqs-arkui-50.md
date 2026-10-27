@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-50
 title: 如何在自定义组件的构建流程里跟踪组件数据或者状态，如在build里增加日志跟踪状态变量等
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在自定义组件的构建流程里跟踪组件数据或者状态，如在build里增加日志跟踪状态变量等
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8dc58e0e12446b0777f6234b3de89e6073fa74957c48d83fd2345e6bc4e9b56f
 ---
 

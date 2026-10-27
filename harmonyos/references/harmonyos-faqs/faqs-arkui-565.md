@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-565
 title: 如何给LazyForEach中的listitem添加动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何给LazyForEach中的listitem添加动画效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:c43a351debbe63671fab70479ee3e6186b09f46df19009860b68cfd215acfeb5
+content_hash: sha256:72f8f567cdf97ab7e5c6d76662a1ac925e665f8c9afed5a0910a1c88fbf3c992
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:c43a351debbe63671fab70479ee3e6186b09f46df19009860b68cfd215a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/SyWZ9iH9S_qIHKBZ6Ero-A/zh-cn_image_0000002658911355.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/I60MdxmkSRSbTDmzUosL9A/zh-cn_image_0000002658911355.gif "点击放大")
 
 ## 背景知识
 

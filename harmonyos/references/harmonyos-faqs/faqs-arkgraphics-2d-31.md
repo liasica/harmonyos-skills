@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 段落如何居中画布
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 段落如何居中画布
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
+scraped_at: 2026-10-28T07:48:34+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:5fc658c57232f2604149bdf15316121dbdd3609d34261a1b034a8499f1f58140
+content_hash: sha256:af25458197e3c00f997659e23d96b1232943379ee08ef3a733a90f7818012437
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:5fc658c57232f2604149bdf15316121dbdd3609d34261a1b034a8499f1f
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/4ppp7o8iR821pmGV2M2PuA/zh-cn_image_0000002658792621.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/UOU9rNyDR5SmiwWL76uIxw/zh-cn_image_0000002658792621.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/CHFMyFnmQ6u65HSlLKCi4Q/zh-cn_image_0000002628393362.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/frQEtnIbSZuQEtWETEOv7A/zh-cn_image_0000002628393362.png "点击放大")
 
 ## 背景知识
 

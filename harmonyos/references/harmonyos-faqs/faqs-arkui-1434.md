@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1434
 title: Select组件默认加粗字体
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Select组件默认加粗字体
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7ec5cb251fd5896ba865f8093744274cc5f62ebf778c435719b9ae28cbb7bb4e
+content_hash: sha256:5b32753f2ceec44b6cf6fee2b21ef3bab8abf0aee54a07691ff8482198b97dd0
 ---
 
 ## 问题现象
@@ -48,11 +48,11 @@ struct SelectExample {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/xzHutsn4TrKpSL57Jyw5OA/zh-cn_image_0000002628603754.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Fda95eAsS5SyToLDucwfbQ/zh-cn_image_0000002628603754.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/RUJ-RIz4Q8miaG3CYu5f0w/zh-cn_image_0000002658843019.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/HEf_KPxNStuDyhhIHdUC5g/zh-cn_image_0000002658843019.png "点击放大")
 
 ## 背景知识
 

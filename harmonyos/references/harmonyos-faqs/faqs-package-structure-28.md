@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: Entry模块的HAP和Feature模块的HAP在使用和功能上的区别是什么
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > Entry模块的HAP和Feature模块的HAP在使用和功能上的区别是什么
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-18
+scraped_at: 2026-10-28T07:46:46+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:98ba40702d0c0b610f122bbf399f61f6b43a55aa6333e5f24cb105447246e582
 ---
 

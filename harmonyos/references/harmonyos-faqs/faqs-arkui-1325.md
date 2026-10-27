@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1325
 title: 长列表数据刷新闪烁
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 长列表数据刷新闪烁
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bb2503ccd479b9b3efdfd23fc48fa2c6e681780fdebae79fe64154511e579101
 ---
 

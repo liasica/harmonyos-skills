@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-664
 title: 跳转页面后未避让状态栏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 跳转页面后未避让状态栏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:baaef1a6b2f40d56e9d1286982b8e9d4188c0ea6309d25aff82b8ad87ef40788
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 如何选择文件保存路径
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 如何选择文件保存路径
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:83672914752e2d601376844bac00d521bb8b1b571ebe18d1f1f1fb4b37ed28f2
 ---
 

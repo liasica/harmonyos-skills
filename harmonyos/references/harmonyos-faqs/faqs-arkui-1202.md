@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1202
 title: Checkbox多选、反选、全选场景实现方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Checkbox多选、反选、全选场景实现方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:9f85a7fdd061c5f95698e39117332aaa25d0d8bbbaa04b4aba36d0e67b037edb
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ba8da5a075405b0dce3a7a31e551101d7912a13d72a170cc7c61fd02ea8d4657
 ---
 
 ## 问题现象
@@ -110,7 +110,7 @@ content_hash: sha256:9f85a7fdd061c5f95698e39117332aaa25d0d8bbbaa04b4aba36d0e67b0
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/EL5Fh-F1SKCIPHPxGiv8aA/zh-cn_image_0000002628753480.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/NfJLVzw3S2ONIIYsqPcHdw/zh-cn_image_0000002628753480.png "点击放大")
 * **场景三**：在实现全选功能时，可充分利用CheckboxGroup组件控制全选或者不全选的特性。下面提供两种实现方案，可按需参考使用：
 
   | 方案 | 适用场景 | 优点 | 缺点 |
@@ -200,4 +200,4 @@ content_hash: sha256:9f85a7fdd061c5f95698e39117332aaa25d0d8bbbaa04b4aba36d0e67b0
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/U8OJgDf_SiKMfBxYycK75g/zh-cn_image_0000002658952793.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/CGRsmfdCQ02i0smUQfey4A/zh-cn_image_0000002658952793.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-8
 title: 相机预览切后台再回来画面不正确
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 相机预览切后台再回来画面不正确
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9f8a6f7869c13f755bb9d22a87dbd8e89007797a9d6df4bbf0cd74fe2cfbe683
 ---
 

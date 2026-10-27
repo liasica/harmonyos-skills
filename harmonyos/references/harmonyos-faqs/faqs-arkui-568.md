@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-568
 title: 如何解决自定义tabBar切换动画有明显延迟感的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决自定义tabBar切换动画有明显延迟感的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:aa49d8b5cc2ab16eeda28efc7ff9bb79b29bb2e5cd23647120c33e37ad60939a
+content_hash: sha256:87f569be8775dcc201d4fe079047c8f6edbf495add1378a5ab12fbee5c0d7c45
 ---
 
 ## 问题现象
 
 Tabs页面切换时，tabBar切换动画发生的比较慢，需要等到Tabs页面完成切换时，tabBar才发生切换。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/C5-Im_FvRsmsD49vhMFa5Q/zh-cn_image_0000002628552042.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/QRIRqHwBTka9nlDFjiS0VA/zh-cn_image_0000002628552042.png "点击放大")
 
 ## 背景知识
 

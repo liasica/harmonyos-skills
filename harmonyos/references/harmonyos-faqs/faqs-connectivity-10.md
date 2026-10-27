@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: BLE连接成功后状态监听会回调2次
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > BLE连接成功后状态监听会回调2次
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:14:03+08:00
-doc_updated_at: 2026-10-22
+scraped_at: 2026-10-28T07:48:18+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bc96d170681cc34d1a75dd9ca4f7f27a91287bb2a08c51e009313636d1c76201
 ---
 

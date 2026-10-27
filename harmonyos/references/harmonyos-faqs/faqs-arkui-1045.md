@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1045
 title: 应用内的图片拖拽进小艺后提示没有收到图片数据
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 应用内的图片拖拽进小艺后提示没有收到图片数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:fb4e2581490d55e6332c4d6f0c1906a2e6eb3ccd078f15d54313e7109c7b292c
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:deb68db7020627210111bd3654c53810b14745973a8a58fd0f4983dbb2810b6b
 ---
 
 ## 问题现象
@@ -95,7 +95,7 @@ struct Index {
 
 需要将下图另存为shineImage.png。并且复制到工程的rawfile目录下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Q2mpW6ITSxa87xs2P7az6g/zh-cn_image_0000002658924757.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/pAY_JriqTWK9YNuOb9yZZw/zh-cn_image_0000002658924757.png "点击放大")
 
 ## 总结
 

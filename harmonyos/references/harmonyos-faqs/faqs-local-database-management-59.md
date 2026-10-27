@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 关系型数据库如何存取bigint型数据
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 关系型数据库如何存取bigint型数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d04377a76b6f9f0b85a1dd1d3e30cc15959a03d850c107bb6f9bbdbeeb771851
 ---
 

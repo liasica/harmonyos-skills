@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1066
 title: 如何解决Canvas节点重新渲染后CanvasRenderingContext2D参数的属性会重置的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决Canvas节点重新渲染后CanvasRenderingContext2D参数的属性会重置的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:95711dd69b8a380c336c618151162ec9d956095ed2c35f71be7694621360bc57
+content_hash: sha256:58507edc0da52d19643ceb879514b8faed3e169ec53094690026c7d6770c4388
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:95711dd69b8a380c336c618151162ec9d956095ed2c35f71be769462136
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/a3O3BCIdQhuhxHXDbi50dg/zh-cn_image_0000002658806483.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/c-YETmZtRMqSKFDZpaxePQ/zh-cn_image_0000002658806483.png "点击放大")
 
 点击变更时，蓝色的大“测试”闪烁成黑色的小“测试”。疑似CanvasRenderingContext2D发生重置。
 
@@ -79,7 +79,7 @@ struct Index {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/SOTf3AAjSzGl9jM63jl2vQ/zh-cn_image_0000002628567126.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/8GesOC_3RaCFYia9w1QVag/zh-cn_image_0000002628567126.png "点击放大")
 
 ## 背景知识
 

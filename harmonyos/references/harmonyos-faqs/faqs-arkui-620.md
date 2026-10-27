@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-620
 title: 视频加载完成前会出现短暂黑屏现象
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 视频加载完成前会出现短暂黑屏现象
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ee81f8662ae37cfa67beb1f49d4857a9b9886f112f51725bd142da8031d60c19
 ---
 

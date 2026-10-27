@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何使HSP包版本号统一
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何使HSP包版本号统一
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:46:46+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f4acd9e5e2a5d5a2929ec71af8ccd2db91737c8a3471796b74b9c6f4a023e27d
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-798
 title: 如何控制Image组件的点击响应区域
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何控制Image组件的点击响应区域
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9baed4f31998453e48cfe6d3f41b71a187dc58bd687817df25581366dab229aa
 ---
 

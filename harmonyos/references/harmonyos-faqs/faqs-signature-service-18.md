@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 配置调试签名异常
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 配置调试签名异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:199139be150affa5109dc8a48a5fe0c8670df4e963debd766c0e6866530deebc
+scraped_at: 2026-10-28T07:48:57+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:12ae386c3160de5cdcf993d03cee1e1a152e7a2d634a45ba38cf88fde81a3221
 ---
 
 ## 提示"Bundle name \*\*\* does not exist."
 
 **报错原因**
 
-上传的应用/元服务在AGC中不存在，导致校验失败。
+上传的应用/元服务在HarmonyOS 开发者中心中不存在，导致校验失败。
 
 **解决措施**
 
@@ -28,13 +28,13 @@ content_hash: sha256:199139be150affa5109dc8a48a5fe0c8670df4e963debd766c0e6866530
    关于应用/元服务名称、包名的要求请参考[操作步骤](../app/agc-help-create-app-0000002247955506.md#section1772711713288)、[创建元服务](../app/agc-help-create-atomic-service-0000002247795706.md)。
 2. 应用/元服务添加完成后，再进行签名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Xruar6HQSKW_I2wLoX_3Kw/zh-cn_image_0000002624478744.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/pLy7gA9NRliguCU0fGFr4Q/zh-cn_image_0000002624478744.png "点击放大")
 
 方式二：
 
-1. 进入AGC创建应用/元服务，创建时包名和DevEco Studio创建应用时的Bundle name一致。创建过程具体可参考[操作步骤](../app/agc-help-create-app-0000002247955506.md#section1772711713288)、[创建元服务](../app/agc-help-create-atomic-service-0000002247795706.md)。
+1. 进入HarmonyOS 开发者中心创建应用/元服务，创建时包名和DevEco Studio创建应用时的Bundle name一致。创建过程具体可参考[操作步骤](../app/agc-help-create-app-0000002247955506.md#section1772711713288)、[创建元服务](../app/agc-help-create-atomic-service-0000002247795706.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/WTEKmdwdQzmWEYdaiQq0NA/zh-cn_image_0000002654798105.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/z75IiPqcQqO1pncGAwLLUw/zh-cn_image_0000002654798105.png "点击放大")
 2. 创建完成后，返回DevEco Studio界面重新签名。
 
 ## 提示"Bundle name \*\*\* is already in use. Choose a different name, or use the team account that owns it."
@@ -54,7 +54,7 @@ content_hash: sha256:199139be150affa5109dc8a48a5fe0c8670df4e963debd766c0e6866530
 1. 加入目标团队，具体可参考[添加成员账号](../app/agc-help-manageaccount-0000002306610129.md#section151241455193313)。
 2. 加入团队成功后，将**Team**修改为目标团队。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/O_K2zWhFQ_mYO0rEGBISVw/zh-cn_image_0000002624638654.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/X7Jv84R4Q5eYZpWJR5b1Uw/zh-cn_image_0000002624638654.png "点击放大")
 
 ## 提示"Failed to find the capabilities.Check the following configurations: Networkconnection,HTTP Proxy,etc."
 
@@ -64,9 +64,7 @@ content_hash: sha256:199139be150affa5109dc8a48a5fe0c8670df4e963debd766c0e6866530
 
 场景二：应用没有开放能力管理和ACL权限设置项，需要重新创建应用，再进行签名。查看设置项和创建应用的操作如下：
 
-1. 进入[AGC](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击**开发与服务**，选择应用所在的项目。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/D9jiNZ6jSxuYwJVI_V-h_w/zh-cn_image_0000002654838057.png "点击放大")
+1. 进入[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，点击**开发者管理 -> ID、证书和Profile**，选择应用所在的项目。
 2. 选择应用，查看应用的开放能力管理和ACL权限设置项。若两个设置项不存在，需重新创建HarmonyOS应用和添加APP ID，具体请参考为HarmonyOS应用创建APP ID。
 
 **参考链接**

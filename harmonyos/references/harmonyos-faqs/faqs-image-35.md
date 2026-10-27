@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-35
 title: 如何将一张图片写入到另一张图片中
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何将一张图片写入到另一张图片中
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
+scraped_at: 2026-10-28T07:48:27+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:78abbef00e69c71921f327e3fe0da6d656de7938772a24f799752ab0d6cbee1a
+content_hash: sha256:177c9a2cfdea35138863204fb766dd9910879092598bebd987047d1a712bad38
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:78abbef00e69c71921f327e3fe0da6d656de7938772a24f799752ab0d6c
 
 需要写入的图片：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/yDhxwNyGS2Ol6K_XM9BxnA/zh-cn_image_0000002658791871.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ex7DKFkmTLe9MxTKBzGOEw/zh-cn_image_0000002658791871.png "点击放大")
 
 ## 背景知识
 

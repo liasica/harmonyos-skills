@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-core-speec
 title: 语音识别数据源问题
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > 语音识别数据源问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:49:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c5a439c86052e052245df22fc031cf2da0b56254901d7d391e54016c697b76dc
 ---
 

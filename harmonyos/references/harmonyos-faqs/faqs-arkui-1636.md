@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1636
 title: TabBar实现居左或居右样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TabBar实现居左或居右样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:54+08:00
+scraped_at: 2026-10-28T07:47:36+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:cfdae9cfd1933a7b3b11319578a801bcc1ee0a4240e0016f53e2b42879c0b737
+content_hash: sha256:4f51ea965d5e9172cb1723a96931fd547798053b853d009a53a4fcc28c397357
 ---
 
 ## 问题现象
@@ -20,11 +20,11 @@ content_hash: sha256:cfdae9cfd1933a7b3b11319578a801bcc1ee0a4240e0016f53e2b42879c
 * 自定义页签可以利用容器组件的排列方式实现TabBar居左显示，以下提供两种方法：
   + 将页签按Row（横向从左往右）的方向放置在弹性布局[Flex](../harmonyos-guides/arkts-layout-development-flex-layout.md)容器内，利用Flex容器实现TabBar居左的效果。Flex容器内子元素的布局方向如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/9FZjSuz1QGyFWdgbD-GMlw/zh-cn_image_0000002658976865.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/QvqgGGzcTM6QI2Xjknu09Q/zh-cn_image_0000002658976865.png "点击放大")
 
     因此使用Flex容器实现问题描述中的期望目标可以拆解成如下结构：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/w9dCYC8MTwu2DPAtLUObvw/zh-cn_image_0000002658856923.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/M3Ak6YQHTR6ggwMWoC1Dkw/zh-cn_image_0000002658856923.png "点击放大")
   + 通过横向的Scroll组件实现自定义TabBar。
 
 ## 解决方案
@@ -123,7 +123,7 @@ TabBar实现居左或居右的方式类似，本文以居左为例。
 
   参考图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/XQWh0A3cRzWQ94bzxR9m0Q/zh-cn_image_0000002628617652.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/4aWkDcTzTgS0T5Zh6PKQ3Q/zh-cn_image_0000002628617652.png "点击放大")
 * **方案二：Scroll容器实现自定义TabBar居左样式。**
   1. 自定义TabBar样式。
   2. TabBar放置在Scroll中，Scroll设置50%宽度，Scroll外部Row的reverse属性设置为false，可实现居左对齐。如果设置reverse为true，可实现居右对齐。
@@ -236,7 +236,7 @@ TabBar实现居左或居右的方式类似，本文以居左为例。
 
   参考图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/XRaOcX6ZT0-1oxzKdXO14w/zh-cn_image_0000002628777550.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/IyoyvARiQ12RUHmPRG-jew/zh-cn_image_0000002628777550.png "点击放大")
 * **方案三：行列与堆叠容器实现自定义TabBar居左样式**。实现方式参考demo[基于Tabs组件实现常见导航样式](https://gitee.com/harmonyos_samples/multi-tab-navigation)。
   + **Flex容器实现自定义TabBar居左样式。**
     1. 自定义TabBar样式。
@@ -320,7 +320,7 @@ TabBar实现居左或居右的方式类似，本文以居左为例。
 
     参考图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/DqnmvhzbQDy-wsaKbwpIzg/zh-cn_image_0000002658976867.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/yvZclQjrRt-NNb2Fl_tGNw/zh-cn_image_0000002658976867.png "点击放大")
   + **Stack容器实现自定义TabBar居左样式。**
     1. 自定义TabBar样式。
     2. 将自定义的页签样式放入Stack容器中，alignContent属性设置为Alignment.TopStart，每个页签通过position设置偏移值，使得TabBar左对齐。如果设置为Alignment.TopEnd，实现居右对齐。
@@ -409,7 +409,7 @@ TabBar实现居左或居右的方式类似，本文以居左为例。
 
     参考图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/-aqycpF9SvqYel0Ms1Nxww/zh-cn_image_0000002658856925.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/e7-O5efoSKOuOJnnHcBmLg/zh-cn_image_0000002658856925.png "点击放大")
 
 ## 总结
 

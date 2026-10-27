@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-307
 title: 如何查看触摸热区范围
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何查看触摸热区范围
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d24b29658aa11f39a3a5d7610c83bde18b1bca7a6035c0768f5c7318467ba9cf
 ---
 

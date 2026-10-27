@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-172
 title: 如何处理H5页面的定时器退到后台不执行问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何处理H5页面的定时器退到后台不执行问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1ce7c18c6a076ce836e149c02575eda4224bc5564cb22ed390ac448e156630ec
 ---
 

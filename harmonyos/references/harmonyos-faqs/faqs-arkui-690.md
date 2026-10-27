@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-690
 title: Swiper组件禁止手动滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper组件禁止手动滑动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8396a2b86ac636dae59bb50406e262f6af0cbcb2ae3864b46134f08863fe5018
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:24bff456fd9199b4a23c42f0a7352ed4b00f66f47a1091635deffe6b7e20721d
 ---
 
 ## 问题现象
 
 如何能禁止如下图Swiper组件的手动滑动？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/zwsz1Lx5TNCGPS-gwRYw0g/zh-cn_image_0000002628394854.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/e3Ao84H-QySPa_z9K2mv2w/zh-cn_image_0000002628394854.png "点击放大")
 
 ## 背景知识
 
@@ -56,7 +56,7 @@ content_hash: sha256:8396a2b86ac636dae59bb50406e262f6af0cbcb2ae3864b46134f08863f
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/FlsQiHzkRRCC9Bi7H--3Wg/zh-cn_image_0000002658914073.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/9cqqKPEuRP2i8K527DhblA/zh-cn_image_0000002658914073.png "点击放大")
 * 方案二：禁止手动滑动和导航点切换。
 
   通过设置enabled属性为false，使Swiper组件不可交互，不响应事件。此时Swiper组件可以通过[SwiperController](../harmonyos-references/ts-container-swiper.md#swipercontroller)的showNext和showPrevious方法进行翻页。
@@ -108,4 +108,4 @@ content_hash: sha256:8396a2b86ac636dae59bb50406e262f6af0cbcb2ae3864b46134f08863f
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/GzoOxk12RBqyrjCrtaDkYg/zh-cn_image_0000002658794121.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/v9sCqEhoRT2V71zz82oHxg/zh-cn_image_0000002658794121.png "点击放大")

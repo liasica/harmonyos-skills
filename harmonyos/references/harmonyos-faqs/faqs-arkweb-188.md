@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-188
 title: Web中登录界面登录后如何不触发密码保险箱保存密码
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web中登录界面登录后如何不触发密码保险箱保存密码
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7cd3eb93fc616f814dff9f06c0923237edddf8706f1a3ffa871c7da7701848df
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e14b9d8198ebfc32a2c46a5ca517da0b2e6f8edc83a27e88b6292efdca290c64
 ---
 
 ## 问题现象
 
 Web中登录界面，登录成功后，会触发弹出密码保险箱，提示保存密码，如何设置可以让密码保险箱不弹出？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/fBhVULwuQ3SlB9TnYtAffQ/zh-cn_image_0000002659258401.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/MxwokmbQT9-usFVR3sEcAw/zh-cn_image_0000002659258401.png "点击放大")
 
 ## 背景知识
 

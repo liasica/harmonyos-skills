@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 使用AppGallery邀请测试打包使用什么类型的证书
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 使用AppGallery邀请测试打包使用什么类型的证书
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d3598a9182a96863030347e95333e4cfe4a3dc262890143c4265c56ff4f6841d
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:31d7a9f0485c1d037260d9b8f6cd909bc52794cb40082706316fbe5acd73ac1b
 ---
 
 ## 问题现象
@@ -15,4 +15,4 @@ content_hash: sha256:d3598a9182a96863030347e95333e4cfe4a3dc262890143c4265c56ff4f
 ## 解决方案
 
 1. 邀请测试使用发布证书。
-2. 使用调试证书生成的安装包仅支持本地调试，使用发布证书生成的安装包仅支持AGC做测试或上架。
+2. 使用调试证书生成的安装包仅支持本地调试，使用发布证书生成的安装包仅支持HarmonyOS 开发者中心做测试或上架。

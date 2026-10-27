@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-8
 title: 应用内通话消息是继承UIAbility还是VoIPExtensionAbility
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 应用内通话消息是继承UIAbility还是VoIPExtensionAbility
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3d2e7c061a0c23f28fa2206d9a610095314c79f3a7a49cd2bcac49d7c2711789
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-12
 title: Map Kit点聚合场景中，如何更新标记的图标
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > Map Kit点聚合场景中，如何更新标记的图标
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cfbcc58adb490ae4968f2b1fc937b92af9056006d56245d8a5a9c9d546c2e209
 ---
 

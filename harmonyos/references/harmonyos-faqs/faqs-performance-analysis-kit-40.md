@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何解决Kill server failed 的问题
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何解决Kill server failed 的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:13+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:46:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:dac9a94fa696d45514e0c8cb4da2512534788cc513e42c38ed436f4a73c1fcf9
 ---
 

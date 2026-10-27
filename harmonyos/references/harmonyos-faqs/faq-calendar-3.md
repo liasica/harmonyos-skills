@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-calendar-3
 title: HarmonyOS下如何通过Calendar Kit实现日程提醒功能
 breadcrumb: FAQ > 应用服务开发 > 日历服务（Calendar Kit） > HarmonyOS下如何通过Calendar Kit实现日程提醒功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8291d7df7b2e4b6322d6ccd75530b9bc0574aec61dcdac73d0aab75fc6711cdf
 ---
 

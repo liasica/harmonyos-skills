@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 关闭系统设置，使用vibrator模块设置的振动规则会失效
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 关闭系统设置，使用vibrator模块设置的振动规则会失效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cc88736d8913cb5f3311cb44745ef486cf5ab5957aa098c8c469488c7c7f5daa
 ---
 

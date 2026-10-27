@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-155
 title: 如何实现系统状态栏颜色随H5改变
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何实现系统状态栏颜色随H5改变
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bd99dc63718daf5296125d09d1206bfa4562d60cd99700ecd1d8289f4e3bb8c2
 ---
 

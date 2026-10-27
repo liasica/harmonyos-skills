@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-kit
 title: 媒体（Media ）
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:26f5900aa958c0af848a8b59c6b64ea2a7e2e02ddfd1addc8c19bc9b6474d2c9
+scraped_at: 2026-10-28T07:48:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:113582ae25e6fad7b0f5a38635862ad32aa074acf4c82480f87cffdde46c005b
 ---
 
 * **[使用AVPlayer播放器概率性报错5400104、5400103要怎么处理](faqs-media-1.md)**
@@ -36,9 +36,7 @@ content_hash: sha256:26f5900aa958c0af848a8b59c6b64ea2a7e2e02ddfd1addc8c19bc9b647
 * **[AVScreenCapture录屏获取到的视频数据无法正常显示](faqs-media-26.md)**
 * **[如何解决屏幕停止录制后，无法开始第二次录制的问题](faqs-media-27.md)**
 * **[如何解决AVPlayer在List组件中无法实现全屏播放问题](faqs-media-28.md)**
-* **[应用前后台切换时，如何解决Video组件播放发生中断的问题](faqs-media-29.md)**
 * **[关于从视频中提取特定帧图片的常见方法及问题](faqs-media-30.md)**
-* **[如何下载并播放字符串格式的语音数据](faqs-media-31.md)**
 * **[SoundPool快速播放音频有破音](faqs-media-32.md)**
 * **[录制过程中音视频帧数据的转换](faqs-media-33.md)**
 * **[AVPlayer播放网络视频流的相关问题](faqs-media-34.md)**
@@ -50,7 +48,6 @@ content_hash: sha256:26f5900aa958c0af848a8b59c6b64ea2a7e2e02ddfd1addc8c19bc9b647
 * **[如何获得音频比特率](faqs-media-40.md)**
 * **[AVPlayer如何播放smb、ftp协议的视频](faqs-media-41.md)**
 * **[屏幕录制如何实时获取原始视频数据与编码视频码流数据](faqs-media-42.md)**
-* **[AVRecorder录制WAV封装格式的音频文件并识别为文字](faqs-media-43.md)**
 * **[如何同时录制设备内部音频和麦克风音频，并合成两路音频](faqs-media-44.md)**
 * **[AVPlayer播放音视频报错5400106](faqs-media-45.md)**
 * **[如何将录屏码流数据从Native侧传递到ArkTS侧](faqs-media-46.md)**

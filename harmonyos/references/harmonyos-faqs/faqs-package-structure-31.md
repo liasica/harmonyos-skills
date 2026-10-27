@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何避免模块下文件打包进HAR包后，存在的不可预期的资料、配置或信息安全风险
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何避免模块下文件打包进HAR包后，存在的不可预期的资料、配置或信息安全风险
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
+scraped_at: 2026-10-28T07:46:46+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:9b61e3e171ecc348242fff0681ff761979ea89308a993ef89f1c6cdcc2b01379
+content_hash: sha256:6d35b3e56252c21d466a5c6b68da1818dd159a88be2e56a896afc1b43ddc4bdb
 ---
 
 1. 配置ohpmignore文件：如果部分工程源文件无需构建到HAR包中，可在module目录下新建.ohpmignore文件，用于配置打包时要忽略的文件。将无需打包的文件或文件夹名称写入.ohpmignore文件中，DevEco Studio构建时将过滤掉这些文件目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/-hL9Z_jQTH-dxRyaP46m-g/zh-cn_image_0000002654835173.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/as-RNrAKS3OADe_xNIEAMg/zh-cn_image_0000002654835173.png "点击放大")
 
    更改 .ohpmignore 配置后，需清空相应模块的 build 文件夹，或在DevEco Studio中选择 Build -> clean project，然后再进行打包。
 2. 构建闭源HAR：DevEco Studio支持闭源HAR构建，通过对代码进行编译混淆，生成闭源HAR。在不共享源码的情况下，通过闭源HAR对外提供组件、资源等，可以实现多个模块或多个工程共享组件、资源等。具体实现方式可以参考：[以release模式构建](../harmonyos-guides/ide-hvigor-build-har.md#section19788284410)。

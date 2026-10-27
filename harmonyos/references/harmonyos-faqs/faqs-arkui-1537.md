@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1537
 title: ListItem如何实现左滑删除功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ListItem如何实现左滑删除功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f7648cd9736c12fa258e4445ca6fc7cfc8c0809ce7efe7e6ed50385a3a72b538
+scraped_at: 2026-10-28T07:47:25+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f949420dc76d92c74576c50b92e007b9cb16140fe024f9c26881321c6cd57c97
 ---
 
 ## 问题现象
@@ -92,7 +92,7 @@ content_hash: sha256:f7648cd9736c12fa258e4445ca6fc7cfc8c0809ce7efe7e6ed50385a3a7
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/_BaY_KHaRuKC_4rJOz_EJA/zh-cn_image_0000002658966227.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/YCugtR02TKmUCI_HtNornA/zh-cn_image_0000002658966227.png "点击放大")
 * 场景二：通过点击显示删除按钮，具体实现如下：
   1. 使用swipeStatus数组记录每个列表项的滑动偏移量，0表示未滑动，-200表示完全滑出（显示操作按钮）。
   2. 由于onClick事件与swipeAction无法实现联动，可通过PanGesture实现手动滑动功能，滑动结束后系统将根据滑动距离自动决定展开或收起操作。
@@ -240,4 +240,4 @@ content_hash: sha256:f7648cd9736c12fa258e4445ca6fc7cfc8c0809ce7efe7e6ed50385a3a7
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/GhkEbLFHScWHyyWRdNMfhA/zh-cn_image_0000002628607004.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/cYhwENZ9QkelZURZE2cgCQ/zh-cn_image_0000002628607004.png "点击放大")

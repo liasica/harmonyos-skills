@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-18
 title: 如何解决Web与List的嵌套滑动冲突
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Web与List的嵌套滑动冲突
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a2efd729dd3852488ce53dd11bfde5764dabef8617ca4556eb5a1f2eeb5dec9d
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1122
 title: 评论栏显隐不正确
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 评论栏显隐不正确
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:db85f4f87d90bd35440707c5ac43f880ca9ec90f27283d09f1736a9e7648544f
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:59459233e36e14b876f6b12ccb0ff4ebaeb276a4271a30a7b690079e41ce4a68
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:db85f4f87d90bd35440707c5ac43f880ca9ec90f27283d09f1736a9e764
 
 问题现象：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ytn3kaFxRQ-DQkLVEpjs-g/zh-cn_image_0000002658808781.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/qLGb9NRcTEGP0DDci8iT_w/zh-cn_image_0000002658808781.png "点击放大")
 
 ## 背景知识
 
@@ -90,4 +90,4 @@ struct WebVideoPlay {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/hpkuw72xT0ibTjG7emBPAA/zh-cn_image_0000002628569418.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/ueD1669kSHWKD007bShccg/zh-cn_image_0000002628569418.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/stability-kit-t
 title: 应用闪退与崩溃问题定位
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 故障排查 > 应用闪退与崩溃问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:11+08:00
+scraped_at: 2026-10-28T07:46:39+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:f013e03617e56218d9aa44e0fa7c01823eddf08665260e720916fe973a4dc14a
+content_hash: sha256:52e82c1dfef6b3d6b41206b18f724087a1be6926eb4eafaf6fa7077c936fe067
 ---
 
 ## 应用闪退
@@ -16,7 +16,7 @@ content_hash: sha256:f013e03617e56218d9aa44e0fa7c01823eddf08665260e720916fe973a4
 
 ### 定位过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/NYP395OpSL-tHH8avNKfyw/zh-cn_image_0000002766022066.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/I5qfGXa4TRuwrLID8T0xNA/zh-cn_image_0000002766022066.png "点击放大")
 
 定位的核心逻辑遵循标准化路径：**“锁定时间点 → 识别退出原因 → 提取详细堆栈 → 针对性修复”**。
 
@@ -81,7 +81,7 @@ content_hash: sha256:f013e03617e56218d9aa44e0fa7c01823eddf08665260e720916fe973a4
 
 ### 定位过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/VCt387zPQ_mmxTW8IFb4Eg/zh-cn_image_0000002765863032.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/E0BcAd4kTa2bDRRg1UYoTQ/zh-cn_image_0000002765863032.png "点击放大")
 
 定位的核心逻辑遵循标准化路径：**“锁定时间点 → 识别退出原因 → 提取详细堆栈 → 针对性修复”**。
 
@@ -146,7 +146,7 @@ content_hash: sha256:f013e03617e56218d9aa44e0fa7c01823eddf08665260e720916fe973a4
 
 ### 定位过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/xzzXdjPUSOGXlZWpWdeuag/zh-cn_image_0000002765863250.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/bsYF_mXsR4S0KfvjqGAx3Q/zh-cn_image_0000002765863250.png "点击放大")
 
 定位的核心逻辑遵循标准化路径：**“锁定时间点 → 识别退出原因 → 提取详细堆栈 → 针对性修复”**。
 

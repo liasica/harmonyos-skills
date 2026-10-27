@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 插入数据之后，RDB数据库的wal文件体积异常
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 插入数据之后，RDB数据库的wal文件体积异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f88151732ffef6973c207521c1f2092fe49f77bedb127354d10336da9c017141
 ---
 

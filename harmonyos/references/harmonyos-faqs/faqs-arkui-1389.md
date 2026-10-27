@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1389
 title: 输入字符时光标总会跳转到最后
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 输入字符时光标总会跳转到最后
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4ca24ff68335eef2f72e6dce3947d8b45a7b6dfccc5e8b3f020758f474e27100
+scraped_at: 2026-10-28T07:47:21+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9369d0cc38cdfe1b3681d95e5a02e584db2ce806d64735583055db37cc976d8b
 ---
 
 ## 问题现象
@@ -24,10 +24,10 @@ content_hash: sha256:4ca24ff68335eef2f72e6dce3947d8b45a7b6dfccc5e8b3f020758f474e
 
 1. 使用ArkUI Inspector查看组件实现方式，确认为TextInput组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/2UpV3wjOQU-0Fbx4Wb_yXg/zh-cn_image_0000002658961877.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Zu0gHMSYTQymnSarF_Ppwg/zh-cn_image_0000002658961877.png "点击放大")
 2. 检查TextInput的onChange事件，没有使用caretPosition设置光标位置，根据onChange函数的定义，该回调会在输入值变化后被触发，所以中间执行插入或删除操作改变value值，导致数据需要重新格式化，也就是重新赋值，此时光标会位于输入值的末尾。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/AdaHBNTxQ_u58r0qOjyB0A/zh-cn_image_0000002628602666.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/5OI_Pr9mT72LCX22VFtOrA/zh-cn_image_0000002628602666.png)
 
 ## 分析结论
 
@@ -115,4 +115,4 @@ struct TextInputExample {
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/k7dVa3HWQ_ilxJHhXDMGDA/zh-cn_image_0000002658841937.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/XyBf-EyyRNqRF3lkTFVdFg/zh-cn_image_0000002658841937.png "点击放大")

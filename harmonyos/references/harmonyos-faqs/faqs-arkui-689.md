@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-689
 title: 如何实现含有emoji表情的渐变色文字
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现含有emoji表情的渐变色文字
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:5371cdb39da52aeac222cd4bf4b165edccd0c61b37e227bdc0da387bcf6f4716
+content_hash: sha256:674c5093aabe7eaa9fbe687107fb527cd6ba17856520dd73d97aa5469716ef60
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:5371cdb39da52aeac222cd4bf4b165edccd0c61b37e227bdc0da387bcf6
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/dI9iNzTHQ3S_LHDxR4pKXA/zh-cn_image_0000002628554748.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/_rorX2KwTIy6fNBhDyfsyQ/zh-cn_image_0000002628554748.png "点击放大")
 
 ## 背景知识
 

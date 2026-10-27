@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何解决调用两次fs接口写文件，但第二次写入的内容未完全覆盖第一次写入的内容的问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何解决调用两次fs接口写文件，但第二次写入的内容未完全覆盖第一次写入的内容的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:26a2bbb3802d18a956cda2a85a888139a7773f5e44dbedd0ef526f89364aeb93
 ---
 

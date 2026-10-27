@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1252
 title: 文本内容未居中，两侧留白不一致
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 文本内容未居中，两侧留白不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:9f75b34fd0bf9e517598febce608dbeb08fd16c7d7cf183e2e0a270279883a25
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c65667f66d0452c679625694840dac549d2bc3a60ab699026cf16b6f38b5fe81
 ---
 
 ## 问题现象
 
 调整字体到最大尺寸后，文本两侧留白不一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/fLYJlrcTQJqUsbk3YycWbQ/zh-cn_image_0000002658834709.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/JSh_QqoHS8eyN7QRfplUsw/zh-cn_image_0000002658834709.png "点击放大")
 
 ## 背景知识
 
@@ -22,7 +22,7 @@ content_hash: sha256:9f75b34fd0bf9e517598febce608dbeb08fd16c7d7cf183e2e0a2702798
 
 ## 问题定位
 
-1. 使用DevEco Testing查看问题组件，调整字体大小的组件为Slider组件，文本组件为Text组件，且组件内部因字体过大，文字右侧剩余空间不足以容纳文字，导致一侧留白。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/7iIR0kNsTSKtyRo8Vk2GKg/zh-cn_image_0000002628595454.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/J2hTC-3pRoWsX0zXHsD7Pw/zh-cn_image_0000002628755350.png "点击放大")
+1. 使用DevEco Testing查看问题组件，调整字体大小的组件为Slider组件，文本组件为Text组件，且组件内部因字体过大，文字右侧剩余空间不足以容纳文字，导致一侧留白。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/nCWsXnc3Se-LparqMqaEbQ/zh-cn_image_0000002628595454.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/UQv3yDw3REqSytSoXQrgMg/zh-cn_image_0000002628755350.png "点击放大")
 2. 查看Slider组件和Text组件的相关设置，Slider组件的字体尺寸最大值设置不合理，且Text组件未设置textAlign属性，文本内容默认左侧对齐。
 
    ```screen
@@ -246,7 +246,7 @@ Slider组件的字体尺寸最大值设置不合理，且Text组件未设置text
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/4MBNi78PQtyPEWKooeSZjA/zh-cn_image_0000002658954671.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/f2IKzb_TQZmj8EjopvQfBw/zh-cn_image_0000002658954671.png "点击放大")
 * 方案二：设置文本内容两端对齐。
 
   ```screen
@@ -368,4 +368,4 @@ Slider组件的字体尺寸最大值设置不合理，且Text组件未设置text
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/d9K43DKVTWaRFJ7AtiAa7A/zh-cn_image_0000002658834713.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/GCMEp-TfTA-vVURqBUG68g/zh-cn_image_0000002658834713.png "点击放大")

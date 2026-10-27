@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 应用权限管理界面的权限跳转到系统设置界面，无对应权限
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 应用权限管理界面的权限跳转到系统设置界面，无对应权限
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
+scraped_at: 2026-10-28T07:48:09+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:1c0720171a7ba3dd0530aa2bb76385ab707209f105ad16729874371a82620028
+content_hash: sha256:f0ba5c02058236682d6d2c928ffbcaa3341a28e6a0f0d66283a1b314c18500e2
 ---
 
 ## 问题现象
@@ -80,7 +80,7 @@ content_hash: sha256:1c0720171a7ba3dd0530aa2bb76385ab707209f105ad16729874371a826
 
      效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/HmsZFMVRRaiT6abKLvVBcQ/zh-cn_image_0000002680157833.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/CLLg_K25QTqv3TKVvEt0vg/zh-cn_image_0000002680157833.png "点击放大")
    * 方案二：使用[requestPermissionOnSetting](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissiononsetting12)拉起权限设置弹框。参考代码：
 
      ```ts
@@ -99,7 +99,7 @@ content_hash: sha256:1c0720171a7ba3dd0530aa2bb76385ab707209f105ad16729874371a826
 
      效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/830eThRsSyOL6BXrJVAAYg/zh-cn_image_0000002650238254.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ZI9Vr3kwS5eQ0SzkMUCkaA/zh-cn_image_0000002650238254.png "点击放大")
 
 完整代码如下：
 

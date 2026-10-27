@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-816
 title: Text组件如何分布在Stack组件的四个角
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Text组件如何分布在Stack组件的四个角
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:41+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:d1601d7d1f8e3c6983ca1d7acd84d702af5e7f5ede48a83e4778534b71665b89
+content_hash: sha256:f1ff275b0f6d5d5de6e690bb69dae70762c7cc40509313013f3bf06efe13d161
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ Stack组件中有四个Text组件，如何使子组件分别分布在Stack组件
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/3kCfrW2LShGLORetb4SYfQ/zh-cn_image_0000002628557804.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/uXS2Thz9R7e3sYmQ1F5p_w/zh-cn_image_0000002628557804.png "点击放大")
 
 ## 背景知识
 

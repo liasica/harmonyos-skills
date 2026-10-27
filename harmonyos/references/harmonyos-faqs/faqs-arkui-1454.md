@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1454
 title: CustomDialog设置透明背景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > CustomDialog设置透明背景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:45+08:00
 doc_updated_at: 2026-07-31
-content_hash: sha256:f6719618b89555d1c305a4b01c8126d26ea0beff05a76284f71ab9fb8ec62b5e
+content_hash: sha256:d64fd16dc64f8e9b4e3c2610f957518cfd25429cb5e8ae71fa55c699f317f0e9
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:f6719618b89555d1c305a4b01c8126d26ea0beff05a76284f71ab9fb8ec
 
 预览效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/pp0qFLilT7yFkH1qfAlXGg/zh-cn_image_0000002654196478.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/6z7eOmIXSkaQ_ubMlW64KA/zh-cn_image_0000002654196478.png "点击放大")
 
 ## 背景知识
 

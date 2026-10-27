@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1527
 title: 旋转验证码效果实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 旋转验证码效果实现
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:1eae52b7546201c45bf29cc43a269bc0cd7987afed483e499ff5eb42556e72ac
+content_hash: sha256:abf4b8450a1e0da141938c5e9f9d32ce5d3e4983dc9b6a58ef07f4eb54b8d9ee
 ---
 
 ## 问题现象
 
 如何实现旋转验证码的效果，具体演示如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/wCpVyOGKStGlOzW7omy5uw/zh-cn_image_0000002658966207.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Yb-0K-JORnq8D8ipKAeEAA/zh-cn_image_0000002658966207.png "点击放大")
 
 ## 背景知识
 

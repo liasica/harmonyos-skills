@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-195
 title: Web组件的请求拦截接口使用场景总结
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件的请求拦截接口使用场景总结
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-08-26
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b844d36f71bd5bd0e1b406ff92ca85cd317741bf19cb36f98bfe370807af37a5
 ---
 

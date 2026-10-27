@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-99
 title: 如何通过AOP统计方法执行时间
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何通过AOP统计方法执行时间
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:52+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a86736b1444b3144925d14efa08ed870a081f2cbd3930a2fad0055e0a7ea702c
 ---
 

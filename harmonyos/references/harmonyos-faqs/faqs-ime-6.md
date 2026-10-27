@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ime-6
 title: 如何实现悬浮键盘的拖动效果
 breadcrumb: FAQ > 应用框架开发 > 输入法框架 > 输入法开发（IME） > 如何实现悬浮键盘的拖动效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:195fe0a00d95953da662c1518625ef41d89c120be1b11d5b1833e37f080dc9a4
 ---
 

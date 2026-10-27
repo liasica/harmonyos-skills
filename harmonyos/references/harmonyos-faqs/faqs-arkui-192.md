@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-192
 title: 如何判断JS对象中是否存在某个值
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何判断JS对象中是否存在某个值
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4cbec73a34a8d7da2a6c494ca25dd9f275e9fd1984bf0ac27686a91702fc5ad2
 ---
 

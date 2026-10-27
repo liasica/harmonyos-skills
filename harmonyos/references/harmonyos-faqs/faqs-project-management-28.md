@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 怎么解决打包时依赖的Har包没有打进去的问题
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 怎么解决打包时依赖的Har包没有打进去的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
+scraped_at: 2026-10-28T07:48:50+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:853cda4a2d9eccc4a5deb6df0defcfa0c4bcc81f29361cb0abf4f29e83aca173
+content_hash: sha256:9b63a747af46ed42f4fb5cc3957313f25bfcc6b1ef0203c39e08d45fb4ddad76
 ---
 
 ## 问题现象
@@ -35,15 +35,15 @@ SDK项目中对功能做模块化拆分，如library、har1、har2，library依�
 
 * 开发工程结构：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/LpqP9KfEQlWYoIZ_uG0xew/zh-cn_image_0000002628567956.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/pXVS5HVeTYa7Eri5LIcPew/zh-cn_image_0000002628567956.png "点击放大")
 
 * library模块的oh-package-lock.json5：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/45rljVwuQj-RDpoMui1hRg/zh-cn_image_0000002658927279.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/TTDESKn2Qfiqsqz5Jy2YVQ/zh-cn_image_0000002658927279.png "点击放大")
 
 * 编译工程结构：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/iDkpwMR3RXWWW9Irxmp6Fw/zh-cn_image_0000002658807323.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/jOjI18jcTnGUWwkGrETXYA/zh-cn_image_0000002658807323.png "点击放大")
 
 **方案二**：
 

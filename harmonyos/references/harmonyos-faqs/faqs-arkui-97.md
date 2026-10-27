@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-97
 title: 如何自定义Video组件控制栏样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何自定义Video组件控制栏样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2e50973b1cd2e495fcdb5bce27df789f04c82d12a7cca5de023e27b747a5a266
 ---
 

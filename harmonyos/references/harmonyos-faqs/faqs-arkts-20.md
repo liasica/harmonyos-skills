@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-20
 title: 如何生成UUID的字符串
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何生成UUID的字符串
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:51+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ae7aad01618b7ec6ad3ba22c4e70034982947b788219c4273ab6ce57e0766cd3
 ---
 

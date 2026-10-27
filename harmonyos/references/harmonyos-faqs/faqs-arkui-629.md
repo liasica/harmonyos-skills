@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-629
 title: tabBar实现自定义遮罩效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > tabBar实现自定义遮罩效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:39+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:33f4712071cfbbba7e8df3784c07cc9aaefc97d88263f9ef7ef2d5a18a509ecb
+content_hash: sha256:00193dfe72e73b68b061c94cadc05d115968a77c8584802d34a90f7b4c7ca06f
 ---
 
 ## 问题现象
 
 使用Tabs组件时，当tabBar内容过长，仅为Tabs添加backgroundColor背景颜色会导致用户体验较差。现要求为当前组件添加遮罩效果，提升用户使用体验。具体演示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Iwxb1zNkQGCcSF10-IRjxQ/zh-cn_image_0000002628394272.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/EI4nCasiTnO8vutTLmTAsQ/zh-cn_image_0000002628394272.png "点击放大")
 
 ## 背景知识
 

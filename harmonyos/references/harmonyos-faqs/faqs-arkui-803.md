@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-803
 title: 在折叠屏展开态下，页面内容重叠
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 在折叠屏展开态下，页面内容重叠
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:33+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:fcce1b60e487bc9eabd2e675b04f92e8476f352aab55bf1887394a5f166c9708
+content_hash: sha256:705ed039be2e9e112cf31c8f97799a8658f7354b4620f1be7d7faf61b5214895
 ---
 
 ## 问题现象
 
 在折叠屏展开态下，页面部分内容出现了重叠。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/lWl2fWMwQfGwMScF-QTFQQ/zh-cn_image_0000002658917107.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/03SVLvhkQpGZTCRkS-YvwQ/zh-cn_image_0000002658917107.png "点击放大")
 
 ## 背景知识
 
@@ -22,7 +22,7 @@ content_hash: sha256:fcce1b60e487bc9eabd2e675b04f92e8476f352aab55bf1887394a5f166
 
 使用[DevEco Testing](https://developer.huawei.com/consumer/cn/download/deveco-testing)查看页面布局，发现子组件的高度大于父组件的高度，溢出了父组件的范围。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/j_yrVzs_RPqk408eOElzFQ/zh-cn_image_0000002628397886.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/tZwb1anFROGL0uUwzSX6Yw/zh-cn_image_0000002628397886.png "点击放大")
 
 ## 分析结论
 
@@ -96,4 +96,4 @@ struct HeightAutoPage {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/tJkJepriQQi0tQA-ma-oXw/zh-cn_image_0000002658797155.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/B0PwJm4IRRuHOSkCOrWAZA/zh-cn_image_0000002658797155.png "点击放大")

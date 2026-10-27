@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-3
 title: OpenSL ES音频录制示例调用崩溃
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > OpenSL ES音频录制示例调用崩溃
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5fa5041625aca3d450e886b5010515a49b32738c4225f7b465863962c6275a6c
 ---
 

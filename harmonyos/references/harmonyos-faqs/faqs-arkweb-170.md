@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-170
 title: Scroll内Web嵌套其他组件时滑动优先级设置
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Scroll内Web嵌套其他组件时滑动优先级设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eab1f3bdaa2e89e55a36780ab6af3516a8507e3b276bfef0eed3ec3d533bd8da
 ---
 

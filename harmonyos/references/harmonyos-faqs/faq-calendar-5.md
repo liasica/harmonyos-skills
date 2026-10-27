@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-calendar-5
 title: ohos.calendarManager创建日历账户Calendar报未知类型错误
 breadcrumb: FAQ > 应用服务开发 > 日历服务（Calendar Kit） > ohos.calendarManager创建日历账户Calendar报未知类型错误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:889f9c1bdf25f3e4db45b9f0b794f36956b3c61fb88ab881cf64d535fa839df7
 ---
 

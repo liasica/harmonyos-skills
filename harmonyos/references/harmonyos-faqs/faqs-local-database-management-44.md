@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: ArkData StoreConfig.customDir配置不生效
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > ArkData StoreConfig.customDir配置不生效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ebf859ee0f080b8d2fb2930772863e1e2493c3f86013098f515d0ee4b63ca35e
 ---
 

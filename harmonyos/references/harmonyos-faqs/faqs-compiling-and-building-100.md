@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 打包体积大如何配置优化包体积问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 打包体积大如何配置优化包体积问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3294c3f8fab299821baf65ec8da70d1afaecab7c8129e6e130c0eb70411ccff6
 ---
 

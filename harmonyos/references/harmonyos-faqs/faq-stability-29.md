@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-2
 title: 使用手机验证码登录帐号后，应用闪退
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 使用手机验证码登录帐号后，应用闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9fdd296663898b5e9cc7412808cd2ee60efe9084514162a6fbb8626e4ce185e6
+content_hash: sha256:8badeef6f14fa991935a9aaaa65e11126ed0b723e06c0f5514efb84af2669def
 ---
 
 ## 问题现象
@@ -62,7 +62,7 @@ content_hash: sha256:9fdd296663898b5e9cc7412808cd2ee60efe9084514162a6fbb8626e4ce
    ```
 4. 在平板横屏时，最后一个验证码输入框失去焦点后，触发了组件区域变化，导致应用重新将焦点设置到第一个输入框上，发生闪退。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/q4bcTVQcSPybWxqkl5yXPg/zh-cn_image_0000002658914201.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/K2oEPYZlTeOO1L6h7D7yXQ/zh-cn_image_0000002658914201.png "点击放大")
 
    ```screen
    07-14 18:07:48.228   25150-25150   com.hx.example  I  [(100000:100000:scope)] TextField 653 OnBlur

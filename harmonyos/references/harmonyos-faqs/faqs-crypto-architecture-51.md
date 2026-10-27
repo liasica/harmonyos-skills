@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何生成DH密钥
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何生成DH密钥
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:560accbfa8b57a53d52dd6c5e8a90b45840ea11b9a02cd662cfb444acd2ec525
+scraped_at: 2026-10-28T07:48:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:39266c405aed6df8239bfc6683200ef2695ae293b2f10838739501e9e24d6482
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:560accbfa8b57a53d52dd6c5e8a90b45840ea11b9a02cd662cfb444acd2
 
 ## 背景知识
 
-* DH算法介绍：[DH](../harmonyos-guides/crypto-asym-key-generation-conversion-spec.md#dh)（Diffie–Hellman key exchange），是一种密钥协商算法，只涉及公钥的交换，它可以提供前向安全性，即使在通信渠道被监听的情况下，也不会暴露双方的私钥。当前支持使用字符串参数和密钥参数两种方式生成DH密钥，且支持根据素数长度和私钥长度生成公共密钥参数。
+* DH算法介绍：[DH](../doccenter-capabilities/crypto-key-generation-conversion.md#dh)（Diffie–Hellman key exchange），是一种密钥协商算法，只涉及公钥的交换，它可以提供前向安全性，即使在通信渠道被监听的情况下，也不会暴露双方的私钥。当前支持使用字符串参数和密钥参数两种方式生成DH密钥，且支持根据素数长度和私钥长度生成公共密钥参数。
 
 * DH算法规格介绍：
-  + 场景一：[使用字符串参数生成](../harmonyos-guides/crypto-asym-key-generation-conversion-spec.md#使用字符串参数生成-6)。
-  + 场景二：[使用密钥参数生成](../harmonyos-guides/crypto-asym-key-generation-conversion-spec.md#使用密钥参数生成-6)。
+  + 场景一：[使用字符串参数生成](../doccenter-capabilities/crypto-key-generation-conversion.md#dh)。
+  + 场景二：[使用密钥参数生成](../doccenter-capabilities/crypto-key-generation-conversion.md#dh)。
 * DH算法相关接口介绍。
 
   | 名称 | 接口 |

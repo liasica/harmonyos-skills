@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-719
 title: TextInput设置手机号格式输入-如何解决修改数据后光标位置错乱的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput设置手机号格式输入-如何解决修改数据后光标位置错乱的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f3f11b41c69fcf9ed256f007874bcce52a6859bb9ffebc53185441af4be8b0c5
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:aa0299ba21811dfeb4756270b8caeca003977aa20a75605591975033abe8841d
 ---
 
 ## 问题现象
@@ -17,19 +17,19 @@ HarmonyOS系统使用TextInput输入手机号，通过onChange函数实现手机
 
 当前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/X9F05EM9R7Wi2xT7xq7bMg/zh-cn_image_0000002658794575.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ApVChT-_RT-596Z_I4LV_A/zh-cn_image_0000002658794575.png "点击放大")
 
 针对号码123/4567/8910，删除了7和8之间的空格，TextInput空格先被删除，之后value值刷新，展示：123/4567/8910，光标位于末尾。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/rjp-5Xc7SHmvDZzYrXsUUg/zh-cn_image_0000002628555208.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/7izegssVQqaY-4LPlhiRcQ/zh-cn_image_0000002628555208.png "点击放大")
 
 预期效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/VRVn8rm4Ste9DzqRjaRpdw/zh-cn_image_0000002658914529.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/8AYIMXU1QvKvLeIH0Y2q9A/zh-cn_image_0000002658914529.png "点击放大")
 
 针对号码123/4567/8910，删除了7和8之间的空格，实际删除数字7，展示：123/4568/910，光标在数字6后面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/kGsL-WIATLCHVY37itlqIg/zh-cn_image_0000002628395304.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/TKxtoqwMQ0q6tb3y2MDiTg/zh-cn_image_0000002628395304.png "点击放大")
 
 删除数字6，展示123/4578/910，光标位于数字5后面。
 

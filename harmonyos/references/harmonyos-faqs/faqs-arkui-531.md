@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-531
 title: 侧滑无法从首页退出应用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 侧滑无法从首页退出应用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6ddbaa9a3d4f4eeb779dcc9f1df9c701d553be70b0d3c6905d13a1088c58e656
 ---
 

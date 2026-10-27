@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1102
 title: 如何监听屏幕截屏、录屏及投屏状态变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何监听屏幕截屏、录屏及投屏状态变化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:2d1140552282f0379167eb2171683aa6c96cc3bec8bd9091ef62e1d337c7baba
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:00adbbf659c9909941bdff5672d2831d1ffc930cc60ef390ea7b7872deffcb3a
 ---
 
 ## 问题现象
@@ -64,7 +64,7 @@ content_hash: sha256:2d1140552282f0379167eb2171683aa6c96cc3bec8bd9091ef62e1d337c
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ETVFXDvfQF6wPpHg8RWUbw/zh-cn_image_0000002698150521.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/9EMjrq8iSD6DXV1AaF4Cxw/zh-cn_image_0000002698150521.png "点击放大")
 * 方案二：通过display.isCaptured方法主动获取屏幕状态，具体实现如下：
 
   ```ts
@@ -102,7 +102,7 @@ content_hash: sha256:2d1140552282f0379167eb2171683aa6c96cc3bec8bd9091ef62e1d337c
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/0DC_GfidR6S-6pWIdcIxAw/zh-cn_image_0000002698150609.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/2L48DrVwRmKaMDQIhzo5-A/zh-cn_image_0000002698150609.png "点击放大")
 * 方案三：在代码中同时添加window.on('screenshot')和录屏display.on('captureStatusChange')的监听，观察到截屏事件的执行总是发生在录屏事件之前，事件的触发顺序提供了一种方式来区分应用程序中的截屏与录屏动作。
   1. 在EntryAbility中通过window.on('screenshot')监听用户的截屏操作，并保存在AppStorage中，具体实现如下：
 
@@ -206,7 +206,7 @@ content_hash: sha256:2d1140552282f0379167eb2171683aa6c96cc3bec8bd9091ef62e1d337c
 
      效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/GzGMHUV3QlyE2OKTFNR7Lw/zh-cn_image_0000002698230865.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/kh8hkA2yQpKM__MKZbr2Fg/zh-cn_image_0000002698230865.png "点击放大")
 
 ## 常见FAQ
 

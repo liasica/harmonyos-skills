@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1192
 title: 如何解决linearGradient渐变到透明时出现黑色的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决linearGradient渐变到透明时出现黑色的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:53+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:3f0633d666d7fa71919982f04d7f5f421855b06239f84d14d70d0f3137f044a2
+content_hash: sha256:64a7b87fc9c135d0e3c4bc4900ddad59a1add3e62a8d2f563dcd339176bd324a
 ---
 
 ## 问题现象
@@ -38,7 +38,7 @@ struct LinearGradientDemo {
 
 问题现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/ZULbSqNySh2XUqMAwHBuKg/zh-cn_image_0000002628752868.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/iKiHWeQ8SQmFHULhNyaeLg/zh-cn_image_0000002628752868.png "点击放大")
 
 ## 背景知识
 
@@ -87,7 +87,7 @@ struct LinearGradientDemo {
 
 效果图如下，第二个渐变色中间无黑色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/4XxyZ_qcSHiTGNbMJoBVBQ/zh-cn_image_0000002658952187.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/tN80K0Q9QkS22qU9tOyEQA/zh-cn_image_0000002658952187.png "点击放大")
 
 ## 常见FAQ
 

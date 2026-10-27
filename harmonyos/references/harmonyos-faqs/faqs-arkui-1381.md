@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1381
 title: 拖拽图片列表中的图片时如何禁止底部列表跟随滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 拖拽图片列表中的图片时如何禁止底部列表跟随滑动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:22+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:05c74f7a748fe3a78004536cc504c803d79130ba5029551d2ccd32669ca7d81c
 ---
 

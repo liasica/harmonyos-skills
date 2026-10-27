@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1329
 title: 如何实现不同分组间元素拖拽切换效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现不同分组间元素拖拽切换效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:48201340fcd7246f3498176876d55cba4bb33043cab206f91ea441c656c2c54b
+content_hash: sha256:f75fdb5b8bfbc702ff8f38a4200ca7a678184f39750acfbefc35fb1d98a92a36
 ---
 
 ## 问题现象
 
 如下图所示，需求是现在有A、B两个组，A、B两组中的元素可以拖动，并且A组中的元素可以拖动到B组，B组的元素同样可以拖动到A组，请问如何实现这种多组之间相互拖拽的效果？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/wo78RaQuRt6tHihBjg1fNg/zh-cn_image_0000002628599868.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/gnojElTOSk6YN3aM_Sl_MQ/zh-cn_image_0000002628599868.png "点击放大")
 
 ## 背景知识
 
@@ -311,4 +311,4 @@ struct GridDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/TovCOIr3SUq1HID522KBnQ/zh-cn_image_0000002628759786.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ZHdBeYnJSlmwu5VHHCVXhw/zh-cn_image_0000002628759786.png "点击放大")

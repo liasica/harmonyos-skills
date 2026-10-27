@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-6
 title: AppFreeze-主线程卡死（THREAD_BLOCK_6S）故障定位
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > AppFreeze-主线程卡死（THREAD_BLOCK_6S）故障定位
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:9c620ccbded7aca8f037a7b0c8fd43380c8889c4dfd068c5bc84da9c57c2f429
+scraped_at: 2026-10-28T07:46:41+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:160f84750fe048499c2405780b6d886174b0212be000053108dfb6d72625b365
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ content_hash: sha256:9c620ccbded7aca8f037a7b0c8fd43380c8889c4dfd068c5bc84da9c57c
 
    通过DevEco Studio的FaultLog面板，或者通过命令行工具导出日志。
 
-   * **操作方式**：执行命令**hdc file recv /data/log/faultlog/faultlogger/ .**。
+   * **操作方式**：执行命令hdc file recv /data/log/faultlog/faultlogger/ .。
    * **目标文件**：查找以appfreeze-开头，且时间点与故障发生时间吻合的日志文件。
 2. **分析日志头部信息（判定卡死时长）**：
 
@@ -57,12 +57,8 @@ content_hash: sha256:9c620ccbded7aca8f037a7b0c8fd43380c8889c4dfd068c5bc84da9c57c
       task name = uv_timer_task,                                <-- C. 任务类型
       caller = [ohos_loop_handler.cpp(OnTriggered:72)]
      ```
-   * **计算公式**：
-
-     **阻塞时长=日志生成时间(Timestamp)-当前任务开始时间(start at)**
-   * **实际计算**：
-
-     14:08:34.067 - 14:08:27.354 ≈ **6.713秒**；
+   * **计算公式**：**阻塞时长=日志生成时间(Timestamp)-当前任务开始时间(start at)**
+   * **实际计算**：14:08:34.067 - 14:08:27.354 ≈ **6.713秒**；
    * **判断**：当前正在运行的任务（Current Running）耗时已超过6秒阈值，直接导致主线程阻塞，需针对该任务进行优化。
 4. **分析主线程堆栈（定位代码行）**：
 
@@ -76,7 +72,7 @@ content_hash: sha256:9c620ccbded7aca8f037a7b0c8fd43380c8889c4dfd068c5bc84da9c57c
        #00 pc 000... /system/lib64/libark_runtime.so
        #01 pc 000... /data/.../libentry.so (Index.ets:55)  <-- 业务代码行号
        ```
-     + **说明**：Index.ets第55行可能存在复杂计算（如大数组遍历）或死循环（while(true)）。
+     + - **说明**：Index.ets第55行可能存在复杂计算（如大数组遍历）或死循环（while(true)）。
    * **场景B：IPC通信阻塞（等待系统服务）**：
      + **特征**：堆栈顶层停留在OHOS::BinderDriver::Transact或IPCThreadState::WaitForCompletion。
      + **示例**：
@@ -103,17 +99,17 @@ content_hash: sha256:9c620ccbded7aca8f037a7b0c8fd43380c8889c4dfd068c5bc84da9c57c
 
 | # | 细分场景分类 | 详细成因与代码行为 | 关键堆栈/函数特征 |
 | --- | --- | --- | --- |
-| 1 | **IPC: 等待系统核心服务** | 主线程调用AMS/BMS/DMS接口（如查询应用信息、拉起Ability），系统服务忙碌导致卡死。 | OHOS::AppExecFwk::BundleMgrProxy  OHOS::AAFwk::AbilityManagerProxy |
-| 2 | **IPC: 等待多媒体服务** | 主线程调用Camera、Audio或Codec接口，底层硬件驱动或服务进程无响应。 | OHOS::Camera::CameraInputOHOS::AudioStandard::AudioRenderer |
-| 3 | **IPC: 跨应用Service调用** | 通过connectServiceExtensionAbility连接三方应用服务，服务端代码死锁或Crash，客户端卡在SendRequest。 | OHOS::AbilityRuntime::ExtensionManager |
-| 4 | **DB: 数据库版本迁移** | 应用升级后，首次启动在主线程执行RdbOpenCallback.onUpgrade，进行大量数据表结构变更或数据清洗。 | OHOS::NativeRdb::SqliteConnection::ExecuteSql  sqlite3\_exec |
-| 5 | **DB: 复杂SQL查询** | 主线程执行了全表扫描、多表关联（JOIN）或未命中索引的查询。 | OHOS::NativeRdb::RdbStore::Query |
-| 6 | **IO: 配置文件落盘** | 使用Preferences（首选项）存储过大内容（如Base64图片），并在主线程调用flush或put。 | OHOS::NativePreferences::PreferencesXmlUtils  fsync |
-| 7 | **IO: 文件解压/移动** | 主线程直接调用zlib解压Zip包，或使用fs.copyFile移动大文件。 | OHOS::FileManagement::ModuleFileIO |
-| 8 | **Lock: 跨线程死锁** | 主线程持锁A等锁B，Worker线程持锁B等锁A（经典死锁）。 | std::mutex::lock  pthread\_cond\_wait |
-| 9 | **Lock: 等待单例初始化** | 多个线程同时访问某单例（如埋点SDK），主线程卡在synchronized或static初始化块上。 | \_\_cxa\_guard\_acquire  Monitor::Enter |
-| 10 | **Logic: 正则表达式回溯** | 使用复杂的正则表达式验证长字符串（如超长URL或HTML），触发ReDoS（灾难性回溯）。 | std::regex\_search  RegExpExec |
-| 11 | **Logic: 大对象序列化** | 对超大的JS对象（如数万条记录的Array）执行JSON.stringify或JSON.parse。 | BuiltinsJson::Stringify  BuiltinsJson::Parse |
+| 1 | **IPC: 等待系统核心服务** | 主线程调用AMS/BMS/DMS接口（如查询应用信息、拉起Ability），系统服务忙碌导致卡死。 | ```screen OHOS::AppExecFwk::BundleMgrProxy OHOS::AAFwk::AbilityManagerProxy ``` |
+| 2 | **IPC: 等待多媒体服务** | 主线程调用Camera、Audio或Codec接口，底层硬件驱动或服务进程无响应。 | ```screen OHOS::Camera::CameraInput OHOS::AudioStandard::AudioRenderer ``` |
+| 3 | **IPC: 跨应用Service调用** | 通过connectServiceExtensionAbility连接三方应用服务，服务端代码死锁或Crash，客户端卡在SendRequest。 | ```screen OHOS::AbilityRuntime::ExtensionManager ``` |
+| 4 | **DB: 数据库版本迁移** | 应用升级后，首次启动在主线程执行RdbOpenCallback.onUpgrade，进行大量数据表结构变更或数据清洗。 | ```screen OHOS::NativeRdb::SqliteConnection::ExecuteSql sqlite3_exec ``` |
+| 5 | **DB: 复杂SQL查询** | 主线程执行了全表扫描、多表关联（JOIN）或未命中索引的查询。 | ```screen OHOS::NativeRdb::RdbStore::Query ``` |
+| 6 | **IO: 配置文件落盘** | 使用Preferences（首选项）存储过大内容（如Base64图片），并在主线程调用flush或put。 | ```screen OHOS::NativePreferences::PreferencesXmlUtils fsync ``` |
+| 7 | **IO: 文件解压/移动** | 主线程直接调用zlib解压Zip包，或使用fs.copyFile移动大文件。 | ```screen OHOS::FileManagement::ModuleFileIO ``` |
+| 8 | **Lock: 跨线程死锁** | 主线程持锁A等锁B，Worker线程持锁B等锁A（经典死锁）。 | ```screen std::mutex::lock pthread_cond_wait ``` |
+| 9 | **Lock: 等待单例初始化** | 多个线程同时访问某单例（如埋点SDK），主线程卡在synchronized或static初始化块上。 | ```screen __cxa_guard_acquire Monitor::Enter ``` |
+| 10 | **Logic: 正则表达式回溯** | 使用复杂的正则表达式验证长字符串（如超长URL或HTML），触发ReDoS（灾难性回溯）。 | ```screen std::regex_search RegExpExec ``` |
+| 11 | **Logic: 大对象序列化** | 对超大的JS对象（如数万条记录的Array）执行JSON.stringify或JSON.parse。 | ```screen BuiltinsJson::Stringify BuiltinsJson::Parse ``` |
 | 12 | **Logic: 错误的循环条件** | 业务代码中while循环条件判断错误，或forEach中修改了集合长度导致死循环。 | ArkJS::Interpreter (纯JS栈，无系统调用) |
 
 ## 修改建议
@@ -127,3 +123,9 @@ content_hash: sha256:9c620ccbded7aca8f037a7b0c8fd43380c8889c4dfd068c5bc84da9c57c
 3. **I/O迁移**：
 
    将Preferences（首选项）、数据库操作、文件读写等I/O操作移至TaskPool或[Worker](../harmonyos-guides/worker-introduction.md)中执行，或使用其提供的异步API（如fs.read而非fs.readSync）。
+
+## 常见FAQ
+
+Q：日志中主线程堆栈dump失败（带有Failed dump标志）或dump不完整是什么原因？
+
+A：系统在抓取主线程堆栈时存在一定的采样失败率。该问题已在6.1.125版本中优化了采样栈的成功率，建议观察该版本及后续版本的成功率。主线程抓栈的进一步优化预计在7.0版本交付。

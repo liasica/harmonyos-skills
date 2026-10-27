@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-15
 title: DevEco Studio上使用生成NAPI功能时， 提示“Could not find usage of napi_module_register in napi_init.cpp.”错误
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio上使用生成NAPI功能时， 提示“Could not find usage of napi_module_register in napi_init.cpp.”错误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
+scraped_at: 2026-10-28T07:48:50+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:ae8e538684995536123484adb2938f8e506b681d047264c9db71d53f3ff7be2a
+content_hash: sha256:ea867bd5c59d21ac732755528a79772567782e44e9f01f2d04d0d26b6d668158
 ---
 
 **问题现象**
 
 右键单击函数， 在弹出的菜单中依次选择 Generate... > NAPI， 生成胶水代码报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/uzYH2yNtT1OXPfYX8ZNCMg/zh-cn_image_0000002624478448.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/yH4_1npaT5C9HmR0L6f2gg/zh-cn_image_0000002624478448.png)
 
 **解决措施**
 
@@ -34,6 +34,6 @@ nm\_priv: 私有数据指针
 
 reserved: 保留字段
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/qSjwqeBGR2OnQk2xFINKgg/zh-cn_image_0000002654797815.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/EHqWdD3_T3CVzRGE_Nmp_w/zh-cn_image_0000002654797815.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/0aq-2QvAQtC-GIkx2Y201Q/zh-cn_image_0000002624638356.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/1HNi9hhGRx60lpRcN8ieWw/zh-cn_image_0000002624638356.png)

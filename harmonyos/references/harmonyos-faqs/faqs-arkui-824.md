@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-824
 title: 如何解决获取导航栏高度失败的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何解决获取导航栏高度失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5653cce6b2ef196d5eeafe1a42957b953c547116bfa031982e48a26a0c0b78d7
 ---
 

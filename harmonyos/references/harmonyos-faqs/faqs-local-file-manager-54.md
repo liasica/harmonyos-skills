@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 无法在文件管理和图库中查看下载的图片
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 无法在文件管理和图库中查看下载的图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ac02d4a334ed3706894b66e8bc87dd8fda74c912675ab05e9be55d1b710789dc
 ---
 

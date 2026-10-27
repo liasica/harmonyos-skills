@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 应用内如何进行输出设备的选择
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 应用内如何进行输出设备的选择
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:551a21020beb0518dcc381c6ba008be135ac9aea8fdd5c1270184b29300bbc7c
 ---
 

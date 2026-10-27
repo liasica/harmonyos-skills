@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-2
 title: 如何判断“访问我的位置”配置是否开启，若关闭如何跳转对应设置页面
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 如何判断“访问我的位置”配置是否开启，若关闭如何跳转对应设置页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
+scraped_at: 2026-10-28T07:48:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:193647501894659301b01b3a0221feaa7164062519912bcf442f7153771151d2
+content_hash: sha256:8e72d130b9217bcc16a8b6c413c1d7417bbecbb696b501d8f7319b45c1a4d657
 ---
 
 ## 问题现象
 
 如何判断“访问我的位置”是否已经开启，在“访问我的位置”配置是关闭的情况，提醒用户打开“访问我的位置”，或者跳转到“访问我的位置”页面（设置--隐私与安全--位置--访问我的位置）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/bJQg4drXRFmlWkC1IW3lfg/zh-cn_image_0000002628394538.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/lp5OdEV8SSqQCoxhOxwFbA/zh-cn_image_0000002628394538.png "点击放大")
 
 ## 背景知识
 

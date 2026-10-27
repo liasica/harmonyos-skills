@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1139
 title: Tabs索引持久化储存的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs索引持久化储存的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f51a6ac4472cee91aa44853f35a43884ee1b1cf332465257fd6860263adb8cdf
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:d81aaa4e51fb28b70e0893d27256e6de24c35af773515fffbad526565cfe80cb
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:f51a6ac4472cee91aa44853f35a43884ee1b1cf332465257fd6860263ad
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/OWPzTpa6RACP12EbtpDgPA/zh-cn_image_0000002628409704.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/QvUDu1-hSPi8WtJO51PNpw/zh-cn_image_0000002628409704.png "点击放大")
 
 ## 背景知识
 

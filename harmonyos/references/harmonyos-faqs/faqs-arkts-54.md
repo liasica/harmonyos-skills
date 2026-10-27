@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-54
 title: ArkTS中globalThis无法使用该如何替换
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS中globalThis无法使用该如何替换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:52+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:46ab172f66a1515c09e843bb5cea75df40de6a1558bbe3314efce22a8fe986c5
 ---
 

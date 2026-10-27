@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: ArkUI页面加载慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > ArkUI页面加载慢
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:774f110745bed94107cdd75f2c8ac87e54cedf7bc18902f77bda67051ea9da5c
+content_hash: sha256:db0484ae569a821dbb29bea6fddcfab6240249e7031be3d989cf522ee1215c20
 ---
 
 ## 问题现象
@@ -51,20 +51,20 @@ content_hash: sha256:774f110745bed94107cdd75f2c8ac87e54cedf7bc18902f77bda67051ea
 
 1. 点击页面内容开始加载新页面后，长时间显示加载页，使用ArkUI Inspector工具抓取加载过程的布局，发现加载页是一个Loading组件。当该加载页消失后会显示出应用新闻详情页，因此该加载流程的起始点为手指离开屏幕、加载页显示，结束点为加载页消失。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/E5g7d-ZLQfSW0E6E0VZjlQ/zh-cn_image_0000002658794341.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/crMg3sPVR822N2Ecmo8Y_A/zh-cn_image_0000002658794341.png "点击放大")
 2. 在Trace中搜索加载页创建、销毁或完成加载的Trace关键字来确定问题分析的范围。
 
    首先搜索创建Loading组件的Trace关键字H:CustomNode:BuildItem[Loading]，可看到应用在收到手指离开屏幕的事件中加载了DetailPage详情页面，之后创建了Loading组件显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/3cIHgHQoTlSfEPqYvpgkhQ/zh-cn_image_0000002628554974.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/tpoyxVc8RcKaBgxEeCPw5g/zh-cn_image_0000002628554974.png "点击放大")
 
    然后搜索销毁Loading组件的Trace关键字H:CustomNodeBase:Destroy[Loading]，最终划定的分析范围如下图所示。可看到应用在加载详情页面时，会触发页面跳转动画，然后发起http请求从云侧获取详情页的相关数据，最后将详情页面内容刷新显示出来，移除加载页，整体耗时1.0s。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/B7B1ZuKETTyUDF0tHz0S5g/zh-cn_image_0000002628395076.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/emHa0IkoRsC0Zb871J5Qcg/zh-cn_image_0000002628395076.png "点击放大")
 
    或者搜索Loading组件完成加载的Trace关键字H:ViewPU.viewPropertyHasChanged Loading loadingComplete 1。划定的分析范围如下图所示。可看到应用在创建组件后会发起http请求从云侧获取详情页的相关数据，请求完成后loadingComplete状态值改变为1，整体耗时16.3s。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/rgaUJWc0RcewfZ1hx1uB-Q/zh-cn_image_0000002658914297.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/SDCHDwByQW2nNMiag7MBSA/zh-cn_image_0000002658914297.png "点击放大")
 3. 从上述分析中，可看到页面加载完成耗时主要集中在http请求以及页面内容刷新。
    * http请求：在日志中搜索应用包名/NETSTACK关键字去分析http请求耗时，可看到耗时部分主要集中在服务器响应处理部分，服务器处理请求、数据传输耗时较多导致。
 
@@ -73,11 +73,11 @@ content_hash: sha256:774f110745bed94107cdd75f2c8ac87e54cedf7bc18902f77bda67051ea
      ```
    * 页面内容刷新：通过查看该部分Trace关键字得知耗时集中在页面测量，主要在创建和测量ImageItem组件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/kTSiyVl7R8-K1lQ3983rIg/zh-cn_image_0000002658794343.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/MjHhwbLBSZC0ErKNlxFyVQ/zh-cn_image_0000002658794343.png "点击放大")
 
      通过ArkUI Inspector查看发现是推荐阅读列表，数了下该列表一共有80个ImageItem。ImageItem是应用的自定义组件，用于显示一则新闻的概要信息，该组件个数较多导致应用页面测量确认组件宽高耗时较多。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/T3RL-SEDRayp6aexXQCiAg/zh-cn_image_0000002628554976.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/LoDJQ6UzQE-xri9XlgiPDw/zh-cn_image_0000002628554976.png "点击放大")
 
 ## 分析结论
 

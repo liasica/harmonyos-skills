@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1107
 title: Slider交互与动画控制
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Slider交互与动画控制
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:6c8e1741aa58e55df010addd34f4afc2e93e806f5f576c545066f43a8b765550
+content_hash: sha256:f9db0adaf8c7c892fbfe4a67ce2009286ad72f8e36ef1078899d2e75209da9c9
 ---
 
 ## 问题现象
@@ -117,7 +117,7 @@ content_hash: sha256:6c8e1741aa58e55df010addd34f4afc2e93e806f5f576c545066f43a8b7
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/jt9helzVTwmdHQA-UZ8SWA/zh-cn_image_0000002628567386.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/eMAgmWFARyi0DGbONA9j-A/zh-cn_image_0000002628567386.png "点击放大")
 * 场景二：可通过定时器逐步递减滑块数值，模拟松手后的回弹动画。当用户松手时，若当前进度未达到预设值（如60）则以固定步长持续减小当前值直至归零，实现平滑回退；若进度大于或等于预设值，则保持当前值正常显示。
 
   示例代码如下：
@@ -189,4 +189,4 @@ content_hash: sha256:6c8e1741aa58e55df010addd34f4afc2e93e806f5f576c545066f43a8b7
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/TEuxyL1CQm2zHGpCONY4og/zh-cn_image_0000002658926703.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/z1UbEuD3R6y-zgO7HM2zBA/zh-cn_image_0000002658926703.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-347
 title: 如何解决Text组件文本为中文、数字、英文混合时显示省略号截断异常的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Text组件文本为中文、数字、英文混合时显示省略号截断异常的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f23f03e4691721a979fe3d8a7704e4814f03d7c574e010c1b11d719a94592930
 ---
 

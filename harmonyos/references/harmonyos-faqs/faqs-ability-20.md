@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-20
 title: 多Module应用通过startAbility()启动时报错
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 多Module应用通过startAbility()启动时报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:297c2bf44bcbba2ec90dc53094c56101194e8395eaa35d12c79b333d4746789a
+scraped_at: 2026-10-28T07:46:47+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4f9e3a419a4f626934e8701f595049fe8d4e96fc0f2358803e0d81eafceb9f25
 ---
 
 **原因**
@@ -16,7 +16,7 @@ content_hash: sha256:297c2bf44bcbba2ec90dc53094c56101194e8395eaa35d12c79b333d474
 
 单击Run > Edit Configurations，在Deploy Multi Hap/Hsp中，勾选Deploy Multi Hap/Hsp Packaqes，选择多个模块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/qQSIe4kBSIu1a8Dlacx4oA/zh-cn_image_0000002654795245.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/FchVbTv7TP-aljJWcKjFMA/zh-cn_image_0000002654795245.png "点击放大")
 
 **参考链接**
 

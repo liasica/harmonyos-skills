@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1373
 title: 如何在Native侧获取窗口ID
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何在Native侧获取窗口ID
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-07-02
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:54c792d8b03ebb6683111b00a58c108f4b062626cbea3802a876a00beacee0ca
 ---
 

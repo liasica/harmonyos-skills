@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-30
 title: 使用地图服务展示自定义信息窗时，返回上一页面产生崩溃如何解决
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 使用地图服务展示自定义信息窗时，返回上一页面产生崩溃如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:e4aa2c383cc7b71eec2c6325eaa237072459e6d7197cfa155540cc38f1166cdf
+content_hash: sha256:08dd17c70a41abe1688f8ad82e1b4897cb77238c51632e255d81fe2e8b8a3fbf
 ---
 
 ## 问题现象
 
 页面展示地图服务自定义信息窗时（如下图的点击店铺显示自定义图标），返回上一页面，产生崩溃。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/QA0yplS_QZWs5QiPQv_J9A/zh-cn_image_0000002658913581.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/0pgF_g8oTFiYQETXxfwDZg/zh-cn_image_0000002658913581.png "点击放大")
 
 ## 背景知识
 

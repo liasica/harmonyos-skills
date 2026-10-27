@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-294
 title: 如何实现带图片的二维码效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现带图片的二维码效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:53de67cc978248b0603ca5539fc2767ea8b0e52f4046a79ef63657596c33e3d3
 ---
 

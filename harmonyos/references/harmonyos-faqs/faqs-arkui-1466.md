@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1466
 title: Swiper轮播组件单页如何显示非整数条的数据
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper轮播组件单页如何显示非整数条的数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6f2d87c17fe9c8af293b9cd54eca5dbf6059f1d3deeaf3173b7c6f042602978b
 ---
 

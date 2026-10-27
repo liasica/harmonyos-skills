@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-362
 title: 如何实现折叠屏折叠态不适配旋转，展示态适配旋转
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何实现折叠屏折叠态不适配旋转，展示态适配旋转
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:928ac6b2717f98e111aa63175fb81e6cd472d21b586f665b242b064d9ed14c7a
 ---
 

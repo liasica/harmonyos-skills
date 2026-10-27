@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-221
 title: ArkUI组件能否支持继承
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ArkUI组件能否支持继承
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:21+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e5b3bcc6ad5dbef140c4eed73cf5847951e77cfcc703e99552928a81628400eb
 ---
 

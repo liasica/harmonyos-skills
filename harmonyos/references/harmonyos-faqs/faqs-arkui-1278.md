@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1278
 title: 如何实现Tabs自定义页签的下划线与文字内容宽度一致
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现Tabs自定义页签的下划线与文字内容宽度一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:52cf348bdf45257737ffb21acbe0cb4f4376d228715af19adabd2f41698ce4cc
+content_hash: sha256:8915b0f15479f002bfd42ee2710a8137e119e4805d01f6e1f5cc75468c3d337f
 ---
 
 ## 问题现象
@@ -14,15 +14,15 @@ content_hash: sha256:52cf348bdf45257737ffb21acbe0cb4f4376d228715af19adabd2f41698
 
 页签文字短：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/1gBT7PzjTWOQffBtHtdehw/zh-cn_image_0000002658957167.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/10OEPrzPR7ehfz6JyfNvOA/zh-cn_image_0000002658957167.png "点击放大")
 
 页签文字长：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/u_xD8LliRGKJDmz4hNMb0Q/zh-cn_image_0000002658837237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/4bVz11NTQbukteOpD4_7nQ/zh-cn_image_0000002658837237.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/69qrw25fQZSOhqhL8F4zaQ/zh-cn_image_0000002628597972.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/zNhUC4clSXuLqZ1sBmBekg/zh-cn_image_0000002628597972.gif "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1208
 title: 点击跳转按钮无反应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 点击跳转按钮无反应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fe331c7c05ef3f2d4f30910dcbd51dfeb911193d5be851a1d4dd3363b1da1944
 ---
 

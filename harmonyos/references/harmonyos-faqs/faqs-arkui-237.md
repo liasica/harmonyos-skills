@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-237
 title: 应用开启禁止截屏之后，用户进行截屏以及录屏后的行为是什么
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 应用开启禁止截屏之后，用户进行截屏以及录屏后的行为是什么
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:35+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7e60373989fe0f147137aa83fe55c9fadb65cca5494c3f9c44bbb8573d023a7e
 ---
 

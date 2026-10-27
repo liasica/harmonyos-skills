@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何对大文件进行SM4加密
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何对大文件进行SM4加密
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c3e27fb5acbe4361c034879c5914083f6ebae0427a6fd5ce2e8f28e5d422d3eb
 ---
 

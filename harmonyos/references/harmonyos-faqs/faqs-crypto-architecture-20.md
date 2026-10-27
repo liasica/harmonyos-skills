@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何对公钥和私钥进行加解密
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何对公钥和私钥进行加解密
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:10+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:542ca8db78dd60e2ca3fccf7ac9b8dc76c99a83db25b62fb2e631e6d9bd54e89
 ---
 

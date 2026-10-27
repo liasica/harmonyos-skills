@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-pdf-kit
 title: PDF文档解析服务（PDF Kit）
 breadcrumb: FAQ > 应用服务开发 > PDF文档解析服务（PDF Kit）
 category: harmonyos-faqs
-scraped_at: 2026-09-21T06:28:05+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:e9450dd48299e56ca504dac7c708e03979d8f68a590387a60f4195af5c66cde3
+scraped_at: 2026-10-28T07:48:35+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:362c64ab2955e7a0787909cbff1221edd3b55e288834cc30d09104b834a84307
 ---
 
 * **[HarmonyOS应用内使用PdfView或Web组件预览PDF文件失败的排查方案](faqs-pdf-1.md)**
@@ -13,7 +13,6 @@ content_hash: sha256:e9450dd48299e56ca504dac7c708e03979d8f68a590387a60f4195af5c6
 * **[在预览模式下，如何一键删除所有PDF标注](faqs-pdf-3.md)**
 * **[如何为PDF添加指定的字符串生成新的PDF文件](faqs-pdf-4.md)**
 * **[PdfView能否获取目录](faqs-pdf-5.md)**
-* **[如何打开三方应用分享的PDF文件](faqs-pdf-6.md)**
 * **[如何将不同尺寸的图片添加到PDF里](faqs-pdf-7.md)**
 * **[PDF文档转换成的图片如何重命名](faqs-pdf-8.md)**
 * **[PDF Kit提供的PDF转图片的多个API有什么区别](faqs-pdf-9.md)**

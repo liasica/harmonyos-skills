@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: HAP包在真机上安装失败如何解决
 breadcrumb: FAQ > DevEco Studio > 应用调试 > HAP包在真机上安装失败如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:eafcb5caa3c8141a4e243ddb0c7bf1f5c132b862cc0f892e819b2b16b370fd78
+scraped_at: 2026-10-28T07:49:00+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:eb4a403d4eb1127cebd229cfd1be642fb463d8868bc819fd7d062f8aabcfcd7d
 ---
 
 ## 问题现象
 
 * **问题一**：报9568263错误。
 
-  在AGC中配置了真机的udid，并应用了更新后的p7b文件、证书文件进行sign后重新打包，使用hdc命令始终无法安装新HAP包。其他机器均正常安装。
+  在HarmonyOS 开发者中心中配置了真机的udid，并应用了更新后的p7b文件、证书文件进行sign后重新打包，使用hdc命令始终无法安装新HAP包。其他机器均正常安装。
 
   ```txt
   [Info]App install path:xxx.hap, queuesize:0, msg:error: failed to install bundle. code:9568263 error: install version downgrade.
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/iTdWl79-TTm6Eoxn9vSk-Q/zh-cn_image_0000002628569312.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/xHm1aqK_SsOSaizBfqgC3w/zh-cn_image_0000002628569312.png)
 
 * **问题二**：报9568283错误。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 运动健康测试权限相关问题
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 运动健康测试权限相关问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:35+08:00
+scraped_at: 2026-10-28T07:48:48+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:88f5740b064b2cb582ea755ad5d1a8d42e0a51c27cd3a3666a24517d8a208e10
+content_hash: sha256:321883dd5f3356b7dbfad1ac252eddae10aa8350053305fe8ad4691a611e06e7
 ---
 
 ## 问题现象
@@ -30,4 +30,4 @@ content_hash: sha256:88f5740b064b2cb582ea755ad5d1a8d42e0a51c27cd3a3666a24517d8a2
 2. 当前测试阶段有用户数量的限制，仅限前100位用户使用您申请应用中的华为运动健康服务。为解除用户数的限制，请在应用完成开发测试验证后，参考[申请验证获取正式权限](../harmonyos-guides/health-verification.md)，提交验证申请。
 3. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，点击左侧菜单栏中应用服务，选择Health Service Kit，查看测试人数是否已达上限，若上限已满会返回异常。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/bA_cV1nrRqe3NOyN_zoDOw/zh-cn_image_0000002658913951.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/UjmGP-N4QFOHgI9UxpY8cg/zh-cn_image_0000002658913951.png "点击放大")

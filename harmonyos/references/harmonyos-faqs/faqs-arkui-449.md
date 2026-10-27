@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-449
 title: 如何针对UI组件属性做API版本兼容性判断
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何针对UI组件属性做API版本兼容性判断
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8649592876f3d47b647eadeded419a1c15766a54f267fe0b30e2430ea87fc252
 ---
 

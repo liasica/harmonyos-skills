@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1570
 title: 如何实现饼状进度条展示效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现饼状进度条展示效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fb2ba089c7b9158996bfab407e1be2435457e06f0ff7739e85098e3db319b4c8
 ---
 

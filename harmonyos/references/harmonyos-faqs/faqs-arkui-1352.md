@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1352
 title: 如何实现在多个页面不同位置复用同一个子窗口
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何实现在多个页面不同位置复用同一个子窗口
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6bdbda0173afce44eeaa06fbf3ae4e05d2ed7b4c79979d57be34fd6aa05e6f4e
 ---
 

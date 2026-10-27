@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: Swiper嵌套Scroll组件滑动问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > Swiper嵌套Scroll组件滑动问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:32+08:00
+scraped_at: 2026-10-28T07:46:59+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:1289d5bdd21740285e278502d19b687a485843aedb6626fc22a96d0d635ddc7f
+content_hash: sha256:c7ab2ac69b76709b85631b3519458b0821cf088850a9acf07a2c997453e61cbd
 ---
 
 **Q：Swiper嵌套Scroll组件，Swiper不同索引内容高度不一样的情况下，如何实现Scroll组件可以滚动并且内容顶部对齐的效果？**
@@ -73,4 +73,4 @@ export struct ScrollPage {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ToMM8yg4Qm68IBC67KHPMw/zh-cn_image_0000002797357197.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/KKDvJnmFR5eIaSZlI34G4A/zh-cn_image_0000002797357197.png "点击放大")

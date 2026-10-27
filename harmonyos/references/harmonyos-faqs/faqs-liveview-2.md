@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-liveview-2
 title: 实况窗有哪些支持对接的场景以及消息推送机制
 breadcrumb: FAQ > 应用服务开发 > 实况视图服务（Live View Kit） > 实况窗有哪些支持对接的场景以及消息推送机制
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:28+08:00
-doc_updated_at: 2026-10-20
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:72e2c41e675f40d21a2c26fb37d94041c609e37da2f756041e24d6610c24f559
 ---
 

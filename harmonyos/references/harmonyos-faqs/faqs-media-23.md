@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-23
 title: 视频播放时无法通过手势调节音量和亮度
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > 视频播放时无法通过手势调节音量和亮度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:78ce78c01516e92f6fc7741ce3755781e9f6d37cab6e8ac917a5a0b4a90b03b7
+scraped_at: 2026-10-28T07:48:32+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:17039e3d2b3aec330364af85e4a20697a431b4782b6e434a1ffae6aa1e25dbb6
 ---
 
 ## 问题现象
@@ -81,7 +81,7 @@ content_hash: sha256:78ce78c01516e92f6fc7741ce3755781e9f6d37cab6e8ac917a5a0b4a90
 
 完整示例如下：
 
-```screen
+```ts
 import display from '@ohos.display';
 import emitter from '@ohos.events.emitter';
 import { common } from '@kit.AbilityKit';

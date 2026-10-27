@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/ability-kit-faq
 title: 字体设置与效果常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 常见问题 > 字体设置与效果常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:24+08:00
+scraped_at: 2026-10-28T07:46:47+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:14e84acf9bb7bec1a76b3cd0abc768c0f62b0e55cad3939f1293879a1ad0d72d
+content_hash: sha256:b34f22521387bd6d642c4c3531f66ab8e5818659e258d3e17a5533604588bc8d
 ---
 
 **Q：在系统【设置】中，可以调整字体大小、显示大小缩放、字体粗细的字体样式。如何设置应用配置，使应用内字体样式，具备是否跟随系统字体样式变化的能力。**
@@ -58,7 +58,7 @@ content_hash: sha256:14e84acf9bb7bec1a76b3cd0abc768c0f62b0e55cad3939f1293879a1ad
 
      效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/SCN1ZC50SHekIKVjoOecKw/zh-cn_image_0000002795443137.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/xRfPphpvRa2TnAzBUDs4_w/zh-cn_image_0000002795443137.png "点击放大")
 2. 显示大小缩放是否跟随系统实施方案：
    * 设置应用显示大小缩放不跟随系统变化的功能：
 
@@ -342,7 +342,7 @@ A：设置configuration标签的fontSizeScale为nonFollowSystem仅控制字体�
 
 **A**：由于linearGradient颜色渐变属于组件内容且绘制在背景上方，若仅对文本应用渐变，效果将作用于背景而非文字本身，其效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/0t1O_14oTcueQY4ALyDsVA/zh-cn_image_0000002766033142.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/4r4oLdUoQQy113vlG6AKEw/zh-cn_image_0000002766033142.png)
 
 要实现作用在字体上，目前以下实现方式：
 

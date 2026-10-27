@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1516
 title: 开发自定义键盘，HarmonyOS中有没有长按按键子项生成气泡效果的API
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 开发自定义键盘，HarmonyOS中有没有长按按键子项生成气泡效果的API
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
+scraped_at: 2026-10-28T07:47:56+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a05396333cfa5d9f24660ecc4bbbdce77e4a8c582d3230671210e11496a4fcf2
+content_hash: sha256:8b96cc3fa8de38716faabe79f1459515790b776308aa0aedda62315050b6d899
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:a05396333cfa5d9f24660ecc4bbbdce77e4a8c582d3230671210e11496a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/2wD3PJLYQLG7k18xTnSvyA/zh-cn_image_0000002658845807.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/HInwjJlqQhKsI4UYkg5_4g/zh-cn_image_0000002658845807.png "点击放大")
 
 ## 背景知识
 

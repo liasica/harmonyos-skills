@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-108
 title: 应用内网页输入时，键盘弹出或收起行为异常
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 应用内网页输入时，键盘弹出或收起行为异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:09+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5d9f394357ea3e31281f4ad5cb157fa1fce5a0b2e05b0c1a234c1617759706d0
 ---
 

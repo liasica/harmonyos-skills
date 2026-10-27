@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-20
 title: 如何判断卡片是否添加到桌面
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何判断卡片是否添加到桌面
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a345fb95f7dcc6f569fdd002888b0984c28ae5aec237e43829c2465b1fcee7bb
 ---
 

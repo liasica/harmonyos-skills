@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-52
 title: 配置参数异常排查须知
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 配置参数异常排查须知
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
+scraped_at: 2026-10-28T07:48:25+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8256ab844ed1cfb5ba7ed3ac76803eac468ab640026aa4c3e080f0649caac7a3
+content_hash: sha256:b1cbc17268f3070a615502f29813fc12a2118ae32e63c04ec7ea0cd561b0fb57
 ---
 
 ## 问题现象
@@ -82,7 +82,7 @@ content_hash: sha256:8256ab844ed1cfb5ba7ed3ac76803eac468ab640026aa4c3e080f0649ca
 
   从日志中二三两行可以发现，报错的主要原因是设置的帧率超过了OutPut可设置帧率的范围。于是通过Debug查看当前PreviewOutput支持的帧率范围，结果如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/lIL6YJ41RNqt6HJBS2lvsw/zh-cn_image_0000002658911799.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/7IQesMRITwGrGB-OjmMggw/zh-cn_image_0000002658911799.png "点击放大")
 
   从图中可知，在当前视频拍摄模式下，Preview支持的帧率列表为[1,30]的非固定帧率和[60,60]的固定帧率，但是代码中设置的帧率为[30,30]的固定帧率，该帧率并不在当前Preview支持的帧率列表之中，因此报错7400110。
 

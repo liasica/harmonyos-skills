@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1651
 title: 平板设备上访问应用内页面时出现请用手机访问的弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 平板设备上访问应用内页面时出现请用手机访问的弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:793a91a8f44241ffef711cd6b5c8d155c82daa07ba60e6488c1c54a7a7a95550
 ---
 

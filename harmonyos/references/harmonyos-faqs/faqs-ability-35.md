@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-35
 title: ExtensionAbility如何与主进程通信
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > ExtensionAbility如何与主进程通信
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4b031aa55072d65679e57b947a636ddc54e0227947458aac0ff57f3e4244888e
 ---
 

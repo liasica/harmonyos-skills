@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 超级隐私模式下，应用权限申请异常
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 超级隐私模式下，应用权限申请异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
+scraped_at: 2026-10-28T07:48:09+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:2ef65e137a45b9b6b578dab04d5d49ac007beae26922ce3349d139c3103dc980
+content_hash: sha256:27a01a1f34d3c1650a316b6a16df103109da3f0c26c4bc848eb7eded5778233b
 ---
 
 ## 问题现象
@@ -26,10 +26,10 @@ content_hash: sha256:2ef65e137a45b9b6b578dab04d5d49ac007beae26922ce3349d139c3103
 1. 点击相应需要申请权限的功能后，未拉起权限弹窗，而是未响应或提示未开启/无权限/失败等内容。
 2. 检查设备的状态栏，有盾牌外形锁孔图标，代表开启了超级隐私模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/LVZtGCGJTt-VOOxDgTwbDA/zh-cn_image_0000002628608466.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/EnuIPiDoRcqKCsTn0rJXRw/zh-cn_image_0000002628608466.png "点击放大")
 3. 查看权限申请时的代码，检查是否存在校验全局开关的方法，以及是否调用了[requestGlobalSwitch()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestglobalswitch12)方法提醒用户打开。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Y_lq4cQdS0mpD-qgEyM7Zw/zh-cn_image_0000002658847725.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/aWAuk2t2S0yJp6vWmKVJ-g/zh-cn_image_0000002658847725.png "点击放大")
 
 ## 分析结论
 

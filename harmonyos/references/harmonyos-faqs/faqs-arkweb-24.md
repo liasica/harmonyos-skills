@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-24
 title: 通过网络请求而来的 Cookie 如何同步配置到web中
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 通过网络请求而来的 Cookie 如何同步配置到web中
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3740463beab537cae7c28417db678da70e0f07e3c96a71c044b52ad5014792df
 ---
 

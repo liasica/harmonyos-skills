@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-779
 title: removeByNavDestinationId如何被上一页面感知并传递参数给上一页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > removeByNavDestinationId如何被上一页面感知并传递参数给上一页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:23+08:00
+scraped_at: 2026-10-28T07:47:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b743e5eb43fdb776816cf4f2d123846157bfbbb31a427fea87d5215de5cbefc4
+content_hash: sha256:034acc1adc586ceb383894fd18620d2a3fdf3753a7b9cdab10974ee054d3eee7
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:b743e5eb43fdb776816cf4f2d123846157bfbbb31a427fea87d5215de5c
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/5cH7U7cJQFuGxoAzVvb5Aw/zh-cn_image_0000002658916943.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/t_1Vg0PXSXOWXuyWffXpXg/zh-cn_image_0000002658916943.png "点击放大")
 
 ## 背景知识
 

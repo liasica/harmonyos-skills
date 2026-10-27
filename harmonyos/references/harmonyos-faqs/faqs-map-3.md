@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-3
 title: 地图标记点在缩放地图时发生位置偏移
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 地图标记点在缩放地图时发生位置偏移
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:92ceca1d0da1400fa38bf6c95331377804058deb022a39d272059c23f7477e47
 ---
 

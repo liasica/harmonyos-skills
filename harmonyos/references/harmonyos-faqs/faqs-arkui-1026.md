@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1026
 title: 智能表如何适配智慧手势
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 智能表如何适配智慧手势
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:53+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0cc306c9b9f8d78edd8a4a62e90e58462036413e0f54147a5d8627595493b8ca
+content_hash: sha256:13acacea3335ca3f48dfdcbf288d07b145cd13403edf6be8d472c76901875cc7
 ---
 
 ## 问题现象
@@ -16,16 +16,16 @@ content_hash: sha256:0cc306c9b9f8d78edd8a4a62e90e58462036413e0f54147a5d862759549
 
 1. 佩戴智能表，开启智慧手势识别开关：设置-手势-智慧手势识别。打开应用：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/BcSNbiSxT1Kz48gMO5MDAg/zh-cn_image_0000002658804083.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/niReUCi1SsiEZjFYTWA3wg/zh-cn_image_0000002658804083.png "点击放大")
 2. 捏合确认，第一个按钮文字变为“Confirmed”：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/kDgJiwvzQkGUsG8YaIeXaw/zh-cn_image_0000002628564720.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/X1_TH83cQDyD2llhcT3gUQ/zh-cn_image_0000002628564720.png "点击放大")
 3. 滑动切焦，焦点从第一个按钮切换到第二个按钮：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/QwN5ptBwQ_ieQv-YAMuDnw/zh-cn_image_0000002658924027.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/oyYYumzFR0CnT699mlPBCQ/zh-cn_image_0000002658924027.png "点击放大")
 4. 捏合确认，第二个按钮文字变为“Confirmed”：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/DBdGclCJRuyjSNJ8X5jE2g/zh-cn_image_0000002628404816.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/1NDLDrEPQwiKtcRrrNmUyw/zh-cn_image_0000002628404816.png "点击放大")
 
 ## 背景知识
 

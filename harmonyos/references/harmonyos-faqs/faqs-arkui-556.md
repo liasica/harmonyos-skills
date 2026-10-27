@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-556
 title: 如何实现镜像语言功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现镜像语言功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:38+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b9f0f8365b3b552b2242df4bfc46441e6b507df059d3a5ed4a682ecaabead3e9
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:113d1b2cb684a6835f8bb96b00fdb78fcac4949a98734d1ee342bb05f2314946
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ content_hash: sha256:b9f0f8365b3b552b2242df4bfc46441e6b507df059d3a5ed4a682ecaabe
 
 1. 在entry/src/main/resources添加ug语言资源。右击resources->New->Resource Directory。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/YLsFSbNPQfylIpc_RgFFdA/zh-cn_image_0000002658910929.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/KMF5UAfCR3-CjwcwxJm6nw/zh-cn_image_0000002658910929.png "点击放大")
 2. 在ug/element下添加string.json。
 
    ```screen
@@ -153,7 +153,7 @@ content_hash: sha256:b9f0f8365b3b552b2242df4bfc46441e6b507df059d3a5ed4a682ecaabe
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/HEx4eay5SPCfgqTr2uKXoA/zh-cn_image_0000002658790979.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/BP7ZWmMhQaSoquCQJcWJqA/zh-cn_image_0000002658790979.png "点击放大")
    * 图片不跟随系统语言方向示例代码参考如下：
 
      ```screen
@@ -202,7 +202,7 @@ content_hash: sha256:b9f0f8365b3b552b2242df4bfc46441e6b507df059d3a5ed4a682ecaabe
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/9jAV7sjKRoKVNn_sJ6RYfw/zh-cn_image_0000002628551624.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/5g9U1Jl1TdKNy-GDVT9PCw/zh-cn_image_0000002628551624.png "点击放大")
 
 ## 常见FAQ
 

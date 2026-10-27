@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-879
 title: 页面上下滑动时组件闪动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面上下滑动时组件闪动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:887eda8bbb9f91f28590017714250de8677947938b1b5235bb94f990b340fbed
+content_hash: sha256:54ffb7e69f645810c30331a0eb9cef84cc3518e950de0cc13cd751102b12901e
 ---
 
 ## 问题现象
 
 页面上下滑动时，页面中闪过了其他页面的组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/6vzCEaBKSd6h2cpIoC9yyw/zh-cn_image_0000002628399632.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/RAagZPG9Qz25xjf--CETTw/zh-cn_image_0000002628399632.png "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:887eda8bbb9f91f28590017714250de8677947938b1b5235bb94f990b34
 
 1. 使用DevEco Testing查看问题组件，该组件为Stack组件下的Column组件的子组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ejqvikUxSvejyI_j3RF8WA/zh-cn_image_0000002658798897.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/gtessqKQRt2QnsuxIpS1ig/zh-cn_image_0000002658798897.png "点击放大")
 2. 查看组件的相关设置，应用使用了PanGesture进行页面切换，且触发页面切换的偏移值设置不合理。查看底部页签和页面显示组件Column组件的设置，页签和页面由不同的指示器控制，两者变化不能同步。底部页签切换时页签对应的组件能够实时响应，页面无法实时响应，导致组件闪动。
 
    ```screen
@@ -191,4 +191,4 @@ struct TabsExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/uIvEr4IUTJe30pM8nq45Hw/zh-cn_image_0000002628559538.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/nQo_AvM-RUC3p4lyXCRhfQ/zh-cn_image_0000002628559538.png "点击放大")

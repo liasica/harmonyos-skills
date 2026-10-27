@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1459
 title: 使用openCustomDialog时如何关闭指定的弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用openCustomDialog时如何关闭指定的弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:69b46f0cbb9da22db2447efb731efc99454edd842ad59b4119ea9bf538b7b08e
+content_hash: sha256:7cdebeb78c65fe88cade091480b5832af4e7e27ea72c41ab3e69d60083c63c71
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:69b46f0cbb9da22db2447efb731efc99454edd842ad59b4119ea9bf538b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/TVIo_YCyS8OSEs_Sj6-I2w/zh-cn_image_0000002628765240.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/bINL1Kf6ThqJDTqHQU2Ygg/zh-cn_image_0000002628765240.gif "点击放大")
 
 ## 背景知识
 

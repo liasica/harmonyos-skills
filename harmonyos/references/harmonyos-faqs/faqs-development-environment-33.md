@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio新建项目失败的原因有哪些
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio新建项目失败的原因有哪些
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
+scraped_at: 2026-10-28T07:48:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b7ef4509e63117dc78d6e14e9a80b8ca2fd9a2d45e05612e2614ccc7a55bc87c
+content_hash: sha256:6652ac6c5e22a9c945ceb0de740134b7fd7673316a4ce513dea85dc0d6b64c27
 ---
 
 ## 问题现象
@@ -35,13 +35,13 @@ DevEco Studio提供开箱即用的开发体验，将HarmonyOS SDK、Node.js、Hv
     - MacOS环境：终端输入echo $SHELL。
 * **场景二**：新建项目时，出现npm报错，如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/-Q1t9uOvT8yg9sB4sK3GEg/zh-cn_image_0000002628565012.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/zU3WCmjFTwGmfDvEIF6O0w/zh-cn_image_0000002628565012.png "点击放大")
 * **场景三**：新建项目窗口无任何内容，如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/YklHCP4PT4yAFTgXfbb8yg/zh-cn_image_0000002628405106.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/9afe662LST-wlxHSuEqVuw/zh-cn_image_0000002628405106.png "点击放大")
 * **场景四**：新建项目时，出现Cannot detect a launch configuration，如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/GQfb9vewT6yEBZgTi07JRQ/zh-cn_image_0000002658924327.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/pA6c2YCJRfaGyovNyDJ-mw/zh-cn_image_0000002658924327.png "点击放大")
 
 ## 分析结论
 

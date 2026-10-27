@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1591
 title: 如何实现类似其他平台popwindow弹窗效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现类似其他平台popwindow弹窗效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:db2772066cf8902e6350f4d8623fcd76fe8c0670ec9a039bda20cccde3c901bc
+content_hash: sha256:0d353864474189bc8a9c514001cf935c88325d246537b799f6a30e612c7c86f2
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:db2772066cf8902e6350f4d8623fcd76fe8c0670ec9a039bda20cccde3c
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/ALYdWSrZRb-XBZ_ULSA79Q/zh-cn_image_0000002658849571.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/1vlpjnQaSBS1_XtDr6udkw/zh-cn_image_0000002658849571.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/ug8xBnfkRRy-ktFw6XKZoQ/zh-cn_image_0000002628770206.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/b0XYuhw2SbyOI2UDo0Ao-w/zh-cn_image_0000002628770206.gif "点击放大")
 
 ## 背景知识
 

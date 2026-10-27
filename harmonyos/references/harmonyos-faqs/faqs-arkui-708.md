@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-708
 title: Navigation如何携带参数返回首页
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation如何携带参数返回首页
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:40+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:a3dc5896e06fd7f30adc5ce27ed70b015c123ec6682b7e1d825606b08be99cd5
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:8bef6a2f3ca4677511c4bd18f368d06fd7b0f2a7364d58f2001d5ec544c2d7bd
 ---
 
 ## 问题现象
@@ -92,7 +92,7 @@ content_hash: sha256:a3dc5896e06fd7f30adc5ce27ed70b015c123ec6682b7e1d825606b08be
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/LhxJ-6l-TKCduwZ4m13Nsg/zh-cn_image_0000002669866387.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/20Bz7bQZQDW_LR-rwdClsQ/zh-cn_image_0000002669866387.png "点击放大")
 * 场景2：首页跳转至其他页面之后，经过其他页面多次跳转，再立马返回首页。
 
   由于需要立马返回首页，无法一步步将路由栈中页面逐个出栈，所以无法通过出栈时的onPop回调，拿到上一个页面出栈时携带的参数。且首页无法推入路由栈，不能使用push类方法跳转，也没有onReady生命周期，所以也无法在onReady接收其他子页的传参。
@@ -212,7 +212,7 @@ content_hash: sha256:a3dc5896e06fd7f30adc5ce27ed70b015c123ec6682b7e1d825606b08be
 
        效果预览：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/d06TsV_ITdCLnVxFjHuR9g/zh-cn_image_0000002669990323.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Ns2VgyPpTQ2aZSc9eNr1RA/zh-cn_image_0000002669990323.png "点击放大")
   + 方案2：在首页的aboutToAppear订阅事件，在clear清除路由栈时通过订阅的事件将参数传递回首页。
 
     ```ts
@@ -300,7 +300,7 @@ content_hash: sha256:a3dc5896e06fd7f30adc5ce27ed70b015c123ec6682b7e1d825606b08be
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/qTF6H_buTmykzChGBfUAQA/zh-cn_image_0000002639837140.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/nfqHB4hJSEaggKzBj3GLow/zh-cn_image_0000002639837140.png "点击放大")
 
 ## 常见FAQ
 

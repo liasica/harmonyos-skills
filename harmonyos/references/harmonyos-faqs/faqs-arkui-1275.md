@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1275
 title: Column宽高自适应背景图片大小
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Column宽高自适应背景图片大小
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:086a1e47dae817b0ca1baebe3d8f1e3b5eafd816084f4516c6b3dfff85c1afdc
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:d7a7f46675ac5cf3726e5820d710e16df21c181c6344ec1e45715827a881e6aa
 ---
 
 ## 问题现象
@@ -44,6 +44,6 @@ struct ColumnLayout {
 
 在IDE中查看ArkUI Inspector预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/YL4_iqcJQ320MoD9IVB1jw/zh-cn_image_0000002658835381.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/0kD2Mpk5RdqZrBMO4EqYKA/zh-cn_image_0000002658835381.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/wA7mN5mUSiqhv9abH1YAHQ/zh-cn_image_0000002628756018.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/3Y_cbYR0S0KcERprQr1wlQ/zh-cn_image_0000002628756018.png "点击放大")

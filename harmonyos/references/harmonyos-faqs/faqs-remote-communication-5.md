@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: 如何解决创建rcp请求基类对象失败的问题
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > 如何解决创建rcp请求基类对象失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-07-02
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:447ee823612bb7dd7f2b190e70ba2d0c87a65195552de83860b440d1d58cafac
 ---
 

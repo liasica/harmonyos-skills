@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-61
 title: 如何判断当前网络能否上网
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何判断当前网络能否上网
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:36+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:40b8008468eb3d799ee4e142f8e57e8c552f940bee7c2fdc8b0886dd157fe536
 ---
 

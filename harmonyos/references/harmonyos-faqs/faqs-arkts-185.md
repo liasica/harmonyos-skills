@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-185
 title: Web组件中URL参数+号与空格的正确处理
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > Web组件中URL参数+号与空格的正确处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:71e02dab9b909119417fa6be584dc8f9be95cbaef1b7fd58226749a50f83fe79
 ---
 

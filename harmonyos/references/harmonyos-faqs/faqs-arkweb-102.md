@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-102
 title: 应用内弹窗无法通过侧滑关闭
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 应用内弹窗无法通过侧滑关闭
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:12b64d47d5896b988b0d22e1eb84398b45665a36ba546b006844161163fbf886
 ---
 

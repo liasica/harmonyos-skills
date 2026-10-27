@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-56
 title: 如何跨Hap模块调用C++ API
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何跨Hap模块调用C++ API
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9825c3784f264b0f2ebd8912b255685ac1a99a66c37620fe9d2b6eced7536a75
 ---
 

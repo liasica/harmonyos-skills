@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 三方SDK定制修改部分源码
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 三方SDK定制修改部分源码
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:3c76529f3144b060916c133903abb7639ae2704ec26311b77f8e36a7d06e07d6
+content_hash: sha256:fabf6663981fa2e01c43783874c6fd24c712cdb0a5331977b33552ab68a52844
 ---
 
 **问题背景**
@@ -29,27 +29,27 @@ SDK使用方需在SDK上定制功能开发，SDK提供方仅希望提供SDK和�
 1. 源码：
    1. 声明文件：将src/main/ets目录拷贝到模块A中，保持原目录结构不变。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/5My_p8n-QlatYvgeykB1Ew/zh-cn_image_0000002654798081.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/1MSL3XR5Tgilo4V11rmNug/zh-cn_image_0000002654798081.png)
    2. 需要修改的源码：按照提供方SDK中的目录层级增加需要修改的源码文件，保持和提供方目录结构一致。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/NhFp8dlPT1KZ9o2vas0-tg/zh-cn_image_0000002624638634.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/kGqcG2BMRO2JA3RQyQHY0Q/zh-cn_image_0000002624638634.png)
 2. 资源文件：
 
    使用提供方SDK中的resources目录覆盖模块A中的resources目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/QdDDg1UvQoSHq19UJJtMiw/zh-cn_image_0000002654838037.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/cT4tkpuyRX6xJCcjPVqehw/zh-cn_image_0000002654838037.png)
 3. 配置文件：
    1. 将提供方SDK的依赖配置（模块A的oh-package.json5中的dependencies字段）拷贝到模块A中的依赖配置中。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/prqC0FgnTXCwVK53oWQl6g/zh-cn_image_0000002624478724.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/j7M4UGV7T3Khb1Ys4kyFgg/zh-cn_image_0000002624478724.png)
    2. 如果需要修改ability的srcEntry文件，就需要将提供方SDK中module.json对应的ability字段拷贝至模块A的module.json5的abilities中，再对ability的srcEntry文件进行修改
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/CUsezDhvSMycnkZwtrZ_aA/zh-cn_image_0000002654798083.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/2TI55pomSL-439QMy88jWA/zh-cn_image_0000002654798083.png)
 4. abc文件：
 
    将提供方产物中的modules.abc文件拷贝至模块A目录下，并在模块级build-profile.json5文件，buildOption->packingOptions字段中新增customizedOptions，增加basePackage字段指定abc的位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/w29LRypXQyCy1HdRzuFJoA/zh-cn_image_0000002624638636.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/aQgmO5UHShaFXN0ivr9hjA/zh-cn_image_0000002624638636.png)
 
    ```json
    "buildOption": {

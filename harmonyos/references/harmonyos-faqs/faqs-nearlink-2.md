@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-nearlink-2
 title: 解决星闪扫描的设备广播名称只有9个字符长度的问题
 breadcrumb: FAQ > 系统开发 > 网络 > 星闪（NearLink） > 解决星闪扫描的设备广播名称只有9个字符长度的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
+scraped_at: 2026-10-28T07:48:19+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0b50c702e468a7d7cefc126cbb4467e1a36ad743b7ba84a08317f4c12242860f
+content_hash: sha256:ff5546afc2800cc3fc4cdfe2a1f76a731126d8c73a9fac2dec0b13b27d56a0b9
 ---
 
 ## 问题现象
@@ -56,7 +56,7 @@ content_hash: sha256:0b50c702e468a7d7cefc126cbb4467e1a36ad743b7ba84a08317f4c1224
 
 * 参考协议：星闪无线通信系统、基础服务层、设备发现与服务管理。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/aAa5saJcRsG_PDtgYQsDGw/zh-cn_image_0000002658972623.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Xno8HUbRQiecLCK9bc2H2g/zh-cn_image_0000002628613414.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/1eyIgmCNTkux9_TlQr54rQ/zh-cn_image_0000002658972623.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/fSuywJ7yQDWleHMcLbr0Hw/zh-cn_image_0000002628613414.png "点击放大")
 * 参考协议：星闪无线通信系统、基础应用层、设备信息管理。
 
   0x0609设备信息管理服务中类型解析参照下表：

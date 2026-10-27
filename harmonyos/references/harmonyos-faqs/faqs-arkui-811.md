@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-811
 title: 如何解决Stack组件下子组件高度与层级问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Stack组件下子组件高度与层级问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1f41bea30ec582b5491d2300d3b227b98d3db2f7643cbf12a2189bbdb13543bc
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1e0850aed10afa89f93af5a4990ca5d19e95df9291961531e841ce795d3d98a4
 ---
 
 ## 问题现象
@@ -67,7 +67,7 @@ content_hash: sha256:1f41bea30ec582b5491d2300d3b227b98d3db2f7643cbf12a2189bbdb13
 
   运行效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/MEX3kJS4SnSn-7_EmoBVfA/zh-cn_image_0000002658917115.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/hdxZDOk0S-y0wZOpDR7Afw/zh-cn_image_0000002658917115.png "点击放大")
 * 针对问题二：可以使用onAreaChange获取组件A和组件B的高度，并且通过组件的高度对比设置对应的zIndex来实现，示例代码如下。
 
   ```ts
@@ -119,4 +119,4 @@ content_hash: sha256:1f41bea30ec582b5491d2300d3b227b98d3db2f7643cbf12a2189bbdb13
 
   运行效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/LYlx4f4aQ-6EmfGF89vuew/zh-cn_image_0000002628397894.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/MdwT5QzMQ-SEmb3lFbEiNQ/zh-cn_image_0000002628397894.png "点击放大")

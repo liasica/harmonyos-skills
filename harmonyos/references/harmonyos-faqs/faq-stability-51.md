@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-5
 title: aa命令拉起hipreview应用并预览本地文件失败
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > aa命令拉起hipreview应用并预览本地文件失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
+scraped_at: 2026-10-28T07:46:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:523e3f4336838f2f085be1ed3273a87481a5b33619b377fb5579c2f5e1817d1b
+content_hash: sha256:5f3fc31cceb4eee137305c9f9d8b60c617dbb5328c758e2a0220f1b75e2e2db6
 ---
 
 ## 问题现象
@@ -18,11 +18,11 @@ hdc shell aa start -b com.huawei.hmos.hipreview -a MainAbility -U file://storage
 
 其中文件路径是通过Device File Browser获取的文件真实路径，也叫物理路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/I_S71TkHQ0GLpub-q71g_A/zh-cn_image_0000002628554892.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/2bEPDkqxQIuI-9ctbFQ9FQ/zh-cn_image_0000002628554892.png "点击放大")
 
 命令行执行效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/TAU76V0kQgCceIh8MxxvBA/zh-cn_image_0000002628394990.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/zZexp6NaSqiGm_29ds1xcQ/zh-cn_image_0000002628394990.png "点击放大")
 
 ## 背景知识
 
@@ -37,7 +37,7 @@ hdc shell aa start -b com.huawei.hmos.hipreview -a MainAbility -U file://storage
 hdc shell aa start -b com.huawei.hmos.hipreview -a MainAbility -U file://docs/storage/Users/currentUser/Documents/1.pdf
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/kM0DXnVkSs6YXlWQK5dNKA/zh-cn_image_0000002658914209.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/fH7yhiLgSK-UeBbp23G21Q/zh-cn_image_0000002658914209.png "点击放大")
 
 ## 常见FAQ
 

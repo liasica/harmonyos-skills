@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-807
 title: 如何实现页面上滑tabBar和顶部标题的悬停以及属性动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现页面上滑tabBar和顶部标题的悬停以及属性动画效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:d2a9cd08d1c31868c49cda089abd281fec358651334203f02ae5ea8f074e43b3
+content_hash: sha256:f0cf61d1e8a25cb58b439b65c154fa3d53e2105e8f640966f271eff98470b227
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:d2a9cd08d1c31868c49cda089abd281fec358651334203f02ae5ea8f074
 
 如果页面顶部还有一个标题栏（即下图中“首页”），现在要实现tab内容向上滚动时tabBar悬停到标题栏下方（即下图中“同城”，“推荐”，“活动”，“玩机”这一行），且可以实现标题栏在滚动过程中样式变化（如下图背景变化），该如何实现？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/zEyTqjJlQGaBMschjh-wOQ/zh-cn_image_0000002628557796.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/oroN3jKURw2xn_cwV3bmcg/zh-cn_image_0000002658917113.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/KSUoNuYfTyOxIWc4YHYBuQ/zh-cn_image_0000002628557796.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/lTAnostRTliHQ7qilPHp2g/zh-cn_image_0000002658917113.png "点击放大")
 
 ## 背景知识
 
@@ -166,7 +166,7 @@ content_hash: sha256:d2a9cd08d1c31868c49cda089abd281fec358651334203f02ae5ea8f074
 
    效果如图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/yFj47ZBHTqipBN61SNE6mA/zh-cn_image_0000002628397892.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/U0VT9QIjRjmJcfHUT5boRg/zh-cn_image_0000002628397892.png "点击放大")
 
 ## 总结
 

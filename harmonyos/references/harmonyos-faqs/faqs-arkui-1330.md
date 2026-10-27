@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1330
 title: 如何实现嵌套的抽屉效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现嵌套的抽屉效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:4c66156ddd7a18b00a60c5549925d53445c33221e7ce91b2e460126c76afb0b5
+content_hash: sha256:c5062a29231f7049bdfcf9b376224cb2bb98d3c17acc0777135a0402cf1683e1
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:4c66156ddd7a18b00a60c5549925d53445c33221e7ce91b2e460126c76a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/EXYyFsZdQsyCZPRpsMvXRw/zh-cn_image_0000002658959113.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/yHpHLGgBQGqpxvaQb06zxw/zh-cn_image_0000002658959113.gif "点击放大")
 
 ## 背景知识
 

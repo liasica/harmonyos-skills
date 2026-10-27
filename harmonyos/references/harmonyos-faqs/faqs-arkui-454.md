@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-454
 title: 如何监听Tabs里面TabContent页面显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何监听Tabs里面TabContent页面显示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:68f62bed241ebae90c82f2a4a550b40c8d68955ca14a97cdb66220fee7e60500
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "编译报错“The required attribute: module-name is missing”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译报错“The required attribute: module-name is missing”"
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:54+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:ee7ac028734985fb476f1daf2e4428f6053715bf24a16594f6f3d8187051a11f
+content_hash: sha256:8f525f17eec46a6cba64aa7f3a5f71fc698471959281275cfb05d1a2d32f2ecf
 ---
 
 **错误描述**
@@ -16,10 +16,10 @@ content_hash: sha256:ee7ac028734985fb476f1daf2e4428f6053715bf24a16594f6f3d818705
 
 1. build-profile.json5 文件中缺少模块名称。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/eqPXOmScSM6Yu--yNW3BkA/zh-cn_image_0000002624478618.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/PQQ5vkrkQwCrymkB6FgySA/zh-cn_image_0000002624478618.png)
 2. 在hvigorconfig.ts中动态添加模块时未设置模块名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/ifTGr8-pSTWYHDAJuNI4RA/zh-cn_image_0000002654797977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/txWWzQ8ATsG-6zeXuTxUxg/zh-cn_image_0000002654797977.png)
 
 **解决措施**
 

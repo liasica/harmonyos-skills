@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ime-4
 title: 实现小艺输入法的输入效果
 breadcrumb: FAQ > 应用框架开发 > 输入法框架 > 输入法开发（IME） > 实现小艺输入法的输入效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:69cb5a0f173efdc5b44057838166c10365d52478d47ca22e53759da934db2529
 ---
 

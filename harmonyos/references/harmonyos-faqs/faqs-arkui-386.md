@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-386
 title: 如何禁用Refresh组件的下拉刷新
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何禁用Refresh组件的下拉刷新
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:28a3dfe15757a0d94a6e74d9e8b03e5e99da75477d4edaa759380dadb3011c86
 ---
 

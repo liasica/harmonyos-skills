@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-contacts-2
 title: 调用queryContactsByPhoneNumber接口异常怎么解决
 breadcrumb: FAQ > 应用服务开发 > 联系人服务（Contacts Kit） > 调用queryContactsByPhoneNumber接口异常怎么解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:ac672c5f98fc09a72672506a06e3d505bd04e41bf005dc3034987bdd48763190
+scraped_at: 2026-10-28T07:48:40+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:748256722b3239df0519166faeeb8b3f59965bbd43c83cf408d4838c92d8d458
 ---
 
 ## 问题现象
 
 开发者在使用Contacts Kit开发联系人相关功能时会遇到以下常见问题：
 
-* 参照官方文档在AGC中已经配置了通讯录读写权限，工程中也配置了通讯录读权限，但是在启动调试或运行应用/服务时，安装HAP出现错误，提示：
+* 参照官方文档在HarmonyOS 开发者中心中已经配置了通讯录读写权限，工程中也配置了通讯录读权限，但是在启动调试或运行应用/服务时，安装HAP出现错误，提示：
 
   ```screen
   error: install failed due to grant request permissions failed

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 如何获取设备传感器列表
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 如何获取设备传感器列表
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ac33b53e5b73ba5d3dc7afe4a4c49bc6b47dcb1c5d2b60d66c5f5c1f2aef0672
 ---
 

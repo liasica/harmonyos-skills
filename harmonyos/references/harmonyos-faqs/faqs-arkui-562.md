@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-562
 title: Swiper去除滚动动画实现GIF效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Swiper去除滚动动画实现GIF效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:e7f51b7ca9b55b943dc7836cebe76ea917f6d2d6cf6ede2605ed8271e624f5b2
+content_hash: sha256:95291f413ddbbdfc0bd1c2ca45c3fe2cf966a4ff4248f2718ee2dcc0411e3c3e
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:e7f51b7ca9b55b943dc7836cebe76ea917f6d2d6cf6ede2605ed8271e62
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/NEAAGH0jSwO9yt8yS5qz-A/zh-cn_image_0000002628392130.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/liv6rDoTSV63xb9EQiIokg/zh-cn_image_0000002628392130.gif "点击放大")
 
 ## 背景知识
 

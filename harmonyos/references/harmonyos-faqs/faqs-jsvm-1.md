@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-1
 title: 如何管理JSVM_CallbackStruct生命周期
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > 如何管理JSVM_CallbackStruct生命周期
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f3f8164fef2b24cfca6e47446d67868e8d6f20f56c49a070f893b091880881d7
 ---
 

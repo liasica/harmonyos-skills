@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-436
 title: Swiper怎么实现Item部分可见的效果？有没有示例展示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Swiper怎么实现Item部分可见的效果？有没有示例展示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0ffc8807a65d9cf581b05b50ec546fa0c9ade6d5b85d804cf7ec245621a9d490
 ---
 

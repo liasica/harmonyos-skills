@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-12
 title: napi关联的c层对象无法触发GC
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > napi关联的c层对象无法触发GC
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:dcfcd7443dfe8e137d910a761fff755ed07a0783665828093a3b523c74390cae
+scraped_at: 2026-10-28T07:46:59+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:01d28a13e0102c4e1f471f9756615661d11b47290a79675a17762d230d8d9b68
 ---
 
 ## 问题现象
@@ -14,15 +14,15 @@ content_hash: sha256:dcfcd7443dfe8e137d910a761fff755ed07a0783665828093a3b523c743
 
 ArkTS侧创建对象：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/jiJx6WNyS26z5yWxXTkaCw/zh-cn_image_0000002658907827.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/q-xm9LTUTky7TvH7JBaQ1w/zh-cn_image_0000002658907827.png "点击放大")
 
 C++侧构造函数和析构函数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/hGQLAUr_TRO7h7gM6_gcZw/zh-cn_image_0000002658787891.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/oF8BJEvYRBWXGszzPoNXqw/zh-cn_image_0000002658787891.png "点击放大")
 
 napi\_wrap绑定ArkTS对象与C++对象：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/WJPFwFjBSxKAHnt_4sHulw/zh-cn_image_0000002628388616.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/qCONgY9sTQiJJ9k5jkAWrw/zh-cn_image_0000002628388616.png "点击放大")
 
 ## 背景知识
 
@@ -34,7 +34,7 @@ napi\_wrap绑定ArkTS对象与C++对象：
 
 多次创建对象，析构执行后，再次创建对象不会再执行析构。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/8A97zFsWQsKF6qfWQpA1nQ/zh-cn_image_0000002628548516.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZpEClTNARCaCBgboaXTD5w/zh-cn_image_0000002628548516.png "点击放大")
 
 ## 分析结论
 

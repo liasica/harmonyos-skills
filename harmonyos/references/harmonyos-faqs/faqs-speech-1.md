@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-speech-1
 title: 如何解决朗读控件TextReader的跳跃播放问题
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化语音（Speech） > 如何解决朗读控件TextReader的跳跃播放问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:49:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2482fb43ec7fac8ecd29044bf4a1508769dde7b9c0700d02c8214528ab947445
 ---
 

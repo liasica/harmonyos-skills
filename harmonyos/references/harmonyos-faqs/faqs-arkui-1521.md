@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1521
 title: 跳转其他页面返回时，如何设置Tabs的默认显示页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 跳转其他页面返回时，如何设置Tabs的默认显示页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f8011396179fd6a4ae97bb217cec3c8bcbe71dc47a0ad334cc1f8ee8ec369284
+content_hash: sha256:31d1ae4e2d6afc394cc1d0a430f1661fe8cd1aac289aef29db7b742c369997f1
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:f8011396179fd6a4ae97bb217cec3c8bcbe71dc47a0ad334cc1f8ee8ec3
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/t_ZPRtzNTc2mnvZiXrAOIQ/zh-cn_image_0000002658966205.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/4raU1Q3sQBSANbfu663ptA/zh-cn_image_0000002658966205.gif "点击放大")
 
 ## 背景知识
 

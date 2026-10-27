@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-982
 title: 不同类型组件复用相同动态属性
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 不同类型组件复用相同动态属性
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:15+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0e75007abc52832f0f8c1c2490e7418a0236c93ef71ef1fdaf4eea43c6671c34
 ---
 

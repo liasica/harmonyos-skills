@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-473
 title: Tabs如何实现预加载特定的TabContent页
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs如何实现预加载特定的TabContent页
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eb5991fded4e7679c77093ef87a88495f5f2bf47829cbbf39ae282f61d53a17d
 ---
 

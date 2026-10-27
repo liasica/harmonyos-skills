@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-4
 title: 如何定位应用中Native层出现的空指针解引用CppCrash
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 如何定位应用中Native层出现的空指针解引用CppCrash
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
+scraped_at: 2026-10-28T07:46:41+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:77f8629d7dcf6914e9196b6b598a1aa7315991a65cd17a699459c4368f79783f
+content_hash: sha256:13517189b23c89caea1d26d93249725664579f3e03d1546c89fa079d904cfe69
 ---
 
 ## 问题现象
@@ -133,7 +133,7 @@ Tid:42378, Name:m.example.application
        ```
      + 在windows中可使用llvm-objdump --headers libnet.so（llvm-objdump工具在DevEco Studio安装的时候会自带），查看是否有debug字段，有则说明带上了符号表，没有则说明无符号表：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/2YI7hVeTT5iIJEn9AuyhWw/zh-cn_image_0000002628554888.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Guy2wOPfSLOPy_DR1W1edw/zh-cn_image_0000002628554888.png "点击放大")
    * 使用编译出来的带符号表的libnet.so使用llvm-addr2line进行崩溃行号定位：
 
      ```shell

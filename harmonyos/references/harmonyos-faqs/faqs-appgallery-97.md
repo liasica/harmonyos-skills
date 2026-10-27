@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS应用上架包签名信息获取
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS应用上架包签名信息获取
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-08-12
-content_hash: sha256:abff9e3e52fc820684ee47dfe85c45c2ed68b9c1cf4a8ff214f025db240c5606
+scraped_at: 2026-10-28T07:48:46+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:d2e75443748334bbd2100e6910bfb1f165ba7c71281bfc3d7820f5559c6ff346
 ---
 
 ## 问题现象
@@ -35,7 +35,7 @@ HarmonyOS应用经常需要集成一些开放能力，不管是华为开放能�
 
 Q：公钥指纹和appId是什么关系，怎么获取公钥指纹？
 
-A：不管公钥指纹还是appId，都是签名信息的表现形式，公钥指纹在AGC上生成证书后可以直接获取，参见[配置公钥指纹。](../app/agc-help-cert-fingerprint-0000002278002933.md)
+A：不管公钥指纹还是appId，都是签名信息的表现形式，公钥指纹在HarmonyOS 开发者中心上生成证书后可以直接获取，参见[配置公钥指纹。](../app/agc-help-cert-fingerprint-0000002278002933.md)
 
 Q：公钥指纹和appId可以相互转换吗？
 

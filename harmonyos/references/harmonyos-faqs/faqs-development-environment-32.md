@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: "IDE编译报错：ERROR: SDK component missing解决方案"
 breadcrumb: "FAQ > DevEco Studio > 环境准备 > IDE编译报错：ERROR: SDK component missing解决方案"
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
+scraped_at: 2026-10-28T07:48:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:22937a71ccb9191a506bcb4f9e1b726e919b726e43385aa387f69893683bda40
+content_hash: sha256:939409ac049cf20d0f163d567e4c5c41f02c608986bba2d57283ca2b9346062a
 ---
 
 ## 问题现象
@@ -40,25 +40,25 @@ content_hash: sha256:22937a71ccb9191a506bcb4f9e1b726e919b726e43385aa387f69893683
 
   1. 找到SDK所在目录，在IDE的Terminal中输入echo $env:DEVECO\_SDK\_HOME，SDK根目录不要指向default目录！！！
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Z9ZbF0_JS6eu50IW9Uq6BQ/zh-cn_image_0000002628565000.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/nLyqvRWERjOy1IWTuneyyw/zh-cn_image_0000002628565000.png "点击放大")
   2. 检查SDK路径下的文件放置顺序是否正确。检查各文件、目录是否有缺失，如有缺失，请将对应的文件补齐。确保这些文件和文件夹的名称都是正确的并存在，目录结构如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/gBM0HetbRtKKtZT92kBfuA/zh-cn_image_0000002628405098.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/fMzkX5lbRNKYaz7bF9_SIg/zh-cn_image_0000002628405098.png)
   3. 检查sdk-pkg.json文件是否与IDE配套：
      + 在替换full SDK时可能会修改sdk-pkg.json文件的内容，导致该文件内容与IDE版本不配套（如非必要，请在替换full SDK时不要修改此文件）
      + 打开sdk-pkg.json文件，查看apiVersion字段是否与IDE支持的API匹配，两者必须要相同，否则就会出现找不到SDK的错误。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/NCx2Ms26RiCoZKfhR6D1Vg/zh-cn_image_0000002658924317.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/AU4U7tbzQJKSmv7KceoEwQ/zh-cn_image_0000002658924317.png "点击放大")
   4. 如果上面几步都无效，检查工程是否做了一体化适配：
      + 执行同步工程的操作。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/4A9ELiQxT5iBed9hnpDK3w/zh-cn_image_0000002658804369.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/6vCt-3JPTWKXjP9r8gdtkA/zh-cn_image_0000002658804369.png "点击放大")
      + 观察右侧Notifications中是否出现了Sync failed的提示。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/C9D0Mif4TaOp5WLq2PQIXw/zh-cn_image_0000002628565010.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/JLul5gDTT0-PGUwDdasLOA/zh-cn_image_0000002628565010.png "点击放大")
      + 点击提示语中的Migrate Assistant，工程下方会打开Migrate Assistant的窗口，点击里面的Migrate按钮，待执行成功后再去编译。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/agHRDr1vT-WkNd1I3kKhnw/zh-cn_image_0000002628405104.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/SBNLY1WhR0Of14ygIUlhIw/zh-cn_image_0000002628405104.png "点击放大")
   5. 检查工程是否配置了hvigor版本：
 
      如果有，需要删除，因为目前都是使用一体化的版本，版本自带有hvigor工具。删除之后重新同步工程。
@@ -78,7 +78,7 @@ A：是因为SDK版本低导致的，需要将build-profile.json5文件里面com
   console.info(require.resolve('@ohos/hvigor'))
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/yu9FJB-KQTeDeXvmprLA8A/zh-cn_image_0000002658924323.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/CR8pUEgnQR2AvomVJ2KDkg/zh-cn_image_0000002658924323.png "点击放大")
 * 查看代码使用的SDK版本：在工程/.hvigor/outputs/build-logs/build.log搜索OpenHarmony。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/b6aUJn2sSuuoDTpK8QfBRw/zh-cn_image_0000002658804375.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/UivMlFdOTCCfGAm7K660zg/zh-cn_image_0000002658804375.png "点击放大")

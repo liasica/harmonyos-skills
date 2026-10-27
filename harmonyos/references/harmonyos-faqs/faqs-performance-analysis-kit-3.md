@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: hilog日志出现乱码原因是什么，如何解决
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > hilog日志出现乱码原因是什么，如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:46:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b69a485f7867530de70bd3775235f89ae6828f251d1b38762d47fdbda969218a
 ---
 

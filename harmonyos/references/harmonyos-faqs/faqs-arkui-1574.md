@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1574
 title: 如何通过计算和偏移实现消息气泡的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何通过计算和偏移实现消息气泡的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-07-02
-content_hash: sha256:c30c0bb5765f95e0cb0e1a8c49b282ed093549e00d280e4dd4abe41c767724e3
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:73f6d79bb5e99d9193294551244865983185a13ea39f190e32a8699cd5a3023e
 ---
 
 ## 问题现象
 
 如何通过组件的搭配使用，实现类似如下消息气泡效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/uII-_2jSQDG-AwNKKqp6uw/zh-cn_image_0000002631323906.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/efHJLbBCS-6P8Rcbwrvshw/zh-cn_image_0000002631323906.png "点击放大")
 
 ## 背景知识
 
@@ -83,4 +83,4 @@ struct MeasurePx2vpDemo {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/KlOaJj6AQiCY7n-Caw61lg/zh-cn_image_0000002631324324.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/aB3UZbZ0TBmXNMRW298Ipg/zh-cn_image_0000002631324324.png "点击放大")

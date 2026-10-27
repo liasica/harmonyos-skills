@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-2
 title: 应用在使用过程中持续出现闪退
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 应用在使用过程中持续出现闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b4c383378b7081ae6e6d178273582c262c3d5f01e1e971667133a2f5b9467a01
+content_hash: sha256:e69f0f226f410e76b4fc276018545c9371950b2e904a53d626d9b936e31a45e3
 ---
 
 ## 问题现象
@@ -54,10 +54,10 @@ content_hash: sha256:b4c383378b7081ae6e6d178273582c262c3d5f01e1e971667133a2f5b94
    #13 at observeComponentCreation2 (/usr1/hmos_for_system/src/increment/sourcecode/foundation/arkui/ace_engine/frameworks/bridge/declarative_frontend/engine/stateMgmt.js:9177:1)
    #14 at initialRender (entry|common|1.0.0|src/main/ets/components/BillComponent.ts:45:1)
    ```
-3. 使用HiSmartPerf工具抓取该过程的Trace信息，从Duration可以看出preload任务执行时间达到9s。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/I93eruBySOaSe3eo_BXXoA/zh-cn_image_0000002628316280.png "点击放大")
+3. 使用HiSmartPerf工具抓取该过程的Trace信息，从Duration可以看出preload任务执行时间达到9s。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/PZ9O7cDCTUOP0roPkRb7eA/zh-cn_image_0000002628316280.png "点击放大")
 4. 框选主线程29310中preload任务所在的泳道，其中绝大部分时间都在执行MeasureListItem节点布局任务。过滤MeasureListItem任务，节点布局任务执行总时长达到6.8s，任务数量达到823个。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/YR22m03pRr-CWMvJHfR44w/zh-cn_image_0000002658675509.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/QhsbbM5TSrqrN1HEuK6YbA/zh-cn_image_0000002658675509.png "点击放大")
 5. 部分节点布局复杂，布局时间达到525ms，且节点数量过多，结合ListItem的使用场景可知应用在加载列表项时没有采用懒加载的方式。
 
 ## 分析结论

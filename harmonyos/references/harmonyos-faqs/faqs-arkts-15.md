@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-15
 title: ArkTS中有类似java中的System.arraycopy数组复制的方法吗
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS中有类似java中的System.arraycopy数组复制的方法吗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:51+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f9ea0a6bad6b5638003d23ed205a4a2e61bc30f37c3b117b66b24ad77f29dee9
 ---
 

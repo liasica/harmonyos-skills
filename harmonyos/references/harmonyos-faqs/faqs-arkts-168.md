@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-168
 title: 编译构建library模块时报错："Property 'xxxxx' of exported class expression may not be private or protected"
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 编译构建library模块时报错："Property 'xxxxx' of exported class expression may not be private or protected"
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:31+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fb4e673a0249ad795ab77dc20d899eef8188bb11dfd4cb681ec8306b5e929acd
 ---
 

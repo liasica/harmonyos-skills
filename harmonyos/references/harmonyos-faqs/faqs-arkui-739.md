@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-739
 title: 如何实现为图片添加马赛克的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现为图片添加马赛克的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:41+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:2eb42206f9eac40cabe881d2c979640fe83948c69e6c204dfc871128d325b6cd
+content_hash: sha256:6fd2f4d2031b0040c60a56b944d36611601dc3598d63e35c89b2e51986a4b456
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:2eb42206f9eac40cabe881d2c979640fe83948c69e6c204dfc871128d32
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/d_nqh0pUQHO9kgChBG1YVA/zh-cn_image_0000002628395464.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/nGuBi5HmRyeaclUSriyq5g/zh-cn_image_0000002628395464.gif "点击放大")
 
 ## 背景知识
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“failed with:Exit code 0xc0000043”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“failed with:Exit code 0xc0000043”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:55+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:e770ec124d1176cc9f6f225b4f4bdf29c27cc6f743e15494dcb8d86fdb266da0
+content_hash: sha256:fcb2696acf1e6c6559f690c14735f543e5991d50d6396e5aacbb37ba51d7a0e5
 ---
 
 **问题现象**
 
 编译构建Native C++模块时，出现报错“failed with:Exit code 0xc0000043”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/L0cAsBetSTCEpteezhYKIw/zh-cn_image_0000002654798087.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Cxfz2o8bQZaBp8waRqFJqw/zh-cn_image_0000002654798087.png)
 
 **问题原因**
 

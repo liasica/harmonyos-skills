@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-969
 title: 如何监听应用进入多任务
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何监听应用进入多任务
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:00660eb155dcc2eb42d8f1434e9c4e7c3dd602e7be4799de66c6f9e5c831261d
 ---
 

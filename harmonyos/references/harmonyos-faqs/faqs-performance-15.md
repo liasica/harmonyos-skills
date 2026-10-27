@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 应用拍照时延长
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 应用拍照时延长
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:118ca63ee4ae71a7b530a07b3ad0ee2fe82d50052cd54db71d735bbeb5040caf
+content_hash: sha256:446069c6c2416600021bebcbb98b340c69b6655cd911756a5a6082a57e6e157c
 ---
 
 ## 问题现象
@@ -76,23 +76,23 @@ content_hash: sha256:118ca63ee4ae71a7b530a07b3ad0ee2fe82d50052cd54db71d735bbeb50
 
      从下图可以看出，单段式拍照方式耗时达到了3.3s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/IHnS9vJYQfWCTuvuo40XZg/zh-cn_image_0000002628395116.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/cyWZY_ljSZSXyfVY7y78nA/zh-cn_image_0000002628395116.png "点击放大")
 
      分段式拍照方式拍照耗时643ms。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/AWbbFs91R0WpOUtgklN5MA/zh-cn_image_0000002658914337.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/UwDfhUbeSj-ajw4L28JLIQ/zh-cn_image_0000002658914337.png "点击放大")
 2. 如果是单段式拍照方式，在拍照过程中通过多帧融合以及多个底层算法处理之后返回一张高质量图片，完成时延比较长，导致拍照慢，可更换成分段式拍照方式。
 3. 如果是分段式拍照方式，拍照慢需要分析耗时集中在哪部分。
 
    首先使用[布局分析](../harmonyos-guides/ide-arkui-inspector.md)工具ArkUI Inspector抓取拍照加载过程的页面布局，确认加载动效使用的是什么组件，如下图中可看到加载动效使用的是LoadingProgress，以及组件ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/m7Whx50EQkGPnPtC_xnqgA/zh-cn_image_0000002658794385.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/SN1_UmE4S8ql-SYPRs0aiA/zh-cn_image_0000002658794385.png)
 
    然后使用[Frame分析](../harmonyos-guides/ide-insight-session-frame.md)工具抓取拍照整体阶段的Trace信息，根据PhotoOutputNapi::Capture或HStreamCapture::Capture、PhotoListener::OnBufferAvailable确定应用调用拍照接口到获取图像数据阶段的耗时，根据LoadingProgress组件首次绘制和最后一次绘制的Trace点（H:FrameNode[LoadingProgress][id:组件ID]::RenderTask）来确定应用处理图像数据的耗时。
 
    从下图中可看到整体耗时2.2s，耗时较多的是应用处理图像数据部分，达到1.6s。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/IRgKbjSXQsO5xHbE-gTkWQ/zh-cn_image_0000002628555020.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/rSjYAUQGRnu7RFmN5FhVoA/zh-cn_image_0000002628555020.png "点击放大")
 
 ## 分析结论
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: HarmonyOS蓝牙通信是否支持GAIA协议
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > HarmonyOS蓝牙通信是否支持GAIA协议
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
+scraped_at: 2026-10-28T07:48:18+08:00
 doc_updated_at: 2026-07-22
-content_hash: sha256:9894baa655eb41a8e55154148bcfaaa9ef97f00d04254ca3fe75b4ddb8c9e3c7
+content_hash: sha256:68829e4f24a421dd2673de24c975741b0b3f8e243cccc3d8ff2b01d12fb542ba
 ---
 
 ## 问题现象
@@ -18,22 +18,22 @@ HarmonyOS蓝牙通信是否支持GAIA协议，请介绍一下当前支持的蓝�
 
 * GAIA（Generic Application Interface Architecture）：应用层协议，它依赖于多种传输协议，包括RFCOMM、SPP和GATT，支持RFCOMM和SPP并不一定支持GAIA。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/JnI5KdnNRmenlFH3rnxC9g/zh-cn_image_0000002648107542.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/bPOH9NxgQSeyPVe8BNVpZw/zh-cn_image_0000002648107542.png "点击放大")
 * RFCOMM（Radio Frequency Communication）：是一种基于串口仿真的协议，常用于模拟RS232串口通信，支持点对点通信，适合简单的数据传输。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/zAxyRrYqQ7eeGuLM7WScAQ/zh-cn_image_0000002678347741.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/OFNOCc0aSlGTKxo2iS9tyA/zh-cn_image_0000002678347741.png "点击放大")
 * SPP（SERIAL PORT PROFILE）：基于RFCOMM协议，用于实现蓝牙设备间的串口通信。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/SYlALzUoT7KjqILcIysxrQ/zh-cn_image_0000002648268612.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/EVDT2niUQ1iQE2P7QtOSiQ/zh-cn_image_0000002648268612.png "点击放大")
 * A2DP（Advanced Audio Distribution）：高级音频分发协议，旨在实现高质量音频数据的无线传输。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/s61mYL5SRS-wpGWhVG9VlA/zh-cn_image_0000002648109348.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/-Y1FYwt8Rs-JOf8llC2UkQ/zh-cn_image_0000002648109348.png "点击放大")
 * BLE（Bluetooth Low Energy）：低功耗蓝牙，是一种能够在低功耗情况下进行通信的蓝牙技术。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/P4Yc8dlhRYObaxxONc-ZdQ/zh-cn_image_0000002648270016.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/K1kSZVpERVKX4tMMZjDnxg/zh-cn_image_0000002648270016.png "点击放大")
 * HFP（Hands-Free）：蓝牙技术中用于实现免提通话的核心协议。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/pc_GL_btQ5-CVstJe6YvqQ/zh-cn_image_0000002678190677.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/knVc5w-MS9mB7qk7juv-Cg/zh-cn_image_0000002678190677.png "点击放大")
 
 ## 解决方案
 

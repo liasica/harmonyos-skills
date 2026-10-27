@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1428
 title: Scroll滚动回弹获取偏移位置不准确
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Scroll滚动回弹获取偏移位置不准确
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6d2309a06ca619b67b7be770d6eba9dacfcb4dc7cf604a30981c7bea31b2c620
+scraped_at: 2026-10-28T07:47:22+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bdd7d11072a137ef5cb343a5efd6beb79a4bc44e5e7360b899618581337f7451
 ---
 
 ## 问题现象
@@ -49,7 +49,7 @@ struct ScrollerTest {
 
 滚动到边缘无法判定为0，现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/owNecs7wSJOIdCNGp3bhzQ/zh-cn_image_0000002628763648.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ytq2f135RXqDG4Q6BqZwFw/zh-cn_image_0000002628763648.png "点击放大")
 
 ## 背景知识
 
@@ -63,7 +63,7 @@ onWillScroll是滚动前触发的事件，滑动到边缘，触发弹性回弹�
 
 设置edgeEffect为None，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/oOKg8lcrRHiykQ90vCFFhA/zh-cn_image_0000002658962963.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/HWFizH_RQIyUJdQDYswQ2w/zh-cn_image_0000002658962963.png "点击放大")
 
 ## 分析结论
 
@@ -108,7 +108,7 @@ onWillScroll是滚动前触发的事件，不是滚动时或滚动后触发的�
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/P7QS7z7jSSqmTQbx1LtwCA/zh-cn_image_0000002628603748.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/mqP9SvG_RuykmoWIA-YhuA/zh-cn_image_0000002628603748.png "点击放大")
 * 方案二：通过[onScrollEdge事件](../harmonyos-references/ts-container-scroll.md#onscrolledge)与[onScrollStop事件](../harmonyos-references/ts-container-scroll.md#onscrollstop9)判定是否滚动到边缘并停止：
 
   ```ts
@@ -149,4 +149,4 @@ onWillScroll是滚动前触发的事件，不是滚动时或滚动后触发的�
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/g-XO_fkZTMeZcyL9h-8a-Q/zh-cn_image_0000002658843015.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/qnH7RkPTRAagEwz_KJC4JA/zh-cn_image_0000002658843015.png "点击放大")

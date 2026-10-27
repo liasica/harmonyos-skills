@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 实现一个可拖动的环形进度条且头尾使用自定义图片
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 实现一个可拖动的环形进度条且头尾使用自定义图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
+scraped_at: 2026-10-28T07:48:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f3a116f901722f770d00c570ca6f74b34e52b04678c215e8404c049b97f7608f
+content_hash: sha256:e9b82ff0d023e769f7ce990a2cf2f8a90a6235cb13f6ef3b8f55cffaf0157e1a
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:f3a116f901722f770d00c570ca6f74b34e52b04678c215e8404c049b97f
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/jHLFV2LIT-CZG9Clj8Vb8w/zh-cn_image_0000002658912567.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/neMck6-WROercXezFp--Hw/zh-cn_image_0000002658912567.png "点击放大")
 
 ## 背景知识
 

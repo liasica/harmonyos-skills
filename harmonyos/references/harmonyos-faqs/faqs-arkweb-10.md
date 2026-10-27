@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-10
 title: Web组件中如何通过手势滑动返回上一个Web页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件中如何通过手势滑动返回上一个Web页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3c2311ad6a21ea43bf130bb9a3669ca290c582b2604c9f50923d5904e9b5a61a
 ---
 

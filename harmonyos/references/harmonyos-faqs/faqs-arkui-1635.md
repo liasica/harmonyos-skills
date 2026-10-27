@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1635
 title: 应用无法完全最大化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用无法完全最大化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:84d2653c1854aebe43775c847623d6c4ed1157e8c8e9467213137a4e2a9ef0b0
 ---
 

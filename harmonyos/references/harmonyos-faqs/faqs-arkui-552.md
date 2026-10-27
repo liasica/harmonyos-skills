@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-552
 title: 平板或PC上，视频布局异常且播放时黑屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 平板或PC上，视频布局异常且播放时黑屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:33+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:868e3c9232c1265cd6d99ed91103e436021298541383b491ce96a4dea0f82bb4
+content_hash: sha256:1a5c168d7539d52ead293f0200842db072da0554d5055f644d2ceb536b616d9e
 ---
 
 ## 问题现象
@@ -23,7 +23,7 @@ content_hash: sha256:868e3c9232c1265cd6d99ed91103e436021298541383b491ce96a4dea0f
 1. 使用[DevEco Testing](../harmonyos-guides/get-familiar.md)查看页面布局，发现视频是通过Web组件中的video标签展示。
 2. 根据布局排查video组件的宽度，是否与设备屏幕宽度一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/iFWkPyIFRTyU8KiFMFk3Pw/zh-cn_image_0000002628551556.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/v4eH1XB4SLGKLhe1uApzSg/zh-cn_image_0000002628551556.png "点击放大")
 3. 播放视频时根据关键字“This request has been blocked”排查日志，发现应用在使用了HTTPS协议的Web页面加载了使用HTTP协议的视频。
 
    ```shell
@@ -81,4 +81,4 @@ content_hash: sha256:868e3c9232c1265cd6d99ed91103e436021298541383b491ce96a4dea0f
 
    效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/FcNbdloRQCCQ1nbDU6A8LA/zh-cn_image_0000002628391676.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/QQzv_eNFShidQAEhBIETYg/zh-cn_image_0000002628391676.png "点击放大")

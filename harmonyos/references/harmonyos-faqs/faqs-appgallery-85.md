@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery-85
-title: AGC应用自检结果的不一致问题
-breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > AGC应用自检结果的不一致问题
+title: HarmonyOS 开发者中心应用自检结果的不一致问题
+breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS 开发者中心应用自检结果的不一致问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:de724d825bc858b8b8b51b411b2dada67a7a8549d74aae3b760f0c3465a99a59
+scraped_at: 2026-10-28T07:48:46+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1b20701a71a5c4cbe9e56d98b9f834a5de86fbc610ff6e7f978b8f997b78ddab
 ---
 
 ## 问题现象
@@ -30,7 +30,7 @@ content_hash: sha256:de724d825bc858b8b8b51b411b2dada67a7a8549d74aae3b760f0c3465a
 4. 两个自检路径：
    1. 邀请测试上架自检[发布测试版本](../app/agc-help-appgallery-release-testapp-0000002258174266.md#section6326193918558)：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mPTJNxJYRG2CfOykYYeCdg/zh-cn_image_0000002658913855.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/GVGFbKaTQVWAEffDsM3cew/zh-cn_image_0000002658913855.png "点击放大")
    2. 软件包管理启动自检[（推荐）上架自检](../app/agc-help-release-app-upload-pkg-0000002277983368.md#section15203163921310)：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/CgbvxTkFRWygxW1laStKmA/zh-cn_image_0000002658793915.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/7xwiLe-qRJiy03VWgGt-0Q/zh-cn_image_0000002658793915.png "点击放大")

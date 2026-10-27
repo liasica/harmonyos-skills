@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-121
 title: 点击H5页面中的按钮，未正常跳转其他页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 点击H5页面中的按钮，未正常跳转其他页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cd206fe51bdec5b6f373169a54aa0428445eb68f876156922025805b623b6012
 ---
 

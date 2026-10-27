@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-28
 title: 如何提升自定义相机拍摄照片的质感
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何提升自定义相机拍摄照片的质感
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
+scraped_at: 2026-10-28T07:48:24+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:8b9f4d41ef78533e8aae3a36a4828878b3767fd4afef9d32af368859dc385625
+content_hash: sha256:cb5c7946227dc9b0aba12fdd4d53b2c0f0bf17217799231a98ce88e023539941
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ content_hash: sha256:8b9f4d41ef78533e8aae3a36a4828878b3767fd4afef9d32af368859dc3
 
 应用中全局搜索setColorSpace，判断应用有无使用HDR Vivid的拍照功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_X9vblpER96uEhcTlAu89w/zh-cn_image_0000002628392570.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/zPAjuX5qRpy4gRudXM1Xiw/zh-cn_image_0000002628392570.png)
 
 ## 分析结论
 

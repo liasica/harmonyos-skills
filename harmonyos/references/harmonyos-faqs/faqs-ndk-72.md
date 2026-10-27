@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-72
 title: 如何在一个模块中使用另一个模块中编译出来的so
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在一个模块中使用另一个模块中编译出来的so
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9d257baee02cee05c252be7e136c1131650fab79cfade9167a0d6fcc1199f44e
 ---
 

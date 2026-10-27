@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1160
 title: 如何在bindSheet中实现页面切换的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在bindSheet中实现页面切换的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:45+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:addb633b22ab6235c3410e707c5fd18d63d1531eea3a1c40d76eedc4ffe9d5dc
+content_hash: sha256:13851b9f3070a358d7f61e1a4066d455e79c0a7751d8e06dfc44866ca6307a3e
 ---
 
 ## 问题现象
@@ -195,7 +195,7 @@ struct SheetBuilder2 {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/_qU1ejD1QaidARMbC-I4GA/zh-cn_image_0000002639986766.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/uKznGSbaSMyPoPC0dE9wfQ/zh-cn_image_0000002639986766.png "点击放大")
 
 ## 总结
 

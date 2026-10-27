@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1015
 title: LazyForEach嵌套递归使用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > LazyForEach嵌套递归使用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:43+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:15+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:402813669472403e7562beff9d04d40d297f274abd99f0bd0dd28df6f052cc0c
 ---
 

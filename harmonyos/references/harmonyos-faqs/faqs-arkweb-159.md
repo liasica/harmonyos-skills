@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-159
 title: 使用Web组件的同层渲染，同层组件无法触发Web组件的滚动
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 使用Web组件的同层渲染，同层组件无法触发Web组件的滚动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d72b62e596081ee6ac9bd15068a22975d3f2e671f6781d17ffd6e6755306c01d
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cd9de9cea345a92de4c5d435d6a978028fa12c74d1d9d760984f6856c4be592f
 ---
 
 ## 问题现象
@@ -39,7 +39,7 @@ Web({ src: $rawfile("embed_view.html"), controller: this.browserTabController })
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Q53qJd9gTJ2ZEXsIsfx0OA/zh-cn_image_0000002628899164.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/80RbzvEFQrKnMh0_o7AaIQ/zh-cn_image_0000002628899164.png "点击放大")
 
 ## 背景知识
 

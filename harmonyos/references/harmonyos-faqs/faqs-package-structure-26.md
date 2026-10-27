@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何获取当前HAP的BundleName
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何获取当前HAP的BundleName
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:46:46+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e846a77ef46d22df7d515de75466be1f6b2f183808ae1e8e7a8f8e88b0f4f931
 ---
 

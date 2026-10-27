@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-68
 title: OHAudio播放音频出现卡顿问题
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > OHAudio播放音频出现卡顿问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
+scraped_at: 2026-10-28T07:48:30+08:00
 doc_updated_at: 2026-07-09
-content_hash: sha256:460826d6c7983ee2d7c113dc66f625032b0478eb19555e023b7019c6ebaa2324
+content_hash: sha256:0c5bae45333945e403f5d733fdd5d9cd3ff4234c1113ea1525e0e70e9e8235b5
 ---
 
 ## 问题现象
@@ -95,7 +95,7 @@ OHAudio播放音频出现卡顿，如何定位？
    * 查看应用进程下的音频输出回调线程OS\_AudioWriteCB，其中RendererInClientInner::OnWriteData是应用送数据给系统的回调处理函数，trace中发现此回调函数处理耗时都小于1ms，没有明显堵塞问题，运行正常。
    * 查看RendererInClientInClient线程，会打印应用送给系统的数据大小，发现有几次为0的数据，这不是正常现象。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/1WIAqJmeTtaKgPHaQvoWug/zh-cn_image_0000002664157965.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/vI2EvKjUSF6h4n2QBbstUQ/zh-cn_image_0000002664157965.png "点击放大")
 
 ## 分析结论
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-45
 title: 如何在Native侧构建一个ArkTS对象
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在Native侧构建一个ArkTS对象
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:19050a6cd79b214eb58524de3fd0cb6f4c9d6ce9c8b0c69473c82550bfea1c20
 ---
 

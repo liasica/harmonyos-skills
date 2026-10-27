@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI-Image组件图片显示与处理常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI-Image组件图片显示与处理常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:33+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:d6a8be7e78c464b916511283df60ffa8c60efb5822de5029432de31a83ec1aa3
+scraped_at: 2026-10-28T07:47:00+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:6e90c2c3e1b823eb56e051fd9e5b58b135c23b85960e0637c41b2cf2ca9094c5
 ---
 
 **Q：gif图解码出来的PixelMap放到Image组件中只显示静态图，怎么显示动图？**
@@ -224,15 +224,15 @@ struct ChatBubbleStretchDemo {
 
 正常大小
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Ln1FCYwnSGyhDNQ8JzvJvw/zh-cn_image_0000002797250681.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9CK2h_YjQPiJiQwrQfk_uQ/zh-cn_image_0000002797250681.png "点击放大")
 
 左右拉伸操作
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/tvXz0ePWS9m9DPvL9GgVEA/zh-cn_image_0000002767970732.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/JzIc0v85Tqa-cYQA_lvMmg/zh-cn_image_0000002767970732.png)
 
 支持多行上下左右拉伸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/4E9UaLGlRQe3sMVaHALKVw/zh-cn_image_0000002797250683.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/JUza2639Q3q7uwhoG0oA0g/zh-cn_image_0000002797250683.png)
 
 上述示例实现的是图片拉伸中间，四周保持不变。还有另一种拉伸方式，实现图片拉伸四周，中间保持不变，示例如下。
 
@@ -309,7 +309,7 @@ struct DrawingLatticeResizeDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/fRcx4ksXRR2VIG_NEFvd2Q/zh-cn_image_0000002797370663.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/cAi69LyFQia0XMtPLTBNdA/zh-cn_image_0000002797370663.png "点击放大")
 
 **A**：要缓解图片放大时的锯齿问题，可将Image组件的interpolation属性设置为ImageInterpolation.High，以启用高质量的插值算法。
 
@@ -341,7 +341,7 @@ struct ImageScalingDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/02oKgKNbQGqq4vs4RG3HOw/zh-cn_image_0000002797250685.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/aaC6iEULRoW8qH4o5rkjqg/zh-cn_image_0000002797250685.png "点击放大")
 
 **Q：如何实现图片自适应不失真？**
 
@@ -352,7 +352,7 @@ struct ImageScalingDemo {
 
 **Q：在使用Image组件时，如何实现图片不进行任何缩放、裁剪或拉伸，直接按图源宽度和高度渲染？**
 
-**A**：通过将Image的fitoriginalsize属性设为true，可以在Image组件未设置宽高的情况下适应图源尺寸。具体参考[Column宽高自适应背景图片大小](../architecture-guides/educate-v1_1-ts_69-0000002406921685.md)。
+**A**：通过将Image的fitoriginalsize属性设为true，可以在Image组件未设置宽高的情况下适应图源尺寸。
 
 **Q：在使用Image组件时，如何自定义图片的显示尺寸，使其按相应比例进行缩放？**
 

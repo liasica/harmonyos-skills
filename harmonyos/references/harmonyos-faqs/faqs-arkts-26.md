@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-26
 title: 如何设置Task优先级
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 如何设置Task优先级
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b106a783881aed3c04c0248af80dab8a19840337c84a456a3bc98c32efee3f14
 ---
 

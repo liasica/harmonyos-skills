@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-720
 title: 怎么解决Image组件加载图片被旋转90度的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 怎么解决Image组件加载图片被旋转90度的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:40+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:60fa2dc593c650292ceac5129668b4d894e1a47a311fcdd5932d33359b0fa2b8
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:d4b0bb74da5fcde3436b68527bc72a83356ad2c3cbff16f3a8c2cb3e4334b5b3
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ struct ImageRotationProblem {
 
 左图为正常显示效果，右图为Image加载显示效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/HFwkJPWuRnao_cmaS8xMYA/zh-cn_image_0000002658794579.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/chL-pnVsRHSl_qbTJXw4Ww/zh-cn_image_0000002658794579.png "点击放大")
 
 ## 背景知识
 
@@ -42,7 +42,7 @@ struct ImageRotationProblem {
 
 1. 使用Image组件加载其他图片，检查是否为组件问题。由于“新闻”图片正常显示，确认非组件问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/U_kXHGeWTlur-_aGlTThAg/zh-cn_image_0000002628555212.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Bx_O8dWHS4KAk9UBUzrEzQ/zh-cn_image_0000002628555212.png "点击放大")
 2. 检查原图片Exif信息，定位其orientation属性。通过在线网站查看图片信息得知该图片的拍摄方向为逆时针旋转90度。由此，定位到图片被旋转的原因。
 
    | 属性 | 说明 | 值 |

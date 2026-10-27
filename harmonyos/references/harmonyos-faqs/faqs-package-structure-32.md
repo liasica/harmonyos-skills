@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: HAR包多账号如何上传
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > HAR包多账号如何上传
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:13+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:46:46+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:657cf8ad8d96d8990328d78dc0f4aacf78fc75b13a5aa31e9bb6483ec914f3f8
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-7
 title: 如何排查自定义界面扫码黑屏问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 如何排查自定义界面扫码黑屏问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:20+08:00
+scraped_at: 2026-10-28T07:48:29+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:6d17f5020e29a874f61f0cf3a784bd72995e2767db1f08d384867fd53663a1f8
+content_hash: sha256:1bddf677be5ae4aaf6b16ae9af0498457b0ff49d2fd17b87aba8cfd8b3ac15b3
 ---
 
 ## 问题现象
@@ -19,7 +19,7 @@ content_hash: sha256:6d17f5020e29a874f61f0cf3a784bd72995e2767db1f08d384867fd5366
 * [customScan.start](../harmonyos-references/scan-customscan-api.md#start)：启动扫码相机流。其中的viewControl参数是相机控制参数，类型是[ViewControl](../harmonyos-references/scan-customscan-api.md#viewcontrol)。
 * 自定义扫码业务流程图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/wvFPLgHWRb-pkSj3Gjya-w/zh-cn_image_0000002633596068.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/H1I_cPCwSm-vXVME8cPJjA/zh-cn_image_0000002633596068.png "点击放大")
 * 常见黑屏场景：
 
   | 常见黑屏问题场景 | 常见报错日志 | 根因 | 排查步骤 |
@@ -36,7 +36,7 @@ content_hash: sha256:6d17f5020e29a874f61f0cf3a784bd72995e2767db1f08d384867fd5366
 
 1. 检查是否有相机权限ohos.permission.CAMERA。流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/crmTrztnS5a7dR8V83tn3Q/zh-cn_image_0000002633596078.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/W59dKo2VTsaGN8GMS1RaiQ/zh-cn_image_0000002633596078.png "点击放大")
 
    检查日志，如果出现以下日志，则代表调用[customScan.init](../harmonyos-references/scan-customscan-api.md#init)方法时已获得相机权限：
 
@@ -92,7 +92,7 @@ content_hash: sha256:6d17f5020e29a874f61f0cf3a784bd72995e2767db1f08d384867fd5366
 
    错误流程示意图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/TTXun_cJSgG6OPeFKYu0mQ/zh-cn_image_0000002633436226.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/kLvmq3GyQKWF8ft2EVHHmQ/zh-cn_image_0000002633436226.png "点击放大")
 
    出现该问题可能得原因有：
 
@@ -131,14 +131,14 @@ content_hash: sha256:6d17f5020e29a874f61f0cf3a784bd72995e2767db1f08d384867fd5366
 
    排查流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/vIUAuey2SmuibTzmDkjHTQ/zh-cn_image_0000002663715357.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/wOcn1eOsRM-6i1W45kizDw/zh-cn_image_0000002663715357.png "点击放大")
 
    **说明** 
 
    流程图中置绿色背景部分是较新版本中宽高比不匹配时也能正常扫码，不会黑屏。在2025年5月之前的版本中，宽高比不匹配会有报错日志Internal error. The width and height of viewControl do not match the width and height supported by the camera.，并且扫码区域显示黑屏。后续版本已移除相关报错，可以正常显示画面，但会出现画面拉伸问题影响预览流体验，建议宽高比保持在16:9、4:3、1:1范围内。
 4. 排查在应用退至后台/手机设备锁屏/退出页面等场景下，是否释放扫码相机流。流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/JtL9x9tIQKWMvuaw40oe8A/zh-cn_image_0000002633436874.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/v62SOq9XQLC0z2CUbvZpDw/zh-cn_image_0000002633436874.png "点击放大")
 
    如果在返回扫码页面时出现以下日志，则代表相机重启失败，执行start方法前没有调用[customScan.stop](../harmonyos-references/scan-customscan-api.md#stop)、[customScan.release](../harmonyos-references/scan-customscan-api.md#release)接口释放扫码相机流：
 

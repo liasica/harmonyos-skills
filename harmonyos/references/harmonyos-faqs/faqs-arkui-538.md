@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-538
 title: 分栏模式下，页面切换无响应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 分栏模式下，页面切换无响应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b2269686e79028e49f475e231dfc4c7a3b2adac10343c95d1b280a0c5eaa5cda
 ---
 

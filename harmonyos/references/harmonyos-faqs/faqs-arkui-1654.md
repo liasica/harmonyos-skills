@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1654
 title: FrameNode自定义的TextArea节点如何实现自适应文本宽度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > FrameNode自定义的TextArea节点如何实现自适应文本宽度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:61ba93c4c198095b67317ad38cdf06b1e0bdcbe3a841993bf2a94dc9f0f31d0c
 ---
 

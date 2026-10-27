@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1162
 title: PersistenceV2持久化保存数据如何实现整体赋值
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > PersistenceV2持久化保存数据如何实现整体赋值
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f8791be07b519fb18378708020fc0ed978bf504cd1caabf4528c11fd38049208
 ---
 

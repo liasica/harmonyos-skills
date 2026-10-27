@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 引用三方库图片资源报错
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 引用三方库图片资源报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
+scraped_at: 2026-10-28T07:48:50+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:995213d5ca8e17c7f7fdfce81683cbef43eb07c794e7b47f1d5d28414232567c
+content_hash: sha256:6125369fa24b220cb617cc3125cfbd97492a4ff71746c5182998b73ca3a76bd9
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ content_hash: sha256:995213d5ca8e17c7f7fdfce81683cbef43eb07c794e7b47f1d5d2841423
    ```
 2. 检查工程级oh-package.json5文件，确定三方库已安装成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/RveTeB2YQlSGXieKgPP1mg/zh-cn_image_0000002628408062.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/O58f0t3MRhKXSnE3EJB8Wg/zh-cn_image_0000002628408062.png "点击放大")
 3. 在工程中使用@ohos/zxing的scan\_back图片资源，发现资源报未知资源错误。
 
    ```ts
@@ -44,7 +44,7 @@ content_hash: sha256:995213d5ca8e17c7f7fdfce81683cbef43eb07c794e7b47f1d5d2841423
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Hzn5zHoCTUS2Chgdw90xyQ/zh-cn_image_0000002628567958.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/MZ017ZZZR2ONRrFsRC5sfA/zh-cn_image_0000002628567958.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 旋转锁定失效
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 旋转锁定失效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:8161b85add198e9baa5c174c2d9bf42b5b48d889f33365c5d4956bc365594b59
+scraped_at: 2026-10-28T07:48:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:35648031a9b3e2378135a85e02e555d9f663424c0fcbf5324e48c827340338e6
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:8161b85add198e9baa5c174c2d9bf42b5b48d889f33365c5d4956bc3655
 
 * [横竖屏切换](../best-practices/bpta-landscape-and-portrait-development.md)：为实现应用内既支持竖屏又支持横屏，并在不同页面呈现不同方向，需要在应用逻辑中动态切换窗口方向。目前在HarmonyOS系统中，窗口的旋转形态包括以下四种，窗口的状态对应真机实际状态如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/naxQqlEmSQihwBLmPyV7LA/zh-cn_image_0000002686049237.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/v6rqJmEWRwy1XOh3Dvp9dg/zh-cn_image_0000002686049237.png "点击放大")
 * [module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)的orientation标签：标识当前UIAbility组件启动时的方向。
 * [setPreferredOrientation](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)：设置主窗口的显示方向属性，使用Promise异步回调。
 * [orientation](../harmonyos-references/arkts-apis-window-e.md#orientation9)：窗口显示方向类型枚举。

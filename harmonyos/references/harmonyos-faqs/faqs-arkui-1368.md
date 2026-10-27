@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1368
 title: 如何判断APP内容是否被截屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何判断APP内容是否被截屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:889409c6f3627a08e8cc02b8e8ce80ea100406406af556dac1cefcfa3c6e251e
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:99ad5558a757eb265ca3b35795331f5bb6227e5ef71557c466d2884b4bb8ebdf
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ window模块提供的对截屏事件的监听，不仅在应用内截屏会触�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/C5ddtYrIR56knabzM49_3g/zh-cn_image_0000002658841303.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/1POvJ1xWTtyVrZhilsNKQQ/zh-cn_image_0000002658841303.gif "点击放大")
 
 ## 背景知识
 

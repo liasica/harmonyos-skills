@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 生成的二维码图保存到本地图片失败
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 生成的二维码图保存到本地图片失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:08+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2e2fd15d7ccb8ea00354ce9c09c3f6d74e8f3d5d2de70ea6093a4e6f08bd271b
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-48
 title: 如何获取PixelMap图像的文件大小
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何获取PixelMap图像的文件大小
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7acd86961edd81f3033cf9189e7e2c2393405017d13bdac5a31e8b7faed4ebb9
+scraped_at: 2026-10-28T07:48:27+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f9d0f141382b5e795e1580bf9445bbb4713ecc35f2897e18ff7fecdc492d2a93
 ---
 
 ## 问题现象
@@ -96,9 +96,9 @@ struct Page {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/4eQqQw0yTJiR59U46Tg0Jg/zh-cn_image_0000002658911821.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/QM3i104yS_-01R-1GDppcg/zh-cn_image_0000002658911821.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Bz9enBOQQrOTsMF3EG2Slw/zh-cn_image_0000002628392612.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/oddl5QSBS4-_mtQEp7SThw/zh-cn_image_0000002628392612.png "点击放大")
 
 ## 常见FAQ
 

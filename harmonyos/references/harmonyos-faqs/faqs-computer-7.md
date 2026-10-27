@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-computer-7
 title: PC应用如何隐藏导航栏右上角三键
 breadcrumb: FAQ > 多设备场景 > 电脑 > 常见问题 > PC应用如何隐藏导航栏右上角三键
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:38+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:d8a0d0dc41459614e90c432dcc358a1e81ed7c190d55dce9148dbddc5eae0d4c
+content_hash: sha256:c135a88b06b5d7502e7e04917d983b174aeca449e47fd4b41f32f6de13ba8698
 ---
 
 ## 问题现象
@@ -21,10 +21,10 @@ PC应用非全屏状态下或者自由多窗模式下如何不显示右上角三
 1. 配置定时任务间隔，通过[onMouse](../harmonyos-references/ts-universal-mouse-key.md#onmouse)事件判断鼠标在应用中是否保持静止。
 2. 若鼠标静止，获取应用窗口实例，使用[setWindowDecorVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)主动隐藏状态栏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/q8YT7SveSUePqrsocquaVA/zh-cn_image_0000002680372243.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/QhGJAye1RdStKm6sPjknwA/zh-cn_image_0000002680372243.png "点击放大")
 3. 如上图窗口右上角三键此时未隐藏，使用[setWindowTitleButtonVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowtitlebuttonvisible14)主动隐藏三键，以获取沉浸式体验。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/M1OAl2AVSsCleGqfH7d6_Q/zh-cn_image_0000002680212499.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sPTFM8cRTriC1TxZUZAw2Q/zh-cn_image_0000002680212499.png "点击放大")
 
    ```ts
    import { common } from '@kit.AbilityKit';

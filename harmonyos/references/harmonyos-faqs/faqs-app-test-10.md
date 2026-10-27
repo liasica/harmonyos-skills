@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-1
 title: DevEco Studio AppAnalyzer-安装Python依赖错误
 breadcrumb: FAQ > DevEco Studio > 应用测试 > DevEco Studio AppAnalyzer-安装Python依赖错误
 category: harmonyos-faqs
-scraped_at: 2026-09-18T06:55:17+08:00
-doc_updated_at: 2026-09-17
+scraped_at: 2026-10-28T07:49:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:81446d8d7c67928e6d08b24a41642706843ec0729627cb4a2c81aa99af544dec
 ---
 

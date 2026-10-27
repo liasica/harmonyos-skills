@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 项目多人开发时会导致signingConfigs冲突，该如何协调
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 项目多人开发时会导致signingConfigs冲突，该如何协调
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
+scraped_at: 2026-10-28T07:48:57+08:00
 doc_updated_at: 2026-07-22
-content_hash: sha256:faa6f18675b005bbcb4fc3979cd9a2716a453143d5860bef10f2cf4e0b70b711
+content_hash: sha256:4ab3edc07584080cef4860eaa5ccb3f7600627b94603b5f58bbeeb4e0fa09c6d
 ---
 
 ## 问题现象
@@ -43,7 +43,7 @@ at E:\work\1200_iabp_harmonyos\build-profile.json5
 
 * **方式一：signingConfigs中使用相对路径。**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/myx9dLZFQwWmLZKCgPN81w/zh-cn_image_0000002677866951.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/NTgiRXZPRiWouY-k7oN4nQ/zh-cn_image_0000002677866951.png "点击放大")
 
   签名使用相对路径可以做到多人共用签名、git不冲突、可以将团队内设备的udid都添加到该签名中就可以直接安装。但是可能存在的问题：
 
@@ -51,7 +51,7 @@ at E:\work\1200_iabp_harmonyos\build-profile.json5
   2. 当新增权限（需要ACL提权的）、新增设备的udid都需要管理该签名的人重签名一份上传，其他人有需要时再重新拉取代码。
 * **方式二：使用自定义构建任务动态修改signingConfigs。**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/BX9UOrydTkKPU5gTSoXJbQ/zh-cn_image_0000002678026805.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/dxlg9YCAQWG-sTK8BBRcPg/zh-cn_image_0000002678026805.png "点击放大")
 
   这种方式可以将签名配置信息独立出来，git不冲突，每人也可使用自己的签名，流水线构建时使用专属签名即可。
 

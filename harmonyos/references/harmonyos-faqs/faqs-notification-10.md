@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 应用通知点击跳转异常
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 应用通知点击跳转异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:30+08:00
-doc_updated_at: 2026-08-12
-content_hash: sha256:8aed07e3f96673acfb26933e2533943279d2df032c852ed62d4467252e8ebe35
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3a22bf709f93bac822fcb74c3a891c3c11a0e2583b73a966eb5b9984d8f7ef4b
 ---
 
 ## 问题现象
@@ -20,11 +20,11 @@ content_hash: sha256:8aed07e3f96673acfb26933e2533943279d2df032c852ed62d4467252e8
 * [requestEnableNotification()](../harmonyos-references/js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10-1)：为确保应用可正常收到消息，应用发送通知前调用该方法弹出提醒，告知用户需要允许接收通知消息。详情请参见Notification Kit-[请求通知授权](../harmonyos-guides/notification-enable.md)。
 * [信息传递载体Want](../harmonyos-guides/want.md)：[Want](../harmonyos-references/js-apis-app-ability-want.md)是一种对象，用于在应用组件之间传递信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/xAviCcfBQgCCY2yGYQXpZA/zh-cn_image_0000002628554614.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/_m-uKWFXSGqyX8C4ngegIg/zh-cn_image_0000002628554614.png "点击放大")
 * [Notification Kit（用户通知服务）](../harmonyos-guides/notification-kit.md)：提供本地通知发布通道，开发者可借助Notification Kit将应用产生的通知直接在客户端本地推送给用户（[相关API参考](../harmonyos-references/notification-api.md)）。
   + [为通知添加行为意图](../harmonyos-guides/notification-with-wantagent.md)：当发布通知时，如果期望用户可以通过点击通知栏拉起目标应用组件或发布公共事件，可以通过[Ability Kit（程序框架服务）](../harmonyos-guides/abilitykit-overview.md)申请[WantAgent](../harmonyos-references/js-apis-app-ability-wantagent.md)封装至通知消息中。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/DQ_QGdBdQHa8HpImFwQuxg/zh-cn_image_0000002658913941.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/T3Hwt1jWSHylIw0QfcYumw/zh-cn_image_0000002658913941.png "点击放大")
 * [Push Kit（推送服务）](../harmonyos-guides/push-kit-guide.md)：华为提供的消息推送平台，建立了从云端到终端的消息推送通道。您通过集成推送服务，可以向客户端应用实时推送消息（[HarmonyOS应用推送服务开发](../HMSCore-Guides/harmony-java-quickstart-0000001153706156.md)）。
   + [点击消息动作](../harmonyos-guides/push-send-alert.md#点击消息动作)：云侧发送消息时，[clickAction](../harmonyos-references/push-scenariozed-api-request-param.md#clickaction)中携带data字段并设置**actionType**字段。
 

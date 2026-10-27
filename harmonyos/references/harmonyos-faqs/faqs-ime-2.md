@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ime-2
 title: 通过外接键盘无法输入数字
 breadcrumb: FAQ > 应用框架开发 > 输入法框架 > 输入法开发（IME） > 通过外接键盘无法输入数字
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0eac1d0085b0fba2bb50be312bcd4d5ac5b04b12f784253f00d44741826f5b0a
+scraped_at: 2026-10-28T07:47:57+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:73a5722d650b137fc64250427a51bd5e8c517b095a0cde1548dbe47f81dbc1aa
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ content_hash: sha256:0eac1d0085b0fba2bb50be312bcd4d5ac5b04b12f784253f00d44741826
   2. 再向输入法分发，输入法会消费按键用作输入。
   3. 再次将事件发给ArkUI框架，用于响应系统默认Key事件（例如走焦）以及获焦组件绑定的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent)回调。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/MCL57hkNTROMMhc8ZyeX9g/zh-cn_image_0000002628820890.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/djITGA1XSuG9JvlJc8l2ew/zh-cn_image_0000002628820890.png "点击放大")
 
 ## 问题定位
 

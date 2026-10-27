@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 卡片开发中如何实现数据持久化
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 卡片开发中如何实现数据持久化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-07-07
+scraped_at: 2026-10-28T07:47:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c09ee04845aa555be88e0a63d4efd50c32c73e3ad1f38e3838f219ec2e5eefd2
 ---
 

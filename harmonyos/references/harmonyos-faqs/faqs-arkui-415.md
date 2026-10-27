@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-415
 title: Navigation通过pushPathByName跳转页面为什么显示空白
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation通过pushPathByName跳转页面为什么显示空白
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a5f11136a003a5d1dab2ad935a28bcca42a94ea7615dd2647db188575e4c57f8
 ---
 

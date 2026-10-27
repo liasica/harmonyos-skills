@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-216
 title: 如何使用iconfont
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使用iconfont
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0353a26c0ec7771b04d05a7630dd48038aa4ca174fdd5521e69d0fa96b0d2c62
 ---
 

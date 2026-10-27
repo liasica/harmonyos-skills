@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-76
 title: 在使用UIAbilityContext时报401“The context must be a valid Context”的Context类型错误
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 在使用UIAbilityContext时报401“The context must be a valid Context”的Context类型错误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d3c8311470b6991e9b3edf8044feefe33e426e302f9bc941590289bbf85afa6f
 ---
 

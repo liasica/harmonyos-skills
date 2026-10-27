@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-981
 title: 如何在环形DataPanel组件上显示百分比信息
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在环形DataPanel组件上显示百分比信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:fbdd33f1527968cf50f9caa92c9b27d1287538ecda0b0bcc6fd6091feaa53c83
+scraped_at: 2026-10-28T07:47:15+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:acc38b9c5efcd29022d86a2e5e294e1c5cda48bc9d33bee40bd33bb9810e823c
 ---
 
 ## 问题现象
 
 如何在环形DataPanel组件上显示百分比信息，即DataPanel组件与百分比联动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/lMLTCnI4Q8WUpC-51YY-eg/zh-cn_image_0000002658801071.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/0zzUItSPRd2tkuzAGeUyFw/zh-cn_image_0000002658801071.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/m02YrxjZSsaP4quNJGQEfg/zh-cn_image_0000002628401804.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/KI9ECkQ_QFGLQGG-4V660Q/zh-cn_image_0000002628401804.png "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1558
 title: 一键抠图后图片边缘锯齿化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 一键抠图后图片边缘锯齿化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ef0c8f034b2b61d53fba247b090087e860efe3a6ba4f89610e1d81d4bf8b5485
 ---
 

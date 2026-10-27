@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-867
 title: 文本超出显示的高度范围
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 文本超出显示的高度范围
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:e148400b1ef3f7acd542fe665d3a88784a0f23553fd47c8e82f95e0a625ce7d5
+content_hash: sha256:d6c1c59ed4a720b220af6c48a94bfcec897d4b9cede2f3ee63ab2dd4c15ccef7
 ---
 
 ## 问题现象
@@ -23,10 +23,10 @@ content_hash: sha256:e148400b1ef3f7acd542fe665d3a88784a0f23553fd47c8e82f95e0a625
 
 1. 通过DevEco Testing For Device的UIViewer工具可以看到[Text](../harmonyos-references/ts-basic-components-text.md)组件的宽为1197，高为130。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/OqD60qTqQTS8_cm5p2dhmQ/zh-cn_image_0000002628558798.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/xCFXgrG-QNCgdOk8UxJ7qQ/zh-cn_image_0000002628558798.png "点击放大")
 2. 父组件Column的宽为1216，高为260。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/iIJnOdhRTHO0D3KqHaIuzQ/zh-cn_image_0000002658918115.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/c6myHv7_TduQriiJ4OAdPA/zh-cn_image_0000002658918115.png "点击放大")
 3. [Text](../harmonyos-references/ts-basic-components-text.md)文本组件和其父组件宽高属性正常，但文本显示高度明显超过了[Text](../harmonyos-references/ts-basic-components-text.md)和其父组件的高度范围。
 
 ## 分析结论
@@ -70,7 +70,7 @@ content_hash: sha256:e148400b1ef3f7acd542fe665d3a88784a0f23553fd47c8e82f95e0a625
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/U_9m6HgdRcepYYXnWFD1-w/zh-cn_image_0000002628398898.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/tFAP-GPsSPGq9nQfnuOKJg/zh-cn_image_0000002628398898.png "点击放大")
 * 方案二：配置[Text](../harmonyos-references/ts-basic-components-text.md)组件的[maxLines](../harmonyos-references/ts-basic-components-text.md#maxlines)和[textOverflow](../harmonyos-references/ts-basic-components-text.md#textoverflow)属性，使得文本最大显示行数在组件高度范围内，并且超出部分通过省略号显示。长按文本通过bindContextMenu绑定菜单显示完整内容。
 
   ```screen
@@ -113,7 +113,7 @@ content_hash: sha256:e148400b1ef3f7acd542fe665d3a88784a0f23553fd47c8e82f95e0a625
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/dE1yMlqRSSWXaFfKYuRRzg/zh-cn_image_0000002658798175.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/avGlTapAR0uUjV3YRh2tIg/zh-cn_image_0000002658798175.png "点击放大")
 * 方案三：[Text](../harmonyos-references/ts-basic-components-text.md)父组件高度设置为auto或自定义高度。
 
   ```screen
@@ -147,4 +147,4 @@ content_hash: sha256:e148400b1ef3f7acd542fe665d3a88784a0f23553fd47c8e82f95e0a625
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/1Pc3BEDGSaqemlPQcaCJiA/zh-cn_image_0000002628558802.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/fgcwYDMlTpm80ZOFX8fNTQ/zh-cn_image_0000002628558802.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何实现后台定时器
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何实现后台定时器
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c7fddfa6d18f91f4b8c1180a099b2805234b2facbaafa30160c0fb26662a38d0
 ---
 

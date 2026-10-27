@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI设置图形效果与颜色渐变的常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI设置图形效果与颜色渐变的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:32+08:00
+scraped_at: 2026-10-28T07:46:59+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:cd782f9f0fbd4820832a89612b873d6b522dcbddad5c89f52b5e9fe29d0766f8
+content_hash: sha256:c0d13d1ff2106a752e4369c96d682f717cbf3e8ac02842cf373226bac80d8eb8
 ---
 
 **Q：组件如何设置模糊效果？**
@@ -81,7 +81,7 @@ struct Page1 {
 
   如下图示例：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/4bS1OHG8TLSIwEavqoQ2EA/zh-cn_image_0000002795434133.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/dd0nsNhNTeuWaNOX7YVn3A/zh-cn_image_0000002795434133.png "点击放大")
 
 **Q：linearGradient如何设置渐变方向和多颜色配置？**
 

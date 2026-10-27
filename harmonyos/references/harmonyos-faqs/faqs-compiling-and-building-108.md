@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 构建报错"Cannot read properties of undefined(reading 'XXX')"
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建报错"Cannot read properties of undefined(reading 'XXX')"
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
+scraped_at: 2026-10-28T07:48:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:c13ac73ede9df38c037a10fbec3d08fdf74b9e1aa9640963e60863da20103f44
+content_hash: sha256:1d9cc2fa5281d418f236adf7b6489b5604b4fa753d8fcb85c6ad9e88a71c7427
 ---
 
 请先根据XXX的值从以下场景排查，没解决问题再参考最终方案。
@@ -37,7 +37,7 @@ content_hash: sha256:c13ac73ede9df38c037a10fbec3d08fdf74b9e1aa9640963e60863da201
 
      假设是entry模块的hvigorfile.ts中的代码导致的问题 ，XXX的有效值就是下图中的“default@SignHap”、“default@CollectDebugSymbol”、“assembleHap”等值。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/wckxJMwOQae12MRNd99sKg/zh-cn_image_0000002624478544.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/H9GNhAMTQrmpqy6J8axMsg/zh-cn_image_0000002624478544.png)
   2. 确保getTaskByName的使用位置是在Hvigor的配置阶段及之后的生命周期里，包括beforeNodeEvaluate、afterNodeEvaluate、nodesEvaluated、taskGraphResolved、buildFinished。
 
   **参考链接**
@@ -165,7 +165,7 @@ content_hash: sha256:c13ac73ede9df38c037a10fbec3d08fdf74b9e1aa9640963e60863da201
 
   确认堆栈内容是否如下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/_ftigbfIThObSVK_6gRNYQ/zh-cn_image_0000002654797903.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/tqhN8AemS9ytw4HEAS7hFg/zh-cn_image_0000002654797903.png)
 
   **解决措施**
 
@@ -176,7 +176,7 @@ content_hash: sha256:c13ac73ede9df38c037a10fbec3d08fdf74b9e1aa9640963e60863da201
 
   执行hap覆盖率测试时，出现报错：“Error Message: Cannot read properties of undefined (reading 'module')”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/TcK9KkzmT36yEMtzs-XwWg/zh-cn_image_0000002624638448.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ZIrOXZyHQ_OXGOfwGdS4BQ/zh-cn_image_0000002624638448.png)
 
   **可能原因**
 
@@ -186,7 +186,7 @@ content_hash: sha256:c13ac73ede9df38c037a10fbec3d08fdf74b9e1aa9640963e60863da201
 
   检查工程所有模块，如果build-profile.json5下targets里配置了ohosTest，模块内确保有src/ohosTest目录及目录对应结构；如不需要ohosTest，则在targets内删除ohosTest。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/M98ChxMMT6aOw-6Yp19HnQ/zh-cn_image_0000002654837857.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/QajUbis8QYOLGzSrpm2Xcg/zh-cn_image_0000002654837857.png)
 * **最终方案：**
 
   如果以上场景都不符合，打开堆栈后，根据堆栈信息排查代码。
@@ -208,4 +208,4 @@ content_hash: sha256:c13ac73ede9df38c037a10fbec3d08fdf74b9e1aa9640963e60863da201
 
   请按照如下步骤进行操作：[提单链接](https://developer.huawei.com/consumer/cn/support/)，在线提单 -> 问题分类选择"HarmonyOS NEXT / 开发工具 / DevEco Studio"。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/wCXLxQLvTqWo22PUnRN-sg/zh-cn_image_0000002624478546.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/AT1yfswtRbG9WrNTqxU56A/zh-cn_image_0000002624478546.png)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 应用如何更新进度条
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 应用如何更新进度条
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:32+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2083d3eb72d4fdd27b982021c6cdba791c29f7cd03420fb9118ff3155e6f3334
 ---
 

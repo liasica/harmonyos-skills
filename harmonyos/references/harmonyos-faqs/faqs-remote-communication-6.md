@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: 如何实现rcp网络请求时忽略csr证书校验
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > 如何实现rcp网络请求时忽略csr证书校验
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e402cdcfb1f504220bd3fd2e23b958c97070bacd1e98869c6bca8590825d17cb
 ---
 

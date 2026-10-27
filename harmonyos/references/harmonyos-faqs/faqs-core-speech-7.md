@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-core-speec
 title: 文本转语音男声音色无效
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > 文本转语音男声音色无效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:49:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d195575410cb26ef8c072a22eb388c8c253e9fbfad5cfb90a8535863850e9af5
 ---
 

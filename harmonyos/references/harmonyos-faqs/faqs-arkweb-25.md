@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-25
 title: 多个Cookie如何进行批量设置
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 多个Cookie如何进行批量设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b9fd944b00c0a8bfb5ffe9ab3f2dd9c0b289562a1bc85e95f0f28f7fa850f8b2
 ---
 

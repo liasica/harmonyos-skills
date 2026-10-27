@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-417
 title: NavDestinationMode.DIALOG模式下，如何针对弹窗内容或者背景遮罩做转场动效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > NavDestinationMode.DIALOG模式下，如何针对弹窗内容或者背景遮罩做转场动效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:301df85fe05513d364f8d85b71f43f16278174ee48b50912a55fc9012f35ea33
 ---
 

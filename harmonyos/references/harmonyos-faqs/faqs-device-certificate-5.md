@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-device-cer
 title: APP备案如何获取公钥和证书指纹
 breadcrumb: FAQ > 系统开发 > 安全 > 证书管理（Device Certificate） > APP备案如何获取公钥和证书指纹
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:56+08:00
+scraped_at: 2026-10-28T07:48:12+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:cece334ccac9d43033e084b09d75c654629dd79f4d8856ffc8c6f8f26f3ee655
+content_hash: sha256:b5fe4cb4f358465a8d48d6a0585fba67de6d64d648e8ccb08108b1f35602fdb4
 ---
 
 ## 问题现象
 
 移动端应用在各大平台使用云资源时，需要在对应的平台进行应用备案，平台会要求提供应用对应的公钥和证书md5指纹的信息。示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/UwqpuVTXT2mjq-utebM_ag/zh-cn_image_0000002679828592.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/yfzd9pi1Tjqy6jviH8uUkQ/zh-cn_image_0000002679828592.png "点击放大")
 
 ## 背景知识
 
@@ -22,14 +22,14 @@ content_hash: sha256:cece334ccac9d43033e084b09d75c654629dd79f4d8856ffc8c6f8f26f3
 
 1. 登录HarmonyOS 开发者中心，点击“证书、APP ID和Profile”，在页面左侧点击“证书”，下载需要备案的HarmonyOS应用的发布证书。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/riM9yE88QSmIRrG88s0XTQ/zh-cn_image_0000002679988488.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/oC6YdhEIQvGVd_c7JQPcvQ/zh-cn_image_0000002679988488.png "点击放大")
 2. 使用文本编辑器（如记事本）打开已下载的证书，删除前两段证书（根证书和中间证书），只保留最后一段证书（叶子证书），点击保存。
 3. 双击打开已保存的证书，点击“详细信息-公钥”，获取APP的公钥信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/9VyBrddiSnyJm5yicPr_3A/zh-cn_image_0000002709668373.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/LVBJb0UgQJCL_PhgzitRvw/zh-cn_image_0000002709668373.png "点击放大")
 4. 双击打开已保存的证书点击“详细信息-指纹”，获取APP的指纹信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/T5vjoN7kRDKXnU_DZ0BMww/zh-cn_image_0000002679828768.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/lGNs3SDzSJCZnTLoJEDbBQ/zh-cn_image_0000002679828768.png "点击放大")
 
    **说明** 
 

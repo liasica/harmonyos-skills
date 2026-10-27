@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-457
 title: 当一个组件同时绑定了点击事件（onClick）和并行手势（.parallelGesture），为什么当操作为长按时，两个手势都会响应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 当一个组件同时绑定了点击事件（onClick）和并行手势（.parallelGesture），为什么当操作为长按时，两个手势都会响应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:96e703a72d4d84d867c8b784ef55fb68e2468332d58dfee7cae48e70e51f9062
 ---
 

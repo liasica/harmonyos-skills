@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: flutter页面滑动卡顿
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > flutter页面滑动卡顿
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e28e7b5dad5cf2789be8ff75d304ef84964dc898421f38cc63ea96061aeaad20
+scraped_at: 2026-10-28T07:46:42+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ba62975fbe21e32c2613cb7cd985983aacca36ec47afc122d334d6f935b6c5eb
 ---
 
 ## 问题现象
@@ -56,29 +56,29 @@ content_hash: sha256:e28e7b5dad5cf2789be8ff75d304ef84964dc898421f38cc63ea96061ae
 
   1. 使用Profiler Frame分析能力抓取该过程的Trace信息，根据H:touchEventDispatch泳道的Trace点找到页面滑动的过程，并点击Frame泳道下的子泳道Display Vsync可看到该过程的屏幕刷新率为119，Flutter页面各线程的单帧处理时间需控制在8.3ms以内，否则会出现滑动卡顿的问题。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/hrGu9pQqS6qkqeKJ2PWwow/zh-cn_image_0000002658914251.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/xWE2ocz9SkeKnNqLY7pXXA/zh-cn_image_0000002658914251.png "点击放大")
   2. 查看页面滑动附近ui线程的Trace信息，发现ui线程在进行绘制时耗时较长，平均一帧绘制耗时达到39ms左右，远远超出了8.3ms。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/uTm1J9jOSh-EBDKBmF9DoA/zh-cn_image_0000002658794299.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/6tF9kdL8RJWM96v5FGMGsg/zh-cn_image_0000002658794299.png "点击放大")
   3. 在Callstack泳道的ui[65405]子泳道中查看ui线程单帧绘制时的调用栈，发现耗时主要集中在libapp.so文件，该文件是由应用Dart业务代码打包生成的，因此此处耗时与应用业务逻辑有关。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/OKOi5wrBQM2QMs_LXMzvsg/zh-cn_image_0000002628554936.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/hqI95i2ORFCGboEX1rzyuQ/zh-cn_image_0000002628554936.png "点击放大")
 * **场景二**：
 
   以某应用Flutter页面滑动丢帧为例，定位过程如下：
 
   1. 使用Profiler Frame分析能力抓取该过程的Trace信息，根据H:oh\_flutter\_1Surface和VSyncGenerator泳道找到页面滑动丢帧的具体位置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/L6x65b8bQBykEnng8N3ROA/zh-cn_image_0000002628395036.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/atwRz1-2REyaCp48hxvRtw/zh-cn_image_0000002628395036.png "点击放大")
   2. 在应用包名泳道中找到ui、raster线程，在render\_service泳道中找到render\_service、RSUniRenderThre子泳道。依次排列后可以看到信号传递过程，发现中间存在丢帧现象。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/lwwzWZiBTkS3rHPCFE36rg/zh-cn_image_0000002658914253.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/SDhIi2DnQo-H-D9TCu_93w/zh-cn_image_0000002658914253.png "点击放大")
   3. 向下继续找到ui、raster对应的泳道，可以看到由位置1到位置2，ui线程和raster线程总计耗时超过10ms，120Hz情况下两帧间隔8.33ms，因此导致在位置2处没有发送信号。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/7a4snbehQIqpJaOY8igurA/zh-cn_image_0000002658794301.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/pNEfavhXQamYxIM1mYP8Tg/zh-cn_image_0000002658794301.png "点击放大")
   4. 在Callstack泳道的ui[47556]以及raster[47557]子泳道中查看ui和raster线程单帧绘制时的调用栈，发现耗时主要集中在libflutter.so文件中。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/u2DliD4LRM2OMDQse0iUSg/zh-cn_image_0000002628554938.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/LhbQDXKYSFW-CvT2qPLjug/zh-cn_image_0000002628554938.png "点击放大")
 
 ## 分析结论
 

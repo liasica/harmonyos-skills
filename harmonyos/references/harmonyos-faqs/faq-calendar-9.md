@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-calendar-9
 title: 三方应用如何获取系统日历中的日程
 breadcrumb: FAQ > 应用服务开发 > 日历服务（Calendar Kit） > 三方应用如何获取系统日历中的日程
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fab1f4d55af51fbfe07b1fdc118ab3eee495847b84af71311aa08e33962f333d
 ---
 

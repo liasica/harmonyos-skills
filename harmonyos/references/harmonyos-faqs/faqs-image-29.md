@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-29
 title: 如何将图片转换为Base64格式
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何将图片转换为Base64格式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
+scraped_at: 2026-10-28T07:48:27+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:bd9bf981e6d06094bbe5868ac8c98848adf3fcaa02a899ff2f4a785b095cb201
+content_hash: sha256:aa593fe976596282f752a474f62489eb74ccadd56cf5ca083be83381b99e9228
 ---
 
 ## 问题现象
@@ -333,4 +333,4 @@ Q：对于不同路径获取到的ArrayBuffer数据，如何判断是否为空�
 
 A：可以将文件存入沙箱中，将文件拖进notepad中，查看其二进制数据，除去头尾之外，如果大部分均为0数据，说明该ArrayBuffer为一个空Buffer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/SH-7IHwKTIy4mTx_j6sdYQ/zh-cn_image_0000002628552488.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Ow6vXJ1ESpqv0r6ws7fUcw/zh-cn_image_0000002628552488.png "点击放大")

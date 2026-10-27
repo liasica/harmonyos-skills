@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-947
 title: Grid内组件用stateStyles实现按压效果有延迟
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Grid内组件用stateStyles实现按压效果有延迟
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0d8af512b5e861b3f10fd3e70bbfe06e0fdd085166ca6aabc70d522a7c3e4d1e
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:8de5868cee8a7784ec344d29deb2a9205deefaa12d6449075be56d19240705f8
 ---
 
 ## 问题现象
@@ -61,11 +61,11 @@ struct GridExample {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/F5vamYF8Q7eblC9mpkUBdA/zh-cn_image_0000002628561144.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Hbw_dbHuQP-jI9XJvXr61Q/zh-cn_image_0000002628561144.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/TopJ2b5gQRqEChB6idTATw/zh-cn_image_0000002658920449.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/NQo0tbXySMan2RJTXPj8bA/zh-cn_image_0000002658920449.gif "点击放大")
 
 ## 背景知识
 

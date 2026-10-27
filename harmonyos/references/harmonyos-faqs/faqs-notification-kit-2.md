@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 如何让事件只在一个UIAbility实例中传递
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 如何让事件只在一个UIAbility实例中传递
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e1134b9ac23bb99a867e3e4b22355c493799e81a251ddaa3356fe210c116b42e
 ---
 

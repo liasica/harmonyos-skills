@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-3
 title: 如何对多个C++源文件中接口进行导出声明
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何对多个C++源文件中接口进行导出声明
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:530f95391a813ee858dd6ed6ce9cc08ea2ba5fdba7dd001ad1d524b0e51316ee
 ---
 

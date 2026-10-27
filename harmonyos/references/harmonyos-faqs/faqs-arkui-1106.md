@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1106
 title: List如何实现单击、长按气泡及拖动排序的功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > List如何实现单击、长按气泡及拖动排序的功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:ab14a72c40e9c8b2e74516f7b22628343ce96fc98f265fbf83778781d2a09212
+content_hash: sha256:5c7968867bb7ccbe5a92991e0dfafabce9ba7324aa0e4aa9cbd2504e21a2840c
 ---
 
 ## 问题现象
@@ -279,4 +279,4 @@ List组件下使用ForEach，通过设置onMove事件可以实现列表拖拽排
 
 以下为效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/2Rr1VAuMSu-5A1qiqYOOVA/zh-cn_image_0000002628407488.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/h05LA9WfSsyqi9HPEnxwDA/zh-cn_image_0000002628407488.png "点击放大")

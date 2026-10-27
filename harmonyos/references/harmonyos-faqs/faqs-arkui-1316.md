@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1316
 title: Grid组件自动滚屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Grid组件自动滚屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:01a26941f64570ecbf6431de5e23b75d0f9af4b7aa48327b60ae23e439b993a0
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f65597ebac9eb641d73e7a5a552d560965a6a9f5f7c8e988b1eeb0ff2743ed4d
 ---
 
 ## 问题现象
@@ -162,4 +162,4 @@ struct GridDemo {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/fJ3AUGB6TaCYdacO-JOEaQ/zh-cn_image_0000002658838373.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/_yUvIvKSTwuh8GxNFJXx-g/zh-cn_image_0000002658838373.gif "点击放大")

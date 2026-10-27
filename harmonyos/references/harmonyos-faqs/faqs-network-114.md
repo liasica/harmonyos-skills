@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-11
 title: 自定义拦截器写入中文公参在网络请求时变乱码
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 自定义拦截器写入中文公参在网络请求时变乱码
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
+scraped_at: 2026-10-28T07:48:16+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:bd815b3fb529ebc19ddebdad311f1198d81e5e01967ed7557aea7b272e5470c0
+content_hash: sha256:6ecc0884546406da46b573a1c10024ab349e93c05c5ecc026a8d6b013b00a220
 ---
 
 ## 问题现象
 
 自定义拦截器，写入中文公参，写入时正常，网络请求时却变成乱码。代码和抓包记录如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/_GB5okHGRS21MFvh5yr9RQ/zh-cn_image_0000002628770798.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/TdmLzgtKRP6JrsGO84wr1w/zh-cn_image_0000002628770798.png "点击放大")
 
 问题代码示例参考如下：
 

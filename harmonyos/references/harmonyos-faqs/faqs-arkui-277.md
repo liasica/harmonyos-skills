@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-277
 title: 如何将ListItem的swipeAction滑动效果恢复到初始状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何将ListItem的swipeAction滑动效果恢复到初始状态
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d3860fab14ad0da1909bf7df9108040234ddb2c7ed7a230a5e026a6f0d926bc9
 ---
 

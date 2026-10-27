@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-623
 title: 应用统计的视频播放时长比实际播放时长少
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 应用统计的视频播放时长比实际播放时长少
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a34faa464d71bb86aa9820dcd77cfd1c04ea03905e3d5d67342e3274a946e995
 ---
 

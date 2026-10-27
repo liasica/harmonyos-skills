@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1513
 title: 如何实现Slider滑块的自定义设置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Slider滑块的自定义设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:778d42ff7b98ecebd23775b90d97101ec75825ddc801b5e607d6656ac57a7163
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0793a7b4fb6a897e933e7fe03d24966a4a5160408917fe8dee70616676f4738a
 ---
 
 ## 问题现象
@@ -77,7 +77,7 @@ content_hash: sha256:778d42ff7b98ecebd23775b90d97101ec75825ddc801b5e607d6656ac57
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/FRxFnzdsTS6HpEfnn1jkPQ/zh-cn_image_0000002628766436.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/TKYPtlwVQqGivNuIokxSOg/zh-cn_image_0000002628766436.png "点击放大")
 5. 完整代码：
 
    ```ts

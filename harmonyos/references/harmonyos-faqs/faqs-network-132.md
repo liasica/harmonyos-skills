@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-13
 title: 如何定位WebSocket连接异常断开
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何定位WebSocket连接异常断开
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
+scraped_at: 2026-10-28T07:48:16+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:771cc9178201571d40cf6eb81ed27a611257e9957d2ec9a6c6a2db086a7df119
+content_hash: sha256:bf49c993daac9bd36335812143b59201c8324237e632cdcd7c3c8c1704503906
 ---
 
 ## 问题现象
@@ -67,7 +67,7 @@ content_hash: sha256:771cc9178201571d40cf6eb81ed27a611257e9957d2ec9a6c6a2db086a7
     ```
 * WebSocket在连接成功后，随机断开。抓包分析TCP交互，在wireshark中使用ip.src == [服务器ip地址] || ip.dst == [服务器ip地址]过滤数据包，率先发送[FIN, ACK]数据包的为主动断开方。比如下图为101.201.\*\*.\*\*服务端主动断开连接，再结合业务日志分析具体的断开原因。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/UasGFTf_SAWnR23YhVnVEQ/zh-cn_image_0000002658970475.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/O8Jy7jrjSiSmqbLCddM4zw/zh-cn_image_0000002658970475.png "点击放大")
 
 ## 分析结论
 

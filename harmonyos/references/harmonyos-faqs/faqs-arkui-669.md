@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-669
 title: 如何控制RichEditor组件的光标手柄、菜单项及文本选中的显示与隐藏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何控制RichEditor组件的光标手柄、菜单项及文本选中的显示与隐藏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:36+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:6cee882e9b2feaed59749de7934c6a7a28ab5dd68ccef267d3087f98a4401ea3
+content_hash: sha256:67e7f33d5f647b50325914dd789651d273c942c0bec269de12c0a368bf8507e3
 ---
 
 ## 问题现象
@@ -70,7 +70,7 @@ content_hash: sha256:6cee882e9b2feaed59749de7934c6a7a28ab5dd68ccef267d3087f98a44
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/hOQ9-1JaQCCMIszuw1PfZw/zh-cn_image_0000002658913887.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/GWEO74TVTaqcUdAjby1ANg/zh-cn_image_0000002658913887.png "点击放大")
 
 * 针对场景二：可使用closeSelectionMenu实现点击菜单选项时菜单、手柄消失效果，可使用setSelection实现关闭文本选中效果。示例代码如下：
 
@@ -137,4 +137,4 @@ content_hash: sha256:6cee882e9b2feaed59749de7934c6a7a28ab5dd68ccef267d3087f98a44
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/DW2a5RQJSgy2Cy3_4Rfxnw/zh-cn_image_0000002658793943.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/oqQRW7IAQuG78XMX5MQzpw/zh-cn_image_0000002658793943.png "点击放大")

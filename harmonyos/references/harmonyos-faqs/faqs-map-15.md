@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-15
 title: 地图事件监听中的覆盖物与聚合点事件的差异
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 地图事件监听中的覆盖物与聚合点事件的差异
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:58bb76bc7999d06e3de0e95458ddc0f29288c6c807da0e5214130bd8260d4f6d
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 自定义Hvigor插件是否能进行断点调试
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 自定义Hvigor插件是否能进行断点调试
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:56+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:1f09f28224eba151dd57539800052ad5d8c753339d998c0e5f08cbc4d7885395
+content_hash: sha256:9e22ee341a8f116d14a102e8d1cc4e6f58201fd72aa2a09f99e3a60bb5727669
 ---
 
 ## 问题现象
@@ -56,23 +56,23 @@ content_hash: sha256:1f09f28224eba151dd57539800052ad5d8c753339d998c0e5f08cbc4d78
      ```
   2. 打开Chrome调试页面：chrome://inspect/#devices：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/YbdCc0FdQlOBlwJmnoDt3Q/zh-cn_image_0000002658928587.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Z_Ts6pOdQeqI9dJlBnMmIA/zh-cn_image_0000002658928587.png "点击放大")
   3. 勾选“Discover network targets”，点击Configure按钮：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/N1jgr0UITEeqKidK_LeAjw/zh-cn_image_0000002658808637.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ivb8b74-RtSe76yCotWExQ/zh-cn_image_0000002658808637.png "点击放大")
   4. 配置监听接口，勾选“Enable port forwarding”，点击Done：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/VdA7sXxeTNqD-xRuiVEC2w/zh-cn_image_0000002628569272.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/32ooGhh8SZGRFJS3aO2q_Q/zh-cn_image_0000002628569272.png "点击放大")
   5. 回到DevEco Studio界面，执行构建：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/rYfBcWX3TGKcY-EWhQfNxg/zh-cn_image_0000002628409366.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/nnqyC0KdRayyvFHqtBwn-A/zh-cn_image_0000002628409366.png "点击放大")
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/D3dmiQ4cQkenhUp07JQCgQ/zh-cn_image_0000002658928589.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Q8NBNB2yTDKBhci6ghmRZg/zh-cn_image_0000002658928589.png "点击放大")
   6. 切换至Chrome调试页面，点击“inspect”，即可开始调试：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ysts6cKdTFqyHMtx6hr6zA/zh-cn_image_0000002658808639.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/PkwM64yMRwSuzQadg3uvdg/zh-cn_image_0000002658808639.png "点击放大")
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/w1svjcfETAW0OLcaTUHxYg/zh-cn_image_0000002628569274.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/pC6HX8WYQHmkuvTKsZ0nBg/zh-cn_image_0000002628569274.png "点击放大")
   7. 调试如果开启了[守护进程](../harmonyos-guides/ide-hvigor-daemon.md)，二次构建时会因守护进程还在出现以下报错，[关闭当前工程的守护进程](../harmonyos-guides/ide-hvigor-daemon.md#section298519112359)重新执行步骤5即可：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/D_zMFb2hQweuKgTCi9-MFQ/zh-cn_image_0000002628409368.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/RW-TVnCGSce-EvF2Z04MPw/zh-cn_image_0000002628409368.png "点击放大")

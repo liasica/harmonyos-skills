@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1283
 title: 如何解决获取窗口实例时出现延迟的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何解决获取窗口实例时出现延迟的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:88ff9f0d5aae41c114234f993b9a3f0eca18fea6bcda6d93b8020cedf3d4d7ec
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:24a1957b26e17dc0fcbf030c863158b212384706f9cbb543b38af2f54db95e4c
 ---
 
 ## 问题现象
@@ -129,7 +129,7 @@ struct PageTwo {
 
 正常情况下，当反复切换页面时，隐私模式应该由开启到关闭再到开启往复循环。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/jsYdR9hZR6S1H7uqm4XY-w/zh-cn_image_0000002669661697.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/MbWxHAhoSBm3EBUGOddu1Q/zh-cn_image_0000002669661697.png "点击放大")
 
 但日志中mode出现了连续为1和连续为0情况，说明隐私模式不是从开启到关闭进行循环。
 

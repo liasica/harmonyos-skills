@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-3
 title: 在自定义扫码界面退到后台再回到前台时扫码停止该如何解决
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 在自定义扫码界面退到后台再回到前台时扫码停止该如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:9d3368baebb6cccfc9bb02d51653d0e969fa2f68b9a1ea50767932b8eb01ba20
+scraped_at: 2026-10-28T07:48:29+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:191e2c2158286a58d895e9b87f19726e4e2f1a6d51d9cc1633576523ce118352
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ Tabs组件管理的首页面是自定义扫码界面，开启相机进行扫描�
 
 问题代码示例参考如下：
 
-```screen
+```ts
 @Entry
 @Component
 struct Index {
@@ -59,7 +59,7 @@ export struct CustomScanPage {
 
 扫码时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/6OtglFA8QNiU973JphVNrg/zh-cn_image_0000002658791883.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/MGySOeS_TsOBiIwk5_wS2A/zh-cn_image_0000002658791883.png "点击放大")
 
 详情请参考：[customScan (自定义界面扫码)](../harmonyos-references/scan-customscan-api.md)。
 
@@ -87,7 +87,7 @@ export struct CustomScanPage {
 1. 使用自定义扫码功能时，需要在module.json5中配置[ohos.permission.CAMERA](../harmonyos-guides/permissions-for-all-user.md#ohospermissioncamera)权限，具体申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。
 2. 在aboutToAppear()方法中注册监听方法。
 
-   ```screen
+   ```ts
    async aboutToAppear() {
      // 添加监听
      this.getUIContext().getUIObserver().on('routerPageUpdate', (info) => {
@@ -120,7 +120,7 @@ export struct CustomScanPage {
    ```
 4. 在aboutToDisappear()方法中注销监听方法。
 
-   ```screen
+   ```ts
    async aboutToDisappear() {
      // 取消监听，不选择回调时，取消所有监听的回调
      this.getUIContext().getUIObserver().off('routerPageUpdate');
@@ -129,7 +129,7 @@ export struct CustomScanPage {
 
 完整示例参考如下：
 
-```screen
+```ts
 import { customScan, scanBarcode, scanCore } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';

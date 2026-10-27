@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-38
 title: 如何优化OHAudio音频播放卡顿的问题
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 如何优化OHAudio音频播放卡顿的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:44227a8d72f0411163216da25d599064fcf53661ea63c342ab0e3aff015373fd
+scraped_at: 2026-10-28T07:48:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:88ddcded88063977fee65b63f1ef6fc8307362477ab7ba8af2b4d38461aab9ec
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:44227a8d72f0411163216da25d599064fcf53661ea63c342ab0e3aff015
 
 问题代码示例参考如下：
 
-```
+```cpp
 int32_t writeAudioData(OH_AudioRenderer* renderer, void* context, void* buffer, int32_t length){
   Audio* pAudio = (Audio*)context;
   AVData aVData;

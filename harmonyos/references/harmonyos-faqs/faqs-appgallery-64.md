@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 已经修改SDK版本但上架仍提示应用含有beta版的API该如何处理
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 已经修改SDK版本但上架仍提示应用含有beta版的API该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
+scraped_at: 2026-10-28T07:48:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f14f2ccb3ed7f769402e9cf8e5141580d156994130125b007a86a82b11cfebf4
+content_hash: sha256:eb1f8f34d53cbcab5f2d9c97d90dcb3dbb9d5830c967f6538741a4e4928f393f
 ---
 
 ## 问题现象
 
 应用上架提示应用含有beta版的API，使用的是beta版本的开发工具，但是已经把所有的SDK改成release版本了，而且检查了一遍没有调用beta版API的地方，应该如何检查？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/BdwJJzamTIeo4DANg-lW4A/zh-cn_image_0000002628394628.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/Jh90IZRbS92syY0y3RO1SA/zh-cn_image_0000002628394628.png "点击放大")
 
 ## 解决方案
 

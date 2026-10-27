@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-5
 title: 如何解决自定义扫码只能扫描一次-无法持续扫码的问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 如何解决自定义扫码只能扫描一次-无法持续扫码的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
+scraped_at: 2026-10-28T07:48:28+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:d72fa4da52ab3f73d7a1afb6ffcd5d77b226ef2ae2cfdfde4552eed34598b3a2
+content_hash: sha256:c9602778988565d5fc2cab4a8177ddab30ed20aebe4fc6294c0482c05e342da8
 ---
 
 ## 问题现象
@@ -30,7 +30,7 @@ content_hash: sha256:d72fa4da52ab3f73d7a1afb6ffcd5d77b226ef2ae2cfdfde4552eed3459
 * [customScan.rescan](../harmonyos-references/scan-customscan-api.md#rescan)：触发一次重新扫码。如果扫描结果不是预期结果，可以调用此接口触发下一次扫描。本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出内部错误的异常。仅对start接口的Callback异步回调有效，Promise异步回调接口无效。
 * 自定义持续扫码时序图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/m87ben2DTFWX0ijWXQdTBA/zh-cn_image_0000002658911829.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/2h-Ep0uNQvGRtB_r_6EwJw/zh-cn_image_0000002658911829.png "点击放大")
 
 详情请参考：[自定义界面扫码](../harmonyos-guides/scan-customscan.md)。
 

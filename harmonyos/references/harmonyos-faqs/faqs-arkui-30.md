@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-30
 title: 如何获取UI组件的显示或隐藏状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何获取UI组件的显示或隐藏状态
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:864ef86f4b1ac5f6d48db3633bc5a8ddc4cfdf72ae304acdd8f8cf0c45bd2b9f
 ---
 

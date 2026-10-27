@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-850
 title: 实现Image组件的渐变模糊效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现Image组件的渐变模糊效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:55b21565b2b3047dd15200d2834bd36569b27aea4799ae3efba5da93b2155bad
+content_hash: sha256:1f6a7ef63d5e27f5f15f828d0630d398eaa99621bba7e1d314243ac0a0688ee4
 ---
 
 ## 问题现象
@@ -78,7 +78,7 @@ struct demo {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Cp5-Fv4cRjqGln_xfhkxOQ/zh-cn_image_0000002628398642.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/qRFA2HVvQrCZoQiMlghzag/zh-cn_image_0000002628398642.png "点击放大")
 
 ## 总结
 

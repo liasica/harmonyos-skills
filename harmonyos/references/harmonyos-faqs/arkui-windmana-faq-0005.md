@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-windmana-
 title: 自定义弹窗和子窗口间的层级关系
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 常见问题 > 自定义弹窗和子窗口间的层级关系
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:06+08:00
+scraped_at: 2026-10-28T07:47:28+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:3adf04da4d8fb887bce540bd8a38a428875816252587daa8c371e8f8b22386ca
+content_hash: sha256:6be18d81a2e1b12254d92505444c4f61fb45611ea8efcd7a4f72a143d19fdc65
 ---
 
 **Q：自定义弹窗和子窗口间的层级关系是怎样的，是否按照唤起顺序叠放？**
@@ -14,17 +14,17 @@ content_hash: sha256:3adf04da4d8fb887bce540bd8a38a428875816252587daa8c371e8f8b22
 
 * 场景一：在主窗口界面先打开子窗口，然后在主窗口界面打开自定义弹窗。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/k4SS1q7GRZejOWhuG-58_A/zh-cn_image_0000002797216541.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/SWooVBCzSYGmS-XHGru_zw/zh-cn_image_0000002797336521.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/XucVgXi-QhiUoq19lEfhIw/zh-cn_image_0000002797216541.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/dOw-O460R2aaRyutj_f9BA/zh-cn_image_0000002797336521.png "点击放大")
 
   此时，两种自定义弹窗的层级都在主窗口之上，子窗口之下，且弹出位置在主窗口中间。
 * 场景二：在主窗口界面先打开子窗口，然后在子窗口界面打开自定义弹窗：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/JVJ5Q_JuSVCNFDqmF8IV6w/zh-cn_image_0000002797336523.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/JPGfqg6_QTGgTcUA6r4DbA/zh-cn_image_0000002767936596.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/WUrUo5RTTku9bICnsUZkbQ/zh-cn_image_0000002797336523.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/MOuwRNyER7CJgwFTyTeN_Q/zh-cn_image_0000002767936596.png "点击放大")
 
   此时，两种自定义弹窗的层级都在子窗口之上，且弹出位置在子窗口中间。
 * 场景三：在主窗口界面通过一次点击操作，先打开子窗口，然后在一个setTimeout的延时后打开自定义弹窗。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/n1AthkuSQyCO7filMnzpvg/zh-cn_image_0000002797336543.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/orWkvirjTD-3SwRIgpgryg/zh-cn_image_0000002768056596.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/dVX8-17CRbSJgZERUTW4zA/zh-cn_image_0000002797336543.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/RQJ3hXvzRAWV0IBU-r0A4g/zh-cn_image_0000002768056596.png "点击放大")
 
   此时，基础自定义弹窗的层级在主窗口之上，子窗口之下，且弹出位置在主窗口中间；全局自定义弹窗的层级在子窗口之上，且弹出位置在子窗口中间。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 通知消息的角标信息显示不正确
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 通知消息的角标信息显示不正确
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f5fe274d7a311c82c1aa1209904872f01d7d0873482f097e2ffdce1186990c5c
 ---
 

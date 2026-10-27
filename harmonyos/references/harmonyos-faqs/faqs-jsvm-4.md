@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-4
 title: 如何自排查OOM(v8::FatalProcessOutOfMemory)错误
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > 如何自排查OOM(v8::FatalProcessOutOfMemory)错误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a3d16dad8e9f4a75dc4ccb6376d516af5ab643244e734d731d47089ff0091c41
 ---
 

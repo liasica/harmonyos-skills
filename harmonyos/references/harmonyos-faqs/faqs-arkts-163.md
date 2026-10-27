@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-163
 title: 混淆编译keep配置使用通配符*不生效
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 混淆编译keep配置使用通配符*不生效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:db383cbe24e05facc44e8371861b9dd7e6c70e5852d6b5309d0e7eefbf996ecb
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:742c8e1f41f5cc4acf41d778952406328327c08c6901825a0b72a22ad16e01db
 ---
 
 ## 问题现象
@@ -43,11 +43,11 @@ content_hash: sha256:db383cbe24e05facc44e8371861b9dd7e6c70e5852d6b5309d0e7eefbf9
 
    不使用保留选项：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/hNAr_aJ0TjK89_7QAz3Tuw/zh-cn_image_0000002659138341.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/QFnhY1BATUKN2ih4yKpyjA/zh-cn_image_0000002629058990.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/nAo8FK8NTZOPK8nGhj7nxg/zh-cn_image_0000002659138341.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/DAp4HbQOTLeXDhg0j9WIGQ/zh-cn_image_0000002629058990.png "点击放大")
 
    使用保留选项：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/J778gHArRsWyKCOTSBFkNg/zh-cn_image_0000002628899072.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/d0q6KZrHQB-jWzSAo-3ELA/zh-cn_image_0000002659258283.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/gyVAf6meSxabLPkpQZzjfQ/zh-cn_image_0000002628899072.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/dQw_x4cMSkeipfqaCOGQyA/zh-cn_image_0000002659258283.png "点击放大")
 
    对比两者，使用保留选项后，文件夹及文件名被混淆，而变量名、类名、属性名未被混淆，即-keep生效，而-keep-file-name未生效。
 2. -keep-file-name指定要保留的文件/文件夹的名称，将-keep-file-name配置修改为名称配置而非路径配置，即将路径../src/main/ets/model/\*\*修改为文件夹名称model和文件名称TestModel：

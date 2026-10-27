@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何实现SM4加解密工具
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何实现SM4加解密工具
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:35a85d44592797309ce4c6e939c301a5278b14a35e021a5e655e305c7c5a9d7e
+scraped_at: 2026-10-28T07:48:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:780c8d4f22c10cb8bc03f65982369e2151660024fc47ee5f3c6cb43cbb88c6fa
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:35a85d44592797309ce4c6e939c301a5278b14a35e021a5e655e305c7c5
 
 ## 背景知识
 
-* 在数据存储或传输场景中，可以使用加解密操作用于保证数据的机密性，防止敏感数据泄露，加解密开发可参考[加解密开发指导](../harmonyos-guides/crypto-encrypt-decrypt-dev.md)。
+* 在数据存储或传输场景中，可以使用加解密操作用于保证数据的机密性，防止敏感数据泄露，加解密开发可参考[加解密开发指导](../doccenter-capabilities/crypto-development-practice.md)。
 * [算法库](../harmonyos-guides/crypto-sym-encrypt-decrypt-spec.md)当前提供了[SM4加解密](../harmonyos-guides/crypto-sym-encrypt-decrypt-spec.md#sm4)常用的7种加密模式：ECB、CBC、CTR、OFB、CFB、CFB128和GCM。
 * 由于SM4为分组加密算法，分组长度为128位。在实际应用中，最后一组明文可能不足128位（16字节），此时可以通过不同的填充模式进行数据填充。
 

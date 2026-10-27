@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-simulator-
 title: 模拟器创建和启动失败的原因有哪些
 breadcrumb: FAQ > DevEco Studio > 模拟器 > 模拟器创建和启动失败的原因有哪些
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
+scraped_at: 2026-10-28T07:49:04+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:5d04bdb4c8c0e8ead6fe2f69f539c56d5fdc0a944a2c5adf48e160d95fdd61be
+content_hash: sha256:97ab3374a480e0d5654a2ec11953b10b5f5fba541dc7bf6a79bbc19028ce5c18
 ---
 
 ## 问题现象
@@ -35,10 +35,10 @@ content_hash: sha256:5d04bdb4c8c0e8ead6fe2f69f539c56d5fdc0a944a2c5adf48e160d95fd
 * **场景一**：模拟器因中文路径问题导致启动崩溃。
   + 现象：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/7tyXMrUkQuCpmvR-9OiK8w/zh-cn_image_0000002628569678.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/fsCp_p2ATQGnAgaUdrfhsA/zh-cn_image_0000002628569678.png "点击放大")
   + 定位：点击上图报错弹窗的发送报告按钮，将报错日志下载到本地进行分析。如果日志中出现如下报错，是因为AppData路径中带有中文名称，导致模拟器某些文件无法找到，最终导致模拟器启动失败。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/7YA-hNSMRfyUm-dK8x7Kcg/zh-cn_image_0000002658928991.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/l_W80zshSdysS1GiSgVaHQ/zh-cn_image_0000002658928991.png "点击放大")
 * **场景二**：API14版本模拟器在RTX 3060系列上启动崩溃。
 
   定位：排查IDE版本是否是API14的DevEco Studio 5.0.2 Release（5.0.7.210）版本，并且排查用户的GPU是否是RTX 3060系列，因系统问题该版本在RTX 3060系列上运行会导致模拟器崩溃。
@@ -46,7 +46,7 @@ content_hash: sha256:5d04bdb4c8c0e8ead6fe2f69f539c56d5fdc0a944a2c5adf48e160d95fd
   + 现象：启动报错弹窗提示“当前系统可申请的内存不足XXGB”。
   + 定位：通过报错弹窗信息或在日志中搜索memory is low，如果有如下对应日志，说明是电脑内存不足导致模拟器闪退：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/yuNprTCcTem_rUu4fPt_9A/zh-cn_image_0000002628409778.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/WBX8o2eiQuSRwuCZWa7dYQ/zh-cn_image_0000002628409778.png "点击放大")
 * **场景四**：电脑GPU版本过低导致模拟器启动失败。
   + 现象：启动模拟器失败报错：The graphics card in use does not support OpenGL 4.1 or later. Update the graphics card driver or use another graphics card.
   + 定位：当前显卡驱动版本过低，或不支持OpenGL4.1或以上版本。参考：[00801013 显卡驱动版本过低](../harmonyos-guides/ide-emulator-faqs.md#section73144516710)。
@@ -54,15 +54,15 @@ content_hash: sha256:5d04bdb4c8c0e8ead6fe2f69f539c56d5fdc0a944a2c5adf48e160d95fd
 
   定位：如果有如下对应日志，说明是Windows句柄占用过多导致模拟器启动崩溃。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/VPasWk9YQtSf5gPvLwNeNA/zh-cn_image_0000002658809045.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/PfeSt_-UQl2tH_qEVWo78w/zh-cn_image_0000002658809045.png "点击放大")
 * **场景六**：Mac x86 PC模拟器启动黑屏或提示：模拟器不支持Mac x86 PC。
   + 现象：Mac x86 PC模拟器启动黑屏，如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/8e8vC-iKS_-oz7PNpbvHqg/zh-cn_image_0000002628569680.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ERbiUqWSSD6ruT2IkwdKGQ/zh-cn_image_0000002628569680.png "点击放大")
 
     或者在创建模拟器时提示：The local emulator does not support Mac x86 PCs. Please use the emulator on Mac ARM and Windows PCs，如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DlbGwhwfTkqJqJt0g7xE2A/zh-cn_image_0000002658928993.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/3al3i3X0TNGMHgk5-HEQtQ/zh-cn_image_0000002658928993.png "点击放大")
   + 定位：参考[设备支持类型](../harmonyos-guides/ide-emulator-devicetype.md)，明确指出模拟器支持系统类型为Windows(X86)和macOS(ARM)，HarmonyOS新版本模拟器已不再支持对x86架构Mac电脑的支持，无法直接创建新模拟器。
 * **场景七**：当前CPU不支持AES指令导致模拟器启动失败。
   + 现象：启动报错弹窗提示“模拟器启动失败，当前CPU不支持AES指令”。
@@ -73,7 +73,7 @@ content_hash: sha256:5d04bdb4c8c0e8ead6fe2f69f539c56d5fdc0a944a2c5adf48e160d95fd
 * **场景九**：SDK路径变化导致模拟器启动失败。
   + 现象：启动模拟器失败，提示“SDK Path has been changed to xxx”，如下图：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/4rcNmupZS9aC4WM8qZlflg/zh-cn_image_0000002628409780.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7nGklRacTT62G0Enk330CA/zh-cn_image_0000002628409780.png "点击放大")
   + 定位：参考[00801014 SDK路径更改](../harmonyos-guides/ide-emulator-faqs.md#section19375152318218)可知，SDK路径更改导致模拟器启动失败。
 
 ## 分析结论

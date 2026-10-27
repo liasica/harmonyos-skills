@@ -3,9 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/background-task
 title: 常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 后台任务开发（Background Tasks） > 常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:13:46+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:d9d6aab11f4d2e4fda129ab51aab4689707a32be5d05a450c2f47f0b33c0d2e3
+scraped_at: 2026-10-28T07:46:49+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e921a90948042a076b485bb7da7313173c94b4d25838c2cbee032a5b94b5925e
 ---
 
 * **[应用后台业务执行与任务申请常见问题](background-tasks-kit-faq-0001.md)**
+* **[音视频播放长时任务使用常见问题](background-tasks-kit-faq-0002.md)**

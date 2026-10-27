@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-906
 title: Navigation自定义标题栏不生效问题如何修改
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation自定义标题栏不生效问题如何修改
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:ffca78c475c855cd41e8bfcef2b14d147180f05e05aeb081996dc73204f8442e
+content_hash: sha256:a46e9fefb53c5c61db5eb938049e44d5fce12ff261f655644a9f137af566e310
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:ffca78c475c855cd41e8bfcef2b14d147180f05e05aeb081996dc73204f
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/tri6awaVTkOYHr-eEUEa2w/zh-cn_image_0000002628399758.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/qO0BWktpTLuRZDXQDQXyiw/zh-cn_image_0000002628399758.png "点击放大")
 
 问题代码示例参考如下：
 
@@ -58,7 +58,7 @@ struct Index {
 
 使用ArkUI Inspector查看应用布局，发现TitleBar不可见，标题栏未创建。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Ji6AST-WSoe94WQ6chcO8Q/zh-cn_image_0000002658799027.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/2l0uVZomTWmGbN5upqp9AA/zh-cn_image_0000002658799027.png "点击放大")
 
 查看[title](../harmonyos-references/ts-basic-components-navigation.md#title)传入参数类型，其中NavigationCustomTitle和CustomBuilder这两种类型均支持自定义标题栏样式。
 
@@ -101,7 +101,7 @@ struct Index {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/rMk62wiUToC76vrcmLw15Q/zh-cn_image_0000002628559674.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/LpQgMXsiTFqKHQ2G_cjl-w/zh-cn_image_0000002628559674.png "点击放大")
 * **方案二**：在title中直接传入自定义布局的方法。
 
   ```ts
@@ -137,7 +137,7 @@ struct Index {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/2CquOetPTdOMgtO70jb4ag/zh-cn_image_0000002658918981.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jgQ-fMTeTOKbbGTY_bAYCQ/zh-cn_image_0000002658918981.png "点击放大")
 
 ## 常见FAQ
 

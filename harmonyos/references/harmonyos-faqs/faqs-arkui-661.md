@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-661
 title: Video组件自动播放控制的常见场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Video组件自动播放控制的常见场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6305f138dbef816f0b40ac56d62bd131e58d323ed0c52c7e0f16e02827695c56
 ---
 

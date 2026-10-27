@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-377
 title: 如何打开键鼠穿越功能开关
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何打开键鼠穿越功能开关
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eb81889861e3ca67eb6e3726d9635026cf40867952d7a4474b1f7688545a2deb
 ---
 

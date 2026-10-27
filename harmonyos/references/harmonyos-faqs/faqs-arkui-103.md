@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-103
 title: Button组件如何设置渐变背景色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Button组件如何设置渐变背景色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f7829136d67ad03f614bb3c85fcc30717480469ca4fd40f4a247a3770d7abcea
 ---
 

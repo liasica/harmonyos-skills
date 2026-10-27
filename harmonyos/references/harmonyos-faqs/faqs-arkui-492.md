@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-492
 title: 如何设置仅文字输入的键盘，即屏蔽键盘中AI功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何设置仅文字输入的键盘，即屏蔽键盘中AI功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0f54c77d881488880148ea4dc4bc00bd9b65d83766f5a108a4b3927479422ca5
 ---
 

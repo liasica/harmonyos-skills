@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio无法启动
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio无法启动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
+scraped_at: 2026-10-28T07:48:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f2e12b052d750ef101028cd1aed2b88c8ba0c6bbe2820b6dbeab433895c43a78
+content_hash: sha256:1af8c758fdf22c5b3a4fd6ac5310effea5455533b196c944c56c68fb4edae553
 ---
 
 ## 问题现象
@@ -16,13 +16,13 @@ content_hash: sha256:f2e12b052d750ef101028cd1aed2b88c8ba0c6bbe2820b6dbeab433895c
 
    Windows系统报错如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/9RfIwasgQyeR-2NNdMFSsA/zh-cn_image_0000002658924303.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1rEcleyiQ--jrqPT2GcgOA/zh-cn_image_0000002658924303.png "点击放大")
 
    macOS系统报错如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/yydHXuZpRbO1qrlJTDvlKQ/zh-cn_image_0000002658804359.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/jjv1zVS1Rq-t8uFS_4nm-w/zh-cn_image_0000002658804359.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/SJVoIg1-T_mXe_ojQq2Ihg/zh-cn_image_0000002628564994.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Fpy0qrWZRg2rNHk21nIctg/zh-cn_image_0000002628564994.png "点击放大")
 4. 无法启动，报错信息如下：
 
    ```txt
@@ -155,7 +155,7 @@ content_hash: sha256:f2e12b052d750ef101028cd1aed2b88c8ba0c6bbe2820b6dbeab433895c
 
    DevEco Studio突然无法打开，弹框报错信息如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/1XSfrhdcSHCVNvslPjzCDA/zh-cn_image_0000002628405090.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/UMnESjqQQ4CCGiIMmnxEbw/zh-cn_image_0000002628405090.png "点击放大")
 8. DevEco Studio无法正常打开项目。
 
 ## 背景知识

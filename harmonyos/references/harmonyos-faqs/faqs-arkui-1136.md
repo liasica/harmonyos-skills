@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1136
 title: LazyForEach渲染的List列表上滑触发刷新动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > LazyForEach渲染的List列表上滑触发刷新动画
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:6db0529cb0568bb9a5d1b048d12a2bab74bbe79bedaf2e2ccf22252e07582141
+content_hash: sha256:1a5f8e08537ceaf341284f7f61711815ae7d63231e3e93c251b8ec1f872b3fbc
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:6db0529cb0568bb9a5d1b048d12a2bab74bbe79bedaf2e2ccf22252e075
 
 问题示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/dO5IpjdYRjS8KEBzLuI_rw/zh-cn_image_0000002628569432.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/iRQTIGr7SsWedXw6P_l8OQ/zh-cn_image_0000002628569432.gif "点击放大")
 
 ## 背景知识
 
@@ -271,7 +271,7 @@ struct LazyForEachListTransition {
 
 修正效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/JHayv-C8QOWw_M9zIReziw/zh-cn_image_0000002628409532.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/XvqX8M4IQVaTETalhjZHCA/zh-cn_image_0000002628409532.png "点击放大")
 
 ## 总结
 

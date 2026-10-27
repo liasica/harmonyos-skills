@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1393
 title: 应用首次打开弹窗内容重叠
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 应用首次打开弹窗内容重叠
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a62d142b6974f3c914e5c61a76a06799dc57ee3e9f6496fb574b6e3277cd6e60
+content_hash: sha256:786390c8636dfd570fcfdd691e7743276f578bfe65c84e443b7abcbb444e726b
 ---
 
 ## 问题现象
 
 应用首次打开弹窗时，弹窗中的内容与按钮发生重叠。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/X3SO5T93SEKlBtE1KegCbg/zh-cn_image_0000002628602670.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/2azWRMNLQAKsLh6XEWQ73Q/zh-cn_image_0000002628602670.png "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:a62d142b6974f3c914e5c61a76a06799dc57ee3e9f6496fb574b6e3277c
 
 1. 使用DevEco Testing查看问题组件，该问题组件为Dialog组件下的Text组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/REUv_3nlQSqjWp94cvfNjA/zh-cn_image_0000002658841941.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/9mEoyx3IT4m4L3KlEbo5iA/zh-cn_image_0000002658841941.png "点击放大")
 2. 查看该Dialog组件的设置，Text组件的父组件未设置Scroll滚动条组件，当Text组件的文本内容过多时会溢出Text组件，导致内容重叠。
 
    ```ts

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1038
 title: 如何实现只对子组件进行横向裁剪，不进行纵向裁剪
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现只对子组件进行横向裁剪，不进行纵向裁剪
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7c7f4d1dbe7eae8704bff855ef211133307e9e0976aa8112c56503bd48602426
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:26bacb4959f26d6b888b1f91ec6aae8153ba1e84eaac01bdbfdd3eb8b373bc3a
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ clip属性会把子组件超出父组件的部分全部裁剪掉，如何实现�
 
 初始效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/yjKXKVdnTcWoGf1GoCMFgg/zh-cn_image_0000002658924721.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/cJRFIXulR7yU-wwADmtUag/zh-cn_image_0000002658924721.png "点击放大")
 
 ## 背景知识
 
@@ -27,7 +27,7 @@ clip属性会把子组件超出父组件的部分全部裁剪掉，如何实现�
 
 RectShape示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/bShLAlxSRS6EYVNtbJc9cQ/zh-cn_image_0000002628405516.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/yDLWmSYJTcirvp1_C1utlQ/zh-cn_image_0000002628405516.png "点击放大")
 
 ```ts
 import { RectShape } from '@kit.ArkUI';
@@ -79,7 +79,7 @@ struct ClipShapeDemo {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ef7BHWB0SIqYjlW6bHUdBw/zh-cn_image_0000002658804789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/7TmnVD4qT36hz992Gd6w2g/zh-cn_image_0000002658804789.png "点击放大")
 
 ## 总结
 

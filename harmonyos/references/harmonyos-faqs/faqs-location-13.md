@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-1
 title: 地理围栏功能的使用方式及常见问题解答
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 地理围栏功能的使用方式及常见问题解答
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:fa432e511d9f0354247cc5445e1300ca229d1b8e35e012cca0208d4dd2a0134a
+scraped_at: 2026-10-28T07:48:42+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b32cbaa53baf1059820ed34224a180dd31bbba34f0ceb7f9337a3d64c61ade8f
 ---
 
 ## 问题现象
@@ -35,7 +35,7 @@ content_hash: sha256:fa432e511d9f0354247cc5445e1300ca229d1b8e35e012cca0208d4dd2a
 
    云端围栏是指开发者直接使用云侧公共围栏，当用户进入这个区域，在移动设备上进行有针对性的提醒。
 
-   应用场景举例：云侧围栏当前无法直接在AGC平台开通，需要通过邮件申请开通。云端围栏在云侧注册围栏，围栏数据是公共围栏，比如商圈、景点等，云侧围栏比较适合于开发者要使用公共围栏的场景。
+   应用场景举例：云侧围栏当前无法直接在HarmonyOS 开发者中心平台开通，需要通过邮件申请开通。云端围栏在云侧注册围栏，围栏数据是公共围栏，比如商圈、景点等，云侧围栏比较适合于开发者要使用公共围栏的场景。
 2. 具体开发指南如下：
    * 端侧围栏：[端侧GNSS围栏开发指导](../harmonyos-guides/geofence-guidelines.md)。GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。APP可以在入参[GnssGeofenceRequest](../harmonyos-references/js-apis-geolocationmanager.md#gnssgeofencerequest12)中传入回调函数用于接收地理围栏事件；也可以传入通知对象[NotificationRequest](../harmonyos-references/js-apis-notification.md#notificationrequest)，在系统识别到地理围栏事件发生时会弹出APP创建的通知，用户可通过点击通知的方式拉起应用。示例代码参考官网API[添加一个GNSS地理围栏](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageraddgnssgeofence12)。
    * 云侧围栏：[云端围栏开发指导](../harmonyos-guides/fenceextensionability.md)。

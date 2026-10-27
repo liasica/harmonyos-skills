@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1422
 title: 如何封装自定义UI框架
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何封装自定义UI框架
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d3fcd01208e5b85b147e81287b7c0a9096f4f769394b772de05b744d961cc06f
+scraped_at: 2026-10-28T07:47:22+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e7874efb859cd9eece8a7450281da72678933d962a2d0021418221c88ea77819
 ---
 
 ## 问题现象
@@ -144,7 +144,7 @@ export struct CustomUiDemo {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/XyFKjGpbTD6kPCWcoyZ3Xw/zh-cn_image_0000002658962959.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jzz7P0yER7Kf_qVvvFyUxA/zh-cn_image_0000002658962959.png "点击放大")
 
 ## 常见FAQ
 

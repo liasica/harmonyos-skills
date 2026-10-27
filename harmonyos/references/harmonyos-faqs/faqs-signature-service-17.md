@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 通过DevEco Studio对HAP/APP包进行签名
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 通过DevEco Studio对HAP/APP包进行签名
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:34+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:b5fb368654b72a88868bb9c308bf77e48715e1177e0163e8663bedaf3bb1f0e4
+scraped_at: 2026-10-28T07:48:57+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:af6637a9a602fdf0caf38b27f55ffded649acbe2257e3a2890568c28240a3731
 ---
 
 通过DevEco Studio自带的签名工具，可以对已打包的HAP/APP包进行签名，具体步骤如下。
@@ -14,7 +14,7 @@ content_hash: sha256:b5fb368654b72a88868bb9c308bf77e48715e1177e0163e8663bedaf3bb
 
 建议使用DevEco Studio 6.0.2 Beta1及以上的版本。
 
-1. 通过DevEco Studio生成密钥和证书请求文件，并向AppGallery Connect申请发布证书和Profile文件，具体请参考[准备签名文件](../harmonyos-guides/ide-publish-app.md#section793484619307)。
+1. 通过DevEco Studio生成密钥和证书请求文件，并向HarmonyOS 开发者中心申请发布证书和Profile文件，具体请参考[准备签名文件](../harmonyos-guides/ide-publish-app.md#section793484619307)。
 2. 准备好签名工具hap-sign-tool.jar，在${DevEco Studio安装目录}/sdk/default/openharmony/toolchains/lib下。
 3. 在签名工具目录下，使用如下命令进行签名。详细的签名工具指导请参考[应用包签名工具](https://gitcode.com/openharmony/developtools_hapsigner)。
 

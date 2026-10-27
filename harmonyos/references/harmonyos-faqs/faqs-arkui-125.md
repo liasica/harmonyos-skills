@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-125
 title: 组件最大和最小宽度和高度如何设置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 组件最大和最小宽度和高度如何设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:21+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2067e7490f7931102e0e39f551cb8390ce12ff7aad5f6e2c0d80d968c3022fdb
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-2
 title: 如何获取前置摄像头的预览图像
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何获取前置摄像头的预览图像
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0a6868407609ddb43557fbc5dd09809fc9a3aac2ab444a27629816b6f3a38a43
 ---
 

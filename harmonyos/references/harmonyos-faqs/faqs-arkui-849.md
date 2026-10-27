@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-849
 title: Image加载沙箱图片
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image加载沙箱图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4938b0fdbd41a0d3dbc675ef3b99849c1f4e78b71c57679e59612d2b01b1c149
 ---
 

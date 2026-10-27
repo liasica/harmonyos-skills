@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI-List组件布局与渲染常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI-List组件布局与渲染常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:33+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:a53e86dae3eb7ebcf87bf61edd7a1ee650ec5591cddfe9591148beac1f5d7634
+scraped_at: 2026-10-28T07:47:00+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c673185c8c3cf590cb950c8234688999faaf4819645c02d405b6b5d3f6eebfbb
 ---
 
 **Q：如何实现每列Item的文字水平居中？问题展示：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/8UEuK7DwQPKKWF-jDKG7LQ/zh-cn_image_0000002764472192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/tX5yl0WqQZqUOV9Pmpm-oQ/zh-cn_image_0000002764472192.png)
 
 **A**：当List组件设置listDirection(Axis.Horizontal)和lanes(2)时，内部的ListItem自身会均匀分配父List的高度，只可以设置每个ListItem垂直方向的位置；而此时ListItem宽度由自适应撑开，故无法设置每列Item的水平居中，因此需要给ListItem一个固定宽度，在每个ListItem同宽的情况下设置子组件的水平方向位置。代码如下：
 
@@ -72,11 +72,11 @@ export struct TwoLine {
 
 代码运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/t3zIKNzpTfyTDbu_czd00g/zh-cn_image_0000002793791337.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/pRteWknbSAG1_7dRM3Damg/zh-cn_image_0000002793791337.png "点击放大")
 
 **Q：在同一行中有多个ListItem时，ListItem中显示的文本高度不一致，导致各ListItem高度不一致，由于文本的长度不确定，无法通过设置height属性来固定ListItem的高度。问题图预览：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Jt5Rk6yoS4KJIVepiRPToA/zh-cn_image_0000002793791951.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/alPMzJKKQZ26zEwCUOzOWQ/zh-cn_image_0000002793791951.png "点击放大")
 
 **A**：方案一：使用Flex容器组件，修改FlexOptions的wrap和alignItems的参数，实现多行多列显示，且子组件在交叉轴方向拉伸填充。示例代码如下：
 
@@ -163,7 +163,7 @@ struct Index {
 
 修正效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/p_MLpMsmSY6AnsR0xeuzVg/zh-cn_image_0000002764473744.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/BGh9bsDsS4u9trAtlRuJzA/zh-cn_image_0000002764473744.png "点击放大")
 
 方案二：通过onAreaChange获取各ListItem高度并判断行内最大高度，通过状态变量变化和if/else条件语句，刷新页面布局，将组件高度设置为行内最大高度。
 
@@ -365,11 +365,11 @@ struct Page {
 
 修正效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/qnC0CfsrTJmYyFhvrJfj3g/zh-cn_image_0000002793793197.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/-IkNWF89RAuqIl7vSBXimw/zh-cn_image_0000002793793197.png "点击放大")
 
 **Q：列表如何实现树视图折叠交互，并支持展开/折叠父项查看子项？示例图如下：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/4aCA5f35RGOcvH6XBM4gJQ/zh-cn_image_0000002764474434.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Kp-4q2ymQI2nBzutlujCng/zh-cn_image_0000002764474434.png "点击放大")
 
 **A**：方案一：
 
@@ -447,7 +447,7 @@ struct Page {
 
    效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Ula5mNEmQVCDrzON0POkMw/zh-cn_image_0000002793713461.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/ArqMMRZZQAaeOU19ib_ptw/zh-cn_image_0000002793713461.png "点击放大")
 
 方案二：
 
@@ -536,7 +536,7 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/TtMqzwyPS4exQ__0vADkeg/zh-cn_image_0000002764475246.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Bn2mhtPFSxm5tZUhL9EDKw/zh-cn_image_0000002764475246.png "点击放大")
 
 **Q：如何使用List嵌套Grid实现内容分类展示效果？如何实现这种组合布局？**
 
@@ -866,15 +866,15 @@ A：实现步骤如下：
 
    效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/EJW99G3hRXOZdGaAGkFnQw/zh-cn_image_0000002764476642.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/gD2mX4PPQ6CmJmn-hU4NfA/zh-cn_image_0000002764476642.gif "点击放大")
 
 **Q：怎样在此场景上实现下拉刷新功能？**
 
-**A**：下拉刷新可以使用Refresh嵌套List来实现，刷新逻辑在onRefreshing回调方法里面执行，具体参考[官方文档](faqs-arkui-278.md)。
+**A**：下拉刷新可以使用Refresh嵌套List来实现，刷新逻辑在onRefreshing回调方法里面执行。
 
 **Q：如何实现朋友圈效果，如下图所示（仅涉及UI，不涉及具体功能）？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/CJXVZcKJSf6WV8uEigbtww/zh-cn_image_0000002764316046.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/4fTJ-2bCS2OeoZ-It2fLaQ/zh-cn_image_0000002764316046.png "点击放大")
 
 A：实现步骤如下：
 

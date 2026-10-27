@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-303
 title: Toggle组件设置拖动的同时如何屏蔽其本身的点击手势
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Toggle组件设置拖动的同时如何屏蔽其本身的点击手势
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:11919ab404187256fab5a87567009a5a5a2025f24cb50dacbf4c52815d32c568
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:281729c1842ecec36ecb68305630e85c3c3cf168bc29a19fb7967aa11b7837da
 ---
 
 通过isDragging状态变量区分拖动与点击操作，在拖动过程中屏蔽toggleIsOn的状态变更，示例代码如下：
@@ -66,4 +66,4 @@ struct ToggleDrag {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/YIW6nNZWTwKlZIHj_dhHDQ/zh-cn_image_0000002654835241.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/xVoAsgBgSiuokMfSGok2Cw/zh-cn_image_0000002654835241.png)

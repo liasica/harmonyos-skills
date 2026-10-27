@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 如何实现屏幕亮度自动调整或自定义调整
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 如何实现屏幕亮度自动调整或自定义调整
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:39+08:00
+scraped_at: 2026-10-28T07:48:20+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:e3ca922c1946eb2991c05b4974637ef197d7b7d6d3b11ef265b57ba61b654649
+content_hash: sha256:9f23ec663b45731814aba372d54f90826e5c7680d031faaa03f2bdc26f307bc4
 ---
 
 ## 问题现象
@@ -147,7 +147,7 @@ content_hash: sha256:e3ca922c1946eb2991c05b4974637ef197d7b7d6d3b11ef265b57ba61b6
     ```
   + 效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/CGVCC7X0QmuDOGf3Vln7yA/zh-cn_image_0000002717627987.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/FzEO_UZbQqGqpiqm7NbRKQ/zh-cn_image_0000002717627987.png "点击放大")
 * 场景二：小说软件自定义调整阅读界面的亮度，并且在退出阅读界面后恢复系统设置的亮度。
 
   具体实现为滑动条控制屏幕亮度，并获取当前屏幕亮度。
@@ -199,7 +199,7 @@ content_hash: sha256:e3ca922c1946eb2991c05b4974637ef197d7b7d6d3b11ef265b57ba61b6
     ```
   + 效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/MHQAqwhGTk-Q27hQWoXTBw/zh-cn_image_0000002717788201.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/2YMOQmSITKaR82yhTapTIg/zh-cn_image_0000002717788201.png "点击放大")
 
 ## 常见FAQ
 

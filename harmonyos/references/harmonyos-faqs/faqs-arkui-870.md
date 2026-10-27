@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-870
 title: 页面的弹窗阴影遮挡页面内容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面的弹窗阴影遮挡页面内容
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:12508b4138ec106e8de1f70c05d5c1d2d426cf9c034aaa30c2e0794d70748c33
+content_hash: sha256:1eda20abf09bf1a483fc3cb8eb79fff61665a43ac1ff6b57defccb6c62893607
 ---
 
 ## 问题现象
 
 页面使用弹窗进行提示时，弹窗阴影过重，遮挡页面内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/wzTnaUgsQrSZdRjJUcpF1A/zh-cn_image_0000002628558814.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/waQluHU7TuyGlZZmVTptJw/zh-cn_image_0000002628558814.png "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:12508b4138ec106e8de1f70c05d5c1d2d426cf9c034aaa30c2e0794d707
 
 1. 使用DevEco Testing查看问题页面，该弹窗组件为Popup组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/7GtPgOKrQGi5GyKOjc49dQ/zh-cn_image_0000002658918133.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/VbSBAxRZRluRU9ulZ7JJ9g/zh-cn_image_0000002658918133.png "点击放大")
 2. 查看该Popup组件的设置，shadow参数设置不合理，阴影半径radius过大，且阴影颜色color为纯黑色。
 
    ```screen
@@ -129,4 +129,4 @@ struct PopupDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/UKUeRNpyQQGAWOMMH-DLyw/zh-cn_image_0000002628398910.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/E_iVo4p1R2iSIlsqJ76KlA/zh-cn_image_0000002628398910.png "点击放大")

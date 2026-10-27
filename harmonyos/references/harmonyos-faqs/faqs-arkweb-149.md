@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-149
 title: Webview中如何使用自定义字体
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Webview中如何使用自定义字体
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:95634d7e2201780a28b15bf189c0224e12d230f7beb8abeb00865030eb3d59b7
 ---
 

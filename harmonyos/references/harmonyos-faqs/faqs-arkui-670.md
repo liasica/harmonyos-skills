@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-670
 title: 如何实现基于StyledString的气泡动态适配
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现基于StyledString的气泡动态适配
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1e05ee578bc4c6ca26b2ec9c5ede8c65017e27d9c6d55325ac0e12949f313cdf
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3426162215d8f5a4d57a8035246c7c527983b3c4fc7e48ab57a3b5838c800cc9
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:1e05ee578bc4c6ca26b2ec9c5ede8c65017e27d9c6d55325ac0e12949f3
 
 可以看到气泡大小会跟随StyledString而变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/2cEfcK1WT8GXWfg-lwesmQ/zh-cn_image_0000002628394678.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/-8say-m3QjKpcU9Nm-HjKg/zh-cn_image_0000002628394678.png "点击放大")
 
 ## 背景知识
 

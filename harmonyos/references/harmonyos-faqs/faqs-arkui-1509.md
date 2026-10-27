@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1509
 title: 通过isShown状态控制bindContextMenu实现菜单随点击位置弹出
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 通过isShown状态控制bindContextMenu实现菜单随点击位置弹出
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:55e0451e09f285625a191492f3c231e1081ba21cc32600485b03238b58afda76
 ---
 

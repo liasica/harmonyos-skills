@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1196
 title: 设置应用子窗口
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 设置应用子窗口
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-08-27
-content_hash: sha256:1ab66cc98d748c7c334ae1f290b1f0be8397e1de31c17dc6336370ea35e53485
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:19c5985f49a2c769ae77c938e949bba5ccdf51ea3df4226acf1f8218174fa703
 ---
 
 ## 问题现象
@@ -331,7 +331,7 @@ content_hash: sha256:1ab66cc98d748c7c334ae1f290b1f0be8397e1de31c17dc6336370ea35e
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/tcUJulIFQ12WycNpx1jFag/zh-cn_image_0000002689333382.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/AUQk6r5JSrGgn1vR-UvTaQ/zh-cn_image_0000002689333382.png "点击放大")
 
 ## 常见FAQ
 

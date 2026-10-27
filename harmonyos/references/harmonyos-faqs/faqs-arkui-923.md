@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-923
 title: 如何解决给Image组件设置resizable在不同设备上显示不一致问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决给Image组件设置resizable在不同设备上显示不一致问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8b7bb60cd91ccc011da2680bee60a4a0a054bc2df389e7a313da3eb92142e571
+content_hash: sha256:3b47fb831479d9dadac5548a186c1cfa4ea507d79b873c473ea603d1dc5a6aad
 ---
 
 ## 问题现象
@@ -40,9 +40,9 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/cI5JzUpARCa86dwQDnpovA/zh-cn_image_0000002658799569.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/y-szoppbR8aMV2iY5cKnEw/zh-cn_image_0000002658799569.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/t-q03u4fSsaXtbuSMs-7BQ/zh-cn_image_0000002628560216.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/x1VeV4mFS_qBp8WxW9EM-Q/zh-cn_image_0000002628560216.png "点击放大")
 
 ## 背景知识
 

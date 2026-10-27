@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-829
 title: 应用内列表滑动后出现重复数据
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 应用内列表滑动后出现重复数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6e52126b295314aab9a8c33307e9114d76e0727c7b5f381bf592cff8b61f8cd1
 ---
 

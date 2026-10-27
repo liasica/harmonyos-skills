@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1089
 title: 开发应用沉浸式效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 开发应用沉浸式效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:52+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39abb9c
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:af75d345e5a9e5aac5a98feea02562375beae8ed0c0133eb1e490492ac7f1b45
 ---
 
 ## 问题现象
@@ -220,7 +220,7 @@ content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/qENjfECMQv-uJfaUcmt9ZA/zh-cn_image_0000002628567252.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/jrkR7CgBThi1pemnwS7qSw/zh-cn_image_0000002628567252.png "点击放大")
 
 ### 方案一：沉浸式模式下显示避让区
 
@@ -352,7 +352,7 @@ content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/pSbgQ6XNRs6OaFnfSd7bdw/zh-cn_image_0000002658926565.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/4qqCgUySRcCx9n3Isl52nw/zh-cn_image_0000002658926565.png "点击放大")
 
 ### 方案二：页面中设置沉浸式并隐藏避让区
 
@@ -487,7 +487,7 @@ content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/0wxBt721S8-TgLlYcZmLvA/zh-cn_image_0000002658806621.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/_lbTk2WqSGOhuRn2ohBF3A/zh-cn_image_0000002658806621.png "点击放大")
 
 ### 方案三：通过设置窗口背景色实现沉浸式
 
@@ -584,7 +584,7 @@ content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hsTXmEb1Tj6DQQ-fx-DHIA/zh-cn_image_0000002628407356.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/t2UhInA7RN2wS_gqsD5sLg/zh-cn_image_0000002628407356.png "点击放大")
 
 ### 方案四：通过expandSafeArea实现沉浸式
 
@@ -700,7 +700,7 @@ content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Tfm5zK6TQhqTEFkOCQQWrg/zh-cn_image_0000002628567254.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/uK3YjYXETqCPfUQNOYXxhg/zh-cn_image_0000002628567254.png "点击放大")
 
 ### 方案五：滚动类组件实现沉浸式
 
@@ -832,7 +832,7 @@ content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/442sXtCJRnKPqrBj0Sf3Sw/zh-cn_image_0000002658926567.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/8SDSgeJ4RyO_CTDfT1uFxA/zh-cn_image_0000002658926567.png "点击放大")
 
 ### 方案六：通过background实现页面级沉浸式
 
@@ -910,7 +910,7 @@ content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/k5HweU4KQUa0NY2V8Pqwhw/zh-cn_image_0000002658806623.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/_Una6K-cTW6oreNk0EKmFw/zh-cn_image_0000002658806623.png "点击放大")
 
 ### 方案七：通过ignoreLayoutSafeArea实现页面级沉浸式
 
@@ -1024,7 +1024,7 @@ content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/it_-gmO2TLmNuIzkbFBocA/zh-cn_image_0000002628407360.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/81n3qTMdT7OxwBhcFDslxA/zh-cn_image_0000002628407360.png "点击放大")
 
 ### 方案八：通过ignoreLayoutSafeArea实现沉浸式并避让挖孔区
 
@@ -1325,7 +1325,7 @@ content_hash: sha256:45d20522239dcffb34223e1ce61a06e0fc3ea376a6134cf99c485445e39
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vk1AS7wLRQS979ID61c3Ew/zh-cn_image_0000002658806629.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/49TccVFYSye2iVtYAWDZsw/zh-cn_image_0000002658806629.png "点击放大")
 
 ## 总结
 

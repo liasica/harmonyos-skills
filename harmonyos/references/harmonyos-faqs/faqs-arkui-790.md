@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-790
 title: 如何实现屏幕像素(px)和毫米(mm)的互相转换以及应用场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现屏幕像素(px)和毫米(mm)的互相转换以及应用场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a56e4986f24aee8935b1d31a201696ccc54903b5cc29f9bcf48a1f29147dd067
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:dc1cadda45b20c641fd747a05de5c46ef679ffde668f4b38fb3a99d93782d546
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:a56e4986f24aee8935b1d31a201696ccc54903b5cc29f9bcf48a1f29147
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/5ETgcQuKRNeMNAGg_OzfDQ/zh-cn_image_0000002658796999.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/iPuY57rASxe-_YBVYo-8LA/zh-cn_image_0000002658796999.png "点击放大")
 
 ## 背景知识
 

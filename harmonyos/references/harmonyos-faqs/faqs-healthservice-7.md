@@ -3,15 +3,15 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 申请运动健康权限被拒问题排查定位
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 申请运动健康权限被拒问题排查定位
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
+scraped_at: 2026-10-28T07:48:48+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:cbf103a400347eb222771f73ed9a341de225b4f457b27204a8a15523682a0f0d
+content_hash: sha256:e424acca550d6508e6c372d0a3ed6c46e9dfe1598131cf38fdd2c24b1cfca94e
 ---
 
 ## 问题现象
 
 1. 申请运动健康权限被驳回，驳回原因：“应用类型包括其他平台，技术自检中接入方式麻烦增加Cloud API，请修改申请资料后重新提交”，问题该如何排查处理？
-2. 申请华为运动健康权限，提交应用信息时，上传开发者申请资料清单失败，提示“上传失败，点击重新上传”，如何排查原因？![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/G_K_pyVHQpq2y_LNMM0jEw/zh-cn_image_0000002628554628.png "点击放大")
+2. 申请华为运动健康权限，提交应用信息时，上传开发者申请资料清单失败，提示“上传失败，点击重新上传”，如何排查原因？![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/uCZ3KcxzTt-ZaOEySHO4uw/zh-cn_image_0000002628554628.png "点击放大")
 
 ## 背景知识
 

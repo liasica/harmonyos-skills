@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何控制编译过程的cpu使用
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何控制编译过程的cpu使用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:09fd407fc69daa5a1f5007a162992dcf62f008381f7ab35ea12771bd9bc9f04e
 ---
 

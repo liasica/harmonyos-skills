@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-271
 title: 如何实现跨文件样式复用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现跨文件样式复用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9f7b8a4e7660127b312eefca225c68e5f80773e623e6e321469f4c25756d86d8
 ---
 

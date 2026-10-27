@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1630
 title: 如何实现沉浸式效果与List列表滑动联动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现沉浸式效果与List列表滑动联动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:39+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:18976ea466885ad79e7c3df15a29210d22fe6ddcefd3ffd63bffad048ced9aa0
+content_hash: sha256:407b4333ca1f1b3c9a2d4374ac31591de72ef1346ba3145692923cea598bb76f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:18976ea466885ad79e7c3df15a29210d22fe6ddcefd3ffd63bffad048ce
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/hL3Gjp_WRkiOguwFAKHKaw/zh-cn_image_0000002628617582.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/21ZKkXIqQfOM2d7xsB6Yaw/zh-cn_image_0000002628617582.gif "点击放大")
 
 ## 背景知识
 

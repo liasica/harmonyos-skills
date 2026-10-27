@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI-List组件滚动与滑动常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI-List组件滚动与滑动常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:32+08:00
+scraped_at: 2026-10-28T07:46:59+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:ac4d8fc8cd2beb72bd668238f9997c25af5717e78e8b0c54ba504254e906a3d9
+content_hash: sha256:afba99c061f4969010df75741d809fb13428127cca955a1e1f29053a7cd71d86
 ---
 
 **Q：如何实现列表既可以左右滑、又可以上下滑动？**
@@ -482,7 +482,7 @@ content_hash: sha256:ac4d8fc8cd2beb72bd668238f9997c25af5717e78e8b0c54ba504254e90
 
    效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/EjwJbqbGTzutVjgVtRtQLA/zh-cn_image_0000002795262643.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/N--rzSGMTJupIkpsjj4iOA/zh-cn_image_0000002795262643.png "点击放大")
 
 **Q：在List组件中使用ListItemGroup的情况下，如何获取其中ListItem的索引值？**
 
@@ -512,7 +512,7 @@ content_hash: sha256:ac4d8fc8cd2beb72bd668238f9997c25af5717e78e8b0c54ba504254e90
 
   控制offsetRemain，滑动速度很缓慢，效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Cbr8RzbBRd6ZCFBb80Z01w/zh-cn_image_0000002766024018.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/rsTh35rGRD62k9V1I5cwIA/zh-cn_image_0000002766024018.png "点击放大")
 * onScrollIndex的入参firstIndex超过预期值时，表示已经滑动出了预期范围，用this.scroller.scrollToIndex()把滑动强制拉回到预期值。核心代码如下：
 
   ```ts
@@ -525,7 +525,7 @@ content_hash: sha256:ac4d8fc8cd2beb72bd668238f9997c25af5717e78e8b0c54ba504254e90
 
   下滑超过10之后继续滑动，会强制跳回10，效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ywm93OFKQI2xFZE_yLPuXA/zh-cn_image_0000002795262887.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/UQ4bWGvdTWWOnR8J8o7UKA/zh-cn_image_0000002795262887.png "点击放大")
 
   全量代码如下：
 
@@ -660,7 +660,7 @@ content_hash: sha256:ac4d8fc8cd2beb72bd668238f9997c25af5717e78e8b0c54ba504254e90
   ```
 * 效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Sa02gOZhQHOWWjSmYVN4gg/zh-cn_image_0000002795423231.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/8--O2s1-QDObGpQqQ3lH8Q/zh-cn_image_0000002795423231.png "点击放大")
 
 场景二：消息列表从底部开始加载，点击按钮回到最新位置。
 
@@ -728,7 +728,7 @@ content_hash: sha256:ac4d8fc8cd2beb72bd668238f9997c25af5717e78e8b0c54ba504254e90
   ```
 * 效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/I6frokz1Q6yjIfyWjVXHaA/zh-cn_image_0000002765865230.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_6uF-dh8R4OKwXv4fnvCww/zh-cn_image_0000002765865230.png "点击放大")
 
 场景三：图片异步加载完成后列表以顶部为锚点拉伸，最新消息被推出可视区域。
 
@@ -961,4 +961,4 @@ struct BindSheetTwoPage {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/D8_IVysiQ8a4OPo6Bc4LRQ/zh-cn_image_0000002795424595.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WRSy3rV-SKW7YJTimr83Pg/zh-cn_image_0000002795424595.png "点击放大")

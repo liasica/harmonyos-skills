@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1383
 title: 基于单选框的深浅色模式切换失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 基于单选框的深浅色模式切换失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b6ac6d97c776a03a1e9d83d5c9981992a8fbf7f430b6f50b40ce223dfa636875
+scraped_at: 2026-10-28T07:47:21+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:96389ff24c4c7fc1677ffd16ccdd50b8fc5731e61f8a827fa4e46bb568fd978d
 ---
 
 ## 问题现象
@@ -86,7 +86,7 @@ struct RadioButton {
 
 问题现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/xzvUchScRqa9HAmODE6w_Q/zh-cn_image_0000002628602660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/qWT7J8d3SZuPl7e1D_VeTA/zh-cn_image_0000002628602660.png "点击放大")
 
 ## 背景知识
 
@@ -99,7 +99,7 @@ struct RadioButton {
 * 当调用[setColorMode](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#setcolormode18)切换颜色模式时，组件重新渲染，通过属性[checked](../harmonyos-references/ts-basic-components-radio.md#checked)强制重置状态。
 * [onChange](../harmonyos-references/ts-basic-components-radio.md#onchange)回调被频繁触发，但isChecked的值与实际颜色模式不一致。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/jTiRDiDoQgSkqCESwR_y2w/zh-cn_image_0000002658841931.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/0AxuPYRLQ8GgpaV5UWKeEA/zh-cn_image_0000002658841931.png "点击放大")
 * 切换到深色模式后，Radio.checked仍为true，状态冲突。
 
 代码逻辑分析：
@@ -218,4 +218,4 @@ struct RadioButton {
 
 修正效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/DYNJIA24Spydl48hUWzWeQ/zh-cn_image_0000002628762562.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/3JLktzTVQ8SdWbQrnYtEvg/zh-cn_image_0000002628762562.png "点击放大")

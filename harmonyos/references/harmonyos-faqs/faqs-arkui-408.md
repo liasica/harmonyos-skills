@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-408
 title: Navigation组件，调用queryNavDestinationInfo返回undefined，如何正确调用这个接口
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation组件，调用queryNavDestinationInfo返回undefined，如何正确调用这个接口
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a9be6f326d4227fe57081744d35577a7f526b8856ad6ebbf6568cd1acf4dc3a0
 ---
 

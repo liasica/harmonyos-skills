@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: PersistentStorage、Preferences、键值型数据库、关系型数据库的区别及适用场景
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > PersistentStorage、Preferences、键值型数据库、关系型数据库的区别及适用场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0233d06b0d63a17c789ff037450ae71d48f56014eee51982bdf7caed31d16377
 ---
 

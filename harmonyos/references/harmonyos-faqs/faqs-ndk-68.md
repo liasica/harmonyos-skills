@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-68
 title: Native如何创建子线程，有什么约束，与主线程如何通信
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime） > Native如何创建子线程，有什么约束，与主线程如何通信
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d50265cad4ba82950a92517d388e8c683eeabec75bc2b9e9c4acf23493dd2a4b
 ---
 

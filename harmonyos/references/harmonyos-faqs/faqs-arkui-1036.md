@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1036
 title: PersistenceV2如何实现数据持久化存储和修改
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > PersistenceV2如何实现数据持久化存储和修改
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1b817348a2e2c144edccb7437a5ef81625b5ddbe530d4c66dd555c2caacf7b50
 ---
 

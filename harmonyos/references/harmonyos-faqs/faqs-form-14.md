@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-14
 title: 如何在卡片上刷新展示多张图片
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何在卡片上刷新展示多张图片
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:c1a6224e34b0574a58f0ff482c92c3a6ba01ea5af91231770d795be46d223207
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ff1ebfb70f2ed3de94c066687c0a47ab7589594b0ebcef8dbe17fb1b7710d708
 ---
 
 ## 问题现象
@@ -109,7 +109,7 @@ content_hash: sha256:c1a6224e34b0574a58f0ff482c92c3a6ba01ea5af91231770d795be46d2
 
    效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/g-IQEp7XTIyGRs-L2zL8mA/zh-cn_image_0000002658870925.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/qVRI_w-4R2uvbNILAfCmvA/zh-cn_image_0000002658870925.png "点击放大")
 
 ## 常见FAQ
 

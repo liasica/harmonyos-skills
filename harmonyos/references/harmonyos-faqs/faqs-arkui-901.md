@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-901
 title: 图文混排时Image组件交互事件无响应如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 图文混排时Image组件交互事件无响应如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-07-22
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bb28b1c27524da353d198dbadf32a4ed335babb33ebf434791e5a8cc9bac410e
 ---
 

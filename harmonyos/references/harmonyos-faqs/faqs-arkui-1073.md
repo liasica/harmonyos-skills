@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1073
 title: 如何设置软键盘避让
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置软键盘避让
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-07-31
-content_hash: sha256:f7a8e1e9a91ff4b2e28438ce64c260b07136aa9536b3543205e148d21027d261
+content_hash: sha256:19f8f6834dcfeef53cf54a9269eb8555fcafed9ffa3ffb6d11ee5d72c08a7d31
 ---
 
 ## 问题现象
@@ -123,7 +123,7 @@ content_hash: sha256:f7a8e1e9a91ff4b2e28438ce64c260b07136aa9536b3543205e148d2102
 
    效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/fCofdXfdTpmdlkUXp0ZpdQ/zh-cn_image_0000002628407234.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/NJissMpOQoeHblHtJXASFw/zh-cn_image_0000002628407234.png "点击放大")
 
    * 更多场景案例请参考官网：[软键盘布局适配](../best-practices/bpta-keyboard-layout-adapt.md)、[软键盘适配示例代码](https://gitee.com/harmonyos_samples/keyboard)。
 

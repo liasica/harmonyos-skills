@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 自动签名报错常见问题定位
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 自动签名报错常见问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:45+08:00
+scraped_at: 2026-10-28T07:48:58+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:ddc7c9984a25c94bdda644612fb13dfb23f82830259cdc09857de966173e9ed9
+content_hash: sha256:95c9c0f26b86989179a065a4afa743c4bc806a0aec35db66954907d461c2b484
 ---
 
 ## 问题现象
@@ -33,7 +33,7 @@ content_hash: sha256:ddc7c9984a25c94bdda644612fb13dfb23f82830259cdc09857de966173
   ```
 * **问题四：** 签名时在DevEco Studio的build-profile.json5文件中无法生成签名信息或出现如下报错。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/flyaI1g8TMGLCHUT8sHElg/zh-cn_image_0000002628569278.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/d30_5f2WT0-b1lorc-vnrA/zh-cn_image_0000002628569278.png "点击放大")
 * **问题五：** 签名报错提示，报错信息如下：
 
   ```txt
@@ -55,7 +55,7 @@ content_hash: sha256:ddc7c9984a25c94bdda644612fb13dfb23f82830259cdc09857de966173
   Error occurred while generating the key. Unable to generate the key
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/laVO9XH8T0eLS0FMKV7cLA/zh-cn_image_0000002628409372.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/E7KgyhzsSYq9hKzAEnvqSw/zh-cn_image_0000002628409372.png "点击放大")
 * **问题九：** 签名报时间戳问题，且已经设置了时间同步，但多个项目中存在某一个项目无法自动签名，报错信息如下：
 
   ```txt
@@ -171,13 +171,13 @@ content_hash: sha256:ddc7c9984a25c94bdda644612fb13dfb23f82830259cdc09857de966173
   1. 关闭自动签名弹窗。
   2. 右键点击电脑右下角时间，选择（调整日期、时间）。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/gUZZEZk8SZ2PoeWsAjPKZg/zh-cn_image_0000002658928595.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/YkKNgI-sSzaHvEZIsEva8g/zh-cn_image_0000002658928595.png "点击放大")
   3. 点击立即同步。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/iTI9XFLAScqlhsou4dC_8w/zh-cn_image_0000002658808645.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/UV7H7uTyS4aH47YS3bJFBA/zh-cn_image_0000002658808645.png "点击放大")
   4. 同步完成后会有√。此操作需要电脑联网！
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/LN17o9aPSFeOZh_P1vYdOQ/zh-cn_image_0000002628569280.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Vh-fYQHtSK61jDaQX7014A/zh-cn_image_0000002628569280.png "点击放大")
   5. 重新自动签名即可。
   6. 使用Mac电脑开发时，如果以上方法仍未解决问题，需关闭自动同步时间，手动修改系统时间与北京时间一致，精确到秒。
   7. 如果重置时间后仍不能正确签名，有可能是因为VPN把系统时间覆盖了。请检查是否打开或打开过VPN。若有，请重置一下VPN或把VPN的节点设置到国内IP。

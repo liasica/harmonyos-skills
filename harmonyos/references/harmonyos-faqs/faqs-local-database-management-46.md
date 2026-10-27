@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: "@ohos.data.distributedKVStore接口中的deleteKVStore，第一个参数appId需要传递什么值"
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > @ohos.data.distributedKVStore接口中的deleteKVStore，第一个参数appId需要传递什么值
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:848aa1cededf785177ff0ae8c24cf9db1f83002cd6fcabde74f6f6a29fc9ae0b
 ---
 

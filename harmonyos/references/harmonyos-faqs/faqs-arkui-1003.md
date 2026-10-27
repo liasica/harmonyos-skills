@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1003
 title: 如何让半透明颜色绘制时不进行叠加
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何让半透明颜色绘制时不进行叠加
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:f7510685807a8018597551d27490055c1b130543a2ede64143160c718aadb375
+content_hash: sha256:b92b063d590b1324c9a754351d815d16ac8a62a45c2b13adcd670cba2985494f
 ---
 
 ## 问题现象
@@ -50,11 +50,11 @@ struct Page {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/PuYdK0YVTryPktXmkos0VQ/zh-cn_image_0000002628404770.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/mSD8dTwWRzGcPQATPvD6-w/zh-cn_image_0000002628404770.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/jfSLhmjCRGCUKh2s1QcErA/zh-cn_image_0000002628564676.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/0p9L9sCgR_qRnj0UT9L-5w/zh-cn_image_0000002628564676.png "点击放大")
 
 ## 背景知识
 

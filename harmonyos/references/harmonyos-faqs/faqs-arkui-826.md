@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-826
 title: "@BuilderParam如何接收父组件的状态变量"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > @BuilderParam如何接收父组件的状态变量
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6b5c397f08aaeae3a86e38c3be26a52dc0f541b04a434957fb0f420221aa152e
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:effffa1ed9e10d4681b2ab754c32dd11274ad8d7fd236c46e29f36150606000d
 ---
 
 ## 问题现象
@@ -123,4 +123,4 @@ struct MyCustomContainer {
 
 运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/3kM5LZpWQtyyTgzKIcgTYQ/zh-cn_image_0000002628558356.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/xRRVIg-iQ5ursGQSGs-wFg/zh-cn_image_0000002628558356.png "点击放大")

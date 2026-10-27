@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1221
 title: setCurrentTime方法指定Video组件开始播放位置偶现其它帧闪烁的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > setCurrentTime方法指定Video组件开始播放位置偶现其它帧闪烁的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0e42a954c890c6351fd4f73a204d446ba391810e04c188c6de263f193d810309
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:6dceaa84d295d24c9d7c2d93ca6537ef5e723d2d7b3d0345b3f13c49f6dc9b0b
 ---
 
 ## 问题现象
@@ -61,7 +61,7 @@ interface DurationObject {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/yjlbN-ovRH-ttrtEV6i_Jg/zh-cn_image_0000002658953229.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/vmM4cEJpSNqcrhVmpfnXfw/zh-cn_image_0000002658953229.gif "点击放大")
 
 ## 背景知识
 

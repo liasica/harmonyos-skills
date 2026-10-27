@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 滑动浏览长图时有卡顿的情况
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 滑动浏览长图时有卡顿的情况
 category: harmonyos-faqs
-scraped_at: 2026-09-23T06:57:57+08:00
+scraped_at: 2026-10-28T07:46:42+08:00
 doc_updated_at: 2026-09-22
-content_hash: sha256:8c4dde490d9fd5621d012dbfb8d3a2a234b639c70cd821ff143ff14d9479da29
+content_hash: sha256:e025264ddd74e7da4ab0dc49dddb6638ddacb1cc7804cf3179b982dd6c4e12ff
 ---
 
 ## 问题现象
@@ -24,11 +24,11 @@ content_hash: sha256:8c4dde490d9fd5621d012dbfb8d3a2a234b639c70cd821ff143ff14d947
 
    首先查看屏幕刷新率，Frame泳道下的Display Vsync子泳道会显示对应时间段的屏幕刷新率，支持对框选的时间段内的vsync进行分布统计，如下图中，屏幕刷新率为119Hz。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/MmKZzl8yT3aQp9olGLYpAA/zh-cn_image_0000002658914329.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/4R2JNmclTFS1hjt88gwN0A/zh-cn_image_0000002658914329.png "点击放大")
 
    然后查看应用主线程请求绘制渲染的周期，Trace中找到应用包名的泳道，通过H:SendCommands关键字查看应用发送的渲染请求，其中相邻的两个transactionFlag的时间间距，就是主线程请求绘制渲染的周期。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/LC0bjKoSQZq2wvOIAtnw0A/zh-cn_image_0000002658794375.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/WDDN9CWYRAKVNevs6vC3fQ/zh-cn_image_0000002658794375.png "点击放大")
 
    正常情况下主线程请求绘制渲染周期（如8.3ms）会与屏幕刷新率（如120Hz）对应，但如果主线程在执行耗时操作时，会导致两次请求绘制渲染的时间间隔变长，在120Hz屏幕刷新率下应用绘制的帧率少于120，出现卡顿、丢帧的情况。
 2. 查看滑动手势事件是否使用animateTo。
@@ -41,9 +41,9 @@ content_hash: sha256:8c4dde490d9fd5621d012dbfb8d3a2a234b639c70cd821ff143ff14d947
 
    通过Trace发现只能看到多次状态变量刷新，在应用收到手指离开屏幕的事件处，仅更新页面偏移状态，没有调用animateTo启动动画：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/8lJUMAeURZytOPraLJHAOw/zh-cn_image_0000002628555010.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/N8UW6OWuQSWlfUyy60Z-zA/zh-cn_image_0000002628555010.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/kaa0JYTdQe68cEkrGnEMOQ/zh-cn_image_0000002628395110.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/M7ISiAlBTOWs_z_gx5m61Q/zh-cn_image_0000002628395110.png "点击放大")
 
 ## 分析结论
 

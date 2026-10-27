@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-696
 title: 使用香港手机号登录无法接收验证码
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用香港手机号登录无法接收验证码
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5cc3965512805ab7280a652d78a3050cce977cfc796ee6730a1cd854e460fac8
 ---
 

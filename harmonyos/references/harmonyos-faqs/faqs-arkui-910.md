@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-910
 title: LazyForEach实现删除item动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > LazyForEach实现删除item动画效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0a51882bd8d05b10bddccf377b361d36adc3b8e510b6e3d361b3c70f13e59468
+content_hash: sha256:343a0cb28f5dc16af023260bc2e20cf7c40b5acb4b346f2617ba9b275074bf65
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:0a51882bd8d05b10bddccf377b361d36adc3b8e510b6e3d361b3c70f13e
 
 LazyForEach删除item：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/j-msylLeRWWG4xysWgm6Eg/zh-cn_image_0000002628399760.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/1wbE4_TpTZGlecaTy2My2Q/zh-cn_image_0000002628399760.gif "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-196
 title: 如何保持屏幕常亮
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何保持屏幕常亮
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:af82b1a2b9780bce32a565387b7900de2a3ddf08bcd85b602535cf22a16bef61
 ---
 

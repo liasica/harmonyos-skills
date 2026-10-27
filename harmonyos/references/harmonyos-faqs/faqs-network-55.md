@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-55
 title: 如何使用Charles工具抓包
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何使用Charles工具抓包
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:13+08:00
+scraped_at: 2026-10-28T07:48:14+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:a97a1986122b041df57a660865f9e823200b68b0d95f5c8116f64bb490556fc5
+content_hash: sha256:89aad48fcfe8e1c3971ec68b0b64db275274fa4f6195ba703312709c24afb77e
 ---
 
 **说明** 
@@ -36,10 +36,10 @@ Charles具体使用步骤如下：
    2. 设置Charles的调试端口号。
       * 点击“Proxy” -> SSL Proxy Settings -> 在Include栏下点击“Add” -> 添加“:”，即Host输入“\*”，Port输入“\*”，再添加“\*:443”，即Host输入“\*”，Port输入“443” -> 点击“确定”。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/IDAL0uShQoaCOwF7Z6H1XA/zh-cn_image_0000002654796159.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Iv_4PlKRSsGOmnG6Q_Dtiw/zh-cn_image_0000002654796159.png "点击放大")
       * 点击“Proxy” -> Proxy Settings -> 设置“HTTP Proxy”下的Port（即Charles监听的端口，默认为8888）-> 勾选“Enable transparent HTTP proxying” -> 最后点击“OK”。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/kA27vWxuSjmacSPYud5btQ/zh-cn_image_0000002624636694.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/sqmCzuUnTzSxnN06Z8g-2A/zh-cn_image_0000002624636694.png "点击放大")
    3. 手机与PC连接同一局域网，Wi-Fi设置为手动代理，服务器主机名和端口为Charles的IP地址和监听端口。
 
       点击需要连接的Wi-Fi进入密码输入页面。在输入密码前，点击“代理”，选择“手动”，设置“代理的服务器主机名”为Charles的IP地址，“服务器端口”为Charles监听的端口，即设置为8888。最后输入密码，连接Wi-Fi。
@@ -48,18 +48,18 @@ Charles具体使用步骤如下：
 
       点击顶部菜单栏“Help” -> 选择“SSL Proxying” -> 点击“Install Charles Root Certificate” -> 点击“安装证书” -> 设置存储位置（可选择当前用户或本地计算机）后，点击“下一步” -> 选择“将所有证书都放入下列存储” -> 点击“浏览” -> 设置证书存储路径为“受信任的根证书颁发机构”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/a58-avTDTgyzw36yj8QW_w/zh-cn_image_0000002654836107.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/kb2WjwavQ12brssIUXZ-cA/zh-cn_image_0000002654836107.png "点击放大")
    2. 导入系统根证书到手机。
 
       方式一：点击 Charles 顶部菜单栏“Help” -> 选择“SSL Proxying” -> 点击“Install Charles Root Certificate on a Mobile Device or Remote Browser” -> 在手机的自带浏览器中访问 <http://chls.pro/ssl> -> 点击“立即下载”，将证书下载至手机内存中。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/H1BCtM-uQ8S6Q_WHVEQX-A/zh-cn_image_0000002624476796.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/VSskACyEQYS1x2KInBxLXg/zh-cn_image_0000002624476796.png "点击放大")
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/iU3LdUixQFupZ7fuO9rP-w/zh-cn_image_0000002654796161.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/uoFeLPCsRU2Uv5rxBCagNA/zh-cn_image_0000002654796161.png)
 
       方式二：在PC端，点击“Help”->点击“SSL Proxying”->选择“Save Charles Root Certificate...”，将证书保存到本地，格式为pem。将手机连接到电脑，通过DevEco将刚保存的pem文件上传到手机中（鼠标右键点击目标文件夹，选择“Upload...”，然后选择刚保存的pem文件），即可进行后续的证书安装步骤。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/mI7z9OBNT9CDZ-UWC0cdqQ/zh-cn_image_0000002624636696.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/-wmCSU65RXiA6b2W2rmyuA/zh-cn_image_0000002624636696.png "点击放大")
 4. 证书安装。
 
    证书在手机上的安装步骤如下：
@@ -75,7 +75,7 @@ Charles具体使用步骤如下：
 
    1. 在主界面中部点击Ctrl+F打开搜索栏，填入过滤关键字。例如监听www.charlesproxy.com，填入或勾选信息后点击Find。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/2uiBO2BpR4i8fIOYuNfH3Q/zh-cn_image_0000002654796163.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/MHZ0xIIMRY-r5-ajQcdMXQ/zh-cn_image_0000002654796163.png "点击放大")
    2. 在Charles的菜单栏中选择“Proxy” -> “Recording Settings” -> 选择“Include”栏 -> 点击“Add”添加一个项目 -> 按需填入需要监控的协议，重新监听即可只截取目标网站。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/c5eDB4qVQg6gMNOVVbdJJw/zh-cn_image_0000002624636698.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Gbc6K9W1RbuT6uU0e5mKPA/zh-cn_image_0000002624636698.png "点击放大")

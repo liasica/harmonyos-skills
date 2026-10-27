@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1088
 title: 半模态弹窗常见的开发问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 半模态弹窗常见的开发问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-08-27
-content_hash: sha256:8adcca7ff90475b03fea63196deb8e5ac27248611a978e5e60c1c75022b9457c
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7aef2e7fd1f052af2029e7f435e0324691ff3a479d5e7373c4f0f2c7812d4f0a
 ---
 
 ## 问题现象
@@ -86,7 +86,7 @@ content_hash: sha256:8adcca7ff90475b03fea63196deb8e5ac27248611a978e5e60c1c75022b
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/XaBwEq2JT8uibxCd4L9t2A/zh-cn_image_0000002719023773.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/QeXxdvFZQOuFT87DyxZ-sA/zh-cn_image_0000002719023773.png "点击放大")
 * **解决方案二：**
 
   在bindSheet的builder外层包裹Scroll容器，利用其手势拦截机制可有效屏蔽跟手滑动。但需特别注意的是，通过SheetOptions的title属性设置的标题区域与builder处于同级布局，该区域仍会独立消费手势事件，导致拖拽标题时触发跟手滑动。因此若要实现完全禁止跟手滑动的效果，应避免设置SheetOptions的title属性，具体代码如下：
@@ -137,7 +137,7 @@ content_hash: sha256:8adcca7ff90475b03fea63196deb8e5ac27248611a978e5e60c1c75022b
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/GzuLjwz8QfuybFuxi_P87Q/zh-cn_image_0000002689344852.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/mneU72piRdKqys0SySoh8g/zh-cn_image_0000002689344852.png "点击放大")
 * **解决方案三：**
 
   通过bindSheet的SheetOptions提供的onWillDismiss方法，拦截bindSheet的关闭原因，从而可以控制bindSheet是否关闭，具体代码如下：
@@ -193,7 +193,7 @@ content_hash: sha256:8adcca7ff90475b03fea63196deb8e5ac27248611a978e5e60c1c75022b
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/cOo5It4tTc2AFstwOf1_SQ/zh-cn_image_0000002689345618.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Ukns0uNVRpyL6D1ZDyMptw/zh-cn_image_0000002689345618.png "点击放大")
 * **解决方案四：**
 
   列表滑动到顶后不能紧接着连续滑动关闭弹窗，是由于列表存在惯性滚动，当惯性滚动进行时，滑动手势无法交接给父组件bindSheet，因此无法连续滑动，必须等待惯性滚动消失后，bindSheet才能响应滑动。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-265
 title: 如何实现点击输入框时会拉起软键盘，点击Button时软键盘关闭
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现点击输入框时会拉起软键盘，点击Button时软键盘关闭
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3be894a95bb65f72c7cf159e002fd4a03df113a5b85b4c0ff7461aebdf16c653
 ---
 

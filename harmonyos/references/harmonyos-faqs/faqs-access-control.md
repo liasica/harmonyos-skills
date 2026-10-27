@@ -3,11 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 程序访问控制
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:f4275d2bfd337803c25f20ddd58a2307dcdf52f3461cc62e7667ee2f672c51e6
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:64869dda3031af90978362208365ad2baa427408c988d54d6adae9cbad459505
 ---
 
+* **[常见问题](access-control-faq.md)**
 * **[权限申请被拒绝后，再次申请权限，是否出现申请权限弹窗](faqs-access-control-1.md)**
 * **[用户更新app后是否还会弹出权限申请弹窗](faqs-access-control-2.md)**
 * **[请求精准定位权限申请注意事项](faqs-access-control-3.md)**

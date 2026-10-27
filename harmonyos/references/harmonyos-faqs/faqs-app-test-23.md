@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: Hypium是否支持在模拟器上执行测试用例
 breadcrumb: FAQ > DevEco Studio > 应用测试 > Hypium是否支持在模拟器上执行测试用例
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
+scraped_at: 2026-10-28T07:49:01+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:d6c3b09b91007b044eab4bac869cc2ad8b7ae58d31c7c32baf2c42142bc7e9c4
+content_hash: sha256:194cf7c17a5f07c5cdde53fd8e0deddf944e8fbe06187169fbe546493da581ce
 ---
 
 ## 问题现象
@@ -25,19 +25,19 @@ Hypium自动化测试用例支持在模拟器中运行。步骤如下：
 
    点击菜单栏的Tools > Device Manager > Run如图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/H3U674QDQmaHMqfFsPjrJw/zh-cn_image_0000002658808819.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/zCEy2FAPS12KOAs-eY-sjw/zh-cn_image_0000002658808819.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/G0vMvEWFRsynmHRmeRjsaw/zh-cn_image_0000002628409552.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/KVzivaURR26NhSl71C7yPA/zh-cn_image_0000002628409552.png "点击放大")
 2. 步骤二：PyCharm运行用例。
 
    模拟器启动后PyCharm可以查看本地模拟器已连接。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/_Gedla88RxqnqNwoEToV5g/zh-cn_image_0000002628569450.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/flS6nxRLQlOsWL0l9wft1w/zh-cn_image_0000002628569450.png "点击放大")
 
    单台设备直接执行用例正常运行成功，同时模拟器正常展示用例运行过程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/eZ_4dTMEQ5SO7z4UUo1-Rw/zh-cn_image_0000002658928767.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/FK5yh0ICR4uP7SUHhAN8pA/zh-cn_image_0000002658928767.png "点击放大")
 
    多台设备需在user\_config.xml指定运行设备的sn，若指定运行设备是模拟器配置如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/8YIU5okYSNisy3tqDFYwAg/zh-cn_image_0000002658808821.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8yTC9h5eRhudJm-w5T7cAQ/zh-cn_image_0000002658808821.png "点击放大")

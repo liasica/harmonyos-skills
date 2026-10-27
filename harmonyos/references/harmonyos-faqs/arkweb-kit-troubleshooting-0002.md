@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkweb-kit-trou
 title: ArkWeb页面顶部显示链接信息问题定位
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 故障排查 > ArkWeb页面顶部显示链接信息问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:47+08:00
+scraped_at: 2026-10-28T07:48:04+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:6e7e3b6e2f8817c77176609f1c4735d4af3c8126e820bb33b3b5c8ab9610d2aa
+content_hash: sha256:f694069d9f223da53cb6a62fffbe0daafc78eb45f0b04e919ffa81736a5a43c5
 ---
 
 ## 问题现象
 
 页面标题处显示链接内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/HD654kz6Sd2TZFJoja27zw/zh-cn_image_0000002795303511.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xav1I8UDQ2mxY6KVN8O5iw/zh-cn_image_0000002795303511.png "点击放大")
 
 ## 定位过程
 
 1. 使用DevEco Testing-实用工具-UIViewer查看页面布局，标题为Text组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/rBbNKEDCQhmZjvO6UESKrg/zh-cn_image_0000002795463357.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/oEAny4wFQE-J2UbPg6CJ5Q/zh-cn_image_0000002795463357.png "点击放大")
 2. 查看该Web组件的设置，该Web组件使用onTitleReceive获取H5页面的标题，并通过Text组件显示标题。
 
    ```ts
@@ -172,4 +172,4 @@ struct WebVideo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/5X-Qbl7rQaurFCiODTR2mw/zh-cn_image_0000002766065434.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/DbNocH2eSyGgaM8Fefjt7A/zh-cn_image_0000002766065434.png "点击放大")

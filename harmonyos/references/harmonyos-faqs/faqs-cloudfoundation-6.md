@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-cloudfound
 title: 元服务使用云数据库是否需要获取用户凭据
 breadcrumb: FAQ > 应用服务开发 > 云开发服务（Cloud Foundation Kit） > 元服务使用云数据库是否需要获取用户凭据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:45b32390a52308173311c1ca62a53b93e6ca143d2db28b081a9a7749b54e99e0
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c3529b14bf01862e352cc93cc94cf627b053bbbb7a55b62eba8ab49dca820a6d
 ---
 
 ## 问题现象
@@ -18,11 +18,11 @@ content_hash: sha256:45b32390a52308173311c1ca62a53b93e6ca143d2db28b081a9a7749b54
 
 应用/元服务后端构建典型场景：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/x3VVhRxXTZOt-vMt_yFrbg/zh-cn_image_0000002658794005.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/gvJPQdGCQ1G_vjHO4r8xag/zh-cn_image_0000002658794005.png "点击放大")
 
 ## 解决方案
 
-应用/元服务使用[云数据库服务](../harmonyos-guides/cloudfoundation-storage-config.md)，需要获取用户凭据。当前支持通过AGC认证服务SDK、或者华为账号服务Access Token接口两种方式获取，具体请参见[AuthProvider](../harmonyos-references/cloudfoundation-cloudcommon.md#authprovider)。
+应用/元服务使用[云数据库服务](../harmonyos-guides/cloudfoundation-storage-config.md)，需要获取用户凭据。当前支持通过HarmonyOS 开发者中心认证服务SDK、或者华为账号服务Access Token接口两种方式获取，具体请参见[AuthProvider](../harmonyos-references/cloudfoundation-cloudcommon.md#authprovider)。
 
 * 请检查失败的账号是否进行[认证服务](../app/agc-help-auth-0000002236336998.md)。
 * 如果已完成认证，请检查是否在使用云存储服务上传文件前获取AuthProvider。

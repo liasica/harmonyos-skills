@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: ValuesBucket是否有可动态添加字段的方式
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > ValuesBucket是否有可动态添加字段的方式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:086b8921a08f383e5bd256f057d03a3a736599ae7e295ef6653fb1b80655ac7d
 ---
 

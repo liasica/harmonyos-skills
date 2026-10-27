@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-16
 title: 如何获取Native侧printf等方法打印的信息
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何获取Native侧printf等方法打印的信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e889ccb6e08a53e761baf18a99489f8b4fcafd78293988f0b7b6edf7076b47cb
 ---
 

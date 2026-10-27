@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-660
 title: 如何实现弹框跟随自定义UI组件的消失而消失
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现弹框跟随自定义UI组件的消失而消失
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:aef974c0495e8a97b8c810dbb6b68ca49259a055a9945d1e7cecc64f44641bdb
+content_hash: sha256:34df15cba98f2dff7c2824244b357745b7b640fc223b47e0b1f495ee67aac4a2
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:aef974c0495e8a97b8c810dbb6b68ca49259a055a9945d1e7cecc64f446
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/jEtvRmrPSbqlSYVLLYqY3g/zh-cn_image_0000002658793923.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/bL_ChxWRQYGSXUOo6kRESA/zh-cn_image_0000002658793923.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-profiler-1
 title: DevEco Profile的SnapShot无法抓取ArkTS snapshot数据
 breadcrumb: FAQ > DevEco Studio > 性能分析 > DevEco Profile的SnapShot无法抓取ArkTS snapshot数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
+scraped_at: 2026-10-28T07:49:00+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:62a2a985b9b55eb78bb38d5230da825206ab89c2023f9c30e1eae790664ecfcf
+content_hash: sha256:822b6b4f7f1c255e9a42d0dec81b86a7751230a0a4bf5a9760dd0f46ffb99d34
 ---
 
 ## 问题现象
@@ -16,9 +16,9 @@ content_hash: sha256:62a2a985b9b55eb78bb38d5230da825206ab89c2023f9c30e1eae790664
 * 工程机版本：5.0.1.130(SP8C00E130P5P4patch03)。
 * SDK版本：API17。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/TkyA8MVaTXqUfq9EX69tYg/zh-cn_image_0000002628409542.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/g1z1_VbcSQa_nUzw7v2iWA/zh-cn_image_0000002628409542.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/QNkpkGBITLS0IIcIVQmTmA/zh-cn_image_0000002628569440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/do6obL1cTGuppaYVNx_A8Q/zh-cn_image_0000002628569440.png "点击放大")
 
 ## 背景知识
 

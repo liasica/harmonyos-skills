@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-572
 title: 判断滚动与滑动容器组件的子组件是否可见
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 判断滚动与滑动容器组件的子组件是否可见
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-07-31
-content_hash: sha256:1cfdb71e9f6e0ecd8fed2b2635634753f8f780ab9bf3cb5ad904a5190135d32a
+content_hash: sha256:7295f0bef53cbb4a67b564b9eb6a4c8179ffc836325a4f6b49a0b514cf583774
 ---
 
 ## 问题现象
@@ -28,7 +28,7 @@ onScrollStop(() => {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/jaUDbjl3RW6UBefPKB6CRQ/zh-cn_image_0000002658791435.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Fh5EEDlTTPm0O0HIQRNniA/zh-cn_image_0000002658791435.png "点击放大")
 
 ## 背景知识
 
@@ -194,4 +194,4 @@ onScrollStop(() => {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/f-iZdo8-T2CaFp1EXcR0nA/zh-cn_image_0000002628552048.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/MxrK6xkASBuaxxc1H_hhog/zh-cn_image_0000002628552048.png "点击放大")

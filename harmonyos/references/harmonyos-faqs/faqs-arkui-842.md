@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-842
 title: Image动态设置圆角大小
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image动态设置圆角大小
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:19635d1b6d6024d93e917c3cfc504ca20709623143e1fbc48316e292aa953334
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:506646bee57fdc7bf177b5598a6e2dded26fbd599bc08ceb74d087ea027cb8c1
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:19635d1b6d6024d93e917c3cfc504ca20709623143e1fbc48316e292aa9
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/tIbyrHAPQyuMhQET4FLDwg/zh-cn_image_0000002628558546.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/i657VJ_hRROh13IgUp6PmQ/zh-cn_image_0000002628558546.gif "点击放大")
 
 ## 背景知识
 

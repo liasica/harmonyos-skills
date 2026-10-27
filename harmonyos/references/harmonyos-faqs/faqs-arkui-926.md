@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-926
 title: 如何实现覆盖状态栏的渐变背景效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现覆盖状态栏的渐变背景效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:cd3380808a4dcb7fdfd52bc9c57c54f5097764772f4ec04926baa08752817c1c
+content_hash: sha256:aac03d854bfccf2e7a1dce15e3bd338c0326e07d81b3e149bb4495953a88285c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:cd3380808a4dcb7fdfd52bc9c57c54f5097764772f4ec04926baa087528
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/EKFPLN9SS82-P8MsFuOtsg/zh-cn_image_0000002658799579.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vslHh0ZiQiuP-OWHhOhypQ/zh-cn_image_0000002658799579.png "点击放大")
 
 ## 背景知识
 

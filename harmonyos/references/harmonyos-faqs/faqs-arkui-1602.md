@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1602
 title: 如何实现Swiper控制最边缘时的弹性距离
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Swiper控制最边缘时的弹性距离
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:5773d697da13efdef4274914609945c047d1558d206bf2119e1b96fc9d952dbf
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9f3b38ee2956c37ccae7d0a8ee9b6bd1acaa2a6d210510c0af5540ff99e01aa6
 ---
 
 ## 问题现象
 
 使用Swiper展示内容时，在列表的第一个和最后一个展示时，可以通过上划或者下划触发弹性伸缩。但是，弹性伸缩的距离过长。是否可以设置Swiper中弹性伸缩的高度，如下图拉到最下面伸缩的距离大概有2/5：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/AL2siOY6SKS7K8ZQmbQ4Pw/zh-cn_image_0000002658852597.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/x8ffyPPMTZeZxMArpj1dww/zh-cn_image_0000002658852597.png "点击放大")
 
 把第一个内容拉到最下面伸缩距离固定：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/c6eDgX5KTxeC4sw6Wozf3w/zh-cn_image_0000002628773238.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/fbod_Y5rRLqIOXPLhDNHvg/zh-cn_image_0000002628773238.png "点击放大")
 
 ## 背景知识
 

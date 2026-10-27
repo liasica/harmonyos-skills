@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-476
 title: aboutToReuse使用入参params刷新UI崩溃
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > aboutToReuse使用入参params刷新UI崩溃
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:acd17c986a35f7af393d05e14b134fee67586bd16b11fd063355641e3042f9b2
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1514
 title: 如何实现顶部自定义下拉菜单及其遮罩效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现顶部自定义下拉菜单及其遮罩效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:980d740759d409706ae664235bbbcc6c8600b0626e957b7050430adc24993f13
+content_hash: sha256:8c28368d57428ac1195107f35453a917fcaaa5dd23c5c1953330e555e2023bbf
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:980d740759d409706ae664235bbbcc6c8600b0626e957b7050430adc249
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/u5S4t4PcQQiJhqvVZPE3LA/zh-cn_image_0000002658965771.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/brZbHfiSRJulpe2eosR8ew/zh-cn_image_0000002658965771.png "点击放大")
 
 ## 背景知识
 

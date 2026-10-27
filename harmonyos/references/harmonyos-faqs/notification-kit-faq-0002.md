@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/notification-ki
 title: 用户通知服务常见问题
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 常见问题 > 用户通知服务常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:35+08:00
+scraped_at: 2026-10-28T07:48:47+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:da2c03d932dcbb99a9f5a45b3326e6c84c493400b34976b229fb2d7855d652ef
+content_hash: sha256:5afbad1103323232076ac82a41456bc5557f2e9a905a4f39f47dddd005f0e304
 ---
 
 **Q：配置了用户通知服务后，横幅通知没有显示，如何配置应用以启用横幅通知？**
@@ -96,7 +96,7 @@ content_hash: sha256:da2c03d932dcbb99a9f5a45b3326e6c84c493400b34976b229fb2d7855d
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/UbQ6GmDnSrCbHiP6Jo3CKg/zh-cn_image_0000002765215712.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/dqYa78vcQbG-O7DeCHmR6w/zh-cn_image_0000002765215712.png "点击放大")
 
 完整代码如下：
 

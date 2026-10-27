@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 如何在命令行使用ohpm
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 如何在命令行使用ohpm
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:31+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:4ef7cec092d90e90ba7be2cb998700c5dfc0aec739053bad9f721f3448501d6b
+scraped_at: 2026-10-28T07:48:48+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:eb866efc2c0c35e1b707efa930337db3168fd3fda3372d36ecfd8856d7c2a903
 ---
 
 **注意** 
@@ -22,10 +22,10 @@ ohpm 默认解压路径为：DevEco Studio 中默认安装位置：<DevEco Studi
 
 1. 在Windows系统中，右键点击“此电脑”选择“属性”，进入“高级系统设置”，点击“环境变量”，在“系统变量”中找到“Path”，点击“编辑”，添加ohpm工具包解压后的bin目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/aUhdUD5TRKSE9DZElFATwg/zh-cn_image_0000002654837715.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/UgFz0AZgQE20e4dw8VHKDQ/zh-cn_image_0000002654837715.png "点击放大")
 2. 添加变量后，重开命令行窗口，执行ohpm -v查看ohpm版本号，终端输出版本号信息（如1.0.0）即为成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/o1KKCv-IQ3K7s-KD4PCfjQ/zh-cn_image_0000002624478402.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/0LYzw601SZ-K9bMgJYI4bQ/zh-cn_image_0000002624478402.png)
 
 **问题现象2**
 
@@ -57,4 +57,4 @@ ohpm 默认解压路径为：DevEco Studio 中默认安装位置：<DevEco Studi
    ohpm -v
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/hx5cf1HgTQOLUrbs33mKVA/zh-cn_image_0000002654797767.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/pbDeSwEYQuemClIA2YWf6Q/zh-cn_image_0000002654797767.png)

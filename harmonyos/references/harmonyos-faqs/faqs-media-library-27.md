@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: PhotoPicker的常见使用问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > PhotoPicker的常见使用问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-08-19
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:28a73ba6d252ec804ac8626cd1df107f83e0ea47b56da1addd583db0f7435f01
 ---
 

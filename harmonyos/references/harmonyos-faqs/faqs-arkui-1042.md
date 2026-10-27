@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1042
 title: 如何实现圆形转盘的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现圆形转盘的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8cfdd6ce2e109b6248197121162de5f8e989140037c24f5cc1a16c4bf872a9ba
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:83e5198fb3c8f88d47d7ec498e1cb4c79ffeb3fbc3b587778be4cdc65fec3a3a
 ---
 
 ## 问题现象
@@ -141,4 +141,4 @@ struct RotatableDisc {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/MumUuP1RT9yKwFFTfcFnJg/zh-cn_image_0000002658804819.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/3SADika5Tf2dXXfZ2x3Wxg/zh-cn_image_0000002658804819.png "点击放大")

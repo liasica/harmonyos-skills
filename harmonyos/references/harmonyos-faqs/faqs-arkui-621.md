@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-621
 title: 上拉页面时，页面下方部分出现空白，显示异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 上拉页面时，页面下方部分出现空白，显示异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:33+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:5941b8f43b351ca5f8f8f5790c74e566ededa5f65b9227bab6d092b02dd6d030
+content_hash: sha256:f11b32bca77240a787740070f14a4c3b5c745545b44ec253fcddb561800883f0
 ---
 
 ## 问题现象
 
 上拉页面时，上方组件收缩，下方组件上移，组件下方显示大量空白。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Xi1R_ZlVRP6qhu3MmSVz0Q/zh-cn_image_0000002658913483.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/374S9NnTSVWDXVUk5Inj7g/zh-cn_image_0000002658913483.png "点击放大")
 
 ## 背景知识
 
@@ -333,4 +333,4 @@ export interface TimeTable {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/caOW8XtjRbeU31ew4FvJAQ/zh-cn_image_0000002658793531.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/7W13uUVdRg-WA_eQtfNTuA/zh-cn_image_0000002658793531.png "点击放大")

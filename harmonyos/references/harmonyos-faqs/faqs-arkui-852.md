@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-852
 title: 应用加载页面时有短暂的白屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 应用加载页面时有短暂的白屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:220b50e7a33bc021acc819b296ab02c2e24e059c79f7e09322c1a3c6a63b4d95
 ---
 

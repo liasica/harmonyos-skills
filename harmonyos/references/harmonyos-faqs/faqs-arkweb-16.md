@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-16
 title: 注册的自定义字体在 webview 中无效
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 注册的自定义字体在 webview 中无效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e0620c7dee7b1335125e7a5a207218cdadb21e78146861a1189c084de5fb9530
 ---
 

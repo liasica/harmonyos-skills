@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-599
 title: 停止滑动后Swiper的子组件获取的坐标发生骤变怎么解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 停止滑动后Swiper的子组件获取的坐标发生骤变怎么解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:db40c8005bd33ee4525f38877f999b1658af014a3e073839ddeff9e6824771a1
 ---
 

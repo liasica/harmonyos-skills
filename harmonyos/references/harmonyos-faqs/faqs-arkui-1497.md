@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1497
 title: 如何实现页面内容随着侧边栏弹出平移
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现页面内容随着侧边栏弹出平移
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5fbf2fd087dcaef758fe45f16eb6948c9b2f76ca5d29be1b2f06bc8e130c440e
 ---
 

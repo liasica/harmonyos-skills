@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "构建报错“ERROR: Task xxx was not found in the project xxx”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 构建报错“ERROR: Task xxx was not found in the project xxx”"
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
+scraped_at: 2026-10-28T07:48:52+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:111cdde61f6cc8009cb65523d9f32e390e7422de26e3c3aa1dfde362e188b759
+content_hash: sha256:3cfe103365c9f68f26a1a7d29fe93857864e2b091e9b03601a9865668dc6ddcf
 ---
 
 **问题现象**
@@ -18,7 +18,7 @@ content_hash: sha256:111cdde61f6cc8009cb65523d9f32e390e7422de26e3c3aa1dfde362e18
 
 - 确认项目路径是否正确。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/E2l13VViS0ijHbEMN-T0vA/zh-cn_image_0000002624478508.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/2idJBYWbQLqH4ZBXTWGhAg/zh-cn_image_0000002624478508.png)
 
 **问题确认**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1241
 title: 窗口旋转方向设置异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 窗口旋转方向设置异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-08-27
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1bbb8a659463d5cb471703a115cf3d313b4b01107c180f274eff327520ee4f78
 ---
 

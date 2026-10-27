@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 在系统设置修改了应用权限，应用能否监听到权限变化
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 在系统设置修改了应用权限，应用能否监听到权限变化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:899145e5e8778dc6ea23a92a45f4057fc2f88fa368ed5055cf66ebbfe7813f51
 ---
 

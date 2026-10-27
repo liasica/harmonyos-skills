@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 如何解决Network单元测试用例crash问题
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 如何解决Network单元测试用例crash问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eaa0ff31c65fd9d09a78c3a76d17b46b6f3ecba44b4c3e1acf8f7e849b35caa7
 ---
 

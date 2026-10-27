@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-23
 title: 如何选择图文混排的实现方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何选择图文混排的实现方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c1997c3e179434d74495cebc21365df50a9401448801f2c4f31447dacf55849b
 ---
 

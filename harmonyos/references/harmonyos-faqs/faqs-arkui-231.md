@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-231
 title: 自定义组件如何实现类似系统组件的链式调用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义组件如何实现类似系统组件的链式调用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5057a87fed49a20800f96c3699e8a21ba806a18d241209164cdab3c7c6a0a3df
 ---
 

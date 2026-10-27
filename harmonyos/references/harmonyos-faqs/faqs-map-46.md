@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-46
 title: 地图视野范围如何设置
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 地图视野范围如何设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:8eb368479c985ec2b2c9f9aa9e1b0872a371060b2bf1d9053f293b82d3086779
+content_hash: sha256:292edf9ca506040a330d58226e68c57cd55368712d7079838cf83be0286e99ec
 ---
 
 ## 问题现象
@@ -58,7 +58,7 @@ content_hash: sha256:8eb368479c985ec2b2c9f9aa9e1b0872a371060b2bf1d9053f293b82d30
 
    效果图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/KJeG2c86Qli4mM6XFGV3Gg/zh-cn_image_0000002628554288.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Nmp9LoqnRUeeaU1NGNAMyw/zh-cn_image_0000002628554288.png "点击放大")
 
    完整代码：
 

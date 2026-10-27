@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1348
 title: 实现页面栈中指定页面置底方法
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现页面栈中指定页面置底方法
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:54+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9dd9c0ca21db03b2dccb742d5740547b16ced2188a1e23065adc97651fe649c6
+content_hash: sha256:9ac827e0eeb2e66256964d122ced338f3f95ad17ae7c7462e6251162d3ef8cd0
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ HarmonyOS官方只提供了将指定的NavDestination页面移到栈顶的moveIn
 
 如下图所示，在页面跳转到PageE后，此时页面栈的顺序为ABCDE，此时要求将页面C置底，即将页面栈顺序改为CABDE，并依次返回。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/7IKFLqb4T7isWsYCD4gApg/zh-cn_image_0000002628601518.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/e0BAPNjxTHWKi8Fdu8h3uA/zh-cn_image_0000002628601518.png "点击放大")
 
 ## 背景知识
 

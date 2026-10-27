@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-153
 title: Image或者ImageSpan传入一个string类型的路径时无法加载图片
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image或者ImageSpan传入一个string类型的路径时无法加载图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fc88821ae0ae2eb5714b0033cb36bd69e9cdc7b2e5619294ff926a8eb9490a1d
 ---
 

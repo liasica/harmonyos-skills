@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1361
 title: 如何获取RichEditor组件中特殊字符
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何获取RichEditor组件中特殊字符
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-07-02
-content_hash: sha256:2b3b3d89df35e1b94259841f35504e1d52b2bc7ef1cd54dedbb8361e534fdaab
+scraped_at: 2026-10-28T07:47:21+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bf50c38a4f5c626765eff66f7d39d816db4a939ba9f1bf3d0c2e7adb2c436a4e
 ---
 
 ## 问题现象
@@ -165,7 +165,7 @@ RichEditor组件通过实时文本监听机制捕获用户输入的文本流，�
 
    运行效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/oAtfDKWlTBeVnwBQBZG6IA/zh-cn_image_0000002630967766.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/adXxREFkShqkEILNNZypqg/zh-cn_image_0000002630967766.png "点击放大")
 
 ## 常见FAQ
 

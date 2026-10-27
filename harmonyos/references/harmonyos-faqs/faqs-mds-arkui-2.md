@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-mds-arkui-
 title: 画中画如何获取当前视频播放状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 画中画如何获取当前视频播放状态
 category: harmonyos-faqs
-scraped_at: 2026-09-24T06:56:59+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:98c069c28b07bfaf01636db9519a6ebfdd056ae06a3356aa31aa7971647de448
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1a83aa8c30466226a32c7a37e7df119c2b06d5b0fdf7892f9860d2974f1f90ca
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:98c069c28b07bfaf01636db9519a6ebfdd056ae06a3356aa31aa7971647
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ajj-VhxARTKPCmPGxehkqg/zh-cn_image_0000002735472486.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/BmnWvQChTa-HzpF0Eh8-5A/zh-cn_image_0000002735472486.png "点击放大")
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/dgtzuPVnTjKC_oHrdq7vpg/zh-cn_image_0000002764991939.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Zjxl5pmTR4CHBRU4obkifA/zh-cn_image_0000002764991939.png "点击放大")
 
 ## 背景知识
 

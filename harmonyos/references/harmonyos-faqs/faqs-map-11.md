@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-11
 title: 在地图上实现定位功能
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 在地图上实现定位功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
-content_hash: sha256:d992ce741055885f9e333a5719275d5caa5bb0cf4bc1bedf43db7b816bb0f2bc
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:593fb09af870f71ef0c2de22841fcec645e6e61aa2ba82e7aa4d7978d70275ab
 ---
 
 ## 问题现象
@@ -18,7 +18,7 @@ content_hash: sha256:d992ce741055885f9e333a5719275d5caa5bb0cf4bc1bedf43db7b816bb
 
 ## 解决方案
 
-1. 使用地图服务，必须使用手动签名，并在AGC平台配置开启地图服务，参考[地图开发准备](../harmonyos-guides/map-config-agc.md)。
+1. 使用地图服务，必须使用手动签名，并在HarmonyOS 开发者中心平台配置开启地图服务，参考[地图开发准备](../harmonyos-guides/map-config-agc.md)。
 2. 打开设备状态栏，开启“位置功能”开关。
 3. 使用定位功能，需要声明相关权限，可在module.json5中配置requestPermissions字段。申请如下权限：ohos.permission.APPROXIMATELY\_LOCATION，ohos.permission.LOCATION，ohos.permission.LOCATION\_IN\_BACKGROUND。
 4. 完成申请权限函数，用于向用户弹窗申请定位权限。主要实现原理为调用[requestPermissionsFromUser](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)接口。

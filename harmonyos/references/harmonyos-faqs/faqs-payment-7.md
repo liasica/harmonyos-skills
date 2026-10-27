@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-payment-7
 title: 华为支付服务接入前常见问题
 breadcrumb: FAQ > 应用服务开发 > 华为支付服务（Payment Kit） > 华为支付服务接入前常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:26+08:00
-doc_updated_at: 2026-08-26
+scraped_at: 2026-10-28T07:48:39+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:09aa74f05a6112687430fcf0ff6058e6d8ca5720e7d2a55aa754a67a469252c0
 ---
 

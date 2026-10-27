@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-30
 title: Native如何调ArkTS的方法
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > Native如何调ArkTS的方法
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:62a2fcd9ad17f52eb034925fa8d065f6a842126246d3638a457fbcd0cd42674b
 ---
 

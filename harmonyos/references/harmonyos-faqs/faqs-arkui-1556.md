@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1556
 title: 关于ListItem中swipeAction使用问题合集
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 关于ListItem中swipeAction使用问题合集
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:36+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:06eecdb5038a83e74981cd77c160a08ae3944811575645e2b97d2bcf5217cfcd
+content_hash: sha256:9f09c8eaa05971bd4fbabcb4e9bc73115b08b050139461372d9fee7dae610dc8
 ---
 
 ## 问题现象
@@ -135,4 +135,4 @@ struct ListSwipe {
 
 实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/GaokZVUOT4-y9XHNB_7qtQ/zh-cn_image_0000002628769134.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/SBSFE54tR3-QuuQ_bubZSg/zh-cn_image_0000002628769134.png "点击放大")

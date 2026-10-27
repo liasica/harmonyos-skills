@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-59
 title: 弹窗组件无法进入onPageShow方法
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 弹窗组件无法进入onPageShow方法
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:20+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c2061833e96c0e1749cf496a1009b303769b715fd860de8ea5450d7a41fd4ace
 ---
 

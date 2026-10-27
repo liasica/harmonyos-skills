@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/performance-tro
 title: 故障排查
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 故障排查
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:13:32+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-10-28T07:46:42+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f332ca28e3f23c77cd6a4281826a208d5f937d3176e34950d12fba820fa704c8
 ---
 

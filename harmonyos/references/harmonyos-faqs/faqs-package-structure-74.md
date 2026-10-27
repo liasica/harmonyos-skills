@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 多个HAP包集成同一个HSP的规则
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 多个HAP包集成同一个HSP的规则
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
+scraped_at: 2026-10-28T07:46:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a36fe3df8357ded0125380b05e86d74e1ceb606499c7eb51efa0a7297bfacb71
+content_hash: sha256:66d134a2f463c38a8dfb4747f7413558ff48bca8e4953ddc309ee58a217990d4
 ---
 
 ## 问题现象
@@ -27,11 +27,11 @@ content_hash: sha256:a36fe3df8357ded0125380b05e86d74e1ceb606499c7eb51efa0a7297bf
 
    场景一：业务工程不涉及改动，但基础工程需要演进（功能增强/修复bug等）。只需要修改基础工程中的versionCode、minAPIVersion（如果涉及的话）。其他业务工程后续迭代时，增加对应业务工程的versionCode版本，使之与基础工程中的versionCode版本一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/AyJMQv_pTUaFgbsLWhkbkQ/zh-cn_image_0000002628788120.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/qROnq8pwSqy7nyfh0HmU_g/zh-cn_image_0000002628788120.png "点击放大")
 
    场景二：基础工程不涉及改动，业务工程需要演进（功能增强/修复bug等）。不仅需要增加业务工程中的versionCode，同时需要修改基础工程中的versionCode。如果涉及到minAPIVersion改动，同理，也需要两者一起修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/uibmRC9XRze_FuGUfqPtyw/zh-cn_image_0000002658987443.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/L-OFI_4uTgKDHB9B0pZQ6A/zh-cn_image_0000002658987443.png "点击放大")
 
 ## 常见FAQ
 

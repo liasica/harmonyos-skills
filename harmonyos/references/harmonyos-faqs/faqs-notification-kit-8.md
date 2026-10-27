@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 调用notificationManager.publish发布通知失败
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 调用notificationManager.publish发布通知失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:859490c0ba4b914afd6be3d49b9aba7f4e8ddfe9ce5da2063766606da7d3722d
 ---
 

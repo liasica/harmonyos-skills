@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-795
 title: 如何用Progress组件显示任务列表进度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何用Progress组件显示任务列表进度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:9cf202d060463fdc88684f357fe07555691b77639ccbe8c0f89f7ad9b8ccb442
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9d40e81f118c5d741674ffe1573320f794ab0e5a77afd4ac1f750e588b51ff68
 ---
 
 ## 问题现象
@@ -166,7 +166,7 @@ content_hash: sha256:9cf202d060463fdc88684f357fe07555691b77639ccbe8c0f89f7ad9b8c
 
    现象效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/WoHIbE6wREOyLTIVZhp8Eg/zh-cn_image_0000002658916951.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Apg41t2CRZCAdgoiUCb9WQ/zh-cn_image_0000002658916951.png "点击放大")
 2. 在问题一的场景中，删除任务后，如何实现进度条从0平滑增长到当前进度的动画效果？
 
 ## 背景知识
@@ -341,7 +341,7 @@ content_hash: sha256:9cf202d060463fdc88684f357fe07555691b77639ccbe8c0f89f7ad9b8c
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/BzWjGUtaSR60OF6naomdMA/zh-cn_image_0000002628397742.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/2cg08OleSAyGZwAU_d3mlQ/zh-cn_image_0000002628397742.png "点击放大")
 * **问题二**
 
   可以将style中enableSmoothEffect设置为false取消进度条本身的动效，自定义删除任务时的动画效果实现该场景。在删除任务时首先设置进度值为0，再通过[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)展示进度从0回到当前进度的动画效果。
@@ -517,7 +517,7 @@ content_hash: sha256:9cf202d060463fdc88684f357fe07555691b77639ccbe8c0f89f7ad9b8c
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/mqnKsYYEQiKoOcvyqbwO1g/zh-cn_image_0000002658797005.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/dk3-sxDIQU-baCPOjkiXRw/zh-cn_image_0000002658797005.png "点击放大")
 
 ## 常见FAQ
 

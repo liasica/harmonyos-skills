@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1444
 title: Canvas绘制水印并动态修改覆盖区域的功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Canvas绘制水印并动态修改覆盖区域的功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:23+08:00
+scraped_at: 2026-10-28T07:47:45+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9505ad658bbf2073bf3c6cd133df7ccaad6787487726bd0a080e5c9a0f9f2647
+content_hash: sha256:6a37c956b77b122822bad0f272d8212f8ea4445e5b5764e07ecd422670f3d41d
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:9505ad658bbf2073bf3c6cd133df7ccaad6787487726bd0a080e5c9a0f9
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/lbTAiqXyS_eHMXWvvWr6KA/zh-cn_image_0000002658963477.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/5RXFt0PYTFacYQEWbuJZPw/zh-cn_image_0000002658963477.png "点击放大")
 
 修改宽高后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/siH5dPrxTsCt2nhig1VC9Q/zh-cn_image_0000002628604258.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/1xmMWqJBReKjznXB6rI5tg/zh-cn_image_0000002628604258.png "点击放大")
 
 ## 背景知识
 

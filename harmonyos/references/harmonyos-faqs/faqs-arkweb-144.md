@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-144
 title: 如何解决Web组件加载H5页面时拉起系统拨号等功能出现白屏
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决Web组件加载H5页面时拉起系统拨号等功能出现白屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d4076851cbdff71cca0f94383aacd8d702f773ae59351eaee4c65c2c6a6b7633
 ---
 

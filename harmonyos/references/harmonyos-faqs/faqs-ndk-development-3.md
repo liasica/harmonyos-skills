@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-develo
 title: 如何解决napi_create_bool无法创建C++的bool类型
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何解决napi_create_bool无法创建C++的bool类型
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:34+08:00
+scraped_at: 2026-10-28T07:46:57+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:cd2c4989826b4d97ccada9f665d553334c464507aed36b5ebc55e566cfe8f5ac
+content_hash: sha256:1b4ce7a7294baf854610100d28d6426465f169e4bd0158b53c5fa21120bf9680
 ---
 
 ## 问题现象
 
 Node-API提供了一批接口帮助把标准数据类型转为napi\_value，比如napi\_create\_double、napi\_create\_int32等等，但是napi\_create\_bool无法创建bool类型并转换为napi\_value。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/rRZf_4i7Rci9hIXCD5VqiA/zh-cn_image_0000002628899078.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/D1f2OqWDSRqHNjbz4cxKeQ/zh-cn_image_0000002628899078.png "点击放大")
 
 ## 背景知识
 

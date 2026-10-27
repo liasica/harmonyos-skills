@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-624
 title: 短视频开启自动连播失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 短视频开启自动连播失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e3f47980626b11570d76b3f51d5b8a29e860cb682ce731a7cdd61cb66a41a891
+scraped_at: 2026-10-28T07:47:08+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4a6dbcc9399eab8b5049a8b99447f811bae2d3ff19757c3f185ae32105f9b609
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:e3f47980626b11570d76b3f51d5b8a29e860cb682ce731a7cdd61cb66a4
 
 1. 使用DevEco Testing中的UIViewer工具，查看短视频播放页的布局：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/biRzkMNtTNWLDFDwmO0pZg/zh-cn_image_0000002628394268.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/PLt4rdHURnW1v-xpvpq10g/zh-cn_image_0000002628394268.png "点击放大")
 
    发现页面使用Video、Swiper组件搭配实现短视频播放功能，不涉及与H5页面的交互。
 2. 可以通过调用Swiper组件的showNext()事件主动跳转下一页，而页面切换时则会触发[onChange](../harmonyos-references/ts-container-swiper.md#onchange)、[onAnimationStart](../harmonyos-references/ts-container-swiper.md#onanimationstart9)、[onAnimationEnd](../harmonyos-references/ts-container-swiper.md#onanimationend9)这三个回调。排查代码，查看是否有在Swiper的页面切换回调里设置视频播放。

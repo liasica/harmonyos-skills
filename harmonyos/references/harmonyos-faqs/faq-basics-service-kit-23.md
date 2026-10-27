@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: request.downloadFile下载文件失败
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > request.downloadFile下载文件失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:39+08:00
+scraped_at: 2026-10-28T07:48:20+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:be0034306bae09fc2b4545082cee9de4f8a819139d577afb8e237a80a941cff6
+content_hash: sha256:6f23fedbea8b0c0e2edbcc898e50d2a90c9878d71d1ae176718cbe39f8fa2b6b
 ---
 
 ## 问题现象
@@ -60,7 +60,7 @@ content_hash: sha256:be0034306bae09fc2b4545082cee9de4f8a819139d577afb8e237a80a94
   3. [request.agent.create](../harmonyos-references/js-apis-request.md#requestagentcreate10)接口涵盖了uploadFile、downloadFile所有支持的能力，其支持断点续传、重定向（redirect）、代理（proxy）、覆盖已存在的文件（overwrite）等。
 * 在普通应用（也称三方应用）视角下，不仅可见的目录与文件数量限制了范围，并且可见的目录与文件路径也与系统进程等其他进程看到的不同。我们将普通应用视角下看到的“[应用沙箱目录](../harmonyos-guides/app-sandbox-directory.md#应用沙箱目录与应用沙箱路径)”下某个文件或某个具体目录的路径，称为“[应用沙箱路径](../harmonyos-guides/app-sandbox-directory.md#应用沙箱目录与应用沙箱路径)”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/JpQZGIRxT0C89sRsEa8htA/zh-cn_image_0000002628773308.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/C6KLP1XrSCmKCxTXj8-rkQ/zh-cn_image_0000002628773308.png "点击放大")
 
 ## 解决方案
 
@@ -68,7 +68,7 @@ content_hash: sha256:be0034306bae09fc2b4545082cee9de4f8a819139d577afb8e237a80a94
   + 场景一：filePath参数必须指向已存在的文件夹或具体文件路径，若文件夹不存在，接口不会自动创建。可以通过[fs.mkdir](../harmonyos-references/js-apis-file-fs.md#fileiomkdir)接口在沙箱路径下创建新文件，使用[fs.access](../harmonyos-references/js-apis-file-fs.md#fileioaccess)接口判断文件、目录存在后再执行下载任务。
   + 场景二：request接口中的filePath参数配置只支持沙箱路径，不支持用户uri地址。将用户uri地址修改为通过filesDir、cacheDir获取应用的文件路径即可，下载完成后IDE中查看下载文件位置：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/8y214lPbTB2tAGYSctIn-A/zh-cn_image_0000002658972625.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/-zgQbNx2TxKh_7mfZJFE2A/zh-cn_image_0000002658972625.png "点击放大")
   + 场景三：系统默认以url里最后一个'/'后面的字符串作为文件名，当文件名过长（最大支持255字节）时会导致报错，可通过配置filePath自定义文件名解决。
 
 * 问题二：

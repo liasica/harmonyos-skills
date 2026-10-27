@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 环境检查时显示ohpm registry access不通过
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 环境检查时显示ohpm registry access不通过
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:31+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:be1dd1851196fc7877a7afc4a5bd222d320f3133f0dbbe896a912a855fe47a6c
+scraped_at: 2026-10-28T07:48:48+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:6d0451fb51cf05114006c314859041920eeca3d141f03b9345a5583cc4987821
 ---
 
 ohpm registry access不通过可能有以下几种情况：
@@ -14,7 +14,7 @@ ohpm registry access不通过可能有以下几种情况：
 
 registry地址校验连接不通过，详细信息提示“check whether the ohpm repository is correctly set”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/TW0QK3_RRLWuBO1ca99VdA/zh-cn_image_0000002624638314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/OfIRg1n-SbWl-t2vEtw0MQ/zh-cn_image_0000002624638314.png)
 
 **解决措施**
 
@@ -52,13 +52,13 @@ registry地址校验连接不通过，详细信息提示“check whether the ohp
 
      执行结果如下图所示，则说明代理设置成功。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/oxLEoHTPRY6Phe2AZAoqJQ/zh-cn_image_0000002654837725.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/R9l_CcZdT-acESfUtTNtvg/zh-cn_image_0000002654837725.png)
 
 **问题现象****2**
 
 registry证书地址校验不通过，详细信息提示“UNABLE\_TO\_VERIFY\_LEAF\_SIGNATURE”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/pipLuxQ7QN26yOnbRWx_mg/zh-cn_image_0000002624478412.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pDN_VRNPQ1mV-rvlqWVxrg/zh-cn_image_0000002624478412.png)
 
 **解决措施**
 

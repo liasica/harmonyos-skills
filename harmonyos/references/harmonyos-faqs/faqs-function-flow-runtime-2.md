@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-function-f
 title: 是否有让进程睡眠的API
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime） > 是否有让进程睡眠的API
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b8190b245eddfb43bccc6a00b68c14e51b1b710c9e47d8c8158b25efa6ca80f5
+scraped_at: 2026-10-28T07:46:58+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2c59b9c9cd424987e020d10c6f1b388473f1a8042293e2e114a90ac38aaf0775
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ HarmonyOS中是否有让进程睡眠的API？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/PLQD5NteSWujekbW5MzmQg/zh-cn_image_0000002628899080.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/8DusLpmmQyCqn3gnN_zT1g/zh-cn_image_0000002628899080.gif "点击放大")
 
 ## 背景知识
 

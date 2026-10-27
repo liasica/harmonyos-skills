@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1420
 title: 如何给视频背景添加高斯模糊
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何给视频背景添加高斯模糊
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:41+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:bfc7ddf353ebba5931d16a1bc967c158c91055c95d7827e9a8f824341c1a501f
+content_hash: sha256:02eb0d1e14c8aede23d73cf01886dbb9bf87a51c2d47a28c6d439fc76e5fa291
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:bfc7ddf353ebba5931d16a1bc967c158c91055c95d7827e9a8f824341c1
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/oRVOFegbQ5-MlfPvhFTyQA/zh-cn_image_0000002658962957.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/SaKEQwedRWCX0IMBlDpA6w/zh-cn_image_0000002658962957.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/VM5pakloQt604u2I-81eDQ/zh-cn_image_0000002628603742.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ImjsPCXNSxe2q5RAbCApNg/zh-cn_image_0000002628603742.png "点击放大")
 
 ## 背景知识
 

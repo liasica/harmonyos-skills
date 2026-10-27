@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-452
 title: Tabs组件，TabContent页面加载耗时，预加载未生效，怎么解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs组件，TabContent页面加载耗时，预加载未生效，怎么解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0b137ccc2a7f77770454585927af1d8f068a63020089292f916545d5b4772a71
 ---
 

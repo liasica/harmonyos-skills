@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“The permission under requestPermissions must be a value that is predefined within the SDK or a custom one that you have included under definePermissions.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The permission under requestPermissions must be a value that is predefined within the SDK or a custom one that you have included under definePermissions.”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:55+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:0535569a4c3951775db3371b698cdbbc6af2ebffccb2740b0b7642190c53e9fe
+content_hash: sha256:da2d5db0073f5d306dc571dd1cf25ba01d9e4756a32514f2a43bbf58bdc8464a
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ requestPermissions下的权限必须是SDK中预定义的值，或在definePermi
 
 在module.json5文件的requestPermissions中配置name时，使用了不存在的权限名称或者使用了当前版本不支持的权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/BmdimmurQH6iIRRsM-svAQ/zh-cn_image_0000002624638552.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/v94nEkafSkmCwv_GDYcd_g/zh-cn_image_0000002624638552.png)
 
 **解决措施**
 

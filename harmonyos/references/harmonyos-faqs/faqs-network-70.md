@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-70
 title: connection如何获取网卡链路地址、DNS地址等信息
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > connection如何获取网卡链路地址、DNS地址等信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:36+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f95e8810fda800887b2940f29c4aebbc78601c5212afdded0d7e265ba030bc82
 ---
 

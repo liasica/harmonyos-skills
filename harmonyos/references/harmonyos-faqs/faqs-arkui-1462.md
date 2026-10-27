@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1462
 title: 如何实现主动终止长按手势
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现主动终止长按手势
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f2d0efb2c3b3e75a7ed93dea8903c4600c5968b19d23b92c1d6b34e8bb43e0f6
 ---
 

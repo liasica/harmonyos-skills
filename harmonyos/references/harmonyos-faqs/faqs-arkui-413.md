@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-413
 title: 在Tabs组件中，哪些方式可以实现内容页的切换
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 在Tabs组件中，哪些方式可以实现内容页的切换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c333d587aa472a365b997f86ea9308f7a141bcdc287cb8cedf0dc0ad4fbb57e6
 ---
 

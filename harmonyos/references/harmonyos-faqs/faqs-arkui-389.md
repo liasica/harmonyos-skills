@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-389
 title: Router路由跳转页面失败，可能有哪些原因
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Router路由跳转页面失败，可能有哪些原因
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:37029bd4c7be871cfba323e55f6856eed916b25cb6cdb67f161d7a191b3e8e5d
 ---
 

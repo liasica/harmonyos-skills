@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-input-1
 title: 大写字母键无效
 breadcrumb: FAQ > 系统开发 > 基础功能 > 多模输入（Input） > 大写字母键无效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
+scraped_at: 2026-10-28T07:48:22+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:50c43757e20110025a29a68cbfafa4bf2d5cc692388d98a1a9a206cd0b81ae14
+content_hash: sha256:8c9969348c4cd8140f7f80beaf7386d3f54920a473743170c05d756e696a7101
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:50c43757e20110025a29a68cbfafa4bf2d5cc692388d98a1a9a206cd0b8
 
 * [多设备交互](../best-practices/bpta-multi-interaction.md#section11794812173816)：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/qdYualZITCiWiG2oRYH9dA/zh-cn_image_0000002628614390.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Pw4-gSPPT6eSFQS4YNy_gA/zh-cn_image_0000002628614390.png "点击放大")
 
   + [inputDevice.setFunctionKeyEnabled](../harmonyos-references/js-apis-inputdevice.md#inputdevicesetfunctionkeyenabled15)：设置功能键（如：CapsLock键）使能状态。使用Promise异步回调。
 

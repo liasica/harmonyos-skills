@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-liveview-3
 title: 如何监听实况窗计时器倒计时结束事件并关闭实况窗
 breadcrumb: FAQ > 应用服务开发 > 实况视图服务（Live View Kit） > 如何监听实况窗计时器倒计时结束事件并关闭实况窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6257f0b21a9597b9bfd85a2c02dbbf6cac269763fdb3df7f749b36561a2178e6
 ---
 

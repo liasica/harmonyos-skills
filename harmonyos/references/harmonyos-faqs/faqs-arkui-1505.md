@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1505
 title: Checkbox多选和反选功能实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Checkbox多选和反选功能实现
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a7fce2c7df4c52b8198964da2e747dc13bdb4fff759f6ff35bc4d582ff10db0b
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:72d61d0d6dd9801a91966128219b4bc0d2e409be94c6ffe954f7cb094d6f763b
 ---
 
 ## 问题现象
@@ -94,7 +94,7 @@ content_hash: sha256:a7fce2c7df4c52b8198964da2e747dc13bdb4fff759f6ff35bc4d582ff1
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/40M1HCKpR62bAtKYtrnPbg/zh-cn_image_0000002658965763.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/HA7MhobtSjW1wH81NwW3oQ/zh-cn_image_0000002658965763.png "点击放大")
 
 * **场景二**：通过Checkbox的onChange方法对选中数据进行处理。
 
@@ -171,4 +171,4 @@ content_hash: sha256:a7fce2c7df4c52b8198964da2e747dc13bdb4fff759f6ff35bc4d582ff1
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/DypLTRtbRvmR1p0lQ_fWYQ/zh-cn_image_0000002628606552.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/M5Hr6M8XTuGHRTWaOOEVCg/zh-cn_image_0000002628606552.png "点击放大")

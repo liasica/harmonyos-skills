@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1166
 title: 如何使容器内两个子组件高度统一
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使容器内两个子组件高度统一
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:193d381a696dc2b3849dadea341068b7e5ae865dcfa6bd8606f28a2ec9e8d53d
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1e43ac32bbd10da3843b298893b3206977dc7ee0fbd9baccde66f2c925989668
 ---
 
 ## 问题现象
@@ -15,7 +15,7 @@ content_hash: sha256:193d381a696dc2b3849dadea341068b7e5ae865dcfa6bd8606f28a2ec9e
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/dMUyzUeEQ_i1-u-7coaJuA/zh-cn_image_0000002658929087.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/_LJLkUxwSH6Uo1GuYWI2_Q/zh-cn_image_0000002658929087.png "点击放大")
 
 ## 背景知识
 

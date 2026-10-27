@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-kit-
 title: API 17及后续版本ArkTS基于的TypeScript版本说明
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > API 17及后续版本ArkTS基于的TypeScript版本说明
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7558b6155e599c9f4502df6d9e8653cb5b49d85bb9d59ce4fc2d3711cd76a0e2
 ---
 

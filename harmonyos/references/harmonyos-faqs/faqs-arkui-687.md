@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-687
 title: RichEditor实现“@XXX”自动替换图片
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor实现“@XXX”自动替换图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:adfc7bc91e5b7a278ac5b99d7c79857664b4adef5280a54aff0973e502ba0b64
 ---
 

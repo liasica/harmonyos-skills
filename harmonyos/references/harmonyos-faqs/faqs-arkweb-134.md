@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-134
 title: 如何解决Web组件首次加载完网页立即滑动发生明显卡顿问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决Web组件首次加载完网页立即滑动发生明显卡顿问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f9af4de2cc2ca952c2574fe5e4c63f941218bd0f207d34d8f04e7c6151f4d50b
 ---
 

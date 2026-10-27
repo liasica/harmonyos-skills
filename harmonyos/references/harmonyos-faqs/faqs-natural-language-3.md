@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-natural-la
 title: 机器翻译服务是否有替代方案
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 自然语言理解（Natural Language） > 机器翻译服务是否有替代方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-07-22
+scraped_at: 2026-10-28T07:49:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eb43b2c30c71564a6baa516fe59cab816d83c1b4661447b4538d3e032f18f94d
 ---
 

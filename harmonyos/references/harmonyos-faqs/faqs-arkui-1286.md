@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1286
 title: 如何监听Swiper滑动索引位置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何监听Swiper滑动索引位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4859cb23f13d313ac51549f3ed341587a9700d2a0dffceba5d612e8ad589188b
 ---
 

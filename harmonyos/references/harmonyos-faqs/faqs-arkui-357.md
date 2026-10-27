@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-357
 title: 状态栏与页面内容发生重叠，如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 状态栏与页面内容发生重叠，如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a4e9104df679758ef106fa9b19c7b5201814ea8d0e27cba43ad2eddc11a65895
 ---
 

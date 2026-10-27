@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-7
 title: Push Kit消息缓存时间
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > Push Kit消息缓存时间
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8fc764132fa7ba0d318a9f71193ea4f13d76f9c1c38a24123518c1d1a2516fb8
 ---
 

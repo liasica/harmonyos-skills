@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 如何解决photoAccessHelper.getAssets获取竖向视频宽高不正确问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 如何解决photoAccessHelper.getAssets获取竖向视频宽高不正确问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:60bc6577e22798be2d353e8f1b340a920d48b40a5731c999eb4b78d276828760
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1b7148a4c10ecad2a0cc4aaab4fb2c820e87b8f8a1f09776ddcdb90875e98363
 ---
 
 ## 问题现象
 
 图库显示宽高1080\*1920。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/b2cMaQ8nR9qBYAk2RxHPGA/zh-cn_image_0000002659258335.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/WUvSosLFSE6bKpInuCykTw/zh-cn_image_0000002659258335.png "点击放大")
 
 通过API获取到的视频高为1080，宽为1920，API获取的值宽高与实际相反。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/71SQX3vZSI2Z27z4uIrOyA/zh-cn_image_0000002628899116.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/phi2rBotTK2-79K1D18u-A/zh-cn_image_0000002628899116.png "点击放大")
 
 ## 背景知识
 
@@ -27,17 +27,17 @@ content_hash: sha256:60bc6577e22798be2d353e8f1b340a920d48b40a5731c999eb4b78d2768
 
 获取横屏视频做对比，两个视频在手机上显示的尺寸宽高数值相反。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/gWioWTP2S_Gz16anACcOFw/zh-cn_image_0000002659138385.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/g0-kqcWeS32vHiShjzbmfQ/zh-cn_image_0000002659138385.png "点击放大")
 
 通过API获取到的两个视频同样高为1080，宽为1920，但是竖向视频有90°旋转，因此怀疑是旋转导致的问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/NOl-0ePSRDmkf1To2dO8Qg/zh-cn_image_0000002629059034.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/xRwCvw4qQoCVEhGYxqPpsw/zh-cn_image_0000002629059034.png "点击放大")
 
 再对比下旋转180°和270°的情况，旋转度数除以180余数为90的时候，需要长宽的数值互换，才能得出手机上看到的结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/DyQkbZNERii-TkJHccLSpQ/zh-cn_image_0000002659258337.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bh1OcYzoQ4eQ49JysgxNGw/zh-cn_image_0000002659258337.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/9Olw1LV1S_idw072dZ5yUQ/zh-cn_image_0000002628899118.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/UtyoaDXtSb-0CoQQTho2GQ/zh-cn_image_0000002628899118.png "点击放大")
 
 ## 分析结论
 

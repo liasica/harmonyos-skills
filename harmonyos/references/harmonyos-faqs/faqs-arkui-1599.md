@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1599
 title: 图案锁功能实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 图案锁功能实现
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:36+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:c74d186d3700680f5ee2ac3fba2f9103a7e4a2f910d27e8737c14edf8fb6bfe0
+content_hash: sha256:de2b9580046178101d0f7d70749a1813b31bcf574eaca86fc26c83f3006b62bb
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:c74d186d3700680f5ee2ac3fba2f9103a7e4a2f910d27e8737c14edf8fb
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ZlUftpkHT2SDWZqwQXxjWQ/zh-cn_image_0000002628613330.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Vc6bd3vfRUKOocQKEkbn0A/zh-cn_image_0000002628613330.gif "点击放大")
 
 ## 背景知识
 

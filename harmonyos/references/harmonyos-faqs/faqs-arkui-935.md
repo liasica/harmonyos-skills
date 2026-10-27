@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-935
 title: 自定义DatePicker实现不同日历效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 自定义DatePicker实现不同日历效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:44+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:6111cb59d281b1d413c872448bc2457ebe6986ce387c11b0b17b3380c9a431a2
+content_hash: sha256:98b59f6736bf2c46d30fefa022b7107c36bd2f9ae990fb9c1c1c3d6a48cfcd81
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:6111cb59d281b1d413c872448bc2457ebe6986ce387c11b0b17b3380c9a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/4q18oYP_TNyjXoQ3LhT7HQ/zh-cn_image_0000002658799623.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/7KEX8tetS6e_hJXvOq4Cbw/zh-cn_image_0000002658799623.gif "点击放大")
 
 ## 背景知识
 

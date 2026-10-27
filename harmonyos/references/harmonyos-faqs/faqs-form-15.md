@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-15
 title: 如何对服务卡片进行调试
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何对服务卡片进行调试
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:483e824b41abb6f10674d959153193d8f4d066593137d35fdd0c49ec18ee2eac
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bb2d48fe607f1a92d6e7b1f51e742adb8313035670fc5d721545a61d0076c7c2
 ---
 
 ## 问题现象
@@ -28,28 +28,28 @@ content_hash: sha256:483e824b41abb6f10674d959153193d8f4d066593137d35fdd0c49ec18e
 
 1. 在设备选择框中选择调试的设备，并单击Run-》Attach to Process by Name。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/vuv8XZfCTceRON-7aJzuQQ/zh-cn_image_0000002628791558.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/EShlSyuWQsW6YpCACzPZoQ/zh-cn_image_0000002628791558.png "点击放大")
 2. 在选择调试的工程并将类型选为ArkTS。然后单击Attach，即可将该应用设置为“等待调试模式”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/0EJmcfAYTriYmj0B8mvVPQ/zh-cn_image_0000002658990865.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/98-c_aQwQwuHysVDVzeQbw/zh-cn_image_0000002658990865.png "点击放大")
 3. 确认DevEco Studio底部出现Waiting for debugger进度条后，可以开始调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/kLlw3xPDSn6WQJYauMjpLg/zh-cn_image_0000002628631654.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/0hha1ScHTkms9xSD7T1IFg/zh-cn_image_0000002628631654.png "点击放大")
 4. 在需要调试的代码行的左侧边线设置断点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/3w4PNUJrSrGPOO83GauFVQ/zh-cn_image_0000002658870927.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/2izaCBqsQJyZFGhLdCytTg/zh-cn_image_0000002658870927.png "点击放大")
 5. 操作应用，当应用运行到代码处，会在代码处停住，并高亮显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/cWZmvOAjTeSCRkekrNFrug/zh-cn_image_0000002628791560.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/oCOFMvEBRpGmRVvcO4jrjw/zh-cn_image_0000002628791560.png "点击放大")
 
 [方式二](../harmonyos-guides/ide-debug-arkts-extension.md#section8660163873914)：需要修改IDE的运行配置方式。具体的实现步骤为：
 
 1. 在运行调试窗口，运行配置项Launch Options选择Specified Ability。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/oGpFHfnWRwCycgVCawPGKQ/zh-cn_image_0000002658990869.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/W74T-i3zTIq33JNPhqWgfg/zh-cn_image_0000002658990869.png "点击放大")
 2. 选择需要进行调试的EntryFormAbility。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/YoLXFZT3TPaV0ggwu5j3Kg/zh-cn_image_0000002628631658.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/pIsB-oqeRBmMpo0gum4UEQ/zh-cn_image_0000002628631658.png "点击放大")
 3. 点击OK保存配置后，点击调试按钮，启动调试即可命中生命周期函数断点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/kxfZg5a4S9uhGxR5R6UAlg/zh-cn_image_0000002658870929.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/yipXz2STRuGYCi4hLgOOrQ/zh-cn_image_0000002658870929.png "点击放大")

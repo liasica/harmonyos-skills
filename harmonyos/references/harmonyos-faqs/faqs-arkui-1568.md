@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1568
 title: 密码输入框在弹出密码保险箱并自动填充密码后，会自动清空密码
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 密码输入框在弹出密码保险箱并自动填充密码后，会自动清空密码
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a0576ffa6a868a86d561bda77d504f352a9f43238dba64b33b5197ed20f00bb3
+content_hash: sha256:e6cd36c65d413288a2ff29979f7db820965877573c1eabe86684cab2df19fa7f
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:a0576ffa6a868a86d561bda77d504f352a9f43238dba64b33b5197ed20f
 
 1. 使用DevEco Testing For Device工具中的UIViewer查看页面布局，可以看到密码输入框使用的是TextInput组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/zhWgf_vgSVGgGhgFcbHw4g/zh-cn_image_0000002658969077.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/yDpOSrmuQfCDZFRmNiCvkw/zh-cn_image_0000002658969077.png "点击放大")
 2. 分析清空密码时的相关日志，没有打印明显清空密码的操作，打印了输入框获焦的日志，如下：
 
    ```txt

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-46
 title: Text组件如何加载Unicode字符
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件如何加载Unicode字符
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7440cde1244b5aad0126c8788dca65e2f7c03d096d5bdf06d46c39ef5b567acd
 ---
 

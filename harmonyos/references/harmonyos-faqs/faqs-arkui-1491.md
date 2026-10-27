@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1491
 title: 关于在Navigation的子页面使用bindSheet导致侧滑无响应的问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 关于在Navigation的子页面使用bindSheet导致侧滑无响应的问题定位
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:45+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7f4944052ece863b61b98ea64b801b2f8244217831c30628c9c7e8eb37b7e800
+content_hash: sha256:c561faafad35f176f8ca5d69718302deb4c858055b7ec38c77dacf7a2a5651b9
 ---
 
 ## 问题现象
@@ -53,7 +53,7 @@ build() {
 
 根据对日志进行分析，侧滑时onBackPressed函数未被调用，若注册了onWillDismiss函数，则onWillDismiss函数会被触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/07IpLXXjTkyEBuCns1eyqA/zh-cn_image_0000002628765706.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Q9Nq7PefSQ2Qnyg6U4JbbA/zh-cn_image_0000002628765706.png "点击放大")
 
 ## 分析结论
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-localizati
 title: 本地化开发（Localization）
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 本地化开发（Localization）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:220bc463184ab6f0aae056008eb859f2655aa0aaf5093eb3e52137fb32f141bd
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ea83c2ce0873ea036268b0354ff3e1ba602443fb0b719b129757b1a03a838c50
 ---
 
 * **[如何读取rawfile中的xml文件并转化为String类型](faqs-localization-3.md)**
-* **[如何获取resource目录下的资源](faqs-localization-4.md)**
-* **[如何将Resource资源对象转成string类型](faqs-localization-7.md)**
 * **[数字支持货币分隔符显示吗](faqs-localization-8.md)**
 * **[如何将app.media.app\_icon，转换为PixelMap](faqs-localization-9.md)**
 * **[如何使用实现汉字转拼音](faqs-localization-11.md)**

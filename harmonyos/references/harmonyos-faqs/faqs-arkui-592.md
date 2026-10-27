@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-592
 title: ForEach渲染的List使用组件截图只能截取第一个ListItem
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > ForEach渲染的List使用组件截图只能截取第一个ListItem
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:829b5fa02b212bed2563923b26bf94ef6c3963ee535646c4e4aace429bd23027
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:afcdcf090d18e074ba4468095ec4eec7d6ed587d342cb00efba8851ffcfd8218
 ---
 
 ## 问题现象
@@ -107,7 +107,7 @@ struct ListScreenshot {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/62X6GF0CTracjME-MiSvDg/zh-cn_image_0000002628552408.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/dbLTyPy4TG60kcMzd0MRFQ/zh-cn_image_0000002628552408.png "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-749
 title: 如何切换背景图片并添加动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何切换背景图片并添加动画效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:444e932525c22540a88dba9f54ee04c78f1bfae0eab62f46beb5db1aa7a33ab3
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-5
 title: 设备收不到服务端手动推送的离线消息
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 设备收不到服务端手动推送的离线消息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d1ff9c112ab35c78dc8313086abec5e5a0aaafa46d9f4516e4de3e29a74ec935
 ---
 

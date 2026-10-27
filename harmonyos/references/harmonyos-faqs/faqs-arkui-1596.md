@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1596
 title: 如何判断当前是否处于自由多窗及监听自由多窗切换
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何判断当前是否处于自由多窗及监听自由多窗切换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c62a40285d54e7e3a9c2e8f6c3480877fab76a07c0636d54edbbd940045b3809
 ---
 

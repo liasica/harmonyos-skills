@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 如何解析网络图片URI的后缀名并将其保存至相册
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 如何解析网络图片URI的后缀名并将其保存至相册
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ca470831172d66877215faba7c55c078981e703c2031b4df36d20cc3e994e008
 ---
 

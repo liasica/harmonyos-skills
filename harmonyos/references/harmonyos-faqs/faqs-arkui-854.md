@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-854
 title: 点击左边的各项功能模块，软键盘都会自动拉起又退出
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 点击左边的各项功能模块，软键盘都会自动拉起又退出
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:745182a50e6aa98e38b792e3ffd3fd75950b96570f5f2a70db482338a4721f60
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:fe8c17887bc92f39fc34c29da032db76cbcf173f581b46d6bdfe5a6779416078
 ---
 
 ## 问题现象
 
 应用内某tab页面，点击左边的各项功能模块tab，右边会跳转对应的页面，软键盘都会自动拉起又退出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Xw_OAjMnQTKH7PWSOS0fZw/zh-cn_image_0000002628398644.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/mosx7Tr8SgC-3gBzNEeAEA/zh-cn_image_0000002628398644.png "点击放大")
 
 ## 背景知识
 

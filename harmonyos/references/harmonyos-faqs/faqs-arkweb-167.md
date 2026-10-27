@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-167
 title: Web如何拦截网页加载错误并重新加载指定页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web如何拦截网页加载错误并重新加载指定页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bc475ae45316e046831580598b79026cc6f1256e0d64ad36a7ea74e6f402be2a
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-831
 title: 应用协议弹窗侧滑后关闭导致无法进入应用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 应用协议弹窗侧滑后关闭导致无法进入应用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:98f542eeaee2ec435895b568c121eab2df9a5589ffdcda0fc26f0e391bce9441
 ---
 

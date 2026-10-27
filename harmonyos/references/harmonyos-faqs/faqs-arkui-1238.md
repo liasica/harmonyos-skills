@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1238
 title: 如何解决Swiper嵌套多个RichEditor时，RichEditor输入异常的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Swiper嵌套多个RichEditor时，RichEditor输入异常的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2d64e8831db6db51f238f4aea01a6b0630436d684552eee00542430c2dfff1c4
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:59cd69b5861db0838df0a6f5d8d8bfa4b86db37653190e6d81dd8d9805b1d3aa
 ---
 
 ## 问题现象
@@ -71,11 +71,11 @@ struct Index {
 
 问题现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/_GskKKw1QsWQf2Pam_Kp-Q/zh-cn_image_0000002658834705.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/kBfZ-LWKRM2UJ7l8apGdrQ/zh-cn_image_0000002658834705.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/kwysqM2WSF2at1AwAECAjw/zh-cn_image_0000002628595450.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/R5Wo_YzwSZ6TBLLgEYdGxw/zh-cn_image_0000002628595450.png "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1344
 title: H5页面实现的登录界面可以被截屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > H5页面实现的登录界面可以被截屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6301b5a6727d368f3ef3a16030584ce2839db89c2f3464c9c3f67a0303005d59
 ---
 

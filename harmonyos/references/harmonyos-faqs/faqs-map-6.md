@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-6
 title: 路径规划场景中绘制颜色渐变的路径，颜色不生效问题如何解决
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 路径规划场景中绘制颜色渐变的路径，颜色不生效问题如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
-content_hash: sha256:590e21dab99c03fbf6090a0ffa16ebe6cf0eb872d8bb542f8b702aa147dd5066
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a55486116189485699d00934f4048a36f917b7ae014f785ec03f3c0e48ce349b
 ---
 
 ## 问题现象
@@ -126,6 +126,6 @@ struct HwMapDrawPage {
 
 绘制颜色渐变的路径需要注意以下几点：
 
-1. 显示地图要在AGC上开通地图服务，地图服务刚开通需24小时后生效。详见[Map Kit开发准备](../harmonyos-guides/map-config-agc.md)。
-2. module.json5配置client\_id。打包使用手动签名，签名指纹要与AGC上一致。详见[Map Kit开发准备](../harmonyos-guides/map-config-agc.md)。
+1. 显示地图要在HarmonyOS 开发者中心上开通地图服务，地图服务刚开通需24小时后生效。详见[Map Kit开发准备](../harmonyos-guides/map-config-agc.md)。
+2. module.json5配置client\_id。打包使用手动签名，签名指纹要与HarmonyOS 开发者中心上一致。详见[Map Kit开发准备](../harmonyos-guides/map-config-agc.md)。
 3. 折线参数gradient设置为true，colors数组长度要等于折线点数量以保证每段折线都有过渡色。

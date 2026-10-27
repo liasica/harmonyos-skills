@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1398
 title: 解决RichEditor输入换行符后监听异常的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 解决RichEditor输入换行符后监听异常的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1e735c6fac0c039ced1ef4e10e6eece1e014088e85b069503fce8a427df8c193
+scraped_at: 2026-10-28T07:47:22+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:707d23289abce9b70f7c77c98d383784708f78f5b2cc6fb9284576f00c0ba452
 ---
 
 ## 问题现象
@@ -51,15 +51,15 @@ struct StackExample {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/bjIl7yT1RWGd8CGk9Y6EfQ/zh-cn_image_0000002628763130.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7Z11QLR0TdGd1HH7nkF14Q/zh-cn_image_0000002628763130.gif "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/nBDxk65oQguHx2oT_S2X5A/zh-cn_image_0000002658962443.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/iEQX2QoBQVqFRc4xwu7sHg/zh-cn_image_0000002658962443.png)
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/22B3MPGGTiSXb3pPpylDNA/zh-cn_image_0000002628603234.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/wzH3IPJWQhqt4_u9qGYZsQ/zh-cn_image_0000002628603234.gif "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/JIQwt60CQcScmzsMmLKbUg/zh-cn_image_0000002658842497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/wQnhLqE4S2CW1jshca7tdQ/zh-cn_image_0000002658842497.png)
 
 ## 背景知识
 

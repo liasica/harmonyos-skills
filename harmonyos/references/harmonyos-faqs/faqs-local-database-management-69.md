@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 应用被用户主动退出/清理时如何保存数据
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 应用被用户主动退出/清理时如何保存数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:07+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:78cd0c637119103098e918df8af3ed37ad60a6f75c291187f8bd3fd0b1f4c164
 ---
 

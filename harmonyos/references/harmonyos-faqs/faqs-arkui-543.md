@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-543
 title: 长图渐变色效果未正常显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 长图渐变色效果未正常显示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a2e215316081300e8111e72c5d64ee21ff0db1b10384aa0d160b7a0a6b74d7ef
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:17695a012f280e70a041a7072b22d5a964564f434d3c182c91319a0062bca95b
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:a2e215316081300e8111e72c5d64ee21ff0db1b10384aa0d160b7a0a6b7
 
 图一：无渐变色的缩略图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/zgrL70IcQ5KAAdI4vGL4wQ/zh-cn_image_0000002658790883.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/_E1LqP14QuKZhrH3xfUOSQ/zh-cn_image_0000002658790883.png "点击放大")
 
 图二：有渐变色的缩略图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/lcn8NyP8TIaQAoEFJuK8rQ/zh-cn_image_0000002628551518.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/7GznQDyvSyi_TynqF2mwYw/zh-cn_image_0000002628551518.png "点击放大")
 
 ## 背景知识
 
@@ -28,7 +28,7 @@ content_hash: sha256:a2e215316081300e8111e72c5d64ee21ff0db1b10384aa0d160b7a0a6b7
 
 1. 通过DevEco Testing查看问题组件，发现是Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/o6SHYOZxQNSvOszfTJW04g/zh-cn_image_0000002628391622.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/1xJYf353RzeVziTHXolQ6Q/zh-cn_image_0000002628391622.png "点击放大")
 2. 排查该Image组件的同层组件的设置，发现没有使用linearGradient设置颜色渐变的同层组件。
 
    ```screen
@@ -91,4 +91,4 @@ struct ImgExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/ZkpIxp9HSZ-ZtA1a80sxKw/zh-cn_image_0000002658910837.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ArW8eWp_RmyMPTCh0-JUig/zh-cn_image_0000002658910837.png "点击放大")

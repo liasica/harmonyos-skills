@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1306
 title: 如何适配内部有图案并且需要根据图案布局的.9图背景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何适配内部有图案并且需要根据图案布局的.9图背景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4d8de17f34e003467db3c085b74d418f65144dffc2f43ea7cc65876791893079
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0e0afe42ca20f62125c946665ec55cc65ca626eb8f5f0da9354642d54e419dec
 ---
 
 ## 问题现象
 
 有如下图所示的背景，需要在斜杠两侧各排布文字，并且在不同设备上，当该框格宽度变宽时，斜杠的位置不变，布局与之前相同。其他平台是通过.9图实现，HarmonyOS没有.9图，要如何实现该功能？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/mMZpteBjR96daXJI0Wu3Qg/zh-cn_image_0000002628599012.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/sIldJjIMRQuAcR8SMbF9Ag/zh-cn_image_0000002628599012.png "点击放大")
 
 ## 背景知识
 
 * .9图是一种特殊的PNG图像，用于根据内容大小自动拉伸背景或边框。它能定义哪些区域可以拉伸、内容如何填充。一张.9图会被系统划分为一个3×3的九宫格：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Z9pP-idvSUeuoVij49j0hw/zh-cn_image_0000002628758910.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/d3iK1P9sTyCVAr0YYZFKGQ/zh-cn_image_0000002628758910.png)
 
   其中四角TL/TR/BL/BR不会被拉伸，上下边T/B只会被水平拉伸，左右边L/R只会被垂直拉伸，中心C可以随意拉伸。
 * 通用属性[backgroundImageResizable](../harmonyos-references/ts-universal-attributes-background.md#backgroundimageresizable12)以及Image的[resizable](../harmonyos-references/ts-basic-components-image.md#resizable11)属性支持设置图像在拉伸时可调整大小，其参数[ResizableOptions](../harmonyos-references/ts-basic-components-image.md#resizableoptions11)类型的slice属性为[EdgeWidths](../harmonyos-references/ts-types.md#edgewidths9)，可设置top/right/bottom/left使图像顶部/右部/底部/左部拉伸时保持不变的距离，与.9图的拉伸规则类似。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/vqtLhyw4RBaVkE2k3xkpNg/zh-cn_image_0000002658958231.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/3L4nRl0IR9yaY4hTOYVODQ/zh-cn_image_0000002658958231.png "点击放大")
 
 ## 解决方案
 
@@ -139,11 +139,11 @@ struct Point9 {
 
 在手机设备上的效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/eHsdLgv1Sfqrju5Iyl9yFw/zh-cn_image_0000002658838285.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Wo4sWY8SS0q_m-LOUKtdhQ/zh-cn_image_0000002658838285.png "点击放大")
 
 在平板设备上的效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/dd9o3bYESqWLfNQ_SSZQlQ/zh-cn_image_0000002628599014.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/DIzx6HBKRTida0TWDCzRHA/zh-cn_image_0000002628599014.png "点击放大")
 
 ## 总结
 

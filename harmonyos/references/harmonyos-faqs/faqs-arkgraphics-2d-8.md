@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: OpenGL无法正常渲染某些分辨率YUV数据
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > OpenGL无法正常渲染某些分辨率YUV数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:34+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:56b0ab08bc53745789fb83068a935d96cc37da626290e7fddda5c5da6d2f84b9
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-642
 title: Circle显示不同进度水波纹
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Circle显示不同进度水波纹
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:23+08:00
+scraped_at: 2026-10-28T07:47:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:47b0b5ba307a85bdfe2ba29c7ff32ee9adb7871e3e8eb947fda4e2ada13a052f
+content_hash: sha256:f8269b6963252e9f29c88e616ad922dbdb365d643690a8d0286e9ec7f1e8e734
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:47b0b5ba307a85bdfe2ba29c7ff32ee9adb7871e3e8eb947fda4e2ada13
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/N4bdXvXnTIy9e0V3dBYA7Q/zh-cn_image_0000002658913725.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/m8NKh3e5TSqDePeMyDBfSw/zh-cn_image_0000002658913725.png "点击放大")
 
 ## 背景知识
 

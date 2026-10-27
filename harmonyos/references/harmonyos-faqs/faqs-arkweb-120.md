@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-120
 title: 应用查询设备信息提示信息有误
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 应用查询设备信息提示信息有误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:82a8cae7102f58597cc9ee94c6c19c8bd9c5c67eee54c907155872aa434713e5
 ---
 

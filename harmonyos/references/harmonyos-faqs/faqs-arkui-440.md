@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-440
 title: 如何给Swiper组件添加节流，控制Swiper的切换频率
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何给Swiper组件添加节流，控制Swiper的切换频率
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9bb86ab9f7ad53f0b2505a556217fe571c611ac1a29710213f43c37b74e240ae
 ---
 

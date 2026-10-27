@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-960
 title: stateStyles：多态样式如何设置不向父组件冒泡
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > stateStyles：多态样式如何设置不向父组件冒泡
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-07-07
-content_hash: sha256:7d8ef59b2e331dbc36441553c6b28bb39492c462857abe35c4be2c8b8cf01055
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:88dea3ad9fbc0a17d5edeb8385e8a108431dab3adc7c2d66c5ee47e8ea2281ad
 ---
 
 ## 问题现象
 
 stateStyles多态样式，父组件和子组件都设置了stateStyles，子组件满足stateStyles状态时，父组件也同样满足，也会跟着改变，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Jn6WxA_1SYaf8rHlhJOE6g/zh-cn_image_0000002663716957.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/nmFGL23ESsyhNaV709kumw/zh-cn_image_0000002663716957.png "点击放大")
 
 * 蓝色背景为父组件，绿色背景为子组件。
 * 子组件常态（normal）为绿色，按压态（pressed）为黄色。
@@ -99,7 +99,7 @@ struct StateStylesDemo {
 
 按压子组件后，不会触发父组件stateStyles的按压设置效果，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/DLAsk2IBR4eWUfaAz_upLQ/zh-cn_image_0000002663797649.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/Ya2O8rfoToO8aS-VX-2i6w/zh-cn_image_0000002663797649.png "点击放大")
 
 ## 总结
 

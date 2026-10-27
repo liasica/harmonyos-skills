@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1410
 title: 使用组件截图后得到的图片如何传递给其他组件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用组件截图后得到的图片如何传递给其他组件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:39+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0829dbbaaf22f38c1fb6a12420fa48524a2e36cc4e29dfb1e3f703ea82cd6f8c
+content_hash: sha256:25decdbae7efd0c1f1ba306136535f587d93bd25087d1822a1a1f014970700f8
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:0829dbbaaf22f38c1fb6a12420fa48524a2e36cc4e29dfb1e3f703ea82c
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/LbFoTubXQb-CB-iK--orxg/zh-cn_image_0000002628763166.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/6KpB2x1YQr-Z6e5-Kr-BGQ/zh-cn_image_0000002628763166.gif "点击放大")
 
 ## 背景知识
 

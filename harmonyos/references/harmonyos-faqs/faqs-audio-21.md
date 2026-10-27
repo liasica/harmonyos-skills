@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-21
 title: 如何播放PCM格式的音频
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 如何播放PCM格式的音频
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:13975439caa151c4a9339966d0157986db50beea27d60be79e8d79582535c083
 ---
 

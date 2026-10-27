@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-211
 title: Grid如何实现拖拽功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Grid如何实现拖拽功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ec3a6d42b92a1e7384be169ab335ae8d8a34b577b1fec9b5af974355fc1ed4b0
 ---
 

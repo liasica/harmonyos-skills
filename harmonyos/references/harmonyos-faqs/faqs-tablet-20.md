@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-tablet-20
 title: 应用横屏打开会自动切换成竖屏
 breadcrumb: FAQ > 多设备场景 > 平板 > 常见问题 > 应用横屏打开会自动切换成竖屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:48+08:00
+scraped_at: 2026-10-28T07:46:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:3af5c943d132e195d9efb1c677c7d4ec4be29e76cdacebe913a456ff682ad379
+content_hash: sha256:71dd99220c94d6d00195c1f04b27c6bc9b5620e2bf9abc68ed4d14f4bb999bab
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:3af5c943d132e195d9efb1c677c7d4ec4be29e76cdacebe913a456ff682
 
 横屏状态图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/rJC-5OYGTU2UAp3V4rVpMw/zh-cn_image_0000002658911553.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/DtjY7nBBRCeblhB6PDUHkg/zh-cn_image_0000002658911553.png "点击放大")
 
 打开后切换为竖屏状态图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/qDal2qklQVuqpATlos15JQ/zh-cn_image_0000002628392332.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/HIl-5ZWsSYiWiOgAbEwiLg/zh-cn_image_0000002628392332.png "点击放大")
 
 ## 背景知识
 
@@ -31,11 +31,11 @@ content_hash: sha256:3af5c943d132e195d9efb1c677c7d4ec4be29e76cdacebe913a456ff682
 
    指定竖屏打开状态如图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/0Dpwj5obRcurAKyCwO-ADA/zh-cn_image_0000002658791619.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Arsm8khEQmGVPOJGR8WNhA/zh-cn_image_0000002658791619.png "点击放大")
 
    指定横屏打开状态如图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/K7ss4Z1zTNGyFi4wnKWZbA/zh-cn_image_0000002628552234.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/6s7rMmEgRkCFqdX-AIaT1A/zh-cn_image_0000002628552234.png "点击放大")
 2. 对比发现问题中的横竖屏自动切换不是上图所示的横竖屏状态，考虑实际上发生横竖屏切换的是窗口而不是应用。检查EntryAbility.ets中onWindowStageCreate加载窗口时或者在应用打开时是否有以下变更窗口状态的类似操作：
 
    ```ts

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1342
 title: 列表上拉加载，始终显示加载提示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 列表上拉加载，始终显示加载提示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:07e8e1e7812de10c5a93d0b5b36cfc02f03e444a10804a6b36241bc79e510b9a
 ---
 

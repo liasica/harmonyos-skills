@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1468
 title: OverlayManager实现页面顶部固定公告
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > OverlayManager实现页面顶部固定公告
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:48+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7e1b73280715216ef5dd44fe1c34122080b1601f1b0c2bd3f5ef62abd6c841e0
+content_hash: sha256:09f535c6df2b848d56281fbd6a05589430a4638d1890931f35a34865f9a0b5de
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:7e1b73280715216ef5dd44fe1c34122080b1601f1b0c2bd3f5ef62abd6c
 
 可以通过使用UIContext中的[getOverlayManager](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getoverlaymanager12)方法获取当前UI上下文关联的[OverlayManager](../harmonyos-references/arkts-apis-uicontext-overlaymanager.md)对象，再通过该对象调用对应方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Jm8HERZsRoCvADBtKzei4Q/zh-cn_image_0000002658964567.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ymlS6NjMSGGHNnNJ14d9tg/zh-cn_image_0000002658964567.png "点击放大")
 
 ## 解决方案
 

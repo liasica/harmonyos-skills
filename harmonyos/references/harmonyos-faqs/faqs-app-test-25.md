@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: 使用Hypium自动化验证xpath控件的唯一性
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 使用Hypium自动化验证xpath控件的唯一性
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
+scraped_at: 2026-10-28T07:49:01+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:2542304d71e8d615a6b809cb6093ad4dd894bdbac8714cd2da18658fdebc1650
+content_hash: sha256:c25698f503f9f4990b94c523de0e085bd76df80f1cf9718db58a2ced1bef5abd
 ---
 
 ## 问题现象
 
 Hypium自动化在定位器中，通过XPath语法写的XPath路径，在定位器的哪里验证该XPath是否唯一？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/tN7nnQO-R5WjV8RIbrWE0Q/zh-cn_image_0000002628569454.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/koEnwnDWSVy2xZ-qrvTVIA/zh-cn_image_0000002628569454.png "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ Hypium自动化在定位器中，通过XPath语法写的XPath路径，在定位�
 
 * 用户可以根据控件的key、text、type内容来搜索指定控件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/tq0CPbjlSduaW-r_3NKnHQ/zh-cn_image_0000002658928773.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/tKIhLlxATg-BQ3lcpcZ-1g/zh-cn_image_0000002658928773.png "点击放大")
 * 通过API方法实现XPath语法验证控件是否唯一。
 
   ```python
@@ -58,4 +58,4 @@ Q：使用“hdc shell uitest dumpLayout”指令获取到的控件树如何实�
 
 A：控件树中类型为空串的节点代表当前的屏幕信息，类型为root和WindowScene和当前屏幕的对应关系可以通过UiViewer查看，如果想实现UI自动化，推荐使用[DevEco Testing Hypium](../harmonyos-guides/hypium-python-guidelines.md#section16890204264419)的UiViewer插件，可以对控件树进行可视化和获取控件的信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/8qQAGBrARfClfmPd-uLxQA/zh-cn_image_0000002658808825.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/b6D03cssTJeJqycFnVeOwA/zh-cn_image_0000002658808825.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-cloudfound
 title: 如何开通手机号码认证服务
 breadcrumb: FAQ > 应用服务开发 > 云开发服务（Cloud Foundation Kit） > 如何开通手机号码认证服务
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:35+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:071b1376bdeddd119c12b216eee70ab2b0bb5d2daeadf6363f964da1a64f33f5
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3ef63eded71b08fad9014eb7f17bd59b737e518baca87398e1ed62c4093c1b0e
 ---
 
 ## 问题现象
@@ -23,20 +23,20 @@ content_hash: sha256:071b1376bdeddd119c12b216eee70ab2b0bb5d2daeadf6363f964da1a64
 
 1. 在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)中，启用手机号码认证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/rf7kkOdXRmm7-IZWP314Mw/zh-cn_image_0000002658555602.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/BGVtV8xVSIagxHXTwd_aag/zh-cn_image_0000002658555602.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/bm_k4rHISTOMpYueW0nShA/zh-cn_image_0000002658395850.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/BMVjikkcRMKUUmIEARIMaw/zh-cn_image_0000002658395850.png "点击放大")
 2. 获取SDK配置信息，添加到项目中。将"agconnect-services.json"文件拷贝到DevEco Studio项目的"AppScope/resources/rawfile"目录下，"AppScope/resources"目录下默认不存在"rawfile"文件夹，需要您手动创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/iH7BJyyRR76nxECBsLiCqA/zh-cn_image_0000002688435381.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/buqMHYyiQf2m98Kv24lHyQ/zh-cn_image_0000002688435381.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/nxZ_98IYR_aQ6sEl0sqNpA/zh-cn_image_0000002688435429.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/1r3fa9LERmuoSRwdKeuiTA/zh-cn_image_0000002688435429.png "点击放大")
 3. 添加配置文件后，需要在DevEco Studio项目中配置SDK依赖。可参考：[配置SDK依赖](../app/agc-help-auth-integration-sdk-0000002236337006.md#section118271917153716)。
 
    并在"entry/src/main/module.json5"文件中添加网络权限：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/F9U6nFQ8TfeK3MRqipynUg/zh-cn_image_0000002688555733.png "点击放大")
-4. 集成AGC SDK，在EntryAbility的onCreate中初始化SDK，可参考：[集成SDK](../app/agc-help-auth-integration-sdk-0000002236337006.md#section643311286432)。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Bjsi72QGTh6g1AZ0Sxt8QA/zh-cn_image_0000002688555733.png "点击放大")
+4. 集成HarmonyOS 开发者中心 SDK，在EntryAbility的onCreate中初始化SDK，可参考：[集成SDK](../app/agc-help-auth-integration-sdk-0000002236337006.md#section643311286432)。
 
 ## 常见FAQ
 

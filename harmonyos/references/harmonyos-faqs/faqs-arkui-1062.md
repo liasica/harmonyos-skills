@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1062
 title: TextInput组件如何使用showError展示错误文本
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TextInput组件如何使用showError展示错误文本
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:53+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9eb96fe55fc23e103aad1b80b80e6471e4357a3ba5f1d7fc471ee4acc81c7252
+content_hash: sha256:0278708a09c4e5f35e50c2baa87312e65c4e565e12a68e28e39d9713745936a2
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:9eb96fe55fc23e103aad1b80b80e6471e4357a3ba5f1d7fc471ee4acc81
 
 问题截图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/lBVkJstLTya82M18aGx-kQ/zh-cn_image_0000002658806473.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/UI9d1scDTwmjNvji2iNd5w/zh-cn_image_0000002658806473.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-608
 title: 使用Repeat加载Text组件，内容渲染顺序出错如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用Repeat加载Text组件，内容渲染顺序出错如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:695c29581d3eee87de6f65fa9d5567be82a4f9e988d43652f5e524f6eebf06a7
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ff12edcf3837574e06c5b0033800c5f3ebf11b19ce5f0b20c7dad8a66c3961e1
 ---
 
 ## 问题现象
@@ -74,7 +74,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/7QC6FoVSSKGYCLc8LBcpFw/zh-cn_image_0000002628552618.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/EypBcougTbS3-0Kqh4Rn3g/zh-cn_image_0000002628552618.gif "点击放大")
 
 ## 背景知识
 

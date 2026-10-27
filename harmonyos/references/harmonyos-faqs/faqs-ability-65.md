@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-65
 title: UIAbility和UIExtensionAbility有什么区别？分别推荐在什么场景使用
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > UIAbility和UIExtensionAbility有什么区别？分别推荐在什么场景使用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:386ee22f13ac7daec0e9317f4ad0a53acde08b7f117d999eb6b323638b43780a
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-5
 title: 如何正确使用OH_JSVM_GetValueStringUtf8获取字符串
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > 如何正确使用OH_JSVM_GetValueStringUtf8获取字符串
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:35+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0c474a9cf62c8c9ee85675a04185dc8c3fd9d3706c168167d1aaa8ad6ca9fa38
 ---
 

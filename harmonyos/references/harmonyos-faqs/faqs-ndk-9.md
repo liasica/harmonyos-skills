@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-9
 title: 如何修改代码工程所支持的C++语言版本
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何修改代码工程所支持的C++语言版本
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b218f67cc4531cb2203dc105bd3fa6e1f3181565922556e2f0ea52c15026e043
 ---
 

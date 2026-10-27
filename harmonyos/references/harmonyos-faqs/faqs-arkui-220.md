@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-220
 title: Flex布局与w3c中的Flex是否有差异
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Flex布局与w3c中的Flex是否有差异
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:21+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a93ef618851d855c91eac9eaf03a730be8d60b8a63b577b24ed9862455dbceff
 ---
 

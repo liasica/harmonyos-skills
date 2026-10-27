@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-3
 title: 服务器关键事件消息通知常见问题及解决方案
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 服务器关键事件消息通知常见问题及解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:31+08:00
-doc_updated_at: 2026-10-20
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a398c70e93367848fe0b06be5ef15572481238c5f26fe1ccbf22b600a32f722b
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "工程编译告警提示“ArkTS:WARN: For details about ArkTS syntax errors”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 工程编译告警提示“ArkTS:WARN: For details about ArkTS syntax errors”"
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
+scraped_at: 2026-10-28T07:48:52+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:58dea64e3abf02b9686cd7a6430735cd87271386c77fcdc02b368b0c5602d331
+content_hash: sha256:46babdbfb414800a82cc509429b86719f8936c78f3e010ebba135981f582f1ef
 ---
 
 **问题现象**
@@ -17,9 +17,9 @@ content_hash: sha256:58dea64e3abf02b9686cd7a6430735cd87271386c77fcdc02b368b0c560
 1. ERROR: ArkTS:ERROR File: C:/Users/... ,Use "let" instead of "var" (arkts-no-var)
 2. ERROR: ArkTS:ERROR File: D:/DTS/MyApplicationAPI12/... ,The "@Sendable" decorator can only be used on "class", "function" and "typeAlias" (arkts-sendable-decorator-limited)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/HDf9HHlAQeG214h0y2ZpIw/zh-cn_image_0000002624478498.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/cLLnUfdOR52_wLrG72qO9Q/zh-cn_image_0000002624478498.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/kR5bN4ytRqWlK08Wmn_dfQ/zh-cn_image_0000002654797857.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/3VSMcjwTRKSc_W8fPseURQ/zh-cn_image_0000002654797857.png)
 
 **解决措施**
 

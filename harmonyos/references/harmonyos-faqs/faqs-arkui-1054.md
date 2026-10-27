@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1054
 title: router跳转时如何实现3D翻转动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > router跳转时如何实现3D翻转动画效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:53+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:56e8bb0e657d786a2f5d326f975faa95f937c35789af3df8b8bc2c1bd4dbc000
+content_hash: sha256:f2cb52f02d475cc31ce1076aeae66d5511f8c300be4bb7823db94043cd90eefb
 ---
 
 ## 问题现象
@@ -179,4 +179,4 @@ struct Index2 {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/PHeFr6IjS5KewW9uR8s_LA/zh-cn_image_0000002658804833.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ZdP04CWNRsaPg5fldhJr5g/zh-cn_image_0000002658804833.png "点击放大")

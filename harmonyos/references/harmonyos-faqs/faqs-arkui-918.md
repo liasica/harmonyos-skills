@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-918
 title: 怎么获取被@ObservedV2观察的数据对应的原始数据
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 怎么获取被@ObservedV2观察的数据对应的原始数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:349e3343136b2b8acd6dd39ea102998fe4d1456acd4c889375718ef8c765103f
 ---
 

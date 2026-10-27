@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1198
 title: Slider组件自定义气泡开发
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Slider组件自定义气泡开发
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c4c012cf0232f21c4e49e07f971d9a4ebb5d89adc8d87d392745ca0eda4877bf
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:850d5be45311f6f53eb2e6bd74a7c98f426a02c262ebb33ffd52e6696a954e8f
 ---
 
 ## 问题现象
@@ -179,7 +179,7 @@ content_hash: sha256:c4c012cf0232f21c4e49e07f971d9a4ebb5d89adc8d87d392745ca0eda4
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/_AbsFYa8QHuuoLVp92MIsA/zh-cn_image_0000002658952787.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/oyOl5sT6R0aSpYzLR9IeUw/zh-cn_image_0000002658952787.png "点击放大")
 * **场景二**：滑块移动时的动态UI展示。
 
   此场景在场景一的基础上，增强了内容刷新的功能：
@@ -294,7 +294,7 @@ content_hash: sha256:c4c012cf0232f21c4e49e07f971d9a4ebb5d89adc8d87d392745ca0eda4
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/oU_7N39fQzO0Az50x8nI1w/zh-cn_image_0000002658832825.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/YFK_eV6xTtiXvsY3bk66-Q/zh-cn_image_0000002658832825.png "点击放大")
 * **场景三**：气泡内容长文本展示。
 
   此场景在场景二的基础上，聚焦长文本样式的增强：
@@ -411,4 +411,4 @@ content_hash: sha256:c4c012cf0232f21c4e49e07f971d9a4ebb5d89adc8d87d392745ca0eda4
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/kNAHI96hS72IfsdIMT81dQ/zh-cn_image_0000002628593584.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/liJ11SS6RGaeVq5R9NUGfw/zh-cn_image_0000002628593584.png "点击放大")

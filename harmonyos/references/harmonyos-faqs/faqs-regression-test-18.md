@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-regression
 title: 如何解决Hypium测试用例转换为测试服务包时py_file字段获取为空的问题
 breadcrumb: FAQ > DevEco Testing > 回归测试 > 如何解决Hypium测试用例转换为测试服务包时py_file字段获取为空的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:59+08:00
+scraped_at: 2026-10-28T07:49:05+08:00
 doc_updated_at: 2026-06-30
-content_hash: sha256:240c01fa17abb9bdd91c1a99b594939c38cbace806c2ceaf92bedcd79a9d9329
+content_hash: sha256:ab9d3e406d1349638b68c3b0f5c2399a95c106d8da18eed0e7de5c3a15edc54c
 ---
 
 ## 问题现象
 
 [DevEco Testing Hypium](../harmonyos-guides/hypium-python-guidelines.md#section16890204264419)框架里测试套件生成测试服务包失败，提示“\*\*\*.json文件py\_file字段获取为空”，测试套件配置文件中该如何配置该字段？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Ky5jILDyT4aGXIji_hiXHw/zh-cn_image_0000002661534691.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/WoeAtaZ2THqoaCK_lr6CiQ/zh-cn_image_0000002661534691.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/9hsng-uSRAyL9FQwBO7Lrw/zh-cn_image_0000002631175564.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/UiVsv0s0TeOpHl0KVP7nlg/zh-cn_image_0000002631175564.png "点击放大")
 
 ## 背景知识
 
@@ -25,15 +25,15 @@ content_hash: sha256:240c01fa17abb9bdd91c1a99b594939c38cbace806c2ceaf92bedcd79a9
 
 由于回归测试生成的可执行测试包中仅支持单用例（即单个json文件和json中指定的用例文件），根据报错信息需要检查setup-regression.py配置的单条用例xx.json文件py\_file字段是否存在或者是否为空。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Sms9G70_RaeICcGPq_XXCg/zh-cn_image_0000002661414977.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/lOOJI702QrOdFqrAEvvvOw/zh-cn_image_0000002661414977.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/lqSgoCjISsmAQ-HGFyQulQ/zh-cn_image_0000002661414983.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/mnQTbGb_SMKVcsvBIH77fQ/zh-cn_image_0000002661414983.png "点击放大")
 
 ## 分析结论
 
 当用户在setup-regression.py文件中指定打包的json文件中未声明对应的用例py文件，会出现该提示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/3y3KKyxPSiWD253NNnl9nw/zh-cn_image_0000002631175908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/JYo7YCZ2SqKLulFjdqQZOg/zh-cn_image_0000002631175908.png "点击放大")
 
 ## 修改建议
 
@@ -41,14 +41,14 @@ content_hash: sha256:240c01fa17abb9bdd91c1a99b594939c38cbace806c2ceaf92bedcd79a9
 
 * 用例xx.json文件需要包含py\_file字段；
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/4UW5zCL9TeWKZ7j_gh_VAg/zh-cn_image_0000002661415301.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/f4SBz05jRXmlS6pBfMTPGw/zh-cn_image_0000002661415301.png "点击放大")
 
 * setup-regression.py文件示例；
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/xX5DdDL-SSaDICs_nOlLpg/zh-cn_image_0000002631336454.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/rOOd9fgnRLqGU9JlRHOO9A/zh-cn_image_0000002631336454.png "点击放大")
 * MANIFEST.in文件示例。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/29I7KlXTRn65y0_f23NpdQ/zh-cn_image_0000002631336616.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/N2JNAkHeRxmCx0qPP4G7Tg/zh-cn_image_0000002631336616.png "点击放大")
 
 ## 常见FAQ
 

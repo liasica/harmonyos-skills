@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-191
 title: Web组件的metaViewport属性使用注意事项
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件的metaViewport属性使用注意事项
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e7fb4702971ab90d36284c2a59a28932e217da4bdbaae5178fac910e10896055
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-26
 title: 如何在C++调用从ArkTS传递过来的function
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime） > 如何在C++调用从ArkTS传递过来的function
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b662968d2a92705f364c0699b71dee1107a090508e289d2d5b1fdca0fef7d941
 ---
 

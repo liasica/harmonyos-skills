@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: rcp怎么在请求和拦截器中增加query参数
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > rcp怎么在请求和拦截器中增加query参数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4a950e30a9e5c7df3493e841b162b57f813e41d9c4b1e2e52e5bbd119329ac0e
 ---
 

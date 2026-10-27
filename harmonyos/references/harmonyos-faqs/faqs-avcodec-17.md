@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-17
 title: 解码器解码过程中卡住无输出
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 解码器解码过程中卡住无输出
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a15284a04a6b407e7659bf3a0183caa0e9eb7f30968ff0fa6bf605200fc3c9e7
+scraped_at: 2026-10-28T07:48:34+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:dd5ef6f0599e08187ff68cc35647cc92dbba5937e9e7e29fe2d54c915decf133
 ---
 
 ## 问题现象
 
 在调试解码器硬解功能时发现反复拉流的时候解码器有段时间只能输入数据，但是没有数据输出。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/fFcAkcPKTsmsn9W_JunH4A/zh-cn_image_0000002628552732.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/wxgj5cekSYSBtkkPc3d3ag/zh-cn_image_0000002628552732.png "点击放大")
 
 ## 背景知识
 
@@ -27,7 +27,7 @@ content_hash: sha256:a15284a04a6b407e7659bf3a0183caa0e9eb7f30968ff0fa6bf605200fc
 
 视频解码中的调用关系图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/mJEZiwmSTe6EPrvA2DGaBw/zh-cn_image_0000002658912053.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/jjaNqpYOQGyM9lgzRm0kfg/zh-cn_image_0000002658912053.png "点击放大")
 
 ## 问题定位
 
@@ -37,7 +37,7 @@ content_hash: sha256:a15284a04a6b407e7659bf3a0183caa0e9eb7f30968ff0fa6bf605200fc
 4. 发现AVCODEC\_BUFFER\_FLAGS\_CODEC\_DATA未传准确，但是修改后问题还是存在。
 5. 再次测试，错误日志如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/D9ghXy32R8-khenTRu5kgg/zh-cn_image_0000002628392848.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/EhPQhhNAQt21EADY8qyA_w/zh-cn_image_0000002628392848.png "点击放大")
 6. 根据解码输出出现问题的时间段定位到11:37的时间点。查看日志输出相关时间点发现报错如下：
 
    ```txt
@@ -56,7 +56,7 @@ content_hash: sha256:a15284a04a6b407e7659bf3a0183caa0e9eb7f30968ff0fa6bf605200fc
 
 对解码器的输入队列进行上锁操作，在输入队列中有数据并要将其传入解码器时确保锁保护共享资源访问，获得锁后从解码输入队列中获取回调得到的index和buffer缓冲区出队列，后释放锁，填充帧数据到buffer后使用[PushInputBuffer](../harmonyos-references/capi-native-avcodec-videodecoder-h.md#oh_videodecoder_pushinputbuffer)送入解码器解码。
 
-```
+```cpp
 void Player::VideoDecInputThread()
 {
     while (true) {
@@ -89,7 +89,7 @@ void Player::VideoDecInputThread()
 
 index输出如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/Hp_AHMrMQP6dcRJgkAgTOw/zh-cn_image_0000002658792119.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Ia1AVVjeTfG37vO0MSpSoQ/zh-cn_image_0000002658792119.png "点击放大")
 
 完整demo可参考[AVCodecVideo](https://gitee.com/harmonyos_samples/AVCodecVideo)。
 

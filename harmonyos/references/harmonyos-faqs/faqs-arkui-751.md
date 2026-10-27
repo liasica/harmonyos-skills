@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-751
 title: List嵌套Canvas滑动抖动问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > List嵌套Canvas滑动抖动问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:44+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:50cc830bec0052d99a4890bdec7985e87a85f13ea233f9e5eec56f2b526f5160
+content_hash: sha256:fa6ba7475d981df30b5caa16d23b7b551f911995da6a2d4ca01d5d13b5708c37
 ---
 
 ## 问题现象
@@ -92,11 +92,11 @@ export struct CanvasInListComponent {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/a4_jAgGCSFKGgxrNR84sUA/zh-cn_image_0000002628555364.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/g53-OyydTjqk42lcE978rg/zh-cn_image_0000002628555364.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/dCYy0T8YRiaNJ-0UcJZ4Gg/zh-cn_image_0000002628395470.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/fbC81tbwTJGyZqS6BYhTGQ/zh-cn_image_0000002628395470.gif "点击放大")
 
 ## 背景知识
 
@@ -108,7 +108,7 @@ export struct CanvasInListComponent {
 
 1. 通过抓取性能Trace图，观察到在橙色标记的时间段内，存在多个方法执行耗时超出预期的情况。其中，Canvas的FireReadyEvent方法出现在关键路径上，表明当前帧的绘制任务未能按时完成，导致渲染延迟，从而引发界面卡顿。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/KATGwxH4TECVXj27EpWyFg/zh-cn_image_0000002658914687.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Ah3sA60uS5qpAsUd2CqjgQ/zh-cn_image_0000002658914687.png)
 2. 分析onReady中绘制方法：排查到使用了OffscreenCanvasRenderingContext2D方法，根据背景知识了解到离屏绘制的绘制速度较慢，尝试修改为在屏绘制，抖动消失。
 
 ## 分析结论

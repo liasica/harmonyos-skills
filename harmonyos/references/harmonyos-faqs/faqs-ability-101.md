@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-10
 title: 如何判断应用当前在前台/后台
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何判断应用当前在前台/后台
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4629555f31279c1f4532ceaa11b01b7bd144fb6b773a43ed361ac362615a874b
 ---
 

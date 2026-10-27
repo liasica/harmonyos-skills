@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-974
 title: RichEditor组件实现图片插入后换行并横向居中效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor组件实现图片插入后换行并横向居中效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c5058621a9bd46f207e57018b497738b9ed1639b0da07c32437183f000e876ff
 ---
 

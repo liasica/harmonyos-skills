@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1490
 title: 应用开启智慧多窗时底部导航栏缺失
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 应用开启智慧多窗时底部导航栏缺失
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:43+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:b0ac015a348e077f54824349b4fce2532287441b261cb843946c6df5ea075daf
+content_hash: sha256:bf808ed297225538022937e1ac65c7d77c96841d5e6f5b47533e6cef973ffdfb
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:b0ac015a348e077f54824349b4fce2532287441b261cb843946c6df5ea0
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/_eLkn_hTRQ-pW0R3nFrxbg/zh-cn_image_0000002639596616.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/H3LiML3vR9OFe_px9DaoYQ/zh-cn_image_0000002669796487.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Q1n28DYTQISIztY6sbmSIw/zh-cn_image_0000002639596616.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/hdUYArbFRG-zEstqmfMN3A/zh-cn_image_0000002669796487.png "点击放大")
 
 ## 背景知识
 

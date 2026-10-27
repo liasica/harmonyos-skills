@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何解决hdc server和client版本不一致的问题
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何解决hdc server和client版本不一致的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:60e332e362df799941930706d3bc9a57e892a949ac9ecb22d44483bd0ab1d15f
+scraped_at: 2026-10-28T07:46:44+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c180708c8c483e4a9a8ba46576658aee7388c31f1e5fd6750322e70be3a9f35b
 ---
 
 **问题现象**
 
 hdc.log 中的报错信息为“Daemon Session Handshake failed”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/aPmIJwiiRleVFXjnwXAEQA/zh-cn_image_0000002624476472.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/bSTwWw8DSDegMmFysamQJg/zh-cn_image_0000002624476472.png "点击放大")
 
 **解决措施**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-366
 title: 如何实现通过侧滑手势关闭打开的悬浮框
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现通过侧滑手势关闭打开的悬浮框
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6d3ceae571fc17c9cbea5a8ea05bc61bc44bfef0e3794bd71ba4c879b5cd4f81
 ---
 

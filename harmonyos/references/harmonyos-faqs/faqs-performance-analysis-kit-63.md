@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: hilog日志导致应用性能异常怎么定位优化
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > hilog日志导致应用性能异常怎么定位优化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:45+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d2f3c07bedeb2afe5e3bda6c2dee26f7fa26e7b180e127a8f6b382f10c991dec
 ---
 

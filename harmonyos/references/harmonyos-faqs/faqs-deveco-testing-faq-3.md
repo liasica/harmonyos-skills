@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-testing-faq-3
 title: 测试任务执行时，避免PC进入睡眠状态，如何设置
-breadcrumb: FAQ > DevEco Testing > 常见问题 > 测试任务执行时，避免PC进入睡眠状态，如何设置
+breadcrumb: FAQ > DevEco Testing > 测试任务执行时，避免PC进入睡眠状态，如何设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:22:19+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:49:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:07a3ea1e28fab302d8e01f1b2c4060e84276ac61195c5232458b2f5038c677a1
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-839
 title: Scroll滚动到顶/底部后，下/上拖执行自定义方法
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Scroll滚动到顶/底部后，下/上拖执行自定义方法
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:502f2af4c92825fa30ce15c2a7165e4453cade82e74aeb208690439070233b19
 ---
 

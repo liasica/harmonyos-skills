@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-8
 title: 活体检测完成返回指定Navigation路由页面功能实现
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 活体检测完成返回指定Navigation路由页面功能实现
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:49:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e9eb09bcc9e389adc9cb23a0a74bcdcb2a23ebbca1fb736af3863d43f2c4ef45
 ---
 

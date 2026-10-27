@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-8
 title: 视频画面模糊，清晰度低
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 视频画面模糊，清晰度低
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:234d6e292fb6e214f7933e636ed795f96b58672a73ceb917f01384b01db02b69
+scraped_at: 2026-10-28T07:48:33+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e89392e5883557a815be91495c34642f203909f52803c5282c17340c95fe1de9
 ---
 
 ## 问题现象
@@ -24,7 +24,7 @@ content_hash: sha256:234d6e292fb6e214f7933e636ed795f96b58672a73ceb917f01384b01db
 2. 检查网络状况是否正常可用。
    * 通过系统日志中的WifiFrameWork：SignalPoll字段查看wifi状态，主要定位以下关键字。
 
-     ```screen
+     ```txt
      rtRate // 重传率，重传率rtRate>=0.2时报文重传率高，卡顿明显无法上网。
      chload // 通道占用比，可用于表征WiFi信道的繁忙度。chload越高代表网络状态越差,，chload 500以上为中网，会卡顿，800以上不可上网
      rssi // -30表示信号很强，-80表示信号很弱
@@ -34,7 +34,7 @@ content_hash: sha256:234d6e292fb6e214f7933e636ed795f96b58672a73ceb917f01384b01db
      ```
    * 通过系统日志中的应用包名/NETSTACK可以看到应用发起http网络请求时的耗时情况，主要定位以下关键字。
 
-     ```screen
+     ```txt
      size：上传或者下载的数据大小（byte）。
      dns：域名解析耗时，单位：ms。
      connect:TCP握手耗时，单位：ms。

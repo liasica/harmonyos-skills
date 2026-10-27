@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1071
 title: 如何解决使用@State修饰对象数组，数据变化时页面不刷新问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决使用@State修饰对象数组，数据变化时页面不刷新问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:04+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:bc396e46af927024c0739703ed86d498d636c6b1df74d5adc2ff176fb5ed2bb5
+content_hash: sha256:3ee740e8bee1dd53342911d0341b39c002df9510d4f7cf1d59ff86e5d4bfcd81
 ---
 
 ## 问题现象
@@ -215,7 +215,7 @@ content_hash: sha256:bc396e46af927024c0739703ed86d498d636c6b1df74d5adc2ff176fb5e
 
   场景三问题现象如下，当想要将小张的年龄第二次修改为88时（89修改为88）UI不刷新：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/LxMbcraTQp2dgFlbkDDvyg/zh-cn_image_0000002689362454.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/H0X_K9erT4O2cW8CBm8K4A/zh-cn_image_0000002689362454.png "点击放大")
 
 ## 背景知识
 
@@ -306,7 +306,7 @@ content_hash: sha256:bc396e46af927024c0739703ed86d498d636c6b1df74d5adc2ff176fb5e
 
   场景一实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/IUn9mv3hTQeHMsQoICZwhw/zh-cn_image_0000002689210526.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/dWtco9RFTEiJO7CpY1jIwA/zh-cn_image_0000002689210526.png "点击放大")
 
 * 场景二：使用了@Observed/@ObjectLink装饰器进行深度观测，由于@ObjectLink只能观察一层属性导致的页面不刷新。
 
@@ -414,7 +414,7 @@ content_hash: sha256:bc396e46af927024c0739703ed86d498d636c6b1df74d5adc2ff176fb5e
 
   场景二实现效果如下，嵌套对象的每个层级的属性都可以实现UI刷新：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/iH6rmNpLS0SwPQls9cr65g/zh-cn_image_0000002689535616.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Fkjntd5MTgKPsKPazj1rQA/zh-cn_image_0000002689535616.png "点击放大")
 
 * 场景三：使用了@Observed/@ObjectLink装饰器进行深度观测，由于ForEach首次渲染与非首次渲染引起的页面不刷新。
 
@@ -610,7 +610,7 @@ content_hash: sha256:bc396e46af927024c0739703ed86d498d636c6b1df74d5adc2ff176fb5e
 
        场景三修复效果如下，重复上述第5步时，发现可以重建刷新UI将小张的年龄从89重置为88：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/QyvsUjz7QPWt553HPlSGgw/zh-cn_image_0000002689399358.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/wCsLX7X5QZuWTtpA7hnsPg/zh-cn_image_0000002689399358.png "点击放大")
 
 ## 常见FAQ
 

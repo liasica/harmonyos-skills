@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何解决连接手机时，提示：“hdc server port 8710 has been used”的问题
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何解决连接手机时，提示：“hdc server port 8710 has been used”的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:46:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d33e824d0841b9661a3328c286efc53d8db4211dcf5e0fdcc03a60a73483fcc9
 ---
 

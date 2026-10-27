@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: px2vp单位转换方法及常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > px2vp单位转换方法及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:32+08:00
+scraped_at: 2026-10-28T07:46:59+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:c7874867d69570257fc43875defa6141fc70a55e701b83798ea1b2c415d99e2d
+content_hash: sha256:ebb7cf6969cafb93ce3d63e32ee307bd226284670e3235da260ad69886d2dc51
 ---
 
 **Q：在使用px单位进行UI开发时，发现不同设备上实际显示尺寸与设计稿预期效果存在偏差。由于px是物理像素的绝对单位，而不同设备的屏幕像素密度（DPI）不同，导致固定px值的元素在高密度屏幕上显示过小，在低密度屏幕上显示过大。**
@@ -83,7 +83,7 @@ struct Example {
 
 运行结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/jNnB5lusTb-8K_Jk880TcQ/zh-cn_image_0000002793763795.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/bto2agZBRvKhqPxgmZRUQg/zh-cn_image_0000002793763795.png "点击放大")
 
 **Q：既然推荐使用vp，那lpx和designWidth有什么用？**
 

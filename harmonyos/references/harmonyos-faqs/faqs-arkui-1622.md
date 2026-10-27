@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1622
 title: 数据库加载成功后，页面无法监听数据变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 数据库加载成功后，页面无法监听数据变化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:466cfcae0b7c9463514894d86974b35a295e202dadb2d81d83832d5934e22c5d
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:20550f256a414b6de0ebe735eb99805097fc3c75b2a2226fc91e244529a1ca4f
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:466cfcae0b7c9463514894d86974b35a295e202dadb2d81d83832d5934e
 
 页面刷新逻辑如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/Xah-jTlHTN--uUpCF0r-tQ/zh-cn_image_0000002628617572.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/wPUpBk5jQNiPwJh6f2Mw4w/zh-cn_image_0000002628617572.png "点击放大")
 
 ## 解决方案
 

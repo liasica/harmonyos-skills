@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: Index.d.ts接口定义文件中语法检查报错如何处理
 breadcrumb: FAQ > DevEco Studio > 编译构建 > Index.d.ts接口定义文件中语法检查报错如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:56+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:71979806d957f409d74a645cc6bd414b7f5f176e97eb9d6164d4ffa1c97e03de
+content_hash: sha256:333352c2eb3ef056a5782def29de8c84c6104b948e843d043be17694089cd69a
 ---
 
 ## 问题现象
@@ -33,4 +33,4 @@ napi开发中，在Index.d.ts接口定义文件中报错Declared function 'xxx' 
 * 正确绑定ArkTS接口与C++接口，导出的接口名与Index.d.ts声明的接口名一致。
 * 修改IDE的设置，可以通过settings-editor-inspections-JavaScript typescript ArkTS中取消unregister function in native declaration file设置。示例如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/0HXEnWvZS86sRHr6HlQq8A/zh-cn_image_0000002628569176.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/s1nv0OwZTJqyGKsncEbNlg/zh-cn_image_0000002628569176.png "点击放大")

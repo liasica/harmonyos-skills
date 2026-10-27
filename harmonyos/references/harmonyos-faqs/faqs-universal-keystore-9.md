@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-universal-
 title: huks Native接口编译报错问题
 breadcrumb: FAQ > 系统开发 > 安全 > 密钥管理（Universal Keystore） > huks Native接口编译报错问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:12+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b838f9fd0de8ae47a44d7bb2b7834e60257a6dc78138842c761c6d1f14dcd1b6
 ---
 

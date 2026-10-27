@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: RCP下载文件，会重复回调同一个进度，如何解决
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > RCP下载文件，会重复回调同一个进度，如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
+scraped_at: 2026-10-28T07:48:17+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:27778703947add5617704630425be091598e429d6ca4823c95a264af7799e2bc
+content_hash: sha256:96f909138cc5b2618bffd7ebc07af4f55cd8aa583eb4a4a1f8b2ba02db055030
 ---
 
 ## 问题现象
 
 使用RCP接口下载文件，onDownloadProgress会重复回调同一个进度，导致业务逻辑重复执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/UGBRbAeHR9SMgcqhPcymbg/zh-cn_image_0000002628612488.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/9K-QbyeHSp2avwPUut7iZA/zh-cn_image_0000002628612488.png "点击放大")
 
 ## 背景知识
 

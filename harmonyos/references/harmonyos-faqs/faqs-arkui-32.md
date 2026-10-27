@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-32
 title: 如何解决子组件全屏后margin不会生效的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决子组件全屏后margin不会生效的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:24dc5b13bfa46464a7408a6dd30715f2eeaafe8ad014fb8ca86556a7840f2e80
 ---
 

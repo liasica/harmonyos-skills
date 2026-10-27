@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-localizati
 title: 如何读取工程中/resources下json文件
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 本地化开发（Localization） > 如何读取工程中/resources下json文件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:53+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9bc600596d3c42b88c687a4e757f53a2182dc352895f45198f3b276495b3cb21
 ---
 

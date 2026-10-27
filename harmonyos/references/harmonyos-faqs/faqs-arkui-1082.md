@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1082
 title: 使用输入法进行文本输入时，输入框无响应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用输入法进行文本输入时，输入框无响应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:44+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:18d97b94915fa122e94146f80b01e1c346e7f8b8947aefbfd6811a43ad621399
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:44861830c4f0fabeb6a3f7b0682475c1dba33fc1aafb62399149777c6a7df3c8
 ---
 
 ## 问题现象
@@ -24,7 +24,7 @@ content_hash: sha256:18d97b94915fa122e94146f80b01e1c346e7f8b8947aefbfd6811a43ad6
 
   IME Kit在输入法软键盘和自绘编辑框时使用ArkUI提供的部分组件、事件、动效、状态管理等能力，例如Text、Button组件，onClick点击事件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/jhA2Z5PES1Cn65gPjpWbuA/zh-cn_image_0000002628567240.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/TYF-VChPT8aDnY-XTXVCoQ/zh-cn_image_0000002628567240.png "点击放大")
 
   [在自绘编辑框中使用输入法](../harmonyos-guides/use-inputmethod-in-custom-edit-box.md)：在输入法框架中，可以通过[getController](../harmonyos-references/js-apis-inputmethod.md#inputmethodgetcontroller9)方法获取到[InputMethodController](../harmonyos-references/js-apis-inputmethod.md#inputmethodcontroller)实例来绑定输入法并监听输入法应用的各种操作，比如插入、删除、选择、光标移动等。这样就可以在自绘编辑框中使用输入法，并实现更加灵活和自由的编辑操作。
 * [文本输入 (TextInput/TextArea)](../harmonyos-guides/arkts-common-components-text-input.md)：输入框组件，用于响应用户输入，比如评论区的输入、聊天框的输入、表格的输入等，也可以结合其它组件构建功能页面，例如登录注册页面。相关API请参考和[TextInput](../harmonyos-references/ts-basic-components-textinput.md)和[TextArea](../harmonyos-references/ts-basic-components-textarea.md)。

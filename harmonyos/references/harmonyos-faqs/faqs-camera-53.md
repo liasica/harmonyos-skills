@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-53
 title: 初次授权后相机不显示图像
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 初次授权后相机不显示图像
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:24259408d3dc98ee3f2fb1e37f1f73e561b427c9676f0bfb3fcd2a1fa4a8e8d9
+scraped_at: 2026-10-28T07:48:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a6d3b382a415e3d40315d3f2bd04279b21741b62aaccd6276cf53d42f7bec8cb
 ---
 
 ## 问题现象
@@ -220,7 +220,7 @@ getPermission(permissions: Permissions[]): Promise<boolean> {
 * C/C++侧实现：
   + napi\_init.cpp:
 
-    ```
+    ```cpp
     /*
      * Copyright (c) Huawei Technologies Co., Ltd. 2025. All rights reserved.
      */
@@ -382,7 +382,7 @@ getPermission(permissions: Permissions[]): Promise<boolean> {
     ```
   + camera.cpp:
 
-    ```
+    ```cpp
     /*
      * Copyright (c) Huawei Technologies Co., Ltd. 2025. All rights reserved.
      */
@@ -1050,7 +1050,7 @@ getPermission(permissions: Permissions[]): Promise<boolean> {
     ```
   + camera.h:
 
-    ```
+    ```cpp
     /*
      * Copyright (c) Huawei Technologies Co., Ltd. 2025. All rights reserved.
      */

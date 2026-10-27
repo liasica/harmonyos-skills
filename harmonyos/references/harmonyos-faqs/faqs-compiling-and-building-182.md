@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 推包调试报错“Error message:cannot find record '&XXX/src/main/ets/YYY&x.y.z', please check the request path.'ZZZ.abc'.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 推包调试报错“Error message:cannot find record '&XXX/src/main/ets/YYY&x.y.z', please check the request path.'ZZZ.abc'.”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:32e1d01c381fa967a0b66b032af9959dde5c3d41e5e922ca7b515ff937c3d0ef
+content_hash: sha256:eca2cc3e351155ca538eae52b811135bfc937b89790fb493185742197f69a0ff
 ---
 
 **问题现象**
 
 在使用DevEco Studio推包到设备进行调试时，如果遇到jscrash报错，FaultLog中显示“Error message: cannot find record '&XXX/src/main/ets/YYY&x.y.z'，请检查请求路径 'ZZZ.abc'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/pZECThcaT4O9S3hAGY29rg/zh-cn_image_0000002654798015.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/r6kPPK8yT8yXjlQD-iFauQ/zh-cn_image_0000002654798015.png)
 
 **问题原因**
 
@@ -62,7 +62,7 @@ content_hash: sha256:32e1d01c381fa967a0b66b032af9959dde5c3d41e5e922ca7b515ff937c
 
 1）在工程根目录下新增plugin.ts文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/A9SzcNmbTgui9x_yAEc1OA/zh-cn_image_0000002624638566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/xnhPLFrQQkW_Lg9lFf-njw/zh-cn_image_0000002624638566.png)
 
 plugin.ts文件内容：
 
@@ -196,7 +196,7 @@ export function updateHarAbcVersionPlugin(): HvigorPlugin {
 
 2）在工程级hvigorfile.ts文件中增加两个插件，并执行Sync。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/ITGHnD0pQXG-SCPSt1qAjg/zh-cn_image_0000002654837971.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/WmnoIF4HTiyJyUZDr3gF0Q/zh-cn_image_0000002654837971.png)
 
 hvigorfile.ts文件内容：
 
@@ -216,4 +216,4 @@ export default {
 hvigorw --stop-daemon
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/onHwOjQDRKue1O5_XD-f1g/zh-cn_image_0000002624478660.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/a-c4bVS6SaeQI0kTRTAnUg/zh-cn_image_0000002624478660.png)

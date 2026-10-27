@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-633
 title: 如何解决Grid组件中设置onGetIrregularSizeByIndex属性失效问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Grid组件中设置onGetIrregularSizeByIndex属性失效问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:f8489d4154bd9ac15f70a5f16c61652740a171edbc0793a1a0f7e4fe0ffc3450
+scraped_at: 2026-10-28T07:47:08+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:53ed430a2c3f0cd42ab5467d470289429a1a52f49ecb4a7df3b4a9532eade885
 ---
 
 ## 问题现象
 
 在Grid组件中，通过设置onGetIrregularSizeByIndex属性实现第一个元素占据两行两列空间的效果，但是得到的结果却是只占据了一行两列，问题图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/Zox5_9c6S26Qr7Ikx69_kg/zh-cn_image_0000002685942295.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/relQl4iIQkqCLqGCnFvFOg/zh-cn_image_0000002685942295.png "点击放大")
 
 问题代码如下：
 
@@ -125,4 +125,4 @@ struct GridHeight {
 
 修改后效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/NcKxk5ChSGaRUGbW4qOfRQ/zh-cn_image_0000002686102381.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/T0_l9DkaSzSJVVX7xxKUPw/zh-cn_image_0000002686102381.png "点击放大")

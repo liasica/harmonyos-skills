@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何解决Preferences存储时报错的问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何解决Preferences存储时报错的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:78083bf74b765bbefd03ea43d9d2208d7daf5501d661ad8068f2246f2cbc97e1
+scraped_at: 2026-10-28T07:47:58+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:5542818006e8a8dba43bc9979798466bf9765348c07901e32fa1c7291c87a7cb
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ Parameter error.The type of value must be less then 16 * 1024 * 1024 bytes.
 
 Preferences的[运作机制](../harmonyos-guides/data-persistence-by-preferences.md#运作机制)如下图所示，用户程序通过ArkTS接口读写对应的数据文件。开发者可以将持久化文件的内容加载到Preferences实例，每个文件唯一对应到一个Preferences实例，系统会通过静态容器将该实例存储在内存中，直到主动从内存中移除该实例或者删除该文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/zqD7lV3_TYuAPzgkhR0wnQ/zh-cn_image_0000002659258293.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/tiSLvy49Qwyhc2M5Z_F3hQ/zh-cn_image_0000002659258293.png "点击放大")
 
 Preferences在使用过程中会存在以下[约束限制](../harmonyos-guides/data-persistence-by-preferences.md#约束限制)：包括[通用限制](../harmonyos-guides/data-persistence-by-preferences.md#首选项通用限制)、[XML模式约束限制](../harmonyos-guides/data-persistence-by-preferences.md#xml模式约束限制)以及[GSKV模式约束限制](../harmonyos-guides/data-persistence-by-preferences.md#gskv模式约束限制)。
 

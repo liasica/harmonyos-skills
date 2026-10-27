@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-380
 title: 应用冷启动时，trace中dlopen：libace_compatible.z.so耗时长的可能原因
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 应用冷启动时，trace中dlopen：libace_compatible.z.so耗时长的可能原因
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d7da6176099fbeb007bace6db95cd4f3bb580015b78c68f2f0d8c7d2b28eec97
 ---
 

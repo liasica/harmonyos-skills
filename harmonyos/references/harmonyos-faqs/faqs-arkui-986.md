@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-986
 title: CustomContentDialog如何实现点击按钮不自动关闭弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > CustomContentDialog如何实现点击按钮不自动关闭弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a05cb64bd903f76395ce68865d200cf19c865be9ef099f173ba233a7e66ee15a
 ---
 

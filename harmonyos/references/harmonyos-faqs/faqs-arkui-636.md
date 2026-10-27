@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-636
 title: 如何实现不关闭弹窗的情况下跳转页面，并且页面返回时弹窗仍不关闭
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现不关闭弹窗的情况下跳转页面，并且页面返回时弹窗仍不关闭
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:43+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:489cee59b83f6521445b2b1ee0e8252afabb7a982079e996fc596f4b3a5bb41f
+content_hash: sha256:1ca021541865a2b305f004e310d0e4a42b7a2e1474f79afc7b39593af647a403
 ---
 
 ## 问题现象
@@ -401,4 +401,4 @@ content_hash: sha256:489cee59b83f6521445b2b1ee0e8252afabb7a982079e996fc596f4b3a5
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/I-5npAiBSoudIhZvXIY04w/zh-cn_image_0000002635192052.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/I-PJTllsQ560IojG1SmowA/zh-cn_image_0000002635192052.png "点击放大")

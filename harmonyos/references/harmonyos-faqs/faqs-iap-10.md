@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-10
 title: JWT Payload参数填写要求和常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > JWT Payload参数填写要求和常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:31+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:3a81b3d2e5aa2d3e880e8ea15765a18dd2408471829cd52536ab9c3150bf0a17
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:385dbac8dde5baba20a815b6f4b1cd1b080f11b03178eab7ffd48a43afa7c7ff
 ---
 
 ## 问题现象
@@ -24,7 +24,7 @@ JWT的生成和密钥中的私钥相关，因此需要先[下载密钥](../app/d
 
 1. [创建JWT header](../harmonyos-references/iap-jwt-description.md#创建jwt-header)需要填写三个必填参数alg、typ和kid，前两个参数分别为固定值ES256和JWT，需要关注的是kid参数的填写，该参数对应的是密钥ID，密钥ID的获取可在[创建密钥](../app/key-0000001959074877.md)时获取。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/dZMdIQ1nR72G20eZEGRUSQ/zh-cn_image_0000002658913789.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/M2WpP7jBSqSvxJMjdyHLpA/zh-cn_image_0000002658913789.png "点击放大")
 
    创建密钥时需注意密钥名称长度不超过50字符，且只允许字母、数字和下划线，否则会提示创建失败。
 2. [创建JWT Payload](../harmonyos-references/iap-jwt-description.md#创建jwt-payload)需注意iss（密钥颁发者ID）、exp（JWT到期时间）、aid（APPID）和digest参数的填写。
@@ -40,7 +40,7 @@ Q：支付失败查看日志，提示错误码9999，错误信息JWT verificatio
 
 A：JWT验签的时候参数传的有问题导致的，需要检查必填参数和签名算法是否正确以及kid和私钥是否匹配。
 
-Q：AGC后台密钥管理中下载的私钥是什么格式的？
+Q：HarmonyOS 开发者中心后台密钥管理中下载的私钥是什么格式的？
 
 A：私钥下载下来后是xxx.p8的格式，使用前请检查是否匹配。
 

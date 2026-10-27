@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 使用HiLog打印日志是否有长度限制
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 使用HiLog打印日志是否有长度限制
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:45+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8462a7f2edb3079b38d2357c8bd20862c85fb085b2a910844b2c6d14a560f216
 ---
 

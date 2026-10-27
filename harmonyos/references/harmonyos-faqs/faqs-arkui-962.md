@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-962
 title: 如何在同一个坐标系统里绘制多个Polygon
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在同一个坐标系统里绘制多个Polygon
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:30b1a1ce65cd2c0bbd39f32de05864742513ffa36627e300ef37192c3fab865e
+content_hash: sha256:05b37ecd80470fb8af9ac05cf7371e354e9f28cc03673c5492f38d2fe58aee92
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:30b1a1ce65cd2c0bbd39f32de05864742513ffa36627e300ef37192c3fa
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/82KigigjRfeRNIUQWioNig/zh-cn_image_0000002628561582.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/-OuqcLMDTySyWahIopuKFA/zh-cn_image_0000002628561582.gif "点击放大")
 
 ## 背景知识
 

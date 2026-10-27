@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1220
 title: 如何实现Tabs组件隐藏部分Tab页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现Tabs组件隐藏部分Tab页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:fdf81d13d9552f72336965cbb2087b8c8c5cca25e901da9247ed680867658fc6
+content_hash: sha256:35db8598cbf30278e2082e77b9df1dc61d12884b26b966a2bc5c7226829cebb0
 ---
 
 ## 问题现象
@@ -126,7 +126,7 @@ Tabs组件怎样实现隐藏部分Tab页面的效果。
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/B0H9tl4hQTuOwVqEQXZeMg/zh-cn_image_0000002628594022.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/15dh9KptTXS2Dm4xA32R0A/zh-cn_image_0000002628594022.gif "点击放大")
 * **方案二**：使用ForEach操作数组进行页面部分隐藏。
 
   实现重点如下：
@@ -211,7 +211,7 @@ Tabs组件怎样实现隐藏部分Tab页面的效果。
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/BjEo23dsRXmdbpINL8gpXQ/zh-cn_image_0000002628753918.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/TPzt15THQT6uBlqJtjREdw/zh-cn_image_0000002628753918.png "点击放大")
 
 ## 常见FAQ
 

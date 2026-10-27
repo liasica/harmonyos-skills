@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-686
 title: 如何在HAR模块中实现创建子窗口的方法并加载HAR模块中的页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何在HAR模块中实现创建子窗口的方法并加载HAR模块中的页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4cfb4fcff6333f00c9b53c4d83949354777a104f3679579cb5aa65871256d4e9
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7cb3df844507dc6a85b28ebc78e9993b8fab84d971825834d6e1e18e899c471f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:4cfb4fcff6333f00c9b53c4d83949354777a104f3679579cb5aa6587125
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/GBj1N_fqQcujz8r9AYoRig/zh-cn_image_0000002658794117.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/GqG7NwgfR8-FCqJ7IkgrXg/zh-cn_image_0000002658794117.png "点击放大")
 
 ## 背景知识
 

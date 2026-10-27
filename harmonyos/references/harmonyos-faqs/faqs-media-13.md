@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-13
 title: PC设备视频暂停后恢复播放报错
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > PC设备视频暂停后恢复播放报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
+scraped_at: 2026-10-28T07:48:31+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:83b6f8d2c61cc469538ac2cd20ad93fa5d278b05fe8a724c5c779c4bc862b72b
+content_hash: sha256:bc5d52e6ca61fe7203d83d3a035c2ca4146285200beb58e57e3e9c046b524d38
 ---
 
 ## 问题现象
 
 PC设备视频正常播放时，点击暂停后，再点击播放报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/A4KRnMxyR1G091HhkWnVgQ/zh-cn_image_0000002628552644.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/LTALRwlUTneTyK1-Ie5zhg/zh-cn_image_0000002628552644.png "点击放大")
 
 ## 背景知识
 
 [AVPlayer](../harmonyos-guides/media-kit-intro.md#avplayer)可以播放音视频，播控流程需要符合状态机逻辑，播放状态变化示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/6z4Cy1f1S1-C13L5_9lNzQ/zh-cn_image_0000002658911963.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/bvWjoq6JSsaR4p9i5uOmMA/zh-cn_image_0000002658911963.png "点击放大")
 
 ## 问题定位
 

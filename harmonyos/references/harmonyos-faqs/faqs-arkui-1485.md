@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1485
 title: 使用clipShape进行裁剪后，borderRadius无法生效怎么处理
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用clipShape进行裁剪后，borderRadius无法生效怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:48+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:15bb2ef9f3aa42c5743f2642633157addf083970a180d605c547cdcbc17b76c8
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:64be248701de092b54964c380ebfa6dc4e446dfe57698d0298cc874cdb0a6bda
 ---
 
 ## 问题现象
@@ -35,7 +35,7 @@ struct IrregularShape {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/M-zYC77FSLaR9zuPWpq4Sw/zh-cn_image_0000002658965027.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/bqRt7q5SQ2yQOW-iedWhPw/zh-cn_image_0000002658965027.png "点击放大")
 
 ## 背景知识
 
@@ -140,7 +140,7 @@ borderRadius属性从规格上是相对于组件的大小而言的，当组件�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/HsFqjAG_RSSLvJPr2GDogw/zh-cn_image_0000002628605822.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/e6jkLZibR12nwta6bSxbQQ/zh-cn_image_0000002628605822.png "点击放大")
 * **方案二：绘制带圆角的组件**。
 
   某些场景下可能需要绘制出带有圆角或其他形状的图形，此时可以使用Path组件进行绘制。
@@ -174,7 +174,7 @@ borderRadius属性从规格上是相对于组件的大小而言的，当组件�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/U_WXhFW3Re6t7EGfSHtoGA/zh-cn_image_0000002658845075.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/lZgd4KiATZe5V0hDu_J10A/zh-cn_image_0000002658845075.png "点击放大")
 
 ## 总结
 

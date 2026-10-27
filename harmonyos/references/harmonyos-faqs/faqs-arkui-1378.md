@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1378
 title: 如何实现视频流列表功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现视频流列表功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:48+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:322dc7a466acc82aa9290c1fbb2e6559d26d3eb2d7260bbf8625d57a6f25c8be
+content_hash: sha256:6fcf8e43e07e8d74123f8ee66cccc61b9fec07f32acca4d597edd6fb6fe5905b
 ---
 
 ## 问题现象
@@ -297,7 +297,7 @@ struct VideoShow {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/uYWW81MESFuW_Hwy-X2L6g/zh-cn_image_0000002658841819.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/hDhmPhKMTIGGDWtowqEKMQ/zh-cn_image_0000002658841819.png "点击放大")
 
 ## 常见FAQ
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-772
 title: Text绑定自定义菜单
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text绑定自定义菜单
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:013b39a762d18eee9e555416e6837d0ea0403059d5ee1ff03e301393faf8cb4c
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:38c4d8a3238b84d254eb315affabc42d367f59950f99d0cf4b5c263fe56a71ec
 ---
 
 ## 问题现象
@@ -17,11 +17,11 @@ Text组件绑定自定义菜单如何实现以下效果：
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/VycHdmELR7S69-C6mIMM5g/zh-cn_image_0000002658795071.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/A57zhhaQT-mpauMuCzg6Cw/zh-cn_image_0000002658795071.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/UHS5Z8rQQmCU0mIpMR0CSw/zh-cn_image_0000002628555700.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/7TKR7gnASNWLpJaVj92Jeg/zh-cn_image_0000002628555700.png "点击放大")
 
 ## 背景知识
 

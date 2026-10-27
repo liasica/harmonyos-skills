@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 如何响应播控中心的播放模式切换
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 如何响应播控中心的播放模式切换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:32+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c01b0c178ea85e915194cf2a72e55b6842c0e6e2c0f353433f6c27235be6411f
 ---
 

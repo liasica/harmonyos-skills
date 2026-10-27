@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-73
 title: 如何设置request.agent.Config中saveas参数
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何设置request.agent.Config中saveas参数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fc268c430cba66bf09378d49e13c0fdb282502a4ba55b8a8bacf0cc2d35d4f71
 ---
 

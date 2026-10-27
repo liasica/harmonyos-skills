@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-541
 title: 视频下方的列表刷新，视频同步发生刷新，刷新异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 视频下方的列表刷新，视频同步发生刷新，刷新异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:fee38e94726f033286d2ce8057d70dd1456e754cb1e371f5e4b1497976fd1db7
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bf2e633dbc4a9f36833f6c80f931cbf5bc746a38ac846723dbb9de4e9bd06bf6
 ---
 
 ## 问题现象
 
 视频下方的列表下拉刷新时，列表上方的视频也会进行刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/7C6diobORW2E1zTRqEq31w/zh-cn_image_0000002658790881.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Up4MSvKpRnutkoeaQ3aEjQ/zh-cn_image_0000002658790881.png "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:fee38e94726f033286d2ce8057d70dd1456e754cb1e371f5e4b1497976f
 
 ## 问题定位
 
-1. 使用DevEco Testing查看列表组件和视频组件，列表组件为Refresh组件，视频组件为Video组件。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/JxFx1ejJSya2oznEQcVuGw/zh-cn_image_0000002628551516.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/Oc_6nNMjQX2nBTvDXzHdUA/zh-cn_image_0000002628391620.png "点击放大")
+1. 使用DevEco Testing查看列表组件和视频组件，列表组件为Refresh组件，视频组件为Video组件。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/IjgXBcRzSKawEFQBMRl1bw/zh-cn_image_0000002628551516.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/8VwYjj-FRmqSRY-w0OvMHA/zh-cn_image_0000002628391620.png "点击放大")
 2. 查看Refresh组件和Video组件的设置，视频组件播放视频列表中的第一个视频，视频列表下拉刷新时视频数据重新加载，加载完成后视频组件重新获取视频列表中的第一个视频。关键部分：
 
    ```screen
@@ -531,4 +531,4 @@ struct ListRefreshLoad {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/yb9_7EuCRv-KtI2l1GL2dQ/zh-cn_image_0000002658910835.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/drI7DfYvSxSStKmDT6_ZIg/zh-cn_image_0000002658910835.png "点击放大")

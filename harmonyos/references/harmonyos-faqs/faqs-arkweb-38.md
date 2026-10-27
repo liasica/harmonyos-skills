@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-38
 title: Web组件对H5页面、常用框架VUE、React的页面支持情况，包括本地和网络端的页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件对H5页面、常用框架VUE、React的页面支持情况，包括本地和网络端的页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cabd1ef30143dbc752d8cbb8a8ef6277f226a9daee3007ba542d80ff153047a2
 ---
 

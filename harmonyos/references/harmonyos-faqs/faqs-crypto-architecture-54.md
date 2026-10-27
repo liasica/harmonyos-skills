@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: SM4加解密CTR的分组模式使用IVParamsSpec参数后加解密失败
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > SM4加解密CTR的分组模式使用IVParamsSpec参数后加解密失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
+scraped_at: 2026-10-28T07:48:11+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f22d88dc8a05fabe5c143777e2974f2ea75a07dd0c77448ff79fa67fcdd2b081
+content_hash: sha256:0a92a4c32ce506fd07d464cac450f3a3bb4750ccc2d8055a2946e50fb5f6fc7f
 ---
 
 ## 问题现象
@@ -44,7 +44,7 @@ async function decryptMessagePromise(symKey: cryptoFramework.SymKey, cipherText:
 
 报错信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/SQJla1kLTHWX5zv_5E3hTg/zh-cn_image_0000002658968435.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/EcDQSOL5Q1yQid1r31PlDg/zh-cn_image_0000002658968435.png "点击放大")
 
 ## 背景知识
 

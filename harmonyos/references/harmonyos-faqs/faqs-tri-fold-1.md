@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-tri-fold-1
 title: 折叠屏折叠态，应用页面底部未避让导航栏
 breadcrumb: FAQ > 多设备场景 > 手机 > 三折叠常见问题 > 折叠屏折叠态，应用页面底部未避让导航栏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:48+08:00
+scraped_at: 2026-10-28T07:46:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8a8ea43663bdc089fab99170f4d07cd653ebbcce115dfd5d5e05c92709ad52a1
+content_hash: sha256:51be4e101599d964d420c076d5ccaf334c2ed6a903f2d484bb4536a1d550bd3d
 ---
 
 ## 问题现象
 
 折叠屏折叠态时，应用页面底部按钮与导航栏重叠，导致无法点击该按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/KD_s6N_UQvOHnh7i1NxWDA/zh-cn_image_0000002658910819.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/0EXmII5nQPmSXA1o1VtJfQ/zh-cn_image_0000002658910819.png "点击放大")
 
 ## 背景知识
 
@@ -118,4 +118,4 @@ struct AvoidArea {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/-su2obBcQb2XG-JPIWgRew/zh-cn_image_0000002628391610.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Cg3HwvNuTFeH1X5LQCTkjg/zh-cn_image_0000002628391610.png "点击放大")

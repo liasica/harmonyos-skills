@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-5
 title: 应用内支付沙盒测试常见问题及解决方案
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 应用内支付沙盒测试常见问题及解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:30+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:1aa3d7c1ae4c99b6b1e26b6df3b68ee1779d06d444c73f5e06ed964977de4a10
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:70b8b29e3d7b2a6fb563003f1fa7dc1ad66270b0922391b1803c3c9406ffb185
 ---
 
 ## 问题现象
@@ -22,9 +22,9 @@ content_hash: sha256:1aa3d7c1ae4c99b6b1e26b6df3b68ee1779d06d444c73f5e06ed964977d
 ## 解决方案
 
 1. 可以按照如下方式进行排查：
-   * 支付服务开关验证：检查AGC控制台是否已开通支付服务，路径：HarmonyOS 开发者中心 > 项目 > 应用服务 > 应用内支付 > 管理开关，确保已开启对应环境的支付功能（开发/生产环境）。
-   * 应用签名校验：确认应用签名证书与AGC后台配置一致和验证签名证书指纹是否更新至AGC后台。
-   * 检查config.json中bundleName与AGC注册的包名匹配。
+   * 支付服务开关验证：检查HarmonyOS 开发者中心控制台是否已开通支付服务，路径：HarmonyOS 开发者中心 > 项目 > 应用服务 > 应用内支付 > 管理开关，确保已开启对应环境的支付功能（开发/生产环境）。
+   * 应用签名校验：确认应用签名证书与HarmonyOS 开发者中心后台配置一致和验证签名证书指纹是否更新至HarmonyOS 开发者中心后台。
+   * 检查config.json中bundleName与HarmonyOS 开发者中心注册的包名匹配。
    * 沙箱环境配置：确保使用华为官方沙箱测试账号，测试账号需完成实名认证（身份证+银行卡）以及检查测试商品是否配置为"沙箱测试商品"，确认接口地址为沙箱专用环境地址（与生产环境区分）时间同步与证书验证。
    * 请求参数完整性：验证请求头包含正确的Authorization（需使用jwt鉴权）和检查请求体参数，purchaseToken参数必须与购买接口返回一致，purchaseOrderId必须是有效的订单号。
    * 检查服务器UTC时间误差需小于5分钟和确认JWS验签使用华为提供的公钥证书。

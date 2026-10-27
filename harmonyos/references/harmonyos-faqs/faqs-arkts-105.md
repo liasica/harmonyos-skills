@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-105
 title: 如何通过判断函数入参类型实现不同代码逻辑
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何通过判断函数入参类型实现不同代码逻辑
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:52+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c9ef0184d5bdd023cc147009ce452e4df16a37f4069a223db7e8e33afb78d78c
 ---
 

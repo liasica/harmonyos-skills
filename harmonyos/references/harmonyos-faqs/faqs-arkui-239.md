@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-239
 title: 如何获取设备屏幕横竖屏状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何获取设备屏幕横竖屏状态
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b4f6f48ff439769cbbf068f0c389c18345837569abedb7e03ab2f7f1abbf5543
 ---
 

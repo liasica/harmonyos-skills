@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/connectivity-ki
 title: BLE蓝牙扫描与广播问题排查
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 故障排查 > BLE蓝牙扫描与广播问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:02+08:00
+scraped_at: 2026-10-28T07:48:18+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:34772adb0d98a218cfd929e8db26e5caba179264c0b9346dbc477c1c90db1187
+content_hash: sha256:5f541cf1f11352fe5115a47ce0297f6c579be7001b7551b86977474075de16e9
 ---
 
 ## BLE蓝牙无法搜索到对端设备
@@ -40,11 +40,11 @@ content_hash: sha256:34772adb0d98a218cfd929e8db26e5caba179264c0b9346dbc477c1c90d
 
 对日志进行联合分析，通过时间戳对齐hilog应用事件与HCI底层事件。根据hilog日志中开启广播[ble.startAdvertising](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising)的时间为11:32:26.209，找到HCI日志中对应的开启广播命令，并从右侧的详情页分析广播具体的字段以及内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Sg3fh8DpSTuDWauzFA1Mag/zh-cn_image_0000002768121552.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/g31P_VZNRGG_LAG5DfNckQ/zh-cn_image_0000002768121552.png "点击放大")
 
 ### 分析结论
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/FGX1qb_4RbehrGhrn42EbQ/zh-cn_image_0000002797401523.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/IBQKVtluS7izspPT7HsH1Q/zh-cn_image_0000002797401523.png "点击放大")
 
 左侧代码可以参考[ble.startAdvertising](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising)中的示例，从图中的对应关系可以分析BLE广播报文数据内容[AdvertiseData](../harmonyos-references/js-apis-bluetooth-ble.md#advertisedata)，其中可以关注以下四点：
 

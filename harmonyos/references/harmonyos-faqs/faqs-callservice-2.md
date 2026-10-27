@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-callservic
 title: 为什么企业来电显示中的"陌生号码与信息识别"页面设计两个按钮
 breadcrumb: FAQ > 应用服务开发 > VoIP通话服务（Call Service Kit） > 为什么企业来电显示中的"陌生号码与信息识别"页面设计两个按钮
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
+scraped_at: 2026-10-28T07:48:36+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:149f321c2676c2f1fbb13285823e77b3fc4a8855d55eb0fa08e3c51cfbf2ed0a
+content_hash: sha256:ae2f54a25760c3dae466700158543faa8a7e109584f80f9df50bf511d70a2c72
 ---
 
 ## 问题现象
 
 “陌生号码与信息识别”页面，有一个总开关和每个应用开关，共2个开关，用户只开了陌生号码和信息识别开关，需要引导用户开启对应应用的企业应用号码识别功能开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/fnarX5c5SuC9p3pqwfC2Fw/zh-cn_image_0000002658793623.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/F7G-aS7PTGei_apWGtIdTg/zh-cn_image_0000002658793623.png "点击放大")
 
 ## 背景知识
 

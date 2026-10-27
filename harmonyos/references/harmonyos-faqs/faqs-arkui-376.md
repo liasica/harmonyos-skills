@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-376
 title: 如何实现ArkUI组件字符串变量拼接
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现ArkUI组件字符串变量拼接
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:050acf7b2b1a34174dc89c733f04f53d1c76e0460596a6b5f30c7a3b2875514c
 ---
 

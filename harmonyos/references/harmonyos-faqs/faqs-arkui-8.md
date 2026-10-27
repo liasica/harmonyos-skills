@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-8
 title: 如何给UI组件设置不同情况下的属性
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何给UI组件设置不同情况下的属性
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a0ba1354cf1caad736ef2015367ba2488b1675b8101c4132a9e9d1a09ed56ebc
 ---
 

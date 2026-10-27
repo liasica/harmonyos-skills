@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: es2abc常见问题定位
 breadcrumb: FAQ > DevEco Studio > 编译构建 > es2abc常见问题定位
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:56+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8cd62971c99eedf6b9ac753ce1cac5ef212ade09f516557adb937d6c78a08800
+content_hash: sha256:61203e473657991902e3f81ef32c9d2af9d63584108f26e020ddf9aa898e38e1
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:8cd62971c99eedf6b9ac753ce1cac5ef212ade09f516557adb937d6c78a
 
 ## 背景知识
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/PbJ3bmnpRlenuyqsPy9KVA/zh-cn_image_0000002628409364.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/LUWXkPrWSm-B5RdJD5gq6g/zh-cn_image_0000002628409364.png "点击放大")
 
 * [ets\_frontend组件](https://gitcode.com/openharmony/arkcompiler_ets_frontend)是方舟运行时子系统的前端工具，结合[ace-ets2bundle组件](https://gitcode.com/openharmony/developtools_ace_ets2bundle/tree/master)，支持将ets文件转换为方舟字节码文件。使用ets\_frontend组件下的es2abc可执行文件将JavaScript文件转换为方舟字节码文件。
 

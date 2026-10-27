@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-331
 title: 如何给不同输入框绑定不同的自定义键盘
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何给不同输入框绑定不同的自定义键盘
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:00217db40dd4bc14b02bc368ec42e213fd2c430a6fa331716ab09abf97f7a3ae
 ---
 

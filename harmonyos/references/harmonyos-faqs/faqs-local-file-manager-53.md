@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 应用内下载的非图片、视频类文件，在设备上找不到
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 应用内下载的非图片、视频类文件，在设备上找不到
 category: harmonyos-faqs
-scraped_at: 2026-09-30T07:43:16+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a8c2eda9f24a6f430e0c5e08deb73cb30719baac27c925051f32b76370e12437
 ---
 

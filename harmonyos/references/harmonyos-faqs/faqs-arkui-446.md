@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-446
 title: pc上，bindPopup设置了showInSubWindow:true时，气泡无法再弹出菜单
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > pc上，bindPopup设置了showInSubWindow:true时，气泡无法再弹出菜单
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:445d11a5c5c5850220f3e542b8a7e537013521cf0f0c1f287e153a2a570cfc0a
 ---
 

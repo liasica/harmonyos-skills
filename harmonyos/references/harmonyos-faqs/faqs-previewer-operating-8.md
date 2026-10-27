@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: SVG图片在真机和DevEco Studio中颜色显示不一致该如何解决
 breadcrumb: FAQ > DevEco Studio > 界面预览 > SVG图片在真机和DevEco Studio中颜色显示不一致该如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
+scraped_at: 2026-10-28T07:48:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f874067b0cb25aea236039a00560c8a679bd108d19add36896efea9ffa126412
+content_hash: sha256:09e3f6a06c5f7d022e42585e3b694dcaed12af023cfec4df4a003f9c8c829edc
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ SVG图片在DevEco Studio和浏览器中打开显示为黄色，但是在测试�
 
 * DevEco Studio中预览为黄色：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Xmd0UcF0TEaCqYRYj2-G5Q/zh-cn_image_0000002628408094.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/rdyG-przQbyb9wgWGveSFA/zh-cn_image_0000002628408094.png "点击放大")
 
 * DevEco Studio的Previewer中渲染为红色：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/L84FQ5JGRVyIv5vTjs-tuA/zh-cn_image_0000002628567994.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rI0iTaxGR-C3eVVW-ShU-Q/zh-cn_image_0000002628567994.png "点击放大")
 
   ```screen
   <svg id='vector' xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'>
@@ -35,7 +35,7 @@ SVG图片在DevEco Studio和浏览器中打开显示为黄色，但是在测试�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/il31FXeVR8ymGRBbGn8fFg/zh-cn_image_0000002658927315.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/hhl-xOpYTiif1wCpbghrag/zh-cn_image_0000002658927315.png "点击放大")
 
 ## 定位思路
 

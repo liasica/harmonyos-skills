@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-930
 title: 如何解决Scroll嵌套的ColumnSplit无法滑动的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Scroll嵌套的ColumnSplit无法滑动的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8ea7dbbc6b73d2b3cba53916f5a83692b8960792e628b156aac380571a5ba2d0
 ---
 

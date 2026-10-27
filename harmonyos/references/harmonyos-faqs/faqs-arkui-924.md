@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-924
 title: 按钮设置渐变属性后如何设置按压效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 按钮设置渐变属性后如何设置按压效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:012ce9231702bf2b383040e1476739f78750cd18af2c49fe586405409626aeaa
+content_hash: sha256:5849be7aaada6795743b08ed2d475004bf1cfd69827e65e827935c7e5fd9de7f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:012ce9231702bf2b383040e1476739f78750cd18af2c49fe58640540962
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/2BHu45BQQ1GMFjjY7KeKJw/zh-cn_image_0000002658919519.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/1NOPvSXTT-C5rj6RzuvCgw/zh-cn_image_0000002658919519.gif "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1078
 title: "@Builder装饰器参数传递限制与使用方式介绍"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > @Builder装饰器参数传递限制与使用方式介绍
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:c556358d5b08e13dbf01a172cf5da72aa1072f73a81f14b15c9a1dba11f254e1
+content_hash: sha256:23ed37a081c3d5b0aaf16b731d816c9cbff5baf9e26345f317f6117e3b6205b6
 ---
 
 ## 问题现象
@@ -406,7 +406,7 @@ struct CorrectImplementationExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/YQnOxhbNRq2V0SoL_bmjAA/zh-cn_image_0000002658806605.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/AnB5CrMISVCFkAhoamtcsA/zh-cn_image_0000002658806605.png "点击放大")
 
 ## 常见FAQ
 

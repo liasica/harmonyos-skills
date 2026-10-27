@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-99
 title: 如何判断App的启动来源
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何判断App的启动来源
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bdc846e696b52bcd060327ccc0c94fb287f9ebb9aa5a3de7a00d77bb670146cf
 ---
 

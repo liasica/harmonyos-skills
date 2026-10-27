@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-preview-4
 title: 如何实现Excel文件预览功能
 breadcrumb: FAQ > 应用服务开发 > 通用文件预览服务（Preview Kit） > 如何实现Excel文件预览功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:27+08:00
+scraped_at: 2026-10-28T07:48:41+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:0707a81dabd55f18b9be74d40e0e8fb3cf32ec984405fa221eb7ee96ada6e463
+content_hash: sha256:572ebce9a0f97e2335b2c456168ab57086ef34f842168e493edb5482560a72fb
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:0707a81dabd55f18b9be74d40e0e8fb3cf32ec984405fa221eb7ee96ada
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/4TuI6m5IS1Cob5VGX7NUDA/zh-cn_image_0000002658913745.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/UCrQfOihQ8KOxCGvjU-okA/zh-cn_image_0000002658913745.gif "点击放大")
 
 ## 背景知识
 

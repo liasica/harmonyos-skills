@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-773
 title: Progress组件实现时钟样式进度条
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Progress组件实现时钟样式进度条
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:44+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:3a4e0bcc3b9695dc57493eaa648dee1dd4658c1fe6af98939220fa8a9bdf6fa5
+content_hash: sha256:40bc291a5e06aa687bfd452f212a2529944c13ea869fd3161701ecfd06c505b2
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:3a4e0bcc3b9695dc57493eaa648dee1dd4658c1fe6af98939220fa8a9bd
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/1wDwVzS8RWi3N8rZtLuKJA/zh-cn_image_0000002658915021.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/KyL49RPGQmu74EGZ1DCi5A/zh-cn_image_0000002658915021.gif "点击放大")
 
 ## 背景知识
 

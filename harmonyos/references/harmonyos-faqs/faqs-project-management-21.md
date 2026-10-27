@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 工程中存在多处-Wunused-command-line-argument告警，影响查看有效日志
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 工程中存在多处-Wunused-command-line-argument告警，影响查看有效日志
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:50+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7d86d7c3b7875f0aedaa40b5cce049b18c764f403a1780d30aeb21671f78f082
 ---
 

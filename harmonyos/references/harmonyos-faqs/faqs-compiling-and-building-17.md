@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Schema validate failed”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Schema validate failed”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:90a42d2a2b46fb41eaf8ad210cbbcaf612fd619da8ddfaa8d9a3a67dca2386df
+scraped_at: 2026-10-28T07:48:52+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f0181dd474a60f25829ffab1836f581f049243c439c3f6f205b706f7cc6bdbc3
 ---
 
 **问题现象**
@@ -101,7 +101,7 @@ Detail: Please check the following fields.
   + required：表示该字段为必选配置项。若缺失或拼写错误将导致属性未配置。
   + oneOf：表示当前配置不符合oneOf要求。通过instancePath已经确认报错出现在abilities标签，在DevEco Studio中，按住Ctrl点击"abilities"跳转到对应的module.json文件，可以查看到必须配置以下两组中的一组。根据对比排查，可识别到因拼写错误导致"name"属性未配置。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/V-DsHIcPTN6krqeCS560PQ/zh-cn_image_0000002654797847.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/05Q_9p7aS4Gn-YwK5v6XBQ/zh-cn_image_0000002654797847.png)
   + enum：所有可配置的属性。开发者可根据枚举值确认属性的正确写法。
   + propertyNames：字段拼写错误时，propertyName: 'nam'指明 "nam" 为错误属性。
 * params：不同keyword对应不同的详细说明。例如，当keyword为'required'时，params的missingProperty: 'name'表示缺失的属性为“name”。

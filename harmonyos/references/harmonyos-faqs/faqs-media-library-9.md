@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 打开PhotoViewPicker时默认选中上次选中的图片
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 打开PhotoViewPicker时默认选中上次选中的图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:48aecdc79a6020fe3f3b403095fe5b3cd50aeb07bd06489c568f27a7004a2e24
 ---
 

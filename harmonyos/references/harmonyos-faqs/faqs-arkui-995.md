@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-995
 title: PC上如何实现全局悬浮窗效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > PC上如何实现全局悬浮窗效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-07-02
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4f7d286c7d0caa88a1d1551ade880d78757dee0e29a660d979c42b4bdf1dc611
 ---
 

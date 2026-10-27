@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-7
 title: 如何保证相机在全屏预览时不变形
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何保证相机在全屏预览时不变形
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:217c91b8b307161669b9e8897c51508ceaea8bb3069304ee3689b33e2a8db597
 ---
 

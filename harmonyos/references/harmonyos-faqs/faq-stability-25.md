@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-2
 title: 截屏操作耗时较长，多次截屏操作后出现无响应的现象
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 截屏操作耗时较长，多次截屏操作后出现无响应的现象
 category: harmonyos-faqs
-scraped_at: 2026-09-23T06:57:55+08:00
+scraped_at: 2026-10-28T07:46:40+08:00
 doc_updated_at: 2026-09-22
-content_hash: sha256:f2b90310295446e742b0124794c3df6160fdcf65efb9196749fc09ec454c878d
+content_hash: sha256:2932746462c42b73786c848740911d54047994c7e2a678415b5e6764b3e05830
 ---
 
 ## 问题现象
@@ -66,7 +66,7 @@ content_hash: sha256:f2b90310295446e742b0124794c3df6160fdcf65efb9196749fc09ec454
    ```
 4. 使用HiSmartPerf工具抓取该过程的Trace信息，在连续截屏的情况下，单个业务执行时间平均0.85s（见顶部时间轴），累计就导致了主线程阻塞。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/51u1gEBKQfK0t_zsf7nm-A/zh-cn_image_0000002628394982.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/jVs9_KlbQr2UujDUEbVs7A/zh-cn_image_0000002628394982.png "点击放大")
 
 ## 分析结论
 

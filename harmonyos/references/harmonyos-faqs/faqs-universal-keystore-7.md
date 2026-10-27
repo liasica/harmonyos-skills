@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-universal-
 title: 如何获取HarmonyOS签名证书的公钥信息
 breadcrumb: FAQ > 系统开发 > 安全 > 密钥管理（Universal Keystore） > 如何获取HarmonyOS签名证书的公钥信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:11+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:619986f7fd2bf59aa15e041f09103a2f416e56f7aaa1facb9bd644796c2fe76e
 ---
 

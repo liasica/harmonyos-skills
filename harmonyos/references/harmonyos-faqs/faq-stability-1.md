@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-1
 title: 应用切换深色模式时发生闪退
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 应用切换深色模式时发生闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:39+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1c527062bced015e6bf0afb6735f553ee4258447cef19e692e1194b9cca54d44
 ---
 

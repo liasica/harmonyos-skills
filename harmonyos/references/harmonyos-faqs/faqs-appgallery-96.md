@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何查看和管理HarmonyOS Next应用市场的用户评论数据
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何查看和管理HarmonyOS Next应用市场的用户评论数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4fe7378a9c768c8e6ef3a518f2b6d583a0ad1d7419aa43379ce52e0896703695
+scraped_at: 2026-10-28T07:48:46+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1d2ce66776cbda074af4465eff39954af1bd15fd8a7be90c00aaad2daea778f5
 ---
 
 ## 问题现象
@@ -15,20 +15,20 @@ HarmonyOS Next应用上架应用市场后，用户在应用市场的评论数据
 ## 背景知识
 
 1. HarmonyOS Next应用市场评论评分系统已完成升级，新的评论评分系统已经接入到[应用推广引擎](https://developer.huawei.com/consumer/cn/service/apcs/aggrowth/chassis/resources/interactiveTools)新平台。开发者可以通过新平台，查看和管理HarmonyOS Next应用的评论评分数据。
-2. HarmonyOS 5.0以下应用仍然在AGC平台进行应用评论评分数据查看和管理。入口为：AGC平台-运营-用户运营-互动评论。具体可参见[互动评论](../app/game-center-interaction-comments-0000001239182361.md)。
+2. HarmonyOS 5.0以下应用仍然在HarmonyOS 开发者中心平台进行应用评论评分数据查看和管理。入口为：HarmonyOS 开发者中心平台-运营-用户运营-互动评论。具体可参见[互动评论](../app/game-center-interaction-comments-0000001239182361.md)。
 
 ## 解决方案
 
 1. 操作路径：登录[应用推广引擎](https://developer.huawei.com/consumer/cn/service/apcs/aggrowth/chassis/resources/interactiveTools)，选择“用户经营-用户互动”，即可进入“评论评分”页面。默认展示“用户评论”数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Tf6S4Cx8ROWZ4Mmk5fHMzw/zh-cn_image_0000002628394704.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/S5H3gtupRzKcjSmBGFmZcA/zh-cn_image_0000002628394704.png "点击放大")
 2. 除了查看评论数据，还可以进行评论数据的导出、回复等操作。具体参见[评论与评分](../app/comment-management-0000002246992933.md)。
 
 ## 常见FAQ
 
-Q：评论数据切换到应用推广引擎了，是不是老的AGC平台中互动评论不能使用了？
+Q：评论数据切换到应用推广引擎了，是不是老的HarmonyOS 开发者中心平台中互动评论不能使用了？
 
-A：HarmonyOS Next应用在应用推广引擎进行评论数据管理；HarmonyOS 5.0以下应用仍然在AGC平台中的互动评论模块进行评论数据管理。HarmonyOS Next游戏既可以在AGC互动评论模块，也可以在应用推广引擎进行评论数据管理。
+A：HarmonyOS Next应用在应用推广引擎进行评论数据管理；HarmonyOS 5.0以下应用仍然在HarmonyOS 开发者中心平台中的互动评论模块进行评论数据管理。HarmonyOS Next游戏既可以在HarmonyOS 开发者中心互动评论模块，也可以在应用推广引擎进行评论数据管理。
 
 Q：为什么登录应用推广引擎时，提示账号未实名？
 

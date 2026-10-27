@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用前台使用时发生闪退，或在后台时退出
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用前台使用时发生闪退，或在后台时退出
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:58100dd246d903128f6853b27d9102c13dea5b5f68070d5a1c688a31d89a81c9
 ---
 

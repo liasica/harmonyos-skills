@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1074
 title: 如何在TabBar页签栏添加其他组件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在TabBar页签栏添加其他组件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:ec29ba010dd8d4a3984c87826a226c9a0b2d6cb084148f304e35ae92b3e899a8
+content_hash: sha256:4294b7ab0979962fbf95115b6a4d2c4fa5f2898d62bec5725ae46f8648dc5587
 ---
 
 ## 问题现象
@@ -39,7 +39,7 @@ content_hash: sha256:ec29ba010dd8d4a3984c87826a226c9a0b2d6cb084148f304e35ae92b3e
 
   在当前Tabs组件上，可以叠加按钮或图标作为TabBar的浮层，达到页签栏添加其他组件的效果，原理如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/4Rlwx484RE2_y7LyZZb6lQ/zh-cn_image_0000002658806493.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/bFh1aqetRfSwcYITXo9N3w/zh-cn_image_0000002658806493.png "点击放大")
 
   实现步骤如下：
 
@@ -163,12 +163,12 @@ content_hash: sha256:ec29ba010dd8d4a3984c87826a226c9a0b2d6cb084148f304e35ae92b3e
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/9J4-KgPsSku2TglbSp6wAw/zh-cn_image_0000002628567142.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/WdrYIJqkSpOgrvRdUWwsUg/zh-cn_image_0000002628567142.png "点击放大")
 * **方案二：利用Stack组件，在自定义TabBar上堆叠其他组件**。
 
   利用堆叠容器，在原本的TabBar基础上放置其他组件，原理如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/erhqAdmFRSKi3f2Ygabikw/zh-cn_image_0000002658926447.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/oXviGATPSAiJPjG-UoNn5w/zh-cn_image_0000002658926447.png "点击放大")
 
   实现步骤如下：
 
@@ -282,14 +282,14 @@ content_hash: sha256:ec29ba010dd8d4a3984c87826a226c9a0b2d6cb084148f304e35ae92b3e
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/U9b63sAnT5WBZ5iZK-Svag/zh-cn_image_0000002628407236.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/L4d6ZhniQg2kTtQCohU6zA/zh-cn_image_0000002628407236.png "点击放大")
 
   更丰富的实现效果请参考：[可滚动Tabs页签栏+更多按钮](../harmonyos-guides/arkts-navigation-tabs.md#可滚动tabs页签栏更多按钮)。
 * **方案三：使用Row组件自定义行内布局**。
 
   通过Row组件，自行设置TabBar行内组件的组成效果，原理如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/8llxx_eNRBaJzNUpIgiChw/zh-cn_image_0000002658806495.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/jOs_uqpkR6eOsBtN3zEJuA/zh-cn_image_0000002658806495.png "点击放大")
 
   实现步骤如下：
 
@@ -410,4 +410,4 @@ content_hash: sha256:ec29ba010dd8d4a3984c87826a226c9a0b2d6cb084148f304e35ae92b3e
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/_sLOUGm4TkSq63scCQ4aQw/zh-cn_image_0000002628567146.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/BZn1trlQS52SQB0v0b40uQ/zh-cn_image_0000002628567146.png "点击放大")

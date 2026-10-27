@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决打包时提示删除自定义字体无权限问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决打包时提示删除自定义字体无权限问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:56+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:658efdec9316608ff5d327765b9332ade2b9172e70a3722c52a0f81f33045edb
+content_hash: sha256:67879f45576195a13cc81cb7ed65a635eee49d0758223cebc749112d205fb5b9
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ Detail: Please check the message from tools.
 
 自定义字体业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/YYYZrjasRxCiu8y8YFqijQ/zh-cn_image_0000002628569180.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Ajuw477mQ8SZFI6n1Tb1MA/zh-cn_image_0000002628569180.png "点击放大")
 
 ## 问题定位
 
@@ -34,7 +34,7 @@ Detail: Please check the message from tools.
 
 ttf属性截图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/pq9RRt5jTfacxIlZ-puTCg/zh-cn_image_0000002658928505.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/DOjvoIRdTrqlqkvd7TFtbQ/zh-cn_image_0000002658928505.png)
 
 ## 分析结论
 

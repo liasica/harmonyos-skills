@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何将数据库的中number类型升级为BigInt
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何将数据库的中number类型升级为BigInt
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2a4c7ed5f5956b1d83086e518668bde898af377428f2c9ed04627a83ebf67619
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-24
 title: 如何对GIF图片进行压缩
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何对GIF图片进行压缩
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1d9a693447a2224689069b260998b46d46e4a2e66bfdec26eac654c6b2cff74b
 ---
 

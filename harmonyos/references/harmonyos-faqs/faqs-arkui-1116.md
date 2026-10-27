@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1116
 title: 自定义装饰器实现示例
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义装饰器实现示例
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:603673c5ca89d8837b879efc70e5da176825db5be9ba3ee0716628cf6701ec91
 ---
 

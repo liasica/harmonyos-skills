@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-590
 title: 如何解决Video组件全屏播放时，自定义控制器显示异常的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Video组件全屏播放时，自定义控制器显示异常的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e778a70de7a700a33ec22608bfe6a183cd6be1d1afc4356411ebb6bc2c3722c1
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ae6ac007f27335ba6a4f90d1194aeb849b4a5f84e4e91540fc581094d188ecdd
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:e778a70de7a700a33ec22608bfe6a183cd6be1d1afc4356411ebb6bc2c3
 
 通过Text组件定义一个名为“这是一个全屏按钮”的视频控制器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/VGnl-t3yRGGJ_vzde1_u5A/zh-cn_image_0000002658791779.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Zdbn9LLyQyODMamiNwPfug/zh-cn_image_0000002658791779.png "点击放大")
 
 点击“这是一个全屏按钮”视频控制器，将视频进行横屏全屏播放。横屏后“这是一个全屏按钮”控制器会消失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/4H0xXu5USaScbB3wjgu7Jg/zh-cn_image_0000002628552402.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/7JdSPpTiQZSGtZHM4JVMcQ/zh-cn_image_0000002628552402.png "点击放大")
 
 问题代码示例参考如下：
 
@@ -87,11 +87,11 @@ struct Index {
 
 修改完成后，竖屏播放效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/N0-M6xvcTrabmzgjB3M9dA/zh-cn_image_0000002628392512.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/QZpLfzB-Swe9HAjoo1muhQ/zh-cn_image_0000002628392512.png "点击放大")
 
 点击“全屏”按钮进入横屏播放效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/56_qIb1xTFOETlPMxCWgCQ/zh-cn_image_0000002658911729.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/BDVoSJYARSKyV9a_ZBYVlA/zh-cn_image_0000002658911729.png "点击放大")
 
 视频横屏后，控制器依旧存在。
 

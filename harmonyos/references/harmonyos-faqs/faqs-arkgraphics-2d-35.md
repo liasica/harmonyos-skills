@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: Canvas绘制图形拖动卡顿
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > Canvas绘制图形拖动卡顿
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3a5e32d2a91150c141769da1740cbf769b00d6d16c470f0f8651ebeb1ccb8149
+scraped_at: 2026-10-28T07:48:35+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:64383da9aa929c3a7eaf51946c91901eb47e97b81b5b5cac5c3ef7de72d3cee3
 ---
 
 ## 问题现象
@@ -13,7 +13,7 @@ content_hash: sha256:3a5e32d2a91150c141769da1740cbf769b00d6d16c470f0f8651ebeb1cc
 * 使用OffscreenCanvas绘制一张超出屏幕尺寸的PixelMap，监听手势移动事件，跟随手势不间断地重绘，实际视觉呈现效果会出现明显的卡顿现象。
 * 问题代码如下：
 
-  ```screen
+  ```ts
   // 调整前 isValidate属性在@watch监听方法，第一次加载拖动时会存在卡顿
   redraw() {
     this.renderContext.reset();
@@ -44,7 +44,7 @@ content_hash: sha256:3a5e32d2a91150c141769da1740cbf769b00d6d16c470f0f8651ebeb1cc
 * 针对图形裁剪与控制响应手势事件混合的场景，在响应事件绘制函数中添加延时判断，确保一定时间段内（比如：15ms）内只响应一次事件并重绘。
 * 按照修改建议调整后代码如下：
 
-  ```screen
+  ```ts
   import { display } from '@kit.ArkUI';
   import { displaySync } from '@kit.ArkGraphics2D';
 

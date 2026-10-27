@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-994
 title: Popup如何实现点击按钮不关闭气泡，点击按钮外部关闭气泡
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Popup如何实现点击按钮不关闭气泡，点击按钮外部关闭气泡
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9468d8684179b86e7212959823730cdce155118cd5824bd23399b1aa7dd9133f
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-72
 title: 如何获取指定bundleFlags的Ability信息
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何获取指定bundleFlags的Ability信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eb10445189a75888c5fbd58fe9d233b30f9ede7a6a4182c161ee745b25c2556f
 ---
 

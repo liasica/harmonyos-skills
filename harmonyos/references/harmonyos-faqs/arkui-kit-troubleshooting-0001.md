@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: ArkUI-RichEditor键盘弹出与焦点问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > ArkUI-RichEditor键盘弹出与焦点问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:13:52+08:00
+scraped_at: 2026-10-28T07:47:00+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:f4fd1d182a658fe34265a377aed5467c0f166a167cb1027cbfe528b318f6885e
+content_hash: sha256:eda9fe994c74a4d040f5db67d7c2540e854f59165c980c5249cd79b62c4801ec
 ---
 
 ## 怎么解决进入RichEditor组件页面无法自动拉起软键盘的问题
@@ -320,4 +320,4 @@ struct CustomKeyboardPage {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/hH-0qsT-SB-FxkjTFifsFA/zh-cn_image_0000002789281371.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/DdmVvVniTnOsG_l6IKzQUg/zh-cn_image_0000002789281371.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1643
 title: 如何解决父组件的Fling效果无法被子组件继承滚动的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决父组件的Fling效果无法被子组件继承滚动的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-08-27
-content_hash: sha256:fa85acea2d80dd1cce1b89147c154cd1efa31993103bf0c90f2e0e65fc671db2
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f25d256b1d8e4a59100909154a1b930d7472bd4e109c6d7cd2a81e5f78d74145
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:fa85acea2d80dd1cce1b89147c154cd1efa31993103bf0c90f2e0e65fc6
 
 滑动前如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3paH9ipiShuyuVLES7QwXg/zh-cn_image_0000002686304330.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/xQio-25YRdyLhXtqMrra4g/zh-cn_image_0000002686304330.png "点击放大")
 
 滑动后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/hykOuqbuR-aUK1QxPHvwTw/zh-cn_image_0000002686464204.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/fJG2UVR8SGa4Gmyr3ZC3dA/zh-cn_image_0000002686464204.png "点击放大")
 
 ## 背景知识
 
@@ -158,7 +158,7 @@ struct StickyNestedScroll {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/d0lYkdqcReOYvq6yG993rg/zh-cn_image_0000002716146383.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kU9ar-ttTFGR6aPFd0wKog/zh-cn_image_0000002716146383.png "点击放大")
 
 ## 总结
 

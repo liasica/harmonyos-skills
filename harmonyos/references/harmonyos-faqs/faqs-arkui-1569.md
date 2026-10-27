@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1569
 title: 如何解决启动页背景和startWindowIcon属性设置为同一张图时出现的闪屏问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决启动页背景和startWindowIcon属性设置为同一张图时出现的闪屏问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e1802894ebec0abf003dd23fcf23db3e73a26c8b62413adce928652e099a9c1b
 ---
 

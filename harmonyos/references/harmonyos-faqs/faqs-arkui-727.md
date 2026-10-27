@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-727
 title: 实现面包屑导航效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现面包屑导航效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:3ddd797a5f2ae9dc029921be4e86dbbf2c7f8bd2d26e37696d5f0321e6d06149
+content_hash: sha256:9d765a8d73c6ac828854c81cf42e01c23d90cdfd73bed2bea5e0c7f00aa22f5c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:3ddd797a5f2ae9dc029921be4e86dbbf2c7f8bd2d26e37696d5f0321e6d
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/HPhFqtmrR3CB8opAy7n2Cw/zh-cn_image_0000002628395316.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/a1AGp520Rh28g6OcTLF3kQ/zh-cn_image_0000002628395316.gif "点击放大")
 
 ## 背景知识
 

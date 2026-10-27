@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 多线程调用OH_Drawing_CreateFontCollection崩溃
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 多线程调用OH_Drawing_CreateFontCollection崩溃
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:34+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2dfd863f8d1a6535f1fe84bb20eafb478dc7a6652cdbc46c0b7ff5b149d0d682
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-162
 title: 组件如何拦截多次快速点击事件
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 组件如何拦截多次快速点击事件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:f06fac05d2a222284f9fe817e4d56c1692738daded5cc7128f96534ffcb6ee7a
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3dec8ea1bcc6cd9317d55091e36fac0be7381427cd8bb406225833454e5f23a0
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:f06fac05d2a222284f9fe817e4d56c1692738daded5cc7128f96534ffcb
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/gcuQ-YR7TV6bIySB9fLLLw/zh-cn_image_0000002659258281.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/_aq70q17TIiVY4AZsSnVSA/zh-cn_image_0000002659258281.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-4
 title: ArkTS侧与Native侧分别如何动态加载SO库
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > ArkTS侧与Native侧分别如何动态加载SO库
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:decd06c7145d6885bea6a18be7fd591dbb1ede67491a6ebc253e286b29a445ff
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4293dca90a815200d6907438fc5e6d4366050dba9b7c949848abbcdc9c77fde5
 ---
 
 **解决措施**
@@ -52,7 +52,7 @@ struct LoadSoLibrary {
 
 * 将liba.so文件放到libs/arm64-v8a/路径下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/an0nSX8-TbapRZuYEaSPCg/zh-cn_image_0000002624475890.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/fGSF8-okQzyNXgGK2jC5BA/zh-cn_image_0000002624475890.png "点击放大")
 * 需要在ArkTS侧传递so库路径信息到Native侧。
 
   ```ts

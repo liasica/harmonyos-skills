@@ -3,11 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 工程管理
 breadcrumb: FAQ > DevEco Studio > 工程管理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2d120ec2605c6bd3276765a5d9e97e46d5e4a39929d7de2bbfdf7f867d1aa890
+scraped_at: 2026-10-28T07:48:49+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a589cf31fde5c84efd10a560838bd8dd487c5c62350c70cd343cbf9ac4a01789
 ---
 
+* **[常见问题](project-management-faq.md)**
 * **[工程检查报错，提示“Incorrect settings found in the build-profile.json5 file”](faqs-project-management-2.md)**
 * **[环境诊断、创建工程/模块界面全部显示空白](faqs-project-management-3.md)**
 * **[打开历史工程，报错提示“Install failed FetchPackageInfo: hypium failed”](faqs-project-management-4.md)**

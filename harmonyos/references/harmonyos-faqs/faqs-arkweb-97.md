@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-97
 title: 返回的html里包含数学公式，怎么合理渲染到页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 返回的html里包含数学公式，怎么合理渲染到页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2b37f5f39b538c67bdaa27518054894d85be824e95465c1d5f261175cdae790d
 ---
 

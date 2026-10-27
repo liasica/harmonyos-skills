@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-997
 title: 通过弹窗生命周期实现广告弹窗的倒计时控制
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 通过弹窗生命周期实现广告弹窗的倒计时控制
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:50+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:363e13b1c0193bce3832a486762b8d543ecfd90ef99dbea69d13254ade0f6a27
+content_hash: sha256:5eef98cffb8f727eecdf4a03f186ef3aacc9b41eb147fe566bbf5272b8e5761d
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:363e13b1c0193bce3832a486762b8d543ecfd90ef99dbea69d13254ade0
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/nHvGmVUTSs-PBtLqK6olTA/zh-cn_image_0000002658801093.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Zg91mJEBRjmYCAirNPsWvA/zh-cn_image_0000002658801093.png "点击放大")
 
 ## 背景知识
 

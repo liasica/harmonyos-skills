@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-13
 title: 主应用如何获取卡片列表中某个卡片添加/移除
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 主应用如何获取卡片列表中某个卡片添加/移除
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:2fe1aca6c8e01b63f166163bb1176a402c83cb2858ca5c40ff818641ad5d09ad
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0857026766656464e2c87c5faa8448f8fd9bd8f8f5792c1054e42252173e4630
 ---
 
 ## 问题现象
@@ -33,30 +33,30 @@ onAddForm/onRemoveForm添加至桌面的生命周期触发流程如下：
 
    例如：打开下面的卡片列表，卡片列表中有3张卡片，可以看到日志中onAddForm回调了3次。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/BC361PdyRZONjxGWASSSeQ/zh-cn_image_0000002628631646.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/UugrKyzwRNyhDD5_DUMdnw/zh-cn_image_0000002628631646.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/fs4u2TqWRzS9qCT1Fl83tQ/zh-cn_image_0000002658870921.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/bZeRImzBTFy6JZb3gL68hg/zh-cn_image_0000002658870921.png "点击放大")
 2. 长按应用图标->服务卡片->打开卡片列表->服务卡片列表取消，触发onRemoveForm（卡片列表中有几张卡片生命周期就会回调触发onRemoveForm几次）
 
    例如：点击x号取消了服务卡片列表，则会触发onRemoveForm回调3次。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/gVFlX-eoSxelxHZdM4cOoA/zh-cn_image_0000002628791552.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/2JwkgociT3a8px9rUBNZEA/zh-cn_image_0000002628791552.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/wFyJoDy_Tg-p8vhkSXG_1w/zh-cn_image_0000002658990861.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/_cIxOSHPRZmCriaabA6aHw/zh-cn_image_0000002658990861.png "点击放大")
 3. 长按应用图标->服务卡片->打开卡片列表->选择一张卡片添加到桌面（选中卡片将回调onUpdateForm，其余卡片回调onRemoveForm）
 
    例如：添加一张卡片至桌面，则会onUpdateForm选中的卡片，onRemoveForm另外两张卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/LeEp6ZfrTFuCyB-sQIIunA/zh-cn_image_0000002628631648.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/_FOElj4fSQ-0ET8DmlhguQ/zh-cn_image_0000002658870923.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/CKIUvgsJRMyyYC06b32moQ/zh-cn_image_0000002628631648.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/ddSy0vk_TWS-2N2nWILTEg/zh-cn_image_0000002658870923.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Ef9R009YTMu7Qd0Xbjwteg/zh-cn_image_0000002628791554.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/672lcLP4Tfesij8KQ0f1Eg/zh-cn_image_0000002628791554.png "点击放大")
 4. 桌面上移除某一张卡片（选中移除卡片将回调onRemoveForm）
 
    例如：在桌面移除一张卡片，会onRemoveForm当前移除的卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/mmitB8nvS7WoHyYVffyN3w/zh-cn_image_0000002658990863.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/CnGqDGYxQfmhKXsQSnvrhw/zh-cn_image_0000002658990863.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/kjlJ5AZ5QzuNTrdHNsMi0w/zh-cn_image_0000002628631652.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/9cQJUf-STwWA_YZYiRHzrQ/zh-cn_image_0000002628631652.png "点击放大")
 
 综上，将卡片添加至桌面的流程中，生命周期回调onAddForm/onRemoveForm会执行多次，但是最终卡片新增还是移除是确定的。
 

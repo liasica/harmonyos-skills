@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-180
 title: 子组件事件能否传递到父组件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 子组件事件能否传递到父组件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:21+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:54872f04ad03aad2a3339652861703d7633ceced11a9c35239d0664355bffad5
 ---
 

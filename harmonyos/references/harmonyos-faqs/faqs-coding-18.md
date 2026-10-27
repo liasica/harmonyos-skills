@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-18
 title: DevEco Studio上使用api或组件时编辑器提示各种报错与告警
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio上使用api或组件时编辑器提示各种报错与告警
 category: harmonyos-faqs
-scraped_at: 2026-09-11T06:31:52+08:00
+scraped_at: 2026-10-28T07:48:51+08:00
 doc_updated_at: 2026-09-10
-content_hash: sha256:1247f901a77b28282623794c222b717bb765520436c01e965fbaf5b0bff5013f
+content_hash: sha256:9490d61a2ad14d3e21b3da165e043dfaf83ac7ba09946237c29ef864dab75609
 ---
 
 ## 场景1
@@ -16,7 +16,7 @@ content_hash: sha256:1247f901a77b28282623794c222b717bb765520436c01e965fbaf5b0bff
 
 使用ArcList组件时，编辑器报错，错误信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/WsgJCB8bSZa6r1yOWOFP8Q/zh-cn_image_0000002665790183.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/N5An75uXT22jmEZAi1EDig/zh-cn_image_0000002665790183.png "点击放大")
 
 **解决措施**
 
@@ -30,7 +30,7 @@ content_hash: sha256:1247f901a77b28282623794c222b717bb765520436c01e965fbaf5b0bff
 
 使用被@test标注的api或组件属性时，例如通用组件属性key时，编辑器会报错，错误信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ip2XiZtTQBGM5in-MSVFOQ/zh-cn_image_0000002635896056.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/YvPMLGJbQUiFyUmUFUr-tQ/zh-cn_image_0000002635896056.png "点击放大")
 
 **原因说明**
 

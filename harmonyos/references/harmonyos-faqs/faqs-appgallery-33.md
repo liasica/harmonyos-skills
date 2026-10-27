@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery-33
-title: AGC审核驳回：在同意隐私政策前，应用获取了用户的个人信息
-breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > AGC审核驳回：在同意隐私政策前，应用获取了用户的个人信息
+title: 开发者中心审核驳回：在同意隐私政策前，应用获取了用户的个人信息
+breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 开发者中心审核驳回：在同意隐私政策前，应用获取了用户的个人信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:29+08:00
-doc_updated_at: 2026-07-24
-content_hash: sha256:e84a5bdf503294cbbcd71e0378f70f7c326b110cb9c311d5ada2c302a688f6b9
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c78f5f06da70554a43572f6d28cf0590ccdab65423c9724b6e69166e0c7548d9
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ content_hash: sha256:e84a5bdf503294cbbcd71e0378f70f7c326b110cb9c311d5ada2c302a68
 
 在HarmonyOS开发中，系统和用户授权的权限需要开发者完成以下准备操作：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/D9d6VRvGRECTAdyFB7BZ8A/zh-cn_image_0000002678026887.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/2ozNqUROQiesa3Cj3daD7w/zh-cn_image_0000002678026887.png "点击放大")
 
 1. **权限声明**：
 

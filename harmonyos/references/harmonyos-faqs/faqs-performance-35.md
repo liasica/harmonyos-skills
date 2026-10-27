@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 应用启动后停留闪屏页时间过长
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 应用启动后停留闪屏页时间过长
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:ecc248673a500b54f823eabb970b9e592a0bc85a952a57ceb4cfef6d88eea6ce
+content_hash: sha256:a8901816ac81fd347f29282b6274781fba53d6c3ac7373d5baf2b5768d1c5cbd
 ---
 
 ## 问题现象
@@ -22,10 +22,10 @@ content_hash: sha256:ecc248673a500b54f823eabb970b9e592a0bc85a952a57ceb4cfef6d88e
 
 1. 使用ArkUI Inspector分别抓取引导页和登录页的布局，得知两个页面分别是SplashPage和LoginPage。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/QoCOwzEMS4W0L5H_stN7ig/zh-cn_image_0000002658794533.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/G5D8Jq1YSbikhuJh2Lp6_A/zh-cn_image_0000002658794533.png)
 2. 使用DevEco Profiler中的Launch模板抓取应用启动时的Trace，分别搜索SplashPage和LoginPage的创建时间，搜索关键字H:Create[XXXPage]。发现两个页面创建时间间隔10s左右，期间应用包名主线程长时间Sleeping，基本没有进行任何处理，且多次复现后发现SplashPage和LoginPage两个页面创建时间稳定在10s左右。因此推测是应用侧设置了固定的跳转时间。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Wiq1u7maQiiXMGHdJz08FA/zh-cn_image_0000002628555170.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/IRwEd6_dRiSG_rZNcABG_w/zh-cn_image_0000002628555170.png "点击放大")
 3. 如以下示例代码，由于设置了闪屏页10s延迟跳转登录页，造成启动后停留引导页过久的问题。
 
    ```ts

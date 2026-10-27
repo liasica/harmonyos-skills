@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用如何上架分发到多端（手机、PC、平板）
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用如何上架分发到多端（手机、PC、平板）
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:32+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:33994d4cd6d53a0a8b07152019b9ca220ed307d0c59d2d3350a71e2c02b15270
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:214710a03a854f4d04e9f7afd0a836c3797d22be5c0e22935d35bc3ee261e721
 ---
 
 ## 问题现象
@@ -20,9 +20,9 @@ content_hash: sha256:33994d4cd6d53a0a8b07152019b9ca220ed307d0c59d2d3350a71e2c02b
 
 应用上架时，需根据软件包中声明的设备（即module.json5配置文件中"[deviceTypes](../harmonyos-guides/module-configuration-file.md#devicetypes标签)"标签的枚举值）勾选对应的支持设备，确保软件包中声明的设备范围大于等于HarmonyOS 开发者中心上勾选的支持设备范围。提交审核时会进行校验，如果HarmonyOS 开发者中心上勾选的支持设备范围大于软件包内声明时，会提示上传的软件包与声明支持设备不一致，将无法提交审核。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/jaazjGFET-2UWJ99BZjY6g/zh-cn_image_0000002658391408.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/anSDWI8MSwSPDO2KpHTc4A/zh-cn_image_0000002658391408.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/h8GahlEESLSmAWP3EzjYZQ/zh-cn_image_0000002688550963.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/9xt8wvuDQlGmZU5hJfufjw/zh-cn_image_0000002688550963.png "点击放大")
 
 ## 常见FAQ
 

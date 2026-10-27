@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-251
 title: 如何使用Swiper组件实现下拉刷新
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使用Swiper组件实现下拉刷新
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f27dcb4b969d446fa0cf01b6f6f3cf5fa1eef94dd113664a427a9b78b73ec01e
 ---
 

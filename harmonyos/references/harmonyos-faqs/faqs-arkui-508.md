@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-508
 title: 怎么解决Progress组件配合animateTo实现循环动画无反应问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 怎么解决Progress组件配合animateTo实现循环动画无反应问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:813af94ac4e5263f8c2c8fec9d9526ac6c67e128f63ca748768a94a5eff6d10e
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:caccf26f3e5c02bd7cb9d3f7634876c1593b44676693ba83766d49fabcac939e
 ---
 
 ## 问题现象
@@ -80,7 +80,7 @@ animateTo适用于组件自身属性动画场景（如尺寸、颜色改变等�
 
 可以使用定时器来控制Progress组件进度值变化。用setInterval()方法创建定时任务，每间隔一段时间（如20毫秒）均匀地改变Progress组件进度值（如每次加1），即可实现预期效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/6PBO4eIsSv-yFu51GT99tw/zh-cn_image_0000002628388622.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/m3udkaMEROO64Gacx7Cpvw/zh-cn_image_0000002628388622.png "点击放大")
 
 ```ts
 /** 进度条最小值 */

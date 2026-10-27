@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-114
 title: 加载网页，图片被截断且页面能够横向滑动
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 加载网页，图片被截断且页面能够横向滑动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:817bb885c36c8f3c36e4c455b07019ed0ab02b8e0c13d05a8d9b8ee0274c6bcd
 ---
 

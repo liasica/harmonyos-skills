@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-34
 title: 使用AudioCapturer录制音频时报错6800301该如何处理
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 使用AudioCapturer录制音频时报错6800301该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
+scraped_at: 2026-10-28T07:48:30+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:07c50c3e855f174304b75c85c032d4d706a9ba66b27c31cfcc940f3dbfe23a26
+content_hash: sha256:a0d9d693f3802ae4b0b074e821a0cd864341855aeed3f4b479071230b84cc0fe
 ---
 
 ## 问题现象
@@ -34,15 +34,15 @@ content_hash: sha256:07c50c3e855f174304b75c85c032d4d706a9ba66b27c31cfcc940f3dbfe
 
 如下图所示，如果权限没有正确申请，则会导致权限校验异常造成报错，这里取消了麦克风权限导致报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Aq6YUIQ7STuNif_2EWKDzw/zh-cn_image_0000002658791891.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/F30R9zbsSKyxPk_JoqB6Og/zh-cn_image_0000002658791891.png "点击放大")
 
 如下图所示，如果参数配置不正确，则会导致参数校验异常造成报错，音频采集参数的详细信息可以查看[AudioStreamInfo](../harmonyos-references/arkts-apis-audio-i.md#audiostreaminfo8)，这里配置了错误的采样率导致报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/4hCixKyCT8-aDwJBtk_sPw/zh-cn_image_0000002628552524.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ASxpjPJvQ4etDPCwf2y90A/zh-cn_image_0000002628552524.png "点击放大")
 
 如下图所示，如果没有进行正确的初始化，则会导致状态检查异常造成系统报错，这里初始化步骤在申请权限之前导致报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/j3Cml7jXT-C1kR2dpG0-oA/zh-cn_image_0000002658911835.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/tyxANRXETVSLU5_yBW0IwQ/zh-cn_image_0000002658911835.png "点击放大")
 
 ## 修改建议
 

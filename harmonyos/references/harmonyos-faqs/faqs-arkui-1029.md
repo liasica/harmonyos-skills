@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1029
 title: 如何判断目标窗口上方是否被全部遮挡
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何判断目标窗口上方是否被全部遮挡
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f44d69427d920712bb72e2fcb954d5a5d7ac480b6570807d4eea783833fde353
 ---
 

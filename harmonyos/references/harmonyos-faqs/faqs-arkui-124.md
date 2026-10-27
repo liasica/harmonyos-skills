@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-124
 title: TextInput按压态背景色如何修改
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput按压态背景色如何修改
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2f927bba205976e8a4a812746a78b58bc1208894a53ffbf54a2e8c2a85d01f67
 ---
 

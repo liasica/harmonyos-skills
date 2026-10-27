@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-simulator-
 title: 模拟器运行应用报错提示设备和应用的API版本不匹配
 breadcrumb: FAQ > DevEco Studio > 模拟器 > 模拟器运行应用报错提示设备和应用的API版本不匹配
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:307dff17a57c58bda46ad8af5eb6d99e59d02988b6cef03d9a458259cd80cb02
+scraped_at: 2026-10-28T07:49:03+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cc4f3342d7d03830931f3ddd0179da9e6a67f212bd809ea3121c1d75a5a6355f
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:307dff17a57c58bda46ad8af5eb6d99e59d02988b6cef03d9a458259cd8
 
 ## 背景知识
 
-[OpenHarmony](https://docs.openharmony.cn/pages/v5.1/zh-cn/OpenHarmony-Overview_zh.md)是一个面向全场景的开源分布式操作系统，当前OpenHarmony社区支持22款[开发板](https://docs.openharmony.cn/pages/v5.1/zh-cn/OpenHarmony-Overview_zh.md#支持的开发板)，典型应用场景包含影音娱乐、智慧出行、智能家居等。
+[OpenHarmony](https://docs.openharmony.cn/pages/v6.1/zh-cn/OpenHarmony-Overview_zh.md)是一个面向全场景的开源分布式操作系统，当前OpenHarmony社区支持22款[开发板](https://docs.openharmony.cn/pages/v5.1/zh-cn/OpenHarmony-Overview_zh.md#支持的开发板)，典型应用场景包含影音娱乐、智慧出行、智能家居等。
 
 ## 解决方案
 

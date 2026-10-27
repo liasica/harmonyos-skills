@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1412
 title: TextInput、RichEditor、TextArea避让软键盘
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput、RichEditor、TextArea避让软键盘
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7fea39e7b4dd0773c58387f7b77f5b996489c6a48037afccfd0a5618a74edcf7
+scraped_at: 2026-10-28T07:47:22+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0a11c1a9052315c0a2d42d7a44892172a41355c3c89d747701b2c1816e9063dc
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:7fea39e7b4dd0773c58387f7b77f5b996489c6a48037afccfd0a5618a74
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/ffCc_9KLTN-YPqcaJ58xaQ/zh-cn_image_0000002658842533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Myb8Z_wNS_OtLdoI5M6_3g/zh-cn_image_0000002658842533.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/EvSbDh1ZQ-Ov-nMkySWfkg/zh-cn_image_0000002628763168.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/nm3CLPtxQFutX3VMYT4wrg/zh-cn_image_0000002628763168.png "点击放大")
 
 ## 背景知识
 

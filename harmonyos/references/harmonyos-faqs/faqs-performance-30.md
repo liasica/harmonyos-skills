@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 应用内点击邀请好友生成分享图慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 应用内点击邀请好友生成分享图慢
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f24db44f43f9e6ce23a8531c86b479ea75ba66da1d77d5342938944c98656032
+content_hash: sha256:90a6a19f83a79a7785a340d18291c5d2abed74f8783a4baa9739f0a04372c116
 ---
 
 ## 问题现象
@@ -21,20 +21,20 @@ content_hash: sha256:f24db44f43f9e6ce23a8531c86b479ea75ba66da1d77d5342938944c986
 
 1. 使用Profiler的Frame模板抓取该过程的Trace信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/KINBN1mDSAOH3ZHZvMQliQ/zh-cn_image_0000002628555076.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/UK68prjcRxGoBVuK5n_suw/zh-cn_image_0000002628555076.png "点击放大")
 
    * 以应用收到手指离开屏幕事件的Trace关键字**DispatchTouchEvent xxx type=1**作为问题分析的起点，时间点为4.864s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/4-nrBiEeRL2VCNMpiM4nLQ/zh-cn_image_0000002628395170.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ZnGD7SCiRv6A9D-AhMok3Q/zh-cn_image_0000002628395170.png "点击放大")
    * 找到创建Stack组件的Trace关键字**H:Create[Stack]**，时间点为7.959s，此时距离应用收到手指离开屏幕事件过去3.095s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ac9GDTBFTu-r8rpDD3Djsw/zh-cn_image_0000002658914399.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/SmlMjgLqSLuvhh9OLxdCiw/zh-cn_image_0000002658914399.png "点击放大")
    * 观察应用包名泳道Trace，在生成分享图后会生成一个页面切换的Trace点：**H:ABILITY\_OR\_PAGE\_SWITCH**，标志已生成分享图，可以将此时间点7.973s作为问题分析的终点，此时距离创建Stack组件过去14ms，几乎不会影响分享图生成总时间。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/j0VFhrItQ7ex0UevqmHHxQ/zh-cn_image_0000002658794441.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/BZtX3if5SjGngozMpYrFOg/zh-cn_image_0000002658794441.png "点击放大")
 2. 依据以上分析，问题分析重点范围为应用收到手指离开屏幕事件到创建Stack组件。可以看到过程中应用调用C库的GetImageInfo方法后处理获取的图像信息耗时接近1s，导致生成分享图片慢。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/uVa-9KQ1SpabA9rl99EIvg/zh-cn_image_0000002628555078.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/kG6GV0NvSx26bJNyMZFwxQ/zh-cn_image_0000002628555078.png "点击放大")
 
 ## 分析结论
 

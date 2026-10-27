@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 解码后数据帧送显的两种方式
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 解码后数据帧送显的两种方式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:34+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e39fe24c44a0f2ca3700b382b5fa4c50b6612a2ac52ead652080da634d3d2872
 ---
 

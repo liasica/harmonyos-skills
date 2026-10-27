@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-963
 title: 如何实现Text字号自适应缩放与省略
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现Text字号自适应缩放与省略
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:60df8f4e31d96d18ac88efbb1c74181339c92e0304cc97dea1d45045aee8394c
+content_hash: sha256:76219dd9cfefdf9152d97e98fcff8a733fd86565f0301d65cbc4fcb74711a359
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:60df8f4e31d96d18ac88efbb1c74181339c92e0304cc97dea1d45045aee
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/LRU0cDOjQGubexsHdkHQBQ/zh-cn_image_0000002658920895.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/EgD7vkuGQauTNxexf9MKBA/zh-cn_image_0000002658920895.gif "点击放大")
 
 ## 背景知识
 

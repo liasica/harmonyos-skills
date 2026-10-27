@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 如何解决拍照后对应图片保存到本地无法打开的问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 如何解决拍照后对应图片保存到本地无法打开的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:11978c7f7d0a86fcd3e81c0910e26f30dcc5f85240f72742470780ce26ccaa20
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ba0222ff2eca88424af619cdd72c6b07e28db1dcdd0a309c3591471dcc24c424
 ---
 
 ## 问题现象
 
 拍照后，获取到图片uri，保存到本地后再去读取该文件，无法打开。用Device File Browser导出保存的文件，提示已损坏，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/MLxo-OVERvOZlt6dy8ApQw/zh-cn_image_0000002659138383.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/vq0rkgZlQ3-m-PaxZ4oUdA/zh-cn_image_0000002659138383.png "点击放大")
 
 ```screen
 @Entry
@@ -183,4 +183,4 @@ struct ImagePickerPage {
 
 用Device File Browser导出保存的文件，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/zOsDA4IYRRSFbV13YiKpxA/zh-cn_image_0000002629059032.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/QRmcmI0iQJW6ppj0_G6_TA/zh-cn_image_0000002629059032.png "点击放大")

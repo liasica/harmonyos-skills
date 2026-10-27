@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-902
 title: wrapBuilder函数内部状态无法刷新问题怎么处理
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > wrapBuilder函数内部状态无法刷新问题怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4268e94192a0e1812c4460015cb1c15ef53af9cd184f4354fc423e01f65d64c2
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:61ed033ffa8073adadb53feeba1ac86259a65622bc953fe97fdc11bdcffdffa6
 ---
 
 ## 问题现象
@@ -115,7 +115,7 @@ content_hash: sha256:4268e94192a0e1812c4460015cb1c15ef53af9cd184f4354fc423e01f65
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/VzIm6iSJT6Ci2sz6YHIwbA/zh-cn_image_0000002628399754.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Glu-ozLlRpSwf0rxokiNcA/zh-cn_image_0000002628399754.png "点击放大")
 2. 当存在两个或两个以上的参数时，按值传递UI不会刷新。即使通过对象字面量形式传递，值的改变也不会触发UI刷新。所以通常将多个需要传递的参数封装成一个对象，同时保证只传递这一个对象，UI可正常刷新。
 
    Builder代码示例如下：
@@ -222,4 +222,4 @@ content_hash: sha256:4268e94192a0e1812c4460015cb1c15ef53af9cd184f4354fc423e01f65
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/S4MOkcjDRX67WbHl9PEZjA/zh-cn_image_0000002658799023.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ewhlqDjURdWTZo-HWlJIqg/zh-cn_image_0000002658799023.png "点击放大")

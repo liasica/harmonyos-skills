@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-412
 title: Navigation如何取消单双栏切换动效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation如何取消单双栏切换动效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5ed4b054de0316b60a7c5e95fd551394fde3d904075b414a8496485e7fd98c53
 ---
 

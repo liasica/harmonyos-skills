@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: AppGallery邀请测试创建与使用常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > AppGallery邀请测试创建与使用常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:57+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:91e2384e80a0488770ba71edd04b993b44c6b36d2ad19e4841c0f7f58f82813f
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:35e0c059f200c267e7cd937430efc481cf57fc3875e6ec8e2e3b79ed29b65c40
 ---
 
 **Q：在使用邀请测试时，选择邀请码添加方式，如何使用邀请码？**
@@ -57,7 +57,7 @@ AppTest邀请测试：
 
 **Q：使用AppTest邀请测试创建内部测试群组时，群组内的测试用户是否都需要添加为团队账号的子账号？**
 
-**A**：是的，群组内的测试用户必须是拥有对应应用权限的AppGallery Connect用户，即需要先将这些账号添加为团队账号的成员账号（子账号）并授予相应的应用权限。
+**A**：是的，群组内的测试用户必须是拥有对应应用权限的HarmonyOS 开发者中心用户，即需要先将这些账号添加为团队账号的成员账号（子账号）并授予相应的应用权限。
 
 **Q：邀请测试选择测试版本时，没有生成二维码的选项，如何邀请测试用户？**
 

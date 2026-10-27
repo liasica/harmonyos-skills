@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1328
 title: 如何对PNG图标进行着色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何对PNG图标进行着色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0a7f860304a151c496476e035e66587605d974d5298689283bc6ac4020a87726
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:09092e7a2faaa9464ff3e42836bc0050f4bf9061c71afbc38fbf2557161f1307
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:0a7f860304a151c496476e035e66587605d974d5298689283bc6ac4020a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/GCCDFgw7Tb2KqiSNj1D72A/zh-cn_image_0000002658839133.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/rIlCX1DDRfSqkKCiRPfZ0w/zh-cn_image_0000002658839133.png "点击放大")
 
 ## 背景知识
 

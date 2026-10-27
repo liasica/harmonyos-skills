@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-core-speec
 title: 语音识别1002200010报错
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > 语音识别1002200010报错
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:710c9052fff148ea37a7250afcf6b0bae1882f026b0888c66e49e53326c06ba2
+scraped_at: 2026-10-28T07:49:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:fdbbed292fd98b9850af420508fa726f088dbcbb65ab20e49d16c9e2b5a84ce3
 ---
 
 ## 问题现象
@@ -48,7 +48,7 @@ try {
 1. 通过调试定位到报错的接口为：writeAudio(sessionId: string, audio: Uint8Array): void。
 2. writeAudio的入参audio当前仅支持音频数据长度为640字节或1280字节。建议每次发送音频调用间隔为20ms（传输音频长度为640字节）或40ms（传输音频长度为1280字节），具体可以参考官方文档的[参数说明](../harmonyos-references/hms-ai-speechrecognizer.md#writeaudio)。通过打印每条数据长度，发现报错的数据长度不是640的整数倍。日志如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/srqq8620TTSKuUXzywmJog/zh-cn_image_0000002628394836.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/VUbagldoTiOX-KDS8cZ-sg/zh-cn_image_0000002628394836.png "点击放大")
 
 ## 分析结论
 
@@ -63,4 +63,4 @@ try {
 
 补齐后日志如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/pUD_--TOQaKYUVdOWublSA/zh-cn_image_0000002628554732.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/c3zMcmPiSm2CDOUy0GuVKQ/zh-cn_image_0000002628554732.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 如何实现应用内提示音：通知与自定义消息场景
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 如何实现应用内提示音：通知与自定义消息场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f1ea776494e97bf5875af68afa35979b4978b1151acdd3a5df6b0310a63872b8
 ---
 

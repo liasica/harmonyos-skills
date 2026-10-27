@@ -3,29 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio如何调整页面窗口布局
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio如何调整页面窗口布局
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
+scraped_at: 2026-10-28T07:48:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7ac71223bdb19b341dcf359e3f8d7442119d1e02ad51895470f47fadb7feaaa9
+content_hash: sha256:2b276fed5b400fe31fbae14beb37be7baec0c3a394709acc39f4a9597d0813d3
 ---
 
 ## 问题现象
 
 * 问题一：侧边按键被删除后如何恢复？例如日志按钮。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/FtmQHg6gSY-BQ7_PSgdwCA/zh-cn_image_0000002628565334.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/SNcbBfFfTCqvOXF6TTVQOw/zh-cn_image_0000002628565334.png "点击放大")
 * 问题二：日志窗口侧边功能按钮被删除后如何恢复？
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/98uYHm-9Spen2XjAW0cAqQ/zh-cn_image_0000002628405432.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/hHXeKYaFRCOO7p98l6DI6A/zh-cn_image_0000002628405432.png "点击放大")
 * 问题三：需要结合断点和日志信息进行调试，如何设置调试界面和日志输出界面同时在底部展示？
   + 调试窗口：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/p06sgda9TB2uqzEeFg0ILw/zh-cn_image_0000002658924639.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/n6nQJSrMSuOr2ifeUnRgAQ/zh-cn_image_0000002658924639.png "点击放大")
   + 日志窗口：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/-Y-Ld9UORoS3lItaHOOhgg/zh-cn_image_0000002658804703.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/YZgdCKg_QBupqyn9vFUoZA/zh-cn_image_0000002658804703.png "点击放大")
 * 问题四：日志窗口中按键分别对应什么能力？
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/VrHmLC6SQPSCaAB_dALu9A/zh-cn_image_0000002628565336.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DBwUpA0zR5CwFENUAI6jTg/zh-cn_image_0000002628565336.png)
 
 ## 背景知识
 
@@ -36,28 +36,28 @@ content_hash: sha256:7ac71223bdb19b341dcf359e3f8d7442119d1e02ad51895470f47fadb7f
 * 问题一：通过**视图**-**工具窗口**-**日志**或者**Ctrl+Alt+5**重新打开日志窗口。
   + 操作：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/AGkGFxOWRH-VcZUnKChzkA/zh-cn_image_0000002628405434.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/HDx7ZaQ5RHmexM0jbdbUrw/zh-cn_image_0000002628405434.png "点击放大")
   + 效果：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/QNrLZL_KTv-FtnyVCIKn9w/zh-cn_image_0000002658924641.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/q2tMSaNMQeK8QfYixyH5Sw/zh-cn_image_0000002658924641.png "点击放大")
 * 问题二：通过将鼠标移动至日志窗口内，点击右上角三点显示菜单选项图标，或者鼠标右键点击日志窗口顶部，选中**显示工具栏**。
   + 操作：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/iJgak1kxTxWO8_R1-6U2nw/zh-cn_image_0000002658804705.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/jUIljK9EQNChD_LlRDQ98A/zh-cn_image_0000002658804705.png "点击放大")
   + 效果：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/3ntib4r4QKWFi6_KKMa1cw/zh-cn_image_0000002628565338.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/9B_p9l83Rc2OxILEuVtH-w/zh-cn_image_0000002628565338.png "点击放大")
 * 问题三：通过将鼠标移动至日志窗口内，点击右上角三点显示菜单选项图标，或者鼠标右键点击日志窗口顶部，选中**移动到**，调整窗口位置，可选择**底部 右**。
   + 操作：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/mYwy_MxISQWMOBrnciQrEQ/zh-cn_image_0000002628405436.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/LYBLBvpdR_CSl-XugfHuGA/zh-cn_image_0000002628405436.png "点击放大")
   + 效果：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/PStiqfL2SjOrKPQuRUU1kw/zh-cn_image_0000002658924643.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Xg6nM-S5QzaAiAvUFVIexw/zh-cn_image_0000002658924643.png "点击放大")
 * 问题四：通过将鼠标移动至日志窗口内，点击右上角三点显示菜单选项图标，或者鼠标右键点击日志窗口顶部，点击\*\*？帮助\*\*，即可跳转至文档介绍。
   + 操作：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/rJJ9v-EwTbm5V2DbA6fadA/zh-cn_image_0000002658804707.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/VKf6Z-3OQ2K5cRxWER5ozg/zh-cn_image_0000002658804707.png "点击放大")
   + 效果：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/u7SnG3_WQFGnyinMzDoQCA/zh-cn_image_0000002628565340.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/fdHGr_KvTguKLvATl-SAyg/zh-cn_image_0000002628565340.png "点击放大")

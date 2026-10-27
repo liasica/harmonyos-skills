@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 打开工程，反复执行“Updating indexes”
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 打开工程，反复执行“Updating indexes”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:1ddd3a49b1c183f38e7ff95d8953a4eed0486a55870058b709d8b6814824c6e6
+scraped_at: 2026-10-28T07:48:48+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:dd48f5447240cb6d3a5d31a3a87697b164e7845e64ff7716a63c7e4a319e2125
 ---
 
 **问题现象**
 
 在DevEco Studio 新建 / 打开工程，反复执行“Updating indexes”、“Indexing”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/WJy5OxbKTlSIfrXRulnuSQ/zh-cn_image_0000002654797779.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/5BOJStyaT-ex7WtSasoWwA/zh-cn_image_0000002654797779.png)
 
 **解决措施**
 

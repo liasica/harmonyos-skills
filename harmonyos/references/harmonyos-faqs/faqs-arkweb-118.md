@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-118
 title: H5页面上的音频播放时没有声音
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > H5页面上的音频播放时没有声音
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:579df5b494932928f66353ee1cd7afd8bbcd964e6464b8ce6e84cb17bb3c15aa
 ---
 

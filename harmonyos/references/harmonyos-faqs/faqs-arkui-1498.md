@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1498
 title: 侧边栏的显示隐藏与常见使用问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 侧边栏的显示隐藏与常见使用问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:d78d1befd41d9a0a3195e2ec2de8b7db065764e08b82dfe5302c8823affa63b4
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:8932f343f498830ec77309759410ba0f329e11aabeca5bbec1426e71ae7a214c
 ---
 
 ## 问题现象
@@ -116,7 +116,7 @@ content_hash: sha256:d78d1befd41d9a0a3195e2ec2de8b7db065764e08b82dfe5302c8823aff
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/LV8isYKRRP6opDrLNtSBzQ/zh-cn_image_0000002658845793.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/xYnd_FSfSPG1WMc8jRC6-w/zh-cn_image_0000002658845793.png "点击放大")
 * 场景二：使用Stack布局将底层主界面、灰色半透明蒙层、侧边栏界面依次堆叠，然后通过组件内转场中的TransitionEffect.move实现底层主界面的平移，通过PanGesture手势实现滑动效果，示例代码如下：
 
   ```ts

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-localizati
 title: 如何定位单独设置APP偏好语言失败的问题
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 本地化开发（Localization） > 如何定位单独设置APP偏好语言失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
+scraped_at: 2026-10-28T07:48:04+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b836dbee1357ef2d496635568317c58e8debc67765583ace5ad21e6d13419e27
+content_hash: sha256:299b4ee0edb02899c440e2d49783c5297648f7622e99d0e30018c40b3aff1c5e
 ---
 
 ## 问题现象
@@ -65,7 +65,7 @@ struct Index {
 
    默认语言（base文件）以及中文语言（zh\_CN文件）写的是中文，英文语言（en\_US文件）写的是英文。因此在偏好语言为英文时，显示en\_US文件的内容；偏好语言为中文时，显示zh\_CN文件的内容；偏好语言为其他语言时，显示base文件的内容。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/1XDrbTGBSay6W35vK47mPw/zh-cn_image_0000002628663108.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/sRY8jEdmTtqtPXosEmYBjQ/zh-cn_image_0000002628663108.png)
 
    * base目录中的string.json如下：
 

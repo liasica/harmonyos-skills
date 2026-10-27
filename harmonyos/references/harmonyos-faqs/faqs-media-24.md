@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-24
 title: SoundPool音频播放不完整不流畅
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > SoundPool音频播放不完整不流畅
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2662f230f95b72414b5bdb7e0ce705a857150e67b26a0a86e68e45633476139b
+scraped_at: 2026-10-28T07:48:31+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a0e11ba667298ab6513f0af52b0a8eec4ef7a2b61cbd98f281ab5be2fba04f84
 ---
 
 ## 问题现象
@@ -40,7 +40,7 @@ SoundPool播放音频文件时会出现如下问题：
   2. 搜索日志”audioRenderer normal stop.|audioRenderer fast renderer pause.“。若出现”audioRenderer normal stop.“，表示普通通路，buffer写入间隔=20ms。若出现”audioRenderer fast renderer pause.“，表示低时延通路，buffer写入间隔=5ms。
   3. 计算播放时长，单位为ms：播放时长=资源大小/buffer大小\*buffer写入间隔。
 
-  ```screen
+  ```txt
   10-28 14:50:41.901   com.examp...graphics  I     [IncSoundData][[102076]RendererInClient] channel: 2, L=1630, R=1661, counts: 400
   10-28 14:50:43.905   com.examp...graphics  I     [IncSoundData][[102076]RendererInClient] channel: 2, L=3776, R=3873, counts: 500
   10-28 14:50:44.864   com.examp...graphics  I     #362 CacheBuffer stream write finish, cacheDataFrameIndex_:1050624, havePlayedCount_:0, loop:0, streamID_:1, length: 1920

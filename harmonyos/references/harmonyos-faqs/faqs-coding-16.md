@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-16
 title: DevEco Studio启动报错：“Scan files to index fail”
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio启动报错：“Scan files to index fail”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
+scraped_at: 2026-10-28T07:48:50+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:9d4e8618281e08080e4b631acb138a5c9bbf318112b11304db9805548e150538
+content_hash: sha256:c415af85d4699570b50f313b8418750d2973e0d59a8a0cd3861678babd37f6b1
 ---
 
 **问题现象**
@@ -18,4 +18,4 @@ content_hash: sha256:9d4e8618281e08080e4b631acb138a5c9bbf318112b11304db9805548e1
 
 以配置内存上限为12G举例，打开DevEco Studio，通过菜单栏的Help > Edit Custom Properties...，打开idea.properties配置文件。在文件中新增一行 arkts.server.max.old.space.size=12288，然后重启DevEco Studio。编辑器Node进程的内存上限将设置为12288M（即12G）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/vglB0VtZT4Cy9gkEnTsfFg/zh-cn_image_0000002654837761.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ak096LILQACrE6fceeHztQ/zh-cn_image_0000002654837761.png)

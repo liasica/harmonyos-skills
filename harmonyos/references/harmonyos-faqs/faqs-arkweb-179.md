@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-179
 title: H5适配HarmonyOS开发指导
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > H5适配HarmonyOS开发指导
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:deafea221ab64dfdabadbd954ab66b76000bc5ed3413fd53bbbf05c9442716d7
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:8a1d825344f6ba6519ca124230cea99689cbc79be0a76edf7b51114291fa0cce
 ---
 
 ## 问题现象
@@ -24,7 +24,7 @@ content_hash: sha256:deafea221ab64dfdabadbd954ab66b76000bc5ed3413fd53bbbf05c9442
 
 快速适配流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/us189uIIQnmRAxhR01qscA/zh-cn_image_0000002629059094.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/rwJXFOryQtG6Hn4XmGr90w/zh-cn_image_0000002629059094.png "点击放大")
 
 1. 创建Web组件加载：
    * 页面加载是Web组件的基本功能。根据页面加载数据来源可以分为三种常用场景，包括加载网络页面、加载本地页面、加载HTML格式的富文本数据。详情请参考：[使用Web组件加载页面](../harmonyos-guides/web-page-loading-with-web-components.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1000
 title: Tabs组件如何根据数据源动态更改TabContent数量
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Tabs组件如何根据数据源动态更改TabContent数量
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9fe53a6210997549df89154aecc318f744b4f1ecb17412662bc435a4073674d9
+content_hash: sha256:06986dc3f52a1d45fa56461b6fc48f6a67f0f56702e70f91ead7821e6378f97e
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:9fe53a6210997549df89154aecc318f744b4f1ecb17412662bc435a4073
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/G2SHFQURQUiI_eeVq2-M6w/zh-cn_image_0000002628564674.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/wo3L7uezS4SEJws83pSiQg/zh-cn_image_0000002628564674.png "点击放大")
 
 ## 背景知识
 

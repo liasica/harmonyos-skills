@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/share-kit-troub
 title: 华为分享将应用的页面分享到另一个手机后不能引导下载应用
 breadcrumb: FAQ > 应用服务开发 > 内容分享服务（Share Kit） > 故障排查 > 华为分享将应用的页面分享到另一个手机后不能引导下载应用
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:14:29+08:00
+scraped_at: 2026-10-28T07:48:40+08:00
 doc_updated_at: 2026-10-22
-content_hash: sha256:2b665b9f3095288445ad971e4a9f6dbdfb356b085fb0c0dbf022c18c3e328983
+content_hash: sha256:0fe1636eab0d22768ca32ffa9c281478da20d04f9c3daaf3a7ebf3a3258e8388
 ---
 
 ## 问题现象
 
 应用内点击分享，可通过华为分享将页面链接分享到其他华为手机，但是在手机收到的就是一个链接文字，而且只有WPS能打开，并不能跳转应用市场下载该应用，从应用内打开页面，方便阅读。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ESsWEk1sQye_q9Zj27V-Vw/zh-cn_image_0000002789419845.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tkMAaY-gT1GQvog4_tAR2Q/zh-cn_image_0000002789419845.png "点击放大")
 
 ## 定位过程
 

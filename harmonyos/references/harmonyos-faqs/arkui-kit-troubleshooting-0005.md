@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: Grid组件拖拽边缘无法继续拖动问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > Grid组件拖拽边缘无法继续拖动问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:33+08:00
+scraped_at: 2026-10-28T07:47:00+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:2baebc990f1fa50897c67a0ae2e3f8b9d167e8564212f932b24950e934643326
+content_hash: sha256:1f456ad1bcf0295799a1609c719be70a4468dcf073eeb6acddfc69dbfd105232
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:2baebc990f1fa50897c67a0ae2e3f8b9d167e8564212f932b24950e9346
 
 （1）原始元素排列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/y4_zl1yJR1q9mNlxnBTyVw/zh-cn_image_0000002793383055.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/UzYeUM8cQqyT1RVmI09t9g/zh-cn_image_0000002793383055.png "点击放大")
 
 （2）拖拽元素至边缘位置时，无法继续拖动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Ikvw675gTTOK4tPPmkxSfg/zh-cn_image_0000002764144440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/5ANSygpySqWn_N85N_pjNQ/zh-cn_image_0000002764144440.png "点击放大")
 
 ## 定位过程
 
@@ -29,7 +29,7 @@ content_hash: sha256:2baebc990f1fa50897c67a0ae2e3f8b9d167e8564212f932b24950e9346
    * 如果被拖动超过2个index，最终的目标位置还是在**上栏**，就往上滑。
    * 如果被拖动的目标位置在下图的**下栏**，就往下滑。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/tc3W_QAySeKFM0TtboOOTg/zh-cn_image_0000002764144676.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/3_iYDR7ESfCGvkUVodzuNg/zh-cn_image_0000002764144676.png "点击放大")
 
 ## 分析结论
 
@@ -196,6 +196,6 @@ struct GridExample {
 
 问题解决后效果如下图所示，拖拽元素能够自动滚屏：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/x53yYAGIRSKewy4RPABp7g/zh-cn_image_0000002763986368.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/NfTnGRtTRSWo0-2kOoJeNA/zh-cn_image_0000002763986368.png "点击放大")
 
 从API Version 26 Release开始，Grid支持使用[onMove](../harmonyos-references/ts-universal-attributes-drag-sorting.md#onmove)进行拖拽排序，支持拖拽到边缘时自动滚动，无需手动实现滚屏逻辑。使用方式为在ForEach中设置onMove回调处理数据移动，具体可参考[Grid组件](../harmonyos-references/ts-container-grid.md)中的拖拽排序示例。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-36
 title: ArkTS中Worker线程、Taskpool线程如何与宿主线程通信
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > ArkTS中Worker线程、Taskpool线程如何与宿主线程通信
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:55+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2cccc3dfe696ead2ec24ac18ed8b4b528eba7b8fa436fa7541853f3611264a4f
 ---
 

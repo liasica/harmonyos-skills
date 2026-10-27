@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 系统是否支持DLNA设备投屏
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 系统是否支持DLNA设备投屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:32+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:677f00ac77064466e933615098e640ea198a4def66d6e5f53b67cbb5b31fe7d1
 ---
 

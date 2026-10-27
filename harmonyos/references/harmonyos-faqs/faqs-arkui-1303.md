@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1303
 title: Text组件设置装饰线透明色不生效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件设置装饰线透明色不生效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:047e49c8806a94d8f2e22ac490bef718c86e2626b6c08caba13a6e523c218ca8
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:77f2e53d3984b57752e9d57280f7e97ead7070b3a2f12217d99c00f3ff30c781
 ---
 
 ## 问题现象
@@ -48,7 +48,7 @@ struct TextExample {
 
 问题效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/j_RAx4ShSeSVPmR5VfmLdQ/zh-cn_image_0000002658958229.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Rfg8h5DFQRC5f0nSribgrA/zh-cn_image_0000002658958229.gif "点击放大")
 
 ## 背景知识
 

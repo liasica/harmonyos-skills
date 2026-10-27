@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1633
 title: Rating组件自定义图片资源
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Rating组件自定义图片资源
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3b02df9e121ea36328c318b1d74c99c91f7b2273c55940b4e60f7f649ba3605f
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:333d85e7a0f5fa8171e6c79adc242f557950137c5cbce18c2fdc9f94242085e5
 ---
 
 ## 问题现象
@@ -67,7 +67,7 @@ build-profile.json5文件中copyCodeResource的字段配置如下：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/M_FSi7-YSqSeBLpwZQbjUA/zh-cn_image_0000002628617650.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/-_EORGJeSd2oaxlzSE7jmQ/zh-cn_image_0000002628617650.png "点击放大")
 
 ## 常见FAQ
 

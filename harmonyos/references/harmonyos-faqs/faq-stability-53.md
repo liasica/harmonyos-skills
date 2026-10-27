@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-5
 title: Attach Debugger调试失效，无法正常拦截断点
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > Attach Debugger调试失效，无法正常拦截断点
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
+scraped_at: 2026-10-28T07:46:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:1358da0ba915c4f8d5b8df87d299ffb312b62937264f6b3eaaa1f0fa29bca602
+content_hash: sha256:b10bb596becf66e61c811c7321fef061c5ed5e4a72d2a6e325348f279fa9c7f1
 ---
 
 ## 问题现象
@@ -29,4 +29,4 @@ Attach调试是一种在应用运行时连接到应用的调试方法，主要�
 1. 如果出现Native调试器和ArkTS调试器两个窗口，需要等待两个窗口都加载完成，才能进行调试。
 2. 可以在调试之前编辑调试配置，在Debugger页签中设置Debug type为ArkTS/JS或Native，只启动自己需要的调试器。可参考文档：[自定义运行/调试配置](../harmonyos-guides/ide-run-debug-configurations.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/fwLSRtroQNOGYdOyzb2Ryw/zh-cn_image_0000002658794255.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/noinDXyWRxWaqjMWew7g_g/zh-cn_image_0000002658794255.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-166
 title: Navigation组件管理两个界面都加载本地H5进行交互跳转，如何进行页面刷新
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Navigation组件管理两个界面都加载本地H5进行交互跳转，如何进行页面刷新
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e04161d4b4a56418243810caf362c664242498e5d51df0306067629429ca43ad
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:31d715af12ca2b976b50ca36c393f038a2047da5703886e3e74e7bdac040471c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:e04161d4b4a56418243810caf362c664242498e5d51df0306067629429c
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/IMGyyJk2QniJm6D5ctT3WA/zh-cn_image_0000002629059088.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/KyEOiBpPRliSmR2YYTPMUQ/zh-cn_image_0000002629059088.png "点击放大")
 
 ## 背景知识
 

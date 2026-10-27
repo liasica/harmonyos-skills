@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-662
 title: 页面上下滑动后视频重新播放
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面上下滑动后视频重新播放
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:119883cf04df2409e8a9690bbfd6e930711942f24256f0ad7b233cad6a3dd738
+content_hash: sha256:1951b2bab020b419bbbad48eae4eee624f7f161d5592966cdb69d9a376aa2a43
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:119883cf04df2409e8a9690bbfd6e930711942f24256f0ad7b233cad6a3
 
 1. 通过[DevEco Testing](https://developer.huawei.com/consumer/cn/download/deveco-testing)软件的UIViewer可以查看到视频组件为Video，整体页面通过List组件进行组合。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/F-2wfMaMTwiyr4i4d5PJug/zh-cn_image_0000002628394660.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/RIHBd2owR8Wf62Bl8CF2IQ/zh-cn_image_0000002628394660.png "点击放大")
 2. 在上下滑动过程中搜索日志关键词Player current status可以观察到视频进入了STOPPED状态，重新上滑后又恢复到STARTED播放状态。
 
    ```txt

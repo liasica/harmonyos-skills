@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-148
 title: 应用通过对象字面量初始化class实例导致编译失败的原因和修改方案
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 应用通过对象字面量初始化class实例导致编译失败的原因和修改方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:22938a1622751211f16dc92d9b93099a48b15f2470389cb25fd5c6cdba63000c
 ---
 

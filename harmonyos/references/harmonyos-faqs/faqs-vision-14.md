@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-14
 title: 扫描表格，未生成EXCEL格式文档
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 扫描表格，未生成EXCEL格式文档
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
+scraped_at: 2026-10-28T07:49:06+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:6be3bd735ce9756669b5b53db46e714c072c9f98e5cab14eb5c202c3623bc096
+content_hash: sha256:cc7795e9584d714d9321cec04ed1dded7df210d27d5cc2ce1e09282b5484f5aa
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:6be3bd735ce9756669b5b53db46e714c072c9f98e5cab14eb5c202c3623
 
 用手机对准表格扫描，预览界面左下角会出现“表格提取”按钮，需要点击“表格提取”按钮后才能进入表格提取页面，生成EXCEL格式文档。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/XTlGGL-9QoK8En8gQpWDMA/zh-cn_image_0000002658914043.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/nHxywYaKS36TmqWw-PZyFw/zh-cn_image_0000002658914043.png "点击放大")
 
 ## 常见FAQ
 

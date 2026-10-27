@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-964
 title: NavDestination嵌套使用Tabs，TabContent页面如何跳转至目标页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > NavDestination嵌套使用Tabs，TabContent页面如何跳转至目标页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4891590c8fb24a4c042a9b466d2848c56c98842de64982147836120902b78dcd
 ---
 

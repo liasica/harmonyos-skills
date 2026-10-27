@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-724
 title: 如何监听手机音量键动作
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何监听手机音量键动作
 category: harmonyos-faqs
-scraped_at: 2026-09-24T06:56:39+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f39d2b9a26bf964a28e410cc95a4545534d1956090a76b7140f07cff12798ab9
 ---
 

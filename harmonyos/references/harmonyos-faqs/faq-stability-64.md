@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-6
 title: 应用无响应-UI或界面卡死（AppFreeze）场景分析与调优
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 应用无响应-UI或界面卡死（AppFreeze）场景分析与调优
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:27+08:00
+scraped_at: 2026-10-28T07:46:41+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:407949f314d444f01b891a44e9be5132373be634a456a3737430d520ef937442
+content_hash: sha256:6979a5e4de79ddb07550389ff62ef1bed174b88cbd18df9bd0bcd742e3250ac6
 ---
 
 ## 问题现象
@@ -22,12 +22,12 @@ AppFreeze主要包含以下两种核心检测机制：
    * 检测原理：系统会周期性地检测应用主线程的任务执行情况。watchdog（看门狗）线程向主线程发送检测任务或检查时间戳。如果主线程正在执行的任务耗时过长，导致在**6秒**内无法处理完当前任务或无法响应看门狗的检测，系统判定主线程卡死。
    * 触发流程：通常在主线程卡顿达到3秒时，系统会抓取一次瞬时日志（Warning）；若卡顿持续达到6秒，则触发AppFreeze（Event），杀死进程并生成最终故障日志。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/29WCe9p_SxeVSreY-DtC4w/zh-cn_image_0000002658914221.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/1gP2Jq8aRH2jfQLikWJT3A/zh-cn_image_0000002658914221.png "点击放大")
 2. [APP\_INPUT\_BLOCK 用户输入响应超时](../harmonyos-guides/appfreeze-guidelines.md#日志差异性信息)。
 
    **检测原理**：当用户对设备进行操作（如点击屏幕、按键）时，多模输入服务（Multimodal Input Service）会将事件派发给应用。如果应用的主线程在收到输入事件后，超过**5秒**仍未反馈处理结果（即未完成事件分发回调），系统认为该应用无法响应用户输入，触发输入阻塞故障。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/c9dQm5N6Tfm-UDOilbnPTQ/zh-cn_image_0000002658794265.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/YuMkQfSRTkqXv8c_9SYyoA/zh-cn_image_0000002658794265.png "点击放大")
 
 ## 问题定位
 

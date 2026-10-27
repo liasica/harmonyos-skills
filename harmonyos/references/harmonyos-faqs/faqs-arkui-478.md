@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-478
 title: Tabs组件子组件包含if节点，if条件变更后, tabBar页签联动异常，有没有解决方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs组件子组件包含if节点，if条件变更后, tabBar页签联动异常，有没有解决方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:018fc0eaa16a0116debee5d03c72d138d95a6fad70326372d5684df564cf9d92
 ---
 

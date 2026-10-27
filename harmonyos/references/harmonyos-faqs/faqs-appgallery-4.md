@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用配置图标不符合UX设计规范要求尺寸1024px*1024px该如何解决
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用配置图标不符合UX设计规范要求尺寸1024px*1024px该如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:31+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:884a0d12dc71d49c21089725e8c4c36cd9e814cc02f7395e4e307abefeb7b1fd
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:d2fd6340108114682e7335ef6764b1d1f103091669939fde029015db6c4b6973
 ---
 
 ## 问题现象
@@ -47,6 +47,6 @@ A：背景图要纯色的，但不能是透明的。
 
 Q：配置前景图背景图后，应用图标出现细微的栅格点，是什么原因？如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ddDD9OVXSP6YuK5jztrIYg/zh-cn_image_0000002658793845.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/AqrWZNBARduwAn265EHfMw/zh-cn_image_0000002658793845.png "点击放大")
 
 A：查看前景图后发现透明区域都是栅格点，且图片不是PNG格式，导致透明区域的栅格点都显现出来，整改图片确保透明区域100%透明度，图片格式为PNG后，可解决问题。

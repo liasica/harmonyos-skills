@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-5
 title: C++代码如何配置trace打点数据
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > C++代码如何配置trace打点数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
+scraped_at: 2026-10-28T07:46:40+08:00
 doc_updated_at: 2026-07-24
-content_hash: sha256:d93ecad3b77ab928245b63f6141498c926b8db9836df6d03b9d5b4bb42e08568
+content_hash: sha256:c253fc51dd2056555dd0c2f22774ae5f4883334f8c576295ba7ed58ddef3a2b7
 ---
 
 ## 问题现象
@@ -29,16 +29,16 @@ OH\_HiTrace\_StartAsyncTraceEx标记一个异步跟踪耗时任务的开始。�
 
 * OH\_HiTrace\_StartTraceEx和OH\_HiTrace\_FinishTraceEx配套使用，要用cpu insight才能看到trace信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/NTx7vmLAT4iCwDFQ9EFq1A/zh-cn_image_0000002677871739.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/2X-Qyp1zTP2lP_PSmEu6Kg/zh-cn_image_0000002677871739.png "点击放大")
 * OH\_HiTrace\_StartAsyncTraceEx和OH\_HiTrace\_FinishAsyncTraceEx配套使用，Time insight和cpu insight都可以看到trace信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/4bC_gXSwSuq5nNT77pHCIg/zh-cn_image_0000002677872197.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/y9iCQ5-7StivPmm4_D8zZw/zh-cn_image_0000002677872197.png "点击放大")
 * 如果是配合ArkTS/HarmonyOS排查函数耗时，用OH\_HiTrace\_StartAsyncTraceEx和OH\_HiTrace\_FinishAsyncTraceEx进行打点，然后使用Profiler的Time insight模板就可以看到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/BMotM155TVCld1vKGc_ZVw/zh-cn_image_0000002647792546.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/wkG7qkhKRfuEiK3SjyFz5g/zh-cn_image_0000002647792546.png "点击放大")
 * 运行hitrace打点，要在这里添加libhitrace\_ndk.z.so。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/R-5SXBzlT2yFRA7HTPss_g/zh-cn_image_0000002647792624.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/ZD6vf8NYTzekAobz2Dqfcw/zh-cn_image_0000002647792624.png "点击放大")
 
 ## 常见FAQ
 

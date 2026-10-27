@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-993
 title: 如何实现速度均匀的多边形伸缩动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现速度均匀的多边形伸缩动画
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:1abe7505aa1c490be9cc89dc3aefab815aac2bbacf83360ef08600532c00089b
+content_hash: sha256:8cc92e99d17711bd78f69ce64935730d18873f1c02e7d8fadb0e4c53dbeb3ad4
 ---
 
 ## 问题现象
@@ -139,7 +139,7 @@ export struct WidgetsProgress {
 
 演示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/05LSC0wxRD6jwWWGbAaS5A/zh-cn_image_0000002658921035.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/rNfT96OpQAaCMRsIW2ATjA/zh-cn_image_0000002658921035.png "点击放大")
 
 ## 背景知识
 

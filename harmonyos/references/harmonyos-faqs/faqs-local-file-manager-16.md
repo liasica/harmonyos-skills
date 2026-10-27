@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何根据fd对应的mode来判断是否有对应的操作权限
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何根据fd对应的mode来判断是否有对应的操作权限
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a957a1b44fc7f2d6cb70ed792cbd00982adbefa751f0dcb8d1e2bfeb6fc348d0
 ---
 

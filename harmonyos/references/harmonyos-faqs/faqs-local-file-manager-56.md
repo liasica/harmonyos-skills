@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 文件操作API的常见参数类型转换以及场景有哪些
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 文件操作API的常见参数类型转换以及场景有哪些
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:13f84c84e9447167207872b36005f8b9921383e4891b8cf4f57acebeb072bd52
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c6fbb2aa3be600fbdd10ad921642a40c693f43411ce21adc836d284835dccbe4
 ---
 
 ## 问题现象
@@ -20,14 +20,14 @@ content_hash: sha256:13f84c84e9447167207872b36005f8b9921383e4891b8cf4f57acebeb07
 
   对于每个应用，系统会在内部存储空间映射出一个专属的“应用沙箱目录”，它是“应用文件目录”与一部分系统文件（应用运行必需的少量系统文件）所在的目录组成的集合。应用文件目录结构图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/c6c8zz8yQ3GsBRAA7Bx_2g/zh-cn_image_0000002659258325.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/2YpbEmzMTt-N8frl1e-EAw/zh-cn_image_0000002659258325.png "点击放大")
 
   禁止直接使用上图中四级目录之前的目录名组成的路径字符串，否则可能导致后续应用版本因应用文件路径变化导致不兼容问题。正确的做法应通过上下文Context属性获取应用文件路径，包括但不限于上图中绿色背景的路径。
 * 待处理文件的文件描述符（即fd标识）。
 
   ArkTS中系统对象File的属性，File对象的属性见以下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Y75E_nhkRWajMgs0x7T-wg/zh-cn_image_0000002628899106.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/cDJpep9mQQSiczEOPUOh5A/zh-cn_image_0000002628899106.png)
 * 待处理文件uri。
 
   [uri](../harmonyos-guides/user-file-uri-intro.md)（Uniform Resource Identifier）即文件统一资源标志符，是指向资源的字符串标识。

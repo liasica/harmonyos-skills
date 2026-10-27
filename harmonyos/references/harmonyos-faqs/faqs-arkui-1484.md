@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1484
 title: 防截屏功能实现及判断窗口是否允许截屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 防截屏功能实现及判断窗口是否允许截屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a8bdab8079d9f5973cb9896bb256c7c01fb65366d49c6bdb7bb28829af30d257
 ---
 

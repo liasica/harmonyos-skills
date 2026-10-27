@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-146
 title: 如何获取图片的宽高
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何获取图片的宽高
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:347a8c8745aa5b4aabff1b281e280ff730c676bf62d4f3dd7fc013846f227a6e
 ---
 

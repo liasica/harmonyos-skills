@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-921
 title: 如何使子元素高度超出父元素限制且不影响其他布局
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何使子元素高度超出父元素限制且不影响其他布局
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:708f175fae7c8a0a724659b0de91219c0dbad3c5b4b6127fc3d58510bb1bdf26
+content_hash: sha256:cc365b7c0126a653ff51fb4f584686158d04a99d42aa8204fbf37d5cbd6444f5
 ---
 
 ## 问题现象
@@ -19,7 +19,7 @@ content_hash: sha256:708f175fae7c8a0a724659b0de91219c0dbad3c5b4b6127fc3d58510bb1
 
 示意图如下，下图中的图集描述需要点击向上展开，并且遮盖上方元素而不是把上方布局压缩：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/1WCS5Q-kReWryddHrve4mg/zh-cn_image_0000002658799559.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/FSrlFLs4RFGUye33Ik31zg/zh-cn_image_0000002658799559.png "点击放大")
 
 ## 效果预览
 

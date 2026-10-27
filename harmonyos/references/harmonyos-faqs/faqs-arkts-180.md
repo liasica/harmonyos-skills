@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-180
 title: String的静态方法详解
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > String的静态方法详解
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:31+08:00
-doc_updated_at: 2026-08-05
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e96415d3d9f5960aca728aac20d0b0bb453ecac994d45bdc024e18d9924f86f2
 ---
 

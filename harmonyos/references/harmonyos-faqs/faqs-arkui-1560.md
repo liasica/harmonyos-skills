@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1560
 title: 应用启动后为横屏展示，发生页面跳转后转为竖屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 应用启动后为横屏展示，发生页面跳转后转为竖屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a2561d8b2b7a11547d58f5ed5cb8735c3ebe40e8a97af2b3847eb431d40fa98d
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-61
 title: 传入自定义类型对象到Native侧时，index.d.ts文件如何声明
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 传入自定义类型对象到Native侧时，index.d.ts文件如何声明
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:580c4a6719d61b365833768c487ba038968faa1fa2f211858000f2121992837c
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: H5页面中的图片、视频加载缓慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > H5页面中的图片、视频加载缓慢
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:16e6b3292812ca02daf23a8496a2af2a54f7deb504b4077996b0b14259bf3e49
+content_hash: sha256:57d9b8edb6fedc333ef6080c11f5cce3091cfbf4962bd4e97258c93dad531f4e
 ---
 
 ## 问题现象
@@ -18,7 +18,7 @@ content_hash: sha256:16e6b3292812ca02daf23a8496a2af2a54f7deb504b4077996b0b14259b
 * [图片资源加载优化](../best-practices/bpta-texture-compression-improve-performance.md)：在应用开发中，当图片资源数量或大小超过特定阈值时，由于图片资源的格式需要通过CPU解压缩为纹理格式才能直接被GPU读取，将增加CPU的处理时间，导致图片加载延迟，此时应采用图片资源加载优化方案优化图片资源的处理。
 * ArkUI Inspector：DevEco Studio提供的[布局分析](../harmonyos-guides/ide-arkui-inspector.md)工具，开发者可以借助它预览真机或模拟器中的UI效果，快速定位布局层级问题，也可以观察组件属性、不同组件之间的关系等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/TbTjqBikQQGfgtK_RNnO_g/zh-cn_image_0000002628395078.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/817jcgSGTl6r5peS1Vbh0w/zh-cn_image_0000002628395078.png "点击放大")
 
 * [ArkWeb分析](../harmonyos-guides/ide-profiler-arkweb.md)：DevEco Profiler提供的ArkWeb加载和丢帧等问题分析模板，可以结合ArkWeb执行流程的关键Trace点来定位问题发生的阶段。如果问题发生在渲染阶段，可以结合H:RosenWeb数据，线程运行状态以及帧渲染流程打点数据，进一步分析丢帧问题。
 
@@ -43,7 +43,7 @@ content_hash: sha256:16e6b3292812ca02daf23a8496a2af2a54f7deb504b4077996b0b14259b
 
   不同于HarmonyOS ArkUI页面，Web页面的所有信息均是通过URL链接获取，在本地解析成DOM结构后渲染为适配当前设备屏幕比例、可操控的页面。全流程分为三大部分：浏览器控制流程，资源下载流程，渲染送显流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/i5hdUGHfTR-I-ZSWZcPNqg/zh-cn_image_0000002658914299.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/dKEsjl4yTpq0gkN8hz1_cw/zh-cn_image_0000002658914299.png "点击放大")
   + 浏览器控制流程主要负责处理用户输入、创建Web组件、管控资源下载流程和渲染送显流程：
     1. 接收并处理用户输入：
 
@@ -59,7 +59,7 @@ content_hash: sha256:16e6b3292812ca02daf23a8496a2af2a54f7deb504b4077996b0b14259b
        在渲染进程完成后，检查各进程状态并释放相应资源，关闭本次加载。
   + 资源下载流程：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/BSX9dQJZQ4qQg8sfjVXu2Q/zh-cn_image_0000002658794353.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/RZ-34-QYTjmhPQBCLdk4ZQ/zh-cn_image_0000002658794353.png "点击放大")
     1. 启动请求，创建URLRequest：
 
        网页加载管理器URLLoader将初始化一个含有当前网络参数的URLRequest，它将驱动一次完整的网络请求任务。
@@ -97,11 +97,11 @@ content_hash: sha256:16e6b3292812ca02daf23a8496a2af2a54f7deb504b4077996b0b14259b
 
 1. 使用Ark Inspector查看应用布局，该页面布局为Web页面。在右侧搜索框输入content确认该网页地址。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/SCK24p7WSSK2mDVuvMnKew/zh-cn_image_0000002628554986.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/j8YGzRy9QfaRsGuQ4e3iUw/zh-cn_image_0000002628554986.png "点击放大")
 
    在浏览器中输入该网页地址，然后打开网络(Ctrl+U)，可以看到图片/视频资源地址为"https://xxx"。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/M1ft7_1lQpCGdznXwTSZGA/zh-cn_image_0000002628395092.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/7ZfihUkKSTG_Tqmd_qLIWQ/zh-cn_image_0000002628395092.png "点击放大")
 2. 使用DevEco Studio Profiler的ArkWeb分析抓取该图片/视频资源加载过程的Trace，再根据加载流程中的Trace关键字表拆分该图片/视频资源加载过程，可找到其加载过程及耗时。
 
    以图片举例，具体步骤如下所示（对应图中红点标识）：
@@ -112,21 +112,21 @@ content_hash: sha256:16e6b3292812ca02daf23a8496a2af2a54f7deb504b4077996b0b14259b
 
    最后放大该时间轴比例，直至可以清晰显示该线程的运行时长及其具体运行时间点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/n7Ks7lEqTe2aogNngF6zew/zh-cn_image_0000002658914313.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/cbrNh-BlRwGXk3pkrPxGbw/zh-cn_image_0000002658914313.png "点击放大")
 
    重复以上步骤，依次搜索“应用收到点击事件”、“发起请求”、“开始接收资源下载数据”、“资源下载完成”、“绘制”、“渲染完成”的Trace关键字，获知以下加载流程全景图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/b4OUHHN_QW2VZoct7XQpAQ/zh-cn_image_0000002658794361.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/RMBLtl_dQoe3mSH5qek5uQ/zh-cn_image_0000002658794361.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/zIs0GhX7Q9eyApEx8QvJuQ/zh-cn_image_0000002628554996.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Z3I5DehsSb-qjPCBxO8NtA/zh-cn_image_0000002628554996.png "点击放大")
 
    选中A点时间坐标，拖向B点的时间坐标，即可标记该时间段，并显示其时长。依次标记所需时间段，可知：总时长2s，应用收到点击事件到开始接收响应体耗时137ms，下载全程耗时1.5s，渲染流程单独耗时337ms。由此可知，总时长过长的主要原因是过长的下载耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/4eZ-KdXbQvCaNQds4PxrOw/zh-cn_image_0000002628395096.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/7LjemSL8Tceg9epU6FmAYw/zh-cn_image_0000002628395096.png "点击放大")
 
    复制URL到浏览器，可打开下载该图片资源，发现该图片大小为3.2M，明显超出该场景表现所需的图片资源大小，在未经充分加载优化的情况下会导致加载耗时过长。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/WgVhj-pNSfCS1NPA0Fx39Q/zh-cn_image_0000002658914315.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/L7rEuBjoTRqdLGg7ajZdXg/zh-cn_image_0000002658914315.png "点击放大")
 
 ## 分析结论
 

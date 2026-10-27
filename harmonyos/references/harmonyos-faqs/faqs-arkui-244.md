@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-244
 title: 当子组件触发触摸事件时，如果父组件也设置了触摸事件，如何解决父组件同时被触发的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 当子组件触发触摸事件时，如果父组件也设置了触摸事件，如何解决父组件同时被触发的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6a6c0123c965d610bdeea9c6221fddba677bcef41b1920b04c3b98818e61f8ba
 ---
 

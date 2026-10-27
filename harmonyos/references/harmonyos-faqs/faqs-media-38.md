@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-38
 title: AVPlayer播放直播流报错，错误码801，不支持loop
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > AVPlayer播放直播流报错，错误码801，不支持loop
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
+scraped_at: 2026-10-28T07:48:32+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:15478e741095094aef3b32f02ffe27a08635fa23a6af7a72cd03c0392c46172c
+content_hash: sha256:860d14eaaf41b24b0e19990f98afc650e8bf6ae04885d5ac3c6251722f723856
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:15478e741095094aef3b32f02ffe27a08635fa23a6af7a72cd03c0392c4
 
 使用AVPlayer播放直播流，错误日志信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/yf7yXXMgTuuq_mW74j81Yg/zh-cn_image_0000002628392786.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/jL3c6rVMQdSZNHfZhgmung/zh-cn_image_0000002628392786.png "点击放大")
 
 根据错误日志信息可以知道，当前媒体流为直播流，直播流不支持循环播放。
 

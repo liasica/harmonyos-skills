@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1047
 title: TextInput如何动态设置下划线颜色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput如何动态设置下划线颜色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:efa867c04166850a0aa023f08281f1e08ecffa6af45233f28f9902001f652d46
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:50094eb61e94ff4d6df6afe298c9772c9c9517a60aa6bc4c80506dc143f2dab5
 ---
 
 ## 问题现象
@@ -67,4 +67,4 @@ struct TextInputExample {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/FXxgLN3bQF6QE5O2UxH0cw/zh-cn_image_0000002658804821.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/6QbjhK7nRD6X5lXb2UcUyg/zh-cn_image_0000002658804821.png "点击放大")

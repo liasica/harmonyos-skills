@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: 如何实现BLE蓝牙快速回连
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 如何实现BLE蓝牙快速回连
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:16+08:00
-doc_updated_at: 2026-08-19
+scraped_at: 2026-10-28T07:48:18+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8c669db2df68c68e243c2a8d363a8b43333c8ea0b7c091b06f2ef5f6b04e3e48
 ---
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: JDK版本不匹配导致编译失败
 breadcrumb: FAQ > DevEco Studio > 编译构建 > JDK版本不匹配导致编译失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:4645e8be9e44008615373c66c969d48542bbfd6d12235f5999012bdd315f92ed
+scraped_at: 2026-10-28T07:48:52+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:edd2b6c6eef2e6d0e99a8eab4676fd0a2ef8b4cf4f9c28a0a3d8fc8a7c1cd8a3
 ---
 
 **问题现象**
 
 通过命令行方式构建HarmonyOS应用或元服务过程中出现构建失败，现象如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/DSQzOzfASQqTNj1sDPuOkQ/zh-cn_image_0000002624478482.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Bh3YHXExTVa1R6PWwDJKEQ/zh-cn_image_0000002624478482.png)
 
 **解决措施**
 

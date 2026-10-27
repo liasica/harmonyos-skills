@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1128
 title: Text组件如何实现文字垂直方向显示效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件如何实现文字垂直方向显示效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8be22e56606662d842b8b103f17210d2ed927035e00564c85d9aa16c7ab21034
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:124348ecaf1266f18a74f3797e88918248d8b006cbd01dfae9cbe5619e16cb8e
 ---
 
 ## 问题现象
@@ -55,4 +55,4 @@ content_hash: sha256:8be22e56606662d842b8b103f17210d2ed927035e00564c85d9aa16c7ab
   ```
 * 方案二：通过设置Text组件宽度width与字号一致的方式实现，可参考[如何实现文本竖向排列](faqs-arkui-91.md)。效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/x49-xND9QSa7ohmsIVdfSQ/zh-cn_image_0000002628569422.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/NYgFQO5sRt2KFERssN7Usg/zh-cn_image_0000002628569422.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-324
 title: WaterFlow、Grid、List这些容器的使用区别是什么
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > WaterFlow、Grid、List这些容器的使用区别是什么
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3b8fdfd2228d6cf6e37894c3fe19c07029416ede7f67f6d7d8b032559a9f2f6f
 ---
 

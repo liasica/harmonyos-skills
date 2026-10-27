@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 下拉页面列表刷新卡顿，延迟一段时间后突然回跳
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 下拉页面列表刷新卡顿，延迟一段时间后突然回跳
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:324fd22d8bea3bc13bb37710fbfba3efeace7c7c2e018331a00502bd721b4678
+content_hash: sha256:b22397edaa5b6bc49b1ac156ccaca0f2aac8f5eb756affbbdef7d4f975d01b1f
 ---
 
 ## 问题现象
@@ -32,10 +32,10 @@ content_hash: sha256:324fd22d8bea3bc13bb37710fbfba3efeace7c7c2e018331a00502bd721
 
 1. 使用DevEco Profiler Frame分析工具抓取该过程的Trace信息，通过Trace关键字H:touchEventDispatch和H:APP\_LIST\_FLING找到下拉列表后手指离开屏幕的时间点，通过Trace关键字H:APP\_SWIPER\_FLING找到列表开始上移的时间点，从下图中可看到两者时间间隔2.9s，同时可看到在该过程应用接收Vsync信号处理时耗时较长，导致长时间未渲染绘制，因此出现卡顿延迟的现象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/KMfQb_fzSHC0q8A55i6zhg/zh-cn_image_0000002658794551.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/A_f392b_SfSAxbbmn21HIA/zh-cn_image_0000002658794551.png "点击放大")
 2. 查看应用接收Vsync信号处理部分的Trace信息，发现应用主线程有下载多张网络图片，总耗时达到2.5s左右，推测应用采用了同步加载方式，导致界面刷新时耗时较长。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/eWyyZw00T9eUVffaIjB4Xg/zh-cn_image_0000002628555188.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Ig0MBEMIQZuZniU7vTpN4Q/zh-cn_image_0000002628555188.png "点击放大")
 3. 使用ArkUI Inspector抓取页面组件树，查看Image组件的syncLoad参数值为true，确认是同步加载方式。
 
 ## 分析结论

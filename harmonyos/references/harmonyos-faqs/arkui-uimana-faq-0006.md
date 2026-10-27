@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI状态管理与组件通信常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI状态管理与组件通信常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:10+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:683825beec8b8aee05d7350f48e61ed5cd867868d997fb6d8d88de25d1bf2061
+scraped_at: 2026-10-28T07:47:32+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7a5e38123e0fb261df86eda98cffdbbb27846c1e6446dbc9e4290ee6396b4b40
 ---
 
 **Q：PersistentStorage本身不支持对象或者数组类型的存储，如何处理数据才能满足存储的条件，实现对象和数组类型的存储？**
@@ -690,7 +690,7 @@ content_hash: sha256:683825beec8b8aee05d7350f48e61ed5cd867868d997fb6d8d88de25d1b
 
    方案一和方案二实现效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/WHCUnJSAQ6WObWlVFU4DFQ/zh-cn_image_0000002795290405.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/qmvjSoKETyu6OLdHq2frHw/zh-cn_image_0000002795290405.gif "点击放大")
 
 **Q：除了状态管理是否还有其它实现页面间数据共享的方式？**
 
@@ -706,7 +706,7 @@ content_hash: sha256:683825beec8b8aee05d7350f48e61ed5cd867868d997fb6d8d88de25d1b
 2. 在子组件中定义实际方法，并赋值给该Controller实例，将其内部方法重载。
 3. 父组件再次调用该实例内的方法时，可以实现调用子组件重载后的新方法。
 
-父子组件间的数据同步与共享可参考官网常见问题：[如何实现组件数据双向同步](../architecture-guides/architecture-v1-3_2-ts_12-0000002337739080.md)，以@Link为例（状态管理V2版本使用[@Param](../harmonyos-guides/arkts-new-param.md)代替@Link），示例代码如下：
+以@Link为例（状态管理V2版本使用[@Param](../harmonyos-guides/arkts-new-param.md)代替@Link），示例代码如下：
 
 ```ts
 @Entry
@@ -772,7 +772,7 @@ struct ChildComponent {
 
 实现效果如下：点击父组件中的Button时，触发了子组件的弹窗效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/WSvt4tmaSti-7BiKJL7VWw/zh-cn_image_0000002795289405.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/0M-gPBKMRayc0bMj3e_vNQ/zh-cn_image_0000002795289405.png "点击放大")
 
 方案二：父组件通知子组件调用子组件函数。
 
@@ -1288,4 +1288,4 @@ struct SecondPage {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/hxuEaiozRCWMuJx1LeABXA/zh-cn_image_0000002766052340.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/w1khMdSRTzmRwgDqtvMNqA/zh-cn_image_0000002766052340.png "点击放大")

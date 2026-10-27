@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: PhotoPicker如何根据用户首次选择的文件类型控制仅选择图片或视频
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > PhotoPicker如何根据用户首次选择的文件类型控制仅选择图片或视频
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f0d7946240179a9b4a6628eeb8cf25013630823db7b1876198869d7a6b44834f
 ---
 

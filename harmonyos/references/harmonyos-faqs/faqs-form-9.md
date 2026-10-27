@@ -3,25 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-9
 title: 卡片组件的圆角显示异常
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 卡片组件的圆角显示异常
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:eca1717b2ba6c81bb9fdcef87c01bef1d0c599584e74c76a6ce8b7d9932bae50
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:978988509bb79de9eb2424f64793902424f98f7b63af36b8344336fa455a2a28
 ---
 
 ## 问题现象
 
 在桌面添加应用的卡片组件，卡片四角有细微的白色边缘。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/uH0VCJV-SH6B38WkvhJwhA/zh-cn_image_0000002628631576.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/sLWSFcxiTpukLAtLuo01cQ/zh-cn_image_0000002628631576.png "点击放大")
 
 ## 背景知识
 
 * 使用图片资源时，应考虑图片的长宽和像素密度，卡片尺寸可参考[尺寸与基础参数](../design-guides/system-features-service-widget-0000002087671904.md#section250mcpsimp)，如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ViJh1OXbSfmsHnGWyym62Q/zh-cn_image_0000002658870853.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/fG7FlM0LTj60Q-sJRBtqGA/zh-cn_image_0000002658870853.png "点击放大")
 * 为了避免对内容造成影响，可以在设计工具里使用1x2、2x2宫格18vp，2x4、4x4宫格22vp圆角预览效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/svxRMpplQrOV-71OnWOSeA/zh-cn_image_0000002628791478.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/MX_7-2zmRFiMo2amkz4zqg/zh-cn_image_0000002628791478.png "点击放大")
 
 ## 问题定位
 
@@ -430,4 +430,4 @@ src/main/module.json5：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/N_q6pgueQ4ixNOfHkt2r7A/zh-cn_image_0000002658990793.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/9PL1u7yMSoeu2tj9yuckAA/zh-cn_image_0000002658990793.png "点击放大")

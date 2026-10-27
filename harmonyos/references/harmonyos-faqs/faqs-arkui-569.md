@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-569
 title: 如何解决Text组件含有多种字符时两端对齐间距大小不一致问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决Text组件含有多种字符时两端对齐间距大小不一致问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0e146de52b3ea97bf24bd385749b014dd35bb8012d03898830fa757cc70f8d01
+content_hash: sha256:997c5a43e28c01e5ca61b18dc42fcda095d2dce5c81f8869b826c6d323dd001e
 ---
 
 ## 问题现象
 
 使用TextAlign.Justify或TextAlign.Start均未实现两端对齐的效果，不同字符间距大小不一。如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/EEhmsB2DSU29i1cvA2OOhg/zh-cn_image_0000002658911365.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/CO0KkSAyQZKfLD_oiiGrVQ/zh-cn_image_0000002658911365.png)
 
 ## 背景知识
 

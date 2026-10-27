@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-140
 title: Web组件频繁改变高度卡顿
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件频繁改变高度卡顿
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:10+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5ffb4311e5647419242b7b3d8450468bc477b4f25cba296c888a46c0fd34ca43
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 如何进行视频压缩
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 如何进行视频压缩
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d2352ab26938299fc5febce980ca9fce992b1db3af627fc79ec288450a991640
 ---
 

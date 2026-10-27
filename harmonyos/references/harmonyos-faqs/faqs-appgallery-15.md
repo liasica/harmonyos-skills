@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 集成三方sdk是否必须在隐私政策中标注
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 集成三方sdk是否必须在隐私政策中标注
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b6a8011792075a99c8a5078ce43243c7f7705f120a1def5006f67062310fd180
 ---
 

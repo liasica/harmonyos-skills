@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-574
 title: onTouch全局监听滑动事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > onTouch全局监听滑动事件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b2e0124d6702792e067be6d638535499552500914baca0c094e8adeb1b934556
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:01d79c15fb20e7acce479ae83fe734cd38b2e18c43c119952b8d2de23d590d2c
 ---
 
 ## 问题现象
 
 如何全局监听滑动事件，控制紫色子组件的显示隐藏，实现下图的功能？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Jnm9yZEJSZqz-ev9pSYL2w/zh-cn_image_0000002658911371.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/NzQyJzUTQNORhCLByq8oSA/zh-cn_image_0000002658911371.png "点击放大")
 
 ## 背景知识
 
@@ -236,4 +236,4 @@ content_hash: sha256:b2e0124d6702792e067be6d638535499552500914baca0c094e8adeb1b9
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1XcF4SbMT8CC366hlnYlfA/zh-cn_image_0000002628392154.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/1xX-UYNXTKCk5KXWarbXBA/zh-cn_image_0000002628392154.png "点击放大")

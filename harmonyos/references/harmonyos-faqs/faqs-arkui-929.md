@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-929
 title: 如何解决自定义组件设置margin后，点击下层区域无响应的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决自定义组件设置margin后，点击下层区域无响应的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:368a952b16c12a8abf9a29c852693688890e38194017334bd0ff70d5af61799b
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9c5fbf953845cc7455cc2ada89cfb83716598321b1f854a5e93554ccf665b20f
 ---
 
 ## 问题现象
 
 在如下图所示的Stack组件中，有个Row组件A，以及堆叠顺序在A上方的自定义组件IconView（设置了IconView的zIndex(1)），IconView的组件区域为Row组件B，C区域是通过margin形成的布局边界。点击C区域，不会响应A组件的点击事件。如何使得布局边界C也能响应A组件的点击事件？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/noq67_9vTQSXoYI5R9Axpg/zh-cn_image_0000002658919545.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/PJkdCZnoSoC1S-9zIdpTzw/zh-cn_image_0000002658919545.png "点击放大")
 
 示例代码如下：
 

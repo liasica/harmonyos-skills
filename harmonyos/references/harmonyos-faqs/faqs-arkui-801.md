@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-801
 title: RichEditor限制最大输入以及粘贴的字符数
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor限制最大输入以及粘贴的字符数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:294eb0be3f9d6f36ffc303ff6c1a127b208d35e3c76eceb71895623f8cb31b59
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何给图片添加底色
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何给图片添加底色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
+scraped_at: 2026-10-28T07:48:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:5e27291c4ff8a7de92a007baf315029ce30e7f6b462698d591942d19c269a73d
+content_hash: sha256:f3f9f19b6dc90343a0db8f43a38ac5b61640ecdf0165c253e049db81d1ca8dcc
 ---
 
 ## 问题现象
@@ -157,7 +157,7 @@ content_hash: sha256:5e27291c4ff8a7de92a007baf315029ce30e7f6b462698d591942d19c26
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/C1YHY5GhSAmWWfLCwHV6xA/zh-cn_image_0000002628553242.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/j7eL09IzTrGClu6QZD5KXQ/zh-cn_image_0000002628553242.png "点击放大")
 
   也可改为：
 
@@ -286,7 +286,7 @@ content_hash: sha256:5e27291c4ff8a7de92a007baf315029ce30e7f6b462698d591942d19c26
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/7vKkTtMfT2iKttY3IzqaTw/zh-cn_image_0000002658912557.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Z2NRh-DaSMWW36vNxfcW1A/zh-cn_image_0000002658912557.png "点击放大")
 * **方案二**：使用createPixelMap实现纯色背景。
   + 对一张蒙版图片创建纯色背景：
 
@@ -437,7 +437,7 @@ content_hash: sha256:5e27291c4ff8a7de92a007baf315029ce30e7f6b462698d591942d19c26
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/vAIQFLT5S5e42NYK-EJTPg/zh-cn_image_0000002658792619.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/lQssgI0ZQLGNS0NuorFqEA/zh-cn_image_0000002658792619.png "点击放大")
   + 对蒙版图片多次创建纯色背景：
 
     为避免批量处理图片导致线程阻塞，可采用异步接口[createPixelMap](../harmonyos-references/arkts-apis-image-f.md#imagecreatepixelmap8)或多线程[TaskPool](../harmonyos-guides/taskpool-introduction.md)。
@@ -789,7 +789,7 @@ content_hash: sha256:5e27291c4ff8a7de92a007baf315029ce30e7f6b462698d591942d19c26
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/3lQwnlKeSy6r6S59ptDxhQ/zh-cn_image_0000002628393360.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/C_JU2rUfRfepZRGNauAzJQ/zh-cn_image_0000002628393360.png "点击放大")
 * **方案三**：使用readPixelsToBufferSync遍历像素中的透明像素实现纯色背景。
 
   通过接口[readPixelsToBufferSync](../harmonyos-references/arkts-apis-image-pixelmap.md#readpixelstobuffersync12)访问PixelMap的像素数据，对透明部分的像素点添加为底色。
@@ -955,7 +955,7 @@ content_hash: sha256:5e27291c4ff8a7de92a007baf315029ce30e7f6b462698d591942d19c26
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/4DUuBEHhSVCJu-2gsqiTEQ/zh-cn_image_0000002628553246.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/flN7P-ErQgmX3IkJuzH5ig/zh-cn_image_0000002628553246.png "点击放大")
 
 **场景二**：为图片创建渐变色背景。
 
@@ -1079,7 +1079,7 @@ content_hash: sha256:5e27291c4ff8a7de92a007baf315029ce30e7f6b462698d591942d19c26
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/C4OJTXJcQW--sKn1tEuHqg/zh-cn_image_0000002658912559.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/woOXai2hRY-X23go0BRPeQ/zh-cn_image_0000002658912559.png "点击放大")
 
 ## 总结
 

@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1169
 title: 如何实现Tab与List联动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Tab与List联动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d47e71ebb6ef4d17efa0f95a3dafd00e7420e4745f73c58ccbaff58ceb423a34
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a456d6e43f8f5fd224298d9355e96fff692a82ee17b274b5234ade1366388b0f
 ---
 
 ## 问题现象
 
 如何实现当List的ListItem刚到达Tab底部时Tab页签切换？即如下图所示，当b线到达a线处时，Tab的页签切换至Title3页。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Z39Y44YJThG-IK4yFGa4Ig/zh-cn_image_0000002628569780.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/H2jH5UVMS3eDt26yAxwJyA/zh-cn_image_0000002628569780.png "点击放大")
 
 因为Tab是堆叠在List上方的，Tab与List组件上方有显示区域重叠部分。如果使用List的onScrollIndex方法，当b到达a时，获取的index是被Tab遮挡的List的ListItem索引，而非b所在的ListItem，所以onScrollIndex无法实现需求。是否有其他方法？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/7qt7IXY_RMStM5uGoI5h8w/zh-cn_image_0000002628409876.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/pcsYZhpKRw6Cb1kXo4dUcg/zh-cn_image_0000002628409876.gif "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-23
 title: 如何实现前置镜头的录像镜像功能
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何实现前置镜头的录像镜像功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c01fc0074028e57bbd05c27dec47dc9bd776d0f04f66e8cbefd53e3b498e15e9
 ---
 

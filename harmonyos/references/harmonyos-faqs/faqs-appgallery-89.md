@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: p12和csr文件丢失后如何找回并更新应用
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > p12和csr文件丢失后如何找回并更新应用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b62fdf3421bac5ab7e2b0d58de84bd622cab1fc515fa6a29e2dea4bd6e287d8b
+scraped_at: 2026-10-28T07:48:46+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:929884d3f78028de9cfa88eec09a85da79f90751042857fe301b3ac575d4bc35
 ---
 
 ## 背景知识
@@ -26,7 +26,7 @@ HarmonyOS应用签名需要使用p12文件、cer文件和p7b文件。p7b文件�
 
   1. 在主菜单栏单击Build > Generate Key and CSR，单击Choose Existing选择已有的p12文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/nRd-X3HJQ6iJExd2K_iMDA/zh-cn_image_0000002628554588.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/wNRwU9n1RRGJc8YyYyJUng/zh-cn_image_0000002628554588.png)
   2. 输入Key store Password和Alias后，即可重新生成csr文件。
 * **场景2：p12文件和csr文件存在，但Password或Alias丢失；**
 
@@ -38,10 +38,10 @@ HarmonyOS应用签名需要使用p12文件、cer文件和p7b文件。p7b文件�
 ## 总结
 
 1. 只要p12文件和对应的Alias，Password文件存在，都是可以重新生成csr文件，cer文件，p7b文件的，因此需要妥善保管p12文件和对应的Alias，Password文件。
-2. 如果不慎丢失p12文件，只要应用的appid不发生变化，即AGC上未进行应用删除操作，也可以使用新的p12文件签名打包，更新应用时不会因为p12文件不一致导致更新失败。
+2. 如果不慎丢失p12文件，只要应用的appid不发生变化，即HarmonyOS 开发者中心上未进行应用删除操作，也可以使用新的p12文件签名打包，更新应用时不会因为p12文件不一致导致更新失败。
 
 ## 常见FAQ
 
 Q：更换p12文件后是否会影响用户更新版本，需要卸载老版本重新安装新版本？
 
-A：只要应用在AGC的appid没发生变化，即没有进行过删除应用的操作，即使更换p12也不影响应用版本更新。
+A：只要应用在HarmonyOS 开发者中心的appid没发生变化，即没有进行过删除应用的操作，即使更换p12也不影响应用版本更新。

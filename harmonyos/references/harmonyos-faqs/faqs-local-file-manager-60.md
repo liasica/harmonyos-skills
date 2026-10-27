@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 文件夹下所有文件拷贝至另一个文件夹
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 文件夹下所有文件拷贝至另一个文件夹
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b335c65cf803eaa1f5af9beb70057965de1e05140927d6f0c1714f6a218c3dc4
 ---
 

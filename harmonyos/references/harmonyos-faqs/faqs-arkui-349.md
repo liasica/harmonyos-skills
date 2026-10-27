@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-349
 title: 如何修改bindPopup绑定的弹窗圆角大小和箭头颜色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何修改bindPopup绑定的弹窗圆角大小和箭头颜色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:44da731dd98004de3a80a316c5645444e1fb370299d2ffa33406cb85604b2b0b
 ---
 

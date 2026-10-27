@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-calendar-1
 title: 系统日历无法同步应用的日程信息
 breadcrumb: FAQ > 应用服务开发 > 日历服务（Calendar Kit） > 系统日历无法同步应用的日程信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:40+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:14c94992b1d1cb398a437f2101b3094bfabec8ceae8c4ea7fbe62def01bb3bd4
 ---
 

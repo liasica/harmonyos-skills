@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: ArkUI-List组件滑动与展示问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > ArkUI-List组件滑动与展示问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:33+08:00
+scraped_at: 2026-10-28T07:47:01+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:011af641f38d09056170d9614d5ade2b59a969f7d44fe7f76d82d468fcd54853
+content_hash: sha256:4b378ed8e7ffff41d0516b6b5247f5abe131ca56a63081b97783f73236c97021
 ---
 
 ## List展示不全
@@ -50,18 +50,18 @@ struct ListDisplay {
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/M1t3OSNnRF6Z-w9GkD3lAg/zh-cn_image_0000002764664542.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/g68rg86BSoChyQMYrvV4Ow/zh-cn_image_0000002764664542.png "点击放大")
 
 ### 定位过程
 
 1. 首先观察到List组件未设置高度，根据height属性说明：**height缺省时使用元素自身内容需要的高度**。所以List组件高度为子组件之和200vp\*7。
 2. 之后根据官网List指南的[约束](../harmonyos-guides/arkts-layout-development-create-list.md#约束)得知，当子组件主轴方向总尺寸超过List父组件尺寸时，List主轴方向尺寸适应List的父组件尺寸，而200vp\*7>父组件高度100%，所以List组件高度为屏幕高度，示意图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/YehXB_3QTQGck279EJXk-w/zh-cn_image_0000002794183089.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/OccGlrBsTJmpwGv0wgv4pw/zh-cn_image_0000002794183089.png "点击放大")
 3. 再然后根据layoutWeight布局说明：**不设置layoutWeight属性或者layoutWeight属性生效值为0的元素优先占位**。所以List组件会在剩余空间内占位，导致List组件被下压，下压后List组件就有部分区域会超过当前屏幕高度，所以造成List展示不全现象。
 4. 最后可以利用ArkUI Inspector可以看到List组件超出屏幕范围，超出的距离刚好是上面Text组件占据高度200vp：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/welL1Qs7QGOyi1GwBCocZg/zh-cn_image_0000002794183091.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/BnLmWJ6dTHWVpf1khrr4tw/zh-cn_image_0000002794183091.png "点击放大")
 
 ### 分析结论
 
@@ -310,7 +310,7 @@ struct ListDisplay {
 
   以上方案均可修复List展示不全问题，修正效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/_mMmw6KRTSCFpycfAGnx8g/zh-cn_image_0000002764665048.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/dNpVjhmKSiibXeNmIaxbZg/zh-cn_image_0000002764665048.png "点击放大")
 
 ## 滑动组件出现不规则分隔线
 
@@ -318,11 +318,11 @@ struct ListDisplay {
 
 在滑动组件中，会出现不规则分隔线的情况，例如Grid组件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/MwScicXISMGdLiLEEBtbjA/zh-cn_image_0000002764826882.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/swM3Qs0KSsKoqa-r1kluSA/zh-cn_image_0000002764826882.png)
 
 或者List组件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/vmIvDmbOQvKeEKee6a-1qA/zh-cn_image_0000002764666958.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/CC5AEPMkQWWgx9GrHFCaZg/zh-cn_image_0000002764666958.png "点击放大")
 
 以List列表为例，其中ListItem的height属性交替设置成162lpx以及163lpx，滚动时会出现闪烁的分隔线。问题代码如下：
 
@@ -388,7 +388,7 @@ export struct TestList {
 
   修正效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/jgrHrWbORWuMG-MRog9zuw/zh-cn_image_0000002764827004.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/HDWGe1LdQkqlZK70k31hFQ/zh-cn_image_0000002764827004.png "点击放大")
 
 * **方案二：设置相同的背景颜色。**
 
@@ -439,7 +439,7 @@ export struct TestList {
 
   修复效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/De9AMsEFQGWXsAfaBvGQVA/zh-cn_image_0000002764667102.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/iXSLfFV2QxGPd3-0xF_Zkg/zh-cn_image_0000002764667102.png "点击放大")
 * **方案三：更换lpx单位。**
 
   在使用lpx单位时，由于单位lpx是逻辑像素单位，主要用来确保界面元素在不同屏幕尺寸的设备上保持一致的视觉比例，会导致lpx单位与屏幕的实际物理像素不完全对应，从而无法将渲染组件精确映射到物理像素上。因此当height属性交替设置为162lpx和163lpx时，由于lpx的精度问题，可能导致某些像素被重复渲染或遗漏，从而在滚动时出现闪烁的分隔线。可以采用vp单位替换lpx单位，px、fp单位也可以起到同样的作用。示例代码如下：
@@ -550,7 +550,7 @@ export struct TestList {
 
 滚动条ScrollBar配合List，通过懒加载实现子组件ListItem按需加载。但是滑动ScrollBar时，若持续加载ListItem，ScrollBar组件滑动距离会骤变。问题现象图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/hRU5gJBmTk60106m_F_Bwg/zh-cn_image_0000002764828308.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/mJQic66eRNyQQ-AIZmwRzg/zh-cn_image_0000002764828308.png "点击放大")
 
 问题代码如下：
 
@@ -1027,4 +1027,4 @@ struct ReusableChildComponent {
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/F73Jm0S5TGa0aGHNpoIdmA/zh-cn_image_0000002764829338.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/YoPa_PNqQia5r-wym9YHTg/zh-cn_image_0000002764829338.png "点击放大")

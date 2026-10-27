@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-878
 title: 启动页中的图片宽高比异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 启动页中的图片宽高比异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f2d1fcee9ef534cbe1eea57081f25ed553ad133a2928aeb57d5001c4c55c8e95
+content_hash: sha256:de0a826a7535079cf9a869259a7678f16cc6d68b9aa271e45706098270867e9a
 ---
 
 ## 问题现象
 
 应用启动时，启动页显示的图片显示异常，图片中的字体存在明显的拉伸痕迹，文字整体被压扁了。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/1Q_4q5UOTdmr5BOyBZMTDQ/zh-cn_image_0000002658918839.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_CQMjPBuQT-5zLGt2fKVPg/zh-cn_image_0000002658918839.png "点击放大")
 
 ## 背景知识
 
@@ -26,7 +26,7 @@ content_hash: sha256:f2d1fcee9ef534cbe1eea57081f25ed553ad133a2928aeb57d5001c4c55
 1. 观察应用竖屏冷启动过程，启动页短暂竖屏展示（其中的文字显示异常）后切换为横屏展示（文字显示正常）之后再进入应用首页。
 2. 使用DevEcoTesting的UIViewer工具检查UI结构，启动页中使用了Image组件展示图片。查找原始图片资源，确认其宽高是1920\*1080，适合横屏展示，但此时是竖屏显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/szwrq_P6SUG7F6vWYYrZhA/zh-cn_image_0000002628399624.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/FnrwFTZYT22g5WBh-eIF7w/zh-cn_image_0000002628399624.png "点击放大")
 3. 检查Image组件采用的填充效果。是ImageFit.Fill。
 
    ```screen
@@ -66,7 +66,7 @@ content_hash: sha256:f2d1fcee9ef534cbe1eea57081f25ed553ad133a2928aeb57d5001c4c55
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/xtBYw0RjS--PY3cRHs_jLg/zh-cn_image_0000002658798891.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/NqI7i4kLT7Ge7GvfmA3DoA/zh-cn_image_0000002658798891.png "点击放大")
 * 横屏应用可以配置应用仅支持横屏。在module.json5文件中，该文件的路径是src>main>module.json5，abilities标签下的当前UIAbility（默认是EntryAbility）中，添加orientation配置项，值为auto\_rotation\_landscape\_restricted，可以根据实际需要调整。
 
   ```screen
@@ -112,7 +112,7 @@ content_hash: sha256:f2d1fcee9ef534cbe1eea57081f25ed553ad133a2928aeb57d5001c4c55
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/3VgH3eTnRNCZX12Uu_TiXw/zh-cn_image_0000002628559536.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Tmx0bn42T0SHRdo-hi6i4g/zh-cn_image_0000002628559536.png "点击放大")
 * 将Image组件的填充效果改为保持宽高比缩放，但该方案可能会导致竖屏显示时图片中的文字缩小/放大。
 
   ```screen
@@ -133,4 +133,4 @@ content_hash: sha256:f2d1fcee9ef534cbe1eea57081f25ed553ad133a2928aeb57d5001c4c55
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/lmi6j7xUQ3S9QhtqP6MpnA/zh-cn_image_0000002658918847.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/BVjV3AfuRgyuLBSo0Qv_LQ/zh-cn_image_0000002658918847.png "点击放大")

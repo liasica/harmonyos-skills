@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1615
 title: 任意位置删除字符时光标总会跳转到最后删除字符
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 任意位置删除字符时光标总会跳转到最后删除字符
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:25+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:eca6078f35acbba6b086175eaab04fb15e88060467e8bc9d5637c05a9d1c5f05
 ---
 

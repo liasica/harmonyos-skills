@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 左右滑动页面切换卡顿无动效
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 左右滑动页面切换卡顿无动效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8a12c362378cf7cfb12e61eba5a35c128383a0216e4c56acb6e794f994db388c
+content_hash: sha256:a06d454703178eefffc12beaee1373de305b2af3315c170c3831c5fbe98c83ef
 ---
 
 ## 问题现象
@@ -28,7 +28,7 @@ content_hash: sha256:8a12c362378cf7cfb12e61eba5a35c128383a0216e4c56acb6e794f994d
 
 左右滑动页面切换时卡顿无过渡动效，可先确认采用了什么组件显示页面内容。使用ArkUI Inspector抓取页面布局，如下图可看到Swiper组件，可在右侧属性栏中查看curve和duration属性值确定页面切换的动画曲线和时长，可看到动画曲线为线性动画，而动画时长为50毫秒，可知动画时长过短，造成了卡顿、无动效的现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/6Zas30eiQoyVPRPO2HvIxA/zh-cn_image_0000002628395296.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/DXJ_GpmOQnOvzR06FFI4Yg/zh-cn_image_0000002628395296.png "点击放大")
 
 除了使用ArkUI Inspector工具，可以在日志中搜索Swiper start property animation with|Swiper finish property animation with，查看两个日志打印的时间间隔来确定Swiper组件的切换动画时长。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何解决Canvas画板设置CanvasRenderingContext2D线条样式失败的问题
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何解决Canvas画板设置CanvasRenderingContext2D线条样式失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
+scraped_at: 2026-10-28T07:48:35+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:89451099440613789ba7594e460904a6827df2ca927cc24bc35d80eb11d3720a
+content_hash: sha256:46f5c0f68218c597201fa42cb8e84b207c7d86c6b433dde26db6dd0cf5176887
 ---
 
 ## 问题现象
@@ -115,11 +115,11 @@ export struct CanvasView {
 
 在onReady中打印的日志显示context.width和context.height并未初始化完成三个画板的样式，说明Canvas尺寸尚未确定时已进行绘制设置，所以是初始化时序的问题。前后日志如图：问题日志：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/dWIP9XfjRPObPzL1D6cW1g/zh-cn_image_0000002628553250.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/8FQIXBgvTMGwFoFawtUhlQ/zh-cn_image_0000002628553250.png "点击放大")
 
 修复日志：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/COEJvwH2S_WKBZ-8OuzW-Q/zh-cn_image_0000002658912561.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/sDnfBtc5SuCeljSCK2Vt-Q/zh-cn_image_0000002658912561.png "点击放大")
 
 ## 修改建议
 

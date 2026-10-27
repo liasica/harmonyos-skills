@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-136
 title: Grid组件的scrollBar是否支持自定义
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Grid组件的scrollBar是否支持自定义
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:32e2a1d8e6e70bc31a5a4ae1f95c99b8811d7fef4352f00cefdb8aaa80ecbe44
 ---
 

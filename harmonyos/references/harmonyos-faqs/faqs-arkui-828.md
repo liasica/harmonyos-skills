@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-828
 title: LazyForEach的键值与数据刷新异常问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > LazyForEach的键值与数据刷新异常问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:485725f4acc9c8c059e7e7153372809f11a7cdc26cc127bcbd4db68c3acb52e1
 ---
 

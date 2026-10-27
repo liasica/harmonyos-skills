@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-127
 title: Web场景下主动拉起软键盘
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web场景下主动拉起软键盘
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7d56b40b34653af37e46d7d01760983a10baebf7aab11e549835d1fe9316919a
 ---
 

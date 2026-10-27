@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1650
 title: Stack组件中子组件超出边界显示问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Stack组件中子组件超出边界显示问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3b4df0e00f5c7f0213085bb1c7bd926ef5877517f29b09c5a2d01a90414762fc
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:393f2338e58f738d96e6370624913d8cefde0e456f32afbc44f83a2b6cb1921a
 ---
 
 ## 问题现象
@@ -40,7 +40,7 @@ content_hash: sha256:3b4df0e00f5c7f0213085bb1c7bd926ef5877517f29b09c5a2d01a90414
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/x7ZF0kadST2_mzfO1wmccA/zh-cn_image_0000002659060259.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/IPLG_2vzQFe6ozMYFJe8cQ/zh-cn_image_0000002659060259.png "点击放大")
 * 场景二：如何实现图片超出容器右上角展示效果？
 
 ## 背景知识
@@ -87,7 +87,7 @@ content_hash: sha256:3b4df0e00f5c7f0213085bb1c7bd926ef5877517f29b09c5a2d01a90414
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/OMC4pBNYRImseiyxQGEOlQ/zh-cn_image_0000002628820886.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/jsjKiFYlQ-WlS08Bz7qNig/zh-cn_image_0000002628820886.png "点击放大")
 * 场景二：
 
   使用Stack容器的默认层叠布局模式结合子组件position属性实现图片超出父组件右上角堆叠效果。示例代码如下：
@@ -132,4 +132,4 @@ content_hash: sha256:3b4df0e00f5c7f0213085bb1c7bd926ef5877517f29b09c5a2d01a90414
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/5MzM7zh0R1e6CbDYTDlQTA/zh-cn_image_0000002659020191.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/xCtsDmauR4iU4AWUQLAC9Q/zh-cn_image_0000002659020191.png "点击放大")

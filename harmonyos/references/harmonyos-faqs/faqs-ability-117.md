@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-11
 title: HarmonyOS Next系统属于大端还是小端
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > HarmonyOS Next系统属于大端还是小端
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9babb31fd91f79e84df8dcabdc7f4b67596edc355a0319eb5d63eb417ff50e8f
 ---
 

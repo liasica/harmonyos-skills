@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ime-kit
 title: 输入法开发（IME）
 breadcrumb: FAQ > 应用框架开发 > 输入法框架 > 输入法开发（IME）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5f2ddb743cbd3a26b0d9571d3babe85d7ff9d9fff19208bb139580ff69eb1c78
 ---
 

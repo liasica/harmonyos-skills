@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-684
 title: 如何准确统计List中Item的曝光
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何准确统计List中Item的曝光
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:960616ea1089420f314987407347f416bfd354e6f2ee239b0f1f9a8271a51a56
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b7ef09a81baac82915776920c69fb1e5eeafcf370387b1cfaf514436e87a2e78
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:960616ea1089420f314987407347f416bfd354e6f2ee239b0f1f9a8271a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/yxKKf_iGQvasHbthq5BBug/zh-cn_image_0000002628394852.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/MjyBk55tQbSdaMcBdbPilA/zh-cn_image_0000002628394852.png "点击放大")
 
 ## 背景知识
 

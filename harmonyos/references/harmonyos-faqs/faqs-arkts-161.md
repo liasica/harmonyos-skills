@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-161
 title: emitter中接收ArrayBuffer使用console.log打印异常
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > emitter中接收ArrayBuffer使用console.log打印异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:53+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3dbf973cb3a4c002755f9380da45875a699e26a0c04c3604111fe4f23e981607
+scraped_at: 2026-10-28T07:46:53+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:5a9fbe0037ea3ee9e0fd19da6f5eb6ce512ebdcd8e59eca122e726d10ef164ee
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ emitter中接收传过来的ArrayBuffer，使用console.log方式打印ArrayBuff
 
 使用debug调试发现，ArrayBuffer数据正常发送，且正常接收到，使用console.log(${JSON.stringify(arrayBuffer)})二进制流时，显示异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ntUbGTUtTUKiDF4vd4IVyg/zh-cn_image_0000002628899070.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Zl6jdNnQSE6QFNCCw48qIg/zh-cn_image_0000002628899070.png "点击放大")
 
 ## 分析结论
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: RCP网络请求在TaskPool子线程中使用异常
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > RCP网络请求在TaskPool子线程中使用异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:aeb3bdf4827d491de0ff244f2c1da74f9609297d912f64815a4ebee514df85ce
 ---
 

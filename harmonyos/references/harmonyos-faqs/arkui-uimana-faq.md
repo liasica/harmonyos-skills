@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: 常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:09+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:5536066b60013c61c555ab66609a425ac183a19cc0a7a4557a7a9ecc48991ba2
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a6d33c4a6fcc1dfbd306c6ba8d20730294bde43cfb619470d6b257ee100a5b09
 ---
 
 * **[List列表子组件顺序动画展示常见问题](arkui-uimana-faq-0001.md)**
@@ -28,3 +28,9 @@ content_hash: sha256:5536066b60013c61c555ab66609a425ac183a19cc0a7a4557a7a9ecc489
 * **[ArkUI页面路由跳转常见问题](arkui-uimana-faq-0018.md)**
 * **[ArkUI手势常见问题](arkui-uimana-faq-0019.md)**
 * **[ArkUI自定义弹窗功能实现与控制常见问题](arkui-uimana-faq-0020.md)**
+* **[Pura X外屏适配申请与审核常见问题](arkui-uimana-faq-0021.md)**
+* **[Tabs组件常见问题](arkui-uimana-faq-0022.md)**
+* **[软键盘避让与布局弹起常见问题](arkui-uimana-faq-0023.md)**
+* **[深浅色模式切换页面渲染失败](arkui-uimana-faq-0024.md)**
+* **[状态栏颜色设置与适配常见问题](arkui-uimana-faq-0025.md)**
+* **[面包屑导航效果实现常见问题](arkui-uimana-faq-0026.md)**

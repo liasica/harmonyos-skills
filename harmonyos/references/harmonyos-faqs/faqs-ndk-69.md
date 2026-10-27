@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-69
 title: napi_call_function调用时除了会有pending exception外，是否还有其他异常场景
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > napi_call_function调用时除了会有pending exception外，是否还有其他异常场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:91ac41c8b7cb430c5e681c7bac581224c1d658e79329dac790b729eea4a90519
 ---
 

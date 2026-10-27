@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-4
 title: 如何获取系统支持的编解码能力
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 如何获取系统支持的编解码能力
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e13e32d078ae810c21cc9483cb63bcdd5922e572ab6fbbcc81afad4d0d5841b9
 ---
 

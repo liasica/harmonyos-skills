@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-490
 title: 自定义键盘如何设置可与输入框贴边
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义键盘如何设置可与输入框贴边
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c9cbd96f977b7968eb8aeba46f3ea4b89b1ebb1b4a5a66ce5461f0cbe8342f8e
 ---
 

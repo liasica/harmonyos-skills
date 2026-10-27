@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-183
 title: HarmonyOS NEXT系统浏览器UA问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > HarmonyOS NEXT系统浏览器UA问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:215612b76d5594d693b7940d644f1ee77c52e96ce0343a7af7dd99c10c62ad04
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-share-2
 title: 分享图片到应用显示“您选择的文件不支持分享”
 breadcrumb: FAQ > 应用服务开发 > 内容分享服务（Share Kit） > 分享图片到应用显示“您选择的文件不支持分享”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:26+08:00
+scraped_at: 2026-10-28T07:48:40+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:aa3eb1664d71a2510d512691187178ac2ece2a7e065944569666946c173dfa9d
+content_hash: sha256:6f697bebcb5992f26b62892efd286566c1111cf124b647bf8f9cd7585bcc1000
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:aa3eb1664d71a2510d512691187178ac2ece2a7e065944569666946c173
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/kgnC2jH0QMCSmJgnL5wp4Q/zh-cn_image_0000002658913741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/vRnx7gokRh2M0fA1pld_CQ/zh-cn_image_0000002658913741.png "点击放大")
 
 ## 背景知识
 
@@ -41,7 +41,7 @@ let shareData: systemShare.SharedData = new systemShare.SharedData({
 
 此分享数据无法分享到应用，复现问题，复现场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/lNyPWQ2BSNaTjKrhn2ntqQ/zh-cn_image_0000002658793793.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/-va4zARjQMyStGOBdYkUFw/zh-cn_image_0000002658793793.png "点击放大")
 
 再将SharedData中参数uri换成content。
 
@@ -60,7 +60,7 @@ let shareData: systemShare.SharedData = new systemShare.SharedData({
 
 此时选择任一应用可以进行分享（此示例选择备忘录），分享成功如图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/lnGyZSC1SSKadf3K97DiLQ/zh-cn_image_0000002628394526.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/nRmsgW5_S56l2Ti592G22w/zh-cn_image_0000002628394526.png "点击放大")
 
 ## 分析结论
 

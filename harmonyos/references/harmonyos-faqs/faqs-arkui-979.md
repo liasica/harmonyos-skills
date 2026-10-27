@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-979
 title: 如何实现输入框实时改变二维码并支持截图展示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现输入框实时改变二维码并支持截图展示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:15+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e07902e03a93a4a6f901d6fc983110e5a8688fa18555784589621e23e9e9208c
 ---
 

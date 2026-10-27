@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-121
 title: 如何在Worker中开启多级子线程
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 如何在Worker中开启多级子线程
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:55+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c3b330f77b5e4779939729ed3d031b5baa4d55c924cfb63c6da30e2b44c1c6f8
 ---
 

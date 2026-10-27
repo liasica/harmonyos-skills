@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-157
 title: Web组件加载网页如何获取网页的标题及标题来源
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件加载网页如何获取网页的标题及标题来源
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:10+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f05bc64fcbf325357f3693e1b5020fd3f9de2f64998e6a610a55a5cffca7ae91
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-783
 title: 如何动态控制页面显示大小缩放跟随系统变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何动态控制页面显示大小缩放跟随系统变化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b24bd5ef005148b9bf3df952402546747b1d081458d8b02efb6684bbf44d814e
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0f3757521aaba868b7b167c1d0a9a87a245ea0f27da44939d6d8f8f8aef5d0dd
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:b24bd5ef005148b9bf3df952402546747b1d081458d8b02efb6684bbf44
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/r1cIGV-pSLmWJKmxYryJzQ/zh-cn_image_0000002628557634.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/c8wBQRmbTdO5zEVsgQwD4g/zh-cn_image_0000002628557634.gif "点击放大")
 
 ## 背景知识
 

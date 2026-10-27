@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-606
 title: 如何使用template设置多个模板并解决渲染异常问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使用template设置多个模板并解决渲染异常问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:47:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5004740b7a44025cc547ab0cb293ea5cca34bd760d099e0582403156876277bc
 ---
 

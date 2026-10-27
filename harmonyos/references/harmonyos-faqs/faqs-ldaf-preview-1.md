@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ldaf-previ
 title: 在线视频下载后默认打开的是文件预览器
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 文件预览（Preview） > 在线视频下载后默认打开的是文件预览器
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
+scraped_at: 2026-10-28T07:48:01+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:47a76a6dececbf52e95dbde4db9e4df1fce1d95904a72bb4751fc7bddf804e7c
+content_hash: sha256:9b33ad4cd220f4ba459b0497356f8e57edf71b3a4df9298ae626381b961bb800
 ---
 
 ## 问题现象
 
 应用内视频点击下载按钮后，默认跳转系统的文件预览，无法查看下载后的视频。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Q3ZmLluWQbmGRI1drb9OjQ/zh-cn_image_0000002659138381.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/5gPL6jDcQpGhLTtYN9BD9g/zh-cn_image_0000002659138381.png "点击放大")
 
 ## 背景知识
 

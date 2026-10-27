@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-996
 title: 如何解决OffscreenCanvas绘制鼠标路径时路径不平滑的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决OffscreenCanvas绘制鼠标路径时路径不平滑的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:c52e47b02dcde1ed86a715f3bac10428ecea389b0591c9fcd831fe412c9d4975
+content_hash: sha256:b21fd34a8e8544c812b7a065f040caa0f3be2a8a0225ada0851f210e48cf7f93
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ PC应用使用OffscreenCanvas离屏画布绘制鼠标路径，绘制路径不平
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Mi5mS1SHQFmjq5Y8mtJK2Q/zh-cn_image_0000002658801089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zPQBcRUaRsOlMo0hT6OmQw/zh-cn_image_0000002658801089.png "点击放大")
 
 问题代码如下：
 
@@ -172,15 +172,15 @@ struct Index {
 
 120Hz刷新率+离屏渲染：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/t3PcVAS2TvS91E1FKO4l7Q/zh-cn_image_0000002628401816.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/qbg8WBJ-S6GnNfSWolu0oQ/zh-cn_image_0000002628401816.png "点击放大")
 
 60Hz刷新率+在屏渲染：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/y0MPoKR2TLiO_mpETUp2Qw/zh-cn_image_0000002628561724.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/dySLBBFTT9C3v0sSTfV1Ug/zh-cn_image_0000002628561724.png "点击放大")
 
 120Hz刷新率+在屏渲染：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/bXiRKAk_RdqnXL-tvuY_Cw/zh-cn_image_0000002658921037.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/uDCDM35oTVm_KtIDRBZTUg/zh-cn_image_0000002658921037.png "点击放大")
 
 ## 修改建议
 

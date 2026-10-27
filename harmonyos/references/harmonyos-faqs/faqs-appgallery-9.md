@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS指定设备发布描述文件签名sign字段如何生成
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS指定设备发布描述文件签名sign字段如何生成
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:29+08:00
-doc_updated_at: 2026-08-19
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:affba22e9309e01eb7884d00faf4f73b5e680596000f2b25f062b14d47108996
 ---
 

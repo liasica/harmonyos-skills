@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-185
 title: Web加载网页性能提升方式与使用场景总结
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web加载网页性能提升方式与使用场景总结
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a0f26bf1e98f83d0c4f96b1e6e7ac28acace62a1c689f79dabb1584b86103462
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:194ab2e46566af1d0c38fabcf40f3e69caad7c4907c20b852177ee8332897fa3
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ Web组件加载网页时，如何定位加载性能瓶颈，以及优化网页�
 
 想要提升Web组件加载网页性能，提升网页加载速度，首先需要了解Web组件加载网页流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/rrocmqUGTcCviEOTLPNG0A/zh-cn_image_0000002659258397.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/nHDbGiwRTjegYxu2hpn3jg/zh-cn_image_0000002659258397.png "点击放大")
 
 加载网页时，容易出现耗时的点有：
 
@@ -37,10 +37,10 @@ Web组件加载网页时，如何定位加载性能瓶颈，以及优化网页�
 
 1. 使用DevTools -> Performance选项卡中Record and reload录制Trace。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ldhvdMVhTkCZEd0msH3w8w/zh-cn_image_0000002659138439.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ypuG450EQQuSCmw9gXc0Yg/zh-cn_image_0000002659138439.png "点击放大")
 2. 录制Trace后，Performance提供了多个泳道进行性能分析数据，常用泳道如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/L7oOhb8gQGedEhwC-ZVoMA/zh-cn_image_0000002629059096.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/NC01KQ5nR9iY4_-tjQU83w/zh-cn_image_0000002629059096.png "点击放大")
 
    * Main（主要）泳道：显示主线程上的任务活动情况，包括脚本执行、样式计算、布局和绘制等。
    * Network（网络）泳道：显示页面在加载过程中发出的所有网络请求，帮助开发者分析页面加载性能，找出加载缓慢的资源以便进行优化。
@@ -48,10 +48,10 @@ Web组件加载网页时，如何定位加载性能瓶颈，以及优化网页�
    * Animation（动画）泳道：显示动画的执行情况。
 3. 关注Network泳道中带“红色三角标”阻塞请求、串行请求、耗时较长的请求等，可在该泳道中分析资源加载耗时情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/QEPQ4x09QgW38xChXHBR7g/zh-cn_image_0000002628899172.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/W3VnDpA-T6aYKO-ldUED7g/zh-cn_image_0000002628899172.png "点击放大")
 4. 关注Main泳道带“红色三角标”长任务，长任务会阻塞UI渲染，导致页面白屏或显示未渲染完成的内容。同时关注火焰图顶层宽度越大该活动越可能存在性能问题。可在该泳道分析JS编译与执行、DOM解析等耗时情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/x8d0xWztQDqbN2cgEAqZ-Q/zh-cn_image_0000002659258399.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/v906HjkPQZ20kq1hMnXF2Q/zh-cn_image_0000002659258399.png "点击放大")
 
 加载性能优化：
 
@@ -110,11 +110,11 @@ Q：开发地图应用，加载地图瓦片渲染，需要几十秒才能正常�
 
 A：通过Performance抓取Trace进行分析：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/iU1S1nKSSFOW3wNO0Ep97w/zh-cn_image_0000002659138441.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/WS7uC6qFTsKY8nNp9v47Ow/zh-cn_image_0000002659138441.png "点击放大")
 
 跳转Network界面查看请求：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/5ujxmJe4TrKFN4o0o64vZA/zh-cn_image_0000002629059098.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/X44MdNAnSiC1bg_MApkvpg/zh-cn_image_0000002629059098.png "点击放大")
 
 从上面Trace分析，网络请求中存在串行阻塞请求，且请求不通，耗时30s，最终报502异常结束请求。请求阻塞期间，影响页面渲染，导致不能正常显示。将此异常请求修复正常后地图正常加载。
 

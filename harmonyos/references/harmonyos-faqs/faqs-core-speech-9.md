@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-core-speec
 title: 语音识别结果没有纠正如何解决
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > 语音识别结果没有纠正如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:49:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2fd5de7468eeccc68f9470e4fbd5d8d9ef2527548f433829f460f9432a70df8e
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1362
 title: TextInput组件如何实现文本默认选中效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TextInput组件如何实现文本默认选中效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:5f6c399b9af654f7c0f31eee4e798e70e1d2797b756b6e5482361d5573ad4502
+content_hash: sha256:017ef16df32376a07e0245739a3460c1816dfecb9d4a9bcf5362d36212839bec
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:5f6c399b9af654f7c0f31eee4e798e70e1d2797b756b6e5482361d5573a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/i9MWexYBQmWr8SnFbIBhkA/zh-cn_image_0000002658841263.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/-pDk8aGIR1-dU4PsWqXgsw/zh-cn_image_0000002658841263.png "点击放大")
 
 ## 背景知识
 

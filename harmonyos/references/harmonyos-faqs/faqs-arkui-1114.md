@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1114
 title: 如何获取状态栏等避让区进行避让
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何获取状态栏等避让区进行避让
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:73818f6f14ff7e2c73a8374893fb05bd1fc87bef63c8bd3915c78d8f4706627d
+content_hash: sha256:63ac4715c1d8fadcd179b34fef397a8c413711149b3265ace356f2752a5581c1
 ---
 
 ## 问题现象
@@ -115,7 +115,7 @@ content_hash: sha256:73818f6f14ff7e2c73a8374893fb05bd1fc87bef63c8bd3915c78d8f470
 
      运行效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/FTyebZO0SLOq3y3pywarbg/zh-cn_image_0000002628407498.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/BU-T6s3lQV6tSbLfARX7fw/zh-cn_image_0000002628407498.png "点击放大")
 * **场景二：** 沉浸式应用全屏页面切换到悬浮窗时和分屏模式时，顶部窗口控制条需要进行避让，通过windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE\_SYSTEM).topRect.height)顶部窗口控制条高度topSafeHeight，并且注册windowClass.on('avoidAreaChange')避让区域监听函数动态调整topSafeHeight，页面根据topSafeHeight动态调整应用布局。
 
   ```ts
@@ -179,7 +179,7 @@ content_hash: sha256:73818f6f14ff7e2c73a8374893fb05bd1fc87bef63c8bd3915c78d8f470
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/u4OVuPlrSJCWMwhNyyrrvA/zh-cn_image_0000002628567394.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Bg1b0GnIS_S61R4hOrzJLg/zh-cn_image_0000002628567394.png "点击放大")
 
 ## 常见FAQ
 

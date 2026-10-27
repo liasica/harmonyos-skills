@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1137
 title: TabContent预加载问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TabContent预加载问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-08-20
-content_hash: sha256:6b4f4f4076ab68217fa25c0ea2b85985a2fa76bc3c0b33e681b381e79778a82a
+content_hash: sha256:2f41b79c8918562a0ecc94b86324cb77bad0815992eacf02352da0d34e06fcc9
 ---
 
 ## 问题现象
@@ -18,7 +18,7 @@ content_hash: sha256:6b4f4f4076ab68217fa25c0ea2b85985a2fa76bc3c0b33e681b381e7977
 * [preloadItems](../harmonyos-references/ts-container-tabs.md#preloaditems12)是控制器[TabsController](../harmonyos-references/ts-container-tabs.md#tabscontroller)的一个方法，能够控制Tabs预加载指定子节点。调用该接口后会一次性加载所有指定的子节点，预加载到不存在的索引时就会报错。
 * Router路由与导航Navigation各自的生命周期不同，具体情况如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/QWxRJcPqSSOHRjQR4SjzTQ/zh-cn_image_0000002712983901.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/oRNDdJnKRnGr-hxiN0yiyw/zh-cn_image_0000002683264178.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/olsVSVOFRI6c2rEsdTgZtQ/zh-cn_image_0000002712983901.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/t6Nlb_epT5mpP7FwgDHssQ/zh-cn_image_0000002683264178.png "点击放大")
 
 ## 问题定位
 

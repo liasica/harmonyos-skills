@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-188
 title: 触摸事件的TouchEvent调用stopPropagation时无法阻止事件分发
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 触摸事件的TouchEvent调用stopPropagation时无法阻止事件分发
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fd57039d431eb153aaf00516a7bdb98e77f834b788f6f3c5e10ee03c9c1c0729
 ---
 

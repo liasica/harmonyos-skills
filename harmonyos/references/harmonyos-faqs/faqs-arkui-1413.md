@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1413
 title: TextInput组件的下划线设置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TextInput组件的下划线设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b5cab1e24518573b2e927b1b3a43fd684f042efa96148fe5381a1f17dde58338
+content_hash: sha256:988724bb19ea3f87d9aeb5beea38d38fbc9db0794b76777ec2347356f55ccc25
 ---
 
 ## 问题现象
@@ -56,7 +56,7 @@ content_hash: sha256:b5cab1e24518573b2e927b1b3a43fd684f042efa96148fe5381a1f17dde
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/u2fzfNJGQPahTeoJbT3RiA/zh-cn_image_0000002658962481.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/6TUABTpHQtOamaeh9Zo_Mw/zh-cn_image_0000002658962481.png "点击放大")
 * **场景三**：要添加闪烁效果，可以在输入框获得焦点时通过定时器来交替改变下划线的颜色。
 
   ```ts
@@ -92,4 +92,4 @@ content_hash: sha256:b5cab1e24518573b2e927b1b3a43fd684f042efa96148fe5381a1f17dde
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Z6SsdU20SFmOjjLc77d56w/zh-cn_image_0000002628603270.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/tDNGD6xVRG6QCinP2z360Q/zh-cn_image_0000002628603270.gif "点击放大")

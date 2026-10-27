@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-testing-faq-11
 title: 如何使用DevEco Testing进行应用安装/卸载
-breadcrumb: FAQ > DevEco Testing > 常见问题 > 如何使用DevEco Testing进行应用安装/卸载
+breadcrumb: FAQ > DevEco Testing > 如何使用DevEco Testing进行应用安装/卸载
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:bca597527a17011ab423e3b8cf2f551fce53cfe09c669cbb465b32ccebb148e0
+scraped_at: 2026-10-28T07:49:04+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1e9f1ee96ae4ee08e43950b17b39e73ab956ccc2b380103901b811f78c0a6eac
 ---
 
 ## 问题现象
@@ -23,29 +23,29 @@ DevEco Testing目前支持安装hap、zip类型的[调试证书](../app/agc-help
 1. 应用安装：
    * 连接设备，DevEco Testing选择实用工具-设备投屏。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/7Vuab4hfQwmNiMyT0oIU-Q/zh-cn_image_0000002628404180.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/GqZ5OgBSRO6dWZlb6zQqqQ/zh-cn_image_0000002628404180.png "点击放大")
    * 点击开始投屏，然后工具栏点击安装应用。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Z-8Esk8_T6KOgPiiqeBZsw/zh-cn_image_0000002628564082.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/bXCAy5N5Q46X3_ATElm-RA/zh-cn_image_0000002628564082.png "点击放大")
    * 本地文件路径点击选择，弹框可选择应用包的类型。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/E-0cm1iCRsme3-WHqdJo9Q/zh-cn_image_0000002658923393.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/NWAb0QE1RouhbQ2XmPMQiA/zh-cn_image_0000002658923393.png "点击放大")
    * 选择安装包，点击确定，执行日志可以看到安装成功，如果安装失败，可以看到报错信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/1EHV6ObGRwiEn8RDwKp3KA/zh-cn_image_0000002658803445.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ADDn4uCBQW--mLCvQW6DPA/zh-cn_image_0000002658803445.png "点击放大")
 2. 应用卸载：
    * 连接设备，DevEco Testing选择实用工具-设备投屏，工具栏点击卸载应用。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/gFwjYv_fQfu_7MJFAwWNRw/zh-cn_image_0000002628404182.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/hHOS9C-LSOCiYNdhSAyFvQ/zh-cn_image_0000002628404182.png "点击放大")
    * 下拉框选择对应的应用，点击确定。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/-2uwr5nLSR69vQ19UqcY_Q/zh-cn_image_0000002628564084.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/nDPRINfVRECkI8gYAte-fA/zh-cn_image_0000002628564084.png "点击放大")
    * 弹出的对话框，点击确定卸载。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/r7BCHZR2RT-HgH-rMh78-A/zh-cn_image_0000002658923397.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/XzbqfuczSoCecteLDRyKxg/zh-cn_image_0000002658923397.png "点击放大")
    * toast提示应用卸载成功。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ifjDLG5cTICMgEBExpyLOw/zh-cn_image_0000002658803447.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/h8O_wWILRvW-X-SqZiH5dA/zh-cn_image_0000002658803447.png "点击放大")
 
 ## 常见FAQ
 

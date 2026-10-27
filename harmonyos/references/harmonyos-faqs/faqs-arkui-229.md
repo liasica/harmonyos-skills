@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-229
 title: "使用BuilderParam在父组件调用this的方法报错：Error message: undefined is not callable"
 breadcrumb: "FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用BuilderParam在父组件调用this的方法报错：Error message: undefined is not callable"
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4a8f3aa90162cfebb9e2922a9530e5e86fc397c1e6028c45a4f88733a84afb05
 ---
 

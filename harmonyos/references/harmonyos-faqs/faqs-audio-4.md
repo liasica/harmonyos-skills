@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-4
 title: SoundPool播放的音频是否支持WMV格式
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > SoundPool播放的音频是否支持WMV格式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:06ab911bbc3960815516e41ffdaa78d7cf7667ebeedce3e83c8b890980b14e76
 ---
 

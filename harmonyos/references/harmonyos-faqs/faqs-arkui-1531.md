@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1531
 title: 如何排查代码混淆导致功能异常问题以及常见报错案例
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何排查代码混淆导致功能异常问题以及常见报错案例
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:3fbd018adaeb2605d4b05402116d9dfef64e4daffb1c3641c54ecd390f60b6cd
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:5c4fc9b2c028546677aa1c45b2617f76d69d23ab8526863b5c2f1d520c9e5e0c
 ---
 
 ## 问题现象
@@ -104,7 +104,7 @@ content_hash: sha256:3fbd018adaeb2605d4b05402116d9dfef64e4daffb1c3641c54ecd390f6
   ```
 * 问题4：在下方路径创建obfuscation-rules.txt文件，并在此配置混淆规则，配置混淆可以参考[通过混淆助手配置保留选项](../harmonyos-guides/ide-build-obfuscation.md#section19439175917123)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/4qJ0GS9LSdy54YgHWL0N0w/zh-cn_image_0000002658846245.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/EcIlDcssQVKvVEtMeuLePQ/zh-cn_image_0000002658846245.png "点击放大")
 * 问题5：在HAR模块下的module.json5文件中将"metadata"字段下的"name"设置为“UseTsHar”，修改产物为ts文件。
 * 问题6：HAR包B参考[ArkGuard混淆开启指南](../harmonyos-guides/source-obfuscation-guide.md)配置consumer-rules.txt。
 * 问题7：重新下载[DevEco Studio](https://developer.huawei.com/consumer/cn/download/)。
@@ -148,17 +148,17 @@ A：debug包不支持混淆，debug包以便于调试。只有release模式才�
   + 名称映射表文件：nameCache.json，该文件记录了源码名称混淆的映射关系。
   + 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，工程源码中与其重名的元素不会被混淆。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/73-ctXfpS9CkAcW8Gzou8g/zh-cn_image_0000002628766886.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/3QDBJqujSPGvxUuXTIeScw/zh-cn_image_0000002628766886.png "点击放大")
 
 Q：在不同源文件中，同样的写法new Object({[属性名]: 123})，查看编译后对应的文件，有的文件中的属性名会被混淆，有的属性名不会被混淆，这是什么原因呢？
 
 属性userOftenAppData被混淆效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Ez7Po_w8Q1KRgNraOMnjSQ/zh-cn_image_0000002658966215.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2BTTHusdQYKMaLo4a8PCQg/zh-cn_image_0000002658966215.png "点击放大")
 
 属性isFromChat未被混淆效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ulrjqfeUSCK0MMHTXgnUsg/zh-cn_image_0000002628606994.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/v_evBckVTYGUjI1MuyEi5w/zh-cn_image_0000002628606994.png "点击放大")
 
 A：
 
@@ -171,7 +171,7 @@ A：main\_pages.json文件中包含的页面都需要使用@Entry装饰器。对
 
 Q：新增一个模块提交代码到仓库，新建文件夹重新克隆仓库代码，编译报错，如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Urpz1MT5SZmrA1ngGMclTA/zh-cn_image_0000002658846253.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/zdqbxp0LR9-alQX1hTf50w/zh-cn_image_0000002658846253.png "点击放大")
 
 A：请排查其他模块级和项目级的build-profile.json5中是否存在混淆配置项，若不存在，建议新增模块的build-profile.json5中也删除obfuscation节点。
 

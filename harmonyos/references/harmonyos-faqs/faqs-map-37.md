@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-37
 title: 如何修改地图的折线纹理间距
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何修改地图的折线纹理间距
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:0bd4768fcf14572021c876a1a6b830526484436f23ad287e93c1a95757dc9d53
+content_hash: sha256:32cd983f2b5d468794db191f3d789b1b52009a9c2610bf7b7e8d45a618860f69
 ---
 
 ## 问题现象
 
 使用地图服务addPolyline添加箭头样式的纹理，会出现折线上箭头之间的间距太小、箭头过于密集的情况，如何修改折线纹理的间距？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/CzT80x0_RLGzl_mcjR9Kzg/zh-cn_image_0000002628554274.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ju5B5I3NQfiK8CWj49d6Og/zh-cn_image_0000002628554274.png "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:0bd4768fcf14572021c876a1a6b830526484436f23ad287e93c1a95757d
 
 方案逻辑：通过customTexture配置折线纹理时，折线上纹理图片的间距默认为线宽的2倍，并且没有接口可以直接设置纹理图片的间距。而使用customTextures配置纹理时，添加的纹理图片间没有间距，可以配置纹理图片为带纯色底色的纹理，调整图片宽度，使图片之间的真实纹理的距离为预期的宽度。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ynUaQaE5T3uP6awTOrvn_A/zh-cn_image_0000002658913595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/aWAGyc2RRpq8DyzE7QTtxg/zh-cn_image_0000002658913595.png)
 
 1. 获取路线的坐标点列表。
 2. 添加调整后的纹理图到customTextures列表。
@@ -60,7 +60,7 @@ content_hash: sha256:0bd4768fcf14572021c876a1a6b830526484436f23ad287e93c1a95757d
 
    效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/FnyxQueaSqWmTg2er4IcGg/zh-cn_image_0000002628394382.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/KUFRL7g_SEGqBRizTE24Vg/zh-cn_image_0000002628394382.png "点击放大")
 
 完整代码如下：
 

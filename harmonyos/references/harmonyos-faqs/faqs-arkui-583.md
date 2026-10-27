@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-583
 title: 页面跳转后bindSheet不消失于原页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 页面跳转后bindSheet不消失于原页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7d8734a9ef0b64e90e268aa869bf081937175f1f67c0263ac871f132d736c12a
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:436809f3663876048570053025c8099d0db98512130429809a2f3cbf2845fe8d
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:7d8734a9ef0b64e90e268aa869bf081937175f1f67c0263ac871f132d73
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/exZm3qYCQmyKccojDZJrMQ/zh-cn_image_0000002658791767.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/zS5GObjkRe-hdObfKxpASg/zh-cn_image_0000002658791767.gif "点击放大")
 
 ## 背景知识
 

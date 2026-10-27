@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1080
 title: Text组件实现长按全选内容并弹出自定义菜单
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件实现长按全选内容并弹出自定义菜单
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:38e3f37ab344b54d1e2832432aec24dfc24ad313270c780ff66c1e398280c6c8
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:29991dfba6e364f6a45b502befe37ef6acbab97cb6479839f4fbd81d59697e49
 ---
 
 ## 问题现象
@@ -106,7 +106,7 @@ struct TextExample {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/8HXqunwxT3SsNLDzm9PzcQ/zh-cn_image_0000002628407342.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/us-9_BOeRBGJTORLlXBFvA/zh-cn_image_0000002628407342.png "点击放大")
 
 ## 常见FAQ
 

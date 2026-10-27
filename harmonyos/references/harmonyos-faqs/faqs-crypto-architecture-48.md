@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何解决RSA加密报-1错误码问题
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何解决RSA加密报-1错误码问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
+scraped_at: 2026-10-28T07:48:10+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f3b4813d634e183c73d785a55f3d32225060e69fb0c11380899681ff1b4e3251
+content_hash: sha256:2f3cbcfbac2c009cb3aa9e2686c046dab304be90d0237e0506ddfb294e233a49
 ---
 
 ## 问题现象
@@ -25,7 +25,7 @@ OUkt2vbKPLwtTWKwzQIDAQAB
 
 报错信息截图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/q8t_gVLoSfS35ABXJcJNLw/zh-cn_image_0000002658848479.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/zIS2NrEPTRapSR6YgeJqLA/zh-cn_image_0000002658848479.png "点击放大")
 
 ```txt
 code = "-1"

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 升级至API 26后使用“DocumentViewPicker”拉起文件选择Picker的聚合视图模式时支持文件格式过滤
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 升级至API 26后使用“DocumentViewPicker”拉起文件选择Picker的聚合视图模式时支持文件格式过滤
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-18
+scraped_at: 2026-10-28T07:48:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:699baad2729d0da22ae5fd6c4a4b998693d4f837f8fc0092568c7f76ee471a95
 ---
 

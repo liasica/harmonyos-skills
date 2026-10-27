@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1081
 title: HarmonyOS如何监听窗口生命周期变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > HarmonyOS如何监听窗口生命周期变化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-08-27
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1003be4f3979cac5cba8f9fd2278d066540e77af9c1611789b21af7423749e85
 ---
 

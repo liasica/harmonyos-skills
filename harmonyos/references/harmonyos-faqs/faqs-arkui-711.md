@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-711
 title: RichEditor如何限制最大行数
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor如何限制最大行数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0f67a87de3b5e372728fc08bb0047864f125a514876f1c6df04a295fd4638ac0
+scraped_at: 2026-10-28T07:47:10+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7b13a7a628004d321c938894b3576799faec30722ca9af10625b40382e729461
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ RichEditor富文本编辑如何限制最大输入行数？文本框初始为单�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/TREPgxiLSZ66XZl0Jl6cVg/zh-cn_image_0000002658794267.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/hVIvcFznTLCg3WOOEqyd4g/zh-cn_image_0000002658794267.png "点击放大")
 
 ## 背景知识
 

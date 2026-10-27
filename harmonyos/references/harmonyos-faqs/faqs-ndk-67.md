@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-67
 title: 如何实现ArkTS与C/C++的HashMap转换
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何实现ArkTS与C/C++的HashMap转换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:01ff1743384bc825acb3cd05e8c1aa3bc4c20ed85ac86f4a8dbae982e7cb3c74
 ---
 

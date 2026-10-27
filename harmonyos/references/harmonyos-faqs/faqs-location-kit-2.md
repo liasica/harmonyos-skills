@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-k
 title: 定位服务使用什么坐标系，如何根据实际应用场景转换
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 定位服务使用什么坐标系，如何根据实际应用场景转换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:22:10+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7af6345018abd8dcbf50ba729f3b033afafbb11e280f66ca91823ff545715655
 ---
 

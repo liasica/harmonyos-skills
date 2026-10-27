@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何实现绘制内容在指定区域透明化
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何实现绘制内容在指定区域透明化
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:35+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0e4b96c7971549458d8ec80b8c1d2538475580319bea9471a21b954b85cc9f60
 ---
 

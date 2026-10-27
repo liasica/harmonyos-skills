@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-speech-3
 title: 如何修改TextReader控件在屏幕纵向的起始位置
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化语音（Speech） > 如何修改TextReader控件在屏幕纵向的起始位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:49:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cadbd643cd94a3a5a5da11080f34f65ad391d653608cae2f9c0ad7712b6a26d7
 ---
 

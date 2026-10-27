@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-43
 title: Map Kit地图如何不显示各省份名称
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > Map Kit地图如何不显示各省份名称
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:e57a37b1fb47f4e027ed83bc9c93cd83e2facda1924de73eaeb5787dbb740bde
+content_hash: sha256:120fc99bab65aafb1e304e9508bd04e9a50537e020d104e0da1669d7c7e558f5
 ---
 
 ## 问题现象
@@ -84,4 +84,4 @@ struct Index {
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/tgpftYEvRJmRB9dTJY4JuQ/zh-cn_image_0000002656002802.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/e1OjLkv-QUOvi4lWxTrKZw/zh-cn_image_0000002656002802.png "点击放大")

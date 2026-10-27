@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-calendar-6
 title: 日历中的日程类型有什么区别
 breadcrumb: FAQ > 应用服务开发 > 日历服务（Calendar Kit） > 日历中的日程类型有什么区别
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2cd768a34a9820dd2d2e0afd2bbacd15b3e62655219a8b735dbd695e3a9137ca
 ---
 

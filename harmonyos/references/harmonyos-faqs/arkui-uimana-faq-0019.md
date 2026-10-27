@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI手势常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI手势常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:10+08:00
+scraped_at: 2026-10-28T07:47:33+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:c65147681bdf3efe2465cc8a1223ead2e14c127efb0dba7e6866b82e0143dc61
+content_hash: sha256:377e4a471c065c929486aa38b6fb519b9c6e35be349974ec2b618fae2ecabb37
 ---
 
 **Q：在List组件中，单个ListItem在同时设置拖拽功能与长按功能时，实际运行之后会产生冲突，如何解决单个ListItem拖拽功能和长按功能的冲突问题？**
@@ -315,7 +315,7 @@ struct Page {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/1LtRMPoHTquSMaxacP79Mg/zh-cn_image_0000002765940926.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/vx3-BkqURCqWrZhU-_nvLw/zh-cn_image_0000002765940926.png "点击放大")
 
 **Q：Grid上下左右拖拽动画如何实现？**
 
@@ -492,7 +492,7 @@ struct ImageMovePage {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/SZypQ5uMTjKJk_0aEhAgPQ/zh-cn_image_0000002765940938.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/yKxI9wdNSiqGXxQ4gIR69A/zh-cn_image_0000002765940938.png "点击放大")
 
 **Q：横向的进度条嵌套在Scroll组件中，当触摸进度条时，手指不抬起进行拖动操作，若拖动操作起始为上下，那么后续的拖动只会影响Scroll的滚动。相反，若拖动操作起始为左右，那么后续拖动只会影响Slider进度条的变化，无法影响Scroll滚动。如何实现在单次拖动内Scroll组件和Slider进度条同时响应拖动操作？问题代码如下：**
 
@@ -628,7 +628,7 @@ struct ScrollSlider {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/iehhJ3ZUTKar9Bn0NpICmg/zh-cn_image_0000002795500381.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/wO0JmuKJQE2MUXQZoR5qJg/zh-cn_image_0000002795500381.png "点击放大")
 
 **说明** 
 
@@ -715,7 +715,7 @@ struct GestureDragAndSwiper {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/rYp3gP97TYO-GYxghd1EaA/zh-cn_image_0000002766100870.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/XdsqqkYASoKd0w_AT8w1eg/zh-cn_image_0000002766100870.png "点击放大")
 
 **Q：场景二中除了使用优先识别手势priorityGesture，还有其他替代方案吗？**
 
@@ -754,7 +754,7 @@ export struct Index {
 
 实际问题：手势操作只在上层D、E、F组件上适配，无法将手势操作透传给下层目标组件B。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/_hd6ifdXQ4GfvLJnIBn2wQ/zh-cn_image_0000002795339639.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/9fbKHPlsSfObpGYvp6uU-A/zh-cn_image_0000002795339639.png "点击放大")
 
 **A**：针对业务场景代码梳理UI层级，预期将上层手势响应事件不作处理透传到下层组件进行处理，根据hitTestBehavior类型说明，选择HitTestMode.None模式，达到上层不响应，传递至子节点响应。
 
@@ -895,7 +895,7 @@ Executing a gesture:ComponentB
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/UiRw9LPpTWOU1y-AdGpZsw/zh-cn_image_0000002766100874.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/mZ8E4EE5Te-XHiBncgYxVw/zh-cn_image_0000002766100874.png "点击放大")
 
 **Q：页面有多个按钮，其中一个按钮用于控制按钮能否拖动，如何实现按钮可通过滑动手势改变位置，并在退出应用时保存按钮的位置？**
 
@@ -1022,4 +1022,4 @@ Executing a gesture:ComponentB
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/oxSqz-LnThOpTShNRxhXng/zh-cn_image_0000002795499441.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/mSdZnDz1Si-mTGClgt2ZlQ/zh-cn_image_0000002795499441.png "点击放大")

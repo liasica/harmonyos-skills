@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-6
 title: 如何解决Finalizer方法中执行JS代码崩溃问题
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > 如何解决Finalizer方法中执行JS代码崩溃问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:46:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a6d64c57f1ada50adeacd7b47f1e170a8d8c3f23573cfbd85d34be6ccf984ffa
 ---
 

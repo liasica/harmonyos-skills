@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/form-kit-faq
 title: 常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e643a9ca9b95268821d0471dbf7d0ff7b33ef95c0e5a113d10ec4c8897916be5
 ---
 

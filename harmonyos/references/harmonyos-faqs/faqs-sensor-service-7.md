@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 如何实现接近身体自动灭屏的功能
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 如何实现接近身体自动灭屏的功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:241582f79a2fcfa74613b288a9cc333d4c004544efef772b1f0f56060d74f23b
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-1
 title: 在Native侧如何精准获取ArkTS侧传入的字符串长度
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 在Native侧如何精准获取ArkTS侧传入的字符串长度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:92097e16b4bc9c680480ad30e6ca71dbf3043020a7d174d245e90e0914358eec
 ---
 

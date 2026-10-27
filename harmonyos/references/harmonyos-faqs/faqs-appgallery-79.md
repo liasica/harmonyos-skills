@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS按需加载实现方法和常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS按需加载实现方法和常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:30+08:00
+scraped_at: 2026-10-28T07:48:46+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:1200e77603cbf08937e93ffd08dd6848be38842eca39b16f4eb1f4078872fb61
+content_hash: sha256:2bcece6091bc963a4063b5f84495815c7204fc063f2872353f82b019db253df8
 ---
 
 ## 问题现象
@@ -36,7 +36,7 @@ content_hash: sha256:1200e77603cbf08937e93ffd08dd6848be38842eca39b16f4eb1f407887
 
 当动态模块为HSP时，基础功能Entry包的oh-package.json5中需要[添加依赖项](../harmonyos-guides/ide-hvigor-dependencies.md)。添加HSP模块的动态依赖方式可参考[如何配置oh-package.json5动态依赖](faqs-compiling-and-building-48.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/yyycaZz8TUGAdRDZ53Oh6w/zh-cn_image_0000002648285864.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Mk758gVQQkCpbDjI4H0AEQ/zh-cn_image_0000002648285864.png "点击放大")
 
 **步骤二：按需加载下载安装扩展功能包。**
 
@@ -63,10 +63,10 @@ A：Device File Browser可访问的文件夹有五种类型：[应用沙箱目�
 
 1. 按下图点击切换Device File Browser沙箱视图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/egLRsLs-ReqJha5La9QuqA/zh-cn_image_0000002648286216.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/DHdYWhBWRkaWWXeJ3X2MjA/zh-cn_image_0000002648286216.png)
 2. 在//data/app/el2/base/cache/moduleinstall/下添加对应的动态模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/KEEm5R56SMejvYlaPi3ODw/zh-cn_image_0000002648126326.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/l_9oC_aTTlC-Jd-hHhpeSg/zh-cn_image_0000002648126326.png "点击放大")
 
 Q：应用未上架如何测试按需加载功能？
 

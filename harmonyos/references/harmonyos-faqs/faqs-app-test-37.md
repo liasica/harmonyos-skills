@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-3
 title: 如何整合多个module模块的单元测试
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 如何整合多个module模块的单元测试
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
+scraped_at: 2026-10-28T07:49:01+08:00
 doc_updated_at: 2026-07-22
-content_hash: sha256:e50db57d31c8b948c63f7143ea301a1a6f321507a417cedc3372e2bfaa5ae367
+content_hash: sha256:508fa46a7c492ffbc9f294e2abefd023896b4cc862bdf7f8ab1d86db380d55c7
 ---
 
 ## 问题现象
@@ -22,18 +22,18 @@ content_hash: sha256:e50db57d31c8b948c63f7143ea301a1a6f321507a417cedc3372e2bfaa5
 
 1. 在工具栏主菜单点击Run->Edit Configurations。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/HqVwuxxfSZS2ZF_e48mVnQ/zh-cn_image_0000002675023655.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/157zENrIQc-cM0VpSeWB5g/zh-cn_image_0000002675023655.png "点击放大")
 2. 点击Add New Configuration，即左上角的+，选择Local Test，给所有要测试的模块创建LocalTest。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Xcuu6xZwSaCwO4mzMcwPlA/zh-cn_image_0000002644943828.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/XloFEZvoTQ-zK8RcsxGBZA/zh-cn_image_0000002644943828.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/jCPywBpxT5inbXo8Jfa3Nw/zh-cn_image_0000002675103535.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/oaoOUuu5S_6N9foPrA1bAQ/zh-cn_image_0000002675103535.png "点击放大")
 3. 点击Add New Configuration，即左上角的+，选择Compound，创建Compound复合类型将多个子SDK的所有单元测试都加进去，之后再点击应用，点击确认。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Nzk_ALVjS8CI1iVpgftImQ/zh-cn_image_0000002675103933.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/rS0UOT_oRZqY495HS8aovw/zh-cn_image_0000002675103933.png "点击放大")
 4. 选中刚才编辑好的复合类型名称，点击运行即可执行整合的单元测试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/fQ2NEUl5SjOoZ93I-PCrrw/zh-cn_image_0000002645104202.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/6ttIRHkOT7CfgaT2kpTh1Q/zh-cn_image_0000002645104202.png)
 
 ## 常见FAQ
 

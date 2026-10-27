@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-6
 title: 如何判断APP是用户通过点击通知栏推送而唤起的？
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 如何判断APP是用户通过点击通知栏推送而唤起的？
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9a7b5e393847ade73ca19649ad10792719f4fd03182fc42b110551afd61d0332
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-615
 title: 如何使bindPopup在组件上下区域不足时可以覆盖组件显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使bindPopup在组件上下区域不足时可以覆盖组件显示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:81818c1e9873f5484fdfa30f03ed75d4e59c8877e6f1f7b7e639f67535acee49
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3934f816dd514b160416a279e934c8d3275d355de097f7f194ad33a85f6332d6
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:81818c1e9873f5484fdfa30f03ed75d4e59c8877e6f1f7b7e639f67535a
 
 未实现时的效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ez4_hqZPTiKKcUNHOni1Qg/zh-cn_image_0000002658911943.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/FdqQfSvzRrWLVUs9_-FS6g/zh-cn_image_0000002658911943.png "点击放大")
 
 ## 背景知识
 
@@ -27,7 +27,7 @@ bindPopup可以使用offset参数实现偏离，当给x轴设置正数偏移量�
 
 偏移量示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/2yUp0XWxTQqzD9BypxF7Uw/zh-cn_image_0000002628392734.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Unm5bkZCRTy6jArgKuvaTw/zh-cn_image_0000002628392734.png "点击放大")
 
 其中，nodeWidth为文本框宽度，popupWidth为气泡弹窗宽度，如果需要位移后的气泡弹窗能够在文本框中X方向居中，则X轴需要的偏移量为一半的气泡弹窗宽度+一半的文本框宽度；需要Y轴上出现在点击位置处，则Y轴需要的偏移量为点击处的Y坐标-气泡弹窗的Y坐标。
 

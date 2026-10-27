@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-273
 title: 如何在Navigation页面中实现侧滑事件拦截
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在Navigation页面中实现侧滑事件拦截
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a46713801ba3d04ba6663635d38759ef0e13a933ba4f075abbec94685b3e44c2
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-14
 title: 如何判断应用程序是否安装
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何判断应用程序是否安装
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4afa0abb762af9f10fb321de2310cff402f295f84b293fa8c356960dea10aee6
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9100d07283ff2ddb1b3a75d26d3e783b9367b539092f1d3eecc0fcd2f36ae99e
 ---
 
 ## 问题现象
@@ -24,9 +24,9 @@ content_hash: sha256:4afa0abb762af9f10fb321de2310cff402f295f84b293fa8c356960dea1
 
    ```json
    "querySchemes": [
-     // 华为地图
-     'maps'
-   ]
+         // 华为地图
+         'maps'
+       ]
    ```
 2. 判断应用地图是否安装：
 
@@ -68,6 +68,8 @@ content_hash: sha256:4afa0abb762af9f10fb321de2310cff402f295f84b293fa8c356960dea1
 Q：能否根据bundleName （包名）判断应用是否安装？
 
 A：当前无法直接通过bundleName （包名）判断应用是否安装，可以尝试使用startAbility拉起应用，[错误码是16000001时，指定的ability不存在](../harmonyos-references/errorcode-ability.md#section16000001-指定的ability名称不存在)。
+
+另外，如果已申请[ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED](../harmonyos-guides/permissions-for-enterprise-apps.md#ohospermissionget_bundle_info_privileged)权限，可以通过[bundleManager.getBundleInfo](../harmonyos-references/js-apis-bundlemanager.md#bundlemanagergetbundleinfo14-1)接口传入bundleName获取应用信息，从而判断应用是否已安装。
 
 Q：canOpenLink判断App Linking方式目标应用是否安装，卸载目标应用后还是返回true，是什么原因？
 

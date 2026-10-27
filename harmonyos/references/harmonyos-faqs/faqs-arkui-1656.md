@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1656
 title: 进入直播间时弹幕列表自动显示最新内容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 进入直播间时弹幕列表自动显示最新内容
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:da7343eddcf43b76a534e72dc3fbf54ac392d8ab55e899f72680b400e7e245d1
 ---
 

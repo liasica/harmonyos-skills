@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: 设备连接Wi-Fi后，如何获取当前设备的IP地址
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 设备连接Wi-Fi后，如何获取当前设备的IP地址
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:18+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:98929ba0f9bb7a46c3e7ce1ee5e79854943514be757afc7e62b3f1dace7a00a9
 ---
 

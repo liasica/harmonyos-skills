@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-34
 title: 在多线程并发场景中，如何实现安全访问同一块共享内存
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 在多线程并发场景中，如何实现安全访问同一块共享内存
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4f35fb913ba19d54a03234508b16e9a43aa44012dc98d34fb9819071aa3eee0d
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 测试版本已审核通过，为何在AppGallery应用尝鲜中没有搜到
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 测试版本已审核通过，为何在AppGallery应用尝鲜中没有搜到
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:33+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:1e205997a2c446059c503d09713489f8b777bb38891aee593ec3f74a08ea4707
+scraped_at: 2026-10-28T07:48:46+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0ec0dd4cfeb766b9c97cec65d18ebc41e28dbe6abc8496f6c4ade858445fb950
 ---
 
 ## 问题现象
@@ -17,7 +17,7 @@ content_hash: sha256:1e205997a2c446059c503d09713489f8b777bb38891aee593ec3f74a08e
 不需要同时勾“测试”和“生产”，两者是完全不同的上架通道：
 
 1. 如果你只是做测试分发（内部/公开测试），仅勾选“测试”即可。
-   * AGC会把包推到“应用尝鲜/客户端测试专区”。
+   * HarmonyOS 开发者中心会把包推到“应用尝鲜/客户端测试专区”。
    * 生产（正式上架）商店里不会出现，也不会影响现有正式版本。
 2. 只有当你准备正式上线时，再单独创建“生产”版本并走正式审核；此时“测试”版本会自动结束，商店里替换为新的正式包。
 
@@ -35,4 +35,4 @@ content_hash: sha256:1e205997a2c446059c503d09713489f8b777bb38891aee593ec3f74a08e
 4. AppGallery客户端入口找错，测试版不会出现在日常搜索结果。
 
    正确路径：打开AppGallery→我的→应用尝鲜。
-5. 测试时间还没到/已过期，在AGC→应用测试→测试版本详情里确认“测试开始-结束时间”是否包含今天；过期即自动下架。
+5. 测试时间还没到/已过期，在HarmonyOS 开发者中心→应用测试→测试版本详情里确认“测试开始-结束时间”是否包含今天；过期即自动下架。

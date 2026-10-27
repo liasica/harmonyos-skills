@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio未识别到真机设备如何处理
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio未识别到真机设备如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
+scraped_at: 2026-10-28T07:48:48+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8e724c051bc7e68554f7907663fbe558a4fc31cdb61468daf22bdf9d0c5fb5af
+content_hash: sha256:0a54ef4e10434e5bf31b5ef9660b363fc3c0520b615823e1c6c72f5e845132db
 ---
 
 ## 问题现象
@@ -22,14 +22,14 @@ content_hash: sha256:8e724c051bc7e68554f7907663fbe558a4fc31cdb61468daf22bdf9d0c5
 2. 在设置>系统>开发者选项中，打开“USB调试”开关（确保设备已连接USB）。
 3. 在Phone或Tablet中会弹出“允许USB调试”的弹框如下图，单击允许。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/_SFdtMcpTNmQPwrcEKwG2w/zh-cn_image_0000002628564958.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/b8N8fJocQ3mpzHfYwkMH0g/zh-cn_image_0000002628564958.png "点击放大")
 
 **二、使用无线调试连接方式**：
 
 1. 将Phone/Tablet和PC连接到同一WLAN网络。
 2. 在设置>系统>开发者选项中，打开“无线调试”开关，并获取Phone/Tablet端的IP地址和端口号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/JM8hoVC2SA2qqBqPdh4rbA/zh-cn_image_0000002628405052.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/YSSPhGMET1O1JMZDagH8sA/zh-cn_image_0000002628405052.png "点击放大")
 3. 在PC中执行hdc tconn设备IP地址:端口号命令连接设备。
 
 ## 解决方案

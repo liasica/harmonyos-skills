@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1540
 title: Text组件如何在设定范围内实现宽高自适应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件如何在设定范围内实现宽高自适应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:657b796ee629784dcd9080bbd4bfd6d4e839a786f599ec0f3baf16c14e9bec40
+scraped_at: 2026-10-28T07:47:25+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b0d888a958ab5b3fdf27cd2a527289a0526b87679093f9e86006b499bfce50ec
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:657b796ee629784dcd9080bbd4bfd6d4e839a786f599ec0f3baf16c14e9
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Wz9_ZYQJRSetmP8ERJK4rA/zh-cn_image_0000002658848481.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/xFH4sBJ7S6WhY10Jl1kJgQ/zh-cn_image_0000002658848481.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/VjDHKRI2TL-9PqGdHyGaCQ/zh-cn_image_0000002628609220.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/SccpXA8iToO6Bbk9-3_Fvg/zh-cn_image_0000002628609220.gif "点击放大")
 
 ## 背景知识
 

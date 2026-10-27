@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-611
 title: 多组件拖拽手势冲突
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 多组件拖拽手势冲突
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6f13cd4e2d21e003c004b0b47976994d14c6f59e8a23f4bab5dc971ad00d08c5
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3eceecf48061800087ff5fd9d4278f4f5af14e2a081d745f02c202c458eed293
 ---
 
 ## 问题现象
@@ -72,7 +72,7 @@ struct Index {
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/yPeqzD1WRM-hor2xClrQIQ/zh-cn_image_0000002628392730.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/0rphXMawT_OywoHocurelw/zh-cn_image_0000002628392730.png "点击放大")
 
 ## 背景知识
 
@@ -172,4 +172,4 @@ struct HitTestModeTouchIDemo {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/drj2tniwT0WpKolmqFIEhw/zh-cn_image_0000002658792001.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/E4jTeJacTsiO_tXzBnbvZQ/zh-cn_image_0000002658792001.png "点击放大")

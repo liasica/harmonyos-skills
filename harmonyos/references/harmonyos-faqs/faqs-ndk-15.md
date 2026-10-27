@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-15
 title: 如何将Native侧的函数封装到类中导出到ArkTS侧使用
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何将Native侧的函数封装到类中导出到ArkTS侧使用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5b2007ff5a542e3632e62d4f6770fc66b2fc306b0b8b8101e729fa10e7165145
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-45
 title: Web组件使用rawFile加载离线html时,如何在url后拼接参数
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件使用rawFile加载离线html时,如何在url后拼接参数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5e2d8137bcabe1cbef604110aa359f63f23028ec289de88609639507b029f3c3
 ---
 

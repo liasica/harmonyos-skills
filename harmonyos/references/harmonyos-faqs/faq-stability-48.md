@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-4
 title: hdc命令无法获取蓝牙HCI日志该怎么处理
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > hdc命令无法获取蓝牙HCI日志该怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
+scraped_at: 2026-10-28T07:46:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:992447664699ea56a13d8796aa3a19dbe96b85d8b545ace719870b3c272b6ed7
+content_hash: sha256:8fa3585b282cd2fb0cb60da263f2e127c002189a93f790ea0274548cd20b9111
 ---
 
 ## 问题现象
@@ -32,7 +32,7 @@ content_hash: sha256:992447664699ea56a13d8796aa3a19dbe96b85d8b545ace719870b3c272
 
    开启并授权后，HarmonyOS设备才能连接到计算机进行调试，可用于在计算机和设备之间复制数据、在设备上安装或卸载调试应用、以及读取日志数据等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/-VwM2XKXR-SXgyPkzyaOww/zh-cn_image_0000002628394988.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/KcS3yVkPRYORVMeoBJ2paQ/zh-cn_image_0000002628394988.png "点击放大")
 3. 根据背景知识中的hdc命令工具链接，检查hdc命令是否正确。
 4. 查看是否存在报错返回，根据报错信息分析，可借助背景知识中的hdc命令工具中hdc错误码进行初步解决。
 

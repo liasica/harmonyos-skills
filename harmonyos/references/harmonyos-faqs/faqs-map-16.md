@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-16
 title: 地图服务使用报错
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 地图服务使用报错
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:24+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:e7c11cfea8a46f2c266f2e0a03a63c4ca5c56f155b4e2760b26289b60ba79075
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bbd40bb2c8edaa673e52fb514b959a2be4498e20e5447bd3f1d277de3cd1f3a7
 ---
 
 ## 问题现象
@@ -31,14 +31,14 @@ Map Kit（地图服务）为开发者提供强大而便捷的地图能力，助�
 
 ## 分析结论
 
-1. 地图白屏不显示，是因为缺少权限。使用地图服务需要在AGC后台配置地图服务，且需要手动签名。
+1. 地图白屏不显示，是因为缺少权限。使用地图服务需要在HarmonyOS 开发者中心后台配置地图服务，且需要手动签名。
 
    参考链接：a. [开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)。b. [手动配置签名信息](../harmonyos-guides/ide-signing.md#section297715173233)。
 2. 使用site地点搜索服务，此服务使用时也需要开通地图服务，并进行手动签名。步骤可参考分析结论1。
 
 ## 修改建议
 
-1. 在AGC后台[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)。
+1. 在HarmonyOS 开发者中心后台[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)。
 2. [手动配置签名信息](../harmonyos-guides/ide-signing.md#section297715173233)。
 3. [配置clientID](../harmonyos-guides/health-configuration-client-id.md)。
 

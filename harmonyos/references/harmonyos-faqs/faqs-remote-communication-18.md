@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: rcp表单格式数据传输
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > rcp表单格式数据传输
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
+scraped_at: 2026-10-28T07:48:17+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:e0cf8e873103afd42853686f89bfa478d475e57af01392c2609dae75e55b46db
+content_hash: sha256:958a630517210d267ef322d6f9a44ab962eb159574f2d9d8668f07aa05a40b53
 ---
 
 ## 问题现象
@@ -58,7 +58,7 @@ content_hash: sha256:e0cf8e873103afd42853686f89bfa478d475e57af01392c2609dae75e55
 
   运行日志如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/6Y2APZd_SCimYuOiDDs3cQ/zh-cn_image_0000002658851751.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/1n6QEzNnRdqQ_I9eP9bdiA/zh-cn_image_0000002658851751.png)
 * **方案2：使用rcp模块中的Form类型数据传输表单数据。**
   1. 使用参数新建Form类。
 
@@ -86,7 +86,7 @@ content_hash: sha256:e0cf8e873103afd42853686f89bfa478d475e57af01392c2609dae75e55
 
   运行日志如下，如果用户不在请求头设置数据大小，rcp模块会自动计算：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/qQ4RedmrTtuecbwQhV7j4A/zh-cn_image_0000002628772386.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Afpc5wO_QcWkks6l9B-mTQ/zh-cn_image_0000002628772386.png "点击放大")
 
 **场景二：复杂混合表单数据传输**
 
@@ -122,7 +122,7 @@ content_hash: sha256:e0cf8e873103afd42853686f89bfa478d475e57af01392c2609dae75e55
 
 运行日志如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/e-4kdRXcThujukXX7MQCiA/zh-cn_image_0000002658971707.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/AYg2UodGQEi4Mea-gYhX6A/zh-cn_image_0000002658971707.png "点击放大")
 
 完整示例代码如下：
 

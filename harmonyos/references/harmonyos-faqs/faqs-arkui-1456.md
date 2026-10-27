@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1456
 title: 点击文字在文字中心显示标记图案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 点击文字在文字中心显示标记图案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b577d5b35b066a4265b2e611aca065696f6803a31ca17b22ecd16f3d0d95aa23
+content_hash: sha256:dfc8004677f0598b70aa5584b115ac302c017dc363ac2e9c2fc99b3b48f440c4
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:b577d5b35b066a4265b2e611aca065696f6803a31ca17b22ecd16f3d0d9
 
 点击文字“餐”后，Circle组件会移动至餐的中心并显示出来
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/KevjSfNpTwWWNsSgUpobvA/zh-cn_image_0000002628604266.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/ZMe25NrcSCeS_SLdt_SlSQ/zh-cn_image_0000002628604266.gif "点击放大")
 
 ## 背景知识
 

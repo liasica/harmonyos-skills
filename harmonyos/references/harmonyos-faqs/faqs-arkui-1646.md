@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1646
 title: 如何针对不同场景弹出特定类型软键盘
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何针对不同场景弹出特定类型软键盘
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1f8640a5af8070ab43aa6bbd8605884e880b6dae1ad32d2dede36340113fbc45
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3e56cff7fa9e257022b8e3a975fc65ec2f0b8057a8497e4ef54aadaf6ea6fc1a
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ TextInput组件支持输入任意文字内容，某些场景下，为了提升�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/wx6Uc856SFS15gVwPjyUrw/zh-cn_image_0000002659060257.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/oXYXtok6QduBvHBjz8Whvg/zh-cn_image_0000002659060257.png "点击放大")
 
 ## 背景知识
 

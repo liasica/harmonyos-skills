@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 清理用户缓存后仍然显示有缓存数据存在
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 清理用户缓存后仍然显示有缓存数据存在
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-07-07
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:20688db3dae5dc3d2582b7d8270307476a0e448fc0f9f3d67d2d451780182db2
 ---
 

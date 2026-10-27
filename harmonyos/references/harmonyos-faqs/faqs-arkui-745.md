@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-745
 title: 禁止编辑TextInput内容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 禁止编辑TextInput内容
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:41+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b2391d346314a1e823c9e69d6040c141516f69bebccbc65bda1a49b0e4be3fd4
+content_hash: sha256:289c4a79959c9b054b767b8607d29cc6caec6a58761eac56895612b73f82ee4c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:b2391d346314a1e823c9e69d6040c141516f69bebccbc65bda1a49b0e4b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/_eGfSOrwTHW_Hh2r5oYu5w/zh-cn_image_0000002628555362.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/xfvZ6uCPSiepeFIIInffvA/zh-cn_image_0000002628555362.gif "点击放大")
 
 ## 背景知识
 

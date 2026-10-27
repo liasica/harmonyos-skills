@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-35
 title: 如何播放PCM格式的音频数据
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 如何播放PCM格式的音频数据
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:119a189efdb07f3c078844c6d34cd84414b6a490da6373f2df80b51d652897b9
+scraped_at: 2026-10-28T07:48:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1d6745ac980e9766fbf274e53891df1e4f8f92e3810846a9484beacbef536694
 ---
 
 ## 问题现象
@@ -22,123 +22,121 @@ AVPlayer可以实现音频解码和音频输出功能。可用于直接播放MP3
 
 对于PCM格式的音频数据，有如下两种方案来进行处理：
 
-**方案一：直接播放PCM格式的音频数据。**
+* **方案一：直接播放PCM格式的音频数据。**
+  1. 使用AudioRenderer直接播放PCM数据，具体开发步骤以及完整代码可以参考[AudioRenderer开发步骤及注意事项](../harmonyos-guides/using-audiorenderer-for-playback.md#开发步骤及注意事项)。
+  2. 使用OHAudio直接播放PCM数据，具体开发步骤以及完整示例代码可以参考[使用OHAudio开发音频播放功能](../harmonyos-guides/using-ohaudio-for-playback.md)。
+* **方案二：对PCM数据进行音频转码后使用AVPlayer播放。**
 
-1. 使用AudioRenderer直接播放PCM数据，具体开发步骤以及完整代码可以参考[AudioRenderer开发步骤及注意事项](../harmonyos-guides/using-audiorenderer-for-playback.md#开发步骤及注意事项)。
-2. 使用OHAudio直接播放PCM数据，具体开发步骤以及完整示例代码可以参考[使用OHAudio开发音频播放功能](../harmonyos-guides/using-ohaudio-for-playback.md)。
+  AVPlayer无法直接播放PCM格式的音频数据，需要将音频数据转码封装成AVPlayer支持的格式。
 
-**方案二：对PCM数据进行音频转码后使用AVPlayer播放。**
+  以WAV格式为例，WAV格式是一种无损的格式，可以最好地保存音频质量，如果对音频大小或者格式有其他要求，可以参考[音频编码](../harmonyos-guides/audio-encoding.md)和[媒体数据封装](../harmonyos-guides/audio-video-muxer.md)进行其他的音频编码格式转化。
 
-AVPlayer无法直接播放PCM格式的音频数据，需要将音频数据转码封装成AVPlayer支持的格式。
+  将PCM数据转码封装成完整的WAV文件再用AVPlayer播放步骤如下：
 
-以WAV格式为例，WAV格式是一种无损的格式，可以最好地保存音频质量，如果对音频大小或者格式有其他要求，可以参考[音频编码](../harmonyos-guides/audio-encoding.md)和[媒体数据封装](../harmonyos-guides/audio-video-muxer.md)进行其他的音频编码格式转化。
+  1. 定义PCM转WAV的方法，获取源文件路径和目标文件路径，分别写入WAV文件头和PCM数据。
+  2. 定义写入WAV头部信息的方法，创建一个大小为44字节的缓冲区，用于存储WAV文件的头部信息，再将其写入输出文件。
+  3. 定义读取PCM数据的方法，将PCM数据从输入文件写入输出文件。
 
-将PCM数据转码封装成完整的WAV文件再用AVPlayer播放步骤如下：
-
-1. 定义PCM转WAV的方法，获取源文件路径和目标文件路径，分别写入WAV文件头和PCM数据。
-2. 定义写入WAV头部信息的方法，创建一个大小为44字节的缓冲区，用于存储WAV文件的头部信息，再将其写入输出文件。
-3. 定义读取PCM数据的方法，将PCM数据从输入文件写入输出文件。
-
-   ```screen
-   async pcmToWav(pcmFilePath: string) {
-     let fileSize = 0;
-     try {
-       fileSize = fileIo.statSync(pcmFilePath).size;
-     } catch (err) {
-       console.error(`failed to get file size, ${JSON.stringify(err)}`);
-     }
-     this.waveHeader.fileSize = fileSize + 44 - 8;
-     this.waveHeader.dataSize = fileSize;
-
-     let idx: number = 0;
-     let buffer: ArrayBuffer = new ArrayBuffer(44);
-     let bufferView: DataView = new DataView(buffer);
-     // riff
-     this.setString(idx, this.waveHeader.riff, bufferView);
-     idx += 4;
-     // file size
-     bufferView.setInt32(idx, this.waveHeader.fileSize, true);
-     idx += 4;
-     // wave
-     this.setString(idx, this.waveHeader.wave, bufferView);
-     idx += 4;
-     // fmt
-     this.setString(idx, this.waveHeader.fmtChunkMarker, bufferView);
-     idx += 4;
-     // fmt size
-     bufferView.setInt32(idx, this.waveHeader.fmtSize, true);
-     idx += 4;
-     // format type
-     bufferView.setInt16(idx, this.waveHeader.formatType, true);
-     idx += 2;
-     // channels
-     bufferView.setInt16(idx, this.waveHeader.channels, true);
-     idx += 2;
-     // sample rate
-     bufferView.setInt32(idx, this.waveHeader.sampleRate, true);
-     idx += 4;
-     // byte rate
-     bufferView.setInt32(idx, this.waveHeader.byteRate, true);
-     idx += 4;
-     // block align
-     bufferView.setInt16(idx, this.waveHeader.blockAlign, true);
-     idx += 2;
-     // bits per sample
-     bufferView.setInt16(idx, this.waveHeader.bitsPerSample, true);
-     idx += 2;
-     // data
-     this.setString(idx, this.waveHeader.dataChunkMarker, bufferView);
-     idx += 4;
-     // data size
-     bufferView.setInt32(idx, this.waveHeader.dataSize, true);
-
-     let path = this.context.filesDir + '/output.wav'; // output wav file path
-     let inputFile: fileIo.File | undefined;
-     let outputFile: fileIo.File | undefined;
-     try {
-       inputFile = fileIo.openSync(pcmFilePath, fileIo.OpenMode.READ_ONLY);
-       outputFile = fileIo.openSync(path, fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC | fileIo.OpenMode.WRITE_ONLY);
-       // write wav header
-       fileIo.writeSync(outputFile.fd, buffer);
-       // write pcm data
-       let readSize = 0;
-       let readBuf = new ArrayBuffer(1024 * 1024);
-       do {
-         readSize = fileIo.readSync(inputFile.fd, readBuf);
-         fileIo.writeSync(outputFile.fd, readBuf, { length: readSize });
-       } while (readSize > 0);
-     } catch (err) {
-       console.error(`Failed to write file, ${JSON.stringify(err)}`);
-     } finally {
-       if (inputFile) {
-         fileIo.closeSync(inputFile);
+     ```ts
+     async pcmToWav(pcmFilePath: string) {
+       let fileSize = 0;
+       try {
+         fileSize = fileIo.statSync(pcmFilePath).size;
+       } catch (err) {
+         console.error(`failed to get file size, ${JSON.stringify(err)}`);
        }
-       if (outputFile) {
-         fileIo.closeSync(outputFile);
+       this.waveHeader.fileSize = fileSize + 44 - 8;
+       this.waveHeader.dataSize = fileSize;
+
+       let idx: number = 0;
+       let buffer: ArrayBuffer = new ArrayBuffer(44);
+       let bufferView: DataView = new DataView(buffer);
+       // riff
+       this.setString(idx, this.waveHeader.riff, bufferView);
+       idx += 4;
+       // file size
+       bufferView.setInt32(idx, this.waveHeader.fileSize, true);
+       idx += 4;
+       // wave
+       this.setString(idx, this.waveHeader.wave, bufferView);
+       idx += 4;
+       // fmt
+       this.setString(idx, this.waveHeader.fmtChunkMarker, bufferView);
+       idx += 4;
+       // fmt size
+       bufferView.setInt32(idx, this.waveHeader.fmtSize, true);
+       idx += 4;
+       // format type
+       bufferView.setInt16(idx, this.waveHeader.formatType, true);
+       idx += 2;
+       // channels
+       bufferView.setInt16(idx, this.waveHeader.channels, true);
+       idx += 2;
+       // sample rate
+       bufferView.setInt32(idx, this.waveHeader.sampleRate, true);
+       idx += 4;
+       // byte rate
+       bufferView.setInt32(idx, this.waveHeader.byteRate, true);
+       idx += 4;
+       // block align
+       bufferView.setInt16(idx, this.waveHeader.blockAlign, true);
+       idx += 2;
+       // bits per sample
+       bufferView.setInt16(idx, this.waveHeader.bitsPerSample, true);
+       idx += 2;
+       // data
+       this.setString(idx, this.waveHeader.dataChunkMarker, bufferView);
+       idx += 4;
+       // data size
+       bufferView.setInt32(idx, this.waveHeader.dataSize, true);
+
+       let path = this.context.filesDir + '/output.wav'; // output wav file path
+       let inputFile: fileIo.File | undefined;
+       let outputFile: fileIo.File | undefined;
+       try {
+         inputFile = fileIo.openSync(pcmFilePath, fileIo.OpenMode.READ_ONLY);
+         outputFile = fileIo.openSync(path, fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC | fileIo.OpenMode.WRITE_ONLY);
+         // write wav header
+         fileIo.writeSync(outputFile.fd, buffer);
+         // write pcm data
+         let readSize = 0;
+         let readBuf = new ArrayBuffer(1024 * 1024);
+         do {
+           readSize = fileIo.readSync(inputFile.fd, readBuf);
+           fileIo.writeSync(outputFile.fd, readBuf, { length: readSize });
+         } while (readSize > 0);
+       } catch (err) {
+         console.error(`Failed to write file, ${JSON.stringify(err)}`);
+       } finally {
+         if (inputFile) {
+           fileIo.closeSync(inputFile);
+         }
+         if (outputFile) {
+           fileIo.closeSync(outputFile);
+         }
        }
      }
-   }
-   ```
-4. 完成转码后使用AVPlayer进行播放，AVPlayer的具体开发流程可以参考[AVPlayer播放音频完整示例](../harmonyos-guides/using-avplayer-for-playback.md#运行完整示例)。
+     ```
+  4. 完成转码后使用AVPlayer进行播放，AVPlayer的具体开发流程可以参考[AVPlayer播放音频完整示例](../harmonyos-guides/using-avplayer-for-playback.md#运行完整示例)。
 
-   ```screen
-   async avPlayerUrlDemo() {
-     this.avPlayer = await media.createAVPlayer();
-     // 创建状态机变化回调函数
-     this.setAVPlayerCallback(this.avPlayer!);
-     let fdPath = 'fd://';
-     // 通过UIAbilityContext获取沙箱地址filesDir，以Stage模型为例。
-     let path = this.context.filesDir + '/output.wav';
-     // 打开相应的资源文件地址获取fd，并为url赋值触发initialized状态机上报。
-     let file = await fs.open(path);
-     fdPath = fdPath + '' + file.fd;
-     this.avPlayer.url = fdPath;
-   }
-   ```
+     ```ts
+     async avPlayerUrlDemo() {
+       this.avPlayer = await media.createAVPlayer();
+       // 创建状态机变化回调函数
+       this.setAVPlayerCallback(this.avPlayer!);
+       let fdPath = 'fd://';
+       // 通过UIAbilityContext获取沙箱地址filesDir，以Stage模型为例。
+       let path = this.context.filesDir + '/output.wav';
+       // 打开相应的资源文件地址获取fd，并为url赋值触发initialized状态机上报。
+       let file = await fs.open(path);
+       fdPath = fdPath + '' + file.fd;
+       this.avPlayer.url = fdPath;
+     }
+     ```
 
 完整示例代码如下：
 
-```screen
+```ts
 import { fileIo } from '@kit.CoreFileKit';
 import { media } from '@kit.MediaKit';
 import { audio } from '@kit.AudioKit';

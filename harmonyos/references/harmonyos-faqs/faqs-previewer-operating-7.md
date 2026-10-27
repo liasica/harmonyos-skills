@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: DevEco无法执行Previewer，报错“This module is referencing one or more HSPs and cannot be previewed.”怎么处理
 breadcrumb: FAQ > DevEco Studio > 界面预览 > DevEco无法执行Previewer，报错“This module is referencing one or more HSPs and cannot be previewed.”怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:51+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4d7ed53d0379642ac5cd037d8bb91c6d748f8844e6fc7eeac28461629dca5b34
 ---
 

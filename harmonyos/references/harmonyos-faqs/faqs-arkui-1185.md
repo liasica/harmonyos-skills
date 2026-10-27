@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1185
 title: 如何绘制一个倾斜的Column
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何绘制一个倾斜的Column
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2804d64a78b930d5ebe43a9812022eec306c6ebf5d64df11a663f6fdf72a6d2a
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7635c37087b0936821bfc172948f6ee16b1c82114864cf5534f8715d9944e3f0
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ UI开发中，如何绘制一个倾斜指定角度的Column？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/n9u7Cm1LRJ-vaQq10RJOFA/zh-cn_image_0000002628752850.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/bMSAe4wkTdyxmiESKXo_WA/zh-cn_image_0000002628752850.png "点击放大")
 
 ## 背景知识
 

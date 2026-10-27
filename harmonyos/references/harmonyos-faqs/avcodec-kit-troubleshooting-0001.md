@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/avcodec-kit-tro
 title: 视频播放画面异常常见问题定位
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 故障排查 > 视频播放画面异常常见问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:20+08:00
+scraped_at: 2026-10-28T07:48:33+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:1e4aab200afd5969c0e65120aa2889f577c2bc0f8c1f23f9b21129178b9b162d
+content_hash: sha256:d28cbd98f152c38c2bb81394e0e10dae0b2bcf226eaf06f3d57bb2bfa35ef831
 ---
 
 ## 视频播放花屏
@@ -18,7 +18,7 @@ content_hash: sha256:1e4aab200afd5969c0e65120aa2889f577c2bc0f8c1f23f9b21129178b9
 
 1. 视频播放花屏排查流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/wnpQUhRTSGqPz0dwlQG45g/zh-cn_image_0000002765034374.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/0dqQ2PGCSpGqY6FifdXW2w/zh-cn_image_0000002765034374.png "点击放大")
 2. 检查网络状况是否正常，hilog日志中搜索WifiFrameWork: SignalPoll，主要定位以下关键字。
 
    | 关键字 | 解释 |

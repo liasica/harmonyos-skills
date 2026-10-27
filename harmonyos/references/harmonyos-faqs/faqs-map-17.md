@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-17
 title: 如何实现MapComponent地图占满屏幕
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何实现MapComponent地图占满屏幕
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:24+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9f2591cb22c978c5c2a95cd630e217f760ee919f7132f23d49d22ebe17e7f9c5
 ---
 

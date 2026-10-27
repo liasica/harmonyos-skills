@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-22
 title: 使用AudioRenderer播放音频时，如何跳转到指定播放位置
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 使用AudioRenderer播放音频时，如何跳转到指定播放位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:852c9a6f581253a0588d471729fad8cfc8beec413fccd312bde4b49cec464905
 ---
 

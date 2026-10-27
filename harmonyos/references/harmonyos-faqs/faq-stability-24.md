@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-2
 title: 点击音频播放按钮，应用无响应
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 点击音频播放按钮，应用无响应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8503c8ace3e0a0dc21d84f5fef882a7bf7cae09957483bbd3054a79f214ace8b
+content_hash: sha256:85baefea561257dd84d7809397009c4820f5893a77cab5e8c99f1a788c1ec387
 ---
 
 ## 问题现象
@@ -17,7 +17,7 @@ content_hash: sha256:8503c8ace3e0a0dc21d84f5fef882a7bf7cae09957483bbd3054a79f214
 * [AVPlayer](../harmonyos-guides/media-kit-intro.md#avplayer)主要工作是将Audio/Video媒体资源（比如mp4/mp3/mkv/mpeg-ts等）转码为可供渲染的图像和可听的音频模拟信号，并通过输出设备进行播放。
 * AVPlayer播放状态变化示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/PD9zFPeEQ2a_imtHu-hVhw/zh-cn_image_0000002628554884.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/634gN2n1RvuhqBdNTZpVdA/zh-cn_image_0000002628554884.png "点击放大")
 * 每个状态的状态码如下：
 
   ```screen

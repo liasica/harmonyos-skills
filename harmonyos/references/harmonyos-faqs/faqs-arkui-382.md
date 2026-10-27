@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-382
 title: 给组件设置responseRegion属性向上下扩展热区，为什么上半部分可以响应点击，下半部分不能响应点击
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 给组件设置responseRegion属性向上下扩展热区，为什么上半部分可以响应点击，下半部分不能响应点击
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:632cfe062b8c21efdf131bb6a875fbec679a4f5c735c50971d498b2f9159d022
 ---
 

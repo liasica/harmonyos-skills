@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-2
 title: 消息推送限制和消息回执问题
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 消息推送限制和消息回执问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:29+08:00
-doc_updated_at: 2026-10-20
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9d6ab246746324501d2a9900dce6020efa699133481e838344a76da37ad76e88
 ---
 

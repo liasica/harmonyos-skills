@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-145
 title: 控制中心的下拉背景实时模糊是如何实现的
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 控制中心的下拉背景实时模糊是如何实现的
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:30635f4e71c39d55728aa0eaeff99c25c7adbbcc27217e0506c3e1f71a35341f
 ---
 

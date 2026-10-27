@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ime-3
 title: 自定义键盘如何实现搜索等功能键
 breadcrumb: FAQ > 应用框架开发 > 输入法框架 > 输入法开发（IME） > 自定义键盘如何实现搜索等功能键
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b40b774ea805b6b90e73ceef9bfde588c3ae70e7daf1c2735fb256fd52f1608d
+scraped_at: 2026-10-28T07:47:57+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ccd6134b0c11e8f76c5a923ddd2ef86bdbca58b10400a36efa9e374e642c86bd
 ---
 
 ## 问题现象
@@ -73,7 +73,7 @@ content_hash: sha256:b40b774ea805b6b90e73ceef9bfde588c3ae70e7daf1c2735fb256fd52f
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/sWNjNp8GTRyvAs1NTvMTOg/zh-cn_image_0000002659020195.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/OOmPrNLjS4msfv-_t5g0JA/zh-cn_image_0000002659020195.png "点击放大")
 
 * **场景二：Search通过应用外第三方输入法实现搜索事件。**
   1. 该场景下Search组件需要绑定onSubmit事件执行搜索操作（小艺输入法只需绑定onSubmit事件即可）。
@@ -140,11 +140,11 @@ content_hash: sha256:b40b774ea805b6b90e73ceef9bfde588c3ae70e7daf1c2735fb256fd52f
         ```
      3. 系统设置中设置第三方应用为默认输入法：
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/z7-vF62jTqytLn3yBel4bQ/zh-cn_image_0000002628661004.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/1JxCwPJ2QiqzzYlM1yPFjw/zh-cn_image_0000002628661004.png "点击放大")
 
         实现效果如下：
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/2WVePvoUQYyK027eHZS0VQ/zh-cn_image_0000002659060265.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ov9eghPZSO2_0dDQZWlS4w/zh-cn_image_0000002659060265.png "点击放大")
 
         **须知** 
 

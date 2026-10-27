@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-100
 title: 如何对异步方法进行插桩/替换
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 如何对异步方法进行插桩/替换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:55+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cfb23a7bafe09436be1a549ed48ab442be4b0416f2d24dae0895c572947933a2
 ---
 

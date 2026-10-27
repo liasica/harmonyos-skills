@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何查询应用堆内存的已分配内存大小和堆内存的空闲内存大小
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何查询应用堆内存的已分配内存大小和堆内存的空闲内存大小
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:09e242eee77e1464c26d5fa8823658f6f1501dfada2327d878ad70c7d2206cae
 ---
 

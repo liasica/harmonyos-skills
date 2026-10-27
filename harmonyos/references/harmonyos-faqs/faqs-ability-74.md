@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-74
 title: 如何在工具类中获取Context
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何在工具类中获取Context
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:80062cfef38b70ffef5cd229eef7f76cc48ddf21d31b4b7d633bc1d750e3aeda
 ---
 

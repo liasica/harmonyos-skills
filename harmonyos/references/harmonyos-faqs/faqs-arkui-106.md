@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-106
 title: TextInput如何限制输入字符为某些字符
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput如何限制输入字符为某些字符
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c26f549c4cbefb86e2fe532c58e499fc637d0c8a2ce3635c7d90406cf8a46b7c
 ---
 

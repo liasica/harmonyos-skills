@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1301
 title: 滑动组件的偏移量如何获取
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 滑动组件的偏移量如何获取
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:46+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f40b152f52a2168e6a09ea3ef21ded83c72fb0edc2d2ee2627c67d0467edfe42
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-4
 title: 图片压缩API的quality参数与图片原始大小、压缩后大小的关系
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 图片压缩API的quality参数与图片原始大小、压缩后大小的关系
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:26+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:27dd6792ad4d04e7d7638addd4baf48a2baf8626711ad50b52c2ed8f94ba4906
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1174
 title: 如何解决Swiper组件未显示页面无法截图的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何解决Swiper组件未显示页面无法截图的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7ae057f454fd5a4bac57ad34b17b4f87b5f32f12b37c7c4ce998187c1f14703f
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:d306f95b85c1646ff365f2e5b7939bf00623cd14def01ee1a32378ad74b7c88e
 ---
 
 ## 问题现象
@@ -48,7 +48,7 @@ buildPreviewContentItem(item: string, index: number) {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/ctEG3dmeQi64IDcCdRFmIg/zh-cn_image_0000002658809147.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/XePKTFtFTXKayRgNs5T2zQ/zh-cn_image_0000002658809147.gif "点击放大")
 
 ## 背景知识
 

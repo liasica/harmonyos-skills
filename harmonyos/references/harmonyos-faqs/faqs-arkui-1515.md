@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1515
 title: TextTimer展示纯秒数时间格式设置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextTimer展示纯秒数时间格式设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:bc3c3277c02abe16532b9a47dd6c2f33898972014058a5d365b6ff553d6497d6
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e2d84a09eecab7e1bf56a3b672faba71a082d226227bce5fbffd1580f160f437
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:bc3c3277c02abe16532b9a47dd6c2f33898972014058a5d365b6ff553d6
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/rdvdL9WYR1GXsWVaArt9yg/zh-cn_image_0000002628606558.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/TQGUuNJhTe2R3g8-HIs1Bg/zh-cn_image_0000002628606558.gif "点击放大")
 
 ## 背景知识
 

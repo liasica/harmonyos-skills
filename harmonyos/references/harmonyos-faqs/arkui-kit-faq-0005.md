@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI-布局margin设置不生效常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI-布局margin设置不生效常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:13:52+08:00
+scraped_at: 2026-10-28T07:46:59+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:772fbf132fd1fd07f5e007a48a4c2e15eb3a7c2fde256cc22d2ab34e7bedbdfe
+content_hash: sha256:fb6986d80d21d9ae940671c7623dca503ec870a5f7db0148af47ca60c02bf371
 ---
 
 **Q：组件设置margin属性添加外边距未生效？**
@@ -40,7 +40,7 @@ struct Page {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/sup-lYZNS6G-taQyeoZMpw/zh-cn_image_0000002792081947.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/gmWYxX6RRe6wNvov-zxMQQ/zh-cn_image_0000002792081947.png "点击放大")
 
 **A**：上述问题是因为子组件设置了宽度为100%，且同时设置了相同的左右margin值，即设置子元素与父元素左右保持相同的距离，但由于宽度为100%，左右设置了相同的margin导致左右边距相互抵消，实际的margin出现在了屏幕之外，想要实现子元素距离父元素左右有一定的距离可以通过下面两种方式进行处理。
 
@@ -111,4 +111,4 @@ struct Page {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/KWdZ_G39RRCqOIjNe1WxuQ/zh-cn_image_0000002762843308.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ACSmA8IqQ1icD-XKSc-xQw/zh-cn_image_0000002762843308.png "点击放大")

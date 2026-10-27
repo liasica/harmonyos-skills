@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何实现动态修改应用图标
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何实现动态修改应用图标
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:29+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:c77253aa71c5bb760405ccc1c455c05e8365c6aa7e7fdaf447adab25b182c38e
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:02e68226b2aefef54392d0a36a9d5b01f01f511a21199b79cc2ee29e5664d42c
 ---
 
 ## 场景一
@@ -36,7 +36,7 @@ content_hash: sha256:c77253aa71c5bb760405ccc1c455c05e8365c6aa7e7fdaf447adab25b18
 
 ### 解决方案
 
-默认可配置5个图标，最多可以配置10个，超出5个可以在AGC的互动中心联系在线客服申请添加配额或发送邮件申请。
+默认可配置5个图标，最多可以配置10个，超出5个可以在HarmonyOS 开发者中心的互动中心联系在线客服申请添加配额或发送邮件申请。
 
 邮件发送地址与[开通图标管理服务](../harmonyos-guides/appgallery-appinfo-manage.md#申请开通服务)一致，邮件标题和内容需要参考如下模板稍作修改，注意区分：
 

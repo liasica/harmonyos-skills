@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-framew
 title: 一次开发多端部署
 breadcrumb: FAQ > 应用框架开发 > 一次开发多端部署
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:13:53+08:00
-doc_updated_at: 2026-10-22
+scraped_at: 2026-10-28T07:48:08+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e04f8784920395bbd422d208e2d6713170cd70f47a18f96d1ae46754533b981c
 ---
 

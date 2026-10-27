@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 如何解决无法配置ohpm-repo私仓多域名的问题
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何解决无法配置ohpm-repo私仓多域名的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
+scraped_at: 2026-10-28T07:49:02+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:32915e78cb4c2969d245aba5fc020295f00995ff0f14b34ee7bada0f33f935fd
+content_hash: sha256:b8aee4c73d6a0096696192e453d3ce75fb3a6f9f79a0de717d63fb50263d25f7
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:32915e78cb4c2969d245aba5fc020295f00995ff0f14b34ee7bada0f33f
 
 网络拓扑图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/BzQqwhaBQVyuBTQijwtUcg/zh-cn_image_0000002658928945.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/1jGgCjFrRKKxoAQ0ZMoFng/zh-cn_image_0000002658928945.png "点击放大")
 
 **问题描述**：多台开发机和ohpm-repo服务分别在不同网段，有网络隔离，无法直接通过IP访问，只能通过不同域名进行访问。此时应如何配置服务和开发环境才能正常访问私仓服务。
 

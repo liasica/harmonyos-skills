@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何通过代码获取Hap包的打包时间
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何通过代码获取Hap包的打包时间
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:46+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bf2994460a7943a1e2158d4f1900adfe046120c9814b56a966a5cf2a7e3ec8fb
 ---
 

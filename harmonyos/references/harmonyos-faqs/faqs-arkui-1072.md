@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1072
 title: 如何解决Tabs页签切换时的常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Tabs页签切换时的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:581c191e61679a12ef18be7c14897db8cdb39408f9bbc06cd3de8102413c441c
 ---
 

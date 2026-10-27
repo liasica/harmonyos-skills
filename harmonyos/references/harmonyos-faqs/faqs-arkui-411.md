@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-411
 title: Navigation组件，内部页面是否可以预加载
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation组件，内部页面是否可以预加载
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fdb9b6c3638b84f463e02197d6f6b6e81ca761925969b7cf4c53a0202dbd7919
 ---
 

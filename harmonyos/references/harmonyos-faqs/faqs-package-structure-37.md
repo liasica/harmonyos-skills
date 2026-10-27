@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: HAR如何转换为HSP
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > HAR如何转换为HSP
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:29+08:00
-doc_updated_at: 2026-07-15
+scraped_at: 2026-10-28T07:46:46+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:be5b06743d58e31d9456e2ee2ae026199613a281dc7812a15c28b46c7f47773c
 ---
 

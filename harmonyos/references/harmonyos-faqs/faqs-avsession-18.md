@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 视频播放时，播控中心状态不正确，且无法暂停视频
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 视频播放时，播控中心状态不正确，且无法暂停视频
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
+scraped_at: 2026-10-28T07:48:33+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f46b118e92ac1cabf32dca4a9992c1850d9897ff91334279d01709ae1d897a77
+content_hash: sha256:af775cc86223fe0c69bce116125e4108c4239020ee4181d8d3052aa9da97af65
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:f46b118e92ac1cabf32dca4a9992c1850d9897ff91334279d01709ae1d8
 
 可以参见如下现象演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ghqvPOG4QmG36m5S2j9A5g/zh-cn_image_0000002658912001.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/PKDdLNSFR-qqcjK84ObLMQ/zh-cn_image_0000002658912001.png "点击放大")
 
 ## 背景知识
 

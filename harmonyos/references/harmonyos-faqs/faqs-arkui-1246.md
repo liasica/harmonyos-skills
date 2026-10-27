@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1246
 title: 切换横屏操作后侧滑退出，页面仍为横屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 切换横屏操作后侧滑退出，页面仍为横屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4ba8a59be88cb378158e9b64f60a9bf5cf92aedbeefc6dd1fdb1c6c357018c6e
 ---
 

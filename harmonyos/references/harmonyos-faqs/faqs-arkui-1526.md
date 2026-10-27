@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1526
 title: 如何设置窗口或页面透明背景色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何设置窗口或页面透明背景色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:b3ae43283866a0b5239155b7f3c0ea106f13518e2ea6e7385f9f0711b3d80122
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4c161ba004850d1356b53fea273471b7b88dc7f5b7dfd126831e2ee581c80302
 ---
 
 ## 问题现象
@@ -101,7 +101,7 @@ content_hash: sha256:b3ae43283866a0b5239155b7f3c0ea106f13518e2ea6e7385f9f0711b3d
 
   方案一、方案二示例效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/YTu5pnC5Qbeu9yGdxu5lNQ/zh-cn_image_0000002675345105.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/598h8fElT2m4GAyb5HWV4A/zh-cn_image_0000002675345105.png "点击放大")
 * 方案三：如果页面使用了NavDestination，将其模式设置为DIALOG可实现背景透明的效果。
 
   ```ts
@@ -181,7 +181,7 @@ content_hash: sha256:b3ae43283866a0b5239155b7f3c0ea106f13518e2ea6e7385f9f0711b3d
 
   方案三示例效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ZyYfSrUnS5m4o_HJcELuHA/zh-cn_image_0000002645185340.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Yk9Q0pQuTauwkw3PsK055w/zh-cn_image_0000002645185340.png "点击放大")
 
 ## 总结
 

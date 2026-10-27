@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-356
 title: 如何更改TextInput密码输入模式下passwordIcon的大小、颜色、位置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何更改TextInput密码输入模式下passwordIcon的大小、颜色、位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6372be0b97a2207800a9ea37e0698503833e44a1627cac1e5d430d4e88e7cb7f
 ---
 

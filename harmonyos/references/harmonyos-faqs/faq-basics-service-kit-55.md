@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 如何解决使用剪贴板接口阻塞主线程问题
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 如何解决使用剪贴板接口阻塞主线程问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:39+08:00
+scraped_at: 2026-10-28T07:48:21+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:59031b64552b791f2294cce4ae172ade27dd88126565ec4928344e60f5dc160e
+content_hash: sha256:f991489460dd0b40dfd368adf680bacf28b08a049512c46aaccc8b21da44591a
 ---
 
 ## 问题现象
@@ -19,7 +19,7 @@ content_hash: sha256:59031b64552b791f2294cce4ae172ade27dd88126565ec4928344e60f5d
 
 ## 问题定位
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/bA67nLZCT32Q2idFZw5L6g/zh-cn_image_0000002658853203.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/SMpz75hDTdiZO6DgTSwmbw/zh-cn_image_0000002658853203.png "点击放大")
 
 日志显示THREAD\_BLOCK\_6S卡死由主线程调用getDataSync时锁阻塞引起，同时子线程在剪贴板服务阻塞4s，导致主线程无法响应。
 

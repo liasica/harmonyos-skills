@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1351
 title: 组件旋转动效实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 组件旋转动效实现
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:36+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7f0d0e302e4bbed4815d65e2af21fed7cddd8b3d561ba985db8a08a16f3f582c
+content_hash: sha256:38a837a74c11c4037118196091914d560b36065f4b93ea01c444dd271595d65b
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:7f0d0e302e4bbed4815d65e2af21fed7cddd8b3d561ba985db8a08a16f3
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/3_umIvT2TSGYdghtsZTuhQ/zh-cn_image_0000002658960739.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/SH5YPdBERrqbVfrcirQeYA/zh-cn_image_0000002658960739.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-846
 title: 如何实现可旋转的弧形图片集
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现可旋转的弧形图片集
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b81c943eb4492e2e4703669fe65aa01209c4f64e48e17764cbda1ddcdaddae93
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e9f0738c853dd0ab4d824115b03467a7075bc85efd283193620e7a63c0bb7126
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:b81c943eb4492e2e4703669fe65aa01209c4f64e48e17764cbda1ddcdad
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/-oe0faEeTNqkWXreYGElIw/zh-cn_image_0000002628398640.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-B5i-12VSXCJMpiL4ReXqQ/zh-cn_image_0000002628398640.gif "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-404
 title: Navigation组件中，NavDestination页面是否可以缓存，下次入栈可以复用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation组件中，NavDestination页面是否可以缓存，下次入栈可以复用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:995e3d4cd0ea3c79e3d26e8ee945d631e5b5e40e6a9b31ac1c99bad31b32b606
 ---
 

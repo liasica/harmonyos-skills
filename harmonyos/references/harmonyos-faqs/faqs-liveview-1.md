@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-liveview-1
 title: 实况窗推送内容如何实现自定义
 breadcrumb: FAQ > 应用服务开发 > 实况视图服务（Live View Kit） > 实况窗推送内容如何实现自定义
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-08-26
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8f4442c23c979d2205d6405a8de0c79304f18ef19969932de392a690f0a994c2
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-93
 title: 赋值和深/浅拷贝的区别
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 赋值和深/浅拷贝的区别
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:52+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d4fbf163ac2a210211605327fb3ecc2129880a69be902466285c696319c8e86e
 ---
 

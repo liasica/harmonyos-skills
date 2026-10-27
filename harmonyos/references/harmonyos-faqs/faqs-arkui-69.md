@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-69
 title: 父组件如何与孙子组件进行状态同步
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 父组件如何与孙子组件进行状态同步
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c4bea3a9eae70a680f3eda979a656c978b31d8e6d6509d10bfb75794dad91bcf
 ---
 

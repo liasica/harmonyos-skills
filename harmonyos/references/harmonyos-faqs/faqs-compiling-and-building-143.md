@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“The local dependency below in module %s is invalid”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The local dependency below in module %s is invalid”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:54+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:479f1fe44a2093dcbbce092818649c534544ac5f7235066a15274f5bd9351260
+content_hash: sha256:bf4abe59bc63bf4ad9da1348cbdd087a7dd7bab1e26a63b19238d43b62f167a8
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:479f1fe44a2093dcbbce092818649c534544ac5f7235066a15274f5bd93
 
 当设置"harLocalDependencyCheck": true时，若har模块添加模块外依赖，将触发该编译报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/xRh_8w1-QumD8-ArGVP-lg/zh-cn_image_0000002624478628.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/W7YA_eJlQ7yZzBfYe8efjA/zh-cn_image_0000002624478628.png)
 
 **解决措施**
 

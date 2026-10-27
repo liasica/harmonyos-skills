@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 当应用发生故障时，如何获取系统日志
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 当应用发生故障时，如何获取系统日志
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:46:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:585e4ffd2eaefa7340e8e3addc2f006bfa02bd7de6e24682fdda9ffc434e34cb
 ---
 

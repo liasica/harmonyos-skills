@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-855
 title: 侧滑退出应用后再次打开，会有提示是否退出登录的弹框
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 侧滑退出应用后再次打开，会有提示是否退出登录的弹框
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:5dca62d681a6db66484bd80c4fdc592df3f09b7dcfaa03cb0feed249d1f920cd
+content_hash: sha256:3ab5f2bf308627049fdcf3973bc8a22d401705aa18b526ca6cbaf4b282f1dcb5
 ---
 
 ## 问题现象
 
 用户侧滑退出应用后，此时应用进入到后台。当用户再次访问该应用时，系统会显示一个提示用户是否退出登录的对话框：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/rsEtiLFVT4K4_ZBe2AJI4g/zh-cn_image_0000002658797927.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/wUEtPZS-S86NcIUYRI9etQ/zh-cn_image_0000002658797927.png "点击放大")
 
 ## 背景知识
 

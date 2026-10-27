@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-176
 title: HarmonyOS系统浏览器下载内容页面如何获取到文件类型对应的图标
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > HarmonyOS系统浏览器下载内容页面如何获取到文件类型对应的图标
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7df14e1f51bbb1cf1485fdc521d97f64c4b0316d08c51b5d4a77a66afb082ef5
 ---
 

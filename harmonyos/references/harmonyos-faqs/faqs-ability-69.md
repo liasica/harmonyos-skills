@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-69
 title: 如何禁用窗口的全屏显示功能
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何禁用窗口的全屏显示功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:246e053fb74b35f5622fd6b6ff5b17a5adb1d99a4caebc5c66ae1d3f0bed6b4a
 ---
 

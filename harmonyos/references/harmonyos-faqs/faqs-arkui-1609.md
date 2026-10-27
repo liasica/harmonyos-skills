@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1609
 title: 页面上图片展示不完整
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面上图片展示不完整
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:33+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:c8382f974f334f7978066c5b9915b141fc4e729ffcbd28ed40b05a1b0eec739a
+content_hash: sha256:0fbee6fc7dd5ede9fb0db219909137c91109e09d9e5237dd54d8de7645cad0e0
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:c8382f974f334f7978066c5b9915b141fc4e729ffcbd28ed40b05a1b0ee
 
 图一：完整显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/71NbwiWuS0e5bLO4X7T31Q/zh-cn_image_0000002658972591.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/WkApP0AqRw2WC3-8TNSuFQ/zh-cn_image_0000002658972591.png "点击放大")
 
 图二：显示不完整。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/5CRITqW2STerRo8t1TM6uQ/zh-cn_image_0000002658852639.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/RoyZsKVITB6_WRX8x5YPVg/zh-cn_image_0000002658852639.png "点击放大")
 
 ## 背景知识
 
@@ -30,7 +30,7 @@ content_hash: sha256:c8382f974f334f7978066c5b9915b141fc4e729ffcbd28ed40b05a1b0ee
 
 1. 使用DevEco Testing查看问题组件，该组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/SJQ7OQA1TGSG38ctvfnjPw/zh-cn_image_0000002628773276.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mVtDEDFHSneKTF3aQ-HW9Q/zh-cn_image_0000002628773276.png "点击放大")
 2. 查看Image组件的objectFit属性是否正确，图片的缩放模式选用不当可能造成图片显示不完整，如果图片缩放模式设置为cover，图片会保持宽高比，并填满容器，超出部分会被裁剪。
 
    ```ts

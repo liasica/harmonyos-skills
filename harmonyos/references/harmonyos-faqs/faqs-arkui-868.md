@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-868
 title: 点击验证码输入框拉起软键盘后需要切换到数字输入模式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 点击验证码输入框拉起软键盘后需要切换到数字输入模式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:5e5287c4189373c6494dae78532b03fde9806dc280a658b5ab3a8c7649d242d6
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:8908ab12371a4de96adeab51d9096878066c290a4dd0fa571b50a63739ef21c8
 ---
 
 ## 问题现象
 
 应用当前页面需要用户输入验证码，该验证码为纯数字。当用户点击页面上验证码输入框时，拉起软键盘的当前输入模式为字符，用户需要点击软键盘的切换按钮，将输入模式转换为数字才能输入相应的验证码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/xuuk6uKpRRS3qvuBbwy6hw/zh-cn_image_0000002658918121.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/1PNFuuWkR_aJ6v1g7_v5iA/zh-cn_image_0000002658918121.png "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:5e5287c4189373c6494dae78532b03fde9806dc280a658b5ab3a8c7649d
 
 使用DevEco Testing工具查看页面的元素组成：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/5iNHnIJASdSx0CcglOEMWQ/zh-cn_image_0000002628398908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/-oE1DzXAQ0SwlBWcINkabg/zh-cn_image_0000002628398908.png "点击放大")
 
 发现此处为TextInput组件，用于接收输入的验证码。
 

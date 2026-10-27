@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-310
 title: 在长按拖拽排序的场景下，如何实现自定义长按拖拽onItemDragStart的开始触发时长
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 在长按拖拽排序的场景下，如何实现自定义长按拖拽onItemDragStart的开始触发时长
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b4f60568fe09efd48c42c22e3b766be37eb625ca9dbfd4e8f2fc27346d75ab05
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9bbda5ca9ca6985c6691e6cb16406194554712721a4bf2caf2b94a9e1e333137
 ---
 
 在Grid组件中，onItemDragStart事件的默认触发时长为170毫秒，但当前版本不支持直接修改该参数。可以通过自定义Grid，通过设置长按手势LongPressGesture中的duration参数，来实现自定义长按拖拽的开始触发时长，参考代码如下：
@@ -328,4 +328,4 @@ struct ReplaceDefaultTimeSetPage {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/2t2pDeqjQEOQ2GFTWm9f3w/zh-cn_image_0000002654795305.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/qjrxfBbmS5Cc3EGYnQiwfA/zh-cn_image_0000002654795305.png "点击放大")

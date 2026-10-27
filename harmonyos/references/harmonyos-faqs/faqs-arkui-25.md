@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-25
 title: 如何实现分组列表的吸顶/吸底效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现分组列表的吸顶/吸底效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2f068ee4cb13e9256041c83f7ba924a78c7fad5b3241171d29860782fdfddcd9
+scraped_at: 2026-10-28T07:47:54+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:531ed14c8dc70782e735e39dfda0312158b9e55042697cc50ab605d51fe38976
 ---
 
 可通过[List](../harmonyos-references/ts-container-list.md)组件的sticky属性配合ListItemGroup组件来实现。通过给List组件设置sticky属性为StickyStyle.Header/StickyStyle.Footer。可参考如下代码：
@@ -90,4 +90,4 @@ interface TimeTable {
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XPhYzHqBSEiYDVsEfHEkbw/zh-cn_image_0000002654795283.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/9MZE1PPUR-ew8f4Seq-NEw/zh-cn_image_0000002654795283.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-645
 title: 如何实现球形粒子动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现球形粒子动画效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:23+08:00
+scraped_at: 2026-10-28T07:47:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a30c966e45d8e264ddfdb30f4cbec6311f1dbfe206de2e8d8845894304a7547d
+content_hash: sha256:23a0c69758201dfcff190600e615ae18a979f974c19b00a9ee3341fb9a06d2c7
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:a30c966e45d8e264ddfdb30f4cbec6311f1dbfe206de2e8d8845894304a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/o_c50AKBSIWxAg1gKJaezg/zh-cn_image_0000002628554402.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/A0NMOvu-Rny68rey6zNz9A/zh-cn_image_0000002628554402.gif "点击放大")
 
 ## 背景知识
 

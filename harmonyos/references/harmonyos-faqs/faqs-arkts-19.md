@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-19
 title: 如何实现字符串编解码
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何实现字符串编解码
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:51+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:49afc909c80504c6e69143d254b77b9f820402f04eef7c93e481a24c8c53659c
 ---
 

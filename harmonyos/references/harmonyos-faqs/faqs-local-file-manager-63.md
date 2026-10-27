@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 获取文件大小和文件类型
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 获取文件大小和文件类型
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3cfb144cd766653c8c90785d7e855a519ff4536fd49afb4ac31c3bae438bf333
 ---
 

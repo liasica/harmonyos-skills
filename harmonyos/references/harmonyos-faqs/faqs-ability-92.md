@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-92
 title: 如何在App启动时让各种权限弹窗的申请自动弹出
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何在App启动时让各种权限弹窗的申请自动弹出
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:48+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cb4b7ed005010349f8990774ed4bc8d6ae8b0ad0d6a64317ba62a4b81f8bf0b7
 ---
 

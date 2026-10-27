@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-942
 title: 关闭ComponentContent创建的弹窗未触发aboutToDisappear生命周期回调
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 关闭ComponentContent创建的弹窗未触发aboutToDisappear生命周期回调
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:45+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:8427b96d008b4737ce0cf85307d49dfb271564cb7bfbf75f16831a8128f393cb
+content_hash: sha256:09d2574d1400964702fb5aff8b40f5b17e165f44d4a188c7cfa1f5299595d873
 ---
 
 ## 问题现象
@@ -277,7 +277,7 @@ content_hash: sha256:8427b96d008b4737ce0cf85307d49dfb271564cb7bfbf75f16831a8128f
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/C8p3alvZS1yAxp9E-KsP4w/zh-cn_image_0000002718888667.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/otHyZdbXSya2P5SaKs2fJA/zh-cn_image_0000002718888667.png "点击放大")
 * 场景二：
 
   如果想在半模态页面关闭后触发aboutToDisappear()生命周期函数，可以在[closeBindSheet](../harmonyos-references/arkts-apis-uicontext-uicontext.md#closebindsheet12)的异步回调里，调用ComponentContent的[dispose()](../harmonyos-references/js-apis-arkui-componentcontent.md#dispose)方法立即释放当前ComponentContent实例，解除节点之间的绑定关系即可触发aboutToDisappear()生命周期函数。若需再次打开半模态页面，还需重新创建ComponentContent实例。

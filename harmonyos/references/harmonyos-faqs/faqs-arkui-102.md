@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-102
 title: 通过$r访问应用资源是否支持嵌套形式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 通过$r访问应用资源是否支持嵌套形式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6ef0aa2f2b5e1fc62595659db2c0d8f44b7d2291d5a41112b296b6e138da80fe
 ---
 

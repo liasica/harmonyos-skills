@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1473
 title: 多级筛选功能实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 多级筛选功能实现
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:24+08:00
+scraped_at: 2026-10-28T07:47:48+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:3789d40d6edadc900cc3184ece0b6cffb5eed0658b789409bf84260ba3f120fa
+content_hash: sha256:720fefe1aceecd99610e65a768bec742836733f48fc8aad05c8d8fd0b333fb6f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:3789d40d6edadc900cc3184ece0b6cffb5eed0658b789409bf84260ba3f
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/aPC6ONDrS6quDMDaQFWJkg/zh-cn_image_0000002658844615.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/-JdpeOHKTyKvwsVxkWdn3g/zh-cn_image_0000002658844615.png "点击放大")
 
 ## 背景知识
 

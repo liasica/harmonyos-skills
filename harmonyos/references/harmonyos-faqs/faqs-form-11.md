@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-11
 title: 点击服务卡片有概率无法打开详情页
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 点击服务卡片有概率无法打开详情页
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
+scraped_at: 2026-10-28T07:46:50+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7e0dc1c1928c84eb3f2d6f1f7aa96f4d4aa48e290f42bb56b7292bb74717b634
 ---
 

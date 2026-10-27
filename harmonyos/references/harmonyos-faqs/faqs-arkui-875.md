@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-875
 title: 应用每输入一个字符软键盘就会收起
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 应用每输入一个字符软键盘就会收起
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1a7e5669a8a41cd1aa2cce5ea1b2e12da3106dd8827aadddcf6b1910c58894e5
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:57135ed453b351719cc826208355900abb38b1cd2214659fce2e99a0f8dc6451
 ---
 
 ## 问题现象
@@ -57,7 +57,7 @@ content_hash: sha256:1a7e5669a8a41cd1aa2cce5ea1b2e12da3106dd8827aadddcf6b1910c58
 
    效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/A5x0MhWARjKMQ-PvWJ7R-A/zh-cn_image_0000002658798193.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/7GqreAkeSHSO48ErReN6qg/zh-cn_image_0000002658798193.png "点击放大")
 3. 排查业务代码中是否存在输入值变化时进行stopEditing函数调用。
 4. 排查业务代码中是否存在输入值变化时设置输入框失去焦点。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-universal-
 title: 如何使用用户自定义的pin码（6到16位）进行密钥解锁
 breadcrumb: FAQ > 系统开发 > 安全 > 密钥管理（Universal Keystore） > 如何使用用户自定义的pin码（6到16位）进行密钥解锁
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:12+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:831a1cd9f460c7c02aa1ad03565ef3e76f5c6635da8bcd500163773abacd23a0
 ---
 

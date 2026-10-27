@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何实现多张图片的拼接
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何实现多张图片的拼接
 category: harmonyos-faqs
-scraped_at: 2026-09-23T06:59:59+08:00
+scraped_at: 2026-10-28T07:48:35+08:00
 doc_updated_at: 2026-09-22
-content_hash: sha256:efe290b5b195664e2e16b7541c94ca23c6d1cfff61b3de5acb439fdd18e4a47d
+content_hash: sha256:18ae08096243d60d8d3b15616e62d6b065435e845f4f969d692a91a9be893ce3
 ---
 
 ## 问题现象
@@ -35,7 +35,7 @@ content_hash: sha256:efe290b5b195664e2e16b7541c94ca23c6d1cfff61b3de5acb439fdd18e
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/i6pxC_AGRmCXNnv1e1bIyQ/zh-cn_image_0000002628393350.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/7Mpy67cNRKm0WrdUqeFLLQ/zh-cn_image_0000002628393350.png "点击放大")
 
 绘制图片会根据drawImage设置的图片绘制区域进行等比例缩放，常用的图片像素处理格式有ImageBitmap和PixelMap，两者的使用优劣对比如下表所示：
 
@@ -101,7 +101,7 @@ struct CanvasDrawing {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/hmj8ZFcAT42tNik8oA6ehQ/zh-cn_image_0000002628553232.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/3nfsZFZMQDqoiVPFDPyw8w/zh-cn_image_0000002628553232.png "点击放大")
 
 离屏绘制的相关代码如下：
 
@@ -157,7 +157,7 @@ struct OffScreenDrawing {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/UTJJTTcqQNuZ4eIliWp-0g/zh-cn_image_0000002658912551.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/nYva38XRSruy0vByCIxHjA/zh-cn_image_0000002658912551.png "点击放大")
 
 对于相册图片或沙箱图片，可以在获取图片的ArrayBuffer数据后，创建PixelMap实例绘制长图。参考代码如下：
 
@@ -240,7 +240,7 @@ struct AlbumImageData {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/AJr4_HsfRDK-auzmWdrLyw/zh-cn_image_0000002658792609.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/xiyWpfJiQcmQaV4C_ZnRMA/zh-cn_image_0000002658792609.png "点击放大")
 
 **方案二**：使用writePixels实现长图绘制。
 

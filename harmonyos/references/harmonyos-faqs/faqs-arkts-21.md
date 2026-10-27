@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-21
 title: 使用NAPI扩展TS接口时，常用属性和实现接口的基本用法
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 使用NAPI扩展TS接口时，常用属性和实现接口的基本用法
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:51+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3606a4b27042cf4920c69d6cd66a6730111796a8fc86426af9cb16e99a09c361
 ---
 

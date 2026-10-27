@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-web-page-f
 title: Web框架
 breadcrumb: FAQ > 应用框架开发 > Web框架
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:13:47+08:00
-doc_updated_at: 2026-10-22
+scraped_at: 2026-10-28T07:48:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4a16402f527b7849a16f5e1b85c576e482a518daaab6404d8042e59b234859c4
 ---
 

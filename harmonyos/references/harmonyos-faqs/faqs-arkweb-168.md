@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-168
 title: 根据Web页面是否成功加载动态展示不同页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 根据Web页面是否成功加载动态展示不同页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:93d6a7822454eb20baf2a706e5c0cbff7e3b44cd1b12ab02b4966fe6059beed3
 ---
 

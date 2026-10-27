@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-447
 title: 组件A通过bindContextMenu配置了长按菜单，点击菜单外区域，组件A响应了点击事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 组件A通过bindContextMenu配置了长按菜单，点击菜单外区域，组件A响应了点击事件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9d0767c553a244785e54a77d5a65958e22eeed64fc0806a8171bf689aeaf9eee
 ---
 

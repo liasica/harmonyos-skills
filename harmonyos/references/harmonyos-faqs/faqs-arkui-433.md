@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-433
 title: 手表设备，息屏2分钟才能收到onHidden回调
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 手表设备，息屏2分钟才能收到onHidden回调
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8c108326c8e2720bb176e2f64a6e3dbdac7ba9393f53be74ce269ad01b2b82de
 ---
 

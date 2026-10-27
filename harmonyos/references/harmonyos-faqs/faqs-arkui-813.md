@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-813
 title: 如何使用Circle组件实现物体自由落体效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使用Circle组件实现物体自由落体效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:eb4853f42fffec7fd0dad2fb1a2a0523587c92e11e8197227c987bbf1ebfba45
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:237b2383b6f3bd5d8dc66f00d757a6df00efd5c1548f334377d112d4f23d1071
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ Circle组件是绘制圆形的组件，如何使用Circle组件实现物体自�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/JJwNQj5eShGiocqTdTDiFg/zh-cn_image_0000002628557802.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ZRYpoyQoSSG0V9KTH4ZGVw/zh-cn_image_0000002628557802.gif "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI-Row组件布局问题排查
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI-Row组件布局问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:09+08:00
+scraped_at: 2026-10-28T07:47:32+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:32bb1431f6774e9bc7425a139ac63e1d5580a623ba4581d559d0d9996b5f89b5
+content_hash: sha256:c45b4984ab923c3c8413462579bf84c6de383f96c7ab2aee25dc2fe40c16d75a
 ---
 
 **Q：Row组件内布局了多个Text组件，其中一个Text组件长度较长，导致后面的组件超出Row组件，内容溢出屏幕，部分Text组件没有展示。示例代码如下：**
@@ -45,7 +45,7 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/r68QL4EdSF-1gUmb3P8pyQ/zh-cn_image_0000002793760225.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/cg3DEdjuR9KSAC9D0SXVtQ/zh-cn_image_0000002793760225.png "点击放大")
 
 可以观察到，当第二个子组件为长文本时，后面的其他子组件都无法显示出来。
 
@@ -265,7 +265,7 @@ struct PageOne {
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/S5_GczyHRX6y8Ar5rYtZWg/zh-cn_image_0000002793680765.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/m4RR6BBeTK67khHOJk7Pjg/zh-cn_image_0000002793680765.png "点击放大")
 
 **A**：针对padding属性未生效问题，给TextInput组件设置layoutWeight(1)属性即可。详情请参考如下示例代码：
 
@@ -297,4 +297,4 @@ struct PageTwo {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/dXWGiFG6RrGAgWKbXodqJQ/zh-cn_image_0000002764442424.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/EV49kK-zRqm1QSP4N0ElSQ/zh-cn_image_0000002764442424.png "点击放大")

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-14
 title: 自助分析结果显示“未查询到消息处理”
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 自助分析结果显示“未查询到消息处理”
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:30+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:c842f51fb7d52f88bac6bd75539b1e0b63552bbdca40c90be04952a400ce05f4
+scraped_at: 2026-10-28T07:48:43+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3d6d827ee3e83b5f7bad7a4c55782467e9f3f0dacd7dc5d7842d51667746b05d
 ---
 
 ## 问题现象
 
-在AGC平台，按查询路径：“应用管理 -> 推广运营 -> 增长运营 -> 推送服务 -> 自助分析（Beta）”，在自助分析里面输入requestId和token，分析结果显示“未查询到消息处理”，可能是什么原因造成的。
+在HarmonyOS 开发者中心平台，按查询路径：“应用管理 -> 推广运营 -> 增长运营 -> 推送服务 -> 自助分析（Beta）”，在自助分析里面输入requestId和token，分析结果显示“未查询到消息处理”，可能是什么原因造成的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/-E6m95q_T6K5Fa1UmvLn-w/zh-cn_image_0000002628394546.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/hHRG8sftR0yoO6qWxITwWw/zh-cn_image_0000002628394546.png "点击放大")
 
 ## 解决方案
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-core-speec
 title: textToSpeech文本转语音播报音量无法调节
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > textToSpeech文本转语音播报音量无法调节
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:49:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:dffd720746ce382cfd7e050073cd66c1e8d470f5a6aed050186a757f2000003e
 ---
 

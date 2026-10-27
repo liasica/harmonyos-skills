@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-158
 title: 如何解决H5页面的输入框在聚焦和失焦时，键盘的自动拉起和隐藏问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决H5页面的输入框在聚焦和失焦时，键盘的自动拉起和隐藏问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f8c53dbd84cc3f58cba4de1063cc4d3303dbfa461022501295e3e4a971ce4ce4
 ---
 

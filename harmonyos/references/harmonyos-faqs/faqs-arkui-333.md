@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-333
 title: 一个自定义组件内某一时机批量刷新多个@State修饰的状态变量，是否会影响性能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 一个自定义组件内某一时机批量刷新多个@State修饰的状态变量，是否会影响性能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b7f82619dab0b1a15e5ade3e9a66a7b37856259f7bd67a1244db49d032a5c0d2
 ---
 

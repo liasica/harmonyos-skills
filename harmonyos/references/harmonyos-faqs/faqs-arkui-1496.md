@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1496
 title: Refresh下拉刷新偏移量控制问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Refresh下拉刷新偏移量控制问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:6c747a91e87808775fe2202008abdbad0f72f51bd2dc4a5bd36c883c61be7b2f
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4698d0796273af4170ec0dc5e53c42ebe8b70685f60fb51180224e151cc67140
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:6c747a91e87808775fe2202008abdbad0f72f51bd2dc4a5bd36c883c61b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/LczO3b1RSGe-1QeLsn2x9w/zh-cn_image_0000002628765712.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/4mTEFSrBRlyKPuJ_MTseVg/zh-cn_image_0000002628765712.png "点击放大")
 
 ## 背景知识
 

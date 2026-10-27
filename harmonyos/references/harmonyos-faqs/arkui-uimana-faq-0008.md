@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: Text组件常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > Text组件常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:10+08:00
+scraped_at: 2026-10-28T07:47:32+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:c32c5a36ca252a81a363e92211a52030fe291fb8287f31365e456d446ec0154c
+content_hash: sha256:0e197f711b1a27648a2709ccc382696c6b8afe6de1945a2528ed41baa00fd2ab
 ---
 
 **Q：HarmonyOS中的Text控件无法手动设置isSelected参数，导致无法判断文字是否被选中。如何实现文字多选框效果？**
@@ -67,7 +67,7 @@ content_hash: sha256:c32c5a36ca252a81a363e92211a52030fe291fb8287f31365e456d446ec
 
   实现效果如图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/eUpEhQ4zR0Oe-40ayuKehw/zh-cn_image_0000002795467159.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/1HyZ-2F6TESrj4QgNPU7SA/zh-cn_image_0000002795467159.png "点击放大")
 * 方案二：attributeModifier动态属性设置多态样式：
 
   具体操作步骤如下：
@@ -170,7 +170,7 @@ content_hash: sha256:c32c5a36ca252a81a363e92211a52030fe291fb8287f31365e456d446ec
 
   实现效果如图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/XhMywNwnSDO2H31zXash9A/zh-cn_image_0000002766068602.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/vnpqzw-PQ7CbmIg9juGoXw/zh-cn_image_0000002766068602.png "点击放大")
 * 方案三：其他多选框实现：
   + 若要实现更标准的切换选框，推荐使用[Toggle组件](../harmonyos-guides/arkts-common-components-switch.md)：Toggle组件提供状态按钮样式、勾选框样式和开关样式，一般用于两种状态之间的切换。
   + 若要实现更标准的多选框，推荐使用[Checkbox组件](../harmonyos-references/ts-basic-components-checkbox.md)：Checkbox提供多选框组件，通常用于某选项的打开或关闭。
@@ -256,7 +256,7 @@ struct IndexOfPage {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/sQlI4cdOTmm7204w1LcLng/zh-cn_image_0000002795307391.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/6sCXFktoRTOoB1v0qKGx0g/zh-cn_image_0000002795307391.png "点击放大")
 
 **Q：父容器的宽高固定，而Text文本内容长度不确定，当文本过长时，会超出父容器的高度。问题代码如下：**
 
@@ -281,7 +281,7 @@ struct Index {
 
 问题现象下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/q1jrgl7NT-SuBLgx90qoZw/zh-cn_image_0000002765908690.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/U8EnTRgORfWJHxvuOYAZaw/zh-cn_image_0000002765908690.png "点击放大")
 
 **A**：解决方案如下：
 
@@ -331,7 +331,7 @@ struct Index {
 
   效果如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/YkabZVQ8SnGlasT8bA1S8g/zh-cn_image_0000002766068618.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/fvpPYLnBSSW8LETiaF358w/zh-cn_image_0000002766068618.png "点击放大")
 * 方案二：使用TextArea代替Text组件，当TextArea的文本内容超过组件范围时会自动生成滑动条。
 
 **Q：Text文本超长时超过屏幕宽度后会自动换行，如果设置[maxLines](../harmonyos-references/ts-basic-components-text.md#maxlines)属性虽然可以让文本不换行但是会造成显示不全的问题，如何实现Text文本既能无限长展示又能不换行？问题代码如下：**
@@ -462,7 +462,7 @@ export struct TextInfiniteLength {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/VDu-RGyJS5aJvpz4DhmLcw/zh-cn_image_0000002766068622.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/WHzlrKesTDuFwKJ30kakbg/zh-cn_image_0000002766068622.png "点击放大")
 
 **Q：如何实现点击文字填充“横线”，“横线”可换行。**
 
@@ -611,7 +611,7 @@ struct DynamicTextFill {
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/V1Z3qzflQxSUy1vhaZsPig/zh-cn_image_0000002765908704.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/TN2VA_6ySzqhP-MJ_-__eA/zh-cn_image_0000002765908704.png "点击放大")
 * 方案二：获取其他组件宽度并设置Text组件的缩进避让。
   1. 在通过RelativeContainer相对布局，实现标题Row组件和内容Text组件的相同位置显示，但此时两个组件内容会有重叠遮挡。
   2. 通过onAreaChange获取标题Row组件的宽度信息（this.titleWidth），转换为number类型。
@@ -690,5 +690,5 @@ struct DynamicTextFill {
 
   实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/qZGNSkAXSSCxA8lsEn8Zuw/zh-cn_image_0000002765908710.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Ajk5qqC5QiKF1LMGedBSRA/zh-cn_image_0000002765908710.png "点击放大")
 * 方案三：可以使用ContainerSpan组件，作为设置Text组件的缩进避让的替代方案，可参考官方文档[通过attributemodifier设置背景样式](../harmonyos-references/ts-basic-components-containerspan.md#示例2通过attributemodifier设置背景样式)。可在组件内使用Span、ImageSpan组件。但此方法不支持通用属性和通用事件，有一定局限性。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-windmana-
 title: 屏幕常亮设置常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 常见问题 > 屏幕常亮设置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:06+08:00
+scraped_at: 2026-10-28T07:47:28+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:7f07a91dbab121f39d61547aef061eb5baed2cc7909f20810d3b28d6f5c7adf8
+content_hash: sha256:0ac2d9218c6959cac90f87f68de746a4f71510ffa5cf3b69f1c0ec8f0dc71f7d
 ---
 
 **Q：在投屏场景下，用户没有屏幕交互操作，也不希望手机跟随系统设置的休眠时间自动熄屏，而是保持屏幕常亮，该如何设置屏幕为常亮状态？如何在用户长时间没有进行屏幕交互的情况下，设置手机屏幕常亮？**
@@ -69,7 +69,7 @@ export struct SetScreenStatePage {
 
 运行结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/5ZuAYkCtTxmAI2rlF5F6rA/zh-cn_image_0000002795314303.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/s3LOX_78S7e-K9uzts7bHQ/zh-cn_image_0000002795314303.png "点击放大")
 
 **Q：为什么设置了屏幕常亮，但是在APP里依然会息屏？**
 

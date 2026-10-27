@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-32
 title: 自定义相机如何切换前后摄像头
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 自定义相机如何切换前后摄像头
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d3e612f0428dcf26f21eb8c5cf901c732b9a8eebbc8ae858061baa1712effa00
+scraped_at: 2026-10-28T07:48:25+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:36078029bebb5165efd0b626c0d89382483f81bd78abab3bab669f5f1747c9b9
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:d3e612f0428dcf26f21eb8c5cf901c732b9a8eebbc8ae858061baa1712e
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/mdFx30hcQ1mr3rDGOcgIAg/zh-cn_image_0000002658791847.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/UOiOU0dxQL6E5UPrzFJmbg/zh-cn_image_0000002658791847.gif "点击放大")
 
 ## 背景知识
 
@@ -26,7 +26,7 @@ content_hash: sha256:d3e612f0428dcf26f21eb8c5cf901c732b9a8eebbc8ae858061baa1712e
 
 1. 在开发相机应用时，需要先[申请相机相关权限](../harmonyos-guides/camera-preparation.md)：
 
-   ```screen
+   ```ts
    {
      "name": "ohos.permission.CAMERA",
      "reason": "$string:reason_camera",
@@ -39,7 +39,7 @@ content_hash: sha256:d3e612f0428dcf26f21eb8c5cf901c732b9a8eebbc8ae858061baa1712e
    ```
 2. 在切换前后摄像头时，首先需要对当前的相机流进行释放，否则在执行输入流创建、会话配置等操作时会出现异常。然后判断当前摄像头位置进行前后切换，最后需要再次初始化相机，重新创建相机管理器、输入输出流等：
 
-   ```screen
+   ```ts
    async changeCameraPosition() {
      this.releaseCamera();
      this.mCameraPosition = this.mCameraPosition === camera.CameraPosition.CAMERA_POSITION_BACK ?
@@ -49,7 +49,7 @@ content_hash: sha256:d3e612f0428dcf26f21eb8c5cf901c732b9a8eebbc8ae858061baa1712e
    ```
 3. 释放相机流的相关代码如下：
 
-   ```screen
+   ```ts
    async releaseCamera() {
      // 释放相机输入流
      if (this.cameraInput) {
@@ -72,7 +72,7 @@ content_hash: sha256:d3e612f0428dcf26f21eb8c5cf901c732b9a8eebbc8ae858061baa1712e
    ```
 4. 将XComponent嵌入到视图的主界面相关代码参考如下：
 
-   ```screen
+   ```ts
    build() {
      Column() {
        XComponent({
@@ -101,7 +101,7 @@ content_hash: sha256:d3e612f0428dcf26f21eb8c5cf901c732b9a8eebbc8ae858061baa1712e
 
 完整示例参考如下：
 
-```screen
+```ts
 import { camera } from '@kit.CameraKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';

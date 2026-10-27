@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-windmana-
 title: 应用无交互超时弹窗提示功能实现常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 常见问题 > 应用无交互超时弹窗提示功能实现常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:06+08:00
+scraped_at: 2026-10-28T07:47:28+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:417bac732062aec7fc1522e1d181db807e3e02c885788e50cc8bf77f1d522958
+content_hash: sha256:17145e80d95e6681d1ea003367cdab75497f9372a7beb771954d62ca31a88e78
 ---
 
 **Q：超过一定时间没操作过应用，则弹出弹窗提示。如何实现？例如检测用户无操作达到指定时长后自动退出登录，需要一个全局的交互事件监听机制。**
@@ -157,7 +157,7 @@ content_hash: sha256:417bac732062aec7fc1522e1d181db807e3e02c885788e50cc8bf77f1d5
 
    效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/s3t7Ib1dRHyutin1RmrCbA/zh-cn_image_0000002764286444.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/j7tNPwJlQjaPB6wDOUhABA/zh-cn_image_0000002764286444.png "点击放大")
 
 方案二：使用全局时间戳手动检测
 

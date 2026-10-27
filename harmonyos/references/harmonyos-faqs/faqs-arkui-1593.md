@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1593
 title: 从侧边栏启动应用，切换全屏后底部未避让导航栏问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 从侧边栏启动应用，切换全屏后底部未避让导航栏问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c1ed953cec9353931ba544bf1e584e807732e875ec18b27a90f836b16dc8a744
 ---
 

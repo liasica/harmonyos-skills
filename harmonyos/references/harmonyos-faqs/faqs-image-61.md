@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-61
 title: 获取媒体文件元数据信息及相关问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 获取媒体文件元数据信息及相关问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:20+08:00
+scraped_at: 2026-10-28T07:48:28+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:bc5896d39bf513a9cf349c3cf5eb54480b3b65e1aa26fa640f6432abb7817dc9
+content_hash: sha256:22ac202c83965628656d7eec2284db19ea61b6839d51af314a1c1c4252e91a93
 ---
 
 ## 问题现象
@@ -367,7 +367,7 @@ struct GetImageInfo {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/4MzMrVLKQWifBRkR3uyVwg/zh-cn_image_0000002658911827.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/xrUjiJV7S9enWflRfSuADg/zh-cn_image_0000002658911827.png "点击放大")
 
 ## 常见FAQ
 

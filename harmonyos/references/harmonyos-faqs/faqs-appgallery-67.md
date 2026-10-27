@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 隐私托管使用的场景和测试条件
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 隐私托管使用的场景和测试条件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:aa57303682c2bb9ea70b845d71af6fcab9503015145f7d9de3b85010d57bd6b1
+scraped_at: 2026-10-28T07:48:46+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:66b2a4377a6061e6b9bb0265be251aefd868e73d690484e5ac92dfc21598a88d
 ---
 
 ## 问题现象
@@ -29,7 +29,7 @@ content_hash: sha256:aa57303682c2bb9ea70b845d71af6fcab9503015145f7d9de3b85010d57
 
 Q：使用隐私管理服务一直报错[1006700003](../harmonyos-references/errorcode-appgallery.md#section1006700003-未接入隐私管理服务)是什么原因？
 
-A：该错误码代表未接入隐私管理服务。常见的原因有：未在AGC[配置隐私声明](../app/agc-help-privacy-policy-app-0000002282162168.md)，应用未上架等。
+A：该错误码代表未接入隐私管理服务。常见的原因有：未在HarmonyOS 开发者中心[配置隐私声明](../app/agc-help-privacy-policy-app-0000002282162168.md)，应用未上架等。
 
 Q：隐私管理服务怎么测试？云调试能不能测试？
 

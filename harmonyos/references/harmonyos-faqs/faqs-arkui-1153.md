@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1153
 title: Canvas绘制蒙层在横屏的时候如何才能撑满屏幕
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Canvas绘制蒙层在横屏的时候如何才能撑满屏幕
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9053d106e337b4ce43487f1988e85b84f5a3560b1ec6670ea11b626feb81a4a6
 ---
 

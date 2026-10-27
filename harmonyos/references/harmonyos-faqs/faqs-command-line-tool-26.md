@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 工程在IDE的终端无法识别ohpm
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 工程在IDE的终端无法识别ohpm
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
+scraped_at: 2026-10-28T07:49:03+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:ec356e1168924b672246ced5af3e2b0f73a890de44336af4c2a9f7f48e23cdd4
+content_hash: sha256:c7a8e72b6d74d330a2b2739af942bd9e7fb00ff576fcdd2bc8eacdee79a4ddba
 ---
 
 ## 问题现象
 
 工程在ide的终端无法识别ohpm，错误截图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/SMztTW0yS9SvmGwaLdKDWQ/zh-cn_image_0000002658928947.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/ts9m-jN5RxSwqdQOFJ8R2g/zh-cn_image_0000002658928947.png "点击放大")
 
 ## 背景知识
 
@@ -31,16 +31,16 @@ content_hash: sha256:ec356e1168924b672246ced5af3e2b0f73a890de44336af4c2a9f7f48e2
 ## 修改建议
 
 1. 在电脑中找到DevEco Studio的ohpm存放地址路径下的bin目录，例如：D:\DevEco Studio\tools\ohpm\bin。
-2. 配置环境变量，根据ohpm存放地址路径，在Path中添加bin目录。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/FPIFU3GDQtG_dVvwJSLT3g/zh-cn_image_0000002658808991.png "点击放大")
+2. 配置环境变量，根据ohpm存放地址路径，在Path中添加bin目录。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ASaZTvuHQhuM3ajSVgxlKw/zh-cn_image_0000002658808991.png "点击放大")
 3. 重启DevEco Studio，在终端中输入ohpm -v查看版本号，是否能够识别。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/woRmviVoQ_ukDswAF1ho9w/zh-cn_image_0000002628409726.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/qZu0uiLhSECIiJgZpW4_yg/zh-cn_image_0000002628409726.png)
 
 ## 常见FAQ
 
 Q：配置ohpm的环境变量提示路径太长如何解决？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/-NDuQWoHQzqF2UdDLrPyzw/zh-cn_image_0000002628569628.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Wx73cHypQx-fKXXO3dTWpA/zh-cn_image_0000002628569628.png)
 
 A：可以采用以下方案：
 

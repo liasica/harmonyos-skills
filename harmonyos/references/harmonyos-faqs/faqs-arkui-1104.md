@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1104
 title: 如何解决页面跳转无响应问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决页面跳转无响应问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:975beb4ca40b518f830b3b2c79b7d45f8ea8ba41357e15c0d55a5e6529ee339b
+content_hash: sha256:b9a6977c13e99aa049da3f96b1638fa35a33eba7b096394b3b39d8f084dbc1b6
 ---
 
 ## 问题现象
@@ -191,4 +191,4 @@ src/main/resources/base/profile/router\_map.json配置如下所示：
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/sPxKfcVVTpyQ5cd_knc2IQ/zh-cn_image_0000002658806741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/DX06tN2iSDCcXYSiWKwxUA/zh-cn_image_0000002658806741.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: 单元测试中如何获取上下文Context
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 单元测试中如何获取上下文Context
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:36+08:00
+scraped_at: 2026-10-28T07:49:02+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:622ee5075d846b56f8cd304719a32bf176d0780ad67996617e47b2fd77726da6
+content_hash: sha256:23b9b674804b34c7587bd4eff989cf007a57b6d6e7c80783a56e2e316826b80c
 ---
 
 ## 问题现象
@@ -69,7 +69,7 @@ export default function OhosGetContext() {
 
 Context本身是一个对象，无法直接打印，但可以按需打印字段，如console.info('deviceTypes：', cont.context.abilityInfo.deviceTypes)可打印测试设备的设备类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/jQstVa_QRZqI8pQjUt3R_g/zh-cn_image_0000002628409560.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/eCka8_dEQCiY7dhU4NGgjA/zh-cn_image_0000002628409560.png "点击放大")
 
 ## 常见FAQ
 
@@ -81,4 +81,4 @@ Q：Instrument Test测试文件的超时时间如何设置？
 
 A：在工具栏主菜单单击Run > Edit Configurations进入Run/Debug Configurations界面，选择左边下拉菜单Instrument Test里的测试文件（如Ability.test.ets），在Parameters中设置Time Out参数，并点击OK即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/DwK2eHdBQ1KAVe68_X00mg/zh-cn_image_0000002628569458.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/zorvNJoKQhqWSB4cLgAG_w/zh-cn_image_0000002628569458.png "点击放大")

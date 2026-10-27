@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-390
 title: Navigation跳转页面白屏，可能原因是什么
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation跳转页面白屏，可能原因是什么
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0721f7f7b88f9c4d51b1093895ee86cd7c8f77167f55baaf4534d910853947ab
 ---
 

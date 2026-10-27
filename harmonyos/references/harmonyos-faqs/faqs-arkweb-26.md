@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-26
 title: 登录信息的cookie应该在什么时机注入？如何确保刚刚打开的web能注入登录信息cookie
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 登录信息的cookie应该在什么时机注入？如何确保刚刚打开的web能注入登录信息cookie
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6c66790be9212a684ca9e116fe00f0de78ed5cec803e676691dc9646c404d5c7
 ---
 

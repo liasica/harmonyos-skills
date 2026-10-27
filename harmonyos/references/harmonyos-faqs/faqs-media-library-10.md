@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: SaveButton保存图片，媒体库没有实时刷新的问题如何定位
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > SaveButton保存图片，媒体库没有实时刷新的问题如何定位
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d78d105bc53e8346f8eba7bc548e4affaa106874882af5c2254af5a04286bd4c
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cdb9dfa89d774980d09b70d74745f173e021363405efbccd662b45eef545109b
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:d78d105bc53e8346f8eba7bc548e4affaa106874882af5c2254af5a0428
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/pI1mDMIkRkyFxFkVd9nftg/zh-cn_image_0000002659258333.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ZeSltPQfShaDD0syjhNvZQ/zh-cn_image_0000002659258333.png "点击放大")
 
 ## 背景知识
 
@@ -30,7 +30,7 @@ content_hash: sha256:d78d105bc53e8346f8eba7bc548e4affaa106874882af5c2254af5a0428
 
 媒体库需要在全部file文件的fd都close后才会刷新媒体库。如果使用packToFile方法，需要调用release主动释放ImagePacker，此时ImagePacker内的fd也会close，媒体库才会刷新，打开媒体库才能看到新存入的图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/uJFu_n3kTFaGSG1OxHn_Zg/zh-cn_image_0000002628899114.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/6k2zEzZtSEO3l-BuTFR8cw/zh-cn_image_0000002628899114.png "点击放大")
 
 ## 分析结论
 

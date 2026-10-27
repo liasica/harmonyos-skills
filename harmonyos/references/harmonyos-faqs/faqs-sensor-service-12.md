@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 平板上指南针方位指向异常
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 平板上指南针方位指向异常
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:14:09+08:00
-doc_updated_at: 2026-10-22
+scraped_at: 2026-10-28T07:48:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4df459fb96d383e78450dd57972fdadeee099e5318a6882089b0cb8aecf0cc19
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-549
 title: 部分用户头像无法点击进入主页
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 部分用户头像无法点击进入主页
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1c059a941a5f789f980897e6b6d98e15b189d82baaf185eac6b8a96274e80daa
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4ff9fdbc5ccbf57b6c7b3ea8c16d57b1e6cc2fa03e79cf1b8f88e51af8330edf
 ---
 
 ## 问题现象
@@ -23,12 +23,12 @@ content_hash: sha256:1c059a941a5f789f980897e6b6d98e15b189d82baaf185eac6b8a96274e
 
 1. 使用DevEco Testing查看无头像框的用户头像组件树，如下图所示，Stack容器中只有一个头像组件，并且clickable属性为true，所以可以点击并进入主页。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/jPAz-GrERyS7HAsA34TUVg/zh-cn_image_0000002658910841.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/SRnUjgbXQ7u339rg5Shxtw/zh-cn_image_0000002658910841.png "点击放大")
 2. 查看有头像框的用户头像组件树，如下面两张图所示，可以看到Stack容器中从上到下的顺序是：头像组件（clickable属性为true），头像框组件（clickable属性为false）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/IbpWMol0RHOYt1HlIljsQQ/zh-cn_image_0000002658790889.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Ie3BQDrbRLSr2In5JvYxWg/zh-cn_image_0000002658790889.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/1P8kADHaRMa-w-utmLquug/zh-cn_image_0000002628551524.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UbyZckckSGGEoXW8NuwiNA/zh-cn_image_0000002628551524.png "点击放大")
 
 ## 分析结论
 

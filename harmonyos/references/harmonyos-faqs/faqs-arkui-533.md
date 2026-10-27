@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-533
 title: 页面中的图片资源无法正常显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 页面中的图片资源无法正常显示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:083d5587d2c66ce4bf93a29a105e99dff8c2903631b79d2cc1b4345ad4e8f47a
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:72ae9dcd1525a760bcfc46a8e9eefbd2961d13de57dba8d2cc586c53f1a966a2
 ---
 
 ## 问题现象
 
 页面图片显示空白。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/mAtz0ampQUe4klYygXVAlA/zh-cn_image_0000002628391176.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/oeBoPTKERy6yTMSgPcPiTg/zh-cn_image_0000002628391176.png "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:083d5587d2c66ce4bf93a29a105e99dff8c2903631b79d2cc1b4345ad4e
 
 1. 使用DevEco Testing查看问题组件，问题所在位置缺少Image组件，而正常显示图片组件的相同位置使用了Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/26fxKevzTKa_R9r7_m0GfA/zh-cn_image_0000002658790427.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/yBsMhDfXSWy2IvCOwOVNlg/zh-cn_image_0000002658790427.png "点击放大")
 2. 排查Image组件的设置，发现添加了判断图片资源是否存在的逻辑。
 
    ```screen
@@ -131,4 +131,4 @@ struct ImgEmpty {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/BXGR1xwQRxSz8OvmHoMelg/zh-cn_image_0000002628551066.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/eSR195THTGeb-qzFipYgrg/zh-cn_image_0000002628551066.png "点击放大")

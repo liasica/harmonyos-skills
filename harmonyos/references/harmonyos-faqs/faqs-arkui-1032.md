@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1032
 title: 实现HSL颜色模型与HEX颜色模型互相转换
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现HSL颜色模型与HEX颜色模型互相转换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9cbac135fa2efe0b357b6234948310d340892413ca4ffc50a4b21a277b0e42f2
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-714
 title: 如何实现右侧滑出弹窗并选择弹窗中的选项
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现右侧滑出弹窗并选择弹窗中的选项
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:17+08:00
+scraped_at: 2026-10-28T07:47:36+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:2a66d809a50e9bb4ef9c239ac1c9ab076f3fcc5c4c85fc5e1d9505cfc5d4915e
+content_hash: sha256:b309d78f7f0eef94b392b263c16587a24af1ba0e513ce219695d4421cef0f032
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:2a66d809a50e9bb4ef9c239ac1c9ab076f3fcc5c4c85fc5e1d9505cfc5d
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/hHpjQa95SauubRk7HATRvA/zh-cn_image_0000002658914227.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/lvUg1hZgTZ67jjX1CotZcA/zh-cn_image_0000002658914227.png "点击放大")
 
 ## 背景知识
 

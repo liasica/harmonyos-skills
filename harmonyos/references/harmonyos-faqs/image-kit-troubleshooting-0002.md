@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/image-kit-troub
 title: 系统相册大图加载与解码报错问题定位
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 故障排查 > 系统相册大图加载与解码报错问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:35+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:6b746343253e9805435378ac48906c79632863c01fd16d6ffb8a26e44cb039e7
+scraped_at: 2026-10-28T07:48:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:53a81502e8719e8a9cf0429ccec1e89cf4c9fecae2d920c9f4535862c68e1578
 ---
 
 ## 问题现象
 
 应用侧保存分辨率40320x25200大图到系统相册无法正常加载，且无法正常使用图片解码，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ND1MRglyQB2xWZfMC0_Q2Q/zh-cn_image_0000002789316857.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/faSGFVB9RNGrttnozJ3zSA/zh-cn_image_0000002789316857.png "点击放大")
 
 ## 定位过程
 
@@ -53,11 +53,11 @@ async createPixel() {
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/1ah8cf09Sayvmj3a-0YKkw/zh-cn_image_0000002759918096.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/iOsT2jjeS7qFcHF6lPX_Jw/zh-cn_image_0000002759918096.png "点击放大")
 
 可以看到使用超大图解码后，Heap存在明显上涨且长时间无回落。查询日志相关信息，通过日志发现尽管图片解码实例创建成功，但后续创建PixelMap以后的程序并未顺利执行，日志打印如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/krbAgKooRR6Lf5ugxsMLbQ/zh-cn_image_0000002759918110.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/i5ea7raCQymXBiM6nAgnEw/zh-cn_image_0000002759918110.png "点击放大")
 
 ## 分析结论
 
@@ -65,8 +65,8 @@ async createPixel() {
 
 ## 修改建议
 
-HarmonyOS的图片解码对图片分辨率及文件占用的空间有限制，单张图片的文件占用空间大小不能超过2G，单个应用运行内存占用达到4G会触发整机性能问题。建议在图片解码前[将图片压缩到指定大小](faqs-image-16.md)，既可展示图片，又可以保证系统的稳定运行。正常日志打印效果如下：
+HarmonyOS的图片解码对图片分辨率及文件占用的空间有限制，单张图片的文件占用空间大小不能超过2G，单个应用运行内存占用达到4G会触发整机性能问题。建议在图片解码前将图片压缩到指定大小，既可展示图片，又可以保证系统的稳定运行。正常日志打印效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/FAGXBUGVQ9yUx9jU19H0eg/zh-cn_image_0000002789316945.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/HuPJhcdFSE6cCuIVYAdnHQ/zh-cn_image_0000002789316945.png "点击放大")
 
 针对大图加载、图片编辑及长图预览场景，参考[图片区域解码与下采样指导](../harmonyos-guides/image-region-and-downsampling.md)和[图片解码内存优化](../harmonyos-guides/image-allocator-type.md)。

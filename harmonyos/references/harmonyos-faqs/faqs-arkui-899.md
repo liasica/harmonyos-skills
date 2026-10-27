@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-899
 title: 如何进行自定义弹窗的封装调用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何进行自定义弹窗的封装调用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:2f847b071f99c718cb24461a1fc70508f70d2fd44c1ed0f796373c7442a493a8
+content_hash: sha256:a327c9cc6fcb4179a228538eb880f8ffeef9b008451c8dd6f41f47691132c0ae
 ---
 
 ## 问题现象
@@ -16,13 +16,13 @@ content_hash: sha256:2f847b071f99c718cb24461a1fc70508f70d2fd44c1ed0f796373c7442a
 2. 一个页面需要定义多个自定义弹窗时，会出现多份重复的CustomDialogController定义代码。
 3. 相同的自定义弹窗在多个页面使用，每个页面都需要去定义CustomDialogController，造成大量代码的重复。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/W8apQcbaSXaY74qgCb7pSA/zh-cn_image_0000002628399752.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Clqu_DXeSDiI0IJ7S5auuw/zh-cn_image_0000002628399752.png)
 
    综上，重复的定义CustomDialogController代码会影响开发者的开发效率以及代码的整洁。
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/KN4lifa-QgyogXn4vhar4A/zh-cn_image_0000002658799019.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/r8ddnieHTUGgqsjrS8olxw/zh-cn_image_0000002658799019.png "点击放大")
 
 ## 背景知识
 

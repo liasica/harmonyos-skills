@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何读写外置存储设备（如U盘）中的文件
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何读写外置存储设备（如U盘）中的文件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0404f1258a2362813fa1072fae6fc534fb06ea134866a6790f8129a1581342f1
+scraped_at: 2026-10-28T07:48:01+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4602438087e7d7cb3201ef2cbc9956fb4b6581ad27d5e111cf01f3995bc54f41
 ---
 
 ## 问题现象
@@ -73,13 +73,13 @@ content_hash: sha256:0404f1258a2362813fa1072fae6fc534fb06ea134866a6790f8129a1581
 4. 实现效果：
    * 点击**查看U盘文件并导入到沙箱**按钮后，拉起了DocumentViewPicker。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ZYVpVo4DQ3K0GLfR-gzBuA/zh-cn_image_0000002659258327.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/GE6-XgGcQ7KhCiYOPbIuUg/zh-cn_image_0000002659258327.png "点击放大")
    * 点击**MyUSB**后可以浏览我的U盘。选中要拷贝的文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/c-pIFp76Q5S1o3_1fYL9EA/zh-cn_image_0000002628899108.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/iQdWOOyMQJy0fVwkM-JstA/zh-cn_image_0000002628899108.png "点击放大")
    * 点击**完成**后，成功将U盘中的两个文件拷贝到了沙箱。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ptqpoHh7RRSy6oJ2Hu_AMA/zh-cn_image_0000002659138377.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tQp2BxdHT562h6Gh_XqcrQ/zh-cn_image_0000002659138377.png "点击放大")
 
 二、**拷贝文件到外置存储设备的文件**
 

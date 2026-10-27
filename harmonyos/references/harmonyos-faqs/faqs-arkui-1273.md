@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1273
 title: DPI相关单位换算
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > DPI相关单位换算
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:dae574f22549b27b8803ee845fc5ad944bc26b05e01b930a285fc5f95196c062
 ---
 

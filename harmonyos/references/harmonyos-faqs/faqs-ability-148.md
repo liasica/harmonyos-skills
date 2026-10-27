@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-14
 title: 如何解决在真机上点击桌面App启动但跳转到了通知页的问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何解决在真机上点击桌面App启动但跳转到了通知页的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
+scraped_at: 2026-10-28T07:46:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:f043a1a9a24a6e4952a4191a32dda9c0363ac6c0d74466782ea3ce0d124946db
+content_hash: sha256:8a18430f43e6708b564cb7cae1b15896829597765ecf097fbf4d4e32e71b15ab
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:f043a1a9a24a6e4952a4191a32dda9c0363ac6c0d74466782ea3ce0d124
 
 同时可以看到后台的APP是白屏状态（深色模式下为黑屏），并且点击后仍会继续跳转到设置页。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/vML3YGvFQSKkF6xsiwmX1A/zh-cn_image_0000002628629348.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/OwsMqWnuRROQ9cH_wJJfuA/zh-cn_image_0000002628629348.png "点击放大")
 
 ## 背景知识
 

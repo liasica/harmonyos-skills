@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-input-2
 title: 物理键盘输入异常分析
 breadcrumb: FAQ > 系统开发 > 基础功能 > 多模输入（Input） > 物理键盘输入异常分析
 category: harmonyos-faqs
-scraped_at: 2026-09-11T06:31:22+08:00
-doc_updated_at: 2026-09-10
-content_hash: sha256:9327a3bebb0cf124d25ebaf4c738ba9f7aa9a3d26f9400bd836de5ab0fbd7d6c
+scraped_at: 2026-10-28T07:48:22+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:25e1b06cbf953144bd7d4594e66c2feff244b3f3cd5ca1ff71836bc46d2f253d
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ content_hash: sha256:9327a3bebb0cf124d25ebaf4c738ba9f7aa9a3d26f9400bd836de5ab0fb
 
 1. [运作机制](../harmonyos-guides/input-overview.md#运作机制)：多模输入能力作为系统为应用提供的一种基础服务，通过处理上报的输入设备驱动事件，完成输入事件管理、接收、预处理、分发，通过inner SDK与JSkit上报应用，具体运行机制如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/iSI6lfc8SAqaZdWPvFfS_g/zh-cn_image_0000002747744777.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/TR-F7E_MSkW_mRqfOxw6aw/zh-cn_image_0000002747744777.png "点击放大")
 
 2. [输入设备开发指导](../harmonyos-guides/inputdevice-guidelines.md)：当用户需要输入文本时，输入法会根据当前是否插入了物理键盘来决定是否弹出虚拟键盘，开发者可以通过监听设备热插拔判断是否有物理键盘插入。
 
@@ -40,7 +40,7 @@ content_hash: sha256:9327a3bebb0cf124d25ebaf4c738ba9f7aa9a3d26f9400bd836de5ab0fb
    2. [按键事件数据流](../harmonyos-guides/arkts-interaction-development-guide-keyboard.md#按键事件数据流)：按键事件由外设键盘等设备触发，经驱动和多模处理转换后发送给当前获焦的窗口，窗口获取到事件后，会尝试分发三次事件。三次分发的优先顺序如下，一旦事件被消费，则跳过后续分发流程。
    * 2.1首先分发给ArkUI框架用于触发获焦组件绑定的onKeyPreIme回调和页面快捷键。
    * 2.2再向输入法分发，输入法会消费按键用作输入。
-   * 2.3再次将事件发给ArkUI框架，用于响应[onKeyEventDispatch](../harmonyos-references/ts-universal-events-key.md#onkeyeventdispatch15)事件、获焦组件绑定的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent)回调以及走焦。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/JokRZYGcR0u8Xv5WAcpKOg/zh-cn_image_0000002718147238.png)
+   * 2.3再次将事件发给ArkUI框架，用于响应[onKeyEventDispatch](../harmonyos-references/ts-universal-events-key.md#onkeyeventdispatch15)事件、获焦组件绑定的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent)回调以及走焦。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/YpOfkKNVR5ebLXJtXLNMlA/zh-cn_image_0000002718147238.png)
 
      当某输入框组件获焦，且打开了输入法，此时大部分按键事件均会被输入法消费。
 

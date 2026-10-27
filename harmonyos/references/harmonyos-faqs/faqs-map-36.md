@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-36
 title: 如何在地图上绘制虚线
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何在地图上绘制虚线
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:52c075b33a8d920da602005e427be3f401e21e99d5e9345f9f4e77b891bf0eee
+content_hash: sha256:acb833696c9edcdddd417c64af70e67b94b0b448af4cd00c689bf980d94617e6
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:52c075b33a8d920da602005e427be3f401e21e99d5e9345f9f4e77b891b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/1lfXEhVjR9mF5ePRffaglw/zh-cn_image_0000002658793639.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/u7QaefRqTzSWIhz6a8C5lQ/zh-cn_image_0000002658793639.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-tablet-22
 title: 平板开启强制横屏选择分栏视图，应用横屏后分栏显示异常
 breadcrumb: FAQ > 多设备场景 > 平板 > 常见问题 > 平板开启强制横屏选择分栏视图，应用横屏后分栏显示异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:48+08:00
+scraped_at: 2026-10-28T07:46:37+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:f7ffc664519b72dd88d6f5395cf66fc9820f7e9446d5df888b2307cc16e16720
+content_hash: sha256:b0dae05f637290c27aece6df96679a0877cbc05e8a89d509376523f0d6b45cf4
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ content_hash: sha256:f7ffc664519b72dd88d6f5395cf66fc9820f7e9446d5df888b2307cc16e
 
 使用UIView查看页面组件布局，发现当前页面未采用Navigation组件实现路由控制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/JoxIaeATT9-zjONqmCNVQA/zh-cn_image_0000002658911555.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/BS5KjrfnQkOOzIdZw_k4HQ/zh-cn_image_0000002658911555.png "点击放大")
 
 ## 分析结论
 

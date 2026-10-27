@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-154
 title: Image组件如何读入沙箱内的图片
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image组件如何读入沙箱内的图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:21+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5b0b349f234cdbacb470a049adedc0d60c15d86012b107740de3e1241f414ffe
 ---
 

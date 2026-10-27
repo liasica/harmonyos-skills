@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: photoPicker如何筛选某个相册的图片和视频
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > photoPicker如何筛选某个相册的图片和视频
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:08+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:777bc7865791c5005320b3a702ca0cca3366150ecbdd5f13048366255feab0de
 ---
 

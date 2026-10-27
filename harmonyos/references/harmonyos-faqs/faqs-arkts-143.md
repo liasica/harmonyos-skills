@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-143
 title: ArkTS语言与ArkUI框架、HarmonyOS SDK/API的关系
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS语言与ArkUI框架、HarmonyOS SDK/API的关系
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:37c124db8eded76542e993aaec578aca7567a0ebf178af2bb1a17528a1391ca2
+scraped_at: 2026-10-28T07:46:51+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:feb7fec869fe39919beb952c1128593d721b2c2d122b08be6478a7283515a071
 ---
 
 * **ArkTS和ArkUI的架构关系：**
@@ -20,4 +20,4 @@ content_hash: sha256:37c124db8eded76542e993aaec578aca7567a0ebf178af2bb1a17528a13
   在HarmonyOS系统架构中，ArkTS作为核心开发语言，其运行时环境与工具链通常归属开发支持层；ArkUI等上层框架属于应用框架层，SDK则通过系统服务层提供的能力封装形成开发接口；ArkTS语言可以通过import语法加载并调用相应系统能力，让开发者更高效地开发HarmonyOS应用。
 * **HarmonyOS架构的ArkTS、ArkUI及HarmonyOS SDK框架层级：**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/BoSpBea6R3GtIxna-hkNCA/zh-cn_image_0000002624635782.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/RomWcF9tQgSMN-KhJSCumg/zh-cn_image_0000002624635782.png)

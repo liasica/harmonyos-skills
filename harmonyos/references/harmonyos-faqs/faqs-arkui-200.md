@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-200
 title: 如何获取窗口的宽度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何获取窗口的宽度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f6aa482cbf9548d6259d2806408af17778537f86d862eb4c11b707da1f503ab6
 ---
 

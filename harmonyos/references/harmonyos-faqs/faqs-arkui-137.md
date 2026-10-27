@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-137
 title: List组件如何设置两端的渐变效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > List组件如何设置两端的渐变效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a99cf8adaf458017416a71f9c36bf345e4b0daa28dfb95722e87b37c1fa95dd5
 ---
 

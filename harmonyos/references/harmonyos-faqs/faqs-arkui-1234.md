@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1234
 title: 监听Scroll滑动距离实现相关效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 监听Scroll滑动距离实现相关效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:1cfa20dea58a7f8e1da68672b5b91f038fd9577d85e46af2b444719fa35c2910
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f016c72c2e072956dada2f1d0c7e315e2523fbd3b045db3c2ac871a2fd1c81b7
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:1cfa20dea58a7f8e1da68672b5b91f038fd9577d85e46af2b444719fa35
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/mgMWFf1lTRq2P1C0M8W01w/zh-cn_image_0000002628594048.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/SlxzZ2eeTMm5tZSHsUTcLg/zh-cn_image_0000002628594048.gif "点击放大")
 
 ## 背景知识
 

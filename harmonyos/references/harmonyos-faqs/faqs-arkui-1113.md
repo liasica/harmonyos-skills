@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1113
 title: 如何深度观测反序列化和未被@Observed/@ObservedV2装饰的对象
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何深度观测反序列化和未被@Observed/@ObservedV2装饰的对象
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:44+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e388a9a4915c828d811a97aeb1af841f7952f3b753ce6faab0419de6eeda0ef7
 ---
 

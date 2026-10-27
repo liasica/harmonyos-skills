@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-679
 title: RichEditor组件实现自定义换行键
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor组件实现自定义换行键
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:40+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:572a6c9968293a02603f25cc6e5626d40da61c14fb65cfbed86e0000537e6946
 ---
 

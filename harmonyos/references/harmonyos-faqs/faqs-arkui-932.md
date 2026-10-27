@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-932
 title: 被动获焦场景下，如何控制RichEditor不拉起软键盘
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 被动获焦场景下，如何控制RichEditor不拉起软键盘
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:45+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:cbc52b86d2aa55ed9ad4714a3b7ccfa6b2b139c401c4cd3ebc1361e7f0e77674
+content_hash: sha256:3baea9a1bb0b7d0de0954ff4f5f5668788fca920cbd0970514bcec5f0950fc27
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:cbc52b86d2aa55ed9ad4714a3b7ccfa6b2b139c401c4cd3ebc1361e7f0e
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/-Kl-5b2ASYGxvRKth2dWTg/zh-cn_image_0000002658799613.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/pOcXUYT_QZaSNHaEpzFKqw/zh-cn_image_0000002658799613.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/qNplX4J_RRCCBHenZ_RofQ/zh-cn_image_0000002628560254.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/oqkepX81QCixSz5T9xgFKw/zh-cn_image_0000002628560254.gif "点击放大")
 
 ## 背景知识
 

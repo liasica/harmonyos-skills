@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 加解密、证书解析与电子签名相关能力的实现方式
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 加解密、证书解析与电子签名相关能力的实现方式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:6e5adf30a67103a3457674c6fdfa56ca90c79d93d2bca83ea719dde224a5e29f
+scraped_at: 2026-10-28T07:48:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:42f5b85ca3bac4b93fa3b05af3ae56f4cd91d1dc8fb8d0a7aae2796002d5e55c
 ---
 
 ## 问题现象
@@ -24,12 +24,12 @@ HarmonyOS系统提供了Crypto Architecture Kit（加解密算法库）和Certif
 
 对于以下能力，可以直接使用系统提供的加解密算法库和证书框架：
 
-* RSA / ECC加解密：支持，参考[非对称密钥加解密](../harmonyos-guides/crypto-encrypt-decrypt-dev.md)。
-* SM2 / SM3 / SM4加解密：支持，参考[非对称密钥加解密](../harmonyos-guides/crypto-encrypt-decrypt-dev.md)。
+* RSA / ECC加解密：支持，参考[非对称密钥加解密](../doccenter-capabilities/crypto-key-generation-conversion.md#非对称密钥生成和转换规格)。
+* SM2 / SM3 / SM4加解密：支持，参考[非对称密钥加解密](../doccenter-capabilities/crypto-key-generation-conversion.md#非对称密钥生成和转换规格)。
 * SHA系列摘要、签名、验签：支持，参考[生成消息摘要概述](../harmonyos-guides/crypto-generate-message-digest-overview.md)。
 * PKCS#7/CMS：支持，参考[创建CMS解封对象](../harmonyos-guides/create-cms-decapsulation-object.md)。
 * 证书解析：支持，可以读取二进制并解析为X.509结构，参考[证书框架](../harmonyos-guides/certificate-framework.md)。
-* PKCS#1：RSA公私钥相关，参考[密钥转换规格：RSA](../harmonyos-guides/crypto-asym-key-generation-conversion-spec.md#rsa)。
+* PKCS#1：RSA公私钥相关，参考[密钥转换规格：RSA](../doccenter-capabilities/crypto-key-generation-conversion.md#rsa)。
 
 方式二：引入OpenSSL三方库能力
 

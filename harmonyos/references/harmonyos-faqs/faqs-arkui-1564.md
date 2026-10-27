@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1564
 title: 按照提示再侧滑一次仍然退出失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 按照提示再侧滑一次仍然退出失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:df51a560e7ac404478723131c71bb26d6c395a49ba19288845fba93ed0fef824
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-14
 title: 使用App Linking实现应用冷启动时应用闪退
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 使用App Linking实现应用冷启动时应用闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
+scraped_at: 2026-10-28T07:46:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a1086d68da1366352dcbec3d969c114858ce16a44a2f2d9293ed1a9894e4617b
+content_hash: sha256:2598e4efc045cbba87142bee530dc14f2880c1d7dae536433b8ec7e68617824c
 ---
 
 ## 问题现象
@@ -115,7 +115,7 @@ private getRouterUri(want: Want) {
 
 * 应用冷启动的流程和几个重要的生命周期。应用冷启动的过程大致可分成以下四个阶段：应用进程创建&初始化、Application&Ability初始化、Ability/AbilityStage生命周期、加载绘制首页，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/dp45E5CjSJaqA_6NRL5uwA/zh-cn_image_0000002628789246.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wUVSIFeVTVu8AGFZPo-iEQ/zh-cn_image_0000002628789246.png "点击放大")
 
   这个问题是在Ability/AbilityStage生命周期：该阶段主要是AbilityStage/Ability的启动生命周期，执行相应的生命周期回调。
 * 此问题是HarmonyOS应用在处理App Linking冷启动时因在错误的生命周期方法（onCreate）中进行页面跳转操作导致UIAbility启动异常的问题。通过将参数解析和页面加载操作分别放在onCreate和onWindowStageCreate方法中，依据合适的参数判断来加载正确页面的方式解决。

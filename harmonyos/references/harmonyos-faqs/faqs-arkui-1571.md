@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1571
 title: 如何解决键盘弹出后原UI布局错乱问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决键盘弹出后原UI布局错乱问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:39+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:790b193b25f4ece0d47faa8dcd69712a17658063d44b771fcfac1661c7c0aed3
+content_hash: sha256:b2da5a87ab20b99c2ba0e799a3273e04829d468a1202d7cd4cecce2dae94372f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:790b193b25f4ece0d47faa8dcd69712a17658063d44b771fcfac1661c7c
 
 左图为初始状态，右图为错乱的场景：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/XkueyXxxRtO60iE6yYPRew/zh-cn_image_0000002658849129.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/cZTKKzqvRJySwOcNPT4CHg/zh-cn_image_0000002628609864.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/ZsoMzaeiT7WhqDIEbF78uA/zh-cn_image_0000002658849129.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/QnYNRgpLRMOS84HTjEdSYw/zh-cn_image_0000002628609864.png "点击放大")
 
 ## 背景知识
 
@@ -33,7 +33,7 @@ content_hash: sha256:790b193b25f4ece0d47faa8dcd69712a17658063d44b771fcfac1661c7c
 
   效果如下：顶部自定义组件未被顶出屏幕，底部TextArea和其他组件被键盘顶起，List组件高度被压缩。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/dxyd6FAYS6m8Ahd4GDfBHA/zh-cn_image_0000002628769762.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/4fgV8Y0zQOOjF5_UzG_4iw/zh-cn_image_0000002628769762.png "点击放大")
 * 场景二：键盘弹出时控制组件是否避让。
 
   当不需要被顶起的组件被键盘顶起时，可通过expandSafeArea使该组件不避让键盘。需要注意，在KeyboardAvoidMode.RESIZE模式下，expandSafeArea属性不生效。
@@ -46,12 +46,12 @@ content_hash: sha256:790b193b25f4ece0d47faa8dcd69712a17658063d44b771fcfac1661c7c
 
   右图中，List设置了键盘避让，此时最下方的TextInput组件输入时，该输入组件被键盘遮挡。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/uljBnUuSSMCe04V2RXt_Mw/zh-cn_image_0000002658969079.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/jZu-WZvhS3mMoMkUXvzaiA/zh-cn_image_0000002658849131.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/WSIkk5OYT02uKzUuzMgyow/zh-cn_image_0000002658969079.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/9h_v0gywRu-3NeCCjvg_yA/zh-cn_image_0000002658849131.png "点击放大")
 * 场景三：通过监听键盘高度或安全区域高度变化，自定义处理UI布局。
 
   自定义处理UI布局时，注意容器组件的高度是否为固定高度，推荐使用layoutWeight属性自适应容器或组件高度。当页面释放时，注意关闭键盘事件监听。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/E4r_ttWESYCXggtYCsJWGQ/zh-cn_image_0000002628609868.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/jrOmDXYjSUKocq7-mgPcsA/zh-cn_image_0000002628609868.png "点击放大")
 
 完整示例代码如下：
 

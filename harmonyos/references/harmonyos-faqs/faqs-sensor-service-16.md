@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 如何确认硬件是否具备某个传感器
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 如何确认硬件是否具备某个传感器
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
+scraped_at: 2026-10-28T07:48:23+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:33da9f2572746e1d64f31d3a862758408dafcdb1e6fe3a2b6f01a9f506fd27dd
+content_hash: sha256:87714d7435bb93608c228a11e51d226bdfa853ee6e45a3c270c757f572eb736b
 ---
 
 ## 问题现象
@@ -28,7 +28,7 @@ content_hash: sha256:33da9f2572746e1d64f31d3a862758408dafcdb1e6fe3a2b6f01a9f506f
   开发前确认软件目标设备是否具备该传感器，来进行功能规划：
 
   1. 连接设备，在IDE终端使用hdc shell命令；
-  2. 输入指令：hidumper -s 3601 -a -l可查看设备具备的所有传感器，根据设备具备的传感器进行开发。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/C5V6-LxrSxWTvtgpHQ3pjA/zh-cn_image_0000002658974323.png "点击放大")
+  2. 输入指令：hidumper -s 3601 -a -l可查看设备具备的所有传感器，根据设备具备的传感器进行开发。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Ry9s0u4KTaaTBLSnsjFYfQ/zh-cn_image_0000002658974323.png "点击放大")
 * **使用前查询**
 
   同一套代码可能涉及多种设备，开发中获取运行设备支持的传感器类型列表，根据SensorId判断是否具备某个传感器进行针对性开发：

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: armeabi-v7a是否支持Neon指令扩展
 breadcrumb: FAQ > DevEco Studio > 编译构建 > armeabi-v7a是否支持Neon指令扩展
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:433eb1ff8c50a9a2aee8ad73caeb44616af16335ecd114dc479986c468a13efa
 ---
 

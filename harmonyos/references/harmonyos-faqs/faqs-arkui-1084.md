@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1084
 title: PersistenceV2持久化后数据无法读取的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > PersistenceV2持久化后数据无法读取的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:bc321e98e65d022a5d838e443044bc12db4cb9b07628bfafeea8e83568011bbf
+content_hash: sha256:5525fb0a94a117c5e26660f93ad4f6659c1d9bc705079dbd398caa0c7b479102
 ---
 
 ## 问题现象
@@ -45,7 +45,7 @@ struct PageOne {
 
 场景一问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/l2Nc72wYQVetsJ67VBOX0g/zh-cn_image_0000002628407346.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/g1dMnOJ0RpeHrTR-3Wz8iA/zh-cn_image_0000002628407346.png "点击放大")
 
 ## 背景知识
 
@@ -107,7 +107,7 @@ struct PageOne {
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/np-RleA2Q9C2ABzZcKSsRg/zh-cn_image_0000002628567244.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ShgoZWYGSxKLV-HY9oKd9w/zh-cn_image_0000002628567244.png "点击放大")
   + **方案二**：为value属性添加一个初始值。
 
     ```ts
@@ -141,7 +141,7 @@ struct PageOne {
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/6IZF0-HHRlikSN9U4tUasA/zh-cn_image_0000002658926557.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WwUkWjlbT-OZZvgye9gtMg/zh-cn_image_0000002658926557.png "点击放大")
 
 ## 常见FAQ
 

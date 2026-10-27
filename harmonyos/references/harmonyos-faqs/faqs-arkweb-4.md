@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-4
 title: onInterceptRequest拦截URL并自定义HTML文件，页面加载失败
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > onInterceptRequest拦截URL并自定义HTML文件，页面加载失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:31892b566591473d5e447e5731428d00eb9a8ce50675113846c552ea2d8c1fd7
 ---
 

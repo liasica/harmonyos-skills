@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-49
 title: 在ArkTS层往C++层注册一个object或function，C++层可以按需往这个回调上进行扔消息同步到上层应用么，请提供示例？在注册object或function时，napi_env是否可以被长时持有？扔消息同步到上层应用时，是否需要在特定线程
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 在ArkTS层往C++层注册一个object或function，C++层可以按需往这个回调上进行扔消息同步到上层应用么，请提供示例？在注册object或function时，napi_env是否可以被长时持有？扔消息同步到上层应用时，是否需要在特定线程
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:18+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4421112fdf7c5a184e591323c96dabf0675f994880dbfa62daa172fdaf1b0ea0
 ---
 

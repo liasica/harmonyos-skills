@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-59
 title: Native侧如何通过char指针构造ArrayBuffer数组
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > Native侧如何通过char指针构造ArrayBuffer数组
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:280caa6c40d51d1de1420321563656c19001d522cbb987dc44031198fdc69db7
 ---
 

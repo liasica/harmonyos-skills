@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-827
 title: 如何处理PanGesture与其他手势冲突问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何处理PanGesture与其他手势冲突问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ff77130df217a5746a66f0a58b8fd7f9885d7f2ea45e847f9c3ba871547d5fc7
 ---
 

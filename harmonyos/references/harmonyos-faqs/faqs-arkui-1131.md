@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1131
 title: 如何解决Menu组件在数据为空时依旧显示的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Menu组件在数据为空时依旧显示的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:44+08:00
-doc_updated_at: 2026-07-07
-content_hash: sha256:a3aa399bad9abc53ba5d9b9dc9494d907ded03c437847b34005cb4d3cc6b9233
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:80437e69a3f434630def632833103bad56839f2c633501bac0c21c64e1ee5c82
 ---
 
 ## 问题现象
 
 当Menu组件内数据为空时，点击蓝色的菜单按钮，左下角依旧弹出一个白色圆点，如下图所示。该现象符合组件设计逻辑，当展示组件内容为空时，仍然弹出空白的Menu组件容器。但如果需求要求菜单为空时不显示菜单，则该现象不符合要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CDydxzdgSpmGIAlc9pyjLQ/zh-cn_image_0000002633439122.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/qj9lNgn5RR2veo8AP8kS2A/zh-cn_image_0000002633439122.png "点击放大")
 
 ## 背景知识
 
@@ -91,13 +91,13 @@ content_hash: sha256:a3aa399bad9abc53ba5d9b9dc9494d907ded03c437847b34005cb4d3cc6
 
   + visibility = Visible：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/GXJD-ve5R6ewq5vhBgkcSw/zh-cn_image_0000002663798967.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/zFVZ3gfKSDO7efYuW0NQuw/zh-cn_image_0000002663798967.png "点击放大")
   + visibility = Hidden：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/t_JTWsBHTjCZ9WtjQQRdHA/zh-cn_image_0000002633599772.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/KKB_h30lSaidnu0Khl31WQ/zh-cn_image_0000002633599772.png "点击放大")
   + visibility = None：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/KEoMdwl2QHOTGBGo_Le-nA/zh-cn_image_0000002663799007.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/9wDQILzDQTOAbB1KCV11EA/zh-cn_image_0000002663799007.png "点击放大")
 * **禁用控制：**
 
   ```ts
@@ -136,10 +136,10 @@ content_hash: sha256:a3aa399bad9abc53ba5d9b9dc9494d907ded03c437847b34005cb4d3cc6
 
   + enabled = true：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/jU1FnYS0TcWq2u8w2HoxaA/zh-cn_image_0000002633440070.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/H5vliKZRRgSgdk8Bg7ZtnA/zh-cn_image_0000002633440070.png "点击放大")
   + enabled = false：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/vPHTQPp3RoCiD01YD3u7_w/zh-cn_image_0000002633600014.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/qstjhrKBSQyZl1_0XQeD-w/zh-cn_image_0000002633600014.png "点击放大")
 * **触摸测试控制：**
 
   ```ts
@@ -182,10 +182,10 @@ content_hash: sha256:a3aa399bad9abc53ba5d9b9dc9494d907ded03c437847b34005cb4d3cc6
 
   + HitTestMode = Default：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ceLaTjrvRsW9KWl_rKPOdQ/zh-cn_image_0000002633600724.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/NzC4__FsTqOVbOojlQdZYQ/zh-cn_image_0000002633600724.png "点击放大")
   + HitTestMode = None：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/8Ldg130fQmCcYzB_IPKujQ/zh-cn_image_0000002663719991.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/WQa2ac2rSyusw-d_DBeosw/zh-cn_image_0000002663719991.png "点击放大")
 
 ## 总结
 

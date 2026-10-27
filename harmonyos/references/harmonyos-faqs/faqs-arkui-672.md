@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-672
 title: 如何解决软键盘弹出后顶部控件无法固定的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决软键盘弹出后顶部控件无法固定的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:06755bedf55f0d26c12ce25c2df0902c8d5e272fcba2a4eb5006639c3d2f1ed3
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:68b1a9cc93f7c4639960417b94e237065c6c224ade0717043129d4ac9316ef01
 ---
 
 ## 问题现象
@@ -54,7 +54,7 @@ struct Index {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Ef3kYmV9SDK2RvttvELNKA/zh-cn_image_0000002628394680.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Vem6R0_yRGuX4a-m20ZaQw/zh-cn_image_0000002628394680.png "点击放大")
 
 ## 背景知识
 

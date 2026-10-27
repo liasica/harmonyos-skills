@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/connectivity-ki
 title: BLE蓝牙数据传输与广播报错问题排查
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 故障排查 > BLE蓝牙数据传输与广播报错问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:02+08:00
+scraped_at: 2026-10-28T07:48:18+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:f630a8171dab96408d693173f117501b259a50ffc0bc31bc2d6dad0f184c63fd
+content_hash: sha256:bfa379a6f83b76a040bed02457fd3f0e4e10b755ad34706024dc66e611df0ab3
 ---
 
 ## BLE蓝牙客户端连接后无法接收服务端广播数据
@@ -20,15 +20,15 @@ BLE蓝牙服务端和客户端连接成功后，客户端收到服务端约30次
 
 先排查服务端是否正常广播数据，以下日志表示服务端广播日志正常打印：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/zTZSbS-PSmqeCAiwoQ47cA/zh-cn_image_0000002795167129.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/UENzDqZ1TXq4_eeWTEs2tg/zh-cn_image_0000002795167129.png "点击放大")
 
 再排查客户端是否正常接收数据，发现客户端BLECharacteristicChanges事件回调日志打印到第30次后结束打印。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/7qbmt6_CRfqDggMwJeX6mg/zh-cn_image_0000002795167133.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/KlFcaEIWSs-7x8F1kd0yUQ/zh-cn_image_0000002795167133.png "点击放大")
 
 蓝牙中的Hilog日志显示客户端NotifyCallback同样只执行30次。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/HPfz6gkzQbK18eYwCi5nMQ/zh-cn_image_0000002765608640.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/er4M-L1JSninU9cBSP-NmQ/zh-cn_image_0000002765608640.png "点击放大")
 
 翻看BLE蓝牙服务端文档发现，当服务端收到写入描述符请求时，根据写入请求[DescriptorWriteRequest](../harmonyos-references/js-apis-bluetooth-ble.md#descriptorwriterequest)的needRsp判断是否需要调用[sendResponse](../harmonyos-references/js-apis-bluetooth-ble.md#sendresponse)进行回复。
 
@@ -44,7 +44,7 @@ BLE蓝牙服务端和客户端连接成功后，客户端收到服务端约30次
 
 验证结果可以看出客户端的BLECharacteristicChange回调函数已经持续执行超过30次。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/01Dmyjl-R1K1DPnyHI1gCw/zh-cn_image_0000002765769036.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/w1AYjimQTpqbxeYceaGInA/zh-cn_image_0000002765769036.png "点击放大")
 
 ## BLE蓝牙调用setCharacteristicChangeNotification接口报错2900007或2900099
 
@@ -57,7 +57,7 @@ BLE蓝牙服务端和客户端连接成功后，客户端收到服务端约30次
 * 排查server端（server端以HarmonyOS NEXT设备为例）是否创建了[on('descriptorWrite')](../harmonyos-references/js-apis-bluetooth-ble.md#ondescriptorwrite)监听。若server端没有创建此监听，将无法接收到client端发来的描述符请求，client端setCharacteristicChangeNotification接口将会处于持续请求的阻塞状态。
 * 排查server端接收到client端发来的描述符请求后，是否及时应答（检查日志是否返回OnSetNotifyCharacteristic关键字）。若server端在接收到client端发来的描述符请求后没有及时调用sendResponse接口应答，client端setCharacteristicChangeNotification接口同样会处于持续请求的阻塞状态。参考错误日志如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/P8cC3iaCS86aqfXEGoLf5Q/zh-cn_image_0000002795048421.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/pZX59reTSwWxfUshYE1fBQ/zh-cn_image_0000002795048477.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/sGBJ_iEBRT-2NFDddK_Mww/zh-cn_image_0000002795048421.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/4t3jBDahS9ujb-qNZamw2g/zh-cn_image_0000002795048477.png "点击放大")
 * 检查client端调用setCharacteristicChangeNotification接口时，是否有其它异步接口调用未完成，导致setCharacteristicChangeNotification接口调用被阻塞。排查方式如下：
   + 通过在接口回调中设置日志打印，查看接口调用的完整顺序流程。从创建对象实例到数据传输，BLE蓝牙client端接口调用顺序参考如下：
     1. 调用[createGattClientDevice](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattclientdevice)接口创建client实例。
@@ -69,7 +69,7 @@ BLE蓝牙服务端和客户端连接成功后，客户端收到服务端约30次
     7. 调用[writeCharacteristicValue](../harmonyos-references/js-apis-bluetooth-ble.md#writecharacteristicvalue)接口向server端写入特征值数据。
   + 排查系统日志输出。可在问题复现后[生成hilog日志](../harmonyos-guides/hilog.md#hilog日志生成)，查看日志中各接口调用开始/完成时，系统日志输出的时间点，从而判断是否出现了接口调用阻塞情况。
 
-    如：setCharacteristicChangeNotification接口调用开始时，系统日志中会打印出关键字setCharacteristicChangeNotification。接口调用完成时，可通过setCharacteristicChangeNotification接口Callback回调中自定义的日志进行判断。参考问题日志如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/4CBxu571TuayUo1MysUyJw/zh-cn_image_0000002765769698.png "点击放大")
+    如：setCharacteristicChangeNotification接口调用开始时，系统日志中会打印出关键字setCharacteristicChangeNotification。接口调用完成时，可通过setCharacteristicChangeNotification接口Callback回调中自定义的日志进行判断。参考问题日志如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/2bxd_5EfS8GRQDEdysohEw/zh-cn_image_0000002765769698.png "点击放大")
 
 ### 分析结论
 

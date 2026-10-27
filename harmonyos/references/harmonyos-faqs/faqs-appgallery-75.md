@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何动态设置应用图标
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何动态设置应用图标
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:33+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:c314ed16f5547806931af493885fc6524946dfade47ae1b508405d8da60ded85
+scraped_at: 2026-10-28T07:48:46+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:90963a320670be1afa5ab495c01cb0f7b0301a2e0def332ee5a55771242a7505
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:c314ed16f5547806931af493885fc6524946dfade47ae1b508405d8da60
 
 ## 背景知识
 
-* [通过HarmonyOS 开发者中心动态管理应用图标](../harmonyos-guides/appgallery-appinfo-manage.md)：通过图标管理服务，开发者可以在不升级应用版本的情况下，通过AGC页面动态管理应用的个性化图标，并在应用侧实现应用图标动态切换。
+* [通过HarmonyOS 开发者中心动态管理应用图标](../harmonyos-guides/appgallery-appinfo-manage.md)：通过图标管理服务，开发者可以在不升级应用版本的情况下，通过HarmonyOS 开发者中心页面动态管理应用的个性化图标，并在应用侧实现应用图标动态切换。
 * [实现应用图标动态切换](../harmonyos-guides/appgallery-appinfo-use.md)：AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信息、切换动态图标、恢复默认图标功能。
 
 | 约束与限制 | 说明 |

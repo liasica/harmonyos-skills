@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 使用@ohos.request的request.agent上传文件，如何获得响应体
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 使用@ohos.request的request.agent上传文件，如何获得响应体
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
+scraped_at: 2026-10-28T07:48:21+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:a6f644ca237351b2acc732f5aeff7efc36e610a696ddf1c31f9528debf83eb0d
+content_hash: sha256:2b0bc5edb0d5869ff0e64af035d04adc30de37f39b0c7b0b7e1cc1898e5e8d24
 ---
 
 ## 问题现象
@@ -40,7 +40,7 @@ content_hash: sha256:a6f644ca237351b2acc732f5aeff7efc36e610a696ddf1c31f9528debf8
 
 既然onResponse的入参[HttpResponse](../harmonyos-references/js-apis-request.md#requestagenthttpresponse12)不含Body，查找文档确认在[onComplete](../harmonyos-references/js-apis-request.md#oncompleted10)的回调入参[Progress](../harmonyos-references/js-apis-request.md#requestagentprogress10)中是否有响应体。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/jTT0K2ueSTuMuU9ARACMWw/zh-cn_image_0000002628774288.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/9y_QdbzWSGe0aMaUNR6ySA/zh-cn_image_0000002628774288.png "点击放大")
 
 确认Progress中有响应体。
 

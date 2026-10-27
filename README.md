@@ -41,7 +41,7 @@ HarmonyOS NEXT 离线参考库 + 采集脚本，供 AI 编程助手（Claude Cod
 
 ## 文档统计
 
-> 最后一次完整同步：**2026-10-27**
+> 最后一次完整同步：**2026-10-28**
 
 | 分类 | 数量 | 入口 |
 |---|---:|---|
@@ -49,9 +49,9 @@ HarmonyOS NEXT 离线参考库 + 采集脚本，供 AI 编程助手（Claude Cod
 | 指南 (`harmonyos-guides`) | 6154 | [INDEX.md](harmonyos/references/harmonyos-guides/INDEX.md) |
 | API 参考 (`harmonyos-references`) | 4763 | [INDEX.md](harmonyos/references/harmonyos-references/INDEX.md) |
 | 最佳实践 (`best-practices`) | 477 | [INDEX.md](harmonyos/references/best-practices/INDEX.md) |
-| FAQ (`harmonyos-faqs`) | 4725 | [INDEX.md](harmonyos/references/harmonyos-faqs/INDEX.md) |
+| FAQ (`harmonyos-faqs`) | 4678 | [INDEX.md](harmonyos/references/harmonyos-faqs/INDEX.md) |
 | 变更预告 (`harmonyos-roadmap`) | 13 | [INDEX.md](harmonyos/references/harmonyos-roadmap/INDEX.md) |
-| **合计** | **17383** | [INDEX.md](harmonyos/references/INDEX.md) |
+| **合计** | **17336** | [INDEX.md](harmonyos/references/INDEX.md) |
 
 ## SKILL 安装
 

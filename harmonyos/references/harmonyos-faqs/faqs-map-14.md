@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-14
 title: 使用POI关键字搜索返回数据为空排查指导
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 使用POI关键字搜索返回数据为空排查指导
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:24+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:b95c71cfe77df7e1f5b8db64ce071861db19a01ee1e2bdb9d61946ed98a71184
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:835a5c1801c1ada240946514e169bf12770b97b96d92a9e32b1f50dec3ab906e
 ---
 
 ## 问题现象
@@ -35,7 +35,7 @@ content_hash: sha256:b95c71cfe77df7e1f5b8db64ce071861db19a01ee1e2bdb9d61946ed98a
 
 步骤如下：
 
-1. 在[AGC](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)创建对应的项目并添加相应的应用，同时“开通地图服务”；
+1. 在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)创建对应的项目并添加相应的应用，同时“开通地图服务”；
 2. [申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)，使用添加指纹后的调试证书去[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)；
 3. 上架前，需要把发布证书公钥指纹也添加上；
 4. 使用调试证书和调试Profile来[配置手动签名](../harmonyos-guides/ide-signing.md#section297715173233)，使用[自动签名](../harmonyos-guides/ide-signing.md#section18815157237)无法使用地图服务；

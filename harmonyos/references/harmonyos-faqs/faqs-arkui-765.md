@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-765
 title: TextInput组件禁止长按事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput组件禁止长按事件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:397ed594ff2f6f850a017fc6a6cb257d4465d587919354dc928f8c9889548442
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:373b3fa3301500b7764f0f02930edc72e044c6425ddf8d6eb960a5a427725964
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ TextInput组件长按输入框内文本时会自动选中文本，如何实现�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/piXyo911QK67AvL-XyAmVQ/zh-cn_image_0000002628555694.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/1N3j4sM6T4KNyZIPBdhStA/zh-cn_image_0000002628555694.gif "点击放大")
 
 ## 背景知识
 

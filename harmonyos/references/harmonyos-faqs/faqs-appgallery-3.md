@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 上架审核提示软著不通过应该如何处理
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 上架审核提示软著不通过应该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-11T06:31:45+08:00
-doc_updated_at: 2026-09-10
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d00643072e4814303f2a5752f95d3415b6ea366e2e4e6162cb8b891ca544661b
 ---
 

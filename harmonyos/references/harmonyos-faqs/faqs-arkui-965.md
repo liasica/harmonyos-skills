@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-965
 title: 应用从后台返回前台时，退出沉浸式全屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用从后台返回前台时，退出沉浸式全屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:951059b8226fbb08e20ea84ac0b903e43d308f24d45ab47bae53616745df8cc9
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:5591b5502e3309bf4cd32413f5969eab81377210b796e82480e5ded7c172a129
 ---
 
 ## 问题现象
 
 视频全屏播放时，退出前台并重新进入前台，视频页面退出沉浸式全屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/QRn-8UJdTlaE7t8h6LxWWQ/zh-cn_image_0000002658800933.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/gxpmz11PTWChY1kvXhWQJQ/zh-cn_image_0000002658800933.png "点击放大")
 
 ## 背景知识
 
@@ -25,7 +25,7 @@ content_hash: sha256:951059b8226fbb08e20ea84ac0b903e43d308f24d45ab47bae53616745d
 
 1. 使用DevEco Testing查看问题页面，视频组件为XComponent组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/82ExXciTRqqZC3LFuyCmOQ/zh-cn_image_0000002628401676.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/jqf-almfQA2IxeWOT0TGAw/zh-cn_image_0000002628401676.png "点击放大")
 2. 查看全屏时的相关设置，点击全屏按钮时应用沉浸式横屏显示。并且页面使用onPageShow在应用进入前台时避让导航栏和状态栏。
 
    ```screen
@@ -531,4 +531,4 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/oHXIcCj5SzmDd3ztqqpEyw/zh-cn_image_0000002628561604.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/PW5L0zmZTuWemFKCfk3h0w/zh-cn_image_0000002628561604.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1053
 title: 使用全局闪控球实现应用外截图
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 使用全局闪控球实现应用外截图
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:a304a7aad3de0a133f34a3f13b27e30f682bda343c4a843aa5b4e0e0999230c3
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:52e770c30a7474aa33c367ab01585c81f254c55a72bea28653fa0fdaea18402f
 ---
 
 ## 问题现象
@@ -307,7 +307,7 @@ content_hash: sha256:a304a7aad3de0a133f34a3f13b27e30f682bda343c4a843aa5b4e0e0999
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/YEglQpScRJmU21iymeO6Sw/zh-cn_image_0000002662918076.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/7fc-vg-LRcuZ7uefw_nkHg/zh-cn_image_0000002662918076.gif "点击放大")
 
 ## 常见FAQ
 

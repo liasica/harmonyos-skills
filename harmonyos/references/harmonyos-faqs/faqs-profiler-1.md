@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-profiler-1
 title: Profiler分析任务录制失败
 breadcrumb: FAQ > DevEco Studio > 性能分析 > Profiler分析任务录制失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
+scraped_at: 2026-10-28T07:49:00+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:b2dc1428643bb2502a6eb99406704ab7a1fbc9a8d2fb60d4407ae0d7bcc6c8a5
+content_hash: sha256:868a5ce2595b8b03b84faa1593343bcf32de611bee94f1073cfba60b1163e130
 ---
 
 **问题现象**
@@ -16,7 +16,7 @@ content_hash: sha256:b2dc1428643bb2502a6eb99406704ab7a1fbc9a8d2fb60d4407ae0d7bcc
 
 * Session列表中任务显示异常图标。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/gs1iV_0kROuw09j1difPZg/zh-cn_image_0000002624638714.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/vFU7L0ciQzqDZhR3Snb7hg/zh-cn_image_0000002624638714.png)
 
 **解决措施**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-65
 title: SideBarContainer如何设置controlButton属性
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > SideBarContainer如何设置controlButton属性
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:beea12444b2f442f7b37bd6b2653713b251b3803464fbb09035774346f11cf72
 ---
 

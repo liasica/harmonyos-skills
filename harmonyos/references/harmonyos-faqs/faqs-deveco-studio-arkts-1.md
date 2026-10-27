@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-stu
 title: DevEco Studio频繁出现卡顿或卡死
 breadcrumb: FAQ > DevEco Studio > ArkTS语言 > 方舟编程语言（ArkTS） > DevEco Studio频繁出现卡顿或卡死
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:37+08:00
+scraped_at: 2026-10-28T07:49:03+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:30cc613631deb7ffaf27fd39c1b77fbe9efa9462078fb44b222c12056910b0db
+content_hash: sha256:4fcf182156e61438ab3dc705f278f1a69a7d9b19c6b61f7dda9c4af16ea8b922
 ---
 
 ## 问题现象
@@ -62,7 +62,7 @@ content_hash: sha256:30cc613631deb7ffaf27fd39c1b77fbe9efa9462078fb44b222c1205691
 3. 关闭JavaScript相关的设置，可以减少不必要的计算和内存消耗，提高IDE工具的性能和响应速度：
    * Settings(设置)-(Editor)编辑器-(Intentions)意图下的JavaScript相关的设置取消勾选。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/OkF_529nQ6COGVYAlzg5cw/zh-cn_image_0000002658928955.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/7VbrbzQ3Tp2rp5bZbh9SRg/zh-cn_image_0000002658928955.png "点击放大")
    * 关闭native相关设置，通过File—>Settings—>Editor—>Inspection—>JavaScript TypeScript ArkTS—>Unregister function in native declaration file，取消Unregister function in native declaration file勾选，保存。
 4. 关闭并行模式：
 
@@ -73,7 +73,7 @@ content_hash: sha256:30cc613631deb7ffaf27fd39c1b77fbe9efa9462078fb44b222c1205691
 1. Git端处理方法：提交代码阶段避免提交.idea资源上库；
 2. 本地清理非必要的调试断点方法：可以通过[断点管理](../harmonyos-guides/ide-debug-arkts-breakpoint.md#section168791742202819)工具删除不必要的断点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/6b8zoS9WQM29G6T073eMsA/zh-cn_image_0000002658808999.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/wXzzJWMyQdGMNuV_4T88KA/zh-cn_image_0000002658808999.png "点击放大")
 
 ## 常见FAQ
 

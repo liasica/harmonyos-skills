@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 一个EglSurface支持同时显屏和输出到编码器吗
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 一个EglSurface支持同时显屏和输出到编码器吗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:34+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2ba7271b1108d16c9680b8f84415397de34725d59b0d4027a3dc5a9a31c39d4f
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-localizati
 title: 如何实现在程序运行时动态添加并使用多语言资源
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 本地化开发（Localization） > 如何实现在程序运行时动态添加并使用多语言资源
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
+scraped_at: 2026-10-28T07:48:03+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0237755658de535776bd1cc1397be5f1de9d13a9f878cee180b7f240b6a15a93
+content_hash: sha256:c29205a1a164e301eac4d782f156c3658c4de5a537e7677570ce7205e7b2eeb3
 ---
 
 ## 问题现象
@@ -207,12 +207,12 @@ content_hash: sha256:0237755658de535776bd1cc1397be5f1de9d13a9f878cee180b7f240b6a
 
 当系统语言为中文时，显示的是中文的字段：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/DXOTpCDnSFGvydyRDmmyOA/zh-cn_image_0000002659022315.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/tCUTiewPQFectiaRmAMPwA/zh-cn_image_0000002659062369.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/63mLFs_FSeaOJzfpTyWJyQ/zh-cn_image_0000002659022315.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/0uV61U7CQKeHrJMoCi3ZSw/zh-cn_image_0000002659062369.png "点击放大")
 
 当系统语言为英文时，显示的是英文对应的字段：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/0Fw0k_q-R4m0SaN_koFTTw/zh-cn_image_0000002628822998.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/KYCLzKLPRNC4VNdeGrvVlA/zh-cn_image_0000002628663110.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/LpbG8AszTSq4ZhGwEtym2Q/zh-cn_image_0000002628822998.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0EV-lzBCQOy4LDDjTyW1Dw/zh-cn_image_0000002628663110.png "点击放大")
 
 动图效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/X_JnN9YhRRqcKYqqBy1Yjg/zh-cn_image_0000002659022317.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/TeDrO6KGTLmpujVPOOEjnw/zh-cn_image_0000002659022317.png "点击放大")

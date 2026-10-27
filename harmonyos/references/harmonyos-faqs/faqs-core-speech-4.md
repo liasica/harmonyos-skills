@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-core-speec
 title: 实时语音识别与音频文件识别的功能实现
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > 实时语音识别与音频文件识别的功能实现
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:39+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:49:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:83e7870900776e8e67d9470dd00c19f45ce9189f101e8035281db530a769ecde
 ---
 

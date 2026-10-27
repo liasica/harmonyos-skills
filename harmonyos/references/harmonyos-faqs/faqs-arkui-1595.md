@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1595
 title: Tabs切换时进行弹窗拦截
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs切换时进行弹窗拦截
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:79fce1d45d7a24baf5fd4021e7f90f42ba7026262a8082d7321678d7043732c2
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cdfd2e9ae20675816e15386f688651ea68988792e54a6e2cde5beff7e962ee49
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:79fce1d45d7a24baf5fd4021e7f90f42ba7026262a8082d7321678d7043
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/uo5Z3dF6QPajAEXNSgKFBQ/zh-cn_image_0000002658969529.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/lqfAiZL3ScaXE4_8Zhs6mA/zh-cn_image_0000002658969529.png "点击放大")
 
 ## 背景知识
 

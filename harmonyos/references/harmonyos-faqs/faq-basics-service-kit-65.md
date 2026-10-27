@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 使用request.downloadFile下载图片到沙箱，图片无法打开
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 使用request.downloadFile下载图片到沙箱，图片无法打开
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:40+08:00
+scraped_at: 2026-10-28T07:48:22+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:c60443766673f6ffbf0362cf7160ab3bf0cd0431e9da47dd222b7c766e70a1f7
+content_hash: sha256:e49dbd43dfdbc4482e1f7609ec2ff478686f1d0495ad0d41a2c7d638607d2ddb
 ---
 
 ## 问题现象
 
 使用request.downloadFile方法下载网络图片到沙箱，图片不能直接打开查看：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/sjnxaz-aSGOjkCJ2Qs9EZw/zh-cn_image_0000002628613956.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/P3k0tO5nTqukWSi289nIFw/zh-cn_image_0000002628613956.png "点击放大")
 
 关键代码如下：
 
@@ -36,14 +36,14 @@ request.downloadFile(context, {
 
 1. 直接打开问题图片的链接是可以看到图片的；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/jw-811-yTna-aErgIHglNA/zh-cn_image_0000002658973159.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/joBKX-bqQfi5hqXuquTy1w/zh-cn_image_0000002658973159.png "点击放大")
 
    使用request.downloadFile方法下载该图片到沙箱，然后导出到PC，再拖拽到浏览器，图片也不能查看了；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/9NQn35w-TmC59ddnom9-RQ/zh-cn_image_0000002658853205.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/X0eit41MTl6JLbA7cdhZ-g/zh-cn_image_0000002658853205.png)
 2. 查看图片的二进制码，发现第二张图片和第一张图片的文件头有差异，多了以下高亮区域里的数据：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/aRyfjlmdT9CDbx0fAjVZKQ/zh-cn_image_0000002628773846.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/DBAcJs_gTO6KY949_bZhOw/zh-cn_image_0000002628773846.png "点击放大")
 3. 读取前几个字节为1F 8B 08，其中1F 8B表明为gzip压缩，而08表示为deflate压缩。下载的是未解码的文件，所以图片无法显示。
 
 ## 分析结论

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1268
 title: 父组件及其子组件实现持续缩放效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 父组件及其子组件实现持续缩放效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:39+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:81ddc78280c205722b0f553401586ed0653e3d258025d0f018a3c4cfa854f10b
+content_hash: sha256:3b4b4261c5b59f45030dbdf9fa7e1feafe64e6f25237881b0f578392c37161a6
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:81ddc78280c205722b0f553401586ed0653e3d258025d0f018a3c4cfa85
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/CxMBBcKnTKu7fGfW0e1uaA/zh-cn_image_0000002658835377.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/EuiXExORSSyllohzyFP_XA/zh-cn_image_0000002658835377.png "点击放大")
 
 ## 背景知识
 

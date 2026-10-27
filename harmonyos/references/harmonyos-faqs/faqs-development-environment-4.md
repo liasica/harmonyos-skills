@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 下载HarmonyOS SDK时提示网络连接错误
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 下载HarmonyOS SDK时提示网络连接错误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:a9bcd5f6de2724d2f672d569186dba3467d26853a63f54b66c44c7aaf050b00d
+scraped_at: 2026-10-28T07:48:48+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:76e05c2238a53ebf4205197c65e1cceefc2ac213f8de8be530c1d9d3ba017059
 ---
 
 **问题现象**
 
 网络连接正常，但下载HarmonyOS SDK时提示网络连接错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/-ze4HBILT4uIcA0WD2gYpw/zh-cn_image_0000002654797765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/inNTn09oRD-h5hJw6ZgTEw/zh-cn_image_0000002654797765.png)
 
 **解决措施**
 

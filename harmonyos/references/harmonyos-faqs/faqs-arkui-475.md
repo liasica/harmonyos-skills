@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-475
 title: 如何实现Tabs高度自适应内容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Tabs高度自适应内容
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c2649fa3252d5befa0cff6cbcc4a512316601a89e7e6c5041c72cb95175939dc
 ---
 

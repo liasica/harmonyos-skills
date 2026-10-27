@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何发布企业内部应用
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何发布企业内部应用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3d69444c9911dd6f2c799acd81f6056777e45dfbdb46753227e5c0b04860be00
 ---
 

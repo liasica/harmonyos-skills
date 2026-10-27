@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1245
 title: 返回Tabs主页面时，未返回到对应Tabs标题的位置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 返回Tabs主页面时，未返回到对应Tabs标题的位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:29b78d33ce0a4c92639da86f907cf096e912cbd4ca0a34c8cd256589f81507d9
 ---
 

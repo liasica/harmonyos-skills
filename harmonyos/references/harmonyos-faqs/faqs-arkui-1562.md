@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1562
 title: 应用挂起或退出时，页面顶部闪现白条
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 应用挂起或退出时，页面顶部闪现白条
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7268373fb08340fcf7b810d24936c2d5491acf503c860cabbc7ca98ac76292a2
+content_hash: sha256:7344574b9311225399de5eaba5f54c11e92a4df89eea7fad5f13230e15581388
 ---
 
 ## 问题现象
 
 应用挂起或退出时，应用页面的上方出现白色区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/MbB7nbUYSLe2-FT-sALQng/zh-cn_image_0000002628769750.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/EkuEFNtCQBK-FHDLqdcE3w/zh-cn_image_0000002628769750.png "点击放大")
 
 ## 背景知识
 
@@ -84,7 +84,7 @@ content_hash: sha256:7268373fb08340fcf7b810d24936c2d5491acf503c860cabbc7ca98ac76
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/bOuymxDiTRSaMtwf2Z8MzA/zh-cn_image_0000002658969071.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/7SwW08WmTAyOlp5BMFeiUA/zh-cn_image_0000002658969071.png "点击放大")
 * 页面中的组件配置[expandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)属性，确保expandSafeArea属性生效，扩展组件的安全区域到状态栏。
 
   代码如下：
@@ -106,4 +106,4 @@ content_hash: sha256:7268373fb08340fcf7b810d24936c2d5491acf503c860cabbc7ca98ac76
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/EAdDBpZ4RhG_sW8LXyblLw/zh-cn_image_0000002658849117.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/NXTKKXycRCqDN73_VFHrQg/zh-cn_image_0000002658849117.png "点击放大")

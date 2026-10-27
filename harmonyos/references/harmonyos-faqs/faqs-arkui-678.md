@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-678
 title: 如何在横屏时从右边弹出半模态页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在横屏时从右边弹出半模态页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7028f923e561cd56672df40c07ec470537f9bd4f2652ce469e9636a22d114a1d
 ---
 

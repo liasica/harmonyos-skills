@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-4
 title: 使用活体检测API报错闪退
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 使用活体检测API报错闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:49:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5e9605ae9e0b048e1811f55df3c93628aec27b4787a3326379548d0194a8ad41
 ---
 

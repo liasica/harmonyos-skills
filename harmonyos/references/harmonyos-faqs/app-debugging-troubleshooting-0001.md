@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-debugging-t
 title: 真机安装HAP包失败故障排查
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 故障排查 > 真机安装HAP包失败故障排查
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:14:50+08:00
+scraped_at: 2026-10-28T07:48:59+08:00
 doc_updated_at: 2026-10-22
-content_hash: sha256:ee8540a99d030f17a101926aadb157831fa9ebed50e221e34cc8e49dff18b1d8
+content_hash: sha256:acc2cd7fb04faadde818f1a8e5aba065ea68541b70e96e61d1174d551e6c0d16
 ---
 
 ## 报9568263错误：版本降级安装失败
@@ -72,7 +72,7 @@ error: install releaseType compatible not same.
 
 项目配置了多个入口ability，运行项目报错，错误信息如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/inRrwC8_RM-c8wEZiW_sHg/zh-cn_image_0000002797142633.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Jbt8FnksRPmlLpqJUdaMjA/zh-cn_image_0000002797142633.png "点击放大")
 
 ### 定位过程
 
@@ -86,7 +86,7 @@ error: install releaseType compatible not same.
 ### 修改建议
 
 * 在运行报错时，把该命令中对应ability的module.json5中的skills字段去掉，不作为入口ability；
-* 在运行项目前，编辑运行配置，在Launch Options下手动选择项目的正确入口ability。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/cndAQg2RTx-69RzvyFHKYQ/zh-cn_image_0000002767982646.png "点击放大")
+* 在运行项目前，编辑运行配置，在Launch Options下手动选择项目的正确入口ability。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/n4CzKf-LRTuH_ZkgDiYNxg/zh-cn_image_0000002767982646.png "点击放大")
 
 ## 报9568320错误：缺少签名文件
 

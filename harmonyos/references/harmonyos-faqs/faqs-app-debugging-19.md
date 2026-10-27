@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 运行时提示“Hdc server port XXXX has been used”
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 运行时提示“Hdc server port XXXX has been used”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:0c93800093cf08cb0a39930c00e54d32df3a6f0381ae31ee12afba465d987922
+scraped_at: 2026-10-28T07:48:59+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f542bcc8c0bad698bc518a429300157133670b8bdcf8be87b0eaf08699174b6a
 ---
 
 **问题现象**
 
 在设备中运行HAP时，提示“Hdc server port XXXX已被使用。请配置环境变量‘OHOS\_HDC\_SERVER\_PORT’并重启DevEco Studio。”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/dnO4rpFPTmycAqgaFiEw_w/zh-cn_image_0000002624638692.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/-bo2mGtkSs6jlwIo4gJ3-g/zh-cn_image_0000002624638692.png)
 
 **解决措施**
 
@@ -22,10 +22,10 @@ HDC的默认端口8710导致服务无法启动。解决方法如下：
 
 1. 运行CMD命令行工具，输入“netstat -ano | findstr *端口号*”，查询占用端口号的进程PID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/MiQQ0QHQQw-2L-ZHhgPpsQ/zh-cn_image_0000002654838101.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/mCaYnXugSCC1XEZWokZCow/zh-cn_image_0000002654838101.png)
 2. 打开任务管理器，选择详细信息页，查看PID对应的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Xy4LiqYpQVKGHLWzIoDkkg/zh-cn_image_0000002654798151.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/eJnA-mUpSpyXKKeGevTuJA/zh-cn_image_0000002654798151.png)
 3. 结束掉对应应用后，重启DevEco Studio。
 
 方式二：为HDC端口号设置其他的环境变量。
@@ -34,7 +34,7 @@ HDC的默认端口8710导致服务无法启动。解决方法如下：
 
   在**此电脑 > 属性 > 高级系统设置 > 高级 > 环境变量**中，添加变量名OHOS\_HDC\_SERVER\_PORT，变量值设置为任意未占用的端口，例如7035。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/OKHZ6K-CSZ-24mrxJB1XUA/zh-cn_image_0000002654838103.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/EAS51fHBR5mxyiJfezqMXw/zh-cn_image_0000002654838103.png)
 
   环境变量配置完成后，关闭并重启DevEco Studio。
 * macOS环境变量设置方法：

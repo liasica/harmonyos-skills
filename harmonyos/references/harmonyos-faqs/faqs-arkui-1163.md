@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1163
 title: 如何实现点击Menu组件菜单选项弹出自定义弹框
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现点击Menu组件菜单选项弹出自定义弹框
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:bf0712816c2fdc69deab423c7ae62c803f113d6654fef2406cf468f9f6d1ccfb
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:1c9c275685c7d671b36a3309284bd4d87b9e5f6e3163466fbcf3474b78ff781a
 ---
 
 ## 问题现象
@@ -17,7 +17,7 @@ content_hash: sha256:bf0712816c2fdc69deab423c7ae62c803f113d6654fef2406cf468f9f6d
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/tmanruXkReaduG2JQuqfrw/zh-cn_image_0000002628409868.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/xoBYN68tSESdv_oHWMZaAQ/zh-cn_image_0000002628409868.gif "点击放大")
 
 ## 背景知识
 

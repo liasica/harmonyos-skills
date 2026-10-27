@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-559
 title: 如何解决组件消失后滑动手势依然可以触发的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决组件消失后滑动手势依然可以触发的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:142021a552c896579ce984f372a15197bd26bf3da21daeef5c4ea13202194599
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:d10b83200bbaaba38f210b1459c17fac1dfea4b0688137d8f83027400e5af025
 ---
 
 ## 问题现象
@@ -14,13 +14,13 @@ content_hash: sha256:142021a552c896579ce984f372a15197bd26bf3da21daeef5c4ea132021
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/7PS66uoORmefVQRTOdI3hw/zh-cn_image_0000002658911337.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/EqxJx4dKRQiv7yFXh2Kr4w/zh-cn_image_0000002658911337.png "点击放大")
 
 ## 效果预览
 
 当组件消失后，手指滑动不会继续触发组件的手势事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/o7GASUZ4TAuSYXJG0rIcxw/zh-cn_image_0000002628392124.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/hfbFz9ToR16xHa_kVzkF9w/zh-cn_image_0000002628392124.png "点击放大")
 
 ## 背景知识
 

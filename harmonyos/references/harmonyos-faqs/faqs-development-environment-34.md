@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio版本更新后问题汇总
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio版本更新后问题汇总
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
+scraped_at: 2026-10-28T07:48:49+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:36353e901336f5f42efdc034577457c8968fa351d89a16baa293e93243337992
+content_hash: sha256:3109809d17ca31928f6c9a56a3db7d6ad85c88cd46af75b720cc401e78fe6e8d
 ---
 
 ## 问题现象
@@ -32,14 +32,14 @@ DevEco Studio不支持自更新，需要开发者前往[官网链接](https://de
 
   报错如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/jg5YNJOJRBCoKsRVpv767Q/zh-cn_image_0000002658804377.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/PCAcFJDoQuaO8F66DU9yNw/zh-cn_image_0000002658804377.png "点击放大")
 
   根据报错信息可知：问题原因是当前hvigor的开发态配置版本与IDE能支持的开发态配置版本不匹配。
 * **场景二：项目运行失败，报错“A page configured in 'test\_pages.json' must have one and only one '@Entry' decorator”。**
 
   报错信息：A page configured in 'test\_pages.json' must have one and only one '@Entry' decorator。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Ca-vKq0eQ36qOqjQ7hRkOA/zh-cn_image_0000002628565014.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ouTQImwVRhWIrAvqeUunNw/zh-cn_image_0000002628565014.png "点击放大")
 
   根据报错信息可知：问题原因是配置在test\_pages.json里的页面必须有且只能有一个'@Entry'装饰器。
 * **场景三：执行测试任务失败。**

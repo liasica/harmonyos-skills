@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-485
 title: 如何判断组件遮挡情况，并主动隐藏被遮挡的组件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何判断组件遮挡情况，并主动隐藏被遮挡的组件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2f03da81c9ae57efce2c62efb20b6fea76c24267a3087afe22553b9f73bbd187
 ---
 

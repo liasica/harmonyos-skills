@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-274
 title: 如何完成挖孔屏的适配
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何完成挖孔屏的适配
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:65b38c96538374acabf6279429373076c573a8fda5a0b538ecb1fd9d4254f2f9
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: Slider组件常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > Slider组件常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:32+08:00
+scraped_at: 2026-10-28T07:46:59+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:a4ea87ddbc76c98cd799d9bf7c2b6a63426dba48f1958000e1a8c95605d81c76
+content_hash: sha256:7b2368310366dddfbc7541cdfc13b6a9c8858bda8490e087ce3bcf7df738a7ee
 ---
 
 **Q：使用Slider组件，如何让滑块在中间可正、负向滑动，且已滑动部分的颜色从中间开始？**
@@ -200,4 +200,4 @@ function buildSlider(config: SliderConfiguration) {
 
 运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/8xsNbQs0RYq_9RRAoN-IiA/zh-cn_image_0000002793770213.png "点击放大")。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/81PqUXFaRaW5Wzt85sKOTw/zh-cn_image_0000002793770213.png "点击放大")。

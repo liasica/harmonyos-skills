@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1051
 title: HarmonyOS如何加载HTML文本
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > HarmonyOS如何加载HTML文本
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5d75b2a7a4a800f66fd6ea8ff975f1b1f8989a97420becbb6682b7ef96c12329
 ---
 

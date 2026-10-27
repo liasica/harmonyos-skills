@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1279
 title: Popup弹窗如何实现按钮关闭和外部点击关闭
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Popup弹窗如何实现按钮关闭和外部点击关闭
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a7bcc02fa18ad3e551071157ae8e17517b355cacae5c6312dae67dab82f3bf78
 ---
 

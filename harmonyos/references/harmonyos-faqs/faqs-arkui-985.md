@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-985
 title: 如何解决Flex组件设置width('auto')不生效的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Flex组件设置width('auto')不生效的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0a0ae2236c5f1a8456bc73159451665148e73577b25ecbedc913fd22edce91d2
+scraped_at: 2026-10-28T07:47:15+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:17dbd7e720d68dfd950073f26d86463f732ee415e7e8c26da10a54a2de03a0f5
 ---
 
 ## 问题现象
@@ -109,7 +109,7 @@ struct FlexPage {
 
 问题效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/r3gtPRYuQS2LmK8Qpe6fmw/zh-cn_image_0000002628561710.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ZqUb09eiR0GsTeZ9UblVYA/zh-cn_image_0000002628561710.png "点击放大")
 
 ## 背景知识
 
@@ -203,7 +203,7 @@ struct FlexPage {
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/j2p4qqyOSOmb1D04cMIRtg/zh-cn_image_0000002658921029.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/56smwvR4RpmdjxmqBnPrJg/zh-cn_image_0000002658921029.png "点击放大")
 * 方案二：
 
   首先根据设置的布局计算出Flex组件中一行可用的最大宽度。通过measureText得到文本占用的宽度，从而计算文本框占用的宽度。当全部文本框占用的宽度加起来未超过一行就将Flex设置为FlexWrap.NoWrap。如果前几个文本框累计超过一行后面无需计算，直接将Flex设置为FlexWrap.NoWrap。
@@ -306,4 +306,4 @@ struct FlexPage {
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/2SKGQ03vTkyE_RnEHcnKSg/zh-cn_image_0000002658801079.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/4IKkpQSDTZOGZ52NsQ_Ifw/zh-cn_image_0000002658801079.png "点击放大")

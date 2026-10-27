@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1157
 title: List组件通过拖拽改变排序
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > List组件通过拖拽改变排序
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-08-27
-content_hash: sha256:fb4331ab74ecbb47b1a78f730c113a8255381e2b66a46b05b402098319ec2f14
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9bbb15b4fa0bc0ec029988b782205aee68136e7b56c17c12eaf5e72ce70cb6be
 ---
 
 ## 问题现象
@@ -318,7 +318,7 @@ struct ListDrag {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/r8l3dsLYSfmwyVdiHmUNQg/zh-cn_image_0000002691501638.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/i9QIN9WUR_yconoxeU9rmQ/zh-cn_image_0000002691501638.png "点击放大")
 
 ## 常见FAQ
 

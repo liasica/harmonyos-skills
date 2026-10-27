@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-thre
 title: 弹窗关闭延迟
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 弹窗关闭延迟
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
+scraped_at: 2026-10-28T07:46:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:c4e20a1726c0f921fdf81a33fd3cf82c7c37eea5cce1840177ca38484be40619
+content_hash: sha256:4af67ca2f46e9a3c3e8165a596fc50e9815ed5fd077c704b5b0d12aafa44f563
 ---
 
 ## 问题现象
 
 提示弹窗在页面加载较慢时能够提供良好的用户体验。但若页面加载完成后弹窗仍未关闭，则会影响正常使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/fc66aZ7USkK-VQtcXglBYw/zh-cn_image_0000002628899074.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/BxlPyhcSSxendgZQvbPujA/zh-cn_image_0000002628899074.png "点击放大")
 
 ## 背景知识
 
@@ -22,7 +22,7 @@ content_hash: sha256:c4e20a1726c0f921fdf81a33fd3cf82c7c37eea5cce1840177ca38484be
 
 ## 问题定位
 
-1. 使用DevEco Testing查看问题组件，该问题组件为Dialog组件。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wDvfRjw5RBu99EhuGHuqxA/zh-cn_image_0000002659258285.png "点击放大")
+1. 使用DevEco Testing查看问题组件，该问题组件为Dialog组件。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/UxACCHhvQKmUi5ofR_Mqfg/zh-cn_image_0000002659258285.png "点击放大")
 2. 排查弹窗Dialog的相关设置，应用使用async和await，在加载完成后台数据时才关闭加载弹窗，导致前台页面显示完成时加载弹窗仍在显示。
 
    ```ts
@@ -191,4 +191,4 @@ async function loadForeData(): Promise<string> {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/HecdXxwNTMOe5OFky-WtPQ/zh-cn_image_0000002659138345.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/9aJgVaKQQOCLdJTcmpdbXw/zh-cn_image_0000002659138345.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-945
 title: 如何在页面中保存自定义弹窗内容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在页面中保存自定义弹窗内容
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2d82dd28e5c485d1b136773c1abea47f0a7f2927ff155448111f527a31fb8f82
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:dd97166ce76b63fd13fe88058792443480fa71ab4d2a320ddb8be9be6845398c
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:2d82dd28e5c485d1b136773c1abea47f0a7f2927ff155448111f527a31f
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/NHUBVLJdQ-STIHZG07PXqg/zh-cn_image_0000002658920439.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/zcGDiyunSsiCeIiYWac8zQ/zh-cn_image_0000002658920439.gif "点击放大")
 
 ## 背景知识
 

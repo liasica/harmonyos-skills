@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-5
 title: 在Native侧如何集成三方SO库
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 在Native侧如何集成三方SO库
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d05e70091f8a9843429b699304d8a9e0a366d69f62cb5aba7f7798d6ab51abe2
 ---
 

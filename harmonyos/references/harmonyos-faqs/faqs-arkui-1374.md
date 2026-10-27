@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1374
 title: 在RichEditor中格式化展示字符串文本
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 在RichEditor中格式化展示字符串文本
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:8dc1e150ee394a7d8c9fc2cf25f8b8fa77bb36a60f0f093413bf61256e3fa7d7
+scraped_at: 2026-10-28T07:47:21+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9c73b87c2b39f08d75926ba702a55cd8507e76f99f4aeb91d7a91a48bcdced4b
 ---
 
 ## 问题现象
@@ -94,4 +94,4 @@ struct RichEditorExample {
 
 效果图为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/78RHwfmeTCih0BrCtFi0cg/zh-cn_image_0000002670073033.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/M5cs2fNiRsSsQ8IplCRKLg/zh-cn_image_0000002670073033.png "点击放大")

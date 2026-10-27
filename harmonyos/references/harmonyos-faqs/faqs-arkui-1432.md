@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1432
 title: 如何在SDK包中获取宿主应用的沉浸式状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何在SDK包中获取宿主应用的沉浸式状态
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:30eaf425c632af6d82161663c19767015e38bb14231a5b9dd131f3b98ec3919c
 ---
 

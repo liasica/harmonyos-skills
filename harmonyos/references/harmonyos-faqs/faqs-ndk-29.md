@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-29
 title: NAPI执行上层回调时，如何获取env
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > NAPI执行上层回调时，如何获取env
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ac7963d72df9bec1a76e03457a5cbf68893bb761f96df817a1558d4265b8e645
 ---
 

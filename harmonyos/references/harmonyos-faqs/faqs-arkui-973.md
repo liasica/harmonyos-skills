@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-973
 title: 如何实现EmbeddedComponent和EmbeddedUIExtensionAbility之间的双向通信
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现EmbeddedComponent和EmbeddedUIExtensionAbility之间的双向通信
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:15+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:80c043625a6a59a846d7b9904fbd9810746aa488cddadfb23c6bc4b9f3590e21
 ---
 

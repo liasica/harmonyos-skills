@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-k
 title: 如何申请精确定位
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 如何申请精确定位
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0218209dd4e0d880e70f18965c6677635044ab7f6a363b4511d45cd5be1ac650
 ---
 

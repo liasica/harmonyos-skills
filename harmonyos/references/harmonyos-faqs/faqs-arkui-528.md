@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-528
 title: 如何监听ListItemGroup的Header吸顶状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何监听ListItemGroup的Header吸顶状态
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9cc29ebbd5a6c944dd19fe645060a653220f634f421f344bb7502f49a575d854
 ---
 

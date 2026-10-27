@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-769
 title: 如何实现简单列表折叠和展开
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现简单列表折叠和展开
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:be4e3349138eba3eda82e7852912b9e7f843140bd63e9edef8a18de8889a567d
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cc6c13db0c431ff38aca092c2bda896d275055b308c95e7ceb4edd21c02aa846
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:be4e3349138eba3eda82e7852912b9e7f843140bd63e9edef8a18de8889
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/a4WEaCpCSimmcwT4oo0KrQ/zh-cn_image_0000002628395806.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/_w7JxQVCQuyyyEL9wKK87w/zh-cn_image_0000002628395806.gif "点击放大")
 
 ## 背景知识
 

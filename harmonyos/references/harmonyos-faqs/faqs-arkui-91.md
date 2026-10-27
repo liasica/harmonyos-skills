@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-91
 title: 如何实现文本竖向排列
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现文本竖向排列
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6af79115a64a97697d38e3f8f993845acc1b97e54e2ffe9b932e6b6dd3d9b75f
 ---
 

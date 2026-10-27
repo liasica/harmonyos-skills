@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-131
 title: 通过网页拉起摄像头/麦克风实现拍照、录音录像、视频通话和拉起图库等功能
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 通过网页拉起摄像头/麦克风实现拍照、录音录像、视频通话和拉起图库等功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5aa7809c70f79be96267714c3fa952c0ac55e62fbeabb2c0552175517a09e329
 ---
 

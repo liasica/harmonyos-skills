@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 快速滑动列表时数据加载延迟
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 快速滑动列表时数据加载延迟
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:43+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:d7ac34eec1ac1de6bd3dd70ebdedd70d1f92c9e14d001d53e8712a7c35149467
+content_hash: sha256:ca8f9ecb64cfd3dc8c77d5eefac1753558b59bdca3a97e76a2e36d5d4b1da1b7
 ---
 
 ## 问题现象
@@ -22,19 +22,19 @@ content_hash: sha256:d7ac34eec1ac1de6bd3dd70ebdedd70d1f92c9e14d001d53e8712a7c351
 
 1. 使用DevEco Profiler的Frame模板抓取应用列表页快速滑动后加载内容的Trace。在应用包名主泳道的H:APP\_LIST\_FLING泳道找到抛滑过程结束的时间点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/bxKqSJmIQBGo9N16lUOprA/zh-cn_image_0000002658914517.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/_OZLxCeTTsuCzuR2MDcU0g/zh-cn_image_0000002658914517.png "点击放大")
 2. 查看应用包名主泳道发现在结束抛滑过程后存在耗时Trace点。可以明显看到Stack、Scroll、List组件的测量任务耗时较长。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/UmR9rjehTdWu_kw82A3z9A/zh-cn_image_0000002628395286.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/qDA0krfNRPSh4TpAsF2BZw/zh-cn_image_0000002628395286.png "点击放大")
 3. 结合ArkUI Inspector中看到的页面组件结构，可以发现列表中的每一项都是由相同类型的元素和布局构成，列表项组件名为XXXView。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/DTKlaYVqQGWuj8dfZM4X2w/zh-cn_image_0000002658794563.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/6xuJxjk5QJ6qjgPxq9YqMw/zh-cn_image_0000002658794563.png "点击放大")
 4. 根据组件名搜索关键字H:CustomNode:BuildRecycle XXXView，可以看到组件复用13次，平均每次复用时耗时7.9ms，耗时较长。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/7xoEk8YCTwyiO905iXNyNg/zh-cn_image_0000002628555198.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/gkc1sB_tTZKjYbekrF_69A/zh-cn_image_0000002628555198.png "点击放大")
 5. 框选单次复用的Trace，在下方Slices中过滤关键字H:Create，可以看到在此过程中创建了27个子组件。结合ArkUI Inspector查看页面组件结构，组件嵌套层数为17层，且其中包含大量并未在当前页面中展示的节点。因此是页面整体组件嵌套层级复杂且复用组件中节点过多导致绘制耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/A1jih2X_QOWmAkvq8_PqKQ/zh-cn_image_0000002658914519.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/I7IgZo48S5q5L18E12_9FA/zh-cn_image_0000002628395288.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/jzJ1BZqTTtCKWZ8sA04XcA/zh-cn_image_0000002658914519.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/ZG9G1AfYTmi9_aowE7-MHw/zh-cn_image_0000002628395288.png "点击放大")
 
 ## 分析结论
 

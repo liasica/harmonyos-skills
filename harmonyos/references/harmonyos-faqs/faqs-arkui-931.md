@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-931
 title: 如何实现组件向上移动时被幕布遮挡的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现组件向上移动时被幕布遮挡的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:45+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7406c035486ec1a08c323a8da7e025839f830c0051b0b7546c9e376786a14aa1
+content_hash: sha256:017681889f35ffc5c46fdc8c040ece96b74fc219fe25f8f43101d3429d8c495a
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:7406c035486ec1a08c323a8da7e025839f830c0051b0b7546c9e376786a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/fo3-EzbqTv2RjICO37s_8w/zh-cn_image_0000002628400344.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/4qOW9YInSNubQ9vBM0lguA/zh-cn_image_0000002628400344.gif "点击放大")
 
 ## 背景知识
 

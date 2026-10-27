@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-telephony-
 title: 如何判断蜂窝信号强度
 breadcrumb: FAQ > 系统开发 > 网络 > 蜂窝通信（Telephony） > 如何判断蜂窝信号强度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:19+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c93ba893dbadd55c6b095e9dde046c4249295ea41a0f0dbdd318b3c6b6aaaf29
 ---
 

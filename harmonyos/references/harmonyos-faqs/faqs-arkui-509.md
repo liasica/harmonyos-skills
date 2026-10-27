@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-509
 title: 如何自定义cancelButton点击事件的业务逻辑
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何自定义cancelButton点击事件的业务逻辑
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ebf4430adb72bf5af08dbcf5c080837ef18458824d1c7cc91e1dd6a3e8042823
 ---
 

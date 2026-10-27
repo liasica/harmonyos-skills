@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: ArkUI-Image组件图片闪烁问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > ArkUI-Image组件图片闪烁问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:11+08:00
+scraped_at: 2026-10-28T07:47:33+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:3a5632a750fd850c178b7a4590be4df810d65f5cff8cee226a6d1910b5c75065
+content_hash: sha256:800bcfad7276c65410016ae13ef8cf56d549150afac6187832f85779acf5724b
 ---
 
 ## 图片旋转时闪烁
@@ -14,13 +14,13 @@ content_hash: sha256:3a5632a750fd850c178b7a4590be4df810d65f5cff8cee226a6d1910b5c
 
 用户旋转设备时，当前页面指针转动闪烁，影响用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/WlBx00SqRHSNx7RStHzl-A/zh-cn_image_0000002795317937.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/jFqFxFSiQBqw8pb6qfyWFg/zh-cn_image_0000002795317937.png "点击放大")
 
 ### 定位过程
 
 1. 使用DevEco Testing查看问题组件，该组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/oJrtqzOfRU-MQuf_BZsqzw/zh-cn_image_0000002766079180.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/GIGsGoL6QoaT0srFQitQvw/zh-cn_image_0000002766079180.png "点击放大")
 2. 查看该Image组件的设置，该组件未使用animation属性对图片旋转设置动画效果，导致旋转设备时图片闪烁。
 
    ```ts
@@ -194,7 +194,7 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Hiz8b1O4QrObcJq3xPfOkw/zh-cn_image_0000002766079538.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/XeDMIQZkRx2GqZlJZC-wpw/zh-cn_image_0000002766079538.png "点击放大")
 
 ## 页面上下滑动时，页面上的图片会闪跳
 

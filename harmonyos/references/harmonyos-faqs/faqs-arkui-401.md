@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-401
 title: 如何监听Navigation页面的生命周期
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何监听Navigation页面的生命周期
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:22+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:fadada479020d81d06c7a853f55e5eee6358cf4e5996362f7ec8aec1fcd6efc7
 ---
 

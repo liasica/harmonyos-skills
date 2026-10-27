@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1396
 title: 文本和富文本宽高计算
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 文本和富文本宽高计算
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-08-27
+scraped_at: 2026-10-28T07:47:22+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:61b5b4fa6df8a4945b0ce340f30468302721c2fed4f2539db2022573ced30ac7
 ---
 

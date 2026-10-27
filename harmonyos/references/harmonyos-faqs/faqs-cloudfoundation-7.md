@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-cloudfound
 title: 云函数各触发器的场景使用
 breadcrumb: FAQ > 应用服务开发 > 云开发服务（Cloud Foundation Kit） > 云函数各触发器的场景使用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:5f74fdf9abbf5fc2101ba445c8c50ac308f166cfed7de84fe391a2dd412150a4
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:fcdbe2a78389e855881fa3e3ca0afeb3809cbbbd76942e83b460977f83c2b921
 ---
 
 ## 问题现象
@@ -37,11 +37,11 @@ content_hash: sha256:5f74fdf9abbf5fc2101ba445c8c50ac308f166cfed7de84fe391a2dd412
   + 为云函数完成HTTP触发器配置后会生成触发URL，在向该URL发起HTTP请求时将触发云函数。
   + 使用场景：端侧直接调用。通过HTTP触发器，应用可以直接在HarmonyOS应用端侧通过调用cloudfunction.call接口来实现函数的调用。
 * [云数据库触发器](../AppGallery-connect-Guides/agc-cloudfunction-clouddbtrigger-0000001658558540.md)：支持通过云数据库相关事件来触发云函数。
-  + AGC云数据库服务为开发者提供了基于云函数服务的扩展机制，开发者可以为云函数配置云数据库触发器，当云数据库发生插入或者更新数据、删除数据、清空数据等变更操作时将触发云函数，并在云函数中扩展业务处理逻辑。
+  + HarmonyOS 开发者中心云数据库服务为开发者提供了基于云函数服务的扩展机制，开发者可以为云函数配置云数据库触发器，当云数据库发生插入或者更新数据、删除数据、清空数据等变更操作时将触发云函数，并在云函数中扩展业务处理逻辑。
   + 使用场景：云数据库有数据变更时可以自动触发函数进行逻辑处理。
 * [认证服务触发器](../AppGallery-connect-Guides/agc-cloudfunction-authtrigger-0000001658717860.md)：支持通过认证服务相关事件来触发云函数。
-  + AGC认证服务为开发者提供了基于云函数服务的扩展机制，开发者可以为云函数配置认证服务触发器来接收用户的注册、登录等关键事件，并在云函数中扩展业务处理逻辑。
+  + HarmonyOS 开发者中心认证服务为开发者提供了基于云函数服务的扩展机制，开发者可以为云函数配置认证服务触发器来接收用户的注册、登录等关键事件，并在云函数中扩展业务处理逻辑。
   + 使用场景：当用户通过认证服务进行登录等账号操作时可以同时触发云函数进行登录延伸逻辑的处理。
 * [云存储触发器](../AppGallery-connect-Guides/agc-cloudfunction-cloudstorage-trigger-0000001706837169.md)：支持通过云存储相关事件来触发云函数。
-  + 开发者可以为云函数配置云存储触发器，当AGC云存储服务中发生文件或者文件夹上传或删除操作时，将触发函数并执行您想要实现的功能。
+  + 开发者可以为云函数配置云存储触发器，当HarmonyOS 开发者中心云存储服务中发生文件或者文件夹上传或删除操作时，将触发函数并执行您想要实现的功能。
   + 使用场景：当云存储有文件操作时触发函数进行对应逻辑处理。

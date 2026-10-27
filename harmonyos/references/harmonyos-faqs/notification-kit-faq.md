@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/notification-ki
 title: 常见问题
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:35+08:00
-doc_updated_at: 2026-10-20
+scraped_at: 2026-10-28T07:48:47+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:57ede5244fe670e0a0249b5a53b682c7d59389406a91045f20ff8feba5ea5e81
 ---
 

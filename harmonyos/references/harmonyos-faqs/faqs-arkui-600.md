@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-600
 title: 如何实现LED弹幕效果的滚动显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现LED弹幕效果的滚动显示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:ddbef046ae98b9a5541da532575b2a32b15f071b9125ee1859768fecfd5be86b
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:d6f85dc80ab80d6fe02e13431a2397a4c02ed24e3661fb022c8ec2a26c1a8de6
 ---
 
 ## 问题现象
 
 ArkTS如何实现点阵屏背景样式的弹幕滚动？效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/C-8YHyJ3REu4i0ZicC12Uw/zh-cn_image_0000002658791977.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/gi6IvgSzTW6HKXsFKqI68A/zh-cn_image_0000002658791977.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/TzF8nRuCS3SpX1cSjevqRA/zh-cn_image_0000002628552602.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Hfgot8PMTTON3S12rgVyFw/zh-cn_image_0000002628552602.gif "点击放大")
 
 ## 背景知识
 

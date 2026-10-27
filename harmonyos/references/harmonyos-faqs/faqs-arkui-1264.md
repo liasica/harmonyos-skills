@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1264
 title: List组件中加载多个Web组件只显示最后一个页面怎么解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > List组件中加载多个Web组件只显示最后一个页面怎么解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c6f08847b622070d4ef185207e962922b78457a8a67a647915cc3ef134a72ffa
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bc175c0ede4d91980ac1c961a69dc3ca32984f39be8cb6ba7341f02ed6cc2163
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:c6f08847b622070d4ef185207e962922b78457a8a67a647915cc3ef134a
 
 * 富文本在如今的互联网应用软件或者页面中十分常见，它能够为文字添加图片、链接、字体样式等，使得文字的阅读更加生动有趣。在常见的博客、社交媒体平台软件上都多有使用：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/gVeOtO40RhCNQSAqdLkjaA/zh-cn_image_0000002628596110.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/VgdTWamaQiSaB2-1MlvT9g/zh-cn_image_0000002628596110.png "点击放大")
 * 由于富文本内容通常需要跨平台去显示，所以大多数情况下开发者都会选择HTML来作为存储的格式，来减少重复开发的工作，所以HarmonyOS我们可以选择能够加载HTML文档的组件来展示富文本文档内容。在HarmonyOS目前能够解析HTML富文本显示的组件有[RichEditor](../harmonyos-guides/arkts-common-components-richeditor.md)、[RichText](../harmonyos-references/ts-basic-components-richtext.md)和[Web](../harmonyos-guides/web-component-overview.md)，这里主要聚焦纯显示的场景，一般就是从[RichText](../harmonyos-references/ts-basic-components-richtext.md)和[Web](../harmonyos-guides/web-component-overview.md)两个组件中选择，而由于[RichText](../harmonyos-references/ts-basic-components-richtext.md)可自定义程度较低、功能不够丰富而且比较消耗内存资源，在List这种重复使用RichText组件的场景下，会出现卡顿、滑动响应慢等现象。所以在List中循环展示富文本内容时，会选择[Web](../harmonyos-guides/web-component-overview.md)来进行展示。
 * 除了HarmonyOS组件外，还可以自行开发组件通过直接解析HTML文档再调用Text等基础文本组件组装进行展示，可以高度自定义功能，但是需要投入大量开发资源，在此不展开说明。
 

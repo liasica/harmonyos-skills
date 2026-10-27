@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-983
 title: 智能表结合ArcButton实现调节系统音量
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 智能表结合ArcButton实现调节系统音量
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:99d6fb1d00e21833c10e4a7c22d7ab69aa0873d5d22417638057dc7c569093bc
 ---
 

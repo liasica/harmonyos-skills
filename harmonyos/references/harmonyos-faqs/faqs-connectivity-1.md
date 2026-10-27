@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: 三方应用如何获取蓝牙mac地址
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 三方应用如何获取蓝牙mac地址
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:18+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ea0f96ddc2306666f396826f8a6069d1bb1703e2590d60bc6d3465319a0c020f
 ---
 

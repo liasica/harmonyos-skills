@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 如何处理密钥共享团队内部发生的merge冲突
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 如何处理密钥共享团队内部发生的merge冲突
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
+scraped_at: 2026-10-28T07:48:57+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:cd2577ad78971aacfed802d4e220f1a92a83ff2fd5293c700caedb5177ef3287
+content_hash: sha256:ee0153e4922fac6bda484d8b48b560bb986dcedb9ff204fdb8c8991cb4c2e777
 ---
 
 ## 问题现象
@@ -25,6 +25,6 @@ content_hash: sha256:cd2577ad78971aacfed802d4e220f1a92a83ff2fd5293c700caedb5177e
 
 文件目录参考：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/3oStiGpaTV6FA94GwFCyaQ/zh-cn_image_0000002628409370.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/wykssWklRg-70eMNZ-1l2w/zh-cn_image_0000002628409370.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/uexS35cESj26W8h4P0KPKw/zh-cn_image_0000002658928593.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/YU8keo6TSvKmvFitoDhN-w/zh-cn_image_0000002658928593.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-payment-3
 title: 华为钱包和华为支付的区别是什么
 breadcrumb: FAQ > 应用服务开发 > 华为支付服务（Payment Kit） > 华为钱包和华为支付的区别是什么
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:26+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:39+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:decba4a46df913289cc4e438b2b41e55e58987f33b88d29f95a1c5b34d0e7955
 ---
 

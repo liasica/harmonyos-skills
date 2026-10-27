@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 真机设备连接后，在DevEco Studio中无法识别设备
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 真机设备连接后，在DevEco Studio中无法识别设备
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:0c2609c86cb3199e8fd9a62609ca87d9ae67efea8968361d1eb824e3d01ddc8b
+scraped_at: 2026-10-28T07:48:59+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c3880ae269b017951578f2c5cd7702f0662182bc5b20b2da690c0480b43c6b69
 ---
 
 **问题现象**
 
 调试运行时，安装HAP失败并提示“设备未找到或未连接”；或DevEco Studio设备列表显示“No device”（未识别设备）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/sXA7NuNbTtyZzAsp1FD_lw/zh-cn_image_0000002705000343.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/yWIhiZP7Rp-N7-7CdR4f2A/zh-cn_image_0000002705000343.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/MIJpzDZYQbuAEYOcLQW_Jw/zh-cn_image_0000002675120552.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/NTRX3z-YTbixJCxE-L_O5g/zh-cn_image_0000002675120552.png "点击放大")
 
 请先执行hdc list targets -v检查设备连接状态。
 
@@ -29,15 +29,15 @@ content_hash: sha256:0c2609c86cb3199e8fd9a62609ca87d9ae67efea8968361d1eb824e3d01
    场景二：打开“无线调试”开关后，进行无线调试连接。随后，关闭“无线调试”开关，并打开“USB调试”开关，进行USB调试。此时，设备无法被识别。
 6. hdc客户端和服务端版本不一致时可能存在功能异常。启动ide时会检查当前hdc客户端和服务端版本，ide会自动尝试关闭当前hdc，重新拉起sdk中的hdc，并弹出如下提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/apr0NBfVQqek90Wq7RkiiQ/zh-cn_image_0000002704840499.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/uuTSbZAtRiOONLDtr5ZfoA/zh-cn_image_0000002704840499.png "点击放大")
 
    如果您有在使用其他需要hdc的工具并有保活hdc的行为，可能会导致ide重启hdc失败。
 7. 注册表中设置终端自动执行任务可能导致ide和hdc建立连接失败。
 8. ide内存达到分配堆内存上限，导致查询设备任务异常，通常会伴随有以下提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/sdRp7o8-RBmRJiZp5GxNNQ/zh-cn_image_0000002675280398.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/OReVVkmET0iE1vAhjcdD6g/zh-cn_image_0000002675280398.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/czZB0K64RqyrC5CUkgj65A/zh-cn_image_0000002705000351.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/fRGsp1-kRIKuToSm1O0zZw/zh-cn_image_0000002705000351.png)
 
 **解决措施**
 
@@ -46,7 +46,7 @@ content_hash: sha256:0c2609c86cb3199e8fd9a62609ca87d9ae67efea8968361d1eb824e3d01
 
    并确保连接调试的设备在支持列表中，详细请参见[各版本支持设备型号清单](../harmonyos-releases/support-device.md)。如无真机设备，可使用Device Manager模拟器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/rczFEuXqSJiKl2uuCWDDHQ/zh-cn_image_0000002704840525.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/65FGSg7uRkaYSF86iFgYIg/zh-cn_image_0000002704840525.png)
 3. 请更换为符合USB2.0标准的数据线；建议直接连接，不要使用拓展坞。请更换USB数据口后重新尝试，并检查端口驱动是否正常。
 4. 执行如下命令，结束hdc进程，然后重新连接。
 

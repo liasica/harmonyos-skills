@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-115
 title: 图片展示页面，图片序号显示有误
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 图片展示页面，图片序号显示有误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:02e6429f9f94b6f876e0ae6014d897baab5bed827c84313a21568f3ec853f4a2
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b8ab5c5e08d1fa4b138700257d30bbf5ae5ff7bcb4183369306f061d73add8c0
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:02e6429f9f94b6f876e0ae6014d897baab5bed827c84313a21568f3ec85
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/1tQWIaaYSRaha-BrY8DLWg/zh-cn_image_0000002659258349.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/YSYbw2FFTXCgiCjlG8_9_w/zh-cn_image_0000002659258349.png "点击放大")
 
 ## 背景知识
 

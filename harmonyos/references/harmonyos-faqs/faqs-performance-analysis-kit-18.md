@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何查看应用是否为系统应用
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何查看应用是否为系统应用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:51+08:00
+scraped_at: 2026-10-28T07:46:44+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:4de4e9fcdef339b5c7ab577a50217585bdffabb7974e7d6e780907ec8629f853
+content_hash: sha256:55bf99800fd3fcf2013867be1c409125cf2d1c8e1c98ff50fe3d5af3f29db825
 ---
 
 1. 连接设备。
@@ -18,6 +18,6 @@ content_hash: sha256:4de4e9fcdef339b5c7ab577a50217585bdffabb7974e7d6e780907ec862
 
    返回的部分结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/7j85mLTwRk-jE8Lolndf8Q/zh-cn_image_0000002624476468.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/A_3EzelQSHaojl7d7CWZFw/zh-cn_image_0000002624476468.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/nzwjt4VASRiG0oN6aQZ2Pw/zh-cn_image_0000002654795827.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/QQ7C_hwmR8SXyQ8T1U3iag/zh-cn_image_0000002654795827.png "点击放大")

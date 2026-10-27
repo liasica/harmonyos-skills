@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-tablet-10
 title: 平板端页面背景与字体颜色对比度不足
 breadcrumb: FAQ > 多设备场景 > 平板 > 常见问题 > 平板端页面背景与字体颜色对比度不足
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:48+08:00
+scraped_at: 2026-10-28T07:46:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:61ab485208c545cc3b4ae0dee0919ecb74add753e159a339dacf9244777b5e02
+content_hash: sha256:c0d5fa430d971bfe3ed227eb5e771372db4f75b9a7681e1cb2260eed5487629a
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:61ab485208c545cc3b4ae0dee0919ecb74add753e159a339dacf9244777
 
 手机查看图与平板查看图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/BgvKquFIQWS7dGzvSw_EDQ/zh-cn_image_0000002658790869.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/6Lj2XJ6ESvWQSpP8SZfK3g/zh-cn_image_0000002628551510.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/9KLXnwaDS_GDtJcniy9ARw/zh-cn_image_0000002658790869.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/9CuUV2MMRoiVDYDS-8n2Ww/zh-cn_image_0000002628551510.png "点击放大")
 
 ## 背景知识
 

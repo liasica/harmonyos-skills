@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-144
 title: ArkUI组件的字符串中如何实现字符串变量拼接
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ArkUI组件的字符串中如何实现字符串变量拼接
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6deccb18ef8db89bb4e0eca75325da0c2bebabe25f3c3ef2e96e0215aa932857
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“(is the command line too long?)”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“(is the command line too long?)”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
+scraped_at: 2026-10-28T07:48:52+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:994f4b1cd5fea61b7780d5786ff37b7c5117a4a4fa5d055792e1b870850e1e3b
+content_hash: sha256:5ac3633cfcaf55392895e25b95aa3a986d2396234c4ff792c87a96f390f18109
 ---
 
 **问题现象**
@@ -14,11 +14,11 @@ Native工程编译报错，出现告警和报错信息。
 
 出现工程目录长度超过250字符的告警，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/TWkCIBmGRpCcKFnHwaR1ug/zh-cn_image_0000002654797859.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/MIEFobq9Q4OWwVn2AfoWhQ/zh-cn_image_0000002654797859.png "点击放大")
 
 出现编译报错“(is the command line too long?)”，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/naN3Rf-LSVKXo1d45S4PiA/zh-cn_image_0000002624638404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/rs0Bjy2kRICDKBwlAK84SQ/zh-cn_image_0000002624638404.png)
 
 **解决措施**
 
@@ -35,7 +35,7 @@ CMAKE\_OBJECT\_PATH\_MAX的默认值为250，是CMake 中用于限制object file
 
   + 总路径长度为 object file directory 长度加上 object file 长度，两者之和为 297 个字符，具体如图所示。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/P6NYmBTGRAyVyhEamTv6iw/zh-cn_image_0000002654837813.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/gEBXTtcsRpiI5FgBtPU6ww/zh-cn_image_0000002654837813.png "点击放大")
   + object file中目录部分长度：示例中“\_\_/\_\_/\_\_/\_\_/\_\_/third-party/rn/ReactCommon/react/renderer/textlayoutmanager”长度为74字符，具体以实际为准。
   + CMake哈希值字符数：CMake将长路径转换为哈希值时哈希值的长度固定为32。
 

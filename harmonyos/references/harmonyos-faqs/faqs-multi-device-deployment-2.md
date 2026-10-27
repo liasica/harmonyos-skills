@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-multi-devi
 title: 手机端应用在PC端无法全屏展示
 breadcrumb: FAQ > 多设备场景 > 一次开发多端部署 > 常见问题 > 手机端应用在PC端无法全屏展示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:38+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:49cdf6fd2c643579a6ebc204739e1b2f92671c94f706aff262a75a7182543c3d
+content_hash: sha256:fbae857d1dc5c99b3433a52c7dd101f3a42b7fc610ea78015c2c35cbf10dd411
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:49cdf6fd2c643579a6ebc204739e1b2f92671c94f706aff262a75a71825
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/4NZPF9oAS0i2RvdaqY3JwQ/zh-cn_image_0000002689201336.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/TC8iisGmTf-Yqo4OTPtbZg/zh-cn_image_0000002689201336.png "点击放大")
 
 ## 背景知识
 
@@ -107,8 +107,8 @@ content_hash: sha256:49cdf6fd2c643579a6ebc204739e1b2f92671c94f706aff262a75a71825
 
    效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/W2wS6xdRRAuF1BJyqNV6IA/zh-cn_image_0000002719044829.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/6Ncqvy0fRjaSuGqBPvGUiQ/zh-cn_image_0000002719044829.png "点击放大")
 
    PC上进行全屏展示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/t7_6BkUGRk-T2KDFq2ZQpw/zh-cn_image_0000002719044841.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ebZJsLWzQIWozy6HPbf_YA/zh-cn_image_0000002719044841.png "点击放大")

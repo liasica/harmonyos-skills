@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-337
 title: 双层嵌套list,如何使用LazyForEach起作用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 双层嵌套list,如何使用LazyForEach起作用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ad776de7fdd8fef5ce665c507c70916e59473914512b8769d7a518d0037eb903
 ---
 

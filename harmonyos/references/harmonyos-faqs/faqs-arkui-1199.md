@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1199
 title: 基于Flex布局的常见换行场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 基于Flex布局的常见换行场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:05+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7cc98fe946d37bdecce2db7a30315ba0625728200138d0c130cb7c84167f505d
+content_hash: sha256:456e75c7467b709bb85b20f8a792a9e3491aa5bbcadab91e23e78b4b0abc714a
 ---
 
 ## 问题现象
@@ -28,7 +28,7 @@ Flex布局中子元素的换行是布局开发中常见的问题，针对不同�
 
   如图所示，当子元素较多时，Flex组件同时设置FlexWrap.Wrap和width('auto')后，换行场景可以正常实现，但是子元素少时，Flex宽度会默认占用一整行，不会根据子元素内容自适应宽度。该如何解决？
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/h1qO3lxRTYir1lFFuOzGtA/zh-cn_image_0000002658832827.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/FNm3nNQJTEeN-Lq4rti4bQ/zh-cn_image_0000002658832827.png "点击放大")
 * 阈值控制换行：如何基于剩余空间计算实现精准的换行策略？
 
   如图所示，当输入框可用空间充足时，让输入框与标签同行并自适应占满剩余宽度；当可用空间不足时，自动将输入框换到下一行并占满整行宽度。
@@ -103,7 +103,7 @@ Flex布局中子元素的换行是布局开发中常见的问题，针对不同�
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/b7zQ3h-WSySsX-2klWTVIw/zh-cn_image_0000002628593586.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/CxJ04bHdSuC97RqLClNdgA/zh-cn_image_0000002628593586.png "点击放大")
 * 单行自适应问题。
 
   当Flex子组件较多，需要使用换行参数（将wrap设置为FlexWrap.Wrap）时，主轴长度auto的自适应布局会失效，默认撑满父容器。所以要解决问题可以控制Flex组件的换行规则：当内容不超过一行时设置为FlexWrap.NoWrap，超过一行设置为FlexWrap.Wrap。
@@ -210,7 +210,7 @@ Flex布局中子元素的换行是布局开发中常见的问题，针对不同�
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/qUmTSVDkSESXleC12a1FIQ/zh-cn_image_0000002628753478.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/svnG-pw4S9Wx222iF57hEw/zh-cn_image_0000002628753478.png "点击放大")
 
 * 阈值控制换行。
 
@@ -412,4 +412,4 @@ Flex布局中子元素的换行是布局开发中常见的问题，针对不同�
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/sxu-JgVNRG-oAmMO26wynA/zh-cn_image_0000002658952791.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Wz7YR1efQM-H0AxgQAQa8Q/zh-cn_image_0000002658952791.png "点击放大")

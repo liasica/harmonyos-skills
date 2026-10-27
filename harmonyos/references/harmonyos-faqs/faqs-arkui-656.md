@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-656
 title: 用户关闭键盘后，输入框未下滑吸底，导致底部出现空白遮挡页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 用户关闭键盘后，输入框未下滑吸底，导致底部出现空白遮挡页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:6ab050c21acfad4df7067f13870d6059663c632c4633baf54518d50eea732b5e
+content_hash: sha256:938faf1ceb64efd61bb4b2bd421e0f93ac77fd858893e5e11aa12d2e99e0aec1
 ---
 
 ## 问题现象
 
 打开软键盘时，输入框会主动上滑避让键盘区域。但是关闭软键盘时，输入框没有及时下滑回弹，导致页面底部出现大面积空白。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/cnK8GoEGRAq6YcWt7UnrAg/zh-cn_image_0000002658793785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/-HYQuTB7TPygS1ajqKEJfg/zh-cn_image_0000002658793785.png "点击放大")
 
 ## 背景知识
 
@@ -25,7 +25,7 @@ content_hash: sha256:6ab050c21acfad4df7067f13870d6059663c632c4633baf54518d50eea7
 
 1. 使用DevEco Testing查看问题组件，该问题组件为bindSheet半模态弹窗中的TextInput组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/zPKaXoOiSiueJk0LO9xWjg/zh-cn_image_0000002628554408.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/LDTPLCzDR5CV6zZMeHRglw/zh-cn_image_0000002628554408.png "点击放大")
 2. 查看该bindSheet半模态弹窗所在页面的设置，该页面搜索keyboardHeightChange，页面未使用on('keyboardHeightChange')监听软键盘关闭，导致侧滑退出软键盘时bindSheet半模态弹窗仍然显示。
 
    ```ts
@@ -548,4 +548,4 @@ struct BulletComment {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/ECMr6OtQT9SnwdQcQxtZxw/zh-cn_image_0000002658913733.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/KQ0JheoZR_-WmI3ClqHSHg/zh-cn_image_0000002658913733.png "点击放大")

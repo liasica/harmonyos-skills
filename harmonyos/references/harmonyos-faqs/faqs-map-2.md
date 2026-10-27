@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-2
 title: 搜索的地理位置信息不符合用户期望
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 搜索的地理位置信息不符合用户期望
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:924ec5202f17b13292c4acb16dd265c2c0af83a168d89bd10ff7755e7a94f3cf
 ---
 

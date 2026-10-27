@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkweb-kit-trou
 title: ArkWeb页面跳转问题定位
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 故障排查 > ArkWeb页面跳转问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:47+08:00
+scraped_at: 2026-10-28T07:48:04+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:a3141b90bf082af29a4901d901741177ce4399a6eb8ef446d4f46e8b971d953c
+content_hash: sha256:b0996b60d1c225b1ae4242c04c1bcba2b32db18273215a1cdc9ce854fe57d682
 ---
 
 ## 在应用内各页面跳转时需要等待加载
@@ -18,19 +18,19 @@ content_hash: sha256:a3141b90bf082af29a4901d901741177ce4399a6eb8ef446d4f46e8b971
 
 1. 使用DevEco Profiler ArkWeb模板抓取应用内各页面相互跳转的Trace，搜索关键字H:NWebImpl | CreateNWeb无结果，说明应用内各页面跳转时并未创建新的Web。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/rcWUpdP8Qq6sP6LKTt11Wg/zh-cn_image_0000002768118980.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/4XrC9bcqT3qu6ar_IevCuA/zh-cn_image_0000002768118980.png "点击放大")
 2. 使用ArkUI Inspector发现应用从首页开始即为Web页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/on_nRTaiSwC5ri6aAn0p9Q/zh-cn_image_0000002768118982.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/vbHytbI7REG07oiSxtTS9A/zh-cn_image_0000002768118982.png "点击放大")
 
    使用DevEco Profiler Launch模板抓取应用启动过程Trace，搜索关键字H:NWebImpl | CreateNWeb，可以找到应用在加载主页面后创建了Web组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/j66nBrKdTCibB-XfOvD6hw/zh-cn_image_0000002797438939.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/O3hL4onwTI-ZBO52FgQ47A/zh-cn_image_0000002797438939.png "点击放大")
 
    结合步骤1可以得出应用在启动时创建此Web，后续应用内的各页面跳转均在此Web中完成。
 3. 使用DevTools分析网页内各页面跳转的性能。在“性能”页签下的“网络”模块可以看到存在下载图片资源耗时1秒以上以及执行脚本耗时1.3s以上的情况。是子资源加载、脚本运行耗时导致的页面加载耗时长。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/7jr_FKLXS0yq8Wod8ONTCw/zh-cn_image_0000002768118984.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/yNS_3J_YQRGzPHtpJTKg9Q/zh-cn_image_0000002768118984.png "点击放大")
 
 ### 分析结论
 
@@ -46,7 +46,7 @@ content_hash: sha256:a3141b90bf082af29a4901d901741177ce4399a6eb8ef446d4f46e8b971
 
 第一次进入Web页面之后，再次进入该页面会重新加载，造成闪烁现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/kNtjmJu8R5e7eLbQPmVv5w/zh-cn_image_0000002797438969.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Uz2yoQ-PSJGeWEvpjHKXvw/zh-cn_image_0000002797438969.png "点击放大")
 
 ### 定位过程
 
@@ -253,7 +253,7 @@ src/main/resources/rawfile/text3.html：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/aMY8u9WzRk2X56k4qtaH9A/zh-cn_image_0000002797439231.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/uEZ1_9ScTzei44ys97rivg/zh-cn_image_0000002797439231.png "点击放大")
 
 ## 进入Web页面后，点击返回出现空白页面，再次返回正常
 

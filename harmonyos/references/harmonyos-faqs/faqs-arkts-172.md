@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-172
 title: HarmonyOS系统实现异步锁的trylock
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > HarmonyOS系统实现异步锁的trylock
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7ec74bfca8ed18b2304f1983584f5b6d7b9a112aa4ff38edf687cab5cee64444
 ---
 

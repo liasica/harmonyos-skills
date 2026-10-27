@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/media-library-k
 title: 媒体资源保存常见问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 常见问题 > 媒体资源保存常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:09+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:2f308c1ff765b5a4b1a0949838d422745f8c7b5b07a3802fa40287bd90d7bb90
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e4457d389a5402e72f46821fa39dcf8651f1ea8397d244374c3be5147b853e05
 ---
 
 **Q：如何保存网络图片到相册？**
@@ -368,7 +368,7 @@ struct SavePixelMapToAlbum {
 
 **Q：如何截取视频中的某一帧图片并保存？**
 
-**A**：可以先[从视频中提取特定帧图片](../architecture-guides/tools-v1_2-ts_122-0000002367622350.md)，获取特定帧后使用弹窗授权的方式保存到相册。
+**A**：可以先从视频中提取特定帧图片，获取特定帧后使用弹窗授权的方式保存到相册。
 
 **Q：瀑布流中长按图片保存到相册，长按事件能否替代SaveButton的安全控件点击？**
 

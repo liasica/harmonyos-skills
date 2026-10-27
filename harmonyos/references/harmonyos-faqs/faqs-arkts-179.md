@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-179
 title: ASON.parse生成的Sendable对象和@Sendable注解类的实例对象的差异
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ASON.parse生成的Sendable对象和@Sendable注解类的实例对象的差异
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:191e528759357dabcfaa6e81e3550d938ef8e372790208d3d3134239935d1ce9
 ---
 

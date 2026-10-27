@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-835
 title: 缩略图变成完整图时，显示变形
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 缩略图变成完整图时，显示变形
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:331f01af1b00ce9a70ce252c3aa5d3f29c3bc6dd8e04989b1b981f22123a7bde
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cf4b718b562dd5223f075b39fe770d0656451ed2f1098a9593223aa499592528
 ---
 
 ## 问题现象
 
 点击缩略图显示完整图片时，图片显示变形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/WBKRkmESTEyqIT8TLNQM4w/zh-cn_image_0000002628398446.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/LrrdBukHR-aCODZ2oqiq8A/zh-cn_image_0000002628398446.png "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:331f01af1b00ce9a70ce252c3aa5d3f29c3bc6dd8e04989b1b981f22123
 
 1. 使用DevEco Testing查看问题组件，问题组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/Z3EbjZEiSAmZmcGR1MKh9Q/zh-cn_image_0000002658797725.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/RyQdUuLdS-q4VaxYN5Cquw/zh-cn_image_0000002658797725.png "点击放大")
 2. 查看该Image组件的设置，显示完整图片时的组件尺寸设置不合理，高度为屏幕的高度而不是等比例缩放下完整图片的高度。
 
    ```screen
@@ -255,4 +255,4 @@ src/main/module.json5：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/rGo7EVOOSBGlMUtK86Afbg/zh-cn_image_0000002628558360.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/hvbMWYFnSLeuA_hNNnQcmg/zh-cn_image_0000002628558360.png "点击放大")

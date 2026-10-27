@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-281
 title: 自定义键盘和系统键盘如何切换
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义键盘和系统键盘如何切换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9cd223d4a42db215e6f57a915b0aa52ce4c25de2ca6ab7c7c01c15d0490cd870
 ---
 

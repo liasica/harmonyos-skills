@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-700
 title: 相机预览画面拉伸
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 相机预览画面拉伸
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ca54a974aa2b3aa20a5179afa54be1355511f1e53b2d9090c6b7ba0abdc58ed4
 ---
 

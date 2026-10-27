@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-132
 title: 如何解决Scroll组件嵌套Web组件后无法跟随页面整体滚动的问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决Scroll组件嵌套Web组件后无法跟随页面整体滚动的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4cf98f54d208ad0fe7330aed3a5d8c984567d7b46bbf535ddd21c2cb3cb064fd
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1206
 title: 华为登录页面白屏，点击无响应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 华为登录页面白屏，点击无响应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d9681f0305b5f4ca6cd7a2a38d97e39982190e6cfae2d89e47c4d5929ab2dee1
 ---
 

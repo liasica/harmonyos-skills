@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-328
 title: Tab组件页面切换时，如何不显示中间过渡的tab页
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tab组件页面切换时，如何不显示中间过渡的tab页
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7b658a671de639b0224b1388601a0ed4eff88090560438bca3950d8895dbd8a9
 ---
 

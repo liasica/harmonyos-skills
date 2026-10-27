@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1287
 title: 自定义键盘实现密码保险箱效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义键盘实现密码保险箱效果
 category: harmonyos-faqs
-scraped_at: 2026-09-30T07:42:30+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:30ae45c1d30fe6f56cfbc2b930bb1a0c95ff741dfb9304aed320d07f011a2bc5
 ---
 

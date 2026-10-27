@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何使用服务端下发的RSA公钥（字符串）对明文数据进行加密
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何使用服务端下发的RSA公钥（字符串）对明文数据进行加密
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:27bb45d393d2479bf520191f1b1d49df0b4a265ef6d85d2d6b872f91324169af
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-54
 title: 输入框拉起键盘时，如何将底部布局弹起到键盘顶部
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 输入框拉起键盘时，如何将底部布局弹起到键盘顶部
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f0c0d0178a446d437a8aa2d0bf31e50bfeca13666bf5e4034b94e977a5d3e145
 ---
 

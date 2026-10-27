@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-379
 title: 如何模拟点击事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何模拟点击事件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:91fc6a8cadeb70577d7df3c64f924156b6f0d13eb8a3c26299b1656dfcfb955d
 ---
 

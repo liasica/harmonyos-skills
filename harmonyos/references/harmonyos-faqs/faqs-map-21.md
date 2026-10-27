@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-21
 title: 地图如何批量添加Marker
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 地图如何批量添加Marker
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:defd1219e1618454eb165f7337b2e195552af290fc534a129c07b9ca619a1e4c
 ---
 

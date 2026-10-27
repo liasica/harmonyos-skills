@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-2
 title: 音视频文件的封装协议与编码格式有哪些
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 音视频文件的封装协议与编码格式有哪些
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:33+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e4803607b0d9e2f2b9df11f797f422165b1fb658630fab9bbac95396f35bb4d2
 ---
 

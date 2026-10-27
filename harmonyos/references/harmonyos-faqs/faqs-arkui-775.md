@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-775
 title: 如何设置半模态窗口高度自适应，同时自定义最高高度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何设置半模态窗口高度自适应，同时自定义最高高度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:03+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3b7093b39a78d0eb1e9c6caf9cd05a3118beedd770fb508d0be7ccf3b7b77b21
+scraped_at: 2026-10-28T07:47:11+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:bcfc6fca2fe3a2f4735b9ada4d8e9ff95bfe5656520d77dde1d6e7d3e29de072
 ---
 
 ## 问题现象
@@ -129,8 +129,8 @@ struct SheetDemo {
 
 列表高度超过最大高度时，效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/yvJttPUhQAODsRpI4qe23A/zh-cn_image_0000002658795073.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/pPEq7JnZROKIfGVwT2_COQ/zh-cn_image_0000002658795073.png "点击放大")
 
 列表高度小于最大高度时，效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/NccUwnVOR3GLEkznfmcf2A/zh-cn_image_0000002628555704.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Mvn389lqSq-QEFnyNoT3Hg/zh-cn_image_0000002628555704.png "点击放大")

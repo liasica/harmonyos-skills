@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-247
 title: ListItemGroup和LazyForEach如何结合使用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ListItemGroup和LazyForEach如何结合使用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:feff7ddc083e3d872d4454ab4de5b70fd1680e877786152f343be7d8503abf59
 ---
 

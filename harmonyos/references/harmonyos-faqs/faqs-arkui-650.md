@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-650
 title: 如何使用Canvas绘制饼状图
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何使用Canvas绘制饼状图
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:23+08:00
+scraped_at: 2026-10-28T07:47:47+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7397aa801c007973754910c0206c08e978aba42b6555c175b78e12840cdfdf14
+content_hash: sha256:276a0c62fde22e6e0c7495292287b1727091965244e0bd44b300d4edc3214aa8
 ---
 
 ## 问题现象
 
 如何使用Canvas绘制饼状图以展示不同类型的数据占比？问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/9Hi6rLyPSoa4qhkEAdXibg/zh-cn_image_0000002628554406.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/MXU2CxiYRhK_rGl-TFXJ-g/zh-cn_image_0000002628554406.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-109
 title: 跳转到的目标页面为空白页
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 跳转到的目标页面为空白页
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c43551f20994fe0b848b6664e55c110bedcef2cfab78b5149ad866199d0c13a5
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e4328bd29a4f2dbcdad517aa91ea3123596b7caf94085eef6a51102e41f34863
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:c43551f20994fe0b848b6664e55c110bedcef2cfab78b5149ad866199d0
 
 使用DevTools录制页面加载情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/QZhJkM5aT0GrK3jiNGcEfQ/zh-cn_image_0000002659138397.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/dntlhfSBRKOxeJVSXf6lIA/zh-cn_image_0000002659138397.png "点击放大")
 
 可看到网页加载时的地址出现ERR\_NAME\_NOT\_RESOLVED错误（域名无法解析），IP地址不正确，资源请求超时。
 

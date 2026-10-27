@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1148
 title: Tabs页面Navigation路由跳转的实现方式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Tabs页面Navigation路由跳转的实现方式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:cae6d82c60167e07ab54e83208bf4edf295389b0f71ad3e05c89ded3823a44fb
+content_hash: sha256:555a413a6b2f37043f8ade00417f50bae7770a674dad57faae1fa760ae2f5a46
 ---
 
 ## 问题现象
@@ -137,7 +137,7 @@ export struct WebView {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/HqT8CPYyTUe8cFNHwlMMeg/zh-cn_image_0000002628569610.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/W9lz622xQSun1XzzN0Kavg/zh-cn_image_0000002628569610.png "点击放大")
 
 ## 背景知识
 
@@ -222,7 +222,7 @@ struct TempPage {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ZAV3-hWdSzKBtRMsbva2cw/zh-cn_image_0000002628409710.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/6pkDLVFuTam6OMuh8aaooA/zh-cn_image_0000002628409710.png "点击放大")
 
 ## 常见FAQ
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-multi-devi
 title: 折叠屏展开态和折叠态下呈现的内容不一致
 breadcrumb: FAQ > 多设备场景 > 一次开发多端部署 > 常见问题 > 折叠屏展开态和折叠态下呈现的内容不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9f314bf93b5f1494dc1dd9b565d066bc40cf1c79f916e726d67d1a21932ff13f
+content_hash: sha256:83606b58022d6b9ba57b8736047abaf8c09b7e697a59db1aac0175943cfe0082
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:9f314bf93b5f1494dc1dd9b565d066bc40cf1c79f916e726d67d1a21932
 
 1. 使用[DevEco Testing](https://developer.huawei.com/consumer/cn/download/deveco-testing)查看页面布局，发现该页面使用了Web组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/KQR_RTkCRFGwXqQqOAXGJg/zh-cn_image_0000002628392504.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/tnVfEG8VRJuQR39cJweCWA/zh-cn_image_0000002628392504.png "点击放大")
 
 2. 使用开发者工具或DevTools查看Web页面布局，发现在折叠态尺寸下，使用了@media自适应布局，示例代码如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-884
 title: 行内文本高亮样式设置方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 行内文本高亮样式设置方案
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:70cc8a77c12d6170b5dc90226f54c719f7efc3f8ca3430c17c14d607cdb95859
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:80c60903309985edb1438e0248711d110ac3d7a40cd0d87d5a56638b9db88435
 ---
 
 ## 问题现象
@@ -325,7 +325,7 @@ content_hash: sha256:70cc8a77c12d6170b5dc90226f54c719f7efc3f8ca3430c17c14d607cdb
 
     效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/8qNTUqbaT7WxvoIxnAbIDQ/zh-cn_image_0000002635436952.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/zPfopPTwSzKPpbqetaicZg/zh-cn_image_0000002635436952.png "点击放大")
 * 场景二:使用Stack层叠布局，TextArea区域显示文本，当弹出弹窗时，冻结高亮选项，TextArea 文本颜色变透明，上方覆盖一层 Text + Span 模拟选区高亮。关闭弹窗后恢复TextArea的选择能力。
 
   ```ts

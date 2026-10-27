@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1471
 title: 如何解决在ListItemGroup中设置onMove属性失效的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决在ListItemGroup中设置onMove属性失效的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:287096351a9ff846878c74a71f449384053313c0516741093d19e4c510cd5876
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c6c6a7921088a36abb62f721a5ca08f72f191c34982e0dff7ebe1a8fd59c76a6
 ---
 
 ## 问题现象
@@ -164,7 +164,7 @@ List() {
 
    效果如下：长按即可拖拽。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/60djcc3GSnuOGJz_NyqZ3g/zh-cn_image_0000002628605358.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/MMgXhy9kT-K-Ty_cv8rd-A/zh-cn_image_0000002628605358.png "点击放大")
 
 ## 常见FAQ
 

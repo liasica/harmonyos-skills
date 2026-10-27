@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ime-5
 title: 如何关闭安全键盘
 breadcrumb: FAQ > 应用框架开发 > 输入法框架 > 输入法开发（IME） > 如何关闭安全键盘
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2271b59c85bf713458b555adb88eb1e1098f7b481d5b39c852c6490840cb8da8
 ---
 

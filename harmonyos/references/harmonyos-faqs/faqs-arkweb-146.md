@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-146
 title: 如何获取runJavaScript执行异步方法后的返回值
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何获取runJavaScript执行异步方法后的返回值
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3c0a77badade598be2706d4e66fa67346f41a31de06620bccf775723ebc80f80
+scraped_at: 2026-10-28T07:48:06+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:5e7f7cf1cda3bde4670ed5abd5e9e51146d2b27746a8b276ab795d0ec3f501d3
 ---
 
 ## 问题现象
 
 官方文档中提到[runJavaScript](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)执行异步方法无法获取返回值，该如何解决这个问题？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/B4XjQ3oaQU-T9DFx9Z_K_A/zh-cn_image_0000002659138407.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/7ljtAAUjQm2mooJOSW1-Zw/zh-cn_image_0000002659138407.png "点击放大")
 
 ## 背景知识
 

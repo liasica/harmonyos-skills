@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-893
 title: 如何实现组件数据双向同步
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现组件数据双向同步
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:55+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:30c43e6b79260b3ef5606306511070e5254b2ac4312932b0141cc42b5969c824
+content_hash: sha256:d68cb697c17bde5761d1489c3d534fe9be3c7e3421474c79441bd4ec4a47ad12
 ---
 
 ## 问题现象
@@ -82,7 +82,7 @@ ArkUI[状态管理](../harmonyos-guides/arkts-state-management-overview.md)有�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/7DzTxKYgRx-K8bkHyDJ0kQ/zh-cn_image_0000002658798915.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/ccOQ7vlqRp2fzbvmG45mnw/zh-cn_image_0000002658798915.png "点击放大")
 
 * **状态管理V2：**
 
@@ -220,7 +220,7 @@ ArkUI[状态管理](../harmonyos-guides/arkts-state-management-overview.md)有�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/N6la-D-_RW2X8nkN5TA-rQ/zh-cn_image_0000002628559554.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/kdUi9LvoR9eoLtaL4HcU5Q/zh-cn_image_0000002628559554.png "点击放大")
 * **状态管理V2：**
 
   可以通过[@ObservedV2装饰器和@Trace装饰器](../harmonyos-guides/arkts-new-observedv2-and-trace.md)装饰类以及类中的属性，使得被装饰的类和属性具有深度观测的能力，具体示例可参考[@ObservedV2装饰器和@Trace装饰器使用场景](../harmonyos-guides/arkts-new-observedv2-and-trace.md#使用场景)。

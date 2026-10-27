@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 上架时年龄分级结果与预期不符怎么处理
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 上架时年龄分级结果与预期不符怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5415ca9b8bb34c00a586d73db990f50b25d7de88eaa15e119201805dc5e1c996
 ---
 

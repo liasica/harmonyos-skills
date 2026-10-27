@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何用已有证书做RSA的公钥加密
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何用已有证书做RSA的公钥加密
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:34+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:10+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a2f3fa7a6ea06b4e8271daaa56a89c609a6e11b8576874aaf18d6ba0a884f593
 ---
 

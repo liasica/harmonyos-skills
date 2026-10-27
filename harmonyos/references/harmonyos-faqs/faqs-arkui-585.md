@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-585
 title: 如何实现文字轮播卡片
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现文字轮播卡片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:41+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:aa2c634f1921cdd4dadcce17a405ddaa02c522c70e160b6a751d49c35b6c4e15
+content_hash: sha256:4a790a24f95bfcadd6a22d5d87f8218d9a87409542888d972330af49e51a2f72
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:aa2c634f1921cdd4dadcce17a405ddaa02c522c70e160b6a751d49c35b6
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/1-dvoCAZTkSvhJs_GmC1Ww/zh-cn_image_0000002658911715.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/HxmQdJBYRUSftptQ6MMRyQ/zh-cn_image_0000002658911715.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-16
 title: HarmonyOS媒体库相关权限申请及配置
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > HarmonyOS媒体库相关权限申请及配置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:56+08:00
-doc_updated_at: 2026-07-31
-content_hash: sha256:7a1248bd1078de10910893ee720d2993df124b7237c5055d4e5d966bd1cd5de6
+scraped_at: 2026-10-28T07:46:49+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0c02c90756bfa58e489016413111b6dc48aa4da5baa12e50851a10be3ddb4dde
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:7a1248bd1078de10910893ee720d2993df124b7237c5055d4e5d966bd1c
 
 应用在访问数据或者执行操作时，需要评估该行为是否需要应用具备相关的权限。如果确认需要目标权限，则需要在应用安装包中申请目标权限，开发者可以依据下述流程图判断是否可以申请[受限权限](../harmonyos-guides/restricted-permissions.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/2_QJ3DTqR1yyuCUG7k5BeQ/zh-cn_image_0000002628631568.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/QCIkjcZCTvq1oDnRzgBvPw/zh-cn_image_0000002628631568.png "点击放大")
 
 ## 解决方案
 
@@ -37,7 +37,7 @@ content_hash: sha256:7a1248bd1078de10910893ee720d2993df124b7237c5055d4e5d966bd1c
      + 由于使用了不支持安全控件的开源框架，无法使用安全控件，同时应用内存在某些使用场景需要对媒体文件进行修改。
    * MEDIA\_LOCATION：基于某个具体的场景，需要获取到应用图片中的位置信息。
 
-3. 权限审批完成后，在AGC侧申请Profile文件用于后续的应用签名信息配置，在module.json5配置文件的requestPermissions标签中[声明权限](../harmonyos-guides/declare-permissions.md#在配置文件中声明权限)，权限申请相关配置参数如表：
+3. 权限审批完成后，在HarmonyOS 开发者中心侧申请Profile文件用于后续的应用签名信息配置，在module.json5配置文件的requestPermissions标签中[声明权限](../harmonyos-guides/declare-permissions.md#在配置文件中声明权限)，权限申请相关配置参数如表：
 
 | 属性 | 含义 | 数据类型 |
 | --- | --- | --- |

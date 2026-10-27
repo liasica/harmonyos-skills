@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-652
 title: Video播放系统图库视频
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Video播放系统图库视频
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0fce5ef422b680f856960070f4d7d27d4c0d87f20ab3916357b77423908f86e0
 ---
 

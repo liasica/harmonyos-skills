@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-530
 title: 视频播放出现闪屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 视频播放出现闪屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c96289577388045ccc52c4186ea1b44756afb71fde3247160e55c8c75048a55c
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:19a7a017c440526ff4374e3a0a76e16c75be4ea3e859e7eb34728b17bf49b18b
 ---
 
 ## 问题现象
 
 当视频播放组件的生命周期开始时，界面短暂闪烁，出现其他视频中不期望出现的颜色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/N-YgC5HgRQa1MMLbRx20Ug/zh-cn_image_0000002658790425.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Tpx3jaH1Q9eQl08Cz_evng/zh-cn_image_0000002658790425.png "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:c96289577388045ccc52c4186ea1b44756afb71fde3247160e55c8c7504
 
 1. 使用DevEco Testing查看问题组件，该组件为Video组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/n-8oAzKNS_-qfGmJ2ZGpyA/zh-cn_image_0000002628551064.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/VosjsfXjSLS_mEjmKWv75g/zh-cn_image_0000002628551064.png "点击放大")
 2. 查看该Video组件的设置，该Video组件未设置previewUri参数显示预览图。
 
    ```ts
@@ -228,4 +228,4 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ccCtrN6HQt-eSWKINPfCWw/zh-cn_image_0000002658910381.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/SYz-cFwMTbWMdGS74ZUgYg/zh-cn_image_0000002658910381.png "点击放大")

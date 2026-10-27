@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: 页面加载Loading效果实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > 页面加载Loading效果实现
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:13:52+08:00
+scraped_at: 2026-10-28T07:46:59+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:9caf22a8d847e855305993e18a00b18e22d0cd7d1478776a72abff00f3749c5e
+content_hash: sha256:821f64d3e1dc1203709bbfcefadbdb1767f2afea34b0f77ba379f867418229a2
 ---
 
 **Q：页面加载时有时延，较长时会被感知到，如何解决该问题？**
@@ -73,7 +73,7 @@ content_hash: sha256:9caf22a8d847e855305993e18a00b18e22d0cd7d1478776a72abff00f37
 
    代码运行效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/4uOHZeAhRfCQlVASWs6Cyw/zh-cn_image_0000002759871230.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/S8Bd-ahGSFSRMsigjXcBqA/zh-cn_image_0000002759871230.png "点击放大")
 3. 自定义LoadingView，供全局调用。
 
    代码示例如下：
@@ -409,4 +409,4 @@ content_hash: sha256:9caf22a8d847e855305993e18a00b18e22d0cd7d1478776a72abff00f37
 
      代码运行效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/cKTLVw8ET3aC7-uxV8aYDQ/zh-cn_image_0000002789272621.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Nchm072rSdeU_YdGwDqh3w/zh-cn_image_0000002789272621.png "点击放大")

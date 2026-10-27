@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-264
 title: Navigation中pushPathByName与pushDestinationByName的区别
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation中pushPathByName与pushDestinationByName的区别
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3e5ea64d028044b71f33f81a5cad53b31be0a71bf57d56473ba522a78e4b03de
 ---
 

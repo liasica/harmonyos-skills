@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-11
 title: 应用启动时页面周边有白边
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用启动时页面周边有白边
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
+scraped_at: 2026-10-28T07:46:48+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:94d36a20f26cb62144120ee931964e70767816f7e335d63dae98bbbaa9c91f85
+content_hash: sha256:a6bcddc80cc3970e443845a63b4f79df7c8954f5e9dde9ac5d3c557af480541b
 ---
 
 ## 问题现象
 
 应用启动时动效异常，启动图片未铺满屏幕，周边有空白。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/9wV7LFJFRGyAAmU7ycQNvA/zh-cn_image_0000002628789130.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/eEkPAfYKSya3JUJvNdPbyQ/zh-cn_image_0000002628789130.png "点击放大")
 
 ## 背景知识
 
@@ -40,10 +40,10 @@ content_hash: sha256:94d36a20f26cb62144120ee931964e70767816f7e335d63dae98bbbaa9c
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TfESL9vCSYyjIhM1Dif8IA/zh-cn_image_0000002658988441.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/OpcoYTVSTMWfO-D333TyIA/zh-cn_image_0000002658988441.png "点击放大")
 2. 在系统设置中查看屏幕的尺寸，启动页图片的大小与屏幕尺寸不一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/kk-aTxyzScuXGBKb86yTUw/zh-cn_image_0000002628629220.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/hwxCcUeoTQWOzMwWVE-wlw/zh-cn_image_0000002628629220.png "点击放大")
 
 ## 分析结论
 
@@ -175,4 +175,4 @@ content_hash: sha256:94d36a20f26cb62144120ee931964e70767816f7e335d63dae98bbbaa9c
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Dv2VsCWTTwiu3VpfeeCOew/zh-cn_image_0000002658868495.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/El6Q2QwrRYSt5LBNOCiIjg/zh-cn_image_0000002658868495.png "点击放大")

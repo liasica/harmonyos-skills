@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-704
 title: Canvas实现量角器功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Canvas实现量角器功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:36+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:b550b2c318901e3d40b74f843ba13a3e2f773a390d9a1fc474517886a2006a55
+content_hash: sha256:e7a004d51da4eac08f871908161ec56bc93d174a1133073838b40efe4e8d8d36
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:b550b2c318901e3d40b74f843ba13a3e2f773a390d9a1fc474517886a20
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/js0GTL3iQGWDLkcNLarSUQ/zh-cn_image_0000002628554890.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/CLeeRUVxQmmpIt9NFrhbnQ/zh-cn_image_0000002628554890.gif "点击放大")
 
 ## 背景知识
 

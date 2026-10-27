@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-22
 title: 为什么fromScreenLocation接口和getVisibleRegion接口获取的矩形顶点坐标不一致
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 为什么fromScreenLocation接口和getVisibleRegion接口获取的矩形顶点坐标不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:45b2ac1a17ac0277c7b1ec7409b74c30eba79f47b655c2b3b3cc7620406314c4
 ---
 

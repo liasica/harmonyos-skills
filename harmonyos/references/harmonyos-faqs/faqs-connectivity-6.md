@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: 如何解决存在较大量的蓝牙设备时-低功耗蓝牙连接效率低问题
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 如何解决存在较大量的蓝牙设备时-低功耗蓝牙连接效率低问题
 category: harmonyos-faqs
-scraped_at: 2026-09-11T06:31:17+08:00
-doc_updated_at: 2026-09-10
-content_hash: sha256:aa960d85a8dd92ef750897f8f4e9a72a16fed11e07c14cfe5c033778434137fd
+scraped_at: 2026-10-28T07:48:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:488480bb35cf6e81bf578921a1ba0a8d0fda19ad60aea06104366dc8205d7959
 ---
 
 ## 问题现象
@@ -505,7 +505,7 @@ content_hash: sha256:aa960d85a8dd92ef750897f8f4e9a72a16fed11e07c14cfe5c033778434
 
   [ble.startBLEScan](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)发起BLE扫描流程时，可以选择SCAN\_MODE\_LOW\_LATENCY扫描模式，减少蓝牙扫描的时间，提高扫描发现效率。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/trjgQyECQKCQM4dhqx_1ug/zh-cn_image_0000002742884377.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/uidqMTrSRUWa1mJ_lbtZng/zh-cn_image_0000002742884377.png "点击放大")
 * 方案三：
 
   服务发现与特征值匹配优化。扫描到目标设备后，通过[GattClientDevice](../harmonyos-references/js-apis-bluetooth-ble.md#gattclientdevice)订阅服务并匹配特征值的过程可能耗时较长，可以通过以下方式优化：

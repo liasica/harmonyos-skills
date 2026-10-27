@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-11
 title: 如何把ImageReceiver收到的视频帧数据保存到本地
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何把ImageReceiver收到的视频帧数据保存到本地
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:26+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7ceb431050e47a924a0a246b5bede9c3954aef7f5777131bb6999c81c74358bc
 ---
 

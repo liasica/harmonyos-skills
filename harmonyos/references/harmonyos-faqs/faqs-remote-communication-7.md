@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: ArkTs中如何使用切面编程
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > ArkTs中如何使用切面编程
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:63674f0fcac7526bda2cf19ac2dda53f0128b32255ad331044d7f7ff77179c86
 ---
 

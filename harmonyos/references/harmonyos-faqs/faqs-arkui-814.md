@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-814
 title: 如何使Popup宽度占满屏幕
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何使Popup宽度占满屏幕
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9940128fa39e1b30aff6e4b7c50334ca197b04d9c57e42b066ad8943d016ce45
+content_hash: sha256:3d7e56be0127f349af9703a2146766f894b4fbafcc611908f9f8bafc6eaa279f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:9940128fa39e1b30aff6e4b7c50334ca197b04d9c57e42b066ad8943d01
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Aw-h4j1FRdOFbpS20ssYvg/zh-cn_image_0000002658917117.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/HXLH6lPgQkmJFtrjUyD1AA/zh-cn_image_0000002658917117.png "点击放大")
 
 ## 背景知识
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-504
 title: 实现Navigation首页和子页面互相跳转时的显隐监听
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现Navigation首页和子页面互相跳转时的显隐监听
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bcdb6081709826b5bdf08d3525496441deff7a3cdcb9bf5234a6a3a0951b0c2d
 ---
 

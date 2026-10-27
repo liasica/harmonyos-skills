@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-3
 title: 如何区分CardRecognition的取消和失败
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 如何区分CardRecognition的取消和失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:59+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:49:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b9b158bf22ab3f3814158ad84f7f73725e5e4a67b85fd292dbb24a3ac7b80c56
 ---
 

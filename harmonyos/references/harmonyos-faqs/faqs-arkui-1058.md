@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1058
 title: 在有透明子窗覆盖的情况下如何透传事件到主窗口
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 在有透明子窗覆盖的情况下如何透传事件到主窗口
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2ec682764eb34a527266bf9510c611a08704801bfd901a23e4ce1a402139cf47
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7f9d015fa5ee775220e4763a1c4cd3e94c8433e19eb07e7d6d39b648f3415b76
 ---
 
 ## 问题现象
@@ -156,7 +156,7 @@ content_hash: sha256:2ec682764eb34a527266bf9510c611a08704801bfd901a23e4ce1a40213
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/hjaVfxOhR1CQZS-cXyuQqg/zh-cn_image_0000002658926413.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/NWjO-G8aScmub0UgP8qRlw/zh-cn_image_0000002658926413.png "点击放大")
 * **场景二**：实现子窗口仅响应侧滑事件，需要在主页面重写[onBackPress](../harmonyos-references/ts-custom-component-lifecycle.md#onbackpress)方法，实现子窗口的销毁。
   1. 在EntryAbility下的onWindowStageCreate方法中使用AppStorage存储windowStage实例，用于创建子窗口。参考场景一步骤一，加载PageTwo页面。
   2. PageTwo.ets：创建透明子窗口，设置子窗口不可触、不可获焦并重写onBackPress，达到第一次侧滑时关闭子窗口的效果。
@@ -293,7 +293,7 @@ content_hash: sha256:2ec682764eb34a527266bf9510c611a08704801bfd901a23e4ce1a40213
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/mMdoa__sStWQNtI-pE5yMQ/zh-cn_image_0000002628407208.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/MWmrsV4kTxGZoRWYxPl7SA/zh-cn_image_0000002628407208.png "点击放大")
 
 ## 常见FAQ
 

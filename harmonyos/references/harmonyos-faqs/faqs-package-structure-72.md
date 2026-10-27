@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: HAR包使用的常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > HAR包使用的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:29+08:00
+scraped_at: 2026-10-28T07:46:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9b1b17fdda6f2edba5d08bfb2b651a527055f1d66f80e5b2e1eec9bef5faaa70
+content_hash: sha256:699333d68f8c3306fc3b9523ee6bc1e4c057994c2c5a3408bedc2b3e6e75e0c5
 ---
 
 ## 问题现象
@@ -42,16 +42,16 @@ HAR包作为静态共享包，时常作为二方/三方SDK使用，但在HAR包�
 
   在多包场景下，如果应用的多个HAP或HSP包使用HAR包实现代码和资源的共享，那么打包后的每个HAP或HSP包中都会存在一份共享HAR包的拷贝，导致APP包中存在冗余代码和资源。如下图示例，应用模块HAP1和HAP2/HSP1都引用了HAR2和HAR3，打包后，APP包中HAR2和HAR3存在多份重复拷贝，体积较大。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/igz4_K26SWGz_qtZJ98LPQ/zh-cn_image_0000002628788114.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/Ca0yIkQ6SeKLutmljrDCgw/zh-cn_image_0000002628788114.png "点击放大")
 
   这种场景下，推荐开发者使用HSP代替HAR实现代码和资源共享。如下图示例，使用HSP2对原应用进行升级改造，打包后，APP包中HAR2和HAR3只存在一份拷贝，HAR2、HAR3总大小大于HSP时，可以减小应用包大小。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/eSKv1_UdTCqgDOWkut1nfA/zh-cn_image_0000002658987435.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/yNIR6rdeTX2nMppUYXThMQ/zh-cn_image_0000002658987435.png "点击放大")
 * **场景四：一个应用有多个模块，多个模块中引用同一个HAR包的不同版本是否有影响，怎么指定统一的版本？**
 
   没有影响，每个模块都会将各自的HAR包拷贝到自己的模块，不会影响其它模块。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/nvfDWoCgQ9OA_Y2uS1HpMA/zh-cn_image_0000002628628218.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/bevfzzHzR7u3j0rtxcqEGQ/zh-cn_image_0000002628628218.png "点击放大")
 
   ohpm客户端在1.4.0版本开始支持[Override机制](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)，可以在项目级别的oh-package.json5（即项目根目录下的oh-package.json5）文件中添加overrides配置，可以将HAR包指定统一的版本。替换的版本既可以是一个具体的版本号，也可以是一个模糊版本，还可以是本地存在的HAR包或源码目录。
 
@@ -77,10 +77,10 @@ HAR包作为静态共享包，时常作为二方/三方SDK使用，但在HAR包�
   ```
 * **场景五：一个应用存在多个HAR模块，例如存在模块HARA、模块HARB、模块HARC和模块HARD，HARB中依赖并引用了HARA，HARC中依赖并引用了HARB和HARA，HARD中依赖并引用了HARC、HARB和HARA，现在希望打包完成后的包中只包含一份HARA、HARB、HARC、HARD，避免生成的HAR包冗余重复，该如何实现？**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/zmYHieC3QcOMP0beKBhkEw/zh-cn_image_0000002658867497.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/uVlakH4rQ7WOW8gqZJPdnw/zh-cn_image_0000002628788118.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/HSv6Sg6SSeKj2zShuRiCeA/zh-cn_image_0000002658867497.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/zaUozalzS-eQ4tzbtYHKGQ/zh-cn_image_0000002628788118.png "点击放大")
 * 由于存在多个HAR模块，这些模块之间又存在重复依赖和引用的关系，由于同一个工程下，不同HAR模块之间存在继承依赖的关系，即对于工程下的模块HARA、模块HARB、模块HARC和模块HARD，先将模块中的方法、类和接口等通过export方式暴露出去，使得工程下其他模块能够访问。
 * 让HARB中依赖HARA，HARC中依赖HARB，HARD中依赖HARC，从而使四个模块构成继承依赖的关系，就可以实现在HARD引用HARC、HARB和HARA，在HARC中引用HARB和HARA，在HARB中引用HARA，这样就避免生成重复HAR包的情况。
 * 将最外层的HAR模块HARD先转化成HSP模块，参考链接进行相关配置[HAR转HSP指导](../harmonyos-guides/har-to-hsp.md)。由于HSP模块只能供应用内其他HAP模块或HSP模块引用，如果需要共其他应用的模块使用，还需要将HSP模块转化成[集成态HSP](../harmonyos-guides/integrated-hsp.md)，参考链接进行相关配置集成态HSP。
 * 对集成态HSP模块HARD进行打包，提供给其他应用使用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/wme5QV0EQKiJrXC-ZC1FTg/zh-cn_image_0000002658987441.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Ed4DXvRbTKGCtT7POB09ig/zh-cn_image_0000002628628220.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/U-u39C4vSJ-76EwIzXI77w/zh-cn_image_0000002658987441.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/R2lZr_MHTd6nFfQnD3fRHQ/zh-cn_image_0000002628628220.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 关于GL_TEXTURE_2D和GL_TEXTURE_EXTERNAL_OES纹理类型的选择问题
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 关于GL_TEXTURE_2D和GL_TEXTURE_EXTERNAL_OES纹理类型的选择问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:34+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e855d3c4403249e2b4dd51d5b341400345acb0ac5b509a105339fc624ac5e8bc
 ---
 

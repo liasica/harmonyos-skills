@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: Hypium连接设备提示“选中设备中包含不兼容的设备”
 breadcrumb: FAQ > DevEco Studio > 应用测试 > Hypium连接设备提示“选中设备中包含不兼容的设备”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
+scraped_at: 2026-10-28T07:49:01+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:2d9f152eb9c6ec3d5922a9b24dc7ff5168247f5984e2dce884cb18bd0485a717
+content_hash: sha256:e98735bb658243544591dd0eff86a5ce19a57c4b62a800a7e9ccfb775b7be0e2
 ---
 
 ## 问题现象
 
 手机连接上电脑，执行hdc list targets可以识别到设备，但使用Hypium的UiViewer功能时提示“选中设备中包含不兼容的设备！”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/c65j7pmoRUawFCTCvap8Lw/zh-cn_image_0000002658928763.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/YBafNj5cRz-puDHeYniSTw/zh-cn_image_0000002658928763.png)
 
 ## 背景知识
 
@@ -22,16 +22,16 @@ content_hash: sha256:2d9f152eb9c6ec3d5922a9b24dc7ff5168247f5984e2dce884cb18bd048
 
 * 检查hdc、Hypium插件、设备驱动程序已正确安装。执行hdc list targets查看设备是否能够被正确识别。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/hL0YFx_jRvShy_NJSnXE6Q/zh-cn_image_0000002658808817.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/KBIRs2x4Q5uHZdtJ06cS7g/zh-cn_image_0000002658808817.png)
 * 执行hdc shell uitest --version命令，查看版本号是否大于4.1.4.0。如下图显示的4.0.4.0版本不支持UiViewer查看设备。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/CFOZtL_vSmemejjWXBTNow/zh-cn_image_0000002628409550.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/_3Y_D9R2TTC_EHLO3VAJUA/zh-cn_image_0000002628409550.png)
 * 执行hdc -v命令，查看版本号是否在3.0.0及以上。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/j8i286g1SS6Bi5uopVXMww/zh-cn_image_0000002628569448.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/bmGy_gzTQLm6Eqw8bYavIg/zh-cn_image_0000002628569448.png)
 * 检查Hypium插件是否为6.0.0 Release及以上版本：打开Pycharm，点击File -> Settings -> Plugins进行查看。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/oOzE5hHiRz2ZImMgjz8pbw/zh-cn_image_0000002658928765.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/9u90FW_mRwmuqfGq-itYJQ/zh-cn_image_0000002658928765.png)
 
 ## 分析结论
 

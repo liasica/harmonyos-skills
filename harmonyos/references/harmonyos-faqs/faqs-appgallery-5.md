@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何修复上架审核的定向推送问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何修复上架审核的定向推送问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:31+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:e92d0db9cf76eeecbd1fa6ce75c2b0c943c8bf56fe1de3fe62b9f802352cee12
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:74e1dc677a78d52ef5ebc3c25ac1ac089f2791c70acfd0342df4208a2ece0d30
 ---
 
 ## 问题现象
@@ -43,7 +43,7 @@ content_hash: sha256:e92d0db9cf76eeecbd1fa6ce75c2b0c943c8bf56fe1de3fe62b9f802352
   2. 检查应用内是否包含“个性化推荐”、“推荐”、“定向推送”、“猜你喜欢”等字样的功能模块，若功能实际对所有用户展示的内容均无差别，应修改为诸如“热门”、“榜单”等不易混淆的模块名称；
   3. 应用内无需提供退出或关闭个性化功能展示模式的选项或开关。
   4. 重新提交上架审核时，可以在备注中注明：已核实应用功能实际不包含定向推送功能。
-* 若对应用审核有争议，可以通过[互动中心](../app/agc-help-interaction-center-0000002276985946.md)申诉。
+* 若对应用审核有争议，可以通过[互动中心](../doccenter-submission/50000-1.md)申诉。
 
 ## 常见FAQ
 

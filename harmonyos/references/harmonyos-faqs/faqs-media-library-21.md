@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 编辑图片后上传图片，上传的图片仍为编辑前的图片
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 编辑图片后上传图片，上传的图片仍为编辑前的图片
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:31+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:78e8d739ddb214a68b1b39808a71e49cf76dd0c4d1613a17126f5ae628c08cfc
+scraped_at: 2026-10-28T07:48:02+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:91e773760fc335c33e6fbf78486bae68580c87c08ff918517d0ed89bf3b966cb
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:78e8d739ddb214a68b1b39808a71e49cf76dd0c4d1613a17126f5ae628c
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/y74_Z3IhQR6ZEPvBJ9O9Tw/zh-cn_image_0000002659258341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/-5Y6GXKGQZ-TTY18AllPHQ/zh-cn_image_0000002659258341.png "点击放大")
 
 ## 背景知识
 

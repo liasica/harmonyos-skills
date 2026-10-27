@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-955
 title: 如何实现PC悬浮弹出提示框功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现PC悬浮弹出提示框功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:317e93097b5e7f045c4852ca05f1cfedf4e9c252b0dc784c99b729330c8c1c10
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3954f35219de40efd4d3214575bfe1d33fa416a1bc0bf1d4545f1cecc9d25210
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:317e93097b5e7f045c4852ca05f1cfedf4e9c252b0dc784c99b729330c8
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ifKqpIC0RbW6N6_z4NksfA/zh-cn_image_0000002658920479.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/zqlT_8hOSGuCdmbxX0A-uQ/zh-cn_image_0000002658920479.png "点击放大")
 
 ## 背景知识
 
@@ -58,7 +58,7 @@ content_hash: sha256:317e93097b5e7f045c4852ca05f1cfedf4e9c252b0dc784c99b729330c8
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/xQ81SUgzTs26pcdE82FLBg/zh-cn_image_0000002628401266.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/IYA360DKQ0y5-vPxDJGUug/zh-cn_image_0000002628401266.png "点击放大")
 * **方案二**：为图片组件绑定onHover悬浮事件监听与Popup控制气泡。当检测到有鼠标进入时，通过修改控制显示的状态变量来弹出气泡。
 
   ```ts
@@ -101,7 +101,7 @@ content_hash: sha256:317e93097b5e7f045c4852ca05f1cfedf4e9c252b0dc784c99b729330c8
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/TFsfp0CoRBGPjiDJPn7lEw/zh-cn_image_0000002658800525.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Smqr51oDQ_inttN539WCvw/zh-cn_image_0000002658800525.png "点击放大")
 
 ## 常见FAQ
 

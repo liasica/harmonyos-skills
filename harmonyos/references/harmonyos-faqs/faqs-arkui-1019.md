@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1019
 title: 组件曲线移动动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 组件曲线移动动画
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:52+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:47797a5ac1fa1efa44064a3e62b98d08175342ac21018d0cdc991cd78c164754
+content_hash: sha256:18db5da0f6ca6b868664558e1de0de2d0ab1c53b4911292c67e605d4d7c77eba
 ---
 
 ## 问题现象
@@ -19,7 +19,7 @@ content_hash: sha256:47797a5ac1fa1efa44064a3e62b98d08175342ac21018d0cdc991cd78c1
 * 贝塞尔曲线原理：
   1. 如下图所示，P0为曲线的起始点，P1为曲线的终点，Pt为曲线中的各个坐标点，t为P0到P1的进度百分比。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/EhOSRJzbQt-q6sJmsK_-zg/zh-cn_image_0000002658804077.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/2geGm38RSzGr4b5xYBGK0A/zh-cn_image_0000002658804077.png "点击放大")
 
      Pt的坐标点可以通过起始点P0的坐标，加上(P1-P0)\*t + P0计算得出。
 
@@ -28,7 +28,7 @@ content_hash: sha256:47797a5ac1fa1efa44064a3e62b98d08175342ac21018d0cdc991cd78c1
      Pt = P0 + (P1 - P0)\*t = (1 - t)P0 + t\*P1
   2. 下图所示是二阶贝塞尔曲线，共有P0，P1，P2三个控制点，P0和P1构成一阶P11(t)，P1和P2构成一阶P12(t)，在由P11(t)和P12(t)的基础上，计算得出二阶贝塞尔点P2t。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/XK1ymegPQ1in1T1U7ayqkA/zh-cn_image_0000002628564714.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/wvmK9EvNRWaKaId9SKCUdg/zh-cn_image_0000002628564714.png "点击放大")
 
      计算公式：
 
@@ -39,7 +39,7 @@ content_hash: sha256:47797a5ac1fa1efa44064a3e62b98d08175342ac21018d0cdc991cd78c1
      P2t = (1 - t)P11 + t\*P12 = (1 - t)²P0 + 2t\*(1 - t)P1 + t²P2
   3. 下图所示是三阶贝塞尔曲线，共有P0，P1，P2，P3四个控制点，计算降阶得P11，P12，P13得到一阶贝塞尔点，再次计算降阶得P21，P22二阶贝塞尔点，最终计算得到三阶P3t贝塞尔点。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/uCCsIUZoR8CxSONGYqTi7g/zh-cn_image_0000002658924019.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/sfXjtfcFRkmTn8URp_3ncQ/zh-cn_image_0000002658924019.png "点击放大")
 
      计算公式：
 

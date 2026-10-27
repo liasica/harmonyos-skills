@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1052
 title: HitTestMode的不同应用场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > HitTestMode的不同应用场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7b77c3e3272ad0e15b31de8690d89fc5477f1fbc30dcfa0471969590c1503ae3
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7115e6af8076325865a70f5305a63b0aa02e23fe8e83d636ef94f0e160d0383a
 ---
 
 ## 问题现象
@@ -96,7 +96,7 @@ hitTestBehavior属性通过HitTestMode的不同枚举值设置不同的触摸测
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/P3byQJ3OQXK_pxUBBCyCnQ/zh-cn_image_0000002628565458.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/kPL1HM_8Rbuzvl1cgl0zuw/zh-cn_image_0000002628565458.png "点击放大")
 * **场景三**：一个容器组件（灰色矩形包裹区域），希望点击内部的深灰色矩形区域时，手势不会透传到TextArea上；点击空白区域时，手势会透传到TextArea上。
 
   实现思路：如果希望只有点击空白区域才透传，可以在onTouchIntercept方法中判断触摸位置是否处于深灰色矩形区域内，如果是，则修改HitTestMode为Default，不进行透传。否则修改HitTestMode为Transparent，进行透传。
@@ -188,4 +188,4 @@ hitTestBehavior属性通过HitTestMode的不同枚举值设置不同的触摸测
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/uIo9XqCOSPChdglRojkygg/zh-cn_image_0000002658924767.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/7JQaDl6XSHCt5gIyRm3QNw/zh-cn_image_0000002658924767.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-42
 title: Web加载的H5页面跳转后，如何避免原有页面注册的资源被清空
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web加载的H5页面跳转后，如何避免原有页面注册的资源被清空
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6520fc71aa5a8ae2f3ef20d349718079b14a010c4d85c2622e372e88923607d0
 ---
 

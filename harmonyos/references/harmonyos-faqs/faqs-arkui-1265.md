@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1265
 title: 如何解决LocalStorage存储function报错问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决LocalStorage存储function报错问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:18+08:00
+scraped_at: 2026-10-28T07:47:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:11db424d6be5175afc638ea2683a3c59c69d3713fcf8f5f53d8e389831e89d7c
+content_hash: sha256:d90110912b2026692290439de468a0d2bf8c3defebdb128b8fb2a0cbf0ab29c1
 ---
 
 ## 问题现象
@@ -92,4 +92,4 @@ export struct LocalStorageDemo {
 
 运行截图如下：成功调用LocalStorage中存储的类对象的函数来打印数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Rnc9X2JTSiqZceAQrXHGoQ/zh-cn_image_0000002658835373.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/xM2esfLvQwCJLcHQ-3UdjQ/zh-cn_image_0000002658835373.png "点击放大")

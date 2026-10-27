@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: PyCharm运行Hypium项目报错“测试用例的设备条件不满足”或者“required device does not exist”如何解决
 breadcrumb: FAQ > DevEco Studio > 应用测试 > PyCharm运行Hypium项目报错“测试用例的设备条件不满足”或者“required device does not exist”如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
+scraped_at: 2026-10-28T07:49:01+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:63d5a04eaec354f774088627b41f74c705696a3fbf3b087c87daba315745a075
+content_hash: sha256:85d1b4b4d47e6a0147c2e7583bab4b8c19abf08dfbbd9f86950a4818e3b7123c
 ---
 
 ## 问题现象
@@ -14,10 +14,10 @@ cmd命令行可以连接到设备，UiViewer也可以连接设备。但是执行
 
 * 提示“Test source required 1 devices, actually 0 devices were found [Suggestions]测试用例的设备条件不满足”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/8WfeLszcQVi1aDkYmEg6iA/zh-cn_image_0000002628409554.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/F6nVW-YRQXqdwVEcGwYE0A/zh-cn_image_0000002628409554.png "点击放大")
 * 提示“required device does not exist”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/JHnS85HIShSmXywYMqnqzg/zh-cn_image_0000002628569452.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/qHgyU4x-QoKD_daXNEjj5Q/zh-cn_image_0000002628569452.png "点击放大")
 
 ## 背景知识
 
@@ -44,15 +44,15 @@ cmd命令行可以连接到设备，UiViewer也可以连接设备。但是执行
 * 将OHOS\_HDC\_SERVER\_PORT环境变量删除后重启PyCharm。
 * user\_config.xml文件sn不设置或者修改为当前设备sn，type类型和label类型按实际使用设备配置正确。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/KMLeCDzjRJKg9XZsffCY8A/zh-cn_image_0000002658928769.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/3I5-Yu2VS9C-Sw76kgzczw/zh-cn_image_0000002658928769.png "点击放大")
 * 用例的json文件type类型配置正确。
 
   如下图所示，该用例请求了两个设备，一个为HarmonyOS设备，一个为其他平台设备。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Y_QNd9RjQJyGVT_LBOqzzQ/zh-cn_image_0000002658808823.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/zNCw7STvS9qY9YwcbouUoA/zh-cn_image_0000002658808823.png "点击放大")
 * 用例的json文件设备label类型配置每个设备对应的设备类型。如果用例可以在任何设备上运行，label字段不需要填。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/JmFJpMU8RlOYs5mNHdqYwQ/zh-cn_image_0000002628409556.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/NF5vTMAEQPyRcVrFvvOSjQ/zh-cn_image_0000002628409556.png "点击放大")
 
   | label类型 | 设备 |
   | --- | --- |

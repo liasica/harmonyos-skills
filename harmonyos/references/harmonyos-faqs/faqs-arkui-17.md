@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-17
 title: 如何实现Tabs页签导航栏切换时，下划线也随之滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Tabs页签导航栏切换时，下划线也随之滑动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0f64a5b7362ea346b8728a900c68976525b5c4e63fc5dc7448097948fc7d4928
 ---
 

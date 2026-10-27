@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-177
 title: 如何阻止组件的鼠标事件冒泡到父组件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何阻止组件的鼠标事件冒泡到父组件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:21+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a1ce395316e443ca86ab83818dd36a29b9505e36bda274e5eb327a1b012eec4a
 ---
 

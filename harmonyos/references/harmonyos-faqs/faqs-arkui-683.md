@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-683
 title: 如何解决LazyForEach刷新数据时List无法滑动问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决LazyForEach刷新数据时List无法滑动问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:23+08:00
+scraped_at: 2026-10-28T07:47:47+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:10f26a3ea1d705031ecd1953c0de495e4aa1c9cfb02721c36867a3560f7b7064
+content_hash: sha256:ebf498504c47a2b83e3d788650d8cfce7a3071d454fd5fb8e45c78677727f9f6
 ---
 
 ## 问题现象
@@ -315,11 +315,11 @@ export class StringListModel {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/JRY4Be2JQ6el1aQn5OSkyQ/zh-cn_image_0000002658794111.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/_HKS-TOjQc2dofwd__PfTg/zh-cn_image_0000002658794111.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/mcqgmOQpSV2Vyl1mAJlJjg/zh-cn_image_0000002628554746.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/h42jAr8IQ5Ctkdzj4nBdDg/zh-cn_image_0000002628554746.gif "点击放大")
 
 ## 背景知识
 

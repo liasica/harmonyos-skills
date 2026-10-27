@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“The reason and usedScene attributes are mandatory for user_grant permissions.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The reason and usedScene attributes are mandatory for user_grant permissions.”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:55+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:98fa20ab734db0d950c6bdca8a7bedf5c133b7b675ba74a89e695f1fb476d834
+content_hash: sha256:c755a43d611637b8c3aa8548e228b375d2a011c1748c5fc8d893aa89b000aabf
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:98fa20ab734db0d950c6bdca8a7bedf5c133b7b675ba74a89e695f1fb47
 
 在module.json5文件中配置user\_grant类型的权限时，必须包含reason和usedScene属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/J_PZdZ8SRCmclVsyNFWU4A/zh-cn_image_0000002654797997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/-CcC7vzZS3uL_N0tQWvG-g/zh-cn_image_0000002654797997.png)
 
 **解决措施**
 

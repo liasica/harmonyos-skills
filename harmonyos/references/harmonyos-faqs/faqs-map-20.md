@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-20
 title: Map Kit地图服务如何设置我的位置图标实时指向当前设备移动方向
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > Map Kit地图服务如何设置我的位置图标实时指向当前设备移动方向
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:25+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:feb5d97f3077235a799f9322e89053a161b076a6140f741b661f1fa1532c0043
 ---
 

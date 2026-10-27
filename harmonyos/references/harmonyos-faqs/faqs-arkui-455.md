@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-455
 title: 如何控制Tabs内容页单向滑动切换
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何控制Tabs内容页单向滑动切换
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:73334de3d5c349c0b9d3949ecabed7803087b2e9d9d24d4d6e65034178761cc1
 ---
 

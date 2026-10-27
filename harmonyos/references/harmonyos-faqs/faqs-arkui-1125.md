@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1125
 title: 长按Image组件拖动，如何避免唤醒小艺
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 长按Image组件拖动，如何避免唤醒小艺
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:17+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6afb18d211982fefb6fc73cfb9685826892f58acc069b366ebbf3b6d452de984
 ---
 

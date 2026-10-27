@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 实现文件下载并打开分享功能
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 实现文件下载并打开分享功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:39+08:00
+scraped_at: 2026-10-28T07:48:20+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:0c6375aecf9f4f8020d7bd536a93cc53972b423cfd045a62e50647f746475b62
+content_hash: sha256:b8171bcb63e0a4b7111deb057f7823d07fe275a7e17ccf1a08851b828d6f70ad
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:0c6375aecf9f4f8020d7bd536a93cc53972b423cfd045a62e50647f7464
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/2wG0fFHGRlC0fqu5bzBlng/zh-cn_image_0000002628613416.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/0-AqGNj1SESeROce6Qd-_Q/zh-cn_image_0000002628613416.png "点击放大")
 
 ## 背景知识
 
@@ -27,7 +27,7 @@ content_hash: sha256:0c6375aecf9f4f8020d7bd536a93cc53972b423cfd045a62e50647f7464
 
 实现文件下载并打开分享功能可参考如下流程进行：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/h32pDyW9RZ-O2eTY6MZOWA/zh-cn_image_0000002658852697.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Xr4XMIhaS86_C2-9OgOhbg/zh-cn_image_0000002658852697.png "点击放大")
 
 各步骤实现样例参考如下：
 

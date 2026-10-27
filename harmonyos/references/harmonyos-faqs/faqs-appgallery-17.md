@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何确保核心用户每次都能参与版本测试
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何确保核心用户每次都能参与版本测试
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:23107012bf43f1b7f8efdc18e1cbafeffb93f8692e766b4a015c3c5faf029805
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:7a9a3916b89f03079e58c337d62e53a53d3cb8273a6225445deec0934a97b906
 ---
 
 ## 问题现象
@@ -37,7 +37,7 @@ content_hash: sha256:23107012bf43f1b7f8efdc18e1cbafeffb93f8692e766b4a015c3c5faf0
      + 添加测试用户，可以选择测试账号添加或者邀请码添加。
      + 创建邀请测试版本，勾选测试用户，默认发布到测试专区，建议勾选生成分享链接。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ehFE4OhMSe2M2inWWxdTBg/zh-cn_image_0000002658913795.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/WCstHY8aSoi8vl1KwsJFnA/zh-cn_image_0000002658913795.png "点击放大")
      + 提交邀请测试版本，等待审核通过。
    * 参与方式：
      + 邀请短信参与：新版本邀请测试上架后，存量用户都会收到应用市场发送的邀请测试短信，用户点击短信中的测试链接即可自动跳转到应用测试版本页面下载安装应用。
@@ -48,7 +48,7 @@ content_hash: sha256:23107012bf43f1b7f8efdc18e1cbafeffb93f8692e766b4a015c3c5faf0
    * 适用于：后期版本，问题较少，功能较完善，希望获取更多用户群体参与测试反馈问题完善版本，测试用户数较大（大于10000）。
    * 前提条件：公开测试不需要提前收集测试用户账号，用户主动参与测试。
    * 发布方式：
-     + 创建公开测试版本，设置下载安装次数足够大（当前最多支持1000万）。**务必勾选发布到测试专区**。建议勾选生成分享链接。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/67CZom1dRRajuwAGEMzjXQ/zh-cn_image_0000002658793851.png "点击放大")
+     + 创建公开测试版本，设置下载安装次数足够大（当前最多支持1000万）。**务必勾选发布到测试专区**。建议勾选生成分享链接。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/IczYfA26RIuxsjFkGrYqNQ/zh-cn_image_0000002658793851.png "点击放大")
      + 提交公开测试版本，等待审核通过。
    * 参与方式：
      + 测试专区参与：用户可以直接进入应用市场尝鲜专区找到应用下载安装，因为数量足够大，用户一定能参与测试。
@@ -58,7 +58,7 @@ content_hash: sha256:23107012bf43f1b7f8efdc18e1cbafeffb93f8692e766b4a015c3c5faf0
    * 发布方式：
      + 创建公开测试版本，按需设置下载安装次数。**不勾选发布到测试专区。务必勾选生成分享链接。**
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/qBF8CU8DSdOibO80gXXvYA/zh-cn_image_0000002628394582.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/IwWdVkpqTJeNmyRxAvlahQ/zh-cn_image_0000002628394582.png "点击放大")
      + 提交公开测试版本，等待审核通过。
    * 参与方式：
      + 邀请链接参与：通过分享“邀请链接”方式发送给需要参与测试的核心用户提前体验。

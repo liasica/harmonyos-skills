@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-544
 title: 文章内嵌套的视频点击全屏后，视频上下出现大量黑边
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 文章内嵌套的视频点击全屏后，视频上下出现大量黑边
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:06+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:926bf3a9bf27891256ecd50c05d810036014844785f8028522728a22510fb715
 ---
 

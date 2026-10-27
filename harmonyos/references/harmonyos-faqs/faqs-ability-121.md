@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-12
 title: 应用启动图标动效异常，图片闪烁
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用启动图标动效异常，图片闪烁
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:55+08:00
+scraped_at: 2026-10-28T07:46:48+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:75be8b3ee00c14bcdb90e78bf0be8cf92bff4774edf2cc160e9de8d1cb3309e3
+content_hash: sha256:a0f46e0432848edb908041eaf253ba3b603e72b7aea80d06c28392743846da74
 ---
 
 ## 问题现象
 
 应用启动时先短暂显示启动图标，再显示启动页上的图片，两个图片切换时有闪烁的问题，动效异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/cwHZ5EBtTVSJw7qC5N_mSA/zh-cn_image_0000002628789132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ORrwFSH-SMSjaRAovOAo4Q/zh-cn_image_0000002628789132.png "点击放大")
 
 ## 背景知识
 
@@ -180,4 +180,4 @@ src/main/resources/base/profile/router\_map.json:
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/R_C5sA5GRJql-d40tj3JJg/zh-cn_image_0000002658988443.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/wgrfwTAQSHmgtwBc4__76Q/zh-cn_image_0000002658988443.png "点击放大")

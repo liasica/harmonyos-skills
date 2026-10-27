@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 构建多个不同的APP产物-icon和名称为何没有区别
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 构建多个不同的APP产物-icon和名称为何没有区别
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
+scraped_at: 2026-10-28T07:48:50+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:ffea4560521702603213e3ee79914b54bced6d5020bbb00c49e991389e823c17
+content_hash: sha256:02eade53e95f519912fa3dd5eea71bc582e6f0ac6deb0b1e8d95ece95538af98
 ---
 
 ## 问题现象
@@ -16,11 +16,11 @@ content_hash: sha256:ffea4560521702603213e3ee79914b54bced6d5020bbb00c49e991389e8
 
 app.json5中的icon和label改变的是设置中显示的图标和名称。例如：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/gAOo_avISAONBxi6pQc5iw/zh-cn_image_0000002658807325.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/2AXp4QN_RdGo19Wi8LBPZg/zh-cn_image_0000002658807325.png "点击放大")
 
 正常使用DevEco Studio推送安装到手机的是HAP包，而HAP包里的icon和label是由module.json5文件决定的。例如：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/RzSwgEkSRuiwx4DCfJyryA/zh-cn_image_0000002628408064.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Je2hgAnIRhC8hUWu43h7Gw/zh-cn_image_0000002628408064.png "点击放大")
 
 要在工程级build-profile.json5文件products中配置不同的APP产物，并配置对应icon和label来覆盖app.json5里面的默认内容：
 
@@ -128,12 +128,12 @@ product中的icon和label改变设置中显示的图标和名称，应用桌面�
 
 可通过打包后的产物来检查是否配置正确：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/7Uzub7JtQRu7uF72nYfanw/zh-cn_image_0000002628567960.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/fPP--174RiOqmbE15fezkw/zh-cn_image_0000002628567960.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/wAf_cV1ySEGcbrviipokCw/zh-cn_image_0000002658927283.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/L3YdXJ-BRjGlaccI49h0UA/zh-cn_image_0000002658927283.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/K_Kbh2KNRM6_l49yBvkzdA/zh-cn_image_0000002658807327.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/zGaK0HmDRYKyGJsW-ktoOw/zh-cn_image_0000002658807327.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/AQF5q4xQRsmAO2jctZjuJg/zh-cn_image_0000002628408066.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/MNHD09XQTRG9H_6PZGpeTA/zh-cn_image_0000002628408066.png "点击放大")
 
 附：配置多目标产物-[定义产物的icon、label、launchType](../harmonyos-guides/ide-customized-multi-targets-and-products-guides.md#section82111917125413)。

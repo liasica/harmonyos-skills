@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何使用公共目录下的数据库文件
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何使用公共目录下的数据库文件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:06+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:59+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3e638f50a4cd750a6aae41090067ec9da56651704922c068a55691864cf75a14
 ---
 

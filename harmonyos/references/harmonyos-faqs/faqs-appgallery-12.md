@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 重新生成profile发布的应用，是否会影响安装之前发布的应用
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 重新生成profile发布的应用，是否会影响安装之前发布的应用
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:1c0488c1d637e7e224d29f23ad2390ad3cd256298e15e208b579b04c55119ad2
+scraped_at: 2026-10-28T07:48:45+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b4b3c757674f6e3223d2a1436b75aa13d20926cfa837f30b4671fb2b175e954c
 ---
 
 ## 问题现象
@@ -20,11 +20,11 @@ content_hash: sha256:1c0488c1d637e7e224d29f23ad2390ad3cd256298e15e208b579b04c551
 
 问题三：
 
-AGC平台cer证书被删除，导致profile证书失效，本地csr（证书签名请求）文件也被删除，重新生成一套新的证书会影响已上架的版本吗？
+HarmonyOS 开发者中心平台cer证书被删除，导致profile证书失效，本地csr（证书签名请求）文件也被删除，重新生成一套新的证书会影响已上架的版本吗？
 
 问题四：
 
-AGC平台重新生成profile成功后有下载按钮，为什么一段时间后刷新网页下载按钮消失？
+HarmonyOS 开发者中心平台重新生成profile成功后有下载按钮，为什么一段时间后刷新网页下载按钮消失？
 
 ## 解决方案
 

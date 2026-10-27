@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-31
 title: 如何在Native侧集成三方库Curl，并进行HTTP数据请求
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在Native侧集成三方库Curl，并进行HTTP数据请求
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:bec607c4ee9d80e50224a0abed2fd0c7934e33ddead9161a8c1e0330563bb95d
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:3b2512c83c93f9e8a1924371d466abaeb9e4eeb02a98e8401cf3b9d16213e30c
 ---
 
 可以将Curl移植到HarmonyOS，并在Native侧开发时直接使用Curl的C++库实现。具体的移植方法请参考相关链接。
@@ -14,13 +14,13 @@ content_hash: sha256:bec607c4ee9d80e50224a0abed2fd0c7934e33ddead9161a8c1e0330563
 
 1. 将移植后的Curl的so库放入Native工程的entry/libs/arm64-v8a/目录，将包含头文件的include目录放入entry/src/main/cpp目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/aqYrNOv0T3-RaRePtLrluw/zh-cn_image_0000002624475894.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Ho9ga33ITKWFMCadIDLnGA/zh-cn_image_0000002624475894.png "点击放大")
 2. 在CMakeLists.txt文件中链接Curl对应的so库。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/HsmEJJVPQWmG1UNQRH7vcw/zh-cn_image_0000002654835203.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/9JUkAn_GRFmbAhwQPw2oZg/zh-cn_image_0000002654835203.png "点击放大")
 3. 在Native侧的.cpp文件中引入头文件curl.h，使用Curl的相关能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/btwzJ9QGSlG8v4EX397Mdw/zh-cn_image_0000002654795267.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/cXBoMZdFSNCoMxAdg_r_KQ/zh-cn_image_0000002654795267.png "点击放大")
 
    具体可参考以下代码：
 
@@ -89,7 +89,7 @@ content_hash: sha256:bec607c4ee9d80e50224a0abed2fd0c7934e33ddead9161a8c1e0330563
 
 终端使用curl指令获取的网站信息一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/L-I6iwFmRq-P9MCf9FBsQw/zh-cn_image_0000002624635800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/VF2GP3tnS_2UsOGRIA-UlQ/zh-cn_image_0000002624635800.png "点击放大")
 
 **参考链接**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1648
 title: ForEach嵌套TextArea时如何确保软键盘输入后不收起
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ForEach嵌套TextArea时如何确保软键盘输入后不收起
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d8527d7105d6a67a6e4ffaf675959ca9fc542a2b9fb47cb436cc0081ebaa0ea5
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2e768b53461965548796ac5030a617c40a20af0d88ab0b954e35b89797899818
 ---
 
 ## 问题现象
@@ -42,7 +42,7 @@ struct TextAreaPage {
 
 问题效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/zSSKmnRuS36rOZVXBpZZYw/zh-cn_image_0000002628820884.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/y080CSavTbKfZRDIkt4Wcw/zh-cn_image_0000002628820884.png "点击放大")
 
 ## 背景知识
 
@@ -83,4 +83,4 @@ struct TextAreaPage {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/-Nt3y-PhTUCrQCKDfxcYBQ/zh-cn_image_0000002659020189.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/T4dBwutkTqmHucCTAQ0Rtg/zh-cn_image_0000002659020189.png "点击放大")

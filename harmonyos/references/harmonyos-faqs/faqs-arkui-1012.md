@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1012
 title: Canvas绘制文字时如何设置样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Canvas绘制文字时如何设置样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:25+08:00
+scraped_at: 2026-10-28T07:47:51+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:29581fc0e5f9577694135b52830bdb33470669e35a55721c10686176aff91d5c
+content_hash: sha256:6d5d376d77ed9d3df959eec163a0823d7b9d7fa2122af1746d79ce574664daf5
 ---
 
 ## 问题现象
@@ -74,7 +74,7 @@ Canvas提供了绘制文字的API，开发者在使用fillText绘制文字时会
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/vsPTp0DcRXujV6FOKwBilw/zh-cn_image_0000002658804045.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/wQS6GzAgTgqed9bNJMNzpQ/zh-cn_image_0000002658804045.png "点击放大")
 
 * **场景三**：绘制渐变色字体。
 
@@ -123,7 +123,7 @@ Canvas提供了绘制文字的API，开发者在使用fillText绘制文字时会
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/40o0lB3SQKyt0gtkh6zB8g/zh-cn_image_0000002628404776.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ULMhrQ2PSsWQiXVgcgZ8Qw/zh-cn_image_0000002628404776.png "点击放大")
 
 * **场景四**：设置字体阴影。
 
@@ -159,7 +159,7 @@ Canvas提供了绘制文字的API，开发者在使用fillText绘制文字时会
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Vf05NfuYR7m_XM1z4n3cSA/zh-cn_image_0000002628564682.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/YCsO47nvQGS3ejQtgbF0wA/zh-cn_image_0000002628564682.png "点击放大")
 
 ## 总结
 

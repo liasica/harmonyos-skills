@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-6
 title: 应用内支付自动续期订阅常见问题分析
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 应用内支付自动续期订阅常见问题分析
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-08-12
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a14ce3146c57c87d109c6c57d0852a4f1f5e8cd6de5dc8c26099901ddf91cd7f
 ---
 

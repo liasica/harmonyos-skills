@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-17
 title: 应用中播放多个视频后有多个音频同时播放
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > 应用中播放多个视频后有多个音频同时播放
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
+scraped_at: 2026-10-28T07:48:31+08:00
 doc_updated_at: 2026-08-13
-content_hash: sha256:ea21823a5e107e543257e930b524642fb1da1f1866b92deb4488c9168f56c3ab
+content_hash: sha256:30ae70824890e7015927b6ff6e0fcc51286cd474e2054fe44ff9922b988b0054
 ---
 
 ## 问题现象
@@ -25,10 +25,10 @@ content_hash: sha256:ea21823a5e107e543257e930b524642fb1da1f1866b92deb4488c9168f5
 
 1. 应用中全局搜索AudioSession音频会话，查看是否配置了CONCURRENCY\_MIX\_WITH\_OTHERS并发模式或者CONCURRENCY\_DUCK\_OTHERS降低音量模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/zx2T_578SLyDJKu0LUIhsg/zh-cn_image_0000002628392754.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/xyxuJzVQS0OfLem4RdLwpA/zh-cn_image_0000002628392754.png)
 2. 应用中排查视频播放返回首页后，应用有无调用AVPlayer实例的stop接口，停止播放音视频资源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/uq1HdYuLRKeRd45uV_J4dg/zh-cn_image_0000002658792025.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/MsI_VrsKRamj-DuqcRDGGg/zh-cn_image_0000002658792025.png)
 
 ## 分析结论
 

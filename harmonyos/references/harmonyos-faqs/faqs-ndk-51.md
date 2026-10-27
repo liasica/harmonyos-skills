@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-51
 title: ArkTS侧如何释放绑定的C++侧对象
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > ArkTS侧如何释放绑定的C++侧对象
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:973b51b6c6595ee8807dcd5ad567de9d8036cae156132b4e22696f8d1d31115b
 ---
 

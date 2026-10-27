@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-29
 title: 如何实现地图不显示地铁路线
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何实现地图不显示地铁路线
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:e4fad074bd1302e5a63e9c58280064a8f87d6f354c72ad8e336069789427472e
+content_hash: sha256:d917425237590d08466d00fd5a7c6fcdcea57d34e4729ffbd25402416d3ba709
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:e4fad074bd1302e5a63e9c58280064a8f87d6f354c72ad8e33606978942
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/x0BYhQzjTxWHoMUSRetfLg/zh-cn_image_0000002658793631.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/UvzP9CVmRfeducOVn3zoIA/zh-cn_image_0000002658793631.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/Gvl02L3zSSCmGIqrZbJFIg/zh-cn_image_0000002628554264.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/8TlAOvmrR86wVXNzr8Kt9w/zh-cn_image_0000002628554264.png "点击放大")
 
 ## 背景知识
 

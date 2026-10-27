@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-225
 title: Canvas绘制内容如何动态更新
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Canvas绘制内容如何动态更新
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6e938611cab2d154b4ac00769451835c8a9f2bcee3a0384be9e349d584e0bd70
 ---
 

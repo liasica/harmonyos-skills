@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkweb-kit-trou
 title: ArkWeb视频横屏全屏播放问题定位
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 故障排查 > ArkWeb视频横屏全屏播放问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:48+08:00
+scraped_at: 2026-10-28T07:48:04+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:fae067070437a878794029272c4c7edc25243923cebf88c7e29e52d80703e355
+content_hash: sha256:6ff2f10b7aab37d826d10cdb63b407402147912b25b4075f765fea34af46b9c1
 ---
 
 ## 问题现象
 
 H5页面视频点击全屏后，视频页面只能保持竖屏全屏显示，未能跟随屏幕横竖屏变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/fetYRUA4QWuhJr3XSRiDXA/zh-cn_image_0000002768114830.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ifNasVJkTBy2Ms4eGx0Gjg/zh-cn_image_0000002768114830.png "点击放大")
 
 ## 定位过程
 
 1. 通过DevEco Testing查看视频页面所在组件，该组件为Web组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/1eomVJmMSP6Up_H8dPT1kA/zh-cn_image_0000002797434787.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/wtmCFRLlTZiOu9vc7oxxWA/zh-cn_image_0000002797434787.png "点击放大")
 2. 全局搜索setPreferredOrientation方法，查看应用是否设置了横竖屏切换。
 
    ```ts
@@ -215,4 +215,4 @@ src/main/resources/rawfile：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nTqRP5fASmCtu1b8pvuibg/zh-cn_image_0000002797394765.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/1tOjCw83RIC8uOp1gZ6YOQ/zh-cn_image_0000002797394765.png "点击放大")

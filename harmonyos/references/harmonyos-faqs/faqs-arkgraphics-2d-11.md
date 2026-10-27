@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: OpenGL同一个上下文在多线程中使用问题
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > OpenGL同一个上下文在多线程中使用问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:46+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:34+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:606d9924d3511da2227119ec27620e719c76583c0b75dc2febf0ff856c96a0eb
 ---
 

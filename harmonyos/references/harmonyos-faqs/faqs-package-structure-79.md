@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何让HAR包的label名称跟随宿主HAP
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何让HAR包的label名称跟随宿主HAP
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
+scraped_at: 2026-10-28T07:46:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:e09030789a0c96cb3f84f5ccc9eeeee690f2a30a6b01de7d84caebaa66d86754
+content_hash: sha256:6d2b3a5302f7bf8dd75b6529ba2d615e67bfe22955bf3d0a568435a7296f23e1
 ---
 
 ## 问题现象
@@ -14,13 +14,13 @@ HAP包集成HAR包，HAR包中的UIAbility进入后台任务列表界面时显�
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/5ZPnBM23TZ26WOT2mceuLg/zh-cn_image_0000002658987445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/RxVrxMJqTyiyotDLeCEjYg/zh-cn_image_0000002658987445.png "点击放大")
 
 ## 效果预览
 
 配置后可以看到HAR包的label名称跟随了HAP包：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/CKjDzxxPQya7gkBuM2C-QA/zh-cn_image_0000002628628224.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/1RNBkK87RsSwzE6hM0hTtA/zh-cn_image_0000002628628224.png "点击放大")
 
 ## 背景知识
 

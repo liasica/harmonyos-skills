@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-306
 title: 如何识别双击手势时忽视单击手势
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何识别双击手势时忽视单击手势
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:2efe87f1625f7ee1acc0fc8f94b58d22589f67cd39ac89d6629401bafb068521
 ---
 

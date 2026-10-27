@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 通过API获取文件系统总存储空间、空闲可用存储空间与手机存储内存显示不一致
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 通过API获取文件系统总存储空间、空闲可用存储空间与手机存储内存显示不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:30+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:63b55158914138770faec5ed31ae069adb14f5c7982d7eca73edde15614c164e
 ---
 

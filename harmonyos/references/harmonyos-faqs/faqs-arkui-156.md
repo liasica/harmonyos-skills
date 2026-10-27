@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-156
 title: Text组件设置maxLines后如何确定文本是否被隐藏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件设置maxLines后如何确定文本是否被隐藏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:ddec51e714abbe9ac28fd59c96024973a9331e8b334fc79beaeba6241ca95101
 ---
 

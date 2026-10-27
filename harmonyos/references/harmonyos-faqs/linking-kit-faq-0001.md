@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/linking-kit-faq
 title: App Linking跳转失败问题排查
 breadcrumb: FAQ > 应用服务开发 > 应用链接跳转服务（App Linking Kit） > 常见问题 > App Linking跳转失败问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:14:33+08:00
+scraped_at: 2026-10-28T07:48:43+08:00
 doc_updated_at: 2026-10-22
-content_hash: sha256:5aba387827687af53f02adb280c962c34da42bccd3262eea1d2dea995e3a52b6
+content_hash: sha256:44b6e7b42df9dbf37acf43aee801c352b66a3910e40188de16b89f8338b6cfbf
 ---
 
 **Q：开发者在HarmonyOS 开发者中心开通了App Linking服务，并且在域名服务器上配置了对应文件，HarmonyOS 开发者中心上面也显示发布成功，但是点击跳转失败，提示16000019，是什么原因呢？**
@@ -82,7 +82,7 @@ content_hash: sha256:5aba387827687af53f02adb280c962c34da42bccd3262eea1d2dea995e3
 
 **A**：报错是由于applinking.json文件中类型不对导致的，比如HarmonyOS应用在applinking.json文件中类型为atomicServices，或者元服务应用在applinking.json文件中类型为apps。需要改为对应的正确类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/mOke6pQOTJumtDjFFdigyg/zh-cn_image_0000002797176341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/XqOFUsCLQWmjJNwTnY5GxA/zh-cn_image_0000002797176341.png "点击放大")
 
 **Q：应用链接发布失败后，在域名服务器上重新完成了applinking.json配置文件放置，为何HarmonyOS 开发者中心显示的状态仍然是"失败"？**
 

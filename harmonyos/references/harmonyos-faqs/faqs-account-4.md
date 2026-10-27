@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-account-4
 title: oauth-login.cloud.huawei.com域名ip不固定的原因
 breadcrumb: FAQ > 应用服务开发 > 华为账号服务（Account Kit） > oauth-login.cloud.huawei.com域名ip不固定的原因
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:39+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:b8790737d94ee3d8447e9a5348179d6b6339ce332bd454e4bfd9167ce404e924
 ---
 

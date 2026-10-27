@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-payment-1
 title: 华为支付拉起收银台，取消支付后点击重新支付不会跳转到开通页面
 breadcrumb: FAQ > 应用服务开发 > 华为支付服务（Payment Kit） > 华为支付拉起收银台，取消支付后点击重新支付不会跳转到开通页面
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:26+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:39+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f6e7aa0275b88bb45c2fda202a9a2e264f3005cbddf61e9ba6aef43b75d4c7bb
 ---
 

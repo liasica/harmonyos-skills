@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-multi-devi
 title: 弹窗页面文本重叠
 breadcrumb: FAQ > 多设备场景 > 一次开发多端部署 > 常见问题 > 弹窗页面文本重叠
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:39+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:52b76f21442f9b3428b63368cd6cae8d5f16b1cdfd5779e50e04dbe66c453ff1
+content_hash: sha256:ef8f0c9ef2c64c9e65b95563e520f65c1b31fef77f7210aaa65cbff2dbd00dc7
 ---
 
 ## 问题现象
 
 进入应用后，弹窗页面内文本有重叠。问题效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/H9Rptdp8QCaOMR5A7bpu-g/zh-cn_image_0000002658911719.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/BRuvn-FeRXux69cqi0-Fzg/zh-cn_image_0000002658911719.png "点击放大")
 
 ## 背景知识
 

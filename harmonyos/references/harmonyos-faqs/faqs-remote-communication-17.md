@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: rcp如何实现流式传输
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > rcp如何实现流式传输
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:37+08:00
+scraped_at: 2026-10-28T07:48:17+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:834ec14eb91e8c2c77fba22a1ce5cf2ab0c2056af9e241e75fdfe4f6e45f410a
+content_hash: sha256:a2268da7d75412a7dd92718f6377e871ec28bfadbacb088584ce736e4e1c35c0
 ---
 
 ## 问题现象
@@ -64,7 +64,7 @@ content_hash: sha256:834ec14eb91e8c2c77fba22a1ce5cf2ab0c2056af9e241e75fdfe4f6e45
 
      无需准备完整数据才能上传，可以将部分待上传数据写入缓存区，缓存区数据立即实时上传更新，使用抓包工具抓包效果如下。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/xOAtnrVVS9ikZze3eje1Zw/zh-cn_image_0000002658971705.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/bJu4lMTFRPGD8lCqtYw1BQ/zh-cn_image_0000002658971705.png "点击放大")
 * **场景2：实时数据流获取**
 
   实时数据流获取能力经常应用于大模型对话场景，将本地用户数据向服务端对应大模型API接口发起post请求后，实时获取数据流数据，实现流式输出效果。
@@ -130,7 +130,7 @@ content_hash: sha256:834ec14eb91e8c2c77fba22a1ce5cf2ab0c2056af9e241e75fdfe4f6e45
 
      日志打印如下，OnDataReceive类型函数不停接收来自服务器的数据，并打印如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/_ILtoaGtREayPrGborMhGQ/zh-cn_image_0000002628612494.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/LiV_bPTaSz2cLxicaBcF5g/zh-cn_image_0000002628612494.png "点击放大")
 
 完整示例代码如下：
 

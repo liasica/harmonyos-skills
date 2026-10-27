@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 非持久化存储导致数据丢失问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 非持久化存储导致数据丢失问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:29+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:58+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4b8a5b07a094b8a614e88b56d03f986fb1ab08b3857801bce3968f1410c957a1
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1529
 title: TextArea设置计数器显示效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextArea设置计数器显示效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:23626c0b5fcb5f4fbb593ee415183963f0976b18ae4e39d69a796769ad51d363
+scraped_at: 2026-10-28T07:47:24+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f28ecc44fd042cbe98df04cd3734ccfe3829a9f8141982f9c268847bfdf436b7
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:23626c0b5fcb5f4fbb593ee415183963f0976b18ae4e39d69a796769ad5
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/cJfDWEwHQT6Gehr0jv5Sgg/zh-cn_image_0000002628606988.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/DWGNVLZNSjmRZqeKpRfjTQ/zh-cn_image_0000002628606988.png "点击放大")
 
 ## 背景知识
 

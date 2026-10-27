@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1070
 title: 如何根据不同的路由来源执行不同的转场动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何根据不同的路由来源执行不同的转场动画
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:dd9d0a51de7604f0514860d43c7e680633abebfde4d48cf6644454ef2c28e2f2
+content_hash: sha256:b50d5c11e0f26d945e34f3e8361e5356fec662d3293448662cb0e01aec43a6d1
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:dd9d0a51de7604f0514860d43c7e680633abebfde4d48cf6644454ef2c2
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Cg2cuFhNRTCvYvYZ9fwm9w/zh-cn_image_0000002658926437.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/4d5pITIyRFycdPXnJK91Kw/zh-cn_image_0000002658926437.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1061
 title: 如何在不同场景下实现页面置灰效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在不同场景下实现页面置灰效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:26+08:00
+scraped_at: 2026-10-28T07:47:53+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:535a13ad833e5e29959bc3ebee6c7bc14f824cd1663fe0f910e386c81f34de34
+content_hash: sha256:125fb6bb142da920b286622876bb5431068995139016f905980259953f7c3ae3
 ---
 
 ## 问题现象
@@ -73,7 +73,7 @@ content_hash: sha256:535a13ad833e5e29959bc3ebee6c7bc14f824cd1663fe0f910e386c81f3
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/BadM-N7NRGCbf9EgEY6oRw/zh-cn_image_0000002628567116.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/hh2NvlafQM6Ij-qCs-rM9Q/zh-cn_image_0000002628567116.png "点击放大")
 * 场景二：单个页面置灰。
 
   在多个页面场景，如果只有某个页面需要置灰，其他页面不变，只需将相应页面根元素设置grayscale属性为1。
@@ -82,7 +82,7 @@ content_hash: sha256:535a13ad833e5e29959bc3ebee6c7bc14f824cd1663fe0f910e386c81f3
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/MOh9l4nqRhC47HZyzyvZIQ/zh-cn_image_0000002658926417.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/oOcaDzPSRIubvUn8umf2GA/zh-cn_image_0000002658926417.png "点击放大")
 * 场景三：所有页面置灰。Navigation设置的一些属性会影响所有的页面，将主页的Navigation组件设置grayscale属性为1，可实现所有页面置灰的效果。完整示例代码如下：主页Index.ets示例代码如下：
 
   ```ts
@@ -182,7 +182,7 @@ content_hash: sha256:535a13ad833e5e29959bc3ebee6c7bc14f824cd1663fe0f910e386c81f3
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Dt7AzuhYQiGh-ZngAldRRA/zh-cn_image_0000002628407216.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/m-qlxDePSkmXS7xq62JFxQ/zh-cn_image_0000002628407216.png "点击放大")
 
 ## 常见FAQ
 

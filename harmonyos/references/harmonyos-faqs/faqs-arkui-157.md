@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-157
 title: 如何实现类似keyframes的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现类似keyframes的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:058714089fe45eefd2978cecf3f35ec11f85036895b6f4dd2f72693a78c4767f
 ---
 

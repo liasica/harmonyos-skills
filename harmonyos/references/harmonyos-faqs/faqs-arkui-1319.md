@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1319
 title: 验证码粘贴填充异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 验证码粘贴填充异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c284c40d633627c7964ab12c9d905e0ac4316e14dd8e64bb0e53ac3079f90a2b
 ---
 

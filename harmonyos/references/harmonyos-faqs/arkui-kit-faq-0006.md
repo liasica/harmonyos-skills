@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI-Swiper组件滑动与切换常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI-Swiper组件滑动与切换常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:32+08:00
+scraped_at: 2026-10-28T07:46:59+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:6180b75a88564cbf65b40865f55413d25b10a3b4c4a33d05fd0cc83a428d3cff
+content_hash: sha256:f04fefc8899494ff1479c2b68193479ccc9851503887f2771f3dd0d3754744d8
 ---
 
 **Q：如何在Swiper最后一项的尾部设置一个添加按钮，并自定义按钮的大小？效果预览：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/8kX68VS6SQ2xCtXMnqlfbA/zh-cn_image_0000002793586631.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/sRAlt7wYTpu2o80gUhgrbg/zh-cn_image_0000002793586631.png "点击放大")
 
 **A**：在外层使用Scroll组件，内部依次排列Swiper组件和添加按钮，设置Swiper优先滑动。当Swiper滑动到末尾时，继续滑动的为外层Scroll组件，显示出添加按钮。
 
@@ -186,7 +186,7 @@ struct StageDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0UqENSsQQjeVlgWXSAl7_g/zh-cn_image_0000002793507491.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Q0Zmqc7TTi-WGjykqPIYjg/zh-cn_image_0000002793507491.png "点击放大")
 
 **Q：Swiper里嵌套不同的视频，滑动Swiper时（比如从第一个Item滑动到第二个Item），如何让之前的Item暂停视频播放？**
 
@@ -245,7 +245,7 @@ struct demoExample {
 
 **Q：使用Swiper组件的DotIndicator构建导航指示器，并将导航点底部相对于Swiper的位置属性bottom设置为0，该指示器无法完全贴底，具体演示如下：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/BJIrs6FoQjGXsWj6-OfQEQ/zh-cn_image_0000002764029006.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/B_0wsaC0RjeUCYg4ZeYryw/zh-cn_image_0000002764029006.png "点击放大")
 
 **上下左右存在留白，如何实现可以去除内边距的导航指示器效果？**
 
@@ -311,7 +311,7 @@ struct demoExample {
 
   方案二运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/z9ucsSLGTy-u91snNbAemA/zh-cn_image_0000002793588067.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/hKwEB2pqSuy8IBZR9FxgdA/zh-cn_image_0000002793588067.png "点击放大")
 
 * 方案三：采用API15中Indicator组件。Indicator组件采用的依旧是Swiper中的默认指示器样式，一样有32vp的交互高度限制，不过该组件将Swiper与指示器单独分割，可以通过Column组件单独封装指示器，再通过clip属性裁剪，控制Indicator组件高度，其它的与方案二类似采用Stack组件封装。
 
@@ -363,7 +363,7 @@ struct demoExample {
 
   方案三运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/wyANnT3QTWSOLBXq2rvnzg/zh-cn_image_0000002764190976.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/jbXXHJTeQXieAShseiaUzg/zh-cn_image_0000002764190976.png "点击放大")
 
   **须知** 
 
@@ -422,7 +422,7 @@ struct demoExample {
 
   效果如下：Swiper初始化显示最后一页内容，滑动Swiper会改变showIndex，改变showIndex也能滑动Swiper。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/tnEKIDhYRvS_-pClDH6x2g/zh-cn_image_0000002764196330.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/w5MbMXBQRxu5iM_-AL5SNw/zh-cn_image_0000002764196330.png "点击放大")
 
 **Q：Swiper的index方法显示指定位置无滑动动画，期望和手动滑动动画一致。**
 

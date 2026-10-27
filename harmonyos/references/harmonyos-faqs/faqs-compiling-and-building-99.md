@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译的时候遇到“too many open files”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译的时候遇到“too many open files”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:bf49d3bae75e761460a897ad11ad7203d70a8a24ce7ce056e088e2f6c1db42f5
 ---
 

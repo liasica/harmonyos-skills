@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-302
 title: 如何获取组件渲染完成时间
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何获取组件渲染完成时间
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:03+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7de8a4bc30b5c0fd093f71ce93b6487de768adf621d501c56b96d3c63cc26122
 ---
 

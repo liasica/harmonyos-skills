@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1433
 title: 组件复用时，如何解决animation动画不停止的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 组件复用时，如何解决animation动画不停止的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:2bae7d4634eb4fcb063642c3fe9f94db9080440a223374c472c9704a634ea986
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a517e5593c8f5f8041559d87fafc4eb5144e95cbc31da1903baad6c9cb4ef45b
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:2bae7d4634eb4fcb063642c3fe9f94db9080440a223374c472c9704a634
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Ova0nHxJT6m2ycK_Ww4uSw/zh-cn_image_0000002628763652.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/jQ4lcuaxTnuVCReIFwQbaQ/zh-cn_image_0000002628763652.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/-7ASTt64RGODHdp3SfwjBA/zh-cn_image_0000002658962967.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/WfGzoubgQU-RCcWMTbzpNg/zh-cn_image_0000002658962967.gif "点击放大")
 
 ## 背景知识
 

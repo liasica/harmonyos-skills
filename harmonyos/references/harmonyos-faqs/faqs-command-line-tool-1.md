@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 通过命令行或终端可以正常发布，在Git Bash上发布时提示错误：私钥路径中的私钥内容错误
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 通过命令行或终端可以正常发布，在Git Bash上发布时提示错误：私钥路径中的私钥内容错误
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
+scraped_at: 2026-10-28T07:49:02+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:957b0a3ddff79fab1b4d29042ea944f899764b5581c8800dd77ea179d5c4c0c8
+content_hash: sha256:a63e8605565bb1700f7a3cd2cc49eb975c3e35e2ee220269ebb5c7c7e4caea8c
 ---
 
 **问题现象**
 
 通过命令行或终端可以正常发布，但在Git Bash上发布时出现错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/n8toceyoQimDvCGxsjrvlg/zh-cn_image_0000002624638734.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/1q8j7_T0QXevdeXcN8BCkQ/zh-cn_image_0000002624638734.png "点击放大")
 
 **解决措施**
 

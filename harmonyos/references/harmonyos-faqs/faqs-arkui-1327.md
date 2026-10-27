@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1327
 title: 如何通过拖拽拉起半模态弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何通过拖拽拉起半模态弹窗
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d8d3945ebae15fbe9e57a2b22a47c708bfd76c3df25629a10c6ea965a81b91ee
+scraped_at: 2026-10-28T07:47:20+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:6ba9eea09c98ddc482e42b6ff44f1db3de9015bb19652c2145d738fada2641c1
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:d8d3945ebae15fbe9e57a2b22a47c708bfd76c3df25629a10c6ea965a81
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/LmkBtuUjT8er2owxDL9k7Q/zh-cn_image_0000002658958967.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/hVivN9bMT1i05x5KKCGOtA/zh-cn_image_0000002658958967.png "点击放大")
 
 ## 背景知识
 

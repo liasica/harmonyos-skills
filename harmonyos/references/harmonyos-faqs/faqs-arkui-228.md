@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-228
 title: 自定义组件是否能通过容器保存
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义组件是否能通过容器保存
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6b790ead9cfe95422ee6afd926cc46de87a5dd79a97b29c0bbe8834aff9d9c4a
 ---
 

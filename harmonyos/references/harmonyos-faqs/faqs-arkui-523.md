@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-523
 title: 如何判断用户的点击事件是否落在目标区域
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何判断用户的点击事件是否落在目标区域
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:23+08:00
+scraped_at: 2026-10-28T07:47:46+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8ed548d61e076434db466ad9eca5c84ec9367d698d677f2d7f00d901d3674170
+content_hash: sha256:14d8597f30f3690d82e21e84b200128574a44e0895d8e624ad55d5f668177f74
 ---
 
 ## 问题现象
 
 如下图，一个圆形区域被分为四个区域，如何判断用户点击在相应目标区域？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/4w1KikTvRqm2fclnfACI7Q/zh-cn_image_0000002658910377.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/G59BBblyRLqdekSI66OSVA/zh-cn_image_0000002658910377.png "点击放大")
 
 ## 背景知识
 

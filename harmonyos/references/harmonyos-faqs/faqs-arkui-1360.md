@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1360
 title: 拖拽模块到指定位置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 拖拽模块到指定位置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:09+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:24ac9a15db96e61ce019603d109e20d15d08e1c167de861bd174c89c3da5fa41
+scraped_at: 2026-10-28T07:47:21+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:06d708e5f4d4f68fa311b7f73ca43e5a9f56c1198ea92bcf7547d905751db5c5
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:24ac9a15db96e61ce019603d109e20d15d08e1c167de861bd174c89c3da
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/zpTwdz-lQXSaOGEA7UWBRA/zh-cn_image_0000002628761882.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/tozSw-F8R3eoCMMO5YBQFA/zh-cn_image_0000002628761882.png "点击放大")
 
 ## 背景知识
 

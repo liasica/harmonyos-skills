@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-multi-devi
 title: 如何实现全局悬浮窗功能
 breadcrumb: FAQ > 多设备场景 > 一次开发多端部署 > 常见问题 > 如何实现全局悬浮窗功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:39+08:00
 doc_updated_at: 2026-07-30
-content_hash: sha256:3effe99635d08b1b906128fd9a16e7272f4c79ef49e54558bb9220896691868e
+content_hash: sha256:c582431df2f5c298df66a5741897ce53ebd74d352907137d75af27aac139045b
 ---
 
 ## 问题现象
@@ -293,7 +293,7 @@ content_hash: sha256:3effe99635d08b1b906128fd9a16e7272f4c79ef49e54558bb922089669
 
      效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/FsPk09_IS92pNcI3OmCaSQ/zh-cn_image_0000002658911737.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/pxJW3fqYRKmLojwtPn_4Iw/zh-cn_image_0000002658911737.png "点击放大")
 * 方案二：通过系统提供的悬浮窗实现，通过createWindow的创建类型为TYPE\_FLOAT的窗口即可实现。
   1. 新建FloatWindowBySystemApi.ets页面，通过setUIContent、moveWindowTo、resize、showWindow方法分别设置窗口加载的内容页面、位置、大小、窗口的显示，具体实现如下：
 
@@ -449,7 +449,7 @@ content_hash: sha256:3effe99635d08b1b906128fd9a16e7272f4c79ef49e54558bb922089669
 
      效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/yeGk0-2ZSq6i7YQBROWGzw/zh-cn_image_0000002628392524.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/b0PNDRFRT9iOqEOMosYmOw/zh-cn_image_0000002628392524.png "点击放大")
 * 方案三：通过多Ability实现，该方案主要通过startAbility拉起UIAbility，并隐藏窗口的标题栏和控制窗口大小和层级来实现。
   1. 新建一个名称为的FloatWindowAbility的UIAbility，通过setWindowDecorVisible隐藏窗口的标题栏，通过setWindowTitleButtonVisible隐藏标题栏上的最大化、最小化、关闭按钮，再通过setWindowTopmost方法设置窗口置顶，具体实现如下：
 
@@ -592,7 +592,7 @@ content_hash: sha256:3effe99635d08b1b906128fd9a16e7272f4c79ef49e54558bb922089669
 
      效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Bc8ZstAvQ6GIRR4XjsA-tQ/zh-cn_image_0000002658791795.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/kF_c4sdpTS2In20vfZzKfQ/zh-cn_image_0000002658791795.png "点击放大")
 * 方案四：通过闪控球实现。
 
   闪控球是一种在设备屏幕上悬浮的非全屏应用窗口，为应用提供临时的全局能力，完成跨应用交互，具体实现可参考官网详细开发步骤：[全局闪控球开发指导](../harmonyos-guides/floatingball-guide.md)。

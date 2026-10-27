@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-469
 title: Tabs组件，使用tab键循环走焦，会在最后一个页面和最后一个页签之间循环，怎么解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs组件，使用tab键循环走焦，会在最后一个页面和最后一个页签之间循环，怎么解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:00+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7ac74a074e5268370fb59f7096e912f5bfa0bcc9405134a5c499999e6f96e300
 ---
 

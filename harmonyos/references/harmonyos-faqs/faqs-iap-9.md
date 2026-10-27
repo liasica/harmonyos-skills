@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-9
 title: 如何查询应用内支付交易后的订单信息
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 如何查询应用内支付交易后的订单信息
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:31+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:f186a0c7f61e87c1879263e0aba68d67ad1ca663c700aa9a5f0fb08e9b0985c1
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:4abb7c8a1ad110a6cff2b5e89f44eb27b1adb2ff58498121c43ed7e108b18a0f
 ---
 
 ## 问题现象
@@ -24,7 +24,7 @@ content_hash: sha256:f186a0c7f61e87c1879263e0aba68d67ad1ca663c700aa9a5f0fb08e9b0
 
 1. 登录[开发者联盟](https://developer.huawei.com/consumer/cn/)，进入“HarmonyOS 开发者中心”，在“我的报表>支付报表”中可以查询到已售出的商品订单信息，通过该方式能直观的看到用户的支付金额、支付方式、订单状态和是否退款等信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/xBMWHWixRyC-ErFFmicJhA/zh-cn_image_0000002628554464.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/yl1l5-eKQ4qmtEdj27oDTg/zh-cn_image_0000002628554464.png "点击放大")
 2. 应用服务端查询订单信息，IAP KIT提供了三种API供开发者接入来查询对应的信息：
    * [查询用户的历史购买记录](../harmonyos-references/iap-order-info-query-by-order-history.md)：开发者可以通过此接口查询用户的历史购买记录，来判断是否给用户展示促销价格、是否已完成权益发放等场景。该方式支持开发者传入购买订单号purchaseOrderId后查询对应的购买记录，查询时间范围不超过365天。
    * [应用购买记录相关支付订单查询](../harmonyos-references/iap-order-query.md)：开发者可以通过查询指定时间范围内的付款和退款订单。该方式开发者仅需在应用购买记录相关支付订单查询接口的[Request Body](../harmonyos-references/iap-order-query.md#request-body)中传入startTime和endTime两个参数，接口请求成功后返回的orderInfoList中即可看到对应时间内的付款和退款订单。

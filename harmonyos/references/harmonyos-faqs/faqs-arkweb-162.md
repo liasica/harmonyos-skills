@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-162
 title: Web组件拦截请求跳转指定页面后再返回时白屏
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件拦截请求跳转指定页面后再返回时白屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:33+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:07+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:182bbbc4f1dbf0f7c2f5e2c19cb40913ab234a502021633f322bbad6aa950962
 ---
 

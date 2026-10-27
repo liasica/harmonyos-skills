@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1504
 title: 如何通过Refresh组件实现下拉刷新动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何通过Refresh组件实现下拉刷新动画
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:9e9222337ec7b761f668badcb3bcca7371ae027dd958a470b7cfe218f6a8ed3c
+content_hash: sha256:7c81b9c9faf0c08ef4b8acd4b224efd74230cfa9aa5433924efaf7f5f252f66b
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:9e9222337ec7b761f668badcb3bcca7371ae027dd958a470b7cfe218f6a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/HBhgB_akSqu8wgwpeo101A/zh-cn_image_0000002628766428.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/BFdpJx9nT7-KV7LuP8emtg/zh-cn_image_0000002628766428.gif "点击放大")
 
 ## 背景知识
 

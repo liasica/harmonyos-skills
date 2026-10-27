@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-79
 title: C侧如何打开文件
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > C侧如何打开文件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:57+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:5923a249aabebaa224fbbe1b506c75fe69e348b20d2f68a50420dcbacab8f130
 ---
 

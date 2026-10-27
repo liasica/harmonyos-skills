@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-calendar-4
 title: 应用创建了日程事件但无相关提醒功能
 breadcrumb: FAQ > 应用服务开发 > 日历服务（Calendar Kit） > 应用创建了日程事件但无相关提醒功能
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:40+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:da315443a209a9864814da3327ca6cee2ca3e2ae6cfb3bc9ee604b38716b1325
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: List组件下拉刷新与加载
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > List组件下拉刷新与加载
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:09+08:00
+scraped_at: 2026-10-28T07:47:32+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:8a02a416b15564d9c601f4f83316521d0d502b0fdf3b3ee7f316eaf13e40000e
+content_hash: sha256:91febb1b15ab0b641694b297b6d80d069be350f2d76d1b8054d98eab062565e8
 ---
 
 **Q：如何实现在Refresh组件下，通过滑动操作展开和收起List组件的第一个ListItem，实现下拉刷新的效果？**
@@ -79,7 +79,7 @@ struct ScalingComponent {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/fz4UUz0-SKKsjvj7q9HrpQ/zh-cn_image_0000002795322703.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/82t5OFMQQ9GlMxudISA9vQ/zh-cn_image_0000002795322703.png "点击放大")
 
 **Q：在List组件中，如何实现下拉刷新和上拉加载的功能？**
 

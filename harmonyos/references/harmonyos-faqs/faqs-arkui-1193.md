@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1193
 title: Slider组件滑轨的宽度不能铺满父容器
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Slider组件滑轨的宽度不能铺满父容器
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7766863e87d6a308e9fc0159da42edead8341ba8b867d25bf07c090cdbbe136a
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:847f718fdcd07f539b8059dc0082338fba46e3c1792645385d9be141a9be3648
 ---
 
 ## 问题现象
 
 如图所示，当Slider组件的style属性设置为SliderStyle.OutSet时，随着滑块大小的增加，Slider组件中滑轨的宽度会相应减少，从而无法填满其父容器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/T8j03dfeRLyVXJ4F-wZdig/zh-cn_image_0000002628592974.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/31OzAw7ZSKyMteuE-znsDg/zh-cn_image_0000002628592974.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/s_wYiGBXRHqRk5ZGTx3FWQ/zh-cn_image_0000002658832229.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/u6kJ6PTnTRqRypZq4Y6QOQ/zh-cn_image_0000002658832229.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 邀请测试链接点击无法安装如何解决
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 邀请测试链接点击无法安装如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:32+08:00
+scraped_at: 2026-10-28T07:48:45+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:9ed56cb0b08c374097dd05477e78bc35bd07bf5322b09bfae4f4f423c0e646ee
+content_hash: sha256:7fa9a5427246b242264b364fa75e8353ef9070ccaba08e60566782139b04b00e
 ---
 
 ## 问题现象
@@ -52,6 +52,6 @@ A：
 
 Q：邀请测试，点击开始测试-打开，报：测试版本已过期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/lwFhCUAARsunmSKZj1kmFA/zh-cn_image_0000002658793879.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/0TGHk6q_QYC5ORSalI5DnA/zh-cn_image_0000002658793879.png "点击放大")
 
 A：显示的是“打开”不是“安装”说明手机上已经安装了同版本的应用，并且该版本已经过期，卸载后用新的邀请链接重新安装即可。

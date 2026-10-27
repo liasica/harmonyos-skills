@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-26
 title: 服务卡片实现长期破窗效果
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 服务卡片实现长期破窗效果
 category: harmonyos-faqs
-scraped_at: 2026-10-23T07:12:33+08:00
-doc_updated_at: 2026-10-22
+scraped_at: 2026-10-28T07:46:51+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7e5a7ff8fd94572a45bfd207e6076921e4ed0b4624eb263a09d578422beda10a
 ---
 

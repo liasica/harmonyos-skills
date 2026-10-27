@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1472
 title: onSizeChange计算有偏差，如何保持和onAreaChange计算一致
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > onSizeChange计算有偏差，如何保持和onAreaChange计算一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:10+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cb368a0f0fe84ef74d7bc1fd3c981f74e6dd67863f44f788d82de6471f915511
 ---
 

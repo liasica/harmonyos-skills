@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1395
 title: 使用TextPicker实现DatePicker的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用TextPicker实现DatePicker的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:16+08:00
+scraped_at: 2026-10-28T07:47:35+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:ed9cdfe7c812a6fe41957d8c4ba67f6cc2b6306c2a396d9dbf9bbd2026051fa1
+content_hash: sha256:b42ea6ff9c857c3cbd0b215ff298a059a8804a96f804b95a8801d6ef186029d5
 ---
 
 ## 问题现象
@@ -50,7 +50,7 @@ DatePicker可以用于在指定日期范围内选择日期，但是开发过程�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/cU5-8QDYTu-7fZKtEWswYw/zh-cn_image_0000002628762570.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/gMEnfxVOSLqHRYTEqoz9Ig/zh-cn_image_0000002628762570.png "点击放大")
 
 * 场景二解决方案：使用单列联动选择器实现年的选择，多列联动选择器实现年月或月日的选择。
 
@@ -135,7 +135,7 @@ DatePicker可以用于在指定日期范围内选择日期，但是开发过程�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/9cc7KtmHQheisHaOMTW6bA/zh-cn_image_0000002658961883.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ZsyqMrgOSGa3Q-SrFqGIsQ/zh-cn_image_0000002658961883.png "点击放大")
 
 * 场景三解决方案：当多列联动选择器触发[onChange](../harmonyos-references/ts-basic-components-textpicker.md#onchange18)时，判断如果年份发生改变，就把月份设置为之前的月。
 
@@ -210,4 +210,4 @@ DatePicker可以用于在指定日期范围内选择日期，但是开发过程�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ogdDIe6gRtWc4BqF_v5AJg/zh-cn_image_0000002628602672.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/bIr0P1rRRBuR8KpB1H4uDw/zh-cn_image_0000002628602672.png "点击放大")

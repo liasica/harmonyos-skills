@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI-Grid组件布局与交互常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI-Grid组件布局与交互常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:10+08:00
+scraped_at: 2026-10-28T07:47:32+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:0a11e31c18d1b7f02228ff24107b5bc1d9e1ad4b7b4321585e2997b076a6c74c
+content_hash: sha256:01a28cb9f9efabdd8c0abb0b094fb93c1ac312e9553f683f41f17f800c1db20f
 ---
 
 **Q：为Grid组件添加点击事件以实现缩放动画效果时，如何实现只点击特定GridItem项的功能？**
@@ -126,7 +126,7 @@ struct GridClick {
 
 运行效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/-hFgBKv0SIiQRtcIBSQr_A/zh-cn_image_0000002765935784.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/7KF4cB6vTESzjXJ34iZGZg/zh-cn_image_0000002765935784.png "点击放大")
 
 **Q：Grid组件无法兼顾高度100%、子组件居中、拖拽事件三者同时存在。具体现象是：设置高度100%后，可以拖拽，但子项无法上下居中；如果想居中，就必须设置rowsTemplate和columnsTemplate，但没有拖拽动画。**
 
@@ -295,11 +295,11 @@ struct gridDemo {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/2iulIDlnTz-NMTnZibbrpQ/zh-cn_image_0000002766095730.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/3OEV4zrcQEu-9F4RAySTdg/zh-cn_image_0000002766095730.png "点击放大")
 
 **Q：在开发过程中，Grid布局是构建页面结构的强大工具。特别是在复杂界面设计中，常需利用Grid布局实现单元格的灵活合并，以确保界面元素的精确对齐和响应式调整，从而提升体验。如何使用Grid单元格实现合并布局？预期效果：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/h8WRJV9oRB-cOotURxKKOQ/zh-cn_image_0000002766095732.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/bw3oWL4kTGGeuKH96HwVkQ/zh-cn_image_0000002766095732.png "点击放大")
 
 **A**：方案一：通过GridItem的行列跨度属性合并单元格。
 
@@ -312,7 +312,7 @@ struct gridDemo {
    * columnStart：设置当前元素起始列号；
    * columnEnd：设置当前元素终点列号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/o0gJQSH_Tr2PyywupYfMbQ/zh-cn_image_0000002766095736.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/WPMzQtRoQFWtcFJW9VDXKg/zh-cn_image_0000002766095736.png "点击放大")
 
    分析上图，这是一个五行四列的网格布局，其中编号1、2、3的网格占了整行（合并列），它们的元素起始列号为0，元素终点列号为3，如果设置了rowStart/rowEnd/columnStart/columnEnd，GridItem会占据指定的行数(rowEnd-rowStart+1)或列数(columnEnd-columnStart+1)。
 
@@ -381,7 +381,7 @@ struct gridDemo {
    * rowSpan：指定当前元素的占用行数；
    * columnSpan：指定当前元素的占用列数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/xYXOoxWsSvGZE45CV-t6rg/zh-cn_image_0000002795494297.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/XjMtnFnMTfyaK3H4pHJYHQ/zh-cn_image_0000002795494297.png "点击放大")
 
    分析上图，为了实现预期效果，可以对网格进行起始位置以及占用列数的设置，如编号1号的网格起始行号为0，起始列号也为0，占用行数为1，占用列数为4；编号9号的网格起始行号为4，起始列号为1，占用行数为1，占用列数为3。其余网格依次推理，更多示例代码详见：[固定行列Grid](../harmonyos-references/ts-container-grid.md#示例1固定行列grid)。
 
@@ -512,7 +512,7 @@ struct CustomGridItem {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/tZ9SRYtUSFy7pR4qa4o6hA/zh-cn_image_0000002795494411.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/vKJA_7aWTtaoxrT5UqwkQg/zh-cn_image_0000002795494411.png "点击放大")
 
 **Q：如何实现长按图标后，拖动时手机发出震动；拖动图标时，图标样式可变，并且最终可以被拖到另外一个Grid？**
 

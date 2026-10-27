@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-22
 title: 节拍器节拍不均
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > 节拍器节拍不均
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:65b63926ef8b90a48aa0a9b2efd00fabf81e2925d99c1e2eba5c1dd365ddf31e
+scraped_at: 2026-10-28T07:48:31+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:176380df85ec4c139dd89770a00a8678ed6d72fa8f11e24620c7a786c9e11a31
 ---
 
 ## 问题现象
@@ -22,7 +22,7 @@ content_hash: sha256:65b63926ef8b90a48aa0a9b2efd00fabf81e2925d99c1e2eba5c1dd365d
 
 1. 查看播放器的实现方式，存在AVPlayer，确定为AVPlayer实现。如以下示例：
 
-   ```screen
+   ```ts
    import { BusinessError } from '@kit.BasicServicesKit';
    import { media } from '@kit.MediaKit';
 

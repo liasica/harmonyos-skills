@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-815
 title: 深浅色模式切换页面渲染失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 深浅色模式切换页面渲染失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:6ad888385ef1da0bc2c1e9f1e068bd9fdb48b7d2d0d60557344e80c089952407
+content_hash: sha256:8658ab886383fac81cf18af22fea23dabe5ba98b7c882608df0377b224ef239b
 ---
 
 ## 问题现象
@@ -14,11 +14,11 @@ content_hash: sha256:6ad888385ef1da0bc2c1e9f1e068bd9fdb48b7d2d0d60557344e80c0899
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/yXcUJ70tQ32tXdzO-Pq5Og/zh-cn_image_0000002628397896.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/oYLoWkHZSq2TL1_0DTm4JA/zh-cn_image_0000002628397896.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/_7hP-kzxQcSZKZW8-Y8WVg/zh-cn_image_0000002658797169.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/vwKAbqw7RTGiBPerorx0ZQ/zh-cn_image_0000002658797169.gif "点击放大")
 
 ## 背景知识
 

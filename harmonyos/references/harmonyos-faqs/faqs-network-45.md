@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-45
 title: 如何判断使用的是移动蜂窝网络
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何判断使用的是移动蜂窝网络
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:36+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:14+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8ecd3ebf223100ae26ab1cbaae947ea1130176fe02ccbc042c9bced104bf280b
 ---
 

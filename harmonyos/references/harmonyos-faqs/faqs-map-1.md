@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-1
 title: 定位结果在地图上显示时存在偏差
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 定位结果在地图上显示时存在偏差
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:48:37+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:a3a184aedea187021a582a2aff04b068b08a89511d8f923f1bfee25c466f0dc4
 ---
 

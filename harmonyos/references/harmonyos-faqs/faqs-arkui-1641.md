@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1641
 title: 如何实现键盘上方自定义工具栏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现键盘上方自定义工具栏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
+scraped_at: 2026-10-28T07:47:57+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:bee5f4193b1222f96e79b410b324c96800072bc6c0d534cbb59041d820601895
+content_hash: sha256:6d9b72da73836922296231a2063333b8fac65a93db505bbc42911c56b5a08a5d
 ---
 
 ## 问题现象
@@ -83,7 +83,7 @@ content_hash: sha256:bee5f4193b1222f96e79b410b324c96800072bc6c0d534cbb59041d8206
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/XbU6qhu_RjqgGxwucsbQmw/zh-cn_image_0000002659060593.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/vJrAkRRKS9-h9xfrl0PXwA/zh-cn_image_0000002659060593.gif "点击放大")
 * 方案二：自定义工具栏组件，借助堆叠容器Stack进行页面布局，将组件设置为底部横向居中。定义状态变量isVisible以控制自定义工具栏的显示与隐藏：在TextInput组件聚焦时显示，失焦时隐藏。同时，通过on('keyboardHeightChange')方法监听软键盘高度变化，依据键盘高度动态调整自定义工具栏的位置，使其紧贴于键盘上方。
 
   ```ts
@@ -205,7 +205,7 @@ content_hash: sha256:bee5f4193b1222f96e79b410b324c96800072bc6c0d534cbb59041d8206
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/-PGgNgmhTFO70DV2vUsT8Q/zh-cn_image_0000002628821236.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/rZ-gTTbgTjGhGdqkd_jZ9w/zh-cn_image_0000002628821236.gif "点击放大")
 
 ## 常见FAQ
 

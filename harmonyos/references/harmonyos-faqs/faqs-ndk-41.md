@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-41
 title: ArkTS侧如何接收Native侧的键值对进行修改并返回到Native侧
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > ArkTS侧如何接收Native侧的键值对进行修改并返回到Native侧
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:57+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f638b82a8c9982a9e65e68092c6753f1d2b9ec076bd3507ecc2ded943831e0ec
 ---
 

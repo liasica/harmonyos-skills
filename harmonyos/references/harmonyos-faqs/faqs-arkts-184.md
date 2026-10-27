@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-184
 title: 基于动态时间补偿实现自定义定时器
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 基于动态时间补偿实现自定义定时器
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:31+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:6027adcf2670b65a034b549b68782255b74f01bdd320278547fd3c133851768a
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-198
 title: 如何获取屏幕的宽度、高度、分辨率和横竖屏等信息
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何获取屏幕的宽度、高度、分辨率和横竖屏等信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:35+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:7eafe0615a07a17272d97975ef7c9e26892e6dfc8d07ebece3afa926e9dd0a63
 ---
 

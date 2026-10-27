@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-938
 title: Text组件计算文本行数
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Text组件计算文本行数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:22+08:00
+scraped_at: 2026-10-28T07:47:44+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7a7e3de4b2c70cac729048837ad8eee898f65a0156114ff42209731ecf924541
+content_hash: sha256:7685f6778f84a4e374fe558b8903a053404f776225daf428de83e13204a23249
 ---
 
 ## 问题现象
@@ -61,4 +61,4 @@ struct Index1 {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/7DB9T9yQQzyNVuy0WPaMRQ/zh-cn_image_0000002628561100.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/zSYxEad5QNGYSky75u3rNQ/zh-cn_image_0000002628561100.png "点击放大")

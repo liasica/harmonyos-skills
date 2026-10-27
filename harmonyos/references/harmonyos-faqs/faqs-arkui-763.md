@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-763
 title: 如何添加并且动态修改全局水印
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何添加并且动态修改全局水印
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:21+08:00
+scraped_at: 2026-10-28T07:47:44+08:00
 doc_updated_at: 2026-08-20
-content_hash: sha256:8c0c08003d57d0e0d66bf7554fd111fc60336df841316ee84a602be83192bb2c
+content_hash: sha256:0339b7d5a90a36f2efddbc0529fcfc778267fe0bc545b54e4b142eb9088cf06f
 ---
 
 ## 问题现象
@@ -164,7 +164,7 @@ content_hash: sha256:8c0c08003d57d0e0d66bf7554fd111fc60336df841316ee84a602be8319
 
   场景二效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/kqOKdwflTXyOWl_qrZPVlg/zh-cn_image_0000002712944509.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Uf0oR9YtQH26E5YtBloMZw/zh-cn_image_0000002712944509.png "点击放大")
 * 场景三：页面使用了Navigation布局想实现添加全局水印，可使用透明背景的Canvas画布绘制文字水印，再使用[Stack](../harmonyos-references/ts-container-stack.md)组件叠加在Navigation组件上即可。详情请参考如下代码：
 
   ```ts
@@ -343,7 +343,7 @@ content_hash: sha256:8c0c08003d57d0e0d66bf7554fd111fc60336df841316ee84a602be8319
 
   场景三效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/R4n-AViIQDavjG16UNLMyQ/zh-cn_image_0000002712945851.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/uM2zHLJ5S76knekX_9iXRg/zh-cn_image_0000002712945851.png "点击放大")
 
 ## 常见FAQ
 

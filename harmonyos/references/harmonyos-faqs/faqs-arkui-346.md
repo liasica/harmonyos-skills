@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-346
 title: 使用Canvas如何实现部分区域镂空的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用Canvas如何实现部分区域镂空的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:56+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:e20caf8d833572dd8f960264cf046ad363dc55433104145bc5c7443ecd355bc9
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-computer-1
 title: 自由窗口下如何自定义窗口标题栏
 breadcrumb: FAQ > 多设备场景 > 电脑 > 常见问题 > 自由窗口下如何自定义窗口标题栏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:38+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:08c338b5869789a5b40b8346e632c7330c02f45d71ba1bb40037fa06db2f26aa
+content_hash: sha256:50c8d3d3a0f5792abbb1373940c17fbaa3ac1681e216366cf951703c577c1329
 ---
 
 ## 问题现象
@@ -125,7 +125,7 @@ PC等自由窗口设备上如何自定义窗口标题栏，包括标题栏隐藏
 
     效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/TmLBcCF5RXyZ79VJlpgRlA/zh-cn_image_0000002628552370.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/yaOFgDM0RNazIAseOKQtFw/zh-cn_image_0000002628552370.png "点击放大")
 * **场景二：** 自定义标题栏常驻，并设置最大化功能，使得点击最大化按钮恢复窗口全屏沉浸式。
 
   PC窗口可通过[maximize](../harmonyos-references/arkts-apis-window-window.md#maximize12)进入沉浸式，在自定义最大化逻辑时，调用窗口沉浸式接口设置窗口沉浸式效果。参考示例如下：
@@ -241,4 +241,4 @@ PC等自由窗口设备上如何自定义窗口标题栏，包括标题栏隐藏
 
     效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/yBXEEgFMRtWyR35LvjcYag/zh-cn_image_0000002658911691.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/n8sqFNZaT-S-uuW6k66KWA/zh-cn_image_0000002658911691.png "点击放大")

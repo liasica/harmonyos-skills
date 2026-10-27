@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-576
 title: 如何实现ListItem点击后居中显示的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现ListItem点击后居中显示的效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:289a547fa2b86ac8c36b97602aaba5b840d3f2638888c650d6b9530bbcd81019
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ced37d0db10a66e77e89ebd805f1d453ecaeac68fcc8716f7697ac625613aa19
 ---
 
 ## 问题现象
@@ -19,7 +19,7 @@ content_hash: sha256:289a547fa2b86ac8c36b97602aaba5b840d3f2638888c650d6b9530bbcd
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/5QwFVpCoSKGRoj52qygFyw/zh-cn_image_0000002658911373.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/-G56TL1PRzSNFhP1yyfSVw/zh-cn_image_0000002658911373.gif "点击放大")
 
 ## 背景知识
 

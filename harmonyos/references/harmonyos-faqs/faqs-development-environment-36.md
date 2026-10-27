@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 在内网环境中使用DevEco Studio开发会有哪些常见问题
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 在内网环境中使用DevEco Studio开发会有哪些常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
+scraped_at: 2026-10-28T07:48:49+08:00
 doc_updated_at: 2026-08-05
-content_hash: sha256:22ca546f79395814d463b49cf1df16835b1e3590ff1c737c183defd053b1af3f
+content_hash: sha256:e1c7cc57dddc524525512390c6df8b1f8ecc086815467133e1a0406d4b2bd102
 ---
 
 ## 问题现象
@@ -24,7 +24,7 @@ content_hash: sha256:22ca546f79395814d463b49cf1df16835b1e3590ff1c737c183defd053b
 
 * **场景一：内网环境，项目构建失败：**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/KbKaLJXeRv-_-J4MIcufig/zh-cn_image_0000002692927757.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/4gxz1Q3BRwCl3QRbr912rQ/zh-cn_image_0000002692927757.png "点击放大")
 * **场景二：内网开发中模拟器不能下载：**
 
   在内网开发发现模拟器不能下载，需要提供模拟器下载使用相关的域名。

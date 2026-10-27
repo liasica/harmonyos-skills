@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-61
 title: Image无法使用bindContextMenu
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image无法使用bindContextMenu
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:4a8736cfbb12cea39813c2c3ccdce4ffbe1131d4de5e03e5433c128a4fd622ca
 ---
 

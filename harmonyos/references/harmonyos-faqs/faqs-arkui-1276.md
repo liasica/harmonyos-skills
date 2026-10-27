@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1276
 title: Navigation在分栏模式下，如何给右侧空白部分设置默认页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation在分栏模式下，如何给右侧空白部分设置默认页面
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:19+08:00
+scraped_at: 2026-10-28T07:47:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:e42fdd15f5d11576f292a3159d19a7b330ec63774f5e5adac005ce3ef18d997c
+content_hash: sha256:6163ef43c6fb2e2bc5aa1dd306e364e9ed1d4bc59a6ab0a9e1ac02f4a3f853c5
 ---
 
 ## 问题现象
@@ -167,7 +167,7 @@ Navigation在Split模式下，未点击左侧导航栏时，右侧子页显示�
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/4r9fWdc1TRWKEo1z7sbb9Q/zh-cn_image_0000002658955337.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/nHbU1SWhTk2zKkfY6-o9cg/zh-cn_image_0000002658955337.png "点击放大")
 * **方案二：采用API20中的splitPlaceholder属性。**
 
   详情参考：[示例14](../harmonyos-references/ts-basic-components-navigation.md#示例14设置navigation双栏模式)。

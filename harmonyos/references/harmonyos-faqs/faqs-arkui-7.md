@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-7
 title: 如何在可滚动的容器组件中实现曝光埋点
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在可滚动的容器组件中实现曝光埋点
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:21:19+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:47:00+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:164f29f5a3ea514f61159bdab999154ffe4634f3f75fcf84e203801c043c2f90
 ---
 

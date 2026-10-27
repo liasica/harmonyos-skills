@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-comp
 title: 嵌套Tabs时渐变导航无法穿透标题栏的解决方法
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 嵌套Tabs时渐变导航无法穿透标题栏的解决方法
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-07-07
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:0ee9b29c8435cf459f6bd729cf919a623a721ff3322f6d8fc5170069d3b92f07
 ---
 

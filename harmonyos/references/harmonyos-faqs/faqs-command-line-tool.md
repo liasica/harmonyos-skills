@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 命令行工具
 breadcrumb: FAQ > DevEco Studio > 命令行工具
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:21b94022f792a25f2b88b2a29263f3c22e156e995c95e8958e87201b729df9f7
+scraped_at: 2026-10-28T07:49:02+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c4a9e8b7be4d3b776e8c0b702ee92b59f8be65e47c2c3616dc288edcefbdddbd
 ---
 
 * **[通过命令行或终端可以正常发布，在Git Bash上发布时提示错误：私钥路径中的私钥内容错误](faqs-command-line-tool-1.md)**
@@ -20,7 +20,7 @@ content_hash: sha256:21b94022f792a25f2b88b2a29263f3c22e156e995c95e8958e87201b729
 * **[ohpm publish在本地Git bash环境下一直报错“the content of private key in the key\_path error”](faqs-command-line-tool-10.md)**
 * **[如何解决ohpm上传har包异常，报错：The publishId is invalid!](faqs-command-line-tool-11.md)**
 * **[如何获取可用的三方库](faqs-command-line-tool-12.md)**
-* **[如何使用ohpm引入三四方库](faqs-command-line-tool-13.md)**
+* **[如何使用ohpm引入三方库](faqs-command-line-tool-13.md)**
 * **[ohpm install下载三方库时报错](faqs-command-line-tool-14.md)**
 * **[如何重命名本地引用库](faqs-command-line-tool-15.md)**
 * **[参数化配置是否支持代码读取](faqs-command-line-tool-16.md)**
@@ -44,3 +44,4 @@ content_hash: sha256:21b94022f792a25f2b88b2a29263f3c22e156e995c95e8958e87201b729
 * **[ohpm命令常见报错问题汇总](faqs-command-line-tool-34.md)**
 * **[如何通过命令行或流水线脚本方式构建并安装应用](faqs-command-line-tool-35.md)**
 * **[如何解决私仓上传包失败的问题](faqs-command-line-tool-36.md)**
+* **[如何获取当前最前台UI界面的应用包名](faqs-command-line-tool-37.md)**

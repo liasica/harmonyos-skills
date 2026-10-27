@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-242
 title: 如何获取手机屏幕信息
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何获取手机屏幕信息
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:cedf2bf5aaa49480a0bcba1943b246b78c588d475576b5404acb47d4ff450f08
 ---
 

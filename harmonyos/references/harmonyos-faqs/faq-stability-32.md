@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-3
 title: 应用使用过程中自动退出
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 应用使用过程中自动退出
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
+scraped_at: 2026-10-28T07:46:40+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:98839bd4547fe62a7acdffd35f18dd32719076bb3900bfcf93dbea8eef37528c
+content_hash: sha256:0beb11f4139bcd79438030a7db8010962ea9f26fde2076c9622b3c10f7fe1cb9
 ---
 
 ## 问题现象
@@ -50,7 +50,7 @@ content_hash: sha256:98839bd4547fe62a7acdffd35f18dd32719076bb3900bfcf93dbea8eef3
    ```
 3. 使用HiSmartPerf工具抓取该过程的Trace信息，观察到处理onAreaChange接口时间达到16s，远远超过一般的耗时（us级）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/C7P5_Wh-QvuSvPWl9M63lQ/zh-cn_image_0000002658794247.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/t27tpujaSUWzdFkVk6TpSg/zh-cn_image_0000002658794247.png "点击放大")
 
 ## 分析结论
 

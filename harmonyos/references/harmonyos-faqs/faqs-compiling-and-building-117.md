@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: CPP编译报错“A 'unknown type name' error has occurred”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > CPP编译报错“A 'unknown type name' error has occurred”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:54+08:00
+scraped_at: 2026-10-28T07:48:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:92d77bfcf44fef8f6d8c0e5a8522ea58748cd0effc5c7eed7fb523eabd9a967b
+content_hash: sha256:700ea32a45085f4ff821406a6d80d402ab8b74c020d0689da318506c6a5e07ad
 ---
 
 **问题现象**
@@ -97,7 +97,7 @@ message(STATUS "Include directories: ${CMAKE_INCLUDE_PATH}")
 
 7.如果报错接口是系统API，查询该接口在当前版本是否可用。例如OH\_AudioWorkgroup\_AddCurrentThread从API 20开始支持。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/CWZuDpTGQW6QoqSmbY972Q/zh-cn_image_0000002624638502.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/LhQ4OmJ-TT-BYrGElSnMXg/zh-cn_image_0000002624638502.png)
 
 **结论**
 

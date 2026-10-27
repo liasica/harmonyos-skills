@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1281
 title: List组件替换元素位置导致UI显示异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > List组件替换元素位置导致UI显示异常
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:786a5e60bb3dca57b594a4d94615466d1b86daac938ee123a3b3f8ca629ec3e2
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:cfd39101255b5b076d6361a68346a4fa9be0bedbfc9fcfe4b2c292486aef17d3
 ---
 
 ## 问题现象
@@ -69,13 +69,13 @@ struct Index {
 
 实现类似于歌曲置顶操作，点击元素后，该元素从原位置消失但未正确显示在顶部，异常效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9h66tY3eTI6rAsn2tBf4KA/zh-cn_image_0000002658837239.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/UsDdpYgEQ6yMTXDruytE0Q/zh-cn_image_0000002658837239.png "点击放大")
 
 ## 效果预览
 
 实现效果，点击任意非首位元素，该元素即可实现置顶，其余元素顺次往下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/TkAIctNKSauT-RT6ydkD9A/zh-cn_image_0000002628597974.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/1ZCAeqS6Rp-5yg7PwyXfbQ/zh-cn_image_0000002628597974.png "点击放大")
 
 ## 背景知识
 

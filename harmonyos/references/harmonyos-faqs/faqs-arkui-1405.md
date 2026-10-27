@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1405
 title: TextInput背景设置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TextInput背景设置
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:55+08:00
+scraped_at: 2026-10-28T07:47:37+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8d73caef3c3fb3c9641b75c10fbc983b361d6e74d5f50c79374c68cdc719f041
+content_hash: sha256:e2b706b7ef169ff76e07db6ce86b82b63dc1d7d6edd16fb04c6a9de0ef2165f2
 ---
 
 ## 问题现象
@@ -59,7 +59,7 @@ content_hash: sha256:8d73caef3c3fb3c9641b75c10fbc983b361d6e74d5f50c79374c68cdc71
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/8uLXNX2lQeKBIZAGAxcBVQ/zh-cn_image_0000002628763136.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/1CXkVnnPTTOE6tpgDxSb9Q/zh-cn_image_0000002628763136.png "点击放大")
 * **场景四**：在TextInput组件的onChange方法中使用if/else判断是否有输入内容，如果有输入内容则将其背景修改为对应颜色。
 
   ```ts
@@ -97,7 +97,7 @@ content_hash: sha256:8d73caef3c3fb3c9641b75c10fbc983b361d6e74d5f50c79374c68cdc71
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/iUW2h004SIO1Xiz-iltGHQ/zh-cn_image_0000002658962451.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/kzTE9pN3R96zII_wof8Jvg/zh-cn_image_0000002658962451.png "点击放大")
 
 ## 常见FAQ
 

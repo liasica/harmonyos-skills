@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: HarmonyOS应用指定设备发布hdc应用安装失败
 breadcrumb: FAQ > DevEco Studio > 应用调试 > HarmonyOS应用指定设备发布hdc应用安装失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:04f4df6a1be9153e038b6baf24a4fec4501aca76127abb5f4229586412a9ccbf
+scraped_at: 2026-10-28T07:49:00+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e588a5582e90091e1fc760b24176553706038713929772e6e0c94a0161202edd
 ---
 
 ## 问题现象
@@ -18,7 +18,7 @@ content_hash: sha256:04f4df6a1be9153e038b6baf24a4fec4501aca76127abb5f4229586412a
 
 ## 问题定位
 
-* 检查版本创建流程是否符合[测试流程](../app/agc-help-internal-test-guide-0000002295325149.md)，比如：是否使用了发布证书、是否把调试设备UDID注册到AGC设备列表、申请的Profile是否为指定设备发布的Profile（详细流程请见：[申请指定设备发布Profile](../app/agc-help-internal-test-0000002270709477.md)）。
+* 检查版本创建流程是否符合[测试流程](../app/agc-help-internal-test-guide-0000002295325149.md)，比如：是否使用了发布证书、是否把调试设备UDID注册到HarmonyOS 开发者中心设备列表、申请的Profile是否为指定设备发布的Profile（详细流程请见：[申请指定设备发布Profile](../app/agc-help-internal-test-0000002270709477.md)）。
 * 检查IDE工程中**Signing Configs**页签下，配置的密钥库文件、密钥别名、密钥密码、证书文件以及Profile文件是否为正确文件的路径。
 * 检查Profile文件中是否存在对应设备的UDID，通过编辑器打开Profile文件，查找**device-ids**后的UDID序列中是否存在调试设备的UDID。
 

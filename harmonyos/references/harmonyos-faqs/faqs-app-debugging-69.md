@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 编译构建问题如何获取关键日志
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 编译构建问题如何获取关键日志
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
+scraped_at: 2026-10-28T07:49:00+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:19fed5b62c737cd0bfb5da890d7650ffdafcebc7dedfd6ccee0765fe250946a4
+content_hash: sha256:efc42f47256e3f468b2fde283f9c29b8ec3092548275fea8b599ce9b9da00414
 ---
 
 ## 问题现象
@@ -27,53 +27,53 @@ content_hash: sha256:19fed5b62c737cd0bfb5da890d7650ffdafcebc7dedfd6ccee0765fe250
 
 1. 首先获取IDE版本、SDK版本（编译工具链版本，与hvigor强相关）、hvigor版本，以及hvigor-config.json5配置信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Gaup9E_2Sd-VkjwagKK75A/zh-cn_image_0000002628569314.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/7AS4yUWSQiWBpAffWAJZxw/zh-cn_image_0000002628569314.png "点击放大")
 2. 将stacktrace设置为true，并重新编译，详见步骤3。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/jVsTOpmWQjy5A4mFaR6XpA/zh-cn_image_0000002658928629.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/nA1Wr7ISS-KYM9UAlU8qwg/zh-cn_image_0000002658928629.png "点击放大")
 3. 再次编译，给出Build窗口的编译报错信息（含堆栈）。需要完整的包含报错堆栈上下文的完整构建日志（最好是构建报错完整txt文本）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/0UV0kRTSTXCC6K52Qc2fjg/zh-cn_image_0000002628409408.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/k3Qp-UXoTtCZT2xoAxHkQQ/zh-cn_image_0000002628409408.png "点击放大")
 
 **daemon类问题**：
 
 1. 获取hvigor版本，需要hvigor-config.json5截图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/xjVzpGlQTQa3qBwIO-yndA/zh-cn_image_0000002658808677.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/fDveDiG-Q1O81oAsI4JkdA/zh-cn_image_0000002658808677.png "点击放大")
 2. 在Build窗口获取daemon日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/IzzsNtumRXi3iwNP4lXGuA/zh-cn_image_0000002628569316.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/iT70I3IZRLOKIMB9qws2Jw/zh-cn_image_0000002628569316.png "点击放大")
 
    如果出现上图报错给出了daemon具体地方，获取该daemon日志即可，如果没出现需要复现问题并重新获取daemon日志。如下获取路径为：C:\Users\xxxxx\.hvigor\daemon\log\5.19.0。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/H5eI3JzBSki1poYI9bi5aQ/zh-cn_image_0000002658928631.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/bOFRlkxjTZSb3LBJ9F_Iag/zh-cn_image_0000002658928631.png "点击放大")
 3. 获取idea.log的日志。点击IDE上方选项：Help->Show Log in Explorer。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/dsO7c5WcQJGUbEsYxp-oaw/zh-cn_image_0000002628409410.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/3WrtA5VtTh6mVf4qT0UhNw/zh-cn_image_0000002628409410.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Isv5AVC9TzmWCiYP5AuxVQ/zh-cn_image_0000002658808679.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/XBWdb3M-TD6qLhjcMcqq4Q/zh-cn_image_0000002658808679.png "点击放大")
 
 **构建耗时问题**：
 
 1. 获取IDE和hvigor版本。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/LQ5KP0p4S06HIPNzpPqYwQ/zh-cn_image_0000002628569318.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/nCMTCAINQpGsMpI2KhRgbw/zh-cn_image_0000002628569318.png "点击放大")
 2. 勾选高级模式，并重新构建工程获取新的分析日志。在Settings中搜索Hvigor，勾选Use build analysis mode，选择verbose（旧版本）/advanced（新版本）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/l8kbSdbFRSyDmRSfLtT6_w/zh-cn_image_0000002658928633.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/xen2eUULRR22M30P3vlW6Q/zh-cn_image_0000002658928633.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/VR9wvkA-SRGuvULAGwyvMw/zh-cn_image_0000002628409412.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/e3YmIcp1SUC_TUTo2L4P_A/zh-cn_image_0000002628409412.png "点击放大")
 3. 找到耗时久的任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/XcNmOfh_QG-PphoFvCtM0Q/zh-cn_image_0000002658808681.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/BLjhJVTOTGS3iAO2sOaZRA/zh-cn_image_0000002658808681.png "点击放大")
 4. 一直展开，找到耗时最久的几个小任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/4aUe_Y2wRAGgTT42SmtN9A/zh-cn_image_0000002628569320.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/biU7tx-aTWKGDB0TpDcP6g/zh-cn_image_0000002628569320.png "点击放大")
 5. 最后获取report.json（最好找到此次编译的report.json），点击右上角导出按钮，导出report。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/FnGfYptNTZuo9cLn1hUSkw/zh-cn_image_0000002658928637.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/x6StFFM7QDaL1vUOtmwS2Q/zh-cn_image_0000002658928637.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/9_wO9p6BTuOsQ-6D3PVR1Q/zh-cn_image_0000002628409414.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/VXcbmZHLQiOOGWVfxyJrGA/zh-cn_image_0000002628409414.png "点击放大")
 
 ## 常见FAQ
 
@@ -85,7 +85,7 @@ Q：IDE编译的错误信息在build Output输出窗口中会淹没在warning信
 
 A：Build Output下的左边第二个open Build Analyzer下的Tasks，可以点击Error看到具体的报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/JBeS1WaSS7G3Q4GEgy7ENg/zh-cn_image_0000002658808683.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/D6dWsN1WSxmhBNkLOJfLBA/zh-cn_image_0000002658808683.png "点击放大")
 
 ## 总结
 

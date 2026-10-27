@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-697
 title: PC端启动应用默认全屏模式显示，非悬浮窗模式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > PC端启动应用默认全屏模式显示，非悬浮窗模式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d0c6d6b33cd945e93a60ca9d547979f1492c13b603f1153c9b0697a9aa781a5e
 ---
 

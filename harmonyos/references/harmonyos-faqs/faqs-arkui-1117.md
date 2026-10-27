@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1117
 title: 如何拦截页面跳转
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何拦截页面跳转
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3e93a92ffdc3fced550cf77f8969f3418a47cf09514827eec9fd0f182c599f56
+scraped_at: 2026-10-28T07:47:55+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:a23bda495d99dcc62ac1fba626d1f4b5d9a07d86a855ec1b097bf4f30b819f0a
 ---
 
 ## 问题现象
@@ -27,35 +27,35 @@ Navigation如何实现侧滑手势拦截与路由跳转前拦截？
 
   ```ts
   .onBackPressed(() => {
-    // 此处可添加拦截处理逻辑，然后return true放行
-    this.getUIContext().getPromptAction().showDialog({
-      message: '是否返回',
-      alignment: DialogAlignment.Center,
-      buttons: [
-        {
-          text: '取消',
-          color: '#0000FF'
-        },
-        {
-          text: '确认',
-          color: '#0000FF'
-        }
-      ]
-    }).then((data: ShowDialogSuccessResponse) => {
-      // 操作菜单的响应结果,选中按钮在buttons数组中的索引，从0开始,第二个索引为1
-      // 点击取消按钮，留在此页面
-      if (data.index === 0) {
-        console.info(`Succeeded in cancelling.`);
-      }
-      // 点击确认按钮，返回上层页面
-      if (data.index === 1) {
-        // 未传入拦截的参数正常返回
-        RouterManager.getInstance().pop();
-        console.info(`Succeeded in confirming.`);
-      }
-    });
-    return true;
-  });
+        // 此处可添加拦截处理逻辑，然后returntrue放行
+        this.getUIContext().getPromptAction().showDialog({
+          message: '是否返回',
+          alignment: DialogAlignment.Center,
+          buttons: [
+            {
+              text: '取消',
+              color: '#0000FF'
+            },
+            {
+              text: '确认',
+              color: '#0000FF'
+            }
+          ]
+        }).then((data: ShowDialogSuccessResponse) => {
+          // 操作菜单的响应结果,选中按钮在buttons数组中的索引，从0开始,第二个索引为1
+          // 点击取消按钮，留在此页面
+          if (data.index === 0) {
+            console.info(`Succeeded in cancelling.`);
+          }
+          // 点击确认按钮，返回上层页面
+          if (data.index === 1) {
+            // 未传入拦截的参数正常返回
+            RouterManager.getInstance().pop();
+            console.info(`Succeeded in confirming.`);
+          }
+        });
+        return true;
+      });
   ```
 * **方案二：通过封装自定义路由工具类实现。**
   1. 通过自定义路由管理单例，将所有的push事件都用路由管理单例执行，在需要拦截时统一处理。
@@ -218,117 +218,11 @@ export class RouterManager {
     return params;
   }
 }
-interface DataInterface {
-  data: string;
-}
-
-@Entry
-@Component
-struct RouterManagerPage {
-  pageInfo: NavPathStack = new NavPathStack();
-  controller: TextAreaController = new TextAreaController();
-  text: string = '';
-  params: DataInterface = { data: this.text };
-
-  @Builder
-  pageMap(name: string) {
-    if (name === 'SubPage') {
-      SubPage();
-    }
-  }
-
-  aboutToAppear(): void {
-    RouterManager.getInstance().bindNavPathStack(this.pageInfo);
-  }
-
-  build() {
-    Navigation(this.pageInfo) {
-      Column({ space: 16 }) {
-        TextArea({
-          text: this.text,
-          placeholder: 'input your word...',
-          controller: this.controller
-        })
-          .width('80%')
-          .onChange((value: string) => {
-            this.text = value;
-            this.params.data = this.text;
-          });
-        Button('push')
-          .onClick(() => {
-            RouterManager.getInstance().push('SubPage', this.params);
-            console.info(`Succeeded in getting text:${this.text}`);
-          });
-      }
-      .padding({top:32})
-      .justifyContent(FlexAlign.Start)
-      .width('100%')
-      .height('100%');
-    }
-    .navDestination(this.pageMap)
-    .width('100%')
-    .height('100%');
-  }
-}
-@Component
-struct SubPage {
-  build() {
-    NavDestination() {
-      Column({ space: 16 }) {
-        Button('onBackPressed不支持使用pop()拦截返回。')
-          .onClick(() => {
-            // 未传入拦截的参数
-            RouterManager.getInstance().pop();
-          });
-        Button('pop添加拦截功能')
-          .onClick(() => {
-            let param = { data: '1' } as DataInterface;
-            // 传入拦截参数
-            RouterManager.getInstance().pop(param);
-          });
-      }
-      .padding({ top: 32 })
-      .justifyContent(FlexAlign.Start)
-      .width('100%')
-      .height('100%');
-    }
-    .onBackPressed(() => {
-      // 此处可添加拦截处理逻辑，然后return true放行
-      this.getUIContext().getPromptAction().showDialog({
-        message: '是否返回',
-        alignment: DialogAlignment.Center,
-        buttons: [
-          {
-            text: '取消',
-            color: '#0000FF'
-          },
-          {
-            text: '确认',
-            color: '#0000FF'
-          }
-        ]
-      }).then((data: ShowDialogSuccessResponse) => {
-        // 操作菜单的响应结果,选中按钮在buttons数组中的索引，从0开始,第二个索引为1
-        // 点击取消按钮，留在此页面
-        if (data.index === 0) {
-          console.info(`Succeeded in cancelling.`);
-        }
-        // 点击确认按钮，返回上层页面
-        if (data.index === 1) {
-          // 未传入拦截的参数正常返回
-          RouterManager.getInstance().pop();
-          console.info(`Succeeded in confirming.`);
-        }
-      });
-      return true;
-    });
-  }
-}
 ```
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/SYrTvdwpS46L5JNHjbaZMg/zh-cn_image_0000002658806751.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ZAkqZiHLS4i3vGe7-EQRIg/zh-cn_image_0000002689327236.png "点击放大")
 
 ## 常见FAQ
 

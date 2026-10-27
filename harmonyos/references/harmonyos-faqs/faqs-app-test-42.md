@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-4
 title: Hypium如何区别使用XPath和UiViewer的path路径
 breadcrumb: FAQ > DevEco Studio > 应用测试 > Hypium如何区别使用XPath和UiViewer的path路径
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:36+08:00
+scraped_at: 2026-10-28T07:49:02+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:aa55ddc7488b5121bd0a2d8b758e222fc62abe28fa70637756e7c48e0f6595a8
+content_hash: sha256:d1464709a407e6867b1a20f3744ea0bb89f16cb361a56a0213b7d7e7d744979b
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ XPath中的下标（索引）从1开始，而不是从0开始。但是Hypium插�
 
 XPath是W3C标准，节点是从[1]开始。UiViewer提供的path下标是从[0]开始。两者不等同，不同的API使用的路径也是不同的。如图点击选中框位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/2IZeCbAGRVqCk1wqsgcANw/zh-cn_image_0000002628569544.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/IW9ge_J-SJ-nq_JMxkwCwQ/zh-cn_image_0000002628569544.png "点击放大")
 
 * XPath语法定位控件。
 
@@ -60,7 +60,7 @@ XPath是W3C标准，节点是从[1]开始。UiViewer提供的path下标是从[0]
 
   UiViewer提供的path路径定位控件可以在不同的API中使用，API参数path为UiViewer查看的路径。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/W_j-stLWQAWofPX5bF4AwQ/zh-cn_image_0000002658928869.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/PctGAAo1RiaXZclyr7ioeg/zh-cn_image_0000002658928869.png "点击放大")
 
   ```python
   # -*- coding: utf-8 -*-
@@ -100,7 +100,7 @@ Q：如何通过UiViewer插件中生成的非标准绝对路径查找控件？
 
 A：可以通过self.driver.touch(BY.abspath("/root/Navigation/\*\*"))方式，使用绝对路径查找控件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ONehAD6tTveyhNxQf-wKgg/zh-cn_image_0000002628409654.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/iQZTlz8cS4eCrT6tiXEvJQ/zh-cn_image_0000002628409654.png "点击放大")
 
 **说明** 
 

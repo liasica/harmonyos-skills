@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-7
 title: 订阅退订之后获取到的商家订单号不是最新的
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 订阅退订之后获取到的商家订单号不是最新的
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:44+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8fba4fe0bf6ca9873294a1bf8e528adf696dfbec1f17d6f538ae37a7bbca80ca
 ---
 

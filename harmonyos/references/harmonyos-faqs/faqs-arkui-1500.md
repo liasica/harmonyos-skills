@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1500
 title: 首页数据加载慢导致页面布局波动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 首页数据加载慢导致页面布局波动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:15+08:00
+scraped_at: 2026-10-28T07:47:34+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:ce4ebda9ff9b3364e5291eac175d34e2a65bb1c64f78b2a35c6450c0813630fc
+content_hash: sha256:107571aa83c18dc94058a65042488a50886a456be09020447aa752ec6e23172d
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:ce4ebda9ff9b3364e5291eac175d34e2a65bb1c64f78b2a35c6450c0813
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/tYcLpYkCQ0KKEIKIEo9hvQ/zh-cn_image_0000002628606546.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/vysmzzhcTfm70pgSFam9OA/zh-cn_image_0000002628606546.png "点击放大")
 
 ## 背景知识
 
@@ -26,7 +26,7 @@ content_hash: sha256:ce4ebda9ff9b3364e5291eac175d34e2a65bb1c64f78b2a35c6450c0813
 
 1. 通过DevEco Testing的UIView工具查看页面UI结构。页面中使用了List组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/io2b5SeJRrmIG_3ofCbhOA/zh-cn_image_0000002658845795.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/fOPNKexQTYCthhGYs8tY2w/zh-cn_image_0000002658845795.png "点击放大")
 2. 筛选http以及http\_exec相关的日志，确认日志中链接是页面中显示的数据（图片、文本等）来源，且网络请求耗时较长。
 
    ```txt

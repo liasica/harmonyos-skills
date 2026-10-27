@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-16
 title: 播放音频，进度条无法拖动
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > 播放音频，进度条无法拖动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:e1d6783c11b23770b9828d9e8d3be44b2d3fc847eca551c2aa4d28d109576f6d
+scraped_at: 2026-10-28T07:48:31+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:c63ddfd47630bc461444121feca58c68ebc3e55d151f78fdbff9626a88424a3e
 ---
 
 ## 问题现象
@@ -33,7 +33,7 @@ content_hash: sha256:e1d6783c11b23770b9828d9e8d3be44b2d3fc847eca551c2aa4d28d1095
    ```
 2. 检查异步操作时序：避免在seek()操作完成前修改进度条显示。
 
-   ```screen
+   ```ts
    // 错误写法：未等待seek操作完成即更新进度
    this.avPlayer.seek(newPosition);
    this.currentPosition = newPosition; // 可能导致进度条回弹
@@ -45,7 +45,7 @@ content_hash: sha256:e1d6783c11b23770b9828d9e8d3be44b2d3fc847eca551c2aa4d28d1095
    ```
 3. 检查Slider组件与AVPlayer联动是否异常：使用Slider的onChange事件触发seek()操作时，需绑定AVPlayer实例。
 
-   ```screen
+   ```ts
    Slider({
      value: this.currentPosition,
      max: this.duration

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-120
 title: 如何使用TaskPool在子线程调用对象成员函数
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 如何使用TaskPool在子线程调用对象成员函数
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:54+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:46:55+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:478e943841931e9eb0bc96e388fef953cf4ca87e8a4112dfe41589b7dd04c429
 ---
 

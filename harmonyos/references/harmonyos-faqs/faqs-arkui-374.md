@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-374
 title: 如何实现应用的屏幕自动旋转
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何实现应用的屏幕自动旋转
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9bf05ae8d88206b3c518e26e2a766c2380e6df27dabc00f543f91e0d60675ad0
 ---
 

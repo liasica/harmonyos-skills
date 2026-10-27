@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-833
 title: 如何实现带有滚动动画效果的数字显示组件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现带有滚动动画效果的数字显示组件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:27+08:00
+scraped_at: 2026-10-28T07:47:54+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:1c325d43dd20cceb5b8d14c93184e143487a3350d4cc626575b5504141fa183c
+content_hash: sha256:e9be3edd2e8b528c6762adf5db734818a63209c31b2ddb6d0c08e4efd5444ad9
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:1c325d43dd20cceb5b8d14c93184e143487a3350d4cc626575b5504141f
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/YRFTDPToSJaNvDMhbTdMMw/zh-cn_image_0000002658797723.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/IFVSMHbETJml1SIGBR62QA/zh-cn_image_0000002658797723.png "点击放大")
 
 ## 背景知识
 

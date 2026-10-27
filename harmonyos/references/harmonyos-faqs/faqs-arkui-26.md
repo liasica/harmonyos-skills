@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-26
 title: 如何解决List组件在不设置高度的情况下滑动不到底的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决List组件在不设置高度的情况下滑动不到底的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:58+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:921890bdda7823ebc789ba7124ced3b78ce6c1606ad62b419116c9460fdcb651
+scraped_at: 2026-10-28T07:47:01+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:81c4ccc42f5ab56b4a981cb592c90096b95e497fa8f8ae3046308408cbd4b886
 ---
 
 **原因**
@@ -60,4 +60,4 @@ struct ListExample {
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/A-WPN8saQ9iObQb1wfvUvQ/zh-cn_image_0000002624635816.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/dRcWepD8SF2UDrvf5G0zzQ/zh-cn_image_0000002624635816.png "点击放大")

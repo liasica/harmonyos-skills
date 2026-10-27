@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1069
 title: 解决安全类窗口和自定义弹窗的调用时序引起的自定义弹窗不显示的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 解决安全类窗口和自定义弹窗的调用时序引起的自定义弹窗不显示的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:06+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8b0ae89b6b3fe4b29f8c4ae92eb1d99f6ea74d05b00bbe691223f85ade2b8f3b
+scraped_at: 2026-10-28T07:47:16+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:2e46bb2455254af6a56adfbb16669d8f990ab7df0c485964cf5402e10319cdee
 ---
 
 ## 问题现象
@@ -134,7 +134,7 @@ content_hash: sha256:8b0ae89b6b3fe4b29f8c4ae92eb1d99f6ea74d05b00bbe691223f85ade2
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ijWY6w5wTM2-DFTnFG9SYQ/zh-cn_image_0000002628567132.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/J3OJJZs9Q5G5V0ObIRzdIQ/zh-cn_image_0000002628567132.png "点击放大")
 * 方案二：应用登录页面需要保存账号信息到密码保险箱中，在HarmonyOS 5.1.1及以上版本中，通过将CustomDialog、openCustomDialog、showAlertDialog、showActionSheet等弹窗类组件的showInSubWindow属性设置为true（showToast、openToast需要设置showMode: promptAction.ToastShowMode.TOP\_MOST），可以使其显示层级高于系统密码保险箱弹窗（如果是密码保险箱自动填充账号信息的场景，请参考方案三），代码示如下：
 
   ```ts

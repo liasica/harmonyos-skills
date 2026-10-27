@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-371
 title: 如何理解AspectRatio对布局的影响
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何理解AspectRatio对布局的影响
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:04+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:3c5a49f5d0eeebb767286afdb2820c0d6c768ae74426f93516f3c16b4c760850
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-telephony-
 title: 调用call.makeCall发生编译告警：The API is not supported on all devices
 breadcrumb: FAQ > 系统开发 > 网络 > 蜂窝通信（Telephony） > 调用call.makeCall发生编译告警：The API is not supported on all devices
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
+scraped_at: 2026-10-28T07:48:19+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:68695e8dbb7d64937f0bf9fce184ac033fbfefeee842af52896e0139006dc32a
+content_hash: sha256:2ad3515410d7c1d6c98eeae3c9b4ae1cc62351ab0c0913682c4cec6d10c86dfb
 ---
 
 ## 问题现象
@@ -58,7 +58,7 @@ The API is not supported on all devices. Use the canIUse condition to determine 
 
   由于DevEco Studio默认创建的项目会包含phone，tablet，2in1三种设备类型。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Zl-OxdNuR5uAqvvMjsKl0A/zh-cn_image_0000002628773306.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/qdL53LfqSIqKs_ELX77Cmg/zh-cn_image_0000002628773306.png "点击放大")
 
   tablet和2in1不具备SystemCapability.Applications.Contacts能力。
 

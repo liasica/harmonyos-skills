@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-67
 title: WebView如何设置mixcontent策略，用以解决http与https混合加载的问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > WebView如何设置mixcontent策略，用以解决http与https混合加载的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:32+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:05+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c52c77f15501aec9d8450c7d95856c9b9f2f17691ac6cc3ce542bccbf806cc2c
 ---
 

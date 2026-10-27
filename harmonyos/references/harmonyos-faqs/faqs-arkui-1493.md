@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1493
 title: 如何实现Flex组件的宽高自适应子组件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Flex组件的宽高自适应子组件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:11+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:29d1d3cc4c9a2eb6ca369b1a150367c7d88b96f1de1eb2da307da5a8d35b7a38
+scraped_at: 2026-10-28T07:47:23+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:9453ca1cf63a24905a6c509d2c76409b0d1d78a55d43fe0ca59d5b96397b677c
 ---
 
 ## 问题现象
@@ -16,11 +16,11 @@ content_hash: sha256:29d1d3cc4c9a2eb6ca369b1a150367c7d88b96f1de1eb2da307da5a8d35
 
 问题1效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/iOsHcGtvQUS3o8AX5y3gjg/zh-cn_image_0000002658845079.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/-kq87c8HSbyKAFPkLRnh1Q/zh-cn_image_0000002658845079.png "点击放大")
 
 问题2效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/ceUlwK5ESE6pAny9PMaHlg/zh-cn_image_0000002628765708.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Bdd0mNkQROuj6MqP93CUVw/zh-cn_image_0000002628765708.png "点击放大")
 
 ## 背景知识
 
@@ -60,7 +60,7 @@ content_hash: sha256:29d1d3cc4c9a2eb6ca369b1a150367c7d88b96f1de1eb2da307da5a8d35
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/RxhwmEbEQ2-KXHD7I4JXWg/zh-cn_image_0000002658965033.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/H8VpZFikShS3YaPJKvgCXg/zh-cn_image_0000002658965033.png "点击放大")
 
   问题2：Flex方向为Row时同理，设置宽度为auto，使Flex自适应子组件布局的宽度。
 
@@ -89,7 +89,7 @@ content_hash: sha256:29d1d3cc4c9a2eb6ca369b1a150367c7d88b96f1de1eb2da307da5a8d35
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/AqnucAeOQPmnZultTIqxAA/zh-cn_image_0000002628605828.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/qTskJD9iSmm6DjVTRQcpVA/zh-cn_image_0000002628605828.png "点击放大")
 * **方案二**：Flex主轴方向长度默认设置'100%'，子组件布局完成时通过onSizeChange/onAreaChange获取尺寸信息，根据子组件尺寸设置Flex主轴方向长度。
 
   问题1：Flex方向为Column时，通过onSizeChange获取子组件高度，设置Flex高度。
@@ -124,7 +124,7 @@ content_hash: sha256:29d1d3cc4c9a2eb6ca369b1a150367c7d88b96f1de1eb2da307da5a8d35
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/p-eTNGliQ16fM4H1R9rlEQ/zh-cn_image_0000002658845081.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/1zCagtmzSKC7Cphtz5il2A/zh-cn_image_0000002658845081.png "点击放大")
 
   问题2：Flex方向为Row时，通过onSizeChange获取子组件宽度，设置Flex宽度。
 
@@ -158,4 +158,4 @@ content_hash: sha256:29d1d3cc4c9a2eb6ca369b1a150367c7d88b96f1de1eb2da307da5a8d35
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/i3jifXYhQCud2muvSI2Gmw/zh-cn_image_0000002628765710.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/LFYm7BQyThG8RKy1L5iPZg/zh-cn_image_0000002628765710.png "点击放大")

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-user-authe
 title: 应用指纹登录开关已经打开，但仍显示未打开
 breadcrumb: FAQ > 系统开发 > 安全 > 用户身份认证（User Authentication） > 应用指纹登录开关已经打开，但仍显示未打开
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
+scraped_at: 2026-10-28T07:48:12+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:215344bed7916c7424614bf48256e456cbb4bc494c4302c97ccba325eeee1ff7
+content_hash: sha256:445a04f29bd59295244c903399baf7a37bf8835d6771505869e99391e894511c
 ---
 
 ## 问题现象
 
 APP内开启指纹登录功能，验证指纹和登录密码之后返回到设置界面，设置界面显示为关闭状态，但功能实际已启用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/nYGua9gyS9COnPxUue3v3Q/zh-cn_image_0000002628769788.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/dhHunOKQSJSNUTWkKlbJgA/zh-cn_image_0000002628769788.png "点击放大")
 
 ## 背景知识
 

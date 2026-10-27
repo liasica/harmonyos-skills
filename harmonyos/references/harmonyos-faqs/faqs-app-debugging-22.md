@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 安装HAP时提示“compatibleSdkVersion and releaseType of the app do not match the apiVersion and releaseType on the device.”
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 安装HAP时提示“compatibleSdkVersion and releaseType of the app do not match the apiVersion and releaseType on the device.”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:35+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:4bff12ff80fd29558fbadc49b94e501b67255e0a955c08b976924d215d8f7da7
+scraped_at: 2026-10-28T07:48:59+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:b9e5e9bfd88c2b56269748c81f338ec8c04969ce7d1625a98cb95e3fd6ab5d38
 ---
 
 **问题现象**
 
 在启动调试或运行应用/服务时，安装HAP出现错误，提示“compatibleSdkVersion和releaseType与设备上的apiVersion和releaseType不匹配。”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/PF7yOQKyS36FqddTYLiGCw/zh-cn_image_0000002624638688.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/N90k6Xx6S2GoanGv5NXrgQ/zh-cn_image_0000002624638688.png)
 
 **解决措施**
 
@@ -22,9 +22,9 @@ content_hash: sha256:4bff12ff80fd29558fbadc49b94e501b67255e0a955c08b976924d215d8
 
 方法一：请升级设备镜像版本以匹配当前工程版本。在系统设置界面升级设备系统。
 
-方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/bqBHTJk4S1invc3kdK_AUQ/zh-cn_image_0000002654838097.png)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
+方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/0PqNdkKeTbeAt4zbo0wMRg/zh-cn_image_0000002654838097.png)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/bu8UqZYwT4Sbt9mx7HbJQg/zh-cn_image_0000002624478780.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/BYNbj-DkQEOXaji2NWWXRg/zh-cn_image_0000002624478780.png)
 
 **说明** 
 

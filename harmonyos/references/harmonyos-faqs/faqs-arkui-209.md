@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-209
 title: ArkUI有没有在组件刷新后的回调事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ArkUI有没有在组件刷新后的回调事件
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:59+08:00
-doc_updated_at: 2026-08-13
+scraped_at: 2026-10-28T07:47:02+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:726eb884cf47f8f49b247e176dfe437b8c901969b3071fc243c8806e6437fa49
 ---
 

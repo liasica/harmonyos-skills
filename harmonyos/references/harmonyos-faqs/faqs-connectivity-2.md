@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: 如何扫描Wi-Fi列表
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 如何扫描Wi-Fi列表
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:38+08:00
-doc_updated_at: 2026-06-15
+scraped_at: 2026-10-28T07:48:18+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:f0fc739decdb18a34e15780dc83bc8ce932d1f820468697ed0021018ef049cd1
 ---
 

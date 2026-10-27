@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1499
 title: 如何防止视频播放时自动熄屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何防止视频播放时自动熄屏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:29+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:9d9ac33d191ac9051d93fbc9087fa28e3d3bb35bd985ef9279b0fbdd64f11598
 ---
 

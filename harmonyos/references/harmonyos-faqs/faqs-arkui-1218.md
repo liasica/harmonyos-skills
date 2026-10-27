@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1218
 title: 设置状态栏与导航栏的颜色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 设置状态栏与导航栏的颜色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:52+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:6ccd5d1253b19df0ed6f8a5e2138b8babef7ec5ce908cfc51a5e9e6eb52b6be8
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:002dae5f0de2e6e348501a8d018fa50160a236fbd778c4277d027370de1672d2
 ---
 
 ## 问题现象
@@ -152,7 +152,7 @@ content_hash: sha256:6ccd5d1253b19df0ed6f8a5e2138b8babef7ec5ce908cfc51a5e9e6eb52
   设置状态栏与导航栏颜色的重要前提是获取Context，getLastWindow方法会在获取Context后确定操作的对象是哪一个窗口实例。在封装成工具类时，可以在类中获取Context，也可以将UI组件中获取的Context作为参数传给类中方法，为保证Context的一致性和准确性，更推荐在UI组件中获取Context并传给类中方法。
 * 两种方案的实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/7OIKjheSRjKSJoLho5FTqA/zh-cn_image_0000002628753914.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/k4oXqAfHTs6CcmmuPGdzMw/zh-cn_image_0000002628753914.png "点击放大")
 
   若是想要设置导航栏，则需要在SystemBarProperties中给navigationBarColor、navigationBarContentColor赋值。
 

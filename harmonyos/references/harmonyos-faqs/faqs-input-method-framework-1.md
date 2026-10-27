@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-input-meth
 title: 如何防止同时修改悬浮键盘的位置和尺寸时键盘抖动
 breadcrumb: FAQ > 应用框架开发 > 输入法框架 > 如何防止同时修改悬浮键盘的位置和尺寸时键盘抖动
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
+scraped_at: 2026-10-28T07:47:57+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:8621becfbc369a4801dd046e2c3e02292f364b41cff0bd2757f2888fb031f299
+content_hash: sha256:dee88c409e88718dc38050bd1f43a9237ef66b096a615fc558a5a0d389117c1a
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:8621becfbc369a4801dd046e2c3e02292f364b41cff0bd2757f2888fb03
 
 问题现象如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/tIS4UKZmRsaONpmEOLBvIw/zh-cn_image_0000002659062115.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/nfeR_w-PTYemjbDgRS0n8A/zh-cn_image_0000002659062115.png "点击放大")
 
 ## 背景知识
 
@@ -413,4 +413,4 @@ moveTo()方法用于移动输入法面板的位置，而resize()方法用于调�
 
    示例效果如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/Zh9bQU70QZORXNJB0YXSCw/zh-cn_image_0000002628822760.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/NXkZZStqSy-Vf2arw9UzuA/zh-cn_image_0000002628822760.png "点击放大")

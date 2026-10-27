@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-249
 title: 如何获取底部手势横条的高度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何获取底部手势横条的高度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:31+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:11012cd05d9bff018fd7f6251d69ccf5755f60e1299b8f69838bc44c84d59744
 ---
 

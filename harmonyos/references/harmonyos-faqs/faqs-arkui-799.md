@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-799
 title: 如何对指定区域进行截图
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何对指定区域进行截图
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-08-19
+scraped_at: 2026-10-28T07:47:27+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:dc4bc531846735f5d3e5d913c82612b19a02031f9e0cd62de5dd32ee3890ea01
 ---
 

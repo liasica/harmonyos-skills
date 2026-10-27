@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1606
 title: 如何实现Text短文本居中，长文本居左
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Text短文本居中，长文本居左
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:12+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:a2981405a45b7c4e46d4d736fdad55813265fbde54177d8dadefb91f2b3332cd
+scraped_at: 2026-10-28T07:47:26+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:945c645df0b314f26d9f26022a9311c650d9662784023c3749f5cd8123ed081f
 ---
 
 ## 问题现象
@@ -142,8 +142,8 @@ content_hash: sha256:a2981405a45b7c4e46d4d736fdad55813265fbde54177d8dadefb91f2b3
 
 短文本效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/JyXUXofFRFWD6CnsK0FMqg/zh-cn_image_0000002628773272.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/MfM84792TW-8JXMO0KqzOg/zh-cn_image_0000002628773272.png "点击放大")
 
 长文本效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/CK3Q-VCmQhiCWGh2U8liNQ/zh-cn_image_0000002628613374.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/kwHZ18JMRUqaTfCj-9EJuw/zh-cn_image_0000002628613374.png "点击放大")

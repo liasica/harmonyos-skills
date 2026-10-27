@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-37
 title: 如何将图片的ArrayBuffer处理成黑白、灰度、彩色三种颜色
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何将图片的ArrayBuffer处理成黑白、灰度、彩色三种颜色
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d7e3c7821108480c8aed78c1ce9e8510590a43b7fae22fc8d06a27eb55dc1194
 ---
 

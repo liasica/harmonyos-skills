@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-847
 title: 如何解决Image组件切换网络图片失败后占位图未显示的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Image组件切换网络图片失败后占位图未显示的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:03:42+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:26fd9e3ad1a832fb77a156f0b4261143697c790b02d00fec7eb5509808c83eff
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:310b92cae25bd2d0e8514270417df2cf70534f977215492ec626e89ee907f622
 ---
 
 ## 问题现象
 
 如下图，在切换网络图片时，若目标图片加载失败，界面不会更新为占位图，而是继续显示之前已加载成功的图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/06GZshKUQj2eS4thod2QqA/zh-cn_image_0000002658797917.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/8VVcqc2MTB6xmYZ3lJO7Hw/zh-cn_image_0000002658797917.png "点击放大")
 
 问题代码如下：
 
@@ -113,4 +113,4 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/XNESviYvQFeiuZbba4D-Wg/zh-cn_image_0000002628558548.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/VbpwmjdIRt-rYC9dhMC5WA/zh-cn_image_0000002628558548.png "点击放大")

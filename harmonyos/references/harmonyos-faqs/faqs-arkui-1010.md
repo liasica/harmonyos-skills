@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1010
 title: 如何实现窗口状态栏颜色根据页面背景色反转显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何实现窗口状态栏颜色根据页面背景色反转显示
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:fcb45037e33e3970ee78cb489f1212f0026ccc734f6c5be3c0edec0644a05854
+scraped_at: 2026-10-28T07:47:30+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:e3ab0c2be098565e33b88716b83bda5a017756c0046a330f9f0fcc0740073a10
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:fcb45037e33e3970ee78cb489f1212f0026ccc734f6c5be3c0edec0644a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/9z_Otgu0S4itrUIh5vzbVQ/zh-cn_image_0000002628404774.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/SUhVLRbMS9upx9e7-P7usw/zh-cn_image_0000002628404774.png "点击放大")
 
 ## 背景知识
 

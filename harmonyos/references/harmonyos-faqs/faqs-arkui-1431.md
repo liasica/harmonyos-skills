@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1431
 title: 如何设置组件单边阴影样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置组件单边阴影样式
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:41+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:70e454b364ed55e91552d2b4f42e7c119df60d6d9c30dea6d6f3e1d66125e3f6
+content_hash: sha256:9c2ac24f6a97723088ad04ea5b269837b738ce7fdef69a700e52b0d631484e00
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:70e454b364ed55e91552d2b4f42e7c119df60d6d9c30dea6d6f3e1d6612
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/yicWB4xxQh6GKmPgEXyviQ/zh-cn_image_0000002658843017.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/dpZ__KWQSe6p4hpehyyJ2g/zh-cn_image_0000002658843017.gif "点击放大")
 
 ## 背景知识
 

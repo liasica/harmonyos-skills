@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-657
 title: Video组件实现横竖屏切换和全屏播放
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Video组件实现横竖屏切换和全屏播放
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:02+08:00
-doc_updated_at: 2026-07-30
+scraped_at: 2026-10-28T07:47:09+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:d31c39ceb757323b91ce377f3c5d247a07423bf349a2049e9841abcd1091140f
 ---
 

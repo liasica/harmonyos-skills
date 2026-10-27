@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/avcodec-kit-faq
 title: 音视频编解码与转码常见问题
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 常见问题 > 音视频编解码与转码常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:20+08:00
+scraped_at: 2026-10-28T07:48:33+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:3b115ee85a39b82be6d2c48f6f678acf75702de7e04fbb4b9f05d180bb4b65ad
+content_hash: sha256:3d6cfee98cc666ec3c5ca9ee853f98208d0a1c5bbbb3de10ce0ab45e42fbb4cf
 ---
 
 **Q：音频文件如何从一种编码格式/封装格式转为另一种编码格式/封装格式？**
 
 **A**：根据需要转换的目标音频格式不同，可以将转码需求分为两种场景：第一种场景是目标音频格式为封装格式；第二种场景是目标音频格式为编码格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/DFcfCDVrQAqoPha3_poF1w/zh-cn_image_0000002767826964.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/MxEv1S_XQMaJd6A_07Eu9Q/zh-cn_image_0000002767826964.png "点击放大")
 
 场景一，需要转为特定的封装格式：
 

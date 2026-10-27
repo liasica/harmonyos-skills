@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1285
 title: 组件设置maskShape不生效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 组件设置maskShape不生效
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:08+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:75084596e4eab7775e404c976afa51fea6f8e64aeb0ff6ca33e5d5f426426a8d
+scraped_at: 2026-10-28T07:47:19+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ff9746ccc766776046e33c94f1b3d624f61dbde52743b25e7244bb46a8dcf890
 ---
 
 ## 问题现象
@@ -38,15 +38,15 @@ struct Index {
 
 注释前：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/S0ApbEAcQB2w24vd1X7YKg/zh-cn_image_0000002658957193.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/3WX8lVobRt2IWVZWDJatyg/zh-cn_image_0000002658957193.png "点击放大")
 
 注释后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/KEIj9aCrTyexiVeTPLPTOw/zh-cn_image_0000002658837241.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/HuVQac10TqqlzG2X2WxB3g/zh-cn_image_0000002658837241.png "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/LBO4B4mIRzC0Fbr4prR_UQ/zh-cn_image_0000002628597976.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/X5cywDh7Qk2cTN1ouRb3wQ/zh-cn_image_0000002628597976.png "点击放大")
 
 ## 背景知识
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-45
 title: Map Kit如何添加自定义信息窗并实现点击响应
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > Map Kit如何添加自定义信息窗并实现点击响应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
+scraped_at: 2026-10-28T07:48:38+08:00
 doc_updated_at: 2026-08-12
-content_hash: sha256:f8042ff8919cfd2d78b87a6513287bf42ebc9b57d634ccd4bff00e63ca960a0a
+content_hash: sha256:208ea4aa8e39ba47859d76e40b2969f63d4a796c3b4feb20e2b1499f914a65ee
 ---
 
 ## 问题现象
@@ -79,7 +79,7 @@ Map Kit中Marker标记仅能实现简单图标的显示，如何实现标记点�
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/fh81r9QITiiD7VkMUu22JQ/zh-cn_image_0000002658793655.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/xR56--VTStCx8C7wOuqTRw/zh-cn_image_0000002658793655.png "点击放大")
 
    完整代码：
 

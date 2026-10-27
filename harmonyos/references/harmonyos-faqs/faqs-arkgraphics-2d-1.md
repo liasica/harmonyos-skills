@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何使用EGL绘制自定义动画？请提供一个简单示例
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何使用EGL绘制自定义动画？请提供一个简单示例
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:45+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:34+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:1409e205dcd51c4bf4d9d1eff88339a84baf5d8a923841087f0730df2e1482e7
 ---
 

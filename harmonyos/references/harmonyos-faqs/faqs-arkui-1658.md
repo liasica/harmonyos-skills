@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1658
 title: 使用状态管理V2实现Navigation页面路由
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用状态管理V2实现Navigation页面路由
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:28+08:00
+scraped_at: 2026-10-28T07:47:55+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:264c9db51e1ad90252eaafea68cb052f46b9c008809b54d65954f51216bdfe36
+content_hash: sha256:87b375922a7531c9d16f23aa08d7441889370cdbeaebb4020e8558b0864ba6b6
 ---
 
 ## 问题现象
@@ -228,7 +228,7 @@ struct AppStorageV2ChildPage {
 
 以上示例效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/j6Qa6nbNToq4DlyD_Jy0OQ/zh-cn_image_0000002659060263.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/dKFyCesyRqKfn7xRp2RMyQ/zh-cn_image_0000002659060263.png "点击放大")
 
 ## 总结
 

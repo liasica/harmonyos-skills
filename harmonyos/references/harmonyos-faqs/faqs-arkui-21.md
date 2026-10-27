@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-21
 title: 如何加载和使用自定义字体
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何加载和使用自定义字体
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:04+08:00
+scraped_at: 2026-10-28T07:47:53+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:7e8836143dc7f1b74b3b0ac4f537a8318b90148455f4fdc2b23a331d7bda30f5
+content_hash: sha256:3d8a0959d7cc4d021a538919a61fd5b403643f08c4e2578222dc58250cd4fa72
 ---
 
 1. 字体管理中[@ohos.font (注册自定义字体)](../harmonyos-references/js-apis-font.md)。
@@ -61,4 +61,4 @@ content_hash: sha256:7e8836143dc7f1b74b3b0ac4f537a8318b90148455f4fdc2b23a331d7bd
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/5B3xhE3fQ_6o4-mw1x0Baw/zh-cn_image_0000002654835219.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/qFK1Ho_PRpKmXSoR76FNIQ/zh-cn_image_0000002654835219.png "点击放大")

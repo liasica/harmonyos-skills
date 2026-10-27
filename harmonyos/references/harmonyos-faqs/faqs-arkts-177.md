@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-177
 title: 如何解决ArkUI.Lite开发穿戴应用时异步任务不生效问题
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何解决ArkUI.Lite开发穿戴应用时异步任务不生效问题
 category: harmonyos-faqs
-scraped_at: 2026-09-30T07:42:00+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-10-28T07:46:54+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8ac2d7d50586bfb774465f69eeaf49fd91901917562344fd0ce2d3663b96e5e8
 ---
 

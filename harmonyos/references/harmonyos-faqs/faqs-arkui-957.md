@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-957
 title: Swiper组件如何实现子组件高度自适应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper组件如何实现子组件高度自适应
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:05+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c7a59f9c5a4da5b3db598e76e9a0a49b85ba03b292244a074d04695d84519462
+scraped_at: 2026-10-28T07:47:14+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:250784ed75acf09136324692211ef210b05b033128a656730c36893cec2a133d
 ---
 
 ## 问题现象
@@ -67,11 +67,11 @@ struct SwiperTextTest {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/CMvEwyYsR0-o-QeVp9jxuA/zh-cn_image_0000002658920485.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/9Sdc2ZYbT-qKstQsIBHZ_g/zh-cn_image_0000002658920485.gif "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/IHTN8sopRMaFoLqiUeKhcw/zh-cn_image_0000002628401272.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/l8-ofpusQBWkb-ApihYSDQ/zh-cn_image_0000002628401272.gif "点击放大")
 
 ## 背景知识
 

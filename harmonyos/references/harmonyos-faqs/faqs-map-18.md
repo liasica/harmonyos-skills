@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-18
 title: 初始化地图全屏蓝色如何解决
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 初始化地图全屏蓝色如何解决
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:47+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4c32213f1d043b1b74bc3de6f48e35a460f9132812b5e7741276d10413bf5853
+scraped_at: 2026-10-28T07:48:38+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:0a9aedd480e24979ca2fe541dc2d26f21915f61ce6bc1fe36fc1cdf19a88efad
 ---
 
 ## 问题现象
@@ -64,7 +64,7 @@ build() {
 
 根据Mapkit开发地图，先获取定位，然后再用获取到的定位作为mapOptions的position参数来初始化地图；此时我们预期的展示是当前定位处，但是打开地图页面过后直接蓝屏，左右滑动也是毫无反应。经过日志分析：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/fmgwhJwNRTab9jUupJskow/zh-cn_image_0000002628554260.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/zQ1IHFgGQaywu9C67MsEdA/zh-cn_image_0000002628554260.png "点击放大")
 
 发现定位并没有偏差。
 

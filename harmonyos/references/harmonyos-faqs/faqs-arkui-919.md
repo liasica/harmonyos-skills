@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-919
 title: Swiper如何实现3D立方体旋转切换动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Swiper如何实现3D立方体旋转切换动画效果
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:20+08:00
+scraped_at: 2026-10-28T07:47:42+08:00
 doc_updated_at: 2026-06-26
-content_hash: sha256:b28158ee30d1520f1099e0ecdba44ed439f42ad876bd74893adce6081465915c
+content_hash: sha256:40f5895361aa66546f08a407b55dca1e75a166010e0e79a8381f880911700068
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:b28158ee30d1520f1099e0ecdba44ed439f42ad876bd74893adce608146
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/97ClRHuASkWB4B2kH_GkUQ/zh-cn_image_0000002628400290.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/j2FPB5SsSaC9voQsMpVmqA/zh-cn_image_0000002628400290.gif "点击放大")
 
 ## 背景知识
 

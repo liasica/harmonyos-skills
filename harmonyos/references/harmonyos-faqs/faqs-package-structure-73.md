@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: HAR、HSP、HAP三者的区别和使用场景
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > HAR、HSP、HAP三者的区别和使用场景
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:52+08:00
+scraped_at: 2026-10-28T07:46:47+08:00
 doc_updated_at: 2026-07-07
-content_hash: sha256:0aae12c4717bce1127d7183aa79a82ebe8da6fcbca94dc9b0bc85859f6ee9571
+content_hash: sha256:ee555b3c17cf987dc0d5ad8008b83a38ba0fd6d1888c5c5400e081eb087fc064
 ---
 
 ## 问题现象
@@ -50,7 +50,7 @@ Q：在HAR包中是否可以创建AbilityStage，该AbilityStage的生命周期�
 
 A：不能。AbilityStage与HAP包一一对应。具体关系可见下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/U6py1gXwTa2XzfO83PkVIA/zh-cn_image_0000002663796297.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/yWq3CfRzSuONsSDQy42zAA/zh-cn_image_0000002663796297.png "点击放大")
 
 Q：HAR转HSP后，编译报错，该怎么排查？
 

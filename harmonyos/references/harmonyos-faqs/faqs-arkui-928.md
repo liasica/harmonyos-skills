@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-928
 title: 如何解决点击非菜单控制区域事件穿透到下层组件的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决点击非菜单控制区域事件穿透到下层组件的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:49a852b5a3451e498cb122debe3af1b5349d2d92de952d9fa0b28ef5d276404e
+scraped_at: 2026-10-28T07:47:13+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:91640df96c24ebc63d9799fd255d84e48586b093f076fe8f64b18be7ae9beef2
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:49a852b5a3451e498cb122debe3af1b5349d2d92de952d9fa0b28ef5d27
 
 现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/8FSxBFgjTMqQKwXcbPOunQ/zh-cn_image_0000002658919533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/pA4dFCUJR0aJmNgu_uEifw/zh-cn_image_0000002658919533.png "点击放大")
 
 ## 背景知识
 
@@ -84,7 +84,7 @@ content_hash: sha256:49a852b5a3451e498cb122debe3af1b5349d2d92de952d9fa0b28ef5d27
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/0HLON65BTju27BnaYdX-ZQ/zh-cn_image_0000002628400332.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/3WZMf2_rQt6ZaE87KjxAhA/zh-cn_image_0000002628400332.png "点击放大")
 * 方案二：bindContextMenu可以通过绑定一个状态变量来控制菜单的显隐，代码案例如下：
 
   ```ts
@@ -158,7 +158,7 @@ content_hash: sha256:49a852b5a3451e498cb122debe3af1b5349d2d92de952d9fa0b28ef5d27
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/BLtg_z8pSVuduxb-s220HA/zh-cn_image_0000002658799599.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/V47-qKk7TZiJ1bizgFrVpA/zh-cn_image_0000002658799599.png "点击放大")
 * 方案三：popup气泡弹窗默认会带一个透明蒙层，可以使用popup气泡弹窗模拟菜单弹窗。
 
   ```ts
@@ -234,4 +234,4 @@ content_hash: sha256:49a852b5a3451e498cb122debe3af1b5349d2d92de952d9fa0b28ef5d27
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/FZ3VCm1CSY-u034bXXq0ng/zh-cn_image_0000002628560240.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/alOGjJAKT7SsbHZR4VBr2Q/zh-cn_image_0000002628560240.png "点击放大")

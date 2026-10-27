@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1204
 title: 如何跨Text组件选择文本
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何跨Text组件选择文本
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:07+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:43c2c7bd6b95c52b374eb59c701552f4498f512dd8d1c7b7eb4f6afdc101776a
+scraped_at: 2026-10-28T07:47:18+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:457e73e17dfe36da2de8c0bd24a04f51522e70a3087d0452b7f457a49512b8e2
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:43c2c7bd6b95c52b374eb59c701552f4498f512dd8d1c7b7eb4f6afdc10
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/QpFlLpriT7SeQY_HyThicA/zh-cn_image_0000002658832831.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Z2N9r6y_RVuxGG5PqEy9Nw/zh-cn_image_0000002658832831.png "点击放大")
 
 ## 背景知识
 

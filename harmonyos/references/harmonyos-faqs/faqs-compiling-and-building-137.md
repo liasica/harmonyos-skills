@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“The required attribute module-srcPath is missing”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The required attribute module-srcPath is missing”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
+scraped_at: 2026-10-28T07:48:54+08:00
 doc_updated_at: 2026-06-15
-content_hash: sha256:ba16de94a57fd2c982e81835aa4fdaeb66df4fd46c7ea95c0794150bd1e4e8a5
+content_hash: sha256:500c97711192ba77be5fd2637aed84ba86ff531dc38450bfbeec969c3a164123
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:ba16de94a57fd2c982e81835aa4fdaeb66df4fd46c7ea95c0794150bd1e
 
 build-profile.json5文件中缺少模块的相对路径，具体表现为module-srcPath字段缺失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/rcrHtbo0QqCyr0UoQcaO5A/zh-cn_image_0000002624638528.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/3o-pk9p8RLuy8IRTD9OkUQ/zh-cn_image_0000002624638528.png)
 
 **解决措施**
 

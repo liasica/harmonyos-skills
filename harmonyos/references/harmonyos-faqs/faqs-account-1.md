@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-account-1
 title: 华为账号一键登录失败
 breadcrumb: FAQ > 应用服务开发 > 华为账号服务（Account Kit） > 华为账号一键登录失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:25+08:00
-doc_updated_at: 2026-08-12
-content_hash: sha256:6cae19cefe605c6d00ffef9c23d594a6812956da069c8f4e62d326cdb59548d6
+scraped_at: 2026-10-28T07:48:39+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:58fa88c40e14972b437a962963ededddd34253142f4aa1430d88042040344b20
 ---
 
 ## 问题现象
@@ -117,7 +117,7 @@ wpfTag 一键登录返回信息：{
 ### 场景一
 
 1. 检查module type为entry的模块下module.json5中的client\_id是否配置或配置的值是否正确，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)。
-2. 检查AGC上应用的指纹证书，详情请见[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
+2. 检查HarmonyOS 开发者中心上应用的指纹证书，详情请见[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
 3. 更新app.json5中的versionCode使本地缓存失效后再进行重试。
 
 ### 场景二

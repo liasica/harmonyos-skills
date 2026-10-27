@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-864
 title: 图片缩放后翻转180度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 图片缩放后翻转180度
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3660265c4091cfa3dc1bf8b6e2239020f986a09f687a4df237d13798b1a20ceb
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:ff43d552fa524f378d08129cdecea7eebc5b3ba5c27ca0e8ed6034f259227a8c
 ---
 
 ## 问题现象
 
 对图片进行缩放，缩放过程中图片翻转180度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/xe8Z3QtsTBq1LcMW9lI5ZQ/zh-cn_image_0000002658918111.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/DtGLck5SQomoEMUi0erlGQ/zh-cn_image_0000002658918111.png "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:3660265c4091cfa3dc1bf8b6e2239020f986a09f687a4df237d13798b1a
 
 1. 使用DevEco Testing查看问题组件，问题组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/y3kIN5m2RaiJcJPAO1zhhw/zh-cn_image_0000002628398896.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/40dvELUORme4w4Jy0A5idw/zh-cn_image_0000002628398896.png "点击放大")
 2. 查看该问题组件的设置，该组件使用PinchGesture和scale进行图片缩放，且未对缩放的值进行限定，缩放时scale中的参数值小于0。
 
    ```ts
@@ -263,4 +263,4 @@ src/main/module.json5中添加配置："routerMap": "$profile:router\_map"。
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/dqNhb9O2TVyoBbkmzuXNOA/zh-cn_image_0000002658798171.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/S2afJIXNTYG4Uo7TNIlQrw/zh-cn_image_0000002658798171.png "点击放大")

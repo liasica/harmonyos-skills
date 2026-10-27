@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-540
 title: 全屏播放视频时，页面布局发生短暂错位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 全屏播放视频时，页面布局发生短暂错位
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:13+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:47:28+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:8c042a6e845255aad60bc0580b7c6afd662ec304d9af8aa30b3cea9df9a71d5e
 ---
 

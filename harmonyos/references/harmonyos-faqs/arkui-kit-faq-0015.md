@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: 如何使子组件间自适应保持相同间距
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > 如何使子组件间自适应保持相同间距
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:10:32+08:00
+scraped_at: 2026-10-28T07:46:59+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:389d912425c698140775bff3fba578062afc7de33751b37389343eb8fa4c9796
+content_hash: sha256:ddf0d4099c46c3ae7005dadfd712c69ada9f4e12ff5bd4b146a439e25560ea0e
 ---
 
 **Q：Row组件中展示多个子元素（如多个Text组件），子组件的个数和每个子组件的宽度都不确定。希望实现以下效果：**
@@ -98,8 +98,8 @@ struct MeasureTextDemo {
 
 子元素（如Text组件）宽度之和小于父组件（如Row组件）宽度时，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/R1kyj5ZESvaHZBlBvHmibg/zh-cn_image_0000002767982782.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/9D7vBAgCSUa954u5bHj36g/zh-cn_image_0000002767982782.png "点击放大")
 
 子元素（如Text组件）宽度之和大于父组件（如Row组件）宽度时，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/8Nu3BiXjQ-ylUqJK3deE1g/zh-cn_image_0000002767822816.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/T0JIibjXSSWAqJkp8LHhYg/zh-cn_image_0000002767822816.png "点击放大")

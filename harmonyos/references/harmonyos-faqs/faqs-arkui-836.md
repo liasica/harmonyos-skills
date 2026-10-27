@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-836
 title: 无法查看头像
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 无法查看头像
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:04+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8f6d7ba442909b7e804c05efe6af1913c214f3b6c89438221c5f7650a47da470
+scraped_at: 2026-10-28T07:47:12+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f40e01ee97fbd45d4897c858511c9ddb2142f317168ac1f17db10ac71e26ee06
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:8f6d7ba442909b7e804c05efe6af1913c214f3b6c89438221c5f7650a47
 
 通过DevEco Testing工具的实用工具下的UIViewer，获取页面的DOM树，找到图片所在节点，排查clickable属性是否为true。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/si01SUm6TXO50mVx2dlUXw/zh-cn_image_0000002658917671.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/Xxp2ozPxRKqw96CQJ16mQw/zh-cn_image_0000002658917671.png "点击放大")
 
 ## 分析结论
 

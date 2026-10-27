@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-calendar-2
 title: 如何修改已有日程的重复属性
 breadcrumb: FAQ > 应用服务开发 > 日历服务（Calendar Kit） > 如何修改已有日程的重复属性
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:49+08:00
-doc_updated_at: 2026-06-26
+scraped_at: 2026-10-28T07:48:41+08:00
+doc_updated_at: 2026-10-27
 content_hash: sha256:c0ba5d2edf0848a3df2e8481fcac0b7096a28dac0cecf2d4768e0898508e4d94
 ---
 

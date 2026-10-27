@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-563
 title: Swiper组件在删除数据时如何实现切换到前一个元素而非第一个
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper组件在删除数据时如何实现切换到前一个元素而非第一个
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:01+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:b68fbbd544d063f8e4f912081957eb0acbd9ad57fdd6e6cf2d67177e9f1c9ba0
+scraped_at: 2026-10-28T07:47:07+08:00
+doc_updated_at: 2026-10-27
+content_hash: sha256:f1eae9ee197df064d9b258ffc1c981b4665211b200e10a4f07cfb168a0f8dc83
 ---
 
 ## 问题现象
@@ -81,7 +81,7 @@ content_hash: sha256:b68fbbd544d063f8e4f912081957eb0acbd9ad57fdd6e6cf2d67177e9f1
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/dpIP7reyRCeTRh4bqJ-upg/zh-cn_image_0000002658791415.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/41DL42qKRbe_uVSHsyd2Hg/zh-cn_image_0000002658791415.png "点击放大")
 * 场景二：实现Swiper组件在删除数据时切换到前一个元素而非第一个，有切换动画。
 
   可以通过使用Swiper组件的showNext和showPrevious方法解决，翻页默认带动效。
@@ -143,4 +143,4 @@ content_hash: sha256:b68fbbd544d063f8e4f912081957eb0acbd9ad57fdd6e6cf2d67177e9f1
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/PWQxazXqRliPgMb-IVucRA/zh-cn_image_0000002628552030.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/tovdGiWfThuwkJGe44If1A/zh-cn_image_0000002628552030.png "点击放大")
