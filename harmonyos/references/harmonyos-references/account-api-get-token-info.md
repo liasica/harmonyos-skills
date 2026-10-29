@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 解析凭证
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 开放接口调用凭证 > 解析凭证
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fb2894698a9ac836e631df4b9d22386219d58885e7da930af28efd34a48dbb42
+scraped_at: 2026-10-29T08:02:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:7925d9f0a3279319e29a15c73d4432f468e8e60a2e923bf0e42b1298a1478f4b
 ---
 
 **注意** 
@@ -79,7 +79,7 @@ open_id=OPENID&access_token=<access_token>
 
 | **参数** | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| client\_id | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的唯一标识。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。 |
+| client\_id | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的唯一标识。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。 |
 | expire\_in | 是 | Integer | Access Token的过期时间，单位：s。 |
 | union\_id | 否 | String | 用户的UnionID，由用户账号和应用开发者账号签名而成。当Access Token为用户级时才返回。具体格式要求请参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。 |
 | open\_id | 否 | String | 用户的OpenID，由用户账号和Client ID签名而成，当Access Token为用户级，且入参open\_id为OPENID时才返回。具体格式要求请参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。 |

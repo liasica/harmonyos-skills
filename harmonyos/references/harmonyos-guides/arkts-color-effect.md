@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-color-e
 title: 色彩
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 色彩
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:51+08:00
+scraped_at: 2026-10-29T07:56:33+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:c3aef0c5db70beeef8a3795b3be82ca4f01fb8585888b06552d42b874fa389a0
+content_hash: sha256:6921a11aa90be17e4324eff3f89eaf320a76c7b625fe9f6d6d849809eec7cd0a
 ---
 
 通过颜色渐变接口，可以设置组件的背景颜色渐变效果，实现在两个或多个指定的颜色之间进行平稳的过渡。
@@ -105,7 +105,7 @@ struct LinearGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/l4Ij8h3CSJyCVSDWZzI0Ug/zh-cn_image_0000002800985229.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/XSJOuTtERVCIzGs0Ptm_pw/zh-cn_image_0000002803263969.png)
 
 ## 为组件添加角度渐变效果
 
@@ -218,7 +218,7 @@ struct SweepGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/xVtXPSJwS6SSp2HKepC9ew/zh-cn_image_0000002771825338.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/bW8mXKNlR02G5uxh5F6XZg/zh-cn_image_0000002803223879.png)
 
 ## 为组件添加径向渐变效果
 
@@ -325,4 +325,4 @@ struct RadialGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/nMjhNaiYSuq_q_QVkEnt8A/zh-cn_image_0000002801105153.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Y-z3w92KRVWtjBXlPrP7qg/zh-cn_image_0000002774064160.png)

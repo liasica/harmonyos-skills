@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 设置信息提醒
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 设置信息提醒
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:02+08:00
+scraped_at: 2026-10-29T07:56:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cdb82c1523e1b57983365400b6564e22e566a68b46871a2aebc899ae101c6351
+content_hash: sha256:5f79ed8ad50986ad61917ffb0e81bf2c5f4a360700850345fb61ab7f996f3b74
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:cdb82c1523e1b57983365400b6564e22e566a68b46871a2aebc899ae101
 
 当应用开发者需要在导航组件菜单项右上角附加消息提醒时，可以通过设置标题栏菜单中的[badge](../harmonyos-references/ui-design-hdsnavigation.md#hdsnavigationbadgeiconoptions)属性，实现信息提醒能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/nOE5W4nGS6CQU7GkUHiIrQ/zh-cn_image_0000002771825770.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/UdII_5VBQBGt6myqmHqFvw/zh-cn_image_0000002803224309.png)
 
 ## 开发步骤
 

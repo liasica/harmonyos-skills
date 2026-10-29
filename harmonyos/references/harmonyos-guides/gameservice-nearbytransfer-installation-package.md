@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输安装包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输安装包
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:45+08:00
+scraped_at: 2026-10-29T07:57:39+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:51ac1941d8e46594c2daa561636895c46fd2e08738771ed18f90d7feb65426c8
+content_hash: sha256:fcb00c2b3de6fffb87171a2780abd50402d49b55b72b48e7e6f7c44705551fbd
 ---
 
 游戏近场快传支持已安装游戏的玩家通过碰一碰或隔空传送将游戏安装包传输给未安装游戏的玩家，实现游戏传播效率的提升。
@@ -25,10 +25,10 @@ content_hash: sha256:51ac1941d8e46594c2daa561636895c46fd2e08738771ed18f90d7feb65
 
 1. 发送端设备打开游戏后在任意游戏界面与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)触发安装包传输。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/GZStkMPoTzWv21oOkj9ysQ/zh-cn_image_0000002801106271.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MZb9GQUhRhypOzFbUKVzZA/zh-cn_image_0000002774065280.png)
 2. 若当前接收端已安装该游戏，则会打开该游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/sS2CmNNgRASuicXW1iMeRw/zh-cn_image_0000002771666490.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/XMfaq0RuQre8brM8jpUpQg/zh-cn_image_0000002773905306.png)
 
 ## 集成Game Service Kit实现安装包传输
 
@@ -36,7 +36,7 @@ content_hash: sha256:51ac1941d8e46594c2daa561636895c46fd2e08738771ed18f90d7feb65
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/w80C3XNtSf6oob7fxaua2g/zh-cn_image_0000002800986347.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/SFxCLottSyCFydS7nOMafQ/zh-cn_image_0000002803265089.png)
 
 1. 发送端设备打开游戏后与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)或[隔空传送](gestures-share-overview.md)触发安装包传输。
 2. 发送端调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建安装包传输任务。

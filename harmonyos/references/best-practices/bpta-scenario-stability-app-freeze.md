@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: 应用冻屏类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用冻屏类问题案例
 category: best-practices
-scraped_at: 2026-10-16T07:06:54+08:00
-doc_updated_at: 2026-08-17
-content_hash: sha256:6b463ff2663a3a7d9a2a30ffc269b407a456e25fc2b9126319ca18f77a1186aa
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:55e6bc3c718a9f4e7179b23496b524306c692204e83dece4a96bcfbb70abcbfa
 ---
 
 ## ThreadBlock类问题案例-未正确使用锁
@@ -22,7 +22,7 @@ xxxservice上报THREAD\_BLOCK\_6S的AppFreeze问题。后台应用卡死时，�
 
 代码中通过mutex\_.lock()加锁，但是在返回失败情况下未解锁，会导致其他线程一直等锁。
 
-```cpp
+```screen
 bool ContainTarget(int target) {
     auto ret = std::find(sharedVec.begin(), sharedVec.end(), target);
     if (ret == sharedVec.end()) {
@@ -36,16 +36,16 @@ int AppFreezeAdvise1() {
     mtx.lock();
     if (ContainTarget(1)) {
         return -1;
-        // 没有释放锁
+        // Lock not released
     }
-    // 没有释放锁
+    // Lock not released
      return 0;
 }
 ```
 
 ### 分析思路
 
-请参考[应用冻屏问题定位步骤与思路](bpta-stability-app-freeze-way.md#section1950514261110)。
+请参考应用冻屏问题排查方法中的[定位步骤与思路](../doccenter-app-quality/bpta-stability-app-freeze-way.md#section1950514261110)。
 
 ### 分析步骤
 
@@ -241,7 +241,7 @@ int AppFreezeAdvisePositive() {
 
 ### 概述
 
-由于线程繁忙，导致用户在合一桌面切换主题时，页面高概率卡死，点击无响应，然后闪退到锁屏界面，严重影响用户体验，从而触发APP\_INPUT\_BLOCK检测，原理可参考[日志差异性信息](../harmonyos-guides/appfreeze-guidelines.md#日志差异性信息)APP\_INPUT\_BLOCK 用户输入响应超时小节。
+由于线程繁忙，导致用户在合一桌面切换主题时，页面高概率卡死，点击无响应，然后闪退到锁屏界面，严重影响用户体验，从而触发APP\_INPUT\_BLOCK检测，原理可参考[日志差异性信息](../harmonyos-guides/appfreeze-guidelines.md#日志差异性信息)APP\_INPUT\_BLOCK用户输入响应超时小节。
 
 ### 问题现象
 
@@ -253,16 +253,16 @@ int AppFreezeAdvisePositive() {
 
 该函数用于生成桌面组件的key，并与themeStyle关联，当用户在桌面连续切换主题时，组件反复全量刷新，导致卡死。
 
-```typescript
+```screen
 function getForeachKey(item : ItemType) : string {
     // ...
     return `${item.xxx2}${item.xxx2}...${item.themeStyle}`;
-} // 这部分逻辑如果较为耗时，执行次数多，总时长就是发生冻屏的耗时操作
+} // Frequent timeFrequent time-consuming logic accumulates into app-freezing durations
 ```
 
 ### 分析思路
 
-请参考[应用冻屏问题定位步骤与思路](bpta-stability-app-freeze-way.md#section1950514261110)。
+请参考应用冻屏问题排查方法中的[定位步骤与思路](../doccenter-app-quality/bpta-stability-app-freeze-way.md#section1950514261110)。
 
 ### 分析步骤
 
@@ -273,7 +273,7 @@ appfreeze: com.example.sceneboard APP_INPUT_BLOCK at 202403144059
 DisplayPowerInfo:powerState:AWAKE
 ```
 
-APP\_INPUT\_BLOCK 事件上报时间为 **14:40:59:440**。
+APP\_INPUT\_BLOCK事件上报时间为**14:40:59:440**。
 
 ```screen
 DOMAIN:AAFWK
@@ -285,7 +285,7 @@ PACKAGE_NAME:com.example.sceneboard
 PROCESS_NAME:com.example.sceneboard
 ```
 
-上报的原因是：User input does not respond! 用户输入事件没有响应。
+上报的原因是：User input does not respond!用户输入事件没有响应。
 
 可以看到，当前任务在主线程（Thread ID == Pid）上运行，任务从**14:40:53.499**开始运行，直到Fault time**14:40:58**仍未运行完。
 
@@ -362,15 +362,15 @@ Tid:2918, Name:example.sceneboard
 
 首先找到上报APP\_INPUT\_BLOCK的时间点，大约在13:40:59.448。事件上报完后，dfx将卡死的scb杀掉。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/xaJ8GKaNSEm_CL9FUvHfyw/zh-cn_image_0000002370565628.png)往前推6s左右，可以看到在14:40:53.498左右，有一个点击事件发给了scb。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/EIo_aYuQTCu5HOUJ_Mez0w/zh-cn_image_0000002370565628.png)往前推6s左右，可以看到在14:40:53.498左右，有一个点击事件发给了scb。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/J0SQofF5RaK6CSy6DnL10g/zh-cn_image_0000002404125265.png)这之间的6s存在大量的scb日志，判断是在进行更新渲染。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2iwCZwZ3SMC7jaBdVbsXVw/zh-cn_image_0000002404125265.png)这之间的6s存在大量的scb日志，判断是在进行更新渲染。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/UXPp8SKTS3qq0LKrZem8SA/zh-cn_image_0000002411349608.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/tvZTHp5AQmqnShoPrdjP6w/zh-cn_image_0000002411349608.png)
 
 查看对应时间点的trace：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/VFAsm6IfQi-N_6o1zjdfYg/zh-cn_image_0000002404045457.png)发现scb主线程被占满，非常繁忙。耗时较长的任务是**CustomNodeUpdate SwiperPage**，后续需排查该组件里为何一直在刷新。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/EXkyHIrSSlGY99Wf_CUV8w/zh-cn_image_0000002404045457.png)发现scb主线程被占满，非常繁忙。耗时较长的任务是**CustomNodeUpdate SwiperPage**，后续需排查该组件里为何一直在刷新。
 
 对应领域排查后发现：swiperPage上将themeStyle加入到了key里面，key变化就会触发控件新建流程。
 
@@ -406,12 +406,12 @@ function xxxFunction1(fileUris : string[]): void {
         // ...
     }
     // ...
-} // 如果使用同步操作，需要考虑到容器弱网或无网等极端情况发生
+} // When using synchronous operations, consider extreme cases such as weak or no network in the container
 ```
 
 ### 分析思路
 
-详见[应用冻屏类问题定位步骤与思路](bpta-stability-app-freeze-way.md#section1950514261110)。
+详见应用冻屏问题排查方法中的[定位步骤与思路](../doccenter-app-quality/bpta-stability-app-freeze-way.md#section1950514261110)。
 
 ### 分析步骤
 
@@ -421,7 +421,7 @@ function xxxFunction1(fileUris : string[]): void {
 sysfreeze: LIFECYCLE_TIMEOUT LIFECYCLE_TIMEOUT at 20240201100459
 ```
 
-查看MSG信息：**foreground timeout，对应时长为 5s**。
+查看MSG信息：**foreground timeout，对应时长为5s**。
 
 ```screen
 MSG = 
@@ -433,9 +433,9 @@ client:
 312522; AbilityThread::ScheduleAbilityTransaction; the foreground lifecycle.
 ```
 
-LIFECYCLE\_HALF\_TIMEOUT 上报时间为**10:04:57:538**；
+LIFECYCLE\_HALF\_TIMEOUT上报时间为**10:04:57:538**；
 
-LIFECYCLE\_TIMEOUT 上报时间为**10:04:59:965**；相隔约2.5s，符合预期。
+LIFECYCLE\_TIMEOUT上报时间为**10:04:59:965**；相隔约2.5s，符合预期。
 
 ```screen
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -543,7 +543,7 @@ Tid:5235, Name:edialibrarydata
 
 查看对应时间点的流水信息：进程调用datashare加载云图后卡死，与堆栈信息吻合。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/_d5gAu3xRbW1w2-vDK0vGg/zh-cn_image_0000002370565632.png)查看具体代码：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Sz3-fQ9MQquUgDnFk8-ayg/zh-cn_image_0000002370565632.png)查看具体代码：
 
 在循环中同步加载fileUri是不合理的，当弱网环境或者同时加载大量数据时，极易出现卡死情况，应用侧需进行整改。
 
@@ -559,7 +559,7 @@ function xxxFunction1(fileUris : string[]): void {
         // ...
     }
     // ...
-} // 如果使用同步操作，需要考虑到容器弱网或无网等极端情况发生
+} // When using synchronous operations, consider extreme cases such as weak or no network in the container
 ```
 
 修改为：
@@ -567,9 +567,9 @@ function xxxFunction1(fileUris : string[]): void {
 ```screen
 async function xxxFunction2(fileUris : string[]) : Promise<void> {
     // ...
-    AppStorage.setOrCreate<boolean>('isLoadingPic', true); // 用于页面load效果展示
+    AppStorage.setOrCreate<boolean>('isLoadingPic', true); // Used for page loading effect display
     for (const fileuri of fileUris) {
-        let file = await fileIo.open(fileuri, fileIo.OpenMode.READ_ONLY); // 改为异步加载
+        let file = await fileIo.open(fileuri, fileIo.OpenMode.READ_ONLY); // Changed to asynchronous loading
         // ...
     }
     // ...
@@ -597,7 +597,7 @@ async function xxxFunction2(fileUris : string[]) : Promise<void> {
 
 ### 分析步骤
 
-查看CPU 故障时间内1min、5min和15min的平均负载（Load average）,该数值越大表示此时整机负载越高，数值越接近100表明负载越高，超过100表明负载极高。
+查看CPU故障时间内1min、5min和15min的平均负载（Load average）,该数值越大表示此时整机负载越高，数值越接近100表明负载越高，超过100表明负载极高。
 
 ```screen
 Load average: 129. / 82.1 / 56.9; the cpu load average in 1 min, 5 min and 15 min

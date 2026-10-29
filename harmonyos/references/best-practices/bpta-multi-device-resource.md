@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备资源文件
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备资源文件
 category: best-practices
-scraped_at: 2026-10-16T07:06:39+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:4c1e1ef7e1c404902dde51e97790792c3482198b6b18e026dde4ada7b20d84df
+scraped_at: 2026-10-29T08:03:17+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:4f68fb9e018ba0a06f445195d1fd52b4a70489cc51afd439e6fb79361d903018
 ---
 
 在页面开发过程中，经常需要用到颜色、字体、间距、图片等资源，在不同的设备或配置中，这些资源的值可能不同。有两种方式处理：
@@ -50,8 +50,7 @@ base目录与限定词目录下面可以创建资源组目录，用于存放特�
 
 在element目录的各个资源文件中，以“name-value”的形式定义资源，如下所示。而在media目录中，直接以文件名作为name，故开发者将文件放入media目录即可，无需再额外定义name。
 
-```json
-// color.json 
+```screen
 {
     "color": [
         {
@@ -87,7 +86,7 @@ base目录与限定词目录下面可以创建资源组目录，用于存放特�
 
 在代码中通过 "$r('app.type.name')" 的形式使用应用资源，并分别在默认设备和平板上查看代码的运行效果，可以发现同一资源在不同设备上的取值不同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/oRcxZu6QQRqB8L_60EKm9w/zh-cn_image_0000002321308262.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Im8bJGGzTsetyumQo4cJxA/zh-cn_image_0000002321308262.png "点击放大")
 
 ```typescript
 @Entry

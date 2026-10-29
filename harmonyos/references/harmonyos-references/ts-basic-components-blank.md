@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Blank
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 空白与分隔 > Blank
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:26+08:00
+scraped_at: 2026-10-29T07:59:45+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7be709d1281db9f57d7626575288c8221dd80304add2b529a04dc496a8acf0b6
+content_hash: sha256:8f70f17750b67599c83b199dbc485116766fcb11854270d30693571472457691
 ---
 
 空白填充组件，在容器主轴方向上，空白填充组件具有自动填充容器空余部分的能力。仅当父组件为[Row](ts-container-row.md)/[Column](ts-container-column.md)/[Flex](ts-container-flex.md)时生效。
@@ -93,11 +93,11 @@ struct BlankExample {
 
 竖屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/uHwb3YJiQzWoURA3Xr08bg/zh-cn_image_0000002771827646.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/j2iqug19SueCSvztrRqQug/zh-cn_image_0000002773906496.gif)
 
 横屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/qWpBNErVSzaJKo-0VQt1Fg/zh-cn_image_0000002801107461.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/47Cl_K81S_arSQVzAJ2rvQ/zh-cn_image_0000002803266281.gif)
 
 ### 示例2（填充固定宽度）
 
@@ -131,4 +131,4 @@ struct BlankExample {
 
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/AJrpn1_QRWGpk8V4k7oQSw/zh-cn_image_0000002771667682.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/SuJfYOzsQsWTSJPWDpDLwg/zh-cn_image_0000002803226187.png)

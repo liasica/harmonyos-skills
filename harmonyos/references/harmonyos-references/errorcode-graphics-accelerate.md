@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:891eb094e0f38d0fd24edf422d0786106e3c76b56809236bdc04ad0bf1fda304
+scraped_at: 2026-10-29T08:02:27+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:a1bc3b5509fdd2f8b3c414ffacfd9e8acdf8c60949877cc59cda04f8d498c037
 ---
 
 **说明** 
@@ -24,7 +24,7 @@ The API call from an ExtensionAbility is not allowed.
 
 **可能原因**
 
-当前API不允许在资源加速ExtensionAbility中调用。
+在资源加速ExtensionAbility中调用了不支持的接口，未在允许调用范围内。
 
 **处理步骤**
 
@@ -51,7 +51,7 @@ The domain name of the download task is not in the domain name trustlist.
 
 **可能原因**
 
-下载任务的域名不在域名白名单中。
+下载任务URL的域名未在AGC控制台配置的域名白名单中。
 
 **处理步骤**
 

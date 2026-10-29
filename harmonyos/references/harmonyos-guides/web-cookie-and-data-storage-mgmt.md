@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-cookie-an
 title: 管理Cookie及数据存储
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > 管理Cookie及数据存储
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:44+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:0996c8f4859fb61ad4300384e7be58ef5c128c0a66d9f803a7759123459c0ed3
+scraped_at: 2026-10-29T07:56:40+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:cc0d7f5da140063e2488acfe77b58c4b0aca59723fbbb8f2690691b66565a58b
 ---
 
 Cookie是服务端生成并发送到客户端的数据。客户端持有Cookie，便于服务端快速识别身份和状态。
@@ -86,8 +86,8 @@ Cookie每30s周期性保存到磁盘中，也可以使用接口[saveCookieAsync]
 
 使用[cacheMode()](../harmonyos-references/arkts-basic-components-web-attributes.md#cachemode)配置页面资源的缓存模式，Web组件为开发者提供四种缓存模式，分别为：
 
-* Default：优先使用未过期的缓存。如果缓存不存在，则从网络获取。
-* None：加载资源使用缓存。如果缓存中无该资源，则从网络中获取。
+* Default：优先使用未过期缓存来加载资源。如果缓存不存在，则从网络获取。
+* None：优先使用（含过期的）缓存来加载资源。如果缓存中无该资源，则从网络中获取。
 * Online：加载资源不使用缓存。全部从网络中获取。
 * Only：只从缓存中加载资源。
 

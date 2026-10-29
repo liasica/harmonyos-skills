@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-record
 title: 录像(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 录像(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:29+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:0a092f63713d3f1c9ad6db024b528a4a211f8ace68e8bc78f3bca70480df0bbf
+scraped_at: 2026-10-29T07:57:19+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:607847ee77771241444aa42e639ff65b3a2668b21c5b315645fdb5cfbfbc86bc
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -46,13 +46,10 @@ content_hash: sha256:0a092f63713d3f1c9ad6db024b528a4a211f8ace68e8bc78f3bca70480d
 
    **说明** 
 
-   1.预览流与录像输出流的分辨率的宽高比要保持一致，如示例代码中宽高比为640:480 = 4:3，则需要预览流中的分辨率的宽高比也为4:3，如分辨率选择640:480，或960:720，或1440:1080，以此类推。
-
-   2.在设置预览输出流的分辨率宽高前，需要先通过[AVRecorderProfile](../harmonyos-references/arkts-apis-media-i.md#avrecorderprofile9)查询视频帧支持可配置的宽高范围。
-
-   3.获取录像旋转角度的方法：通过[VideoOutput](../harmonyos-references/arkts-apis-camera-videooutput.md)中的[getVideoRotation](../harmonyos-references/arkts-apis-camera-videooutput.md#getvideorotation12)方法获取rotation实际的值。
-
-   4.录像输出流帧率通过[CameraOutputCapability](../harmonyos-references/arkts-apis-camera-i.md#cameraoutputcapability)中的videoProfiles属性，选择[VideoProfile](../harmonyos-references/arkts-apis-camera-i.md#videoprofile)中[frameRateRange](../harmonyos-references/arkts-apis-camera-i.md#frameraterange)满足实际业务需求的录像输出流videoProfile。
+   1. 预览流与录像输出流的分辨率的宽高比要保持一致，如示例代码中宽高比为640:480 = 4:3，则需要预览流中的分辨率的宽高比也为4:3，如分辨率选择640:480，或960:720，或1440:1080，以此类推。
+   2. 在设置预览输出流的分辨率宽高前，需要先通过[AVRecorderProfile](../harmonyos-references/arkts-apis-media-i.md#avrecorderprofile9)查询视频帧支持可配置的宽高范围。
+   3. 获取录像旋转角度的方法：通过[VideoOutput](../harmonyos-references/arkts-apis-camera-videooutput.md)中的[getVideoRotation](../harmonyos-references/arkts-apis-camera-videooutput.md#getvideorotation12)方法获取rotation实际的值。
+   4. 录像输出流帧率通过[CameraOutputCapability](../harmonyos-references/arkts-apis-camera-i.md#cameraoutputcapability)中的videoProfiles属性，选择[VideoProfile](../harmonyos-references/arkts-apis-camera-i.md#videoprofile)中[frameRateRange](../harmonyos-references/arkts-apis-camera-i.md#frameraterange)满足实际业务需求的录像输出流videoProfile。
 
    ```typescript
    createVideoOutputFn(cameraManager: camera.CameraManager, videoProfileObj: camera.VideoProfile,
@@ -144,7 +141,7 @@ content_hash: sha256:0a092f63713d3f1c9ad6db024b528a4a211f8ace68e8bc78f3bca70480d
     console.info('Video frame ended');
   });
   ```
-* 通过注册固定的error回调函数获取监听录像输出错误结果，callback返回预览输出接口使用错误时对应的错误码，错误码类型参见[CameraErrorCode](../harmonyos-references/arkts-apis-camera-e.md#cameraerrorcode)。
+* 通过注册固定的error回调函数获取监听录像输出错误结果，callback返回录像输出接口使用错误时对应的错误码，错误码类型参见[CameraErrorCode](../harmonyos-references/arkts-apis-camera-e.md#cameraerrorcode)。
 
   ```typescript
   videoOutput.on('error', (error: BusinessError) => {

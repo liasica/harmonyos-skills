@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-suppor
 title: 获取支持的编解码能力
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 获取支持的编解码能力
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:27+08:00
+scraped_at: 2026-10-29T07:57:17+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:81a94abc74dfeae49637f93b54880d96ed23c4a0ba6f9b0044d563c135ec0fda
+content_hash: sha256:03558c53c78b9abcd1e1e057233f8a1a92646e88c50bd4d4dfbcaa11347d675a
 ---
 
 因来源、编解码协议及设备能力的不同，导致不同设备上可用的编解码器及其能力存在差异。
@@ -579,7 +579,7 @@ bool isSupported = OH_AVCapability_AreProfileAndLevelSupported(capability, AVC_P
 
 根据视频高度计算最大视频宽度的公式如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/oxdyJuFVQlq-UH4aHCDAbw/zh-cn_image_0000002771666058.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/_4oEjIOsTN6uZ3l07JCenQ/zh-cn_image_0000002773904872.png)
 
 MaxMBsPerFrameLevelLimits表示协议限定的编解码器最大每帧宏块数，MaxMBsPerFrameSubmit表示编解码器上报的最大每帧宏块数，实际生效的每帧最大宏块数（MaxMBsPerFrame）取这两者的最小值。在此基础上，结合给定的视频高度（height）以及单个宏块的宽和高（MBWidth和MBHeight，通常为16），即可推算得出该高度下所支持的最大视频宽度（maxWidth）。
 
@@ -687,7 +687,7 @@ if (ret != AV_ERR_OK || widthRange.maxVal <= 0) {
 
 根据视频的宽度和高度，计算最大帧率的公式如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/0-cUxkRxSfC1yl5z44Zr4Q/zh-cn_image_0000002800985915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/V_erDbIDS6uc8RezhkJuAQ/zh-cn_image_0000002803264655.png)
 
 MaxMBsPerSecondLevelLimits表示协议限定的编解码器最大每秒宏块数，MaxMBsPerSecondSubmit表示编解码器上报的最大每秒宏块数，实际能力取这两者的最小值。
 

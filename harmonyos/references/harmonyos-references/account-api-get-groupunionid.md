@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 通过OpenID或UnionID获取GroupUnionID
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 扩展能力 > 通过OpenID或UnionID获取GroupUnionID
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dc3b9dc2d9b81c45075dff466f6790775e2307401e4f3de3286eaf6953c0d99c
+scraped_at: 2026-10-29T08:02:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:6a25c9df369f07450cb00b347801f851f16bd9a595411f4d00e120d8865b38cb
 ---
 
 **注意** 
@@ -26,7 +26,7 @@ content_hash: sha256:dc3b9dc2d9b81c45075dff466f6790775e2307401e4f3de3286eaf6953c
 
 * 需确保调用端网络正常。
 * 仅对企业开发者开放。
-* 开发者账号必须加入关联主体账号组。具体可通过[创建账号组](../start/cag-0000001265390541.md)创建关联主体账号组，然后在关联主体账号组中[添加账号组成员](../start/aai-0000001265430513.md)。
+* 开发者账号必须加入关联主体账号组。具体可通过[创建关联主体](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section15387160135710)，创建“跳转互通”类型的关联主体，然后在关联主体中[添加关联主体成员](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section1622135572)。
 * 仅能获取当前应用的用户OpenID、UnionID对应的GroupUnionID。
 
 ## 接口原型
@@ -270,5 +270,5 @@ public class GroupUnionIdBatchGetDemo {
 | --- | --- | --- |
 | 60010002 | 参数错误。 | 请按照响应描述中的提示，检查并修改[请求参数](account-api-get-groupunionid.md#请求参数)。 |
 | 60010003 | 鉴权头Authorization校验不通过。 | 检查并修改[请求参数](account-api-get-groupunionid.md#请求参数)中Authorization参数。 |
-| 60170001 | 开发者账号未加入关联主体账号组。 | 可通过[创建账号组](../start/cag-0000001265390541.md)创建关联主体账号组，然后在关联主体账号组中[添加账号组成员](../start/aai-0000001265430513.md)。 |
+| 60170001 | 开发者账号未加入关联主体账号组。 | 可通过[创建关联主体](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section15387160135710)，创建“跳转互通”类型的关联主体，然后在关联主体中[添加关联主体成员](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section1622135572)。 |
 | 60010001 | 系统内部错误。 | 可重试，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-business-
 title: 多设备商务办公界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备商务办公界面
 category: best-practices
-scraped_at: 2026-10-16T07:06:40+08:00
-doc_updated_at: 2026-08-10
-content_hash: sha256:75f30dfffcd23248e7f97b70e4b42a28ca5d65fff386c1be61fc8aaa6186e8e5
+scraped_at: 2026-10-29T08:03:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:1559fbdebe08602db60490f13e96cf21b9ba9448eb8b3970e36e0cc5614a8621
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:75f30dfffcd23248e7f97b70e4b42a28ca5d65fff386c1be61fc8aaa618
 
 * 核心功能：
 
-  [侧边栏显隐](multi-business-office.md#li46232105014)：监听断点变化，设置[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)组件的SideBarContainerType属性或改变showSideBar属性参数，实现侧边栏根据不同断点显示隐藏及显示类型的变化。
+  侧边栏显隐：监听断点变化，设置[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)组件的SideBarContainerType属性或改变showSideBar属性参数，实现侧边栏根据不同断点显示隐藏及显示类型的变化。
 
   分栏布局：分栏布局通过[Navigation](../harmonyos-references/ts-basic-components-navigation.md)实现，监听断点变化，根据不同断点或状态改变Navigation的mode属性，实现单双栏切换的效果。
 
@@ -38,7 +38,7 @@ content_hash: sha256:75f30dfffcd23248e7f97b70e4b42a28ca5d65fff386c1be61fc8aaa618
 
 本示例中的商务办公应用包含入口、备忘录、笔记汇总、笔记、日历等页面。以平板端为例，应用的基本业务逻辑如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/ZiAN-Q6hQ7O-qEIAQRfy_w/zh-cn_image_0000002229337365.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/afD5QtiqSLiv0gcCBfsETQ/zh-cn_image_0000002229337365.png "点击放大")
 
 ## 架构设计
 
@@ -64,7 +64,7 @@ HarmonyOS的分层架构主要包括产品定制层、基础特性层和公共�
 
 * 多实例入口的实现：
 
-  监听断点变化，设置List组件的listDirection属性。当断点为sm时，设置为Vertical纵向展示；其余断点时，设置为Horizontal横向展示，实现入口组件根据不同断点横纵排列的效果。使用startAbility()实现点击子组件时拉起新实例的效果。
+  监听断点变化，设置List组件的listDirection属性。当断点为sm时，设置为Vertical纵向展示；其余断点时，设置为Horizontal横向展示，实现入口组件根据不同断点横向或纵向排列的效果。使用startAbility()实现点击子组件时拉起新实例的效果。
 
   ```typescript
   Column() {
@@ -194,7 +194,7 @@ HarmonyOS的分层架构主要包括产品定制层、基础特性层和公共�
   | --- | --- | --- |
   | 1 | 侧边栏 | 监听断点变化，设置[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)组件的SideBarContainerType属性在断点为lg时为Embed，其余断点为Overlay，实现侧边栏根据不同断点显示类型变化的效果。 |
   | 2 | 侧边栏显隐控件 | 监听断点变化，设置SideBarContainer组件的showSideBar属性，实现侧边栏根据不同断点显示隐藏的效果。 |
-  | 3 | 标题栏 | 空白部分使用[Blank](../harmonyos-references/ts-basic-components-blank.md)组件填充，实现拉伸能力。PC/2in1设备需设置setWindowDecorVisible()接口，隐藏标题栏后避让系统绘制的右上角三键区域。 |
+  | 3 | 标题栏 | 空白部分使用[Blank](../harmonyos-references/ts-basic-components-blank.md)组件填充，实现拉伸能力。电脑设备需设置setWindowDecorVisible()接口，隐藏标题栏后避让系统绘制的右上角三键区域。 |
   | 4 | 笔记汇总 | 使用网格布局[Grid](../harmonyos-references/ts-container-grid.md)组件，在不同断点下将父组件分为不同列数，来实现自适应布局的占比能力，可参考多设备长视频界面中[首页](multi-video-app.md#section109591922155720)的推荐视频实现方案。 |
 
 * 整个页面使用的是宫格卡片，点击某一个笔记时，可打开笔记实例。
@@ -227,7 +227,7 @@ HarmonyOS的分层架构主要包括产品定制层、基础特性层和公共�
   | --- | --- | --- |
   | 1 | 侧边栏 | 设置[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)组件的SideBarContainerType属性在断点为lg时为Embed，其余断点为Overlay，实现侧边栏根据不同断点显示类型变化的效果。 |
   | 2 | 侧边栏显隐控件 | 设置SideBarContainer组件的showSideBar属性，实现侧边栏根据不同断点显示隐藏的效果。 |
-  | 3 | 标题栏 | 空白部分使用[Blank](../harmonyos-references/ts-basic-components-blank.md)组件填充，实现拉伸能力。PC/2in1设备需设置setWindowDecorVisible()接口，隐藏标题栏后避让系统绘制的右上角三键区域。 |
+  | 3 | 标题栏 | 空白部分使用[Blank](../harmonyos-references/ts-basic-components-blank.md)组件填充，实现拉伸能力。电脑设备需设置setWindowDecorVisible()接口，隐藏标题栏后避让系统绘制的右上角三键区域。 |
   | 4 | navigation导航页 | 使用[Grid](../harmonyos-references/ts-container-grid.md)组件设置columnsTemplate和rowsTemplate属性，实现五行七列的自适应布局。  通过[Navigation](../harmonyos-references/ts-basic-components-navigation.md)路由栈[NavPathStack](../harmonyos-references/ts-basic-components-navigation.md#navpathstack10)，将NavDestination页面信息入栈，并监听断点变化，根据不同断点或状态改变Navigation的mode属性，实现单双栏切换及navigation内容页显隐的效果。 |
   | 5 | navigation内容页 | NavDestination页面信息。 |
   | 6 | navigation控制按钮 | 给控制按钮添加onClick事件，用来改变Navigation的mode属性，实现单双栏切换及控制navigation内容页显隐的效果，代码可参考[单双栏切换](multi-business-office.md#li12736428201)。 |

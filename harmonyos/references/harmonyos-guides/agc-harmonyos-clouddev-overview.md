@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 业务介绍
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 业务介绍
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:07+08:00
-doc_updated_at: 2026-09-03
-content_hash: sha256:d72696219d3e2402c34280943a319290456e37cd6e72c6af5da0783f33f1d8dc
+scraped_at: 2026-10-29T07:58:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:43b40bc2eb0703b373e6f42686263c69951a3f80cc62e176cecbf11fff70c07c
 ---
 
 ## 什么是端云一体化开发
@@ -28,7 +28,7 @@ DevEco Studio目前预置了通用云开发模板（[CloudDev]Empty Ability）�
 
 | 主要功能 | 说明 |
 | --- | --- |
-| 端云一体化开发 | 您不仅可以在DevEco Studio中开发和调试应用端侧的业务代码，还可以开发和调试应用云侧的服务代码、并在开发完成后将云侧工程一键部署至AGC云端。 |
+| 端云一体化开发 | 您不仅可以在DevEco Studio中开发和调试应用端侧的业务代码，还可以开发和调试应用云侧的服务代码、并在开发完成后将云侧工程一键部署至HarmonyOS 开发者中心。 |
 | Cloud Foundation Kit | 云侧工程接入Cloud Foundation Kit，按需为应用提供云函数、云数据库、云存储等云端服务，借助Cloud Foundation Kit开箱即用、一键部署、自动弹性伸缩、免运维等特点助力开发者降本增效。 |
 
 ## 端云一体化开发的优势
@@ -50,15 +50,15 @@ DevEco Studio支持开发者在本地完成云侧服务资源的开发与部署�
 
    **说明** 
 
-   云侧与端侧工程的代码可并行开发，一般无先后顺序。但若需在端侧代码中调用云侧代码，云侧代码必须先部署到AGC云端，因此建议您先完成云侧代码的开发、调试与部署，再进行端侧代码开发与调试。
+   云侧与端侧工程的代码可并行开发，一般无先后顺序。但若需在端侧代码中调用云侧代码，云侧代码必须先部署到HarmonyOS 开发者中心，因此建议您先完成云侧代码的开发、调试与部署，再进行端侧代码开发与调试。
 
    1. 开发云侧工程：在云侧工程开发Cloud Foundation Kit提供的服务，目前包括云函数、云对象和云数据库。
-      * [开发云函数](agc-harmonyos-clouddev-cloudfunctions.md)：在云侧工程下创建并配置函数、开发函数代码、调试函数、部署函数到AGC云端。
-      * [开发云对象](agc-harmonyos-clouddev-cloudobj.md)：在云侧工程下创建云对象、开发云对象代码、调试云对象、部署云对象到AGC云端。
-      * [开发云数据库](agc-harmonyos-clouddev-clouddb.md)：在云侧工程下创建对象类型、在对象类型中添加数据条目、部署云数据库到AGC云端。
-   2. [部署云侧工程](agc-harmonyos-clouddev-deploy.md)：云侧工程代码开发调试完毕后，一键部署云侧工程到AGC云端。
+      * [开发云函数](agc-harmonyos-clouddev-cloudfunctions.md)：在云侧工程下创建并配置函数、开发函数代码、调试函数、部署函数到HarmonyOS 开发者中心。
+      * [开发云对象](agc-harmonyos-clouddev-cloudobj.md)：在云侧工程下创建云对象、开发云对象代码、调试云对象、部署云对象到HarmonyOS 开发者中心。
+      * [开发云数据库](agc-harmonyos-clouddev-clouddb.md)：在云侧工程下创建对象类型、在对象类型中添加数据条目、部署云数据库到HarmonyOS 开发者中心。
+   2. [部署云侧工程](agc-harmonyos-clouddev-deploy.md)：云侧工程代码开发调试完毕后，一键部署云侧工程到HarmonyOS 开发者中心。
    3. [开发端侧工程](agc-harmonyos-clouddev-appdevelop.md)：在端侧工程下通过Cloud Foundation Kit调用部署的云侧代码，包括调用云函数、调用云对象、访问云数据库、调用云存储。
-3. 端云两侧工程代码全部开发完成后，将端云一体化工程打包成APP，提交至AGC申请上架。
+3. 端云两侧工程代码全部开发完成后，将端云一体化工程打包成APP，提交至HarmonyOS 开发者中心申请上架。
 
 ## 约束与限制
 

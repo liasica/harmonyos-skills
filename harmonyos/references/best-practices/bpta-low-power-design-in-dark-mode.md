@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-low-power-
 title: 省电和深色模式下低功耗设计
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 省电和深色模式下低功耗设计
 category: best-practices
-scraped_at: 2026-10-16T07:06:48+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:c273c3e0780677ec61a2e37a3478b833fd95841db06b9e7475af5b4c1c86a7e3
+scraped_at: 2026-10-29T08:03:24+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:235d2e91f8271f6ffc9ad2b37e52781c542d373d7df2f6c3e385cd37e446abfd
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:c273c3e0780677ec61a2e37a3478b833fd95841db06b9e7475af5b4c1c8
 通过设置省电模式、深色模式、调节屏幕亮度、停止冗余动画，最终测量的总耗电量对比如下图所示：
 
 **图1** 总耗电量对比（相对于正常模式）  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/VknVhsfvSi2y0vCdY_YW1g/zh-cn_image_0000002194011364.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/Ev5VOoCXRB-V4q4bYvkWvQ/zh-cn_image_0000002194011364.png "点击放大")
 
 ## 功耗测量工具
 
@@ -53,7 +53,7 @@ DevEco Profiler 应用调优工具（以下简称 Profiler）已内置在 DevEco
 Profiler耗电量示意图如下所示，详细信息及使用可参考[性能问题定界：实时监控](../harmonyos-guides/realtime-monitor.md)。
 
 **图2** ProfilerEnergy模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/2aHNzwscQbGKv0obad_S9w/zh-cn_image_0000002193851784.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/emGphp4jTv-4dNziy-dejg/zh-cn_image_0000002193851784.png "点击放大")
 
 **说明** 
 
@@ -100,7 +100,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 获取当前设备的电源模式可以通过以下步骤实现：
 
 1. 引入系统电源管理模块power，该模块主要提供重启、关机、查询屏幕状态等接口。
-2. 调用power的getPowerMode方法来获取当前设备的电源模式。
+2. 调用power的getPowerMode()来获取当前设备的电源模式。
 
 省电模式下，获取当前系统电源模式的代码如下：
 
@@ -170,7 +170,7 @@ export struct ArticleCardView {
 
 **图3** 使用省电模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Z9g7fjVTRwe2TpkOnBHsug/zh-cn_image_0000002194011352.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/XToC24DJREuiKGF9lm8iAQ/zh-cn_image_0000002194011352.png "点击放大")
 
 从测试数据可以看出：
 
@@ -196,7 +196,7 @@ export struct ArticleCardView {
 1. 创建深色模式资源文件夹：在项目的resources文件下，创建深色模式的Dark资源文件夹，如下图1所示。
 
    **图4** 创建深色模式资源文件夹  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/0zh17qsjQleF3TZlBot-hA/zh-cn_image_0000002229337161.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/i_RcIZ9BSZ6sdbenThhRqA/zh-cn_image_0000002229337161.png "点击放大")
 2. 资源文件适配：为深色模式下的界面设计相应的颜色和图标资源文件。
 3. 在主题中设置深色模式样式：在应用的主题中定义深色模式的样式，包括背景色、文本颜色、图标颜色等。
 4. 动态切换模式：在应用中实现动态切换深色模式和浅色模式的功能，使用户可以根据自己的喜好随时切换应用的界面模式。
@@ -204,7 +204,7 @@ export struct ArticleCardView {
 
 **图5** 深色模式示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/I_gMk-KgRPqvu1MOyhmMzQ/zh-cn_image_0000002229451645.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/3b1CQdk1T-2p9iwRkYmDpg/zh-cn_image_0000002229451645.png "点击放大")
 
 ### 功耗分析
 
@@ -212,7 +212,7 @@ export struct ArticleCardView {
 
 **图6** 使用深色模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/8-y7dCdjQrOVDKDAO63mrw/zh-cn_image_0000002615254841.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Iazivyb8TIOHGdAyOnewHg/zh-cn_image_0000002615254841.png "点击放大")
 
 根据测试数据分析，得出以下结论：
 
@@ -281,11 +281,11 @@ export default class EntryAbility extends UIAbility {
 在“HMOS世界”App的案例中，点赞和收藏的动画在省电和深色模式下会消耗更多资源。可以关闭这些冗余动效，关闭步骤如下：
 
 1. 导入系统电源管理power模块。
-2. 根据power的[getPowerMode](../harmonyos-references/js-apis-power.md#powergetpowermode9)获取当前设备的电源模式，并判断当前是否为省电模式。
+2. 根据[power.getPowerMode](../harmonyos-references/js-apis-power.md#powergetpowermode9)获取当前设备的电源模式，并判断当前是否为省电模式。
 3. 根据实际场景，停止或者替换冗余的动效。
 
 **图7** 省电和深色模式下停止冗余动效  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/8fgocmMpTqycmCofKMrG2g/zh-cn_image_0000002193851772.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/ib_GluydQp2xAT8c8PUl8g/zh-cn_image_0000002193851772.gif "点击放大")
 
 在省电模式下，停止点赞和收藏动画，具体代码实现如下：
 
@@ -378,11 +378,11 @@ export struct ArticleCardView {
 
 **图8** 主动降低应用亮度前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Z6PxefhRQgKlHgNMh3C29Q/zh-cn_image_0000002614971219.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/-NkadOYGR-ukWmE-CnRlPA/zh-cn_image_0000002614971219.png "点击放大")
 
 **图9** 去掉冗余动画前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/pH-VdT0OTyWyUpCWXJI1Vg/zh-cn_image_0000002615186285.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Aq89GtG-T6eXwX97BgJRkA/zh-cn_image_0000002615186285.png "点击放大")
 
 测试数据显示：
 

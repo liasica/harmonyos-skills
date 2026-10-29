@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology
 title: 蓝牙术语
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ccc5f703e2890dc6f185d4e9c8555676961d1575201a4bcc2d1616709454dc88
+scraped_at: 2026-10-29T07:56:59+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:7d3ea26ff752adda65c860a8d8e3aebe38f7bf824e3b03bb1b0de013a416a91b
 ---
 
 ## A
@@ -34,7 +34,7 @@ Bluetooth Low Energy，即低功耗蓝牙。从蓝牙4.0开始支持的协议，
 
 ### BR
 
-Basic Rate，即蓝牙基础率。是一种蓝牙无线通信技术，用来表示传统蓝牙，主要用于文件和音频流的传输场景。
+Basic Rate，即蓝牙基础速率。是一种蓝牙无线通信技术，用来表示传统蓝牙，主要用于文件和音频流的传输场景。
 
 ### Bluetooth SIG
 
@@ -56,7 +56,7 @@ Bluetooth Special Interest Group，即蓝牙技术联盟，发布蓝牙技术规
 
 ### EDR
 
-Enhanced Data Rate，即蓝牙增强数据率。是蓝牙[BR](terminology.md#br)的增强版本，具有更高的数据传输速率，和BR统称为传统蓝牙。
+Enhanced Data Rate，即蓝牙增强数据速率。是蓝牙[BR](terminology.md#br)的增强版本，具有更高的数据传输速率，和BR统称为传统蓝牙。
 
 ## G
 

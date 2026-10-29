@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 线程泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 线程泄漏故障模式说明 > 线程泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-10-16T07:06:52+08:00
+scraped_at: 2026-10-29T08:03:27+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:cf48360a054ccea723681bc7b6b334ca83351dac525f9edf7e83e88dbabf68ef
+content_hash: sha256:8b2836fa4ad0f151928a347101ae866cedd77e5b7d2a7fb375eae8cd30bf4d0d
 ---
 
 系统监控应用申请的线程数量，当应用线程数量超过系统阈值时，会抓取维测信息，并对应用进行管控。本文旨在为开发者介绍系统的线程泄漏检测机制，并提供开发态与运维态的问题分析思路。此外，本文还提供线程泄漏问题分析与定位实践系列文章，旨在系统梳理线程泄漏常见根因与问题分析方法，引导开发者在编码中建立良好的线程使用习惯。文章如下：
@@ -146,7 +146,7 @@ content_hash: sha256:cf48360a054ccea723681bc7b6b334ca83351dac525f9edf7e83e88dbab
 5. 将抓取的线程栈按照Count列排序，筛选出申请次数异常的线程及其调用栈，如下图5、6处框选内容。
 6. 结合调用栈对代码进行分析，找到泄漏原因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/RGqzhPh9Rz-PfeMCWh-84g/zh-cn_image_0000002729597777.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Lfo9Wh-4TGO70jQWRl85qw/zh-cn_image_0000002729597777.png "点击放大")
 
 ## 开发态问题分析方法
 
@@ -177,8 +177,8 @@ content_hash: sha256:cf48360a054ccea723681bc7b6b334ca83351dac525f9edf7e83e88dbab
    * 单击图6处开始执行录制。
    * 应用执行可能发生线程泄漏的业务，等待业务执行完成，停止录制，获得录制结果。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Na3TmUrCTKqrvn_5XOguJQ/zh-cn_image_0000002699878452.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/KqXuD3FfQBqYJm9IOAA1yw/zh-cn_image_0000002699878452.png "点击放大")
 2. 获得录制结果如下图所示：单击下图1处展开Threads泳道，再单击下图2处的Call Trees，即可在图3中查看线程数量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/iWOr-i0ITyK58peaNKZodA/zh-cn_image_0000002699718588.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/g_SFLO77QMadJdaoIy2IXQ/zh-cn_image_0000002699718588.png "点击放大")
 3. 最后，发现线程数量异常，通过结合[线程泄漏调用栈日志分析方法](bpta-stability-threadleak-fault-mode-overreview.md#section19835127163117)定位线程泄漏点。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 一键登录获取华为账号绑定号码和UnionID/OpenID
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 获取用户信息 > 一键登录获取华为账号绑定号码和UnionID/OpenID
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a21e54edc006ce57635ee747294994eb94ea023a289203fc647bda731d781036
+scraped_at: 2026-10-29T08:02:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:f9061f3b07de0b135555aedeafd4c923fa35840dc8c8af62a53f5f9226c8859e
 ---
 
 **注意** 
@@ -52,8 +52,8 @@ content_hash: sha256:a21e54edc006ce57635ee747294994eb94ea023a289203fc647bda731d7
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | code | 是 | String | 通过[华为账号一键登录（获取手机号和UnionID/OpenID）](../harmonyos-guides/account-phone-unionid-login.md)场景获取的Authorization Code，详情可参考一键登录[客户端开发](../harmonyos-guides/account-phone-unionid-login.md#客户端开发)。 |
-| clientId | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的唯一标识。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。  **说明：**  该参数与获取code参数时的Client ID必须一致，否则会报错（响应消息中resultCode=60180003），如出现此报错，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)排查处理。 |
-| clientSecret | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的密钥（Client Secret）。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
+| clientId | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的唯一标识。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。  **说明：**  该参数与获取code参数时的Client ID必须一致，否则会报错（响应消息中resultCode=60180003），如出现此报错，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)排查处理。 |
+| clientSecret | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的密钥（Client Secret）。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
 
 ## 请求示例
 
@@ -201,7 +201,7 @@ public class GetQuickLoginMobilePhoneByCodeDemo {
 | --- | --- | --- |
 | 60010002 | 参数不合法。 | 请按照错误描述及接口[Request Body](account-api-get-user-info-quicklogin-by-code.md#request-body)参数说明检查入参。 |
 | 60010012 | code参数不正确。 | code参数传值不正确，可能原因：伪造的无效code或code被篡改。 |
-| 60010013 | clientSecret参数不正确。 | clientSecret参数传值不正确，参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
+| 60010013 | clientSecret参数不正确。 | clientSecret参数传值不正确，参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
 | 60180003 | code解析得到的Client ID与入参clientId不一致。 | code参数获取时的clientId与当前接口参数clientId不一致导致，请检查入参clientId是否与[配置Client ID](../harmonyos-guides/account-client-id.md)中的值一致。 |
 | 60180004 | code过期，code只有5分钟有效期，超过有效期后将无法继续使用。 | 请引导用户重新授权，获取新的code再重试。 |
 | 60180005 | code已经被使用过。 | code只能用一次，请重新获取code再重试。 |

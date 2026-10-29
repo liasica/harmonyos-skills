@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 位置设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 位置设置
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:16+08:00
+scraped_at: 2026-10-29T07:59:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ed8fc44a6421eb093bca6439e8fd0747a6d6b6dd635b4e3e2f96c0a12f21f318
+content_hash: sha256:48d844ddacc72a1b0c96a25c87e0e285127ec574096b63496774ff7a27cad66e
 ---
 
 设置组件对齐方式、布局方向及显示位置。
@@ -479,7 +479,7 @@ struct PositionExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/nQYm3YfBReWCW41byuuPCQ/zh-cn_image_0000002771827166.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/LwoFpsb4QVKgG8Wl5xNMOw/zh-cn_image_0000002773906016.png)
 
 ### 示例2（位置偏移）
 
@@ -568,7 +568,7 @@ struct PositionExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/_d3q8FCnQRWHDtLvvVXP3Q/zh-cn_image_0000002801106981.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/n3vTjxqMTmW1YhpafC5mEw/zh-cn_image_0000002803265799.png)
 
 ### 示例3（绝对定位和相对偏移）
 
@@ -647,7 +647,7 @@ struct Example3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/nupscjWHSuWIWwlKwHQ4hg/zh-cn_image_0000002771667200.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/mSh_tDPXSkefEtP0DfeGJw/zh-cn_image_0000002803225707.jpeg)
 
 ### 示例4（镜像效果）
 
@@ -749,11 +749,11 @@ struct Example4 {
 
 镜像前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/wHH5bmSxQEuEQf5wVqxRaw/zh-cn_image_0000002800987059.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/VBPqeuZURHOT10a8-vBLrQ/zh-cn_image_0000002774065992.png)
 
 镜像后效果如下，镜像生效条件请参考[使用镜像能力](../harmonyos-guides/arkts-internationalization.md#使用镜像能力)：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/rp7KszUBSzmLuH2ch4dMpQ/zh-cn_image_0000002771827168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/yRK9WdZoRMmncG3P5g9M9w/zh-cn_image_0000002773906018.png)
 
 ### 示例5（align属性适配镜像特性）
 
@@ -822,7 +822,7 @@ struct buttonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/DFJeFXTvSwaz8gA_VLRs9A/zh-cn_image_0000002801106983.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/sJ3W3y9OR9KJKkxlS9Cwww/zh-cn_image_0000002803265801.gif)
 
 ### 示例6（layoutGravity属性单独设置Stack组件中子组件的对齐规则）
 
@@ -884,4 +884,4 @@ struct Index5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/f86JYXWURrqH1SI5ttFshQ/zh-cn_image_0000002771667202.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/47DOjrC0QH-u4fp-LPQ0sw/zh-cn_image_0000002803225709.gif)

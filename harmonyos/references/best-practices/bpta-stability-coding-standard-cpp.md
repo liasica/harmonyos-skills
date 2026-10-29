@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: C++编码规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 > C++编码规范
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:afe4788ace260e5e9f042447f55495de0dee279b4a9f34f47e9138800710faa9
+scraped_at: 2026-10-29T08:03:28+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c60710407364ea7a10c8bd4a02282e9adb2545fbf55f7a0d6241338e25c2d3e7
 ---
 
 ## 基础要求
@@ -48,7 +48,7 @@ content_hash: sha256:afe4788ace260e5e9f042447f55495de0dee279b4a9f34f47e913880071
 
 【规则】严禁在构造函数中创建线程
 
-【规则】严禁出现delete this操作
+【规则】严禁出现delete this（调用对象的析构函数，并释放该对象所占用的内存）操作
 
 【建议】尽量避免定义public成员
 

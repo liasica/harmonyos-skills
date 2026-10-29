@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-skill
 title: Account Kit Skill能力开放
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit Skill能力开放
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:28+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:6283e87ab4875f5979eb41d75ad36b937f9b00f48bd98d4b95889126dd79b3dd
+scraped_at: 2026-10-29T07:57:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:f8f3c1d0d789e479d5dc8812704810311cdfe432e9bd154fadae94aef3fb88f9
 ---
 
 ## 概述
@@ -15,47 +15,39 @@ Account Kit接入Skills，旨在帮助开发者快速集成Account Kit开放能�
 ### 能力覆盖范围
 
 * **华为账号一键登录Skill**：帮助开发者快速接入华为账号一键登录能力。其中：
-  + [客户端Skill](https://matrix.openharmony.cn/#/skillSquare/details?id=6a215e9b8428f219b71f84a2)负责生成 ArkTS 华为账号一键登录页面、配置工程依赖与添加权限，并实现页面跳转逻辑。
+  + [客户端Skill](https://matrix.openharmony.cn/#/skillSquare/details?id=6a215e9b8428f219b71f84a2)负责生成ArkTS华为账号一键登录页面、配置工程依赖与添加权限，并实现页面跳转逻辑。
   + [服务端Skill](https://gitcode.com/HarmonyOS_Samples/accountkit-samplecode-serverdemo/tree/Java/huawei-account-kit-quicklogin-server)负责生成服务端工程代码，实现授权码换取用户信息的接口。
+* **华为账号登录Skill**：帮助开发者快速接入华为账号登录能力。
+  + [客户端Skill](https://gitcode.com/HarmonyOS_Skills/harmonyos-agent-skills/tree/main/02-development/account-kit/hmos-account-kit-login-button-client)负责生成华为账号标准登录页面（使用华为标准登录按钮）、配置工程依赖与添加权限，实现页面跳转逻辑。
+* **自定义按钮登录Skill**：帮助开发者快速接入华为账号自定义按钮登录能力。
+  + [客户端Skill](https://gitcode.com/HarmonyOS_Skills/harmonyos-agent-skills/tree/main/02-development/account-kit/hmos-account-kit-login-api-client) 负责生成自定义登录按钮组件（支持纯图标、纯文本、图文混合三种模式）、配置工程依赖与添加权限，实现登录请求逻辑。
 
 ## 快速开始
 
 1. 下载并配置Skill：请在[能力覆盖范围](account-skill.md#能力覆盖范围)章节中点击对应Skill的超链接进行下载，并放到AI编码工具（如OpenCode、Claude Code等）的Skill配置目录下（不同工具规范不一致，按工具要求处理）。
-2. 配置MCP（服务端Skill无需此项配置）：在AI编码工具的配置文件中（不同工具配置文件名称不一致，按工具要求处理）添加如下deveco-mcp配置项，更多详情请参考[DevEco Toolbox](https://github.com/open-deveco/deveco-toolbox)。
+2. 配置DevEco CLI（服务端Skill无需此项配置）：在终端执行以下命令安装DevEco CLI，更多详情请参考[DevEco CLI](ide-deveco-cli.md)官方文档。
 
-**说明** 
-
-务必将DEVECO\_PATH项的值替换为本地DevEco Studio的路径（无需到bin目录），同时本地环境变量中要有node，以确保npx命令能够执行。AI编码工具启动时会自动执行npx命令，加载或更新对应的mcp，若环境变量中无node，将会导致命令无法执行，mcp不会生效，当生成代码后存在编译报错时，需要手动进行修复。
-
-```json
-"deveco-mcp": {
-   "command": [
-      "npx",
-      "-y",
-      "@deveco-codegenie/mcp@beta",
-      "--registry=https://registry.npmjs.org"
-   ],
-   "type": "local",
-   "enabled": true,
-   "environment": {
-      "PROJECT_PATH": ".",
-      "DEVECO_PATH": "DevEco Studio的路径，无需到bin目录"
-   }
-}
+```json5
+ npm install -g @deveco/deveco-cli@latest
 ```
 
 **验证是否生效：**
 
-1. 确定SKill是否生效：打开AI编码工具，输入"帮我接入华为账号一键登录"。如果Skill已生效，会进行前置检查并遵循接入步骤执行，而不是直接开始编码。
-2. 确定MCP是否生效：打开AI编码工具，输入/mcps，如果MCP已生效，deveco-mcp会变成Connected状态。
+1. 确定Skill是否生效：打开AI编码工具，输入“帮我接入华为账号一键登录”。如果Skill已生效，会进行前置检查并遵循接入步骤执行，而不是直接开始编码。
+2. 确定CLI是否生效：可通过以下命令验证。
+
+   ```json5
+   devecocli --version
+   devecocli --help
+   ```
 
 ## 使用方式
 
-在AI编码工具中通过关键词或Skill名称触发，以华为账号一键登录客户端Skill为例
+在AI编码工具中通过关键词或Skill名称触发，以华为账号一键登录客户端Skill为例。
 
 **关键词触发**：帮我接入华为账号一键登录
 
-**Skill名称强制触发**：使用"hmos-account-kit-quicklogin-client" Skill，帮我接入华为账号一键登录
+**Skill名称强制触发**：使用“hmos-account-kit-quicklogin-client”Skill，帮我接入华为账号一键登录
 
 | 技能 | Skill名称 | 关键词 |
 | --- | --- | --- |

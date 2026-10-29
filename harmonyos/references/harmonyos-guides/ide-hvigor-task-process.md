@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ta
 title: 构建任务说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 概述 > 构建任务说明
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:31+08:00
+scraped_at: 2026-10-29T07:58:33+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:7e109f8e9b632028ab20222957bd053c037c6584b6a14bb0a98834a5cf1e66a5
+content_hash: sha256:450f699efe8b5cdad1d7dc0ec20e51b69fe5f060850d4aa12b866ba5349acf0e
 ---
 
 本章节将对构建的任务进行说明，可以更直观地了解到构建的任务流程。
@@ -14,15 +14,15 @@ content_hash: sha256:7e109f8e9b632028ab20222957bd053c037c6584b6a14bb0a98834a5cf1
 
 ### HAP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/CALp7sszS6urqSMLloZddQ/zh-cn_image_0000002701823192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/n9bAPGBUQoW8Ta2VSg1Dow/zh-cn_image_0000002701823192.png)
 
 ### HSP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/QkRwbkQrRaKo4uf_ekqpkw/zh-cn_image_0000002731382497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/zhd-ky-OS3mNOWv_hiHstw/zh-cn_image_0000002731382497.png)
 
 ### HAR基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/spLLNPKWQse8N242yodAYQ/zh-cn_image_0000002701663274.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/tVcOAPaBS4Sc9ei9Cciv0Q/zh-cn_image_0000002701663274.png)
 
 ## 使用命令查看任务
 
@@ -34,7 +34,7 @@ hvigorw taskTree
 
 获取任务树时会根据工程中的模块，将模块中注册的任务以下图形式输出：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/BdwYknweRIm5Wg2nTCAIaw/zh-cn_image_0000002731542467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/JyE-xJGfQl2V5fUlgMqNxQ/zh-cn_image_0000002731542467.png)
 
 执行顺序举例说明：如图所示，assembleHap依赖CollectDebugSymbol，CollectDebugSymbol依赖于PackageHap；则任务执行顺序为PackageHap->CollectDebugSymbol->assembleHap。
 

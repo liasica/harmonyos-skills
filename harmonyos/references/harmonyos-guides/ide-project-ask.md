@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-project-a
 title: 工程问答
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 智能问答 > 工程问答
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:38+08:00
+scraped_at: 2026-10-29T07:58:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c19a4a634e990f8598d6d36d5846739748bf1ea554359f99448d0c4b11c1caa4
+content_hash: sha256:18257db4730b3d3594b5fd74ed33d8e84d5533bb7e5b063ee7c464e6612212b5
 ---
 
 从DevEco Studio 6.1.0 Beta2 版本开始，CodeGenie 新增工程问答能力。工程问答能够基于当前本地工程进行代码理解与分析，帮助开发者快速完成代码检索、定位和解读等工作。系统可自动分析工程结构，精准定位文件、类、函数、变量、常量、UI 元素等代码实体，并针对开发者提出的问题给出准确回答。
@@ -14,28 +14,28 @@ content_hash: sha256:c19a4a634e990f8598d6d36d5846739748bf1ea554359f99448d0c4b11c
 
 ## 调用MCP工具
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/IO8qj62WQCCzqg_FHwG_bw/zh-cn_image_0000002731382927.png "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/-IBjEhbxQrSM1qA4-6GGPQ/zh-cn_image_0000002731542897.png)按钮，选择**MCP > MCP Market**。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/sY5IDL6qSfeiwRHuWfTLqA/zh-cn_image_0000002731382927.png "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/nstXDK8_T6Cz3KZjp0WCQQ/zh-cn_image_0000002731542897.png)按钮，选择**MCP > MCP Market**。
 2. 添加和开启所需的MCP工具。
-3. 返回到CodeGenie首页，在对话区域输入“**/**”，在弹出的菜单中选择“**Project** ”，输入所需的描述，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/aIv5l-FHSaad9gQoa2vMlw/zh-cn_image_0000002701823628.png)发送后等待回复。
+3. 返回到CodeGenie首页，在对话区域输入“**/**”，在弹出的菜单中选择“**Project** ”，输入所需的描述，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/9OaiErGqSEmRcw5GgdLTnA/zh-cn_image_0000002701823628.png)发送后等待回复。
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/T0VOpHAZT2yebZTNYOE65A/zh-cn_image_0000002731542899.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/uaJM9QjhS8iVbpCGgpKqSg/zh-cn_image_0000002731542899.gif "点击放大")
 
 ## 调用LSP工具
 
-在对话区域输入“**/**”，在弹出的菜单中选择“**Project** ”，输入所需的描述，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/b5pwRBzMQZy1209eelDPkA/zh-cn_image_0000002731382933.png)发送后等待回复。
+在对话区域输入“**/**”，在弹出的菜单中选择“**Project** ”，输入所需的描述，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/bwrXpSn_Tm-5KI8HNte-iQ/zh-cn_image_0000002731382933.png)发送后等待回复。
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/oSJMlQG1TiOdCiffCSZ6DA/zh-cn_image_0000002731542901.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ubu5UsPLSlmWanH8rRO1sg/zh-cn_image_0000002731542901.gif "点击放大")
 
 ## 语义检索
 
 1. 在菜单栏点击**File > Settings...（macOS为DevEco Studio > Preferences/Settings） > CodeGenie > General**，勾选Project Semantic Index下的**Enable**选项。
 2. 点击**Apply**或点击**OK**，开启语义检索功能。
-3. 在对话区域输入“**/**”，在弹出的菜单中选择“**Project** ”，输入所需的描述，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/YlcgD0sTT6i3E8kQYQ_zmA/zh-cn_image_0000002731542907.png)发送后等待回复。
+3. 在对话区域输入“**/**”，在弹出的菜单中选择“**Project** ”，输入所需的描述，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/edkc0VSwSjSD7-l-bNsTUg/zh-cn_image_0000002731542907.png)发送后等待回复。
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/9K-oR_9gTGq2ac35ONFkDA/zh-cn_image_0000002731382929.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/r2eiRbQVQRmxaaNXNqL8ig/zh-cn_image_0000002731382929.gif "点击放大")

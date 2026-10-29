@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: PanGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > PanGesture
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:18+08:00
+scraped_at: 2026-10-29T07:59:36+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1187af946590487a765a3dd53d3e34af1414ca6cf777c11083f9a68a55544d93
+content_hash: sha256:d328e92b371830e00689c0b34b8b1a7be878984a68c50e2f863fc0609e63c34d
 ---
 
 当滑动距离达到设定的最小值时，触发滑动手势事件。
@@ -334,8 +334,8 @@ struct PanGestureExample {
 
 向左滑动：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/mk1M2YiBTv6uh_s-MPlhpw/zh-cn_image_0000002800987161.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/3ztIYG8PTPKNDCuYLpETKA/zh-cn_image_0000002774066092.png)
 
 点击按钮时，修改PanGesture触发条件为双指向任意方向滑动：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/spAm3ELLTky6_d9UWVJayw/zh-cn_image_0000002771827268.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/kz6CJQVDQVeFur4sPA4niA/zh-cn_image_0000002773906118.png)

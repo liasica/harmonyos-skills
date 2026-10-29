@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-positionin
 title: 位置定位
 breadcrumb: 最佳实践 > 应用服务 > 位置定位
 category: best-practices
-scraped_at: 2026-10-16T07:06:38+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf57e8b
+scraped_at: 2026-10-29T08:03:16+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:14434b4668602efb8576ec26bcab3d1de7a28cd6896da93bb8c9021e6537e61d
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
 
 **实现原理**
 
-位置服务提供[getCurrentLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation-2)接口来获取当前位置信息，该接口需要用户设置关键参数——定位请求信息。定位请求信息包含定位方式优先级、单次定位超时时间等，分为[CurrentLocationRequest](../harmonyos-references/js-apis-geolocationmanager.md#currentlocationrequest)和[SingleLocationRequest](../harmonyos-references/js-apis-geolocationmanager.md#singlelocationrequest12)两种类型。两种类型对应的定位优先级分别为[LocationRequestPriority](../harmonyos-references/js-apis-geolocationmanager.md#locationrequestpriority)和[LocatingPriority](../harmonyos-references/js-apis-geolocationmanager.md#locatingpriority12)。
+位置服务提供[geoLocationManager.getCurrentLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation-2)接口来获取当前位置信息，该接口需要用户设置关键参数——定位请求信息。定位请求信息包含定位方式优先级、单次定位超时时间等，分为[CurrentLocationRequest](../harmonyos-references/js-apis-geolocationmanager.md#currentlocationrequest)和[SingleLocationRequest](../harmonyos-references/js-apis-geolocationmanager.md#singlelocationrequest12)两种类型。两种类型对应的定位优先级分别为[LocationRequestPriority](../harmonyos-references/js-apis-geolocationmanager.md#locationrequestpriority)和[LocatingPriority](../harmonyos-references/js-apis-geolocationmanager.md#locatingpriority12)。
 
 **开发步骤**
 
@@ -55,7 +55,7 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
      // ...
    });
    ```
-4. 调用[getAddressesFromLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将位置坐标信息转换为对应的地理位置描述。
+4. 调用[geoLocationManager.getAddressesFromLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将位置坐标信息转换为对应的地理位置描述。
 
    ```typescript
    geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
@@ -71,15 +71,15 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
 5. 运行效果如下图所示
 
    **图1** 获取当前位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/mO2Jy48CTY-sjtX0q8mxkA/zh-cn_image_0000002193852028.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/AiJnnTMaRPiAV4COs4jJqA/zh-cn_image_0000002193852028.png "点击放大")
 
 ## 实时位置定位
 
-开发者可以根据实际[用户活动场景](../harmonyos-references/js-apis-geolocationmanager.md#useractivityscenario12)或[功耗场景](../harmonyos-references/js-apis-geolocationmanager.md#powerconsumptionscenario12)，设置相应的定位策略持续获取设备的位置信息，不同定位策略对应[表1 定位方式介绍](bpta-positioning.md#table1916823418349)中不同的定位方式。
+开发者可以根据实际用户活动场景（[UserActivityScenario](../doccenter-references/api/js-apis-geolocationmanager.md#useractivityscenario12)）或功耗场景（[PowerConsumptionScenario](../doccenter-references/api/js-apis-geolocationmanager.md#powerconsumptionscenario12)），设置相应的定位策略持续获取设备的位置信息，不同定位策略对应[表1 定位方式介绍](bpta-positioning.md#table1916823418349)中不同的定位方式。
 
 **实现原理**
 
-位置服务通过[on('locationChange')](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageronlocationchange)接口订阅位置变化情况，实现持续获取设备位置信息的场景诉求。该订阅服务需要申请定位请求信息[LocationRequest](../harmonyos-references/js-apis-geolocationmanager.md#locationrequest)或者[ContinuousLocationRequest](../harmonyos-references/js-apis-geolocationmanager.md#continuouslocationrequest12)，并在请求信息中设置定位场景类型和位置信息上报时间间隔。
+位置服务通过[geoLocationManager.on('locationChange')](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageronlocationchange)接口订阅位置变化情况，实现持续获取设备位置信息的场景诉求。该订阅服务需要申请定位请求信息[LocationRequest](../harmonyos-references/js-apis-geolocationmanager.md#locationrequest)或者[ContinuousLocationRequest](../harmonyos-references/js-apis-geolocationmanager.md#continuouslocationrequest12)，并在请求信息中设置定位场景类型和位置信息上报时间间隔。
 
 **开发步骤**
 
@@ -97,7 +97,7 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
    ```typescript
    geoLocationManager.on('locationChange', request, this.locationChange);
    ```
-4. 在on('locationChange')的回调函数中，调用[getAddressesFromLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将坐标信息转换为对应的地理位置描述。
+4. 在on('locationChange')的回调函数中，调用[geoLocationManager.getAddressesFromLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将坐标信息转换为对应的地理位置描述。
 
    ```typescript
    geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
@@ -122,9 +122,9 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
 6. 运行效果如下图所示
 
    **图2** 持续获取实时位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/gn7Cv7l8Sh21RxwlBshzTQ/zh-cn_image_0000002194011616.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/m2k5LrCBSRGUYAPI-nvAmQ/zh-cn_image_0000002194011616.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Sf6ZXMNURxyi44SsrqlZ1g/zh-cn_image_0000002229451909.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/G7l5WHqHRxuAZBRRUdAFHg/zh-cn_image_0000002229451909.png)
 
 ## 应用后台定位
 
@@ -132,12 +132,12 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
 
 **实现原理**
 
-应用后台定位需要申请后台定位权限ohos.permission.LOCATION\_IN\_BACKGROUND和长时任务权限ohos.permission.KEEP\_BACKGROUND\_RUNNING。申请了相关权限后，开启[任务模式](../harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager.md#backgroundmode)为定位导航的[长时任务](../harmonyos-guides/continuous-task.md)，并在其回调接口中通过[on('locationChange')](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageronlocationchange)订阅位置变化情况，在应用后台持续获取当前位置信息。
+应用后台定位需要申请后台定位权限[ohos.permission.LOCATION\_IN\_BACKGROUND](../doccenter-capabilities/permissions-for-all-user.md#ohospermissionlocation_in_background)和长时任务权限[ohos.permission.KEEP\_BACKGROUND\_RUNNING](../doccenter-capabilities/permissions-for-all.md#ohospermissionkeep_background_running)。申请了相关权限后，开启[BackgroundMode](../doccenter-references/api/js-apis-resourceschedule-backgroundtaskmanager.md#backgroundmode)为定位导航的[长时任务(ArkTS)](../harmonyos-guides/continuous-task.md)，并在其回调接口中通过[geoLocationManager.on('locationChange')](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageronlocationchange)订阅位置变化情况，在应用后台持续获取当前位置信息。
 
 **开发步骤**
 
 1. 申请后台定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)或[应用权限申请](bpta-permission-application.md)。
-2. 在模块的module.json5文件中，申请长时任务权限，并将长时任务模式设置为定位导航类型。
+2. 在模块的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中，申请长时任务权限，并将长时任务模式设置为定位导航类型。
 
    申请长时任务权限
 
@@ -268,9 +268,9 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
 6. 运行效果如下图所示
 
 **图3** 在应用后台持续获取位置信息效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ptI63lvWROyvYxjjfq_eBw/zh-cn_image_0000002229337413.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hiHi9SJcRnGcqrEcNdH1hA/zh-cn_image_0000002229337413.gif "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/NQTnOqBJQGimf5XuQPBdhg/zh-cn_image_0000002229451897.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/WIUxoJ43Roq7jYEWz_JtFw/zh-cn_image_0000002229451897.png)
 
 ## 历史定位获取
 
@@ -278,7 +278,7 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
 
 **实现原理**
 
-位置服务通过[getLastLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetlastlocation)接口来获取系统缓存的最新位置信息。该接口参数列表为空，返回值为[Location](../harmonyos-references/js-apis-geolocationmanager.md#location)位置信息。
+位置服务通过[geoLocationManager.getLastLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetlastlocation)接口来获取系统缓存的最新位置信息。该接口参数列表为空，返回值为[Location](../harmonyos-references/js-apis-geolocationmanager.md#location)位置信息。
 
 **开发步骤**
 
@@ -288,7 +288,7 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
    ```typescript
    let location = geoLocationManager.getLastLocation();
    ```
-3. 调用[getAddressesFromLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将坐标信息转换为对应的地理位置描述。
+3. 调用[geoLocationManager.getAddressesFromLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将坐标信息转换为对应的地理位置描述。
 
    ```typescript
    geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
@@ -304,7 +304,7 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
 4. 运行效果如下图所示
 
    **图4** 获取缓存位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/CMf6v_fWRZ2c4YAWrEPR1w/zh-cn_image_0000002193852040.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/nNI_N3g2TT6hH1m1EV--kQ/zh-cn_image_0000002193852040.png "点击放大")
 
 ## 常见问题
 
@@ -343,13 +343,13 @@ content_hash: sha256:c9d84542e15be32e5777cecaf619f217667592e9d15adf26b06d1bac5cf
 * 打开系统位置开关。
 * 检查设备是否联网、是否插入SIM卡、WiFi开关是否开启等。
 * 移动至开阔地带再发起定位。
-* 在系统无缓存位置的情况下，使用[getCurrentLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation-2)接口获取当前位置信息。
+* 在系统无缓存位置的情况下，使用[geoLocationManager.getCurrentLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation-2)接口获取当前位置信息。
 
 ### 系统缓存位置信息不准确
 
 **问题现象**
 
-使用[getCurrentLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation-2)接口获取当前定位信息后，再使用[getLastLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetlastlocation)接口获取缓存定位信息，两次获取的定位信息不一致。
+使用[geoLocationManager.getCurrentLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation-2)接口获取当前定位信息后，再使用[geoLocationManager.getLastLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetlastlocation)接口获取缓存定位信息，两次获取的定位信息不一致。
 
 **可能原因**
 

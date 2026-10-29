@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkts-leak
 title: 运维态高效处理ArkTS泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 资源泄漏类问题分析 > 运维态高效处理ArkTS泄漏
 category: best-practices
-scraped_at: 2026-10-16T07:06:53+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:e7eeb6c622310091e4783e963eaa97d741a8f737044edcafb8ca36e225a62156
+scraped_at: 2026-10-29T08:03:28+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c54b3cf9c47f09224a222fac06a4658319b8887208797538efd05901a7ebec0a
 ---
 
 ## 概述
 
-ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如何通过[应用质量管理（APMS）](../app/agc-help-apms-0000002235870062.md)平台进行ArkTS泄漏事件的标准化排查、分析、定位和修复闭环流程。
+ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如何通过应用质量管理（APMS）平台（[业务介绍](../doccenter-monitoring/agc-help-apms-introduction-0000002236333914.md)）进行ArkTS泄漏事件的标准化排查、分析、定位和修复闭环流程。
 
 ## 运维态ArkTS内存泄漏分析流程
 
@@ -18,7 +18,7 @@ ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如
 
 排查流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/db9IJOq4QP2X6j4UbxAfdw/zh-cn_image_0000002645091426.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/nDZ7AVKQTH6zUs8AJOD_3w/zh-cn_image_0000002645091426.png "点击放大")
 
 **排查步骤**
 
@@ -34,7 +34,7 @@ ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如
 
 故障分析表格会将相同根因类型的故障聚类并排序。表格会展示故障模块、发生次数（占比）、影响设备数（占比）等关键信息，开发者可以通过发生占比和故障模块结合业务实际情况找出高优先级的问题，并在问题状态和优先级这一栏做出标记，解决高优先级的问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Di6Z0XRHRFKjnRW_PrC6xQ/zh-cn_image_0000002644931514.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/R-1yzmdmQEiMC6wwc8acqA/zh-cn_image_0000002644931514.png "点击放大")
 
 关键指标说明如下：
 
@@ -50,25 +50,25 @@ ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如
 
 故障详情页面可以通过证据链和现场数据进一步深入分析泄漏的原因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/M_i4iYSBT16jBO006XMWBg/zh-cn_image_0000002675091223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/AtCCs1h0SAiTUWw-DJnVng/zh-cn_image_0000002675091223.png "点击放大")
 
 **证据链**
 
 证据链表格根据泄漏类型的大小，可以查看主泄漏对象和次泄漏对象，以及对象泄漏大小的占比。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/_rusRvfKTz6bPMCoO-CQ0w/zh-cn_image_0000002675011381.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/ypOzRjZrTvmOlXzHUpqjEA/zh-cn_image_0000002675011381.png "点击放大")
 
 **持有链分布**
 
 通过持有链可以查看各泄漏对象及其持有情况。一般来说应该从根节点入手，分析是否可以释放掉持有的子对象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/td4TvZiQQGeyny5eoRzFaQ/zh-cn_image_0000002645091428.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ocYkwdI5QW-uZatlaWxPRA/zh-cn_image_0000002645091428.png "点击放大")
 
 **现场数据分析**
 
 现场数据是堆快照中TOP10的相同最短引用链的聚合情况。开发者可以通过现场快照分析最短引用链，也可以下载日志，结合日志进一步分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/MMgaKSlMQYGV7mg-7fQb9g/zh-cn_image_0000002644931516.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/JBRZNuSDSiyBKzBWXt5Sgg/zh-cn_image_0000002644931516.png "点击放大")
 
 关键指标说明：
 
@@ -89,21 +89,21 @@ ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如
 
 可以在故障预警平台的告警规则页面新建告警。根据实际的业务情况，选择合适监控时段、监控频率、告警触发条件以及其他告警指标，其中ArkTS泄漏对应的指标类型为MEMORY\_LEAK。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/eftZwdmhTWKW0rYy-IaUVQ/zh-cn_image_0000002675091225.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/WrU8ZbpJR--1GG20d4FthQ/zh-cn_image_0000002675091225.png "点击放大")
 
 创建告警之后，后台会开始收集数据。当泄漏达到告警阈值后，会触发故障预警。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/1X5Ae96RRm-Gx5fpNnV9aw/zh-cn_image_0000002675011383.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/tMQPLT3eQ8WX6AvAjwLRlg/zh-cn_image_0000002675011383.png "点击放大")
 
 通过操作查看选项可以跳转到故障指标页面查看故障详情。也可以在故障分析页面通过泄漏类型、应用版本等相关信息筛选出对应的泄漏信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/RFGnT1e7SL673mNfzyqAuA/zh-cn_image_0000002645091430.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/2qeKabO2R92FekuEy2v81Q/zh-cn_image_0000002645091430.png "点击放大")
 
 ### 问题查看与聚类
 
 **聚类规则说明**
 
-聚类规则主要分为三种：名称聚类，引用链聚类和属性聚类。不同类型的对象需要使用不同的聚类方法。具体的聚类规则可以参考[JS泄漏聚类规则](../harmonyos-guides/resource-leak-guidelines.md#js泄漏聚类规则)。
+聚类规则主要分为三种：名称聚类、引用链聚类和属性聚类。不同类型的对象需要使用不同的聚类方法。具体的聚类规则可以参考[JS泄漏聚类规则](../harmonyos-guides/resource-leak-guidelines.md#js泄漏聚类规则)。
 
 **问题查看**
 
@@ -111,15 +111,15 @@ ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如
 
   1. 通过故障预警的指引，在故障分析页面筛选出JS\_LEAK的泄漏类型。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/qebQvFMcSGmvvFDk9r-X3g/zh-cn_image_0000002644931518.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/JPSRSt1OSaKBCOBWY9kuAw/zh-cn_image_0000002644931518.png "点击放大")
 
-  2. 开发者需要关注页面的故障模块，发生次数和最大泄漏数量。如果泄漏对象是开发者自定义对象，可以通过故障模块，确认自定义对象的位置，进一步缩小排查范围。
+  2. 开发者需要关注页面的故障模块、发生次数和最大泄漏数量。如果泄漏对象是开发者自定义对象，可以通过故障模块，确认自定义对象的位置，进一步缩小排查范围。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/07YrDGJKTkC1vZLwnO9g0g/zh-cn_image_0000002675091227.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/0tS-6THoREW4yriH1cSb0Q/zh-cn_image_0000002675091227.png "点击放大")
 
   3. 开发者可在问题状态、优先级、问题备注内填写信息，结合故障模块、异常发生占比与实际业务场景，筛选高优先级问题并完成标注。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/QB3t7WTMQVysw9tfJA8ZHw/zh-cn_image_0000002675011385.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/LU4qUM_hT4a5XGFJuoZP2g/zh-cn_image_0000002675011385.png "点击放大")
 
   4. 点击操作列的查看按钮，即可查看泄漏对象完整故障详情，进一步确认泄漏对象。
 * TOP ArkTS泄漏对象聚合
@@ -128,7 +128,7 @@ ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如
 
   当泄漏的对象为开发者自定义对象时，对象信息会显示出对应的对象名称，开发者可以通过名称找到业务代码中泄漏的对象，并优化相关代码。点击查看按钮可以查看当前泄漏对象故障详情，进一步确认泄漏对象。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/KLXmP3GKTBCl0l2qXvq-pg/zh-cn_image_0000002645091432.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/CZdyh9ZBSt2UztNjkPIScg/zh-cn_image_0000002645091432.png "点击放大")
 
 ### 根因定位与分析
 
@@ -136,24 +136,24 @@ ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如
 
 **证据链分析**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/wlwNTrEpRmONe5PVsELI2A/zh-cn_image_0000002644931520.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/e2ZPD2zUTLypZ9szmbdKZw/zh-cn_image_0000002644931520.png "点击放大")
 
-* 主泄漏对象：泄漏问题中Retained Size占比最大的对象，主泄漏对象展示了泄漏对象的名称，Retained Size的大小，占总Retained Size的百分比以及存在实例个数。
+* 主泄漏对象：泄漏问题中Retained Size占比最大的对象，主泄漏对象展示了泄漏对象的名称、Retained Size的大小、占总Retained Size的百分比以及存在实例个数。
 * 次泄漏对象：泄漏问题中Retained Size占比最大之外的其他对象。
 * 持有链分布：从GC Root到对象的引用路径，显示哪些对象持有该对象的引用。
-* 持有链分布详情：泄漏对象的持有链详细信息。包含对象名称，数量，对象的实际大小，以及引用链关联的对象。
+* 持有链分布详情：泄漏对象的持有链详细信息。包含对象名称、数量、对象的实际大小、以及引用链关联的对象。
 
 **现场数据分析**
 
 以下是堆快照中TOP10的相同最短引用链的聚合情况，如果证据链中的泄漏信息不足以支持定位，可以查看最短引用链进一步分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/kKxCGtj4QO6PB0rww6F-aA/zh-cn_image_0000002675091229.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/F0WwIaO9RFy8hCBRkLUYcA/zh-cn_image_0000002675091229.png "点击放大")
 
 **下钻分析**
 
 下钻分析是指从宏观汇总数据，逐层点进来看更细的明细数据，用来定位问题、找到原因。平台会根据当前问题的故障特征ID，进行筛选，并展示应用版本TOP5、系统版本TOP5、设备型号TOP5这三个维度的信息，帮助开发者进一步缩小版本排查范围。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/qo47rWzcRmaQl4lO_TO9Bg/zh-cn_image_0000002675011387.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/ZfWwhMJLTRK3dvJcxjRTGQ/zh-cn_image_0000002675011387.png "点击放大")
 
 ### 修复建议验证与闭环
 
@@ -163,7 +163,7 @@ ArkTS泄漏是应用性能优化的重要问题，本文介绍在运维态下如
 
 一般来说，开发者需要根据引用链尝试定位并断开应用侧的引用链路，释放对应的可疑泄漏对象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/NMf52fNfRfS5MCT1a3049A/zh-cn_image_0000002645091434.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/lcESq-LgQkqc9NtRutNavg/zh-cn_image_0000002645091434.png "点击放大")
 
 如需修改global handle，请参考[开发态快速定位ArkTS泄漏](bpta-arkts-leak-in-develop.md)。
 
@@ -191,7 +191,7 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer 插件。在Dev
 
 打开DevEco Studio后，在Tool Windows栏的Operation Analyzer进入平台，点击后根据包名选择应用，再点击资源泄漏（Resource Leak）即可查看该类故障相关数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_3Emj7luRLuQJItxlRKqIg/zh-cn_image_0000002644931524.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/juiT25eaRX2Phh_hH55MUA/zh-cn_image_0000002644931524.png "点击放大")
 
 ### 问题分析
 
@@ -199,10 +199,10 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer 插件。在Dev
 
 数据和流程同[根因定位与分析](bpta-arkts-leak-in-operation.md#section1831731688)流程一致，开发者可查看故障分析与修复建议以排查问题，具体操作步骤如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/mGw7mgwDQ4-v65CU1cGQtQ/zh-cn_image_0000002675091231.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/6jsOjilgRDGPbEOtPWHXGA/zh-cn_image_0000002675091231.png "点击放大")
 
 **分析现场数据**
 
 数据和流程同[根因定位与分析](bpta-arkts-leak-in-operation.md#section1831731688)流程一致，具体操作步骤如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/NF7pW2kSRRe4-NJBz5JBZA/zh-cn_image_0000002675011389.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/HDkfzC5WSHug2br5sZ3yJA/zh-cn_image_0000002675011389.png "点击放大")

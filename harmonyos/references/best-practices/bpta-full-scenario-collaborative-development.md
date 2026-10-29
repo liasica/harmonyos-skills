@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-full-scenario-collaborative-development
 title: 典型全场景协同开发案例
-breadcrumb: 最佳实践 > 自由流转 > 典型全场景协同开发案例
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 典型全场景协同开发案例
 category: best-practices
-scraped_at: 2026-10-16T07:06:42+08:00
-doc_updated_at: 2026-10-15
+scraped_at: 2026-10-29T08:03:12+08:00
+doc_updated_at: 2026-10-28
 content_hash: sha256:d285e8a6f4f00e9e79a673e6f6d672e150a53919774435c3180bb698a95ff199
 ---
 

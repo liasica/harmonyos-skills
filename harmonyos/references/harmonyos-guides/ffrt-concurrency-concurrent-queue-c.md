@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime并发队列(C)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C) > Function Flow Runtime并发队列(C)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c2519d39cfc8071a856ccae42237e0c178364215187f4cd1dab40d093aed4a6e
+scraped_at: 2026-10-29T07:57:05+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:37c053165beadde3555dbd273bb33256fd54ae2932ef584dc645baefca5b3b78
 ---
 
 ## 概述
@@ -53,7 +53,7 @@ ffrt_queue_t CreateBankSystem(const char *name, int concurrency)
     // 队列创建完后需要销毁队列属性
     ffrt_queue_attr_destroy(&queue_attr);
     if (!queue) {
-        OH_LOG_INFO(LOG_APP, "create queue failed");
+        OH_LOG_ERROR(LOG_APP, "create queue failed");
         return NULL;
     }
 
@@ -106,7 +106,7 @@ int ConcurrentQueueCExec()
     ffrt_queue_t bank = CreateBankSystem("Bank", BANK_CONCURRENCY);
     if (!bank) {
         printf("create bank system failed\n");
-        OH_LOG_INFO(LOG_APP, "create bank system failed");
+        OH_LOG_ERROR(LOG_APP, "create bank system failed");
         return -1;
     }
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-fault-log
 title: FaultLog
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > FaultLog
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:28+08:00
+scraped_at: 2026-10-29T07:58:31+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:4dbb4178bbb6879b3d9ae22e31410f5acebe4737c8b3c743faa542a8392e31e2
+content_hash: sha256:a0cd782094e71cb0bc9ba76ed9a520467d2dd571a33d7e2f29d6ecb86a8a021b
 ---
 
 当应用运行发生错误导致应用进程终止时，应用将会抛出错误日志以通知应用崩溃的原因，开发者可通过查看错误日志分析应用崩溃的原因及引起崩溃的代码位置。
@@ -42,19 +42,19 @@ FaultLog由系统自动从设备进行收集，包括如下几类故障信息：
 
 FaultLog故障信息左侧按照**应用/元服务包名 > 故障类型 > 故障时间**结构组成，选中具体的故障日期，则会在右侧展示详细的故障信息，并对部分关键信息进行高亮展示，便于开发者进行故障定位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/G2b6VyKtTLKjEgtkCoxZ2Q/zh-cn_image_0000002731542877.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/FN2Ak_YwQm-rt6XY1XvztQ/zh-cn_image_0000002731542877.png)
 
 ### 查看设备实时抛出的FaultLog日志
 
 当设备抛出FaultLog日志时，DevEco Studio将弹出消息提示框，点击**Jump to Log**即可跳转至FaultLog窗口查看日志信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/wBP88eAXROivYEn-sAJjbA/zh-cn_image_0000002731382909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/phZ_v__2R7GH3mZhjtBZMw/zh-cn_image_0000002731382909.png)
 
 ### 跳转至引起错误的代码行
 
 若抛出的FaultLog中的堆栈信息中的链接或偏移地址指向的是当前工程中的某行代码，该段信息将会被转换为超链接形式，点击后可跳转至对应代码行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/zNTUNqczSuOododyM1ezUQ/zh-cn_image_0000002731542879.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/i-QU40c1R1KQYa18d5dU6A/zh-cn_image_0000002731542879.png)
 
 ## 导出日志
 
@@ -63,8 +63,8 @@ FaultLog故障信息左侧按照**应用/元服务包名 > 故障类型 > 故障
 * 保存当前选中节点的日志：
   + 在当前选中节点右键点击**Export FaultLog**。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/DtP58n8AS4mym9qLxKPT0A/zh-cn_image_0000002731382913.png)
-  + 点击Export FaultLog按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/_MG5ixXhSqCF1s-kJAIbLA/zh-cn_image_0000002731542883.png)，弹出子选项后进一步点击**Export Selected FaultLog**。
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/ZOmsbzcBSXSOkwcHzMR8Jw/zh-cn_image_0000002731382913.png)
+  + 点击Export FaultLog按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/9dyxXJDCSxCrgm6c5aA4Xw/zh-cn_image_0000002731542883.png)，弹出子选项后进一步点击**Export Selected FaultLog**。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/laME_OBpSA65_nvtkZZGjg/zh-cn_image_0000002701663686.png)
-* 保存所有日志：点击Export FaultLog按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/qb2XwtOOQiCCWS15eCXUSw/zh-cn_image_0000002731382907.png)，弹出子选项后进一步点击**Export All FaultLog**。
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/BN3S6bsaQD-5WzGymrcGQw/zh-cn_image_0000002701663686.png)
+* 保存所有日志：点击Export FaultLog按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/M3XiEQnhSiiTYjMrCIKBDw/zh-cn_image_0000002731382907.png)，弹出子选项后进一步点击**Export All FaultLog**。

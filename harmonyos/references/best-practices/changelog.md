@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/changelog
 title: 最佳实践文档变更说明
 breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
-scraped_at: 2026-10-16T07:06:56+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:9afaa4d2c567d5d7e655add2a72231b890738550bfb048d61d3f02ca33d0a111
+scraped_at: 2026-10-29T08:03:30+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:a0921c9654c1c01b07e092e357784905a5890c0e75a157b8ef8297f8c31d9ffc
 ---
 
 ## 2026年9月
@@ -210,10 +210,10 @@ content_hash: sha256:9afaa4d2c567d5d7e655add2a72231b890738550bfb048d61d3f02ca33d
 * [开发态快速定位DMA泄漏](bpta-dma-leak-in-develop.md)：介绍了如何通过高频泄漏场景和DMA内存泄漏分析案例快速定位应用DMA泄漏的问题
 * [开发态快速定位Native泄漏](bpta-native-leak-in-develop.md)：介绍了如何通过高频泄漏场景和Native内存泄漏分析案例，定位应用中的Native内存泄漏问题。
 * [开发态快速定位AppFreeze冻屏](bpta-app-freeze-in-develop.md)：介绍了如何通过高频冻屏场景及分析案例，快速定位冻屏问题。
-* [运维态高效处理应用崩溃](bpta-app-crash-in-operation.md)：介绍了在运维态下如何通过[APMS](../app/agc-help-apms-0000002235870062.md)平台对应用崩溃事件进行标准化排查、分析、定位和修复的闭环流程。
-* [运维态高效处理ArkTS泄漏](bpta-arkts-leak-in-operation.md)：介绍了在运维态下如何通过[APMS](../app/agc-help-apms-0000002235870062.md)平台进行ArkTS泄漏事件的标准化排查、分析、定位和修复闭环流程。
-* [运维态高效处理Native泄漏](bpta-native-leak-in-operation.md)：介绍了在运维态下如何利用[APMS](../app/agc-help-apms-0000002235870062.md)平台完成Native内存泄漏的监控、分析、定位及修复全流程。
-* [运维态高效处理应用冻屏](bpta-app-freeze-in-operation.md)：介绍了在运维态下如何通过[APMS](../app/agc-help-apms-0000002235870062.md)平台对应用冻屏事件进行标准化排查、分析、定位和修复的闭环流程。
+* [运维态高效处理应用崩溃](bpta-app-crash-in-operation.md)：介绍了在运维态下如何通过APMS平台对应用崩溃事件进行标准化排查、分析、定位和修复的闭环流程。
+* [运维态高效处理ArkTS泄漏](bpta-arkts-leak-in-operation.md)：介绍了在运维态下如何通过APMS平台进行ArkTS泄漏事件的标准化排查、分析、定位和修复闭环流程。
+* [运维态高效处理Native泄漏](bpta-native-leak-in-operation.md)：介绍了在运维态下如何利用APMS平台完成Native内存泄漏的监控、分析、定位及修复全流程。
+* [运维态高效处理应用冻屏](bpta-app-freeze-in-operation.md)：介绍了在运维态下如何通过APMS平台对应用冻屏事件进行标准化排查、分析、定位和修复的闭环流程。
 
 ### 优化文档
 
@@ -910,7 +910,7 @@ content_hash: sha256:9afaa4d2c567d5d7e655add2a72231b890738550bfb048d61d3f02ca33d
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/3JEuKeqFQKmC-uPb4-J59g/zh-cn_image_0000002307192376.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/qtW4PiEFR9O_VIu4avgRKg/zh-cn_image_0000002307192376.png "点击放大")
 
 ### 新增文档
 
@@ -1107,7 +1107,7 @@ content_hash: sha256:9afaa4d2c567d5d7e655add2a72231b890738550bfb048d61d3f02ca33d
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/bKRfmUzOSQagtQP2UJusvw/zh-cn_image_0000002318291885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/-uiBK4UfRwGaTqWBsDs9TA/zh-cn_image_0000002318291885.png "点击放大")
 
 ### 新增文档
 
@@ -1259,7 +1259,7 @@ content_hash: sha256:9afaa4d2c567d5d7e655add2a72231b890738550bfb048d61d3f02ca33d
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/uIxCP97BT3GbculbQU5g_g/zh-cn_image_0000002283692304.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Otkq75KfT-uGrfbSvAIGQA/zh-cn_image_0000002283692304.png "点击放大")
 
 ### 新增文档
 

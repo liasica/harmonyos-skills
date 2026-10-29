@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-frequent
 title: JSVM-API常见问题
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API开发规范 > JSVM-API常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:12+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:b3cf0a0941a4a1f4e083d92d8b7d16ee564df4b616af79e440506308d7816297
+scraped_at: 2026-10-29T07:58:17+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d5c9934367f8e623185efd6d0a335476eaba835677a8d8eb7912270f2b2ccaec
 ---
 
 ## 定位方法
@@ -78,7 +78,7 @@ content_hash: sha256:b3cf0a0941a4a1f4e083d92d8b7d16ee564df4b616af79e440506308d78
 4. Q：在虚拟机引擎实例中创建JS类型实例崩溃（如OH\_JSVM\_CreateDouble），调用栈如下：
 
    ```txt
-   #00 pc 0000000001d209e4/system/lib64/ndk/libjsvm.so(v8::base::0S::Abort()+28)
+   #00 pc 0000000001d209e4/system/lib64/ndk/libjsvm.so(v8::base::OS::Abort()+28)
    #01 pc 0000000001408480/system/lib64/ndk/libjsvm.so(v8::Utils::ReportApiFailure(char const*,char const*)+124)
    #02 pc 00000000015c99b8/system/lib64/ndk/libjsvm.so(v8::internal::HandleScope::Extend(v8::internal::Isolate*)+200)
    ```

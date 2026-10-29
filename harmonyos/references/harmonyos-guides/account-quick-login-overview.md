@@ -3,12 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-quick
 title: 概述
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e5b87b36577fc54ae13de47765f4305b886f988afe072f049f4511f08afb73bc
+scraped_at: 2026-10-29T07:57:31+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:af3d7ae62f98f575cf16b6b8dc9b8aff38253567386075d42e53104608c82b8b
 ---
 
 Account Kit提供了[华为账号一键登录](account-phone-unionid-login.md)、[华为账号登录](account-unionid-login-button.md)、[静默登录](account-silent-login.md)等多种登录方式，其中华为账号一键登录**仅支持企业开发者**使用，华为账号登录和静默登录**既支持企业开发者也支持个人开发者**使用，应用可根据实际场景选择使用其中一种或多种方式进行账号登录。
+
+* **登录能力对比**：请参见下表
+
+| 能力 | 适用场景 | 获取数据类型 | 用户操作方式 |
+| --- | --- | --- | --- |
+| 华为账号一键登录 | 若应用需要同时获取手机号和UnionID，推荐使用此场景，用户仅需一次点击操作，应用即可获取用户手机号和UnionID。 | 手机号、UnionID/OpenID | 点击一键登录按钮 |
+| 华为账号登录 | 若应用只需要获取UnionID可以使用此场景。应用获取到用户UnionID后，可通过UnionID与应用原有用户体系进行关联。 | UnionID/OpenID | 点击登录按钮 |
+| 静默登录 | 在应用卸载重装、用户换机等场景，应用可通过Account Kit提供的静默登录方式即不需要用户点击登录/注册按钮，即可获取用户的身份标识UnionID，完成用户的静默登录。 | UnionID/OpenID | 无需用户操作 |
 
 ## 基础概念
 

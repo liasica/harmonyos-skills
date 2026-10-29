@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-vpnextens
 title: 连接VPN
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 连接VPN
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:46+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-10-29T07:57:01+08:00
+doc_updated_at: 2026-10-28
 content_hash: sha256:5003d38f21efadac528597234e594f951440eff05dcb9860e650cd2794cf3c70
 ---
 

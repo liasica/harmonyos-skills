@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-page-brigh
 title: 页面亮度设置
 breadcrumb: 最佳实践 > 主题与样式 > 页面亮度设置
 category: best-practices
-scraped_at: 2026-10-16T07:06:35+08:00
+scraped_at: 2026-10-29T08:03:14+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:4764e29ec976be600f6b629615baf74b62a06b82d0c0f549d2bf136799968edd
+content_hash: sha256:59c0589e2e9f527c34e92ea444f4aec3000077a6fb15f7ccb7496f0c6fbd5618
 ---
 
 ## 概述
@@ -140,7 +140,7 @@ content_hash: sha256:4764e29ec976be600f6b629615baf74b62a06b82d0c0f549d2bf1367999
 
 **图1** 视频播放页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Kiux2zTNTUOnl3Atc1Oz0w/zh-cn_image_0000002229451573.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/5YmOFLJ4Q1SwViAlAUNYGA/zh-cn_image_0000002229451573.gif "点击放大")
 
 注：录屏无法录制亮度变化，以真机为准。
 
@@ -247,7 +247,7 @@ content_hash: sha256:4764e29ec976be600f6b629615baf74b62a06b82d0c0f549d2bf1367999
 
 **图2** 付款码页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/1k0kye7eSb23kEmOzrAQFw/zh-cn_image_0000002193851700.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/d1tF9BR1RNOH6khczEfPDQ/zh-cn_image_0000002193851700.gif "点击放大")
 
 注：录屏无法录制亮度变化，以真机为准。
 

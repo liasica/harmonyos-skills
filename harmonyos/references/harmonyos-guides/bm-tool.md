@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool
 title: bm工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > bm工具
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:271ed74115fae91e51489aa2aa47cea8b157b0233b7a206350531740db86d87c
+scraped_at: 2026-10-29T07:57:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:6ab7ce971b0044a355105792e8bc84b463cefba0cf355ed3f9c5bb6fdfe6f555
 ---
 
 Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、更新、查询等功能的工具，bm为开发者提供基本的应用安装包的调试能力。
@@ -728,7 +728,7 @@ error: fail to verify pkcs7 file.
 
 error: install parse profile prop check error.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/FP4Lth8dQ7SQMuKmEXlgHw/zh-cn_image_0000002801105799.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/aJwN53-NSPuJcjJb16nunQ/zh-cn_image_0000002774064806.png)
 
 **错误描述**
 
@@ -762,13 +762,13 @@ error: Failed to install the HAP or HSP because the dependent module does not ex
 
 * 方法一：先通过[bm install -p](bm-tool.md#安装命令install)命令安装依赖的动态共享包（HSP）模块，再在应用运行配置页勾选Keep Application Data，点击OK保存配置，再运行/调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/s2Tdq4iFRoyACGZSRNnnRQ/zh-cn_image_0000002771666020.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/k-o5BPbzSY6xGdWBpunPHQ/zh-cn_image_0000002773904834.png)
 * 方法二：在运行配置页，选择Deploy Multi Hap标签页，勾选Deploy Multi Hap Packages，选择依赖的模块，点击OK保存配置，再进行运行/调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/X2teXyh3SBKU4pBacXgt5g/zh-cn_image_0000002800985877.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/XYBEiS6FTsy-WkPMCp_eqA/zh-cn_image_0000002803264617.png)
 * 方法三：单击Run > Edit Configurations，在General中，勾选Auto Dependencies。点击OK保存配置，再运行/调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/flRxFj5cQxWWVf_HwKt4NA/zh-cn_image_0000002771825988.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/IyUTSBfUQUm-fGMO__kBew/zh-cn_image_0000002803224527.png)
 
 场景二：依赖的HSP与HAP不在同一工程内：
 
@@ -780,7 +780,7 @@ error: Failed to install the HAP or HSP because the dependent module does not ex
 
 DevEco Studio自动安装运行应用时，查看Run中的日志，如果存在remote\_hsp目录，说明依赖集成态HSP，remote\_hsp目录下的HSP文件就是集成态HSP编译后的包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/eVLX33VXS6-IY6U4vwuxfg/zh-cn_image_0000002801105801.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Sma3Hx_JQRqEV6Y3-GRZCQ/zh-cn_image_0000002774064808.png)
 
 ### 9568259 安装解析配置文件缺少字段
 
@@ -788,7 +788,7 @@ DevEco Studio自动安装运行应用时，查看Run中的日志，如果存在r
 
 error: install parse profile missing prop.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/CTaW-jwPQUq7PI9wJStzqQ/zh-cn_image_0000002771666022.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/yfUOjTyhRLazNAk-MkjBkw/zh-cn_image_0000002773904836.png)
 
 **错误描述**
 
@@ -819,7 +819,7 @@ error: install parse profile missing prop.
 
 error: install releaseType target not same.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/EBuzlcHZTvWiEKhSv9NnCg/zh-cn_image_0000002800985879.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Ha3I77ezRKOugIaodkrjWw/zh-cn_image_0000002803264619.png)
 
 **错误描述**
 
@@ -1010,7 +1010,7 @@ error: install file path invalid.
 
 error: signature verification failed due to not trusted app source.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/8o3lsJWsQomHAJZJvmJHVA/zh-cn_image_0000002771825990.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Mcmz0CcWQFOvMYif5CwGkg/zh-cn_image_0000002803224529.png)
 
 **错误描述**
 
@@ -1071,7 +1071,7 @@ error: install failed due to insufficient disk memory.
 
 error: install failed due to grant request permissions failed.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/kbLtmmjXS8eV9XHvtgUQUw/zh-cn_image_0000002801105803.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/KMmffevDSheXtboBgmy1Og/zh-cn_image_0000002774064810.png)
 
 **错误描述**
 
@@ -1155,7 +1155,7 @@ SysCap不一致导致安装失败。
 
 error: install failed due to older sdk version in the device.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Wq4aoakeSGOq-ws9Azl4uQ/zh-cn_image_0000002771666024.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/DfPEJkwTTbWf_trchxxU_g/zh-cn_image_0000002773904838.png)
 
 **错误描述**
 
@@ -1218,7 +1218,7 @@ error: moduleName is not unique.
 
 error: install sign info inconsistent.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1EQ4-Ka3SxKCB2o8GBZZ2Q/zh-cn_image_0000002800985881.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Wwpyl1QyQu6vbp1da4EoZw/zh-cn_image_0000002803264621.png)
 
 **错误描述**
 
@@ -1241,7 +1241,7 @@ error: install sign info inconsistent.
 
 error: verify signature failed.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/OTcllT5SSNCjHVwIjCytGg/zh-cn_image_0000002771825992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/dk7W9nT6Q4KOlcOBT47r3w/zh-cn_image_0000002803224531.png)
 
 **错误描述**
 
@@ -1263,7 +1263,7 @@ error: verify signature failed.
 
 error: install permission denied.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/h9BXkF9iQdSLBw_nsbMQ9w/zh-cn_image_0000002801105805.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/oBCJsvtlRNmaA2pR2K8qUg/zh-cn_image_0000002774064812.png)
 
 **错误描述**
 
@@ -2279,10 +2279,10 @@ error: installd set selinux label failed.
 
 1. 确认签名文件p7b中apl字段是否有误。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/CafvUkaBSS2eragD8XYgTw/zh-cn_image_0000002771666026.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/9D79NO_GT1CYVW8ULzgKag/zh-cn_image_0000002773904840.png)
 2. 若apl字段有误，修改UnsgnedReleasedProfileTemplate.json文件中apl字段，并重新签名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/SXKUWWGXQ_-TuzUsQfJDrg/zh-cn_image_0000002800985883.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/lUdjUkVGTvuLzka3CLxSsg/zh-cn_image_0000002803264623.png)
 
 ### 9568360 安装overlay应用出现错误
 
@@ -2694,50 +2694,6 @@ error: uninstall missing installed module.
 
 使用[bm dump -n](bm-tool.md#查询应用信息命令dump)命令查看应用配置，确认要卸载的模块已经安装。
 
-### 9568432 插件与应用之间的 pluginDistributionIDs 校验失败，导致安装失败
-
-**错误信息**
-
-error: Check pluginDistributionID between plugin and host application failed.
-
-**错误描述**
-
-应用与插件的 pluginDistributionIDs 之间校验失败。
-
-**可能原因**
-
-应用与插件的 pluginDistributionIDs 没有共同值，导致校验失败。
-
-**处理步骤**
-
-重新配置应用或者插件[Profile签名文件](../app/agc-help-profile-overview-0000002283260125.md)中的 pluginDistributionIDs。配置格式如下：
-
-```json
-"app-services-capabilities":{
-    "ohos.permission.kernel.SUPPORT_PLUGIN":{
-        "pluginDistributionIDs":"value-1,value-2,···"
-    }
-}
-```
-
-### 9568433 应用缺少ohos.permission.kernel.SUPPORT\_PLUGIN权限
-
-**错误信息**
-
-error: Failed to install the plugin because host application check permission failed.
-
-**错误描述**
-
-应用安装插件时，应用的权限校验失败。
-
-**可能原因**
-
-应用缺少ohos.permission.kernel.SUPPORT\_PLUGIN权限。
-
-**处理步骤**
-
-1. 参考[权限申请指导](declare-permissions.md)申请[ohos.permission.kernel.SUPPORT\_PLUGIN权限](restricted-permissions.md#ohospermissionkernelsupport_plugin)。
-
 ### 9568333 模块名称为空
 
 **错误信息**
@@ -3011,32 +2967,6 @@ error: Failed to install the plugin because they have different configuration in
 **处理步骤**
 
 检查多HSP之间的包信息是否一致，包括[app.json5配置文件](app-configuration-file.md#配置文件标签)中bundleName、bundleType、versionCode、apiReleaseType字段。
-
-### 9568437 插件的 pluginDistributionIDs 解析失败
-
-**错误信息**
-
-error: Failed to install the plugin because the plugin id failed to be parsed.
-
-**错误描述**
-
-插件的 pluginDistributionIDs 解析失败，导致安装失败。
-
-**可能原因**
-
-插件签名信息中的 pluginDistributionIDs 配置不符合规范，导致解析失败。
-
-**处理步骤**
-
-参考如下格式，重新配置插件[Profile签名文件](../app/agc-help-profile-overview-0000002283260125.md)中的"app-services-capabilities"字段。
-
-```json
-"app-services-capabilities":{
-    "ohos.permission.kernel.SUPPORT_PLUGIN":{
-        "pluginDistributionIDs":"value-1,value-2,···"
-    }
-}
-```
 
 ### 9568438 插件包名不存在
 

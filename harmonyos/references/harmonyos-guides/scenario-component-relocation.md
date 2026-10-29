@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-comp
 title: 控件位置调整
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 控件位置调整
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:40+08:00
+scraped_at: 2026-10-29T07:56:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6a6db8277c29404758a0d606599875e35ca7395fb3d6fec2015cae182c286767
+content_hash: sha256:a99acb0203ed95c2871b636a1e87e87da88827a3a6966ba103276d767020c05c
 ---
 
 ## 设计场景
@@ -16,7 +16,7 @@ content_hash: sha256:6a6db8277c29404758a0d606599875e35ca7395fb3d6fec2015cae182c2
 
 例如，当前展示的网页书签被托起时，会播报”华为专区已托起”，移动的过程中，根据即将放置的位置播报“移动到华为手机服务|华为官网上面”。应用可调用主动播报的接口来进行主动播报。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/RYzngiUlTACX8QMGbYJvjg/zh-cn_image_0000002771824606.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/J8OoUO_ySuGXvGoaEzN21g/zh-cn_image_0000002803223143.png)
 
 ```typescript
 import { accessibility } from '@kit.AccessibilityKit'

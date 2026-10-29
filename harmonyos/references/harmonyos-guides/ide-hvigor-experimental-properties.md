@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ex
 title: 实验特性
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实验特性
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:33+08:00
+scraped_at: 2026-10-29T07:58:34+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:87b0d7bc28d5f25f920502643b5e0fbedc85f44eaabcd55b17a17024bfbc7d7a
+content_hash: sha256:7d5663a8deee9fadad3a44b429051a67da03ce12094614c49736c398590813b9
 ---
 
 为了打造更敏捷流畅的使用体验，新版本的Hvigor带来了一系列的编译构建性能优化实验特性，这些优化特性将显著提高工程的编译速度，降低峰值内存占用等。由于部分优化方案仍处于试验性阶段，您可能在这些特性中体验到效率的提升，也可能在特定场景中遇到待完善的问题，因此，这些特性提供了开关，用户可以根据业务需求开启后使用。
@@ -158,17 +158,17 @@ content_hash: sha256:87b0d7bc28d5f25f920502643b5e0fbedc85f44eaabcd55b17a17024bfb
 1. 按照以上方式开启开关**Enable ohpm execution by hvigor**。
 2. 在工程级build-profile.json5的module字段下，添加工程中不存在的模块，如testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/DNL85rolROijflPIvL2cUg/zh-cn_image_0000002731542069.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ZGlT6K6QQzmOPdB4WKy10Q/zh-cn_image_0000002731542069.png)
 3. 调用excludeNodeByName方法，排除不存在的模块testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/twXVFlxaRPGbIiIy3NKt2Q/zh-cn_image_0000002701822798.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/vj-12ZW_TOm6ibYN2hN_0w/zh-cn_image_0000002701822798.png)
 4. 执行构建成功。
 
 **使用场景二**
 
 调用[setDependenciesOpt](ide-build-expanding-context.md#section18789410129)、[setOverrides](ide-build-expanding-context.md#section469812496459)等方法动态修改oh-package.json5中的依赖信息后，执行sync或build等操作时，DevEco Studio会执行两次ohpm install操作，开启开关后，Hvigor仅执行一次ohpm install，可提升构建的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Pc9Pz5w8QKW6JgCTM3gw2Q/zh-cn_image_0000002701662876.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/FXqcHFCsRZ2ggeAnz-V3bw/zh-cn_image_0000002701662876.png)
 
 ## 通过IClang提升C++增量编译效率
 

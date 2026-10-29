@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片主动刷新
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面刷新 > ArkTS卡片主动刷新
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:00+08:00
+scraped_at: 2026-10-29T07:56:45+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:877547527c72263ad6048995184acdad58339241e90ab2c8cc71873d0aa193a6
+content_hash: sha256:4d960a8a828ba80bdcdde6bc63f4f05c80fb15f72fb398839d9955067119b479
 ---
 
 本文主要提供主动刷新的开发指导，刷新流程请参考[主动刷新概述](arkts-ui-widget-interaction-overview.md#主动刷新)。
@@ -189,7 +189,7 @@ content_hash: sha256:877547527c72263ad6048995184acdad58339241e90ab2c8cc71873d0aa
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/5mzAmF-6SsORsN6FPpvphg/zh-cn_image_0000002801105507.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/OuCtJGqxRYykJ6FF-qiGfQ/zh-cn_image_0000002774064514.gif)
 
 ## 卡片提供方批量请求刷新卡片内容
 
@@ -354,4 +354,4 @@ content_hash: sha256:877547527c72263ad6048995184acdad58339241e90ab2c8cc71873d0aa
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/VIBXONv5Q12eDCd_LtdsPg/zh-cn_image_0000002771665728.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/2xWuP-kCT0mueDr-LWgsKg/zh-cn_image_0000002773904540.gif)

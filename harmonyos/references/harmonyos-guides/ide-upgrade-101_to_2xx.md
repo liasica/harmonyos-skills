@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-upgrade-1
 title: 1.0.1升级至2.X.X/5.X.X版本
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 版本升级 > 1.0.1升级至2.X.X/5.X.X版本
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:17+08:00
+scraped_at: 2026-10-29T07:58:20+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:878c606c943f45e5571a42bf0103fc7bba8c68afb544252c0bfa81e228b81254
+content_hash: sha256:9524318814800cc9c29bf1f21175654a343fa684dba7c0c7e6435b99ebbebe4b
 ---
 
 升级至2.X.X版本与升级至5.X.X版本步骤一致，本文以升级至2.X.X版本为例。
@@ -26,7 +26,7 @@ content_hash: sha256:878c606c943f45e5571a42bf0103fc7bba8c68afb544252c0bfa81e228b
 
 2. 下载并解压工具包：下载版本2.X.X的ohpm-repo私仓工具包，并解压（请解压到一个空文件夹中）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/DpXDo6FWQQWMVHPJB_jfbg/zh-cn_image_0000002731541603.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/GYQY_5vVT4Gd_L4b6FknvA/zh-cn_image_0000002731541603.png)
 
 3. 安装完成之后，进入ohpm-repo 私仓工具包解压目录下的bin目录，执行如下命令：
 
@@ -155,7 +155,7 @@ content_hash: sha256:878c606c943f45e5571a42bf0103fc7bba8c68afb544252c0bfa81e228b
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/gjp7eD2NSC6qNL7RgfdGrA/zh-cn_image_0000002731541597.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ST3Bxf76TwyWgGOV3LvxVw/zh-cn_image_0000002731541597.png "点击放大")
    * 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
 
      **说明** 
@@ -170,7 +170,7 @@ content_hash: sha256:878c606c943f45e5571a42bf0103fc7bba8c68afb544252c0bfa81e228b
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/-UW4DAJXRAqWf73WDUYpuQ/zh-cn_image_0000002731381631.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/jw3C2mf1RiWAF3C8wcSfXQ/zh-cn_image_0000002731381631.png "点击放大")
 
      **说明** 
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-connectio
 title: 管理网络连接
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:14+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-10-29T07:57:01+08:00
+doc_updated_at: 2026-10-28
 content_hash: sha256:f3831ecd513e1b8d19f51abc6b26fe6682172fb68c4d29cd57dae1af235b1121
 ---
 

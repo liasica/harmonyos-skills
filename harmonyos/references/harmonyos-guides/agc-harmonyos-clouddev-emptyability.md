@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 通用云开发模板
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 附录：云开发工程模板 > 通用云开发模板
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:19+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:6e0142b31cffd2123b0cdc9831f906fa1b4138d918f16513100795d64a5d5219
+scraped_at: 2026-10-29T07:58:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:817404241ce14fb0a98918159a49777bd3b2462db056cdb6b491c86227830004
 ---
 
 ## 适用范围
@@ -22,8 +22,8 @@ content_hash: sha256:6e0142b31cffd2123b0cdc9831f906fa1b4138d918f16513100795d64a5
 
 | 功能模块 | 效果图 | 功能说明 |
 | --- | --- | --- |
-| 云函数 |  | 点击“Generate Global Unique ID”时，调用云函数SDK执行部署在AGC云端的云对象“id-generator”，生成UUID。 |
-| 云数据库 |  | 点击“New”创建数据，可在AGC云端查看到创建的数据。 |
+| 云函数 |  | 点击“Generate Global Unique ID”时，调用云函数SDK执行部署在HarmonyOS 开发者中心的云对象“id-generator”，生成UUID。 |
+| 云数据库 |  | 点击“New”创建数据，可在HarmonyOS 开发者中心查看到创建的数据。 |
 | 云存储 |  | 点击“Upload Image”上传本地图片，成功后可获取图片链接。 |
 
 ## 体验模板
@@ -31,14 +31,16 @@ content_hash: sha256:6e0142b31cffd2123b0cdc9831f906fa1b4138d918f16513100795d64a5
 如您希望在设备上亲自体验该模板的功能和页面效果，可按如下流程操作：
 
 1. [使用模板创建端云一体化开发工程](agc-harmonyos-clouddev-devproject.md)。
-2. [将云侧工程一键部署至AGC云端](agc-harmonyos-clouddev-deploy.md)。
+2. [将云侧工程一键部署至HarmonyOS 开发者中心](agc-harmonyos-clouddev-deploy.md)。
 3. 配置云存储安全策略。
 
    由于端云一体化开发工程的初始化代码未[配置AccessToken](../harmonyos-references/cloudfoundation-cloudcommon.md#getaccesstoken)，因此您还需配置云存储的安全策略为始终可读写，否则会导致云存储无法上传文件。具体操作如下：
 
-   1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“开发与服务”。
-   2. 在项目列表中点击您的项目。
-   3. 在左侧导航栏选择“云开发（Serverless） > 云存储”，进入云存储页面。
+   1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，进入“应用管理”页面。
+   2. 在左上角的应用列表中点击“切换至项目”，选择您的项目。
+
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/el5gN33ZSBeDNW97ykbxqw/zh-cn_image_0000002765419093.png)
+   3. 选择“开放能力配置 > 云存储”，进入云存储页面。
    4. 选择“安全”页签，在“配置策略”页面修改默认安全策略为始终可读写后，点击“发布”。
 
       ```screen
@@ -49,7 +51,7 @@ content_hash: sha256:6e0142b31cffd2123b0cdc9831f906fa1b4138d918f16513100795d64a5
       ]
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/MjI84XOFQviY3nK16haieQ/zh-cn_image_0000002492564672.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/qdtxeKI2S225gvLhU3B4uQ/zh-cn_image_0000002492564672.png)
 4. 将模板工程推包到手机上，在手机上开通应用访问数据权限，即可开始体验模板。
 
    **注意** 

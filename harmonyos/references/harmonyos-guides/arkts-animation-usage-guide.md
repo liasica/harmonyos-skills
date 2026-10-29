@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animati
 title: 优化动画性能
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 优化动画性能
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:52+08:00
+scraped_at: 2026-10-29T07:56:34+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:be320440632b7651956ce634ea7d8a4009a94871894f6ddef44fb4493a222fd3
+content_hash: sha256:cf351a68aa77733026c9f075156a8aeeca0bc0cb3ecd6ef412552bc4ebde3bc6
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ HarmonyOS系统为开发者提供了丰富的动画能力，在实际开发过�
 
 **图 1** 合理使用动画
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/r_ZdWThYRUKbpp_oAwUlTA/zh-cn_image_0000002771665388.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/3YT2nrRCSiK8nMF5wzvV7g/zh-cn_image_0000002773904200.png)
 
 ### 动效场景设计
 
@@ -47,7 +47,7 @@ HarmonyOS系统为开发者提供了丰富的动画能力，在实际开发过�
 
 **图 2** 点击特征动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Gr7ml2hGR8W7ucEhSQtdsA/zh-cn_image_0000002800985245.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/IEW3v5quQ7GaOrqk7-vjSg/zh-cn_image_0000002803263985.gif)
 
 **转场动效**
 
@@ -57,7 +57,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 3** 转场动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/iKj5UjbCQO20_OcTGDhrLQ/zh-cn_image_0000002771825354.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/sIJmWz54RwyZ9_vjQb9TTw/zh-cn_image_0000002803223895.gif)
 
 **手势动效**
 
@@ -71,7 +71,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 4** 手势动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Jm8GyGSzRTSzB89Q3Lwkpw/zh-cn_image_0000002801105169.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/O_52jSKTRUi5pVhzMp8hPA/zh-cn_image_0000002774064176.gif)
 
 **微动效**
 
@@ -79,7 +79,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 5** 微动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/s_1CelbVTKaSRPl7mYeptA/zh-cn_image_0000002771665390.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/-CQb-1tWQj2oJD-SaLn1Mg/zh-cn_image_0000002773904202.gif)
 
 **插画动效**
 
@@ -89,7 +89,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 6** 插画动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/rfwDqf6pQFKNZh5K3fShHQ/zh-cn_image_0000002800985247.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/igq6LirkSMaOH2LKgPzqIg/zh-cn_image_0000002803263987.gif)
 
 ### 动画能力选型
 
@@ -124,7 +124,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
   **图 7** 使用显式动画实现水波纹动效
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/41b79csMSx-b4WzKxhFO1w/zh-cn_image_0000002771825356.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/is-mA4J7QBqhaI6LxtOmAQ/zh-cn_image_0000002803223897.gif)
 * 实现原理
 
   水波圆环以圆形按钮为中心，将多个圆形图层逐渐向外扩展放大，每个圆形图层的动画开始时间稍微错开，进而形成多个水波圆环依次扩散的效果。其动效实现步骤如下。
@@ -247,7 +247,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
   **图 8** 使用关键帧动画实现左右移动提示
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/o0uJmqS0TY-SdMZ0CJSovg/zh-cn_image_0000002801105171.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/n65A49ajS4SxXeMth6iXvw/zh-cn_image_0000002774064178.gif)
 * 实现原理
 
   提示框左右移动提醒是将提示框进行左移，然后再进行右移，如此往复循环多次。其动效可以分为提示框左移和提示框右移两段，可以使用keyframeAnimateTo接口实现分段的动画效果，实现步骤如下所示。
@@ -316,7 +316,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
   **图 9** 使用属性动画实现手势动效
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/aWCW64K7SZ-XTaVAiMnTAw/zh-cn_image_0000002771665392.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/ZucwLZI8TVW-DtnsfSJrtQ/zh-cn_image_0000002773904204.gif)
 * 实现原理
 
   在实现下拉缩放详情中，主要包含了两个部分，分别是列表下拉的手势和下拉后标题和列表的动画，详细实现步骤如下。
@@ -483,7 +483,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 10** 同一界面多个按钮同时缩放示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/OVEU-kM2SgCy772hFLyagA/zh-cn_image_0000002800985249.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/4RQ32LM1Q3-VbCLNzdEDcg/zh-cn_image_0000002803263989.gif)
 
 **自定义动画**
 
@@ -750,7 +750,7 @@ export struct CustomAnimation {
 
 **图 11** 同一界面多个图片同时缩放并位移示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/cA0ryyaNSM-wShtphYFITA/zh-cn_image_0000002771825358.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/JsF66aV_Q6CBXOleNVaHWA/zh-cn_image_0000002803223899.gif)
 
 **改变布局属性**
 
@@ -977,7 +977,7 @@ export struct ImageAnimation {
 
 **图 12** 多个相同组件同时修改多个属性示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/fnvbOb4iSkKdfC4ZDONSRw/zh-cn_image_0000002801105173.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/d9S2Ym2kRISfnTRWOfmq4Q/zh-cn_image_0000002774064180.gif)
 
 **代码实现**
 
@@ -1173,7 +1173,7 @@ export struct ImageAnimation {
 
 **图 13** 多个相同组件修改多个属性示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/6n-url2ZT32iFbSWLIgIIA/zh-cn_image_0000002771665394.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/OFWVn_dbSeGlyUFetLLBQQ/zh-cn_image_0000002773904206.gif)
 
 **在多个animateTo之间更新状态变量**
 
@@ -1181,7 +1181,7 @@ export struct ImageAnimation {
 
 **图 14** 多个animateTo之间更新状态变量更新流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/tFE5z22nQDe1I9EJM3AMhA/zh-cn_image_0000002800985251.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/u44zp1UKSjGGHrMICkvhbw/zh-cn_image_0000002803263991.png)
 
 在第一个animateTo前，重新设置了w属性，所以Row组件需要更新一次。在第一个animateTo的动画闭包中，改变了w属性，所以Row组件又需要更新一次并对比产生宽高动画。第二个animateTo前，重新设置了color属性，所以Row组件又需要更新一次。在第二个animateTo的动画闭包中，改变了color属性，所以Row组件再更新一次并产生了背景色动画。Row组件总共更新了4次属性。
 
@@ -1266,7 +1266,7 @@ export struct UpdateMultipleProperties {
 
   **图 15** animateTo之前显式指定属性初值更新流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/CaQa8hGDRn-y-6sKQvy58g/zh-cn_image_0000002771825362.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Nz5XC_EFQ9aYEnp-l8rUaQ/zh-cn_image_0000002803223901.png)
 
 在第一个animateTo之前，重新设置了w和color属性，所以Row需要更新一次。在第一个animateTo的动画闭包中，改变了w属性，所以Row组件需要更新一次并对比产生宽高动画。在第二个animateTo之前，由于没有执行额外的语句，不存在需要更新的脏状态变量和脏节点，无需更新。在第二个animateTo的动画闭包中，改变了color属性，所以Row组件再更新一次并产生了背景色动画。Row组件总共更新了3次属性。
 
@@ -1348,7 +1348,7 @@ export struct UpdateMultipleProperties {
 
   **图 16** animateTo之前使用原始状态更新流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/A0kSkHxeRUitPRPSNPh-jA/zh-cn_image_0000002801105175.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/fhf2CjOVQ_6rbOFM5JqX1g/zh-cn_image_0000002774064182.png)
 
   在第一个animateTo之前，不存在需要更新的脏状态变量和脏节点，无需更新。在第一个animateTo的动画闭包中，改变了w属性，所以Row组件需要更新一次并对比产生宽高动画。在第二个animateTo之前，由于也没有执行额外的语句，不存在需要更新的脏状态变量和脏节点，无需更新。在第二个animateTo的动画闭包中，改变了color属性，所以Row组件再更新一次并产生了背景色动画。Row组件总共更新了2次属性。
 
@@ -1448,7 +1448,7 @@ renderGroup是组件通用方法，它代表了渲染绘制的一个组合。其
 
 **图 17** 组件渲染流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/YMD_GdzDSMamDYXyNqzOlA/zh-cn_image_0000002771665396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/yo2STkZtRISVabB9LYLQXA/zh-cn_image_0000002773904208.png)
 
 在进行缓存更新时，需要满足以下三个条件：
 
@@ -1463,7 +1463,7 @@ renderGroup是组件通用方法，它代表了渲染绘制的一个组合。其
 
 具体缓存管理流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/9Xd6yqzmRbW3N36RkvwG7w/zh-cn_image_0000002800985253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/IkSUNTHUSeCsKZq7YM2iVA/zh-cn_image_0000002803263993.png)
 
 **说明** 
 
@@ -1478,7 +1478,7 @@ renderGroup是组件通用方法，它代表了渲染绘制的一个组合。其
 
 **图 18** renderGroup案例实现图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/zTC2kw7KTbqrBvjz368tCQ/zh-cn_image_0000002771825364.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/EU-ownr_RbKxgbQC3ZbXGg/zh-cn_image_0000002803223903.gif)
 
 **代码实现**
 

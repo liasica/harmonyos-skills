@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-custom-fon
 title: 自定义字体设置
 breadcrumb: 最佳实践 > 主题与样式 > 自定义字体设置
 category: best-practices
-scraped_at: 2026-10-16T07:06:35+08:00
+scraped_at: 2026-10-29T08:03:14+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:25c840f2f8d2b2ce8be7a73fe114583aef3490b7b1549ca545662c706e86eb40
+content_hash: sha256:030bc3d6ac568f1cdddc1941016733e4f2956709cac60cd77bbd54af78f5ac73
 ---
 
 ## 概述
@@ -27,7 +27,7 @@ ArkUI提供了全面的字体控制能力，如自定义设置字体大小和字
 
 在字体设置中，点击选择字体列表中的某个字体后，页面的字体样式会发生变化。在退出应用重新进入后，默认显示退出前选择的字体样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ue-C320qRRiR0nrVKCvjvg/zh-cn_image_0000002361481894.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/8wdRe9qrR9WyKdY5_eHo8g/zh-cn_image_0000002361481894.gif "点击放大")
 
 **实现原理**
 
@@ -177,7 +177,7 @@ registerFont()方法可以在字体管理器中注册自定义字体，支持注
 
 在应用设置页面的字体设置中，点击选择系统默认字体，首页和设置页顶部的字体样式变为系统默认。退出并重新进入应用后，仍会显示系统默认字体。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/RmmCdYgCSyeh4AHMEyRPGg/zh-cn_image_0000002395161853.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/a6XfgB6rQ1e-LTMVCj-QYA/zh-cn_image_0000002395161853.gif "点击放大")
 
 **实现原理**
 
@@ -217,7 +217,7 @@ registerFont()方法可以在字体管理器中注册自定义字体，支持注
 
 在设置页面中，点击打开Toggle按钮，使页面字体大小跟随系统设置发生变化。此时，自定义字体大小和字重的Slider将被禁用，无法滑动或点击。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/r_46iQXBToSrGUmHRSP2Qg/zh-cn_image_0000002361641798.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/3H_iHxZCSYKFMlRRy1Rp1g/zh-cn_image_0000002361641798.gif "点击放大")
 
 **实现原理**
 
@@ -288,7 +288,7 @@ registerFont()方法可以在字体管理器中注册自定义字体，支持注
 
 在设置页中点击关闭Toggle按钮，通过Slider组件可以调整页面字体大小。在系统设置中调整字体大小，页面字体不会发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/cXgAQ5QJQJiZrmLln-_Jlw/zh-cn_image_0000002395321741.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/CHt25_2sSYyJ3fgG4MSFlg/zh-cn_image_0000002395321741.gif "点击放大")
 
 **实现原理**
 

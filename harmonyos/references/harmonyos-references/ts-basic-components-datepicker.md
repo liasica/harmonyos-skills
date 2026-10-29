@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:22+08:00
+scraped_at: 2026-10-29T07:59:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f27feda97e95b91237a6bb08183a66a24c04ecdd259fb2e7ac693428020202eb
+content_hash: sha256:060eae554a59c95f4f4f4db35b09863e2e099a37babef0078c39c7d916a3d3df
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/E7VcxQYnSHCUW_x0xb01TA/zh-cn_image_0000002771827408.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/dRMFwx3SQ7y_q4pPJeR3-w/zh-cn_image_0000002773906258.gif)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/pH7PX44WQRO0HLYTqlFtHg/zh-cn_image_0000002801107223.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-JU8jugMRG2lcW7X0B_c_A/zh-cn_image_0000002803266041.png)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/JMXrEdd-S1C1d_m1AECCxQ/zh-cn_image_0000002771667444.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/uWrZ8JH2RUGpjxT-jCJafA/zh-cn_image_0000002803225949.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ULlq3PbTTWy0JMLg6HywQw/zh-cn_image_0000002800987303.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/71MvPYLZR8OGI3NC3Fh2Wg/zh-cn_image_0000002774066234.gif)

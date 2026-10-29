@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hwas
 title: 使用HWASan检测内存错误
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用HWASan检测内存错误
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:47+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:bdd3fae0e69469e1473a7cc7a38f63210b670d940f1271977fcc4346484a9b32
+scraped_at: 2026-10-29T07:58:47+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:b6a017cc0be44ee2615398a15980ee81cd80e64d8aa46e152f59605aa6335a9c
 ---
 
 HWASan（Hardware-Assisted Address Sanitizer）是一款类似于[Asan](ide-hmos-asan.md)的内存错误检测工具。与ASan相比，HWASan使用的内存减少很多，因而更适合用于整个系统的清理。关于HWASan的检测原理请参考[HWASan检测原理](../best-practices/bpta-stability-address-sanitizer-principle.md#section187526511146)。
@@ -21,12 +21,12 @@ HWASan（Hardware-Assisted Address Sanitizer）是一款类似于[Asan](ide-hmos
 
 ### 方式一
 
-1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/2mX-1dc8S6eJb020a5YIVg/zh-cn_image_0000002779728997.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/5FeCrYl_RWWtZoRpmes_GQ/zh-cn_image_0000002750009934.png "点击放大")按钮打开配置界面。
+1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/NzxWehjQSAiRFa4LqNRxWw/zh-cn_image_0000002779728997.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/HgUZa7hRQx-bnJzZckRmYA/zh-cn_image_0000002750009934.png "点击放大")按钮打开配置界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/yhMogfTwTw-pPPsUPPWiwA/zh-cn_image_0000002750009936.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/va5oTW9dT7mFz-Wx8SFvzQ/zh-cn_image_0000002750009936.png)
 2. 在配置界面点击**故障分析**，勾选**硬件辅助地址检测**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/Q0hH2x_qQKmE0mmnVesbVg/zh-cn_image_0000002779608851.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/h-MmdeEVQCezOcrmVwjhKw/zh-cn_image_0000002779608851.png)
 
 ### 方式二
 
@@ -42,6 +42,7 @@ HWASan（Hardware-Assisted Address Sanitizer）是一款类似于[Asan](ide-hmos
      "externalNativeOptions": {
        "arguments": ["-DOHOS_ENABLE_HWASAN=ON"]
      }
+   }
    ```
 
 ## 使用HWASan
@@ -49,4 +50,4 @@ HWASan（Hardware-Assisted Address Sanitizer）是一款类似于[Asan](ide-hmos
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出HWASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。日志中各字段的说明请参考[HWASan日志规格](address-sanitizer-guidelines.md#hwasan日志规格)，异常检测类型请参考[HWASan异常检测类型](../best-practices/bpta-stability-hwasan-detection.md#section207321025115510)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/KBDHcdKVRziScGRnb8_i6A/zh-cn_image_0000002750169828.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/kto1H7j6RECVAV-IfC3zFg/zh-cn_image_0000002750169828.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-in-e
 title: 基于Audio能力实现音频耳返
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于Audio能力实现音频耳返
 category: best-practices
-scraped_at: 2026-10-16T07:06:38+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:6a791b8e92902da09e2afe9d885ad79a7c8c813ebe1dce19f6a9c077e0e03f61
+scraped_at: 2026-10-29T08:03:16+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:0e9fd139f28f4cda042795260ba3bb561dc194bdc886d5f842a0114d126c2973
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:6a791b8e92902da09e2afe9d885ad79a7c8c813ebe1dce19f6a9c077e0e
 |  |  |  |  |
 | --- | --- | --- | --- |
 |  | 实现方案 | 优点 | 缺点 |
-| 硬件耳返 | 基于[AudioLoopback](../harmonyos-references/arkts-apis-audio-audioloopback.md)实现音频耳返 | 1. 物理耳返，延时低。 2. 在API 21，提供混响和均衡器等音效。 | 1. 当前仅支持有线耳机，不支持蓝牙耳机。 2. 在耳返的场景下，仅支持录制麦克风。 |
+| 硬件耳返 | 基于AudioLoopback（参考[Interface (AudioLoopback)](../harmonyos-references/arkts-apis-audio-audioloopback.md)）实现音频耳返 | 1. 物理耳返，延时低。 2. 在API 21，提供混响和均衡器等音效。 | 1. 当前仅支持有线耳机，不支持蓝牙耳机。 2. 在耳返的场景下，仅支持录制麦克风。 |
 | 软件耳返 | 基于[OHAudio](../harmonyos-references/capi-ohaudio.md)实现音频耳返 | 1. 可以支持有线耳机和蓝牙耳机。 2. 可以支持耳返（使用者自己的声音或其它需要的信息等）和背景音乐同时录制写入到文件中。 | 1. 暂无硬件耳返的接口，软件耳返延时比硬件耳返高。 2. 无音效相关的接口，音效等算法需要自行实现。 |
 
 本文将介绍以下两种实现音频耳返方案：
@@ -31,7 +31,7 @@ content_hash: sha256:6a791b8e92902da09e2afe9d885ad79a7c8c813ebe1dce19f6a9c077e0e
 
 点击进入AudioLoopback页面，连接有线耳机，点击录制按钮开启耳返。开启耳返后开发者可通过麦克风在耳机中实时听到自己或周围的声音，同时进行耳返内音频的录制，并且可通过Slider滑块实现耳返音量调节功能。录制完成后进入播放页面，播放录制的音频资源。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Bnw66djWS0u7P5fImiUYVQ/zh-cn_image_0000002544829543.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tHGcpn7gSuWWGZDuX3Z-tQ/zh-cn_image_0000002544829543.gif "点击放大")
 
 ### 实现原理
 
@@ -39,13 +39,13 @@ AudioLoopback是HarmonyOS提供的音频返听接口，用于实现低时延耳�
 
 AudioLoopback的状态变化如下图所示，在创建AudioLoopback实例后，调用对应的方法可以进入指定的状态实现对应行为。同时需要注意的是，在确定的状态执行不合适的方法，可能导致AudioLoopback发生错误，建议开发者在调用状态转换的方法前进行状态检查，避免程序运行产生预期以外的结果，详细开发指导请参考：[实现低时延耳返](../harmonyos-guides/audio-ear-monitor-loopback.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/EVjkil5ERU2NQ5MK8YYmmg/zh-cn_image_0000002513149636.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/RkaKZ97wSNyughaSviIj1Q/zh-cn_image_0000002513149636.png "点击放大")
 
 ### 开发步骤
 
 使用AudioLoopback控制耳返的开启和关闭，结合AVRecorder（参考[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)）实现音频的录制，将录制的音频保存在应用沙箱目录，并通过[@ohos.file.fs (文件管理)](../harmonyos-references/js-apis-file-fs.md)打开录制的音频文件，再通过AVPlayer（参考[Interface (AVPlayer)](../harmonyos-references/arkts-apis-media-avplayer.md)）实现已录制音频的播放控制，详细流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/jPHBxRIaSqqkih-2_1rfWg/zh-cn_image_0000002513309570.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hDhygmOXT4Kir6iEZmdj7w/zh-cn_image_0000002513309570.png "点击放大")
 
 具体开发步骤如下：
 
@@ -492,7 +492,7 @@ AudioLoopback的状态变化如下图所示，在创建AudioLoopback实例后，
 
 点击进入OHAudio页面，连接有线耳机或蓝牙耳机，点击录制按钮开启耳返。开启耳返后开发者同样可以通过麦克风在耳机中实时听到自己或周围的声音，并进行耳返音频的录制，以及可以通过Slider滑块实现耳返音量的调节。录制完成后进入播放页面，播放录制的音频资源。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/zsmCm9XsSWOeMY8_4kfGBQ/zh-cn_image_0000002544789547.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/E_CngeT4QmSt0sxMvKxqHQ/zh-cn_image_0000002544789547.gif "点击放大")
 
 ### 实现原理
 
@@ -501,7 +501,7 @@ AudioLoopback的状态变化如下图所示，在创建AudioLoopback实例后，
 1. 通过native\_audiocapturer采集麦克风数据，并将数据写入到音频录制与播放间的数据中转区，即音频的公共缓存中。
 2. 读取音频的公共缓存，通过native\_audiorenderer播放音频，实现返听。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/E0CNThweRQ6Dc6RQ5_r61w/zh-cn_image_0000002544829551.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/QPJtNiJKT5aEf3MFv-x79Q/zh-cn_image_0000002544829551.png "点击放大")
 
 ### 开发步骤
 

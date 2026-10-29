@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-game-prelaunch-practice
 title: 游戏预启动开发实践
-breadcrumb: 最佳实践 > 场景创新 > 游戏预启动开发实践
+breadcrumb: 最佳实践 > 场景创新 > 游戏 > 游戏预启动开发实践
 category: best-practices
-scraped_at: 2026-10-16T07:06:32+08:00
-doc_updated_at: 2026-08-10
-content_hash: sha256:0954c304cbf150c09307e80857e334fbbde957712c05072412342a25ee443021
+scraped_at: 2026-10-29T08:03:13+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d30dd9afd5511adbf93568630f8894ab164732ada2563dc0d1bd1e138f831680
 ---
 
 ## 概述
@@ -22,15 +22,15 @@ content_hash: sha256:0954c304cbf150c09307e80857e334fbbde957712c05072412342a25ee4
 
 冷启动效果如图所示。用户点击图标后，需依次经过Logo展示、健康游戏公告展示和资源加载等流程才能进入登录界面，启动时间约12s。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/HXNKztpfQSuzbnu5OH-QbA/zh-cn_image_0000002594529170.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/LIMFFW02RvySvFi5nGNAWg/zh-cn_image_0000002594529170.gif "点击放大")
 
 预启动效果如图所示。用户点击游戏后，展示健康游戏公告后直接进入登录界面，并提示“启动加速中”，启动时间约3s。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/cml-v-tMSCW8iReh7XLGjA/zh-cn_image_0000002624889501.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/EGRqyMBFRpavrv-Jqre7lA/zh-cn_image_0000002624889501.gif "点击放大")
 
 ## 开发步骤
 
-1. 在UIAbility的onCreate生命周期回调中，系统通过want.parameters携带预启动标识，当参数ohos.params.gamePrelaunch为true时，表示当前UIAbility由游戏预启动运行。由于涉及跨线程调用，建议将预启动标识保存至[@ohos.data.preferences (用户首选项)](../harmonyos-references/js-apis-data-preferences.md)中。
+1. 在UIAbility的[onCreate](../doccenter-references/api/js-apis-app-ability-uiability.md#oncreate)生命周期回调中，系统通过want.parameters携带预启动标识，当参数ohos.params.gamePrelaunch为true时，表示当前UIAbility由游戏预启动运行。由于涉及跨线程调用，建议将预启动标识保存至[@ohos.data.preferences (用户首选项)](../harmonyos-references/js-apis-data-preferences.md)中。
 
 ```typescript
 static getIsPrelaunchStart(context: Context): boolean {
@@ -87,7 +87,7 @@ static async terminateLaunch(context: Context) {
 }
 ```
 
-3. 游戏ArkTS侧收到引擎侧需要退出当前预启动的通知后，需调用游戏启动加速服务terminateGamePrelaunch()接口。此时，游戏加速服务在收到退出当前预启动的请求后，会同步通知系统程序框架，随后游戏的UIAbility将进入[onDestroy](../harmonyos-references/js-apis-app-ability-uiability.md#ondestroy)生命周期，直至进程死亡。
+3. 游戏ArkTS侧收到引擎侧需要退出当前预启动的通知后，需调用游戏启动加速服务[terminateGamePrelaunch()](../doccenter-references/api/graphics-accelerate-launchacceleration.md#terminategameprelaunch)接口。此时，游戏加速服务在收到退出当前预启动的请求后，会同步通知系统程序框架，随后游戏的UIAbility将进入[onDestroy](../harmonyos-references/js-apis-app-ability-uiability.md#ondestroy)生命周期，直至进程死亡。
 
 ```typescript
 static async terminateLaunch(context: Context) {
@@ -106,7 +106,7 @@ static async terminateLaunch(context: Context) {
 }
 ```
 
-4. 在UIAbility的onForeground生命周期中，游戏引擎会进行自渲染并运行至登录页或大厅界面。游戏启动完成后，引擎侧将调用completeLaunch通知ArkTS侧，ArkTS侧接收到该通知后，会调用游戏启动加速服务completeGamePrelaunch接口。此时，游戏加速服务在收到游戏已启动完成的通知后，会对游戏进程执行深度冻结和内存全量换出，同时游戏的UIAbility也将进入onBackground生命周期。
+4. 在UIAbility的[onForeground](../doccenter-references/api/js-apis-app-ability-uiability.md#onforeground)生命周期中，游戏引擎会进行自渲染并运行至登录页或大厅界面。游戏启动完成后，引擎侧将调用completeLaunch方法通知ArkTS侧，ArkTS侧接收到该通知后，会调用游戏启动加速服务[completeGamePrelaunch()](../doccenter-references/api/graphics-accelerate-launchacceleration.md#completegameprelaunch)接口。此时，游戏加速服务在收到游戏已启动完成的通知后，会对游戏进程执行深度冻结和内存全量换出，同时游戏的UIAbility也将进入[onBackground](../doccenter-references/api/js-apis-app-ability-uiability.md#onbackground)生命周期。
 
 ```typescript
 static async completeLaunch(context: Context) {
@@ -125,7 +125,7 @@ static async completeLaunch(context: Context) {
 }
 ```
 
-5. （可选）部分开发者希望在游戏预启动后，用户首次打开游戏时显示Logo、健康游戏公告或其他自定义页面，然后再进入登录界面。为实现该效果，可以新增isFirstLaunch标识（首次打开游戏，默认值为false）。由于游戏预启动后用户首次打开游戏时会触发onNewWant生命周期，因此在该生命周期中，如果识别为预启动，则设置isFirstLaunch = true；如果退后台或退出游戏，在onBackground生命周期中，如果isFirstLaunch = true，则恢复默认值false，即下一次进入游戏时非首次打开。在页面展示代码中，通过isFirstLaunch标识选择不同的显示逻辑。
+5. （可选）部分开发者希望在游戏预启动后，用户首次打开游戏时显示Logo、健康游戏公告或其他自定义页面，然后再进入登录界面。为实现该效果，可以新增isFirstLaunch标识（首次打开游戏，默认值为false）。由于游戏预启动后用户首次打开游戏时会触发[onNewWant](../doccenter-references/api/js-apis-app-ability-uiability.md#onnewwant)生命周期，因此在该生命周期中，如果识别为预启动，则设置isFirstLaunch = true；如果退后台或退出游戏，在onBackground生命周期中，如果isFirstLaunch = true，则恢复默认值false，即下一次进入游戏时非首次打开。在页面展示代码中，通过isFirstLaunch标识选择不同的显示逻辑。
 
 ```typescript
 let isFirstLaunch: boolean = false;

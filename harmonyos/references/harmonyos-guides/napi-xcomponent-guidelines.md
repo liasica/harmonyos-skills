@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcompone
 title: 自定义渲染 (XComponent)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加组件 > 自定义渲染 (XComponent)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bce2e0940891e2b7c8ed2fbd53c7dee9096f315f70d387bb0c137885a63c5269
+scraped_at: 2026-10-29T07:56:31+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:83778520916781477bba55eb7996ca714a56dcd178ee7d4ea4149bf62157ef6c
 ---
 
 ## 概述
@@ -61,21 +61,21 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
   ArkTS侧onSurfaceCreated的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/mEf6fChQQ2ufNqs9m_lkwg/zh-cn_image_0000002771665240.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/K-ssGJWXQRGFcd7Gi0DP0w/zh-cn_image_0000002773904052.png)
 * onSurfaceChanged回调
 
   触发时刻：Surface大小变化触发重新布局之后触发。
 
   ArkTS侧onSurfaceChanged的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/72jCEW-xQ9iYxU97puEEsw/zh-cn_image_0000002800985097.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/eqKVvtTDS-m4K0ae8PyoWA/zh-cn_image_0000002803263837.png)
 * onSurfaceDestroyed回调
 
   触发时刻：XComponent组件被销毁时触发，与一般ArkUI的组件销毁时机一致。
 
   ArkTS侧onSurfaceDestroyed的时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Absm9pHrTxaZtJugjIvDTQ/zh-cn_image_0000002771825206.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/TEdrFi_PSACorsp6osop7w/zh-cn_image_0000002803223747.png)
 
 对于复杂的交互逻辑需跨语言开发，追求极致渲染性能或业务需求自主控制Surface的创建和销毁的，建议在Native侧使用[OH\_ArkUI\_SurfaceHolder](../harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-oh-arkui-surfaceholder.md)管理Surface生命周期。其生命周期触发时机如下：
 
@@ -88,21 +88,21 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
   Native侧OnSurfaceCreated的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/j5rU88FcQeGL5K75ocEX7g/zh-cn_image_0000002801105021.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/P_x990YwRte_ENJziaxXBA/zh-cn_image_0000002774064028.png)
 * OnSurfaceChanged回调
 
   触发时刻：OnSurfaceCreated回调成功触发且Surface大小变化触发重新布局之后触发。
 
   Native侧OnSurfaceChanged的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/TcoQvHK0Q9GYuu7m2qcQ3A/zh-cn_image_0000002771665242.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ja6fAoqOT0-VwnV5gD-aUg/zh-cn_image_0000002773904054.png)
 * OnSurfaceDestroyed回调
 
   触发时刻：组件下树且autoInitialize=true 或者调用[OH\_ArkUI\_XComponent\_Finalize](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_finalize)后触发。
 
   Native侧OnSurfaceDestroyed的时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/hQyLCGyWTI22gWlhDBL-5A/zh-cn_image_0000002800985099.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/fH7dMqKeQ8esWe2gsKcIuw/zh-cn_image_0000002803263839.png)
 
 ### XComponent的开发范式
 
@@ -406,7 +406,7 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
       std::string tag = value2String(env, args[1]);
       // ...
       if (nodeAPI != nullptr && nodeAPI->createNode != nullptr && nodeAPI->addChild != nullptr) {
-          OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "CreateNativeNode tag=%{public}s",
+          OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "PluginManager", "CreateNativeNode tag=%{public}s",
                        tag.c_str());
           auto nodeContentEvent = [](ArkUI_NodeContentEvent *event) {
             ArkUI_NodeContentHandle handle = OH_ArkUI_NodeContentEvent_GetNodeContentHandle(event);
@@ -1069,19 +1069,19 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
    void OnSurfaceDestroyedNative(OH_ArkUI_SurfaceHolder *holder)
    {
-       OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "onBind", "on destroyed");
+       OH_LOG_Print(LOG_APP, LOG_INFO, 0xff00, "onBind", "on destroyed");
        EGLRender* render = reinterpret_cast<EGLRender*>(OH_ArkUI_SurfaceHolder_GetUserData(holder));
        render->DestroySurface();  // 销毁eglSurface相关资源
    }
 
    void OnSurfaceShowNative(OH_ArkUI_SurfaceHolder *holder)
    {
-       OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "onBind", "on surface show");
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "onBind", "on surface show");
    }
 
    void OnSurfaceHideNative(OH_ArkUI_SurfaceHolder *holder)
    {
-       OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "onBind", "on surface hide");
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "onBind", "on surface hide");
    }
 
    void OnFrameCallbackNative(ArkUI_NodeHandle node, uint64_t timestamp, uint64_t targetTimestamp)
@@ -1093,20 +1093,20 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
        count++;
        // 在头文件plugin_manager.h中定义，FRAME_COUNT的值为50
        if (count % FRAME_COUNT == 0) {
-           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "onBind", "OnFrameCallback count = %{public}ld", count);
+           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "onBind", "OnFrameCallback count = %{public}ld", count);
        }
    }
 
    void onEvent(ArkUI_NodeEvent *event)
    {
        auto eventType = OH_ArkUI_NodeEvent_GetEventType(event); // 获取组件事件类型
-       OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "onBind", "on event");
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "onBind", "on event");
        if (eventType == NODE_TOUCH_EVENT) {
            ArkUI_NodeHandle handle = OH_ArkUI_NodeEvent_GetNodeHandle(event); // 获取触发该事件的组件对象
            auto holder = PluginManager::surfaceHolderMap_[handle];
            EGLRender* render = reinterpret_cast<EGLRender*>(OH_ArkUI_SurfaceHolder_GetUserData(holder));
            render->DrawStar(false); // 绘制五角星
-           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "onBind", "on touch");
+           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "onBind", "on touch");
        }
    }
    ```
@@ -1308,7 +1308,7 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
            return PROGRAM_ERROR;
        }
 
-       // The gl function has no return value.
+       // 该gl函数没有返回值。
        glShaderSource(shader, 1, &shaderSrc, nullptr);
        glCompileShader(shader);
 
@@ -1575,7 +1575,7 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 5. CMakeLists，使用CMake工具链将C++源代码编译成动态链接库文件。
 
    ```cmake
-   # the minimum version of CMake.
+   # CMake最低版本要求。
    cmake_minimum_required(VERSION 3.4.1)
    project(XComponent)
 
@@ -1649,7 +1649,7 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
    上述用例具体实现可参考[NativeXComponent](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/NativeXComponentSample)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/WTPyWS6TQxy8DepGgpptKQ/zh-cn_image_0000002771825208.jpeg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/16Xb1sqrQ7mRmcaVKymk8Q/zh-cn_image_0000002803223749.jpeg)
 
 ### 在ArkTS侧使用SurfaceId进行渲染绘制
 

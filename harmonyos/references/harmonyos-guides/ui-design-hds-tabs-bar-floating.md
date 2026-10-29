@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置页签栏的悬浮样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置页签栏的悬浮样式
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:02+08:00
+scraped_at: 2026-10-29T07:56:47+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:db94d9f5723737047bdd87a47e827f5994204b02dc6cbc26afc58663ab15bbad
+content_hash: sha256:859725c5eb4a83bb9737febcd546f1418b2724a7928b61e1bbb39d2ee5ca8079
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:db94d9f5723737047bdd87a47e827f5994204b02dc6cbc26afc58663ab1
 
 页签栏悬浮样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/xFm8kPeKTaSGnd3D2kw7vQ/zh-cn_image_0000002771665814.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/bVqdT0GqSBCFw1a4fwnR_w/zh-cn_image_0000002773904626.png)
 
 ## 迷你栏
 
@@ -24,11 +24,11 @@ content_hash: sha256:db94d9f5723737047bdd87a47e827f5994204b02dc6cbc26afc58663ab1
 
 迷你栏的折叠样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0Wq2gcS8Rg29WyWVoMFUQA/zh-cn_image_0000002800985671.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/HYX9UjF7Tn6TbTbddd0hzA/zh-cn_image_0000002803264411.png)
 
 迷你栏的展开样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/TGj6Co0dTUuCYI2DX1P60w/zh-cn_image_0000002771825782.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/8zjHzg1fSuWmBacYaTew7A/zh-cn_image_0000002803224321.png)
 
 ## 约束条件
 

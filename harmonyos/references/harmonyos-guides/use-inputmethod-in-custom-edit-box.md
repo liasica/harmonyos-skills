@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-inputmeth
 title: 在自绘编辑框中使用输入法
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 在自绘编辑框中使用输入法
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:01+08:00
+scraped_at: 2026-10-29T07:56:45+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3ea0030628b1c97a6ce5d7911b036000399ae4389a00e54c6d865945e73d5f5d
+content_hash: sha256:35ee3d3a28acbe7a306e6b7f05f25161b9f177ff878611c7e87669b32238911f
 ---
 
 在输入法框架中，可以通过[getController](../harmonyos-references/js-apis-inputmethod.md#inputmethodgetcontroller9)方法获取到[InputMethodController](../harmonyos-references/js-apis-inputmethod.md#inputmethodcontroller)实例来绑定输入法并监听输入法应用的各种操作，比如插入、删除、选择、光标移动等。这样就可以在自绘编辑框中使用输入法，并实现更加灵活和自由的编辑操作。
@@ -125,4 +125,4 @@ content_hash: sha256:3ea0030628b1c97a6ce5d7911b036000399ae4389a00e54c6d865945e73
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/aBnFmMXrQ4CCDE-RfKrbbg/zh-cn_image_0000002800985639.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/RaDjbRUGRlKF26lPxYFbhw/zh-cn_image_0000002803264379.png)

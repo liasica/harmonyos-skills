@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-high-perfo
 title: 高性能JSON解析
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 对象序列化性能优化 > 高性能JSON解析
 category: best-practices
-scraped_at: 2026-10-16T07:06:47+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:248c88d0c1299466e7e618a29d8b4967830977cb16e7415841dd0b5286600b02
+scraped_at: 2026-10-29T08:03:23+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:def72d4d95da6fa7386c6b1e0293f64ed6ee0ffd49ed958b93990285e1f2fdfc
 ---
 
 ## 概述
@@ -14,9 +14,9 @@ content_hash: sha256:248c88d0c1299466e7e618a29d8b4967830977cb16e7415841dd0b52866
 
 [TurboTransJSON](https://gitcode.com/openharmony-sig/turbo_trans)是一款基于当前ArkTS能力及面向高性能场景的JSON解析解决方案，不仅解决了现有实现方案的痛点，还提供了丰富的高级特性：
 
-* 类型支持：涵盖系统基本类型、常见容器类型（Array、Map、Set）、嵌套类型、泛型、多态和联合类型；
-* 装饰器支持：可通过@Serializable装饰器标记需序列化的类，并利用@SerialName(覆盖属性的名称)、@Required(指定必填属性)、@Transient(忽略属性)装饰器完成属性的定制化配置；
-* 系统能力兼容：支持与Sendable（参考[Sendable对象简介](../harmonyos-guides/arkts-sendable.md)）和状态管理（参考[状态管理概述](../harmonyos-guides/arkts-state-management-overview.md)）协同混用；
+* 类型支持：涵盖系统基本类型、常见容器类型（Array、Map、Set）、嵌套类型、泛型、多态和联合类型。
+* 装饰器支持：可通过@Serializable装饰器标记需序列化的类，并利用@SerialName(覆盖属性的名称)、@Required(指定必填属性)、@Transient(忽略属性)装饰器完成属性的定制化配置。
+* 系统能力兼容：支持与Sendable（参考[Sendable对象简介](../harmonyos-guides/arkts-sendable.md)）和状态管理（参考[状态管理概述](../harmonyos-guides/arkts-state-management-overview.md)）协同混用。
 * 大JSON文件读取优化：提供JsonNode懒加载机制与JsonPointer局部访问能力，支持直接读取ArrayBuffer，提升文件解析及反序列化为JSON对象的效率。
 
 本文将围绕JSON序列化和反序列化的典型场景，以TurboTransJSON框架为核心，介绍其使用要点及性能优势。
@@ -27,7 +27,7 @@ content_hash: sha256:248c88d0c1299466e7e618a29d8b4967830977cb16e7415841dd0b52866
 
 在数据存储和网络传输场景中，JSON数据被广泛用于结构化交互。例如，某应用从服务端获取的API响应为JSON字符串（如{"name":"zhangsan","age":28}），业务层需将其转换为自定义类型Person（包含姓名、年龄等强类型属性）以供调用。但系统提供的[@ohos.util.json（JSON解析与生成）](../harmonyos-references/js-apis-json.md)工具仅能将字符串反序列化为简单对象（如Object），无法直接生成目标业务类型实例；为实现类型转换，常见做法有两种：
 
-1. 手动创建业务对象并遍历JSON属性赋值，但是代码冗余且易出错；
+1. 手动创建业务对象并遍历JSON属性赋值，但是代码冗余且易出错。
 2. 引入[class-transformer](https://gitcode.com/openharmony-tpc/openharmony_tpc_samples/tree/master/class-transformer)等第三方库，通过运行时反射动态映射字段，但反射操作会显著影响性能（如解析耗时增加30%+）。
 
 针对此类情况，可选择TurboTransJSON库来优化解析耗时。
@@ -126,7 +126,7 @@ TurboTransJSON在跨线程数据传输方面采用了以下优化策略：
      // ...
    }
    ```
-2. 定义子线程执行方法，在子线程内创建原始对象并使用toSendable()方法，将原始对象转换为Sendable对象，并返回给主线程。使用引用方式跨线程传输数据，避免序列化和序列化耗时以及破坏对象结构。
+2. 定义子线程执行方法，在子线程内创建原始对象并使用toSendable()方法，将原始对象转换为Sendable对象，并返回给主线程。使用引用方式跨线程传输数据，避免序列化和反序列化耗时，同时防止破坏对象结构。
 
    ```screen
    // The buf parameter only demonstrates TJSON's serialization and deserialization capabilities for ArrayBuffer type
@@ -240,7 +240,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 52.06MB/s | 9.51MB/s | 44.36MB/s |
 | huge json | 86.40MB/s | 18.90MB/s | 116.10MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/CS229zhxS_qScGDOcx0LbQ/zh-cn_image_0000002501490386.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/xIJ8qJwiSaiy-zNN7ilhTA/zh-cn_image_0000002501490386.png "点击放大")
 
 **反序列化性能对比**
 
@@ -251,11 +251,11 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 82.39MB/s | 57.49MB/s | 68.81MB/s |
 | huge json | 170.10MB/s | 140.40MB/s | 207.90MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/r4V12xgVRRqwGxMAzEyBbg/zh-cn_image_0000002501330544.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/fm66r6suSnyUP4lxKIx6EA/zh-cn_image_0000002501330544.png "点击放大")
 
 通过上述比对数据发现：
 
-* 对比系统提供ohos.util.json的序列化和反序列化方法，TurboTransJSON在处理small和huge数据集时性能有所提升；然而在处理medium和large数据集时，性能下降；不过ohos.util.json提供的方法仅适用于简单对象，使用上存在局限性；
+* 对比系统提供ohos.util.json的序列化和反序列化方法，TurboTransJSON在处理small和huge数据集时性能有所提升；然而在处理medium和large数据集时，性能下降；不过ohos.util.json提供的方法仅适用于简单对象，使用上存在局限性。
 * 与QuickTransformer/class-transformer三方库提供的方法相比，TurboTransJSON在序列化和反序列化场景中的处理性能均有显著提升。
 
 ## 示例代码

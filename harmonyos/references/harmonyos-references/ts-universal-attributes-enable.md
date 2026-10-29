@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 禁用控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 禁用控制
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:17+08:00
+scraped_at: 2026-10-29T07:59:33+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:71a1cb363d95018a4e62f5711747a543383acfcabf3cd3025f5cf661d3d6e264
+content_hash: sha256:b9bde5fbc13f09715bae342780d87c0fed34a5be2abfcce096fda9a19537de5a
 ---
 
 禁用控制用于设置组件是否可交互。组件可交互状态下可以响应[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[按键事件](ts-universal-events-key.md)、[焦点事件](ts-universal-focus-event.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)、[手势事件](ts-gesture-settings.md)、[焦点轴事件](ts-universal-events-focus-axis.md)和[表冠事件](ts-universal-events-crown.md)；组件不可交互状态下不响应上述操作，适用于需要临时阻止用户交互的场景。
@@ -61,4 +61,4 @@ struct EnabledExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/H3w1w4xAThybe-rYR43duw/zh-cn_image_0000002800987095.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Y4YVXR7qSmOlB5088prCxQ/zh-cn_image_0000002774066026.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-data-s
 title: 应用数据安全
 breadcrumb: 最佳实践 > 安全设计 > 应用数据安全
 category: best-practices
-scraped_at: 2026-10-16T07:06:55+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:9e0ec6614e05fd4a590384408882e09d2585d8b278ec99d61e6c8cb5e7ec4b19
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:1771707dc130cc3c71f028e69e65c5bfeaa08c214916c70b6f4d797706f4d341
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 根据设备安全能力，如是否有TEE和安全存储芯片等，将设备安全等级分为SL1、SL2、SL3、SL4和SL5五个等级。例如，智能穿戴设备通常为低安全的SL1设备，手机和平板通常为高安全的设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/ZvQyhSt4SOi3IqESQCsHjg/zh-cn_image_0000002229450445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/5yAzBsWSRs-HZMWm7NPuQg/zh-cn_image_0000002229450445.png "点击放大")
 
 设备从SL1到SL5分级，在完整性保护、加密及数据保护、权限及访问控制、可信执行环境和漏洞防利用这几个维度对应的安全能力要求逐渐提高。
 
@@ -63,7 +63,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 除了对数据进行内容分类，开发者还需遵守相关法律法规，例如通用数据保护条例（GDPR）和个人信息保护法，以保护用户隐私和数据安全。具体的数据分类图如图1所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/OVQGkE16QBu8dgvzL5otCw/zh-cn_image_0000002229335969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ZxQyeOzHSuGPnGU-dD1W_Q/zh-cn_image_0000002229335969.png)
 
 按照个人数据分类分级规范要求，可将数据分为S1、S2、S3、S4四个安全等级。
 
@@ -158,7 +158,7 @@ getEl1Path(): void {
 
 **图1** 场景设计图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Wccmg5TZR82miXkLAcHe_g/zh-cn_image_0000002651598502.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Jjorpsi4S3eKBTMXRL3DMQ/zh-cn_image_0000002651598502.png "点击放大")
 
 ### 场景开发
 
@@ -173,7 +173,7 @@ getEl1Path(): void {
 
 * 数据详情的实现方式
 
-1. 在列表页点击数据项，进入数据详情页，使用pushUrl接口的params参数传递分级加密文件的文件名。
+1. 在列表页点击数据项，进入数据详情页，使用pushUrl()接口的params参数传递分级加密文件的文件名。
 2. 对加密数据进行解密。根据params传入的分级加密文件名，调用fileio接口读取加密数据，然后调用huks接口解密读取的字节数组，获得解密后的字节数组。
 3. 展示数据详情。将解密后的字节数组转换为字符串，再将字符串转换为JSON对象，并将其展示到页面。
 
@@ -322,7 +322,7 @@ async function GenerateAesKey(): Promise<void> {
 }
 ```
 
-生成算法密钥后即可进行加解密。加解密过程中，先获取相应配置，然后调用initSession和finishSession完成操作。
+生成算法密钥后即可进行加解密。加解密过程中，先获取相应配置，然后调用initSession()和finishSession()完成操作。
 
 ```screen
 async function EncryptData(): Promise<void> {

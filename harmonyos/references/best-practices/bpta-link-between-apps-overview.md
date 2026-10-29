@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-link-betwe
 title: 应用间跳转实践概览
 breadcrumb: 最佳实践 > 应用框架 > 程序框架 > 应用间跳转实践概览
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:e50de742048239c7ce3275497803ca9880c02601d43827d41bc13a197b9b794c
+scraped_at: 2026-10-29T08:03:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c3dd48539f96857b244b635fa7ea61d7fa420d91ace9d8f2ef6dc7ef064b06ad
 ---
 
 ## 概述
@@ -36,9 +36,9 @@ content_hash: sha256:e50de742048239c7ce3275497803ca9880c02601d43827d41bc13a197b9
 2. 好友B点击链接后，直接打开社交应用并定位到该篇文章，而非应用首页。
 
 **图1** 用户B点击链接跳转到详情页的效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/yCqhVSv0Qk6dMWQWHCPEmQ/zh-cn_image_0000002284820634.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/10ZTIwwBQ-KIwEH0ZnyCnQ/zh-cn_image_0000002284820634.png "点击放大")
 
-通过系统分享面板，将包含App Linking的链接分享给好友，实现一键直达原内容。详细请参见[社交分享跳转](../harmonyos-guides/social-sharing-redirection.md)。
+通过系统分享面板，将包含App Linking（请参考[App Linking Kit简介](../doccenter-capabilities/applinking-introduction.md)）的链接分享给好友，实现一键直达原内容。详细请参见[社交分享跳转](../harmonyos-guides/social-sharing-redirection.md)。
 
 ### 广告跳转
 
@@ -48,7 +48,7 @@ content_hash: sha256:e50de742048239c7ce3275497803ca9880c02601d43827d41bc13a197b9
 2. 点击广告后直接打开电商应用并跳转至促销活动页面，用户无需在应用内搜索或导航，大幅提升下单转化率。
 
 **图2** 点击视频应用广告跳转汽车商城应用详情  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/yg_blqbnSkGS5pVP857L6Q/zh-cn_image_0000002319316925.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/WAMC3b2xTeOink-RfKzYyg/zh-cn_image_0000002319316925.png "点击放大")
 
 通过App Linking实现从广告链接到应用特定页面的精准跳转，提高营销转化率。详细请参见[广告跳转](../harmonyos-guides/ad-redirection.md)。
 
@@ -62,7 +62,7 @@ content_hash: sha256:e50de742048239c7ce3275497803ca9880c02601d43827d41bc13a197b9
 
 **图3** 点击聊天界面电话号码拉起系统拨号界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/px5pA2bBSnaYcw9tyFIgWw/zh-cn_image_0000002314187250.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/ruzXs-bGTUe5jCQquo1KcA/zh-cn_image_0000002314187250.png "点击放大")
 
 通过系统的文本识别能力，识别其中的特殊文本，从而实现从文本到功能的直接跳转。详细请参见[特殊文本识别跳转](../harmonyos-guides/special-text-recognition-redirection.md)。
 
@@ -74,8 +74,8 @@ content_hash: sha256:e50de742048239c7ce3275497803ca9880c02601d43827d41bc13a197b9
 
 **应用链接（App Linking和Deep Linking）**
 
-* [App Linking](../harmonyos-guides/app-linking-startup.md)：通过域名校验和HTTPS协议，实现更安全可靠的跳转。当目标方未安装时，可以打开Web网页内容，为用户提供更好的体验。
-* [Deep Linking](../harmonyos-guides/deep-linking-startup.md)：实现相对简单，但存在被恶意仿冒的风险。当目标方未安装时，用户体验往往不佳，容易遇到报错情况。
+* App Linking：通过域名校验和HTTPS协议，实现更安全可靠的跳转。当目标方未安装时，可以打开Web网页内容，为用户提供更好的体验，具体实现请参考：[通过App Linking应用链接拉起指定应用](../doccenter-capabilities/app-linking-startupapp.md)。
+* Deep Linking：实现相对简单，但存在被恶意仿冒的风险。当目标方未安装时，用户体验往往不佳，容易遇到报错情况，具体实现请参考：[使用Deep Linking实现应用间跳转](../doccenter-capabilities/deep-linking-startup.md)。
 
 相较于Deep Linking，App Linking有如下优势：
 
@@ -84,7 +84,7 @@ content_hash: sha256:e50de742048239c7ce3275497803ca9880c02601d43827d41bc13a197b9
 * 直达应用市场：[通过直达应用市场能力跳转至应用市场下载详情页](../harmonyos-guides/applinking-direct-to-ag.md)，未安装应用时可跳转至应用市场应用详情页。
 * 延迟链接：[通过延迟链接跳转至应用详情页](../harmonyos-guides/applinking-deferredlink.md)，支持应用安装后恢复之前的跳转意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/UO0QI5EYTA-eYG6LEMPHDA/zh-cn_image_0000002319469989.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/nlxtv04mRbu99MV6Mjc8Xw/zh-cn_image_0000002319469989.png "点击放大")
 
 基于安全性和用户体验的全面考量，建议优先采用App Linking技术。与Deep Linking相比，App Linking提供了更高的安全性，避免了仿冒风险，并提升了用户在应用间跳转时的整体使用体验。
 
@@ -96,4 +96,4 @@ content_hash: sha256:e50de742048239c7ce3275497803ca9880c02601d43827d41bc13a197b9
 
 在某些场景下，开发者希望基于用户意图而非特定应用实现功能，例如使用任意一款支持的地图应用导航。
 
-在该场景下开发者并不指定某个具体应用，而是以用户意图的角度，由系统查询出当前设备内符合条件的所有应用，由用户自行选择在哪个应用中执行后续逻辑。实际的业务场景例如用户A给用户B分享了一个地理位置，用户B点击该消息后，系统会查询出设备内已安装的所有地图导航类的应用，由用户自行选择在哪个应用中执行后续操作。详细请参见[拉起指定类型应用](../harmonyos-guides/start-intent-panel.md)。
+在该场景下开发者并不指定某个具体应用，而是以用户意图的角度，由系统查询出当前设备内符合条件的所有应用，由用户自行选择在哪个应用中执行后续逻辑。实际的业务场景例如用户A给用户B分享了一个地理位置，用户B点击该消息后，系统会查询出设备内已安装的所有地图导航类的应用，由用户自行选择在哪个应用中执行后续操作。详细请参见[拉起指定类型的应用概述](../harmonyos-guides/start-intent-panel.md)。

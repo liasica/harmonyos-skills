@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-decrease_p
 title: 应用包体积优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 应用包体积优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:447027a8eebbc97841720aa6fa6b431ed256fffd840d12668c6c0037a77f457c
+scraped_at: 2026-10-29T08:03:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d8fb7e3da0b16f018fb444f69dc6dd05841b95d68cd8252ad7714badf00f9961
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:447027a8eebbc97841720aa6fa6b431ed256fffd840d12668c6c0037a77
 2. 在应用存在多包（HAP、HSP）的场景中，可以使用HSP动态共享包在多个包之间共享代码和资源。该方式可消除使用HAR静态共享包导致的代码和资源重复拷贝，从而减小应用包大小。
 
    但开发者需注意，大量使用HSP替代HAR会增加编译耗时和内存占用。因为在编译引用这些HSP共享包的模块时，会触发更多的语言编译任务。
-3. 使用ohpm的[override](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)机制或开启 `[resolve\_conflict](../harmonyos-guides/ide-ohpmrc.md#section368717475562)` 解决依赖冲突，减少依赖包导致的重复编译问题。
+3. 使用ohpm的override机制或开启 `[resolve\_conflict](../harmonyos-guides/ide-ohpmrc.md#section368717475562)` 解决依赖冲突，减少依赖包导致的重复编译问题。
 4. 将不常用的功能作为按需加载的模块。
 
 ## 使用扫描工具分析App大小问题
@@ -36,46 +36,56 @@ content_hash: sha256:447027a8eebbc97841720aa6fa6b431ed256fffd840d12668c6c0037a77
 
 3. 特定类型的文件
 
-so文件可以通过[配置so库压缩选项](bpta-decrease_pakage_size.md#section15826132851819)来实现压缩打包。
+so文件，参考[配置so库压缩选项](bpta-decrease_pakage_size.md#section15826132851819)。
 
 ## 减小应用包大小的方法
 
 ### 配置so库压缩选项
 
-DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩选项后，DevEco Studio 将 so 库文件压缩并打包到应用中，从而减小应用包的大小。
+应用安装包（HAP/HSP）中so库的存储方式由compressNativeLibs配置项控制，不仅影响应用包大小，还直接影响安装后的存储占用。HarmonyOS 7.0及以上版本支持安装包免解压能力，建议上架应用将compressNativeLibs配置为false以适配该能力。
+
+**工作原理**
+
+so库在应用包中可以压缩或非压缩存储。压缩存储时，编译出的应用包更小，但运行时需要未压缩的so库，安装时必须解压到安装目录，导致包内和安装目录存储冗余。非压缩存储时，HarmonyOS 7.0及以上支持安装包免解压能力，通过文件映射机制直接从包内加载，消除冗余。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Jwyjw7rARoCdwOMbvI_BDg/zh-cn_image_0000002799032245.png "点击放大")
 
 **配置方法**
 
-修改应用模块配置文件module.json5中的compressNativeLibs字段，将值配置为true，重新编译、打包应用。
+修改应用模块配置文件module.json5中的compressNativeLibs字段，将值配置为false，重新编译、打包应用。
 
 ```screen
 {
   "module": { 
     // ...
-    "compressNativeLibs": true // Identify whether the so library is packaged in compressed storage. ’true’ means compressed so library, ’false’ means non-compressed.
+    
+    "compressNativeLibs": false // Identify whether the so library is packaged in compressed storage. 'true' means compressed so library, 'false' means non-compressed. 
   }
 }
 ```
 
-**so压缩效果**
+两种配置在编译包大小、安装后大小及适用场景上的对比如下表所示。下载包大小方面，应用市场会对上架包再次压缩，两种配置下大小基本持平。
 
-以DevEco Studio中的C++默认库文件为例，展示压缩前后的文件大小对比：
-
-| 文件名 | 原始大小 | 压缩后大小 | 压缩率 |
+| 配置项 | 编译包大小 | 安装后大小 | 适用场景 |
 | --- | --- | --- | --- |
-| armeabi-v7a/libc++\_shared.so | 1108k | 386k | 34% |
+| compressNativeLibs: false | 较大（so库原始大小存储） | 1. HarmonyOS 7.0及以上版本：较小（免解压，仅一份）  2. HarmonyOS 7.0以下版本：最大（两份均为原始大小） | 推荐配置，适配免解压能力 |
+| compressNativeLibs: true | 较小（so库压缩存储） | 较大（包内 + 安装目录两份冗余） | 1. 编译包大小接近上架上限4GB  2. 预装应用（只读分区，无法随应用卸载删除） |
+
+以一个libs体积约700MB的示例工程为例，配置"so压缩"（左图）因解压产生冗余导致安装后占用更大，而配置"so不压缩"（右图）借助免解压机制仅保留一份，占用反而更小。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/U5De6uSWSzmraLPATozgvw/zh-cn_image_0000002769879828.png "点击放大")
 
 ### 解决依赖冲突，减少依赖包重复编译
 
-对于ohpm 1.5.0之前的版本，如果hap依赖了不同版本的har（例如下图中的V1版本的harC和V2版本的harC），默认情况下，V1和V2两个版本的harC都会被打包到hap中。开发者可以使用ohpm的[override](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)机制，指定只打包一个版本。
+对于ohpm 1.5.0之前的版本，如果hap依赖了不同版本的har（例如下图中的V1版本的harC和V2版本的harC），默认情况下，V1和V2两个版本的harC都会被打包到hap中。开发者可以使用ohpm的override机制，指定只打包一个版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/yfQW0HOjS_mv1I7u9Ww_dQ/zh-cn_image_0000002194011048.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/WFxb--VzTDGgVSByw6LGeg/zh-cn_image_0000002194011048.png "点击放大")
 
 如果使用的是ohpm 1.4.0 版本，可以使用override机制，开发者可以在项目级别的 oh-package.json5 （即项目根目录下的 oh-package.json5）文件中添加 overrides 配置，将依赖树中的依赖替换为另一个版本。替换的版本既可以是一个具体的版本号，也可以是本地存在的HAR包或源码目录。
 
 **注意：**
 
-必须在项目级别的 oh-package.json5 中配置 overrides，配置在模块级别的 oh-package.json5 中不会生效。
+必须在项目级别的 oh-package.json5 中配置 [overrides](../doccenter-deveco-studio/ide-oh-package-json5.md#section13977152601510)，配置在模块级别的 oh-package.json5 中不会生效。
 
 例如，这里以 'foo' 库为例，如果在项目中始终需要使用'1.0.0'版本，可在项目级的 oh-package.json5 中添加以下配置：
 
@@ -125,8 +135,8 @@ HAR中的代码和资源跟随使用方编译，多个使用方会存在多份�
 
 如下图示例：应用模块HAP1和HAP2/HSP1都引用了HAR2和HAR3。打包后，HAR2和HAR3在App包中有多份重复拷贝，导致体积较大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/B3zLesgyR-OMQBA-LPhjZQ/zh-cn_image_0000002229451341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Fgpliw4aQG-15r1S8sL_0w/zh-cn_image_0000002229451341.png "点击放大")
 
 推荐使用HSP代替HAR实现代码和资源共享。如下图示例，使用HSP2对原应用进行升级改造，打包后，APP包中HAR2和HAR3仅保留一份拷贝。当HAR2和HAR3的总大小超过HSP时，可以减小应用包大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/cCAoN1NdSnSY66x-VkS9Rg/zh-cn_image_0000002229336845.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/okIB2x9XQEqP_1WN8dFLZg/zh-cn_image_0000002229336845.png "点击放大")

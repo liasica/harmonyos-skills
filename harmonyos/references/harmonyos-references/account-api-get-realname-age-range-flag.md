@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取用户实名年龄段
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 实名认证 > 获取用户实名年龄段
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ec5efb478e36f14b5046378157cdf464a231f109befbf2f17e4f5929c6287584
+scraped_at: 2026-10-29T08:02:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:49db5aa04bb250d9b486b936793958e19deeae07d65f0071952be8d6a20e4ca9
 ---
 
 **注意** 
@@ -51,7 +51,7 @@ content_hash: sha256:ec5efb478e36f14b5046378157cdf464a231f109befbf2f17e4f5929c62
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| clientId | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的唯一标识。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID(凭据)-Client ID**参数。  **说明：**  该参数与获取Access Token时的Client ID必须一致，否则会报错（resultCode=61110003）。 |
+| clientId | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的唯一标识。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID(凭据)-Client ID**参数。  **说明：**  该参数与获取Access Token时的Client ID必须一致，否则会报错（resultCode=61110003）。 |
 
 ## 请求示例
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-common-lis
 title: 常见列表操作
 breadcrumb: 最佳实践 > 布局与弹窗 > 常见列表操作
 category: best-practices
-scraped_at: 2026-10-16T07:06:35+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:1c9ad335ba159cc3b2a35440e8260eca4acf118fa189f5ebeb2b1285c6b82326
+scraped_at: 2026-10-29T08:03:13+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:ae4713d33cbb5d4add6ecaf2f2b9c2c984b0f71a6f1371ab66ee96cbe99396d5
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ private scroller: Scroller = new Scroller();
 
 **滚动到底部：**通过initialIndex或者[scrollToIndex()](../harmonyos-references/ts-container-scroll.md#scrolltoindex)接口实现。
 
-* 使用List组件的[ListOptions对象](../harmonyos-references/ts-container-list.md#listoptions18对象说明)-initialIndex设置列表初始化显示到最后一个ListItem的位置。
+* 使用List组件的[ListOptions对象说明](../harmonyos-references/ts-container-list.md#listoptions18对象说明)-initialIndex设置列表初始化显示到最后一个ListItem的位置。
 
   ```screen
   List({ space: 20, initialIndex: this.arr.length - 1, scroller: this.scroller }) {
@@ -99,17 +99,17 @@ Button('scroll 200')
 
 **说明** 
 
-scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并非相对于当前显示Item的偏移量。如果想要获取此次滚动偏移量，可以通过onWillScroll()或者onDidScroll()接口的回调参数获取。onwillscroll()中回调的偏移量为计算得到的将要滚动的偏移量值，并非最终实际滚动偏移。可以通过该回调返回值指定Scroll将要滚动的偏移。具体可参考：[设置scroller控制器](../harmonyos-references/ts-container-scroll.md#示例1设置scroller控制器)。
+scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并非相对于当前显示Item的偏移量。如果想要获取此次滚动偏移量，可以通过onWillScroll()或者onDidScroll()接口的回调参数获取。onwillscroll()中回调的偏移量为计算得到的将要滚动的偏移量值，并非最终实际滚动偏移。可以通过该回调返回值指定Scroll将要滚动的偏移。具体可参考：[示例1（设置scroller控制器）](../harmonyos-references/ts-container-scroll.md#示例1设置scroller控制器)。
 
 ### 嵌套滚动
 
 嵌套滚动是指多个滚动容器相互嵌套，并能协同工作的滚动机制。例如：在移动端应用中，一个页面整体可以垂直滚动，而其中某个子组件（如Tab内容、评论区、图片列表）也只支持独立滚动。根据滚动对象的不同，嵌套滚动主要分为Scroll组件嵌套List组件、Web组件嵌套List组件、List组件嵌套List组件等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/S0SYQVETSo-KPsbgtleKng/zh-cn_image_0000002361711474.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ENfCQg1hTjO8cshvF6_S5Q/zh-cn_image_0000002361711474.gif "点击放大")
 
-* [List组件与Scroll组件的嵌套滚动](../harmonyos-references/ts-container-scroll.md#示例2嵌套滚动实现方式一)
-* [Web组件与List组件嵌套](../harmonyos-guides/web-nested-scrolling.md#滚动偏移量由滚动父组件统一派发)
-* [List组件与List组件嵌套滚动](../harmonyos-faqs/faqs-arkui-337.md)
+* List组件与Scroll组件的嵌套滚动：[示例2（嵌套滚动实现方式一）](../harmonyos-references/ts-container-scroll.md#示例2嵌套滚动实现方式一)
+* Web组件与List组件嵌套：[Web组件嵌套滚动](../doccenter-capabilities/web-nested-scrolling.md)
+* List组件与List组件嵌套滚动：[双层嵌套list,如何使用LazyForEach起作用](../doccenter-dev-faq/faqs-arkui-337.md)
 
 **说明** 
 
@@ -123,7 +123,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 单边回弹是指当用户滚动到可滚动区域的一端时，如果继续施加力，该端会出现一种视觉上的“回弹”效果，例如实现顶部回弹效果，可以有2种方式实现：
 
-* 在[onDidScroll()](../harmonyos-references/ts-container-scrollable-common.md#ondidscroll12)里获取currentOffset().yOffset，然后拿获取的值与0比较，当其值小于等于0时，说明已到达或超越顶部，此时设置[EdgeEffect](../harmonyos-references/ts-container-scrollable-common.md#edgeeffect11)属性设置边缘滚动效果。
+* 在[onDidScroll()](../harmonyos-references/ts-container-scrollable-common.md#ondidscroll12)里获取currentOffset().yOffset，然后拿获取的值与0比较，当其值小于等于0时，说明已到达或超越顶部，此时设置[edgeEffect](../harmonyos-references/ts-container-scrollable-common.md#edgeeffect11)属性设置边缘滚动效果。
 
   ```screen
   List({ space: 20, initialIndex: 0, scroller: this.scroller }) {
@@ -137,7 +137,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
   })
   .edgeEffect(this.isTop ? EdgeEffect.Spring : EdgeEffect.None)
   ```
-* 通过[onScrollIndex()](../harmonyos-references/ts-container-list.md#onscrollindex)实现单边回弹效果，List显示区域内第一个子组件的索引值为0时，说明已到达顶部，此时设置[EdgeEffect](../harmonyos-references/ts-container-scrollable-common.md#edgeeffect11)属性设置边缘滚动效果。
+* 通过[onScrollIndex()](../harmonyos-references/ts-container-list.md#onscrollindex)实现单边回弹效果，List显示区域内第一个子组件的索引值为0时，说明已到达顶部，此时设置[edgeEffect](../harmonyos-references/ts-container-scrollable-common.md#edgeeffect11)属性设置边缘滚动效果。
 
   ```screen
   .edgeEffect(this.isTop ? EdgeEffect.Spring : EdgeEffect.None)
@@ -147,9 +147,9 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
   })
   ```
 
-当List组件内容大小小于组件自身时，默认不开启滚动效果，可以设置[edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true })](../harmonyos-references/ts-container-scrollable-common.md#edgeeffect11)开启滚动效果。
+当List组件内容大小小于组件自身时，默认不开启滚动效果，可以设置[edgeEffect](../harmonyos-references/ts-container-scrollable-common.md#edgeeffect11)(EdgeEffect.Spring, { alwaysEnabled: true })开启滚动效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/ei3xWqFHRGCjW_2lcKD-0A/zh-cn_image_0000002395231413.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/NAHd855_QjWJaxx8PS79hw/zh-cn_image_0000002395231413.gif "点击放大")
 
 **滚动过程中禁用滚动：**可以通过enabled(false)关闭滚动使能，但是如果是惯性滚动触发的，List仍然能依靠惯性滚动一段距离。如果想要实现禁用滚动及惯性滚动，可使用以下2种方式：
 
@@ -180,7 +180,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/F4jFeiLyTruBMKQFygbGUg/zh-cn_image_0000002361871362.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/nZ-MJX6US0mkYQi6ObcqWw/zh-cn_image_0000002361871362.gif "点击放大")
 
 ## 列表排版
 
@@ -229,7 +229,7 @@ build() {
     .overlay(this.overlayBuilder())
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ZMdLef4tTHyvfGzeDaLaPQ/zh-cn_image_0000002395391277.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/2O0wrpnBSFGZkAvNxLURsg/zh-cn_image_0000002395391277.png "点击放大")
 
 **折叠展开：**列表项的折叠与展开用途广泛，常用于信息清单的展示、填写等应用场景。通过改变ListItem的状态，来控制每个列表项是否展开，并通过animation和animateTo来实现展开与折叠过程中的动效效果。具体请参见：**[折叠与展开](../harmonyos-guides/arkts-layout-development-create-list.md#折叠与展开)**
 
@@ -335,7 +335,7 @@ Column() {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/YXVgMW2PQb2dgkqmAer0OQ/zh-cn_image_0000002361711486.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/XWJIATsyQymCYHho000NVQ/zh-cn_image_0000002361711486.gif "点击放大")
 
 **局部数据刷新：**通过直接修改单一ListItem的数据源即可实现。
 
@@ -388,7 +388,7 @@ List({ space: 3 }) {
 .maintainVisibleContentPosition(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/_r9YbpoCTg-0S1kgpsNxPA/zh-cn_image_0000002395231433.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/UQ0D-MSAQbC2sm-PueH_rg/zh-cn_image_0000002395231433.gif "点击放大")
 
 **方案二：**可以给List添加scroller控制器，将列表跳回至原先所在位置this.scroller.scrollToIndex，具体请参考示例：[List的下拉加载如何回滚到当前展示位置](../harmonyos-faqs/faqs-arkui-268.md)
 
@@ -416,13 +416,13 @@ List({ space: 3 }) {
 * 支持下拉加载历史聊天记录
 * 实时新增并展示最新聊天内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/hy8rFFdlS-OxQ1cpuR-DXA/zh-cn_image_0000002361871382.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/RurRnNjdTZGIu46NLqUylw/zh-cn_image_0000002361871382.gif "点击放大")
 
 **消息气泡**
 
 在ListItem中使用[Badge](../harmonyos-references/ts-container-badge.md)组件可实现给列表项添加标记功能。Badge是可以附加在单个组件上用于信息标记的容器组件。例如，在消息列表中，若希望在联系人头像右上角添加标记，可在实现消息列表项ListItem的联系人头像时，将头像Image组件作为Badge的子组件。在Badge组件中，count和position参数用于设置需要展示的消息数量和提示点显示位置，还可以通过style参数灵活设置标记的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/NkpYCakiT1WOWPbyvn8IWw/zh-cn_image_0000002395391281.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/0w9eM1CmROugslDwwhblFQ/zh-cn_image_0000002395391281.png "点击放大")
 
 **实现方案**
 
@@ -451,7 +451,7 @@ if (item.isNewMessage) {
 
 **左滑删除/置顶**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/UjWAp9yfTqqFUlvE5kTdlw/zh-cn_image_0000002361711502.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/ceI53j2GRdyNtrI3bixNzw/zh-cn_image_0000002361711502.gif "点击放大")
 
 **实现方案**
 
@@ -506,7 +506,7 @@ itemEnd(item: Item, index: number) {
 
 **滚动后跳转到指定位置**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/MnNSZX6hRf-d21-ZFW8Kjg/zh-cn_image_0000002395231445.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/RqRrfukSTP-DmPkQEbtJqg/zh-cn_image_0000002395231445.gif "点击放大")
 
 **实现方案**
 
@@ -539,7 +539,7 @@ if (this.isFlag) {
 
 **消息列表拖拽排序**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/8EIj29rURfSL6pu4p8q5cg/zh-cn_image_0000002361871390.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Z4KPLesdRaaFiXpQFE0Mdw/zh-cn_image_0000002361871390.gif "点击放大")
 
 **实现方案**
 
@@ -554,7 +554,7 @@ if (this.isFlag) {
      return this.dragFloatView(this.sortedList[itemIndex]);
    })
    ```
-2. 拖拽列表元素在列表范围内移动时触发[onItemDragMove()方法](../harmonyos-references/ts-container-list.md#onitemdragmove8)，在回调里分别记录被拖拽ListItem的索引deleteIndex和拖拽插入位置索引insertIndex，然后通过Item数组的splice方法删除被拖拽的ListItem，同时将被删除的ListItem添加至insertIndex所在的位置。
+2. 拖拽列表元素在列表范围内移动时触发[onItemDragMove](../harmonyos-references/ts-container-list.md#onitemdragmove8)()方法，在回调里分别记录被拖拽ListItem的索引deleteIndex和拖拽插入位置索引insertIndex，然后通过Item数组的splice方法删除被拖拽的ListItem，同时将被删除的ListItem添加至insertIndex所在的位置。
 
    ```screen
    .onItemDragMove((event: ItemDragInfo, itemIndex: number, insertIndex: number) => {
@@ -566,7 +566,7 @@ if (this.isFlag) {
      })
    })
    ```
-3. 定义一个dragFloatView[自定义构建函数](../harmonyos-guides/arkts-builder.md#私有自定义构建函数)作为拖拽时临时展示的UI元素，直至拖拽结束。
+3. 定义一个dragFloatView[私有自定义构建函数](../harmonyos-guides/arkts-builder.md#私有自定义构建函数)作为拖拽时临时展示的UI元素，直至拖拽结束。
 
    ```screen
    @Builder
@@ -627,7 +627,7 @@ if (this.isFlag) {
 
 **初始化显示到底部**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/81RdZdYNRcCclRMqbrZzSQ/zh-cn_image_0000002395391293.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/BE3A9IYfQsCPm9Q_GK3a6Q/zh-cn_image_0000002395391293.gif "点击放大")
 
 **实现方案**
 
@@ -693,7 +693,7 @@ List({ space: 10, scroller: this.scroller, initialIndex: this.itemInfo.message.l
 
 **下拉加载更多聊天记录**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/FPYuYWAXQ2Km0-Fr9PHaUw/zh-cn_image_0000002361711514.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/gbLKP0P8T4S7GxxXYKO1Lg/zh-cn_image_0000002361711514.gif "点击放大")
 
 **实现方案**
 
@@ -775,7 +775,7 @@ Refresh({ refreshing: $$this.isRefreshing }) {
 
 **新增聊天记录**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/DRDf2A2JSnCoWYzczKkV3w/zh-cn_image_0000002395231449.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/EeT63dzcT-K7Qb68gUKeZg/zh-cn_image_0000002395231449.gif "点击放大")
 
 **实现方案**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo start
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo start
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:16+08:00
+scraped_at: 2026-10-29T07:58:19+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:5f1d79353c23979fb3d32533d0acfee48ae3de01210d8f80b8ada6e9c8b0a2a8
+content_hash: sha256:cff4652fc845a7514f05473a67f3472dc63f1268a44a4482b1e67a0f386853d8
 ---
 
 启动ohpm-repo服务。
@@ -38,4 +38,4 @@ ohpm-repo start
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/epXya3HQRSSijviO-hKHLA/zh-cn_image_0000002731541445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/_z2yYQuGQx28ftGiAY538w/zh-cn_image_0000002731541445.png "点击放大")

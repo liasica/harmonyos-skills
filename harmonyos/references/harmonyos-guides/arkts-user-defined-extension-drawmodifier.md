@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义绘制修改器 (DrawModifier)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义绘制 > 自定义绘制修改器 (DrawModifier)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:52+08:00
+scraped_at: 2026-10-29T07:56:34+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:628cebfb52fa27432893017577afe122f3c74c854348b53d2766f7fb6f27cdcc
+content_hash: sha256:61814abfe47b95289d480f1294ff5ad6742c98e34cf7dccbdf02b688bfd07776
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ declare class DrawModifier {
 
 DrawModifier可设置遮罩层前景（[drawOverlay](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawoverlay23)）、前景（[drawForeground](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawforeground20)）、内容前景（[drawFront](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawfront)）、内容（[drawContent](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawcontent)）和内容背景（[drawBehind](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawbehind)）的绘制方法，开发者需要重载这些方法，并通过[Canvas](arkts-drawing-customization-on-canvas.md)的接口进行自定义绘制。自定义绘制层级图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/DowvRdtpSEO8aovMLt_C3w/zh-cn_image_0000002771665424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/zwt1B8q8QLyTKQcsAcLTyA/zh-cn_image_0000002773904236.png)
 
 DrawModifier还提供主动触发重绘的方法[invalidate](../harmonyos-references/ts-universal-attributes-draw-modifier.md#invalidate)，该接口开发者无需也无法重载，调用会触发所绑定组件的重绘。
 
@@ -250,7 +250,7 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/24npKG6HSp6kUqZTCptr3w/zh-cn_image_0000002800985281.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/34Un6LN8SiGt1Dwn6ROmKA/zh-cn_image_0000002803264021.gif)
 
 ## 通过drawForeground进行自定义绘制
 
@@ -315,7 +315,7 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/XsTYXfVXQDavVxC8q3S1Fg/zh-cn_image_0000002771825392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/U75gZpJgQ_-JiqIghiCijg/zh-cn_image_0000002803223931.png)
 
 ## 调整自定义绘制Canvas的变换矩阵
 
@@ -438,4 +438,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ER0SKM9cRyGoJXU125m38g/zh-cn_image_0000002801105205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/cF7EuEM6QOStSRyub98gSQ/zh-cn_image_0000002774064212.png)

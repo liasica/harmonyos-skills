@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 一键登录获取华为账号绑定号码和UnionID/OpenID（不推荐）
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 附录 > 一键登录获取华为账号绑定号码和UnionID/OpenID（不推荐）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:44+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:65a519c49cf1da1b8ce4ec97ecd31fcb0a6f358303718c0c123d7d851af69ab4
+scraped_at: 2026-10-29T08:02:33+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:1b36f4ab4fe8f5840346c1e4c9edac90b76840db9cfb102506e41db8b344f3a1
 ---
 
 **注意** 
@@ -228,7 +228,7 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 | NSP\_STATUS | 描述 | 解决方法 |
 | --- | --- | --- |
 | 6 | 会话失效或已超时（session timeout）。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 未对access\_token进行URLEncode处理，可参考[示例代码](account-api-get-user-info-get-nickname-and-avatar.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
-| 403 | 访问无权限。 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
+| 403 | 访问无权限。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
 | 500 | 接口内部错误。 | 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 503 | 触发系统流控。 | 请稍后重试。 |
 | 70001402 | 系统鉴权错误。 | 鉴权系统异常，若重试无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |

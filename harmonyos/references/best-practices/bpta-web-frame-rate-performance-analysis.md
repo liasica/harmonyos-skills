@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-frame-
 title: Web帧率问题分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > Web帧率问题分析
 category: best-practices
-scraped_at: 2026-10-16T07:06:45+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:28432356bb0c0eaf1014828e15d983a310cdfea9e2bf8fc35aba8f97eca7c02a
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:26b12d14fe254161c6b7fa7d01a6ab664eaa8abdb4a86a8f3e9ba9f287d66d70
 ---
 
 ## 概述
@@ -16,9 +16,9 @@ content_hash: sha256:28432356bb0c0eaf1014828e15d983a310cdfea9e2bf8fc35aba8f97eca
 
 ## Web滑动渲染流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/vxUA7uBPQU-J-M7IMv2mFQ/zh-cn_image_0000002598770531.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/tA__SJvZQXqcB4A9vorilA/zh-cn_image_0000002598770531.png "点击放大")
 
-ArkWeb（HarmonyOS的Web引擎，负责Web页面的渲染、JS执行与交互处理）子泳道聚合了Web相关线程的trace信息，通过分析Web渲染过程关键函数的trace点，可以分析出每一帧的执行流程，图为[异步渲染模式](../harmonyos-guides/web-render-mode.md#异步渲染模式默认)下ArkWeb滑动过程中的渲染流程图，其聚合的Web线程信息如下：
+ArkWeb（HarmonyOS的Web引擎，负责Web页面的渲染、JS执行与交互处理）子泳道聚合了Web相关线程的trace信息，通过分析Web渲染过程关键函数的trace点，可以分析出每一帧的执行流程，图为[异步渲染模式](../harmonyos-guides/web-render-mode.md#异步渲染模式默认)异步渲染模式（默认）下ArkWeb滑动过程中的渲染流程图，其聚合的Web线程信息如下：
 
 * H:RosenWeb：用于记录准备提交给Render Service进行统一渲染的数据量。
 * Compositor：合成线程，负责图层CPU指令合成，承载动态效果。
@@ -27,13 +27,13 @@ ArkWeb（HarmonyOS的Web引擎，负责Web页面的渲染、JS执行与交互处
 * VSyncGenerator：图形侧VSync信号，用于定时生成VSync信号，通知渲染线程或动画线程准备下一帧的渲染。
 * VSync-Webview：用于接收图形侧发送的VSync信号，并根据信号触发WebView页面的渲染或重绘。
 * VizCompositorThread：绘制信号监听线程，向图形请求Web下一帧VSync信号，触发系统Web相关绘制或执行。
-* Web应用Render线程：以 Render 结尾的线程，主要用于图形渲染任务，包括HTML、CSS解析，进行分层布局绘制以及输入事件的处理。
+* Web应用Render线程：以Render结尾的线程，主要用于图形渲染任务，包括HTML、CSS解析，进行分层布局绘制以及输入事件的处理。
 
 由于Web渲染为异步流水线，图中仅标识的相同颜色的**关键函数**需在一帧内完成，且每个VSync周期（VSyncGenerator线程）需要完成一次这些关键函数的执行。这些关键函数可能被各种因素阻塞，需从CPU唤醒关系分析实际情况和原因。
 
 ## Web滑动丢帧分析方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/BR_jWBR0SSqgK_Cjc73FMg/zh-cn_image_0000002568330974.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/mpDfXJsDQEOwOXVwn2vvYw/zh-cn_image_0000002568330974.png "点击放大")
 
 1. 确定是否存在丢帧问题：使用DevEco Profiler或录屏工具辅助分析，确认Web组件是否存在丢帧问题。若存在问题，则执行后续分析逻辑。
 2. 确认关键性能瓶颈：找到异常耗时trace点。
@@ -50,19 +50,19 @@ DevEco Profiler是DevEco Studio提供的场景化调优工具，开发者可通�
 
 在应用主线程有如下trace点，可以判断整个滑动的起始点。
 
-InputRouterImpl::FilterAndSendWebInputEvent | type=GestureScrollBegin 代表滚动事件的起始点；
+InputRouterImpl::FilterAndSendWebInputEvent | type=GestureScrollBegin代表滚动事件的起始点；
 
-InputRouterImpl::FilterAndSendWebInputEvent | type=GestureScrollEnd 代表终点；
+InputRouterImpl::FilterAndSendWebInputEvent | type=GestureScrollEnd代表终点；
 
-RenderWidgetHostInputEventRouter::DispatchTouchscreenGestureEvent | type=GestureFlingStart 代表抛滑起始点。
+RenderWidgetHostInputEventRouter::DispatchTouchscreenGestureEvent | type=GestureFlingStart代表抛滑起始点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Py9VZyJSRRiSrxqRbPjm4A/zh-cn_image_0000002568171322.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/uHVqriRHT0GY5joLAgxhcQ/zh-cn_image_0000002568171322.png "点击放大")
 
 ### 从最终结果倒推，找到丢帧时间点
 
 Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当VSyncGenerator生成RS信号时，若RosenWeb泳道标识的buffer个数为0，则说明发生丢帧；有缓存时则不视为丢帧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Urs4lOBSSBSIZ4OytoEcNg/zh-cn_image_0000002598850589.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/TEKTLKbuQt2AlflNq_FmfA/zh-cn_image_0000002598850589.png "点击放大")
 
 ### 寻找丢帧原因
 
@@ -86,7 +86,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/AD2n1fbiRVWeM9qVpwh3cg/zh-cn_image_0000002598770535.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/cgoJ4bC2S0GbhDJmySC4qQ/zh-cn_image_0000002598770535.png "点击放大")
 
    **根因分析**
 
@@ -101,7 +101,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
    **优化方案**
 
    建议应用在系统空闲时间创建离线Web组件。
-2. **大量JSB（JavaScript Bridge 是HarmonyOS中JS与Native层之间的通信桥梁）任务阻塞应用主线程**
+2. **大量JSB（JavaScript Bridge是HarmonyOS中JS与Native层之间的通信桥梁）任务阻塞应用主线程**
 
    **问题描述**
 
@@ -109,7 +109,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/nh3tIzkfQPSH6RU-ZuRyDQ/zh-cn_image_0000002568330976.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/4gbTtpY7RD-auv4-bqN0lg/zh-cn_image_0000002568330976.png "点击放大")
 
    **根因分析**
 
@@ -123,9 +123,9 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **优化建议**
 
-   1. 如果 JSB 是由滑动事件（如 onscroll）触发的，控制 JS 侧调用频率。
+   1. 如果JSB是由滑动事件（如onscroll）触发的，控制JS侧调用频率。
 
-   2. JSB 回调执行时，默认是在应用的主线程。如果回调里涉及复杂计算、文件 IO 或数据库等操作，将任务抛到**任务池**（[taskpool.execute](../harmonyos-references/js-apis-taskpool.md#taskpoolexecute)）去执行，并迅速返回。
+   2. JSB回调执行时，默认是在应用的主线程。如果回调里涉及复杂计算、文件IO或数据库等操作，将任务抛到**任务池**（[taskpool.execute](../harmonyos-references/js-apis-taskpool.md#taskpoolexecute)）去执行，并迅速返回。
 3. **JSView: ExecuteRerender（ArkUI中执行组件重渲染的函数，在应用主线程上运行）逻辑长时间阻塞应用主线程**
 
    **问题描述**
@@ -134,11 +134,11 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/3pnhiba3RFSPsMYUVWYJaQ/zh-cn_image_0000002568171324.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/rbsfu7jPSKmtklePX0kdpw/zh-cn_image_0000002568171324.png "点击放大")
 
    **根因分析**
 
-   1. 在某个同时包含ArkUI和Web组件的页面中，定义了一些**状态变量**（被 @State, @Prop, @Link, @StorageLink 等装饰器修饰的变量，详见[ArkUI状态管理](../harmonyos-guides-V5/arkts-state-management-overview-V5.md#装饰器总览)），某些ArkUI组件的一些属性关联这些状态变量。
+   1. 在某个同时包含ArkUI和Web组件的页面中，定义了一些**状态变量**（被 @State, @Prop, @Link, @StorageLink 等装饰器修饰的变量，详见ArkUI[状态管理概述](../harmonyos-guides-V5/arkts-state-management-overview-V5.md)），某些ArkUI组件的一些属性关联这些状态变量。
 
    2. 在Web页面滑动的过程中触发了这些状态变量数值的变化，Web 组件所在的父组件或兄弟组件中存在状态变更，触发了整颗视图树的 build() 函数（ArkUI框架中用于构建页面的核心函数）重新执行。
 
@@ -161,7 +161,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/BOaMiMUiRuiYx_GSO7hGLQ/zh-cn_image_0000002598850591.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/9EyWmUTUS5uKLbAyHEuerg/zh-cn_image_0000002598850591.png "点击放大")
 
    **根因分析：**
 
@@ -184,7 +184,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/rSr0mOvNSOWEbfDy2xa4lQ/zh-cn_image_0000002598770537.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/IQVxEaxlRhicejV0MIF2dA/zh-cn_image_0000002598770537.png "点击放大")
 
    **根因分析：**
 
@@ -207,11 +207,11 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
    某个web页面使用了一个超高精度的3D渲染，页面每次滑动经过这块动画区域就会卡顿掉帧。
 
    **图1**   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/pbbhwhv6TSKzD0tlsE1znQ/zh-cn_image_0000002568330978.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/5YPtUAZeQtiXTaXL0sIN7w/zh-cn_image_0000002568330978.png)
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/bj4CzNQUT5KfXWmKkYdLTw/zh-cn_image_0000002568171326.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/MLolB1jPQNW7ZeMvWtGnYA/zh-cn_image_0000002568171326.png "点击放大")
 
    **根因分析**
 
@@ -234,7 +234,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/k-Ky5vjMTH6ZmDi7c_-j6w/zh-cn_image_0000002598850593.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/G2ewzphRQM6yWPF0DsKJhw/zh-cn_image_0000002598850593.png "点击放大")
 
    **根因分析**
 
@@ -243,7 +243,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
    2. 在页面滑动的过程中，会触发高斯模糊动效，渲染流程中的DirectRenderer::DrawFrame和SkiaOutputSurfaceImplOnGpu::FinishPaintCurrentFrame这两个trace点的耗时会显著增加，导致Web无法在单帧时间内生成buffer。
 
    * DirectRenderer::DrawFrame：该点位于VizCompositorThread线程中，负责管理和调度渲染层。由于每个高斯模糊区域都需要独立的 Render Pass 且存在复杂的纹理依赖，合成器必须花费大量时间进行层级分析和渲染指令调度，导致合成帧的构建过程变慢。
-   * SkiaOutputSurfaceImplOnGpu::FinishPaintCurrentFrame：代表 GPU 实际执行绘图指令的耗时。高斯模糊的卷积核随半径增大导致采样次数剧增，GPU 的像素填充率达到极限，导致该阶段在执行模糊 Shader 和纹理写回时耗时大幅拉长。
+   * SkiaOutputSurfaceImplOnGpu::FinishPaintCurrentFrame：代表GPU实际执行绘图指令的耗时。高斯模糊的卷积核随半径增大导致采样次数剧增，GPU的像素填充率达到极限，导致该阶段在执行模糊Shader和纹理写回时耗时大幅拉长。
 
    3. 在绘制过程中，VSync图形侧信号下发，RosenWeb = 0，图形侧无法获取buffer去消费送显，出现多次丢帧。
 

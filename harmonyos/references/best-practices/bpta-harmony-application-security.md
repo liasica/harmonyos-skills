@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-harmony-ap
 title: 应用安全编码实践
 breadcrumb: 最佳实践 > 应用安全 > 应用安全编码实践
 category: best-practices
-scraped_at: 2026-10-16T07:06:44+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:9e14b4940a88a9388caa383bd4589233b5d03e2665c513709af98de13d540e47
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:8aaf064efbde8c65851a528d6e1447e738d1fe0ce5b034ba9cfca4b915ecef85
 ---
 
 ## 概述
@@ -29,15 +29,10 @@ content_hash: sha256:9e14b4940a88a9388caa383bd4589233b5d03e2665c513709af98de13d5
 **错误示例：**
 
 ```screen
-// module.json5
-"abilities": [ 
-  { 
-    "name": "PrivacyAbility", 
-    "srcEntry": "./ets/privacyability/PrivacyAbility.ts", 
-    "description": "$string:PrivacyAbility_desc", 
-    "exported": true 
-  } 
-]
+"name": "PrivacyErrorAbility",
+"srcEntry": "./ets/privacyerrorability/PrivacyErrorAbility.ets",
+"description": "$string:PrivacyErrorAbility_desc",
+"exported": true,
 ```
 
 PrivacyAbility 是一个不对外交互的组件，但设置exported属性为true后，任何应用都能访问该组件。
@@ -45,15 +40,10 @@ PrivacyAbility 是一个不对外交互的组件，但设置exported属性为tru
 **正确示例：**
 
 ```screen
-// module.json5 
-"abilities": [ 
-  { 
-    "name": "PrivacyAbility", 
-    "srcEntry": "./ets/privacyability/PrivacyAbility.ts", 
-    "description": "$string:PrivacyAbility_desc", 
-    "exported": false 
-  } 
-]
+"name": "PrivacyAbility",
+"srcEntry": "./ets/privacyability/PrivacyAbility.ets",
+"description": "$string:PrivacyAbility_desc",
+"exported": false,
 ```
 
 ### 对外交互的应用组件应设置合理的访问权限
@@ -77,14 +67,14 @@ PrivacyAbility 是一个不对外交互的组件，但设置exported属性为tru
 **错误示例：**
 
 ```screen
-// module.json5 
-"abilities": [ 
-  { 
-    "name": "ContactDataAbility", 
-    "srcEntry": "./ets/DataAbility/DataAbility.ts", 
-    "description": "$string: DataAbility_desc", 
-    "exported": true 
-  } 
+// module.json5
+"abilities": [
+    {
+        "name": "ContactDataAbility",
+        "srcEntry": "./ets/DataAbility/DataAbility.ts",
+        "description": "$string: DataAbility_desc",
+        "exported": true
+    }
 ]
 ```
 
@@ -93,15 +83,15 @@ PrivacyAbility 是一个不对外交互的组件，但设置exported属性为tru
 **正确示例：**
 
 ```screen
-// module.json5 
-"abilities": [ 
-  { 
-    "name": "ContactDataAbility", 
-    "srcEntry": "./ets/DataAbility/DataAbility.ts", 
-    "description": "$string: DataAbility_desc", 
-    "exported": true, 
-    "permissions": ["ohos.permission.READ_CONTACTS"] 
-  } 
+// module.json5
+"abilities": [
+    {
+        "name": "ContactDataAbility",
+        "srcEntry": "./ets/DataAbility/DataAbility.ts",
+        "description": "$string: DataAbility_desc",
+        "exported": true,
+        "permissions": ["ohos.permission.READ_CONTACTS"]
+    }
 ]
 ```
 
@@ -653,7 +643,7 @@ struct WebComponent {
           if (event === undefined) {
             return;
           }
-          AlertDialog.show({
+          this.getUIContext().showAlertDialog({
             title: 'title',
             message: 'text',
             confirm: {
@@ -1118,54 +1108,54 @@ function readFile(fileName: string) {
 **错误示例：**
 
 ```screen
-// app.json5   
-{  
-    "app": {  
-        "bundleName": "com.application.music",  
-        "vendor": "application",  
-        "versionCode": 1,  
-        "versionName": "1.0",  
-        "minCompatibleVersionCode": 1,  
-        "minAPIVersion": 7,  
-        "targetAPIVersion": 8,  
-        "apiReleaseType": "Release",  
-        "debug": true, // debug字段设置 
-        "icon": "$media:app_icon",  
-        "label": "$string:app_name",  
-        "description": "$string:description_application",  
-        "distributedNotificationEnabled": true,  
-        "entityType": "game",  
-        "car": {  
-            "apiCompatibleVersion": 8  
-        }  
-    }  
+// app.json5
+{
+    "app": {
+        "bundleName": "com.application.music",
+        "vendor": "application",
+        "versionCode": 1,
+        "versionName": "1.0",
+        "minCompatibleVersionCode": 1,
+        "minAPIVersion": 7,
+        "targetAPIVersion": 8,
+        "apiReleaseType": "Release",
+        "debug": false,
+        "icon": "$media:app_icon",
+        "label": "$string:app_name",
+        "description": "$string:description_application",
+        "distributedNotificationEnabled": true,
+        "entityType": "game",
+        "car": {
+            "apiCompatibleVersion": 8
+        }
+    }
 }
 ```
 
 **正确示例：**
 
 ```screen
-// app.json5   
-{  
-    "app": {  
-        "bundleName": "com.application.music",  
-        "vendor": "application",  
-        "versionCode": 1,  
-        "versionName": "1.0",  
-        "minCompatibleVersionCode": 1,  
-        "minAPIVersion": 7,  
-        "targetAPIVersion": 8,  
-        "apiReleaseType": "Release",  
-        "debug": false,  
-        "icon": "$media:app_icon",  
-        "label": "$string:app_name",  
-        "description": "$string:description_application",  
-        "distributedNotificationEnabled": true,  
-        "entityType": "game",  
-        "car": {  
-            "apiCompatibleVersion": 8  
-        }  
-    }  
+// app.json5
+{
+    "app": {
+        "bundleName": "com.application.music",
+        "vendor": "application",
+        "versionCode": 1,
+        "versionName": "1.0",
+        "minCompatibleVersionCode": 1,
+        "minAPIVersion": 7,
+        "targetAPIVersion": 8,
+        "apiReleaseType": "Release",
+        "debug": true, // debug字段设置
+        "icon": "$media:app_icon",
+        "label": "$string:app_name",
+        "description": "$string:description_application",
+        "distributedNotificationEnabled": true,
+        "entityType": "game",
+        "car": {
+            "apiCompatibleVersion": 8
+        }
+    }
 }
 ```
 
@@ -1180,7 +1170,7 @@ function readFile(fileName: string) {
 # You can include the obfuscation configuration files in the current module's build-profile.json5.
 #
 # For more details, see
-#   https://gitcode.com/openharmony/arkcompiler_ets_frontend/blob/master/arkguard/README.md
+#   https://gitee.com/openharmony/arkcompiler_ets_frontend/blob/master/arkguard/README.md
    
 # Obfuscation options:
 # -disable-obfuscation: disable all obfuscations

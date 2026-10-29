@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-netman
 title: 管理网络连接(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:14+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:015c4e5ecffbc713cd2eb8b6e2dea2940d2cd2a2b440e4b6704e4a0e72089fd1
+scraped_at: 2026-10-29T07:57:01+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:590eb5c3748761d85e2d7af2a24f6580aec7fc81763d10fea3452decf217e6df
 ---
 
 ## 场景介绍
@@ -230,7 +230,7 @@ libnet_connection.so
 
    如图所示，在add\_library中的entry是工程自动生成的modname。若要做修改，需和步骤3中.nm\_modname保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/9BjNLSu8SSC8aErdYw-uQw/zh-cn_image_0000002800985777.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/3D8FQR_LTuyswC2IQzELZQ/zh-cn_image_0000002803264517.png)
 
 经过以上步骤，整个工程的搭建已经完成，接下来就可以连接设备运行工程进行日志查看了。
 
@@ -242,10 +242,10 @@ libnet_connection.so
    * 点击GetDefaultNet时获取的是默认网络ID。
    * 点击codeNumber时获取的是接口返回的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/b6w5_TkITeyNG6HgUJCNRg/zh-cn_image_0000002771825888.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/7oW9rA-ATXG8EGzibNaN7Q/zh-cn_image_0000002803224427.png)
 3. 点击GetDefaultNet按钮，控制台会打印日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/OF-n6m8YR4aa8v07ErzQ7Q/zh-cn_image_0000002801105701.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/ihUptDoPQwW_9U3nEkY37w/zh-cn_image_0000002774064708.png)
 4. 点击codeNumber按钮，控制台会打印相应的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/97_vB7_VTXiROcsmZE1QxQ/zh-cn_image_0000002771665922.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/MdIo9WZPTji04En1jj0oYA/zh-cn_image_0000002773904736.png)

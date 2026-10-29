@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:56+08:00
+scraped_at: 2026-10-29T07:57:52+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:baf98dfaf7188f573781209f4c78a5d6a2b99c4ab909fab65dea54ac7788c44c
+content_hash: sha256:505a50fbd3a59d4b53a83b556e1c833d2a5ad500bb5bdf22a731bcca850547f3
 ---
 
 华为数字车钥匙基于华为钱包"芯-端-云"一体化安全能力，集成SE、TEE等安全芯片能力，满足ICCE标准，支持NFC、蓝牙、星闪等多种连接方式，可将车钥匙功能数字化集成至移动终端，无需实体钥匙即可实现车辆开门、启动、无感解闭锁等功能。
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/P4QObBiKSZysaK3TK9NkgQ/zh-cn_image_0000002801106573.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/HMi3lusNQEChst4oumWcoA/zh-cn_image_0000002803265391.png)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -29,11 +29,11 @@ content_hash: sha256:baf98dfaf7188f573781209f4c78a5d6a2b99c4ab909fab65dea54ac778
 
 ### 车钥匙开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/U2JUVCrZSoeZFdl5uCALGw/zh-cn_image_0000002771666792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/f2__y346R7aqEJv0xbTtZA/zh-cn_image_0000002803225299.png)
 
 ### 车钥匙展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/tXo3SXfsQZGmR_izoCgxFw/zh-cn_image_0000002800986651.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/l4jxzTgQQmW4zAjiUCPnYw/zh-cn_image_0000002774065584.png)
 
 ## 典型交互场景
 

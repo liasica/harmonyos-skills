@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.mdns (MDNS管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.mdns (MDNS管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1232a9cbadafbeec0b953b9af11d0bf11a779f3317520387bb63ad725d34d3b0
+scraped_at: 2026-10-29T08:01:00+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:efbb04dc06e76c96f8bd3b16ee3d9ce81237a8cf449352d7a564834cf0cce10a
 ---
 
 MDNS即多播DNS（Multicast DNS），提供局域网内的本地服务添加、移除、发现、解析等能力。
@@ -346,7 +346,7 @@ resolveLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: A
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
 | serviceInfo | [LocalServiceInfo](js-apis-net-mdns.md#localserviceinfo) | 是 | MDNS服务的信息。 |
-| callback | AsyncCallback<[LocalServiceInfo](js-apis-net-mdns.md#localserviceinfo)> | 是 | 回调函数。成功移除error为undefined，data为解析的MDNS服务信息。 |
+| callback | AsyncCallback<[LocalServiceInfo](js-apis-net-mdns.md#localserviceinfo)> | 是 | 回调函数。成功解析时error为undefined，data为解析的MDNS服务信息。 |
 
 **错误码：**
 

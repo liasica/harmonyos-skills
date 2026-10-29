@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-wavewheel-for-image-editor
 title: 实现修图软件的波轮菜单功能
-breadcrumb: 最佳实践 > 场景创新 > 实现修图软件的波轮菜单功能
+breadcrumb: 最佳实践 > 场景创新 > 生产力 > 编创 > 实现修图软件的波轮菜单功能
 category: best-practices
-scraped_at: 2026-10-16T07:06:34+08:00
-doc_updated_at: 2026-10-15
+scraped_at: 2026-10-29T08:03:13+08:00
+doc_updated_at: 2026-10-28
 content_hash: sha256:95cc7ba6a96c862a5c93734b2f024fe06c9483ae29c569972eed79ea4b99af53
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-scheme-ha
 title: 拦截Web组件发起的网络请求
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 拦截Web组件发起的网络请求
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:52+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:2baa6657d9720f743c7085c10eaa4ef3273122286dec1b0ae64f5867a22065df
+scraped_at: 2026-10-29T07:56:41+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c8dbda870ae6a413b8e0753424e6e2e472d84b97f14cb94fd006269e3d08d046
 ---
 
 应用可以通过[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)拦截Web组件发起的网络请求，也可以通过SchemeHandler来拦截Web组件发起的网络请求。SchemeHandler提供了ArkTS与NDK两套接口。
@@ -119,40 +119,39 @@ OH_ArkWeb_RegisterCustomSchemes("custom-isolated", ARKWEB_SCHEME_OPTION_DISPLAY_
 
 在ArkTS中可以通过customizeSchemes注册自定义协议，示例如下：
 
-```ts
-  // xxx.ets
-  import { webview } from '@kit.ArkWeb';
-  import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-  @Entry
-  @Component
-  struct WebComponent {
-  controller: webview.WebviewController = new webview.WebviewController();
-  responseWeb: WebResourceResponse = new WebResourceResponse();
-  scheme1: webview.WebCustomScheme = { schemeName: "name1", isSupportCORS: true, isSupportFetch: true };
-  scheme2: webview.WebCustomScheme = { schemeName: "name2", isSupportCORS: true, isSupportFetch: true };
-  scheme3: webview.WebCustomScheme = { schemeName: "name3", isSupportCORS: true, isSupportFetch: true };
+@Entry
+@Component
+struct WebComponent {
+controller: webview.WebviewController = new webview.WebviewController();
+responseWeb: WebResourceResponse = new WebResourceResponse();
+scheme1: webview.WebCustomScheme = { schemeName: 'name1', isSupportCORS: true, isSupportFetch: true };
+scheme2: webview.WebCustomScheme = { schemeName: 'name2', isSupportCORS: true, isSupportFetch: true };
+scheme3: webview.WebCustomScheme = { schemeName: 'name3', isSupportCORS: true, isSupportFetch: true };
 
-  aboutToAppear(): void {
-      try {
-      webview.WebviewController.customizeSchemes([this.scheme1, this.scheme2, this.scheme3]);
-      } catch (error) {
-      console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-      }
-  }
-
-  build() {
-      Column() {
-      Web({ src: 'www.example.com', controller: this.controller })
-          .onInterceptRequest((event) => {
-          if (event) {
-              console.info('url:' + event.request.getRequestUrl());
-          }
-          return this.responseWeb;
-          })
-      }
+aboutToAppear(): void {
+    try {
+    webview.WebviewController.customizeSchemes([this.scheme1, this.scheme2, this.scheme3]);
+    } catch (error) {
+    console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
     }
-  }
+}
+
+build() {
+    Column() {
+    Web({ src: 'www.example.com', controller: this.controller })
+        .onInterceptRequest((event) => {
+        if (event) {
+            console.info('url:' + event.request.getRequestUrl());
+        }
+        return this.responseWeb;
+        })
+    }
+    }
+}
 ```
 
 ### 获取被拦截请求的信息
@@ -180,7 +179,7 @@ OH_ArkWeb_RegisterCustomSchemes("custom-isolated", ARKWEB_SCHEME_OPTION_DISPLAY_
   OH_ArkWebResourceRequest_GetHttpBodyStream(resourceRequest(), &stream_);
   // 设置读取上传数据的读回调。
   OH_ArkWebHttpBodyStream_SetReadCallback(stream_, ReadCallback);
-  // 初始化ArkWeb_HttpBodyStream，其它OH_ArkWebHttpBodyStream*函数需要在初始化进行调用。
+  // 初始化ArkWeb_HttpBodyStream，其它OH_ArkWebHttpBodyStream*函数需要在初始化之后进行调用。
   OH_ArkWebHttpBodyStream_Init(stream_, InitCallback);
 ```
 

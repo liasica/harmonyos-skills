@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于OHAudio录制PCM音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于OHAudio录制PCM音频（C++）
 category: best-practices
-scraped_at: 2026-10-16T07:06:37+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:da4e4b5530b82c768969a7a40d7998eec969346a66a98e27dffcb3caf43cb81d
+scraped_at: 2026-10-29T08:03:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d0492fbf2e303b00c3ae326818d7670a02a62bc32917aa7253c578abfa57488d
 ---
 
 ## 概述
 
-在C/C++侧，OHAudio提供音频模块相关能力，包含音频采集（OH\_AudioCapturer）、音频管理和音频播放等能力。OH\_AudioCapturer仅支持录制PCM格式，可以在C/C++侧实现原始音频数据（PCM）录制。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了基于OHAudio如何录制PCM音频，指导开发者实现基础录制。
+在C/C++侧，[OHAudio](../doccenter-references/api/capi-ohaudio.md)提供音频模块相关能力，包含音频采集（OH\_AudioCapturer）、音频管理和音频播放等能力。OH\_AudioCapturer仅支持录制PCM格式，可以在C/C++侧实现原始音频数据（PCM）录制。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了基于OHAudio如何录制PCM音频，指导开发者实现基础录制。
 
 基于OHAudio录制PCM音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/2thUUqsjSrCE4udkGe74xA/zh-cn_image_0000002524221068.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/3A8769M9T62IcwUri8wxVA/zh-cn_image_0000002524221068.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ OH\_AudioCapturer仅支持PCM格式，同时支持设置低时延通路、静音
 
 **图1** OHAudio音频录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/K5x-K3hqQ6CC5jBjZLwBKg/zh-cn_image_0000002555340937.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/YmFI-Z7PSkeGTobsoExx_Q/zh-cn_image_0000002555340937.jpg "点击放大")
 
 ### 开发步骤
 
@@ -43,8 +43,8 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libohaudio.so libhilog_ndk.z
 2.创建音频采集器。
 
 * 创建OH\_AudioStreamBuilder，用于采集器的相关配置。
-* 通过OH\_AudioStreamBuilder设置环境配置，包括采样率、采样通道数、回调函数等。其中，回调函数OH\_AudioCapturer\_OnReadData是向PCM文件中写入采集到的音频数据。
-* 通过OH\_AudioStreamBuilder\_GenerateCapturer创建音频采集器。
+* 通过OH\_AudioStreamBuilder设置环境配置，包括采样率、采样通道数、回调函数等。其中，回调函数[OH\_AudioCapturer\_OnReadData()](../doccenter-references/api/capi-ohaudio-oh-audiocapturer-callbacks-struct.md#oh_audiocapturer_onreaddata)是向PCM文件中写入采集到的音频数据。
+* 通过[OH\_AudioStreamBuilder\_GenerateCapturer()](../doccenter-references/api/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_generatecapturer)创建音频采集器。
 
 ```screen
 static int32_t AudioCapturerOnReadData(OH_AudioCapturer *capturer, void *userData, void *buffer, int32_t bufferLen) {

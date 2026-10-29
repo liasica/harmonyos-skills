@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-life
 title: 使用JSVM-API接口进行生命周期相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行生命周期相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:14+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:bbe417ae5cf2358177560b8d63de1a820195cb962b8ad6796b4a23168e12d4a7
+scraped_at: 2026-10-29T07:58:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:3a834c474d5abde511bd27082b7c9a0266471eb2614fbd7478ba579ff1b252f4
 ---
 
 ## 简介
@@ -60,14 +60,14 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
 cpp 部分代码：
 
 ```
-// OH_JSVM_OpenHandleScope、OH_JSVM_CloseHandleScope的三种样例方法
+// OH_JSVM_OpenHandleScope、OH_JSVM_CloseHandleScope的样例方法
 static JSVM_Value HandleScopeFor(JSVM_Env env, JSVM_CallbackInfo info)
 {
     // 在for循环中频繁调用JSVM接口创建js对象时，要加handle_scope及时释放不再使用的资源。
     // 下面例子中，每次循环结束局部变量res的生命周期已结束，因此加scope及时释放其持有的js对象，防止内存泄漏
-    constexpr uint32_t DIFF_VALUE_HUNDRED_THOUSAND = 10000;
+    constexpr uint32_t ITERATION_COUNT = 10000;
     JSVM_Value checked = nullptr;
-    for (int i = 0; i < DIFF_VALUE_HUNDRED_THOUSAND; i++) {
+    for (int i = 0; i < ITERATION_COUNT; i++) {
         JSVM_HandleScope scope = nullptr;
         JSVM_Status status = OH_JSVM_OpenHandleScope(env, &scope);
         if (status != JSVM_OK || scope == nullptr) {
@@ -240,12 +240,12 @@ static JSVM_Value UseReference(JSVM_Env env, JSVM_CallbackInfo info)
     return object;
 }
 
-// CreateReference、UseReference、DeleteReference注册回调
+// UseReference注册回调
 static JSVM_CallbackStruct param[] = {
     {.callback = UseReference, .data = nullptr},
 };
 static JSVM_CallbackStruct *method = param;
-// CreateReference、UseReference、DeleteReference方法别名，供JS调用
+// UseReference方法别名，供JS调用
 static JSVM_PropertyDescriptor descriptor[] = {
     {"useReference", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };

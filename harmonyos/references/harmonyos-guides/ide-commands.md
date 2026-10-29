@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commands
 title: 自定义指令（Commands）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 自定义指令（Commands）配置
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:39+08:00
+scraped_at: 2026-10-29T07:58:39+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:69cff2b95b2114764e2c2405cf23a918fc632dc936762bc09ac8f75bc0d28c30
+content_hash: sha256:60d10f4234a71e5c98f9e33b4c2f1986ccc2bf03841abe1e885a66bf82cce2e8
 ---
 
 ## 功能介绍
@@ -29,16 +29,16 @@ content_hash: sha256:69cff2b95b2114764e2c2405cf23a918fc632dc936762bc09ac8f75bc0d
 
 1. 点击界面右上方**Settings**按钮，选择**Commands**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/mw7SKrpBS0CJjYgMrOviqA/zh-cn_image_0000002701663656.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/mFj_JKVPSsuuIBmjyFF9cA/zh-cn_image_0000002701663656.png)
 2. 在**Global Commands**或**Project Commands**下，点击**Create Command**或手动在存储目录下创建指令文件（.md），文件名仅可包含小写字母、数字、中划线，且不以中划线结尾；点击**Import Command**上传指令文件。文档以创建指令文件为例说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/6LALQ_-pQSudcAq7FvnRCg/zh-cn_image_0000002701663662.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/pex6R10-QY-eNPkhXvJBDw/zh-cn_image_0000002701663662.png)
 3. 在代码编辑区填写完整的指令内容后，点击**√**保存。
 
-   点击指令文件的开启和关闭按钮，控制是否使用；将鼠标悬浮在指令文件上会显示编辑、删除操作按钮，方便开发者管理。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/_luglzwTTJOMFt1av47ypA/zh-cn_image_0000002731382879.png)
+   点击指令文件的开启和关闭按钮，控制是否使用；将鼠标悬浮在指令文件上会显示编辑、删除操作按钮，方便开发者管理。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/WigKKd3QSKW6aPARcmuAOA/zh-cn_image_0000002731382879.png)
 4. 返回会话，选择**HarmonyOS Ack**智能体或自定义智能体，在对话框内输入`/`指令（如test-test）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/V8X-6jjySLWccrT7BCCYLA/zh-cn_image_0000002701823580.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/3FtX1zkCSNCSCmfNaZBa-g/zh-cn_image_0000002701823580.png)
 
 ## 指令文件示例
 

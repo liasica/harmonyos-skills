@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-horizontal
 title: 基于List和Scroller实现双向滚动列表
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 基于List和Scroller实现双向滚动列表
 category: best-practices
-scraped_at: 2026-10-16T07:06:43+08:00
+scraped_at: 2026-10-29T08:03:19+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:d4036cd64c46b3c327ab7da6e4aa8d14ebd6325869ab32f7398274935c008ae3
+content_hash: sha256:6033106aba2a39f9bcff0dfbcbf5f1e523389a4a2b73dd0e96e354dbead8053a
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:d4036cd64c46b3c327ab7da6e4aa8d14ebd6325869ab32f7398274935c0
 
 然而，当表格需要同时支持纵向和横向滚动（下文简称为双向滚动）时，单一列表组件无法满足需求。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/9WK17bkhR8i5CWeW2CCTew/zh-cn_image_0000002683157325.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/J_-pupXLQQaoev2ndAbpOA/zh-cn_image_0000002683157325.gif "点击放大")
 
 本文基于List组件和Scroller控制器，封装核心组件[DualScrollTable](https://gitcode.com/HarmonyOS_Samples/DualScrollList/blob/master/tableview/src/main/ets/components/DualScrollTable.ets)（双向滚动列表组件）。提供满足基础功能的双向滚动列表解决方案，助力开发者快速实现表格双向滚动功能。
 
@@ -38,7 +38,7 @@ content_hash: sha256:d4036cd64c46b3c327ab7da6e4aa8d14ebd6325869ab32f7398274935c0
 
 列表整体布局结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/T9X2TKVTQj2CtleLhfdqLg/zh-cn_image_0000002652957852.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/CNUMldb7SF2JhIylnFS5tA/zh-cn_image_0000002652957852.png "点击放大")
 
 ### 关键API和模块介绍
 
@@ -52,7 +52,7 @@ content_hash: sha256:d4036cd64c46b3c327ab7da6e4aa8d14ebd6325869ab32f7398274935c0
 
 同步滚动时序图，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/kYIftqeUSyWJL8daCEnbuQ/zh-cn_image_0000002653117762.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/V5Fv7YaRRAOhbs3yVJWsHA/zh-cn_image_0000002653117762.png "点击放大")
 
 * 横向滚动TopList时，通过[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法拦截滚动偏移量，调用RightList的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法同步横向滚动。
 * 横向滚动RightList时，通过[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法拦截滚动偏移量，调用TopList的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法同步横向滚动。
@@ -500,7 +500,7 @@ export class BaseTableViewModel {
 
 在股票行情场景中，多只股票的最新价、涨跌额、涨跌幅等指标需要横向排列展示。该场景不启用分组标题和列分割线，表格布局尺寸更紧凑。股票信息表如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/9DE-PCoSTSesOrc6tOK7hA/zh-cn_image_0000002682997519.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/fftIU1SUSN6pr3aYmol5rA/zh-cn_image_0000002682997519.gif "点击放大")
 
 ### 开发步骤
 
@@ -637,7 +637,7 @@ export class BaseTableViewModel {
 
 左侧参数名称与右侧数据行纵向同步滚动，顶部车型名称与底部数据列横向同步滚动。汽车参数表如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/WhkCMc4NTPm_t2GDH0j9aQ/zh-cn_image_0000002683157331.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/wyKMcMkwR9WrfndzxM_vUg/zh-cn_image_0000002683157331.gif "点击放大")
 
 ### 开发步骤
 
@@ -742,7 +742,7 @@ export class BaseTableViewModel {
 
 本示例通过Frame分析结果显示，卡顿帧数为0，滚动过程流畅，无卡顿或掉帧现象。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/8WTtNc_6T-mKpeYz5NG51A/zh-cn_image_0000002652957856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/EVjXPCwbSRa-I6sQawhRow/zh-cn_image_0000002652957856.png "点击放大")
 
 ## 示例代码
 

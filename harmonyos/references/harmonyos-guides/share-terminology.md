@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-termino
 title: Share Kit术语
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit术语
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:56+08:00
+scraped_at: 2026-10-29T07:57:52+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7b5d4b48a31369515724d61635b8ba33fb217f4d4392834a8f8ffd226c748749
+content_hash: sha256:d728253eb7c0db1f2049f0444d5a361ce875d572c812c26d46cea26cf72e9e7d
 ---
 
 ## C
@@ -42,7 +42,7 @@ content_hash: sha256:7b5d4b48a31369515724d61635b8ba33fb217f4d4392834a8f8ffd226c7
 
 点击分享方式可跳转"分享详情页"。"分享详情页"由应用提供，用来完成分享数据的接收。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/n7fGiAauSsWf_Oe_ASQfEg/zh-cn_image_0000002771826758.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/MASXwjm-QC-cxR78gc_TLw/zh-cn_image_0000002773905608.png)
 
 ### Source device；源端设备
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-gui
 title: 使用MindSpore Lite实现图像分类 (C/C++)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite实现图像分类 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:40:15+08:00
+scraped_at: 2026-10-29T07:58:14+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:e2a34e0fe8d20fdfe81fbe084804bca27b134e6d82caa6562b465bad678e859a
+content_hash: sha256:d9950fd9a08c9f6e3216a99fdf3aab1df9d4451a7a6d6e3295db7a87bf7675d3
 ---
 
 ## 场景说明
@@ -563,9 +563,9 @@ struct Index {
 
 在设备上，点击photo按钮，选择相册中的一张图片，点击确定。在图片下方显示此图片占比前4的分类信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/I2rRWbpFS4aIvIdg5NRSSw/zh-cn_image_0000002801106775.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/9tp4j_aDRjClH8k0n-rn4Q/zh-cn_image_0000002771666992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/fJZge5M6SZa1wpZgpuN_6w/zh-cn_image_0000002803265593.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/mRP54lSqReakIENCKacEpw/zh-cn_image_0000002803225499.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/F0cJb2gNRBGD4OPzRZYRnQ/zh-cn_image_0000002800986851.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/_620_iPET0q8HBXJe5QIOg/zh-cn_image_0000002771666994.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/ensrixS3TyWp43uUhiBGFg/zh-cn_image_0000002774065784.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/OkZwecoFQRyJCqPEDMc4JQ/zh-cn_image_0000002803225501.png)
 
 ## 示例代码
 

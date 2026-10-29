@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-native-lea
 title: 开发态快速定位Native泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 资源泄漏类问题分析 > 开发态快速定位Native泄漏
 category: best-practices
-scraped_at: 2026-10-16T07:06:53+08:00
+scraped_at: 2026-10-29T08:03:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0bbfbb78e57dc8b6e693f8d9c05e3d8b2ae3c2af084c89447d77d9228b883c23
+content_hash: sha256:3d225dd656bfa5d6d80197c7481f13696fa58d3a9ddfa352386ea700850a5eac
 ---
 
 ## 概述
@@ -60,7 +60,7 @@ Native内存泄漏是指在C/C++层（通过NDK或系统底层）分配的内存
 
 分析整体流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Ck5sDwuQSG-Fi3ZoZ9ExsA/zh-cn_image_0000002747227797.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ob8PxKj4ToukVGD6b4QUUw/zh-cn_image_0000002747227797.jpg "点击放大")
 
 ## Native内存泄漏分析案例
 
@@ -72,9 +72,9 @@ Native内存泄漏是指在C/C++层（通过NDK或系统底层）分配的内存
 
 初步判断：使用Allocation统计模式录制内存上涨过程，观察Memory泳道中的Native Heap曲线，呈现出典型的“阶梯式增长”，确认存在Native内存泄漏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ZbimM6sbTEiW8lSrPt8Z9Q/zh-cn_image_0000002717617758.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/36CLzZP1TKidSZ-wpl1x7A/zh-cn_image_0000002717617758.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/J5haSZWMQrOn6bhly1aNAw/zh-cn_image_0000002747297713.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/W0rer_m3R6GSTB8K_diTiQ/zh-cn_image_0000002747297713.png "点击放大")
 
 ### 分析流程
 
@@ -82,29 +82,29 @@ Native内存泄漏是指在C/C++层（通过NDK或系统底层）分配的内存
 
    1. 基于DevEco Studio Profiler插件的Allocation模板分析堆内存分配、释放的信息，memory mapping信息，调用栈信息。这些信息中包括已释放内存和未释放内存。操作步骤如下：启动应用进程，选择Profiler工具 → 选择设备与应用进程 → 选择Allocation模板 → 创建Session → 配置录制选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ntalInOyS0uzeNroikxPAg/zh-cn_image_0000002747217627.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/bSD_AdJhTW2MmN8Df99xeQ/zh-cn_image_0000002747217627.png "点击放大")
 
    2. 录制Native Leaks需要关闭统计模式，同时开启录制异步栈（便于追溯到业务代码）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/UfePGMcYS_aaIGdDrd9wAQ/zh-cn_image_0000002717777682.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/yvQTAU0WSFGdTpX_0rQASA/zh-cn_image_0000002717777682.png "点击放大")
 
    3. 点击按钮启动录制并复现问题场景。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/CM2XpO5QQoyywEMg1mgoMg/zh-cn_image_0000002717617762.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/5lMhh7vOT92jiOmLCOiIgg/zh-cn_image_0000002717617762.png "点击放大")
 2. 查看泄漏对象
    1. 查看Native Leaks泳道，泳道中“X”表示检测点存在泄漏对象。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/zSQsHGz8SDG3esu3ovRX7w/zh-cn_image_0000002747297715.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/t78nagqsTkOKUAE5reusBw/zh-cn_image_0000002747297715.png "点击放大")
    2. 点击“X”，底部详情区域点击任意一行调用栈帧，查看泄漏对象详情：
 
       Symbol Name显示格式：线程名（内存地址）。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/dQ6I_CfXQr2A7qCZTg2X9Q/zh-cn_image_0000002747217629.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/8FuzKJHMQ6ao9Ewhm9yXOw/zh-cn_image_0000002747217629.png "点击放大")
 3. 分析泄漏对象调用栈
 
    根据调用栈分析相关代码（双击跳转源码），排查内存未释放原因。可以看到业务代码malloc中进行了缓存操作，但未添加free方法释放内存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/7XBsdFkUSwSOWHrEw4AEVg/zh-cn_image_0000002717777684.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/8lcnwPa5RR-18sKA91t01g/zh-cn_image_0000002717777684.png "点击放大")
 
 ### 优化修复
 
@@ -115,7 +115,7 @@ Native内存泄漏是指在C/C++层（通过NDK或系统底层）分配的内存
    * 内存曲线无明显上涨，每次退出后回落至基线。
    * Native Leaks未检测到异常泄漏对象，泄露问题已修复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/qu6cZu76TRWFYNzK9MzrtA/zh-cn_image_0000002717617764.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/VoDfquJGR8aMWyC-X8Ejiw/zh-cn_image_0000002717617764.png "点击放大")
 
 ### 使用Native Heap分析
 
@@ -125,9 +125,9 @@ Native内存泄漏是指在C/C++层（通过NDK或系统底层）分配的内存
 
 **初步判断**：使用Allocation统计模式录制内存上涨过程，观察Memory泳道中的Native Heap曲线，呈现出典型的“阶梯式增长”，确认存在Native内存泄漏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ksOnFO2VRBiSCwFVT24MPQ/zh-cn_image_0000002645100770.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/J_KwWSfuTBiWmedLxcn8VQ/zh-cn_image_0000002645100770.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/tlQvPBavS-q0lNI4loeAsA/zh-cn_image_0000002644940868.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/6ceNJxroTdaXLFBydkCG0w/zh-cn_image_0000002644940868.png "点击放大")
 
 **分析流程**
 
@@ -135,15 +135,15 @@ Native内存泄漏是指在C/C++层（通过NDK或系统底层）分配的内存
 
 1. 基于DevEco Studio Profiler插件的Allocation模板分析堆内存分配、释放的信息，memory mapping信息，调用栈信息。这些信息中包括已释放内存和未释放内存。操作步骤如下：启动应用进程，选择Profiler工具 → 选择设备与应用进程 → 选择Allocation模板 → 创建Session → 配置录制选项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/L5EakIZMQUSehdo3xTg2HA/zh-cn_image_0000002675100575.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/HxBiD113TQ2FXdVLsPXMDg/zh-cn_image_0000002675100575.png "点击放大")
 
 2. 开启统计模式，同时开启录制异步栈（方便追溯到业务代码）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Kohjajf5Q4K1iGRrFJVI-w/zh-cn_image_0000002675020723.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/Y6NjKLZqThOIB0WOq8DRuQ/zh-cn_image_0000002675020723.png "点击放大")
 
 3. 点击按钮启动录制并复现问题场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/3x-bq77SQn6uU_qkMDn23g/zh-cn_image_0000002645100772.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/5DoUIIPkTGute6TcEDEAIg/zh-cn_image_0000002645100772.png "点击放大")
 
 **步骤2：查看内存分配栈**
 
@@ -153,11 +153,11 @@ Native内存泄漏是指在C/C++层（通过NDK或系统底层）分配的内存
    * Created & Existing：默认选中，在框选范围的起点之后分配的，且在框选范围的终点之前没有释放的内存数据。
    * Created & Released：在框选范围的起点之后分配的，且在框选范围的终点之前已经释放的内存数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/8BmI7kYuSKWw16J_9K9xYA/zh-cn_image_0000002644940870.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/stgyedvxStKChoBtzdlN-w/zh-cn_image_0000002644940870.png "点击放大")
 
 3. 切换到“Call Trees”页签，该部分数据展示了详细的内存分配栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/gHnMrj6USFeG6aaXXIe8FQ/zh-cn_image_0000002675100577.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/-f_ej1vcT9ydWtyATY3FVg/zh-cn_image_0000002675100577.png "点击放大")
 
 **步骤3：分析内存分配栈**
 
@@ -165,7 +165,7 @@ Native内存泄漏是指在C/C++层（通过NDK或系统底层）分配的内存
 
 * Category中亮色代表开发者调用栈，其中绿色代表ArkTS栈帧，橙色代表Native栈帧；灰色代表系统调用栈。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/1SFTSGTbQXmOOOgeGidjkg/zh-cn_image_0000002675020725.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Vlyp4MJjTmyjJOWO9nY8yA/zh-cn_image_0000002675020725.png "点击放大")
 
 ### 优化修复
 
@@ -176,4 +176,4 @@ Native内存泄漏是指在C/C++层（通过NDK或系统底层）分配的内存
    * 内存曲线无明显上涨。
    * 泄漏问题已修复。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/NyGblyhiSw-9uhTgxQKnvQ/zh-cn_image_0000002645100774.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/n4yM3nKVQNmOo5QWgPr7YQ/zh-cn_image_0000002645100774.png "点击放大")

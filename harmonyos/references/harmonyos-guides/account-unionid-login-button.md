@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-union
 title: 使用“华为账号登录”按钮登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号登录（获取UnionID/OpenID） > 使用“华为账号登录”按钮登录
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:153d3a82e8e7b47a701b86a629c8d64e46cc766863b2b1bb29c6098c58ecbb5d
+scraped_at: 2026-10-29T07:57:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:dd7f5b5efdcef3d13bc1804b209e005279f2384daf7267a10e29f7fd38229ee8
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:153d3a82e8e7b47a701b86a629c8d64e46cc766863b2b1bb29c6098c58e
 
 华为账号登录按钮包含文本、标志和文本、标志三种样式，以满足应用对界面风格一致性和灵活性的要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/l5iL_QOdS4qZV77IPDPm8A/zh-cn_image_0000002771666332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/kgWDoXLsQ52XcWV_3s6s3g/zh-cn_image_0000002773905146.png)
 
 ## 约束与限制
 
@@ -22,13 +22,13 @@ content_hash: sha256:153d3a82e8e7b47a701b86a629c8d64e46cc766863b2b1bb29c6098c58e
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/0JXSdoOASqGbw1v-i5IfJg/zh-cn_image_0000002800986189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/cZXsUp2MSEu4qnHzAMMU5w/zh-cn_image_0000002803264929.png)
 
 账号登录按钮的用户体验和UX设计需符合[【华为账号登录】按钮](../design-guides/id-0000001880001344.md#section2624430102713)规范，不符合规范的UX设计可能会对应用上架和用户体验带来影响。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/QwsCS4kMQN2VR9J68MaiVw/zh-cn_image_0000002771826300.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/g4CAN_XDR52QBBg72k4cWQ/zh-cn_image_0000002803224839.png)
 
 流程说明：
 
@@ -64,6 +64,8 @@ content_hash: sha256:153d3a82e8e7b47a701b86a629c8d64e46cc766863b2b1bb29c6098c58e
 在进行代码开发前，请确保已按照“开发准备”章节中的指导完成[配置签名和指纹](account-sign-fingerprints.md)、[配置Client ID](account-client-id.md)。此场景无需申请账号权限。
 
 ## 客户端开发
+
+开发者可参考下述内容自行开发，也可使用Account Kit提供的[华为账号登录按钮组件SampleCode](https://gitcode.com/HarmonyOS_Samples/application-services-snippets/tree/master/AccountKit/Accountkit-Samplecode-Clientdemo-HuaweiIDLogin-ArkTs)示例工程接入华为账号登录按钮组件。同时Account Kit也提供了[华为账号登录按钮Skill](https://gitcode.com/HarmonyOS_Skills/harmonyos-agent-skills/tree/main/02-development/account-kit/hmos-account-kit-login-button-client) ，开发者可利用该Skill快速接入华为账号登录按钮组件。
 
 1. 导入[LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)模块及相关公共模块。
 
@@ -111,8 +113,6 @@ content_hash: sha256:153d3a82e8e7b47a701b86a629c8d64e46cc766863b2b1bb29c6098c58e
          // 系统服务异常，请稍后重试或者尝试使用其他方式登录
        } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
          // 重复请求，应用无需处理
-       } else if (error.code === ErrorCode.ERROR_CODE_AGREEMENT_STATUS_NOT_ACCEPTED) {
-         // 用户未同意协议
        } else {
          // 应用登录失败，请尝试使用其他方式登录
        }
@@ -166,9 +166,7 @@ content_hash: sha256:153d3a82e8e7b47a701b86a629c8d64e46cc766863b2b1bb29c6098c58e
      // 系统服务异常
      ERROR_CODE_SYSTEM_SERVICE = 12300001,
      // 重复请求
-     ERROR_CODE_REQUEST_REFUSE = 1001500002,
-     // 用户未同意用户协议
-     ERROR_CODE_AGREEMENT_STATUS_NOT_ACCEPTED = 1005300001
+     ERROR_CODE_REQUEST_REFUSE = 1001500002
    }
    ```
 

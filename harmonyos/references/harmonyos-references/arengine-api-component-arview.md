@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: ARView（AR场景可视化）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS组件 > ARView（AR场景可视化）
 category: harmonyos-references
-scraped_at: 2026-10-11T07:27:40+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:b534fd7c0a10fcbcb47056d94db9ff265213af89e7b960a3b1d6883dc8e36e08
+scraped_at: 2026-10-29T08:02:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:6f28d7667b0221c015d0b39a023c58306f638684a716b9a1360e7f854a1f40d5
 ---
 
 用于承载ARViewContext，实现AR场景可视化呈现。
@@ -69,7 +69,8 @@ struct ARWorld {
   // context配置及初始化
   build() {
     RelativeContainer() {
-      if (arContext) {
+      let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+      if (arContext && ret) {
         ARView({ context: arContext })
           .height('100%')
           .width('100%')

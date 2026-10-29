@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-upgrade-1
 title: 1.1.0升级至2.X.X/5.X.X版本
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 版本升级 > 1.1.0升级至2.X.X/5.X.X版本
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:17+08:00
+scraped_at: 2026-10-29T07:58:21+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:1a2a24bf221784546d4eae63039beb8db789659036d78d29ceff85ac66f8ec4e
+content_hash: sha256:864ec882bdd4cd4a00db62a4e1ca902478526536b7e318db476dd8f6be248410
 ---
 
 升级至2.X.X或5.X.X版本的步骤一致，本文以升级至2.X.X版本为例。
@@ -27,7 +27,7 @@ content_hash: sha256:1a2a24bf221784546d4eae63039beb8db789659036d78d29ceff85ac66f
 
 2. 下载并解压工具包：下载版本2.X.X的ohpm-repo私仓工具包，并解压到一个空文件夹中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/h_92vRlSTJi8fyCenpL2RQ/zh-cn_image_0000002701662012.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/n6cMpmKES1S55PGRX3hF-g/zh-cn_image_0000002701662012.png)
 3. 安装完成之后，进入ohpm-repo私仓工具包解压目录下的bin目录，执行如下命令：
 
    ```screen
@@ -252,7 +252,7 @@ content_hash: sha256:1a2a24bf221784546d4eae63039beb8db789659036d78d29ceff85ac66f
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/ovXJZ34tS5ueT8pYK9dopA/zh-cn_image_0000002731541189.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/J6Cvd8bHSz6omZwKDMTqyA/zh-cn_image_0000002731541189.png "点击放大")
    * 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
      + Windows系统： 关闭当前窗口，重新开启一个窗口
      + Linux系统或Mac系统： 在命令行中执行刷新命令：source ~/.bashrc或者 . ~/.bashrc。
@@ -264,7 +264,7 @@ content_hash: sha256:1a2a24bf221784546d4eae63039beb8db789659036d78d29ceff85ac66f
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/LJs6A4mnT1iV_8wS7dAl6w/zh-cn_image_0000002701662006.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/o0iAbOKSRlSD4xSRYdaP1Q/zh-cn_image_0000002701662006.png "点击放大")
 7. 多实例部署机器快速升级
 
    在多实例部署中，可先升级一台机器，然后拷贝其配置文件到其他机器中进行快速升级，具体步骤如下。
@@ -288,7 +288,7 @@ content_hash: sha256:1a2a24bf221784546d4eae63039beb8db789659036d78d29ceff85ac66f
      若您想在其他目录使用ohpm-repo，请将对应版本ohpm-repo根目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section24117279211)path中。
    * 下载并解压工具包：下载版本*`2.X.X`*的ohpm-repo私仓工具包，并解压。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/tz0cRzjsSdO0M-RqIbTuOA/zh-cn_image_0000002701821926.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/cedOchNiRs2xKcmRMJ7Mrg/zh-cn_image_0000002701821926.png)
    * 版本检查：进入ohpm-repo私仓工具包解压目录下的bin目录，执行版本查看命令：
 
      ```screen
@@ -307,7 +307,7 @@ content_hash: sha256:1a2a24bf221784546d4eae63039beb8db789659036d78d29ceff85ac66f
 
         结果示例：
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/G2PiXJPkSaaLKyVMpQ7OTg/zh-cn_image_0000002701821934.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/mSKAKl4DSj2-fCmzz71Ngg/zh-cn_image_0000002701821934.png "点击放大")
      2. 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式
 
         **说明** 
@@ -322,7 +322,7 @@ content_hash: sha256:1a2a24bf221784546d4eae63039beb8db789659036d78d29ceff85ac66f
 
         结果示例：
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Z9Oc4zg0QEWl7kTQSwCeJQ/zh-cn_image_0000002731541209.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/AWbjqzzaRAWluRBdjHzMuQ/zh-cn_image_0000002731541209.png "点击放大")
 
         **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audiobook
 title: 听书解决方案
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 听书解决方案
 category: best-practices
-scraped_at: 2026-10-16T07:06:44+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:895ef733e6d61fd27410cca3a1d7c3f234fa03ceaa045d308d4efcde1757690f
+scraped_at: 2026-10-29T08:03:20+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:bf13e9dd5d9b28343e5f91d8b39f383957b1420a97da9e23ea4ddc1078bad09a
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:895ef733e6d61fd27410cca3a1d7c3f234fa03ceaa045d308d4efcde175
 
 应用采用分层架构设计，分为三层：UI层、业务逻辑层、原生播放层，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/fuXTXQfWQ06zpvLzijI4Lg/zh-cn_image_0000002723216979.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/d_fd_poNSzWsmpx46o1Jkw/zh-cn_image_0000002723216979.png "点击放大")
 
 **UI层**：负责界面展示和用户交互，包括播放器页面、章节列表、歌词显示、控制按钮等组件。
 
@@ -37,7 +37,7 @@ content_hash: sha256:895ef733e6d61fd27410cca3a1d7c3f234fa03ceaa045d308d4efcde175
 
 音频播放是听书场景的基础功能，支持播放控制、进度拖拽跳转、设置倍速等操作，播放效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/YG4aA30PSHyWBnh-fi67Vg/zh-cn_image_0000002723336889.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/aUk1et_QRcS5V5wEIQmQww/zh-cn_image_0000002723336889.gif "点击放大")
 
 ### 实现原理
 
@@ -221,7 +221,7 @@ void OHAudioPlayer::ReleasePlayer() {
 
 在音频跳转时，需要同步刷新内容页面，使页面的内容与音频播放的内容保持一致，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/aHCnZo6hRoGwkodDCCit3w/zh-cn_image_0000002693697414.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/7Z_9YDtVQt2T0TS-GU1nlQ/zh-cn_image_0000002693697414.gif "点击放大")
 
 ### 实现原理
 
@@ -564,7 +564,7 @@ public async unregisterSessionListener() {
 
 ### 开发步骤
 
-1.在entry/src/main/module.json5 中，声明后台运行权限。
+1.在entry/src/main/module.json5中，声明后台运行权限。
 
 ```json
 "requestPermissions": [
@@ -960,7 +960,7 @@ public async stopCasting(): Promise<void> {
 
 用户在应用内播放后，上滑结束应用进程，再进入播控中心，点击播放键正常拉起应用播放。冷启动效果如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/mYQlgHK5SjGeFJ3T3DKkdA/zh-cn_image_0000002693537546.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/eoaTs5LuQ0GgDPH7wmlVBg/zh-cn_image_0000002693537546.gif "点击放大")
 
 ### 实现原理
 
@@ -1072,7 +1072,7 @@ async onExecuteInUIAbilityBackgroundMode(intentName: string, intentParam: Record
 
 ### 实现原理
 
-当音频流申请或释放音频焦点时，系统依据音频焦点策略，对所有音频流（包括播放和录制）实施焦点管理，详细内容可以参考[音频焦点管理解决方案](bpta-audio-focus-management.md#section8293123971116)。
+当音频流申请或释放音频焦点时，系统依据音频焦点策略，对所有音频流（包括播放和录制）实施焦点管理，详细内容可以参考[音频焦点管理解决方案](../doccenter-feature-dev/bpta-audio-focus-management.md)。
 
 ### 开发步骤
 
@@ -1139,7 +1139,7 @@ void OnAudioInterruptEvent(OH_AudioRenderer *audioRenderer, [[maybe_unused]] voi
 }
 ```
 
-2.在InitPlayer() 方法中，注册音频打断回调。
+2.在InitPlayer()方法中，注册音频打断回调。
 
 ```cpp
 (void)OH_AudioStreamBuilder_SetRendererInterruptCallback(rendererBuilder, OnAudioInterruptEvent, nullptr);

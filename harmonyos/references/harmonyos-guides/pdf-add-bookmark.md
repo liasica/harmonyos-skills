@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-add-bookm
 title: 添加、删除书签
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 添加、删除书签
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:52+08:00
+scraped_at: 2026-10-29T07:57:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0990589401578678c5af60738d10d2a3e4ca97c91787a16bbd9d72c0c34eff75
+content_hash: sha256:0361b420a0d83654ff8eb96726b57bf99d039e8b16ecee5ee1faf7b42bb90162
 ---
 
 PDF Kit支持添加和删除PDF文档书签。
 
 添加书签时，可设置标题、颜色，是否粗体、斜体、跳转信息等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/yfIQ2HR0RVe3E8IK9C2lZQ/zh-cn_image_0000002800986551.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/ZBzoy4AuSt66epsO9koalA/zh-cn_image_0000002803265293.png)
 
 ## 接口说明
 

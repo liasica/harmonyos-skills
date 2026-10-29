@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-autho
 title: 扫码授权登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 扫码授权登录
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:39+08:00
+scraped_at: 2026-10-29T07:57:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9633a78868e46a62b1c27ff98fdf6b7bc1a2a17599ac8df6d21c680e1139d6e9
+content_hash: sha256:0898b40f4c8f5645f1c3ca401611f48d8c79f034158593707c635c02350ba98a
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:9633a78868e46a62b1c27ff98fdf6b7bc1a2a17599ac8df6d21c680e113
 
 扫码授权登录的整体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/v5YNn4EWToyPflMHFQMeVg/zh-cn_image_0000002800986191.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/6Si3PmHWTF6UuQ8cqWUTpw/zh-cn_image_0000002803264931.png)
 
 ### 步骤说明
 

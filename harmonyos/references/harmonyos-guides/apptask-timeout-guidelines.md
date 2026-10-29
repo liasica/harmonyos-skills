@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apptask-timeo
 title: 任务超时检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 任务超时检测
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:21+08:00
+scraped_at: 2026-10-29T07:57:09+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:98b4aca1f5bdcdfd17edb0781079329ceda480847d347adaea8d077b9dd0d891
+content_hash: sha256:cce06cf708cf024232a9879ec4097232e73448810955585b5c1e95e309a7245c
 ---
 
 ## 简介
@@ -43,26 +43,26 @@ content_hash: sha256:98b4aca1f5bdcdfd17edb0781079329ceda480847d347adaea8d077b9dd
 
    （1）第1轮检测到主线程处理超时（主线程处理时长 > 150ms），开始执行堆栈采集，每隔150ms采集1次堆栈，共采集10次堆栈，第11轮收集堆栈并上报事件，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/d7Cc3JuFQg2Y5xEm-KYRtQ/zh-cn_image_0000002800985863.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/yLKg-uvVTq2kgceefZFpyg/zh-cn_image_0000002803264603.png)
 
    （2）第1轮未检测到主线程处理超时（主线程处理时长 > 150ms），第2轮检测到主线程处理超时（主线程处理时长 > 150ms），开始执行堆栈采集流程，每隔150ms采集1次，共采集10次堆栈，第12轮收集堆栈并上报事件，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/msHuFfS4QbaCHyJIn3OOEQ/zh-cn_image_0000002771825974.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/BU3XSI47RceXi_ReZXz3ew/zh-cn_image_0000002803224513.png)
 
    （3）前2轮均未检测到主线程处理超时（主线程处理时长 > 150ms），结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/9tWC5pL2QRiEvDjWOslkfA/zh-cn_image_0000002801105787.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/WhvBILPJRQKA_3Ar3fu0Hw/zh-cn_image_0000002774064794.png)
 2. trace采集流程
 
    当主线程处理超时（主线程处理时长 > 450ms），调用开启trace采集接口，启动周期性检测，每隔150ms检测主线程处理时长超过150ms（检测轮数 = 20）。分两种情况：
 
    （1）20轮均未检测到主线程处理超时（主线程处理时长 > 150ms），无trace文件生成，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/_tBjkA7ISSaBtP3ZYCzq0w/zh-cn_image_0000002771666008.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/dzTzsJbpS3O91Eh4lzQ4oQ/zh-cn_image_0000002773904822.png)
 
    （2）20轮检测至少有一轮检测发生主线程处理超时（主线程处理时长 > 150ms），生成trace文件并上报事件，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/lpJr3YJ1SL-PlIte0kJ-Bg/zh-cn_image_0000002800985865.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/bP_3pI3CRpO1_oaM7Bhg8Q/zh-cn_image_0000002803264605.png)
 
 ### 日志获取
 
@@ -179,7 +179,7 @@ HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](hia
 
 检测原理如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/crwtk2cdRWWxtUj-UE8EkA/zh-cn_image_0000002771825976.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/UCwxBXFASg-6c8GBqb7Kvg/zh-cn_image_0000002803224515.png)
 
 ### 日志获取
 

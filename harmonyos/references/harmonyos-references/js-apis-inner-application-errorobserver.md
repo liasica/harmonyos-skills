@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: ErrorObserver
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > ErrorObserver
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:35+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c2570ee82cabb15a48f4f4b909c7dfdbfcd0dee12fb4f749a39358ee9fbeeb02
+scraped_at: 2026-10-29T07:58:58+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:5451cd2a96319702f14a0f925b8a14be5462951a89d64070aa8196eba4319c1c
 ---
 
 定义异常监听，可以作为[errorManager.on('error')](js-apis-app-ability-errormanager.md#errormanageronerror)的入参监听当前应用发生的异常。通过异常监听，开发者可以及时捕获和处理应用运行时的未捕获异常及JS层上报的异常，提升应用的稳定性和用户体验。
@@ -75,7 +75,7 @@ onException?(errObject: Error): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| errObject | Error | 是 | 有关异常事件名字、消息和错误堆栈信息的对象。 |
+| errObject | Error | 是 | 有关异常事件名字、消息和错误堆栈信息的对象。当前仅支持默认的Error对象（包含name、message和stack），不支持自定义修改、继承或扩展。 |
 
 **示例：**
 

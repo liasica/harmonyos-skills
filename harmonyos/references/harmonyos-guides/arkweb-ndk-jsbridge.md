@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-ndk-js
 title: 应用侧与前端页面的相互调用(C/C++)
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 应用侧与前端页面的相互调用(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:57+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:675e99eabbc8f02fa3e9a68b9a3738ed40ad14cb82fc8797f6abf7d4ae602c5f
+scraped_at: 2026-10-29T07:56:41+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:88a69579fa8ed61617262af158d37e2cda00dc89a976e3a2a8b00132ee99ba8d
 ---
 
 本指导适用于ArkWeb应用侧与前端网页通信场景，开发者可根据应用架构选择使用ArkWeb Native接口完成业务通信机制（以下简称Native JSBridge）。
@@ -16,13 +16,13 @@ content_hash: sha256:675e99eabbc8f02fa3e9a68b9a3738ed40ad14cb82fc8797f6abf7d4ae6
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_ComponentAPI](../harmonyos-references/capi-web-arkweb-componentapi.md)实现JSBridge功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/-a1UX6XfTrGBD0HowWcqAg/zh-cn_image_0000002800985485.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/MpXw1RVgS36qL55lelx3SQ/zh-cn_image_0000002803264225.png)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS JSBridge接口。
 
 左图是使用ArkTS JSBridge接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native JSBridge接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/GhS-chVkTKuFGhahUzJt6w/zh-cn_image_0000002771825596.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/x63HK1etQR6BwKXnj7ZPEg/zh-cn_image_0000002803224135.png)
 
 Native JSBridge方案解决了ArkTS环境的冗余切换，同时允许回调在非UI线程上运行，避免造成UI阻塞。
 
@@ -52,7 +52,7 @@ Native JSBridge方案解决了ArkTS环境的冗余切换，同时允许回调在
   webTag: string = 'ArkWeb1';
   controller: webview.WebviewController = new webview.WebviewController(this.webTag);
   // ...
-  // 在aboutToAppear方法中，通过Node-API接口将webTag传入C++侧，C++侧使用webTag作为ArkWeb组件的唯一标识
+  // aboutToAppear中将webTag通过Node-API接口传入C++侧，作为C++侧ArkWeb组件的唯一标识
   aboutToAppear() {
     console.info('aboutToAppear');
     //初始化web Native Development Kit
@@ -76,7 +76,7 @@ Native JSBridge方案解决了ArkTS环境的冗余切换，同时允许回调在
       size_t webTagLength = 0;
       napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
       OH_LOG_Print(
-          LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
+          LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
           "Native Development Kit NativeWebInit webTag:%{public}s", webTagValue);
 
       // 将webTag保存在实例对象中
@@ -410,7 +410,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit RunJavaScriptCallback webTag:%{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit RunJavaScriptCallback userData is nullptr");
           return;
       }
@@ -418,7 +418,7 @@ controller->runJavaScript(webTagValue, &object);
       if (auto jsb_ptr = jsb_weak_ptr.lock()) {
           jsb_ptr->RunJavaScriptCallback(result);
       } else {
-          OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+          OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
                        "Native Development Kit RunJavaScriptCallback jsb_weak_ptr lock failed");
       }
   }
@@ -432,7 +432,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit ProxyMethod1 webTag:%{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ProxyMethod1 userData is nullptr");
           return nullptr;
       }
@@ -441,7 +441,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->ProxyMethod1(dataArray, arraySize);
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ProxyMethod1 jsb_weak_ptr lock failed");
       }
 
@@ -458,7 +458,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit ProxyMethod2 webTag:%{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ProxyMethod2 userData is nullptr");
           return nullptr;
       }
@@ -476,7 +476,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->ProxyMethod2(dataArray, arraySize);
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ProxyMethod2 JsWeakPtr lock failed");
       }
 
@@ -492,7 +492,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit ValidCallback webTag: %{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ValidCallback userData is nullptr");
           return;
       }
@@ -501,7 +501,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->SaySomething("ValidCallback");
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ValidCallback jsb_weak_ptr lock failed");
       }
       
@@ -529,7 +529,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit LoadStartCallback webTag: %{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit LoadStartCallback userData is null");
           return;
       }
@@ -538,7 +538,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->SaySomething("LoadStartCallback");
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
               "ArkWeb", "Native Development Kit LoadStartCallback jsb_weak_ptr lock failed");
       }
   }
@@ -550,7 +550,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit LoadEndCallback webTag: %{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit LoadEndCallback userData is nullptr");
           return;
       }
@@ -559,7 +559,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->SaySomething("LoadEndCallback");
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit LoadEndCallback jsb_weak_ptr lock failed");
       }
   }
@@ -568,10 +568,10 @@ controller->runJavaScript(webTagValue, &object);
   {
       OH_LOG_Print(
           LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-          "Native Development Kit DestoryCallback webTag: %{public}s", webTag);
+          "Native Development Kit DestroyCallback webTag: %{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit DestroyCallback userData is nullptr");
           return;
       }
@@ -580,7 +580,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->SaySomething("DestroyCallback");
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit DestroyCallback jsb_weak_ptr lock failed");
       }
   }
@@ -627,7 +627,7 @@ controller->runJavaScript(webTagValue, &object);
       size_t webTagLength = 0;
       napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
       OH_LOG_Print(
-          LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
+          LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
           "Native Development Kit NativeWebInit webTag:%{public}s", webTagValue);
 
       // 将webTag保存在实例对象中
@@ -638,16 +638,16 @@ controller->runJavaScript(webTagValue, &object);
 
       controller = reinterpret_cast<ArkWeb_ControllerAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_CONTROLLER));
       if (controller)
-          OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "get ArkWeb_ControllerAPI success");
+          OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "get ArkWeb_ControllerAPI success");
 
       component = reinterpret_cast<ArkWeb_ComponentAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_COMPONENT));
       if (component)
-          OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "get ArkWeb_ComponentAPI success");
+          OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "get ArkWeb_ComponentAPI success");
 
       javaScriptValueApi =
           reinterpret_cast<ArkWeb_JavaScriptValueAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_JAVASCRIPT_VALUE));
       if (javaScriptValueApi)
-          OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "get ArkWeb_JavaScriptValueAPI success");
+          OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "get ArkWeb_JavaScriptValueAPI success");
       else
           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "get ArkWeb_JavaScriptValueAPI failed");
 
@@ -772,7 +772,7 @@ controller->runJavaScript(webTagValue, &object);
           "JSBridgeObject StaticRunJavaScriptCallback webTag:%{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "JSBridgeObject StaticRunJavaScriptCallback userData is nullptr");
           return;
       }
@@ -782,7 +782,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->RunJavaScriptCallback(result.c_str());
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "JSBridgeObject StaticRunJavaScriptCallback jsb_weak_ptr lock failed");
       }
   }
@@ -834,25 +834,25 @@ controller->runJavaScript(webTagValue, &object);
 * ArkWeb组件声明在ArkTS侧，需要用户自定义一个标识webTag，并将webTag通过Node-API传至应用Native侧，后续ArkWeb Native接口使用，均需webTag作为对应组件的唯一标识。
 * ArkTS侧
 
-  ```js
+  ```typescript
   // 自定义webTag，在WebviewController创建时作为入参传入，建立controller与webTag的映射关系
   webTag: string = 'ArkWeb1';
   controller: webview.WebviewController = new webview.WebviewController(this.webTag);
   // ...
   // aboutToAppear中将webTag通过Node-API接口传入C++侧，作为C++侧ArkWeb组件的唯一标识
   aboutToAppear() {
-    console.info("aboutToAppear")
-    //初始化web ndk
+    console.info('aboutToAppear');
+    //初始化web Native Development Kit
     testNapi.nativeWebInit(this.webTag);
   }
-  // ...
   ```
 * C++侧
 
   ```
   // 解析存储webTag
-  static napi_value NativeWebInit(napi_env env, napi_callback_info info) {
-      OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInit start");
+  static napi_value NativeWebInit(napi_env env, napi_callback_info info)
+  {
+      OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Native Development Kit NativeWebInit start");
       size_t argc = 1;
       napi_value args[1] = {nullptr};
       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -862,7 +862,9 @@ controller->runJavaScript(webTagValue, &object);
       char *webTagValue = new (std::nothrow) char[webTagSize + 1];
       size_t webTagLength = 0;
       napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
-      OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInit webTag:%{public}s", webTagValue);
+      OH_LOG_Print(
+          LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+          "Native Development Kit NativeWebInit webTag:%{public}s", webTagValue);
 
       // 将webTag保存在实例对象中
       jsbridge_object_ptr = std::make_shared<JSBridgeObject>(webTagValue);
@@ -888,29 +890,26 @@ component = reinterpret_cast<ArkWeb_ComponentAPI *>(OH_ArkWeb_GetNativeAPI(ARKWE
 
 ```
 if (!ARKWEB_MEMBER_MISSING(component, onControllerAttached)) {
-    component->onControllerAttached(webTagValue, ValidCallback,
-                                    static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
+    component->onControllerAttached(
+        webTagValue, ValidCallback, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
 } else {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onControllerAttached func not exist");
 }
 
 if (!ARKWEB_MEMBER_MISSING(component, onPageBegin)) {
-    component->onPageBegin(webTagValue, LoadStartCallback,
-                                    static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
+    component->onPageBegin(webTagValue, LoadStartCallback, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
 } else {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onPageBegin func not exist");
 }
 
 if (!ARKWEB_MEMBER_MISSING(component, onPageEnd)) {
-    component->onPageEnd(webTagValue, LoadEndCallback,
-                                    static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
+    component->onPageEnd(webTagValue, LoadEndCallback, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
 } else {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onPageEnd func not exist");
 }
 
 if (!ARKWEB_MEMBER_MISSING(component, onDestroy)) {
-    component->onDestroy(webTagValue, DestroyCallback,
-                                    static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
+    component->onDestroy(webTagValue, DestroyCallback, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
 } else {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onDestroy func not exist");
 }
@@ -922,11 +921,12 @@ if (!ARKWEB_MEMBER_MISSING(component, onDestroy)) {
 
 ```
 // 注册对象
-OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk RegisterJavaScriptProxy begin");
+OH_LOG_Print(
+    LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Native Development Kit registerJavaScriptProxy begin");
 ArkWeb_ProxyMethod method1 = {"method1", ProxyMethod1, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
 ArkWeb_ProxyMethod method2 = {"method2", ProxyMethod2, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
 ArkWeb_ProxyMethod methodList[2] = {method1, method2};
-// 调用ndk接口注册对象
+// 调用Native Development Kit接口注册对象
 // 如此注册的情况下，在H5页面就可以使用proxy.method1、proxy.method2调用此文件下的ProxyMethod1和ProxyMethod2方法了
 ArkWeb_ProxyObject proxyObject = {"ndkProxy", methodList, 2};
 controller->registerJavaScriptProxy(webTag, &proxyObject);
@@ -1132,7 +1132,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit RunJavaScriptCallback webTag:%{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit RunJavaScriptCallback userData is nullptr");
           return;
       }
@@ -1140,7 +1140,7 @@ controller->runJavaScript(webTagValue, &object);
       if (auto jsb_ptr = jsb_weak_ptr.lock()) {
           jsb_ptr->RunJavaScriptCallback(result);
       } else {
-          OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+          OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
                        "Native Development Kit RunJavaScriptCallback jsb_weak_ptr lock failed");
       }
   }
@@ -1154,7 +1154,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit ProxyMethod1 webTag:%{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ProxyMethod1 userData is nullptr");
           return;
       }
@@ -1163,7 +1163,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->ProxyMethod1(dataArray, arraySize);
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ProxyMethod1 jsb_weak_ptr lock failed");
       }
   }
@@ -1176,7 +1176,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit ProxyMethod2 webTag:%{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ProxyMethod2 userData is nullptr");
           return;
       }
@@ -1194,7 +1194,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->ProxyMethod2(dataArray, arraySize);
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ProxyMethod2 JsWeakPtr lock failed");
       }
   }
@@ -1206,7 +1206,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit ValidCallback webTag: %{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ValidCallback userData is nullptr");
           return;
       }
@@ -1215,7 +1215,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->SaySomething("ValidCallback");
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit ValidCallback jsb_weak_ptr lock failed");
       }
       
@@ -1240,7 +1240,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit LoadStartCallback webTag: %{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit LoadStartCallback userData is null");
           return;
       }
@@ -1249,7 +1249,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->SaySomething("LoadStartCallback");
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
               "ArkWeb", "Native Development Kit LoadStartCallback jsb_weak_ptr lock failed");
       }
   }
@@ -1261,7 +1261,7 @@ controller->runJavaScript(webTagValue, &object);
           "Native Development Kit LoadEndCallback webTag: %{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit LoadEndCallback userData is nullptr");
           return;
       }
@@ -1270,7 +1270,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->SaySomething("LoadEndCallback");
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit LoadEndCallback jsb_weak_ptr lock failed");
       }
   }
@@ -1279,10 +1279,10 @@ controller->runJavaScript(webTagValue, &object);
   {
       OH_LOG_Print(
           LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-          "Native Development Kit DestoryCallback webTag: %{public}s", webTag);
+          "Native Development Kit DestroyCallback webTag: %{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit DestroyCallback userData is nullptr");
           return;
       }
@@ -1291,7 +1291,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->SaySomething("DestroyCallback");
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "Native Development Kit DestroyCallback jsb_weak_ptr lock failed");
       }
   }
@@ -1338,7 +1338,7 @@ controller->runJavaScript(webTagValue, &object);
       size_t webTagLength = 0;
       napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
       OH_LOG_Print(
-          LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
+          LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
           "Native Development Kit NativeWebInit webTag:%{public}s", webTagValue);
 
       // 将webTag保存在实例对象中
@@ -1465,7 +1465,7 @@ controller->runJavaScript(webTagValue, &object);
           "JSBridgeObject StaticRunJavaScriptCallback webTag:%{public}s", webTag);
       if (!userData) {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "JSBridgeObject StaticRunJavaScriptCallback userData is nullptr");
           return;
       }
@@ -1475,7 +1475,7 @@ controller->runJavaScript(webTagValue, &object);
           jsb_ptr->RunJavaScriptCallback(result.c_str());
       } else {
           OH_LOG_Print(
-              LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+              LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb",
               "JSBridgeObject StaticRunJavaScriptCallback jsb_weak_ptr lock failed");
       }
   }

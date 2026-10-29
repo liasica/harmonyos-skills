@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 创建对象类型
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云数据库 > 创建对象类型
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:19+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:23c70f3fec45be07d11a8503710ad2e13f4816e024eda9aad5fd7cc7cc8dad60
+scraped_at: 2026-10-29T07:58:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:f0bf3ef47efafc5b7b4e2189b64c328042920d9ef98435e17b9cfedfc8644a13
 ---
 
 对象类型（ObjectType）用于定义存储对象的集合，不同的对象类型对应的不同数据结构。每创建一个对象类型，云数据库会在每个存储区实例化一个与之结构相对应的对象类型，用于存储对应的数据。
@@ -14,7 +14,7 @@ content_hash: sha256:23c70f3fec45be07d11a8503710ad2e13f4816e024eda9aad5fd7cc7cc8
 
 1. 右击“clouddb/objecttype”目录，选择“New > Cloud DB Object Type”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/c1RDyRXtQ-inIHtSJH7yZQ/zh-cn_image_0000002416494957.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Cd_97UK_TiSE2clYqUwmUw/zh-cn_image_0000002416494957.png)
 
 2. 输入对象类型名称（下文以“objecttype1”为例）后，点击“OK”。
 
@@ -26,11 +26,11 @@ content_hash: sha256:23c70f3fec45be07d11a8503710ad2e13f4816e024eda9aad5fd7cc7cc8
    * 必须以字母开头，以字母或者数字结尾，不允许以“sqlite\_”开头，不允许以下划线（\_）结尾。
    * 不允许使用如下系统保留名称： naturalbase\_metadata、objecttypeinfohelper、t\_data\_upgrade\_info、t\_index\_schema、t\_nstore\_config、t\_schema\_negotiate\_info、t\_metadata\_schema、t\_nstore\_permission、t\_system\_config。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/TN6glGrSQyirZiGUpidNuQ/zh-cn_image_0000002179498152.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/GNB08tACTLaVbxzVgeHozw/zh-cn_image_0000002179498152.png)
 
    “clouddb/objecttype”目录下生成并打开新建的对象类型JSON文件“objecttype1.json”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/ANLiighJSziTJXezCV-SjA/zh-cn_image_0000002179338468.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/7rv0baaTSxeKnIR-pqL-Yw/zh-cn_image_0000002179338468.png)
 3. 在“fields”中为该对象类型配置字段信息。
 
    | 参数 | 必选(M)/可选(O) | 说明 |
@@ -54,7 +54,7 @@ content_hash: sha256:23c70f3fec45be07d11a8503710ad2e13f4816e024eda9aad5fd7cc7cc8
    | price | Double | - | - | - | - |
    | publishTime | Date | - | - | - | - |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/8cgZGyLRTN-kLzmbC13CPw/zh-cn_image_0000002214858781.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/NblenpmNR46nKNx1h3ancw/zh-cn_image_0000002214858781.png)
 4. 在“indexes”中为该对象类型配置索引、索引包含的字段、以及索引包含的字段的排序方式。
 
    | 参数 | 必选(M)/可选(O) | 说明 |
@@ -70,12 +70,12 @@ content_hash: sha256:23c70f3fec45be07d11a8503710ad2e13f4816e024eda9aad5fd7cc7cc8
    | id\_Index | id | ASC |
    | price\_Index | price | DESC |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/E__FKeLkToSJlv65zwH5Uw/zh-cn_image_0000002179338460.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/rCxyV3PyQ0a8KENrcoP0yw/zh-cn_image_0000002179338460.png)
 5. 在“permissions”中设置各角色是否具有该对象类型的Read、Upsert（包含新增和修改）和Delete权限。
 
    | 参数 | 必选(M)/可选(O) | 说明 |
    | --- | --- | --- |
-   | role | M | 用户角色，包括：  * World：代表所有用户，包含认证和非认证用户。该角色默认拥有Read权限，可自定义配置Upsert和Delete权限。但是，不建议将Upsert和Delete权限配置给所有人角色。当对象类型中设置了加密字段之后，表示开启全程加密功能，此时所有人角色将不会拥有Read、Upsert和Delete权限，且不允许修改。 * Authenticated：经过AGC登录认证的用户。该角色默认拥有Read权限，可自定义配置Upsert和Delete权限。当对象类型中设置了加密字段之后，表示开启全程加密功能，此时认证用户角色将不会拥有Read、Upsert和Delete权限，且不允许修改。 * Creator：经过认证的数据创建用户。该角色默认拥有所有权限，且可自定义配置所有权限。每条数据都有其对应的数据创建人（即应用用户），每个数据创建者仅可以Upsert或者Delete自己创建的数据，不能Upsert或者Delete他人创建的数据。数据创建者的信息保存在数据记录的系统表中。 * Administrator：应用开发者，主要是指通过AGC控制台或FaaS（Function as a Service，函数即服务）侧访问云数据库的角色。该角色默认拥有所有权限，且可自定义配置所有权限。Administrator可以管理并配置其他角色的权限。 |
+   | role | M | 用户角色，包括：  * World：代表所有用户，包含认证和非认证用户。该角色默认拥有Read权限，可自定义配置Upsert和Delete权限。但是，不建议将Upsert和Delete权限配置给所有人角色。当对象类型中设置了加密字段之后，表示开启全程加密功能，此时所有人角色将不会拥有Read、Upsert和Delete权限，且不允许修改。 * Authenticated：经过HarmonyOS 开发者中心登录认证的用户。该角色默认拥有Read权限，可自定义配置Upsert和Delete权限。当对象类型中设置了加密字段之后，表示开启全程加密功能，此时认证用户角色将不会拥有Read、Upsert和Delete权限，且不允许修改。 * Creator：经过认证的数据创建用户。该角色默认拥有所有权限，且可自定义配置所有权限。每条数据都有其对应的数据创建人（即应用用户），每个数据创建者仅可以Upsert或者Delete自己创建的数据，不能Upsert或者Delete他人创建的数据。数据创建者的信息保存在数据记录的系统表中。 * Administrator：应用开发者，主要是指通过HarmonyOS 开发者中心或FaaS（Function as a Service，函数即服务）侧访问云数据库的角色。该角色默认拥有所有权限，且可自定义配置所有权限。Administrator可以管理并配置其他角色的权限。 |
    | rights | M | 授予角色的权限，包括Read、Upsert（包含新增和修改）和Delete权限。 |
 
    **说明** 
@@ -91,4 +91,4 @@ content_hash: sha256:23c70f3fec45be07d11a8503710ad2e13f4816e024eda9aad5fd7cc7cc8
    | Creator | √ | √ | √ |
    | Administrator | √ | √ | √ |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/QDTK9fYZQpq_rmx3k7dL4Q/zh-cn_image_0000002214858785.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/KTKQSxQWSZipG2RjTz1vSw/zh-cn_image_0000002214858785.png)

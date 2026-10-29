@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smooth-swi
 title: 在线短视频流畅切换
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 在线短视频流畅切换
 category: best-practices
-scraped_at: 2026-10-16T07:06:43+08:00
+scraped_at: 2026-10-29T08:03:20+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:e957364f94a8d9a93ca40e39ae4228d51652d4bbdc7fff621bd7c81eb19cb04e
+content_hash: sha256:7902b1a87c44d50ec0c5eeff59ce7fc54fd01e63aaafdff09e7a39cec19cf799
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:e957364f94a8d9a93ca40e39ae4228d51652d4bbdc7fff621bd7c81eb19
 
 **图1** **在线短视频滑动切换效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/D1n-zVQuTOuLpUA0Tmp_tQ/zh-cn_image_0000002229336849.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Ju3zteG_Seiju-cG3GuSuA/zh-cn_image_0000002229336849.gif "点击放大")
 
 ## 场景说明
 
@@ -97,13 +97,13 @@ AVPlayer：
 
 **图2** **功能时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/i3jMSJ2FRcGJj3DJRkp3UQ/zh-cn_image_0000002193851456.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ZqHceV6xQDeaSA-TJnKZaw/zh-cn_image_0000002193851456.png "点击放大")
 
 ### 在线短视频快速切换
 
 **图3** **实现流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/S4Ws_st_Rt2ge3hOAgiDEw/zh-cn_image_0000002229336837.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/yfNY2eXzQiWAoKc9pkoj0w/zh-cn_image_0000002229336837.png "点击放大")
 
 **关键点**
 
@@ -120,7 +120,7 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 在通过Swiper切换时，会根据当前轮询滑动的窗口索引index到缓存池中找到对应的视频（prepared阶段），直接进行播放，从而提高切换性能。
 
 **图4** **视频懒加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/-SdTh-HgThu5y5N61O9WVg/zh-cn_image_0000002229451329.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/LA_1jrSARFuFZBdP2erT2Q/zh-cn_image_0000002229451329.png "点击放大")
 
 **异步视频预加载**
 
@@ -129,12 +129,12 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 （1）本地播放一个短视频的耗时。
 
 **图5** **单视频加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/cB28z4RYRxK3neKYOZXAyQ/zh-cn_image_0000002229336853.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/W_nVY5C8SC-U1IKnNLx_6w/zh-cn_image_0000002229336853.png "点击放大")
 
 （2）播放视频A时，提前预加载视频B。切换短视频时，可以立即播放已预加载的视频B，从而减少切换时间，提升切换性能。
 
 **图6** **异步视频预加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ah-TELa_QuqBOrBAWcRW7Q/zh-cn_image_0000002229451333.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/6EUT1nb-TPuLOSJu53CeTA/zh-cn_image_0000002229451333.png "点击放大")
 
 **视频播放预启动接力**
 
@@ -147,7 +147,7 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 视频播放预启动接力：这种预加载机制的工作方式类似于接力赛跑。为了尽快完成接力，当第一个选手接近终点时，第二个选手会提前起跑并与第一个选手完美交接接力棒，从而减少整个接力赛的时间。短视频切换也是如此，如下图所示：
 
 **图7** **视频播放预启动接力****示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/N8Odjjn7Q9-7mfj7QqoiTA/zh-cn_image_0000002229336841.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/tvVdcp7uS2iBHRQ76MHcaw/zh-cn_image_0000002229336841.png "点击放大")
 
 **开发步骤**
 

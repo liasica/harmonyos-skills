@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-shopping-
 title: 多设备购物比价界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备购物比价界面
 category: best-practices
-scraped_at: 2026-10-16T07:06:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2df30f16035236ab2e15f44a85bd04bb9c1703479b4cdd02d4e4bcb8a92bd924
+scraped_at: 2026-10-29T08:03:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c55da89166de24939a00e9bff1a2e2fddb1bbe761565bdf50c6502310428e027
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:2df30f16035236ab2e15f44a85bd04bb9c1703479b4cdd02d4e4bcb8a92
 
 购物比价应用的UX设计可参考[电商购物类](../design-guides/responsive-design-examples5-0000001930419478.md)多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Z8PBNFsXQaObK6IbbtW9LA/zh-cn_image_0000002591755542.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/F_jqXSInTR-vhelfJbhWLw/zh-cn_image_0000002591755542.png "点击放大")
 
 ## 工程管理
 
@@ -100,14 +100,14 @@ content_hash: sha256:2df30f16035236ab2e15f44a85bd04bb9c1703479b4cdd02d4e4bcb8a92
    │           ├──defaultbackupability                           // 备份扩展 Ability
    │           ├──pages                                          // 页面（首页、分类、商详、直播等）
    │           └──shopsecondability                              // 分屏副窗入口 Ability
-   └──pc                                                         // PC 端产品
+   └──pc                                                         // 电脑端产品
       └──src
          └──main
             └──ets
-               ├──pages                                          // PC 页面
-               ├──pcability                                       // PC 入口 Ability
-               ├──pcbackupability                                 // PC 备份扩展
-               └──shopsecondability                                // PC 分屏副窗入口 Ability
+               ├──pages                                          // 电脑页面
+               ├──pcability                                      // 电脑入口 Ability
+               ├──pcbackupability                                // 电脑备份扩展
+               └──shopsecondability                              // 电脑分屏副窗入口 Ability
 ```
 
 ## 移动端页面
@@ -183,11 +183,11 @@ content_hash: sha256:2df30f16035236ab2e15f44a85bd04bb9c1703479b4cdd02d4e4bcb8a92
 | 1 | 商品大图 | 使用[Swiper](../harmonyos-references/ts-container-swiper.md)组件实现，指定displayCount属性实现延伸能力，设置aspectRatio属性实现缩放能力。 |
 | 2 | 商品详细信息 | 商品大图区域与商品详细信息区域在sm和md断点下使用Column组件呈上下布局，在lg和xl断点下使用Row组件呈左右布局。 |
 | 3 | 购买工具栏 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现，剩余空间按比例分配给加入购物袋与购买按钮，用layoutWeight属性实现自适应布局占比能力。 |
-| 4 | 直播画中画 | 使用[PiPWindow](../harmonyos-references/js-apis-pipwindow.md)实现画中画功能，启动、停止小窗直播及控制视频播放。 |
+| 4 | 直播画中画 | 使用[@ohos.PiPWindow (画中画窗口)](../harmonyos-references/js-apis-pipwindow.md)实现画中画功能，启动、停止小窗直播及控制视频播放。 |
 
 商品详情页在折叠屏上提供分屏功能，满足用户同时查看两个商品详细参数进行比价的需求。分屏功能通过创建新的UIAbility并设置窗口显示为分屏模式实现。分屏后，左右屏幕的宽度比例为1:1。双折叠上的效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/zTIlIycwRgaAzs3s6nNQAQ/zh-cn_image_0000002622155223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/5_ShYpTdRWKvXQANzySzeQ/zh-cn_image_0000002622155223.png "点击放大")
 
 ### 商品支付页
 
@@ -201,7 +201,7 @@ content_hash: sha256:2df30f16035236ab2e15f44a85bd04bb9c1703479b4cdd02d4e4bcb8a92
 
 ### 直播间页
 
-直播画面与推荐商品信息应根据不同设备的屏幕尺寸进行多端响应式适配。结合各设备上直播间页面的UX设计图，建议进行如下设计
+直播画面与推荐商品信息应根据不同设备的屏幕尺寸进行多端响应式适配。结合各设备上直播间页面的UX设计图，可进行如下设计
 
 |  | sm | md | lg |
 | --- | --- | --- | --- |
@@ -238,14 +238,14 @@ content_hash: sha256:2df30f16035236ab2e15f44a85bd04bb9c1703479b4cdd02d4e4bcb8a92
 
 * 窗口模式
 
-  长视频应用在电脑端上支持全屏和自由窗口两种模式，具体实现可参考[窗口模式](bpta-multi-device-window-mode.md)。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏和自由窗口模式下的布局。
+  购物比价应用在电脑端上支持全屏和自由窗口两种模式，具体实现可参考[窗口模式](bpta-multi-device-window-mode.md)。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏和自由窗口模式下的布局。
 * 窗口沉浸式
 
   根据UX设计规范，需要实现全屏和自由窗口下的沉浸式效果，具体实现可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。全屏模式下，通过[window.setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现沉浸式。自由窗口模式下，通过[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使页面内容延伸至标题栏区域，实现沉浸式显示效果。
 
 ### 首页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/0AKljpXbSl2C0ogevhv4ww/zh-cn_image_0000002591595638.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/BJBiQ53mT9emFWCRBQnrvg/zh-cn_image_0000002591595638.png "点击放大")
 
 使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)代替[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)作为导航，其余feature层代码复用，自由窗口的布局会复用断点进行适配，可以使自由窗口无论何时都有较好的布局效果。
 

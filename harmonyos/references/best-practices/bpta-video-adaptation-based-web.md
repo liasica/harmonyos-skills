@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-adap
 title: Web页面视频适配
 breadcrumb: 最佳实践 > 应用框架 > ArkWeb > Web页面视频适配
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e3d010
+scraped_at: 2026-10-29T08:03:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:dac9953926f5f46418ca6d175e3cfc6875af96d2d5cac540b6130ada2f01b801
 ---
 
 ## 概述
@@ -24,12 +24,12 @@ content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e
 
 **图1** 默认情况下进入视频全屏播放效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/e7gmULqhTK-zfqfBirTsSQ/zh-cn_image_0000002651587052.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/vyfNl-UaTbGhGJJFm8jbEg/zh-cn_image_0000002651587052.gif)
 
 ### 实现原理
 
 **图2** Web页面适配全屏播放视频流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/M8PercOJTzOuQjSFQPsWhw/zh-cn_image_0000002229335673.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/4mdoRSjgT9eO5lteRi7FPg/zh-cn_image_0000002229335673.png "点击放大")
 
 全屏播放视频首先需要Web页面做沉浸式展示，才能保证在进入全屏显示后，视频能够在非安全区展示。具体实现可以参考[开发应用沉浸式效果](../harmonyos-guides/arkts-develop-apply-immersive-effects.md)。
 
@@ -43,7 +43,7 @@ content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e
 * 若为使用Navigation加载的页面，则可在NavDestination的[onBackPressed()](../harmonyos-references/ts-basic-components-navdestination.md#onbackpressed10)回调中，同样通过调用[exitFullScreen()](../harmonyos-references/arkts-apis-webview-nativemediaplayerbridge.md#exitfullscreen12)退出全屏。
 
 **图3** Web页面适配全屏播放效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/HFk_jNAITWSR4uZ91LvvRg/zh-cn_image_0000002681626841.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/bGfAEB1EQdel4SsguzheOA/zh-cn_image_0000002681626841.gif)
 
 ### 实现步骤
 
@@ -98,7 +98,7 @@ content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e
        // ...
    }
    ```
-3. 设置Web组件的[onFullScreenEnter()](../harmonyos-references/arkts-basic-components-web-events.md#onfullscreenenter9)方法，在方法内通过刚刚定义的changeOrientation()方法改变设备的横竖屏状态，设置屏幕方向为[window.Orientation.LANDSCAPE](../harmonyos-references/js-apis-display.md#orientation10)（横屏显示模式）。此时需要存储event中的[handler](../harmonyos-references/arkts-basic-components-web-i.md#fullscreenenterevent12)，该函数句柄中存储了退出全屏的方法[exitFullScreen()](../harmonyos-references/arkts-basic-components-web-fullscreenexithandler.md#exitfullscreen9)。
+3. 设置Web组件的[onFullScreenEnter()](../harmonyos-references/arkts-basic-components-web-events.md#onfullscreenenter9)方法，在方法内通过刚刚定义的changeOrientation()方法改变设备的横竖屏状态，将屏幕方向设置为[@ohos.window（窗口）](../doccenter-references/api/js-apis-window.md)中[Orientation](../harmonyos-references-V5/js-apis-window-V5.md#orientation9)的LANDSCAPE属性。此时需要存储event中的[handler](../harmonyos-references/arkts-basic-components-web-i.md#fullscreenenterevent12)，该函数句柄中存储了退出全屏的方法[exitFullScreen()](../harmonyos-references/arkts-basic-components-web-fullscreenexithandler.md#exitfullscreen9)。
 
    ```screen
    @Entry
@@ -130,7 +130,7 @@ content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e
 
 **退出全屏播放**
 
-1. 设置Web组件的[onFullScreenExit()](../harmonyos-references/arkts-basic-components-web-events.md#onfullscreenexit9)回调，在回调内通过changeOrientation()方法改变设备的横竖屏状态，设置屏幕方向为[window.Orientation.PORTRAIT](../harmonyos-references/js-apis-display.md#orientation10)（竖屏显示模式）。
+1. 设置Web组件的[onFullScreenExit()](../harmonyos-references/arkts-basic-components-web-events.md#onfullscreenexit9)回调，在回调内通过changeOrientation()方法改变设备的横竖屏状态，将屏幕方向设置为[@ohos.window（窗口）](../doccenter-references/api/js-apis-window.md)中[Orientation](../harmonyos-references-V5/js-apis-window-V5.md#orientation9)的PORTRAIT属性。
 
    ```screen
    Web({
@@ -162,14 +162,14 @@ content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e
 长按复制视频链接经常被应用于社交分享的场景，用户在应用内看到感兴趣的视频内容希望分享给周边的人，通过长按希望分享的视频选中“复制视频链接地址”选项，可以帮助用户快捷准确地获取到视频的链接地址。
 
 **图4** 长按复制视频链接地址效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/3CtWyov2RJKf9Eq6GIY5RA/zh-cn_image_0000002651427152.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/lW64xaN2RzapvGaOpgqiNw/zh-cn_image_0000002651427152.gif)
 
 ### 实现原理
 
 长按复制视频链接功能在实现上有以下两个关键部分。
 
-* 长按菜单功能主要依靠[bindPopup()](../harmonyos-references/ts-universal-attributes-popup.md#bindpopup)实现，该方法能为组件绑定popup弹窗，并通过布尔类型的状态变量控制弹窗的打开关闭，开发者可以通过设置[CustomPopupOptions](../harmonyos-references/ts-universal-attributes-popup.md#custompopupoptions8类型说明)定制弹窗内容与样式。
-* 复制视频链接功能主要依靠[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)回调，该回调会在长按特定页面元素（图片、视频、链接等）时被调用，其事件参数中会携带长按元素的相关属性，对于视频而言，可通过[event.param.getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)获取到视频地址，并通过改变弹窗控制的状态变量来打开弹窗。在点击“复制视频链接地址”时将该链接地址通过[setData()](../harmonyos-references/js-apis-pasteboard.md#setdata9)方法写入系统剪贴板。
+* 长按菜单功能主要依靠[bindPopup()](../harmonyos-references/ts-universal-attributes-popup.md#bindpopup)实现，该方法能为组件绑定Popup弹窗，并通过布尔类型的状态变量控制弹窗的打开关闭，开发者可以通过设置[CustomPopupOptions](../harmonyos-references/ts-universal-attributes-popup.md#custompopupoptions8类型说明)定制弹窗内容与样式。
+* 复制视频链接功能主要依靠[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)回调，该回调会在长按特定页面元素（图片、视频、链接等）时被调用，其事件参数中会携带长按元素的相关属性，对于视频而言，可通过事件参数的[getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)方法获取到视频地址，并通过改变弹窗控制的状态变量来打开弹窗。在点击“复制视频链接地址”时将该链接地址通过[setData()](../harmonyos-references/js-apis-pasteboard.md#setdata9)方法写入系统剪贴板。
 
 ### 开发步骤
 
@@ -216,7 +216,7 @@ content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e
      }
    }
    ```
-2. 定义isShow作为弹窗显示控制的状态变量，并为Web组件绑定popup弹窗。
+2. 定义isShow作为弹窗显示控制的状态变量，并为Web组件绑定Popup弹窗。
 
    ```screen
    @Entry
@@ -259,7 +259,7 @@ content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e
      }
    }
    ```
-3. 使用Web组件的[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)事件，当触发自定义弹窗时，通过事件参数[event.param.getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)获取到Web视频链接地址。
+3. 使用Web组件的[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)事件，当触发自定义弹窗时，通过事件参数的[getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)方法获取到Web视频链接地址。
 
    ```screen
    @Entry
@@ -327,11 +327,11 @@ content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e
 ### 实现原理
 
 **图5** 长按下载视频整体适配流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/uomnRdfXSf-uAI7eHcQGKg/zh-cn_image_0000002194009868.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/EJS-SwzQTxqskzjv6WCnfA/zh-cn_image_0000002194009868.png "点击放大")
 
-长按视频区域后，可通过在[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)接口中的事件参数[event.param.getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)获取到视频链接地址。
+长按视频区域后，可通过在[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)接口中事件参数的[getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)方法获取到视频链接地址。
 
-开发者可参考[使用Web组件的下载能力](../harmonyos-guides/web-download.md)，通过绑定[WebDownloadDelegate](../harmonyos-references/arkts-apis-webview-webdownloaddelegate.md)委托类进行下载控制与状态感知，该类会通过以下四个回调注册方法通知下载状态。
+开发者可参考[使用Web组件的下载能力](../harmonyos-guides/web-download.md)，通过绑定WebDownloadDelegate委托类（参考[Class (WebDownloadDelegate)](../doccenter-references/api/arkts-apis-webview-webdownloaddelegate.md)）进行下载控制与状态感知，该类会通过以下四个回调注册方法通知下载状态。
 
 * [onBeforeDownload()](../harmonyos-references/arkts-apis-webview-webdownloaddelegate.md#onbeforedownload11)：下载开始前的回调注册方法，方法内通常用于做下载前的校验，同时在该方法内还需要通过WebDownloadItem.start('xxx')方式指定下载路径。
 * [onDownloadUpdated()](../harmonyos-references/arkts-apis-webview-webdownloaddelegate.md#ondownloadupdated11)：下载过程中的回调注册方法，方法内通常用于维护下载过程中的状态变量，例如下载进度、下载速度等信息，并将这些信息可视化地呈现给用户。
@@ -341,11 +341,11 @@ content_hash: sha256:751741fcd20bda675ed9c99a669632aacd9c429f2cf288d3b896401455e
 通过Web组件关联的WebviewController调用[startDownload()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#startdownload11)并传入视频链接地址触发下载。
 
 **图6** 长按下载视频效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/nQmvfqANS0Gnk8FttA_v_w/zh-cn_image_0000002681786659.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/XxhWPkCLSQu0y66q4EFiew/zh-cn_image_0000002681786659.gif)
 
 ### 开发步骤
 
-1. 通过Web组件的[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)事件，在事件参数event中通过[event.param.getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)获取到视频链接地址。
+1. 通过Web组件的[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)事件，在事件参数event中通过[getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)方法获取到视频链接地址。
 
    ```screen
    @Entry

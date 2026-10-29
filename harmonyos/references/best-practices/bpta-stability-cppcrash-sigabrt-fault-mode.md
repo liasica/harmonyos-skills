@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGABRT进程主动终止故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGABRT进程主动终止故障模式说明
 category: best-practices
-scraped_at: 2026-10-16T07:06:50+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:75b0183950c9cb0199a682d7604a42a41a6862eb6bc5587ddf94f15214553c54
+scraped_at: 2026-10-29T08:03:25+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:8c23479f6f4cefa3368d0d371b07f9c9dd4ba22af7b043bfdc38a6e642e64e36
 ---
 
 ## 根因描述
@@ -81,7 +81,7 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
    说明2：通常认为标准库、系统库较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
 3. 参考[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)使用llvm-addr2line工具定位行号找到执行上下文。
 
-   通常用法为 llvm-addr2line -Cfie libentry.so 0000000000021e58，即可定位到代码行号，so为带符号版本。
+   通常用法为llvm-addr2line -Cfie libentry.so 0000000000021e58，即可定位到代码行号，so为带符号版本。
 
    证据3：从上往下跳过C库的调用栈，找到调用abort()函数的调用栈（#03层调用栈），从这里结合LastFatalMessage进行分析。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: NDK开发ArkTS侧编码规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 > NDK开发ArkTS侧编码规范
 category: best-practices
-scraped_at: 2026-10-16T07:06:54+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:b8f71e94001fa4c3dad288bcc6640fb4a6a43134e0b8f6b3ef69989c9e939be7
+scraped_at: 2026-10-29T08:03:28+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:8c47e4b7f9d2f39ed6d1c5409dd77a568085fd5c4e228d334eac4aaf5121e2dd
 ---
 
 ArkTS通过引用编译好的so文件来调用native方法。为避免不规范引用导致的运行时异常和故障排查成本，开发者应按照本文的标准进行引用。
@@ -27,13 +27,13 @@ NDK工程创建步骤及目录结构可参考：[创建NDK工程](../harmonyos-g
   "author": "",
   "license": "",
   "dependencies": {
-    // 依赖的so
+    // Dependent shared libraries
     "libentry.so": "file:./src/main/cpp/types/libentry"
   }
 }
 ```
 
-依赖文件中的so名称要与CMakeLists.txt文件中的模块名称一致。
+依赖文件中引用的so名称，要与CMakeLists.txt文件中定义的模块名称保持一致。
 
 模块根目录 > src > main > cpp > CMakeLists.txt
 
@@ -48,10 +48,10 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-# 声明一个产物libentry.so，SHARED表示产物为动态库，napi_init.cpp为产物的源代码              
+# Declare a shared library artifact named libentry.so, where SHARED indicates that the artifact is a dynamic library, and napi_init.cpp is the source code for the artifact.              
 add_library(entry SHARED napi_init.cpp)
 
-# 声明产物entry链接时需要的三方库libace_napi.z.so
+# Declare the third-party library libace_napi.z.so required for linking the artifact entry
 target_link_libraries(entry PUBLIC libace_napi.z.so)
 ```
 
@@ -113,7 +113,7 @@ export const add: (a: number, b: number) => number;
   "author": "",
   "license": "",
   "dependencies": {
-    // 依赖当前工程下的其它模块
+    // Depend on other modules within the current project
     "library": "file:../library"
   }
 }
@@ -138,7 +138,7 @@ ohpm install library --registry http://localhost:8088/repos/ohpm
   "author": "",
   "license": "",
   "dependencies": {
-    // 名称必须与远程模块名称相同
+    // The name must match the remote module name
     "library": "^2.0.0"
   },
   "devDependencies": {

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-cross-end-migration
 title: 跨端迁移
-breadcrumb: 最佳实践 > 自由流转 > 跨端迁移
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 跨端迁移
 category: best-practices
-scraped_at: 2026-10-16T07:06:41+08:00
-doc_updated_at: 2026-10-15
+scraped_at: 2026-10-29T08:03:11+08:00
+doc_updated_at: 2026-10-28
 content_hash: sha256:9ca458fec63d6d67b03772224ba62886ee05f76b46c2f9408ec868adffe6765e
 ---
 

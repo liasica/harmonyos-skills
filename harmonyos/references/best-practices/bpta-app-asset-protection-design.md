@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-asset-
 title: 应用资产保护设计
 breadcrumb: 最佳实践 > 安全设计 > 应用资产保护设计
 category: best-practices
-scraped_at: 2026-10-16T07:06:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ad5fe1464cfefdb0c472af65505b3725ef235a44cba82229d18ca58d6b13d12f
+scraped_at: 2026-10-29T08:03:30+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:2e03115717cf055cb0fd65d8503fefd1940c2fdaf671878921c6d0a06c4b968d
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ HarmonyOS应用资产包括代码、用户数据、安全密钥。数据库资�
 
 HarmonyOS安全能力全景图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/uMgUGTSZTwGyaJvHPOsZdQ/zh-cn_image_0000002194010336.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/9_jx2S58Q_-WpFPLF551_w/zh-cn_image_0000002194010336.png "点击放大")
 
 **系统安全：**
 
@@ -51,7 +51,7 @@ HarmonyOS应用是自身应用资产的责任方。应用需要按需使用Harmo
 
 移动应用的代码安全非常重要。DevEco Studio默认提供代码混淆能力。混淆后的JS、TS、ArkTS代码难以逆向分析。混淆功能支持对类、方法等名称进行混淆。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/S7zVsBn4T3qMpuXsTpcqOA/zh-cn_image_0000002193850752.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/49ixkj88SxGuglBbU5JFuA/zh-cn_image_0000002193850752.png "点击放大")
 
 代码混淆方案基于源码混淆。源码转换为抽象语法树（AST），在AST上进行作用域和符号分析。混淆名称和属性，移除日志打印代码，合并语句，压缩代码体积。这些操作在保证运行时性能不变的前提下，有效保护开发者核心知识产权。
 
@@ -91,7 +91,7 @@ console['log']('' + getAgeInfo());
 
 HarmonyOS系统提供端到端的应用代码保护机制。该机制以系统安全为基础，构建内核级应用生命周期内的代码安全保护能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/oImZtG5wQwW7Ka_SNPdhDA/zh-cn_image_0000002193850744.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/GlTyL-y_SHm3ZEgC0g74Lg/zh-cn_image_0000002193850744.png "点击放大")
 
 开发者向应用市场提交上架申请。应用市场审核后，对上架应用进行代码加密。应用在设备上安装时，安装文件仍处于加密状态，有效保护应用程序。应用程序启动时，内核加载的文件按页解密执行。应用加密采用标准AES加密算法，提高应用程序的安全性。
 
@@ -111,7 +111,7 @@ HarmonyOS系统使用根CA对应用程序安装包进行签名校验，应用安
 
 关键资产存储（Asset Store）提供关键敏感隐私数据的本地加密存储。应用可以将高安全敏感的关键资产短数据（如APP账号密码、银行卡号等）在本地加密存储。加密密钥存储在安全的隔离区，只有合法应用才能访问并解密这些数据。具体的架构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/oq_-Xg8YSUS6LhNgv-iohQ/zh-cn_image_0000002193850760.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/11k2EgE1RO-uZ09cKzMePQ/zh-cn_image_0000002193850760.png "点击放大")
 
 除此之外，关键资产存储还支持以下安全措施：
 
@@ -124,19 +124,16 @@ HarmonyOS系统使用根CA对应用程序安装包进行签名校验，应用安
 
 HarmonyOS通用密钥库系统（HarmonyOS Universal KeyStore，HUKS）是HarmonyOS提供的系统级密钥管理服务，支持密钥的全生命周期管理，包括密钥生成、存储、使用和销毁，同时提供密钥的合法性证明。HUKS基于系统安全能力，确保业务密钥的安全，业务无需自行实现相关功能。
 
-HUKS的核心安全设计如下。
+HUKS的核心安全设计如下：
 
-密钥不出安全环境：HUKS的核心特点是密钥全生命周期明文不出HUKS Core。在有硬件条件的设备上，如具备TEE（Trusted Execution Environment）或安全芯片的设备，HUKS Core运行在硬件安全环境中，确保即使REE（Rich Execution Environment）环境被攻破，密钥明文也不会泄露。
-
-系统级安全加密存储：基于设备根密钥加密业务密钥。有条件设备叠加用户口令加密。
-
-严格的访问控制：只有合法业务有权访问密钥，支持用户身份认证以满足高安全敏感场景下的密钥访问需求。
-
-密钥的合法性证明：为业务提供硬件厂商级别的证明，确保密钥未被篡改，确保存储在有硬件保护的HUKS Core中，并具备正确的密钥属性。
+* 密钥不出安全环境：HUKS的核心特点是密钥全生命周期明文不出HUKS Core。在有硬件条件的设备上，如具备TEE（Trusted Execution Environment）或安全芯片的设备，HUKS Core运行在硬件安全环境中，确保即使REE（Rich Execution Environment）环境被攻破，密钥明文也不会泄露。
+* 系统级安全加密存储：基于设备根密钥加密业务密钥。有条件设备叠加用户口令加密。
+* 严格的访问控制：只有合法业务有权访问密钥，支持用户身份认证以满足高安全敏感场景下的密钥访问需求。
+* 密钥的合法性证明：为业务提供硬件厂商级别的证明，确保密钥未被篡改，确保存储在有硬件保护的HUKS Core中，并具备正确的密钥属性。
 
 密钥会话是HUKS中承载密钥使用的基础，主要用于初始化密钥信息和缓存业务数据。数据的密码学运算和密钥密文的加解密都在HUKS Core中进行，以确保密钥明文和运算过程的安全。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/l5_CODWzSf2SdxBDLzNtmQ/zh-cn_image_0000002229336137.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/mUDZ_dlwRc6O1vlspCxEVQ/zh-cn_image_0000002229336137.png "点击放大")
 
 ## 应用资产保护设计
 
@@ -188,11 +185,9 @@ DevEco Studio提供高阶混淆能力，开发者可通过以下步骤配置：
 
 应用加密主要通过以下三个关键能力实现：
 
-代码加密能力：基于abc文件的加密，兼容快速补丁修复，并采用代码签名机制。
-
-基于动态加载按页解密能力：在内核中按应用加载文件的内存页进行解密，提升解密效率。
-
-密钥分发：通过平台账号的访问控制和设备TEE的设备认证进行密钥分发。
+* 代码加密能力：基于abc文件的加密，兼容快速补丁修复，并采用代码签名机制。
+* 基于动态加载按页解密能力：在内核中按应用加载文件的内存页进行解密，提升解密效率。
+* 密钥分发：通过平台账号的访问控制和设备TEE的设备认证进行密钥分发。
 
 整套方案作为HarmonyOS系统应用安全的基础能力，由应用市场、HarmonyOS内核和终端设备实现，开发者无需进行任何配置和开发。
 
@@ -233,7 +228,7 @@ HarmonyOS在系统提供的应用代码保护机制之外，同时也兼容三�
 
 在HarmonyOS系统中，普通用户数据通过每个应用独立的应用沙箱进行隔离。应用沙箱保护机制确保应用无法访问除自身文件目录之外的其他应用或用户的数据。此外，所有应用的目录可见范围均经过权限隔离，仅自身和部分系统进程有权限访问，未授权的第三方应用无法访问。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/JFtl9eJ2RViTKAWZ2XLxjA/zh-cn_image_0000002194010332.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/2T7gfa_SSOGcWTIMmFlsZA/zh-cn_image_0000002194010332.png "点击放大")
 
 除此之外，对于一些更加敏感的用户数据，如用户口令、身份证号、银行卡号等，HarmonyOS系统还提供关键资产存储服务，关键资产的安全存储，依赖底层的TEE可信执行环境。具体来说，关键资产的加/解密操作以及访问控制校验，都在安全环境中完成，即使系统被攻破，也能保证用户敏感数据不发生泄露。详细方案可以参考[Asset Store Kit简介](../harmonyos-guides/asset-store-kit-overview.md)。
 

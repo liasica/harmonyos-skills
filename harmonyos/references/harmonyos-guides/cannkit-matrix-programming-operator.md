@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-matri
 title: 矩阵编程算子实现
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 矩阵编程（高阶API） > 矩阵编程算子实现
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:59+08:00
+scraped_at: 2026-10-29T07:57:55+08:00
 doc_updated_at: 2026-05-12
-content_hash: sha256:a9294c47939f9e7e216518957a03dc32ce7e87088218c3ff1165ce326dc58455
+content_hash: sha256:9ecd19e5c9d745f8cdec01292c20ca7e1778724c7a4cb68facbe53f76e80ab6c
 ---
 
 ## 实现流程
 
 上文介绍了Matmul矩阵乘的数据切分方案和数据流。AscendC提供一组Matmul高阶API，封装了这些常用的切分和数据搬运、计算的算法逻辑，方便开发者快速实现Matmul矩阵乘法的运算操作。开发者在host侧通过调用API自动获取Tiling参数，该参数传递到kernel侧后，在初始化操作时传入，通过几个简单的API即可完成矩阵乘操作。以下代码仅包含Matmul的关键步骤，不能直接运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/1-J8g1gBRDutpcbvweWdOw/zh-cn_image_0000002800986735.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/kyjB_SxWS4-GunLY2Xu1Yg/zh-cn_image_0000002774065668.png)
 
 **host侧自动获取Tiling参数的关键步骤介绍如下。**
 
@@ -120,7 +120,7 @@ matmul::Matmul<aType, bType, cType, biasType> mm;
 
 ND\_ALIGN用于配置输出矩阵时按照一定的补齐规则进行输出。ND–>ND\_ALIGN变换过程下图所示，矩阵数据类型为uint32\_t，假设输出矩阵输出到UB，原矩阵N方向没有32字节对齐，设置ND\_ALIGN则在其后补0，将其对齐到32字节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/3DDt6LeZQvKTpniNQ4rveg/zh-cn_image_0000002771826844.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/8wPIpqnWQnKcQVNeYwDWfg/zh-cn_image_0000002773905694.png)
 
 ## 设置Shape信息
 
@@ -133,8 +133,8 @@ Host Tiling时可以设置Shape信息，用于Tiling计算；kernel侧运行时�
 
 通过[数据分块(Tiling)](cannkit-basic-knowledge.md#数据分块tiling)的介绍我们已经了解了orgShape(M、N、K)，singleCoreShape(singleCoreM、singleCoreN、singleCoreK)，baseShape(baseM、baseN、baseK)的概念，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/QyVximUwTAO-JeO_xGi_Og/zh-cn_image_0000002801106659.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/XCw2S36_TR6Mds3dzTdhqg/zh-cn_image_0000002803265477.png)
 
 除此之外，单核的Matmul Tiling时，实际参与Matmul计算的shape可以是原始shape中的一部分，singleM, singleN, singleK用于表达实际参与Matmul计算的shape，如下图所示。在单核的情况下，singleM, singleN, singleK会透传给singleCoreM, singleCoreN, singleCoreK。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/F6sDdeLCRkKgrH6AOAcolA/zh-cn_image_0000002771666878.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/9ymF1pBNTsWJesIYg3QDZw/zh-cn_image_0000002803225385.png)

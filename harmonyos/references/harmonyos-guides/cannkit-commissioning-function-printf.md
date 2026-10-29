@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: printf/PRINTF功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > 更多功能 > printf/PRINTF功能
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:40:00+08:00
+scraped_at: 2026-10-29T07:57:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:eb82f35568ef9fadcff00e6ad46771add1b0022a5099b23c445e461159715630
+content_hash: sha256:16d82564c9c827b9fd7b461c367fb4cc02ffe127cdc0e929b588c78cd14603c3
 ---
 
 ## 功能介绍
@@ -35,7 +35,7 @@ content_hash: sha256:eb82f35568ef9fadcff00e6ad46771add1b0022a5099b23c445e4611597
    --dump-mode取normal，开启通用打印Scalar模式，其他参数参考[NPU调测参数](cannkit-cli-parameters.md#npu调测参数)按需配置。
 3. 查看屏显打印结果，示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/dECezbS-TNyGlwIQ1UPq1Q/zh-cn_image_0000002771666882.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/tYNZRYNVRlCh8TxSRo9e7A/zh-cn_image_0000002803225389.png)
 
 ## 接口说明
 

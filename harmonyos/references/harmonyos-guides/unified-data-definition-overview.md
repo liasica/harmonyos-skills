@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unified-data-
 title: 标准化数据定义概述
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化数据定义 > 标准化数据定义概述
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:40+08:00
+scraped_at: 2026-10-29T07:56:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b9aa8500e47fe62a1ad8604846a63dd40889d9197c1ffc6793fcf9dc5c2c63bd
+content_hash: sha256:a67bdba9d1715d9c7ff9aec7061e2723875421432e056d610b545b90d562e728
 ---
 
 设备、应用交互的核心在于数据的互通，高效的数据互通基础是共识。为了降低应用/业务数据交互成本，促进数据生态建设，统一数据管理框架（UDMF）提供了标准化数据定义作为统一的HarmonyOS数据语言，用于构建跨应用、跨设备的统一数据标准与交互共识。
@@ -26,6 +26,6 @@ UDMF标准化数据定义包括[标准化数据类型](uniform-data-type-descrip
 
 在设备、应用交互过程中，一次交互会存在多条记录，每条记录可能存在不同的表达形式（即样式），因此提出了多样式数据概念。在交互过程中，数据提供方提供记录的不同数据样式，数据使用方获取到数据后，根据业务需要从记录中获取样式数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/hmgONarSRz6yDkG_Ek8H0g/zh-cn_image_0000002771824608.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/xMil5BbyTiaajs4qgMbA4Q/zh-cn_image_0000002803223145.png)
 
 在上图中，不同的UnifiedRecord表示不同的记录，不同记录之间承载的内容是不一致的；在同一个UnifiedRecord中，同一内容以不同的样式存储，丰富了数据的表现形式。

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-layered-ar
 title: 分层架构设计
 breadcrumb: 最佳实践 > 应用架构 > 分层架构设计
 category: best-practices
-scraped_at: 2026-10-16T07:06:34+08:00
-doc_updated_at: 2026-06-30
-content_hash: sha256:763cc3960c9a6d2027f6a163f32ac96bafd16849c9123c54d3d0292e1b37e0c4
+scraped_at: 2026-10-29T08:03:13+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:b0b42f86d78a619cf44d8d662fcfb795134e4d3cb24db04108e51aed0c8ddb65
 ---
 
-HarmonyOS 应用的分层架构设计基于一套代码工程，支持华为手机、PC/2in1等1+8全场景设备，实现了“一次开发，多端部署”的开发理念。
+HarmonyOS 应用的分层架构设计基于一套代码工程，支持华为手机、电脑等1+8全场景设备，实现了“一次开发，多端部署”的开发理念。
 
 HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能力层，构建了清晰、高效、可扩展的设计架构。
 
@@ -17,7 +17,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 逻辑模型
 
 **图1** 分层架构逻辑模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/2pl6jcilTjW0ZpTMAZJUJQ/zh-cn_image_0000002229336237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/ye1YLtleTFqX07F6YacGbA/zh-cn_image_0000002229336237.png "点击放大")
 
 * **产品定制层**
 
@@ -49,19 +49,19 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 开发模型
 
 **图2** 分层架构开发模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ZQOc9zstRp2lNuRAJCE7Nw/zh-cn_image_0000002194010440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/nMI2v_erSnGkk1yctBmKNg/zh-cn_image_0000002194010440.png "点击放大")
 
 * **产品定制层**
 
-  产品定制层的各个子目录会被编译成一个[Entry类型的HAP](../harmonyos-guides/hap-package.md)，作为应用的主入口。该层面向多种设备，集成相应功能和特性。产品定制层划分为多个功能模块，每个模块针对特定设备或使用场景设计，并根据产品需求进行功能和交互的定制开发。
+  产品定制层的各个子目录会被编译成一个Entry类型的[HAP](../harmonyos-guides/hap-package.md)，作为应用的主入口。该层面向多种设备，集成相应功能和特性。产品定制层划分为多个功能模块，每个模块针对特定设备或使用场景设计，并根据产品需求进行功能和交互的定制开发。
 
   **说明** 
 
-  + 在产品定制层，开发者可以从不同设备对应的应用UX设计和功能两个维度，结合具体的业务场景，选择一次编译生成[相同或者不同的HAP（或其组合）](bpta-multi-device-overview.md#部署模型)。
-  + 通过使用[定制多目标构建产物](bpta-multi-target.md)的定制功能，可以将应用所对应的HAP编译成各自的.app文件，用于上架到应用市场。
+  + 在产品定制层，开发者可以从不同设备对应的应用UX设计和功能两个维度，结合具体的业务场景，选择一次编译生成相同或者不同的HAP（或其组合）。
+  + 通过使用[多目标产物构建](bpta-multi-target.md)的定制功能，可以将应用所对应的HAP编译成各自的.app文件，用于上架到应用市场。
 * **基础特性层**
 
-  在基础特性层中，功能模块根据部署需求被分为两类。对于需要通过Ability承载的功能，可以设计为[Feature类型的HAP](../harmonyos-guides/hap-package.md)，而对于不需要通过Ability承载的功能，根据是否需要实现按需加载，可以选择设计为[HAR](../harmonyos-guides/har-package.md)模块或者[HSP](../harmonyos-guides/in-app-hsp.md)模块，编译后对应HAR包或者HSP包。
+  在基础特性层中，功能模块根据部署需求被分为两类。对于需要通过Ability承载的功能，可以设计为Feature类型的[HAP](../harmonyos-guides/hap-package.md)，而对于不需要通过Ability承载的功能，根据是否需要实现按需加载，可以选择设计为[HAR](../harmonyos-guides/har-package.md)模块或者[HSP](../harmonyos-guides/in-app-hsp.md)模块，编译后对应HAR包或者HSP包。
 * **公共能力层**
 
   公共能力层的各子目录将编译成HAR包，仅产品定制层和基础特性层可依赖，不允许反向依赖。该层提取模块化公共基础能力，为上层提供标准接口和协议，提高复用率和开发效率。
@@ -69,7 +69,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 部署模型
 
 **图3** 分层架构部署模型（不同设备的定制）  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/KaDa4EmXQKWWWEl75JOi2w/zh-cn_image_0000002229450717.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/MFvfFSajQqyH0AGX-B0A3A/zh-cn_image_0000002229450717.png "点击放大")
 
 应用程序（.app文件）在流水线或应用市场上被解包为N个Entry类型的HAP和N个Feature类型的HAP，根据设备类型和使用场景部署到不同设备，实现多端统一用户体验。
 

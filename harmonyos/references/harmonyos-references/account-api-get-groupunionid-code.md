@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 通过Authorization Code获取GroupUnionID
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 扩展能力 > 通过Authorization Code获取GroupUnionID
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:19016e46f109c5c0830cd4eff959877037e7cd0daaceeaed6070d8f51d990cc1
+scraped_at: 2026-10-29T08:02:33+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:e79df05a59e733a6401e2430f4f646c21dc50fe6817e7d75d7f2d58a2db5741b
 ---
 
 **注意** 
@@ -26,7 +26,7 @@ content_hash: sha256:19016e46f109c5c0830cd4eff959877037e7cd0daaceeaed6070d8f51d9
 
 * 需确保调用端网络正常。
 * 仅对企业开发者开放。
-* 开发者账号必须加入关联主体账号组。具体可通过[创建账号组](../start/cag-0000001265390541.md)创建关联主体账号组，然后在关联主体账号组中[添加账号组成员](../start/aai-0000001265430513.md)。
+* 开发者账号必须加入关联主体账号组。具体可通过[创建关联主体](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section15387160135710)，创建“跳转互通”类型的关联主体，然后在关联主体中[添加关联主体成员](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section1622135572)。
 * Authorization Code仅能使用一次，且具有5分钟的有效期，过期后需重新授权获取。
 
 ## 接口原型
@@ -53,8 +53,8 @@ content_hash: sha256:19016e46f109c5c0830cd4eff959877037e7cd0daaceeaed6070d8f51d9
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | grant\_type | 是 | String | 授权模式，固定传“authorization\_code”。 |
-| client\_id | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的唯一标识。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。  **说明：**  该参数与获取code参数时的Client ID必须一致，否则会报错（sub\_error=20154），如出现此报错，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)排查处理。 |
-| client\_secret | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的密钥（Client Secret）。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
+| client\_id | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的唯一标识。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。  **说明：**  该参数与获取code参数时的Client ID必须一致，否则会报错（sub\_error=20154），如出现此报错，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)排查处理。 |
+| client\_secret | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的密钥（Client Secret）。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
 | code | 是 | String | Authorization Code可通过[华为账号一键登录（获取手机号和UnionID/OpenID）](../harmonyos-guides/account-phone-unionid-login.md)、[华为账号登录（获取UnionID/OpenID）](../harmonyos-guides/account-unionid-login-button.md)、[静默登录](../harmonyos-guides/account-silent-login.md)等场景获取。 |
 | supportAlg | 否 | String | 生成ID Token的算法，当前支持的算法如下：  - PS256（推荐使用）  - RS256  如果未指定该参数或指定的算法不在支持的范围内，则默认使用RS256。 |
 | need\_group\_union\_id | 否 | Boolean | 是否需要获取GroupUnionID，传值如下：  - true  - false  如果未指定该参数，则响应结果中不会返回group\_union\_id字段。  GroupUnionID使用场景详见[不同开发者的应用之间如何实现用户数据互通](../harmonyos-guides/account-faq-19.md)。 |
@@ -227,9 +227,9 @@ public class GetGroupUnionIDByCodeDemo {
 | 1102 | 20151 | code为空。 | 请按照接口参数的要求，传入正确的code参数。 |
 | 1102 | 20181 | grant\_type为空。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”authorization\_code“。 |
 | 1103 | 20153 | 无效的code。 | code被篡改或伪造的code导致，请排查code参数是否与获取到的code一致。 |
-| 1203 | 12303 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1203 | 12303 | client\_id在系统不存在。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1203 | 12304 | 无效的client\_secret。 | 入参client\_id和client\_secret不匹配导致，请检查参数。 |
 | 1203 | 100301 | 参数处理异常。 | 参数处理异常，建议按照接口入参要求，检查参数是否符合规范。若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
-| 1203 | 100502 | 开发者账号的关联主体账号组未查询到。 | 请参考[添加账号组成员](../start/aai-0000001265430513.md)，将应用的开发者账号加入关联主体账号组后重试。 |
+| 1203 | 100502 | 开发者账号的关联主体账号组未查询到。 | 请参考[添加关联主体成员](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section1622135572)，将应用的开发者账号加入“跳转互通”类型的关联主体后重试。 |
 | 1203 | 500 | 系统内部错误。 | 系统内部处理错误，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 1203 | 1203 | 系统未知异常。 | 系统未知异常，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmrouter
 title: 基于HMRouter的页面跳转
 breadcrumb: 最佳实践 > 手势与导航 > 基于HMRouter的页面跳转
 category: best-practices
-scraped_at: 2026-10-16T07:06:35+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:841aaed13a5d5116424d683c310d9d6f6ac728a021ef2cabc090065b5149e0ca
+scraped_at: 2026-10-29T08:03:13+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:6ca1718c5b3e4cbdcd677cb199ccc6c96496557ba1295248e518d6b20024762d
 ---
 
 ## 概述
@@ -87,7 +87,7 @@ HMRouterMgr.to('MainPage')
 ```
 
 **图1** 返回指定页面示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/UTjNBwwNQmOGO7kOdqpv3w/zh-cn_image_0000002505304640.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/u5j7gZH5Q3u7sCnfia7HQA/zh-cn_image_0000002505304640.png "点击放大")
 
 ### 应用未登录，点击跳转登录页的校验场景
 
@@ -109,7 +109,7 @@ HMRouterMgr.to('MainPage')
             if (!!AppStorage.get('isLogin')) {
               await chain.onContinue();
             } else {
-              info.context.getPromptAction().showToast({ message: '请先登录' });
+              info.context.getPromptAction().showToast({ message: LoginConstants.LOGIN_TOAST });
               HMRouterMgr.push({
                 pageUrl: 'loginPage',
                 skipAllInterceptor: true
@@ -124,7 +124,7 @@ HMRouterMgr.to('MainPage')
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/iseR1OwqTpOX9aMKHIRMxA/zh-cn_image_0000002229450657.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/TovPGUGpRIu2mFCok8I2qg/zh-cn_image_0000002229450657.gif "点击放大")
 
 ### 实现单例页面的跳转
 
@@ -234,7 +234,7 @@ export struct PrivacyDialogDetail {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/z8_jyI4HRxKwTCQ3JFgaMA/zh-cn_image_0000002193850796.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/mjCS5Z8eQpiijIpmFfYtvQ/zh-cn_image_0000002193850796.gif "点击放大")
 
 ### 首页两次返回退出应用
 
@@ -256,7 +256,7 @@ export struct PrivacyDialogDetail {
           if (time - this.lastTime > 1000) {
             this.lastTime = time;
             ctx.uiContext.getPromptAction().showToast({
-              message: '再次返回退出应用',
+              message: $r('app.string.HOME_EXIT_TOAST'),
               duration: 1000
             });
             return true;
@@ -270,7 +270,7 @@ export struct PrivacyDialogDetail {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/s8UB7W_iSo6GRL0_qG1H0Q/zh-cn_image_0000002193850804.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/VlpgK1vkSOK0gDNSp676bw/zh-cn_image_0000002193850804.gif "点击放大")
 
 ## 转场动效场景
 
@@ -367,7 +367,7 @@ HMRouterMgr.to('ProductContent')
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/lbhAlvoiSMSXEmiLigEKSw/zh-cn_image_0000002194010372.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/iCgQeSuFQ4qjbECuMknooA/zh-cn_image_0000002194010372.gif "点击放大")
 
 ### 根据条件呈现不同转场动效
 
@@ -463,7 +463,7 @@ export struct CommentInput {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/iI7N_3UST-K3_FVuG0yGrA/zh-cn_image_0000002194010392.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/e0_hfBQIRsGbnXX1Dj7B4A/zh-cn_image_0000002194010392.gif "点击放大")
 
 ### 交互式转场
 
@@ -520,7 +520,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/R6rRMDL5Q7ur2zsCYdvRWw/zh-cn_image_0000002194010388.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/8eCwKeePSkamaXyX8JhILw/zh-cn_image_0000002194010388.gif "点击放大")
 
 ## 数据加载场景
 
@@ -555,7 +555,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
 3. 关联生命周期与对应组件。将生命周期的lifecycleName作为@HMRouter注解的lifecycle参数进行传入完成关联。
 
 **图2** 数据请求预加载流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/gjDEYk-SRIyOW9Z3_6xLxQ/zh-cn_image_0000002428190130.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/xenoGCSzTG6B0Fqcfi3ocA/zh-cn_image_0000002428190130.png "点击放大")
 
 ### 页面重开数据恢复
 
@@ -627,7 +627,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
    ```
 
 **图3** 页面重开数据恢复流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/L5b0s2LgTQeO6ezRpw-FpQ/zh-cn_image_0000002461709833.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/pH_AOWAFT6ymjacufWcomw/zh-cn_image_0000002461709833.png "点击放大")
 
 ## 维测场景
 
@@ -650,13 +650,14 @@ export class LiveInteractiveAnimator implements IHMAnimator {
 
      onHidden(ctx: HMLifecycleContext): void {
        const duration = new Date().getTime() - this.time;
+       console.log(`Page ${ctx.navContext?.pathInfo.name} stay ${duration}`);
      }
    }
    ```
 
 **图4** 页面埋点日志记录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/bjkMPpiXRYylG7Je4fmG3g/zh-cn_image_0000002194010384.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ENjA7_C8Tla6KyCzdzCp9w/zh-cn_image_0000002194010384.png "点击放大")
 
 ## 示例代码
 

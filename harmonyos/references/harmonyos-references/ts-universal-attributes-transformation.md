@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图形变换
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 图形变换
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:16+08:00
+scraped_at: 2026-10-29T07:59:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cc66a09897247c084e0c8543569252e7b941f929bc13d1e74d850002dd25ee0f
+content_hash: sha256:5c5438440e40470b1d07668498797f6bd84b0fa26b2c713636b9c28a15aaff5c
 ---
 
 用于对组件进行旋转、平移、缩放、矩阵变换等操作。
@@ -415,7 +415,7 @@ struct TransformExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/nnXcqJuXTHCoOkRVxgz0oQ/zh-cn_image_0000002801106997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/1pMFDzr1STiseK6X8cxmyA/zh-cn_image_0000002803265815.png)
 
 ### 示例2（设置旋转视距）
 
@@ -459,7 +459,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Lfhera2vQeiPO84pQLDgMw/zh-cn_image_0000002771667216.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/jaovjwg-T3-asTzdFRwYgA/zh-cn_image_0000002803225723.gif)
 
 ### 示例3（按中心点旋转）
 
@@ -533,7 +533,7 @@ struct MatrixExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/i0l99u5cRQmBZW8xw5PoHA/zh-cn_image_0000002800987075.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/EmpEceSBRFW5ETd73gRTjQ/zh-cn_image_0000002774066008.png)
 
 ### 示例4（通过transform3D实现图形变换）
 
@@ -571,7 +571,7 @@ struct Transform3DExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/XiJ8bZiGRB2eyyU0lt1Kfg/zh-cn_image_0000002771827184.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-g9rMv1ZSw6vuExCWtTWyg/zh-cn_image_0000002773906034.png)
 
 ### 示例5（按各轴旋转角的方式实现旋转）
 
@@ -612,4 +612,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/TI5tFHneRh2hs0MScHo1Zw/zh-cn_image_0000002801106999.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/VuxeJS3PQ2eDBeO8-BhsDQ/zh-cn_image_0000002803265817.png)

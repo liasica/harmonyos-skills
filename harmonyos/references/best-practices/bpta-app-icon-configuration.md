@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-icon-c
 title: 应用图标配置与开发
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 应用图标配置与开发
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:e71dbd0fab61af774ec761d50eb87d1595604b304b62c689f61f71ec89833e45
+scraped_at: 2026-10-29T08:03:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:781eff79daa65471375db9274261e805db1227c6ec2d7f000eed7b654958edd7
 ---
 
 ## 概述
@@ -66,7 +66,7 @@ content_hash: sha256:e71dbd0fab61af774ec761d50eb87d1595604b304b62c689f61f71ec898
 
 **须知** 
 
-轻量级智能穿戴应用在entry/src/main/config.json文件的abilities标签下配置icon和label字段。相关要求请查看[轻量级智能穿戴应用配置应用图标](bpta-app-icon-configuration.md#li15169114820415)。
+轻量级智能穿戴应用在entry/src/main/config.json文件的abilities标签下配置icon和label字段。相关要求请查看[上架HarmonyOS开发者中心时的图标规范](bpta-app-icon-configuration.md#section1470095312575)。
 
 ### 配置启动页图标
 
@@ -219,8 +219,8 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和分层图�
 
    app.json5文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ND9ezdNVRVqDtlC8JziwaA/zh-cn_image_0000002548066135.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Dwmlr5VJSACfU58Kx3uTeg/zh-cn_image_0000002548066135.png)
 
    module.json5文件的abilities标签：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/w3BGI6bbTaKOG455BiCL3g/zh-cn_image_0000002516546242.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/n0_603iPTVyF28OUaTQBPw/zh-cn_image_0000002516546242.png)

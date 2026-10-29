@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 崩溃事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 崩溃事件 > 崩溃事件介绍
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:13+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:be4256747d1a126cfefc7888d9939205dd1d10902fe61e3f19479b2c145706ec
+scraped_at: 2026-10-29T07:57:10+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:6db5d578cd9b65dfc1284bb02770a79f09ef1e965b64dbd63f279ebedf616be0
 ---
 
 ## 简介
@@ -137,23 +137,25 @@ OH\_HiAppEvent\_SetEventConfig配置参考[订阅崩溃事件（C/C++）开发�
 
 参数设置示例如下：
 
-```ts
+```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
+import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+```
 
+```typescript
 let policy: hiAppEvent.EventPolicy = {
-    appCrashPolicy: {
-      pageSwitchLogEnable: true, // 启用页面切换日志。从API version 24开始支持该参数
-      extendPcLrPrinting: true, // 使能扩展打印pc和lr寄存器附近的内存值。从API版本26.0.0开始支持该参数
-      logFileCutoffSzBytes: 102400, // 截断崩溃日志到100KB。从API版本26.0.0开始支持该参数
-      simplifyVmaPrinting: true, // 使能精简打印maps。从API版本26.0.0开始支持该参数
-      collectMinidump: true // native崩溃场景，使能minidump。从API版本26.0.0开始支持该参数
-    }
+  appCrashPolicy: {
+    pageSwitchLogEnable: true, // 启用页面切换日志。从API version 24开始支持该参数
+    extendPcLrPrinting: true, // 使能扩展打印pc和lr寄存器附近的内存值。从API版本26.0.0开始支持该参数
+    logFileCutoffSzBytes: 102400, // 截断崩溃日志到100KB。从API版本26.0.0开始支持该参数
+    simplifyVmaPrinting: true, // 使能精简打印maps。从API版本26.0.0开始支持该参数
+    collectMinidump: true // native崩溃场景，使能minidump。从API版本26.0.0开始支持该参数
+  }
 };
 hiAppEvent.configEventPolicy(policy).then(() => {
-    hilog.info(0x0000, 'hiAppEvent', `Set crash config policy successfully.`);
+  hilog.info(0x0000, 'hiAppEvent', `Set crash config policy successfully.`);
 }).catch((err: BusinessError) => {
-    hilog.error(0x0000, 'hiAppEvent', `Failed to set crash config policy. code: ${err.code}, message: ${err.message}`);
+  hilog.error(0x0000, 'hiAppEvent', `Failed to set crash config policy. code: ${err.code}, message: ${err.message}`);
 });
 ```
 

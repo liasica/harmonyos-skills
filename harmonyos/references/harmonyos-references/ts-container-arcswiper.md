@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcSwiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ArcSwiper
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:20+08:00
+scraped_at: 2026-10-29T07:59:37+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:06cb81c65f8869a70e929ee027626549a84ccd2470056a2ee865c501b9375bba
+content_hash: sha256:7521625ea43caca7756188042a300bc0dec57d544f61b1b406e132abac1d496a
 ---
 
 弧形滑块视图容器，提供子组件滑动轮播显示的能力。
@@ -733,7 +733,7 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/h5XPJotWQISca7W2EbmL9g/zh-cn_image_0000002771827336.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/YDrZZnoIRBKiyYaubVkAvQ/zh-cn_image_0000002773906186.gif)
 
 ### 示例2（设置ArcSwiper自定义页面切换动画）
 
@@ -797,4 +797,4 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/1ftJNqlvREOkA3bR7_29UQ/zh-cn_image_0000002801107151.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/utQuqm9XRnuBnrNjippDXA/zh-cn_image_0000002803265969.gif)

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-1
 title: 不同开发者的应用之间如何实现用户数据互通
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 不同开发者的应用之间如何实现用户数据互通
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a331f5bd20cc2c036d3ac2595cba14d459dfb987c90f381a58152d19bc1570f3
+scraped_at: 2026-10-29T07:57:33+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:2ec7f256731d082a35ea4972c4234f5ccbafeddb597891f0b9105a37d06044bc
 ---
 
 不同开发者的应用，可以使用GroupUnionID关联用户数据来实现数据互通。GroupUnionID是华为账号用户在关联主体账号组内的唯一标识。不同开发者账号加入同一关联主体账号组后，其组内所有开发者的应用获取到用户的GroupUnionID相同。应用获取GroupUnionID流程如下：
 
 1. 开发者账号加入同一关联主体账号组。
 
-   通过[创建账号组](../start/cag-0000001265390541.md)创建关联主体账号组，在关联主体账号组中[添加账号组成员](../start/aai-0000001265430513.md)。
+   通过[创建关联主体](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section15387160135710)，创建“跳转互通”类型的关联主体，然后在关联主体中[添加关联主体成员](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section1622135572)。
 2. 获取GroupUnionID。
 
    * 针对新用户，在登录时可以直接获取GroupUnionID，具体指导请参考：[通过Authorization Code获取GroupUnionID](../harmonyos-references/account-api-get-groupunionid-code.md)。

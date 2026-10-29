@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 刷新用户级凭证
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 开放接口调用凭证 > 刷新用户级凭证
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f5a6e3f3f530a1aec99a0de54ee7c3a12a7f8909fc16640b63e9e4d758349fb1
+scraped_at: 2026-10-29T08:02:31+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:24092f0ecb0f52511c0fc33e1a34312d6a8969d28fabd0bd9bfb7a38b16ebb80
 ---
 
 **注意** 
@@ -51,8 +51,8 @@ content_hash: sha256:f5a6e3f3f530a1aec99a0de54ee7c3a12a7f8909fc16640b63e9e4d7583
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | grant\_type | 是 | String | 授权模式，本场景固定传“refresh\_token”。 |
-| client\_id | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的唯一标识。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。  **说明：**  该参数与获取refresh\_token参数时的Client ID必须一致，否则会报错（sub\_error=20154），如出现此报错，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)排查处理。 |
-| client\_secret | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的密钥（Client Secret）。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
+| client\_id | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的唯一标识。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。  **说明：**  该参数与获取refresh\_token参数时的Client ID必须一致，否则会报错（sub\_error=20154），如出现此报错，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)排查处理。 |
+| client\_secret | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的密钥（Client Secret）。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
 | refresh\_token | 是 | String | 通过[获取用户级凭证](account-api-obtain-user-token.md)获取的Refresh Token，用于刷新Access Token。 |
 | scope | 否 | String | 该参数用于指定获取Access Token中的scope范围，需要是Refresh Token中包含的scope的子集，多个scope以空格分隔，当前最大支持同时传入150个scope。  - 如果没有传scope参数，则生成的Access Token包含的scope和Refresh Token中的scope相同。  - 如果传了scope参数，则Access Token所包含的scope是Refresh Token中的scope和入参scope取交集。 |
 | supportAlg | 否 | String | 生成ID Token的算法，当前支持的算法如下：  - PS256（推荐使用）  - RS256  如果未指定该参数或指定的算法不在支持的范围内，则默认使用RS256。 |
@@ -213,7 +213,7 @@ public class RefreshTokenAPIDemo {
 | 1102 | 20181 | grant\_type为空。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”refresh\_token“。 |
 | 1102 | 20191 | refresh\_token为空。 | 请按照接口参数的要求，传入正确的refresh\_token参数。 |
 | 1203 | 11205 | refresh\_token已过期。refresh\_token的有效期为180天，超过有效期后将无法继续使用。 | 请引导用户重新授权，获取新的refresh\_token。 |
-| 1203 | 12303 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1203 | 12303 | client\_id在系统不存在。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1203 | 12304 | 无效的client\_secret。 | 入参client\_id和client\_secret不匹配导致，请检查参数。 |
 | 1203 | 31202 | refresh\_token解析失败。 | refresh\_token不是一个正确有效的数据，请检查refresh\_token参数。 |
 | 1203 | 31204 | refresh\_token已失效。正常refresh\_token有效期为180天，但是由于用户的行为（如更改密码、取消应用的授权等行为），导致华为服务器提前使已颁发的refresh\_token失效。 | 请引导用户重新授权，获取新的refresh\_token。 |

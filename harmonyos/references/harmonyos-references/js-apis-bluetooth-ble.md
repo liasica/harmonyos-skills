@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.ble (蓝牙ble模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.ble (蓝牙ble模块)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:46:36+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:0b7945d9bdb6139ff3c76e1d6204ffc311efac14e32a14edcd5e6b6712ac288a
+scraped_at: 2026-10-29T08:00:54+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:0b4f3520c9b75e3ae8f2f6f7f99344be00e7ffb0a47c23aa42a330f7b605e518
 ---
 
 本模块提供了基于低功耗蓝牙（Bluetooth Low Energy，[BLE](../harmonyos-guides/terminology.md#ble)）技术的蓝牙能力，支持发起BLE扫描、发送BLE广播报文、以及基于通用属性协议（Generic Attribute Profile，[GATT](../harmonyos-guides/terminology.md#gatt)）的连接和传输数据。适用于智能穿戴设备、健康监测、物联网设备互联等低功耗短距离无线通信场景，有助于降低设备功耗、延长续航时间。
@@ -1901,7 +1901,7 @@ connect(deviceId: string, autoConnect?: boolean): void
 调用方充当GATT客户端，发起和远端BLE设备连接，通过参数autoConnect设置是否直接连接到远端设备或者在远端设备可用时自动重连。
 
 * 若要实现在远端设备可用时自动重连（即[autoConnect](js-apis-bluetooth-ble.md#gattsetting)为true），需保证client端[createGattClientDevice](js-apis-bluetooth-ble.md#blecreategattclientdevice-1)发起连接，并设置[autoConnect](js-apis-bluetooth-ble.md#gattsetting)为true。
-* server端可通过订阅[on('BLEConnectionStateChange')](js-apis-bluetooth-ble.md#onbleconnectionstatechange)事件感知连接状态。
+* server端可通过订阅[on('connectionStateChange')](js-apis-bluetooth-ble.md#onconnectionstatechange)事件感知连接状态。
 * 当server端想要断开连接时，可主动调用[disconnect](js-apis-bluetooth-ble.md#disconnect)。
 
 **起始版本**：26.0.0
@@ -1952,7 +1952,7 @@ disconnect(deviceId: string): void
 
 调用方充当GATT客户端，主动发起与远端设备断连，或停止正在进行的连接。
 
-可通过订阅[on('BLEConnectionStateChange')](js-apis-bluetooth-ble.md#onbleconnectionstatechange)事件来感知连接状态。
+可通过订阅[on('connectionStateChange')](js-apis-bluetooth-ble.md#onconnectionstatechange)事件来感知连接状态。
 
 **起始版本**：26.0.0
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用HWASan检测内存错误
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 使用HWASan检测内存错误
 category: best-practices
-scraped_at: 2026-10-16T07:06:49+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:93c99ce33234dcdc9d6d4e563628e1ad0c9162e23e046cbe33e9d3ea43482b69
+scraped_at: 2026-10-29T08:03:24+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:a4c3bf87c40d8f1710acba94aea106d31f54a8c0d3f8e6cf75e87bceb60246ff
 ---
 
 HWASan的能力概述和检测原理可参考[地址越界检测能力概述](bpta-stability-address-sanitizer-overview.md)以及[HWASan检测原理](bpta-stability-address-sanitizer-principle.md#section187526511146)，适用于开发态调试压测场景。
@@ -73,9 +73,11 @@ HWASAN\_OPTIONS支持在“app.json5”中配置。
 
 **DevEco Studio****场景**
 
-点击**Run > Edit Configurations >****Diagnostics**，勾选**Hardware-Assisted Address Sanitizer**开启C++源码检测插桩。从DevEco Studio 6.1.0 Beta1版本开始，可以同时勾选**BinXO check**，开启无源码的so文件的HWASan检测插桩。（注意：BinXO只能处理大小在128M以内的so文件）
+点击**Run > Edit Configurations >****Diagnostics**，勾选**Hardware-Assisted Address Sanitizer**开启C++源码检测插桩。从DevEco Studio 6.1.0 Beta1版本开始，可以同时勾选**BinXO check**，开启无源码的so文件的HWASan检测插桩。（注意：BinXO只能处理大小在128M以内的so文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/i3EVqmKwSYiYPHSPMQyWew/zh-cn_image_0000002613938015.png "点击放大")
+若构建日志中出现BinXO编译告警，请参见[适配常见问题](../doccenter-app-quality/bpta-stability-address-sanitizer-faq.md)中的BinXO相关说明。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/9sl1kbkjRtKQtEP5Mw9N8Q/zh-cn_image_0000002613938015.png "点击放大")
 
 **流水线场景**
 
@@ -85,7 +87,7 @@ HWASAN\_OPTIONS支持在“app.json5”中配置。
    "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/nwE_Hk-OQNqgLe3As946_Q/zh-cn_image_0000002404125093.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/qm-Jr1kZQrS_yP2FzOOuAA/zh-cn_image_0000002404125093.png)
 2. 在hvigorw命令后加上**-p** **ohos-enable-hwasan=true**的选项，执行hvigorw命令，更多options参考[hvigorw文档](../harmonyos-guides/ide-hvigor-commandline.md)。
 
    ```screen
@@ -102,7 +104,7 @@ HWASAN\_OPTIONS支持在“app.json5”中配置。
    "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/fhWQYCfiTGa1kN8YRFwwvg/zh-cn_image_0000002370405544.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/T8NPFFy2TdaS4SRt7vXFzw/zh-cn_image_0000002370405544.png)
 2. 在需要使能HWASan的模块中，通过添加构建参数开启HWASan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数。
 
    ```screen
@@ -166,7 +168,7 @@ llvm-readelf -s libthird_party.so | grep '__hwasan_init'
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出HWASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/LZtKAaUPTj6__3KdwuFO1A/zh-cn_image_0000002370565428.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/MbObRKURTTCY4yClJ5dmdw/zh-cn_image_0000002370565428.png)
 
 ## HWASan异常检测类型
 
@@ -228,7 +230,7 @@ Cause: stack tag-mismatch
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/lV2A5PEaT6aJfNTnLCzPIA/zh-cn_image_0000002505468708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/vz3ccp_tRBayECPgjnF8eQ/zh-cn_image_0000002505468708.png)
 
 **优化建议**
 
@@ -282,7 +284,7 @@ Cause: heap-buffer-overflow
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/c8vyam8sRkmJHYLhrjYKAw/zh-cn_image_0000002537308659.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/-Gbt9VnETxym9sHQpjLvzA/zh-cn_image_0000002537308659.png)
 
 **修改方法**
 
@@ -341,7 +343,7 @@ Cause: use-after-free
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/KlKsDlRGSHSJYS3pizcjRw/zh-cn_image_0000002505469052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/buox9El8RkueyIf5Q97cCA/zh-cn_image_0000002505469052.png)
 
 **修改方法**
 

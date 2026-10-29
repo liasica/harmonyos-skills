@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-aipp-
 title: AIPP部署
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > AIPP部署
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:59+08:00
+scraped_at: 2026-10-29T07:57:55+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:53987923b90ffcd22c14dbc7fb85d6e769379efac26c27fdbd471400ea9972c7
+content_hash: sha256:639ac92530241fd837e4d2b05bd5e6d58db2312dc5b1dd7df1434927c0776b6e
 ---
 
 ## 基本概念
@@ -14,7 +14,7 @@ AIPP部署是指动态AIPP推理时开发者按需配置动态AIPP参数，从�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/oQ74G6mMSCKo4mM3XgAg2g/zh-cn_image_0000002771666852.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/8LgelOJVRb6XGkSvmp7JdA/zh-cn_image_0000002803225359.png)
 
 ## 接口说明
 

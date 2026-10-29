@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-glossa
 title: Sensor Service Kit术语
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > Sensor Service Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:38+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:382db4b5b615b54fe6aae2a4e957da9c72d75fbe96c5e3fd879b1ebe597c991f
+scraped_at: 2026-10-29T07:57:08+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:0138138a77326304e2c2f4c277e3431d52b940a39463ab90be7932bd9688a9f8
 ---
 
 ## C
@@ -16,27 +16,27 @@ content_hash: sha256:382db4b5b615b54fe6aae2a4e957da9c72d75fbe96c5e3fd879b1ebe597
 
 ## D
 
-### 动态马达
+### Dynamic Vibrator；动态马达
 
 设备外置、支持独立控制的多个马达。可根据设备的连接状态、马达状态等信息灵活管理，常用于手柄、遥控器、外接振动器等外接设备。
 
-### 动态传感器
+### Dynamic Sensor；动态传感器
 
 外置且支持动态接入的传感器，模块能力可细化控制每个动态传感器。
 
 ## L
 
-### 本地马达
+### Local Vibrator；本地马达
 
 设备内置的马达，如转子马达、线性马达等。
 
-### 本地传感器
+### Local Sensor；本地传感器
 
 设备内置的传感器，如加速度传感器、陀螺仪、温度传感器等。
 
 ## P
 
-### 预置振动
+### Preset Vibration；预置振动
 
 使用系统内置EffectId触发的振动效果，适用于特定固定场景，如效果"haptic.clock.timer"通常用于用户调整计时器时的振感反馈。
 

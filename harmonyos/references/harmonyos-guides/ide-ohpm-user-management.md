@@ -3,36 +3,36 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-user
 title: 用户管理
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 用户管理
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:16+08:00
+scraped_at: 2026-10-29T07:58:20+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:cbe711f33cd5b7b5dc04856f2c8b759a89efaa7384512f713c4d0e158721ff58
+content_hash: sha256:eab8177c21f367dd85a4aee026e9305d97f760bca6d3884ff6847419a34bfe96
 ---
 
 用户管理页面可以新增用户、编辑用户信息、修改用户类型、重置用户密码，删除用户和搜索用户，页面效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/z4FPWdIKR9aL59kF8fSQcQ/zh-cn_image_0000002731381195.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/7_sALTBqQL-q38QHyH5FTw/zh-cn_image_0000002731381195.png "点击放大")
 
 1. 点击“新增”按钮，弹出新增用户面板，输入用户名（必填）、密码（必填）、邮箱（可选）和手机号（可选），新增用户首次登录将强制重置密码。填完用户信息后点击新增即可添加一个新用户，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/uhhCJ4vGRiGzFtdFQVeiBg/zh-cn_image_0000002731381539.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/C7croCojR-6Xnjtj4gswRw/zh-cn_image_0000002731381539.png "点击放大")
 2. ohpm-repo从6.0.1版本开始，新增“编辑用户信息”按钮。
 
    点击“编辑用户信息”按钮，再点击邮箱或手机号后的勾选框后，即可编辑用户的邮箱或手机号。点击确认修改用户信息，将出现密码输入框，由于管理员修改其他用户的信息是敏感操作，故需要输入当前操作账户的密码进行再次验证，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/gNbP2k0ZTkyRtuPH3VSrFg/zh-cn_image_0000002731541119.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/YBlAkqK4Sly7A54oxSPogA/zh-cn_image_0000002731541119.png "点击放大")
 3. 点击“编辑类型”按钮，弹出编辑用户类型面板，在此面板中可以修改用户类型成管理员或用户。点击确认修改用户类型，将出现密码输入框，由于管理员修改其他用户的类型是敏感操作，故需要输入当前操作账户的密码进行再次验证，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/N-7YysL1SsCXBAb3pnB5zw/zh-cn_image_0000002731381545.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ItHushM3Rl-jGOSAKi_31A/zh-cn_image_0000002731381545.png "点击放大")
 4. 点击“重置密码”按钮，弹出重置用户密码面板，在此面板中可以通过点击生成新密码为用户生成随机新密码，并可通过点击复制图标将新密码复制进剪贴板（只有点击**确定**按钮才会重置密码）。点击确认重置密码，将出现密码输入框，由于管理员对其他用户重置密码是敏感操作，故需要输入当前操作账户的密码进行再次验证，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/QBd68517SPGsGJIuKAYiOg/zh-cn_image_0000002701661934.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/BU-WCdHTS1aGeec6IXufKQ/zh-cn_image_0000002701661934.png "点击放大")
 5. 点击“删除”按钮，弹出删除提示，如果确定删除，需要点击按钮“是”，将出现密码输入框。由于管理员删除用户属于敏感操作，需要输入当前操作账户的密码进行再次验证，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/g6OEzM_1SUihvhTTHSpesA/zh-cn_image_0000002731381557.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/oyCQPlA0QuyQfk3BZ5WntQ/zh-cn_image_0000002731381557.png "点击放大")
 
    当被删除的用户是某个三方包的唯一所有者时，禁止被删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/SKtInozhRx2jjGAfDdHMMw/zh-cn_image_0000002701821858.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/h7ATIW6cSWOTUXWhRXM0GA/zh-cn_image_0000002701821858.png "点击放大")
 6. 点击搜索框，支持指定用户类型（系统管理员/普通用户）和用户名模糊搜索，搜索页面效果如下图所示（以指定用户类型为系统管理员，用户名为admin为例）：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NY7hw7IdRZu9hiXczOBezg/zh-cn_image_0000002701661958.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/xxTm8pczS2CLMBZhvq8hFA/zh-cn_image_0000002701661958.png "点击放大")

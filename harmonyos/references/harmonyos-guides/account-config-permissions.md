@@ -3,24 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-confi
 title: 申请账号权限
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发准备 > 申请账号权限
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:39+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:809a0eb5697e4be829655fb3c85fc753cc9536b4e637d03ac134f1d6e09456e6
+scraped_at: 2026-10-29T07:57:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c92a6eb54028a870a3e6ac13d583fbd8769e1add88a8d045ff040abddabcabf7
 ---
 
 请参考“[应用开发准备](application-dev-overview.md)”章节，创建应用、使用DevEco Studio创建应用工程。
 
 **说明** 
 
-如需申请华为账号一键登录、获取您的手机号、获取收货地址权限，则需按照以下步骤完成权限申请，否则可跳过本章节。
+如需申请华为账号一键登录、获取您的手机号、获取收货地址、获取您的年龄段权限，则需按照以下步骤完成权限申请，否则可跳过本章节。
 
 ## 申请前自检
 
-申请权限前请参考**表1**，了解账号权限支持的能力和使用条件，并根据**表2**、**表3**、**表4**完成自检，确认您的**应用类型、设备类型、开发者类型等**是否符合申请条件，不符合条件的申请将被驳回。
+申请权限前请参考**表1**，了解账号权限支持的能力和使用条件，并根据**表2**、**表3**、**表4**、**表5**完成自检，确认您的**应用类型、设备类型、开发者类型等**是否符合申请条件，不符合条件的申请将被驳回。
 
 **说明** 
 
-华为账号一键登录、获取您的手机号、获取收货地址权限，仅支持企业开发者申请，不支持个人开发者申请。个人开发者可使用[华为账号登录](account-unionid-login-button.md)或[静默登录](account-silent-login.md)实现登录。
+华为账号一键登录、获取您的手机号、获取收货地址、获取您的年龄段权限，仅支持企业开发者申请，不支持个人开发者申请。个人开发者可使用[华为账号登录](account-unionid-login-button.md)或[静默登录](account-silent-login.md)实现登录，无需申请权限。
 
 **表1** 账号权限说明
 
@@ -29,7 +29,7 @@ content_hash: sha256:809a0eb5697e4be829655fb3c85fc753cc9536b4e637d03ac134f1d6e09
 | 华为账号一键登录 | 支持应用获取用户的**Union ID**、**Open ID**和华为账号绑定的**手机号**。 | 非游戏类应用、非银行类应用 | 企业开发者 | Phone、Tablet、PC/2in1、TV |
 | 获取您的手机号 | 支持应用获取华为账号绑定的**手机号**或用户选择的**其他手机号**。 | 游戏类应用 | 企业开发者 | Phone、Tablet、PC/2in1、Wearable、TV |
 | 获取收货地址 | 支持应用获取用户的**地址**，地址可以用做收货或者发货。 | 无限制 | 企业开发者 | Phone、Tablet、PC/2in1、TV |
-| 获取您的年龄段 | 支持应用获取用户的**实名年龄段**信息 | 游戏类应用 | 企业开发者 | Phone、Tablet、PC/2in1、Wearable、TV |
+| 获取您的年龄段 | 支持应用获取用户的**实名年龄段**信息。 | 游戏类应用 | 企业开发者 | Phone、Tablet、PC/2in1、Wearable、TV |
 
 **表2** 华为账号一键登录权限申请自检表
 
@@ -75,19 +75,19 @@ content_hash: sha256:809a0eb5697e4be829655fb3c85fc753cc9536b4e637d03ac134f1d6e09
 
 1. 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择相应的项目，然后选择需要申请对应权限的HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/gIdeYduXRmisHsVnqsG5Fg/zh-cn_image_0000002800986179.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/tVkQ_qXVQQuZSXWI6zCYzw/zh-cn_image_0000002803264919.png)
 2. 在“开放能力管理”中，选择想要申请的账号权限，并点击“申请”。
 
    **说明** 
 
-   权限申请入口目前仅对企业开发者开放，个人开发者不可见。
+   权限申请入口目前仅对企业开发者开放，个人开发者不可见。个人开发者可使用[华为账号登录](account-unionid-login-button.md)或[静默登录](account-silent-login.md)实现登录，无需申请权限。
 
    图示仅为示例，不同应用类型展示不同权限，请以实际页面显示为准。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/qnHapIpNTOC2Fo4FqWgMmA/zh-cn_image_0000002771826290.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/drS2Re-jQgSWAQ_5Q1BlHA/zh-cn_image_0000002803224829.png)
 3. 点击申请后，请根据应用实际情况填写“申请原因”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Y97gAX08SC64OA2VjwuG-g/zh-cn_image_0000002801106105.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/0PL7lxdKTjODTRYfY6BOpQ/zh-cn_image_0000002774065112.png)
 
    **说明** 
 
@@ -137,8 +137,8 @@ content_hash: sha256:809a0eb5697e4be829655fb3c85fc753cc9536b4e637d03ac134f1d6e09
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/7o8cHSC7SMa1Tq0nrrNLsw/zh-cn_image_0000002771666324.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/HkRmsGRpS6qt7H7TKBxsxA/zh-cn_image_0000002773905138.png)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/dH_73AZEQqWnkWepmra3XA/zh-cn_image_0000002800986181.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/1VNd0UqqSeCCN6n6pN0Xqw/zh-cn_image_0000002803264921.png)

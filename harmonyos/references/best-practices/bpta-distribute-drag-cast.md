@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distribute-drag-cast
 title: 跨设备拖拽
-breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 跨设备拖拽
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 跨设备拖拽
 category: best-practices
-scraped_at: 2026-10-16T07:06:42+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:ab22b86d709f06a8d151c8d87a5a9f3a7bf14ecc3b16733255be7bf4c04b2098
+scraped_at: 2026-10-29T08:03:12+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:eb7a689346fdadfae3ca16559631e5b6498e25fb4f5b3bb64f36e4741577cf95
 ---
 
 跨端拖拽提供跨设备的键鼠共享能力，支持在平板或2in1类型的任意两台设备之间拖拽文本、图片、视频、PDF文档等文件。
@@ -19,11 +19,11 @@ content_hash: sha256:ab22b86d709f06a8d151c8d87a5a9f3a7bf14ecc3b16733255be7bf4c04
 
 开发者可以根据实际需求，实现组件的拖入或拖出，即可接入跨设备拖拽。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/6mskc1TQSIibEdhRlXe5Sg/zh-cn_image_0000002593676861.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/aXlN7PqQQIG3DQ_3NAjhIw/zh-cn_image_0000002593676861.gif "点击放大")
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/RO6OTkCbR2CiAeM1zNAcyQ/zh-cn_image_0000002563037188.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/2Nd8c-PHTyikZkbbS0GYAA/zh-cn_image_0000002563037188.png "点击放大")
 
 1. 用户使用鼠标点击组件，触发拖拽事件。
 2. 应用设置拖拽数据。
@@ -42,7 +42,7 @@ content_hash: sha256:ab22b86d709f06a8d151c8d87a5a9f3a7bf14ecc3b16733255be7bf4c04
   + 双端设备需要登录同一华为账号。
   + 双端设备需要打开Wi-Fi和蓝牙开关，并接入同一个局域网。
   + 打开键鼠穿越开关。
-  + 应用本身预置的资源文件（即应用在安装前的HAP包中已经存在的资源文件）不支持跨设备拖拽。
+  + 应用本身预置的资源文件（即应用在安装前的[HAP](../doccenter-getting-started/hap-package.md)包中已经存在的资源文件）不支持跨设备拖拽。
 
 ## 接口说明
 

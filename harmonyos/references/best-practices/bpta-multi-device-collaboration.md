@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-device-collaboration
 title: 多端协同
-breadcrumb: 最佳实践 > 自由流转 > 多端协同
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同
 category: best-practices
-scraped_at: 2026-10-16T07:06:42+08:00
-doc_updated_at: 2026-10-15
+scraped_at: 2026-10-29T08:03:12+08:00
+doc_updated_at: 2026-10-28
 content_hash: sha256:d8e92ebd1a571685c6669b9f3d47147a474aaef62bcd25b688de267bc4d8e210
 ---
 

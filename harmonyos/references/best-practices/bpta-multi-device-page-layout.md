@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 页面布局场景
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面布局响应式变化 > 页面布局场景
 category: best-practices
-scraped_at: 2026-10-16T07:06:38+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:c8784363f33a47d5f5bf27adc6dd55bb55cd8e45a8a4f67995a31b768ad49883
+scraped_at: 2026-10-29T08:03:17+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:755988f924201a16c74583b890fb20648f7a165ecd63b1f4d60c9e5d917939b6
 ---
 
 HarmonyOS基于“一次开发，多端部署”的理念设计了响应式布局，旨在帮助开发者高效构建适应不同设备的应用界面。系统通过统一的UI框架、响应式布局能力——[断点](bpta-multi-device-responsive-layout.md#section1532120147301)和[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)，让应用页面能够根据代码的差异化实现自动适应从手机、折叠屏、平板到电脑等各种终端形态。
@@ -39,7 +39,7 @@ HarmonyOS基于“一次开发，多端部署”的理念设计了响应式布�
 
 | 横向断点 | sm | md | lg |
 | --- | --- | --- | --- |
-| 属性 | 单列列表  行间距8vp | 双列列表  列间距12vp  行间距 12vp | 三列列表  列间距12vp  行间距16vp |
+| 属性 | 单列列表  行间距8vp | 双列列表  列间距12vp  行间距12vp | 三列列表  列间距12vp  行间距16vp |
 | 展示布局 |  |  |  |
 
 **实现方案**
@@ -242,7 +242,7 @@ SideBarContainer(this.mainWindowInfo.widthBp === WidthBreakpoint.WIDTH_SM ? Side
 
 1. 根据判断条件“设备宽度≥600vp，高宽比<1.2”，计算是否需要分栏展示，当需要分栏展示时，计算导航栏与内容区占位比例。
 
-   ```typescript
+   ```screen
    public onWindowSizeChange: (windowSize: window.Size) => void = (windowSize: window.Size) => {
      this.mainWindowInfo.windowSize = windowSize;
      this.mainWindowInfo.widthBp = this.uiContext?.getWindowWidthBreakpoint() ?? WidthBreakpoint.WIDTH_XS;
@@ -254,7 +254,7 @@ SideBarContainer(this.mainWindowInfo.widthBp === WidthBreakpoint.WIDTH_SM ? Side
        screenRatio = windowProperties.windowRect.height / windowProperties.windowRect.width;
      } catch (error) {
        let err = error as BusinessError;
-       hilog.error(0x0000, 'testLog', `Failed to get windowProperties. Code: ${err.code}, message: ${err.message}`);
+       hilog.error(0x0000, 'WindowUtil', `Failed to get windowProperties. Code: ${err.code}, message: ${err.message}`);
      }
 
      this.mainWindowInfo.isSplitMode = screenRatio < DoubleColumnConstants.HEIGHT_TO_WIDTH_RATIO_120_PERCENT &&
@@ -301,7 +301,7 @@ SideBarContainer(this.mainWindowInfo.widthBp === WidthBreakpoint.WIDTH_SM ? Side
 
 对于聊天页面的双栏路由模式切换，开发者可以抽象为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/M6N0XKQiSPOfOqATxRpzbg/zh-cn_image_0000002509292755.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/OIyH9F9YRtWsi-qoUQ6VlQ/zh-cn_image_0000002509292755.png "点击放大")
 
 **示例代码**
 
@@ -353,7 +353,7 @@ build() {
 
 对于边看边评的多分栏模式变化，开发者可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/GlPQ2KpISnyYXGCOlBV6bg/zh-cn_image_0000002669546586.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/-ahNYyzCSeKuQrDmgFODxQ/zh-cn_image_0000002669546586.png "点击放大")
 
 **示例代码**
 
@@ -369,7 +369,7 @@ build() {
      // ...
    };
    ```
-2. 动态设置Navigation模式，并设置Navigation组件内容区固定宽度为320vp
+2. 动态设置Navigation模式，并设置Navigation组件内容区固定宽度为320vp。
 
    ```typescript
    Navigation(this.pathStack) {
@@ -442,7 +442,7 @@ SideBarContainer(new WidthBreakpointType(SideBarContainerType.Overlay, SideBarCo
 
 对于邮箱页面的一多分栏变化，开发者可以抽象为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/vjn9jxPuSkqnF4bF-A3rSg/zh-cn_image_0000002509132789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/-XSh9WMQQfS4JrxAqNV7WQ/zh-cn_image_0000002509132789.png "点击放大")
 
 **示例代码**
 
@@ -504,7 +504,7 @@ SideBarContainer(new WidthBreakpointType(SideBarContainerType.Overlay, SideBarCo
 
 在三分栏的单栏布局中，通常展示的重点是Navigation的内容区。但在某些场景下，内容区的优先级低于导航区，例如日历日程功能。在这种情况下，单栏布局会优先展示日历（即Navigation的导航区）。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/ZZulAQ1oR2unv2lW27ahmQ/zh-cn_image_0000002509292759.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/H-kK54KkRzuO2B76GuDYTg/zh-cn_image_0000002509292759.png "点击放大")
 
 日历日程分为三个层级，账户信息->日历->日程，开发者通常在单栏显示日历，双栏显示日历、日程，三栏显示账户信息、日历、日程。日历日程页面与邮箱页面的主要区别在于，日历日程页面的单栏页面重点显示Navigation导航栏，邮箱页面的单栏重点显示Navigation内容区。
 
@@ -686,7 +686,7 @@ Tabs({
 })
 ```
 
-在xl断点下或使用电脑设备，首页调用SideBarContainer组件，传入侧边栏区域组件和内容区域组件。此时可以结合[@State](../harmonyos-guides/arkts-state.md)和[@Link](../harmonyos-guides/arkts-link.md)装饰器，同步所需要的参数信息，如当前选中的一级目录索引和二级目录索引，可以用于呈现与页签强相关的页面内容。
+在xl断点下或使用电脑设备，首页调用SideBarContainer组件，传入侧边栏区域组件和内容区域组件。此时可以结合[@State装饰器：组件内状态](../harmonyos-guides/arkts-state.md)和[@Link装饰器：父子双向同步](../harmonyos-guides/arkts-link.md)，同步所需要的参数信息，如当前选中的一级目录索引和二级目录索引，可以用于呈现与页签强相关的页面内容。
 
 ```typescript
 // entry/src/main/ets/view/TabsView/TabsView.ets

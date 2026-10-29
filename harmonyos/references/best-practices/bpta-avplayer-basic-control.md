@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-avplayer-b
 title: 基于AVPlayer基础播控实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AVPlayer播放视频系列开发实践 > 基于AVPlayer基础播控实践
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:fe34113d392285bfa9c6f2a550a4eba728e931f6672b60929f6df13ba71dbef0
+scraped_at: 2026-10-29T08:03:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:88437e3f295e90456321733699463ba36c4864121ac5ce7361ce3362739ef923
 ---
 
 ## 概述
@@ -16,19 +16,19 @@ content_hash: sha256:fe34113d392285bfa9c6f2a550a4eba728e931f6672b60929f6df13ba71
 
 **说明** 
 
-在阅读本文之前，建议开发者先熟悉视频播放器[《使用AVPlayer播放视频(ArkTS)》](../harmonyos-guides/video-playback.md)。
+在阅读本文之前，建议开发者先熟悉视频播放器——[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)。
 
 ## 场景分析
 
 | 场景名称 | 描述 | 实现方案 |
 | --- | --- | --- |
-| [基础播控](bpta-avplayer-basic-control.md#section169581112135319) | 视频资源的加载、播放、暂停、退出等操作。 | 使用[AVPlayer接口](../harmonyos-references/arkts-apis-media-avplayer.md)实现。 |
-| [跳转播放](bpta-avplayer-basic-control.md#section1897734041617) | 滑动进度条精准跳转到指定时间进行播放。 | 使用[Slider组件](../harmonyos-references/ts-basic-components-slider.md)实现进度条，在其onChange回调中触发进度调节。 |
+| [基础播控](bpta-avplayer-basic-control.md#section169581112135319) | 视频资源的加载、播放、暂停、退出等操作。 | 使用[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)接口实现。 |
+| [跳转播放](bpta-avplayer-basic-control.md#section1897734041617) | 滑动进度条精准跳转到指定时间进行播放。 | 使用[Slider](../harmonyos-references/ts-basic-components-slider.md)组件实现进度条，在其onChange()回调中触发进度调节。 |
 | [静音播放](bpta-avplayer-basic-control.md#section15152110181715) | 点击按钮设置静音播放。 | 使用AVPlayer的[setMediaMuted()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)控制静音状态。 |
 | [循环播放](bpta-avplayer-basic-control.md#section09619253174) | 视频播放结束后会从初始位置再次播放。 | 通过在prepared状态下，设置视频播放器AVPlayer的[loop属性](../harmonyos-references/arkts-apis-media-avplayer.md#属性)值为true，实现视频循环播放。 |
 | [窗口缩放模式设置](bpta-avplayer-basic-control.md#section18974144910175) | 设置窗口缩放模式体验不同的缩放效果。 | 通过设置AVPlayer的[videoScaleType属性](../harmonyos-references/arkts-apis-media-e.md#videoscaletype9)设置窗口缩放模式。 |
-| [倍速设置](bpta-avplayer-basic-control.md#section1333481316184) | 可以通过[点击按钮选择倍速](bpta-avplayer-basic-control.md#section1333481316184)或者通过[长按手势调节倍速](bpta-avplayer-basic-control.md#section364983943913)。 | 使用AVPlayer的[setSpeed()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)设置倍速。通过添加按钮和弹窗实现通过按钮调节倍速；通过给组件绑定[长按手势](../harmonyos-references/ts-basic-gestures-longpressgesture.md)实现长按倍速。 |
-| [音量设置](bpta-avplayer-basic-control.md#section74003157187) | 可以滑动屏幕调节音量。 | 使用[AVVolumePanel组件](../harmonyos-references/ohos-multimedia-avvolumepanel.md)显示音量，通过给组件绑定[手势滑动监听](../harmonyos-references/ts-basic-gestures-pangesture.md)实现调节音量。 |
+| [点击按钮选择倍速](bpta-avplayer-basic-control.md#section1333481316184) | 可以通过[点击按钮选择倍速](bpta-avplayer-basic-control.md#section1333481316184)或者通过[长按手势调节倍速](bpta-avplayer-basic-control.md#section364983943913)。 | 使用AVPlayer的[setSpeed()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)设置倍速。通过添加按钮和弹窗实现通过按钮调节倍速；通过给组件绑定[LongPressGesture](../harmonyos-references/ts-basic-gestures-longpressgesture.md)实现长按倍速。 |
+| [音量设置](bpta-avplayer-basic-control.md#section74003157187) | 可以滑动屏幕调节音量。 | 使用[音量面板](../harmonyos-references/ohos-multimedia-avvolumepanel.md)显示音量，通过给组件绑定[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)实现调节音量。 |
 | [字幕挂载与切换](bpta-avplayer-basic-control.md#section627701016296) | 视频下方显示字幕。 | 使用AVPlayer的[addSubtitleFromFd()方法](../harmonyos-references/arkts-apis-media-avplayer.md#addsubtitlefromfd12)设置外挂字幕资源，并通过AVPlayer实例注册字幕回调函数[on('subtitleUpdate')](../harmonyos-references/arkts-apis-media-avplayer.md#onsubtitleupdate12)；通过切换字幕资源并使用AVPlayer的[reset()方法](../harmonyos-references/arkts-apis-media-avplayer.md#reset9-1)重置播放实现切换字幕。 |
 
 ## 基础播控
@@ -43,7 +43,7 @@ content_hash: sha256:fe34113d392285bfa9c6f2a550a4eba728e931f6672b60929f6df13ba71
 
 播放的全流程包含：创建AVPlayer，设置播放资源和窗口，设置播放参数（音量/倍速/缩放模式），播放控制（播放/暂停/跳转/停止），重置，销毁资源。在进行应用开发的过程中，开发者可以通过AVPlayer的state属性主动获取当前状态或使用on('stateChange')方法监听状态变化。如果应用在视频播放器处于错误状态时执行操作，系统可能会抛出异常或生成其他未定义的行为。
 
-原理详情可查看[《使用AVPlayer播放视频(ArkTS)》](../harmonyos-guides/video-playback.md)。
+原理详情可查看[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)。
 
 ### 开发步骤
 
@@ -61,15 +61,15 @@ content_hash: sha256:fe34113d392285bfa9c6f2a550a4eba728e931f6672b60929f6df13ba71
 
 进度条是视频应用的一个基础能力，可以通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/TqmtrCWMQbKg0PyexDKo-w/zh-cn_image_0000002453067562.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/LS_anZxnRoKC_XvfRofMyA/zh-cn_image_0000002453067562.gif "点击放大")
 
 ### 实现原理
 
-基于[Slider组件](../harmonyos-references/ts-basic-components-slider.md)和视频播放器AVPlayer的[seek()方法](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)实现跳转播放。
+基于[Slider](../harmonyos-references/ts-basic-components-slider.md)组件和视频播放器AVPlayer的[seek()](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)方法实现跳转播放。
 
 ### 开发步骤
 
-采用[Slider组件](../harmonyos-references/ts-basic-components-slider.md)实现进度条功能，根据Slider组件属性设置进度条样式，并在其onChange()事件中触发视频播放器AVPlayer的[seek()方法](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)跳转到指定播放位置，实现视频进度的控制。
+采用[Slider](../harmonyos-references/ts-basic-components-slider.md)组件实现进度条功能，根据Slider组件属性设置进度条样式，并在其onChange()事件中触发视频播放器AVPlayer的[seek()](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)方法跳转到指定播放位置，实现视频进度的控制。
 
 ```typescript
 /**
@@ -107,15 +107,15 @@ Slider({
 
 通过界面按钮快捷切换视频播放静音状态，实现一键开启或关闭静音，提升媒体播放的交互便捷性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/y_T-PPDPTmWUGfRL8rv3hw/zh-cn_image_0000002486107325.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/CdoiBcwqRUGFVUpcvJ3Qtg/zh-cn_image_0000002486107325.gif "点击放大")
 
 ### 实现原理
 
-通过视频播放器AVPlayer的[setMediaMuted()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)，实现控制视频静音状态。
+通过视频播放器AVPlayer的[setMediaMuted()](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)方法，实现控制视频静音状态。
 
 ### 开发步骤
 
-1. 在底部操作栏添加[Button组件](../harmonyos-references/ts-basic-components-button.md)，按钮显示为icon图标；根据Button组件属性设置按钮样式，并在其onClick()事件中触发视频管理接口AvPlayerController.ets文件中封装的videoMuted()方法。
+1. 在底部操作栏添加[Button](../harmonyos-references/ts-basic-components-button.md)组件，按钮显示为icon图标；根据Button组件属性设置按钮样式，并在其onClick()事件中触发视频管理接口AvPlayerController.ets文件中封装的videoMuted()方法。
 
    ```typescript
    /**
@@ -138,7 +138,7 @@ Slider({
      this.avPlayerController.videoMuted(this.isMuted)
    })
    ```
-2. videoMuted()方法中调用了视频播放器AVPlayer的[setMediaMuted()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)，实现控制视频静音状态，其中第一个参数[mediaType](../harmonyos-references/arkts-apis-media-e.md#mediatype8)选择媒体类型为MEDIA\_TYPE\_AUD表示音频，第二个参数是静音开关。
+2. videoMuted()方法中调用了视频播放器AVPlayer的[setMediaMuted()](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)方法，实现控制视频静音状态，其中第一个参数[mediaType](../harmonyos-references/arkts-apis-media-e.md#mediatype8)选择媒体类型为MEDIA\_TYPE\_AUD表示音频，第二个参数是静音开关。
 
    ```typescript
    /**
@@ -167,7 +167,7 @@ Slider({
 
 ### 开发步骤
 
-在视频prepared状态下，设置视频播放器AVPlayer的[loop属性](../harmonyos-references/arkts-apis-media-avplayer.md#属性)值为true，实现视频循环播放。
+在视频prepared状态下，设置视频播放器AVPlayer[属性](../harmonyos-references/arkts-apis-media-avplayer.md#属性)下loop的值为true，实现视频循环播放。
 
 ```typescript
 // Callback function for state machine changes
@@ -196,10 +196,10 @@ this.avPlayer.on('stateChange', async (state) => {
 点击按钮即可弹出设置弹窗，可选择"拉伸至与窗口等大"模式，视频拉伸至与窗口等大，适合需要充分利用显示区域且对比例变化不敏感的场景；选择"缩放至最短边填满窗口"模式，视频将保持原始宽高比并以最短边为基准进行缩放，适合需要保持画面比例不变的场景。
 
 **图1** 拉伸至与窗口等大模式  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/ywtH9lKLRcWicHkFt0PFyg/zh-cn_image_0000002452907970.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/TZGM30PYQqGhralrcOEzzw/zh-cn_image_0000002452907970.gif "点击放大")
 
 **图2** 缩放至最短边填满窗口  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/hFy7tB1MQYmIowaj33WtbQ/zh-cn_image_0000002485947349.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/RHtT255AR7eUr3-jKwpIqA/zh-cn_image_0000002485947349.gif "点击放大")
 
 ### 实现原理
 
@@ -284,11 +284,11 @@ this.avPlayer.on('stateChange', async (state) => {
 
 通过点击按钮选择预设倍速实现倍速设置，为用户提供灵活的视频播放速率控制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/RTdsoWZVQ06dt35nTwmZSg/zh-cn_image_0000002453067566.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/JYa80jc8Q-iML_z8S5CGkQ/zh-cn_image_0000002453067566.gif "点击放大")
 
 ### 实现原理
 
-根据选择的倍速调用视频播放器AVPlayer的[setSpeed()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)设置对应值，实现视频播放倍速设置。
+根据选择的倍速调用视频播放器AVPlayer的[setSpeed()](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)方法设置对应值，实现视频播放倍速设置。
 
 ### 开发步骤
 
@@ -335,7 +335,7 @@ this.avPlayer.on('stateChange', async (state) => {
      }, (item: Resource, index) => index + '_' + JSON.stringify(item))
    }
    ```
-2. 设置倍速方法内调用视频播放器AVPlayer的[setSpeed()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)实现设置倍速。
+2. 设置倍速方法内调用视频播放器AVPlayer的[setSpeed()](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)方法实现设置倍速。
 
    ```typescript
    videoSpeed(speed: number): void {
@@ -358,11 +358,11 @@ this.avPlayer.on('stateChange', async (state) => {
 
 ### 实现原理
 
-通过为元素绑定[长按手势](../harmonyos-references/ts-basic-gestures-longpressgesture.md)事件，在长按手势开始时调用视频播放器AVPlayer的[setSpeed()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)设置值为media.[PlaybackSpeed](../harmonyos-references/arkts-apis-media-e.md#playbackspeed8).SPEED\_FORWARD\_2\_00\_X，实现长按时2倍速播放；长按结束后调用视频播放器AVPlayer的setSpeed()方法设置值为media.PlaybackSpeed.SPEED\_FORWARD\_1\_00\_X，恢复播放速度为1倍速。
+通过为元素绑定长按手势[LongPressGesture](../harmonyos-references/ts-basic-gestures-longpressgesture.md)事件，在长按手势开始时调用视频播放器AVPlayer的[setSpeed()](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)方法设置值为media.[PlaybackSpeed](../harmonyos-references/arkts-apis-media-e.md#playbackspeed8).SPEED\_FORWARD\_2\_00\_X，实现长按时2倍速播放；长按结束后调用视频播放器AVPlayer的setSpeed()方法设置值为media.PlaybackSpeed.SPEED\_FORWARD\_1\_00\_X，恢复播放速度为1倍速。
 
 ### 开发步骤
 
-1. 为元素绑定[长按手势LongPressGesture](../harmonyos-references/ts-basic-gestures-longpressgesture.md)事件，并调用封装的videoSpeed()方法，长按手势开始时传递参数为media.PlaybackSpeed.SPEED\_FORWARD\_2\_00\_X，设置播放速度为2倍速；长按手势结束时传递参数为media.PlaybackSpeed.SPEED\_FORWARD\_1\_00\_X，恢复播放速度为1倍速。
+1. 为元素绑定长按手势[LongPressGesture](../harmonyos-references/ts-basic-gestures-longpressgesture.md)事件，并调用封装的videoSpeed()方法，长按手势开始时传递参数为media.PlaybackSpeed.SPEED\_FORWARD\_2\_00\_X，设置播放速度为2倍速；长按手势结束时传递参数为media.PlaybackSpeed.SPEED\_FORWARD\_1\_00\_X，恢复播放速度为1倍速。
 
    ```typescript
    .gesture(
@@ -377,7 +377,7 @@ this.avPlayer.on('stateChange', async (state) => {
        })
    )
    ```
-2. 设置倍速方法内调用视频播放器AVPlayer的[setSpeed()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)实现设置倍速。
+2. 设置倍速方法内调用视频播放器AVPlayer的[setSpeed()](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)方法实现设置倍速。
 
    ```typescript
    videoSpeed(speed: number): void {
@@ -398,15 +398,15 @@ this.avPlayer.on('stateChange', async (state) => {
 
 滑动调节音量是一项非常实用的功能，它允许用户在不离开视频播放界面的情况下快速调整音量，以获得更好的观看体验。该功能位于窗口左侧，通过上下滑动手势即可调整音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/hdyLLzq5SymgjrQiz5_-PQ/zh-cn_image_0000002486107329.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/T6SlJELrSDGSbsED41mYrA/zh-cn_image_0000002486107329.gif "点击放大")
 
 ### 实现原理
 
-用[AVVolumePanel组件](../harmonyos-references/ohos-multimedia-avvolumepanel.md)显示系统音量面板，为元素绑定[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)滑动手势事件，设置滑动方向为竖直方向，当手势在移动时，上滑增加音量，下滑减少音量，实现控制系统音量功能。
+用[音量面板](../harmonyos-references/ohos-multimedia-avvolumepanel.md)显示系统音量面板，为元素绑定[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)滑动手势事件，设置滑动方向为竖直方向，当手势在移动时，上滑增加音量，下滑减少音量，实现控制系统音量功能。
 
 ### 开发步骤
 
-1. 添加[AVVolumePanel组件](../harmonyos-references/ohos-multimedia-avvolumepanel.md)显示系统音量面板。
+1. 添加[音量面板](../harmonyos-references/ohos-multimedia-avvolumepanel.md)显示系统音量面板。
 
    ```typescript
    import { AVVolumePanel } from '@kit.AudioKit';
@@ -460,13 +460,13 @@ this.avPlayer.on('stateChange', async (state) => {
 
 在视频播放前，用户可设置外挂字幕文件，字幕将精准同步显示于视频画面下方，并可以通过按钮切换字幕语言，提升观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3xZ9PawXR7666FPnH9rLRw/zh-cn_image_0000002452907974.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FdeOPPptRSOYyoVvnCa17A/zh-cn_image_0000002452907974.gif "点击放大")
 
 ### 实现原理
 
-通过AVPlayer视频播放器的[addSubtitleFromFd()](../harmonyos-references/arkts-apis-media-avplayer.md#addsubtitlefromfd12)方法加载外挂字幕，并使用[on('subtitleUpdate')](../harmonyos-references/arkts-apis-media-avplayer.md#onsubtitleupdate12)方法注册字幕回调函数。在回调函数中获取字幕文本，通过状态变量刷新[Text组件](../harmonyos-references/ts-basic-components-text.md)显示内容。使用Text组件显示字幕并设置字体格式。
+通过AVPlayer视频播放器的[addSubtitleFromFd()](../harmonyos-references/arkts-apis-media-avplayer.md#addsubtitlefromfd12)方法加载外挂字幕，并使用[on('subtitleUpdate')](../harmonyos-references/arkts-apis-media-avplayer.md#onsubtitleupdate12)方法注册字幕回调函数。在回调函数中获取字幕文本，通过状态变量刷新[Text](../harmonyos-references/ts-basic-components-text.md)组件显示内容。使用Text组件显示字幕并设置字体格式。
 
-切换字幕语言需依据所选语言加载相应的字幕资源，然后调用AVPlayer的[reset()方法](../harmonyos-references/arkts-apis-media-avplayer.md#reset9-1)重置播放器并重新初始化。
+切换字幕语言需依据所选语言加载相应的字幕资源，然后调用AVPlayer的[reset()](../harmonyos-references/arkts-apis-media-avplayer.md#reset9-1)方法重置播放器并重新初始化。
 
 ### 开发步骤
 
@@ -495,7 +495,7 @@ this.avPlayer.on('stateChange', async (state) => {
      }
    });
    ```
-3. 使用状态变量刷新[Text组件](../harmonyos-references/ts-basic-components-text.md)的内容，并通过修改Text属性调整字幕字体格式。
+3. 使用状态变量刷新[Text](../harmonyos-references/ts-basic-components-text.md)组件的内容，并通过修改Text属性调整字幕字体格式。
 
    ```typescript
    Stack({ alignContent: Alignment.Center }) {
@@ -508,7 +508,7 @@ this.avPlayer.on('stateChange', async (state) => {
    .position({ x: $r('app.float.size_zero'), y: $r('app.float.size_216') })
    .zIndex(1)
    ```
-4. 根据所选语言切换对应字幕资源，并调用AVPlayer的[reset()方法](../harmonyos-references/arkts-apis-media-avplayer.md#reset9-1)重置播放器并重新初始化。
+4. 根据所选语言切换对应字幕资源，并调用AVPlayer的[reset()](../harmonyos-references/arkts-apis-media-avplayer.md#reset9-1)方法重置播放器并重新初始化。
 
    ```screen
    async languageChange(languageSelect: number = 0): Promise<void> {

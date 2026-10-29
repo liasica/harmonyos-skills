@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-buil
 title: 插件上下文
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 扩展构建能力 > 扩展构建API > 插件上下文
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:24+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:4a3043ec75b72fb687e3138e973f27cc9e3b0c63dfd950670ee4fb62d1fbee5c
+scraped_at: 2026-10-29T07:58:49+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:2daf038ee03d81d0f77ede9e78af24982a122d310afa1d5c06cd712900c95d56
 ---
 
 ## OhosPluginId
@@ -844,7 +844,7 @@ getDynamicDependenciesOpt: () => any
 
 | 类型 | 说明 |
 | --- | --- |
-| any | 获取工程级别下oh-package.json5中DynamicDependencies信息 |
+| any | 工程下oh-package.json5中配置的dynamicDependencies依赖 |
 
 **示例：**
 
@@ -1343,7 +1343,7 @@ export default {
 
 ### targets
 
-targets: (callbackfn: (target: Target) => void) => void
+targets: (callback: (target: Target) => void) => void
 
 当前需构建的target对象回调方法。
 
@@ -1982,23 +1982,23 @@ export default {
 
 ### setDependenciesOpt
 
-与OhosAppContext中的[setDependenciesOpt](ide-hmos-build-expanding-context.md#section18789410129)方法一致，请参考上文中getDependenciesOpt接口描述。
+与OhosAppContext中的[setDependenciesOpt](ide-hmos-build-expanding-context.md#section18789410129)方法一致，请参考上文中setDependenciesOpt接口描述。
 
 ### getDevDependenciesOpt
 
-与OhosAppContext中的[getDevDependenciesOpt](ide-hmos-build-expanding-context.md#section192992531393)方法一致，请参考上文中getDependenciesOpt接口描述。
+与OhosAppContext中的[getDevDependenciesOpt](ide-hmos-build-expanding-context.md#section192992531393)方法一致，请参考上文中getDevDependenciesOpt接口描述。
 
 ### setDevDependenciesOpt
 
-与OhosAppContext中的[setDevDependenciesOpt](ide-hmos-build-expanding-context.md#section8534132541914)方法一致，请参考上文中getDependenciesOpt接口描述。
+与OhosAppContext中的[setDevDependenciesOpt](ide-hmos-build-expanding-context.md#section8534132541914)方法一致，请参考上文中setDevDependenciesOpt接口描述。
 
 ### getDynamicDependenciesOpt
 
-与OhosAppContext中的[getDynamicDependenciesOpt](ide-hmos-build-expanding-context.md#section3891011201117)方法一致，请参考上文中getDependenciesOpt接口描述。
+与OhosAppContext中的[getDynamicDependenciesOpt](ide-hmos-build-expanding-context.md#section3891011201117)方法一致，请参考上文中getDynamicDependenciesOpt接口描述。
 
 ### setDynamicDependenciesOpt
 
-与OhosAppContext中的[setDynamicDependenciesOpt](ide-hmos-build-expanding-context.md#section2756613192210)方法一致，请参考上文中getDependenciesOpt接口描述。
+与OhosAppContext中的[setDynamicDependenciesOpt](ide-hmos-build-expanding-context.md#section2756613192210)方法一致，请参考上文中setDynamicDependenciesOpt接口描述。
 
 ### transformAbc
 

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hopping
 title: 自由流转概述
-breadcrumb: 最佳实践 > 自由流转 > 自由流转概述
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 自由流转概述
 category: best-practices
-scraped_at: 2026-10-16T07:06:41+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:a52d486bfb63d4a622b6c76bb68b9a4ae226b8e0c7a7ebb6e2dcfa2dce6c2885
+scraped_at: 2026-10-29T08:03:11+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:62bef262d347381bd6036f82e4f5c33664a8fc01af43062f60c77e5cce47c1a4
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:a52d486bfb63d4a622b6c76bb68b9a4ae226b8e0c7a7ebb6e2dcfa2dce6
 
   常见的跨端迁移场景实例：在平板上播放的视频，迁移到智慧屏继续播放，从而获得更佳的观看体验；平板上的视频应用退出。
 
-  在应用开发层面，跨端迁移指在A端运行的UIAbility迁移到B端上，完成迁移后，B端UIAbility继续任务，而A端UIAbility可按需决定是否退出。
+  在应用开发层面，跨端迁移指在A端运行的[UIAbility](../doccenter-references/api/js-apis-app-ability-uiability.md#uiability)迁移到B端上，完成迁移后，B端UIAbility继续任务，而A端UIAbility可按需决定是否退出。
 * **多端协同**
 
   用户拥有的多个设备，可以作为一个整体，为用户提供比单设备更加高效、沉浸的体验，这就是多端协同场景。
@@ -44,7 +44,7 @@ content_hash: sha256:a52d486bfb63d4a622b6c76bb68b9a4ae226b8e0c7a7ebb6e2dcfa2dce6
 
 自由流转依赖于HarmonyOS提供的分布式运行环境，底层依托分布式软总线，解决设备发现、连接、组网等痛点，打通1+8+N互联互通能力，对外提供硬件、数据、应用三个维度的跨设备访问能力，应用开发只需遵循框架并适配应用层提供的API，就能实现设备之间的跨端迁移和多端协同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/48_QEFCWQBSg58gpnymt-w/zh-cn_image_0000002563685202.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/R8QRhN0uQLOSC7DtEMlsQQ/zh-cn_image_0000002563685202.png "点击放大")
 
 ### 特性
 

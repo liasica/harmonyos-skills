@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.secureElement (安全单元的通道管理)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.secureElement (安全单元的通道管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:45+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:655ecf019e2d00935fb64f61bdeb97ed8e43913922279bd20a184e4667db7152
+scraped_at: 2026-10-29T08:00:53+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:a1434785352e198e8f8013c759692bba4cf90acf972274e5bc5184cff9946e1c
 ---
 
 本模块主要用于操作及管理安全单元（SecureElement，简称SE），电子设备上可能存在的安全单元有eSE（Embedded SE）和SIM卡。文档中出现的SE服务为SEService实例，参见[createService](js-apis-secureelement.md#omapicreateservice12)。
@@ -409,7 +409,7 @@ let seService : omapi.SEService;
 
 try {
     let version = seService.getVersion();
-    hilog.error(0x0000, 'testTag', 'version %{public}s', JSON.stringify(version));
+    hilog.info(0x0000, 'testTag', 'version %{public}s', JSON.stringify(version));
 } catch (error) {
     hilog.error(0x0000, 'testTag', 'getVersion error %{public}s', JSON.stringify(error));
 }

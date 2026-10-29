@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-state-refr
 title: 状态刷新控制
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 状态刷新控制
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:1d7022c519283d4ea9de17db6da2c61e737d8bb5abccbd720c11429a9f5a8b08
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:8cebeaf1fb3aa2a67180f935d7706653630704732aabed8d6c811b977bcf8839
 ---
 
-在声明式UI编程范式中，UI是应用程序状态的函数，应用程序状态的修改会更新相应的UI界面。ArkUI采用了[MVVM](../harmonyos-guides/arkts-mvvm.md)模式，其中ViewModel将数据与视图绑定在一起，更新数据的时候直接更新视图。如下图所示：
+在声明式UI编程范式中，UI是应用程序状态的函数，应用程序状态的修改会更新相应的UI界面。ArkUI采用了[MVVM](../harmonyos-guides/arkts-mvvm.md)MVVM模式作为UI范式，其中ViewModel将数据与视图绑定在一起，更新数据的时候直接更新视图。具体参考，[MVVM模式（V1）](../harmonyos-guides/arkts-mvvm.md)和[MVVM模式（V2）](../doccenter-capabilities/arkts-mvvm-v2.md)。
 
 **图1** ArkUI的MVVM模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/YpaL3e3fQIGaVrSL6bLA4Q/zh-cn_image_0000002229336545.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/cMe6BT7IQJ2ekBQgbYKyeA/zh-cn_image_0000002229336545.png "点击放大")
 
-ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmonyos-guides/arkts-prop.md)、[@Link](../harmonyos-guides/arkts-link.md)、[@Provide](../harmonyos-guides/arkts-provide-and-consume.md)、[LocalStorage](../harmonyos-guides/arkts-localstorage.md)等。当自定义组件内变量被装饰器装饰时变为状态变量，状态变量的改变会引起UI的渲染刷新。
+ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop装饰器：父子单向同步](../harmonyos-guides/arkts-prop.md)、[@Link装饰器：父子双向同步](../harmonyos-guides/arkts-link.md)、[@Provide装饰器和@Consume装饰器：与后代组件双向同步](../harmonyos-guides/arkts-provide-and-consume.md)、[LocalStorage：页面级UI状态存储](../harmonyos-guides/arkts-localstorage.md)等。当自定义组件内变量被装饰器装饰时变为状态变量，状态变量的改变会引起UI的渲染刷新。
 
 ## 避免不必要的状态变量使用
 
@@ -25,7 +25,8 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 
 ## 最小化状态共享范围
 
-* 状态变量使用范围不当，可能会带来[冗余刷新](bpta-redundancy-refresh-guide.md)的性能问题。
+* 状态变量使用范围不当，可能会带来组件冗余刷新导致的性能问题，具体可参考[组件冗余刷新解决方案](bpta-redundancy-refresh-guide.md)。
+
 * 在没有强烈的业务需求下，尽可能按照状态需要共享的最小范围选择合适的装饰器实现[最小化状态共享范围](bpta-status-management.md#section3584536184117)。应用开发过程中，按照组件颗粒度，状态一般分为组件内独享的状态和组件间需要共享的状态。
 
 ## 减少不必要的参数层层传递
@@ -45,4 +46,4 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 在多个组件依赖同一数据源时，直接关联数据源会导致每次数据源变化都刷新所有组件。为精准控制组件刷新，可采取以下策略：
 
 * 在组件中[使用 @Watch 装饰器监听数据源](bpta-status-management.md#section117631443131915)，当数据变化时执行业务逻辑，确保只有满足条件的组件进行刷新。
-* 当组件关系复杂或跨越层级过多时，推荐使用[EventHub](../harmonyos-references/js-apis-inner-application-eventhub.md)或者[Emitter](../harmonyos-references/js-apis-emitter.md)实现[自定义事件发布订阅](bpta-status-management.md#section26916161205)。当数据源改变时发布事件，依赖该数据源的组件通过订阅事件来获取数据源的改变，完成业务逻辑的处理，从而实现组件的精准刷新。
+* 当组件关系复杂或跨越层级过多时，推荐使用[EventHub](../harmonyos-references/js-apis-inner-application-eventhub.md)或者[Emitter](../doccenter-references/api/js-apis-emitter.md#emitter22)实现[使用自定义事件发布订阅](bpta-status-management.md#section26916161205)。当数据源改变时发布事件，依赖该数据源的组件通过订阅事件来获取数据源的改变，完成业务逻辑的处理，从而实现组件的精准刷新。

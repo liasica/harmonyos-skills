@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: Node-API开发规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 > Node-API开发规范
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
-doc_updated_at: 2026-05-22
-content_hash: sha256:51f5be5a2003ab35d92d06237725059da8bfa2b1dd989e00de3cfc362bce5944
+scraped_at: 2026-10-29T08:03:28+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:4c9405c592e29ee6e6902aed8cedb87d1080b66fbf357bd2ae7b1ef0749d0da6
 ---
 
 ## 获取JS传入参数及其数量
@@ -36,7 +36,7 @@ static napi_value IncorrectDemo2(napi_env env, napi_callback_info info) {
 
 **正确示例**
 
-```cpp
+```screen
 static napi_value GetArgvDemo1(napi_env env, napi_callback_info info) {
     size_t argc = 0;
     // Argv passes null ptr to obtain the true number of parameters passed in
@@ -49,7 +49,7 @@ static napi_value GetArgvDemo1(napi_env env, napi_callback_info info) {
     napi_value *argv = new napi_value[argc];
     napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     // Business code
-    // ... ...
+    // ...
     // The object created by argv for new is manually released after use
     delete[] argv;
     return nullptr;
@@ -58,19 +58,19 @@ static napi_value GetArgvDemo1(napi_env env, napi_callback_info info) {
 static napi_value GetArgvDemo2(napi_env env, napi_callback_info info) {
     size_t argc = 2;
     napi_value argv[2] = {nullptr};
-    // Napi_get_cf_info will write argc JS parameters or undefined to argv
+    // Napi_get_cb_info will write argc JS parameters or undefined to argv
     napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     // Business code
-    // ... ...
+    // ...
     return nullptr;
 }
 ```
 
 ## 生命周期管理
 
-**【规则】**合理使用napi\_open\_handle\_scope和napi\_close\_handle\_scope管理napi\_value的生命周期，做到生命周期最小化，避免发生内存泄漏问题。
+**【规则】**合理使用napi\_open\_handle\_scope（打开句柄作用域）和napi\_close\_handle\_scope（关闭句柄作用域）管理napi\_value的生命周期，做到生命周期最小化，避免发生内存泄漏问题。
 
-每个napi\_value属于特定的HandleScope。HandleScope通过napi\_open\_handle\_scope和napi\_close\_handle\_scope来建立和关闭。HandleScope关闭后，所属的napi\_value会自动释放。
+每个napi\_value属于特定的HandleScope（句柄作用域）。HandleScope通过napi\_open\_handle\_scope和napi\_close\_handle\_scope来建立和关闭。HandleScope关闭后，所属的napi\_value会自动释放。
 
 **正确示例**：
 
@@ -128,10 +128,11 @@ if (status != napi_ok) {
 
 **正确示例**：
 
-```cpp
-static void ErroHandle(napi_env env, napi_callback_info info) {
-    napi_value object, string;
-
+```screen
+static void ErrorHandle(napi_env env, napi_callback_info info)
+{
+    napi_value object;
+    napi_value string;
     // 1.create object
     napi_status status = napi_create_object(env, &object);
     if (status != napi_ok) {
@@ -157,7 +158,7 @@ static void ErroHandle(napi_env env, napi_callback_info info) {
 
 ## 异步任务
 
-**【规则】**当使用uv\_queue\_work方法将任务抛到JS线程上面执行的时候，对JS线程的回调方法，一般情况下需要加上napi\_handle\_scope来管理回调方法创建的napi\_value的生命周期。
+**【规则】**当使用uv\_queue\_work（libuv提供的线程池任务接口）方法将任务抛到JS线程上面执行的时候，对JS线程的回调方法，一般情况下需要加上napi\_handle\_scope来管理回调方法创建的napi\_value的生命周期。
 
 使用uv\_queue\_work方法，不会走Node-API框架，此时需要开发者自己合理使用napi\_handle\_scope来管理napi\_value的生命周期。
 
@@ -209,7 +210,7 @@ void callbackTest(CallbackContext* context)
 
 ## 对象绑定
 
-**【规则】**使用napi\_wrap接口，如果最后一个参数result传递不为nullptr，需要开发者在合适的时机调用napi\_remove\_wrap函数主动删除创建的napi\_ref。
+**【规则】**使用napi\_wrap（用于将ArkTS对象与Native侧对象进行绑定）接口，如果最后一个参数result传递不为nullptr，需要开发者在合适的时机调用napi\_remove\_wrap函数主动删除创建的napi\_ref。
 
 napi\_wrap接口定义如下：
 
@@ -223,20 +224,20 @@ napi_wrap(napi_env env, napi_value js_object, void* native_object, napi_finalize
 
 **正确示例**：
 
-```cpp
+```screen
 void NapiWrapTest(napi_env env, napi_callback_info info) {
     napi_value jsobject, nativeObject;
     napi_finalize cb;
-    // Usage 1: Napi_rap does not need to receive the created napi_ref, and the last parameter is passed as nulliptr.
+    // Usage 1: Napi_wrap does not need to receive the created napi_ref, and the last parameter is passed as nulliptr.
     // The created napi_ref is a weak reference, managed by the system, and does not require manual release by the user
     napi_wrap(env, jsobject, nativeObject, cb, nullptr, nullptr);
-
-    // Usage 2: napi_rap needs to receive the created napi_ref, the last parameter is not null ptr, and the returned
+    
+    // Usage 2: napi_wrap needs to receive the created napi_ref, the last parameter is not null ptr, and the returned
     // napi_ref is a strong reference that needs to be manually released by the user, otherwise it will cause memory
     // leakage
     napi_ref result;
     napi_wrap(env, jsobject, nativeObject, cb, nullptr, &result);
-    // When js_order and result are no longer used in the future, promptly call napi_remove-wrap to release result
+    // When js_order and result are no longer used in the future, promptly call napi_remove_wrap to release result
     void *nativeObjectResult = nullptr;
     napi_remove_wrap(env, jsobject, &nativeObjectResult);
 }
@@ -252,11 +253,11 @@ void NapiWrapTest(napi_env env, napi_callback_info info) {
 
 ArrayBuffer进行增改是直接对缓冲区进行更改，性能显著优于使用napi\_set\_element操作JSArray。
 
-在这种场景下，推荐使用napi\_create\_arraybuffer接口创建 ArrayBuffer 对象。
+在这种场景下，推荐使用napi\_create\_arraybuffer（在Native侧创建一个具有指定字节长度的ArkTS ArryBuffer对象）接口创建 ArrayBuffer 对象。
 
 **示例：**
 
-```cpp
+```screen
 // The following code uses a regular JSArray as a container, but it only stores data of type int32.
 // But because it is a JS object, it can only be modified using the napi method, resulting in lower performance.
 static napi_value ArrayDemo(napi_env env, napi_callback_info info)
@@ -392,7 +393,7 @@ extern "C" __attribute__((constructor)) void RegisterNativerenderModule(void)
 
 ## 正确的使用napi\_create\_external系列接口创建的JS Object
 
-**【规则】**napi\_create\_external系列接口创建的JS对象仅限当前线程使用。跨线程传递（如使用worker的post\_message）会导致应用崩溃。若需跨线程传递绑定有Native对象的JS对象，请使用napi\_coerce\_to\_native\_binding\_object接口。
+**【规则】**napi\_create\_external（用于创建一个ArkTS外部对象）系列接口创建的JS对象仅限当前线程使用。跨线程传递（如使用worker的post\_message）会导致应用崩溃。若需跨线程传递绑定有Native对象的JS对象，请使用napi\_coerce\_to\_native\_binding\_object接口。
 
 **错误示例**
 

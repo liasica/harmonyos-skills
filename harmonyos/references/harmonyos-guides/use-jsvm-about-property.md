@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口设置JavaScript对象的属性
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口设置JavaScript对象的属性
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:14+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:8de89f1afea6445afd76b20994e34917e05d1c97662d5422b12ef41d572edf93
+scraped_at: 2026-10-29T07:58:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:82b4302cebb10abde1a51b333510bb97544d62710dd10b781d60a8f7031d4a6a
 ---
 
 ## 简介
@@ -158,7 +158,7 @@ static JSVM_Value GetProperty(JSVM_Env env, JSVM_CallbackInfo info)
     size_t argc = 2;
     JSVM_Value args[2] = {nullptr};
     OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr);
-    // 传入的第一个参数为要检测的object，第二个对象为要检测的属性，通过调用OH_JSVM_GetProperty接口获取对应的值
+    // 传入的第一个参数为要检测的object，第二个参数为要检测的属性，通过调用OH_JSVM_GetProperty接口获取对应的值
     JSVM_Value result = nullptr;
     JSVM_Status status = OH_JSVM_GetProperty(env, args[0], args[1], &result);
     if (status != JSVM_OK) {
@@ -278,7 +278,7 @@ static JSVM_Value DeleteProperty(JSVM_Env env, JSVM_CallbackInfo info)
     } else {
         OH_LOG_INFO(LOG_APP, "JSVM OH_JSVM_DeleteProperty success:%{public}d", result);
     }
-    // 将bool结果转换为JSVM_value并返回
+    // 将bool结果转换为JSVM_Value并返回
     JSVM_Value ret;
     OH_JSVM_GetBoolean(env, result, &ret);
     return ret;
@@ -587,7 +587,7 @@ static JSVM_Value RunScriptAndLogResult(JSVM_Env env, const std::string &srcCode
 // OH_JSVM_DefineProperties的样例方法
 static JSVM_Value DefineProperties(JSVM_Env env, JSVM_CallbackInfo info)
 {
-    // 接受一个JavaScript侧传入的空object
+    // 接收一个JavaScript侧传入的空object
     size_t argc = 1;
     JSVM_Value argv[1] = {nullptr};
     OH_JSVM_GetCbInfo(env, info, &argc, argv, nullptr, nullptr);

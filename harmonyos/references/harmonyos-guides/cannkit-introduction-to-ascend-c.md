@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-intro
 title: AscendC简介
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > AscendC简介
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:59+08:00
+scraped_at: 2026-10-29T07:57:55+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:89eb3704ff9d9be69b07ce71dcc6fe38dbabf57d57ef1b6b44e850ed072d546f
+content_hash: sha256:689d8ffd724724098d2eddf49ab4d88c499128a291c20379d4a90505ae6a0c86
 ---
 
 ## 概述
 
 AscendC是CANN Kit针对算子开发场景推出的编程语言，遵循C和C++标准规范，匹配开发者开发习惯；通过多层接口抽象、自动并行计算、孪生调试等关键技术，提高算子开发效率，助力AI开发者低成本完成算子开发和模型调优部署。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/SKmT8h3VRRiyEwIjZpI_ZQ/zh-cn_image_0000002801106637.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Kb6ItBWsRFOAP3m5uEYD3w/zh-cn_image_0000002803265455.png)
 
 使用AscendC进行自定义算子开发的突出优势有：
 

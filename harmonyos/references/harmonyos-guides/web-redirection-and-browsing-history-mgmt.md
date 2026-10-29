@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-redirecti
 title: 管理页面跳转及浏览记录导航
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 管理页面跳转及浏览记录导航
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4518d249b09f7207af9732a73f0bcf9ce91ffd373276d3db4a02fc14754ff8c7
+scraped_at: 2026-10-29T07:56:41+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d5fec6818d859741aed454926b08d3795326abab40217e75e22ed06b2e263fd9
 ---
 
 为了提高页面访问速度，浏览记录导航允许用户通过“前进”和“后退”按钮在历史记录的页面之间切换。Web组件支持用户跳转到应用内其他页面或者进行跨应用跳转。
@@ -146,7 +146,7 @@ Web组件可以实现点击前端页面超链接跳转到其他应用。
                   if (!err) {
                     console.info('make call succeeded.');
                   } else {
-                    console.info('make call fail, err is:' + JSON.stringify(err));
+                    console.error('make call fail, err is:' + JSON.stringify(err));
                   }
                 });
                 return true;
@@ -172,4 +172,4 @@ Web组件可以实现点击前端页面超链接跳转到其他应用。
   </html>
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Z-gpffBVQUyoZ5B3mABeVA/zh-cn_image_0000002771665646.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/PS-2zEwMTve_Kz13yBRcvw/zh-cn_image_0000002773904458.gif)

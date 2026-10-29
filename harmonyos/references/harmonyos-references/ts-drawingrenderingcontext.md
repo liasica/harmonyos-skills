@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: DrawingRenderingContext
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > DrawingRenderingContext
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:27+08:00
+scraped_at: 2026-10-29T07:59:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ba1c6d8f8a8cd10002364e00120d9b2b73abb5fedc69f1abe0bf1343987bf8e2
+content_hash: sha256:3b151794f058b8ab14e91191b6b6a72911186eecce5bd21d01fdcaa672d8bd71
 ---
 
 DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进行绘制，绘制对象可以是形状、文本、图片等。绑定方式：通过Canvas组件构造函数传入DrawingRenderingContext对象建立绑定关系。绘制流程：通过canvas属性获取DrawingCanvas对象，调用drawing模块接口执行绘制操作，最后调用invalidate()方法触发重新渲染。适用于需要高性能图形绘制、自定义图表、图像编辑等场景，相比CanvasRenderingContext2D提供了更灵活的绘制接口。
@@ -169,11 +169,11 @@ struct CanvasExample {
 
 图1 绘制圆心为(200, 200)，半径为100的圆，填充色为RGBA(39, 135, 217, 255)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/cnvpsxzBQFuK9N3A1_mHTA/zh-cn_image_0000002771827656.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/1EAeoJ7fR_eh-TZzvRkc8Q/zh-cn_image_0000002773906506.png)
 
 图2 点击Clear按钮清空画布
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/rSuE3FPBRYyP-yGTvQgoGg/zh-cn_image_0000002801107471.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Kf4Sw37yT_uTVz5Cs4gYzA/zh-cn_image_0000002803266291.png)
 
 ### 示例2（绘制文本）
 
@@ -215,4 +215,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/RBjfOliGSYmIz3i4amalUw/zh-cn_image_0000002771667692.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/eKHvUa7zR4CZmDTcgn-cvQ/zh-cn_image_0000002803226197.png)

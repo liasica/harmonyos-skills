@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: AVScreenCapture录屏基础流程
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVScreenCapture录屏取码流(C/C++) > AVScreenCapture录屏基础流程
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:33+08:00
+scraped_at: 2026-10-29T07:57:24+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:62a2e401488f43f7d174065c291fed8059b6da21de7b7c0190e477a3b9b63272
+content_hash: sha256:0233ddf54508c945f5c64b30b4fa81cef20988f57937feba2503e5b811860159
 ---
 
 屏幕录制功能支持开发者获取屏幕数据，适用于屏幕录制、会议共享、直播等场景。开发者可通过调用[AVScreenCapture](media-kit-intro.md#avscreencapture)模块的C API，采集设备内外的音视频数据源。该模块需与窗口管理（Window）、图形处理（Graphic）等模块协同工作，以完成完整的视频采集流程。
@@ -23,7 +23,7 @@ content_hash: sha256:62a2e401488f43f7d174065c291fed8059b6da21de7b7c0190e477a3b9b
 
 基础流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/_7F-rp4ERXKvYK0QDnmZWA/zh-cn_image_0000002801105945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/PnjSr9XyR5OKqgkCSvMIuQ/zh-cn_image_0000002774064952.png)
 
 录屏采集的内容输出方式如下。
 
@@ -38,7 +38,7 @@ content_hash: sha256:62a2e401488f43f7d174065c291fed8059b6da21de7b7c0190e477a3b9b
 
   隐私保护弹框：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ABETbxAGTQelLZyJdo59zw/zh-cn_image_0000002771666164.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/UFnXM9nwR7-YGCID0hELww/zh-cn_image_0000002773904978.png)
 
 ## 通用开发步骤
 
@@ -416,7 +416,7 @@ config.videoInfo.videoCapInfo.displayId = 0;
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/OmxPBzeHQvSzE4BoL8rTfA/zh-cn_image_0000002800986021.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/TNVvrBjURPexdHssY-DIwA/zh-cn_image_0000002803264761.png)
 
 ### 录制主屏幕
 
@@ -476,7 +476,7 @@ config.videoInfo.videoCapInfo.missionIDsLen = static_cast<int32_t>(g_missionIds.
 // 在配置参数结束后执行"g_missionIds.clear()"。
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/5pRptdtVSYW1EaugkWYrIg/zh-cn_image_0000002771826132.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/5YRzkcKlTsG3DJN2xM__4g/zh-cn_image_0000002803224671.png)
 
 若期望同时录制多个窗口，需要传入期望录制的窗口ID列表。
 

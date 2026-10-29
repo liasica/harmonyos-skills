@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-1
 title: 1001500001 应用指纹证书校验失败的可能原因和解决办法
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 1001500001 应用指纹证书校验失败的可能原因和解决办法
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:40+08:00
+scraped_at: 2026-10-29T07:57:32+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:7a52d0ce7847cb869173ecdfb1661e637d75fbbaaef8c26684c63978fcab2cbb
+content_hash: sha256:b3679dbaf7682ff08975942e043ba79a92e23f6cea7f38b832d980cd26f6a994
 ---
 
 **问题现象**
@@ -26,20 +26,20 @@ content_hash: sha256:7a52d0ce7847cb869173ecdfb1661e637d75fbbaaef8c26684c63978fca
 
 1. 检查module type为entry的模块下的module.json5配置文件中的Client ID是否正确，请参考[配置Client ID](account-client-id.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/0bUg6sLFSouscRQE51WWdg/zh-cn_image_0000002771826314.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/wEvFQiTJRDCg1yoUdXfI4g/zh-cn_image_0000002803224853.png)
 2. 检查AppGallery Connect上是否正确配置应用的指纹证书，详情请见[添加公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md#section7398154810570)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/1geBO5LZTa-R8M71czpzMA/zh-cn_image_0000002771666326.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/1mGtF5_HRj67GdOXq51PhA/zh-cn_image_0000002773905140.png)
 3. 证书更换后，重新配置更换后的证书指纹。
 4. 配置公钥指纹10分钟后，您可通过修改应用工程 > app.json5中的versionCode触发公钥指纹生效。具体修改方法见下图所示。
 5. 调试证书切换为发布证书或发布证书切换为调试证书，需要升级应用的版本号（修改应用工程 > app.json5中的versionCode），具体修改方法见下图所示。
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/phQ2lFDsQymMOiR5QCCTeA/zh-cn_image_0000002771666324.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Sz-QJIz1Ries_D3DoqeUmA/zh-cn_image_0000002773905138.png)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/SKtxFkTpQ4KIPG9-0m14PA/zh-cn_image_0000002800986181.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/L_AES9TURae56z-geWfQig/zh-cn_image_0000002803264921.png)
 6. 应用运行的HarmonyOS系统版本为HarmonyOS 6.0.0(20)以下时，请使用手动签名方式配置签名。详情请参考[配置签名和指纹](account-sign-fingerprints.md)章节。
 7. 模拟器中请使用调试证书签名包调用接口。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-real
 title: 性能问题定界：实时监控
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能 > 使用Profiler进行性能调优 > 性能问题定界：实时监控
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:50+08:00
+scraped_at: 2026-10-29T07:58:49+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:a63aae7838e25679b71fd0951f89448b38aa0b61fcb5a00539018ab124b7bf24
+content_hash: sha256:0b0e7beca8ccd7b5d7b51c9fd5d936117d47b97c62d52e612625737254e2fe35
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ DevEco Profiler提供实时监控（Realtime Monitor）能力，可以实时监�
 
 界面左侧为实时数据展示区域，该区域的数据显示了每一项监测内容的瞬时值，并通过饼图或者仪表盘的形式让您更加直观地观察到各项数据的使用占比以及具体数值。界面右侧则是各项数据随着时间推移的变化趋势，通过不同的图像形式（直方图、柱状图、折线图等）来更加清晰的展示某一项资源在一段时间范围内的变化趋势，以帮助您快速判断性能热点区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/AwYyJt1JT6OGEWuECC5H1A/zh-cn_image_0000002750009810.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/G6i6TRGdTXmFRDhagHaHzw/zh-cn_image_0000002750009810.png "点击放大")
 
 ### 泳道介绍
 
@@ -37,12 +37,12 @@ DevEco Profiler提供实时监控（Realtime Monitor）能力，可以实时监�
 
 * 启停控制
 
-  点击会话区实时监控页面上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/0QqkL1VvTXS5pPAdK5YVig/zh-cn_image_0000002750009806.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/aqGE--MGQVmmiTB0sv5BzQ/zh-cn_image_0000002750009808.png)按钮来即时控制实时监控界面的录制状态。
+  点击会话区实时监控页面上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/pyHctPI_SMevQ3yutkt-yw/zh-cn_image_0000002750009806.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/QTerXCSkTKyIJSnfcygkMQ/zh-cn_image_0000002750009808.png)按钮来即时控制实时监控界面的录制状态。
 * 详细数据展示
 
   将鼠标悬浮于所关心的泳道数据上时，界面上会出现当前时间点的时间标线以及含有当前时间点上泳道详细数据的Tooltips。更进一步，当您将鼠标悬浮于时间轴之上时，实时监控页面内的所有泳道均会以Tooltips展示出该时刻的数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/QobiBPYgSJe3lX1DMf4r2w/zh-cn_image_0000002779608721.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ZUWnDn87RbWH-Z-Jn2M2HQ/zh-cn_image_0000002779608721.png "点击放大")
 
 * 图例选择
 
@@ -55,14 +55,14 @@ DevEco Profiler提供实时监控（Realtime Monitor）能力，可以实时监�
 
    方式一：在鸿蒙电脑DevEco Studio图标右键，选择**调优**打开DevEco Profiler。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Ic06pR5WSaemOTzNqsDe8Q/zh-cn_image_0000002779608719.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Dy6Al2SzS0G49jib8qnsFQ/zh-cn_image_0000002779608719.png "点击放大")
 
    方式二：打开DevEco Studio后，在菜单栏点击**运行** > **调优**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/nUV6ycp7QkySF4LDgb64UA/zh-cn_image_0000002750169700.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/L1NbWSiIR0qV5wraMmAJjw/zh-cn_image_0000002750169700.png "点击放大")
 3. 选择待调优的设备、应用或进程，以及选择实时监控的模板后，点击右下角**立即开始**录制，或点击**打开文件**，导入历史数据。
 
    录制时若设备不止有一个主进程，还存在Extension或者Render进程，那么您需要再手动选择一个您想要监控的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/towkH-PWSnSjpO1fK6-UCw/zh-cn_image_0000002750169698.png "点击放大")
-4. 在[数据区](ide-hmos-profiler-data.md#section8296319104115)点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/wX1q_L_xRPysDdGIox879Q/zh-cn_image_0000002779728873.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Oj5lta4eShiXl0qeB0DDUg/zh-cn_image_0000002779608723.png)，开启/停止会话录制。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/MJ-1HubuTIihUrUsfR1igg/zh-cn_image_0000002750169698.png "点击放大")
+4. 在[数据区](ide-hmos-profiler-data.md#section8296319104115)点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/p6JIUd3KS_G2yZAAklM4hw/zh-cn_image_0000002779728873.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/1IHxU_FeRk-6csmawceC-Q/zh-cn_image_0000002779608723.png)，开启/停止会话录制。

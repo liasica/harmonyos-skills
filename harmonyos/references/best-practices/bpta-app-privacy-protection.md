@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-privac
 title: 应用隐私保护
 breadcrumb: 最佳实践 > 安全设计 > 应用隐私保护
 category: best-practices
-scraped_at: 2026-10-16T07:06:55+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:acd3904623dca11167d9a606a8215f5138c20933bc6721c43ca4985b4f40edb0
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:53a40302a025b22ab5fe997ff560e62c1d9aa7046845d46eec7b2d7dc2d98c71
 ---
 
 ## 概述
@@ -106,7 +106,7 @@ content_hash: sha256:acd3904623dca11167d9a606a8215f5138c20933bc6721c43ca4985b4f4
 
 **图1** 权限申请弹窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ROLWhXPBQvGLSJsK80g37w/zh-cn_image_0000002681797507.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/iE2zb2-4TfyoAsGok9xjZA/zh-cn_image_0000002681797507.png "点击放大")
 
 接下来介绍模糊位置申请的实现方法：
 
@@ -181,9 +181,9 @@ content_hash: sha256:acd3904623dca11167d9a606a8215f5138c20933bc6721c43ca4985b4f4
 
 应用获取“存储”权限后，能够读取手机内部存储上的所有文件，包括所有照片，这会带来隐私风险：它可能在用户不知情的情况下，分析文件和图片，泄露用户隐私。
 
-用户往往不愿意授予应用对其所有照片和视频的访问权限。因此，HarmonyOS在API9版本之后引入了@ohos.file.picker (选择器)Picker选择器，以满足用户正常的数据访问需求，同时最小化应用的数据泄露风险。通过减少授权范围，降低授权的颗粒度，例如用户在发送图片时，仅允许应用访问用户选择的图片。
+用户往往不愿意授予应用对其所有照片和视频的访问权限。因此，HarmonyOS在API9版本之后引入了@ohos.file.picker (选择器)，以满足用户正常的数据访问需求，同时最小化应用的数据泄露风险。通过减少授权范围，降低授权的颗粒度，例如用户在发送图片时，仅允许应用访问用户选择的图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/BXbpvZk5TneQK6ajTwQzqA/zh-cn_image_0000002193851256.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/53Rc3h0HQC-h-rKiiqIZMw/zh-cn_image_0000002193851256.png "点击放大")
 
 示例代码如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: libuv使用规范及案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 > libuv使用规范及案例
 category: best-practices
-scraped_at: 2026-10-16T07:06:54+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:a764efb0f8d609b96713985a0858f300521dbedd9cab5639eae8e0bc096c2d0a
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c2f497b66a8c4b84631d9dabc81c3087be80b38fb5b84ac4f0ee44cbff59a401
 ---
 
 ## 前言
@@ -22,7 +22,7 @@ content_hash: sha256:a764efb0f8d609b96713985a0858f300521dbedd9cab5639eae8e0bc096
 
 ### libuv中Requests使用规范
 
-在[libuv](../harmonyos-references/libuv.md)库中，Request表示一个短暂的请求，不会被事件循环长期持有。请求任务执行完毕后，该请求在事件循环上的使命结束。如果需要继续下一次请求，必须再次调用相关接口。在[libuv官方文档](https://docs.libuv.org/en/v1.x/)中，Request主要有如下几种类型：
+在[libuv](../harmonyos-references/libuv.md)库中，Request表示一个短暂的请求，不会被事件循环长期持有。请求任务执行完毕后，该请求在事件循环上的使命结束。如果需要继续下一次请求，必须再次调用相关接口。在libuv官方文档[API documentation](https://docs.libuv.org/en/v1.x/api.html)中，Request主要有如下几种类型：
 
 ```cpp
 typedef struct uv_req_s uv_req_t;
@@ -47,7 +47,7 @@ typedef struct uv_work_s uv_work_t;
 typedef struct uv_random_s uv_random_t;
 ```
 
-在HarmonyOS中，使用频率最高的数据结构是uv\_work\_t，主要用于自定义异步任务请求。与之配套的接口是uv\_queue\_work，定义如下：
+在HarmonyOS中，使用频率最高的数据结构是uv\_work\_t，主要用于自定义异步任务请求。与之配套的接口是uv\_queue\_work()，定义如下：
 
 ```screen
 UV_EXTERN int uv_queue_work(uv_loop_t* loop,
@@ -56,32 +56,32 @@ UV_EXTERN int uv_queue_work(uv_loop_t* loop,
                             uv_after_work_cb after_work_cb);
 ```
 
-loop表示请求所在的事件循环，work\_cb表示执行在异步线程池的异步任务，after\_work\_cb表示在事件循环上处理异步任务的执行结果的回调。在HarmonyOS上，uv\_queue\_work的整个处理过程如下：
+loop表示请求所在的事件循环，work\_cb表示执行在异步线程池的异步任务，after\_work\_cb()表示在事件循环上处理异步任务的执行结果的回调。在HarmonyOS上，uv\_queue\_work()的整个处理过程如下：
 
-1. 调用uv\_queue\_work。
-2. work\_cb被封装成一个函数uv\_\_queue\_work，after\_work\_cb被封装成uv\_\_queue\_done。
-3. 异步线程池（ffrt）执行uv\_\_queue\_work继而执行真正的work\_cb。
+1. 调用uv\_queue\_work()。
+2. work\_cb被封装成一个函数uv\_\_queue\_work()，after\_work\_cb()被封装成uv\_\_queue\_done()。
+3. 异步线程池（ffrt）执行uv\_\_queue\_work()继而执行真正的work\_cb。
 4. 接下来，根据是否是主线程来分开处理。
-   1. 如果是主线程，将uv\_\_queue\_done根据优先级不同插入到主线程的eventhandler任务队列上等待执行。
-   2. 如果是其他TS线程或是开发者创建的事件循环线程，则将uv\_\_queue\_done放在wq队列上，并调用uv\_async\_send触发fd等待事件循环处理wq队列。
+   1. 如果是主线程，将uv\_\_queue\_done()根据优先级不同插入到主线程的eventhandler任务队列上等待执行。
+   2. 如果是其他TS线程或是开发者创建的事件循环线程，则将uv\_\_queue\_done()放在wq队列上，并调用uv\_async\_send()触发fd等待事件循环处理wq队列。
 
-了解了uv\_queue\_work的执行原理后，开发者可以按照下面几种情况使用该接口。
+了解了uv\_queue\_work()的执行原理后，开发者可以按照下面几种情况使用该接口。
 
 **异步任务执行一次即删除**
 
 伪代码写法1：
 
 ```screen
-Context* context = new Context; // context为开发者自定义的对象
+Context* context = new Context; // context is a developer-defined object
 uv_work_t* work = new uv_work_t;
 work->data = (void*)context;
 uv_queue_work(loop, work, [](uv_work_t*){
     Context *ctx = (Context*)work->data;
-    // 业务逻辑
+    // business logic
 }, [uv_work_t* work, int status] {
     Context *ctx = (Context*)work->data;
-    // 业务逻辑
-    delete ctx; // 是否删除由开发者决定
+    // business logic
+    delete ctx; // Whether to delete is up to the developer
     delete work;
 });
 ```
@@ -91,22 +91,22 @@ uv_queue_work(loop, work, [](uv_work_t*){
 ```screen
 class Context {
 public:
-    uv_work_t work; // 该work与Context生命周期保持一致
+    uv_work_t work; // This work stays in sync with the Context lifecycle
 }
 
-Context* context = new Context; // context为开发者自定义的对象
+Context* context = new Context; // This context is a developer-defined object
 context->work.data = (void*)context;
 uv_queue_work(loop, &context->work, [](uv_work_t*){
     Context *ctx = (Context*)work->data;
-    // 业务逻辑
+    // business logic
 }, [uv_work_t* work, int status] {
     Context *ctx = (Context*)work->data;
-    // 业务逻辑
-    delete ctx; // 是否删除由开发者决定
+    // business logic
+    delete ctx; // Whether to delete is up to the developer
 });
 ```
 
-上述代码遵循了一个基本原则：对于uv\_queue\_work的调用方式，必须确保释放内存的操作在after\_work\_cb中完成。开发者应避免自行管理异步任务的生命周期，因为无法确定任务在何时完成。对于在其他线程池中执行的异步请求，这一原则同样适用。
+上述代码遵循了一个基本原则：对于uv\_queue\_work()的调用方式，必须确保释放内存的操作在after\_work\_cb()中完成。开发者应避免自行管理异步任务的生命周期，因为无法确定任务在何时完成。对于在其他线程池中执行的异步请求，这一原则同样适用。
 
 **多次请求任务共用一个结构体**
 
@@ -140,7 +140,7 @@ void CompleteCB(uv_work_t *work, int status) {
 
 ### libuv中Handles使用规范
 
-在[libuv开发指南](../harmonyos-references/libuv.md)中，Handle表示一个持久的请求，可以被事件循环长期持有。如果开发者不调用uv\_close函数，创建的Handle会持久保存在事件循环上，影响事件循环的正常退出。在[官方文档](https://docs.libuv.org/en/v1.x/)中，Handle主要有如下几种类型：
+在[libuv](../harmonyos-references/libuv.md)开发指南中，Handle表示一个持久的请求，可以被事件循环长期持有。如果开发者不调用uv\_close()函数，创建的Handle会持久保存在事件循环上，影响事件循环的正常退出。在libuv官方文档[API documentation](https://docs.libuv.org/en/v1.x/api.html)中，Handle主要有如下几种类型：
 
 ```cpp
 /* Handle types. */
@@ -179,7 +179,7 @@ typedef struct uv_async_s uv_async_t;
 
 对于uv\_loop\_t的使用，不会出现严重问题。开发者在使用时，需在事件循环退出时正确释放事件循环中的资源，避免因事件循环无法退出导致资源泄露。如果开发者创建的事件循环不清楚上层业务如何使用，可以在退出时调用uv\_walk遍历事件循环上的Handles，并在回调中调用uv\_close将Handles从事件循环中移除。然后执行uv\_run，确保异步任务执行完毕。这样可以保证事件循环的正常退出，前提是此过程中没有其他业务向事件循环中添加任务。具体可参考[libuv中的事件循环](../harmonyos-references/libuv.md#libuv中的事件循环)。
 
-在使用libuv中的Handles时，确保在不使用时调用uv\_close，并且必须在事件循环所在的线程中调用，以避免多线程数据竞争问题。如果需要在多线程环境中操作Handles，可以参考[libuv开发指南](../harmonyos-references/libuv.md#libuv中的handles和requests)的“**libuv timer使用规范**“章节。
+在使用libuv中的Handles时，确保在不使用时调用uv\_close，并且必须在事件循环所在的线程中调用，以避免多线程数据竞争问题。如果需要在多线程环境中操作Handles，可以参考。
 
 特别注意uv\_close的使用，它并不会同步从事件循环中移除handle。在说明uv\_close的运行逻辑之前，开发者需要了解几个背景知识：
 
@@ -214,13 +214,13 @@ Tid:44250, Name:crasher_cpp
 #00 pc 0000000000018528 /system/lib64/platformsdk/libuv.so(uv_run+724)(1616669436a9c6d4bcaf8ae1f5989855)
 #01 pc 0000000000083518 /system/lib64/platformsdk/libruntime.z.so(OHOS::AbilityRuntime::OHOSLoopHandler::OnTriggered()+268)(d061df412ec8b3260629e85ba1a6344b)
 #02 pc 00000000000833dc /system/lib64/platformsdk/libruntime.z.so(OHOS::AbilityRuntime::OHOSLoopHandler::OnReadable(int)+244) (dO61df412ec8b3260629e85ba1a6344b)
-#03 pc 0000000000016710 /system/lib64/chipset-pub-sdk/libeventhandler.z.so(std:: __h::_ function::_ func<OHOS::AppExecFwk::EpollIoWaiter::HandleFileDescriptorEvent(i
-#04 pc 000000000001aOdO /system/lib64/chipset-pub-sdk/libeventhandler.z.so(OHOS::AppExecFwk::EventHandler::DistributeEvent(std:: hocunique ptr<OHOS::AppExecFwk::Ir 
-#05 pc 0000000000028418 /system/lib64/chipset-pub-sdk/libeventhandler.z.so(OHOS::AppExecFwk::(anonymous namespace)::EventRunnerImpl::ExecuteEventHandler(std::_ hoste
-#06 pc 0000000000027cbc /system/lib64/chipset-pub-sdk/libeventhandler.z.so(OHOS::AppExecFwk::(anonymous namespace)::EventRunnerImpl::Run()+880)(a83d7f5ebf4fe67105b5 
+#03 pc 0000000000016710 /system/lib64/chipset-pub-sdk/libeventhandler.z.so(std:: __h::_ function::_ func<OHOS::AppExecFwk::EpollIoWaiter::HandleFileDescriptorEvent>)
+#04 pc 000000000001aOdO /system/lib64/chipset-pub-sdk/libeventhandler.z.so(OHOS::AppExecFwk::EventHandler::DistributeEvent)
+#05 pc 0000000000028418 /system/lib64/chipset-pub-sdk/libeventhandler.z.so(OHOS::AppExecFwk::(anonymous namespace)::EventRunnerImpl::ExecuteEventHandler)
+#06 pc 0000000000027cbc /system/lib64/chipset-pub-sdk/libeventhandler.z.so(OHOS::AppExecFwk::(anonymous namespace)::EventRunnerImpl::Run()+880) 
 #07 pc 000000000002a9d0 /system/lib64/chipset-pub-sdk/libeventhandler.z.so(OHOS::AppExecFwk::EventRunner::Run()+320)(a83d7f5ebf4fe67105b53501f28aa078)
 #08 pc 00000000000ba48c /system/lib64/platformsdk/libappkit_native.z.so(OHOS::AppExecFwk::MainThread::Start()+872)(8f59740ee20585693a5c2814e1e9f6dd)
-#09 pc 0000000000004ac4 /system/lib64/appspawn/appspawn/libappspawn_ace.z.so(RunChildProcessor(AppSpawnContent*, AppSpawnClient*)+216)(c368de983182514a8ea3Odaa3ba41
+#09 pc 0000000000004ac4 /system/lib64/appspawn/appspawn/libappspawn_ace.z.so(RunChildProcessor(AppSpawnContent*, AppSpawnClient*)+216)
 #10 pc 0000000000008688 /system/bin/appspawn(AppSpawnChild+436)(8e25bd745a01ef608e0816fd1eabcce2)	
 #11 pc 0000000000008368 /system/bin/appspawn(AppSpawnProcessMsg+564)(8e25bd745a01ef608e0816fd1eabcce2)	
 #12 pc 000000000000ff28 /system/bin/appspawn(OnReceiveRequest+676)(8e25bd745a01ef608e0816fd1eabcce2)
@@ -259,7 +259,7 @@ private:
     ExceptionHandler exceptionHandler;
 };
 
-//构造函数部分代码
+// Constructor part of the code
 NapiTaskRunner::NapiTaskRunner (napi_env env, ExceptionHandler exceptionHandler)
     : env(env), exceptionHandler(std::move (exceptionHandler)) {
     threadId = std::this_thread::get id();
@@ -268,7 +268,7 @@ NapiTaskRunner::NapiTaskRunner (napi_env env, ExceptionHandler exceptionHandler)
     uv_async_init(loop, &asyncHandle, [](auto handle) {});
 }
 
-//析构函数部分代码
+// Some code from the destructor
 NapiTaskRunner::~NapiTaskRunner() {
     running->store(false);
     cv.notify_all();
@@ -280,7 +280,7 @@ NapiTaskRunner::~NapiTaskRunner() {
 
 崩溃原因如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ZL8aObFaQnagGQB0cLnJMQ/zh-cn_image_0000002229335745.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/5bI1UdDGSFKJHE-zkbWxdg/zh-cn_image_0000002229335745.png)
 
 解决方法：
 
@@ -335,8 +335,8 @@ NapiTaskRunner::~NapiTaskRunner() {
 
 异步任务执行过程中出现崩溃，可以分为三种场景进行分析：
 
-* 崩溃在主线程的after\_work\_cb的封装函数uv\_\_queue\_done执行之前。
-* 崩溃在主线程的after\_work\_cb的封装函数uv\_\_queue\_done执行期间。
+* 崩溃在主线程的after\_work\_cb的封装函数uv\_\_queue\_done()执行之前。
+* 崩溃在主线程的after\_work\_cb的封装函数uv\_\_queue\_done()执行期间。
 * 崩溃在异步线程的work\_cb执行之前。
 
 场景一
@@ -370,15 +370,15 @@ Tid:13724, Name:crasher_cpp
 
 初次分配的调用栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Xvlr7-4aREuTuCQ7_IR9vg/zh-cn_image_0000002193850396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Zm6MYgOrQu2wAmRuOvKOfg/zh-cn_image_0000002193850396.png)
 
 第一次释放的调用栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/bYZxWqstSF-h-QJIlU1ATQ/zh-cn_image_0000002194009964.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/0tscm4qqS7-4nw__QwBDAQ/zh-cn_image_0000002194009964.png)
 
 经过相关开发者的反编译，定位到现场，代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/V840JVXHSy2UFQnBVWd9eQ/zh-cn_image_0000002194009972.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Xn8eTTy_Siadlf6dRZvHIQ/zh-cn_image_0000002194009972.png)
 
 问题结论：调用uv\_work\_t相关的函数时，内存的释放动作一定要放在after\_work\_cb里面。如果开发者没法控制好自定义对象的生命周期，就可以通过uv\_work\_t和自定义对象分开的方式，将uv\_work\_t的内存释放放在after\_work\_cb里，自定义对象的内存由开发者自行管理。
 
@@ -421,7 +421,7 @@ Tid:26268, Name:crasher_cpp
 
 首先，经过反编译，可以看到具体的代码行和汇编指令，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/-mrDZjAiTHCLQzgtL_V_DQ/zh-cn_image_0000002229450237.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/uRD55z0HSmKcF6JNp8p8ZA/zh-cn_image_0000002229450237.png)
 
 上图红框中的汇编指令含义：
 
@@ -447,11 +447,11 @@ struct uv_work_s {
 
 after\_work\_cb是开发者传入的函数指针，通常在开发者编写的代码文件中定义，并最终编译到动态库（so）中。HarmonyOS上的crash文件包含当前应用进程映射的so文件的地址范围。因此，开发者可以通过after\_work\_cb的地址在crash文件中找到对应的so文件，并通过起始地址定位到具体代码行。检查x0寄存器是否仍然保留after\_work\_cb的信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/tBqN9S--QUuyo19k5Ni_qA/zh-cn_image_0000002194009968.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/V8tg0w14RZW6FT9b9OjiJQ/zh-cn_image_0000002194009968.png)
 
 x0包含after\_work\_cb的地址。根据该地址确定其所在的so文件地址范围，再用该地址减去so文件的起始地址，即可得到其偏移地址。通过反编译可以找到具体的代码行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/n7UvnztLQYe5nrOc1ROnPw/zh-cn_image_0000002193850392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/CpQTHACiTwqEaxLF8q0doA/zh-cn_image_0000002193850392.png)
 
 具体的代码：
 
@@ -464,7 +464,7 @@ void DataShareUvQueue::LambdaForWork(uv_work_t *work, int uvstatus)
     }
     auto *entry = static_cast<UvEntry*>(work->data);
     {
-        // 报错在这一行，加锁失败。
+        // The error is on this line, failed to lock
         std::unique_lock<std::mutex> lock(entry->mutex);
         if (entry->func) {
             entry->func();
@@ -480,13 +480,13 @@ void DataShareUvQueue::LambdaForWork(uv_work_t *work, int uvstatus)
 
 void DataShareUvQueue::SyncCall(NapiVoidFunc func, NapiBoolFunc retFunc)
 {
-    // 动态申请uv_work_t
+    // Dynamically allocate uv_work_t
     uv_work_t* work = new (std::nothrow) uv_work_t;
     if (work == nullptr) {
         LOG_ERROR("invalid work.");
         return;
     }
-    // 申请一个UvEntry赋值给work->data
+    // Apply for a UvEntry and assign it towork->data
     work->data = new UvEntry {env_, std::move(func), false, false, {}, {}, std::move(retFunc)};
     if (work->data == nullptr) {
         delete work;
@@ -498,7 +498,7 @@ void DataShareUvQueue::SyncCall(NapiVoidFunc func, NapiBoolFunc retFunc)
     auto *uvEntry = static_cast<UvEntry*>(work->data);
     {
         std::unique_lock<std::mutex> lock(uvEntry->mutex);
-        // 抛异步任务，一切都是正常的
+        // Throwing an asynchronous task, everything is normal
         auto status = uv_queue_work(
             loop_, work, [](uv_work_t *work) {}, LambdaForWork);
         if (status != napi_ok) {
@@ -506,13 +506,13 @@ void DataShareUvQueue::SyncCall(NapiVoidFunc func, NapiBoolFunc retFunc)
             DataShareUvQueue::Purge(work);
             return;
         }
-        // 异步转同步，实际上只要不在同一个线程，其实也没问题，就是代码实现比较难看
+        // Converting async to sync is actually fine as long as it's not on the same thread; it's just that the code ends up looking pretty ugly.
         if (uvEntry->condition.wait_for(lock, std::chrono::seconds(WAIT_TIME), [uvEntry] { return uvEntry->done; })) {
             auto time = static_cast<uint64_t>(duration_cast<milliseconds>(
                 system_clock::now().time_since_epoch()).count());
             LOG_INFO("function ended successfully. times %{public}" PRIu64 ".", time);
         }
-        // 好了，到这里就开始出现问题了。这个本质上是在处理异常，也就是任务都执行不到的时候，需要调用uv_cancel取消该任务。然后往下执行Purge做清理动作。
+        // This is where the problems start. Essentially, this deals with exceptions, meaning that when none of the tasks get executed, you need to call uv_cancel to cancel the task. Then you move on to Purge to perform the cleanup.
         if (!uvEntry->done && uv_cancel((uv_req_t*)work) != napi_ok) {
             LOG_ERROR("uv_cancel failed.");
             uvEntry->purge = true;
@@ -522,19 +522,19 @@ void DataShareUvQueue::SyncCall(NapiVoidFunc func, NapiBoolFunc retFunc)
 
     CheckFuncAndExec(uvEntry->retFunc);
     if (!noNeedPurge) {
-        // Purge是做清理动作的，包括delete uv_work_t和delete uvEntry
+        // Purge is for cleanup actions, including delete uv_work_t and delete uvEntry
         DataShareUvQueue::Purge(work);
     }
 }
 ```
 
-上述代码出错的原因是开发者对uv\_cancel函数不熟悉。uv\_cancel函数的运行逻辑如下：
+上述代码出错的原因是开发者对uv\_cancel()函数不熟悉。uv\_cancel()函数的运行逻辑如下：
 
 1. 首先它会根据uv\_work\_t中的异步任务work\_cb的状态判断该任务可否被取消，如果不可以则返回。
 2. 然后，将work\_cb置为uv\_\_cancelled。并将异步流程继续往下执行，然后将status设为UV\_ECANCELED传给after\_work\_cb
-3. 最后，继续执行after\_work\_cb。
+3. 最后，继续执行after\_work\_cb()。
 
-   uv\_cancel实际上不会真正取消异步任务，也不会阻止after\_work\_cb回调的执行。如果开发者调用uv\_cancel但不在回调中检查status是否等于UV\_ECANCELED，代码将不会按预期执行。这可能导致清理工作不到位，进而引发double free或UAF问题。
+   uv\_cancel实际上不会真正取消异步任务，也不会阻止after\_work\_cb()回调的执行。如果开发者调用uv\_cancel但不在回调中检查status是否等于UV\_ECANCELED，代码将不会按预期执行。这可能导致清理工作不到位，进而引发double free或UAF问题。
 
 问题结论：确保在after\_work\_cb中释放异步任务对象的内存。
 
@@ -558,21 +558,21 @@ Thread name:OS_FFRT
 
 由于该问题场景复现极其困难，只能依赖大数据复现，因此工具的作用并不大。最终只能排查代码，将前文伪代码写法2的代码全部分离，采用自定义对象与uv对象独立创建的形式，修改完毕后，该问题不再复现。修改如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/-Azj3Y4lTduqbPjTxbENfw/zh-cn_image_0000002194009980.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/brITNHRQTkipXYEfSa5pfw/zh-cn_image_0000002194009980.png "点击放大")
 
 问题结论：参考场景一，如果不确定自定义创建的对象与UV异步任务对象的生命周期管理是否同步，建议将两者分离开来，独立进行管理。
 
 ```screen
-Context* context = new Context;//context为开发者自定义的对象
+Context* context = new Context;// context is a developer-defined object
 uv_work_t* work = new uv_work_t;
 work->data = (void*)context;
 uv_queue_work(loop, work, [](uv_work_t*){
     Context *ctx = (Context*)work->data;
-    //业务逻辑
+    //business logic
 }, [uv_work_t* work, int status] {
     Context *ctx = (Context*)work->data;
-    //业务逻辑
-    delete ctx; //是否删除由开发者决定
+    //business logic
+    delete ctx; // Whether to delete is up to the developer
     delete work;
 });
 ```
@@ -633,11 +633,11 @@ Tid:19473, Name:app_name
 
 问题结论：
 
-开发者在使用文件同步接口时，不要在主线程上调用。建议在worker线程或taskpool中调用。
+开发者在使用文件同步接口时，不要在主线程上调用。建议在Worker线程或TaskPool中调用。
 
 **案例二、pdf必现卡死在事件循环**
 
-问题描述：应用在taskpool场景中调用其他SDK中的so接口时，会导致在libuv上卡死。
+问题描述：应用在TaskPool场景中调用其他SDK中的so接口时，会导致在libuv上卡死。
 
 ```screen
 Tid:61139, Name:example.pdftest
@@ -669,7 +669,7 @@ Tid:61139, Name:example.pdftest
 
 首先经过反编译，看一下卡死在哪一行：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/-u0e2gNtQkuNYsKu-RSVLg/zh-cn_image_0000002194009984.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/YkDnTYElRS2LQjkv2ikzQA/zh-cn_image_0000002194009984.png)
 
 这段代码的逻辑是依次遍历loop上的队列，判断内部的pending是否已更改。如果已更改，则往下执行传入的回调函数。
 
@@ -680,19 +680,19 @@ Freeze发生在这个循环里，一直处于死循环。造成这种现象的�
 
 针对第一种情况，可能性较低。经过加日志验证，确实不是该原因导致的。对于第二种情况，通过GDB调试，模拟出卡死时链表的操作过程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/nXgBeqnYSdWMbfN4eXNjiA/zh-cn_image_0000002194009976.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/SZsbZ8TsRm-qDlR7ttGsQg/zh-cn_image_0000002194009976.png)
 
 该图显示，在卡死发生时，遍历loop上的async\_handles队列会将之前取出的节点重新挂载到当前队列上，导致死循环。这种现象可能是由于同一个句柄在两个事件循环中初始化，导致两个链表互相交织。为了验证这一推断，我们再次加日志复现，日志如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/mkN9MZBGQb2PBAoOfs2IjA/zh-cn_image_0000002229450229.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/LlhUFsB1TiekfL7n8OJyjA/zh-cn_image_0000002229450229.png)
 
-该日志证明了同一个句柄在主线程的loop和taskpool的TaskWorker线程上进行了初始化。
+该日志证明了同一个句柄在主线程的loop和TaskPool的TaskWorker线程上进行了初始化。
 
 接下来查看该SDK下的so代码，代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/dt1ZQyPcQ9-Jbb2EsWuIhA/zh-cn_image_0000002194009948.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/7TMCTftvSoyjhZwB9xf0uw/zh-cn_image_0000002194009948.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/cQ_KjoDQQie2qfgTHxEUUg/zh-cn_image_0000002193850384.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/rOBLYW5uS1SIbMlPNTSIgQ/zh-cn_image_0000002193850384.png)
 
 该代码保存了一个普通的uv\_async\_t对象在静态对象中，但未进行call\_once处理，导致每次导入组件时都会初始化，从而造成同一个句柄在不同的事件循环中被多次初始化。
 
@@ -751,17 +751,17 @@ Tid:39304, Name:OS TaskManager
 
 问题描述：应用存在double close导致偶现崩溃。复现步骤为退出账号后点击应用，出现crash。崩溃栈与文章第一幅图中的崩溃栈一致，主要集中在worker线程或与taskpool相关的线程（TaskManager线程、TaskWorker线程）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/rhg8t13UT42p09cJ5wR4Vg/zh-cn_image_0000002194009956.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Y4EdLWWySJOOqktRJmUPTQ/zh-cn_image_0000002194009956.png)
 
 问题分析：
 
 排查应用方代码，代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/2JFetOdBSaeStdyCtnwtog/zh-cn_image_0000002229450221.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/YCkrXMy6QomJjrs88b6ADw/zh-cn_image_0000002229450221.png)
 
 其中rawFileDescriptor是资源管理子系统通过rawFilePath获取的文件描述符的管理对象。
 
-注释部分表示第一次关闭操作是通过文件管理子系统的close接口完成的。第二次关闭操作是通过rawFilePath文件路径，传入资源管理子系统的closeRawFd接口进行的。这两次关闭操作正好对应了插件捕获的两次调用栈。
+注释部分表示第一次关闭操作是通过文件管理子系统的close()接口完成的。第二次关闭操作是通过rawFilePath文件路径，传入资源管理子系统的closeRawFd()接口进行的。这两次关闭操作正好对应了插件捕获的两次调用栈。
 
 解决方法：
 

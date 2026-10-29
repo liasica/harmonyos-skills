@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup-o
 title: 拉起指定应用概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定应用 > 拉起指定应用概述
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:38+08:00
+scraped_at: 2026-10-29T07:56:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c79631fd02f9ec1ec848ade4e406d6f4056593b67c3c2c8d06c4ca48c0063673
+content_hash: sha256:6d4000c2282f23970e6ab7382daf4b4818f680ac14452438564cff13ebf0512b
 ---
 
 本章节主要介绍如何通过应用链接跳转的方式拉起指定应用。
@@ -59,11 +59,11 @@ Deep Linking与App Linking均可以使用[openLink()](../harmonyos-references/js
 
 通过App Linking方式拉起指定应用的示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/FvPbHPVyT9aLyBrcFgqzgw/zh-cn_image_0000002800984469.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/thZljGGQRgmkyYlf5unDdA/zh-cn_image_0000002803263209.png)
 
 通过Deep Linking方式拉起应用时，如果存在多个符合条件的应用，需要用户选择后方可跳转到指定应用。示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/4_Z-uAiXTfOsz48NAyl2tQ/zh-cn_image_0000002771824580.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/8LFTYUCZSzqSGo0kWZAaJw/zh-cn_image_0000002803223117.png)
 
 ## 常见问题
 

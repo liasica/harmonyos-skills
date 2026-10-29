@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-skill-sc
 title: 场景化消息开发Skill
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > （可选）接入Skill > 场景化消息开发Skill
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:53+08:00
+scraped_at: 2026-10-29T07:57:48+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:1730e588c8f468ba66a743d98a4ba06def59bda360106f1b5b2588a80ab9c73b
+content_hash: sha256:d4d09b7ef3af60686300e544c65cfe43984d1b62454f1e37622e0522f38920d1
 ---
 
 ## 概述
@@ -38,16 +38,16 @@ content_hash: sha256:1730e588c8f468ba66a743d98a4ba06def59bda360106f1b5b2588a80ab
 
 1. 打开[DevEco Studio](https://developer.huawei.com/consumer/cn/download/)之后，在右侧工具栏点击CodeGenie，详情见[DevEco CodeGenie工具概述](ide-codegenie.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/LPnjyFh0R1aRlkBaqfTFtA/zh-cn_image_0000002800986589.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/R7GzV_3mTM6fJcJnctgIfw/zh-cn_image_0000002774065524.png)
 2. 参考[操作步骤](ide-skills.md#section20151122814121)导入Skill。如图所示，选择在[下载并配置Skill](push-skill-scenes.md#下载并配置skill)中下载的Skill，需要导入名为hmos-push-kit的文件夹，以及4个子文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/woUtm3fSTDy-rNYxmDzjnw/zh-cn_image_0000002771826700.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/k6Aq_6A2TaaJdOt5QHJnow/zh-cn_image_0000002773905550.png)
 3. 全部导入成功后，如图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/kaxbzu_eSwKwCx_30Qlaqw/zh-cn_image_0000002801106515.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/LwHcgirVReafxr64oKZGoA/zh-cn_image_0000002803265333.png)
 4. 回到对话页面，选择**HarmonyOS Act**以及合适的模型，并按需求输入提示词。如图所示，CodeGenie调用对应技能接入Push Kit。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/zo_ph8DXRZyKzP7p9ELoAQ/zh-cn_image_0000002771666734.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/0c70uM2JTImv_AkNA5sg3w/zh-cn_image_0000002803225241.png)
 5. 接入完成后，CodeGenie会提示需要开通推送服务等注意事项。
 
 ### 触发Skill

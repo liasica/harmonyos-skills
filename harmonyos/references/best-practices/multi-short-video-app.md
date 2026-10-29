@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-short-vid
 title: 多设备短视频界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备短视频界面
 category: best-practices
-scraped_at: 2026-10-16T07:06:41+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:56f0ac929eeec39e48274ea6c88f14973b942859e4beaf73ae4fc873cb11b43d
+scraped_at: 2026-10-29T08:03:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:595bc7117583c0e720005f1f939978f3a80b14f823a2a24086baa99912f11d96
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:56f0ac929eeec39e48274ea6c88f14973b942859e4beaf73ae4fc873cb1
 
 短视频应用的UX设计可参考影音娱乐类多设备响应式设计指南的[短视频](../design-guides/responsive-design-examples1-0000001957369849.md#section286164710457)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/KuIHq9dMRoCT7Sdbg5HuUw/zh-cn_image_0000002622296745.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/_w7jDG5cRCaYfmGX6HpO3Q/zh-cn_image_0000002622296745.png "点击放大")
 
 ## 工程管理
 
@@ -195,7 +195,7 @@ content_hash: sha256:56f0ac929eeec39e48274ea6c88f14973b942859e4beaf73ae4fc873cb1
   在HAP包的module.json5文件中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下配置orientation属性为follow\_desktop，详细信息参考窗口旋转中[其他方向类型](../harmonyos-guides/window-rotation.md#其他方向类型)的跟随桌面旋转模式。
 * 窗口沉浸式
 
-  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)方案。全屏、分屏和悬浮窗模式的沉浸式通过窗口的[setWindowLayoutFullscreen](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)方法实现。同时需进行动态安全区避以保证显示效果。自由窗口模式下使用窗口的[setWindowDecorVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)方法传入参数false隐藏标题栏，仅保留右上角三键，使应用页面延展至标题栏区域实现沉浸式效果。
+  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)方案。全屏、分屏和悬浮窗模式的沉浸式通过窗口的[setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)方法实现。同时需进行动态安全区避以保证显示效果。自由窗口模式下使用窗口的[setWindowDecorVisible()](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)方法传入参数false隐藏标题栏，仅保留右上角三键，使应用页面延展至标题栏区域实现沉浸式效果。
 
 ### 首页
 
@@ -266,7 +266,7 @@ content_hash: sha256:56f0ac929eeec39e48274ea6c88f14973b942859e4beaf73ae4fc873cb1
 
 短视频应用首页主要为推荐精品短视频。根据功能设计，将应用首页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/6dC_Hr6WTbaaLg8x_usaEQ/zh-cn_image_0000002591977212.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/79F7b85MSA-viE1Qynr8vQ/zh-cn_image_0000002591977212.png "点击放大")
 
 **界面开发**
 
@@ -294,7 +294,7 @@ content_hash: sha256:56f0ac929eeec39e48274ea6c88f14973b942859e4beaf73ae4fc873cb1
 
 短视频应用首页主要推荐精选视频，满足用户观看需求。根据功能设计，将应用首页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ierwv3LwR5G6dZX0Lk6B_g/zh-cn_image_0000002622296757.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/RGzMZLSmSC2muxxZP7aF_g/zh-cn_image_0000002622296757.png "点击放大")
 
 **界面开发**
 
@@ -319,7 +319,7 @@ content_hash: sha256:56f0ac929eeec39e48274ea6c88f14973b942859e4beaf73ae4fc873cb1
 
 短视频应用首页主要推荐精选视频，满足用户观看需求。根据功能设计，将应用首页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Y38_tyKgS8CNWByUm7zmeg/zh-cn_image_0000002622336875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/q4oogbk4Sc6fYKj38ROU2Q/zh-cn_image_0000002622336875.png "点击放大")
 
 **界面开发**
 

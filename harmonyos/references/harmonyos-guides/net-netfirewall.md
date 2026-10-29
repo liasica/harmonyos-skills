@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-netfirewa
 title: 使用网络防火墙
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 管理网络 > 使用网络防火墙
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:46+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:4711d4c705628b74c13bcddffefa0bfadeb979097ea4edde353234609adff22e
+scraped_at: 2026-10-29T07:57:01+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:626ae1705319a83a4578a04727e2d64c82f574f1dd80a0f3851d7fafd2f6db88
 ---
 
 ## 简介
@@ -42,7 +42,7 @@ content_hash: sha256:4711d4c705628b74c13bcddffefa0bfadeb979097ea4edde353234609ad
 ## 针对特定IP联网访问控制
 
 1. 设备通过硬件接口，插入网线。
-2. 从@kit.NetworkKit中导入netfirewall命名空间。
+2. 从@kit.NetworkKit中导入netFirewall命名空间。
 
    ```typescript
    // 从@kit.NetworkKit中导入netFirewall命名空间。

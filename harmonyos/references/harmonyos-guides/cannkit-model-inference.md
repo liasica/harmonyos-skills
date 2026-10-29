@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: 模型推理
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 模型推理
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:59+08:00
+scraped_at: 2026-10-29T07:57:55+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:b6735b22777459252b0038c57ae0b49cb1a03ff8b4df97410fc5dfe51932908f
+content_hash: sha256:d4453f31649fe1549b6cf299f35928f5e6d98232c6337612737a9edb1c9c96a2
 ---
 
 ## 基本概念
@@ -16,7 +16,7 @@ content_hash: sha256:b6735b22777459252b0038c57ae0b49cb1a03ff8b4df97410fc5dfe5193
 
 模型推理的主要开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/RlXKlhmNRUuF8jbgfpKHkg/zh-cn_image_0000002801106633.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/WZ-TriJUSKmDLP3aW6mI2w/zh-cn_image_0000002803265451.png)
 
 ## 接口说明
 

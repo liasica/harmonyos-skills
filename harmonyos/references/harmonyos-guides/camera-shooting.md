@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-shooti
 title: 拍照(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 拍照(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8c24469f1316823f36d945e916115175586e5b54e1b064167e6499e57b4fcbd1
+scraped_at: 2026-10-29T07:57:19+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c9c8bfa87493aaca3bcd86ad5357342cbf55eabd3aa58f5f5421e515425ed924
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ content_hash: sha256:8c24469f1316823f36d945e916115175586e5b54e1b064167e6499e57b4
      photoOutput.on('photoAvailable', (errCode: BusinessError, photo: camera.Photo): void => {
        console.info('getPhoto start');
        if (errCode || photo === undefined) {
-         console.error('getPhoto failed, err: ${errCode}');
+         console.error(`getPhoto failed, err: ${errCode}`);
          return;
        }
          // 如需要在图库中看到所保存的图片、视频资源，请使用用户无感的安全控件创建媒体资源。

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: （可选）同步云端代码至DevEco Studio工程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > （可选）同步云端代码至DevEco Studio工程
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:19+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:0a7a796754e4f3a0f2c1e7fd0a31c53431e2f05c042d5af044c9c634eb66f53f
+scraped_at: 2026-10-29T07:58:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:ef31aea29c32df08dbf2275eb739f08dc0775df00366dd8ce7aebc367ea230eb
 ---
 
-DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工程，包括之前从本地部署到AGC云端的代码、以及在AGC云端编写的代码，以保证云端和本地的版本一致性，方便您的日常开发。
+DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同步至本地工程，包括之前从本地部署到HarmonyOS 开发者中心的代码、以及在HarmonyOS 开发者中心编写的代码，以保证云端和本地的版本一致性，方便您的日常开发。
 
 云端代码同步目前支持以下模式：[仅同步云函数/云对象](agc-harmonyos-clouddev-sync.md#section588213529814)、[仅同步云数据库](agc-harmonyos-clouddev-sync.md#section474014335350)、[一键同步云侧代码](agc-harmonyos-clouddev-sync.md#section1198316575339)。
 
@@ -20,39 +20,39 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
 
 ### 同步单个云函数/云对象
 
-云函数/云对象部署到AGC云端后，如在云端又进行了新改动，您可再将云端的云函数/云对象同步到本地工程。云函数/云对象的同步方式一致，下文以云对象为例进行说明。
+云函数/云对象部署到HarmonyOS 开发者中心后，如在云端又进行了新改动，您可再将云端的云函数/云对象同步到本地工程。云函数/云对象的同步方式一致，下文以云对象为例进行说明。
 
 1. 右击云对象目录，选择“Sync '*云对象名*'”。下文以云对象“id-generator”为例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/73hR8qWsR6igPh47jwg0ew/zh-cn_image_0000002214704461.png)
-2. 在确认弹框中点击“Overwrite”，AGC云端的云对象“id-generator”将覆盖更新本地云对象“id-generator”。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/kaV5JFyURae3Z9X98KU_XQ/zh-cn_image_0000002214704461.png)
+2. 在确认弹框中点击“Overwrite”，HarmonyOS 开发者中心的云对象“id-generator”将覆盖更新本地云对象“id-generator”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Q1cM9XCoTlynsck9lCum7Q/zh-cn_image_0000002214704477.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/u7kg2Q8sQq2UWFXjScyEmQ/zh-cn_image_0000002214704477.png)
 3. 等待同步完成，“cloudfunctions”目录下将生成从云端同步下来的云对象“id-generator”，同时将本地原云对象“id-generator”备份在同路径下。
 
    **说明** 
 
    后续如执行部署或调试，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/dLzr_c98RtipKNhghsYLbw/zh-cn_image_0000002179498228.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/mi1vwr-sT8GuHZ2wZQHINw/zh-cn_image_0000002179498228.png)
 
 ### 批量同步云函数/云对象
 
-批量同步云函数/云对象即将AGC云端当前项目下的所有云函数/云对象同步至本地工程。
+批量同步云函数/云对象即将HarmonyOS 开发者中心当前项目下的所有云函数/云对象同步至本地工程。
 
 1. 右击“cloudfunctions”目录，选择“Sync Cloud Functions”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/hRqGrr0dRvyYT_Yn29ryqg/zh-cn_image_0000002179338512.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/b--ZnWqaQzOrIF3k_x1ghQ/zh-cn_image_0000002179338512.png)
 2. 弹窗提示您本地工程下存在同名云函数/云对象。
    * 选择“Skip”，同步时将跳过本地同名云函数/云对象。
-   * 选择“Overwrite”，AGC云端的云函数/云对象将覆盖更新本地同名云函数/云对象。
+   * 选择“Overwrite”，HarmonyOS 开发者中心的云函数/云对象将覆盖更新本地同名云函数/云对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/zF2A8VgAS3O5GFD_RsTGzA/zh-cn_image_0000002214704441.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/IxQTpmncRP6vklzcoe4jRw/zh-cn_image_0000002214704441.png)
 3. 如选择“Skip”，等待同步完成后，“cloudfunctions”目录下将生成从云端同步下来的本项目下所有云函数/云对象，本地已存在的不同步。
 
    如下图，“cloudfunctions”目录下新增了云端同步下来的“test-cloud-function”，上图中本地已存在的云函数/云对象未被覆盖更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/g2OdW-1QTqyPKrf-1tT7QA/zh-cn_image_0000002214704485.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/i4Dqrsp4Re6q_s2b3AMXsg/zh-cn_image_0000002214704485.png)
 4. 如选择“Overwrite”，等待同步完成后，“cloudfunctions”目录下将生成从云端同步下来的本项目下所有云函数/云对象；本地同名云函数/云对象也被覆盖更新，同时更新前的原云函数/云对象会备份在同路径下。
 
    如下图，“cloudfunctions”目录下新增了云端同步下来的“test-cloud-function”，本地已存在的几个云函数/云对象也被覆盖更新，并且均生成了备份文件“xxxx-*备份时间*.backup”。
@@ -61,7 +61,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
 
    后续如执行部署或调试，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/XznXrEK7TgaMRcfGvPkoeQ/zh-cn_image_0000002179338508.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/mvoXccy8T_OIrDZF1E6SBA/zh-cn_image_0000002179338508.png)
 
 ## 同步云数据库
 
@@ -71,14 +71,14 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
 
 ### 同步单个对象类型
 
-对象类型部署到AGC云端后，如又发生了新改动，您可再将云端的对象类型同步到本地。
+对象类型部署到HarmonyOS 开发者中心后，如又发生了新改动，您可再将云端的对象类型同步到本地。
 
 1. 右击对象类型JSON文件（以“objecttype1.json”为例），选择“Sync 'objecttype1.json'”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/uIuNY3ylT8iF_zrnOWua3A/zh-cn_image_0000002179498216.png)
-2. 在确认弹框中点击“Overwrite”，AGC云端的对象类型“objecttype1.json”将覆盖更新本地对象类型“objecttype1.json”。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/fxcfDnjdR56NeJw00Sh_0w/zh-cn_image_0000002179498216.png)
+2. 在确认弹框中点击“Overwrite”，HarmonyOS 开发者中心的对象类型“objecttype1.json”将覆盖更新本地对象类型“objecttype1.json”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/twlYvMBOR-Oycd4_-ASM0g/zh-cn_image_0000002214704465.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/kBPYf4MDTzOLp3uNC8Su0w/zh-cn_image_0000002214704465.png)
 3. 等待同步完成，“objecttype”目录下将生成从云端同步下来的对象类型“objecttype1.json”。
    * 如果云端和本地的同名对象类型内容存在差异，则还会将本地原对象类型备份在同路径下。
    * 如果云端和本地的同名对象类型内容完全一致，则不生成备份。
@@ -87,26 +87,26 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
 
    后续如执行部署，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/s49bFjvEQ-iwHxMGxr01_A/zh-cn_image_0000002214704445.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/3rWKLFlkRM2wyFCyiVR2Zg/zh-cn_image_0000002214704445.png)
 
 ### 批量同步对象类型
 
-您可以将AGC云端当前项目下所有的对象类型一键同步至本地。
+您可以将HarmonyOS 开发者中心当前项目下所有的对象类型一键同步至本地。
 
 1. 右击“objecttype”目录，选择“Sync Object Type”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/-xEJ0PulSoOWF4LWns_4Jg/zh-cn_image_0000002179338532.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Xh-a0VaKQr2x_4uxpGvYmg/zh-cn_image_0000002179338532.png)
 
 2. 弹窗提示您本地工程下已存在同名对象类型，如下图“Post.json”与“objecttype1.json”。
    * 选择“Skip”，同步时将跳过本地同名对象类型。
-   * 选择“Overwrite”，AGC云端的对象类型将覆盖更新本地同名对象类型。
+   * 选择“Overwrite”，HarmonyOS 开发者中心的对象类型将覆盖更新本地同名对象类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/6O0MYOOBRQizJCH1z8oEQw/zh-cn_image_0000002179498208.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/3TnF_07XSEKNGVMOjACh-g/zh-cn_image_0000002179498208.png)
 3. 如选择“Skip”，等待同步完成后，“objecttype”目录下将生成从云端同步下来的本项目下所有对象类型，本地已存在的不同步。
 
    如下图，“objecttype”目录下新增了云端同步下来的“test\_object.json”，本地已存在的“Post.json”与“objecttype1.json”未被覆盖更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/VZX4mFeXToS9wgvSTBJUzA/zh-cn_image_0000002179498196.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/nROz-oWdRpCmJXoVOfA6rA/zh-cn_image_0000002179498196.png)
 4. 如选择“Overwrite”，等待同步完成后，“objecttype”目录下将生成从云端同步下来的所有对象类型，本地已存在的对象类型也被覆盖更新。
    * 如果云端和本地的同名对象类型内容存在差异，则还会将本地原对象类型备份在同路径下。
    * 如果云端和本地的同名对象类型内容完全一致，则不生成备份。
@@ -117,7 +117,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
 
    后续如执行部署，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/HNiAZRdBQsa1Xt1SyozoLQ/zh-cn_image_0000002214704489.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/cB_OPQVmRomsO-eeX4trOQ/zh-cn_image_0000002214704489.png)
 
 ## 一键同步云侧代码
 
@@ -127,12 +127,12 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
 
 1. 右击云开发工程（“CloudProgram”），选择“Sync Cloud Program”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/LiyoyY5KRnmaBYZOPZoDxw/zh-cn_image_0000002214858849.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/XQHD2Ou1RtO2ieafE5rVaQ/zh-cn_image_0000002214858849.png)
 2. 弹窗提示您本地工程下已存在同名对象类型/云函数/云对象。
    * 选择“Skip”，同步时将跳过本地同名对象类型/云函数/云对象。
-   * 选择“Overwrite”，AGC云端的对象类型/云函数/云对象将覆盖更新本地同名对象类型/云函数/云对象。
+   * 选择“Overwrite”，HarmonyOS 开发者中心的对象类型/云函数/云对象将覆盖更新本地同名对象类型/云函数/云对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/u2MWQqemQdaOmYnPxLZ_Ww/zh-cn_image_0000002214858861.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/IwnQ9-GiRi-CWGsyHaEuhQ/zh-cn_image_0000002214858861.png)
 3. 如选择“Skip”，等待同步完成后，“objecttype”目录下将生成从云端同步下来的本项目下所有对象类型，“cloudfunctions”目录下将生成从云端同步下来的本项目下所有云函数/云对象，本地已存在的云函数/云对象/对象类型均不同步。
 
    如下图：
@@ -140,7 +140,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
    * “objecttype”目录下新增了云端同步下来的“test\_object.json”，本地已存在的“Post.json”与“objecttype1.json”未被覆盖更新。
    * “cloudfunctions”目录下生成了从云端同步下来的“test-cloud-function”，本地已存在的“id-generator”、“my-cloud-function”与“my-cloud-object”未被覆盖更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/J-fUsSdBToO458hJn0le5Q/zh-cn_image_0000002179498236.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Ze-Mt0T1QjCRcgBUKN1tnw/zh-cn_image_0000002179498236.png)
 4. 如选择“Overwrite”，等待同步完成后，“objecttype”目录下将生成从云端同步下来的本项目下所有对象类型，“cloudfunctions”目录下将生成从云端同步下来的本项目下所有云函数/云对象，本地已存在的云函数/云对象/对象类型也被覆盖更新。
    * 如果云端和本地的同名对象类型内容存在差异，则还会将本地原对象类型备份在同路径下。
    * 如果云端和本地的同名对象类型内容完全一致，则不生成备份。
@@ -155,4 +155,4 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
 
      后续如执行部署或调试，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/4lb03_qBSZSU2EA8TJHx8w/zh-cn_image_0000002179338516.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/NpoWe0wtS--bR2DuOj5mEw/zh-cn_image_0000002179338516.png)

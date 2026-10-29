@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-cu
 title: 自定义组件生命周期
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件生命周期
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:45+08:00
+scraped_at: 2026-10-29T07:56:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2c3cb3ff50014c4b0ccd9a1bd47f17bd3173946d2fca217f1124aa18c0c46de6
+content_hash: sha256:a0c934e342b295b020a681465f514bb8d640d1f7f086485d7f3acb8b481d1d5d
 ---
 
 自定义组件生命周期，即用[@Component](arkts-create-custom-components.md#component)或[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件的生命周期，提供以下生命周期接口：
@@ -20,7 +20,7 @@ content_hash: sha256:2c3cb3ff50014c4b0ccd9a1bd47f17bd3173946d2fca217f1124aa18c0c
 
 自定义组件生命周期流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/iaJhTl2iS_uOdNJR-_AnyQ/zh-cn_image_0000002800984547.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/8MFypzGxSxC_bQbBseS77w/zh-cn_image_0000002803263287.png)
 
 根据上面的流程图，接下来从自定义组件的初始创建、重新渲染和删除来详细说明。
 
@@ -126,7 +126,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/5nmDzydBQxGzSqN7MtIBwQ/zh-cn_image_0000002771824658.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/_Pq5KLRgRLOSKME_ohnArw/zh-cn_image_0000002803223197.gif)
 
 以上示例中，Index页面包含两个自定义组件，一个是Parent，一个是Child，Parent及其子组件Child分别声明了各自的自定义组件生命周期函数（aboutToAppear / onDidBuild / aboutToDisappear）。
 
@@ -165,4 +165,4 @@ Child onDidBuild
 
 当showChild为默认值true时，该示例的生命周期流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/zL7_G4oOQ5e9aK-tZig16A/zh-cn_image_0000002801104473.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/InRlpL7qQBGuazs9-88kUA/zh-cn_image_0000002774063480.png)

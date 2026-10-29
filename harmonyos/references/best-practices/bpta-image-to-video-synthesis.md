@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-image-to-v
 title: 图片合成视频开发实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 图片合成视频开发实践
 category: best-practices
-scraped_at: 2026-10-16T07:06:38+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:001492f2c56da96ab1a7ab7c7f3499ba27f9454d284956ad33901c68aaf59f7b
+scraped_at: 2026-10-29T08:03:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:188c9fec6bd3734ea4e883dc9c5ab4748fdb6f8694e05d1b36420a0f7733c2bb
 ---
 
 ## 概述
 
 在个人相册制作、电商产品展示、理财销售回放等多个场景中，都需要将图片合成视频。开发者通过调用Image Kit、视频编码、媒体数据封装提供的接口，可以实现图片合成视频的功能。
 
-* [Image Kit](../harmonyos-guides/image-overview.md)提供图片的解码、编码、编辑、元数据处理等功能。
+* [Image Kit简介](../harmonyos-guides/image-overview.md)提供图片的解码、编码、编辑、元数据处理等功能。
 * [视频编码](../harmonyos-guides/video-encoding.md)可将未压缩的视频数据压缩为视频码流，如H.264、H.265。
 * [媒体数据封装](../harmonyos-guides/audio-video-muxer.md)可完成媒体文件的封装，将编码后的音视频数据，按一定的格式写入媒体文件中。
 
@@ -24,19 +24,19 @@ content_hash: sha256:001492f2c56da96ab1a7ab7c7f3499ba27f9454d284956ad33901c68aaf
 
 以将图库中的图片转换为MP4文件为例，本场景展示使用图片和编解码的基础能力来实现图片合成视频的功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/txKi9KPKRBCJEMi9kxuRNg/zh-cn_image_0000002529433631.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/PbN1pkvoS9GJvshsBGS3LQ/zh-cn_image_0000002770178894.gif "点击放大")
 
 ### 实现原理
 
-[Image Kit](../harmonyos-guides/image-overview.md)中的[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)是用于读取或写入图像数据以及获取图像信息的图像像素类。在图片合成视频的过程中，首先将图片解码为PixelMap，然后使用[Buffer模式](../harmonyos-guides/video-encoding.md#buffer模式)编码，将PixelMap中保存的图像数据复制到编码器的输入buffer中，未压缩的YUV输出成已压缩的视频码流H.264，编码完成后封装成视频文件。
+[Image Kit简介](../harmonyos-guides/image-overview.md)中的[Interface (PixelMap)](../harmonyos-references/arkts-apis-image-pixelmap.md)是用于读取或写入图像数据以及获取图像信息的图像像素类。在图片合成视频的过程中，首先将图片解码为PixelMap，然后使用[Buffer模式](../harmonyos-guides/video-encoding.md#buffer模式)编码，将PixelMap中保存的图像数据复制到编码器的输入buffer中，未压缩的YUV输出成已压缩的视频码流H.264，编码完成后封装成视频文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/5qvajCyNRjKK7Tg22BxGzQ/zh-cn_image_0000002497593680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Ts06sdD5SMKaybQsxVNW_w/zh-cn_image_0000002497593680.png)
 
 如果需要使用[Surface模式](../harmonyos-guides/video-encoding.md#surface模式)编码，将图片解码成PixelMap后，需要先从编码器的NativeWindow申请buffer，然后将PixelMap中保存的图像数据复制到申请的buffer中并提交buffer，编码完成后再封装为视频文件，具体实现可以参考[NativeWindow开发指导 (C/C++)](../harmonyos-guides/native-window-guidelines.md)。
 
 ### 开发步骤
 
-1. 使用[PhotoViewPicker](../harmonyos-references/arkts-apis-photoaccesshelper-photoviewpicker.md)从图库中选择图片，数量不少于两张。当选择数量不足两张时，将弹出提示框。
+1. 使用[Class (PhotoViewPicker)](../harmonyos-references/arkts-apis-photoaccesshelper-photoviewpicker.md)从图库中选择图片，数量不少于两张。当选择数量不足两张时，将弹出提示框。
 
    ```typescript
    // Use photoAccessHelper to pull up the gallery and select images.
@@ -63,7 +63,7 @@ content_hash: sha256:001492f2c56da96ab1a7ab7c7f3499ba27f9454d284956ad33901c68aaf
 
    （1）读取图片数据并创建ImageSource。
 
-   （2）配置图片解码参数，使用[imageSource.createPixelMap()](../harmonyos-references/arkts-apis-image-imagesource.md#createpixelmap7)获取解码后的PixelMap。
+   （2）配置图片解码参数，使用imageSource.[createPixelMap](../harmonyos-references/arkts-apis-image-imagesource.md#createpixelmap7)()获取解码后的PixelMap。
 
    （3）将PixelMap保存到队列中。
 
@@ -347,7 +347,7 @@ content_hash: sha256:001492f2c56da96ab1a7ab7c7f3499ba27f9454d284956ad33901c68aaf
      })
    ```
 
-   （2）调用[MediaAssetChangeRequest.createImageAssetRequest()](../harmonyos-references/arkts-apis-photoaccesshelper-mediaassetchangerequest.md#createimageassetrequest11)和[PhotoAccessHelper.applyChanges()](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#applychanges11)接口，将视频保存到图库。
+   （2）调用MediaAssetChangeRequest.[createImageAssetRequest](../harmonyos-references/arkts-apis-photoaccesshelper-mediaassetchangerequest.md#createimageassetrequest11)()和PhotoAccessHelper.[applyChanges](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#applychanges11)()接口，将视频保存到图库。
 
    ```typescript
    // Save videos using photoAccessHelper.

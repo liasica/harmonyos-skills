@@ -3,26 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-prof
 title: 数据区
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能 > DevEco Profiler调优工具简介 > 数据区
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:50+08:00
+scraped_at: 2026-10-29T07:58:50+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:7eb2b1cdef972130a82ab0af01423b25192ae4505b1b697f8540e9f1796564fc
+content_hash: sha256:ecedb1949d981a9f97ce9c1306a61a7d881f680673811e9f1804c880f2437342
 ---
 
 在数据区域，DevEco Profiler提供了对性能数据的可视化呈现结果。由于每个场景化模板所提供的可视化能力各不相同，本章节对所有模板的通用能力展开介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/OQLI6STqSdupsppyIJNPcQ/zh-cn_image_0000002750009952.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/f3O9QpWvRwKJjJiryUFvEw/zh-cn_image_0000002750009952.png "点击放大")
 
 整个数据区可以分为五个区域：
 
 ① 工具控制栏：提供收藏、离线符号导入、泳道过滤和数据全量展示等辅助功能的管理能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/HWf0mnx4TfawziV2OLrrFQ/zh-cn_image_0000002750169838.png)：离线符号导入按钮。点击后可以导入带有调试符号表的Native库，对应的Native函数栈符号将被还原。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/hEP8zF0iRBq1zDPtq9-yNg/zh-cn_image_0000002750169838.png)：离线符号导入按钮。点击后可以导入带有调试符号表的Native库，对应的Native函数栈符号将被还原。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/f1O1GYw0TkaSXRCMLp_jDg/zh-cn_image_0000002750009956.png)：收藏泳道的隐藏/折叠按钮。激活后会隐藏/折叠收藏的泳道，高亮时展示收藏的泳道。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/UdUmrSRSQbml8M9qu7ZNzQ/zh-cn_image_0000002750009956.png)：收藏泳道的隐藏/折叠按钮。激活后会隐藏/折叠收藏的泳道，高亮时展示收藏的泳道。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/ES99WJ4rSCW8AosoOZWYZQ/zh-cn_image_0000002779608859.png)：泳道筛选按钮。点击可选择泳道进行过滤。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/ZIm8NzmCRPq2Akk6EpUtrA/zh-cn_image_0000002779608859.png)：泳道筛选按钮。点击可选择泳道进行过滤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/P_URSADzT8yCujzdiaRAcw/zh-cn_image_0000002750169854.png)：数据全量展示按钮。点击后时间轴尺度自动调整，将展示会话完整时间范围内的数据。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Zy0Phfj-RPm8PyL21ZbY2w/zh-cn_image_0000002750169854.png)：数据全量展示按钮。点击后时间轴尺度自动调整，将展示会话完整时间范围内的数据。
 
 ② 时间轴：提供横向时间轴，用于显示数据时间戳。
 
@@ -43,19 +43,19 @@ content_hash: sha256:7eb2b1cdef972130a82ab0af01423b25192ae4505b1b697f8540e9f1796
 
 可以开启和结束会话的录制，点击工具栏的首个按钮即可，如下图所示分别对应开启录制、结束录制功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/qLqeZJlQQcWzg7c1CRxx-A/zh-cn_image_0000002750009958.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ukssPMbsRO60hj6IPasJCg/zh-cn_image_0000002750009958.png "点击放大")
 
 ### 时间轴控制
 
 DevEco Profiler工具提供了各种丰富的时间轴操作功能：
 
-* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/JaUwPmHGQ1OJDWs6JbB5xw/zh-cn_image_0000002779608875.png)按钮展示全量数据，时间轴尺度会自动调整，展示会话完整时间范围内的数据。
+* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Rv4BniBlSaS9SppKxiKucA/zh-cn_image_0000002779608875.png)按钮展示全量数据，时间轴尺度会自动调整，展示会话完整时间范围内的数据。
 * 鼠标单击右侧泳道数据区后，使用快捷键A/D或使用Shift+鼠标滚轮，可以调整时间轴所示的时间范围；通过快捷键W/S或使用Ctrl+鼠标滚轮，可以调整时间轴所示的时间范围的大小。
 * 拖动泳道右侧滑条或者滑动鼠标滚轮，可以控制泳道上下滚动。
 
 更多快捷键使用方式请参见[快捷键](ide-hmos-shortcut-key.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/eG5uToFxTiORf-wHAJ7WtQ/zh-cn_image_0000002779608865.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/eEk6k02DRcGJ6nk0B9ogLA/zh-cn_image_0000002779608865.png "点击放大")
 
 **说明** 
 
@@ -65,36 +65,36 @@ DevEco Profiler工具提供了各种丰富的时间轴操作功能：
 
 为了便于开发者记录分析出的关键时间点，DevEco Profiler工具提供了两种时间标记功能供开发者使用。
 
-* 方式一：单点时间标记。单击需要关注的时间点，添加的时间标记显示为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/6YyNzK-fTLKDGVievAJJ9A/zh-cn_image_0000002779608871.png)（快捷键为M，颜色可自定义）。
-* 方式二：时间段时间标记。鼠标框选要关注的时间段，单击该时间段右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/AD4wbdxYSeWVDH6ajXMKgQ/zh-cn_image_0000002779729005.png)添加时间段起始标记（快捷键为Shift+M，颜色可自定义），如下图所示。
+* 方式一：单点时间标记。单击需要关注的时间点，添加的时间标记显示为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/KNDdw1AOQwOBJ2unDgqWxQ/zh-cn_image_0000002779608871.png)（快捷键为M，颜色可自定义）。
+* 方式二：时间段时间标记。鼠标框选要关注的时间段，单击该时间段右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/JeZSPJyKSWCOmyDPrAxgTg/zh-cn_image_0000002779729005.png)添加时间段起始标记（快捷键为Shift+M，颜色可自定义），如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/WKGvLhE9QeWvzhT0qdM3tw/zh-cn_image_0000002779608861.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/0ZJANLrkQeqOtjeTLOvbEw/zh-cn_image_0000002779608861.png "点击放大")
 
 标记放置完成后，支持使用**C****trl+**，向前选中单个标记，**C****trl+.** 向后选中单个标记；**Ctrl+[**向前选中时间段的标记，**Ctrl+]**向后选中时间段时间标记。同时，支持通过单击鼠标右键点击**编辑****标记**，在弹出的标记属性框中修改标记的描述和颜色信息，或者**删除标记**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Gxn7brvaQaGXGzVPS8UTyA/zh-cn_image_0000002750009946.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/EPuCcZbZRkqbNmUmt4gCuQ/zh-cn_image_0000002750009946.png "点击放大")
 
 ### 收藏泳道单元
 
-在使用工具分析，可能会遇到泳道单元过多，导致想分析的泳道单元间隔过远、分析低效的情况，使用收藏功能，可以帮助开发者将关注的泳道单元提拉到泳道区域的顶端。将鼠标悬停在想要收藏的泳道单元之上，出现收藏图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/EhL3EAqGQoabFKKCitgc0Q/zh-cn_image_0000002779608869.png)，点击该按钮即可完成收藏，再次点击该按钮则取消收藏。
+在使用工具分析，可能会遇到泳道单元过多，导致想分析的泳道单元间隔过远、分析低效的情况，使用收藏功能，可以帮助开发者将关注的泳道单元提拉到泳道区域的顶端。将鼠标悬停在想要收藏的泳道单元之上，出现收藏图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/cMvh2iyeQXWA5CawA2xsfw/zh-cn_image_0000002779608869.png)，点击该按钮即可完成收藏，再次点击该按钮则取消收藏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/tptaQmgLQPCdtUSryl0emA/zh-cn_image_0000002779608873.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/gfkVWKazT0KRp8F6cvM4wQ/zh-cn_image_0000002779608873.png "点击放大")
 
-此外，由于顶部区域空间有限，工具还提供了压缩泳道的能力，点击泳道中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/feXVQAjNSKmg-5092KAsgw/zh-cn_image_0000002750169844.png)图标，可以将收藏的泳道单元进行折叠。
+此外，由于顶部区域空间有限，工具还提供了压缩泳道的能力，点击泳道中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/PjcH1rF_SveM_Cgalv1fWw/zh-cn_image_0000002750169844.png)图标，可以将收藏的泳道单元进行折叠。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/XN0XYDflQ-6y55EFFv8qRQ/zh-cn_image_0000002779608863.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/70dDVrerQ9KUSEwXJ25-zA/zh-cn_image_0000002779608863.png "点击放大")
 
 如果收藏的是父泳道，且泳道标题展示不完整，当鼠标悬浮到泳道标题区，会提示该泳道的泳道标题信息。
 
 如果收藏的是子泳道，当鼠标悬浮到收藏的子泳道标题区，会提示该泳道的父泳道和子泳道标题信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ErY4WTZATTC_OGihVr4LcA/zh-cn_image_0000002750009948.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/G9J7mA29T3GV7BbXu_HkeQ/zh-cn_image_0000002750009948.png "点击放大")
 
 ### 离线符号解析
 
-为便于开发者分析Native的函数热点，工具提供了符号导入的能力，开发者可以点击工具控制栏的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/bQBQtfIbRlKJCvo8yrCMAA/zh-cn_image_0000002750009954.png)按钮，选择带有调试信息的so库导入，之后工具会利用此信息，将采集到的函数偏移信息转换为对应的源码符号（包括系统so库、用户自编译的so库、三方库）。
+为便于开发者分析Native的函数热点，工具提供了符号导入的能力，开发者可以点击工具控制栏的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/F7Vgk2qqS428KDwVuJFpBw/zh-cn_image_0000002750009954.png)按钮，选择带有调试信息的so库导入，之后工具会利用此信息，将采集到的函数偏移信息转换为对应的源码符号（包括系统so库、用户自编译的so库、三方库）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/vb2hsTejQnCuB24_hE2nZQ/zh-cn_image_0000002779608867.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/vcfokNS9QQayK9fDY9669Q/zh-cn_image_0000002779608867.png "点击放大")
 
 **说明** 
 

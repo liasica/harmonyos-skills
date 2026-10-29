@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 在端侧访问云数据库
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发端侧工程 > 在端侧调用云侧代码 > 在端侧访问云数据库
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:18+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:5176f8810a16d185623e3e39d547897218125903e6ba837014d435da749b7252
+scraped_at: 2026-10-29T07:58:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:f32c4ddb8d337922ac23245e9e039e86ba297daa5e306016a806317b84d9fbc1
 ---
 
 ## 前提条件
@@ -17,7 +17,7 @@ content_hash: sha256:5176f8810a16d185623e3e39d547897218125903e6ba837014d435da749
 
   云数据库部署成功后，DevEco Studio将自动从云侧下载云数据库的schema文件至“AppScope/resources/rawfile/schema.json”路径，该文件是云数据库端侧API必须引入的配置文件。
 
-  如果后续又在本地工程修改了对象类型，请重新部署云数据库，DevEco Studio将自动更新schema.json文件；如果后续在AGC云侧修改了对象类型，您需[手动从AGC控制台导出schema.json文件](../AppGallery-connect-Guides/agc-clouddb-agcconsole-objecttypes-0000001127675459.md#section1558018208151)，拷贝至本地工程的“AppScope/resources/rawfile”目录下。否则，可能导致schema.json文件中的对象类型和代码中的对象类型不一致，端侧访问云数据库时提示[1008230002](../harmonyos-references/errorcode-cloudfoundation.md#section1008230002-云数据库schema配置错误)错误。
+  如果后续又在本地工程修改了对象类型，请重新部署云数据库，DevEco Studio将自动更新schema.json文件；如果后续在HarmonyOS 开发者中心修改了对象类型，您需[手动从HarmonyOS 开发者中心导出schema.json文件](../AppGallery-connect-Guides/agc-clouddb-agcconsole-objecttypes-0000001127675459.md#section1558018208151)，拷贝至本地工程的“AppScope/resources/rawfile”目录下。否则，可能导致schema.json文件中的对象类型和代码中的对象类型不一致，端侧访问云数据库时提示[1008230002](../harmonyos-references/errorcode-cloudfoundation.md#section1008230002-云数据库schema配置错误)错误。
 
 * 检查您的角色拥有的对象类型操作权限。如果未[配置AccessToken](../harmonyos-references/cloudfoundation-cloudcommon.md#getaccesstoken)，需要给World角色添加Upsert和Delete权限。
 
@@ -27,7 +27,7 @@ content_hash: sha256:5176f8810a16d185623e3e39d547897218125903e6ba837014d435da749
 
 参考[生成Client Model](agc-harmonyos-clouddev-modelclass.md#section1037851593420)生成云数据库对象类型的端侧模型，如下图初始化代码中的Client Model示例“ets/pages/CloudDb/Post.ts”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/fGYE9DfXRgKU7UnGWFFA1A/zh-cn_image_0000002295988348.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/pG3aI5tkQkeAssIQJQJiaA/zh-cn_image_0000002295988348.png)
 
 ## 访问数据库
 

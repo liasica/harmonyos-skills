@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > GridContainer
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:34+08:00
+scraped_at: 2026-10-29T07:59:54+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3a1eafb373232f5d1558d1ea97db5038ca64b9e98891c521a20bfc5ffc3ea519
+content_hash: sha256:876e052b1884120cd170a2c625d5b0aca399c1f26c34ab1b1271b833bd04b913
 ---
 
 纵向排布栅格布局容器，仅在栅格布局场景中使用。栅格布局通过将容器宽度划分为指定列数，实现响应式布局，子组件可占用不同的列数和偏移量。适用于响应式页面布局、多栏目内容展示、仪表盘布局等场景。
@@ -159,4 +159,4 @@ struct GridContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/A4mldUtWSIe7AltiHJvc_Q/zh-cn_image_0000002800987793.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/CsuJDx_iRUyuDvAPMYUuBA/zh-cn_image_0000002774066724.gif)

@@ -3,12 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-performanc
 title: 性能优化
 breadcrumb: 最佳实践 > 性能 > 性能优化
 category: best-practices
-scraped_at: 2026-04-28T08:22:23+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:f759935304ff4625e9e0ec0248aaf7a61a4d6cfeeb0047cfa2ccb28d67631dcf
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d74721300de48a1d11920f508649f7f9d12ab4dff355f151433ae6cab65e664f
 ---
-
-本章节整理了应用开发过程中常见的一些性能优化方案，配合相关参考示例，帮助开发者解决许多性能问题。具体ArkUI性能优化文章合集可参阅[界面性能优化](bpta-developing-high-performance-ui.md)。
 
 * **[感知流畅优化](bpta-perceived-smoothness.md)**
 * **[渲染范围控制](bpta-control-rendering-range.md)**

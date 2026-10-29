@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-perceived-
 title: 感知流畅优化
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 感知流畅优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:45+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:9ee26bb03ac938b1263bce2365b936ba0fbdc7e4bbe0796f4da2cdfef202e551
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:425cb9d46595eacb92503162100d665af7ae5f365eaf53d225c49904de3b06ae
 ---
 
 在应用开发中，动画可以为用户界面增添生动、流畅的交互效果，提升用户对应用的好感度。然而，滥用动画也会导致应用性能下降，消耗过多的系统资源，甚至影响用户体验。关于感知流畅度优化方法，请参阅[提升动画感知流畅度](../harmonyos-guides/arkts-animation-usage-guide.md#提升动画感知流畅度)。
@@ -17,24 +17,23 @@ content_hash: sha256:9ee26bb03ac938b1263bce2365b936ba0fbdc7e4bbe0796f4da2cdfef20
 开发者可以在用户交互动作开始时，添加动画元素，如单击效果、转场缩放、加载进度条和共享动画。这些动画可以告知用户当前状态已发生变化，应用程序正在快速运作。动画背后涉及数据计算、布局渲染和内容加载。当新界面渲染完成，动画元素可通过渐变消失或移出屏幕等友好的方式退出视觉区域。
 
 **图1** 应用响应的两个视角  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/1yROum6MQ8uDoU_vV8RXwA/zh-cn_image_0000002194010988.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/dYGMSiVdSZKHAMXyUWYi_A/zh-cn_image_0000002194010988.png)
 
 ## 转场场景动效感知流畅
 
-HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能够轻松实现各种转场动画效果。开发者可以根据具体需求，在应用的不同场景中应用这些转场动效，以提升用户体验和界面的吸引力。需要注意的是，为了最佳的用户体验，开发者应根据界面的功能和特点，合理选择转场动效，并遵循动效的使用准则，以确保转场动效在视觉和交互上的一致性。关于转场场景的方案选型请参阅[页面转场动画 (不推荐)](../harmonyos-guides/arkts-page-transition-animation.md)。
+HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能够轻松实现各种转场动画效果。开发者可以根据具体需求，在应用的不同场景中应用这些转场动效，以提升用户体验和界面的吸引力。需要注意的是，为了最佳的用户体验，开发者应根据界面的功能和特点，合理选择转场动效，并遵循动效的使用准则，以确保转场动效在视觉和交互上的一致性。
 
-转场动画分为基础转场和高级模态转场，具体类型如下：
+转场动画主要包含如下几类：
 
 * [出现/消失转场](../harmonyos-guides/arkts-enter-exit-transition.md)：对新增、消失的控件实现动画效果，是通用的基础转场效果。
-* [导航转场](../harmonyos-guides/arkts-navigation-navigation.md)：页面的路由转场方式，对应一个界面消失，另外一个界面出现的动画效果，如设置应用一级菜单切换到二级界面。关于导航转场案例请参阅[页面转场动画 (不推荐)](../harmonyos-guides/arkts-page-transition-animation.md)。
-* [模态转场](../harmonyos-guides/arkts-modal-transition.md)：新的界面覆盖在旧的界面之上的动画，旧的界面不消失，新的界面出现，如弹框就是典型的模态转场动画。关于模态转场案例请参阅[页面转场动画 (不推荐)](../harmonyos-guides/arkts-page-transition-animation.md)。
+* [组件导航(Navigation)](../harmonyos-guides/arkts-navigation-navigation.md)：页面的路由转场方式，对应一个界面消失，另外一个界面出现的动画效果，如设置应用一级菜单切换到二级界面。
+* [模态转场](../harmonyos-guides/arkts-modal-transition.md)：新的界面覆盖在旧的界面之上的动画，旧的界面不消失，新的界面出现，如弹框就是典型的模态转场动画。
 * [共享元素转场 (一镜到底)](../harmonyos-guides/arkts-shared-element-transition.md)：共享元素转场是一种界面切换时对相同或者相似的元素做的一种位置和大小匹配的过渡动画效果。
-* [页面转场动画（不推荐）](../harmonyos-guides/arkts-page-transition-animation.md)：页面的路由转场方式，可以通过在pageTransition函数中自定义页面入场和页面退场的转场动效。为了实现更好的转场效果，推荐使用[导航转场](../harmonyos-guides/arkts-navigation-navigation.md)和[模态转场](../harmonyos-guides/arkts-modal-transition.md)。
-* [旋转屏动画增强](../harmonyos-guides/arkts-rotation-transition-animation.md)：在原旋转屏动画基础上，可配置渐隐和渐现的转场效果。
+* [旋转屏动画](../harmonyos-guides/arkts-rotation-transition-animation.md)：在原旋转屏动画基础上，可配置渐隐和渐现的转场效果。
 
 ## 合理动画时长使应用感知流畅
 
-页面转场动画时长直接影响用户交互体验，过长的动画时长会显著延迟用户操作响应
+页面转场动画时长直接影响用户交互体验；动画时间过长，会显著拖慢用户操作响应的反馈速度。
 
 常见的页面转场动画时长参数有：
 

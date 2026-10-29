@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-datac
 title: DataCopyPad
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 数据搬运 > DataCopyPad
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:40:02+08:00
+scraped_at: 2026-10-29T07:57:58+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:8f1a5287cc3e539dc4f06e59495f0fcd750392c6242313127cbd38f0dd3ade9c
+content_hash: sha256:ad3218c42626def8c69ff0ea7c7d8f65dadd4556d62576023c06e39632422e55
 ---
 
 ## 功能说明
@@ -108,7 +108,7 @@ content_hash: sha256:8f1a5287cc3e539dc4f06e59495f0fcd750392c6242313127cbd38f0dd3
   + blockLen+leftPadding+rightPadding满足32字节对齐，isPad为false，左右两侧填充的数据值会默认为随机值，否则为paddingValue。此处示例中，leftPadding、rightPadding均为0，则不填充。
   + blockLen+leftPadding+rightPadding不满足32字节对齐时，框架会填充一些假数据dummy，保证左右填充的数据和blockLen、假数据为32字节对齐。leftPadding/rightPadding不为0：若isPad为false，左右两侧填充的数据值和dummy值均为随机值，否则为paddingValue。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/lkmZ40IoQkGr6wyV26T8ig/zh-cn_image_0000002800986769.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/_E0pNLNASfSEnm_U6qHc-Q/zh-cn_image_0000002774065702.png)
 
   **配置示例2：**
 
@@ -116,23 +116,23 @@ content_hash: sha256:8f1a5287cc3e539dc4f06e59495f0fcd750392c6242313127cbd38f0dd3
   + blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding、rightPadding均为0：dummy会默认填充待搬运数据块的第一个元素值。
   + blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding/rightPadding不为0：若isPad为false，左右两侧填充的数据值和dummy值均为随机值，否则为paddingValue。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/0-xIOPeRTHqYSeyfAC02_Q/zh-cn_image_0000002771826878.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/DBcqHmVES2auvKINEowBAw/zh-cn_image_0000002773905728.png)
 * **VECIN/VECOUT**->**GM**
 
   当每个连续传输数据块长度blockLen为32字节对齐时，下图呈现了需要传入的DataCopyParams示例，blockLen为64，每个连续传输数据块包含64Bytes；srcStride为1，因为源操作数的逻辑位置为VECIN/VECOUT，srcStride的单位为dataBlock(32Bytes)，也就是说源操作数相邻数据块之间间隔1个dataBlock；dstStride为1，因为目的操作数的逻辑位置为GM，dstStride的单位为Byte，也就是说目的操作数相邻数据块之间间隔1Byte。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/l47XfJvsS5qTi7aU5RxBlQ/zh-cn_image_0000002801106693.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/deX5-r3qTgm3URWXq_DZ1g/zh-cn_image_0000002803265511.png)
 
   当每个连续传输数据块长度blockLen不满足32字节对齐，由于Unified Buffer要求32字节对齐，框架在搬出时会自动补充一些假数据来保证对齐，但在当搬到GM时会自动将填充的假数据丢弃掉。下图呈现了该场景下需要传入的DataCopyParams示例和假数据补齐的原理。blockLen为47，每个连续传输数据块包含47Bytes，不满足32字节对齐；srcStride为1，表示源操作数相邻数据块之间间隔1个dataBlock；dstStride为1，表示目的操作数相邻数据块之间间隔1Byte。框架在搬出时会自动补充17Bytes的假数据来保证对齐，搬到GM时再自动将填充的假数据丢弃掉。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9A6XU3OJQqC9Mnj8jdSH0Q/zh-cn_image_0000002771666912.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/TTZVPlpYQJqIEqIX5w-z7g/zh-cn_image_0000002803225419.png)
 * **VECIN/VECOUT->TSCM**
 
   内部实现涉及AIC和AIV之间的通信，实际搬运路径为VECIN/VECOUT->GM->TSCM，**发送通信消息会有开销，性能会受到影响**。
 
   如下图所示，展示了从VECIN/VECOUT搬运到GM，再搬运到TSCM的过程：示例中数据类型为half，单个datablock（32B）含有16个half元素，源操作数中的 A1~A6、B1~B6、C1~C6为需要进行搬运的数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/OvfSh4MHTSuLgQS32U2esA/zh-cn_image_0000002800986771.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/FcetQu76R1qjGHWqojOo5A/zh-cn_image_0000002774065704.png)
 
   从VECIN/VECOUT->GM的搬运，数据存储格式没有发生转变，依然是ND。
 

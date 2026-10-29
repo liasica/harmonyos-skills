@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: divider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > divider
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:35+08:00
+scraped_at: 2026-10-29T07:59:56+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9d76af64fc7117eb6d94ac761f0da4da650a788d16423a0b5eae6e53947e0d9d
+content_hash: sha256:a615cdc859e3bb006270cc73b66ce1db0ba618f4dc6d02cf31c82f12721fecc0
 ---
 
 **说明** 
@@ -96,4 +96,4 @@ content_hash: sha256:9d76af64fc7117eb6d94ac761f0da4da650a788d16423a0b5eae6e53947
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Iwi9k61bQ7isLtc_-5iQXw/zh-cn_image_0000002801107739.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/EDChSDFQQ5S--2vusN7JVQ/zh-cn_image_0000002803266559.jpg)

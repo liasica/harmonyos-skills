@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: APM能力建设
 breadcrumb: 最佳实践 > 稳定性 > 稳定性运维 > APM能力建设
 category: best-practices
-scraped_at: 2026-10-16T07:06:54+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:47df8eebc0e4721b2a849c494fe1c6f1467eae49738ac59ef1462c7260fba055
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:41ae4d27b344c0df1d27533b642ef2a91ec75fcd8317edcb0eb9bf2bb80d5a81
 ---
 
 APM作为应用性能管理平台，可线上监控应用质量。系统提供采集质量数据的能力，开发者可以收集这类数据构建APM平台。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/zvLJe0V0ShiBAHjI0nGadQ/zh-cn_image_0000002404125277.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/FgAcOIKyQHmEzV1IUMlqJw/zh-cn_image_0000002404125277.png "点击放大")
 
-本文主要介绍如何通过HiAppEvent订阅接口采集系统事件。其中，系统事件是指应用运行期间，应用进程发生的性能、功耗、稳定性等故障，HiAppEvent会将这些故障通过事件返回给开发者。
+本文主要介绍如何通过[@ohos.hiviewdfx.hiAppEvent (应用事件打点)](../doccenter-references/api/js-apis-hiviewdfx-hiappevent.md)订阅接口采集系统事件。其中，系统事件是指应用运行期间，应用进程发生的性能、功耗、稳定性等故障，HiAppEvent会将这些故障通过事件返回给开发者。
 
 ## HiAppEvent系统事件订阅能力
 
@@ -30,7 +30,7 @@ APM作为应用性能管理平台，可线上监控应用质量。系统提供�
 
 [任务执行超时事件介绍](../harmonyos-guides/hiappevent-watcher-apphicollie-events.md)
 
-[应用查杀事件介绍](../harmonyos-guides/hiappevent-watcher-app-killed-events.md)
+[应用终止事件介绍](../harmonyos-guides/hiappevent-watcher-app-killed-events.md)
 
 [启动耗时事件介绍](../harmonyos-guides/hiappevent-watcher-app-launch-event.md)
 
@@ -52,7 +52,7 @@ external\_log返回的路径是沙箱目录，非真实物理路径，应用有�
 
 原理如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/dET3tgpoQe6105n_Sh_u7g/zh-cn_image_0000002382129722.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/luVBKTWjSo2d6jrMTYMiyQ/zh-cn_image_0000002382129722.png "点击放大")
 
 **说明** 
 
@@ -74,11 +74,11 @@ HiAppEvent提供addWatcher()接口可以订阅系统事件，支持三种订阅�
 
 方式三：实现onReceive()回调，监听到订阅的事件生成后实时回调。
 
-ArkTS接口参考[hiAppEvent.addWatcher](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)，C/C++接口参考[OH\_HiAppEvent\_AddWatcher()](../harmonyos-references/capi-hiappevent-h.md#oh_hiappevent_addwatcher)。
+ArkTS接口参考[hiAppEvent.addWatcher()](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)，C/C++接口参考[OH\_HiAppEvent\_AddWatcher()](../harmonyos-references/capi-hiappevent-h.md#oh_hiappevent_addwatcher)。
 
 ### 参数扩展接口使用方法
 
-HiAppEvent提供setEventParam()接口可以在系统事件中添加自定义参数，当前支持在崩溃和卡死事件中增加自定义参数。ArkTS接口参考[hiAppEvent.setEventParam](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventseteventparam12)。
+HiAppEvent提供setEventParam()接口可以在系统事件中添加自定义参数，当前支持在崩溃和卡死事件中增加自定义参数。ArkTS接口参考[hiAppEvent.setEventParam()](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventseteventparam12)。
 
 使用接口完成参数键值对赋值。以在订阅崩溃事件中添加自定义参数为例，ArkTS接口示例代码如下：
 
@@ -103,11 +103,11 @@ hiAppEvent.setEventParam(params, hiAppEvent.domain.OS, hiAppEvent.event.APP_CRAS
 
 以崩溃采集为例，可参考如下设计：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/Zfm1zbmzS76hBA6jNTH3Jw/zh-cn_image_0000002404045473.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/UfezwutGTMiDm1SetY4VMg/zh-cn_image_0000002404045473.png)
 
 1. APM代码早于业务代码。
-2. 应用启动阶段注册ErrorManager，可以捕获JS异常，发生JsError崩溃时进程不会退出。参考[如何使用ErrorManager捕获异常](../harmonyos-faqs-V5/faqs-arkts-81-V5.md)。
-3. 在ErrorManager回调中执行takeNext接口获取JsError崩溃事件。
+2. 应用启动阶段注册ErrorManager()，可以捕获JS异常，发生JsError崩溃时进程不会退出。参考[如何使用ErrorManager捕获异常](../harmonyos-faqs-V5/faqs-arkts-81-V5.md)。
+3. 在ErrorManager回调中执行takeNext()接口获取JsError崩溃事件。
 4. 应用发生CPP Crash异常退出，下次启动获取NativeCrash崩溃事件。
 5. 获取的崩溃信息可以持久化存储，上传后再删除，避免上传失败导致数据丢失。
 6. 日志管理，external\_log日志处理后（比如上传后）及时清理。

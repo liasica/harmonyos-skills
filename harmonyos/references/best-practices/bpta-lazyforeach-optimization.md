@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lazyforeac
 title: 懒加载优化性能
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 懒加载优化性能
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:b9b133825dd15dfe91591c0d832d0c4461bd8ee4fa713a10131ea7ea55358af0
+scraped_at: 2026-10-29T08:03:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:9ea2d5eec5d242d736fc07c8ae3e9367e2e1b571a70a4db533b0bc12ba4eb3e5
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:b9b133825dd15dfe91591c0d832d0c4461bd8ee4fa713a10131ea7ea553
 
 ### 渲染过程
 
-在声明式描述语句中，有两种方式控制列表、网格等容器类组件的渲染，分别为[循环渲染（ForEach）](../harmonyos-guides/arkts-rendering-control-foreach.md)和[数据懒加载（LazyForEach）](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)。
+在声明式描述语句中，有两种方式控制列表、网格等容器类组件的渲染，分别为[ForEach：循环渲染](../harmonyos-guides/arkts-rendering-control-foreach.md)和[LazyForEach：数据懒加载](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)。
 
 * 循环渲染
 
@@ -29,7 +29,7 @@ content_hash: sha256:b9b133825dd15dfe91591c0d832d0c4461bd8ee4fa713a10131ea7ea553
   其数据加载、组件树挂载、页面渲染的示意图如下所示：
 
   **图1** ForEach渲染过程示意图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/C-mm0xcXTuWN5HYoQ0jTcQ/zh-cn_image_0000002194010368.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/W7_96790SlqomT9-3T9vOg/zh-cn_image_0000002194010368.png "点击放大")
 
   如果列表数据较少，数据一次性全量加载不是性能瓶颈时，可以直接使用ForEach；但是当数据量大、组件结构复杂的情况下ForEach会出现性能瓶颈。这是因为要一次性加载所有的列表数据，创建所有组件节点并完成组件树的构建，在数据量大时会非常耗时，从而导致页面启动时间过长。另外，屏幕可视区外的组件虽然不会显示在屏幕上，但是仍然会占用内存。在系统处于高负载的情况下，更容易出现性能问题，极限情况下甚至会导致应用异常退出。
 * 数据懒加载
@@ -44,7 +44,7 @@ content_hash: sha256:b9b133825dd15dfe91591c0d832d0c4461bd8ee4fa713a10131ea7ea553
 
   **图2** LazyForEach渲染过程示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/EjyAk1MNS_K1AHaJ-TgUHA/zh-cn_image_0000002229450649.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/bm41bj_fRBeUcK1z_-gzEA/zh-cn_image_0000002229450649.png "点击放大")
 
 LazyForEach实现了按需加载，针对列表数据量大、列表组件复杂的场景，减少了页面首次启动时一次性加载数据的时间消耗，减少了内存峰值。不过在长列表滑动的过程中，因为需要根据用户的滑动行为不断地加载新的内容，这需要进行额外的数据请求和处理，会增加滑动时的计算量，从而对性能产生一定的影响。然而，合理使用LazyForEach的按需加载能力，通过在滑动停止或达到某个阈值时才进行加载，可以减少不必要的计算和请求，从而提高性能，给用户带来更好的体验。总之，在实现按需加载的场景中，需要综合考虑性能和用户体验的平衡，合理地优化加载逻辑和渲染方式，以提升整体的性能表现。
 
@@ -66,15 +66,14 @@ LazyForEach作为常见的渲染控制的方式之一，常用的使用场景有
 
 ### 长列表加载
 
-长列表作为应用开发中最常见的开发场景之一，通常会包含成千上万个列表项，在此场景下，直接使用循环渲染ForEach一次性加载所有的列表项，会导致渲染时间过长，影响用户体验。而使用数据懒加载LazyForEach替换循环渲染ForEach，可以按需加载列表项，从而提升列表性能。数据懒加载的示例代码可以参考[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)。
+长列表作为应用开发中最常见的开发场景之一，通常会包含成千上万个列表项，在此场景下，直接使用循环渲染ForEach一次性加载所有的列表项，会导致渲染时间过长，影响用户体验。而使用数据懒加载LazyForEach替换循环渲染ForEach，可以按需加载列表项，从而提升列表性能。数据懒加载的示例代码可以参考[LazyForEach：数据懒加载](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)。
 
 虽然，按需加载列表项可以优化长列表性能，但在快速滑动长列表的场景下，可能会来不及加载需要显示的列表项，导致出现白块的现象，从而影响用户体验。而在ArkUI中，List、Grid、Swiper以及WaterFlow等容器组件提供了[cachedCount](../harmonyos-references/ts-container-list.md#cachedcount)属性，可以设置列表项的预加载数量，避免白块现象。
 
 cachedCount可与以下数据渲染方式配合使用：
 
-LazyForEach：cachedCount控制可视区域外预加载的列表项数量，只在LazyForEach中生效。
-
-Repeat：cachedCount同样生效，且存在两层含义——容器级cachedCount控制可视区外预加载数量，模板级cachedCount（在.template()的TemplateOptions中设置）控制模板节点复用缓存池大小。
+* LazyForEach：cachedCount控制可视区域外预加载的列表项数量，只在LazyForEach中生效。
+* Repeat：cachedCount同样生效，且存在两层含义——容器级cachedCount控制可视区域外预加载数量，模板级cachedCount（在.template()的TemplateOptions中设置）控制模板节点复用缓存池大小。
 
 cachedCount的使用方法如下所示。
 
@@ -165,18 +164,18 @@ List() {
    ```
 2. 通过Profiler调优工具抓取Trace，可以判断子组件创建的次数。如下图所示，在该帧中出现大量的BuildLazyItem切片，每一次BuildLazyItem对应一次子组件的创建，对比数量可知LazyForEach按需加载失效。关于调优的内容可参考[性能分析](bpta-optimization-tool-practice.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/7xLV2mi-RDeNEHpmXZuqlw/zh-cn_image_0000002194010376.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/nv7nMzVURuyEfSTe-Vmq5Q/zh-cn_image_0000002194010376.png "点击放大")
 3. 通过HiDumper查看组件信息，判断组件的渲染情况。关于HiDumper的内容可参考[hidumper](../harmonyos-guides/hidumper.md)。
 
 ### 混合布局中懒加载失效场景
 
-当父容器未设置明确的布局约束时，子容器会尝试计算并实例化所有列表项以完成自身的布局测量。在这种情况下，即使开发者使用了 LazyForEach进行按需加载，系统仍会在瞬间创建数千个组件实例，导致懒加载机制完全失效。
+当父容器未设置明确的布局约束时，子容器会尝试计算并实例化所有列表项以完成自身的布局测量。在这种情况下，即使开发者使用了LazyForEach进行按需加载，系统仍会在瞬间创建数千个组件实例，导致懒加载机制完全失效。
 
 场景：具备无限滚动能力的容器嵌套按需加载容器时，若未显式约束子容器的纵向布局空间，将使懒加载失效。
 
 根因：父容器默认在主轴（垂直方向）提供无限的测绘空间，导致内部子容器无法界定视口边界。
 
-结果：LazyForEach的按需实例化逻辑强依赖于视口裁剪，在无边界约束下，在单个布局帧内会瞬时实例化数据源中的数千个组件。导致懒加载机制瘫痪、严重的 UI 线程阻塞、内存瞬时溢出（OOM）以及首屏渲染耗时（TTI）的指数级增长。
+结果：LazyForEach的按需实例化逻辑强依赖于视口裁剪，在无边界约束下，在单个布局帧内会瞬时实例化数据源中的数千个组件。导致懒加载机制瘫痪、严重的UI线程阻塞、内存瞬时溢出（OOM）以及首屏渲染耗时（TTI）的指数级增长。
 
 解决方案：
 

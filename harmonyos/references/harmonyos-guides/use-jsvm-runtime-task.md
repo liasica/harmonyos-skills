@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-runt
 title: 使用JSVM-API接口创建多个引擎执行JS代码并销毁
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API典型使用场景指导 > JSVM-API调优&高性能使用示例 > 使用JSVM-API接口创建多个引擎执行JS代码并销毁
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:47+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:46b1435953cd46f07110a8f48d0a8af9b4d417334b15c53805c835f49fc743dd
+scraped_at: 2026-10-29T07:58:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:e1066811e4a72f64cec4a00433da6ca8a55bf38b1ea38e877c161392eeb2cd82
 ---
 
 ## 场景介绍
@@ -142,7 +142,7 @@ static JSVM_Value AssertEqual(JSVM_Env env, JSVM_CallbackInfo info)
     if (isStrictEquals) {
         OH_LOG_INFO(LOG_APP, "JSVM API TEST RESULT: PASS");
     } else {
-        OH_LOG_INFO(LOG_APP, "JSVM API TEST RESULT: FAILED");
+        OH_LOG_ERROR(LOG_APP, "JSVM API TEST RESULT: FAILED");
     }
     return nullptr;
 }

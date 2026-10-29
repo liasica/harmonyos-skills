@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口处理异步操作
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口处理异步操作
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:14+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:83c9dd20c2cf408e8c1c12b26fa66970f587fa078306e9bb290e0321770f703c
+scraped_at: 2026-10-29T07:58:17+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d4649d19db5dbd79a4ce1cabf12e107f9ab8b310fc4106b0c2eda3c8e261dd86
 ---
 
 ## 简介
@@ -90,7 +90,7 @@ JSVM OH_JSVM_IsPromise success:0
 
 ### OH\_JSVM\_CreatePromise
 
-OH\_JSVM\_CreatePromise用于创建一个Promise对象。
+OH\_JSVM\_CreatePromise用于创建一个Promise对象。代码示例见[下一节](use-jsvm-about-promise.md#oh_jsvm_resolvedeferred--oh_jsvm_rejectdeferred)。
 
 ### OH\_JSVM\_ResolveDeferred & OH\_JSVM\_RejectDeferred
 

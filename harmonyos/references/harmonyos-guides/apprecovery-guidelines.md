@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apprecovery-g
 title: 应用恢复开发指导
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误管理及应用恢复 > 应用恢复开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:23+08:00
+scraped_at: 2026-10-29T07:57:12+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:39c3885610859e0280211041a1ba37d9b6af095700c20f716580c19866489b61
+content_hash: sha256:46ba05a604b09af188bc58f8c5d4c388524ceea4614e2d1d7044754c40acbf2b
 ---
 
 ## 场景介绍
@@ -56,13 +56,13 @@ API版本9以及未使用**setRestartWant**指定UIAbility的场景，会拉起�
 
 应用恢复状态标识会在状态保存接口主动或者被动调用时设置。在应用正常退出或者应用异常退出重启后，该状态会被清理。正常退出目前包括用户按后退键退出以及用户清理最近任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/tBZekPtxRLuDzDpYmULcOg/zh-cn_image_0000002771666014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Uq1vwNEmQSSb7tzEfm2LPw/zh-cn_image_0000002773904828.png)
 
 ### 应用卡死的状态保存及恢复
 
 API版本10开始支持应用卡死时的状态保存。JsError故障时，onSaveState接口在主线程进行回调。对于AppFreeze故障，主线程可能处于卡死的状态，onSaveState会在非主线程进行回调。其主要流程如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ZAS1Z537QC2wDF3is_Q-YA/zh-cn_image_0000002800985871.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/uKRir6n3QHODiynYv3ozGQ/zh-cn_image_0000002803264611.png)
 
 由于卡死时的回调不在JS线程上执行，onSaveState回调中的代码建议不要使用import进来的Native动态库，禁止访问主线程创建的thread\_local对象。
 
@@ -76,7 +76,7 @@ API版本10开始支持应用卡死时的状态保存。JsError故障时，onSav
 
 下图中并没有标记faultLogger的调用时机，开发者可以根据应用启动时传入的[LastExitReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#lastexitreason)来决定是否调用faultLogger查询上次的故障信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/SQhsHfzUT0eEPrmyE3LXsw/zh-cn_image_0000002771825982.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/SXiaYXA8QEiGQnyr7ytoDQ/zh-cn_image_0000002803224521.png)
 
 这里建议应用开发者使用errorManager对应用的异常进行处理，处理完成后开发者可以选择调用状态保存接口并主动重启应用。
 

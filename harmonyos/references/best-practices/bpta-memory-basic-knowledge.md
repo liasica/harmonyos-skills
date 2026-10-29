@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-memory-bas
 title: 内存基础知识
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > 内存基础知识
 category: best-practices
-scraped_at: 2026-10-16T07:06:45+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:c734224c6fccdfad2c344536c3765b0e1271bf3456f3997471c212b7fce9df69
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:4a234c2c909ca97d34953793ae1a29a23eecadd915e8b3902a099d5359a2b1b2
 ---
 
 ## 基本概念
 
 **内存组成关系图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/FCS1IhYNR-yWj7UBvbRJYw/zh-cn_image_0000002404124981.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/ELskp_1IThGakyI90DWtGg/zh-cn_image_0000002404124981.png "点击放大")
 
-上图展示了内存基础的组成部分（RSS，PSS，VSS，物理内存，Swap）之间的关系, 下表对内存各组成部分进行详细介绍。
+上图展示了内存基础的组成部分（RSS，PSS，VSS，物理内存，Swap）之间的关系,下表对内存各组成部分进行详细介绍。
 
 | 名称 | 简介 | 相关性/作用 | 关系 |
 | --- | --- | --- | --- |
@@ -47,7 +47,7 @@ content_hash: sha256:c734224c6fccdfad2c344536c3765b0e1271bf3456f3997471c212b7fce
 
 **应用内存组成图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/t5ELu27yTIu0MaKyomvmgg/zh-cn_image_0000002370405428.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/WrHUGOBySYWGW5RQhi8iwQ/zh-cn_image_0000002370405428.png "点击放大")
 
 上图展示了应用进程映射的虚拟内存空间基本的组成部分，下表对内存各组成部分进行详细介绍。
 
@@ -56,14 +56,14 @@ content_hash: sha256:c734224c6fccdfad2c344536c3765b0e1271bf3456f3997471c212b7fce
 | 栈（Stack） | 存放函数调用栈帧，包括局部变量、参数、返回地址等。 | 每次函数调用时自动分配，函数返回后自动释放。 | 增长方向：向低地址增长。  限制：默认大小有限（通常几MB），过深递归可能导致栈溢出。 |
 | mmap分配区域 | 用于文件映射、匿名映射、共享内存、大块内存分配等。 | 使用mmap系统调用时； 使用malloc分配大块内存（超过阈值）时； 使用shmget创建共享内存； 使用mmap映射文件内容到内存进行读写。 | 优点：灵活，支持按需加载、共享访问。 |
 | 共享库（Shared Libraries） | 加载动态链接库（如 libc.so，libpthread.so）。 | 程序启动时由动态链接器加载，程序运行时通过dlopen加载。 | 特点：多个进程可以共享同一份物理页（节省内存）。包含在mmap分配区域。 |
-| 堆（Heap） | 动态分配内存，用于malloc，calloc，new 等操作。 | 在运行过程中根据程序需求动态扩展。 | 增长方向: 向高地址增长。  管理方式: 通过brk和sbrk系统调用来调整堆顶。 |
+| 堆（Heap） | 动态分配内存，用于malloc，calloc，new 等操作。 | 在运行过程中根据程序需求动态扩展。 | 增长方向： 向高地址增长。  管理方式: 通过brk和sbrk系统调用来调整堆顶。 |
 | Heap Alloc | 已被分配并正在使用的堆内存大小。 | 每当程序显式地请求内存（例如通过new关键字或类似的内存分配函数）并且成功获得所需内存时，即视为已分配内存的一部分。 | 直接反映了应用程序当前实际使用的堆内存量。 |
 | Heap Free | 已在堆中分配但尚未被使用的内存。 | 初始分配时，整个可用堆空间被视为“自由”的。随着程序运行，部分自由内存被占用，剩余未被使用的部分即为Heap Free。 | 这部分内存可供后续分配使用，但如果长时间未被利用，则可能造成浪费。 |
 | ArkTS Heap | 由ArkTS管理的堆内存。它主要用于存储对象实例、变量等动态数据。 | ArkTS代码分配的堆内存。 | - |
 | Native Heap | 这是指原生代码（如C/C++编写的部分）所使用的堆内存。区别于ArkTS Heap。 | 当使用malloc、calloc、realloc等函数或者new操作符来分配内存时发生。在调用涉及底层系统资源的操作时，例如打开文件、网络连接等，可能会在原生堆中分配内存以存储相关资源描述符或缓存数据。 | - |
 | Anonymous Page other（匿名内存页） | 没有关联文件映射的内存页。 | 当程序请求更多的栈空间（比如递归调用过深）或通过mmap分配不与文件关联的内存区域会产生。动态分配的大块内存（如通过mmap直接从操作系统获取的大块内存）也可能是匿名页面。 | 这些页面通常用于存储进程私有的数据结构，比如栈空间或动态分配的内存块。因为它们是“匿名”的，所以不能被多个进程共享。 |
 | FilePage Other | 这类内存页是从文件映射过来的，但是不属于任何特定的大类。 | 当应用通过mmap将文件内容映射到内存中以便快速访问时产生。 | 当应用程序读取文件或者加载资源时，操作系统可能会将这些文件的内容映射到内存中，以便快速访问。 |
-| GL（图形内存） | 这部分内存专门用于存储纹理、帧缓冲区等图形资源。 | 创建纹理、帧缓冲区、顶点缓冲区等图形资源时，在graph library中分配内存。 | - |
+| GL（图形内存） | 这部分内存专门用于存储纹理、帧缓冲区等图形资源。 | 创建纹理、帧缓冲区、顶点缓冲区等图形资源时，在GL（图形库）中分配内存。 | - |
 | 未初始化数据段 (BSS Segment) | 存放未显式初始化的全局变量和静态变量。 | 进程启动时由系统清零初始化。 示例：static int uninit\_var。 | - |
 | 已初始化数据段 (Data Segment) | 存放初始化过的全局变量和静态变量。 | 进程启动时根据可执行文件内容初始化。 示例：int global\_var = 10。 | - |
 | 代码段（Text Segment） | 存放程序的机器指令（即编译后的二进制代码）。 | 进程启动时由内核从可执行文件中加载。 属性：只读、可执行。 | - |

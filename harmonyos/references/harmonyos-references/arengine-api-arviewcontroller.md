@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arViewController（AR场景管理能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arViewController（AR场景管理能力）
 category: harmonyos-references
-scraped_at: 2026-10-11T07:27:41+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:262199e3acebcd75a16dd34f0a186668590a4ad6eeefd19ef401a45d23c980da
+scraped_at: 2026-10-29T08:02:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:9bb52a475015197e3931de78a2c707a96a197f3a7ec3eb0c7a05e10cab522c13
 ---
 
 本模块提供AR Engine（AR引擎服务）的arViewController（AR场景管理能力）相关接口。
@@ -101,8 +101,11 @@ init(): Promise<void>
 ```typescript
 import { arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-await context.init();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  await context.init();
+}
 ```
 
 ### ARViewContext.pause
@@ -134,8 +137,11 @@ pause(): void
 ```typescript
 import { arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-context.pause();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  context.pause();
+}
 ```
 
 ### ARViewContext.destroy
@@ -173,8 +179,11 @@ destroy(): Promise<void>
 ```typescript
 import { arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-context.destroy();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  context.destroy();
+}
 ```
 
 ### ARViewContext.resume
@@ -207,8 +216,11 @@ resume(): void
 ```typescript
 import { arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-context.resume();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  context.resume();
+}
 ```
 
 ### ARViewContext.scene
@@ -246,6 +258,10 @@ import { Scene } from '@kit.ArkGraphics3D';
 import { arViewController } from '@kit.AREngine';
 
 Scene.load().then((scene: Scene) => {
+  let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+  if (!ret) {
+    return;
+  }
   let context: arViewController.ARViewContext = new arViewController.ARViewContext();
   context.scene = scene;
 }).catch((err: BusinessError) => {
@@ -287,8 +303,11 @@ get scene(): Scene
 import { Scene } from '@kit.ArkGraphics3D';
 import { arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-context.scene;
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  context.scene;
+}
 ```
 
 ### ARViewContext.session
@@ -316,8 +335,11 @@ get session(): arEngine.ARSession | undefined
 ```typescript
 import { arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-context.session;
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  context.session;
+}
 ```
 
 ### ARViewContext.config
@@ -353,13 +375,16 @@ set config(conf: arEngine.ARConfig)
 ```typescript
 import { arEngine, arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-context.config = {
-  type: arEngine.ARType.WORLD,
-  poseMode: arEngine.ARPoseMode.GRAVITY_AND_HEADING,
-  powerMode: arEngine.ARPowerMode.POWER_SAVING,
-  depthMode: arEngine.ARDepthMode.AUTOMATIC
-};
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  context.config = {
+    type: arEngine.ARType.WORLD,
+    poseMode: arEngine.ARPoseMode.GRAVITY_AND_HEADING,
+    powerMode: arEngine.ARPowerMode.POWER_SAVING,
+    depthMode: arEngine.ARDepthMode.AUTOMATIC
+  };
+}
 ```
 
 ### ARViewContext.loadAsset
@@ -402,10 +427,13 @@ loadAsset(resourcePath: ResourceStr, landmark: LandmarkType): Promise<void>
 ```typescript
 import { arEngine, arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-// 此处为用户本地存放模型路径
-let resourcePath:ResourceStr = $rawfile('xxxx/xxxx');
-context.loadAsset(resourcePath, arViewController.LandmarkType.LEFT_EYE);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  // 此处为用户本地存放模型路径
+  let resourcePath:ResourceStr = $rawfile('xxxx/xxxx');
+  context.loadAsset(resourcePath, arViewController.LandmarkType.LEFT_EYE);
+}
 ```
 
 ### ARViewContext.removeAsset
@@ -447,8 +475,11 @@ removeAsset(landmark: LandmarkType):Promise<void>
 ```typescript
 import { arEngine, arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-context.removeAsset(arViewController.LandmarkType.LEFT_EYE);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  context.removeAsset(arViewController.LandmarkType.LEFT_EYE);
+}
 ```
 
 ### ARViewContext.clearResource
@@ -484,8 +515,11 @@ clearResource():Promise<void>
 ```typescript
 import { arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-context.clearResource();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  context.clearResource();
+}
 ```
 
 ### ARViewContext.setBlendShapeWeight
@@ -531,6 +565,10 @@ import { arEngine, arViewController } from '@kit.AREngine';
 import { Node } from '@kit.ArkGraphics3D';
 
 onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+    if (!ret) {
+      return;
+    }
     ctx.setBlendShapeWeight(node, arEngine.ARBlendShapeType.EYE_BLINK_LEFT, 0.1);
   }
 ```
@@ -577,6 +615,10 @@ import { arEngine, arViewController } from '@kit.AREngine';
 import { Node } from '@kit.ArkGraphics3D';
 
 onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+    if (!ret) {
+      return;
+    }
     ctx.getBlendShapeWeight(node, arEngine.ARBlendShapeType.EYE_BLINK_LEFT);
   }
 ```
@@ -614,15 +656,18 @@ transformPose(position: Vec3, rotation: Quaternion): arEngine.ARPose | null
 import { arViewController } from '@kit.AREngine';
 import { Vec3, Quaternion } from '@kit.ArkGraphics3D';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-let pose: Vec3 = { x: 1.0, y: -1.0, z: -0.5 };
-let rot: Quaternion = {
-  x: -0.1,
-  y: 0.2,
-  z: -0.3,
-  w: 0.5
-};
-context.transformPose(pose, rot);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  let pose: Vec3 = { x: 1.0, y: -1.0, z: -0.5 };
+  let rot: Quaternion = {
+    x: -0.1,
+    y: 0.2,
+    z: -0.3,
+    w: 0.5
+  };
+  context.transformPose(pose, rot);
+}
 ```
 
 ### ARViewContext.loadGSModel
@@ -667,18 +712,21 @@ import { arEngine, arViewController } from '@kit.AREngine';
 import { Vec3, Quaternion } from '@kit.ArkGraphics3D';
 import { spatialRender } from '@kit.SpatialReconKit';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-// 此处为用户本地存放模型路径
-let resourcePath: spatialRender.GSImportSettings = { uri: 'OhosRawFile://assets/gltf/model.glb', offset: 0 };
-let r: Quaternion = {
-  x: 0,
-  y: 0,
-  z: 0,
-  w: 0
-};
-let t: Vec3 = { x: 0, y: 0, z: 0 };
-let location: arEngine.ARPose = arEngine.createARPose(r, t);
-await context.loadGSModel(resourcePath, location);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  // 此处为用户本地存放模型路径
+  let resourcePath: spatialRender.GSImportSettings = { uri: 'OhosRawFile://assets/gltf/model.glb', offset: 0 };
+  let r: Quaternion = {
+    x: 0,
+    y: 0,
+    z: 0,
+    w: 0
+  };
+  let t: Vec3 = { x: 0, y: 0, z: 0 };
+  let location: arEngine.ARPose = arEngine.createARPose(r, t);
+  await context.loadGSModel(resourcePath, location);
+}
 ```
 
 ### ARViewContext.removeGSModel
@@ -720,8 +768,11 @@ removeGSModel(modelID: number):Promise<boolean>
 ```typescript
 import { arViewController } from '@kit.AREngine';
 
-let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-await context.removeGSModel(1);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  await context.removeGSModel(1);
+}
 ```
 
 ### ARViewContext.callback
@@ -761,6 +812,10 @@ import { Node } from '@kit.ArkGraphics3D';
 class ARViewCallbackImpl extends arViewController.ARViewCallback {
 
   onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+    if (!ret) {
+      return;
+    }
     console.info('onAnchorAdd');
     console.info(`add anchor id = ${String(anchor.id)}`);
     console.info(`add anchor translation = ${anchor.getPose().translation}`);
@@ -768,13 +823,21 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
   }
 
   onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+    if (!ret) {
+      return;
+    }
     console.info('onAnchorUpdate');
     console.info(`update anchor id = ${String(anchor.id)}`);
     console.info(`update anchor translation = ${anchor.getPose().translation}`);
     console.info(`update node pose = ${node.position}`);
   }
 
-  onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
+  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+    let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+    if (!ret) {
+      return;
+    }
     let arSession: arEngine.ARSession | undefined = ctx.session;
     if (arSession) {
       let frame: arEngine.ARFrame = arSession.getFrame();
@@ -838,6 +901,10 @@ import { Node } from '@kit.ArkGraphics3D';
 
 // 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
 onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+  if (!ret) {
+    return;
+  }
   // 其他操作
 }
 ```
@@ -872,6 +939,10 @@ import { Node } from '@kit.ArkGraphics3D';
 
 // 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
 onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+  if (!ret) {
+    return;
+  }
   // 其他操作
 }
 ```
@@ -904,6 +975,10 @@ import { arEngine, arViewController } from '@kit.AREngine';
 
 // 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
 onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
+  let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+  if (!ret) {
+    return;
+  }
   let arSession: arEngine.ARSession | undefined = ctx.session;
   if (arSession) {
     let frame: arEngine.ARFrame = arSession.getFrame();

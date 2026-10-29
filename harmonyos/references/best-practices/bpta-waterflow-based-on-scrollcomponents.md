@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 基于ScrollComponents实现瀑布流
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于ScrollComponents实现瀑布流
 category: best-practices
-scraped_at: 2026-10-16T07:06:35+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:edfd2b67b84e0ab69c116c0554ce50ddb1dcb426456997e2dadbb60eb627c51a
+scraped_at: 2026-10-29T08:03:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:e1bf365b3b8bdcc7437e50fc3dedf31a9be692a3e5fe79972151acbdcea12df4
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:edfd2b67b84e0ab69c116c0554ce50ddb1dcb426456997e2dadbb60eb62
 
 瀑布流适用于展示图片资讯、购物商品、直播视频等多种数据。当瀑布流上下滑动时，无限加载特性使其能展示大量数据；不同大小的子元素会带来测量和绘制的性能消耗。本文通过跨页面复用、加速首屏渲染、无限滑动、下拉刷新、上拉加载等场景，介绍ScrollComponents库创建高流畅滑动的瀑布流页面。
 
-ScrollComponents作为高性能滑动解决方案，主要解决组件复用的问题，支持通过少量的代码实现高性能滑动，同时开发者无需关注复用池管理和其他性能优化方案的交互细节。可以参考[ScrollComponents使用说明](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#快速开始)进行安装配置与快速上手。ScrollComponents框架提供了下列功能特性：
+ScrollComponents作为高性能滑动解决方案，主要解决组件复用的问题，支持通过少量的代码实现高性能滑动，同时开发者无需关注复用池管理和其他性能优化方案的交互细节。可以参考[快速开始](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#快速开始)进行安装配置与快速上手。ScrollComponents框架提供了下列功能特性：
 
 * 支持WaterFlow页面的流畅滑动
 * 默认支持懒加载，开发者不用使用[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)和定义IDataSource数据源，减少一定的代码量
@@ -23,7 +23,7 @@ ScrollComponents作为高性能滑动解决方案，主要解决组件复用的�
 * 支持预创建，减少冷启动首次滑动丢帧，提升滑动性能
 * 支持预加载，滑动过程提前加载数据，提升浏览体验
 
-ScrollComponents三方库基于系统[NodeAdapter](../harmonyos-references/js-apis-arkui-framenode.md#nodeadapter12)、[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)、[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)、[Prefetcher](../harmonyos-references/js-apis-arkui-prefetcher.md)、[FrameCallback](../harmonyos-references/arkts-apis-uicontext-framecallback.md)的能力，通过高效率组件复用、组件分帧预创建、内容动态预创建、懒加载等方式，实现高性能滑动。同时基于系统FrameNode创建WaterFlow组件的能力，提供了WaterFlowManager接口支持瀑布流页面渲染，为开发者提供WaterFlow组件的其他各种能力，在满足开发者正常开发的前提下简化用法，便于后续能力扩展。
+ScrollComponents三方库基于系统[NodeAdapter](../harmonyos-references/js-apis-arkui-framenode.md#nodeadapter12)、[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)、[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)、[@ohos.arkui.Prefetcher (内容预取)](../harmonyos-references/js-apis-arkui-prefetcher.md)、[Class (FrameCallback)](../harmonyos-references/arkts-apis-uicontext-framecallback.md)的能力，通过高效率组件复用、组件分帧预创建、内容动态预创建、懒加载等方式，实现高性能滑动。同时基于系统FrameNode创建WaterFlow组件的能力，提供了WaterFlowManager接口支持瀑布流页面渲染，为开发者提供WaterFlow组件的其他各种能力，在满足开发者正常开发的前提下简化用法，便于后续能力扩展。
 
 ## 实现原理
 
@@ -34,7 +34,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 如图1是RecyclerView整体流程图，当节点从可视区移除时，NodeAdapter会通知视图管理器将组件回收，经NodeFactory回收处理之后，组件最终被存入到组件复用池。当节点需要创建时，NodeAdapter通知视图管理器开始创建，NodeFactory会向复用池请求复用节点，获取到节点之后经过一系列更新组件、组件拼接之后返回，最后由NodeAdapter将节点添加到可视区。
 
 **图1** RecyclerView整体流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/kK6YmJsRRE6_Cb-afLgrww/zh-cn_image_0000002358395533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/khc07IYSSbi5lZagh9RJzA/zh-cn_image_0000002358395533.png "点击放大")
 
 ### 开发流程
 
@@ -45,12 +45,14 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
    创建视图管理器的实例对象中，defaultNodeItem属性表示默认节点模板名称，context属性表示UI上下文。
 
    ```screen
-   import { NodeItem, RecyclerView, WaterFlowManager } from '@hadss/scroll_components';
+   import { type NodeItem, RecyclerView, WaterFlowManager } from '@hadss/scroll_components';
+
    class MyWaterFlowManager extends WaterFlowManager {
-     onWillCreateItem(index: number, data: BlogData) {
+     onWillCreateItem(index: number, data: BlogData): NodeItem<Params> | null {
        // ...
      }
    }
+
    @Entry
    @Component
    struct StandardWaterFlowPage {
@@ -64,12 +66,12 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 
    **说明** 
 
-   如果开发者想通过ScrollComponents快速创建瀑布流，方便使用懒加载、预创建等提升滑动效率的能力，而不考虑组件复用，则直接使用ScrollComponents库提供的WaterFlowManager创建瀑布流视图管理器即可。具体可参考[ScrollComponents使用说明-快速开始](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#快速开始)。
+   如果开发者想通过ScrollComponents快速创建瀑布流，方便使用懒加载、预创建等提升滑动效率的能力，而不考虑组件复用，则直接使用ScrollComponents库提供的WaterFlowManager创建瀑布流视图管理器即可。具体可参考[快速开始](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#快速开始)。
 2. WaterFlow组件初始化
 
    页面初始化时，开发者通过视图管理器的setViewStyle()方法，给瀑布流组件设置属性。
 
-   ```typescript
+   ```screen
    this.waterFlowView.setViewStyle({ scroller: this.scroller })
      .height(CommonConstants.FULL_HEIGHT)
      .columnsTemplate(CommonConstants.WATER_FLOW_COLUMNS_TEMPLATE)
@@ -80,15 +82,17 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
        left: CommonConstants.PADDING,
        right: CommonConstants.PADDING
      })
-     .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) })
+     .edgeEffect(EdgeEffect.Spring)
+     .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) });
    ```
 3. 设置数据源渲染组件
-   1. 通过视图管理器的setDataSource()方法设置数据。ScrollComponents库默认支持懒加载，提供了基于懒加载的数据增删改查能力，开发者无需关心LazyForEach的使用限制，无需定义DataSource，引入即用。懒加载接口可参考：[基于NodeAdapter为视图管理器提供懒加载能力](https://gitcode.com/openharmony-sig/scroll_components/blob/master/docs/Reference.md#lazynodeadapter-类)。
+   1. 通过视图管理器的setDataSource()方法设置数据。ScrollComponents库默认支持懒加载，提供了基于懒加载的数据增删改查能力，开发者无需关心LazyForEach的使用限制，无需定义DataSource，引入即用。懒加载接口可参考：基于[LazyNodeAdapter](https://gitcode.com/openharmony-sig/scroll_components/blob/master/docs/Reference.md#lazynodeadapter-类)为视图管理器提供懒加载能力。
    2. 通过视图管理器的registerNodeItem方法注册item子节点模板，需要传入模板名称和子节点@Builder构造函数。
    3. ScrollComponents提供了视图占位组件 RecyclerView，RecyclerView绑定视图容器实例即可渲染瀑布流列表。
 
-   ```typescript
-   import { NodeItem, RecyclerView, WaterFlowManager } from '@hadss/scroll_components';
+   ```screen
+   import { type NodeItem, RecyclerView, WaterFlowManager } from '@hadss/scroll_components';
+
    @Entry
    @Component
    struct StandardWaterFlowPage {
@@ -97,7 +101,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
        context: this.getUIContext()
      });
      // ...
-     @State dataArray: BlogData[] = [] // Bind data source for data iteration
+     @State dataArray: BlogData[] = []; // Bind data source for data iteration
 
      aboutToAppear(): void {
        // ...
@@ -105,7 +109,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
          this.waterFlowView.setDataSource(data);
          this.dataArray = data;
        });
-       this.waterFlowView.registerNodeItem('StandardGridImageContainer', wrapBuilder(StandardGridImageContainer));
+       this.waterFlowView.registerNodeItem('StandardGridImageContainer', wrapBuilder(standardGridImageContainerBuilder));
        // ...
      }
 
@@ -116,17 +120,18 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 
          RecyclerView({
            viewManager: this.waterFlowView
-         })
+         });
 
        }
        .height(CommonConstants.FULL_HEIGHT)
-       .backgroundColor($r('app.color.home_background_color'))
+       .backgroundColor($r('app.color.home_background_color'));
      }
    }
+
    // Define an item template
    @Builder
-   function StandardGridImageContainer($$: Params) {
-     GridImageView({ blogItem: $$.blogItem })
+   function standardGridImageContainerBuilder($$: Params): void {
+     GridImageView({ blogItem: $$.blogItem });
    }
    ```
 
@@ -137,19 +142,20 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
    2. 开发者如果使用this.waterFlowView.preCreate()实现组件预创建，则需要在registerNodeItem()方法注册节点模板后使用。
 4. 复用子节点模板
 
-   开发者自定义模板后，在定义瀑布流视图管理器时需要实现onWillCreateItem接口，并在此接口中通过dequeueReusableNodeByType()获取可复用node，实现组件复用，同时也需要在复用组件的aboutToReuse生命期中，对数据进行更新。
+   开发者自定义模板后，在定义瀑布流视图管理器时需要实现onWillCreateItem()接口，并在此接口中通过dequeueReusableNodeByType()获取可复用node，实现组件复用，同时也需要在复用组件的aboutToReuse生命期中，对数据进行更新。
    1. 列表项结构类型相同
 
       如果复用的FlowItem组件结构相同，直接注册节点模板。
 
-      ```typescript
+      ```screen
       class MyWaterFlowManager extends WaterFlowManager {
-        onWillCreateItem(index: number, data: BlogData) {
+        onWillCreateItem(index: number, data: BlogData): NodeItem<Params> | null {
           let node: NodeItem<Params> | null = this.dequeueReusableNodeByType('StandardGridImageContainer');
           node?.setData({ blogItem: data });
           return node;
         }
       }
+
       @Entry
       @Component
       struct StandardWaterFlowPage {
@@ -161,104 +167,109 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 
         aboutToAppear(): void {
           // ...
-          this.waterFlowView.registerNodeItem('StandardGridImageContainer', wrapBuilder(StandardGridImageContainer));
+          this.waterFlowView.registerNodeItem('StandardGridImageContainer', wrapBuilder(standardGridImageContainerBuilder));
           // ...
         }
 
         // ...
       }
+
       // Define an item template
       @Builder
-      function StandardGridImageContainer($$: Params) {
-        GridImageView({ blogItem: $$.blogItem })
+      function standardGridImageContainerBuilder($$: Params): void {
+        GridImageView({ blogItem: $$.blogItem });
       }
       ```
    2. 列表项内子组件可拆分组合
 
-      如果复用的FlowItem组件结构基本相同，存在部分差异，比如头部和尾部组件展示相同，中间内容有渲染Text组件或者Image组件，通常需要定义两个不同的@Builder函数与之对应实现复用。在这个场景下，ScrollComponents提供了PartReuse来保证命中组件复用，只需要定义一个@Builder函数。具体可参考[组件复用-列表项子组件可拆分](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#列表项内子组件可拆分)。
+      如果复用的FlowItem组件结构基本相同，存在部分差异，比如头部和尾部组件展示相同，中间内容有渲染Text组件或者Image组件，通常需要定义两个不同的@Builder函数与之对应实现复用。在这个场景下，ScrollComponents提供了PartReuse来保证命中组件复用，只需要定义一个@Builder函数。具体可参考[列表项内子组件可拆分](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#列表项内子组件可拆分)。
 
       当组件将要被销毁时，会移出视图容器并进入到item复用池。当组件将要被创建时，会向item复用池获取item节点，当item节点和目标节点类型存在差异时，会先将差异部分即PartReuse中的组件回收到对应的组件复用池，然后将目标组件所需要的差异组件从对应组件复用池中取出，并和item节点拼接，成为目标组件，并进入到视图容器中。
 
       **图2** 可拆分组件复用创建流程图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Icu8gU3BTZWI_uhUsizU6g/zh-cn_image_0000002324516902.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/VUhAM8iZSmuhjDEJBl_8oQ/zh-cn_image_0000002324516902.png "点击放大")
 
       开发者可参考图3日志打印"generateItem reuse "表示复用，检验是否复用成功。
 
       **图3** 日志效果图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/No8CMqeJRSWYnZZbQXF3pA/zh-cn_image_0000002358435669.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/6Mr2nWQoTnWC0nF910XdkQ/zh-cn_image_0000002358435669.png "点击放大")
 
       **说明** 
 
       日志默认不开启，开启日志需要在WaterFlowManager的初始化方法中设置Config参数，将debug设置为true。
 
       ```screen
-      import { NodeItem, PartReuse, RecyclerView, WaterFlowManager } from '@hadss/scroll_components';
+      import { type NodeItem, PartReuse, RecyclerView, WaterFlowManager } from '@hadss/scroll_components';
+
       @Component
       struct BlogItem {
-        @State blogItem: BlogData = new BlogData()
+        @State blogItem: BlogData = new BlogData();
 
         // In reusable components, you must use aboutToReuse to update data, just like native recycling.
-        aboutToReuse(params: ESObject): void {
+        public aboutToReuse(params: ESObject): void {
           this.blogItem = params.blogItem;
         }
 
-        aboutToRecycle(): void {
+        public aboutToRecycle(): void {
           this.blogItem.callback = undefined;
           this.blogItem.fetchUrl = ImageContent.EMPTY;
         }
 
-        build() {
+        public build(): void {
           Column({ space: 12 }) {
-            HeaderComponent({ blogItem: this.blogItem })
+            HeaderComponent({ blogItem: this.blogItem });
             if (this.blogItem?.content.length > 0) {
               // cache component.
               PartReuse({
                 type: 'AdaptiveTextComponent',
                 builder: wrapBuilder(AdaptiveTextComponentContainer),
                 data: { blogItem: this.blogItem }
-              })
+              });
             }
             if (this.blogItem?.images && this.blogItem.images.length > 0) {
               PartReuse({
                 type: 'GridImageViewContainer',
-                builder: wrapBuilder(GridImageViewContainer),
+                builder: wrapBuilder(gridImageViewContainerBuilder),
                 data: { blogItem: this.blogItem }
-              })
+              });
             }
 
-            BottomContent({ blogItem: this.blogItem })
+            BottomContent({ blogItem: this.blogItem });
           }
           .padding(12)
           .backgroundColor(Color.White)
-          .borderRadius(12)
+          .borderRadius(12);
         }
       }
+
       @Builder
-      export function AdaptiveTextComponentContainer($$: Params) {
-        AdaptiveTextComponent({ blogItem: $$.blogItem })
+      export function AdaptiveTextComponentContainer($$: Params): void {
+        AdaptiveTextComponent({ blogItem: $$.blogItem });
       }
+
       @Builder
-      function GridImageViewContainer($$: Params) {
-        GridImageView({ blogItem: $$.blogItem })
+      function gridImageViewContainerBuilder($$: Params): void {
+        GridImageView({ blogItem: $$.blogItem });
       }
       ```
    3. 列表项结构类型不同
 
       如果FlowItem结构差异较大，包括布局差异大、差异的组件数量较多、组件类型不同等因素，导致直接复用同一个FlowItem困难，则可定义多个复用模板。
 
-      ```typescript
+      ```screen
       class MyWaterFlowManager extends WaterFlowManager {
-        onWillCreateItem(index: number, data: BlogData) {
-          let node: NodeItem<Params>
+        onWillCreateItem(index: number, data: BlogData): NodeItem<Params> {
+          let node: NodeItem<Params>;
           if (index % 2 === 0) {
             node = this.dequeueReusableNodeByType('ImageContainer');
-          } else  {
+          } else {
             node = this.dequeueReusableNodeByType('TextContainer');
           }
           node?.setData({ blogItem: data });
           return node;
         }
       }
+
       @Entry
       @Component
       struct MultiFlowItemPage {
@@ -267,45 +278,46 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
           context: this.getUIContext()
         });
         scroller: Scroller = new Scroller();
-        @State dataArray: BlogData[] = [] // Bind data source for data iteration
-
+        @State dataArray: BlogData[] = [];
         aboutToAppear(): void {
           this.initView();
           taskpool.execute(generateRandomBlogData).then((data: ESObject) => {
             this.dataArray = data;
             this.waterFlowView.setDataSource(data);
-          })
+          });
 
-          this.waterFlowView.registerNodeItem('ImageContainer', wrapBuilder(ImageContainer));
-          this.waterFlowView.registerNodeItem('TextContainer', wrapBuilder(TextContainer));
+          this.waterFlowView.registerNodeItem('ImageContainer', wrapBuilder(imageContainerBuilder));
+          this.waterFlowView.registerNodeItem('TextContainer', wrapBuilder(textContainerBuilder));
 
           // ...
         }
 
-        initView() {
+        initView(): void {
           this.waterFlowView.setViewStyle({ scroller: this.scroller })
             // ...
-        }
+        };
 
-        build() {
+        build(): void {
           Column() {
             RecyclerView({
               viewManager: this.waterFlowView
-            })
+            });
           }
           .height(CommonConstants.FULL_HEIGHT)
-          .backgroundColor($r('app.color.home_background_color'))
-        }
+          .backgroundColor($r('app.color.home_background_color'));
+        };
       }
+
       // Reusable Image Component Template.
       @Builder
-      function ImageContainer($$: Params) {
-        ImageContainerView({ blogItem: $$.blogItem })
+      function imageContainerBuilder($$: Params) {
+        ImageContainerView({ blogItem: $$.blogItem });
       }
+
       // Reusable Text Component Template.
       @Builder
-      function TextContainer($$: Params) {
-        TextContainerView({ blogItem: $$.blogItem })
+      function textContainerBuilder($$: Params) {
+        TextContainerView({ blogItem: $$.blogItem });
       }
       ```
 
@@ -316,7 +328,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 开发者可能存在多个页面间复用WaterFlow，比如Tab栏切换。ScrollComponents提供了全局复用能力。
 
 **图4** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/JZBkaaxATiuYaPc05c3LrA/zh-cn_image_0000002324357106.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/aQ22jcZFQfqzOHdvYi_qjg/zh-cn_image_0000002324357106.gif "点击放大")
 
 ### 开发步骤
 
@@ -324,13 +336,13 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 
    ScrollComponents默认会生成一个RecycledPool对象，通过定义复用池单例存储该pool对象，提供跨页面使用。以下单例仅做参考，开发者可自行封装。
 
-   ```typescript
-   import { RecycledPool } from '@hadss/scroll_components';
+   ```screen
+   import type { RecycledPool } from '@hadss/scroll_components';
 
    export class Utils {
      // ...
      private static utils_: Utils;
-     nodePool: RecycledPool | null = null;
+     public nodePool: RecycledPool | null = null;
      // ...
    }
    ```
@@ -338,7 +350,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 
    WaterFlowManager提供getRecyclePool()方法可获取RecyclePool对象，然后存储到全局单例中。
 
-   ```typescript
+   ```screen
    if (Utils.getInstance().nodePool) {
      // Registration Reuse Pool
      this.waterFlowView.registerRecyclePool(Utils.getInstance().nodePool!);
@@ -350,7 +362,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 
    跨页面使用registerRecyclePool()方法，将全局单例中的RecyclePool对象注册到该页面定义的WaterFlow视图类对象上，实现跨页面不同RecyclerView视图的复用池共享。
 
-   ```typescript
+   ```screen
    @Component
    export struct SharedPoolSecondPage {
      waterFlowView: MyWaterFlowManager = new MyWaterFlowManager({
@@ -359,19 +371,19 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
      });
      // ...
 
-     aboutToAppear(): void {
+     public aboutToAppear(): void {
        // ...
        if (Utils.getInstance().nodePool) {
          // Registration Reuse Pool.
          this.waterFlowView.registerRecyclePool(Utils.getInstance().nodePool!);
        } else {
          Utils.getInstance().nodePool = this.waterFlowView.getRecyclePool();
-       }
+       };
        // ...
-     }
+     };
 
      // ...
-   }
+   };
    ```
 
 ## 瀑布流加速首屏渲染场景
@@ -381,19 +393,19 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 冷启动后首次打开瀑布流页面，由于页面的图片或者视频等媒体资源过多，出现白屏或者白块，等好几秒才慢慢刷出内容。ScrollComponents库支持组件预创建，能打开页面后瞬间看到文字、图片骨架，减少卡顿。
 
 **图5** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/i1KQ8QelTaqcQk0Mxxf_Yw/zh-cn_image_0000002358395541.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/qibMdjpuRUi2ytPxorntNg/zh-cn_image_0000002358395541.gif "点击放大")
 
 ### 开发步骤
 
 通过preCreate()方法对复用模板进行预创建，核心代码参考如下：
 
-```typescript
-aboutToAppear(): void {
+```screen
+public aboutToAppear(): void {
   // ...
   // register components.
-  this.waterFlowView.registerNodeItem('BlogItemContainer', wrapBuilder(BlogItemContainer));
+  this.waterFlowView.registerNodeItem('BlogItemContainer', wrapBuilder(blogItemContainerBuilder));
   this.waterFlowView.registerNodeItem('AdaptiveTextComponent', wrapBuilder(AdaptiveTextComponentContainer));
-  this.waterFlowView.registerNodeItem('GridImageViewContainer', wrapBuilder(GridImageViewContainer));
+  this.waterFlowView.registerNodeItem('GridImageViewContainer', wrapBuilder(gridImageViewContainerBuilder));
 
   this.waterFlowView.preCreate('BlogItemContainer', 30);
   this.waterFlowView.preCreate('AdaptiveTextComponent', 30);
@@ -409,19 +421,19 @@ aboutToAppear(): void {
 @Reusable：网络请求期间主线程大段空闲，请求结束后首屏组件绘帧耗时较长。
 
 **图6** @Reusable测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/UJFhcpC3S1yg7lVxg8d1Bg/zh-cn_image_0000002324516906.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/fI_UYiGxTFud7kQIGJeA5Q/zh-cn_image_0000002324516906.png "点击放大")
 
 ScrollComponents：网络请求期间主线程空闲较少，请求结束后首屏组件绘帧耗时较短
 
 **图7** ScrollComponents测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/k6wFn94WT6Gy7XZqZWtVzQ/zh-cn_image_0000002358435673.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/77_e4pg1S2mEoFzWHB3GYg/zh-cn_image_0000002358435673.png "点击放大")
 
 **表1** 首屏组件创建时间对比表
 
 |  | 冷启动完成时延 | 主线程空闲时间 | 首屏组件创建时间 |
 | --- | --- | --- | --- |
 | ScrollComponents | 2.5s | 281ms | 223ms |
-| @Reusable | 2.8s | 997ms | 467ms |
+| @Reusable | 2.8s | 998ms | 467ms |
 
 可以看出，ScrollComponents在冷启动场景下，完成时延优于原生@Reusable。整体完成时延优化300ms。
 
@@ -434,13 +446,13 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 为了减少快速滑动过程中网络不好产生的白块，ScrollComponents内置了内容预取能力Prefetcher，支持动态自适应网络状态。通过提前下载图片或资源，确保资源在需要时立即显示，减少白块出现。动态预加载适用于数据请求耗时较长的场景，如滑动列表中包含大量图片资源。
 
 **图8** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xATsTn5AS_itpXLIg3dbow/zh-cn_image_0000002324357110.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/LbxwJ-3XS4m_tSohRiANZA/zh-cn_image_0000002324357110.gif "点击放大")
 
 ### 开发步骤
 
 1. 创建组件实例时，注册fetch和cancel回调到视图管理器，并设置数据源。
 
-   ```typescript
+   ```screen
    // Registers the callback that prefetcher invokes when a data referenced by a data source item needs to be fetched.
    this.waterFlowView.registerFetchCallback(this.fetchCallback);
    /**
@@ -452,25 +464,28 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
      this.data = data;
      this.waterFlowView.setDataSource(data);
    }).catch((err: Error) => {
-     const error = err as BusinessError
-     Logger.error(`generateRandomBlogData failed, code = ${error.code} message = ${error.message}`)
+     const error = err as BusinessError;
+     Logger.error(`generateRandomBlogData failed, code = ${error.code} message = ${error.message}`);
    });
    ```
 2. 实现fetchCallback()和cancelCallback()方法。
 
-   ```typescript
+   ```screen
    fetchCallback: (item: ESObject, fetchId: number) => Promise<void> = (item: ESObject, fetchId: number) => {
      let data = item as BlogData;
-     if (data.images.length == 0) {
+     if (data.images.length === 0) {
        return Promise.resolve();
      }
      let url = data.images[0];
      if (this.imageCaches.has(url)) {
        // If cached, skip re-downloading and load the data directly.
        if (data.callback) {
-         data.callback(this.imageCaches.get(url));
+         const cachedUrl = this.imageCaches.get(url);
+         if (cachedUrl) {
+           data.callback(cachedUrl);
+         }
        } else {
-         data.fetchUrl = this.imageCaches.get(url) as string
+         data.fetchUrl = this.imageCaches.get(url) as string;
        }
        return Promise.resolve();
      }
@@ -482,15 +497,15 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
        fetchId: fetchId
      });
      return Promise.resolve();
-   }
+   };
    cancelCallback: (fetchId: number) => void = (fetchId: number) => {
      this.fetches.delete(fetchId);
      this.fetchAgent.postMessageWithSharedSendable({ type: 'cancel', fetchId: fetchId });
-   }
+   };
    ```
 3. 监听滑动组件子组件变化事件。
 
-   ```typescript
+   ```screen
    this.waterFlowView.setViewStyle({
      scroller: this.scroller
    })
@@ -508,18 +523,20 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
      })
      .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean) => {
        /**
-        * By default, the prefetcher begins invoking user code to fetch data with the first call to the visibleAreaChanged method.
-        * Sometimes, this can waste resources because, in practice, onScrollIndex triggers the callback even when the component is not actually visible to the user.
+        * By default, the prefetcher begins invoking user code to fetch data with the first call to
+        * the visibleAreaChanged method.Sometimes, this can waste resources because, in practice,
+        * onScrollIndex triggers the callback even when the component is not actually visible to the user.
         * To avoid this, subscribe to the onVisibleAreaChange event.
         */
        if (isVisible) {
          // Call this method to start prefetching.
          this.waterFlowView.nodeAdapter.prefetcher?.start();
        } else {
-         // Call this method to stop prefetching. For instance, this should be done if a related component becomes invisible.
+         // Call this method to stop prefetching. For instance,
+         // this should be done if a related component becomes invisible.
          this.waterFlowView.nodeAdapter.prefetcher?.stop();
        }
-     })
+     });
    ```
 4. 修改数据结构。
 
@@ -554,10 +571,10 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 
 ### 场景描述
 
-下拉刷新是提升用户体验的关键功能，既要保证数据无缝加载，又要维持流畅的交互效果。推荐使用懒加载刷新数据避免媒体资源加载造成UI渲染阻塞。实现逻辑可参考[实现下拉刷新上拉加载更多](../harmonyos-references/ts-container-refresh.md#示例6实现下拉刷新上拉加载更多)。
+下拉刷新是提升用户体验的关键功能，既要保证数据无缝加载，又要维持流畅的交互效果。推荐使用懒加载刷新数据避免媒体资源加载造成UI渲染阻塞。实现逻辑可参考[示例6（实现下拉刷新上拉加载更多）](../harmonyos-references/ts-container-refresh.md#示例6实现下拉刷新上拉加载更多)。
 
 **图9** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/IdhjJHEGQqquWjBX2LMeOA/zh-cn_image_0000002324708832.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Zfko4dlORY2ho-qk4iUx-Q/zh-cn_image_0000002324708832.gif "点击放大")
 
 ### 开发步骤
 
@@ -565,8 +582,9 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 
 1. 定义刷新监听函数，模拟数据更新。
 
-   ```typescript
-   generateRandomBlogData().then((data: ESObject) => {
+   ```screen
+   generateRandomBlogData().then((data: BlogData[]) => {
+     this.isRefreshing = false;
      this.data = data;
      this.waterFlowView.setDataSource(data);
    });
@@ -574,39 +592,29 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 2. 将瀑布流页面绑定到Refresh刷新组件上。
 
    ```screen
-   Refresh({ refreshing: $$this.isRefreshing }) {
-     Column() {
-       RecyclerView({
-         viewManager: this.waterFlowView
-       })
-
-       if (this.isLoadMore) {
-         Row() {
-           LoadingProgress()
-             .width(20)
-             .height(20)
-             .color('#999999')
-           Text($r('app.string.loading'))
-             .fontSize(14)
-             .fontColor('#999999')
-             .margin({ left: 8 })
-         }
-         .width(CommonConstants.FULL_WIDTH)
-         .height(50)
-         .justifyContent(FlexAlign.Center)
-       }
-     }
+   this.waterFlowView.setViewStyle({ scroller: this.scroller })
+     .edgeEffect(EdgeEffect.Spring)
      .width(CommonConstants.FULL_WIDTH)
      .height(CommonConstants.FULL_HEIGHT)
-   }
-   .layoutWeight(1)
-   .onRefreshing(()=>{
-     generateRandomBlogData().then((data:BlogData[])=>{
-       this.isRefreshing = false
-       this.data = data
-       this.waterFlowView.setDataSource(data)
+     .columnsTemplate(CommonConstants.WATER_FLOW_COLUMNS_TEMPLATE)
+     .columnsGap(CommonConstants.COLUMNS_GAP)
+     .rowsGap(CommonConstants.ROWS_GAP)
+     .padding({
+       top: CommonConstants.PADDING,
+       left: CommonConstants.PADDING,
+       right: CommonConstants.PADDING
      })
-   })
+     .onReachEnd(() => {
+       if (!this.isLoadMore) {
+         this.isLoadMore = true;
+         setTimeout(() => {
+           generateRandomBlogData().then((data: ESObject) => {
+             this.waterFlowView.nodeAdapter.pushData(data);
+             this.isLoadMore = false;
+           });
+         }, 100);
+       }
+     });
    ```
 
 ## 瀑布流上拉加载场景
@@ -614,7 +622,7 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 当开发瀑布流页面涉及大量数据，需要进行分页请求时，结合ScrollComponents提供的懒加载能力实现上拉分页加载的效果。
 
 **图10** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/xX4eojnOS56SRGWmpSQcHA/zh-cn_image_0000002358827425.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/9j6Kch9dSGu7OZ4BQMEW3w/zh-cn_image_0000002358827425.gif "点击放大")
 
 核心代码参考如下：
 
@@ -641,7 +649,7 @@ this.waterFlowView.setViewStyle({ scroller: this.scroller })
         });
       }, 100);
     }
-  })
+  });
 ```
 
 **说明** 
@@ -653,11 +661,11 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 长按时显示删除按钮，点击按钮可以删除对应item。
 
 **图11** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/UIm7SBlEQxCXaDCgX5aG1g/zh-cn_image_0000002358435681.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/aOYY80NUSxCN5SRUQ3s8MA/zh-cn_image_0000002358435681.gif "点击放大")
 
 1. 绑定长按手势。
 
-   ```typescript
+   ```screen
    Stack() {
      Image(this.blogItem.images[0])
        // ...
@@ -668,35 +676,36 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
        LongPressGesture().onAction(() => {
          this.showMenu = true;
        }))
-   )
+   );
    ```
 2. 从数据源中删除目标数据，删除组件。
 
-   ```typescript
+   ```screen
      this.context.eventHub.on(CommonConstants.EVENT_REMOVE_ITEM, (blogItem: BlogData) => {
 
        let foundIndex =
          this.dataArray.findIndex((value: BlogData) => JSON.stringify(value) ===
-         JSON.stringify(blogItem))
+         JSON.stringify(blogItem));
        if (foundIndex !== CommonConstants.NOT_FOUND_INDEX) {
          this.getUIContext().animateTo({ duration: 200 }, () => {
-           this.waterFlowView.nodeAdapter.deleteData(foundIndex)
-         })
+           this.waterFlowView.nodeAdapter.deleteData(foundIndex);
+         });
        }
-     })
+     });
+
    @Builder
-   popUpBuilder() {
+   popUpBuilder(): void {
      Row({ space: 2 }) {
-       Text($r('app.string.not_interested_button_text'))
+       Text($r('app.string.not_interested_button_text'));
      }
      .width(100)
      .height(50)
      .padding(5)
      .justifyContent(FlexAlign.Center)
      .onClick(() => {
-       this.context.eventHub.emit(CommonConstants.EVENT_REMOVE_ITEM, this.blogItem)
+       this.context.eventHub.emit(CommonConstants.EVENT_REMOVE_ITEM, this.blogItem);
        this.showMenu = false;
-     })
+     });
    }
    ```
 
@@ -704,10 +713,10 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 
 ### 场景描述
 
-分组混排瀑布流中，不同区域展示不同的item效果，例如前三个每行一个item，中间每行两个item，每个item保持高度一致，后面的每行两个item，每个item高度不一致。瀑布流分组功能参考：[《创建瀑布流：分组混合布局》](../harmonyos-guides/arkts-layout-development-create-waterflow.md#分组混合布局)。
+分组混排瀑布流中，不同区域展示不同的item效果，例如前三个每行一个item，中间每行两个item，每个item保持高度一致，后面的每行两个item，每个item高度不一致。瀑布流分组功能参考：[分组混合布局](../harmonyos-guides/arkts-layout-development-create-waterflow.md#分组混合布局)。
 
 **图12** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/oDJpsiMVQ2OS-DWcwcoCRA/zh-cn_image_0000002324357118.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/vZxuHNnwS7Su6ZclGWEB9w/zh-cn_image_0000002324357118.png "点击放大")
 
 ### 开发步骤
 
@@ -715,8 +724,9 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 
 1. 设置多个SectionOptions。
 
-   ```typescript
+   ```screen
    @State sections: WaterFlowSections = new WaterFlowSections();
+
    oneColumnSection: SectionOptions = {
      itemsCount: 3,
      crossCount: 1,
@@ -746,13 +756,13 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
    ```
 2. 初始化时为section绑定SectionOptions，并且绑定到WaterFlow上。
 
-   ```typescript
-   initView() {
+   ```screen
+   initView(): void {
      let sectionOptions: SectionOptions[] = [];
      let count = 0;
      let oneOrTwo = 0;
      while (count < this.dataCount) {
-       if (oneOrTwo++ % 2 == 0) {
+       if (oneOrTwo++ % 2 === 0) {
          sectionOptions.push(this.oneColumnSection);
          count += this.oneColumnSection.itemsCount;
        } else {
@@ -769,30 +779,30 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
    ```
 3. 滚动时更新section。FrameNode创建的WaterFlow组件，在分组section更新之后必须使用[initialize](../harmonyos-references/js-apis-arkui-framenode.md#typedframenode12)更新组件，section的更新才会生效。
 
-   ```typescript
+   ```screen
    this.waterFlowView.setViewStyle({ scroller: this.scroller, sections: this.sections })
      // ...
      .onScrollIndex((_first: number, last: number) => {
        if (last + 20 >= this.waterFlowView.nodeAdapter.totalNodeCount) {
          let dataArray: number[] = [];
          for (let i = 0; i < 100; i++) {
-           dataArray.push(i)
+           dataArray.push(i);
          }
          // update data when the page is scrolling.
-         this.waterFlowView.nodeAdapter.pushData(dataArray)
+         this.waterFlowView.nodeAdapter.pushData(dataArray);
          let newSection: SectionOptions = {
            itemsCount: 100,
            crossCount: 2,
            onGetItemMainSizeByIndex: () => {
              return 100;
            }
-         }
+         };
          // update section
          this.sections.push(newSection);
          this.waterFlowView.setViewStyle({
            scroller: this.scroller, // it's very important to do initialize that makes section update.
            sections: this.sections,
-         })
+         });
        }
      })
      // ...
@@ -805,7 +815,7 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 向上滑动瀑布流，当横向列表组件滑动到顶部，达到吸顶效果时，其下方的瀑布流列表可以继续滑动。
 
 **图13** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/lVBjcezfQ8OtG2yK1J5tCQ/zh-cn_image_0000002358395549.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/pbkXNqdpRSWS3wzL9QisjA/zh-cn_image_0000002358395549.gif "点击放大")
 
 ### 开发步骤
 
@@ -813,8 +823,9 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 
 1. 设置SectionOptions信息。
 
-   ```typescript
+   ```screen
    @State sections: WaterFlowSections = new WaterFlowSections();
+
    oneColumnSection: SectionOptions = {
      itemsCount: 3,
      crossCount: 1,
@@ -844,13 +855,13 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
    ```
 2. 初始化时为section绑定SectionOptions，并且绑定到WaterFlow上。
 
-   ```typescript
-   initView() {
+   ```screen
+   initView(): void {
      let sectionOptions: SectionOptions[] = [];
      let count = 0;
      let oneOrTwo = 0;
      while (count < this.dataCount) {
-       if (oneOrTwo++ % 2 == 0) {
+       if (oneOrTwo++ % 2 === 0) {
          sectionOptions.push(this.oneColumnSection);
          count += this.oneColumnSection.itemsCount;
        } else {
@@ -867,18 +878,19 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
    ```
 3. 在预留位置中添加吸顶组件，同时渲染FlowItem排除吸顶组件的索引。
 
-   ```typescript
+   ```screen
      this.waterFlowView.setViewStyle({ scroller: this.scroller, sections: this.sections })
        // ...
        .onWillScroll((offset: number) => {
          // Dynamically get the offset position of a waterfall flow
          this.scrollOffset = this.scroller.currentOffset().yOffset + offset;
-       })
+       });
+
    build() {
      Stack({ alignContent: Alignment.TopStart }) {
        RecyclerView({
          viewManager: this.waterFlowView
-       })
+       });
        Stack() {
          // ...
        }
@@ -888,8 +900,8 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
        .backgroundColor(Color.White)
        .hitTestBehavior(HitTestMode.Transparent)
        // Set the sticky component's offset.
-       .position({ x: 0, y: this.scrollOffset >= 220 ? 0 : 220 - this.scrollOffset })
-     }
+       .position({ x: 0, y: this.scrollOffset >= 220 ? 0 : 220 - this.scrollOffset });
+     };
    }
    ```
 
@@ -897,7 +909,7 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 
 通过动态调整瀑布流的列数，应用能够实现在列表模式与瀑布流模式间的切换，或适应屏幕宽度的变化。WaterFlow视图是继承FrameNode，需要使用节点的[attribute](../harmonyos-references/js-apis-arkui-framenode.md#typedframenode12)属性修改WaterFlow的属性，具体代码参考如下：
 
-```typescript
+```screen
 aboutToAppear(): void {
   let orientation = window.Orientation.AUTO_ROTATION;
   this.windowClass.setPreferredOrientation(orientation, (err: BusinessError) => {
@@ -907,7 +919,7 @@ aboutToAppear(): void {
       return;
     }
     Logger.info('Succeed to setting window orientation');
-  })
+  });
   this.windowClass.on('windowSizeChange', (size) => {
     let viewWidth = size.width;
     let viewHeight = size.height;
@@ -917,11 +929,12 @@ aboutToAppear(): void {
     } else {
       this.waterFlowView.setViewStyle().columnsTemplate('1fr 1fr');
     }
-  })
+  });
   this.initView();
   // ...
 }
-initView() {
+
+initView(): void {
   this.waterFlowView.setViewStyle({ scroller: this.scroller })
     .height(CommonConstants.FULL_HEIGHT)
     .columnsTemplate(CommonConstants.WATER_FLOW_COLUMNS_TEMPLATE)
@@ -932,7 +945,8 @@ initView() {
       left: CommonConstants.PADDING,
       right: CommonConstants.PADDING
     })
-    .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) })
+    .edgeEffect(EdgeEffect.Spring)
+    .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) });
 }
 ```
 
@@ -940,9 +954,9 @@ initView() {
 
 ### 边缘渐隐效果
 
-通过[fadingEdge](../harmonyos-references/ts-container-scrollable-common.md#fadingedge14)实现了WaterFlow组件开启边缘渐隐效果，并通过fadingEdgeLength参数设置边缘渐隐长度。效果参考：[WaterFlow设置边缘渐隐效果](../harmonyos-references/ts-container-waterflow.md#示例5设置边缘渐隐效果)。
+通过[fadingEdge](../harmonyos-references/ts-container-scrollable-common.md#fadingedge14)实现了WaterFlow组件开启边缘渐隐效果，并通过fadingEdgeLength参数设置边缘渐隐长度。效果参考：[示例5（设置边缘渐隐效果）](../harmonyos-references/ts-container-waterflow.md#示例5设置边缘渐隐效果)。
 
-```typescript
+```screen
 this.waterFlowView.setViewStyle({ scroller: this.scroller })
   .height(CommonConstants.FULL_HEIGHT)
   .columnsTemplate(CommonConstants.WATER_FLOW_COLUMNS_TEMPLATE)
@@ -953,25 +967,26 @@ this.waterFlowView.setViewStyle({ scroller: this.scroller })
     left: CommonConstants.PADDING,
     right: CommonConstants.PADDING
   })
-  .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) })
+  .edgeEffect(EdgeEffect.Spring)
+  .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) });
 ```
 
 ### 删除滑动错位效果
 
 在组件删除时添加动画效果[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)即可实现删除过渡效果。
 
-```typescript
+```screen
 this.context.eventHub.on(CommonConstants.EVENT_REMOVE_ITEM, (blogItem: BlogData) => {
 
   let foundIndex =
     this.dataArray.findIndex((value: BlogData) => JSON.stringify(value) ===
-    JSON.stringify(blogItem))
+    JSON.stringify(blogItem));
   if (foundIndex !== CommonConstants.NOT_FOUND_INDEX) {
     this.getUIContext().animateTo({ duration: 200 }, () => {
-      this.waterFlowView.nodeAdapter.deleteData(foundIndex)
-    })
+      this.waterFlowView.nodeAdapter.deleteData(foundIndex);
+    });
   }
-})
+});
 ```
 
 ## 示例代码

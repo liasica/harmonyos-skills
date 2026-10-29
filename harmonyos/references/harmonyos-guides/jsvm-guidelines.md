@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-guidelin
 title: JSVM-API使用规范
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API开发规范 > JSVM-API使用规范
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:46+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:3042e434faa5f156222cddccfba5e93b362718dbdca1058116ca6d984992381e
+scraped_at: 2026-10-29T07:58:17+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:50212e2a0d74a021f1a32a314da6a82e51ea4fedad6cda71fd1bf48d967118a5
 ---
 
 ## 生命周期管理
@@ -346,13 +346,13 @@ static JSVM_Value GetArgvDemo2(napi_env env, JSVM_CallbackInfo info) {
 
    // 绑定NativeFunction到JSVM中，省略
    std::string sourcecodestr = R"JS(
-       // console.log需用户实现
+       // consoleinfo需用户实现
        try {
            // 调用Native函数
            NativeFunction()
        } catch (e) {
            // 处理Native中产生的异常
-           consolelog(e.message)
+           consoleinfo(e.message)
        }
    )JS";
    JSVM_Value sourcecodevalue = nullptr;
@@ -420,13 +420,13 @@ OH_JSVM_CreateStringLatin1(env, "FunctionNameInJSContext", JSVM_AUTO_LENGTH, &ke
 OH_JSVM_SetProperty(env, global, key, JSFunc);
 // 在JS中调用函数
 std::string sourcecodestr = R"JS(
-    // console.log需用户实现
+    // consoleinfo需用户实现
     FunctionNameInJSContext() // 调用成功
-    consolelog(FunctionNameInJSContext.name) // 打印 "NativeFunction"
+    consoleinfo(FunctionNameInJSContext.name) // 打印 "NativeFunction"
     try {
         NativeFunction() // 无法找到该函数，抛出异常
     } catch (e) {
-        consolelog(e.message)
+        consoleinfo(e.message)
     }
 )JS";
 ```

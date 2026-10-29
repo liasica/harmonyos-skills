@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-err
 title: 运行配置错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 调试错误码 > 运行配置错误码
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:28+08:00
+scraped_at: 2026-10-29T07:58:31+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f70737453ebcf8b7d364ae9184533eb7487e4f1b6f020dc9c8366f7b39d737df
+content_hash: sha256:bb3d8d8e958518632c3e3509c61d95c1d5b92eeb7e7e5c42a71786a152dd7071
 ---
 
 ## 00401000 获取包名信息失败
@@ -133,7 +133,7 @@ Error running entry : Ability not specified.
 
 打开运行/调试配置面板，在Specified Ability下设置Ability。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/3KUFI99nQjSE_E0tr9pDvQ/zh-cn_image_0000002701822542.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/e_YNVUZTQGytS4mwU16A-Q/zh-cn_image_0000002701822542.png)
 
 ## 00401006 预览器不支持以release构建模式进行调试
 
@@ -395,9 +395,9 @@ compatibleSdkVersion and releaseType of the app do not match the apiVersion and 
 
 方法一：请升级设备系统版本以匹配当前工程版本。在系统设置界面升级设备系统。
 
-方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/0Ip-h5_qS8WtJrFKAnySxw/zh-cn_image_0000002701662622.png)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
+方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/2YYXMa1oRhCz2VY24rmMwA/zh-cn_image_0000002701662622.png)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Wwz8MaWwRwip0rHYInM1sw/zh-cn_image_0000002701662624.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/xrUoRPzfTZ2fMeuMLVPMQQ/zh-cn_image_0000002701662624.png)
 
 ## 00401020 没有可用的端口号
 
@@ -457,7 +457,7 @@ The local package does not exist.
 1. 点击菜单栏**Build > Clean Project**清理缓存，再重新运行。
 2. 检查运行配置是否取消了构建任务，如果取消就重新添加构建任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/coEIsEYETq-YaG_Ck1uucQ/zh-cn_image_0000002731381847.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/gS7AggrKSaClp1rwe9lByQ/zh-cn_image_0000002731381847.png)
 3. 点击菜单栏**File > Sync and Refresh Project**重新同步工程，等待同步成功后再运行。
 
 ## 00401023 hap包中config.json或module.json文件不存在

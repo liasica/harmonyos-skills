@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 绑定手势事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 绑定手势 > 绑定手势事件
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:18+08:00
+scraped_at: 2026-10-29T07:59:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:36e11de0c4475d002c73a02e0c9b200b87daeb3c773711f9f998cc683fbfaa59
+content_hash: sha256:1e91a4fb86c3001deee888a9f39337d68bdcd0a692a3437ec679c99d324bb6e6
 ---
 
 为组件绑定不同类型的手势事件，并设置事件的响应方法；支持普通手势绑定、父组件优先识别手势和父子组件同时触发手势，适用于组件交互响应、父子组件手势优先级控制以及多组件手势协同触发等场景。
@@ -188,7 +188,7 @@ struct GestureSettingsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/t0_WQCqERVqFgb42zsaWCg/zh-cn_image_0000002771667298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rE6PO3IsRO68iParVTrUaw/zh-cn_image_0000002803225805.gif)
 
 ### 示例2（实时监测参与滑动手势的有效触点数量）
 
@@ -259,4 +259,4 @@ struct PanGestureWithFingerCount {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/XLOMl5CfSXS_wMxBeKQ8gQ/zh-cn_image_0000002800987159.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/0mvXPZdySQSgITNstezDrw/zh-cn_image_0000002774066090.gif)

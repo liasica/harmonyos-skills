@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用时延优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 应用启动与响应优化 > 应用时延优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:47+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:2ad36ba933a309f1b1e7d695a6c75258414e8e9ab766d8402603caeb668c1a7d
+scraped_at: 2026-10-29T08:03:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:02200fccc33242c646c02272ae6e440804d139f2923d7b271aa56c337fd12b9f
 ---
 
 ## 应用时延概述
@@ -15,10 +15,10 @@ content_hash: sha256:2ad36ba933a309f1b1e7d695a6c75258414e8e9ab766d8402603caeb668
 在一定时延水平以上，时延越短越好，当时延小于一定水平后，用户的流畅体验不再继续提升。建议应用或元服务内点击操作响应时延应≤100ms，应用或元服务内点击操作完成时延≤900ms，更多体验建议，请参考指南[《应用性能体验建议》](../harmonyos-guides/performance-experience-suggestions.md)。本文将给出时延问题常见优化方案。
 
 **图1** 点击完成起止点示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/YSWD1B61RpCeYOYdsa_8Ig/zh-cn_image_0000002229337521.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/wLHfT0oKS_qFUzBQqqZnIg/zh-cn_image_0000002229337521.png "点击放大")
 
 **图2** 页面转场过程解析  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/jKQuGv4CR4ypMyzATEcIFA/zh-cn_image_0000002229452017.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/a0X07X8wQ0idOJEVtBMByw/zh-cn_image_0000002229452017.png "点击放大")
 
 ## 常见时延问题优化方案
 
@@ -32,25 +32,25 @@ content_hash: sha256:2ad36ba933a309f1b1e7d695a6c75258414e8e9ab766d8402603caeb668
 
 **图3** 留言箱列表界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/vY9XXxVMT6yTUPvZc81pgA/zh-cn_image_0000002229337533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/gdNuJB_OT56RKlB_YLxBjA/zh-cn_image_0000002229337533.png "点击放大")
 
 分解关系结构后，单个子项界面由6个构成元素组成，元素排列以线性风格为主，使用的组件包括Image、Badge和Text。
 
 **图4** 单个ListItem界面示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/KyN1NeXzSb2nh-ciF36X2Q/zh-cn_image_0000002193852136.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/jWVvDrRiQgKqcCjSfElY2g/zh-cn_image_0000002193852136.png "点击放大")
 
 **具体实现**
 
-* 熟悉弹性布局的开发者，得到需求后会第一时间使用Flex容器实现。界面主体呈线性结构，使用Flex作为包裹父容器，依次将横向纵向的元素添加进去，并设置其样式属性。通过DevEco Studio内置ArkUI Inspector工具，可以得到布局代码对应的视图树。实现结果从根节点到元素叶子节点最深处有6层，组件数目为15。这种实现方式，由于Flex容器默认情况下存在shrink等行为，绘制时会二次布局，造成页面渲染上的性能劣化。
+* 熟悉弹性布局的开发者，得到需求后会第一时间使用Flex容器实现。界面主体呈线性结构，使用Flex作为包裹父容器，依次将横向纵向的元素添加进去，并设置其样式属性。通过DevEco Studio内置ArkUI Inspector工具，得到布局代码对应的视图树。实现结果从根节点到元素叶子节点最深处有6层，组件数目为15。这种实现方式，由于Flex容器默认情况下存在shrink等行为，绘制时会二次布局，造成页面渲染上的性能劣化。
 * 接下来采用相对布局优化实现。先将左侧头像添加到容器中，然后锚定其位置，逐一在右侧添加其他元素。实现结果使用工具观察，发现层级相对减少，最终实现的层级是3层。同时，借助相对布局，子元素结构扁平化，容器也相对减少，进一步优化了页面的构建渲染时间。
 
 **图5** Flex布局下的界面层级关系  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/zWmeSgI1RtSm7ZmR85PW2g/zh-cn_image_0000002229452013.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/aKe-0s5USn-QW2jEVYI4sw/zh-cn_image_0000002229452013.png)
 
 **图6** 相对布局下的界面层级关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/EMqLe4EmSVyxS3yGK7ZeVg/zh-cn_image_0000002229452029.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/CZ1qVRfZTfa0n5vtousaBw/zh-cn_image_0000002229452029.png)
 
 **统计分析**
 
@@ -102,8 +102,8 @@ content_hash: sha256:2ad36ba933a309f1b1e7d695a6c75258414e8e9ab766d8402603caeb668
 @Concurrent
 function computeTask(): string[] {
   let array: string[] = []
-  // AppConstant.CITYS is the data to be loaded.
-  for (let t of AppConstant.CITYS) {
+  // AppConstant.CITIES is the data to be loaded.
+  for (let t of AppConstant.CITIES) {
     array.push(t.trim())
   }
   let collator = new Intl.Collator("zh-CN", { localeMatcher: "lookup", usage: "sort" });
@@ -116,7 +116,7 @@ function computeTask(): string[] {
 struct CityList {
   isAsync: boolean = (this.getUIContext().getRouter().getParams() as Record<string, boolean>)['isAsync'];
   // Interface data
-  @State citys: string[] = []
+  @State cities: string[] = []
   private listScroller: Scroller = new Scroller();
 
   aboutToAppear() {
@@ -127,7 +127,7 @@ struct CityList {
   computeTaskAsync() {
     let task: taskpool.Task = new taskpool.Task(computeTask);
     taskpool.execute(task).then((res) => {
-      this.citys = res as string[]
+      this.cities = res as string[]
     })
   }
 
@@ -158,7 +158,7 @@ struct CityList {
 
 修改前代码：
 
-```typescript
+```screen
 for (let i = 0; i < count; i++) {
   let tmp: AccountData = {
     id: 0,
@@ -179,7 +179,7 @@ for (let i = 0; i < count; i++) {
 
 修改后代码：
 
-```typescript
+```screen
 const idIndex = resultSet.getColumnIndex("id");
 const accountTypeIndex = resultSet.getColumnIndex("accountType");
 const typeTextIndex = resultSet.getColumnIndex("typeText");
@@ -353,11 +353,11 @@ struct PanGestureExample {
 
 利用Profiler工具分析得到的trace图，重点关注两个trace标签：DispatchTouchEvent表示点击事件，PanGesture表示事件响应。追踪流程从应用侧的DispatchTouchEvent（type=0，表示手指接触屏幕）标签开始，到PanGesture（事件响应）的变化，整个过程耗时145.1毫秒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/FNw1AoMuT8OiekvNWvGHPQ/zh-cn_image_0000002229337529.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/9EPRNvlxTVqFknJdyQppYQ/zh-cn_image_0000002229337529.png "点击放大")
 
 日志关注从应用接收TouchDown事件到pan识别的耗时，该过程耗时127ms。注：日志信息和trace图非同一时间获取，性能数据存在差异，提供的数值仅供参考。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/GJEHkbuTQAiY3Iyu-vZ0kg/zh-cn_image_0000002229452021.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/SnqA5noQT9m1QEexjmOxgQ/zh-cn_image_0000002229452021.png "点击放大")
 
 针对该组件，其拖动手势识别距离可以调整到更合适的数值，这里优化后，指定触发拖动手势事件的最小拖动距离为4vp，代码如下：
 
@@ -370,11 +370,11 @@ Button('修改PanGesture触发条件')
 
 同样采用Profiler工具分析trace图，得到对应耗时38.4ms
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/B7bTK7z3Rf-qJ0PpInzutA/zh-cn_image_0000002194011720.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/5n3S7tgiTbyG1GalT2cKCQ/zh-cn_image_0000002194011720.png "点击放大")
 
 对应日志过程耗时42ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/NLSXbWL2RcmCOc7HQYkD9w/zh-cn_image_0000002229452025.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/xXjhPqpGTY2z8ZLe9wbdEA/zh-cn_image_0000002229452025.png "点击放大")
 
 **性能比对**
 
@@ -399,7 +399,7 @@ Button('修改PanGesture触发条件')
 
 **图7** 场景实例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/bF4-1bR0Rs64Dp2fBZF2Ww/zh-cn_image_0000002193852132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/-UD9zpBDSs66JocFiIVwng/zh-cn_image_0000002193852132.png "点击放大")
 
 **具体实现**
 
@@ -566,7 +566,7 @@ struct TabsPositiveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/p-K5LgI-Q6SCd0uPHBauDw/zh-cn_image_0000002229337537.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/eE9Rfl14Tn-V0P9FxKi2jg/zh-cn_image_0000002229337537.png "点击放大")
 
 实验二：设置animationDuration为1000ms
 
@@ -597,7 +597,7 @@ struct TabsNegativeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/QHsG1bXKROyWo97isIn-Hw/zh-cn_image_0000002229337525.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/9J7EdIICQPijbOQ55jIH3g/zh-cn_image_0000002229337525.png "点击放大")
 
 **表7** 运行效果图
 

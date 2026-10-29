@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-local-file
 title: 多线程操作密集型关系型数据库和文件读写
 breadcrumb: 最佳实践 > 应用框架 > 数据和文件 > 多线程操作密集型关系型数据库和文件读写
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:7c6f8a760e7e4d7e0f96d4a2b4f9f7149bb821b8d447ba4b6f1caa666bd7dc74
+scraped_at: 2026-10-29T08:03:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:4ca5f6e2c649d691abb35e49eddbb196e5ee45a9ec9e628f0347459d7d2108f6
 ---
 
 ## 概述
 
-应用中的每个进程都会有一个主线程，主线程主要承担执行UI绘制操作、管理ArkTS引擎实例的创建和销毁、分发和处理事件、管理Ability生命周期等职责，具体可参见[线程模型概述](../harmonyos-guides/thread-model-stage.md)。在主线程中执行耗时操作将会引起UI绘制卡顿，因此，开发应用时应当尽量避免将耗时的操作放在主线程中执行。ArkTS提供了多线程并发能力，多线程并发允许在同一时间段内同时执行多段代码，本文介绍如何利用多线程解决密集型文件和数据库读写时造成主线程阻塞的问题。
+应用中的每个进程都会有一个主线程，主线程主要承担执行UI绘制操作、管理ArkTS引擎实例的创建和销毁、分发和处理事件、管理Ability生命周期等职责，具体可参见[线程模型](../harmonyos-guides/thread-model-stage.md)。在主线程中执行耗时操作将会引起UI绘制卡顿，因此，开发应用时应当尽量避免将耗时的操作放在主线程中执行。ArkTS提供了多线程并发能力，多线程并发允许在同一时间段内同时执行多段代码，本文介绍如何利用多线程解决密集型文件和数据库读写时造成主线程阻塞的问题。
 
 ## 实现原理
 
@@ -26,7 +26,7 @@ content_hash: sha256:7c6f8a760e7e4d7e0f96d4a2b4f9f7149bb821b8d447ba4b6f1caa666bd
 
 任务池（TaskPool）作用是为应用程序提供一个多线程的运行环境，降低整体资源的消耗、提高系统的整体性能，且开发者无需关心线程实例的生命周期。更多原理请详见[TaskPool简介](../harmonyos-guides/taskpool-introduction.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Ogh04nq5REGILOVWAC7zzQ/zh-cn_image_0000002229337461.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/CwOvbOs5SGOdvTvOCcysuw/zh-cn_image_0000002229337461.png "点击放大")
 
 TaskPool在执行密集型I/O读写方面具有以下优势：
 
@@ -173,7 +173,7 @@ TaskPool在执行密集型I/O读写方面具有以下优势：
 
 ## 使用Sendable进一步提升性能
 
-在上一章节中介绍了如何使用TaskPool进行读写，解决了密集型读写场景下任务分发的的问题，但是实际开发中还面临密集的数据传递问题，系统提供了@Sendable进行解决，本章将介绍如何在TaskPool基础上使用@Sendable。
+上一章节介绍了如何使用TaskPool进行读写，解决了密集型读写场景下任务分发的问题。但是实际开发中还面临密集的数据传递问题，系统提供了@Sendable进行解决，本章将介绍如何在TaskPool基础上使用@Sendable。
 
 ### 实现原理
 
@@ -181,7 +181,7 @@ TaskPool在执行密集型I/O读写方面具有以下优势：
 
 共享堆（SharedHeap）是进程级别的堆空间，与虚拟机本地堆（LocalHeap）不同的是，LocalHeap只能被单个并发实例访问，而SharedHeap可以被所有线程访问。一个Sendable共享对象的跨线程行为是引用传递。因此，Sendable可能被多个并发实例引用，判断Sendable共享对象是否存活，取决于所有并发实例的对象是否存在对此Sendable共享对象的引用，更多原理请见[Sendable的实现原理](../harmonyos-guides/arkts-sendable.md#sendable的实现原理)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/ucPok7LfQjmvfQq12czvUQ/zh-cn_image_0000002229451953.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/E31ZPRjnQNW2SOxwa7KW5w/zh-cn_image_0000002229451953.png)
 
 在密集型I/O处理场景中，文件读写会涉及大量数据的传输，而数据库读写则通常被封装成class进行传递，Sendable用引用代替拷贝，可以有效地降低序列化时间，从而提升性能，Sendable主要可以解决两个场景的问题：
 
@@ -215,7 +215,7 @@ TaskPool在执行密集型I/O读写方面具有以下优势：
      }
    }
    ```
-2. 接下来进行读取操作，封装TaskPool函数，需要使用collections.Array代替Array，collections.ArrayBuffer代替ArrayBuffer接收结果值，在使用Sendable时，需要注意该数据类型Sendable是否支持，详情请见[sendable支持的数据类型](../harmonyos-guides/arkts-sendable.md#sendable支持的数据类型)。
+2. 接下来进行读取操作，封装TaskPool函数，需要使用collections.Array代替Array，collections.ArrayBuffer代替ArrayBuffer接收结果值，在使用Sendable时，需要注意该数据类型Sendable是否支持，详情请见[Sendable支持的数据类型](../harmonyos-guides/arkts-sendable.md#sendable支持的数据类型)。
 
    ```typescript
    @Concurrent

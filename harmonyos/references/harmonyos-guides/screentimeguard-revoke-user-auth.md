@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 取消用户授权
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 取消用户授权
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:55+08:00
+scraped_at: 2026-10-29T07:57:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5b3374b4b89fa0c1ee45a491e288161d41eda72c25016db0c7b8eae5a10a185c
+content_hash: sha256:bd516a28797878e9a3be4111ce20e79ed58b7ad8f8c295fb118c6683cab37d73
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:5b3374b4b89fa0c1ee45a491e288161d41eda72c25016db0c7b8eae5a10
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/-xk2YfcRS1GUxURGHlUdqA/zh-cn_image_0000002771826728.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/-Bp8nY9ATdyjy0iQTuiRqA/zh-cn_image_0000002773905578.png)
 
 流程说明：
 

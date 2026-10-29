@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-wind
 title: 智慧多窗
 breadcrumb: 最佳实践 > 应用框架 > 窗口与屏幕管理 > 智慧多窗
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:147cc80cd3edefe40477483d9302c67624e3f215459f047746e0c2038ff7c27d
+scraped_at: 2026-10-29T08:03:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:bd089ce2e18b10a072f10a026a1351efc35fb956fa782995fd5cab7ddb485aed
 ---
 
 ## 概述
@@ -14,10 +14,10 @@ content_hash: sha256:147cc80cd3edefe40477483d9302c67624e3f215459f047746e0c2038ff
 
 * **悬浮窗**：设备屏幕上悬浮的、非全屏的应用窗口。一般用于在已有全屏任务运行的基础上，临时处理另一个任务，或短时间多任务并行使用。如浏览网页的同时回复消息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Kym__T0QRdy4Een9E5wbJA/zh-cn_image_0000002193851416.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/cIuLENnTS2u5bkRAZyaouQ/zh-cn_image_0000002193851416.png "点击放大")
 * **分屏**：分屏一般用于两个应用长时间并行使用的场景。例如边看购物攻略、边浏览商品；边看视频、边玩游戏；看学习类视频的同时做笔记等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/EwMpul7BQLWr9ZEFlyE1aA/zh-cn_image_0000002193851376.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Pt_Bwmx7SsWDDN004kNsQw/zh-cn_image_0000002193851376.png "点击放大")
 
 由于应用从全屏进入智慧多窗（悬浮窗/分屏）模式后，窗口尺寸、宽高比例会发生变化，往往会产生一些布局的适配问题。例如，分屏后页面内容显示不全无法滑动、视频被压缩导致宽高比不正确，应用开启悬浮窗后内容和状态栏的重叠区域无法响应用户操作等。
 
@@ -31,7 +31,7 @@ content_hash: sha256:147cc80cd3edefe40477483d9302c67624e3f215459f047746e0c2038ff
 
 首先开发者需要考虑应用是否需要支持悬浮窗/分屏能力，如果确定应用需要支持悬浮窗/分屏能力，则需要考虑布局适配问题，进行布局一多适配。在一些特殊的场景下，比如沉浸模式下，顶部窗口控制条遮挡住了重要信息或者重叠区域有事件需要响应的时候，需要考虑控制条的避让适配；横向游戏和视频需要考虑横向悬浮窗适配。开发者可以参考下面的流程图进行智慧多窗适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/vkcYt6-1TLiqMSyuOyZ7AA/zh-cn_image_0000002193851392.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Yf6RBN-0TrGu0xx9CI6VJQ/zh-cn_image_0000002193851392.png "点击放大")
 
 ### 配置声明支持智慧多窗
 
@@ -50,15 +50,15 @@ content_hash: sha256:147cc80cd3edefe40477483d9302c67624e3f215459f047746e0c2038ff
 
 关于不同设备悬浮窗宽高比、应用分屏窗口高度比例详细请参见[应用布局适配智慧多窗](../harmonyos-guides/multi-window-layout-adapt.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/zwzFt5znRNK3oG975DcrZQ/zh-cn_image_0000002229451269.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/HrEnY5ZGQcy49vjgEjr42w/zh-cn_image_0000002229451269.png "点击放大")
 
-针对应用进入悬浮窗/分屏出现的页面内容截断、挤压、堆叠等问题，开发者可以参考[一次开发，多端部署](bpta-multi-device-overview.md)中关于页面开发的[多设备界面开发](bpta-multi-device-page.md)，通过[自适应布局](bpta-multi-device-adaptive-layout.md)和[响应式布局](bpta-multi-device-responsive-layout.md)**，**来使应用自适应窗口的大小变化。例如示例[布局适配问题](bpta-multi-window-practice.md#section3687216112915)节：界面被截断，无法上下滑动，使用了一多的[延伸能力](bpta-multi-device-adaptive-layout.md#延伸能力)。
+针对应用进入悬浮窗/分屏出现的页面内容截断、挤压、堆叠等问题，开发者可以参考[一次开发，多端部署概览](bpta-multi-device-overview.md)中关于页面开发的[多设备界面开发](bpta-multi-device-page.md)，通过[自适应布局](bpta-multi-device-adaptive-layout.md)和[响应式布局](bpta-multi-device-responsive-layout.md)**，**来使应用自适应窗口的大小变化。例如示例[布局适配问题](bpta-multi-window-practice.md#section3687216112915)节：界面被截断，无法上下滑动，使用了一多的[延伸能力](bpta-multi-device-adaptive-layout.md#延伸能力)。
 
 ### 沉浸模式下顶部窗口控制条避让适配
 
 沉浸式布局是指应用布局不避让状态栏、导航栏以及智慧多窗顶部横条，这可能发生组件与顶部横条的重叠，导致文字遮挡、点击事件冲突等情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/16zxJiL9SOih7FUNq0zFmw/zh-cn_image_0000002229336757.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/XMbiusU7SImKxC9MWNYKGg/zh-cn_image_0000002229336757.png "点击放大")
 
 顶部横条的避让可通过以下两种方式适配，具体可以参考[顶部窗口控制条避让适配智慧多窗](../harmonyos-guides/multi-window-controlbar-adapt.md)。
 
@@ -89,7 +89,7 @@ content_hash: sha256:147cc80cd3edefe40477483d9302c67624e3f215459f047746e0c2038ff
 
 preferMultiWindowOrientation属性主要标识当前UIAbility多窗布局方向，具体可以参考[应用声明支持智慧多窗](../harmonyos-guides/multi-window-support.md)中关于preferMultiWindowOrientation的属性的描述**。**当设置preferMultiWindowOrientation属性为“landscape\_auto”表示多窗布局动态可变为横向，需要配合API（[enableLandscapeMultiWindow](../harmonyos-references/arkts-apis-window-window.md#enablelandscapemultiwindow12) / [disableLandscapeMultiWindow](../harmonyos-references/arkts-apis-window-window.md#disablelandscapemultiwindow12)）使用，建议视频类应用配置，视频播放界面适配横屏悬浮窗效果图如下，具体使用可以参考：[横向悬浮窗适配问题](bpta-multi-window-practice.md#section4595191593711)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Nl5QMNL-R7uUDkCB_At6pQ/zh-cn_image_0000002193851396.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/36zTvJgtS0udSTOuNgfvpQ/zh-cn_image_0000002193851396.gif "点击放大")
 
 ## 常见问题
 
@@ -109,7 +109,7 @@ preferMultiWindowOrientation属性主要标识当前UIAbility多窗布局方向�
 
    应用分屏后内容显示不全，无法通过上下滑动展示未显示的内容。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/OarW75twRgG0QXij6_RvEQ/zh-cn_image_0000002229336817.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Rp2JvlXjTNCpSA1O8CNRdQ/zh-cn_image_0000002229336817.gif "点击放大")
 
    优化前示例代码如下：
 
@@ -179,14 +179,14 @@ preferMultiWindowOrientation属性主要标识当前UIAbility多窗布局方向�
 
    优化后效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/8C5JKZvETOm625AQgOKJnA/zh-cn_image_0000002194010960.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/pr5pW9mQREK9o0pkLd9ojw/zh-cn_image_0000002194010960.gif "点击放大")
 2. Xcomponent视频画面在分屏页面显示不全。
 
    **问题现象**
 
    视频播放界面分屏后，视频被截断显示不全。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/cf9iCsT-Q9mNAUBm9AVkVg/zh-cn_image_0000002229451293.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/6uwgcrn_TG2XD8GDZFHirA/zh-cn_image_0000002229451293.gif "点击放大")
 
    **可能原因**
 
@@ -245,14 +245,14 @@ preferMultiWindowOrientation属性主要标识当前UIAbility多窗布局方向�
 
    优化后效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/D1dEHIUWSLuEBjXSHfl_SA/zh-cn_image_0000002193851424.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/_aDHCcA3TuiA24mGrSQseQ/zh-cn_image_0000002193851424.gif "点击放大")
 3. Video组件在分屏状态下截断。
 
    **问题现象**
 
    Video组件在分屏状态下，视频播放界面被截断显示不全。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/dMdTxusESXCIzABHnu02KA/zh-cn_image_0000002193851404.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/P2wLIHEhSvm6sjd_JYGUgw/zh-cn_image_0000002193851404.gif "点击放大")
 
    优化前示例代码如下：
 
@@ -304,14 +304,14 @@ preferMultiWindowOrientation属性主要标识当前UIAbility多窗布局方向�
 
    优化后效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/u_SbNt7XT8-vsIQQEDUGSg/zh-cn_image_0000002229336797.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/NuxM30NATx2EjovWY2zDsg/zh-cn_image_0000002229336797.gif "点击放大")
 4. 子组件超出父组件的范围。
 
    **问题现象**
 
    子组件显示超出了父组件范围，无法通过上下滑动显示完全。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/dqBu0ZrdTkCvRXyI1t5OkQ/zh-cn_image_0000002229336773.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/4O_CKE3dSqqvANbSiN2RMg/zh-cn_image_0000002229336773.gif "点击放大")
 
    优化前示例代码如下：
 
@@ -378,14 +378,14 @@ preferMultiWindowOrientation属性主要标识当前UIAbility多窗布局方向�
 
    优化后效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Y56S-sPJQ8yQpT-p96L9CA/zh-cn_image_0000002194010984.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LKUkErWNSsyobwDbsGvMoA/zh-cn_image_0000002194010984.gif "点击放大")
 5. Image组件在分屏状态下显示异常。
 
    **问题现象**
 
    应用进入分屏后，随着窗口变小，Image组件显示不全，页面布局显示异常。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/LRA12qX0SUmJxq0UfeoZAw/zh-cn_image_0000002194011000.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/6RXqJ2eOQwaQ01PTU3xjXg/zh-cn_image_0000002194011000.gif "点击放大")
 
    优化前示例代码如下：
 
@@ -471,14 +471,14 @@ preferMultiWindowOrientation属性主要标识当前UIAbility多窗布局方向�
 
    优化后效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/PXXGd74jSJ6k7qUufFZKMw/zh-cn_image_0000002193851432.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/mRaY41k8SOe1lIBNd8W-lg/zh-cn_image_0000002193851432.gif "点击放大")
 6. 弹窗布局错乱。
 
    **问题现象**
 
    进入分屏后弹窗页面内容显示错乱，底部按钮挡住弹窗内容。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/0ELrpdFaSjqiK1oh_4C1mQ/zh-cn_image_0000002229336789.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/pg5siuQNTfOqCYOkgyeD9A/zh-cn_image_0000002229336789.gif "点击放大")
 
    优化前示例代码如下：
 
@@ -566,7 +566,7 @@ preferMultiWindowOrientation属性主要标识当前UIAbility多窗布局方向�
 
    优化后效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/0_DayOE8Sf-ZqR3hDcMIbA/zh-cn_image_0000002229336769.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/CylxxtBTQAGY9F-d1JL6Wg/zh-cn_image_0000002229336769.gif "点击放大")
 
 ### 沉浸模式下顶部窗口控制条避让问题
 
@@ -576,7 +576,7 @@ preferMultiWindowOrientation属性主要标识当前UIAbility多窗布局方向�
 
 应用分屏后视图和悬浮窗顶部重合的区域无法响应操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/A9Gq26yLTHWdo0tgzAikeQ/zh-cn_image_0000002193851420.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ll6Bx8yrQGqQDh3t9jFGhQ/zh-cn_image_0000002193851420.gif "点击放大")
 
 优化前示例代码如下：
 
@@ -639,7 +639,7 @@ export struct Question7Incorrect {
 
 **解决措施**
 
-通过[getWindowAvoidArea](../harmonyos-references/arkts-apis-window-window.md#getwindowavoidarea9)接口可获取屏幕顶部需要规避的矩阵区域topRect，获取到该值后应用可对应做布局避让。同时可通过[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)监听系统规避区域变化以进行布局的动态调整。具体可以参考[顶部窗口控制条避让适配智慧多窗](../harmonyos-guides/multi-window-controlbar-adapt.md)，优化后示例代码如下：
+通过[getWindowAvoidArea()](../harmonyos-references/arkts-apis-window-window.md#getwindowavoidarea9)接口可获取屏幕顶部需要规避的矩阵区域topRect，获取到该值后应用可对应做布局避让。同时可通过[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)监听系统规避区域变化以进行布局的动态调整。具体可以参考[顶部窗口控制条避让适配智慧多窗](../harmonyos-guides/multi-window-controlbar-adapt.md)，优化后示例代码如下：
 
 ```screen
 @Component
@@ -690,7 +690,7 @@ export struct Question7Correct {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/j1ykEqZOQD2cScKE9_FB8g/zh-cn_image_0000002229451253.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/28YcdpQNR1yE1K9ksk0xgw/zh-cn_image_0000002229451253.gif "点击放大")
 
 ### 横向悬浮窗适配问题
 
@@ -700,7 +700,7 @@ export struct Question7Correct {
 
 视频或者游戏类应用在横屏模式下，开启悬浮窗后，页面没有适配横屏，导致内容显示不全或者观看体验不好。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/tkFt5qWIQreTwLbFBRvlog/zh-cn_image_0000002229451281.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/6xRex9ZWSkSjyD-LvlE0Lg/zh-cn_image_0000002229451281.gif "点击放大")
 
 优化前示例代码如下：
 
@@ -783,13 +783,17 @@ export struct Question8Correct {
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/I2pWFxFnTAKwhrFIlso8aQ/zh-cn_image_0000002194010976.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/_1uFALCwT9C7XB8Hg_HCVg/zh-cn_image_0000002194010976.gif "点击放大")
 
 ## 总结
 
-智慧多窗中的悬浮窗和分屏能力是系统提供的，开发者不需要人为进行功能开发，但是开发者需要重点关注是悬浮窗/分屏模式下的应用的布局适配问题。下面总结了一些常见的布局适配经验：
+智慧多窗中的悬浮窗和分屏能力是系统提供的，开发者不需要人为进行功能开发，但开发者需重点关注悬浮窗/分屏模式下应用的布局适配问题。下面总结了一些常见的布局适配经验：
 
 * 如果应用不需要使用悬浮窗/分屏能力，建议只声明supportWindowMode的值为“fullscreen”。
 * 开发者可以参考[一次开发，多端部署概览](bpta-multi-device-overview.md)中关于页面开发的[多设备界面开发](bpta-multi-device-page.md)，避免应用在使用悬浮窗/分屏能力时，页面出现截断、挤压、堆叠等现象。
 * 通过[setWindowLayoutFullScreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)方法来动态的设置应用是否沉浸，从而确认是否规避状态栏。
 * 在悬浮窗模式下，通过[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)方法来获取状态栏高度，使应用内容区域规避状态栏。
+
+## 示例代码
+
+* [基于ArkUI实现智慧多窗界面适配](https://gitcode.com/HarmonyOS_Samples/MultiWindowPractice)

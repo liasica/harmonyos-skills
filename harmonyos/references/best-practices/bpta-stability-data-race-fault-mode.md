@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 数据竞争异常访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 数据竞争异常访问故障模式说明
 category: best-practices
-scraped_at: 2026-10-16T07:06:51+08:00
+scraped_at: 2026-10-29T08:03:26+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:ae444d94f8aeec1f01ea79801ccc7fdc7c9036bd96420bf5d037abf86257c3de
+content_hash: sha256:7f08a5b5d5e0b4c5e632295fed99f8075f11eba36e93d2e21b6a5a2e24bfe668
 ---
 
 多个线程在未正确同步的情况下同时访问共享资源，可能引发数据竞争和并发访问异常。多个线程对同一数据进行读写操作时，可能导致数据状态异常或程序运行结果不确定，严重时甚至引发应用崩溃。由于线程执行时序导致该问题通常具有偶现性，难以稳定复现。[使能TSan](bpta-stability-tsan-detection.md#section14181102916475)（ThreadSanitizer）后，可记录冲突访问线程及其调用栈。本文结合典型案例，展示此类问题的日志特征与定位方法，具体包括：
@@ -97,7 +97,7 @@ content_hash: sha256:ae444d94f8aeec1f01ea79801ccc7fdc7c9036bd96420bf5d037abf8625
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，分别对日志中线程T56和线程T58的调用栈帧（重点关注各线程调用栈中的 #0、#1 帧）地址信息进行符号解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/oFQxvOPuS7GHc9u3hyVjZA/zh-cn_image_0000002699732134.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/bRIK2OlVT-iSkY86M45mzw/zh-cn_image_0000002699732134.png)
 
    1. 代码第143行：创建多个线程共享访问全局变量DataRaceGlobal。
    2. 代码第160行：执行DataRaceSet1()函数，通过字符指针修改该地址对应的内存内容，该操作本质上是对共享变量执行写操作。
@@ -195,7 +195,7 @@ content_hash: sha256:ae444d94f8aeec1f01ea79801ccc7fdc7c9036bd96420bf5d037abf8625
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/CWjZs4dQS2mu8jndiFAXRg/zh-cn_image_0000002729491391.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/lIsH6C6bSdCoNpTkMfWxWA/zh-cn_image_0000002729491391.png "点击放大")
 
    1. 代码第126行：线程1执行obj->F()，通过基类指针调用派生类虚函数。由于虚函数调用依赖对象内部的 vptr，需要读取对象内存中的虚函数表指针信息。
    2. 代码第132行：线程2触发对象析构流程，对象销毁过程中会访问并修改对象内部状态，同时释放对象占用的内存资源。 线程1在调用虚函数时访问对象内部vptr，线程2同时执行销毁对象操作，两个线程对同一个内部数据产生并发访问。由于对象生命周期管理过程中缺少同步保护，导致对象访问和对象销毁之间产生数据竞争，检测到data race on vptr异常。
@@ -265,7 +265,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/hb-7NErcQCuv2MaVqpR3aw/zh-cn_image_0000002699892018.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/4FmL2uqbRjylwNrrkh3kTg/zh-cn_image_0000002699892018.png "点击放大")
 
    1. 代码第236行：线程1调用非线程安全容器std::vector的读写操作push\_back()。
    2. 代码第237行：线程2调用非线程安全容器std::vector的读写操作push\_back()，并发修改vector内部的相关内容，产生数据竞争，导致容器状态异常。
@@ -335,7 +335,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ZoQgFJ-TTlqDJEcQrCb2DA/zh-cn_image_0000002729611345.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/kk8V62XkTLi2MWkPJimlOA/zh-cn_image_0000002729611345.png "点击放大")
 
    1. 代码第279行：线程1依赖容器迭代器进行读取。
    2. 代码第280行：线程2修改容器结构，但未使用任何同步机制保证访问顺序。
@@ -435,7 +435,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/oEsU_gPzRf-fiPaA3ks-UQ/zh-cn_image_0000002699732136.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/bDUGOzEqRSCfaWahzdLNtQ/zh-cn_image_0000002699732136.png "点击放大")
 
    1. 代码第88行：Previous write of size 8栈顶位置。
    2. 代码第95行：Write of size 4栈顶位置。多线程共享原始指针mem，虽然通过互斥锁保护了释放和访问操作，但未建立对象生命周期管理机制。释放线程执行free()后，其他线程仍可能通过旧指针访问已经释放的内存区域，导致内存释放后使用。
@@ -508,7 +508,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，对调用栈中的#0、#1和#2栈帧信息进行符号解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/f--ruSX5S3WzIVakJ7Lkgg/zh-cn_image_0000002729491393.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/BiJ41ffVQmOMuI0c8FrF7g/zh-cn_image_0000002729491393.png)
 
    第63行代码表示信号处理函数破坏主程序原本的errno状态，errno是用于保存最近一次系统调用或库函数失败原因的错误码。如果信号处理函数修改了errno，会覆盖主程序原本有效的错误信息。
 
@@ -579,7 +579,7 @@ MyHandler中errno = 1的赋值破坏了错误码errno的设计用途，导致被
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析#1，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/UTRuuH3ZRc2qymPKy14qyQ/zh-cn_image_0000002699892020.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/HicoSyKdSmKNd5yJH0JgOA/zh-cn_image_0000002699892020.png "点击放大")
 
    1. 代码第56行：调用了malloc()函数。
    2. 代码第58行：调用了free()函数，这两个函数不是异步信号安全函数，因此在信号处理上下文中调用会导致未定义行为。
@@ -664,7 +664,7 @@ MyHandler中errno = 1的赋值破坏了错误码errno的设计用途，导致被
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析#1，#2定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/0KIlziCgRr67oNoUE17f_w/zh-cn_image_0000002729611347.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/sbhA5g3KQFOAnkcY5aL6lA/zh-cn_image_0000002729611347.png "点击放大")
 
    1. 代码第43行：执行第一次local\_lock.unlock()后，互斥锁已处于未锁定状态。
    2. 代码第44行：第二次调用local\_lock.unlock()时，pthread\_mutex\_unlock()尝试解锁一个未被任何线程持有的互斥锁，导致了非法重复解锁问题。

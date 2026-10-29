@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-communica
 title: 多设备即时通讯界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备即时通讯界面
 category: best-practices
-scraped_at: 2026-10-16T07:06:41+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecfadc5a
+scraped_at: 2026-10-29T08:03:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:ab5ff47a59f0c11d92d6535ac261674c8dd8e05ae4bb8fec163b174ee1594793
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecf
 
 即时通讯应用的UX设计可参考社交通讯类多设备响应式设计指南的[社交通讯类](../design-guides/responsive-design-examples2-0000001793536901.md)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/qCud1lDPSoiMzLbJVRbi2g/zh-cn_image_0000002579689282.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/chnAWEG6RKiN1NpveKxpoA/zh-cn_image_0000002579689282.png "点击放大")
 
 ## 工程管理
 
@@ -115,10 +115,10 @@ content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecf
   适配设备支持全屏、分屏、悬浮窗和自由窗口模式，具体参见[窗口模式](bpta-multi-device-window-mode.md)。其中，分屏模式与悬浮窗通常无特殊设计，可通过系统方式进入。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏、分屏、悬浮窗、自由窗口模式下的布局。
 * 窗口方向
 
-  可以通过[window.setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)设置窗口方向显示类型。窗口方向包含四种类型，分别是竖屏、横屏、反向竖屏和反向横屏。相关内容可参考[窗口方向](bpta-multi-device-window-direction.md)。在即时通讯应用中，通过module.json5配置文件，建议设置为FOLLOW\_DESKTOP。
+  可以通过[setPreferredOrientation](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)设置窗口方向显示类型。窗口方向包含四种类型，分别是竖屏、横屏、反向竖屏和反向横屏。相关内容可参考[窗口方向](bpta-multi-device-window-direction.md)。在即时通讯应用中，通过module.json5配置文件，建议设置为FOLLOW\_DESKTOP。
 * 窗口沉浸式
 
-  根据UX设计，需要实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者使用组件级的沉浸方案[实现沉浸效果](bpta-multi-device-window-immersive.md#section180431120426)，同时需要进行动态安全区避让，确保沉浸式显示效果。自由窗口模式下使用[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)设置隐藏标题栏，仅保留右上角三键。此时，应用页面拓展至标题栏区域，实现沉浸式显示效果。
+  根据UX设计，需要实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者使用组件级的沉浸方案[实现沉浸效果](bpta-multi-device-window-immersive.md#section180431120426)，同时需要进行动态安全区避让，确保沉浸式显示效果。自由窗口模式下使用[setWindowDecorVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)设置隐藏标题栏，仅保留右上角三键。此时，应用页面拓展至标题栏区域，实现沉浸式显示效果。
 
 ### 消息页
 
@@ -134,9 +134,9 @@ content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecf
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 顶部标题栏 | 使用响应式组件[HdsNavDestination](../harmonyos-references/ui-design-hdsnavdestination.md)设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)属性实现。在不同的设备宽度下组件自适应占满一屏。 |
-| 2 | 消息列表 | 使用响应式组件[List](../harmonyos-references/ts-container-list.md)实现。通过[响应式环境变量](../harmonyos-references/responsive-env-system-property.md)监听窗口尺寸布局断点（[windowsizelayoutbreakpointinfo](../harmonyos-references/js-apis-arkui-observer.md#windowsizelayoutbreakpointinfo22)）变化，动态调整列表边距。 |
-| 3 | 底部导航栏 | 使用响应式组件[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
+| 1 | 顶部标题栏 | 使用响应式组件[HdsNavDestination (导航子页面容器)](../harmonyos-references/ui-design-hdsnavdestination.md)设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)属性实现。在不同的设备宽度下组件自适应占满一屏。 |
+| 2 | 消息列表 | 使用响应式组件[List](../harmonyos-references/ts-container-list.md)实现。通过[响应式环境变量](../harmonyos-references/responsive-env-system-property.md)监听窗口尺寸布局断点（[WindowSizeLayoutBreakpointInfo](../harmonyos-references/js-apis-arkui-observer.md#windowsizelayoutbreakpointinfo22)）变化，动态调整列表边距。 |
+| 3 | 底部导航栏 | 使用响应式组件[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
 | 4 | 消息详情 | 使用响应式组件[Scroll](../harmonyos-references/ts-container-scroll.md)实现。通过设置[layoutWeight](../harmonyos-references/ts-universal-attributes-size.md#layoutweight)属性，当设备高度小于内容高度时，可滑动查看消息信息。 |
 | 5 | 消息输入区域 | 使用沿水平方向布局容器组件[Row](../harmonyos-references/ts-container-row.md)嵌套媒体组件[image](../atomic-ascf/components-image.md)实现。通过设置[layoutWeight](../harmonyos-references/ts-universal-attributes-size.md#layoutweight)属性，消息输入框在不同断点下自适应拉伸。 |
 
@@ -154,15 +154,15 @@ content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecf
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 顶部标题栏 | 使用响应式组件[HdsNavDestination](../harmonyos-references/ui-design-hdsnavdestination.md)设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)属性实现。在不同的设备宽度下组件自适应占满一屏。 |
+| 1 | 顶部标题栏 | 使用响应式组件[HdsNavDestination (导航子页面容器)](../harmonyos-references/ui-design-hdsnavdestination.md)设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)属性实现。在不同的设备宽度下组件自适应占满一屏。 |
 | 2 | 搜索栏 | 使用沿水平方向布局容器组件[Row](../harmonyos-references/ts-container-row.md)实现。通过设置[layoutWeight](../harmonyos-references/ts-universal-attributes-size.md#layoutweight)属性，搜索框在不同断点下自适应拉伸。通过监听断点变化，实现响应式排列。 |
 | 3 | 通讯录列表 | 使用堆叠容器[Stack](../harmonyos-references/ts-container-stack.md)嵌套响应式组件[List](../harmonyos-references/ts-container-list.md)和[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)实现。通过监听断点变化，动态调整列表边距。 |
-| 4 | 底部导航栏 | 使用响应式组件[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
+| 4 | 底部导航栏 | 使用响应式组件[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
 | 5 | 联系人主页 | 使用响应式组件[Scroll](../harmonyos-references/ts-container-scroll.md)嵌套网格容器[Grid](../harmonyos-references/ts-container-grid.md)实现。通过Grid的[aspectRatio](../harmonyos-references/ts-universal-attributes-layout-constraints.md#aspectratio)约束和设置image组件[objectFit](../harmonyos-references/ts-basic-components-image.md#objectfit)，使得Grid保持3列并横向自适应一屏。 |
 
 ### 朋友圈页
 
-即时通讯应用朋友圈页主要用于展示朋友圈列表，满足查看朋友动态分享的需求。根据功能设计，将朋友圈页相关内容划分为4个区域，效果如下：
+即时通讯应用朋友圈页主要用于展示朋友圈列表，满足查看朋友动态分享的需求。根据功能设计，将朋友圈页相关内容划分为3个区域，效果如下：
 
 | 横向断点 | sm | md | lg |
 | --- | --- | --- | --- |
@@ -176,7 +176,7 @@ content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecf
 | --- | --- | --- |
 | 1 | 顶部标题栏 | 使用响应式组件[HdsNavDestination](../harmonyos-references/ui-design-hdsnavdestination.md)设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)属性实现。在不同的设备宽度下组件自适应占满一屏。 |
 | 2 | 朋友圈列表 | 使用响应式组件[List](../harmonyos-references/ts-container-list.md)嵌套网格容器[Grid](../harmonyos-references/ts-container-grid.md)实现。通过Grid的[aspectRatio](../harmonyos-references/ts-universal-attributes-layout-constraints.md#aspectratio)约束和设置image组件[objectFit](../harmonyos-references/ts-basic-components-image.md#objectfit)，使得Grid保持3列并横向自适应一屏。 |
-| 3 | 底部导航栏 | 使用响应式组件[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
+| 3 | 底部导航栏 | 使用响应式组件[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
 
 ## 电脑端页面
 
@@ -186,7 +186,7 @@ content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecf
 
 即时通讯应用消息页主要用于展示消息列表、消息详情，满足用户聊天需求。根据功能设计，将消息页相关内容划分为5个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/oZRxB9pJRVOGRgP3zpTUQQ/zh-cn_image_0000002610129075.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/1TdtGCNjRiSDIITqScJAgA/zh-cn_image_0000002610129075.png "点击放大")
 
 **界面开发**
 
@@ -204,7 +204,7 @@ content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecf
 
 即时通讯应用通讯录页主要用于展示通讯录列表、联系人主页，满足查看联系人需求。根据功能设计，将通讯录页相关内容划分为5个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/FgYx0xBBRrC2nMFo3pTmVg/zh-cn_image_0000002610209169.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/8V2tEtiAS42i65-q_iFVpA/zh-cn_image_0000002610209169.png "点击放大")
 
 **界面开发**
 
@@ -222,7 +222,7 @@ content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecf
 
 即时通讯应用朋友圈页主要用于展示朋友圈列表，满足查看朋友动态分享的需求。根据功能设计，将朋友圈页相关内容划分为4个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/cwq8gLlrS96cv6pRc-RUvg/zh-cn_image_0000002579689290.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/a7mcH6FTTUmwV3pTN0xwXA/zh-cn_image_0000002579689290.png "点击放大")
 
 **界面开发**
 
@@ -231,7 +231,7 @@ content_hash: sha256:266c8c1adb335a230a91b2a376deb0adc6cd01883b4485065b2950f6ecf
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
 | 1 | PC设备左侧导航栏 | 使用侧边栏容器[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)实现。通过设置[showSidebar](../harmonyos-references/ts-container-sidebarcontainer.md#showsidebar)属性，确保侧边栏固定显示。 |
-| 2 | 系统自由多窗操作栏 | 使用[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)设置隐藏标题栏，仅保留右上角三键。 |
+| 2 | 系统自由多窗操作栏 | 使用[setWindowDecorVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)设置隐藏标题栏，仅保留右上角三键。 |
 | 3 | 朋友圈列表 | 复用移动端设备布局方案，同移动端[朋友圈页](multi-communication-app.md#section0352342123618)对应朋友圈列表布局实现方案一致。 |
 
 ## 示例代码

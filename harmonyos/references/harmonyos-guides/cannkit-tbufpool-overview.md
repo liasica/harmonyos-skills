@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tbufp
 title: 简介
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 内存管理与同步控制 > TBufPool > 简介
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:40:02+08:00
+scraped_at: 2026-10-29T07:57:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:62f53a4d4121102d69f58a4dc5a6de785af03db73378d1d1b6d6a65e2c44cdb6
+content_hash: sha256:b7e9dfe4076026bc9b60099b0b68f4e12e055b9617ff270de6c9a480a822a963
 ---
 
 TPipe可以管理全局内存资源，而TBufPool可以手动管理或复用Unified Buffer/L1 Buffer物理内存，主要用于多个stage计算中Unified Buffer/L1 Buffer物理内存不足的场景。
@@ -21,7 +21,7 @@ TPipe可以管理全局内存资源，而TBufPool可以手动管理或复用Unif
 
 **图1** BufPool资源池划分
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/oduoMoXCQd6ecPiw8VUJpQ/zh-cn_image_0000002771826880.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/pBS_H-z1Q0WmsUK7E0TrNg/zh-cn_image_0000002773905730.png)
 
 如图示的嵌套关系，最外层TBufPool(BufPool1与BufPool3)需要通过TPipe::InitBufPool申请并初始化，内层TBufPool(BufPool2)可以通过TBufPool::InitBufPool申请并初始化。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 创建ArkTS卡片
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 创建ArkTS卡片
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:00+08:00
+scraped_at: 2026-10-29T07:56:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4248378d20f2c3462ed716e48f4958e8e3a11a8c2e229722d4487525bc68113f
+content_hash: sha256:7cc564353a296b701b5fdb01fb5715658d59fa01c7d1e44dbe528359ade9d3ca
 ---
 
 ArkTS卡片有两种创建卡片包的方式。开发者在开发过程中任选其一即可。
@@ -24,7 +24,7 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 在DevEco Studio中，选择创建Application或Atomic Service工程，这两种都支持创建卡片。工程创建指导具体请参考[创建一个新的工程](ide-create-new-project.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/gQ8I6Km2QGOFOWuFewI_XQ/zh-cn_image_0000002771665718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/DCEEFc5YTt-hMb_6c8jEZg/zh-cn_image_0000002773904530.png)
 
 **说明** 
 
@@ -36,23 +36,23 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 * 选中entry目录单击右键选择【New】->【Service Widget】->【Dynamic Widget】。在API 10及以上 Stage模型的工程中，开发者可通过Service Widget菜单直接选择创建动态卡片（Dynamic Widget）或静态卡片（Static Widget）。创建卡片后，也可在卡片的[form\_config.json配置文件](arkts-ui-widget-configuration.md#配置文件字段说明)中，通过isDynamic参数修改卡片类型：isDynamic置空或赋值为“true”，则该卡片为[动态卡片](arkts-form-overview.md#动态卡片)；isDynamic赋值为"false"，则该卡片为[静态卡片](arkts-form-overview.md#静态卡片)。静态卡片和动态卡片切换之后用户交互实现也需要修改，具体参考ArkTS卡片概述中的[动态卡片](arkts-form-overview.md#动态卡片)和[静态卡片](arkts-form-overview.md#静态卡片)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/3XlCO0GvQhmt6MUj0BMUQQ/zh-cn_image_0000002800985575.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/zkUHFe9oSweK3wahDVQlrQ/zh-cn_image_0000002803264315.png)
 * 选择模板后，点击【Next】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/hkkIydZKRwqolpw1bQ4-Hw/zh-cn_image_0000002771825686.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/UMw2_mFoQ3eq4uuoYWwv0Q/zh-cn_image_0000002803224225.png)
 * 在选择卡片的开发语言类型（Language）时，选择ArkTS选项。选择卡片支持的外观规格（Support dimension）时，选择期望的卡片尺寸，然后选择默认的外观规格（Default dimension），最后点击“Finish”，即可完成ArkTS卡片创建。详细的卡片外观规格可参考[form\_config.json](arkts-ui-widget-configuration.md#配置文件字段说明)配置文件，后续也可以在form\_config.json配置文件中修改卡片规格。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/wSPgmbr7RWaGdl9lTTYKEg/zh-cn_image_0000002801105499.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/DkCvfKrBSyaj5ZtyZIIZFA/zh-cn_image_0000002774064506.png)
 
   建议根据实际使用场景命名卡片名称，ArkTS卡片创建完成后，工程中会新增如下卡片相关文件：卡片生命周期管理文件（EntryFormAbility.ets）、卡片页面文件（WidgetCard.ets）和卡片配置文件（form\_config.json）。填写卡片配置之后点击【Finish】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/VAFnzzcFQ86iX65XlfLquw/zh-cn_image_0000002771665720.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Tzg9Guq3Ttqe9H2VbW_QXA/zh-cn_image_0000002773904532.png)
 
 ### 工程结构介绍
 
 **图1** ArkTS卡片工程目录、相关模块
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/qafVL42QRUOBZ-21VwYhtA/zh-cn_image_0000002800985577.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/0AhZiiNnTweEZ1RtWUDUqw/zh-cn_image_0000002803264317.png)
 
 * [FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)：卡片扩展模块，提供卡片创建、销毁、刷新等生命周期回调。
 * [FormExtensionContext](../harmonyos-references/js-apis-inner-application-formextensioncontext.md)：FormExtensionAbility的上下文环境，提供FormExtensionAbility具有的接口和能力。
@@ -76,7 +76,7 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 在DevEco Studio中，选择创建Application或Atomic Service工程，这两种都支持创建卡片。工程创建指导具体请参考[创建一个新的工程](ide-create-new-project.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Mh8mz_SOQHuX2weuKCYxpQ/zh-cn_image_0000002771665718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/_uLpjcV-StiDx5Q9pqqx6w/zh-cn_image_0000002773904530.png)
 
 **说明** 
 
@@ -86,13 +86,13 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 * 选中entry目录单击右键选择【New】->【Service Widget】->【Dynamic Widget(Standalone)】。在Service Widget菜单可直接选择创建独立包的动态卡片（Dynamic Widget(standalone)）或静态卡片（Static Widget(standalone)）。创建服务卡片后，也可以在卡片的[form\_config.json配置文件](arkts-ui-widget-configuration.md#配置文件字段说明)中，通过isDynamic参数修改卡片类型：isDynamic置空或赋值为“true”，则该卡片为[动态卡片](arkts-form-overview.md#动态卡片)；isDynamic赋值为"false"，则该卡片为[静态卡片](arkts-form-overview.md#静态卡片)。静态卡片和动态卡片切换之后用户交互实现也需要修改，具体参考ArkTS卡片概述中的[动态卡片](arkts-form-overview.md#动态卡片)和[静态卡片](arkts-form-overview.md#静态卡片)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/i9nw3tobQt6hC479Kpflow/zh-cn_image_0000002771825688.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/wcIl5e3wQRCCJ1GFt_O4vA/zh-cn_image_0000002803224227.png)
 * 选择模板后，点击【Next】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/62gcaeI7T_yanB3ycionvQ/zh-cn_image_0000002771825686.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/BVQaPTf4SzWPM0IjNidJmA/zh-cn_image_0000002803224225.png)
 * 填写卡片配置之后点击【Finish】。卡片创建成功后，entry包中包含应用和卡片后端能力；library包中包含卡片UI侧能力。entry模块下的module.json5配置文件中的formWidgetModule字段需关联library模块，library模块下的module.json5配置文件中的formExtensionModule字段需关联entry模块，以实现卡片包和应用包相互关联。创建完成后，会自动生成配置文件并配置，后续也可以按照[卡片配置文件](arkts-ui-widget-configuration.md)修改配置。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ErHBNo4eTUC5jSpj6TBVFA/zh-cn_image_0000002801105501.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/pivnCgANQsWhSg_9T5aq9Q/zh-cn_image_0000002774064508.png)
 
 ### 工程结构介绍
 
@@ -100,7 +100,7 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 **图2** 独立卡片包工程目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/BQsOhincQFWPw3AL8yrBWQ/zh-cn_image_0000002771665722.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/MB7PIIp2SSu1ZdoF6ZeWZA/zh-cn_image_0000002773904534.png)
 
 **说明** 
 

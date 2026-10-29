@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-dialog
 title: 使用Web组件显示网页弹框
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件显示网页弹框
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:57+08:00
+scraped_at: 2026-10-29T07:56:40+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7bc6221456fac5834221060ba36946d21526df1127d3d726b51387b09381b42f
+content_hash: sha256:67115a6f7e180cc67a91008a2e270dd86e9521e869fd1972cf0619e2aed37eed
 ---
 
 在HTML中，可以使用JavaScript创建三种类型的弹框：警告框window.alert(message)、确认框window.confirm(message)和提示框window.prompt(message, defaultValue)。这些弹框可以用于向用户传递信息、确认操作或请求输入。
@@ -175,7 +175,7 @@ window.alert()用于显示一个包含可选信息的对话框。警告框用于
   </html>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/5vkfMDCHTc2U9kU-qkd6rA/zh-cn_image_0000002771825604.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/4xrR9o9uQFWwS7-slUgB9w/zh-cn_image_0000002803224143.gif)
 
 ## 实现Confirm弹框
 
@@ -372,7 +372,7 @@ window.confirm()用于显示一个包含可选消息的对话框，并等待用�
   </html>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/3iiw2uqcS0Ki9VnfUAPa7A/zh-cn_image_0000002801105417.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/fRpNYmXGSE69-6v1m_RjqQ/zh-cn_image_0000002774064424.gif)
 
 ## 实现Prompt弹框
 
@@ -530,4 +530,4 @@ window.prompt()用于显示一个对话框，并等待用户提交文本或取�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/u7IiPf9YQoimhfWYlvM2SA/zh-cn_image_0000002771665638.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/eFElypq7SuepR-TRYJJZDg/zh-cn_image_0000002773904450.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持统一拖拽
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 支持统一拖拽
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:51+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:256dc03053d0789d68661420f7e67aa949ff3ac3debe9b1376abd9f45edaa2c7
+scraped_at: 2026-10-29T07:56:33+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:fc3104a7c3b05724bc7856e166c952a9ee8a743833f36575fd8f7a220df5af18
 ---
 
 统一拖拽提供了一种通过鼠标或手势触屏传递数据的机制，即从一个组件位置拖出（drag）数据并将其拖入（drop）到另一个组件位置，以触发响应。在这一过程中，拖出方提供数据，而拖入方负责接收和处理数据。这一操作使用户能够便捷地移动、复制或删除指定内容。
@@ -29,7 +29,7 @@ content_hash: sha256:256dc03053d0789d68661420f7e67aa949ff3ac3debe9b1376abd9f45ed
 
 手势拖拽（手指/手写笔）触发拖拽流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/FXB6uHcESBOj994POb_1OA/zh-cn_image_0000002801105113.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/4oQSyHkoTw6ftn4sZI7AsQ/zh-cn_image_0000002774064120.png)
 
 ### ​鼠标拖拽
 
@@ -90,7 +90,7 @@ content_hash: sha256:256dc03053d0789d68661420f7e67aa949ff3ac3debe9b1376abd9f45ed
 
 拖拽背板图当前支持设置透明度、圆角、阴影和模糊，具体用法见[拖拽控制](../harmonyos-references/ts-universal-attributes-drag-drop.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Uln6bE-9TGKDGqmRAEPJEQ/zh-cn_image_0000002771665334.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/pzC191GGTQ61ftIRy339IQ/zh-cn_image_0000002773904146.png)
 
 **约束限制：**
 
@@ -468,7 +468,7 @@ export struct DefaultDrag {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/3fr6yxD0R1SREe-gOpR2Xw/zh-cn_image_0000002800985191.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/PdfA01YVTe-A2GSbbNqxJQ/zh-cn_image_0000002803263931.gif)
 
 ### 多选拖拽适配
 
@@ -753,7 +753,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/JTRPOyhWSReLBwYIF_zjJQ/zh-cn_image_0000002771825300.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/831fe7eCREqgkD-IEHO-_g/zh-cn_image_0000002803223841.gif)
 
 ### 适配自定义落位动效
 
@@ -905,7 +905,7 @@ export struct DropAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ClWgwHcNTsWzZeWKrKgyrw/zh-cn_image_0000002801105115.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/cMBnVSS_T3KafZJg5ztwPQ/zh-cn_image_0000002774064122.gif)
 
 ### 处理大批量数据
 
@@ -1200,7 +1200,7 @@ struct GridEts {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/VzJl2GguRJynocFDhjjo1A/zh-cn_image_0000002771665336.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/DnW6nikLTIGy3ufAPTEgSQ/zh-cn_image_0000002773904148.gif)
 
 ## 支持悬停检测
 
@@ -1215,7 +1215,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 除了实现视图切换跳转功能，该能力也可用于特定视图的激活。例如，在用户将一段文本拖拽至按钮上停留后，可激活一个文本输入框。用户随后可将所拖拽文本移动至该输入框上方释放，触发搜索结果展示，实现单手高效完成整个操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/IizOiuCRQaiYQW1GL94-Jg/zh-cn_image_0000002800985193.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/8w0W3XTVQ2iE81hk0a8SmA/zh-cn_image_0000002803263933.png)
 
 ### 触发原理
 
@@ -1223,7 +1223,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 Spring Loading的整个过程包含三个阶段：悬停检测 -> 回调通知 -> 结束。在结束之前，如果用户重新开始移动，会自动中断Spring Loading，并通知应用取消。如果在悬停检测期间移动，且尚未进入Spring Loading状态，则不会触发取消通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/DnSfU2IAS6Sz1K-vrByAyQ/zh-cn_image_0000002771825302.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/CPbyjWvRQISLhZk3GL7gpA/zh-cn_image_0000002803223843.png)
 
 应用通过回调接收当前的状态，动态改变UI显示，从而达到用户提醒的效果。
 
@@ -1555,7 +1555,7 @@ export struct SpringLoadingPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/ibT7wK4eT_SyMbv3gM87sw/zh-cn_image_0000002801105117.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/c9B51LTDT3-k-Y9sW0n4ng/zh-cn_image_0000002774064124.gif)
 
 ## 示例代码
 

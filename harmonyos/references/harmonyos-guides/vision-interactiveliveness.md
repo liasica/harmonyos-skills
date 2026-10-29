@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-intera
 title: 人脸活体检测
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 人脸活体检测
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:40:15+08:00
+scraped_at: 2026-10-29T07:58:14+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:d89306cedcf1c377d5183bc3c3333e0eff1d5fb5b5c5d37f9c005a8d4574b886
+content_hash: sha256:fc107217f369028b54cd73565c9f935111589d7b8c6a203746219e1fa6381fc8
 ---
 
 ## 场景介绍
@@ -22,11 +22,11 @@ content_hash: sha256:d89306cedcf1c377d5183bc3c3333e0eff1d5fb5b5c5d37f9c005a8d457
 
 **图1** 权威认证**增强级**检测报告
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ts18_fdrSVqwQtKoiQAVzQ/zh-cn_image_0000002801106779.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/-W4cpyYQRq6pzkH2Ve8BQQ/zh-cn_image_0000002803265597.png)
 
 **图2** 活体检测示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/Cmo39RYjQBylNskGAqwJMA/zh-cn_image_0000002771666998.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/nith8tCgRVeEGJ29U9hwqA/zh-cn_image_0000002803225505.png)
 
 ## 约束与限制
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取用户级凭证
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 开放接口调用凭证 > 获取用户级凭证
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0bc3d23dc7096c60c119879f6a1287784faadc36b20ca3df435ed1c2477b0306
+scraped_at: 2026-10-29T08:02:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:3d13dba63510f9e42c4a43641239a6cfb725d8b446559aac624df5147c1ed597
 ---
 
 **注意** 
@@ -51,8 +51,8 @@ content_hash: sha256:0bc3d23dc7096c60c119879f6a1287784faadc36b20ca3df435ed1c2477
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | grant\_type | 是 | String | 授权模式，本场景固定传“authorization\_code”。 |
-| client\_id | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的唯一标识。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。  **说明：**  该参数与获取code参数时的Client ID必须一致，否则会报错（sub\_error=20154），如出现此报错，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)排查处理。 |
-| client\_secret | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的密钥（Client Secret）。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
+| client\_id | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的唯一标识。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。  **说明：**  该参数与获取code参数时的Client ID必须一致，否则会报错（sub\_error=20154），如出现此报错，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)排查处理。 |
+| client\_secret | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的密钥（Client Secret）。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
 | code | 是 | String | 当“grant\_type”为“authorization\_code”时，此参数必选。获取方式详见[LoginWithHuaweiIDResponse](account-api-authentication.md#loginwithhuaweiidresponse)或[AuthorizationWithHuaweiIDResponse](account-api-authentication.md#authorizationwithhuaweiidresponse)。 |
 | supportAlg | 否 | String | 生成ID Token的算法，当前支持的算法如下：  - PS256（推荐使用）  - RS256  如果未指定该参数或指定的算法不在支持的范围内，则默认使用RS256。 |
 
@@ -218,7 +218,7 @@ public class UserTokenAPIDemo {
 | 1102 | 20151 | code为空。 | 请按照接口参数的要求，传入正确的code参数。 |
 | 1102 | 20181 | grant\_type为空。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”authorization\_code“。 |
 | 1103 | 20153 | 无效的code。 | 请检查code是否正确。 |
-| 1203 | 12303 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1203 | 12303 | client\_id在系统不存在。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1203 | 12304 | 无效的client\_secret。 | 入参client\_id和client\_secret不匹配导致，请检查参数。 |
 | 1203 | 500 | 系统内部错误。 | 系统内部处理错误，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 1203 | 1203 | 系统未知异常。 | 系统未知异常，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |

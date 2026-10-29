@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 开通云存储服务
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 开发准备 > 开通云存储服务
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:43+08:00
+scraped_at: 2026-10-29T07:57:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:592df80ed99449246f6dee81343fe3c45c22a15a9406dc40f884921e74770a97
+content_hash: sha256:81e760990dfed2de32682911745ee39fbd6a5aa8a7c9fdbb4d41b41deeee14ea
 ---
 
 首次使用云存储服务前，需要先开通此服务。如果已经开通，可跳过本步骤。
@@ -14,10 +14,10 @@ content_hash: sha256:592df80ed99449246f6dee81343fe3c45c22a15a9406dc40f884921e747
 2. 在项目列表中点击需要开通云存储的项目。
 3. 选择“云开发（Serverless） > 云存储”，进入云存储页面，点击“立即开通”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/lvm9TIYAQUCNWd37miVNPA/zh-cn_image_0000002800986283.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/6TJyixTURICAh51oeYaj5Q/zh-cn_image_0000002803265025.png)
 4. 在引导界面输入存储实例名称并设置默认数据处理位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/EFUqsVMeRCqIn0Oe9wXxuQ/zh-cn_image_0000002771826394.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/SHSzOQBvQyO1Mw_XlMQ6lg/zh-cn_image_0000002803224933.png)
 
    | 参数 | 说明 |
    | --- | --- |
@@ -25,7 +25,7 @@ content_hash: sha256:592df80ed99449246f6dee81343fe3c45c22a15a9406dc40f884921e747
    | 默认数据处理位置 | 云存储支持启用多个数据处理位置，具体请参见[设置数据处理位置](../app/agc-help-data-location-0000002277923065.md#section154810363471)。如当前项目已设置数据处理位置，则此处无需再设置。 |
 5. 点击“下一步”，进入默认安全策略展示界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/KLvFOFrGRyqZ4UPMkq9RjQ/zh-cn_image_0000002801106209.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/q3zsFOz_S1CHpO5FTXxE5w/zh-cn_image_0000002774065218.png)
 
    **说明** 
 
@@ -35,4 +35,4 @@ content_hash: sha256:592df80ed99449246f6dee81343fe3c45c22a15a9406dc40f884921e747
    服务开通成功后，AGC将为开发者创建一个默认存储实例，默认存储实例的名称即为步骤4中配置的存储实例名称+“-五位随机数字字母”的组合，如“bucket001-2wezr”。
 7. 如果开发者已启用多个数据处理位置，当需要在不同的数据处理位置管理云存储时，可在云存储页面选择“数据处理位置”下拉选项进行切换。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/2qBS4_JVRH2ae2HtdPkSxw/zh-cn_image_0000002771666428.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/qdVzlgh0R_S5XelZrJ5SrA/zh-cn_image_0000002773905244.png)

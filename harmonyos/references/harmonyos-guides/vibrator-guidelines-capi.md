@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-guid
 title: 振动开发指导(C/C++)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 振动 > 振动开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:553ba837f099a02565eb8c2f7937c28ac9083e6cfdb32e98d1790dfc76690b68
+scraped_at: 2026-10-29T07:57:08+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:b806125f8ae98d5bd3ea61db6f18b06f40c5c3275e3d914ac87f3fca99c3022d
 ---
 
 ## 场景介绍
@@ -38,7 +38,7 @@ content_hash: sha256:553ba837f099a02565eb8c2f7937c28ac9083e6cfdb32e98d1790dfc766
 
 1. 新建一个Native C++工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Exg8s6TORF2CpKHEiiHaOQ/zh-cn_image_0000002771825954.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/NaJXMEnrQEigFTU72sUWVw/zh-cn_image_0000002803224493.png)
 2. 控制设备上的振动器，需要申请权限ohos.permission.VIBRATE。具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5
@@ -138,7 +138,7 @@ content_hash: sha256:553ba837f099a02565eb8c2f7937c28ac9083e6cfdb32e98d1790dfc766
        int32_t ret = OH_Vibrator_PlayVibrationCustom(fileDescription, vibrateAttribute);
        bool isSuccess = ((ret == 0) || (ret == UNSUPPORTED));
        if (!isSuccess) {
-           OH_LOG_Print(LOG_APP, LOG_INFO, VIBRATOR_LOG_DOMAIN, TAG, "Vibratecustom fail");
+           OH_LOG_Print(LOG_APP, LOG_ERROR, VIBRATOR_LOG_DOMAIN, TAG, "Vibratecustom fail");
        } else {
            OH_LOG_Print(LOG_APP, LOG_INFO, VIBRATOR_LOG_DOMAIN, TAG, "Vibratecustom successful");
        }

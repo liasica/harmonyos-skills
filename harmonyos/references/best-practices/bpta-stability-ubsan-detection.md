@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用UBSan检测未定义行为
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 使用UBSan检测未定义行为
 category: best-practices
-scraped_at: 2026-10-16T07:06:49+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:b64ef78e0995d7989cc752b5b56676ee3ff6560b9e93978528f0617ed8327132
+scraped_at: 2026-10-29T08:03:25+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:8fa28c62afd1181cc63eb770e9ec9e4976275f4d0d1c2b31d1c4e860a6dc7353
 ---
 
 ## 原理概述
@@ -28,11 +28,11 @@ ASan、TSan、UBSan 和 HWASan 不能同时开启，只能启用其中一个。
 
 点击**Run > Edit Configurations > Diagnostics**，勾选**UndefinedBehaviorSanitizer**开启检测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/-_sZiaoeTc-JCOtBuhKhiw/zh-cn_image_0000002193851168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/06j4H4kiRaWgTLRmAzqxdA/zh-cn_image_0000002193851168.png)
 
 **流水线场景**
 
-在hvigorw命令后加上**ohos-enable-ubsan=true**的选项，执行hvigorw命令，更多options参考[hvigorw文档](../harmonyos-guides/ide-hvigor-commandline.md)
+在hvigorw命令后加上**ohos-enable-ubsan=true**的选项，执行hvigorw命令，更多options参考[命令行构建工具（hvigorw）](../harmonyos-guides/ide-hvigor-commandline.md)
 
 ```screen
 hvigorw [taskNames...] ohos-enable-ubsan=true  <options>
@@ -48,11 +48,11 @@ hvigorw [taskNames...] ohos-enable-ubsan=true  <options>
 "arguments": "-DOHOS_ENABLE_UBSAN=ON"
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ekzZSAdGRYGlk0D2t8OuoQ/zh-cn_image_0000002193851164.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/fYAz_rz5TBKPjTEqw-fzDA/zh-cn_image_0000002193851164.png)
 
 **流水线场景**
 
-在AppScope/app.json5和模块build-profile.json5配置对应UBSan项后，可直接执行hvigorw命令，更多options参考[hvigorw文档](../harmonyos-guides/ide-hvigor-commandline.md)
+在AppScope/app.json5和模块build-profile.json5配置对应UBSan项后，可直接执行hvigorw命令，更多options参考[命令行构建工具（hvigorw）](../harmonyos-guides/ide-hvigor-commandline.md)
 
 ```screen
 hvigorw [taskNames...]  <options>
@@ -178,7 +178,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior E:/MyCppUbsan/entry/src/
 int res = 2;
 bool *predicate = (bool *)&res;
 if (*predicate) { // Error: variable is not a valid Boolean
-    res+=2;
+    res += 2;
 }
 ```
 
@@ -232,7 +232,7 @@ for (int i = 0; i <= 5; ++i) {
 
 程序存在安全漏洞，有崩溃风险。
 
-开启UBSan检测后，触发demo中的函数应用闪退，faultlog报UBSAN。
+开启UBSan检测后，触发demo中的函数，应用闪退，faultlog报UBSAN。
 
 **定位思路**
 
@@ -307,7 +307,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior E:/MyCppUbsan/entry/src/
 
 **背景**
 
-/0操作
+除以零操作
 
 **错误代码实例**
 
@@ -318,7 +318,7 @@ for (int i = 0; i < 64; ++i) {
 }
 ```
 
-**影响报错**
+**影响**
 
 程序存在安全漏洞，并有崩溃的风险。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: path
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > path
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:37+08:00
+scraped_at: 2026-10-29T07:59:58+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:c874b77889492af64b2664d6b6d144e5142a552ae3479e8bb95d3d1929e4b654
+content_hash: sha256:84de884a2088d42301610afac569eaf041c239ea5c6fcc82f338c1ea286f8b04
 ---
 
 **说明** 
@@ -44,4 +44,4 @@ content_hash: sha256:c874b77889492af64b2664d6b6d144e5142a552ae3479e8bb95d3d1929e
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/9Ytz3GHhTVKv8uDa1XRRgA/zh-cn_image_0000002800987871.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/fXwoI66zSTGvsKdxbofSjA/zh-cn_image_0000002774066802.png)

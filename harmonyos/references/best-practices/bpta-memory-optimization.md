@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-memory-opt
 title: 应用内存占用优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 应用内存占用优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:2e96e5acf62d3dc4dab51b0e421997b4c3468e0ff706524912acfb73e149ee29
+scraped_at: 2026-10-29T08:03:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:991029d1b59acac5bf235913e6cd3a05a030253c2a08a97488b96b9a26794cc4
 ---
 
 ## 概述
 
-随着用户功能的增加，应用逐渐变得复杂，占用的内存也在增加。由于内存是系统中的稀缺资源，当应用程序占用过多内存时，系统可能会频繁进行内存回收和重新分配，导致应用性能下降，甚至出现崩溃和卡顿。因此，减少应用内存占用对于整个系统至关重要。通过减少内存占用，可以有效提高应用性能和响应速度，节省系统资源，提升设备运行效率，延长设备续航时间。开发者在应用开发过程中应注重内存管理，采取措施减少内存占用，优化应用性能和用户体验。
+随着用户功能的增加，应用逐渐变得复杂，占用的内存也在增加。由于内存是系统中的稀缺资源，当应用程序占用过多内存时，系统可能会频繁进行内存回收和重新分配，导致应用性能下降，甚至出现崩溃和卡顿。因此，降低应用内存占用对于整个系统至关重要。既能提升应用性能和响应速度，也能节省系统资源、提升设备运行效率并延长设备续航时间。开发者在应用开发过程中应注重内存管理，采取措施减少内存占用，优化应用性能和用户体验。
 
 HarmonyOS提供了一些内存管理的工具和接口，帮助开发者有效地管理内存资源：
 
@@ -28,16 +28,22 @@ onMemoryLevel()是 HarmonyOS 提供的用于监听系统内存变化的接口，
 
 * AbilityStage：系统首次加载HAP中的代码到进程时，会创建AbilityStage实例。当系统需要调整内存时，会回调AbilityStage实例的onMemoryLevel()方法。
 
-* UIAbility：Ability是UIAbility的基类，提供系统内存变化的回调方法。
+* UIAbility：UIAbility是ArkUI中用于展示UI的组件容器，提供系统内存变化的回调方法。
 * EnvironmentCallback：EnvironmentCallback模块提供对系统环境变化的监听回调能力。
 
-MemoryLevel分为 MEMORY\_LEVEL\_MODERATE、MEMORY\_LEVEL\_LOW 和 MEMORY\_LEVEL\_CRITICAL 三种。MEMORY\_LEVEL\_MODERATE 表示当前系统内存压力适中，应用可以正常运行且受到的影响较小。MEMORY\_LEVEL\_LOW表示当前系统内存较低，应用应释放不必要的内存资源，避免系统卡顿。MEMORY\_LEVEL\_CRITICAL表示当前系统内存非常紧张，应用应尽可能释放更多资源，确保系统稳定性和性能。开发人员应根据不同的内存级别采取相应措施，例如释放资源、优化内存使用，以确保应用在不同内存状态下均能正常运行。MemoryLevel具体等级定义如下所示：
+MemoryLevel分为 MEMORY\_LEVEL\_MODERATE、MEMORY\_LEVEL\_LOW 和 MEMORY\_LEVEL\_CRITICAL 三种。
+
+* MEMORY\_LEVEL\_MODERATE 表示当前系统内存压力适中，应用可以正常运行且受到的影响较小。
+* MEMORY\_LEVEL\_LOW表示当前系统内存较低，应用应释放不必要的内存资源，避免系统卡顿。
+* MEMORY\_LEVEL\_CRITICAL表示当前系统内存非常紧张，应用应尽可能释放更多资源，确保系统稳定性和性能。
+
+开发人员应根据不同的内存级别采取相应措施，例如释放资源、优化内存使用，以确保应用在不同内存状态下均能正常运行。MemoryLevel具体等级定义如下所示：
 
 **表1** onMemoryLevel等级定义
 
 | 等级 | 值 | 说明 |
 | --- | --- | --- |
-| MEMORY\_LEVEL\_MODERATE | 0 | 系统内存达到中等水平。系统将根据LRU缓存规则开始杀死进程。 |
+| MEMORY\_LEVEL\_MODERATE | 0 | 系统内存达到中等水平。系统将根据LRU（Least Recently Used，最近最少使用）缓存规则开始杀死进程。 |
 | MEMORY\_LEVEL\_LOW | 1 | 系统内存不足。此时应释放不必要的资源以提升系统性能。 |
 | MEMORY\_LEVEL\_CRITICAL | 2 | 系统内存不足。此时应立即释放所有不必要的资源，因为系统可能会终止所有缓存中的进程，并且开始终止应当保持运行的进程，例如后台服务。 |
 
@@ -56,7 +62,7 @@ LRUCache`是 ArkTS 中常用的缓存工具，基于 LRU 算法实现。它主�
 LRUCache通过LinkedHashMap来实现LRU。LinkedHashMap继承于HashMap，HashMap用于快速查找数据，LinkedHashMap双向链表用于记录数据的顺序关系。因此，对于get()、put()、remove()等操作，LinkedHashMap除了包含HashMap的功能，还需要实现调整Entry顺序链表的工作。其数据结构如下图所示：
 
 **图1** LRUCache的LinkedHashMap数据结构图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/lT_ZeTYfQJW0LtRCWKSdzA/zh-cn_image_0000002193852104.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/R_ZRcp6eRiOy39x_RUtJYg/zh-cn_image_0000002193852104.png "点击放大")
 
 LruCache中将LinkedHashMap的顺序设置为LRU顺序，链表头部的对象为近期最少用到的对象。常用的方法及其说明如下所示：
 
@@ -250,7 +256,7 @@ struct Index {
 
   build() {
     Column() {
-      Text('Hello Word')
+      Text('Hello World')
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
         .textAlign(TextAlign.Start)
@@ -328,7 +334,7 @@ struct Index {
           + 'btpa-memory-optimization' + connectionProperties.mtu + '\n';
       })
     }).catch((error: BusinessError) => {
-      hilog.info(0xFF00, 'testTag', '%{public}s', 'getConnectionProperties fail');
+      hilog.error(0x0000, 'testTag', '%{public}s', 'getConnectionProperties fail');
     });
   }
 
@@ -383,19 +389,23 @@ struct Index {
 
 ## 使用purgeable优化C++内存
 
-[Purgeable Memory](../harmonyos-references/capi-purgeable-memory-h.md)是HarmonyOS中native层的内存管理机制，适用于图像处理的Bitmap、流媒体应用的一次性数据和图片等。应用可使用 Purgeable Memory 存放内部缓存数据，系统根据淘汰策略管理所有Purgeable内存。当系统内存不足时，系统通过丢弃Purgeable内存快速回收资源，释放更多内存给其他应用程序，实现高效的全局缓存数据管理，提高系统稳定性和流畅性。在使用Purgeable内存时，开发者可以调用接口释放Purgeable内存，但需要注意在适当的时机释放Purgeable内存，以确保内存资源能够得到有效管理，避免内存占用过高导致的性能问题和内存泄漏的情况。通过合理使用Purgeable内存，开发者可以更好地管理应用程序的内存，提高用户体验。
+[Purgeable Memory](../harmonyos-references/capi-purgeable-memory-h.md)是HarmonyOS中native层的内存管理机制，适用于图像处理中的Bitmap、流媒体应用的一次性数据以及图片等场景。
+
+应用可使用 Purgeable Memory 存放内部缓存数据，系统根据淘汰策略管理所有Purgeable内存。当系统内存不足时，系统通过丢弃Purgeable内存快速回收资源，释放更多内存给其他应用程序，实现高效的全局缓存数据管理，提高系统稳定性和流畅性。
+
+在使用Purgeable内存时，开发者可以调用接口释放Purgeable内存，但需要注意在适当的时机释放Purgeable内存，以确保内存资源能够得到有效管理，避免内存占用过高导致的性能问题和内存泄漏的情况。通过合理使用Purgeable内存，开发者可以更好地管理应用程序的内存，提高用户体验。
 
 ### 原理介绍
 
 访问Purgeable内存的流程如下图所示。首先，判断Purgeable内存的数据是否已被回收。如果已回收，需重建数据。访问Purgeable内存时，其引用计数refcnt加1；访问结束后，refcnt减1。当refcnt为0时，Purgeable内存可被系统回收。
 
 **图2** Purgeable内存访问流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/JsxR9dm0TZmq11aes9BLww/zh-cn_image_0000002229451973.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/_qFdAS93RgKOzexgu61lYA/zh-cn_image_0000002229451973.png)
 
 Purgeable内存回收流程图如下所示。当引用计数为0时，丢弃Purgeable内存中的数据，并标记为已回收。
 
 **图3** Purgeable内存回收流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/O5mWTMVpQdGX0Ml9qrYrZQ/zh-cn_image_0000002194011688.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/dKc1eFCLQYe1IbiIspZXPA/zh-cn_image_0000002194011688.png)
 
 ### 参考案例
 
@@ -507,7 +517,7 @@ extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
 
 一张全屏的图片，不同分辨率的内存占用大小如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/eAM6ITrJQ9aOc9Lje5m-5g/zh-cn_image_0000002193852108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/OPzYXF3NQnixUoFlTKnGJQ/zh-cn_image_0000002193852108.png "点击放大")
 
 由上图可以看出，对于页面多、图片多、效果丰富的资源密集型应用，内存容易达到较高水平。当应用的内存占用超过系统设定的阈值（例如4GB，不同系统的阈值可能不同）时，系统可能会认为应用存在严重的内存问题，并可能强制终止该应用进程，以保证设备系统的稳定性和性能。为了避免应用被系统终止，开发者可以考虑以下两点：
 
@@ -528,11 +538,11 @@ Column() {
 
 使用500×500尺寸的Image组件加载一张4032×3024的RGBA格式图片时，图片申请了约46.5 MB的内存。这是因为图片原始尺寸较大，加载到Image组件中时需要缩放到500×500尺寸，这个过程会占用一定的内存。
 
-纹理图片内存大小 = imageWidth x imageHeight x format（4032\*3024 \* 4 = 48771072 bytes ≈ 46.5M）。
+纹理图片内存大小 = imageWidth x imageHeight x format（4032\*3024 \* 4 bytes = 48771072 bytes ≈ 46.5M）。
 
 组件实际需要的尺寸为500\*500，所需内存约为1M。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/gRxjbyRlQyO1W5Uc2t0hwA/zh-cn_image_0000002194011684.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/6oSpSN8sTdiMQZA4SL4feg/zh-cn_image_0000002194011684.png "点击放大")
 
 当图片尺寸超过控件显示区域时，图片会被裁剪或缩放。频繁的裁剪和缩放不仅会降低视图效果，还会浪费内存，增加功耗。为了节省内存，开发者可以手动调整源文件的尺寸，使其与组件大小一致。这样可以避免不必要的内存浪费，并提高应用程序的性能和效率。开发者可以使用图像处理工具来调整图像尺寸，进一步节省内存空间。
 

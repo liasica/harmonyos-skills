@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 开发指导(C/C++)
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:45+08:00
+scraped_at: 2026-10-29T07:57:39+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:1ae13af4098b1280e0c1215fbc562afd460924e6f2160bf6a3c9929523c10c5d
+content_hash: sha256:7fe96dd33d466a8682c5ff99533738ae083d345f110b2a7000faf3c91d0c8eb5
 ---
 
 游戏场景感知包括：
@@ -15,7 +15,7 @@ content_hash: sha256:1ae13af4098b1280e0c1215fbc562afd460924e6f2160bf6a3c9929523c
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/UTy9rrSySPSYt0sxZaV-xw/zh-cn_image_0000002771666488.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Nr44bIemQ4iCBt-v6gxHUg/zh-cn_image_0000002773905304.png)
 
 1. 游戏启动后调用[HMS\_GamePerformance\_Init](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[HMS\_GamePerformance\_RegisterThermalLevelChangedCallback](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_registerthermallevelchangedcallback)接口注册设备状态变化事件监听，订阅设备状态变化通知。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/simple-text-a
 title: 简单文本绘制与显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 简单文本绘制与显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:36+08:00
+scraped_at: 2026-10-29T07:57:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c84196614b17478b70afbbdd856dc72c5a1a18e80c551ab0da2e57d4cf0ec485
+content_hash: sha256:cfc0619ecd1d5d38c6ca1efbaaafa5c4351b5350e7745f0c756570afc812b176
 ---
 
 ## 场景介绍
@@ -72,4 +72,4 @@ content_hash: sha256:c84196614b17478b70afbbdd856dc72c5a1a18e80c551ab0da2e57d4cf0
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/7ArlitPJQS6LQf_xpmKIrw/zh-cn_image_0000002801106023.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/5vYRDKZxSquHJ1WeyA5npw/zh-cn_image_0000002774065030.png)

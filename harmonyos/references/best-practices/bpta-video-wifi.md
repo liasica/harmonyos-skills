@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-wifi
 title: 视频场景Wi-Fi加载低功耗建议
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 视频场景Wi-Fi加载低功耗建议
 category: best-practices
-scraped_at: 2026-10-16T07:06:48+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:e80efff64ead9be8011905f520202b65c4617de956460223f99e1d302889ce17
+scraped_at: 2026-10-29T08:03:23+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:39198a9eca4d9e31729b797e1c60c9c85a955a2efa3d0f148ffdd9465e8e9b1e
 ---
 
 ## 建议
 
-视频场景数据缓存下载方式：建议每20s下载一次，每次下载3到5s，以避免小流量持续下载导致Wi-Fi功耗增加。
+视频场景数据缓存下载方式：建议每20秒下载一次，每次下载3到5秒，以避免小流量持续下载导致Wi-Fi功耗增加。
 
 ## 开发步骤
 
@@ -24,9 +24,7 @@ setHandoverCb(HandoverStartCb startCb, HandoverCompleteCb completeCb);
 
 setTransDesc(transDesc);
 
-3.当应用有优先级不高且不影响基本功能的业务时，比如上传log等，应用可以在发送数据的请求中标识该请求，系统会进行统一调度。out中传入系统自主控制delegation的标志位。
-
-send(out);
+3.当应用有优先级不高且不影响基本功能的业务时，比如上传log等，应用可以在发送数据的请求中标识该请求，系统会进行统一调度。该标识通过out参数传入，用于告知系统可自主控制delegation。
 
 ## 调测验证
 
@@ -34,7 +32,7 @@ send(out);
 
 1. 按聚合方式下载时，例如每20s下载一次，每次下载3到5s，Wi-Fi器件在大部分时间处于idle状态，实测Wi-Fi功耗为35mA。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/QgApu4iySf2J55MHOWF88g/zh-cn_image_0000002193850568.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/oX-DgqyUSyKuc3DsJwwJVQ/zh-cn_image_0000002193850568.png "点击放大")
 2. 当以小流量持续下载时，例如每1s下载一次，Wi-Fi器件的空闲时间会减少。实测结果显示，小流量持续下载的Wi-Fi功耗为55mA，而聚合下载的功耗为35mA。因此，建议应用采用聚合方式下载，以避免小流量持续下载导致的高Wi-Fi功耗。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/yGvSxaFxTo2npXOGwPp2zQ/zh-cn_image_0000002193850572.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/dJZyDUP8Q72UjGZKfA7ZiA/zh-cn_image_0000002193850572.png "点击放大")

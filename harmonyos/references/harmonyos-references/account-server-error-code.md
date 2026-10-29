@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-s
 title: REST API错误码
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > REST API错误码
 category: harmonyos-references
-scraped_at: 2026-09-15T07:08:45+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:eaaccca19a8888fa500ea14a1ac28bcd607b9642f8708836055a04c5d6691a76
+scraped_at: 2026-10-29T08:02:33+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:5ffe6429beb0fb79ba7e70267be8da84fba01b59fb15981d9ff8a24c652d34ae
 ---
 
 ## 获取用户级凭证
@@ -43,7 +43,7 @@ content_hash: sha256:eaaccca19a8888fa500ea14a1ac28bcd607b9642f8708836055a04c5d66
 | 1102 | 20151 | code为空。 | 请按照接口参数的要求，传入正确的code参数。 |
 | 1102 | 20181 | grant\_type为空。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”authorization\_code“。 |
 | 1103 | 20153 | 无效的code。 | 请检查code是否正确。 |
-| 1203 | 12303 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1203 | 12303 | client\_id在系统不存在。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1203 | 12304 | 无效的client\_secret。 | 入参client\_id和client\_secret不匹配导致，请检查参数。 |
 | 1203 | 500 | 系统内部错误。 | 系统内部处理错误，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 1203 | 1203 | 系统未知异常。 | 系统未知异常，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
@@ -81,7 +81,7 @@ content_hash: sha256:eaaccca19a8888fa500ea14a1ac28bcd607b9642f8708836055a04c5d66
 | 1102 | 20181 | grant\_type为空。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”refresh\_token“。 |
 | 1102 | 20191 | refresh\_token为空。 | 请按照接口参数的要求，传入正确的refresh\_token参数。 |
 | 1203 | 11205 | refresh\_token已过期。refresh\_token的有效期为180天，超过有效期后将无法继续使用。 | 请引导用户重新授权，获取新的refresh\_token。 |
-| 1203 | 12303 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1203 | 12303 | client\_id在系统不存在。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1203 | 12304 | 无效的client\_secret。 | 入参client\_id和client\_secret不匹配导致，请检查参数。 |
 | 1203 | 31202 | refresh\_token解析失败。 | refresh\_token不是一个正确有效的数据，请检查refresh\_token参数。 |
 | 1203 | 31204 | refresh\_token已失效。正常refresh\_token有效期为180天，但是由于用户的行为（如更改密码、取消应用的授权等行为），导致华为服务器提前使已颁发的refresh\_token失效。 | 请引导用户重新授权，获取新的refresh\_token。 |
@@ -109,9 +109,9 @@ content_hash: sha256:eaaccca19a8888fa500ea14a1ac28bcd607b9642f8708836055a04c5d66
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
 | --- | --- | --- | --- |
-| 1101 | 12304 | client\_secret不正确。 | 请前往AppGallery Connect（简称AGC）确认client\_secret是否正确。 |
+| 1101 | 12304 | client\_secret不正确。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_secret是否正确。 |
 | 1101 | 20002 | client\_id格式不正确。 | 检查client\_id是否满足正则：^[0-9]{1,64}$。 |
-| 1101 | 20003 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1101 | 20003 | client\_id在系统不存在。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1101 | 20171 | client\_secret为空。 | 请按照接口参数的要求，传入正确的client\_secret参数。 |
 | 1101 | 20172 | client\_secret格式不正确。 | 检查client\_secret格式是否满足正则：^[0-9a-zA-Z=/\\+]+$。 |
 | 1101 | 20182 | grant\_type值不正确。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”client\_credentials“。 |
@@ -157,7 +157,7 @@ content_hash: sha256:eaaccca19a8888fa500ea14a1ac28bcd607b9642f8708836055a04c5d66
 | 1102 | 20001 | client\_id为空。 | 请按照接口参数的要求，传入正确的client\_id参数。 |
 | 1102 | 20151 | code为空。 | 请按照接口参数的要求，传入正确的code参数。 |
 | 1102 | 20181 | grant\_type为空。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”device\_code“。 |
-| 1203 | 12303 | client\_id在系统不存在。 | 在grant\_type=device\_code场景下，检查client\_id参数在系统不存在。请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1203 | 12303 | client\_id在系统不存在。 | 在grant\_type=device\_code场景下，检查client\_id参数在系统不存在。请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1203 | 12304 | 无效的client\_secret。 | 入参client\_id和client\_secret不匹配导致，请检查参数。 |
 | 1600 | 16002 | 设备码解析失败。 | 入参code错误，该参数值可通过[获取二维码信息](account-api-get-authorize-qrcode-info.md)接口获取，取响应参数device\_code字段的值。 |
 | 1600 | 16003 | 设备码过期。 | 请重新调用[获取二维码信息](account-api-get-authorize-qrcode-info.md)，生成新的二维码。 |
@@ -253,7 +253,7 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
 | --- | --- | --- | --- |
 | 1101 | 20002 | client\_id格式不正确。 | 检查client\_id是否满足正则：^[0-9]{1,64}$。 |
-| 1101 | 20003 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1101 | 20003 | client\_id在系统不存在。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1101 | 20041 | scope格式不正确或数量超过150个。 | - 检查scope参数是否满足正则：^[0-9a-zA-Z:/\\.\u0020]+$。  - 检查scope数量是否超过150个。 |
 | 1101 | 20042 | 无效的scope。 | 入参scope存在伪造值，请参照参数说明，传入正确的参数。 |
 | 1102 | 20001 | client\_id为空。 | 请按照接口参数的要求，传入正确的client\_id参数。 |
@@ -287,7 +287,7 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 | --- | --- | --- |
 | 6 | 会话失效或已超时（session timeout）。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 未对access\_token进行URLEncode处理，可参考[示例代码](account-api-get-user-info-get-nickname-and-avatar.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 105 | 参数错误。 | 参考API文档的说明，调整参数传值。 |
-| 403 | 访问无权限。 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
+| 403 | 访问无权限。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
 | 500 | 接口内部错误。 | 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 503 | 触发系统流控。 | 请稍后重试。 |
 | 70001201 | 参数不合法。 | 参考API文档的说明，调整参数传值。 |
@@ -318,7 +318,7 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 | --- | --- | --- |
 | 60010002 | 参数不合法。 | 请按照错误描述及接口[Request Body](account-api-get-user-info-quicklogin-by-code.md#request-body)参数说明检查入参。 |
 | 60010012 | code参数不正确。 | code参数传值不正确，可能原因：伪造的无效code或code被篡改。 |
-| 60010013 | clientSecret参数不正确。 | clientSecret参数传值不正确，参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
+| 60010013 | clientSecret参数不正确。 | clientSecret参数传值不正确，参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
 | 60180003 | code解析得到的Client ID与入参clientId不一致。 | code参数获取时的clientId与当前接口参数clientId不一致导致，请检查当前入参clientId是否与[配置Client ID](../harmonyos-guides/account-client-id.md)中的值一致。 |
 | 60180004 | code过期，code只有5分钟有效期，超过有效期后将无法继续使用。 | 请引导用户重新授权，获取新的code再重试。 |
 | 60180005 | code已经被使用过。 | code只能用一次，请重新获取code再重试。 |
@@ -350,7 +350,7 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 | errCode | 描述 | 解决方法 |
 | --- | --- | --- |
 | 6 | 会话失效或已超时（session timeout）。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 本接口请求数据格式为 application/json;charset=utf-8，在构造请求体时，请确保不对access\_token参数进行URLEncode处理，可参考[示例代码](account-api-getuserrisklevel.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
-| 403 | 无权访问。 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
+| 403 | 无权访问。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
 | 503 | 触发系统流控。 | 请稍后重试。 |
 | 70001201 | 请求参数错误。 | 修改请求url或者请求体中的参数。 |
 | 70001402 | 系统鉴权错误。 | 鉴权系统异常，若重试无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
@@ -527,10 +527,10 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 | 1102 | 20151 | code为空。 | 请按照接口参数的要求，传入正确的code参数。 |
 | 1102 | 20181 | grant\_type为空。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”authorization\_code“。 |
 | 1103 | 20153 | 无效的code。 | code被篡改或伪造的code导致，请排查code参数是否与获取到的code一致。 |
-| 1203 | 12303 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1203 | 12303 | client\_id在系统不存在。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1203 | 12304 | 无效的client\_secret。 | 入参client\_id和client\_secret不匹配导致，请检查参数。 |
 | 1203 | 100301 | 参数处理异常。 | 参数处理异常，建议按照接口入参要求，检查参数是否符合规范。若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
-| 1203 | 100502 | 开发者账号的关联主体账号组未查询到。 | 请参考[添加账号组成员](../start/aai-0000001265430513.md)，将应用的开发者账号加入关联主体账号组后重试。 |
+| 1203 | 100502 | 开发者账号的关联主体账号组未查询到。 | 请参考[添加关联主体成员](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section1622135572)，将应用的开发者账号加入“跳转互通”类型的关联主体后重试。 |
 | 1203 | 500 | 系统内部错误。 | 系统内部处理错误，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 1203 | 1203 | 系统未知异常。 | 系统未知异常，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 
@@ -557,7 +557,7 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 | --- | --- | --- |
 | 60010002 | 参数错误。 | 请按照响应描述中的提示，检查并修改[请求参数](account-api-get-groupunionid.md#请求参数)。 |
 | 60010003 | 鉴权头Authorization校验不通过。 | 检查并修改[请求参数](account-api-get-groupunionid.md#请求参数)中Authorization参数。 |
-| 60170001 | 开发者账号未加入关联主体账号组。 | 可通过[创建账号组](../start/cag-0000001265390541.md)创建关联主体账号组，然后在关联主体账号组中[添加账号组成员](../start/aai-0000001265430513.md)。 |
+| 60170001 | 开发者账号未加入关联主体账号组。 | 可通过[创建关联主体](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section15387160135710)，创建“跳转互通”类型的关联主体，然后在关联主体中[添加关联主体成员](../doccenter-getting-started/hdc-account-group-guide-0000002723019802.md#section1622135572)。 |
 | 60010001 | 系统内部错误。 | 可重试，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 
 ## 获取OpenID Connect配置公开信息

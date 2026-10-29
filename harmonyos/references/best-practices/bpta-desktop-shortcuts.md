@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-desktop-sh
 title: 桌面快捷方式
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 桌面快捷方式
 category: best-practices
-scraped_at: 2026-10-21T07:09:49+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:a94e31bf7546f20cab85d78b1993ef6622902456434b9c51e2f0569b7bff5fb1
+scraped_at: 2026-10-29T08:03:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:b8b79a02ac801fe2a6dd2a7505c4f542299a5cbf11dbf481d2b1769a5dc5276b
 ---
 
 ## 概述
@@ -20,10 +20,10 @@ content_hash: sha256:a94e31bf7546f20cab85d78b1993ef6622902456434b9c51e2f0569b7bf
 
 * 点击快捷方式入口列表中的“回家”项，即可快速打开地图应用，开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/VkZl3yDqRgGxn2qqnU-_Zw/zh-cn_image_0000002229451729.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/3OevgL2lRs2FCVgg-SKpVA/zh-cn_image_0000002229451729.gif "点击放大")
 * 长按快捷方式入口列表中的“回家”项，可将其拖动至桌面，点击桌面对应图标，即可开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/cQ_OAJGuTuusUM0V003boQ/zh-cn_image_0000002229451733.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/0vvGfHKeQWG762wWm2o82A/zh-cn_image_0000002229451733.gif "点击放大")
 
 **说明** 
 
@@ -33,7 +33,7 @@ content_hash: sha256:a94e31bf7546f20cab85d78b1993ef6622902456434b9c51e2f0569b7bf
 
 ### 关键技术
 
-使用[shortcuts](../harmonyos-guides/module-configuration-file.md#shortcuts标签)来配置应用的快捷方式，其配置值为数组，包含四个子标签shortcutId、label、icon、wants。
+使用shortcuts（参考[shortcuts标签](../harmonyos-guides/module-configuration-file.md#shortcuts标签)）来配置应用的快捷方式，其配置值为数组，包含四个子标签shortcutId、label、icon、wants。
 
 * shortcutId：标识快捷方式的ID，取值为长度不超过63字节的字符串。
 * label：标识快捷方式的标签信息，即快捷方式对外显示的文字描述信息。取值为长度不超过255字节的字符串，可以是描述性内容，也可以是标识label的资源索引。
@@ -54,7 +54,7 @@ content_hash: sha256:a94e31bf7546f20cab85d78b1993ef6622902456434b9c51e2f0569b7bf
   | 单个path解析出的非move verb数 | 100,000 |
   | mask/filter/opacity累计设备像素消耗 | 500,000,000 |
   | 单个 `<feMerge>` 的输入数 | 10 |
-* [wants](../harmonyos-guides/module-configuration-file.md#wants标签)：标识快捷方式内定义的目标[wants](../harmonyos-guides/module-configuration-file.md#wants标签)信息集合，[wants](../harmonyos-guides/module-configuration-file.md#wants标签)中可配置如下参数：
+* wants：标识快捷方式内定义的目标wants信息集合，wants（参考[wants标签](../harmonyos-guides/module-configuration-file.md#wants标签)）中可配置如下参数：
 
   | 属性名称 | 含义 |
   | --- | --- |
@@ -63,11 +63,11 @@ content_hash: sha256:a94e31bf7546f20cab85d78b1993ef6622902456434b9c51e2f0569b7bf
   | abilityName | 表示快捷方式的目标组件名。 |
   | parameters | 表示拉起快捷方式时的自定义数据，仅支持配置字符串类型的数据。其中键值均最大支持1024长度的字符串。 |
 
-[shortcuts](../harmonyos-guides/module-configuration-file.md#shortcuts标签)配置完成后，还需要在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中配置[metadata](../harmonyos-guides/module-configuration-file.md#metadata标签)字段来指定应用的快捷方式配置文件，从而完成快捷方式的基本配置。
+[shortcuts](../harmonyos-guides/module-configuration-file.md#shortcuts标签)配置完成后，还需要在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中配置metadata字段（参考[metadata标签](../doccenter-getting-started/module-configuration-file.md#metadata标签)）来指定应用的快捷方式配置文件，从而完成快捷方式的基本配置。
 
 **说明** 
 
-通过在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中配置[metadata](../harmonyos-guides/module-configuration-file.md#metadata标签)字段的快捷方式是一种在系统中创建的可以快速访问应用程序或特定功能的链接，与[卡片](../harmonyos-guides/formkit-overview.md)的区别在于：快捷方式只允许跳转至某个具体的UIAbility，无法直接跳转至非入口页面。
+通过在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中配置metadata字段的快捷方式是一种在系统中创建的可以快速访问应用程序或特定功能的链接，与卡片（参考[Form Kit简介](../harmonyos-guides/formkit-overview.md)）的区别在于：快捷方式只允许跳转至某个具体的UIAbility，无法直接跳转至非入口页面。
 
 ### 实现流程
 
@@ -122,7 +122,7 @@ content_hash: sha256:a94e31bf7546f20cab85d78b1993ef6622902456434b9c51e2f0569b7bf
      ]
    }
    ```
-3. 在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的[abilities](../harmonyos-guides/module-configuration-file.md#abilities标签)标签下的[metadata](../harmonyos-guides/module-configuration-file.md#metadata标签)中设置resource属性值为$profile:shortcuts\_config，指定应用的快捷方式配置文件，即使用shortcuts\_config.json文件中的shortcuts配置。
+3. 在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下的metadata中设置resource属性值为$profile:shortcuts\_config，指定应用的快捷方式配置文件，即使用shortcuts\_config.json文件中的shortcuts配置。
 
    ```json
    {

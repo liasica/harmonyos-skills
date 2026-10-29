@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-heap
 title: 使用JSVM-API接口进行JavaScript代码调试调优
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行JavaScript代码调试调优
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:114549fcf4ef7949304b838e593ead9fa6b822738ce0ddbf479030cd904e7ac5
+scraped_at: 2026-10-29T07:58:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:fe86bc986eff0c0c937b3fc886beb9c363a3fe01980029871486283f634c6a5d
 ---
 
 ## 简介
@@ -76,12 +76,6 @@ static JSVM_PropertyDescriptor descriptor[] = {
 const char *SRC_CALL_NATIVE = R"JS(getVM())JS";
 ```
 
-样例测试JS
-
-```
-const char *srcCallNative = R"JS(getVM())JS";
-```
-
 预计的输出结果：
 
 ```txt
@@ -144,12 +138,6 @@ static JSVM_PropertyDescriptor descriptor[] = {
 };
 
 const char *SRC_CALL_NATIVE = R"JS(getHeapStatistics())JS";
-```
-
-样例测试JS
-
-```
-const char *srcCallNative = R"JS(getHeapStatistics())JS";
 ```
 
 预计的输出结果（虚拟机堆的统计数据，会实时发生变化）：

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 上传车端数据到DK服务器
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 上传车端数据到DK服务器
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:56+08:00
+scraped_at: 2026-10-29T07:57:52+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:7c87481618cefcf85ff8cf21e3ef8ce57eee23256d53dc650988de579ce3c568
+content_hash: sha256:18098120ab7bb2ba44481ac237f54a688396c4ad17eeac9c760ba96067a135f1
 ---
 
 车端可通过钱包提供的通道上传自定义数据，用于获取DK服务器存储的钥匙状态、权限信息等云端数据，钱包作为中间桥梁透传交互数据，提供完整的业务闭环渠道。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/wIkDIuAPQ2WuFmX7WREk8w/zh-cn_image_0000002800986661.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ZtaU9Ib6RSSHGYpE2F5kkg/zh-cn_image_0000002774065594.png)
 
 ## 典型场景
 

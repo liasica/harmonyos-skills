@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-ndk-pa
 title: 建立应用侧与前端页面数据通道(C/C++)
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 建立应用侧与前端页面数据通道(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:57+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:3491cbff8bc945d1efc0e2c7a4fef6717e7e7153f65aef91d4a59f60502146e1
+scraped_at: 2026-10-29T07:56:41+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:edd3bd6d7def2ed25c03c8c9c86139d811fb2cd5e28f2a671798d9e1a782b85d
 ---
 
 前端页面和应用侧之间可以使用Native方法实现两端通信（以下简称Native PostWebMessage），可解决ArkTS环境的冗余切换，同时允许发送消息、回调在非UI线程上运行，避免造成UI阻塞。当前只支持string和buffer数据类型。
@@ -14,13 +14,13 @@ content_hash: sha256:3491cbff8bc945d1efc0e2c7a4fef6717e7e7153f65aef91d4a59f60502
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_WebMessageAPI](../harmonyos-references/capi-web-arkweb-webmessageapi.md)、[ArkWeb\_WebMessagePortAPI](../harmonyos-references/capi-web-arkweb-webmessageportapi.md)实现PostWebMessage功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Oawox1rnT16s11IBcHHM2Q/zh-cn_image_0000002800985485.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/h130XDsbRgCwio6ffVRYhg/zh-cn_image_0000002803264225.png)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS PostWebMessage接口。
 
 左图是使用ArkTS PostWebMessage接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native PostWebMessage接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Ql7gFcLyTcO2EuT9HbxzXg/zh-cn_image_0000002801105409.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/AiOuc9fYTDqAZijqZHZrOQ/zh-cn_image_0000002774064416.png)
 
 ## 使用Native接口实现PostWebMessage通信
 
@@ -118,7 +118,7 @@ webMessage = reinterpret_cast<ArkWeb_WebMessageAPI *>(OH_ArkWeb_GetNativeAPI(ARK
       }
   })
   window.onerror = function(message, url, line, column, error) {
-    console.info("JavaScript Error: " + message + " on line " + line + " in " + url);
+    console.error("JavaScript Error: " + message + " on line " + line + " in " + url);
     document.getElementById("h1").innerHTML = "执行函数失败"
   };
 
@@ -720,7 +720,7 @@ webMessage = reinterpret_cast<ArkWeb_WebMessageAPI *>(OH_ArkWeb_GetNativeAPI(ARK
       // 注册回调
       OH_LOG_Print(
           LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-          "Native Development Kit SetMessageEventHandler begin");
+          "Native Development Kit setMessageEventHandlerThread begin");
       if (g_web_message_port_arr == nullptr) {
           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "webMessagePort is nullptr");
           return nullptr;
@@ -730,7 +730,8 @@ webMessage = reinterpret_cast<ArkWeb_WebMessageAPI *>(OH_ArkWeb_GetNativeAPI(ARK
       webMessagePort->setMessageEventHandler(g_web_message_port_arr[1], webTagValue, WebMessagePortCallback, NULL);
       OH_LOG_Print(
           LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-          "Native Development Kit SetMessageEventHandler end, web message port size:%{public}d", g_webMessagePortSize);
+          "Native Development Kit setMessageEventHandlerThread end, web message port size:%{public}d",
+          g_webMessagePortSize);
       delete[] webTagValue;
       return nullptr;
   }
@@ -853,14 +854,14 @@ webMessage = reinterpret_cast<ArkWeb_WebMessageAPI *>(OH_ArkWeb_GetNativeAPI(ARK
           "Native Development Kit Refresh webTag:%{public}s", webTagValue);
 
       // 关闭端口，先调用close，再调用destroyWebMessagePorts
-      OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Native Development Kit SetMessageEventHandler begin");
+      OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Native Development Kit closeMessagePort begin");
       if (g_web_message_port_arr == nullptr) {
           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "webMessagePort is nullptr");
           return nullptr;
       }
       webMessagePort->close(g_web_message_port_arr[0], webTagValue);
       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-          "Native Development Kit SetMessageEventHandler end, web message port size:%{public}d", g_webMessagePortSize);
+          "Native Development Kit closeMessagePort end, web message port size:%{public}d", g_webMessagePortSize);
       controller->refresh(webTagValue);
       delete[] webTagValue;
       return nullptr;
@@ -883,7 +884,7 @@ webMessage = reinterpret_cast<ArkWeb_WebMessageAPI *>(OH_ArkWeb_GetNativeAPI(ARK
           "Native Development Kit Refresh webTag:%{public}s", webTagValue);
 
       // 释放内存，先调用close，再调用destroyWebMessagePorts
-      OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Native Development Kit SetMessageEventHandler begin");
+      OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Native Development Kit destroyMessagePort begin");
       if (g_web_message_port_arr == nullptr) {
           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "webMessagePort is nullptr");
           return nullptr;
@@ -891,7 +892,7 @@ webMessage = reinterpret_cast<ArkWeb_WebMessageAPI *>(OH_ArkWeb_GetNativeAPI(ARK
       controller->destroyWebMessagePorts(&g_web_message_port_arr, g_webMessagePortSize);
       OH_LOG_Print(
           LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-          "Native Development Kit SetMessageEventHandler end, web message port size:%{public}d", g_webMessagePortSize);
+          "Native Development Kit destroyMessagePort end, web message port size:%{public}d", g_webMessagePortSize);
       delete[] webTagValue;
       return nullptr;
   }
@@ -913,13 +914,13 @@ webMessage = reinterpret_cast<ArkWeb_WebMessageAPI *>(OH_ArkWeb_GetNativeAPI(ARK
           "Native Development Kit Refresh webTag:%{public}s", webTagValue);
 
       // 释放内存，先调用close，再调用destroyWebMessagePorts
-      OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Native Development Kit SetMessageEventHandler begin");
+      OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Native Development Kit destroyNullMessagePort begin");
 
       controller->destroyWebMessagePorts(&g_web_message_port_arr, g_webMessagePortSize);
 
       OH_LOG_Print(
           LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-          "Native Development Kit SetMessageEventHandler end, web message port size:%{public}d", g_webMessagePortSize);
+          "Native Development Kit destroyNullMessagePort end, web message port size:%{public}d", g_webMessagePortSize);
       delete[] webTagValue;
       return nullptr;
   }

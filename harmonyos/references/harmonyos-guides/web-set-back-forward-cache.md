@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-set-back-
 title: 设置Web组件前进后退缓存
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 设置Web组件前进后退缓存
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6febfce54aefc6afa78296a6164f526ca5fb9c308a6675e61d8574efa87e5ed7
+scraped_at: 2026-10-29T07:56:41+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:a436424afb6f018503139ff90f1b58a9f52ebf8870d505cf63aa6b70aad5c8a9
 ---
 
 Web组件为开发者提供了启用和配置前进后退缓存（以下简称BFCache）的功能。启用此功能后，能够显著提升用户返回至先前浏览网页的速度，尤其对于网络条件不佳的用户，可提供更为流畅的浏览体验。
@@ -16,7 +16,7 @@ BFCache功能启用后，Web组件会在用户离开当前页面时在内存中�
 
 开发者需要在调用[initializeWebEngine()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#initializewebengine)初始化ArkWeb内核之前调用[enableBackForwardCache()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#enablebackforwardcache12)来开启BFCache。enableBackForwardCache可以接收一个[BackForwardCacheSupportedFeatures](../harmonyos-references/arkts-apis-webview-backforwardcachesupportedfeatures.md)参数，用于控制是否允许具备同层渲染特性和视频托管特性的页面进入BFCache。
 
-```ts
+```typescript
 // EntryAbility.ets
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -24,14 +24,16 @@ import { window } from '@kit.ArkUI';
 import { webview } from '@kit.ArkWeb';
 
 export default class EntryAbility extends UIAbility {
-    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-        let features = new webview.BackForwardCacheSupportedFeatures();
-        features.nativeEmbed = true;
-        features.mediaTakeOver = true;
-        webview.WebviewController.enableBackForwardCache(features);
-        webview.WebviewController.initializeWebEngine();
-        AppStorage.setOrCreate("abilityWant", want);
-    }
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    let features = new webview.BackForwardCacheSupportedFeatures();
+    features.nativeEmbed = true;
+    features.mediaTakeOver = true;
+    webview.WebviewController.enableBackForwardCache(features);
+    webview.WebviewController.initializeWebEngine();
+    AppStorage.setOrCreate('abilityWant', want);
+  }
+
+// ...
 }
 ```
 

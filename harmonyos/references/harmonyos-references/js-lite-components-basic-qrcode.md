@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: qrcode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > qrcode
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:38+08:00
+scraped_at: 2026-10-29T07:59:59+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:accfbfb594590163d2c70404c37c4790877f21450b7f6c841d76714fe114cd01
+content_hash: sha256:71f0135f55429bcfa23ba6aec761eed41237f12272d3834f25629671788360b2
 ---
 
 生成并显示二维码。
@@ -123,4 +123,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/DQHSKZ6zTVaGtPJ-H88xPw/zh-cn_image_0000002771668182.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/rqKgVxQ2QIutQrBiX4kerw/zh-cn_image_0000002803226687.gif)

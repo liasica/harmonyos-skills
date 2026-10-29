@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持智慧手势输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持智慧手势输入事件
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:51+08:00
+scraped_at: 2026-10-29T07:56:32+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:fd5ea16b2a35918e9802fbc143890da5faa2eb51b97bf9dbba375733c5eb6df8
+content_hash: sha256:c926a19a9f23cdfce92306ad1559684a6a4fcc0d651a584aadeef8067cd30953
 ---
 
 从API版本26.0.0开始支持智慧手势。智慧手势指用户通过设备上的“敲一敲”，“划一划”和“翻腕”的隔空手势，实现对界面组件的选中、点击、滚动、翻页和返回等交互动作的能力。系统会根据用户的操作意图自动推断目标组件和执行动作，开发者也可接收当前手势的默认动作处理并进行自定义干预。
@@ -333,7 +333,7 @@ struct Demo1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/wMJ0D5JzSLywo7Dz8ZkSlg/zh-cn_image_0000002800985179.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/kXqiSp0LRF6ndrJ7DSGMsA/zh-cn_image_0000002803263919.png)
 
 ### 长列表场景
 
@@ -479,7 +479,7 @@ struct Demo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/MkaVg-DXTn6vIZk33zmJKA/zh-cn_image_0000002771825288.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/dfa5hklSSFijCl-v0sTKyw/zh-cn_image_0000002803223829.png)
 
 ### 多组件类型场景手动控制选中态
 
@@ -664,7 +664,7 @@ struct Demo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/LeyriuGYR-WYZRdPKQcH0g/zh-cn_image_0000002801105103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/JH8Q6dqdTPSRK_AEyG5YEw/zh-cn_image_0000002774064110.png)
 
 ### Swiper组件翻页场景
 
@@ -866,4 +866,4 @@ struct Demo4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ym0KPcQyRE2uFkjllXKZCQ/zh-cn_image_0000002771665324.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/ANT1uqW5RsCfFtoqrXT-Tw/zh-cn_image_0000002773904136.png)

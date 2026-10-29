@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distributed-pasteboard
 title: 跨设备剪贴板常见场景
-breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 跨设备剪贴板常见场景
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 跨设备剪贴板常见场景
 category: best-practices
-scraped_at: 2026-10-16T07:06:42+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:9396eeaba9f6768a385c344985795c8856e6a8eed8db9c44d0db98e8a66af937
+scraped_at: 2026-10-29T08:03:12+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:01a809cc4bc61d480bab11ba2af7e3ded0f5023be39fcc3f528c84ec0b02089a
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ content_hash: sha256:9396eeaba9f6768a385c344985795c8856e6a8eed8db9c44d0db98e8a66
 跨设备剪贴板的开发流程主要包括以下两个步骤：
 
 1. 设备A复制数据，写入剪贴板服务：将需要存入系统剪贴板的数据转换为系统剪贴板可接受的通用格式，调用SystemPasteboard.[setData()](../harmonyos-references/js-apis-pasteboard.md#setdata9)方法，将数据写入系统剪贴板。
-2. 设备B粘贴数据，读取剪贴板内容：可以[使用粘贴控件](../harmonyos-guides/pastebutton.md)获得临时授权直接读取剪贴板数据。或申请系统剪贴板权限[ohos.permission.READ\_PASTEBOARD](../harmonyos-guides/restricted-permissions.md#ohospermissionread_pasteboard)后，使用[@ohos.pasteboard (剪贴板)](../harmonyos-references/js-apis-pasteboard.md#systempasteboard)接口读取剪贴板数据。具体开发步骤请参考[访问剪贴板内容](../harmonyos-guides/get-pastedata-permission-guidelines.md#访问剪贴板内容)。
+2. 设备B粘贴数据，读取剪贴板内容：可以[使用粘贴控件](../harmonyos-guides/pastebutton.md)获得临时授权直接读取剪贴板数据。或申请系统剪贴板权限[ohos.permission.READ\_PASTEBOARD](../harmonyos-guides/restricted-permissions.md#ohospermissionread_pasteboard)后，使用[SystemPasteboard](../harmonyos-references/js-apis-pasteboard.md#systempasteboard)接口读取剪贴板数据。具体开发步骤请参考[访问剪贴板内容](../harmonyos-guides/get-pastedata-permission-guidelines.md#访问剪贴板内容)。
 
 下文将通过[分享直达](bpta-distributed-pasteboard.md#section1146419501282)场景、[多样式复制粘贴](bpta-distributed-pasteboard.md#section91711442235)场景、[进度条接入](bpta-distributed-pasteboard.md#section58295561239)场景，详细介绍跨设备剪贴板开发过程中常见场景的开发实现流程。
 
@@ -43,7 +43,7 @@ content_hash: sha256:9396eeaba9f6768a385c344985795c8856e6a8eed8db9c44d0db98e8a66
 
 用户在任意应用（如短信、浏览器等）中复制包含特定标识的文本（如活动口令、订单号或链接等），随后打开目标应用（如商城应用、服务应用），应用能自动识别复制文本中预设的关键字或编码。应用在校验关键字格式、时效性或用户权限通过后，弹窗或直接跳转至关联的活动页面、订单详情页或其他特定功能模块。例如用户复制短信中的活动链接，打开商城应用后自动跳转至促销活动页，无需手动搜索或点击多级菜单。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a8/v3/pHeC3rs_Q5uIkWs55z9p2w/zh-cn_media_0000002429043485.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e7/v3/TjKdEuFORO2rRNHG2isThw/zh-cn_media_0000002429043485.mp4)
 
 **构建****数据存入剪贴板**
 
@@ -119,7 +119,7 @@ checkPermissionGrant(): void {
 
 随着富文本数据接入不同设备，为了使复制的数据能够被更多的设备B识别，设备A需要将同一份数据的多种样式存入剪贴板中。如设备A图文混排的富文本数据可以按[纯文本类型（'text/plain'）](../harmonyos-references/js-apis-pasteboard.md#常量)、包含文字样式及图片的[HTML类型（'text/html'）](../harmonyos-references/js-apis-pasteboard.md#常量)、[纯图片类型（'pixelMap'）](../harmonyos-references/js-apis-pasteboard.md#常量)等多种类型存入剪贴板。设备B选择需要的类型读取对应类型的数据，然后实现粘贴操作。剪贴板支持的数据类型请参考[@ohos.pasteboard (剪贴板)](../harmonyos-references/js-apis-pasteboard.md#常量)。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/8f/v3/d08J14EDQvS0c8SWqYXoBw/zh-cn_media_0000002429163385.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b9/v3/YXU-JRCQTjSIkb1okRIFjQ/zh-cn_media_0000002429163385.mp4)
 
 **构建数据存入剪贴板**
 
@@ -248,7 +248,7 @@ await systemPasteBoard.setData(pasteData).catch((err: BusinessError) => {
 
 允许文件粘贴时，通常需要使用进度条将抽象进程转化为可视化的动态变化，帮助用户快速了解当前进展。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/7c/v3/MgqiqmdKQzC65HYepc54-g/zh-cn_media_0000002395443772.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/77/v3/PsT87HnCQnimO24UYmoKrg/zh-cn_media_0000002395443772.mp4)
 
 **构建****数据存入剪贴板**
 

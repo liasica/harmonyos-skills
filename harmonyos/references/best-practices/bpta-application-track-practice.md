@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用埋点
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用埋点
 category: best-practices
-scraped_at: 2026-10-16T07:06:35+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:6d5828fa054e3568d144a05b0c8331d64ad64abd161e9c244dbcbe41f682822d
+scraped_at: 2026-10-29T08:03:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d1a7859de475ccc3d262f4bcc16cca1b03ad4bfe43e735d72028eb73be44245e
 ---
 
 ## 概述
@@ -31,17 +31,17 @@ content_hash: sha256:6d5828fa054e3568d144a05b0c8331d64ad64abd161e9c244dbcbe41f68
 
 ## 方案介绍
 
-接下来会从（1）组件动态绑定埋点数据；（2）点击埋点方案；（3）曝光埋点方案；（4）页面埋点方案四部分介绍。整体方案使用全局无感监听能力[UIObserver](../harmonyos-references/arkts-apis-uicontext-uiobserver.md)和[setOnVisibleAreaApproximateChange](../harmonyos-references/ts-uicommonevent.md#setonvisibleareaapproximatechange)属性实现埋点功能。
+接下来会从（1）组件动态绑定埋点数据；（2）点击埋点方案；（3）曝光埋点方案；（4）页面埋点方案四部分介绍。整体方案使用全局无感监听能力[Class (UIObserver)](../doccenter-references/api/arkts-apis-uicontext-uiobserver.md)和[setOnVisibleAreaApproximateChange](../harmonyos-references/ts-uicommonevent.md#setonvisibleareaapproximatechange)属性实现埋点功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/iDbRt094SB2O0pkQQpcfsQ/zh-cn_image_0000002194010920.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/rixR6NdGQc2DeXLA28o2mA/zh-cn_image_0000002194010920.png "点击放大")
 
 ### 绑定埋点数据
 
 首先，为需要埋点的组件指定对应的ID值和埋点数据。例如，Button组件的ID可以设为“button-1”，并通过customProperty属性设置key和value，其中key为组件ID，value为埋点数据。为了方便获取，可以将埋点数据统一定义在DataResource中。
 
-```typescript
+```screen
 // entry\src\main\ets\pages\ClickPage.ets
-Button('Click Tracing Point - Single Component')
+Button($r('app.string.click_tracing_point_single_component'))
   .width('100%')
   .id('button-1')
   .fontWeight(FontWeight.Bold)
@@ -72,7 +72,7 @@ export interface DataResourceType {
 
 ### 点击埋点
 
-配置完埋点数据并绑定组件后，在EntryAbility中注册点击事件监听，在事件回调中获取触发节点。[UIObserver](../harmonyos-references/arkts-apis-uicontext-uiobserver.md)一共提供了两种监听事件：
+配置完埋点数据并绑定组件后，在EntryAbility中注册点击事件监听，在事件回调中获取触发节点。[Class (UIObserver)](../doccenter-references/api/arkts-apis-uicontext-uiobserver.md)一共提供了两种监听事件：
 
 * [on('willClick')](../harmonyos-references/arkts-apis-uicontext-uiobserver.md#onwillclick12)：用于监听点击事件指令下发情况，所注册回调将于点击事件触发前触发。
 
@@ -87,7 +87,7 @@ export interface DataResourceType {
    ```screen
    // entry\src\main\ets\pages\ClickPage.ets
    Row() {
-     Text('Click Tracing Point - Composite Component')
+     Text($r('app.string.click_tracing_point_composite_component'))
        // ...
      Image($r('app.media.ic_public_arrow_right'))
        // ...
@@ -102,7 +102,7 @@ export interface DataResourceType {
 
    Row() {
      // entry\src\main\ets\pages\ClickPage.ets
-     Button('Click Tracing Point - Single Component')
+     Button($r('app.string.click_tracing_point_single_component'))
        .width('100%')
        .id('button-1')
        .fontWeight(FontWeight.Bold)
@@ -156,7 +156,7 @@ export interface DataResourceType {
      };
    }
    ```
-4. 然后通过@kit.PerformanceAnalysisKit的[write()](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventwrite)方法将需要的数据写入当天的事件文件中。需要注意的是eventParams的参数值只能是number、string、boolean以及数组类型。
+4. 然后通过@kit.PerformanceAnalysisKit的[hiAppEvent.write](../doccenter-references/api/js-apis-hiviewdfx-hiappevent.md#hiappeventwrite)()方法将需要的数据写入当天的事件文件中。需要注意的是eventParams的参数值只能是number、string、boolean以及数组类型。
 
    ```typescript
    hiAppEvent.write({
@@ -172,7 +172,7 @@ export interface DataResourceType {
      hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `getClickCallback, success to write event`);
    });
    ```
-5. 最后在onWindowStageDestroy()调用UIObserver的[off()](../harmonyos-references/arkts-apis-uicontext-uiobserver.md#offwillclick12)接口取消监听事件。
+5. 最后在onWindowStageDestroy()调用UIObserver的[off('willClick')](../doccenter-references/api/arkts-apis-uicontext-uiobserver.md#offwillclick12)接口取消监听事件。
 
    ```typescript
    // entry\src\main\ets\entryability\EntryAbility.ets
@@ -477,7 +477,7 @@ uiContext.getUIObserver().on('routerPageUpdate', (info) => {
 })
 ```
 
-比如调用pushPath()从A页面跳转到B页面时，该回调会被触发三次：第一次触发的页面名称为PageB，页面状态为[ABOUT\_TO\_APPEAR](../harmonyos-references/js-apis-arkui-observer.md#routerpagestate)即将显示；第二次触发的页面名称为PageA，页面状态为ON\_PAGE\_HIDE页面隐藏；第三次触发的页面名称为PageB，页面状态为ON\_PAGE\_SHOW页面显示。回调传参同样包含页面上下文、触发事件的页面名称等等。
+比如调用pushPath()从A页面跳转到B页面时，该回调会被触发三次：第一次触发的页面名称为PageB，页面状态为[ABOUT\_TO\_APPEAR](../harmonyos-references/js-apis-arkui-observer.md#routerpagestate)即将显示；第二次触发的页面名称为PageA，页面状态为ON\_PAGE\_HIDE页面隐藏；第三次触发的页面名称为PageB，页面状态为ON\_PAGE\_SHOW页面显示。回调传参同样包含页面上下文、触发事件的页面名称等。
 
 | 字段名 | 类型 | 含义 |
 | --- | --- | --- |
@@ -559,7 +559,7 @@ struct NavigationPage {
 
 ## 埋点数据上传
 
-如果需要将埋点数据上传至服务器，可以通过[@kit.PerformanceAnalysisKit](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md)的[addWatcher()](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)方法添加订阅事件观察者、onTrigger()回调以及回调触发条件。可以自定义设置回调触发条件，比如在示例代码中当事件size大于等于1000字节时才会触发，然后在onTrigger()回调中调用http的request方法发起网络请求，将示例中的EXAMPLE\_URL替换为服务器的IP地址即可。
+如果需要将埋点数据上传至服务器，可以通过[@ohos.hiviewdfx.hiAppEvent (应用事件打点)](../doccenter-references/api/js-apis-hiviewdfx-hiappevent.md)的[hiAppEvent.addWatcher](../doccenter-references/api/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)()方法添加订阅事件观察者、onTrigger()回调以及回调触发条件。可以自定义设置回调触发条件，比如在示例代码中当事件size大于等于1000字节时才会触发，然后在onTrigger()回调中调用http的request方法发起网络请求，将示例中的EXAMPLE\_URL替换为服务器的IP地址即可。
 
 ```typescript
 // entry\src\main\ets\entryability\EntryAbility.ets

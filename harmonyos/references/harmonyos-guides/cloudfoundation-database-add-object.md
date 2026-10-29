@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 新增对象类型
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云数据库 > 新增对象类型
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:43+08:00
+scraped_at: 2026-10-29T07:57:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f557b625fb1ac48b553598acdd90ec72016ccc41441fc3dc8ae0a2d37d8b55e1
+content_hash: sha256:db6c31f15208730a9bd602f25a3b5769a0a3d63e3b9779470eaf72e782ddfe23
 ---
 
 开发者需要基于AGC控制台创建对象类型。
@@ -21,10 +21,10 @@ content_hash: sha256:f557b625fb1ac48b553598acdd90ec72016ccc41441fc3dc8ae0a2d37d8
 3. 在左侧导航栏选择“云开发（Serverless）> 云数据库”，进入云数据库页面。
 4. 点击“新增”，创建新的对象类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/in_I0-p4TC2-65_letmbdg/zh-cn_image_0000002801106229.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/diUnCplWQlSt6WBPeywspg/zh-cn_image_0000002774065238.png)
 5. 输入“对象类型名”为“BookInfo”后，点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/p5W1s7pFQJOt-7ryezl2Vw/zh-cn_image_0000002771666448.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/rjcaAgCFS6Wf9KE1MQT6CA/zh-cn_image_0000002773905264.png)
 6. 点击“+新增字段”，新增如下表字段后，点击“下一步”。
 
    | 字段名称 | 类型 | 主键 | 非空 | 加密 | 默认值 |
@@ -38,7 +38,7 @@ content_hash: sha256:f557b625fb1ac48b553598acdd90ec72016ccc41441fc3dc8ae0a2d37d8
    | borrowerTime | Date | – | – | – | – |
 7. 点击“+”新增索引，设置“索引名”为“bookName”，点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/KShWsciER6C-x4t2k1Jf8w/zh-cn_image_0000002800986305.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/h40tjof3StiU7pqEp--PTQ/zh-cn_image_0000002803265047.png)
 8. 按照如下要求设置各角色权限后，点击“确定”。
 
    | 角色 | query | upsert | delete | 说明 |
@@ -50,7 +50,7 @@ content_hash: sha256:f557b625fb1ac48b553598acdd90ec72016ccc41441fc3dc8ae0a2d37d8
 9. 创建完成后返回对象类型列表，可以查看已创建的对象类型。
 10. 勾选创建的BookInfo对象类型，点击“导出”。若不勾选对象类型，默认导出所有对象类型。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/zd078O9TR-mzRbOaIkWGzg/zh-cn_image_0000002771826416.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/vYEvhue8Sn-31sxiPkpLLA/zh-cn_image_0000002803224955.png)
 11. 导出“json格式”文件，点击“确定”。后续[引入对象类型文件](cloudfoundation-database-add-file.md)时，需要使用此文件。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/20Hc3yVHRjaFOZg98I75Cg/zh-cn_image_0000002801106231.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/xh7hCVA3QdidI7fdTdAcIw/zh-cn_image_0000002774065240.png)

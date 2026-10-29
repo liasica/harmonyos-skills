@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lite-wearable-guide
 title: 轻量级智能穿戴应用开发
-breadcrumb: 最佳实践 > 多端设备体验提升 > 穿戴 > 轻量级智能穿戴应用开发
+breadcrumb: 最佳实践 > 多设备体验进阶 > 穿戴 > 轻量级智能穿戴应用开发
 category: best-practices
-scraped_at: 2026-09-02T14:53:43+08:00
+scraped_at: 2026-10-29T08:03:19+08:00
 doc_updated_at: 2026-08-10
 content_hash: sha256:8e0ea9aabf5623bc4ed41e23d58111fbae29527cac67319ad09b4b10e341b3b5
 ---

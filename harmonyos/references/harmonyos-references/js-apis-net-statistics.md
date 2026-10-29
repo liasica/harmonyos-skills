@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.statistics (流量管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.statistics (流量管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c18fa171380c3ba5901232cd73eb7859493834b7431bb869732a09e2a4578b60
+scraped_at: 2026-10-29T08:01:00+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:3d323ec2f1f0fc08fe447048ef6ab15eef6e44d824821dd3cee77fc686f7b5f7
 ---
 
 流量管理模块提供获取设备网络流量数据的能力。该模块支持从多个维度查询数据包的流量使用情况，例如：
@@ -766,7 +766,7 @@ getSockfdRxBytes(sockfd: number, callback: AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sockfd | number | 是 | 指定查询的Socket的FD(file description)。 |
+| sockfd | number | 是 | 指定查询的Socket的FD(file descriptor)。 |
 | callback | AsyncCallback<number> | 是 | 回调函数。当成功获取Socket的下行流量时，error为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -812,7 +812,7 @@ getSockfdRxBytes(sockfd: number): Promise<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sockfd | number | 是 | 指定查询的Socket的FD(file description)。 |
+| sockfd | number | 是 | 指定查询的Socket的FD(file descriptor)。 |
 
 **返回值：**
 
@@ -861,7 +861,7 @@ getSockfdTxBytes(sockfd: number, callback: AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sockfd | number | 是 | 指定查询的Socket的FD(file description)。 |
+| sockfd | number | 是 | 指定查询的Socket的FD(file descriptor)。 |
 | callback | AsyncCallback<number> | 是 | 回调函数。当成功获取Socket的上行流量时，error为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -907,7 +907,7 @@ getSockfdTxBytes(sockfd: number): Promise<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sockfd | number | 是 | 指定查询的Socket的FD(file description)。 |
+| sockfd | number | 是 | 指定查询的Socket的FD(file descriptor)。 |
 
 **返回值：**
 

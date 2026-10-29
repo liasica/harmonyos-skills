@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-i
 title: 基于PixelMap实现图片编辑
 breadcrumb: 最佳实践 > 行业场景解决方案 > 拍摄美化 > 基于PixelMap实现图片编辑
 category: best-practices
-scraped_at: 2026-10-16T07:06:44+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062bdbed
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:6b05d0be529f70b31672b8778751e02560cc8526c8119cc85ce80db771e5a765
 ---
 
 ## 概述
 
 在移动应用开发中，图片编辑功能是用户日常使用的高频场景，例如：相册的图片编辑、社交媒体中对图片的滤镜美化等。
 
-[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)是HarmonyOS中用于表示图像像素数据的核心类。它提供了一种无压缩的位图格式，允许开发者直接读取、写入像素数据，并获取图像信息，是进行图像处理、变换和绘制的基础。本文主要介绍如何使用PixelMap对图片进行编辑处理，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据等。
+PixelMap（参考[Interface（PixelMap）](../harmonyos-references/arkts-apis-image-pixelmap.md)）是HarmonyOS中用于表示图像像素数据的核心类。它提供了一种无压缩的位图格式，允许开发者直接读取、写入像素数据，并获取图像信息，是进行图像处理、变换和绘制的基础。本文主要介绍如何使用PixelMap对图片进行编辑处理，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据等。
 
 相关功能场景描述及关键技术点如下表所示：
 
@@ -30,7 +30,7 @@ content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062
 
    | 功能描述 | **场景描述** | **关键技术点** |
    | --- | --- | --- |
-   | [图片亮度调节](bpta-pixelmap-image-editing.md#section3308181519522) | 通过滑块调节图片整体明暗程度，适用于光线不足或过强的图片。 | 像素级RGB数据处理，通过线性缩放算法RGB\_new = RGB \* factor，结合Worker线程异步处理避免卡顿。 |
+   | [图片亮度调节](bpta-pixelmap-image-editing.md#section3308181519522) | 通过滑块调节图片整体明暗程度，适用于光线不足或过强的图片。 | 像素级RGB数据处理，通过线性缩放算法RGB\_new = RGB \* factor，结合Worker线程（参考[Worker简介](../doccenter-capabilities/worker-introduction.md)）异步处理避免卡顿。 |
    | [图片透明度调节](bpta-pixelmap-image-editing.md#section18203523145211) | 通过滑块调节图片透明度，创建半透明叠加效果，用于UI遮罩或背景虚化。 | 通过PixelMap.[opacity()](../harmonyos-references/arkts-apis-image-pixelmap.md#opacity9-1)接口，直接修改Alpha通道。 |
    | [图片饱和度调节](bpta-pixelmap-image-editing.md#section8695327165213) | 通过滑块调节图片饱和度，增强或降低色彩鲜艳程度，实现图片艺术风格调整。 | 像素级RGB数据处理，通过亮度公式结合饱和度算法，并结合Worker线程异步处理。 |
    | 图片滤镜添加（参考[图片黑白滤镜](bpta-pixelmap-image-editing.md#section2124103385214)） | 为图片添加预置滤镜效果，用于图片艺术创作、风格化处理。 | 通过[effectKit.createEffect()](../harmonyos-references/js-apis-effectkit.md#effectkitcreateeffect)创建filter图像效果对象，并结合对应接口实现滤镜效果添加。 |
@@ -41,7 +41,7 @@ content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062
 
 获取图片信息展示在页面中。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/aTA2c73XQ2CgwDnBy44sFA/zh-cn_image_0000002701095653.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/VQ8HOZgjQJmAh6c6LYqSRA/zh-cn_image_0000002701095653.png "点击放大")
 
 ### 实现原理
 
@@ -112,7 +112,7 @@ content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062
 
 在编辑图片时，将图片按照1:1、4:3或16:9进行裁剪。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/_Le7CXXlTU2exONaXwZewQ/zh-cn_image_0000002701055737.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Rd3tZjdpQRGxY8MUZfG3VQ/zh-cn_image_0000002701055737.gif "点击放大")
 
 ### 实现原理
 
@@ -256,7 +256,7 @@ content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062
 
 通过滑动Slider，在横向/纵向调节图片位置。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/6PWvZx9dQVCh8ji9xIkONg/zh-cn_image_0000002671335926.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/dOnLwF4SRW61naon-vtFIA/zh-cn_image_0000002671335926.gif "点击放大")
 
 ### 实现原理
 
@@ -393,7 +393,7 @@ content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062
 
 单击图片旋转按钮，改变图片显示方向。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Gie25J0NQUixSSxh2aYgVg/zh-cn_image_0000002671176072.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/KCb9_DmsTqaR85L-1GBiBg/zh-cn_image_0000002671176072.gif "点击放大")
 
 ### 实现原理
 
@@ -443,7 +443,7 @@ content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062
 
 单击镜像翻转图标，使图片进行水平翻转。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Nsns3cH8TRqKWV5p4uA3lQ/zh-cn_image_0000002701095655.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/d22evL3zT-yIxbDLaJzY3g/zh-cn_image_0000002701095655.gif "点击放大")
 
 ### 实现原理
 
@@ -496,7 +496,7 @@ content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062
 
 滑动Slider，图片按照比例进行缩小或放大。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Akr89rVeRGShZiw-CHQvQg/zh-cn_image_0000002701055781.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/jZg6aKGpTDm-W7MC5J_Crg/zh-cn_image_0000002701055781.gif "点击放大")
 
 ### 实现原理
 
@@ -539,7 +539,7 @@ content_hash: sha256:32fc4e4d1148f216c9d9002e055f3b0f69de471f8b443d01c89ca1be062
 
 滑动Slider，调节图片显示亮度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/i13V6liOSZu7nTxfJADrvg/zh-cn_image_0000002671335972.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/mJPuf_QdT2qVN43e2L-p7g/zh-cn_image_0000002671335972.gif "点击放大")
 
 ### 实现原理
 
@@ -733,7 +733,7 @@ factor = 当前调节值 / 100
 
 滑动Slider，调节图片透明度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/C9BkpgASSiC-VNYB3ZFxww/zh-cn_image_0000002671176144.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/enVOauuYQ9G7JfmlLCIsgQ/zh-cn_image_0000002671176144.gif "点击放大")
 
 ### 实现原理
 
@@ -774,7 +774,7 @@ factor = 当前调节值 / 100
      this.notifyPreviewUpdate(px); // Update Preview.
    }
    ```
-2. 在Slider组件的onChange()事件中调用sliderChange()，实现透明度调节，参考：图片亮度调节[开发步骤](bpta-pixelmap-image-editing.md#li73171351133011)。
+2. 在Slider组件的onChange()事件中调用sliderChange()，实现透明度调节，参考：图片亮度调节[开发步骤](bpta-pixelmap-image-editing.md#section2758132011188)。
 
 ## 图片饱和度调节
 
@@ -782,7 +782,7 @@ factor = 当前调节值 / 100
 
 滑动Slider，调节图片饱和度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/0_hdTdcKQEevm9Nga6ZkgA/zh-cn_image_0000002701095731.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/zXYy9p2ISAegv7cLIKXusg/zh-cn_image_0000002701095731.gif "点击放大")
 
 ### 实现原理
 
@@ -860,7 +860,7 @@ factor = 当前调节值 / 100
      }
    }
    ```
-3. Worker线程处理及Worker通信，参考：图片亮度调节[开发步骤](bpta-pixelmap-image-editing.md#li7523135152515)。
+3. Worker线程处理及Worker通信，参考：图片亮度调节[开发步骤](bpta-pixelmap-image-editing.md#section2758132011188)。
 4. 在adjustImage()方法中，获取PixelMap的像素数据到Buffer，调用处理图片饱和度，并更新预览图像。
 
    ```typescript
@@ -906,7 +906,7 @@ factor = 当前调节值 / 100
 
 选中黑白滤镜，图片显示黑白效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/pkcyJdVPR6yS3GQgpMoe-w/zh-cn_image_0000002701055811.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/elkzFXX_Tfa11X4cICd6EA/zh-cn_image_0000002701055811.png "点击放大")
 
 ### 实现原理
 
@@ -976,7 +976,7 @@ factor = 当前调节值 / 100
 
 选中高亮滤镜，图片显示高亮效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Nuu58q_mQcqnqfY3coDNww/zh-cn_image_0000002671336002.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/AIA75FdiSxSMjaypvL1EsQ/zh-cn_image_0000002671336002.png "点击放大")
 
 ### 实现原理
 
@@ -1025,7 +1025,7 @@ factor = 当前调节值 / 100
 
 选中反转滤镜，图片显示反转效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/N0jHt4D5S1WsCs62VGWjYg/zh-cn_image_0000002671176146.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/unT3Ea1URa6KouLz_4nP4w/zh-cn_image_0000002671176146.png "点击放大")
 
 ### 实现原理
 
@@ -1074,7 +1074,7 @@ factor = 当前调节值 / 100
 
 选中模糊滤镜，图片显示模糊效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/tg0aMyWkSLmNk6WBve649Q/zh-cn_image_0000002701095733.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/oPD_rqCDT3e_8g8-6yvGEw/zh-cn_image_0000002701095733.png "点击放大")
 
 ### 实现原理
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.connection (网络连接管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.connection (网络连接管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:54+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:3fa4ec4f8fb06ba01a09335d6629fb5bb3219802d68a423a334b86a40d6eca4b
+scraped_at: 2026-10-29T08:01:01+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:cd1762d78cb2a842283937f39a31deed7466307f7261c6509fdddf15dfa2fe1e
 ---
 
 网络连接管理提供管理网络一些基础能力，包括获取默认激活的网络、获取所有激活网络列表、获取网络能力信息等功能。
@@ -1974,13 +1974,12 @@ connection.clearCustomDnsRules().then(() => {
 
 setPacFileUrl(pacFileUrl: string): void
 
-设置PAC脚本（Proxy Auto-Configuration Script，代理自动配置脚本）的URL地址，并启动PAC代理能力，比如：<http://127.0.0.1:21998/PacProxyScript.pac> 。可通过调用[findProxyForUrl](js-apis-net-connection.md#connectionfindproxyforurl20)解析URL地址来获取代理信息。
+设置PAC脚本（Proxy Auto-Configuration Script，代理自动配置脚本）的URL地址，并启动PAC代理能力，比如：http://127.0.0.1:21998/PacProxyScript.pac 。可通过调用[findProxyForUrl](js-apis-net-connection.md#connectionfindproxyforurl20)解析URL地址来获取代理信息。
 
 **注意** 
 
-1、本接口当前在PC/2in120+、Phone23+、Tablet23+、TV23+设备上支持解析脚本并启用PAC代理能力，Wearable设备类型上只保存脚本地址，不会启用PAC代理能力。
-
-2、该接口不会校验URL真实性，在启动PAC代理时，若URL有误，则启动代理失败，返回2100002错误码。
+1. 本接口当前在PC/2in120+、Phone23+、Tablet23+、TV23+设备上支持解析脚本并启用PAC代理能力，Wearable设备类型上只保存脚本地址，不会启用PAC代理能力。
+2. 该接口不会校验URL真实性，在启动PAC代理时，若URL有误，则启动代理失败，返回2100002错误码。
 
 **需要权限**：ohos.permission.SET\_PAC\_URL
 
@@ -2049,11 +2048,9 @@ findProxyForUrl(url: string): string
 
 **说明** 
 
-1、可通过 [setPacFileUrl](js-apis-net-connection.md#connectionsetpacfileurl20) 或 [setPacUrl](js-apis-net-connection.md#connectionsetpacurl15) 设置PAC脚本。
-
-2、如果调用本接口前未设置PAC脚本，则返回空字符串。
-
-3、由于[setPacFileUrl](js-apis-net-connection.md#connectionsetpacfileurl20)接口支持PC/2in120+、Phone23+、Tablet23+、TV23+设备解析脚本并启用PAC代理能力，因此本接口支持以上设备获取PAC代理信息。 Wearable设备调用本接口功能不生效，返回空字串。
+1. 可通过 [setPacFileUrl](js-apis-net-connection.md#connectionsetpacfileurl20) 或 [setPacUrl](js-apis-net-connection.md#connectionsetpacurl15) 设置PAC脚本。
+2. 如果调用本接口前未设置PAC脚本，则返回空字符串。
+3. 由于[setPacFileUrl](js-apis-net-connection.md#connectionsetpacfileurl20)接口支持PC/2in120+、Phone23+、Tablet23+、TV23+设备解析脚本并启用PAC代理能力，因此本接口支持以上设备获取PAC代理信息。 Wearable设备调用本接口功能不生效，返回空字串。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
@@ -3734,7 +3731,7 @@ TCP状态。
 | --- | --- | --- | --- | --- |
 | host | string | 否 | 否 | 代理服务器主机名。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | port | number | 否 | 否 | 主机端口。取值范围[0,65535]。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| exclusionList | Array<string> | 否 | 否 | 不使用代理的主机名列表，主机名支持域名、IP地址以及通配符形式，详细匹配规则如下：  1、域名匹配规则：  （1）完全匹配：代理服务器主机名只要与列表中的任意一个主机名完全相同，就可以匹配。  （2）包含匹配：代理服务器主机名只要包含列表中的任意一个主机名，就可以匹配。  例如，如果在主机名列表中设置了 “ample.com”，则 “ample.com”、“www.ample.com”、“ample.com:80”都会被匹配，而 “www.example.com”、“ample.com.org”则不会被匹配。  2、IP地址匹配规则：代理服务器主机名只要与列表中的任意一个IP地址完全相同，就可以匹配。  3、域名跟IP地址可以同时添加到列表中进行匹配。  4、单个“\*”是唯一有效的通配符，当列表中只有通配符时，将与所有代理服务器主机名匹配，表示禁用代理。通配符只能单独添加，不可以与其他域名、IP地址一起添加到列表中，否则通配符将不生效。  5、匹配规则不区分主机名大小写。  6、匹配主机名时，不考虑http和https等协议前缀。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| exclusionList | Array<string> | 否 | 否 | 不使用代理的主机名列表，主机名支持域名、IP地址以及通配符形式，详细匹配规则如下：  1. 域名匹配规则：  （1）完全匹配：代理服务器主机名只要与列表中的任意一个主机名完全相同，就可以匹配。  （2）包含匹配：代理服务器主机名只要包含列表中的任意一个主机名，就可以匹配。  例如，如果在主机名列表中设置了 “ample.com”，则 “ample.com”、“www.ample.com”、“ample.com:80”都会被匹配，而 “www.example.com”、“ample.com.org”则不会被匹配。  2. IP地址匹配规则：代理服务器主机名只要与列表中的任意一个IP地址完全相同，就可以匹配。  3. 域名跟IP地址可以同时添加到列表中进行匹配。  4. 单个“\*”是唯一有效的通配符，当列表中只有通配符时，将与所有代理服务器主机名匹配，表示禁用代理。通配符只能单独添加，不可以与其他域名、IP地址一起添加到列表中，否则通配符将不生效。  5. 匹配规则不区分主机名大小写。  6. 匹配主机名时，不考虑http和https等协议前缀。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | username12+ | string | 否 | 是 | 使用代理的用户名。  **说明:** 需同时设置password参数才会生效。 |
 | password12+ | string | 否 | 是 | 使用代理的用户密码。  **说明:** 需同时设置username参数才会生效。 |
 
@@ -3770,7 +3767,7 @@ SOCKS5代理配置信息。
 | username | string | 否 | 是 | 使用代理的用户名。  **说明:** 需同时设置password参数才会生效。 |
 | password | string | 否 | 是 | 使用代理的用户密码。  **说明:** 需同时设置username参数才会生效。 |
 | dnsStrategy | [Socks5DnsStrategy](js-apis-net-connection.md#socks5dnsstrategy) | 否 | 是 | 指定DNS解析由系统执行还是由代理服务器执行。  **说明:** 当此项未指定时，如果host有socks5h://协议前缀，则DNS解析由代理服务器执行，否则DNS解析由系统执行。 |
-| exclusionList | Array<string> | 否 | 是 | 不使用代理的主机名列表，主机名支持域名、IP地址以及通配符形式，详细匹配规则如下：  1、域名匹配规则：  （1）完全匹配：代理服务器主机名只要与列表中的任意一个主机名完全相同，就可以匹配。  （2）包含匹配：代理服务器主机名只要包含列表中的任意一个主机名，就可以匹配。  例如，如果在主机名列表中设置了“example.com”，则“example.com”、“www.example.com”、“example.com:80”都会被匹配，而 “www.myexample.com”、“myexample.com.org”则不会被匹配。  2、IP地址匹配规则：代理服务器主机名只要与列表中的任意一个IP地址完全相同，就可以匹配。  3、域名跟IP地址可以同时添加到列表中进行匹配。  4、单个“\*”是唯一有效的通配符，当列表中只有通配符时，将与所有代理服务器主机名匹配，表示禁用代理。通配符只能单独添加，不可以与其他域名、IP地址一起添加到列表中，否则通配符将不生效。  5、匹配规则不区分主机名大小写。  6、匹配主机名时，不考虑http、https、socks5、socks5h等协议前缀。 |
+| exclusionList | Array<string> | 否 | 是 | 不使用代理的主机名列表，主机名支持域名、IP地址以及通配符形式，详细匹配规则如下：  1. 域名匹配规则：  （1）完全匹配：代理服务器主机名只要与列表中的任意一个主机名完全相同，就可以匹配。  （2）包含匹配：代理服务器主机名只要包含列表中的任意一个主机名，就可以匹配。  例如，如果在主机名列表中设置了“example.com”，则“example.com”、“www.example.com”、“example.com:80”都会被匹配，而 “www.myexample.com”、“myexample.com.org”则不会被匹配。  2. IP地址匹配规则：代理服务器主机名只要与列表中的任意一个IP地址完全相同，就可以匹配。  3. 域名跟IP地址可以同时添加到列表中进行匹配。  4. 单个“\*”是唯一有效的通配符，当列表中只有通配符时，将与所有代理服务器主机名匹配，表示禁用代理。通配符只能单独添加，不可以与其他域名、IP地址一起添加到列表中，否则通配符将不生效。  5. 匹配规则不区分主机名大小写。  6. 匹配主机名时，不考虑http、https、socks5、socks5h等协议前缀。 |
 
 ## NetSpecifier
 
@@ -3861,7 +3858,7 @@ wifiManager.addCandidateConfig(config,(error,networkId) => {
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | netHandle | [NetHandle](js-apis-net-connection.md#nethandle) | 否 | 否 | 网络句柄。 |
-| blocked | boolean | 否 | 否 | 标识当前网络是否是堵塞状态。true：标识当前网络是堵塞状态；false：标识当前网络不是堵塞状态。 |
+| blocked | boolean | 否 | 否 | 标识当前网络是否是阻塞状态。true：标识当前网络是阻塞状态；false：标识当前网络不是阻塞状态。 |
 
 ## ConnectionProperties
 

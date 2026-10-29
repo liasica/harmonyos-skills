@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: GlobalHandle类型内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkTS内存泄漏故障模式说明 > GlobalHandle类型内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-10-16T07:06:51+08:00
+scraped_at: 2026-10-29T08:03:26+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:cff758c76302f9a514503b2c1dfdeebe282a0c18d53b7c9a7ed6d4e19f8136ec
+content_hash: sha256:6f9546bad83932fc0b5112ad6009c66e99250a69a3eb3a3e9a9dd78c48bfe40e
 ---
 
 ## 概述
@@ -67,9 +67,9 @@ GlobalHandleRoot：C++代码为了长期保留ArkTS对象引用创建了持久�
 
 代码中GlobalHandle()函数申请100MB的数组对象，箭头函数使用该数组对象，并传入自定义Native接口create\_but\_no\_delreference()。箭头函数传入Native接口后，napi\_create\_reference()创建的GlobalHandle持有传入的函数对象未释放，该函数对象即为GlobalHandleRoot。示例如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/s_xQJVS4RBKEARJdathmtw/zh-cn_image_0000002729464441.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/MXnLt_1fQBS9ipyQ5AQygg/zh-cn_image_0000002729464441.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rdtPaMykRLSnkaFY5hdRCg/zh-cn_image_0000002699865070.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/KUPWZrsuRqOiy3J7DArSOg/zh-cn_image_0000002699865070.png)
 
 **问题分析思路**
 
@@ -79,11 +79,11 @@ GlobalHandleRoot：C++代码为了长期保留ArkTS对象引用创建了持久�
 
 3. 参考[运维态内存泄漏分析方法](bpta-overview-of-arkts-memory-leaks-overview.md#section1289738624)，发现内存快照中有三个内存占用100MB的array对象，在内存快照中占用了最多的内存。查看array对象的根节点为匿名函数，根节点类型为GlobalHandleRoot，说明是GlobalHandle持有导致泄漏。内存快照如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/S688FduaSEiEZpMYeDiJkw/zh-cn_image_0000002729584401.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/TqQRaUuSQ2mEH3XzQ_uziA/zh-cn_image_0000002729584401.png "点击放大")
 
 4. 使用[Handle泄漏检测工具使用方法](bpta-overview-of-arkts-memory-leaks-overview.md#section1943877608)进行进一步分析，找到对应创建GlobalHandle引用的调用栈。检测工具获取的调用栈如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ityLDCm0RVygNZILxLV-Tg/zh-cn_image_0000002699705182.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/YJO9ItZNT3mItMn3u3dwyA/zh-cn_image_0000002699705182.png "点击放大")
 
 5. 分析调用栈可知泄漏对象创建路径，结合业务代码分析是否存在内存泄漏场景。查看该调用栈，发现开发者没有调用napi\_delete\_reference()合理管控napi\_ref的生命周期导致内存泄漏。
 

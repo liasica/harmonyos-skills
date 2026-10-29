@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-c
 title: 基于PixelMap与Canvas实现图片编辑
 breadcrumb: 最佳实践 > 行业场景解决方案 > 拍摄美化 > 基于PixelMap与Canvas实现图片编辑
 category: best-practices
-scraped_at: 2026-10-16T07:06:44+08:00
-doc_updated_at: 2026-08-17
-content_hash: sha256:af1522057ceed62a17efba116aa99b28f63eb9578411f09464bd0aa6fb6ec93f
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:1336e13acfa08ea392ce4cdf47dacf483653a12f94d85dad4088b7efea7f1638
 ---
 
 ## 概述
 
 [Canvas](../harmonyos-references/ts-components-canvas-canvas.md)是ArkUI框架中用于自定义绘制图形的核心组件，提供了灵活的绘制能力，支持绘制基础形状、文本、图片以及复杂的图形变换。
 
-本文主要基于[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)和Canvas实现图片编辑处理，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据、图片水印添加等。
+本文主要基于PixelMap（参考[Interface (PixelMap)](../harmonyos-references/arkts-apis-image-pixelmap.md)）和Canvas实现图片编辑处理，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据、图片水印添加等。
 
 相关场景描述及关键技术点如下表所示：
 
@@ -20,7 +20,8 @@ content_hash: sha256:af1522057ceed62a17efba116aa99b28f63eb9578411f09464bd0aa6fb6
 | --- | --- | --- |
 | 图片平移 | 沿水平/垂直方向调整图片位置，用于构图微调。 | 通过Canvas.[drawImage()](../harmonyos-references/ts-components-canvas-common-method.md#drawimage-1)结合图片偏移量，在画布上重绘图片实现平移。 |
 | 图片水印添加 | 为图片添加水印文字，支持自定义水印文本、字号、透明度、角度、是否重复等，用于用户版权保护或品牌标识。 | 通过[OffscreenCanvas](../harmonyos-references/ts-components-offscreencanvas.md)离屏画布对象绘制原图叠加水印，并结合水印文本宽度、水印坐标、水印透明度、水印旋转、循环绘制水印，导出合成像素图更新预览。 |
-| 其他场景参考《基于PixelMap编解码编辑图片开发实践》[功能描述](bpta-pixelmap-image-editing.md#table032535983016)。 | | |
+
+其他场景参考《基于PixelMap编解码编辑图片开发实践》[概述](../doccenter-scenario/bpta-pixelmap-image-editing.md#section144918356333)小节。
 
 本文主要介绍以下图片编辑功能的实现：
 
@@ -45,7 +46,7 @@ content_hash: sha256:af1522057ceed62a17efba116aa99b28f63eb9578411f09464bd0aa6fb6
 
 获取图片信息展示在页面中。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/L5z23W8xSautOtQ6naxukg/zh-cn_image_0000002701055813.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/5TO_aLbQSkuORNFrM7qe1Q/zh-cn_image_0000002701055813.png "点击放大")
 
 ### 实现原理
 
@@ -61,7 +62,7 @@ content_hash: sha256:af1522057ceed62a17efba116aa99b28f63eb9578411f09464bd0aa6fb6
 
 将图片按照1:1、4:3或16:9进行裁剪。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/tuzHYgUJTtmLYet8KGCGxg/zh-cn_image_0000002671336004.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/VJmRLtcWQKmK1lGoWiChEg/zh-cn_image_0000002671336004.gif "点击放大")
 
 ### 实现原理
 
@@ -75,9 +76,9 @@ content_hash: sha256:af1522057ceed62a17efba116aa99b28f63eb9578411f09464bd0aa6fb6
 
 ### 场景描述
 
-通过滑动Slider，在横向/纵向调节图片位置。实现效果如下图：
+通过滑动[Slider](../doccenter-references/api/ts-basic-components-slider.md)，在横向/纵向调节图片位置。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Ur8qCXzWSc2IvHv9lptT7Q/zh-cn_image_0000002671176148.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/W5dNyckbQ1azP3CEUkQW3w/zh-cn_image_0000002671176148.gif "点击放大")
 
 ### 实现原理
 
@@ -163,7 +164,7 @@ content_hash: sha256:af1522057ceed62a17efba116aa99b28f63eb9578411f09464bd0aa6fb6
 
 点击图片旋转按钮，改变图片显示方向。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/q6ekgJyWR3iKcYt4q38GHw/zh-cn_image_0000002701095735.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/bGWONbEYSJyrXDsVHsn7cA/zh-cn_image_0000002701095735.gif "点击放大")
 
 ### 实现原理
 
@@ -341,7 +342,7 @@ content_hash: sha256:af1522057ceed62a17efba116aa99b28f63eb9578411f09464bd0aa6fb6
 
 点击镜像翻转按钮，使图片进行水平翻转。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/pGHOayuiRcy0wcYusnFtAQ/zh-cn_image_0000002701055815.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/KqUP7amBQqygh-N-hDBt4w/zh-cn_image_0000002701055815.gif "点击放大")
 
 ### 实现原理
 
@@ -384,7 +385,7 @@ content_hash: sha256:af1522057ceed62a17efba116aa99b28f63eb9578411f09464bd0aa6fb6
 
 滑动Slider，图片按照比例进行缩小或放大。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/XiUuHUyeQP209yK9ePqfWg/zh-cn_image_0000002671336006.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/MqZ36JSVRmGtCgIMLOKdnw/zh-cn_image_0000002671336006.gif "点击放大")
 
 ### 实现原理
 
@@ -468,7 +469,7 @@ content_hash: sha256:af1522057ceed62a17efba116aa99b28f63eb9578411f09464bd0aa6fb6
 
 滑动Slider，调节图片显示亮度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/V40EdfR2QbqTXIu56AAhbg/zh-cn_image_0000002671176158.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/yA7ZL09sS7iJjXK5xq5dTQ/zh-cn_image_0000002671176158.gif "点击放大")
 
 ### 实现原理
 
@@ -614,7 +615,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 滑动Slider，调节图片透明度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/weYsyoiJTw-qKygWJpzT6A/zh-cn_image_0000002701095807.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/0fsimy3CSAGRuxpA9t-tYg/zh-cn_image_0000002701095807.gif "点击放大")
 
 ### 实现原理
 
@@ -630,7 +631,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 滑动Slider，调节图片饱和度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/zursyn5-QwmSetG6ejDcKQ/zh-cn_image_0000002701055983.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Mvh1caoYSw6eUklRcfFAUw/zh-cn_image_0000002701055983.gif "点击放大")
 
 ### 实现原理
 
@@ -740,7 +741,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 选中黑白滤镜，图片显示黑白效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ARbBCFCSStWl_t7BsIk3mQ/zh-cn_image_0000002671336186.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/TAEBBWYhSDeLSaUILVVgCw/zh-cn_image_0000002671336186.png "点击放大")
 
 ### 实现原理
 
@@ -809,7 +810,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 选中高亮滤镜，图片显示高亮效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/42b-SKUJSb-EPo9YV2r9ug/zh-cn_image_0000002671176350.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/dfTO0F9DQA2gWKStdu1dJA/zh-cn_image_0000002671176350.png "点击放大")
 
 ### 实现原理
 
@@ -825,7 +826,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 选中反转滤镜，图片显示反转效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/JB-RsLrVR4-c2avu0kw5Tw/zh-cn_image_0000002701095969.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/9t2Xt2_cRMexwSbpI279zA/zh-cn_image_0000002701095969.png "点击放大")
 
 ### 实现原理
 
@@ -841,7 +842,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 选中模糊滤镜，图片显示模糊效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/uA6HblGfRb2mlHpxKyRxFw/zh-cn_image_0000002701056087.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/j22BWu8PRkOhFt51Eifzkg/zh-cn_image_0000002701056087.png "点击放大")
 
 ### 实现原理
 
@@ -857,7 +858,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 点击水印编辑，在弹窗中输入水印内容为图片添加水印，同时可以调整水印的位置、大小、透明度、旋转角度、选择是否重复等。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/alQPaR_dTL-OuGRmjbh3bw/zh-cn_image_0000002671336272.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/k8PNCVRwR1qKNeHY75ehlA/zh-cn_image_0000002671336272.gif "点击放大")
 
 ### 实现原理
 

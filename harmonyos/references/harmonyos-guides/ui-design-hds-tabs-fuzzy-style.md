@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置页签栏的模糊样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置页签栏的模糊样式
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:02+08:00
+scraped_at: 2026-10-29T07:56:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bd7544e0a0cf3bdc738bf042a7bffa1d3b167ad129b5ace33ea32ebacdbeb19a
+content_hash: sha256:758c8814f86e6c533004ebd4139709672180a22e83bdf014263e3b6db89d4367
 ---
 
 ## 场景介绍
@@ -16,10 +16,10 @@ content_hash: sha256:bd7544e0a0cf3bdc738bf042a7bffa1d3b167ad129b5ace33ea32ebacdb
 
 * 直接模糊
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/IZ7QTNafT1W5mf4_bWFrmA/zh-cn_image_0000002771825778.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/KQzZn65TSy6LgMDe6sESBQ/zh-cn_image_0000002803224317.png)
 * 渐变模糊
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Nuu9H513QRi__sZ5g3Rmfw/zh-cn_image_0000002801105591.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/pdueLlW4QfONraRjI2Am9w/zh-cn_image_0000002774064598.jpg)
 
 ## 约束条件
 

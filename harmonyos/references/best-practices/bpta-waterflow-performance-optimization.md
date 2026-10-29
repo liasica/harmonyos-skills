@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 瀑布流加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 瀑布流加载丢帧优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:6d2f334ae51c6146716353624558c9b555ca5f011d463561971add6d6c78253d
+scraped_at: 2026-10-29T08:03:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:ab2bbe12ca4ee727975bfa78d2210e31c10f9062dbf13388e24078bea5753981
 ---
 
 ## 概述
@@ -85,7 +85,7 @@ build() {
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/nUrwlq-aSCmE3yNz1e5LDA/zh-cn_image_0000002194010900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/PlFZFLsuQ_aFAPd_ccMZuQ/zh-cn_image_0000002194010900.png)
 
 示例如下：
 
@@ -135,7 +135,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Jk5OVIwbR5K3G0Ia59oYAw/zh-cn_image_0000002194010908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/fwqnmIw2TNO3QKvMLvCN2w/zh-cn_image_0000002194010908.png "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -162,7 +162,7 @@ getTitleHeight(title: string): number {
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/0BTgCO9YSJaNyNlOLyDuvA/zh-cn_image_0000002194010904.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/vZbhz2vIQmi3-JHCYnggrQ/zh-cn_image_0000002194010904.png "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 
@@ -176,7 +176,7 @@ getTitleHeight(title: string): number {
 
 从测试结果可以看出，使用LazyForEach懒加载后，相关指标显著提升，尤其是在内存使用和首次渲染时间方面。其他优化方法可以进一步减少滑动过程中的丢帧率，从而优化交互体验。缓存数据项会影响首次渲染时间，因为缓存的数据未在首屏展示，但需要加载额外的数据，导致内存使用增加。由于UI组件的复用，内存使用显著减少。
 
-对于瀑布流性能优化方式，与长列表优化类似，都可以使用懒加载、缓存列表项、动态预加载、组件复用、布局优化等方式优化性能。固定宽高作为瀑布流特有的优化性能手段能够进一步提升瀑布流的性能，同时可以避免新加载元素瞬间刷新带来的“闪烁“问题。在滑动过程中加载数据，可以避免同一时间创建大量组件而导致丢帧的情况。相应技术总结见下表：
+对于瀑布流性能优化方式，与长列表优化类似，都可以使用懒加载、缓存列表项、动态预加载、组件复用、布局优化等方式优化性能。固定宽高作为瀑布流特有的优化性能手段能够进一步提升瀑布流的性能，同时可以避免新加载元素瞬间刷新带来的“闪烁”问题。在滑动过程中加载数据，可以避免同一时间创建大量组件而导致丢帧的情况。相应技术总结见下表：
 
 **表2** 瀑布流性能优化方法总结
 

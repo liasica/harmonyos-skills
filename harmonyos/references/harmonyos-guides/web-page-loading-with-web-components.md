@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-page-load
 title: 使用Web组件加载页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 使用Web组件加载页面
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:57+08:00
+scraped_at: 2026-10-29T07:56:41+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:a0e3527f256fa800fb57e035a9b29b886555faaae818bcb0c3d7df6d34ff2e57
+content_hash: sha256:74a9be6bc1a292bca05c3f29194546b6c216baf4ae4b9b47fbf0dc3807e548b3
 ---
 
 页面加载是Web组件的基本功能。根据页面加载数据来源可以分为三种常用场景，包括加载网络页面、加载本地页面、加载HTML格式的富文本数据。
@@ -72,7 +72,7 @@ struct WebComponent {
 
   **图1** 资源文件路径
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/TjlyMaRgR5-nLTxG324XOA/zh-cn_image_0000002771825608.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/zBYwdhzPSN2QdKTZuwpkbA/zh-cn_image_0000002803224147.png)
 * 应用侧代码。
 
   ```typescript

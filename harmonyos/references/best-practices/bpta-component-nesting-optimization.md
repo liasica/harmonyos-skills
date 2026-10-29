@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-component-
 title: 组件嵌套优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 组件嵌套优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:8a13c32bb035936feb113e27681ec4601cc166f1b64b4c6a811680124016796d
+scraped_at: 2026-10-29T08:03:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:5dd3ad7338db2874881bde5f264c0c7cb94426e4f3989a7ad44e755a68e0bee1
 ---
 
 本文通过原理概念、优化场景和实践数据对比三个角度，详细介绍了组件嵌套的优化，着重从优化场景角度为开发者阐明组件嵌套的优化场景以及优化策略。
@@ -16,7 +16,7 @@ content_hash: sha256:8a13c32bb035936feb113e27681ec4601cc166f1b64b4c6a81168012401
 
 ### ArkUI框架执行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/6-KT-MBeTIaddSlfjr9hXw/zh-cn_image_0000002427576872.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-b9tjngvRkmnX5HNDR88AQ/zh-cn_image_0000002427576872.png "点击放大")
 
 如上图所示，可以看到ArkUI框架的执行顺序：
 
@@ -26,7 +26,7 @@ content_hash: sha256:8a13c32bb035936feb113e27681ec4601cc166f1b64b4c6a81168012401
 
 ### 自定义组件的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/uFmBQj9XS0ychruuFjFHHw/zh-cn_image_0000002229451945.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/G1X7e0jmQymNdbyTyjQ5Hw/zh-cn_image_0000002229451945.png "点击放大")
 
 如上图所示，自定义组件创建完成之后，在build函数执行之前，将先执行aboutToAppear()生命周期回调函数。执行完build函数后，还会有一些事件监听函数，例如可以使用onPageShow监听页面显示事件，onPageHide函数可以监听页面隐藏事件。最终在自定义组件析构销毁前执行aboutToDisappear函数。
 
@@ -40,7 +40,7 @@ content_hash: sha256:8a13c32bb035936feb113e27681ec4601cc166f1b64b4c6a81168012401
 
 从自定义组件的生命周期的角度上分析，如果自定义组件过度嵌套，则会有大量的生命周期函数需要执行，消耗性能。
 
-详细的组件嵌套性能数据分析可参考[《精简节点数》](../harmonyos-guides/arkts-layout-optimization-guidance.md#精简节点数)。
+详细的组件嵌套性能数据分析可参考[精简节点数](../harmonyos-guides/arkts-layout-optimization-guidance.md#精简节点数)。
 
 ## 优化场景
 
@@ -100,10 +100,10 @@ export function example1(){
 
 自定义组件自身为非渲染节点，仅是组件树和状态数据的组合，常规使用自定义组件时并不会产生多余的节点。但是给自定义组件添加属性后，会将自定义组件作为一个整体节点进行处理。对内部的组件树进行操作，如背景色绘制、圆角绘制等都会作用在该节点上。
 
-通过DevEco Studio内置ArkUI Inspector工具，查看组件树结构可以看到，相比使用@Builder方法，组件树多一个自定义组件节点，所以[优先使用@Builder方法代替自定义组件](bpta-component-nesting-optimization.md#section1012953161217)减少了自定义组件节点数量。而给自定义组件添加属性，会在自定义组件外部会创建一个“\_\_Common\_\_”类型的节点，如下图所示。为了避免这类“\_\_Common\_\_”节点的创建，可以将自定义组件的属性移至内部，或者动态设置自定义组件的属性。减少自定义组件产生多余节点，可以使总节点数量降低，从而提升性能。
+通过DevEco Studio内置ArkUI Inspector工具，查看组件树结构可以看到，相比使用@Builder方法，组件树多一个自定义组件节点，所以[优先使用@Builder方法代替自定义组件](bpta-ui-component-performance-optimization.md#section18773182614502)减少了自定义组件节点数量。而给自定义组件添加属性，会在自定义组件外部会创建一个“\_\_Common\_\_”类型的节点，如下图所示。为了避免这类“\_\_Common\_\_”节点的创建，可以将自定义组件的属性移至内部，或者动态设置自定义组件的属性。减少自定义组件产生多余节点，可以使总节点数量降低，从而提升性能。
 
 **图1** 自定义组件树变化示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/QRq3Fl5WR3GQgeSdZc5uAA/zh-cn_image_0000002229337457.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/zejemAAmR6utts9XLnInRQ/zh-cn_image_0000002229337457.png "点击放大")
 
 **将自定义组件的属性移至内部**
 
@@ -254,11 +254,11 @@ export struct example2 {
 在实现文本浮层、按压遮罩或颜色叠加等场景时，通常会采用Stack布局嵌套组件的方式。实际上有些场景直接使用组件属性或借助系统API的能力就能实现，例如使用[overlay](../harmonyos-references/ts-universal-attributes-overlay.md#overlay)属性可以实现浮层场景，使用[ColorMetrics](../harmonyos-references/js-apis-arkui-graphics.md#colormetrics12)可以实现颜色叠加效果。直接使用组件属性的方式可以减少Stack布局嵌套组件的使用，从而减少嵌套组件带来的节点数。以文本浮层场景为例，如下图所示，使用overlay属性实现文本浮层比Stack组件嵌套方式少了一层Stack节点。开发这一类场景时，推荐优先使用组件属性代替嵌套组件。
 
 **图2** 使用组件属性代替嵌套组件示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/8u8nDaTrRJqfisMg3ZbAdg/zh-cn_image_0000002194011652.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/pnaPj5WQT_q2uD6OdjTn9w/zh-cn_image_0000002194011652.png "点击放大")
 
 **使用overlay属性实现浮层**
 
-使用overlay属性可以直接给组件添加浮层，实现堆叠的效果，常见的场景有文本浮层、按压遮罩等。相较于Stack布局嵌套组件的方式，使用overlay属性减少了Stack组件节点的创建。以增加文本浮层为例，具体优化示例如下所示。更多使用overlay属性实现浮层场景的示例可参考[浮层-示例](../harmonyos-references/ts-universal-attributes-overlay.md#示例)。
+使用overlay属性可以直接给组件添加浮层，实现堆叠的效果，常见的场景有文本浮层、按压遮罩等。相较于Stack布局嵌套组件的方式，使用overlay属性减少了Stack组件节点的创建。以增加文本浮层为例，具体优化示例如下所示。更多使用overlay属性实现浮层场景的示例可参考[示例](../harmonyos-references/ts-universal-attributes-overlay.md#示例)。
 
 反例：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-drawing-ca
 title: Drawing自绘制性能提升
 breadcrumb: 最佳实践 > 图形 > 图形绘制 > Drawing自绘制性能提升
 category: best-practices
-scraped_at: 2026-10-16T07:06:38+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:e8f91e2166a620165e68bd2c5ed8f9ea33ec6283dfaed7800108ae085d247f2d
+scraped_at: 2026-10-29T08:03:16+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:2a6fc35fb90c8c08e686870187b0fec0a7a2c26ff3b287823d3c7f373cef61e9
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:e8f91e2166a620165e68bd2c5ed8f9ea33ec6283dfaed7800108ae085d2
 
 下图是一个绘制1000个透明空心圆与背景图融合的绘制场景，下面分别使用Canvas CanvasRenderingContext2D和Native侧的Drawing来实现该场景，并分析两者的性能差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/hELtlRUrSmyre2I2ry9o4g/zh-cn_image_0000002229450853.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/l9OK1mbsSc6IJde9U2n__Q/zh-cn_image_0000002229450853.gif "点击放大")
 
 ### 使用Canvas CanvasRenderingContext2D绘制
 
@@ -83,7 +83,7 @@ Canvas CanvasRenderingContext2D使用[globalCompositeOperation](../harmonyos-ref
      }
    }
    ```
-2. GlassCoverView子页面使用@Watch装饰器，监控到首页位置列表数据pointsToDraw更新后，在页面上绘制1000个透明空心圆圈（具体参见 onDraw()方法）。
+2. GlassCoverView子页面使用@Watch装饰器，监控到首页位置列表数据pointsToDraw更新后，在页面上绘制1000个透明空心圆圈（具体参见onDraw()方法）。
 
    ```typescript
    import { hilog, hiTraceMeter } from '@kit.PerformanceAnalysisKit';
@@ -165,7 +165,7 @@ Canvas CanvasRenderingContext2D使用[globalCompositeOperation](../harmonyos-ref
 
    使用Canvas CanvasRenderingContext2D绘制的trace图，可以看到绘制1000个圆圈耗时14.9毫秒。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/PfsuJz3yQ3S5AcoFLRL5RA/zh-cn_image_0000002283607973.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/PL4Na835QoK02sFcxj-Amg/zh-cn_image_0000002283607973.png)
 
 ### 使用Native侧Drawing绘制
 
@@ -419,7 +419,7 @@ Native Drawing主要使用分层接口[OH\_Drawing\_CanvasSaveLayer()](../harmon
 
    使用Native侧Drawing绘制trace图，可以看到绘制1000个圆圈耗时2.4毫秒，相较于Canvas CanvasRenderingContext2D绘制有较大的性能提升。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/GSahpLfgTB6oe3d_tirCCw/zh-cn_image_0000002283528493.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/wO0iDaO-QNu6Dmi5eYNPRw/zh-cn_image_0000002283528493.png)
 
 ## 效果对比
 
@@ -429,7 +429,7 @@ Native Drawing主要使用分层接口[OH\_Drawing\_CanvasSaveLayer()](../harmon
 | Canvas CanvasRenderingContext2D 画透明圈 | 1000 | 14.9毫秒 |
 | Native Drawing画透明圈 | 1000 | 2.4毫秒 |
 
-通过上述对比可以发现，在实现较大数量透明空心圆这样的复杂的绘制场景，相比于Canvas CanvasRenderingContext2D，使用Native [Drawing](../harmonyos-references/capi-drawing-canvas-h.md)可以得到明显的性能提升。以上只是实现透明空心圆融合场景，针对实心圆及其他融合场景（如[globalCompositeOperation](../harmonyos-references/ts-components-canvas-common-property.md#globalcompositeoperation)属性的其他值），由于实现机制的不同，绘制指令数量也存在差异，从而性能数据会存在一些差异。实际应用中，可以根据实际情况，在对性能要求不高的情况采用Canvas CanvasRenderingContext2D，如果对性能要求比较高，建议使用Native [Drawing](../harmonyos-references/capi-drawing-canvas-h.md)进行绘制。
+通过上述对比可以发现，在实现较大数量透明空心圆这样的复杂的绘制场景，相比于Canvas CanvasRenderingContext2D，使用Native [drawing\_canvas.h](../doccenter-references/api/capi-drawing-canvas-h.md)可以得到明显的性能提升。以上只是实现透明空心圆融合场景，针对实心圆及其他融合场景（如[globalCompositeOperation](../harmonyos-references/ts-components-canvas-common-property.md#globalcompositeoperation)属性的其他值），由于实现机制的不同，绘制指令数量也存在差异，从而性能数据会存在一些差异。实际应用中，可以根据实际情况，在对性能要求不高的情况采用Canvas CanvasRenderingContext2D，如果对性能要求比较高，建议使用Native [drawing\_canvas.h](../doccenter-references/api/capi-drawing-canvas-h.md)进行绘制。
 
 ## 示例代码
 

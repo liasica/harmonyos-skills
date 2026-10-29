@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备功能开发
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发 > 多设备功能开发
 category: best-practices
-scraped_at: 2026-09-16T06:55:02+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:9347984399b6f4140e96850d6b0ebebb6c2d03e3b89cea0dd06e7fb86f2e4a16
+scraped_at: 2026-10-29T08:03:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:f2919d0926259fda24c0e672cce97904f13b876966f25f6914cca837afee50b0
 ---
 
 应用开发至少包含两部分工作： UI页面开发和底层功能开发（部分需要联网的应用还会涉及服务端开发）。前面章节介绍了如何解决页面适配的问题，本章节主要介绍应用如何解决设备系统能力差异的兼容问题。
@@ -55,8 +55,7 @@ content_hash: sha256:9347984399b6f4140e96850d6b0ebebb6c2d03e3b89cea0dd06e7fb86f2
 
 DevEco Studio会根据创建的工程所支持的设备自动配置联想能力集和要求能力集，同时也支持开发者修改。
 
-```json
-// syscap.json
+```screen
 {
     "devices": {
         "general": [            

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-abckitts-i
 title: 基于AbcKitTS实现字节码插桩
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 基于AbcKitTS实现字节码插桩
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:07ed1163dfdb8decb607762dc1652f79c90c0c30a0e78738390fff8ef8ed7672
+scraped_at: 2026-10-29T08:03:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d793617f4f10933c712ce542f55f087191f3e2be18335c19142f56ddff79bdd8
 ---
 
 ## 概述
@@ -71,7 +71,7 @@ IsaKit是AbcKitTS提供的核心指令操作工具，用于操作方法的Block�
 
 开发者要使用AbcKitTS对HarmonyOS工程进行插桩，需要完成两个步骤：**编写插桩代码**和**注册插件**。其中，插桩代码的编写会根据具体业务逻辑而有所不同，本文将在[场景示例](bpta-abckitts-implements-instrumentation.md#section21172491410)中根据不同业务场景详细介绍实现方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/q2dUIvOESx-EVnDZiUH2Aw/zh-cn_image_0000002568136792.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/AN7sS379STaDWXpM_4ihPg/zh-cn_image_0000002568136792.png "点击放大")
 
 ### 编写插桩代码
 
@@ -199,7 +199,7 @@ IsaKit是AbcKitTS提供的核心指令操作工具，用于操作方法的Block�
 
 ### 注册插件
 
-AbcKitTS插桩接口基于Hvigor插件开发，具体流程可参考[《开发Hvigor插件》](../harmonyos-guides/ide-hvigor-plugin.md)文档。
+AbcKitTS插桩接口基于Hvigor插件开发，具体流程可参考[开发Hvigor插件](../harmonyos-guides/ide-hvigor-plugin.md)文档。
 
 本最佳实践基于hvigorfile脚本开发，在hvigorfile.ts中定义aspectPlugin()函数。
 
@@ -269,7 +269,7 @@ function aspectPlugin(): HvigorPlugin {
 
 在开发过程中，需要对生命周期进行监控。通过在关键生命周期函数中打点，开发者可以有效追踪组件行为，从而快速定位问题。
 
-以下示例以组件CompA为例，在aboutToAppear生命周期函数中进行插桩。
+以下示例以组件CompA为例，在[aboutToAppear](../doccenter-references/api/ts-custom-component-lifecycle.md#abouttoappear)生命周期函数中进行插桩。
 
 ArkTS源码如下所示：
 
@@ -511,7 +511,7 @@ export class DurationTask {
 
 开发者可以通过对调用点位置进行分析埋点，实现对重点API接口的调用监控。
 
-以下示例对地理位置获取操作进行调用监控，对geoLocationManager.getCurrentLocation()方法调用进行前置插桩。
+以下示例对地理位置获取操作进行调用监控，对[geoLocationManager.getCurrentLocation()](../doccenter-references/api/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)方法调用进行前置插桩。
 
 ArkTS源码如下所示：
 
@@ -977,7 +977,7 @@ changeMessage(): void {
 
 开发者可通过在点击事件回调函数中插桩，对用户点击行为进行监控和统计，实现用户行为数据的自动采集。
 
-以下示例对Button组件的onClick()事件回调函数进行前置插桩。
+以下示例对[Button](../doccenter-references/api/ts-basic-components-button.md)组件的[onClick()](../doccenter-references/api/ts-universal-events-click.md#onclick12)事件回调函数进行前置插桩。
 
 ArkTS源码如下所示：
 
@@ -1145,7 +1145,7 @@ export class EventCbTask {
 
 **说明** 
 
-**initialRender**函数是鸿蒙应用页面级渲染的入口函数，onClick回调通常以匿名函数形式嵌套在其中。
+**initialRender**函数是鸿蒙应用页面级渲染的入口函数，onClick()回调通常以匿名函数形式嵌套在其中。
 
 **场景七：方法入参校验**
 

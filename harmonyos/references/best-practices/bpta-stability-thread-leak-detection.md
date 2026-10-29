@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 线程泄漏类问题检测方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 资源泄漏类问题检测 > 线程泄漏类问题检测方法
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:8da6cff8a61ed5a9697aab80d59d98ca5ab1d56da2df3c0e7b27f3a0b4a708b1
+scraped_at: 2026-10-29T08:03:25+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:f726df2abb51547f710dcc13d91847fb9001fe1aed4653405212356d4eca7b37
 ---
 
 ## 概述
 
 线程泄漏是指程序在运行过程中，动态创建了线程，但没能正确释放或终止这些线程，导致线程数量持续增长。每个线程会占用一个线程栈，线程泄漏不仅会导致内存泄漏，而且如果线程持续占用CPU，还会导致CPU资源耗尽。
 
-在使用`pthread\_create`创建线程后，即使子线程能自行结束，也要使用pthread\_join或pthread\_detach来回收子线程的资源。
+在使用“pthread\_create“创建线程后，即使子线程能自行结束，也要使用pthread\_join或pthread\_detach来回收子线程的资源。
 
 ## 实现原理
 

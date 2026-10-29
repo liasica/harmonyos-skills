@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dynamic
 title: 动态加载
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 动态加载
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:44+08:00
+scraped_at: 2026-10-29T07:56:24+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:d6124ad598f630dba5487db97572fad92752b2907d7c8490ca9f044938ea2b74
+content_hash: sha256:f5952ab1db92bb43373b8ac134e51a07bf9a59946641a38adbba4067f6dd7bfb
 ---
 
 动态import支持条件延迟加载，支持部分反射功能，可以提升页面的加载速度；动态import支持加载HSP模块/HAR模块/ohpm包/Native库等，并且HAR模块之间可通过变量动态import来访问彼此导出的内容，可避免编译期强依赖，实现模块解耦。
@@ -644,11 +644,11 @@ import(packageName).then((ns: ESObject) => {
 
 当应用包含多个HAR包，HAR包之间的依赖关系比较复杂。在DevEco Studio中配置依赖关系时，可能会形成循环依赖。这时，如果HAR之间的依赖关系中仅有变量动态import，可以将HAR包之间直接依赖关系转移到HAP/HSP中配置，HAR包之间无需配置依赖关系，从而达到HAR包间依赖解耦的目的。如下示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/diN-aDrTSKyfYtYJYO0teA/zh-cn_image_0000002771824634.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/JaG1kpNYRouMkNUiHUPYfw/zh-cn_image_0000002803223171.png)
 
 HAR之间的依赖关系转移至HAP/HSP后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/L8P5Prz1STiWRlV1gwEosA/zh-cn_image_0000002801104449.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/jpj29IefQrekHM-oBwlLnw/zh-cn_image_0000002774063456.png)
 
 **使用限制**
 
@@ -663,7 +663,7 @@ HAR之间的依赖关系转移至HAP/HSP后：
 
 下面的实例通过在单向依赖HAP->HAR1->HAR2->HAR3之上增加依赖HAR2->HAR1、HAR3->HAR1，形成了循环依赖。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/ce06VkYhSia2e9qRNSCOsg/zh-cn_image_0000002771824634.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Hf9feGR1QomiyxDzsPuqlw/zh-cn_image_0000002803223171.png)
 
 ```typescript
 // HAP's src/main/ets/pages/Index.ets

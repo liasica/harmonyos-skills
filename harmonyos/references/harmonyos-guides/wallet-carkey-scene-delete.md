@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 删除车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 删除车钥匙
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0fb91b1462ab81d5a722f7c2b9b1f7251321a2fe4d0f02b8a81850e934b614f9
+scraped_at: 2026-10-29T07:57:52+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:0dffa41cecd54e332def51ec5faf1c21d66ec786eae100a17cfe19bfdfdf76d9
 ---
 
 用户手动或系统自动删除车钥匙，从设备安全芯片中移除车钥匙数据。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/WZ0byt35QGKmde27FEVwHg/zh-cn_image_0000002771666802.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/z2BRDM85T5OCUCPxIeqTDg/zh-cn_image_0000002803225309.png)
 
 ## 服务端开发
 

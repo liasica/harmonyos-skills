@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.nfc.cardEmulation (标准NFC-cardEmulation)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.cardEmulation (标准NFC-cardEmulation)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5115a63ec5c952a5fba08406025c16f779a8544e2fbb096d20bf798d9846f9af
+scraped_at: 2026-10-29T08:00:54+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:843cc35eee2def266a300143afe9bf43efc44a0a75f357f8f921d9a37868d782
 ---
 
 本模块主要提供NFC卡模拟业务，包括判断支持哪种卡模拟类型，HCE卡模拟的业务实现等。
@@ -167,8 +167,8 @@ import cardEmulation from '@ohos.nfc.cardEmulation';
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| PAYMENT | "payment" | 卡模拟应用所使用的业务是支付类型。 |
-| OTHER | "other" | 卡模拟应用所使用的业务是其他类型。 |
+| PAYMENT | 'payment' | 卡模拟应用所使用的业务是支付类型。 |
+| OTHER | 'other' | 卡模拟应用所使用的业务是其他类型。 |
 
 ## cardEmulation.isSupported(deprecated)
 

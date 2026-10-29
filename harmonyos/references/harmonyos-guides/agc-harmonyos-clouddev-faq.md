@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: FAQ
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > FAQ
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:19+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41a99b4
+scraped_at: 2026-10-29T07:58:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:91b51920a994340d5435f3b1775f86ad5bb7728a6932f44c44b36e450deb9472
 ---
 
 ## 使用DevEco Studio打开端云一体化项目文件夹，左侧的项目列表不显示云侧工程
@@ -18,7 +18,7 @@ content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41
 
 端云一体化工程根目录下只允许有“Application”与“CloudProgram”文件夹，不能有其他文件。否则，DevEco Studio会把该工程当成纯端侧工程，不显示云侧工程“CloudProgram”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/_OtuSXIkSHqu4OU7_y4KMA/zh-cn_image_0000002313987669.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/tVAXCaLhTKCOLf6bvi9cTA/zh-cn_image_0000002313987669.png)
 
 ## 部署云数据库时，提示“clouddb deploy failed. Reason is the number of CloudDBZone exceeds the limit.”
 
@@ -28,9 +28,9 @@ content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41
 
 **解决措施**
 
-出现此错误，表示AGC云端的存储区数量超过最大限制。
+出现此错误，表示HarmonyOS 开发者中心的存储区数量超过最大限制。
 
-部署到AGC云端的存储区数量不得超过4个，否则会导致部署失败。如AGC云端当前已存在4个存储区，请将数据部署到已有的存储区，或者删除已有存储区后再部署新的存储区。
+部署到HarmonyOS 开发者中心的存储区数量不得超过4个，否则会导致部署失败。如HarmonyOS 开发者中心当前已存在4个存储区，请将数据部署到已有的存储区，或者删除已有存储区后再部署新的存储区。
 
 **需要注意的是，删除存储区，该存储区内的数据也将一并删除，且不可恢复。**
 
@@ -40,13 +40,13 @@ content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41
 
 部署云数据库失败，提示“clouddb deploy failed. Reason is existing fields cannot be modified.”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/dNb0XCkdS56a60UYulg39A/zh-cn_image_0000002179338656.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/S4PuoBaISOi-oO55QsJZ1w/zh-cn_image_0000002179338656.png)
 
 **解决措施**
 
 出现此错误，可能是您在本地对象类型内做了与云端不兼容的修改。
 
-对象类型中的fieldType等字段信息，部署到AGC云端后，请勿在本地再做修改。例如，fieldType设置为String，对象类型部署成功后，又在本地修改fieldType为Integer，再次部署将失败，提示“clouddb deploy failed. Reason is existing fields cannot be modified.”错误。如需更改fieldType等字段信息，请先删除云端部署的对象类型。
+对象类型中的fieldType等字段信息，部署到HarmonyOS 开发者中心后，请勿在本地再做修改。例如，fieldType设置为String，对象类型部署成功后，又在本地修改fieldType为Integer，再次部署将失败，提示“clouddb deploy failed. Reason is existing fields cannot be modified.”错误。如需更改fieldType等字段信息，请先删除云端部署的对象类型。
 
 **需要注意的是，删除云端对象类型，对象类型内添加的数据也将一并删除，且不可恢复。**
 
@@ -71,9 +71,9 @@ content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41
 
 **解决措施**
 
-请检查resources/rawfile目录下是否存在schema文件。schema文件是云数据库功能依赖的必要文件，部署云数据库成功时会自动产生。如schema文件不存在，请重新部署云数据库，或[从AGC控制台导出](../AppGallery-connect-Guides/agc-clouddb-agcconsole-objecttypes-0000001127675459.md#section1558018208151)。
+请检查resources/rawfile目录下是否存在schema文件。schema文件是云数据库功能依赖的必要文件，部署云数据库成功时会自动产生。如schema文件不存在，请重新部署云数据库，或[从HarmonyOS 开发者中心导出](../AppGallery-connect-Guides/agc-clouddb-agcconsole-objecttypes-0000001127675459.md#section1558018208151)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/jKXDUewfQge7pnE6e9Ma1g/zh-cn_image_0000002179338664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/yforTEqOTT-pk6-lLL0qBA/zh-cn_image_0000002179338664.png)
 
 ## 云数据库无法新建数据条目，Hilog中打印“2001015:permission denied”
 
@@ -111,11 +111,11 @@ content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41
 
 云函数部署失败，错误信息中提示“The function type cannot be changed”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/9TIqo8FIRySz-a7T83hMCQ/zh-cn_image_0000002214858977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Z4ZclozMTZiM9hMn3-o4OQ/zh-cn_image_0000002214858977.png)
 
 **解决措施**
 
-出现此错误，是因为云函数分为传统云函数类型和云对象类型。一种类型的云函数在部署到AGC云端后，不允许再变更成另一种类型。您可以前往AGC控制台的云函数服务页面，手动删除之前已部署的同名云函数/云对象，然后重新在DevEco Studio执行部署操作。
+出现此错误，是因为云函数分为传统云函数类型和云对象类型。一种类型的云函数在部署到HarmonyOS 开发者中心后，不允许再变更成另一种类型。您可以前往HarmonyOS 开发者中心的云函数服务页面，手动删除之前已部署的同名云函数/云对象，然后重新在DevEco Studio执行部署操作。
 
 ## 部署云工程失败，提示“Remote host terminated the handshake”
 
@@ -123,7 +123,7 @@ content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41
 
 部署云工程失败，错误信息中提示“Remote host terminated the handshake”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/TzfSLU4NQiyWD7k-fwetdw/zh-cn_image_0000002279650126.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/DM9bjeEVSKaZvJd0YRyXNQ/zh-cn_image_0000002279650126.png)
 
 **解决措施**
 
@@ -145,7 +145,7 @@ content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41
 
 端云一体化开发工程同步失败，失败步骤是npm install failed。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/iwTsknlATEW68nkk6kISWg/zh-cn_image_0000002279546734.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ajLHc69tShy1d3aLwqdcIg/zh-cn_image_0000002279546734.png)
 
 **解决措施**
 
@@ -157,11 +157,11 @@ content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41
 
 使用云存储上传文件失败，HiLog提示“404:Product does not exist”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ghiToMoRRaqrVl-3HubpaQ/zh-cn_image_0000002214704601.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/HZstG-HdT4qBlohaDUjhvg/zh-cn_image_0000002214704601.png)
 
 **解决措施**
 
-云存储服务端返回的错误，出现此错误是因为云存储服务未开通。请在顶部菜单栏选择“Tools > CloudDev”，进入CloudDev云开发管理面板，点击“Cloud Storage”服务下的“Go to console”快捷进入AGC服务菜单进行手动开通。
+云存储服务端返回的错误，出现此错误是因为云存储服务未开通。请在顶部菜单栏选择“Tools > CloudDev”，进入CloudDev云开发管理面板，点击“Cloud Storage”服务下的“Go to console”快捷进入HarmonyOS 开发者中心服务菜单进行手动开通。
 
 ## 使用云存储上传文件失败，app日志提示“"state":65”，upload进程日志提示“403 Forbidden”
 
@@ -171,10 +171,10 @@ content_hash: sha256:e7897763f39e37516b57fcf9a51012a19179d950934ce25798fc0a3ed41
 
 * app日志提示“"state":65”
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/H1hxxB8nSGycJA-37d5FBw/zh-cn_image_0000002179498352.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/88pok2LbR0qkiH26Lo5qrg/zh-cn_image_0000002179498352.png)
 * upload进程的日志提示“403 Forbidden”（通过设置“No filters”模式、过滤“C01C50”关键字查找）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/wBmiD9y9Q7O0XXxbH-Yz0Q/zh-cn_image_0000002214858989.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ywumSBeuQJWJdFuKvpwyXg/zh-cn_image_0000002214858989.png)
 
 **解决措施**
 

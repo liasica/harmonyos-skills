@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取用户风险等级
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 获取用户信息 > 获取用户风险等级
 category: harmonyos-references
-scraped_at: 2026-09-18T06:51:41+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:38d08a34c57e180fd3d532750fb9983c1452fca5c289970836be26e713994d26
+scraped_at: 2026-10-29T08:02:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:2a049c1e5581745842ac4f560fd58bc59c3256dd00708cd9c6937edadc78a10e
 ---
 
 **注意** 
@@ -54,7 +54,7 @@ content_hash: sha256:38d08a34c57e180fd3d532750fb9983c1452fca5c289970836be26e7139
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| clientID | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的唯一标识。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。 |
+| clientID | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的唯一标识。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。 |
 | transactionID | 是 | String | 交易流水号，每个消息都需要带该字段。  格式：YYYYMMDDhhmmssxxxxxxxxxx，其中：YYYYMMDDhhmmss为请求产生时间，14位；xxxxxxxxxx为随机数，可变长，10至20位。  例如： 202502121546232352164151。 |
 
 ### Request Body
@@ -232,7 +232,7 @@ public class GetUserRiskLevelDemo {
 | errCode | 描述 | 解决方法 |
 | --- | --- | --- |
 | 6 | 会话失效或已超时（session timeout）。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 本接口请求数据格式为 application/json;charset=utf-8，在构造请求体时，请确保不对access\_token参数进行URLEncode处理，可参考[示例代码](account-api-getuserrisklevel.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
-| 403 | 无权访问。 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
+| 403 | 无权访问。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
 | 503 | 触发系统流控。 | 请稍后重试。 |
 | 70001201 | 请求参数错误。 | 修改请求url或者请求体中的参数。 |
 | 70001402 | 系统鉴权错误。 | 鉴权系统异常，若重试无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |

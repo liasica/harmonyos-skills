@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-ark-runtime-detection
-title: 方舟运行时检测
-breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 方舟类问题检测 > 方舟运行时检测
+title: 方舟多线程检测
+breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 方舟类问题检测 > 方舟多线程检测
 category: best-practices
-scraped_at: 2026-10-16T07:06:49+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:6efc6923f897b6f4f1108d15a816b1b1f13ba3fee6df3cceaefb1688a2c87e8f
+scraped_at: 2026-10-29T08:03:25+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:a066e324ee7479e8988a1c62e73a439eec7a0962004eda6fbd53f3187f02cdd7
 ---
 
-## 方舟多线程检测
+## 概述
 
-在JS运行时环境中，多线程的安全问题是一个重要的考虑因素。由于JavaScript本身是单线程的，对JS对象的任何操作都必须在创建该JS线程的原始线程上进行。如果违反了这一规则，就会导致多线程安全问题。以下是关于如何判断和处理这些问题的一些详细说明。开启多线程检测会有较大性能损耗，请开发者按需开启。
+在JavaScript运行时环境中，多线程的安全问题是一个重要的考虑因素。由于JavaScript本身是单线程的，对JavaScript对象的任何操作都必须在创建该JavaScript线程的原始线程上进行。如果违反了这一规则，就会导致多线程安全问题。以下是关于如何判断和处理这些问题的一些详细说明。开启多线程检测会有较大性能损耗，请开发者按需开启。
 
 ### 原理介绍
 
@@ -23,11 +23,11 @@ content_hash: sha256:6efc6923f897b6f4f1108d15a816b1b1f13ba3fee6df3cceaefb1688a2c
 
 * 多线程检测机制
 
-  多线程检测机制会检测当前线程和正在使用的JS虚拟机环境（vm/env）中的JS线程ID是否一致。如果不一致，就表明虚拟机环境被跨线程使用，存在多线程安全问题。
+  多线程检测机制会检测当前线程和正在使用的JavaScript虚拟机环境（vm/env）中的JavaScript线程ID是否一致。如果不一致，就表明虚拟机环境被跨线程使用，存在多线程安全问题。
 
 ### 常见多线程安全问题
 
-* 非JS线程使用N-API接口
+* 非JavaScript线程使用N-API接口
 
   非JavaScript线程尝试调用N-API接口，可能会导致未定义的行为或崩溃。
 
@@ -112,7 +112,7 @@ Fatal: ecma_vm cannot run in multi-thread! thread:3096 currentThread:3550
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Multi Thread Check**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/2EYofXGGTx6wN6X-oL8ADQ/zh-cn_image_0000002404045317.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/PPcw5PN5R9-Zh9vimAdTtA/zh-cn_image_0000002404045317.png)
 
 * **方式二**
 
@@ -129,6 +129,6 @@ Fatal: ecma_vm cannot run in multi-thread! thread:3096 currentThread:3550
 
 ### 方舟异常检测码
 
-若fatal信息为Fatal: ecma\_vm cannot run in multi-thread! thread:20296 currentThread:19953，则发生了多线程安全问题，意为：当前线程号为19953，而使用的js thread是20296创建出来的，跨线程使用VM。
+若fatal信息为Fatal: ecma\_vm cannot run in multi-thread! thread:20296 currentThread:19953，则发生了多线程安全问题，意为：当前线程号为19953，而使用的JavaScript线程是20296创建出来的，跨线程使用VM。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/PyO5m7JlS--Mc1CuYH2rHg/zh-cn_image_0000002504986012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/sQvpBH7qSZKvLHuQ0yuwfQ/zh-cn_image_0000002504986012.png)

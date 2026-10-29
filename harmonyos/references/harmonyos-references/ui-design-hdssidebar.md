@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsSideBar (侧边栏)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsSideBar (侧边栏)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:42:10+08:00
+scraped_at: 2026-10-29T08:00:38+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3aaec2a7a7a784be27b4df97dbaea6b9fedc2a0e63b4edad066e18e4cb4bb040
+content_hash: sha256:bdae71f2b2562b0a98a5c52b94ddb0f3dfd478b9876c09541f3cdd5034bc00e8
 ---
 
 本模块支持显示和隐藏的侧边栏容器，并且可以自定义侧边栏和内容区。
@@ -137,4 +137,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/3hsAnS03Sp6eXW_qCI2fNA/zh-cn_image_0000002800988155.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/R3FiXEt6SH-WK7PWHUUbFQ/zh-cn_image_0000002774067086.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pc
 title: 基于OHAudio播放PCM音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于OHAudio播放PCM音频
 category: best-practices
-scraped_at: 2026-10-16T07:06:37+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:329cd331ca18ac0a0174f7748054ab293bf2c060fa7bcdf695e191238d426472
+scraped_at: 2026-10-29T08:03:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:35c0c700c86ea613ad1d80b2175e33f3a2d2701ab7ea28a8d31007637974d3af
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ OHAudio是用于音频播放的Native API，仅支持PCM格式的音频。指导
 
 本文是音频播放系列文章的第2篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/qwu7lm5lQTyHc5ljC9bhcA/zh-cn_image_0000002524057588.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/NcJxisgPTh62QjCoGWu11A/zh-cn_image_0000002555217487.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/JcGxVF_NRkabvsBAW-QF0g/zh-cn_image_0000002524217594.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/iynJrcqATGmYG6M3eRnBzw/zh-cn_image_0000002524057588.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/kds_DeWXSSOi68K4C_9rig/zh-cn_image_0000002555217487.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/KxsbaXITQJ6nR6I1GJQJGg/zh-cn_image_0000002524217594.gif "点击放大")
 
 ## 场景分析
 
@@ -23,7 +23,7 @@ OHAudio是用于音频播放的Native API，仅支持PCM格式的音频。指导
 | [基础播控](bpta-playing-pcm-audio-based-ohaudio.md#section1764813377511) | 音频资源的加载、播放、暂停、退出等操作。 | 使用[OHAudio](../harmonyos-references/capi-ohaudio.md)接口实现。 |
 | [跳转播放](bpta-playing-pcm-audio-based-ohaudio.md#section16920851193717) | 滑动进度条精准跳转到指定时间进行播放。 | 使用[Slider](../harmonyos-references/ts-basic-components-slider.md)实现进度条，在[OH\_AudioStreamBuilder\_SetRendererWriteDataCallback()](../harmonyos-references/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setrendererwritedatacallback)设置的回调函数中，从跳转的目标位置开始获取歌曲资源并写入回调中，从而实现跳转播放。 |
 | [静音播放](bpta-playing-pcm-audio-based-ohaudio.md#section125715278533) | 通过界面按钮切换音频播放静音状态，实现一键开启或关闭静音。 | 使用[OH\_AudioRenderer\_SetSilentModeAndMixWithOthers()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_setsilentmodeandmixwithothers)方法控制静音状态。 |
-| [切换歌曲播放](bpta-playing-pcm-audio-based-ohaudio.md#section590418431566) | 点击上一首、下一首或歌单列表中的其他歌曲来进行切换歌曲播放。 | 调用[OH\_AudioStreamBuilder\_SetRendererWriteDataCallback()](../harmonyos-references/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setrendererwritedatacallback)接口，设置写入音频数据的回调。在回调函数中，  将获取到的不同的歌曲资源写入数据缓冲区，实现播放不同歌曲的功能。 |
+| [切换歌曲播放](bpta-playing-pcm-audio-based-ohaudio.md#section590418431566) | 点击上一首、下一首或歌单列表中的其他歌曲来进行切换歌曲播放。 | 调用[OH\_AudioStreamBuilder\_SetRendererWriteDataCallback()](../harmonyos-references/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setrendererwritedatacallback)接口，设置写入音频数据的回调。在回调函数中，将获取到的不同的歌曲资源写入数据缓冲区，实现播放不同歌曲的功能。 |
 | [倍速设置](bpta-playing-pcm-audio-based-ohaudio.md#section189460361122) | 滑动倍速调节面板调节播放速度。 | 使用[OH\_AudioRenderer\_SetSpeed()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_setspeed)设置播放倍速。 |
 | [音量设置](bpta-playing-pcm-audio-based-ohaudio.md#section88718617116) | 滑动音量调节面板调节播放音量。 | 使用[OH\_AudioRenderer\_SetVolume()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_setvolume)设置播放音量。 |
 | [接入播控中心](bpta-playing-pcm-audio-based-audiorenderer.md#section06660114245) | 通过播控中心，控制播放、暂停、切换音频、调整播放进度、切换循环模式 | 具体原理、方案和开发步骤参考[接入播控中心](bpta-playing-pcm-audio-based-audiorenderer.md#section06660114245)。本篇文章不再赘述。 |
@@ -37,7 +37,7 @@ OHAudio是用于音频播放的Native API，仅支持PCM格式的音频。指导
 
 通过[OHAudio](../harmonyos-references/capi-ohaudio.md)接口实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/CQ3wemHPR_OWVDpnWdnb2Q/zh-cn_image_0000002555337465.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/50TGvcmBR72naGGlj2lQOw/zh-cn_image_0000002555337465.gif "点击放大")
 
 ### 实现原理
 
@@ -251,7 +251,7 @@ void OHAudioPlayer::ReleasePlayer() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/HtWxfAt2Q5yQuy0m7UUtxA/zh-cn_image_0000002524057598.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/pJjcISzRTum1Z_QzCVrvbA/zh-cn_image_0000002524057598.gif "点击放大")
 
 ### 实现原理
 
@@ -367,7 +367,7 @@ static OH_AudioData_Callback_Result OnAudioRendererWriteDataEvent([[maybe_unused
 
 通过界面按钮切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/78Amhhi4REyJN4Pu4oa0YQ/zh-cn_image_0000002555217499.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/qSHFxqsNSKmpDsxpXfVG5A/zh-cn_image_0000002555217499.gif "点击放大")
 
 ### 实现原理
 
@@ -400,7 +400,7 @@ void OHAudioPlayer::SetSilentMode(bool isSilentMode) {
 
 点击上一首、下一首或歌单列表中的其他歌曲来进行切换歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/QMg-CRNERdW3jo_DiOrRhQ/zh-cn_image_0000002524217620.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/7nhsPyJ_R2qWy7lb4usD_w/zh-cn_image_0000002524217620.gif "点击放大")
 
 ### 实现原理
 
@@ -497,7 +497,7 @@ static OH_AudioData_Callback_Result OnAudioRendererWriteDataEvent([[maybe_unused
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/vVvCfQpXRiKDzABX9UUg7g/zh-cn_image_0000002555337493.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/JrISU8PoSz2YxOl2VyXApg/zh-cn_image_0000002555337493.gif "点击放大")
 
 ### 实现原理
 
@@ -549,7 +549,7 @@ void OHAudioPlayer::SetPlayingSpeed(float speed) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/qL3n0X4RQrOW5dU5om42Pg/zh-cn_image_0000002524057630.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/2--k8d1YRJeP4QZ70JUpWg/zh-cn_image_0000002524057630.gif "点击放大")
 
 ### 实现原理
 

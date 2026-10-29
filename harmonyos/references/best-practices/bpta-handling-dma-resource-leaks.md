@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-handling-d
 title: 运维态高效处理DMA资源泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 资源泄漏类问题分析 > 运维态高效处理DMA资源泄漏
 category: best-practices
-scraped_at: 2026-10-16T07:06:53+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:5ed90a53f27d3421863f658d5e9c02f799aaeed5cf8e8a78c95ce0f59163b7bb
+scraped_at: 2026-10-29T08:03:28+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:1acae90ddb1c714ec9042fc283ddb2df8103e3395b2cb4a25f385e5e83cdcd3c
 ---
 
 ## 概述
 
-DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，在使用结束时未正常释放资源的现象。该问题会导致内核无法回收对应的物理内存，造成内存被持续占用且无法复用，进而引发系统资源的持续消耗。本文将详细介绍在运维阶段，如何依托[应用质量管理（APMS）](../app/agc-help-apms-0000002235870062.md)实现对DMA资源泄漏的全链路处理，涵盖监控、分析、定位及修复等关键环节。
+DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，在使用结束时未正常释放资源的现象。该问题会导致内核无法回收对应的物理内存，造成内存被持续占用且无法复用，进而引发系统资源的持续消耗。本文将详细介绍在运维阶段，如何依托应用质量管理（APMS）（[业务介绍](../doccenter-monitoring/agc-help-apms-introduction-0000002236333914.md)）实现对DMA资源泄漏的全链路处理，涵盖监控、分析、定位及修复等关键环节。
 
 ## 运维态DMA资源泄漏分析流程
 
@@ -18,7 +18,7 @@ DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，�
 
 运维态处理流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/98N2i2dISvyUVu688_Q6kw/zh-cn_image_0000002729540769.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Jgt8pFm5QoGakl0uEdpD7g/zh-cn_image_0000002729540769.png "点击放大")
 
 ### 排查步骤
 
@@ -38,7 +38,7 @@ DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，�
 
 资源泄漏信息详情页面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/LJaBL1CkTwaAIYfdjS-hOA/zh-cn_image_0000002699661544.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/EuPkJQRzQR60A1cIkNQ6Rg/zh-cn_image_0000002699661544.png "点击放大")
 
 **关键指标说明**
 
@@ -55,7 +55,7 @@ DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，�
 
 故障详情页面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Xq_XPe-kRruUr4HtgSPBAA/zh-cn_image_0000002729420817.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/zE6fD0NNRpGwpAWfedGIJQ/zh-cn_image_0000002729420817.png "点击放大")
 
 ## APMS平台DMA泄漏分析案例
 
@@ -65,13 +65,13 @@ DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，�
 
 故障预警配置界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/2cNoM8n3TGOQaXGwsa3mxA/zh-cn_image_0000002699821452.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/5gjBkgE0RQ-8mFSFgdD0BA/zh-cn_image_0000002699821452.png "点击放大")
 
 创建告警之后，后台会开始收集数据。当泄漏达到告警阈值后，会触发故障预警。
 
 故障预警通知如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/REa1aV-GTRGVa7aBe_OTAA/zh-cn_image_0000002729540771.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/DrqZUrQlT4eu1PfjLq3X9A/zh-cn_image_0000002729540771.png "点击放大")
 
 ### 问题查看与聚类
 
@@ -85,7 +85,7 @@ DMA资源泄漏聚类规则请参考[DMA泄漏聚类规则](../harmonyos-guides/
 
 故障告警页界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/FjhoGK6qSXujKpscTk87rg/zh-cn_image_0000002699661546.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/er-hVsy_Qaubh333aVOP9g/zh-cn_image_0000002699661546.png "点击放大")
 
 **资源泄漏信息详情Top问题**
 
@@ -93,13 +93,13 @@ DMA资源泄漏聚类规则请参考[DMA泄漏聚类规则](../harmonyos-guides/
 
 DMA资源泄漏查询界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/cEnX4uoBQPui8ZTVdGAcfA/zh-cn_image_0000002729420819.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/jc3Pob7nSvmkj-Y1cpnsjg/zh-cn_image_0000002729420819.png "点击放大")
 
 在资源泄漏信息详情中，可查看当前应用的DMA资源泄漏情况。
 
 DMA资源泄漏信息详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/iMPa4EthT6eOuKeOevnmyQ/zh-cn_image_0000002699821454.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/GbXhcM74STqr6-7i2AgjLg/zh-cn_image_0000002699821454.png "点击放大")
 
 ### 根因定位与分析
 
@@ -109,7 +109,7 @@ DMA资源泄漏信息详情如下所示：
 
 证据链详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/mbGSkBb1TbyTCgKz0R98pQ/zh-cn_image_0000002729540773.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/HcDDlSDqRD-BEd3U0VIqGQ/zh-cn_image_0000002729540773.png "点击放大")
 
 **现场数据分析**
 
@@ -117,7 +117,7 @@ DMA资源泄漏信息详情如下所示：
 
 现场数据详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/2Q7pfGNASB-bRPxfxijRYA/zh-cn_image_0000002699661548.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/NNkjhMSpScG85o-MmwcT8Q/zh-cn_image_0000002699661548.png "点击放大")
 
 **线程调用栈信息**
 
@@ -127,15 +127,15 @@ DMA资源泄漏信息详情如下所示：
 
 堆栈信息分析界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/7GrKNPucQdWw33nCLytjyQ/zh-cn_image_0000002729420821.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/IwA6LsePTViLwH_DaWGoDA/zh-cn_image_0000002729420821.png "点击放大")
 
 堆栈树分配界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/BHL1zOHwSZa9TFhJNowrLg/zh-cn_image_0000002699821456.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/8d8MDY45SGG6w1RAYPrPxw/zh-cn_image_0000002699821456.png "点击放大")
 
 火焰树界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/kXWnSxG5SoOf5eJJMAgaIA/zh-cn_image_0000002729540775.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/EV5p5LMwRgS7DRw5mP-LUQ/zh-cn_image_0000002729540775.png "点击放大")
 
 **下钻分析**
 
@@ -143,7 +143,7 @@ DMA资源泄漏信息详情如下所示：
 
 下钻分析界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Tt9Q1HOaSGyDjGk0jynLBA/zh-cn_image_0000002699661550.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Q1CjFc1bShGyaJrVZRy6-A/zh-cn_image_0000002699661550.png "点击放大")
 
 ### 修复建议验证与闭环
 
@@ -155,7 +155,7 @@ DMA资源泄漏信息详情如下所示：
 
 修复建议界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/12dHSzjwQ_qv-HiMhiN5nA/zh-cn_image_0000002729420823.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/LlUIWsUvRrmT1Z42j3CZUw/zh-cn_image_0000002729420823.png "点击放大")
 
 **验证与闭环**
 
@@ -171,7 +171,7 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件。在DevE
 
 Operation Analyzer平台界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/UWIVTP0CSe6mCyzdRYemKA/zh-cn_image_0000002699821458.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/dtrlhqpeSrOaLV8qDzCaHQ/zh-cn_image_0000002699821458.png "点击放大")
 
 ### 问题分析
 
@@ -181,17 +181,17 @@ Operation Analyzer平台界面如下所示：
 
 问题详情页如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/t9akMpNFSBGRaRKXsmbHqQ/zh-cn_image_0000002729540777.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/jLS6FPuMQ-yLdImOvyXL0g/zh-cn_image_0000002729540777.png "点击放大")
 
 Operation Analyzer平台的问题详情页同APMS平台功能相同，开发者可查看证据链与修复建议排查问题。如果修复建议不能支撑解决问题，可进一步查看现场数据、线程调用栈profiler进行具体分析。
 
 现场数据界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/l0TJdfLrRjm9xOe8cqH9Fg/zh-cn_image_0000002699661552.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/LPq0T0x3TLOAxFU3sSXxJw/zh-cn_image_0000002699661552.png "点击放大")
 
 线程调用栈profiler界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/6iuH36fxRG6uR4BUnDpKqg/zh-cn_image_0000002729420825.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/B0XnmUtyQ2mwS9Av2Ti5fw/zh-cn_image_0000002729420825.png "点击放大")
 
 **Operation Analyzer关联离线符号表**
 
@@ -199,11 +199,11 @@ Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符�
 
 关联离线符号表界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/GQ6eVBllQ7eESeaB3KT9AQ/zh-cn_image_0000002699821460.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/vjD6SiY6RlCT6TS-fISbSw/zh-cn_image_0000002699821460.png "点击放大")
 
 上传符号表界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/irYtoCh5TjqbmMGSXtlZqg/zh-cn_image_0000002729540779.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/YfCfGxC1QHasOnhSoXHVQQ/zh-cn_image_0000002729540779.png "点击放大")
 
 **Operation Analyzer关联代码**
 
@@ -211,11 +211,11 @@ Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符�
 
 关联代码界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/GLenH9-CTQ-kQBamnElqAg/zh-cn_image_0000002699661554.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/gEMtMUepQZCtLWj8ZsK2fg/zh-cn_image_0000002699661554.png "点击放大")
 
 查看故障处源码步骤如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/9ZBcMhbfS--noKUdEb-vuA/zh-cn_image_0000002729420827.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/OH73cRleRESnqptdhyOEUA/zh-cn_image_0000002729420827.png "点击放大")
 
 ### 问题修复
 
@@ -223,4 +223,4 @@ Operation Analyzer平台会给出故障分析与修复建议，开发者可根�
 
 问题修复界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/tyatQhueS76zgkwYUwiKgw/zh-cn_image_0000002699821462.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ylP3FR4OTd2Clx4IXYAFUg/zh-cn_image_0000002699821462.png "点击放大")

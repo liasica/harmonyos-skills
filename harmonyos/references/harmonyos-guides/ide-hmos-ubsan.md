@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ubsa
 title: 使用UBSan检测未定义行为
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用UBSan检测未定义行为
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:47+08:00
+scraped_at: 2026-10-29T07:58:47+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:02acab5802db2aab7aa468c3dd463e730a5b43a31163f07b84cff57de43d0525
+content_hash: sha256:c101583071a8012582390640d8de1e8d00d256a2b789e9a943461b35fee41ecf
 ---
 
 代码中出现未定义行为，最初可能不会产生任何问题，但是随着代码的复杂度提高，未定义行为可能造成程序崩溃或发生错误，检测出根源会变得更加困难。UBSan（Undefined Behavior Sanitizer）可以检测代码中出现的未定义行为，帮助用户清除未定义行为引起的运行时错误。
@@ -27,12 +27,12 @@ ASan、TSan、UBSan、HWASan不能同时开启，四个只能开启其中一个�
 
 ### 方式一
 
-1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7QokMQziRL6oSiiMj5qO2g/zh-cn_image_0000002779728887.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/TSC-K12pQQOnkYbwvx4J9A/zh-cn_image_0000002750009826.png "点击放大")按钮打开配置界面。
+1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/g1pTPk-aTsuTDttSL7g4lQ/zh-cn_image_0000002779728887.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/6Ntfpe6IStCz9BYkVTFU4Q/zh-cn_image_0000002750009826.png "点击放大")按钮打开配置界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/VFP6G89xQ4Ka8VbIYcTc_Q/zh-cn_image_0000002750169714.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/HgM_M4fETSyGkVkG2jkdug/zh-cn_image_0000002750169714.png)
 2. 在配置界面点击**故障分析**，勾选**未定义行为检测**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/jbY_RAmQR6-2Nciz_MYXXA/zh-cn_image_0000002750009824.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/GrFIgeF2QAe9U6WKjzWF_g/zh-cn_image_0000002750009824.png)
 
 ### 方式二
 
@@ -42,18 +42,18 @@ ASan、TSan、UBSan、HWASan不能同时开启，四个只能开启其中一个�
     "ubsanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/YcY3UHw-SravGkSsH16ZKQ/zh-cn_image_0000002779608737.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/kb8oE1ZVQB-lh82xEFcgJg/zh-cn_image_0000002779608737.png)
 2. 在需要开启UBSan的模块中，通过添加构建参数开启UBSan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
 
    ```screen
    "arguments": "-DOHOS_ENABLE_UBSAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/iZOGPm8OSuKwuc1nmq8J3Q/zh-cn_image_0000002779728889.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/XiLLiDHtQnSsjl597DJSGA/zh-cn_image_0000002779728889.png)
 
 ## 使用UBSan
 
 1. 运行或调试当前应用。
 2. 当检测出未定义行为时，弹出UBSan log信息，点击信息中的链接即可跳转到未定义行为的代码处。日志中的异常检测类型请参考[UBSan异常检测类型](../best-practices/bpta-stability-ubsan-detection.md#section124211321406)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/n_HH8TGlQcO107KoVf3pYg/zh-cn_image_0000002779608739.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/svqYJe_nTe26pRqLVDEynw/zh-cn_image_0000002779608739.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 自适应布局
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面元素自适应变化 > 自适应布局
 category: best-practices
-scraped_at: 2026-10-16T07:06:39+08:00
-doc_updated_at: 2026-06-10
-content_hash: sha256:891da669520c57733739c25a12b53721df067302bcaadb6839273ce5a55fa2c3
+scraped_at: 2026-10-29T08:03:17+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:86906b821f00e4297b8e4ecab758f04cf0e2b9f7f6945e733bd6b3a0d6bd8df9
 ---
 
 针对常见的开发场景，方舟开发框架提炼了七种自适应布局能力，这些布局可以独立使用，也可多种布局叠加使用。
@@ -13,12 +13,12 @@ content_hash: sha256:891da669520c57733739c25a12b53721df067302bcaadb6839273ce5a55
 | 自适应布局类别 | 自适应布局能力 | 使用场景 | 实现方式 |
 | --- | --- | --- | --- |
 | 自适应拉伸 | [拉伸能力](bpta-multi-device-adaptive-layout.md#拉伸能力) | 容器组件尺寸发生变化时，增加或减小的空间**全部分配**给容器组件内**指定区域**。 | [Flex布局](../harmonyos-references/ts-universal-attributes-flex-layout.md)的flexGrow和flexShrink属性 |
-|  | [均分能力](bpta-multi-device-adaptive-layout.md#均分能力) | 容器组件尺寸发生变化时，增加或减小的空间**均匀分配**给容器组件内**所有空白区域**。 | [Row组件](../harmonyos-references/ts-container-row.md)、[Column组件](../harmonyos-references/ts-container-column.md)或[Flex组件](../harmonyos-references/ts-container-flex.md)的justifyContent属性设置为FlexAlign.SpaceEvenly |
+|  | [均分能力](bpta-multi-device-adaptive-layout.md#均分能力) | 容器组件尺寸发生变化时，增加或减小的空间**均匀分配**给容器组件内**所有空白区域**。 | [Row](../harmonyos-references/ts-container-row.md)、[Column](../harmonyos-references/ts-container-column.md)或[Flex](../harmonyos-references/ts-container-flex.md)的justifyContent属性设置为FlexAlign.SpaceEvenly |
 | 自适应缩放 | [占比能力](bpta-multi-device-adaptive-layout.md#占比能力) | 子组件的宽或高**按照预设的比例**，随容器组件发生变化。 | 基于通用属性的两种实现方式：  - 将子组件的宽高设置为父组件宽高的百分比  - layoutWeight属性 |
 |  | [缩放能力](bpta-multi-device-adaptive-layout.md#缩放能力) | 子组件的宽高**按照预设的比例**，随容器组件发生变化，且变化过程中子组件的**宽高比不变**。 | [布局约束](../harmonyos-references/ts-universal-attributes-layout-constraints.md)的aspectRatio属性 |
-| 自适应延伸 | [延伸能力](bpta-multi-device-adaptive-layout.md#延伸能力) | 容器组件内的子组件，按照其**在列表中的先后顺序**，随容器组件尺寸变化显示或隐藏。 | 基于容器组件的两种实现方式：  - 通过[List组件](../harmonyos-references/ts-container-list.md)实现  - 通过[Scroll组件](../harmonyos-references/ts-container-scroll.md)配合[Row组件](../harmonyos-references/ts-container-row.md)或[Column组件](../harmonyos-references/ts-container-column.md)实现 |
+| 自适应延伸 | [延伸能力](bpta-multi-device-adaptive-layout.md#延伸能力) | 容器组件内的子组件，按照其**在列表中的先后顺序**，随容器组件尺寸变化显示或隐藏。 | 基于容器组件的两种实现方式：  - 通过[List](../harmonyos-references/ts-container-list.md)实现  - 通过[Scroll](../harmonyos-references/ts-container-scroll.md)配合[Row](../harmonyos-references/ts-container-row.md)或[Column](../harmonyos-references/ts-container-column.md)实现 |
 |  | [隐藏能力](bpta-multi-device-adaptive-layout.md#隐藏能力) | 容器组件内的子组件，按照其**预设的显示优先级**，随容器组件尺寸变化显示或隐藏。**相同显示优先级的子组件同时显示或隐藏**。 | [布局约束](../harmonyos-references/ts-universal-attributes-layout-constraints.md)的displayPriority属性 |
-| 自适应折行 | [折行能力](bpta-multi-device-adaptive-layout.md#折行能力) | 容器组件尺寸发生变化时，如果布局方向尺寸不足以显示完整内容，**自动换行**。 | [Flex组件](../harmonyos-references/ts-container-flex.md)的wrap属性设置为FlexWrap.Wrap |
+| 自适应折行 | [折行能力](bpta-multi-device-adaptive-layout.md#折行能力) | 容器组件尺寸发生变化时，如果布局方向尺寸不足以显示完整内容，**自动换行**。 | [Flex](../harmonyos-references/ts-container-flex.md)的wrap属性设置为FlexWrap.Wrap |
 
 下面我们依次介绍这几种自适应布局能力。
 
@@ -32,13 +32,13 @@ content_hash: sha256:891da669520c57733739c25a12b53721df067302bcaadb6839273ce5a55
 | --- | --- | --- | --- |
 | flexGrow | number | 0 | 仅当父容器宽度大于所有子组件宽度的总和时，该属性生效。配置了此属性的子组件，按照比例拉伸，分配父容器的多余空间。 |
 | flexShrink | number | 1 | 仅当父容器宽度小于所有子组件宽度的总和时，该属性生效。配置了此属性的子组件，按照比例收缩，分配父容器的不足空间。 |
-| flexBasis | 'auto' | [Length](../harmonyos-references/ts-types.md#length) | 'auto' | 设置组件在Flex容器中主轴方向上基准尺寸。'auto'意味着使用组件原始的尺寸，不做修改。  flexBasis属性不是必须的，通过width或height也可以达到同样的效果。当flexBasis属性与width或height发生冲突时，以flexBasis属性为准。 |
+| flexBasis | 'auto' | [Length](../harmonyos-references/ts-types.md#length) | 'auto' | 设置组件在Flex容器中主轴方向上基准尺寸。'auto'意味着使用组件原始的尺寸，不做修改。  flexBasis属性不是必需的，通过width或height也可以达到同样的效果。当flexBasis属性与width或height发生冲突时，以flexBasis属性为准。 |
 
 **说明** 
 
-* 开发者期望将父容器的剩余空间全部分配给某空白区域时，也可以通过[Blank组件](../harmonyos-references/ts-basic-components-blank.md)实现。注意仅当父组件为Row\Column\Flex组件时，Blank组件才会生效。
+* 开发者期望将父容器的剩余空间全部分配给某空白区域时，也可以通过[Blank](../harmonyos-references/ts-basic-components-blank.md)组件实现。注意仅当父组件为Row\Column\Flex组件时，Blank组件才会生效。
 * 类Web开发范式也是通过flex-grow和flex-shrink实现拉伸能力，同时也支持配置flex-basis，详见[通用样式](../harmonyos-references/js-components-common-styles.md)。
-* 类Web开发范式没有提供blank组件，但可以通过div组件模拟blank组件的行为，如“<div style='flex-grow: 1; flex-shrink: 0; flex-basis: 0'></div>”。
+* 类Web开发范式没有提供Blank组件，但可以通过div组件模拟Blank组件的行为，如“<div style='flex-grow: 1; flex-shrink: 0; flex-basis: 0px'></div>”。
 
 **示例1**
 
@@ -54,7 +54,7 @@ content_hash: sha256:891da669520c57733739c25a12b53721df067302bcaadb6839273ce5a55
 * 当父容器的尺寸大于600vp时，父容器中多余的空间全部分配给中间内容区。
 * 当父容器的尺寸小于600vp时，左右两侧的留白区按照“1:1”的比例收缩（即平均分配父容器的不足空间）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/zooxeKzaTFOUuqTLeLXsgA/zh-cn_image_0000002355147005.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/N7zNmR5sQb6FnnpZU89BQA/zh-cn_image_0000002768365066.gif "点击放大")
 
 ```typescript
 @Entry
@@ -115,7 +115,7 @@ struct FlexibleCapability1 {
 
 文字和开关的尺寸固定，仅有中间空白区域（Blank组件）随父容器尺寸变化而伸缩。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/J6zks774RdWQvuqyDDvOHw/zh-cn_image_0000002321148306.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/cNBV2Az-T2i63AVMbYuvcw/zh-cn_image_0000002768205236.gif "点击放大")
 
 ```typescript
 @Entry
@@ -171,18 +171,18 @@ struct FlexibleCapability2 {
 
 均分能力是指容器组件尺寸发生变化时，增加或减小的空间均匀分配给容器组件内所有空白区域。它常用于内容数量固定、均分显示的场景，比如工具栏、底部菜单栏等。
 
-均分能力可以通过将[Row组件](../harmonyos-references/ts-container-row.md)、[Column组件](../harmonyos-references/ts-container-column.md)或[Flex组件](../harmonyos-references/ts-container-flex.md)的justifyContent属性设置为FlexAlign.SpaceEvenly实现，即子元素在父容器主轴方向等间距布局，相邻元素之间的间距、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。
+均分能力可以通过将[Row](../harmonyos-references/ts-container-row.md)组件、[Column](../harmonyos-references/ts-container-column.md)组件或[Flex](../harmonyos-references/ts-container-flex.md)组件的justifyContent属性设置为FlexAlign.SpaceEvenly实现，即子元素在父容器主轴方向等间距布局，相邻元素之间的间距、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。
 
 **说明** 
 
-* 均分能力还可以通过其它方式实现，如使用[Grid组件](../harmonyos-references/ts-container-grid.md)或在每个组件间添加Blank组件等。
-* 类Web开发范式中，通过将[div组件](../harmonyos-references/js-components-container-div.md)的justify-content属性设置为space-evenly来实现均分布局。
+* 均分能力还可以通过其它方式实现，如使用[Grid](../harmonyos-references/ts-container-grid.md)组件或在每个组件间添加Blank组件等。
+* 类Web开发范式中，通过将[div](../harmonyos-references/js-components-container-div.md)组件的justify-content属性设置为space-evenly来实现均分布局。
 
 **示例：**
 
 父容器尺寸变化过程中，图标及文字的尺寸不变，图标间的间距及图标离左右边缘的距离同时均等改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/oLdrfOynSzKMPHaLXRjOVQ/zh-cn_image_0000002355266889.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/_irYAycUR_qvJLQh2gA9IA/zh-cn_image_0000002797525223.gif "点击放大")
 
 ```typescript
 @Entry
@@ -264,7 +264,7 @@ struct EquipartitionCapability {
 
 占比能力通常有两种实现方式：
 
-* 将子组件的宽高设置为父组件宽高的百分比，详见[尺寸设置](../harmonyos-references/ts-universal-attributes-size.md)及[长度类型](../harmonyos-references/ts-types.md#length)。
+* 将子组件的宽高设置为父组件宽高的百分比，详见[尺寸设置](../harmonyos-references/ts-universal-attributes-size.md)及[Length](../harmonyos-references/ts-types.md#length)。
 * 通过layoutWeight属性配置互为兄弟关系的组件在父容器主轴方向的布局权重，详见[尺寸设置](../harmonyos-references/ts-universal-attributes-size.md)。
 
   + 当父容器尺寸确定时，其子组件按照开发者配置的权重比例分配父容器中主轴方向的空间。
@@ -275,9 +275,9 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 **说明** 
 
-* 占比能力在实际开发中使用的非常广泛，可以通过很多不同的方式实现占比能力，如还可以通过[Grid组件](../harmonyos-references/ts-container-grid.md)的columnsTemplate属性设置网格容器中列的数量及其宽度比例，或通过配置子组件在[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)中占据不同的列数来实现占比能力。
+* 占比能力在实际开发中使用的非常广泛，可以通过很多不同的方式实现占比能力，如还可以通过[Grid](../harmonyos-references/ts-container-grid.md)组件的columnsTemplate属性设置网格容器中列的数量及其宽度比例，或通过配置子组件在[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)中占据不同的列数来实现占比能力。
 * 类Web开发范式同样支持以百分比的形式设置组件的宽高，详见[通用样式](../harmonyos-references/js-components-common-styles.md)中关于width和height的介绍以及[长度类型](../harmonyos-references/js-appendix-types.md#长度类型)。
-* 与声明式开发范式中的layoutWeight属性类似，类Web开发范式提供了[flex-weight样式](../harmonyos-references/js-components-common-atomic-layout.md#占比能力)用于配置互为兄弟关系的组件在父容器主轴方向的布局权重。
+* 与声明式开发范式中的layoutWeight属性类似，类Web开发范式提供了[占比能力](../harmonyos-references/js-components-common-atomic-layout.md#占比能力)用于配置互为兄弟关系的组件在父容器主轴方向的布局权重。
 
 **示例：**
 
@@ -285,7 +285,7 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 将三个按钮的.layoutWeight(1)分别替换为.width('33%')、.width('34%')、.width('33%')，也可以实现与当前同样的显示效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/4eyxRXzGSzqI5Vf-vc1BPg/zh-cn_image_0000002321308190.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/_bHwjvZ0TEmCNqeUUY61nA/zh-cn_image_0000002797525315.gif "点击放大")
 
 ```typescript
 @Entry
@@ -364,13 +364,13 @@ struct ProportionCapability {
 
 **说明** 
 
-类Web开发范式同样提供了[aspect-ratio样式](../harmonyos-references/js-components-common-atomic-layout.md#固定比例)，用于固定组件的宽高比。
+类Web开发范式同样提供了[固定比例](../harmonyos-references/js-components-common-atomic-layout.md#固定比例)，用于固定组件的宽高比。
 
 **示例：**
 
 为方便查看效果，示例中特意给Column组件加了边框。可以看到Column组件随着其Flex父组件尺寸变化而缩放的过程中，始终保持预设的宽高比，其中的图片也始终正常显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/fayhMdxCQ-mIFOjVPJZ8_Q/zh-cn_image_0000002355147069.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/6kCU-geZRg-OW4Rs9qRUrQ/zh-cn_image_0000002768205538.gif "点击放大")
 
 ```typescript
 @Entry
@@ -446,14 +446,14 @@ struct ScaleCapability {
 
 延伸能力通常有两种实现方式：
 
-* 通过[List组件](../harmonyos-references/ts-container-list.md)实现。
-* 通过[Scroll组件](../harmonyos-references/ts-container-scroll.md)配合[Row组件](../harmonyos-references/ts-container-row.md)或[Column组件](../harmonyos-references/ts-container-column.md)实现。
+* 通过[List](../harmonyos-references/ts-container-list.md)组件实现。
+* 通过[Scroll](../harmonyos-references/ts-container-scroll.md)组件配合[Row](../harmonyos-references/ts-container-row.md)组件或[Column](../harmonyos-references/ts-container-column.md)组件实现。
 
 **说明** 
 
 * List、Row或Column组件中子节点在页面显示时就已全部完成布局计算及渲染，只不过受限于父容器尺寸，用户只能看到一部分。随着父容器尺寸增大，用户可以看到的子节点数目也相应的增加。用户还可以通过手指滑动触发列表滑动，查看被隐藏的子节点。
-* 类Web开发范式同样可以使用[list组件](../harmonyos-references/js-components-container-list.md)实现延伸能力。
-* 类Web开发范式没有提供scroll组件，但可以将[div组件](../harmonyos-references/js-components-container-div.md)的overflow样式设置为scroll（即div组件主轴方向上子元素的尺寸超过div组件本身的尺寸时进行滚动显示）来模拟scroll组件的行为。
+* 类Web开发范式同样可以使用[list](../harmonyos-references/js-components-container-list.md)组件实现延伸能力。
+* 类Web开发范式没有提供Scroll组件，但可以将[div](../harmonyos-references/js-components-container-div.md)组件的overflow样式设置为scroll（即div组件主轴方向上子元素的尺寸超过div组件本身的尺寸时进行滚动显示）来模拟Scroll组件的行为。
 
 **示例：**
 
@@ -461,7 +461,7 @@ struct ScaleCapability {
 
 分别通过List组件实现及通过Scroll组件配合Row组件实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/wPXddhrWSwmEOAQ758J2hA/zh-cn_image_0000002321148358.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/xFABzUbITca0oTRAPVzguQ/zh-cn_image_0000002797525681.gif "点击放大")
 
 （1）通过List组件实现。
 
@@ -604,13 +604,13 @@ struct ExtensionCapability1 {
 
 **说明** 
 
-类Web开发范式同样支持[display-index样式](../harmonyos-references/js-components-common-atomic-layout.md#隐藏能力)，用于设置布局优先级。
+类Web开发范式同样支持[隐藏能力](../harmonyos-references/js-components-common-atomic-layout.md#隐藏能力)，用于设置布局优先级。
 
 **示例：**
 
 父容器尺寸发生变化时，其子元素按照预设的优先级显示或隐藏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/kN5FZDkMTY-5Lakix3Agrg/zh-cn_image_0000002355266913.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/-eEGRFYQTcuXeJkop4g_Lg/zh-cn_image_0000002768365876.gif "点击放大")
 
 ```typescript
 @Entry
@@ -706,17 +706,17 @@ struct HiddenCapability {
 
 折行能力通过使用 **Flex折行布局** （将wrap属性设置为FlexWrap.Wrap）实现，当横向布局尺寸不足以完整显示内容元素时，通过折行的方式，将元素显示在下方。
 
-可以访问[Flex组件](../harmonyos-references/ts-container-flex.md)，了解Flex组件的详细用法。
+可以访问[Flex](../harmonyos-references/ts-container-flex.md)组件，了解Flex组件的详细用法。
 
 **说明** 
 
-类Web开发范式通过将[div组件](../harmonyos-references/js-components-container-div.md)的flex-wrap样式设置为wrap来使用折行能力。
+类Web开发范式通过将[div](../harmonyos-references/js-components-container-div.md)组件的flex-wrap样式设置为wrap来使用折行能力。
 
 **示例：**
 
 父容器中的图片尺寸固定，当父容器尺寸发生变化，其中的内容做自适应换行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/RM7o7Am8RuGCaUzNyelNVQ/zh-cn_image_0000002321308202.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Rnf_9KXBQW2hAhMYxFecJw/zh-cn_image_0000002797528317.gif "点击放大")
 
 ```typescript
 @Entry

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-cross-
 title: Native侧跨HAR/HSP模块接口调用
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > Native侧跨HAR/HSP模块接口调用
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:37+08:00
+scraped_at: 2026-10-29T07:56:16+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:e1d02861171fbf2de8b0c081124acc2eb36e1c4f9ca74e1dc76813080216046a
+content_hash: sha256:208924ecc8912c12c8f767d22508897e43a6891bbbb3459c09ada248cf6f4034
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:e1d02861171fbf2de8b0c081124acc2eb36e1c4f9ca74e1dc7681308021
 
 **图 1** Native侧跨HAR/HSP模块调用原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/e6hI6WN1SsWOrrdYP_VJkg/zh-cn_image_0000002771824546.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/NgJZJtwTQPW-4x4tyGzQlg/zh-cn_image_0000002803223083.png)
 
 ## Native侧跨HAR/HSP模块调用Native方法
 
@@ -36,7 +36,7 @@ content_hash: sha256:e1d02861171fbf2de8b0c081124acc2eb36e1c4f9ca74e1dc7681308021
 
 **图 2** Native侧跨HAR/HSP模块调用Native方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/cCcGipEZSayPEJPcEqfJ3g/zh-cn_image_0000002801104361.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/tMC3typ7Qz2TpgeF9hbT_g/zh-cn_image_0000002774063368.png)
 
 ### 开发流程
 
@@ -166,7 +166,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
 
 **图 3** Native侧调用HAR模块的Native方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/8hOTJptHT260WiZgMbL-Dg/zh-cn_image_0000002771664582.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/i7mC0MQyQbitlZKWfWgsKw/zh-cn_image_0000002773903392.gif)
 
 ## Native侧跨HAR/HSP模块调用ArkTS方法
 
@@ -174,7 +174,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
 
 **图 4** Native侧跨HAR/HSP模块调用ArkTS方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/kcFIbQSkQwKl5_XQMHwjWQ/zh-cn_image_0000002800984437.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/HLTb93sJT5mmbruh4vRNGw/zh-cn_image_0000002803263177.png)
 
 ### 开发流程
 
@@ -319,7 +319,7 @@ Native侧跨HAR/HSP模块调用ArkTS方法具体实现方法如下所示。
 
 **图 5** Native侧调用HAR模块的ArkTS方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/a2WrbV1XRbePvI5trUZvig/zh-cn_image_0000002771824548.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/zEhc_IUJQo-X-O6c8-VlLQ/zh-cn_image_0000002803223085.gif)
 
 ## 示例代码
 

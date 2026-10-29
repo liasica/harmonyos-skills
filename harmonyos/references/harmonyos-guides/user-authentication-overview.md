@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-authenti
 title: User Authentication Kit简介
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > User Authentication Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:12+08:00
+scraped_at: 2026-10-29T07:56:59+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:9536492179d42099229de7efd53d0cde7a12dd411bcb02a19d1f49bc81a74478
+content_hash: sha256:1386c82a4de2248e8f1823d2f9fb9e9a67022bc0c3ac47501a1f6ba214806d12
 ---
 
 User Authentication Kit（用户认证服务）提供了基于用户在设备本地注册的锁屏口令、人脸、指纹、伴随设备来认证用户身份的能力。
@@ -20,7 +20,7 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 
 ### 单设备场景（口令认证、指纹认证、人脸认证）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Hiws-hCNQ76-SL6tO4Yg5g/zh-cn_image_0000002771665896.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/O6sWvNQvQda03A8Ij8Ssfw/zh-cn_image_0000002773904708.png)
 
 ### 伴随设备场景
 
@@ -34,11 +34,11 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 
 伴随设备无感认证，伴随设备需具有持续跟踪用户能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/miT-2uXxSMWpc7040UybZg/zh-cn_image_0000002800985753.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/jkErMbv9RTmYgMKGffdWbQ/zh-cn_image_0000002803264493.png)
 
 伴随设备代理认证，伴随设备需具备独立认证用户身份的能力。如在多屏协同场景中，PC/2in1设备作为伴随设备，用户可通过PC/2in1设备完成本地人脸或指纹认证，当前该能力仅开放给系统应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/yrrIg80_QIGjlLTBUPv-XQ/zh-cn_image_0000002771825864.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/CdXWmp6zT4-GP1Q05mL0MA/zh-cn_image_0000002803224403.png)
 
 ## 约束与限制
 
@@ -91,7 +91,7 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 
 统一用户认证框架架构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/wL4CaP7sQha3NXt0o4l9Nw/zh-cn_image_0000002801105677.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/GqRqm_-TRwOoPaDRTaPhMQ/zh-cn_image_0000002774064684.png)
 
 用户认证框架主要包括四个部分：
 

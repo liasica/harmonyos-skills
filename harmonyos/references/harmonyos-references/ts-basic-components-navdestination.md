@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: NavDestination
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > NavDestination
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:21+08:00
+scraped_at: 2026-10-29T07:59:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:65323410b64cb26ee50de427731f03284a604dbe621a0b65e7aec5debb710e02
+content_hash: sha256:8cb185d4c0b35e5aa4d82735ef9aee826360bf799443ca055c6b55089073fd45
 ---
 
 作为子页面的根容器，用于显示[Navigation](ts-basic-components-navigation.md)的内容区。
@@ -1258,7 +1258,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/KX6bFFdxT7eqOCMbR2JuGA/zh-cn_image_0000002771667402.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/UVMfh2IDRzeYgy4wC7lfQw/zh-cn_image_0000002803225907.gif)
 
 ### 示例2（设置NavDestination自定义转场）
 
@@ -1399,7 +1399,7 @@ struct NavDest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/paKGDWx7RTu7bMiyIO417A/zh-cn_image_0000002800987261.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/YD8eATUMTYqEp-sAMQhQMg/zh-cn_image_0000002774066192.gif)
 
 ### 示例3（设置指定的NavDestination系统转场）
 
@@ -1647,13 +1647,13 @@ struct HomeBody {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/HLF3BCzYSgy4etnWVExQcg/zh-cn_image_0000002771827368.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/5yh8gSeAT5ufGfLwGLULRA/zh-cn_image_0000002773906218.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/A5TbN2Z7S2ejIa6tyWMHcg/zh-cn_image_0000002801107183.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZqxDL6PdT9-YpAkTbeu3bA/zh-cn_image_0000002803266001.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/3yFHQJEbQdieVDDK-FyEeA/zh-cn_image_0000002771667404.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/rEtR2CxKTbWCatszHSkLJA/zh-cn_image_0000002803225909.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/IoCaTTWCRtCJrseIvYJOSw/zh-cn_image_0000002800987263.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/kFKSAzI9Tyic2IDQroab8A/zh-cn_image_0000002774066194.gif)
 
 ### 示例4（NavDestination配置页面方向和对应状态栏、导航条显隐）
 
@@ -1744,7 +1744,7 @@ struct ExamplePage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-_iAW-Y3Qa2USUGl1Gi6Gw/zh-cn_image_0000002771827370.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Z9tSz2j9SpCmkpcBgfG3Dg/zh-cn_image_0000002773906220.gif)
 
 ### 示例5（NavDestination的onActive与onInActive生命周期）
 
@@ -1961,6 +1961,6 @@ struct NavBody {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/D3405QXQRhq-nu3SbDeWvQ/zh-cn_image_0000002801107185.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/uWIRDQoORmqywZi3x3F1vg/zh-cn_image_0000002803266003.gif)
 
 NavDestination其他用法可参考[Navigation示例](ts-basic-components-navigation.md#示例)。

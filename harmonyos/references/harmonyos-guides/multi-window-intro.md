@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 智慧多窗简介
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 智慧多窗应用开发指导 > 智慧多窗简介
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:55+08:00
+scraped_at: 2026-10-29T07:56:39+08:00
 doc_updated_at: 2026-08-14
-content_hash: sha256:9cfe193e8c9dcdca0917ecb7a7fac0b5d2f3cb0a5868d9fbfa5ab8a8e1431e4a
+content_hash: sha256:04c312088c8d798a460d4885a95ed5128bfb7740c1c92dc5ea8d9f68412244e4
 ---
 
 智慧多窗是一种多任务处理解决方案，它允许用户在同一时间、同一屏幕上以悬浮窗、分屏或全景多窗的方式同时运行多个应用窗口。在智慧多窗的显示模式下，用户可以根据自己的需求，合理安排应用窗口的位置和大小。
@@ -22,10 +22,10 @@ content_hash: sha256:9cfe193e8c9dcdca0917ecb7a7fac0b5d2f3cb0a5868d9fbfa5ab8a8e14
 
 * 竖向悬浮窗：一般用于新闻资讯、社交以及购物类应用等场景。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/jxOpqrGBR_WLfMOi2LkLBw/zh-cn_image_0000002771665590.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/SGE0_ZwhRyqNHwVpq5wYIw/zh-cn_image_0000002773904402.png)
 * 横向悬浮窗：主要用于横向游戏和视频全屏播放的场景。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/C3kegsXDSfiDx3I-ecZxmg/zh-cn_image_0000002800985447.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/-b0tdrT0TTeT5XS8xSIU1A/zh-cn_image_0000002803264187.jpg)
 
 ### 悬浮窗的触发及恢复方式
 
@@ -33,25 +33,25 @@ content_hash: sha256:9cfe193e8c9dcdca0917ecb7a7fac0b5d2f3cb0a5868d9fbfa5ab8a8e14
 
 * 手势触发：应用全屏时从屏幕底部向上滑至右上方热区，松手后可开启悬浮窗模式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/sgiOKyGnTQGpIdlfkqrNnw/zh-cn_image_0000002771825558.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/ndlTNmWKTP6-6qcFeoI4Pw/zh-cn_image_0000002803224097.jpg)
 * 通知消息下拉触发：在系统接收到通知消息未收起时，可直接下拉此通知消息开启悬浮窗模式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/9dV9HJwkTXeJPVkh06zVbw/zh-cn_image_0000002801105371.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/loIUhcuDTHCkK_Vb7yhe9g/zh-cn_image_0000002774064378.png)
 * 侧边Dock触发：侧滑调出侧边Dock栏，点击Dock上的应用，支持悬浮窗的应用以悬浮窗模式开启。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/mkMOu6EARdSfg-exVckUqg/zh-cn_image_0000002771665592.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/Og1vWKNpRSSfrAFyortY_w/zh-cn_image_0000002773904404.png)
 * 分屏切换悬浮窗：分屏时，按住分屏应用顶部横条，拖拽到相应的热区，应用从分屏切换到悬浮窗模式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/WcJJP0EzSDuCukQMZ08Bvg/zh-cn_image_0000002800985449.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/igET2V3KQviDvKVIrFG-3g/zh-cn_image_0000002803264189.png)
 
 **悬浮窗的恢复方式主要有以下两种：**
 
 * 多任务中心中恢复：对于已开启悬浮窗模式的应用，在进入多任务中心时，悬浮窗应用同全屏应用一起显示在多任务中心，用户选择点击悬浮窗应用卡片时可恢复悬浮窗模式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/RTermL4OSSu24Gwrh-mrHA/zh-cn_image_0000002771825560.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/agL5tA8FT4q9-TmfAIQ-xA/zh-cn_image_0000002803224099.png)
 * 侧边条恢复：对于已开启悬浮窗模式的应用，其最小化后会暂存在屏幕上的侧边条中，点击或者长按侧边条可展开任务选择界面，选择点击侧边条中悬浮窗应用卡片时可恢复悬浮窗模式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/D7FW9HRPT8ObRXju-sXS0w/zh-cn_image_0000002801105373.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/YjSBtIkARIiI9tmKb0MfuA/zh-cn_image_0000002774064380.png)
 
 ### 适配注意事项
 
@@ -68,14 +68,14 @@ content_hash: sha256:9cfe193e8c9dcdca0917ecb7a7fac0b5d2f3cb0a5868d9fbfa5ab8a8e14
 
 * 分屏通过手势触发：应用全屏时，从屏幕底部向上滑至左上方热区，进入待分屏状态，点击桌面另一个支持分屏的应用图标或卡片，可形成分屏。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ZVSfwHC0T1WWnAIj8M5DFA/zh-cn_image_0000002771665594.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/4YHJnrr3ROymXhcwb-E5hw/zh-cn_image_0000002773904406.png)
 * 应用自主启动分屏：除了通过手势触发分屏之外，应用可以自主选择启动分屏，具体步骤可见[应用内分屏](multi-window-support.md#应用内分屏)。
 * 侧边Dock栏触发：长按Dock栏中的应用图标并拖出，和前台支持分屏的全屏应用形成分屏。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Rp6A2BdFQpO57H-SKnthIw/zh-cn_image_0000002800985451.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Rx20mMG0So2xjxYD2P7Ptg/zh-cn_image_0000002803264191.png)
 * 悬浮窗切分屏：按住悬浮窗顶部横条，拖到相应热区，悬浮窗和前台全屏应用形成分屏。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/TIWFlTGfT9CEAOj6RQGOFg/zh-cn_image_0000002771825562.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Oorve8m5RDSgdMgTaUcgOQ/zh-cn_image_0000002803224101.png)
 
 ### 适配注意事项
 
@@ -95,13 +95,13 @@ content_hash: sha256:9cfe193e8c9dcdca0917ecb7a7fac0b5d2f3cb0a5868d9fbfa5ab8a8e14
 
 * 双折叠设备全景多窗窗口档位及窗口宽高比：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/ztyY9KIeR9iM7kyQFrzBcQ/zh-cn_image_0000002801105375.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/edg36uPmReSaOyRJsrlcZQ/zh-cn_image_0000002774064382.jpg)
 * 三折叠与Tablet设备全景多窗窗口档位及窗口宽高比：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/k6gd45GQQ9Gog3MWecGoAg/zh-cn_image_0000002771665596.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/KNrggjooTtOEyfVMfk1ztw/zh-cn_image_0000002773904408.jpg)
 * 窗口状态分为平铺和侧身两种状态：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/YJWc17AtQ8yXvdE5OoNl3A/zh-cn_image_0000002800985453.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/vWovwOArSQy0WJKq0lr-zg/zh-cn_image_0000002803264193.png)
 
 ### 全景多窗的进入方式
 
@@ -109,27 +109,27 @@ content_hash: sha256:9cfe193e8c9dcdca0917ecb7a7fac0b5d2f3cb0a5868d9fbfa5ab8a8e14
 
   应用全屏时，从屏幕底部向上滑至上方中间热区，点击桌面另一个支持全景多窗的应用图标或卡片，可形成全景多窗。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/bv64G7k5QhCtbZxe9OZlPw/zh-cn_image_0000002771825564.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/9oqmlLoXSdCjYgaAndyzzA/zh-cn_image_0000002803224103.png)
 
   应用分屏时，从屏幕底部向上滑至上方中间热区，点击桌面另一个支持全景多窗的应用图标或卡片，可形成全景多窗。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/OV42eKrYR-GbUMkNtU8FNw/zh-cn_image_0000002801105377.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ueddxR13TA-s-C65ayMPEA/zh-cn_image_0000002774064384.png)
 
   应用分屏时，从屏幕底部向上滑至左上方热区，点击桌面另一个支持全景多窗的应用图标或卡片，可形成三小窗全景多窗。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Ynk_VJ1CRMaY1yp86bcZSQ/zh-cn_image_0000002771665598.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/14iNLytuTQK0_ujzLpdDbg/zh-cn_image_0000002773904410.png)
 * 全景多窗通过顶部横条触发：
 
   应用全屏时，点击全屏应用顶部横条，选择“全景多窗”，点击桌面另一个支持全景多窗的应用图标或卡片，可形成全景多窗。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Bnehlq1xTuOqp9lWhFO5ig/zh-cn_image_0000002800985455.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/PQlEtLveSniVXWXVyChA2A/zh-cn_image_0000002803264195.png)
 
   应用分屏时，点击分屏应用顶部横条，选择“增加窗口”，点击桌面另一个支持全景多窗的应用图标或卡片，可形成全景多窗。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/i8bSjKrjT7qCJsEteR6fFA/zh-cn_image_0000002771825566.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/s2mB8vszRgOfkBf9asPiEQ/zh-cn_image_0000002803224105.png)
 * 全景多窗通过分屏拖拽触发：应用分屏时，调节分屏比例到相应热区，进入全景多窗。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/DhBKqz5uTnaZrcpKpAv83w/zh-cn_image_0000002801105379.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/-IuQJNFWTDSTKdar01Pq1w/zh-cn_image_0000002774064386.png)
 
 ### 适配注意事项
 

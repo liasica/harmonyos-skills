@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-bu
 title: 分析构建过程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 分析构建过程
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:32+08:00
+scraped_at: 2026-10-29T07:58:34+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:e825e77e6a0948b63655afb0a6f6e2cb2899226bf700570e6bbbbaf85b227887
+content_hash: sha256:e524534bedc0a32b0091e49072eb58149691057d3fcbd008b900f6cf6e1170c0
 ---
 
 Build Analyzer可以展示编译构建过程的重要信息，开发者能够通过Build Analyzer的可视化分析来排查构建过程中的性能和内存问题。
@@ -17,7 +17,7 @@ Build Analyzer会在每次构建应用时默认生成一份报告，并在Build 
 可以在构建完成后通过以下方式打开Build Analyzer窗口：
 
 * 点击菜单栏**Build > Build Analyzer**进行查看。
-* 在Build窗口中的Build Output页签，点击左侧边栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/O9z5f36aTI-lwJa4EHuA0g/zh-cn_image_0000002731381861.png)，打开Build Analyzer页签。
+* 在Build窗口中的Build Output页签，点击左侧边栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Q1f8EjJiToa35J06G2N2Rw/zh-cn_image_0000002731381861.png)，打开Build Analyzer页签。
 * 构建成功且使用构建分析能力时，在Build窗口Build Output页签下的日志下方点击链接，跳转至Build Analyzer页签。
 
 ## 查看构建历史记录
@@ -28,17 +28,17 @@ Build Analyzer左侧的Build History窗口中按时间顺序显示构建历史�
 
 本工程的构建历史数据保存在.hvigor/report目录下，超过10条记录后，最早的历史数据将会被自动清理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/vaUNFMOMRhiw9i5U_2-vLQ/zh-cn_image_0000002731541837.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/6TLLhvPuTxqrxBjQoxFH6Q/zh-cn_image_0000002731541837.png)
 
 ## 查看构建任务时间图谱
 
 完成构建后首次打开Build Analyzer 时，窗口会显示构建分析概览，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/_bJKTw_lRb-3hRFo_b2UGg/zh-cn_image_0000002701822556.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/b2IUHTZuRcavt2-BeM3ONA/zh-cn_image_0000002701822556.png)
 
 如需查看构建任务时间图谱，请从下拉菜单中点击Tasks，默认进入时间图谱界面。该界面会分块显示构建历史记录、构建任务时长图谱、构建日志以及对应的日志详情信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/LMSU0w2nQlSBEeacEDdGqQ/zh-cn_image_0000002731541833.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/2Bv5Fa3qQ-2zw4QmHpi5jw/zh-cn_image_0000002731541833.png)
 
 图谱中的构建任务展示按照各个任务总时长占比，以相对长度进行展示。可以对时间块进行缩小放大，查看具体的任务名称及耗时信息。
 
@@ -54,13 +54,13 @@ Build Analyzer不会全部显示构建操作中的所有任务，而是重点显
 
 点击日志，可与上方图谱和右侧Details模块，进行联动显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/u8twlA65QzO6b9I144AFIg/zh-cn_image_0000002731381867.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/aeUUuXaSQWmJRes5QWnosQ/zh-cn_image_0000002731381867.png)
 
 ## 查看构建任务占比图谱
 
 如需查看决定构建时长的任务的占比细分数据，请点击概览页面上的**Common views into this build**下方链接 ，您也可以从下拉菜单中选择**Tasks**并确认您要的任务分组类别。任务以模块、业务类别、Target以及同一模块下的Target、同一模块下的业务类别和同一Target下的业务类别进行分组。图表中任务按照时间占比从大到小排列，点击子任务可详细了解其执行情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/VVvb02oAS7uYXtG0gU0vkQ/zh-cn_image_0000002731381871.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/5h9d1T9XS3atFFnHWQnsFw/zh-cn_image_0000002731381871.png)
 
 **说明** 
 
@@ -74,13 +74,13 @@ Build Analyzer不会全部显示构建操作中的所有任务，而是重点显
 
 点击概览页面上**Common views into this build**下方的链接**Memory Usage During Build**，也可以从下拉菜单中选择**Tasks**和**Memory Usage**分组，查看内存消耗曲线图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/7vqAlWj7TB6AiV_YvJ_qaA/zh-cn_image_0000002731541831.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/xixxQPe3Q8mlItBK1JAGQA/zh-cn_image_0000002731541831.png)
 
 ## 导出日志
 
 如需查看本次构建日志，您可以点击导出按钮进行日志导出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/GhOCvvc2Rpu7z9IbuFNc_w/zh-cn_image_0000002701662644.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5kz0NJ71TNKKCYYeCb11Zw/zh-cn_image_0000002701662644.png)
 
 导出内容有：
 
@@ -94,7 +94,7 @@ Build Analyzer不会全部显示构建操作中的所有任务，而是重点显
 
 如需查看历史或其他工程的构建日志，您可以点击导入按钮导入report.json文件，导入的文件保存在工程./hvigor/report/upload目录下，导入后可在Build Analyzer左侧的Build History窗口中查看。upload目录下最多保存10条记录，超过10条记录后，最久的历史数据将会被自动清理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/fkyAO71ES_y1fptZ2DwkKA/zh-cn_image_0000002701662648.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/GWBVSSaVQdOgp9xCPWu3bg/zh-cn_image_0000002701662648.png)
 
 ## 设置构建分析模式
 
@@ -106,7 +106,7 @@ Build Analyzer不会全部显示构建操作中的所有任务，而是重点显
   + 模式选择为Ultrafine，即超精细化模式，与Advanced模式相比，在ArkTS编译阶段记录更详细的打点数据，但开启后可能导致编译构建时间更长。从DevEco Studio 6.0.0 Beta1版本开始支持。
 * 取消勾选，即为不记录该次构建数据，不进行分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/5-68pN3qQ1uszP6W-6NvIQ/zh-cn_image_0000002731381865.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/chPM5ntUScCR3Vl1hFKpyA/zh-cn_image_0000002731381865.png)
 
 ## 生成构建可视化html文件
 

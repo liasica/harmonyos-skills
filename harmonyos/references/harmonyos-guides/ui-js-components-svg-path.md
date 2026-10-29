@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: 绘制路径
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > svg开发指导 > 绘制路径
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:54+08:00
+scraped_at: 2026-10-29T07:56:37+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:81ea40e77b6fde7b6976cba6aa7b0d54ae1c2694aa43fb61cdc40b057f70ee57
+content_hash: sha256:fae6ac3d17b36986c7b6a22459b824cc4b11b2c04189f31fa6be7ddedc954914
 ---
 
 [svg](../harmonyos-references/js-components-svg.md)组件绘制路径时，通过Path中的M（起点）、H（水平线）、a（绘制弧形到指定位置）路径控制指令，并填充颜色实现饼状图效果。
@@ -34,7 +34,7 @@ content_hash: sha256:81ea40e77b6fde7b6976cba6aa7b0d54ae1c2694aa43fb61cdc40b057f7
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UcXvCrGJS6W_nKOfP0JjNw/zh-cn_image_0000002801105325.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/28dM1jmDRX6NRSh7bCdURg/zh-cn_image_0000002774064332.png)
 
 **说明** 
 

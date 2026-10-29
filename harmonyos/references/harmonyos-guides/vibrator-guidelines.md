@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-guid
 title: 振动开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 振动 > 振动开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:58b45befe277aeed8c383daaf2ace8fca12d067589d566d3b3fb291eae3e9a81
+scraped_at: 2026-10-29T07:57:08+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:6f1e8e0938e67adb1f2cef29cb18f8d892d589f9bf3823ec42656cb1c30c9d58
 ---
 
 ## 场景介绍
@@ -139,7 +139,7 @@ JSON文件共包含3个属性。
    | 名称 | 必填项 | 说明 |
    | --- | --- | --- |
    | Type | 是 | 振动事件类型，为"transient" 或"continuous"。 |
-   | StartTime | 是 | 振动的起始时间，单位ms，有效范围为[0, 1800,000]。 |
+   | StartTime | 是 | 振动的起始时间，单位ms，有效范围为[0, 1800000]。 |
    | Duration | 是 | 振动持续时间，仅当类型为"continuous"时有效，单位ms，有效范围为[0, 5000]。 |
 3. "Parameters"表示振动事件参数设置，必填项，可设置以下属性参数：
 
@@ -160,7 +160,7 @@ JSON文件共包含3个属性。
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/UeFQeCj8S5q03jDF7kXe9g/zh-cn_image_0000002800985843.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/6SQKPqtOTS-MXwl0y3x46w/zh-cn_image_0000002803264583.png)
 2. 配置权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5

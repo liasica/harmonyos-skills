@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distributed-pasteboard-cast
 title: 跨设备剪贴板
-breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 跨设备剪贴板
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 跨设备剪贴板
 category: best-practices
-scraped_at: 2026-10-16T07:06:42+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:38784eb0723d78ee516f373da954ab7defdb128d31744c2c3825c8c4d4d90f9a
+scraped_at: 2026-10-29T08:03:12+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d2eb435d30bef0f3be22a6ceccb060302096d8e0550a4bf11ebe3e3fb0d75f53
 ---
 
 剪贴板分为本地剪贴板和跨设备剪贴板，本地剪贴板提供设备内的内容复制粘贴，跨设备剪贴板提供跨设备的内容复制粘贴。
@@ -14,11 +14,11 @@ content_hash: sha256:38784eb0723d78ee516f373da954ab7defdb128d31744c2c3825c8c4d4d
 
 当开发者正在开发一款浏览器类应用，或是备忘录、笔记、邮件等富文本编辑类应用时，均可接入跨设备剪贴板，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Psny_oDvSyCmVWdmfbCksA/zh-cn_image_0000002757092113.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/deuttZS_Tuy1mbyZDolfAA/zh-cn_image_0000002757092113.gif "点击放大")
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/L-6yyh-OTZmWY-GEzQ7fWA/zh-cn_image_0000002563685436.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/RCqPjGvmQVyCZwPz0A4O3w/zh-cn_image_0000002563685436.png "点击放大")
 
 1. 用户在设备A复制数据。
 

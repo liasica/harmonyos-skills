@@ -3,54 +3,61 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 资源泄漏类问题优化建议
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 资源泄漏类问题优化建议
 category: best-practices
-scraped_at: 2026-10-16T07:06:54+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:9070faf3d04bb7e11ffc4652457f7915aeb2f27f00a1ccc8ccc45b263a4aa9ea
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:5b4106f3d12fd5dfc718e9cbfb4b2409923e8cbe5a72b783e95c1eddbee463ee
 ---
 
 ## 内存泄漏问题优化建议
 
-### 优化建议1：使用定时器组件销毁时一定要调用clearTimeout和clearInterval，否则对象无法析构
+### 优化建议1：使用定时器组件销毁时一定要调用clearTimeout或clearInterval，否则对象无法析构
 
 定时器未清理导致组件一直没有析构。
 
-```typescript
+```screen
 export default class test {
-  private timer: number | null = null; // 正确声明类属性
+  private timer: number | null = null; // Correctly declare class property
 
   onInit() {
     this.timer = setInterval(() => {
-      this.updateData(); // 通过this调用类方法
+      this.updateData(); // Call class method via this
     }, 1000);
   }
 
   private updateData() {
-    // 定时任务具体逻辑
+    // Specific logic for scheduled task
+  }
+
+  onDestroy() {
+    if (this.timer !== null) {
+      clearInterval(this.timer); // Clear timer
+      this.timer = null;
+    }
   }
 }
 ```
 
 **优化建议：**
 
-使用定时器组件销毁时一定要调用clearTimeout和clearInterval，否则对象无法析构。
+使用定时器组件销毁时一定要调用clearTimeout或clearInterval，否则对象无法析构。
 
-```typescript
+```screen
 export default class test {
-  private timer: number | null = null; // 正确声明类属性
+  private timer: number | null = null; // Correctly declare class property
 
   onInit() {
     this.timer = setInterval(() => {
-      this.updateData(); // 通过this调用类方法
+      this.updateData(); // Call class method via this
     }, 1000);
   }
 
   private updateData() {
-    // 定时任务具体逻辑
+    // Specific logic for scheduled task
   }
 
   onDestroy() {
     if (this.timer !== null) {
-      clearInterval(this.timer); // 清理定时器
+      clearInterval(this.timer); // Clear timer
       this.timer = null;
     }
   }
@@ -61,7 +68,7 @@ export default class test {
 
 申请堆内存但是没有在异常分支进行释放。
 
-```cpp
+```screen
 static bool InjectNativeLeak1()
 {
     char* p = (char*)malloc(g_cmdLen + 1);
@@ -70,7 +77,7 @@ static bool InjectNativeLeak1()
     }
     auto err = memset(p, 'a', g_cmdLen);
     if (err) {
-        // 异常分支退出未释放
+        // Exited in exception branch without releasing
         return false;
     }
     free(p);
@@ -106,20 +113,20 @@ static bool InjectNativeLeak2()
 
 ## ashmem/ION泄漏问题优化建议
 
-### 优化建议1：调用命名API接口，设定ashmem和ION的名字，与pixmap绑定，来提高这类内存泄漏的定位效率
+### 优化建议：调用命名API接口，设定ashmem和ION的名字，与pixmap绑定，来提高这类内存泄漏的定位效率
 
 未释放的共享内存映射。
 
-```cpp
+```screen
 void processWithLeak1(int fd, size_t size) {
     void* ptr = mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     if (ptr == MAP_FAILED) {
         return;
     }
-    // 使用共享内存
+    // Use shared memory
     processData(ptr);
-    // 忘记调用munmap(ptr, size);
-    // 每一次调用都会泄漏一块映射内存
+    // Forgot to call munmap(ptr, size);
+    // Each call leaks a mapped memory block
 }
 ```
 
@@ -127,13 +134,13 @@ void processWithLeak1(int fd, size_t size) {
 
 及时释放内存映射。
 
-```cpp
+```screen
 void processWithLeak2(int fd, size_t size) {
     void* ptr = mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     if (ptr == MAP_FAILED) {
         return;
     }
-    // 使用共享内存
+    // Use shared memory
     processData(ptr);
     munmap(ptr, size);
 }
@@ -147,23 +154,23 @@ JS层API：**[setMemoryNameSync()](../harmonyos-references/arkts-apis-image-pixe
 
 NATIVE层API：**[OH\_PixelmapNative\_SetMemoryName()](../harmonyos-references/capi-pixelmap-native-h.md#oh_pixelmapnative_setmemoryname)**
 
-建议Name按照窗口+组件+图片序号自定义，如果出现批量组件图片内存未释放，可快速定位。
+建议name按照窗口+组件+图片序号自定义，如果出现批量组件图片内存未释放，可快速定位。
 
 修改方法示例**：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/otXzfk3pR5KpLhcstlIaXQ/zh-cn_image_0000002370405688.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/MZvtbtZrQrKB_aYNClR6eA/zh-cn_image_0000002370405688.png "点击放大")
 
 ashmem日志结果示例展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Z6swHerGTJ-TIqW9uQc6hg/zh-cn_image_0000002404045417.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/1vTd2DtbTRagC8v7fPlFSg/zh-cn_image_0000002404045417.png "点击放大")
 
 ION日志结果示例展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/4iGxSgM5QY6eYVbLVXL80w/zh-cn_image_0000002370565600.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/tKXbgs44RK2p2Adv83zo6Q/zh-cn_image_0000002370565600.png "点击放大")
 
 ## 句柄泄漏问题优化建议
 
-### 优化建议1：函数各个异常分支及时增加关闭句柄的操作
+### 优化建议：函数各个异常分支及时增加关闭句柄的操作
 
 代码打开文件句柄，但是没有释放造成句柄泄漏。
 
@@ -203,7 +210,7 @@ void InjectContinuingFileFdLeak2(std::string path) {
 
 ## 线程泄漏问题优化建议
 
-### 优化建议1：严格控制线程生命周期
+### 优化建议：严格控制线程生命周期
 
 未正确管理线程对象，无法知道线程何时结束，可能导致资源泄漏。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-pe
 title: 受限开放权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 受限开放权限
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:24+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:66d7eb2d3154e5ec91689ea34aaa9f84813b6238b7b9ec4d74de0363832499e7
+scraped_at: 2026-10-29T07:56:49+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:9137635e1ff1a854c1a821515dee7885e9f837490e451a0395be6ac304aa49dc
 ---
 
 ## 申请方式
@@ -851,29 +851,13 @@ USB串口DDK API可用于开发以下类型的外设扩展驱动：
 
 **起始版本**：18
 
-## ohos.permission.kernel.SUPPORT\_PLUGIN
-
-允许主体应用安装插件。
-
-**可申请此权限的特殊场景与功能：**
-
-应当有对应的插件机制，确保可以使用对应的插件，并符合插件市场的管理规定。
-
-**申请后AGC的审核时长：** 预计3个工作日内反馈审核结果。
-
-**权限级别**：system\_basic
-
-**授权方式**：系统授权（system\_grant）
-
-**起始版本**：19
-
 ## ohos.permission.CUSTOM\_SANDBOX
 
 允许应用将沙箱类型改为动态沙箱。
 
 **可申请此权限的特殊场景与功能：**
 
-面向华为内部开发工具应用开放。
+应用为运行在PC/2in1设备上的开发工具类应用，需要进行应用开发、调试和测试，如DevEco Studio、DevEco Testing、命令行终端等。
 
 **权限级别**：system\_basic
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.eap (扩展认证)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.eap (扩展认证)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2a218e3e98c493d0d07fd58eab13f46571ca85ad391aa1f41f60e3001dd0838e
+scraped_at: 2026-10-29T08:01:00+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:aa70036378c6f4c1266ebd2838b0a93c7efa7d911d4a487aa5fa4ab1b28deded
 ---
 
 该模块提供了第三方客户端接入802.1X认证（一种基于端口的网络接入控制协议）流程的机制，支撑客户端的定制认证等功能。
@@ -337,7 +337,7 @@ EAP信息。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| eapMethod | [EapMethod](js-apis-net-eap.md#eapmethod) | 否 | 否 | AP认证方式。 |
+| eapMethod | [EapMethod](js-apis-net-eap.md#eapmethod) | 否 | 否 | EAP认证方式。 |
 | phase2Method | [Phase2Method](js-apis-net-eap.md#phase2method) | 否 | 否 | 第二阶段认证方式。 |
 | identity | string | 否 | 否 | 身份信息。 |
 | anonymousIdentity | string | 否 | 否 | 匿名身份。 |

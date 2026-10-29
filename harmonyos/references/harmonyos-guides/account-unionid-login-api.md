@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-union
 title: 使用自定义按钮登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号登录（获取UnionID/OpenID） > 使用自定义按钮登录
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:82bbc359e5a4797ea8f11b6a486ce60ad01a95f464562f45676f01e259a198bf
+scraped_at: 2026-10-29T07:57:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:53482f477c9e4c2ee4ce35ee1a85d726e1305f234b69bb804005e8011e33cca1
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:82bbc359e5a4797ea8f11b6a486ce60ad01a95f464562f45676f01e259a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/LPNxXgDKRfSsAPzFCdU8kA/zh-cn_image_0000002801106115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/jfZ4ZHU2RLWraBr2yTvlPQ/zh-cn_image_0000002774065122.png)
 
 流程说明：
 
@@ -52,6 +52,8 @@ content_hash: sha256:82bbc359e5a4797ea8f11b6a486ce60ad01a95f464562f45676f01e259a
 在进行代码开发前，请确保已按照“开发准备”章节中的指导完成[配置签名和指纹](account-sign-fingerprints.md)、[配置Client ID](account-client-id.md)。此场景无需申请账号权限。
 
 ## 客户端开发
+
+开发者可参考下述内容自行开发，也可使用Account Kit提供的[华为账号登录按钮组件SampleCode](https://gitcode.com/HarmonyOS_Samples/application-services-snippets/tree/master/AccountKit/Accountkit-Samplecode-Clientdemo-HuaweiIDLogin-ArkTs)示例工程接入华为账号自定义登录按钮。同时Account Kit也提供了[自定义按钮登录Skill](https://gitcode.com/HarmonyOS_Skills/harmonyos-agent-skills/tree/main/02-development/account-kit/hmos-account-kit-login-api-client) ，开发者可利用该Skill快速接入华为账号登录能力。
 
 1. 根据[【华为账号登录】按钮](../design-guides/id-0000001880001344.md#section2624430102713)规范开发自定义登录图标按钮，参考如下步骤在点击事件中完成华为账号登录API调用。
 2. 导入[authentication](../harmonyos-references/account-api-authentication.md)模块及相关公共模块。

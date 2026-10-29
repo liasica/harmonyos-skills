@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.usbManager (USB管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.usbManager (USB管理)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:42:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:909b0dabbf88c27196429a0d0e4a67329a95ebea8a2b085ceeaaaa1d804319eb
+scraped_at: 2026-10-29T08:01:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:b4053108eb3f3c706a5b714cb386ba3911e114ab421febfcb696bfbca17c7bf8
 ---
 
 本模块主要提供管理USB设备的相关功能，包括主机端的查询USB设备列表、批量数据传输、控制命令传输、权限控制等；设备端的端口管理、功能切换及查询等。适用于需要与USB设备进行数据交互、管理USB设备权限、动态切换USB设备模式等场景。
@@ -34,7 +34,7 @@ import { usbManager } from '@kit.BasicServicesKit';
 
 调用[usbManager.closePipe](js-apis-usbmanager.md#usbmanagerclosepipe)关闭设备连接通道。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/_zJMoeMEQiG50cY0CR9fag/zh-cn_image_0000002801108095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/1Dbz6fQHT7WIyYk2j3Sf1w/zh-cn_image_0000002803266913.png)
 
 ## usbManager.getDevices
 
@@ -45,6 +45,8 @@ getDevices(): Array<Readonly<USBDevice>>
 **说明** 
 
 三方应用无法通过getDevices()接口直接获取serial字段的设备序列号信息（该字段对三方应用不可用）。如需获取序列号，需要在申请设备访问权限后，自行发起控制传输获取。
+
+如果设备已通过企业设备管理（EDM）限制策略管控USB（如禁用USB能力、设置USB设备可用名单、禁用特定USB设备类型等），获取的设备列表可能为空或仅包含被允许的设备。具体情况请参考[@ohos.enterprise.restrictions (限制类策略)](js-apis-enterprise-restrictions.md)和[@ohos.enterprise.usbManager (USB管理)](js-apis-enterprise-usbmanager.md)。
 
 **系统能力：** SystemCapability.USB.USBManager
 
@@ -1580,7 +1582,7 @@ USB端点，用于主机与设备之间数据传输的通信端点。通过[USBI
 
 协议层打包时依赖type决定传输特性，包括数据包格式、错误处理机制、超时策略等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/5jiqdxCtTXSLV4vFu4dmzg/zh-cn_image_0000002771668314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/IHC579u0QweQCGpONWe6qQ/zh-cn_image_0000002803226819.png)
 
 **系统能力：** SystemCapability.USB.USBManager
 

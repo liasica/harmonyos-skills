@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-file-trans
 title: 基于SFFT的大文件高速并发传输
 breadcrumb: 最佳实践 > 网络 > 基于SFFT的大文件高速并发传输
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:c11071b0d1d9f58f97831f1e1389baa17c446252cf7883e514f41581d69525fe
+scraped_at: 2026-10-29T08:03:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d2277b7f42dda2301ae9e4c7ddb1ee3cad3406f7cff0115ec5a9a96070e93d1d
 ---
 
 ## 概述
@@ -20,11 +20,11 @@ content_hash: sha256:c11071b0d1d9f58f97831f1e1389baa17c446252cf7883e514f41581d69
 
 多线程下载是一种通过同时开启多个线程，并行下载文件不同部分的文件传输特性，能够充分利用带宽资源，显著提升下载速度，尤其适用于下载大文件或在网络带宽受限的环境下下载文件。其核心原理是将文件分割为多个小块，由多个线程同时下载这些部分，并发写入到本地文件中，从而实现高效、稳定的下载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/k-WjbRO5RbaGROiSTim8xQ/zh-cn_image_0000002236694464.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/o4HVSl4HSVSpJseFPcwEzA/zh-cn_image_0000002236694464.png "点击放大")
 
 ### 实现原理
 
-SFFT基于[@ohos.taskpool](../harmonyos-references/js-apis-taskpool.md)和[rcp](../harmonyos-references/remote-communication-rcp.md)实现了多线程下载，实现流程如下：
+SFFT基于[@ohos.taskpool (启动任务池)](../harmonyos-references/js-apis-taskpool.md)和[rcp（数据请求）](../harmonyos-references/remote-communication-rcp.md)实现了多线程下载，实现流程如下：
 
 当使用多线程下载时：
 
@@ -32,7 +32,7 @@ SFFT基于[@ohos.taskpool](../harmonyos-references/js-apis-taskpool.md)和[rcp](
 2. 当试连成功后，SFFT会从HEAD请求响应头中的“content-length”字段中获取文件大小，并根据开发者设置的下载策略将远端文件分成包含起始字节和结束字节的若干个数据块。
 3. 对于每一个块，SFFT都会向TaskPool的[TaskGroup](../harmonyos-references/js-apis-taskpool.md#taskgroup10)中添加一个请求任务，该请求任务请求头中的[transferRange](../harmonyos-references/remote-communication-rcp.md#transferrange)字段与文件块中的起始字节和结束字节相对应，在HTTP请求中，transferRange的值会被转为HTTP请求中的Range请求头字段。
 4. SFFT使用TaskPool的[taskpool.execute()](../harmonyos-references/js-apis-taskpool.md#taskpoolexecute)接口启用多个线程并发执行TaskGroup中的任务，获取服务端文件数据。
-5. 通过指定RCP的[Request接口](../harmonyos-references/remote-communication-rcp.md#request)的[ResponseBodyDestination](../harmonyos-references/remote-communication-rcp.md#responsebodydestination)字段中数据流的写入位置和偏移量，将每个线程请求获取的传输数据并发写入到本地的同一文件中。
+5. 通过指定RCP的[Request](../harmonyos-references/remote-communication-rcp.md#request)的[ResponseBodyDestination](../harmonyos-references/remote-communication-rcp.md#responsebodydestination)字段中数据流的写入位置和偏移量，将每个线程请求获取的传输数据并发写入到本地的同一文件中。
 
 ### 开发步骤
 
@@ -43,7 +43,7 @@ SFFT三方库使用RCP发送HTTP请求，因此使用了以下权限。权限设
 * ohos.permission.INTERNET：允许应用访问互联网。
 * ohos.permission.GET\_NETWORK\_INFO：允许应用获取数据网络信息。
 
-以下代码默认应用已经安装并导入了SFFT三方库，详细的三方库安装教程可以参考["如何使用ohpm引入三四方库"](../harmonyos-faqs/faqs-command-line-tool-13.md)。
+以下代码默认应用已经安装并导入了SFFT三方库，详细的三方库安装教程可以参考["如何使用ohpm引入三方库"](../harmonyos-faqs/faqs-command-line-tool-13.md)。
 
 * 下载初始化。
 
@@ -71,7 +71,7 @@ SFFT三方库使用RCP发送HTTP请求，因此使用了以下权限。权限设
 
 当使用SFFT进行大文件多线程下载时，下载速率相比于单线程下的普通下载，可以得到明显地提升。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/5g9cbDNASv66D833FDnYlg/zh-cn_image_0000002271813645.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/dtVYwVzwQSWCKRLDJb5pUw/zh-cn_image_0000002271813645.gif "点击放大")
 
 ## 分片上传
 
@@ -79,7 +79,7 @@ SFFT三方库使用RCP发送HTTP请求，因此使用了以下权限。权限设
 
 分片上传是一种将本地大文件分成多个小块（分片）后，分别上传的特性，可提升传输效率并减少网络波动的影响。若某个分片上传失败，只需重传该分片，无需重新上传整个文件。结合断点续传技术，即使传输被中断也能继续上传，确保上传过程的稳定性，特别适合复杂的网络环境。分片上传需要服务端支持将多个小文件合并成完整文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/R9yfTScRRDO24UU1ks2E9g/zh-cn_image_0000002271853533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/mV_q46J9Qau8V7x54cKgiA/zh-cn_image_0000002271853533.png "点击放大")
 
 ### 实现原理
 
@@ -119,7 +119,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 当使用SFFT进行大文件分片上传时，上传速率相比于不使用分片上传，可以得到明显地提升。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/OeI--wd9QIW3-YzfoJLruw/zh-cn_image_0000002236854260.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/EfPOct3JQf2L4S8n0vM0Mw/zh-cn_image_0000002236854260.gif "点击放大")
 
 ## 断点续传/断点续下
 
@@ -133,9 +133,9 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 **断点续下**
 
-在SFFT中，断点续下基于上述多线程下载原理，结合关系型数据库[@ohos.data.relationalStore (关系型数据库)](../harmonyos-references/js-apis-data-relationalstore.md)实现。
+在SFFT中，断点续下基于上述多线程下载原理，结合关系型数据库[@ohos.data.relationalStore(关系型数据库)](../harmonyos-references/js-apis-data-relationalstore.md)实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/1UMNH166TBOrqamhe-Szhw/zh-cn_image_0000002236694468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/GnL5rRIbR-GQNFFYq3FFgg/zh-cn_image_0000002236694468.png "点击放大")
 
 当使用断点续下时：
 
@@ -148,7 +148,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 在SFFT中，断点续传基于上述分片上传原理，结合RDB实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/wnxf67IOTRa08u0nq14wuw/zh-cn_image_0000002271813649.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/yU05qYEqT1Gf5ZxMjjbBPg/zh-cn_image_0000002271813649.png "点击放大")
 
 当使用断点续传时：
 
@@ -242,7 +242,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 当使用SFFT进行大文件传输时，应用能在网络条件恢复时自动重新连接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/xCeQsUseTtinkCQ7goMOHw/zh-cn_image_0000002236694472.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/0GSoTjANRJafrApIYQxKFg/zh-cn_image_0000002236694472.gif "点击放大")
 
 ## 服务端要求
 

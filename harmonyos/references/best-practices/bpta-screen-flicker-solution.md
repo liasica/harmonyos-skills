@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-screen-fli
 title: 应用闪屏解决方案
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 专项问题解决方案 > 应用闪屏解决方案
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:91fd50080794f2af472df193d26a57aea1a168576121b91308d8631f6e058302
+scraped_at: 2026-10-29T08:03:23+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:2dcb98566338e8d919d8ff4a6c5a442c3ff0df3fbc38c9796eadf3c19fd10a09
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:91fd50080794f2af472df193d26a57aea1a168576121b91308d8631f6e0
 
 连续点击后，图标大小会异常变化，导致闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/GgSAhtU1TdWXwjuwpub2_g/zh-cn_image_0000002229337129.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/K67jUG3vRkCV1j2dT9kfjQ/zh-cn_image_0000002229337129.gif "点击放大")
 
 ```screen
 @Entry
@@ -151,7 +151,7 @@ struct ClickError {
 
 运行效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/9G_44O_KThKuUf6dFPbR6g/zh-cn_image_0000002229337141.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/c4YMPoHYS92hmtxqLEL5Mg/zh-cn_image_0000002229337141.gif "点击放大")
 
 ### 动画过程中，Tabs页签切换场景下的闪屏问题
 
@@ -159,7 +159,7 @@ struct ClickError {
 
 滑动Tabs组件时，上方标签不能同步更新。下方内容完全切换后，标签闪动跳转，产生闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/E9XmhS7TTvqvgergNpv4Bw/zh-cn_image_0000002229451637.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Rh_5JyQeS6esrstQVPN97w/zh-cn_image_0000002229451637.gif "点击放大")
 
 ```screen
 @Entry
@@ -251,7 +251,7 @@ struct TabsContainer {
 
 **解决措施**
 
-在左右跟手翻页过程中，通过 [TabsAnimationEvent](../harmonyos-references/ts-container-tabs.md#tabsanimationevent11对象说明) 事件获取手指滑动距离，改变下划线在前后两个子页签间的位置。离手触发翻页动画时，同步触发下划线动画，确保下划线与页面左右转场动画同步。
+在左右跟手翻页过程中，通过TabsAnimationEvent事件获取手指滑动距离，改变下划线在前后两个子页签间的位置。离手触发翻页动画时，同步触发下划线动画，确保下划线与页面左右转场动画同步。事件具体请参阅[TabsAnimationEvent对象说明](../harmonyos-references/ts-container-tabs.md#tabsanimationevent11对象说明)。
 
 ```screen
 build() {
@@ -370,7 +370,7 @@ private startAnimateTo(duration: number, leftMargin: number, width: number) {
 
 运行效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/rU_cZ8S6TZCDDWW_sWCRtA/zh-cn_image_0000002229337133.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cZvYeyFsQb2zNZ8lj4rZdQ/zh-cn_image_0000002229337133.gif "点击放大")
 
 ### 刷新过程中，ForEach键值生成函数未设置导致的闪屏问题
 
@@ -378,7 +378,7 @@ private startAnimateTo(duration: number, leftMargin: number, width: number) {
 
 下拉刷新时，应用卡顿，出现闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/k-8Yk24ASs21RqXi5mJ5mQ/zh-cn_image_0000002229337137.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/okEpvPklSzGWsr7wSeMLWA/zh-cn_image_0000002229337137.gif "点击放大")
 
 ```screen
 @Builder
@@ -416,7 +416,7 @@ ForEach提供了一个名为keyGenerator的参数，这是一个函数，开发�
 
 **解决措施**
 
-在ForEach第三个参数中定义自定义键值的生成规则，即(item: NewsData, index?: number) => item.id，这样可以在渲染时降低重复组件的渲染开销，从而消除闪屏问题。可参考[ForEach组件使用建议](../harmonyos-guides/arkts-rendering-control-foreach.md#使用建议)。
+在ForEach第三个参数中定义自定义键值的生成规则，即(item: NewsData, index?: number) => item.id，这样可以在渲染时降低重复组件的渲染开销，从而消除闪屏问题。可参考ForEach组件[使用建议](../harmonyos-guides/arkts-rendering-control-foreach.md#使用建议)。
 
 ```screen
 @Builder
@@ -448,7 +448,7 @@ private getListView() {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/R-K4cHEPT9G18jEET9govg/zh-cn_image_0000002194011344.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/4DvanrSyROelrECqD5W5MQ/zh-cn_image_0000002194011344.gif "点击放大")
 
 ## 总结
 

@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-2in1-window-shape
-title: PC/2in1异形窗口
-breadcrumb: 最佳实践 > 应用框架 > 窗口与屏幕管理 > PC/2in1异形窗口
+title: 电脑异形窗口
+breadcrumb: 最佳实践 > 应用框架 > 窗口与屏幕管理 > 电脑异形窗口
 category: best-practices
-scraped_at: 2026-10-16T07:06:36+08:00
-doc_updated_at: 2026-06-23
-content_hash: sha256:0bafaef6e4e5854de364c8e3a5754348ede0cf3673dc95a336d9c599167c251b
+scraped_at: 2026-10-29T08:03:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:5ba476683fb4c63cab865a74165a9be820b8a87d3c816986d0e1ea5c26f74985
 ---
 
 ## 概述
 
-一般情况下，UI开发都是在矩形窗口上操作，但在PC/2in1设备上，应用还可以使用各类异形窗口来展现交互内容。这里的异形是指除默认矩形以外的形状，包括但不限于圆形、三角形以及其他不规则的形状等。开发者通过使用这些异形形状的窗口，结合窗口中的内容展示UI交互的多样性，一定程度上能够提升应用体验。类似的示例有：文字应用中的放大镜、带指示箭头的气泡框、提供辅助功能的悬浮窗等。
+一般情况下，UI开发都是在矩形窗口上操作，但在电脑设备上，应用还可以使用各类异形窗口来展现交互内容。这里的异形是指除默认矩形以外的形状，包括但不限于圆形、三角形以及其他不规则的形状等。开发者通过使用这些异形形状的窗口，结合窗口中的内容展示UI交互的多样性，一定程度上能够提升应用体验。类似的示例有：文字应用中的放大镜、带指示箭头的气泡框、提供辅助功能的悬浮窗等。
 
-本文主要介绍在PC/2in1设备上实现异形窗口。根据窗口的形状类别，可分为以下场景：
+本文主要介绍在电脑设备上实现异形窗口。根据窗口的形状类别，可分为以下场景：
 
 * [图形形状窗口](bpta-2in1-window-shape.md#section6137113512381)
 * [不规则形状窗口](bpta-2in1-window-shape.md#section42071254407)
@@ -48,7 +48,6 @@ content_hash: sha256:0bafaef6e4e5854de364c8e3a5754348ede0cf3673dc95a336d9c599167
 1. 为使用setWindowMask()等接口，需要额外配置syscap.json文件，在模块/src/main目录下，创建syscap.json文件，填入以下内容：
 
    ```json
-   // entry/src/main/syscap.json
    {
      "devices": {
        "general": [
@@ -178,10 +177,10 @@ content_hash: sha256:0bafaef6e4e5854de364c8e3a5754348ede0cf3673dc95a336d9c599167
 ### 实现效果
 
 **图1** 圆形子窗口效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Cbymp2UySoSDwYwJVxlT5Q/zh-cn_image_0000002229337273.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/bywlnwbCQWyfl7S6s3tgew/zh-cn_image_0000002229337273.png "点击放大")
 
 **图2** 三角形子窗口效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ckVBX6tGSt2lSkqNdbohLg/zh-cn_image_0000002194011476.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ZtDL2P8wT-aNCYWeqbLlSg/zh-cn_image_0000002194011476.png "点击放大")
 
 ## 不规则形状窗口
 
@@ -190,7 +189,7 @@ content_hash: sha256:0bafaef6e4e5854de364c8e3a5754348ede0cf3673dc95a336d9c599167
 待开发的异形窗口，呈现出不规则的形状。这种情况通常先由设计人员提供图形文件，开发人员以文件为输入，基于ArkUI提供的图片处理能力，转化为相应的形状掩码，最后实现不规则的窗口形状。
 
 **图3** 不规则示例图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ybQ2gOl0S1mPBoyPLF2-jg/zh-cn_image_0000002229451765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/nUv5lVqITZ6NtdqhP0TnjA/zh-cn_image_0000002229451765.png)
 
 本节以上图为例说明不规则形状窗口的实现过程。
 
@@ -250,7 +249,7 @@ content_hash: sha256:0bafaef6e4e5854de364c8e3a5754348ede0cf3673dc95a336d9c599167
    ```
 3. 使用setWindowMask(windowMask)接口，设置窗口形状。
 
-   ```typescript
+   ```screen
    async function setWindowShape(win: window.Window, width: number,
      height: number, getMaskFunc: (w: number, h: number, picPath?: string) => Promise<number[][]>,
      picPath?: string): Promise<void> {
@@ -266,18 +265,27 @@ content_hash: sha256:0bafaef6e4e5854de364c8e3a5754348ede0cf3673dc95a336d9c599167
        hilog.info(0x0000, 'Simple', 'can not use SessionManager syscap');
      }
    }
+
    /**
-    * Set the window with pic shape
+    * Set the window with circle shape
     * @param win The target window
     * @param width The original window width
     * @param height The original window height
-    * @param picPath The pic path in rawfile
     */
-   export async function setWindowPicShape(win: window.Window, Context: Context, width: number,
-     height: number, picPath: string): Promise<void> {
-     setWindowShape(win, width, height, (w, h, picPath) => {
-       return getPicMask(Context,w, h, picPath!)
-     }, picPath)
+   export async function setWindowCircleShape(win: window.Window, width: number,
+     height: number): Promise<void> {
+     setWindowShape(win, width, height, getCircleMask)
+   }
+
+   /**
+    * Set the window with triangle shape
+    * @param win The target window
+    * @param width The original window width
+    * @param height The original window height
+    */
+   export async function setWindowTriangleShape(win: window.Window, width: number,
+     height: number): Promise<void> {
+     setWindowShape(win, width, height, getTriangleMask)
    }
    ```
 4. 使用showWindow()接口显示异形子窗口。
@@ -289,8 +297,8 @@ content_hash: sha256:0bafaef6e4e5854de364c8e3a5754348ede0cf3673dc95a336d9c599167
 ### 实现效果
 
 **图4** 不规则形状子窗口效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/XwoXHCwZR0qmokvLBncmEQ/zh-cn_image_0000002193851884.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/p6FPffd-Ssa9Yyq_SbgHrA/zh-cn_image_0000002193851884.png "点击放大")
 
 ## **示例代码**
 
-* [实现PC/2in1异形窗口](https://gitcode.com/harmonyos_samples/special-window-shape)
+* [实现电脑应用异形窗口功能](https://gitcode.com/harmonyos_samples/special-window-shape)

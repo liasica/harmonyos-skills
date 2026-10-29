@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-skinnin
 title: 设置应用内主题换肤
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 主题设置 > 设置应用内主题换肤
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:52+08:00
+scraped_at: 2026-10-29T07:56:35+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:7357f9979e324d22f51ae79d6b2d71814144296d05ecdecbd1308bff2dd5d276
+content_hash: sha256:cd4c8118f552322df2711311a500586930212b864de5d580aa6e2b513844ba0d
 ---
 
 ## 概述
@@ -201,7 +201,7 @@ export let gAppTheme: CustomTheme = new AppTheme();
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/yzs5btwqROqUyIHeWrf9Og/zh-cn_image_0000002801105215.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/eWd5XXr3Rx6BdKQ5TpCV0A/zh-cn_image_0000002774064222.png)
 
   **说明** 
 
@@ -283,7 +283,7 @@ struct DisplayPage1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Xz5FDQ44Q8-ut6Vl0ckeIw/zh-cn_image_0000002771665436.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/-ZeiTobmS4izbVn2HtTxWQ/zh-cn_image_0000002773904248.gif)
 
 ## 设置应用页面局部深浅色
 
@@ -295,7 +295,7 @@ struct DisplayPage1 {
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/aUh5y2kwQ2eSC_ZjQC4WZg/zh-cn_image_0000002800985293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/tRs5P4HCQ4SnqYqq6SHgiQ/zh-cn_image_0000002803264033.png)
 
 dark.json数据示例：
 
@@ -348,7 +348,7 @@ struct DisplayPage3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/AuUNOzwBR8a_cK2Dq2Sb8Q/zh-cn_image_0000002771825404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/1EYXZfv5TT-cYoqYeZJn8g/zh-cn_image_0000002803223943.png)
 
 ## 系统缺省token色值
 

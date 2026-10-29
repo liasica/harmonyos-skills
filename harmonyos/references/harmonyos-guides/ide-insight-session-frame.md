@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-s
 title: Frame分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 卡顿丢帧分析 > Frame分析
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:35+08:00
+scraped_at: 2026-10-29T07:58:36+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:6b4cd5181ae659b05fcef5fc61965a77c172c7aef05d98516662d2a1d4695945
+content_hash: sha256:495fbecf75dacbadf4f45d48e2661c9e5d24c9e3aa856adf6e5cfaa68111b90e
 ---
 
 ## 功能介绍
@@ -35,18 +35,18 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 * 一帧的绘制，一般需要由App侧提交渲染到Render Service侧，然后Render Service侧再提交给硬件进行合成渲染，因此App侧的帧和Render Service侧的帧存在关联的情况。并且可能多个APP侧的帧/同一APP侧的多个帧提交到同一个Render Service侧帧上，出现帧之间的一对多的关联情况。
 * 一帧绘制的期望耗时，与fps的大小有关，一般情况下fps为60，对应的Vsync周期为16.6ms，即App侧/Render Service侧的帧耗时，一般需要在16.6ms以内。App侧帧/Render Service侧帧判断卡顿的标准为帧的实际结束时间晚于帧的期望结束时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/8IWfLsgyT1Wp6cSoSEFVnA/zh-cn_image_0000002701822982.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/GZjFxMgRQeu3axIyfSzHfg/zh-cn_image_0000002701822982.png "点击放大")
 
 ## 查看指定时间段内所有进程的Frame数据统计信息
 
 1. 在时间轴上拖拽鼠标选定要查看的时间段。
 2. 框选**Frame**主泳道。窗口下方的**Statistics**区域以进程维度展示了选定时间段内的Frame相关信息，包括卡顿率、卡顿次数、最大连续卡顿次数、最大卡顿耗时、平均卡顿耗时以及平均正常耗时等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/cGuK_FxOSh6SlBu8O30Yuw/zh-cn_image_0000002701663064.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/sGClpPl9RSqv24f_EXb1QA/zh-cn_image_0000002701663064.png "点击放大")
 3. 点击**Statistics**列表中任一进程的跳转按钮会跳转至**Frame List**，该区域展现该进程各帧的起始时间、总耗时、GPU耗时以及卡顿丢帧类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/sopZpWehQB298bZwu1pw2A/zh-cn_image_0000002731382279.png "点击放大")
-4. 点击Frame List中任意一帧，在右侧的**More**区域会中显示该帧更多关键信息。在获取该帧的预期起始时间、预期持续时间之外，您可以单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/CFbEbCRlSCyrOsXRp2ME4w/zh-cn_image_0000002701663058.png "点击放大")跳转至关联的切片。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/-H4k-S4oTpiPPXkWzviPCg/zh-cn_image_0000002731382279.png "点击放大")
+4. 点击Frame List中任意一帧，在右侧的**More**区域会中显示该帧更多关键信息。在获取该帧的预期起始时间、预期持续时间之外，您可以单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/3E-6umS0QSu3HHfI2q--hg/zh-cn_image_0000002701663058.png "点击放大")跳转至关联的切片。
 
 ## 查看指定时间段内指定进程的Frame数据统计信息
 
@@ -55,14 +55,14 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
    窗口下方的**Details**区域中会显示选定时间段内的RS帧统计信息列表，体现各帧的起始时间、总耗时、GPU耗时以及卡顿丢帧类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/LNHOwbjNTR6wz5SARA8BEQ/zh-cn_image_0000002731542255.png "点击放大")
-3. 单击列表中任意一帧，右侧的**More**区域中会显示该帧更多关键信息。在获取该帧的预期起始时间、预期持续时间之外，您可以单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/j_Z6ugtZSj-hv-Y6VszUcg/zh-cn_image_0000002701663042.png "点击放大")跳转至关联的切片。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/O_3oEwtbRUGuJmdZF8K8gQ/zh-cn_image_0000002731542255.png "点击放大")
+3. 单击列表中任意一帧，右侧的**More**区域中会显示该帧更多关键信息。在获取该帧的预期起始时间、预期持续时间之外，您可以单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/fSFPPT63RDSaHLdUWBjTwQ/zh-cn_image_0000002701663042.png "点击放大")跳转至关联的切片。
 
 ## 查看指定Frame信息
 
 展开**Frame**主泳道，选择带**App Frame**或带**RS Fram****e**标签的子泳道，该[泳道图区域](ide-profiler-data.md)上方是耗时最长的非UI函数，下方是UI主线程泳道。将鼠标悬浮在任意帧上，会冒泡显示该帧的Jank信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/hn84C2WoT6Kx7xySS4praw/zh-cn_image_0000002701822974.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/AJWWm-MXRICv1Nsm3QxDyg/zh-cn_image_0000002701822974.png "点击放大")
 
 窗口下方的**Frame**区域中会显示选定帧的关键信息，如VSync编号、开始时间、App应用侧持续时间、App应用侧业务逻辑耗时、Render Service侧持续时间、GPU持续时间、总持续时间、卡顿丢帧类型以及可能出现卡顿的原因等。在带**App Frame**标签的子泳道中，**Non UI**区域中会显示非UI耗时最大的函数，如开始时间、结束时间、持续时间，函数名等。
 
@@ -72,13 +72,13 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 * 如果该帧是由于超出期望结束时间引起的，则显示两条线，对应期望开始时间（Expected Start）和期望结束时间（Expected End），用于关联分析同一时刻Trace或者函数采样信息。
 * 卡顿丢帧类型（Jank Type）：No Jank（不卡顿）、AppDeadlineMissed（App侧的卡顿）、RenderDeadlineMissed（Render Service侧的卡顿）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/AScjV6MYS9OIQJTfam70aw/zh-cn_image_0000002731542247.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/9fef3FRMQ8-AU60OFXjGSg/zh-cn_image_0000002731542247.png "点击放大")
 
 ## 查看指定Frame页面布局信息
 
 从DevEco Studio 5.1.0 Release版本开始，支持查看最新录制的Session中指定的Frame页面布局信息。
 
-从DevEco Studio 6.1.0 Beta1版本开始，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/i7EC9Ba2Qcy17GyolIyAOw/zh-cn_image_0000002701822962.png "点击放大")按钮中新增Frame Layout开关，开发者可自行设置开关状态。开关关闭时，不支持查看最新录制的Session中指定的Frame页面布局信息，默认关闭。
+从DevEco Studio 6.1.0 Beta1版本开始，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/mv7a5D2MTPCyOqg6gIBczg/zh-cn_image_0000002701822962.png "点击放大")按钮中新增Frame Layout开关，开发者可自行设置开关状态。开关关闭时，不支持查看最新录制的Session中指定的Frame页面布局信息，默认关闭。
 
 暂不支持在Wearable设备上查看指定Frame页面布局信息。
 
@@ -88,23 +88,23 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
    单击Download Layout或 Open Layout前，应用进程需置于前台，才能正确回放全量渲染数据，获取arkli文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/a9CQ2Qp9QQ-nNgiE8EpBTg/zh-cn_image_0000002701822988.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/NVaaxiS0ReK1pxKO3WXYFA/zh-cn_image_0000002701822988.png "点击放大")
 2. 在ArkUI Inspector中可查看组件树和组件属性信息，当前支持BackgroundFilter、nodeGroup、nodeGroupReuseCache组件。
    * BackgroundFilter：背景滤波器。
    * nodeGroup：节点组类型，0表示非节点组节点，1表示被动画标记的节点组，2表示被UI标记的节点组，4表示被用户标记的节点组，8表示被前景滤波器标记的节点组。
    * nodeGroupReuseCache： 0表示在生成缓存或无需缓存，1表示在重用缓存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/k3lmsEtDRFCNRXeh34SGpA/zh-cn_image_0000002731382277.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/QY1bNlwtQ36hr5dNrSq38A/zh-cn_image_0000002731382277.png "点击放大")
 
 ## 查看帧率统计信息
 
 1. 展开**Frame**泳道，框选一段数据。
 2. 带**App Frame**和**RS Frame**标签的子泳道会出现FPS标记，展示当前框选范围内的帧率统计信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/s-o8USVLQpGaHBUQ_LGzaw/zh-cn_image_0000002701822972.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/8I8rgCGRR56r-869wN8OqQ/zh-cn_image_0000002701822972.png "点击放大")
 3. 在带**RS Frame**标签的子泳道中打开Only ArkWeb data开关，筛选过滤出包含ArkWeb帧的数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Iedokv1NQXqEDk0GpijJYQ/zh-cn_image_0000002701663056.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/yOmV6io8SXKuGS91UqgHTw/zh-cn_image_0000002701663056.png "点击放大")
 
 ## 查看动效详细信息
 
@@ -121,7 +121,7 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
 在[Launch模板](ide-insight-session-launch.md)中，点击Frame泳道，**Details**区展示启动动效的详情信息，**More**区域展示动效帧的Animation Data List信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/smKbxXrRTIqFBuvkMwUyRQ/zh-cn_image_0000002701822966.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/hlksm1_ZS96eTjl5J6MG4w/zh-cn_image_0000002701822966.png "点击放大")
 
 ## 查看组件动画信息
 
@@ -129,7 +129,7 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
 在**Details**区域，可以查看每个动画的详细信息，包括起止时间、帧率、动画曲线类型以及影响的组件属性等。单击列表中任意一动画，右侧的**More**区域中会显示该动画所影响的组件属性的具体变化过程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/VGdJQDjqSwOfavd9LJ6UZA/zh-cn_image_0000002731382285.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/qIFl1so1T-2chZvQ2ZGUCQ/zh-cn_image_0000002731382285.png "点击放大")
 
 ## 查看屏幕帧率动态变化场景下丢帧和卡顿信息
 
@@ -140,10 +140,10 @@ Frame泳道下新增Lost Frames和Hitch Time两个子泳道，用于识别和优
 
 1. 创建Frame模板并录制会话，如存在卡顿和丢帧现象，会在**Lost Frames**和**Hitch Time**子泳道对应时间显示矩形图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/0C8jbIy_Rc2gjGtEIYfW6g/zh-cn_image_0000002701822978.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/eDBq0EPOTDGm-4WI2X-s6A/zh-cn_image_0000002701822978.png "点击放大")
 2. 鼠标悬浮到泳道图区域某一时间点，提示信息会显示该点所属时间段内的丢帧数以及卡顿时间。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/olEBzu73QTG9SiF-sCsaoQ/zh-cn_image_0000002701822960.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/2D1m0XQHQZ2C-t99LfeRBg/zh-cn_image_0000002701822960.png "点击放大")
 
 ## 查看组件帧率信息
 
@@ -154,21 +154,21 @@ Frame泳道下新增两个子泳道，分别为Display Vsync与DisplaySync\_cb(t
 
   如下图所示，vsync2和vsync4中，vsync周期内的组件由于渲染耗时长，导致以下两个vsync周期挤掉下一个vsync周期的渲染时间，导致掉帧的情况产生。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/9svvkKKdSem-vw0tXLfWcg/zh-cn_image_0000002701663046.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/0OSOaV2yS12LVFz8yfBzEQ/zh-cn_image_0000002701663046.png "点击放大")
 
 1. 选择**Display Vsync**子泳道，在时间轴上拖拽鼠标选定要查看的时间段。
 2. 详情区显示当前时间段的屏幕刷新率，当前帧最大持续时间、最小持续时间、平均持续时间以及该时间段内平均帧数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vhMF3ivHSci46xSHnRYrvQ/zh-cn_image_0000002731382289.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/53HcfkTLQS6OrIkWJOO3eA/zh-cn_image_0000002731382289.png "点击放大")
 3. 选择**Display Vsync**子泳道，可以查看当前帧的耗时和帧率。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/4UpowUKRQpGOozdOv3MieQ/zh-cn_image_0000002731542261.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/a2jdm8IkSTy3r1sgOK-dwQ/zh-cn_image_0000002731542261.png "点击放大")
 4. 框选**DisplaySync\_cb**子泳道，可以查看应用侧对应组件的帧率，渲染时间等信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/E0SpmLTiSsW_BzOXH1xEWQ/zh-cn_image_0000002701822984.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/RJa5_ugLTr-soUs2yKchPQ/zh-cn_image_0000002701822984.png "点击放大")
 5. 同时如果组件有可能的掉帧情况，**DisplaySync\_cb**子泳道显示对应的掉帧情况并标红展示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/MFU2zIcQRoGanD3RtXw8ng/zh-cn_image_0000002701822968.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/dFwtT_dMSz-XRpC6hokGSw/zh-cn_image_0000002701822968.png "点击放大")
 
 ## 查看解码过度耗时和超过阈值的序列化、反序列化操作
 
@@ -179,11 +179,11 @@ Frame泳道下新增两个子泳道，分别为Display Vsync与DisplaySync\_cb(t
 1. 在时间轴上拖拽鼠标选定出现告警的时间段。当耗时超过VSync周期的50%时，将在**Anomaly**泳道中出现红色告警，提示“Image decoding has exceeded 50% of the VSync time”。
 2. 详情区给出录制时段内解码过度耗时的统计情况，包括类型，图片名，计数，总耗时，最小耗时、平均耗时、最大耗时，耗时标准差、 图源尺寸大小，目标尺寸大小等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/TXQWl2YPSuCW589vo7KPzQ/zh-cn_image_0000002701822980.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/0xbiEwZaTqq1cQxXF8WYRA/zh-cn_image_0000002701822980.png "点击放大")
 3. 对于耗时超过阈值的序列化、反序列化操作，**Anomaly**泳道也会给出对应的耗时告警。其中可以通过泳道启动配置按钮配置检测阈值，默认配置阈值为8ms。
 4. 详情区给出录制时段内序列化、反序列化耗时情况统计信息，包括类型、计数、总耗时、最小耗时、平均耗时、最大耗时、耗时标准差等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/QI5CWyGdS9WOueTMqTZlGg/zh-cn_image_0000002701663040.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/A7PlOP3nR-C7e08kBbnqcw/zh-cn_image_0000002701663040.png "点击放大")
 
    **说明** 
 
@@ -196,9 +196,9 @@ Frame泳道下新增两个子泳道，分别为Display Vsync与DisplaySync\_cb(t
 1. 选择**User Event****s**泳道，在时间轴上拖拽鼠标选定要查看的时间段。
 2. 详情区列表给出录制时间段内用户事件详情，包括用户事件ID、事件开始时间Input Time、应用开始处理时间Processing Start、应用处理耗时Duration和事件类型User Event Type。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/H2QEHS6BSqWJsfjZrDcuXw/zh-cn_image_0000002701663048.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/9lFQuEg5QNKvcxq1d9Xvzw/zh-cn_image_0000002701663048.png "点击放大")
 3. 点选User Events泳道中的条块，**Slice Detail**区域展示该事件的详情信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ZUcm3ywSTiKovC4GMhz9pg/zh-cn_image_0000002701663068.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/TzWAu8iORy-wawWNjFweaA/zh-cn_image_0000002701663068.png "点击放大")
 
 更多性能调优最佳实践，请参考[点击响应时延分析](../best-practices/bpta-click-to-click-response-optimization.md)、[点击完成时延分析](../best-practices/bpta-quality-overview.md)、[帧率问题分析](../best-practices/bpta-zhenlv.md)、[Web点击响应时延分析](../best-practices/bpta-web-click-response-delay-analysis.md)、[Web加载完成时延分析](../best-practices/bpta-web-completion-delay-analysis.md)。

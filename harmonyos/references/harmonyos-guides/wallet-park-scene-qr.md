@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-park-s
 title: 生成展示二维码
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 园区卡 > 开发场景 > 生成展示二维码
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:57+08:00
+scraped_at: 2026-10-29T07:57:53+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:b5cb6531ef518efbb50ace4af0500b3e8a53a63bd46a2300a055090425d73003
+content_hash: sha256:2adb09f5414ab971960ccf0e78fed93c9b906e55ceaa6734702d039e25132f38
 ---
 
 用户可以通过钱包动态展示的二维码，实现支付功能，同时支持实时通知扫码结果并刷新页面。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/U_NA_6YWQBWWmI1z5UrtUQ/zh-cn_image_0000002801106595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/h8FC6bC7TB2k9ZoztGZFOg/zh-cn_image_0000002803265413.png)
 
 ## 服务端开发
 

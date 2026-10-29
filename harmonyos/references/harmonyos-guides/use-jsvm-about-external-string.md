@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口提供Latin1/UTF16格式字符串相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口提供Latin1/UTF16格式字符串相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:14+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:877c3083869de5f7ebd51aeb515854401a9776294c92a77088f5105cbbb8c69e
+scraped_at: 2026-10-29T07:58:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:a13ad6927ee33e7469a487aa46d9e5d30a885c58685375af575f52b2a988a6ec
 ---
 
 ## 简介
@@ -51,7 +51,7 @@ static JSVM_Value testExternalString(JSVM_Env env, JSVM_CallbackInfo info) {
     OH_JSVM_GetValueStringUtf8(env, jsStrLatin1, buf, 10, nullptr);
     OH_LOG_INFO(LOG_APP, "created latin1 string is : %{public}s\n", buf);
     // 这里 copied 为 true 表示创建 external string 失败，否则表示创建成功
-    OH_LOG_INFO(LOG_APP, "create external string failed : %{public}d\n", copied);
+    OH_LOG_INFO(LOG_APP, "create external string result, copied : %{public}d\n", copied);
     copied = true;
     JSVM_Value jsStrUTF16 = nullptr;
     OH_JSVM_CreateExternalStringUtf16(env, stringUTF16, std::char_traits<char16_t>::length(stringUTF16),
@@ -59,7 +59,7 @@ static JSVM_Value testExternalString(JSVM_Env env, JSVM_CallbackInfo info) {
     OH_JSVM_GetValueStringUtf8(env, jsStrUTF16, buf, 10, nullptr);
     OH_LOG_INFO(LOG_APP, "created utf16 string is : %{public}s\n", buf);
     // 这里 copied 为 true 表示创建 external string 失败，否则表示创建成功
-    OH_LOG_INFO(LOG_APP, "create external string failed : %{public}d\n", copied);
+    OH_LOG_INFO(LOG_APP, "create external string result, copied : %{public}d\n", copied);
     OH_JSVM_CloseHandleScope(env, handleScope);
 
     return nullptr;
@@ -84,7 +84,7 @@ const char *srcCallNative = R"JS(testExternalString();)JS";
 
 ```txt
 created latin1 string is : hello
-create external string failed: 0
+create external string result, copied : 0
 created utf16 string is : world
-create external string failed: 0
+create external string result, copied : 0
 ```

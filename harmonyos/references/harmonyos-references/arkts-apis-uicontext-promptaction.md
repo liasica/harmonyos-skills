@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PromptAction)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (PromptAction)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:09+08:00
+scraped_at: 2026-10-29T07:59:23+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:3116466a2b70c3af2df393dfb5fa7b22fcba5d5e411f37e5b19f73d4bc3f9a8f
+content_hash: sha256:db071644fc71ae3aa761f5da21457d6f3506dc331c713bfa5cd81c60294a7344
 ---
 
 创建并显示即时反馈、对话框、操作菜单以及自定义弹窗。
@@ -365,11 +365,11 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/KwdY1ZrmQYeG5eWBXLXTMQ/zh-cn_image_0000002771827062.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/OUDRiH_uQe6ZKy5ONfj__A/zh-cn_image_0000002773905912.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/z1gg1H1cQBW5MgNEBkcMeA/zh-cn_image_0000002801106877.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/XUiwlWk9QhCkHrDNZwrI0w/zh-cn_image_0000002803265695.gif)
 
 ## showDialog
 

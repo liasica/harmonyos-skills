@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Shape
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Shape
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:27+08:00
+scraped_at: 2026-10-29T07:59:47+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:c1c3cadb269f07dcec2e09aa8d1e435defe5dadf6a9a6904548285afcc276e71
+content_hash: sha256:66bf9479d445a3d1a01b1277835a9eede5dbf0e3414c55f3657f1062e7661699
 ---
 
 绘制组件的父组件，描述所有绘制组件均支持的通用属性。
@@ -305,7 +305,7 @@ struct ShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/3E2TfsbVQ4WFDn1rERByOg/zh-cn_image_0000002771667752.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/v1-mGlyhQW-YOln7W40baw/zh-cn_image_0000002803226257.png)
 
 ### 示例2（使用不同参数类型绘制图形）
 
@@ -348,7 +348,7 @@ struct ShapeTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/9Y5IDztdS9OEnGkBcQoY9A/zh-cn_image_0000002800987611.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/W-Nb9EoETySZz0oxUVheBg/zh-cn_image_0000002774066542.png)
 
 ### 示例3（使用attributeModifier动态设置Shape组件的属性）
 
@@ -392,7 +392,7 @@ struct ShapeModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/eF-miacsQkKGB-O9UiverQ/zh-cn_image_0000002771827718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/rsmeyrMCT2aDAyrpjP3L6g/zh-cn_image_0000002773906570.png)
 
 ### 示例4（使用mesh实现图像局部扭曲）
 
@@ -436,4 +436,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Y1dDGdHbSFOKjDEYflKNFQ/zh-cn_image_0000002801107533.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/GhtltvLdRoSduZvbVYAk7w/zh-cn_image_0000002803266353.png)

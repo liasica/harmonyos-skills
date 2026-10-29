@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stage-model-d
 title: 应用模型概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用模型概述
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:37+08:00
+scraped_at: 2026-10-29T07:56:17+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0f6d48b33ab4816a0ddd188e61943b26d8fa445e36a5dde8414fd2efe0fc6080
+content_hash: sha256:706fc4a8604510de944c55012648a166b08eaf4788413391a84877f3ca6d903a
 ---
 
 ## 应用模型简介
@@ -27,7 +27,7 @@ Stage模型支持多个应用组件共享同一个ArkTS引擎实例，以及应�
 
 **图1** Stage模型概念图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Srz0sn8MSg-TYBrcm_hz3A/zh-cn_image_0000002801104371.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/U4lhdY-vREOlBsHTaKezfg/zh-cn_image_0000002774063378.png)
 
 * [AbilityStage](abilitystage.md)
 
@@ -101,7 +101,7 @@ Stage模型支持多个应用组件共享同一个ArkTS引擎实例，以及应�
 
 **图2** Stage模型构成要素
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/vlS_Jr-TRzWv5aDq4K5-Nw/zh-cn_image_0000002771664592.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/vuP9BahFQq2S5L56_sbQtw/zh-cn_image_0000002773903402.png)
 
 **开发阶段** ：需要通过Stage模型提供的应用组件（UIAbility组件和ExtensionAbility组件）开发应用功能，并在应用的配置文件（app.json5和module.json5）中注册应用的相关信息。
 

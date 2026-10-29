@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-traf
 title: OH_TrafficFilter_RedirectRule
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > OH_TrafficFilter_RedirectRule
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cbbaf0a951e67c32341fd99473ec446ee8e1515ee979059789a80e155ee3b1b9
+scraped_at: 2026-10-29T08:01:04+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:4aa4064cd17749c4172d765d63594a760f2dba1f5d0cf62dcf626dba46781826
 ---
 
 ```c
@@ -44,7 +44,7 @@ typedef struct OH_TrafficFilter_RedirectRule {...} OH_TrafficFilter_RedirectRule
 | [OH\_TrafficFilter\_PortMatch](capi-trafficfilter-oh-trafficfilter-portmatch.md) dstPort | 目的端口匹配条件。  **起始版本：** 26.0.0 |
 | [OH\_TrafficFilter\_InterfaceMatch](capi-trafficfilter-oh-trafficfilter-interfacematch.md) inInterface | 入接口匹配条件。  **起始版本：** 26.0.0 |
 | [OH\_TrafficFilter\_InterfaceMatch](capi-trafficfilter-oh-trafficfilter-interfacematch.md) outInterface | 出接口匹配条件。  **起始版本：** 26.0.0 |
-| uint32\_t uidStart | 应用UID范围起始值，取值范围为[0，UINT32\_MAX]（UINT32\_MAX表示任意UID）。  **起始版本：** 26.0.0 |
-| uint32\_t uidEnd | 应用UID范围结束值，取值范围为[0，UINT32\_MAX]（UINT32\_MAX表示任意UID），通常需大于等于uidStart（应用UID范围起始值）。  **起始版本：** 26.0.0 |
+| uint32\_t uidStart | 应用UID范围起始值，取值范围为[0, UINT32\_MAX]（UINT32\_MAX表示任意UID）。  **起始版本：** 26.0.0 |
+| uint32\_t uidEnd | 应用UID范围结束值，取值范围为[0, UINT32\_MAX]（UINT32\_MAX表示任意UID），通常需大于等于uidStart（应用UID范围起始值）。  **起始版本：** 26.0.0 |
 | [OH\_TrafficFilter\_IPAddress](capi-trafficfilter-oh-trafficfilter-ipaddress.md) proxyIp | 代理服务器IP地址（支持IPv4和IPv6）。  **起始版本：** 26.0.0 |
 | uint16\_t proxyPort | 代理服务器端口。  **起始版本：** 26.0.0 |

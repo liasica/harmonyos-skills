@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsTabs (底部页签)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsTabs (底部页签)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:42:10+08:00
+scraped_at: 2026-10-29T08:00:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:45b456a9c2305041ae95824b17778b6b2d4ab0162771847628a13c11659575bd
+content_hash: sha256:3b7e2add19870b465f79a1bdc84306a5cdae228c60d4bc199d6e20feb16039f9
 ---
 
 本模块提供Tabs容器组件的分割线样式，模糊样式和页签侧边栏半屏居中对齐样式的效果。
@@ -1233,7 +1233,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Zo1qclajRgOQodIYmk0RFw/zh-cn_image_0000002771668300.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/w3layPByTj2_IWPC5r_JiQ/zh-cn_image_0000002803226805.png)
 
 ### 支持出血效果
 
@@ -1282,7 +1282,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/eGrjT79cRweUwyqvjDbAxg/zh-cn_image_0000002800988159.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/b87tvBKeS6qgnYIqt5ggHA/zh-cn_image_0000002774067090.jpg)
 
 ### 页签半屏居中对齐布局
 
@@ -1328,7 +1328,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/wtfGLO7ESQqUsSR4CXCyXw/zh-cn_image_0000002771828270.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/D_HMS-3DSDOIrEgYscts7g/zh-cn_image_0000002773907118.jpg)
 
 ### 页签栏悬浮样式
 
@@ -1414,4 +1414,4 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/JjUuLfNjT0-mnsCpSe3iAw/zh-cn_image_0000002801108083.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/QgYnIFOOR8WGRUsyOoz0Ag/zh-cn_image_0000002803266901.gif)

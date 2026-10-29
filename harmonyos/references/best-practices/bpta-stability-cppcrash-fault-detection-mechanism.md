@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: CppCrash故障检测机制及规格说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > CppCrash故障检测机制及规格说明
 category: best-practices
-scraped_at: 2026-10-16T07:06:50+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:ff8892789126050598adcf5ba1c0b69dcaee2cff72c20bd7e04cab33738fc928
+scraped_at: 2026-10-29T08:03:25+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:30b96d01331af340b4a908fc982b97a1476b8eba46a169d2886efdd76aca0ce0
 ---
 
 ## 概述
@@ -84,4 +84,4 @@ HiAppEvent定义的[崩溃事件](../harmonyos-guides/crash-events.md)包含CppC
 
 CppCrash故障日志信息中的故障线程信息表示业务线程发生故障时的代码调用信息，相同的故障线程调用栈信息必然表示相同的故障原因。因此，将故障线程信息作为聚类范围是最为准确的，开发者可根据业务聚类的需求调整增加其他故障日志的信息
 
-开发者可以直接访问HarmonyOS开发者中心提供的[应用质量管理（APMS）](../App/agc-help-apms-0000002235870062.md)服务查看聚类后的崩溃事件和日志，也可以将事件和日志，上传到自建云侧大数据网站进行分析，可按照HarmonyOS推荐的[CppCrash聚类](../harmonyos-guides/cppcrash-guidelines.md#cppcrash聚类)方法进行操作。
+开发者可以直接访问HarmonyOS开发者中心提供的应用质量管理（APMS）（[业务介绍](../doccenter-monitoring/agc-help-apms-introduction-0000002236333914.md)）服务查看聚类后的崩溃事件和日志，也可以将事件和日志，上传到自建云侧大数据网站进行分析，可按照HarmonyOS推荐的[CppCrash聚类](../harmonyos-guides/cppcrash-guidelines.md#cppcrash聚类)方法进行操作。

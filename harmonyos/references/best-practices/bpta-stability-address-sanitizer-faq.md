@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 适配常见问题
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 适配常见问题
 category: best-practices
-scraped_at: 2026-10-16T07:06:49+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:cb6c5b5a035fcecbd3276c9aee053ccd7db4981534e4f7c738b5d8b379f22c26
+scraped_at: 2026-10-29T08:03:24+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:de5ad8cb0813e31166361d2e267e2120f4ea6fe4a45548ff33516aa993f4472f
 ---
 
 ## HWASan napi int64转换时存在精度丢失
@@ -30,3 +30,20 @@ Thread: T0 0x005a00002000 stack: [0x007ed30ba000,0x007ed38b9000) sz: 8384512 tls
 ```
 
 这种情况下可考虑对HWASan参数进行调参，调参方法可参考[配置参数](bpta-stability-hwasan-detection.md#section1496994494018)，设置heap\_history\_size\_main\_thread大于当前的个数（如上当前为102300）。
+
+## 使用BinXO对无源码动态库文件进行插桩时出现编译告警，该如何处理？
+
+开启HWASan后，使用BinXO对无源码C/C++动态库进行插桩时，编译日志中可能出现BinXO相关告警，如下图所示：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/kPN5VrfPSGulwNja3SJ1kA/zh-cn_image_0000002797298753.png "点击放大")
+
+此类告警不会直接阻塞编译。对于无法完成插桩的动态库，工具会自动跳过该文件，不影响其他符合条件的动态库继续插桩。具体告警说明如下：
+
+| 错误码 | 错误描述 | 处理建议 |
+| --- | --- | --- |
+| 0x11801002 | 输入文件大小超过规格限制 | 输入文件大小超过BinXO支持的128M限制，无法完成插桩。建议拆分strip减小文件大小后再进行插桩或者通过excludeSoFromBinXO（参考[nativeLib](../doccenter-deveco-studio/ide-hvigor-cpp.md#section15889929155720)）跳过该文件。 |
+| 0x11801003 | 输入文件损坏或缺少相关 ELF 信息 | 无需关注，或者通过excludeSoFromBinXO跳过该文件。 |
+| 0x11801004 | 输入文件不是 C/C++ 编译而来 | 无需关注，非BinXO规格内的输入文件，或者通过excludeSoFromBinXO跳过该文件。 |
+| 0x11801007 | 输入文件不是标准 ELF 文件 | 无需关注，或者通过excludeSoFromBinXO跳过该文件。 |
+| 0x1180100A | 生成输出文件处理失败 | 无需关注，该文件无法被BinXO处理，通过excludeSoFromBinXO跳过该文件。 |
+| 0x1180100B | 输出文件的临时文件被占用 | 删除或重命名entry\build\default\intermediates\binxo目录下对应的<输出文件名>.temp文件后重新编译。 |

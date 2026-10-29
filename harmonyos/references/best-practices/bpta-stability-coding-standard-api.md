@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 易错API的使用规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 > 易错API的使用规范
 category: best-practices
-scraped_at: 2026-10-16T07:06:55+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:66a1bedeb10bcbe9701505987ab589090004048b080824172b94ecdea03d335c
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:ae7feb970a488cec8222abecca277c87105c23621e9cabc7f5d7b0ed93d7b75f
 ---
 
 ## 视效API
 
-静态图片，建议使用EffectKit异步模糊；AdaptiveColor使用问题
+静态图片，建议使用[@ohos.effectKit (图像效果)](../doccenter-references/api/js-apis-effectkit.md)异步模糊；[AdaptiveColor枚举说明](../doccenter-references/api/ts-universal-attributes-foreground-blur-style.md#adaptivecolor枚举说明)
 
 **【问题描述】**
 
-内外部多个应用在使用取色模糊时，AdaptiveColor参数选择了AVERAGE方式，导致出现帧率不达标问题。此参数已经标注在非DEFAULT方式下会产生耗时。典型 trace 如下：
+内外部多个应用在使用取色模糊时，AdaptiveColor参数选择了AVERAGE方式，导致出现帧率不达标问题。此参数已经标注在非DEFAULT方式下会产生耗时。典型trace如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/DRQvgVIMSxO9JiDjE78PGw/zh-cn_image_0000002194009804.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/8jfXRtO2Q36rZtYcEy1ruA/zh-cn_image_0000002194009804.png)
 
 **【使用错误影响】**
 
@@ -24,13 +24,13 @@ content_hash: sha256:66a1bedeb10bcbe9701505987ab589090004048b080824172b94ecdea03
 
 **【使用建议】**
 
-使用 AdaptiveColor.DEFAULT方式取色，或者参考 [EffectKit的ColorPicker](../harmonyos-references/js-apis-effectkit.md#colorpicker) 方式进行异步取色。
+使用AdaptiveColor.DEFAULT方式取色，或者参考EffectKit的[ColorPicker](../harmonyos-references/js-apis-effectkit.md#colorpicker)方式进行异步取色。
 
 **【文档链接】**
 
-[AdaptiveColor.DEFAULT](../harmonyos-references/ts-universal-attributes-foreground-blur-style.md#adaptivecolor枚举说明)：不使用取色模糊。使用默认的颜色作为蒙版颜色。采用非DEFAULT方式较耗时。
+[AdaptiveColor枚举说明](../harmonyos-references/ts-universal-attributes-foreground-blur-style.md#adaptivecolor枚举说明)中DEFAULT：不使用取色模糊。使用默认的颜色作为蒙版颜色。采用非DEFAULT方式较耗时。
 
-[EffectKit的ColorPicker](../harmonyos-references/js-apis-effectkit.md#colorpicker)：取色类，用于从一张图像数据中获取它的主要颜色。
+EffectKit的[ColorPicker](../harmonyos-references/js-apis-effectkit.md#colorpicker)：取色类，用于从一张图像数据中获取它的主要颜色。
 
 ## 媒体平台API
 
@@ -52,9 +52,9 @@ content_hash: sha256:66a1bedeb10bcbe9701505987ab589090004048b080824172b94ecdea03
 
 **【文档链接】**
 
-[媒体会话管理on('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avsessioncontroller.md#onplaybackstatechange10)
+媒体会话管理[on('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avsessioncontroller.md#onplaybackstatechange10)
 
-[媒体会话管理off('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avsessioncontroller.md#offplaybackstatechange10)
+媒体会话管理[off('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avsessioncontroller.md#offplaybackstatechange10)
 
 **【典型案例】**
 
@@ -89,9 +89,9 @@ sessionController.off('playbackStateChange', this.playStateCallback);
 
 **【文档链接】**
 
-[媒体会话管理setAVPlaybackState](../harmonyos-references/arkts-apis-avsession-avsession.md#setavplaybackstate10)
+媒体会话管理[setAVPlaybackState()](../harmonyos-references/arkts-apis-avsession-avsession.md#setavplaybackstate10)
 
-[媒体会话管理setAVMetadata](../harmonyos-references/arkts-apis-avsession-avsession.md#setavmetadata10)
+媒体会话管理[setAVMetadata()](../harmonyos-references/arkts-apis-avsession-avsession.md#setavmetadata10)
 
 3、投播时正确播放资源
 
@@ -109,7 +109,7 @@ sessionController.off('playbackStateChange', this.playStateCallback);
 
 **【文档链接】**
 
-[投播组件开发指导](../harmonyos-guides/distributed-playback-guide.md)
+[投播开发指导](../harmonyos-guides/distributed-playback-guide.md)
 
 **【典型案例】**
 
@@ -143,7 +143,7 @@ this.castController?.prepare(playItem, () => {
 
 **【使用建议】**
 
-当应用的播放状态、进度或倍速发生变化时，使用setAVPlaybackState接口更新AVPlaybackState。
+当应用的播放状态、进度或倍速发生变化时，使用setAVPlaybackState()接口更新AVPlaybackState。
 
 **【文档链接】**
 
@@ -153,7 +153,7 @@ this.castController?.prepare(playItem, () => {
 
 ```screen
 this.session?.on('pause', async () => {
-  // 无实现
+  // Not implemented
 });
 ```
 
@@ -192,11 +192,11 @@ this.session?.on('pause', async () => {
 
 **【文档链接】**
 
-[相机管理on('error')](../harmonyos-references/arkts-apis-camera-videosession.md#onerror11)
+相机管理[on('error')](../harmonyos-references/arkts-apis-camera-videosession.md#onerror11)
 
-[相机管理on('cameraStatus')](../harmonyos-references/arkts-apis-camera-cameramanager.md#oncamerastatus)
+相机管理[on('cameraStatus')](../harmonyos-references/arkts-apis-camera-cameramanager.md#oncamerastatus)
 
-文档中所有的on接口不仅限于上述两个示例。
+文档中所有的on()接口不仅限于上述两个示例。
 
 **【典型案例】**
 
@@ -209,11 +209,11 @@ function callback() {
 cameraManager.on('cameraStatus', callback);
 ```
 
-2、CameraSession中，addInput接口的入参必须是一个已经调用了open的CameraInput。
+2、CameraSession中，addInput()接口的入参必须是一个已经调用了open的CameraInput。
 
 **【问题描述】**
 
-打开CameraInput 后，会获取对应设备的信息。如果未成功获取这些信息，将CameraInput添加到Session时会抛出异常。
+打开CameraInput后，会获取对应设备的信息。如果未成功获取这些信息，将CameraInput添加到Session时会抛出异常。
 
 **【使用错误影响】**
 
@@ -225,18 +225,18 @@ CameraInput打开成功后，添加到CameraSession中。
 
 **【文档链接】**
 
-[相机管理CameraInput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createcamerainput)
+相机管理[createCameraInput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createcamerainput)
 
-[相机管理Session](../harmonyos-references/arkts-apis-camera-session.md)
+相机管理[Interface (Session)](../harmonyos-references/arkts-apis-camera-session.md)
 
 **【典型案例】**
 
-在执行到addInput时发生异常。
+在执行到addInput()时发生异常。
 
 ```screen
 cameraInput = cameraManager.createCameraInput(camera);
 session.beginConfig();
-session.addInput(cameraInput); // 接口抛出异常
+session.addInput(cameraInput); // The interface threw an exception
 ```
 
 **【最佳实践】**
@@ -248,11 +248,11 @@ session.beginConfig();
 session.addInput(cameraInput);
 ```
 
-3、CameraSession中，addOutput前需要先addInput。
+3、CameraSession中，addOutput()前需要先addInput()。
 
 **【问题描述】**
 
-如果Session中没有Input信息，addOutput会抛出异常。
+如果Session中没有Input信息，addOutput()会抛出异常。
 
 **【使用错误影响】**
 
@@ -264,17 +264,17 @@ Session添加Input后，再添加Output。
 
 **【文档链接】**
 
-[相机管理CameraInput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createcamerainput)
+相机管理[createCameraInput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createcamerainput)
 
-Output包括 PreviewOutput、PhotoOutput、VideoOutput、MetadataOutput。
+Output包括PreviewOutput、PhotoOutput、VideoOutput、MetadataOutput。
 
-[相机管理CameraOutput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createpreviewoutput)
+相机管理[createPreviewOutput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createpreviewoutput)
 
-[相机管理Session](../harmonyos-references/arkts-apis-camera-session.md)
+相机管理[Interface (Session)](../harmonyos-references/arkts-apis-camera-session.md)
 
 **【典型案例】**
 
-在执行到addOutput时，代码发生异常并抛出。
+在执行到addOutput()时，代码发生异常并抛出。
 
 ```screen
 previewOutput = cameraManager.createPreviewOutput(profile, surfaceId);
@@ -296,11 +296,11 @@ session.addInput(cameraInput);
 session.addOutput(previewOutput);
 ```
 
-4、Session增减Input和Output的接口调用流程必须在beginConfig和commitConfig接口调用之间。
+4、Session增减Input和Output的接口调用流程必须在beginConfig()和commitConfig()接口调用之间。
 
 **【问题描述】**
 
-如果Session中未调用beginConfig，调用addInput和addOutput将导致异常抛出。若Session未调用commitConfig，则无法调用后续的start接口。
+如果Session中未调用beginConfig()，调用addInput()和addOutput()将导致异常抛出。若Session未调用commitConfig()，则无法调用后续的start()接口。
 
 **【使用错误影响】**
 
@@ -308,25 +308,25 @@ session.addOutput(previewOutput);
 
 **【使用建议】**
 
-Session调用beginConfig接口之后再添加Input和Output，最后记得调用commitConfig。
+Session调用beginConfig()接口之后再添加Input和Output，最后记得调用commitConfig()。
 
 **【文档链接】**
 
-[相机管理CameraInput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createcamerainput)
+相机管理[createCameraInput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createcamerainput)
 
-Output包括 PreviewOutput、PhotoOutput、VideoOutput 和 MetadataOutput。
+Output包括PreviewOutput、PhotoOutput、VideoOutput 和 MetadataOutput。
 
-[相机管理CameraOutput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createpreviewoutput)
+相机管理[createPreviewOutput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createpreviewoutput)
 
-[相机管理Session](../harmonyos-references/arkts-apis-camera-session.md)
+相机管理[Interface (Session)](../harmonyos-references/arkts-apis-camera-session.md)
 
-[相机管理beginConfig](../harmonyos-references/arkts-apis-camera-session.md#beginconfig11)
+相机管理[beginConfig](../harmonyos-references/arkts-apis-camera-session.md#beginconfig11)
 
-[相机管理commitConfig](../harmonyos-references/arkts-apis-camera-session.md#commitconfig11)
+相机管理[commitConfig](../harmonyos-references/arkts-apis-camera-session.md#commitconfig11)
 
 **【典型案例】**
 
-在执行到addInput时发生异常并抛出。
+在执行到addInput()时发生异常并抛出。
 
 ```screen
 previewOutput = cameraManager.createPreviewOutput(profile, surfaceId);
@@ -349,7 +349,7 @@ session.addOutput(previewOutput);
 session.commitConfig();
 ```
 
-5、Session的release，Input的close等返回Promise的操作如果在异步函数内调用，请确保调用了await保证时序正常。
+5、Session的release()，Input的close()等返回Promise的操作如果在异步函数内调用，请确保调用了await保证时序正常。
 
 **【问题描述】**
 
@@ -365,9 +365,9 @@ session.commitConfig();
 
 **【文档链接】**
 
-[相机管理release](../harmonyos-references/arkts-apis-camera-session.md#release11)
+相机管理[release()](../harmonyos-references/arkts-apis-camera-session.md#release11)
 
-[相机管理close](../harmonyos-references/arkts-apis-camera-camerainput.md#close)
+相机管理[close()](../harmonyos-references/arkts-apis-camera-camerainput.md#close)
 
 **【典型案例】**
 
@@ -389,11 +389,11 @@ async function onBackground(): Promise<void> {
 
 ### 音频
 
-1、多次调用裸指针的Release会触发UAF（use after free）。
+1、多次调用裸指针的Release()会触发UAF（use after free）。
 
 **【问题描述】**
 
-应用在使用OHAudioRenderer或OHAudioCapturer等OHAudio相关接口时，需要传递相关对象的裸指针给音频。调用对象的release方法后，框架会删除对象。此时，如果应用再次传递裸指针调用方法，音频接收到的指针只能进行判空，无法判断指针的有效性，导致UAF问题。
+应用在使用OHAudioRenderer或OHAudioCapturer等OHAudio相关接口时，需要传递相关对象的裸指针给音频。调用对象的Release()方法后，框架会删除对象。此时，如果应用再次传递裸指针调用方法，音频接收到的指针只能进行判空，无法判断指针的有效性，导致UAF问题。
 
 **【使用错误影响】**
 
@@ -401,7 +401,7 @@ async function onBackground(): Promise<void> {
 
 **【使用建议】**
 
-在使用OHAudio时，调用Release方法后，不要再传递已失效的指针。
+在使用OHAudio时，调用Release()方法后，不要再传递已失效的指针。
 
 **【文档链接】**
 
@@ -433,7 +433,7 @@ async function onBackground(): Promise<void> {
 
 **【问题描述】**
 
-开发者使用OHAudio的接口时，使用了OH\_AudioStreamBuilder\_SetRendererCallback设置了OH\_AudioRenderer\_OnWriteData作为写数据的回调函数。然而，由于网络或解码性能问题，应用在系统请求音频数据时，无法提供完整的数据块，而只能写入部分数据。例如，当系统请求10ms的数据时，应用只提供了6ms的数据。系统在拿到这段数据后，仍然按照10ms的数据播放，导致未写入的4ms数据不可控，表现为播放卡顿和杂音。
+开发者使用OHAudio的接口时，使用了OH\_AudioStreamBuilder\_SetRendererCallback设置了OH\_AudioRenderer\_OnWriteData()作为写数据的回调函数。然而，由于网络或解码性能问题，应用在系统请求音频数据时，无法提供完整的数据块，而只能写入部分数据。例如，当系统请求10ms的数据时，应用只提供了6ms的数据。系统在拿到这段数据后，仍然按照10ms的数据播放，导致未写入的4ms数据不可控，表现为播放卡顿和杂音。
 
 **【使用错误影响】**
 
@@ -443,8 +443,8 @@ async function onBackground(): Promise<void> {
 
 * 应用确认调用的接口类型及设置的回调函数。
 * 当前系统有两种设置回调的接口，分别设置两种回调函数：
-  1. 通过 OH\_AudioStreamBuilder\_SetRendererCallback 设置 OH\_AudioRenderer\_OnWriteData （不支持返回值）
-  2. 通过 OH\_AudioStreamBuilder\_SetRendererWriteDataCallback 设置 OH\_AudioRenderer\_OnWriteDataCallback（支持返回值）
+  1. 通过OH\_AudioStreamBuilder\_SetRendererCallback设置OH\_AudioRenderer\_OnWriteData（不支持返回值）
+  2. 通过OH\_AudioStreamBuilder\_SetRendererWriteDataCallback设置OH\_AudioRenderer\_OnWriteDataCallback（支持返回值）
 * 应用需明确每次回调时，Buffer是否已写满。
 * 可通过比较应用自身写入的数据长度是否与回调函数的参数length或者是audioDataSize相等
 
@@ -453,8 +453,8 @@ async function onBackground(): Promise<void> {
 * 应用需保证连续发送音频数据，避免数据断续导致听感卡顿。
 * 应用需明确自身写入的数据长度能否填满系统回调的Buffer。如果无法填满，对于无返回值的回调函数，推荐应用暂时停止写入数据（不暂停音频流），阻塞回调函数（AudioRender其他操作前要解阻塞）或将Buffer置空，等待数据充足时再继续写入数据。需注意，如果Buffer置空，也会被统计到已写入的数据。如果使用支持返回值的回调函数，可返回INVALID，系统会暂不处理该段音频数据，再次向应用请求数据，等返回VALID后，系统继续播放。
 * 应用避免在回调函数外访问回调Buffer，确保其数据不被异步修改。
-* 应用需注意，不支持返回值的回调函数与支持返回值的回调函数的注册是相互覆盖的。如果需要使用支持返回值的回调函数，可将OH\_AudioStreamBuilder\_SetRendererWriteDataCallback接口的调用放在OH\_AudioStreamBuilder\_SetRendererCallback接口后面。
-* 推荐使用OH\_AudioStreamBuilder\_SetRendererWriteDataCallback设置支持返回值的回调函数，处理异常帧或数据不足。
+* 应用需注意，不支持返回值的回调函数与支持返回值的回调函数的注册是相互覆盖的。如果需要使用支持返回值的回调函数，可将OH\_AudioStreamBuilder\_SetRendererWriteDataCallback()接口的调用放在OH\_AudioStreamBuilder\_SetRendererCallback()接口后面。
+* 推荐使用OH\_AudioStreamBuilder\_SetRendererWriteDataCallback()设置支持返回值的回调函数，处理异常帧或数据不足。
 
 **【文档链接】**
 
@@ -475,37 +475,37 @@ async function onBackground(): Promise<void> {
 
 **典型案例（应用自查）**
 
-Q1. 【息屏异常停流】当CPU休眠时，APP检测到解码阻塞或长时间未收到系统请求，会执行停流操作。
+Q1.【息屏异常停流】当CPU休眠时，APP检测到解码阻塞或长时间未收到系统请求，会执行停流操作。
 
-A1. 使用offload通路的应用需申请长时任务；应用应感知休眠状态，保持正常运行。
+A1.使用offload通路的应用需申请长时任务；应用应感知休眠状态，保持正常运行。
 
-Q2. 【息屏异常停流】APP在CPU唤醒后的一段时间内，未能及时提供至少一帧数据。
+Q2.【息屏异常停流】APP在CPU唤醒后的一段时间内，未能及时提供至少一帧数据。
 
-A2. APP需进行解码等操作的性能优化，确保CPU唤醒时及时提供数据。
+A2.APP需进行解码等操作的性能优化，确保CPU唤醒时及时提供数据。
 
-Q3. 【息屏卡顿杂音】APP在数据不足一帧时写入，导致出现卡顿和杂音。
+Q3.【息屏卡顿杂音】APP在数据不足一帧时写入，导致出现卡顿和杂音。
 
 A3：根据情况排查。
 
-* 若使用OH\_AudioStreamBuilder\_SetRendererCallback回调：
+* 若使用OH\_AudioStreamBuilder\_SetRendererCallback()回调：
   + 需要应用阻塞直到数据准备充足，确保buffer写满
-* 若使用OH\_AudioStreamBuilder\_SetRendererWriteDataCallback，可以选择两种方案：
+* 若使用OH\_AudioStreamBuilder\_SetRendererWriteDataCallback()，可以选择两种方案：
   + 数据不足时，返回AUDIO\_DATA\_CALLBACK\_RESULT\_INVALID，框架会在短时间内再次请求数据
   + 若需要写数据，确保buffer写满
 
-Q4. 【未播完切歌】APP在一段数据写完后，切歌进入下一首，此时数据尚未播放完毕。
+Q4.【未播完切歌】APP在一段数据写完后，切歌进入下一首，此时数据尚未播放完毕。
 
-A4. 通过框架接口OH\_AudioRenderer\_GetTimeStamp()获取框架侧播放的数据数量，以判断播放进度。控制调用频率，建议每200毫秒调用一次，避免影响系统性能。注意，调用OH\_AudioRenderer\_Flush()后，播放的数据数量会重置为0。
+A4.通过框架接口OH\_AudioRenderer\_GetTimeStamp()获取框架侧播放的数据数量，以判断播放进度。控制调用频率，建议每200毫秒调用一次，避免影响系统性能。注意，调用OH\_AudioRenderer\_Flush()后，播放的数据数量会重置为0。
 
-PS: 针对案例3和4，应用可以添加维测：统计实际写入的数据数量p1，通过框架接口OH\_AudioRenderer\_GetTimeStamp()获取框架侧播放的数据数量p2。符合预期的场景：
+PS:针对案例3和4，应用可以添加维测：统计实际写入的数据数量p1，通过框架接口OH\_AudioRenderer\_GetTimeStamp()获取框架侧播放的数据数量p2。符合预期的场景：
 
-* 在p1 - p2 约为休眠水线(目前约7s)时，进入休眠；
-* 在p1 - p2 约为唤醒水线(目前约400ms)时，唤醒。
+* 在p1 - p2约为休眠水线(目前约7s)时，进入休眠；
+* 在p1 - p2约为唤醒水线(目前约400ms)时，唤醒。
 
 不符合预期的场景：
 
-* p1 - p2 为负值
-* p1 - p2 没达到休眠水线时，进入休眠；
+* p1 - p2为负值
+* p1 - p2没达到休眠水线时，进入休眠；
 
 ### 视频
 
@@ -525,11 +525,11 @@ AVImageGenerator或AVMetadataExtractor功能失效问题。
 
 **【文档链接】**
 
-[AVImageGenerator](../harmonyos-references/arkts-apis-media-avimagegenerator.md)
+[Interface (AVImageGenerator)](../harmonyos-references/arkts-apis-media-avimagegenerator.md)
 
 **说明** 
 
-将资源句柄（fd）传递给 AVImageGenerator 实例后，请勿使用该句柄进行其他读写操作，包括传递给多个 AVPlayer、AVMetadataExtractor、AVImageGenerator 或 AVTranscoder。同一时间通过该句柄读写文件会导致视频缩略图数据异常。
+将资源句柄（fd）传递给AVImageGenerator实例后，请勿使用该句柄进行其他读写操作，包括传递给多个AVPlayer、AVMetadataExtractor、AVImageGenerator或AVTranscoder。同一时间通过该句柄读写文件会导致视频缩略图数据异常。
 
 **【最佳实践】**
 
@@ -615,7 +615,7 @@ async fetchMeta(): Promise<void> {
 
 ## ArkUI相关API
 
-1. Inspector接口在业务代码里使用
+1.Inspector接口在业务代码里使用
 
 **【问题描述】**
 
@@ -631,7 +631,7 @@ async fetchMeta(): Promise<void> {
 
 **【文档链接】**
 
-[getFilteredInspectorTre()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getfilteredinspectortree12)
+[getFilteredInspectorTree()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getfilteredinspectortree12)
 
 [getFilteredInspectorTreeById()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getfilteredinspectortreebyid12)
 
@@ -639,11 +639,11 @@ async fetchMeta(): Promise<void> {
 
 [getInspectorInfo()](../harmonyos-references/js-apis-arkui-framenode.md#getinspectorinfo12)
 
-2、OH\_NativeXComponent\_RegisterCallback接口传参
+2、OH\_NativeXComponent\_RegisterCallback()接口传参
 
 **【问题描述】**
 
-应用在使用OH\_NativeXComponent\_RegisterCallback接口传的回调函数必须保证在OnSurfaceDestroyed回调之前是有效的，该回调是XComponent生命周期结束后给应用的通知，一定会调用。如果提前释放该回调会导致uaf问题。
+应用在使用OH\_NativeXComponent\_RegisterCallback()接口传的回调函数必须保证在OnSurfaceDestroyed()回调之前是有效的，该回调是XComponent生命周期结束后给应用的通知，一定会调用。如果提前释放该回调会导致uaf问题。
 
 **【使用错误影响】**
 
@@ -651,27 +651,27 @@ async fetchMeta(): Promise<void> {
 
 **【使用建议】**
 
-* 在Native侧的OnSurfaceXXX回调中，nativewindow指针的生命周期在OnSurfaceDestroyed回调之后结束。因此，应用需要确保在此之后不再使用该指针，特别是在多线程场景中，以避免访问野指针的问题。
-* 在OnSurfaceDestroyed回调触发前，不要释放该回调所在对象，否则会导致系统在调用该回调时出错。
+* 在Native侧的OnSurfaceXXX回调中，nativewindow指针的生命周期在OnSurfaceDestroyed()回调之后结束。因此，应用需要确保在此之后不再使用该指针，特别是在多线程场景中，以避免访问野指针的问题。
+* 在OnSurfaceDestroyed()回调触发前，不要释放该回调所在对象，否则会导致系统在调用该回调时出错。
 
 **【文档链接】**
 
-[OH\_NativeXComponent\_RegisterCallback](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_nativexcomponent_registercallback)
+[OH\_NativeXComponent\_RegisterCallback()](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_nativexcomponent_registercallback)
 
 3、@ohos.measure和@ohos.font不推荐在UIAbility的生命周期中调用
 
 **【问题描述】**
 
-在UIAbility的生命周期中调用@ohos.measure和@ohos.font接口无法达到预期效果。下面的代码示例是在EntryAbility.ets的onCreate回调函数中使用这些接口。
+在UIAbility的生命周期中调用@ohos.measure和@ohos.font接口无法达到预期效果。下面的代码示例是在EntryAbility.ets的onCreate()回调函数中使用这些接口。
 
 ```screen
 onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-  const width = MeasureText.measureText({ // 建议使用 this.getUIContext().getMeasureUtils().measureText()接口
+  const width = MeasureText.measureText({ // It’s recommended to use the this.getUIContext().getMeasureUtils().measureText() API
     textContent: "Hello World",
     fontSize: '50px'
   })
   hilog.info(0x0001, "testTag", "Hello World, width: %{public}d", width);
-  font.registerFont({ // 建议使用 this.getUIContext().getFont().registerFont()接口
+  font.registerFont({ // It's recommended to use the this.getUIContext().getFont().registerFont() interface
     familyName: 'contentFont',
     familySrc: $rawfile('hwxw.ttf')
   })
@@ -768,21 +768,21 @@ struct CheckBoxPage {
 }
 ```
 
-6、UIExtensionComponent send&sendSync 能力有效周期注意点
+6、UIExtensionComponent send&sendSync能力有效周期注意点
 
 **【问题描述】**
 
-UIExtensionComponent用于承载跨进程UI，提供send和sendSync方法，用于向提供方发送信息。这些方法只有在提供方进程启动并建立连接后才能生效。如果提供方断开连接或出现问题（如通过UIExtensionComponent的onError、onRelease和onTerminated回调检测到），这些方法将失效。
+UIExtensionComponent用于承载跨进程UI，提供send()和sendSync()方法，用于向提供方发送信息。这些方法只有在提供方进程启动并建立连接后才能生效。如果提供方断开连接或出现问题（如通过UIExtensionComponent的onError()、onRelease()和onTerminated()回调检测到），这些方法将失效。
 
 **【使用错误影响】**
 
-send和sendSync失效
+send()和sendSync()失效
 
 **【使用建议】**
 
 监听UIExtensionProxy的on('asyncReceiverRegister')和on('syncReceiverRegister')状态，在回调之后使用。
 
-监听UIExtensionComponent的onError、onRelease和onTerminated状态。监听之后，组件将无法使用。
+监听UIExtensionComponent的onError()、onRelease()和onTerminated()状态。监听之后，组件将无法使用。
 
 **【典型案例】**
 
@@ -907,7 +907,7 @@ struct StyleExample {
 
 **【问题描述】**
 
-使用image组件申请pixmap或直接使用OH\_pixmap接口时，如果不设置编解码尺寸，单张图片可能占用数百MB甚至超过1GB的内存。多张图片申请后，可能会因系统限制导致应用闪退。
+使用Image组件申请pixmap或直接使用OH\_pixmap()接口时，如果不设置编解码尺寸，单张图片可能占用数百MB甚至超过1GB的内存。多张图片申请后，可能会因系统限制导致应用闪退。
 
 **【使用错误影响】**
 
@@ -917,7 +917,7 @@ struct StyleExample {
 
 使用Image组件时，建议通过autoSize或sourceSize降低编解码分辨率。
 
-9、GetRectangleById接口可能存在组件不存在场景
+9、GetRectangleById()接口可能存在组件不存在场景
 
 **【问题描述】**
 
@@ -933,7 +933,7 @@ struct StyleExample {
 
 **【文档链接】**
 
-[getRectangleById](../harmonyos-references/arkts-apis-uicontext-componentutils.md#getrectanglebyid)
+[getRectangleById()](../harmonyos-references/arkts-apis-uicontext-componentutils.md#getrectanglebyid)
 
 **【典型案例】**
 
@@ -941,11 +941,11 @@ struct StyleExample {
 
 **【最佳实践】**
 
-10、getInspectorByKey接口可能存在组件不存在场景，返回的是空字符串而不是空json对象。
+10、getInspectorByKey()接口可能存在组件不存在场景，返回的是空字符串而不是空json对象。
 
 **【问题描述】**
 
-getInspectorByKey接口可能存在组件不存在场景，返回的是空字符串而不是空json对象
+getInspectorByKey()接口可能存在组件不存在场景，返回的是空字符串而不是空json对象
 
 **【使用错误影响】**
 
@@ -957,18 +957,18 @@ getInspectorByKey接口可能存在组件不存在场景，返回的是空字符
 
 **【文档链接】**
 
-[getInspectorByKey](../harmonyos-references/ts-universal-attributes-component-id.md#getinspectorbykey9)
+[getInspectorByKey()](../harmonyos-references/ts-universal-attributes-component-id.md#getinspectorbykey9)
 
-11、不推荐在aboutToAppear、aboutToDisappear中调用动画。
+11、不推荐在aboutToAppear()、aboutToDisappear()中调用动画。
 
 **【问题描述】**
 
-* 如果在[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)中调用动画，自定义组件内的build还未执行，内部组件还未创建，动画时机过早，动画属性没有初值无法对组件产生动画。
-* 执行[aboutToDisappear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttodisappear)时，组件即将销毁，不能在aboutToDisappear里面做动画。
+* 如果在[aboutToAppear()](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)中调用动画，自定义组件内的build还未执行，内部组件还未创建，动画时机过早，动画属性没有初值无法对组件产生动画。
+* 执行[aboutToDisappear()](../harmonyos-references/ts-custom-component-lifecycle.md#abouttodisappear)时，组件即将销毁，不能在aboutToDisappear()里面做动画。
 
 **【使用建议】**
 
-不要在aboutToAppear和aboutToDisappear生命周期回调中调用以下动画接口：animateTo、animateToImmediately、keyframeAnimateTo。
+不要在aboutToAppear()和aboutToDisappear()生命周期回调中调用以下动画接口：animateTo()、animateToImmediately()、keyframeAnimateTo()。
 
 **【文档链接】**
 
@@ -1221,15 +1221,15 @@ struct Index {
 }
 ```
 
-13、滚动类组件当Scroller控制器未绑定容器组件或者容器组件被异常释放时，currentOffset的返回值为空。
+13、滚动类组件当Scroller控制器未绑定容器组件或者容器组件被异常释放时，currentOffset()的返回值为空。
 
 **【问题描述】**
 
-当Scroller控制器未绑定容器组件或者容器组件被异常释放时，currentOffset的返回值为空。
+当Scroller控制器未绑定容器组件或者容器组件被异常释放时，currentOffset()的返回值为空。
 
 **【使用错误影响】**
 
-currentOffset的返回值为空，导致应用出现异常。
+currentOffset()的返回值为空，导致应用出现异常。
 
 **【使用建议】**
 
@@ -1237,15 +1237,15 @@ currentOffset的返回值为空，导致应用出现异常。
 
 **【文档链接】**
 
-[currentOffset](../harmonyos-references/ts-container-scroll.md#currentoffset)
+[currentOffset()](../harmonyos-references/ts-container-scroll.md#currentoffset)
 
 ## IPC相关API
 
-1、使用IPC&RPC通信时，调用writeString使用不规范
+1、使用IPC&RPC通信时，调用writeString()使用不规范
 
 **【问题描述】**
 
-业务在使用writeString时，某些特殊字符无法通过IPC传输，导致报错“检查参数错误”。
+业务在使用writeString()时，某些特殊字符无法通过IPC传输，导致报错“检查参数错误”。
 
 **【使用错误影响】**
 
@@ -1253,12 +1253,12 @@ currentOffset的返回值为空，导致应用出现异常。
 
 **【使用建议】**
 
-* 使用writeString传递字符串时，长度不要超过40960字节。
+* 使用writeString()传递字符串时，长度不要超过40960字节。
 * 如果超过上限，业务在做分段传递时需要考虑截断字符串时不要截出异常字符。
 
 **【文档链接】**
 
-[writeString](../harmonyos-references/js-apis-rpc.md#writestring9)
+[writeString()](../harmonyos-references/js-apis-rpc.md#writestring9)
 
 2、使用IPC&RPC通信时，MessageSequence使用不规范
 
@@ -1280,7 +1280,7 @@ currentOffset的返回值为空，导致应用出现异常。
 
 [MessageSequence](../harmonyos-references/js-apis-rpc.md#messagesequence9)
 
-3、rpc.MessageParcel 或rpc.MessageSequence 使用不规范
+3、rpc.MessageParcel或rpc.MessageSequence使用不规范
 
 **【问题描述】**
 
@@ -1292,7 +1292,7 @@ currentOffset的返回值为空，导致应用出现异常。
 
 **【使用建议】**
 
-客户端发消息结束后需调用data 和 reply 的 reclaim接口。
+客户端发消息结束后需调用data和reply的reclaim接口。
 
 **【文档链接】**
 
@@ -1316,25 +1316,25 @@ currentOffset的返回值为空，导致应用出现异常。
 
 **【使用建议】**
 
-1、在使用Ashmem去写数据时，先调用mapReadWriteAshmem方法，创建可读写的共享文件的映射，之后调用writeDataToAshmem方法写对应的数据。
+1、在使用Ashmem()去写数据时，先调用mapReadWriteAshmem()方法，创建可读写的共享文件的映射，之后调用writeDataToAshmem()方法写对应的数据。
 
-2、从Ashmem中去读取数据时，需要先调用mapReadWriteAshmem方法，创建可读写的共享文件的映射，之后调用readDataFromAshmem方法读对应的数据。
+2、从Ashmem()中去读取数据时，需要先调用mapReadWriteAshmem()方法，创建可读写的共享文件的映射，之后调用readDataFromAshmem()方法读对应的数据。
 
 **【文档链接】**
 
-[Ashmem](../harmonyos-references/js-apis-rpc.md#ashmem8)
+[Ashmem()](../harmonyos-references/js-apis-rpc.md#ashmem8)
 
-[mapReadWriteAshmem](../harmonyos-references/js-apis-rpc.md#mapreadwriteashmem9)
+[mapReadWriteAshmem()](../harmonyos-references/js-apis-rpc.md#mapreadwriteashmem9)
 
-[writeDataToAshmem](../harmonyos-references/js-apis-rpc.md#writedatatoashmem11)
+[writeDataToAshmem()](../harmonyos-references/js-apis-rpc.md#writedatatoashmem11)
 
-[readDataFromAshmem](../harmonyos-references/js-apis-rpc.md#readdatafromashmem11)
+[readDataFromAshmem()](../harmonyos-references/js-apis-rpc.md#readdatafromashmem11)
 
-5、使用Ashmem对象传递数据，Ashmem的内存未释放
+5、使用Ashmem()对象传递数据，Ashmem()的内存未释放
 
 **【问题描述】**
 
-业务使用了Ashmem存储数据，读取完成后调用了closeAshmem方法以释放之前分配的共享内存，但似乎没有生效。
+业务使用了Ashmem()存储数据，读取完成后调用了closeAshmem()方法以释放之前分配的共享内存，但似乎没有生效。
 
 **【使用错误影响】**
 
@@ -1342,27 +1342,27 @@ currentOffset的返回值为空，导致应用出现异常。
 
 **【使用建议】**
 
-释放之前开辟的共享内存，第一步先调用unmapAshmem方法，删除前面创建出来的Ashmem对象的地址映射，第二步才是调用closeAshmem方法，关闭这个Ashmem对象。
+释放之前开辟的共享内存，第一步先调用unmapAshmem()方法，删除前面创建出来的Ashmem()对象的地址映射，第二步才是调用closeAshmem()方法，关闭这个Ashmem()对象。
 
 **【文档链接】**
 
-[Ashmem](../harmonyos-references/js-apis-rpc.md#ashmem8)
+[Ashmem()](../harmonyos-references/js-apis-rpc.md#ashmem8)
 
-[writeDataToAshmem](../harmonyos-references/js-apis-rpc.md#writedatatoashmem11)
+[writeDataToAshmem()](../harmonyos-references/js-apis-rpc.md#writedatatoashmem11)
 
-[readDataFromAshmem](../harmonyos-references/js-apis-rpc.md#readdatafromashmem11)
+[readDataFromAshmem()](../harmonyos-references/js-apis-rpc.md#readdatafromashmem11)
 
 MessageSequence类中的读写方法：
 
-[writeAshmem](../harmonyos-references/js-apis-rpc.md#writeashmem9)
+[writeAshmem()](../harmonyos-references/js-apis-rpc.md#writeashmem9)
 
-[readAshmem](../harmonyos-references/js-apis-rpc.md#readashmem9)
+[readAshmem()](../harmonyos-references/js-apis-rpc.md#readashmem9)
 
 6、调用新接口传递ArrayBuffer数据时，读取数据对应不上
 
 **【问题描述】**
 
-上层业务使用writeArrayBuffer和readArrayBuffer方法传递ArrayBuffer数据时，读取数据不匹配。
+上层业务使用writeArrayBuffer()和readArrayBuffer()方法传递ArrayBuffer数据时，读取数据不匹配。
 
 **【使用错误影响】**
 
@@ -1376,27 +1376,27 @@ MessageSequence类中的读写方法：
 
 **【文档链接】**
 
-[writeArrayBuffer](../harmonyos-references/js-apis-rpc.md#writearraybuffer12)
+[writeArrayBuffer()](../harmonyos-references/js-apis-rpc.md#writearraybuffer12)
 
-[readArrayBuffer](../harmonyos-references/js-apis-rpc.md#readarraybuffer12)
+[readArrayBuffer()](../harmonyos-references/js-apis-rpc.md#readarraybuffer12)
 
 **【典型案例】**
 
 具体创建的typedArray跟写时传递的类型枚举值TypeCode不匹配，报错read data from message sequence failed
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/w4Nhl50jTH6r-af-E6_U6A/zh-cn_image_0000002229335629.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/B1b_CtECTaunODhai2oBZQ/zh-cn_image_0000002229335629.png)
 
 字节不匹配，写入失败
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/wQ9SNtsSRYur4OJ1RitJOA/zh-cn_image_0000002229335593.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/gty8UisnTFKi4yIMobNYJA/zh-cn_image_0000002229335593.png)
 
-7、onRemoteRequest函数报错，返回错误码4
+7、onRemoteRequest()函数报错，返回错误码4
 
 **【问题描述】**
 
 客户端发送信息给服务端，服务端处理时出现错误，错误日志为：OnJsRemoteRequest failed, ret:4, time:xxxxx。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/OdhkmIkRQMeD027BBMmcKA/zh-cn_image_0000002193850224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ImLcti_oRjO7H1ZBZseoCQ/zh-cn_image_0000002193850224.png)
 
 **【使用错误影响】**
 
@@ -1404,7 +1404,7 @@ MessageSequence类中的读写方法：
 
 **【使用建议】**
 
-1、业务在onRemoteRequest或RemoteMessageRequest函数中，合理返回true或false。
+1、业务在onRemoteRequest()或RemoteMessageRequest()函数中，合理返回true或false。
 
 2、当上层业务返回false时，IPC内部会认为此次通信是失败的，会直接赋值为4，结束此次通信
 
@@ -1420,25 +1420,25 @@ MessageSequence类中的读写方法：
 
 **【使用建议】**
 
-合理使用reclaim方法，确保在创建data和reply对象时不会出现问题。
+合理使用reclaim()方法，确保在创建data和reply对象时不会出现问题。
 
 **【文档链接】**
 
-[reclaim](../harmonyos-references/js-apis-rpc.md#reclaim9)
+[reclaim()](../harmonyos-references/js-apis-rpc.md#reclaim9)
 
 **【最佳实践】**
 
 sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption): Promise<RequestResult>
 
-在使用上述方法时，确保在promise的.finally回调中释放不再需要的对象，并且确保promise的.then或.catch回调中的逻辑先于释放对象的操作。
+在使用上述方法时，确保在promise的.finally()回调中释放不再需要的对象，并且确保promise的.then()或.catch()回调中的逻辑先于释放对象的操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/7Fy65MSDRvauPWa-TGKOMw/zh-cn_image_0000002229335609.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/6qApipSGRsuM328IR40MDA/zh-cn_image_0000002229335609.png)
 
 sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption, callback: AsyncCallback<RequestResult>): void
 
-在使用此方法时，必须在AsyncCallback回调中获取业务数据后才能释放。
+在使用此方法时，必须在AsyncCallback()回调中获取业务数据后才能释放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/-EzTRtSHTNS6kpPIZdC-Uw/zh-cn_image_0000002229335617.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/84E-wTPIQJSozPITCOOLgA/zh-cn_image_0000002229335617.png)
 
 ## 图形API
 
@@ -1454,11 +1454,11 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **【使用建议】**
 
-调用OH\_NativeImage\_Destroy时，无需调用OH\_NativeWindow\_DestroyNativeWindow进行释放。
+调用OH\_NativeImage\_Destroy()时，无需调用OH\_NativeWindow\_DestroyNativeWindow()进行释放。
 
 **【文档链接】**
 
-[OH\_NativeImage](../harmonyos-references/capi-native-image-h.md)
+[native\_image.h](../harmonyos-references/capi-native-image-h.md)
 
 2、OH\_NativeWindow相关接口野指针crash问题
 
@@ -1466,22 +1466,22 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 通过Native层接口调用时出现的崩溃问题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/eEndMeuPRXSTScT0gg1AwA/zh-cn_image_0000002229450073.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/yquftMAgRNiobC4yDbcHlg/zh-cn_image_0000002229450073.png "点击放大")
 
 **【使用错误影响】**
 
-* 当应用在xcomponent析构后，如果已经触发了OnSurfaceDestroyedCB回调接口，nativewindow的引用计数会减少1。当引用计数减少到0时，将触发nativewindow的析构。在nativewindow析构后，如果再通过nativewindow调用接口，将会触发野指针崩溃。
-* 应用可能手动调用OH\_NativeWindow\_DestroyNativeWindow接口对nativewindow进行引用计数减1。如果nativewindow已经析构，再次调用该接口会导致崩溃。
+* 当应用在XComponent析构后，如果已经触发了OnSurfaceDestroyedCB()回调接口，nativewindow的引用计数会减少1。当引用计数减少到0时，将触发nativewindow的析构。在nativewindow析构后，如果再通过nativewindow调用接口，将会触发野指针崩溃。
+* 应用可能手动调用OH\_NativeWindow\_DestroyNativeWindow()接口对nativewindow进行引用计数减1。如果nativewindow已经析构，再次调用该接口会导致崩溃。
 
 **【使用建议】**
 
-* 排查xcomponent组件释放后是否还通过nativewindow进行接口调用。
-* 排查是否存在并发释放xcomponent组件和并发调用nativewindow接口。
-* 排查应用是否调用了OH\_NativeWindow\_DestroyNativeWindow对nativewindow进行引用计数减1。
+* 排查XComponent组件释放后是否还通过nativewindow进行接口调用。
+* 排查是否存在并发释放XComponent组件和并发调用nativewindow接口。
+* 排查应用是否调用了OH\_NativeWindow\_DestroyNativeWindow()对nativewindow进行引用计数减1。
 
 **【文档链接】**
 
-[NativeWindow](../harmonyos-references/capi-external-window-h.md)
+[external\_window.h](../harmonyos-references/capi-external-window-h.md)
 
 3、OH\_NativeWindow相关接口空指针crash问题
 
@@ -1489,19 +1489,19 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 crash的栈顶在libsurface.z.so中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/SbQG9172RHCqRVPPmIWDUw/zh-cn_image_0000002194009832.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/DlRd9UHlSe6froOcMOorxg/zh-cn_image_0000002194009832.png)
 
 **【使用错误影响】**
 
-1、在调用GetBufferHandleFromNative接口时访问sfbuffer，此时sfbuffer为空指针，原因是另一个线程并发地将sfbuffer置空，导致系统崩溃。
+1、在调用GetBufferHandleFromNative()接口时访问sfbuffer，此时sfbuffer为空指针，原因是另一个线程并发地将sfbuffer置空，导致系统崩溃。
 
 2、另一个线程触发了nativewindow的析构流程。在析构流程中，会将buffer进行unreference操作，随后触发buffer的析构，最后将sfbuffer置空。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/aunh9oECTJ2Buq26VzLiCw/zh-cn_image_0000002194009780.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/_0vtOMkNTQ2QPwhQ-hdJyg/zh-cn_image_0000002194009780.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/VbVhV1WfROCWEskgUiTXeA/zh-cn_image_0000002229335597.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/2vTwZGq7R5q_cNOGEnEOBw/zh-cn_image_0000002229335597.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/JYwdsqBVS-uGzlzL14aX2A/zh-cn_image_0000002193850200.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/uDTVJ2rfReGmPqbf9Y3i6g/zh-cn_image_0000002193850200.png)
 
 **【使用建议】**
 
@@ -1509,15 +1509,15 @@ crash的栈顶在libsurface.z.so中。
 
 **【文档链接】**
 
-[NativeWindow](../harmonyos-references/capi-external-window-h.md)
+[external\_window.h](../harmonyos-references/capi-external-window-h.md)
 
 ## 方舟运行时API
 
-1、【use after free】napi\_async\_work使用不规范
+1、【use after free】napi\_async\_work()使用不规范
 
 **【问题描述】**
 
-napi\_async\_work 使用不规范导致了 UAF 问题。涉及的接口主要包括 napi\_create\_async\_work、napi\_queue\_async\_work 和 napi\_queue\_async\_work\_with\_qos、napi\_delete\_async\_work。
+napi\_async\_work()使用不规范导致了UAF问题。涉及的接口主要包括napi\_create\_async\_work()、napi\_queue\_async\_work()和napi\_queue\_async\_work\_with\_qos()、napi\_delete\_async\_work()。
 
 **【使用错误影响】**
 
@@ -1525,23 +1525,23 @@ napi\_async\_work 使用不规范导致了 UAF 问题。涉及的接口主要包
 
 **【使用建议】**
 
-在napi\_create\_async\_work的第五个参数中设置回调函数，将napi\_delete\_async\_work的工作放在该回调函数中执行。这可以确保在异步任务执行期间，上层开发者的内存问题不会导致系统栈报错，从而便于问题定位。
+在napi\_create\_async\_work()的第五个参数中设置回调函数，将napi\_delete\_async\_work()的工作放在该回调函数中执行。这可以确保在异步任务执行期间，上层开发者的内存问题不会导致系统栈报错，从而便于问题定位。
 
 **【典型案例】**
 
 打开某应用时发生闪退。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/bcdndZiETBi-k2gDxGqrlA/zh-cn_image_0000002229450089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/dUMxypigQgegjW8zbGF5ZQ/zh-cn_image_0000002229450089.png)
 
 此栈主要由native开发者使用napi\_async\_work变量时，因生命周期管理不当导致UAF问题。难点在于这些栈都是系统栈，无法追踪到具体的调用方。然而，该问题是必然出现的，因此使用memtracker压测后，崩溃栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/t_DuGfDZSIG2wdbUhw6CiQ/zh-cn_image_0000002229335605.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/SM0GM1CLRV2QAlpHzIfmcQ/zh-cn_image_0000002229335605.png "点击放大")
 
 根据上面崩溃栈，发现是liblargelanguagemodel.z.so申请和释放的内存，看一下他们的代码
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/IxMZ5386SMC_tqTFrdz8BA/zh-cn_image_0000002229450065.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/rBURui9pQwS2GvlS5ePVMA/zh-cn_image_0000002229450065.png "点击放大")
 
-开发者使用智能指针管理AsyncWorkData这块内存。在将任务插入到异步任务队列后，智能指针被重置，导致在析构函数中调用napi\_delete\_async\_work。这使得异步任务流程还未完成时，内存已被释放，从而产生了UAF问题：
+开发者使用智能指针管理AsyncWorkData这块内存。在将任务插入到异步任务队列后，智能指针被重置，导致在析构函数中调用napi\_delete\_async\_work()。这使得异步任务流程还未完成时，内存已被释放，从而产生了UAF问题：
 
 ```screen
 #include "napi/native_api.h"
@@ -1597,15 +1597,15 @@ extern "C" __attribute__((constructor)) void RegisterEntryModule(void){
 }
 ```
 
-在napi\_create\_async\_work的第五个参数中设置回调函数，将napi\_delete\_async\_work的工作放在该回调函数中执行。这可以确保在异步任务执行期间，上层开发者的内存问题不会反映在系统栈中，从而避免问题难以定位。
+在napi\_create\_async\_work()的第五个参数中设置回调函数，将napi\_delete\_async\_work()的工作放在该回调函数中执行。这可以确保在异步任务执行期间，上层开发者的内存问题不会反映在系统栈中，从而避免问题难以定位。
 
 2、【double free】开发者手动释放ArrayBuffer内存导致double free
 
 **【问题描述】**
 
-开发者通过napi\_get\_arraybuffer\_info接口获取ArrayBuffer的data指针，然后直接手动free这个内存导致应用崩溃。ArrayBuffer的内存由虚拟机GC统一管理，禁止开发者手动释放。
+开发者通过napi\_get\_arraybuffer\_info()接口获取ArrayBuffer的data指针，然后直接手动free这个内存导致应用崩溃。ArrayBuffer的内存由虚拟机GC统一管理，禁止开发者手动释放。
 
-napi\_create\_arraybuffer、napi\_create\_sendable\_arraybuffer、napi\_get\_arraybuffer\_info、napi\_create\_buffer、napi\_get\_buffer\_info、napi\_get\_typedarray\_info 和 napi\_get\_dataview\_info 等接口的使用方法类似。
+napi\_create\_arraybuffer()、napi\_create\_sendable\_arraybuffer()、napi\_get\_arraybuffer\_info()、napi\_create\_buffer()、napi\_get\_buffer\_info()、napi\_get\_typedarray\_info()和napi\_get\_dataview\_info()等接口的使用方法类似。
 
 **【使用错误影响】**
 
@@ -1623,23 +1623,23 @@ napi\_create\_arraybuffer、napi\_create\_sendable\_arraybuffer、napi\_get\_arr
 
 安装某应用后，如果搁置一段时间，会被强制退出，崩溃栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Z75zAh9oRFqyQ5AsvqGdwA/zh-cn_image_0000002229450097.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/AL4ovsmvR9CA6TctuT7mWw/zh-cn_image_0000002229450097.png "点击放大")
 
 【案例分析】
 
 安装MemTracker地址越界检测工具后，发现问题是由于开发者手动释放了通过虚拟机创建的ArrayBuffer内存，而虚拟机在垃圾回收时再次尝试释放同一块内存，导致了double free。对于ArrayBuffer内存，应由虚拟机统一管理，无需开发者手动释放。如果开发者尝试手动释放这块内存，可能会引发double free问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/BWXeWQD2Rgag__x4rPawKA/zh-cn_image_0000002194009824.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/UCs3GHJFQRSL8fsVOyjV0A/zh-cn_image_0000002194009824.png)
 
 **【最佳实践】**
 
 开发者不允许主动释放虚拟机管理的ArrayBuffer指针。
 
-3、【memory leak】开发者使用uv\_queue\_work方法将任务抛到js线程上面执行的时候，对js线程的回调方法未加handle scope
+3、【memory leak】开发者使用uv\_queue\_work()方法将任务抛到js线程上面执行的时候，对js线程的回调方法未加handle scope
 
 **【问题描述】**
 
-开发者使用uv\_queue\_work方法将任务提交到JS线程执行时，在JS回调中创建了JS对象，但未使用napi\_handle\_scope管理回调中创建的napi\_value的生命周期，导致内存泄漏。
+开发者使用uv\_queue\_work()方法将任务提交到JS线程执行时，在JS回调中创建了JS对象，但未使用napi\_handle\_scope管理回调中创建的napi\_value的生命周期，导致内存泄漏。
 
 **【使用错误影响】**
 
@@ -1647,7 +1647,7 @@ napi\_create\_arraybuffer、napi\_create\_sendable\_arraybuffer、napi\_get\_arr
 
 **【使用建议】**
 
-当使用uv\_queue\_work方法将任务提交到JS线程执行时，需要在JS线程的回调方法中使用napi\_handle\_scope来管理回调方法创建的napi\_value的生命周期。
+当使用uv\_queue\_work()方法将任务提交到JS线程执行时，需要在JS线程的回调方法中使用napi\_handle\_scope来管理回调方法创建的napi\_value的生命周期。
 
 **【文档链接】**
 
@@ -1712,11 +1712,11 @@ void callbackTest(CallbackContext* context)
 
 3. 开发者使用napi接口时，不在napi\_value或napi\_ref创建的JS线程上。
 
-以上指的是“绝大多数napi接口”。部分napi接口例外，无以上约束。涉及接口有：1.napi\_call\_threadsafe\_function/napi\_call\_threadsafe\_function\_with\_priority/napi\_acquire\_threadsafe\_function/napi\_release\_threadsafe\_function/napi\_get\_threadsafe\_function\_context/napi\_ref\_threadsafe\_function/napi\_unref\_threadsafe\_function -- napi的线程安全函数。
+以上指的是“绝大多数napi接口”。部分napi接口例外，无以上约束。涉及接口有：1.napi\_call\_threadsafe\_function()/napi\_call\_threadsafe\_function\_with\_priority()/napi\_acquire\_threadsafe\_function()/napi\_release\_threadsafe\_function()/napi\_get\_threadsafe\_function\_context()/napi\_ref\_threadsafe\_function()/napi\_unref\_threadsafe\_function() -- napi的线程安全函数。
 
-2. napi\_get\_uv\_event\_loop -- 获取env上的loop，不涉及上述限制。
+2. napi\_get\_uv\_event\_loop() -- 获取env上的loop，不涉及上述限制。
 
-3. napi\_get\_node\_version。
+3. napi\_get\_node\_version()。
 
 **【使用错误影响】**
 
@@ -1773,13 +1773,13 @@ hdc shell reboot
 
 也可在DevEco Studio中勾选多线程检测选项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/2UW3mVKtQpWgKFIAv0k7ng/zh-cn_image_0000002194009784.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Ae8qLCaNQzqpZo_CbALMFw/zh-cn_image_0000002194009784.png "点击放大")
 
-5、【multi-thread】跨线程使用napi\_add\_env\_cleanup\_hook导致多线程安全问题
+5、【multi-thread】跨线程使用napi\_add\_env\_cleanup\_hook()导致多线程安全问题
 
 **【问题描述】**
 
-同理接口有napi\_remove\_env\_cleanup\_hook。此系列接口并非线程安全，只允许在napi\_env所对应的js线程上使用，多线程使用会存在多线程安全问题导致崩溃。
+同理接口有napi\_remove\_env\_cleanup\_hook()。此系列接口并非线程安全，只允许在napi\_env所对应的js线程上使用，多线程使用会存在多线程安全问题导致崩溃。
 
 **【使用错误影响】**
 
@@ -1787,7 +1787,7 @@ hdc shell reboot
 
 **【使用建议】**
 
-只允许在napi\_env对应的JS线程中调用napi\_add\_env\_cleanup\_hook和napi\_remove\_env\_cleanup\_hook，禁止跨线程调用。
+只允许在napi\_env对应的JS线程中调用napi\_add\_env\_cleanup\_hook()和napi\_remove\_env\_cleanup\_hook()，禁止跨线程调用。
 
 **【典型案例】**
 
@@ -1810,15 +1810,15 @@ Tid:9138, Name:OS_IPC_13_9138
 
 **【最佳实践】**
 
-开发过程中可打开多线程安全检测开关。若存在napi\_add\_env\_cleanup\_hook或napi\_remove\_env\_cleanup\_hook的多线程问题，hilog会打印第一现场的调用栈。
+开发过程中可打开多线程安全检测开关。若存在napi\_add\_env\_cleanup\_hook()或napi\_remove\_env\_cleanup\_hook()的多线程问题，hilog会打印第一现场的调用栈。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/0JByjr_kRhm6ErqgRz9Y_w/zh-cn_image_0000002229450085.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/iXGDES_bR-OzpJ5Dlkc2Vg/zh-cn_image_0000002229450085.png "点击放大")
 
-6、开发者使用napi\_add\_env\_cleanup\_hook时，键值重复导致注册失败
+6、开发者使用napi\_add\_env\_cleanup\_hook()时，键值重复导致注册失败
 
 **【问题描述】**
 
-同理接口有napi\_remove\_env\_cleanup\_hook。开发者使用napi\_add\_env\_cleanup\_hook向env上注册回调时，该接口第三个入参args是作为map的key值，当开发者重复注册同一个args的回调时，后续注册动作将会失败，仅第一次注册才会成功。注册失败可能会引起后续业务上的功能/崩溃问题。
+同理接口有napi\_remove\_env\_cleanup\_hook()。开发者使用napi\_add\_env\_cleanup\_hook()向env上注册回调时，该接口第三个入参args是作为map的key值，当开发者重复注册同一个args的回调时，后续注册动作将会失败，仅第一次注册才会成功。注册失败可能会引起后续业务上的功能/崩溃问题。
 
 **【使用错误影响】**
 
@@ -1830,19 +1830,19 @@ Tid:9138, Name:OS_IPC_13_9138
 
 **【典型案例】**
 
-使用env作为参数调用AddCleanHook注册可能会失败。如果注册失败，将无法调用回调来清理map中的reference。这可能导致env的指针后续被复用，从而获取到一个已经被释放的napi\_ref。
+使用env作为参数调用AddCleanHook()注册可能会失败。如果注册失败，将无法调用回调来清理map中的reference。这可能导致env的指针后续被复用，从而获取到一个已经被释放的napi\_ref。
 
 修改方案：使用唯一的key
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/CTBBrW_JSq-PGtgM09a5_w/zh-cn_image_0000002194009776.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/TBCy_baAQ4SrlLCDi9h80g/zh-cn_image_0000002194009776.png "点击放大")
 
 **【最佳实践】**
 
 打开多线程检测开关后，hilog会打印注册失败的backtrace。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/YHq_I9dLRyu47dwKIJB6aA/zh-cn_image_0000002229335637.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/AjPbsG2CSZWeWE-JKu5Yog/zh-cn_image_0000002229335637.png)
 
-7、【use after free】合理运用napi\_handle\_scope，避免超napi\_value生命周期导致崩溃
+7、【use after free】合理运用napi\_handle\_scope()，避免超napi\_value生命周期导致崩溃
 
 **【问题描述】**
 
@@ -1856,9 +1856,9 @@ napi\_value受scope管控，出scope后napi\_value将失效，出scope后再使�
 
 可选方案（任选其一）：
 
-1. 使用napi\_escapable\_handle\_scope，将napi\_value逃逸出当前作用域，交由上层作用域管理。
+1. 使用napi\_escapable\_handle\_scope()，将napi\_value逃逸出当前作用域，交由上层作用域管理。
 
-2. 使用napi\_ref创建强引用，主动管理JS对象的生命周期。注意，需要主动调用napi\_delete\_reference以释放强引用。
+2. 使用napi\_ref创建强引用，主动管理JS对象的生命周期。注意，需要主动调用napi\_delete\_reference()以释放强引用。
 
 **【典型案例】**
 
@@ -1883,7 +1883,7 @@ static napi_value Test2(napi_env env, napi_callback_info info) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/RI2p9JJSRj6cCX66Qhx15A/zh-cn_image_0000002193850244.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Tmd3xeV7Tp-r4KCdkKIlBQ/zh-cn_image_0000002193850244.png)
 
 创建时是对象（obj），但超出作用域后再次使用时，类型变为字符串（string），导致行为异常。
 
@@ -1904,17 +1904,17 @@ static napi_value Test3(napi_env env, napi_callback_info info) {
 static napi_value Test4(napi_env env, napi_callback_info info) { return objvalues; }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/nOiYLB4LTnCMT-OIT5frVg/zh-cn_image_0000002229335621.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/EdYFjO90Qp6nMQ2gq0JYJw/zh-cn_image_0000002229335621.png)
 
 **原因分析：**
 
 跨NAPI的native\_value未使用napi\_ref保存，超出NAPI调用框架的范围后，native\_value失效。
 
-注：NAPI框架中的scope即napi\_handle\_scope，开发者可以通过napi\_handle\_scope管理napi\_value的生命周期。框架层的scope嵌入在js调用native的整个流程中，在进入native方法前打开scope，在native方法结束后关闭scope。
+注：NAPI框架中的scope即napi\_handle\_scope()，开发者可以通过napi\_handle\_scope()管理napi\_value的生命周期。框架层的scope嵌入在js调用native的整个流程中，在进入native方法前打开scope，在native方法结束后关闭scope。
 
 **【最佳实践】**
 
-1. 针对案例1，使用napi\_escapable\_handle\_scope，并在close之前提前escape。
+1. 针对案例1，使用napi\_escapable\_handle\_scope()，并在close之前提前escape。
 
 ```cpp
 static napi_value Test2(napi_env env, napi_callback_info info) {
@@ -1940,7 +1940,7 @@ static napi_value Test2(napi_env env, napi_callback_info info) {
 
 以上代码，结果符合预期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/nsyygV12TNaz06tHwyN-tQ/zh-cn_image_0000002193850212.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/vyZb0X3fSve74pLcKoavrg/zh-cn_image_0000002193850212.png)
 
 2. 针对案例2，使用napi\_ref保存强引用。
 
@@ -1974,7 +1974,7 @@ static napi_value Test4(napi_env env, napi_callback_info info) {
 **【使用建议】**
 
 * 减少保存env指针的行为，直接使用napi框架层透传的env更为安全。
-* 若需保存env指针，可使用napi\_add\_env\_cleanup\_hook接口注册回调，在回调中处理env的退出。
+* 若需保存env指针，可使用napi\_add\_env\_cleanup\_hook()接口注册回调，在回调中处理env的退出。
 
 **【典型案例】**
 
@@ -1996,13 +1996,13 @@ Tid:3997, Name:PaEngineRunner1
 
 根据日志打印的env地址定位，发现env被释放后仍在使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/CYGzwMfVQzWIdrABo__fzw/zh-cn_image_0000002229450105.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/mJtIAdNBRIWlmyxPaMoC_w/zh-cn_image_0000002229450105.png)
 
-9、【use after free】开发者使用napi\_get\_reference\_value时，napi\_ref已被释放，导致UAF问题
+9、【use after free】开发者使用napi\_get\_reference\_value()时，napi\_ref已被释放，导致UAF问题
 
 **【问题描述】**
 
-开发者在napi\_ref已被释放的情况下使用napi\_get\_reference\_value，导致UAF问题。
+开发者在napi\_ref已被释放的情况下使用napi\_get\_reference\_value()，导致UAF问题。
 
 **【使用错误影响】**
 
@@ -2010,19 +2010,19 @@ Tid:3997, Name:PaEngineRunner1
 
 **【使用建议】**
 
-若创建的napi\_ref为强引用，开发者需要主动管理其生命周期，避免在调用napi\_delete\_reference后继续使用。
+若创建的napi\_ref为强引用，开发者需要主动管理其生命周期，避免在调用napi\_delete\_reference()后继续使用。
 
 **【典型案例】**
 
 napi\_ref被释放后使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/0ZzvGxQKQEOalwoK4X3C4g/zh-cn_image_0000002229450077.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/b0PylZ_qQzGNS1osCieuBQ/zh-cn_image_0000002229450077.png "点击放大")
 
-10、【buffer overflow】napi\_get\_value\_string\_utf8时，buffer长度不足导致越界问题
+10、【buffer overflow】napi\_get\_value\_string\_utf8()时，buffer长度不足导致越界问题
 
 **【问题描述】**
 
-开发者在napi同理，接口如napi\_get\_cb\_info和napi\_get\_string\_value\_xxx有一个共同特点：需要开发者传入缓冲区及其对应的长度。如果开发者传入的缓冲区大小超过实际的缓冲区大小，就会发生越界问题。\_ref已被释放的情况下使用napi\_get\_reference\_value，导致UAF问题。同理，接口如napi\_get\_cb\_info和napi\_get\_string\_value\_xxx有一个共同特点：需要开发者传入缓冲区及其对应的长度。如果开发者传入的缓冲区大小超过实际的缓冲区大小，就会发生越界问题。
+开发者在napi同理，接口如napi\_get\_cb\_info()和napi\_get\_string\_value\_xxx有一个共同特点：需要开发者传入缓冲区及其对应的长度。如果开发者传入的缓冲区大小超过实际的缓冲区大小，就会发生越界问题。\_ref已被释放的情况下使用napi\_get\_reference\_value()，导致UAF问题。同理，接口如napi\_get\_cb\_info()和napi\_get\_string\_value\_xxx有一个共同特点：需要开发者传入缓冲区及其对应的长度。如果开发者传入的缓冲区大小超过实际的缓冲区大小，就会发生越界问题。
 
 **【使用错误影响】**
 
@@ -2047,7 +2047,7 @@ static napi_value Test5(napi_env env, napi_callback_info info) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/DWmQxamxQkip-EhwWmnWCA/zh-cn_image_0000002193850216.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/rwxfFw4SQ8eK2MZgEyGfjw/zh-cn_image_0000002193850216.png)
 
 ## 示例代码
 

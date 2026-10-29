@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-camera-sho
 title: 相机分段式拍照性能优化
 breadcrumb: 最佳实践 > 媒体 > 相机 > 相机分段式拍照性能优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:37+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:8d6b295faac90fa6f62b5c082c4eb7b05d15d0ccfcac5e63f66735ab3d4d4450
+scraped_at: 2026-10-29T08:03:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:7ab64637751410182759896063fc0e9b5195b8dbe0199561f286f5d82c4075d5
 ---
 
 ## 概述
 
-相机拍照性能依赖算法处理的速度，而处理效果依赖算法的复杂度，算法复杂度越高的情况下会导致处理时间越长。目前系统相机开发有两种相机拍照方案，分别是[相机分段式拍照](../harmonyos-guides/camera-deferred-capture.md)和[相机单段式拍照](../harmonyos-guides/camera-shooting.md)：
+相机拍照性能依赖算法处理的速度，而处理效果依赖算法的复杂度，算法复杂度越高的情况下会导致处理时间越长。目前系统相机开发有两种相机拍照方案，分别是相机[分段式拍照(ArkTS)](../harmonyos-guides/camera-deferred-capture.md)和相机单段式[拍照(ArkTS)](../harmonyos-guides/camera-shooting.md)：
 
 * **分段式拍照**是系统相机开发的重要功能之一，即相机拍照可输出低质量图用作缩略图，提升用户感知拍照速度，同时使用高质量图保证最后的成图质量达到系统相机的水平，既满足了图像处理算法的需求，又不会阻塞前台的拍照速度，构筑相机性能竞争力，提升了用户的体验。
 
@@ -19,17 +19,17 @@ content_hash: sha256:8d6b295faac90fa6f62b5c082c4eb7b05d15d0ccfcac5e63f66735ab3d4
 分段式与单段式拍照的全质量图输出质量一致，但输出低质量图场景下单段式更优。如果开发者不需要获取全质量图并且也不考虑Shot2See的完成时延，建议使用单段式拍照，否则的话，建议使用分段式拍照。本篇文章主要以相机Shot2See场景为例，来展示分段式拍照Shot2See的完成时延要低于单段式拍照。
 
 **图1** **分段式拍照流程示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/3KGwdP1ATdmuX_MFtX-gyA/zh-cn_image_0000002229450197.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Kf9dKj3FS0ac9hnV618bvA/zh-cn_image_0000002229450197.png "点击放大")
 
 ## 效果展示
 
 **图2** **单段式拍照效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/oV0S2ZH2RtuvQNyO_v2KgQ/zh-cn_image_0000002193850332.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/QQ8rz-_nQeqJVRBZAVo32g/zh-cn_image_0000002193850332.gif "点击放大")
 
 **图3** **分段式拍照效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/Wi2TbTKVQQeKo1b9v5bnrA/zh-cn_image_0000002229450193.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/cUubmLmpTseUrgSWKLfqrQ/zh-cn_image_0000002229450193.gif "点击放大")
 
 从上述效果图中可以看出，分段式拍照从用户点击拍照控件到在缩略图显示区域显示缩略图的耗时比单段式拍照要短。
 
@@ -41,10 +41,10 @@ content_hash: sha256:8d6b295faac90fa6f62b5c082c4eb7b05d15d0ccfcac5e63f66735ab3d4
 
 **图4** **单段式拍照性能数据图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/lQd7l82xRfKtO1TE4MiAbA/zh-cn_image_0000002229450189.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/4nCfDDDTRBmKWnzjF05z3g/zh-cn_image_0000002229450189.png "点击放大")
 
 **图5** **分段式拍照耗时数据****图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/mEAyh0KBSeecT9GPlUTiXw/zh-cn_image_0000002229450205.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/cSaAIQSbSi65c-BKjBMgSg/zh-cn_image_0000002229450205.png "点击放大")
 
 **性能对比分析表**
 
@@ -61,9 +61,9 @@ content_hash: sha256:8d6b295faac90fa6f62b5c082c4eb7b05d15d0ccfcac5e63f66735ab3d4
 
 **单段式拍照：**
 
-单段式拍照使用了[on(type: 'photoAvailable', callback: AsyncCallback<Photo>): void](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoavailable11)接口注册了高质量图的监听，默认不使能分段式拍照。具体操作步骤如下所示：
+单段式拍照使用了[on('photoAvailable')](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoavailable11)接口注册了高质量图的监听，默认不使能分段式拍照。具体操作步骤如下所示：
 
-1.相机媒体数据写入[XComponent组件](../harmonyos-references/ts-basic-components-xcomponent.md)中，用来显示图像效果。具体代码如下所示：
+1.相机媒体数据写入[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)组件中，用来显示图像效果。具体代码如下所示：
 
 ```typescript
 XComponent({
@@ -91,19 +91,19 @@ XComponent({
   .margin({ top: 75, bottom: 72 })
 ```
 
-2.initCamera函数完成一个相机生命周期初始化的过程。
+2.initCamera()方法完成一个相机生命周期初始化的过程。
 
-(1) [getCameraManager()](../harmonyos-references/arkts-apis-camera-f.md#cameragetcameramanager)获取CameraMananger相机管理器类。
+(1) [camera.getCameraManager()](../harmonyos-references/arkts-apis-camera-f.md#cameragetcameramanager)方法获取CameraMananger相机管理器类。
 
-(2) [getSupportedCameras()](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedcameras) 和[getSupportedOutputCapability()](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedoutputcapability11)方法获取支持的camera设备以及设备能力集。
+(2) [getSupportedCameras()](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedcameras)方法和[getSupportedOutputCapability()](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedoutputcapability11)方法获取支持的camera设备以及设备能力集。
 
-(3) [createPreviewOutput()](../harmonyos-references/arkts-apis-camera-cameramanager.md#createpreviewoutput12)和[createPhotoOutput()](../harmonyos-references/arkts-apis-camera-cameramanager.md#createphotooutput11)方法创建预览输出和拍照输出对象。
+(3) [createPreviewOutput()](../harmonyos-references/arkts-apis-camera-cameramanager.md#createpreviewoutput12)方法和[createPhotoOutput()](../harmonyos-references/arkts-apis-camera-cameramanager.md#createphotooutput11)方法创建预览输出和拍照输出对象。
 
 (4) CameraInput的open()方法打开相机输入。
 
-(5) onCameraStatusChange()函数创建CameraManager注册回调。
+(5) onCameraStatusChange()方法创建CameraManager注册回调。
 
-(6) 最后调用sessionFlowFn()函数创建并开启Session。具体代码如下所示：
+(6) 最后调用sessionFlowFn()方法创建并开启Session。具体代码如下所示：
 
 ```typescript
 /**
@@ -211,7 +211,7 @@ createPhotoOutputFn(cameraManager: camera.CameraManager,
 }
 ```
 
-4.触发拍照。通过photoOutput类的[capture()](../harmonyos-references/arkts-apis-camera-photooutput.md#capture)方法，执行拍照任务。该方法有两个参数，分别为拍照设置参数的setting以及回调函数，setting中可以设置照片的质量和旋转角度。具体代码如下所示：
+4.触发拍照。通过photoOutput类的[capture()](../harmonyos-references/arkts-apis-camera-photooutput.md#capture)方法，执行拍照任务。该方法有两个参数，分别为拍照设置参数的setting以及回调接口，setting中可以设置照片的质量和旋转角度。具体代码如下所示：
 
 ```typescript
 /**
@@ -234,7 +234,7 @@ async takePicture(): Promise<void> {
 }
 ```
 
-5.设置拍照photoAvailable()的回调来获取Photo对象，点击拍照按钮，触发此回调函数，调用getComponent()方法根据图像的组件类型从图像中获取组件缓存ArrayBuffer，使用createImageSource()方法来创建图片源实例，最后通过createPixelMap()获取PixelMap对象。注意:如果已经注册了photoAssetAvailable()回调，并且在Session开始之后又注册了photoAvailable()回调，会导致流被重启。不建议开发者同时注册photoAvailable()和photoAssetAvailable()。
+5.设置拍照photoAvailable()回调接口来获取Photo对象，点击拍照按钮，触发此回调接口，调用getComponent()方法根据图像的组件类型从图像中获取组件缓存ArrayBuffer，使用createImageSource()方法来创建图片源实例，最后通过createPixelMap()方法获取PixelMap对象。注意:如果已经注册了[on('photoAssetAvailable')](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoassetavailable12)回调接口，并且在Session开始之后又注册了on('photoAvailable')回调接口，会导致流被重启。不建议开发者同时注册这两个接口。
 
 ```typescript
 photoOutput.on('photoAvailable', (err: BusinessError, photo: camera.Photo) => {
@@ -264,7 +264,7 @@ photoOutput.on('photoAvailable', (err: BusinessError, photo: camera.Photo) => {
 })
 ```
 
-以上代码中执行handleImageInfo()函数来对PixelMap进行全局存储并跳转到预览页面。具体代码如下所示：
+以上代码中执行handleImageInfo()方法来对PixelMap进行全局存储并跳转到预览页面。具体代码如下所示：
 
 ```typescript
 handleSavePicture = (photoAsset: photoAccessHelper.PhotoAsset | image.PixelMap): void => {
@@ -284,11 +284,11 @@ setImageInfo(photoAsset: photoAccessHelper.PhotoAsset | image.PixelMap): void {
 
 **分段式拍照：**
 
-分段式拍照是应用下发拍照任务后，系统将分多阶段上报不同质量的图片。在一阶段，系统快速上报低质量图，应用通过[on(type: 'photoAssetAvailable', callback: AsyncCallback<photoAccessHelper.PhotoAsset>): void](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoassetavailable12)接口会收到一个PhotoAsset对象，通过该对象可调用媒体库接口，读取图片或落盘图片。在二阶段，分段式子服务会根据系统压力以及定制化场景进行调度，将后处理好的原图回传给媒体库，替换低质量图。具体操作步骤如下所示：
+分段式拍照是应用下发拍照任务后，系统将分多阶段上报不同质量的图片。在一阶段，系统快速上报低质量图，应用通过[on('photoAssetAvailable')](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoassetavailable12)接口会收到一个PhotoAsset对象，通过该对象可调用媒体库接口，读取图片或落盘图片。在二阶段，分段式子服务会根据系统压力以及定制化场景进行调度，将后处理好的原图回传给媒体库，替换低质量图。具体操作步骤如下所示：
 
 由于分段式拍照和单段式拍照步骤1-步骤4相同，就不再进行赘述。
 
-5.设置拍照photoAssetAvailable()的回调来获取photoAsset，点击拍照按钮，触发此回调函数，然后执行handlePhotoAssetCb()函数来完成photoAsset全局的存储并跳转到预览页面。
+5.设置拍照on('photoAssetAvailable')回调接口来获取photoAsset，点击拍照按钮，触发此回调接口，然后执行handlePhotoAssetCb()方法来完成photoAsset全局的存储并跳转到预览页面。
 
 ```typescript
 photoOutput.on('photoAssetAvailable', (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
@@ -301,7 +301,7 @@ photoOutput.on('photoAssetAvailable', (err: BusinessError, photoAsset: photoAcce
 });
 ```
 
-6.进入预览界面通过GlobalContext.get().getT<image.PixelMap>('imageInfo')方法获取PhotoAsset信息，执行requestImage函数中的photoAccessHelper.MediaAssetManager.requestImageData()方法根据不同的策略模式，请求图片资源数据，这里的请求策略为均衡模式BALANCE\_MODE， 最后分段式子服务会根据系统压力以及定制化场景进行调度，将后处理好的原图回传给媒体库来替换低质量图。具体代码如下所示：
+6.进入预览界面通过GlobalContext.get().getT<image.PixelMap>('imageInfo')方法获取PhotoAsset信息，执行requestImage()方法中的photoAccessHelper.MediaAssetManager.requestImageData()方法根据不同的策略模式，请求图片资源数据，这里的请求策略为均衡模式BALANCE\_MODE， 最后分段式子服务会根据系统压力以及定制化场景进行调度，将后处理好的原图回传给媒体库来替换低质量图。具体代码如下所示：
 
 ```screen
 photoBufferCallback: (arrayBuffer: ArrayBuffer) => void = (arrayBuffer: ArrayBuffer) => {

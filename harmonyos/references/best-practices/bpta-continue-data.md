@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue-data
 title: 应用接续数据迁移
-breadcrumb: 最佳实践 > 自由流转 > 跨端迁移 > 应用接续数据迁移
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 跨端迁移 > 应用接续数据迁移
 category: best-practices
-scraped_at: 2026-10-16T07:06:42+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:fd7235d5de166eb28169d91ddb4d93ad0ab1ac81ff3b68a78a2e0413f828c748
+scraped_at: 2026-10-29T08:03:12+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:01ede3229128c368d63e8af575add367991df7e3b02757362181c7bee93ece75
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ content_hash: sha256:fd7235d5de166eb28169d91ddb4d93ad0ab1ac81ff3b68a78a2e0413f82
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/pmP95TXnQImrC65K0xmV4Q/zh-cn_image_0000002563683642.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/D5UX_AiWSeqZDeaoQeKQ3g/zh-cn_image_0000002563683642.png "点击放大")
 
 实现原理见[运作机制](bpta-continue-cast.md#section1218874218264)。
 
@@ -27,7 +27,7 @@ content_hash: sha256:fd7235d5de166eb28169d91ddb4d93ad0ab1ac81ff3b68a78a2e0413f82
 
 接入应用接续需要[启用应用接续能力](bpta-continue-cast.md#section15192222815)、[配置应用启动模式类型](bpta-continue-cast.md#section10604645308)、[源端保存迁移数据](bpta-continue-cast.md#section634613594303)和[对端恢复数据](bpta-continue-cast.md#section12346113618453)，具体开发流程见[应用接续概述](bpta-continue-cast.md)，本文只关注在不同场景下迁移数据方案的选择。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/56bH61SBREG6q25TmAY2-Q/zh-cn_image_0000002594323411.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/SyjgWUVJRt6dcRhg6uCvpA/zh-cn_image_0000002594323411.png)
 
 ## 使用want.param数据迁移
 

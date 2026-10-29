@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: FIDO免密认证
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 免密认证 > FIDO免密认证
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:09+08:00
+scraped_at: 2026-10-29T07:56:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:044b6233a30565f5797ccb3853f899738b7ae50d48edabacc33809c7f1203b26
+content_hash: sha256:2d110275111f4a8d9afe6a4009facff24aaf49ca73124f61f28f0b26523e7d21
 ---
 
 ## 场景介绍
@@ -40,7 +40,7 @@ content_hash: sha256:044b6233a30565f5797ccb3853f899738b7ae50d48edabacc33809c7f12
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/7ee8XlR9RyePmTMCxJ-Cbg/zh-cn_image_0000002771825852.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/7wqAwRqXRaSTCbQA5F0WtA/zh-cn_image_0000002803224391.png)
 
 **注册流程说明：**
 

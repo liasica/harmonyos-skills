@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 基础构建能力
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 扩展构建能力 > 扩展构建API > 基础构建能力
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:24+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:351f2cdc73ea93a7b892f20b02006ff6b17bfb1e4d0069b784263f537e224c6a
+scraped_at: 2026-10-29T07:58:50+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:e64bf81fc142e196293b9892de3b09550394fc2add3bee6f27a6a1e322318825
 ---
 
 ## Hvigor预置对象
@@ -1411,7 +1411,7 @@ hello
 
 ### getStartParams
 
-getStartParams(): StartParam
+getStartParams(): StartParams
 
 获取hvigor启动参数：例如daemon开关，并行功能开关，增量功能开关，日志级别等。
 
@@ -2773,7 +2773,7 @@ files(paths: string[]): TaskInput
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| paths | string | 是 | 目录或文件路径列表 |
+| paths | string[] | 是 | 目录或文件路径列表 |
 
 **返回值：**
 
@@ -3542,7 +3542,7 @@ asFileList: () => NormalizedFile[]
 | --- | --- |
 | [NormalizedFile](ide-hmos-hvigor-api.md#section281448112713)[] | NormalizedFile对象下深层递归的目录与文件NormalizedFile[]，包含它本身 |
 
-当前只能通过node节点的node.nodeDir或者node.node.getNodeDir() 获取该node节点的根路径的NormalizedFile对象，再通过NormalizedFile.file(\_path: string)方法拼接后续路径来获取到新的NormalizedFile对象，工程级hvigorfile.ts示例：
+当前只能通过node节点的node.nodeDir或者node.getNodeDir() 获取该node节点的根路径的NormalizedFile对象，再通过NormalizedFile.file(\_path: string)方法拼接后续路径来获取到新的NormalizedFile对象，工程级hvigorfile.ts示例：
 
 ```ts
 import { appTasks } from '@ohos/hvigor-ohos-plugin';
@@ -3561,7 +3561,7 @@ function appTask(currentNode: HvigorNode) {
   // 工程级的node
   currentNode.subNodes((node: HvigorNode) => {
     // 模块级的node 
-    // 通过node.nodeDir 或者 node.node.getNodeDir() 获取该node节点的根路径的NormalizedFile文件
+    // 通过node.nodeDir 或者 node.getNodeDir() 获取该node节点的根路径的NormalizedFile文件
     const moduleNormalizedFile = node.nodeDir;
     // 通过NormalizedFile.file() 拼接后续路径，生成新的NormalizedFile对象
     // 生成模块下面build-Profile.json5的NormalizedFile对象

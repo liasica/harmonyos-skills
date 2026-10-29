@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-sett
 title: 多设备设置界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备设置界面
 category: best-practices
-scraped_at: 2026-10-16T07:06:40+08:00
-doc_updated_at: 2026-05-22
-content_hash: sha256:39486f04044d30bb2bf606170ace1576c7e4789d7b010661f42a9affe2f046b6
+scraped_at: 2026-10-29T08:03:18+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:077f7855c2f15d0045e417f27e2a8751da1613757ae8e58ebaad4d80050a4e01
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:39486f04044d30bb2bf606170ace1576c7e4789d7b010661f42a9affe2f
 
 设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/rgJ-Zw3zQOSa3ycIdS9r_g/zh-cn_image_0000002579408634.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/WzAJZAJ7SUqQnGQsxYqVpA/zh-cn_image_0000002579408634.png "点击放大")
 
 ## 工程管理
 
@@ -40,7 +40,7 @@ content_hash: sha256:39486f04044d30bb2bf606170ace1576c7e4789d7b010661f42a9affe2f
 
 ### 工程结构
 
-应用采用推荐的分层架构，将代码工程按products、features、common三个层级组织代码工程。各层级设计如下：
+应用采用推荐的分层架构，代码工程按 products、features、common 三个层级组织。各层级设计如下：
 
 * products层：应用需适配的设备包括直板机、双折叠（Mate X系列）、三折叠、阔折叠、平板及电脑。由于电脑界面布局与其他设备差异较大，因此单独创建名为“pc”的包作为电脑设备的应用入口；直板机、双折叠（Mate X系列）、三折叠、阔折叠及平板设备的界面布局整体相似，部分差异可通过“一多”[自适应布局](bpta-multi-device-adaptive-layout.md)和[响应式布局](bpta-multi-device-responsive-layout.md)适配，为此创建名为“default”的包作为这些设备的应用入口。
 * features层：包含一个核心业务模块——网络连接（multisettinglink）。模块对应创建HAR包，供products层按需引用。
@@ -98,7 +98,7 @@ content_hash: sha256:39486f04044d30bb2bf606170ace1576c7e4789d7b010661f42a9affe2f
   通过[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)，将[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)的orientation属性设置为跟随桌面的旋转模式（follow\_desktop）。
 * 窗口沉浸式
 
-  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者使用组件级沉浸方案（组件设置页面沉浸）[实现沉浸式效果](bpta-multi-device-window-immersive.md#section180431120426)，同时需进行动态安全区避让，确保沉浸式显示效果。自由窗口模式下，使用[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使应用页面延伸至标题栏区域，实现沉浸式显示效果。
+  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者使用组件级沉浸方案（组件设置页面沉浸）[实现沉浸式效果](bpta-multi-device-window-immersive.md#section180431120426)，同时需进行动态安全区避让，确保沉浸式显示效果。自由窗口模式下，使用[setWindowDecorVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)()隐藏标题栏，仅保留右上角三键，使应用页面延伸至标题栏区域，实现沉浸式显示效果。
 
 ### 导航与详情页
 
@@ -114,16 +114,16 @@ content_hash: sha256:39486f04044d30bb2bf606170ace1576c7e4789d7b010661f42a9affe2f
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 导航页标题栏 | 使用[HdsNavigation](../harmonyos-references/ui-design-hdsnavigation.md)实现，通过[titleMode](../harmonyos-references/ui-design-hdsnavigation.md#titlemode)属性设置为小标题模式，并设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)实现模糊样式及沉浸光感样式。 |
+| 1 | 导航页标题栏 | 使用[HdsNavigation (导航根视图容器)](../harmonyos-references/ui-design-hdsnavigation.md)实现，通过[titleMode](../harmonyos-references/ui-design-hdsnavigation.md#titlemode)属性设置为小标题模式，并设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)实现模糊样式及沉浸光感样式。 |
 | 2 | 搜索栏 | 使用[Search](../harmonyos-references/ts-basic-components-search.md)组件实现，支持文本输入功能。 |
 | 3 | 导航按钮列表 | 列表基于[List](../harmonyos-references/ts-container-list.md)组件实现，自定义单个按钮组件，支持传入不同参数展示不同样式，并通过系统路由表实现点击跳转至对应目标页。 |
-| 4 | 内容页标题栏 | 使用[HdsNavDestination](../harmonyos-references/ui-design-hdsnavdestination.md)实现，通过[titleMode](../harmonyos-references/ui-design-hdsnavigation.md#titlemode)属性设置为小标题模式，并设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)实现模糊样式、沉浸光感样式及标题栏按钮。 |
+| 4 | 内容页标题栏 | 使用[HdsNavDestination (导航子页面容器)](../harmonyos-references/ui-design-hdsnavdestination.md)实现，通过[titleMode](../harmonyos-references/ui-design-hdsnavigation.md#titlemode)属性设置为小标题模式，并设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)实现模糊样式、沉浸光感样式及标题栏按钮。 |
 | 5 | WLAN页设置按钮列表 | 列表基于[List](../harmonyos-references/ts-container-list.md)组件实现，自定义单个按钮组件，支持传入不同参数展示不同样式，开关按钮使用[Toggle](../harmonyos-references/ts-basic-components-toggle.md)实现。 |
 | 6 | WLAN列表 | 列表基于[List](../harmonyos-references/ts-container-list.md)组件实现，自定义WLAN组件显示WLAN信息及图标。 |
 
 **路由跳转**
 
-通过[HdsNavigation](../harmonyos-references/ui-design-hdsnavigation.md)组件、[NavPathStack](../harmonyos-references/ts-basic-components-navigation.md#navpathstack10)对象、[HdsNavDestination](../harmonyos-references/ui-design-hdsnavdestination.md)组件及系统路由表实现页面路由跳转。
+通过[HdsNavigation (导航根视图容器)](../harmonyos-references/ui-design-hdsnavigation.md)、[NavPathStack](../harmonyos-references/ts-basic-components-navigation.md#navpathstack10)对象、[HdsNavDestination (导航子页面容器)](../harmonyos-references/ui-design-hdsnavdestination.md)及系统路由表实现页面路由跳转。
 
 * HdsNavigation组件用于展示导航按钮列表，按钮通过点击事件调用NavPathStack对象的[pushPathByName](../harmonyos-references/ts-basic-components-navigation.md#pushpathbyname10)方法跳转至指定页面。
 * HdsNavDestination组件用于构建HdsNavigation组件的子页面，组件中需声明@Builder对外实例化方法，用于注册系统路由表。
@@ -139,7 +139,7 @@ content_hash: sha256:39486f04044d30bb2bf606170ace1576c7e4789d7b010661f42a9affe2f
 
 设置应用导航与详情页主要展示列表按钮及对应详情页，点击导航按钮实现详情页跳转。根据功能设计，应用首页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/xA2N2n3hTVSCTa3sA8jKqw/zh-cn_image_0000002579408636.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/nU6JbI6hTRORRrhG-8X0qw/zh-cn_image_0000002579408636.png "点击放大")
 
 **界面开发**
 
@@ -147,7 +147,7 @@ content_hash: sha256:39486f04044d30bb2bf606170ace1576c7e4789d7b010661f42a9affe2f
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 导航页标题栏 | 使用[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，并通过自定义组件实现标题功能。 |
+| 1 | 导航页标题栏 | 使用[setWindowDecorVisible](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)()隐藏标题栏，并通过自定义组件实现标题功能。 |
 | 2 | 搜索栏 | 复用移动端导航与详情页对应区域的布局实现方案。 |
 | 3 | 导航按钮列表 |
 | 4 | 内容页标题栏 |

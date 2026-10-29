@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅崩溃事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 崩溃事件 > 订阅崩溃事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:11+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:44aa03fc55722a0c3434af64e8a7056343c535255217747e7cb57194ce3362cf
+scraped_at: 2026-10-29T07:57:10+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:eb6c1a99347e06507f1d1b9c366270cfb4c5d954dcfffab9189cf6c5d3b58de9
 ---
 
 ## 简介
@@ -58,9 +58,6 @@ content_hash: sha256:44aa03fc55722a0c3434af64e8a7056343c535255217747e7cb57194ce3
 3. 在"CMakeLists.txt"文件中，添加源文件和动态库。
 
    ```cmake
-   add_library(entry SHARED napi_init.cpp)
-   # 新增动态库依赖libhiappevent_ndk.z.so和libhilog_ndk.z.so(日志输出)
-   target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libhiappevent_ndk.z.so)
    set(GZ_FILE "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/jsoncpp/src/jsoncpp-1.9.6.tar.gz")
    set(DEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../build")
    # 检查是否存在entry/build目录
@@ -69,6 +66,9 @@ content_hash: sha256:44aa03fc55722a0c3434af64e8a7056343c535255217747e7cb57194ce3
    execute_process(COMMAND tar -xzf ${GZ_FILE} -C ${DEST_DIR}
        WORKING_DIRECTORY ${DEST_DIR})
 
+   add_library(entry SHARED napi_init.cpp)
+   # 新增动态库依赖libhiappevent_ndk.z.so和libhilog_ndk.z.so(日志输出)
+   target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libhiappevent_ndk.z.so)
    # 新增三方库依赖libjsoncpp.so(解析订阅事件中的json字符串)
    target_link_libraries(entry PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/jsoncpp/${OHOS_ARCH}/lib/libjsoncpp.so)
    target_include_directories(entry PRIVATE ${DEST_DIR}/jsoncpp-1.9.6/include/json)

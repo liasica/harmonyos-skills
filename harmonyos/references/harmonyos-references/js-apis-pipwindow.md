@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.PiPWindow (画中画窗口)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.PiPWindow (画中画窗口)
 category: harmonyos-references
-scraped_at: 2026-10-15T07:07:44+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:906f0202f01574bdd30321a5d7ba097ee894eeba53bf4571d57a8ee294ca6c10
+scraped_at: 2026-10-29T07:59:28+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:e5da1e73b8c1076b29ce98278252e95270144b4c81d67e90a957d2ad0b8ef36c
 ---
 
 该模块提供画中画基础功能，包括判断当前设备是否支持画中画功能，以及创建画中画控制器用于启动或停止画中画等。支持用户在进行其他操作时以小窗形式继续观看视频内容，提升多任务处理效率。适用于视频播放、视频通话或视频会议场景。
@@ -35,12 +35,12 @@ isPiPEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 当前系统是否支持画中画功能。true表示支持，false则表示不支持。 |
+| boolean | 当前设备是否支持画中画功能。true表示支持，false则表示不支持。 |
 
 **示例：**
 
 ```ts
-let enable: boolean = PiPWindow.isPiPEnabled(); // 获取当前系统是否支持画中画功能
+let enable: boolean = PiPWindow.isPiPEnabled(); // 获取当前设备是否支持画中画功能
 console.info('isPiPEnabled:' + enable);
 ```
 

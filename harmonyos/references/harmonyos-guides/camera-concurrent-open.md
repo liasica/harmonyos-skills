@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-concur
 title: 多摄同开(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 多摄同开(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:09+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:625488c42e0f39c93aa931794f204581994d261ab7c4bd324a6238c32b4940ed
+scraped_at: 2026-10-29T07:57:20+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c8144256a21c5bf0208fa991d22ad6b4c30429966d4448fcc21efd43f16206a9
 ---
 
 从API version 18开始支持多摄同开，即应用同时开启前置/后置相机进行预览和录像（前置/后置相机同时拍照功能待开放）。
@@ -47,7 +47,7 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
 
      // 如果相机数量少于2，说明只存在单侧相机，返回。
      if (cameras.length < 2) {
-      return;
+       return;
      }
 
      // 获取逻辑后置和逻辑前置。
@@ -77,7 +77,7 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
      let concurrentInfo: Array<camera.CameraConcurrentInfo> = cameraManager.getCameraConcurrentInfos(deviceArray);
 
      if (concurrentInfo.length === 0) {
-      return;
+       return;
      }
 
      // 用并发能力集替换原始能力集。
@@ -139,7 +139,7 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
      // 查询对应photoProfile是否存在，对应的photoProfile必须在getCameraConcurrentInfos获取到的并发能力信息数组范围内。
      let photoProfiles = cameraOutputCapability.photoProfiles;
      if (photoProfiles.length < 1) {
-      return;
+       return;
      }
      let index = photoProfiles.findIndex((photoProfile: camera.Profile) => {
        return photoProfile.size.width === photoProfileObj.size.width &&
@@ -452,7 +452,7 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
       let isExposureSupported = session?.isExposureModeSupported(ExposureMode);
 
       // 设置曝光模式。
-      if (hasFlash) {
+      if (isExposureSupported) {
         session?.setExposureMode(ExposureMode);
       }
     }

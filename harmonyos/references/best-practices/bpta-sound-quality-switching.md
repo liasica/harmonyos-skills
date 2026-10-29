@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-sound-qual
 title: 音质切换开发实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音质切换开发实践
 category: best-practices
-scraped_at: 2026-10-16T07:06:37+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:1f3632cfcf475bb5d0cbccf8dec5d2e30b9368e13e56bc30e40d8b86470d69b9
+scraped_at: 2026-10-29T08:03:16+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:6f0e7d99342104635c7933827de497101400efcdd2213056c31b6b93280ff28d
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:1f3632cfcf475bb5d0cbccf8dec5d2e30b9368e13e56bc30e40d8b86470
 | 无损压缩 | FLAC/APE | AVPlayer | 可还原原始数据 |
 | 有损压缩 | MP3/AAC | AVPlayer | 体积小、音质损失 |
 
-音质可以在未压缩、无损压缩和有损压缩之间切换，根据上述播放能力支持范围可以看出，音质切换的本质为[AudioRenderer](../harmonyos-references/arkts-apis-audio-audiorenderer.md)与[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)的播放切换，以及AVPlayer与AVPlayer的播放切换（即使用AVPlayer在不同音频格式间的播放切换）。
+音质可以在未压缩、无损压缩和有损压缩之间切换，根据上述播放能力支持范围可以看出，音质切换的本质为AudioRenderer（参考[Interface (AudioRenderer)](../harmonyos-references/arkts-apis-audio-audiorenderer.md)）与AVPlayer（参考[Interface (AVPlayer)](../doccenter-references/api/arkts-apis-media-avplayer.md)）的播放切换，以及AVPlayer与AVPlayer的播放切换（即使用AVPlayer在不同音频格式间的播放切换）。
 
 本文将介绍以下两种音质切换场景的实现：
 
@@ -31,7 +31,7 @@ content_hash: sha256:1f3632cfcf475bb5d0cbccf8dec5d2e30b9368e13e56bc30e40d8b86470
 
 本场景以同一音频文件的PCM格式与MP3格式之间进行切换播放为例，切换后保持音频播放进度一致，即无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/x7aqubapSjygT556CYZnCA/zh-cn_image_0000002490682592.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/jm3ToT3uSjuOQRCM_PQGmA/zh-cn_image_0000002490682592.gif "点击放大")
 
 ### 实现原理
 
@@ -327,7 +327,7 @@ content_hash: sha256:1f3632cfcf475bb5d0cbccf8dec5d2e30b9368e13e56bc30e40d8b86470
 
 本场景以同一音频文件的FLAC格式与MP3格式之间进行切换播放为例，切换后保持音频播放进度一致，即无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/-QWKF37BQC-XywD64OnZuQ/zh-cn_image_0000002522762335.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/JZHJePZMRdKO2b3aF2uf7A/zh-cn_image_0000002522762335.gif "点击放大")
 
 ### 实现原理
 

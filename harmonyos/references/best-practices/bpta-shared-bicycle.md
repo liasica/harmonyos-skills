@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-shared-bic
 title: 快捷骑行体验
 breadcrumb: 最佳实践 > 行业场景解决方案 > 出行导航 > 快捷骑行体验
 category: best-practices
-scraped_at: 2026-10-16T07:06:44+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:db7d0fcdcf6625855b1b7febcdd88c16519f85a02520ee60c8c04231017a543b
+scraped_at: 2026-10-29T08:03:20+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:af6fd974b07788405517f27d1617cd37c042c26c0a222380978825e898ceb253
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:db7d0fcdcf6625855b1b7febcdd88c16519f85a02520ee60c8c04231017
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/S9hLP1giQV-T18_xGCLqPg/zh-cn_image_0000002229450033.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ZfJNkQj7RDSWMjF22OULLQ/zh-cn_image_0000002229450033.gif)
 
 ## 场景说明
 
@@ -53,15 +53,15 @@ content_hash: sha256:db7d0fcdcf6625855b1b7febcdd88c16519f85a02520ee60c8c04231017
 
 左图展示了当前骑行场景的流程，右图展示了优化后的流程。优化后，省去了在应用间切换和寻找功能入口的步骤，简化了用户操作，提升了用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/DpEAhy64TuuUIBFMUZgBgw/zh-cn_image_0000002193850172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/0fzj-aoNQOG5jMDHDjMOTw/zh-cn_image_0000002193850172.png)
 
 ### 骑行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/O04C4EVfSJeR5bmgLkGpew/zh-cn_image_0000002194009740.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/nHPD8PFaQ_qlUbTTzaM9cw/zh-cn_image_0000002194009740.png)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/SQx41m-eTyWM1_4ZHOVwag/zh-cn_image_0000002193850156.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/AeiImkDnRIeojgYsge5pFg/zh-cn_image_0000002193850156.png "点击放大")
 
 ## 扫码解锁
 
@@ -69,13 +69,13 @@ content_hash: sha256:db7d0fcdcf6625855b1b7febcdd88c16519f85a02520ee60c8c04231017
 
 在首页或者共享单车页面，点击扫码进入扫码界面，可以使用后置摄像头进行扫码，也可以点击图库选择二维码图片进行扫码。“扫码直达”相关的使用请参见[接入“扫码直达”服务](../harmonyos-guides/scan-directservice.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/JPftUVeBRf-RX1-IsW2lGQ/zh-cn_image_0000002229335549.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/FaoPYQD5QgmvEPB6MJLlew/zh-cn_image_0000002229335549.gif)
 
 ### 时序图
 
 主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/64Q-quWURcOwNIl9VK4O2Q/zh-cn_image_0000002193850148.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/x7s2kSuaR4C1bzlvK4PXjw/zh-cn_image_0000002193850148.png "点击放大")
 
 ### 关键点说明
 
@@ -140,11 +140,11 @@ export class ScanUtil {
 
 进入找车页面后，可以点击任意位置模拟自行车的所在地，地图将进行步行路线规划并增加标记点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/eKnLK_RtQEubQLdLXg_3jw/zh-cn_image_0000002193850168.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/cv5vX3tlRhu38OoN1FSMwA/zh-cn_image_0000002193850168.gif)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/YBMfD8VBRWOpaS3ZU8DLWw/zh-cn_image_0000002194009744.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/81876ieyTFip1vrp8vbvyw/zh-cn_image_0000002194009744.png "点击放大")
 
 ### 关键点说明
 
@@ -164,10 +164,10 @@ import { MapComponent, mapCommon, map } from '@kit.MapKit';
 
 2、集成地图组件，初始化地图页面
 
-```typescript
+```screen
 aboutToAppear(): void {
   // initialize map
-  this.callback = async (err, mapController) => {
+  this.callback = async (err, mapController): Promise<void> => {
     let hasPermissions = false;
     if (!err) {
       this.mapController = mapController;
@@ -184,7 +184,12 @@ aboutToAppear(): void {
           };
           let locationChange = async (): Promise<void> => {
           };
-          geoLocationManager.on('locationChange', requestInfo, locationChange);
+          try {
+            geoLocationManager.on('locationChange', requestInfo, locationChange);
+          } catch (error) {
+            let err = error as BusinessError;
+            Logger.error(TAG, `Failed to listen to locationChange error. Code: ${err.code}, message: ${err.message}`);
+          }
           geoLocationManager.getCurrentLocation(requestInfo).then(async (result) => {
             let mapPosition: mapCommon.LatLng =
               await map.convertCoordinate(mapCommon.CoordinateType.WGS84, mapCommon.CoordinateType.GCJ02, result);
@@ -197,8 +202,8 @@ aboutToAppear(): void {
               bearing: 0
             };
             let cameraUpdate = map.newCameraPosition(cameraPosition);
-            mapController?.animateCamera(cameraUpdate, 1000);
-          })
+            mapController?.animateCamera(cameraUpdate, NUM_ONE_THOUSAND);
+          });
         }
       });
       this.mapController.on('mapClick', async (position) => {
@@ -217,9 +222,14 @@ aboutToAppear(): void {
           let gcj02Posion: mapCommon.LatLng =
             await map.convertCoordinate(mapCommon.CoordinateType.WGS84, mapCommon.CoordinateType.GCJ02,
               wgs84Position);
-          this.myPosition = gcj02Posion
+          this.myPosition = gcj02Posion;
         };
-        geoLocationManager.on('locationChange', requestInfo, locationChange);
+        try {
+          geoLocationManager.on('locationChange', requestInfo, locationChange);
+        } catch (error) {
+          let err = error as BusinessError;
+          Logger.error(TAG, `Failed to listen to locationChange error. Code: ${err.code}, message: ${err.message}`);
+        }
         // add walking marker
         this.marker = await MapUtil.addMarker(position, this.mapController);
         const walkingRoutes = await MapUtil.walkingRoutes(position, this.myPosition);
@@ -335,11 +345,11 @@ public static async paintRoute(routeResult: navi.RouteResult, mapPolyline?: map.
 
 点击解锁后，实况窗显示骑行状态。完成还车、支付等操作后，实况窗的状态实时更新。支持在锁屏、通知中心显示卡片，状态栏显示胶囊形态。点击状态栏的胶囊后，展开悬浮卡片，方便用户查看骑行状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/ouEHm1JERlSCeC1-kHN7lw/zh-cn_image_0000002229335553.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/cmce0eSvR5KhyS4QYnuLGQ/zh-cn_image_0000002229335553.gif)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Rdg3SkGETH6z5bDxXCClvQ/zh-cn_image_0000002194009760.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Gsf8-ZcYTkK45oitT1zAPA/zh-cn_image_0000002194009760.png "点击放大")
 
 ### 关键点说明
 

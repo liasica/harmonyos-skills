@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_websocket.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_websocket.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4765338946f5ff59aa6c2322442811b165fecdc526a842493364baa92ce6917d
+scraped_at: 2026-10-29T08:01:03+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:bb30fb888ce5b74365b77f6b859749ae22653af80ff39093b61be4e5ac9cc9c8
 ---
 
 ## 概述
@@ -197,7 +197,7 @@ int OH_WebSocketClient_Destroy(struct WebSocket *client)
 
 **注意** 
 
-确保触发[WebSocket\_OnCloseCallback](capi-net-websocket-type-h.md#websocket_onclosecallback)回调后再调用该接口，否则系统内存资源被释放后可能出现socket泄露以及连接未关闭的情况。
+确保触发[WebSocket\_OnCloseCallback](capi-net-websocket-type-h.md#websocket_onclosecallback)回调后再调用该接口，否则系统内存资源被释放后可能出现socket泄漏以及连接未关闭的情况。
 
 **系统能力：** SystemCapability.Communication.NetStack
 

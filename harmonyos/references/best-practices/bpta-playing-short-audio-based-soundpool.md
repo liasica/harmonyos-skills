@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-sh
 title: 基于SoundPool播放短音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于SoundPool播放短音频
 category: best-practices
-scraped_at: 2026-10-16T07:06:37+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:6d988523b82823d5e70ac243e85b6304b37181f2a8f37fe8c94694ce9dcecfb5
+scraped_at: 2026-10-29T08:03:15+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:4212a12662079f726afd451bf72a8866bb8a46ce90ae9c790cf0fab529e6ffa9
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ SoundPool提供短音频的播放能力，当需要播放一些急促简短的�
 
 本文是音频播放系列文章的第5篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ZbfPNBiiRTeLOfdcKTvCOQ/zh-cn_image_0000002555337527.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/6aq7gSZdR0myFPPe0YzUbA/zh-cn_image_0000002555337527.png "点击放大")
 
 ## 规格与限制
 
@@ -54,7 +54,7 @@ SoundPool提供短音频的播放能力，当需要播放一些急促简短的�
 
 1. 创建SoundPool实例。
 
-```typescript
+```screen
 // The parameter 'usage' in audioRenderInfo takes the values of STREAM_USAGE_UNKNOWN, STREAM_USAGE_MUSIC, and STREAM_USAGE_MOVIE.
 // When STREAM_USAGE_AUDIOBOOK is used, the SoundPool plays short sounds in the mixing mode and will not interrupt the playback of other audio.
 let audioRendererInfo: audio.AudioRendererInfo = {
@@ -67,53 +67,53 @@ this.soundPool = await media.createSoundPool(14, audioRendererInfo);
 
 2. 设置[on('loadComplete')](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#onloadcomplete)回调，用于监听“资源加载完成”的状态。开发者应在监听到“资源加载完成”的状态后，方可执行后续的播放操作，否则系统会抛出异常。
 
-```typescript
+```screen
 // Loading completion callback.
 async loadCallback() {
   if (!this.soundPool) {
-    hilog.error(0xFF00, 'SoundPool', `soundPool is undefined`);
+    hilog.error(0x0000, 'SoundPool', `soundPool is undefined`);
     return;
   }
   this.soundPool.on('loadComplete', (soundId: number) => {
     this.soundId = soundId;
-    hilog.info(0xFF00, 'SoundPool', `load soundPool soundId: ${this.soundId}`);
+    hilog.info(0x0000, 'SoundPool', `load soundPool soundId: ${this.soundId}`);
   })
 }
 ```
 
 3. 设置[on('playFinished')](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#onplayfinished)或者[on('playFinishedWithStreamId')](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#onplayfinishedwithstreamid18)回调，用于监听“播放完成”，以便于在播放后处理对应的业务。
 
-```typescript
+```screen
 setPlayFinishedCallback() {
   if (!this.soundPool) {
-    hilog.error(0xFF00, 'SoundPool', `soundPool is undefined`);
+    hilog.error(0x0000, 'SoundPool', `soundPool is undefined`);
     return;
   }
   this.soundPool.on('playFinished', () => {
-    hilog.info(0xFF00, 'SoundPool', `Succeeded in playFinished`);
+    hilog.info(0x0000, 'SoundPool', `Succeeded in playFinished`);
   })
 }
 ```
 
 4. 设置[on('error')](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#onerror)回调，进行错误类型的监听，以便遇到播放问题后，进行快速定位。
 
-```typescript
+```screen
 // Set error type listening.
 setErrorCallback() {
   if (!this.soundPool) {
-    hilog.error(0xFF00, 'SoundPool', `soundPool is undefined`);
+    hilog.error(0x0000, 'SoundPool', `soundPool is undefined`);
     return;
   }
   this.soundPool.on('error', (error: BusinessError) => {
-    hilog.error(0xFF00, 'SoundPool',
-      `error happened, error code is :' ${error.code}, error message is ${error.message}`);
+    hilog.error(0x0000, 'SoundPool',
+      `error happened, error code is ${error.code}, error message is ${error.message}`);
   })
 }
 ```
 
 5. 调用[load()](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#load)方法，加载音频资源。
 
-```typescript
+```screen
 // Load audio resources.
 let context = this.getUIContext().getHostContext();
 let fileDescriptor = await context!.resourceManager.getRawFd('test.ogg');
@@ -122,10 +122,10 @@ this.soundId = await this.soundPool.load(fileDescriptor.fd, fileDescriptor.offse
 
 6. 调用[play()](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#play)方法，播放音频资源。
 
-```typescript
+```screen
 async playSoundPool() {
   if (!this.soundPool) {
-    hilog.error(0xFF00, 'SoundPool', `soundPool is undefined`);
+    hilog.error(0x0000, 'SoundPool', `soundPool is undefined`);
     return;
   }
   this.soundPool.setPriority(this.soundId, 999);
@@ -136,9 +136,9 @@ async playSoundPool() {
 
 7. 开发者可以通过配置播放参数PlayParameters实现不同的播放效果，也可以通过单独调用[setLoop](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setloop)、[setPriority](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setpriority)、[setVolume](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setvolume)、[setRate](../harmonyos-references/js-apis-inner-multimedia-soundpool.md#setrate-1)等函数来实现不同的播放效果。下面以设置短音频的循环模式、播放速率为例，其他设置方法的调用方式相同。
 
-```typescript
+```screen
 if (!this.soundPool) {
-  hilog.error(0xFF00, 'SoundPool', `soundPool is undefined`);
+  hilog.error(0x0000, 'SoundPool', `soundPool is undefined`);
   return;
 }
 // ...
@@ -156,10 +156,10 @@ await this.soundPool.setRate(this.streamId, audio.AudioRendererRate.RENDER_RATE_
 
 8. 停止播放，取消监听，释放SoundPool实例。
 
-```typescript
+```screen
 async setOffCallback() {
   if (!this.soundPool) {
-    hilog.error(0xFF00, 'SoundPool', `soundPool is undefined`);
+    hilog.error(0x0000, 'SoundPool', `soundPool is undefined`);
     return;
   }
   this.soundPool.off('loadComplete');
@@ -168,15 +168,15 @@ async setOffCallback() {
 }
 ```
 
-```typescript
+```screen
 async release() {
   if (!this.soundPool) {
-    hilog.error(0xFF00, 'SoundPool', `soundPool is undefined`);
+    hilog.error(0x0000, 'SoundPool', `soundPool is undefined`);
     return;
   }
   // Terminate the playback of the specified stream.
   await this.soundPool.stop(this.streamId);
-  // Uninstall audio resources.
+  // Unload audio resources.
   await this.soundPool.unload(this.soundId);
   // Turn off the monitoring.
   this.setOffCallback();

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-desi
 title: 实况窗设计规范
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 实况窗设计规范
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:48+08:00
+scraped_at: 2026-10-29T07:57:43+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:e812d6a2753269981ee5f2827ca5ab9fd105162fe26b87601b826969f22c8a38
+content_hash: sha256:b3731c7df45e337dd0f7ef6f1fc90dc5720d1995a65e34e18779e0baf21824b7
 ---
 
 应用发送的实况窗需遵循实况窗设计规范，不符合设计规范的方案将不被予以开通正式权限。同时若应用实况窗上线后出现违反实况窗设计规范的行为，将被视为[违规](liveview-introduction.md#违规处罚)。
@@ -138,7 +138,7 @@ content_hash: sha256:e812d6a2753269981ee5f2827ca5ab9fd105162fe26b87601b826969f22
 
 在计划出发前1个小时，开始展示实况窗通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/fccvH6DdTm-8q8OHPfnjqw/zh-cn_image_0000002771666554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/1Y4Ffl9lS66bI6-w2x2VIg/zh-cn_image_0000002773905370.png)
 
 | **建议展示的关键信息** | **主要特殊场景考虑** | **建议设置提醒的关键节点** |
 | --- | --- | --- |
@@ -150,7 +150,7 @@ content_hash: sha256:e812d6a2753269981ee5f2827ca5ab9fd105162fe26b87601b826969f22
 
 共享租赁场景及关键节点可以按照如下流程梳理：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/eSReO3xfTya07T1CbtonRw/zh-cn_image_0000002800986411.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/i4kv-4R9Th-wFcFyRRqkaA/zh-cn_image_0000002803265153.png)
 
 | **建议展示的关键信息** | **主要特殊场景考虑** | **建议设置提醒的关键节点** |
 | --- | --- | --- |

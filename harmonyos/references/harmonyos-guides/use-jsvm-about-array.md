@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行array相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行array相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:45+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:0af9cc4a64dd80bb5ed4592f2cac59c0156f9ca592815355d427d793656e8565
+scraped_at: 2026-10-29T07:58:17+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:dd06e0e78577cd506eea9ed921785a6678473624ce29976136e5a5f25e684d35
 ---
 
 ## 简介
@@ -28,7 +28,7 @@ content_hash: sha256:0af9cc4a64dd80bb5ed4592f2cac59c0156f9ca592815355d427d793656
 | --- | --- |
 | OH\_JSVM\_CreateArray | 创建一个新的 JavaScript 数组对象 |
 | OH\_JSVM\_CreateArrayWithLength | 创建一个指定长度的 JavaScript 数组对象 |
-| OH\_JSVM\_CreateTypedarray | 在现有的ArrayBuffer上创建JavaScript TypedArray对象，TypedArray对象提供类似类数组的视图，每个元素具有相同的二进制标量数据类型。注意(length \* size\_of\_element) + byte\_offset 不得超过传入数组的大小（以字节为单位），否则会引发RangeError异常。 |
+| OH\_JSVM\_CreateTypedarray | 在现有的ArrayBuffer上创建JavaScript TypedArray对象，TypedArray对象提供类似数组的视图，每个元素具有相同的二进制标量数据类型。注意(length \* size\_of\_element) + byte\_offset 不得超过传入数组的大小（以字节为单位），否则会引发RangeError异常。 |
 | OH\_JSVM\_CreateDataview | 在现有的 ArrayBuffer 上创建一个 JavaScript DataView 对象，DataView 对象在底层数据缓冲区上提供类似数组的视图，该 ArrayBuffer 允许有不同大小和类型的元素。要求 byte\_length + byte\_offset 小于或等于传入数组的字节大小，否则会引发 RangeError 异常。 |
 | OH\_JSVM\_GetArrayLength | 返回 Array 对象的长度 |
 | OH\_JSVM\_GetTypedarrayInfo | 获取 TypedArray（类型化数组）对象的信息 |
@@ -307,11 +307,6 @@ static JSVM_Value CreateDataView(JSVM_Env env, JSVM_CallbackInfo info)
     JSVM_Status status = OH_JSVM_CreateDataview(env, byteLength, arrayBuffer, byteOffset, &result);
     // 获取DataView的指针和长度信息
     uint8_t *data = nullptr;
-    size_t length = 0;
-    // 为DataView赋值
-    for (size_t i = 0; i < length; i++) {
-        data[i] = static_cast<uint8_t>(i + 1);
-    }
     int32_t infoType = 0;
     OH_JSVM_GetValueInt32(env, args[1], &infoType);
     size_t returnLength = 0;

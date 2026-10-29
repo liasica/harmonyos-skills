@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-set-dark-
 title: Web深色模式适配
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > Web深色模式适配
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:57+08:00
+scraped_at: 2026-10-29T07:56:40+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c91fb5fe0a278da984ac292d6426b0f7a939cb7ce34fc4b0bcd08d1c8e51c793
+content_hash: sha256:1d15205291a6b25b54cba982eee4bf3c1d4403f66fa58db4726406c62895372d
 ---
 
 系统提供浅色和深色的主题模式供用户选择。深色模式在低光环境下能够降低屏幕亮度，减少光线刺激，改善阅读体验。Web组件根据网页样式进行渲染。若网页未适配深色模式，会造成与系统主题的割裂感。网页开发者应考虑用户的主题偏好，适配深色模式，以保证用户体验的一致性。
@@ -65,7 +65,7 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
   **图1** color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/nyfER_WJQ-uvMchz0uLYiA/zh-cn_image_0000002800985479.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/jwrkl_oXRXqi2YXtIgevNg/zh-cn_image_0000002803264219.png)
 * prefers-color-scheme是CSS中的一个媒体查询功能，可以检测系统的主题颜色。网页开发者可以通过该特性，为不同的系统主题颜色定义不同的网页CSS样式，以适应用户的主题偏好。使用样例如下：
 
   ```html
@@ -100,7 +100,7 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
   **图2** prefers-color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/LJRBFkSsRwerGJafZUr92A/zh-cn_image_0000002771825590.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/9YDukDthQWugCtEP6F0INA/zh-cn_image_0000002803224129.png)
 
 ## Web深色模式设置
 
@@ -175,7 +175,7 @@ darkModePage.html页面在深色模式关闭、深色模式开启及强制深色
 
 **图3** Web深色模式和强制深色模式效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/7uTuhI3pSluJeKAhHTGElg/zh-cn_image_0000002801105403.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/MwQv_H6rSMaAk1b-LbM31w/zh-cn_image_0000002774064410.png)
 
 ## Web组件背景色适配
 

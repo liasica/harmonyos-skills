@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-recommende
 title: 设备标识使用推荐
 breadcrumb: 最佳实践 > 应用安全 > 设备标识使用推荐
 category: best-practices
-scraped_at: 2026-09-10T06:30:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8e7dfff7210d2cf41def5afd5bd16d29433c24955c05073aa09078b3f5d1b4f5
+scraped_at: 2026-10-29T08:03:20+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:7724d337dda8a9cfe34c675c0a92efcec0ff90b2dbd64717d803b8543c3c0762
 ---
 
 ## 概述
 
 设备标识是用于唯一标识设备的代码或符号，类似于现实生活中的身份证。在移动应用开发中，设备标识对于准确识别设备至关重要，可用于分析用户行为、推送信息和提供个性化服务等场景。为确保用户数据的安全和合规性，建议在开发过程中遵守相关隐私政策和法规，使用用户可重置的设备标识。HarmonyOS提供了三种可重置的设备标识：
 
-* [ODID（开发者匿名设备标识符）](../harmonyos-references/js-apis-device-info.md#常量)：用于识别同一设备上运行的同一个开发者的应用，标识应用身份。
-* [OAID（开放匿名设备标识符）](../harmonyos-guides/oaid-service.md)：用于广告跟踪，可在保护用户个人数据隐私安全的前提下，向用户提供个性化广告。
-* [AAID（应用匿名标识符）](../harmonyos-guides/push-get-aaid.md)：用于应用的推送，标识应用身份。
+* [ODID](../HMSCore-Guides/odid-0000001051063255.md)（开发者匿名设备标识符）：用于识别同一设备上运行的同一个开发者的应用，标识应用身份。
+* [OAID](../HMSCore-Guides/oaid-0000001050783198.md)（开放匿名设备标识符）：用于广告跟踪，可在保护用户个人数据隐私安全的前提下，向用户提供个性化广告。
+* [AAID](../HMSCore-Guides/aaid-0000001051142988.md)（应用匿名标识符）：用于应用的推送，标识应用身份。
 
 开发者在选择设备标识时，可以从特性、重置规则和用户授权三个方面进行对比，具体如下：
 

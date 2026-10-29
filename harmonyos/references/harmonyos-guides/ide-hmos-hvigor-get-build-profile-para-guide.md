@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 能力说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 定制构建 > 获取自定义编译参数 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:48+08:00
+scraped_at: 2026-10-29T07:58:48+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c9dae8d7336fa540b0e227067064787f7240a8cb4334d77ed2cc62ea20cc1b3c
+content_hash: sha256:24da0178aa4d6d96ac2d9f55a7004e8a31d35f0e6e2e823f424162cb6c00ce06
 ---
 
 在编译构建时，Hvigor会生成BuildProfile类，开发者可以通过该类在运行时获取编译构建参数，也可以在build-profile.json5中通过buildProfileFields增加自定义字段，从而在运行时获取自定义的参数。
@@ -32,7 +32,7 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 
 执行完上述操作后，将在“${moduleName} / build / ${productName} / generated / profile / ${targetName} ”目录下生成BuildProfile.ets文件。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Bf2KIR-yTOqQwEjAuncJ0Q/zh-cn_image_0000002750169820.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/a6n8H8JLSmO4ln-6tnk70g/zh-cn_image_0000002750169820.png)
 
 ### 在代码中获取构建参数
 
@@ -157,7 +157,7 @@ import BuildProfile from '${packageName}/BuildProfile';
 
 执行完上述操作后，将在模块根目录下生成BuildProfile.ets文件（该文件可放置在.gitignore文件中进行忽略）。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/YC-_9eCgR8W-cD7RPRrpGQ/zh-cn_image_0000002779728987.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/rGXDn_R_S6mW2PTATwWMpw/zh-cn_image_0000002779728987.png)
 
 ### 在代码中获取构建参数
 
@@ -173,7 +173,7 @@ import BuildProfile from './BuildProfile';
 const HAR_VERSION: string = BuildProfile.HAR_VERSION;
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/rWGkOdYdQxehTIhctycxGg/zh-cn_image_0000002779608841.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/fMQkConjSU-3iuiO_li_Vw/zh-cn_image_0000002779608841.png)
 
 ### 默认参数
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-express
 title: 拉起快递类应用（startAbilityByType）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起快递类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:39+08:00
+scraped_at: 2026-10-29T07:56:19+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:5a64cf1c0596c7a6fca70fc1f4793b6092f338e3ce288a7726d67f869382fa20
+content_hash: sha256:972035da915983d97aa273149f351b13ca4e3dbd60440536b3ec24d9030c6744
 ---
 
 本章节介绍如何拉起快递类应用扩展面板。
@@ -76,7 +76,7 @@ startAbilityByType接口中type字段为express，支持查询快递意图，对
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/I5xvGlI3Sd6FCZYr0Lj93w/zh-cn_image_0000002771824586.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/WlZ5twUNTQezrkjogMEowA/zh-cn_image_0000002803223123.png)
 
 ## 目标方开发步骤
 

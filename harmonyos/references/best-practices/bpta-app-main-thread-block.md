@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-main-t
 title: 应用主线程阻塞故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 应用冻屏故障模式说明 > 应用主线程阻塞故障模式说明
 category: best-practices
-scraped_at: 2026-10-16T07:06:51+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:0f2abe8a88472e728320fb35ec08ef3264de580863cad0711aabb10de0083297
+scraped_at: 2026-10-29T08:03:26+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:8ae69001e8add70596d8c45ce989e8238fadfea1083800756daa0c33390987ef
 ---
 
 ## 概述
@@ -52,7 +52,7 @@ content_hash: sha256:0f2abe8a88472e728320fb35ec08ef3264de580863cad0711aabb10de00
 
 **问题分析思路**
 
-1. 根据堆栈找到持锁的业务共享库，通过符号或者使用[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#li186453444512)解析共享库定位到代码行，确认等待的锁资源，记为锁A；
+1. 根据堆栈找到持锁的业务共享库，通过符号或者使用llvm-addr2line（详见[通过SDK llvm-addr2line工具定位行号](bpta-stability-app-crash-cpp-way.md#li186453444512)）解析共享库定位到代码行，确认等待的锁资源，记为锁A；
 2. 在故障应用的进程堆栈中搜索等待锁A的业务共享库，找到包含该业务共享库的线程的堆栈，然后结合代码找出其中持有锁A的线程堆栈；
 3. 若持有锁A的线程堆栈的根因不是等锁，则按对应的根因继续分析；
 4. 若持有锁A的线程堆栈的根因也是等锁，记为锁B，则按本章节分析思路重新分析。
@@ -100,18 +100,18 @@ ld-musl-aarch64.so.1
    ```
 
    #02栈帧表明等锁的业务方是libentry.so，结合代码继续分析。
-2. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#li186453444512)解析找到对应代码行。
+2. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用llvm-addr2line解析找到对应代码行。
 
    证据2：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/XmqSfjbnTCyoN7nX8AX0xQ/zh-cn_image_0000002673575729.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/KfNzomkYTYekaGFSc-W-CQ/zh-cn_image_0000002673575729.png "点击放大")
 
    代码行指向pthread\_mutex\_lock(&g\_deadlockMutexSecond)，即等待锁g\_deadlockMutexSecond。继续分析g\_deadlockMutexSecond的持锁情况。
 3. 在代码中查找g\_deadlockMutexSecond，确认除TriggerDeadlockSync外，仅在DeadlockOtherThread中有使用。
 
    证据3：DeadlockOtherThread的实现代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/1wXdUgtdTu26MW9XPHKc8g/zh-cn_image_0000002673735601.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/LsQGeYSzQE6WAo46pVbFWg/zh-cn_image_0000002673735601.png)
 
    DeadlockOtherThread是在主线程创建的子线程中调用的。子线程进入后先获取锁g\_deadlockMutexSecond，然后等待1s再获取锁g\_deadlockMutexFirst。创建子线程前主线程就已经获取g\_deadlockMutexFirst，创建子线程后主线程又去获取g\_deadlockMutexSecond。主线程和子线程发生死锁，主线程一直等锁阻塞。
 
@@ -138,18 +138,18 @@ ld-musl-aarch64.so.1
    ```
 
    #01栈帧表明等锁的业务方是libentry.so，结合代码继续分析。
-2. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#li186453444512)解析找到对应代码行。
+2. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用llvm-addr2line解析找到对应代码行。
 
    证据2：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/F3tYy38eS72HffKDBJkdTw/zh-cn_image_0000002643575818.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/ORLFH65VQOugf5DTtvRZgA/zh-cn_image_0000002643575818.png "点击放大")
 
    代码行指向pthread\_join(t1, nullptr)，即等待子线程结束。继续分析子线程的实现。
 3. 查看t1和t2两个子线程的实现代码。
 
    证据3：两个子线程的实现代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/d3TpkkSUQ2ua7on7bzgs7A/zh-cn_image_0000002643415864.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/bDOuRjgIRcy3DHEXNEKCeQ/zh-cn_image_0000002643415864.png)
 
    线程A进入后先获取锁g\_deadlockMutexFirst，然后等待1ms再获取锁g\_deadlockMutexSecond。线程B则反过来，先获取锁g\_deadlockMutexSecond再等待1ms获取锁g\_deadlockMutexFirst。这样两个子线程进入后都获取到了对方想要获取的锁，从而造成死锁。两个子线程都无法结束，导致主线程等待阻塞。
 
@@ -215,7 +215,7 @@ WriteBinder
    #13 at triggerBinderInterfaceBlockSync (entry|entry|1.0.0|src/main/ets/pages/page_second/page_third_appfreeze/appfreeze_threadblock.ts:147:43)
    ```
 
-   堆栈的#13栈帧表明应用侧业务函数是triggerBinderInterfaceBlockSync，#09栈帧表明业务调用的接口是系统音频服务提供的GetAudioSceneSync。由于系统音频服务未及时响应返回，主线程阻塞在同步Binder通信上。由于对端进程是系统音频服务，不属于故障应用的业务，建议反馈给系统侧优化。若对端进程是故障应用的业务，可以按照下述步骤继续分析。
+   堆栈的#13栈帧表明应用侧业务函数是triggerBinderInterfaceBlockSync()，#09栈帧表明业务调用的接口是系统音频服务提供的GetAudioSceneSync()接口。由于系统音频服务未及时响应返回，主线程阻塞在同步Binder通信上。由于对端进程是系统音频服务，不属于故障应用的业务，建议反馈给系统侧优化。若对端进程是故障应用的业务，可以按照下述步骤继续分析。
 2. 查看日志中的BinderCatcher信息，根据to server\_pid:server\_tid确认对端进程的进程号和IPC线程号。
 
    证据2：BinderCatcher信息
@@ -306,7 +306,7 @@ WriteBinder
    #13 at triggerBinderInterfaceBlockSync (entry|entry|1.0.0|src/main/ets/pages/page_second/page_third_appfreeze/appfreeze_threadblock.ts:216:43)
    ```
 
-   堆栈的#13栈帧表明应用侧业务函数是triggerBinderInterfaceBlockSync，#09栈帧表明业务调用的接口是系统音频服务提供的GetAudioSceneSync。由于系统音频服务未及时响应返回，主线程阻塞在同步Binder通信上。由于对端进程是系统音频服务，不属于故障应用的业务，建议反馈给系统侧优化。若对端进程是故障应用的业务，可以按照下述步骤继续分析。
+   堆栈的#13栈帧表明应用侧业务函数是triggerBinderInterfaceBlockSync()，#09栈帧表明业务调用的接口是系统音频服务提供的GetAudioSceneSync()接口。由于系统音频服务未及时响应返回，主线程阻塞在同步Binder通信上。由于对端进程是系统音频服务，不属于故障应用的业务，建议反馈给系统侧优化。若对端进程是故障应用的业务，可以按照下述步骤继续分析。
 2. 查看日志中的BinderCatcher信息，根据to server\_pid:server\_tid确认对端进程的进程号和IPC线程号。
 
    证据2：BinderCatcher信息
@@ -575,11 +575,11 @@ DumpHeapSnapshot
    ```
 
    #01栈帧表明存在耗时操作的业务方是libentry.so(TriggerLongTimeOp)，结合代码继续分析。
-2. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#li186453444512)解析找到对应代码行。
+2. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用llvm-addr2line解析找到对应代码行。
 
    证据2：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/1xj9OrRhQxq0NusdP1vdww/zh-cn_image_0000002673575731.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/kdAWLisXTHSQO6Mqb3l-MQ/zh-cn_image_0000002673575731.png "点击放大")
 
    TriggerLongTimeOp方法中的while循环耗时导致主线程阻塞。
 

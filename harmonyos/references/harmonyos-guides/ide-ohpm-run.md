@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-run
 title: ohpm run
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm run
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:37+08:00
+scraped_at: 2026-10-29T07:58:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:21e764d7ca7916fcb1be5f453a569b32b4a3a0550f16ac3e219aad9991943ef9
+content_hash: sha256:ef0aa78d0890c8ede020cafce51c54c0e70f37ac09a61cb1528a442f13ede008
 ---
 
 执行用户自定义脚本。
@@ -122,7 +122,7 @@ ohpm run testSuc
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/22viFGLaTImxAKWL9N0_Pw/zh-cn_image_0000002731382585.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/jfJ96_rCQHqDSUbeRqsc7Q/zh-cn_image_0000002731382585.png "点击放大")
 
 ### 失败示例
 
@@ -134,7 +134,7 @@ ohpm run testFail
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/b-0pao9rSS6TMxvlwMliJg/zh-cn_image_0000002701663362.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/RVtwrFh0QsqKkFyOjdgaFw/zh-cn_image_0000002701663362.png "点击放大")
 
 ### 逻辑符(&&、||)使用示例
 
@@ -146,4 +146,4 @@ ohpm run testLogic
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/2Nb2YvU2RPGaAoBREc4nZA/zh-cn_image_0000002731542555.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/yxzRqy6oSHyFiy8UFaufZg/zh-cn_image_0000002731542555.png "点击放大")

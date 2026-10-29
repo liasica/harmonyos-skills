@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-implement-
 title: 基于Canvas实现录像回放时间轴
 breadcrumb: 最佳实践 > 图形 > 图形绘制 > 基于Canvas实现录像回放时间轴
 category: best-practices
-scraped_at: 2026-10-16T07:06:38+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:76474eb4c0178bf745910ea9882e7543db82c8582edc4060be560b7472750fe4
+scraped_at: 2026-10-29T08:03:16+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:0c9d1d53e88260319a8596dc54037653094f62aa8c93d6d8bfe1fb6be704356c
 ---
 
 ## **概述**
@@ -30,7 +30,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 刻度线绘制主要将时间戳转换为Canvas像素坐标。例如，开发者自定义刻度间隔的宽度为intervalWidth（如intervalWidth = 10vp），相同长度的时间间隔对应10分钟，实现“固定时间对应固定像素”的精准映射，确保任意时间戳均能通过公式计算出唯一的画布坐标。
 
 **图1** 时间-像素映射示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/xrCQO8i-QCumXfGhreIjAQ/zh-cn_image_0000002478758526.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Ck-knTOXQ8-c453u2GUDPg/zh-cn_image_0000002478758526.png "点击放大")
 
 ### 开发流程
 
@@ -45,7 +45,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 
       时间轴根据画布大小、缩放比例动态调整显示的时间范围，同时始终以中心点为视觉锚点，确保交互的连贯性。
 
-      ```typescript
+      ```screen
       // Number of small divisions visible
       const scaleNum = Math.floor(viewWidth / this.intervalWidth) + 2;
 
@@ -61,7 +61,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 
       以10分钟为最小单位生成刻度，在小时模式（MODE\_HOUR）下，每60分钟绘制一次大刻度及时间文本；在分钟模式（MODE\_MINUTE）下，将10分钟划分为10个细分刻度，因此循环10次绘制刻度线。drawTickLine()方法用于绘制大、小刻度，drawTimeText()方法用于绘制大刻度对应的时间文本。
 
-      ```typescript
+      ```screen
       // Find the first tick (aligned to 10 minutes)
       let minuteNum = Math.floor(this.leftTime / TimeMsUnit.TEN_MINUTE);
       let xPosition =
@@ -97,7 +97,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 
       中间线是时间轴上的当前时间标记，固定在画布中央，用于标识当前选中或播放的时间点。
 
-      ```typescript
+      ```screen
       /** Draw middle indicator line at canvas center. */
       private drawMiddleLine() {
         this.context.beginPath();
@@ -117,7 +117,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
       * 预渲染时机：当视频片段数据timeRange变化时（通过@Watch('onTimeRangeChange')监听），执行预渲染。
       * 预渲染规则：使用[OffscreenCanvasRenderingContext2D](../harmonyos-references/ts-offscreencanvasrenderingcontext2d.md)构造离屏Canvas画布对象offPaint，按1vp等于1分钟的比例绘制所有视频片段，调用offPaint.getPixelMap()方法生成videoPixelMap像素图。
 
-      ```typescript
+      ```screen
       // Offscreen canvas (height uses current view height option)
       const offSettings: RenderingContextSettings = new RenderingContextSettings(false);
       const offCanvas: OffscreenCanvas = new OffscreenCanvas(videoAreaWidth, this.timeBarOption.height);
@@ -148,7 +148,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 
       缩放时，通过矩阵变换（缩放）将预渲染图适配当前画布比例，避免重复绘制。
 
-      ```typescript
+      ```screen
       // Disable smoothing to keep crisp edges on narrow color bars
       this.context.imageSmoothingEnabled = false;
 
@@ -177,7 +177,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 
    将有效位移（effectiveDelta）通过刻度密度（intervalWidth）属性转换为时间偏移量，更新时间轴当前时间（\_currentTime属性），同步至TimeBarModel组件控制器，供外部获取。调用scheduleRedraw()方法，延迟绘制至下一帧，减少频繁绘制引起的性能消耗，确保滑动过程的视觉流畅性。
 
-   ```typescript
+   ```screen
    // Capture raw delta for accumulation.
    const rawDelta = event.offsetX - this._touchDownPosition;
    this._touchDownPosition = event.offsetX;
@@ -215,9 +215,9 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
    * 边界限制：设置最小（10vp）和最大（180vp）缩放阈值，避免过度缩放。
 
    **图2** 缩放时间轴示意图  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/vazbQCbiTxeoSk8l9FVlFQ/zh-cn_image_0000002478598550.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/8JZzbhjIQL2Dqdeux0oz3w/zh-cn_image_0000002478598550.png "点击放大")
 
-   ```typescript
+   ```screen
    // Update per-division width
    if (this.zoomSize > 1) {
      this.intervalWidth += 10;
@@ -244,7 +244,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 
    * timeRange：当外部传入录像片段时，自动对timeRange排序并计算有效时间边界（minTime/maxTime），确保时间轴仅显示有录像的时段。
 
-     ```typescript
+     ```screen
      set timeRange(segments: RecordSegment[]) {
        if (!segments || segments.length === 0) {
          this._timeRange = [];
@@ -273,7 +273,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
      ```
    * currentTime：通过getter和setter机制实现双向同步，既接收外部视频播放进度的更新，也在时间轴滑动时将最新时间输出给外部。
 
-     ```typescript
+     ```screen
      set currentTime(time: number) {
        if (!Number.isFinite(time) || time <= 0) {
          return;
@@ -290,7 +290,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
      ```
    * 数据变更通知：通过onDataChange()回调，监听timeRange和currentTime的变化，简化了开发者调用。
 
-     ```typescript
+     ```screen
      private notifyDataChange(type: 'timeRange' | 'currentTime') {
        this._onDataChange && this._onDataChange(type);
      }
@@ -305,7 +305,7 @@ TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目
 滑动停止时，若时间轴中线对应的时间点在录像片段有效时间内，视频立即跳转并继续播放；若处于两端录像间的空白区域，系统自动跳转至最近的录像起始时间点，避免无画面时段，提高效率。时间轴滑动存在硬性边界限制，用户试图将时间轴向右滑动至所有录像片段的最末端（即最新一段录像的结束时间）时，将无法继续拖动，防止超出录像数据范围导致播放异常。
 
 **图3** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/nYoJtWEJTAipLOxNFxEgFg/zh-cn_image_0000002510798495.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/lrodanxyT0-4utAeYoHGtg/zh-cn_image_0000002510798495.gif "点击放大")
 
 ### 开发步骤
 
@@ -313,7 +313,7 @@ TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目
 
    创建TimeBarModel实例作为数据载体，实例对象viewModel通过组件参数传入TimeBarView时间轴组件，即可渲染基本的时间轴。核心代码如下：
 
-   ```typescript
+   ```screen
    import {
      TimeBarView,
      TimeBarModel,
@@ -352,7 +352,7 @@ TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目
 
    开发者处理视频片段，生成RecordSegment类型的集合。通过viewModel对象的timeRange属性传递给组件，在时间轴上即可绘制视频区域。核心代码如下：
 
-   ```typescript
+   ```screen
    async getTimeInfoFromVideo() {
      if (this.videosInfo.length === 0) {
        try {
@@ -400,7 +400,7 @@ TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目
    }
    ```
 
-   ```typescript
+   ```screen
    Column() {
      TimeBarView({
        model: this.viewModel,
@@ -423,7 +423,7 @@ TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目
 
         从时间轴拖动的currentTime（选中时间）出发，通过“时间偏移计算→片段定位→进度校正”，确定视频需跳转的目标进度。核心代码如下：
 
-        ```typescript
+        ```screen
         const totalTimelineMs = this.totalTimelineMs || 0;
         const rawOffset = (this.curTime ?? this.initialTime) - this.initialTime; // relative offset (ms)
         const clampedOffset = clamp(rawOffset, 0, totalTimelineMs);
@@ -455,7 +455,7 @@ TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目
 
         根据视频进度属性（目标进度）videoProgressSec，结合视频加载状态执行跳转，并控制播放行为。核心代码如下：
 
-        ```typescript
+        ```screen
         private performSeek(videoProgressSec: number, willReload: boolean) {
           if (willReload) {
             // Source will reload: cache and let onPrepared execute precise seek

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-predictor
 title: 加速Web页面的访问
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 加速Web页面的访问
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:52+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:a004fd3eb9dcec1d39034d8c7b028ce3951ecb644f564b8332c928aa13662e36
+scraped_at: 2026-10-29T07:56:41+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:030ac6e84e089776c81200085428402d02b9c9a7ff5a6e4e48873fc79aed6137
 ---
 
 当Web页面加载缓慢时，可以使用预连接、预加载和预获取POST请求的能力加速Web页面的访问。
@@ -43,20 +43,23 @@ struct WebComponent {
 
 在下面的示例中，Ability的onCreate中提前初始化Web内核并对首页进行预连接。
 
-```ts
-// xxx.ets
-import { webview } from '@kit.ArkWeb';
+```typescript
+// EntryAbility.ets
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+// ...
+import { webview } from '@kit.ArkWeb';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    console.info("EntryAbility onCreate");
+    console.info('EntryAbility onCreate');
     webview.WebviewController.initializeWebEngine();
     // 预连接时，需要将'https://www.example.com'替换成真实要访问的网站地址。
-    webview.WebviewController.prepareForPageLoad("https://www.example.com/", true, 2);
-    AppStorage.setOrCreate("abilityWant", want);
-    console.info("EntryAbility onCreate done");
+    webview.WebviewController.prepareForPageLoad('https://www.example.com/', true, 2);
+    AppStorage.setOrCreate('abilityWant', want);
+    console.info('EntryAbility onCreate done');
   }
+
+  // ...
 }
 ```
 
@@ -166,30 +169,33 @@ struct WebComponent {
 
 以下示例，在Ability的onCreate中，提前初始化Web内核并预获取首页的POST请求。
 
-```ts
-// xxx.ets
+```typescript
+// EntryAbility.ets
 import { webview } from '@kit.ArkWeb';
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+// ...
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    console.info("EntryAbility onCreate");
+    console.info('EntryAbility onCreate');
     webview.WebviewController.initializeWebEngine();
-    // 预获取时，需要将"https://www.example1.com/post?e=f&g=h"替换成真实要访问的网站地址。
+    // 预获取时，需要将'https://www.example1.com/post?e=f&g=h'替换成真实要访问的网站地址。
     webview.WebviewController.prefetchResource(
       {
-        url: "https://www.example1.com/post?e=f&g=h",
-        method: "POST",
-        formData: "a=x&b=y",
+        url: 'https://www.example1.com/post?e=f&g=h',
+        method: 'POST',
+        formData: 'a=x&b=y',
       },
       [{
-        headerKey: "c",
-        headerValue: "z",
+        headerKey: 'c',
+        headerValue: 'z',
       },],
-      "KeyX", 500);
-    AppStorage.setOrCreate("abilityWant", want);
-    console.info("EntryAbility onCreate done");
+      'KeyX', 500);
+    AppStorage.setOrCreate('abilityWant', want);
+    console.info('EntryAbility onCreate done');
   }
+
+  // ...
 }
 ```
 
@@ -201,25 +207,31 @@ export default class EntryAbility extends UIAbility {
 
 1. 首先，在EntryAbility中将[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)存到[localStorage](arkts-localstorage.md)中。
 
-   ```ts
+   ```typescript
    // EntryAbility.ets
    import { UIAbility } from '@kit.AbilityKit';
    import { window } from '@kit.ArkUI';
+   // ...
 
    const localStorage: LocalStorage = new LocalStorage('uiContext');
 
    export default class EntryAbility extends UIAbility {
      storage: LocalStorage = localStorage;
-
+     // ...
+     // ...
      onWindowStageCreate(windowStage: window.WindowStage) {
        windowStage.loadContent('pages/Index', this.storage, (err, data) => {
          if (err.code) {
            return;
          }
 
-         this.storage.setOrCreate<UIContext>("uiContext", windowStage.getMainWindowSync().getUIContext());
+         this.storage.setOrCreate<UIContext>('uiContext', windowStage.getMainWindowSync().getUIContext());
        });
      }
+
+     // ...
+     // ...
+     // ...
    }
    ```
 2. 编写动态组件所需基础代码。
@@ -411,25 +423,31 @@ export default class EntryAbility extends UIAbility {
 
 1. 首先，在EntryAbility中将[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)存到[localStorage](arkts-localstorage.md)中。
 
-   ```ts
+   ```typescript
    // EntryAbility.ets
    import { UIAbility } from '@kit.AbilityKit';
    import { window } from '@kit.ArkUI';
+   // ...
 
    const localStorage: LocalStorage = new LocalStorage('uiContext');
 
    export default class EntryAbility extends UIAbility {
      storage: LocalStorage = localStorage;
+     // ...
 
+     // ...
      onWindowStageCreate(windowStage: window.WindowStage) {
        windowStage.loadContent('pages/Index', this.storage, (err, data) => {
          if (err.code) {
            return;
          }
 
-         this.storage.setOrCreate<UIContext>("uiContext", windowStage.getMainWindowSync().getUIContext());
+         this.storage.setOrCreate<UIContext>('uiContext', windowStage.getMainWindowSync().getUIContext());
        });
      }
+     // ...
+     // ...
+     // ...
    }
    ```
 2. 编写动态组件所需基础代码。

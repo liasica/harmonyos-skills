@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: CppCrash类问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > CppCrash类问题分析方法
 category: best-practices
-scraped_at: 2026-10-16T07:06:52+08:00
+scraped_at: 2026-10-29T08:03:28+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:60dd1764dd7b3709ca9144f5396b52c9700ed295caa3c42b0151d9c40c67443a
+content_hash: sha256:3ef37378e34122dbe115262f575b8e5c2444a9a0c3629719d36221bbcbeb90c6
 ---
 
 本文分为[获取日志](bpta-stability-app-crash-cpp-way.md#section7724104184817)、[分析步骤](bpta-stability-app-crash-cpp-way.md#section33392833014)、[CppCrash常见问题分类与原因](bpta-stability-app-crash-cpp-way.md#section253684811495)三个小节，重点介绍如何获取CppCrash日志、如何查看日志以及如何分析问题。开发者可阅读[应用崩溃类问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测CppCrash问题的原理和机制。开发者还可以参考[CppCrash类问题案例](bpta-scenario-stability-cppcrash.md)，结合实际案例分析CppCrash类问题。
@@ -70,7 +70,7 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
 
    在应用开发场景，对于应用自身的动态库，生成的CppCrash调用栈可直接跳转到代码行处，支持Native栈帧和JS栈帧，无需开发者自行进行解行号操作。对于部分未能解析跳转到对应行号的栈帧，可参考方式二解析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/86_5p5jwTZ-5TGp_vrJRjA/zh-cn_image_0000002404125229.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/qb8QYmyOS_aETP_YRro2ww/zh-cn_image_0000002404125229.png)
 2. 通过SDK llvm-addr2line工具定位行号。
    1. 获取符号表。
 
@@ -127,7 +127,7 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
 
 在分析CppCrash日志内容和定位行号后，回到代码中检视上下文，分析具体是什么业务逻辑导致崩溃。借助hilog提供的崩溃现场日志分析业务场景，找出代码中的可疑点。如下图所示，hello.cpp中的48行是一个空指针解引用的代码问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/-66EMIMiT1KDw1Pu0K6_hg/zh-cn_image_0000002370405684.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/G9rmCD7IQg26tzb9Ql4y0w/zh-cn_image_0000002370405684.png)
 
 本场景是一个故障构造的应用，实际场景需要结合具体业务进行分析。
 

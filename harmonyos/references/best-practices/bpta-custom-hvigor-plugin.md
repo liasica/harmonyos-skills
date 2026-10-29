@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-custom-hvi
 title: 定制hvigor插件
 breadcrumb: 最佳实践 > 编译构建 > 定制hvigor插件
 category: best-practices
-scraped_at: 2026-10-16T07:06:55+08:00
-doc_updated_at: 2026-06-02
-content_hash: sha256:6df5363a4b494336d5fa6e3a78746abcd0c0297b21f5d2a81fbb3858738e23dd
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:d9ac1dc9e775b04f39e19196f6dd27a91a2e022886125c41d98669ed8b81502a
 ---
 
 ## 概述
@@ -32,16 +32,16 @@ content_hash: sha256:6df5363a4b494336d5fa6e3a78746abcd0c0297b21f5d2a81fbb3858738
 
 定制hvigor插件开发时，涉及以下概念：
 
-* **[hvigor](../harmonyos-guides/ide-hvigor.md)**：基于TS实现的构建任务编排工具，主要提供任务管理机制，包括任务注册编排、工程模型管理、配置管理等关键能力。
+* **hvigor**：基于TS实现的构建任务编排工具，主要提供任务管理机制，包括任务注册编排、工程模型管理、配置管理等关键能力，详细内容请参考hvigor的[概述](../doccenter-deveco-studio/ide-hvigor.md)。
 * **[hvigor-ohos-plugin](../harmonyos-guides/ide-hvigor-life-cycle.md#section199818016213)**：hvigor默认提供的构建插件，利用hvigor的任务编排机制实现应用/元服务构建任务流的执行，完成HAP/App的构建打包，应用于应用/元服务的构建。
-* **[Task](../harmonyos-guides/ide-hvigor-life-cycle.md#section194191858161220)**：即构建任务，作为hvigor构建过程中的基本工作单元，构建项目的具体工作由Task描述表达，比如源码编译任务，打包任务或签名任务等。每一种任务的执行逻辑由plugin插件提供。
+* **Task**：即构建任务，作为hvigor构建过程中的基本工作单元，构建项目的具体工作由Task描述表达，比如源码编译任务，打包任务或签名任务等。每一种任务的执行逻辑由plugin插件提供，详细内容请参考[任务与任务依赖图](../doccenter-deveco-studio/ide-hvigor-life-cycle.md#section194191858161220)。
 * 编译产物：即工程/模块编译后的目标，是项目打包生成的用于依赖或运行的包文件，包括[HAP](../harmonyos-guides/hap-package.md)（应用安装运行的基本单位）、[HAR](../harmonyos-guides/har-package.md)（静态共享包）、[HSP](../harmonyos-guides/in-app-hsp.md)（动态共享包）以及App（可上架的完整应用程序）等多种类型。
 
 ## 实现原理
 
 定制hvigor插件，就是在编译构建的过程中插入开发者需要的自定义任务，将这些自定义任务抽象后封装成可复用的部分，通过输出plugin插件的目标形式，实现编译构建个性化逻辑的复用和共享分发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/VbO74n6JRjykeMLmP40hYA/zh-cn_image_0000002229335981.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/76a74W6gQk6IYZ6SJIewjQ/zh-cn_image_0000002229335981.png "点击放大")
 
 如上图所示，hvigor插件的工作原理：
 
@@ -156,4 +156,4 @@ hvigor主要提供了两种方式以实现插件的开发：
    ```
 5. 执行Build -> Make Module编译，编译产物的文件名被修改为“name-version-author.har”的组成形式，同时生成路径从default目录改到了target目录下。结果如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/xah0CMHTReism1lo2LvFEA/zh-cn_image_0000002229335985.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/T-0tLSwLQKuhC2JJlMqzgQ/zh-cn_image_0000002229335985.png "点击放大")

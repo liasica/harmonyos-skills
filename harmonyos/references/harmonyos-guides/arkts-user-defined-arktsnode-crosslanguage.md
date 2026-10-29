@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 设置自定义节点跨语言属性
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 设置自定义节点跨语言属性
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:52+08:00
+scraped_at: 2026-10-29T07:56:34+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6f508af6f02426422a6b43b6b8815f3b121936be085fb69d9f647663c33b72bd
+content_hash: sha256:76ccbc2a6f2ac6b1003fb8785f986550e3657ed2a3fe532166af2051201218d1
 ---
 
 ## 概述
@@ -391,7 +391,7 @@ struct CrossLanguage {
    ```
 5. 运行程序，在ArkTS侧点击按钮，设置当前attributeSetting为true，在Native侧点击按钮，设置ArkTS侧Scroll组件滚动条的颜色和粗细属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/dDIXgjcnTGC8HuxoVOECWQ/zh-cn_image_0000002800985269.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/jdPvhEWJSQi_Xl5-jraWoQ/zh-cn_image_0000002803264009.gif)
 
 ## 支持跨语言设置属性的节点类型
 

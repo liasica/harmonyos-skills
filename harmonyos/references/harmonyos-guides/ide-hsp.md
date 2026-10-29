@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hsp
 title: 开发动态共享包
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 开发动态共享包
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:15+08:00
+scraped_at: 2026-10-29T07:58:19+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:7b15872189f92285b8e6ffc7f228504c6396b4dadf52e92d9ab616b12c2c914a
+content_hash: sha256:633f9d940c68b5cf565270435707849082111d44cce6277b5788d3b22b90608f
 ---
 
 DevEco Studio支持开发动态共享包[HSP（Harmony Shared Package）](in-app-hsp.md)。在应用/元服务开发过程中部分功能按需动态下载，或开发元服务场景时需要分包加载，可使用HSP实现相应功能。当有多个安装包需要资源共享时，也可利用HSP减少公共资源和代码重复打包。
@@ -28,18 +28,18 @@ DevEco Studio支持开发动态共享包[HSP（Harmony Shared Package）](in-app
    * 方法2：选中工程目录中任意文件，然后在菜单栏选择**File > New > Module**，开始创建新的Module。
 2. 模板类型选择**Shared Library**，点击**Next**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/HN_Eow-HQV6tycyV7_hjIw/zh-cn_image_0000002731382245.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/U6bpOuIJREOkrFoi9IP2Uw/zh-cn_image_0000002731382245.png)
 3. 在**Configure New Module**界面中，设置新添加的模块信息，设置完成后，单击**Finish**完成创建。
    * **Module name**：新增模块的名称，如设置为library。
    * **Device type**：支持的设备类型。
    * **Enable native**：是否创建一个用于调用C++代码的模块。
    * **C++ Standard：**C++标准库，取值包括：Toolchain Default、C++11、C++14。仅打开Enable native时需要配置。从DevEco Studio 6.0.1 Beta1开始支持。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/6f0GOHwURzizWu9ZFljRtQ/zh-cn_image_0000002701822944.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Bf8NAa0LTfuUS0MNYKZ08g/zh-cn_image_0000002701822944.png)
 
    创建完成后，会在工程目录中生成HSP模块及相关文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/a_olJVkPR5-KVX2J3n7KZQ/zh-cn_image_0000002701663014.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/FGtHvuyqTuq85BeLYsuDmA/zh-cn_image_0000002701663014.png)
 
 ## 编译HSP模块
 
@@ -49,21 +49,21 @@ DevEco Studio支持开发动态共享包[HSP（Harmony Shared Package）](in-app
 
 参考[应用内HSP开发指导](in-app-hsp.md)开发完HSP模块后，选中模块名，然后通过DevEco Studio菜单栏的**Build > Make Module ${libraryName}**进行编译构建，生成HSP。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/kser0dNsRDSC0kou6Yczdw/zh-cn_image_0000002701822942.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/mcp1-nlgQruOcrnB6YJIFQ/zh-cn_image_0000002701822942.png)
 
 打包HSP时，会同时默认打包出HAR，在模块下build目录下可以看到\*.har和\*.hsp。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/lQPdT5xjQ0WN_vV0_-2xZw/zh-cn_image_0000002701663016.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/54LM2M1MR4aXuNmXWIkwLA/zh-cn_image_0000002701663016.png)
 
 如需在应用内共享HSP，请将HSP共享包上传至私仓（请参考[将三方库发布到 ohpm-repo](ide-ohpm-repo-quickstart.md#zh-cn_topic_0000001792256157_从ohpm-repo获取三方库)），请先按以下操作编译生成\*.tgz包。
 
-1. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/A4922AC-TTWOu1WQTOoCAw/zh-cn_image_0000002731542213.png)图标将编译模式切换成release模式。
+1. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/cDeS9SozSIe01y7mvT1l-w/zh-cn_image_0000002731542213.png)图标将编译模式切换成release模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/2HH2DtVATgyaxSnHyniFXg/zh-cn_image_0000002701663024.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/GhFePwdgSBmA_0OyhtaTSw/zh-cn_image_0000002701663024.png)
 2. 选中HSP模块的根目录，点击**Build > Make Module ${libraryName}**启动构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/9k2-QeFDT2aSTfz7BmJjkQ/zh-cn_image_0000002731542221.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/mGn8HPskQTCh_uycRfyN1Q/zh-cn_image_0000002731542221.png)
 
    构建完成后，build目录下生成HSP包产物，其中.tgz用来上传至私仓。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/uZg5_X-hQ86LuMrH2C-eDQ/zh-cn_image_0000002701822936.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/6D0LV75qRNOQA-dcCIqvGw/zh-cn_image_0000002701822936.png)

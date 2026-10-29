@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap-nd
 title: syscap_ndk.h
 breadcrumb: API参考 > 公共基础能力 > C API > 头文件 > syscap_ndk.h
 category: harmonyos-references
-scraped_at: 2026-09-25T07:14:42+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:7517adabcea39d4c75b3c7cd93664b946e9aa0561d5fec011523426f6a412fce
+scraped_at: 2026-10-29T08:03:07+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:0d4deb4654eb31494811c441bd3d61b88e3c2d2af9e3861ca571f632c3ec29a0
 ---
 
 ## 概述
@@ -18,7 +18,9 @@ content_hash: sha256:7517adabcea39d4c75b3c7cd93664b946e9aa0561d5fec011523426f6a4
 
 **起始版本：** 8
 
-**相关模块：** [Init](init.md)
+**库：** libdeviceinfo\_ndk.z.so
+
+**相关模块：** [syscapndk](capi-syscap-ndk.md)
 
 ## 汇总
 
@@ -44,9 +46,9 @@ bool canIUse (const char * cap)
 
 **参数：**
 
-| 名称 | 描述 |
+| 参数项 | 描述 |
 | --- | --- |
-| cap | 待查询的系统能力名称。 |
+| const char \* cap | 待查询的系统能力名称。 |
 
 **返回：**
 

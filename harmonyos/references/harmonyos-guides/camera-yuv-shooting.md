@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-yuv-sh
 title: YUV拍照(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > YUV拍照(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:50+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:d9ff1d3aecd5f1bd714d8bf2f25e7a3a31993ca2eb9c776b091383bf3972deb0
+scraped_at: 2026-10-29T07:57:20+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:68ead72967739b3a0989f7d2e751bca1d6118a23b0b791a63302e54904e3973f
 ---
 
 从API version 23开始，相机框架提供YUV格式图片拍照能力。与普通拍照相比，YUV拍照获取到的是未经过编码的图像数据，完整保留了传感器捕获的原始亮度和色度信息，适用于视频编码或专业处理。同时，拍摄过程会产生更高的能耗开销，保存会占用更多的存储空间。
@@ -58,7 +58,7 @@ content_hash: sha256:d9ff1d3aecd5f1bd714d8bf2f25e7a3a31993ca2eb9c776b091383bf397
        photoOutput = cameraManager.createPhotoOutput(photoProfile);
      } catch (error) {
        let err = error as BusinessError;
-       console.error("Failed to createPhotoOutput. error: ${err}");
+       console.error(`Failed to createPhotoOutput. error: ${err}`);
      }
      return photoOutput;
    }

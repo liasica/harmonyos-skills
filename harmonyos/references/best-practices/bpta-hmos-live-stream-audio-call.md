@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmos-live-
 title: 基于媒体能力实现直播连麦功能
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于媒体能力实现直播连麦功能
 category: best-practices
-scraped_at: 2026-10-16T07:06:43+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8bcdc15bc6a26ca80ca442ed7932e70c31553908144719f501c41b6c178458af
+scraped_at: 2026-10-29T08:03:20+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:b0a80b1db1744067b81ff1e2077d179da413ee349d31dad83c15c48a774bac20
 ---
 
 ## 概述
@@ -16,13 +16,13 @@ content_hash: sha256:8bcdc15bc6a26ca80ca442ed7932e70c31553908144719f501c41b6c178
 
 因此，本文将聚焦于客户端开播侧的音视频流解码播放，详细介绍对应的技术实现方案。关于直播推拉流协议、云上服务器转码与分发等内容，本文暂不涉及。直播连麦系统的处理链路可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/xm_u2CD_Q-m11f_WExl-ng/zh-cn_image_0000002741148431.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/5joi3S7bTC6CZUDcV7mDgQ/zh-cn_image_0000002765180728.png "点击放大")
 
 ## 直播连麦架构
 
 以两路主播连麦场景为例，云端、应用客户端及系统的分层技术架构图如下图所示。实际直播场景支持多路连麦，每一路客户端的技术方案和基本原理均相似。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/bqzcDMA2TfifWB-nCMxS9g/zh-cn_image_0000002518209536.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/1afY2tWMS82IAX2CKaJW2Q/zh-cn_image_0000002518209536.png "点击放大")
 
 由上图可见，直播连麦的整个流程可以分为**“发起连麦”**、**“连麦建立”** 和 **“观众观看”**三个主要阶段。
 
@@ -30,7 +30,7 @@ content_hash: sha256:8bcdc15bc6a26ca80ca442ed7932e70c31553908144719f501c41b6c178
 * **第二阶段“连麦建立”：**主播1的客户端应用SDK采集主播1的音视频信息，编码后发送至云端信令服务器，同时从云端服务器拉取主播2的音视频码流，在本地客户端进行解码和渲染后，根据应用业务层设计的连麦UI布局在本端手机屏幕上合成画面后，同时展示主播1和主播2的连麦画面。主播2的流程与此类似。
 * **第三阶段“观众观看”：**云端信令服务器接收到主播1和主播2的音视频信息后，在云端进行合流操作，包括根据连麦UI布局合成主播1和主播2的画面为视频帧，以及将两路音频流混音为一路音频流。合流后，最终通过CDN分发至各观众客户端，观众客户端依据传输协议拉取连麦后的音视频码流，并通过本地播放器解码播放。
 
-由上述流程可见，业务调度、信令通信等云端服务是可以跨端通用的。与基础单播场景相比，连麦场景的主要差异在于开播端需要新增音频和视频的解码播放能力，该能力可通过系统底座的Audio Kit、AVCodec Kit、Graphic Kit等接口进行开发实现。一般而言，看播端拉流的音频和视频数据来源于云端，并在云端完成了合流操作。因此，连麦场景看播端解决方案与单播场景一致，开发者可参考媒体直播单播场景的[看播端解决方案](bpta-hmos-live-stream-solution.md#section1818019424273)。
+由上述流程可见，业务调度、信令通信等云端服务是可以跨端通用的。与基础单播场景相比，连麦场景的主要差异在于开播端需要新增音频和视频的解码播放能力，该能力可通过系统底座的[Audio Kit（音频服务）](../doccenter-capabilities/audio-kit.md)、[AVCodec Kit（音视频编解码服务）](../doccenter-capabilities/avcodec-kit.md)、[Graphics Accelerate Kit（图形加速服务）](../doccenter-capabilities/graphics-accelerate-kit-guide.md)等接口进行开发实现。一般而言，看播端拉流的音频和视频数据来源于云端，并在云端完成了合流操作。因此，连麦场景看播端解决方案与单播场景一致，开发者可参考媒体直播单播场景的[看播端解决方案](bpta-hmos-live-stream-solution.md#section1818019424273)。
 
 ## 开播端解决方案
 
@@ -42,7 +42,7 @@ content_hash: sha256:8bcdc15bc6a26ca80ca442ed7932e70c31553908144719f501c41b6c178
 
 主播1客户端从云端拉取主播2的视频码流（通常为H.264或H.265格式）并解码，与连麦UI布局XComponent创建的Surface ID关联后，即可直接渲染上屏显示。其原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/18lKczA5RVuLqOV4lOntpg/zh-cn_image_0000002518369668.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Jy9v-IQXRR2nqDg8zZmLUA/zh-cn_image_0000002518369668.png "点击放大")
 
 ### 开发步骤
 

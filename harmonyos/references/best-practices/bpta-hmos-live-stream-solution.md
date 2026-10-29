@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmos-live-
 title: 基于媒体能力实现直播单播功能
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于媒体能力实现直播单播功能
 category: best-practices
-scraped_at: 2026-10-16T07:06:43+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:8c97e1a11a18b4bf973bdda1dd8c93338a130bf0efeff6ec7e53e7e1107a859c
+scraped_at: 2026-10-29T08:03:19+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:56919d531ed219aee75f5b6bcb30dad9a93ef39f9dfb0be971846e48710474f4
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:8c97e1a11a18b4bf973bdda1dd8c93338a130bf0efeff6ec7e53e7e1107
 
 本文基于系统的媒体底座能力，为开发者提供媒体直播系统的解决方案。系统在音视频采集、编解码、播放等方面能够高效处理多种格式的音视频数据，有效提升了音视频的质量和流畅度，助力开发者构建高清采集、高效编码及流畅播放等能力。本文主要涉及开播端的音视频采集与编码、看播端的流媒体播放与音画同步等技术方案。关于直播推拉流协议、云上服务器转码与分发等内容，本文暂不涉及。直播系统的完整链路可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/8ZnWWr13TeS6B2EhNaECRw/zh-cn_image_0000002455689320.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/kPVPxsjsTZCydALZ5ipfOg/zh-cn_image_0000002455689320.png "点击放大")
 
 ## 开播端解决方案
 
@@ -22,7 +22,7 @@ content_hash: sha256:8c97e1a11a18b4bf973bdda1dd8c93338a130bf0efeff6ec7e53e7e1107
 
 ### 开播端架构设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/TFg0_yyOTNGxgSRpPRUaoQ/zh-cn_image_0000002488808969.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/UxBX4aqOTg6NM87s7pRcAg/zh-cn_image_0000002488808969.png "点击放大")
 
 开播端架构设计如上图所示。图中将直播系统划分为云端、应用、系统与硬件四个逻辑层次。本文重点介绍应用SDK层如何通过调用底层媒体能力完成直播音视频基础能力的构建。应用SDK层主要为应用业务层提供平台技术的基础能力，通常可分为音频SDK和视频SDK两部分：
 
@@ -41,7 +41,7 @@ content_hash: sha256:8c97e1a11a18b4bf973bdda1dd8c93338a130bf0efeff6ec7e53e7e1107
 
 ### 直播音频采集
 
-为了提高直播音频处理的效率，建议在直播SDK中使用Native侧的OHAudio接口进行开发。使用[OHAudio API](../harmonyos-references/capi-ohaudio.md)进行音频采集时，开发者需要指定录音流类型（[OH\_AudioStream\_SourceType](../harmonyos-references/capi-native-audiostream-base-h.md#oh_audiostream_sourcetype)）。开发者应根据实际业务需求选择不同的录音流类型，以下是几种常用的录音流类型介绍如下：
+为了提高直播音频处理的效率，建议在直播SDK中使用Native侧的OHAudio接口进行开发。使用[OHAudio](../harmonyos-references/capi-ohaudio.md)进行音频采集时，开发者需要指定录音流类型（[OH\_AudioStream\_SourceType](../harmonyos-references/capi-native-audiostream-base-h.md#oh_audiostream_sourcetype)）。开发者应根据实际业务需求选择不同的录音流类型，以下是几种常用的录音流类型介绍如下：
 
 1. 常规录音（AUDIOSTREAM\_SOURCE\_TYPE\_MIC）：支持录制48kHz双声道高清音频，但不具备回声消除等音频3A能力。
 2. 语音通话（AUDIOSTREAM\_SOURCE\_TYPE\_VOICE\_COMMUNICATION）：提供音频3A能力，但采样率只有16kHz。
@@ -64,7 +64,7 @@ content_hash: sha256:8c97e1a11a18b4bf973bdda1dd8c93338a130bf0efeff6ec7e53e7e1107
 
 音频采集开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/kkUv8COJQd2BeLar5Td0tQ/zh-cn_image_0000002455529676.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/aW4gYKttRc-jGofLXi-XGg/zh-cn_image_0000002455529676.png "点击放大")
 
 音频采集开发详细步骤，可参考[推荐使用OHAudio开发音频录制功能（C/C++）](../doccenter-capabilities/using-ohaudio-for-recording.md)。其中，开发者使用直播录音（AUDIOSTREAM\_SOURCE\_TYPE\_LIVE）类型的回声消除能力的关键代码如下：
 
@@ -119,11 +119,11 @@ if (sampleInfo.audioInfo.isOpenEchoCancel) {
 
 **（1）音频文件 -> 解封装 -> 音频解码**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Y7X7n_oRRKqFcVxVjTfw9A/zh-cn_image_0000002488689009.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/hFXLoHtcSSOJsiw1wUeL8A/zh-cn_image_0000002488689009.png "点击放大")
 
 **（2）音频解码 -> 播放**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/VwvcQH8RTP-9RmVlf8-tig/zh-cn_image_0000002455689324.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/B2T20S2IQgeKpAgNrg2x1w/zh-cn_image_0000002455689324.png "点击放大")
 
 开播端主播可能会使用本机扬声器或耳机进行音频文件收听。若主播播放的音频文件由应用提供，则应用需同时将该音频文件编码后推流发送，以方便看播端的观众同步收听。
 
@@ -170,7 +170,7 @@ static int32_t OnRenderInterruptEvent(OH_AudioRenderer *renderer, [[maybe_unused
 
 在直播的视频采集场景中，建议应用仅采集一路预览流，以降低直播功耗和时延。同时，在SDR直播场景下，颜色空间可配置为BT709\_LIMIT，以获得更广泛的设备支持。相机视频采集流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/OU7N-i56SAevoI_ddMdsLg/zh-cn_image_0000002488808973.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/KH6zPwmlR9iUXTkbBT9xMw/zh-cn_image_0000002488808973.png "点击放大")
 
 关于相机视频采集的具体开发步骤，开发者可参考[录像实践（ArkTS）](../doccenter-capabilities/camera-recording-case.md)。其中，配置颜色空间的关键代码如下所示：
 
@@ -208,7 +208,7 @@ setColorSpaceBeforeCommitConfig(session: camera.VideoSession, isHdr: number): vo
 
 在视频处理过程中，开发者需要完成NativeImage的创建、SurfaceId的获取及帧可用性监听设置，为后续相机数据的处理（如美颜、滤镜等）提供基础图像载体，确保相机生产的数据能被正确接收与处理。本文建议开发者通过NativeImage绑定外部OpenGL纹理并关联相机采集数据，由系统完成视频数据的流转，开发者可重点关注shader算法的实现。具体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/RAw7VWFLSam30TsuhUKrpw/zh-cn_image_0000002455529680.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/sO4p7XawQK-_EfV8qnOwYw/zh-cn_image_0000002455529680.png "点击放大")
 
 该环节的关键代码如下所示：
 
@@ -387,7 +387,7 @@ registerSystemPressureLevelChangeCallback(videoSession: camera.VideoSession): vo
 
 该场景下，建议应用可在直播推后台时发送一张如“主播暂时离开”的画面垫片以告知看播端观众此时主播离开，音视频采集暂停。同时为满足后台存活需求，业务需向系统申请一个数据传输的[长时任务（ArkTS）](../doccenter-capabilities/continuous-task.md)，且持续发送直播画面垫片以满足数据传输长时任务的流量监控需求，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/rUFfmuDXQYWfYV_ASr0cdQ/zh-cn_image_0000002488689013.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/6S3EICvgQVG4z8m4C0EIWQ/zh-cn_image_0000002488689013.png "点击放大")
 
 **（5）同一页面内的相机切换生命周期如何管理？**
 

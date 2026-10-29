@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-reduce-lay
 title: 布局节点减少
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 布局节点减少
 category: best-practices
-scraped_at: 2026-09-02T14:53:44+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:0c299d07939cbcaefe1632b11f1e731ec19379c6aab996c98adc0039e1da3aee
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:71e728bc7721e31c8938552e59faa73ff731ed5c36b6bd92b23b8ee43536bf3c
 ---
 
 在进行页面布局开发时，应该尽量减少布局节点，避免系统绘制更多的布局组件，达到优化渲染性能、减少内存占用的目的。具体提高渲染性能的优化原理请参阅[ArkUI框架执行流程](../harmonyos-guides/arkts-layout-optimization-guidance.md#arkui框架执行流程)。
@@ -27,4 +27,4 @@ content_hash: sha256:0c299d07939cbcaefe1632b11f1e731ec19379c6aab996c98adc0039e1d
 * 移除冗余节点、使用扁平化布局减少节点数。具体案例请参阅[精简节点数](../harmonyos-guides/arkts-layout-optimization-guidance.md#精简节点数)。
 * 自定义组件自身为非渲染节点，仅是组件树和状态数据的组合，常规使用自定义组件时并不会产生多余的节点。但是给自定义组件添加属性后，会将自定义组件作为一个整体节点进行处理。需通过优化手段[减少自定义组件产生多余节点](bpta-component-nesting-optimization.md#section25911641123713)。
 * 在组件嵌套的情况中，可以找到一些无用的容器组件嵌套。在考虑组件嵌套优化中，可以[删除无用的Stack/Column/Row嵌套](bpta-component-nesting-optimization.md#section1012993119126)，移除冗余节点，从而避免冗余节点对性能的消耗。
-* 实际上有些场景直接使用组件属性或借助系统API的能力即可实现，例如使用[overlay](../harmonyos-references/ts-universal-attributes-overlay.md#overlay)属性可以实现浮层场景，使用[ColorMetrics](../harmonyos-references/js-apis-arkui-graphics.md#colormetrics12)可以实现颜色叠加效果。[优先使用组件属性代替嵌套组件](bpta-component-nesting-optimization.md)方式可以减少布局嵌套组件的使用，从而精简节点数。
+* 实际上有些场景直接使用组件属性或借助系统API的能力即可实现，例如使用[overlay](../harmonyos-references/ts-universal-attributes-overlay.md#overlay)属性可以实现浮层场景，使用[ColorMetrics](../harmonyos-references/js-apis-arkui-graphics.md#colormetrics12)可以实现颜色叠加效果。[组件嵌套优化](../doccenter-app-quality/bpta-component-nesting-optimization.md)方式可以减少布局嵌套组件的使用，从而精简节点数。

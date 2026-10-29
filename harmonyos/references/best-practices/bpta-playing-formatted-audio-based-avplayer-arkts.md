@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-fo
 title: 基于AVPlayer播放格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于AVPlayer播放格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-10-16T07:06:37+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:4a0fd2dcb25ac632e6b801522c6ad55b5d8f787d16d64d121d19c8cb4feeee7e
+scraped_at: 2026-10-29T08:03:16+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:6af9af5bc2818a1b53a491787b3cb5cc36231ecc39d856fd789b526de4b54f1a
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 本文是音频播放系列文章的第3篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/YHKSiUTSQnudChAaTjAeyQ/zh-cn_image_0000002555217523.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/gWkUAplNTLSJI3Cw63qpOw/zh-cn_image_0000002524217626.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/tkO10vxZQGuFst1kJ5wlyA/zh-cn_image_0000002555337497.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/2cijAf6kR_Gey9KPYhOEVg/zh-cn_image_0000002555217523.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/1iO4OrU6Qb2F5F4vzXpsAQ/zh-cn_image_0000002524217626.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/cl1znDdLQXuhNFUuS0D-kQ/zh-cn_image_0000002555337497.gif "点击放大")
 
 ## 场景分析
 
@@ -36,7 +36,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过[Interface (AVPlayer)](../harmonyos-references/arkts-apis-media-avplayer.md)实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/6vEULnPUSJCurD_KiSzaRw/zh-cn_image_0000002524057632.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/PkpXSS06TfepE4di7NJDQg/zh-cn_image_0000002524057632.gif "点击放大")
 
 ### 实现原理
 
@@ -45,7 +45,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 主要的开发步骤如下：
 
 1. 开发者可以通过[media.createAVPlayer()](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)构建一个AVPlayer实例，创建成功后，此时播放器处于idle状态。
-2. 注册[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)回调，主动获取当前状态变化。
+2. 注册[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)回调，监听当前状态变化。
 
    **注意** 
 
@@ -69,7 +69,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 1. 通过[media.createAVPlayer()](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)创建一个AVPlayer实例。
 
-```typescript
+```screen
 // Initialize the player
 public async initAVPlayer() {
   if (this.avPlayer) {
@@ -78,13 +78,13 @@ public async initAVPlayer() {
   }
   this.avPlayer = await media.createAVPlayer();
   this.genSpeedMap();
-  Logger.info(TAG, `createAVPlayer success， curState is ${this.avPlayer?.state}`);
+  Logger.info(TAG, `createAVPlayer success, curState is ${this.avPlayer?.state}`);
   this.setAVPlayerCallbacks();
-  Logger.info(TAG, `setAVPlayerCallbacks success，curState is ${this.avPlayer?.state}`);
+  Logger.info(TAG, `setAVPlayerCallbacks success, curState is ${this.avPlayer?.state}`);
 }
 ```
 
-2. 注册[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)回调，主动获取当前状态变化。
+2. 注册[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)回调，监听当前状态变化。
 
 ```screen
 // Watch state
@@ -97,15 +97,15 @@ private stateChangeCallback() {
     this.currentState = state;
     switch (state) {
       case 'idle':
-        Logger.info(TAG, `state idle called , resson is ${reason}`);
+        Logger.info(TAG, `state idle called , reason is ${reason}`);
         break;
       case 'initialized':
-        Logger.info(TAG, `state initialized called , resson is ${reason}`);
+        Logger.info(TAG, `state initialized called , reason is ${reason}`);
         this.setAudioRendererInfo();
         this.prepare();
         break;
       case 'prepared':
-        Logger.info(TAG, `state prepared called , resson is ${reason}`);
+        Logger.info(TAG, `state prepared called , reason is ${reason}`);
         if (this.waitPlay) {
           this.play();
         }
@@ -133,16 +133,16 @@ private errorCallback() {
 4. 通过[url](../harmonyos-references/arkts-apis-media-avplayer.md#属性)、[fdSrc](../harmonyos-references/arkts-apis-media-avplayer.md#属性)等属性设置播放资源。
 
 ```screen
-async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
+async loadSongAsset(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
   if (!songRawFileDescriptor) {
-    Logger.error(TAG, `loadSongAssent faile : songRawFileDescriptor get failed`);
+    Logger.error(TAG, `loadSongAsset failed : songRawFileDescriptor get failed`);
     return;
   }
   if (!this.avPlayer) {
     return;
   }
   this.avPlayer.fdSrc = songRawFileDescriptor;
-  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}, curState is ${this.avPlayer?.state}`);
+  Logger.info(TAG, `set avPlayer fdSrc is ${this.avPlayer.fdSrc}, curState is ${this.avPlayer?.state}`);
 }
 ```
 
@@ -232,7 +232,7 @@ public release() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/0D9Bv1N-R4i8BWAY1fAXuw/zh-cn_image_0000002555217525.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/ZYth1JwvQqO5YW9N7Hxd_w/zh-cn_image_0000002555217525.gif "点击放大")
 
 ### 实现原理
 
@@ -258,7 +258,7 @@ public seek(ms: number) {
 
 通过界面按钮快捷切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/-d-7Z9XUQaWBAeGjWyeBFA/zh-cn_image_0000002524217628.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ERuXUN2sR2S5OSDq0MMEYg/zh-cn_image_0000002524217628.gif "点击放大")
 
 ### 实现原理
 
@@ -285,7 +285,7 @@ public setSilentMode(isSilentMode: boolean) {
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/WsSoIf3zQC2MhrbkBpJFOw/zh-cn_image_0000002555337501.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/4jl_jOPwRCu8j7dq-2--wQ/zh-cn_image_0000002555337501.gif "点击放大")
 
 ### 实现原理
 
@@ -310,16 +310,16 @@ public async stop() {
 2. 给AVPlayer的fd或fdSrc属性赋值为新的歌曲资源。
 
 ```screen
-async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
+async loadSongAsset(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
   if (!songRawFileDescriptor) {
-    Logger.error(TAG, `loadSongAssent faile : songRawFileDescriptor get failed`);
+    Logger.error(TAG, `loadSongAsset failed : songRawFileDescriptor get failed`);
     return;
   }
   if (!this.avPlayer) {
     return;
   }
   this.avPlayer.fdSrc = songRawFileDescriptor;
-  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}, curState is ${this.avPlayer?.state}`);
+  Logger.info(TAG, `set avPlayer fdSrc is ${this.avPlayer.fdSrc}, curState is ${this.avPlayer?.state}`);
 }
 ```
 
@@ -329,7 +329,7 @@ async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/WSUufguDSCmI7TF0sE_vzA/zh-cn_image_0000002524057634.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/nPuFe_xnTxWrH6XiCYKwBA/zh-cn_image_0000002524057634.gif "点击放大")
 
 ### 实现原理
 
@@ -377,7 +377,7 @@ public setSpeed(speed: number) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/CTB9G_YhT6eFXUFDnnwZ6Q/zh-cn_image_0000002555217531.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/A6rdO3XRTtyphFRQHyep0g/zh-cn_image_0000002555217531.gif "点击放大")
 
 ### 实现原理
 
@@ -456,15 +456,15 @@ private stateChangeCallback() {
     this.currentState = state;
     switch (state) {
       case 'idle':
-        Logger.info(TAG, `state idle called , resson is ${reason}`);
+        Logger.info(TAG, `state idle called , reason is ${reason}`);
         break;
       case 'initialized':
-        Logger.info(TAG, `state initialized called , resson is ${reason}`);
+        Logger.info(TAG, `state initialized called , reason is ${reason}`);
         this.setAudioRendererInfo();
         this.prepare();
         break;
       case 'prepared':
-        Logger.info(TAG, `state prepared called , resson is ${reason}`);
+        Logger.info(TAG, `state prepared called , reason is ${reason}`);
         if (this.waitPlay) {
           this.play();
         }

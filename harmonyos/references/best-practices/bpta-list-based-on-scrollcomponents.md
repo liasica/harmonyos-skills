@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-list-based
 title: 基于ScrollComponents实现长列表
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于ScrollComponents实现长列表
 category: best-practices
-scraped_at: 2026-10-16T07:06:35+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:411042d81c15862b5b756fb79fb70d534f824f652dcff8b2f2fe7bbeee52d588
+scraped_at: 2026-10-29T08:03:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:62b4babc782b1a3d49cf5d6754c222cb6dba268e0ae5ba7e5fe1ae0b8fcf3056
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:411042d81c15862b5b756fb79fb70d534f824f652dcff8b2f2fe7bbeee5
 
 当长列表上下滑动时，频繁的子组件创建和测量会大量消耗计算资源，容易造成滑动卡顿。图片等资源的短时集中请求会造成明显的页面滑动白块，影响用户体验。
 
-ScrollComponents作为高性能滑动解决方案，主要解决组件复用问题，支持通过少量的代码实现高性能滑动场景开发，同时开发者无需关注复用池管理和其他性能优化方案的交互细节。可以参考[ScrollComponents使用说明](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#快速开始)进行安装配置与快速上手。ScrollComponents三方库提供了下列功能特性：
+ScrollComponents作为高性能滑动解决方案，主要解决组件复用问题，支持通过少量的代码实现高性能滑动场景开发，同时开发者无需关注复用池管理和其他性能优化方案的交互细节。可以参考[快速开始](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#快速开始)进行安装配置与快速上手。ScrollComponents三方库提供了下列功能特性：
 
 * 支持List，WaterFlow，Grid 三种常见复杂页面的流畅滑动
 * 默认支持懒加载
@@ -23,7 +23,7 @@ ScrollComponents作为高性能滑动解决方案，主要解决组件复用问�
 * 支持预创建，减少冷启首次滑动丢帧，提升滑动性能
 * 支持预加载，滑动过程提前加载数据，提升浏览体验
 
-ScrollComponents三方库基于系统[NodeAdapter](../harmonyos-references/js-apis-arkui-framenode.md#nodeadapter12)、[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)、[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)、[Prefetcher](../harmonyos-references/js-apis-arkui-prefetcher.md)、[FrameCallback](../harmonyos-references/arkts-apis-uicontext-framecallback.md)的能力，通过高效的组件复用、分帧预创建组件、动态内容预创建和懒加载等技术，实现了高性能的滑动效果。此外，它还基于FrameNode封装了系统List、WaterFlow、Grid组件，提供了一系列ViewManager，为开发者提供了多种系统滑动组件的能力，如列表项样式设置、首尾偏移量调整、滚动监听、边缘渐隐等，旨在简化开发流程的同时满足开发者的常规需求。
+ScrollComponents三方库基于系统[NodeAdapter](../harmonyos-references/js-apis-arkui-framenode.md#nodeadapter12)、[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)、[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)、[@ohos.arkui.Prefetcher (内容预取)](../harmonyos-references/js-apis-arkui-prefetcher.md)、[Class (FrameCallback)](../harmonyos-references/arkts-apis-uicontext-framecallback.md)的能力，通过高效的组件复用、分帧预创建组件、动态内容预创建和懒加载等技术，实现了高性能的滑动效果。此外，它还基于FrameNode封装了系统List、WaterFlow、Grid组件，提供了一系列ViewManager，为开发者提供了多种系统滑动组件的能力，如列表项样式设置、首尾偏移量调整、滚动监听、边缘渐隐等，旨在简化开发流程的同时满足开发者的常规需求。
 
 下文将通过长列表的跨页面复用、加速首屏渲染、无限滑动、下拉刷新、上拉加载等场景，详细介绍ScrollComponents库在长列表组件中的应用。
 
@@ -36,7 +36,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 如下图所示，当节点从可视区域移除时，NodeAdapter会通知视图管理器回收组件，经NodeFactory处理后，组件最终被存入复用池。当需要创建节点时，NodeAdapter通知视图管理器开始创建，NodeFactory会从复用池请求复用节点，获取节点后经过一系列更新和组件拼接，最后由NodeAdapter将节点添加到可视区域。
 
 **图1** RecyclerView整体流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1-IvhqMtQ7eD0Ex8cur5Xg/zh-cn_image_0000002356692034.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/qWcfvmRYQFaW0b4d4XWoZA/zh-cn_image_0000002356692034.png "点击放大")
 
 ### 开发流程
 
@@ -46,8 +46,9 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
    在创建视图管理器的实例对象时，defaultNodeItem属性用于指定默认的列表项模板名称，通常传入唯一标识字符串用于组件复用；context属性用于获取UI上下文，通常传入this.getUIContext()。
 
-   ```typescript
-   import { ListManager, NodeItem, RecyclerView } from '@hadss/scroll_components';
+   ```screen
+   import { ListManager, type NodeItem, RecyclerView } from '@hadss/scroll_components';
+
    @Component
    struct SameItemListPage {
      myListManager: MyListManager = new MyListManager({
@@ -58,18 +59,20 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
    }
 
    class MyListManager extends ListManager {
-     onWillCreateItem(_index: number, data: BlogData) {
-       // ...
+     public onWillCreateItem(_index: number, data: BlogData): NodeItem<Params> | null {
+       let node: NodeItem<Params> | null = this.dequeueReusableNodeByType('EasyBlogItemContainer');
+       node?.setData({ blogData: data });
+       return node;
      }
    }
    ```
 
    **说明** 
 
-   如果开发者希望通过ScrollComponents快速创建长列表，并利用懒加载、预创建等功能来提升滑动效率，而不涉及组件复用，那么可以直接使用ScrollComponents库中提供的ListManager来创建长列表视图管理器。具体的使用方法和配置选项，可以参考[ScrollComponents使用说明-快速开始](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#快速开始)。
+   如果开发者希望通过ScrollComponents快速创建长列表，并利用懒加载、预创建等功能来提升滑动效率，而不涉及组件复用，那么可以直接使用ScrollComponents库中提供的ListManager来创建长列表视图管理器。具体的使用方法和配置选项，可以参考[快速开始](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#快速开始)。
 2. ListManager初始化
 
-   在页面初始化时，开发者通过视图管理器的setViewStyle接口为视图设置相应的属性。这包括设置布局与约束条件、主轴和交叉轴的方向、自定义列表样式（如内容间距、分割线、滚动条等）以及设置滚动监听。
+   在页面初始化时，开发者通过视图管理器的setViewStyle()接口为视图设置相应的属性。这包括设置布局与约束条件、主轴和交叉轴的方向、自定义列表样式（如内容间距、分割线、滚动条等）以及设置滚动监听。
 
    ```screen
    this.myListManager.setItemViewStyle((item, index, data: Params) => {
@@ -79,33 +82,33 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
        .swipeAction({
          // ...
        })
-       .onClick(() => Logger.info("index:" + index))
-   })
+       .onClick(() => Logger.info('index:' + index));
+   });
    this.myListManager.setViewStyle({ space: 10, scroller: this.listScroller })
-     .cachedCount(2)// Set the number of preloaded ListItemListItemGroups in the list and whether to display the preloaded nodes
+     .cachedCount(2)
      .width('100%')
      .edgeEffect(EdgeEffect.Spring)
      .layoutWeight(1)
-     .contentStartOffset(20)// Sets the offset at the start of the content area
-     .contentEndOffset(20)// Sets the offset at the end of the content area
-     .scrollBar(BarState.Off)// Set the scrollbar status
+     .contentStartOffset(20)
+     .contentEndOffset(20)
+     .scrollBar(BarState.Off)
      // ...
-     .alignListItem(ListItemAlign.Start)// Set the direction of the List cross axis
-     .lanes(1)// Set the number of layout columns or rows in the List portlet
+     .alignListItem(ListItemAlign.Start)
+     .lanes(1)
      .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) })
-     // Nested scrolling: Set up a scrolling scheme
      .nestedScroll({
-       scrollForward: NestedScrollMode.PARENT_FIRST, // The parent component scrolls first, scrolls to the edge, and then scrolls itself
-       scrollBackward: NestedScrollMode.SELF_FIRST // Itself rolls first, and then the parent component scrolls to the edge
-     })
+       scrollForward: NestedScrollMode.PARENT_FIRST,
+       scrollBackward: NestedScrollMode.SELF_FIRST
+     });
    ```
 3. 设置数据源渲染组件
    1. 通过视图管理器的setDataSource()方法设置数据。ScrollComponents库默认支持懒加载，提供基于懒加载的数据增删改查功能，开发者无需担心LazyForEach的使用限制，无需定义DataSource，引入即可使用。懒加载接口可参考：[基于NodeAdapter为视图管理器提供懒加载能力](https://gitcode.com/openharmony-sig/scroll_components/blob/master/docs/Reference.md#lazynodeadapter-类)。
    2. 通过视图管理器的registerNodeItem方法注册item子节点模板时，需要传入模板名称和子节点的@Builder构造函数。
    3. ScrollComponents提供了视图占位组件RecyclerView，RecyclerView通过绑定视图容器实例即可渲染长列表。
 
-      ```typescript
-      import { ListManager, NodeItem, RecyclerView } from '@hadss/scroll_components';
+      ```screen
+      import { ListManager, type NodeItem, RecyclerView } from '@hadss/scroll_components';
+
       @Component
       struct SameItemListPage {
         myListManager: MyListManager = new MyListManager({
@@ -117,7 +120,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
         aboutToAppear(): void {
           // ...
           // Register a reuse template
-          this.myListManager.registerNodeItem('EasyBlogItemContainer', wrapBuilder(EasyBlogItemContainer));
+          this.myListManager.registerNodeItem('EasyBlogItemContainer', wrapBuilder(easyBlogItemContainerBuilder));
           // ...
           // Simulate request data
           this.myViewModel.loadData();
@@ -128,16 +131,21 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
               Column() {
                 RecyclerView({
                   viewManager: this.myListManager
-                })
-              }
-              // ...
+                });
+              };
+            }
+            .height(CommonConstants.FULL_HEIGHT)
+            .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])
+            .backgroundColor($r('app.color.home_background_color'));
+          }
+          .hideTitleBar(true);
         }
       }
 
       // Define an item template
       @Builder
-      function EasyBlogItemContainer($$: Params) {
-        EasyBlogItem({ blogData: $$.blogData })
+      function easyBlogItemContainerBuilder($$: Params): void {
+        EasyBlogItem({ blogData: $$.blogData });
       }
       ```
 
@@ -169,7 +177,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
       当ListItem组件的结构相同但数据不同时，直接注册节点模板。
 
-      ```typescript
+      ```screen
       @Component
       struct SameItemListPage {
         myListManager: MyListManager = new MyListManager({
@@ -180,14 +188,14 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
         aboutToAppear(): void {
           // ...
           // Register a reuse template
-          this.myListManager.registerNodeItem('EasyBlogItemContainer', wrapBuilder(EasyBlogItemContainer));
+          this.myListManager.registerNodeItem('EasyBlogItemContainer', wrapBuilder(easyBlogItemContainerBuilder));
           // ...
         }
         // ...
       }
 
       class MyListManager extends ListManager {
-        onWillCreateItem(_index: number, data: BlogData) {
+        public onWillCreateItem(_index: number, data: BlogData): NodeItem<Params> | null {
           let node: NodeItem<Params> | null = this.dequeueReusableNodeByType('EasyBlogItemContainer');
           node?.setData({ blogData: data });
           return node;
@@ -196,41 +204,44 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
       // Define an item template
       @Builder
-      function EasyBlogItemContainer($$: Params) {
-        EasyBlogItem({ blogData: $$.blogData })
+      function easyBlogItemContainerBuilder($$: Params): void {
+        EasyBlogItem({ blogData: $$.blogData });
       }
       ```
    2. 列表项内子组件可拆分组合
 
-      如果复用的ListItem组件结构基本相同，但存在部分差异，例如头部和尾部组件展示相同，而中间内容可能渲染Text组件或Image组件，通常需要定义两个不同的@Builder函数来实现复用。然而，在这种场景下，ScrollComponents提供了PartReuse功能，确保组件复用的实现，只需定义一个@Builder函数。具体可参考[组件复用-列表项子组件可拆分](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#列表项内子组件可拆分)。
+      如果复用的ListItem组件结构基本相同，但存在部分差异，例如头部和尾部组件展示相同，而中间内容可能渲染Text组件或Image组件，通常需要定义两个不同的@Builder函数来实现复用。然而，在这种场景下，ScrollComponents提供了PartReuse功能，确保组件复用的实现，只需定义一个@Builder函数。具体可参考[列表项内子组件可拆分](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#列表项内子组件可拆分)。
 
       当组件即将被销毁时，会从视图容器中移除并进入item复用池。当组件即将被创建时，会从item复用池中获取item节点。如果item节点与目标节点类型存在差异，会先将差异部分，即PartReuse中的组件回收到对应的组件复用池，然后从对应的组件复用池中取出目标组件所需的差异组件，并与item节点拼接，形成目标组件，再进入视图容器中。
 
       **图2** 可拆分组件复用创建流程图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Ja9d4polRQa4H2NHYkq5_g/zh-cn_image_0000002390372089.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/CAuw7jDLS3imWbT5jzAAmA/zh-cn_image_0000002390372089.png "点击放大")
 
-      ```typescript
-      import { ListManager, NodeItem, PartReuse, RecyclerView, } from '@hadss/scroll_components';
+      ```screen
+      import { ListManager, type NodeItem, PartReuse, RecyclerView, } from '@hadss/scroll_components';
+
       @Component
       struct CombineItemListPage {
         myListManager: MyListManager = new MyListManager({
-          defaultNodeItem: "BlogItemContainer",
+          defaultNodeItem: 'BlogItemContainer',
           context: this.getUIContext()
         });
         // ...
         aboutToAppear(): void {
           // ...
           // Register a reuse template
-          this.myListManager.registerNodeItem('BlogItemContainer', wrapBuilder(BlogItemContainer));
-          this.myListManager.registerNodeItem('AdaptiveTextComponentContainer', wrapBuilder(AdaptiveTextComponentContainer));
-          this.myListManager.registerNodeItem('GridImageViewContainer', wrapBuilder(GridImageViewContainer));
+          this.myListManager.registerNodeItem('BlogItemContainer', wrapBuilder(blogItemContainerBuilder));
+          this.myListManager.registerNodeItem('AdaptiveTextComponentContainer',
+            wrapBuilder(adaptiveTextComponentContainerBuilder));
+          this.myListManager.registerNodeItem('GridImageViewContainer', wrapBuilder(gridImageViewContainerBuilder));
           // ...
         }
+
         // ...
       }
 
       class MyListManager extends ListManager {
-        onWillCreateItem(_index: number, data: BlogData) {
+        public onWillCreateItem(_index: number, data: BlogData): NodeItem<Params> | null {
           let node: NodeItem<Params> | null = this.dequeueReusableNodeByType('BlogItemContainer');
           node?.setData({ blogData: data });
           return node;
@@ -238,8 +249,8 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
       }
 
       @Builder
-      function BlogItemContainer($$: Params) {
-        BlogItem({ blogData: $$.blogData })
+      function blogItemContainerBuilder($$: Params): void {
+        BlogItem({ blogData: $$.blogData });
       }
 
       @Component
@@ -252,43 +263,44 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
         build() {
           Column({ space: 12 }) {
-            BlogItemHeaderView({ blogData: this.blogData })
+            BlogItemHeaderView({ blogData: this.blogData });
             if (this.blogData?.content.length > 0) {
               PartReuse({
                 type: 'AdaptiveTextComponent',
-                builder: wrapBuilder(AdaptiveTextComponentContainer),
+                builder: wrapBuilder(adaptiveTextComponentContainerBuilder),
                 data: { blogData: this.blogData }
-              })
+              });
             }
-            // Display pictures
             if (this.blogData?.images && this.blogData.images.length > 0) {
               PartReuse({
                 type: 'GridImageViewContainer',
-                builder: wrapBuilder(GridImageViewContainer),
+                builder: wrapBuilder(gridImageViewContainerBuilder),
                 data: { blogData: this.blogData }
-              })
+              });
             }
-            BottomActionView({ blogData: this.blogData })
+            BottomActionView({ blogData: this.blogData });
           }
-          // ...
+          .justifyContent(FlexAlign.Start)
+          .padding(12)
+          .backgroundColor(Color.White);
         }
       }
 
       @Builder
-      function AdaptiveTextComponentContainer($$: Params) {
-        AdaptiveTextComponent({ blogData: $$.blogData })
+      function adaptiveTextComponentContainerBuilder($$: Params): void {
+        AdaptiveTextComponent({ blogData: $$.blogData });
       }
 
       @Builder
-      function GridImageViewContainer($$: Params) {
-        GridImageView({ blogData: $$.blogData })
+      function gridImageViewContainerBuilder($$: Params): void {
+        GridImageView({ blogData: $$.blogData });
       }
       ```
 
-      开发者可以参考下图所示的日志打印内容，以检验是否成功复用，"generateItem reuse" 表示复用。
+      开发者可以参考下图所示的日志打印内容，以检验是否成功复用，“generateItem reuse” 表示复用。
 
       **图3** 日志效果图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/TqIw8uVTQYiY-dwEK86Hhw/zh-cn_image_0000002356851962.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/SWb4CNxdS2e0Ibtx-BXCpQ/zh-cn_image_0000002356851962.png "点击放大")
 
       **说明** 
 
@@ -297,7 +309,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
       如果ListItem结构存在较大差异，包括布局不同、子组件数量差异大、组件类型不同等因素，导致难以直接复用同一个ListItem，则可以定义多个复用模板。
 
-      ```typescript
+      ```screen
       @Component
       struct DifferentItemListPage {
         myListManager: MyListManager = new MyListManager({
@@ -309,16 +321,16 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
         // ...
         aboutToAppear(): void {
           // ...
-          this.myListManager.registerNodeItem('EasyBlogItemContainer', wrapBuilder(EasyBlogItemContainer));
-          this.myListManager.registerNodeItem('HotVideoBlogItemContainer', wrapBuilder(HotVideoBlogItemContainer));
+          this.myListManager.registerNodeItem('EasyBlogItemContainer', wrapBuilder(easyBlogItemContainerBuilder));
+          this.myListManager.registerNodeItem('HotVideoBlogItemContainer', wrapBuilder(hotVideoBlogItemContainerBuilder));
           this.myListManager.preCreate('HotVideoBlogItemContainer', 30);
           this.myListManager.preCreate('EasyBlogItemContainer', 30);
           this.myViewModel.loadData();
         }
 
-        initView() {
+        public initView(): void {
           this.myListManager.setItemViewStyle((_item, _index, _data: ESObject) => {
-          })
+          });
           this.myListManager.setViewStyle({ space: 10, scroller: this.scroller })
           // ...
         }
@@ -327,23 +339,23 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
         buildListView() {
           RecyclerView({
             viewManager: this.myListManager
-          })
+          });
         }
 
         build() {
           // ...
-              PullToRefresh({
-                // ...
-                customList: () => {
+              Refresh({ refreshing: $$this.isRefreshing }) {
+                Column() {
                   this.buildListView();
-                },
-                // ...
-              })
+                  // ...
+                };
+              }
               // ...
         }
       }
+
       class MyListManager extends ListManager {
-        onWillCreateItem(index: number, data: BlogData) {
+        onWillCreateItem(index: number, data: BlogData): NodeItem<Params> | null {
           if (index % 4 === 3) {
             let node: NodeItem<Params> | null = this.dequeueReusableNodeByType('HotVideoBlogItemContainer');
             node?.setData({ blogData: data });
@@ -357,14 +369,14 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
       // Reusable EasyBlog Component Template
       @Builder
-      function EasyBlogItemContainer($$: Params) {
-        EasyBlogItem({ blogData: $$.blogData })
+      function easyBlogItemContainerBuilder($$: Params): void {
+        EasyBlogItem({ blogData: $$.blogData });
       }
 
       // Reusable HotVideoBlog Component Template
       @Builder
-      function HotVideoBlogItemContainer($$: Params) {
-        HotVideoBlogItem({ blogData: $$.blogData })
+      function hotVideoBlogItemContainerBuilder($$: Params): void {
+        HotVideoBlogItem({ blogData: $$.blogData });
       }
       ```
 
@@ -377,7 +389,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 在分组场景中，通常会设置Group的header和footer，用于展示组内统一的头部和尾部信息。
 
 **图4** 商品分类列表展示效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/_fVhYqM8QTiZDDZJdYsJ4A/zh-cn_image_0000002390452013.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/fz-ihteAS1GH3sgLZEv4uw/zh-cn_image_0000002390452013.gif "点击放大")
 
 ### 开发步骤
 
@@ -385,8 +397,8 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
    ```screen
    @Builder
-   function GoodItemContainer($$: ParamsGoods) {
-     GoodItem({ dataModel: $$.dataModel })
+   function goodItemContainerBuilder($$: ParamsGoods): void {
+     GoodItem({ dataModel: $$.dataModel });
    }
 
    @Component
@@ -403,40 +415,44 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
        this.dataModel = params.dataModel;
      }
 
+     aboutToAppear(): void {
+     }
+
      build() {
        Row() {
          Image(this.dataModel.imgUrl)
            .height('100%')
            .aspectRatio(1)
            .sourceSize({ width: 96, height: 96})
+           .objectFit(ImageFit.Cover);
          Column() {
            Text(this.dataModel.goodsName)
              .width('100%')
              .fontSize(14)
              .maxLines(2)
              .textOverflow({ overflow: TextOverflow.Clip })
-             .lineHeight(20)
-           Text('￥' + this.dataModel.price)
+             .lineHeight(20);
+           Text('$' + this.dataModel.price)
              .fontSize(18)
-             .fontColor(Color.Red)
+             .fontColor(Color.Red);
          }
          .height('100%')
          .padding(12)
          .layoutWeight(1)
          .alignItems(HorizontalAlign.Start)
-         .justifyContent(FlexAlign.SpaceBetween)
+         .justifyContent(FlexAlign.SpaceBetween);
        }
        .clip(true)
        .width('100%')
        .height(96)
        .backgroundColor(Color.White)
-       .borderRadius(18)
+       .borderRadius(18);
      }
    }
    ```
 2. 定义ListItemGroupManager类
 
-   ```typescript
+   ```screen
    class MyListItemGroupManager extends ListItemGroupManager {
      onWillCreateItem(_index: number, data: GoodsDataModel): NodeItem | null {
        let node: NodeItem<ParamsGoods> | null = this.dequeueReusableNodeByType('GoodItemContainer');
@@ -447,9 +463,9 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
    ```
 3. 定义ListManager类
 
-   ```typescript
+   ```screen
    class MyListManager extends ListManager {
-     context: UIContext;
+     public context: UIContext;
 
      constructor(config: Config) {
        super(config);
@@ -458,19 +474,19 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
      onWillCreateItem(_index: number, data: CategoryModel): NodeItem {
        const groupManager = new MyListItemGroupManager({ defaultNodeItem: 'GoodItemContainer', context: this.context });
-       groupManager.registerNodeItem('GoodItemContainer', wrapBuilder(GoodItemContainer));
+       groupManager.registerNodeItem('GoodItemContainer', wrapBuilder(goodItemContainerBuilder));
        groupManager.setDataSource(data.goodsList);
        // The header and footer of the group
        groupManager.setViewStyle({
          space: 12,
          // ...
-       })
+       });
        groupManager.setItemViewStyle((listItem, index, data: ParamsGoods) => {
          // Used to set the scratch component of ListItem.
          listItem().swipeAction({
            // ...
-         })
-       })
+         });
+       });
        return groupManager.getNodeItem(this);
      }
    }
@@ -479,12 +495,12 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
    如果需要设置组头和组尾，可以通过ListItemGroupManager的headerComponent和footerComponent属性实现，并实现其对应的Builder函数。
 
-   ```typescript
+   ```screen
    class MyListManager extends ListManager {
      // ...
      onWillCreateItem(_index: number, data: CategoryModel): NodeItem {
        const groupManager = new MyListItemGroupManager({ defaultNodeItem: 'GoodItemContainer', context: this.context });
-       groupManager.registerNodeItem('GoodItemContainer', wrapBuilder(GoodItemContainer));
+       groupManager.registerNodeItem('GoodItemContainer', wrapBuilder(goodItemContainerBuilder));
        groupManager.setDataSource(data.goodsList);
        // The header and footer of the group
        groupManager.setViewStyle({
@@ -499,20 +515,21 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
          footerComponent: new ComponentContent<[Resource, number]>(this.context,
            wrapBuilder<[[Resource, number]]>(goodsFooterBuilderPublic),
            [data.titleName, data.titleId]),
-       })
+       });
        // ...
        return groupManager.getNodeItem(this);
      }
    }
+
    // The global Builder: passes multiple parameters
    @Builder
-   function goodsHeaderBuilderPublic(headerName: Resource) {
+   function goodsHeaderBuilderPublic(headerName: Resource): void {
      // ...
    }
 
    // The global Builder: passes multiple parameters
    @Builder
-   function goodsFooterBuilderPublic(args: [Resource, number]) {
+   function goodsFooterBuilderPublic(args: [Resource, number]): void {
      // ...
    }
    ```
@@ -526,7 +543,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
    目前这种写法不支持同时设置header和footer。后续，ScrollComponents库将支持这一功能。
 5. 页面实现
 
-   ```typescript
+   ```screen
    @Component
    struct GroupLayoutListPage {
      // ...
@@ -534,9 +551,9 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
      private goodsListScroller: ListScroller = new ListScroller();
      @State myViewModel: GroupLayoutViewModel = new GroupLayoutViewModel(this.myListManager, this.goodsListScroller);
 
-     aboutToAppear() {
+     public aboutToAppear(): void {
        this.initView();
-       this.myListManager.registerNodeItem('GoodItemContainer', wrapBuilder(GoodItemContainer));
+       this.myListManager.registerNodeItem('GoodItemContainer', wrapBuilder(goodItemContainerBuilder));
        this.myListManager.preCreate('GoodItemContainer', 30);
        this.myViewModel.loadData();
      }
@@ -547,17 +564,17 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
                Column() { // 3.Nested Scrolling: Inner List
                  RecyclerView({
                    viewManager: this.myListManager
-                 })
+                 });
                }
-               .height('100%')
+               .height('100%');
                // ...
      }
    }
 
    // ...
    @Builder
-   function GoodItemContainer($$: ParamsGoods) {
-     GoodItem({ dataModel: $$.dataModel })
+   function goodItemContainerBuilder($$: ParamsGoods): void {
+     GoodItem({ dataModel: $$.dataModel });
    }
    ```
 
@@ -568,7 +585,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 开发者可能需要在多个页面间复用List，例如在Tabs切换时。ScrollComponents提供了全局复用的能力。
 
 **图5** Tabs组件子页面跨页面复用效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/9YyI878_TuGPyiqm3ptT6Q/zh-cn_image_0000002356692062.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/8aPYvOiEShOTYD9T7_OWpA/zh-cn_image_0000002356692062.gif "点击放大")
 
 ### 开发步骤
 
@@ -576,13 +593,13 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
    ScrollComponents默认会生成一个RecycledPool对象，通过定义复用池单例存储该pool对象，以便跨页面使用。以下单例仅做参考，开发者可根据需要自行封装。
 
-   ```typescript
-   import { RecycledPool } from '@hadss/scroll_components';
+   ```screen
+   import type { RecycledPool } from '@hadss/scroll_components';
 
    export class Utils {
      // ...
      private static utils_: Utils;
-     nodePool: RecycledPool | null = null;
+     public nodePool: RecycledPool | null = null;
      // ...
    }
    ```
@@ -590,7 +607,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
    HMListManager提供getRecyclePool()方法可获取RecyclePool对象，然后存储到全局单例中。
 
-   ```typescript
+   ```screen
    if (Utils.getInstance().nodePool) {
      this.myListManager.registerRecyclePool(Utils.getInstance().nodePool!);
    } else {
@@ -601,7 +618,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 
    通过使用registerRecyclePool()接口，将全局单例中的RecyclePool注册到页面定义的List视图类对象上，实现跨页面HMRecyclerView视图的复用池共享。
 
-   ```typescript
+   ```screen
    @Component
    struct TabsCeilingListPage {
      private tabArray: Resource[] = [
@@ -609,7 +626,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
      ];
      // ...
      aboutToDisappear(): void {
-       Utils.getInstance().nodePool?.clear()
+       Utils.getInstance().nodePool?.clear();
      }
 
      // ...
@@ -618,11 +635,11 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
                  Tabs({ barPosition: BarPosition.Start, controller: this.contentTabController }) {
                    ForEach(this.tabArray, (item: Resource, index: number) => {
                      TabContent() {
-                       CustomListPage({ index: index })
+                       CustomListPage({ index: index });
                      }
                      .tabBar(this.tabBuilder(index, item))
-                     .align(Alignment.Center)
-                   }, (item: string) => item)
+                     .align(Alignment.Center);
+                   }, (item: string) => item);
                  }
                  // ...
      }
@@ -647,7 +664,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
          Utils.getInstance().nodePool = this.myListManager.getRecyclePool();
        }
        // ...
-       this.myListManager.registerNodeItem('CustomListItemContainer', wrapBuilder(CustomListItemContainer));
+       this.myListManager.registerNodeItem('CustomListItemContainer', wrapBuilder(customListItemContainerBuilder));
        this.myListManager.preCreate('CustomListItemContainer', 5);
        this.myViewModel.loadData();
      }
@@ -655,7 +672,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
      build() {
        RecyclerView({
          viewManager: this.myListManager
-       })
+       });
      }
    }
    ```
@@ -667,21 +684,27 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 冷启动后首次打开长列表页面时，由于页面包含大量图片或视频等媒体资源，可能会出现白屏或白块，需要等待几秒内容才会逐渐加载出来。ScrollComponents库支持组件预创建，使用后可以在打开页面后立即看到文字和图片的骨架，从而减少卡顿。
 
 **图6** 加速首屏渲染效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/W8KGlWKuTI2c8X1QiAnHCg/zh-cn_image_0000002390372125.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/wJAw3rGiSFGJe0kTF95vug/zh-cn_image_0000002390372125.gif "点击放大")
 
 ### 开发步骤
 
 包括注册模板和复用模板的预创建。重点：必须在注册复用模板之后使用preCreate()接口。
 
-```typescript
+```screen
 aboutToAppear(): void {
   // ...
   // Register a reuse template
-  this.myListManager.registerNodeItem('BlogItemContainer', wrapBuilder(BlogItemContainer));
-  this.myListManager.registerNodeItem('AdaptiveTextComponentContainer', wrapBuilder(AdaptiveTextComponentContainer));
-  this.myListManager.registerNodeItem('GridImageViewContainer', wrapBuilder(GridImageViewContainer));
-  // Pre-creation Important: preCreate pre-creates a reusable template, which must be done after the reuse template is registered
-  // Pre-create 30 list items to optimize the first-screen performance; the number can be adjusted according to actual needs.
+  this.myListManager.registerNodeItem('BlogItemContainer', wrapBuilder(blogItemContainerBuilder));
+  this.myListManager.registerNodeItem('AdaptiveTextComponentContainer',
+    wrapBuilder(adaptiveTextComponentContainerBuilder));
+  this.myListManager.registerNodeItem('GridImageViewContainer', wrapBuilder(gridImageViewContainerBuilder));
+  /*
+   * Pre-creation Important: preCreate pre-creates a reusable template,
+   * which must be done after the reuse template is registered
+   *
+   * Pre-create 30 list items to optimize the first-screen performance;
+   * the number can be adjusted according to actual needs.
+   */
   this.myListManager.preCreate('BlogItemContainer', 30);
   this.myListManager.preCreate('AdaptiveTextComponentContainer', 30);
   this.myListManager.preCreate('GridImageViewContainer', 30);
@@ -696,19 +719,19 @@ aboutToAppear(): void {
 @Reusable：在网络请求期间，主线程有大段空闲时间，请求结束后首屏组件的绘帧耗时较长。
 
 **图7** @Reusable测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/vgkUWBJUTdu46iG_pk08fg/zh-cn_image_0000002356852002.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/IhyobAC4Q1K4UIa2m10DCw/zh-cn_image_0000002356852002.png "点击放大")
 
 在ScrollComponents中，网络请求期间主线程空闲时间较少，请求结束后首屏组件的绘帧耗时较短。
 
 **图8** ScrollComponents测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/eF_IRqddRvmSL7JOy6z2dQ/zh-cn_image_0000002390452049.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/c-KOH4ZsSsOCNzpLdjOo3w/zh-cn_image_0000002390452049.png "点击放大")
 
 **表1** ScrollComponents与@Reusable性能时延数据对比
 
 |  | 冷启动完成时延 | 主线程空闲时间 | 首屏组件创建时间 |
 | --- | --- | --- | --- |
 | ScrollComponents | 2.5s | 281ms | 223ms |
-| @Reusable | 2.8s | 997ms | 467ms |
+| @Reusable | 2.8s | 998ms | 467ms |
 
 结论：ScrollComponents在冷启动场景下，完成时延优于原生@Reusable。整体完成时延优化300ms。
 
@@ -719,7 +742,7 @@ aboutToAppear(): void {
 下拉刷新是提升用户体验的关键功能，它既要确保数据无缝加载，又要保持流畅的交互效果。建议采用懒加载方式刷新数据，以避免媒体资源加载导致的UI渲染阻塞。实现逻辑可参考[实现下拉刷新上拉加载更多](../harmonyos-references/ts-container-refresh.md#示例6实现下拉刷新上拉加载更多)。
 
 **图9** 下拉刷新效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/hgw21OJoRdGXb2AllIH8TA/zh-cn_image_0000002356692086.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/eqyiCUlbSp2G6DmxgoQPbQ/zh-cn_image_0000002356692086.gif "点击放大")
 
 ### 开发步骤
 
@@ -741,7 +764,7 @@ struct DifferentItemListPage {
   buildListView() {
     RecyclerView({
       viewManager: this.myListManager
-    })
+    });
   }
 
   build() {
@@ -750,14 +773,14 @@ struct DifferentItemListPage {
           Column() {
             this.buildListView();
             // ...
-          }
+          };
         }
         .layoutWeight(1)
         .onRefreshing(() => {
           this.myViewModel.loadData((_isSuccess) => {
             this.isRefreshing = false;
           });
-        })
+        });
         // ...
   }
 }
@@ -766,8 +789,8 @@ struct DifferentItemListPage {
 ```screen
 @Observed
 export class DifferentItemViewModel {
-  @Track dataArray: BlogData[] = [];
-  myListManager: ListManager;
+  @Track public dataArray: BlogData[] = [];
+  public myListManager: ListManager;
   // ...
   loadData(callBack?: (isSuccess: boolean) => void): void {
     generateRandomBlogData().then((data: BlogData[]) => {
@@ -789,7 +812,7 @@ export class DifferentItemViewModel {
 在开发涉及大量数据的长列表页面时，需要通过分页请求来加载数据。结合ScrollComponents提供的懒加载功能，可以实现加载更多数据的效果。
 
 **图10** 上拉加载效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/YMMSzZ20RMqwVPghVpR15A/zh-cn_image_0000002390372141.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/TfQlJR0vRhuuNQIyMN3BEw/zh-cn_image_0000002390372141.gif "点击放大")
 
 ### 开发步骤
 
@@ -807,9 +830,9 @@ struct DifferentItemListPage {
   @State isRefreshing: boolean = false;
   @State isLoadMore: boolean = false;
   // ...
-  initView() {
+  public initView(): void {
     this.myListManager.setItemViewStyle((_item, _index, _data: ESObject) => {
-    })
+    });
     this.myListManager.setViewStyle({ space: 10, scroller: this.scroller })
     // ...
       .onReachEnd(() => {
@@ -819,14 +842,14 @@ struct DifferentItemListPage {
             this.isLoadMore = false;
           });
         }
-      })
+      });
   }
 
   @Builder
   buildListView() {
     RecyclerView({
       viewManager: this.myListManager
-    })
+    });
   }
 
   build() {
@@ -839,17 +862,17 @@ struct DifferentItemListPage {
                 LoadingProgress()
                   .width(20)
                   .height(20)
-                  .color('#999999')
+                  .color('#999999');
                 Text($r('app.string.loading_more'))
                   .fontSize(14)
                   .fontColor('#999999')
-                  .margin({ left: 8 })
+                  .margin({ left: 8 });
               }
               .width(CommonConstants.FULL_WIDTH)
               .height(50)
-              .justifyContent(FlexAlign.Center)
+              .justifyContent(FlexAlign.Center);
             }
-          }
+          };
         }
         // ...
   }
@@ -862,7 +885,7 @@ export class DifferentItemViewModel {
   // ...
   private isLoadingMore: boolean = false;
   // ...
-  loadDataMore(callBack?: (isSuccess: boolean) => void): void {
+  public loadDataMore(callBack?: (isSuccess: boolean) => void): void {
     if (!this.isLoadingMore) {
       this.isLoadingMore = true;
       setTimeout(() => {
@@ -872,8 +895,8 @@ export class DifferentItemViewModel {
           if (callBack) {
             callBack(true);
           }
-        })
-      }, this.NetworkTime);
+        });
+      }, this.networkTime);
     }
   }
 }
@@ -892,49 +915,47 @@ export class DifferentItemViewModel {
 以下介绍具体的使用：
 
 **图11** 无限滑动效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ChyxpisrQrGFpCBZ1eCebg/zh-cn_image_0000002356852014.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Mpa9VC5FT_q8p2HnECJbwQ/zh-cn_image_0000002356852014.gif "点击放大")
 
 ### 开发步骤
 
 1. 修改数据体参数，增加位图
 
-   ```typescript
+   ```screen
    @Observed
    class ObservedArray<T> extends Array<T> {
    }
 
    @Observed
    export class ImagePixelMap {
-     imageUrl: string = '';
-     imagePixelMap: image.PixelMap | undefined = undefined;
+     public imageUrl: string = '';
+     public imagePixelMap: image.PixelMap | undefined = undefined;
    }
 
    @Observed
    export class BlogData {
      // ...
      // Multiple graphs define imagePixelMapArray, corresponding to images
-     imagePixelMapArray: ObservedArray<ImagePixelMap> = [];
-     // A single graph defines an imagePixelMap, which corresponds to an imageUrl
-     // imageUrl: string = ''
-     // imagePixelMap: image.PixelMap | undefined = undefined;
-
-     callback: Function | undefined = undefined;
-     fetchUrl: string | ImageContent = ImageContent.EMPTY;
+     public imagePixelMapArray: ObservedArray<ImagePixelMap> = [];
    }
    ```
 2. 实现fetchCallback()和cancelCallback()方法
 
    ```screen
-   fetchCallback: (item: ESObject, fetchId: number) => Promise<void> = (item: ESObject, fetchId: number) => {
-     // Simulate a simple pre-loading scenario ,This is where you can migrate the preloaded scenarios for your project
-     // 1、When the component is not displayed or created, the image is obtained. PixelMap, when the component is displayed, load the image directly. PixelMap and show no need to wait for the network
-     // 2、If the image is displayed but the pixelMap is not obtained, the data is bound to the Image component first, and the image can be refreshed immediately after the pixelMap is obtained
+   public fetchCallback: (item: ESObject, fetchId: number) => Promise<void> = (item: ESObject, fetchId: number) => {
+     /*
+      * Simulate a simple pre-loading scenario ,This is where you can migrate the preloaded scenarios for your project
+      * 1、When the component is not displayed or created, the image is obtained. PixelMap,
+      * when the component is displayed, load the image directly. PixelMap and show no need to wait for the network
+      * 2、If the image is displayed but the pixelMap is not obtained, the data is bound to the Image component first,
+      * and the image can be refreshed immediately after the pixelMap is obtained
+      */
      let data = item as BlogData;
      this.fetchesMore.set(fetchId, new Map());
      return new Promise(resolve => {
        this.loadImagesInBatches(data.imagePixelMapArray, fetchId, 0, resolve);
-     })
-   }
+     });
+   };
 
    private loadImagesInBatches(images: ImagePixelMap[], fetchId: number, startIndex: number, resolve: () => void): void {
      if (startIndex >= images.length) {
@@ -964,9 +985,14 @@ export class DifferentItemViewModel {
            return;
          }
          if (pixelMap) {
-           // You need to create an array to store the pixelMap, because there is a change in the internal data of the array to make the component respond, which is more complicated, the developer can choose the preloading scheme by himself:
-           // Define the ImagePixelMap class to store the pixelMap, encapsulate the Image component as an ObservedImage, add @ObjectLink imagePixelMap: ImagePixelMap property to bind the data object,
-           // In the preloaded callback fetchCallback, after the image pixelMap is obtained, set ImagePixelMap.imagePixelMap, and the image can be refreshed by ObservedImage
+           /*
+            * You need to create an array to store the pixelMap, because there is a change in the internal data
+            * of the array to make the component respond, which is more complicated, the developer can choose
+            * the preloading scheme by himself: Define the ImagePixelMap class to store the pixelMap,
+            * encapsulate the Image component as an ObservedImage, add @ObjectLink imagePixelMap: ImagePixelMap property
+            * to bind the data object, In the preloaded callback fetchCallback, after the image pixelMap is obtained,
+            * set ImagePixelMap.imagePixelMap, and the image can be refreshed by ObservedImage
+            */
            pixMap.imagePixelMap = pixelMap;
          }
        });
@@ -979,8 +1005,7 @@ export class DifferentItemViewModel {
        this.loadImagesInBatches(images, fetchId, endIndex, resolve);
      }, 80);
    }
-
-   cancelCallback: (fetchId: number) => void = (fetchId: number) => {
+   public cancelCallback: (fetchId: number) => void = (fetchId: number): void => {
      const fetchMap = this.fetchesMore.get(fetchId);
      if (fetchMap) {
        Array.from(fetchMap.values()).forEach(element => {
@@ -989,11 +1014,11 @@ export class DifferentItemViewModel {
        fetchMap.clear();
      }
      this.fetchesMore.delete(fetchId);
-   }
+   };
    ```
 3. 创建组件实例时，注册fetch和cancel方法到视图管理器
 
-   ```typescript
+   ```screen
    aboutToAppear(): void {
      this.initView();
      // Register a preload function callback
@@ -1047,14 +1072,14 @@ export class DifferentItemViewModel {
          ForEach(this.blogData.imagePixelMapArray, (image: ImagePixelMap | undefined, _index: number) => {
            GridItem() {
              Stack() {
-               ObservedImage({ imagePixelMap: image })
-             }
-           }
-         })
+               ObservedImage({ imagePixelMap: image });
+             };
+           };
+         }, (image: ImagePixelMap | undefined, _index: number) => 'image' + _index);
        }
-       .columnsTemplate("1fr 1fr 1fr")
+       .columnsTemplate('1fr 1fr 1fr')
        .rowsGap(5)
-       .columnsGap(5)
+       .columnsGap(5);
      }
    }
 
@@ -1068,7 +1093,7 @@ export class DifferentItemViewModel {
          .width('100%')
          .aspectRatio(1)
          .objectFit(ImageFit.Cover)
-         .borderRadius(8)
+         .borderRadius(8);
      }
    }
    ```
@@ -1080,17 +1105,17 @@ export class DifferentItemViewModel {
 侧滑菜单在许多应用中十分常见。例如，在通讯类应用中，通常会为消息列表提供侧滑删除功能，即用户可以通过向左滑动列表中的某一项，然后点击删除按钮来删除消息。
 
 **图12** 侧滑删除效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/TurhxmjfTH64pqYFUvujOw/zh-cn_image_0000002390452057.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Ns_tsDQZRmO9Yo4ZOfLnwQ/zh-cn_image_0000002390452057.gif "点击放大")
 
 ### 开发步骤
 
 1. 标准列表侧滑删除
 
-   ```typescript
+   ```screen
    @Component
    struct SameItemListPage {
      // ...
-     initView() {
+     public initView(): void {
        this.myListManager.setItemViewStyle((item, index, data: Params) => {
          item({ style: ListItemStyle.NONE })
            .width('100%')
@@ -1098,29 +1123,61 @@ export class DifferentItemViewModel {
            .swipeAction({
              end: { builder: () => this.ItemActionEnd(data.blogData) },
              start: { builder: () => this.ItemActionStart(data.blogData) },
-             onOffsetChange: (offset: number) => Logger.info("offset:" + offset)
+             onOffsetChange: (offset: number) => Logger.info('offset:' + offset)
            })
-           .onClick(() => Logger.info("index:" + index))
-       })
+           .onClick(() => Logger.info('index:' + index));
+       });
        // ...
      }
 
      @Builder
-     ItemActionStart(data: BlogData) {
+     ItemActionStart(data: BlogData): void {
        Row() {
          Text($r('app.string.collection'))
-         // ...
+           .padding({ left: 24, right: 24 })
+           .fontSize(14)
+           .fontWeight(FontWeight.Medium)
+           .fontColor($r('app.color.swipe_collection_color'))
+           .height('100%')
+           .textAlign(TextAlign.Center)
+           .align(Alignment.Center);
        }
-       // ...
+       .height('auto')
+       .backgroundColor($r('app.color.black_0D'))
+       .onClick(() => {
+         this.myViewModel.collectionData(data, (isSuccess) => {
+           if (isSuccess) {
+             this.listScroller.closeAllSwipeActions();
+             ToastUtil.success($r('app.string.collection_success'));
+           }
+         });
+       });
      }
 
      @Builder
-     ItemActionEnd(data: BlogData) {
+     ItemActionEnd(data: BlogData): void {
        Row() {
          Text($r('app.string.delete'))
-         // ...
+           .padding({ left: 24, right: 24 })
+           .fontSize(14)
+           .fontWeight(FontWeight.Medium)
+           .fontColor($r('app.color.swipe_delete_color'))
+           .height('100%')
+           .textAlign(TextAlign.Center)
+           .align(Alignment.Center);
        }
-       // ...
+       .height('auto')
+       .backgroundColor($r('app.color.black_0D'))
+       .onClick(() => {
+         this.myViewModel.deleteDataRequest(data, (isSuccess) => {
+           if (isSuccess) {
+             this.getUIContext().animateTo({ duration: 200 }, () => {
+               this.myViewModel.deleteData(data);
+             });
+             ToastUtil.success($r('app.string.delete_success'));
+           }
+         });
+       });
      }
 
      build() {
@@ -1128,9 +1185,14 @@ export class DifferentItemViewModel {
            Column() {
              RecyclerView({
                viewManager: this.myListManager
-             })
-           }
-           // ...
+             });
+           };
+         }
+         .height(CommonConstants.FULL_HEIGHT)
+         .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])
+         .backgroundColor($r('app.color.home_background_color'));
+       }
+       .hideTitleBar(true);
      }
    }
    ```
@@ -1138,47 +1200,48 @@ export class DifferentItemViewModel {
 
    目前ListItemGroupManage是写在ListManager内部的，侧滑组件groupManager.setItemViewStyle()需要在ListManager.onWillCreateItem()内部设置。
 
-   ```typescript
+   ```screen
    class MyListManager extends ListManager {
      // ...
      onWillCreateItem(_index: number, data: CategoryModel): NodeItem {
        const groupManager = new MyListItemGroupManager({ defaultNodeItem: 'GoodItemContainer', context: this.context });
-       groupManager.registerNodeItem('GoodItemContainer', wrapBuilder(GoodItemContainer));
+       groupManager.registerNodeItem('GoodItemContainer', wrapBuilder(goodItemContainerBuilder));
        // ...
        groupManager.setItemViewStyle((listItem, index, data: ParamsGoods) => {
          // Used to set the scratch component of ListItem.
          listItem().swipeAction({
            end: {
              builderComponent: new ComponentContent<[number, GoodsDataModel, ListItemGroupManager]>(this.context,
-               wrapBuilder<[[number, GoodsDataModel, ListItemGroupManager]]>(GroupItemActionEnd),
+               wrapBuilder<[[number, GoodsDataModel, ListItemGroupManager]]>(groupItemActionEndBuilder),
                [index, data.dataModel, groupManager]),
-             onEnterActionArea: () => Logger.info("onEnterActionArea"),
-             onExitActionArea: () => Logger.info("onExitActionArea"),
-             onStateChange: (state: SwipeActionState) => Logger.info("onStateChange" + state)
+             onEnterActionArea: () => Logger.info('onEnterActionArea'),
+             onExitActionArea: () => Logger.info('onExitActionArea'),
+             onStateChange: (state: SwipeActionState) => Logger.info('onStateChange' + state)
            },
            start: {
              builderComponent: new ComponentContent<[number, GoodsDataModel]>(this.context,
-               wrapBuilder<[[number, GoodsDataModel]]>(GroupItemActionStart),
+               wrapBuilder<[[number, GoodsDataModel]]>(groupItemActionStartBuilder),
                [index, data.dataModel]),
            },
-           onOffsetChange: (offset: number) => Logger.info("offset:" + offset),
+           onOffsetChange: (offset: number) => Logger.info('offset:' + offset),
            edgeEffect: SwipeEdgeEffect.Spring,
-         })
-       })
+         });
+       });
        return groupManager.getNodeItem(this);
      }
    }
+
    class MyListItemGroupManager extends ListItemGroupManager {
      // ...
    }
 
    @Builder
-   function GroupItemActionStart(args: [number, GoodsDataModel]) {
+   function groupItemActionStartBuilder(args: [number, GoodsDataModel]): void {
      // ...
    }
 
    @Builder
-   function GroupItemActionEnd(args: [number, GoodsDataModel, ListItemGroupManager]) {
+   function groupItemActionEndBuilder(args: [number, GoodsDataModel, ListItemGroupManager]): void {
      // ...
    }
    ```
@@ -1193,10 +1256,10 @@ export class DifferentItemViewModel {
 
 ### 场景描述
 
-List组件作为整个首页长列表的容器，通过ListItem对不同模块进行视图界面的定制，常用于门户首页、商城首页等多类型视图展示的列表信息流场景。多类型列表项场景（List+ListHeaderView）参考：[常见列表流开发实践：多类型列表项场景](../harmonyos-guides/arkts-common-list-flow.md#多类型列表项场景)。
+List组件作为整个首页长列表的容器，通过ListItem对不同模块进行视图界面的定制，常用于门户首页、商城首页等多类型视图展示的列表信息流场景。多类型列表项场景（List+ListHeaderView）参考：[多类型列表项场景](../doccenter-capabilities/arkts-common-list-flow.md#多类型列表项场景)。
 
 **图13** ListHeaderView滑动效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/qsH_POO_QRCqdMkelDqhZw/zh-cn_image_0000002356692098.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/gmc71ArOQMqTQwhHijliOg/zh-cn_image_0000002356692098.gif "点击放大")
 
 ### 开发步骤
 
@@ -1206,15 +1269,15 @@ List组件作为整个首页长列表的容器，通过ListItem对不同模块�
 @Component
 struct GroupLayoutListPage {
   // ...
-  initView() {
+  initView(): void {
     // ...
     this.myListManager.setViewStyle({ space: 10, scroller: this.goodsListScroller })
-      // ...
+    // ...
       .nestedScroll({
         // 1.Nested scrolling: Set up a scrolling scheme
         scrollForward: NestedScrollMode.PARENT_FIRST,
         scrollBackward: NestedScrollMode.SELF_FIRST
-      })
+      });
   }
 
   // ...
@@ -1223,43 +1286,39 @@ struct GroupLayoutListPage {
         // Nested scrolling: Implement the ListHeader effect
         Scroll() { // 2.Nested Scroll: Outer Scroll
           Column() {
-            ListHeaderView()
+            listHeaderViewBuilder();
             Column() { // 3.Nested Scrolling: Inner List
               RecyclerView({
                 viewManager: this.myListManager
-              })
+              });
             }
-            .height('100%')
-          }
+            .height('100%');
+          };
         }
         .layoutWeight(1)
-        .scrollBar(BarState.Off)
+        .edgeEffect(EdgeEffect.Spring)
+        .scrollBar(BarState.Off);
         // ...
   }
 }
 
-@Component
-export struct ListHeaderView {
-  build() {
+@Builder
+export function listHeaderViewBuilder() {
     Column() {
-      // ListHeaderView: You can set up various types of subassemblies
-      // Swiper(...){...}
-      // Grid(...){...}
-      // CustomComponent(...){...}
       Stack({ alignContent: Alignment.Center }) {
         Image($r('app.media.pic1'))
+          .objectFit(ImageFit.Cover);
         Row() {
           Text($r('app.string.i_am'))
             .fontSize(16)
-            .fontColor('#333')
+            .fontColor('#333');
           Text(' ListHeaderView')
             .fontSize(16)
-            .fontColor('#333')
-        }
-      }
+            .fontColor('#333');
+        };
+      };
     }
-    .alignItems(HorizontalAlign.Center)
-  }
+    .alignItems(HorizontalAlign.Center);
 }
 ```
 
@@ -1273,16 +1332,16 @@ ScrollComponents中采用了FrameNode实现并自动管理数据源，可通过S
 
 ### 场景描述
 
-Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长列表Tabs吸顶功能参考：[常见列表流开发实践：Tabs吸顶场景](../harmonyos-guides/arkts-common-list-flow.md#tabs吸顶场景)
+Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长列表Tabs吸顶功能参考：[Tabs吸顶场景](../harmonyos-guides/arkts-common-list-flow.md#tabs吸顶场景)
 
 **图14** Tabs的TabBar吸顶效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/zkkPPwE9Q9uLFWe6c4PEaQ/zh-cn_image_0000002390372145.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/KW9PtbxoSGGtNux8G9-dsg/zh-cn_image_0000002390372145.gif "点击放大")
 
 ### 开发步骤
 
 1. 实现Tabs组件TabContent骨架
 
-   ```typescript
+   ```screen
    @Component
    struct TabsCeilingListPage {
      // ...
@@ -1292,40 +1351,41 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
                  Tabs({ barPosition: BarPosition.Start, controller: this.contentTabController }) {
                    ForEach(this.tabArray, (item: Resource, index: number) => {
                      TabContent() {
-                       CustomListPage({ index: index })
+                       CustomListPage({ index: index });
                      }
                      .tabBar(this.tabBuilder(index, item))
-                     .align(Alignment.Center)
-                   }, (item: string) => item)
+                     .align(Alignment.Center);
+                   }, (item: string) => item);
                  }
-                 // Set the height of the tab to 'calc(100% - 63vp)' to ensure that the Tabs component leaks out just when the nest slides
+                 // Set the height of the tab to 'calc(100% - 63vp)' to ensure that the
+                 // Tabs component leaks out just when the nest slides
                  .height('calc(100% - 58vp)')
                  .barHeight(56)
                  // ...
-                 .onChange((index: number) => this.currentTabIndex = index)
+                 .onChange((index: number) => this.currentTabIndex = index);
                }
-               .backgroundColor($r('app.color.home_background_color'))
+               .backgroundColor($r('app.color.home_background_color'));
                // ...
      }
    }
    ```
 2. RecyclerView实现TabContent内部List页面
 
-   ```typescript
+   ```screen
    @Component
    struct CustomListPage {
      // ...
      aboutToAppear(): void {
        this.myListManager.setItemViewStyle((_item, _index, _data: ESObject) => {
-       })
-       this.myListManager.setViewStyle({ space: 10, scroller: this.scroller, })
+       });
+       this.myListManager.setViewStyle({ space: 10, scroller: this.scroller })
        // ...
      }
 
      build() {
        RecyclerView({
          viewManager: this.myListManager
-       })
+       });
      }
    }
 
@@ -1334,24 +1394,24 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
    }
 
    @Builder
-   function CustomListItemContainer($$: ParamsItemData) {
-     CustomListItem({ itemData: $$.itemData })
+   function customListItemContainerBuilder($$: ParamsItemData): void {
+     CustomListItem({ itemData: $$.itemData });
    }
    ```
 3. 设置嵌套滚动模式
 
-   ```typescript
+   ```screen
    @Component
    struct CustomListPage {
      // ...
      aboutToAppear(): void {
        // ...
-       this.myListManager.setViewStyle({ space: 10, scroller: this.scroller, })
+       this.myListManager.setViewStyle({ space: 10, scroller: this.scroller })
        // ...
          .nestedScroll({
-           scrollForward: NestedScrollMode.PARENT_FIRST, // Set the effect of scrolling the component to the end: The parent component rolls first, and then rolls itself to the edge
-           scrollBackward: NestedScrollMode.SELF_FIRST // Set the effect of rolling the component to the start end: Rolls itself first, and then the parent component scrolls to the edge
-         })
+           scrollForward: NestedScrollMode.PARENT_FIRST,
+           scrollBackward: NestedScrollMode.SELF_FIRST
+         });
        // Shared multiplexing pools
        // ...
      }
@@ -1360,7 +1420,7 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
    ```
 4. 设置List组件的高度在滑动到顶部时漏出Tabs组件
 
-   ```typescript
+   ```screen
    @Component
    struct TabsCeilingListPage {
      // ...
@@ -1370,7 +1430,8 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
                  Tabs({ barPosition: BarPosition.Start, controller: this.contentTabController }) {
                    // ...
                  }
-                 // Set the height of the tab to 'calc(100% - 63vp)' to ensure that the Tabs component leaks out just when the nest slides
+                 // Set the height of the tab to 'calc(100% - 63vp)' to ensure that the
+                 // Tabs component leaks out just when the nest slides
                  .height('calc(100% - 58vp)')
                  .barHeight(56)
                  // ...
@@ -1388,21 +1449,22 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
 
 ### 场景描述
 
-双列表同向联动，左侧分类列表用于快速索引，内容列表依据分类进行分组，常用于商品分类选择、通讯录、城市选择、分组选择等页面。长列表分组吸顶功能参考：[常见列表流开发实践：分组吸顶场景](../harmonyos-guides/arkts-common-list-flow.md#分组吸顶场景)。
+双列表同向联动，左侧分类列表用于快速索引，内容列表依据分类进行分组，常用于商品分类选择、通讯录、城市选择、分组选择等页面。长列表分组吸顶功能参考：[分组吸顶场景](../harmonyos-guides/arkts-common-list-flow.md#分组吸顶场景)。
 
 本案例实现商品分类选择页面列表头部分类吸顶效果，如下图所示。
 
 **图15** 分组布局组头吸顶效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/fG13JZkcQrGafaCQQu2Mzg/zh-cn_image_0000002356852018.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/wjxS8k08R6eSgox8lMsm4A/zh-cn_image_0000002356852018.gif "点击放大")
 
 ### 开发步骤
 
 1. 实现商品分类页面的分组展示
 
-   ```typescript
+   ```screen
    class MyListManager extends ListManager {
      // ...
    }
+
    class MyListItemGroupManager extends ListItemGroupManager {
      // ...
    }
@@ -1418,22 +1480,23 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
            }
            .width(100)
            .height('100%')
-           .scrollBar(BarState.Off)
+           .scrollBar(BarState.Off);
 
            // Nested scrolling: Implement the ListHeader effect
            Scroll() { // 2.Nested Scroll: Outer Scroll
              Column() {
-               ListHeaderView()
+               listHeaderViewBuilder();
                Column() { // 3.Nested Scrolling: Inner List
                  RecyclerView({
                    viewManager: this.myListManager
-                 })
+                 });
                }
-               .height('100%')
-             }
+               .height('100%');
+             };
            }
            .layoutWeight(1)
-           .scrollBar(BarState.Off)
+           .edgeEffect(EdgeEffect.Spring)
+           .scrollBar(BarState.Off);
          }
          // ...
        }
@@ -1442,17 +1505,17 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
    }
 
    @Builder
-   function GoodItemContainer($$: ParamsGoods) {
-     GoodItem({ dataModel: $$.dataModel })
+   function goodItemContainerBuilder($$: ParamsGoods): void {
+     GoodItem({ dataModel: $$.dataModel });
    }
    ```
 2. 设置吸顶属性
 
-   ```typescript
-   initView() {
+   ```screen
+   initView(): void {
      // ...
      this.myListManager.setViewStyle({ space: 10, scroller: this.goodsListScroller })
-       // ...
+     // ...
        .sticky(StickyStyle.Header)// Set up grouped ceilings
        // ...
    }
@@ -1467,7 +1530,7 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
 本场景以商品分类列表页面为例，分别使用List组件展示左侧分类导航和右侧导航内容。进入页面后，点击左侧分类导航，右侧将展示对应的分类详情列表数据；滑动右侧列表内容时，列表标题将吸顶显示，同时左侧对应的导航内容高亮显示。
 
 **图16** 长列表二级联动效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/NmW5kDaUT_6ngsFMYyl1xA/zh-cn_image_0000002390452065.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/ckaquM1ITMm1FmupXgKJiQ/zh-cn_image_0000002390452065.gif "点击放大")
 
 ### 开发步骤
 
@@ -1485,10 +1548,11 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
    ```
 2. 通过RecyclerView构建右侧分类内容数据，以及Item复用相关代码
 
-   ```typescript
+   ```screen
    class MyListManager extends ListManager {
      // ...
    }
+
    class MyListItemGroupManager extends ListItemGroupManager {
      // ...
    }
@@ -1496,9 +1560,9 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
    @Component
    struct GroupLayoutListPage {
      // ...
-     aboutToAppear() {
+     public aboutToAppear(): void {
        this.initView();
-       this.myListManager.registerNodeItem('GoodItemContainer', wrapBuilder(GoodItemContainer));
+       this.myListManager.registerNodeItem('GoodItemContainer', wrapBuilder(goodItemContainerBuilder));
        this.myListManager.preCreate('GoodItemContainer', 30);
        this.myViewModel.loadData();
      }
@@ -1509,39 +1573,39 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
                Column() { // 3.Nested Scrolling: Inner List
                  RecyclerView({
                    viewManager: this.myListManager
-                 })
+                 });
                }
-               .height('100%')
+               .height('100%');
                // ...
      }
    }
    ```
 3. 为左侧导航列表添加点击事件，为右侧分类详情列表添加[onScrollIndex()](../harmonyos-references/ts-container-list.md#onscrollindex)事件，并调用自定义的listChange方法。在listChange方法内部，根据isGoods变量的值，调用相应列表控制器的[scrollToIndex()](../harmonyos-references/ts-container-scroll.md#scrolltoindex)方法，以实现导航列表和分类详情数据的联动效果。
 
-   ```typescript
+   ```screen
    List({ scroller: this.categoryScroller }) {
      ForEach(this.myViewModel.categoryList, (item: CategoryModel, index: number) => {
        ListItem() {
          Text(item.titleName)
            // ...
-           .onClick(() => this.listChange(index, true))
-       }
-     }, (item: CategoryModel) => JSON.stringify(item.titleName))
+           .onClick(() => this.listChange(index, true));
+       };
+     }, (item: CategoryModel) => JSON.stringify(item.titleName));
    }
    ```
 
-   ```typescript
-   initView() {
+   ```screen
+   initView(): void {
      // ...
      this.myListManager.setViewStyle({ space: 10, scroller: this.goodsListScroller })
-       // ...
+     // ...
        .onScrollIndex((index: number) => { // Scrolling listeners
          this.listChange(index, false);
        })
        // ...
    }
 
-   listChange(index: number, isGoods: boolean) {
+   public listChange(index: number, isGoods: boolean): void {
      if (this.currentTitleId !== index) {
        this.currentTitleId = index;
        if (isGoods) {
@@ -1560,7 +1624,7 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
 当设备在横屏和竖屏之间切换，或折叠屏在小屏、中屏和大屏状态之间切换时，长列表的显示列数将根据当前屏幕宽度进行调整，以展示更合适大小的Item。
 
 **图17** 动态切换列数效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/QkKXA_vOSeWuOogw4JaQ-Q/zh-cn_image_0000002356692102.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/VDR0wHe_Q1aGgSMVz7_j5w/zh-cn_image_0000002356692102.gif "点击放大")
 
 ### 开发步骤
 
@@ -1586,27 +1650,26 @@ struct SameItemListPage {
         return;
       }
       Logger.info('Succeed to setting window orientation');
-    })
-    // Listen for screen size changes
+    });
     this.windowClass.on('windowSizeChange', (size) => {
       let viewWidth = size.width;
       let viewHeight = size.height;
-      if (viewWidth > viewHeight) { // Criteria are judged based on business settings
+      if (viewWidth > viewHeight) {
         this.myListManager.setViewStyle().lanes(2);
       } else {
         this.myListManager.setViewStyle().lanes(1);
       }
-    })
+    });
 
     this.initView();
     // ...
   }
-  initView() {
+  public initView(): void {
     // ...
     this.myListManager.setViewStyle({ space: 10, scroller: this.listScroller })
     // ...
-      .alignListItem(ListItemAlign.Start)// Set the direction of the List cross axis
-      .lanes(1)// Set the number of layout columns or rows in the List portlet
+      .alignListItem(ListItemAlign.Start)
+      .lanes(1)
       // ...
   }
   // ...
@@ -1626,13 +1689,13 @@ struct SameItemListPage {
 通过设置[fadingEdge](../harmonyos-references/ts-container-scrollable-common.md#fadingedge14)属性来实现边缘渐隐效果，效果如图所示。
 
 **图18** 边缘渐隐效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/qWj0bagdTpqRFVKMD_nyAQ/zh-cn_image_0000002390372153.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/75NbiOT1SG2am2IC42vU4Q/zh-cn_image_0000002390372153.gif "点击放大")
 
 ### 开发步骤
 
-可以直接在setViewStyle接口中设置渐隐效果。
+可以直接在setViewStyle()接口中设置渐隐效果。
 
-```typescript
+```screen
 this.myListManager.setViewStyle({ space: 10, scroller: this.listScroller })
 // ...
   .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) })

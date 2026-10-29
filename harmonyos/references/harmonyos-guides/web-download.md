@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-download
 title: 使用Web组件的下载能力
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页文件上传与下载 > 使用Web组件的下载能力
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b58d7fe5cf45972682213a29dc4f2e2bcd9cb1cea5718e8063d16545f049713c
+scraped_at: 2026-10-29T07:56:41+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:b78ff8f861f934a04752dec2e58f1b9917e00ed3ce1afb3969b8b9baaaff0631
 ---
 
 当需要通过Web页面进行文件下载时，可以通过此方式调用Web接口。
@@ -153,8 +153,7 @@ struct WebComponent {
 
 使用[DocumentViewPicker()](../harmonyos-references/js-apis-file-picker.md#documentviewpicker)获取当前示例的默认下载目录，将该目录设置为下载目录。
 
-```ts
-// xxx.ets
+```typescript
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { picker, fileUri } from  '@kit.CoreFileKit';
@@ -170,7 +169,7 @@ struct WebComponent {
         .onClick(() => {
           try {
             this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-              console.info("will start a download.");
+              console.info('will start a download.');
               // 使用DocumentViewPicker()获取当前示例的默认下载目录，将该目录设置为下载目录
               getDownloadPathFromPicker().then((downloadPath) => {
                 webDownloadItem.start(downloadPath + '/' + webDownloadItem.getSuggestedFileName());
@@ -179,19 +178,19 @@ struct WebComponent {
             })
             this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
               // 下载任务的唯一标识。
-              console.info("download update guid: " + webDownloadItem.getGuid());
+              console.info('download update guid: ' + webDownloadItem.getGuid());
               // 下载的进度。
-              console.info("download update percent complete: " + webDownloadItem.getPercentComplete());
+              console.info('download update percent complete: ' + webDownloadItem.getPercentComplete());
               // 当前的下载速度。
-              console.info("download update speed: " + webDownloadItem.getCurrentSpeed())
+              console.info('download update speed: ' + webDownloadItem.getCurrentSpeed())
             })
             this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-              console.error("download failed guid: " + webDownloadItem.getGuid());
+              console.error('download failed guid: ' + webDownloadItem.getGuid());
               // 下载任务失败的错误码。
-              console.error("download failed last error code: " + webDownloadItem.getLastErrorCode());
+              console.error('download failed last error code: ' + webDownloadItem.getLastErrorCode());
             })
             this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-              console.info("download finish guid: " + webDownloadItem.getGuid());
+              console.info('download finish guid: ' + webDownloadItem.getGuid());
             })
             this.controller.setDownloadDelegate(this.delegate);
           } catch (error) {

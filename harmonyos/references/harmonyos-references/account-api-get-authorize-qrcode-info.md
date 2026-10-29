@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取二维码信息
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 开放接口调用凭证 > 扫码授权登录 > 获取二维码信息
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2e9f563095631bf8a5e7421460279153d20507daaac16a5bd81265370eaca5ea
+scraped_at: 2026-10-29T08:02:32+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:08ff889afa101aadc736767c33a8af4477852cfc6dea62f77d272bd11739c0b8
 ---
 
 ## 功能介绍
@@ -43,7 +43,7 @@ content_hash: sha256:2e9f563095631bf8a5e7421460279153d20507daaac16a5bd81265370ea
 
 | 参数名 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| client\_id | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的唯一标识。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的OAuth 2.0客户端ID（凭据）-Client ID参数。 |
+| client\_id | 是 | String | 在创建应用后，由[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)为应用分配的唯一标识。参数取值详见[查看应用信息](../app/agc-help-appinfo-0000001100014694.md#section11611183016212)中的OAuth 2.0客户端ID（凭据）-Client ID参数。 |
 | scope | 否 | String | 需要获取的用户信息，多个以空格分隔。scope示例如下：  - openid：获取用户OpenID、UnionID。  - profile：获取用户头像昵称。 |
 
 ## 请求示例
@@ -180,7 +180,7 @@ public class GetQrCodeInfoDemo {
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
 | --- | --- | --- | --- |
 | 1101 | 20002 | client\_id格式不正确。 | 检查client\_id是否满足正则：^[0-9]{1,64}$。 |
-| 1101 | 20003 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1101 | 20003 | client\_id在系统不存在。 | 请前往[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)确认client\_id是否存在。 |
 | 1101 | 20041 | scope格式不正确或数量超过150个。 | - 检查scope参数是否满足正则：^[0-9a-zA-Z:/\\.\u0020]+$。  - 检查scope数量是否超过150个。 |
 | 1101 | 20042 | 无效的scope。 | 入参scope存在伪造值，请参照参数说明，传入正确的参数。 |
 | 1102 | 20001 | client\_id为空。 | 请按照接口参数的要求，传入正确的client\_id参数。 |

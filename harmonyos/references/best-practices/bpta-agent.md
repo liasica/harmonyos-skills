@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-agent
 title: 智能体场景开发案例
 breadcrumb: 最佳实践 > AI使能 > 智能体场景开发案例
 category: best-practices
-scraped_at: 2026-10-16T07:06:45+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:6dfb07f24004086b71629018e640de76a59b18b12122b9ea0ae5dce6d54f7b1e
+scraped_at: 2026-10-29T08:03:21+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:0b47eeebed204943c863bfbc36e76f0957f8637642b0b6b4733c2d9f25547ab8
 ---
 
 ## 简介
@@ -22,7 +22,7 @@ content_hash: sha256:6dfb07f24004086b71629018e640de76a59b18b12122b9ea0ae5dce6d54
 2. [模式选择](bpta-agent.md#section59501510153311)：不同模式的智能体，适配的场景也有所不同，开发者可按照业务需求选择合适模式的智能体，开发构建智能场景的智能体。
 3. [智能体编排](bpta-agent.md#section109683238339)：可视化流程的编排框架，自定义智能体能力点，优化完善智能体场景。
 4. [功能验证](bpta-agent.md#section864165923316)：实时性、可视化、场景化的验证模式，可实时交互验证，或真实场景验证。
-5. [上架/升级](bpta-agent.md#section74742275511)：通过[上架审核规范](../service/audit-specifications-0000002469548113.md)的审核上架，保障对外发布信息的安全与合规，进一步提升用户体验。
+5. [上架/升级](bpta-agent.md#section74742275511)：通过[Agent上架审核规范](../doccenter-celia/audit-specifications-0000002469548113.md)的审核上架，保障对外发布信息的安全与合规，进一步提升用户体验。
 
 ## 开发步骤
 
@@ -32,7 +32,7 @@ content_hash: sha256:6dfb07f24004086b71629018e640de76a59b18b12122b9ea0ae5dce6d54
 
 准备条件：真机调试及端插件开发需在HarmonyOS 5.1.0 Release及以上版本的设备上进行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Hjy2uZRcRp6SkwrjS7dlWg/zh-cn_image_0000002358083477.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/2I3UJ9ZiQ12o3O5KjdSoTw/zh-cn_image_0000002358083477.png "点击放大")
 
 ### 模式选择
 
@@ -50,9 +50,9 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 | 智能问答场景适用性 | 适合知识型、交互型问答（如常识咨询、客服答疑、教育辅导） | 适合多步骤流程化任务（如报销申请审批、物流跟踪） | 适合整合多源动态知识、融合多模态响应并跨服务生成连贯交互的场景（如医疗咨询） |
 | 音频播放场景适用性 | 适合处理用户语音指令（如 “播放周杰伦的歌”），需调用外部工具处理音频解码、渲染等底层操作 | 适合音频播放的全链路处理（从资源获取到设备输出） | 通过协议扩展第三方播控能力、设备间播放状态同步及低时延优化策略，实现无缝跨端音频流转与场景化音质适配。 |
 
-不同编排模式的智能体，能力拓展部分的功能点也会有所区别。各编排模式的区别可参考开发者指导文档[智能体分类](../service/differences-in-arrangement-modes-0000002471344117.md)，开发者可根据不同模式的区别，考虑使用场景应该适配何种编排模式的智能体，选择对应的编排模式，并设定智能体相关信息，便可创建对应模式的智能体。
+不同编排模式的智能体，能力拓展部分的功能点也会有所区别。各编排模式的区别可参考开发者指导文档[快速开始](../doccenter-celia/quickstart-0000002762985731.md)，开发者可根据不同模式的区别，考虑使用场景应该适配何种编排模式的智能体，选择对应的编排模式，并设定智能体相关信息，便可创建对应模式的智能体。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/aEcTu0J_TkCA9nOcXEACvw/zh-cn_image_0000002490331108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/KoSutU-IROWaHaiGAjfCMg/zh-cn_image_0000002490331108.png "点击放大")
 
 ### 智能体编排
 
@@ -60,17 +60,17 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 以下为LLM模式和工作流模式的编排页面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/ug0d-JJUTYGlzMwiECcg2w/zh-cn_image_0000002522373909.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/F-dCl0NDTaW-yrsiVnebgw/zh-cn_image_0000002522373909.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/1iaF_cuJSnS9kX7oPOuM_A/zh-cn_image_0000002490496464.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/44iDcWfBTYaB4XKBRSsedg/zh-cn_image_0000002490496464.png "点击放大")
 
 ### 功能验证
 
-在搭建完成智能体后，开发者可以在调试与预览区域与智能体进行对话，测试该智能体功能是否与预期相同，并根据智能体执行过程及响应信息对智能体配置进行优化与调整，具体调试过程可参考开发者指导文档[调试与预览](../service/real-machine-testing-0000002471344145.md)，包括真机测试与调试两种功能验证方式。
+在搭建完成智能体后，开发者可以在调试与预览区域与智能体进行对话，测试该智能体功能是否与预期相同，并根据智能体执行过程及响应信息对智能体配置进行优化与调整，具体调试过程可参考开发者指导文档[调试与预览](../doccenter-celia/use-real-machine-testing-0000002765445953.md)，包括真机测试与调试两种功能验证方式。
 
 ### 上架/升级
 
-功能测试完成后，点击【保存】【上架】即可将智能体提交到上架审核阶段，具体流程可参考开发者指导文档[上/下架、升级流程介绍](../service/process-introduction-0000002509696971.md)。为了方便开发者的智能体能够顺利通过审核，可参考[上架审核规范](../service/audit-specifications-0000002469548113.md)排查检视自开发的智能体。待通过审核上架后，即可在小艺平台使用完整的智能体。
+功能测试完成后，点击【保存】【上架】即可将智能体提交到上架审核阶段，具体流程可参考开发者指导文档[入门指南](../doccenter-celia/harmonyos-service-0000001238266717.md)。为了方便开发者的智能体能够顺利通过审核，可参考[上架审核规范](../service/audit-specifications-0000002469548113.md)排查检视自开发的智能体。待通过审核上架后，即可在小艺平台使用完整的智能体。
 
 ## 智能问答场景
 
@@ -109,12 +109,12 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 1. 调试测试：调试与预览界面可以进行交互测试，预览实际交互场景，也可点击右上角调试按钮，进入调试详情页，查看详细的调测信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/c_HGMj-jQFCuDkKB9G2bbQ/zh-cn_image_0000002358083481.png "点击放大")
-2. 真机测试：点击调试与预览页面右上角的真机测试，可发布真机测试。真机测试前需配置白名单，开发者（团队账户需管理员权限）可通过新增组来管理真机调试用户，每个团队最多可创建100个用户组，每个用户组最多可添加100个用户。 开发者在服务发布至真机调试后，处于真机调试用户白名单中的用户可以访问到该开发测试服务，详见开发者指导文档[真机测试](../service/list-of-user-groups-for-real-machine-testing-0000002471264273.md)。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/YdH3rw2uSpedbRo5OmpMWQ/zh-cn_image_0000002358083481.png "点击放大")
+2. 真机测试：点击调试与预览页面右上角的真机测试，可发布真机测试。真机测试前需配置白名单，开发者（团队账户需管理员权限）可通过新增组来管理真机调试用户，每个团队最多可创建100个用户组，每个用户组最多可添加100个用户。 开发者在服务发布至真机调试后，处于真机调试用户白名单中的用户可以访问到该开发测试服务，详见开发者指导文档[真机测试](../doccenter-celia/debug-and-preview-0000002762838261.md#section2389456174816)。
 
 **上架升级**
 
-功能测试完成后，点击【保存】【上架】即可将智能体提交到上架审核阶段，具体流程可参考开发者指导文档[上/下架、升级流程介绍](../service/process-introduction-0000002509696971.md)。
+功能测试完成后，点击【保存】【上架】即可将智能体提交到上架审核阶段，具体流程可参考开发者指导文档[入门指南](../doccenter-celia/harmonyos-service-0000001238266717.md)。
 
 ## 音频播放场景
 
@@ -139,7 +139,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 **端插件创建上架**
 
 1. 创建端插件：在小艺开放平台工作空间的插件界面点击【新建插件】，选择端插件，填写对应的APP包名和名称。点击【保存】后，创建端插件成功，进入端插件的编辑页面。
-2. 配置端插件：点击【新建工具】，在工具信息页填写工具名称后点击【创建】，可新增一条工具。点击【添加版本】，按页面提示填写参数后，点击【创建】，进入工具信息页，按需求可添加输入输出参数，点击【保存】，端插件的一个工具配置完成。按照上述操作方法，可添加多条工具，开发者可按需配置。具体配置方式也可参考开发者指导文档[创建端插件](../service/create-side-plug-in-0000002437625930.md)。
+2. 配置端插件：点击【新建工具】，在工具信息页填写工具名称后点击【创建】，可新增一条工具。点击【添加版本】，按页面提示填写参数后，点击【创建】，进入工具信息页，按需求可添加输入输出参数，点击【保存】，端插件的一个工具配置完成。按照上述操作方法，可添加多条工具，开发者可按需配置。具体配置方式也可参考开发者指导文档[创建端插件](../doccenter-celia/create-side-plug-in-0000002733447008.md)。
 
    本场景涉及三个功能，包括获取歌曲名称、跳转播放页、播放音频，因此配置了三个对应功能的工具。具体配置信息如下图所示：
 
@@ -314,7 +314,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
        }
      }
      ```
-   * 使用[Deep Linking](../harmonyos-guides/deep-linking-startup.md#拉起方应用实现应用跳转)实现跳转播放页的功能。
+   * 参考[拉起方应用实现应用跳转](../harmonyos-guides/deep-linking-startup.md#拉起方应用实现应用跳转)，实现跳转播放页的功能。
 
      配置module.json5文件中的[skills标签](../harmonyos-guides/module-configuration-file.md#skills标签)，标识跳转场景。
 
@@ -440,10 +440,10 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
       |  |  |
    3. 按照任务执行顺序连接对应节点
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/cQ-spCVLRtOksnWlwpi83Q/zh-cn_image_0000002358003581.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/vyd3bVcUQvC6UIPSy73aLg/zh-cn_image_0000002358003581.png "点击放大")
 3. 测试上架：点击【试运行】后，进入调试页面，可自行测试整体流程（无法在小艺开放平台调试端插件适配情况，只能测试工作流整体流程）。测试无误后，点击【上架】，进入上架审核阶段，待审核通过，即可在智能体中添加插件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/nlxTwJrxTdu1Zqe8NVexFQ/zh-cn_image_0000002324005016.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/HqhFdpm_SmS_OAdntixWlQ/zh-cn_image_0000002324005016.png "点击放大")
 
 **工作流模式智能体编排**
 
@@ -459,13 +459,13 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
    | 调试与预览 | 调试详情 |
    | --- | --- |
    |  |  |
-2. 真机测试：端插件涉及到端侧的应用，故平台调试无法与端侧应用联调，只能在端侧设备上进行智能体使用效果的真实体验。具体测试流程详见开发者指导文档[真机测试](../service/list-of-user-groups-for-real-machine-testing-0000002471264273.md)。
+2. 真机测试：端插件涉及到端侧的应用，故平台调试无法与端侧应用联调，只能在端侧设备上进行智能体使用效果的真实体验。具体测试流程详见开发者指导文档[真机测试](../doccenter-celia/debug-and-preview-0000002762838261.md#section2389456174816)。
 
 **上架升级**
 
-功能测试完成后，点击【保存】【上架】即可将智能体提交到上架审核阶段，具体流程可参考开发者指导文档[上/下架、升级流程介绍](../service/process-introduction-0000002509696971.md)。上架完成后，可在端侧小艺的智能体页面搜索查询到创建的智能体并使用。效果如下：
+功能测试完成后，点击【保存】【上架】即可将智能体提交到上架审核阶段，具体流程可参考开发者指导文档[入门指南](../doccenter-celia/harmonyos-service-0000001238266717.md)。上架完成后，可在端侧小艺的智能体页面搜索查询到创建的智能体并使用。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/pi4kDVMCThyKgBiC9ah--Q/zh-cn_image_0000002358003589.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/D7Gljh0RQwCYMk0gp9j59g/zh-cn_image_0000002358003589.png "点击放大")
 
 ## 总结
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arEngine（AR增强现实能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arEngine（AR增强现实能力）
 category: harmonyos-references
-scraped_at: 2026-10-11T07:27:44+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:f8cab31e03dfd06357d52cf1ed3b168d27916968ee9ebf8c550cc978cb830e39
+scraped_at: 2026-10-29T08:02:16+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:8678081d0a0bbc2a8695a018b830da1a1b9b27689edceb669a703b2c394fef72
 ---
 
 本模块提供AR Engine（AR引擎服务）的arEngine（AR增强现实能力）相关接口。
@@ -634,11 +634,14 @@ deserialize(buffer: ArrayBuffer): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let buffer: ArrayBuffer = new ArrayBuffer(0);
-let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-await imageDatabase.deserialize(buffer);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_IMAGE);
+if (ret) {
+  let buffer: ArrayBuffer = new ArrayBuffer(0);
+  let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+  await imageDatabase.deserialize(buffer);
+}
 ```
 
 ### ARAugmentedImageDatabase.serialize
@@ -670,10 +673,13 @@ serialize(): Promise<ArrayBuffer>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-await imageDatabase.serialize();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_IMAGE);
+if (ret) {
+  let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+  await imageDatabase.serialize();
+}
 ```
 
 ### ARAugmentedImageDatabase.addImage
@@ -718,17 +724,20 @@ addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise
 
 ```typescript
 import { image } from '@kit.ImageKit';
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
-let opts: image.InitializationOptions = {
-  editable: true,
-  pixelFormat: image.PixelMapFormat.RGBA_8888,
-  size: { height: 4, width: 6 }
-};
-let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
-let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-await imageDatabase.addImage('xx', pixelMap, 0.3);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_IMAGE);
+if (ret) {
+  let color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
+  let opts: image.InitializationOptions = {
+    editable: true,
+    pixelFormat: image.PixelMapFormat.RGBA_8888,
+    size: { height: 4, width: 6 }
+  };
+  let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+  let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+  await imageDatabase.addImage('xx', pixelMap, 0.3);
+}
 ```
 
 ### ARAugmentedImageDatabase.getImageCount
@@ -760,10 +769,13 @@ getImageCount(): number
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-imageDatabase.getImageCount();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_IMAGE);
+if (ret) {
+  let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+  imageDatabase.getImageCount();
+}
 ```
 
 ### ARAugmentedImageDatabase.getCapacity
@@ -795,10 +807,13 @@ getCapacity(): number
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-imageDatabase.getCapacity();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_IMAGE);
+if (ret) {
+  let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+  imageDatabase.getCapacity();
+}
 ```
 
 ### ARAugmentedImageDatabase.getImageAddMode
@@ -830,10 +845,13 @@ getImageAddMode(): ARAddAugmentedImageMode
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-imageDatabase.getImageAddMode();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_IMAGE);
+if (ret) {
+  let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+  imageDatabase.getImageAddMode();
+}
 ```
 
 ### ARAugmentedImageDatabase.setImageAddMode
@@ -865,10 +883,13 @@ setImageAddMode(mode: ARAddAugmentedImageMode): void
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-imageDatabase.setImageAddMode(arEngine.ARAddAugmentedImageMode.UPDATE);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_IMAGE);
+if (ret) {
+  let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+  imageDatabase.setImageAddMode(arEngine.ARAddAugmentedImageMode.UPDATE);
+}
 ```
 
 ### ARAugmentedImageDatabase.release
@@ -900,10 +921,13 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-await imageDatabase.release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_IMAGE);
+if (ret) {
+  let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+  await imageDatabase.release();
+}
 ```
 
 ## ARCameraIntrinsics
@@ -1073,6 +1097,10 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
       // 如果没有创建session则退出，关于如何创建session请参考开发指南
       return;
     }
+    let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+    if (!ret) {
+      return;
+    }
 
     let arSession: arEngine.ARSession = ctx.session;
     let frame: arEngine.ARFrame = arSession.getFrame();
@@ -1120,18 +1148,21 @@ createAnchor(pose: ARPose): ARAnchor
 
 ```typescript
 import { Quaternion, Vec3 } from '@kit.ArkGraphics3D';
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let r: Quaternion = {
-  x: 0,
-  y: 0,
-  z: 0,
-  w: 0
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  let r: Quaternion = {
+    x: 0,
+    y: 0,
+    z: 0,
+    w: 0
+  }
+  let t: Vec3 = { x: 0, y: 0, z: 0 };
+  let pose: arEngine.ARPose = arEngine.createARPose(r, t);
+  // arSession创建参考ARSession.getFrame接口示例代码
+  arSession.createAnchor(pose);
 }
-let t: Vec3 = { x: 0, y: 0, z: 0 };
-let pose: arEngine.ARPose = arEngine.createARPose(r, t);
-// arSession创建参考ARSession.getFrame接口示例代码
-arSession.createAnchor(pose);
 ```
 
 ### ARSession.detachAnchor
@@ -1170,12 +1201,15 @@ detachAnchor(anchor: ARAnchor): void
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let pose: arEngine.ARPose = arSession.getFrame().getCamera().getPose();
-let anchor: arEngine.ARAnchor = arSession.createAnchor(pose);
-arSession.detachAnchor(anchor);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let pose: arEngine.ARPose = arSession.getFrame().getCamera().getPose();
+  let anchor: arEngine.ARAnchor = arSession.createAnchor(pose);
+  arSession.detachAnchor(anchor);
+}
 ```
 
 ### ARSession.getAllAnchors
@@ -1210,8 +1244,13 @@ getAllAnchors(): Array<ARAnchor>
 **示例：**
 
 ```typescript
-// arSession创建参考ARSession.getFrame接口示例代码
-arSession.getAllAnchors();
+import { arEngine, arViewController } from '@kit.AREngine';
+
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  arSession.getAllAnchors();
+}
 ```
 
 ### ARSession.getAllTrackables
@@ -1253,8 +1292,13 @@ getAllTrackables(type: ARTrackableType): Array<ARTrackable>
 **示例：**
 
 ```typescript
-// arSession创建参考ARSession.getFrame接口示例代码
-arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+import { arEngine, arViewController } from '@kit.AREngine';
+
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+}
 ```
 
 ### ARSession.openFlash
@@ -1288,8 +1332,13 @@ openFlash(): Promise<boolean>
 **示例：**
 
 ```typescript
-// arSession创建参考ARSession.getFrame接口示例代码
-await arSession.openFlash();
+import { arEngine, arViewController } from '@kit.AREngine';
+
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  await arSession.openFlash();
+}
 ```
 
 ### ARSession.closeFlash
@@ -1323,8 +1372,13 @@ closeFlash(): Promise<boolean>
 **示例：**
 
 ```typescript
-// arSession创建参考ARSession.getFrame接口示例代码
-await arSession.closeFlash();
+import { arEngine, arViewController } from '@kit.AREngine';
+
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  await arSession.closeFlash();
+}
 ```
 
 ### ARSession.release
@@ -1358,8 +1412,13 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-// arSession创建参考ARSession.getFrame接口示例代码
-await arSession.release();
+import { arEngine, arViewController } from '@kit.AREngine';
+
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  await arSession.release();
+}
 ```
 
 ## ImageComponent
@@ -1450,11 +1509,14 @@ getPose(): ARPose
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
-anchors[0].getPose();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
+  anchors[0].getPose();
+}
 ```
 
 ### ARAnchor.detach
@@ -1486,11 +1548,14 @@ detach(): void
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
-anchors[0].detach();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
+  anchors[0].detach();
+}
 ```
 
 ### ARAnchor.release
@@ -1524,11 +1589,14 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
-await anchors[0].release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
+  await anchors[0].release();
+}
 ```
 
 ## ARAugmentedImage
@@ -1599,13 +1667,16 @@ getData(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
-faceBlendShapes.getData();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
+  faceBlendShapes.getData();
+}
 ```
 
 ### ARBlendShapes.getTypes
@@ -1639,13 +1710,16 @@ getTypes(): Array<ARBlendShapeType>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
-faceBlendShapes.getTypes();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
+  faceBlendShapes.getTypes();
+}
 ```
 
 ### ARBlendShapes.release
@@ -1679,13 +1753,16 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
-faceBlendShapes.release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
+  faceBlendShapes.release();
+}
 ```
 
 ## ARLandmark
@@ -1735,13 +1812,16 @@ getVertices2D(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceLandmark: arEngine.ARLandmark = face.getLandmark();
-faceLandmark.getVertices2D();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceLandmark: arEngine.ARLandmark = face.getLandmark();
+  faceLandmark.getVertices2D();
+}
 ```
 
 ### ARLandmark.getVertices3D
@@ -1775,13 +1855,16 @@ getVertices3D(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceLandmark: arEngine.ARLandmark = face.getLandmark();
-faceLandmark.getVertices3D();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceLandmark: arEngine.ARLandmark = face.getLandmark();
+  faceLandmark.getVertices3D();
+}
 ```
 
 ### ARLandmark.release
@@ -1815,13 +1898,16 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceLandmark: arEngine.ARLandmark = face.getLandmark();
-await faceLandmark.release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceLandmark: arEngine.ARLandmark = face.getLandmark();
+  await faceLandmark.release();
+}
 ```
 
 ## ARCamera
@@ -1879,12 +1965,15 @@ getPose(): ARPose
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let camera: arEngine.ARCamera = frame.getCamera();
-camera.getPose();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let camera: arEngine.ARCamera = frame.getCamera();
+  camera.getPose();
+}
 ```
 
 ### ARCamera.getDisplayOrientedPose
@@ -1922,12 +2011,15 @@ getDisplayOrientedPose(): ARPose
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let camera: arEngine.ARCamera = frame.getCamera();
-camera.getDisplayOrientedPose();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let camera: arEngine.ARCamera = frame.getCamera();
+  camera.getDisplayOrientedPose();
+}
 ```
 
 ### ARCamera.getProjectionMatrix
@@ -1969,12 +2061,15 @@ getProjectionMatrix(near: number, far: number): Matrix4
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let camera: arEngine.ARCamera = frame.getCamera();
-camera.getProjectionMatrix(0, 1);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let camera: arEngine.ARCamera = frame.getCamera();
+  camera.getProjectionMatrix(0, 1);
+}
 ```
 
 ### ARCamera.getImageIntrinsics
@@ -2010,12 +2105,15 @@ getImageIntrinsics(): ARCameraIntrinsics
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let camera: arEngine.ARCamera = frame.getCamera();
-camera.getImageIntrinsics();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let camera: arEngine.ARCamera = frame.getCamera();
+  camera.getImageIntrinsics();
+}
 ```
 
 ## ARFace
@@ -2061,12 +2159,15 @@ getGeometry(): ARGeometry
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-face.getGeometry();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  face.getGeometry();
+}
 ```
 
 ### ARFace.getBlendShapes
@@ -2100,12 +2201,15 @@ getBlendShapes(): ARBlendShapes
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-face.getBlendShapes();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  face.getBlendShapes();
+}
 ```
 
 ### ARFace.getLandmark
@@ -2139,12 +2243,15 @@ getLandmark(): ARLandmark
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-face.getLandmark();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  face.getLandmark();
+}
 ```
 
 ## ARFaceAnchor
@@ -2195,6 +2302,10 @@ import { Node } from '@kit.ArkGraphics3D';
 
 // 该方法在ARViewCallback中使用
 async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): Promise<void> {
+  let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+  if (!ret) {
+    return;
+  }
   let faceAnchor: arEngine.ARFaceAnchor = anchor as arEngine.ARFaceAnchor;
   let face: arEngine.ARFace = faceAnchor.getFace();
   await face.release();
@@ -2265,13 +2376,16 @@ getLandmarks2D(): Array<ARBodyLandmark2D>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-const frame: arEngine.ARFrame = arSession.getFrame();
-const arbodys: arEngine.ARBody[] = frame.acquireBodySkeleton();
-if (arbodys.length > 0) {
-    arbodys[0].getLandmarks2D();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_BODY);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  const frame: arEngine.ARFrame = arSession.getFrame();
+  const arbodys: arEngine.ARBody[] = frame.acquireBodySkeleton();
+  if (arbodys.length > 0) {
+      arbodys[0].getLandmarks2D();
+  }
 }
 ```
 
@@ -2323,11 +2437,14 @@ getCamera(): ARCamera
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-frame.getCamera();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  frame.getCamera();
+}
 ```
 
 ### ARFrame.getUpdatedTrackables
@@ -2368,11 +2485,14 @@ getUpdatedTrackables(type: ARTrackableType): Array<ARTrackable>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-frame.getUpdatedTrackables(arEngine.ARTrackableType.BASE);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  frame.getUpdatedTrackables(arEngine.ARTrackableType.BASE);
+}
 ```
 
 ### ARFrame.hitTest
@@ -2415,11 +2535,14 @@ hitTest(x: number, y: number): Array<ARHitResult>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-frame.hitTest(0, 0);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  frame.hitTest(0, 0);
+}
 ```
 
 ### ARFrame.acquireSceneMesh
@@ -2454,11 +2577,14 @@ acquireSceneMesh(): ARSceneMesh
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-frame.acquireSceneMesh();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_MESH);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  frame.acquireSceneMesh();
+}
 ```
 
 ### ARFrame.acquireDepthImage16Bits
@@ -2494,11 +2620,14 @@ acquireDepthImage16Bits(): ARImage
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-frame.acquireDepthImage16Bits();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_DEPTH);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  frame.acquireDepthImage16Bits();
+}
 ```
 
 ### ARFrame.acquireDepthConfidenceImage
@@ -2534,11 +2663,14 @@ acquireDepthConfidenceImage(): ARImage
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-frame.acquireDepthConfidenceImage();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_DEPTH);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  frame.acquireDepthConfidenceImage();
+}
 ```
 
 ### ARFrame.acquireSemanticDense
@@ -2572,11 +2704,14 @@ acquireSemanticDense(): ARSemanticDenseData
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-frame.acquireSemanticDense();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC_DENSE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  frame.acquireSemanticDense();
+}
 ```
 
 ### ARFrame.acquireBodySkeleton
@@ -2610,11 +2745,14 @@ acquireBodySkeleton(): Array<ARBody>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-frame.acquireBodySkeleton();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_BODY);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  frame.acquireBodySkeleton();
+}
 ```
 
 ### ARFrame.acquireCameraImage
@@ -2648,11 +2786,14 @@ acquireCameraImage(): ARImage
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let arImage: arEngine.ARImage = frame.acquireCameraImage();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let arImage: arEngine.ARImage = frame.acquireCameraImage();
+}
 ```
 
 ### ARFrame.release
@@ -2686,11 +2827,14 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-await frame.release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  await frame.release();
+}
 ```
 
 ## ARGeometry
@@ -2744,13 +2888,16 @@ getVertices(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-faceGeometry.getVertices();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+  faceGeometry.getVertices();
+}
 ```
 
 ### ARGeometry.getTexCoord
@@ -2784,13 +2931,16 @@ getTexCoord(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-faceGeometry.getTexCoord();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+  faceGeometry.getTexCoord();
+}
 ```
 
 ### ARGeometry.getIndices
@@ -2824,13 +2974,16 @@ getIndices(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-faceGeometry.getIndices();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+  faceGeometry.getIndices();
+}
 ```
 
 ### ARGeometry.getTriangleLabels
@@ -2864,13 +3017,16 @@ getTriangleLabels(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-faceGeometry.getTriangleLabels();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+  faceGeometry.getTriangleLabels();
+}
 ```
 
 ### ARGeometry.release
@@ -2904,13 +3060,16 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-await faceGeometry.release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+  let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+  let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+  await faceGeometry.release();
+}
 ```
 
 ## ARHitResult
@@ -2968,12 +3127,15 @@ getHitPose(): ARPose
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
-hitResult[0].getHitPose();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
+  hitResult[0].getHitPose();
+}
 ```
 
 ### ARHitResult.getTrackable
@@ -3007,12 +3169,15 @@ getTrackable(): ARTrackable
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
-hitResult[0].getTrackable();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
+  hitResult[0].getTrackable();
+}
 ```
 
 ### ARHitResult.createAnchor
@@ -3046,12 +3211,15 @@ createAnchor(): ARAnchor
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
-hitResult[0].createAnchor();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
+  hitResult[0].createAnchor();
+}
 ```
 
 ### ARHitResult.release
@@ -3085,12 +3253,15 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
-await hitResult[0].release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
+  await hitResult[0].release();
+}
 ```
 
 ## ARImage
@@ -3144,12 +3315,15 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let image: arEngine.ARImage = frame.acquireDepthImage16Bits();
-await image.release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let image: arEngine.ARImage = frame.acquireDepthImage16Bits();
+  await image.release();
+}
 ```
 
 ## ARPlane
@@ -3204,12 +3378,15 @@ getPolygonXZ(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-let plane = trackables[0] as arEngine.ARPlane;
-plane.getPolygonXZ();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
+  let plane = trackables[0] as arEngine.ARPlane;
+  plane.getPolygonXZ();
+}
 ```
 
 ### ARPlane.getSubsumedBy
@@ -3243,12 +3420,15 @@ getSubsumedBy(): ARPlane
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
-plane.getSubsumedBy();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
+  let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
+  plane.getSubsumedBy();
+}
 ```
 
 ### ARPlane.isPoseInExtents
@@ -3289,13 +3469,16 @@ isPoseInExtents(pose: ARPose): boolean
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-let pose: arEngine.ARPose = trackables[0].getPose();
-let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
-plane.isPoseInExtents(pose);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
+  let pose: arEngine.ARPose = trackables[0].getPose();
+  let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
+  plane.isPoseInExtents(pose);
+}
 ```
 
 ### ARPlane.isPoseInPolygon
@@ -3336,13 +3519,16 @@ isPoseInPolygon(pose: ARPose): boolean
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-let pose: arEngine.ARPose = trackables[0].getPose();
-let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
-plane.isPoseInPolygon(pose);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
+  let pose: arEngine.ARPose = trackables[0].getPose();
+  let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
+  plane.isPoseInPolygon(pose);
+}
 ```
 
 ## ARPlaneAnchor
@@ -3394,6 +3580,10 @@ import { arEngine, ARView, arViewController } from '@kit.AREngine';
 import { Node } from '@kit.ArkGraphics3D';
 // 该方法在ARViewCallback中使用
 async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): Promise<void> {
+  let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+  if (!ret) {
+    return;
+  }
   let planeAnchor: arEngine.ARPlaneAnchor = anchor as arEngine.ARPlaneAnchor;
   let plane: arEngine.ARPlane = planeAnchor.getPlane();
   await plane.release();
@@ -3468,13 +3658,16 @@ getMatrix(): Matrix4
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let camera: arEngine.ARCamera = frame.getCamera();
-let pose: arEngine.ARPose = camera.getPose();
-pose.getMatrix();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let camera: arEngine.ARCamera = frame.getCamera();
+  let pose: arEngine.ARPose = camera.getPose();
+  pose.getMatrix();
+}
 ```
 
 ### ARPose.release
@@ -3508,13 +3701,16 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let camera: arEngine.ARCamera = frame.getCamera();
-let pose: arEngine.ARPose = camera.getPose();
-await pose.release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let camera: arEngine.ARCamera = frame.getCamera();
+  let pose: arEngine.ARPose = camera.getPose();
+  await pose.release();
+}
 ```
 
 ## ARSceneMesh
@@ -3565,12 +3761,15 @@ getVertices(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
-sceneMesh.getVertices();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_MESH);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+  sceneMesh.getVertices();
+}
 ```
 
 ### ARSceneMesh.getVertexNormals
@@ -3604,12 +3803,15 @@ getVertexNormals(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
-sceneMesh.getVertexNormals();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_MESH);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+  sceneMesh.getVertexNormals();
+}
 ```
 
 ### ARSceneMesh.getTriangleIndices
@@ -3643,12 +3845,15 @@ getTriangleIndices(): ArrayBuffer
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
-sceneMesh.getTriangleIndices();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_MESH);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+  sceneMesh.getTriangleIndices();
+}
 ```
 
 ### ARSceneMesh.release
@@ -3682,12 +3887,15 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
-await sceneMesh.release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_MESH);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+  await sceneMesh.release();
+}
 ```
 
 ## ARSemanticDenseData
@@ -3739,12 +3947,15 @@ acquirePointData(): ARSemanticDensePointData
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
-semanticData.acquirePointData();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC_DENSE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
+  semanticData.acquirePointData();
+}
 ```
 
 ### ARSemanticDenseData.acquireCubeData
@@ -3778,12 +3989,15 @@ acquireCubeData(): Array<ARSemanticDenseCubeData>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
-semanticData.acquireCubeData();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC_DENSE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
+  semanticData.acquireCubeData();
+}
 ```
 
 ### ARSemanticDenseData.release
@@ -3817,12 +4031,15 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let frame: arEngine.ARFrame = arSession.getFrame();
-let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
-await semanticData.release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC_DENSE);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let frame: arEngine.ARFrame = arSession.getFrame();
+  let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
+  await semanticData.release();
+}
 ```
 
 ## ARTrackable
@@ -3873,11 +4090,14 @@ getPose(): ARPose
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
-trackables[0].getPose();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+  trackables[0].getPose();
+}
 ```
 
 ### ARTrackable.getAnchors
@@ -3911,11 +4131,14 @@ getAnchors(): Array<ARAnchor>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
-trackables[0].getAnchors();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+  trackables[0].getAnchors();
+}
 ```
 
 ### ARTrackable.createAnchor
@@ -3956,12 +4179,15 @@ createAnchor(pose: ARPose): ARAnchor
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
-let pose: arEngine.ARPose = trackables[0].getPose();
-trackables[0].createAnchor(pose);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+  let pose: arEngine.ARPose = trackables[0].getPose();
+  trackables[0].createAnchor(pose);
+}
 ```
 
 ### ARTrackable.release
@@ -3995,11 +4221,14 @@ release(): Promise<void>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-// arSession创建参考ARSession.getFrame接口示例代码
-let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
-await trackables[0].release();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  // arSession创建参考ARSession.getFrame接口示例代码
+  let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+  await trackables[0].release();
+}
 ```
 
 ## arEngine.createARAugmentedImageDatabase
@@ -4031,9 +4260,12 @@ createARAugmentedImageDatabase(): Promise<ARAugmentedImageDatabase>
 **示例：**
 
 ```typescript
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-await arEngine.createARAugmentedImageDatabase();
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_IMAGE);
+if (ret) {
+  await arEngine.createARAugmentedImageDatabase();
+}
 ```
 
 ## arEngine.createARPose
@@ -4074,14 +4306,17 @@ createARPose(rotation: Quaternion, translation: Vec3): ARPose
 
 ```typescript
 import { Quaternion, Vec3 } from '@kit.ArkGraphics3D';
-import { arEngine } from '@kit.AREngine';
+import { arEngine, arViewController } from '@kit.AREngine';
 
-let r: Quaternion = {
-  x: 0,
-  y: 0,
-  z: 0,
-  w: 0
-};
-let t: Vec3 = { x: 0, y: 0, z: 0 };
-arEngine.createARPose(r, t);
+let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
+if (ret) {
+  let r: Quaternion = {
+    x: 0,
+    y: 0,
+    z: 0,
+    w: 0
+  };
+  let t: Vec3 = { x: 0, y: 0, z: 0 };
+  arEngine.createARPose(r, t);
+}
 ```

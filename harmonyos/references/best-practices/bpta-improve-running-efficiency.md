@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve-ru
 title: 运行效率提高
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 运行效率提高
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:6c67be861566a1ecda84f73fa1d6cefff6b3558891bad07416f1e407feea5900
+scraped_at: 2026-10-29T08:03:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:e55bca38cbbe0f1ce3aa721c255494688f4701719d3e380882abf76db61f4605
 ---
 
 在开发过程中，优化影响性能的代码片段，以提高运行效率。以下实践总结了一些高性能的写法和建议：
@@ -29,15 +29,15 @@ content_hash: sha256:6c67be861566a1ecda84f73fa1d6cefff6b3558891bad07416f1e407fee
 ## 减少同文件大量export \*导出方式和延迟加载
 
 * 由于依赖模块解析采用深度优先遍历，会从入口文件的第一个导入语句开始逐层查找，直到最后一个没有导入语句的模块。连接好该模块的导出变量后，再回到上一级模块重复此步骤。因此[减少同文件大量export \*导出方式](bpta-arkts-high-performance.md#section1218510102815)，降低依赖模块解析、文件执行阶段耗时增长。
-* 当工具类中存在较多暴露函数或变量时，推荐按需引用使用到的变量，[延迟加载](bpta-arkts-high-performance.md#section12861143418213)可以减少该阶段中.ets文件执行耗时，即减少文件中所有export变量的初始化过程。
+* 当工具类中存在较多暴露函数或变量时，推荐按需引用使用到的变量，[延迟加载 (lazy import)](../doccenter-capabilities/arkts-lazy-import.md)可以减少该阶段中.ets文件执行耗时，即减少文件中所有export变量的初始化过程。
 
 ## 通过路径展开提升运行效率
 
-传统HAR包导入即使只需要HAR包中单个变量，也会触发整个依赖链所有模块的加载和执行，造成性能浪费。ArkTS编译器提供expandImportPath（[工程级配置](../harmonyos-guides/ide-hvigor-build-profile-app.md#section111543473013)、[模块级配置](../harmonyos-guides/ide-hvigor-build-profile.md#section8368152412552)）配置项。通过修改配置项，编译器会将间接包名导入转换为精准的文件路径导入，跳过中间模块。该优化可消除冗余的模块解析和初始化，减少冷启动阶段不必要的资源消耗。
+传统HAR包导入即使只需要HAR包中单个变量，也会触发整个依赖链所有模块的加载和执行，造成性能浪费。ArkTS编译器提供expandImportPath（[配置文件结构](../doccenter-deveco-studio/ide-hvigor-build-profile-app.md#section1380416358438)）配置项。通过修改配置项，编译器会将间接包名导入转换为精准的文件路径导入，跳过中间模块。该优化可消除冗余的模块解析和初始化，减少冷启动阶段不必要的资源消耗。
 
 **注意** 
 
-由于import路径展开会跳过中间模块的执行，若业务依赖模块的执行顺序，修改后可能会导致业务异常。具体场景请参阅[import路径展开副作用](../harmonyos-guides/arkts-module-side-effects.md#副作用)。
+由于import路径展开会跳过中间模块的执行，若业务依赖模块的执行顺序，修改后可能会导致业务异常。具体场景请参阅[通过import路径展开优化性能](../doccenter-capabilities/arkts-module-side-effects.md#通过import路径展开优化性能)。
 
 ### 场景案例
 
@@ -145,11 +145,11 @@ oh-package.json如下增加模块依赖library包：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/Qa-fBrVLRdibTnBbqpHFtQ/zh-cn_image_0000002515417448.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/UWaX2-6wQO22mAbXP2ph-Q/zh-cn_image_0000002515417448.png "点击放大")
 
 **使用路径展开**
 
-开发者可通过配置expandImportPath（[工程级配置](../harmonyos-guides/ide-hvigor-build-profile-app.md#section111543473013)、[模块级配置](../harmonyos-guides/ide-hvigor-build-profile.md#section8368152412552)）来启用路径展开功能，并且将导入方式改为import { typeNum } from 'library'。使源码中的import语句在编译时指向被引用符号的实际定义文件。从下图Trace上看此时只执行TypeNum.ets，同时通过修改前后的Trace对比也可以看出冷启动性能得到提升。
+开发者可通过配置expandImportPath（[配置文件结构](../doccenter-deveco-studio/ide-hvigor-build-profile-app.md#section1380416358438)）来启用路径展开功能，并且将导入方式改为import { typeNum } from 'library'。使源码中的import语句在编译时指向被引用符号的实际定义文件。从下图Trace上看此时只执行TypeNum.ets，同时通过修改前后的Trace对比也可以看出冷启动性能得到提升。
 
 ```typescript
 // entry\src\main\ets\pages\Index.ets
@@ -184,4 +184,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/5sCWACn8SA-9vsVIjWMLSw/zh-cn_image_0000002515577362.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/PPeEYiGgSd6lPZ_ScOCyKw/zh-cn_image_0000002515577362.png "点击放大")

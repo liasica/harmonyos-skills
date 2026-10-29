@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用冻屏类问题优化建议
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 应用冻屏类问题优化建议
 category: best-practices
-scraped_at: 2026-09-02T14:53:47+08:00
-doc_updated_at: 2026-05-22
-content_hash: sha256:6190ab13660e752525866a685852dede0420db4dc4e4bbd3bc2d9880b2c3f72f
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:2a4649887395c9b5146aa46543eb64c322a24fae8f2d6d6b192d498af023b1e6
 ---
 
 ## 优化建议1：多线程操作锁时，需要合理使用lock\_guard这类自动控制持锁和释放锁的管理方式
@@ -44,11 +44,11 @@ int AppFreezeAdvisePositive() {
 
 应用发生冻屏，但是主线程中却没有识别到耗时函数调用。
 
-```typescript
+```screen
 function getForeachKey(item : ItemType) : string {
     // ...
     return `${item.xxx2}${item.xxx2}...${item.themeStyle}`;
-} // 这部分逻辑如果较为耗时，执行次数多，总时长就是发生冻屏的耗时操作
+} // Frequent timeFrequent time-consuming logic accumulates into app-freezing durations
 ```
 
 ```screen
@@ -59,7 +59,7 @@ function xxxFunction1(fileUris : string[]): void {
         // ...
     }
     // ...
-} // 如果使用同步操作，需要考虑到容器弱网或无网等极端情况发生
+} // When using synchronous operations, consider extreme cases such as weak or no network in the container
 ```
 
 优化建议：
@@ -70,9 +70,9 @@ function xxxFunction1(fileUris : string[]): void {
 ```screen
 async function xxxFunction2(fileUris : string[]) : Promise<void> {
     // ...
-    AppStorage.setOrCreate<boolean>('isLoadingPic', true); // 用于页面load效果展示
+    AppStorage.setOrCreate<boolean>('isLoadingPic', true); // Used for page loading effect display
     for (const fileuri of fileUris) {
-        let file = await fileIo.open(fileuri, fileIo.OpenMode.READ_ONLY); // 改为异步加载
+        let file = await fileIo.open(fileuri, fileIo.OpenMode.READ_ONLY); // Changed to asynchronous loading
         // ...
     }
     // ...

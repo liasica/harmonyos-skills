@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-swiper_hig
 title: Swiper组件加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > Swiper组件加载丢帧优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:255d8f76b7d3f50e8edaa77be86c93867cb39e6126c5cd1f6904aa7238fdf65d
+scraped_at: 2026-10-29T08:03:22+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:9a92f5e6fc8e480ca95af067c01801ffc614349a577ae3770cb31ecf72a67cb1
 ---
 
 ## 概述
@@ -194,7 +194,7 @@ struct TestCodeTwo {
 }
 ```
 
-为了测试不同缓存数量对性能的影响，将 `cachedCount` 的值分别设置为 1、2、4、8。基于案例程序，测试不同缓存数量对帧率和内存占用的影响。
+为了测试不同缓存数量对性能的影响，将cachedCount的值分别设置为 1、2、4、8。基于案例程序，测试不同缓存数量对帧率和内存占用的影响。
 
 **表2** 不同cachedCount数量下的性能数据对比
 
@@ -323,17 +323,17 @@ Swiper主页面核心代码：
 如图1所示，不使用onAnimationStart回调提前加载数据，通过自定义打点标签“H:noPreLoadData”，可以看出SwiperItem节点的构建耗时50ms左右。
 
 **图1** 没有提前加载数据的打点信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/RdcgJannRCmniS5RwGPePQ/zh-cn_image_0000002193850808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/InOoD5OzR8WZRLOOwji3TA/zh-cn_image_0000002193850808.png "点击放大")
 
 如图2所示，采用onAnimationStart回调提前加载数据，通过自定义打点标签“H:preLoadData”，可以看出SwiperItem节点的构建耗时2ms左右。
 
 **图2** 使用了提前加载数据的打点信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/fejmOxq3RZ-SYDdGl37ung/zh-cn_image_0000002194010396.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/7q-He7mGRKSp_VlcONeDPQ/zh-cn_image_0000002194010396.png "点击放大")
 
 观察“H:noPreLoadData”时间段的详细trace图，可以发现预加载构建SwiperItem时，aboutToAppear生命周期回调加载图片资源占用48毫秒。
 
 **图3** “H:noPreLoadData”时间段的trace详细信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/8Ic0wnVKQtqoG1VnGnoYqQ/zh-cn_image_0000002229450669.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/M8A1u1sITdK-byEnOxTcsQ/zh-cn_image_0000002229450669.png "点击放大")
 
 使用onAnimationStart回调接口提前加载后续范围内子组件所需资源，能够减少cachedCount范围内子组件节点的加载时间。
 

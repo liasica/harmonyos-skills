@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-image-whit
 title: Image白块解决方案
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 专项问题解决方案 > Image白块解决方案
 category: best-practices
-scraped_at: 2026-10-16T07:06:47+08:00
+scraped_at: 2026-10-29T08:03:22+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:feb96320029206a5f6125403d620e900fa6c028f29e324a2734e994a5c3a7cd2
+content_hash: sha256:65b9fd7d86a1e95a84046bbaa3c10dfab35640f124fa083f9f7e9c00944c8d26
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:feb96320029206a5f6125403d620e900fa6c028f29e324a2734e994a5c3
 * 缓存复用阶段：当Image组件加载时，首先检查应用沙箱是否存在缓存。若存在，则直接读取缓存数据；若不存在，再发起网络请求。非首次请求时，该机制可避免重复下载，从而缩短白块持续时间。
 
 **图1** Image加载网络图片两种方式对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/nm_hZGGVSGWfkxPgh-RF8g/zh-cn_image_0000002429762245.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/l92J-E0OQBe4P-uJ3llBXw/zh-cn_image_0000002429762245.png "点击放大")
 
 **说明** 
 
@@ -81,7 +81,7 @@ export struct PageOne {
 
 **图2** 使用预下载的方式，由开发者灵活地处理网络图片，减少白块出现时长
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/zBITNqhNQ_Gnsf6_bouxqA/zh-cn_image_0000002651406702.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/s7tbpqN6Qc-05oa8WKl3Fw/zh-cn_image_0000002651406702.png "点击放大")
 
 1. 在父组件里aboutToAppear()中提前发起网络请求，当父页面点击按钮跳转子页面PageOne，此时触发读取应用沙箱中已缓存解码的网络图片请求并存储。非首次点击时，不再重复调用getPixMap()，避免每次点击都从沙箱里读取文件。
 
@@ -267,7 +267,7 @@ export struct PageOne {
 
 **图3** 直接使用Image加载网络数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/x85KqQwoTXG8jcYXfEI_oA/zh-cn_image_0000002681606227.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/d9VX_lrgRSmPRwP9DHQe7w/zh-cn_image_0000002681606227.png "点击放大")
 
 【优化后】
 
@@ -275,7 +275,7 @@ export struct PageOne {
 
 **图4** 使用预下载的方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/m952ODJjSemLM790Twt_hg/zh-cn_image_0000002651566612.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vB-MpB46TLycL3ci41qdxw/zh-cn_image_0000002651566612.png "点击放大")
 
 **说明** 
 

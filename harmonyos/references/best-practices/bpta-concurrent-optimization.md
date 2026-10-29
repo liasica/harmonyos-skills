@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-concurrent
 title: 并行化性能优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 并行化性能优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:47+08:00
+scraped_at: 2026-10-29T08:03:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7158692fdd3c272bfb1ab51f3d6ed44c7bb940c84079d770d370454358b10a30
+content_hash: sha256:626b1cb3155068f0be927e695a0140d21124c9ea15349bfd945215ed3bb46396
 ---
 
 ## 概述
@@ -32,13 +32,13 @@ content_hash: sha256:7158692fdd3c272bfb1ab51f3d6ed44c7bb940c84079d770d370454358b
 
 某应用首页的业务逻辑如下图所示：首先从网络端获取数据，解析数据，生成数据类，随后与业务对象结合以渲染页面。上述业务逻辑均在主线程执行（耗时100ms+），由于主线程阻塞时间较长，导致出现丢帧现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/OnsG9UnEQyqdjLzqo9i_ng/zh-cn_image_0000002547101027.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/hUo2VWGNSoWQFQYDQ8FviA/zh-cn_image_0000002547101027.png)
 
 ### 实现原理
 
 **逻辑迁移到子线程的改造**：上述业务逻辑中，网络库下载JSON字符串、解析及生成Model数据类这三个阶段均涉及数据操作，且无需在主线程中执行，因此可将上述业务逻辑迁移到子线程中。优化后整体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/pI5bMrbBQ8KN2RAUR8Fk0w/zh-cn_image_0000002515421200.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/sZzKbf4rS8aHFh8E8rC2ZA/zh-cn_image_0000002515421200.png)
 
 **数据进行线程间共享改造**：业务逻辑迁移到子线程后，为避免跨线程通信导致的数据拷贝消耗，可基于Sendable思想，将通信数据改造成多线程间共享对象。由于UI逻辑无法在子线程中执行，实际操作中需将数据结构解耦，分离数据与UI。将数据抽取为Sendable类，剥离UI相关部分，从而在子线程中完成数据的请求、解析和生成。
 
@@ -48,7 +48,7 @@ content_hash: sha256:7158692fdd3c272bfb1ab51f3d6ed44c7bb940c84079d770d370454358b
 
 应用业务逻辑为：首先生成LightArtDocument对象。该对象作为组件树的上下文，包含树结构和方法等信息。接着，通过LightArtDocument记录的节点和方法，递归生成树，即对LightArtUIComponent填充数据，形成数据模型。最后递归生成LightArtViewModel。因此，数据结构中存在互相持有及数据与UI耦合的情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/CD6oHq8ETsSN4nJuEUssgw/zh-cn_image_0000002515581110.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Fa-22xWbSqeRjsVRdoN-zQ/zh-cn_image_0000002515581110.png)
 
 针对上述三大主要结构的整改，主要是将数据生成部分迁移至子线程，在子线程中完成数据下载与解析，并封装成Sendable数据，返回主线程后将数据组装到UI中进行渲染。
 
@@ -122,11 +122,11 @@ export class LightArtDataComponentType implements ISerializableType<LightArtData
 
 优化前，数据下载至解析生成Model数据类的耗时有130ms+。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rN7eF7HfQjW8B56vUJsvvg/zh-cn_image_0000002547181033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/cYyqmYvgTf-OaU5TRyexLA/zh-cn_image_0000002547181033.png)
 
 优化后，数据下载至解析生成Model数据类的操作已全部移至子线程执行，主线程耗时下降至40ms，共优化90ms+。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/On0alE-dRUmnqmYFbdHFSQ/zh-cn_image_0000002547101029.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Enes1YCESNmsEteiVVh22A/zh-cn_image_0000002547101029.png)
 
 **说明** 
 
@@ -147,7 +147,7 @@ export class LightArtDataComponentType implements ISerializableType<LightArtData
 1. 在子线程范围1进行改造：如果Network下发的数据为JSON格式，且网络库能够将数据以ArrayBuffer形式返回，则可以在此范围内进行改造。改造时，可使用ASON.[parse()](../harmonyos-references/arkts-apis-arkts-utils-ason.md#parse)将Network下发的字符串反序列化成可共享的JSON对象。还需对部分Model对象进行Sendable处理，使其能够在子线程中完成JSON对象到Model对象的转换。
 2. 在子线程范围2进行改造：在此改造范围内，网络请求需在子线程发起，因此网络请求所需的全局对象数据必须在子线程中可访问，这部分数据需进行相应的Sendable改造。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/CBZ5rQPISautKPBjUA29Rg/zh-cn_image_0000002515421202.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/6rrqssYMSx-e5NWWmsmOvw/zh-cn_image_0000002515421202.png)
 
 其次，在改造过程中，应先尝试并行化改造，再考虑Sendable改造。仅在需要跨线程传递方法或传递较大对象时，才需进行Sendable改造。
 

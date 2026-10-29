@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-envi
 title: 配置OHPM代理
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 附录 > 配置OHPM代理
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:47+08:00
+scraped_at: 2026-10-29T07:58:47+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:92f83e22f79a8dee8bd02ee5e7101995ebca97f5f31216b35802b9dc2a5ae185
+content_hash: sha256:6dea0a85c7f63f74c386ec54a9cf5d7c8aa0ab70d4ff8586bd88a2b18a2297df
 ---
 
 鸿蒙电脑DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确保工具的正常使用。一般来说，如果使用的是个人或家庭网络，是不需要配置代理信息的，部分企业网络受限的情况下，才需要配置代理信息。可通过如下步骤进入代理配置。
@@ -28,14 +28,14 @@ content_hash: sha256:92f83e22f79a8dee8bd02ee5e7101995ebca97f5f31216b35802b9dc2a5
 
    填写并勾选以上信息后，点击确认。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/L6tL5DVgRoK_C1M_xh7cYw/zh-cn_image_0000002779728697.png "点击放大")
-3. 代理配置完成后，点击底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/glhLvtkBTRWvEkLCqSxeLQ/zh-cn_image_0000002750169522.png)终端图标，可执行如下命令验证代理是否配置成功。执行结果如下图所示，则说明代理设置成功。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/B8TgyZVDRLO_8OX-0AgDNQ/zh-cn_image_0000002779728697.png "点击放大")
+3. 代理配置完成后，点击底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/d-pfa2t9SryeuVPJL_tQGQ/zh-cn_image_0000002750169522.png)终端图标，可执行如下命令验证代理是否配置成功。执行结果如下图所示，则说明代理设置成功。
 
    ```screen
    ohpm info @ohos/lottie
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/SGskmXTSTU2VAFhhta83EQ/zh-cn_image_0000002750009636.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qBLimIpHQnKs9vwDqv77kw/zh-cn_image_0000002750009636.png "点击放大")
 
 **说明** 
 
@@ -80,4 +80,4 @@ ohpm默认校验registry仓库地址证书。如果环境检查中ohpm registry 
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/4SJGKqK6QtCSwKPIC5r1gQ/zh-cn_image_0000002779608545.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/_0pbHZxUReumL8JKMeQfZA/zh-cn_image_0000002779608545.png)

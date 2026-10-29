@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation分栏开发
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation分栏开发
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:48+08:00
+scraped_at: 2026-10-29T07:56:29+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a736510898234363bb23d5f87bfbb13adc3fb1165ff5cf6ff8ebc5ab70508787
+content_hash: sha256:187ed047d028ed1a11b8535ceac412ce039371d28f4a5379c4e7a73414e3b233
 ---
 
 [Navigation](../harmonyos-references/ts-basic-components-navigation.md)作为一个容器组件，提供了两种布局样式：单栏布局、分栏布局。分栏布局一般适用于宽屏设备，在分栏布局下，导航栏（navBar）会固定显示， 子页面（NavDestination）通过导航控制器（NavPathStack）切换显示， 在导航栏和子页面之间有一条分割线， 可以通过分割线拖拽控制左右显示的比例。架构图详见[Navigation基础架构介绍](arkts-navigation-architecture.md)。
@@ -18,19 +18,19 @@ content_hash: sha256:a736510898234363bb23d5f87bfbb13adc3fb1165ff5cf6ff8ebc5ab705
 
 **图1** 单栏（NavigationMode.Stack）效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/X75mB9piQQ2kBIicuntxUA/zh-cn_image_0000002771664964.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/3z13x-LQTs2iJ3jo6bNb0g/zh-cn_image_0000002773903774.png)
 
 **图2** 分栏（NavigationMode.Split）效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/QawTLzBeSeivN3yayWMYPA/zh-cn_image_0000002800984821.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/kLffDfX2Qt2t8TSP486DXw/zh-cn_image_0000002803263561.png)
 
 **图3** 自适应（NavigationMode.Auto）效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/P34VWRnwROunjsZUhTKP2Q/zh-cn_image_0000002771824930.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/xDiEUgxTTGyAlXj8py1CgQ/zh-cn_image_0000002803223471.gif)
 
 **图4** 根据高宽比自适应（NavigationMode.AUTO\_WITH\_ASPECT\_RATIO）效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/MKU4AUbmSAaeeuDTzF_5Iw/zh-cn_image_0000002801104745.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/5YId0j8OSV2vEM4_1UnlNQ/zh-cn_image_0000002774063752.gif)
 
 ### navBarPosition
 
@@ -40,21 +40,21 @@ content_hash: sha256:a736510898234363bb23d5f87bfbb13adc3fb1165ff5cf6ff8ebc5ab705
 
 **图5** 系统语言为LTR时NavBarPosition.Start效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/VnwA5aTAQJWC33lSDyqmdw/zh-cn_image_0000002771664966.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/n6X3Gw1CR32z3bg5Vyw2KA/zh-cn_image_0000002773903776.png)
 
 **图6** 系统语言为RTL时NavBarPosition.Start效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/MDc8lxDmQ0GTybH3dM_xaA/zh-cn_image_0000002800984823.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/dMWOIMdbRtivSlAAznMbyQ/zh-cn_image_0000002803263563.png)
 
 **NavBarPosition.End**
 
 **图7** 系统语言为LTR时NavBarPosition.End效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1NXbniwbRMaVc0HVkRmyoA/zh-cn_image_0000002771824932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Chpu3hl0QwaExm4FkFt5uA/zh-cn_image_0000002803223473.png)
 
 **图8** 系统语言为RTL时NavBarPosition.End效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/G0hAd9LsR1ejBno1JVv06Q/zh-cn_image_0000002801104747.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/dziuZY6DTBSz4DXryWgnVA/zh-cn_image_0000002774063754.png)
 
 ### enableDragBar
 
@@ -62,11 +62,11 @@ content_hash: sha256:a736510898234363bb23d5f87bfbb13adc3fb1165ff5cf6ff8ebc5ab705
 
 **图9** enableDragBar为false效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/XwYnUGJwQISyMuo4mItR0Q/zh-cn_image_0000002771664968.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/C4bZUdlsT2q8oKEMf5Yl9Q/zh-cn_image_0000002773903778.png)
 
 **图10** enableDragBar为true
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/U1R6S1qIQ-mQsF8wvU3a6g/zh-cn_image_0000002800984825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/eDkzEwb4TuK1luZXjVq0Gg/zh-cn_image_0000002803263565.png)
 
 ### navBarWidth
 
@@ -232,4 +232,4 @@ struct Index {
 
 **图11** 运行效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/uQMhkQgURzqKVTCTFWEpNg/zh-cn_image_0000002771824934.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/KBYhV9FaSGmBLU5ldQZnEQ/zh-cn_image_0000002803223475.gif)

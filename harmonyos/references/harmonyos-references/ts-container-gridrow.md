@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridRow
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > GridRow
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:19+08:00
+scraped_at: 2026-10-29T07:59:37+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:accd90a6b5b13cdac9bb2e3781c6a645190fec375a4f243be8ff92d5fed3a504
+content_hash: sha256:330c5c04958d10cc953ef0e93f539502318a81cac9ee534148b2af636415da24
 ---
 
 栅格布局可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题，保证不同设备上各个模块的布局一致性。
@@ -179,7 +179,7 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 * 新一行的offset加上子组件的span超过总列数时，将下一个子组件放在新一行。
 * 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/KiNYmoIIR3KMBav-xuuFbA/zh-cn_image_0000002771827290.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/fM1LS4_TTaiJAqM0NnNynw/zh-cn_image_0000002773906140.png)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -280,7 +280,7 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/1sed6zmNRaiofNhtNByxOQ/zh-cn_image_0000002801107105.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/_srloJWKSBypfAmTpIKVfA/zh-cn_image_0000002803265923.png)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -348,4 +348,4 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/tF9mGsqdRuOWcqOXF-LrPQ/zh-cn_image_0000002771667324.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/08--ziFtQ4a9UDEZFK-I6g/zh-cn_image_0000002803225831.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-com
 title: 点击操作完成快
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 点击操作完成快
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:30+08:00
+scraped_at: 2026-10-29T07:58:32+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:a4af355d3e008956f13eb27e7229b50e29a47af9dea6c3d18bc83874f6ba851f
+content_hash: sha256:7ce975c274af11c00e063a64988a608f73d81f8c44e8975ae18f2c1e48c4bc37
 ---
 
 ## DevEco Studio 6.0.1 Beta1及以上版本
@@ -44,7 +44,7 @@ content_hash: sha256:a4af355d3e008956f13eb27e7229b50e29a47af9dea6c3d18bc83874f6b
 
 点击后，经过1600ms后截图，检测图片是否存在白块。白块检测逻辑为：AppAnalyzer通过真实应用训练的白块检测AI模型，进行页面白块识别。例如：如下左图输入到白块检测AI模型后，可以识别到白块位置，如下右图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/v48YxdWTTqaPlYeI_rtchQ/zh-cn_image_0000002731542447.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Gb4Uy2g0SwycbL9cBAdqwA/zh-cn_image_0000002731382471.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/QsWuBmrwT-CcIEllX0LBeg/zh-cn_image_0000002731542447.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/nklM9JJTTpe4SGU_Ks2SjA/zh-cn_image_0000002731382471.png)
 
 ### 计算逻辑
 

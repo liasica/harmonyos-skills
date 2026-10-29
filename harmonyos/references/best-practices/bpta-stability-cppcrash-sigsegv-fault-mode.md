@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGSEGV无效内存访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGSEGV无效内存访问故障模式说明
 category: best-practices
-scraped_at: 2026-10-16T07:06:51+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:749bc951e6b1abce74b37fcb6b70a8f2a13cb67bc27258d758e49619d00674c3
+scraped_at: 2026-10-29T08:03:26+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:e12e11767664fc758b795a1207e61e7ec53a4a83f2047b15f1c323d63cb89b58
 ---
 
 ## SEGV\_MAPERR不存在的内存地址
@@ -1207,7 +1207,7 @@ SIGSEGV是系统中进程访问无效内存时收到的信号。根据C++ siginf
 
 SEGV\_ACCERR的核心机制：
 
-CPU的MMU（Memory Management Unit）在进行地址转换时，会检查页表项（PTE）中的权限位（如R/W、U/S、XD/NX）。当程序试图执行以下操作时，MMU会触发页故障（Page Fault），操作系统捕获后向进程发送SIGSEGV并置si\_code = SEGV\_ACCERR。
+CPU的MMU（Memory Management Unit）在进行地址转换时，会检查页表项（PTE）中的权限位（如R/W、U/S、XD/NX）。当程序试图访问没有权限的内存页时，MMU会触发页故障（Page Fault），操作系统捕获后向进程发送SIGSEGV并置si\_code = SEGV\_ACCERR。
 
 关键区别：SEGV\_ACCERR表明地址是“存在”的，只是权限不足。这通常不是由空指针直接引起，而是由类型转换错误、常量区写入、代码段踩踏、安全机制被触发等更深层逻辑错误导致。
 

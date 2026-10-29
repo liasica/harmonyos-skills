@@ -1,6 +1,6 @@
 # 指南（harmonyos-guides）
 
-共 6154 篇文档。
+共 6155 篇文档。
 
 - [24h功耗器件分解统计事件](24-hour-battery-usage-event.md)
 - [aa工具](aa-tool.md)
@@ -122,7 +122,7 @@
 - [（可选）通过CloudDev面板获取云开发资源支持](agc-harmonyos-clouddev-console.md)
 - [创建云对象](agc-harmonyos-clouddev-createcloudobj.md)
 - [创建并配置函数](agc-harmonyos-clouddev-createfunc.md)
-- [在AGC创建项目和HarmonyOS应用/元服务](agc-harmonyos-clouddev-createproject.md)
+- [创建HarmonyOS应用/元服务](agc-harmonyos-clouddev-createproject.md)
 - [添加数据条目](agc-harmonyos-clouddev-dataentry.md)
 - [开发流程](agc-harmonyos-clouddev-dbprocess.md)
 - [调试云对象](agc-harmonyos-clouddev-debugcloudobj.md)
@@ -4686,7 +4686,7 @@
 - [网络信息查询与连接管理](network-information-query-connection-management.md)
 - [访问网络](network-kit-data-transmission.md)
 - [连接网络开发实践](network-kit-network-connection-development-practice.md)
-- [连接网络](network-kit-network-connecttion.md)
+- [连接网络](network-kit-network-connection.md)
 - [管理网络](network-kit-network-management.md)
 - [Network Kit（网络服务）](network-kit.md)
 - [使用网络领航员进行网络模拟](network-navigator.md)
@@ -5052,6 +5052,7 @@
 - [Push Kit（推送服务）](push-kit-guide.md)
 - [Push Kit简介](push-kit-introduction.md)
 - [（可选）接入Skill](push-kit-skill.md)
+- [（可选）测试消息分析](push-message-analysis.md)
 - [（可选）开发消息回执](push-msg-receipt.md)
 - [个人数据处理说明](push-personal-data.md)
 - [开发准备](push-preparations.md)

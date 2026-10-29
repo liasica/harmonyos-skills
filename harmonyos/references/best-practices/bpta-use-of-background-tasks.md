@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-use-of-bac
 title: 后台任务合理使用
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台任务合理使用
 category: best-practices
-scraped_at: 2026-04-28T08:22:44+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:156365bbbf6d221f61ddfda54ad4cfd05d125979aa041da4d760d43aab19a42e
+scraped_at: 2026-10-29T08:03:24+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:bab90947f2a0f3172b967f0d3890461673359784973b6f3abff78c96c94c3dcc
 ---
 
 应用退至后台后，继续活动会导致设备耗电加快、用户界面卡顿。为降低耗电速度，保障使用流畅，系统将对后台应用进行管控，包括进程挂起和终止。为确保后台音乐播放、日历提醒等功能正常，系统提供规范内受约束的后台任务，延长应用后台运行时间。
@@ -20,4 +20,4 @@ content_hash: sha256:156365bbbf6d221f61ddfda54ad4cfd05d125979aa041da4d760d43aab1
 | 延迟任务 | 实时性不高、可延迟执行的任务，满足条件后放入执行队列，系统统一调度。 | 应用退到后台时挂起，满足条件后系统统一调度拉起应用，创建Extension进程执行任务。单次回调最长运行2分钟，超时不取消，系统终止Extension进程。 | 软件更新、信息收集、数据处理等。 |
 | 代理提醒 | 系统代理应用提醒。 | 应用挂起或进程终止，满足条件后系统代理应用提醒。 | 闹钟、倒计时、日历。 |
 
-具体任务的使用场景、约束和开发步骤可以参考[后台任务开发服务](../harmonyos-guides/background-task-kit.md)。
+具体任务的使用场景、约束和开发步骤可以参考[Background Tasks Kit（后台任务开发服务）](../harmonyos-guides/background-task-kit.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用冻屏故障检测机制及规格说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 应用冻屏故障模式说明 > 应用冻屏故障检测机制及规格说明
 category: best-practices
-scraped_at: 2026-10-16T07:06:50+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:47fdc7bc0854e250d88cdd77d480e4d2545b15387a9bdfa4ff369b27e6979549
+scraped_at: 2026-10-29T08:03:25+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:045fce8e1035d68a53b55de719778cf01015d4dbe9c2be8bf9ec3aabd0e87ea8
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:47fdc7bc0854e250d88cdd77d480e4d2545b15387a9bdfa4ff369b27e69
 | THREAD\_BLOCK\_3S | 应用冻屏告警事件，应用主线程执行任务超过3s时触发。  **说明**：从API版本26.0.0开始，支持该类型。 | [THREAD\_BLOCK\_6S应用主线程卡死超时](../harmonyos-guides/appfreeze-guidelines.md#thread_block_6s应用主线程卡死超时) |
 | THREAD\_BLOCK\_6S | 应用冻屏事件，应用主线程执行任务超过6s时触发。 | [THREAD\_BLOCK\_6S应用主线程卡死超时](../harmonyos-guides/appfreeze-guidelines.md#thread_block_6s应用主线程卡死超时) |
 | APP\_INPUT\_BLOCK | 应用冻屏事件，用户输入响应超时。 | [APP\_INPUT\_BLOCK用户输入响应超时](../harmonyos-guides/appfreeze-guidelines.md#app_input_block用户输入响应超时) |
-| LIFECYCLE\_HALF\_TIMEOUT | 应用冻屏告警事件， UIAbility生命周期切换过程中，超过半生命周期阈值时触发。  **说明**：从API版本26.0.0开始，支持该类型。 | [LIFECYCLE\_TIMEOUT生命周期切换超时](../harmonyos-guides/appfreeze-guidelines.md#lifecycle_timeout生命周期切换超时) |
+| LIFECYCLE\_HALF\_TIMEOUT | 应用冻屏告警事件，UIAbility生命周期切换过程中，超过半生命周期阈值时触发。  **说明**：从API版本26.0.0开始，支持该类型。 | [LIFECYCLE\_TIMEOUT生命周期切换超时](../harmonyos-guides/appfreeze-guidelines.md#lifecycle_timeout生命周期切换超时) |
 | LIFECYCLE\_TIMEOUT | 应用冻屏事件，UIAbility生命周期切换超时。  **说明**：从API版本26.0.0开始，支持该类型。 | [LIFECYCLE\_TIMEOUT生命周期切换超时](../harmonyos-guides/appfreeze-guidelines.md#lifecycle_timeout生命周期切换超时) |
 
 根据应用冻屏触发的原因，系统将应用冻屏划分为4类二级根因，以及17类三级根因，如下表所示：

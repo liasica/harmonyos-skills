@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (SelectActionProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (SelectActionProposal)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:08+08:00
+scraped_at: 2026-10-29T07:59:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f6362457cf4ea8beb72b4fe7dec37ae1a9776d7f8a191838a0e966c6c398ed57
+content_hash: sha256:f225e390ba86ab0271e50a7b9074e0db98322fe0b2c0ee24b99560aeba04823e
 ---
 
 智慧手势选中动作处理。当通过[registerMonitor](arkts-apis-uicontext-smartgesturecontroller.md#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](arkts-apis-uicontext-gesturehandlingresolution.md)的selectedProposal为该类型对象，会使目标组件被选中。
@@ -102,4 +102,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Z_N0ZgcaQ3ap7LgMl-vUzA/zh-cn_image_0000002801106879.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/EcrwbMXVQS6pOK6MO1Z9_g/zh-cn_image_0000002803265697.png)

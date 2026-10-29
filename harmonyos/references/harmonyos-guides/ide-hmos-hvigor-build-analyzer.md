@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 分析构建过程
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 提升构建效率 > 分析构建过程
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:49+08:00
+scraped_at: 2026-10-29T07:58:48+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:dd4ed4ed535033f003333e7dcd84aa1e0414573bc523bad115f83a920d86bc1e
+content_hash: sha256:ab08b8538cd288f1271c122153f45fd9d817da114a476251737f7487d4784358
 ---
 
 构建分析器可以展示编译构建过程的重要信息，开发者能够通过构建分析器的可视化分析来排查构建过程中的性能和内存问题。
 
 ## 进入构建分析器
 
-构建分析器会在每次构建应用时默认生成一份报告，并在构建分析器窗口进行展示。可以在构建完成后点击左侧边栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/tUvl5mNjQZGKtv4UQrhhqA/zh-cn_image_0000002750169758.png)按钮打开构建分析器窗口。
+构建分析器会在每次构建应用时默认生成一份报告，并在构建分析器窗口进行展示。可以在构建完成后点击左侧边栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ns83T5hRT2yRz9lyYCKk3Q/zh-cn_image_0000002750169758.png)按钮打开构建分析器窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/lAae39qLTnaxqNxPt4dJ_g/zh-cn_image_0000002779728929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/vUeqTrWYSw6ngmhqRxR31g/zh-cn_image_0000002779728929.png)
 
 ## 查看构建历史记录
 
@@ -24,21 +24,21 @@ content_hash: sha256:dd4ed4ed535033f003333e7dcd84aa1e0414573bc523bad115f83a920d8
 
 本工程的构建历史数据保存在./hvigor/report目录下，超过10条记录后，最早的历史数据将会被自动清理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/1oxiqgP3TYiOBmzZW8OFAA/zh-cn_image_0000002779728927.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/UNvfpq0iTz-uLz8kSLQVCQ/zh-cn_image_0000002779728927.png)
 
 ## 查看构建任务时间图谱
 
 完成构建后首次打开构建分析器时，窗口会显示构建分析概览，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Qn_csA47RGC_Id_JOMJZTg/zh-cn_image_0000002779728931.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/WmwDFjX1QZCnjB2Q6-1SHQ/zh-cn_image_0000002779728931.png)
 
 如需查看构建任务时间图谱，点击下拉菜单选中并点击**任务视图**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/-8VEwZdNTsaUnYdCKdsPpw/zh-cn_image_0000002779728933.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/JtK-HJPbQhqPuAz_aOgLLg/zh-cn_image_0000002779728933.png)
 
 默认进入时间图谱界面。该界面会分块显示构建历史记录、构建任务时长图谱、构建日志以及对应的日志详情信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/QibOX7DpTUOZT1rag5MkMg/zh-cn_image_0000002750169762.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/6XFL8k0mQxutQ4wGmIoa9Q/zh-cn_image_0000002750169762.png)
 
 图谱中的构建任务展示按照各个任务总时长占比，以相对长度进行展示。可以对时间块进行缩小放大，查看具体的任务名称及耗时信息。
 
@@ -52,17 +52,17 @@ content_hash: sha256:dd4ed4ed535033f003333e7dcd84aa1e0414573bc523bad115f83a920d8
 
 图谱下方日志模块，展示每次构建的所有日志信息，并按日志级别（Info、Debug、Warn、Error）进行区分，并提供日志搜索功能。点击日志，可与上方图谱和右侧**详情**模块，进行联动显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ykehbzwkTmiQtxhC_vpTqA/zh-cn_image_0000002750169754.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/rXZfI4GyRoqqd-H1jpjvWQ/zh-cn_image_0000002750169754.png)
 
 ## 查看构建任务占比图谱
 
 如需查看决定着构建时长的任务的占比细分数据，请点击概览页面上的**本次构建通用视图**下方链接 ：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/oEFkvtWzTsaf37pxDK3-DQ/zh-cn_image_0000002750169764.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/b_YCmNvYSLiiIt17XfGUgg/zh-cn_image_0000002750169764.png)
 
 也可以从下拉菜单中选择**任务视图**并确认您要的任务分组类别。任务以模块、业务类别、Target以及同一模块下的Target、同一模块下的业务类别和同一Target下的业务类别进行分组。图表中任务按照时间占比从大到小排列，点击子任务可详细了解其执行情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/0Tp0I5ovRAaDC17xXNV8lw/zh-cn_image_0000002750169756.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ausRlm1kTHqyZr7zuz1Brw/zh-cn_image_0000002750169756.png)
 
 **说明** 
 
@@ -76,7 +76,7 @@ content_hash: sha256:dd4ed4ed535033f003333e7dcd84aa1e0414573bc523bad115f83a920d8
 
 点击概览页面上**本次构建通用视图**下方的链接**构建过程内存使用**，也可以从下拉菜单中选择**任务视图**和**内存使用**分组，查看内存消耗曲线图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/T4l4XDWEQgqYNuHT9mlwKw/zh-cn_image_0000002750169760.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/4qszHIHDTqmgVTOLawc9oA/zh-cn_image_0000002750169760.png)
 
 ## 设置构建分析模式
 
@@ -87,7 +87,7 @@ content_hash: sha256:dd4ed4ed535033f003333e7dcd84aa1e0414573bc523bad115f83a920d8
 * **Advanced**：高级模式，记录详细打点数据进行分析。
 * **Ultrafine**：超精细化模式，与Advanced模式相比，在ArkTS编译阶段记录更详细的打点数据，但开启后可能导致编译构建时间更长。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/658JT1A4ShOsf5FDqxf7hQ/zh-cn_image_0000002779608777.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/XE6NMF1rQa2QIkhOv2taHg/zh-cn_image_0000002779608777.png)
 
 ## 生成构建可视化html文件
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 强密码填充
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动填充 > 强密码填充
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:04+08:00
+scraped_at: 2026-10-29T07:56:48+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:bced64ef54925a6eab04ee3d916339d68b67ba56d5e9334f6ab953279a601627
+content_hash: sha256:e27d21258e81135b4fcfbd5ba3f7c367b79a26c72af397974bf5bd6a251f8025
 ---
 
 密码保险箱可以在用户需要输入一个新密码时，自动生成一个高强度的密码。用户选择使用生成的强密码时可以将这个密码填充到新密码输入框。
@@ -22,7 +22,7 @@ content_hash: sha256:bced64ef54925a6eab04ee3d916339d68b67ba56d5e9334f6ab953279a6
 
 ## 注册
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/WGDY3d2pRPqvUIU5G-CJsQ/zh-cn_image_0000002771825800.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/dB-EG8lBS8-NPZYMQHf1lw/zh-cn_image_0000002803224339.png)
 
 示例代码如下：
 
@@ -137,7 +137,7 @@ function commonButtonStyles() {
 
 ## 修改密码
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/dHigJXB-TqeVdQrvmdkYkQ/zh-cn_image_0000002801105613.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/uHiWUNE_T5Ss5LBMSH5Liw/zh-cn_image_0000002774064620.png)
 
 示例代码如下：
 

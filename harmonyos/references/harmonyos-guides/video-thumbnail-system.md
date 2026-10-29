@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-thumbna
 title: 基于系统能力获取视频缩略图
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于系统能力获取视频缩略图
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:32+08:00
+scraped_at: 2026-10-29T07:57:24+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:7e04b8a7825555ead0749976d3b3333d80c27429478bce7fd0e62435a9295d6e
+content_hash: sha256:bdbf4b7665b4facb9e78ba0e39fe25d3f04080756b1850d54b51873eae2424cd
 ---
 
 ## 概述
@@ -77,7 +77,7 @@ content_hash: sha256:7e04b8a7825555ead0749976d3b3333d80c27429478bce7fd0e62435a92
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/McueGqFHRUSddvihOqRAvg/zh-cn_image_0000002800986017.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/QZuc0IJ6TqaaScdNNrMiIw/zh-cn_image_0000002803264757.gif)
 
 ## 选取视频帧作为缩略图
 
@@ -148,7 +148,7 @@ HarmonyOS提供视频缩略图获取类[Interface (AVImageGenerator)](../harmony
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/_tkurEOHTNG_yLSIG1Gd3Q/zh-cn_image_0000002771826128.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/bYt2X1rqSW-gZApgMkza4g/zh-cn_image_0000002803224667.gif)
 
 ## 常见问题
 

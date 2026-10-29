@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.net.http (数据请求)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.http (数据请求)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:53+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:4c2d1d0c880884d2d011cfb23965ae201d2642f44c54b3b08fc483b0eb8d3a54
+scraped_at: 2026-10-29T08:01:01+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:62f37a5951e6465e364d78f8c875228875bba32d494e4c41f30368b5359784c7
 ---
 
 本模块提供HTTP数据请求能力。应用可以通过HTTP发起一个数据请求，支持常见的GET、POST、OPTIONS、HEAD、PUT、DELETE、PATCH、TRACE、CONNECT方法。
@@ -163,7 +163,7 @@ createHttp(): HttpRequest
 
 **说明** 
 
-当该请求使用完毕时，需调用destroy方法释放资源，否则会出现内存泄露问题。
+当该请求使用完毕时，需调用destroy方法释放资源，否则会出现内存泄漏问题。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -211,7 +211,7 @@ request(url: string, callback: AsyncCallback<HttpResponse>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | 发起网络请求的URL地址。示例：<https://www.test.com> |
+| url | string | 是 | 发起网络请求的URL地址。示例：https://www.test.com |
 | callback | AsyncCallback<[HttpResponse](js-apis-http.md#httpresponse)> | 是 | 回调函数。 |
 
 **错误码：**

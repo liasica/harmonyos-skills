@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-operat
 title: 画布操作及状态处理（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 画布操作及状态 > 画布操作及状态处理（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:36+08:00
+scraped_at: 2026-10-29T07:57:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f1c105b7e2f74865c6949ae7b9bdb3bb9fbfcec7cfae47953b16194c25455be6
+content_hash: sha256:0368a6f7db680b2059232e1ed8d4a59e3324ed75c975992cdb46c3fd1cfc3966
 ---
 
 ## 场景介绍
@@ -208,7 +208,7 @@ canvas.drawCircle(VALUE_300, VALUE_300, VALUE_200);
 canvas.detachPen();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/g9D5ysi7SI-qOHoyU6EUlA/zh-cn_image_0000002800986059.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/NzYNoP_bQBC8oVgqz-yACw/zh-cn_image_0000002803264799.jpg)
 
 ## 示例代码
 

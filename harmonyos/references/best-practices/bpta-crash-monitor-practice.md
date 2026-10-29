@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-crash-moni
 title: 崩溃监测实践
 breadcrumb: 最佳实践 > 稳定性 > 稳定性运维 > 崩溃监测实践
 category: best-practices
-scraped_at: 2026-10-16T07:06:54+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:e6113986351933f4e6f4f8c848a614bc6ecd66bd010aafff38a2bb8b1295be30
+scraped_at: 2026-10-29T08:03:29+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:89a64d8664e61ae751fa25bf9d029c5a39e4db81cd7811927b5835d20ab4eda8
 ---
 
 ## 概述
@@ -82,7 +82,7 @@ HarmonyOS开发者中心崩溃服务的开发使用流程如下：
 
 **创建项目与应用**
 
-1. 需要[注册华为开发者账号](../app/agc-help-getstarted-0000001100316670.md#section27844983310)，并完成实名认证。
+1. 需要[注册账号](../doccenter-getting-started/hdc-registration-0000002723008096.md)，并完成实名认证。
 2. 项目是HarmonyOS开发者中心资源的组织实体，开发者可以将一个应用的不同平台版本添加到同一个项目中。登录HarmonyOS开发者中心后，在”我的项目”中点击”添加项目”。可参考[创建项目](../app/agc-help-createproject-0000001100334664.md)。
 3. 要使用HarmonyOS开发者中心提供的各类服务，还需要创建应用，在已创建的项目页面中点击”添加应用”，注意应用包名要与DevEco Studio项目中包名一致。具体可参考[创建HarmonyOS应用/元服务](../app/agc-help-createharmonyapp-0000001945392297.md)。
 

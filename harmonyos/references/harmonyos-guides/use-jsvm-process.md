@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-proc
 title: 使用JSVM-API实现JS与C/C++语言交互开发流程
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > 使用JSVM-API实现JS与C/C++语言交互开发流程
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6b000d206382ee3c234608c4ce7e84d939d2a3a91f84534c95f863d877639183
+scraped_at: 2026-10-29T07:58:17+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:3e6a529a208c3a9f3dc6663d4617048e473362f218ab1e9e55b1b1d79c5446bc
 ---
 
 使用JSVM-API实现跨语言交互，首先需按其机制注册和加载模块。
@@ -13,7 +13,7 @@ content_hash: sha256:6b000d206382ee3c234608c4ce7e84d939d2a3a91f84534c95f863d8776
 * ArkTS/JS侧：实现C++方法的调用。代码比较简单，import一个对应的so库后，即可调用C++方法。
 * Native侧：.cpp文件，实现模块的注册。需要提供注册lib库的名称，并在注册回调方法中定义接口的映射关系，即Native方法及对应的JS/ArkTS接口名称等。
 
-此处以在ArkTS/JS侧和Native侧实现RunTest()接口实现跨语言交互为例，展示使用JSVM-API进行跨语言交互的流程。
+此处以在ArkTS/JS侧和Native侧实现runTest()接口实现跨语言交互为例，展示使用JSVM-API进行跨语言交互的流程。
 
 ## 创建Native C++工程
 
@@ -57,7 +57,7 @@ content_hash: sha256:6b000d206382ee3c234608c4ce7e84d939d2a3a91f84534c95f863d8776
   # 构建此可执行文件需要链接的库
   target_link_libraries(entry PUBLIC libace_napi.z.so libjsvm.so libhilog_ndk.z.so)
   ```
-* 新建entry/src/main/cpp/hello.cpp，实现Native侧的runTest接口。具体代码如下：
+* 新建entry/src/main/cpp/hello.cpp，实现Native侧的RunTest()接口。具体代码如下：
 
 ```
 #include "napi/native_api.h"

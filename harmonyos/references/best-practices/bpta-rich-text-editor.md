@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-rich-text-
 title: 实现富文本编辑器
 breadcrumb: 最佳实践 > 布局与弹窗 > 实现富文本编辑器
 category: best-practices
-scraped_at: 2026-10-16T07:06:35+08:00
+scraped_at: 2026-10-29T08:03:13+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:87ff9f1815d826039a50295eaa5711faedaa3e35b08997e624a0101e9a63493a
+content_hash: sha256:e3b047af5ab8cbee9898f19d167f66cb029ccace2985941dc5396830cc668baf
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:87ff9f1815d826039a50295eaa5711faedaa3e35b08997e624a0101e9a6
 
 本文旨在探讨如何使用[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)组件，在内容发布场景中实现自定义表情、@好友、添加话题等功能，并提供示例代码详细拆解细节逻辑，如@好友如何被视为一个整体，编辑器中内容如何获取并归一化处理等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/mQXP8agpSUeVhs8rOyKKdA/zh-cn_image_0000002428614480.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/4AtlJa7ERwiNPchclZqVjg/zh-cn_image_0000002428614480.gif "点击放大")
 
 ## 实现原理
 
@@ -88,7 +88,7 @@ updateTextSpans(insertOffset: number, insertLength: number) {
 
 点击下方表情按钮，系统键盘切换为表情面板。点击表情图标，会在编辑区域光标后方添加对应的表情内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/kfmBwdHbQ5mgoeCP5ZJq1w/zh-cn_image_0000002428774296.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Ka3EXTYkQ4qKe33ZrwJ21w/zh-cn_image_0000002428774296.gif "点击放大")
 
 ### 开发步骤
 
@@ -136,7 +136,7 @@ updateTextSpans(insertOffset: number, insertLength: number) {
 
 添加话题、标题与@好友逻辑一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ESuEoC-5R0uSdWy3jAZalQ/zh-cn_image_0000002462252949.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ovnUSufRRPaZcJpdBbtwOQ/zh-cn_image_0000002462252949.gif "点击放大")
 
 ### 开发步骤
 
@@ -231,7 +231,7 @@ updateTextSpans(insertOffset: number, insertLength: number) {
 
 光标不可落入@好友文本的内部。当用户点击或选中@好友这种自定义内容时，光标应自动跳转到内容的开始或结束位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gg3EwtY0T8uf_cHiHPR-GQ/zh-cn_image_0000002462133105.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/UIJ-Ft03QEi7N2DXSjUeKA/zh-cn_image_0000002462133105.gif "点击放大")
 
 ### 开发步骤
 
@@ -297,7 +297,7 @@ updateTextSpans(insertOffset: number, insertLength: number) {
 
 点击软键盘删除按钮，光标前待删除的是@好友等自定义内容时，则作为整体删除。其余内容删除时无需额外处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/a9mtuzzOR3K3_BZdRgQoMw/zh-cn_image_0000002428614484.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/aPqPfLw7T7-LIiKP1eW3XA/zh-cn_image_0000002428614484.gif "点击放大")
 
 ### 开发步骤
 
@@ -380,7 +380,7 @@ aboutToDelete: (value: RichEditorDeleteValue) => boolean = deleteValue => {
    ```
 3. 图中内容通过getData()方法生成的数据序列化后的数据如下，如何与服务端交互或使用这些数据，根据业务需求调整即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/_j0qzdAhThGJVIGXF8zbUg/zh-cn_image_0000002428774300.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/E6mfwBWlQjG7-YELpsSIrw/zh-cn_image_0000002428774300.png "点击放大")
 
    ```json
    [{

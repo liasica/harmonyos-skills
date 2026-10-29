@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-integrate
 title: 接入自动续期订阅
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 自动续期订阅商品购买 > 接入自动续期订阅
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:47+08:00
+scraped_at: 2026-10-29T07:57:42+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:14597d2e7a02254fc764dbbf2756aa76e3b049df5c69c6e44cc6c4979c1215e0
+content_hash: sha256:2918ca4fa476e4766307c68d63f8d88ee190ddb403652d2457badb4e1f9df057
 ---
 
 ## 约束与限制
@@ -18,7 +18,7 @@ content_hash: sha256:14597d2e7a02254fc764dbbf2756aa76e3b049df5c69c6e44cc6c4979c1
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/C3Pt6lNdQh6nnzvtt9RyjA/zh-cn_image_0000002801106295.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/NHgLTvZBQeSUjtO2rYMThQ/zh-cn_image_0000002774065304.png)
 
 **展示商品**
 

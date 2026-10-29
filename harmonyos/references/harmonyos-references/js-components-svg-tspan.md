@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: tspan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > tspan
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:37+08:00
+scraped_at: 2026-10-29T07:59:58+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3f34f2ce7ef0c36b033d4158708f63da90c6402d4aede31824f8cee9b6486ca6
+content_hash: sha256:22aef66a97253b67f1caed7bc6d61f54c1bcfc647f4c809ed095dac67ee22335
 ---
 
 添加文本样式。
@@ -77,7 +77,7 @@ content_hash: sha256:3f34f2ce7ef0c36b033d4158708f63da90c6402d4aede31824f8cee9b64
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/DZX_8zS5QMOUCaoS50T58w/zh-cn_image_0000002800987875.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/8zAVvkZnQbGpp8xsqd1X2w/zh-cn_image_0000002774066806.png)
 
 属性动画示例
 
@@ -115,7 +115,7 @@ content_hash: sha256:3f34f2ce7ef0c36b033d4158708f63da90c6402d4aede31824f8cee9b64
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/_zmep1EgSxmYwe2wtW2x_g/zh-cn_image_0000002771827986.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Vgwgne4QQFOhkzJA4kLzPA/zh-cn_image_0000002773906834.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -132,7 +132,7 @@ content_hash: sha256:3f34f2ce7ef0c36b033d4158708f63da90c6402d4aede31824f8cee9b64
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/pdJKzGfoS3SmY3YtkRCn8w/zh-cn_image_0000002801107797.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/jzqTB1IyRzafx7tyUCRM5g/zh-cn_image_0000002803266617.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -148,7 +148,7 @@ content_hash: sha256:3f34f2ce7ef0c36b033d4158708f63da90c6402d4aede31824f8cee9b64
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/dqf7UDvfR3iXo6DSvfN_oQ/zh-cn_image_0000002771668018.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/tpIzU8R2TnKfUVk3px6gag/zh-cn_image_0000002803226523.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -171,4 +171,4 @@ content_hash: sha256:3f34f2ce7ef0c36b033d4158708f63da90c6402d4aede31824f8cee9b64
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/vHwfqWLmTpCG2d1TCPUE4w/zh-cn_image_0000002800987877.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/_6jTiK3WTYGBrayrouNuOQ/zh-cn_image_0000002774066808.gif)

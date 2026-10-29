@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-skip-an
 title: 应用UI进程空跑问题分析
 breadcrumb: 最佳实践 > 功耗 > 应用功耗分析 > 应用UI进程空跑问题分析
 category: best-practices
-scraped_at: 2026-10-16T07:06:48+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:f62a814d951d3b93100239e480041b71af94a7cc896559b094c2b605bdf41963
+scraped_at: 2026-10-29T08:03:23+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:c7736fcb5271a43f4b348bc7a0e421a38785bd6662f41713b3c8d3506642035a
 ---
 
 ## 应用UI进程空跑介绍
@@ -14,15 +14,15 @@ content_hash: sha256:f62a814d951d3b93100239e480041b71af94a7cc896559b094c2b605bdf
 
 如下图所示，为一个UI空跑的trace示例，图中应用主线程powerdemon以90Hz刷新，但在高亮框选区域，render\_service线程对应的帧未刷新，表明期间应用主线程powerdemon未递交有效绘制指令给render\_service进行绘制，产生空帧。这些空帧通常由应用注册帧回调但实际无节点脏区引起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/oEI0MNgRTe-JEhffkGCYug/zh-cn_image_0000002555774310.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/zsRnayduQMqilb6PZxIadQ/zh-cn_image_0000002555774310.png "点击放大")
 
 开发者可进一步在空跑帧中搜索“FlushMessages”，如下图所示，当“FlushMessages”下方存在“UI skip”时，表示该帧未递交任何绘制指令，属于UI空跑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/14oUMvF6S5WEgFeYw7-s2Q/zh-cn_image_0000002586294233.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/nnhckExOTWavyhCZq8jufA/zh-cn_image_0000002586294233.png "点击放大")
 
 对比下图的非UI空跑场景，“FlushMessages”下方发现“H:MarshRSTransactionData cmdCount: 2, transactionFlag:[22766,879]”字样时，可确认该帧有绘制指令递交，将引起下一帧render\_service的RS树准备工作。其中22766表示下发绘制指令的线程ID，879表示帧数据的索引，“cmdCount:2”表示绘制指令数量为2，有两个arkui节点在该帧被触发脏区刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/t1twc_CTRluP0f2Ejr32Gw/zh-cn_image_0000002555614690.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/3KwFHqBmQa-BnwW25wG4cg/zh-cn_image_0000002555614690.png "点击放大")
 
 ## 分析思路
 
@@ -36,7 +36,7 @@ Type[0]：Animator
 
 Type[1]：Xcomponent
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/vhTfw4f8TdWjxzTMplzkiA/zh-cn_image_0000002586174287.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Wd4UOEhYSGGMQw4pxCFX1A/zh-cn_image_0000002586174287.png "点击放大")
 
 ### 使用Profiler的Energy工具分析（推荐）
 
@@ -51,13 +51,13 @@ Type[1]：Xcomponent
 
    图中① AnomalyType: 异常类型，② Anomaly Reason: 异常原因，③ Anomaly Count: 异常帧的数量，④ More: 异常帧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/zBO9oOVPQ0-V_NQmXj284A/zh-cn_image_0000002555774312.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/OFYsbt2mSlOdoW0_fgRazg/zh-cn_image_0000002555774312.png "点击放大")
 
 3. 查看单帧详情信息
 
    在More栏，点击其中一帧，在应用的主线程泳道，查看H:DisplaySyncId关键字的Trace，依据Type确认根因类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/8tFrDjhKQruw6Ab7TJC1OA/zh-cn_image_0000002586294237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/yWhJeQ7-T3GWYy_9_dtEuQ/zh-cn_image_0000002586294237.png "点击放大")
 
 ## 常见故障根因
 
@@ -65,7 +65,7 @@ Type[1]：Xcomponent
 
 Animator是一种依赖DisplaySync机制产生UI刷新的动画机制。如下图“1”处所示，“jsAnimator onframe, duration: 5000, curve: ease, id:1”表明，该动效持续时间为5000ms，动效曲线为ease，Animator的ID为1。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/M2_-9hnPSCyczWnnhMjYew/zh-cn_image_0000002555614692.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/2kctMhyrSZ2U0aXcEyvTAw/zh-cn_image_0000002555614692.png "点击放大")
 
 开启hdc shell param set persist.ace.debug.enabled 1开关后，如果该Animator导致实际的组件属性更新，下方会有打印信息如下：
 
@@ -102,10 +102,10 @@ export struct MyAnimatorTest {
     this.backAnimator = this.getUIContext()?.createAnimator({
       // 建议使用 this.getUIContext().createAnimator()接口
       duration: 5000,
-      easing: "ease",
+      easing: 'ease',
       delay: 0,
-      fill: "forwards",
-      direction: "normal",
+      fill: 'forwards',
+      direction: 'normal',
       iterations: 1,
       begin: 100, //动画插值起点
       end: 200, //动画插值终点
@@ -182,10 +182,10 @@ export struct MyAnimatorTest {
 
 ### DisplaySync
 
-DisplaySync支持开发者以[指定帧率运行UI业务](../harmonyos-guides/displaysync-ui.md)，主要用于精细控制绘制帧率的场景，如动态帧率动画、为特定UI组件设置独立于系统刷新率的绘制帧率等。
+DisplaySync支持开发者以[请求UI绘制帧率](../harmonyos-guides/displaysync-ui.md)，主要用于精细控制绘制帧率的场景，如动态帧率动画、为特定UI组件设置独立于系统刷新率的绘制帧率等。
 
 推荐的优化措施：
 
-1. 若开发者希望注册监听窗口帧率变化用于分析UI卡顿、丢帧、FPS监控等场景，建议通过接入ohos.window提供的[frameMetricsMeasured](../harmonyos-references/arkts-apis-window-window.md#onframemetricsmeasured22)接口，该接口仅在客户端UI内容发生重绘时（如页面切换、与可响应组件交互、设置背景色和透明度等）触发注册的回调。
+1. 若开发者希望注册监听窗口帧率变化用于分析UI卡顿、丢帧、FPS监控等场景，建议通过接入ohos.window提供的[on('frameMetricsMeasured')](../harmonyos-references/arkts-apis-window-window.md#onframemetricsmeasured22)接口，该接口仅在客户端UI内容发生重绘时（如页面切换、与可响应组件交互、设置背景色和透明度等）触发注册的回调。
 
-2. 在使用DisplaySync实现自定义动画、独立的UI绘制控制等场景时，需做好生命周期管理，具体优化方案参照[displaySync优化案例](bpta-vsync-power-optimization.md)。
+2. 在使用DisplaySync实现自定义动画、独立的UI绘制控制等场景时，需做好生命周期管理，具体优化方案参照[Vsync低功耗优化](bpta-vsync-power-optimization.md)。

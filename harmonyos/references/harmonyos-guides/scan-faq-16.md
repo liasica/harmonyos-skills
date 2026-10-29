@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-16
 title: 默认界面扫码/自定义界面扫码体验设计
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > 默认界面扫码/自定义界面扫码体验设计
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:34+08:00
+scraped_at: 2026-10-29T07:57:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8397ce3c8fb9d8be658e7edad0e38fdc00b5fcd8e9e4314c1299859bcc391e9e
+content_hash: sha256:71e3ad5ebeb59bba7b793db5e5ea71a537568145ccd5150fbf1934c17e64bfa2
 ---
 
 **问题现象**
@@ -16,4 +16,4 @@ content_hash: sha256:8397ce3c8fb9d8be658e7edad0e38fdc00b5fcd8e9e4314c1299859bcc3
 
 点击按钮拉起默认界面扫码或自定义界面扫码后，将按钮置灰，说明正在拉起扫码功能，以“默认界面扫码”按钮为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/UOz_nPwjQYCHBJMaGTaq1A/zh-cn_image_0000002801105963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/MXq_gHZaS6C5xI3Xy_cSew/zh-cn_image_0000002774064970.png)

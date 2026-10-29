@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-transi
 title: 更新交通卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 交通卡 > 开发场景 > 更新交通卡
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b852ab5421a74b1c256ac4b5784d34b6cd1b4da3b91d6d48aabc70b28d3f25d1
+scraped_at: 2026-10-29T07:57:52+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:1aab820418d02e67b00127d4ec82ab5cf17d1070eb741504cf266f440b50f5aa
 ---
 
 更新交通卡的相关信息，从而保持卡数据与交通卡公司系统同步。
@@ -14,7 +14,7 @@ content_hash: sha256:b852ab5421a74b1c256ac4b5784d34b6cd1b4da3b91d6d48aabc70b28d3
 
 交通卡的更新过程分为：卡片展示、生成更新业务订单和发起更新三个步骤，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/-Oin4dCVQ-G3beHlgTrxfQ/zh-cn_image_0000002800986663.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/B1JxBl1xQlaS9PBfkeA0Xw/zh-cn_image_0000002774065596.png)
 
 ## 开发步骤
 

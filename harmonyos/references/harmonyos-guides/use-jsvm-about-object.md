@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行object相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行object相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:14+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:adfd8bcfedd71aa009f8494b37c53c7078e6090733900ce4a7e22f4634759b47
+scraped_at: 2026-10-29T07:58:17+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:3d2217bbb37cd425133f0ad07de5184550c18bf1de6809ecf8fefd8d198361e0
 ---
 
 ## 简介
@@ -14,7 +14,7 @@ content_hash: sha256:adfd8bcfedd71aa009f8494b37c53c7078e6090733900ce4a7e22f46347
 
 ## 基本概念
 
-在JSVM接口开发中，经常需要定义和操作对象。例如，创建一个接口，该接口接受一个对象作为输入参数，对该对象执行某些操作，并返回一个结果对象。在这个过程中，需要确保接口的定义清晰、规范，并且与对象的属性和方法相兼容。
+在JSVM接口开发中，经常需要定义和操作对象。例如，创建一个接口，该接口接收一个对象作为输入参数，对该对象执行某些操作，并返回一个结果对象。在这个过程中，需要确保接口的定义清晰、规范，并且与对象的属性和方法相兼容。
 
 * **接口（API）**：接口定义了组件之间的交互协议，包括输入参数、输出结果以及可能的错误处理。通过接口，组件可以相互调用和交换数据，而无需了解对方的内部实现细节。
 * **对象（Object）**：在JavaScript中，对象是一种复合数据类型，允许存储多个不同类型的值作为一个单独的实体。对象是属性和方法的集合。属性是与对象相关联的值，而方法则是对象可以执行的操作。
@@ -157,7 +157,7 @@ cpp部分代码：
 const int FREEZE_TEST_VALUE = 111111;
 static JSVM_Value ObjectFreeze(JSVM_Env env, JSVM_CallbackInfo info)
 {
-    // 接受一个JavaScript侧传入的object
+    // 接收一个JavaScript侧传入的object
     size_t argc = 1;
     JSVM_Value argv[1] = {nullptr};
     OH_JSVM_GetCbInfo(env, info, &argc, argv, nullptr, nullptr);
@@ -209,7 +209,7 @@ cpp部分代码：
 const int TEST_VALUE = 111111;
 static JSVM_Value ObjectSeal(JSVM_Env env, JSVM_CallbackInfo info)
 {
-    // 接受一个JavaScript侧传入的object
+    // 接收一个JavaScript侧传入的object
     size_t argc = 1;
     JSVM_Value argv[1] = {nullptr};
     OH_JSVM_GetCbInfo(env, info, &argc, argv, nullptr, nullptr);

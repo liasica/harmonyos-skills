@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pre-connect
 title: 冷启网络预建链最佳实践
-breadcrumb: 最佳实践 > 技术创新 > 冷启网络预建链最佳实践
+breadcrumb: 最佳实践 > 技术创新 > 通讯 > 冷启网络预建链最佳实践
 category: best-practices
-scraped_at: 2026-10-16T07:06:34+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:1c98172de9d694c203a1b79ada9ecbccc2b6195a8b2a7c31077e9394bd817197
+scraped_at: 2026-10-29T08:03:13+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:789fa6881992b5b80752d276daa4e85084ef41b7ae12323a128d6639b670cfdb
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:1c98172de9d694c203a1b79ada9ecbccc2b6195a8b2a7c31077e9394bd8
 
 使用预建链请求与未使用预建链请求时序对比图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/YPwC4Kt6SYq_OdKJrCTL0Q/zh-cn_image_0000002594079346.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/8o-hvh5WQmqbAjDAPPsLIQ/zh-cn_image_0000002624518875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/lBzWLPomTim7BXQeg4dMnA/zh-cn_image_0000002594079346.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/DTxwpm53Ss6Pk3EIkez1Ww/zh-cn_image_0000002624518875.png "点击放大")
 
 ## 冷启动网络预热
 
@@ -66,7 +66,7 @@ try {
 
 在应用启动时，使用预建链请求与非预建链正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/IhzWwoqlQlStu_BqUstOtw/zh-cn_image_0000002594239264.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Rj2eTL6MQF66fxsun3nmNw/zh-cn_image_0000002594239264.png)
 
 2.连接复用获取数据：当实际数据请求发起时，直接复用预建链阶段已建立的连接，跳过连接建立过程，实现向目标服务器动态预取数据，以优化资源加载。
 
@@ -95,7 +95,7 @@ try {
 
 从应用启动到发起请求获取数据内容，使用预建链技术与正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/p-3YqozkT-exzka7AKCEuQ/zh-cn_image_0000002624638731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/YVqe_c1pSyOhmWUBbLoyxg/zh-cn_image_0000002624638731.gif)
 
 ## 常见问题
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-f
 title: 人脸比对
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸比对
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:40:13+08:00
+scraped_at: 2026-10-29T07:58:12+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:2d3f83e3162d7d99ab77c8a2f89dc9bb6a7a3e59efe58f61a8a418dd73b1c2c8
+content_hash: sha256:032d47de70aaca889166a0668c05515f3b3ac4764511d5af5d6f733271592f16
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:2d3f83e3162d7d99ab77c8a2f89dc9bb6a7a3e59efe58f61a8a418dd73b
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/IIFOX_uGQbqEheJHczwF2g/zh-cn_image_0000002771666940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/1sGMMZ1OQnyVGHKlyG9HBQ/zh-cn_image_0000002803225447.png)
 
 ## 开发步骤
 

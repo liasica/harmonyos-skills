@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 小游戏支付
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 小游戏 > 小游戏支付
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:45+08:00
+scraped_at: 2026-10-29T07:57:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5bea54aba740c7b577bc8de2c8fd059c54c213894d7d239fcfa8b7a8186201d3
+content_hash: sha256:3fe9b41e70dad342a15369fd35af0bab2716502be3d770afef86d64957daaead
 ---
 
 小游戏接入基础游戏服务的小游戏支付API后，支持在小游戏内提供付费商品，玩家可以在小游戏内进行购买。
@@ -18,7 +18,7 @@ content_hash: sha256:5bea54aba740c7b577bc8de2c8fd059c54c213894d7d239fcfa8b7a8186
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/e260iIlESbiqWzA4LMiNcg/zh-cn_image_0000002800986343.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/7IEu_BmkS-uhBLacyJ3Png/zh-cn_image_0000002803265085.png)
 
 1. 玩家在小游戏内购买商品。
 2. 小游戏调用[miniGamePay](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamepay)向Game Service Kit发起支付请求。

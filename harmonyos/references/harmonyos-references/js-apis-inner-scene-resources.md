@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: SceneResources
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > graphics3d > SceneResources
 category: harmonyos-references
-scraped_at: 2026-10-17T06:48:39+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:13197c6205ea47e5b9e18e021d46dd27643f477741d09e19ba2b56c0fa309a61
+scraped_at: 2026-10-29T08:02:27+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:afbc4bb7a363b62115454951201d53e4662f8970d50fcb9f31c3cf019ec652c6
 ---
 
 本模块提供ArkGraphics 3D中常用的基本资源类型，包括着色器、材质、网格、动画、环境或图片等用于构建3D场景的各类资源。
@@ -238,7 +238,7 @@ function setinputs(): void {
 | --- | --- | --- | --- | --- |
 | image | [Image](js-apis-inner-scene-resources.md#image) | null | 否 | 否 | 基于物理渲染（PBR）属性纹理贴图，用于表达材质的纹理信息。 |
 | factor | [Vec4](js-apis-inner-scene-types.md#vec4) | 否 | 否 | 基于物理渲染（PBR）属性因子，不同属性不同含义。 |
-| sampler | [Sampler](js-apis-inner-scene-resources.md#sampler20) | 否 | 是 | 纹理贴图采样器，默认使用放大、缩小和mipmap过滤模式为线性过滤（LINEAR），纹理贴图U、V、W方向的寻址模式为重复（REPEAT）。 |
+| sampler | [Sampler](js-apis-inner-scene-resources.md#sampler20) | 否 | 是 | 纹理贴图采样器，默认使用放大、缩小和mipmap过滤模式为线性过滤（LINEAR），纹理贴图U、V方向的寻址模式为重复（REPEAT）。 |
 
 ## MetallicRoughnessMaterial20+
 

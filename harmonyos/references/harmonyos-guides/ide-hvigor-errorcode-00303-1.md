@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 配置错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 配置错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:22+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:303e03391d5990d5a81d47696fa9affc5bb508236ce7f59b5fe891784e102303
+scraped_at: 2026-10-29T07:58:36+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:ac28ec7882f9de2f8105854ccc21e32e7fe0956ed6c2de99aa6d16f683f07fd5
 ---
 
 ## 00303002 找不到某个任务对应的模块
@@ -296,7 +296,7 @@ The project structure and configuration need to be upgraded before use.
 
 **处理步骤**
 
-参考[一体化工程迁移](../harmonyos-guides-V14/ide-integrated-project-migration-V14.md)，对历史工程进行迁移。
+根据DevEco Studio界面提示，对历史工程进行迁移。
 
 ## 00303025 hvigor的modelVersion类型不兼容
 

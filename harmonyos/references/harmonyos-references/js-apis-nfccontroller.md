@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nfc.controller (标准NFC)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.controller (标准NFC)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:11:40+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:dee8016cc8094a56856f6c4b34d14ecc1d7400acb9386f815c4d5230d3c3a345
+scraped_at: 2026-10-29T08:00:53+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:ad1e44a2d7e833920d05e6bb1ad30c62a0acd3b1a01584d12c330a32e4d93b3d
 ---
 
 本模块主要用于管理NFC状态，包括打开和关闭NFC，读取NFC的状态等。
@@ -219,7 +219,7 @@ on(type: 'nfcStateChange', callback: Callback<[NfcState](js-apis-nfccontroller.m
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定填"nfcStateChange"字符串。 |
+| type | string | 是 | 固定填'nfcStateChange'字符串。 |
 | callback | Callback<[NfcState](js-apis-nfccontroller.md#nfcstate)> | 是 | 回调函数，返回NFC状态的枚举值。 |
 
 **示例：**
@@ -240,7 +240,7 @@ off(type: 'nfcStateChange', callback?: Callback<[NfcState](js-apis-nfccontroller
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定填"nfcStateChange"字符串。 |
+| type | string | 是 | 固定填'nfcStateChange'字符串。 |
 | callback | Callback<[NfcState](js-apis-nfccontroller.md#nfcstate)> | 否 | NFC状态改变回调函数，可以空缺不填。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
@@ -249,7 +249,7 @@ off(type: 'nfcStateChange', callback?: Callback<[NfcState](js-apis-nfccontroller
 import { nfcController } from '@kit.ConnectivityKit';
 
 // 注册回调以接收nfc状态更改通知
-nfcController.on("nfcStateChange", (nfcState : number) => {
+nfcController.on('nfcStateChange', (nfcState: number) => {
   console.info("nfcController on callback nfcState: " + nfcState);
 });
 
@@ -280,5 +280,5 @@ if (nfcController.isNfcOpen()) {
 }
 
 // 取消注册回调
-nfcController.off("nfcStateChange");
+nfcController.off('nfcStateChange');
 ```

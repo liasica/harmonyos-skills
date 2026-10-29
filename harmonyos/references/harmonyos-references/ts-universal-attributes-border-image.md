@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图片边框设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 图片边框设置
 category: harmonyos-references
-scraped_at: 2026-10-27T07:41:16+08:00
+scraped_at: 2026-10-29T07:59:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a539816fad9145a2dc9728cc50db48c7d21665c179fba0b24e34c6c5222226d4
+content_hash: sha256:798e7605e0d525d0c5574324f332182241d541473a76a0084af432dc59356269
 ---
 
 设置组件的图片边框样式。
@@ -121,7 +121,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/lAs-mzPSQtKXgJ2Hd5XWoA/zh-cn_image_0000002771827180.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/876rIgEeQuikAcsmkwYoHg/zh-cn_image_0000002773906030.png)
 
 ### 示例2（动态调整属性值）
 
@@ -221,7 +221,7 @@ struct BorderImage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/IP5bSN1RTCKzZR5iKrjL8Q/zh-cn_image_0000002801106995.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/VuUHSOjWQamovd0fv6guZQ/zh-cn_image_0000002803265813.gif)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
@@ -381,4 +381,4 @@ struct BorderImage {
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/gVUnK256RQWs7vXOK8raTA/zh-cn_image_0000002771667214.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/5ediHJMzTgSeTnnhl18-NQ/zh-cn_image_0000002803225721.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 查询超级隐私模式状态
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 查询超级隐私模式状态
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:08+08:00
+scraped_at: 2026-10-29T07:56:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d40e7596af6d4e7845088fdff951c08f4a278a9a6bdc1c7bc9fd209a4b38a879
+content_hash: sha256:7c59b457e07328cc456e1148d088a9023c86b935bd9f3daf3087d2476d2a262e
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:d40e7596af6d4e7845088fdff951c08f4a278a9a6bdc1c7bc9fd209a4b3
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/yAsGZH4GRDqGYusmTEEE-w/zh-cn_image_0000002771825850.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/oV81CC_zQ-mjEPAQukrupA/zh-cn_image_0000002803224389.png)
 
 **流程说明：**
 

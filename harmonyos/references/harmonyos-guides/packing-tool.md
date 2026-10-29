@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/packing-tool
 title: 打包工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 打包拆包工具 > 打包工具
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:552b47da273b89efbe84fddbecf0ee98e110fc819ba121f078724e3f2fd6ac93
+scraped_at: 2026-10-29T07:57:14+08:00
+doc_updated_at: 2026-10-28
+content_hash: sha256:ae634c5fd9e39f08582aea459979e52da24be09cd45fe535fcc0d60bdda79c3a
 ---
 
 打包工具用于在程序编译完成后，对编译出的文件等进行打包，以供安装发布。开发者可以使用DevEco Studio进行打包，也可使用打包工具的JAR包进行打包，JAR包通常存放在SDK路径下的toolchains目录中。
@@ -92,7 +92,7 @@ content_hash: sha256:552b47da273b89efbe84fddbecf0ee98e110fc819ba121f078724e3f2fd
 | --ap-path | 否 | NA | 存放[ap文件](../harmonyos-faqs-V5/faqs-arkts-52-V5.md)的路径。 | 仅Stage模型生效。 |
 | --dir-list | 否 | NA | 可指定目标文件夹列表，将其打入HAP包内。 | NA |
 | --compress-level | 否 | number | lib库下文件压缩等级，默认值1。可选等级1-9。在应用配置compressNativeLibs参数为true的情况下生效，数值越大压缩率越高、压缩速度越慢。 | NA |
-| --pkg-context-path | 否 | NA | 可指定语境信息表文件路径，文件名必须为pkgContextInfo.json。当app.json5配置文件中bundleType取值不是appPlugin，且module.json5配置文件中requestPermissions取值包含"ohos.permission.kernel.SUPPORT\_PLUGIN"时，该参数必填。 | 仅Stage模型生效。 |
+| --pkg-context-path | 否 | NA | 可指定语境信息表文件路径，文件名必须为pkgContextInfo.json。 | 仅Stage模型生效。 |
 | --hnp-path | 否 | NA | 指定native软件包文件路径，将native软件包打入HAP包内。 | NA |
 | --exist-src-path | 否 | NA | 指定增量打包时的源HAP包路径，该路径必须指向一个已存在的、有效的.hap文件。当--lib-path-retain配置为true时，打包工具会直接拷贝源HAP包中的libs目录，不再打包--lib-path指定的libs目录，该特性称为增量打包。当--lib-path-retain配置为false时，正常打包--lib-path指定的libs目录，该参数无效。当libs目录中so文件压缩耗时比较久时，使用增量打包可以提升打包速度。  从API version 22开始支持该参数。 | 仅Stage模型生效。 |
 | --lib-path-retain | 否 | boolean | 是否对libs目录做增量打包。为true时表示对libs目录做增量打包，直接拷贝--exist-src-path指向的源HAP中的libs目录，不再打包--lib-path指定的libs目录；为false时表示不做增量打包，打包--lib-path指向的目录。默认值为false。此参数必须与--exist-src-path配套使用，单独设置不生效。  从API version 22开始支持该参数。 | 仅Stage模型生效。 |
@@ -131,7 +131,7 @@ java -jar app_packing_tool.jar --mode hsp --json-path <path> [--resources-path <
 | --out-path | 是 | NA | 目标文件路径，文件名必须以.hsp为后缀。 |
 | --force | 否 | boolean | 当目标文件路径已存在时，控制是否强制执行覆盖。当--out-path目标文件打包前已存在，该参数为true时，覆盖写入；为false时，终止打包过程并报错。当--out-path目标文件打包前不存在，正常打包，该参数无效。默认值为false。 |
 | --compress-level | 否 | number | lib库下文件压缩等级，默认值1，可选等级1-9。在应用配置compressNativeLibs参数为true的情况下生效，数值越大压缩率越高、压缩速度越慢。 |
-| --pkg-context-path | 否 | NA | 可指定语境信息表文件路径，文件名必须为pkgContextInfo.json。当app.json5配置文件中bundleType取值不是appPlugin，且module.json5配置文件中requestPermissions取值包含"ohos.permission.kernel.SUPPORT\_PLUGIN"时，该参数必填。 |
+| --pkg-context-path | 否 | NA | 可指定语境信息表文件路径，文件名必须为pkgContextInfo.json。 |
 | --exist-src-path | 否 | NA | 指定增量打包时的源HSP包路径，该路径必须指向一个已存在的、有效的.hsp文件。当--lib-path-retain配置为true时，打包工具会直接拷贝源HSP包中的libs目录，不再打包--lib-path指定的libs目录，该特性称为增量打包。当--lib-path-retain配置为false时，正常打包--lib-path指定的libs目录，该参数无效。当libs目录中so文件压缩耗时比较久时，使用增量打包可以提升打包速度。  从API version 22开始支持该参数。 |
 | --lib-path-retain | 否 | boolean | 是否对libs目录做增量打包。为true时表示对libs目录做增量打包，直接拷贝--exist-src-path指向的源HSP中的libs目录，不再打包--lib-path指定的libs目录；为false时表示不做增量打包，打包--lib-path指向的目录。默认值为false。此参数必须与--exist-src-path配套使用，单独设置不生效。  从API version 22开始支持该参数。 |
 | --pkg-sdk-info-path | 否 | NA | pkgSdkInfo.json（构建产物中依赖的HAR的基本信息，包括模块名和版本）文件路径，文件名必须为pkgSdkInfo.json。  从API version 23开始支持该参数。 |
@@ -1246,7 +1246,7 @@ Check shared App mode invalid.
 
 1. 存在两个以上的[HSP包](in-app-hsp.md)。例如下图使用DevEco Studio构建App时，工程中包含了两个HSP包library和library1，此时打包APP包失败。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/UcK1_wRqQfSr6gUwPuGS5A/zh-cn_image_0000002771825994.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/8UfEr3k2Ra6Ttwe-lA_IRQ/zh-cn_image_0000002803224533.png)
 2. HSP包在module.json5中配置了dependencies。
 
 **处理步骤**
@@ -1703,7 +1703,6 @@ Check app plugin failed.
 2. --json-path指定的module.json文件不包含module标签。
 3. 检查--pkg-context-path参数失败。
 4. --json-path指定的module.json文件包含非embeddedUI类型的extensionAbilities。
-5. --json-path指定的module.json文件中bundleType是appPlugin时，module.json文件不包含[ohos.permission.kernel.SUPPORT\_PLUGIN](restricted-permissions.md#ohospermissionkernelsupport_plugin)权限。
 
 **处理步骤**
 
@@ -1711,7 +1710,6 @@ Check app plugin failed.
 2. 确认--json-path指定的module.json文件包含module标签。
 3. 查看报错日志中第一条错误码，确认具体错误信息。
 4. 确认--json-path指定的module.json文件不包含非embeddedUI类型的extensionAbilities。
-5. 确认--json-path指定的module.json文件中bundleType是appPlugin时，module.json文件包含ohos.permission.kernel.SUPPORT\_PLUGIN权限。
 
 ### 10012054 校验HAR去重属性失败
 
