@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 内存泄漏类问题检测方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 资源泄漏类问题检测 > 内存泄漏类问题检测方法
 category: best-practices
-scraped_at: 2026-10-29T08:03:24+08:00
-doc_updated_at: 2026-10-28
+scraped_at: 2026-10-30T07:57:16+08:00
+doc_updated_at: 2026-10-29
 content_hash: sha256:eb65cb94ff0f8f0234cd0a666d3d29a9c3014663db68df55c8f769765324f506
 ---
 

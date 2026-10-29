@@ -3,52 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-kit
 title: 图片处理（Image）
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image）
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:26+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:616e9b4a1cc527d97b41ff60664577b75132857bf914b0a477e3027c419e5c81
+scraped_at: 2026-10-30T07:58:51+08:00
+doc_updated_at: 2026-10-29
+content_hash: sha256:f775a3aa1aab284301e26746e0e7f33bc6c25600e03bef5eba2ae24a5ee86fa4
 ---
 
 * **[常见问题](image-kit-faq.md)**
 * **[故障排查](image-kit-troubleshooting.md)**
-* **[通过PixelMap\_CreatePixelMap创建的对象，内存在ArkTS侧和Native侧是否共享](faqs-image-1.md)**
-* **[如何设置图片的高斯模糊效果](faqs-image-2.md)**
-* **[图片压缩API的quality参数与图片原始大小、压缩后大小的关系](faqs-image-4.md)**
-* **[图片编解码支持的格式有哪些](faqs-image-5.md)**
-* **[如何将相册选择的图片生成PixelMap](faqs-image-6.md)**
-* **[如何设置图片显示的分辨率](faqs-image-8.md)**
-* **[如何把ImageReceiver收到的视频帧数据保存到本地](faqs-image-11.md)**
-* **[为什么获取到的yuv数据量比宽\*高\*1.5多](faqs-image-12.md)**
-* **[将pixelFormat设置为nv21或者nv12时抛出错误码62980096怎么处理](faqs-image-17.md)**
-* **[如何将C++侧接收的PixelMap转换成cv::mat格式](faqs-image-18.md)**
-* **[如何生成带logo的二维码](faqs-image-23.md)**
-* **[如何对GIF图片进行压缩](faqs-image-24.md)**
-* **[图片加载失败](faqs-image-25.md)**
-* **[应用导入图片后提示图片文件过大](faqs-image-26.md)**
-* **[上传原图却显示模糊图片](faqs-image-27.md)**
-* **[对图片进行“图片转格式”操作后，图片预览图有比较长时间的空白](faqs-image-28.md)**
-* **[如何将图片转换为Base64格式](faqs-image-29.md)**
-* **[图片像素错误导致显示异常](faqs-image-31.md)**
-* **[使用PixelMap完成图像变换及常见问题](faqs-image-32.md)**
-* **[网络图片用Image组件加载变成横屏显示如何解决](faqs-image-33.md)**
-* **[如何解决创建PixelMap出现Create PixelMap error错误](faqs-image-34.md)**
-* **[如何将一张图片写入到另一张图片中](faqs-image-35.md)**
-* **[如何实现PixelMap图片颜色翻转](faqs-image-36.md)**
-* **[如何将图片的ArrayBuffer处理成黑白、灰度、彩色三种颜色](faqs-image-37.md)**
-* **[使用PixelMap高效完成一张图片裁剪为多个部分](faqs-image-38.md)**
-* **[实现图片部分区域透明化](faqs-image-39.md)**
-* **[如何加载显示不同深度的图片数据](faqs-image-40.md)**
-* **[ImageBitmap如何加载不同来源的图片](faqs-image-44.md)**
-* **[超大分辨率图片压缩时应用Crash](faqs-image-45.md)**
-* **[应用内如何直接展示本应用保存到图库的图片和视频](faqs-image-47.md)**
-* **[如何获取PixelMap图像的文件大小](faqs-image-48.md)**
-* **[图片数据通过线程传输后打包的图片显示纯黑](faqs-image-49.md)**
-* **[自定义相机双路预览通过Image组件显示ImageReceiver接收的预览流图像异常](faqs-image-52.md)**
-* **[如何实现保存图片边缘增加贴边效果](faqs-image-53.md)**
-* **[如何实现解码Base64字符串格式图片为PixelMap并保存入系统图库](faqs-image-54.md)**
-* **[PNG图片透明像素转白色](faqs-image-55.md)**
-* **[YUV格式图片如何转换为RGB格式并展示](faqs-image-56.md)**
-* **[如何实现将图片分割成九宫格并保存至图库](faqs-image-57.md)**
-* **[点击图片时如何判断点击的位置是否为透明区域](faqs-image-58.md)**
-* **[如何实现图片压缩](faqs-image-59.md)**
-* **[使用rotate接口对PixelMap多次旋转后图像逐渐变小](faqs-image-60.md)**
-* **[获取媒体文件元数据信息及相关问题](faqs-image-61.md)**

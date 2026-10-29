@@ -3,13 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-technical-
 title: 技术质量
 breadcrumb: FAQ > 应用质量 > 技术质量
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:39+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:302e8acd5aba4fc69dfa746f047813923b53e1e43c17430512be12509d765b5e
+scraped_at: 2026-10-30T07:57:23+08:00
+doc_updated_at: 2026-10-29
+content_hash: sha256:dfa888bd5919714c3aec025cca71f33b7ca23946c576a98d8d139e25c5470f0a
 ---
 
-* **[功耗](faqs-power-footage.md)**
 * **[稳定性](faq-stability-kit.md)**
 * **[性能](faqs-performance.md)**
 * **[运维](faqs-performance-analysis-kit.md)**
-* **[隐私与安全](faqs-privacy-and-security.md)**

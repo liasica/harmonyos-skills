@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: 常见问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:0ed39d27bc9b677e8f071d1115372f473426aef7494d514cbbdf453cec8d2bb8
+scraped_at: 2026-10-30T07:59:13+08:00
+doc_updated_at: 2026-10-29
+content_hash: sha256:a2e5c4e4428d81c480dbc95e6d443fc9c069de36c5c2e697a2ed2fd1ca9292dc
 ---
 
 * **[App加固与代码混淆配置常见问题](compiling-and-building-faq-0001.md)**
@@ -40,3 +40,5 @@ content_hash: sha256:0ed39d27bc9b677e8f071d1115372f473426aef7494d514cbbdf453cec8
 * **[项目工程Native版本配置常见问题](compiling-and-building-faq-0030.md)**
 * **[Native工程长度限制编译报错和告警问题排查](compiling-and-building-faq-0031.md)**
 * **[HAP/HAR/HSP包编译常见问题](compiling-and-building-faq-0032.md)**
+* **[构建任务与文件冲突报错](compiling-and-building-faq-0033.md)**
+* **[如何解决编译报错“ Error: 'icon' value `$media:icons` invalid value.”的问题](compiling-and-building-faq-0034.md)**

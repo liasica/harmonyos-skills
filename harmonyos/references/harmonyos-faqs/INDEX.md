@@ -1,6 +1,6 @@
 # FAQ（harmonyos-faqs）
 
-共 4678 篇文档。
+共 4683 篇文档。
 
 - [Context功能使用常见问题](ability-kit-faq-0001.md)
 - [Context类型与关系常见问题](ability-kit-faq-0002.md)
@@ -184,6 +184,7 @@
 - [ArkUI平板分栏显示异常问题定位](arkui-uimana-troubleshooting-0010.md)
 - [沉浸式状态栏显示与避让问题定位](arkui-uimana-troubleshooting-0011.md)
 - [自定义弹窗键盘避让问题定位](arkui-uimana-troubleshooting-0012.md)
+- [Tabs组件切换与显示问题定位](arkui-uimana-troubleshooting-0013.md)
 - [故障排查](arkui-uimana-troubleshooting.md)
 - [如何设置禁止分屏](arkui-windmana-faq-0001.md)
 - [软键盘事件监听与避让模式设置常见问题](arkui-windmana-faq-0002.md)
@@ -288,6 +289,8 @@
 - [项目工程Native版本配置常见问题](compiling-and-building-faq-0030.md)
 - [Native工程长度限制编译报错和告警问题排查](compiling-and-building-faq-0031.md)
 - [HAP/HAR/HSP包编译常见问题](compiling-and-building-faq-0032.md)
+- [构建任务与文件冲突报错](compiling-and-building-faq-0033.md)
+- [如何解决编译报错“ Error: 'icon' value `$media:icons` invalid value.”的问题](compiling-and-building-faq-0034.md)
 - [常见问题](compiling-and-building-faq.md)
 - [编译报错00308002问题汇总](compiling-and-building-troubleshooting-0001.md)
 - [故障排查](compiling-and-building-troubleshooting.md)
@@ -4524,7 +4527,6 @@
 - [应用接续任务失败](free-flow-faqs-1.md)
 - [不同APPID的应用如何实现应用接续](free-flow-faqs-2.md)
 - [常见问题](free-flow-faqs.md)
-- [下载任务切换到后台下载中断](function-flow-runtime-troubleshooting-0001.md)
 - [故障排查](function-flow-runtime-troubleshooting.md)
 - [JWS数据解码与验签常见问题](iap-kit-faqs-0001.md)
 - [单机应用与元服务接入IAP Kit支付常见问题](iap-kit-faqs-0002.md)
@@ -4546,8 +4548,6 @@
 - [故障排查](input-troubleshooting.md)
 - [IPC跨进程异步返回数据](ipc-kit-faq-0001.md)
 - [常见问题](ipc-kit-faq.md)
-- [NDK与Native开发问题定位](jsvm-troubleshooting-0001.md)
-- [故障排查](jsvm-troubleshooting.md)
 - [App Linking跳转失败问题排查](linking-kit-faq-0001.md)
 - [常见问题](linking-kit-faq.md)
 - [系统服务自动接入实况窗常见问题](liveview-kit-faq-0001.md)
@@ -4584,6 +4584,9 @@
 - [Native与ArkTS跨语言交互与数据传递常见问题](ndk-development-faq-0006.md)
 - [如何通过AKI三方库实现ArkTS调用C/C++](ndk-development-faq-0007.md)
 - [常见问题](ndk-development-faq.md)
+- [NDK与Native开发问题定位](ndk-development-troubleshooting-0001.md)
+- [下载任务切换到后台下载中断](ndk-development-troubleshooting-0002.md)
+- [故障排查](ndk-development-troubleshooting.md)
 - [WebSocket协议支持问题](network-kit-faq-0001.md)
 - [网络信息获取与状态监听常见问题](network-kit-faq-0002.md)
 - [HTTP请求配置常见问题](network-kit-faq-0003.md)
@@ -4632,6 +4635,7 @@
 - [故障排查](performance-troubleshooting.md)
 - [npm包离线安装常见问题](project-management-faq-0001.md)
 - [build-profile.json5工程检查报错问题排查](project-management-faq-0002.md)
+- [使用了新API打包的APP包如何兼容安装在老系统和其他不兼容该API的设备](project-management-faq-0003.md)
 - [常见问题](project-management-faq.md)
 - [Push Kit推送服务接入常见错误码和解决方案](push-kit-faq-0001.md)
 - [常见问题](push-kit-faq.md)
@@ -4658,6 +4662,7 @@
 - [应用签名失败与证书过期问题排查](signature-service-faq-0006.md)
 - [常见问题](signature-service-faq.md)
 - [自动签名报错问题定位](signature-service-troubleshooting-0001.md)
+- [手动签名失败问题排查与解决](signature-service-troubleshooting-0002.md)
 - [故障排查](signature-service-troubleshooting.md)
 - [模拟器真机预览器调试差异常见问题](simulator-faq-0001.md)
 - [常见问题](simulator-faq.md)

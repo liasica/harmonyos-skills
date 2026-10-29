@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 17351 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 17356 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1251 篇
 
@@ -12674,7 +12674,7 @@
 - [多设备地图导航界面](best-practices/multi-travel-navigation.md)
 - [多设备长视频界面](best-practices/multi-video-app.md)
 
-## FAQ（`harmonyos-faqs`）— 4678 篇
+## FAQ（`harmonyos-faqs`）— 4683 篇
 
 - [Context功能使用常见问题](harmonyos-faqs/ability-kit-faq-0001.md)
 - [Context类型与关系常见问题](harmonyos-faqs/ability-kit-faq-0002.md)
@@ -12858,6 +12858,7 @@
 - [ArkUI平板分栏显示异常问题定位](harmonyos-faqs/arkui-uimana-troubleshooting-0010.md)
 - [沉浸式状态栏显示与避让问题定位](harmonyos-faqs/arkui-uimana-troubleshooting-0011.md)
 - [自定义弹窗键盘避让问题定位](harmonyos-faqs/arkui-uimana-troubleshooting-0012.md)
+- [Tabs组件切换与显示问题定位](harmonyos-faqs/arkui-uimana-troubleshooting-0013.md)
 - [故障排查](harmonyos-faqs/arkui-uimana-troubleshooting.md)
 - [如何设置禁止分屏](harmonyos-faqs/arkui-windmana-faq-0001.md)
 - [软键盘事件监听与避让模式设置常见问题](harmonyos-faqs/arkui-windmana-faq-0002.md)
@@ -12962,6 +12963,8 @@
 - [项目工程Native版本配置常见问题](harmonyos-faqs/compiling-and-building-faq-0030.md)
 - [Native工程长度限制编译报错和告警问题排查](harmonyos-faqs/compiling-and-building-faq-0031.md)
 - [HAP/HAR/HSP包编译常见问题](harmonyos-faqs/compiling-and-building-faq-0032.md)
+- [构建任务与文件冲突报错](harmonyos-faqs/compiling-and-building-faq-0033.md)
+- [如何解决编译报错“ Error: 'icon' value `$media:icons` invalid value.”的问题](harmonyos-faqs/compiling-and-building-faq-0034.md)
 - [常见问题](harmonyos-faqs/compiling-and-building-faq.md)
 - [编译报错00308002问题汇总](harmonyos-faqs/compiling-and-building-troubleshooting-0001.md)
 - [故障排查](harmonyos-faqs/compiling-and-building-troubleshooting.md)
@@ -17198,7 +17201,6 @@
 - [应用接续任务失败](harmonyos-faqs/free-flow-faqs-1.md)
 - [不同APPID的应用如何实现应用接续](harmonyos-faqs/free-flow-faqs-2.md)
 - [常见问题](harmonyos-faqs/free-flow-faqs.md)
-- [下载任务切换到后台下载中断](harmonyos-faqs/function-flow-runtime-troubleshooting-0001.md)
 - [故障排查](harmonyos-faqs/function-flow-runtime-troubleshooting.md)
 - [JWS数据解码与验签常见问题](harmonyos-faqs/iap-kit-faqs-0001.md)
 - [单机应用与元服务接入IAP Kit支付常见问题](harmonyos-faqs/iap-kit-faqs-0002.md)
@@ -17220,8 +17222,6 @@
 - [故障排查](harmonyos-faqs/input-troubleshooting.md)
 - [IPC跨进程异步返回数据](harmonyos-faqs/ipc-kit-faq-0001.md)
 - [常见问题](harmonyos-faqs/ipc-kit-faq.md)
-- [NDK与Native开发问题定位](harmonyos-faqs/jsvm-troubleshooting-0001.md)
-- [故障排查](harmonyos-faqs/jsvm-troubleshooting.md)
 - [App Linking跳转失败问题排查](harmonyos-faqs/linking-kit-faq-0001.md)
 - [常见问题](harmonyos-faqs/linking-kit-faq.md)
 - [系统服务自动接入实况窗常见问题](harmonyos-faqs/liveview-kit-faq-0001.md)
@@ -17258,6 +17258,9 @@
 - [Native与ArkTS跨语言交互与数据传递常见问题](harmonyos-faqs/ndk-development-faq-0006.md)
 - [如何通过AKI三方库实现ArkTS调用C/C++](harmonyos-faqs/ndk-development-faq-0007.md)
 - [常见问题](harmonyos-faqs/ndk-development-faq.md)
+- [NDK与Native开发问题定位](harmonyos-faqs/ndk-development-troubleshooting-0001.md)
+- [下载任务切换到后台下载中断](harmonyos-faqs/ndk-development-troubleshooting-0002.md)
+- [故障排查](harmonyos-faqs/ndk-development-troubleshooting.md)
 - [WebSocket协议支持问题](harmonyos-faqs/network-kit-faq-0001.md)
 - [网络信息获取与状态监听常见问题](harmonyos-faqs/network-kit-faq-0002.md)
 - [HTTP请求配置常见问题](harmonyos-faqs/network-kit-faq-0003.md)
@@ -17306,6 +17309,7 @@
 - [故障排查](harmonyos-faqs/performance-troubleshooting.md)
 - [npm包离线安装常见问题](harmonyos-faqs/project-management-faq-0001.md)
 - [build-profile.json5工程检查报错问题排查](harmonyos-faqs/project-management-faq-0002.md)
+- [使用了新API打包的APP包如何兼容安装在老系统和其他不兼容该API的设备](harmonyos-faqs/project-management-faq-0003.md)
 - [常见问题](harmonyos-faqs/project-management-faq.md)
 - [Push Kit推送服务接入常见错误码和解决方案](harmonyos-faqs/push-kit-faq-0001.md)
 - [常见问题](harmonyos-faqs/push-kit-faq.md)
@@ -17332,6 +17336,7 @@
 - [应用签名失败与证书过期问题排查](harmonyos-faqs/signature-service-faq-0006.md)
 - [常见问题](harmonyos-faqs/signature-service-faq.md)
 - [自动签名报错问题定位](harmonyos-faqs/signature-service-troubleshooting-0001.md)
+- [手动签名失败问题排查与解决](harmonyos-faqs/signature-service-troubleshooting-0002.md)
 - [故障排查](harmonyos-faqs/signature-service-troubleshooting.md)
 - [模拟器真机预览器调试差异常见问题](harmonyos-faqs/simulator-faq-0001.md)
 - [常见问题](harmonyos-faqs/simulator-faq.md)

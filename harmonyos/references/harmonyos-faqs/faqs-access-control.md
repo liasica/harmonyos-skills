@@ -3,31 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 程序访问控制
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:08+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:64869dda3031af90978362208365ad2baa427408c988d54d6adae9cbad459505
+scraped_at: 2026-10-30T07:58:36+08:00
+doc_updated_at: 2026-10-29
+content_hash: sha256:6b6f6be7ff83c39f3d1955e91f0be7185f4d10d56ee85652d251159943fd39a0
 ---
 
 * **[常见问题](access-control-faq.md)**
-* **[权限申请被拒绝后，再次申请权限，是否出现申请权限弹窗](faqs-access-control-1.md)**
-* **[用户更新app后是否还会弹出权限申请弹窗](faqs-access-control-2.md)**
-* **[请求精准定位权限申请注意事项](faqs-access-control-3.md)**
-* **[用户在权限弹框中禁止应用获取权限，如何再次显示用户授权弹窗](faqs-access-control4.md)**
-* **[动态申请权限能否添加描述](faqs-access-control-5.md)**
-* **[user\_grant权限预授权，可以使用吗](faqs-access-control-6.md)**
-* **[系统安全能力哪些是天然具备的，哪些需要开发者适配](faqs-access-control-9.md)**
-* **[在系统设置修改了应用权限，应用能否监听到权限变化](faqs-access-control-10.md)**
-* **[应用申请位置信息权限为什么没有弹窗](faqs-access-control-11.md)**
-* **[向用户申请授予权限但被用户拒绝后，如何处理才能避免应用二次进入时崩溃](faqs-access-control-12.md)**
-* **[是否支持动态授权](faqs-access-control-13.md)**
-* **[module.json5配置文件中extensionAbilities和requestPermissions的权限声明有何区别](faqs-access-control-14.md)**
-* **[如何判断应用权限是否允许，以及拒绝后再次授权](faqs-access-control-15.md)**
-* **[应用权限管理界面的权限跳转到系统设置界面，无对应权限](faqs-access-control-16.md)**
-* **[使用了某些权限但是系统设置页不存在，应用内如何引导用户修改权限](faqs-access-control-17.md)**
-* **[系统中关闭已开启的权限，应用被重启](faqs-access-control-18.md)**
-* **[如何撤销已经申请的权限](faqs-access-control-19.md)**
-* **[如何获取定位权限的用户授权类型](faqs-access-control-20.md)**
-* **[超级隐私模式下，应用权限申请异常](faqs-access-control-21.md)**
-* **[应用申请权限是否可以在子模块中申请](faqs-access-control-22.md)**
-* **[IDE应用调用插件包二进制及so文件的权限与签名要求](faqs-access-control-23.md)**
-* **[多端适配场景下不同设备ACL权限分别配置的打包方案](faqs-access-control-24.md)**

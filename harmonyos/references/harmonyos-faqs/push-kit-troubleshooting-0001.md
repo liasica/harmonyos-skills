@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/push-kit-troubl
 title: 消息推送后手机未收到消息提示怎么处理
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 故障排查 > 消息推送后手机未收到消息提示怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:43+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:79896ff1f53e8cc7157e527c99bb02a59a3e834e8efd8ad2985e5acf6e9aafd9
+scraped_at: 2026-10-30T07:59:06+08:00
+doc_updated_at: 2026-10-29
+content_hash: sha256:ccf4160a8da584da12f02017d4047a5a23f7565409e5c6de6ab63e5b4cc9ec8a
 ---
 
 ## 问题现象
@@ -47,17 +47,17 @@ content_hash: sha256:79896ff1f53e8cc7157e527c99bb02a59a3e834e8efd8ad2985e5acf6e9
 
 * 当收到资讯营销类消息时，由于静默通知仅在通知中心展示，并不会弹框提示，需要去通知中心查看。通知中心如下图，可以查看对应消息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/R-6Y6XJST5eYX-eFmZS4-A/zh-cn_image_0000002794653837.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/2oSGgURnS_KrRIausal66w/zh-cn_image_0000002794653837.png "点击放大")
 * 若终端上的app手动关闭了消息提醒方式，终端收到消息不会有提醒，需要打开所需的提醒方式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/XggRkGosSpOu0yZdhJ4cMw/zh-cn_image_0000002794653841.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/c-36uvTXSPOgiB2JBdeTRA/zh-cn_image_0000002794653841.png "点击放大")
 * 检查应用的"通知渠道（通知类别）开关"是否被关闭。进入设置>通知和状态栏>找到该应用，除确认顶部"允许通知"总开关外，展开下方"通知类别"列表，逐一确认各类别（尤其服务与通讯/Push相关渠道）开关均处于开启状态。"通知类别"属于独立的子开关，此前确认的应用级总开关不包含子开关。
 * 检查应用或三方SDK是否调用过pushService.turnOffPush()方法，该方法会设置不显示通知栏消息，端侧同样上报"通知栏开关关闭"回执。若存在调用记录，执行pushService.turnOnPush()恢复后重推验证。
-* 打开[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，按查询路径："开发与服务>增长>推送服务>自助分析"，在自助分析里面输入requestId和token，系统会自动分析消息推送失败的可能原因，注意requestId有效期为三天。
+* 打开[HarmonyOS 开发者中心平台](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，按查询路径："开发与服务>增长>推送服务>自助分析"，在自助分析里面输入requestId和token，系统会自动分析消息推送失败的可能原因，注意requestId有效期为三天。
 
   也可能是Push token不是有效的token，建议您在应用启动时调用getToken()接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token，以防由于Push Token失效导致收不到消息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/FlHBAFAtSI6tVlzdLpYBUg/zh-cn_image_0000002794573613.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/t0T8gWSVStCl2asSknv0jw/zh-cn_image_0000002794573613.png "点击放大")
 * 检查服务端发送请求时是否正确携带Authorization请求头，value为JWT格式字符串，是基于服务账号生成鉴权令牌。可参考：[请求体结构说明](../harmonyos-references/push-scenariozed-api-request-struct.md)。
 * [推送后台消息](../harmonyos-guides/push-background.md)用于内容不频繁更新的场景，不会显示通知、播放铃声或改变应用角标。终端设备接收到后台消息后，如果应用进程在前台则将消息内容传给应用；如果应用进程不在前台则缓存消息，等待应用启动后再传给应用。
 * 如果设备离线，Push Kit会缓存消息，待设备上线后，再将消息推送给设备。
@@ -75,3 +75,9 @@ content_hash: sha256:79896ff1f53e8cc7157e527c99bb02a59a3e834e8efd8ad2985e5acf6e9
   + 应用需要配置多条skill对象。
 
     比如同时设置推送消息跳转能力和其他跳转能力（如NFC跳转、浏览器跳转等），可以在skills数组中创建不同的skill对象，分别映射对应的能力。
+
+## 常见FAQ
+
+**Q：使用Push Kit发送category=SUBSCRIPTION的消息，设备处于夜间息屏状态且已设置睡眠模式允许打扰，消息被凌晨管控缓存导致延迟收到，能否豁免管控或实现实时送达？**
+
+**A**：Push Kit夜间息屏消息管控是推送服务侧的平台级策略，管控时段为0:00~6:00，设备熄屏30分钟后触发，管控期间消息被云侧缓存，不下发到设备。设备端的"睡眠模式允许打扰"设置控制的是通知到达设备后的提醒方式（响铃、震动等），不影响Push Kit服务端的夜间管控决策，因此无法通过该设置豁免管控。当前仅category=VoIP和应用内通话消息可豁免夜间管控，category=SUBSCRIPTION不在豁免范围内。夜间0点到6点只能通过亮屏的方式触发消息下发，如持续息屏无法下发消息。

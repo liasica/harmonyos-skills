@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: 故障排查
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:071fa4fe317026f4a9086a61157744e4f7484c2c651eba02993e0872567ecc7a
+scraped_at: 2026-10-30T07:58:07+08:00
+doc_updated_at: 2026-10-29
+content_hash: sha256:592cbe7894c2277fbc3d4b0ba20150020303dbe7c4a189366e04f8b8e9fb3915
 ---
 
 * **[ArkUI一多适配布局问题定位](arkui-uimana-troubleshooting-0001.md)**
@@ -20,3 +20,4 @@ content_hash: sha256:071fa4fe317026f4a9086a61157744e4f7484c2c651eba02993e0872567
 * **[ArkUI平板分栏显示异常问题定位](arkui-uimana-troubleshooting-0010.md)**
 * **[沉浸式状态栏显示与避让问题定位](arkui-uimana-troubleshooting-0011.md)**
 * **[自定义弹窗键盘避让问题定位](arkui-uimana-troubleshooting-0012.md)**
+* **[Tabs组件切换与显示问题定位](arkui-uimana-troubleshooting-0013.md)**
